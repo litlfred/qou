@@ -9,13 +9,16 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Correspondences",
-  "pageStart": 30,
-  "pageEnd": 30,
+  "title": "3.7.",
+  "pageStart": 26,
+  "pageEnd": 26,
   "contains": [
-    "library/arxiv-1608.07308v1/blocks/prose-sec-027"
+    "library/arxiv-1608.07308v1/blocks/prose-sec-027",
+    "library/arxiv-1608.07308v1/blocks/prop-sec-027-01",
+    "library/arxiv-1608.07308v1/blocks/conj-sec-027-02",
+    "library/arxiv-1608.07308v1/blocks/thm-sec-027-03"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1608.07308v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1608.07308v1",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1608.07308v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1608.07308v1/manifest.jsonld",
   "provenance": "ingested"
 }

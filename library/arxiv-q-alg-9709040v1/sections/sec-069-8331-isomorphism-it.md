@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-q-alg-9709040v1
-doc_title: "arXiv:q-alg/9709040v1 29 Sep 1997"
+doc_title: "Deformation quantization of Poisson manifolds"
 section_id: sec-069-8331-isomorphism-it
 section_title: "Isomorphism IT"
 section_number: 8.3.3.1
@@ -8,6 +8,7 @@ pages: 41-43
 source_pdf: 9709040v1.pdf
 source_sha256: 8baf650d86c5b8ab
 toc_source: inferred
+doc_brief: "Deformation quantization of Poisson manifolds — 75 sections: Front matter; Plans; Star-products"
 ---
 The isomorphism IT is given by the sum over terms corresponding to admissible graphs Γ with no
 vertices of the second type, one special vertex v of the ﬁrst type such that no edge start at v, and such that
@@ -103,4 +104,3 @@ These operators are again proportional to operators associated with power series
 γ−→T race (ad(γ)n) .
 By the same symmetry reasons as above we see that integrals corresponding to odd n vanish. The second
 part of the theorem is proven.
-Q.E.D.

@@ -1,1 +1,1 @@
-Let ˜s, ˜s′∈ F2 be such that p3(˜s) = p3(˜s′) = s∈ S3, then for any colored
+Let ˜s, ˜s′ ∈F2 be such that p3(˜s) = p3(˜s′) = s ∈S3, then for any colored 2-simplex σ, 1. ˜s(σ)[s(i)] = sˆi(σ[i]) for i = 0, 1, 2, where sˆi is the restriction of s on the edge ˆi. Namely, if ˜s is a reordering of σ, then the eﬀect of ˜s on any sub 1-simplex is equal to the action of the restriction of s on that simplex. 2. There is a canonical isomorphism from C(˜s(σ)) to C(˜s′(σ)).

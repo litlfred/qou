@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-1105.2919v1/blocks/prose-sec-058",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Appendix B.4 Summary of 2PE contributions at NLO",
+  "pageStart": 77,
+  "pageEnd": 77,
+  "text": "../sections/sec-058-appendix-b4-summary-of-2pe-contributions-at-nlo.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1105.2919v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1105.2919v1/manifest.jsonld",
+  "provenance": "ingested"
+}

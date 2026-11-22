@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-9802116v1/sections/sec-003",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Cayley algebras",
+  "pageStart": 15,
+  "pageEnd": 19,
+  "contains": [
+    "library/arxiv-math-9802116v1/blocks/prose-sec-003",
+    "library/arxiv-math-9802116v1/blocks/prop-sec-003-01",
+    "library/arxiv-math-9802116v1/blocks/prop-sec-003-02",
+    "library/arxiv-math-9802116v1/blocks/prop-sec-003-03",
+    "library/arxiv-math-9802116v1/blocks/cor-sec-003-04",
+    "library/arxiv-math-9802116v1/blocks/prop-sec-003-05"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9802116v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9802116v1/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -3,10 +3,10 @@
  "doc_id": "arxiv-math-0404010v1",
  "source_sha256": "a9522d4bec3ce6fb",
  "brief": "YANG–BAXTER OPERATORS ARISING FROM ALGEBRA STRUCTURES AND THE ALEXANDER POLYNOMIAL OF KNOTS — In this paper, we consider the problem of constructing knot invariants from Yang–Baxter operators",
- "extended": "**YANG–BAXTER OPERATORS ARISING FROM ALGEBRA STRUCTURES AND THE ALEXANDER POLYNOMIAL OF KNOTS**\n\n*GWÉNAËL MASSUYEAU AND FLORIN F. NICHITA*\n\n9 pp, 7 sections.\n\n**Abstract.** In this paper, we consider the problem of constructing knot invariants from Yang–Baxter operators associated to algebra structures. We ﬁrst compute the enhancements of these operators. Then, we conclude that Turaev’s procedure to derive knot invariants from these enhanced operators, as modiﬁed by Murakami, invariably produces the Alexander polynomial of knots.\n\n**Outline.** Front matter; 1 Introduction; 3 Invariants of oriented links derived from Ya; 4 Invariants of oriented links derived from al; 4.1 Enhancements of Rx,y; 4.2 Connection with the Alexander polynomial; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.3: Let A be a k–algebra of dimension at least 2\n- Theorem 3.2: Let S be an enhanced YB operator. If two braids b1 and b2\n- Theorem 3.4: Let S be a redundant YB operator. If two braids b1 and b2\n- Theorem 4.3: Let µ : A →A and α, β ∈k be such that S = (Rx,y, µ, α, β) is an\n- Proposition 2.5: Let A and A′ be k–algebras of dimension\n- Proposition 3.6: Let S = (R, µ, α, β) be an enhanced Yang–Baxter operator such that",
+ "extended": "**YANG–BAXTER OPERATORS ARISING FROM ALGEBRA STRUCTURES AND THE ALEXANDER POLYNOMIAL OF KNOTS**\n\n*GWÉNAËL MASSUYEAU AND FLORIN F. NICHITA*\n\n9 pp, 9 sections.\n\n**Abstract.** In this paper, we consider the problem of constructing knot invariants from Yang–Baxter operators associated to algebra structures. We ﬁrst compute the enhancements of these operators. Then, we conclude that Turaev’s procedure to derive knot invariants from these enhanced operators, as modiﬁed by Murakami, invariably produces the Alexander polynomial of knots.\n\n**Outline.** Front matter; 1 Introduction; 2 Yang--Baxter operators arising from algebra ; 3 Invariants of oriented links derived from Ya; 3.2 Redundant Yang--Baxter operators; 4 Invariants of oriented links derived from al; 4.1 Enhancements of Rx,y; 4.2 Connection with the Alexander polynomial; References",
  "tokens": {
   "brief": 47,
-  "extended": 309
+  "extended": 211
  },
  "sections": [
   {
@@ -17,30 +17,40 @@
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-3"
+   "pages": "1-2"
   },
   {
-   "id": "sec-001-3-invariants-of-oriented-links-derived-from-yang",
+   "id": "sec-001-2-yang--baxter-operators-arising-from-algebra-st",
+   "title": "Yang--Baxter operators arising from algebra structures",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-002-3-invariants-of-oriented-links-derived-from-yang",
    "title": "Invariants of oriented links derived from Yang--Baxter operators",
-   "pages": "3-6"
+   "pages": "3-4"
   },
   {
-   "id": "sec-002-4-invariants-of-oriented-links-derived-from-alge",
+   "id": "sec-003-32-redundant-yang--baxter-operators",
+   "title": "Redundant Yang--Baxter operators",
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-004-4-invariants-of-oriented-links-derived-from-alge",
    "title": "Invariants of oriented links derived from algebra structures",
    "pages": "6-6"
   },
   {
-   "id": "sec-003-41-enhancements-of-rxy",
+   "id": "sec-005-41-enhancements-of-rxy",
    "title": "Enhancements of Rx,y",
    "pages": "6-8"
   },
   {
-   "id": "sec-004-42-connection-with-the-alexander-polynomial",
+   "id": "sec-006-42-connection-with-the-alexander-polynomial",
    "title": "Connection with the Alexander polynomial",
    "pages": "8-9"
   },
   {
-   "id": "sec-005-references",
+   "id": "sec-007-references",
    "title": "References",
    "pages": "9-9"
   }
@@ -49,8 +59,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

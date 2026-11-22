@@ -46,7 +46,7 @@ discover: this file removes the *constant-filtration* objection to
 non-multiplicative trace would essentially be a Hecke or symmetric-group tower,
 which Mathlib does not supply.
 
--- Ref: [manuscript] bean qou-301d.
+-- Ref: [leitner2026] bean qou-301d.
 -/
 
 namespace QOU.MathlibExt.InvolutionTowerWitness

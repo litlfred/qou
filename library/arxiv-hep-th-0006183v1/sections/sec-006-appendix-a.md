@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-0006183v1
-doc_title: "arXiv:hep-th/0006183v1 23 Jun 2000"
+doc_title: "Fine-tuning and the Wilson renormalization group"
 section_id: sec-006-appendix-a
 section_title: "Appendix A"
 section_number: null
@@ -8,6 +8,7 @@ pages: 16-21
 source_pdf: 0006183v1.pdf
 source_sha256: 2c9c4d97ce4f71a3
 toc_source: inferred
+doc_brief: "Fine-tuning and the Wilson renormalization group — We use the Wilson renormalization group (RG) formulation to solve the ﬁne-tuning proce- dure needed in renormalization schemes breaking the gauge"
 ---
 In this appendix we compute the various contributions to the AAAc-vertex.
 We ﬁrst
@@ -41,7 +42,6 @@ K0Λ0(q + p1 + p2 + p3)
 (q + p23)2
 4 Recently [14] these counterterms have been systematically computed at one-loop oder in the dimen-
 sional regularization scheme.
-15
 + [tµ1µ2µ3(q + p13, p2) −2tµ3µ2µ1(q + p13, p2)]KΛ0∞(q + p13)
 (q + p13)2
 + [tµ2µ1µ3(q + p23, p1) −2tµ3µ1µ2(q + p23, p1)]KΛ0∞(q + p23)
@@ -147,7 +147,6 @@ q
 (1 −K)(9K −7)K′
 2q4
 .
-16
 Finally from Fig. 5c we get
 −3ig3
 Z
@@ -214,7 +213,6 @@ q
 KΛ0∞(q)
 q2
 K0Λ0(q + p1 + p2 + p3)
-17
 ×
 
 tµµ1ν(q, p1) tνµ2ρ(q + p1, p2) tρµ3µ(q + p12, p3)KΛ0∞(q + p1)KΛ0∞(q + p12)
@@ -320,7 +318,6 @@ Z
 q
 (1 −K)2(4K2 + K′q2 −K(4 + 5K′q2))
 6q4
-18
 ˆδ(6c)
 8
 = −ˆδ(6c)
@@ -402,7 +399,6 @@ Finally there is a contribution to ˆ∆(AAAc)
 Γ µ1µ2µ3(p1, p2, p3; Λ0) for γi = v which is depicted in
 Fig. 7 and gives
 Figure 7: Graphical contribution to the A-A-A-c vertex of ˆ∆Γ.
-19
 −ig3
 Z
 q

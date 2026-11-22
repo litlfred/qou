@@ -1,1 +1,1 @@
-We call a broken strip u high-index if vir( u)> 0.
+We call a broken strip u ∈MBr(Γ, M[l], L[l], K) regular if the linearizations of ∂Br is surjective at u and the evaluation map, evbig, is transverse to the diagonal ∆|P|. Assuming transversality of everything, the expected dimension of the moduli spaces MBr(Γ, M[l], L[l], K) and MBr(Γ, M[l], L[l]) at a point u is Ind( eDu) −|P|(n −1) where eDu is the linearization of ∂ strip Br or ∂ disc Br at (D, u).

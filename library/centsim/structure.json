@@ -1,203 +1,37 @@
 {
- "_schema": "pdf-structure/v1",
- "doc_id": "centsim",
  "source": {
   "file": "centsim.pdf",
   "sha256": "41eaa1d757e691973cd2908f0afde5007193bc5cd400bfc86ecb70167226a222",
   "bytes": 181874,
+  "mtime": "2026-11-15T11:07:54Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
   "pages": 22,
   "text_source": "ocr",
-  "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:24Z",
-  "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "runContext": {
+   "sha256": "8cce06a6cf71feda4fb8eb90a0a92ac16f3df93c551e40406163d39e2784073b"
+  }
  },
  "metadata": {
-  "arxiv": null,
-  "doi": null,
   "title": "Centers and Simple Modules for Iwahori-Hecke Algebras",
-  "authors_raw": "Meinolf Geck and Rapha\u00e9l Rouquier",
-  "title_lines": [
-   "Centers and Simple Modules",
-   "for Iwahori-Hecke Algebras"
-  ],
-  "abstract": null,
   "docinfo": {
    "Producer": "itext-paulo-155 (itextpdf.sf.net-lowagie.com)",
    "Creator": "pdftk 1.44 - www.pdftk.com",
    "CreationDate": "D:20121004133547-07'00'"
   },
-  "title_raw": "Centers and Simple Modules for Iwahori-Hecke Algebras",
-  "title_source": "text",
+  "title_raw": null,
+  "title_source": "filename",
   "title_verified": false,
   "title_evidence": {
-   "text": "Centers and Simple Modules for Iwahori-Hecke Algebras",
    "corroborated_by": [],
    "browser_print": false
-  }
+  },
+  "title_prev": "Centers and Simple Modules for Iwahori-Hecke Algebras"
  },
- "toc": [],
- "toc_source": "undetermined",
- "toc_undetermined_reason": "13 inferred entries with mean confidence 0.00, below the 0.6 floor \u2014 too little evidence agreed",
+ "_schema": "pdf-structure/v1",
+ "doc_id": "centsim",
+ "toc_source": "none",
  "granularity": "page",
- "structure_note": "No outline, and no inferred contents could be trusted (13 inferred entries with mean confidence 0.00, below the 0.6 floor \u2014 too little evidence agreed): one section per page.",
- "figures": [],
- "pages": [
-  {
-   "physical": 1,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 2,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 3,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 4,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 5,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 6,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 7,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 8,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 9,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 10,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 11,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 12,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 13,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 14,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 15,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 16,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 17,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 18,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 19,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 20,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 21,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 22,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  }
- ],
  "sections": [
   {
    "id": "page-001",
@@ -207,9 +41,7 @@
    "page_start": 1,
    "page_end": 1,
    "n_chars": 2244,
-   "n_words": 349,
-   "label_start": null,
-   "label_end": null
+   "n_words": 349
   },
   {
    "id": "page-002",
@@ -219,9 +51,7 @@
    "page_start": 2,
    "page_end": 2,
    "n_chars": 2550,
-   "n_words": 439,
-   "label_start": null,
-   "label_end": null
+   "n_words": 439
   },
   {
    "id": "page-003",
@@ -231,9 +61,7 @@
    "page_start": 3,
    "page_end": 3,
    "n_chars": 2326,
-   "n_words": 453,
-   "label_start": null,
-   "label_end": null
+   "n_words": 453
   },
   {
    "id": "page-004",
@@ -243,9 +71,7 @@
    "page_start": 4,
    "page_end": 4,
    "n_chars": 1946,
-   "n_words": 379,
-   "label_start": null,
-   "label_end": null
+   "n_words": 379
   },
   {
    "id": "page-005",
@@ -255,9 +81,7 @@
    "page_start": 5,
    "page_end": 5,
    "n_chars": 1804,
-   "n_words": 343,
-   "label_start": null,
-   "label_end": null
+   "n_words": 343
   },
   {
    "id": "page-006",
@@ -267,9 +91,7 @@
    "page_start": 6,
    "page_end": 6,
    "n_chars": 2418,
-   "n_words": 454,
-   "label_start": null,
-   "label_end": null
+   "n_words": 454
   },
   {
    "id": "page-007",
@@ -279,9 +101,7 @@
    "page_start": 7,
    "page_end": 7,
    "n_chars": 2385,
-   "n_words": 477,
-   "label_start": null,
-   "label_end": null
+   "n_words": 477
   },
   {
    "id": "page-008",
@@ -291,9 +111,7 @@
    "page_start": 8,
    "page_end": 8,
    "n_chars": 1799,
-   "n_words": 343,
-   "label_start": null,
-   "label_end": null
+   "n_words": 343
   },
   {
    "id": "page-009",
@@ -303,9 +121,7 @@
    "page_start": 9,
    "page_end": 9,
    "n_chars": 2029,
-   "n_words": 364,
-   "label_start": null,
-   "label_end": null
+   "n_words": 364
   },
   {
    "id": "page-010",
@@ -315,9 +131,7 @@
    "page_start": 10,
    "page_end": 10,
    "n_chars": 1937,
-   "n_words": 361,
-   "label_start": null,
-   "label_end": null
+   "n_words": 361
   },
   {
    "id": "page-011",
@@ -327,9 +141,7 @@
    "page_start": 11,
    "page_end": 11,
    "n_chars": 2447,
-   "n_words": 478,
-   "label_start": null,
-   "label_end": null
+   "n_words": 478
   },
   {
    "id": "page-012",
@@ -339,9 +151,7 @@
    "page_start": 12,
    "page_end": 12,
    "n_chars": 1852,
-   "n_words": 340,
-   "label_start": null,
-   "label_end": null
+   "n_words": 340
   },
   {
    "id": "page-013",
@@ -351,9 +161,7 @@
    "page_start": 13,
    "page_end": 13,
    "n_chars": 2087,
-   "n_words": 388,
-   "label_start": null,
-   "label_end": null
+   "n_words": 388
   },
   {
    "id": "page-014",
@@ -363,9 +171,7 @@
    "page_start": 14,
    "page_end": 14,
    "n_chars": 1878,
-   "n_words": 380,
-   "label_start": null,
-   "label_end": null
+   "n_words": 380
   },
   {
    "id": "page-015",
@@ -375,9 +181,7 @@
    "page_start": 15,
    "page_end": 15,
    "n_chars": 2256,
-   "n_words": 457,
-   "label_start": null,
-   "label_end": null
+   "n_words": 457
   },
   {
    "id": "page-016",
@@ -387,9 +191,7 @@
    "page_start": 16,
    "page_end": 16,
    "n_chars": 1645,
-   "n_words": 310,
-   "label_start": null,
-   "label_end": null
+   "n_words": 310
   },
   {
    "id": "page-017",
@@ -399,9 +201,7 @@
    "page_start": 17,
    "page_end": 17,
    "n_chars": 1770,
-   "n_words": 351,
-   "label_start": null,
-   "label_end": null
+   "n_words": 351
   },
   {
    "id": "page-018",
@@ -411,9 +211,7 @@
    "page_start": 18,
    "page_end": 18,
    "n_chars": 2149,
-   "n_words": 446,
-   "label_start": null,
-   "label_end": null
+   "n_words": 446
   },
   {
    "id": "page-019",
@@ -423,9 +221,7 @@
    "page_start": 19,
    "page_end": 19,
    "n_chars": 1850,
-   "n_words": 350,
-   "label_start": null,
-   "label_end": null
+   "n_words": 350
   },
   {
    "id": "page-020",
@@ -435,9 +231,7 @@
    "page_start": 20,
    "page_end": 20,
    "n_chars": 2388,
-   "n_words": 463,
-   "label_start": null,
-   "label_end": null
+   "n_words": 463
   },
   {
    "id": "page-021",
@@ -447,9 +241,7 @@
    "page_start": 21,
    "page_end": 21,
    "n_chars": 1742,
-   "n_words": 307,
-   "label_start": null,
-   "label_end": null
+   "n_words": 307
   },
   {
    "id": "page-022",
@@ -459,26 +251,8 @@
    "page_start": 22,
    "page_end": 22,
    "n_chars": 1292,
-   "n_words": 186,
-   "label_start": null,
-   "label_end": null
+   "n_words": 186
   }
  ],
- "diagnostics": {
-  "pages_without_text": 0,
-  "likely_scanned": false,
-  "toc_entries": 0,
-  "toc_inferred_entries": 13,
-  "toc_inferred_mean_confidence": 0.0,
-  "toc_inferred_empty_share": 0.0,
-  "toc_inferred_method": "regex",
-  "figure_entries": 0,
-  "figure_sequence_gaps": [],
-  "page_label_conflicts": {
-   "count": 0,
-   "items": []
-  },
-  "sections": 22,
-  "chars_total": 44794
- }
+ "structure_note": "Ingested at PAGE granularity by scripts/pdf-pages.py. This PDF carries no embedded outline and its inferred chapter structure was measurably wrong (bean 6xaz), so no chapter tree is claimed. A page is a determined division; an inferred chapter was not."
 }

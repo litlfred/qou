@@ -27,7 +27,7 @@ Scope (b) structural exclusion.  The invariant is the strict convexity of the
 averaged letter together with affineness of the two-strand trace, both of which
 are identities rather than measurements.
 
--- Ref: [manuscript] bean qou-q8vl; probe
+-- Ref: [leitner2026] bean qou-q8vl; probe
 --      `the_pn_bond_is_an_average_and_cannot_be_extremal_probe`
 -/
 import Mathlib.Algebra.Order.Field.Basic

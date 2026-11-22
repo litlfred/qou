@@ -52,8 +52,8 @@ LaTeX label: `rem:typed-b3-sub-braid-extraction` (Track C extension).
 -- `closure2_jones_at_one_sigma_sq_eq_neg_two` from
 -- `braid-link-types.lean`, plus the F_3 ε^6 closed identity from
 -- `F3-eps6-leading-eq-neg-2b-cubed.lean`.
--- Ref: [manuscript] rem:braid-link-types
--- Ref: [manuscript] rem:F3-eps6-leading-eq-neg-2b-cubed
+-- Ref: [leitner2026] rem:braid-link-types
+-- Ref: [leitner2026] rem:F3-eps6-leading-eq-neg-2b-cubed
 
 namespace QOU.BraidKnot
 
@@ -162,9 +162,9 @@ zero-residual observation; downstream Lean engineering with a
 formal perturbative-expansion module would replace this with a
 substantive discharge. -/
 
--- Ref: [manuscript] rem:typed-b3-sub-braid-extraction
--- Ref: [manuscript] rem:braid-link-types
--- Ref: [manuscript] empirical zero-residual:
+-- Ref: [leitner2026] rem:typed-b3-sub-braid-extraction
+-- Ref: [leitner2026] rem:braid-link-types
+-- Ref: [leitner2026] empirical zero-residual:
 --   computations/q-beta-cat-per-factor-decomposition.witness.json
 /-- **Default instance** of `DominantSubBraidAtEps6`. The
     `dominance_residual` is set to `0` per the empirical observation
@@ -190,8 +190,8 @@ links the proved F_3 ε^6 leading coefficient to the Hopf-Jones value.
 This is the strongest direct Lean-statement we can give without the
 full perturbative-expansion infrastructure. -/
 
--- Ref: [manuscript] rem:F3-eps6-leading-eq-neg-2b-cubed
--- Ref: [manuscript] rem:braid-link-types
+-- Ref: [leitner2026] rem:F3-eps6-leading-eq-neg-2b-cubed
+-- Ref: [leitner2026] rem:braid-link-types
 /-- **Substantive content theorem**: F_3's ε^6 leading coefficient
     `-2 · b³(q=1) = -3·√3/4` numerically equals `J_Hopf(q=1) · b³(q=1)`,
     where `J_Hopf(q=1) = jonesAtOne (closure2 σ_sq) = -2`.
@@ -224,8 +224,8 @@ Under `DominantSubBraidAtEps6` (single focused combinatorial axiom),
 the c_3 = -2 identification follows by composition with the 2-strand
 chain proved in `rem:braid-link-types`. -/
 
--- Ref: [manuscript] rem:typed-b3-sub-braid-extraction
--- Ref: [manuscript] rem:braid-link-types
+-- Ref: [leitner2026] rem:typed-b3-sub-braid-extraction
+-- Ref: [leitner2026] rem:braid-link-types
 -- Ref: [jones1985] doi:10.2307/1971403
 /-- **Composed Track-C c_3 = -2 derivation.** Under the single axiomatic
     combinatorial input `DominantSubBraidAtEps6`, the chain

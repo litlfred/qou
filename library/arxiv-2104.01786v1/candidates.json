@@ -3,13 +3,14 @@
  "doc_id": "arxiv-2104.01786v1",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "34087d5063ef550753f920ff521868df1305989eeb4e1a9e630da8e17185da80",
   "file": "2104.01786v1.pdf"
  },
  "provenance": {
-  "title": "Spin(11, 3), particles and octonions Kirill Krasnov",
-  "authors": "School of Mathematical Sciences, University of Nottingham , NG7 2RD, UK",
+  "title": "Spin(11, 3), particles and octonions",
+  "authors": "Kirill Krasnov",
   "arxiv": {
    "id": "2104.01786",
    "version": "1",
@@ -20,91 +21,43 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 6,
+  "candidates": 1,
   "by_kind": {
-   "theorem": 2,
-   "remark": 4
+   "proposition": 1
   },
-  "formalization_candidates": 2
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 1
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  }
  },
  "candidates": [
   {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "1",
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
    "name": null,
-   "statement": "Let X, Y be a pair of division algebras from the set C, \u02dcC, H, \u02dcH, O, \u02dcO, where C, \u02dcC",
+   "statement": "The suggestion that octonions may provide a useful language for describing elementary particles is almost as old as the Standard Model (SM) itself, see [@Gunaydin:1973rs] and references therein.[^1] Thus, it was observed early on that the 8-dimensional space of octonions, after a complex structure is chosen, splits as ${\\mathbb O}={\\mathbb C}\\oplus{\\mathbb C}^3$, with the first factor naturally corresponding to leptons and the second one describing quarks.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-000-1-introduction.md (p. 1-6)",
+   "external_refs": [],
+   "quantitative_values": [],
    "section_file": "sections/sec-000-1-introduction.md",
    "section_title": "Introduction",
-   "pages": "1-5",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "1",
-   "name": null,
-   "statement": "The construction in Theorem 1 is very closely related to that of 2 \u00d72 matrix algebras",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-5",
+   "pages": "1-6",
    "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "2",
-   "name": null,
-   "statement": "This construction of the Cli\ufb00ord algebra identi\ufb01es spinors with ( X \u2297 Y)2, and thus a",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-5",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "3",
-   "name": null,
-   "statement": "The case of Cli\ufb00 11, 3 corresponds to X = O, Y = \u02dcO. The split case Cli\ufb00 7, 7 can be",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-5",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "4",
-   "name": null,
-   "statement": "Note that there is no way to get the compact case Spin(14) by this c onstruction,",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-5",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "2",
-   "name": null,
-   "statement": "There exist two complex structures J, \u02dcJ on the space of semi-spinors of Spin(11, 3),",
-   "section_file": "sections/sec-001-21-octonions.md",
-   "section_title": "Octonions",
-   "pages": "5-6",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-000-1-introduction.md (p. 1-6)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-000-01",
+   "block_iri": "library/arxiv-2104.01786v1/blocks/prop-sec-000-01",
+   "claim_id": "arxiv-2104.01786v1#prop-sec-000-01"
   }
  ]
 }

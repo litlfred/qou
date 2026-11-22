@@ -1,0 +1,49 @@
+11.3 Evaluating asymptotics 367
+
+amoeba(Q)° corresponding to a convergent Laurent expansion of the form
+F(z) = P(z)/Q(z) = 1, a,z". Pick x, € OB and suppose that there is a non-
+obstructed direction 7, in the interior of N,,,(B), such that the set local(#,) isa
+singleton {z} = {exp(x. +7y)}. Writing gj = Qj;oexp and q; = hom(q;, x. +iy),
+Lemma 11.36 allows us to develop each qj" as a sum of terms of the form
+c(m, n, Dang". Multiplying these series and then multiplying by P gives
+an expansion of the form
+
+fla) = Flexp(@)) =) (n, ma Way, (11.16)
+
+m
+
+where g(a)” = Wer q(x)", the vector n has nonnegative integer co-
+ordinates, the sum contains only terms whose degrees are the degree of g or
+greater, and the sum contains only finitely many terms of any fixed degree.
+
+Theorem 11.40. Under the setup above, let b = (b,,..., by) be the sequence of
+degrees of homogeneous polynomials q\,...,qx and let ¥njm be the general-
+ized Fourier transform of «™ Q-*~". Then there is an asymptotic development
+
+dp © Z-"(2n)4 » c(n, Mn") (11.17)
+nm
+
+valid when r — 09 with f restricted to some neighborhood of *,. For any N,
+there are only finitely many terms with |m| + d—(s+n)-b <N. When N > 0,
+truncating the sum to the finitely many terms satisfying this inequality yields a
+
+remainder of O (In).
+If local(#,) has cardinality greater than 1 and f., is interior to N(z) and
+non-obstructed for every z € local (#,.) then the series on the right-hand side
+of (11.17) can be summed over z € local(F,.) to give an asymptotic series for
+
+dp.
+
+Proof We have seen in Corollary 11.35 that, up to a term of lower expo-
+nential order, a, is computed by a sum of integrals over chains aw) of
+Fourier integrands f(z)e~"* dz. We assume without loss of generality that
+local(?#,) = {z} = {exp(a, + iy)}; the case of cardinality greater than one
+follows by a similar argument. Expand f via the series (11.16), ordered by in-
+creasing homogeneous degree. Equation (11.13) of Lemma 11.36 shows that
+the series is a true asymptotic development, in the sense that the remainders be-
+ginning with a term of a given homogeneous degree f are O(|x/’) near x + iy
+on any closed cone avoiding log V.
+
+Lemma 11.37 tells us we can integrate f(z)e~"’* dz term by term over ay)
+for all terms of homogeneous degree less than £, and as long as B > —d the re-
+mainder of the integral will be O(/r|*“). By Lemma 11.39 each integral over

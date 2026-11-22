@@ -17,7 +17,7 @@ That claim was wrong twice.
 
 **Unreachable.**  Per AGENTS.md §0a a block's `lean.ref` resolves to the
 **sibling first**, and the sibling
-[`knots-particles-confinement/unstable-atom-decay-channel.lean`](../../../knots-particles-confinement/unstable-atom-decay-channel.lean)
+[`mass-theory/unstable-atom-decay-channel.lean`](../../../mass-theory/unstable-atom-decay-channel.lean)
 exists — so `qou:QOU.BraidKnot.UnstableAtom.decay_channel` resolved there,
 never here.  Worse, the sibling declared `decay_channel_unique` and no
 `decay_channel`, so the ref named a declaration that existed only at a path

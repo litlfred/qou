@@ -3,13 +3,14 @@
  "doc_id": "arxiv-2106.01332v4",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "44c19a99624997bfbc59bdd31e9e1f3bdf8ed67ce44ef8e239bf2cd45244ce41",
   "file": "2106.01332v4.pdf"
  },
  "provenance": {
-  "title": "Braided matter interactions in quantum gravity via 1-handle attachment",
-  "authors": "Niels Gresnigt, 1,\u2217 Antonino Marcian\u00f2,2, 3,\u2020 and Emanuele Zappala 4,\u2021",
+  "title": "Braided matter interactions in quantum gravity via 1 -handle attachment",
+  "authors": "Niels Gresnigt,1, \u2217Antonino Marcian\u00f2,2, 3, \u2020 and Emanuele Zappala4, \u2021",
   "arxiv": {
    "id": "2106.01332",
    "version": "4",
@@ -20,38 +21,9 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 2,
-  "by_kind": {
-   "theorem": 2
-  },
-  "formalization_candidates": 2
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "1",
-   "name": null,
-   "statement": "LetC ={X0,Y,X 1} be a cobordism. Then C can be obtained as:",
-   "section_file": "sections/sec-005-l-using-the-de\ufb01nition-of-braided-network-a-frame.md",
-   "section_title": "Using the de\ufb01nition of braided network, a framed link L is",
-   "pages": "7-10",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "2",
-   "name": null,
-   "statement": "LetN be a trivalent (oriented) braided network and let n\u2265 1. Then, KLn(N ) is an isotopy invariant",
-   "section_file": "sections/sec-006-vi-isotopy-inv-ariants-of-braided-networks.md",
-   "section_title": "ISOTOPY INV ARIANTS OF BRAIDED NETWORKS",
-   "pages": "10-13",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  }
- ]
+ "candidates": []
 }

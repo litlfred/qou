@@ -40,8 +40,8 @@ universe u v
     When `qinv = 1` the formula reduces to `nablaEndo`, the undeformed
     connection.
 
-    Ref: [manuscript] §1-quantum-observable-universe -/
--- Ref: [manuscript] §1-quantum-observable-universe
+    Ref: [leitner2026] §1-quantum-observable-universe -/
+-- Ref: [leitner2026] §1-quantum-observable-universe
 structure CategoricalDiracOperator (R : Type*) [CommRing R]
     (C : Type u) [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C]

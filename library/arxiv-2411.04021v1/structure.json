@@ -7,10 +7,11 @@
   "bytes": 485198,
   "pages": 19,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,20 +22,28 @@
   },
   "doi": null,
   "title": "On the Gram determinants of the Specht modules",
-  "authors_raw": "Lehrstuhl f\u00fcr Algebra und Zahlentheorie, RWTH Aachen University",
+  "authors_raw": "Linda Hoyer",
   "title_lines": [
-   "On the Gram determinants of the Specht modules",
-   "Linda Hoyer \u2217"
+   "On the Gram determinants of the Specht modules"
   ],
-  "abstract": "For every partition\u03bb of a positive integern, letS\u03bb be the corresponding Specht module of the symmetric group Sn, and let det(\u03bb)\u2208 Z denote the Gram determinant of the canonical bilinear form with respect to the standard basis ofS\u03bb. Writing det(\u03bb) = m\u00b7 2a(2) \u03bb for integersa(2) \u03bb andm withm odd, we show that if the dimension ofS\u03bb is even, thena(2) \u03bb is also even. This confirms a conjecture posed by Richard Parker in the special case of the symmetric groups.",
+  "abstract": "For every partition λ of a positive integer n, let Sλ be the corresponding Specht module of the symmetric group Sn, and let det(λ) ∈Z denote the Gram determinant of the canonical bilinear form with respect to the standard basis of Sλ. Writing det(λ) = m · 2a(2) λ for integers a(2) λ and m with m odd, we show that if the dimension of Sλ is even, then a(2) λ is also even. This confirms a conjecture posed by Richard Parker in the special case of the symmetric groups.",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20241107015158Z",
-   "Creator": "LaTeX with hyperref",
    "Producer": "pdfTeX-1.40.25",
-   "Title": ""
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20241107015158Z"
   },
-  "title_prev": "On the Gram determinants of the Specht modules Linda Hoyer \u2217"
+  "title_raw": "On the Gram determinants of the Specht modules",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "On the Gram determinants of the Specht modules",
+   "outline": "Introduction",
+   "text": "On the Gram determinants of the Specht modules",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -42,25 +51,232 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Preliminaries",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Proof of Theorem 1.1",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Hook diagram of (7, 4, 3), with the hook of the cell c = (1, 2) colored gray. Note that the entries of the first column of a hook diagram uniquely determine the underlying partition. Generalizing that observation, a sequence of β-numbers is a sequence β = (b1, . . . , bm) of non-negative integers su",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Hook diagrams of (2, 1(5)) and (3, 3, 1)",
+   "page": 7,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Hook diagrams of (6, 3, 2) and (6, 4, 1). We are left with the case that d(λ, D(µ)) = 2 for an odd branch µ of λ. This case",
+   "page": 9,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "The values of A(n) and B(n) for the first 40 values of n. Some patterns are easily observed: It seems that A(n) = B(n)/2 in most cases; for 1 ≤n ≤100, this holds true for 75 values of n. Moreover, it holds that the difference B(n)/2 −A(n) ≥0 with only a few exceptions; these being n = 12, 36, 48, 54",
+   "page": 18,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 726,
+   "n_words": 125,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
@@ -68,8 +284,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 3984,
-   "n_words": 670
+   "n_chars": 4058,
+   "n_words": 732,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-preliminaries",
@@ -78,8 +296,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 7,
-   "n_chars": 7714,
-   "n_words": 1445
+   "n_chars": 8039,
+   "n_words": 1757,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-proof-of-theorem-11",
@@ -88,16 +308,26 @@
    "level": 1,
    "page_start": 7,
    "page_end": 19,
-   "n_chars": 19721,
-   "n_words": 3902
+   "n_chars": 20283,
+   "n_words": 4447,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 3,
-  "sections": 3,
-  "chars_total": 31419,
+  "toc_inferred_entries": 0,
+  "figure_entries": 4,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 4,
+  "chars_total": 33106,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "main.tex",
@@ -110,18 +340,23 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.995,
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.966,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-preliminaries",
      "title": "Preliminaries",
-     "prose_ratio": 0.564,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.526,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-002-proof-of-theorem-11",

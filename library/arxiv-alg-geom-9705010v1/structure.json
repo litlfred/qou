@@ -8,7 +8,7 @@
   "pages": 41,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -20,7 +20,7 @@
    "stamp_date": "7 May 1997"
   },
   "doi": null,
-  "title": "arXiv:alg-geom/9705010v1 7 May 1997",
+  "title": "Seiberg-Witten Integrable Systems",
   "authors_raw": "Ron Y. Donagi",
   "title_lines": [
    "Seiberg-Witten Integrable Systems"
@@ -43,7 +43,8 @@
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:alg-geom/9705010v1 7 May 1997"
  },
  "toc": [
   {
@@ -74,7 +75,7 @@
   },
   {
    "level": 1,
-   "title": "\u00a71. Some Physics Background Electromagnetism",
+   "title": "§1. Some Physics Background Electromagnetism",
    "page": 3,
    "source": "inferred",
    "number": null,
@@ -170,7 +171,7 @@
   },
   {
    "level": 1,
-   "title": "\u00a72. Why integrable systems Algebraically integrable systems",
+   "title": "§2. Why integrable systems Algebraically integrable systems",
    "page": 16,
    "source": "inferred",
    "number": null,
@@ -182,7 +183,7 @@
   },
   {
    "level": 1,
-   "title": "Seiberg-Witten Di\ufb00erentials",
+   "title": "Seiberg-Witten Diﬀerentials",
    "page": 18,
    "source": "inferred",
    "number": null,
@@ -194,7 +195,7 @@
   },
   {
    "level": 1,
-   "title": "Linearity: complexi\ufb01ed Duistermaat-Heckman",
+   "title": "Linearity: complexiﬁed Duistermaat-Heckman",
    "page": 19,
    "source": "inferred",
    "number": null,
@@ -206,7 +207,7 @@
   },
   {
    "level": 1,
-   "title": "\u00a73. Which integrable system",
+   "title": "§3. Which integrable system",
    "page": 21,
    "source": "inferred",
    "number": null,
@@ -290,7 +291,7 @@
   },
   {
    "level": 1,
-   "title": "Higgs to \u221e: symmetry breaking",
+   "title": "Higgs to ∞: symmetry breaking",
    "page": 29,
    "source": "inferred",
    "number": null,
@@ -314,7 +315,7 @@
   },
   {
    "level": 1,
-   "title": "\u00a74. Other integrable systems",
+   "title": "§4. Other integrable systems",
    "page": 30,
    "source": "inferred",
    "number": null,
@@ -813,26 +814,38 @@
    "title": "Contents",
    "level": 1,
    "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0,
+   "page_end": 2,
+   "n_chars": 1011,
+   "n_words": 137,
    "label_start": null,
-   "label_end": null
+   "label_end": "2"
   },
   {
    "id": "sec-001-introduction",
    "number": null,
    "title": "Introduction",
    "level": 1,
-   "page_start": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 5686,
+   "n_words": 906,
+   "label_start": "2",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-002-1-some-physics-background-electromagnetism",
+   "number": null,
+   "title": "§1. Some Physics Background Electromagnetism",
+   "level": 1,
+   "page_start": 3,
    "page_end": 4,
-   "n_chars": 10565,
-   "n_words": 1721,
-   "label_start": null,
+   "n_chars": 3838,
+   "n_words": 674,
+   "label_start": "3",
    "label_end": "4"
   },
   {
-   "id": "sec-002-yang-mills-theory",
+   "id": "sec-003-yang-mills-theory",
    "number": null,
    "title": "Yang-Mills theory",
    "level": 1,
@@ -844,7 +857,7 @@
    "label_end": "5"
   },
   {
-   "id": "sec-003-quantization",
+   "id": "sec-004-quantization",
    "number": null,
    "title": "Quantization",
    "level": 1,
@@ -856,7 +869,7 @@
    "label_end": "8"
   },
   {
-   "id": "sec-004-supersymmetry",
+   "id": "sec-005-supersymmetry",
    "number": null,
    "title": "Supersymmetry",
    "level": 1,
@@ -868,7 +881,7 @@
    "label_end": "10"
   },
   {
-   "id": "sec-005-n2-super-yang-mills",
+   "id": "sec-006-n2-super-yang-mills",
    "number": null,
    "title": "N=2 Super Yang-Mills",
    "level": 1,
@@ -880,7 +893,7 @@
    "label_end": "12"
   },
   {
-   "id": "sec-006-duality",
+   "id": "sec-007-duality",
    "number": null,
    "title": "Duality",
    "level": 1,
@@ -892,7 +905,7 @@
    "label_end": "13"
   },
   {
-   "id": "sec-007-the-seiberg-witten-solution",
+   "id": "sec-008-the-seiberg-witten-solution",
    "number": null,
    "title": "The Seiberg-Witten solution",
    "level": 1,
@@ -904,21 +917,33 @@
    "label_end": "14"
   },
   {
-   "id": "sec-008-adding-matter",
+   "id": "sec-009-adding-matter",
    "number": null,
    "title": "Adding matter",
    "level": 1,
    "page_start": 14,
-   "page_end": 18,
-   "n_chars": 11617,
-   "n_words": 2104,
+   "page_end": 16,
+   "n_chars": 5721,
+   "n_words": 1053,
    "label_start": "14",
+   "label_end": "16"
+  },
+  {
+   "id": "sec-010-2-why-integrable-systems-algebraically-integrabl",
+   "number": null,
+   "title": "§2. Why integrable systems Algebraically integrable systems",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 5868,
+   "n_words": 1047,
+   "label_start": "16",
    "label_end": "18"
   },
   {
-   "id": "sec-009-seiberg-witten-di\ufb00erentials",
+   "id": "sec-011-seiberg-witten-diﬀerentials",
    "number": null,
-   "title": "Seiberg-Witten Di\ufb00erentials",
+   "title": "Seiberg-Witten Diﬀerentials",
    "level": 1,
    "page_start": 18,
    "page_end": 19,
@@ -928,9 +953,9 @@
    "label_end": "19"
   },
   {
-   "id": "sec-010-linearity-complexi\ufb01ed-duistermaat-heckman",
+   "id": "sec-012-linearity-complexiﬁed-duistermaat-heckman",
    "number": null,
-   "title": "Linearity: complexi\ufb01ed Duistermaat-Heckman",
+   "title": "Linearity: complexiﬁed Duistermaat-Heckman",
    "level": 1,
    "page_start": 19,
    "page_end": 21,
@@ -940,9 +965,9 @@
    "label_end": "21"
   },
   {
-   "id": "sec-011-3-which-integrable-system",
+   "id": "sec-013-3-which-integrable-system",
    "number": null,
-   "title": "\u00a73. Which integrable system",
+   "title": "§3. Which integrable system",
    "level": 1,
    "page_start": 21,
    "page_end": 22,
@@ -952,7 +977,7 @@
    "label_end": "22"
   },
   {
-   "id": "sec-012-meromorphic-higgs-bundles",
+   "id": "sec-014-meromorphic-higgs-bundles",
    "number": null,
    "title": "Meromorphic Higgs bundles",
    "level": 1,
@@ -964,7 +989,7 @@
    "label_end": "24"
   },
   {
-   "id": "sec-013-the-spectral-curves",
+   "id": "sec-015-the-spectral-curves",
    "number": null,
    "title": "The spectral curves",
    "level": 1,
@@ -976,7 +1001,7 @@
    "label_end": "26"
   },
   {
-   "id": "sec-014-elliptic-solitons",
+   "id": "sec-016-elliptic-solitons",
    "number": null,
    "title": "Elliptic solitons",
    "level": 1,
@@ -988,7 +1013,7 @@
    "label_end": "27"
   },
   {
-   "id": "sec-015-tests",
+   "id": "sec-017-tests",
    "number": null,
    "title": "Tests",
    "level": 1,
@@ -1000,7 +1025,7 @@
    "label_end": "27"
   },
   {
-   "id": "sec-016-consistency-with-seiberg-witten",
+   "id": "sec-018-consistency-with-seiberg-witten",
    "number": null,
    "title": "Consistency with Seiberg-Witten",
    "level": 1,
@@ -1012,7 +1037,7 @@
    "label_end": "27"
   },
   {
-   "id": "sec-017-mass-to-zero-the-n4-limit",
+   "id": "sec-019-mass-to-zero-the-n4-limit",
    "number": null,
    "title": "Mass to zero: the N=4 limit",
    "level": 1,
@@ -1024,9 +1049,9 @@
    "label_end": "29"
   },
   {
-   "id": "sec-018-higgs-to-symmetry-breaking",
+   "id": "sec-020-higgs-to-symmetry-breaking",
    "number": null,
-   "title": "Higgs to \u221e: symmetry breaking",
+   "title": "Higgs to ∞: symmetry breaking",
    "level": 1,
    "page_start": 29,
    "page_end": 30,
@@ -1036,7 +1061,7 @@
    "label_end": "30"
   },
   {
-   "id": "sec-019-singularities",
+   "id": "sec-021-singularities",
    "number": null,
    "title": "Singularities",
    "level": 1,
@@ -1048,9 +1073,9 @@
    "label_end": "30"
   },
   {
-   "id": "sec-020-4-other-integrable-systems",
+   "id": "sec-022-4-other-integrable-systems",
    "number": null,
-   "title": "\u00a74. Other integrable systems",
+   "title": "§4. Other integrable systems",
    "level": 1,
    "page_start": 30,
    "page_end": 31,
@@ -1060,55 +1085,55 @@
    "label_end": "31"
   },
   {
-   "id": "sec-021-pure-n2-sym",
+   "id": "sec-023-pure-n2-sym",
    "number": null,
    "title": "Pure N=2 SYM",
    "level": 1,
    "page_start": 31,
    "page_end": 31,
-   "n_chars": 812,
-   "n_words": 130,
+   "n_chars": 981,
+   "n_words": 160,
    "label_start": "31",
    "label_end": "31"
   },
   {
-   "id": "sec-022-periodic-toda",
-   "number": null,
-   "title": "Periodic Toda",
-   "level": 1,
-   "page_start": 31,
-   "page_end": 31,
-   "n_chars": 87,
-   "n_words": 15,
-   "label_start": "31",
-   "label_end": "31"
-  },
-  {
-   "id": "sec-023-the-toda-system",
+   "id": "sec-024-the-toda-system",
    "number": null,
    "title": "The Toda system",
    "level": 1,
    "page_start": 31,
-   "page_end": 33,
-   "n_chars": 4066,
-   "n_words": 823,
+   "page_end": 32,
+   "n_chars": 1585,
+   "n_words": 292,
    "label_start": "31",
-   "label_end": "33"
+   "label_end": "32"
   },
   {
-   "id": "sec-024-the-spectral-curves",
+   "id": "sec-025-periodic-toda",
+   "number": null,
+   "title": "Periodic Toda",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 34,
+   "n_chars": 5059,
+   "n_words": 1022,
+   "label_start": "32",
+   "label_end": "34"
+  },
+  {
+   "id": "sec-026-the-spectral-curves",
    "number": null,
    "title": "The spectral curves",
    "level": 1,
-   "page_start": 33,
+   "page_start": 34,
    "page_end": 37,
-   "n_chars": 8677,
-   "n_words": 1678,
-   "label_start": "33",
+   "n_chars": 6095,
+   "n_words": 1188,
+   "label_start": "34",
    "label_end": "37"
   },
   {
-   "id": "sec-025-fundamental-matter",
+   "id": "sec-027-fundamental-matter",
    "number": null,
    "title": "Fundamental matter",
    "level": 1,
@@ -1120,7 +1145,7 @@
    "label_end": "37"
   },
   {
-   "id": "sec-026-adjoint-matter",
+   "id": "sec-028-adjoint-matter",
    "number": null,
    "title": "Adjoint matter",
    "level": 1,
@@ -1132,7 +1157,7 @@
    "label_end": "38"
   },
   {
-   "id": "sec-027-stringy-integrable-systems",
+   "id": "sec-029-stringy-integrable-systems",
    "number": null,
    "title": "Stringy integrable systems?",
    "level": 1,
@@ -1144,7 +1169,7 @@
    "label_end": "39"
   },
   {
-   "id": "sec-028-references",
+   "id": "sec-030-references",
    "number": null,
    "title": "References",
    "level": 1,
@@ -1162,7 +1187,7 @@
   "toc_entries": 31,
   "toc_inferred_entries": 31,
   "toc_inferred_mean_confidence": 0.61,
-  "toc_inferred_empty_share": 0.034,
+  "toc_inferred_empty_share": 0.0,
   "toc_inferred_method": "font",
   "figure_entries": 0,
   "figure_sequence_gaps": [],
@@ -1170,7 +1195,8 @@
    "count": 0,
    "items": []
   },
-  "sections": 30,
-  "chars_total": 114754
+  "sections": 32,
+  "chars_total": 114774,
+  "furniture_lines_stripped": 0
  }
 }

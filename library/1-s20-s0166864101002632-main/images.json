@@ -1,0 +1,533 @@
+{
+  "$schema": "folio-document-images/v1",
+  "doc_id": "1-s20-s0166864101002632-main",
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 0.004302,
+        "imagesOnPage": 6,
+        "page": 1
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      }
+    },
+    {
+      "id": "img-p001-2",
+      "file": "images/img-p001-2.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 0.015001,
+        "imagesOnPage": 6,
+        "page": 1
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      }
+    },
+    {
+      "id": "img-p001-3",
+      "file": "images/img-p001-3.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 0.000426,
+        "imagesOnPage": 6,
+        "page": 1
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      },
+      "placements": [
+        {
+          "page": 1,
+          "coverage": 0.000426,
+          "imagesOnPage": 6
+        },
+        {
+          "page": 1,
+          "coverage": 0.000426,
+          "imagesOnPage": 6
+        },
+        {
+          "page": 1,
+          "coverage": 3.9e-05,
+          "imagesOnPage": 6
+        },
+        {
+          "page": 1,
+          "coverage": 4.3e-05,
+          "imagesOnPage": 6
+        },
+        {
+          "page": 2,
+          "coverage": 3.9e-05,
+          "imagesOnPage": 5
+        },
+        {
+          "page": 2,
+          "coverage": 3.6e-05,
+          "imagesOnPage": 5
+        },
+        {
+          "page": 2,
+          "coverage": 5e-06,
+          "imagesOnPage": 5
+        },
+        {
+          "page": 2,
+          "coverage": 3.9e-05,
+          "imagesOnPage": 5
+        },
+        {
+          "page": 2,
+          "coverage": 4.7e-05,
+          "imagesOnPage": 5
+        },
+        {
+          "page": 3,
+          "coverage": 5e-06,
+          "imagesOnPage": 2
+        },
+        {
+          "page": 3,
+          "coverage": 6.5e-05,
+          "imagesOnPage": 2
+        },
+        {
+          "page": 4,
+          "coverage": 6e-06,
+          "imagesOnPage": 12
+        },
+        {
+          "page": 4,
+          "coverage": 3.6e-05,
+          "imagesOnPage": 12
+        },
+        {
+          "page": 4,
+          "coverage": 4.3e-05,
+          "imagesOnPage": 12
+        },
+        {
+          "page": 4,
+          "coverage": 1.7e-05,
+          "imagesOnPage": 12
+        },
+        {
+          "page": 4,
+          "coverage": 3.6e-05,
+          "imagesOnPage": 12
+        },
+        {
+          "page": 4,
+          "coverage": 4.3e-05,
+          "imagesOnPage": 12
+        },
+        {
+          "page": 4,
+          "coverage": 9.3e-05,
+          "imagesOnPage": 12
+        },
+        {
+          "page": 4,
+          "coverage": 1e-05,
+          "imagesOnPage": 12
+        },
+        {
+          "page": 4,
+          "coverage": 1.7e-05,
+          "imagesOnPage": 12
+        },
+        {
+          "page": 4,
+          "coverage": 3.9e-05,
+          "imagesOnPage": 12
+        },
+        {
+          "page": 4,
+          "coverage": 4.7e-05,
+          "imagesOnPage": 12
+        },
+        {
+          "page": 4,
+          "coverage": 8e-06,
+          "imagesOnPage": 12
+        },
+        {
+          "page": 5,
+          "coverage": 2.1e-05,
+          "imagesOnPage": 16
+        },
+        {
+          "page": 5,
+          "coverage": 3.9e-05,
+          "imagesOnPage": 16
+        },
+        {
+          "page": 5,
+          "coverage": 4.7e-05,
+          "imagesOnPage": 16
+        },
+        {
+          "page": 5,
+          "coverage": 3.6e-05,
+          "imagesOnPage": 16
+        },
+        {
+          "page": 5,
+          "coverage": 4.7e-05,
+          "imagesOnPage": 16
+        },
+        {
+          "page": 5,
+          "coverage": 3.6e-05,
+          "imagesOnPage": 16
+        },
+        {
+          "page": 5,
+          "coverage": 4.3e-05,
+          "imagesOnPage": 16
+        },
+        {
+          "page": 5,
+          "coverage": 3.9e-05,
+          "imagesOnPage": 16
+        },
+        {
+          "page": 5,
+          "coverage": 4.7e-05,
+          "imagesOnPage": 16
+        },
+        {
+          "page": 5,
+          "coverage": 3.6e-05,
+          "imagesOnPage": 16
+        },
+        {
+          "page": 5,
+          "coverage": 4.3e-05,
+          "imagesOnPage": 16
+        },
+        {
+          "page": 5,
+          "coverage": 8e-06,
+          "imagesOnPage": 16
+        },
+        {
+          "page": 5,
+          "coverage": 3.9e-05,
+          "imagesOnPage": 16
+        },
+        {
+          "page": 5,
+          "coverage": 4.7e-05,
+          "imagesOnPage": 16
+        },
+        {
+          "page": 5,
+          "coverage": 8e-06,
+          "imagesOnPage": 16
+        },
+        {
+          "page": 5,
+          "coverage": 8e-06,
+          "imagesOnPage": 16
+        },
+        {
+          "page": 7,
+          "coverage": 6e-06,
+          "imagesOnPage": 3
+        },
+        {
+          "page": 7,
+          "coverage": 3.9e-05,
+          "imagesOnPage": 3
+        },
+        {
+          "page": 7,
+          "coverage": 4.7e-05,
+          "imagesOnPage": 3
+        },
+        {
+          "page": 8,
+          "coverage": 3.9e-05,
+          "imagesOnPage": 14
+        },
+        {
+          "page": 8,
+          "coverage": 4.7e-05,
+          "imagesOnPage": 14
+        },
+        {
+          "page": 8,
+          "coverage": 8e-06,
+          "imagesOnPage": 14
+        },
+        {
+          "page": 8,
+          "coverage": 4e-06,
+          "imagesOnPage": 14
+        },
+        {
+          "page": 8,
+          "coverage": 1e-05,
+          "imagesOnPage": 14
+        },
+        {
+          "page": 8,
+          "coverage": 4e-06,
+          "imagesOnPage": 14
+        },
+        {
+          "page": 8,
+          "coverage": 1e-05,
+          "imagesOnPage": 14
+        },
+        {
+          "page": 8,
+          "coverage": 8e-06,
+          "imagesOnPage": 14
+        },
+        {
+          "page": 8,
+          "coverage": 3.9e-05,
+          "imagesOnPage": 14
+        },
+        {
+          "page": 8,
+          "coverage": 1.1e-05,
+          "imagesOnPage": 14
+        },
+        {
+          "page": 8,
+          "coverage": 6e-06,
+          "imagesOnPage": 14
+        },
+        {
+          "page": 8,
+          "coverage": 8e-06,
+          "imagesOnPage": 14
+        },
+        {
+          "page": 8,
+          "coverage": 6e-06,
+          "imagesOnPage": 14
+        },
+        {
+          "page": 8,
+          "coverage": 8e-06,
+          "imagesOnPage": 14
+        },
+        {
+          "page": 9,
+          "coverage": 6e-06,
+          "imagesOnPage": 13
+        },
+        {
+          "page": 9,
+          "coverage": 1.4e-05,
+          "imagesOnPage": 13
+        },
+        {
+          "page": 9,
+          "coverage": 5e-06,
+          "imagesOnPage": 13
+        },
+        {
+          "page": 9,
+          "coverage": 1.4e-05,
+          "imagesOnPage": 13
+        },
+        {
+          "page": 9,
+          "coverage": 2.7e-05,
+          "imagesOnPage": 13
+        },
+        {
+          "page": 9,
+          "coverage": 1e-05,
+          "imagesOnPage": 13
+        },
+        {
+          "page": 9,
+          "coverage": 5e-06,
+          "imagesOnPage": 13
+        },
+        {
+          "page": 9,
+          "coverage": 1.1e-05,
+          "imagesOnPage": 13
+        },
+        {
+          "page": 9,
+          "coverage": 5e-06,
+          "imagesOnPage": 13
+        },
+        {
+          "page": 9,
+          "coverage": 1.4e-05,
+          "imagesOnPage": 13
+        },
+        {
+          "page": 9,
+          "coverage": 6e-06,
+          "imagesOnPage": 13
+        },
+        {
+          "page": 9,
+          "coverage": 6e-06,
+          "imagesOnPage": 13
+        },
+        {
+          "page": 9,
+          "coverage": 5e-06,
+          "imagesOnPage": 13
+        },
+        {
+          "page": 10,
+          "coverage": 5e-06,
+          "imagesOnPage": 11
+        },
+        {
+          "page": 10,
+          "coverage": 6e-06,
+          "imagesOnPage": 11
+        },
+        {
+          "page": 10,
+          "coverage": 1.9e-05,
+          "imagesOnPage": 11
+        },
+        {
+          "page": 10,
+          "coverage": 3.9e-05,
+          "imagesOnPage": 11
+        },
+        {
+          "page": 10,
+          "coverage": 3.9e-05,
+          "imagesOnPage": 11
+        },
+        {
+          "page": 10,
+          "coverage": 3.9e-05,
+          "imagesOnPage": 11
+        },
+        {
+          "page": 10,
+          "coverage": 1.1e-05,
+          "imagesOnPage": 11
+        },
+        {
+          "page": 10,
+          "coverage": 1.1e-05,
+          "imagesOnPage": 11
+        },
+        {
+          "page": 10,
+          "coverage": 4.3e-05,
+          "imagesOnPage": 11
+        },
+        {
+          "page": 10,
+          "coverage": 1.4e-05,
+          "imagesOnPage": 11
+        },
+        {
+          "page": 10,
+          "coverage": 7.4e-05,
+          "imagesOnPage": 11
+        },
+        {
+          "page": 11,
+          "coverage": 1.1e-05,
+          "imagesOnPage": 16
+        },
+        {
+          "page": 11,
+          "coverage": 6e-06,
+          "imagesOnPage": 16
+        },
+        {
+          "page": 11,
+          "coverage": 3.1e-05,
+          "imagesOnPage": 16
+        },
+        {
+          "page": 11,
+          "coverage": 1.8e-05,
+          "imagesOnPage": 16
+        },
+        {
+          "page": 11,
+          "coverage": 4.5e-05,
+          "imagesOnPage": 16
+        },
+        {
+          "page": 11,
+          "coverage": 6e-06,
+          "imagesOnPage": 16
+        },
+        {
+          "page": 11,
+          "coverage": 9e-06,
+          "imagesOnPage": 16
+        },
+        {
+          "page": 11,
+          "coverage": 6e-06,
+          "imagesOnPage": 16
+        },
+        {
+          "page": 11,
+          "coverage": 9e-06,
+          "imagesOnPage": 16
+        },
+        {
+          "page": 11,
+          "coverage": 6e-06,
+          "imagesOnPage": 16
+        },
+        {
+          "page": 11,
+          "coverage": 9e-06,
+          "imagesOnPage": 16
+        },
+        {
+          "page": 11,
+          "coverage": 5e-06,
+          "imagesOnPage": 16
+        },
+        {
+          "page": 11,
+          "coverage": 1.1e-05,
+          "imagesOnPage": 16
+        },
+        {
+          "page": 11,
+          "coverage": 1.4e-05,
+          "imagesOnPage": 16
+        },
+        {
+          "page": 11,
+          "coverage": 3e-06,
+          "imagesOnPage": 16
+        },
+        {
+          "page": 11,
+          "coverage": 3e-06,
+          "imagesOnPage": 16
+        }
+      ]
+    }
+  ]
+}

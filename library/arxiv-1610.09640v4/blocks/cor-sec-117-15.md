@@ -1,0 +1,1 @@
+Let A f−→B g−→C be ﬁnite homomorphisms in Rnggr/c K, and assume these rings have balanced dualizing complexes (RA, βA), (RB, βB) and (RC, βC) respectively. Then trg◦f = trf ◦trg as morphisms RC →RA in D(Aen, gr).

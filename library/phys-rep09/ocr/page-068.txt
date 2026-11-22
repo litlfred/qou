@@ -1,0 +1,64 @@
+218 S. Blanes et al. / Physics Reports 470 (2009) 151-238
+
+already mentioned, time-symmetry is an important property to be preserved by the integrators, whereas, at the same time,
+it also simplifies the analysis. Scheme (290) is time-symmetric if
+
+Om41-i1 = Gir, Omp1-i.2 = —i2, i=1,2,...,m (291)
+
+in which case the order conditions at even order terms are automatically satisfied. As an illustration, the simple compositions
+
+yi" = exp (Je + 2) exp (5a - x) (292)
+2 6 2 6
+(4) _ 1 1
+W;" = exp (Fe) exp (a1) exp (-5) (293)
+
+are in fact fourth-order (commutator-free) methods requiring two and three exponentials, respectively [171]. In particular,
+scheme (292), when a1, @2 are approximated using the fourth-order Gauss-Legendre quadrature as shown in (252) and
+(253) leads to the scheme
+
+wf"! = exp (h(Q2,1A1 + @2,2A2)) exp (h(@1,141 + Q1,242)) (294)
+
+with 01,1 = 022 = 3+ 8, 01,2 = 021 = 3 - 8. Methods closely related to the scheme (293) are presented in [171-173],
+
+where they are applied to the Schrédinger equation with a time-dependent potential. A method quite similar to (292) is
+analyzed in [174] through its application to parabolic initial boundary value problems. A detailed study of fourth and sixth
+order commutator-free methods is presented in [175].
+
+On the other hand, very often the differential equation (223) can be split into two parts, so that one has, instead,
+
+Y' = (A(t) + B(t)) Y, (295)
+
+where each part can be trivially or very efficiently solved. For instance, the Schrodinger equation with a time-dependent
+potential and, possibly, a time-dependent kinetic energy belongs to this class. In principle, the following families of
+geometric integrators are specially tailored for this problem:
+
+I- The commutator-free Magnus integrators (289), which in this case read
+ee . k 7 k
+win = eft hm eA with A = h D> @ijAj, Bi = h D> 01585. (296)
+j=1 j=l
+
+Assuming that ei and ei are easily computed, then each exponential can be approximated by a conveniently chosen
+splitting method (279) [128]
+
+elit W pbsbigasti .. gbiBigarai (297)
+Il- If one takes the time variable in A(t), B(t) as two new coordinates, one may use any splitting method as follows [176]:
+vil = ebIhBOw) gainACw) | |, gb hBQw1) gar h(n) | (298)
+
+with
+
+and bo = 0, A(vi) = A(tn + vih), B(wi) = B(ty + wih).
+
+Both approaches have pros and cons. By applying procedure I we may get methods of order 2n with only n evaluations of
+A(t), B(t) using, for example, Gauss-Legendre quadratures, but if m in (296) is large, the number of matrix exponentials to be
+computed leads to exceedingly costly methods. The approach II, on the other hand, has the advantage of a smaller number
+of stages, but also presents two drawbacks: (i) many evaluations of A(t), B(t) are required in general; (ii) for matrices A and
+Bwith a particular structure, there are specially designed splitting methods which are far more efficient, but these schemes
+are not easily adapted to this situation.
+
+Next, we show how to combine splitting methods with techniques leading to commutator free Magnus schemes, to
+design efficient numerical algorithms possessing the advantages of approaches I and II, and at the same time generalizing
+the splitting idea (279) to this setting [177,178].
+
+The starting point is similar as in previous schemes, i.e. we consider a composition of the form
+
+wt = ei ed... et eft, (299)

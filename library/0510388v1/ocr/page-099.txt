@@ -1,0 +1,25 @@
+Putting this together, we get an explicit formula for the difference 5Gr between
+two competing vector-valued Green's operators in H,
+
+dGr(V)(y) = ACV, @)(y) + GV, @)(y)
+= Jus PyV(x) a(x. y) dx + VySus PyxV(x) © Vya(x, y) dx
+= Jus Py V(x) (1/(1 + cosha)) dx
++ VySus PyxV(x) © ((sinh a — a)/sinh’a) Vyo dx.
+
+We certainly know that dGr(V) is a harmonic vector field, that is, its Laplacian
+
+y 8Gr(V)(y) = 0. But recall from the construction that the first integral in the
+definition of 5Gr(V) is curl-free. Since H? is simply connected, this integral is
+actually a gradient vector field. The second integral is visibly a gradient field, so
+d5Gr(V) is actually a gradient field. Since it is harmonic, it is the gradient of some
+harmonic function on H? , that is,
+
+d5Gr(V)(y) = Vy(some harmonic function of y) .
+
+Further computation reveals that this harmonic function on H? is in general not
+constant, and hence the arbitrary choice of the constant C in the definition of >
+in section 49 does have an effect on Gr(V) . As a consequence, the vector-valued
+Green's operator in H* , even restricted to the form that we are seeking, is not
+unique.
+
+99

@@ -13,7 +13,7 @@ structure. The corpus is explicit:
   * `bond-order-eq-jet-degree-proof` -- adding a nucleon "rais[es] the
     Groebner-Shirshov normal-form length by a fixed increment", placing the
     n-nucleon cluster sub-word at JET VERTICAL DEGREE n.
-  * `prop:gb-spectral-sequence` (E_2 collapse) + `prop:jet-prefix-gb-filtration`
+  * `prop:gb-spectral-sequence` (E_2 collapse) + `conj:jet-prefix-gb-filtration`
     -- the associated graded gr_n IS the n-nucleon cluster contribution.
 
 So the NF is not six numbers, it is six LAURENT POLYNOMIALS IN q, and the
@@ -89,8 +89,11 @@ import sys
 import time
 from fractions import Fraction
 
-sys.path[:0] = ['/home/user/qou/computations',
-                '/home/user/qou/computations/substrate']
+# Repo-relative, not '/home/user/qou/...': the absolute path only resolved on
+# the machine that wrote it, so `verify()` could not import hecke_core_symbolic
+# anywhere else and the producer exited 1 before computing anything.
+_COMP = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path[:0] = [_COMP, os.path.join(_COMP, 'substrate')]
 
 MAGIC = {2, 8, 20, 28, 50, 82, 126}
 
@@ -402,9 +405,15 @@ def main() -> int:
                          computed="True", expected="True")
         for A, v in verdicts.items():
             wb.add_assertion(f"both_groups_non_empty_at_A{A}",
-                             computed=f"{v['n_magic']}/{v['n_non_magic']}",
-                             expected=f"{v['n_magic']}/{v['n_non_magic']}")
-        out = wb.save(extra={"auditOnly": True})
+                             computed=str(v["n_magic"] > 0 and v["n_non_magic"] > 0),
+                             expected="True")
+        out = wb.save(extra={
+            "auditOnly": True,
+            "q0Anchor": "independent",
+            "q0AnchorReason": "exact Laurent-polynomial normal forms over Q (fractions.Fraction); "
+                              "only q-degrees and term counts are read, nothing is evaluated "
+                              "at any numerical q",
+        })
         print(f"\nWrote {out}", flush=True)
     except Exception as exc:  # pragma: no cover
         print(f"\n(witness not written: {exc})", flush=True)

@@ -1,0 +1,48 @@
+9.4 Additional formulae for asymptotics 281
+
+9.4.2 A geometric formula for the leading term
+
+Complementing the explicit expressions for asymptotics given above, it is pos-
+sible to write down a coordinate-free representation for the leading term using
+the curvature of V near the contributing singularities determining asymptotics.
+In addition to an alternative, sometimes more compact, expression, coordinate-
+free representations can also help with conceptual understanding, such as in
+Example 9.47 below. We begin by reviewing the definition of the Gaussian
+curvature of a smooth hypersurface, before extending it to certain points of
+complex algebraic hypersurfaces.
+
+Gaussian curvature of real hypersurfaces
+For a smooth orientable hypersurface V c R“*!, the Gauss map G sends each
+point p € V to a normal vector G(p), which we identify with an element of
+the d-dimensional unit sphere S“. For a given patch P c V containing p, let
+
+GIP] = Uger G(q). The Gaussian curvature (also called Gauss—Kronecker
+curvature) of V at p is defined as the limit
+A(GIP))
+K= 21
+Pop ALP] 9.21)
+
+as P shrinks to the single point p, where A(G[P]) is the area of G[P] in sd
+and A[P] is the area of P in ‘V. When d is odd, the antipodal map on S4 has
+determinant —1, whence the particular choice of unit normal will influence the
+sign K, which is therefore only well defined up to sign. When d is even, we
+take the numerator to be negative if the map G is orientation reversing and we
+have a well defined signed quantity. The curvature K is equal to the Jacobian
+determinant of the Gauss map at the point p.
+
+For computational purposes, it is convenient to use standard formulae for
+the curvature of the graph of a function from R¢ to R. If 7 is a homogeneous
+quadratic form, we let ||7|| denote the determinant of the Hessian matrix of 77
+computed with respect to any orthonormal basis.
+
+Proposition 9.42 ({Bar+10, Corollary 2.4]). Let P be the tangent plane toV
+at p and let v be a unit normal vector. Suppose that V is the graph of a smooth
+function h over P, meaning
+
+V={ptuthuv:weU CP}.
+
+If nis the quadratic part of h, so that h(w) = n(w)+ O(\u)?), then the curvature
+of V at pis K = |\nll. Oo
+
+Corollary 9.43 (curvature of the zero set of a polynomial). Suppose that V =
+{x € R¢ : O(a) = 0} and that V Q(p) # 0. If n is the quadratic part of Q at p

@@ -1,0 +1,58 @@
+NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS 547
+
+Therefore, if A,B are positive definite matrices as in the lemma, it follows that
+I—-A-!<I-B“!, hence
+
+A(UI- A)! =-(1- A)" < -(1- B) 1 = BU- By,
+which is the desired conclusion. O
+
+Proposition 4.15. Let A and B be positive semi-definite n x n matrices such that
+A<B and set Z = diag(z,..., Zn). Then
+
+det(I + AZ) q det(I + BZ) an det(B + Z) 4 det(A + 2)
+
+det(I+ A) ~ det(I +B) det(B +I) ~ det(A+ J)
+Moreover, if A and B are positive contractions, then
+
+det(I — A + AZ) <det(I — B+ BZ).
+
+Proof. We just prove the first inequality. The second inequality then follows upon
+considering the operation
+det(I + MZ) := fur(21,-.-,2n) 2 21-+2nfl(eq),---, 20")
+with M = Aand M = B, respectively, which preserves the set of stable polynomials
+with non-negative coefficients (Proposition and obviously reverses the partial
+order < (Theorem [4.1]). Similarly, for the third inequality note that if A < B and
+A, B are positive contractions, then by continuity we may assume that B < J. But
+then A’ = A(I — A)~! < B(I — B)~! = B’ by Lemma [4.14] hence
+det (I + A’Z) q det (I + B’Z)
+det(I+ A’) ~ det(I+ B’)
+We claim that the polynomial f € R[z1,...,2n,y] defined by
+f(z,y) = det(y(I + AZ) +I + BZ) := y"Po(z) + y" 1 Py(z) +--+: + Pal2),
+where z = (21,...,2%n) is real stable with non-negative coefficients. Assuming this
+claim we see that since P;,(z) = (n — kyr tan" f/dy"*| os by Remark [4.1] we
+have that
+
+det(I — A+ AZ) =
+
+= det(I — B+ BZ).
+
+det(I+ AZ) =P) X Pi X---< P, = det(I + BZ),
+which then settles the lemma (note that P,,(0) = (/}), so none of the P,’s is iden-
+tically zero). To prove the remaining claim, note that the polynomial G(z, y) =
+det(A + y(B — A) + Z) is stable with non-negative coefficients by Proposition B.2]
+Hence, so are the polynomials
+
+F(z,y) = 21-+-2ny"G(zy,..., 204, y71) = det(y(I + AZ) + (B— A)Z)
+
+and F(z,y +1) = det(y(I + AZ) + 1+ BZ) = f(z,y). o
+Proof of Theorem The generating polynomials of : and v are det([—A+ AZ)
+and det(I — B + BZ), respectively. Combine Propositions and Oo
+
+We end this section with an open question, namely whether the following con-
+verse to Proposition holds.
+Question 4.1. Let A and B be positive semi-definite n x n matrices such that
+det(I + AZ) q det(I + BZ) det(B + Z) 4 det(A + Z)
+det(I+ A) ~ det(I+B) ’ det(B +I) ~ det(A+ I)’
+where Z = diag(z1,..., Zn). Is it true that A < B?
+
+or equivalently,

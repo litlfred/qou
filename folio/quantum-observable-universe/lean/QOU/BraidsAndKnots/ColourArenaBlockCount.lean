@@ -41,7 +41,7 @@ is `q₀`- and braid-dependent (principal-spec weights × oscillating
 Refs:
 - [macdonald1995] Symmetric Functions and Hall Polynomials, I.3 (Schur row-bound)
 - [wenzl1988] Hecke algebras of type A_n and subfactors, Invent. Math. 92
-- [manuscript] docs/audits/2026-06-19-colour-arena-block-count-theorem.md
+- [leitner2026] docs/audits/2026-06-19-colour-arena-block-count-theorem.md
 -/
 
 open QOU.MathlibExt.QPartitionCombinatorics

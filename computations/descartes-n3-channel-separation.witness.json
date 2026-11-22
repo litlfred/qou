@@ -3,6 +3,8 @@
   "name": "descartes-n3-channel-separation",
   "description": "chi^lambda separates the two n=3 SU_q(2) summands at the q where the two named Jones values of descartes_n3_both_detected coincide. Resolves the scope of QOU.Archimedean.jones_channels_not_separating (PR #6547): that negative is about the named Jones pair, not about the framework's ability to separate summands.",
   "bean": "qou-qhs3",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "every value is evaluated at q* ~ 0.7795, the root of jonesSymmetric(q) = jonesMixed(q) found by findroot, and the closed forms are checked pointwise at eight sample q (one of them a typed copy of the muon pin, used only as a sample point for an identity that holds at every q); no substrate pin is read and no result depends on which pin q0 is",
   "precision": {
     "mp_dps": 60,
     "native_dps": 50,

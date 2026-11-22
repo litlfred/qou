@@ -8,6 +8,7 @@ pages: 1-4
 source_pdf: 0710.4310v2.pdf
 source_sha256: 9a7757f998b7f680
 toc_source: outline
+doc_brief: "On Two-Dimensional Holonomy — We deﬁne the thin fundamental categorical group P2(M, ∗) of a based smooth manifold (M, ∗) as the categorical group whose objects are rank-1 homotopy classes of based"
 ---
 arXiv:0710.4310v2  [math.DG]  20 Jul 2008
 On Two-Dimensional Holonomy
@@ -242,4 +243,3 @@ At the end of this article we deﬁne the notion of Wilson sphere, which means
 that a categorical holonomy, taking values in the kernel of ∂: E →G, can be
 associated to embedded spheres in a manifold, up to acting by an element of
 the group G.
-1

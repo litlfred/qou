@@ -3,12 +3,17 @@
  "doc_id": "arxiv-1202.4698v3",
  "source_sha256": "54171c652161ca5b",
  "brief": "6j symbols for the modular double, quantum hyperbolic geometry, and supersymmetric gauge theories — We revisit the deﬁnition of the 6j symbols from the modular double of Uq(sl(2, R)), referred to as",
- "extended": "**6j symbols for the modular double, quantum hyperbolic geometry, and supersymmetric gauge theories**\n\n*J. Teschner and G. S. Vartanov*\n\n32 pp, 25 sections.\n\n**Abstract.** We revisit the deﬁnition of the 6j symbols from the modular double of Uq(sl(2, R)), referred to as b- 6j symbols. Our new results are (i) the identiﬁcation of partic ularly natural normal- ization conditions, and (ii) new integral representations for this object. This is used to brieﬂy discuss possible applications to quantum hyperbolic geome try, and to the study of certain supersymmetric gauge theories. We show, in particular, tha t the b- 6j symbol has leading semiclassical asymptotics given by the volume of a non-idea l tetrahedron. We furthermore observe a close relation with the problem to quantize natural Darboux coordinates for moduli spaces of ﬂat connections on Riemann surfaces related to the Fenchel-Nielsen coordinates.\n\n**Outline.** 1 Introduction; 2 Racah-Wigner 6j symbols for the modular doub; 2.3 Normalized b-6j symbols for the modular do; 2.4 3j symbols for the modular double; 2.5 A new integral formula for the b-6j symbol; 3 Relations to three-dimensional hyperbolic ge; 3.1 Volumes of non-ideal tetrahedra; 3.2 Semiclassical limit; 4 Relation to Liouville theory and the represe; 4.1 Fusion kernel; 4.2 Unitary normalization; 5 Application to two-dimensional quantum hyper; 5.2 The quantization problem; 5.3 Transitions between representation; 5.4 Quantization of Fenchel-Nielsen coordinate; 5.5 Classical limit; 6 Applications to supersymmetric gauge theorie; 6.1 Three-dimensional gauge theories on dualit",
+ "extended": "**6j symbols for the modular double, quantum hyperbolic geometry, and supersymmetric gauge theories**\n\n*J. Teschner and G. S. Vartanov*\n\n32 pp, 34 sections.\n\n**Abstract.** We revisit the deﬁnition of the 6j symbols from the modular double of Uq(sl(2, R)), referred to as b-6j symbols. Our new results are (i) the identiﬁcation of particularly natural normal- ization conditions, and (ii) new integral representations for this object. This is used to brieﬂy discuss possible applications to quantum hyperbolic geometry, and to the study of certain supersymmetric gauge theories. We show, in particular, that the b-6j symbol has leading semiclassical asymptotics given by the volume of a non-ideal tetrahedron. We furthermore observe a close relation with the problem to quantize natural Darboux coordinates for moduli spaces of ﬂat connections on Riemann surfaces related to the Fenchel-Nielsen coordinates.\n\n**Outline.** Front matter; 1 Introduction; 2 Racah-Wigner 6j symbols for the modular doub; 2.1 Self-dual representations of Uq(sl(2,R)) a; 2.2 Normalized Clebsch-Gordan coefficients for; 2.3 Normalized b-6j symbols for the modular do; 2.4 3j symbols for the modular double; 2.5 A new integral formula for the b-6j symbol; 3 Relations to three-dimensional hyperbolic ge; 3.1 Volumes of non-ideal tetrahedra; 3.2 Semiclassical limit; 4 Relation to Liouville theory and the represe; 4.1 Fusion kernel; 4.2 Unitary normalization; 4.3 6j symbols of Diff(S1); 5 Application to two-dimensional quantum hyper; 5.1 Classical Teichmüller theory of the four-h; 5.2 The quantization problem",
  "tokens": {
   "brief": 49,
-  "extended": 402
+  "extended": 396
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -17,122 +22,162 @@
   {
    "id": "sec-001-2-racah-wigner-6j-symbols-for-the-modular-double",
    "title": "Racah-Wigner 6j symbols for the modular double",
-   "pages": "2-5"
+   "pages": "2-2"
   },
   {
-   "id": "sec-002-23-normalized-b-6j-symbols-for-the-modular-doubl",
+   "id": "sec-002-21-self-dual-representations-of-uqsl2r-and-the-m",
+   "title": "Self-dual representations of Uq(sl(2,R)) and the modular double",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-003-22-normalized-clebsch-gordan-coefficients-for-th",
+   "title": "Normalized Clebsch-Gordan coefficients for the modular double",
+   "pages": "3-5"
+  },
+  {
+   "id": "sec-004-23-normalized-b-6j-symbols-for-the-modular-doubl",
    "title": "Normalized b-6j symbols for the modular double",
    "pages": "5-6"
   },
   {
-   "id": "sec-003-24-3j-symbols-for-the-modular-double",
+   "id": "sec-005-24-3j-symbols-for-the-modular-double",
    "title": "3j symbols for the modular double",
    "pages": "6-7"
   },
   {
-   "id": "sec-004-25-a-new-integral-formula-for-the-b-6j-symbols",
+   "id": "sec-006-25-a-new-integral-formula-for-the-b-6j-symbols",
    "title": "A new integral formula for the b-6j symbols",
    "pages": "7-8"
   },
   {
-   "id": "sec-005-3-relations-to-three-dimensional-hyperbolic-geom",
+   "id": "sec-007-3-relations-to-three-dimensional-hyperbolic-geom",
    "title": "Relations to three-dimensional hyperbolic geometry",
    "pages": "8-8"
   },
   {
-   "id": "sec-006-31-volumes-of-non-ideal-tetrahedra",
+   "id": "sec-008-31-volumes-of-non-ideal-tetrahedra",
    "title": "Volumes of non-ideal tetrahedra",
    "pages": "8-9"
   },
   {
-   "id": "sec-007-32-semiclassical-limit",
+   "id": "sec-009-32-semiclassical-limit",
    "title": "Semiclassical limit",
    "pages": "9-10"
   },
   {
-   "id": "sec-008-4-relation-to-liouville-theory-and-the-represent",
+   "id": "sec-010-4-relation-to-liouville-theory-and-the-represent",
    "title": "Relation to Liouville theory and the representation theory of Diff(S1)",
    "pages": "10-10"
   },
   {
-   "id": "sec-009-41-fusion-kernel",
+   "id": "sec-011-41-fusion-kernel",
    "title": "Fusion kernel",
    "pages": "10-11"
   },
   {
-   "id": "sec-010-42-unitary-normalization",
+   "id": "sec-012-42-unitary-normalization",
    "title": "Unitary normalization",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-013-43-6j-symbols-of-diffs1",
+   "title": "6j symbols of Diff(S1)",
    "pages": "11-12"
   },
   {
-   "id": "sec-011-5-application-to-two-dimensional-quantum-hyperbo",
+   "id": "sec-014-5-application-to-two-dimensional-quantum-hyperbo",
    "title": "Application to two-dimensional quantum hyperbolic geometry",
-   "pages": "12-14"
+   "pages": "12-13"
   },
   {
-   "id": "sec-012-52-the-quantization-problem",
+   "id": "sec-015-51-classical-teichmüller-theory-of-the-four-hole",
+   "title": "Classical Teichmüller theory of the four-holed sphere",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-016-52-the-quantization-problem",
    "title": "The quantization problem",
    "pages": "14-15"
   },
   {
-   "id": "sec-013-53-transitions-between-representation",
+   "id": "sec-017-53-transitions-between-representation",
    "title": "Transitions between representation",
    "pages": "15-16"
   },
   {
-   "id": "sec-014-54-quantization-of-fenchel-nielsen-coordinates",
+   "id": "sec-018-54-quantization-of-fenchel-nielsen-coordinates",
    "title": "Quantization of Fenchel-Nielsen coordinates",
    "pages": "16-17"
   },
   {
-   "id": "sec-015-55-classical-limit",
+   "id": "sec-019-55-classical-limit",
    "title": "Classical limit",
    "pages": "17-18"
   },
   {
-   "id": "sec-016-6-applications-to-supersymmetric-gauge-theories",
+   "id": "sec-020-6-applications-to-supersymmetric-gauge-theories",
    "title": "Applications to supersymmetric gauge theories",
    "pages": "18-18"
   },
   {
-   "id": "sec-017-61-three-dimensional-gauge-theories-on-duality-w",
+   "id": "sec-021-61-three-dimensional-gauge-theories-on-duality-w",
    "title": "Three-dimensional gauge theories on duality walls",
    "pages": "18-19"
   },
   {
-   "id": "sec-018-62-partition-functions-of-three-dimensional-supe",
+   "id": "sec-022-62-partition-functions-of-three-dimensional-supe",
    "title": "Partition functions of three-dimensional supersymmetric gauge theories",
    "pages": "19-20"
   },
   {
-   "id": "sec-019-63-the-b-6j-symbols-as-a-partition-function",
+   "id": "sec-023-63-the-b-6j-symbols-as-a-partition-function",
    "title": "The b-6j symbols as a partition function",
    "pages": "20-21"
   },
   {
-   "id": "sec-020-64-applications-to-the-geometric-construction-of",
+   "id": "sec-024-64-applications-to-the-geometric-construction-of",
    "title": "Applications to the geometric construction of three-dimensional gauge theories?",
    "pages": "21-22"
   },
   {
-   "id": "sec-021-a2-double-sine-function",
+   "id": "sec-025-a-special-functions",
+   "title": "A Special functions",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-026-a1-the-function-bx",
+   "title": "A.1 The function b(x)",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-027-a2-double-sine-function",
    "title": "A.2 Double Sine function",
    "pages": "22-23"
   },
   {
-   "id": "sec-022-a3-the-elliptic-gamma-function",
+   "id": "sec-028-a3-the-elliptic-gamma-function",
    "title": "A.3 The elliptic Gamma function",
    "pages": "23-24"
   },
   {
-   "id": "sec-023-b1-the-master-integral-identity",
+   "id": "sec-029-b-proof-of-identity",
+   "title": "B Proof of identity (??)",
+   "pages": "24-24"
+  },
+  {
+   "id": "sec-030-b1-the-master-integral-identity",
    "title": "B.1 The master integral identity",
    "pages": "24-25"
   },
   {
-   "id": "sec-024-b2-useful-corollaries",
+   "id": "sec-031-b2-useful-corollaries",
    "title": "B.2 Useful corollaries.",
-   "pages": "25-32"
+   "pages": "25-28"
+  },
+  {
+   "id": "sec-032-b3-derivation-of-the-indentity",
+   "title": "B.3 Derivation of the indentity (??)",
+   "pages": "28-32"
   }
  ],
  "provenance": {

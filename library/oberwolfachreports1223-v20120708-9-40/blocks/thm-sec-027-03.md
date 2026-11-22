@@ -1,0 +1,1 @@
+Two oriented free links are iso- topic if and only if two corresponding free braids diﬀer by a ﬁnite sequence of free braid isotopy and the following moves and their inverses: (1) Flat conjugation. (2) Right virtual L-moves. (3) Right ﬂat L-moves. (4) Right and left threaded L-moves.

@@ -6,7 +6,9 @@
   "sha256": "e364dad3afff318066eddcf12175c21c9943416323ccfded7a105f7f83cf2889",
   "bytes": 301760,
   "pages": 23,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -14,19 +16,28 @@
   "arxiv": null,
   "doi": null,
   "title": "Geometry of higher helicities",
-  "authors_raw": "Volume 3, Number 3, July–September 2003, Pages 989–1011",
+  "authors_raw": "BORIS A. KHESIN",
+  "title_lines": [
+   "MOSCOW MATHEMATICAL JOURNAL",
+   "GEOMETRY OF HIGHER HELICITIES"
+  ],
   "abstract": "We revisit an interpretation of higher-dimensional helicities and Hopf–Novikov invariants from the point of view of the Brownian ergodic theorem. We also survey various results related to Arnold’s the- orem on the asymptotic Hopf invariant on three-dimensional manifolds and recent work on linking of a vector ﬁeld with a foliation, the asymp- totic crossing number, short path systems, and relations with the Calabi invariant. 2000 Math. Subj. Class. 37A15, 55Q25, 76W05.",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20040302215400Z",
-   "Creator": "TeX",
    "Producer": "pdfTeX14.h",
-   "Title": ""
+   "Creator": "TeX",
+   "CreationDate": "D:20040302215400Z"
   },
-  "title_prev": "MOSCOW MATHEMATICAL JOURNAL",
-  "title_lines": [
-   "MOSCOW MATHEMATICAL JOURNAL"
-  ]
+  "title_raw": "MOSCOW MATHEMATICAL JOURNAL GEOMETRY OF HIGHER HELICITIES",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "GEOMETRY OF HIGHER HELICITIES 1. Introduction The helicity of a vector ﬁeld in a three-dimensional space can be thought of as a real-valued version of the integral-valued Hopf invariant for a continuous map S 3 → S 2 . The latter has two well-known deﬁnitions: topological or analytic ones. Topologic",
+   "outline": "1. Introduction",
+   "text": "MOSCOW MATHEMATICAL JOURNAL GEOMETRY OF HIGHER HELICITIES",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "MOSCOW MATHEMATICAL JOURNAL GEOMETRY OF HIGHER HELICITIES"
  },
  "toc": [
   {
@@ -34,109 +45,371 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "What is Helicity?",
    "page": 2,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Three-Dimensional Ramifications",
    "page": 5,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Bilinear and multi-linear forms.",
    "page": 5,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Energy estimates.",
    "page": 6,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Ergodic meaning of the Calabi invariant.",
    "page": 8,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Short paths systems.",
    "page": 10,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Linking of a Vector Field with a Measured Foliation",
    "page": 12,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Linking of a curve with a foliation",
    "page": 12,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Linking of a vector field with a foliation.",
    "page": 12,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Linking of several measured foliations.",
    "page": 14,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Linking of Foliations and Brownian Motion",
    "page": 15,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Novikov's Integrals",
    "page": 18,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Acknowledgments",
    "page": 22,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 22,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The long segments of the trajectories are closed by the “short paths”",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Brownian trajectories on leaves",
+   "page": 17,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The linking of three surfaces A, B, and C in a four-sphere",
+   "page": 19,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 798,
+   "n_words": 117,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -144,8 +417,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 3881,
-   "n_words": 678
+   "n_chars": 3865,
+   "n_words": 662,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-2-what-is-helicity",
@@ -154,8 +429,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 5,
-   "n_chars": 7823,
-   "n_words": 1440
+   "n_chars": 7752,
+   "n_words": 1369,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-3-three-dimensional-ramifications",
@@ -165,7 +442,9 @@
    "page_start": 5,
    "page_end": 5,
    "n_chars": 72,
-   "n_words": 10
+   "n_words": 10,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-31-bilinear-and-multi-linear-forms",
@@ -174,8 +453,10 @@
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 2746,
-   "n_words": 487
+   "n_chars": 2730,
+   "n_words": 471,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-004-32-energy-estimates",
@@ -184,8 +465,10 @@
    "level": 2,
    "page_start": 6,
    "page_end": 8,
-   "n_chars": 6534,
-   "n_words": 1143
+   "n_chars": 6509,
+   "n_words": 1118,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-005-33-ergodic-meaning-of-the-calabi-invariant",
@@ -194,8 +477,10 @@
    "level": 2,
    "page_start": 8,
    "page_end": 10,
-   "n_chars": 3966,
-   "n_words": 734
+   "n_chars": 3937,
+   "n_words": 705,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-006-34-short-paths-systems",
@@ -204,8 +489,10 @@
    "level": 2,
    "page_start": 10,
    "page_end": 12,
-   "n_chars": 4115,
-   "n_words": 832
+   "n_chars": 4055,
+   "n_words": 772,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-007-4-linking-of-a-vector-field-with-a-measured-foli",
@@ -215,7 +502,9 @@
    "page_start": 12,
    "page_end": 12,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-008-41-linking-of-a-curve-with-a-foliation",
@@ -223,56 +512,98 @@
    "title": "Linking of a curve with a foliation",
    "level": 2,
    "page_start": 12,
-   "page_end": 14,
-   "n_chars": 5156,
-   "n_words": 1012
+   "page_end": 12,
+   "n_chars": 2525,
+   "n_words": 448,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-009-43-linking-of-several-measured-foliations",
+   "id": "sec-009-42-linking-of-a-vector-field-with-a-foliation",
+   "number": "4.2",
+   "title": "Linking of a vector field with a foliation.",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 2522,
+   "n_words": 517,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-010-43-linking-of-several-measured-foliations",
    "number": "4.3",
    "title": "Linking of several measured foliations.",
    "level": 2,
    "page_start": 14,
    "page_end": 15,
-   "n_chars": 3515,
-   "n_words": 612
+   "n_chars": 3501,
+   "n_words": 598,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-010-5-linking-of-foliations-and-brownian-motion",
+   "id": "sec-011-5-linking-of-foliations-and-brownian-motion",
    "number": "5",
    "title": "Linking of Foliations and Brownian Motion",
    "level": 1,
    "page_start": 15,
-   "page_end": 22,
-   "n_chars": 17096,
-   "n_words": 3395
+   "page_end": 18,
+   "n_chars": 8430,
+   "n_words": 1505,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-011-acknowledgments",
+   "id": "sec-012-6-novikovs-integrals",
+   "number": "6",
+   "title": "Novikov's Integrals",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 22,
+   "n_chars": 8341,
+   "n_words": 1587,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-013-acknowledgments",
    "number": null,
    "title": "Acknowledgments",
    "level": 2,
    "page_start": 22,
    "page_end": 22,
    "n_chars": 240,
-   "n_words": 37
+   "n_words": 37,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-012-references",
+   "id": "sec-014-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 22,
    "page_end": 23,
-   "n_chars": 4069,
-   "n_words": 658
+   "n_chars": 4046,
+   "n_words": 635,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 15,
-  "sections": 13,
-  "chars_total": 59213
+  "toc_inferred_entries": 0,
+  "figure_entries": 3,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 16,
+  "chars_total": 59323,
+  "furniture_lines_stripped": 0
  }
 }

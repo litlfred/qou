@@ -8,6 +8,7 @@ pages: 13-14
 source_pdf: FT_DPM_Quaternion_Kernel_IEEE_TIT_2014.pdf
 source_sha256: aa2f1eb73610a81b
 toc_source: inferred
+doc_brief: "Quaternion Reproducing Kernel Hilbert Spaces: Existence and Uniqueness Conditions — The existence and uniqueness conditions of quater- nion reproducing kernel Hilbert spaces (QRKHS) are established"
 ---
 In Section VI-C we compared the proposed Gaussian kernel
 (real- and quaternion-valued) algorithms against strictly-linear
@@ -128,8 +129,6 @@ pp. 214–224, 2011.
 [27] J. Navarro-Moreno, R. M. Fernandez-Alcala, and J. C. Ruiz-Molina,
 “A quaternion widely linear series expansion and its applications,” IEEE
 Signal Process. Lett., vol. 19, no. 12, pp. 868–871, Dec. 2012.
-TOBAR AND MANDIC: QUATERNION REPRODUCING KERNEL HILBERT SPACES
-5749
 [28] J.
 Navarro-Moreno,
 R.

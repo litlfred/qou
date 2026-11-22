@@ -1,0 +1,69 @@
+Proof. We show the proposition modifying a proof of the saddle point method written
+in [39].5 We show the proposition, for simplicity, putting a = —1 as in the proof of
+Proposition 3.1. We put #(z) = r(z)/z?. Since #(z) is analytic in a neighborhood of 0,
+there exists a sufficiently small 6, > 0 such that
+
+F(z) => Se devs 2b
+i=l
+
+for |z| < 6). Let w be a non-negative real parameter. For each fixed w, we have that
+
+o
+&
+»
+x
+]
+Me
+2
+g
+cod
+
+k=0
+
+for |z| < 6,, where P,(w) is a polynomial in w of degree < k. Since 7(0) = 0, there exist
+small 62 > 0 and <; > 0 such that |?(a)| < €1 for —dg < x < 6; we can further assume
+that ¢; < 1 and 6, < 6. For each fixed integer m > 0, we can put
+
+evr) = > P,(w) «* + Ry av (17)
+k=0
+
+for —d9 <x < d) and any w > 0, where R,,w""*! is the error term, which is estimated by
+
+qmtt qt
+|Im Rn| < max | Im—e
+a] dg dam+t
+
+[ReR,| < max |R w(x) w(x)
+
+a] <9
+
+e dxmt+1 e
+
+Further, since
+qt
+dxm+ 1 e
+
+we have that
+
+wr) = e¥*) . (polynomial in w and differentials of F(x) of degree < m+1),
+
+[Rm| < eM’ Ky (w™tt +1) < Kye? (18)
+
+for some Ky, Ky > 0 and €g < 1, which are independent of x and w (noting that m is
+bounded by using d later). Further, we replace the path C with the union of a path C,
+from zo to —d, a path Cy from —6 to 6 along the real axis, and a path C3 from 6 to 7.
+We can assume that there exist sufficiently small 6, ¢; > 0 such that 6 < 6 and C; and
+C3 are in the domain
+
+{z€C | Reg(z) < -e3}. (19)
+
+Then, the integral of the proposition is given by
+
+[rea = / ode + | owas | NYO dz, (20)
+C1 C2 C3
+
+5 As for the 1-variable case, a proof of a more general statement of the saddle point method is written in [39], though
+the multi-variable case is not written in [39]. We review (a simpler modification of) the proof of [39], in order to generalize
+it to the multi-variable case later (Proposition 3.5).
+
+13

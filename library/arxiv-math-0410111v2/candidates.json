@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0410111v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "0ccaeeabd8de6b5fca592009cff67076819b17e01c77d5cfd9083282a6809a49",
+  "file": "0410111v2.pdf"
+ },
+ "provenance": {
+  "title": "Integer Polynomial Optimization in Fixed Dimension",
+  "authors": "Raymond Hemmecke",
+  "arxiv": {
+   "id": "math/0410111",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "31 May 2005"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

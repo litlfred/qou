@@ -18,35 +18,36 @@ This probe re-runs the comparison with the floor removed from both sides.
 WHAT IT FINDS
 -------------
 **Pairwise additivity improves substantially** [assertion 1, 2]. Comparing the
-chain sum against the exact whole-atom trace difference:
+chain sum against the exact whole-atom trace difference under the canonical
+(Borromean) word (`qou-hu1f`, `qou-j1e5`):
 
-    isotope   chain/atom raw    chain/atom, floors removed
-    ----------------------------------------------------------
-    D         1.0000            1.0000        (D *is* the pn bond)
-    T         1.2812            1.1178
-    ³He       1.1927            1.0198
-    ⁴He       1.4706            1.1941
+    isotope   chain/atom raw    chain/atom, floors removed   (grouped superseded)
+    -----------------------------------------------------------------------------
+    D         1.0000            1.0000                       (1.0000 -> 1.0000)
+    T         2.4943            1.6518                       (1.2812 -> 1.1178)
+    ³He       2.3185            1.4078                       (1.1927 -> 1.0198)
+    ⁴He       5.5656            2.5580                       (1.4706 -> 1.1941)
 
-Worst-case deviation from exact additivity falls from **47.1 % to 19.4 %**, and
-³He lands within **2 %**. The pairwise-chain picture is a much better description
-of the exact `H_{3A}` trace than it looked.
+Worst-case deviation from exact additivity falls from **456.6 % to 155.8 %**
+(2.93× reduction; grouped superseded: 47.1 % to 19.4 %). Removing the classical
+floor moves every ratio toward 1 under both word conventions.
 
 The reduction is `(A−1)·c₀(2) − c₀(A)` exactly — identically true given the
 definitions, so it is reported as data rather than asserted. What is *not*
 forced, and is the finding, is that removing a quantity with no free parameters
 moves the ratios toward 1 in every case.
 
-**So part of the "many-body residual" was floor bookkeeping.** At ⁴He the
-pairwise-vs-exact trace gap is `0.5270`; `0.3203` of that — **60.8 %** — is the
-floor mismatch alone [data].
+**So the overwhelming majority of the raw "many-body residual" is floor bookkeeping.**
+At ⁴He the pairwise-vs-exact trace gap is `0.3569`; `0.3203` of that — **89.7 %**
+(grouped superseded: 60.8 %) — is the floor mismatch alone [data].
 
 AND WHAT IT COSTS, REPORTED PLAINLY
 ------------------------------------
 Trace additivity improves; the **binding** residual does not. Against AME, with
 convention A (`E₀ = 4.18598 MeV`, what the chain producer actually uses):
 
-    ⁴He   chain raw       6.894 MeV   →  residual 21.40 MeV
-          chain corrected 5.324 MeV   →  residual 22.97 MeV
+    ⁴He   chain raw       1.821 MeV   →  residual 26.47 MeV
+          chain corrected 0.251 MeV   →  residual 28.04 MeV
 
 The 4-body α-residual `derive_binding_chain_cooperative` identifies gets
 *larger*, because the correction removes binding from the chain sum. Both
@@ -58,29 +59,30 @@ THE LEADING-ORDER COEFFICIENTS ARE EXACT DYADIC RATIONALS
 ----------------------------------------------------------
 The floor-corrected observable `Δtr − c₀(A)` is `ℏ_q^1`, and its leading
 coefficient `c₁ = lim (Δtr − c₀)/ℏ_q` is an exact dyadic rational in every case
-[assertion 3], each matching to `≤ 1.3e-9`:
+[assertion 3], each matching to `≤ 4.6e-9` under the Borromean word (`qou-j1e5`):
 
-    pp   19/8      pn   37/16     nn   9/4
-    T    163/64    ³He  85/32     ⁴He  259/128
+    pp   1/8       pn   1/16      nn   0          (grouped: 19/8, 37/16, 9/4)
+    T    1/64      ³He  1/8       ⁴He  7/128      (grouped: 163/64, 85/32, 259/128)
 
 So both orders of `Δtr` are dyadic — `c₀` by the derivation in
-`classical_floor_derivation_probe`, and now `c₁` measured. And the chain-vs-exact
-ratios follow **exactly**, with no fitting:
+`classical_floor_derivation_probe`, and `c₁` measured here (and derived in
+`c1_leading_coefficient_derived_probe`). And the chain-vs-exact ratios follow
+**exactly**, with no fitting:
 
-    T    (37/16 + 9/4) / (163/64)          = 292/163  = 1.7914110429…
-    ³He  (19/8 + 37/16) / (85/32)          = 30/17    = 1.7647058824…
-    ⁴He  (19/8 + 37/16 + 9/4) / (259/128)  = 888/259  = 24/7 = 3.4285714…
+    T    (1/16 + 0) / (1/64)            = 4     = 4.0       (grouped: 292/163 ≈ 1.7914)
+    ³He  (1/8  + 1/16) / (1/8)          = 3/2   = 1.5       (grouped: 30/17   ≈ 1.7647)
+    ⁴He  (1/8  + 1/16 + 0) / (7/128)    = 24/7  = 3.42857…  (grouped: 24/7, invariant!)
 
-matching the extrapolated ratios to `1e-8`–`1e-11`. **The pairwise-vs-exact
-discrepancy at leading order is therefore an exactly known rational**, not a
-measured residual — a derivation gap closed rather than narrowed.
+**The pairwise-vs-exact discrepancy at leading order is therefore an exactly
+known rational**, not a measured residual — and `PairwiseChainLeadingOrder.lean`
+proves `24/7` at `⁴He` is invariant across all per-letter weight pairs `(a, b)`.
 
 ⚠ AND IT SAYS THE q₀ AGREEMENT IS A CANCELLATION, NOT A STRUCTURE
 ------------------------------------------------------------------
-At `q₀` the floor-corrected chain/atom ratios are `1.118`, `1.020`, `1.194`. At
-**leading order** they are `1.791`, `1.765`, `3.429`. The chain over-counts the
-exact `H_{3A}` trace by `3.4×` at ⁴He in the `ℏ_q → 0` limit, and the much
-better agreement at `q₀` comes from higher-order terms partially cancelling that.
+At `q₀` the floor-corrected chain/atom ratios are `1.652`, `1.408`, `2.558`. At
+**leading order** they are `4.0`, `1.5`, `3.429`. The chain over-counts the
+exact `H_{3A}` trace by `24/7 ≈ 3.43×` at ⁴He in the `ℏ_q → 0` limit, and the
+smaller ratio at `q₀` comes from higher-order terms partially cancelling that.
 
 **So pairwise additivity of the signed trace difference is not a controlled
 approximation.** Its accuracy at `q₀` is not inherited from a leading-order
@@ -165,10 +167,11 @@ def main() -> int:
     w = WitnessBuilder("binding-chain-floor-corrected-probe")
     w.set_description(
         "Re-runs derive_binding_chain_cooperative's pairwise chain against the "
-        "floor-corrected trace difference Dtr - c0(A). Pairwise additivity against the "
-        "exact H_3A trace improves from 47.1% worst-case deviation to 19.4%, and 60.8% of "
-        "the 4He pairwise-vs-exact gap turns out to be floor bookkeeping. The binding "
-        "residual against AME gets slightly larger, reported plainly."
+        "floor-corrected trace difference Dtr - c0(A) on the canonical (Borromean) word. "
+        "Pairwise additivity against the exact H_3A trace improves from 456.6% worst-case "
+        "deviation to 155.8% (2.93x reduction), and 89.7% of the 4He pairwise-vs-exact "
+        "gap turns out to be floor bookkeeping. The binding residual against AME gets "
+        "slightly larger, reported plainly."
     )
 
     bond_dtr = {k: delta_tr(Z, N, q0) for k, (Z, N) in BOND_ZN.items()}
@@ -249,7 +252,9 @@ def main() -> int:
         v = c1_of(Z, N)
         fr = Fraction(float(v)).limit_denominator(4096)
         exact = mp.mpf(fr.numerator) / fr.denominator
-        rel = abs(v - exact) / abs(v)
+        # Under Borromean c1(nn) = 0, so relative error against 0 is undefined;
+        # use absolute error |v - 0| when exact == 0 and |v - exact|/|exact| otherwise.
+        rel = abs(v - exact) if exact == 0 else abs(v - exact) / abs(exact)
         worst_c1 = max(worst_c1, rel)
         c1_rows[nm] = {"measured": mp.nstr(v, 18), "rational": str(fr),
                        "is_dyadic": (fr.denominator & (fr.denominator - 1)) == 0,
@@ -262,16 +267,30 @@ def main() -> int:
         source="c1 = lim (Dtr - c0(A))/hbar_q for the three bonds and three atoms, each "
                "against its best rational with denominator <= 4096: "
                + ", ".join(f"{k} = {v['rational']}" for k, v in c1_rows.items())
-               + f"; every denominator a power of two, worst relative error "
-                 f"{mp.nstr(worst_c1, 6)}. Dyadic is the same shape as the floor c0, which "
-                 f"is derived, so this is structure rather than coincidence -- but note c1 "
-                 f"is MEASURED here, not derived.",
+               + f"; every denominator a power of two, worst error "
+                 f"{mp.nstr(worst_c1, 6)} (relative where c1 != 0, absolute at nn = 0). "
+                 f"Dyadic is the same shape as the floor c0, which is derived, so this "
+                 f"is structure rather than coincidence -- and c1 is derived in "
+                 f"c1_leading_coefficient_derived_probe.",
     )
 
     # ---- data ----------------------------------------------------------------
+    c1_fr = {k: Fraction(v["rational"]) for k, v in c1_rows.items()}
+    lo_chain_over_atom = {}
+    for iso in ("T", "3He", "4He"):
+        bonds = CHAIN[iso]
+        num = sum((c1_fr[b] for b in bonds), Fraction(0))
+        den = c1_fr[iso]
+        ratio = num / den
+        terms = " + ".join(str(c1_fr[b]) for b in bonds)
+        lo_chain_over_atom[iso] = (
+            f"({terms}) / ({den}) = {ratio} = "
+            f"{mp.nstr(mp.mpf(ratio.numerator) / ratio.denominator, 11)}"
+        )
     w.add_data("leading_order_coefficients", {
         "c1": c1_rows,
-        "leading_order_chain_over_atom": {
+        "leading_order_chain_over_atom": lo_chain_over_atom,
+        "leading_order_chain_over_atom_grouped_superseded": {
             "T": "(37/16 + 9/4) / (163/64) = 292/163 = 1.7914110429",
             "3He": "(19/8 + 37/16) / (85/32) = 30/17 = 1.7647058824",
             "4He": "(19/8 + 37/16 + 9/4) / (259/128) = 888/259 = 24/7 = 3.4285714286",
@@ -279,10 +298,11 @@ def main() -> int:
         "at_q0_for_contrast": {r["isotope"]: r["chain_over_atom_floor_removed"]
                                for r in rows},
         "reading": "the pairwise-vs-exact discrepancy at leading order is an exactly known "
-                   "rational. But it is FAR larger than the q0 discrepancy (3.43x vs 1.19x "
-                   "at 4He), so the good agreement at q0 is higher-order cancellation, not "
-                   "a leading-order property. Pairwise additivity of the SIGNED functor is "
-                   "not a controlled approximation.",
+                   "rational (4 at T, 3/2 at 3He, 24/7 at 4He under the Borromean word; 24/7 "
+                   "at 4He is ordering-invariant). It is larger than the q0 discrepancy "
+                   "(3.43x vs 2.56x at 4He), so the agreement at q0 reflects higher-order "
+                   "contributions, not a leading-order property. Pairwise additivity of the "
+                   "SIGNED functor is not a controlled approximation.",
         "not_a_contradiction": "docs/audits/2026-06-16-b-sym-linear-chain-closed-form.md "
                                "reports exact additivity for the LOG functor "
                                "alpha*ln(tr_free/tr_atom). This probe measures the SIGNED "
@@ -341,10 +361,11 @@ def main() -> int:
         "rows": binding_rows,
         "honest_note": "TRACE additivity improves; the BINDING residual gets larger, "
                        "because the correction removes binding from the chain sum. At 4He "
-                       "the residual goes 21.40 -> 22.97 MeV under convention A. Both are "
-                       "true and not in tension: the floor was inflating the pairwise sum, "
-                       "so removing it makes the pairwise picture more accurate AND leaves "
-                       "more for the cooperative alpha term.",
+                       "the residual goes 26.47 -> 28.04 MeV under convention A (grouped "
+                       "superseded: 21.40 -> 22.97 MeV). Both are true and not in tension: "
+                       "the floor was inflating the pairwise sum, so removing it makes the "
+                       "pairwise picture more accurate AND leaves more for the cooperative "
+                       "alpha term.",
     })
 
     w.add_data("what_the_correction_repairs_structurally", (
@@ -360,12 +381,14 @@ def main() -> int:
 
     w.add_data("verdict", (
         "Removing the derived floor improves pairwise additivity against the exact H_3A "
-        "trace for every isotope: worst-case deviation 47.1% -> 19.4%, and 3He lands within "
-        "2%. 60.8% of the 4He pairwise-vs-exact gap was floor bookkeeping rather than "
-        "many-body physics. The binding residual against AME gets slightly larger "
-        "(21.40 -> 22.97 MeV at 4He) and that is reported rather than buried. The "
-        "structural gain is that convention A becomes the hbar_q-coherent pairing for the "
-        "corrected observable, which it was not before."
+        "trace for every isotope under the canonical (Borromean) word: worst-case deviation "
+        "456.6% -> 155.8% (2.93x reduction; grouped superseded: 47.1% -> 19.4%), and 89.7% "
+        "of the 4He pairwise-vs-exact gap was floor bookkeeping rather than many-body "
+        "physics. The leading-order hbar_q^1 coefficients are exact dyadic rationals "
+        "(pp 1/8, pn 1/16, nn 0, T 1/64, 3He 1/8, 4He 7/128), with chain/atom ratios "
+        "4, 3/2, 24/7. The binding residual against AME gets slightly larger (26.47 -> "
+        "28.04 MeV at 4He) and that is reported rather than buried. The structural gain is "
+        "that convention A becomes the hbar_q-coherent pairing for the corrected observable."
     ))
 
     out = w.save()

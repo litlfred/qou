@@ -36,7 +36,7 @@ export default proposition({
     },
     {
       kind: "status",
-      body: "This is a **structural identification**, not a derivation of $c_k$\nfrom first principles. The silver-ratio limit gives a clean test\npoint and identifies the relevant algebraic landscape (Pell-Lucas\nextension of $\\mathbb{Q}$), but the actual closed forms for\n$c_4..c_7$ remain empirical conjectures (see\n[`prop:qbeta-c-k-closed-forms`](#prop:qbeta-c-k-closed-forms)).",
+      body: "This is a **structural identification**, not a derivation of $c_k$\nfrom first principles. The silver-ratio limit gives a clean test\npoint and identifies the relevant algebraic landscape (Pell-Lucas\nextension of $\\mathbb{Q}$), but the actual closed forms for\n$c_4..c_7$ remain empirical conjectures (see\n[`conj:qbeta-c-k-closed-forms`](#conj:qbeta-c-k-closed-forms)).",
     },
   ],
 });

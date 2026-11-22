@@ -1,0 +1,52 @@
+Burgess bounds for short character sums evaluated at forms 1929
+
+4C. Deduction of the corollaries. Corollary 4.2 follows from Theorem 4.1 in an identical fashion to
+how Corollary B follows from Theorem A in [Xu 2018] (see Corollary 1.8 in that paper) and we do not
+repeat the proof here. We only note that in Corollary 4.2 we no longer need to assume that deg F; < q.
+For indeed, suppose that for some 1 <i < 2r we have deg F; > charx. Then we note that trivially
+
+Sx, — x2M)| < (#«)2"" = gr < pr (4-9)
+
+for all (x, ..., x") © A2"", so that upon enlarging C’ if necessary so that C’ > D?”” the results of
+Corollary 4.2 hold (here we also use the fact (4-8)).
+
+To obtain Corollary 4.3 in which formally S = ©, we note that for any g € S(n,r, A, D), we may
+write the trivial upper bound C’||M |?" < C’q?"" on the right-hand side of (4-6). Thus in order to state a
+version of Corollary B or Corollary 4.2 with S = @, we simply replace C’ in the statement of the corollary
+by C’(n,r, A, D) = max{C’, q?"":q € S(n,r, A, D)}.
+
+4D. Proof of Theorem 4.1. Theorem 4.1 follows from a small modification inside the proof of Theorem A
+in [Xu 2018]. To be clear, we will state exactly the change that is made (recalling that in our setting we
+use 2r where [Xu 2018] uses r; our modifications would of course work for any dimension r).
+
+The main idea is that even if there is ani € {1,..., 2r} such that F; is not d;-th power-free, we can write
+= ct F; in which F is dj-th power-free, and has Tj; finite, under the assumption that the reduction of
+F; modulo q is (d;, q)-admissible, and then at a key moment in the proof we work with F, instead of F;.
+To be precise, recall that for any (x, ..., x") € 47”,
+
+2r
+Se, ...,20?):= ST] xin + x). (4-10)
+
+mek" j=1
+We also define for any tuple (m®,..., m5) € «2"5 and each 1 <i < 2r the function
+
+T(m™,...,m°) = \~ xi(Fitmy(%)),
+
+xeK"
+in which
+Ss 2s
+Fitm(x) = [] Aan +x) [] Ran? +x)41.
+j=l j=stl
+The proof of Theorem A and hence of Corollary B relies on four ingredients.
+
+(I) The first ingredient [Xu 2018, Proposition 1.2] is an identity between 2s-moments of the sums S with
+2r-multilinear averages of the sums 7;, namely
+
+2r
+> Se, 22, xOM)P5 = > [[ Han®, ...,m). (4-11)
+
+(x, ....x 2) eqn (m®,...,m2))ex2"s i=]
+
+We will refer to the left-hand side as the moment M, (r,s); it has a natural generalization to a moment
+M,(r, s) defined in an appropriately analogous manner over any finite extension k/«, with x;(-) replaced
+by Xi (Ney (-))-

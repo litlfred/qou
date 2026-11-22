@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-1203.6531v1
-doc_title: "AMERICAN MATHEMATICAL SOCIETY S 0002-9947(XX)0000-0"
+doc_title: "Groebner-Shirshov basis and reduced words for affine Weyl group A_n"
 section_id: sec-003-references
 section_title: "References"
 section_number: null
@@ -8,6 +8,7 @@ pages: 10-11
 source_pdf: 1203.6531v1.pdf
 source_sha256: 29541f28c1c62d8f
 toc_source: outline
+doc_brief: "Groebner-Shirshov basis and reduced words for affine Weyl group A_n — Using Buchberger-Shirshov Algorithm and Composition-Diamond lemma we obtain the reduced Gr¨obner-Shirshov bases of f An and"
 ---
 [1] L.A. Bokut and L.S. Shiao, Gr¨obner-Shirshov bases for Coxeter groups, Comm. Algebra 29
 (2001), 4305–4319.

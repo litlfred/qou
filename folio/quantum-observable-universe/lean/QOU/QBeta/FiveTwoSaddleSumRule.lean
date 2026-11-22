@@ -75,7 +75,7 @@ file:
 — is still unproved, but is **no longer needed**: it was the anticipated route
 to (SUM), and (SUM) was proved without it.
 
--- Ref: [manuscript] docs/coordination/1ppq-qbeta.md, 2026-08-02 row
+-- Ref: [leitner2026] docs/coordination/1ppq-qbeta.md, 2026-08-02 row
 -- Ref: [garoufalidis-gu-marino2023peacock] https://arxiv.org/abs/2012.00062 eq (233)–(234)
 -/
 import Mathlib.Analysis.SpecialFunctions.Complex.Log

@@ -1,6 +1,6 @@
 ---
 doc_id: 022201-1-online
-doc_title: "Online  Export Citation RESEARCH ARTICLE | FEBRUARY 01 2021 Efficient algorithms for approximating quantum partition functions Ryan L. Mann  ; Tyler Helmuth"
+doc_title: "Efficient algorithms for approximating quantum partition functions"
 section_id: sec-011-references
 section_title: "REFERENCES"
 section_number: null
@@ -8,6 +8,7 @@ pages: 8-8
 source_pdf: 022201_1_online.pdf
 source_sha256: 50331bf18a2bd4d5
 toc_source: inferred
+doc_brief: "Efficient algorithms for approximating quantum partition functions — 13 sections: Front matter; AFFILIATIONS; ABSTRACT"
 ---
 1A. W. Harrow, S. Mehraban, and M. Soleimanifar, in Proceedings of the 52nd Annual ACM SIGACT Symposium on Theory of Computing (ACM, 2020), pp. 378–386;
 arXiv:1910.09071.

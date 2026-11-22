@@ -1,0 +1,66 @@
+qed
+
+H-lines that intersect on the absolute do not meet (they do not share a common h-point)
+
+lemma tangent-not-meet:
+assumes z1 € unit-disc and x2 € unit-disc and 21 # x2 and — poincare-collinear {0),, x1, x2}
+assumes i € ideal-points (poincare-line x1 x2) a € unit-disc a # On poincare-collinear {0;,, a, i}
+shows — poincare-ray-meets-line 0, a x1 x2
+proof (rule ccontr)
+assume 7— thesis
+then obtain z where x € unit-disc poincare-on-ray 2 0, a poincare-collinear {x, 21, x2}
+unfolding poincare-ray-meets-line-def poincare-on-line-def
+by auto
+
+have poincare-collinear {0n, a, x}
+using <poincare-on-ray « On a) «x € unit-discy <a € unit-discy
+by (meson poincare-between-poincare-collinear poincare-between-rev poincare-on-ray-def poincare-on-ray-poincare-collinear
+zero-in-unit-disc)
+
+have x 4 0;
+using ‘~ poincare-collinear {On, 21, t2}> <poincare-collinear {x, x1, x2}>
+unfolding poincare-collinear-def
+by (auto simp add: assms(2) assms(3) poincare-between-rev)
+
+let 211 = poincare-line 0; a
+let 212 = poincare-line x1 x2
+
+have i € circline-set unit-circle
+using <i € ideal-points (poincare-line x1 x2)»
+using assms(3) ideal-points-on-unit-circle is-poincare-line-poincare-line by blast
+
+have i € circline-set ?l1
+using <poincare-collinear {0n, a, i}>
+unfolding poincare-collinear-def
+using <a € unit-disc> «a # On»
+by (metis insert-subset unique-poincare-line zero-in-unit-disc)
+
+moreover
+
+have z € circline-set 11
+using <a € unit-discy (a # On) <poincare-collinear {On, a, x}> (x € unit-dise»
+by (metis poincare-collinear3-between poincare-between-poincare-line-uvz poincare-between-poincare-line-uzv poincare-line-sym
+zero-in-unit-disc)
+
+moreover
+
+have inversion x € circline-set ?11
+using <poincare-collinear {0;,, a, x}>
+using poincare-line-inversion-fulllof 0, a x| (a € unit-discy (a # Opn» «x € unit-disc»
+by (metis poincare-collinear3-between is-poincare-line-inverse-point is-poincare-line-poincare-line poincare-between-poincare-line-uvz
+poincare-between-poincare-line-uzv poincare-line-sym zero-in-unit-disc)
+
+moreover
+
+have « € circline-set 212
+using <poincare-collinear {x, x1, x2} (a1 # x2» (al € unit-discy (x2 € unit-disc» «x € unit-disc»
+by (metis insert-commute inversion-noteg-unit-disc poincare-between-poincare-line-uvz poincare-between-poincare-line-uzv
+poincare-collinear3-iff poincare-line-sym-general)
+
+moreover
+
+hence inversion « € circline-set 212
+using «x1 4 x2) «x1 € unit-disc> (x2 € unit-discy «x € unit-discy
+using poincare-line-inversion-fulllof x1 x2 2]
+unfolding circline-set-def
+by auto

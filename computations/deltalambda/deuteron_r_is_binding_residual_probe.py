@@ -72,6 +72,7 @@ set_compute_dps()
 # comparison or (E2) the ideal CAL-1/2/3 mathematical layer. This is neither
 # -- it is a sole-anchor probe that happened to be muon-named.
 from substrate.q_parameter import Q_50_DIGIT_STR as _Q0_RESOLVED  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402  (AME registry)
 
 Q0_STR = _Q0_RESOLVED
 
@@ -81,7 +82,7 @@ def main() -> int:
     h = q0 - 1 / q0
     v = mp.sqrt(q0)
     E_rot = mp.mpf("2.0195829")            # pure theory, j=3 (binding-qhamiltonian-rotational-scale)
-    E_AME = mp.mpf("2.2245662")            # measured deuteron binding
+    E_AME = AME_B_DEUTERON_MEV_VALIDATION            # measured deuteron binding
     t = (v - 1 / v) / (v + 1 / v)          # bar-odd impurity, pure theory
     Eplus = E_rot / (1 - t)
     g2 = (E_AME / Eplus - 1) / h ** 2

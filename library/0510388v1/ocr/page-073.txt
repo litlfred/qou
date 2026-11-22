@@ -1,0 +1,31 @@
+This concrete model for the hyperbolic 3-space of constant curvature —1 is not
+nearly so common as the Poincaré ball model or the upper half-space model.
+
+But the hyperboloid model lets us exploit the interplay between the geometry of
+
+H? and the linear algebra of R'* in much the same way that we did in part C
+
+for S° and R*, and hence lets us give proofs of the formulas for the Biot-Savart
+and Green's operators in H*® which are very closely patterned on the corresponding
+proofs already given for S°.
+
+Since the inner product <x ,x> is positive for all x € H’, these radius vectors
+to H? are "timelike". Moreover, if x , y € ict , thenwe have <x,y>2>1,
+with equality if and only if x = y.
+
+We will freely identify points in R'” with the vectors at the origin that point to
+them, and we will also identify the tangent spaces at various points in R'® in the
+usual way, so that we can say v € T,H? if and only if <x,v> = 0. We
+necessarily have <v,v> < 0 forall nonzero v € T,H’ ; in other words, the
+tangent vectors to H® are "spacelike".
+
+We will always write <v , w> for the inner product of vectors when we're
+thinking of them as belonging to R'*. If v and w both lie in T,H’, we define
+
+vew =—-<vV,w>.
+Because the tangent vectors to H? are spacelike, this gives a positive definite
+
+inner product on each tangent space T,H®. The resulting Riemannian metric is
+complete and has constant curvature —1 .
+
+73

@@ -9,7 +9,7 @@ associator built from the normalised formal solutions (`KZPentagon.Φ`). Stage S
 bean `qou-zoyv`: it converts the pentagon of `KZPentagon` (with `T₁₂₃`, `T₂₃₄`) into Drinfeld's
 coproduct form (with `t₁₃ + t₂₃`, `t₂₄ + t₃₄`). Sorry-free.
 
--- Ref: [manuscript] beans/defs/qou-zoyv (stage S2, shift invariance)
+-- Ref: [leitner2026] beans/defs/qou-zoyv (stage S2, shift invariance)
 -/
 
 namespace QOU.KZ.KZShiftPhi

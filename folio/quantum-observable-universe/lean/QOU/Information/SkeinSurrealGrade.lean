@@ -46,7 +46,7 @@ hypothesis = growth bound), the horizon-cost family
 
 Base ring not applicable (ℕ-valued costs; `Ordinal` for the birthday shadow).
 
--- Ref: [manuscript] quantum-observable-universe/information-theory — surreal/transseries level grading
+-- Ref: [leitner2026] quantum-observable-universe/information-theory — surreal/transseries level grading
 -/
 
 namespace QOU.Information

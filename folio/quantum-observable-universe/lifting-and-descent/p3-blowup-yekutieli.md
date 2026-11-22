@@ -1,5 +1,3 @@
-The [regularity breakdown](#conj:regularity-breakdown) at $q = 1$ is a **cohomological obstruction** in the [Yekutieli lifting](#prop:yekutieli-lifting) framework.
-
 ## Brane tower and regularity
 
 The [recursive brane tower](#def:recursive-brane-tower) $\{A_n\}_{n \geq 0}$ with jet prolongations $A_n \hookrightarrow A_{n+1}$ produces a sequence of central extensions of gerbes:
@@ -33,4 +31,4 @@ $$
 The velocity field ceases to lift at this level. The blowup localises here:
 - **Below $n^*$**: the velocity is smooth and lifts perfectly.
 - **At $n^*$**: the obstruction class $\kappa_{n^*}$ is nonzero. The twisted 2-cocycle condition ([:refterm[descent]{#descent} condition](#prop:descent-condition)) fails.
-- **Above $n^*$**: the solution does not exist in those gerbes.
+- **Above $n^*$**: the velocity field has no lift to those levels of the tower.

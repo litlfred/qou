@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1512.04993v2/blocks/prose-sec-035",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Theories without action formulations",
-  "pageStart": 53,
-  "pageEnd": 53,
-  "text": "../sections/sec-035-828-theories-without-action-formulations.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1512.04993v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1512.04993v2",
+  "title": "Action from near the singularity",
+  "pageStart": 52,
+  "pageEnd": 52,
+  "text": "../sections/sec-035-826-action-from-near-the-singularity.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1512.04993v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1512.04993v2/manifest.jsonld",
   "provenance": "ingested"
 }

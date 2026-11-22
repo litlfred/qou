@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/acsv231201/blocks/lem-sec-034-03",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "title": "algebraic tangent cone is the limiting secant cone",
+  "pageStart": 180,
+  "pageEnd": 187,
+  "text": "lem-sec-034-03.md",
+  "derivedFrom": "library/acsv231201/sections/sec-034",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/acsv231201/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "6.48",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-034-additional-constructions.md (p. 180-187)",
+    "claim_id": "acsv231201#lemma:6.48",
+    "lean_status": "unformalized"
+  }
+}

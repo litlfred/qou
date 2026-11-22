@@ -1,0 +1,995 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "ft-dpm-quaternion-kernel-ieee-tit-2014",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p003-1",
+   "page": 3,
+   "mark": "1",
+   "text": "Weconsideredthequaternionnorm∥q∥=√ q∗q and the Lebesgue",
+   "marks": [
+    {
+     "page": 3,
+     "context": "Xf (x)g∗(x)dxisaquaternionleftHilbertspace."
+    }
+   ],
+   "block": "library/ft-dpm-quaternion-kernel-ieee-tit-2014/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p003-2",
+   "page": 3,
+   "mark": "2",
+   "text": "Aboundedlinearoperatorbetweennormedspacesisalwayscontinuous,",
+   "marks": [
+    {
+     "page": 2,
+     "context": "a"
+    },
+    {
+     "page": 2,
+     "context": "a2+ b"
+    },
+    {
+     "page": 2,
+     "context": "a2+ b2+ c"
+    },
+    {
+     "page": 2,
+     "context": "a2+ b2+ c2+ d"
+    },
+    {
+     "page": 2,
+     "context": "i"
+    },
+    {
+     "page": 2,
+     "context": "i2=j"
+    },
+    {
+     "page": 2,
+     "context": "i2=j2= k"
+    },
+    {
+     "page": 3,
+     "context": "By continuity"
+    }
+   ],
+   "block": "library/ft-dpm-quaternion-kernel-ieee-tit-2014/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p005-1",
+   "page": 5,
+   "mark": "3",
+   "text": "For x ∈X,\u0005(x) ∈R|X|×n, andthecoefﬁcientM∈R|X|×1,where|X|is the (possibly inﬁnite) cardinality of X. Observe that R|X|×1 is the space of lin-",
+   "marks": [
+    {
+     "page": 5,
+     "context": "mappingy=f (x)∈Rn,using"
+    }
+   ],
+   "block": "library/ft-dpm-quaternion-kernel-ieee-tit-2014/blocks/prose-sec-008"
+  },
+  {
+   "id": "fn-p006-1",
+   "page": 6,
+   "mark": "4",
+   "text": "See[45,p.91]fortherealmatrixrepresentationofquaternions.",
+   "marks": [
+    {
+     "page": 6,
+     "context": "real-valuedmatrixrepresentation"
+    },
+    {
+     "page": 6,
+     "context": "K=[K1K2K3K4]T∈R"
+    },
+    {
+     "page": 6,
+     "context": "ThefollowingstatementsabouttheR"
+    },
+    {
+     "page": 6,
+     "context": "(a)K′= [KrKiK jKk]T∈R"
+    },
+    {
+     "page": 6,
+     "context": "AlthoughtheR"
+    },
+    {
+     "page": 6,
+     "context": "⎟⎟⎠∈R"
+    },
+    {
+     "page": 6,
+     "context": "are respectively an R"
+    },
+    {
+     "page": 6,
+     "context": "kernelisnotgivenbytheR"
+    },
+    {
+     "page": 6,
+     "context": "vectorkernelinR"
+    }
+   ],
+   "block": "library/ft-dpm-quaternion-kernel-ieee-tit-2014/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p009-2",
+   "page": 9,
+   "mark": "5",
+   "text": "Recallthatforθ≈0, sin(θ) ≈θandcos(1.5π+ θ) ≈θ.",
+   "marks": [
+    {
+     "page": 9,
+     "context": "onlywhentheybehaveinalinear-likefashion"
+    }
+   ],
+   "block": "library/ft-dpm-quaternion-kernel-ieee-tit-2014/blocks/prose-sec-017"
+  },
+  {
+   "id": "fn-p010-1",
+   "page": 10,
+   "mark": "6",
+   "text": "Recallthat⟨x, y⟩ℜ= ℜ{⟨x, y⟩}.",
+   "marks": [
+    {
+     "page": 10,
+     "context": "thestandardcubickernelinEq.(10)forp=3,thatis,"
+    }
+   ],
+   "block": "library/ft-dpm-quaternion-kernel-ieee-tit-2014/blocks/prose-sec-020"
+  },
+  {
+   "id": "fn-p012-1",
+   "page": 12,
+   "mark": "7",
+   "text": "We have maintainedthe notation s and x for consistencywith the nonlinear",
+   "marks": [
+    {
+     "page": 12,
+     "context": "natureofthevectors,givenby"
+    }
+   ],
+   "block": "library/ft-dpm-quaternion-kernel-ieee-tit-2014/blocks/prose-sec-021"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p009-1",
+   "page": 9,
+   "mark": "a",
+   "text": "∈HN",
+   "block": "library/ft-dpm-quaternion-kernel-ieee-tit-2014/blocks/prose-sec-017"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "4",
+   "context": "thenorminHdeﬁnedastheEuclideannorminR"
+  },
+  {
+   "page": 2,
+   "mark": "4",
+   "context": "element-wisefashionasinR"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "Observation1:ThespaceH"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "H"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "X∥f (x)∥2"
+  },
+  {
+   "page": 3,
+   "mark": "x",
+   "context": "X∥f (x)∥2 d"
+  },
+  {
+   "page": 3,
+   "mark": "f",
+   "context": "X"
+  },
+  {
+   "page": 3,
+   "mark": "g",
+   "context": "Xf (x)"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "Xf (x)g∗(x)"
+  },
+  {
+   "page": 3,
+   "mark": "x",
+   "context": "Xf (x)g∗(x)d"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "Xf (x)g∗(x)dxis"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "sidesbyL(g"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "L( f ) = ⟨f, g0⟩L(g"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "Remark5:Observethattheright-multiplicationbyL(g"
+  },
+  {
+   "page": 4,
+   "mark": "y",
+   "context": "H=K(x,"
+  },
+  {
+   "page": 4,
+   "mark": "x",
+   "context": "H=K(x, y) =K"
+  },
+  {
+   "page": 4,
+   "mark": "y",
+   "context": "H=K(x, y) =Kx, K"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "i=0α"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "i=0αi K(x"
+  },
+  {
+   "page": 4,
+   "mark": "g",
+   "context": "i=0αi K(xi, ·)and"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "i=0β"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "i=0βi K(y"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "i=0α"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "i=0αi K(x"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "{\u0005(x) :X−→R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "K(x, y)=\u0005H(x)\u0005(y)∈R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "mappingy=f (x)∈R"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "i=1\u0005(x"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "i=1\u0005(xi)A"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "the(vector)weights{Ai}i=1:N⊂R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "whereaij∈R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "atorandK(x, xi) ∈R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "atorandK(x, xi) ∈Rn×nandAi∈R"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "thekernelK(xi, x)issymmetric,itcontains(n"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "entries and the product K(xi, x)Aiinvolves n"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "i(x)ψ"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "i,K"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "jandK"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "r, K"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "i, K"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "j, K"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "ofpositivedeﬁnitenessvHKv > 0, ∀v∈H"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "whereK∈H"
+  },
+  {
+   "page": 6,
+   "mark": "r",
+   "context": "rK"
+  },
+  {
+   "page": 6,
+   "mark": "v",
+   "context": "rKr"
+  },
+  {
+   "page": 6,
+   "mark": "r",
+   "context": "rKrv"
+  },
+  {
+   "page": 6,
+   "mark": "r",
+   "context": "iK"
+  },
+  {
+   "page": 6,
+   "mark": "v",
+   "context": "iKr"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "iKrv"
+  },
+  {
+   "page": 6,
+   "mark": "r",
+   "context": "jK"
+  },
+  {
+   "page": 6,
+   "mark": "v",
+   "context": "jKr"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "jKrv"
+  },
+  {
+   "page": 6,
+   "mark": "r",
+   "context": "kK"
+  },
+  {
+   "page": 6,
+   "mark": "v",
+   "context": "kKr"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "kKrv"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "iK"
+  },
+  {
+   "page": 6,
+   "mark": "v",
+   "context": "iKi"
+  },
+  {
+   "page": 6,
+   "mark": "r",
+   "context": "iKiv"
+  },
+  {
+   "page": 6,
+   "mark": "v",
+   "context": "iKivr+ 2"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "jK"
+  },
+  {
+   "page": 6,
+   "mark": "v",
+   "context": "jK j"
+  },
+  {
+   "page": 6,
+   "mark": "r",
+   "context": "jK jv"
+  },
+  {
+   "page": 6,
+   "mark": "v",
+   "context": "jK jvr+ 2"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "kK"
+  },
+  {
+   "page": 6,
+   "mark": "v",
+   "context": "kKk"
+  },
+  {
+   "page": 6,
+   "mark": "r",
+   "context": "kKkv"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "iK"
+  },
+  {
+   "page": 6,
+   "mark": "v",
+   "context": "iK j"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "iK jv"
+  },
+  {
+   "page": 6,
+   "mark": "v",
+   "context": "iK jvk+ 2"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "jK"
+  },
+  {
+   "page": 6,
+   "mark": "v",
+   "context": "jKk"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "jKkv"
+  },
+  {
+   "page": 6,
+   "mark": "v",
+   "context": "jKkvi+ 2"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "kK"
+  },
+  {
+   "page": 6,
+   "mark": "v",
+   "context": "kKi"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "kKiv"
+  },
+  {
+   "page": 6,
+   "mark": "v",
+   "context": "vQr"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "are respectively an R4"
+  },
+  {
+   "page": 7,
+   "mark": "4",
+   "context": "ALUED (SCALAR), QUATERNION-VALUED (SCALAR), VECTOR-VALUED (R"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "MATRIX-VALUED (R"
+  },
+  {
+   "page": 7,
+   "mark": "p",
+   "context": "1 + xHy"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "ConsiderthequaternioncubickernelKQ P:X"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "1(x)φ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "2(x)φ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "X"
+  },
+  {
+   "page": 7,
+   "mark": "y",
+   "context": "X2 θ∗(x)KQ P(x,"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "X2 θ∗(x)KQ P(x, y)θ(y)"
+  },
+  {
+   "page": 7,
+   "mark": "x",
+   "context": "X2 θ∗(x)KQ P(x, y)θ(y)d"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "X2 θ∗(x)KQ P(x, y)θ(y)dx"
+  },
+  {
+   "page": 7,
+   "mark": "y",
+   "context": "X2 θ∗(x)KQ P(x, y)θ(y)dxd"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "X"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "X2 θ∗(x)φH(x)φ(y)θ(y)"
+  },
+  {
+   "page": 7,
+   "mark": "x",
+   "context": "X2 θ∗(x)φH(x)φ(y)θ(y)d"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "X2 θ∗(x)φH(x)φ(y)θ(y)dx"
+  },
+  {
+   "page": 7,
+   "mark": "y",
+   "context": "X2 θ∗(x)φH(x)φ(y)θ(y)dxd"
+  },
+  {
+   "page": 7,
+   "mark": "y",
+   "context": "r"
+  },
+  {
+   "page": 7,
+   "mark": "r",
+   "context": "ry"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "samples x, yK RP:X"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "onthecompactsetX⊊H"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "where ⟨x, y⟩ℜis the inner product in R"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "darkbluefor−13 · 10"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "uefor−13 · 103,whitefortheinterval[−10, 10],andredfor13 · 10"
+  },
+  {
+   "page": 8,
+   "mark": "4",
+   "context": "darkbluefor−7 · 10−4,whitefor0,andredfor7 · 10"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "arbitrary,non-zero,vectorx∈H"
+  },
+  {
+   "page": 8,
+   "mark": "r",
+   "context": "rKx"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "iKx"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "jKx"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "kKx"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "jx j+ kxk∈H,whichgivesδ=−AQ(x"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "r−x"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "i−x"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "j−x"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "considered 2Dmap θs\u0004→(sin θs, cos θs) ∈R"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "!!!!!y"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "sn=yn+ a3y"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "n+ ϵ"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "sn∈R"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "N(0, \u000f2).Thequadriavariaterealsignalsxn, sn∈R"
+  },
+  {
+   "page": 12,
+   "mark": "4",
+   "context": "For[α, β, γ, δ]T∈R"
+  },
+  {
+   "page": 12,
+   "mark": "4",
+   "context": "For[α, β, γ, δ]T∈R4,weneedtoﬁnd[a, b, c, d]T∈R"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "a"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "= α"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "= α3+ β"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "ingitwithrespecttothebasis[3,"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "a"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "1 + 3 + 3"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "=a"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "10"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "103+ 300 + 30"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "100"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "1003+ 3 × 100"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "1003+ 3 × 1002 + 300"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "+ \n(3b+300c+3×100"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "+ \n(3b+300c+3×1002d)+1(b+10"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "+ \n(3b+300c+3×1002d)+1(b+103c+100"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "033003 × 100"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "0110"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "100"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "onwerealsoconsidered,including{1, \n,"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "onwerealsoconsidered,including{1, \n, \n2,"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "{(b0+ \n)"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "{(b0+ \n)3, (b1+\n)"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "{(b0+ \n)3, (b1+\n)3, (b2+ \n)"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "{(b0+ \n)3, (b1+\n)3, (b2+ \n)3, (b3+\n)"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "s"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "s"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "s"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "ˆx = As + Bs"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "ˆx = As + Bsi+ Cs"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "ˆx = As + Bsi+ Csj+ Ds"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "ˆx = As + Bsi+ Csj+ Dsk= Ws"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "s"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "s"
+  },
+  {
+   "page": 13,
+   "mark": "j",
+   "context": "s"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "s"
+  },
+  {
+   "page": 13,
+   "mark": "x",
+   "context": "1, . . . ,"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "ˆxW L=Ws"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "SaHS"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "S"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "Sa=[s"
+  },
+  {
+   "page": 13,
+   "mark": "s",
+   "context": "1, . . . ,"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "1, . . . , s"
+  },
+  {
+   "page": 13,
+   "mark": "x",
+   "context": "1, . . . ,"
+  }
+ ]
+}

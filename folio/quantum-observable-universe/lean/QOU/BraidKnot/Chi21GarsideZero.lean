@@ -68,7 +68,7 @@ channel, not a numerical near-cancellation.  See
 -- Ref: [hoefsmit1974] P.N. Hoefsmit, "Representations of Hecke algebras
      of finite groups with BN-pairs of classical type", PhD thesis, 1974.
 -- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457
--- Ref: [manuscript] mass-theory/hoefsmit-seminormal-form.md (prop:hoefsmit-seminormal-form);
+-- Ref: [leitner2026] mass-theory/hoefsmit-seminormal-form.md (prop:hoefsmit-seminormal-form);
      probe computations/probes/probe_9b_alphak_structure.py
 -/
 
@@ -112,7 +112,7 @@ noncomputable def rhoGarside (q b : R) : Matrix (Fin 2) (Fin 2) R :=
     Over any field, with `q ≠ 0`, `q² ≠ 1`, and `q⁴ ≠ 1` (the
     seminormal axial-distance denominators nonzero).  The off-diagonal
     seminormal entry `b` is arbitrary — it does not enter the trace. -/
--- Ref: [manuscript] mass-theory/hoefsmit-seminormal-form.md; probe probe_9b_alphak_structure.py
+-- Ref: [leitner2026] mass-theory/hoefsmit-seminormal-form.md; probe probe_9b_alphak_structure.py
 theorem chi21_garside_zero (q b : R)
     (hq : q ≠ 0) (hq2 : q ^ 2 ≠ 1) (hq4 : q ^ 4 ≠ 1) :
     Matrix.trace (rhoGarside q b) = 0 := by

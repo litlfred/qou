@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/malkin-2021-galois-action-on-motivic-fundamental-groups-thes",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "malkin-2021-galois-action-on-motivic-fundamental-groups-thes",
   "contains": [
+    "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/sections/sec-front-matter",
     "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/sections/sec-000",
     "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/sections/sec-001",
     "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/sections/sec-002",
@@ -42,10 +43,17 @@
     "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/sections/sec-028",
     "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/sections/sec-029",
     "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/sections/sec-030",
-    "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/sections/sec-031"
+    "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/sections/sec-031",
+    "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/sections/sec-032",
+    "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/sections/sec-033",
+    "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/sections/sec-034",
+    "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/sections/sec-035",
+    "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/sections/sec-036",
+    "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/sections/sec-037",
+    "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/sections/sec-038"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "malkin-2021-galois-action-on-motivic-fundamental-groups-thes",
     "title_source": "slug",

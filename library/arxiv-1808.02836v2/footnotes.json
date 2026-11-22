@@ -1,0 +1,712 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1808.02836v2",
+ "status": "determined",
+ "body_size": 10.9,
+ "footnotes": [
+  {
+   "id": "fn-p006-1",
+   "page": 6,
+   "mark": "1",
+   "text": "i.e.a homotopy (resp.isotopy) keeping endpoints ﬁxed",
+   "marks": [
+    {
+     "page": 6,
+     "context": "A path homotopy (resp.isotopy)"
+    }
+   ],
+   "block": "library/arxiv-1808.02836v2/blocks/prose-sec-008"
+  },
+  {
+   "id": "fn-p010-1",
+   "page": 10,
+   "mark": "2",
+   "text": "We include the names of manifolds from the cusped hyperbolic manifold census of SnapPea.",
+   "marks": [
+    {
+     "page": 10,
+     "context": "ProofThe ﬁgure-eight knot complement m004"
+    }
+   ],
+   "block": "library/arxiv-1808.02836v2/blocks/prose-sec-010"
+  }
+ ],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 4,
+   "mark": "e",
+   "context": "Let"
+  },
+  {
+   "page": 4,
+   "mark": "e",
+   "context": "k–simplexτin"
+  },
+  {
+   "page": 4,
+   "mark": "e",
+   "context": "plexτine∆is contained in a unique 3–simplexστ.A 2–simplex in"
+  },
+  {
+   "page": 4,
+   "mark": "e",
+   "context": "LetΦbe a family of afﬁne isomorphisms pairing the faces in"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "Considerthequotientspace"
+  },
+  {
+   "page": 4,
+   "mark": "e",
+   "context": "M=e∆/Φwiththequotienttopology,anddenotethequotientmapp:"
+  },
+  {
+   "page": 4,
+   "mark": "e",
+   "context": "make the additional assumption onΦthat for everyk–simplexτin"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "τis injective.Then the set of non-manifold points of"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "Mis contained in the 0–skeleton, and in this case"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "ifold.(See Seifert-Threfall [33].)We also always assume that"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "he tripleT= (e∆,Φ, p)is called a (singular) triangulation of"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "M(k)= {p(τ"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "M(k)= {p(τk) | τ"
+  },
+  {
+   "page": 4,
+   "mark": "e",
+   "context": "{p(τk) | τk⊆e∆}denote the set of images of thek–simplices of"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "Let"
+  },
+  {
+   "page": 4,
+   "mark": "e",
+   "context": "M(k)arepreciselytheequivalenceclassesofk–simplicesin"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "reciselytheequivalenceclassesofk–simplicesine∆.Theelementsof"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "theelementsof"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "termed the vertices of"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "Mand the elements of"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "if"
+  },
+  {
+   "page": 4,
+   "mark": "e",
+   "context": "M(1)we associate a continuous pathγ"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "To each edgeein"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "Mwith endpoints in"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "cally ﬁnite, non-compact 3–manifold, and the pseudo-manifold"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "referred to as the end-compactiﬁcation ofM,the elements of"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "l edges ofM.We also refer to the triangulationT= (e∆,Φ, p)of"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "of"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "angulations.If"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "WesuppressthenotationT= (e∆,Φ, p)andsimplysaythat"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "s.The reader is reminded than an ideal edge ofMis an edge of"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "homotopic (resp.null-isotopic) in"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "In particular, no edge in"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "Mbounds an embedded disc in"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "he edgeeis isotopic into the boundary.Choose a compact coreM"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "thateachboundarycomponentofM"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "entofMcisavertexlinkingsurface.ThereexistsanembeddeddiscDinM"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "whoseboundaryconsistsofe ∩M"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "oseboundaryconsistsofe ∩McandasubarconaboundarycomponentBofM"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "the 1–tetrahedron, 1–vertex triangulation ofS"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "angulation ofS3with the vertex removed.The triangulation ofS"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "two edges; one is a trefoil knot inS"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "dges; one is a trefoil knot inS3and the other the unknot inS"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "ngular faces in the triangulation of the end-compactiﬁcation"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "the faces inMaccording to their topology in"
+  },
+  {
+   "page": 7,
+   "mark": "c",
+   "context": "ProofChooseacompactcoreM"
+  },
+  {
+   "page": 7,
+   "mark": "c",
+   "context": "acompactcoreMcofMwiththepropertythateachboundarycomponentofM"
+  },
+  {
+   "page": 7,
+   "mark": "c",
+   "context": "einMandN"
+  },
+  {
+   "page": 7,
+   "mark": "c",
+   "context": "einMandNc(e) = N(e)∩M"
+  },
+  {
+   "page": 7,
+   "mark": "c",
+   "context": "einMandNc(e) = N(e)∩Mc.The frontier ofN"
+  },
+  {
+   "page": 7,
+   "mark": "c",
+   "context": "einMandNc(e) = N(e)∩Mc.The frontier ofNc(e)inM"
+  },
+  {
+   "page": 7,
+   "mark": "c",
+   "context": "unde.LetN(t)bearegularneighbourhoodoftinM.ThentheboundaryofN"
+  },
+  {
+   "page": 7,
+   "mark": "c",
+   "context": "aregularneighbourhoodoftinM.ThentheboundaryofNc(t) = N(t) ∩M"
+  },
+  {
+   "page": 7,
+   "mark": "c",
+   "context": "s arounde.The edges of the hexagons through the interior ofM"
+  },
+  {
+   "page": 7,
+   "mark": "c",
+   "context": "termedthelongedges.Seenwithrespectto(t ∩M"
+  },
+  {
+   "page": 7,
+   "mark": "c",
+   "context": "3in cyclic order.See Figure 3 on the right for a drawing ofN"
+  },
+  {
+   "page": 8,
+   "mark": "c",
+   "context": "other as the bottom hexagon.The intersectiont ∩N"
+  },
+  {
+   "page": 8,
+   "mark": "c",
+   "context": "Figure 3:Left:Cross-section through the neighbourhoodN"
+  },
+  {
+   "page": 8,
+   "mark": "c",
+   "context": "Labelscoincidewiththeonesontheright.Right:TruncatedboundaryN"
+  },
+  {
+   "page": 8,
+   "mark": "c",
+   "context": "Becausetisa3–fold,theintersectionoftwithaboundarytorusT0 ⊂∂M"
+  },
+  {
+   "page": 9,
+   "mark": "c",
+   "context": "the previous case.The intersection oftwithN"
+  },
+  {
+   "page": 9,
+   "mark": "c",
+   "context": "Thetwohexagonsagainformaproperlyembedded3–puncturedsphereS⊂M"
+  },
+  {
+   "page": 9,
+   "mark": "c",
+   "context": "meets∂M"
+  },
+  {
+   "page": 9,
+   "mark": "c",
+   "context": "esofembeddingthebarbellgraphintoatorusboundarycomponentT0⊂∂M"
+  },
+  {
+   "page": 10,
+   "mark": "c",
+   "context": "Figure 5: Left: Cross-section through the neighbourhood N"
+  },
+  {
+   "page": 10,
+   "mark": "c",
+   "context": "oincide with the ones on the right.Right:Truncated boundaryN"
+  },
+  {
+   "page": 11,
+   "mark": "c",
+   "context": "in the truncated 3–manifoldM"
+  },
+  {
+   "page": 12,
+   "mark": "c",
+   "context": "properlyembeddedM¨obiusbandN⊂M"
+  },
+  {
+   "page": 12,
+   "mark": "c",
+   "context": "T0 ⊂∂M"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "bedded projective plane and we have a connected summand ofRP"
+  },
+  {
+   "page": 12,
+   "mark": "c",
+   "context": "a properly embedded annulus A⊂M"
+  },
+  {
+   "page": 12,
+   "mark": "c",
+   "context": "andbothareparallelcurvesonthesametorusboundarycomponentT0⊂∂M"
+  },
+  {
+   "page": 12,
+   "mark": "c",
+   "context": "M"
+  },
+  {
+   "page": 12,
+   "mark": "c",
+   "context": "W.l.o.g,edgesABandAC(truncatedtoruninsideM"
+  },
+  {
+   "page": 12,
+   "mark": "c",
+   "context": "eighbourhood of the respective torus boundary components ofM"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "ction1(1).EdgeB′C′identiﬁedwithedgeC′′B′′formingapuncturedRP"
+  },
+  {
+   "page": 13,
+   "mark": "c",
+   "context": "truction 1 (2).Both boundary components ofAare inessential∂M"
+  },
+  {
+   "page": 13,
+   "mark": "c",
+   "context": "We now pass to a small regular neighbourhoodN = Nhd(LST⋆∩M"
+  },
+  {
+   "page": 13,
+   "mark": "c",
+   "context": "ular neighbourhoodN = Nhd(LST⋆∩Mc)ofLST⋆in the compact coreM"
+  },
+  {
+   "page": 13,
+   "mark": "c",
+   "context": "ndary∂Nmust be a surface with boundary properly embedded inM"
+  },
+  {
+   "page": 13,
+   "mark": "c",
+   "context": "romtheannulusthatistheregularneighbourhoodoftheidealedgeeinM"
+  },
+  {
+   "page": 14,
+   "mark": "c",
+   "context": "regular neighbourhood ofLST⋆inM"
+  },
+  {
+   "page": 14,
+   "mark": "c",
+   "context": " all boundary components on the same boundary componentT0ofM"
+  },
+  {
+   "page": 14,
+   "mark": "c",
+   "context": "T0inM"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "ProofWe may and will work with the pseudo-manifold"
+  },
+  {
+   "page": 16,
+   "mark": "c",
+   "context": "on spine yielding a 4–punctured sphereSproperly embedded inM"
+  },
+  {
+   "page": 16,
+   "mark": "c",
+   "context": "∂M"
+  },
+  {
+   "page": 16,
+   "mark": "c",
+   "context": "ing them slightly off T0yields a disc properly embedded in M"
+  },
+  {
+   "page": 16,
+   "mark": "c",
+   "context": "paralleltoboundarycomponentT0ofM"
+  },
+  {
+   "page": 16,
+   "mark": "c",
+   "context": "them slightly off T0yields an annulus properly embedded in M"
+  },
+  {
+   "page": 16,
+   "mark": "c",
+   "context": "S ),bothproperlyembeddedinM"
+  },
+  {
+   "page": 16,
+   "mark": "c",
+   "context": "roperlyembeddedinMc,bothmeetingthesameboundarycomponentT0⊂∂M"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "DM :H"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "DM :H2(M;Z"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "DM :H2(M;Z2)∼= H"
+  },
+  {
+   "page": 17,
+   "mark": "b",
+   "context": "M,"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "An elementϕ∈H"
+  },
+  {
+   "page": 17,
+   "mark": "b",
+   "context": "M,"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "irreducibleandnotRP"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "Given the subgroupH = ⟨ϕ"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "Given the subgroupH = ⟨ϕ1,ϕ"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "Given the subgroupH = ⟨ϕ1,ϕ2⟩∼= Z"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "Given the subgroupH = ⟨ϕ1,ϕ2⟩∼= Z2 ⊕Z"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "Given the subgroupH = ⟨ϕ1,ϕ2⟩∼= Z2 ⊕Z2ofH"
+  },
+  {
+   "page": 18,
+   "mark": "b",
+   "context": "M,"
+  },
+  {
+   "page": 18,
+   "mark": "e",
+   "context": "˜e(T ) =number of preimages of 0–even edges in"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "2ntt +2"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "ed hyperbolic 3–manifold of ﬁnite volume, and suppose that ϕ"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "hyperbolic 3–manifold of ﬁnite volume, and suppose that ϕ1,ϕ"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "rbolic 3–manifold of ﬁnite volume, and suppose that ϕ1,ϕ2 ∈H"
+  },
+  {
+   "page": 19,
+   "mark": "b",
+   "context": "M,"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "are non–trivial classes withϕ"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "are non–trivial classes withϕ1 +ϕ"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "are non–trivial classes withϕ1 +ϕ2 = ϕ"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "|| c"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "|| ci || = −D−∑χ(S"
+  },
+  {
+   "page": 25,
+   "mark": "d",
+   "context": "i=1"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "i=1d"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "a contribution of"
+  },
+  {
+   "page": 25,
+   "mark": "f",
+   "context": "ese tetrahedra to the (possibly not pairwise distinct edges)"
+  },
+  {
+   "page": 25,
+   "mark": "g",
+   "context": "e tetrahedra to the (possibly not pairwise distinct edges)f,"
+  },
+  {
+   "page": 25,
+   "mark": "h",
+   "context": "trahedra to the (possibly not pairwise distinct edges)f,gand"
+  },
+  {
+   "page": 25,
+   "mark": "5",
+   "context": "total contribution of"
+  },
+  {
+   "page": 25,
+   "mark": "f",
+   "context": "3> 1to"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "We claim that eitherH"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "We claim that eitherH1(M,Z"
+  },
+  {
+   "page": 29,
+   "mark": "e",
+   "context": "1(M,Z2)has rank 3 or there is a 2– or 3–fold cyclic covering"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "thatH"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "withH"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "withH1(M,Z"
+  },
+  {
+   "page": 29,
+   "mark": "e",
+   "context": "k is not three,we can pass to a 2– or 3–fold cyclic covering"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "H"
+  },
+  {
+   "page": 29,
+   "mark": "e",
+   "context": "of"
+  }
+ ]
+}

@@ -8,6 +8,7 @@ pages: 35-37
 source_pdf: symmetry-04-00039-v3.pdf
 source_sha256: 1aa8a81916887f8e
 toc_source: inferred
+doc_brief: "Knots on a Torus: A Model of the Elementary Particles — Two knots; just two rudimentary knots, the unknot and the trefoil."
 ---
 For example, consider the creation of delta particles by the excitation of nucleons operated upon by 
 pions (or conversely, delta decay into nucleons) as summarized in Figure 36 (cf. [1]). This figure is 
@@ -129,6 +130,5 @@ Figure 37. Delta particles with pion constituents.
  
 As per [1], we can also establish a correspondence between the SM neutral pion and the two 
 alternate model versions shown here by defining the superposition 
-0
 0
 0

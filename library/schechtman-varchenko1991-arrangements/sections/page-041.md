@@ -1,0 +1,62 @@
+---
+doc_id: schechtman-varchenko1991-arrangements
+doc_title: "Arrangements of hyperplanes and Lie algebra homology"
+section_id: page-041
+section_title: "Page 41"
+pages: 41-41
+pdf_page: 41
+source_pdf: schechtman-varchenko1991-arrangements.pdf
+source_sha256: 0100fd32438740f0
+text_source: ocr
+granularity: page
+doc_brief: "Arrangements of hyperplanes and Lie algebra homology — 56 sections: Page 1; Page 2; Page 3"
+---
+Arrangements of hyperplanes and Lie algebra homology 179
+
+Proof. For x=f; (i) is 6.14.1 (i). Suppose that we know (i) for x. We have v(Lf;,
+XY=fi vO)—Fx-KAM=3Lh, x1 AUA+h)-Aj, UA)LAX+ Si V)_.
+This implies (i) for [f;, x] and (ii). O
+
+6.14.3 Lemma. For every xen
+
+4S(x,[a,b]) if aen, beh
+
+SG), a6) ~{50. [a,b]) if a,ben.
+
+S is defined on b ~ b by the rule
+
+_ S(a,c) S(a,d)
+S(aa b,c A d)=det (sc ) Sth, a) (cf. (6.4.2)).
+
+Proof. The first equality is the direct consequence of 6.14.2(i). Let us prove
+the second one. For x=/f; the both sides are zero. Note that the form S on
+b Ab has the property
+
+(6.14.4) S(x-y, z)=S(y, —1(x)-z)
+if t(x)-zeb. Suppose that we know 6.14.3 for xen,. We have
+S(v(Lhi x]), aA b)=S(f,- v(x) —x-v(fi), aA B)
+=S(v(x), e(arnb))-SGAALx A,anb) if a,ben.
+Put A2=(0, ..., 0, 1, 0, ..., 0), so wAP)=h;.
+
+Ist case. aen,, ben,. If A=A? then both sides of 6.14.3 for f;, x are zero.
+If A+A°, we have
+
+S(v(Cis x]), 4.0 b)=S (v2), [e;, a] Ab +44 Le;, b])—3(h;, HA) SUF, a) S(x, b)
+=48(x, (Le, a], b])+S(x, La, Le, 6]]) +4 Sx, Le, (a, 51)
+=5(x, Le; [a, b]])=S(Lf. x], [a 5).
+
+2nd case. aen,,, ben,., 4’, A” =A. Then
+
+S(v(Lfi, x]), aA b)=S (v(x), e;-(aA b))
+=S(x, Le, Ca, 6]))
+=S(Lfi, x], [4 6).
+So, the second equality 6.14.3 is proven for [f;, x]. O
+6.15 Comultiplication. Suppose that n weights A,, ..., 4,€5* are given. Put M;
+= M(A) with the generator v;; M=M,@...@M,, v=0,@...@v,, A= x Aj.
+Let b act on b@ M by the rule a-(b@m)=[a, b]®@m+a@b-m. "
+
+For 1SiSn, c, beg, m=x,@...@x,€M, put bOm=x,@...®xX;-1 @bx;
+@Xj41@...@x,3 DP(c@m)=[b, c]@m+c@ bm.
+
+6.15.1 Lemma-definition. There exists a unique C-linear map vy: M>b@M
+such that

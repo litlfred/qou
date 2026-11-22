@@ -1,1 +1,1 @@
-LetT,T′ be two ordered triangulations which diﬀer by a typical 3-3
+Let T , T ′ be two ordered triangulations which diﬀer by a typical 3-3 Section 4.4 Invariance under Pachner Moves − + = + − = Figure 4.10: Short notations for basis elements pachner move, see Table 4.1 for their comparison. Then the identity in Equation 4.26 holds, assuming all simplices which do not present among the summation variables have been assigned a ﬁxed coloring.

@@ -1,0 +1,1 @@
+For |sxy| < 1 we have (4.5) ∞ X k=−∞ sk yn+k (qn+k+1; q)∞ (q; q)∞ 1φ1(0; qn+k+1; q, y2) xk (qk+1; q)∞ (q; q)∞ 1φ1(0; qk+1; q, x2) =        yn (s−1xy−1; q)n (q; q)n 2φ1 s−1yx−1, qns−1xy−1 qn+1 ; q, sxy  if n ≥0, s−nx−n (s−1yx−1; q)−n (q; q)−n 2φ1 s−1xy−1, q−ns−1yx−1 q−n+1 ; q, sxy  if n < 0.

@@ -9,13 +9,22 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "The case when ρΣ is residually abelian",
-  "pageStart": 79,
-  "pageEnd": 82,
+  "title": "Proof of theorem 2.0.2, the case when ρΣ is not residually abelian",
+  "pageStart": 73,
+  "pageEnd": 79,
   "contains": [
-    "library/2018sorus020/blocks/prose-sec-039"
+    "library/2018sorus020/blocks/prose-sec-039",
+    "library/2018sorus020/blocks/thm-sec-039-01",
+    "library/2018sorus020/blocks/prop-sec-039-02",
+    "library/2018sorus020/blocks/rem-sec-039-03",
+    "library/2018sorus020/blocks/lem-sec-039-04",
+    "library/2018sorus020/blocks/lem-sec-039-05",
+    "library/2018sorus020/blocks/lem-sec-039-06",
+    "library/2018sorus020/blocks/lem-sec-039-07",
+    "library/2018sorus020/blocks/lem-sec-039-08",
+    "library/2018sorus020/blocks/lem-sec-039-09"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/2018sorus020",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/2018sorus020",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/2018sorus020/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/2018sorus020/manifest.jsonld",
   "provenance": "ingested"
 }

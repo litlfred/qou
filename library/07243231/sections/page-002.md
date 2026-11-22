@@ -8,6 +8,7 @@ pages: 2-2
 source_pdf: 07243231.pdf
 source_sha256: e3880af88c7d91a3
 toc_source: none
+doc_brief: "Elias, Ben; Makisumi, Shotaro; Thiel, Ulrich; Williamson, Geordie — 5 sections: Page 1; Page 2; Page 3"
 ---
 This chapter gives a ﬁrst introduction to the theory of Coxeter groups.
 Chapter 2 Reﬂection Groups and Coxeter Groups
@@ -61,5 +62,3 @@ property.
 Chapter 12 How to Draw Soergel Bimodules
 This chapter uses the diagrammatic descriptions of morphisms between Bott-Samelson bimodules to give
 Edited by FIZ Karlsruhe, the European Mathematical Society and the Heidelberg Academy of Sciences and Humanities
-© 2023 FIZ Karlsruhe GmbH
-Page 2

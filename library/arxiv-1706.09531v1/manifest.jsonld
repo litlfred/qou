@@ -1,0 +1,60 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1706.09531v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Advantages of Unity With SU(4)-Color",
+  "contains": [
+    "library/arxiv-1706.09531v1/sections/sec-front-matter",
+    "library/arxiv-1706.09531v1/sections/sec-000",
+    "library/arxiv-1706.09531v1/sections/sec-001",
+    "library/arxiv-1706.09531v1/sections/sec-002",
+    "library/arxiv-1706.09531v1/sections/sec-003",
+    "library/arxiv-1706.09531v1/sections/sec-004",
+    "library/arxiv-1706.09531v1/sections/sec-005",
+    "library/arxiv-1706.09531v1/sections/sec-006",
+    "library/arxiv-1706.09531v1/sections/sec-007",
+    "library/arxiv-1706.09531v1/sections/sec-008",
+    "library/arxiv-1706.09531v1/sections/sec-009",
+    "library/arxiv-1706.09531v1/sections/sec-010",
+    "library/arxiv-1706.09531v1/sections/sec-011",
+    "library/arxiv-1706.09531v1/sections/sec-012",
+    "library/arxiv-1706.09531v1/sections/sec-013",
+    "library/arxiv-1706.09531v1/sections/sec-014",
+    "library/arxiv-1706.09531v1/sections/sec-015",
+    "library/arxiv-1706.09531v1/sections/sec-016",
+    "library/arxiv-1706.09531v1/sections/sec-017",
+    "library/arxiv-1706.09531v1/sections/sec-018",
+    "library/arxiv-1706.09531v1/sections/sec-019",
+    "library/arxiv-1706.09531v1/sections/sec-020",
+    "library/arxiv-1706.09531v1/sections/sec-021",
+    "library/arxiv-1706.09531v1/sections/sec-022"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "arxiv-1706.09531v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "1706.09531v1.pdf",
+    "source_sha256": "63e34483b4c3fc3672456d444302299baf166792c359af5f9a3c27674fd2a692",
+    "pages": 73,
+    "arxiv": {
+      "id": "1706.09531",
+      "version": "1",
+      "primary_class": "hep-ph",
+      "stamp_date": "29 Jun 2017"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

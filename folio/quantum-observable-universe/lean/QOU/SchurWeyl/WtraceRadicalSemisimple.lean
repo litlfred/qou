@@ -95,7 +95,7 @@ is to the corpus file.  Mathlib's own contributions are the finite-product insta
 weakening this file; the pin is upstream.  (Contrast route 1 above, which *is* general over
 any `CharZero` field — the `ℝ` is the trace's, not the semisimplicity's.)
 
--- Ref: [manuscript] beans qou-s7z2, qou-cds1, qou-8iru.
+-- Ref: [leitner2026] beans qou-s7z2, qou-cds1, qou-8iru.
 -/
 
 namespace QOU.SchurWeyl.WtraceRadicalSemisimple

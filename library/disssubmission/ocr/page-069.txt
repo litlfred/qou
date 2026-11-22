@@ -1,0 +1,52 @@
+3.7. Variation of Tannaka groups in families 61
+
+are an epi- resp. an isomorphism. The final statement then follows from the
+observation that these homomorphisms come from morphisms between the
+underlying schemes and that the intersection of any two Zariski-open dense
+subsets of the irreducible scheme II(X), = TI(Xq), is non-empty. Oo
+
+3.7. Variation of Tannaka groups in families
+
+In this section we turn the local result from theorem 3.15 into a more
+global statement. Under some mild finiteness assumptions we will see that
+for a smooth family of varieties, the Tannaka groups of the fibres define a
+constructible stratification of the base space. This will be used in chapter 4
+to determine the Tannaka group for the theta divisor of a general principally
+polarized complex abelian variety.
+
+For technical reasons we will restrict ourselves to abelian rather than
+semiabelian schemes. In what follows X —+ S always denotes an abelian
+scheme whose base scheme S is an algebraic variety over an algebraically
+closed field k of characteristic zero. Let
+
+yY——+ Xx
+
+~
+
+S
+
+be a closed subscheme which is smooth of relative dimension d over the
+base S, and for geometric points 5 in S consider the perverse intersection
+cohomology sheaf
+
+dy, = Ay,{d] € P(¥;) = Perv(¥;,A)
+
+on the fibre Y¥;. We want to understand how the Tannaka groups G(dy,) vary
+with the chosen point 5. The following examples illustrate that in spite of
+our smoothness assumption, this is in general a non-trivial problem which
+involves the symmetry properties of the fibres Y5.
+
+EXAMPLE 3.17. (a) If S=E is an elliptic curve and X =S x E, then
+for the tautological subvariety Y = {(e,e) € X |e € E} we have
+
+G(6y,) & Z/nZ_ if Sis a torsion point in E of precise order n,
+we Gn if § is a point of infinite order in E.
+
+(b) If Y — S is a smooth, projective family of curves of genus g > 3 and is
+
+embedded into its relative Picard scheme X = Picy /s in a suitable way, then
+
+by [106, th. 14] we have
+
+G(éy,) © Sprg2(A) if Yz is hyperelliptic,
+us Slyg2(A) otherwise.

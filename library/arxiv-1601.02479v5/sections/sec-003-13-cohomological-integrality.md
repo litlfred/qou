@@ -7,10 +7,11 @@ section_number: 1.3
 pages: 5-8
 source_pdf: 1601.02479v5.pdf
 source_sha256: 52c2dcd4adf2e72b
-doc_brief: "Cohomological Donaldson-Thomas theory of a quiver with potential and quantum enveloping algebras — This paper concerns the cohomological aspects of Donaldson – Thomas theory for Jacobi algebras and"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.968
-latex_coverage_ratio: 0.978
+latex_coverage_ratio: 0.973
+doc_brief: "Cohomological Donaldson-Thomas theory of a quiver with potential and quantum enveloping algebras — This paper concerns the cohomological aspects of Donaldson– Thomas theory for Jacobi algebras and"
 ---
 Now that we have introduced the relative version of Donaldson--Thomas theory, we can state the first main result of this paper, a cohomological refinement of the integrality conjecture.
 

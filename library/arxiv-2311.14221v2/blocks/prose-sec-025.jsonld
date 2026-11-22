@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-2311.14221v2/blocks/prose-sec-025",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "The logarithmic Kazhdan Lusztig conjecture",
+  "title": "Lifting and cocycles deformations",
   "pageStart": 45,
-  "pageEnd": 47,
-  "text": "../sections/sec-025-74-the-logarithmic-kazhdan-lusztig-conjecture.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2311.14221v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2311.14221v2",
+  "pageEnd": 45,
+  "text": "../sections/sec-025-73-lifting-and-cocycles-deformations.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2311.14221v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2311.14221v2/manifest.jsonld",
   "provenance": "ingested"
 }

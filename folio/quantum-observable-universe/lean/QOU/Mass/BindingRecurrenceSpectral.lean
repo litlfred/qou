@@ -32,6 +32,14 @@ So `τ > 2 ⇒ λ₊ > 1`: the kernel encodes the extensive (A-scaling) binding 
 saturating multiplicative trace (sitting at the degenerate `τ = 2`, `λ = 1`
 no-growth boundary) cannot source. `τ(q₀) = 2.6424 > 2` satisfies the hypothesis.
 
+**Scope (2026-11-16).** A q-difference equation `G(qx) = R(q,x) G(x)` does
+**not** give a constant-coefficient recurrence: comparing `x^n` gives
+`(q^n − r_0) B_n = Σ_{j≥1} r_j B_{n−j}`, with coefficients depending on `n`
+(`prop:binding-genfun-qdifference`, corrected the same day). So the
+constant-`τ` recurrence `a_{n+2} = τ a_{n+1} − a_n` studied here is not the one
+`R = x² − τx + 1` induces; it is a separate model, and the facts below are about
+that model only.
+
 **Scope (PR #2752).** These are unconditional facts about the roots of
 `x² − τx + 1`; read as a claim about binding they are a *conditional* — IF the
 binding generating function had this fixed-τ depth-2 kernel, THEN it is
@@ -46,7 +54,7 @@ LaTeX label: `prop:binding-recurrence-extensive` (interprets
 `prop:binding-genfun-qdifference`).
 
 ## References
-- [manuscript] §mass-theory/binding-genfun-qdifference
+- [leitner2026] §mass-theory/binding-genfun-qdifference
 -/
 
 namespace QOU.Mass

@@ -1,0 +1,44 @@
+4.1 Real integrands 91
+
+Exercise 4.1. Explain why the term “stationary phase integral” is usually re-
+served for k > 2.
+
+Exercise 4.2. Although Theorem 4.1 assumes k > 2, the expansion for I
+given in part (i) by (4.1) holds when k = 1. What is ¢ in the case k = | and
+what expansion for J holds as a consequence?
+
+To those unfamiliar with saddle point methods, this result may seem difficult
+to decipher, but both the statement and proof are actually quite intuitive. When
+A and ¢ are real, their orders of vanishing dictate the order of magnitude of
+such an integral after direct integration. Changing variables to simplify the ex-
+ponent produces a full asymptotic development of the integral. When the phase
+is complex, one can use integration by parts in order to cancel oscillations, or
+one can reduce to the real case by a contour shift. The latter approach requires
+stronger hypotheses (analyticity rather than smoothness) but gives stronger re-
+sults (exponentially small remainders rather than rapidly decreasing remain-
+ders). In order to give all of the intuition, we take a route to the derivation
+that is longer than necessary. We begin with a stripped down special case, in
+which direct integration suffices, then give the arguments that hold in greater
+generality.
+
+4.1 Real integrands
+
+For univariate Fourier—Laplace integrals, Theorem 4.1 states the existence of
+an asymptotic expansion
+
+oo
+
+f AG) exp(—ap(a)) dx = )) ajClk, cea
+
+0 =
+with explicitly computable constants a;. The main result of this section, Theo-
+rem 4.6, yields this expansion for real integrands, along with further informa-
+tion about the constants.
+
+Complex analytic techniques are not needed when working on the real line,
+and consequently we need to assume only differentiability and not analyticity
+of A and ¢. We build the argument in three steps: first taking A and ¢ to be
+monomials, then taking ¢ to be a monomial but allowing A to be free, and
+finally handling the general case. The first step is accomplished via an exact
+computation, the second via a remainder estimate, and the third with a change
+of variables.

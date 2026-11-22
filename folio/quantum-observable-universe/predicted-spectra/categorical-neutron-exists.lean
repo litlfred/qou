@@ -5,13 +5,13 @@ import Mathlib.Data.Real.Basic
 # QOU.CategoricalNeutron.exists — existence of the categorical neutron
 
 𝔫 = 𝓑₃(𝔲, 𝔡, 𝔡) is a well-defined element of H₃(q), LP-stable with
-two Hopf-link gluons.
+two gluons (L₊ → L₋).
 
 LaTeX: `\label{prop:categorical-neutron-exists}`
 
 ## References
 
-- [manuscript] §6-archimedean-universe/categorical-neutron-exists
+- [leitner2026] §6-archimedean-universe/categorical-neutron-exists
 - [jones1987] Hecke Algebra Representations of Braid Groups
 -/
 
@@ -33,7 +33,7 @@ structure CategoricalNeutron where
 
 /-- **Existence of the categorical neutron.**
 
-    B₃(u,d,d) + two-Hopf-link gluon stabiliser yields a
+    B₃(u,d,d) + two-gluon stabiliser yields a
     `CategoricalNeutron` term with negative crossing energy. -/
 -- Ref: [jones1987]
 theorem CategoricalNeutron.exists : Nonempty CategoricalNeutron :=

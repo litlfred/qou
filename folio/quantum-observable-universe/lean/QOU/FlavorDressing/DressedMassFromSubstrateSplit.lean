@@ -1,5 +1,6 @@
 import QOU.Basic
 import QOU.FlavorDressing.FlavorDressingFunctor
+import QOU.FlavorDressing.FlavorSplitSubstrateMass
 
 /-!
 # QOU.FlavorDressing.dressed_mass_from_substrate_split
@@ -12,7 +13,7 @@ mass splitting:
             + O((Δm/M_N)²)
 ```
 
-This is the categorical lift of `prop:flavor-split-substrate` to
+This is the categorical lift of `conj:flavor-split-substrate-mass` to
 the level of the flavor-dressing functor.
 
 LaTeX: `\label{prop:flavor-dressed-mass-from-substrate-split}`
@@ -34,97 +35,65 @@ noncomputable def substrate_split_factor (q : ℝ) : ℝ :=
   ((q - 1)^2 * (1 - q^(-4 : ℤ)) / 3) *
     ((Real.sqrt q + Real.sqrt q⁻¹) / (q + q⁻¹))
 
-/-- **External Skein-side hypothesis** (axiomatised).  The
-    pair-Skein mass formula of `lem:pair-skein-mass-formula`
-    applied to the Borromean baryon braids of the proton and
-    neutron gives
+/-- **Classical limit at `q = 1` (proved):** the substrate splitting factor
+    `substrate_split_factor q` vanishes identically at `q = 1` because of the
+    `(q - 1)^2` prefactor. -/
+theorem substrate_split_factor_at_one :
+    substrate_split_factor 1 = 0 := by
+  unfold substrate_split_factor
+  norm_num
 
-      `m_n − m_p = (q + q⁻¹)/(q^{1/2} + q⁻^{1/2}) · (μ_d − μ_u)`.
+/-- The nucleon-level consequence of the pair Skein mass formula
+    (`lem:pair-skein-mass-formula`) on the Borromean baryon braids of the
+    proton and neutron:
 
-    Combined with the substrate identity
-    `(m_n − m_p)/M_N = (q-1)² · (1 − q⁻⁴) / 3` (from
-    `prop:flavor-split-substrate`), this rearranges to
-    `μ_d − μ_u = M_N · substrate_split_factor q`.  The closed-form
-    statement is recorded as this axiom; promoting it to a theorem
-    requires Lean formalisations of both upstream lemmas.
-    **This was an `axiom` until 2026-08-08, and it made the library
-    inconsistent.** It read
+      `(m_n − m_p) · (√q + √q⁻¹) = (q + q⁻¹) · (μ_d − μ_u)`.
 
-    ```lean
-    axiom dressed_mass_split_substrate_closed_form
-        (F : FlavorDressingFunctor) (M_N q : ℝ) (_hM : 0 < M_N) (_hq : 1 < q) :
-        F.μ Flavor.down - F.μ Flavor.up = M_N * substrate_split_factor q
-    ```
+    It is a hypothesis of the theorem below, not a lemma proved here. The
+    Lean `QOU.HadronicMass.pair_skein_mass_formula` is a per-pair `Prop`
+    and does not yet yield this nucleon form. The formula holds only in the
+    convention-C frame. -/
+def PairSkeinNucleonSplit (F : FlavorDressingFunctor) (m_p m_n q : ℝ) : Prop :=
+  (m_n - m_p) * (Real.sqrt q + Real.sqrt q⁻¹)
+    = (q + q⁻¹) * (F.μ Flavor.down - F.μ Flavor.up)
 
-    `F`, `M_N` and `q` are all universally quantified and mutually
-    unrelated: nothing ties `M_N` to `F`. The left side is fixed by `F`
-    alone, the right side varies freely with `M_N`. Take the constant
-    dressing `μ ≡ 1` (the class is trivially inhabited, `μ_pos` is
-    `one_pos`), so the left side is `1 − 1 = 0`, and instantiate at
-    `M_N = 1`, `q = 2`:
+/-- **Dressed-quark mass splitting, conditional on
+    `conj:flavor-split-substrate-mass`** (§3b-cond).
 
-    ```lean
-    theorem dressed_mass_axiom_is_inconsistent : False := by
-      have h := dressed_mass_split_substrate_closed_form flatF 1 2 one_pos (by norm_num)
-      simp [flatF, substrate_split_factor] at h
-      …  -- √2 + (√2)⁻¹ = 0, false since √2 > 0
-    ```
+    From the conjecture `[FlavorSplitSubstrateMass m_p m_n q]` and the
+    nucleon form of the pair Skein mass formula, the down–up dressed-mass
+    splitting is `M_N · substrate_split_factor q` with
+    `M_N = (m_p + m_n)/2`. The proof divides the Skein relation by
+    `q + q⁻¹ > 0` and substitutes the conjecture's nucleon split.
 
-    That compiled, with `#print axioms` naming this axiom. Because
-    `substrate_split_factor` is a *concrete* strictly-positive expression
-    rather than an opaque symbol, the forced `factor = 0` is refutable, so
-    the defect is `False` rather than mere collapse.
-
-    Worth noting how it got here: the docstring below records that a review
-    (Gemini #696) flagged the downstream theorem as a **tautology**, and the
-    repair was to introduce this axiom. The tautology fix over-corrected into
-    unsoundness — the statement stopped being empty by starting to be false.
-
-    The repair is the §3b-cond hypothesis class below, with **no instance**:
-    the relation holds for a *particular* `(F, M_N, q)` — the nucleon-mass
-    scale belonging to that dressing — not for arbitrary triples. -/
--- Ref: [manuscript] observations/pair-skein-mass-formula
---      braids-and-knots/flavor-dressed-mass-from-substrate-split § "Derivation"
-class DressedMassSubstrateSplit
-    (F : FlavorDressingFunctor) (M_N q : ℝ) : Prop where
-  /-- The nucleon-mass scale is positive. -/
-  M_N_pos : 0 < M_N
-  /-- The substrate parameter is above the classical point. -/
-  q_gt_one : 1 < q
-  /-- The closed form itself: `μ_d − μ_u = M_N · s(q)`, for *this* `M_N`
-      (the nucleon-mass scale of *this* dressing `F`) — the content of
-      `prop:flavor-split-substrate` combined with
-      `lem:pair-skein-mass-formula`, pending Lean formalisations of both. -/
-  split : F.μ Flavor.down - F.μ Flavor.up = M_N * substrate_split_factor q
-
-/-- **Substrate-pure derivation of the dressed-quark mass
-    splitting.**  Combines `prop:flavor-split-substrate` (substrate
-    side) with `lem:pair-skein-mass-formula` (Skein side) to
-    express `μ_d − μ_u` in terms of `M_N` and `q` alone.
-
-    Statement: under positive nucleon-mass scale `M_N` and substrate
-    parameter `q > 1`, the equality
-
-      `μ_d − μ_u = M_N · substrate_split_factor q`
-
-    holds (up to the `O((Δm/M_N)²)` correction absorbed in the
-    Skein-side identity), **conditional on** the named hypothesis
-    `DressedMassSubstrateSplit F M_N q`, which is where the two
-    unformalised upstream lemmas enter.
-
-    Not a tautology (the original Gemini #696 finding): the conclusion
-    is a substantive equality drawn from the hypothesis class. Not
-    unconditional either (the over-correction that followed, and which
-    made the library inconsistent — see the class docstring above): the
-    relation is asserted only for a triple that carries the instance,
-    not for arbitrary `(F, M_N, q)`. -/
--- Ref: [manuscript] braids-and-knots/flavor-dressed-mass-from-substrate-split
+    **History.** This file once stated the conclusion as an `axiom`
+    quantified over unrelated `(F, M_N, q)`, which made the library
+    inconsistent (until 2026-08-08: the constant dressing `μ ≡ 1` forced
+    `√2 + (√2)⁻¹ = 0`). Its replacement was a hypothesis class whose
+    `split` field *was* the conclusion, so the theorem was a projection of
+    its own hypothesis (AGENTS.md §3b-cond item 5). The class now carries
+    only the conjecture's input, the nucleon split, and the theorem derives
+    the quark splitting from it. -/
+-- Ref: [leitner2026] mass-theory/flavor-dressed-mass-from-substrate-split
 theorem dressed_mass_from_substrate_split
-    (F : FlavorDressingFunctor) (M_N q : ℝ)
-    [h : DressedMassSubstrateSplit F M_N q] :
+    (F : FlavorDressingFunctor) (m_p m_n q : ℝ)
+    [h : FlavorSplitSubstrateMass m_p m_n q]
+    (h_skein : PairSkeinNucleonSplit F m_p m_n q) :
     F.μ Flavor.down - F.μ Flavor.up
-      = M_N * substrate_split_factor q :=
-  h.split
+        = (m_p + m_n) / 2 * substrate_split_factor q ∧
+    F.μ Flavor.down
+        = F.μ Flavor.up + (m_p + m_n) / 2 * substrate_split_factor q := by
+  have hq0 : 0 < q := lt_trans one_pos h.q_gt_one
+  have hB : 0 < q + q⁻¹ := add_pos hq0 (inv_pos.mpr hq0)
+  have hdiff : F.μ Flavor.down - F.μ Flavor.up
+      = (m_n - m_p) * (Real.sqrt q + Real.sqrt q⁻¹) / (q + q⁻¹) := by
+    rw [eq_div_iff hB.ne', h_skein]; ring
+  have hsplit : F.μ Flavor.down - F.μ Flavor.up
+      = (m_p + m_n) / 2 * substrate_split_factor q := by
+    rw [hdiff, h.nucleon_split]
+    unfold substrate_split_factor flavorSplitClosedForm
+    ring
+  exact ⟨hsplit, by linarith⟩
 
 
 /-! ### Removed 2026-08-30 — self-assuming projections
@@ -138,6 +107,15 @@ restatement goes. That is the vacuity ledger's recorded disposition for this
 category — *"drop the pseudo-theorem and project the field at use sites"* — and
 there were no use sites: each had **zero references anywhere in the corpus**.
 Bean `qou-z9ws`.
+
+### Removed 2026-11-21 — the self-assuming class
+
+- `DressedMassSubstrateSplit F M_N q` — its `split` field was the conclusion of
+  `dressed_mass_from_substrate_split`, which projected it (§3b-cond item 5).
+  Replaced by `FlavorSplitSubstrateMass`, which carries only the conjecture's
+  nucleon split; the quark splitting is now derived (issue #8948).
+- `dressed_mass_down_eq_up_add_split` — `linarith` on that field; its content
+  is the second conjunct of `dressed_mass_from_substrate_split`. No use sites.
 -/
 
 end QOU.FlavorDressing

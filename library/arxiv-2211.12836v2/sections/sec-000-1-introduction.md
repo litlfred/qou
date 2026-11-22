@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2211.12836v2
-doc_title: "QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY DYSON BROWNIAN MOTION"
+doc_title: "QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
 pages: 1-3
 source_pdf: 2211.12836v2.pdf
 source_sha256: 4ffbb8b21f8b175d
-doc_brief: "QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY DYSON BROWNIAN MOTION — We study a class of commuting Markov kernels whose simplest element describes the movement ofk particles on a discrete"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.997
+latex_prose_ratio: 0.987
 latex_coverage_ratio: 0.984
+doc_brief: "QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY — We study a class of commuting Markov kernels whose simplest element describes the movement of k particles on a discrete circle of size n"
 ---
 The present paper gives a probabilistic study of an integrable class of rooted graphs which describe movements of particles on a discrete circle conditioned to not intersect. The simplest example of this class is the graph $B_{k,n}$ encoding the transitions of $k$ particles moving clockwise with small steps on a discrete circle of $n$ sites without intersecting each other. This graph is rooted at a particular configuration where the $k$ particles are stacked next to each other after some chosen origin. We present such a graph for $k=2$ particles on a discrete circle of size $n=4$ in the figure below (where the dashed line gives the origin of the circle).
 

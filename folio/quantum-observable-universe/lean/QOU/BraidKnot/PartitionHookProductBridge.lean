@@ -29,7 +29,7 @@
   `colLen parts j - i - 1`. Everything else is `foldl`-to-`prod` bookkeeping.
 
   -- Ref: [sagan2001] Sagan, The Symmetric Group §3.10 (hook-length formula)
-  -- Ref: [manuscript] DeltaLambdaSignRule.lean §REDUCTION ROADMAP, bridge (1)
+  -- Ref: [leitner2026] DeltaLambdaSignRule.lean §REDUCTION ROADMAP, bridge (1)
 -/
 import QOU.BraidKnot.DeltaLambdaSignRule
 import QOU.BraidKnot.HookProductHLF

@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/np-b250-1985-465/blocks/prose-sec-014",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "M 2 M~-\" M~} f-\"- ,13M2,71n.. +M~ln--~ . (10.27) C2- 167r2F ~ M~-M;~I. M~,",
-  "pageStart": 30,
-  "pageEnd": 34,
-  "text": "../sections/sec-014-1-m-2-m--m-f---13m271n-mln---1027-c2--167r2f-m-m.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/np-b250-1985-465",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/np-b250-1985-465",
+  "title": "Tadpoles and unitarity corrections",
+  "pageStart": 21,
+  "pageEnd": 23,
+  "text": "../sections/sec-014-8-tadpoles-and-unitarity-corrections.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/np-b250-1985-465/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/np-b250-1985-465/manifest.jsonld",
   "provenance": "ingested"
 }

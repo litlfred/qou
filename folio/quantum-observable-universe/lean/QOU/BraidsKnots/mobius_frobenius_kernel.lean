@@ -120,7 +120,7 @@ class MobiusFrobeniusKernelContext (E : Type*) [NormedAddCommGroup E] where
     that *was* this conclusion. Both the old and the new version are sorry-free
     and report the same axioms, which is the point: `#print axioms` cannot tell
     a derivation from a restatement, and did not. -/
--- Ref: [manuscript] lem:mobius-energy-frobenius-kernel, quantum-observable-universe/climax-volume-mass/mobius-energy-frobenius-kernel.md
+-- Ref: [leitner2026] lem:mobius-energy-frobenius-kernel, quantum-observable-universe/climax-volume-mass/mobius-energy-frobenius-kernel.md
 theorem mobius_frobenius_kernel {E : Type*} [NormedAddCommGroup E]
     [ctx : MobiusFrobeniusKernelContext E] (s t : ℝ)
     (hst : ctx.γ s ≠ ctx.γ t) :

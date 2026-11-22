@@ -3,7 +3,7 @@
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
       "@base": "https://litlfred.github.io/folio/",
-      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant/folio-assistant-sci/ns#"
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "library/arxiv-2605.20846v1/blocks/def-sec-000-01",
@@ -12,10 +12,20 @@
     "doco:Section"
   ],
   "kind": "definition",
-  "pageStart": 2,
+  "pageStart": 3,
   "pageEnd": 13,
   "text": "def-sec-000-01.md",
   "derivedFrom": "library/arxiv-2605.20846v1/sections/sec-000",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2605.20846v1",
-  "provenance": "ingested"
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2605.20846v1/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "1.0.1",
+    "source_kind": "definition",
+    "claim_domain": "math",
+    "evidence_kind": "axiomatic-definition",
+    "evidence_location": "elsewhere",
+    "evidence_locator": "Definition citing [Ati88], [Seg88], [Wit82] in sections/sec-000-introduction.md",
+    "claim_id": "arxiv-2605.20846v1#definition:1.0.1",
+    "lean_status": "unformalized"
+  }
 }

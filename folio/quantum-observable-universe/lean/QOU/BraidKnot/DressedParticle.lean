@@ -25,7 +25,7 @@ open QOU.Archimedean
     a bare-particle core, an electron shell, and the composite
     confined particle whose Markov class is that of
     `ι(K_bare) · W_bind` in `H_{A+Z}(q)`. -/
--- Ref: [manuscript] braids-and-knots/dressed-particle
+-- Ref: [leitner2026] braids-and-knots/dressed-particle
 structure DressedParticle where
   /-- Bare nuclear confined particle. -/
   bare : ConfinedParticle
@@ -40,7 +40,7 @@ structure DressedParticle where
 
 /-- The dressing morphism `dress_S : P_bare → P_dressed` in
     the confinement category. -/
--- Ref: [manuscript] braids-and-knots/dressed-particle
+-- Ref: [leitner2026] braids-and-knots/dressed-particle
 noncomputable def dressMorphism (D : DressedParticle) :
     ConfMorphism D.bare D.composite :=
   ConfMorphism.dress D.bare D.composite D.shell.nucleus.name
@@ -49,7 +49,7 @@ noncomputable def dressMorphism (D : DressedParticle) :
     Each `DressedParticle` carries `level_preserved`; chaining via
     `D₁.composite = D₂.bare` then gives the equality by `rfl`/`rw`.
     The earlier `DressingComposes` typeclass has been removed. -/
--- Ref: [manuscript] braids-and-knots/dressed-particle
+-- Ref: [leitner2026] braids-and-knots/dressed-particle
 theorem dressing_composes
     (D₁ D₂ : DressedParticle)
     (h_chain : D₁.composite = D₂.bare) :

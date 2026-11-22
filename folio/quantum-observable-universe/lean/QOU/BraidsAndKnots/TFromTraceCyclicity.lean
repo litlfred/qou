@@ -35,7 +35,7 @@ fixing each generator, under which characters are invariant), but that route
 is not formalised here and the corpus does not carry it. Hence the class
 field rather than a proof.
 
--- Ref: [manuscript] conj:t-from-trace-cyclicity
+-- Ref: [leitner2026] conj:t-from-trace-cyclicity
 -- Ref: [jones1987] Hecke Algebra Representations of Braid Groups
 -/
 

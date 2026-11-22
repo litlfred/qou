@@ -3037,4 +3037,11 @@ theorem standardPolytabloid_span :
       subtype_comp_standardPolytabloidS]
   exact standardPolytabloid_span_eq_specht (k := k) (μ := μ)
 
+/-- Every element of `Specht.SpechtSubmodule μ` lies in the `k`-span of the range of `standardPolytabloid`. -/
+theorem mem_span_standardPolytabloid_of_mem_specht {x : Specht.Mtab (k := k) μ}
+    (hx : x ∈ Specht.SpechtSubmodule (k := k) μ) :
+    x ∈ Submodule.span k (Set.range (standardPolytabloid (k := k) (μ := μ))) := by
+  rw [standardPolytabloid_span_eq_specht (k := k) (μ := μ)]
+  exact hx
+
 end QOU.BraidKnot.SpechtStandardBasis

@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2111.06645/sections/sec-028",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "A.6 The twelve q-series for the (-2,3,7) pretzel knot",
+  "pageStart": 34,
+  "pageEnd": 37,
+  "contains": [
+    "library/arxiv-2111.06645/blocks/prose-sec-028",
+    "library/arxiv-2111.06645/blocks/prop-sec-028-01",
+    "library/arxiv-2111.06645/blocks/rem-sec-028-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2111.06645/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2111.06645/manifest.jsonld",
+  "provenance": "ingested"
+}

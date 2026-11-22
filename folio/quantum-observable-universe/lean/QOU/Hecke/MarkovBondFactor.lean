@@ -107,7 +107,7 @@ independent scope-(b) evidence at fixed `A`, on the canonical non-monotone word.
 ## References
 
 - [jones1987] https://doi.org/10.2307/1971403
-- [manuscript] braids-and-knots/markov-trace.md; audit
+- [leitner2026] braids-and-knots/markov-trace.md; audit
   `2026-06-10-binding-bond-graph-compute-audit-and-derivation.md`
 -/
 

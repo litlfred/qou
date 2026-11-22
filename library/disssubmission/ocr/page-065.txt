@@ -1,0 +1,48 @@
+3.5. Nearby cycles 57
+
+cycles functor ‘¥ then sends the Serre subcategory S(Xq) C P(X;) into the
+Serre subcategory S(X,) C P(X;,) and hence induces a functor
+
+we: P(Xp) —_ P(X;)
+
+between the quotient categories. The property (i) of ¥ is inherited from the
+corresponding estimate for ‘¥ shown above.
+
+Secondly we take f = m to be the group law, with Y = X x,.X, Z=X
+and L = PQ. In D(X,) we can identify ¥z(Rf.(L)) with (PQ). Since
+by [60, th. 4.7] the exterior tensor product & commutes with nearby cycles,
+we can also identify Rf. (y (L)) with ¥(P) * ‘¥(Q). Then the factorization
+of B from above shows that the nearby cycles (P+ Q) admit ¥(P) « ¥(Q)
+as a direct summand in P(X;). Hence (ii) follows. Oo
+
+In general we cannot expect ¥ to be a tensor functor since it does not
+preserve the Euler characteristic (see example 3.12). In what follows we
+will call a perverse sheaf P on Xq admissible if
+
+X(P(P)) = x(P).
+
+Note that for an abelian scheme X —> S every perverse sheaf is admissible
+since the nearby cycles are compatible with proper morphisms.
+
+LEMMA 3.14. The admissible objects form a rigid symmetric monoidal
+full abelian subcategory
+
+= i-¢
+P(Xq) C P(Xq)
+which is stable under the formation of extensions and subquotients.
+
+Proof. Any short exact sequence 0 + P; + P) > P; > 0 in P(Xp) is
+mapped under the nearby cycles functor to a short exact sequence in the
+category P(X,). Then in particular
+
+x(P2) = X(Pi)+X(Ps) and X(P(P2)) = 4A) +x (P(Bs))
+
+because the Euler characteristic is additive in short exact sequences. But on
+the other hand y(P,) > 7(¥(B)) for i= 1,2,3 by lemma 3.13 (i). Hence it
+follows that
+
+X(P) = x(P(P;)) holds for i = 2 iff it holds for i = 1 and i = 3.
+
+In other words, the perverse sheaf P) is admissible if and only if both Pj
+and P3 are admissible. So the category of admissible objects is stable under
+the formation of extensions and subquotients.

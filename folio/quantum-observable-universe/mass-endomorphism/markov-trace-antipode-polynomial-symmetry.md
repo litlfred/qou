@@ -1,6 +1,6 @@
 ## Statement
 
-*Let $\mathcal{B}_p$ denote the proton braid in $B_3$ used in [`prop:atomic-mass-gb-nf`](#prop:atomic-mass-gb-nf). Let*
+*Let $\mathcal{B}_p$ denote the proton braid in $B_3$ used in [Atomic mass as Markov trace of the Gröbner–Shirshov normal form](#prop:atomic-mass-gb-nf). Let*
 
 $$
   p(q) \;=\; q^{20} + q^{18} + 2 q^{12} - 2 q^{8} - q^{2} - 1
@@ -28,7 +28,7 @@ $$
 
 The Iwahori-Hecke algebra $H_n(q)$ forms a Hopf algebra with antipode $S(\sigma_i) = \sigma_i^{-1}$. The Hecke quadratic relation $\sigma_i^2 = (q - q^{-1}) \sigma_i + 1$ implies $\sigma_i^{-1} = \sigma_i - (q - q^{-1})$. The antipode acts linearly on the generators with a $q \leftrightarrow q^{-1}$ component.
 
-The Markov trace $\mathrm{tr}_M$ provides the Frobenius integral on $H_n(q)$ ([`prop:categorical-mass-markov`](#prop:categorical-mass-markov)). For Frobenius algebras with non-trivial Nakayama automorphism, the trace satisfies $\mathrm{tr}(S^2(x)) = \mathrm{tr}(x)$. For the Hecke algebra, $S^2$ acts as $q \leftrightarrow q^{-1}$ on the structural variable $q$ while preserving the algebra structure.
+The Markov trace $\mathrm{tr}_M$ provides the Frobenius integral on $H_n(q)$ ([Categorical mass as Markov trace](#prop:categorical-mass-markov)). For Frobenius algebras with non-trivial Nakayama automorphism, the trace satisfies $\mathrm{tr}(S^2(x)) = \mathrm{tr}(x)$. For the Hecke algebra, $S^2$ acts as $q \leftrightarrow q^{-1}$ on the structural variable $q$ while preserving the algebra structure.
 
 The minus sign in $\mathrm{tr}_M(\mathcal{B}_p)(1/q) = -\mathrm{tr}_M(\mathcal{B}_p)(q)$ reflects the odd parity of the proton word $\mathcal{B}_p$ under the antipode-induced involution. Here $S(\mathcal{B}_p)$ constructs the reversed word with each $\sigma$ replaced by $\sigma^{-1}$. The $11$-crossing (odd) length contributes a parity sign. Specifically, the proton's word length $\ell(\mathcal{B}_p) = 11$ has odd parity.
 

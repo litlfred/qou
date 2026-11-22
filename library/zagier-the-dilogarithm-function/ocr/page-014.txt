@@ -1,0 +1,52 @@
+16 Don Zagier
+
+We give an example of a non-trivial element of the Bloch group. For con-
+
+1-V-7 -l-V-7
+venience, set a = ° , B= Fy . Then
+
+2 (EY) Aa), (ET), Ge)
+
+7)+ 4
+az
+= 2-(- Anat (Z)A (G)=P Aare? =2-8Aa-2-BAa=0,
+
+sO
+
+pitt + pe € Be. (13)
+
+2
+
+This example should make it clear why non-trivial elements of Bc can only
+arise from algebraic numbers: the key relations 1+ = a and 1— 8-1! = a?/8
+in the calculation above forced a and (3 to be algebraic.
+
+5... and values of Dedekind zeta functions
+
+Let F be an algebraic number field, say of degree N over Q. Among its most
+important invariants are the discriminant d, the numbers r; and re of real and
+imaginary archimedean valuations, and the Dedekind zeta-function ¢(s). For
+the non-number-theorist we recall the (approximate) definitions. The field
+F can be represented as Q(a) where a is a root of an irreducible monic
+polynomial f € Z[a] of degree N. The discriminant of f is an integer dy and
+d is given by c~?dy for some natural number c with c? | dy. The polynomial f,
+which is irreducible over Q, in general becomes reducible over R, where it splits
+into r; linear and rz quadratic factors (thus ry > 0, r2 > 0, r1 + 2r2 = N). It
+also in general becomes reducible when it is reduced modulo a prime p, but
+if p { dy then its irreducible factors modulo p are all distinct, say r1,p linear
+factors, r2,) quadratic ones, etc. (so r1,) + 2r2p) +++: = N). Then ¢p(s) is
+the Dirichlet series given by an Euler product II, Z,(p-*)~! where Z,(t) for
+pt dy is the monic polynomial (1—t)"-?(1—t?)"” --- of degree N and Z,(t)
+for p| dy is a certain monic polynomial of degree < N. Thus (r1,1r2) and ¢(s)
+encode the information about the behaviour of f (and hence F’) over the real
+and p-adic numbers, respectively.
+
+As an example, let F be an imaginary quadratic field Q(,/—a) with a > 1
+squarefree. Here N = 2, d = —a or —4a, r1 = 0, rg = 1. The Dedekind
+zeta function has the form )>,,., r(n)n~* where r(n) counts representations
+of n by certain quadratic forms of discriminant d; it can also be represented
+as the product of the Riemann zeta function ¢(s) = ¢g(s) with an L-series
+
+L(s) = Dye (4) n—* where (2) is a symbol taking the values +1 or 0 and
+21\n n
+which is periodic of period |d| in n. Thus for a = 7

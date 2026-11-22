@@ -1,0 +1,51 @@
+Algorithmica (2026) 88:21 Page3o0f19 21
+
+does not suffice to show this concentration bound [2, p. 583]. Asa result, our results are,
+in some informal sense, almost tight in terms of the condition on negative dependence.
+In addition to providing submodular concentration results for a wide class of round-
+ing algorithms and distributions, our results also give a new path toward understanding
+why pipage rounding and swap rounding satisfy the lower-tail Chernoff bound. By
+proving that the rounding algorithms output random variables which are |-negatively
+associated, we immediately obtain a new proof of the lower tail bounds. This can be
+viewed as evidence that the two rounding algorithms satisfy 1-negative association or
+even negative association/regression. We leave this as an interesting open question.
+Techniques.
+We use the standard method of bounding the exponential moments for lower-tail
+Chernoff bounds. Our idea is to show that the exponential moments for our negatively-
+correlated random variables is upper bounded by the exponential moments for
+independent copies of the random variables. Formally, let X;,...,X, be random
+variables satisfying 1-negative association and let X}, ..., X;, be independent copies
+of the random variables. We show for any 4 < 0, we have
+
+Elexp(a - f(X1,..., Xn))] < Efexp(a- f(X7,..., X7))].
+
+Since the exponential-moments method has been used to prove Chernoff bounds for
+submodular functions in the independent case [2], we can then repeat their proof and
+conclude with our desired result. We believe this proof idea may be of independent
+interest. For example, the same ideas can show that for a supermodular function g and
+any A > 0, we have
+
+Efexp(a - ¢(X1,..., Xn))] < ElexpQ - g(X7,..-,Xp))]-
+
+In other words, we have morally proven the following statement: any upper-tail concen-
+tration bound which can be proven for a supermodular function g under independence
+based on the exponential-moments method also holds when the underlying random
+variables are negatively associated. As an example, we can apply this to a read-k family
+of supermodular functions g),..., g, for negatively associated random variables [4].
+A read-k family is defined as a set of functions where each variable appears in at most
+k functions. This concept is particularly useful in scenarios where functions need to
+model or manage overlapping sets of variables with constraints on their interaction.
+We highlight that the proof of concentration for read-k families given in [4] doesn’t use
+the exponential-moments method, but instead it is based on the entropy method. We
+address this by giving a simpler proof of their results, this time using the exponential
+moments method. This gives the first concentration results for a class of supermodular
+functions under negatively correlated random variables, and is detailed in Section 3.3.
+Applications.
+
+Our motivation for studying the problem comes from the randomized-rounding
+paradigm in approximation algorithms for converting a fractional solution to a lin-
+ear program into an integral one. In many such randomized-rounding schemes, the
+output random variables have been shown to satisfy strong negative dependence prop-
+erties, such as negative association [12, 15]. For all such rounding algorithms, our
+
+cay Springer

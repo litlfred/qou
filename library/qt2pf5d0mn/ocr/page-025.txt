@@ -1,0 +1,34 @@
+Section 2.1 Ribbon Fusion Categories
+
+2.1.4 Pivotal and Spherical Categories
+
+Let C be a rigid monoidal category. A pivotal structure on C is a natural isomorphism
+6: Ide —> (-)**, namely, for each object A, there is an isomorphism 64 : A —> A**,
+
+such that
+1. daop = 64 ® Op;
+2. 5% = dai;
+3. dg = hh.
+Definition 2.1.9 A pivotal category is a rigid monoidal category with a pivotal structure.
+
+In a pivotal category C, the left dual can be defined in terms of the right dual. Specifically,
+given an object A and its right dual A* with ba,da, one can define b/, := (I @ 6y')o
+bax, dy = dy 0 (64 @ 1). It is straight forward to check that (A*,b’,,d!,) satisfies the
+conditions of a left dual. Thus as an object, the left dual and the right dual are the
+same, and in the following we will simply call the dual of an object.
+
+If C is a C-linear pivotal category with 1 simple, we can define the concept of left
+trace and right trace of a morphism. Since Hom(1,1) ~ C, one can fix an isomorphism
+sending J, to 1 € C. Thus every morphism in Hom(1,1) can be identified with a scalar
+in C.
+
+For f € Hom(A, A), define left trace Tr'(f) := dao (I @ f) 0 by and the right trace
+Tr’ (f) := d,0 (f @ 1) o by. Pictorially, these traces are illustrated in Figure
+
+The following properties on the left traces explains the notion of a ‘trace ’. The same
+
+properties also hold for right traces.
+Proposition 2.1.10 1. Tr'(-) is a linear functional on Hom(A, A).
+
+2. Tr(fog)=Tr'(go f) for f € Hom(A, B),g € Hom(A, A).
+16

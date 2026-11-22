@@ -1,0 +1,42 @@
+D.3 Description of the attachments 523
+
+Proof of Theorem D.13 Apply Thom’s Isotopy Lemma with manifolds P =
+Rand M = C’%, stratified space Z = XN h-'(a — €,b + €), and mapping
+n= h.Ifh: X — R has no critical values in [a,b] then it has no critical
+values in [a — ¢,b + €], hence / is a submersion on each stratum of X. The
+conclusion of the lemma is that the level surfaces of h are fibers of a local
+product bundle, hence the flow V witnesses a strong deformation retraction of
+Xp onto Xeq. oO
+
+To conclude this section, we show how Thom’s Isotopy Lemma can be used
+to derive the local product topological structure of stratified spaces.
+
+Proof of Theorem D.9 Let Z be a stratified space in R¢ and let S be a stratum
+of dimension k, with eS denoting a closed tubular neighborhood of S in R¢ and
+m:eS — S denoting the projection map. Then eS is a manifold with boundary
+oS and an interior which we denote (¢S)°. If the tubular neighborhood was
+chosen sufficiently small, then X = Z/ eS is naturally stratified with strata
+of the form WM (eS)? and WO oS, where W runs over strata whose closure
+contains S.
+
+The mapping z on X satisfies the conditions of Thom’s isotopy lemma. Con-
+sequently, its normal slice N = 27!(p) 1 Z is stratified by its intersection with
+the strata of X. Taking U,, to be a small ball around p in the stratum S that con-
+tains p, there is a stratum-preserving homeomorphism, smooth in each stratum,
+given by 2 !(U,)NZ = UpXN. Since x!(Up) is a neighborhood of p in Z, we
+have shown that each stratum has a neighborhood that is locally a topological
+product of a k-ball Up with the normal slice. ia)
+
+D.3 Description of the attachments
+
+Let ‘V,, denote the intersection ‘VM C4 of an affine algebraic hypersurface V
+with C¢, and let M = C4 \ V. We return to our plan to use Morse theory
+to find generators for Hj(M). Because we may want to describe either M or
+YY,, depending on the situation, results in the literature are often stated in two
+parts, so as to cover both cases, and we continue to adhere to this. For what
+follows we fix a Whitney stratification {Sy : @ € J} of the pair (C4,V.) as
+in Proposition D.11, so that M will be the unique stratum of dimension 2d.
+The function h = hg is assumed to be a Morse function and the space X may
+denote either V,, or M. The point p denotes a stratified critical point for h in
+the stratum S, and we let N = N,(V) denote the complex normal space to V,.
+at p.

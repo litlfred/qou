@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-isospin-singlet-binds-more-two-nucleon-reading",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:isospin-singlet-binds-more-two-nucleon-reading",
+  "kind": "remark",
+  "title": "Which two-nucleon channel the singlet ordering selects",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-isospin-singlet-binds-more"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-isospin-singlet-binds-more",
+  "tags": [
+    "isospin",
+    "two-nucleon",
+    "comparison-with-measurement"
+  ],
+  "text": "isospin-singlet-binds-more-two-nucleon-reading.md",
+  "provenance": "authored"
+}

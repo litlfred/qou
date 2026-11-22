@@ -27,9 +27,9 @@ LaTeX labels:
 
 - [mathas1999] https://doi.org/10.1090/ulect/015 — Iwahori–Hecke algebras
 - [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2 — Quantum groups
-- [manuscript] particle-interactions / algebraic-primality
-- [manuscript] particle-interactions / n-equals-1-vacuous-magic
-- [manuscript] particle-interactions / algebraic-primality-equals-empirical-at-q0
+- [leitner2026] particle-interactions / algebraic-primality
+- [leitner2026] particle-interactions / n-equals-1-vacuous-magic
+- [leitner2026] particle-interactions / algebraic-primality-equals-empirical-at-q0
 -/
 
 namespace QOU.Interactions.AlgebraicPrimality
@@ -97,7 +97,7 @@ def NonTrivialDecomposition (n : ℕ) (decomp : List ℕ) : Prop :=
     - `n = 1` is prime *vacuously* — no non-trivial decomposition
       exists.
     - For `n ≥ 2`, primality is non-trivial. -/
--- Ref: [manuscript] def:algebraic-primality
+-- Ref: [leitner2026] def:algebraic-primality
 def IsAlgebraicallyPrime (n : ℕ) (q : ℝ) : Prop :=
   n ≥ 1 ∧
   ∀ (decomp : List ℕ),
@@ -131,7 +131,7 @@ lemma sum_ge_length_of_all_pos
     The proof needs only elementary arithmetic: a list of length ≥ 2
     with all entries ≥ 1 has sum ≥ 2 > 1, contradicting `sum = 1`.
     No SDP / Hecke / tensor-product analysis is invoked. -/
--- Ref: [manuscript] prop:n-equals-1-vacuous-magic
+-- Ref: [leitner2026] prop:n-equals-1-vacuous-magic
 theorem one_isAlgebraicallyPrime (q : ℝ) :
     IsAlgebraicallyPrime 1 q := by
   refine ⟨le_refl 1, ?_⟩
@@ -152,7 +152,7 @@ theorem one_isAlgebraicallyPrime (q : ℝ) :
     `canonicalState n q` lies in the indicated tensor span, then
     `n` is *not* algebraically prime at `q`. Direct unfolding of the
     definition. -/
--- Ref: [manuscript] def:algebraic-primality
+-- Ref: [leitner2026] def:algebraic-primality
 theorem not_prime_of_inTensorSpan
     {n : ℕ} {q : ℝ}
     {decomp : List ℕ}
@@ -164,7 +164,7 @@ theorem not_prime_of_inTensorSpan
 
 /-- **Lemma (decomposability of n = 0).** Zero is *not* algebraically
     prime: it fails the `n ≥ 1` clause of the definition. -/
--- Ref: [manuscript] def:algebraic-primality
+-- Ref: [leitner2026] def:algebraic-primality
 theorem zero_not_isAlgebraicallyPrime (q : ℝ) :
     ¬ IsAlgebraicallyPrime 0 q := by
   intro ⟨h, _⟩
@@ -186,13 +186,13 @@ class IsKnownNotMagic (n : ℕ) (q : ℝ) : Prop where
     magic at `q` — discharged by `one_isAlgebraicallyPrime`.
     No additional axioms required; the proof is structural
     (vacuous primality). -/
--- Ref: [manuscript] prop:n-equals-1-vacuous-magic
+-- Ref: [leitner2026] prop:n-equals-1-vacuous-magic
 instance one_isKnownMagic (q : ℝ) : IsKnownMagic 1 q where
   is_prime := one_isAlgebraicallyPrime q
 
 /-- **Proved instance.** For every `q`, `n = 0` is known to be
     non-magic — by the `n ≥ 1` clause of the definition. -/
--- Ref: [manuscript] def:algebraic-primality
+-- Ref: [leitner2026] def:algebraic-primality
 instance zero_isKnownNotMagic (q : ℝ) : IsKnownNotMagic 0 q where
   not_prime := zero_not_isAlgebraicallyPrime q
 
@@ -209,7 +209,7 @@ def empiricalMagicLadder : Set ℕ :=
 
     Concrete instances supply the substrate value `q_0_value` and
     the iff. -/
--- Ref: [manuscript] conj:algebraic-primality-equals-empirical-at-q0
+-- Ref: [leitner2026] conj:algebraic-primality-equals-empirical-at-q0
 class MagicEqualsEmpirical where
   q_0_value : ℝ
   q_0_pos : 1 < q_0_value
@@ -220,7 +220,7 @@ class MagicEqualsEmpirical where
 
 /-- Re-export forward direction: at `n` on the empirical ladder,
     `n` is algebraically prime at `q_0`. -/
--- Ref: [manuscript] conj:algebraic-primality-equals-empirical-at-q0
+-- Ref: [leitner2026] conj:algebraic-primality-equals-empirical-at-q0
 theorem prime_at_empirical
     [E : MagicEqualsEmpirical]
     {n : ℕ} (hn : n ∈ empiricalMagicLadder) :
@@ -229,7 +229,7 @@ theorem prime_at_empirical
 
 /-- Re-export reverse direction: if `n` is algebraically prime at
     `q_0`, then `n` lies on the empirical magic ladder. -/
--- Ref: [manuscript] conj:algebraic-primality-equals-empirical-at-q0
+-- Ref: [leitner2026] conj:algebraic-primality-equals-empirical-at-q0
 theorem empirical_of_prime
     [E : MagicEqualsEmpirical]
     {n : ℕ} (hp : IsAlgebraicallyPrime n E.q_0_value) :
@@ -252,7 +252,7 @@ theorem empirical_of_prime
     28, 50, 82, 126} and n outside the ladder) remain conjectural,
     waiting for the SDP machinery.
 -/
--- Ref: [manuscript] conj:algebraic-primality-equals-empirical-at-q0
+-- Ref: [leitner2026] conj:algebraic-primality-equals-empirical-at-q0
 def magicEqualsEmpirical_of_perNAxioms
     {q : ℝ} (h_q : 1 < q)
     (h_in : ∀ n ∈ empiricalMagicLadder, IsKnownMagic n q)
@@ -272,7 +272,7 @@ def magicEqualsEmpirical_of_perNAxioms
 /-- **Corollary.** The `n = 1` constraint of the conjecture
     `MagicEqualsEmpirical` is automatically satisfied — it is not a
     free axiom. -/
--- Ref: [manuscript] prop:n-equals-1-vacuous-magic
+-- Ref: [leitner2026] prop:n-equals-1-vacuous-magic
 theorem one_in_ladder_is_known (q : ℝ) :
     IsKnownMagic 1 q :=
   one_isKnownMagic q
@@ -282,7 +282,7 @@ theorem one_in_ladder_is_known (q : ℝ) :
 /-- **Lemma (decomposition of 2).** The only non-trivial decomposition
     of `n = 2` (length ≥ 2, all entries ≥ 1) is `[1, 1]`. Provable
     by elementary arithmetic via `sum_ge_length_of_all_pos`. -/
--- Ref: [manuscript] def:algebraic-primality
+-- Ref: [leitner2026] def:algebraic-primality
 lemma decomp_two_eq_oneOne (d : List ℕ)
     (h : NonTrivialDecomposition 2 d) :
     d = [1, 1] := by
@@ -325,8 +325,8 @@ class NonTrivialBindingAtTwo (q : ℝ) : Prop where
 
     Combining: the universal-quantifier in `IsAlgebraicallyPrime 2 q`
     reduces to a single check, which the typeclass provides. -/
--- Ref: [manuscript] def:algebraic-primality
--- Ref: [manuscript] conj:algebraic-primality-equals-empirical-at-q0
+-- Ref: [leitner2026] def:algebraic-primality
+-- Ref: [leitner2026] conj:algebraic-primality-equals-empirical-at-q0
 theorem two_isAlgebraicallyPrime
     (q : ℝ) [N : NonTrivialBindingAtTwo q] :
     IsAlgebraicallyPrime 2 q := by
@@ -347,7 +347,7 @@ theorem two_isAlgebraicallyPrime
     §11 used to supply `NonTrivialBindingAtTwo q` globally, so
     resolution chained through and answered `IsKnownMagic 2 q`
     unconditionally.  With §11 gone the chain has no free end. -/
--- Ref: [manuscript] conj:algebraic-primality-equals-empirical-at-q0
+-- Ref: [leitner2026] conj:algebraic-primality-equals-empirical-at-q0
 instance two_isKnownMagic_of_nonTrivialBinding
     (q : ℝ) [NonTrivialBindingAtTwo q] :
     IsKnownMagic 2 q where

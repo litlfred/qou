@@ -13,9 +13,15 @@
   "pageStart": 18,
   "pageEnd": 24,
   "contains": [
-    "library/ariasabad2015-revcolmat/blocks/prose-sec-013"
+    "library/ariasabad2015-revcolmat/blocks/prose-sec-013",
+    "library/ariasabad2015-revcolmat/blocks/thm-sec-013-01",
+    "library/ariasabad2015-revcolmat/blocks/lem-sec-013-02",
+    "library/ariasabad2015-revcolmat/blocks/lem-sec-013-03",
+    "library/ariasabad2015-revcolmat/blocks/lem-sec-013-04",
+    "library/ariasabad2015-revcolmat/blocks/lem-sec-013-05",
+    "library/ariasabad2015-revcolmat/blocks/thm-sec-013-06"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ariasabad2015-revcolmat",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ariasabad2015-revcolmat",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ariasabad2015-revcolmat/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ariasabad2015-revcolmat/manifest.jsonld",
   "provenance": "ingested"
 }

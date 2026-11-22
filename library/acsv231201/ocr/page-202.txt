@@ -1,0 +1,49 @@
+184 Overview of analytic methods for multivariate GFs
+
+Definition 7.7. A smooth critical point z of the rational function F = P/Q in
+the direction # is a smooth point of V,, that is a critical point of hp : V, > Ras
+a smooth mapping of real manifolds. The set of critical points in the direction
+f is denoted by critical(r).
+
+The height function /» is the real part of (a branch of) the analytic function
+¢(z) = —r - log z, and the Cauchy—Riemann equations imply that the critical
+points of F in the direction * can also be computed as the critical points of
+¢@: V. — Casa (locally) holomorphic mapping of complex manifolds. In
+particular, we have the following explicit definition of smooth critical points.
+
+Lemma 7.8. Assume that V is a smooth manifold and let Q be the square-free
+part of the denominator Q. Then w € C4 is a critical point in the direction ? if
+and only if it satisfies the smooth critical point equations
+
+Olw) = 11 O.,(w) —T1W.O,(w)=0  As<ks<d, (78)
+where 0., denotes the derivative of Q with respect to the variable z j
+
+Proof The point w is a critical point when Q(w) = 0 and the differential of
+¢@:V. — Cis zero. Vanishing of this differential occurs exactly when the
+differential of ¢ as a map from C4 to C projects to zero on the tangent space
+of V, at w. Since the tangent space to V, at w is the hyperplane with normal
+(VO)(w), the differential of ¢ projects to zero if and only if (V)(w) is parallel
+to (VO)(w). These vectors are parallel if and only if all 2 x 2 minors of the
+matrix
+
+“\=ri/wi ++ -ra/wa
+
+(Vd) (w)
+
+vanish. Vanishing of the minors simplifies to give the smooth critical point
+equations. oO
+
+((G0)2)) (Qa Satan
+
+Remark 7.9. The smooth critical point equations (7.8) form a polynomial
+system with d equations in d variables. It is therefore unsurprising that gener-
+ically Q has a finite number of critical points (i.e., this holds for all polyno-
+mials Q except for those whose coefficients come from a fixed algebraic set
+depending only on the degree of Q). This follows directly from an algebraic
+version of Sard’s Theorem, which can be found in [BPR03, Theorem 5.56];
+see also [Mel21, Section 5.3.4] for an explicit derivation.
+
+Exercise 7.4. Continuing Exercise 7.3, let r = (2, 1) and find the critical points
+for h, on V. Compute the heights of these critical points and compare them
+to the limit height for the sequence approaching infinity in Exercise 7.3. Is the
+limit height larger than the heights of all critical points on V?

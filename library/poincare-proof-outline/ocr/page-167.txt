@@ -1,0 +1,69 @@
+by (auto simp add: vec-cnj-def field-simps)
+thus False
+using (On € circline-set lx) «?lx = ?lir
+by simp
+qed
+
+ultimately
+
+have (Re ?Bil)? > (Re ?Ai1)?
+by auto
+
+moreover
+
+have Re ?Ail 4 0
+using <is-real ?Ai1» «?Ail # 0»
+by (simp add: complex-eq-iff )
+
+ultimately
+
+show ?thesis
+by (simp add: power-divide)
+qed
+
+moreover
+
+{
+
+fix r1 x2 :: real
+assume sgn zl = sgn a2 x1 <—122?>1
+hence x2 < —1
+by (smt one-power? real-sqrt-abs real-sqrt-less-iff sgn-neg sgn-pos)
+
+}
+
+ultimately
+
+have Re ?Bil / Re ?Ail < —-1
+by metis
+
+thus ?thesis
+using <i1 A i2> <i1 F Con? (i2 F con? «il F inversion i2>
+using intersects-x-azis-positive-mk-circline|of ?Ail ?Bi1l] «?Ail #4 0 V ?Bil # 0» <is-real ?Ail>
+using poincare-line-non-homogenous|of i1 i2] «?lx = ?lir
+by (simp add: Let-def)
+qed
+
+then obtain x where z: x € unit-disc x € circline-set ?lx N positive-x-axis
+using intersects-z-axis-positive-iff[OF lx «?lx # 2-axis>|
+by auto
+
+have poincare-on-ray x 0;, a’ \ poincare-collinear {x1, x2, x}
+proof
+show poincare-collinear {x1, x2, x}
+using z Ix ‘xl € circline-set ?lx» «x2 € circline-set ?lxy
+unfolding poincare-collinear-def
+by auto
+next
+show poincare-on-ray x 0, a’
+unfolding poincare-on-ray-def
+proof—
+have a’ € circline-set x-axis
+using <poincare-on-ray a’ On 2a» za (On # Par (za # 0» <a’ € unit-dise»
+unfolding poincare-on-ray-def
+using poincare-line-0-real-is-z-axis|of of-complex xa]
+using poincare-between-poincare-line-uvz|of 01, of-complex xa a’
+using poincare-between-poincare-line-uzv[of On of-complex xa a’|
+by (auto simp add: cmod-eq-Re)
+
+167

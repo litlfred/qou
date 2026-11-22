@@ -6,10 +6,12 @@
   "sha256": "7d50e5e28e695191d428fcf590d6efd7a20aca17255c1eac85ea41aacd4fe8b9",
   "bytes": 284280,
   "pages": 19,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,20 +22,31 @@
   },
   "doi": null,
   "title": "Chiral symmetry, nuclear forces and all that",
-  "authors_raw": "HISKP and Bethe Center for Theoretical Physics",
+  "authors_raw": "Ulf-G. Meißner",
+  "title_lines": [
+   "Chiral symmetry, nuclear forces and all that"
+  ],
   "abstract": null,
   "docinfo": {
-   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "Tue Feb 09 17:19:01 2010",
-   "Creator": "gnuplot 4.2 patchlevel 4 ",
    "Title": "carbon12.eps",
-   "Author": "Dean"
+   "Author": "Dean",
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "gnuplot 4.2 patchlevel 4 ",
+   "CreationDate": "Tue Feb 09 17:19:01 2010"
   },
-  "title_lines": [
-   "Chiral symmetry, nuclear forces and all that",
-   "Ulf-G. Mei\u00dfner"
-  ],
-  "title_prev": "Chiral symmetry, nuclear forces and all that Ulf-G. Mei\u00dfner"
+  "title_raw": "Chiral symmetry, nuclear forces and all that",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "carbon12.eps",
+   "heading": "Chiral symmetry, nuclear forces and all that",
+   "outline": "1 The early days at Stony Brook",
+   "text": "Chiral symmetry, nuclear forces and all that",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -41,166 +54,537 @@
    "title": "The early days at Stony Brook",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "A first step: Studying pion-nucleon scattering in chiral perturbation theory",
    "page": 2,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Flashback: The Texas revolution",
    "page": 4,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The chiral theory of nuclear forces as a precision tool",
    "page": 7,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The nucleon-nucleon interaction",
    "page": 7,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Three-nucleon interactions",
    "page": 9,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The nuclear matter problem",
    "page": 10,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Back to square one - meson-exchange currents",
    "page": 11,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Flash forward: Combining nuclear EFT with lattice simulations",
    "page": 13,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Some final words",
    "page": 15,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The LECs ci (circles) in pion-nucleon scattering (left), the two-nucleon (NN) interaction (center) and the three-nucleon (NNN) interaction (right)",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Mandelstam plane. The Mandelstam triangle is the inside of the thick lines",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Resonance saturation for the dimension two (circles) and three (squares) LECs",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Contributions to the eﬀective potential of the 2N, 3N and 4N forces based on Weinberg’s power counting. Here, LO denotes leading order, NLO next-toleading order and so on. Dimension one, two and three pion-nucleon interactions are denoted by small circles, big circles and ﬁlled boxes, respectively",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Left: np S-waves at NLO (grid), N2LO (light shaded) and N3LO (dark shaded). Right: Diﬀerential cross section and vector analyzing power for np scattering at",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Topologies of the leading contributions to the chiral 3NF. From left to right: Two-pion exchange, one-pion-exchange and 6N contact interaction",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Spectra of light nuclei using chiral NN and chiral NN+NNN forces in a NCSM calculation compared to the data",
+   "page": 10,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Left panel: Binding energy per particle of nuclear matter as a function of the",
+   "page": 11,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "Predictions for the n-d and n-3He capture reactions. Chiral EFT: the curve labeled N3LO(S-L) includes pion loop corrections contact terms, while the curve labeled N3LO(LECs) includes in addition contributions from (higher order) pion exchanges and non-minimal contact currents. Pre-EFT approaches: SN",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "Left panel: Euclidean space-time lattice with point-like nucleons on the lattice sites and a typical lattice spacing of a = 2 fm. Right panel: Nuclear phase diagram as accessible by lattice QCD and by nuclear lattice EFT. Figure courtesy of Dean Lee",
+   "page": 13,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "11",
+   "title": "Ground-state energy of 12C as a function of Euclidean time",
+   "page": 14,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 535,
+   "n_words": 76,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-the-early-days-at-stony-brook",
    "number": "1",
    "title": "The early days at Stony Brook",
    "level": 1,
    "page_start": 1,
-   "page_end": 4,
-   "n_chars": 9305,
-   "n_words": 1692
+   "page_end": 2,
+   "n_chars": 4862,
+   "n_words": 835,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-3-flashback-the-texas-revolution",
+   "id": "sec-001-2-a-first-step-studying-pion-nucleon-scattering",
+   "number": "2",
+   "title": "A first step: Studying pion-nucleon scattering in chiral perturbation theory",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 4259,
+   "n_words": 742,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-3-flashback-the-texas-revolution",
    "number": "3",
    "title": "Flashback: The Texas revolution",
    "level": 1,
    "page_start": 4,
    "page_end": 7,
-   "n_chars": 6069,
-   "n_words": 1044
+   "n_chars": 6009,
+   "n_words": 984,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-4-the-chiral-theory-of-nuclear-forces-as-a-preci",
+   "id": "sec-003-4-the-chiral-theory-of-nuclear-forces-as-a-preci",
    "number": "4",
    "title": "The chiral theory of nuclear forces as a precision tool",
    "level": 1,
    "page_start": 7,
    "page_end": 7,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-41-the-nucleon-nucleon-interaction",
+   "id": "sec-004-41-the-nucleon-nucleon-interaction",
    "number": "4.1",
    "title": "The nucleon-nucleon interaction",
    "level": 2,
    "page_start": 7,
    "page_end": 9,
-   "n_chars": 5720,
-   "n_words": 1002
+   "n_chars": 5662,
+   "n_words": 945,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-004-42-three-nucleon-interactions",
+   "id": "sec-005-42-three-nucleon-interactions",
    "number": "4.2",
    "title": "Three-nucleon interactions",
    "level": 2,
    "page_start": 9,
    "page_end": 10,
-   "n_chars": 3542,
-   "n_words": 747
+   "n_chars": 3483,
+   "n_words": 690,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-005-43-the-nuclear-matter-problem",
+   "id": "sec-006-43-the-nuclear-matter-problem",
    "number": "4.3",
    "title": "The nuclear matter problem",
    "level": 2,
    "page_start": 10,
    "page_end": 11,
-   "n_chars": 3632,
-   "n_words": 652
+   "n_chars": 3599,
+   "n_words": 619,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-006-44-back-to-square-one---meson-exchange-currents",
+   "id": "sec-007-44-back-to-square-one---meson-exchange-currents",
    "number": "4.4",
    "title": "Back to square one - meson-exchange currents",
    "level": 2,
    "page_start": 11,
    "page_end": 13,
-   "n_chars": 2566,
-   "n_words": 445
+   "n_chars": 2547,
+   "n_words": 427,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-007-5-flash-forward-combining-nuclear-eft-with-latti",
+   "id": "sec-008-5-flash-forward-combining-nuclear-eft-with-latti",
    "number": "5",
    "title": "Flash forward: Combining nuclear EFT with lattice simulations",
    "level": 1,
    "page_start": 13,
+   "page_end": 15,
+   "n_chars": 4688,
+   "n_words": 812,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-009-6-some-final-words",
+   "number": "6",
+   "title": "Some final words",
+   "level": 1,
+   "page_start": 15,
    "page_end": 19,
-   "n_chars": 11849,
-   "n_words": 2059
+   "n_chars": 7041,
+   "n_words": 1150,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 10,
-  "sections": 8,
-  "chars_total": 42683,
+  "toc_inferred_entries": 0,
+  "figure_entries": 11,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 11,
+  "chars_total": 42685,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "gebugm.tex",
    "tex_sections": 11,
-   "overlaid": 7,
+   "overlaid": 9,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -208,37 +592,50 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-the-early-days-at-stony-brook",
      "title": "The early days at Stony Brook",
-     "prose_ratio": 0.657,
+     "prose_ratio": 0.991,
      "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-a-first-step-studying-pion-nucleon-scattering",
+     "title": "A first step: Studying pion-nucleon scattering in chiral perturbation theory",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-001-3-flashback-the-texas-revolution",
+     "id": "sec-002-3-flashback-the-texas-revolution",
      "title": "Flashback: The Texas revolution",
-     "prose_ratio": 0.994,
-     "coverage_ratio": 0.978,
+     "prose_ratio": 0.979,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-4-the-chiral-theory-of-nuclear-forces-as-a-preci",
+     "id": "sec-003-4-the-chiral-theory-of-nuclear-forces-as-a-preci",
      "title": "The chiral theory of nuclear forces as a precision tool",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-003-41-the-nucleon-nucleon-interaction",
+     "id": "sec-004-41-the-nucleon-nucleon-interaction",
      "title": "The nucleon-nucleon interaction",
      "prose_ratio": 0.982,
-     "coverage_ratio": 0.969,
+     "coverage_ratio": 0.968,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-42-three-nucleon-interactions",
+     "id": "sec-005-42-three-nucleon-interactions",
      "title": "Three-nucleon interactions",
      "prose_ratio": 0.929,
      "coverage_ratio": 1.0,
@@ -246,7 +643,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-43-the-nuclear-matter-problem",
+     "id": "sec-006-43-the-nuclear-matter-problem",
      "title": "The nuclear matter problem",
      "prose_ratio": 0.963,
      "coverage_ratio": 1.0,
@@ -254,18 +651,26 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-44-back-to-square-one---meson-exchange-currents",
+     "id": "sec-007-44-back-to-square-one---meson-exchange-currents",
      "title": "Back to square one - meson-exchange currents",
      "prose_ratio": 0.945,
-     "coverage_ratio": 0.844,
+     "coverage_ratio": 0.839,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-5-flash-forward-combining-nuclear-eft-with-latti",
+     "id": "sec-008-5-flash-forward-combining-nuclear-eft-with-latti",
      "title": "Flash forward: Combining nuclear EFT with lattice simulations",
-     "prose_ratio": 0.78,
-     "coverage_ratio": 0.955,
+     "prose_ratio": 0.926,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-6-some-final-words",
+     "title": "Some final words",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.529,
      "result": "overlaid",
      "converter": "pandoc"
     }

@@ -2,11 +2,11 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1409.1198v1",
  "source_sha256": "13ecb6c28bab6744",
- "brief": "TRACE AS AN ALTERNATIVE DECATEGORIFICATION FUNCTOR — Categoriﬁcation is a process of lifting structures to a high er categorical level.",
- "extended": "**TRACE AS AN ALTERNATIVE DECATEGORIFICATION FUNCTOR**\n\n*ANNA BELIAKOVA, ZAUR GULIYEV, KAZUO HABIRO, AND AARON D. LAUDA*\n\n47 pp, 22 sections.\n\n**Abstract.** Categoriﬁcation is a process of lifting structures to a high er categorical level. The original structure can then be recovered by means of the so-called “de categoriﬁcation” functor. Algebras are typically categoriﬁed to additive categories with additio nal structure and decategoriﬁcation is usually given by the (split) Grothendieck group. In this article we s tudy an alternative decategoriﬁcation functor given by the trace or the zeroth Hochschild–Mitchel l homology. W e show that this form of decategoriﬁcation endows any 2-representation of the cate goriﬁed quantum sln with an action of the current algebra U(sln[t]) on its center.\n\n**Outline.** Front matter; 1 Introduction; 1.2 The Grothendieck group; 1.4 Comparing Grothendieck group and trace; 2 Elementary notions of trace; 2.2 Hochschild homology and the trace of a rin; 3 Trace of a linear category; 3.1 Hochschild–Mitchell homology and the trace; 3.2 The trace and direct sums; 3.3 The trace and idempotent completions; 3.4 The trace and categories of complexes; 3.5 The trace and split Grothendieck groups; 3.6 The trace of a graded linear category; 3.7 Hochschild–Mitchell homology of strongly u; 4 Categorified quantum groups; 4.1 Quantum sln; 4.2 The 2-category UQ(sln); 4.3 Symmetric functions and bubbles",
+ "brief": "TRACE AS AN ALTERNATIVE DECATEGORIFICATION FUNCTOR — Categoriﬁcation is a process of lifting structures to a higher categorical level.",
+ "extended": "**TRACE AS AN ALTERNATIVE DECATEGORIFICATION FUNCTOR**\n\n*ANNA BELIAKOVA, ZAUR GULIYEV, KAZUO HABIRO, AND AARON D. LAUDA*\n\n47 pp, 30 sections.\n\n**Abstract.** Categoriﬁcation is a process of lifting structures to a higher categorical level. The original structure can then be recovered by means of the so-called “decategoriﬁcation” functor. Algebras are typically categoriﬁed to additive categories with additional structure and decategoriﬁcation is usually given by the (split) Grothendieck group. In this article we study an alternative decategoriﬁcation functor given by the trace or the zeroth Hochschild–Mitchell homology. We show that this form of decategoriﬁcation endows any 2-representation of the categoriﬁed quantum sln with an action of the current algebra U(sln[t]) on its center.\n\n**Outline.** Front matter; 1 Introduction; 1.1 What is categorification?; 1.2 The Grothendieck group; 1.3 The trace decategorification map; 1.4 Comparing Grothendieck group and trace; 1.5 Quantum group categorifications; 1.6 Traces of categorified quantum groups; 2 Elementary notions of trace; 2.1 Traces of linear maps; 2.2 Hochschild homology and the trace of a rin; 3 Trace of a linear category; 3.1 Hochschild–Mitchell homology and the trace; 3.2 The trace and direct sums; 3.3 The trace and idempotent completions; 3.4 The trace and categories of complexes; 3.5 The trace and split Grothendieck groups; 3.6 The trace of a graded linear category",
  "tokens": {
   "brief": 33,
-  "extended": 358
+  "extended": 360
  },
  "sections": [
   {
@@ -17,105 +17,145 @@
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-11-what-is-categorification",
+   "title": "What is categorification?",
    "pages": "1-2"
   },
   {
-   "id": "sec-001-12-the-grothendieck-group",
+   "id": "sec-002-12-the-grothendieck-group",
    "title": "The Grothendieck group",
    "pages": "2-3"
   },
   {
-   "id": "sec-002-14-comparing-grothendieck-group-and-trace",
-   "title": "Comparing Grothendieck group and trace",
-   "pages": "3-7"
+   "id": "sec-003-13-the-trace-decategorification-map",
+   "title": "The trace decategorification map",
+   "pages": "3-3"
   },
   {
-   "id": "sec-003-2-elementary-notions-of-trace",
+   "id": "sec-004-14-comparing-grothendieck-group-and-trace",
+   "title": "Comparing Grothendieck group and trace",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-005-15-quantum-group-categorifications",
+   "title": "Quantum group categorifications",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-006-16-traces-of-categorified-quantum-groups",
+   "title": "Traces of categorified quantum groups",
+   "pages": "5-7"
+  },
+  {
+   "id": "sec-007-2-elementary-notions-of-trace",
    "title": "Elementary notions of trace",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-008-21-traces-of-linear-maps",
+   "title": "Traces of linear maps",
    "pages": "7-9"
   },
   {
-   "id": "sec-004-22-hochschild-homology-and-the-trace-of-a-ring",
+   "id": "sec-009-22-hochschild-homology-and-the-trace-of-a-ring",
    "title": "Hochschild homology and the trace of a ring",
    "pages": "9-13"
   },
   {
-   "id": "sec-005-3-trace-of-a-linear-category",
+   "id": "sec-010-3-trace-of-a-linear-category",
    "title": "Trace of a linear category",
    "pages": "13-13"
   },
   {
-   "id": "sec-006-31-hochschildmitchell-homology-and-the-trace",
+   "id": "sec-011-31-hochschildmitchell-homology-and-the-trace",
    "title": "Hochschild–Mitchell homology and the trace",
    "pages": "13-14"
   },
   {
-   "id": "sec-007-32-the-trace-and-direct-sums",
+   "id": "sec-012-32-the-trace-and-direct-sums",
    "title": "The trace and direct sums",
    "pages": "14-15"
   },
   {
-   "id": "sec-008-33-the-trace-and-idempotent-completions",
+   "id": "sec-013-33-the-trace-and-idempotent-completions",
    "title": "The trace and idempotent completions",
    "pages": "15-16"
   },
   {
-   "id": "sec-009-34-the-trace-and-categories-of-complexes",
+   "id": "sec-014-34-the-trace-and-categories-of-complexes",
    "title": "The trace and categories of complexes",
    "pages": "16-17"
   },
   {
-   "id": "sec-010-35-the-trace-and-split-grothendieck-groups",
+   "id": "sec-015-35-the-trace-and-split-grothendieck-groups",
    "title": "The trace and split Grothendieck groups",
    "pages": "17-18"
   },
   {
-   "id": "sec-011-36-the-trace-of-a-graded-linear-category",
+   "id": "sec-016-36-the-trace-of-a-graded-linear-category",
    "title": "The trace of a graded linear category",
    "pages": "18-19"
   },
   {
-   "id": "sec-012-37-hochschildmitchell-homology-of-strongly-upper",
+   "id": "sec-017-37-hochschildmitchell-homology-of-strongly-upper",
    "title": "Hochschild–Mitchell homology of strongly upper triangular categories",
    "pages": "19-21"
   },
   {
-   "id": "sec-013-4-categorified-quantum-groups",
+   "id": "sec-018-4-categorified-quantum-groups",
    "title": "Categorified quantum groups",
    "pages": "21-21"
   },
   {
-   "id": "sec-014-41-quantum-sln",
+   "id": "sec-019-41-quantum-sln",
    "title": "Quantum sln",
    "pages": "21-22"
   },
   {
-   "id": "sec-015-42-the-2-category-uqsln",
+   "id": "sec-020-42-the-2-category-uqsln",
    "title": "The 2-category UQ(sln)",
    "pages": "22-27"
   },
   {
-   "id": "sec-016-43-symmetric-functions-and-bubbles",
+   "id": "sec-021-43-symmetric-functions-and-bubbles",
    "title": "Symmetric functions and bubbles",
-   "pages": "27-32"
+   "pages": "27-29"
   },
   {
-   "id": "sec-017-5-graded-traces-of-categorified-quantum-groups",
+   "id": "sec-022-44-kar-k0-and-tr-for-2-categories",
+   "title": "Kar, K0 and Tr for 2-categories",
+   "pages": "29-30"
+  },
+  {
+   "id": "sec-023-45-two-categorifications-of-lusztigs-integral-fo",
+   "title": "Two categorifications of Lusztig's integral form A(sl2)",
+   "pages": "30-32"
+  },
+  {
+   "id": "sec-024-5-graded-traces-of-categorified-quantum-groups",
    "title": "Graded traces of categorified quantum groups",
+   "pages": "32-32"
+  },
+  {
+   "id": "sec-025-51-the-trace-of-2-category-usl2-and-the-current",
+   "title": "The trace of 2-category U(sl2) and the current algebra of sl2",
    "pages": "32-35"
   },
   {
-   "id": "sec-018-52-the-current-algebra-for-sln",
+   "id": "sec-026-52-the-current-algebra-for-sln",
    "title": "The current algebra for sln",
    "pages": "35-43"
   },
   {
-   "id": "sec-019-6-action-on-center-of-objects-in",
+   "id": "sec-027-6-action-on-center-of-objects-in",
    "title": "Action on center of objects in",
    "pages": "43-45"
   },
   {
-   "id": "sec-020-references",
+   "id": "sec-028-references",
    "title": "References",
    "pages": "45-47"
   }

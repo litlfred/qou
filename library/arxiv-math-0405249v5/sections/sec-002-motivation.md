@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-math-0405249v5
-doc_title: "Twisted homology of quantum SL(2)"
+doc_title: "Twisted homology of quantum SL (2)"
 section_id: sec-002-motivation
 section_title: "motivation"
 section_number: null
 pages: 4-4
 source_pdf: 0405249v5.pdf
 source_sha256: bc699482e5cd7679
-doc_brief: "Twisted homology of quantum SL(2) — We calculate the twisted Hochschild and cyclic homology (in the sense of Kustermans, Murphy and Tuset) of the coordinate algebra o f the quan- tum SL(2) group"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.987
-latex_coverage_ratio: 0.976
+latex_coverage_ratio: 0.987
+doc_brief: "Twisted homology of quantum SL (2) — We calculate the twisted Hochschild and cyclic homology (in the sense of Kustermans, Murphy and Tuset) of the coordinate algebra of the quan- tum SL(2) group"
 ---
 Twisted cyclic (co)homology arose from the study of covariant differential calculi over quantum groups [@kmt].
 

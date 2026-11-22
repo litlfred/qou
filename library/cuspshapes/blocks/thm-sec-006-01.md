@@ -1,0 +1,1 @@
+we obtain a hyperbolic 3-manifold M with a single tunnel and cusp shape ϵ-close to [T]. Because there is a single tunnel, M has a genus 2 Heegaard splitting. Since there are no hyperbolic manifolds with smaller genus Heegaard splittings, M must have tunnel number one. □

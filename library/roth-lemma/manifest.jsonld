@@ -5,19 +5,17 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/roth-lemma",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/roth-lemma/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "roth-lemma",
   "contains": [
-    "library/roth-lemma/sections/sec-000",
-    "library/roth-lemma/sections/sec-001",
-    "library/roth-lemma/sections/sec-002",
-    "library/roth-lemma/sections/sec-003"
+    "library/roth-lemma/sections/sec-front-matter",
+    "library/roth-lemma/sections/sec-000"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "roth-lemma",
     "title_source": "slug",

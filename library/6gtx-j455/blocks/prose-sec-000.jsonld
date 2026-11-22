@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/6gtx-j455/blocks/prose-sec-000",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
   "title": "Ultraviolet Completion of the Big Bang in Quadratic Gravity",
   "pageStart": 1,
   "pageEnd": 4,
   "text": "../sections/sec-000-ultraviolet-completion-of-the-big-bang-in-quadra.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/6gtx-j455",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/6gtx-j455",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/6gtx-j455/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/6gtx-j455/manifest.jsonld",
   "provenance": "ingested"
 }

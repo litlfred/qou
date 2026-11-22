@@ -1,0 +1,38 @@
+11
+
+Cone point asymptotics
+
+Once again, let F(z) = P(z)/Q(z) = >, az” be a convergent Laurent ex-
+pansion with domain of convergence D = Relog™'(B) for a component B of
+amoeba(Q)°. In Chapter 6 we defined the eens growth rate
+
+A(?) = limsup — | ie lasl,
+
+sco |8|
+the neighborhood growth rate
+
+BP) = lim n sup a log |as\,
+
+silai>e
+and the dual rate
+
+Bf) = inf -F- ax,
+
+weB
+and showed that
+BUF) < BA) < BCP)
+for every direction 7. In this chapter we study conditions under which the
+equality B(?) = B*(#) holds — a useful criterion because f" is much easier to
+compute than f or B (which usually require determining dominant asymptotic
+behavior). Our framework also allows us to give asymptotics in the presence
+
+of cone points, going beyond the smooth and multiple point cases of the last
+two chapters.
+
+Deformations and vector fields: a third approach
+Deformation of cycles underlies every result in ACSV. The surgery method,
+sketched in Chapter 9 for smooth points and Chapter 10 for multiple points,
+is very explicit but applies only to minimal points. In contrast, the power-
+ful Morse-theoretic decompositions in Chapter 7 use Thom’s Isotopy Lemma
+
+339

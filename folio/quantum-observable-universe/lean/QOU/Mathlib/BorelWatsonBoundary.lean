@@ -29,7 +29,7 @@
   Archimedean (ℂ): the ambient objects are complex-analytic; this reduction
   itself is pure order/set logic on `re`.
 
-  -- Ref: [manuscript] bean el8w tranche 5 — Watson uniqueness brick 4b-ii boundary
+  -- Ref: [leitner2026] bean el8w tranche 5 — Watson uniqueness brick 4b-ii boundary
 -/
 
 import Mathlib.Analysis.Complex.Basic

@@ -2,40 +2,65 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1203.6551v1",
  "source_sha256": "a8e84f8ed63dbcca",
- "brief": "On the number of hyperbolic 3-manifolds of a given volume — The work of Jørgensen and Thurston shows that there is a ﬁnite number N (v) of orientable hyperbolic 3-manifolds with any given volum e v.",
- "extended": "**On the number of hyperbolic 3-manifolds of a given volume**\n\n*Craig Hodgson and Hidetoshi Masai*\n\n25 pp, 6 sections.\n\n**Abstract.** The work of Jørgensen and Thurston shows that there is a ﬁnite number N (v) of orientable hyperbolic 3-manifolds with any given volum e v. W e show that there is an inﬁnite sequence of closed orientabl e hyperbolic 3- manifolds, obtained by Dehn ﬁlling on the ﬁgure eight knot co mplement, that are uniquely determined by their volumes. This gives a seque nce of distinct volumes xi converging to the volume of the ﬁgure eight knot complement w ith N (xi) = 1 for each i. W e also give an inﬁnite sequence of 1-cusped hyper- bolic 3-manifolds, obtained by Dehn ﬁlling one cusp of the ( − 2, 3, 8)-pretzel link complement, that are uniquely determined by their volu mes amongst ori- entable cusped hyperbolic 3-manifolds. Finally, we descri be examples showing that the number of hyperbolic link complements with a given v olume v can grow at least exponentially fast with v.\n\n**Outline.** 1 Introduction; 5 Higher order terms in the Neumann-Zagier asy; 6 Hyperbolic graphs with parabolic meridians; 7 Associated circle packings and cusp moduli; 9 Some Open Questions; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 3.1: There is an inﬁnite sequence of hyperbolic Dehn ﬁllings M (ai, bi)\n- Theorem 4.1: There is an inﬁnite sequence of hyperbolic Dehn ﬁllings M (ai, bi)\n- Theorem 8.2: Let L be a fully augmented link. Then there exist\n- Theorem 8.4: Let bi be a binary cyclic word of length n ≥ 3 and let Mbi be\n- Theorem 8.5: For each n ≥ 3, there are at least 2n/(2n) diﬀerent hyperbolic\n- Proposition 2.2: Let V0 be the volume of the complete hyperbolic structure on",
+ "brief": "On the number of hyperbolic 3-manifolds of a given volume — The work of Jørgensen and Thurston shows that there is a ﬁnite number N(v) of orientable hyperbolic 3-manifolds with any given volume v.",
+ "extended": "**On the number of hyperbolic 3-manifolds of a given volume**\n\n*Craig Hodgson and Hidetoshi Masai*\n\n25 pp, 11 sections.\n\n**Abstract.** The work of Jørgensen and Thurston shows that there is a ﬁnite number N(v) of orientable hyperbolic 3-manifolds with any given volume v. We show that there is an inﬁnite sequence of closed orientable hyperbolic 3- manifolds, obtained by Dehn ﬁlling on the ﬁgure eight knot complement, that are uniquely determined by their volumes. This gives a sequence of distinct volumes xi converging to the volume of the ﬁgure eight knot complement with N(xi) = 1 for each i. We also give an inﬁnite sequence of 1-cusped hyper- bolic 3-manifolds, obtained by Dehn ﬁlling one cusp of the (−2, 3, 8)-pretzel link complement, that are uniquely determined by their volumes amongst ori- entable cusped hyperbolic 3-manifolds. Finally, we describe examples showing that the number of hyperbolic link complements with a given volume v can grow at least exponentially fast with v.\n\n**Outline.** Front matter; 1 Introduction; 2 Hyperbolic Dehn fillings determined by their; 3 Dehn filling on the figure eight knot comple; 4 Dehn filling on the Whitehead link complemen; 5 Higher order terms in the Neumann-Zagier asy; 6 Hyperbolic graphs with parabolic meridians; 7 Associated circle packings and cusp moduli; 8 Construction of different manifolds sharing ; 9 Some Open Questions; References",
  "tokens": {
   "brief": 49,
-  "extended": 431
+  "extended": 351
  },
  "sections": [
   {
-   "id": "sec-000-1-introduction",
-   "title": "Introduction",
-   "pages": "1-13"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
   },
   {
-   "id": "sec-001-5-higher-order-terms-in-the-neumann-zagier-asymp",
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-5"
+  },
+  {
+   "id": "sec-001-2-hyperbolic-dehn-fillings-determined-by-their-v",
+   "title": "Hyperbolic Dehn fillings determined by their volumes",
+   "pages": "5-8"
+  },
+  {
+   "id": "sec-002-3-dehn-filling-on-the-figure-eight-knot-compleme",
+   "title": "Dehn filling on the figure eight knot complement and its sister",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-003-4-dehn-filling-on-the-whitehead-link-complement",
+   "title": "Dehn filling on the Whitehead link complement and its sister",
+   "pages": "10-13"
+  },
+  {
+   "id": "sec-004-5-higher-order-terms-in-the-neumann-zagier-asymp",
    "title": "Higher order terms in the Neumann-Zagier asymptotic formula",
    "pages": "13-15"
   },
   {
-   "id": "sec-002-6-hyperbolic-graphs-with-parabolic-meridians",
+   "id": "sec-005-6-hyperbolic-graphs-with-parabolic-meridians",
    "title": "Hyperbolic graphs with parabolic meridians",
    "pages": "15-18"
   },
   {
-   "id": "sec-003-7-associated-circle-packings-and-cusp-moduli",
+   "id": "sec-006-7-associated-circle-packings-and-cusp-moduli",
    "title": "Associated circle packings and cusp moduli",
-   "pages": "18-23"
+   "pages": "18-21"
   },
   {
-   "id": "sec-004-9-some-open-questions",
+   "id": "sec-007-8-construction-of-different-manifolds-sharing-th",
+   "title": "Construction of different manifolds sharing the same volume",
+   "pages": "21-23"
+  },
+  {
+   "id": "sec-008-9-some-open-questions",
    "title": "Some Open Questions",
    "pages": "23-24"
   },
   {
-   "id": "sec-005-references",
+   "id": "sec-009-references",
    "title": "References",
    "pages": "24-25"
   }
@@ -44,8 +69,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

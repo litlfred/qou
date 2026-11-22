@@ -1,0 +1,71 @@
+using «— 1 < Re x) by auto
+hence 1 + 2 4 0
+by force
+have Re (1 — x) > 0
+using (Re z < 0) by auto
+hence Re ((1 — z)/(1 + z)) > 0
+using Re-divide-real «0 < Re (1 + x)» complex-eq-if-Re-eq hh(1) hh(4) by auto
+have Re(1 — x) > Re (1+ 2)
+using hh by auto
+hence Re ((1 — z)/(1 + z)) > 1
+using (Re (1 + x) > 0» <is-real ((1 — x)/(1 + 2))>
+by (smt Re-divide-real arg-0-iff hh(1) le-divide-eq-1-pos one-complex.simps(2) plus-complex.simps(2))
+
+have Re (1 + y) > 0
+using «— 1 < Re y» by auto
+hence 1 + y 4 0
+by force
+have Re (1 — y) > 0
+using ‘Re y < 0» by auto
+hence Re ((1 — y)/(1 + y)) > 0
+using Re-divide-real (0 < Re (1 + y)> complex-eq-if-Re-eq hh by auto
+have Re(1 — y) > Re (1+ y)
+using hh by auto
+hence Re ((1 — y)/(1 + y)) > 1
+using (Re (1 + y) > 0» <is-real ((1 — y)/(1 + y))>
+by (smt Re-divide-real arg-0-iff hh le-divide-eq-1-pos one-complez.simps(2) plus-complex.simps(2))
+
+have In (Re (1 = 2) / (1 + 2))) = In (Re ((1 — y) / (1 + y)))
+using ‘Re ((1 — y)/(1 + y)) > 1» «Re ((1 — x)/(1 + z)) > 1> hh
+by auto
+
+hence Re ((1 — x) / (1 + z)) = Re (1 — y) / (1 + y))
+using (Re ((1 — y)/(1 + y)) > 0» «Re ((1 — z)/(1 + 2)) >
+by auto
+
+hence (1 — x) /(1+2)=(1-y)/(1+y)
+using <is-real ((1 — y)/(1 + y))> ‘is-real ((1 — x)/(1 + 2))>
+using complex-eq-if-Re-eq by blast
+
+hence (1 — z) * (1 + y) =(1 — y)* (1 +2)
+using (1 +y #0 (1 +2440)
+by (simp add:field-simps)
+
+thus x = y
+by (simp add:field-simps)
+
+qed
+thus inj-on ?g (to-complex ‘ of-complex ‘ ?A)
+using *
+by simp
+qed
+qed
+qed
+thus ?thesis
+using <?P ?2z>
+unfolding inj-on-def
+by auto
+qed
+ultimately
+show ?thesis
+by blast
+qed
+
+lemma ex-x-axis-poincare-distance-positive:
+assumes d > 0
+shows J z. is-realz \ Rez >0A Rez< 1A
+of-complex z € unit-disc \ of-complex z € circline-set x-axis A
+poincare-distance On (of-complex z) = d (is J z. is-realz A Rez > 0 A Rez <1 A ?P z)
+proof—
+obtain z where *: is-real z Re z < 0 Rez > —1 ?Pz
+using ex-z-axis-poincare-distance-negative|OF assms]

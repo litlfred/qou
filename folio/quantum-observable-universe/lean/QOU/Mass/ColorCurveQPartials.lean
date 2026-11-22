@@ -30,7 +30,7 @@ this branch selection, not the calculus.
 (W2), no `symbol=C1` claim (W3), no conjecture-class (anti-laundering). §7c: generic
 `CommRing`. Sorry-free. No fit; nothing wired.
 
--- Ref: [manuscript] docs/audits/2026-07-20-zgeometric-prolongation-symbol-scoping.md (W1/G1)
+-- Ref: [leitner2026] docs/audits/2026-07-20-zgeometric-prolongation-symbol-scoping.md (W1/G1)
 -/
 import QOU.MathlibExt.QDifferenceOperator
 import QOU.Mass.ColorCurveQIntegerForm

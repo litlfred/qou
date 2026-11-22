@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2202.06733v1/sections/sec-014",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The group G2 and the representation of quarks and gluons via the STA",
+  "pageStart": 15,
+  "pageEnd": 18,
+  "contains": [
+    "library/arxiv-2202.06733v1/blocks/prose-sec-014"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2202.06733v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2202.06733v1/manifest.jsonld",
+  "provenance": "ingested"
+}

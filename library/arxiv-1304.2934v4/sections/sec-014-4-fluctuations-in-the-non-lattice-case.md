@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.886
 latex_coverage_ratio: 0.924
+doc_brief: "MOD-φ CONVERGENCE, I: NORMALITY ZONES AND PRECISE DEVIATIONS — In this paper, we use the framework of mod-φ convergence to prove pre- cise large or moderate deviations for quite general sequences of"
 ---
 \label{sec:nonlattice}
 In this section we prove the analogues of Theorems \ref{thm:mainlattice} and \ref{thm:cltlattice} when $\phi$ is not lattice-distributed; hence, by Proposition \ref{prop:latticeandnonlattice}, $|\E^{\eta(\I u)}|<1$ for any $u\neq 0$. In this setting, assuming $\phi$ absolutely continuous w.r.t.~the Lebesgue measure, there is a formula equivalent to the one given in Lemma \ref{lem:fourier}, namely,

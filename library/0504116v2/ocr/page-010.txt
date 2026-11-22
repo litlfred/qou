@@ -1,0 +1,43 @@
+444 Roberto Frigerio
+
+6c + 5p = 6t — p, where ¢ is the total number of tetrahedra of T. Let e),...,e; be
+the edges of J without ideal endpoints, and for i = 1,...,/ let x; be the valence of ¢;,
+ie, the number of tetrahedra of T incident to e;, with multiplicity. Of course we have
+an Xj = 6c + 3p. If we denote by / the number of edges of T with exactly one ideal
+endpoint, then the union of the boundary tori of N admits a triangulation with h vertices
+and p triangles, so h = p/2. Let us now turn to the number of equations. Theorem 1.11
+determines / + h equations arising from conditions (1), Gi — 1) equations arising
+
+from conditions (2) and 3p/2 equations arising from conditions (3). Since
+
+1+ h+ (ShiGi—D) +3p/2 = h+ (Simi) +3p/2
+= p/2+6c + 3p+ 3p/2 = 6c+5p,
+
+we can conclude that the number of equations in C(T) is equal to the dimension of the
+moduli space of geometric realizations of the tetrahedra of T.
+
+1.7 Reducing the number of equations
+
+When N has cusps, some equations in C(T) turn out to be redundant. Let T be a fixed
+toric component of ON and let j be the number of tetrahedra asymptotic to T. Since
+any such tetrahedron contributes to the triangulation of T with a Euclidean triangle, the
+sum of all the dihedral angles along all the edges of T incident to T is equal to jz. So
+if we require condition (1) of Theorem 1.11 to hold for all but one edge incident to T,
+then the same condition is automatically satisfied also along the remaining edge. This
+allows us to discard from C(T) one equation for each cusp of N.
+
+Moreover, let A be a partially truncated tetrahedron with an ideal vertex v incident
+to T, and let F), F2, F3 be the faces of A incident to v. By the very definition of o it
+follows that o(F}) + o(F2) + o(F3) = 0. This implies that if F is the set of all the
+faces incident to T of tetrahedra of T , then we have )°-¢¢ 0(F) = 0. So if we require
+condition (3) of Theorem 1.11 to hold for all but one pair of matching exceptional
+hexagons incident to 7, then the same condition also holds for the remaining pair. This
+means that another equation of C(T) for each cusp of N can be discarded. Suppose
+that N compactifies to an orientable N with k boundary tori. The above discussion is
+summarized by the following:
+
+Proposition 1.12 We can discard 2k equations from C(T) thus obtaining an equivalent
+set C*(T) of n—2k equations, where n is the dimension of the moduli space of geometric
+realizations of the tetrahedra of T .
+
+Algebraic & Geometric Topology 6 (2006)

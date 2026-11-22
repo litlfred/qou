@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1408.3518v3",
  "source_sha256": "cf18585b886587c7",
- "brief": "On Augmentation Algorithms for Linear and Integer-Linear Programming: — 4 sections: Introduction.; Our Contributions; Proofs",
- "extended": "**On Augmentation Algorithms for Linear and Integer-Linear Programming:**\n\n*From Edmonds-Karp to Bland and Beyond*\n\n15 pp, 4 sections.\n\n**Outline.** 1 Introduction.; 1.1 Our Contributions; 2 Proofs; 3 Concluding remarks",
+ "brief": "On Augmentation Algorithms for Linear and Integer-Linear Programming: From Edmonds-Karp to Bland and Beyond — 13 sections: Front matter; Introduction.; Our Contributions",
+ "extended": "**On Augmentation Algorithms for Linear and Integer-Linear Programming: From Edmonds-Karp to Bland and Beyond**\n\n*From Edmonds-Karp to Bland and Beyond*\n\n15 pp, 13 sections.\n\n**Outline.** Front matter; 1 Introduction.; 1.1 Our Contributions; 2 Proofs; 2.1.1 Proof of Lemma ??: Discrete deepest desc; 2.1.2 Proof of part (a) of Theorem ??: Discret; 2.1.3 Proof of part (b) of of Theorem ??: Disc; 2.2 Proof of Lemma ?? and Theorem ??; 2.2.1 Proof of Lemma ?? for Discrete deepest d; 2.2.2 Proof of part (a) of Theorem ??: Discret; 2.2.3 Proof of part (b) of Theorem ??: Discret; 2.3 Proof of Theorem ??.; 3 Concluding remarks",
  "tokens": {
-  "brief": 31,
-  "extended": 54
+  "brief": 42,
+  "extended": 156
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction.",
@@ -22,10 +27,50 @@
   {
    "id": "sec-002-2-proofs",
    "title": "Proofs",
-   "pages": "8-13"
+   "pages": "8-9"
   },
   {
-   "id": "sec-003-3-concluding-remarks",
+   "id": "sec-003-211-proof-of-lemma-discrete-deepest-descent",
+   "title": "Proof of Lemma ??: Discrete deepest descent.",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-004-212-proof-of-part-a-of-theorem-discrete-dantzig",
+   "title": "Proof of part (a) of Theorem ??: Discrete Dantzig descent.",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-005-213-proof-of-part-b-of-of-theorem-discrete-steep",
+   "title": "Proof of part (b) of of Theorem ??: Discrete steepest descent.",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-006-22-proof-of-lemma-and-theorem",
+   "title": "Proof of Lemma ?? and Theorem ??",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-007-221-proof-of-lemma-for-discrete-deepest-descent",
+   "title": "Proof of Lemma ?? for Discrete deepest descent.",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-008-222-proof-of-part-a-of-theorem-discrete-dantzig",
+   "title": "Proof of part (a) of Theorem ??: Discrete Dantzig descent.",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-009-223-proof-of-part-b-of-theorem-discrete-steepest",
+   "title": "Proof of part (b) of Theorem ??: Discrete steepest descent.",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-010-23-proof-of-theorem",
+   "title": "Proof of Theorem ??.",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-011-3-concluding-remarks",
    "title": "Concluding remarks",
    "pages": "13-15"
   }

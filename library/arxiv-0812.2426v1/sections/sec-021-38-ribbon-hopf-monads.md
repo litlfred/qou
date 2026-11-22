@@ -10,7 +10,8 @@ source_sha256: df1eb953bc2c6c63
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.892
+latex_coverage_ratio: 1.0
+doc_brief: "CATEGORICAL CENTERS AND RESHETIKHIN-TURAEV INVARIANTS — A theorem of M¨uger asserts that the center Z(C) of a spherical k-linear category C is a modular category if k is an algebraically closed ﬁeld"
 ---
 Let $T$ be a quasitriangular Hopf monad $T$ on an autonomous category $\mathcal{C}$. A *twist* for $T$ is a central and $*$-invertible natural transformation $\theta_X \colon X \to T(X)$ satisfying: $$T_2(X,Y) \theta_{X \otimes Y}=(\mu_X \theta_{T(X)} \mu_X \otimes \mu_Y \theta_{T(Y)} \mu_Y)
   R_{T(Y),T(X)} R_{X,Y}.$$ Here central and $*$-invertible means central and invertible in the monoid ${\textsc{Hom}}(1_\mathcal{C},T)$ of natural transformations from $1_\mathcal{C}$ to $T$. This monoid is endowed with the convolution product, defined by: $(\phi

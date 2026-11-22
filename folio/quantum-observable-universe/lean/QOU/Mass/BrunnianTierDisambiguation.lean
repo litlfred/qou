@@ -52,7 +52,7 @@ with crossings — it is a hypothesis, not a property this framework's carriers 
 linking matrix; only the energy statement touches `ℝ`, because `countChannel` and
 `1 < q` are archimedean.  Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-09-05-binding-gap-groupoids-derived-categories-full-tower.md
+-- Ref: [leitner2026] docs/audits/2026-09-05-binding-gap-groupoids-derived-categories-full-tower.md
 -/
 import QOU.Mass.FreedmanHeGenusHandleNeedsVanishingLinking
 import QOU.Mass.BrunnianBindingChannel

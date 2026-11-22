@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-9910019v1
-doc_title: "arXiv:math/9910019v1 [math.CO] 5 Oct 1999"
+doc_title: "Symmetrized random permutations"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
@@ -9,8 +9,9 @@ source_pdf: 9910019v1.pdf
 source_sha256: 07dd7ab7068b1482
 toc_source: inferred
 text_source: latex
-latex_prose_ratio: 0.956
-latex_coverage_ratio: 0.963
+latex_prose_ratio: 0.96
+latex_coverage_ratio: 0.96
+doc_brief: "Symmetrized random permutations — 8 sections: Front matter; Introduction; Tracy-Widom distribution functions"
 ---
 \label{sec-intro}
 

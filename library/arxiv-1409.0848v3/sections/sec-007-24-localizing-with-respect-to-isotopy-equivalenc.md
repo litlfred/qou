@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.973
 latex_coverage_ratio: 0.977
+doc_brief: "FACTORIZATION HOMOLOGY OF STRATIFIED SPACES — This work forms a foundational study of factorization homology, or topological chiral homology, at the generality of stratiﬁed spaces with tangential"
 ---
 Here we explain that the $\infty$-category $\disk(\cB)_{/X}$, which appears in the Definition~\ref{def:fact-hmlgy} of factorization homology, can be witnessed as a localization of its un-topologized version $\diskd(\cB)_{/X}$ on the collection of those inclusions of finite disjoint unions of disks $U\subset V$ in $X$ for which this inclusion is isotopic to an isomorphism.  
 This comparison plays a fundamental role in recognizing certain colimit expressions in this theory, for instance that support the pushforward formula of~\S\ref{sec.pushforward}.

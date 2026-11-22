@@ -2,45 +2,64 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-hep-th-9310070v1",
  "source_sha256": "b979ebf2f47a4653",
- "brief": "Quantum dilogarithm — A quantum generalization of Rogers’ ﬁve term, or “pentagon” dilogarithm identity is suggested. It is shown that the classical limit gives usua l Rogers’ identity.",
- "extended": "**Quantum dilogarithm**\n\n*L.D. Faddeev1,2,†, R.M. Kashaev 1,∗,†*\n\n9 pp, 5 sections.\n\n**Abstract.** A quantum generalization of Rogers’ ﬁve term, or “pentagon” dilogarithm identity is suggested. It is shown that the classical limit gives usua l Rogers’ identity. The case where the quantum identity is realized in ﬁnite dimensional space is also considered and the quantum dilogarithm is constructed as a function on Ferm at curve, while the identity itself is equivalent to the restricted star-triangle relat ion introduced by Bazhanov and Baxter. † Supported by the Russian Academy of Sciences and Academy of F inland ∗ On leave of absence from St. Petersburg Nuclear Physics Inst itute, Gatchina, St. Petersburg 188350, Russia\n\n**Outline.** Abstract; 1 Introduction; 2 Quantized Rogers’ Identity; 3 Quantum Dilogarithm at θN = 1; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem: The following “quantum pentagon ” identity holds :",
+ "brief": "Quantum dilogarithm — A quantum generalization of Rogers’ ﬁve term, or “pentagon” dilogarithm identity is suggested. It is shown that the classical limit gives usual Rogers’ identity.",
+ "extended": "**Quantum dilogarithm**\n\n*L.D. Faddeev1,2,†, R.M. Kashaev1,∗,†*\n\n9 pp, 9 sections.\n\n**Abstract.** A quantum generalization of Rogers’ ﬁve term, or “pentagon” dilogarithm identity is suggested. It is shown that the classical limit gives usual Rogers’ identity. The case where the quantum identity is realized in ﬁnite dimensional space is also considered and the quantum dilogarithm is constructed as a function on Fermat curve, while the identity itself is equivalent to the restricted star-triangle relation introduced by Bazhanov and Baxter. † Supported by the Russian Academy of Sciences and Academy of Finland ∗On leave of absence from St. Petersburg Nuclear Physics Institute, Gatchina, St. Petersburg 188350, Russia\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5; Page 6; Page 7; Page 8; Page 9",
  "tokens": {
-  "brief": 46,
-  "extended": 238
+  "brief": 45,
+  "extended": 201
  },
  "sections": [
   {
-   "id": "sec-000-abstract",
-   "title": "Abstract",
-   "pages": "1-2"
+   "id": "page-001",
+   "title": "Page 1",
+   "pages": "1-1"
   },
   {
-   "id": "sec-001-1-introduction",
-   "title": "Introduction",
-   "pages": "2-3"
+   "id": "page-002",
+   "title": "Page 2",
+   "pages": "2-2"
   },
   {
-   "id": "sec-002-2-quantized-rogers-identity",
-   "title": "Quantized Rogers’ Identity",
-   "pages": "3-5"
+   "id": "page-003",
+   "title": "Page 3",
+   "pages": "3-3"
   },
   {
-   "id": "sec-003-3-quantum-dilogarithm-at-θn-1",
-   "title": "Quantum Dilogarithm at θN = 1",
-   "pages": "5-8"
+   "id": "page-004",
+   "title": "Page 4",
+   "pages": "4-4"
   },
   {
-   "id": "sec-004-references",
-   "title": "References",
-   "pages": "8-9"
+   "id": "page-005",
+   "title": "Page 5",
+   "pages": "5-5"
+  },
+  {
+   "id": "page-006",
+   "title": "Page 6",
+   "pages": "6-6"
+  },
+  {
+   "id": "page-007",
+   "title": "Page 7",
+   "pages": "7-7"
+  },
+  {
+   "id": "page-008",
+   "title": "Page 8",
+   "pages": "8-8"
+  },
+  {
+   "id": "page-009",
+   "title": "Page 9",
+   "pages": "9-9"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

@@ -9,9 +9,13 @@ the same physics using the 6-element NF basis {γ, σ₀, σ₁, L₊, L₋, e�
 Each atom is 6 coefficients. Total: 84 entries for 14 atoms
 (vs 21,694 quark-level entries for 6 atoms).
 
-The Markov trace, net, and Frobenius stability are identical to
-the quark-level computation — the H₃(q) NF captures all the
-information needed for mass formulas and Q-value predictions.
+The H₃(q) NF Markov trace (`nf_tr`), net (`nf_net`), and Frobenius
+stability (`check_frobenius`) are exact within the 6-dimensional H₃(q)
+quotient produced by `build_atom_nf` (which projects strand generators
+modulo 2 onto {σ₀, σ₁}). Note (bean `qou-zgg2`): for compound nuclei
+(A ≥ 2), this H₃-projected pairing is distinct from the full-tower
+H_{3A}(q) canonical atomic trace (`tr_m_atom_via_transfer.tr_m_atom_zn`
+/ `markov_peel.tr_M_atomic`).
 
 Usage:
     python3 hadron_knot_table.py
@@ -23,7 +27,6 @@ Content block: rem:hadron-level-knot-table
 """
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
-import math
 import sys
 from pathlib import Path
 from mpmath import mp  # noqa: F401
@@ -88,8 +91,20 @@ def _traced_volume_q0(gi, ordering):
     return _z_q0 * M10 + M11
 
 
+
+VHAT_WEIGHTS_LABEL = (
+    "pre-convention-D mixture (q-Plancherel W_sym/W_std/W_alt), kept by owner "
+    "ruling 2026-11-20 until the Phi_q pole (qou-2tuv) is resolved; "
+    "convention-D z*a+b gives m_p/m_e = inf (PR #8590)"
+)
+
 def _v_full_all_q0(ordering):
     """Per-generator Wedderburn-weighted V̂_i^full at the true q0 (mpmath)."""
+    # OWNER RULING 2026-11-20 (PR #8590): this V-hat deliberately keeps the
+    # pre-convention-D W_sym/W_std/W_alt (q-Plancherel) mixture. The 11-18 ruling
+    # moved pyhecke.atom to the convention-D Markov trace z*a+b, but here that puts
+    # the proton V-hat (1.2824) past the Phi_q pole at q0 and m_p/m_e = inf
+    # (qou-2tuv). Kept, labelled, until the pole is resolved. No number moves.
     n2 = _Q0 ** 2 + 2 + _QI0 ** 2
     den = n2 + 2
     w_sym, w_std, w_alt = mp.mpf(1) / den, n2 / den, mp.mpf(1) / den
@@ -207,7 +222,7 @@ def compute_atom(name, Z, N, quarks=None):
 
     # Per-generator traced volumes + cross-channel (mass-tower sum 3)
     ordering, V_list, cross_sum, delta_xchan = compute_per_generator_volumes(Z, N)
-    V_rounded = [round(float(v), 12) for v in V_list]  # compute mpf@q0; serialize float
+    V_rounded = [round(float(v), 12) for v in V_list]  # float64-ok: legacy 12-digit rounded witness schema
 
     return {
         "name": name,
@@ -216,8 +231,8 @@ def compute_atom(name, Z, N, quarks=None):
         "A": Z + N,
         "nf": nf_compact,
         "n_terms": len(nf_compact),
-        "tr_M": round(float(tr), 12),
-        "net": round(float(net), 12),
+        "tr_M": round(float(tr), 12),  # float64-ok: legacy 12-digit rounded witness schema
+        "net": round(float(net), 12),  # float64-ok: legacy 12-digit rounded witness schema
         "ln_abs_tr": round(mp.log(abs(tr)), 12) if abs(tr) > 1e-300 else None,
         "frobenius_stable": stable,
         "knot_type": knot_name,
@@ -291,6 +306,7 @@ def _save_witness(results):
     w.set_content_block("rem:hadron-level-knot-table")
     w.add_parameter("q", Q)
     w.add_parameter("basis", NF_NAMES)
+    w.add_parameter("vhat_weights", VHAT_WEIGHTS_LABEL)
     w.add_parameter("z_markov", _z)
     w.add_parameter("z_squared", _Z2)
     w.add_parameter("n_atoms_expected", len(ATOMS))

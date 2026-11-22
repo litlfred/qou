@@ -1,0 +1,2681 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1307.6697v2",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p022-3",
+   "page": 22,
+   "mark": "2",
+   "text": "111776 2.944106",
+   "marks": [
+    {
+     "page": 21,
+     "context": "PSL3(R),PSL"
+    },
+    {
+     "page": 21,
+     "context": "PSL3(R),PSL2(C),PSL"
+    },
+    {
+     "page": 21,
+     "context": "PSL3(R),PSL2(C),PSL2(R)andPU(2, 1).ObservethatPSL3(R) ∩PSL"
+    },
+    {
+     "page": 21,
+     "context": "),PSL2(C),PSL2(R)andPU(2, 1).ObservethatPSL3(R) ∩PSL2(C)=PSL"
+    },
+    {
+     "page": 21,
+     "context": "and PSL3(R)∩PU(2, 1) = PSL"
+    },
+    {
+     "page": 21,
+     "context": "and PSL3(R)∩PU(2, 1) = PSL2(R) so PSL"
+    }
+   ],
+   "block": "library/arxiv-1307.6697v2/blocks/prose-sec-007"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p022-1",
+   "page": 22,
+   "mark": "0",
+   "text": "916588 1.101800 1.130263",
+   "block": "library/arxiv-1307.6697v2/blocks/prose-sec-007"
+  },
+  {
+   "id": "fn-p022-2",
+   "page": 22,
+   "mark": "1",
+   "text": "190919 1.263709 1.340255",
+   "block": "library/arxiv-1307.6697v2/blocks/prose-sec-007"
+  },
+  {
+   "id": "fn-p022-4",
+   "page": 22,
+   "mark": "1",
+   "text": "132196 1.683102 3.663862 Wh. link",
+   "block": "library/arxiv-1307.6697v2/blocks/prose-sec-007"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "theboundaryof hyperbolic space,thatis,CP"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "(conﬁgurationsoffourﬂagsinCP"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "3-manifold Mbeinga familyof charts φ"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "3-manifold Mbeinga familyof charts φi: U"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "withtransitionfunctionsgij(givenbyφ"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "withtransitionfunctionsgij(givenbyφj= gji ◦φ"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "Hyperbolicstructures,thatis,(H"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "R, PSL(2, C))structures(whereH"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "3-dimensionalhyperbolicspacecanbeidentiﬁedtoCP"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "-dimensionalhyperbolicspacecanbeidentiﬁedtoCP1.ByembeddingCP"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "ionalhyperbolicspacecanbeidentiﬁedtoCP1.ByembeddingCP1intoCP"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "conic we observe that a point in CP"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": " a point in CP1deﬁnes a point and a line containing it in CP"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "CR geometry is modelled on the sphere S"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "onC"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "andthefollowingconesinC"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "z∈C"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "z∈C"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "Letπ:C"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "Letπ:C3\\ {0}→CP"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "Letπ:C3\\ {0}→CP2bethecanonicalprojection.ThenH"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "C= S"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "C= S3= π(V"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "C= S3= π(V0) = {[x, y, z] ∈CP"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "∂H"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "ThegroupofbiholomorphictransformationsofH"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "U(2, 1).ItactsonS"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "U(2, 1).ItactsonS3byCRtransformations.Anelementx ∈S"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "ctsonS3byCRtransformations.Anelementx ∈S3givesrisetoaﬂaginCP"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "wherethelinecorrespondstotheuniquecomplexlinetangenttoS"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "Athirdreal3-dimensionalgeometryisthegeometryofrealﬂagsinR"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "geometry of thespace of all couples [p, l] where p ∈RP"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "InthenextsectionwedescribethespaceofﬂagsinCP"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "spaceCP"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "spaceCP2(moredetailscanbeseenin[2]).LetV=C"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "inSL(3, C).Agenericconﬁgurationofﬂags([x"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "inSL(3, C).Agenericconﬁgurationofﬂags([xi], [f"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "points[x"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "points[xi]ingeneralpositionandn + 1linesf"
+  },
+  {
+   "page": 5,
+   "mark": "j",
+   "context": "points[xi]ingeneralpositionandn + 1linesfiinP(V )suchthatf"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "oints[xi]ingeneralpositionandn + 1linesfiinP(V )suchthatfj(x"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "UptotheactionofPGL(3, C),agenericconﬁgurationofthreeﬂags([x"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "heactionofPGL(3, C),agenericconﬁgurationofthreeﬂags([xi], [f"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "ctionofPGL(3, C),agenericconﬁgurationofthreeﬂags([xi], [fi])"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "X=f"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "X=f1(x"
+  },
+  {
+   "page": 5,
+   "mark": "f",
+   "context": "X=f1(x2)"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "X=f1(x2)f"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "X=f1(x2)f2(x"
+  },
+  {
+   "page": 5,
+   "mark": "f",
+   "context": "X=f1(x2)f2(x3)"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "X=f1(x2)f2(x3)f"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "X=f1(x2)f2(x3)f3(x"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "f"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "f1(x"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "f1(x3)f"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "f1(x3)f2(x"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "f1(x3)f2(x1)f"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "f1(x3)f2(x1)f3(x"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "Let([x"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "Let([xi], [f"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "Let([xi], [fi])"
+  },
+  {
+   "page": 6,
+   "mark": "l",
+   "context": "oneofthex"
+  },
+  {
+   "page": 6,
+   "mark": "4",
+   "context": "isthevalueatx"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "isthevalueatx4ofaprojectivecoordinatetakingvalue∞atx"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "isthevalueatx4ofaprojectivecoordinatetakingvalue∞atx1,0atx"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "lueatx4ofaprojectivecoordinatetakingvalue∞atx1,0atx2,and1atx"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "[x1, x2, x3, x4] :=(x"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "[x1, x2, x3, x4] :=(x1 −x"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "[x1, x2, x3, x4] :=(x1 −x3)(x"
+  },
+  {
+   "page": 6,
+   "mark": "4",
+   "context": "[x1, x2, x3, x4] :=(x1 −x3)(x2 −x"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "(x"
+  },
+  {
+   "page": 6,
+   "mark": "4",
+   "context": "(x1 −x"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "(x1 −x4)(x"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "(x1 −x4)(x2 −x"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "zijk:=f"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "zijk:=fi(x"
+  },
+  {
+   "page": 6,
+   "mark": "f",
+   "context": "zijk:=fi(xj)"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "zijk:=fi(xj)f"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "zijk:=fi(xj)fj(x"
+  },
+  {
+   "page": 6,
+   "mark": "f",
+   "context": "zijk:=fi(xj)fj(xk)"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "zijk:=fi(xj)fj(xk)f"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "zijk:=fi(xj)fj(xk)fk(x"
+  },
+  {
+   "page": 6,
+   "mark": "z",
+   "context": "fi(xk)fj(xi)fk(xj)= −zil"
+  },
+  {
+   "page": 6,
+   "mark": "z",
+   "context": "fi(xk)fj(xi)fk(xj)= −zilzjl"
+  },
+  {
+   "page": 6,
+   "mark": "4",
+   "context": "n.[2]Thespaceofgenerictetrahedraisbiholomorphicto(C \\ {0,1})"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "ontheboundaryofH"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "R,i.e.P"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "[x"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "[x2, xy, y"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "3.4.TheCRcase.Recallthatanelementx∈S"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "Fl(C)where[f]correspondstotheuniquecomplexlinetangenttoS"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "sitiondescribesthespaceofgenericconﬁgurationsoffourpointsinS"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "pointsinS"
+  },
+  {
+   "page": 8,
+   "mark": "z",
+   "context": "arenotCR.Fromzijkzilj=zlk"
+  },
+  {
+   "page": 8,
+   "mark": "12",
+   "context": "realcross ratios,thatis,z"
+  },
+  {
+   "page": 8,
+   "mark": "21",
+   "context": "realcross ratios,thatis,z12(T ) = z"
+  },
+  {
+   "page": 8,
+   "mark": "34",
+   "context": "realcross ratios,thatis,z12(T ) = z21(T ) = z"
+  },
+  {
+   "page": 8,
+   "mark": "43",
+   "context": "realcross ratios,thatis,z12(T ) = z21(T ) = z34(T ) = z"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "For a ﬁxed edge e ∈Klet Tν"
+  },
+  {
+   "page": 8,
+   "mark": "e",
+   "context": "For a ﬁxed edge e ∈Klet Tν1, . . . , Tνnebethen"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "(Edgeequations)zij(Tν"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "(Edgeequations)zij(Tν1) · · · zij(Tνne) = zji(Tν"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Thelinel"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Thelinel1willbeidentiﬁedto∞andtheline[p"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "Thelinel1willbeidentiﬁedto∞andtheline[p1, p"
+  },
+  {
+   "page": 9,
+   "mark": "x",
+   "context": "Z"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "= arg (1 −x) log |x| + Im(ln"
+  },
+  {
+   "page": 9,
+   "mark": "x",
+   "context": "R"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "Hereln"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "ndrealanalyticonC −{0, 1}andextendstoacontinuousfunctiononCP"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "4(D(z"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "4(D(z1) + D(z"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "4(D(z1) + D(z2) + D(z"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "4(D(z1) + D(z2) + D(z3) + D(z"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "ρ : π"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "ρ : π1(M, p"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "a conﬁguration of 3 generic ﬂags ([x"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "a conﬁguration of 3 generic ﬂags ([xi], [f"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "a conﬁguration of 3 generic ﬂags ([xi], [fi])"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "system of CP"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "f"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "f2= [1 : 0 : 0],thepointx"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "f2= [1 : 0 : 0],thepointx3hascoordinates[1 : −1 : 1]tandf"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "−1+Z"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "eigenvalues1, 1/ |1 + Z"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "eigenvalues1, 1/ |1 + Z0| , −1/ |1 + Z"
+  },
+  {
+   "page": 11,
+   "mark": "z",
+   "context": "zij"
+  },
+  {
+   "page": 11,
+   "mark": "b",
+   "context": "ρ"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "ρb: (Z ⊕Z)"
+  },
+  {
+   "page": 12,
+   "mark": "c",
+   "context": "—L"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "—P"
+  },
+  {
+   "page": 12,
+   "mark": "z",
+   "context": "z∈Z"
+  },
+  {
+   "page": 12,
+   "mark": "z",
+   "context": "z∈Zz(1 −z)isthepolynomialdeﬁningtheforbiddenvaluesforthe"
+  },
+  {
+   "page": 13,
+   "mark": "e",
+   "context": "S = {z∈Z|P(z) = 0, P∈L"
+  },
+  {
+   "page": 13,
+   "mark": "f",
+   "context": "S = {z∈Z|P(z) = 0, P∈Le ∪L"
+  },
+  {
+   "page": 13,
+   "mark": "h",
+   "context": "S = {z∈Z|P(z) = 0, P∈Le ∪Lf∪L"
+  },
+  {
+   "page": 13,
+   "mark": "c",
+   "context": "S = {z∈Z|P(z) = 0, P∈Le ∪Lf∪Lh ∪L"
+  },
+  {
+   "page": 13,
+   "mark": "0",
+   "context": "S = {z∈Z|P(z) = 0, P∈Le ∪Lf∪Lh ∪Lc,P"
+  },
+  {
+   "page": 13,
+   "mark": "0",
+   "context": "AdividessomepowerofP"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "ensional (consider for example the system {X(XY −1) = 0, X(X"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "ional (consider for example the system {X(XY −1) = 0, X(X2+Y"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "1) = 0}andtheconstructibleset{X(XY−1) = 0, X(X"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "1) = 0}andtheconstructibleset{X(XY−1) = 0, X(X2+ Y"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "I ⊂Q[Y"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "I ⊂Q[Y1, . . . , Y"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "I ⊂Q[Y1, . . . , Yk][X"
+  },
+  {
+   "page": 14,
+   "mark": "m",
+   "context": "I ⊂Q[Y1, . . . , Yk][X1, . . . , X"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": ", Yk][X1, . . . , Xm],theuseofaneliminationorderingsuchthatY"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "][X1, . . . , Xm],theuseofaneliminationorderingsuchthatYi< X"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": " j,allows todeducestraightforwardly a Gröbnerbasis of I ∩Q[Y"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "deducestraightforwardly a Gröbnerbasis of I ∩Q[Y1, . . . , Y"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "We obtain the saturation of the ideal I ⊂Q[X"
+  },
+  {
+   "page": 14,
+   "mark": "m",
+   "context": "We obtain the saturation of the ideal I ⊂Q[X1, . . . , X"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "turation of the ideal I ⊂Q[X1, . . . , Xm] by a polynomial P"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "I+⟨T P"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "∩Q[X"
+  },
+  {
+   "page": 14,
+   "mark": "m",
+   "context": "∩Q[X1, . . . , X"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "{x"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "{xi=f"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "f0(γ),"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "ThereexistsalinearcombinationY=P"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "i=1λ"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "i=1λiX"
+  },
+  {
+   "page": 15,
+   "mark": "z",
+   "context": "rur := {z= f"
+  },
+  {
+   "page": 15,
+   "mark": "z",
+   "context": "Furthermore,γ∈Rifanonlyifz(γ) = f"
+  },
+  {
+   "page": 15,
+   "mark": "z",
+   "context": "rur := {z= f"
+  },
+  {
+   "page": 15,
+   "mark": "12",
+   "context": "z"
+  },
+  {
+   "page": 15,
+   "mark": "21",
+   "context": "z12≡z"
+  },
+  {
+   "page": 15,
+   "mark": "34",
+   "context": "z12≡z21≡z"
+  },
+  {
+   "page": 15,
+   "mark": "43",
+   "context": "z12≡z21≡z34≡z"
+  },
+  {
+   "page": 15,
+   "mark": "x",
+   "context": "x =g"
+  },
+  {
+   "page": 15,
+   "mark": "y",
+   "context": "g1(η), y=g"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "g"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "M= g"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "Weeasilyobtainthatg"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": ".Wethusdeducethatg"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "iﬀ"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "(421)"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "(421)1→(423)"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "(421)1→(423)1→(324)"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "(421)1→(423)1→(324)0→(314)"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "(421)"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "(421)1→(431)"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "(421)1→(431)1→(214)"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "(421)1→(431)1→(214)0→(234)"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "(421)1→(431)1→(214)0→(234)0→(243)"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "(421)1→(431)1→(214)0→(234)0→(243)1→(241)"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "(421)1→(431)1→(214)0→(234)0→(243)1→(241)1→(134)"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "(421)1→(431)1→(214)0→(234)0→(243)1→(241)1→(134)0→(132)"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "(312)"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "(312)1→(342)"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "(312)1→(342)1→(432)"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "(312)1→(342)1→(432)0→(412)"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "(312)1→(342)1→(432)0→(412)0→(134)"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "(312)1→(342)1→(432)0→(412)0→(134)1→(132)"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "(312)1→(342)1→(432)0→(412)0→(134)1→(132)1→(312)"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "(312)1→(342)1→(432)0→(412)0→(134)1→(132)1→(312)0→(314)"
+  },
+  {
+   "page": 17,
+   "mark": "12",
+   "context": "−z"
+  },
+  {
+   "page": 17,
+   "mark": "z",
+   "context": "−z12"
+  },
+  {
+   "page": 17,
+   "mark": "13",
+   "context": "−z12z"
+  },
+  {
+   "page": 17,
+   "mark": "34",
+   "context": "−z12z13 + z"
+  },
+  {
+   "page": 17,
+   "mark": "z",
+   "context": "−z12z13 + z34"
+  },
+  {
+   "page": 17,
+   "mark": "24",
+   "context": "−z12z13 + z34z"
+  },
+  {
+   "page": 17,
+   "mark": "32",
+   "context": "−z"
+  },
+  {
+   "page": 17,
+   "mark": "w",
+   "context": "−z32"
+  },
+  {
+   "page": 17,
+   "mark": "42",
+   "context": "−z32w"
+  },
+  {
+   "page": 17,
+   "mark": "12",
+   "context": "A =z"
+  },
+  {
+   "page": 17,
+   "mark": "z",
+   "context": "A =z12"
+  },
+  {
+   "page": 17,
+   "mark": "21",
+   "context": "A =z12z"
+  },
+  {
+   "page": 17,
+   "mark": "42",
+   "context": ",A∗=w"
+  },
+  {
+   "page": 17,
+   "mark": "13",
+   "context": ",B=z"
+  },
+  {
+   "page": 17,
+   "mark": "z",
+   "context": ",B=z13"
+  },
+  {
+   "page": 17,
+   "mark": "31",
+   "context": ",B=z13z"
+  },
+  {
+   "page": 17,
+   "mark": "w",
+   "context": ",B=z13z31"
+  },
+  {
+   "page": 17,
+   "mark": "14",
+   "context": ",B=z13z31w"
+  },
+  {
+   "page": 17,
+   "mark": "w",
+   "context": ",B=z13z31w14"
+  },
+  {
+   "page": 17,
+   "mark": "23",
+   "context": ",B=z13z31w14w"
+  },
+  {
+   "page": 17,
+   "mark": "31",
+   "context": ",B∗=z"
+  },
+  {
+   "page": 17,
+   "mark": "w",
+   "context": ",B∗=z31"
+  },
+  {
+   "page": 17,
+   "mark": "13",
+   "context": ",B∗=z31w"
+  },
+  {
+   "page": 17,
+   "mark": "z",
+   "context": ",B∗=z31w13"
+  },
+  {
+   "page": 17,
+   "mark": "13",
+   "context": ",B∗=z31w13z"
+  },
+  {
+   "page": 17,
+   "mark": "w",
+   "context": ",B∗=z31w13z13"
+  },
+  {
+   "page": 17,
+   "mark": "24",
+   "context": ",B∗=z31w13z13w"
+  },
+  {
+   "page": 17,
+   "mark": "14",
+   "context": "tionsinthevariables{z"
+  },
+  {
+   "page": 17,
+   "mark": "43",
+   "context": "tionsinthevariables{z14, z"
+  },
+  {
+   "page": 17,
+   "mark": "14",
+   "context": "inthevariables{z14, z43}.Allofthe22othervariablesbelongtoQ(z"
+  },
+  {
+   "page": 17,
+   "mark": "43",
+   "context": "variables{z14, z43}.Allofthe22othervariablesbelongtoQ(z14, z"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "◮f"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "◮f1= Y"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "◮f"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "◮f2= Y"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "◮f"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "◮f3= Y"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "2± i"
+  },
+  {
+   "page": 18,
+   "mark": "43",
+   "context": "w"
+  },
+  {
+   "page": 18,
+   "mark": "4",
+   "context": "◮f"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "◮f4= 2Y"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "4± i"
+  },
+  {
+   "page": 18,
+   "mark": "12",
+   "context": "w"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "roupofthecomplementoftheﬁgureeightknotweidentifytheface(324)"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "dron0totheface(423)"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "(324)"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "(324)0=(423)"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "(1)(134)"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "(1)(134)0→(341)"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "(1)(134)0→(341)0→(342)"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "(1)(134)0→(341)0→(342)0→(423)"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "(1)(134)0→(341)0→(342)0→(423)0→(234)"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "(1)(134)0→(341)0→(342)0→(423)0→(234)0= (243)"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "(1)(134)0→(341)0→(342)0→(423)0→(234)0= (243)1→(241)"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "(2)(214)"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "(2)(214)0→(142)"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "(2)(214)0→(142)0→(421)"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "(2)(214)0→(142)0→(421)0→(423)"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "(2)(214)0→(142)0→(421)0→(423)0→(234)"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "(2)(214)0→(142)0→(421)0→(423)0→(234)0= (243)"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "(2)(214)0→(142)0→(421)0→(423)0→(234)0= (243)1→(432)"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "(2)(214)0→(142)0→(421)0→(423)0→(234)0= (243)1→(432)1→(431)"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "(3)(123)"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "(3)(123)0→(231)"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "(3)(123)0→(231)0→(234)"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "(3)(123)0→(231)0→(234)0= (243)"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "(3)(123)0→(231)0→(234)0= (243)1→(432)"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "(3)(123)0→(231)0→(234)0= (243)1→(432)1→(324)"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "(3)(123)0→(231)0→(234)0= (243)1→(432)1→(324)1→(321)"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "(234)"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "(1)(234)"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "(1)(234)0→(342)"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "(1)(234)0→(342)0→(341)"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "(1)(234)0→(342)0→(341)0→(413)"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "(1)(234)0→(342)0→(341)0→(413)0→(134)"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "(2)(234)"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "(2)(234)0→(342)"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "(2)(234)0→(342)0→(423)"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "(2)(234)0→(342)0→(423)0→(421)"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "(2)(234)0→(342)0→(423)0→(421)0→(214)"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "(3)(234)"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "(3)(234)0→(231)"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "(3)(234)0→(231)0→(312)"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "(3)(234)0→(231)0→(312)0→(123)"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": ",g"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": ",g"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "Thegroup⟨g"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "Thegroup⟨g1, g"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "Thegroup⟨g1, g2, g"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": ", g"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "g"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": ", g"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": ", g"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "g"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": ", g"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "Thegroup⟨g"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "Thegroup⟨g1, g"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "Thegroup⟨g1, g2, g"
+  },
+  {
+   "page": 19,
+   "mark": "g",
+   "context": "2"
+  },
+  {
+   "page": 19,
+   "mark": "g",
+   "context": "3"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "3g"
+  },
+  {
+   "page": 19,
+   "mark": "g",
+   "context": "3g2"
+  },
+  {
+   "page": 19,
+   "mark": "g",
+   "context": "1"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "1g"
+  },
+  {
+   "page": 19,
+   "mark": "g",
+   "context": "1"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "1g"
+  },
+  {
+   "page": 19,
+   "mark": "g",
+   "context": "1g3"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "1g3g"
+  },
+  {
+   "page": 19,
+   "mark": "12",
+   "context": "A =z"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "A =z12"
+  },
+  {
+   "page": 19,
+   "mark": "21",
+   "context": "A =z12z"
+  },
+  {
+   "page": 19,
+   "mark": "42",
+   "context": ",A∗=w"
+  },
+  {
+   "page": 19,
+   "mark": "13",
+   "context": ",B=z"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": ",B=z13"
+  },
+  {
+   "page": 19,
+   "mark": "31",
+   "context": ",B=z13z"
+  },
+  {
+   "page": 19,
+   "mark": "w",
+   "context": ",B=z13z31"
+  },
+  {
+   "page": 19,
+   "mark": "14",
+   "context": ",B=z13z31w"
+  },
+  {
+   "page": 19,
+   "mark": "w",
+   "context": ",B=z13z31w14"
+  },
+  {
+   "page": 19,
+   "mark": "23",
+   "context": ",B=z13z31w14w"
+  },
+  {
+   "page": 19,
+   "mark": "31",
+   "context": ",B∗=z"
+  },
+  {
+   "page": 19,
+   "mark": "w",
+   "context": ",B∗=z31"
+  },
+  {
+   "page": 19,
+   "mark": "13",
+   "context": ",B∗=z31w"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": ",B∗=z31w13"
+  },
+  {
+   "page": 19,
+   "mark": "13",
+   "context": ",B∗=z31w13z"
+  },
+  {
+   "page": 19,
+   "mark": "w",
+   "context": ",B∗=z31w13z13"
+  },
+  {
+   "page": 19,
+   "mark": "24",
+   "context": ",B∗=z31w13z13w"
+  },
+  {
+   "page": 19,
+   "mark": "14",
+   "context": "reduced system of 5 polynomial equations in the variables {z"
+  },
+  {
+   "page": 19,
+   "mark": "24",
+   "context": "ed system of 5 polynomial equations in the variables {z14, z"
+  },
+  {
+   "page": 19,
+   "mark": "43",
+   "context": "stem of 5 polynomial equations in the variables {z14, z24, z"
+  },
+  {
+   "page": 19,
+   "mark": "14",
+   "context": "of 5 polynomial equations in the variables {z14, z24, z43, w"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "TheﬁrstcomponentcorrespondstorepresentationsinPGL(2, Q(ζ"
+  },
+  {
+   "page": 20,
+   "mark": "4",
+   "context": "1/A∗= ζ"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "1/A∗= ζ4,B= B∗= 1.Thevolumeis0,wehaveg"
+  },
+  {
+   "page": 20,
+   "mark": "4",
+   "context": "1/A∗= ζ"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "1/A∗= ζ4,B= B∗= 1.Theirvolumesareequalto0andwehaveg"
+  },
+  {
+   "page": 20,
+   "mark": "4",
+   "context": "3.WegetA = A∗= ζ"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "3.WegetA = A∗= ζ4,B= B∗= 1.Inthiscasewehaveg"
+  },
+  {
+   "page": 20,
+   "mark": "g",
+   "context": "M= gLor"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "M= gLorg"
+  },
+  {
+   "page": 20,
+   "mark": "4",
+   "context": "A = A∗= ζ"
+  },
+  {
+   "page": 20,
+   "mark": "4",
+   "context": "A = A∗= ζ4and B= B∗is a root of X"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "A = A∗= ζ4and B= B∗is a root of X4−175 X"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "A = A∗= ζ4and B= B∗is a root of X4−175 X3−327 X"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "Thereare4hyperbolicsolutionscorrespondingtoA=1/A∗=ζ"
+  },
+  {
+   "page": 20,
+   "mark": "6",
+   "context": "3.Theirvolumeis1.2212874588 · · ·.Themeridiansatisﬁesg"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "TherearetwocomponentsinPGL(3, Q(ζ)),satisfyingA=1/A∗=ζ"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "Theyallsatisfyg"
+  },
+  {
+   "page": 20,
+   "mark": "g",
+   "context": "M= gL,"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "M= gL,g"
+  },
+  {
+   "page": 20,
+   "mark": "4",
+   "context": "e are three components in PGL(3, Q(β)) where βis a root of X"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "e three components in PGL(3, Q(β)) where βis a root of X4+ X"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "hree components in PGL(3, Q(β)) where βis a root of X4+ X3−X"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "WehaveA=1/A∗=ζ"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "WehaveA=1/A∗=ζ2,B=B∗=−1.Theyallsatisfyg"
+  },
+  {
+   "page": 20,
+   "mark": "g",
+   "context": "M=gL,"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "M=gL,g"
+  },
+  {
+   "page": 20,
+   "mark": "4",
+   "context": "A = A∗= ζ"
+  },
+  {
+   "page": 20,
+   "mark": "4",
+   "context": "A = A∗= ζ4andB= B∗isarootofX"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "A = A∗= ζ4andB= B∗isarootofX4−27X"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "A = A∗= ζ4andB= B∗isarootofX4−27X3+ 25X"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "1/A∗=ζ"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "foralli < j.Wealwaysobtaing"
+  },
+  {
+   "page": 20,
+   "mark": "g",
+   "context": "M= gLand"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "M= gLandg"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "PSL"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "PSL3(R),PSL2(C),PSL2(R)andPU(2, 1).ObservethatPSL"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "and PSL"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "◮f"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "◮f1= Y"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "◮f1= Y3−2Y"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "2γ −γ"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "whereγisarootoff"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "whereγisarootoff1=Y"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "whereγisarootoff1=Y3−2Y"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "◮f"
+  },
+  {
+   "page": 23,
+   "mark": "6",
+   "context": "◮f2= Y"
+  },
+  {
+   "page": 23,
+   "mark": "5",
+   "context": "◮f2= Y6−Y"
+  },
+  {
+   "page": 23,
+   "mark": "4",
+   "context": "◮f2= Y6−Y5+ Y"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "◮f2= Y6−Y5+ Y4−2Y"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "◮f2= Y6−Y5+ Y4−2Y3+ Y"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "◮f"
+  },
+  {
+   "page": 23,
+   "mark": "8",
+   "context": "◮f3= Y"
+  },
+  {
+   "page": 23,
+   "mark": "7",
+   "context": "◮f3= Y8−2Y"
+  },
+  {
+   "page": 23,
+   "mark": "6",
+   "context": "◮f3= Y8−2Y7+ 2Y"
+  },
+  {
+   "page": 23,
+   "mark": "5",
+   "context": "◮f3= Y8−2Y7+ 2Y6−6Y"
+  },
+  {
+   "page": 23,
+   "mark": "4",
+   "context": "◮f3= Y8−2Y7+ 2Y6−6Y5+ 7Y"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "◮f3= Y8−2Y7+ 2Y6−6Y5+ 7Y4−2Y"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "◮f3= Y8−2Y7+ 2Y6−6Y5+ 7Y4−2Y3+ 3Y"
+  },
+  {
+   "page": 23,
+   "mark": "4",
+   "context": "◮f"
+  },
+  {
+   "page": 23,
+   "mark": "8",
+   "context": "◮f4= 3Y"
+  },
+  {
+   "page": 23,
+   "mark": "7",
+   "context": "◮f4= 3Y8−6Y"
+  },
+  {
+   "page": 23,
+   "mark": "6",
+   "context": "◮f4= 3Y8−6Y7+ 7Y"
+  },
+  {
+   "page": 23,
+   "mark": "5",
+   "context": "◮f4= 3Y8−6Y7+ 7Y6−4Y"
+  },
+  {
+   "page": 23,
+   "mark": "4",
+   "context": "◮f4= 3Y8−6Y7+ 7Y6−4Y5+ 4Y"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "◮f4= 3Y8−6Y7+ 7Y6−4Y5+ 4Y4+ 4Y"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "◮f4= 3Y8−6Y7+ 7Y6−4Y5+ 4Y4+ 4Y3+ 4Y"
+  },
+  {
+   "page": 23,
+   "mark": "5",
+   "context": "◮f"
+  },
+  {
+   "page": 23,
+   "mark": "8",
+   "context": "◮f5= 16Y"
+  },
+  {
+   "page": 23,
+   "mark": "7",
+   "context": "◮f5= 16Y8−20Y"
+  },
+  {
+   "page": 23,
+   "mark": "6",
+   "context": "◮f5= 16Y8−20Y7+ 23Y"
+  },
+  {
+   "page": 23,
+   "mark": "5",
+   "context": "◮f5= 16Y8−20Y7+ 23Y6−27Y"
+  },
+  {
+   "page": 23,
+   "mark": "4",
+   "context": "◮f5= 16Y8−20Y7+ 23Y6−27Y5+ 10Y"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "◮f5= 16Y8−20Y7+ 23Y6−27Y5+ 10Y4−5Y"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "◮f5= 16Y8−20Y7+ 23Y6−27Y5+ 10Y4−5Y3+ 9Y"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "◮f"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "◮f1= Y"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "◮f"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "◮f2= f"
+  },
+  {
+   "page": 24,
+   "mark": "4",
+   "context": "◮f2= f3= Y"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "◮f2= f3= Y4+ Y"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "◮f2= f3= Y4+ Y3−Y"
+  },
+  {
+   "page": 24,
+   "mark": "4",
+   "context": "◮f"
+  },
+  {
+   "page": 24,
+   "mark": "4",
+   "context": "◮f4= Y"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "◮f4= Y4+ 2Y"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "◮f4= Y4+ 2Y3−Y"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "◮f4= Y4+ 2Y3−Y2−2Y−4 = (Y"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "5)(Y"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "2"
+  },
+  {
+   "page": 24,
+   "mark": "u",
+   "context": "γ±+ 1,"
+  },
+  {
+   "page": 24,
+   "mark": "21",
+   "context": "γ±+ 1,u"
+  },
+  {
+   "page": 24,
+   "mark": "43",
+   "context": "γ±+ 1,u21= w"
+  },
+  {
+   "page": 24,
+   "mark": "u",
+   "context": "γ±+ 1,u21= w43= γ±,"
+  },
+  {
+   "page": 24,
+   "mark": "34",
+   "context": "γ±+ 1,u21= w43= γ±,u"
+  },
+  {
+   "page": 24,
+   "mark": "12",
+   "context": "γ±+ 1,u21= w43= γ±,u34= w"
+  },
+  {
+   "page": 24,
+   "mark": "43",
+   "context": "u"
+  },
+  {
+   "page": 24,
+   "mark": "21",
+   "context": "u43= w"
+  },
+  {
+   "page": 24,
+   "mark": "12",
+   "context": "u43= w21= −1 −γ±,v"
+  },
+  {
+   "page": 24,
+   "mark": "34",
+   "context": "u43= w21= −1 −γ±,v12= v"
+  },
+  {
+   "page": 24,
+   "mark": "v",
+   "context": "γ±+ 3,"
+  },
+  {
+   "page": 24,
+   "mark": "21",
+   "context": "γ±+ 3,v"
+  },
+  {
+   "page": 24,
+   "mark": "43",
+   "context": "γ±+ 3,v21= v"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "gMg"
+  },
+  {
+   "page": 24,
+   "mark": "5",
+   "context": "◮f"
+  },
+  {
+   "page": 24,
+   "mark": "6",
+   "context": "◮f5= Y"
+  },
+  {
+   "page": 24,
+   "mark": "4",
+   "context": "◮f5= Y6−Y"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "◮f5= Y6−Y4+ 2Y"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "◮f5= Y6−Y4+ 2Y3+ Y"
+  },
+  {
+   "page": 24,
+   "mark": "6",
+   "context": "◮f"
+  },
+  {
+   "page": 24,
+   "mark": "8",
+   "context": "◮f6= 8Y"
+  },
+  {
+   "page": 24,
+   "mark": "7",
+   "context": "◮f6= 8Y8−16Y"
+  },
+  {
+   "page": 24,
+   "mark": "6",
+   "context": "◮f6= 8Y8−16Y7+ 22Y"
+  },
+  {
+   "page": 24,
+   "mark": "5",
+   "context": "◮f6= 8Y8−16Y7+ 22Y6−25Y"
+  },
+  {
+   "page": 24,
+   "mark": "4",
+   "context": "◮f6= 8Y8−16Y7+ 22Y6−25Y5+ 16Y"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "◮f6= 8Y8−16Y7+ 22Y6−25Y5+ 16Y4−6Y"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "◮f6= 8Y8−16Y7+ 22Y6−25Y5+ 16Y4−6Y3+ Y"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "◮f"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "◮f1= Y"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "whereγisarootoff"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "◮f"
+  },
+  {
+   "page": 25,
+   "mark": "4",
+   "context": "◮f2= Y"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "◮f2= Y4−Y"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "◮f"
+  },
+  {
+   "page": 25,
+   "mark": "4",
+   "context": "◮f3= 4Y"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "◮f3= 4Y4−4Y"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "◮f3= 4Y4−4Y3−Y"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "4Y"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "4Y"
+  },
+  {
+   "page": 25,
+   "mark": "12",
+   "context": "u"
+  },
+  {
+   "page": 25,
+   "mark": "12",
+   "context": "u12= w"
+  },
+  {
+   "page": 25,
+   "mark": "34",
+   "context": "u12= w12= −γ(γ −1),u"
+  },
+  {
+   "page": 25,
+   "mark": "34",
+   "context": "u12= w12= −γ(γ −1),u34= w"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "4−γ"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "(2γ −1)"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "γ(2γ −1)"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "(2γ −1)"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "γ(2γ −1)"
+  },
+  {
+   "page": 25,
+   "mark": "g",
+   "context": "M,"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "M,g"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "1 −4γ"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "2γ"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "2γ"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "2γ"
+  },
+  {
+   "page": 26,
+   "mark": "4",
+   "context": "◮f"
+  },
+  {
+   "page": 26,
+   "mark": "6",
+   "context": "◮f4= Y"
+  },
+  {
+   "page": 26,
+   "mark": "5",
+   "context": "◮f4= Y6−Y"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "◮f4= Y6−Y5−3Y"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "◮f4= Y6−Y5−3Y3+ 2Y"
+  },
+  {
+   "page": 26,
+   "mark": "5",
+   "context": "◮f"
+  },
+  {
+   "page": 26,
+   "mark": "6",
+   "context": "◮f5= 17Y"
+  },
+  {
+   "page": 26,
+   "mark": "5",
+   "context": "◮f5= 17Y6−5Y"
+  },
+  {
+   "page": 26,
+   "mark": "4",
+   "context": "◮f5= 17Y6−5Y5+ 33Y"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "◮f5= 17Y6−5Y5+ 33Y4−11Y"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "◮f5= 17Y6−5Y5+ 33Y4−11Y3+ 26Y"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "◮f1= Y"
+  },
+  {
+   "page": 26,
+   "mark": "12",
+   "context": "u"
+  },
+  {
+   "page": 26,
+   "mark": "21",
+   "context": "u12= u"
+  },
+  {
+   "page": 26,
+   "mark": "34",
+   "context": "u12= u21= u"
+  },
+  {
+   "page": 26,
+   "mark": "43",
+   "context": "u12= u21= u34= u"
+  },
+  {
+   "page": 26,
+   "mark": "12",
+   "context": "u12= u21= u34= u43= v"
+  },
+  {
+   "page": 26,
+   "mark": "21",
+   "context": "u12= u21= u34= u43= v12= v"
+  },
+  {
+   "page": 26,
+   "mark": "34",
+   "context": "u12= u21= u34= u43= v12= v21= v"
+  },
+  {
+   "page": 26,
+   "mark": "43",
+   "context": "u12= u21= u34= u43= v12= v21= v34= v"
+  },
+  {
+   "page": 26,
+   "mark": "12",
+   "context": "w"
+  },
+  {
+   "page": 26,
+   "mark": "21",
+   "context": "w12= w"
+  },
+  {
+   "page": 26,
+   "mark": "34",
+   "context": "w12= w21= w"
+  },
+  {
+   "page": 26,
+   "mark": "43",
+   "context": "w12= w21= w34= w"
+  },
+  {
+   "page": 26,
+   "mark": "12",
+   "context": "w12= w21= w34= w43= w"
+  },
+  {
+   "page": 26,
+   "mark": "21",
+   "context": "w12= w21= w34= w43= w12= w"
+  },
+  {
+   "page": 26,
+   "mark": "34",
+   "context": "w12= w21= w34= w43= w12= w21= w"
+  },
+  {
+   "page": 26,
+   "mark": "43",
+   "context": "w12= w21= w34= w43= w12= w21= w34= w"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "◮f2= Y"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "2"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "4"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "4"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "2"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "8"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "2"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "8"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "4"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "4"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "◮f"
+  },
+  {
+   "page": 27,
+   "mark": "4",
+   "context": "◮f3= f"
+  },
+  {
+   "page": 27,
+   "mark": "4",
+   "context": "◮f3= f4= Y"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "◮f3= f4= Y4+ Y"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "◮f3= f4= Y4+ Y3+ 2Y"
+  },
+  {
+   "page": 27,
+   "mark": "5",
+   "context": "◮f"
+  },
+  {
+   "page": 27,
+   "mark": "6",
+   "context": "◮f5=f"
+  },
+  {
+   "page": 27,
+   "mark": "10",
+   "context": "◮f5=f6=Y"
+  },
+  {
+   "page": 27,
+   "mark": "8",
+   "context": "◮f5=f6=Y10−4Y"
+  },
+  {
+   "page": 27,
+   "mark": "7",
+   "context": "◮f5=f6=Y10−4Y8+ Y"
+  },
+  {
+   "page": 27,
+   "mark": "6",
+   "context": "◮f5=f6=Y10−4Y8+ Y7+ 7Y"
+  },
+  {
+   "page": 27,
+   "mark": "5",
+   "context": "◮f5=f6=Y10−4Y8+ Y7+ 7Y6−4Y"
+  },
+  {
+   "page": 27,
+   "mark": "4",
+   "context": "◮f5=f6=Y10−4Y8+ Y7+ 7Y6−4Y5−8Y"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "◮f5=f6=Y10−4Y8+ Y7+ 7Y6−4Y5−8Y4+ 4Y"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "◮f5=f6=Y10−4Y8+ Y7+ 7Y6−4Y5−8Y4+ 4Y3+ 5Y"
+  }
+ ]
+}

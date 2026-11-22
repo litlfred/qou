@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1608.02961v3/blocks/prose-sec-007",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "State-integral models and angle structures",
-  "pageStart": 15,
-  "pageEnd": 20,
-  "text": "../sections/sec-007-42-state-integral-models-and-angle-structures.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1608.02961v3",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1608.02961v3",
+  "title": "Hyperbolic volumes, twisted torsion, and large N",
+  "pageStart": 13,
+  "pageEnd": 15,
+  "text": "../sections/sec-007-41-hyperbolic-volumes-twisted-torsion-and-large.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1608.02961v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1608.02961v3/manifest.jsonld",
   "provenance": "ingested"
 }

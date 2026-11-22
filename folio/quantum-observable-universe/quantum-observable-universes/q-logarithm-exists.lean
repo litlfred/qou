@@ -13,7 +13,7 @@ LaTeX: `\label{prop:q-logarithm-exists}`
 
 ## References
 
-- [manuscript] §2-quantum-observable-universes/q-logarithm-exists
+- [leitner2026] §2-quantum-observable-universes/q-logarithm-exists
 - [kassel1995] Quantum Groups (Springer GTM 155), §IV.3 (primitives
   and Milnor–Moore)
 -/
@@ -34,7 +34,7 @@ abbrev R_q := LaurentPolynomial ℤ
     sibling compiles standalone (the existence proof needs the
     structure in scope). The two `primitive_*` fields encode the two
     components of the primitivity coproduct relation. -/
--- Ref: [manuscript] §2-quantum-observable-universes/q-logarithm
+-- Ref: [leitner2026] §2-quantum-observable-universes/q-logarithm
 structure QLogarithm (H : Type*) where
   /-- The primitive element log_q ∈ H. -/
   log_q : H

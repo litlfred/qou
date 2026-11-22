@@ -9,13 +9,15 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Split Links",
-  "pageStart": 9,
-  "pageEnd": 13,
+  "title": "Closures of 3-braids",
+  "pageStart": 8,
+  "pageEnd": 9,
   "contains": [
-    "library/li-braid-closures/blocks/prose-sec-006"
+    "library/li-braid-closures/blocks/prose-sec-006",
+    "library/li-braid-closures/blocks/def-sec-006-01",
+    "library/li-braid-closures/blocks/prop-sec-006-02"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/li-braid-closures",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/li-braid-closures",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/li-braid-closures/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/li-braid-closures/manifest.jsonld",
   "provenance": "ingested"
 }

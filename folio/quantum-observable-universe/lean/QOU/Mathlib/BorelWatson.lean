@@ -24,7 +24,7 @@
   the number `e^{−1/x}`.
 
   -- Ref: [sokal1980] https://doi.org/10.1063/1.524408
-  -- Ref: [manuscript] bean el8w tranche 5 — Watson uniqueness brick 2
+  -- Ref: [leitner2026] bean el8w tranche 5 — Watson uniqueness brick 2
 -/
 
 import QOU.Mathlib.StirlingUpperBound

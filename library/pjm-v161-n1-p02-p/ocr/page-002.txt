@@ -1,0 +1,50 @@
+PACIFIC JOURNAL OF MATHEMATICS
+Vol. 161, No. 1, 1993
+
+STUDYING LINKS VIA CLOSED BRAIDS II:
+CLASSIFYING LINKS WHICH ARE CLOSED 3-BRAIDS
+
+JOAN S. BIRMAN AND WILLIAM W. MENASCO
+
+A complete solution is given to the classification problem for ori-
+ented links which are closed three-braids. The Classification Theo-
+rem asserts that, up to a finite list of exceptional cases, links which
+can be represented by closed 3-braids are represented by a unique
+conjugacy class in the group of 3-braids. The exceptional cases are
+the expected ones (links of braid index 1 and 2) and an unexpected
+infinite family of invertible links, each member of which has two 3-
+braid axes. The two axes correspond to diagrams which are related
+by “braid-preserving flypes”.
+
+An algorithm is given which begins with an arbitrary closed 3-braid
+(or alternatively any link diagram with 3 Seifert circles), and converts
+it into a normal form which characterizes its oriented link type in
+oriented 3-space. One can decide from the normal form whether the
+link is prime or composite, split or irreducible, amphicheiral and or
+invertible. One can decide if the braid index is 3, 2 or 1. Using
+related results of P. J. Xu, one may determine the genus and construct
+a surface of maximum Euler characteristic with boundary the given
+link.
+
+It is proved that the stabilization index of a link which is repre-
+sented by a closed 3-braid is < 1, i.e. any two 3-braid representatives
+of the same link type become conjugate after a single stabilization to
+By.
+
+1. Introduction. This manuscript is the third in a series of six papers
+in which the authors have been studying the closed braid representa-
+tives of links. The other five are referenced here as [B-M I, II, 1V-V1]
+In [B-M, I] the authors prove that, with an appropriate definition of
+the complexity of a closed braid representative of a link, there are
+finitely many conjugacy classes of braids of minimum complexity. In
+this paper we work out in detail the first non-trivial example of this
+“finiteness theorem”: we prove that for links of braid index n < 3
+there are at most two conjugacy classes of minimum complexity. We
+then use this result to give a complete numerical invariant of link type,
+and an algorithm to find it, starting with an arbitrary closed 3-braid.
+
+The complexity function which was used in [B-M, I] relates to in-
+compressible surfaces which are bounded by the link. These surfaces
+have maximum Euler characteristic, among all oriented surfaces with
+
+25

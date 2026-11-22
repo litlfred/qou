@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2505.02719v2
-doc_title: "On the Palais–Smale condition in geometric knot theory"
+doc_title: "On the Palais-Smale condition in geometric knot theory"
 section_id: sec-006-energies-on-submanifolds-of-hilbert-spaces
 section_title: "Energies on submanifolds of Hilbert spaces"
 section_number: null
 pages: 8-12
 source_pdf: 2505.02719v2.pdf
 source_sha256: 1803d10aa55c18cf
-doc_brief: "On the Palais–Smale condition in geometric knot theory — We prove that various families of energies relevant in geometric knot theory satisfy"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.949
-latex_coverage_ratio: 0.79
+latex_coverage_ratio: 1.0
+doc_brief: "On the Palais-Smale condition in geometric knot theory — We prove that various families of energies relevant in geometric knot theory satisfy the Palais–Smale condition (PS) on submanifolds of"
 ---
 \label{sec:energies-hilbert}
 In this section we provide sufficient criteria on the energy and on the underlying

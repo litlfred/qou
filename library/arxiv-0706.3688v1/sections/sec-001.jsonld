@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0706.3688v1/sections/sec-001",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The order zero condition and irreducible pairs (A,J)",
+  "pageStart": 3,
+  "pageEnd": 4,
+  "contains": [
+    "library/arxiv-0706.3688v1/blocks/prose-sec-001",
+    "library/arxiv-0706.3688v1/blocks/lem-sec-001-01",
+    "library/arxiv-0706.3688v1/blocks/lem-sec-001-02",
+    "library/arxiv-0706.3688v1/blocks/rem-sec-001-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0706.3688v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0706.3688v1/manifest.jsonld",
+  "provenance": "ingested"
+}

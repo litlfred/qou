@@ -3,7 +3,7 @@ import Mathlib.Tactic
 /-!
 # QOU.BraidKnot.six_term_mass_formula_complete — six-term unified mass formula
 
-**Proposition** ([`prop:six-term-mass-formula-complete`](../../../mass-theory/six-term-mass-formula-complete.md)).
+**Conjecture** ([`conj:six-term-mass-formula-complete`](../../../mass-theory/six-term-mass-formula-complete.md)).
 
 The `.md` states that the categorical mass of a vortex `ϱ` is the sum of six
 **named, concrete** terms:
@@ -81,7 +81,7 @@ left opaque. It is named here so the distance between the shape and the claim
 is visible in the Lean rather than only in prose. See
 `sixTermSplit_sum` and `not_sixTermSplit_of_independent` for exactly how much
 it constrains. -/
--- Ref: [manuscript] quantum-observable-universe/mass-theory/six-term-mass-formula-complete.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/six-term-mass-formula-complete.md
 def sixTermSplit {R : Type*} [AddCommMonoid R] (m t₁ t₂ t₃ t₄ t₅ t₆ : R) : Prop :=
   m = t₁ + t₂ + t₃ + t₄ + t₅ + t₆
 
@@ -101,7 +101,7 @@ theorem not_sixTermSplit_of_independent :
     ¬ sixTermSplit (1 : ℕ) 0 0 0 0 0 0 := by
   simp [sixTermSplit]
 
-/-- **Six-term unified mass formula** ([`prop:six-term-mass-formula-complete`]).
+/-- **Six-term unified mass formula** ([`conj:six-term-mass-formula-complete`]).
 
 The claim of the block, as a proposition over caller-supplied data — **named,
 not asserted**.
@@ -111,7 +111,7 @@ only that `m` is their sum, and the six terms the `.md` names (`|tr_M(T_w)|`,
 `Σ Φ_q(|V̂_i|)`, …) are **not encoded anywhere in this file**. A caller who has
 actually constructed the six terms supplies them here; what they get is the
 additive bookkeeping, not the manuscript's derivation. -/
--- Ref: [manuscript] quantum-observable-universe/mass-theory/six-term-mass-formula-complete.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/six-term-mass-formula-complete.md
 def six_term_mass_formula_complete {R : Type*} [AddCommMonoid R]
     (cat_mass term1 term2 term3 term4 term5 term6 : R) : Prop :=
   sixTermSplit cat_mass term1 term2 term3 term4 term5 term6

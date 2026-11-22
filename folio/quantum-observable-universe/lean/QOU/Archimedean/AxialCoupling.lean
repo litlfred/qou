@@ -72,7 +72,7 @@ noncomputable def halfBorromean (i j : Fin 2) : TMatrix :=
 noncomputable def borromeanColorAvg : TMatrix :=
   -- Sum of 3 half-Borromean matrices (one per color tube):
   -- h₀₁ + h₁₂ + h₀₂ (division by 3 handled in the ratio)
-  -- Ref: [manuscript] §7/axial-coupling
+  -- Ref: [leitner2026] §7/axial-coupling
   borromeanColorSum
 
 /-! ## §3  The axial coupling -/
@@ -95,7 +95,7 @@ noncomputable def axialCouplingRatio : FractionRing R_t :=
   -- Algebraic ratio: tr_std(h₀₁+h₁₂+h₀₂) / 3
   -- The 5/3 prefactor and absolute value are applied in the
   -- numerical evaluation at the substrate parameter q₀ (Chapter 7).
-  -- Ref: [manuscript] §7/axial-coupling
+  -- Ref: [leitner2026] §7/axial-coupling
   axialCouplingAlgebraic
 
 /-! ## §4  Key properties -/

@@ -40,14 +40,14 @@ proved under this hypothesis remain Lean-verified conditional on the
 class instance.
 
 ## References
-- [manuscript] conj:rho-prefactor-structural
-- [manuscript] prop:wedderburn-trace-identity
-- [manuscript] prop:alpha-k-derivation-procedure
+- [leitner2026] conj:rho-prefactor-structural
+- [leitner2026] prop:wedderburn-trace-identity
+- [leitner2026] conj:alpha-k-derivation-procedure
 -/
 
 namespace QOU.BraidKnot
 
--- Ref: [manuscript] conj:rho-prefactor-structural
+-- Ref: [leitner2026] conj:rho-prefactor-structural
 
 /-- **RhoPrefactorStructural** — the conjectural class.
 
@@ -69,8 +69,8 @@ namespace QOU.BraidKnot
     information.  Numerical evidence:
     `computations/rho-prefactor-structural-verifier.witness.json`
     + `binding-k-solver.witness.json` (issue #604 deliverables 3 + 4). -/
--- Ref: [manuscript] conj:rho-prefactor-structural
--- Ref: [manuscript] prop:wedderburn-trace-identity
+-- Ref: [leitner2026] conj:rho-prefactor-structural
+-- Ref: [leitner2026] prop:wedderburn-trace-identity
 class RhoPrefactorStructural (Z N : ℕ) (q : ℝ) where
   /-- Atomic mass number A = Z + N; positive (so n₀ is well-defined). -/
   A_pos : 0 < Z + N
@@ -171,8 +171,8 @@ theorem q_int_placeholder_correct_at_classical_limit (rho : ℕ) (d : ℕ) :
     q_int_placeholder 1 rho d = (rho : ℝ) := by
   unfold q_int_placeholder; rfl
 
--- Ref: [manuscript] conj:rho-prefactor-structural § "Critical structural finding"
--- Ref: [manuscript] binding-k-solver.witness.json (issue #604 deliverables 3 + 4)
+-- Ref: [leitner2026] conj:rho-prefactor-structural § "Critical structural finding"
+-- Ref: [leitner2026] binding-k-solver.witness.json (issue #604 deliverables 3 + 4)
 -- Deuteron ²H: Z=1, N=1. Per the witness, T_w(²H)·cp^{-1} at H_6
 -- has dominant Wedderburn block λ* = (5,1) (a hook), with SYT count
 -- d_λ((5,1)) = 5 — **categorically derived** in `hook_length_5_1`
@@ -188,8 +188,8 @@ noncomputable instance instRhoPrefactorStructural_deuterium (q : ℝ) :
   q_int := q_int_placeholder q 1
   rho_eq_qdim := rho_eq_qdim_placeholder q 1 5
 
--- Ref: [manuscript] conj:rho-prefactor-structural § "Critical structural finding"
--- Ref: [manuscript] binding-k-solver.witness.json (issue #604 deliverables 3 + 4)
+-- Ref: [leitner2026] conj:rho-prefactor-structural § "Critical structural finding"
+-- Ref: [leitner2026] binding-k-solver.witness.json (issue #604 deliverables 3 + 4)
 -- Tritium ³H: Z=1, N=2. Per the witness, dominant λ* = (8,1) at H_9
 -- with SYT count d_λ((8,1)) = 8 — **categorically derived** in
 -- `hook_length_8_1` above via Lean's `decide` on the hook-length formula
@@ -204,8 +204,8 @@ noncomputable instance instRhoPrefactorStructural_tritium (q : ℝ) :
   q_int := q_int_placeholder q 2
   rho_eq_qdim := rho_eq_qdim_placeholder q 2 8
 
--- Ref: [manuscript] conj:rho-prefactor-structural § "Critical structural finding"
--- Ref: [manuscript] binding-k-solver.witness.json (issue #604 deliverables 3 + 4)
+-- Ref: [leitner2026] conj:rho-prefactor-structural § "Critical structural finding"
+-- Ref: [leitner2026] binding-k-solver.witness.json (issue #604 deliverables 3 + 4)
 -- Helium-3 ³He: Z=2, N=1. Per the witness, dominant λ* = (6,3) at H_9
 -- with SYT count d_λ((6,3)) = 48 — **categorically derived** in
 -- `hook_length_6_3` above via Lean's `decide` on the hook-length formula
@@ -270,8 +270,8 @@ example (q : ℝ) :
     This theorem closes GAP-A-4 *conditional on* GAP-A-1 closure
     (which the helium3 theorem in `conj-canonical-knot-id-sdp.lean`
     discharges given a strict-complementarity certificate). -/
--- Ref: [manuscript] conj:rho-prefactor-structural
--- Ref: [manuscript] PR #608 r5-full-canonical-knot-solver.witness.json
+-- Ref: [leitner2026] conj:rho-prefactor-structural
+-- Ref: [leitner2026] PR #608 r5-full-canonical-knot-solver.witness.json
 theorem rho_eq_qdim_via_canonical_knot
     {Z N : ℕ} {q : ℝ}
     [h : RhoPrefactorStructural Z N q]
@@ -295,7 +295,7 @@ theorem rho_eq_qdim_via_canonical_knot
     refers to the H_3(q_0) sub-block of ³He's atomic decomposition; it
     is captured separately by `rho_eq_qdim_via_canonical_knot` above
     (which holds for any `(Z, N, q)` instance).
-    -- Ref: [manuscript] §3b-cond conditional-class pattern
-    -- Ref: [manuscript] PR #608 winner.rho_star = 3 for ³He -/
+    -- Ref: [leitner2026] §3b-cond conditional-class pattern
+    -- Ref: [leitner2026] PR #608 winner.rho_star = 3 for ³He -/
 
 end QOU.BraidKnot

@@ -50,7 +50,7 @@ It does not construct the `T_w` basis, prove `H` free of rank `|W|`, or construc
 Markov trace. Those remain open — see `QOU.IwahoriHecke.Tw`.
 
 -- Ref: [humphreys1990] §7.4 (both normalisations; the rescaling is standard)
--- Ref: [manuscript] AGENTS.md §7a (Hecke-Skein convention); bean qou-k4oq
+-- Ref: [leitner2026] AGENTS.md §7a (Hecke-Skein convention); bean qou-k4oq
 -/
 
 namespace QOU.IwahoriHecke.Balanced

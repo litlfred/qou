@@ -1,6 +1,6 @@
 ---
 doc_id: 0510388v1
-doc_title: "ELECTRODYNAMICS and the GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE Dennis DeTurck and Herman Gluck"
+doc_title: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space"
 section_id: sec-011-9-the-calculus-of-vector-convolutions-in-r3
 section_title: "The calculus of vector convolutions in R3 ."
 section_number: 9
@@ -8,6 +8,7 @@ pages: 24-27
 source_pdf: 0510388v1.pdf
 source_sha256: c83c0f6a2eaa74f3
 toc_source: inferred
+doc_brief: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space — 64 sections: Front matter; ORGANIZATION; STATEMENTS OF RESULTS"
 ---
 Let  α  =  |x — y|  denote the distance between the points  x  and  y  in  R3 ,  and 
 let  ϕ(α)  be some unspecified function of  α .  As usual, we'll write  ϕ(x, y)  in 
@@ -37,7 +38,6 @@ the electric field, caused by the accumulation and dissipation of charge by the
 current flow  V . 
  
  
-25 
  
  
  
@@ -82,7 +82,6 @@ as claimed, because   ∇y × V(x)  =  0   and   ∇y × ∇y ϕ(x, y)  =  0 .  
 we move to  S3 ,  the expression corresponding to  ∇y × V(x)  will not be zero. 
  
  
-26 
  
  
  
@@ -121,8 +120,4 @@ We write it out for the first formula, and leave the other three to the reader.
  
                                       =  A(V, ∆ϕ)  —  G(V, ϕ)  +  G(V, ϕ) 
  
-                                      =  A(V, ∆ϕ) . 
- 
- 
- 
-27
+                                      =  A(V, ∆ϕ) .

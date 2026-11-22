@@ -29,7 +29,7 @@ is what produces the axial coupling suppression `g_A < 5/3`.
 
 ## References
 
-- [manuscript] §7, axial coupling from 3-fold Borromean color average.
+- [leitner2026] §7, axial coupling from 3-fold Borromean color average.
 - [mathas1999] A. Mathas, *Iwahori--Hecke Algebras and Schur Algebras*, AMS 1999.
 -/
 
@@ -154,7 +154,7 @@ theorem multiAltEigenvalue_append (seq₁ seq₂ : List (R_t × R_t)) :
     This is the formal content of `transfer_matrix_6x6.py` line 233:
     "the 6×6 does NOT give new information beyond the 2×2 for the
     PER-GENERATOR transfer matrix." -/
--- Ref: [manuscript]
+-- Ref: [leitner2026]
 theorem per_generator_eigenvalue_coincidence :
     -- For pp crossing: sym eigenvalue = q, alt eigenvalue = -q⁻¹
     symEigenvalue 1 0 = q_from_t ∧ altEigenvalue 1 0 = -q_inv_from_t := by
@@ -178,7 +178,7 @@ theorem per_generator_eigenvalue_coincidence :
     For the standard channel, the ratio is more complex because it
     involves the 2×2 matrix product, which depends on the specific
     braid topology (not just the length). -/
--- Ref: [manuscript]
+-- Ref: [leitner2026]
 theorem multi_pp_sym_eigenvalue (k : ℕ) :
     multiSymEigenvalue (List.replicate k (1, 0)) = q_from_t ^ k := by
   induction k with

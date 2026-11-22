@@ -1,0 +1,100 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-0911.1038v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "3bc566efaefd44c65b2a9536bde79ff211e9facffa8e7387762583d9a986378c",
+  "file": "0911.1038v2.pdf"
+ },
+ "provenance": {
+  "title": "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS: STRUCTURE OF KEROV CHARACTER POLYNOMIALS",
+  "authors": "MACIEJ DO\u0141 \u02dbEGA AND PIOTR \u015aNIADY",
+  "arxiv": {
+   "id": "0911.1038",
+   "version": "2",
+   "primary_class": "math.CO",
+   "stamp_date": "12 Mar 2012"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 2,
+  "by_kind": {
+   "theorem": 1,
+   "lemma": 1
+  },
+  "formalization_candidates": 2,
+  "by_domain": {
+   "math": 2
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 2
+  },
+  "by_evidence_location": {
+   "elsewhere": 1,
+   "in-paper": 1
+  },
+  "by_lean_status": {
+   "unformalized": 2
+  },
+  "needs_lean_proof": 2
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2.5",
+   "name": "Goulden and Rattan [GR07]",
+   "statement": "For g \u22651, k \u22652g \u22121, (12) \u03a3k,k+1\u22122g = \u22121 k[tk+1\u22122g] X |\u03bb|=2g \u02c6m\u03bb P\u03bb(t) C(t) .",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "External attribution (Goulden and Rattan [GR07]) [[GR]",
+   "external_refs": [
+    "Goulden and Rattan [GR07]",
+    "[GR07]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-013-23-goulden-rattan-formula.md",
+   "section_title": "Goulden-Rattan formula",
+   "pages": "12-12",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: elsewhere, External attribution (Goulden and Rattan [GR07]) [[GR]). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-013-01",
+   "block_iri": "library/arxiv-0911.1038v2/blocks/thm-sec-013-01",
+   "claim_id": "arxiv-0911.1038v2#theorem:2.5",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "4.1",
+   "name": null,
+   "statement": "The following abstract equalities hold: (16)X \u00b5\u222a\u03c1=\u03bd m\u03bb(\u00b5)(l(\u00b5) + 2g \u22122)! l(\u00b5)! u\u00b5u\u03c1 = m\u03bb(\u03bd) l(\u03bb) + 2g \u22121 (l(\u03bd) + 2g \u22122)! l(\u03bd)! u\u03bd; (17) X \u00b5\u222a\u03c1=\u03bd m\u03bb(\u00b5)(2g \u22121)l(\u00b5)z\u22121 \u00b5 z\u22121 \u03c1 = \u00122g \u22121 2g \u0013l(\u03bb) m\u03bb(\u03bd)(2g)l(\u03bd)z\u22121 \u03bd . STRUCTURE OF KEROV CHARACTER POLYNOMIALS",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-020-41-identities-on-symmetric-functions.md (p. 18-20)",
+   "external_refs": [],
+   "proof_excerpt": "From the de\ufb01nition of the monomial symmetric function we know that m\u03bb(\u00b5) = 0 for all partitions \u00b5 such that l(\u00b5) < l(\u03bb). We use an identity that for every integer n such that l(\u03bb) \u2264n \u2264l(\u03bd) we have (18) \u0012l(\u03bd) \u2212l(\u03bb) n \u2212l(\u03bb) \u0013 m\u03bb(\u03bd) = X \u00b5\u222a\u03c1=\u03bd, l(\u00b5)=n m\u03bb(\u00b5) Y i\u22651 mi(\u03bd)! mi(\u00b5)! mi(\u03c1)!",
+   "section_file": "sections/sec-020-41-identities-on-symmetric-functions.md",
+   "section_title": "Identities on symmetric functions",
+   "pages": "18-20",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-020-41-identities-on-symmetric-functions.md (p. 18-20)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-020-01",
+   "block_iri": "library/arxiv-0911.1038v2/blocks/lem-sec-020-01",
+   "claim_id": "arxiv-0911.1038v2#lemma:4.1",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  }
+ ]
+}

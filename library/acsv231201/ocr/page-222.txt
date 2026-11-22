@@ -1,0 +1,51 @@
+204 Overview of analytic methods for multivariate GFs
+
+and the homology of a product obeys the usual Kiinneth formula for homology
+with complex coefficients,
+
+k
+H,(U x V) = B HU) x Hy_;(V). (7.18)
+
+j-0
+
+For the space M, we define the Morse data for the attachment at a critical point
+pé VY, by the following steps.
+
+Definition 7.32 (Morse data). Let S be a stratum of complex codimension k
+containing a critical point p at height c.
+
+(i) The tangential Morse data T(p) at p is the homotopy type of the pair
+(B“*, dB4*) consisting of a ball of codimension k modulo its boundary.
+A representative of this class is the unstable manifold for the negative
+gradient flow induced by hs on VV (the set of points that flow into the
+critical point under the positive gradient flow, see [HPS77, Section 4]
+or [Con78a]).
+
+(ii) The normal plane Np(S) to S at p is the (complex) orthogonal comple-
+ment of the tangent space Tp(S).
+
+(iii) The normal slice N at p is the mutual intersection of V, a sufficiently
+small ball about p, and the normal plane Np(S).
+
+(iv) The normal link £(p) is the mutual intersection of M, a sufficiently small
+ball about p, and N.
+
+(v) The normal Morse data L(p) is the pair (L(p)sc, L(p)=c), where L(p)=c
+is the intersection of the normal link with the real codimension 1 surface
+where hp(z) = c.
+
+(vi) The Morse data at p is the product of the tangential and normal Morse
+data.
+
+The following result, which is the main result in the monograph [GM88], is
+stated as Theorem D.21 in Appendix D.
+
+Theorem 7.33. The homotopy type of the attachment pair MP" is the Morse
+data at p. Oo
+
+Theorem 7.33 yields a general topological decomposition of Ha(M, —°),
+which is a stratified version of Theorem 7.15.
+
+Definition 7.34. A critical point p in direction # on a stratum S is called non-
+degenerate if h;\|s is nondegenerate in the sense of Definition 7.11 (meaning
+the Hessian for hs|s in local coordinates around p is nonsingular).

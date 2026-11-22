@@ -79,6 +79,12 @@ if HAS_MPMATH:
         TWO_Q_MP,
         TANH_LN_Q_MP,
         LN_Q_MP,
+        tr_borromean_v3_at,
+        tr_e21_borromean_v3_at,
+        tr_conn_borromean_p_at,
+        tr_conn_borromean_n_at,
+        tr_conn_borromean_diff_at,
+        q_two_term_borromean_at,
     )
 
 # ── Precision discipline ────────────────────────────────────────────
@@ -115,6 +121,9 @@ __all__ = [
     "log_q", "q_int", "q_int_err",
     "Q_RAT_NUM", "Q_RAT_DEN",
     "Q_50_DIGIT_STR", "MASS_RATIO_MU_E_STR", "HAS_MPMATH",
+    "tr_borromean_v3_at", "tr_e21_borromean_v3_at",
+    "tr_conn_borromean_p_at", "tr_conn_borromean_n_at",
+    "tr_conn_borromean_diff_at", "q_two_term_borromean_at",
     # precision
     "set_compute_dps", "fmt",
     "COMPUTE_DPS", "OUTPUT_DPS", "PRECISION_GUARD",

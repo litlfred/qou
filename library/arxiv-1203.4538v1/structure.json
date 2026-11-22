@@ -6,10 +6,12 @@
   "sha256": "5e44909e355c78d6de43c56b420491a7dc92e577bbada483a116276cd97b111a",
   "bytes": 145357,
   "pages": 15,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,19 +22,29 @@
   },
   "doi": null,
   "title": "The exponential-logarithmic equivalence classes of surreal numbers",
-  "authors_raw": "Salma Kuhlmann and Micka\u00ebl Matusinski",
-  "abstract": null,
-  "docinfo": {
-   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181023005046-04'00'",
-   "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  },
+  "authors_raw": "Salma Kuhlmann and Mickaël Matusinski",
   "title_lines": [
    "The exponential-logarithmic equivalence classes",
    "of surreal numbers"
-  ]
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20181023005046-04'00'"
+  },
+  "title_raw": "The exponential-logarithmic equivalence classes of surreal numbers",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "The exponential-logarithmic equivalence classes of surreal numbers",
+   "outline": "1 Introduction",
+   "text": "The exponential-logarithmic equivalence classes of surreal numbers",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -40,60 +52,205 @@
    "title": "Introduction.",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Preliminaries on surreal numbers.",
    "page": 2,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Inductive definitions.",
    "page": 2,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Sign sequences.",
    "page": 6,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Generalized epsilon numbers",
    "page": 7,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The kappa map.",
    "page": 7,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Sign sequences formulae for the kappa map.",
    "page": 9,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Transseries and exp-log series.",
    "page": 13,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 166,
+   "n_words": 20,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -101,8 +258,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 3206,
-   "n_words": 541
+   "n_chars": 3201,
+   "n_words": 523,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-2-preliminaries-on-surreal-numbers",
@@ -110,67 +269,99 @@
    "title": "Preliminaries on surreal numbers.",
    "level": 1,
    "page_start": 2,
-   "page_end": 6,
-   "n_chars": 8330,
-   "n_words": 1732
+   "page_end": 2,
+   "n_chars": 33,
+   "n_words": 4,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-22-sign-sequences",
+   "id": "sec-002-21-inductive-definitions",
+   "number": "2.1",
+   "title": "Inductive definitions.",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 6,
+   "n_chars": 8216,
+   "n_words": 1621,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-22-sign-sequences",
    "number": "2.2",
    "title": "Sign sequences.",
    "level": 2,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 2752,
-   "n_words": 512
+   "n_chars": 2444,
+   "n_words": 478,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-23-generalized-epsilon-numbers",
+   "id": "sec-004-23-generalized-epsilon-numbers",
    "number": "2.3",
    "title": "Generalized epsilon numbers",
    "level": 2,
    "page_start": 7,
    "page_end": 7,
-   "n_chars": 560,
-   "n_words": 110
+   "n_chars": 525,
+   "n_words": 110,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-004-3-the-kappa-map",
+   "id": "sec-005-3-the-kappa-map",
    "number": "3",
    "title": "The kappa map.",
    "level": 1,
    "page_start": 7,
    "page_end": 9,
-   "n_chars": 4827,
-   "n_words": 1063
+   "n_chars": 4768,
+   "n_words": 998,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-005-4-sign-sequences-formulae-for-the-kappa-map",
+   "id": "sec-006-4-sign-sequences-formulae-for-the-kappa-map",
    "number": "4",
    "title": "Sign sequences formulae for the kappa map.",
    "level": 1,
    "page_start": 9,
    "page_end": 13,
-   "n_chars": 8497,
-   "n_words": 1537
+   "n_chars": 6694,
+   "n_words": 1354,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-006-5-transseries-and-exp-log-series",
+   "id": "sec-007-5-transseries-and-exp-log-series",
    "number": "5",
    "title": "Transseries and exp-log series.",
    "level": 1,
    "page_start": 13,
    "page_end": 15,
-   "n_chars": 4559,
-   "n_words": 738
+   "n_chars": 4562,
+   "n_words": 713,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 8,
-  "sections": 7,
-  "chars_total": 32731,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 9,
+  "chars_total": 30609,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
@@ -183,59 +374,70 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction.",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.989,
+     "prose_ratio": 0.922,
+     "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-preliminaries-on-surreal-numbers",
      "title": "Preliminaries on surreal numbers.",
-     "prose_ratio": 0.993,
-     "coverage_ratio": 0.87,
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-21-inductive-definitions",
+     "title": "Inductive definitions.",
+     "prose_ratio": 0.933,
+     "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-22-sign-sequences",
+     "id": "sec-003-22-sign-sequences",
      "title": "Sign sequences.",
      "prose_ratio": 0.943,
-     "coverage_ratio": 0.978,
+     "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-23-generalized-epsilon-numbers",
+     "id": "sec-004-23-generalized-epsilon-numbers",
      "title": "Generalized epsilon numbers",
      "prose_ratio": 0.875,
-     "coverage_ratio": 0.957,
+     "coverage_ratio": 0.955,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-3-the-kappa-map",
+     "id": "sec-005-3-the-kappa-map",
      "title": "The kappa map.",
-     "prose_ratio": 0.985,
-     "coverage_ratio": 0.987,
+     "prose_ratio": 0.947,
+     "coverage_ratio": 0.961,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-4-sign-sequences-formulae-for-the-kappa-map",
+     "id": "sec-006-4-sign-sequences-formulae-for-the-kappa-map",
      "title": "Sign sequences formulae for the kappa map.",
-     "prose_ratio": 0.984,
-     "coverage_ratio": 0.987,
+     "prose_ratio": 0.929,
+     "coverage_ratio": 0.958,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-5-transseries-and-exp-log-series",
+     "id": "sec-007-5-transseries-and-exp-log-series",
      "title": "Transseries and exp-log series.",
      "prose_ratio": 0.925,
      "coverage_ratio": 0.474,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

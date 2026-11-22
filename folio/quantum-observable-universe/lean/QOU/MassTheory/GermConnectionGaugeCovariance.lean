@@ -76,7 +76,7 @@ no `Real.*` anywhere in the file.
 ## References
 - Ref: [yekutieli2015] https://doi.org/10.1142/9537 — non-abelian multiplicative
   integration and Stokes' theorem on surfaces.
-- Ref: [manuscript] `docs/audits/2026-08-09-germ-gauge-covariance-verdict.md`
+- Ref: [leitner2026] `docs/audits/2026-08-09-germ-gauge-covariance-verdict.md`
 -/
 
 namespace QOU.MassTheory.GermConnectionGauge

@@ -1,1 +1,1 @@
-Let A be an Ω-involutive weak quasi-Hopf algebra with an antipode
+Let A be an Ω-involutive weak quasi-Hopf algebra with an antipode (S, α, β) such that S commutes with ∗. Then a) every ∗-representation ρ has ρc as a conjugate in Reph(A) with respect to the form conjugate to that of ρ: (ξ, η) = (η, ξ). Hence Reph (A) is rigid. b) If ρ is a C ∗ -representation, so is ρc. Hence if A is a unitary weak quasi-Hopf algebra, Rep+(A) is rigid as well.

@@ -87,7 +87,7 @@ caller-supplied data.
 **Named, not asserted.** See the module docstring for why neither a projection
 nor a `sorry` is the honest form here. -/
 -- Ref: [wenzl1990] https://doi.org/10.1007/BF02097372 (Schur orthogonality / Markov-trace projection)
--- Ref: [manuscript] quantum-observable-universe/predicted-spectra/knot-operator-selection.md
+-- Ref: [leitner2026] quantum-observable-universe/predicted-spectra/knot-operator-selection.md
 def knot_operator_selection {V : Type}
     (nPartitions : ℕ) (trPhi : ℝ) (trPhiLambda : ℕ → ℝ)
     (actionPair channelSum : ℝ) (pairingKernelDim : ℕ)
@@ -105,7 +105,7 @@ At `nPartitions = 0`, `trPhi = 1`, `trPhiLambda = fun _ => 0`, conjunct (i)
 reads `1 = 0`. Recorded as a theorem so the module docstring's argument is
 checked rather than asserted, and so a later attempt to "finish" this file by
 adding a `sorry` over free data fails against a standing counterexample. -/
--- Ref: [manuscript] quantum-observable-universe/predicted-spectra/knot-operator-selection.md
+-- Ref: [leitner2026] quantum-observable-universe/predicted-spectra/knot-operator-selection.md
 theorem not_knot_operator_selection_of_free_data :
     ¬ knot_operator_selection (V := ℕ) 0 1 (fun _ => 0) 0 0 0 0
         (fun _ => 0) (fun _ => True) := by

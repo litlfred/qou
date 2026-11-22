@@ -24,7 +24,7 @@ LaTeX: `\label{prop:categorical-q-connection-exists}`
 
 ## References
 
-- [manuscript] §2-quantum-observable-universes/categorical-q-connection-exists
+- [leitner2026] §2-quantum-observable-universes/categorical-q-connection-exists
 - [connes1994] Noncommutative Geometry
 -/
 

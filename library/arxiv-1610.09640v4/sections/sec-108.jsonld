@@ -9,13 +9,18 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "References",
-  "pageStart": 447,
-  "pageEnd": 454,
+  "title": "Weakly Stable and Idempotent Copointed Functors",
+  "pageStart": 355,
+  "pageEnd": 358,
   "contains": [
-    "library/arxiv-1610.09640v4/blocks/prose-sec-108"
+    "library/arxiv-1610.09640v4/blocks/prose-sec-108",
+    "library/arxiv-1610.09640v4/blocks/rem-sec-108-01",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-108-02",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-108-03",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-108-04",
+    "library/arxiv-1610.09640v4/blocks/rem-sec-108-05"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.09640v4",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.09640v4",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
   "provenance": "ingested"
 }

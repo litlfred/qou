@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-ph-9502366v1
-doc_title: "arXiv:hep-ph/9502366v1 22 Feb 1995"
+doc_title: "Chiral Perturbation Theory"
 section_id: sec-002-3-eﬀective-chiral-lagrangian-at-lowest-order
 section_title: "Eﬀective chiral Lagrangian at lowest order"
 section_number: 3
@@ -8,12 +8,11 @@ pages: 5-11
 source_pdf: 9502366v1.pdf
 source_sha256: 56df064956ca03f8
 toc_source: inferred
+doc_brief: "Chiral Perturbation Theory — An introduction to the basic ideas and methods of Chiral Perturbation Theory is presented."
 ---
 The Goldstone nature of the pseudoscalar mesons implies strong constraints on
 their interactions, which can be most easily analyzed on the basis of an eﬀective
 Lagrangian. Since there is a mass gap separating the pseudoscalar octet from the rest
-6
-A Pich
 of the hadronic spectrum, we can build an eﬀective ﬁeld theory containing only the
 Goldstone modes. Our basic assumption is the pattern of SCSB:
 G ≡SU(3)L ⊗SU(3)R
@@ -103,8 +102,6 @@ is uniquely given by the term
 L2 = f 2
 4 ⟨∂µU †∂µU⟩,
 (3.7)
-Chiral Perturbation Theory
-7
 where ⟨A⟩denotes the trace of the matrix A.
 Expanding U(φ) in a power series in Φ, one obtains the Goldstone kinetic terms
 plus a tower of interactions involving an increasing number of pseudoscalars.
@@ -183,8 +180,6 @@ rµ −→gR rµ g†
 R + igR∂µg†
 R .
 (3.14)
-8
-A Pich
 We can use this symmetry to build a generalized eﬀective Lagrangian for the Goldstone
 bosons, in the presence of external sources. Note that to respect the local invariance,
 the gauge ﬁelds vµ, aµ can only appear through the covariant derivatives
@@ -275,8 +270,6 @@ A)12|π+⟩≡i
 √
 2fπpµ.
 (3.21)
-Chiral Perturbation Theory
-9
 Similarly, by taking derivatives with respect to the external scalar and pseudoscalar
 sources,
 ¯qj
@@ -366,8 +359,6 @@ mass matrix, gives the mass eigenstates, π0 = cos δ φ3 + sin δ φ8 and η8 =
 tan (2δ) =
 √
 3(md −mu)/ (2(ms −ˆm)) .
-10
-A Pich
 and (up to O(mu−md) corrections) the Gell-Mann (1962)–Okubo (1962) mass relation,
 3M 2
 η8 = 4M 2
@@ -431,8 +422,6 @@ higher-order corrections in a systematic way.
 4. ChPT at O(p4)
 At next-to-leading order in momenta, O(p4), the computation of the generating
 functional Z[v, a, s, p] involves three diﬀerent ingredients:
-Chiral Perturbation Theory
-11
 1.
 The most general eﬀective chiral Lagrangian of O(p4), L4, to be considered at tree
 level.

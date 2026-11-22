@@ -1,1 +1,1 @@
-IfD is a G-BSFC with a trivial G-grading and a trivial G-action,
+If D is a G-BSFC with a trivial G-grading and a trivial G-action, and ω ∈H4(G, U(1)), then ZD,ω(M; T ) = DW ω G(M)CYC(M), (3.12) where DW ω G(M) is the twisted Dijkgraaf-Witten invariant [20]. In particular, If D = Vect, then ZD,ω = DW ω G(M).

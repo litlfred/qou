@@ -8,6 +8,7 @@ pages: 36-37
 source_pdf: 1206.5522v6.pdf
 source_sha256: 6e992242435b5e9f
 toc_source: outline
+doc_brief: "FACTORIZATION HOMOLOGY OF TOPOLOGICAL MANIFOLDS — Factorization homology theories of topological manifolds, after Beilinson, Drinfeld and Lurie, are homology-type theories for topological n-manifolds"
 ---
 [An] Andrade, Ricardo. From manifolds to invariants of En-algebras. Thesis (PhD) – Massachusetts Institute of
 Technology. 2010.

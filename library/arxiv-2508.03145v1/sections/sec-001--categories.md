@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2508.03145v1
-doc_title: "Θ-Categories and Tannakian duality"
+doc_title: "Θ -Categories and Tannakian duality"
 section_id: sec-001--categories
 section_title: "-Categories"
 section_number: null
-pages: 5-11
+pages: 6-11
 source_pdf: 2508.03145v1.pdf
 source_sha256: 2bf03452cb503e96
-doc_brief: "Θ-Categories and Tannakian duality — We introduce a notion ofΘ-categories, which is a refinement of the notion of symmetric monoidal∞-categories."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.996
-latex_coverage_ratio: 0.809
+latex_prose_ratio: 0.825
+latex_coverage_ratio: 0.968
+doc_brief: "Θ -Categories and Tannakian duality — We introduce a notion of Θ-categories, which is a refinement of the notion of symmetric monoidal ∞-categories."
 ---
 ## $\mu$-Categories
 

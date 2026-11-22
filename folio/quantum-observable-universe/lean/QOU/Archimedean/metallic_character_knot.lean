@@ -15,7 +15,7 @@ metallic character iff:*
 
 *(3) **Site availability**: `R` has at least one open linking site.*
 
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/metallic-character-knot.md
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/metallic-character-knot.md
 -/
 
 namespace QOU.Archimedean
@@ -39,7 +39,7 @@ class MetallicCharacterContext where
       (OuterShellIncomplete a ∧ LowOuterCrossingEnergy a ∧ HasOpenSite a)
 
 /-- **Metallic character iff 3 conditions** ([`prop:metallic-character-knot`]). -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/metallic-character-knot.md
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/metallic-character-knot.md
 theorem metallic_character_knot
     [ctx : MetallicCharacterContext] (a : ctx.Atom) :
     ctx.IsMetallic a ↔

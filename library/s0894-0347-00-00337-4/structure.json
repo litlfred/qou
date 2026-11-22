@@ -8,7 +8,7 @@
   "pages": 35,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:26Z",
+  "mtime": "2026-11-15T11:07:55Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -31,7 +31,7 @@
   "title_source": "text",
   "title_verified": false,
   "title_evidence": {
-   "heading": "ASYMPTOTICS OF PLANCHEREL MEASURES FOR SYMMETRIC GROUPS 1. Introduction 1.1. Plancherel measures. Given a \ufb01nite group G , by the corresponding Plancherel measure we mean the probability measure on the set G \u2227 of irreducible representations of G which assigns to a representation \u03c0 \u2208 G \u2227 the weight (d",
+   "heading": "ASYMPTOTICS OF PLANCHEREL MEASURES FOR SYMMETRIC GROUPS 1. Introduction 1.1. Plancherel measures. Given a ﬁnite group G , by the corresponding Plancherel measure we mean the probability measure on the set G ∧ of irreducible representations of G which assigns to a representation π ∈ G ∧ the weight (d",
    "outline": "1. Introduction",
    "text": "AMERICAN MATHEMATICAL SOCIETY S 0894-0347(00)00337-4",
    "corroborated_by": [],
@@ -608,8 +608,8 @@
    "level": 2,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 3921,
-   "n_words": 814,
+   "n_chars": 3916,
+   "n_words": 813,
    "label_start": null,
    "label_end": null
   },
@@ -620,8 +620,8 @@
    "level": 2,
    "page_start": 4,
    "page_end": 6,
-   "n_chars": 3746,
-   "n_words": 778,
+   "n_chars": 3820,
+   "n_words": 791,
    "label_start": null,
    "label_end": null
   },
@@ -680,13 +680,25 @@
    "level": 2,
    "page_start": 12,
    "page_end": 14,
-   "n_chars": 4647,
-   "n_words": 914,
+   "n_chars": 2599,
+   "n_words": 526,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-009-3-correlation-functions-in-the-bulk-of-the-spect",
+   "id": "sec-009-24-commuting-difference-operator",
+   "number": "2.4",
+   "title": "Commuting difference operator",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 1974,
+   "n_words": 379,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-010-3-correlation-functions-in-the-bulk-of-the-spect",
    "number": "3",
    "title": "Correlation functions in the bulk of the spectrum",
    "level": 1,
@@ -698,7 +710,7 @@
    "label_end": null
   },
   {
-   "id": "sec-010-4-edge-of-the-spectrum-convergence-to-the-airy-e",
+   "id": "sec-011-4-edge-of-the-spectrum-convergence-to-the-airy-e",
    "number": "4",
    "title": "Edge of the spectrum: Convergence to the Airy ensemble",
    "level": 1,
@@ -710,19 +722,31 @@
    "label_end": null
   },
   {
-   "id": "sec-011-41-results-and-strategy-of-proof",
+   "id": "sec-012-41-results-and-strategy-of-proof",
    "number": "4.1",
    "title": "Results and strategy of proof",
    "level": 2,
    "page_start": 19,
-   "page_end": 28,
-   "n_chars": 15741,
-   "n_words": 3704,
+   "page_end": 26,
+   "n_chars": 13453,
+   "n_words": 3096,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-012-appendix-a-general-properties-of-determinantal-p",
+   "id": "sec-013-43-depoissonization-and-proof-of-theorem",
+   "number": "4.3",
+   "title": "Depoissonization and proof of Theorem ??",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 28,
+   "n_chars": 2212,
+   "n_words": 591,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-014-appendix-a-general-properties-of-determinantal-p",
    "number": null,
    "title": "Appendix A. General properties of determinantal point processes",
    "level": 1,
@@ -734,7 +758,7 @@
    "label_end": null
   },
   {
-   "id": "sec-013-a1-fredholm-determinants-and-determinantal-proce",
+   "id": "sec-015-a1-fredholm-determinants-and-determinantal-proce",
    "number": null,
    "title": "A.1. Fredholm determinants and determinantal processes",
    "level": 2,
@@ -746,7 +770,7 @@
    "label_end": null
   },
   {
-   "id": "sec-014-a2-correlation-functions-of-determinantal-proces",
+   "id": "sec-016-a2-correlation-functions-of-determinantal-proces",
    "number": null,
    "title": "A.2. Correlation functions of determinantal processes",
    "level": 2,
@@ -758,7 +782,7 @@
    "label_end": null
   },
   {
-   "id": "sec-015-a3-complementation-principle",
+   "id": "sec-017-a3-complementation-principle",
    "number": null,
    "title": "A.3. Complementation principle",
    "level": 2,
@@ -770,7 +794,7 @@
    "label_end": null
   },
   {
-   "id": "sec-016-a4-convergence-of-trace-class-operators",
+   "id": "sec-018-a4-convergence-of-trace-class-operators",
    "number": null,
    "title": "A.4. Convergence of trace class operators",
    "level": 2,
@@ -782,7 +806,7 @@
    "label_end": null
   },
   {
-   "id": "sec-017-acknowledgments",
+   "id": "sec-019-acknowledgments",
    "number": null,
    "title": "Acknowledgments",
    "level": 1,
@@ -794,7 +818,7 @@
    "label_end": null
   },
   {
-   "id": "sec-018-references",
+   "id": "sec-020-references",
    "number": null,
    "title": "References",
    "level": 1,
@@ -817,7 +841,8 @@
    "count": 0,
    "items": []
   },
-  "sections": 20,
-  "chars_total": 73022
+  "sections": 22,
+  "chars_total": 72941,
+  "furniture_lines_stripped": 0
  }
 }

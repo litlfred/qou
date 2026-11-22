@@ -1,0 +1,45 @@
+4.1. The Schottky problem in genus 4 71
+
+To avoid case distinctions, from now on we put G(g) = SO¢1(C) if g is
+odd and G(g) = Sp,,(C) if g is even. The main goal of this chapter is to
+prove the following weaker version of our conjecture, extending ideas that
+have been used in dimension g = 4 in the earlier preprint [67].
+
+THEOREM 4.2. For a general complex ppav X of dimension g with a
+symmetric theta divisor © one has
+
+G(do) = G(g),
+and 8 corresponds to the standard representation of this group.
+
+As we have remarked above, this essentially means that for a general
+ppav the Tannaka group of the theta divisor is as large as possible — the
+main task will be to find sufficiently large lower bounds on this group. By
+a constructibility argument it suffices to do this for the generic fibre of a
+suitable family of ppav’s over a smooth complex algebraic curve S. So we
+can apply degeneration methods: By theorem 3.15 the Tannaka group of the
+generic fibre admits those of the perverse sheaves of nearby cycles on the
+special fibres as subquotients. With this in mind, we collect in section 4.3
+some general properties of the monodromy filtration that allow to control
+the nearby cycles in concrete geometric situations. The crucial part of our
+argument is then given in section 4.4 where we consider three degenerations
+of a generic ppav — in one of them the theta divisor becomes nodal, and
+in the other two the ppav degenerates into a product of ppav’s resp. into a
+Jacobian variety. In each case the nearby cycles contain a large irreducible
+constituent that can be controlled geometrically, and this will reduce the
+proof of our theorem to arguments in representation theory to be worked
+out in section 4.5.
+
+4.1. The Schottky problem in genus 4
+
+Before we come to the proof of theorem 4.2, let us briefly discuss its
+connection with the Schottky problem. Recall that in dimension g > 4 the
+Andreotti-Mayer locus -% C .%, of ppav’s with a singular theta divisor is
+itself a divisor with precisely two irreducible components [26]. One of the
+components is the locus 61,2 of all ppav’s with a vanishing theta null; the
+other component contains the closure _Y, of the locus of Jacobian varieties
+and for g = 4 is equal to it [8]. This being said, in dimension g = 4 we can
+sharpen the formulation of theorem 4.2 as follows.
+
+THEOREM 4.3. For g = 4 the locus of all ppav’s with G(5g) # Sp24(C)
+is contained in a Zariski-closed subset of 4 whose divisorial components
+are precisely £4 and Onult 4-

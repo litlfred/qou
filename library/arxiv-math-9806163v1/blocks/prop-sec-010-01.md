@@ -1,0 +1,1 @@
+The weight formula for the Markov trace on the Hecke algebra of type D with parameters z = qr (1−q) (1−qr) and y = (Qqr2+1)(1−qr1) (1−qr) −1 is given as follows: W D (α,β)(q) = W(α,β)(q, 1) + W(α,β)(q, 1), if α̸ = β and W D (α,α)i(q) = W(α,α)(q, 1), for i = 1, 2 if α = β where W(α,β)(q, 1) denote the weight evaluated at Q = 1 of the Hecke algebra of type B.

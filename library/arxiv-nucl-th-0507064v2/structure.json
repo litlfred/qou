@@ -8,7 +8,7 @@
   "pages": 8,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:24Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -22,7 +22,7 @@
   },
   "doi": null,
   "title": "The Virial Equation of State of Low-Density Neutron Matter",
-  "authors_raw": "C.J. Horowitz\u2217and A. Schwenk\u2020",
+  "authors_raw": "C.J. Horowitz∗and A. Schwenk†",
   "title_lines": [
    "The Virial Equation of State of Low-Density Neutron Matter"
   ],
@@ -169,7 +169,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "(Color online) The total phase shift \u03b4tot(E) versus laboratory energy E obtained from including successively higher partial waves",
+   "title": "(Color online) The total phase shift δtot(E) versus laboratory energy E obtained from including successively higher partial waves",
    "page": 3,
    "confidence": 0.9,
    "evidence": [
@@ -182,7 +182,7 @@
   {
    "kind": "figure",
    "number": "2",
-   "title": "(Color online) The pressure P versus density n for T = 10, 16 and 20 MeV. The dotted error bands for the virial equation of state are based on an estimate of a neglected third virial coe\ufb03cient b(3)",
+   "title": "(Color online) The pressure P versus density n for T = 10, 16 and 20 MeV. The dotted error bands for the virial equation of state are based on an estimate of a neglected third virial coeﬃcient b(3)",
    "page": 4,
    "confidence": 0.9,
    "evidence": [
@@ -208,7 +208,7 @@
   {
    "kind": "figure",
    "number": "4",
-   "title": "(Color online) The energy per particle E/N versus density n for T = 4, 8 and 20 MeV. In order to clearly show the interaction e\ufb00ects we have subtracted the free kinetic energy 3T/2 from all curves. The energy per particle obtained using the universal relation \u01eb = 3P/2 with the corresponding virial p",
+   "title": "(Color online) The energy per particle E/N versus density n for T = 4, 8 and 20 MeV. In order to clearly show the interaction eﬀects we have subtracted the free kinetic energy 3T/2 from all curves. The energy per particle obtained using the universal relation ǫ = 3P/2 with the corresponding virial p",
    "page": 5,
    "confidence": 0.9,
    "evidence": [
@@ -325,104 +325,116 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 36,
-   "n_words": 4,
+   "n_chars": 1096,
+   "n_words": 153,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-000-2-virial-equation-of-state",
-   "number": "2",
-   "title": "Virial Equation of State",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 1003,
-   "n_words": 141,
-   "label_start": null,
-   "label_end": null
-  },
-  {
-   "id": "sec-001-1-introduction",
+   "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 5045,
-   "n_words": 829,
+   "n_chars": 4129,
+   "n_words": 696,
    "label_start": null,
    "label_end": "2"
+  },
+  {
+   "id": "sec-001-2-virial-equation-of-state",
+   "number": "2",
+   "title": "Virial Equation of State",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 8092,
+   "n_words": 1387,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
    "id": "sec-002-3-results",
    "number": "3",
    "title": "Results",
    "level": 1,
-   "page_start": 2,
+   "page_start": 3,
    "page_end": 3,
-   "n_chars": 6361,
-   "n_words": 1081,
-   "label_start": "2",
+   "n_chars": 7,
+   "n_words": 1,
+   "label_start": "3",
    "label_end": "3"
   },
   {
-   "id": "sec-003-32-pressure",
+   "id": "sec-003-31-virial-coefficients",
+   "number": "3.1",
+   "title": "Virial Coefficients",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 4448,
+   "n_words": 807,
+   "label_start": "3",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-004-32-pressure",
    "number": "3.2",
    "title": "Pressure",
    "level": 2,
-   "page_start": 3,
+   "page_start": 4,
    "page_end": 5,
-   "n_chars": 7543,
-   "n_words": 1416,
-   "label_start": "3",
+   "n_chars": 2265,
+   "n_words": 426,
+   "label_start": "4",
    "label_end": "5"
   },
   {
-   "id": "sec-004-33-scaling-and-energy",
+   "id": "sec-005-33-scaling-and-energy",
    "number": "3.3",
    "title": "Scaling and Energy",
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 3541,
-   "n_words": 677,
+   "n_chars": 3555,
+   "n_words": 678,
    "label_start": "5",
    "label_end": "6"
   },
   {
-   "id": "sec-005-34-entropy-and-free-energy",
+   "id": "sec-006-34-entropy-and-free-energy",
    "number": "3.4",
    "title": "Entropy and Free Energy",
    "level": 2,
    "page_start": 6,
    "page_end": 6,
-   "n_chars": 1362,
-   "n_words": 265,
+   "n_chars": 1382,
+   "n_words": 268,
    "label_start": "6",
    "label_end": "6"
   },
   {
-   "id": "sec-006-4-conclusions",
+   "id": "sec-007-4-conclusions",
    "number": "4",
    "title": "Conclusions",
    "level": 1,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 2795,
+   "n_chars": 2805,
    "n_words": 454,
    "label_start": "6",
    "label_end": "7"
   },
   {
-   "id": "sec-007-acknowledgments",
+   "id": "sec-008-acknowledgments",
    "number": null,
    "title": "Acknowledgments",
    "level": 1,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 3601,
-   "n_words": 594,
+   "n_chars": 3599,
+   "n_words": 593,
    "label_start": "7",
    "label_end": "8"
   }
@@ -433,7 +445,7 @@
   "toc_entries": 9,
   "toc_inferred_entries": 9,
   "toc_inferred_mean_confidence": 1.0,
-  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_empty_share": 0.111,
   "toc_inferred_method": "latex",
   "figure_entries": 6,
   "figure_sequence_gaps": [],
@@ -441,13 +453,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 9,
-  "chars_total": 31287,
+  "sections": 10,
+  "chars_total": 31378,
+  "furniture_lines_stripped": 7,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "virial_neut_rev.tex",
    "tex_sections": 9,
-   "overlaid": 4,
+   "overlaid": 6,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -460,34 +473,44 @@
      "result": "no matching \\section"
     },
     {
-     "id": "sec-000-2-virial-equation-of-state",
-     "title": "Virial Equation of State",
-     "prose_ratio": 0.257,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.53,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-001-1-introduction",
-     "title": "Introduction",
-     "prose_ratio": 0.616,
-     "coverage_ratio": 0.975,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "id": "sec-001-2-virial-equation-of-state",
+     "title": "Virial Equation of State",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.454,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-002-3-results",
      "title": "Results",
-     "prose_ratio": 0.542,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-003-32-pressure",
+     "id": "sec-003-31-virial-coefficients",
+     "title": "Virial Coefficients",
+     "prose_ratio": 0.901,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-32-pressure",
      "title": "Pressure",
      "prose_ratio": 0.956,
-     "coverage_ratio": 0.448,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.826,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-004-33-scaling-and-energy",
+     "id": "sec-005-33-scaling-and-energy",
      "title": "Scaling and Energy",
      "prose_ratio": 0.891,
      "coverage_ratio": 0.959,
@@ -495,7 +518,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-005-34-entropy-and-free-energy",
+     "id": "sec-006-34-entropy-and-free-energy",
      "title": "Entropy and Free Energy",
      "prose_ratio": 0.926,
      "coverage_ratio": 1.0,
@@ -503,19 +526,19 @@
      "converter": "latex"
     },
     {
-     "id": "sec-006-4-conclusions",
+     "id": "sec-007-4-conclusions",
      "title": "Conclusions",
-     "prose_ratio": 0.98,
+     "prose_ratio": 0.986,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-acknowledgments",
+     "id": "sec-008-acknowledgments",
      "title": "Acknowledgments",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.076,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

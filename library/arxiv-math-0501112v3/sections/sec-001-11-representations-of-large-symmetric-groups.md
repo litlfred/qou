@@ -9,8 +9,9 @@ source_pdf: 0501112v3.pdf
 source_sha256: f95088789da2453a
 toc_source: inferred
 text_source: latex
-latex_prose_ratio: 0.865
-latex_coverage_ratio: 0.986
+latex_prose_ratio: 0.955
+latex_coverage_ratio: 0.988
+doc_brief: "arXiv:math/0501112v3 [math.CO] 31 May 2005 — We study asymptotics of reducible representations of the symmetric groups Sq for large q."
 ---
 Irreducible representations of the symmetric groups $S_q$ are indexed by Young diagrams and nearly all questions about them, such as values of the characters or decomposition into irreducible components of a restriction, induction, tensor product or outer product of representations can be answered by combinatorial algorithms such as Murnaghan�-Nakayama formula or the Littlewood�-Richardson rule. Unfortunately, these exact combinatorial tools become very complicated and cumbersome when the size of the symmetric group $S_q$ tends to infinity. For example, a restriction of an irreducible representation consists typically of a very large number of Young diagrams and listing them all does not give much insight into their structure. In order to deal with such questions in the asymptotic region when $q\to\infty$ we should be more modest and ask questions of a more statistical flavor: what is the typical shape of a Young diagram contributing to a given representation? what are the fluctuations of the Young diagrams around the most probable shape?
 

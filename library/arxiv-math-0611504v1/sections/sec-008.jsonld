@@ -9,13 +9,15 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Marked topological bordisms",
-  "pageStart": 20,
-  "pageEnd": 21,
+  "title": "Cocycle parameters",
+  "pageStart": 14,
+  "pageEnd": 16,
   "contains": [
-    "library/arxiv-math-0611504v1/blocks/prose-sec-008"
+    "library/arxiv-math-0611504v1/blocks/prose-sec-008",
+    "library/arxiv-math-0611504v1/blocks/prop-sec-008-01",
+    "library/arxiv-math-0611504v1/blocks/rem-sec-008-02"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0611504v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0611504v1",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0611504v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0611504v1/manifest.jsonld",
   "provenance": "ingested"
 }

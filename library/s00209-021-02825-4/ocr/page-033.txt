@@ -1,0 +1,57 @@
+A representation theoretic explanation... 1391
+
+We now compute the symbol of 7):
+Symb(72) = T2[(xw — zy)?] = x(a — yw? — 2xzyw + ey? = Hmgy»[(e — 2)? — x]
+
+Notice that for x = —1, we have that (—1 — z)? + 1 is not real rooted. Therefore, Symb(7>)
+is neither (H_ U (0, 00)) x (H4\(0, 00))-stable nor (H_ U (0, 00)) x (H_\(0, 00))-stable
+when the variables are ordered (z, w), (x, y). That is, the operator 7) does not contradict the
+previous theorem.
+
+In the second example, we demonstrate root preservation properties of f(0,) for real-
+rooted f. These are standard results of the classical theory: see, e.g., Corollary 5.4.1 in
+[15].
+
+Example 7.11 For any real-rooted f € C[x], consider the operator Dy € Hom(V(n), V(n))
+defined via Dy : g +> f(ydx)g (ie., the homogenized version of f(0,)). To determine
+properties of this operator, we first write:
+
+m
+f(r) = co T] a — @))
+j=l
+Here, the aj € R are the roots of f. Next, we compute the symbol of (yd, — aj) €
+Hom(V(n), V(n)) for j € [m]:
+
+Symb(ydy — aj) = (ydx — aj) (zy — xw)”
+= -(aj(zy — xw) +awy)(zy — xw)"!
+= Hmgy,» [-(aj@ — x) +n)(e-4x)""]
+
+We now have three cases, depending on the sign of w;. Ifa; > 0, we have that Symb(yd,—a;)
+is both (H_ U[a, oo]) x (H4\[a, o0])-stable and (H_ U[—00, a]) x (Hy\[-00, a+ x)-
+stable for any a € R. (As usual, we order the variables (z, w), (x, y).) Using Theorem 7.8
+and the discussion following the proof, this implies (yd, — a;) preserves [a, co]-rootedness
+and maps [—0o, a]-rooted polynomials to [—oo, a + g, rooted polynomials. So, if the
+(non-infinite) roots of g are contained in the interval [b, c], then the (non-infinite) roots of
+(ydx — @j)g are contained in the interval [b, c + al
+
+Ifa; < 0, we have that Symb(yd, —a;) is both (H_U[a, o0]) x (Ay \lat+ ay co])-stable
+and (H_U[—oo, a]) x (H4.\[—080, a])-stable for any a € R. As above, this implies (yd, —aj)
+preserves [—0o, a]-rootedness and maps [a, oo]-rooted polynomials to [a + a co]-rooted
+polynomials. So, if the (non-infinite) roots of g are contained in the interval [b, c], then the
+(non-infinite) roots of (yd, — a;)g are contained in the interval [b + a c].
+
+Finally for a; = 0, the operator (yd, — aj) = yd, weakly preserves any interval in
+which the (non-infinite) roots reside. The main difference for this case is that yd, only
+preserves weak real-rootedness. Combining these three cases, we are lead to the following
+root preservation property of f(d,) : C"[x] > C"[x]. Let a? and a; be the positive and
+negative roots of f, respectively. We then have the following, which refers to non-infinite
+roots:
+
+f (0x) : [b, c]-rooted > | b+ >
+ij
+
+n
+: set > ot -rooted
+id J
+
+D Springer

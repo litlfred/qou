@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2312.00624v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2312.00624v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-2312.00624v1",
+  "title": "On the structure of wave functions in complex Chern–Simons theory",
   "contains": [
+    "library/arxiv-2312.00624v1/sections/sec-front-matter",
     "library/arxiv-2312.00624v1/sections/sec-000",
     "library/arxiv-2312.00624v1/sections/sec-001",
     "library/arxiv-2312.00624v1/sections/sec-002",
@@ -28,10 +29,13 @@
     "library/arxiv-2312.00624v1/sections/sec-014",
     "library/arxiv-2312.00624v1/sections/sec-015",
     "library/arxiv-2312.00624v1/sections/sec-016",
-    "library/arxiv-2312.00624v1/sections/sec-017"
+    "library/arxiv-2312.00624v1/sections/sec-017",
+    "library/arxiv-2312.00624v1/sections/sec-018",
+    "library/arxiv-2312.00624v1/sections/sec-019",
+    "library/arxiv-2312.00624v1/sections/sec-020"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://creativecommons.org/licenses/by/4.0/",
   "licenceRecord": {
     "status": "stated",
@@ -41,7 +45,9 @@
   },
   "meta": {
     "doc_id": "arxiv-2312.00624v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "2312.00624v1.pdf",
     "source_sha256": "bda867f7b84f69c35e3171477939743ca4a9b1a8426106b168e40cbc91dc9767",
     "pages": 43,

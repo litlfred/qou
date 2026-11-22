@@ -1,0 +1,85 @@
+y=sin (6* pi /6)*(cx+r*cos(t))+cos(6* pi/6)*(cy+r*sin(t));};
+
+border G14 (t=1l*pi/12,15*pi/12) { x=cos(7*pi/6)*(cx+r*cos(t))—sin(7* pi/6)*(—cy—r*sin(t));
+y=sin (7* pi /6)*(cx+r*cos(t))+cos(7* pi/6)*(—cy—r*sin(t));};
+
+border G15 (t=15*pi/12,11*pi/12) { x=cos(7*pi/6)*(cx+r*cos(t))—sin(7* pi/6)*(cy}+r*sin(t));
+y=sin (7* pi /6)*(cx+r*cos(t))+cos(7* pi/6)*(cy+r*sin(t));}3
+
+border G16 (t=1l*pi/12,15*pi/12) { x=cos(8*pi/6)*(cx+r*cos(t))—sin (8 pi/6)*(—cy—r*sin(t));
+
+6)*(cx+rxcos(t))+cos(8* pi/6)*(—cy—r*sin(t));};
+
+5xpi/12,11*pi/12) { x=cos(8*pi/6)*(cx+r*cos(t))—sin(8* pi/6)*(cy+r*sin(t));
+y=sin (8* pi /6)*(cx+r*cos(t))+cos(8*pi/6)*(cy+r*sin(t));};
+
+border G18 (t=1l*pi/12,15*pi/12) { x=cos(9*pi/6)*(cx+r*cos(t))—sin (9* pi/6)*(—cy—r*sin(t));
+y=sin (9* pi /6)*(cx+r*cos(t))+cos(9* pi/6)*(—cy—r*sin(t));};
+
+border G19 (t=15*pi/12,11*pi/12) { x=cos(9*pi/6)*(cx+r*cos(t))—sin(9* pi/6)*(cy+r*sin(t));
+y=sin (9* pi /6)*(cx+r*cos(t))+cos(9* pi/6)*(cy+r*sin(t));};
+
+border G20 (t=11l*pi/12,15*pi/12) { x=cos(10* pi/6)*(cx+r*cos(t))—sin(10* pi/6)*(—cy—r*sin(t));
+y=sin (10« pi /6)*(cx+r«cos(t))+cos (10% pi/6)*(—cy—r«sin(t));};
+
+border G21 (t=15*pi/12,11*pi/12) { x=cos(10* pi/6)*(cx+r*cos(t))—sin(10*pi/6)*(cy+r*sin(t));
+y=sin (10« pi /6)*(cx+r*cos(t))+cos(10* pi/6)*(cy+r*sin(t));};
+
+border G22 (t=1l*pi/12,15*pi/12) { x=cos(11*pi/6)*(cx+r*cos(t))—sin(11*pi/6)*(—cy—r*sin(t));
+y=sin (11* pi /6)*(cx+r«*cos(t))+cos(11* pi/6)*(—cy—rx«sin(t));};
+
+border G23 (t=15*pi/12,11*pi/12) { x=cos(11*pi/6)*(cx+r*cos(t))—sin(11*pi/6)*(cy+r*sin(t));
+y=sin (11* pi/6)*(cx+r«*cos(t))+cos(11* pi/6)*(cy+r*sin(t));};
+
+border G24 (t=11l*pi/12,15*pi/12) { x=cx+rxcos(t); y=-cy—r*sin(t);};
+
+y=sin (8 pi/
+border G17 (t
+
+plot (G1(n)+G2(n)+G3(n)+G4(n)+G5(n)+G6(n)+G7(n)+G8(n)+G9(n)+G10(n)+G11(n)+G12(n)+G13(n)
++G14(n)+G15(n)+G16 (n)+G17(n)+G18(n)+G19(n)-+G20(n)+G21 (n)+G22(n)+G23(n)+G24(n));
+
+mesh Th=buildmesh (G1(n)+G2(n)+G3(n)+G4(n)+G5(n)+G6(n)+G7(n)+G8(n)+G9(n)+G10(n)+G11(n)
++G12(n)+G13(n)+G14(n)+G15(n)+G16(n)+G17(n)+G18 (n)+G19(n)+G20(n)+G21 (n)+G22(n)+G23(n)
++G24(n) , fixeborder=true);
+
+plot (Th, wait=true, fill—true);
+
+fespace Vh(Th,P2, periodic =[[2,(cos(pi/12))*(y—y02)—(sin (pi/12))*(x—x02)],
+[9 (cos (3% pi/12))*(y—y09)—(sin(—3*pi /12))*(x—x09)],
+[4 (cos (3* pi /12))*(y—y04)—(sin (3* pi /12))*(x—-x04)],
+[11 (cos (pi/12))*(y-y11)—(sin(—pi/12))*(x-x11)],
+[6 ,(cos(5* pi /12))*(y—y06)—(sin (5* pi /12))*(x—x06)],
+[13 ,(cos(pi/12))*(y—-y13)—(sin (pi/12))*(x-x13)],
+[8 ,(cos(7* pi /12))*(y—y08)—(sin (7* pi /12))*(x—x08)],
+[15 , (cos (3* pi /12))*(y—y15)—(sin (3* pi /12))*(x—x15)],
+[10 , (cos (9* pi /12))*(y—y10)—(sin (9* pi /12))*(x—x10)],
+[17 , (cos (5* pi /12))*(y—y17)—(sin (5* pi /12))*(x—x17)],
+[12 ,(cos(11* pi /12))*(y-y12)—(sin (11* pi/12))*(x-x12)],
+[19 , (cos (7* pi /12)) *(y—y19)—(sin (7* pi /12))*(x—x19)],
+[14 ,(cos (13% pi /12))*(y-y14) —(sin (13% pi /12))*(x-x14)],
+[21 , (cos (9* pi /12)) *(y—y21)—(sin (9* pi /12))*(x—x21)],
+[16 ,(cos(15* pi /12))*(y—y16)—(sin (15* pi/12))*(x-x16)],
+[23 ,(cos(11* pi /12))*(y—y23) —(sin (11* pi /12))*(x-x23)],
+[18 ,(cos(17* pi /12))*(y—y18) —(sin (17* pi /12))*(x-x18)] ,
+[1 , (cos (13* pi /12)) *(y—y01)—(sin (13% pi/12))*(x-x01)],
+[20 ,(cos(19* pi /12))*(y—y20) —(sin (19% pi /12))*(x—x20)] ,
+[3 , (cos (15* pi/12)) *(y—y03)—(sin (15% pi/12))*(x-x03)],
+[22 ,(cos(21* pi /12))*(y—y22)—(sin (21* pi /12))*(x—x22)],
+[5 ,(cos(17* pi /12)) *(y—y05)—(sin (17* pi/12))*(x-x05)],
+[24 ,(cos (23% pi /12))*(y—y24) —(sin (23 pi /12))*(x-x24)],
+[7 , (cos (19* pi /12)) *(y—y07)—(sin (19* pi /12))*(x-x07 )]]);
+
+Vh ul, u2;
+
+real sigma = 0.00001;
+
+varf op(ul,u2)= int2d(Th)(dx(ul)*dx(u2)+ dy(ul)*dy(u2)— sigma*(4*ul*u2)/(1—x*2—y~2)~2);
+varf b([ul] ,[u2]) = int2d(Th)((4*ul*u2)/(1—x*2-y~2)>2);
+
+matrix OP= op(Vh,Vh, solver=Crout , factorize=1);
+matrix B=b(Vh, Vh, solver=CG, eps=le —20);
+
+real[int] ev(nev);
+
+124

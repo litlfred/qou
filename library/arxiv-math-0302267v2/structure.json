@@ -8,9 +8,15 @@
   "pages": 84,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 53,
+    "reason": "10 of 442 words are a stray single letter: the text layer splits words"
+   }
+  ]
  },
  "metadata": {
   "arxiv": {
@@ -20,33 +26,34 @@
    "stamp_date": "27 Feb 2003"
   },
   "doi": null,
-  "title": "arXiv:math/0302267v2 [math.NT] 27 Feb 2003",
+  "title": "Groupes fondamentaux motiviques de Tate mixte",
   "authors_raw": null,
   "title_lines": [
    "Groupes fondamentaux motiviques de Tate mixte",
-   "P. Deligne et A. B. Goncharov\u2217",
-   "R\u00e9sum\u00e9. Nous d\u00e9finissons la cat\u00e9gorie des motifs de Tate mixte",
-   "sur l\u2019anneau des S-entiers d\u2019un corps de nombres, et le groupe"
+   "P. Deligne et A. B. Goncharov∗",
+   "Résumé. Nous définissons la catégorie des motifs de Tate mixte",
+   "sur l’anneau des S-entiers d’un corps de nombres, et le groupe"
   ],
-  "abstract": "We de\ufb01ne the category of mixed Tate motives over the ring of S-integers of a number \ufb01eld. We de\ufb01ne the motivic fundamental group (made unipotent) of a unirational variety over a number \ufb01eld. We apply this to the study of the motivic fundamental group of the projective line punctured at zero, in\ufb01nity and all N-th roots of unity. \u2217Research partially supported by NSF Grant DMS-0099390",
+  "abstract": "We deﬁne the category of mixed Tate motives over the ring of S-integers of a number ﬁeld. We deﬁne the motivic fundamental group (made unipotent) of a unirational variety over a number ﬁeld. We apply this to the study of the motivic fundamental group of the projective line punctured at zero, inﬁnity and all N-th roots of unity. ∗Research partially supported by NSF Grant DMS-0099390",
   "docinfo": {
    "Title": "arXiv:math/0302267v2  [math.NT]  27 Feb 2003",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
    "CreationDate": "D:20180528165538-04'00'"
   },
-  "title_raw": "Groupes fondamentaux motiviques de Tate mixte P. Deligne et A. B. Goncharov\u2217 R\u00e9sum\u00e9. Nous d\u00e9finissons la cat\u00e9gorie des motifs de Tate mixte sur l\u2019anneau des S-entiers d\u2019un corps de nombres, et le groupe",
+  "title_raw": "Groupes fondamentaux motiviques de Tate mixte P. Deligne et A. B. Goncharov∗ Résumé. Nous définissons la catégorie des motifs de Tate mixte sur l’anneau des S-entiers d’un corps de nombres, et le groupe",
   "title_source": "metadata",
   "title_verified": true,
   "title_evidence": {
    "metadata": "arXiv:math/0302267v2 [math.NT] 27 Feb 2003",
    "heading": "Groupes fondamentaux motiviques de Tate mixte",
-   "text": "Groupes fondamentaux motiviques de Tate mixte P. Deligne et A. B. Goncharov\u2217 R\u00e9sum\u00e9. Nous d\u00e9finissons la cat\u00e9gorie des motifs de Tate mixte sur l\u2019anneau des S-entiers d\u2019un corps de nombres, et le groupe",
+   "text": "Groupes fondamentaux motiviques de Tate mixte P. Deligne et A. B. Goncharov∗ Résumé. Nous définissons la catégorie des motifs de Tate mixte sur l’anneau des S-entiers d’un corps de nombres, et le groupe",
    "corroborated_by": [
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:math/0302267v2 [math.NT] 27 Feb 2003"
  },
  "toc": [
   {
@@ -80,13 +87,14 @@
   },
   {
    "level": 1,
-   "title": "Motifs de Tate mixte sur l\u2019anneau des S-entiers de k",
+   "title": "Motifs de Tate mixte sur l’anneau des S-entiers de k",
    "page": 6,
    "source": "inferred",
    "number": "1",
-   "confidence": 0.55,
+   "confidence": 0.8,
    "evidence": [
     "contents",
+    "body",
     "number"
    ],
    "page_label": "4"
@@ -123,7 +131,7 @@
   },
   {
    "level": 1,
-   "title": "Le groupe fondamental unipotent motivique d\u2019une vari\u00b4et\u00b4e rationnelle",
+   "title": "Le groupe fondamental unipotent motivique d’une vari´et´e rationnelle",
    "page": 43,
    "source": "inferred",
    "number": "4",
@@ -138,7 +146,7 @@
   },
   {
    "level": 1,
-   "title": "Le groupe fondamental motivique du compl\u00b4ement, dans P1, de 0, \u221eet \u00b5N",
+   "title": "Le groupe fondamental motivique du compl´ement, dans P1, de 0, ∞et µN",
    "page": 53,
    "source": "inferred",
    "number": "5",
@@ -168,7 +176,7 @@
   },
   {
    "level": 1,
-   "title": "Appendice. Rappels sur les groupes alg\u00b4ebriques unipotents",
+   "title": "Appendice. Rappels sur les groupes alg´ebriques unipotents",
    "page": 79,
    "source": "inferred",
    "number": null,
@@ -944,8 +952,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 1277,
-   "n_words": 204,
+   "n_chars": 1274,
+   "n_words": 203,
    "label_start": null,
    "label_end": null
   },
@@ -956,8 +964,8 @@
    "level": 1,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 4,
-   "n_words": 2,
+   "n_chars": 18,
+   "n_words": 3,
    "label_start": null,
    "label_end": "1"
   },
@@ -976,7 +984,7 @@
   {
    "id": "sec-002-1-motifs-de-tate-mixte-sur-lanneau-des-s-entiers",
    "number": "1",
-   "title": "Motifs de Tate mixte sur l\u2019anneau des S-entiers de k",
+   "title": "Motifs de Tate mixte sur l’anneau des S-entiers de k",
    "level": 1,
    "page_start": 5,
    "page_end": 15,
@@ -1012,7 +1020,7 @@
   {
    "id": "sec-005-4-le-groupe-fondamental-unipotent-motivique-dune",
    "number": "4",
-   "title": "Le groupe fondamental unipotent motivique d\u2019une vari\u00b4et\u00b4e rationnelle",
+   "title": "Le groupe fondamental unipotent motivique d’une vari´et´e rationnelle",
    "level": 1,
    "page_start": 43,
    "page_end": 53,
@@ -1024,12 +1032,12 @@
   {
    "id": "sec-006-5-le-groupe-fondamental-motivique-du-complement",
    "number": "5",
-   "title": "Le groupe fondamental motivique du compl\u00b4ement, dans P1, de 0, \u221eet \u00b5N",
+   "title": "Le groupe fondamental motivique du compl´ement, dans P1, de 0, ∞et µN",
    "level": 1,
    "page_start": 53,
    "page_end": 70,
-   "n_chars": 27876,
-   "n_words": 5161,
+   "n_chars": 27854,
+   "n_words": 5162,
    "label_start": "51",
    "label_end": "68"
   },
@@ -1051,7 +1059,7 @@
   "likely_scanned": false,
   "toc_entries": 9,
   "toc_inferred_entries": 9,
-  "toc_inferred_mean_confidence": 0.85,
+  "toc_inferred_mean_confidence": 0.878,
   "toc_inferred_empty_share": 0.125,
   "toc_inferred_method": "contents",
   "figure_entries": 0,
@@ -1067,25 +1075,24 @@
   },
   "toc_alignment": {
    "listed_not_found": {
-    "count": 1,
-    "items": [
-     "Motifs de Tate mixte sur l\u2019anneau des S-entiers de k"
-    ]
+    "count": 0,
+    "items": []
    },
    "found_not_listed": {
     "count": 1,
     "items": [
-     "1 Motifs de Tate mixte sur l\u2019anneau des S-entiers d\u2019un corps de nombres."
+     "1 Motifs de Tate mixte sur l’anneau des S-entiers d’un corps de nombres."
     ]
    },
    "page_mismatch": {
     "count": 1,
     "items": [
-     "Appendice. Rappels sur les groupes alg\u00b4ebriques unipotents: listed p79, found p77"
+     "Appendice. Rappels sur les groupes alg´ebriques unipotents: listed p79, found p77"
     ]
    }
   },
   "sections": 9,
-  "chars_total": 139027
+  "chars_total": 139016,
+  "furniture_lines_stripped": 0
  }
 }

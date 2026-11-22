@@ -7,10 +7,11 @@ section_number: null
 pages: 1-2
 source_pdf: 0803.1227v1.pdf
 source_sha256: cf72e0fcdc7f3ddf
-doc_brief: "Linear programming bounds for unitary space time codes — The linear programming method is applied to the space Un(C) of uni- tary matrices in order to obtain bounds for codes relative to the"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.951
+latex_coverage_ratio: 0.994
+doc_brief: "Linear programming bounds for unitary space time codes — The linear programming method is applied to the space Un(C) of uni- tary matrices in order to obtain bounds for codes relative to the"
 ---
 Nowadays breakthrough of wireless communications has provided new and nice problems to the field of coding theory. Indeed strategic issues of MIMO communications has lead to consider coding in Grassmann and Stiefel manifolds, and also in unitary groups [@TSE]. Codes in unitary groups are useful in the context of non-coherent flat Rayleigh channel as shown in [@MARZETTA]. The performance of a unitary space-time code $\Code$ is measured (see [@ROSEN]) by two functions namely the diversity sum $\Sigma \Nu$ and the diversity product $\Pi \Nu$ : $$\begin{aligned}
  \Sigma \Nu := \frac{1}{2\sqrt{n}} \min \left \{ ||x-y||\ :

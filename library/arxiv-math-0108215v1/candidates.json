@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0108215v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "191784d2ccb3415a0e5fd952e138b8fc6979cab398d0e5541ec91bf7ab78da57",
+  "file": "0108215v1.pdf"
+ },
+ "provenance": {
+  "title": "arXiv:math/0108215v1 [math.GT] 30 Aug 2001",
+  "authors": "Department of Mathematics and Computer Science",
+  "arxiv": {
+   "id": "math/0108215",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "30 Aug 2001"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

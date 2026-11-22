@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1801.04409v4/blocks/prose-sec-011",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Semisimplification of some non-symmetric categories",
-  "pageStart": 21,
-  "pageEnd": 22,
-  "text": "../sections/sec-011-5-semisimplification-of-some-non-symmetric-categ.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1801.04409v4",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1801.04409v4",
+  "title": "Proof of Theorem 4.2",
+  "pageStart": 16,
+  "pageEnd": 17,
+  "text": "../sections/sec-011-42-proof-of-theorem-42.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1801.04409v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1801.04409v4/manifest.jsonld",
   "provenance": "ingested"
 }

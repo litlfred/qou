@@ -1,0 +1,50 @@
+1958 Noelia Rizo, A. A. Schaeffer Fry and Carolina Vallejo
+
+Proof. By [Navarro 2004, Theorem 3.4], we may assume that DaG. Write C = Cg(D) 2 D. Let
+b € BI(C | D) be a root of B with canonical character 6. By Lemma 1.2, we may assume that @ is
+G-invariant (in particular, G/C is a p’-group) and
+
+Irro(B)7! = U Irr(G | 6.) C Irr(G/®(D)).
+elr(D/®(D))
+Write G = G/®(D) and use the bar convention. Let F = Cg(D), where ®(D) C F <G. We claim
+that F = C. Clearly C C F. Note that F acts trivially on D and coprimely on D. By [Isaacs 2008,
+Theorem 3.29] we have that F acts trivially on D as well. Thus F = C as claimed.
+
+Notice that since D is cyclic and G/C is a p’-group, then G/C is isomorphic to a subgroup of C)_1.
+Say |G/C| =m and let {A;};_, be a complete set of representatives of the G/C-orbits on Irr(D) \ {1p},
+where here we view Irr(D)  Irr(D), and with this identification Irr(D) are exactly the elements of Irr(D)
+with order dividing p. Note that ker A; = ®(D) for all 1 <i <t, hence G,, =C for every | <i <t, and all
+the orbits of the action of G/C on Irr(D) \ {1p} have the same size m. In particular, t = (p— 1)/m. Since
+@ is G-invariant, for every 1 <i <t we have that Go, = G,, = C, and by the Clifford correspondence,
+|Irr(G | 6,)| = |Inr(C | 6,,)| = 1. Also, since G/C is cyclic, 9 extends to G and therefore by Gallagher
+theory |Irr(G | 0)| =m. Then
+
+p-l
+m
+
+t
+|Irro(B)" | = |Irr(G | @)| +“ lIer(G | 6,)| =m +t = m+ Sp.
+
+i=l
+Note that if p = 2, 3 then m+ (p—1)/m = p, whenever m divides p— 1. Also notice that |Irr9(B)”'| = 1
+if, and only if, D=1. O
+
+The upper bound in Lemma 1.3 is not generally attained if p > 3, as shown by the dihedral group D2»,
+which satisfies |Irr(Bo(D2,))°'| < p. We care to remark that the numerical condition |Irr9(B)'| < p does
+not generally imply that a defect group D of B is cyclic. For instance, for p = 11, the semidirect product
+H= Fi, x SL (5) satisfies |Irr),(Bo(H))” | = |Irr(H)| = 10. (We would like to thank Gabriel Navarro
+for providing us with this example.)
+
+We will need the following divisibility result, which we obtain by adapting the proof of [Gow 1979,
+Theorem 5.2].
+
+Lemma 1.4. Let G be a finite group, let p € {2,3}, and let B be a block of G with nontrivial defect
+group D. Then p divides \Irrg(B)"'|.
+
+Proof. Write
+v= DY xx. @)
+
+xeln(B)
+and notice that y is a character of G that vanishes on p-singular elements by the weak block orthogonality
+relation (see [Navarro 1998, Corollary 3.7]). In particular, yp = fpp for some natural number f, where
+pp denotes the regular character of P.

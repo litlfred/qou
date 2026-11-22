@@ -1,18 +1,24 @@
 ---
 doc_id: arxiv-hep-ph-9308276v1
-doc_title: "arXiv:hep-ph/9308276v1 14 Aug 1993"
+doc_title: "The Electroweak Chiral Lagrangian for the Standard Model with a heavy Higgs"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
-pages: 2-2
+pages: 2-3
 source_pdf: 9308276v1.pdf
 source_sha256: 498931b15afb3f65
 toc_source: inferred
+text_source: latex
+latex_prose_ratio: 0.996
+latex_coverage_ratio: 1.0
+doc_brief: "The Electroweak Chiral Lagrangian for the Standard Model with a heavy Higgs — The most general chiral Lagrangian for electroweak interactions with the complete set of SU(2)L × U(1)Y invariant"
 ---
-Chiral Lagrangians have been extensively used to describe the phenomenon of spontaneous sym-
-metry breaking both in strong and electroweak interactions.
-The basis of this approach was
-formulated by Weinberg [1] to characterize the most general S-matrix elements for soft pion in-
-teractions; and later on it was greatly developed by Gasser and Leutwyler [2] in a well deﬁned
-framework called chiral perturbation theory describing low energy aspects of strong interactions
-[3]. The use of chiral Lagrangians as low energy eﬀective theories for electroweak interactions
+Chiral Lagrangians have been extensively used to describe the phenomenon of spontaneous symmetry breaking both in strong and electroweak interactions. The basis of this approach was formulated by Weinberg [@W] to characterize the most general S-matrix elements for soft pion interactions; and later on it was greatly developed by Gasser and Leutwyler [@GL] in a well defined framework called chiral perturbation theory describing low energy aspects of strong interactions [@D]. The use of chiral Lagrangians as low energy effective theories for electroweak interactions has received much attention in the past few years [@DHD; @DHT; @HDG; @EH]. The electroweak chiral Lagrangian provides the most general parametrization of the Higgs phenomenon for the spontaneous breaking of the $\gs$ symmetry in terms of the minimum number of degrees of freedom, namely, the three would-be Goldstone bosons (GB). These bosons are incorporated into non-linear representations of the $\gs$ symmetry group such that the electroweak chiral Lagrangian built up with these modes and the gauge fields is manifestly $\gs$ invariant. The price to be paid in this Higgs-less parametrization is that the resulting low energy theory is non-renormalizable, and a tower of new counterterms of increasing dimension has to be added at each loop order to render the theory finite.
+
+From the point of view of effective field theories, chiral Lagrangians can be regarded as the low energy limit of an underlying fundamental theory, where some heavy fields have been integrated out inducing additional higher dimension operators. These effective operators can, in principle, be determined if the underlying fundamental interactions are known. In a perturbative approach, it is done by explicit calculation of the relevant loop diagrams and by matching the predictions of the full underlying theory (in which heavy particles are present) and those of the low energy effective theory (with only light degrees of freedom) at some reference scale [@G]. This combined picture of integrating out the heavy fields and matching the predictions of the two theories has been recently applied to some particular situations in electroweak interactions. One example is provided in the standard model when the heavy top quark is integrated out at one loop level [@FMM]. Other situations when going beyond the standard model have also been considered [@F; @Sint]. Technicolor models [@TEC] where one or more pairs of techniquark doublets are integrated out are typical examples [@HDG; @Lynn; @AW].
+
+In this paper, we have considered the possibility where the standard model itself is the underlying theory and the heavy field to be integrated out is the Higgs particle. Our aim is to determine the electroweak chiral Lagrangian (EChL), being $\gs$ symmetric, that parametrizes electroweak interactions to one loop order in the case of a heavy Higgs particle. We will deduce the values of the EChL parameters by integrating out the Higgs field to one loop level and by matching the standard model predictions in the large $\mh$ limit with the predictions from the chiral Lagrangian to one loop order. By large $\mh$ limit we mean the situation where the mass of the Higgs is much larger than the available external momenta (p$^2 \ll \mh^2$) and other particle masses (m$^2 \ll \mh^2$, m= M$_{\rm W}$, M$_{\rm Z}$), but not so high that perturbation theory is unreliable ($\mh^2 \lsim 1$TeV$^2$).
+
+The large $\mh$ limit of the standard model has been studied before by several authors in the context of the gauged non-linear sigma model. In the pioneering works of Appelquist and Bernard [@AB] and Longhitano [@L], all the new divergences appearing when calculating with the non-renormalizable non-linear sigma model to one loop order were sistematically found. By using the fact that the mass of the Higgs particle acts as a regulator for the standard model, they could identify these new divergences with the logarithmic dependence on $\mh$ of the observables in the standard model (see also [@VG]). However, with this approach, one cannot determine the finite (non-logarithmic) Higgs contributions to the EChL parameters that are of the same order in the perturbative expansion. In contrast, the effective chiral Lagrangian approach that we propose to use here reproduces correctly the two kind of Higgs contributions. As we will show in this work by explicit computation of the two and three point functions for gauge bosons to one loop, there are indeed finite contributions to the EChL parameters that, together with the logarithmic contributions, account for the complete non-decoupling effects of the Higgs particle in the large $\mh$ limit.
+
+In section 2, we present the complete $\gs$ invariant electroweak chiral Lagrangian and fix the prescription to calculate renormalized Green's functions with this Lagrangian to one loop order. The set of matching conditions relating the Green's functions obtained from the effective theory to one loop with the Green's functions computed in the Standard Model to one loop and in the large $\mh$ limit will be established in section 3. The values for the EChL parameters corresponding to a heavy Higgs particle of the Standard Model will also be derived in that section. Section 4 is devoted to some discussions on the most relevant phenomenological consequences of our results. The conclusions are summarized in section 5.

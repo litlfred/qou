@@ -1,0 +1,59 @@
+52 5. THE JANTZEN-SCHAPER THEOREM
+
+5.19 Corollary Suppose that R is an integral domain and let X € At(d,n) and
+we A(d,n), Then Gh = agp, considering g> as an element of R.
+
+Proof. Suppose first that R = Q(q) where g is an indeterminant over Q. By
+Proposition 5.5(i) the transition matrix between the semistandard basis of we and
+its orthogonal basis is unitriangular so by Theorem 5.18
+
+Giga JT] nM =a na.
+TET (A)
+However, by definition, Gh(4) € Z[q] so it follows that (9) € Z[q. (This is quite
+astounding given the definition of the rational functions +7(q)!)
+
+Now suppose that A is an arbitrary integral domain and let g be an invertible
+element of R. Consider R[q] as a Z[g]-module via the homomorphism 7 : Z[q] — R
+which maps ¢ to q. Then w sends an inner product (gs.¢r) in -Ygjg.g(d.n) to
+the corresponding inner product in .%p,4(d,n). Hence, (9) = 7(93(4)) can be
+considered as an element of R and the Gram determinant Gh(q) of the R-module
+we is equal to a g(a): Oo
+
+5.20 Example Let A = (3,2) and p = (27,1). Then 7o(A, 2) = {$,T} where
+and T= EEF. Therefore, Gi = q[2]q[4]q by Example 5.7.
+
+Now that we have formula for Gh we pull some contortionists’ tricks to rewrite
+the product In in a more usable form.
+
+Let v be a partition of n and let v’ be its conjugate partition ; that is, v/ =
+(v1, v5,...) where v} is equal for the number of nodes in column i of [v] for each
+i>d.
+
+For 1 <i<nlet 8; =n—i+v/; then 9 = (1,...,8,) is the sequence of beta
+numbers for v. Notice that 3, > $5 >--- > SB, > 0. For example, if vy = (n) then
+
+vy! = (1") and (n,n —1,... ,1) is the sequence of beta numbers for v; if vy = (1")
+then v/ = (n) and § = (Qn— 1,n—2,...,1,0).
+5.21 Let a = (a4,... , a) be any sequence of integers and let @ = (@,... ,@,) be
+
+the sequence obtained by putting the terms in a into non-increasing order. Then
+@ is the sequence of beta numbers for some partition if and only if a. > 0 for
+c=1,...,nanda,#a, ifb Fe.
+
+Suppose that @ is a sequence of beta numbers for some partition vy € A*(d,n).
+Then there exists a unique element w in G, such that ®@ = dew for c= 1,...,n.
+For any composition 7 let d-(a) = (—1)!“|To(v, 7)|; so d-(a) = +dim WY.
+
+If @ is not the sequence of beta numbers for any partition in At+(d,n) then we
+set d;(a) = 0.
+
+Now we return rewriting our formula for Gh. Let 9 = ((1,...,8n) be the
+sequence of ? numbers for \ and suppose that Z is the largest integer such that
+bz #0. Let z = pz: then every tableau T in 7), 1) has z exactly entries equal to
+
+Z and these occur at the feet of distinct columns, say columns ¢, < ¢c) < +++ < cz.
+Let T© be the tableau obtained from T by deleting all of the entries labelled 7 and
+let 8° = (8F,..., 8°) be sequence of integers given by
+
+a = &—1, ifbec,
+be) Bs. ifb eC,

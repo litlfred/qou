@@ -9,13 +9,14 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "The index of the sister of the 41 knot complement",
-  "pageStart": 45,
-  "pageEnd": 45,
+  "title": "Invariance of index under the 0--2 move",
+  "pageStart": 29,
+  "pageEnd": 32,
   "contains": [
-    "library/topologicalinvariance3dindex/blocks/prose-sec-016"
+    "library/topologicalinvariance3dindex/blocks/prose-sec-016",
+    "library/topologicalinvariance3dindex/blocks/thm-sec-016-01"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/topologicalinvariance3dindex",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/topologicalinvariance3dindex",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/topologicalinvariance3dindex/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/topologicalinvariance3dindex/manifest.jsonld",
   "provenance": "ingested"
 }

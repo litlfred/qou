@@ -1,0 +1,1 @@
+Observe that all Bessel functions involved in the above formulas are of integer order. Also note that the ratios like J(x, y) are entire functions of x and y because Jx is an entire function of x. In particular, the values J(x, x) are well deﬁned. Various denominator–free formulas for the kernel J are given in Section

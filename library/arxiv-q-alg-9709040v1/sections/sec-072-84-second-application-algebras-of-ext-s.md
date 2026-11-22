@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-q-alg-9709040v1
-doc_title: "arXiv:q-alg/9709040v1 29 Sep 1997"
+doc_title: "Deformation quantization of Poisson manifolds"
 section_id: sec-072-84-second-application-algebras-of-ext-s
 section_title: "Second application: algebras of Ext-s."
 section_number: 8.4
@@ -8,6 +8,7 @@ pages: 44-45
 source_pdf: 9709040v1.pdf
 source_sha256: 8baf650d86c5b8ab
 toc_source: inferred
+doc_brief: "Deformation quantization of Poisson manifolds — 75 sections: Front matter; Plans; Star-products"
 ---
 Let X be complex manifold, or a smooth algebraic variety of ﬁeld k of characteristic zero. We associate
 with it two graded vector spaces. The ﬁrst space HT •(X) is the direct sum L

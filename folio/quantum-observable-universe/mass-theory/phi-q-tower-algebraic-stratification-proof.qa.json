@@ -267,6 +267,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "94c2c06c4cd1",
+          "ts": "2a0865496340"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T08:21:42.663Z",
+        "reviewed_sha": "b0af11457ef9bb444f5b04ca38c5e93b52e59fdd",
+        "severity": "major",
+        "evidence": "Full review 2026-11-21. The proof does not establish its statement. (1) Step 3 (no level >= 3 term) rests on 'pentagon ascension' cited from rem:mass-endomorphism-jet-tower, a remark, not a proved block; no rewriting of Phi_q(|V_i V_j V_k|) into order <= 2 factors is exhibited, and 'iteration covers all higher orders' is asserted, not shown. (2) Step 2 says the three summands are identified with beta_empty, beta_{i}, beta_{i,j} 'term-by-term. Direct.' with no argument, and imports the formula from prop:mass-endomorphism-tower, which the statement's own banner says supersedes this scalar form (the block is marked Superseded). (3) Step 4 claims each summand lies in Z[q^{+-1/2}], but the statement uses the Frobenius norm, which involves a square root of a sum of squares and is not in that Laurent ring in general; and Phi_q is an infinite product that 'reduces to a polynomial when truncated at the GB-filtration level appropriate for the partition data', a truncation chosen, not derived, so the summand is not a well-defined ring element. (4) The statement's final claim, that the stratification identifies exactly with the J^{|S|}/J^{|S|+1} grading of the GS confinement filtration, is not addressed by any step. Step 1 is fine but trivial. No empirical data used and no ruling conflicts. Recommend demoting to remark or conjecture, consistent with its Superseded banner."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1142,7 +1158,7 @@
           "in_degree": 0,
           "cone_size": 5,
           "depth": 5,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1647,7 +1663,7 @@
         "reviewed_at": "2026-08-21T22:03:25.199Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
         "severity": "minor",
-        "evidence": "'No proof ANYWHERE in the algebraic engine invokes JSJ / hyperbolic-volume / Mostow / Thurston as a derivation input.' \u2014 a universal claim over the entire engine, asserted in a proof block with nothing cited. It is the kind of claim a sweep can check; as written the reader has to take it.",
+        "evidence": "'No proof ANYWHERE in the algebraic engine invokes JSJ / hyperbolic-volume / Mostow / Thurston as a derivation input.' — a universal claim over the entire engine, asserted in a proof block with nothing cited. It is the kind of claim a sweep can check; as written the reader has to take it.",
         "notes": "Proposed: cite the audit or checker that establishes it, or narrow to 'No proof in this chapter's algebraic engine ...'. Not applied inline: narrowing the scope changes the claim."
       }
     ],
@@ -1683,7 +1699,7 @@
         "reviewed_at": "2026-08-21T22:03:25.370Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
         "evidence": "Numbered steps, short sentences.",
-        "notes": "RIGOR \u2014 Phi_q CONVENTION DRIFT, three incompatible definitions inside one chapter, two of them in this batch. Step 4 of this block writes 'the quantum dilogarithm Phi_q is given as a formal product prod_{n>=0} (1 - q^n . x) in Z[q][[x]]'. The sibling rem:phi-q-resums-trace-series displays Phi_q(z) = prod_{k>=1} (1 - q^{-k} z)^{-1}, and prf:phi-q-categorical-truncation uses Phi_q^{[<=k]}(z) = prod_{j=1}^{k} (1 - q^{-j} z)^{-1}. Those differ from this one in THREE independent ways: the reciprocal (this block has no exponent -1, so it is the Pochhammer (x;q)_infinity, which is the INVERSE of the other two), the sign of the exponent (q^{+n} here, q^{-k} there \u2014 and with q_0 = 1.10998 > 1 the two have opposite convergence behaviour, since only q^{-k} -> 0), and the starting index (n >= 0 here, k >= 1 there, a factor of (1 - x)). The discrepancy is not cosmetic for this step's own argument: Step 4's conclusion that Phi_q 'reduces to a polynomial when truncated' is TRUE for the Pochhammer written here and FALSE for the reciprocal written in the two sibling blocks, where a truncation is a rational function \u2014 which is exactly why prf:phi-q-categorical-truncation calls its truncation 'a finite product' rather than a polynomial. Proposed: fix one convention chapter-wide and state it once at the definition (def:quantum-bloch-group or def:phi-q-piece), then have every block cite it. VERIFIED OK in this block: Step 4's claim that no convergence condition on |q| is needed is correct for the formal-power-series reading; Step 3's pentagon reduction of order-3 to order-<=2 plus a level-(n+1) residual matches prop:pentagon-uv-commutation exactly. MINOR: the JSJ section calls rem:phi-q-tower-jsj-bridge 'The conjecture', but that label is a rem:, not a conj:."
+        "notes": "RIGOR — Phi_q CONVENTION DRIFT, three incompatible definitions inside one chapter, two of them in this batch. Step 4 of this block writes 'the quantum dilogarithm Phi_q is given as a formal product prod_{n>=0} (1 - q^n . x) in Z[q][[x]]'. The sibling rem:phi-q-resums-trace-series displays Phi_q(z) = prod_{k>=1} (1 - q^{-k} z)^{-1}, and prf:phi-q-categorical-truncation uses Phi_q^{[<=k]}(z) = prod_{j=1}^{k} (1 - q^{-j} z)^{-1}. Those differ from this one in THREE independent ways: the reciprocal (this block has no exponent -1, so it is the Pochhammer (x;q)_infinity, which is the INVERSE of the other two), the sign of the exponent (q^{+n} here, q^{-k} there — and with q_0 = 1.10998 > 1 the two have opposite convergence behaviour, since only q^{-k} -> 0), and the starting index (n >= 0 here, k >= 1 there, a factor of (1 - x)). The discrepancy is not cosmetic for this step's own argument: Step 4's conclusion that Phi_q 'reduces to a polynomial when truncated' is TRUE for the Pochhammer written here and FALSE for the reciprocal written in the two sibling blocks, where a truncation is a rational function — which is exactly why prf:phi-q-categorical-truncation calls its truncation 'a finite product' rather than a polynomial. Proposed: fix one convention chapter-wide and state it once at the definition (def:quantum-bloch-group or def:phi-q-piece), then have every block cite it. VERIFIED OK in this block: Step 4's claim that no convergence condition on |q| is needed is correct for the formal-power-series reading; Step 3's pentagon reduction of order-3 to order-<=2 plus a level-(n+1) residual matches prop:pentagon-uv-commutation exactly. MINOR: the JSJ section calls rem:phi-q-tower-jsj-bridge 'The conjecture', but that label is a rem:, not a conj:."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1706,6 +1722,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T22:03:25.370Z",
+  "updated_at": "2026-11-21T08:21:42.663Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

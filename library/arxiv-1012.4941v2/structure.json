@@ -7,11 +7,11 @@
   "bytes": 298381,
   "pages": 21,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -22,18 +22,26 @@
   },
   "doi": null,
   "title": "ALGORITHMS FOR HIGHLY SYMMETRIC LINEAR AND INTEGER PROGRAMS",
-  "authors_raw": "RICHARD B\u00d6DI, KATRIN HERR, AND MICHAEL JOSWIG",
+  "authors_raw": "RICHARD BÖDI, KATRIN HERR, AND MICHAEL JOSWIG",
   "title_lines": [
    "ALGORITHMS FOR HIGHLY SYMMETRIC",
    "LINEAR AND INTEGER PROGRAMS"
   ],
-  "abstract": "This paper deals with exploiting symmetry for solving linea r and integer programming problems. Basic properties of linear represen tations of \ufb01nite groups can be used to reduce symmetric linear programming to solving li near programs of lower dimension. Combining this approach with knowledge of the ge ometry of feasible inte- ger solutions yields an algorithm for solving highly symmet ric integer linear programs which only takes time which is linear in the number of constra ints and quadratic in the dimension.",
+  "abstract": "This paper deals with exploiting symmetry for solving linear and integer programming problems. Basic properties of linear representations of ﬁnite groups can be used to reduce symmetric linear programming to solving linear programs of lower dimension. Combining this approach with knowledge of the geometry of feasible inte- ger solutions yields an algorithm for solving highly symmetric integer linear programs which only takes time which is linear in the number of constraints and quadratic in the dimension.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181029125246-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20181029125246-04'00'"
+  },
+  "title_raw": "ALGORITHMS FOR HIGHLY SYMMETRIC LINEAR AND INTEGER PROGRAMS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "ALGORITHMS FOR HIGHLY SYMMETRIC LINEAR AND INTEGER PROGRAMS 1. Introduction It is a known fact that many standard (integer) linear programming formulations of relevant problems in optimization show a lot of symmetry. In this situation a standard branch-andcut framework repeatedly enumerates symmetri",
+   "outline": "1. Introduction",
+   "text": "ALGORITHMS FOR HIGHLY SYMMETRIC LINEAR AND INTEGER PROGRAMS",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [
@@ -42,81 +50,315 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Automorphisms of Linear Programs",
    "page": 2,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Symmetries of Integer Linear Programs",
    "page": 7,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Layers of Integer Points",
    "page": 9,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Searching Integer Layers Efficiently",
    "page": 11,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Finding All Symmetries",
    "page": 13,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Hypertruncated Cubes",
    "page": 16,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Computational Results",
    "page": 18,
    "source": "outline",
-   "number": "8"
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Hypertruncated Cubes",
    "page": 18,
    "source": "outline",
-   "number": "8.1"
+   "number": "8.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Wild Input",
    "page": 18,
    "source": "outline",
-   "number": "8.2"
+   "number": "8.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 20,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The reduced ILP graph for (10)",
+   "page": 15,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Hypertruncated Cubes",
+   "page": 19,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "2",
+   "title": "Symmetrized distorted joins of a hexagon with cross-polytopes",
+   "page": 20,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 670,
+   "n_words": 98,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -124,8 +366,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 3264,
-   "n_words": 522
+   "n_chars": 3241,
+   "n_words": 499,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-2-automorphisms-of-linear-programs",
@@ -134,8 +378,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 7,
-   "n_chars": 14950,
-   "n_words": 2791
+   "n_chars": 14938,
+   "n_words": 2781,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-3-symmetries-of-integer-linear-programs",
@@ -144,8 +390,10 @@
    "level": 1,
    "page_start": 7,
    "page_end": 9,
-   "n_chars": 6471,
-   "n_words": 1193
+   "n_chars": 6484,
+   "n_words": 1206,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-4-layers-of-integer-points",
@@ -154,8 +402,10 @@
    "level": 1,
    "page_start": 9,
    "page_end": 11,
-   "n_chars": 4877,
-   "n_words": 884
+   "n_chars": 4861,
+   "n_words": 904,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-004-5-searching-integer-layers-efficiently",
@@ -164,8 +414,10 @@
    "level": 1,
    "page_start": 11,
    "page_end": 13,
-   "n_chars": 7572,
-   "n_words": 1441
+   "n_chars": 7491,
+   "n_words": 1489,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-005-6-finding-all-symmetries",
@@ -174,8 +426,10 @@
    "level": 1,
    "page_start": 13,
    "page_end": 16,
-   "n_chars": 9889,
-   "n_words": 1848
+   "n_chars": 9878,
+   "n_words": 1845,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-006-7-hypertruncated-cubes",
@@ -184,8 +438,10 @@
    "level": 1,
    "page_start": 16,
    "page_end": 18,
-   "n_chars": 3770,
-   "n_words": 718
+   "n_chars": 3761,
+   "n_words": 723,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-007-81-hypertruncated-cubes",
@@ -195,7 +451,9 @@
    "page_start": 18,
    "page_end": 18,
    "n_chars": 133,
-   "n_words": 29
+   "n_words": 29,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-008-8-computational-results",
@@ -204,8 +462,10 @@
    "level": 1,
    "page_start": 18,
    "page_end": 18,
-   "n_chars": 2487,
-   "n_words": 405
+   "n_chars": 2475,
+   "n_words": 393,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-009-82-wild-input",
@@ -214,8 +474,10 @@
    "level": 2,
    "page_start": 18,
    "page_end": 20,
-   "n_chars": 4348,
-   "n_words": 796
+   "n_chars": 4347,
+   "n_words": 799,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-010-references",
@@ -224,16 +486,26 @@
    "level": 1,
    "page_start": 20,
    "page_end": 21,
-   "n_chars": 4592,
-   "n_words": 653
+   "n_chars": 4528,
+   "n_words": 589,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 11,
-  "sections": 11,
-  "chars_total": 62353,
+  "toc_inferred_entries": 0,
+  "figure_entries": 3,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 12,
+  "chars_total": 62807,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "main.tex",
@@ -246,34 +518,39 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.989,
-     "coverage_ratio": 0.984,
+     "prose_ratio": 0.947,
+     "coverage_ratio": 0.91,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-automorphisms-of-linear-programs",
      "title": "Automorphisms of Linear Programs",
-     "prose_ratio": 0.998,
-     "coverage_ratio": 0.981,
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-3-symmetries-of-integer-linear-programs",
      "title": "Symmetries of Integer Linear Programs",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.974,
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.973,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-4-layers-of-integer-points",
      "title": "Layers of Integer Points",
-     "prose_ratio": 0.978,
-     "coverage_ratio": 0.951,
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.94,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -281,14 +558,14 @@
      "id": "sec-004-5-searching-integer-layers-efficiently",
      "title": "Searching Integer Layers Efficiently",
      "prose_ratio": 0.988,
-     "coverage_ratio": 0.964,
+     "coverage_ratio": 0.957,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-005-6-finding-all-symmetries",
      "title": "Finding All Symmetries",
-     "prose_ratio": 0.982,
+     "prose_ratio": 0.974,
      "coverage_ratio": 0.98,
      "result": "overlaid",
      "converter": "pandoc"
@@ -296,8 +573,8 @@
     {
      "id": "sec-006-7-hypertruncated-cubes",
      "title": "Hypertruncated Cubes",
-     "prose_ratio": 0.994,
-     "coverage_ratio": 0.97,
+     "prose_ratio": 0.937,
+     "coverage_ratio": 0.959,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -305,7 +582,7 @@
      "id": "sec-007-81-hypertruncated-cubes",
      "title": "Hypertruncated Cubes",
      "prose_ratio": 0.046,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-008-8-computational-results",
@@ -319,7 +596,7 @@
      "id": "sec-009-82-wild-input",
      "title": "Wild Input",
      "prose_ratio": 0.974,
-     "coverage_ratio": 0.965,
+     "coverage_ratio": 0.969,
      "result": "overlaid",
      "converter": "pandoc"
     },

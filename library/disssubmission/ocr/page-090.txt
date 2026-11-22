@@ -1,0 +1,51 @@
+82 Chapter 4 — The Tannaka group of the theta divisor
+
+Let Up C U be the open dense stratum so that Go C G(g) is the Tannaka
+group of the theta divisor on a generic ppav. By lemma 4.6 the perverse
+intersection cohomology sheaf of such a theta divisor corresponds on the
+Tannakian side to the restriction V|g, of the standard representation V of
+the special orthogonal or symplectic group G(g).
+
+PROPOSITION 4.12. With notations as above, the following properties
+hold for the Tannaka groups of smooth theta divisors.
+
+(1) For g = g1 + g2 the generic Tannaka group Go has a subquotient
+which is isogenous to
+
+G(g1) x G(g2),
+provided that theorem 4.2 holds for the dimensions g, and gp.
+
+(2) There exists a connected subgroup H — Go and an irreducible
+representation W of H such that
+
+Vin = W101 ifgis even,
+u"“\)wel if g is odd,
+
+where 1 denotes the one-dimensional trivial representation.
+
+(3) For g > 4 and any stratum U; of codimension at most one in U
+there exists a homomorphism
+
+fi: Sl-2(A) — Gi
+
+such that f*(V) contains the g — 1" fundamental representation of
+the special linear group as a direct summand.
+
+Proof. Consider a morphism from a smooth irreducible quasi-projective
+complex curve S to the moduli space .2,, such that the generic point of S is
+mapped into some stratum Uj in the above stratification, and fix a geometric
+generic point 7 of S. Passing to the strict Henselization of S at s € S(C)
+we can form the perverse sheaf (dg, ) € Perv(X;,C) of nearby cycles. By
+theorem 3.15 we have an embedding
+
+G(¥(80,)) + G(So,) = Gi + Ge)
+
+7
+
+such that ¥(de;) corresponds on the Tannakian side to the restriction of the
+standard representation V to the subgroup G(‘P(dq, )). We will apply this
+remark in the following situations.
+
+For part (1) take S + .% » to be an embedding of a smooth curve which
+meets the locus of decomposable ppav’s in a single point s € S(C) but which
+is otherwise contained in the open dense stratum Up and has the properties

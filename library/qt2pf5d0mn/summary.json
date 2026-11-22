@@ -2,22 +2,27 @@
  "_schema": "library-summary/v1",
  "doc_id": "qt2pf5d0mn",
  "source_sha256": "4c8581c3b46398e3",
- "brief": "UC Santa Barbara — 18 sections: Abstract; Introduction; Higher Categories",
- "extended": "**UC Santa Barbara**\n\n*UC Santa Barbara Electronic Theses and Dissertations*\n\n106 pp, 18 sections.\n\n**Outline.** Abstract; Introduction; Higher Categories; Ribbon Fusion Categories; G-crossed Braided Spherical Fusion Categories ; Monoidal 2-categories with Duals; Invariants of 4-manifolds; Partition Function; A Formula for the Partition Function; Examples; Variation: Trivial G-grading; Proof of Invariance; Invariance under Choice of Representatives; Invariance under change of ordering; Pachner Moves; Invariance under Pachner Moves; Future Directions and Open Questions; Bibliography\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.1.1: [44] If X1,X 2 are any two repre-\n- Theorem 2.1.3: [44] Every monoidal categoryC is monoidal equivalent to a strict monoidal\n- Theorem 2.2.3: [48] LetD be a G-BSFC, then there exist a strict G-BSFCD′ with a\n- Theorem 3.1.4: The partition function ZD(M;T ) is an invariant\n- Theorem 4.1.4: Given a coloring F = (g,f ), we have\n- Theorem 4.2.9: LetT,T′ be two ordered triangulations of M which diﬀer by a reorder-",
+ "brief": "UC Santa Barbara — 19 sections: Front matter; Abstract; Introduction",
+ "extended": "**UC Santa Barbara**\n\n*UC Santa Barbara Electronic Theses and Dissertations*\n\n106 pp, 19 sections.\n\n**Outline.** Front matter; Abstract; Introduction; Higher Categories; Ribbon Fusion Categories; G-crossed Braided Spherical Fusion Categories ; Monoidal 2-categories with Duals; Invariants of 4-manifolds; Partition Function; A Formula for the Partition Function; Examples; Variation: Trivial G-grading; Proof of Invariance; Invariance under Choice of Representatives; Invariance under change of ordering; Pachner Moves; Invariance under Pachner Moves; Future Directions and Open Questions",
  "tokens": {
-  "brief": 18,
-  "extended": 266
+  "brief": 17,
+  "extended": 147
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-8"
+  },
+  {
    "id": "sec-000-abstract",
    "title": "Abstract",
-   "pages": "8-9"
+   "pages": "8-10"
   },
   {
    "id": "sec-001-introduction",
    "title": "Introduction",
-   "pages": "9-15"
+   "pages": "10-15"
   },
   {
    "id": "sec-002-higher-categories",
@@ -42,12 +47,12 @@
   {
    "id": "sec-006-invariants-of-4-manifolds",
    "title": "Invariants of 4-manifolds",
-   "pages": "42-42"
+   "pages": "42-43"
   },
   {
    "id": "sec-007-partition-function",
    "title": "Partition Function",
-   "pages": "42-51"
+   "pages": "43-51"
   },
   {
    "id": "sec-008-a-formula-for-the-partition-function",
@@ -87,12 +92,12 @@
   {
    "id": "sec-015-invariance-under-pachner-moves",
    "title": "Invariance under Pachner Moves",
-   "pages": "83-101"
+   "pages": "83-100"
   },
   {
    "id": "sec-016-future-directions-and-open-questions",
    "title": "Future Directions and Open Questions",
-   "pages": "101-103"
+   "pages": "100-103"
   },
   {
    "id": "sec-017-bibliography",
@@ -103,8 +108,7 @@
  "provenance": {
   "kind": "extractive",
   "from": [
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

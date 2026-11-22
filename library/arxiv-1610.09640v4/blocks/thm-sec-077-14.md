@@ -1,0 +1,1 @@
+Let A be a nonpositive cohomologically left pseudo-noether- ian DG ring, and let M ∈D− f (A). Then there is a quasi-isomorphism P →M in Cstr(A), where P is a pseudo-ﬁnite semi-free DG A-module, and sup(P) = sup(H(M)).

@@ -2,35 +2,50 @@
  "_schema": "library-summary/v1",
  "doc_id": "agt-v12-n2-p04-s",
  "source_sha256": "bcbb460bc75f5612",
- "brief": "The twisted Alexander polynomial for finite abelian covers over three manifolds — 5 sections: Introduction; The Reidemeister torsion; Preliminaries",
- "extended": "**The twisted Alexander polynomial for finite abelian covers over three manifolds**\n\n14 pp, 5 sections.\n\n**Outline.** 1 Introduction; 2.1 The Reidemeister torsion; 2 Preliminaries; 4.1 Statement of the result; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 4.1: With the above notation, we suppose that the twisted chain complex\n- Corollary 4.4: Suppose that'.\u00191.M//Dh ti andy'.\u00191.Mq//Dh si\u001ah ti, where we\n- Lemma 4.5: Let x2 V\u001a.t1;:::; tn/, c2 C\u0003.MI Z/. For",
+ "brief": "The twisted Alexander polynomial for finite abelian covers over three manifolds — 8 sections: Front matter; Introduction; Preliminaries",
+ "extended": "**The twisted Alexander polynomial for finite abelian covers over three manifolds**\n\n*JÉRÔME DUBOIS*\n\n14 pp, 8 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries; 2.1 The Reidemeister torsion; 3 Definition of the polynomial torsion; 4 Torsion for finite sheeted abelian coverings; 4.1 Statement of the result; References",
  "tokens": {
-  "brief": 36,
-  "extended": 120
+  "brief": 33,
+  "extended": 84
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-2"
+   "pages": "1-3"
   },
   {
-   "id": "sec-001-21-the-reidemeister-torsion",
-   "title": "The Reidemeister torsion",
-   "pages": "2-3"
-  },
-  {
-   "id": "sec-002-2-preliminaries",
+   "id": "sec-001-2-preliminaries",
    "title": "Preliminaries",
-   "pages": "3-8"
+   "pages": "3-3"
   },
   {
-   "id": "sec-003-41-statement-of-the-result",
+   "id": "sec-002-21-the-reidemeister-torsion",
+   "title": "The Reidemeister torsion",
+   "pages": "3-6"
+  },
+  {
+   "id": "sec-003-3-definition-of-the-polynomial-torsion",
+   "title": "Definition of the polynomial torsion",
+   "pages": "6-8"
+  },
+  {
+   "id": "sec-004-4-torsion-for-finite-sheeted-abelian-coverings",
+   "title": "Torsion for finite sheeted abelian coverings",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-005-41-statement-of-the-result",
    "title": "Statement of the result",
    "pages": "8-13"
   },
   {
-   "id": "sec-004-references",
+   "id": "sec-006-references",
    "title": "References",
    "pages": "13-14"
   }
@@ -38,8 +53,7 @@
  "provenance": {
   "kind": "extractive",
   "from": [
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

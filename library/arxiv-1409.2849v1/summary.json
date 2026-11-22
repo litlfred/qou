@@ -3,16 +3,21 @@
  "doc_id": "arxiv-1409.2849v1",
  "source_sha256": "7bf9646716fbb247",
  "brief": "MOD-GAUSSIAN CONVERGENCE AND ITS APPLICATIONS FOR MODELS OF STATISTICAL MECHANICS — In this paper we complete our understanding of the role played by the lim- iting (or residue) function in the",
- "extended": "**MOD-GAUSSIAN CONVERGENCE AND ITS APPLICATIONS FOR MODELS OF STATISTICAL MECHANICS**\n\n*PIERRE-LOÏC MÉLIOT AND ASHKAN NIKEGHBALI*\n\n49 pp, 15 sections.\n\n**Abstract.** In this paper we complete our understanding of the role played by the lim- iting (or residue) function in the context of mod-Gaussian convergence. The question about the probabilistic interpretation of such functions was initially raised by Marc Yor. After recalling our recent result which interprets the limiting function as a measure of \"breaking of symmetry\" in the Gaussian approximation in the framework of general central limit theorems type results, we introduce the framework of L 1-mod-Gaussian convergence in which the residue function is obtained as (up to a normalizing factor) the probability density of some sequences of random variables converging in law after a change of probability measure. In particular we recover some celebrated results due to Ellis and Newman on the convergence in law of dependent random variables arisisng in statistical mechanics.\n\n**Outline.** 1 Introduction; 1.1 Complex convergence and interpretation of ; 1.2 The method of joint cumulants; 1.3 Basic models; 3.1 Ellis-Newman lemma and deconvolution of a ; 3.2 The residue of mod-Gaussian convergence as; 3.3 Application to the Curie-Weiss model; 3.4 Mixed Curie-Weiss-Ising model; 3.5 Sub-critical changes of measures; 3.6 Random walks changed in measure; 4.1 Speed of convergence; 4.2 Local limit theorem; 5.1 Joint cumulants of the spins; 5.2 Bounds on the cumulants of the magnetizati; References",
+ "extended": "**MOD-GAUSSIAN CONVERGENCE AND ITS APPLICATIONS FOR MODELS OF STATISTICAL MECHANICS**\n\n*PIERRE-LOÏC MÉLIOT AND ASHKAN NIKEGHBALI*\n\n49 pp, 20 sections.\n\n**Abstract.** In this paper we complete our understanding of the role played by the lim- iting (or residue) function in the context of mod-Gaussian convergence. The question about the probabilistic interpretation of such functions was initially raised by Marc Yor. After recalling our recent result which interprets the limiting function as a measure of \"breaking of symmetry\" in the Gaussian approximation in the framework of general central limit theorems type results, we introduce the framework of L1-mod-Gaussian convergence in which the residue function is obtained as (up to a normalizing factor) the probability density of some sequences of random variables converging in law after a change of probability measure. In particular we recover some celebrated results due to Ellis and Newman on the convergence in law of dependent random variables arisisng in statistical mechanics.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Complex convergence and interpretation of ; 1.2 The method of joint cumulants; 1.3 Basic models; 2 Mod-Gaussian convergence for the Ising model; 3 Mod-Gaussian convergence in L1 and the Curie; 3.1 Ellis-Newman lemma and deconvolution of a ; 3.2 The residue of mod-Gaussian convergence as; 3.3 Application to the Curie-Weiss model; 3.4 Mixed Curie-Weiss-Ising model; 3.5 Sub-critical changes of measures; 3.6 Random walks changed in measure; 4 Local limit theorem and rate of convergence ; 4.1 Speed of convergence; 4.2 Local limit theorem; 5 Mod-Gaussian convergence for the Ising model; 5.1 Joint cumulants of the spins",
  "tokens": {
   "brief": 48,
-  "extended": 390
+  "extended": 426
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "3-3"
+   "pages": "1-3"
   },
   {
    "id": "sec-001-11-complex-convergence-and-interpretation-of-the",
@@ -27,60 +32,80 @@
   {
    "id": "sec-003-13-basic-models",
    "title": "Basic models",
-   "pages": "7-11"
+   "pages": "7-8"
   },
   {
-   "id": "sec-004-31-ellis-newman-lemma-and-deconvolution-of-a-lar",
+   "id": "sec-004-2-mod-gaussian-convergence-for-the-ising-model-t",
+   "title": "Mod-Gaussian convergence for the Ising model: the transfer matrix method",
+   "pages": "8-11"
+  },
+  {
+   "id": "sec-005-3-mod-gaussian-convergence-in-l1-and-the-curie-w",
+   "title": "Mod-Gaussian convergence in L1 and the Curie-Weiss model",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-006-31-ellis-newman-lemma-and-deconvolution-of-a-lar",
    "title": "Ellis-Newman lemma and deconvolution of a large Gaussian noise",
    "pages": "11-13"
   },
   {
-   "id": "sec-005-32-the-residue-of-mod-gaussian-convergence-as-a",
+   "id": "sec-007-32-the-residue-of-mod-gaussian-convergence-as-a",
    "title": "The residue of mod-Gaussian convergence as a limiting law",
    "pages": "13-15"
   },
   {
-   "id": "sec-006-33-application-to-the-curie-weiss-model",
+   "id": "sec-008-33-application-to-the-curie-weiss-model",
    "title": "Application to the Curie-Weiss model",
    "pages": "15-17"
   },
   {
-   "id": "sec-007-34-mixed-curie-weiss-ising-model",
+   "id": "sec-009-34-mixed-curie-weiss-ising-model",
    "title": "Mixed Curie-Weiss-Ising model",
    "pages": "17-19"
   },
   {
-   "id": "sec-008-35-sub-critical-changes-of-measures",
+   "id": "sec-010-35-sub-critical-changes-of-measures",
    "title": "Sub-critical changes of measures",
    "pages": "19-20"
   },
   {
-   "id": "sec-009-36-random-walks-changed-in-measure",
+   "id": "sec-011-36-random-walks-changed-in-measure",
    "title": "Random walks changed in measure",
    "pages": "20-24"
   },
   {
-   "id": "sec-010-41-speed-of-convergence",
+   "id": "sec-012-4-local-limit-theorem-and-rate-of-convergence-in",
+   "title": "Local limit theorem and rate of convergence in the Ellis-Newman limit theorem",
+   "pages": "24-24"
+  },
+  {
+   "id": "sec-013-41-speed-of-convergence",
    "title": "Speed of convergence",
    "pages": "24-30"
   },
   {
-   "id": "sec-011-42-local-limit-theorem",
+   "id": "sec-014-42-local-limit-theorem",
    "title": "Local limit theorem",
    "pages": "30-32"
   },
   {
-   "id": "sec-012-51-joint-cumulants-of-the-spins",
+   "id": "sec-015-5-mod-gaussian-convergence-for-the-ising-model-t",
+   "title": "Mod-Gaussian convergence for the Ising model: the cumulant method",
+   "pages": "32-32"
+  },
+  {
+   "id": "sec-016-51-joint-cumulants-of-the-spins",
    "title": "Joint cumulants of the spins",
    "pages": "32-41"
   },
   {
-   "id": "sec-013-52-bounds-on-the-cumulants-of-the-magnetization",
+   "id": "sec-017-52-bounds-on-the-cumulants-of-the-magnetization",
    "title": "Bounds on the cumulants of the magnetization",
    "pages": "41-48"
   },
   {
-   "id": "sec-014-references",
+   "id": "sec-018-references",
    "title": "References",
    "pages": "48-49"
   }

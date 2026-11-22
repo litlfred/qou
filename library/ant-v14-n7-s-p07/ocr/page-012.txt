@@ -1,0 +1,55 @@
+1906 Jordan S. Ellenberg, Wanlin Li and Mark Shusterman
+
+the general “minimalist conjecture” philosophy, which holds that positive ranks should be a density 0
+phenomenon except when forced by parity considerations from the functional equation (in this setting the
+
+functional equation never forces positive rank, and the rank is always even.)
+
+Corollary 3.3. Let A be an abelian variety defined over a finite field F, of odd characteristic. For each
+f € Qn.qn, denote by Ay the quadratic twist of A x¢, Fgm(x) by f. Let Rnim be the set{f € Qngm :
+Af has positive rank}. Then
+
+ar R
+lim lim sup Rol =0
+M>OO p-so0 nq” |
+
+Proof. Let P(x) be the characteristic polynomial of Frobenius acting on the Tate module of A and let g~*
+
+be one of its roots. Then rank A ¢ > 0 is equivalent to L(s, x¢) =0. (See [Li 2018, Proposition 4.6] for a
+similar statement with the same proof.) Thus, the statement is a direct application of Theorem 3.2. O
+
+We now prove Theorem 1.5, which makes use of the mod 2 Galois representations on J(C) rather
+than the representations modulo odd primes.
+
+Proof of Theorem 1.5. Let x1, ...,%2¢+2 be the set of Weierstrass points of C. The 2-torsion subgroup
+J(C)[2] is spanned by the degree-0 2-torsion divisors x; — x;. That is, the group of divisors of the form
+> a;x; with )* a; = 0 surjects onto J(C)[2]. Note also that xj + +--+ X2942 — (2g + 2)x, is a principal
+divisor and thus x; +---+ X29+42 is 0 in J(C)[2]. See [Gross 2012, Section 4] for detailed discussion.
+This identifies J(C)[2] with an explicit subquotient of Re, namely, J(C)[2] is the quotient of the
+subspace (a1, ..., d2g42) : )- aj = 0 by the 1-dimensional subspace spanned by (1, ..., 1).
+
+This identification is equivariant for the Frobenius action on both sides, so it allows us to describe the
+mod 2 Galois representation afforded by J(C) in terms of the permutation z which Frobenius induces on
+X1,...,%2g+2. To be precise, the action of S2¢+2 on J(C)[2] is a representation p : Sog42 > Sp2_(Z/22),
+and the action of Frobenius on J(C)[2] is given by p(z).
+
+The conditions on z given in Theorem 1.5 are equivalent to the condition that 2? is a product of
+
+2g+2 :
+F°* has eigenvalues
+
+two disjoint odd cycles. Thus, the action of z? in its permutation representation
+given by jx and [2942 for some odd 1 < k < 2g + 1; passing to the subquotient J (C)[2] removes two
+eigenspaces of p(s”) with the eigenvalue 1. So the eigenvalues of Frob? on J(C)[2] are the multiset
+MU Bs ek? where 1), denotes the nontrivial n-th roots of unity. We see in particular that p(s”) does
+not have | as an eigenvalue. But if the zeta function Zc had a zero at 3 then ./q would be a Frobenius
+eigenvalue on C, which would mean that q was an eigenvalue of Frob2; we have shown that Frob” has no
+eigenvalue congruent to | mod 2, which rules this out. This proves (1).
+
+What’s more, the multiset My Ut ye49-k contains any eigenvalue at most twice, and if (k,2g-+2—k)=1,
+no eigenvalue appears more than once. This proves (2) (or rather, it proves (2) for the zeta function of
+C/E qe, from which (2) is immediate.) oO
+
+Proof of Corollary 1.6. By assumption, f is an irreducible polynomial over Fy. So when deg f =n is
+even, Frobenius acts on the set of Weierstrass points of C; : y* = f(x) as an-cycle. If deg f =n is odd,
+then Frobenius acts on the set of Weierstrass points of C as a disjoint union of a (n—1)-cycle and a

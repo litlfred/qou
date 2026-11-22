@@ -5,18 +5,20 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1012.4090v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1012.4090v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1012.4090v1",
+  "title": "Generalized Skyrme Crystals",
   "contains": [
+    "library/arxiv-1012.4090v1/sections/sec-front-matter",
     "library/arxiv-1012.4090v1/sections/sec-000",
     "library/arxiv-1012.4090v1/sections/sec-001",
-    "library/arxiv-1012.4090v1/sections/sec-002"
+    "library/arxiv-1012.4090v1/sections/sec-002",
+    "library/arxiv-1012.4090v1/sections/sec-003"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -26,7 +28,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1012.4090v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1012.4090v1.pdf",
     "source_sha256": "02fe4a5eb36ff0edb291ac6917e0f7cb99e1ccd43217af8498ffc29961fb83a7",
     "pages": 5,
@@ -37,8 +41,8 @@
       "stamp_date": "18 Dec 2010"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

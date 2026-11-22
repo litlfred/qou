@@ -1,0 +1,1 @@
+quantum group is a quantization of a group, in the sense that it can be regarded as a non-commutative perturbation of a (certain) function algebra on a group. It is a problem to formulate an appropriate quantization of a quandle.

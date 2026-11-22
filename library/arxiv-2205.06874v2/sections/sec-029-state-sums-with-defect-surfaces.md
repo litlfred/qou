@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2205.06874v2
-doc_title: "State sum models with defectsbased on spherical fusion categories Catherine Meusburger Department Mathematik Friedrich-Alexander-Universität Erlangen-Nürnberg"
+doc_title: "State sum models with defects based on spherical fusion categories"
 section_id: sec-029-state-sums-with-defect-surfaces
 section_title: "State sums with defect surfaces"
 section_number: null
 pages: 51-59
 source_pdf: 2205.06874v2.pdf
 source_sha256: 9b41365160c17ab4
-doc_brief: "State sum models with defectsbased on spherical fusion categories Catherine Meusburger Department Mathematik Friedrich-Alexander-Universität Erlangen-Nürnberg — We define a"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.891
-latex_coverage_ratio: 0.838
+latex_coverage_ratio: 0.976
+doc_brief: "State sum models with defects based on spherical fusion categories — We define a Turaev-Viro-Barrett-Westbury state sum model of triangulated 3-manifolds with surface, line and point defects."
 ---
 In the following, we assume that all triangulations are generic and transversal at the boundary. 
 Our first example is a defect sphere without defect lines or vertices embedded inside a 3-ball.  We suppose that the embedding is \emph{unknotted} in the sense of Zeeman \cite{Z}. This means that there is a PL homeomorphism from the 3-ball to itself that  sends the defect sphere to the boundary of a tetrahedron, see also Footnote 1  \cite{Z}.

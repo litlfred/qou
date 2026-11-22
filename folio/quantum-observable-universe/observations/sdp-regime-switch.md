@@ -16,10 +16,10 @@ $$
   \;\succeq\; 0
 $$
 
-*Here, $\mu_\lambda$ is the $q$-Laplacian eigenvalue ([$q$-heat kernel Peter-Weyl](#prop:q-heat-kernel-peter-weyl)) and $c_{\lambda\lambda'}$ is the coupling determined by the atom observables.*
+*Here, $\mu_\lambda$ is the $q$-Laplacian eigenvalue and $c_{\lambda\lambda'}$ is the coupling determined by the atom observables.*
 
 *A regime switch occurs at $(Z, N)$ values where $c_{\lambda\lambda'} \to 0$. The PSD block drops from rank 2 to rank 1, the active-constraint set of the SDP jumps, and the atom's density matrix loses coherence between $\lambda$ and $\lambda'$.*
 
 $\square$
 
-**Witness.** The script `computations/sdp_cross_channel.py` implements `sdp_with_atom_observables(Z, N, partition_entries, pair_couplings)` using the `cvxpy` SDP solver. It falls back to a scalar LP if `cvxpy` is unavailable.
+The SDP is solved numerically, with a scalar-LP fallback.

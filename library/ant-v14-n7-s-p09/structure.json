@@ -8,9 +8,15 @@
   "pages": 28,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:18Z",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 4,
+    "reason": "11 of 498 words are a stray single letter: the text layer splits words"
+   }
+  ]
  },
  "metadata": {
   "arxiv": null,
@@ -127,7 +133,7 @@
   {
    "kind": "table",
    "number": "1",
-   "title": "Some members of Irr3\u2032(B0(Sn)) irreducible on An, n > 10",
+   "title": "Some members of Irr3′(B0(Sn)) irreducible on An, n > 10",
    "page": 16,
    "confidence": 0.8,
    "evidence": [
@@ -139,7 +145,7 @@
   {
    "kind": "table",
    "number": "2",
-   "title": "Some unipotent characters in Irr3\u2032(B0(S))\u03c31 for exceptional types with 3\u2224q",
+   "title": "Some unipotent characters in Irr3′(B0(S))σ1 for exceptional types with 3∤q",
    "page": 17,
    "confidence": 0.8,
    "evidence": [
@@ -151,7 +157,7 @@
   {
    "kind": "table",
    "number": "3",
-   "title": "Some unipotent characters in Irr3\u2032(B0(S))\u03c31 for type A\u03f5",
+   "title": "Some unipotent characters in Irr3′(B0(S))σ1 for type Aϵ",
    "page": 18,
    "confidence": 0.8,
    "evidence": [
@@ -163,7 +169,7 @@
   {
    "kind": "table",
    "number": "4",
-   "title": "Some unipotent characters in Irr3\u2032(B0(S))\u03c31 for type Bn(q) and Cn(q) with",
+   "title": "Some unipotent characters in Irr3′(B0(S))σ1 for type Bn(q) and Cn(q) with",
    "page": 20,
    "confidence": 0.8,
    "evidence": [
@@ -175,7 +181,7 @@
   {
    "kind": "table",
    "number": "5",
-   "title": "Some unipotent characters in Irr3\u2032(B0(S))\u03c31 for type Dn(q) with n \u22655 and 3\u2224q. eigenvalues {\u03b6, \u03b6 \u22121, 1}, where \u03b6 \u2208F\u00d7",
+   "title": "Some unipotent characters in Irr3′(B0(S))σ1 for type Dn(q) with n ≥5 and 3∤q. eigenvalues {ζ, ζ −1, 1}, where ζ ∈F×",
    "page": 21,
    "confidence": 0.8,
    "evidence": [
@@ -187,7 +193,7 @@
   {
    "kind": "table",
    "number": "6",
-   "title": "Some unipotent characters in Irr3\u2032(B0(S))\u03c31 for type 2Dn(q) with n \u22654 and 3\u2224q",
+   "title": "Some unipotent characters in Irr3′(B0(S))σ1 for type 2Dn(q) with n ≥4 and 3∤q",
    "page": 22,
    "confidence": 0.6,
    "evidence": [
@@ -468,8 +474,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 5797,
-   "n_words": 997,
+   "n_chars": 5792,
+   "n_words": 996,
    "label_start": "1953",
    "label_end": "1955"
   },
@@ -480,8 +486,8 @@
    "level": 1,
    "page_start": 3,
    "page_end": 8,
-   "n_chars": 13198,
-   "n_words": 2665,
+   "n_chars": 13197,
+   "n_words": 2661,
    "label_start": "1955",
    "label_end": "1960"
   },
@@ -491,22 +497,22 @@
    "title": "Reducing to simple groups",
    "level": 1,
    "page_start": 8,
-   "page_end": 10,
-   "n_chars": 4182,
-   "n_words": 760,
+   "page_end": 11,
+   "n_chars": 8247,
+   "n_words": 1531,
    "label_start": "1960",
-   "label_end": "1962"
+   "label_end": "1963"
   },
   {
    "id": "sec-003-3-simple-groups",
    "number": "3",
    "title": "Simple groups",
    "level": 1,
-   "page_start": 10,
+   "page_start": 11,
    "page_end": 25,
-   "n_chars": 43086,
-   "n_words": 8382,
-   "label_start": "1962",
+   "n_chars": 39096,
+   "n_words": 7626,
+   "label_start": "1963",
    "label_end": "1977"
   },
   {
@@ -549,6 +555,7 @@
    "items": []
   },
   "sections": 7,
-  "chars_total": 74111
+  "chars_total": 74180,
+  "furniture_lines_stripped": 1
  }
 }

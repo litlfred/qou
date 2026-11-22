@@ -1,0 +1,47 @@
+326 Multiple point asymptotics
+
+be the denominator of the cube grove generating function (7.23). The ideal
+
+0Q dQ AQ
+
+has a Grobner basis consisting of the polynomials [x—1, y—1, z—1], so the point
+(1, 1, 1) is a non-smooth point of V. Translating this point to the origin replaces
+Q by hu, v,w) = QU +u,1+v,1+w) = 2uv + 2uw + 2vw + 3uvw, and we let
+h = 2(uv+uw+ vw) be the leading homogeneous part of /. By writing down an
+attempted factorization we see that / does not factor into linear factors, hence
+h does not and (1, 1, 1) is not a multiple point. Asymptotics for the coefficients
+of the cube grove generating function are discussed in Example 11.43. S
+
+Unfortunately the converse to part (i) of Proposition 10.53 does not hold.
+Linear factorization of the homogeneous part of Q does not imply multiple
+point geometry, even if the factors are distinct and linearly independent (see
+Example 10.55 below), so Proposition 10.53 helps certify that p is not a mul-
+tiple or arrangement point, but doesn’t help to certify that it is one.
+
+Another approach to certifying multiple points is a characterization using
+local monodromy. Certification in the positive direction relies on conjectured
+properties of the relevant algorithms, but for those interested in the problem,
+this will at least give a start.
+
+Up to taking an invertible linear change of coordinates, we may assume that
+there exists a coordinate j such that x~!(p) is always finite, where 7 : V >
+C*! is the projection map onto the coordinate plane z; = 0. Let 8 denote the
+branch locus of x, consisting of the points w € C4~! for which the cardinality
+of the fiber 2~!(w) does not take its maximum value k. A path y : [0,1] > ct!
+that avoids 8 defines a map from the fiber 2~!(7(0)) to the fiber 2~!(y(1)) by
+so-called homotopy continuation, making continuous choices of 7!(y(t)) for
+0 <t< 1. Homotopic paths in U = C4"! \ 8 define the same map, and fixing
+a base point 2) ¢ 8 and letting y vary over loops based at zp defines a map
+from the fundamental group of U to the permutations of the fiber at 29, which
+we identify with the symmetric group S;. The image in S; is what is known as
+the monodromy group of r, and is intrinsic to V in the sense that it does not
+depend on the projection 2. The local monodromy group at p is the image in
+S, of the subgroup of the fundamental group consisting of loops that can be
+drawn so as never to leave an arbitrarily small neighborhood of p. A point p is
+a multiple point if and only if the local monodromy group at p is trivial (that
+is, contains only the identity permutation)!.
+
+' If V is locally the union of smooth surfaces then the local monodromy group is trivial
+
+because, in a small path avoiding collisions of roots, each solution remains in the same smooth
+local piece. We don’t prove the converse as it is not used in this book.

@@ -55,7 +55,7 @@ proved asymptotics.  Non-multiplicative bridges — an additive interface
 term, or a Higgs-coupling route where `n` enters through linking with
 `4₁` rather than through `net` — are **not** excluded here.
 
--- Ref: [manuscript] quantum-observable-universe/predicted-spectra/lepton-continuant-recurrence.md
+-- Ref: [leitner2026] quantum-observable-universe/predicted-spectra/lepton-continuant-recurrence.md
 -/
 
 namespace QOU.Archimedean

@@ -8,6 +8,7 @@ pages: 13-14
 source_pdf: 0603732v2.pdf
 source_sha256: 3464a2ddc2e54f3a
 toc_source: outline
+doc_brief: "DUALISING COMPLEXES AND TWISTED HOCHSCHILD (CO)HOMOLOGY FOR NOETHERIAN HOPF ALGEBRAS — We show that many noetherian Hopf algebras A have a rigid du- alising complex R with R ∼ = νA1[d]."
 ---
 a complex of A-bimodules. Let Rop denote the “opposite complex” of R which
 is deﬁned as follows: as a complex of k-modules Rop = R, and the left and right

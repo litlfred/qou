@@ -8,9 +8,15 @@
   "pages": 56,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": null,
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 13,
+    "reason": "10 of 292 words are a stray single letter: the text layer splits words"
+   }
+  ],
   "math_source": "latex"
  },
  "metadata": {
@@ -24,24 +30,24 @@
   "title": "Murnaghan-Nakayama rule for the cyclotomic Hecke algebra and applications",
   "authors_raw": "NAIHUAN JING AND NING LIU",
   "title_lines": [
-   "MURNAGHAN\u2013NAKAYAMA RULE FOR THE CYCLOTOMIC HECKE",
+   "MURNAGHAN–NAKAYAMA RULE FOR THE CYCLOTOMIC HECKE",
    "ALGEBRA AND APPLICATIONS"
   ],
-  "abstract": "We establish a Murnaghan\u2013Nakayama rule for the irreducible characters of the cyclotomic Hecke algebra Hm,n(q, u) on Shoji\u2019s standard elements. Combined with Shoji\u2019s determinacy result, our formula provides a direct combinatorial route to the full irreducible character table of Hm,n(q, u). Our construction is based on our recent multi- parameter Murnaghan\u2013Nakayama rule for Macdonald polynomials and specializes uni- formly to several previously known formulas, including those for the complex reflection group of type G(m, 1, n) and the Iwahori\u2013Hecke algebras of types A and B. In a dual framework, using the vertex operator realization of Schur functions, we also derive a com- plementary iterative formula for irreducible characters on upper multipartitions, which may be viewed as a dual Murnaghan\u2013Nakayama rule. As applications, we obtain a Regev-type formula and a L\u00a8ubeck\u2013Prasad\u2013Adin\u2013Roichman- type formula for cyclotomic Hecke algebras, extending the corresponding formulas for the Iwahori\u2013Hecke algebra of type A and the complex reflection group, respectively. We fur- ther introduce the notion of multiple bitrace for cyclotomic Hecke algebras and give a general combinatorial formula for the multiple bitrace. As a specialization, this yields the second orthogonality relation for irreducible characters of the complex reflection group Wm,n. For practical computation, we also include in an appendix a SageMath implemen- tation of our Murnaghan\u2013Nakayama rule, which computes individual character values and the full character table.",
+  "abstract": "We establish a Murnaghan–Nakayama rule for the irreducible characters of the cyclotomic Hecke algebra Hm,n(q, u) on Shoji’s standard elements. Combined with Shoji’s determinacy result, our formula provides a direct combinatorial route to the full irreducible character table of Hm,n(q, u). Our construction is based on our recent multi- parameter Murnaghan–Nakayama rule for Macdonald polynomials and specializes uni- formly to several previously known formulas, including those for the complex reflection group of type G(m, 1, n) and the Iwahori–Hecke algebras of types A and B. In a dual framework, using the vertex operator realization of Schur functions, we also derive a com- plementary iterative formula for irreducible characters on upper multipartitions, which may be viewed as a dual Murnaghan–Nakayama rule. As applications, we obtain a Regev-type formula and a L¨ubeck–Prasad–Adin–Roichman- type formula for cyclotomic Hecke algebras, extending the corresponding formulas for the Iwahori–Hecke algebra of type A and the complex reflection group, respectively. We fur- ther introduce the notion of multiple bitrace for cyclotomic Hecke algebras and give a general combinatorial formula for the multiple bitrace. As a specialization, this yields the second orthogonality relation for irreducible characters of the complex reflection group Wm,n. For practical computation, we also include in an appendix a SageMath implemen- tation of our Murnaghan–Nakayama rule, which computes individual character values and the full character table.",
   "docinfo": {
    "Title": "Murnaghan-Nakayama rule for the cyclotomic Hecke algebra and applications",
    "Author": "Naihuan Jing; Ning Liu",
    "Producer": "pikepdf 8.15.1",
    "Creator": "arXiv GenPDF (tex2pdf:8e18bb9)"
   },
-  "title_raw": "MURNAGHAN\u2013NAKAYAMA RULE FOR THE CYCLOTOMIC HECKE ALGEBRA AND APPLICATIONS",
+  "title_raw": "MURNAGHAN–NAKAYAMA RULE FOR THE CYCLOTOMIC HECKE ALGEBRA AND APPLICATIONS",
   "title_source": "metadata",
   "title_verified": true,
   "title_evidence": {
    "metadata": "Murnaghan-Nakayama rule for the cyclotomic Hecke algebra and applications",
-   "heading": "MURNAGHAN\u2013NAKAYAMA RULE FOR THE CYCLOTOMIC HECKE ALGEBRA AND APPLICATIONS Contents Introduction Preliminaries Murnaghan\u2013Nakayama rule for the cyclotomic Hecke algebra Special cases of the Murnaghan\u2013Nakayama rule A dual Murnaghan\u2013Nakayama rule via vertex operators Application I: Regev-type formula Ap",
+   "heading": "MURNAGHAN–NAKAYAMA RULE FOR THE CYCLOTOMIC HECKE ALGEBRA AND APPLICATIONS Contents Introduction Preliminaries Murnaghan–Nakayama rule for the cyclotomic Hecke algebra Special cases of the Murnaghan–Nakayama rule A dual Murnaghan–Nakayama rule via vertex operators Application I: Regev-type formula Ap",
    "outline": "1. Introduction",
-   "text": "MURNAGHAN\u2013NAKAYAMA RULE FOR THE CYCLOTOMIC HECKE ALGEBRA AND APPLICATIONS",
+   "text": "MURNAGHAN–NAKAYAMA RULE FOR THE CYCLOTOMIC HECKE ALGEBRA AND APPLICATIONS",
    "corroborated_by": [
     "text",
     "page"
@@ -72,7 +78,7 @@
   },
   {
    "level": 1,
-   "title": "Murnaghan\u2013Nakayama rule for the cyclotomic Hecke algebra",
+   "title": "Murnaghan–Nakayama rule for the cyclotomic Hecke algebra",
    "page": 12,
    "source": "outline",
    "number": "3",
@@ -82,7 +88,7 @@
   },
   {
    "level": 1,
-   "title": "Special cases of the Murnaghan\u2013Nakayama rule",
+   "title": "Special cases of the Murnaghan–Nakayama rule",
    "page": 18,
    "source": "outline",
    "number": "4",
@@ -92,7 +98,7 @@
   },
   {
    "level": 1,
-   "title": "A dual Murnaghan\u2013Nakayama rule via vertex operators",
+   "title": "A dual Murnaghan–Nakayama rule via vertex operators",
    "page": 20,
    "source": "outline",
    "number": "5",
@@ -112,7 +118,7 @@
   },
   {
    "level": 1,
-   "title": "Application II: L\u00fcbeck\u2013Prasad\u2013Adin\u2013Roichman-type formula",
+   "title": "Application II: Lübeck–Prasad–Adin–Roichman-type formula",
    "page": 34,
    "source": "outline",
    "number": "7",
@@ -142,7 +148,7 @@
   },
   {
    "level": 1,
-   "title": "Appendix B. SageMath implementation of the Murnaghan\u2013Nakayama rule",
+   "title": "Appendix B. SageMath implementation of the Murnaghan–Nakayama rule",
    "page": 51,
    "source": "outline",
    "number": null,
@@ -167,7 +173,7 @@
   {
    "kind": "table",
    "number": "1",
-   "title": "Murnaghan\u2013Nakayama rules for various algebras",
+   "title": "Murnaghan–Nakayama rules for various algebras",
    "page": 4,
    "confidence": 0.8,
    "evidence": [
@@ -179,7 +185,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "\u03bb is obtained from \u00b5 by adding a horizontal strip (to get \u03bd) and then adding a vertical strip (to \u03bd)",
+   "title": "λ is obtained from µ by adding a horizontal strip (to get ν) and then adding a vertical strip (to ν)",
    "page": 13,
    "confidence": 0.9,
    "evidence": [
@@ -192,7 +198,7 @@
   {
    "kind": "figure",
    "number": "2",
-   "title": "SE(\u03bb/\u00b5) consists of the green boxes. The subset formed by the boxes with bullets is an element of R9(\u03bb/\u00b5)",
+   "title": "SE(λ/µ) consists of the green boxes. The subset formed by the boxes with bullets is an element of R9(λ/µ)",
    "page": 28,
    "confidence": 0.9,
    "evidence": [
@@ -205,7 +211,7 @@
   {
    "kind": "figure",
    "number": "3",
-   "title": "An example for R\u03b1,\u03b2 where \u03b1 = ((2, 3), (3, 2, 2)) and \u03b2 =",
+   "title": "An example for Rα,β where α = ((2, 3), (3, 2, 2)) and β =",
    "page": 29,
    "confidence": 0.9,
    "evidence": [
@@ -218,7 +224,7 @@
   {
    "kind": "figure",
    "number": "4",
-   "title": "Four possible removal processes for \u03b7(3,1),(2,1,1),(2,2)",
+   "title": "Four possible removal processes for η(3,1),(2,1,1),(2,2)",
    "page": 35,
    "confidence": 0.9,
    "evidence": [
@@ -231,7 +237,7 @@
   {
    "kind": "figure",
    "number": "5",
-   "title": "\u03bb = (7, 7, 7, 6, 3, 3, 2, 1), the boundary of \u03bb is marked by arrows. Thus, \u2202(\u03bb) = 10101001 | 1101000 and the anchor of \u2202(\u03bb) is 8",
+   "title": "λ = (7, 7, 7, 6, 3, 3, 2, 1), the boundary of λ is marked by arrows. Thus, ∂(λ) = 10101001 | 1101000 and the anchor of ∂(λ) is 8",
    "page": 36,
    "confidence": 0.9,
    "evidence": [
@@ -244,7 +250,7 @@
   {
    "kind": "figure",
    "number": "6",
-   "title": "\u02dc\u2202(\u03bb) = 010101001 | 110100011, k(\u02dc\u2202(\u03bb)) = 9 and the row-color sequence is marked in the leftmost column. Thus, the green generalized ribbon is colored by 1",
+   "title": "˜∂(λ) = 010101001 | 110100011, k(˜∂(λ)) = 9 and the row-color sequence is marked in the leftmost column. Thus, the green generalized ribbon is colored by 1",
    "page": 37,
    "confidence": 0.9,
    "evidence": [
@@ -446,9 +452,10 @@
    "physical": 20,
    "label": "20",
    "source": "printed",
-   "confidence": 0.7,
+   "confidence": 0.85,
    "evidence": [
-    "printed"
+    "printed",
+    "contents"
    ]
   },
   {
@@ -788,22 +795,22 @@
    "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 1,
-   "n_chars": 1663,
-   "n_words": 237,
+   "page_end": 2,
+   "n_chars": 2506,
+   "n_words": 349,
    "label_start": null,
-   "label_end": null
+   "label_end": "2"
   },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
-   "page_start": 1,
+   "page_start": 2,
    "page_end": 7,
-   "n_chars": 14934,
-   "n_words": 2272,
-   "label_start": null,
+   "n_chars": 14078,
+   "n_words": 2159,
+   "label_start": "2",
    "label_end": "7"
   },
   {
@@ -812,28 +819,28 @@
    "title": "Preliminaries",
    "level": 1,
    "page_start": 7,
-   "page_end": 11,
-   "n_chars": 8160,
-   "n_words": 1661,
+   "page_end": 12,
+   "n_chars": 10848,
+   "n_words": 2192,
    "label_start": "7",
-   "label_end": "11"
+   "label_end": "12"
   },
   {
    "id": "sec-002-3-murnaghannakayama-rule-for-the-cyclotomic-heck",
    "number": "3",
-   "title": "Murnaghan\u2013Nakayama rule for the cyclotomic Hecke algebra",
+   "title": "Murnaghan–Nakayama rule for the cyclotomic Hecke algebra",
    "level": 1,
-   "page_start": 11,
+   "page_start": 12,
    "page_end": 18,
-   "n_chars": 13255,
-   "n_words": 2617,
-   "label_start": "11",
+   "n_chars": 10554,
+   "n_words": 2066,
+   "label_start": "12",
    "label_end": "18"
   },
   {
    "id": "sec-003-4-special-cases-of-the-murnaghannakayama-rule",
    "number": "4",
-   "title": "Special cases of the Murnaghan\u2013Nakayama rule",
+   "title": "Special cases of the Murnaghan–Nakayama rule",
    "level": 1,
    "page_start": 18,
    "page_end": 20,
@@ -845,7 +852,7 @@
   {
    "id": "sec-004-5-a-dual-murnaghannakayama-rule-via-vertex-opera",
    "number": "5",
-   "title": "A dual Murnaghan\u2013Nakayama rule via vertex operators",
+   "title": "A dual Murnaghan–Nakayama rule via vertex operators",
    "level": 1,
    "page_start": 20,
    "page_end": 25,
@@ -867,9 +874,9 @@
    "label_end": "34"
   },
   {
-   "id": "sec-006-7-application-ii-l\u00fcbeckprasadadinroichman-type-f",
+   "id": "sec-006-7-application-ii-lübeckprasadadinroichman-type-f",
    "number": "7",
-   "title": "Application II: L\u00fcbeck\u2013Prasad\u2013Adin\u2013Roichman-type formula",
+   "title": "Application II: Lübeck–Prasad–Adin–Roichman-type formula",
    "level": 1,
    "page_start": 34,
    "page_end": 43,
@@ -905,7 +912,7 @@
   {
    "id": "sec-009-appendix-b-sagemath-implementation-of-the-murnag",
    "number": null,
-   "title": "Appendix B. SageMath implementation of the Murnaghan\u2013Nakayama rule",
+   "title": "Appendix B. SageMath implementation of the Murnaghan–Nakayama rule",
    "level": 1,
    "page_start": 51,
    "page_end": 55,
@@ -940,15 +947,13 @@
   },
   "toc_alignment": {
    "listed_not_found": {
-    "count": 1,
-    "items": [
-     "A dual Murnaghan\u2013Nakayama rule via vertex operators"
-    ]
+    "count": 0,
+    "items": []
    },
    "found_not_listed": {
     "count": 1,
     "items": [
-     "4 Let us take the leftmost one as an example. We firstly remove a 6-generalized ribbon \u03b8"
+     "4 Let us take the leftmost one as an example. We firstly remove a 6-generalized ribbon θ"
     ]
    },
    "page_mismatch": {
@@ -957,7 +962,8 @@
    }
   },
   "sections": 12,
-  "chars_total": 112526,
+  "chars_total": 112500,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "main.tex",
@@ -978,29 +984,29 @@
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": 0.984,
-     "coverage_ratio": 0.964,
+     "coverage_ratio": 0.991,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-2-preliminaries",
      "title": "Preliminaries",
-     "prose_ratio": 0.864,
-     "coverage_ratio": 0.95,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.958,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-002-3-murnaghannakayama-rule-for-the-cyclotomic-heck",
-     "title": "Murnaghan\u2013Nakayama rule for the cyclotomic Hecke algebra",
+     "title": "Murnaghan–Nakayama rule for the cyclotomic Hecke algebra",
      "prose_ratio": 0.949,
-     "coverage_ratio": 0.846,
+     "coverage_ratio": 0.972,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-003-4-special-cases-of-the-murnaghannakayama-rule",
-     "title": "Special cases of the Murnaghan\u2013Nakayama rule",
+     "title": "Special cases of the Murnaghan–Nakayama rule",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.936,
      "result": "overlaid",
@@ -1008,7 +1014,7 @@
     },
     {
      "id": "sec-004-5-a-dual-murnaghannakayama-rule-via-vertex-opera",
-     "title": "A dual Murnaghan\u2013Nakayama rule via vertex operators",
+     "title": "A dual Murnaghan–Nakayama rule via vertex operators",
      "prose_ratio": 0.966,
      "coverage_ratio": 0.944,
      "result": "overlaid",
@@ -1023,8 +1029,8 @@
      "converter": "latex"
     },
     {
-     "id": "sec-006-7-application-ii-l\u00fcbeckprasadadinroichman-type-f",
-     "title": "Application II: L\u00fcbeck\u2013Prasad\u2013Adin\u2013Roichman-type formula",
+     "id": "sec-006-7-application-ii-lübeckprasadadinroichman-type-f",
+     "title": "Application II: Lübeck–Prasad–Adin–Roichman-type formula",
      "prose_ratio": 0.919,
      "coverage_ratio": 0.988,
      "result": "overlaid",
@@ -1045,7 +1051,7 @@
     },
     {
      "id": "sec-009-appendix-b-sagemath-implementation-of-the-murnag",
-     "title": "Appendix B. SageMath implementation of the Murnaghan\u2013Nakayama rule",
+     "title": "Appendix B. SageMath implementation of the Murnaghan–Nakayama rule",
      "result": "no matching \\section"
     },
     {

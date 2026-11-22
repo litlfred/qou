@@ -1,0 +1,1 @@
+Let M be an abelian category, and let P ⊆M be a full subcategory such that every object M ∈M admits an epimorphism P ↠M from some object P ∈P. Then every complex M ∈C−(M) admits a quasi-isomorphism ρ : P →M in C− str(M), such that sup(P) = sup(M), and each P i is an object of P.

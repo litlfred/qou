@@ -15,7 +15,7 @@ export default remark({
   ],
   uses: [
     "prop:phase-transition-boundary",
-    "prop:composite-crossing-parity",
+    "conj:composite-crossing-parity",
     "rem:composite-crossing-sublimation-criteria",
   ],
   authorNotes: [

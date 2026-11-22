@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/blocks/prose-sec-010",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "We thank Dan Freed for explaining this to us",
-  "pageStart": 15,
-  "pageEnd": 16,
-  "text": "../sections/sec-010-1-we-thank-dan-freed-for-explaining-this-to-us.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari",
+  "title": "\" ~Az(p)Az(-p).",
+  "pageStart": 22,
+  "pageEnd": 22,
+  "text": "../sections/sec-010-1-azpaz-p.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/manifest.jsonld",
   "provenance": "ingested"
 }

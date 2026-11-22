@@ -86,7 +86,7 @@ condition permits (`QOU.Archimedean.jones_channels_not_separating`).
 - [chari1994guide] Chari–Pressley, *A Guide to Quantum Groups*, Ch. 10
 - [alexander1923] J.W. Alexander, Proc. Natl. Acad. Sci. USA 9 (1923)
 - [jones1987] V.F.R. Jones, Annals of Mathematics 126 (1987)
-- [manuscript] §4-path-integrals-and-braiding/knot-eigenbasis-complete
+- [leitner2026] §4-path-integrals-and-braiding/knot-eigenbasis-complete
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
 Part of the formal proof chain. The parameter `q` is the canonical

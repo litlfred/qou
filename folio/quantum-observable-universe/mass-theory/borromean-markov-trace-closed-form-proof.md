@@ -84,9 +84,8 @@ Frobenius expansion $\mathrm{tr}_M = \sum_\lambda y_\lambda \chi^\lambda$.
 >    convention of *the closed form above* — with weights
 >    $y_{(3)} = [4]_q/[2]_q^3$, $y_{(2,1)} = 1/[2]_q^2$,
 >    $y_{(1^3)} = 0$ identically
->    ([`prop:h3-markov-wenzl-weights`](h3-markov-wenzl-weights.md));
-> 2. the **Wenzl-bridge / Ocneanu** normalisation (producer
->    `y-lambda-wenzl-bridge-symbolic-witness.json`, used by
+>    ([Closed-form Jones/Temperley–Lieb weights on $H_3(q)$ (Borromean Jones polynomial)](h3-markov-wenzl-weights.md));
+> 2. the **Wenzl-bridge / Ocneanu** normalisation (used by
 >    the formal derivation), whose
 >    weights are all non-zero and whose trace value on
 >    $\beta_{\mathrm{Bor}}$ **differs** from the closed form above
@@ -164,26 +163,41 @@ characters satisfy $\chi^{(3)}(\beta_{\mathrm{Bor}}) =
 (i.e. $h = 0$), the standard character evaluates to
 $\chi^{(2,1)}(\mathrm{id}) = d_{(2,1)} = 2$.
 
-Combining: at $h^2$ order, $\mathrm{tr}_M(\beta_{\mathrm{Bor}})$ reduces
-to $\sum_\lambda [h^2\text{-coeff of }y_\lambda] \cdot d_\lambda = 0$
-by Fact 1, since each $\chi^\lambda / d_\lambda \to 1$ at $h = 0$.
+**Fact 3 (Borromean-specific).** The standard character has no
+$h^2$ term: $\chi^{(2,1)}(\beta_{\mathrm{Bor}}) = 2 - 3h^4 - h^6$.
+
+Combining: write $\mathrm{tr}_M = \sum_\lambda y_\lambda \chi^\lambda$
+and take the $h^2$ coefficient. It is
+
+$$
+  \sum_\lambda \bigl[h^2\bigr] y_\lambda \cdot \chi^\lambda\big|_{h=0}
+  \;+\; \sum_\lambda y_\lambda\big|_{h=0} \cdot \bigl[h^2\bigr] \chi^\lambda .
+$$
+
+The first sum is $\sum_\lambda [h^2]y_\lambda \cdot d_\lambda = 0$ by
+Facts 1 and 2. In the second sum the one-dimensional characters are
+constant, so only $y_{(2,1)}|_{h=0} \cdot [h^2]\chi^{(2,1)}$ survives,
+and it vanishes by Fact 3.
 
 ## Generalization: conditions for $h^2 = 0$
 
-The mechanism generalizes to any braid $\beta \in B_n$ satisfying:
+The argument needs three conditions on $\beta \in B_n$:
 
 1. **Pure braid**: $\pi(\beta) = \mathrm{id} \in S_n$
    (so $\chi^\lambda(\beta)|_{q=1} = d_\lambda$ for all $\lambda$).
 2. **Writhe zero**: equal positive and negative crossings
    (so 1-dimensional characters are identically $1$).
+3. **No $h^2$ term in the multi-dimensional characters**:
+   $[h^2]\chi^\lambda(\beta) = 0$ for every $\lambda$ with
+   $y_\lambda|_{h=0} \neq 0$ and $d_\lambda > 1$.
 
-At $H_3$ there is a single multi-dimensional irrep $(2,1)$, so the
-universal identity alone forces $h^2 = 0$ with no further constraint
-on $\chi^{(2,1)}$. At $H_n$ for $n \ge 4$, multiple multi-dimensional
-irreps contribute, and the $h^2$ cancellation requires additional
-structure beyond Fact 1 — their individual corrections must conspire.
+Conditions 1 and 2 alone do not suffice, even at $H_3$. The pure,
+writhe-zero braid $\sigma_1^2 \sigma_2^{-2}$ has
+$\chi^{(2,1)} = 2 + 3h^2 + h^4$ and
+$\mathrm{tr}_M = 1 + \tfrac34 h^2 + O(h^4)$ under convention D.
 
 Cross-isotope verification: the deuteron ($H_6$), tritium ($H_9$),
 and ${}^3\mathrm{He}$ ($H_9$) atom braids have $h^2 \ne 0$
-($12.7$, $18.7$, $36.6$ respectively), confirming that the
-single-standard-irrep mechanism is specific to $H_3$.
+($12.7$, $18.7$, $36.6$ respectively). The three conditions are
+sufficient for every $n$, so each of these braids violates at least one
+of them.

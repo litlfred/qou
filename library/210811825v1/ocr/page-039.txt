@@ -1,0 +1,60 @@
+Now let q be a symmetric, densely defined sesquilinear form that is bounded from
+below. As before, q is closable if it has a closed extension, that is, if for all {Wn }nen C
+DQ);
+
+noo,
+
+D(q) > vu, —> 0
+
+n, k—00
+
+alin — vx] “2% 0
+
+imply q[tn] “22 0, then q has closure @ defined as
+
+n, k—00
+
+D(q) = {tb €H| {un} C D(a) st. if Un = ws, gldn — ve] “= OF,
+
+ale] = lim glu).
+
+n-+00
+
+Example 2.11 The form Q% is not closed on C5°, but note that the norm
+
+lol = Ql] + (al + allay?
+
+is the norm on the Sobolev space Wo'?(Q) (compare Definition 1.18). The domain of the
+closure Q?, = Qe is therefore Wwe? (Q), and for @€ We?(Q),
+
+AO
+Q5l¢] = IIVol?,
+where we interpret V@ in a distributional sense.
+
+From the sesquilinear form q, we wish to induce an operator A, that is self-adjoint and
+bounded from below. The correspondence is as follows. Suppose we have A, as above.
+Then
+
+Gy] =. Agd),  D@) = D(A))
+
+is densely defined, symmetric and bounded from below. It is closable, so we take the
+closure q := q as our desired form. On the other hand, suppose we have q as above. Then
+
+we will use the following to define the corresponding sporston:
+
+Theorem 2.12 (Representation theorem, [45]) Let q be densely defined, symmetric,
+
+closed, and bounded from below in H. Then
+D(Aq) = {y € Dig) |An€H st. Vb € Dg), ao.) = (b,m)
+Aw :=7
+
+is self-adjoint and bounded from below. D(q) is called the form domain of the operator
+A
+
+a
+
+We now introduce a special construction that produces the self-adjoint operator with
+
+the smallest form domain, that is, the domain of qg is contained in the form domain of any
+
+29

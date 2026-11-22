@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2002.04901v5
-doc_title: "WEAK PROREGULARITY, DERIVED COMPLETION, ADIC FLATNESS"
+doc_title: "Weak Proregularity, Derived Completion, Adic Flatness, and Prisms"
 section_id: sec-000-0-introduction
 section_title: "Introduction"
 section_number: 0
-pages: 1-5
+pages: 1-4
 source_pdf: 2002.04901v5.pdf
 source_sha256: f1320c4b87229215
-doc_brief: "WEAK PROREGULARITY, DERIVED COMPLETION, ADIC FLATNESS — 2 sections: Introduction; Idealistic Derived Completion and"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.989
+latex_coverage_ratio: 0.983
+doc_brief: "Weak Proregularity, Derived Completion, Adic Flatness, and Prisms — We begin by recalling the role that weak proregularity of an ideal in a commu- tative ring has in derived completion and adic"
 ---
 Let $A$ be a commutative ring. Various authors have previously considered two 
 kinds of derived completions of complexes of $A$-modules, without a careful 

@@ -7,29 +7,53 @@
   "bytes": 721298,
   "pages": 47,
   "text_source": "embedded",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:55Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 38,
+    "reason": "11 of 517 words are a stray single letter: the text layer splits words"
+   }
+  ]
  },
  "metadata": {
   "arxiv": null,
   "doi": "10.1007/s10955-022-02992-6",
-  "title": "Cluster Expansions: Necessary and Sufficient Convergence Conditions Sabine Jansen 1,2 \u00b7 Leonid Kolesnikov 1 \u00a9 The Author(s) 2022",
+  "title": "Cluster Expansions: Necessary and Sufficient Convergence Conditions",
   "authors_raw": null,
   "title_lines": [
    "Cluster Expansions: Necessary and Sufficient Convergence",
    "Conditions",
-   "Sabine Jansen 1,2 \u00b7 Leonid Kolesnikov 1",
-   "\u00a9 The Author(s) 2022"
+   "Sabine Jansen1,2 · Leonid Kolesnikov1",
+   "© The Author(s) 2022"
   ],
-  "abstract": "We prove a new convergence condition for the activity expansion of correlation functions in equilibrium statistical mechanics with possibly negative pair potentials. For non-negative pair potentials, the criterion is an if and only if condition. The condition is formulated with a sign-\ufb02ipped Kirkwood\u2013Salsburg operator and known conditions such as Koteck\u00fd\u2013Preiss and Fern\u00e1ndez\u2013Procacci are easily recovered. In addition, we deduce new suf\ufb01cient convergence conditions for hard-core systems in Rd and Zd as well as for abstract polymer systems. The latter improves on the Fern\u00e1ndez\u2013Procacci criterion.",
+  "abstract": "We prove a new convergence condition for the activity expansion of correlation functions in equilibrium statistical mechanics with possibly negative pair potentials. For non-negative pair potentials, the criterion is an if and only if condition. The condition is formulated with a sign-ﬂipped Kirkwood–Salsburg operator and known conditions such as Kotecký–Preiss and Fernández–Procacci are easily recovered. In addition, we deduce new sufﬁcient convergence conditions for hard-core systems in Rd and Zd as well as for abstract polymer systems. The latter improves on the Fernández–Procacci criterion.",
   "docinfo": {
+   "Title": "Cluster Expansions: Necessary and Sufficient Convergence Conditions",
    "Author": "Sabine Jansen ",
-   "CreationDate": "D:20220923130855+05'30'",
-   "Creator": "Springer",
    "Producer": "Acrobat Distiller 10.1.8 (Windows)",
-   "Title": "Cluster Expansions: Necessary and Sufficient Convergence Conditions"
-  }
+   "Creator": "Springer",
+   "CreationDate": "D:20220923130855+05'30'"
+  },
+  "title_raw": "Cluster Expansions: Necessary and Sufficient Convergence Conditions Sabine Jansen1,2 · Leonid Kolesnikov1 © The Author(s) 2022",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Cluster Expansions: Necessary and Sufficient Convergence Conditions",
+   "heading": "Cluster Expansions: Necessary and Sufﬁcient Convergence Conditions",
+   "outline": "Cluster Expansions: Necessary and Sufficient Convergence Conditions",
+   "text": "Cluster Expansions: Necessary and Sufficient Convergence Conditions Sabine Jansen1,2 · Leonid Kolesnikov1 © The Author(s) 2022",
+   "corroborated_by": [
+    "heading",
+    "outline",
+    "text",
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Cluster Expansions: Necessary and Sufficient Convergence Conditions Sabine Jansen 1,2 · Leonid Kolesnikov 1 © The Author(s) 2022"
  },
  "toc": [
   {
@@ -37,307 +61,891 @@
    "title": "Cluster Expansions: Necessary and Sufficient Convergence Conditions",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Abstract",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Main Results",
    "page": 4,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 3,
    "title": "(Locally) Stable Pair Potentials",
    "page": 4,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 3,
    "title": "Abstract Polymer Models",
    "page": 8,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 3,
    "title": "Hard-Core Systems in the Continuum",
    "page": 11,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 3,
    "title": "Subset Polymers",
    "page": 12,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Combinatorial Lemmas: Proof of Theorems 2.1, 2.6, and 2.7",
    "page": 14,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 3,
    "title": "Forest Partition Schemes: Alternating Sign Property",
    "page": 14,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 3,
-   "title": "Kirkwood\u2013Salsburg Equations: Proof of Theorem 2.1",
+   "title": "Kirkwood–Salsburg Equations: Proof of Theorem 2.1",
    "page": 17,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 3,
    "title": "Integral Equations for Hard-Core Models: Proof of Theorem 2.6",
    "page": 19,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 3,
    "title": "Recurrence Relations for Subset Polymers: Proof of Theorem 2.7",
    "page": 22,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 2,
    "title": "Application to Concrete Hard-Core Models",
    "page": 25,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
   },
   {
    "level": 3,
    "title": "Single-Type Subset Polymers in mathbbZd",
    "page": 25,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
   },
   {
    "level": 3,
    "title": "Single-Type Hard-Core System in mathbbRd",
    "page": 27,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
   },
   {
    "level": 3,
    "title": "Multi-Type Hard Spheres in mathbbRd",
    "page": 30,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "30"
   },
   {
    "level": 3,
    "title": "Tonks Gas on mathbbZ",
    "page": 33,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
   },
   {
    "level": 3,
    "title": "Tonks Gas on mathbbR",
    "page": 36,
    "source": "outline",
-   "number": "4.5"
+   "number": "4.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "36"
   },
   {
    "level": 2,
    "title": "A Proof of Lemma 2.5",
    "page": 41,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "41"
   },
   {
    "level": 2,
    "title": "References",
    "page": 46,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "46"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "44",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "46",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-abstract",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 87,
+   "n_words": 7,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-cluster-expansions-necessary-and-sufficient-conv",
+   "number": null,
+   "title": "Cluster Expansions: Necessary and Sufficient Convergence Conditions",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 163,
+   "n_words": 25,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-001-abstract",
    "number": null,
    "title": "Abstract",
    "level": 2,
    "page_start": 1,
    "page_end": 1,
    "n_chars": 856,
-   "n_words": 118
+   "n_words": 118,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-1-introduction",
+   "id": "sec-002-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 2,
    "page_start": 1,
    "page_end": 4,
-   "n_chars": 11349,
-   "n_words": 1770
+   "n_chars": 11309,
+   "n_words": 1739,
+   "label_start": null,
+   "label_end": "4"
   },
   {
-   "id": "sec-002-2-main-results",
+   "id": "sec-003-2-main-results",
    "number": "2",
    "title": "Main Results",
    "level": 2,
    "page_start": 4,
    "page_end": 4,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "4",
+   "label_end": "4"
   },
   {
-   "id": "sec-003-21-locally-stable-pair-potentials",
+   "id": "sec-004-21-locally-stable-pair-potentials",
    "number": "2.1",
    "title": "(Locally) Stable Pair Potentials",
    "level": 3,
    "page_start": 4,
    "page_end": 8,
-   "n_chars": 10003,
-   "n_words": 1969
+   "n_chars": 10104,
+   "n_words": 2079,
+   "label_start": "4",
+   "label_end": "8"
   },
   {
-   "id": "sec-004-22-abstract-polymer-models",
+   "id": "sec-005-22-abstract-polymer-models",
    "number": "2.2",
    "title": "Abstract Polymer Models",
    "level": 3,
    "page_start": 8,
    "page_end": 11,
-   "n_chars": 5413,
-   "n_words": 1049
+   "n_chars": 5165,
+   "n_words": 1027,
+   "label_start": "8",
+   "label_end": "11"
   },
   {
-   "id": "sec-005-23-hard-core-systems-in-the-continuum",
+   "id": "sec-006-23-hard-core-systems-in-the-continuum",
    "number": "2.3",
    "title": "Hard-Core Systems in the Continuum",
    "level": 3,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 2225,
-   "n_words": 428
+   "n_chars": 2251,
+   "n_words": 457,
+   "label_start": "11",
+   "label_end": "12"
   },
   {
-   "id": "sec-006-24-subset-polymers",
+   "id": "sec-007-24-subset-polymers",
    "number": "2.4",
    "title": "Subset Polymers",
    "level": 3,
    "page_start": 12,
    "page_end": 14,
-   "n_chars": 5992,
-   "n_words": 1134
+   "n_chars": 5944,
+   "n_words": 1091,
+   "label_start": "12",
+   "label_end": "14"
   },
   {
-   "id": "sec-007-3-combinatorial-lemmas-proof-of-theorems-21-26-a",
+   "id": "sec-008-3-combinatorial-lemmas-proof-of-theorems-21-26-a",
    "number": "3",
    "title": "Combinatorial Lemmas: Proof of Theorems 2.1, 2.6, and 2.7",
    "level": 2,
    "page_start": 14,
    "page_end": 14,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "14",
+   "label_end": "14"
   },
   {
-   "id": "sec-008-31-forest-partition-schemes-alternating-sign-pro",
+   "id": "sec-009-31-forest-partition-schemes-alternating-sign-pro",
    "number": "3.1",
    "title": "Forest Partition Schemes: Alternating Sign Property",
    "level": 3,
    "page_start": 14,
    "page_end": 17,
-   "n_chars": 6964,
-   "n_words": 1310
+   "n_chars": 6957,
+   "n_words": 1312,
+   "label_start": "14",
+   "label_end": "17"
   },
   {
-   "id": "sec-009-32-kirkwoodsalsburg-equations-proof-of-theorem-2",
+   "id": "sec-010-32-kirkwoodsalsburg-equations-proof-of-theorem-2",
    "number": "3.2",
-   "title": "Kirkwood\u2013Salsburg Equations: Proof of Theorem 2.1",
+   "title": "Kirkwood–Salsburg Equations: Proof of Theorem 2.1",
    "level": 3,
    "page_start": 17,
    "page_end": 19,
-   "n_chars": 5667,
-   "n_words": 1139
+   "n_chars": 5792,
+   "n_words": 1269,
+   "label_start": "17",
+   "label_end": "19"
   },
   {
-   "id": "sec-010-33-integral-equations-for-hard-core-models-proof",
+   "id": "sec-011-33-integral-equations-for-hard-core-models-proof",
    "number": "3.3",
    "title": "Integral Equations for Hard-Core Models: Proof of Theorem 2.6",
    "level": 3,
    "page_start": 19,
    "page_end": 22,
-   "n_chars": 6264,
-   "n_words": 1308
+   "n_chars": 6381,
+   "n_words": 1432,
+   "label_start": "19",
+   "label_end": "22"
   },
   {
-   "id": "sec-011-34-recurrence-relations-for-subset-polymers-proo",
+   "id": "sec-012-34-recurrence-relations-for-subset-polymers-proo",
    "number": "3.4",
    "title": "Recurrence Relations for Subset Polymers: Proof of Theorem 2.7",
    "level": 3,
    "page_start": 22,
    "page_end": 25,
-   "n_chars": 5733,
-   "n_words": 1091
+   "n_chars": 5715,
+   "n_words": 1084,
+   "label_start": "22",
+   "label_end": "25"
   },
   {
-   "id": "sec-012-4-application-to-concrete-hard-core-models",
+   "id": "sec-013-4-application-to-concrete-hard-core-models",
    "number": "4",
    "title": "Application to Concrete Hard-Core Models",
    "level": 2,
    "page_start": 25,
-   "page_end": 41,
-   "n_chars": 38550,
-   "n_words": 7603
+   "page_end": 25,
+   "n_chars": 793,
+   "n_words": 122,
+   "label_start": "25",
+   "label_end": "25"
   },
   {
-   "id": "sec-013-a-proof-of-lemma-25",
+   "id": "sec-014-41-single-type-subset-polymers-in-mathbbzd",
+   "number": "4.1",
+   "title": "Single-Type Subset Polymers in mathbbZd",
+   "level": 3,
+   "page_start": 25,
+   "page_end": 27,
+   "n_chars": 3746,
+   "n_words": 733,
+   "label_start": "25",
+   "label_end": "27"
+  },
+  {
+   "id": "sec-015-42-single-type-hard-core-system-in-mathbbrd",
+   "number": "4.2",
+   "title": "Single-Type Hard-Core System in mathbbRd",
+   "level": 3,
+   "page_start": 27,
+   "page_end": 30,
+   "n_chars": 8342,
+   "n_words": 1582,
+   "label_start": "27",
+   "label_end": "30"
+  },
+  {
+   "id": "sec-016-43-multi-type-hard-spheres-in-mathbbrd",
+   "number": "4.3",
+   "title": "Multi-Type Hard Spheres in mathbbRd",
+   "level": 3,
+   "page_start": 30,
+   "page_end": 41,
+   "n_chars": 25025,
+   "n_words": 4743,
+   "label_start": "30",
+   "label_end": "41"
+  },
+  {
+   "id": "sec-017-a-proof-of-lemma-25",
    "number": null,
    "title": "A Proof of Lemma 2.5",
    "level": 2,
    "page_start": 41,
    "page_end": 46,
-   "n_chars": 7422,
-   "n_words": 1450
+   "n_chars": 6785,
+   "n_words": 1360,
+   "label_start": "41",
+   "label_end": "46"
   },
   {
-   "id": "sec-014-references",
+   "id": "sec-018-references",
    "number": null,
    "title": "References",
    "level": 2,
    "page_start": 46,
    "page_end": 47,
-   "n_chars": 4959,
-   "n_words": 707
+   "n_chars": 4916,
+   "n_words": 670,
+   "label_start": "46",
+   "label_end": "47"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 21,
-  "sections": 15,
-  "chars_total": 111397
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 20,
+  "chars_total": 110331,
+  "furniture_lines_stripped": 46
  }
 }

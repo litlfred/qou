@@ -2,14 +2,14 @@
   "$schema": "folio-reference/v1",
   "id": "springer1976",
   "library": {
-    "docId": "ppn356556735-0036",
-    "dir": "library/ppn356556735-0036",
-    "pdf": "library/ppn356556735-0036/PPN356556735_0036.pdf",
+    "docId": "springer-1976-invent-36-173",
+    "dir": "library/springer-1976-invent-36-173",
+    "pdf": "library/springer-1976-invent-36-173/springer-1976-invent-36-173.pdf",
     "stage": "candidates",
-    "pages": 38,
-    "sections": 1
+    "pages": 35,
+    "sections": 35
   },
-  "type": "article",
+  "type": "article-journal",
   "title": "Trigonometric Sums, Green Functions of Finite Groups and Representations of Weyl Groups",
   "author": [
     {
@@ -17,5 +17,15 @@
       "given": "T. A."
     }
   ],
-  "note": "PDF library/ppn356556735-0036/ — registered from library intake; metadata extracted from the PDF, not verified against the publisher record."
+  "note": "PDF library/springer-1976-invent-36-173/: the article's 35 pages (Invent. Math. 36, 173-207, 1976), split on 2026-11-15 from the GDZ scan of the volume wrapper held as library/ppn356556735-0036/ (cover and two front-matter pages dropped) and OCR-ingested. The old entry kept only a 2.3 KB section stub, with its text in ocr/; it is removed. Journal, volume and pages from the printed page-1 header.",
+  "container-title": "Inventiones Mathematicae",
+  "volume": "36",
+  "page": "173-207",
+  "issued": {
+    "date-parts": [
+      [
+        1976
+      ]
+    ]
+  }
 }

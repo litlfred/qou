@@ -10,7 +10,8 @@ source_sha256: a5097e763dd89d06
 toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.968
-latex_coverage_ratio: 1.0
+latex_coverage_ratio: 0.996
+doc_brief: "Edge universality in Floquet sideband spectra — We show that, for non-interacting fermions under a monochromatic phase drive (Tien– Gordon regime), the outgoing sideband occupations at a sharp Fermi"
 ---
 []{#sec:bridge label="sec:bridge"} With the detection kernel defined on the instrument side and the correlator $C$ defined on the device side, we can now state the central identity that connects them. A closely related signal-processing viewpoint on electronic coherences has been developed independently in the electron quantum optics literature [@Roussel2017]. The physics is simple: because the output signal $\hat Y_\alpha(t)$ is bilinear in the outgoing field operators, and because the detection kernel is a linear weighting in time, the measured expectation value is a bilinear functional of $C$, weighted by the detector response $c_{\rm det}$. The analysis frequency $\omega_0$ then acts as a tunable selector that picks out a specific off-diagonal block of the Floquet correlator.
 

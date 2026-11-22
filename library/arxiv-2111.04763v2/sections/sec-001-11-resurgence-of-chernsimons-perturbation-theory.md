@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2111.04763v2
-doc_title: "RESURGENCE OF CHERN–SIMONS THEORY AT THE TRIVIAL FLAT CONNECTION"
+doc_title: "Resurgence of Chern-Simons theory at the trivial flat connection"
 section_id: sec-001-11-resurgence-of-chernsimons-perturbation-theory
 section_title: "Resurgence of Chern–Simons perturbation theory"
 section_number: 1.1
-pages: 1-4
+pages: 2-4
 source_pdf: 2111.04763v2.pdf
 source_sha256: 760a7f9794e8baaa
-doc_brief: "RESURGENCE OF CHERN–SIMONS THEORY AT THE TRIVIAL FLAT CONNECTION — Some years ago, it was conjectured by the first author that the Chern–Simons perturbation theory of a 3-manifold at the trivial flat"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.975
-latex_coverage_ratio: 0.83
+latex_prose_ratio: 0.968
+latex_coverage_ratio: 0.969
+doc_brief: "Resurgence of Chern-Simons theory at the trivial flat connection — Some years ago, it was conjectured by the first author that the Chern–Simons perturbation theory of a 3-manifold at the trivial flat"
 ---
 []{#sub.intro label="sub.intro"}
 

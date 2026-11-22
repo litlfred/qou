@@ -2,87 +2,67 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1705.01853v2",
  "source_sha256": "895e0b22c93bca1b",
- "brief": "Line operators in the Standard Model — There is an ambiguity in the gauge group of the Standard Model.",
- "extended": "**Line operators in the Standard Model**\n\n*Department of Applied Mathematics and Theoretical Physics*\n\n18 pp, 15 sections.\n\n**Abstract.** There is an ambiguity in the gauge group of the Standard Model. The group is G = SU (3) × SU (2) × U(1)/ Γ, where Γ is a subgroup of Z6 which cannot be determined by current experiments. We describe how the electr ic, magnetic and dyonic line operators of the theory depend on the choice of Γ. We als o explain how the periodicity of the theta angles, associated to each factor of G, diﬀer.\n\n**Outline.** 1 Introduction 1; 2 A Review of Line Operators 3; 3 Line Operators in the Standard Model 7; 3.1 Theta Angles 10; 3.2 Electroweak Symmetry Breaking 12; 4 Summary 14; 2 A Review of Line Operators; 3 Line Operators in the Standard Model; 2 (e2πi/3)ze; 2 This, and subsequent ﬁgures, show the four p; 3.1 Theta Angles; 3.2 Electroweak Symmetry Breaking; 4 Summary; Acknowledgements; References",
+ "brief": "Line Operators in the Standard Model — There is an ambiguity in the gauge group of the Standard Model.",
+ "extended": "**Line Operators in the Standard Model**\n\n*David Tong*\n\n18 pp, 11 sections.\n\n**Abstract.** There is an ambiguity in the gauge group of the Standard Model. The group is G = SU(3) × SU(2) × U(1)/Γ, where Γ is a subgroup of Z6 which cannot be determined by current experiments. We describe how the electric, magnetic and dyonic line operators of the theory depend on the choice of Γ. We also explain how the periodicity of the theta angles, associated to each factor of G, diﬀer.\n\n**Outline.** Front matter; 2 A Review of Line Operators; An Example: $SU(N)$ vs $SU(N)/{\\bf Z}_N$; How Does the Dynamics Differ?; 3 Line Operators in the Standard Model; 3.1 Theta Angles; Time Reversal Invariant States; The Effect of Global Anomalies; 3.2 Electroweak Symmetry Breaking; 4 Summary; Acknowledgements",
  "tokens": {
   "brief": 25,
-  "extended": 233
+  "extended": 198
  },
  "sections": [
   {
-   "id": "sec-000-1-introduction-1",
-   "title": "Introduction 1",
-   "pages": "2-2"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-4"
   },
   {
-   "id": "sec-001-2-a-review-of-line-operators-3",
-   "title": "A Review of Line Operators 3",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-002-3-line-operators-in-the-standard-model-7",
-   "title": "Line Operators in the Standard Model 7",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-003-31-theta-angles-10",
-   "title": "Theta Angles 10",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-004-32-electroweak-symmetry-breaking-12",
-   "title": "Electroweak Symmetry Breaking 12",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-005-4-summary-14",
-   "title": "Summary 14",
-   "pages": "2-4"
-  },
-  {
-   "id": "sec-006-2-a-review-of-line-operators",
+   "id": "sec-000-2-a-review-of-line-operators",
    "title": "A Review of Line Operators",
-   "pages": "4-8"
+   "pages": "4-6"
   },
   {
-   "id": "sec-007-3-line-operators-in-the-standard-model",
+   "id": "sec-001-an-example-sun-vs-sunbf-z-n",
+   "title": "An Example: $SU(N)$ vs $SU(N)/{\\bf Z}_N$",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-002-how-does-the-dynamics-differ",
+   "title": "How Does the Dynamics Differ?",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-003-3-line-operators-in-the-standard-model",
    "title": "Line Operators in the Standard Model",
-   "pages": "8-8"
+   "pages": "8-11"
   },
   {
-   "id": "sec-008-2-e2πi3ze",
-   "title": "(e2πi/3)ze",
-   "pages": "8-9"
-  },
-  {
-   "id": "sec-009-2-this-and-subsequent-ﬁgures-show-the-four-possi",
-   "title": "This, and subsequent ﬁgures, show the four possible ( ze",
-   "pages": "9-11"
-  },
-  {
-   "id": "sec-010-31-theta-angles",
+   "id": "sec-004-31-theta-angles",
    "title": "Theta Angles",
-   "pages": "11-13"
+   "pages": "11-12"
   },
   {
-   "id": "sec-011-32-electroweak-symmetry-breaking",
+   "id": "sec-005-time-reversal-invariant-states",
+   "title": "Time Reversal Invariant States",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-006-the-effect-of-global-anomalies",
+   "title": "The Effect of Global Anomalies",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-007-32-electroweak-symmetry-breaking",
    "title": "Electroweak Symmetry Breaking",
    "pages": "13-15"
   },
   {
-   "id": "sec-012-4-summary",
+   "id": "sec-008-4-summary",
    "title": "Summary",
    "pages": "15-16"
   },
   {
-   "id": "sec-013-acknowledgements",
+   "id": "sec-009-acknowledgements",
    "title": "Acknowledgements",
-   "pages": "16-17"
-  },
-  {
-   "id": "sec-014-references",
-   "title": "References",
-   "pages": "17-18"
+   "pages": "16-18"
   }
  ],
  "provenance": {

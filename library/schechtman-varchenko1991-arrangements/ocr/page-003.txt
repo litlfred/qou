@@ -1,41 +1,63 @@
 Arrangements of hyperplanes and Lie algebra homology 141
+
 A collection of exponents a defines an integrable connection V(a) on the
-trivial one-dimensional bundle over U(6) with the connection form
-Z a(H)d log fH.
-Denote by 2'((a) the corresponding holomorphic de Rham complex over
-U(). We have H'(2'((a)= H'(U(); (a)) where (a) is the local system
-of horizontal sections of V(a). The inclusion α'() 2(U() is the map of
-complexes (αl'(), d(a) -→ 2'((a). So we get the morphism
-(0.1.2) (p) (%) n).H - (p)p (%).).H :(p)1
-Note that i(O) is an isomorphism by Orlik-Solomon. The second main result
-of Part I is Theorem 4.6 which says that i(aa) is isomorphism for all aeC except
+trivial one-dimensional bundle over U(@) with the connection form
+Y. a(H)d log fir.
+
+He@
+
+Denote by Q°(£(a)) the corresponding holomorphic de Rham complex over
+U(@). We have H’(Q'(L(a)))=H (U(@); S(a)) where S(a) is the local system
+of horizontal sections of V(a). The inclusion ./°(@)> Q'(U(@)) is the map of
+complexes (.°(@), d(a)) > Q'(¥(a)). So we get the morphism
+
+(0.1.2) ia): H(A (@), d(a) > H'(U(@), F(a).
+
+Note that 1(0) is an isomorphism by Orlik-Solomon. The second main result
+of Part I is Theorem 4.6 which says that 1(Aa) is isomorphism for all A4¢C€ except
 for a discrete set, not containing zero. One may imagine the cohomology of
-.α'() as the “quasiclassical" part of H'(U(), (a). In n° 4.7 we show that
+A'(€) as the “quasiclassical” part of H'(U(@), (a). In n° 4.7 we show that
+(under certain assumptions) the map induced by S’ in cohomology is the “quasi-
+classical limit” of the canonical map from the locally finite (near Y(@)) to the
 ordinary cohomology of (a).
-Note that it would be interesting to study the Jantzen filtration on l'()
-induced by the form S'(a) (see discussion in 4.8).
-O.2 Contents of Part II. Denote by n the set of hyperplanes Hij: t;--t,=0,
-For z =(z1, ..., zn)eU(Bn) denote by 6n,N(z) the arrangement induced by 6n+N
-in (pn)-i(2)=CN
+
+Note that it would be interesting to study the Jantzen filtration on »/°(@)
+induced by the form S"(a) (see discussion in 4.8).
+
+0.2 Contents of Part HH. Denote by @y the set of hyperplanes H;;: t;—t;=0,
+1Si<j<N in C”. Let p¥: €"** +C" be the projection on the first n ‘ordinates
+For z=(z,, ..., Z,)€U(@,) denote by @,,y(z) the arrangement induced by @,4
+in ph) ee
+
 Let us fix the following data.
+
 (a) A finite dimensional vector space h;
-(b) ) a symmetric non-degenerate bilinear form (,) on h;
-(c)  linearly independent functionals αi, ..., α,eh*;
-(d) arbitrary functionals A1, ..., Aneh*;
-(e) a non-zero complex number k.
-For every r-tuple of nonnegative integers a =(ki, ..., kr), define a collection
-of exponents a(a): Bn+N -→C, where N -Zki, as follows. To every coordinate
-ti in @n+N assign a covector α(t)eh*: put α(t)= A; if 1≤i≤n; α(ti)= -α; if
-j-1
-n+ Z kp<i≤n+ + kp.
+
+(b) a symmetric non-degenerate bilinear form (,) on bh;
+(c) linearly independent functionals «,, ..., %,eh*;
+
+(d) arbitrary functionals A,, ..., 4,¢b*;
+
+(e) a non-zero complex number x.
+
+For every r-tuple of nonnegative integers A=(k,, ..., k,), define a collection
+of exponents a(A): €n+n >, where N=)'k;, as follows. To every coordinate
+t; in a assign a covector a(teh*: put a(t)=A, if 1Sisn; a(t)=—a,; if
+
+n+ s ky<iSnt+ y kp.
+
 p=1 p=1
-Put a(2)(Hii)=(α(ti), α(t)/k. (We induce a scalar product on h* by means
-of the isomorphism h=h* defined by (,).) This defines also exponents on all
-G n; n(z).
-On the other hand, we assign to the data (a)(c) a Lie algebra g with genera-
-tors fi, ei, i =- 1, .. ., r and h subject to Kac-Moody type relations, see 6.1. Roughly
-decomposition g = n- @ h @ n+ where n- (resp. n+) denote the subalgebra gener-
-ated by fi (resp., ei). n+ are free. Similarly to [D, n' 3], one introduces a cobracket
+
+Put a(A)(H;,)=(a(t)), «(t;))/«. (We induce a scalar product on h* by means
+of the isomorphism h&b* defined by (,).) This defines also exponents on all
+Cn w(2).
+
+On the other hand, we assign to the data (a)-{c) a Lie algebra g with genera-
+tors fj, ¢;, i=1, ..., rand h subject to Kac-Moody type relations, see 6.1. Roughly
+speaking, g is a “Kac-Moody algebra without Serre relations”. One has the
+decomposition g=n_ @h@n, where n_ (resp. n,.) denote the subalgebra gener-
+ated by f; (resp., e,). n4 are free. Similarly to [D, n° 3], one introduces a cobracket
 on g (see 6.14) making it the Lie bialgebra.
-A weight aeh* defines a Verma module M(M) over g. As a n--
-module M(M) is isomorphic to the enveloping algebra Un. Put
+
+A weight Aeh* defines a Verma module M(A) over g. As a n_-
+module M(A) is isomorphic to the enveloping algebra Un_. Put

@@ -1,0 +1,1938 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-2302.05903v2",
+  "pages": [
+    {
+      "page": 2,
+      "rotation": 0,
+      "drawings": 23,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1: A picture, illustrating the concept of the combinatorial Borel transform (CBT) of the series. First, we introduce into the original series an auxiliary function Sr{¯p} such that its average over ¯p with an appropriate measure can change the coefficients in a desired way: say, ar = r! −→br = 1 in (1) or, more general, ar = dm"
+      ],
+      "labels": [
+        {
+          "text": "generalization",
+          "bbox": [
+            285.93,
+            47.78,
+            346.29,
+            57.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "-",
+          "bbox": [
+            325.78,
+            57.56,
+            335.74,
+            67.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LINE10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "-",
+          "bbox": [
+            325.78,
+            60.55,
+            335.74,
+            70.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LINE10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "R aRq|R|SR{p} = F{p}",
+          "bbox": [
+            371.16,
+            66.33,
+            470.9,
+            80.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "r arqr",
+          "bbox": [
+            122.1,
+            66.42,
+            146.35,
+            80.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "r arqr",
+          "bbox": [
+            226.71,
+            66.42,
+            250.96,
+            80.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "P",
+          "bbox": [
+            111.58,
+            67.39,
+            122.1,
+            77.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "P",
+          "bbox": [
+            216.19,
+            67.39,
+            226.71,
+            77.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "P",
+          "bbox": [
+            360.65,
+            67.39,
+            371.17,
+            77.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            171.36,
+            67.7,
+            179.11,
+            77.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "6Γ-average",
+          "bbox": [
+            129.51,
+            85.45,
+            173.95,
+            98.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8",
+            "LINE10"
+          ],
+          "sizes": [
+            7.97,
+            9.96
+          ]
+        },
+        {
+          "text": "6?",
+          "bbox": [
+            405.48,
+            85.45,
+            419.43,
+            102.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LINE10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "6⟨Sr{¯p}⟩¯p = ar",
+          "bbox": [
+            231.13,
+            86.45,
+            288.94,
+            104.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI6",
+            "CMMI8",
+            "CMR6",
+            "CMR8",
+            "CMSY8",
+            "LINE10"
+          ],
+          "sizes": [
+            4.98,
+            5.98,
+            7.97,
+            9.96
+          ]
+        },
+        {
+          "text": "⟨SR{¯p}⟩¯p = aR",
+          "bbox": [
+            417.43,
+            87.87,
+            481.34,
+            102.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "CBT",
+          "bbox": [
+            373.93,
+            89.62,
+            395.37,
+            99.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Borel",
+          "bbox": [
+            90.0,
+            92.61,
+            113.13,
+            102.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "cR",
+          "bbox": [
+            472.27,
+            95.39,
+            480.96,
+            102.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI7"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "⟨qr⟩= qr ar",
+          "bbox": [
+            133.5,
+            98.18,
+            176.4,
+            108.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI6",
+            "CMMI8",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            4.98,
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "cr",
+          "bbox": [
+            281.91,
+            98.85,
+            288.6,
+            105.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI6"
+          ],
+          "sizes": [
+            4.98,
+            5.98
+          ]
+        },
+        {
+          "text": "?",
+          "bbox": [
+            125.53,
+            100.4,
+            135.49,
+            110.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LINE10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "br",
+          "bbox": [
+            169.4,
+            104.83,
+            176.02,
+            111.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI6"
+          ],
+          "sizes": [
+            4.98,
+            5.98
+          ]
+        },
+        {
+          "text": "-",
+          "bbox": [
+            325.78,
+            110.36,
+            335.74,
+            120.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LINE10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "-",
+          "bbox": [
+            325.78,
+            113.35,
+            335.74,
+            123.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LINE10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            364.03,
+            115.22,
+            378.43,
+            125.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "cRq|R|SR{p}SR{¯p}",
+          "bbox": [
+            380.09,
+            115.65,
+            462.25,
+            128.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "r brqr",
+          "bbox": [
+            122.1,
+            116.24,
+            145.36,
+            130.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "r crqrSr{¯p}",
+          "bbox": [
+            221.72,
+            116.24,
+            271.23,
+            130.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "P",
+          "bbox": [
+            111.58,
+            117.21,
+            122.1,
+            127.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "P",
+          "bbox": [
+            211.21,
+            117.21,
+            221.73,
+            127.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            171.36,
+            117.52,
+            179.11,
+            127.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Sr{0} = br",
+          "bbox": [
+            156.41,
+            127.07,
+            197.56,
+            137.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI6",
+            "CMMI8",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            4.98,
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "R",
+          "bbox": [
+            368.21,
+            131.76,
+            374.22,
+            138.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "cr",
+          "bbox": [
+            190.91,
+            133.72,
+            197.6,
+            140.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI6"
+          ],
+          "sizes": [
+            4.98,
+            5.98
+          ]
+        },
+        {
+          "text": "Figure 1: A picture, illustrating the concept of the combinatorial Borel transform (CBT) of the series. First, we introduce into",
+          "bbox": [
+            61.77,
+            156.87,
+            543.6,
+            166.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8",
+            "CMTI8"
+          ],
+          "sizes": [
+            7.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the original series an auxiliary function Sr{¯p} such that its average over ¯p with an appropriate measure can change the coefficients",
+          "bbox": [
+            61.77,
+            167.79,
+            543.57,
+            176.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "= (r!)−m −→br = ardr = dm+1",
+          "bbox": [
+            349.67,
+            174.44,
+            475.46,
+            186.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMR6",
+            "CMR8",
+            "CMSY6",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "= (r!)−m−1. For",
+          "bbox": [
+            479.03,
+            176.02,
+            543.65,
+            185.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMR6",
+            "CMR8",
+            "CMSY6"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "in a desired way: say, ar = r! −→br = 1 in (1) or, more general, ar = dm",
+          "bbox": [
+            61.77,
+            176.1,
+            346.1,
+            186.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "r",
+          "bbox": [
+            459.68,
+            180.18,
+            463.15,
+            186.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "r",
+          "bbox": [
+            339.56,
+            180.91,
+            343.03,
+            186.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "traditional applications, the main point is that the underlined sum can converge better than the original one in the left upper corner",
+          "bbox": [
+            61.77,
+            186.82,
+            543.46,
+            194.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "due to Sr{0} = br",
+          "bbox": [
+            61.77,
+            194.31,
+            128.95,
+            204.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI6",
+            "CMMI8",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            4.98,
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "cr ∼1",
+          "bbox": [
+            122.3,
+            194.58,
+            148.04,
+            208.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI6",
+            "CMR6",
+            "CMSY8"
+          ],
+          "sizes": [
+            4.98,
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "r!, but for us this is just one application of many. Then, we extend the summation domain {r} −→{R} and",
+          "bbox": [
+            143.34,
+            196.18,
+            543.65,
+            206.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMR6",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "introduce an additional auxiliary function SR{p} so that the sum in the box is easily calculated, for instance, with the help of the",
+          "bbox": [
+            61.77,
+            207.28,
+            543.56,
+            216.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "Cauchy identity. As an additional bonus, this converts the Cauchy relations into ineteresting formulas for the series F{p} at the",
+          "bbox": [
+            61.77,
+            216.74,
+            543.64,
+            224.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "right upper corner, which can a priori look non-trivial, but are actually the ¯p averages of simple identities. Technically, what we",
+          "bbox": [
+            61.77,
+            226.31,
+            543.59,
+            234.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8",
+            "CMTI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "do is a substitution of the Gamma-function average ⟨qr⟩−→qrΓ(r + 1) = r! · qr which inverts the left vertical arrow in the usual",
+          "bbox": [
+            61.77,
+            232.96,
+            543.6,
+            243.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "Borel transform, by a smoother and richer Gaussian average, at the price of extending the sum over integers r to that over all",
+          "bbox": [
+            61.77,
+            245.24,
+            543.64,
+            253.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "integer partitions (Young diagrams) R. Such generalization is not unique, which opens a way to obtain a whole class of formulas",
+          "bbox": [
+            61.77,
+            254.7,
+            543.54,
+            262.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "by slight changes of the Gaussian measure.",
+          "bbox": [
+            61.77,
+            264.17,
+            220.8,
+            272.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "As to possible techniques which could provide a route to the combinatorial Borel transforms, in [8] it was",
+          "bbox": [
+            76.71,
+            290.79,
+            543.71,
+            300.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "suggested to consider an interpolation between two different kinds of sums over all Young diagrams",
+          "bbox": [
+            61.77,
+            302.74,
+            495.7,
+            312.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            321.04,
+            317.99,
+            326.02,
+            327.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "q|R| =",
+          "bbox": [
+            263.39,
+            320.61,
+            289.99,
+            334.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            247.34,
+            322.43,
+            261.74,
+            332.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Y",
+          "bbox": [
+            293.63,
+            322.43,
+            306.36,
+            332.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(3)",
+          "bbox": [
+            530.93,
+            324.73,
+            543.66,
+            334.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1 −qk",
+          "bbox": [
+            310.1,
+            331.02,
+            336.29,
+            341.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "R",
+          "bbox": [
+            251.52,
+            338.97,
+            257.52,
+            345.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "k=1",
+          "bbox": [
+            292.75,
+            339.05,
+            307.24,
+            346.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "and",
+          "bbox": [
+            61.77,
+            351.51,
+            77.83,
+            361.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            319.64,
+            365.96,
+            341.92,
+            383.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "!",
+          "bbox": [
+            375.5,
+            365.96,
+            383.39,
+            375.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "qkpk ¯pk",
+          "bbox": [
+            344.77,
+            367.81,
+            373.64,
+            380.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            202.11,
+            373.53,
+            216.51,
+            383.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "q|R|SR{p}SR{¯p} = exp",
+          "bbox": [
+            218.16,
+            373.97,
+            317.99,
+            386.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(4)",
+          "bbox": [
+            530.93,
+            375.83,
+            543.66,
+            385.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "k",
+          "bbox": [
+            356.79,
+            382.67,
+            361.98,
+            392.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "R",
+          "bbox": [
+            206.29,
+            390.08,
+            212.29,
+            397.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "k",
+          "bbox": [
+            332.52,
+            390.15,
+            336.75,
+            397.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "by taking a specially adjusted average of the Schur functions over the power sums pk. The emphasis, however,",
+          "bbox": [
+            61.77,
+            402.62,
+            543.65,
+            413.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "can be put not so much on averaging, but on coexistence of generating functions differing by the non-trivial",
+          "bbox": [
+            61.77,
+            414.57,
+            543.73,
+            424.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "combinatorial weights dR. It is a common place to consider such families differing by the number of factorials",
+          "bbox": [
+            61.77,
+            426.53,
+            543.68,
+            437.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "in the weights: these are just related by the standard exponential Borel transform. It is an interesting direction",
+          "bbox": [
+            61.77,
+            438.48,
+            543.72,
+            448.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "to study a more tricky combinatorial difference. The goal of the present paper is to exploit this idea and extend",
+          "bbox": [
+            61.77,
+            450.44,
+            543.71,
+            460.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "it further in various directions.",
+          "bbox": [
+            61.77,
+            462.39,
+            195.97,
+            472.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The paper is organized as follows. In section 2, we explain the basic of our approach, and demonstrate how",
+          "bbox": [
+            76.71,
+            474.35,
+            543.7,
+            484.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the averaging method works for evaluating sums. In section 3, we extend the method to reproduce multiple",
+          "bbox": [
+            61.77,
+            486.3,
+            543.7,
+            496.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "combinatorial sums. In section 4, we discuss evaluating bilinear averages in parallel with the property of strong",
+          "bbox": [
+            61.77,
+            498.26,
+            543.71,
+            508.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "superintegrability in matrix models. Section 5 contains short notes on relations of the sums considered in the",
+          "bbox": [
+            61.77,
+            510.21,
+            543.71,
+            520.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "paper with the Ramanujan sums. At last, section 6 discusses the cases when the sums are divergent, while",
+          "bbox": [
+            61.77,
+            522.17,
+            543.65,
+            532.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "section 7 contains some concluding remarks.",
+          "bbox": [
+            61.77,
+            534.12,
+            254.65,
+            544.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We use the notation SR{pk} for the Schur functions, which are symmetric functions of xi, and",
+          "bbox": [
+            119.37,
+            559.19,
+            543.67,
+            570.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Notation.",
+          "bbox": [
+            61.77,
+            559.32,
+            109.39,
+            569.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "i xk",
+          "bbox": [
+            268.52,
+            570.0,
+            283.42,
+            584.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "are graded polynomials of power sums pk := P",
+          "bbox": [
+            61.77,
+            570.97,
+            268.52,
+            588.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "i . They are labeled by partitions, or, equivalently, by Young",
+          "bbox": [
+            279.19,
+            571.27,
+            543.71,
+            583.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "diagrams R with lR parts: R1 ≥R2 ≥. . . ≥RlR. The corresponding skew Schur functions labeled by two",
+          "bbox": [
+            61.77,
+            583.1,
+            543.69,
+            594.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "partitions R and Q ∈R are denoted as SR/Q{pk}, while the Macdonald polynomials are denoted through",
+          "bbox": [
+            61.77,
+            595.06,
+            543.7,
+            606.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "MR{pk}. We also denote R∨the conjugate partition (Young diagram).",
+          "bbox": [
+            61.77,
+            605.77,
+            371.92,
+            617.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Our main quantity in this paper is dR,",
+          "bbox": [
+            76.71,
+            619.1,
+            245.51,
+            629.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "QlR",
+          "bbox": [
+            255.58,
+            635.1,
+            272.64,
+            647.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI5",
+            "CMMI7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "i<j (Ri −i −Rj + j)",
+          "bbox": [
+            264.99,
+            637.64,
+            354.92,
+            650.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "dR =",
+          "bbox": [
+            229.38,
+            646.0,
+            251.62,
+            657.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(5)",
+          "bbox": [
+            530.93,
+            646.0,
+            543.66,
+            655.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "QlR",
+          "bbox": [
+            263.67,
+            652.08,
+            280.73,
+            664.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI5",
+            "CMMI7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "i=1 (lR + Ri −i)!",
+          "bbox": [
+            273.08,
+            654.63,
+            346.84,
+            667.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "which is equal to SR{δk,1} in terms of Schur functions, and is equal to dimR/|R|!, where dimR is the dimension",
+          "bbox": [
+            61.77,
+            671.98,
+            543.66,
+            683.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "of representation R of the symmetric group S|R|. |R| = PlR",
+          "bbox": [
+            61.77,
+            683.13,
+            323.62,
+            702.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "i Ri is here the size of partition R with lR parts.",
+          "bbox": [
+            315.97,
+            685.8,
+            532.51,
+            698.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "The theory of symmetric functions can be found in [7], and the theory of symmetric groups, in [10].",
+          "bbox": [
+            76.71,
+            697.76,
+            511.9,
+            707.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We also use notation P",
+          "bbox": [
+            76.71,
+            709.41,
+            184.2,
+            726.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "R for the sum over all partitions R including the empty set, while P",
+          "bbox": [
+            184.19,
+            709.41,
+            493.93,
+            726.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "R⊢m means",
+          "bbox": [
+            493.92,
+            709.71,
+            543.65,
+            722.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "summing over all partitions of integer m.",
+          "bbox": [
+            61.77,
+            721.67,
+            240.91,
+            731.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            300.22,
+            762.19,
+            305.2,
+            772.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    }
+  ]
+}

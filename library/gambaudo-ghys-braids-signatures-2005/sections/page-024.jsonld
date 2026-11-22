@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/gambaudo-ghys-braids-signatures-2005/sections/page-024",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Page 24",
+  "pageStart": 24,
+  "pageEnd": 24,
+  "contains": [
+    "library/gambaudo-ghys-braids-signatures-2005/blocks/prose-page-024",
+    "library/gambaudo-ghys-braids-signatures-2005/blocks/lem-page-024-01",
+    "library/gambaudo-ghys-braids-signatures-2005/blocks/lem-page-024-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/gambaudo-ghys-braids-signatures-2005/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/gambaudo-ghys-braids-signatures-2005/manifest.jsonld",
+  "provenance": "ingested"
+}

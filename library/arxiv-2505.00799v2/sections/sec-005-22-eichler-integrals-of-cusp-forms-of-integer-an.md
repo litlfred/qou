@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2505.00799v2
-doc_title: "QUANTUM MODULAR FORMS AND RESURGENCE"
+doc_title: "Quantum Modular Forms and Resurgence"
 section_id: sec-005-22-eichler-integrals-of-cusp-forms-of-integer-an
 section_title: "Eichler Integrals of Cusp Forms of Integer and Half-Integer Weight"
 section_number: 2.2
 pages: 11-13
 source_pdf: 2505.00799v2.pdf
 source_sha256: cc9d2ab4c6c79b50
-doc_brief: "QUANTUM MODULAR FORMS AND RESURGENCE — In 2010, Zagier described a new phenomenon which he called quantum mod- ularity."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.966
-latex_coverage_ratio: 0.941
+latex_prose_ratio: 0.955
+latex_coverage_ratio: 0.951
+doc_brief: "Quantum Modular Forms and Resurgence — In 2010, Zagier described a new phenomenon which he called quantum mod- ularity."
 ---
 []{#subsec: modular label="subsec: modular"}
 

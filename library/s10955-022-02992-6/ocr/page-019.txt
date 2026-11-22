@@ -1,0 +1,62 @@
+Cluster Expansions: Necessary... Page 190f47 33
+
+This proves the inequality SNtn Gz) < (KE Sy (@))y (.). The casesn > N+2andn = Lare
+treated in a similar fashion, we leave the details to the reader. For the equality Sw4t n(3 Z) =
+(KS Sw(2)),) in the case of non-negative potentials, notice that for such potentials (3.5)
+holds with an equality — due to the alternating-sign property from Corollary 3.3.
+
+Finally, by passing to the limit N — oo in the recurrence relation for Sy (z), the inequality
+(3.3) for p(z) follows (and in the case of non-negative potentials the fixed point equation
+(3.4) is obtained). Notice that all exchanges of limits, sums and integrals are permitted by
+monotone convergence and because all terms involved are non-negative. Oo
+
+Proof of Theorem 2.1 For the implication (i) => (ii), suppose there exists a sequence € =
+(&n)nen Of measurable non-negative functions &, : X" — IR, such that e, + K3§ < &. We
+
+prove by induction over N that Sy(z) < & for all N € N. For N = 1, we have
+S, =e, <e,+ Kg <8.
+If Sw < & for some N €N, then
+Sv4i <e: + KiSy(z) <e: + KiE <6,
+
+where the first inequality holds by Proposition 3.6 and the second one due to the inductive
+hypothesis and the monotonicity of Ks on non-negative functions.
+
+This completes the induction and proves Sy < & forall N. Passing to the limit N — oo,
+we find p < &. This proves the absolute convergence (ii) as well as the bound (2.6).
+
+Left to show is the implication (ii) => (i) under the additional assumption that the potential
+
+is non-negative. Suppose that pp (x1,..., Xn; Z) is absolutely convergent, for all n € N and
+(X1,.--5 Xn) € X". Then py (x1,..., Xn} Z) is finite everywhere and we may set
+En(X1, 0s Xn) t= Pn(X1,---5Xni 2)
+
+Proposition 3.6 yields € = e, + Kig hence a fortiori € > e, + Ké, as a pointwise inequality
+for all vector entries. This proves (i). o
+
+3.3 Integral Equations for Hard-Core Models: Proof of Theorem 2.6
+
+In this section we specialize to hard-core systems in the continuum as in Sect. 2.3 and
+use capital letters for objects X € X. Let Dred vk C Dn.n+k be the collection of graphs
+G € Dyn+x that have no edges linking any two root vertices i, j € {1,...,n}. Define
+wid in a similar way as Wp,»44 but with summation over graphs in Dred It is not
+
+difficult to check that
+
+Vnnee(X1e es Xnge) = TP (1+ £00, XP) Wt Xs Xnges
+
+I<i<j<n
+
+The reduced functions yred
+
+n+k Satisfy recurrence relations similar to Lemma 3.5. Define
+
+k
+8X Xo, Xa MN MO =] fy) J] +0. ¥))
+
+j=l l<i<j<k
+T] (+ 0%. ¥9). (3.6)
+
+2<i<n
+I<jsk
+
+D Springer

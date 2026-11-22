@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2106.01332v4/sections/sec-001",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "II A topological model of composite preons",
+  "pageStart": 3,
+  "pageEnd": 4,
+  "contains": [
+    "library/arxiv-2106.01332v4/blocks/prose-sec-001",
+    "library/arxiv-2106.01332v4/blocks/figure-img-p004-1",
+    "library/arxiv-2106.01332v4/blocks/figure-img-p004-2"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2106.01332v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2106.01332v4/manifest.jsonld",
+  "provenance": "ingested"
+}

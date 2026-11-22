@@ -3,7 +3,7 @@
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
       "@base": "https://litlfred.github.io/folio/",
-      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant/folio-assistant-sci/ns#"
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "library/qt2pf5d0mn/blocks/prop-sec-015-03",
@@ -13,9 +13,19 @@
   ],
   "kind": "proposition",
   "pageStart": 83,
-  "pageEnd": 101,
+  "pageEnd": 100,
   "text": "prop-sec-015-03.md",
   "derivedFrom": "library/qt2pf5d0mn/sections/sec-015",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/qt2pf5d0mn",
-  "provenance": "ingested"
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/qt2pf5d0mn/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "4.4.3",
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-015-invariance-under-pachner-moves.md (p. 83-100)",
+    "claim_id": "qt2pf5d0mn#proposition:4.4.3",
+    "lean_status": "unformalized"
+  }
 }

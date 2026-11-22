@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-1006.1099v3/blocks/cor-sec-025-05",
+  "@type": [
+    "folio-assistant-sci:Corollary",
+    "doco:Section"
+  ],
+  "kind": "corollary",
+  "pageStart": 33,
+  "pageEnd": 36,
+  "text": "cor-sec-025-05.md",
+  "derivedFrom": "library/arxiv-1006.1099v3/sections/sec-025",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1006.1099v3/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "4.16",
+    "source_kind": "corollary",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "both",
+    "evidence_locator": "In-paper proof in sections/sec-025-42-hyperelliptic-curves-and-quadrics.md (p. 33-36) citing [11]",
+    "claim_id": "arxiv-1006.1099v3#corollary:4.16",
+    "lean_status": "unformalized"
+  }
+}

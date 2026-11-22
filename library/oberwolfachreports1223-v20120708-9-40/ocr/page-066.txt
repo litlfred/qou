@@ -1,0 +1,57 @@
+66 Oberwolfach Report 28/2012
+
+Stable Generalized Polyak Groups: An Approach to Finite-Type
+Invariants of Virtual Knots
+
+Mican W. CHRISMAN
+
+There are two notions of finite-type invariant for virtual knots. The first is
+the natural notion of Vassiliev invariants for virtual knots [15]. The second type
+is due to Goussarov, Polyak, and Viro (called GPV finite-type) [11]. There is no
+known universal Vassiliev finite-type invariant of virtual knots. However, there is a
+universal order one finite-type invariant [13], a universal GPV finite-type invariant
+[11], and a universal finite-type invariant for knots in oriented thickened surfaces
+[2, 1]. This suggests the following strategy:
+
+Strategy: Find the universal finite-type invariant of virtual knots
+by finding a combinatorial description of the universal finite-type
+invariant of knots in thickened surfaces. Then “stabilize” this
+group.
+
+For each compact connected oriented surface ©, we construct an analogue of the
+Polyak groups of degree n. This generalized Polyak group of degree n is denoted
+GP,,(X). If X1, U2 are compact connected oriented surfaces and h : Uy + Yo is
+any orientation preserving map, then there is an induced group homomorphism
+GP,,(h) : GP,(X1) + GP,,(X2). In fact, GP, is a functor.
+
+Let K(X) denote the ambient isotopy classes of oriented knots in ¥ x J.
+
+Theorem 1. For all natural numbers n, there exists a map I,,[X] : K(Z) >
+GP,,(X) which is a Vassiliev invariant of oriented knots in % x I of degree <n.
+
+The groups §P,,(X) may be “stabilized” to give finite-type invariants of virtual
+knots. The stabilization is motivated by the stabilization of abstract knots as given
+in [14]. Set GP, = @y GP,,(X). We define a set of relations R, on GP,: If x, €
+GP,,(X1), L2 € GP,,(H2), there exists a compact connected oriented surface © and
+orientation preserving embeddings h, : 4; > Y, hg : Ne > B, and GP,,(hi)(a1) =
+GP,,(h2)(x2), then 71 — #2 € Rn. Define:
+
+GPy
+
+(Rn)
+
+Let 7[X] : GP,(X) + GPn — 8GP,, denote the map which is inclusion followed by
+projection. Let VK denote the set of virtual knots, considered up to Reidemeister
+and detour moves. For a virtual knot K, let Tx be its band-pass presentation with
+surface Ux.
+
+Theorem 2. For every n, the map 8In : VK + 89P,, defined for all K € VK by:
+
+8In(K) = mn[Ex] 0 In[EK] (TK)
+
+is a Vassiliev invariant of virtual knots of degree <n.
+
+89, :=
+
+‘We show an example which proves that the invariant is non-trivial. Moreover,
+the groups 8§P,, are not isomorphic to the Polyak groups of [11].

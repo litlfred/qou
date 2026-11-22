@@ -1,0 +1,65 @@
+using mn in-disc (n € circline-set (poincare-line z m)> perm
+by auto
+qed
+
+lemma perpendicular-to-x-axis-intersects-x-axis:
+assumes is-poincare-line H perpendicular-to-x-aris H
+shows intersects-x-axis H
+using assms hermitean-elems
+by (transfer, transfer, auto simp add: cmod-eq-Re)
+
+lemma perpendicular-intersects:
+assumes is-poincare-line H1 is-poincare-line H2
+assumes perpendicular H1 H2
+shows 3 z. z € unit-disc \ z € circline-set H1 ™ circline-set H2 (is ?P' H1 H2)
+proof—
+have V H2. is-poincare-line H2 A perpendicular H1 H2 —+ ?P' H1 H2 (is ?P H1)
+proof (rule wlog-line-z-azis)
+show ?P x-axis
+proof safe
+fix H2
+assume is-poincare-line H2 perpendicular z-axis H2
+thus dz. z € unit-disc A z € circline-set x-axis M circline-set H2
+using perpendicular-to-z-axis|of H2]
+using perpendicular-to-z-axis-intersects-r-axis|of H2]
+using intersects-x-azis-iff [of H2]
+by auto
+qed
+next
+fix M
+assume unit-disc-fix M
+assume *: ?P (moebius-circline M H1)
+show ?P H1
+proof safe
+fix H2
+assume is-poincare-line H2 perpendicular H1 H2
+then obtain z where z € unit-disc z € circline-set (moebius-circline M H1) A z € circline-set (moebius-circline
+M H2)
+using *{rule-format, of moebius-circline M H2] <unit-disc-fix M>
+by auto
+thus dz. z € unit-disc A z € circline-set H1  circline-set H2
+using (unit-disc-fir My
+by (rule-tac z=moebius-pt (—M) z in ex!)
+(metis IntI add.inverse-inverse circline-set-moebius-circline-iff moebius-pt-comp-inv-left_ uminus-moebius-def
+unit-disc-fix-discI unit-disc-fiz-moebius-uminus)
+qed
+next
+show is-poincare-line H1
+by fact
+qed
+thus ?thesis
+using assms
+by auto
+qed
+
+definition calc-perpendicular-to-z-axis-cmat :: complex-vec = complet-mat where
+[simp]: calc-perpendicular-to-x-axis-cmat z =
+(let (21, 22) =z
+in if zl*xcnj 22 + z2xcnj z1 = 0 then
+(0, 1, 1, 0)
+else
+let A = zlxcnj z2 + 22xcnj 21;
+B= —(z1*cnj z1 + 22*cnj z2)
+in (A, B, B, A)
+
+119

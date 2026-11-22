@@ -1,0 +1,53 @@
+Cross multiplying here is fine, since 1 — det > 0 on [0, y]. Let us try to maximize
+
+h(x) = sec? (x) (1 - =)
+
+The (diagonal) Padé approximant of sec?(x) of order 4 is
+
+13a4 lla?
+945 63 +1
+
+163x4 52a? .
+945 +1
+
+We use this expression to approximate sec? (zx) on [0, y]; we can get an error bound on
+
+our approximant using Taylor’s remainder theorem. First, we maximize
+13 u 2
+i(e) = (a4 +s *) (:-*)
+wr 16304 _ 52 :
+69345 x tL 5
+We have
+
+~ 2x (84768 — 811202x° — 79834524 + 26649002? — 893025)
+5 (16324 — 780a? + 9452)°
+
+This clearly has a root at zero, and to find the other roots, we need to find the roots of
+the order 8 polynomial in parentheses. Notice that this is quartic in x?, so we may use
+Ferrari’s method to find its roots and then take their square roots. For a general quartic
+polynomial
+
+ax’ + ba? + cx? + da +e,
+
+the four roots are given by
+
+1 qd ;
+L12= ~ aq Fay 72+ G7 48 -—S$ and
+b 1 q
+ry4= —-—+-,/-2p - 4-482 4+ 8,
+3,4 mt? p 3 S248,
+where
+_ 8ac— 3b?
+8a?
+_ 8a?d — dabe + 6°
+— 8a3 ,
+
+Ao = 12ae — 3bd + c’,
+A, = —72ace + 27ad? + 27b*e — 9bed + 2c},
+
+3 2_4A3
+g-4 VAI sas At and
+_ 1 (Ao 2p
+S=5 n(G+2) z
+
+146

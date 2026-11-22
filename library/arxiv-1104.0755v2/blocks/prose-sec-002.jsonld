@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1104.0755v2/blocks/prose-sec-002",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "The Ramanujan function Aq(x)",
-  "pageStart": 6,
-  "pageEnd": 7,
-  "text": "../sections/sec-002-31-the-ramanujan-function-aqx.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1104.0755v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1104.0755v2",
+  "title": "Two types of the q-analogue of the Airy function",
+  "pageStart": 5,
+  "pageEnd": 6,
+  "text": "../sections/sec-002-3-two-types-of-the-q-analogue-of-the-airy-functi.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1104.0755v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1104.0755v2/manifest.jsonld",
   "provenance": "ingested"
 }

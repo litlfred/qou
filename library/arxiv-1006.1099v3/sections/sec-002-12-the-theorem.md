@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1006.1099v3
-doc_title: "FLOER COHOMOLOGY AND PENCILS OF QUADRICS IV AN SMITH"
+doc_title: "FLOER COHOMOLOGY AND PENCILS OF QUADRICS"
 section_id: sec-002-12-the-theorem
 section_title: "The theorem"
 section_number: 1.2
-pages: 1-3
+pages: 2-3
 source_pdf: 1006.1099v3.pdf
 source_sha256: 76c1c4173cdee9d8
-doc_brief: "FLOER COHOMOLOGY AND PENCILS OF QUADRICS IV AN SMITH — There is a classical relationship in algebraic geometry bet ween a hyperelliptic curve and an associated pencil of quadric hypersurfaces."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.974
-latex_coverage_ratio: 0.618
+latex_prose_ratio: 0.954
+latex_coverage_ratio: 0.987
+doc_brief: "FLOER COHOMOLOGY AND PENCILS OF QUADRICS — There is a classical relationship in algebraic geometry between a hyperelliptic curve and an associated pencil of quadric hypersurfaces."
 ---
 Let $\Sigma_g$ be a closed surface of genus $g\geq 2$, equipped with a symplectic form. This has a well-defined balanced Fukaya category $\EuScript{F}(\Sigma_g)$, linear over ${\mathbb C}$. Let $\{Q^{2g}_t\}_{t\in {\mathbb P}^1} \subset {\mathbb P}^{2g+1}$ denote a pencil of smooth $2g$-dimensional quadric hypersurfaces in ${\mathbb P}^{2g+1}$, with smooth base locus $Q^{2g}_0 \cap Q^{2g}_1$. By Moser's theorem, the symplectic manifold underlying the complete intersection $Q_0 \cap Q_1$ is independent of the choice of generic pencil of quadrics. It is a simply-connected Fano variety, in particular a monotone symplectic manifold with a well-defined monotone Fukaya category $\EuScript{F}(Q_0\cap Q_1)$, again defined over ${\mathbb C}$. The latter category actually splits into a collection of mutually orthogonal $A_{\infty}$-subcategories, one for each eigenvalue of quantum multiplication by the first Chern class on the quantum cohomology of $Q_0\cap Q_1$. We denote by $D^{\pi}\EuScript{C}$ the cohomological category $H(Tw^{\pi}\EuScript{C})$ underlying the split-closure of the category of twisted complexes of an $A_{\infty}$-category $\EuScript{C}$. Our main result is:
 

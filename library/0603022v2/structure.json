@@ -6,192 +6,574 @@
   "sha256": "46e24c0289f61d4400005c3a8775d9d7d01e75b52a3880b2399517c7c914a6ba",
   "bytes": 434478,
   "pages": 12,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "Quantum gravity and the standard model",
-  "authors_raw": "CSSM, School of Chemistry and Physics, University of Adelaide",
+  "title": "Quantum Gravity and the Standard Model",
+  "authors_raw": "Sundance O. Bilson-Thompson∗",
+  "title_lines": [
+   "Quantum Gravity and the Standard Model"
+  ],
   "abstract": null,
   "docinfo": {
-   "Producer": "GPL Ghostscript 10.01.2",
-   "CreationDate": "D:20241126171017-05'00'",
    "Title": "(braidrevisionfinal-cqg)",
+   "Author": "(Lee Smolin)",
+   "Producer": "GPL Ghostscript 10.01.2",
    "Creator": "(Adobe Reader: pictwpstops filter 1.0)",
-   "Author": "(Lee Smolin)"
+   "CreationDate": "D:20241126171017-05'00'"
   },
-  "title_lines": [
-   "Quantum Gravity and the Standard Model",
-   "Sundance O. Bilson-Thompson ∗"
-  ],
-  "title_prev": "Quantum Gravity and the Standard Model Sundance O. Bilson-Thompson ∗"
+  "title_raw": "Quantum Gravity and the Standard Model",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "(braidrevisionfinal-cqg)",
+   "heading": "Quantum Gravity and the Standard Model",
+   "text": "Quantum Gravity and the Standard Model",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Quantum gravity and the standard model"
  },
- "toc": [
+ "toc": [],
+ "toc_source": "undetermined",
+ "toc_undetermined_reason": "4 inferred entries with mean confidence 0.00, below the 0.6 floor — too little evidence agreed",
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted (4 inferred entries with mean confidence 0.00, below the 0.6 floor — too little evidence agreed): one section per page.",
+ "figures": [
   {
-   "level": 1,
-   "title": "INTRODUCTION",
-   "page": 1,
-   "source": "inferred",
-   "number": "I"
-  },
-  {
-   "level": 1,
-   "title": "THEORIES ON RIBBON GRAPHS",
-   "page": 2,
-   "source": "inferred",
-   "number": "II"
-  },
-  {
-   "level": 1,
-   "title": "CONSERVED DEGREES OF FREEDOM",
+   "kind": "figure",
+   "number": "1",
+   "title": "A trinion and a trinion decomposition of a 2-surface S",
    "page": 3,
-   "source": "inferred",
-   "number": "III"
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
   },
   {
-   "level": 1,
-   "title": "Discrete symmetries of braids",
+   "kind": "figure",
+   "number": "2",
+   "title": "The three generators of evolution on the ribbon graph",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "These two graphs are not distinguished by the usual",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "The new decomposition is in terms of untwisted and unbraided trinions and braids connecting them",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "A simple braid inside a ribbon graph",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "The reduced link of the braid in Figure 5",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "A possible evolution of the braid in Figure 5 under an exchange move",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Further evolving the braid in Figure 7 by expansion moves",
+   "page": 5,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "The effect of a parity transformation on a braid",
+   "page": 5,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "Constructing the link of a ribbon graph. The blue line is a boundary which separates the region of interest from the rest of the ribbon graph",
    "page": 6,
-   "source": "inferred",
-   "number": "C"
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
   },
   {
-   "level": 1,
-   "title": "IDENTIFICATION OF THE FIRST GENERATION",
+   "kind": "figure",
+   "number": "11",
+   "title": "The reduced link, taken by excluding unlinked, unknotted curves from the link obtained previously",
+   "page": 6,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  },
+  {
+   "kind": "figure",
+   "number": "12",
+   "title": "The reduced link of a ribbon graph is unaffected by expansion moves",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  },
+  {
+   "kind": "figure",
+   "number": "13",
+   "title": "Local structures, consisting of a braid joined on each end by nodes. One or both sets of nodes are connected to the rest of the ribbon graph",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  },
+  {
+   "kind": "figure",
+   "number": "14",
+   "title": "The basic braiding moves on three strands, and the basic twisting moves",
    "page": 7,
-   "source": "inferred",
-   "number": "VI"
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
   },
   {
-   "level": 1,
-   "title": "DISCUSSION",
+   "kind": "figure",
+   "number": "15",
+   "title": "The simplest three strand braids. The ovals signify nodes",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "figure",
+   "number": "16",
+   "title": "We see that two possible mirror-image states can be formed, which we may call left-handed and righthanded states",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "figure",
+   "number": "17",
+   "title": "The electron and positron — four maximally charged states",
+   "page": 8,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "18",
+   "title": "The left-handed down states-showing tripling of states for fractional charge",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "19",
+   "title": "The three colours of left-handed up states",
+   "page": 8,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "20",
+   "title": "A possible identiﬁcation of the muon neutrino as a three crossing state",
    "page": 9,
-   "source": "inferred",
-   "number": "VIII"
-  },
-  {
-   "level": 1,
-   "title": "Emergence of interactions",
-   "page": 10,
-   "source": "inferred",
-   "number": "C"
-  },
-  {
-   "level": 1,
-   "title": "CONCLUSIONS AND OPEN ISSUES",
-   "page": 10,
-   "source": "inferred",
-   "number": "IX"
-  },
-  {
-   "level": 1,
-   "title": "Acknowledgments",
-   "page": 11,
-   "source": "inferred",
-   "number": null
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "9"
   }
  ],
- "toc_source": "inferred",
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-i-introduction",
-   "number": "I",
-   "title": "INTRODUCTION",
+   "id": "page-001",
+   "number": null,
+   "title": "Page 1",
    "level": 1,
    "page_start": 1,
-   "page_end": 2,
-   "n_chars": 8691,
-   "n_words": 1435
+   "page_end": 1,
+   "n_chars": 4607,
+   "n_words": 722,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-ii-theories-on-ribbon-graphs",
-   "number": "II",
-   "title": "THEORIES ON RIBBON GRAPHS",
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
    "level": 1,
    "page_start": 2,
-   "page_end": 3,
-   "n_chars": 3023,
-   "n_words": 588
+   "page_end": 2,
+   "n_chars": 6009,
+   "n_words": 1017,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
-   "id": "sec-002-iii-conserved-degrees-of-freedom",
-   "number": "III",
-   "title": "CONSERVED DEGREES OF FREEDOM",
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
    "level": 1,
    "page_start": 3,
-   "page_end": 6,
-   "n_chars": 10225,
-   "n_words": 1897
+   "page_end": 3,
+   "n_chars": 3220,
+   "n_words": 595,
+   "label_start": "3",
+   "label_end": "3"
   },
   {
-   "id": "sec-003-c-discrete-symmetries-of-braids",
-   "number": "C",
-   "title": "Discrete symmetries of braids",
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 4406,
+   "n_words": 809,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 2918,
+   "n_words": 545,
+   "label_start": "5",
+   "label_end": "5"
+  },
+  {
+   "id": "page-006",
+   "number": null,
+   "title": "Page 6",
    "level": 1,
    "page_start": 6,
-   "page_end": 7,
-   "n_chars": 2965,
-   "n_words": 537
+   "page_end": 6,
+   "n_chars": 3737,
+   "n_words": 659,
+   "label_start": "6",
+   "label_end": "6"
   },
   {
-   "id": "sec-004-vi-identification-of-the-first-generation",
-   "number": "VI",
-   "title": "IDENTIFICATION OF THE FIRST GENERATION",
+   "id": "page-007",
+   "number": null,
+   "title": "Page 7",
    "level": 1,
    "page_start": 7,
-   "page_end": 9,
-   "n_chars": 6801,
-   "n_words": 1212
+   "page_end": 7,
+   "n_chars": 4022,
+   "n_words": 719,
+   "label_start": "7",
+   "label_end": "7"
   },
   {
-   "id": "sec-005-viii-discussion",
-   "number": "VIII",
-   "title": "DISCUSSION",
+   "id": "page-008",
+   "number": null,
+   "title": "Page 8",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 3069,
+   "n_words": 543,
+   "label_start": "8",
+   "label_end": "8"
+  },
+  {
+   "id": "page-009",
+   "number": null,
+   "title": "Page 9",
    "level": 1,
    "page_start": 9,
-   "page_end": 10,
-   "n_chars": 6354,
-   "n_words": 1095
+   "page_end": 9,
+   "n_chars": 5130,
+   "n_words": 869,
+   "label_start": "9",
+   "label_end": "9"
   },
   {
-   "id": "sec-006-c-emergence-of-interactions",
-   "number": "C",
-   "title": "Emergence of interactions",
-   "level": 1,
-   "page_start": 10,
-   "page_end": 10,
-   "n_chars": 1862,
-   "n_words": 318
-  },
-  {
-   "id": "sec-007-ix-conclusions-and-open-issues",
-   "number": "IX",
-   "title": "CONCLUSIONS AND OPEN ISSUES",
-   "level": 1,
-   "page_start": 10,
-   "page_end": 11,
-   "n_chars": 2993,
-   "n_words": 501
-  },
-  {
-   "id": "sec-008-acknowledgments",
+   "id": "page-010",
    "number": null,
-   "title": "Acknowledgments",
+   "title": "Page 10",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 5354,
+   "n_words": 904,
+   "label_start": "10",
+   "label_end": "10"
+  },
+  {
+   "id": "page-011",
+   "number": null,
+   "title": "Page 11",
    "level": 1,
    "page_start": 11,
+   "page_end": 11,
+   "n_chars": 5139,
+   "n_words": 799,
+   "label_start": "11",
+   "label_end": "11"
+  },
+  {
+   "id": "page-012",
+   "number": null,
+   "title": "Page 12",
+   "level": 1,
+   "page_start": 12,
    "page_end": 12,
-   "n_chars": 3723,
-   "n_words": 587
+   "n_chars": 394,
+   "n_words": 68,
+   "label_start": "12",
+   "label_end": "12"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 9,
-  "sections": 9,
-  "chars_total": 46637
+  "toc_entries": 0,
+  "toc_inferred_entries": 4,
+  "toc_inferred_mean_confidence": 0.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "regex",
+  "figure_entries": 20,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 12,
+  "chars_total": 48005,
+  "furniture_lines_stripped": 0
  }
 }

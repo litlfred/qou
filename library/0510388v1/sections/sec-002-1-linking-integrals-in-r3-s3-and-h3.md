@@ -1,6 +1,6 @@
 ---
 doc_id: 0510388v1
-doc_title: "ELECTRODYNAMICS and the GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE Dennis DeTurck and Herman Gluck"
+doc_title: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space"
 section_id: sec-002-1-linking-integrals-in-r3-s3-and-h3
 section_title: "Linking integrals in R3 , S3 and H3 ."
 section_number: 1
@@ -8,6 +8,7 @@ pages: 3-7
 source_pdf: 0510388v1.pdf
 source_sha256: c83c0f6a2eaa74f3
 toc_source: inferred
+doc_brief: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space — 64 sections: Front matter; ORGANIZATION; STATEMENTS OF RESULTS"
 ---
 Let  K1  =  {x(s)}  and  K2  =  {y(t)}  be disjoint oriented smooth closed curves in 
 either Euclidean 3-space  R3 ,  the unit 3-sphere  S3  or hyperbolic 3-space  H3 ,   
@@ -25,7 +26,6 @@ that the ambient space is also oriented.  The linking number depends neither on 
 choice of surface, nor on which of the curves is used to bound the surface. 
  
  
-4 
  
  
 Carl Friedrich Gauss, in a half-page paper dated January 22, 1833, gave an integral  
@@ -85,7 +85,6 @@ where     ϕ(α)  =  csch α
  
  
  
-5 
  
  
  
@@ -125,7 +124,6 @@ Note on typesetting.  In fractions such as  1/4π ,  (—1/4π2)  or  1/2π2 ,
  
  
  
-6 
  
  
  
@@ -162,7 +160,4 @@ of the group  SO(1, 3)  of orientation-preserving isometries of  H3 .
 wrote to us, "As it happens, I thought about this question a few years ago and I 
 obtained one of your formulas, I think, but I never wrote it up."  Subsequent corres-
 pondence shows that he did indeed obtain, by a beautiful geometric argument totally 
-different from ours, an expression equivalent to formula (2). 
- 
- 
-7
+different from ours, an expression equivalent to formula (2).

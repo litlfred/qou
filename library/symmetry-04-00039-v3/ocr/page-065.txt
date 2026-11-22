@@ -1,0 +1,56 @@
+Symmetry 2012, 4 103
+
+Hopf algebra is therefore to model the fermion and antifermion fusion and fission operations in a
+tensor formalism.
+From the alternative model point of view, the inputs fand f represent fermions and antifermions,
+
+members of vector spaces V and V*, respectively, and the Bs are bosons, members of matrix M. In [1]
+a start is made toward the representation of fusion at the FMS level in terms of a tensor algebra-like
+formalism. The idea is to represent the basic fermion FMS as covariant tensors and the corresponding
+
+antifermion FMS as contravariant tensors. Thus,
+Cape = Fe F™ (C-1)
+
+where F can be either A, B, C or D, G can be either A*, B*, C* or D*, each of a, b and c can be either
+d or u and each of r, s, and ¢ can be either d* or u*.
+
+Implementing fusion is then expressed by equating a subscript of F and a superscript of G using the
+Kronecker delta function and the summation implied in subscript-superscript identification as
+
+By FeO = Baposm (C-2)
+where, with certain restrictions, m can be either a, b or c and n can be either r, s or t. The notation
+abc/m is meant to indicate the two subscripts not selected by the choice of m and, similarly, the
+notation rst/n means the two superscripts not selected by the choice of n. Thus, B represents a
+two-quirk, two-antiquirk boson with two subscripts and two superscripts. For example, with m =a and
+
+n=r we have
+8! Fy 6" = By (C3)
+
+Note, however, that something has been lost, namely, the nature of the crossover junction and
+knowledge of which FMS are involved. To rectify that deficiency, we invoke the fusion state function
+introduced in section 3,
+
+(0,)=A(W,)+A'(P,) (C-4)
+treating it as an operator and evaluating it as per the delta function—that is, we write
+
+51" (Puy) Fasc = F,
+
+abe abc/m
+
+= Brey (24m)
+
+where v(m) means the value of m which can be either d or u. For example, with m = a, n =r as in the
+
+Gs n (Z¢m) )
+(C-4)
+
+above and, further, with a = r = d, we have
+or (®\ ) FG = B,." (x) (C-5)
+
+We still need to implement the proper association between operator and junction and, to do that we
+employ, again, the Kronecker delta function but this time operating to the left as well. In short, this
+leads to the operator
+
+(9° )o2 =A) (C-6)
+
+which, when applied to the RHS of 10.9 produces

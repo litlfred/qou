@@ -1,0 +1,42 @@
+436 Roberto Frigerio
+
+geodesic boundary should admit a good triangulation (see the discussion preceding
+Conjecture 1.2); moreover, any such manifold admits a partially flat triangulation, and
+following Petronio and Porti [13] we could probably adapt our proof of Thurston’s
+hyperbolic Dehn filling Theorem to deal also with this kind of triangulations. This
+would give a complete and self-contained proof of the filling Theorem via deformation
+theory of geometric triangulations.
+
+In the last section we show that small deformations of the solution representing the
+complete structure affect the compact tetrahedra and the hyperbolic structure on the
+geodesic boundary only at the second order. These results are extensively used in [3]
+for studying small deformations in infinitely many concrete examples.
+
+It is maybe worth mentioning that the deformation variety defined by the consistency
+equations for a cusped 3—manifold without boundary has already been studied by
+several authors (see eg, Neumann—Zagier [12], Petronio—Porti [13]). In particular, Choi
+has recently proved in [2] that in the cusped empty-boundary case the deformation
+variety is a smooth complex manifold at any point representing a non-degenerate (ie,
+neither partially flat nor partially negatively oriented) geodesic ideal triangulation.
+
+The author is partially supported by the INTAS project “CalcoMet-GT” 03-51-3663.
+
+1. Triangulations and hyperbolicity equations
+
+Let N be a complete finite-volume orientable hyperbolic 3—manifold with compact non-
+empty geodesic boundary (from now on we will usually summarize all this information
+saying just that N is hyperbolic). It is well-known that N consists of a compact portion
+containing ON together with several cusps of the form T x [0,00o), where T is the
+torus, so N admits a natural compactification N obtained by adding some boundary
+tori. Since the components of ON are totally geodesic, they inherit a hyperbolic metric,
+and have therefore negative Euler characteristic.
+
+1.1 Partially truncated tetrahedra
+
+A partially truncated tetrahedron is a pair (A, T), where A is a tetrahedron and Z is a
+set of vertices of A, that will be called ideal vertices. In the sequel we will always refer
+to A itself as a partially truncated tetrahedron, tacitly implying that TZ is also fixed. The
+topological realization A* of A is obtained by removing from A the ideal vertices
+and small open stars of the non-ideal vertices. We call lateral hexagon and truncation
+
+Algebraic & Geometric Topology 6 (2006)

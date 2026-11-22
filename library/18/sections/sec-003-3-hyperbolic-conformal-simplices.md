@@ -1,6 +1,6 @@
 ---
 doc_id: 18
-doc_title: "Mathematical Research Letters 3, 51–60 (1996)"
+doc_title: "Combinatorial scalar curvature and rigidity of ball packings"
 section_id: sec-003-3-hyperbolic-conformal-simplices
 section_title: "Hyperbolic conformal simplices"
 section_number: 3
@@ -8,7 +8,9 @@ pages: 5-5
 source_pdf: 18.pdf
 source_sha256: 0b7bf055085cb04b
 toc_source: inferred
+doc_brief: "Combinatorial scalar curvature and rigidity of ball packings — 11 sections: Front matter; Introduction; Conformal simplices"
 ---
+3. Hyperbolic conformal simplices
 In this section we consider conformal simplices (deﬁned as in Section 1)
 in hyperbolic 3-space H3, rather than in E3. Rather than repeating all of
 the deﬁnitions, we will simply point out the diﬀerences. The main one of

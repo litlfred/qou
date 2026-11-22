@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2601.07042v1
-doc_title: "A TANNAKIAN DESCRIPTION OF THE LOCAL KALETHA GERBE"
+doc_title: "A Tannakian description of the local Kaletha gerbe"
 section_id: sec-010-26-transition-maps
 section_title: "Transition maps"
 section_number: 2.6
-pages: 14-17
+pages: 14-16
 source_pdf: 2601.07042v1.pdf
 source_sha256: c2f3e302624e7abb
-doc_brief: "A TANNAKIAN DESCRIPTION OF THE LOCAL KALETHA GERBE — We construct, for ap-adic fieldF, an explicit semisimple Tannakian categoryRigIsoc F whose category of fiber functors recovers Kaletha’s Galois"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.986
-latex_coverage_ratio: 0.626
+latex_prose_ratio: 0.703
+latex_coverage_ratio: 0.893
+doc_brief: "A Tannakian description of the local Kaletha gerbe — We construct, for a p-adic field F, an explicit semisimple Tannakian category RigIsocF whose category of fiber functors recovers Kaletha’s Galois"
 ---
 Consider a tower of finite Galois extensions $K/E/F$. Fix an anti-uniformizer $\varpi_E$ of $E$. Let $K' \subset K$ be the maximal unramified extension of $E$. Then $K/K'$ is totally ramified and we have our fixed anti-uniformizer $\varpi_K$ such that $N_{K/K'}(\varpi_K)=\varpi_E$. We define a transition functor $p_{K/E}: R\mathcal{I}_{E/F, s} \to R\mathcal{I}_{K/F, s}$ defined according to our choices of uniformizers. We pick a lift of the Frobenius of $F$ in the absolute Weil group $W_{\overline{F}/F}$, whose restriction we use in our definitions of the actions of $W_{L_{K}/F}$ and $W_{L_{E}/F}$ on $R_{K/F}$ and $R_{E/F}$, respectively. To begin, we consider the $\prod\limits_{\tau \in \Gamma_{K/F}} \mathbb{Z}$-graded ring $R'_{E/F, K}$ whose $(c_{\tau})_{\tau}$-graded piece is $0$ if the grading is not fixed under the $\Gamma_{K/E}$-action and is the $(c_{\overline{\tau}})_{\sigma}$-graded piece of $R_{E/F}$ otherwise. We then define $R_{E/F, K} := R'_{E/F, K} \otimes_{L_E} L_K$. We give $R_{E/F, K}$ the diagonal $W_{L_K/F}$-action whereby $W_{L_K/F}$ acts on the first factor by projection to $W_{L_E/F}$ and on the second factor by the natural Galois action. Note that we have an inclusion of graded rings $$R_{E/F, K} \hookrightarrow R_{K/F}.$$ Moreover, we claim this inclusion respects the $W_{L_K/F}$-actions. We need only check that the actions of $\mathfrak{f}_{F,K}$ (our chosen lift of Frobenius) agree on $1_{(c_{\tau})_{\tau}}$ since the actions of $\Gamma_{L_K/L}$ both act by the natural Galois action and shift the gradings in the same way. We have $$\mathfrak{f}_{F,K}(1_{(c_{\tau})_{\tau}}) = \prod\limits_{\tau' \in \Omega_{K}} \tau'(\varpi_K)^{c_{\mathfrak{f}_{F,K}^{-1}\tau'}}_{(c_{\mathfrak{f}_{F,K}^{-1}\tau})_{\tau}} = \prod\limits_{\sigma' \in \Gamma_{K'/(K \cap L)}} \prod\limits_{\tau'' \in \Gamma_{K/K'}} \sigma'\tau''(\varpi_K)^{c_{\mathfrak{f}_{K,F}^{-1}\tau'}}_{(c_{\mathfrak{f}_{K,F}^{-1}\tau})_{\tau}}$$ $$= \prod\limits_{\sigma' \in \Gamma_{K'/(K \cap L)}} \sigma'(\varpi_E)^{c_{\mathfrak{f}_{F,E}^{-1}\sigma'}}_{(c_{\mathfrak{f}_{F,E}^{-1}\sigma})_{\sigma}} = \prod\limits_{\sigma' \in \Gamma_{E/(E \cap L)}} \sigma'(\varpi_E)^{c_{\mathfrak{f}_{F,E}^{-1}\sigma'}}_{(c_{\mathfrak{f}_{F,E}^{-1}\sigma})_{\sigma}} = [\mathfrak{f}_{F,E}1_{(c_{\sigma})_{\sigma}}] \otimes 1 = \mathfrak{f}_{F,K}(1_{(c_{\sigma})_{\sigma}} \otimes 1),$$
 

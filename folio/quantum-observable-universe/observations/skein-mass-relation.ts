@@ -1,7 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "prop:topological-mass-formula",
+  interprets: "conj:topological-mass-formula",
   label: "rem:skein-mass-relation",
   title: "$q$-Deformed Skein Relation (Observation)",
   uses: [

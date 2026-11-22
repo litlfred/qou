@@ -7,10 +7,11 @@ section_number: 2
 pages: 3-4
 source_pdf: 0203060v10.pdf
 source_sha256: 2ccb480f4bd4a970
-doc_brief: "ON FUSION CATEGORIES — Using a variety of methods developed in the literature (in pa rtic- ular, the theory of weak Hopf algebras), we prove a number of g eneral results about fusion categories in"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.884
+latex_coverage_ratio: 0.895
+doc_brief: "ON FUSION CATEGORIES — Using a variety of methods developed in the literature (in partic- ular, the theory of weak Hopf algebras), we prove a number of general results about fusion categories in"
 ---
 Let $k$ be an algebraically closed field. By a *multi-fusion* category over $k$ we mean a rigid semisimple $k$-linear tensor category ${\mathcal C}$ with finitely many simple objects and finite dimensional spaces of morphisms. If the unit object $\bold 1$ of ${\mathcal C}$ is simple, then the category ${\mathcal C}$ is said to be a *fusion* category. Otherwise (if $\bold 1$ is not simple), it is easy to see that we have $\mathbf 1=\oplus_{i\in J}\mathbf 1_i$, where $\mathbf 1_i$ are pairwise nonisomorphic simple objects.
 

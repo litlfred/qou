@@ -1,0 +1,66 @@
+---
+doc_id: traczyk1991-periodic-knots
+doc_title: "Periodic knots and the skein polynomial"
+section_id: page-007
+section_title: "Page 7"
+pages: 7-7
+pdf_page: 7
+source_pdf: traczyk1991-periodic-knots.pdf
+source_sha256: 2e9236877cec4604
+text_source: ocr
+granularity: page
+doc_brief: "Periodic knots and the skein polynomial — 12 sections: Page 1; Page 2; Page 3"
+---
+Periodic knots and the skein polynomial 719
+
+We can then use formula (3.4) to rewrite this again as
+
+1(—PY To +(— PP Lo) +(— POY A,
++P?(—Py To +(—P)P&— 1)tr Ty) +(- [Ppp +k 1) T, .
+
+A direct computation shows that the three terms in the first line of the above
+formula (which are the three terms we want) live in the area from degree
+(k—1)(p—1) to degree (k—1)(p—1)+2k—2, while the remaining three terms
+live in the area above (k + 1)(p—1) which proves that they must cancel.
+
+In the general case (s=2) we can rewrite the right-hand side of (2.7) (after
+some regrouping) as
+
+1(—PY T, +(-— Pye 1)+sr Ty +(- P) p(k —1)+sr+ p(pt+1)/2 T,)
++P?(-1 Ze Tr, Hey 1)+sr Ty +(—P Pe 1) +sr+ p(pt1)/2 T,)
+
++(1 +P9((- [Ppa 1) tsr er ip(p + 1)/2 T+ x (-P) p(i(p + 1)— 2)/2 T,_ )
+
+4 (—Pyportk- vB, ee ie2
+
+Then we can use formulae (3.4) to rewrite the above in yet another form (the
+second term of the first line is just renamed, the third term is written as a
+sum of two terms, one of which is moved to the last line)
+
+(3.9) 1(-VPY T, we ype) +sr 7 +(— [Pyp&e— 1) + sr + pip + 19/2 Hy)
++P (( —PY T, “_ 1)+sr To +(— [? PR D+ srt pip + 1)/2 T,)
+
++(1 spar 2 pk — 1)+sr ¥ (- 2 yipte + 1/2 T+ x (-P) p(i(p + 1) ~ 2)/2 T.- )
+i=2
+4(—Pyperte- 0 hep Dtsrt ppt i2 F
+
+The first line of (3.9) is easily identified with the right-hand side of (3.6),
+and computation shows that the first term lives in the area from (sp+k— 1) (p—1)
+to (sp+k+1)(p—1) (same as T,) the second from (sp+k—1)(p—1) to (sp+k
+—1)(p—1)+2k—2 (same as L,) and the third from (sp+k—1)(p—1)+2k to
+(sp+k+1)(p—1) (same as H,). What remains to be done is showing that the
+remaining terms live outside the area in which T, lives. In fact they contain
+only terms of degrees greater than (sp+k+1)(p—1)— the highest degree that
+may possibly appear in 7,. This is clearly true for the three terms in the second
+line, because the area in which these terms live is that in which the terms from
+the first line live shifted by 2p upwards. A similar argument works for the last
+term (the (—/?)P@~')*+sr+p+1/2): it is clear that the degrees appearing
+in this term are higher than those appearing in (—/?)P#~tsrtp@*b?2 Fy,
+As for the terms gathered under the two > signs: if in the second sum we
+increase the index i by one, then the area in which T,_(4,) lives is that of
+T,_; shifted by p(p—1) downwards, but the coefficient (—[?)P@* D@t~ 20/2 is
+equal to (—/?)P?*+)~2)/2 increased by p(p+1), which means that the area in
+which the i+1 term of the sum lives is that of the i-th term shifted by 2p
+upwards. We have demonstrated that for i=1 the term (1 +1?) (—]?)PQ(@+ 0-2/2
+(split into two terms in our formula) lives in the area beginning from the degree
+(sp+k—1)(p—1). This implies immediately that the higher terms live in the

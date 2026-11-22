@@ -56,7 +56,7 @@ the eigenvalues/contents are integers, hence live in any field. (Side 1 stays `C
 is reused here by specialisation.)
 
 ## References
-- [manuscript] docs/audits/2026-06-23-keystone-identity-I-content-decomposition.md §"Proof of (B)"
+- [leitner2026] docs/audits/2026-06-23-keystone-identity-I-content-decomposition.md §"Proof of (B)"
 - [vershik2005] Vershik–Okounkov, "A new approach to the representation theory of the symmetric
   groups II" (JM elements; eigenvalues = contents) https://doi.org/10.1007/s10958-005-0421-7
 -/

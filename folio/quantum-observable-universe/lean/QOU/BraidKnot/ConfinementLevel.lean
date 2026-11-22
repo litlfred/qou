@@ -65,7 +65,7 @@ structure ConfinementLevel {R : Type u} [CommRing R]
 
     Two confinement levels for the same braid datum agree, by antisymmetry of
     `≤` against the two minimality witnesses. -/
--- Ref: [manuscript] braids-and-knots/confinement-level
+-- Ref: [leitner2026] braids-and-knots/confinement-level
 theorem ConfinementLevel.unique {R : Type u} [CommRing R]
     {valid : BraidDatum R → ℕ → Prop} {d : BraidDatum R}
     (L₁ L₂ : ConfinementLevel valid d) : L₁.level = L₂.level :=
@@ -75,7 +75,7 @@ theorem ConfinementLevel.unique {R : Type u} [CommRing R]
 
     The set `{ ℓ : T_w ∈ J^ℓ(q) }` is nonempty (it contains `m`, since
     `J^m = H_n`), so it has a least element. -/
--- Ref: [manuscript] braids-and-knots/confinement-level
+-- Ref: [leitner2026] braids-and-knots/confinement-level
 noncomputable def ConfinementLevel.ofExists {R : Type u} [CommRing R]
     {valid : BraidDatum R → ℕ → Prop} {d : BraidDatum R}
     [DecidablePred (valid d)] (h : ∃ ℓ, valid d ℓ) : ConfinementLevel valid d :=
@@ -86,7 +86,7 @@ noncomputable def ConfinementLevel.ofExists {R : Type u} [CommRing R]
     Replaces a pre-2026-09-06 `nonempty` that constructed the junk record
     `⟨0, 1, 0, 0⟩`: that proved the *type* was inhabited, not that any braid has
     a level, so `prop:confinement-level-exists` was vacuously backed. -/
--- Ref: [manuscript] braids-and-knots/confinement-level
+-- Ref: [leitner2026] braids-and-knots/confinement-level
 theorem ConfinementLevel.nonempty {R : Type u} [CommRing R]
     {valid : BraidDatum R → ℕ → Prop} {d : BraidDatum R}
     [DecidablePred (valid d)] (h : ∃ ℓ, valid d ℓ) :
@@ -99,5 +99,52 @@ theorem ConfinementLevel.level_eq_find {R : Type u} [CommRing R]
     [DecidablePred (valid d)] (h : ∃ ℓ, valid d ℓ)
     (L : ConfinementLevel valid d) : L.level = Nat.find h :=
   ConfinementLevel.unique L (ConfinementLevel.ofExists h)
+
+/-- **Filtration monotonicity (`ConfinementLevel.le_of_filtration_imp`).**
+    If every valid filtration level for datum `d₁` under `valid₁` is also valid
+    for datum `d₂` under `valid₂` (i.e. `J^ℓ(d₁) ⊆ J^ℓ(d₂)` on the target braid),
+    then the confinement level can only decrease (`L₂.level ≤ L₁.level`). -/
+theorem ConfinementLevel.le_of_filtration_imp {R : Type u} [CommRing R]
+    {valid₁ valid₂ : BraidDatum R → ℕ → Prop} {d₁ d₂ : BraidDatum R}
+    (L₁ : ConfinementLevel valid₁ d₁) (L₂ : ConfinementLevel valid₂ d₂)
+    (h_imp : ∀ ℓ, valid₁ d₁ ℓ → valid₂ d₂ ℓ) :
+    L₂.level ≤ L₁.level :=
+  L₂.level_min L₁.level (h_imp L₁.level L₁.level_valid)
+
+/-- **Local constancy of the confinement level on a phase stratum**
+    ([`prop:confinement-local-constancy`], bean `g5t4`).
+    Whenever two braid data `d₁, d₂` (e.g. the same closed braid `(idx, n)` at
+    two substrate parameters `q₁, q₂` within a single phase stratum where the
+    shadow-price ordering of the `ℓ` cheapest operators is invariant) have
+    equivalent filtration membership `∀ ℓ, valid d₁ ℓ ↔ valid d₂ ℓ`, their
+    confinement levels coincide (`L₁.level = L₂.level`). -/
+-- Ref: [leitner2026] braids-and-knots/confinement-local-constancy
+theorem ConfinementLevel.local_constancy {R : Type u} [CommRing R]
+    {valid : BraidDatum R → ℕ → Prop} {d₁ d₂ : BraidDatum R}
+    (L₁ : ConfinementLevel valid d₁) (L₂ : ConfinementLevel valid d₂)
+    (h_stratum : ∀ ℓ, valid d₁ ℓ ↔ valid d₂ ℓ) :
+    L₁.level = L₂.level :=
+  Nat.le_antisymm
+    (ConfinementLevel.le_of_filtration_imp L₂ L₁ (fun ℓ h => (h_stratum ℓ).mpr h))
+    (ConfinementLevel.le_of_filtration_imp L₁ L₂ (fun ℓ h => (h_stratum ℓ).mp h))
+
+/-- Concrete figure-eight (`4₁`, 3-strand) braid datum at substrate parameter `q`. -/
+def figureEightBraidDatum (q : ℤ) : BraidDatum ℤ :=
+  { braidIndex := 1, nStrands := 3, q := q }
+
+/-- Concrete threshold filtration `ℓ ≥ 2` for the figure-eight braid datum:
+    the confinement level is `2` for every parameter `q` in the stratum. -/
+def figureEightConfinementLevel (q : ℤ) :
+    ConfinementLevel (fun _ ℓ => 2 ≤ ℓ) (figureEightBraidDatum q) where
+  level := 2
+  level_valid := le_rfl
+  level_min := fun _ h => h
+
+/-- On the threshold stratum, `figureEightConfinementLevel` is constant across `q₁, q₂`. -/
+theorem figureEightConfinementLevel_local_constancy (q₁ q₂ : ℤ) :
+    (figureEightConfinementLevel q₁).level = (figureEightConfinementLevel q₂).level :=
+  ConfinementLevel.local_constancy
+    (figureEightConfinementLevel q₁) (figureEightConfinementLevel q₂)
+    (fun _ => Iff.rfl)
 
 end QOU.BraidKnot

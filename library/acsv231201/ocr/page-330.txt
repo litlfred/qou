@@ -1,0 +1,30 @@
+312 Multiple point asymptotics
+
+a set containing no broken circuit y-independent (note that y-independence
+implies independence, but not vice versa). The support of a rational function
+is the set of divisors — without multiplicities — appearing in its denominator
+when in lowest terms.
+
+Example 10.30. Let ¢,, £2, and €3 vanish on concurrent lines, as in Figure 10.12.
+Each pair of lines is linearly independent, but the set of all three is linearly de-
+pendent, so there is a unique circuit [3] = {1, 2,3} and a unique broken circuit
+{1,2}. A subset of [3] is independent if its cardinality is at most 2, and is y-
+independent if it does not contain both | and 2. 4
+
+Figure 10.12 Three concurrent lines.
+
+Let Sq denote the set of meromorphic functions whose pole variety is con-
+tained in the union of hyperplanes of A. Broken circuits allow us to character-
+ize S q as a module over holomorphic functions.
+
+Proposition 10.31. Let A = {€,,...,€,} be a hyperplane arrangement in C4.
+
+(i) The set of rational functions (€;,(z) «+: &;, (z))"! € Sq with y-independent
+support is linearly independent over C.
+
+(ii) The span over C of the rational functions (€;,(z)" +++ blz e Sa
+with y-independent support and total degree — Diet mj contains the in-
+verses of all products of the €; over multisets of cardinality Diet mj.
+
+Proof The claimed results follow from properties of hyperplane arrange-
+ments derived in [OT92] (see [BMP23, Proposition 5.2]). oO

@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/characteristic/blocks/prose-sec-010",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Proof of the conjecture for the Trefoil and Figure 8 knots",
+  "title": "The colored Jones function and the A-polynomial of the 31 and 41 knots",
   "pageStart": 6,
   "pageEnd": 6,
-  "text": "../sections/sec-010-3-proof-of-the-conjecture-for-the-trefoil-and-fi.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/characteristic",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/characteristic",
+  "text": "../sections/sec-010-31-the-colored-jones-function-and-the-a-polynomi.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/characteristic/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/characteristic/manifest.jsonld",
   "provenance": "ingested"
 }

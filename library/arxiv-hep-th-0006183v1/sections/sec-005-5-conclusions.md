@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-0006183v1
-doc_title: "arXiv:hep-th/0006183v1 23 Jun 2000"
+doc_title: "Fine-tuning and the Wilson renormalization group"
 section_id: sec-005-5-conclusions
 section_title: "Conclusions"
 section_number: 5
@@ -8,7 +8,9 @@ pages: 15-16
 source_pdf: 0006183v1.pdf
 source_sha256: 2c9c4d97ce4f71a3
 toc_source: inferred
+doc_brief: "Fine-tuning and the Wilson renormalization group — We use the Wilson renormalization group (RG) formulation to solve the ﬁne-tuning proce- dure needed in renormalization schemes breaking the gauge"
 ---
+Conclusions
 The computation presented in this paper has shown that the requirement that the physical
 eﬀective action satisﬁes the ST identity translates into a ﬁne-tuning equation which allows
 to determine the couplings of the relevant, non-invariant interactions in the bare action
@@ -60,7 +62,6 @@ the ﬁne-tuning.
 However the RG formulation is general and can be applied to chiral
 gauge theories without anomalies along the same lines. In this case all the regularization
 procedures break the gauge symmetry and the ﬁne-tuning is unavoidable. Moreover in the
-14
 dimensional regularization with minimal subtraction scheme the breaking of the symmetry
 requires the introduction of all the possible non-invariant counterterms 4 while in the RG
 approach only interactions which are invariant under global chiral transformation need to

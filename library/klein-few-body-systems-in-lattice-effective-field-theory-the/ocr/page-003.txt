@@ -1,0 +1,38 @@
+Abstract
+
+Nuclear lattice effective field theory is a novel approach in nuclear physics combining classical effective
+field theory with lattice methods and newly available computational resources. It is particularly successful
+for few- and many-body systems, where one calculates ground state and scattering state properties using
+ab initio techniques. Thanks to the discretization of space and time, one can use Monte Carlo methods to
+evaluate physical observables and additionally, one may use discretization improvement programs as
+well for the reduction of lattice spacing artifacts. In contrast to lattice quantum chromodynamics, the
+lattice spacing does have a physical meaning, namely the cutoff which is inherent to any effective theory.
+Hence, it is necessary to understand the discretization effects. Such a study has been a missing part of
+nuclear lattice effective field theory as most calculations have been performed at a fixed lattice spacing
+of a = 1.97 fm. I will have a thorough look at it and examine the problem from different perspectives
+in the following. Due to computational limitations we restrict ourselves to few-body systems, where
+we have a lot of data from Nijmegen partial wave analysis for nucleon-nucleon scattering, very precise
+knowledge on the bound state of triton and helium-4 and also various correlation theorems. The Tjon
+line is such a correlation theorem between triton and helium-4 binding energies which states that the
+two-nucleon interaction results in a correlated prediction of triton and helium binding energies while a
+three-nucleon interaction that fixes the triton binding energy automatically reproduces the right helium-4
+binding energy.
+
+The first project looks at the deuteron binding energy and low-energy scattering observables, namely the
+S wave scattering length and effective range in dependence on the lattice spacing for various regularization
+schemes. We employ lattice spacings up to a = 0.5 fm and we show that the neutron-proton system with
+and without pion exchange becomes stable if the regularization scheme is chosen rightly and the lattice
+spacing is small enough.
+
+Secondly, I perform an analysis of 2N, 3N and 4N systems for three different lattice spacings at
+leading, next-to-leading and next-to-next-to-leading order. I show that the continuum correlation between
+3N and 4N systems is reproduced once the lattice spacing is chosen fine enough.
+
+Lastly, I examine the few-body boson system in one dimension. Such a system does have an exact
+solution and hence, lattice artifacts can be observed in a very transparent way. I show that we can absorb
+lattice spacing artifacts systematically by adding additional operators due to a consistent power counting
+scheme. Finally, we can do robust continuum extrapolations. We examine systems up to and including
+five bosons and the remaining errors scale linearly, as the third and fourth power of the lattice spacing at
+leading, next-to-leading and next-to-next-to-leading order.
+
+iii

@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-9808030v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "7889d6481b876b122db7d7b347b534e45a66cc2023da0f777ba1974591251daa",
+  "file": "9808030v1.pdf"
+ },
+ "provenance": {
+  "title": "Planscherel Measure on Eq(2)",
+  "authors": "H. Ahmedov1 and I. H. Duru2,1",
+  "arxiv": {
+   "id": "math/9808030",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "6 Aug 1998"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

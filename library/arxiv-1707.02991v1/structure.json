@@ -6,10 +6,12 @@
   "sha256": "f4f539f74403dd24e5641276bbf7b131e32820662ea471f296e6fd3515cd36fe",
   "bytes": 414008,
   "pages": 6,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,18 +22,29 @@
   },
   "doi": null,
   "title": "BPS states, knots and quivers",
-  "authors_raw": "Piotr Kucharski 1, Markus Reineke 2, Marko Sto\u02c7 si\u01073,4, and Piotr Su lkowski 1,5",
-  "abstract": null,
-  "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20170712001538Z",
-   "Creator": "LaTeX with hyperref package",
-   "Producer": "pdfTeX-1.40.17",
-   "Title": ""
-  },
+  "authors_raw": "Piotr Kucharski1, Markus Reineke2, Marko Stoˇsić3,4, and Piotr Su lkowski1,5",
   "title_lines": [
    "BPS states, knots and quivers"
-  ]
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.17",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20170712001538Z"
+  },
+  "title_raw": "BPS states, knots and quivers",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "BPS states, knots and quivers",
+   "outline": "BPS states, knots and quivers",
+   "text": "BPS states, knots and quivers",
+   "corroborated_by": [
+    "outline",
+    "text"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -39,122 +52,264 @@
    "title": "BPS states, knots and quivers",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Abstract",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Knot invariants, knot homologies, and LMOV conjecture",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 3,
    "title": "Moduli of quiver representations",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 3,
    "title": "Knot invariants from quiver representation theory",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 3,
-   "title": "Example \u2013 trefoil knot",
+   "title": "Example – trefoil knot",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 3,
    "title": "Summary",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "References",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Trefoil knot and the corresponding quiver",
+   "page": 1,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "1"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 13,
+   "n_words": 1,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-bps-states-knots-and-quivers",
    "number": null,
    "title": "BPS states, knots and quivers",
    "level": 1,
    "page_start": 1,
-   "page_end": 3,
-   "n_chars": 10660,
-   "n_words": 1704
+   "page_end": 2,
+   "n_chars": 6357,
+   "n_words": 953,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
-   "id": "sec-001-moduli-of-quiver-representations",
+   "id": "sec-001-knot-invariants-knot-homologies-and-lmov-conject",
+   "number": null,
+   "title": "Knot invariants, knot homologies, and LMOV conjecture",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 4276,
+   "n_words": 764,
+   "label_start": "2",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-002-moduli-of-quiver-representations",
    "number": null,
    "title": "Moduli of quiver representations",
    "level": 3,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 1575,
-   "n_words": 279
+   "n_chars": 1587,
+   "n_words": 291,
+   "label_start": "3",
+   "label_end": "3"
   },
   {
-   "id": "sec-002-knot-invariants-from-quiver-representation-theor",
+   "id": "sec-003-knot-invariants-from-quiver-representation-theor",
    "number": null,
    "title": "Knot invariants from quiver representation theory",
    "level": 3,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 5688,
-   "n_words": 929
+   "n_chars": 5714,
+   "n_words": 956,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
-   "id": "sec-003-example-trefoil-knot",
+   "id": "sec-004-example-trefoil-knot",
    "number": null,
-   "title": "Example \u2013 trefoil knot",
+   "title": "Example – trefoil knot",
    "level": 3,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 1903,
-   "n_words": 328
+   "n_chars": 1923,
+   "n_words": 349,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
-   "id": "sec-004-summary",
+   "id": "sec-005-summary",
    "number": null,
    "title": "Summary",
    "level": 3,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 6116,
-   "n_words": 925
+   "n_chars": 6125,
+   "n_words": 935,
+   "label_start": "5",
+   "label_end": "6"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 8,
-  "sections": 5,
-  "chars_total": 25942,
+  "toc_inferred_entries": 0,
+  "figure_entries": 1,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 7,
+  "chars_total": 25995,
+  "furniture_lines_stripped": 5,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "knots-quivers-short-arXiv.tex",
    "tex_sections": 5,
-   "overlaid": 4,
+   "overlaid": 5,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -162,39 +317,52 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-bps-states-knots-and-quivers",
      "title": "BPS states, knots and quivers",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-001-moduli-of-quiver-representations",
-     "title": "Moduli of quiver representations",
-     "prose_ratio": 0.966,
-     "coverage_ratio": 0.923,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-002-knot-invariants-from-quiver-representation-theor",
-     "title": "Knot invariants from quiver representation theory",
-     "prose_ratio": 0.974,
-     "coverage_ratio": 0.962,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-003-example-trefoil-knot",
-     "title": "Example \u2013 trefoil knot",
-     "prose_ratio": 0.969,
+     "id": "sec-001-knot-invariants-knot-homologies-and-lmov-conject",
+     "title": "Knot invariants, knot homologies, and LMOV conjecture",
+     "prose_ratio": 0.947,
      "coverage_ratio": 0.959,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-summary",
+     "id": "sec-002-moduli-of-quiver-representations",
+     "title": "Moduli of quiver representations",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-knot-invariants-from-quiver-representation-theor",
+     "title": "Knot invariants from quiver representation theory",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-example-trefoil-knot",
+     "title": "Example – trefoil knot",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-summary",
      "title": "Summary",
      "prose_ratio": 0.989,
-     "coverage_ratio": 0.67,
+     "coverage_ratio": 0.678,
      "result": "overlaid",
      "converter": "pandoc"
     }

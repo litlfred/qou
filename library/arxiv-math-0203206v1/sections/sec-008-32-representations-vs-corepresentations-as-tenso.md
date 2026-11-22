@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.983
 latex_coverage_ratio: 0.983
+doc_brief: "arXiv:math/0203206v1 [math.QA] 20 Mar 2002 — We give a pedagogical survey of those aspects of the abstract representation theory of quantum groups which are related to the Tannaka-Krein"
 ---
 We now proceed to establish the correspondence between representations of an aqg $(A,\Delta)$ and corepresentations of $(\hat{A},\hat{\Delta})$, restricting ourselves to finite dimensional Hilbert spaces. For homomorphisms $\pi: A\rightarrow\mathrm{End}K$ there are two different notions of non-degeneracy which, fortunately, are equivalent for $K$ finite dimensional.
 

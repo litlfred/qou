@@ -1,0 +1,1 @@
+Let Ω be a compact, smoothly bounded subdomain of R3 , S3 or H3 , and let R = R(Ω) be the radius of a ball in that space having the same volume as Ω .

@@ -1,0 +1,67 @@
+206 S. Blanes et al. / Physics Reports 470 (2009) 151-238
+
+It should be noticed that other possibilities not directly obtainable from the previous analysis are equally valid. For instance,
+one could consider
+
+h h2
+ah) = gi + 442 +43) — 55IAi. Al. (256)
+
+Although apparently more A evaluations are necessary in (255) and (256), this is not actually the case, since A3 can be reused
+at the next integration step.
+
+Order 6. In terms of Gauss—Legendre collocation points, one has
+
+1 J15 1 1. J15
+A, =Alt, --~—)h), A =Al(th4+=-h), A=Alt, -~+——)h
+1 («+(; 7) ) 2 (‘+ 5h) 3 («+ (3+ =) )
+
+and similarly we obtain
+
+V15h 10h
+a; =hA, a = a As — AD, a3 = zy As — 2A +A), (257)
+which are then inserted in (251) to get the approximation Y,,,; = exp(2"!)y,,.
+
+If the matrix A(t) is only known at equispaced points, we can use the Newton-Cotes (NC) quadrature values with s = 3
+and k = 5, b; = bs = 7/90, bz = ba = 32/90, b3 = 12/90 and c; = (j— 1)/4, j = 1, ..., 5. Then, using the corresponding
+
+matrix Qe? from (246) we get
+1
+a= a0 (—7(A; + As) + 28(A2 + Ag) + 18A3)
+1
+m= TE (7(As — Ai) + 16(Aq — A2)) (258)
+
+1
+w= 3 (7(A; + As) — 4(Az + Ag) — 6A3) -
+
+Both schemes involve the minimum number of commutators (three) and require three or four evaluations of the matrix A(t)
+per integration step (observe that As can be reused in the next step in the Newton-Cotes implementation because c, = 0
+and cs = 1).
+
+Higher orders can be treated in a similar way. For instance, an 8th-order Magnus method can be obtained with only six
+commutators [40]. Also variable step size techniques can be easily implemented [39,133].
+
+5.4.1. From Magnus to Fer and Cayley methods
+
+For arbitrary matrix Lie groups, it is feasible to design numerical methods based also on the Fer and Wilcox expansions,
+whereas for the J-orthogonal group (Eq. (21)) the Cayley transform also maps the Lie algebra onto the Lie group [41] and
+thus it allows us to build a new class of Lie-group methods. Here we briefly show how these integration methods can be
+easily constructed from the previous schemes, based on Magnus. In other words, if the solution of (223) in a neighborhood
+of to is written as
+
+Y(to +h) =e? Y. (Magnus) (259)
+= eiMeh™...y) (Fer) (260)
+= eM eS2l |. 52M e5i(y¥) (Symmetric Fer) (261)
+1 7 1
+= (: _ scm) (: + scan) Yo (Cayley) (262)
+
+one may express the functions Fj(h), S;(h) and C(h) in terms of the successive approximations to @ and, by using the same
+techniques as in the previous section, obtain the new methods. As the schemes based on the Wilcox factorization are quite
+similar as the Fer methods, they will not be considered here.
+
+5.4.2. Fer based methods
+
+To obtain integration methods based on the Fer factorization (260) one applies the Baker-Campbell-Hausdorff (BCH)
+formula after equating to the Magnus expansion (259). More specifically, in the domain of convergence of expansions (259)
+and (260) we can write
+
+2) = gFill) oa) |.

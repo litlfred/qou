@@ -1,0 +1,151 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-20T08:00:48.520200+00:00",
+  "commitSha": "917b6939954bc550c425cccd76d51909092ecfb9",
+  "assertions": [
+    {
+      "name": "reproduces_dashboard_pred",
+      "computed": "3.53711862102",
+      "expected": "3.53711862102",
+      "passed": true,
+      "tolerance": 0,
+      "unit": "ratio",
+      "source": "per-observable-100x-status.witness.json row m_K/m_pi pred_MeV"
+    },
+    {
+      "name": "reproduces_dashboard_err_ppb",
+      "computed": "51.48",
+      "expected": "51.48",
+      "passed": true,
+      "tolerance": 0,
+      "unit": "ppb",
+      "source": "per-observable-100x-status.witness.json row m_K/m_pi err_ppb"
+    },
+    {
+      "name": "core_alone_misses_target",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "bool",
+      "source": "red-team 2026-08-22 §2: strong core alone misses 385x"
+    },
+    {
+      "name": "all_order2_jet_forms_inside_target",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "bool",
+      "source": "EM-form choice among order-2-jet resummations does not move the verdict"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "mk-mpi-derivation-status",
+  "scriptFile": "mk_mpi_derivation_status_probe.py",
+  "scriptHash": "368c6712d8e9",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/meson/mk_mpi_derivation_status_probe.py"
+    ],
+    "reproduce": "python3 -u computations/meson/mk_mpi_derivation_status_probe.py"
+  },
+  "description": "m_K/m_pi L2 row recomputed by component at the proton q0, 70 dps; look-elsewhere rank of the scan-selected pair (3,4) in {[a]_q[b]_q : 1<=a<=b<=12}; EM-form ambiguity among resummations sharing the order-2 jet 1+h-h^2/2. Diagnostic only: nothing fitted, nothing selected.",
+  "auditOnly": "docs/audits/2026-11-20-mk-mpi-derivation-status.md",
+  "data": {
+    "q0": "1.109978582751380807591669095610768879874",
+    "alpha_em_inv_derived": "137.035935093975604658795689994",
+    "components": {
+      "core_sqrt_3x4": "3.53675923270025769312616232807",
+      "core_err_ppb": "-101553.355583267",
+      "core_miss_factor": "385.2555219",
+      "em_factor_1_plus_log_1_plus_hbar": "1.09447502756562862579376807974",
+      "em_term_on_ratio_sq": "0.00254226908596278144950547651919",
+      "total": "3.53711862102142092237530342164",
+      "total_err_ppb": "51.4754017636837",
+      "total_miss_factor": "0.1952784589"
+    },
+    "scan_family_look_elsewhere": {
+      "family": "[a]_q[b]_q, 1<=a<=b<=12 (78 members)",
+      "rank_of_3_4": 1,
+      "rel_dev_3_4_ppm_on_ratio_sq": "203.096398083",
+      "runner_up": [
+        2,
+        6
+      ],
+      "runner_up_rel_dev_ppm": "26742.14129",
+      "local_gap_rel": "0.07605246205",
+      "chance_within_dev_estimate": "0.00534096",
+      "top5": [
+        {
+          "pair": [
+            3,
+            4
+          ],
+          "rel_dev_ppm": "203.0964"
+        },
+        {
+          "pair": [
+            2,
+            6
+          ],
+          "rel_dev_ppm": "26742.141"
+        },
+        {
+          "pair": [
+            1,
+            10
+          ],
+          "rel_dev_ppm": "49310.321"
+        },
+        {
+          "pair": [
+            1,
+            11
+          ],
+          "rel_dev_ppm": "83400.136"
+        },
+        {
+          "pair": [
+            2,
+            5
+          ],
+          "rel_dev_ppm": "160930.75"
+        }
+      ]
+    },
+    "dictionary_index_readings_ppm_on_ratio_sq": {
+      "[3][5]/([3][3]) = [5]/[3]": "-862910.1567",
+      "[8]/[6] (total crossings)": "-888070.6874",
+      "[3][5] (kaon quark product)": "270020.5272",
+      "([3]+[5])/(2[3]) (GMOR, m(n)=[n])": "-891490.9081"
+    },
+    "em_form_ambiguity_err_ppb": {
+      "1+log(1+h) (shipped)": "51.4754017637",
+      "sqrt(1+2h)": "63.6817253812",
+      "Pade[1/1] 1+h/(1+h/2)": "44.9580851365",
+      "order-2 jet 1+h-h^2/2 (retired truncation)": "23.4497070334",
+      "1 (LO, no substrate factor)": "-8718.64122829"
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

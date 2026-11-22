@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0611521v1
-doc_title: "arXiv:math/0611521v1 [math.QA] 17 Nov 2006"
+doc_title: "The q-analogue of the wild fundamental group"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
@@ -10,7 +10,8 @@ source_sha256: 65fcd77b7b0a208e
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.979
-latex_coverage_ratio: 0.974
+latex_coverage_ratio: 0.973
+doc_brief: "The q-analogue of the wild fundamental group — We describe an explicit construction of galoisian Stokes operators for irregular linear q-difference equations."
 ---
 In this paper we return to the local analytic classification of $q$-difference modules. In [@RSZ1] we gave such a classification in Birkhoff style [@Birkhoff1; @Birkhoff2], using normal forms and index theorems. In [@JSSTO] (cf. also [@RSZ], [@RSZ2]) appears a classification using non abelian cohomology of sheaves on an elliptic curve. Here our aim is to give a classification based upon a "fundamental group" and its finite dimensional representations, in the style of the Riemann-Hilbert correspondence. At the abstract level there exists such a classification: the fundamental group is the tannakian Galois group of the tannakian category of our $q$-modules, but we want more information: our final aim is to get a *smaller* fundamental group (as small as possible !) which is Zariski dense in the tannakian Galois group and to describe it *explicitly*. (As a byproduct, we shall get a complete description of the tannakian Galois group itself.) It is important to notice that the tannakian Galois group is an algebraic object but that the construction of the smaller group is based upon *transcendental techniques* (topology and complex analysis).\
 This program is only partially achieved in this paper: even if we have the main ingredients, part of the work remains conjectural. As in the differential case, the construction of the fundamental group is a Russian-dolls construction using semi-direct products (heuristically, going from interior to exterior, each new "slice of infinitesimal neighborhood" of the origin (each "scale") corresponds to an invariant subgroup in a new semi-direct product). At the end there is a fascinating parallel between the differential and the $q$-difference case. However, it has been impossible (for us) to mimick the differential approach (essentially based upon the concept of *solutions*); instead, we shall follow a new path. Before the description of our approach and of our results in the $q$-difference case, let us recall, without proof, what happens in the differential case (in this case the "fundamental group" is the *wild fundamental group* introduced by the first author). We shall not use these results but we need them at the heuristic level in order to develop our $q$-analogies, therefore we shall insist on the underlying geometric ideas.\

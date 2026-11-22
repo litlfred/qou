@@ -1,0 +1,1 @@
+Let T be an R-tree and X an mm-space. Then, for any p  1, we have Obs Lp-VarTðXÞ  2f21=pð1 þ 2 21=pÞ þ 1gObs Lp-VarRðXÞ: ð5:12Þ In the case of p ¼ 2, we also have the better estimate Obs L2-VarTðXÞ2  ð38 þ 16 ﬃﬃ p ÞObs L2-VarRðXÞ2: ð5:13Þ

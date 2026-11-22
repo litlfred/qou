@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-q-alg-9709040v1
-doc_title: "arXiv:q-alg/9709040v1 29 Sep 1997"
+doc_title: "Deformation quantization of Poisson manifolds"
 section_id: sec-023-451-homotopy-classiﬁcation-of-l-algebras
 section_title: "Homotopy classiﬁcation of L∞-algebras"
 section_number: 4.5.1
@@ -8,6 +8,7 @@ pages: 13-14
 source_pdf: 9709040v1.pdf
 source_sha256: 8baf650d86c5b8ab
 toc_source: inferred
+doc_brief: "Deformation quantization of Poisson manifolds — 75 sections: Front matter; Plans; Star-products"
 ---
 Any complex of vector spaces can be decomposed into the direct sum of a complex with trivial diﬀerential
 and a contractible complex. There is an analogous decomposition in the non-linear case.

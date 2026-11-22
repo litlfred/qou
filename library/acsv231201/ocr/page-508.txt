@@ -1,0 +1,54 @@
+490 Residue forms and classical Morse theory
+
+in r, of degree € — | whose coefficients are analytic functions of z explicitly
+given in terms of derivatives of P and Q.
+
+Proof We induct on @, with the case € = | handled by Proposition C.8. As-
+sume for an induction that the lemma holds for € — 1. Because the residue of
+an exact form is zero, we let
+
+P
+
+Ui = Epler $e) __ 1 dz
+(€- 1) Q(z)" 0:.(z)
+and examine
+
+0 = Res(dn)
+
+P.,(2) deter —4P(2)g,! ds
+(€- 1) Q(z) 0.,(2) (€- 1) Q(z)! 0,,(2)
+-r P(z) d er P)Qa.a(%)
+Z-z dz}.
+Oz)! (€- 1) Q(z)! 0,,(2)
+Isolating the third term on the right yields
+
+Pl) \ (=n P2e!
+Res( Gert} == enosoe "|
+
++ Res (= AG) a:| ;
+Oz)!
+
+for an analytic function A independent of r;. Applying the induction hypothesis
+to the first residue on the right-hand side of (C.2.5) shows that it equals
+
+aif are (=r = 1) pe) POE On) /
+(-1) ie a }s aa Sa +O(r 9) dz,
+
+while applying the induction hypothesis to the second residue on the right-
+hand side of (C.2.5) proves that it is O (rf). Combining powers of Q.,(z) and
+
+= Res a
+
+(C.2.5)
+
+-r, [-r,—- 1 -
+powers of z;, and simplifying 7 *( ; 4 = (; ") then gives the stated
+
+result. ia)
+
+C.2.3 Iterated residue forms for simple poles on transverse sheets
+
+In this section we summarize a generalization of residue forms to the case
+where ‘Y is the union of a finite number of smooth analytic hypersurfaces that
+intersect transversely. A full treatment of residues for forms with transverse
+poles can be found in [AY83, Section 16.5].

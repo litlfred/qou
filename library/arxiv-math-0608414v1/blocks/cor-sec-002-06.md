@@ -1,0 +1,1 @@
+Let f be continuous along ΦD, D < ∞and g ∈L1 b(ΦD). Given ǫ > 0 there exists a large enough b and K = K(ǫ, ΦD) such that for all k ∥f ∗g∗k∥u < K ǫk By Remark 10 we can choose b = b(ǫ, ΦD) so large that ∥g∥b < ǫ. Then, by Proposition 9 and Eq. (2.5) we have:

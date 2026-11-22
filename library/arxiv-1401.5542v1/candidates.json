@@ -1,0 +1,110 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1401.5542v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "f7cd278a274f37c545e9dda9a4b2553f1b718e65b9ad96edbc0d61e09a5a9d82",
+  "file": "1401.5542v1.pdf"
+ },
+ "provenance": {
+  "title": "THE PTOLEMY FIELD OF 3-MANIFOLD-REPRESENTATIONS",
+  "authors": "STAVROS GAROUFALIDIS, MATTHIAS GOERNER, AND CHRISTIAN K. ZICKERT",
+  "arxiv": {
+   "id": "1401.5542",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "22 Jan 2014"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 3,
+  "by_kind": {
+   "remark": 3
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "math": 3
+  },
+  "by_evidence_kind": {
+   "explanatory": 3
+  },
+  "by_evidence_location": {
+   "in-paper": 2,
+   "elsewhere": 1
+  }
+ },
+ "candidates": [
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "3.2",
+   "name": null,
+   "statement": "One can concretely obtain P2(T ) from A by adding a dummy variable x and a dummy relation x Q cij,k = 1.",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-009-31-the-sl2c-ptolemy-variety.md (p. 7-8)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-009-31-the-sl2c-ptolemy-variety.md",
+   "section_title": "The SL(2,C)-Ptolemy variety",
+   "pages": "7-8",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null,
+   "block_id": "rem-sec-009-01",
+   "block_iri": "library/arxiv-1401.5542v1/blocks/rem-sec-009-01",
+   "claim_id": "arxiv-1401.5542v1#remark:3.2"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "3.3",
+   "name": null,
+   "statement": "We can eliminate the identi\ufb01cation relations (3.2) by selecting a representative for each edge cycle. This gives an embedding of the Ptolemy variety in an ambient space Ce, where it is cut out by s Ptolemy relations, one for each simplex. Note that when all boundary components are tori, s = e. 3.1.1. The \ufb01gure-8 knot. Consider the ideal triangulation of the \ufb01gure-8 knot complement shown in Figure 6. The Ptolemy variety P2(T ) is given by (3.3) c03,0c12,0 + c01,0c23,0 = c02,0c13,0, c03,1c12,1 + c01,1c23,1 = c02,1c13,1, c02,0 = c12,0 = c13,0 = c01,1 = c03,1 = c23,1 c01,0 = c03,0 = c23,0 = c02,1 = c12,1 = c13,1. By selecting representatives \u03b523,",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-009-31-the-sl2c-ptolemy-variety.md (p. 7-8)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-009-31-the-sl2c-ptolemy-variety.md",
+   "section_title": "The SL(2,C)-Ptolemy variety",
+   "pages": "7-8",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null,
+   "block_id": "rem-sec-009-02",
+   "block_iri": "library/arxiv-1401.5542v1/blocks/rem-sec-009-02",
+   "claim_id": "arxiv-1401.5542v1#remark:3.3"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "6.1",
+   "name": null,
+   "statement": "The signs in 6.3 depend in a non-trivial way on the face pairings (see [5]). For ordered triangulations the signs are always positive. As in Remark 3.3 we can eliminate the identi\ufb01cation relations by selecting a representative of each integral point of M. De\ufb01nition 6.2. The Ptolemy variety Pn(T ) is the subset of the a\ufb03ne algebraic set de\ufb01ned by the Ptolemy- and identi\ufb01cation relations, consisting of the points where all Ptolemy coordinates are non-zero. For general n, we denote the group of upper triangular matrices with 1 on the diagonal by N (instead of P). As in 1.2 we have (6.4)\u001a Points in Pn(T ) \u001b o 1\u22121 / \u001a Natural (SL(n, C), N)- cocycl",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [5] in sections/sec-022-61-definition-of-the-ptolemy-variety.md",
+   "external_refs": [
+    "[5]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-022-61-definition-of-the-ptolemy-variety.md",
+   "section_title": "Definition of the Ptolemy variety",
+   "pages": "16-17",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null,
+   "block_id": "rem-sec-022-01",
+   "block_iri": "library/arxiv-1401.5542v1/blocks/rem-sec-022-01",
+   "claim_id": "arxiv-1401.5542v1#remark:6.1"
+  }
+ ]
+}

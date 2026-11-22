@@ -26,4 +26,7 @@ export default remark({
     "askey-scheme",
     "fibre-level",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): This is formalized in the conjecture class `AWDeformationPath`. The class specifies\n\nis a derived theorem (`AWDeformationPath.channel_ladders` via `recurrence_invol_descent`), rather than an assumption." },
+  ],
 });

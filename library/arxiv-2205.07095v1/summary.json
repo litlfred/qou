@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2205.07095v1",
  "source_sha256": "2ec6916399150e2d",
- "brief": "Virial Expansions for Correlation Functions in Canonical Ensemble A. L. Rebenko — The inﬁnite set of coupled integral nonlinear equations for correlation func- tions in the case of classical",
- "extended": "**Virial Expansions for Correlation Functions in Canonical Ensemble A. L. Rebenko**\n\n*Institute of Mathematics, Ukrainian National Academy of Sciences , Kyiv, Ukraine*\n\n14 pp, 10 sections.\n\n**Abstract.** The inﬁnite set of coupled integral nonlinear equations for correlation func- tions in the case of classical canonical ensemble is conside red. Some kind of graph expansions of correlation functions in the density parameter are constructed. Existing of unique solutions for small value o f density and high temperature is discussed.\n\n**Outline.** 1 Introduction.; 2 On some mathematical concepts; 2.2 Algebra of generating functionals.; 3 Description of the system of interacting par; 3.1 Interaction between particles; 3.2 Derivation of equations for correlation fu; 4 Construction of expansion for correlation fu; 4.1 Solution of equations for correlation func; 4.2 Graphic interpretation of solutions.; 4.3 Conclusion on the convergence of the expan\n\n**Extracted claims (proposals, not verified).**\n- Proposition 4.1: From initial conditions (4.48)-(4.49) it follows that\n- Proposition 4.2: The solution of the recurrence relation (4.47) can be\n- Lemma 2.1: For all measurable functions G : Γ 0 ↦→R and H : Γ 0 × Γ 0 ↦→",
+ "brief": "Virial Expansions for Correlation Functions in Canonical Ensemble — The inﬁnite set of coupled integral nonlinear equations for correlation func- tions in the case of classical canonical ensemble is",
+ "extended": "**Virial Expansions for Correlation Functions in Canonical Ensemble**\n\n*Institute of Mathematics, Ukrainian National Academy of Sciences, Kyiv, Ukraine*\n\n14 pp, 12 sections.\n\n**Abstract.** The inﬁnite set of coupled integral nonlinear equations for correlation func- tions in the case of classical canonical ensemble is considered. Some kind of graph expansions of correlation functions in the density parameter are constructed. Existing of unique solutions for small value of density and high temperature is discussed.\n\n**Outline.** Front matter; 1 Introduction.; 2 On some mathematical concepts; 2.1 Configuration spaces and Lebesgue-Poisson ; 2.2 Algebra of generating functionals.; 3 Description of the system of interacting par; 3.1 Interaction between particles; 3.2 Derivation of equations for correlation fu; 4 Construction of expansion for correlation fu; 4.1 Solution of equations for correlation func; 4.2 Graphic interpretation of solutions.; 4.3 Conclusion on the convergence of the expan",
  "tokens": {
-  "brief": 47,
-  "extended": 306
+  "brief": 49,
+  "extended": 250
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction.",
@@ -17,45 +22,50 @@
   {
    "id": "sec-001-2-on-some-mathematical-concepts",
    "title": "On some mathematical concepts",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-002-21-configuration-spaces-and-lebesgue-poisson-mea",
+   "title": "Configuration spaces and Lebesgue-Poisson measure.",
    "pages": "3-4"
   },
   {
-   "id": "sec-002-22-algebra-of-generating-functionals",
+   "id": "sec-003-22-algebra-of-generating-functionals",
    "title": "Algebra of generating functionals.",
    "pages": "4-5"
   },
   {
-   "id": "sec-003-3-description-of-the-system-of-interacting-parti",
+   "id": "sec-004-3-description-of-the-system-of-interacting-parti",
    "title": "Description of the system of interacting particles in the canonical ensemble.",
    "pages": "5-5"
   },
   {
-   "id": "sec-004-31-interaction-between-particles",
+   "id": "sec-005-31-interaction-between-particles",
    "title": "Interaction between particles",
    "pages": "5-6"
   },
   {
-   "id": "sec-005-32-derivation-of-equations-for-correlation-funct",
+   "id": "sec-006-32-derivation-of-equations-for-correlation-funct",
    "title": "Derivation of equations for correlation functions.",
    "pages": "6-8"
   },
   {
-   "id": "sec-006-4-construction-of-expansion-for-correlation-func",
-   "title": "Construction of expansion for correlation functions in the density parameter  .",
+   "id": "sec-007-4-construction-of-expansion-for-correlation-func",
+   "title": "Construction of expansion for correlation functions in the density parameter .",
    "pages": "8-8"
   },
   {
-   "id": "sec-007-41-solution-of-equations-for-correlation-functio",
+   "id": "sec-008-41-solution-of-equations-for-correlation-functio",
    "title": "Solution of equations for correlation functions.",
    "pages": "8-10"
   },
   {
-   "id": "sec-008-42-graphic-interpretation-of-solutions",
+   "id": "sec-009-42-graphic-interpretation-of-solutions",
    "title": "Graphic interpretation of solutions.",
    "pages": "10-13"
   },
   {
-   "id": "sec-009-43-conclusion-on-the-convergence-of-the-expansio",
+   "id": "sec-010-43-conclusion-on-the-convergence-of-the-expansio",
    "title": "Conclusion on the convergence of the expansion.",
    "pages": "13-14"
   }
@@ -64,8 +74,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

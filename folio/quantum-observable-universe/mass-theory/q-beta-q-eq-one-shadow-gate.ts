@@ -10,7 +10,6 @@ export default proposition({
   },
   uses: [
     "prop:q-beta-bar-even-kernel-invariant",
-    "prop:q-beta-radius-of-convergence-gate",
     "prop:q-beta-c-2-eq-neg-one-structural",
     "prop:q-beta-c-k-recursion-from-habiro-q-difference",
   ],

@@ -5,22 +5,31 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ant-v14-n7-s-p07",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p07/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "ant-v14-n7-s-p07",
   "contains": [
-    "library/ant-v14-n7-s-p07/sections/sec-000",
-    "library/ant-v14-n7-s-p07/sections/sec-001",
-    "library/ant-v14-n7-s-p07/sections/sec-002",
-    "library/ant-v14-n7-s-p07/sections/sec-003",
-    "library/ant-v14-n7-s-p07/sections/sec-004",
-    "library/ant-v14-n7-s-p07/sections/sec-005",
-    "library/ant-v14-n7-s-p07/sections/sec-006"
+    "library/ant-v14-n7-s-p07/sections/page-001",
+    "library/ant-v14-n7-s-p07/sections/page-002",
+    "library/ant-v14-n7-s-p07/sections/page-003",
+    "library/ant-v14-n7-s-p07/sections/page-004",
+    "library/ant-v14-n7-s-p07/sections/page-005",
+    "library/ant-v14-n7-s-p07/sections/page-006",
+    "library/ant-v14-n7-s-p07/sections/page-007",
+    "library/ant-v14-n7-s-p07/sections/page-008",
+    "library/ant-v14-n7-s-p07/sections/page-009",
+    "library/ant-v14-n7-s-p07/sections/page-010",
+    "library/ant-v14-n7-s-p07/sections/page-011",
+    "library/ant-v14-n7-s-p07/sections/page-012",
+    "library/ant-v14-n7-s-p07/sections/page-013",
+    "library/ant-v14-n7-s-p07/sections/page-014",
+    "library/ant-v14-n7-s-p07/sections/page-015",
+    "library/ant-v14-n7-s-p07/sections/page-016"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "ant-v14-n7-s-p07",
     "title_source": "slug",

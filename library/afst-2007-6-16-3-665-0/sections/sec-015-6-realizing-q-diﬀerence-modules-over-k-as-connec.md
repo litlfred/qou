@@ -2,12 +2,13 @@
 doc_id: afst-2007-6-16-3-665-0
 doc_title: "Galois theory of q-difference equations"
 section_id: sec-015-6-realizing-q-diﬀerence-modules-over-k-as-connec
-section_title: "Realizing q-diﬀerence modules over K as connections"
+section_title: "Realizing q-diﬀerence modules over K as connections on the elliptic curve E = C∗/qZ"
 section_number: 6
 pages: 39-47
 source_pdf: AFST_2007_6_16_3_665_0.pdf
 source_sha256: 402b61574e561f86
 toc_source: inferred
+doc_brief: "Galois theory of q-difference equations (van der Put–Reversat, Ann. Fac. Sci. Toulouse XVI:3, 2007, 665–718) — Galois-theoretic framework for q-difference equations."
 ---
 on the elliptic curve E = C∗/qZ
 As in section 2 we associate to any diﬀerence module M over K a vector

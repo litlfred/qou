@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1308.2499v1/blocks/prose-sec-001",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Existence of minimizers within knot classes",
-  "pageStart": 11,
-  "pageEnd": 19,
-  "text": "../sections/sec-001-2-existence-of-minimizers-within-knot-classes.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1308.2499v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1308.2499v1",
+  "title": "Classification of finite-energy curves",
+  "pageStart": 6,
+  "pageEnd": 11,
+  "text": "../sections/sec-001-1-classification-of-finite-energy-curves.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1308.2499v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1308.2499v1/manifest.jsonld",
   "provenance": "ingested"
 }

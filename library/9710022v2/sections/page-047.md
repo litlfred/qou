@@ -1,0 +1,72 @@
+---
+doc_id: 9710022v2
+doc_title: "Harmonic Analysis on the quantum Lorentz group"
+section_id: page-047
+section_title: "Page 47"
+pages: 47-47
+pdf_page: 47
+source_pdf: 9710022v2.pdf
+source_sha256: e5ff373a1ec6884a
+text_source: ocr
+granularity: page
+doc_brief: "Harmonic Analysis on the quantum Lorentz group — This w ork b egins with a review of complexi cation and reali cation of Hopf algebras."
+---
+which is trivial to show, and obtain
+
+E) C5). H), (oa)
+
+P : . +b A+1 _ (,-2 +4 A4+1
+_ —q-24-B) EC p (2-1? (a ~g?etb—q-y)(et y)4 (a +b) (q*(@+y))
+
+atb—q2(«#+y)
+= G74) Cp parte (a + y)A((a+ b)4 — (q?@ + y))4"))
+
+__gvpu( 4) (A+1
+Bri q B q
+
+which ends the proof of the first relation (146). The second relation (147) is proved with exactly
+the same method. The proofs of (141) on arat are similar and we leave them to the reader.
+oO
+Let ¢ € Funce(SLq(2, Cr), it is trivial to show that e(¢ * S(¢*)) = h(¢*¢). As a result we
+obtain using 7(¢ * S(¢*)) = 7($)x(@)* and the Plancherel formula that:
+
+)
+
+Theorem 11: Plancherel Formula .2
+Let @ be any element of Funec(SLq(2, Ox), we have :
+
+Malas -[, tr(a(u' (9) (0)! dP (a). (149)
+
+Dp
+
+V, admits a Hilbert basis € = {@m,A € 4Z+.m = —A,..., A}, and denote by Lyzs(Vzx) the
+Hilbert space Lyns(Vr) = {€ € CX", yee Maa E(x, y)? < +00}, with Hermitian product:
+< EN >= Vo yee Haa(@, W(x, 9), VE € Lats (Vn).
+
+When qg = 1, w= 1 and Lyy5(V;) is the Hilbert space of Hilbert-Schmidt bounded operator
+of V,. If ¢ € Funce(SLq(2,C)g), we can associate to 7(¢) an element €,(¢) € Las defined by
+
+Ex(9)(2,y) =< aln(d)(y) >, 2,y € E. We have < (4), (9) >= tr(m(u')a()(4)").
+
+From this last proposition we have defined an isometric mapping T from Fun;,(SL,(2, Or)
+with the norm ||.||2 to the Hilbert space H defined as the direct integral H = Je, Laus(Vr)dP(r),
+with the following definition: T(¢), = &(@).
+
+As a result, T being uniformly continuous we can uniquely extend T to an isometric map
+T# from L?(SLq(2,C)x) to fs, Lans(Ve)dP(m).
+Theorem 12: Plancherel Theorem
+The spherical transform T# : L?(SLq(2,C)r) > ts. Lans(Vx)dP(m) is a unitary operator.
+Proof: Because T# is an isometry, it is an injection. The only non trivial point is to
+show that T* is a surjection. Because T* is an extension of T, it is sufficient to show that
+
+T (Funec(SLq(2,C)r)) is dense in , which is equivalent to show that T(Funce(SLq(2,C)z))+ =
+{0}. Let 7 € H and assume that So, < 1x. €x(¢) > dP(x) = 0 for any $ € Funee(SLq(2, Cr)).
+
+A.
+From the expression of aX ® gf) in the orthonormal basis €, this orthogonality condition is
+equivalent to the condition
+
+VA,B,C,De€ set ff Ta (€i, Cj ARG (m)dP(7) = 0. (150)
+Dp
+
+47

@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/revmodphys97025002pdf/sections/sec-078",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "C. Suggestions for future work",
+  "pageStart": 55,
+  "pageEnd": 55,
+  "contains": [
+    "library/revmodphys97025002pdf/blocks/prose-sec-078"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/revmodphys97025002pdf/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/revmodphys97025002pdf/manifest.jsonld",
+  "provenance": "ingested"
+}

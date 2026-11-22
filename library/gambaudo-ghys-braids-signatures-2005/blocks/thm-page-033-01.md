@@ -1,0 +1,1 @@
+— Let ω = exp(2iπθ) be a root of unity such that 0 < θ < 1 3. Then the ω-signature of a braid α in B3 is equal to −2(((θ1)) + ((θ2))) −2θ lk3(α) where exp(2iπθ1) and exp(2iπθ2) are the two eigenvalues of the matrix Bω(α).

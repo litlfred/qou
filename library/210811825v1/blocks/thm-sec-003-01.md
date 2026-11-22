@@ -1,0 +1,1 @@
+For any smooth Riemannian metric on a surface, there exists a conformally equivalent metric of constant curvature. We can use a global rescaling to restrict ourselves to curvatures of +1, 0, and −1. Then we have the following

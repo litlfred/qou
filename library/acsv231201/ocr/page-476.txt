@@ -1,0 +1,47 @@
+458 Integration on manifolds
+
+Recalling that z is represented as [Re(z), Im(z)], the real 2m x 2m Jacobian
+
+matrix is given by
+A|-B
+Jp = ee |
+
+where A = Re(Jc) and B = Im(Jc). Positivity of det Jp then follows from
+nonvanishing of det Jc and the identity
+
+a] FAaB | age] ARB APSHA |g 4 0
+
+BIA Bol A B | A-iB
+= det(A + iB) - det(A — iB)
+= |det(A + iB).
+
+ao
+
+Next, we extend the definitions of 0, 6, and d from functions to differential
+forms as follows. For any coordinate system f),...,f2, and J C€ [2n], let dt;
+denote the wedge product of dt; for j € J in increasing order. For a smooth
+function u define d(udt;) = du dt, and extend linearly to all forms. The form
+w is said to be a holomorphic form if it is the sum of terms uydz, with no dz;
+terms and each uw, is holomorphic. The space of holomorphic functions form
+a subring of C°(R”), while the space of holomorphic forms have a (noncom-
+mutative) ring structure under wedge product and are generated over the ring
+of holomorphic functions by {dz1,..., dn}.
+
+Remarks A.26. (i) Functoriality and the Cauchy—-Riemann equations imply
+that these definitions extend to functions on any complex manifold M.
+(ii) While the same symbol is used for the boundary operator do and the
+holomorphic differential du, it is always clear from context which we
+refer to.
+
+Tangent and cotangent bundles, differential forms, and integration on a com-
+plex manifold of dimension m can all be defined via its structure as a real man-
+ifold of dimension 2m. The operator d preserves holomorphicity: if dw = 0
+then dw = dw, which is evidently holomorphic. We also define the holomor-
+phic volume form dz := dz, A+++ A dz, in C".
+
+Exercise A.14. Show that the conjugation function Z is not holomorphic on
+C by computing 8Z and 8z. Find a continuous, piecewise smooth function f, :
+C — C that agrees with Z on the disk {|z| < ¢} and is holomorphic outside of
+this disk.
+
+The holomorphic volume form is an n-form in R", thus middle-dimensional,

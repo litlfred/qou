@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0111022v1
-doc_title: "arXiv:math/0111022v1 [math.QA] 2 Nov 2001"
+doc_title: "Some remarks on q-deformed multiple polylogarithms"
 section_id: sec-000-1-motivation
 section_title: "Motivation"
 section_number: 1
@@ -10,7 +10,8 @@ source_sha256: fea7f118014838fe
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.892
+latex_coverage_ratio: 0.89
+doc_brief: "Some remarks on q-deformed multiple polylogarithms — We introduce general q-deformed multiple polylogarithms which even in the dilogarithm case diﬀer slightly from the deformation usu- ally discussed"
 ---
 In [@CL] a family of noncommutative deformations $S^{4,\theta }$ of the four dimensional sphere has been introduced from the instanton algebra. Concretely, the algebra of functions on $S^{4,\theta }$ is given by the generators $t,\alpha ,\alpha ^{*},\beta ,\beta ^{*}$ and relations $$\begin{aligned}
 \alpha \alpha ^{*} &=&\alpha ^{*}\alpha ,\ \beta \beta ^{*}=\beta ^{*}\beta

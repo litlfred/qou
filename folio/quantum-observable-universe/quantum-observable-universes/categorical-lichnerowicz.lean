@@ -36,7 +36,7 @@ at the categorical level; the equality is then derivable from the
 input hypotheses (each labeled axiom matching one step of the .md
 proof).
 
--- Ref: [manuscript] prop:categorical-lichnerowicz
+-- Ref: [leitner2026] prop:categorical-lichnerowicz
 -- Ref: [lichnerowicz1963] Lichnerowicz, "Spineurs harmoniques," C. R. Acad. Sci. Paris 257 (1963)
 -- Ref: [woronowicz1989] Woronowicz, "Differential calculus on compact matrix pseudogroups (quantum groups)," Commun. Math. Phys. 122 (1989)
 -/
@@ -66,7 +66,7 @@ structure QDiracLichnerowiczData (Op : Type u) [AddCommGroup Op] where
 /-- **Theorem (categorical Lichnerowicz).** Given the structural data,
     the q-Laplacian equals the squared Dirac plus the q-scalar-
     curvature correction. -/
--- Ref: [manuscript] prop:categorical-lichnerowicz
+-- Ref: [leitner2026] prop:categorical-lichnerowicz
 theorem qDirac {Op : Type u} [AddCommGroup Op] (d : QDiracLichnerowiczData Op) :
     d.qLaplacian = d.qDiracSq + d.qScalarCurv := by
   rw [d.weitzenbock, d.cartan_and_clifford]
@@ -75,7 +75,7 @@ theorem qDirac {Op : Type u} [AddCommGroup Op] (d : QDiracLichnerowiczData Op) :
     curvature vanishes (the parallel-Reeb background of Bring's
     surface — `ex:categorical-reeb-brings`), the identity simplifies
     to Δ_∇^q = 𝔇_∇². -/
--- Ref: [manuscript] prop:categorical-lichnerowicz
+-- Ref: [leitner2026] prop:categorical-lichnerowicz
 theorem qDirac_parallel {Op : Type u} [AddCommGroup Op]
     (d : QDiracLichnerowiczData Op) (h : d.qScalarCurv = 0) :
     d.qLaplacian = d.qDiracSq := by

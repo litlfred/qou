@@ -3,13 +3,14 @@
  "doc_id": "arxiv-1404.2541v1",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "edb7c9b2b1561ac3dd50c96bb6cb02714eb5757d4728b53ba9c171e76dcefb9e",
   "file": "1404.2541v1.pdf"
  },
  "provenance": {
-  "title": "The Stokes phenomenon for the Ramanujan\u2019s q-di\ufb00erence equation and its higher order extension Takeshi MORITA\u2217",
-  "authors": null,
+  "title": "The Stokes phenomenon for the Ramanujan\u2019s q -di\ufb00erence equation and its higher order extension",
+  "authors": "Takeshi MORITA\u2217",
   "arxiv": {
    "id": "1404.2541",
    "version": "1",
@@ -20,145 +21,9 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 10,
-  "by_kind": {
-   "theorem": 3,
-   "lemma": 5,
-   "corollary": 1,
-   "remark": 1
-  },
-  "formalization_candidates": 9
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": null,
-   "name": null,
-   "statement": "For any x \u2208 C\u2217 \\ [\u2212\u03bb;q], we have",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-7",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": null,
-   "name": null,
-   "statement": "For any C\u2217 \\ [\u2212\u03bb;qr\u22121], we have",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-7",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "3.2",
-   "name": null,
-   "statement": "For any x \u2208 C\u2217 \\ [1;q], the function eq(x/q ) has the following",
-   "section_file": "sections/sec-002-3-two-q-exponential-functions.md",
-   "section_title": "Two q-exponential functions",
-   "pages": "8-11",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "corollary",
-   "source_kind": "corollary",
-   "number": "3.3",
-   "name": null,
-   "statement": "For any x \u2208 C\u2217 \\ [1;q], we have",
-   "section_file": "sections/sec-002-3-two-q-exponential-functions.md",
-   "section_title": "Two q-exponential functions",
-   "pages": "8-11",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": null,
-   "name": null,
-   "statement": "We remark that another solution of the equation (12) is given by",
-   "section_file": "sections/sec-003-4-covering-transformations.md",
-   "section_title": "Covering transformations",
-   "pages": "11-13",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "6.1",
-   "name": null,
-   "statement": "For any entire function f (x), we have",
-   "section_file": "sections/sec-004-6-the-q-borel-laplace-transformations.md",
-   "section_title": "The q-Borel-Laplace transformations",
-   "pages": "13-19",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "6.2",
-   "name": null,
-   "statement": "We assume that the function f can be q-Borel transformed to",
-   "section_file": "sections/sec-004-6-the-q-borel-laplace-transformations.md",
-   "section_title": "The q-Borel-Laplace transformations",
-   "pages": "13-19",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "8.2",
-   "name": null,
-   "statement": "For any k \u2208 N, \u03bb \u2208 C\u2217, we have:",
-   "section_file": "sections/sec-004-6-the-q-borel-laplace-transformations.md",
-   "section_title": "The q-Borel-Laplace transformations",
-   "pages": "13-19",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "9.2",
-   "name": null,
-   "statement": "For any entire function f (x), we have",
-   "section_file": "sections/sec-005-9-the-q-borel-laplace-transformations-of-level-r.md",
-   "section_title": "The q-Borel-Laplace transformations of level r-1 and its application",
-   "pages": "19-22",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "9.3",
-   "name": null,
-   "statement": "For any C\u2217 \\ [\u2212\u03bb;qr\u22121], we have",
-   "section_file": "sections/sec-005-9-the-q-borel-laplace-transformations-of-level-r.md",
-   "section_title": "The q-Borel-Laplace transformations of level r-1 and its application",
-   "pages": "19-22",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  }
- ]
+ "candidates": []
 }

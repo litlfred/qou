@@ -1,0 +1,62 @@
+564 J. BORCEA, P. BRANDEN, AND T. M. LIGGETT
+
+Countererample 3. We claim that if 1 € By», satisfies
+
+(1) wis Rayleigh,
+
+(2) = Opn + (1 — @)ue41 for some 0 <0 <1,
+
+(3) pe ® Mes,
+where jug, 41 are the truncations of 1 as in Definition2.15] then pu is not PHR (pro-
+jection of a Rayleigh measure with homogeneous generating polynomial; cf. Defini-
+tion 2.6). To prove this claim, let gx and gx+1 be the generating polynomials for
+Ly and [4p41, respectively, and suppose that
+
+Sf (21,055 2) = Pa (Zi. +++ 5 20) Gk (215+ +5 2m) + ho(Zm4is +52) Gk+1(Z15+++5 2m)
+
+is a homogeneous Rayleigh polynomial that projects to 6g, + (1—6)g,41 and has a
+minimal number of variables ¢ > m-+1. If the same variable, say z;, appears in both
+
+hi(zm4i,---;2¢) and he(zm41,---,2¢), then we can differentiate f with respect to
+z; and get a new homogeneous polynomial in fewer variables that still projects
+to Ogx + (1 — O)gx41. Moreover, if either hi(zm41,---,2¢) OF ho(Zm4i,---,%e) is
+
+the positive sum of several monomials, we could set a variable equal to zero and
+again get a polynomial in fewer variables with the desired properties. Hence, both
+hi(Zm4i,---;2¢) and ho(Zm41,..-,%¢) are monomials, and by the minimality of ¢
+we have that = m+ 1 and
+
+f (21505 %m41) = O2%m4ige(Z15 +++) %m) + (1 = O)gp4i(Z1,.-+52m)>
+
+Since f is a homogeneous Rayleigh polynomial, by Theorem [4.10] the correspond-
+ing measure pp € Pm-+41 is (strongly) negatively associated. As in the proof of
+Proposition[4.12] we then deduce that px < f4e41, Which contradicts assumption (3)
+above.
+
+It remains to find a measure js satisfying properties (1)—(3) above. If we let ys
+have as generating polynomial a constant multiple of
+
+2n41(G2€2(Z1,---, Zn) + 43€3(21,---,2n)) + 3e3(Z1,---, Zn) + bsea(Z1,---5 Zn);
+
+where m = n+1 and ag,a3,b3,b4 are as in Counterexample 1, we see that ju
+satisfies all of these three properties. Clearly, this counterexample fails to have
+a ULC rank sequence. Therefore, we conclude that not even the PHR property
+implies ULC. O
+
+Remark 7.2. We note that to disprove just the strongest version of Pemantle’s con-
+jecture on ULC rank sequences (Conjecture 2.3) we can simply invoke Example[2.2]
+in which combined with Theorem[3.7|shows that Conjecture 2.3] actually fails
+even for symmetric measures. To give yet another counterexample to Conjecture2.3]
+we can also employ a construction used in [55]. Indeed, the measure in 84 consid-
+ered in [55) Theorem 3.5] is seen to be NA but not ULC.
+
+Note though that both examples mentioned above fail to be NLC (hence also
+CNA+, CNA, h-NLC+, and h-NLC), so they do not provide counterexamples to
+the weaker conjectures (Conjectures 2.4] and 25).
+
+ACKNOWLEDGEMENTS
+
+We would like to thank David Wagner for discussions pertaining to this project
+and the anonymous referee for useful comments and suggestions. The first author
+is partially supported by Swedish Research Council Grant 621-2005-870. The third
+author is supported by NSF Grant DMS-0301795.

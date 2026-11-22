@@ -8,9 +8,23 @@
   "pages": 43,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:21Z",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 20,
+    "reason": "12 of 511 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 22,
+    "reason": "10 of 465 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 27,
+    "reason": "15 of 461 words are a stray single letter: the text layer splits words"
+   }
+  ],
   "math_source": "latex"
  },
  "metadata": {
@@ -21,12 +35,12 @@
    "stamp_date": "6 Apr 2021"
   },
   "doi": null,
-  "title": "BLOCH GROUPS, ALGEBRAIC K -THEORY, UNITS, AND NAHM\u2019S CONJECTURE",
-  "authors_raw": "UNITS, AND NAHM\u2019S CONJECTURE",
+  "title": "BLOCH GROUPS, ALGEBRAIC K -THEORY, UNITS, AND NAHM’S CONJECTURE",
+  "authors_raw": "UNITS, AND NAHM’S CONJECTURE",
   "title_lines": [
    "BLOCH GROUPS, ALGEBRAIC K-THEORY"
   ],
-  "abstract": "Given an element of the Bloch group of a number \ufb01eld F and a natural num- ber n, we construct an explicit unit in the \ufb01eld Fn = F(e2\u03c0i/n), well-de\ufb01ned up to n-th powers of nonzero elements of Fn. The construction uses the cyclic quantum dilogarithm, and under the identi\ufb01cation of the Bloch group of F with the K-group K3(F) gives (up to an unidenti\ufb01ed invertible scalar) a formula for a certain abstract Chern class from K3(F). The units we de\ufb01ne are conjectured to coincide with numbers appearing in the quantum modularity conjecture for the Kashaev invariant of knots (which was the original motivation for our investigation), and also appear in the radial asymptotics of Nahm sums near roots of unity. This latter connection is used to prove Nahm\u2019s conjecture relating the modularity of certain q-hypergeometric series to the vanishing of the associated elements in the Bloch group of Q.",
+  "abstract": "Given an element of the Bloch group of a number ﬁeld F and a natural num- ber n, we construct an explicit unit in the ﬁeld Fn = F(e2πi/n), well-deﬁned up to n-th powers of nonzero elements of Fn. The construction uses the cyclic quantum dilogarithm, and under the identiﬁcation of the Bloch group of F with the K-group K3(F) gives (up to an unidentiﬁed invertible scalar) a formula for a certain abstract Chern class from K3(F). The units we deﬁne are conjectured to coincide with numbers appearing in the quantum modularity conjecture for the Kashaev invariant of knots (which was the original motivation for our investigation), and also appear in the radial asymptotics of Nahm sums near roots of unity. This latter connection is used to prove Nahm’s conjecture relating the modularity of certain q-hypergeometric series to the vanishing of the associated elements in the Bloch group of Q.",
   "docinfo": {
    "Producer": "pdfTeX-1.40.21",
    "Creator": "LaTeX with hyperref",
@@ -36,7 +50,7 @@
   "title_source": "heading",
   "title_verified": true,
   "title_evidence": {
-   "heading": "BLOCH GROUPS, ALGEBRAIC K -THEORY, UNITS, AND NAHM\u2019S CONJECTURE",
+   "heading": "BLOCH GROUPS, ALGEBRAIC K -THEORY, UNITS, AND NAHM’S CONJECTURE",
    "outline": "1. Introduction",
    "text": "BLOCH GROUPS, ALGEBRAIC K-THEORY",
    "corroborated_by": [
@@ -198,7 +212,7 @@
   },
   {
    "level": 2,
-   "title": "The relation between \u00e9tale cohomology and Galois cohomology",
+   "title": "The relation between étale cohomology and Galois cohomology",
    "page": 18,
    "source": "outline",
    "number": "3.2",
@@ -813,34 +827,34 @@
    "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 1,
-   "n_chars": 1029,
-   "n_words": 168,
+   "page_end": 2,
+   "n_chars": 2353,
+   "n_words": 402,
    "label_start": "1",
-   "label_end": "1"
+   "label_end": "2"
   },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 6,
-   "n_words": 2,
-   "label_start": "1",
-   "label_end": "1"
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 1184,
+   "n_words": 208,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
    "id": "sec-001-11-bloch-groups-and-associated-units",
    "number": "1.1",
    "title": "Bloch groups and associated units",
    "level": 2,
-   "page_start": 1,
+   "page_start": 2,
    "page_end": 4,
-   "n_chars": 6220,
-   "n_words": 1220,
-   "label_start": "1",
+   "n_chars": 3676,
+   "n_words": 771,
+   "label_start": "2",
    "label_end": "4"
   },
   {
@@ -873,14 +887,26 @@
    "title": "Plan of the paper",
    "level": 2,
    "page_start": 8,
+   "page_end": 8,
+   "n_chars": 1589,
+   "n_words": 288,
+   "label_start": "8",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-005-2-the-maps-pz-and-rz",
+   "number": "2",
+   "title": "The maps Pz and Rz",
+   "level": 1,
+   "page_start": 8,
    "page_end": 14,
-   "n_chars": 13824,
-   "n_words": 2742,
+   "n_chars": 12212,
+   "n_words": 2448,
    "label_start": "8",
    "label_end": "14"
   },
   {
-   "id": "sec-005-24-compatibilities",
+   "id": "sec-006-24-compatibilities",
    "number": "2.4",
    "title": "Compatibilities",
    "level": 2,
@@ -892,7 +918,7 @@
    "label_end": "15"
   },
   {
-   "id": "sec-006-25-the-5-term-relation",
+   "id": "sec-007-25-the-5-term-relation",
    "number": "2.5",
    "title": "The 5-term relation",
    "level": 2,
@@ -904,7 +930,7 @@
    "label_end": "16"
   },
   {
-   "id": "sec-007-26-an-eigenspace-computation",
+   "id": "sec-008-26-an-eigenspace-computation",
    "number": "2.6",
    "title": "An eigenspace computation",
    "level": 2,
@@ -916,7 +942,7 @@
    "label_end": "17"
   },
   {
-   "id": "sec-008-3-chern-classes-for-algebraic-k-theory",
+   "id": "sec-009-3-chern-classes-for-algebraic-k-theory",
    "number": "3",
    "title": "Chern Classes for algebraic K-theory",
    "level": 1,
@@ -928,7 +954,7 @@
    "label_end": "17"
   },
   {
-   "id": "sec-009-31-definitions",
+   "id": "sec-010-31-definitions",
    "number": "3.1",
    "title": "Definitions",
    "level": 2,
@@ -940,9 +966,9 @@
    "label_end": "18"
   },
   {
-   "id": "sec-010-32-the-relation-between-\u00e9tale-cohomology-and-gal",
+   "id": "sec-011-32-the-relation-between-étale-cohomology-and-gal",
    "number": "3.2",
-   "title": "The relation between \u00e9tale cohomology and Galois cohomology",
+   "title": "The relation between étale cohomology and Galois cohomology",
    "level": 2,
    "page_start": 18,
    "page_end": 20,
@@ -952,31 +978,31 @@
    "label_end": "20"
   },
   {
-   "id": "sec-011-34-upgrading-from-s-units-to-units",
+   "id": "sec-012-34-upgrading-from-s-units-to-units",
    "number": "3.4",
    "title": "Upgrading from S-units to units",
    "level": 2,
    "page_start": 20,
    "page_end": 20,
-   "n_chars": 1641,
-   "n_words": 286,
+   "n_chars": 1635,
+   "n_words": 284,
    "label_start": "20",
    "label_end": "20"
   },
   {
-   "id": "sec-012-35-proof-of-theorem-15",
+   "id": "sec-013-35-proof-of-theorem-15",
    "number": "3.5",
    "title": "Proof of Theorem 1.5",
    "level": 2,
    "page_start": 20,
    "page_end": 21,
-   "n_chars": 1228,
-   "n_words": 231,
+   "n_chars": 1206,
+   "n_words": 218,
    "label_start": "20",
    "label_end": "21"
   },
   {
-   "id": "sec-013-4-reduction-to-finite-fields",
+   "id": "sec-014-4-reduction-to-finite-fields",
    "number": "4",
    "title": "Reduction to finite fields",
    "level": 1,
@@ -988,55 +1014,127 @@
    "label_end": "21"
   },
   {
-   "id": "sec-014-41-local-chern-class-maps",
+   "id": "sec-015-41-local-chern-class-maps",
    "number": "4.1",
    "title": "Local Chern class maps",
    "level": 2,
    "page_start": 21,
    "page_end": 23,
-   "n_chars": 5389,
-   "n_words": 1002,
+   "n_chars": 5360,
+   "n_words": 998,
    "label_start": "21",
    "label_end": "23"
   },
   {
-   "id": "sec-015-42-the-bloch-group-of-fq",
+   "id": "sec-016-42-the-bloch-group-of-fq",
    "number": "4.2",
    "title": "The Bloch group of Fq",
    "level": 2,
    "page_start": 23,
    "page_end": 25,
-   "n_chars": 5326,
-   "n_words": 1035,
+   "n_chars": 4580,
+   "n_words": 899,
    "label_start": "23",
    "label_end": "25"
   },
   {
-   "id": "sec-016-51-proof-of-theorem-16",
+   "id": "sec-017-5-comparison-between-the-maps-cz-and-rz",
+   "number": "5",
+   "title": "Comparison between the maps cz and Rz",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 25,
+   "n_chars": 704,
+   "n_words": 128,
+   "label_start": "25",
+   "label_end": "25"
+  },
+  {
+   "id": "sec-018-51-proof-of-theorem-16",
    "number": "5.1",
    "title": "Proof of Theorem 1.6",
    "level": 2,
    "page_start": 25,
-   "page_end": 31,
-   "n_chars": 12829,
-   "n_words": 2476,
+   "page_end": 28,
+   "n_chars": 5565,
+   "n_words": 1098,
    "label_start": "25",
+   "label_end": "28"
+  },
+  {
+   "id": "sec-019-52-digression-the-modpq-dilogarithm",
+   "number": "5.2",
+   "title": "Digression: the modpq dilogarithm",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 28,
+   "n_chars": 1042,
+   "n_words": 221,
+   "label_start": "28",
+   "label_end": "28"
+  },
+  {
+   "id": "sec-020-53-the-chern-class-map-on-n-torsion-in-qzeta",
+   "number": "5.3",
+   "title": "The Chern class map on n-torsion in Qzeta",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 31,
+   "n_chars": 6058,
+   "n_words": 1133,
+   "label_start": "28",
    "label_end": "31"
   },
   {
-   "id": "sec-017-6-the-connecting-homomorphism-to-k-theory",
+   "id": "sec-021-6-the-connecting-homomorphism-to-k-theory",
    "number": "6",
    "title": "The connecting homomorphism to K-theory",
    "level": 1,
    "page_start": 31,
-   "page_end": 41,
-   "n_chars": 25340,
-   "n_words": 4927,
+   "page_end": 33,
+   "n_chars": 4334,
+   "n_words": 859,
    "label_start": "31",
+   "label_end": "33"
+  },
+  {
+   "id": "sec-022-7-nahms-conjecture-and-the-asymptotics-of-nahm-s",
+   "number": "7",
+   "title": "Nahm's conjecture and the asymptotics of Nahm sums at roots of unity",
+   "level": 1,
+   "page_start": 33,
+   "page_end": 37,
+   "n_chars": 11355,
+   "n_words": 2082,
+   "label_start": "33",
+   "label_end": "37"
+  },
+  {
+   "id": "sec-023-72-application-to-the-calculation-of-rz",
+   "number": "7.2",
+   "title": "Application to the calculation of Rz",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 40,
+   "n_chars": 5770,
+   "n_words": 1238,
+   "label_start": "37",
+   "label_end": "40"
+  },
+  {
+   "id": "sec-024-73-application-to-nahms-conjecture",
+   "number": "7.3",
+   "title": "Application to Nahm's conjecture",
+   "level": 2,
+   "page_start": 40,
+   "page_end": 41,
+   "n_chars": 3631,
+   "n_words": 708,
+   "label_start": "40",
    "label_end": "41"
   },
   {
-   "id": "sec-018-acknowledgements",
+   "id": "sec-025-acknowledgements",
    "number": null,
    "title": "Acknowledgements",
    "level": 2,
@@ -1048,7 +1146,7 @@
    "label_end": "41"
   },
   {
-   "id": "sec-019-references",
+   "id": "sec-026-references",
    "number": null,
    "title": "References",
    "level": 1,
@@ -1075,9 +1173,9 @@
    "listed_not_found": {
     "count": 3,
     "items": [
-     "The map P\u03b6",
-     "The map R\u03b6",
-     "De\ufb01nitions"
+     "The map Pζ",
+     "The map Rζ",
+     "Deﬁnitions"
     ]
    },
    "found_not_listed": {
@@ -1089,13 +1187,14 @@
     "items": []
    }
   },
-  "sections": 21,
-  "chars_total": 105222,
+  "sections": 28,
+  "chars_total": 104644,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "qDilog.45.tex",
    "tex_sections": 34,
-   "overlaid": 16,
+   "overlaid": 24,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1110,14 +1209,16 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.989,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-001-11-bloch-groups-and-associated-units",
      "title": "Bloch groups and associated units",
-     "prose_ratio": 0.946,
-     "coverage_ratio": 0.669,
+     "prose_ratio": 0.928,
+     "coverage_ratio": 0.951,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1140,13 +1241,21 @@
     {
      "id": "sec-004-15-plan-of-the-paper",
      "title": "Plan of the paper",
-     "prose_ratio": 0.936,
-     "coverage_ratio": 0.975,
+     "prose_ratio": 0.912,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-24-compatibilities",
+     "id": "sec-005-2-the-maps-pz-and-rz",
+     "title": "The maps Pz and Rz",
+     "prose_ratio": 0.941,
+     "coverage_ratio": 0.97,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-24-compatibilities",
      "title": "Compatibilities",
      "prose_ratio": 0.927,
      "coverage_ratio": 0.943,
@@ -1154,7 +1263,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-25-the-5-term-relation",
+     "id": "sec-007-25-the-5-term-relation",
      "title": "The 5-term relation",
      "prose_ratio": 0.927,
      "coverage_ratio": 0.951,
@@ -1162,7 +1271,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-26-an-eigenspace-computation",
+     "id": "sec-008-26-an-eigenspace-computation",
      "title": "An eigenspace computation",
      "prose_ratio": 0.923,
      "coverage_ratio": 0.912,
@@ -1170,7 +1279,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-3-chern-classes-for-algebraic-k-theory",
+     "id": "sec-009-3-chern-classes-for-algebraic-k-theory",
      "title": "Chern Classes for algebraic K-theory",
      "prose_ratio": 0.857,
      "coverage_ratio": 1.0,
@@ -1178,7 +1287,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-31-definitions",
+     "id": "sec-010-31-definitions",
      "title": "Definitions",
      "prose_ratio": 0.935,
      "coverage_ratio": 0.956,
@@ -1186,23 +1295,23 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-010-32-the-relation-between-\u00e9tale-cohomology-and-gal",
-     "title": "The relation between \u00e9tale cohomology and Galois cohomology",
+     "id": "sec-011-32-the-relation-between-étale-cohomology-and-gal",
+     "title": "The relation between étale cohomology and Galois cohomology",
      "prose_ratio": 0.941,
      "coverage_ratio": 0.933,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-34-upgrading-from-s-units-to-units",
+     "id": "sec-012-34-upgrading-from-s-units-to-units",
      "title": "Upgrading from S-units to units",
-     "prose_ratio": 0.94,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.928,
+     "coverage_ratio": 0.975,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-012-35-proof-of-theorem-15",
+     "id": "sec-013-35-proof-of-theorem-15",
      "title": "Proof of Theorem 1.5",
      "prose_ratio": 0.881,
      "coverage_ratio": 0.906,
@@ -1210,7 +1319,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-013-4-reduction-to-finite-fields",
+     "id": "sec-014-4-reduction-to-finite-fields",
      "title": "Reduction to finite fields",
      "prose_ratio": 0.968,
      "coverage_ratio": 1.0,
@@ -1218,36 +1327,83 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-014-41-local-chern-class-maps",
+     "id": "sec-015-41-local-chern-class-maps",
      "title": "Local Chern class maps",
      "prose_ratio": 0.947,
-     "coverage_ratio": 0.942,
+     "coverage_ratio": 0.943,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-015-42-the-bloch-group-of-fq",
+     "id": "sec-016-42-the-bloch-group-of-fq",
      "title": "The Bloch group of Fq",
-     "prose_ratio": 0.455,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-016-51-proof-of-theorem-16",
-     "title": "Proof of Theorem 1.6",
-     "prose_ratio": 0.642,
-     "coverage_ratio": 0.132,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
-    },
-    {
-     "id": "sec-017-6-the-connecting-homomorphism-to-k-theory",
-     "title": "The connecting homomorphism to K-theory",
-     "prose_ratio": 0.952,
-     "coverage_ratio": 0.985,
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.939,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-018-acknowledgements",
+     "id": "sec-017-5-comparison-between-the-maps-cz-and-rz",
+     "title": "Comparison between the maps cz and Rz",
+     "prose_ratio": 0.237,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-018-51-proof-of-theorem-16",
+     "title": "Proof of Theorem 1.6",
+     "prose_ratio": 0.507,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-019-52-digression-the-modpq-dilogarithm",
+     "title": "Digression: the modpq dilogarithm",
+     "prose_ratio": 0.948,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-020-53-the-chern-class-map-on-n-torsion-in-qzeta",
+     "title": "The Chern class map on n-torsion in Qzeta",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.958,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-021-6-the-connecting-homomorphism-to-k-theory",
+     "title": "The connecting homomorphism to K-theory",
+     "prose_ratio": 0.947,
+     "coverage_ratio": 0.937,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-022-7-nahms-conjecture-and-the-asymptotics-of-nahm-s",
+     "title": "Nahm's conjecture and the asymptotics of Nahm sums at roots of unity",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-023-72-application-to-the-calculation-of-rz",
+     "title": "Application to the calculation of Rz",
+     "prose_ratio": 0.91,
+     "coverage_ratio": 0.945,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-024-73-application-to-nahms-conjecture",
+     "title": "Application to Nahm's conjecture",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-025-acknowledgements",
      "title": "Acknowledgements",
      "prose_ratio": 0.917,
      "coverage_ratio": 0.982,
@@ -1255,7 +1411,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-019-references",
+     "id": "sec-026-references",
      "title": "References",
      "result": "no matching \\section"
     }

@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0608414v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0608414v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-math-0608414v1",
+  "title": "Exponential Asymptotics, Transseries, and Generalized Borel Summation for Analytic, Nonlinear, Rank-One Systems of Ordinary Differential Equations",
   "contains": [
+    "library/arxiv-math-0608414v1/sections/sec-front-matter",
     "library/arxiv-math-0608414v1/sections/sec-000",
     "library/arxiv-math-0608414v1/sections/sec-001",
     "library/arxiv-math-0608414v1/sections/sec-002",
@@ -19,10 +20,14 @@
     "library/arxiv-math-0608414v1/sections/sec-005",
     "library/arxiv-math-0608414v1/sections/sec-006",
     "library/arxiv-math-0608414v1/sections/sec-007",
-    "library/arxiv-math-0608414v1/sections/sec-008"
+    "library/arxiv-math-0608414v1/sections/sec-008",
+    "library/arxiv-math-0608414v1/sections/sec-009",
+    "library/arxiv-math-0608414v1/sections/sec-010",
+    "library/arxiv-math-0608414v1/sections/sec-011",
+    "library/arxiv-math-0608414v1/sections/sec-012"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",
     "searched": [
@@ -37,7 +42,9 @@
   },
   "meta": {
     "doc_id": "arxiv-math-0608414v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0608414v1.pdf",
     "source_sha256": "bd9a8d48a6d66945700c364ea8464629111206967f5779711b5ba055d4b62692",
     "pages": 47,

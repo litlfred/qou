@@ -134,7 +134,7 @@ remaining structures and both theorems, and is **not** done here.
 - [jones1987] V.F.R. Jones, Annals of Mathematics 126 (1987)
 - [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 - [turaev2010] https://doi.org/10.1515/9783110218145
-- [manuscript] §6/§4
+- [leitner2026] §6/§4
 
 **Ground ring.** This is the **archimedean realisation** (namespace
 `QOU.Archimedean`): the deformation parameter carries the order `0 < q`,
@@ -614,7 +614,7 @@ noncomputable def jonesMixed (D : DescartesData) : ℝ :=
     **This does not say the two channels are separated** — see
     `jones_channels_coincide` below, which shows they take the *same* value at
     a `q` the Descartes condition permits. -/
--- Ref: [manuscript] §4, [jones1987] §3
+-- Ref: [leitner2026] §4, [jones1987] §3
 theorem descartes_n3_both_detected (D : DescartesData) :
     jonesSymmetric D ≠ 0 ∧ jonesMixed D ≠ 0 := by
   have hq := D.q_pos

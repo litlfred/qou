@@ -1,0 +1,1 @@
+The quantum invariant J(L; V✷, · · ·, V✷) of the link L with each component decorated by the fundamental representation is given as a function of s by the framed Homﬂy polynomial X (L), evaluated at x = s−1/N and v = s−N.

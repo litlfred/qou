@@ -1,0 +1,49 @@
+32 Generating functions
+
+The kernel method
+
+We now give an account of the kernel method, one of the most prolific sources
+of algebraic generating functions in combinatorics. The kernel method is a
+means of producing a generating function for an array {a,} satisfying a linear
+recurrence
+
+dp = » CsAr—s (2.4)
+
+seE
+
+for some constants {c, : s € E} defined over a finite set E c Z¢, except
+when r lies in a set of boundary conditions to be made precise. We will see
+in Lemma 2.16 below that this recursion is well founded whenever the convex
+hull of E does not intersect the non-positive orthant R4)-
+
+If the index set E ¢ N“ then Example 2.6 generalizes to show that F(z) =
+Dent dpz” is rational. The kernel method is of interest to this text because it
+often produces generating functions which, even though they are not rational,
+satisfy the meromorphicity assumptions that allow us to compute their asymp-
+totics. It is shown in [BP0O] that the complexity of F increases with the number
+of coordinates in which points of E are allowed to take negative values: just as
+allowing no negative coordinates in E causes F(z) to be rational, it turns out
+that allowing only one negative coordinate in E causes F(z) to be algebraic
+whenever the generating function encoding its initial conditions is algebraic.
+When E contains points with two different negative coordinates it is possible to
+have very pathological behavior (including sequences whose generating func-
+tions do not satisfy polynomial differential equations). Our presentation of the
+kernel method draws heavily on [BPOO].
+
+Example 2.15 (a random walk game). Suppose two players play a game, mov-
+ing their respective tokens along a track of squares by flipping a fair coin at
+each time step to see who moves forward one square. The second player starts
+behind the first player and the game ends as follows: if the second player passes
+the first player, the second player wins; if the first player reaches a fixed goal
+square, the first player wins; if both players are on the square immediately
+preceding the goal, then it is a draw.
+
+Let a,; be the probability of a draw, when the players start at respective
+distances 1 + r and 1 + +s from the goal. For convenience we set ag) = 1
+and extend our sequence to have integer indices by defining a,, = 0 if at least
+one of r or s is negative. Conditioning on which player moves first yields the
+recursion
+Gy,s-1 + Ar-1s41
+nn
+
+ars =

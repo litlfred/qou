@@ -1,0 +1,30 @@
+A.4 Complex manifolds and differential forms in C" 461
+Notes
+
+The material in the first three sections of this chapter is standard graduate-
+level calculus, and our presentation of the material owes a debt to the texts of
+Tu [Tul 1] and Warner [War83]. Additional details on complex manifolds can
+be found in Griffiths and Harris [GH94].
+
+Additional exercises
+
+Exercise A.16. Is there a difference between RP” and CP! as an abstract set?
+As a topological space?
+
+Exercise A.17. Let f : X — R be a smooth map on a d-manifold X for
+which df is everywhere nonvanishing. Let M be the zero set of f and let
+ut: M — X denote the inclusion map. Prove that for any (d — 1)-form 77 the
+equality ¢*(77) = 0 holds if and only if 7 A df vanishes on M. Repeat this for
+k < d functions f\,..., f; whose intersection defines a smooth surface M of
+codimension k. Hint: Use the implicit function theorem to coordinatize X with
+first coordinate f and use functoriality of A to reduce to the case f = x).
+
+Exercise A.18. Do Exercise A.17 when X is a complex d-manifold and f :
+X — Cis analytic. Hint: You can copy the proof, only you need the complex
+form of the implicit function theorem [H6r90, Theorem 2.1.2] in order to be
+sure your coordinates are holomorphic.
+
+Exercise A.19. Define a 2-form w in R? by w = xdyAdz+ydzAdx+zdxAdy
+and define a 2-chain C representing the unit sphere. Compute hk w directly
+from the definitions, then figure out a shortcut to the same result using Stokes’s
+Theorem.

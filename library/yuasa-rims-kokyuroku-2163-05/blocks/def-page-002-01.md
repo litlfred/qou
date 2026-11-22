@@ -1,0 +1,1 @@
+Let G(e; D) be the set of boundary fixing isotopy classes of tangled trivalent graphs on D. The Ay an space W(e; D) is the quotient of the C(q)-vector space on G(e; D) by the following Ag skein relation:

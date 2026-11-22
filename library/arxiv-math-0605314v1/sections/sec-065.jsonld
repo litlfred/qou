@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0605314v1/sections/sec-065",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Cyclotomic finite type invariants of integral homology spheres",
+  "pageStart": 59,
+  "pageEnd": 61,
+  "contains": [
+    "library/arxiv-math-0605314v1/blocks/prose-sec-065"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0605314v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0605314v1/manifest.jsonld",
+  "provenance": "ingested"
+}

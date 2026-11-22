@@ -1,0 +1,41 @@
+Appendix F
+
+Mathematica Code for Bolza Surface
+
+The following block of code helps us to choose the optimal value Gif to define the
+spectral function h(t) in Section 3.4. We first define “lemult” as the ordered list of
+lengths of geodesics in the length spectrum, using the formula in Section 3.2, along with
+their multiplicities. Note that only the multiplicity of the first length in the spectrum is
+precise; all others have been calculated numerically. Also note that whilst the multiplicity
+of the systole of the Bolza surface is 12, here we are concerned about moving along the
+geodesic in both a positive and negative direction, so we double the multiplicity to take
+this into account. We then use “les” to flatten this into one list, rather than a list of pairs,
+where each length appears multiple times.
+
+We define the spectral function
+
+sin Lx \*
+h(x, L) = ( Ta ) .
+along with its Fourier transform g(€,L), and the derivative of the Fourier transform,
+gd(x,L). Note that all of these are functions of L as well as the usual variable.
+For a given value of L, the function “multbound” calculates the[bound on the mul-
+tiplicity of the first eigenvalue, using the method described in Section 3.4. Finally, we
+
+can use Mathematica’s “DiscretePlot” function to plot the bounds on m given by “mult-
+
+bound(L)" [for values pe L between 0.4 and 1, with a step size of 0.01. The output is
+
+shown in Figure F-1, where we see that L = a gives the lowest bound.
+
+lemult = {{2 ArcCosh[1 + Sqrt[2]], 24}, {2 ArcCosh[3 + 2 Sqrt[2]],
+24}, {2 ArcCosh[5 + 3 Sqrt[2]], 48}, {2 ArcCosh[7 +5 Sqrt[2]],
+96}, {2 ArcCosh[9 + 6 Sqrt[2]], 48}, {2 ArcCosh[9 + 7 Sqrt [2],
+48}, {2 ArcCosh[11 + 8 Sqrt[2]], 8}, {2 ArcCosh[13 + 9 Sqrt[2]],
+96}};
+
+les = Flatten [
+
+Table[Table[lemult [[i]][[1]], {k, 1, lemult[{i]][[2]]}], {i, 1,
+8h]]s
+
+140

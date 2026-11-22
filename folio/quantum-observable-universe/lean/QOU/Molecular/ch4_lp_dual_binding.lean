@@ -69,7 +69,7 @@ class Ch4BondSymmetry (ctx : Ch4LpDualBindingContext) : Prop where
     constant `Fin 4` sum.  A numeric identity computed from the
     hypothesis, not a restated field. -/
 -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP duality, symmetric optimum)
--- Ref: [manuscript] quantum-observable-universe/molecular-construction/ch4-lp-dual-binding.md
+-- Ref: [leitner2026] quantum-observable-universe/molecular-construction/ch4-lp-dual-binding.md
 theorem ch4_lp_dual_binding (ctx : Ch4LpDualBindingContext)
     [hc : Ch4BondSymmetry ctx] :
     ctx.E_bind_total = 4 * ctx.E_bind_CH := by

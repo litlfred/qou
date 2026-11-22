@@ -1,6 +1,6 @@
 ---
 doc_id: disssubmission
-doc_title: "I NAUGURAL -D ISSERTATION T ANNAKIAN C ATEGORIES OF P ERVERSE S HEAVES ON A BELIAN V ARIETIES"
+doc_title: "Tannakian categories of perverse sheaves on abelian varieties"
 section_id: sec-019-33-the-thick-subcategory-of-negligible-objects
 section_title: "The thick subcategory of negligible objects"
 section_number: 3.3
@@ -8,6 +8,7 @@ pages: 55-59
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
 toc_source: inferred
+doc_brief: "Tannakian categories of perverse sheaves on abelian varieties — 52 sections: Front matter; Introduction; Some commonly used notations"
 ---
 47
 LEMMA 3.4. For all K,M ∈D and χ ∈Π(X) one has the following

@@ -1,5 +1,3 @@
-This continues the preceding sub-section.
+With the fine-structure constant $\alpha_{\mathrm{EM}}(q)$ and the electron mass scale $m_e$ ($\mathrm{CAL\text{-}1}$) determined, the characteristic energy and length scales of atomic physics emerge directly across the archimedean realization $\tau_{\mathrm{arch}}$: the Hartree atomic energy unit $E_{\mathrm{Hartree}} = \alpha_{\mathrm{EM}}^2 m_e c^2$ and the Bohr radius $a_0 = \hbar / (\alpha_{\mathrm{EM}} m_e c)$.
 
-A self-consistent approximation converges to the substrate-level EM completeness condition. This Hartree-categorical derivation forms the structural backbone of this section. Five table-data blocks tabulate the iteration converging to a fixed point. They exhibit the per-iteration corrections. They isolate the substrate-level $\alpha_{\mathrm{EM}}$ value within the substrate-flow precision band.
-
-This section outputs the closed form of the substrate-level $\alpha_{\mathrm{EM}}$ and its substrate-parameter dependence. The subsequent sub-section specializes to the archimedean Hartree-crystal correction.
+This section formulates the categorical Hartree self-consistent fixed-point derivation, tabulates the thirteen convergence and cross-channel diagnostic tables across diatomic and atomic test systems, and derives the categorical Bohr radius $a_0(q)$ under the Convention-D Markov parameter $z_D = q^3/(q^2+1)$.

@@ -2,155 +2,89 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-9805116v3",
  "source_sha256": "65ce47d232d61de4",
- "brief": "Weak Hopf Algebras — We give an introduction to the theory of weak Hopf algebras pr oposed recently as a coassociative alternative of weak quasi-Hopf algebras.",
- "extended": "**Weak Hopf Algebras**\n\n*I. Integral Theory and C ∗-structure*\n\n40 pp, 27 sections.\n\n**Abstract.** We give an introduction to the theory of weak Hopf algebras pr oposed recently as a coassociative alternative of weak quasi-Hopf algebras. We follow an axiom atic approach keeping as close as possible to the ”classical” theory of Hop f algebras. The emphasis is put on the new structure related to the presence of canonical sub algebras AL and AR in any weak Hopf algebra A that play the role of non-commutative numbers in many respec ts. A theory of integrals is developed in which we show how the alge braic properties of A, such as the Frobenius property, or semisimplicity, or innerness of the square of the antipode, are related to the existence of non-degenerate, normalized , or Haar integrals.\n\n**Outline.** I Integral Theory and C ∗-structure; Abstract; 1 Introduction; 2 Institut f¨ ur Theoretische Physik, FU–Berli; 1 Introduction 2; 2 The Weak Hopf Calculus 4; 3 Weak Hopf Modules and Integral Theory 14; 4 C∗-Weak Hopf Algebras 31; II The dual problem is to ﬁnd a ”quantum group; 2.1 The axioms; 2 The Weak Hopf Calculus; 2.2 Weak bialgebras; 2.3 Weak Hopf algebras; 2.4 The ”trivial” representation; 2.13 Then; 3 Weak Hopf Modules and Integral Theory; 3.1 Integrals in weak Hopf algebras; 3.2 Weak Hopf modules\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.10: Let A be a WHA. Then the antipode is antimultiplicative and anti co multi-\n- Theorem 3.9: Let A be a WHA, M be a right WHM over A and let N = Coinv M denote\n- Theorem 3.11: Every weak Hopf algebra over a ﬁeld K is a quasi-Frobenius algebra.\n- Theorem: known for Hopf algebras as well [9]. Below we denote εR(x) := x⇀ ˆ1.\n- Theorem 3.13: The following conditions on a WHA A over K are equivalent:\n- Theorem 3.16: LetA be a WHA over the ﬁeld K. Then the following conditions are equiva-",
+ "brief": "Weak Hopf Algebras I: Integral Theory and C*-structure — We give an introduction to the theory of weak Hopf algebras proposed recently as a coassociative alternative of weak quasi-Hopf algebras.",
+ "extended": "**Weak Hopf Algebras I: Integral Theory and C*-structure**\n\n*I. Integral Theory and C∗-structure*\n\n40 pp, 14 sections.\n\n**Abstract.** We give an introduction to the theory of weak Hopf algebras proposed recently as a coassociative alternative of weak quasi-Hopf algebras. We follow an axiomatic approach keeping as close as possible to the ”classical” theory of Hopf algebras. The emphasis is put on the new structure related to the presence of canonical subalgebras AL and AR in any weak Hopf algebra A that play the role of non-commutative numbers in many respects. A theory of integrals is developed in which we show how the algebraic properties of A, such as the Frobenius property, or semisimplicity, or innerness of the square of the antipode, are related to the existence of non-degenerate, normalized, or Haar integrals.\n\n**Outline.** Front matter; 1.1 The axioms; 1.2 Weak bialgebras; 1.3 Weak Hopf algebras; 1.4 The \"trivial\" representation; 1.5 Integrals in weak Hopf algebras; 1.6 Weak Hopf modules; 1.7 Restrictions on the algebraic structure; 1.8 Non-degenerate integrals; 1.9 2-sided non-degenerate integrals; 1.10 Haar integrals; 1.11 First consequences of the $C^*$-structure; 1.12 The Haar measure and selfduality; 1.13 The canonical grouplike element",
  "tokens": {
-  "brief": 39,
-  "extended": 468
+  "brief": 48,
+  "extended": 317
  },
  "sections": [
   {
-   "id": "sec-000-i-integral-theory-and-c--structure",
-   "title": "Integral Theory and C ∗-structure",
-   "pages": "1-1"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-4"
   },
   {
-   "id": "sec-001-abstract",
-   "title": "Abstract",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-002-1-introduction",
-   "title": "Introduction",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-003-2-institut-f-ur-theoretische-physik-fuberlin-arn",
-   "title": "Institut f¨ ur Theoretische Physik, FU–Berlin Arnimallee 1 4, D-14195 Berlin, Germany",
-   "pages": "1-2"
-  },
-  {
-   "id": "sec-004-1-introduction-2",
-   "title": "Introduction 2",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-005-2-the-weak-hopf-calculus-4",
-   "title": "The Weak Hopf Calculus 4",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-006-3-weak-hopf-modules-and-integral-theory-14",
-   "title": "Weak Hopf Modules and Integral Theory 14",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-007-4-c-weak-hopf-algebras-31",
-   "title": "C∗-Weak Hopf Algebras 31",
-   "pages": "2-3"
-  },
-  {
-   "id": "sec-008-ii-the-dual-problem-is-to-ﬁnd-a-quantum-group-ˆg",
-   "title": "The dual problem is to ﬁnd a ”quantum group” ˆG acting on N such that M is isomorphic",
-   "pages": "3-3"
-  },
-  {
-   "id": "sec-009-21-the-axioms",
+   "id": "sec-000-11-the-axioms",
    "title": "The axioms",
-   "pages": "3-4"
-  },
-  {
-   "id": "sec-010-2-the-weak-hopf-calculus",
-   "title": "The Weak Hopf Calculus",
    "pages": "4-6"
   },
   {
-   "id": "sec-011-22-weak-bialgebras",
+   "id": "sec-001-12-weak-bialgebras",
    "title": "Weak bialgebras",
    "pages": "6-9"
   },
   {
-   "id": "sec-012-23-weak-hopf-algebras",
+   "id": "sec-002-13-weak-hopf-algebras",
    "title": "Weak Hopf algebras",
    "pages": "9-12"
   },
   {
-   "id": "sec-013-24-the-trivial-representation",
-   "title": "The ”trivial” representation",
-   "pages": "12-12"
-  },
-  {
-   "id": "sec-014-213-then",
-   "title": "Then",
+   "id": "sec-003-14-the-trivial-representation",
+   "title": "The \"trivial\" representation",
    "pages": "12-14"
   },
   {
-   "id": "sec-015-3-weak-hopf-modules-and-integral-theory",
-   "title": "Weak Hopf Modules and Integral Theory",
-   "pages": "14-14"
-  },
-  {
-   "id": "sec-016-31-integrals-in-weak-hopf-algebras",
+   "id": "sec-004-15-integrals-in-weak-hopf-algebras",
    "title": "Integrals in weak Hopf algebras",
    "pages": "14-16"
   },
   {
-   "id": "sec-017-32-weak-hopf-modules",
+   "id": "sec-005-16-weak-hopf-modules",
    "title": "Weak Hopf modules",
    "pages": "16-21"
   },
   {
-   "id": "sec-018-33-restrictions-on-the-algebraic-structure",
+   "id": "sec-006-17-restrictions-on-the-algebraic-structure",
    "title": "Restrictions on the algebraic structure",
    "pages": "21-22"
   },
   {
-   "id": "sec-019-34-non-degenerate-integrals",
+   "id": "sec-007-18-non-degenerate-integrals",
    "title": "Non-degenerate integrals",
-   "pages": "22-29"
+   "pages": "22-26"
   },
   {
-   "id": "sec-020-36-haar-integrals",
+   "id": "sec-008-19-2-sided-non-degenerate-integrals",
+   "title": "2-sided non-degenerate integrals",
+   "pages": "26-29"
+  },
+  {
+   "id": "sec-009-110-haar-integrals",
    "title": "Haar integrals",
    "pages": "29-31"
   },
   {
-   "id": "sec-021-4-c--weak-hopf-algebras",
-   "title": "C ∗-Weak Hopf Algebras",
-   "pages": "31-31"
-  },
-  {
-   "id": "sec-022-41-first-consequences-of-the-c--structure",
-   "title": "First consequences of the C ∗-structure",
+   "id": "sec-010-111-first-consequences-of-the-c-structure",
+   "title": "First consequences of the $C^*$-structure",
    "pages": "31-33"
   },
   {
-   "id": "sec-023-42-the-haar-measure-and-selfduality",
+   "id": "sec-011-112-the-haar-measure-and-selfduality",
    "title": "The Haar measure and selfduality",
    "pages": "33-35"
   },
   {
-   "id": "sec-024-43-the-canonical-grouplike-element",
+   "id": "sec-012-113-the-canonical-grouplike-element",
    "title": "The canonical grouplike element",
-   "pages": "35-37"
-  },
-  {
-   "id": "sec-025-l-now-use-the-fact-that",
-   "title": "Now use the fact that",
-   "pages": "37-39"
-  },
-  {
-   "id": "sec-026-references",
-   "title": "References",
-   "pages": "39-40"
+   "pages": "35-40"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

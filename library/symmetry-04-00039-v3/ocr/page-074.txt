@@ -1,0 +1,47 @@
+Symmetry 2012, 4 112
+
+which evaluates as the direct sum of six matrices, listed below. Together these contain a total of 27
+three letter terms, each of which coincides uniquely with one of the 27 three letter terms that remain in
+Figures 28 and 29 of Section 4 after all terms containing letters D or D* are deleted.
+
+0 0 0 0 0 0 AA*A AA*B AA*C
+
+0 0 0 |, |BB*A BB*B BB*C], | 0 0 0 ,
+CC*A CC*B CC*C 0 0 0 0 0 0
+AC*A AC*B AC*C} |AB*A AB*B AB*C 0 0 0
+BC*A BC*B BC*#C], || 0 0 0 |, |BA*A BA*B BA*CI.
+0 0 0 CB*A CB*B CB*C]} |BA*A BA*B BA*C
+
+Collecting terms then reduces the direct sum of these six terms to the outer product of two vectors
+
+Ao*
+Bo* |@(A, B, C)
+Co*
+where o * is the direct sum of three terms,
+o* =(A*® B*@C*) (E-17)
+
+Although this expression still encompasses all of the 27 terms, it is a little more succinct.
+Appendix F. On the Kauffman Bracket Polynomial of (2, 2) Torus Knots
+
+Both the Kauffman bracket polynomial [8] and (2, 7) torus knots have been studied at considerable
+length. The main interest here is a symmetric closed form reformulation of the KBP in the case of
+composite (2, n) torus knots, that is, knots where n is the sum of individual terms each of which is
+equal to the NHT of a constituent of a composite FMS. Also of interest as we shall see is the
+convolutional nature of this particular reformulation and its relationship to sampled data
+feedback systems.
+
+We begin with the recursion formula of the Kauffman bracket polynomial [8] for the (2, 1)
+torus knot,
+
+K, =AK,_,+(-1)"" A?" (F-1)
+The associated closed form version is readily shown to be in the form of a convolution
+
+K,=A'"K, -’y x”ynm (F-2)
+
+m =i
+where x =—A™*(which is equal to K_,) and y=A and K, = -(&’ +A~ ).
+Note that with this notation Equation F-1 becomes
+K, =AK,.,-A’x" (F-3)
+
+The form of these equations suggests an isomorphic relationship to the field of sampled data
+feedback systems as summarized in the following diagrammatic portrayal. The open switch in the

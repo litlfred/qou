@@ -1,0 +1,61 @@
+4, IRREDUCIBLE SPECHT MODULES AND WEYL MODULES 63
+
+whose e-core is p. Furthermore, if jp # X* is a partition of n then dy ye = Oy yeti
+fork =1,...,e-1.
+
+Proof. The enumeration of the weight 1 partitions is easy (for example, think of
+the abaci of Lemma 5.34). Hence, for k = 1,2,...,¢
+
+DWE) Ce ag
+#>0 j>k
+by the Jantzen sum formula (5.31). In particular, Wwe = Ix is reducible. If
+
+1 < k <e it now follows easily by induction that w* ooamee rT + pe as we
+wished to show. Oo
+
+4. Irreducible Specht modules and Weyl modules
+
+In the last section of these notes we classify the irreducible Weyl modules and
+the irreducible Specht modules which are indexed by e-restricted partitions. The
+first two results depend upon the choice of Jantzen filtration; our final result will
+depend only upon the field and on q.
+
+As in Section 2 we fix a principal ideal domain R, an invertible element g € R
+and a prime p in R and let F = R/p andg=q+pR.
+
+5.39 Theorem Suppose that \ € A*(d,n) and that [n]; #0 in R. Then the Weyl
+module W is irreducible if and only if vp({h>,]g) = vp([ho.]g) for all (a,b) and
+(a,c) in [A].
+
+Proof. If v,({h4,]Jg) = vp([h2-]g) for all (a,b) and (a,c) € [A] then 7, Wa(a) = 0
+by Theorem 5.31; in particular, Lemma 5.30 now shows that rad W = 0, so We
+is irreducible.
+
+Conversely, suppose that v,([h?,]g) # vp([h2-]q) for some nodes (a, b) and (a,c)
+in [A]. Choose a, and ¢ so that the partition vy whose sequence of beta numbers
+is (Bi...., By + bd,,..., 8. — hd.,...,8,) is minimal in the dominance ordering
+among all the partitions appearing on the right hand side of the equation in The-
+orem 5.31. Then \ > v and L¥ is a composition factor of Y7;., WA(i). Hence, Ly
+is a composition factor of wa and wa is not irreducible. oO
+
+The irreduciblity of the Specht modules is more subtle; indeed, the classification
+of the irreducible Specht modules even in the case of the symmetric groups is an
+open problem (except in characteristic 2; see [41]). However, as the next result
+shows, the answer is known when A is e-restricted.
+
+5.40 Theorem Suppose that In}; #0 in R and let X be an e-restricted partition
+of n. Then S& is an irreducible #-module if and only if vp([havlg) = vp([Pacl4)
+for all nodes (a,b) and (a,c) in [A].
+
+Proof. First suppose that SA = Da. Then the Gram matrix of the SA with
+respect to its standard basis {m,} is non-zero. By Corollary 5.11 and Theorem 5.27
+this determinant is equal to
+
+. oy [Je ha (Bry Bot Rays Bohan Bn)
+_ a
+cosa" TI (i)
+
+(a,b)e[d]
+
+(ac)eP\]
+be

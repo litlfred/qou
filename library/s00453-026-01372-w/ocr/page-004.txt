@@ -1,0 +1,55 @@
+21 Page 4 of 19 Algorithmica (2026) 88:21
+
+results immediately imply the submodular Chernoff lower-tail bound. It remains an
+interesting open question to efficiently sample negatively dependent distributions for a
+wider class of set systems. A particularly interesting algorithm is given in the work of
+[16]; they show that a fractional point in a matroid polytope can be rounded to an inte-
+gral one such that the resulting distribution preserves marginals and satisfies negative
+association. However, a gap identified in their proof [1] complicates the application
+of their approach. The implications of this issue for the applicability of our results
+remain an area for further investigation.
+
+As aconcrete application, we consider the maximum coverage problem under group
+fairness constraints. Here, we have a universe of elements {1,...,”}, a collection
+S1,..., Sm of subsets of the universe, and a budget k. We are further given subsets
+Ci,..., Ce ¢ [n] (which should be thought of as demographic groups) along with
+thresholds w1, ..., we. Our goal is to choose k sets from the collection to maximize the
+number of elements covered subject to the fairness constraint each demographic group
+is sufficiently covered (i.e., at least w; elements from C; are covered). Since this is a
+special case of multiobjective submodular maximization, there exists a (1 — 1/e — €)-
+approximation to the problem such that each fairness constraint is approximately
+satisfied [2, 17]. Unfortunately, these results rely on the randomized swap-rounding
+algorithm due to its submodular concentration properties, which requires a super-linear
+time complexity. While swap rounding can be implemented with poly-logarithmic
+depth [18], a simpler dependent-rounding algorithm of [15] requires linear work and
+only O(logn) depth, which improves the efficiency. Observe that the pre-processing
+step in [17] only requires O(n€) time. Since we can solve the linear program for fair
+maximum coverage in near-linear time [19], we obtain a near-linear time algorithm
+for the problem after using the efficient rounding algorithm of [15]. These same ideas
+can be used to improve the time complexity of the algorithm by [20] for influence
+maximization with group-fairness constraints. Since the proofs are similar to previous
+work, we defer the details to a future version of the paper.
+
+More generally, negatively-associated random variables show up naturally in many
+settings (see e.g., the primer by [21]). [22] studied the canonical example of balls and
+bins, and showed that it satisfied both negative association and negative regression.
+Another example satisfying the negative-association conditions are any product mea-
+sure over the set of bases of a balanced matroid, as shown by [23]. A final setting
+where such random variables occur are random spanning trees, which have been vital
+in the recent improvements to approximation algorithms for the traveling salesperson
+problem (see, e.g., [24]). Random spanning trees are known to be strongly Rayleigh,
+which immediately implies that they are negatively associated. Our results may be
+interesting here as well.
+
+We also observe that the online rounding scheme of [25] has the strongly Rayleigh
+property: we immediately get strong concentration (on the lower-tail side) for mono-
+tone submodular functions, when the inputs for the function arrive online along with
+their (Bernoulli) distributions as in the setup of [25].
+
+Related Work.
+
+The concentration of negatively-dependent random variables was first formally stud-
+ied by [26], which showed a central limit theorem for a certain notion of negative
+dependence. Later on, [13] showed that cylinder negatively dependent random vari-
+
+aN Springer

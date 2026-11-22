@@ -1,0 +1,47 @@
+R. Eldan, O. Shamir / Journal of Functional Analysis 282 (2022) 109392 13
+
+2
+1
+
+= sup Z,,(0)limsup,_,94.= [ etreon - [ee dt
+
+|0|=1,¢ELip(C,) E
+
+in Cn
+1 2
+
+= sup |limsup,_,9,—Wi(v,T-9v)| dé, (17)
+
+|o|=1 E
+
+where for two measures v, 7, we define
+
+Wi?) = sup, |B,[¢] - Bole
+PELip(C,)
+
+known as the Wasserstein transportation distance between v and v.
+Towards bounding the second term of the right hand side of (16), define A, = Cov(1).
+
+Fact 12. One has,
+Vary, [y] < nTr(A:).
+Proof. It is easily checked that vy is 1-Hamming-Lipschitz then its multi-linear extension
+satisfies |0;(2)| <1 for all 2 € [—1,1]” andi € [n]. Therefore, its multi-linear extension
+is \/n-Lipschitz with respect to the Euclidean distance, hence
+ly(z)— ey) < Vnlx—yl, Va,y¢ [-1,]]”.
+So, if X ~ j then,
+Var,.[¢] < El(e(X) — e(E[X]))"] < nk [|X — E[X]?] =nTr(A). 0
+
+Lemma 13. For all t,r > 0, we have almost surely,
+
+E[Tr(Aryr)|Fr] < new. (18)
+Proof. Fix i € [n], and define
+
+St = (Ar)iz, Qe = (at, e:).
+
+By part 3 of Proposition 10, we have that a..|F; has the law 14, meaning that Qo :=
+limy-+oo Qt exists almost surely and that, since a; is a martingale,
+
+Q:=E(Qx|Fi] and S$; = Var[Qx|Fi]-
+So,
+
+St = Var[Qoo|Fi] = E[Q2.|Fi] _ Q? =1- Qi.

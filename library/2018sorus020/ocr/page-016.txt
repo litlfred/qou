@@ -1,0 +1,34 @@
+Chapitre 1
+
+Character varieties and Reidemeister
+
+torsion
+
+In this first chapter we introduce the main objects that will be studied in this thesis.
+The first section deals with the theory of character varieties, the second section is
+a review about twisted cohomology, the third section is a short overview of the so-
+called Culler-Shalen theory, and provides the tools that will be used in the upcoming
+chapters, the fourth section gives an insight on the Alexander module theory and
+its relation with the character varieties, and we the fifth section is an introduction
+
+to the Reidemeister torsion.
+
+1.1 Character varieties
+
+In this section we give the definitions relative to character varieties of a finitely
+generated group, we first compare the classical definition coming from Geometric
+Invariants Theory with the "trace functions" definition, then we state a theorem of
+Kyoji Saito, that is used to produce the tautological representation. We end this
+
+section with examples.
+
+1.1.1 Representation variety
+
+Let I be a finitely generated group, with S = {y,...,7%n} a system of generators of
+
+T, and k be an algebraically closed field of characteristic zero.
+
+Definition 1.1.1. A representation is a group homomorphism p : T — SLe(k). We
+define the representation variety R(T) = Hom(I,SLo(k)) = {p : T > SLo(k)}. It
+
+15

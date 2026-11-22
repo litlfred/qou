@@ -1,0 +1,50 @@
+270 Smooth point asymptotics
+
+an example of the evaluation of the intersection class for a particular smooth
+bivariate generating function whose analysis first appeared in [DeV 10].
+
+Example 9.32 (bi-colored supertrees). A bi-colored supertree [FSO9, Exam-
+ple VI.10] is a planar binary tree with each node replaced by a bi-colored
+rooted planar binary tree. The class of bi-colored supertrees is counted by the
+main diagonal of the bivariate function
+
+P(x,y) _ 2x y(2Py? — 3x3 y + x + 2x7y - 1)
+Oxy) ey? +22y-Iy+4y+x—2
+
+F(x y) =
+
+,
+
+and we give asymptotics following the algorithm above.
+
+First, we note that there is one branch y(x) ~ (—4)x~> of y as x > 0 and
+four branches x(y) of x as y > 0, two of which satisfy x(y) ~ y~!/? and two of
+which have x(y) ~ —y~!/?. In particular, there are no critical points at infinity in
+the main diagonal direction (7, s) = (1, 1). A quick Grébner basis computation
+further verifies that the system
+
+Q(x, y) = Ox(x, y) = Q(x, y) = 0
+has no solution, and the smooth critical point system
+Q(x, y) = xO.(x, y) — O(a, y) = 0
+
+has three solutions
+
+['- 53165), (2.4): [+ 53165),
+
+listed here in order of decreasing height under h1/2,1/2.
+
+The highest critical point is nondegenerate, meaning V locally has two as-
+cent paths. Following both ascent paths using, for instance, the Sage package
+of [MS22] shows that both contains points arbitrarily close to the x-axis, so
+the intersection cycle can be pushed lower. In this case we could also simply
+observe that the highest critical point cannot contribute to the asymptotics be-
+cause the coordinates are real and of opposite sign. The factor x-"y~” in the
+asymptotic formula for a,,,, would then force the signs to alternate on the diag-
+onal, whereas we know the diagonal terms to be positive.
+
+Continuing to the next-highest point we consider the point (2, 1/8). This
+point has degree of degeneracy four, of which three climb to the x-axis and
+one climbs to the y-axis. In particular, the point (2, 1/8) determines dominant
+diagonal asymptotics and, using the notation of Theorem 9.31, the intersection
+cycle is homologous to y = y; — yj-1 where j is the index of the region whose
+ascent region goes to the y-axis. Among the four descent regions, this path

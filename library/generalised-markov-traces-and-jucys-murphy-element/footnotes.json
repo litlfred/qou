@@ -1,0 +1,1540 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "generalised-markov-traces-and-jucys-murphy-element",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "Kostiantyn Tolmachov"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "andHeorhii Zhylinskyi"
+  },
+  {
+   "page": 2,
+   "mark": "m",
+   "context": "(s0, . . . , sn|(sisj)"
+  },
+  {
+   "page": 2,
+   "mark": "s",
+   "context": "(i)⟨t"
+  },
+  {
+   "page": 2,
+   "mark": "s",
+   "context": "(i)⟨tsi, t"
+  },
+  {
+   "page": 2,
+   "mark": "s",
+   "context": "(i)⟨tsi, tsj⟩mij = ⟨t"
+  },
+  {
+   "page": 2,
+   "mark": "s",
+   "context": "(i)⟨tsi, tsj⟩mij = ⟨tsj, t"
+  },
+  {
+   "page": 2,
+   "mark": "s",
+   "context": "(ii′)(t"
+  },
+  {
+   "page": 2,
+   "mark": "s",
+   "context": "(ii′)(tsi −v)(t"
+  },
+  {
+   "page": 2,
+   "mark": "s",
+   "context": "(ii′)(t"
+  },
+  {
+   "page": 2,
+   "mark": "0",
+   "context": "(ii′)(ts0 −v"
+  },
+  {
+   "page": 2,
+   "mark": "s",
+   "context": "(ii′)(ts0 −v0)(t"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "Let w = s"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "Let w = si"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "Let w = si1 . . . s"
+  },
+  {
+   "page": 3,
+   "mark": "r",
+   "context": "Let w = si1 . . . si"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "Let w = si1 . . . sir, w ∈W, s"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "Let w = si1 . . . sir, w ∈W, si"
+  },
+  {
+   "page": 3,
+   "mark": "w",
+   "context": "sir, w ∈W, sik∈S be a reduced expression. Then the element t"
+  },
+  {
+   "page": 3,
+   "mark": "s",
+   "context": "w ∈W, sik∈S be a reduced expression. Then the element tw = t"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": " ∈W, sik∈S be a reduced expression. Then the element tw = ts"
+  },
+  {
+   "page": 3,
+   "mark": "s",
+   "context": "S be a reduced expression. Then the element tw = tsi1. . . t"
+  },
+  {
+   "page": 3,
+   "mark": "w",
+   "context": "w,"
+  },
+  {
+   "page": 3,
+   "mark": "h",
+   "context": "x-coeﬃcientof"
+  },
+  {
+   "page": 3,
+   "mark": "t",
+   "context": "x-coeﬃcientofhinthebasis"
+  },
+  {
+   "page": 3,
+   "mark": "w",
+   "context": "w,where"
+  },
+  {
+   "page": 3,
+   "mark": "w",
+   "context": "w2⟩= δ"
+  },
+  {
+   "page": 3,
+   "mark": "w",
+   "context": "w2⟩= δw1,"
+  },
+  {
+   "page": 3,
+   "mark": "w",
+   "context": "w,"
+  },
+  {
+   "page": 3,
+   "mark": "y",
+   "context": "w, w ∈W\\W′⟩). Then ⟨xz,"
+  },
+  {
+   "page": 3,
+   "mark": "y",
+   "context": "w, w ∈W\\W′⟩). Then ⟨xz, y⟩= ⟨zx,"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "w0∈H(W, S). In classical types, we will write S(X"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "w0∈H(W, S). In classical types, we will write S(Xn) ∈H(X"
+  },
+  {
+   "page": 3,
+   "mark": "h",
+   "context": "w1,"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "w1, h"
+  },
+  {
+   "page": 3,
+   "mark": "w",
+   "context": "w1, h2 = t"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "w1, h2 = tw"
+  },
+  {
+   "page": 3,
+   "mark": "t",
+   "context": "w1, S(W, S)"
+  },
+  {
+   "page": 3,
+   "mark": "w",
+   "context": "w1, S(W, S)t"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "w1, S(W, S)tw"
+  },
+  {
+   "page": 3,
+   "mark": "w",
+   "context": "w1, S(W, S)tw2⟩= ⟨t"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "w1, S(W, S)tw2⟩= ⟨tw"
+  },
+  {
+   "page": 3,
+   "mark": "t",
+   "context": "w1, S(W, S)tw2⟩= ⟨tw0"
+  },
+  {
+   "page": 3,
+   "mark": "t",
+   "context": "w1,"
+  },
+  {
+   "page": 3,
+   "mark": "t",
+   "context": "1,"
+  },
+  {
+   "page": 3,
+   "mark": "t",
+   "context": "w0"
+  },
+  {
+   "page": 3,
+   "mark": "w",
+   "context": "w0t"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "w0tw"
+  },
+  {
+   "page": 3,
+   "mark": "w",
+   "context": "w0tw2⟩= ⟨t"
+  },
+  {
+   "page": 3,
+   "mark": "w",
+   "context": "w0tw2⟩= ⟨tw0"
+  },
+  {
+   "page": 3,
+   "mark": "w",
+   "context": "2"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "2w"
+  },
+  {
+   "page": 3,
+   "mark": "w",
+   "context": "1,"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "1,w"
+  },
+  {
+   "page": 3,
+   "mark": "w",
+   "context": "1,w0"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "1,w0w"
+  },
+  {
+   "page": 3,
+   "mark": "w",
+   "context": "1,w0w2 = δ"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "1,w0w2 = δw"
+  },
+  {
+   "page": 3,
+   "mark": "w",
+   "context": "1,w0w2 = δw1,"
+  },
+  {
+   "page": 3,
+   "mark": "w",
+   "context": "2= ⟨t"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "2= ⟨tw"
+  },
+  {
+   "page": 3,
+   "mark": "t",
+   "context": "2= ⟨tw2,"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "n= S(X"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "n= S(Xn)−1 · S(X"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "1= t"
+  },
+  {
+   "page": 4,
+   "mark": "t",
+   "context": "1, where"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "1, where t"
+  },
+  {
+   "page": 4,
+   "mark": "t",
+   "context": "1, where t1, . . . ,"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "1, where t1, . . . , t"
+  },
+  {
+   "page": 4,
+   "mark": "t",
+   "context": "1and images of"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "1and images of t"
+  },
+  {
+   "page": 4,
+   "mark": "t",
+   "context": "1and images of t1, . . . ,"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "1and images of t1, . . . , t"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "i= t"
+  },
+  {
+   "page": 4,
+   "mark": "t",
+   "context": "i= ti−1 . . ."
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "i= ti−1 . . . t"
+  },
+  {
+   "page": 4,
+   "mark": "t",
+   "context": "i= ti−1 . . . t1"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "i= ti−1 . . . t1t"
+  },
+  {
+   "page": 4,
+   "mark": "t",
+   "context": "i= ti−1 . . . t1t1 . . ."
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "i= ti−1 . . . t1t1 . . . t"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "ibe the image of \u0006i,"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "ibe the image of \u0006i, i = 1, . . . ,"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "ibe the image of \u0006i, i = 1, . . . , n, in H(B"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "i= t"
+  },
+  {
+   "page": 5,
+   "mark": "t",
+   "context": "i= ti−1 . . ."
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "i= ti−1 . . . t"
+  },
+  {
+   "page": 5,
+   "mark": "t",
+   "context": "i= ti−1 . . . t1"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "i= ti−1 . . . t1t"
+  },
+  {
+   "page": 5,
+   "mark": "t",
+   "context": "i= ti−1 . . . t1t0"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "i= ti−1 . . . t1t0t"
+  },
+  {
+   "page": 5,
+   "mark": "t",
+   "context": "i= ti−1 . . . t1t0t1 . . ."
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "i= ti−1 . . . t1t0t1 . . . t"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "i)"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "1,"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "1, i = 1, . . . ,"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "1, i = 1, . . . , n, in H(D"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "i= t"
+  },
+  {
+   "page": 5,
+   "mark": "t",
+   "context": "i= ti−1 . . ."
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "i= ti−1 . . . t"
+  },
+  {
+   "page": 5,
+   "mark": "t",
+   "context": "i= ti−1 . . . t2"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "i= ti−1 . . . t2t"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "i= ti−1 . . . t2t1′t"
+  },
+  {
+   "page": 5,
+   "mark": "t",
+   "context": "i= ti−1 . . . t2t1′t1"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "i= ti−1 . . . t2t1′t1t"
+  },
+  {
+   "page": 5,
+   "mark": "t",
+   "context": "i= ti−1 . . . t2t1′t1t2 . . ."
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "i= ti−1 . . . t2t1′t1t2 . . . t"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "i= ti−1 . . . t2t1′t1t2 . . . ti−1,"
+  },
+  {
+   "page": 5,
+   "mark": "j",
+   "context": "i= ti−1 . . . t2t1′t1t2 . . . ti−1, i ≥2,"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "i)"
+  },
+  {
+   "page": 5,
+   "mark": "j",
+   "context": "i(resp."
+  },
+  {
+   "page": 5,
+   "mark": "j",
+   "context": "i,"
+  },
+  {
+   "page": 5,
+   "mark": "a",
+   "context": "i)commutewitheachother.IfPis"
+  },
+  {
+   "page": 5,
+   "mark": "j",
+   "context": "1, . . . ,"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "n)) is central in H(A"
+  },
+  {
+   "page": 5,
+   "mark": "v",
+   "context": "n)) is central in H(An−1) (resp. in H"
+  },
+  {
+   "page": 5,
+   "mark": "v",
+   "context": "n)) is central in H(An−1) (resp. in Hv,"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "n)) is central in H(An−1) (resp. in Hv,v0(B"
+  },
+  {
+   "page": 5,
+   "mark": "j",
+   "context": "1, . . . ,"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "n) is central in H(D"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Markovtracewithconstantsρ, μ,then,forarbitraryλ1, λ2 ∈R,(λ1λ"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "2φ"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "i), ζ"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "n), ι(h)⟩= ⟨ζ"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "n), ι(h)⟩= ⟨ζn−1, ι(h)⟩+ a⟨ζ"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "n= S(X"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "n= S(Xn)−1S(X"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "n= S(Xn)−1S(Xn−1) – we get the equality ⟨ζ"
+  },
+  {
+   "page": 6,
+   "mark": "t",
+   "context": "n), ι(h)"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "n), ι(h)t"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "n), ι(h)tn−1⟩= ⟨ζ"
+  },
+  {
+   "page": 6,
+   "mark": "t",
+   "context": "n), ι(h)tn−1⟩= ⟨ζn−1, ι(h)"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "n), ι(h)tn−1⟩= ⟨ζn−1, ι(h)t"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "n), ι(h)tn−1⟩= ⟨ζn−1, ι(h)tn−1⟩+ a⟨ζ"
+  },
+  {
+   "page": 6,
+   "mark": "t",
+   "context": "n, ι(h)"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "n, ι(h)t"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "n−1⟩+ (v −v−1)⟨ζ"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "n−1⟩+ (v −v−1)⟨ζn−1, ι(h)⟩+ a⟨ζ"
+  },
+  {
+   "page": 6,
+   "mark": "t",
+   "context": "n, ι(h)"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "n, ι(h)t"
+  },
+  {
+   "page": 6,
+   "mark": "t",
+   "context": "n, ι(h)"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "n, ι(h)t"
+  },
+  {
+   "page": 6,
+   "mark": "t",
+   "context": "n, ι(h)tn−1⟩= ⟨ι(h)"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "n, ι(h)tn−1⟩= ⟨ι(h)t"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "n, ι(h)tn−1⟩= ⟨ι(h)tn−1, ζ"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "n, ι(h)tn−1⟩= ⟨ι(h)tn−1, ζn−1S(X"
+  },
+  {
+   "page": 6,
+   "mark": "t",
+   "context": "1. . ."
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "n−1∈H(B"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "n−1∈H(Bn),"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "n−1∈H(Bn), n ≥2, T"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "n−1∈H(Bn), n ≥2, T1 = t"
+  },
+  {
+   "page": 6,
+   "mark": "t",
+   "context": "1. . ."
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "n−1∈H(D"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "n−1∈H(Dn),"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "n−1∈H(Dn), n ≥2, U"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "n,(y•)(1) = (1 + a)"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "n,(y•)(T"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "n,(y•)(T1T"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "n,(y•)(T1T2 . . . T"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "n,(y•)(T1T2 . . . Tn) = y"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "n,(y•)(T1T2 . . . Tn) = yn,"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "2n,(y•)(U"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "2n,(y•)(U1U"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "2n,(y•)(U1U2 . . . U"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "2n,(y•)(U1U2 . . . U2"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "2n,(y•)(U1U2 . . . U2n) = y"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "2n,(y•)(U1U2 . . . U2n) = y2"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "2n,(y•)(U1U2 . . . U2n) = y2n,"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "erestedinaparticularcaseofthesetraceswhenynisoftheformyn = y"
+  },
+  {
+   "page": 6,
+   "mark": "y",
+   "context": "n,ythe Markov trace from Theorem 3.2.1 with"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "n,ythe Markov trace from Theorem 3.2.1 with y"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "n,ythe Markov trace from Theorem 3.2.1 with yn = y"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "n,ythe Markov trace from Theorem 3.2.1 with yn = ynfor all"
+  },
+  {
+   "page": 7,
+   "mark": "v",
+   "context": "i) ∈H"
+  },
+  {
+   "page": 7,
+   "mark": "v",
+   "context": "i) ∈Hv,"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "i) ∈Hv,v0(B"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "n= T"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "n= Tn −α"
+  },
+  {
+   "page": 7,
+   "mark": "w",
+   "context": "w,"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "w, w ∈W(B"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "w, w ∈W(Bn)\\W(B"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "n)−1T"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "n)−1T"
+  },
+  {
+   "page": 7,
+   "mark": "w",
+   "context": "w,"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "w, w ∈W(B"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "w, w ∈W(Bn)\\W(B"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "n, ι(h)T"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "n, ι(h)Tn⟩+ a⟨β"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "n, ι(h)T"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "n⟩+ α"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "n⟩+ α0⟨β"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "n⟩+ α0⟨βn−1(y), ι(h)⟩= α"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "n⟩+ α0⟨βn−1(y), ι(h)⟩= α0⟨β"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "nis in the centraliser of H(B"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "nis in the centraliser of H(Bn−1) in H(B"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "n, ι(h)T"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "n, ι(h)Tn⟩= y′⟨β"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "n)−1T"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "n)−1T"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "n)−1Tn⟩= y′⟨β"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "n, ι(h)T"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "n, ι(h)Tn⟩= ⟨ι(h)T"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "n, ι(h)Tn⟩= ⟨ι(h)Tn, β"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "n, ι(h)Tn⟩= ⟨ι(h)Tn, βn−1(y)S(B"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "n"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "nis reduced as a word in generators"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "nis reduced as a word in generators t"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "nis reduced as a word in generators ti and ends in"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "nis reduced as a word in generators ti and ends in t"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "nis reduced as a word in generators ti and ends in tn−1, so"
+  },
+  {
+   "page": 7,
+   "mark": "c",
+   "context": "n= t"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "n= tc,"
+  },
+  {
+   "page": 7,
+   "mark": "c",
+   "context": "n−1= t"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "n, ι(h)⟩= 0 = ⟨(y + α"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "n, ι(h)⟩= 0 = ⟨(y + α0)β"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "n, ι(h)⟩= 0 = ⟨(y + α0)βn−1"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "n, ι(h)"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "n, ι(h)t"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "(1 + yxi + a−1x"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "n,"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "1, . . . ,"
+  },
+  {
+   "page": 8,
+   "mark": "y",
+   "context": "n;"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "n,y(h) = ⟨β"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "n,y(h) = ⟨βn(y), ιD→B(h)⟩= ⟨P"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "1, . . . ,"
+  },
+  {
+   "page": 8,
+   "mark": "y",
+   "context": "n;"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "i= t"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "i= t0"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "i, and so every even degree monomial in"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "i,since"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "i,sincet"
+  },
+  {
+   "page": 8,
+   "mark": "v",
+   "context": "0= 1inH"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "0= 1inHv,1(B"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "0= 1inHv,1(Bn)and"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "0= 1inHv,1(Bn)andt"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "0= 1inHv,1(Bn)andt0commuteswith"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "iforall"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "2n,y(ι ◦ι(h)U"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "2n,y(ι ◦ι(h)U2"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "2n,y(ι ◦ι(h)U2n−1U"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "2n,y(ι ◦ι(h)U2n−1U2"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "2n,y(ι ◦ι(h)U2n−1U2n) = y"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "2n,y(ι ◦ι(h)U"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "2n,y(ι ◦ι(h)U2"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "2n,y(ι ◦ι(h)U2n−1U"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "2n,y(ι ◦ι(h)U2n−1U2"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "2n,y(ι ◦ι(h)"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "2n,y(ι ◦ι(h)t"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "2n,y(ι ◦ι(h)t0T"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "2n,y(ι ◦ι(h)t0T2"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "2n,y(ι ◦ι(h)t0T2n−1"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "2n,y(ι ◦ι(h)t0T2n−1t"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "2n,y(ι ◦ι(h)t0T2n−1t0T"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "2n,y(ι ◦ι(h)t0T2n−1t0T2"
+  },
+  {
+   "page": 8,
+   "mark": "v",
+   "context": "n: H"
+  },
+  {
+   "page": 8,
+   "mark": "v",
+   "context": "n: Hv,"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "n: Hv,v(B"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "n: H(D"
+  },
+  {
+   "page": 8,
+   "mark": "20",
+   "context": "n: H(Dn) →A(a) studied in [7,"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "fyingtheextensionoftheproperties(U1)and(M2)fortheembeddingsB"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "gtheextensionoftheproperties(U1)and(M2)fortheembeddingsB0 →B"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "xtensionoftheproperties(U1)and(M2)fortheembeddingsB0 →B1andD"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "1(t"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "1(t"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "2(t"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "2(t1"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "2(t1t"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "2(t1t1′) = (v −v−1)"
+  },
+  {
+   "page": 8,
+   "mark": "y",
+   "context": "1forces"
+  },
+  {
+   "page": 8,
+   "mark": "y",
+   "context": "1forcesy = v −v−1and"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "1forcesy = v −v−1andy + α"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "y"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "2(t"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "2(t1′) = α"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "2(t1′) = α2 −α"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "2(t1′) = α2 −α2(1 + a) = −α"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "2(t1′) = α2 −α2(1 + a) = −α2"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "2(U"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "2(U1U"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "2(t"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "2(t"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "2(t1"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "2(t1t"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "ntakevaluesinA[a].LettrX,"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "n: H(X"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "nat"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "nat a"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "Theorem 3.3.1.The functional trB,"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "nis represented by the"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "trB,"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "n(h) = ⟨e"
+  },
+  {
+   "page": 9,
+   "mark": "h",
+   "context": "n),"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "k(x"
+  },
+  {
+   "page": 9,
+   "mark": "x",
+   "context": "k(x1, . . . ,"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "k(x1, . . . , x"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "k(x1, . . . , xn; α)bethesymmetricpolynomialin(x"
+  },
+  {
+   "page": 9,
+   "mark": "a",
+   "context": "(x1, . . . , xn; α)bethesymmetricpolynomialin(xi)appearingas"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": ". . , xn; α)bethesymmetricpolynomialin(xi)appearingasadegree"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": " . , xn; α)bethesymmetricpolynomialin(xi)appearingasadegree2"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "(1 + αxi −x"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "n(h) = (−1)"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "trD,"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "1, . . . ,"
+  },
+  {
+   "page": 9,
+   "mark": "h",
+   "context": "n; α),"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "(−1)"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "(−1)iv"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "n), trX,"
+  }
+ ]
+}

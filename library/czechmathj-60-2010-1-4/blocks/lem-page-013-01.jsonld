@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/czechmathj-60-2010-1-4/blocks/lem-page-013-01",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "pageStart": 13,
+  "pageEnd": 13,
+  "text": "lem-page-013-01.md",
+  "derivedFrom": "library/czechmathj-60-2010-1-4/sections/page-013",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/czechmathj-60-2010-1-4/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "6.1",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/page-013.md (p. 13-13)",
+    "claim_id": "czechmathj-60-2010-1-4#lemma:6.1",
+    "lean_status": "unformalized"
+  }
+}

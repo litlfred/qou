@@ -1,1 +1,1 @@
-If X is a Riemann surface of genus g> 2 with g3 −g
+The A5 subgroup of Aut(B) can be realised as a group of collineations in the HC-model, that is, can be realised as a subgroup of PGL3(C).

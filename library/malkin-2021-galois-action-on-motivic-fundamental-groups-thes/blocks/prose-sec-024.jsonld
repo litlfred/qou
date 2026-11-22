@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-024",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Bianchi hyperbolic threefolds and modular complexes",
-  "pageStart": 101,
-  "pageEnd": 101,
-  "text": "../sections/sec-024-bianchi-hyperbolic-threefolds-and-modular-comple.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/malkin-2021-galois-action-on-motivic-fundamental-groups-thes",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/malkin-2021-galois-action-on-motivic-fundamental-groups-thes",
+  "title": "Introduction and main results",
+  "pageStart": 82,
+  "pageEnd": 82,
+  "text": "../sections/sec-024-introduction-and-main-results.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/manifest.jsonld",
   "provenance": "ingested"
 }

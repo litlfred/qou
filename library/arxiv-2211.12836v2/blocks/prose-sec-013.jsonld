@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-2211.12836v2/blocks/prose-sec-013",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Invariant Brownian motion on Uk and unitary Dyson Brownian motion",
-  "pageStart": 30,
-  "pageEnd": 32,
-  "text": "../sections/sec-013-44-invariant-brownian-motion-on-uk-and-unitary-d.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2211.12836v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2211.12836v2",
+  "title": "The graph Bk,n as an integrable PM-graph",
+  "pageStart": 22,
+  "pageEnd": 25,
+  "text": "../sections/sec-013-41-the-graph-bkn-as-an-integrable-pm-graph.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2211.12836v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2211.12836v2/manifest.jsonld",
   "provenance": "ingested"
 }

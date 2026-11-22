@@ -4,82 +4,79 @@ doc_title: "SUMMABILITY FOR STATE INTEGRALS OF HYPERBOLIC KNOTS"
 section_id: sec-001-11-deforming-the-volume-of-a-three-manifold
 section_title: "Deforming the volume of a three-manifold"
 section_number: 1.1
-pages: 1-3
+pages: 2-4
 source_pdf: 2410.20973v1.pdf
 source_sha256: 852b7bbc81a62883
-doc_brief: "SUMMABILITY FOR STATE INTEGRALS OF HYPERBOLIC KNOTS — We prove conjectures of Garoufalidis-Gu-Mari˜ no [ 9] that perturbative series associated with the hyperbolic knots 4 1 and 5 2 are resurgent and"
+toc_source: outline
+text_source: latex
+latex_prose_ratio: 0.939
+latex_coverage_ratio: 0.938
+doc_brief: "SUMMABILITY FOR STATE INTEGRALS OF HYPERBOLIC KNOTS — We prove conjectures of Garoufalidis-Gu-Mari˜no [9] that perturbative series associated with the hyperbolic knots 41 and 52 are resurgent and"
 ---
-1.2. State integrals 4
-1.3. Proving Borel–Laplace summability 5
-Acknowledgements 8
-2. From thimbles to state integrals 9
-2.1. Existence of thimbles 9
-2.2. A relative homology for state integrals contours 12
-2.3. A state integral basis 14
-3. Asymptotics of state integrals 16
-3.1. A steepest descent algorithm 17
-3.2. Proof of Theorem 1.4 19
-4. Examples 21
-4.1. The 4 1 knot 21
-4.2. The case of ( A, B ) = (4 , 1) 27
-Appendix A. Critical points and independence of state integrals 36
-Appendix B. Faddeev’s dilogarithm 37
-B.1. Asymptotics of the Pochhammer symbol 37
-B.2. Asymptotics of Faddeev’s dilogarithm for Im( τ)⁄= 0 39
-B.3. Asymptotics of Faddeev’s dilogarithm for Im( τ) near 0 40
-References 43
-Date: October 29, 2024.
-Key words and phrases : 3-manifolds, 3d index, asymptotic expansions, Borel transform , complex Chern–
-Simons theory, Faddeev’s quantum dilogarithm, hyperbolic geometry, ideal triangulations, Kashaev invariant,
-knots, Laplace transform, Neumann-Zagier data, perturbation theory, resurgence, Stokes constants, Stokes
-phenomenon, summability, Andersen–Kashaev’s state-integrals, steepest descent, Teichm¨ uller TQFT, thim-
-ble integrals, volume conjecture.
-1
-2 VERONICA F ANTINI AND CAMPBELL WHEELER
-1. Introduction
-The volume of a hyperbolic knot K⊂ S3 has a natural perturbative deformation con-
-structed from the quantum dilogarithm [ 16]. This deformation is a formal power series
-Φ K(ℏ) = exp
-( Vol(S3\K)
-ℏ
-) ℏ3/2
-√
-δ
-(1 + A1ℏ +··· ) (1)
-where δ and Ak are elements in the trace ﬁeld of K. This formal power series Φ K is con-
-jectured to agree to all orders with the asymptotic series of the K ashaev invariant of K—
-expected to exist as part of Kashaev’s volume conjecture [ 17]. Independent of Kashaev’s
-volume conjecture, the series Φ K can be explicitly described in terms of Neumann–Zagier
-data [ 4] and proved to be a topological invariant [ 12]. This paper is concerned with the
-analytic properties of Φ K.
-It was conjecture by Garoufalidis [ 8] that Φ K is resurgent, which means that its Borel
-transform has endless analytic continuation [ 5]. The singularities of the Borel transform are
-expected to be located at the values of the Chern–Simons function al at parabolic SL 2(C)-ﬂat
-connections of the knot complement. While there have been many ex amples of resurgent
-series associated to non-hyperbolic knots [ 25, 3], there has been no proof of resurgence of
-the asymptotic series Φ K of any hyperbolic knot.
-A step further in the study of the analytic properties of Φ K is to address its summa-
-bility. This requires the existence of analytic functions with prescrib ed asymptotics. By
-reﬁning Hikami’s original approach [16], Andersen–Kashaev [ 1] deﬁned a convergent integral
-of products of Faddeev’s quantum dilogarithm associated to certa in triangulations. These
-integrals are called state integrals as they give a continuous analogu e of state sums. Combin-
-ing ideas from quantum modularity [ 13] and numerical Borel–Pad´ e–Laplace resummation,
-Garoufalidis–Gu–Mari˜ no [9] gave precise conjectures for the Borel–Laplace resummation of
-Φ K for the two simplest hyperbolic knots 4 1 and 5 2. The main result of this paper proves
-their conjectures for these examples, and it can be summarised in t he following theorem.
-Theorem 1.1. The series Φ 41 and Φ 52 are Borel–Laplace summable and their resummations
-are equal to combinations of state integrals.
-The method that we use to prove these conjectures seems easily g eneralisable and will
-likely lead to many resurgence and summability results for a wide class o f asymptotic series
-associated to q-hypergeometric functions. This would have a variety of application s in a
-number of areas such as topological strings [ 15], quantum K-theory [14], and complex Chern–
-Simons theory [ 9]. Hopefully, this can also lend insights to the inﬁnite dimensional appro ach
-considered in [ 18].
-1.1. Deforming the volume of a three-manifold. In this paper, we will consider a
-two parameter family of examples of asymptotic series similar to thos e that would come
-from a knot. These examples were considered in [ 10]. In particular, for some A, B∈ Z>0
-with A⁄= B, we will consider the function
-V : Σ → C/Z such that V (z, m) = B Li2(e(z))
-(2πi)2 + B
-24 + A
-2 z(z + 1) + mz , (2)
+In this paper, we will consider a two parameter family of examples of asymptotic series similar to those that would come from a knot. These examples were considered in~\cite{GK:qser}. In particular, for some $A,B\in\BZ_{>0}$ with~$A\neq B$, we will consider the function
+\be\label{eq:V}
+  V:\Sigma\rightarrow\BC/\BZ
+  \qquad\text{such that}\qquad
+  V(z,m)\=B\frac{\Li_{2}(\e(z))}{(2\pi i)^2}+\frac{B}{24}+\frac{A}{2}z(z+1)+mz\,,
+\ee
+where $\e(z)=\exp(2\pi iz)$ and $\Sigma$ is the associated Riemann surface. In particular, $\Sigma$ is defined by taking points $p=(z,m)$ where $z\in\BC\backslash(\BZ-i\BR)$ and $m\in\BZ$ with the equivalences 
+\be\label{eq:surface}
+\begin{aligned}
+(k+0+iy,m)&\sim(k-0+iy,m+B)\qquad\text{for }y<0\,,\;k\in\BZ\,,\\
+(z,m+A)&\sim(z+1,m)\,.
+\end{aligned}
+\ee
+Given the second equivalence relation, we can always represent points $p\in\Sigma$ as $p=(z,m)$ with $m=0,\cdots,A-1$. The critical points of $V$ are in bijective correspondence with the roots of the polynomial
+\be
+  P(x)\=(-x)^A-(1-x)^B\,.
+\ee
+Indeed, to each root $P(x_0)=0$ the point
+\be\label{eq:crit.pts}
+  p_0
+  \=
+  (z_0,m_0)
+  \=
+  \Big(\frac{\log(x_0)}{2\pi i},\frac{B}{2\pi i}\log(1-x_0)-A\frac{\log(x_0)}{2\pi i}-\frac{A}{2}\Big)
+\ee
+is a critical point of $V$. These roots are all distinct and therefore the critical points are non-degenerate (see Appendix~\ref{app:crit.pts}). Notice that all ambiguities in the logarithms lead to equivalent points in $\Sigma$. The function $V$ computes the volumes of the $4_1$ and $5_2$ knots with the parameters $(A,B)=(1,2)$ and $(2,3)$, respectively. Indeed, we find that $(z_1,m_1)=(-1/6,0)$ and $(z_2,m_2)=(-5/6,0)$ are the two critical points when $A=1$ and $B=2$ and these have volumes
+\be\label{eq:41.crit.val}
+  V(-1/6,0)\=0.051418\cdots i\,,
+  \qquad
+  V(-5/6,0)\=-0.051418\cdots i\,.
+\ee
+We will denote the collection $(A,B,p_0)$ by $\Xi$. Let $\mathcal{V}\subset\BC$ denote the set of critical values, which includes $\BZ$. Denote the set of rays $\BR_{\geq0}\frac{2\pi i}{\mathcal{V}-V_0}$ by $\mathcal{S}(V_{0})\subseteq\BC$. These form a peacock pattern so that $\BC\backslash\mathcal{S}(V_{0})$ consists of a countable set of cones, see Figure~\ref{fig:41.stokes}.
+
+\medskip
+
+We are interested in a perturbative expansion of certain integrals at the critical points of the function $V$. These integrals involve the formal series $\Psi(z,\hbar)\in\BC\llbracket\hbar\rrbracket$ defined by
+\be
+  \Psi(z,\hbar)
+  \=
+  \mu_8\exp\Big(-\frac{(2\pi i)^2}{24\hbar}-\frac{\hbar}{24}-\sum_{k=0}^{\infty}\frac{B_{k}}{k!}\Li_{2-k}(\e(z))\hbar^{k-1}\Big)\,,
+\ee
+where $\mu_8^8=1$ is an eighth root of unity and $B_k$ denotes the $k$-th Bernoulli number. Explicitly, for each $\Xi$ the formal series is defined by
+\be\label{eq:form.int}
+  \Phi_{\Xi}(\hbar)\=\int \Psi(z,\hbar)^B\exp\Big(-\frac{A}{2\hbar}(2\pi i)^2z\Big(z+1-\frac{\hbar}{2\pi i}\Big)+(2\pi i)^2\frac{m_0z}{\hbar}\Big)dz\,,
+\ee
+where we take the formal Gaussian integration around the critical point $z_0$. More precisely, consider the series
+\be
+\sum_{k=0}^{\infty}\sum_{\ell=-\lfloor k/3\rfloor}^{\infty}a_{k,\ell}w^k\hbar^\ell\in\BC\llbracket\hbar\,,w\rrbracket
+\ee
+defined through the following equation
+\be
+\begin{aligned}
+  &\exp\Big(-\frac{V(z_0,m_0)}{\hbar}-\frac{\delta}{\hbar} w^2\Big)
+  \sum_{k=0}^{\infty}\sum_{\ell=-\lfloor k/3\rfloor}^{\infty}a_{k,\ell}w^k\hbar^\ell\\
+  &=\;
+  \Psi(z_0+w,\hbar)^B\exp\Big(-\frac{A}{2\hbar}(2\pi i)^2(z_0+w)\Big(z_0+w+1-\frac{\hbar}{2\pi i}\Big)-(2\pi i)^2\frac{m_0(z_0+w)}{\hbar}\Big)\,,
+\end{aligned}
+\ee
+for some constant $\delta$. 
+Then, formal Gaussian integration gives
+\be\label{eq:def.phi}
+  \Phi_{\Xi}(\hbar)\=
+  \sqrt{\frac{-2\pi i\hbar}{\delta}}
+  \exp\Big(-\frac{V(z_0,m_0)}{\hbar}\Big)
+  \sum_{k=0}^{\infty}\sum_{\ell=-\lfloor 2k/3\rfloor}^{\infty}a_{2k,\ell}\frac{(2k-1)!!}{\delta^k}\hbar^{\ell+k}.
+\ee
+Given that $B_{k}\Li_{2-k}(x)=O((k!)^2(2\pi|\log(x)|)^{-k})$ and exponentiation preserves the property of being Gevery-1~\cite[Thm.~5.55]{diverg-resurg-i}, it is easy to see that these series are Gevery-1, i.e. the coefficient of $\hbar^k$ grows like $A\,k!\,C^k$ as $k\to\infty$. We will prove that $\Phi_{\Xi}$ is in fact Borel--Laplace summable in Theorem~\ref{thm:main_intro}. Importantly, for $(A,B)=(1,2)$ and $(2,3)$, the series $\Phi_{\Xi}$ give the series $\Phi_{4_1}$ and $\Phi_{5_2}$ respectively. This was explicitly illustrated in~\cite[Sec.~7]{GSW} but known in previous work such as~\cite[Sec.~1.3]{GK:qser}.

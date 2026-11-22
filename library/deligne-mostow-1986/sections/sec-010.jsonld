@@ -9,13 +9,21 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "P.DELIGNE AND G. D. MOSTOW",
-  "pageStart": 21,
-  "pageEnd": 23,
+  "title": "D E L I G N E AND G. D. M O S T O W",
+  "pageStart": 47,
+  "pageEnd": 52,
   "contains": [
-    "library/deligne-mostow-1986/blocks/prose-sec-010"
+    "library/deligne-mostow-1986/blocks/prose-sec-010",
+    "library/deligne-mostow-1986/blocks/prop-sec-010-01",
+    "library/deligne-mostow-1986/blocks/prop-sec-010-02",
+    "library/deligne-mostow-1986/blocks/prop-sec-010-03",
+    "library/deligne-mostow-1986/blocks/lem-sec-010-04",
+    "library/deligne-mostow-1986/blocks/rem-sec-010-05",
+    "library/deligne-mostow-1986/blocks/rem-sec-010-06",
+    "library/deligne-mostow-1986/blocks/lem-sec-010-07",
+    "library/deligne-mostow-1986/blocks/lem-sec-010-08"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/deligne-mostow-1986",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/deligne-mostow-1986",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/deligne-mostow-1986/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/deligne-mostow-1986/manifest.jsonld",
   "provenance": "ingested"
 }

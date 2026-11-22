@@ -8,9 +8,15 @@
   "pages": 61,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 6,
+    "reason": "210 of 1118 words are a stray single letter: the text layer splits words"
+   }
+  ],
   "math_source": "latex"
  },
  "metadata": {
@@ -27,7 +33,7 @@
    "Random Matrix Theory and Chiral",
    "Symmetry in QCD"
   ],
-  "abstract": "Random matrix theory is a powerful way to describe universal correlations of eigenvalues of complex systems. It also may serve as a schematic model for disorder in quantum systems. In this review, we discuss both types of applications of chiral random matrix theory to the QCD partition function. We show that constraints imposed by chiral symmetry and its spontaneous breaking determine the structure of low-energy e\ufb00ective partition functions for the Dirac spectrum. We thus derive exact results for the low-lying eigenvalues of the QCD Dirac operator. We argue that the statistical properties of these eigenvalues are universal and can be described by a random matrix theory with the global symmetries of the QCD partition function. The total number of such eigenvalues increases with the square root of the Euclidean four-volume. The spectral density for larger eigenvalues (but still well below a typical hadronic mass scale) also follows from the same low-energy e\ufb00ective partition function. The validity of the random matrix approach has been con\ufb01rmed by many lattice QCD simulations in a wide parameter range. Stimulated by the success of the chiral random matrix theory in the description of universal properties of the Dirac eigenvalues, the random matrix model is extended to nonzero temperature and chemical potential. In this way we obtain qualitative results for the QCD phase diagram and the spectrum of the QCD Dirac operator. We discuss the nature of the quenched approximation and analyze quenched Dirac spectra at nonzero baryon density in terms of an e\ufb00ective partition function. Relations with other \ufb01elds are also discussed.",
+  "abstract": "Random matrix theory is a powerful way to describe universal correlations of eigenvalues of complex systems. It also may serve as a schematic model for disorder in quantum systems. In this review, we discuss both types of applications of chiral random matrix theory to the QCD partition function. We show that constraints imposed by chiral symmetry and its spontaneous breaking determine the structure of low-energy eﬀective partition functions for the Dirac spectrum. We thus derive exact results for the low-lying eigenvalues of the QCD Dirac operator. We argue that the statistical properties of these eigenvalues are universal and can be described by a random matrix theory with the global symmetries of the QCD partition function. The total number of such eigenvalues increases with the square root of the Euclidean four-volume. The spectral density for larger eigenvalues (but still well below a typical hadronic mass scale) also follows from the same low-energy eﬀective partition function. The validity of the random matrix approach has been conﬁrmed by many lattice QCD simulations in a wide parameter range. Stimulated by the success of the chiral random matrix theory in the description of universal properties of the Dirac eigenvalues, the random matrix model is extended to nonzero temperature and chemical potential. In this way we obtain qualitative results for the QCD phase diagram and the spectrum of the QCD Dirac operator. We discuss the nature of the quenched approximation and analyze quenched Dirac spectra at nonzero baryon density in terms of an eﬀective partition function. Relations with other ﬁelds are also discussed.",
   "docinfo": {
    "Title": "arXiv:hep-ph/0003017v2  26 Jun 2000",
    "Producer": "GPL Ghostscript 10.01.2",
@@ -217,19 +223,6 @@
     "body"
    ],
    "page_label": "17"
-  },
-  {
-   "level": 2,
-   "title": "$\\theta$-Dependence of the Partition Function",
-   "page": 18,
-   "source": "inferred",
-   "number": "3.3",
-   "confidence": 1.0,
-   "evidence": [
-    "latex",
-    "body"
-   ],
-   "page_label": "18"
   },
   {
    "level": 2,
@@ -732,7 +725,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "A minimal phase diagram for QCD with two massless \ufb02avors at nonzero temperature and density",
+   "title": "A minimal phase diagram for QCD with two massless ﬂavors at nonzero temperature and density",
    "page": 6,
    "confidence": 0.9,
    "evidence": [
@@ -745,7 +738,7 @@
   {
    "kind": "figure",
    "number": "2",
-   "title": "Diagram illustrating the di\ufb00erent domains in the QCD Dirac spectrum. Here, pqChPT denotes partially quenched chiral perturbation theory, and chRMT stands for chiral random matrix theory",
+   "title": "Diagram illustrating the diﬀerent domains in the QCD Dirac spectrum. Here, pqChPT denotes partially quenched chiral perturbation theory, and chRMT stands for chiral random matrix theory",
    "page": 30,
    "confidence": 0.9,
    "evidence": [
@@ -758,7 +751,7 @@
   {
    "kind": "figure",
    "number": "3",
-   "title": "Number variance \u03a32(n), spectral rigidity \u22063(n), and nearest-neighbor spacing distribution P(s) of the lattice Dirac operator with gauge group SU(2)",
+   "title": "Number variance Σ2(n), spectral rigidity ∆3(n), and nearest-neighbor spacing distribution P(s) of the lattice Dirac operator with gauge group SU(2)",
    "page": 34,
    "confidence": 0.9,
    "evidence": [
@@ -771,7 +764,7 @@
   {
    "kind": "figure",
    "number": "4",
-   "title": "Valence quark mass dependence of the chiral condensate \u03a3(mv) plotted as \u03a3(mv)/\u03a3 versus mvV \u03a3. The dots and squares represent lattice results by the Columbia group [153] for the values of \u03b2 indicated in the \ufb01gure. The solid lines are chRMT results. (From Ref. [116].)",
+   "title": "Valence quark mass dependence of the chiral condensate Σ(mv) plotted as Σ(mv)/Σ versus mvV Σ. The dots and squares represent lattice results by the Columbia group [153] for the values of β indicated in the ﬁgure. The solid lines are chRMT results. (From Ref. [116].)",
    "page": 35,
    "confidence": 0.9,
    "evidence": [
@@ -784,7 +777,7 @@
   {
    "kind": "figure",
    "number": "5",
-   "title": "Distribution of the smallest eigenvalue (left) and microscopic spectral density (right) of the staggered Dirac operator in quenched SU(2). The dashed lines are the predictions of the chSE for Nf = 0 and \u03bd = 0. (From Ref. [155].)",
+   "title": "Distribution of the smallest eigenvalue (left) and microscopic spectral density (right) of the staggered Dirac operator in quenched SU(2). The dashed lines are the predictions of the chSE for Nf = 0 and ν = 0. (From Ref. [155].)",
    "page": 36,
    "confidence": 0.9,
    "evidence": [
@@ -797,7 +790,7 @@
   {
    "kind": "figure",
    "number": "6",
-   "title": "Distribution of the smallest Dirac eigenvalue in the \u03bd = 1 sector for all three symmetry classes",
+   "title": "Distribution of the smallest Dirac eigenvalue in the ν = 1 sector for all three symmetry classes",
    "page": 37,
    "confidence": 0.9,
    "evidence": [
@@ -810,7 +803,7 @@
   {
    "kind": "figure",
    "number": "7",
-   "title": "The data points represent the disconnected susceptibility computed on the lattice in quenched SU(3) with staggered fermions (V = 104, \u03b2 = 5.4). The solid line is the prediction of chPT, the dashed line the prediction of chRMT",
+   "title": "The data points represent the disconnected susceptibility computed on the lattice in quenched SU(3) with staggered fermions (V = 104, β = 5.4). The solid line is the prediction of chPT, the dashed line the prediction of chRMT",
    "page": 38,
    "confidence": 0.9,
    "evidence": [
@@ -823,7 +816,7 @@
   {
    "kind": "figure",
    "number": "8",
-   "title": "The spectral density of the QCD Dirac operator as a function of an e\ufb00ective Matsubara frequency t that models the e\ufb00ect of temperature. (From Ref. [181].)",
+   "title": "The spectral density of the QCD Dirac operator as a function of an eﬀective Matsubara frequency t that models the eﬀect of temperature. (From Ref. [181].)",
    "page": 40,
    "confidence": 0.9,
    "evidence": [
@@ -836,7 +829,7 @@
   {
    "kind": "figure",
    "number": "9",
-   "title": "Zeros of the partition function in the complex \u00b5 and m plane. (From Ref. [189].)",
+   "title": "Zeros of the partition function in the complex µ and m plane. (From Ref. [189].)",
    "page": 43,
    "confidence": 0.9,
    "evidence": [
@@ -849,7 +842,7 @@
   {
    "kind": "figure",
    "number": "10",
-   "title": "Phase diagram of QCD with two light \ufb02avors of mass m as calculated from the random matrix model. The almost parallel curves on the wing surface are cross sections of this surface with m =constant planes. (From Ref. [183].)",
+   "title": "Phase diagram of QCD with two light ﬂavors of mass m as calculated from the random matrix model. The almost parallel curves on the wing surface are cross sections of this surface with m =constant planes. (From Ref. [183].)",
    "page": 47,
    "confidence": 0.9,
    "evidence": [
@@ -862,7 +855,7 @@
   {
    "kind": "figure",
    "number": "11",
-   "title": "Scatter plot of the real (x) and imaginary (y) parts of the eigenvalues of the random matrix Dirac operator at nonzero chemical potential. The values of \u03b2 and \u00b5 are given in the \ufb01gures. Full curves show the analytical result for the boundary. The line along the imaginary axis for \u03b2 = 1 represents th",
+   "title": "Scatter plot of the real (x) and imaginary (y) parts of the eigenvalues of the random matrix Dirac operator at nonzero chemical potential. The values of β and µ are given in the ﬁgures. Full curves show the analytical result for the boundary. The line along the imaginary axis for β = 1 represents th",
    "page": 49,
    "confidence": 0.9,
    "evidence": [
@@ -1459,8 +1452,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 14,
-   "n_chars": 44107,
-   "n_words": 8521,
+   "n_chars": 42681,
+   "n_words": 7797,
    "label_start": "1",
    "label_end": "14"
   },
@@ -1470,190 +1463,190 @@
    "title": "Dirac Spectrum",
    "level": 2,
    "page_start": 14,
-   "page_end": 14,
-   "n_chars": 0,
-   "n_words": 0,
-   "label_start": "14",
-   "label_end": "14"
-  },
-  {
-   "id": "sec-001-1-introduction",
-   "number": "1",
-   "title": "INTRODUCTION",
-   "level": 1,
-   "page_start": 14,
-   "page_end": 14,
-   "n_chars": 0,
-   "n_words": 0,
-   "label_start": "14",
-   "label_end": "14"
-  },
-  {
-   "id": "sec-002-22-global-symmetries",
-   "number": "2.2",
-   "title": "Global Symmetries",
-   "level": 2,
-   "page_start": 14,
    "page_end": 15,
-   "n_chars": 549,
-   "n_words": 97,
+   "n_chars": 709,
+   "n_words": 124,
    "label_start": "14",
    "label_end": "15"
   },
   {
-   "id": "sec-003-12-random-matrix-theory",
+   "id": "sec-001-12-random-matrix-theory",
    "number": "1.2",
    "title": "Random Matrix Theory",
    "level": 2,
    "page_start": 15,
    "page_end": 15,
-   "n_chars": 1389,
-   "n_words": 239,
+   "n_chars": 1387,
+   "n_words": 238,
    "label_start": "15",
    "label_end": "15"
   },
   {
-   "id": "sec-004-3-chiral-random-matrix-theory",
+   "id": "sec-002-3-chiral-random-matrix-theory",
    "number": "3",
    "title": "CHIRAL RANDOM MATRIX THEORY",
    "level": 1,
    "page_start": 15,
    "page_end": 15,
-   "n_chars": 3,
-   "n_words": 1,
+   "n_chars": 27,
+   "n_words": 4,
    "label_start": "15",
    "label_end": "15"
   },
   {
-   "id": "sec-005-31-introduction-of-the-model",
-   "number": "3.1",
-   "title": "Introduction of the Model",
+   "id": "sec-003-1-introduction",
+   "number": "1",
+   "title": "INTRODUCTION",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 101,
+   "n_words": 17,
+   "label_start": "15",
+   "label_end": "15"
+  },
+  {
+   "id": "sec-004-22-global-symmetries",
+   "number": "2.2",
+   "title": "Global Symmetries",
    "level": 2,
    "page_start": 15,
    "page_end": 16,
-   "n_chars": 2978,
-   "n_words": 545,
+   "n_chars": 2857,
+   "n_words": 525,
    "label_start": "15",
    "label_end": "16"
   },
   {
-   "id": "sec-006-223-anti-unitary-symmetries",
+   "id": "sec-005-223-anti-unitary-symmetries",
    "number": "2.2.3",
    "title": "ANTI-UNITARY SYMMETRIES",
    "level": 3,
    "page_start": 16,
    "page_end": 17,
-   "n_chars": 1739,
-   "n_words": 319,
+   "n_chars": 1735,
+   "n_words": 318,
    "label_start": "16",
    "label_end": "17"
   },
   {
-   "id": "sec-007-32-sigma-model-representation-of-chiral-random-m",
+   "id": "sec-006-32-sigma-model-representation-of-chiral-random-m",
    "number": "3.2",
    "title": "Sigma Model Representation of Chiral Random Matrix Models",
    "level": 2,
    "page_start": 17,
    "page_end": 19,
-   "n_chars": 5379,
-   "n_words": 945,
+   "n_chars": 5433,
+   "n_words": 952,
    "label_start": "17",
    "label_end": "19"
   },
   {
-   "id": "sec-008-34-spectral-correlation-functions",
+   "id": "sec-007-34-spectral-correlation-functions",
    "number": "3.4",
    "title": "Spectral Correlation Functions",
    "level": 2,
    "page_start": 19,
    "page_end": 20,
-   "n_chars": 1775,
-   "n_words": 318,
+   "n_chars": 1800,
+   "n_words": 320,
    "label_start": "19",
    "label_end": "20"
   },
   {
-   "id": "sec-009-341-bulk-correlations",
+   "id": "sec-008-341-bulk-correlations",
    "number": "3.4.1",
    "title": "BULK CORRELATIONS",
    "level": 3,
    "page_start": 20,
    "page_end": 21,
-   "n_chars": 2862,
-   "n_words": 486,
+   "n_chars": 2874,
+   "n_words": 487,
    "label_start": "20",
    "label_end": "21"
   },
   {
-   "id": "sec-010-342-microscopic-correlations",
+   "id": "sec-009-342-microscopic-correlations",
    "number": "3.4.2",
    "title": "MICROSCOPIC CORRELATIONS",
    "level": 3,
    "page_start": 21,
    "page_end": 22,
-   "n_chars": 3254,
-   "n_words": 560,
+   "n_chars": 3275,
+   "n_words": 561,
    "label_start": "21",
    "label_end": "22"
   },
   {
-   "id": "sec-011-35-universality-proofs",
+   "id": "sec-010-35-universality-proofs",
    "number": "3.5",
    "title": "Universality Proofs",
    "level": 2,
    "page_start": 22,
    "page_end": 23,
-   "n_chars": 4686,
-   "n_words": 792,
+   "n_chars": 4704,
+   "n_words": 793,
    "label_start": "22",
    "label_end": "23"
   },
   {
-   "id": "sec-012-4-effective-theories-at-low-energies",
+   "id": "sec-011-4-effective-theories-at-low-energies",
    "number": "4",
    "title": "EFFECTIVE THEORIES AT LOW ENERGIES",
    "level": 1,
    "page_start": 23,
    "page_end": 23,
-   "n_chars": 3,
-   "n_words": 1,
+   "n_chars": 34,
+   "n_words": 5,
    "label_start": "23",
    "label_end": "23"
   },
   {
-   "id": "sec-013-41-finite-volume-partition-function",
+   "id": "sec-012-41-finite-volume-partition-function",
    "number": "4.1",
    "title": "Finite-Volume Partition Function",
    "level": 2,
    "page_start": 23,
    "page_end": 25,
-   "n_chars": 3180,
-   "n_words": 577,
+   "n_chars": 3209,
+   "n_words": 579,
    "label_start": "23",
    "label_end": "25"
   },
   {
-   "id": "sec-014-42-leutwyler-smilga-sum-rules",
+   "id": "sec-013-42-leutwyler-smilga-sum-rules",
    "number": "4.2",
    "title": "Leutwyler-Smilga Sum Rules",
    "level": 2,
    "page_start": 25,
    "page_end": 26,
-   "n_chars": 3599,
-   "n_words": 674,
+   "n_chars": 3622,
+   "n_words": 676,
    "label_start": "25",
    "label_end": "26"
   },
   {
-   "id": "sec-015-43-spectral-mass-and-partially-quenched-partitio",
+   "id": "sec-014-43-spectral-mass-and-partially-quenched-partitio",
    "number": "4.3",
    "title": "Spectral Mass and Partially Quenched Partition Function",
    "level": 2,
    "page_start": 26,
-   "page_end": 31,
-   "n_chars": 10677,
-   "n_words": 1861,
+   "page_end": 27,
+   "n_chars": 4117,
+   "n_words": 709,
    "label_start": "26",
+   "label_end": "27"
+  },
+  {
+   "id": "sec-015-44-domains-of-the-partially-quenched-effective-t",
+   "number": "4.4",
+   "title": "Domains of the Partially Quenched Effective Theory",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 31,
+   "n_chars": 6607,
+   "n_words": 1157,
+   "label_start": "27",
    "label_end": "31"
   },
   {
@@ -1663,8 +1656,8 @@
    "level": 2,
    "page_start": 31,
    "page_end": 31,
-   "n_chars": 770,
-   "n_words": 123,
+   "n_chars": 802,
+   "n_words": 127,
    "label_start": "31",
    "label_end": "31"
   },
@@ -1675,8 +1668,8 @@
    "level": 1,
    "page_start": 31,
    "page_end": 31,
-   "n_chars": 12,
-   "n_words": 2,
+   "n_chars": 54,
+   "n_words": 8,
    "label_start": "31",
    "label_end": "31"
   },
@@ -1687,7 +1680,7 @@
    "level": 2,
    "page_start": 31,
    "page_end": 32,
-   "n_chars": 2997,
+   "n_chars": 3003,
    "n_words": 487,
    "label_start": "31",
    "label_end": "32"
@@ -1699,8 +1692,8 @@
    "level": 2,
    "page_start": 32,
    "page_end": 32,
-   "n_chars": 695,
-   "n_words": 106,
+   "n_chars": 734,
+   "n_words": 112,
    "label_start": "32",
    "label_end": "32"
   },
@@ -1711,8 +1704,8 @@
    "level": 3,
    "page_start": 32,
    "page_end": 33,
-   "n_chars": 4106,
-   "n_words": 676,
+   "n_chars": 4134,
+   "n_words": 680,
    "label_start": "32",
    "label_end": "33"
   },
@@ -1723,8 +1716,8 @@
    "level": 3,
    "page_start": 33,
    "page_end": 34,
-   "n_chars": 2550,
-   "n_words": 419,
+   "n_chars": 2562,
+   "n_words": 420,
    "label_start": "33",
    "label_end": "34"
   },
@@ -1735,8 +1728,8 @@
    "level": 3,
    "page_start": 34,
    "page_end": 36,
-   "n_chars": 3765,
-   "n_words": 635,
+   "n_chars": 3784,
+   "n_words": 636,
    "label_start": "34",
    "label_end": "36"
   },
@@ -1747,7 +1740,7 @@
    "level": 3,
    "page_start": 36,
    "page_end": 37,
-   "n_chars": 2082,
+   "n_chars": 2085,
    "n_words": 338,
    "label_start": "36",
    "label_end": "37"
@@ -1759,8 +1752,8 @@
    "level": 3,
    "page_start": 37,
    "page_end": 37,
-   "n_chars": 1173,
-   "n_words": 191,
+   "n_chars": 1193,
+   "n_words": 193,
    "label_start": "37",
    "label_end": "37"
   },
@@ -1771,8 +1764,8 @@
    "level": 2,
    "page_start": 37,
    "page_end": 38,
-   "n_chars": 1741,
-   "n_words": 312,
+   "n_chars": 1770,
+   "n_words": 316,
    "label_start": "37",
    "label_end": "38"
   },
@@ -1783,8 +1776,8 @@
    "level": 1,
    "page_start": 38,
    "page_end": 39,
-   "n_chars": 1568,
-   "n_words": 256,
+   "n_chars": 1581,
+   "n_words": 257,
    "label_start": "38",
    "label_end": "39"
   },
@@ -1795,8 +1788,8 @@
    "level": 2,
    "page_start": 39,
    "page_end": 41,
-   "n_chars": 4233,
-   "n_words": 783,
+   "n_chars": 4292,
+   "n_words": 792,
    "label_start": "39",
    "label_end": "41"
   },
@@ -1807,8 +1800,8 @@
    "level": 2,
    "page_start": 41,
    "page_end": 41,
-   "n_chars": 5,
-   "n_words": 1,
+   "n_chars": 57,
+   "n_words": 8,
    "label_start": "41",
    "label_end": "41"
   },
@@ -1819,8 +1812,8 @@
    "level": 3,
    "page_start": 41,
    "page_end": 41,
-   "n_chars": 1537,
-   "n_words": 264,
+   "n_chars": 1581,
+   "n_words": 270,
    "label_start": "41",
    "label_end": "41"
   },
@@ -1831,8 +1824,8 @@
    "level": 3,
    "page_start": 41,
    "page_end": 42,
-   "n_chars": 2417,
-   "n_words": 449,
+   "n_chars": 2459,
+   "n_words": 457,
    "label_start": "41",
    "label_end": "42"
   },
@@ -1843,8 +1836,8 @@
    "level": 3,
    "page_start": 42,
    "page_end": 44,
-   "n_chars": 2935,
-   "n_words": 506,
+   "n_chars": 2952,
+   "n_words": 508,
    "label_start": "42",
    "label_end": "44"
   },
@@ -1855,8 +1848,8 @@
    "level": 3,
    "page_start": 44,
    "page_end": 44,
-   "n_chars": 1385,
-   "n_words": 243,
+   "n_chars": 1419,
+   "n_words": 247,
    "label_start": "44",
    "label_end": "44"
   },
@@ -1867,8 +1860,8 @@
    "level": 3,
    "page_start": 44,
    "page_end": 46,
-   "n_chars": 4293,
-   "n_words": 774,
+   "n_chars": 4312,
+   "n_words": 776,
    "label_start": "44",
    "label_end": "46"
   },
@@ -1878,110 +1871,122 @@
    "title": "Phase Diagram for the QCD Partition Function",
    "level": 2,
    "page_start": 46,
-   "page_end": 50,
-   "n_chars": 8219,
-   "n_words": 1519,
+   "page_end": 48,
+   "n_chars": 3124,
+   "n_words": 584,
    "label_start": "46",
+   "label_end": "48"
+  },
+  {
+   "id": "sec-035-64-random-matrix-triality-at-mu-ne-0",
+   "number": "6.4",
+   "title": "Random Matrix Triality at $\\mu \\ne 0$",
+   "level": 2,
+   "page_start": 48,
+   "page_end": 50,
+   "n_chars": 5104,
+   "n_words": 934,
+   "label_start": "48",
    "label_end": "50"
   },
   {
-   "id": "sec-035-7-related-models-and-relations-to-other-fields",
+   "id": "sec-036-7-related-models-and-relations-to-other-fields",
    "number": "7",
    "title": "RELATED MODELS AND RELATIONS TO OTHER FIELDS",
    "level": 1,
    "page_start": 50,
    "page_end": 50,
-   "n_chars": 472,
-   "n_words": 73,
+   "n_chars": 513,
+   "n_words": 79,
    "label_start": "50",
    "label_end": "50"
   },
   {
-   "id": "sec-036-71-one-plaquette-models-of-lattice-qcd",
+   "id": "sec-037-71-one-plaquette-models-of-lattice-qcd",
    "number": "7.1",
    "title": "One-Plaquette Models of Lattice QCD",
    "level": 2,
    "page_start": 50,
    "page_end": 51,
-   "n_chars": 2074,
-   "n_words": 351,
+   "n_chars": 2106,
+   "n_words": 355,
    "label_start": "50",
    "label_end": "51"
   },
   {
-   "id": "sec-037-72-universal-conductance-fluctuations-in-disorde",
+   "id": "sec-038-72-universal-conductance-fluctuations-in-disorde",
    "number": "7.2",
    "title": "Universal Conductance Fluctuations in Disordered Mesoscopic Systems",
    "level": 2,
    "page_start": 51,
    "page_end": 51,
-   "n_chars": 1623,
-   "n_words": 263,
+   "n_chars": 1679,
+   "n_words": 268,
    "label_start": "51",
    "label_end": "51"
   },
   {
-   "id": "sec-038-73-anderson-localization",
+   "id": "sec-039-73-anderson-localization",
    "number": "7.3",
    "title": "Anderson Localization",
    "level": 2,
    "page_start": 51,
    "page_end": 52,
-   "n_chars": 4098,
-   "n_words": 663,
+   "n_chars": 4116,
+   "n_words": 664,
    "label_start": "51",
    "label_end": "52"
   },
   {
-   "id": "sec-039-74-non-hermitian-models-with-disorder",
+   "id": "sec-040-74-non-hermitian-models-with-disorder",
    "number": "7.4",
    "title": "Non-Hermitian Models with Disorder",
    "level": 2,
    "page_start": 52,
    "page_end": 53,
-   "n_chars": 1649,
-   "n_words": 275,
+   "n_chars": 1680,
+   "n_words": 278,
    "label_start": "52",
    "label_end": "53"
   },
   {
-   "id": "sec-040-75-andreev-scattering",
+   "id": "sec-041-75-andreev-scattering",
    "number": "7.5",
    "title": "Andreev Scattering",
    "level": 2,
    "page_start": 53,
    "page_end": 53,
-   "n_chars": 1621,
-   "n_words": 273,
+   "n_chars": 1636,
+   "n_words": 274,
    "label_start": "53",
    "label_end": "53"
   },
   {
-   "id": "sec-041-76-mathematical-physics-and-quantum-gravity",
+   "id": "sec-042-76-mathematical-physics-and-quantum-gravity",
    "number": "7.6",
    "title": "Mathematical Physics and Quantum Gravity",
    "level": 2,
    "page_start": 53,
    "page_end": 54,
-   "n_chars": 1757,
-   "n_words": 302,
+   "n_chars": 1796,
+   "n_words": 306,
    "label_start": "53",
    "label_end": "54"
   },
   {
-   "id": "sec-042-8-conclusions",
+   "id": "sec-043-8-conclusions",
    "number": "8",
    "title": "CONCLUSIONS",
    "level": 1,
    "page_start": 54,
    "page_end": 55,
-   "n_chars": 3609,
-   "n_words": 580,
+   "n_chars": 3621,
+   "n_words": 581,
    "label_start": "54",
    "label_end": "55"
   },
   {
-   "id": "sec-043-acknowledgments",
+   "id": "sec-044-acknowledgments",
    "number": null,
    "title": "Acknowledgments",
    "level": 1,
@@ -1996,10 +2001,10 @@
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 53,
+  "toc_entries": 52,
   "toc_inferred_entries": 53,
   "toc_inferred_mean_confidence": 0.887,
-  "toc_inferred_empty_share": 0.136,
+  "toc_inferred_empty_share": 0.043,
   "toc_inferred_method": "latex",
   "figure_entries": 11,
   "figure_sequence_gaps": [],
@@ -2025,13 +2030,22 @@
     ]
    }
   },
-  "sections": 45,
-  "chars_total": 172108,
+  "sections": 46,
+  "chars_total": 171863,
+  "furniture_lines_stripped": 1,
+  "headings_tidied": [
+   {
+    "title": "$\\theta$-Dependence of the Partition Function",
+    "page": 18,
+    "action": "dropped",
+    "why": "opens in lower case"
+   }
+  ],
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "arnps.tex",
    "tex_sections": 53,
-   "overlaid": 31,
+   "overlaid": 32,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -2046,57 +2060,49 @@
     {
      "id": "sec-000-23-dirac-spectrum",
      "title": "Dirac Spectrum",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.296,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-001-1-introduction",
-     "title": "INTRODUCTION",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-002-22-global-symmetries",
-     "title": "Global Symmetries",
-     "prose_ratio": 0.086,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-003-12-random-matrix-theory",
+     "id": "sec-001-12-random-matrix-theory",
      "title": "Random Matrix Theory",
      "prose_ratio": 0.092,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-004-3-chiral-random-matrix-theory",
+     "id": "sec-002-3-chiral-random-matrix-theory",
      "title": "CHIRAL RANDOM MATRIX THEORY",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.019,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-005-31-introduction-of-the-model",
-     "title": "Introduction of the Model",
-     "prose_ratio": 0.703,
-     "coverage_ratio": 0.986,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "id": "sec-003-1-introduction",
+     "title": "INTRODUCTION",
+     "prose_ratio": 0.019,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-006-223-anti-unitary-symmetries",
+     "id": "sec-004-22-global-symmetries",
+     "title": "Global Symmetries",
+     "prose_ratio": 0.261,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-223-anti-unitary-symmetries",
      "title": "ANTI-UNITARY SYMMETRIES",
      "prose_ratio": 0.239,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-007-32-sigma-model-representation-of-chiral-random-m",
+     "id": "sec-006-32-sigma-model-representation-of-chiral-random-m",
      "title": "Sigma Model Representation of Chiral Random Matrix Models",
-     "prose_ratio": 0.939,
-     "coverage_ratio": 0.976,
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.967,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-34-spectral-correlation-functions",
+     "id": "sec-007-34-spectral-correlation-functions",
      "title": "Spectral Correlation Functions",
      "prose_ratio": 0.832,
      "coverage_ratio": 0.979,
@@ -2104,7 +2110,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-341-bulk-correlations",
+     "id": "sec-008-341-bulk-correlations",
      "title": "BULK CORRELATIONS",
      "prose_ratio": 0.977,
      "coverage_ratio": 0.872,
@@ -2112,7 +2118,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-010-342-microscopic-correlations",
+     "id": "sec-009-342-microscopic-correlations",
      "title": "MICROSCOPIC CORRELATIONS",
      "prose_ratio": 0.953,
      "coverage_ratio": 0.988,
@@ -2120,7 +2126,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-35-universality-proofs",
+     "id": "sec-010-35-universality-proofs",
      "title": "Universality Proofs",
      "prose_ratio": 0.866,
      "coverage_ratio": 1.0,
@@ -2128,13 +2134,14 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-012-4-effective-theories-at-low-energies",
+     "id": "sec-011-4-effective-theories-at-low-energies",
      "title": "EFFECTIVE THEORIES AT LOW ENERGIES",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.333,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
-     "id": "sec-013-41-finite-volume-partition-function",
+     "id": "sec-012-41-finite-volume-partition-function",
      "title": "Finite-Volume Partition Function",
      "prose_ratio": 0.945,
      "coverage_ratio": 0.965,
@@ -2142,7 +2149,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-014-42-leutwyler-smilga-sum-rules",
+     "id": "sec-013-42-leutwyler-smilga-sum-rules",
      "title": "Leutwyler-Smilga Sum Rules",
      "prose_ratio": 0.945,
      "coverage_ratio": 0.983,
@@ -2150,10 +2157,18 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-015-43-spectral-mass-and-partially-quenched-partitio",
+     "id": "sec-014-43-spectral-mass-and-partially-quenched-partitio",
      "title": "Spectral Mass and Partially Quenched Partition Function",
-     "prose_ratio": 0.922,
-     "coverage_ratio": 0.987,
+     "prose_ratio": 0.936,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-44-domains-of-the-partially-quenched-effective-t",
+     "title": "Domains of the Partially Quenched Effective Theory",
+     "prose_ratio": 0.934,
+     "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -2169,7 +2184,7 @@
      "id": "sec-017-5-universal-properties-of-the-lattice-qcd-dirac",
      "title": "UNIVERSAL PROPERTIES OF THE LATTICE QCD DIRAC SPECTRUM",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-018-51-unfolding",
@@ -2182,8 +2197,8 @@
     {
      "id": "sec-019-52-lattice-tests-of-chiral-random-matrix-theory",
      "title": "Lattice Tests of Chiral Random Matrix Theory",
-     "prose_ratio": 0.914,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.931,
+     "coverage_ratio": 0.982,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -2191,25 +2206,25 @@
      "id": "sec-020-521-brief-introduction-to-lattice-qcd",
      "title": "BRIEF INTRODUCTION TO LATTICE QCD",
      "prose_ratio": 0.51,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-021-522-bulk-correlations",
      "title": "BULK CORRELATIONS",
      "prose_ratio": 0.344,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-022-523-microscopic-correlations",
      "title": "MICROSCOPIC CORRELATIONS",
      "prose_ratio": 0.363,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-023-524-topology",
      "title": "TOPOLOGY",
      "prose_ratio": 0.914,
-     "coverage_ratio": 0.983,
+     "coverage_ratio": 0.975,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -2249,7 +2264,7 @@
      "id": "sec-028-62-chiral-random-matrix-models-at-nonzero-chemic",
      "title": "Chiral Random Matrix Models at Nonzero Chemical Potential",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-029-621-qcd-partition-function-at-nonzero-chemical-p",
@@ -2279,7 +2294,7 @@
      "id": "sec-032-624-quenching-at-nonzero-chemical-potential",
      "title": "QUENCHING AT NONZERO CHEMICAL POTENTIAL",
      "prose_ratio": 0.925,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -2294,21 +2309,29 @@
     {
      "id": "sec-034-63-phase-diagram-for-the-qcd-partition-function",
      "title": "Phase Diagram for the QCD Partition Function",
-     "prose_ratio": 0.936,
-     "coverage_ratio": 0.988,
+     "prose_ratio": 0.945,
+     "coverage_ratio": 0.972,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-035-7-related-models-and-relations-to-other-fields",
+     "id": "sec-035-64-random-matrix-triality-at-mu-ne-0",
+     "title": "Random Matrix Triality at $\\mu \\ne 0$",
+     "prose_ratio": 0.934,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-036-7-related-models-and-relations-to-other-fields",
      "title": "RELATED MODELS AND RELATIONS TO OTHER FIELDS",
-     "prose_ratio": 0.875,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.896,
+     "coverage_ratio": 0.956,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-036-71-one-plaquette-models-of-lattice-qcd",
+     "id": "sec-037-71-one-plaquette-models-of-lattice-qcd",
      "title": "One-Plaquette Models of Lattice QCD",
      "prose_ratio": 0.929,
      "coverage_ratio": 0.975,
@@ -2316,15 +2339,15 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-037-72-universal-conductance-fluctuations-in-disorde",
+     "id": "sec-038-72-universal-conductance-fluctuations-in-disorde",
      "title": "Universal Conductance Fluctuations in Disordered Mesoscopic Systems",
      "prose_ratio": 0.972,
-     "coverage_ratio": 0.99,
+     "coverage_ratio": 0.981,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-038-73-anderson-localization",
+     "id": "sec-039-73-anderson-localization",
      "title": "Anderson Localization",
      "prose_ratio": 0.909,
      "coverage_ratio": 0.99,
@@ -2332,7 +2355,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-039-74-non-hermitian-models-with-disorder",
+     "id": "sec-040-74-non-hermitian-models-with-disorder",
      "title": "Non-Hermitian Models with Disorder",
      "prose_ratio": 0.971,
      "coverage_ratio": 0.917,
@@ -2340,7 +2363,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-040-75-andreev-scattering",
+     "id": "sec-041-75-andreev-scattering",
      "title": "Andreev Scattering",
      "prose_ratio": 0.981,
      "coverage_ratio": 1.0,
@@ -2348,7 +2371,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-041-76-mathematical-physics-and-quantum-gravity",
+     "id": "sec-042-76-mathematical-physics-and-quantum-gravity",
      "title": "Mathematical Physics and Quantum Gravity",
      "prose_ratio": 0.836,
      "coverage_ratio": 0.978,
@@ -2356,19 +2379,19 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-042-8-conclusions",
+     "id": "sec-043-8-conclusions",
      "title": "CONCLUSIONS",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.995,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-043-acknowledgments",
+     "id": "sec-044-acknowledgments",
      "title": "Acknowledgments",
      "prose_ratio": 0.967,
      "coverage_ratio": 0.16,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

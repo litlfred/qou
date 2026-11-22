@@ -9,13 +9,18 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "The Reidemeister torsion",
-  "pageStart": 43,
+  "title": "Alexander module",
+  "pageStart": 40,
   "pageEnd": 43,
   "contains": [
-    "library/2018sorus020/blocks/prose-sec-021"
+    "library/2018sorus020/blocks/prose-sec-021",
+    "library/2018sorus020/blocks/prop-sec-021-01",
+    "library/2018sorus020/blocks/rem-sec-021-02",
+    "library/2018sorus020/blocks/prop-sec-021-03",
+    "library/2018sorus020/blocks/thm-sec-021-04",
+    "library/2018sorus020/blocks/ex-sec-021-05"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/2018sorus020",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/2018sorus020",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/2018sorus020/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/2018sorus020/manifest.jsonld",
   "provenance": "ingested"
 }

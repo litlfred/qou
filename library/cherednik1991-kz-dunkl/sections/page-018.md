@@ -1,0 +1,70 @@
+---
+doc_id: cherednik1991-kz-dunkl
+doc_title: "A unification of Knizhnik-Zamolodchikov and Dunkl operators via affine Hecke algebras"
+section_id: page-018
+section_title: "Page 18"
+pages: 18-18
+pdf_page: 18
+source_pdf: cherednik1991-kz-dunkl.pdf
+source_sha256: cae9cf747bb98a46
+text_source: ocr
+granularity: page
+doc_brief: "A unification of Knizhnik-Zamolodchikov and Dunkl operators via affine Hecke algebras — 21 sections: Page 1; Page 2; Page 3"
+---
+428 I. Cherednik
+
+satisfy relations (1.5) for y* with the constants h; above, where p, are from Theorem
+3.4. Indeed, [vo(s;), vo(x:)] = 0 for j +i because s,(«) > 0 if ui +0, where pi=
+(a, a*) = (s;(a), a). Similarly,
+
+Vo(Si) Vo(%i) Vo(Si) — Ki(Pi + Vo(Si) P:Vo(si) — 1) = x Kq(2, Si(a*)) (Pa — 1/2).
+a>O
+Here we have used that s; does not change the terms pa, in « for j + iand therefore
+takes 0 < a + a; to some positive root. Hence, (3.10) results in
+
+a
+SiXji — ( ¥ Ger), oa) =-K, 1SiSn,
+k=1
+
+which is (1.5) for x; = y* and h; = — (a;, «;)«,/2, 1 Sign.
+
+The commutativity relations [x;, x;] = 0 are valid because the set {p,} is an
+r-matrix. For {x?} (without g) reasoning is the same. One can deduce the general
+statement (without g) from this partial results, but the direct calculation of the
+commutativity is a more natural way and is not difficult. As for the introduction of
+g, it is due to the relations yi[r,, y¥] + wiL y*,r.] = 0. This proves the required
+commutativity. 0
+
+Now we are in a position to explain the main theorem of this section. Later on,
+A = End, V. Let us introduce partial derivatives 6,,ueC”, on V° = C(Y)@¢V or
+= C(y)@cV (see Sect. 2 and Lemma 3.5) by
+
+Ou( Ya) = (U; ®) Yar Ou( Ya) = (u, &), O,(V) = 0, (3.21)
+where a¢ Z. In particular, 0; = 0,»(1 S i, j Sn). One has
+
+Bau+ pur = CO, + Boy, WOW * = Aww (3.22)
+for u, u’eC", a, BEC, we W.
+
+Theorem 3.7 Put
+
+Vi = 0, + Dy, Du = ¥, (u, a4); weC", (3.23)
+i=1
+
+where D; are from (3.19) or (3.20). Then V,, ueC", form a commutative family of
+operators in End, V° for arbitrary x’, x", 6’, 5", g. For {D,} of type (3.20) or in the case
+6’ =0 = 6” one has: o(w)D,¥o(w)~* = Dy, where Vo is from (3.9), ueC", we W.
+
+Proof. Let us check the identities [4,, wiry] = [6;, uir,]for 1 <i,j<n,wed,. By
+(3.22) uid, — wid; = 0,, where u = plo¥ — phat. Hence, 0,(Y, — 1) = (u, a) Y, =0
+= (Ya) and [8y, 1 — b452] = Sa(Au — Os.) = 9.
+
+We will discuss now some particular cases. Let us consider first the “rational”
+case of C(y) with x? = 0 for all i. If 6’ = 0 = 6”, g =0, then one arrives at the
+generalized Knizhnik-Zamolodchikov equation from [Ch1, Ch2]. The Dunkl
+operators (see [Du, He2]) can be obtained for V = Cand 6’ = 1 = 6",g = 0. In this
+case
+
+Ty =Kyyg (1-5), wEXs. (3.24)
+
+The Lusztig-Lascoux-Schiitzenberger operators give a natural proof of the com-
+mutativity of the corresponding family (3.23).

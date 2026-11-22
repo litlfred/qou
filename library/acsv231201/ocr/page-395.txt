@@ -1,0 +1,41 @@
+11.4 Examples and consequences 377
+
+w = ©£,0,0), where £ = (-1 +i V2)/3 has modulus V3. Further computer
+algebra shows ‘V to have the geometry of a Lorentzian cone near p, and Al-
+gorithm | from Chapter 8 verifies that there are no CPAI in the main diagonal
+direction. Applying Corollary 7.17 to the black box result, we see that the cy-
+cle ' may be pushed down further to the level of the next critical points w and
+w. As these are the only two remaining critical points, and the asymptotics are
+not eventually zero, we know that
+
+dp © K(Py(r) + O—@(r)) = 2x Re{Oy(r)} (11.18)
+
+for some non-zero integer x and ®,, given by (9.4).
+
+We compute « for the main diagonal direction, which extends automatically
+to a neighborhood of the diagonal, by comparing (11.18) to asymptotics com-
+puted from an analysis of the ODE obtained by representing the diagonal as
+a D-finite function using the techniques described in Section 8.4.2 of Chap-
+ter 8. In particular, creative telescoping methods compute that the generating
+function f(z) of the main diagonal satisfies
+
+PBI + 142 + I f(z + 32(1622? + 21z + Df) + 2lz + YQ7z+ Vf
++3(27¢ + I f(z) =0.
+(11.19)
+
+This ODE is Fuchsian: all singular points of solutions are regular and are
+contained in the set of roots (0, 24, 24} of the leading polynomial coefficient
+2(81z? + 14z+ 1). The techniques described in Chapter 8 for D-finite functions
+compute a basis for the three-dimensional vector space of solutions to (11.19),
+whose expansions at the origin begin
+
+1 32 922
+a(z) = bot(5 -st>
+
++ (8c? - 48:3 +--+)
+
+to) etogta( ac 182 +)
+
+an(2) = log()(1 — 32 + 92? +--+) +(— 42 + 182° +--+)
+
+ax(z) = 1-324 92 ++,

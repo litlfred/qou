@@ -96,8 +96,8 @@ class AlphaKCategoricalClosure (q : ℝ) : Type where
 -- i.e. the conjecture — that the categorical α_k resummation exists, selects
 -- the geometric family, and closes CAL-3 in the right direction — was asserted
 -- by `axiom`.  Removed, not completed.
--- Ref: [manuscript] conj:alpha-k-categorical-closure
--- Ref: [manuscript] prop:alpha-k-derivation-procedure
+-- Ref: [leitner2026] conj:alpha-k-categorical-closure
+-- Ref: [leitner2026] conj:alpha-k-derivation-procedure
 -- Ref: [wenzl1988] https://doi.org/10.1007/BF01239013
 
 end QOU.BraidKnot

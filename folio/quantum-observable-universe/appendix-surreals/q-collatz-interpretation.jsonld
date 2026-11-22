@@ -2,7 +2,8 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/rem-q-collatz-interpretation",
@@ -14,7 +15,7 @@
   "kind": "remark",
   "title": "Skein-Collatz interpretation: the $(p_1^{k_1}, p_2^{k_2})$ family and uniqueness of $(2,3)$",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-collatz-contact-boundary"
+    "papers/quantum-observable-universe/blocks/conj-collatz-contact-boundary"
   ],
   "interprets": "papers/quantum-observable-universe/blocks/conj-q-collatz",
   "cites": [

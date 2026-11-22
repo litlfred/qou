@@ -48,7 +48,7 @@ Tower status (owner ruling 2026-09-03): MIXED — the Frobenius piece is a
 genuine sum over the full partition lattice at fixed `n ≤ 5`; the tower over
 `n` is not taken.
 
-Ref: [manuscript] Chapter 6, §Nuclear Binding and Beta Stability
+Ref: [leitner2026] Chapter 6, §Nuclear Binding and Beta Stability
 LaTeX label: `thm:knot-mass-formula-unified`
 -/
 
@@ -134,7 +134,7 @@ theorem partitionInverseDimSum_five (q : ℝ) :
     only where the corpus has proved it, instead of pinning a fabricated
     value.  Nothing here forces any term to `0`.
 
-    Ref: [manuscript] §Nuclear Binding and Beta Stability,
+    Ref: [leitner2026] §Nuclear Binding and Beta Stability,
     prop:mass-endomorphism-tower, thm:frobenius-codim-universal. -/
 structure UnifiedKnotMass where
   /-- Substrate parameter. -/
@@ -180,7 +180,7 @@ structure UnifiedKnotMass where
       m(ρ) = |tr_M(T_w)| − tower + m_e · Σ_{λ⊢n} 1/dim_q(λ),
 
     derived by composing the four identities the structure carries. -/
--- Ref: [manuscript] thm:knot-mass-formula-unified
+-- Ref: [leitner2026] thm:knot-mass-formula-unified
 theorem knot_mass_unified_small (U : UnifiedKnotMass) (hn : U.n ≤ 5) :
     U.total_mass = |U.markovTrace| - U.tower + U.mE * partitionInverseDimSum U.q U.n := by
   rw [U.unified_identity, U.descended_is_markov, U.frobenius_is_codim_trace,
@@ -192,14 +192,14 @@ theorem knot_mass_unified_small (U : UnifiedKnotMass) (hn : U.n ≤ 5) :
 
     This is the `.md`'s boxed formula with the Frobenius piece evaluated;
     `lean.ref` target of `thm:knot-mass-formula-unified`. -/
--- Ref: [manuscript] thm:knot-mass-formula-unified, prop:partition-sum-proton-residual
+-- Ref: [leitner2026] thm:knot-mass-formula-unified, conj:partition-sum-proton-residual
 theorem knot_mass_unified (U : UnifiedKnotMass) (hn : U.n = 3) :
     U.total_mass = |U.markovTrace| - U.tower + U.mE * (2 + 1 / (U.q + U.q⁻¹)) := by
   rw [knot_mass_unified_small U (by omega), hn, partitionInverseDimSum_three]
 
 /-- Specialisation to `n = 2`: the Frobenius piece is exactly `2 m_e` (both
     partitions have `dim_q = 1`, saturating the self-dual lower bound). -/
--- Ref: [manuscript] prop:partition-sum-proton-residual
+-- Ref: [leitner2026] conj:partition-sum-proton-residual
 theorem two_strand_frobenius_correction (U : UnifiedKnotMass) (hn : U.n = 2) :
     U.frobenius_correction = U.mE * 2 := by
   rw [U.frobenius_is_codim_trace, U.coCasimir_small_n (by omega), hn,
@@ -207,7 +207,7 @@ theorem two_strand_frobenius_correction (U : UnifiedKnotMass) (hn : U.n = 2) :
 
 /-- Specialisation to `n = 4` (e.g. the four-strand Borromean closure):
     the Frobenius piece is `m_e · (2 + 2/[3]_q + 1/(q²+q⁻²))`. -/
--- Ref: [manuscript] prop:partition-sum-proton-residual
+-- Ref: [leitner2026] conj:partition-sum-proton-residual
 theorem four_strand_frobenius_correction (U : UnifiedKnotMass) (hn : U.n = 4) :
     U.frobenius_correction
       = U.mE * (2 + 2 / (U.q ^ 2 + 1 + (U.q ^ 2)⁻¹) + 1 / (U.q ^ 2 + (U.q ^ 2)⁻¹)) := by

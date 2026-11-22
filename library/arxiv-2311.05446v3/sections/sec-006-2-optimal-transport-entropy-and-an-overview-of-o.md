@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2311.05446v3
-doc_title: "NEW BRUNN–MINKOWSKI AND FUNCTIONAL INEQUALITIES VIA CONVEXITY OF ENTROPY"
+doc_title: "New Brunn--Minkowski and functional inequalities via convexity of entropy"
 section_id: sec-006-2-optimal-transport-entropy-and-an-overview-of-o
 section_title: "Optimal transport, entropy, and an overview of our method"
 section_number: 2
 pages: 8-13
 source_pdf: 2311.05446v3.pdf
 source_sha256: c5809730f598a56d
-doc_brief: "NEW BRUNN–MINKOWSKI AND FUNCTIONAL INEQUALITIES VIA CONVEXITY OF ENTROPY — We study the connection between the concavity properties of a measureνand the convexity properties of the associated"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.998
-latex_coverage_ratio: 0.991
+latex_prose_ratio: 0.961
+latex_coverage_ratio: 0.971
+doc_brief: "New Brunn--Minkowski and functional inequalities via convexity of entropy — We study the connection between the concavity properties of a measure ν and the convexity properties of the associated"
 ---
 []{#sec: overview label="sec: overview"} While the general problem of optimal transport can be posed in a much more abstract setting, we will focus on the setup relevant for our purpose, namely the optimal transport problem in $\mathbb{R}^n$ with quadratic cost. For details beyond the short treatment we present below, the reader is referred to the excellent textbook [@Villani03], especially Chapters 2 and 5.
 

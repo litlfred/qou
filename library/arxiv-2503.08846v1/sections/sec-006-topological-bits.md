@@ -10,6 +10,7 @@ source_sha256: 18321b615ffc968b
 toc_source: outline
 doc_brief: "A Tutorial on Knots and Quantum Mechanics — These notes review a description of quantum mechanics in terms of the topology of spaces, basing on the axioms of Topological Quantum Field Theory and path"
 ---
+Topological bits
 In this section we will explain how knots can be used in the description of quantum mechanics. In fact, the
 main idea was already anticipated in the last section, when we introduce a matrix description of knots and
 their invariants. In this section we will put this idea on a more formal ground using methods of category
@@ -18,4 +19,3 @@ be used, and they will be explained. The main message that will be conveyed is t
 quantum mechanics, such as states operators and Hilbert spaces can be represented by topological spaces
 and some basic manipulations on them. The tool that will help establish this connection is the topological
 quantum field theory (TQFT).
-3.1

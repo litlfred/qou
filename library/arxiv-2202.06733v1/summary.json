@@ -2,70 +2,100 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2202.06733v1",
  "source_sha256": "e670632090447f14",
- "brief": "Received <day> <Month>, <year>; Revised <day> <Month>, <year>; Accepted <day> <Month>, <year> ARTICLE TYPE — Diﬀerent ways of representing the groupSU(3) within a Geometric Algebra approach are",
- "extended": "**Received <day> <Month>, <year>; Revised <day> <Month>, <year>; Accepted <day> <Month>, <year> ARTICLE TYPE**\n\n*Some recent results forSU(3) and Octonions within the*\n\n20 pp, 12 sections.\n\n**Abstract.** Diﬀerent ways of representing the groupSU(3) within a Geometric Algebra approach are explored. As part of this we consider characteristic multivectors for SU(3), and how these are linked with decomposition of generators into commut- ing bivectors. The setting for this work is within a 6d Euclidean Cliﬀord Algebra. We then go on to consider whether the fundamental forces of particle physics might arisefromsymmetryconsiderationsinjustthe4dgeometricalgebraofspacetime— the STA. As part of this, a representation ofSU(3)is found wholly within the STA, involvingpreservationofabivectornorm.WealsoshowhowOctonionscanbefully representedwithintheSpacetimeAlgebra,whichwebelievewillbeusefulinmaking them understandable and accessible to a new community in Physics and Engineer- ing.\n\n**Outline.** Abstract; 1 Introduction; 2 Characteristic multivectors and SU(3); 2.2 The characteristic polynomial and the Cayl; 2.4 The characteristic polynomial and Cayley-H; 3 GA and the forces of nature; 3.1 Strong forces; 4 Octonions and the STA; 4.1 Explicit assignment of octonion units to S; 5 Octonions, the STA and particle physics; 6 Future prospects; References",
+ "brief": "Received <day> <Month>, <year> — Diﬀerent ways of representing the group 푆푈(3) within a Geometric Algebra approach are explored.",
+ "extended": "**Received <day> <Month>, <year>**\n\n*Revised <day> <Month>, <year>;*\n\n20 pp, 18 sections.\n\n**Abstract.** Diﬀerent ways of representing the group 푆푈(3) within a Geometric Algebra approach are explored. As part of this we consider characteristic multivectors for 푆푈(3), and how these are linked with decomposition of generators into commut- ing bivectors. The setting for this work is within a 6d Euclidean Cliﬀord Algebra. We then go on to consider whether the fundamental forces of particle physics might arise from symmetry considerations in just the 4d geometric algebra of spacetime — the STA. As part of this, a representation of 푆푈(3) is found wholly within the STA, involving preservation of a bivector norm. We also show how Octonions can be fully represented within the Spacetime Algebra, which we believe will be useful in making them understandable and accessible to a new community in Physics and Engineer- ing.\n\n**Outline.** Front matter; Some recent results for SU(3) and Octonions wi; Abstract; 1 Introduction; 2 Characteristic multivectors and SU(3); 2.1 Characteristic Multivectors; 2.2 The characteristic polynomial and the Cayl; 2.3 Application to generators of SU(3); 2.4 The characteristic polynomial and Cayley-H; 3 GA and the forces of nature; 3.1 Strong forces; 4 Octonions and the STA; 4.1 Explicit assignment of octonion units to S; 5 Octonions, the STA and particle physics; 5.1 An identification of the SU(8) subgroup of; 5.2 The group G2 and the representation of qua; 6 Future prospects; References",
  "tokens": {
-  "brief": 48,
-  "extended": 338
+  "brief": 32,
+  "extended": 381
  },
  "sections": [
   {
-   "id": "sec-000-abstract",
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-some-recent-results-for-su3-and-octonions-within",
+   "title": "Some recent results for SU(3) and Octonions within the Geometric Algebra approach to the fundamental forces of nature",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-abstract",
    "title": "Abstract",
    "pages": "1-1"
   },
   {
-   "id": "sec-001-1-introduction",
+   "id": "sec-002-1-introduction",
    "title": "Introduction",
    "pages": "1-2"
   },
   {
-   "id": "sec-002-2-characteristic-multivectors-and-su3",
+   "id": "sec-003-2-characteristic-multivectors-and-su3",
    "title": "Characteristic multivectors and SU(3)",
    "pages": "2-3"
   },
   {
-   "id": "sec-003-22-the-characteristic-polynomial-and-the-cayley",
+   "id": "sec-004-21-characteristic-multivectors",
+   "title": "Characteristic Multivectors",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-005-22-the-characteristic-polynomial-and-the-cayley",
    "title": "The characteristic polynomial and the Cayley-Hamilton theorem",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-006-23-application-to-generators-of-su3",
+   "title": "Application to generators of SU(3)",
    "pages": "3-5"
   },
   {
-   "id": "sec-004-24-the-characteristic-polynomial-and-cayley-hami",
+   "id": "sec-007-24-the-characteristic-polynomial-and-cayley-hami",
    "title": "The characteristic polynomial and Cayley-Hamilton theorem for SU(3)",
    "pages": "5-6"
   },
   {
-   "id": "sec-005-3-ga-and-the-forces-of-nature",
+   "id": "sec-008-3-ga-and-the-forces-of-nature",
    "title": "GA and the forces of nature",
-   "pages": "6-6"
+   "pages": "6-7"
   },
   {
-   "id": "sec-006-31-strong-forces",
+   "id": "sec-009-31-strong-forces",
    "title": "Strong forces",
-   "pages": "6-8"
+   "pages": "7-8"
   },
   {
-   "id": "sec-007-4-octonions-and-the-sta",
+   "id": "sec-010-4-octonions-and-the-sta",
    "title": "Octonions and the STA",
    "pages": "8-9"
   },
   {
-   "id": "sec-008-41-explicit-assignment-of-octonion-units-to-sta",
+   "id": "sec-011-41-explicit-assignment-of-octonion-units-to-sta",
    "title": "Explicit assignment of octonion units to STA elements",
    "pages": "9-12"
   },
   {
-   "id": "sec-009-5-octonions-the-sta-and-particle-physics",
+   "id": "sec-012-5-octonions-the-sta-and-particle-physics",
    "title": "Octonions, the STA and particle physics",
-   "pages": "12-18"
+   "pages": "12-14"
   },
   {
-   "id": "sec-010-6-future-prospects",
+   "id": "sec-013-51-an-identification-of-the-su8-subgroup-of-e7-w",
+   "title": "An identification of the SU(8) subgroup of E7 within the 64-dimensional octonionic left multiplication space",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-014-52-the-group-g2-and-the-representation-of-quarks",
+   "title": "The group G2 and the representation of quarks and gluons via the STA",
+   "pages": "15-18"
+  },
+  {
+   "id": "sec-015-6-future-prospects",
    "title": "Future prospects",
    "pages": "18-19"
   },
   {
-   "id": "sec-011-references",
+   "id": "sec-016-references",
    "title": "References",
    "pages": "19-20"
   }

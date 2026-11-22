@@ -2,157 +2,67 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-hep-ph-9308276v1",
  "source_sha256": "498931b15afb3f65",
- "brief": "The Electroweak Chiral Lagrangian for the Standard Model with a heavy Higgs — The most general chiral Lagrangian for electroweak interac tions with the complete set of SU (2)L × U (1)Y invariant",
- "extended": "**The Electroweak Chiral Lagrangian for the Standard Model with a heavy Higgs**\n\n*Maria J. Herrero ∗ and Ester Ruiz Morales †*\n\n24 pp, 29 sections.\n\n**Abstract.** The most general chiral Lagrangian for electroweak interac tions with the complete set of SU (2)L × U (1)Y invariant operators up to dimen- sion four is considered. The two-point and three-point func tions with external gauge ﬁelds are derived from this eﬀective chiral L agrangian to one-loop order in a generic Rξ-gauge. The same set of Green’s functions are paralelly studied in the renormalizable standard model to one-loop order, in a Rξ-gauge and in the large Higgs mass limit. An appropri- ate set of matching conditions connecting the Green’s funct ions of the two theories allows us to derive, systematically, the value s of the chi- ral Lagrangian coeﬃcients corresponding to the large Higgs mass limit of the standard model.\n\n**Outline.** Abstract; 1 Introduction; 2 The electroweak chiral Lagrangian; 4 T r; 2 Bµ τ 3. (2); 2 (π2τ1 − π1τ2) +; 2 BµνT r; 2 BµνT r (T [V µ, V ν]); 2 The relation with Longhitano’s notation is t; 3 Eﬀective Lagrangian parameters for a heavy H; 0 (µ) = g′2 1; 1 (µ) = 1; 3 (µ) = −1; 8 (µ) = 0 , δa 8 = 0; 9 (µ) = 0 , δa 9 = 0; 12 (µ) = 0 , δa 12 = 0; 13 (µ) = 0 , δa 13 = 0; 10 (µ) = L",
+ "brief": "The Electroweak Chiral Lagrangian for the Standard Model with a heavy Higgs — The most general chiral Lagrangian for electroweak interactions with the complete set of SU(2)L × U(1)Y invariant",
+ "extended": "**The Electroweak Chiral Lagrangian for the Standard Model with a heavy Higgs**\n\n*Maria J. Herrero∗and Ester Ruiz Morales†*\n\n24 pp, 11 sections.\n\n**Abstract.** The most general chiral Lagrangian for electroweak interactions with the complete set of SU(2)L × U(1)Y invariant operators up to dimen- sion four is considered. The two-point and three-point functions with external gauge ﬁelds are derived from this eﬀective chiral Lagrangian to one-loop order in a generic Rξ-gauge. The same set of Green’s functions are paralelly studied in the renormalizable standard model to one-loop order, in a Rξ-gauge and in the large Higgs mass limit. An appropri- ate set of matching conditions connecting the Green’s functions of the two theories allows us to derive, systematically, the values of the chi- ral Lagrangian coeﬃcients corresponding to the large Higgs mass limit of the standard model.\n\n**Outline.** Front matter; 1 Introduction; 2 The electroweak chiral Lagrangian; 3 Effective Lagrangian parameters for a heavy ; 4 Some physical consequences; 5 Conclusions; Aknowledgments; Appendix A; Appendix B; Two point functions; Three point functions",
  "tokens": {
-  "brief": 48,
-  "extended": 322
+  "brief": 47,
+  "extended": 286
  },
  "sections": [
   {
-   "id": "sec-000-abstract",
-   "title": "Abstract",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-2"
   },
   {
-   "id": "sec-001-1-introduction",
+   "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-002-2-the-electroweak-chiral-lagrangian",
-   "title": "The electroweak chiral Lagrangian",
    "pages": "2-3"
   },
   {
-   "id": "sec-003-4-t-r",
-   "title": "T r",
-   "pages": "3-4"
+   "id": "sec-001-2-the-electroweak-chiral-lagrangian",
+   "title": "The electroweak chiral Lagrangian",
+   "pages": "3-8"
   },
   {
-   "id": "sec-004-2-bµ-τ-3-2",
-   "title": "Bµ τ 3. (2)",
-   "pages": "4-4"
+   "id": "sec-002-3-effective-lagrangian-parameters-for-a-heavy-hi",
+   "title": "Effective Lagrangian parameters for a heavy Higgs",
+   "pages": "8-14"
   },
   {
-   "id": "sec-005-2-π2τ1-π1τ2",
-   "title": "(π2τ1 − π1τ2) +",
-   "pages": "4-6"
-  },
-  {
-   "id": "sec-006-2-bµνt-r",
-   "title": "BµνT r",
-   "pages": "6-6"
-  },
-  {
-   "id": "sec-007-2-bµνt-r-t-v-µ-v-ν",
-   "title": "BµνT r (T [V µ, V ν])",
-   "pages": "6-6"
-  },
-  {
-   "id": "sec-008-2-the-relation-with-longhitanos-notation-is-the",
-   "title": "The relation with Longhitano’s notation is the following: a0 = g2β1 ; a1 = g",
-   "pages": "6-8"
-  },
-  {
-   "id": "sec-009-3-eﬀective-lagrangian-parameters-for-a-heavy-hig",
-   "title": "Eﬀective Lagrangian parameters for a heavy Higgs",
-   "pages": "8-12"
-  },
-  {
-   "id": "sec-010-0-µ-g2-1",
-   "title": "(µ) = g′2 1",
-   "pages": "12-12"
-  },
-  {
-   "id": "sec-011-1-µ-1",
-   "title": "(µ) = 1",
-   "pages": "12-12"
-  },
-  {
-   "id": "sec-012-3-µ-1",
-   "title": "(µ) = −1",
-   "pages": "12-12"
-  },
-  {
-   "id": "sec-013-8-µ-0-δa-8-0",
-   "title": "(µ) = 0 , δa 8 = 0",
-   "pages": "12-12"
-  },
-  {
-   "id": "sec-014-9-µ-0-δa-9-0",
-   "title": "(µ) = 0 , δa 9 = 0",
-   "pages": "12-12"
-  },
-  {
-   "id": "sec-015-12-µ-0-δa-12-0",
-   "title": "(µ) = 0 , δa 12 = 0",
-   "pages": "12-12"
-  },
-  {
-   "id": "sec-016-13-µ-0-δa-13-0",
-   "title": "(µ) = 0 , δa 13 = 0",
-   "pages": "12-13"
-  },
-  {
-   "id": "sec-017-10-µ-l",
-   "title": "(µ) = L",
-   "pages": "13-13"
-  },
-  {
-   "id": "sec-018-10-µ-1",
-   "title": "(µ) − 1",
-   "pages": "13-14"
-  },
-  {
-   "id": "sec-019-3-µ",
-   "title": "(µ)",
-   "pages": "14-14"
-  },
-  {
-   "id": "sec-020-9-µ-1",
-   "title": "(µ) + 1",
-   "pages": "14-14"
-  },
-  {
-   "id": "sec-021-3-µ-a",
-   "title": "(µ) − a",
-   "pages": "14-14"
-  },
-  {
-   "id": "sec-022-4-some-physical-consequences",
+   "id": "sec-003-4-some-physical-consequences",
    "title": "Some physical consequences",
-   "pages": "14-14"
+   "pages": "14-16"
   },
   {
-   "id": "sec-023-0-mz",
-   "title": "(MZ)",
-   "pages": "14-14"
-  },
-  {
-   "id": "sec-024-8-mz-a",
-   "title": "(MZ) + a",
-   "pages": "14-15"
-  },
-  {
-   "id": "sec-025-3-µ-g2",
-   "title": "(µ) + g′2",
-   "pages": "15-16"
-  },
-  {
-   "id": "sec-026-5-conclusions",
+   "id": "sec-004-5-conclusions",
    "title": "Conclusions",
-   "pages": "16-20"
+   "pages": "16-17"
   },
   {
-   "id": "sec-027-4-m-2",
-   "title": "M 2",
-   "pages": "20-23"
+   "id": "sec-005-aknowledgments",
+   "title": "Aknowledgments",
+   "pages": "17-18"
   },
   {
-   "id": "sec-028-references",
-   "title": "References",
-   "pages": "23-24"
+   "id": "sec-006-appendix-a",
+   "title": "Appendix A",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-007-appendix-b",
+   "title": "Appendix B",
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-008-two-point-functions",
+   "title": "Two point functions",
+   "pages": "19-20"
+  },
+  {
+   "id": "sec-009-three-point-functions",
+   "title": "Three point functions",
+   "pages": "20-24"
   }
  ],
  "provenance": {

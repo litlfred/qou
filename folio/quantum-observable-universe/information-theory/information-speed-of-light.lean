@@ -28,7 +28,7 @@ The ratio statement is correspondingly given in its division-free
 `c_q = q⁻¹ / (1 − q⁻¹)` follows by multiplying through and is not weakened.
 
 ## References
-- [manuscript] §9/information-speed-of-light
+- [leitner2026] §9/information-speed-of-light
 -/
 
 namespace QOU.Information
@@ -45,12 +45,12 @@ variable {k : Type*} [CommRing k]
 
     §7c: the temporal weight `q − 1` is carried as the unit `d : kˣ`, so
     `c_q` is the ring element `↑d⁻¹` — no field structure is required. -/
--- Ref: [manuscript] §9/information-speed-of-light
+-- Ref: [leitner2026] §9/information-speed-of-light
 def speedOfLight (d : kˣ) : k := (↑d⁻¹ : k)
 
 /-- **Defining relation, division-free**: `c_q · (q − 1) = 1`, where
     `↑d = q − 1`. This is the whole content of `c_q = 1/(q − 1)`. -/
--- Ref: [manuscript] §9/information-speed-of-light
+-- Ref: [leitner2026] §9/information-speed-of-light
 theorem speedOfLight_mul (d : kˣ) : speedOfLight d * (d : k) = 1 :=
   Units.inv_mul d
 
@@ -58,7 +58,7 @@ theorem speedOfLight_mul (d : kˣ) : speedOfLight d * (d : k) = 1 :=
     `↑(d · q⁻¹)` with `↑d = q − 1`.  Consequently the narrative's quotient
     presentation `c_q = q⁻¹ / ℏ_q` is equivalent to the multiplicative form
     proved below — de-specialising to `CommRing` loses nothing. -/
--- Ref: [manuscript] §9/information-speed-of-light
+-- Ref: [leitner2026] §9/information-speed-of-light
 theorem isUnit_hbar (q d : kˣ) (hd : (d : k) = (q : k) - 1) :
     IsUnit ((1 : k) - (↑q⁻¹ : k)) := by
   have h1 : (1 : k) - (↑q⁻¹ : k) = ((d * q⁻¹ : kˣ) : k) := by
@@ -71,7 +71,7 @@ theorem isUnit_hbar (q d : kˣ) (hd : (d : k) = (q : k) - 1) :
 
     `1/(q−1) = q⁻¹ · q/(q−1) = q⁻¹/((q−1)/q) = q⁻¹/(1 − q⁻¹)`, i.e.
     `c_q · (1 − q⁻¹) = q⁻¹`. -/
--- Ref: [manuscript] §9/information-speed-of-light
+-- Ref: [leitner2026] §9/information-speed-of-light
 theorem speedOfLight_mul_hbar (q d : kˣ) (hd : (d : k) = (q : k) - 1) :
     speedOfLight d * ((1 : k) - (↑q⁻¹ : k)) = (↑q⁻¹ : k) := by
   have h1 : (1 : k) - (↑q⁻¹ : k) = (d : k) * (↑q⁻¹ : k) := by

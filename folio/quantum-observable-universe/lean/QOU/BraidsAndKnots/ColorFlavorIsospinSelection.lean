@@ -41,7 +41,7 @@ so *any* isospin-covariant weighting is charge-symmetric. The content is that th
 production `σ`-vs-`σ⁻¹` assignment is **not** isospin-covariant, which is exactly
 the diagnosed CSB defect; it is not an independent coincidence.
 
--- Ref: [manuscript] folio/quantum-observable-universe/brings-surface/inter-nucleon-channel-color-tube.md
+-- Ref: [leitner2026] folio/quantum-observable-universe/brings-surface/inter-nucleon-channel-color-tube.md
 -/
 
 namespace QOU.BraidsAndKnots.ColorFlavorIsospinSelection

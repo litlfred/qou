@@ -57,7 +57,7 @@ Archimedean throughout (`ℝ`): `LiTwo`, `Real.log`, `Real.pi`, and the one-side
 `𝓝[<] 1` live past the substrate→archimedean wall.  This is a downstream archimedean
 assembly, not a generic-ring identity.
 
--- Ref: [manuscript] docs/coordination/dilog-part-b-cusp-attack.md (2026-07-26 na-Stokes insight); bean qou-zbcj
+-- Ref: [leitner2026] docs/coordination/dilog-part-b-cusp-attack.md (2026-07-26 na-Stokes insight); bean qou-zbcj
 -- Ref: [yekutieli2015] https://doi.org/10.1142/9537
 -/
 

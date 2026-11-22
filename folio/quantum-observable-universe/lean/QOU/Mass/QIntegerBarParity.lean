@@ -50,8 +50,8 @@
   hypotheses under which the balanced form is defined at all (its denominator
   `q − q⁻¹` vanishes iff `q^2 = 1`).
 
-  -- Ref: [manuscript] docs/audits/2026-08-08-q-integer-convention-derived.md
-  -- Ref: [manuscript] AGENTS.md §7a (Hecke–Skein convention)
+  -- Ref: [leitner2026] docs/audits/2026-08-08-q-integer-convention-derived.md
+  -- Ref: [leitner2026] AGENTS.md §7a (Hecke–Skein convention)
 -/
 
 import Mathlib.Tactic

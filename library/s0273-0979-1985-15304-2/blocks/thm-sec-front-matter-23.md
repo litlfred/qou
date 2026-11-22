@@ -1,0 +1,1 @@
+Ifbin B± has exponent sum e, and bA is a knot, then rev{t) + tev{i/t) =(r3/2 + r1'2 + tx>2 + t^2)(te^2 + rc'2) - ( r 2 + r 1 + 2 + t + t2)A(t) (where V = V&A and A = A&A). These formulas have many interesting consequences. They show that, ex- cept in special cases, e is a knot invariant. They also give many obstructions to being closed 3 and 4 braids.

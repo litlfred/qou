@@ -505,6 +505,7 @@ def main() -> int:
         # perturbs xrel by ~1e-16 relative. This is a fix to what is RECORDED,
         # not a correction of the conclusion — say so rather than overselling.
         chi_e = chi_exact[lam]
+        # float64-intentional: xrel MEASURES the float64 kernel against the exact chi
         xrel = abs(mp.mpf(chi_f) - chi_e) / max(abs(chi_e), mp.mpf("1e-300"))
         xcheck_worst = max(xcheck_worst, xrel)
         Ms = (M + M.T) / 2.0
@@ -513,7 +514,7 @@ def main() -> int:
         min_eig_overall = min(min_eig_overall, mn)
         per_block.append({
             "lambda": list(lam), "dim": dim,
-            "chi_f64": chi_f, "chi_exact_rel_diff": fmt(xrel),
+            "chi_f64": chi_f, "chi_exact_rel_diff": fmt(xrel),  # float64-intentional: the measured f64 gap
             "min_eig_sym": mn, "max_eig_sym": mx,
             "psd_within_tol": bool(mn >= -1e-9),
             "near_zero_flagged": bool(abs(mn) < NEAR_ZERO_FLAG),
@@ -602,7 +603,7 @@ def main() -> int:
             "min_eig_overall": min_eig_overall,
             "alpha_gap": alpha_gap,
             "psd_within_tol_all": psd_all,
-            "trace_xcheck_worst_rel": fmt(xcheck_worst),
+            "trace_xcheck_worst_rel": fmt(xcheck_worst),  # float64-intentional: the measured f64 gap
             "near_zero_flagged": [b["lambda"] for b in per_block
                                   if b["near_zero_flagged"]],
             "per_block": per_block,

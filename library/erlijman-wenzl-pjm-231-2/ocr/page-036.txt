@@ -1,0 +1,45 @@
+394 JULIANA ERLIJMAN AND HANS WENZL
+
+Using Lemma 4.5(a) and Lemma 3.1(d) one sees that this equals
+
+1 (1 .
+“ei L“)-(L4),
+Rens AEA!
+But the last sum is equal to }>,,<,,ind(K,), as was already shown in the proof
+of Theorem 5.8. Hence the inequalities above must be equalities, and our set of
+bimodules (Q;); must already exhaust all possible t—(l-bimodules in the higher
+relative commutant, by Lemma 1.10. O
+
+Remark 5.10. If the stabilizer Stabg; his trivial, which usually is the case for most
+labels, the bimodule M; is irreducible, and its decomposition into N—J-bimodules
+is again determined by the fusion coefficients Lt. Unfortunately, our theorem does
+not say anything about what End(M;) looks like if |Stabg:A| > 4. For example,
+if the stabilizer has four elements, End(M;) could be isomorphic to C4 or to the
+2 x 2 matrices. Neither does it say how the submodules of .(l; decompose into
+irreducible Nl modules in these cases.
+
+6. Examples
+
+6A. Examples of C*-tensor categories. (1) The easiest example for our set-up is
+the representation category Rep(G) of finite-dimensional unitary representations
+of a finite group. In order to avoid degenerate trivial cases, we take for X in our
+construction an object such that some tensor power of it contains the whole group
+ring CG as a subobject. For example, for G a finite cyclic group, we could take
+the direct sum of the trivial and of a faithful one-dimensional representation. For
+these examples, the braiding structure is just given by the permutation of tensor
+factors, which commutes with the group action. This makes the S-matrix a rank 1
+matrix, meaning it is noninvertible unless G is trivial. However, at least in principle,
+the dual principal graph can be computed from a general result about fixed point
+algebras of a group K and its subgroup H. In our setting, K = G* and H =G,
+which is embedded by g € Gr> (g, g,..., g) (s times). See [Kosaki et al. 1997]
+for details.
+
+In the special case when the subgroup K is normal, we obtain principal and dual
+principal graphs of the factor group H/K. This is the case in our setting if G is
+abelian.
+
+(2) Let p be a Il; factor representation of the infinite braid group %.o such that
+the Jones index for the inclusion of factors 0(B2,.0)"” C p(Boo)” is finite. Let us
+define A, = P(Bn+1,c0)/ NP(Boo)” (recall that finite index implies that the relative
+commutant is finite-dimensional). We moreover assume that there exists, for some
+k EN, a projection p € Ax such that pp (Boo) p = pp(Bk+1,00)”. It is possible to

@@ -1,0 +1,56 @@
+114 G Kuperberg
+
+This equation says that r is the inverse of o in an indirect sense. More explicitly,
+given a basis {e),e)} for V, one natural choice for r and a is:
+
+o(e2 @e1) = —a(e1 @)=1,
+
+o(e1 ®e|) = o(e2 @e2)=0,
+r=e€;8a—-a28e.
+
+But in a more direct sense, r is not the inverse of o, because with this choice of r
+and a, as with every other compatible pair of choices, a closed loop, or a(r), is —2.
+
+Checking that the @,’s take spider operations to tensor operations reduces to
+comparing definitions and simple calculations. The least trivial part of Theorem 2.2
+is the assertion that each ¢, is an isomorphism. Since the domain and target of dy
+have the same dimension, it suffices to establish surjectivity. To prove surjectivity,
+we use the isomorphism
+
+Inv(V 22") & End(V®") .
+
+By the Fundamental Theorem of Invariant Theory of Schur and Weyl, the endomor-
+phisms of V®" are spanned by permutations of tensor factors. Such a permutation
+can be depicted by a diagram of matched dots:
+
+Vv Vv
+ater
+Vv Vv
+
+It is a composition of many copies of the switching map tT:x@ y+ y@x in
+End(V ® V). A calculation demonstrates that t lies in the image of 4:
+
+‘ =e pte me
+
+YON Ne
+It follows by multilinear expansion that every permutation is in the image of ¢on.
+Since the permutations span, 2, is surjective.
+
+What if a is not —2? The specialization of the spider should describe the repre-
+sentation theory of some object related to sl(2, IF). The quantum group U,(sI(2, F))
+was invented essentially for this purpose. One parameterization of the A; spider is
+a= —q'!? — q~'? over the field C(q,q!/”,q"/7,...). (Note, however, that the spider
+is actually defined over the ring C[q,q~!,q!?,q",...], which allows us to spe-
+cialize to any value of g € €*.) Another standard notation is a = —[2], where, by
+definition,
+
+2 _ g—n/2
+gq -4
+in] = =p -
+qe —q
+
+2.1. Computations with the A, spider. A basis web, or crossingless matching, is an
+equivalence class, modulo boundary-fixing isotopies, of proper embeddings in the
+disk of a 1-manifold with no circles. Although proper embeddings of loop-free
+1-manifolds suffice to define the web space W,, it is convenient to define any
+properly embedded 1-manifold in the disk as a web. Specifically, a 1-manifold with

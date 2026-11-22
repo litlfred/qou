@@ -5,16 +5,17 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2608.15898v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2608.15898v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "Universality and Kinematic Dependence of Hadronization Effects in DIS Global Event Shapes",
   "contains": [
+    "library/arxiv-2608.15898v1/sections/sec-front-matter",
     "library/arxiv-2608.15898v1/sections/sec-000"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",

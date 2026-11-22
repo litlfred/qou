@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/0307092v2/sections/sec-009",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Computation of B\"0362B(C)",
+  "pageStart": 26,
+  "pageEnd": 30,
+  "contains": [
+    "library/0307092v2/blocks/prose-sec-009",
+    "library/0307092v2/blocks/prop-sec-009-01",
+    "library/0307092v2/blocks/lem-sec-009-02",
+    "library/0307092v2/blocks/prop-sec-009-03",
+    "library/0307092v2/blocks/thm-sec-009-04"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0307092v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0307092v2/manifest.jsonld",
+  "provenance": "ingested"
+}

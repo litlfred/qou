@@ -1,0 +1,191 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-hep-th-9308100v1",
+ "status": "determined",
+ "body_size": 12.0,
+ "footnotes": [
+  {
+   "id": "fn-p005-1",
+   "page": 5,
+   "mark": "2",
+   "text": "πR",
+   "marks": [
+    {
+     "page": 4,
+     "context": "ds"
+    },
+    {
+     "page": 4,
+     "context": "ds2=−R"
+    },
+    {
+     "page": 4,
+     "context": "ds2=−R2dω"
+    },
+    {
+     "page": 4,
+     "context": "ds2=−R2dω2+dR"
+    },
+    {
+     "page": 4,
+     "context": "ds2=−R2dω2+dR2+dx"
+    },
+    {
+     "page": 4,
+     "context": "ds2=−R2dω2+dR2+dx2+dy"
+    }
+   ],
+   "block": "library/arxiv-hep-th-9308100v1/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p006-1",
+   "page": 6,
+   "mark": "†",
+   "text": "The inﬁnite extension in the x, y directions does not aﬀect this.",
+   "marks": [
+    {
+     "page": 6,
+     "context": "g2Tandthereforecannotcontribute."
+    }
+   ],
+   "block": "library/arxiv-hep-th-9308100v1/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p006-2",
+   "page": 6,
+   "mark": "‡",
+   "text": "Although the manufacture of such buckets from conventional matter may be impossible, their existence does not violate the rules of relativistic quantum ﬁeld theory.",
+   "marks": [
+    {
+     "page": 6,
+     "context": "ber"
+    }
+   ],
+   "block": "library/arxiv-hep-th-9308100v1/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p014-1",
+   "page": 14,
+   "mark": "†",
+   "text": "The single spin pair could be replaced by an ensemble of identically prepared pairs in order to measure statistical quantum correlations.",
+   "marks": [
+    {
+     "page": 14,
+     "context": "them."
+    }
+   ],
+   "block": "library/arxiv-hep-th-9308100v1/blocks/prose-sec-004"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p001-1",
+   "page": 1,
+   "mark": "†",
+   "text": "larus@dormouse.stanford.edu",
+   "block": "library/arxiv-hep-th-9308100v1/blocks/prose-sec-front-matter"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 4,
+   "mark": "00",
+   "context": "dzzT"
+  },
+  {
+   "page": 4,
+   "mark": "00",
+   "context": "whereT"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "tionofmagnitude"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "g"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "g2Tandthereforecannotcontribute.†Conﬁgurationsofscale"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "g"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "informationretentiontimeistypicallyoforderM"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "τ∼M"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "lackholesigniﬁcantlydecreases(thetotallifetimeisalsooforderM"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "ds"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "ds2=−32M"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "M"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "M3haspassedintortoisetime,i.e.atlog V∼M"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "e from A must be sent before the apparatus reaches U∼exp (−M"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "correspondstoa veryshortpropertimeτ∼M"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "correspondstoa veryshortpropertimeτ∼M2exp (−M"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "ω∼M−2exp (M"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "close to zero until the numberof emitted photons is of order"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "retentiontimetobeτi∼M"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "AninformationtimeoforderM"
+  }
+ ]
+}

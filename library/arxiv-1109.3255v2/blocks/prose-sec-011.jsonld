@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1109.3255v2/blocks/prose-sec-011",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Horizontal sections over a disk with one critical value",
-  "pageStart": 40,
-  "pageEnd": 52,
-  "text": "../sections/sec-011-44-horizontal-sections-over-a-disk-with-one-crit.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1109.3255v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1109.3255v2",
+  "title": "Lagrangians fibered over paths",
+  "pageStart": 25,
+  "pageEnd": 32,
+  "text": "../sections/sec-011-33-lagrangians-fibered-over-paths.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1109.3255v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1109.3255v2/manifest.jsonld",
   "provenance": "ingested"
 }

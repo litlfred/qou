@@ -9,17 +9,13 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Volume conjecture",
-  "pageStart": 15,
-  "pageEnd": 22,
+  "title": "Example of calculation",
+  "pageStart": 10,
+  "pageEnd": 16,
   "contains": [
-    "library/arxiv-1002.0126v1/blocks/prose-sec-006",
-    "library/arxiv-1002.0126v1/blocks/conj-sec-006-01",
-    "library/arxiv-1002.0126v1/blocks/example-sec-006-02",
-    "library/arxiv-1002.0126v1/blocks/lem-sec-006-03",
-    "library/arxiv-1002.0126v1/blocks/thm-sec-006-04"
+    "library/arxiv-1002.0126v1/blocks/prose-sec-006"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1002.0126v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1002.0126v1",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1002.0126v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1002.0126v1/manifest.jsonld",
   "provenance": "ingested"
 }

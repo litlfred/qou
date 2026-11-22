@@ -1,0 +1,60 @@
+NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS 549
+
+Recall from Definition 2.15] the truncation jup,, of a measure ju to [p,q]. It has
+been discussed whether truncations of measures preserve negative dependence prop-
+erties; cf. and the references therein. As we show in Corollary [4.18] below,
+this is the case for strongly Rayleigh measures and truncations of length g—p < 1.
+Truncations of length q — p > 2 do not preserve the strong Rayleigh property.
+However, the weighted truncation suggested by obviously does.
+
+Corollary 4.18. Suppose that 1 is a strongly Rayleigh probability measure on 2”)
+and thatO <p<q<n withq—p<1. Then pipq is strongly Rayleigh.
+
+Proof. We prove the corollary for q—p = 1. Let f be the generating polynomial of
+and let E;, be as in the statement of Lemma[Z.16] Then the polynomial
+
+(15) Hey) = Sy + _
+
+is stable. Clearly, the generating polynomial of j1p,4 is a (positive) constant multiple
+of g(z,q/(n — p)). The corollary follows since stable polynomials are closed under
+setting variables equal to real numbers; see Propositio:
+
+In {Z]we show that Pemantle’s Conjecture. (see fails in its full generality.
+However, it is true for strongly Rayleigh measures:
+
+Theorem 4.19. Let ju be a strongly Rayleigh probability measure on 2!"), and let
+l<k<n. Ifu({s:|s ({S : |S] = k}) £0, then prp_1 X pry.
+
+Proof. Let f be the generating polynomial of ys and let EL, be as in the statement
+of Lemma [416] By assumption one has Ey_;(1)E,(1) # 0, where 1 € R% is as
+before the “all ones vector”. From Lemma[4.16Jand the last part of Remark [4.1] we
+deduce that the polynomial
+
+Ex-i(21,---,2n) . Ex(a,---,2n)
+
+Ex-1(1) Ex(1)
+is stable. Since the above quotients are the generating polynomials of juz_1 and pz,
+respectively, we have fp—1 <J ux by Theorem [4.1] and Definition [4.1] The desired
+conclusion follows from Proposition [4.12] Oo
+
+F(21,+++;2n41) = Zn41
+
+4.4. The partial symmetrization procedure. Recall Remark [2.]] the partial
+symmetrization of (complex) measures on 2!" defined in (8), and Definition 29)
+The main result of this section is the following theorem.
+
+Theorem 4.20. Let ju be a complex measure on 2!") with a (complex) stable gener-
+ating polynomial. Then for any transposition tT € Gy, and @ € [0,1] the generating
+polynomial of the partial symmetrization p7° = 04+(1—8)r() is (complex) stable.
+
+In particular, Theorem [4.20] implies that the class of strongly Rayleigh measures
+on 2!"] is invariant under the partial symmetrization procedure. Clearly, the latter
+result is real stable in nature. However, in order to establish it we have to consider
+the (wider) complex stable context (cf. Definition [2.9), as in the above theorem.
+
+For the proof of Theorem [4.20] we need a multivariate generalization of the clas-
+sical Obreschkoff theorem that was obtained in [9].
+
+Theorem 4.21 (Multivariate Obreschkoff theorem). Let f,g € R[z1,...2n]. Then
+all non-zero polynomials in the space {af + Bg: a, 3 € R} are stable if and only if
+either f +ig or f —ig is stable or f =g =0.

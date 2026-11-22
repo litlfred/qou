@@ -1,0 +1,39 @@
+Appendix A
+
+Integration on manifolds
+
+Our first two appendices develop the theoretical background necessary to un-
+derstand what it means to represent the series coefficients a, of an analytic
+
+function F(z) by an integral
+1\¢
+lz) Le
+
+defined up to homologous cycles C and cohomologous forms w in the domain
+of holomorphicity M of w. To make sense of this statement we define differen-
+tial forms and their integrals, state the multivariate Cauchy Integral Formula,
+construct singular homology and cohomology over the domain M, and con-
+nect the singular homology of M to the integration of exact forms over cycles
+in M.
+
+We begin in this appendix by formally constructing the apparatus to integrate
+differential forms on real and complex manifolds.
+
+e In Section A.1 embedded and abstract manifolds are defined, an important
+example of the latter being projective spaces.
+
+e In Section A.2 vector fields and differential forms are introduced.
+
+e InSection A.3 integration of forms over chains is defined, leading to Stokes’s
+Theorem (Theorem A.24).
+
+e In Section A.4 complex holomorphic forms are defined and Cauchy’s inte-
+gral formula in a polydisk and polyannulus (Propositions A.28 and A.29)
+are stated.
+
+A.1 Manifolds
+
+The notion of a manifold may already be familiar to some readers, but there
+are several different formalizations so we start with basic definitions. Except
+
+438

@@ -41,7 +41,7 @@
   Archimedean (ℝ): ordering — §7c.
 
   -- Ref: [neumann2004] Prop 2.5 (the 5₂ root data)
-  -- Ref: [manuscript] bean qou-52ch
+  -- Ref: [leitner2026] bean qou-52ch
 -/
 
 import QOU.Knot.FiveTwoShapeBounds

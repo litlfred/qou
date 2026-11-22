@@ -8,7 +8,7 @@
   "pages": 33,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:25Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -602,33 +602,33 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 15,
-   "n_words": 2,
+   "n_chars": 371,
+   "n_words": 49,
    "label_start": "1",
    "label_end": "1"
   },
   {
-   "id": "sec-001-2-construction-of-weyl-group-representations",
-   "number": "2",
-   "title": "Construction of Weyl group representations",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 309,
-   "n_words": 41,
-   "label_start": "1",
-   "label_end": "1"
-  },
-  {
-   "id": "sec-002-1-introduction",
+   "id": "sec-001-1-introduction",
    "number": "1",
    "title": "Introduction.",
    "level": 1,
    "page_start": 1,
-   "page_end": 4,
-   "n_chars": 8769,
-   "n_words": 1588,
+   "page_end": 2,
+   "n_chars": 2786,
+   "n_words": 459,
    "label_start": "1",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-002-2-construction-of-weyl-group-representations",
+   "number": "2",
+   "title": "Construction of Weyl group representations",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 5936,
+   "n_words": 1123,
+   "label_start": "2",
    "label_end": "4"
   },
   {
@@ -638,8 +638,8 @@
    "level": 1,
    "page_start": 4,
    "page_end": 4,
-   "n_chars": 795,
-   "n_words": 151,
+   "n_chars": 791,
+   "n_words": 150,
    "label_start": "4",
    "label_end": "4"
   },
@@ -650,8 +650,8 @@
    "level": 2,
    "page_start": 4,
    "page_end": 6,
-   "n_chars": 2490,
-   "n_words": 528,
+   "n_chars": 2497,
+   "n_words": 529,
    "label_start": "4",
    "label_end": "6"
   },
@@ -674,8 +674,8 @@
    "level": 1,
    "page_start": 7,
    "page_end": 10,
-   "n_chars": 4376,
-   "n_words": 871,
+   "n_chars": 4373,
+   "n_words": 870,
    "label_start": "7",
    "label_end": "10"
   },
@@ -686,8 +686,8 @@
    "level": 2,
    "page_start": 10,
    "page_end": 10,
-   "n_chars": 99,
-   "n_words": 16,
+   "n_chars": 114,
+   "n_words": 18,
    "label_start": "10",
    "label_end": "10"
   },
@@ -733,22 +733,22 @@
    "title": "Univalence",
    "level": 1,
    "page_start": 21,
-   "page_end": 21,
-   "n_chars": 1573,
-   "n_words": 285,
+   "page_end": 22,
+   "n_chars": 2506,
+   "n_words": 487,
    "label_start": "21",
-   "label_end": "21"
+   "label_end": "22"
   },
   {
    "id": "sec-012-92-lemma",
    "number": "9.2",
    "title": "Lemma.",
    "level": 2,
-   "page_start": 21,
+   "page_start": 22,
    "page_end": 24,
-   "n_chars": 3613,
-   "n_words": 758,
-   "label_start": "21",
+   "n_chars": 2688,
+   "n_words": 558,
+   "label_start": "22",
    "label_end": "24"
   },
   {
@@ -806,7 +806,7 @@
   "toc_entries": 17,
   "toc_inferred_entries": 17,
   "toc_inferred_mean_confidence": 0.738,
-  "toc_inferred_empty_share": 0.059,
+  "toc_inferred_empty_share": 0.0,
   "toc_inferred_method": "font",
   "figure_entries": 0,
   "figure_sequence_gaps": [],
@@ -815,6 +815,7 @@
    "items": []
   },
   "sections": 18,
-  "chars_total": 62830
+  "chars_total": 62853,
+  "furniture_lines_stripped": 0
  }
 }

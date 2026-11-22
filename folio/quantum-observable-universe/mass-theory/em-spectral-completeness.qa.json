@@ -1136,6 +1136,40 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "c925209ee2dd",
+          "ts": "8ed3fadd1c3e"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:10:00.496Z",
+        "reviewed_sha": "06a3439cc5ff0cdc91182a4199f03868f80ab9b8",
+        "severity": "major",
+        "evidence": "Lean proves that two distinct eigenvalues give complementary orthogonal non-zero idempotents in 2x2 diagonal matrices. Not encoded: E = End(A tensor A) is free of rank 2, V_- is isomorphic to the unit, the braiding formula, the Frobenius structure. 'Simple summand' over the ring R needs a definition."
+      },
+      {
+        "field_hash": {
+          "md": "c925209ee2dd",
+          "ts": "8ed3fadd1c3e",
+          "lean": "bb3e90880355",
+          "lean_statement": "47755d1f62b9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-17T18:11:47.208Z",
+        "reviewed_sha": "677b0a1284456bd582792110bdc22f48ab47322d",
+        "severity": "major",
+        "evidence": "Re-read 2026-11-17 (was warn major; re-graded under the rule that a statement claiming more than the Lean is a fail). em_spectral_completeness proves only that two eigenvalues with unit difference give complementary nonzero idempotents in 2x2 diagonal matrices. Not encoded: E = End(A (x) A) free of rank 2, exactly two central idempotents, V_- isomorphic to the unit, the braiding formula, trace completeness. Also check item 3's eigenvalues {q^{1/2}, -q^{-1/2}} against the Hecke convention (ratio -q here vs -q^2 for (s-q)(s+q^{-1}))."
       }
     ],
     "proof-statement-integrity": [
@@ -2128,6 +2162,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T16:16:13.245Z",
+  "updated_at": "2026-11-17T18:11:47.208Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

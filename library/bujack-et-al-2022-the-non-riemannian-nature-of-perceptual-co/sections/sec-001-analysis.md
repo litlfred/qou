@@ -8,6 +8,7 @@ pages: 4-5
 source_pdf: bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-color-space.pdf
 source_sha256: 2bc66a26d3901a29
 toc_source: inferred
+doc_brief: "The non-Riemannian nature of perceptual color space — 7 sections: Front matter; Experiment; Analysis"
 ---
 of this type of experiment requires more assumptions to derive
 a continuous scale from binary responses, compared with Likert-
@@ -104,9 +105,6 @@ data using Thurstone’s theory (53, 57, 60). MLE estimates the set
 of parameters, in our case ψi and σ, of a stochastic process, Eq. 14,
 that is most likely to produce a given set of observations (here, the
 #A more detailed derivation is in Maloney and Yang (57).
-4 of 10
-https://doi.org/10.1073/pnas.2119753119
-pnas.org
 Downloaded from https://www.pnas.org by 136.47.145.179 on May 11, 2026 from IP address 136.47.145.179.
 responses from the 2AFC experiment). If the likelihood function
 can be differentiated with respect to the parameters, MLE can be

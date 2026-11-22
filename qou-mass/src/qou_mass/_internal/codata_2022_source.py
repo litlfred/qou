@@ -301,29 +301,46 @@ This is what `cal-3-q-beta.witness.json` carries.  Stored at the
 """
 Q_BETA_MEV_AME_ERR = _load_mpf("0.00000061")
 
-Q_BETA_MEV_DERIVED_FROM_CODATA_DIRECT = (
-    M_N_MEV_CODATA_DIRECT - M_P_MEV - M_E_MEV
-)
+# Subtract at ≥50 dps (exemption 1, 2026-11-20): at import time mp.dps is
+# the default 15, so this difference across a cancellation came out as a
+# binary53 value (0.78233355930999992633… instead of 0.78233355931).
+with _mp.workdps(max(50, _mp.mp.dps)):
+    Q_BETA_MEV_DERIVED_FROM_CODATA_DIRECT = +(
+        M_N_MEV_CODATA_DIRECT - M_P_MEV - M_E_MEV
+    )
 """Q_β computed from CODATA-2022 direct m_n.
 
-Equals 939.56542194 − 938.27208816 − 0.51099895069 ≈ 0.78233482931 MeV.
+Equals 939.56542194 − 938.27208943 − 0.51099895069 = 0.78233355931 MeV — the
+same number the registry's own `neutron-proton mass difference energy
+equivalent in MeV` = 1.29333251(38) gives after subtracting m_e.
 
-**Differs from AME's 0.78233341 by ~1.8 × 10⁻⁶ MeV (1810 ppb)**
-— this is the m_n-CODATA-vs-AME discrepancy expressed in Q_β.
-Within their combined σ (sqrt of the m_n errors ~700 ppb on Q_β
-relative).
+**Differs from AME's 0.78233341 by 1.49 × 10⁻⁷ MeV (+191 ppb, 0.2σ
+combined)** — the CODATA-2022-vs-AME-2020 dataset difference expressed in
+Q_β. Consistent, but a different dataset; which one is CAL-3 is an owner
+call (beans qou-0e2p, qou-c1fz; `qbeta_bar_odd_qq_coefficient_leg_probe.py`).
+
+(This docstring read "938.27208816 … ≈ 0.78233482931 … 1810 ppb" until
+2026-09-08 — figures on the CODATA-2018 proton that PR #4860 retired; the
+code below never carried them.)
 """
 
-Q_BETA_MEV_DERIVED_FROM_AME = (
-    M_N_MEV_AME_DERIVED - M_P_MEV - M_E_MEV
-)
+# Subtract at ≥50 dps (exemption 1, 2026-11-20): at import time mp.dps is
+# the default 15, so this difference across a cancellation came out as a
+# binary53 value (0.78233355930999992633… instead of 0.78233355931).
+with _mp.workdps(max(50, _mp.mp.dps)):
+    Q_BETA_MEV_DERIVED_FROM_AME = +(
+        M_N_MEV_AME_DERIVED - M_P_MEV - M_E_MEV
+    )
 """Q_β computed from AME-derived m_n.
 
-Equals 939.56542052 − 938.27208816 − 0.51099895069 ≈ 0.78233340931 MeV.
+Equals 939.56542179 − 938.27208943 − 0.51099895069 = 0.78233340931 MeV.
 
 **Within 1 ppb of the AME direct measurement** (0.78233341 vs
-0.78233340931 — 0.9 × 10⁻⁹ MeV ≈ 1.1 ppb difference).  This is
-the AME-self-consistency check.
+0.78233340931 — 0.69 × 10⁻⁹ MeV ≈ 0.88 ppb).  This is the
+AME-self-consistency check, and the 0.88 ppb is exactly the rounding of
+`M_N_MEV_AME_DERIVED` to 8 decimals (M_P + M_E + Q_β = 939.56542179069):
+a round-trip artefact, not information. (Read "939.56542052 … 938.27208816
+… 1.1 ppb" until 2026-09-08 — CODATA-2018-proton figures.)
 """
 
 
@@ -344,6 +361,7 @@ def summary() -> dict:
             "M_N_MEV (default = AME)": str(M_N_MEV),
             "M_MU_MEV": str(M_MU_MEV),
             "M_MU_OVER_M_E": str(M_MU_OVER_M_E),
+            "M_N_MINUS_P_MEV": str(M_N_MINUS_P_MEV),
             "U_MEV": str(U_MEV),
             "Q_BETA_MEV_AME": str(Q_BETA_MEV_AME),
             "Q_BETA_MEV_DERIVED_FROM_CODATA_DIRECT":
@@ -456,8 +474,57 @@ def assert_ame_neutron_consistent(tolerance_MeV=1e-8):
     return resid
 
 
+def cal3_q_beta_dataset_diagnostics() -> dict:
+    """Compare the two CAL-3 Q_β dataset options (AME-2020 vs CODATA-2022; bean qou-c1fz).
+
+    Option 1 (current default): ``Q_BETA_MEV_AME = 0.78233341(61)`` MeV (AME-2020).
+    Option 2 (CODATA-2022 registry): ``M_N_MINUS_P_MEV - M_E_MEV = 0.78233355931(38)`` MeV,
+    identical to ``Q_BETA_MEV_DERIVED_FROM_CODATA_DIRECT = M_N_MEV_CODATA_DIRECT - M_P_MEV - M_E_MEV``.
+    """
+    with _mp.workdps(max(50, _mp.mp.dps)):
+        from_mn_mp_diff = M_N_MINUS_P_MEV - M_E_MEV
+        codata_internal_resid = Q_BETA_MEV_DERIVED_FROM_CODATA_DIRECT - from_mn_mp_diff
+        dataset_diff_MeV = Q_BETA_MEV_DERIVED_FROM_CODATA_DIRECT - Q_BETA_MEV_AME
+        dataset_diff_ppb = dataset_diff_MeV / Q_BETA_MEV_AME * _load_mpf("1e9")
+        codata_err = _mp.sqrt(M_N_MINUS_P_MEV_ERR ** 2 + M_E_MEV_ERR ** 2)
+        combined_sigma = _mp.sqrt(Q_BETA_MEV_AME_ERR ** 2 + codata_err ** 2)
+        tension_sigma = abs(dataset_diff_MeV) / combined_sigma
+        return {
+            "ame_2020_MeV": Q_BETA_MEV_AME,
+            "ame_2020_err_MeV": Q_BETA_MEV_AME_ERR,
+            "codata_2022_MeV": Q_BETA_MEV_DERIVED_FROM_CODATA_DIRECT,
+            "codata_2022_from_mn_minus_p_MeV": from_mn_mp_diff,
+            "codata_2022_err_MeV": codata_err,
+            "codata_internal_residual_MeV": codata_internal_resid,
+            "dataset_diff_MeV": dataset_diff_MeV,
+            "dataset_diff_ppb": dataset_diff_ppb,
+            "combined_sigma_MeV": combined_sigma,
+            "tension_sigma": tension_sigma,
+        }
+
+
+def assert_cal3_q_beta_dataset_consistent():
+    """Verify the two CAL-3 Q_β determinations and their mutual consistency (bean qou-c1fz)."""
+    d = cal3_q_beta_dataset_diagnostics()
+    if abs(d["codata_internal_residual_MeV"]) > _load_mpf("1e-11"):
+        raise AssertionError(
+            "CODATA-2022 (M_N_DIRECT - M_P) disagrees with M_N_MINUS_P_MEV by "
+            f"{d['codata_internal_residual_MeV']} MeV"
+        )
+    if not (_load_mpf("190.0") < d["dataset_diff_ppb"] < _load_mpf("192.0")):
+        raise AssertionError(
+            f"CAL-3 CODATA-vs-AME Q_β shift {d['dataset_diff_ppb']} ppb outside expected +190.85 ppb window"
+        )
+    if d["tension_sigma"] > _load_mpf("0.25"):
+        raise AssertionError(
+            f"CAL-3 CODATA-vs-AME Q_β tension {d['tension_sigma']}σ exceeds 0.25σ"
+        )
+    return d
+
+
 __all__ = [
     "ame_neutron_residual_MeV", "assert_ame_neutron_consistent",
+    "cal3_q_beta_dataset_diagnostics", "assert_cal3_q_beta_dataset_consistent",
     "CODATA_EDITION_YEAR", "CODATA_SOURCE_URL", "ALLASCII_URL",
     "VENDORED_SNAPSHOT_DATE",
     "M_E_MEV", "M_E_MEV_ERR",
@@ -469,6 +536,7 @@ __all__ = [
     "M_N_MEV", "M_N_MEV_ERR",
     "M_N_MEV_CODATA_DIRECT", "M_N_MEV_CODATA_DIRECT_ERR",
     "M_N_MEV_AME_DERIVED", "M_N_MEV_AME_DERIVED_ERR",
+    "M_N_MINUS_P_MEV", "M_N_MINUS_P_MEV_ERR",
     "M_MU_MEV", "M_MU_MEV_ERR",
     "M_MU_OVER_M_E", "M_MU_OVER_M_E_ERR",
     "U_MEV", "U_MEV_ERR",
@@ -477,3 +545,10 @@ __all__ = [
     "Q_BETA_MEV_DERIVED_FROM_AME",
     "summary",
 ]
+
+
+if __name__ == "__main__":
+    assert_triple_consistent()
+    assert_ame_neutron_consistent()
+    assert_cal3_q_beta_dataset_consistent()
+    print("codata_2022_source self-test: PASS")

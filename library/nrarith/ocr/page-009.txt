@@ -1,0 +1,50 @@
+Arithmetic of Hyperbolic Manifolds = 281
+
+whose quotients after the first are Z/p-vector spaces and whose first quotient is the
+multiplicative group of the residue class field /, of a certain quadratic extension 1, of
+k, (the unique unramified extension of k, ). [) is an extension of degree t < 2[k:Q] of
+the field of p elements, so its multiplicative group is cyclic of order p* — 1. ia
+
+A result of G. Mess [Me] is interesting in reference to Theorem 3.2 and Proposi-
+tion 3.3—he shows that a 3-manifold group with a Z/p x Z/p quotient must either have
+a finite index subgroup with infinite abelianization or the sizes of the successive quotients
+of the derived series must grow rapidly.
+
+3.2. The trace field, invariant trace field, and invariant quaternion algebra are quite
+strong invariants. The following proposition is trivial (and also applies to the cusp field).
+
+Proposition 3.4. Let MM = H/T be ahyperbolic orbifold. If M is amphicheiral (has an
+
+orientation reversing symmetry) then Q(trl) = Q(trI), and if M is commensurably
+
+amphicheiral (has an orientation reversing commensurability) then k({) = k({) and
+A([) = A(T), where the bar is complex conjugation. oO
+
+For arithmetic [, commensurable amphicheirality is equivalent to conjugation sym-
+metry of the invariant quaternion algebra (and is also equivalent to the existence of
+Fuchsian subgroups—see [R1]), but this is probably false in general. Nevertheless, in
+practice the proposition gives an effective test for amphicheirality and commensurable
+amphicheirality.
+
+4. Short geodesics in arithmetic orbifolds
+
+The main results of this section are Theorem 4.6 and its Corollary, which set strong limits
+on the possible lengths of short geodesics in arithmetic cusped hyperbolic orbifolds,
+thus giving a necessary condition for arithmeticity. We also describe a conjectural
+statement of the same type for closed arithmetic orbifolds, dependent on the “Lehmer
+Conjecture” of number theory. We first recall some basic relevant facts about arithmeticity
+of Kleinian groups, including the algebraic characterization of arithmeticity given in [MR]
+and [R1, Chap. 2].
+
+4.1. Arithmetic Kleinian groups are obtained as follows (cf., [Bo] and [Vig, Chap. 4],
+also [Vig] for relevant details on quaternion algebras).
+
+Let & be a number field with one complex place and A a quaternion algebra over
+k; ramified at all real archimedean places of k (this means A ®;R is the algebra of
+hamiltonian quaternions for each real embedding & <> R). Let © be an order of A
+(a finitely generated subring of the set of A-integers, which contains the ring R;, of
+k-integers and generates A asa k-vectorspace) and 01 the group of elements of norm 1
+in ©. The complex place k > C induces an embedding p: A > M2(C) which restricts
+to p: O01 — SL2C. Then Pp(O?) is a Kleinian group of finite covolume. An arithmetic
+Kleinian group is one commensurable with a group of the type Po(O). We say it is
+derived from a quaternion algebra if it is actually a subgroup of some Pp(0'). We call

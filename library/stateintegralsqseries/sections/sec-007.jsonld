@@ -9,13 +9,14 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Some auxiliary power series",
-  "pageStart": 10,
-  "pageEnd": 12,
+  "title": "The connection with the differential operators l and \"0365l",
+  "pageStart": 8,
+  "pageEnd": 10,
   "contains": [
-    "library/stateintegralsqseries/blocks/prose-sec-007"
+    "library/stateintegralsqseries/blocks/prose-sec-007",
+    "library/stateintegralsqseries/blocks/lem-sec-007-01"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/stateintegralsqseries",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/stateintegralsqseries",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/stateintegralsqseries/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/stateintegralsqseries/manifest.jsonld",
   "provenance": "ingested"
 }

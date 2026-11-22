@@ -1,0 +1,73 @@
+232 S. Blanes et al. / Physics Reports 470 (2009) 151-238
+
+approaches violate unitarity bounds for sufficiently high collision energies, and thus the probability for single-pair creation
+exceeds unity. With some additional assumptions, a restricted class of diagrams associated with electron-positron loops
+can be summed to infinite order in the external charge. The electron-positron transitions amplitudes and production
+probabilities obtained, are manifestly unitary and gauge invariant.
+
+In recent years, there has been a great interest in neutrino oscillations and its closely related solar neutrino problem.
+The known three families of neutrinos with different flavors (electron, muon and tau) were experimentally shown to be
+able to convert into each other. The experiments were carried out with neutrinos of different origins: solar, atmospheric,
+produced in nuclear reactors and in particle accelerators. Here, oscillation means that neutrinos of a given flavor can, after
+propagation, change their flavor. The accepted explanation for this phenomenon is that neutrinos with a definite flavor
+do not have a definite mass, and vice-versa. Let us denote by |v,,) the neutrinos of definite flavor with a the flavor index
+(i.e., electron, muon, tau) and by |v;) the neutrinos with well defined distinct masses m;,i = 1, 2, 3. Then the previous
+assertion means that |v,,) will be a linear combination of the different |v;) .
+
+As neutrinos with different masses propagate with different velocities, this mixing allows for flavor conversion, i.e. for
+neutrinos oscillations. ME enters the game in the solution of the evolution operator in one basis. If one neutrino “decouples”
+from the other two, then the problem reduces to one with only two effective generations. Mathematically, it is similar to
+the two level system studied in Section 3. The reader is referred to [27,222-224] for details of the calculations for two and
+three generations.
+
+7.4, Electromagnetism
+
+The Maxwell equations govern the evolution of electromagnetic waves. The equations are linear in the usual form and,
+although they have been extensively studied, the complexity of obtaining approximate solutions is rather significant. When
+reformulating the equations for a given problem, where the geometry, the boundary conditions etc, are considered, and
+appropriate discretizations are taken into account, it is common to end with linear non-autonomous equations, so the
+Magnus expansion can be of interest here.
+
+To illustrate some possible applications, let us consider the Maxwell equations
+
+OH 1
+
+a =--VxE
+
+dE 1 1 (355)
+—=-VxH-— -J(t)
+
+ot € €
+
+where H, E, J are the magnetic and electric field intensities, and the current density, respectively, jz is the permeability
+and ¢ is the permittivity. After space discretization, these equations turn into a large linear system of non-homogeneous
+equations and Magnus integrators can, in principle, be applied. Time dependent contributions can also appear from boundary
+conditions or external interactions. In some cases J = o E [225,226], so that, if the conductivity o is not constant, Magnus
+integrators can be useful.
+Let us now consider the frequency domain Maxwell equations (with J = 0)
+V x E=iwyH
+{ x H= —iweE (356)
+where w is the angular frequency. These equations are of interest for time-harmonic light waves, propagating in a wave-
+guiding structure composed of linear isotropic materials. If one is interested in the x and y components of H and E, and how
+they propagate in the z direction, the equations to solve, after appropriate discretization, take the form [227]
+
+d d
+—iwe =a@yv,  —iwn = B@u. (357)
+dz dz
+
+Here u, v are vectors and A, B matrices depending on z, which, in this case, play the role of evolution parameter. A fourth-
+order Magnus integrator has been used in [227]. From Section 5 we observe that higher order Magnus integrators, combined
+with splitting methods, could also lead to efficient algorithms to obtain accurate numerical results with preserved qualitative
+properties of the exact solution.
+
+7.5. Optics
+
+In the review paper [228] one can find references to some early applications of ME to Optics. For example, to Hamiltonians
+involving the generators of SU(2), SU(1, 1) and Heisenberg—Weyl groups, with applications to laser-plasma scattering and
+pulse propagation in free-electron lasers. Here, as representatives of the more modern interest of ME in Optics, we quote
+two applications referring to Helmholtz equation, and to the study of Stokes parameters.
+
+Helmholtz equation in one spatial dimension with a variable refractive index n(x) reads
+
+W(x) + Pr? (x) W(x) = 0, (358)
+where k is the wavenumber in vacuum.

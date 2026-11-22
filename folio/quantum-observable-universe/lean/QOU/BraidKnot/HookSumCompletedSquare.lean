@@ -43,7 +43,7 @@ triangular `n` tested with `L = k`, the gap is exactly `0`.
 All sums over `ℤ`, matching `HookSumBetaCoordinates` and `PieceAGeneral`.  No `ℝ`, no
 archimedean input — the `ln q₀` that turns `H` into an energy lives strictly downstream.
 
--- Ref: [manuscript] computations/deltalambda/rev_energy_gap_rigidity_probe.py
+-- Ref: [leitner2026] computations/deltalambda/rev_energy_gap_rigidity_probe.py
 -/
 
 namespace QOU.BraidKnot.HookSum

@@ -6,224 +6,2740 @@
   "sha256": "1c2a4b317d6239c5e73461549420884e8c26764795a239113a53555eca57565a",
   "bytes": 1897207,
   "pages": 163,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 73,
+    "reason": "16 of 614 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 94,
+    "reason": "10 of 448 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 112,
+    "reason": "18 of 732 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 113,
+    "reason": "97 of 1506 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 114,
+    "reason": "64 of 658 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 115,
+    "reason": "26 of 428 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 116,
+    "reason": "226 letters among 615 non-space characters other than digits: mojibake"
+   },
+   {
+    "page": 118,
+    "reason": "47 of 668 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 119,
+    "reason": "28 of 446 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 120,
+    "reason": "44 of 558 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 121,
+    "reason": "34 of 463 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 122,
+    "reason": "22 of 863 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 123,
+    "reason": "24 of 305 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 124,
+    "reason": "20 of 974 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 125,
+    "reason": "11 of 227 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 130,
+    "reason": "37 of 590 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 131,
+    "reason": "37 of 1023 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 132,
+    "reason": "48 of 570 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 133,
+    "reason": "39 of 1103 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 134,
+    "reason": "25 of 1173 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 135,
+    "reason": "17 of 290 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 136,
+    "reason": "33 of 1121 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 137,
+    "reason": "23 of 686 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 139,
+    "reason": "165 of 1438 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 140,
+    "reason": "45 of 1016 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 145,
+    "reason": "41 of 657 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 147,
+    "reason": "17 of 670 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 152,
+    "reason": "43 of 640 words are a stray single letter: the text layer splits words"
+   }
+  ]
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "Properties of eigenvalues on Riemann surfaces with large symmetry groups",
-  "authors_raw": "December 2, 2018",
+  "title": "Properties of Eigenvalues on Riemann Surfaces with Large Symmetry Groups",
+  "authors_raw": "Joseph Cook",
+  "title_lines": [
+   "Properties of Eigenvalues on Riemann",
+   "Surfaces with Large Symmetry Groups"
+  ],
   "abstract": null,
   "docinfo": {
    "Producer": "PyPDF2"
   },
-  "title_lines": [
-   "Properties of Eigenvalues on Riemann",
-   "Surfaces with Large Symmetry Groups",
-   "Joseph Cook",
-   "A Doctoral Thesis",
-   "for the award of",
-   "Doctor of Philosophy of Loughborough University"
-  ],
-  "title_prev": "Properties of Eigenvalues on Riemann Surfaces with Large Symmetry Groups Joseph Cook A Doctoral Thesis for the award of Doctor of Philosophy of Loughborough University"
+  "title_raw": "Properties of Eigenvalues on Riemann Surfaces with Large Symmetry Groups",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Properties of Eigenvalues on Riemann Surfaces with Large Symmetry Groups",
+   "outline": "Introduction",
+   "text": "Properties of Eigenvalues on Riemann Surfaces with Large Symmetry Groups",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Properties of eigenvalues on Riemann surfaces with large symmetry groups"
  },
  "toc": [
   {
    "level": 1,
    "title": "Introduction",
-   "page": 8,
+   "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Background",
-   "page": 32,
+   "page": 36,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   },
   {
    "level": 2,
    "title": "Spectral theory",
-   "page": 32,
+   "page": 36,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   },
   {
    "level": 2,
    "title": "Hyperbolic geometry",
-   "page": 39,
+   "page": 43,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
   },
   {
    "level": 2,
    "title": "Harmonic analysis on H",
-   "page": 44,
+   "page": 48,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "38"
   },
   {
    "level": 2,
    "title": "Representation theory",
-   "page": 49,
+   "page": 53,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "43"
   },
   {
    "level": 2,
    "title": "Selberg's trace formula",
-   "page": 50,
+   "page": 54,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "44"
   },
   {
    "level": 1,
    "title": "The Bolza Surface",
-   "page": 57,
+   "page": 61,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "51"
   },
   {
    "level": 2,
    "title": "Symmetry group of the Bolza surface",
-   "page": 57,
+   "page": 61,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "51"
   },
   {
    "level": 2,
    "title": "Length spectrum of the Bolza surface",
-   "page": 62,
+   "page": 66,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "56"
   },
   {
    "level": 2,
    "title": "Upper bounds on eigenvalues of the Bolza surface",
-   "page": 63,
+   "page": 67,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "57"
   },
   {
    "level": 2,
    "title": "First eigenspace of the Bolza surface",
-   "page": 71,
+   "page": 75,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "65"
   },
   {
    "level": 2,
    "title": "Second eigenspace of Bolza surface",
-   "page": 92,
+   "page": 96,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "86"
   },
   {
    "level": 1,
    "title": "The Klein Quartic",
-   "page": 95,
+   "page": 99,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "89"
   },
   {
    "level": 2,
    "title": "Systole of the Klein quartic",
-   "page": 95,
+   "page": 99,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "89"
   },
   {
    "level": 2,
    "title": "Fenchel-Nielsen parameters of the Klein quartic",
-   "page": 97,
+   "page": 101,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "91"
   },
   {
    "level": 2,
    "title": "Spectral theory of the Klein quartic",
-   "page": 100,
+   "page": 104,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "94"
   },
   {
    "level": 1,
    "title": "Concluding Remarks",
-   "page": 105,
+   "page": 109,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "99"
   },
   {
    "level": 1,
    "title": "GAP Code for Bolza Surface",
-   "page": 108,
+   "page": 112,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "102"
   },
   {
    "level": 1,
    "title": "GAP Code for Klein Quartic",
-   "page": 112,
+   "page": 116,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "106"
   },
   {
    "level": 1,
    "title": "FreeFEM++ Code for Genus 2",
-   "page": 115,
+   "page": 119,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "109"
   },
   {
    "level": 1,
    "title": "FreeFEM++ Code for Genus 3",
-   "page": 127,
+   "page": 131,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "121"
   },
   {
    "level": 1,
    "title": "FreeFEM++ Code for Genus 4",
-   "page": 141,
+   "page": 145,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "135"
   },
   {
    "level": 1,
    "title": "Mathematica Code for Bolza Surface",
-   "page": 147,
+   "page": 151,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "141"
   },
   {
    "level": 1,
    "title": "Alternative approach to proving Conjecture 3.12",
-   "page": 150,
+   "page": 154,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "144"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1.1",
+   "title": "Principal directions at a point p on S2 n",
+   "page": 12,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "2"
+  },
+  {
+   "kind": "figure",
+   "number": "1.2",
+   "title": "The Möbius strip is not orientable",
+   "page": 13,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "1.3",
+   "title": "Domain monotonicity for a torus with a disk removed",
+   "page": 16,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  },
+  {
+   "kind": "figure",
+   "number": "1.4",
+   "title": "The Bolza surface in D",
+   "page": 26,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "16"
+  },
+  {
+   "kind": "figure",
+   "number": "1.5",
+   "title": "Boundary value problems on a semicircle, [39] (dashed lines indicate a Neumann boundary condition, and solid, Dirichlet)",
+   "page": 29,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "19"
+  },
+  {
+   "kind": "figure",
+   "number": "1.6",
+   "title": "Boundary value problems on a pentagon",
+   "page": 29,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "19"
+  },
+  {
+   "kind": "figure",
+   "number": "1.7",
+   "title": "Creating a double cover of the Riemann sphere",
+   "page": 30,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "20"
+  },
+  {
+   "kind": "figure",
+   "number": "1.8",
+   "title": "Plotting the values of the functions in the ﬁrst eigenspace in R3",
+   "page": 31,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "21"
+  },
+  {
+   "kind": "figure",
+   "number": "1.9",
+   "title": "The Klein quartic",
+   "page": 33,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "23"
+  },
+  {
+   "kind": "figure",
+   "number": "2.1",
+   "title": "Geodesics in the Poincare disk",
+   "page": 45,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "35"
+  },
+  {
+   "kind": "figure",
+   "number": "2.2",
+   "title": "Generators of an (l, m, n) triangle group",
+   "page": 46,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "36"
+  },
+  {
+   "kind": "figure",
+   "number": "2.3",
+   "title": "Collar Cw contained in hyperbolic cylinder C",
+   "page": 49,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "39"
+  },
+  {
+   "kind": "figure",
+   "number": "2.4",
+   "title": "Fundamental domain for the centralizer of a hyperbolic element",
+   "page": 57,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "47"
+  },
+  {
+   "kind": "figure",
+   "number": "3.1",
+   "title": "• R - rotation of order 8 around the origin (centre of the Bolza surface) that maps Qi 7→Qi+1 (modulo 8), and preserves P1 and P2; • S - reﬂection in the real line that maps Qi 7→Q9−i, and preserves P1 and P2; • T - reﬂection that switches the centre point with the outmost, that is, maps P1 7→P2 and",
+   "page": 60,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "50"
+  },
+  {
+   "kind": "figure",
+   "number": "3.2",
+   "title": "The Bolza surface tessellated by 16 equilateral triangles",
+   "page": 62,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "52"
+  },
+  {
+   "kind": "table",
+   "number": "3.1",
+   "title": "Actions of isometries on equilateral triangles Triangle",
+   "page": 63,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "53"
+  },
+  {
+   "kind": "figure",
+   "number": "3.3",
+   "title": "Tessellation of B by (2, 3, 8) and (4, 4, 4) (in bold) triangles",
+   "page": 64,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "54"
+  },
+  {
+   "kind": "table",
+   "number": "3.2",
+   "title": "Checking the relations between the generators of the Bolza surface",
+   "page": 64,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "54"
+  },
+  {
+   "kind": "figure",
+   "number": "3.4",
+   "title": "The domain of integration ΩT in H",
+   "page": 67,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "57"
+  },
+  {
+   "kind": "figure",
+   "number": "3.5",
+   "title": "Kite K with one line of symmetry",
+   "page": 76,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "66"
+  },
+  {
+   "kind": "figure",
+   "number": "3.6",
+   "title": "Boundary conditions for χ2",
+   "page": 79,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "69"
+  },
+  {
+   "kind": "figure",
+   "number": "3.7",
+   "title": "Boundary conditions for χ3",
+   "page": 80,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "70"
+  },
+  {
+   "kind": "figure",
+   "number": "3.8",
+   "title": "Boundary conditions for χ4",
+   "page": 80,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "70"
+  },
+  {
+   "kind": "figure",
+   "number": "3.9",
+   "title": "Boundary conditions for χ5",
+   "page": 81,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "71"
+  },
+  {
+   "kind": "figure",
+   "number": "3.10",
+   "title": "Boundary conditions for χ6",
+   "page": 82,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "72"
+  },
+  {
+   "kind": "figure",
+   "number": "3.11",
+   "title": "(4, 4, 4) triangle with line of symmetry",
+   "page": 82,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "72"
+  },
+  {
+   "kind": "figure",
+   "number": "3.12",
+   "title": "Boundary conditions for χ7",
+   "page": 82,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "72"
+  },
+  {
+   "kind": "figure",
+   "number": "3.13",
+   "title": "Boundary conditions for χ8",
+   "page": 83,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "73"
+  },
+  {
+   "kind": "figure",
+   "number": "3.14",
+   "title": "Boundary conditions for χ9",
+   "page": 83,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "73"
+  },
+  {
+   "kind": "figure",
+   "number": "3.15",
+   "title": "Boundary conditions for χ10",
+   "page": 84,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "74"
+  },
+  {
+   "kind": "figure",
+   "number": "3.16",
+   "title": "Pentagon with boundary conditions",
+   "page": 84,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "74"
+  },
+  {
+   "kind": "figure",
+   "number": "3.17",
+   "title": "Hexagon from reﬂection along the vertical",
+   "page": 85,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "75"
+  },
+  {
+   "kind": "figure",
+   "number": "3.18",
+   "title": "Cylinder from gluing a to a′",
+   "page": 86,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "76"
+  },
+  {
+   "kind": "figure",
+   "number": "3.19",
+   "title": "Comparing the nodal line of the test function w, as a function of t (blue curve), to the boundary of Ω(red, lilac, green curves)",
+   "page": 93,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "83"
+  },
+  {
+   "kind": "figure",
+   "number": "3.20",
+   "title": "h(t) on [0, 4]",
+   "page": 96,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "86"
+  },
+  {
+   "kind": "figure",
+   "number": "4.1",
+   "title": "Calculating 1",
+   "page": 99,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "89"
+  },
+  {
+   "kind": "figure",
+   "number": "4.2",
+   "title": "Geodesics of length equal to the systole",
+   "page": 100,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "90"
+  },
+  {
+   "kind": "figure",
+   "number": "4.3",
+   "title": "A hyperbolic pair of pants can be split into two identical hexagons",
+   "page": 101,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "91"
+  },
+  {
+   "kind": "figure",
+   "number": "4.4",
+   "title": "Calculating the twist parameter t1 of γ1",
+   "page": 102,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "92"
+  },
+  {
+   "kind": "figure",
+   "number": "4.5",
+   "title": "The domain of integration in H",
+   "page": 103,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "93"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": "ii",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "iii",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "iv",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "v",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "vi",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "vii",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "viii",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "ix",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "52",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": "53",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 64,
+   "label": "54",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 65,
+   "label": "55",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 66,
+   "label": "56",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 67,
+   "label": "57",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 68,
+   "label": "58",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 69,
+   "label": "59",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 70,
+   "label": "60",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 71,
+   "label": "61",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 72,
+   "label": "62",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 73,
+   "label": "63",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 74,
+   "label": "64",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 75,
+   "label": "65",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 76,
+   "label": "66",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 77,
+   "label": "67",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 78,
+   "label": "68",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 79,
+   "label": "69",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 80,
+   "label": "70",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 81,
+   "label": "71",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 82,
+   "label": "72",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 83,
+   "label": "73",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 84,
+   "label": "74",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 85,
+   "label": "75",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 86,
+   "label": "76",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 87,
+   "label": "77",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 88,
+   "label": "78",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 89,
+   "label": "79",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 90,
+   "label": "80",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 91,
+   "label": "81",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 92,
+   "label": "82",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 93,
+   "label": "83",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 94,
+   "label": "84",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 95,
+   "label": "85",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 96,
+   "label": "86",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 97,
+   "label": "87",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 98,
+   "label": "88",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 99,
+   "label": "89",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 100,
+   "label": "90",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 101,
+   "label": "91",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 102,
+   "label": "92",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 103,
+   "label": "93",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 104,
+   "label": "94",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 105,
+   "label": "95",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 106,
+   "label": "96",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 107,
+   "label": "97",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 108,
+   "label": "98",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 109,
+   "label": "99",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 110,
+   "label": "100",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 111,
+   "label": "101",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 112,
+   "label": "102",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 113,
+   "label": "103",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 114,
+   "label": "104",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 115,
+   "label": "105",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 116,
+   "label": "106",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 117,
+   "label": "107",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 118,
+   "label": "108",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 119,
+   "label": "109",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 120,
+   "label": "110",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 121,
+   "label": "111",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 122,
+   "label": "112",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 123,
+   "label": "113",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 124,
+   "label": "114",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 125,
+   "label": "115",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 126,
+   "label": "116",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 127,
+   "label": "117",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 128,
+   "label": "118",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 129,
+   "label": "119",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 130,
+   "label": "120",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 131,
+   "label": "121",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 132,
+   "label": "122",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 133,
+   "label": "123",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 134,
+   "label": "124",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 135,
+   "label": "125",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 136,
+   "label": "126",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 137,
+   "label": "127",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 138,
+   "label": "128",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 139,
+   "label": "129",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 140,
+   "label": "130",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 141,
+   "label": "131",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 142,
+   "label": "132",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 143,
+   "label": "133",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 144,
+   "label": "134",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 145,
+   "label": "135",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 146,
+   "label": "136",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 147,
+   "label": "137",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 148,
+   "label": "138",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 149,
+   "label": "139",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 150,
+   "label": "140",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 151,
+   "label": "141",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 152,
+   "label": "142",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 153,
+   "label": "143",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 154,
+   "label": "144",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 155,
+   "label": "145",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 156,
+   "label": "146",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 157,
+   "label": "147",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 158,
+   "label": "148",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 159,
+   "label": "149",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 160,
+   "label": "150",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 161,
+   "label": "151",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 162,
+   "label": "152",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 163,
+   "label": "153",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 11,
+   "n_chars": 5381,
+   "n_words": 1091,
+   "label_start": null,
+   "label_end": "1"
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
    "title": "Introduction",
    "level": 1,
-   "page_start": 9,
+   "page_start": 11,
+   "page_end": 35,
+   "n_chars": 45382,
+   "n_words": 8113,
+   "label_start": "1",
+   "label_end": "25"
+  },
+  {
+   "id": "sec-001-background",
+   "number": null,
+   "title": "Background",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 35,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "25",
+   "label_end": "25"
+  },
+  {
+   "id": "sec-002-spectral-theory",
+   "number": null,
+   "title": "Spectral theory",
+   "level": 2,
+   "page_start": 35,
+   "page_end": 43,
+   "n_chars": 13462,
+   "n_words": 2501,
+   "label_start": "25",
+   "label_end": "33"
+  },
+  {
+   "id": "sec-003-hyperbolic-geometry",
+   "number": null,
+   "title": "Hyperbolic geometry",
+   "level": 2,
+   "page_start": 43,
+   "page_end": 47,
+   "n_chars": 6698,
+   "n_words": 1329,
+   "label_start": "33",
+   "label_end": "37"
+  },
+  {
+   "id": "sec-004-harmonic-analysis-on-h",
+   "number": null,
+   "title": "Harmonic analysis on H",
+   "level": 2,
+   "page_start": 47,
+   "page_end": 52,
+   "n_chars": 6740,
+   "n_words": 1313,
+   "label_start": "37",
+   "label_end": "42"
+  },
+  {
+   "id": "sec-005-representation-theory",
+   "number": null,
+   "title": "Representation theory",
+   "level": 2,
+   "page_start": 52,
+   "page_end": 53,
+   "n_chars": 3352,
+   "n_words": 628,
+   "label_start": "42",
+   "label_end": "43"
+  },
+  {
+   "id": "sec-006-selbergs-trace-formula",
+   "number": null,
+   "title": "Selberg's trace formula",
+   "level": 2,
+   "page_start": 53,
+   "page_end": 60,
+   "n_chars": 8970,
+   "n_words": 1683,
+   "label_start": "43",
+   "label_end": "50"
+  },
+  {
+   "id": "sec-007-symmetry-group-of-the-bolza-surface",
+   "number": null,
+   "title": "Symmetry group of the Bolza surface",
+   "level": 2,
+   "page_start": 60,
+   "page_end": 61,
+   "n_chars": 1287,
+   "n_words": 249,
+   "label_start": "50",
+   "label_end": "51"
+  },
+  {
+   "id": "sec-008-the-bolza-surface",
+   "number": null,
+   "title": "The Bolza Surface",
+   "level": 1,
+   "page_start": 61,
+   "page_end": 65,
+   "n_chars": 5813,
+   "n_words": 1040,
+   "label_start": "51",
+   "label_end": "55"
+  },
+  {
+   "id": "sec-009-length-spectrum-of-the-bolza-surface",
+   "number": null,
+   "title": "Length spectrum of the Bolza surface",
+   "level": 2,
+   "page_start": 65,
+   "page_end": 66,
+   "n_chars": 1278,
+   "n_words": 288,
+   "label_start": "55",
+   "label_end": "56"
+  },
+  {
+   "id": "sec-010-upper-bounds-on-eigenvalues-of-the-bolza-surface",
+   "number": null,
+   "title": "Upper bounds on eigenvalues of the Bolza surface",
+   "level": 2,
+   "page_start": 66,
+   "page_end": 74,
+   "n_chars": 18852,
+   "n_words": 3972,
+   "label_start": "56",
+   "label_end": "64"
+  },
+  {
+   "id": "sec-011-first-eigenspace-of-the-bolza-surface",
+   "number": null,
+   "title": "First eigenspace of the Bolza surface",
+   "level": 2,
+   "page_start": 74,
+   "page_end": 95,
+   "n_chars": 32049,
+   "n_words": 6378,
+   "label_start": "64",
+   "label_end": "85"
+  },
+  {
+   "id": "sec-012-second-eigenspace-of-bolza-surface",
+   "number": null,
+   "title": "Second eigenspace of Bolza surface",
+   "level": 2,
+   "page_start": 95,
+   "page_end": 98,
+   "n_chars": 2953,
+   "n_words": 573,
+   "label_start": "85",
+   "label_end": "88"
+  },
+  {
+   "id": "sec-013-the-klein-quartic",
+   "number": null,
+   "title": "The Klein Quartic",
+   "level": 1,
+   "page_start": 98,
+   "page_end": 98,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "88",
+   "label_end": "88"
+  },
+  {
+   "id": "sec-014-systole-of-the-klein-quartic",
+   "number": null,
+   "title": "Systole of the Klein quartic",
+   "level": 2,
+   "page_start": 98,
+   "page_end": 100,
+   "n_chars": 4140,
+   "n_words": 777,
+   "label_start": "88",
+   "label_end": "90"
+  },
+  {
+   "id": "sec-015-fenchel-nielsen-parameters-of-the-klein-quartic",
+   "number": null,
+   "title": "Fenchel-Nielsen parameters of the Klein quartic",
+   "level": 2,
+   "page_start": 100,
+   "page_end": 103,
+   "n_chars": 4153,
+   "n_words": 742,
+   "label_start": "90",
+   "label_end": "93"
+  },
+  {
+   "id": "sec-016-spectral-theory-of-the-klein-quartic",
+   "number": null,
+   "title": "Spectral theory of the Klein quartic",
+   "level": 2,
+   "page_start": 103,
+   "page_end": 108,
+   "n_chars": 7819,
+   "n_words": 1785,
+   "label_start": "93",
+   "label_end": "98"
+  },
+  {
+   "id": "sec-017-concluding-remarks",
+   "number": null,
+   "title": "Concluding Remarks",
+   "level": 1,
+   "page_start": 108,
+   "page_end": 111,
+   "n_chars": 5285,
+   "n_words": 865,
+   "label_start": "98",
+   "label_end": "101"
+  },
+  {
+   "id": "sec-018-gap-code-for-bolza-surface",
+   "number": null,
+   "title": "GAP Code for Bolza Surface",
+   "level": 1,
+   "page_start": 111,
+   "page_end": 115,
+   "n_chars": 6929,
+   "n_words": 1587,
+   "label_start": "101",
+   "label_end": "105"
+  },
+  {
+   "id": "sec-019-gap-code-for-klein-quartic",
+   "number": null,
+   "title": "GAP Code for Klein Quartic",
+   "level": 1,
+   "page_start": 115,
+   "page_end": 118,
+   "n_chars": 7171,
+   "n_words": 1938,
+   "label_start": "105",
+   "label_end": "108"
+  },
+  {
+   "id": "sec-020-freefem-code-for-genus-2",
+   "number": null,
+   "title": "FreeFEM++ Code for Genus 2",
+   "level": 1,
+   "page_start": 118,
+   "page_end": 130,
+   "n_chars": 15862,
+   "n_words": 1854,
+   "label_start": "108",
+   "label_end": "120"
+  },
+  {
+   "id": "sec-021-freefem-code-for-genus-3",
+   "number": null,
+   "title": "FreeFEM++ Code for Genus 3",
+   "level": 1,
+   "page_start": 130,
+   "page_end": 144,
+   "n_chars": 25608,
+   "n_words": 3472,
+   "label_start": "120",
+   "label_end": "134"
+  },
+  {
+   "id": "sec-022-freefem-code-for-genus-4",
+   "number": null,
+   "title": "FreeFEM++ Code for Genus 4",
+   "level": 1,
+   "page_start": 144,
+   "page_end": 150,
+   "n_chars": 10932,
+   "n_words": 2455,
+   "label_start": "134",
+   "label_end": "140"
+  },
+  {
+   "id": "sec-023-mathematica-code-for-bolza-surface",
+   "number": null,
+   "title": "Mathematica Code for Bolza Surface",
+   "level": 1,
+   "page_start": 150,
+   "page_end": 153,
+   "n_chars": 4898,
+   "n_words": 1024,
+   "label_start": "140",
+   "label_end": "143"
+  },
+  {
+   "id": "sec-024-alternative-approach-to-proving-conjecture-312",
+   "number": null,
+   "title": "Alternative approach to proving Conjecture 3.12",
+   "level": 1,
+   "page_start": 153,
    "page_end": 163,
-   "n_chars": 273428,
-   "n_words": 60054
+   "n_chars": 19163,
+   "n_words": 3148,
+   "label_start": "143",
+   "label_end": "153"
   }
  ],
  "diagnostics": {
   "pages_without_text": 4,
   "likely_scanned": false,
   "toc_entries": 25,
-  "sections": 1,
-  "chars_total": 273428
+  "toc_inferred_entries": 0,
+  "figure_entries": 40,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 0,
+    "items": []
+   },
+   "found_not_listed": {
+    "count": 2,
+    "items": [
+     "0 (Ω) with respect to the Sobolev norm.",
+     "0 (Ω), an integration by parts shows that"
+    ]
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 26,
+  "chars_total": 264177,
+  "furniture_lines_stripped": 0
  }
 }

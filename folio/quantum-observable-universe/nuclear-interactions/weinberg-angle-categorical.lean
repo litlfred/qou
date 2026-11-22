@@ -126,7 +126,7 @@ end CategoricalScalars
     full-tower derivation (all `n`, all orders in `q`) is not attempted.
 
     No instance is provided; supplying one asserts the conjecture. -/
--- Ref: [manuscript] conj:weinberg-angle-categorical
+-- Ref: [leitner2026] conj:weinberg-angle-categorical
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 class WeinbergAngleCategorical
     (R : Type*) [Field R] (q : R)

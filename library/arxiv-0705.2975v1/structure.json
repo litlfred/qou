@@ -7,10 +7,11 @@
   "bytes": 359609,
   "pages": 31,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,19 +21,30 @@
    "stamp_date": "21 May 2007"
   },
   "doi": null,
-  "title": "On the Definitions of Difference Galois Groups",
-  "authors_raw": "Zo\u00e9 Chatzidakis\u2217, Charlotte Hardouin, Michael F. Singer \u2020",
+  "title": "On the Deﬁnitions of Diﬀerence Galois Groups",
+  "authors_raw": "Zoé Chatzidakis∗, Charlotte Hardouin, Michael F. Singer†",
   "title_lines": [
    "On the Definitions of Difference Galois Groups"
   ],
-  "abstract": "We compare several de\ufb01nitions of the Galois group of a linear di\ufb00erence equation that have arisen in algebra, analysis and model theory and sh ow, that these groups are isomorphic over suitable \ufb01elds. In addition, we study pr operties of Picard-Vessiot extensions over \ufb01elds with not necessarily algebraically c losed sub\ufb01elds of constants.",
+  "abstract": "We compare several deﬁnitions of the Galois group of a linear diﬀerence equation that have arisen in algebra, analysis and model theory and show, that these groups are isomorphic over suitable ﬁelds. In addition, we study properties of Picard-Vessiot extensions over ﬁelds with not necessarily algebraically closed subﬁelds of constants.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181119152559-05'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  }
+   "CreationDate": "D:20181119152559-05'00'"
+  },
+  "title_raw": "On the Definitions of Difference Galois Groups",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "On the Deﬁnitions of Diﬀerence Galois Groups",
+   "outline": "Introduction",
+   "text": "On the Definitions of Difference Galois Groups",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "On the Definitions of Difference Galois Groups"
  },
  "toc": [
   {
@@ -40,81 +52,409 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "A Ring-Theoretic Point of View",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "A Tannakian Point of View",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "The action of Aut(CK/C) on \"4266308 \"4266308 MK \"5267309 \"5267309",
    "page": 10,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Another fiber functor M for \"4266308 \"4266308 MK \"5267309 \"5267309",
    "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Comparison of the Galois groups",
    "page": 13,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 1,
    "title": "A Model-Theoretic Point of View",
    "page": 15,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "Preliminary model-theoretic definitions and results",
    "page": 15,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "The Galois group",
    "page": 18,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 2,
    "title": "More on Picard-Vessiot rings",
    "page": 20,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 2,
    "title": "Concluding remarks",
    "page": 25,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 506,
+   "n_words": 73,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
@@ -122,8 +462,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 4,
-   "n_chars": 11128,
-   "n_words": 1967
+   "n_chars": 11064,
+   "n_words": 1905,
+   "label_start": "1",
+   "label_end": "4"
   },
   {
    "id": "sec-001-a-ring-theoretic-point-of-view",
@@ -132,8 +474,10 @@
    "level": 1,
    "page_start": 4,
    "page_end": 9,
-   "n_chars": 12070,
-   "n_words": 2426
+   "n_chars": 12063,
+   "n_words": 2398,
+   "label_start": "4",
+   "label_end": "9"
   },
   {
    "id": "sec-002-a-tannakian-point-of-view",
@@ -142,8 +486,10 @@
    "level": 1,
    "page_start": 9,
    "page_end": 13,
-   "n_chars": 8272,
-   "n_words": 1628
+   "n_chars": 8222,
+   "n_words": 1564,
+   "label_start": "9",
+   "label_end": "13"
   },
   {
    "id": "sec-003-comparison-of-the-galois-groups",
@@ -152,8 +498,10 @@
    "level": 2,
    "page_start": 13,
    "page_end": 15,
-   "n_chars": 4943,
-   "n_words": 987
+   "n_chars": 4889,
+   "n_words": 910,
+   "label_start": "13",
+   "label_end": "15"
   },
   {
    "id": "sec-004-a-model-theoretic-point-of-view",
@@ -161,47 +509,75 @@
    "title": "A Model-Theoretic Point of View",
    "level": 1,
    "page_start": 15,
-   "page_end": 18,
-   "n_chars": 5352,
-   "n_words": 1057
+   "page_end": 15,
+   "n_chars": 31,
+   "n_words": 5,
+   "label_start": "15",
+   "label_end": "15"
   },
   {
-   "id": "sec-005-the-galois-group",
+   "id": "sec-005-preliminary-model-theoretic-definitions-and-resu",
+   "number": null,
+   "title": "Preliminary model-theoretic definitions and results",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 18,
+   "n_chars": 5290,
+   "n_words": 1004,
+   "label_start": "15",
+   "label_end": "18"
+  },
+  {
+   "id": "sec-006-the-galois-group",
    "number": null,
    "title": "The Galois group",
    "level": 2,
    "page_start": 18,
    "page_end": 20,
-   "n_chars": 5568,
-   "n_words": 1133
+   "n_chars": 5496,
+   "n_words": 1051,
+   "label_start": "18",
+   "label_end": "20"
   },
   {
-   "id": "sec-006-more-on-picard-vessiot-rings",
+   "id": "sec-007-more-on-picard-vessiot-rings",
    "number": null,
    "title": "More on Picard-Vessiot rings",
    "level": 2,
    "page_start": 20,
    "page_end": 25,
-   "n_chars": 14469,
-   "n_words": 2929
+   "n_chars": 14435,
+   "n_words": 2880,
+   "label_start": "20",
+   "label_end": "25"
   },
   {
-   "id": "sec-007-concluding-remarks",
+   "id": "sec-008-concluding-remarks",
    "number": null,
    "title": "Concluding remarks",
    "level": 2,
    "page_start": 25,
    "page_end": 31,
-   "n_chars": 14791,
-   "n_words": 2565
+   "n_chars": 14688,
+   "n_words": 2459,
+   "label_start": "25",
+   "label_end": "31"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 11,
-  "sections": 8,
-  "chars_total": 76593,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 10,
+  "chars_total": 76684,
+  "furniture_lines_stripped": 31,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
@@ -214,26 +590,31 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.994,
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.955,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-a-ring-theoretic-point-of-view",
      "title": "A Ring-Theoretic Point of View",
-     "prose_ratio": 0.995,
-     "coverage_ratio": 0.993,
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-a-tannakian-point-of-view",
      "title": "A Tannakian Point of View",
-     "prose_ratio": 0.996,
-     "coverage_ratio": 0.802,
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.949,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -241,39 +622,45 @@
      "id": "sec-003-comparison-of-the-galois-groups",
      "title": "Comparison of the Galois groups",
      "prose_ratio": 0.949,
-     "coverage_ratio": 0.983,
+     "coverage_ratio": 0.971,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-a-model-theoretic-point-of-view",
      "title": "A Model-Theoretic Point of View",
+     "prose_ratio": null,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-preliminary-model-theoretic-definitions-and-resu",
+     "title": "Preliminary model-theoretic definitions and results",
      "prose_ratio": 0.972,
      "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-the-galois-group",
+     "id": "sec-006-the-galois-group",
      "title": "The Galois group",
      "prose_ratio": 0.964,
-     "coverage_ratio": 0.959,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-more-on-picard-vessiot-rings",
+     "id": "sec-007-more-on-picard-vessiot-rings",
      "title": "More on Picard-Vessiot rings",
      "prose_ratio": 0.974,
-     "coverage_ratio": 0.917,
+     "coverage_ratio": 0.97,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-concluding-remarks",
+     "id": "sec-008-concluding-remarks",
      "title": "Concluding remarks",
      "prose_ratio": 0.988,
-     "coverage_ratio": 0.668,
+     "coverage_ratio": 0.661,
      "result": "overlaid",
      "converter": "pandoc"
     }

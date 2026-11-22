@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-029",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "The weight 4 case: Euler complexes",
-  "pageStart": 109,
-  "pageEnd": 112,
-  "text": "../sections/sec-029-the-weight-4-case-euler-complexes.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/malkin-2021-galois-action-on-motivic-fundamental-groups-thes",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/malkin-2021-galois-action-on-motivic-fundamental-groups-thes",
+  "title": "Symmetric correlators modulo depth",
+  "pageStart": 93,
+  "pageEnd": 100,
+  "text": "../sections/sec-029-symmetric-correlators-modulo-depth.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -61,7 +61,7 @@ Even-channel counterpart of the odd-channel `HopfCubicOddCarrier` (KC20, the
 bar-odd carrier over the prime-19 cubic field). Companion audit
 `docs/audits/2026-07-11-fmap-action-qsqrt3-saddle-entropy-block.md` (#3571).
 
--- Ref: [manuscript] the 4₁ trace field ℚ(√−3); Kashaev saddle at x*=5/6
+-- Ref: [leitner2026] the 4₁ trace field ℚ(√−3); Kashaev saddle at x*=5/6
 -/
 
 namespace QOU.QBeta.Qsqrt3Saddle

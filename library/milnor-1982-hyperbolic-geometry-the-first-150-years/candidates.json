@@ -3,21 +3,154 @@
  "doc_id": "milnor-1982-hyperbolic-geometry-the-first-150-years",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "d444d7a61af54c7c3be374149917560103b614bd2afa02c6d0cb54fb06c4063f",
   "file": "milnor-1982-hyperbolic-geometry-the-first-150-years.pdf"
  },
  "provenance": {
-  "title": "BULLETIN (New Series) OF THE AMERICAN MATHEMATICAL SOCIETY",
-  "authors": "Volume 6, Number 1, January 1982",
+  "title": "Hyperbolic geometry: The first 150 years",
+  "authors": "AMERICAN MATHEMATICAL SOCIETY",
   "arxiv": null,
   "doi": null
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
-  "formalization_candidates": 0
+  "candidates": 4,
+  "by_kind": {
+   "lemma": 2,
+   "remark": 1,
+   "conjecture": 1
+  },
+  "formalization_candidates": 2,
+  "by_domain": {
+   "math": 4
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 2,
+   "explanatory": 1,
+   "conjectural": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1,
+   "both": 1,
+   "elsewhere": 1,
+   "none": 1
+  },
+  "by_lean_status": {
+   "proved-here": 1,
+   "doc-cited-in-lean-unlinked-claim": 1
+  },
+  "needs_lean_proof": 1
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "1",
+   "name": null,
+   "statement": "This function JI(9) is odd, periodic of period IT, and satisfies the identity j\\{nO) = n 2 R(fi + km/n) k modrt for every integer n. Evidently, JI(0) is a continuous function, smooth except at the zeros of sin 0, taking its maximum at 0 = 77/6. PROOF OF LEMMA 1. Start with the trigonometric identity AI \u2014 1 2 sin nO = II 2 sin(0 + km/n) which can be verified, for small positive values of 0, by substituting z = e~2l\u00b0 in the equation \\zn-l\\= II \\z - e2,nik/n\\. k mod n The general case follows by analytic continuation. W(0) FIGURE 5. Graph of JI(0) JOHN MILNOR Integrating the negative log absolute value of both sides we obtain n-\\ (1) Ji(n0)/n = ",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-000-h-upsl2c-which-is-uniquely-determined-up-to-inne.md (p. 6-13)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-000-h-upsl2c-which-is-uniquely-determined-up-to-inne.md",
+   "section_title": "U~>PSL2C which is uniquely determined, up to inner automorphism and complex conjugation.",
+   "pages": "6-13",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-000-h-upsl2c-which-is-uniquely-determined-up-to-inne.md (p. 6-13)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-000-01",
+   "block_iri": "library/milnor-1982-hyperbolic-geometry-the-first-150-years/blocks/lem-sec-000-01",
+   "claim_id": "milnor-1982-hyperbolic-geometry-the-first-150-years#lemma:1",
+   "lean_status": "proved-here",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/LobachevskyMaximum.lean:continuous_Lob"
+   ],
+   "needs_lean_proof": false
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2",
+   "name": null,
+   "statement": "Consider an ideal hyperbolic 2>-simplex, that is a simplex A with all four vertices on the sphere of points at infinity. If a, fi, y are the dihedral angles along three edges meeting at a common vertex, then a + fi + y = IT, and volume(A) = Ji(a) + Ji({i) + Ji(y). HYPERBOLIC GEOMETRY It does not matter which particular vertex we choose, since it follows easily that opposite dihedral angles are equal so that we obtain the same three dihedral angles a, /?, y incident to any vertex. This computation would follow easily from formulas of Lobachevsky [1836], although as far as I know he never worked out this particular example. (Compare Coxeter [19",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "both",
+   "evidence_locator": "In-paper proof in sections/sec-000-h-upsl2c-which-is-uniquely-determined-up-to-inne.md (p. 6-13) citing [1836], [1970]",
+   "external_refs": [
+    "[1836]",
+    "[1970]"
+   ],
+   "proof_excerpt": "We will use the Beltrami upper half-space model, with metric ds2 = (dx2 + ay2 + dz2)/z2 and associated volume element dx ay dz/'z3, where z > 0. Let us position the ideal simplex A so that one of its faces lies in the hemisphere z = (1 \u2014 x2 \u2014 y2)\u00ef/2, and its opposite vertex lies ",
+   "section_file": "sections/sec-000-h-upsl2c-which-is-uniquely-determined-up-to-inne.md",
+   "section_title": "U~>PSL2C which is uniquely determined, up to inner automorphism and complex conjugation.",
+   "pages": "6-13",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: both, In-paper proof in sections/sec-000-h-upsl2c-which-is-uniquely-determined-up-to-inne.md (p. 6-13) citing [1836], [1970]). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-000-02",
+   "block_iri": "library/milnor-1982-hyperbolic-geometry-the-first-150-years/blocks/lem-sec-000-02",
+   "claim_id": "milnor-1982-hyperbolic-geometry-the-first-150-years#lemma:2",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/IdealTetEqChimney.lean:face1",
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/LobAnalytic.lean:analyticAt_Lob",
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/ObtuseWedgeDegenerate.lean:tan_neg_of_pi_div_two_lt_of_lt_pi",
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/IdealTetFromVertices.lean:sarea_circlePoint_unit",
+    "folio/quantum-observable-universe/lean/QOU/Archimedean/OrthoschemeWedgePair.lean:measurePreserving_reflY"
+   ],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "Haagerup and Monkholm [1979] have proved the analogous theorem in \u00ab-dimensional hyperbolic space. The unique n-simplex of maximal volume is the regular ideal n-simplex. Now let us compare Lemma 2 with Humbert's formulas for the volumes of certain fundamental domains. The presentation will be based on Borel [1981], which contains much further information about arithmetic computations of volume. Let Z[a] be the ring of integers in an imaginary quadratic number field F = Q[a], with discriminant -D = (\u00e2 \u2014 a)2 < 0; and let r = PSL2Z[a] CPSL2C be the corresponding Bianchi group of isometries of hyperbolic 3-space. Borel shows that a fundamental dom",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [1979], [1981] in sections/sec-000-h-upsl2c-which-is-uniquely-determined-up-to-inne.md",
+   "external_refs": [
+    "[1979]",
+    "[1981]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-000-h-upsl2c-which-is-uniquely-determined-up-to-inne.md",
+   "section_title": "U~>PSL2C which is uniquely determined, up to inner automorphism and complex conjugation.",
+   "pages": "6-13",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null,
+   "block_id": "rem-sec-000-03",
+   "block_iri": "library/milnor-1982-hyperbolic-geometry-the-first-150-years/blocks/rem-sec-000-03",
+   "claim_id": "milnor-1982-hyperbolic-geometry-the-first-150-years#rem-sec-000-03"
+  },
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": null,
+   "name": null,
+   "statement": "If we consider only angles 9 which are rational multiples of w, then every Q- linear relation qX0i) + ' * \u2022 +\u00ab,*(*\u201e)-0 is a consequence of the relations Jl(77 + 0) = Jl(0), Jl(-0) - -Jl(0), Ji(n6) = n 2 a(0 + kir/n) k mod n of Lemma 1. JOHN MILNOR For example ^(7r/3) and JI{IT/6) are subject to the Q-linear relation 2JI(TT/6) = 3JI(W/3), as one easily verifies. But the conjecture would imply that JI(TT/3) and JI(7T/4) are rationally independent. In other words, no finite covering manifold of the figure eight complement should have the same volume as some covering of the Whitehead link complement. A completely equivalent conjecture would be th",
+   "claim_domain": "math",
+   "evidence_kind": "conjectural",
+   "evidence_location": "none",
+   "evidence_locator": "Open conjecture stated in sections/sec-001-21-of-humbert-here--dri-is-a-generalized-quadrat.md",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-001-21-of-humbert-here--dri-is-a-generalized-quadrat.md",
+   "section_title": "of Humbert. Here (-D/ri) is a generalized quadratic residue symbol, with values \u00b1 1 or 0. In order to express this infinite series in terms of the function JI(0), note first that t",
+   "pages": "13-16",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null,
+   "block_id": "conj-sec-001-01",
+   "block_iri": "library/milnor-1982-hyperbolic-geometry-the-first-150-years/blocks/conj-sec-001-01",
+   "claim_id": "milnor-1982-hyperbolic-geometry-the-first-150-years#conj-sec-001-01"
+  }
+ ]
 }

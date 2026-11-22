@@ -36,7 +36,7 @@ For a categorical object `A` equipped with a Reeb endomorphism
 holds.  This names the conditional claim of the categorical-Reeb
 existence proposition (pattern C); it is *not* asserted — an inhabitant
 witnesses the Reeb-derivation normalisation. -/
--- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/categorical-reeb-exists.ts
+-- Ref: [leitner2026] quantum-observable-universe/quantum-observable-universes/categorical-reeb-exists.ts
 def ofWeightDecomposition {A : Type*} (ξ : A → A) (Θ_A : A → ℝ) : Prop :=
     ∀ x : A, Θ_A (ξ x) = 1
 

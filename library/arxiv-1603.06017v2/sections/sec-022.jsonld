@@ -9,13 +9,15 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "True and False Automata",
-  "pageStart": 19,
+  "title": "Indexing an Automatic Word",
+  "pageStart": 18,
   "pageEnd": 19,
   "contains": [
-    "library/arxiv-1603.06017v2/blocks/prose-sec-022"
+    "library/arxiv-1603.06017v2/blocks/prose-sec-022",
+    "library/arxiv-1603.06017v2/blocks/figure-img-p019-1",
+    "library/arxiv-1603.06017v2/blocks/figure-img-p019-2"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1603.06017v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1603.06017v2",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1603.06017v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1603.06017v2/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,0 +1,35 @@
+In R’, Vy XV(x) was zero in the first term because we were differentiating with
+respect to y avector field V(x) which did not depend on y.
+
+In S°, the vector field Ly,-1 V(x) does depend on y, and its curl, Vy XLy,-1 V(x),
+is not zero. In fact, as we indicated in section 4, the vector field Ly,-1 V(x) is
+left-invariant with respect to y, and as such is a curl-eigenfield with eigenvalue —2 ,
+that is,
+Vy XLyxt V(x) = —2 Lyy-1 V(x).
+
+This observation lets us continue and complete the calculation:
+Vy XACV, o)y) = Fs [Vy XLyt VO} OO y) — Ly VX) XVy O(% y)] dx
+
+= Js [2 Lyet VOX) O(% y) — Ly VX) XVy O(% y)] dx
+
+= 2 J Lyct V(x) (x, y) dx — Js Lyct V(x) XVy O(x, y) dx
+
+—2 A(V, o)(y) — BV, oyy),
+
+as claimed.
+
+As for the last formula,
+
+Vy * BOV, oy) = Vy 2 Jss Lyct V(x) X Vy o(% y) dx
+
+= Js Vye {Lyt V(x) XVy (x y)} dx
+
+= Js [Vy XLyct VOX)} & Vy (xy) dx — Lyt V(x) © {Vy XVy O(% y)}] dx
+
+= figs —2 Ly V(x) ¢ Vy (x, y) dx
+
+—2 2(V, o)y),
+
+as claimed, since Vy X Vy o(x, y) = 0.
+
+28

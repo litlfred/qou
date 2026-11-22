@@ -1,0 +1,1 @@
+Assume A satisﬁes the χ condition and has ﬁnite local coho- mological dimension. Then the functor RΓm : Db (f,f)(Aen, gr) →Db (cof,cof)(Aen, gr) is an equivalence of triangulated categories, with quasi-inverse ADCm.

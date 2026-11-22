@@ -1,0 +1,58 @@
+system of equations has exactly two solutions, corresponding to the minimal and maximal
+values of t. By calculating a solution by Newton’s method from (t, s,u) = (0.2, 0.6, 0.2),
+we obtain tmin = 0.186629... , and from (t,s,u) = (0.3, 0.6, 0.3), we obtain tmax =
+0.296109... . Therefore, we obtain an estimate of t in A’ as
+
+0.18 < t < 0.3.
+
+To be precise (see Remark 4.1), we can rigorously verify the above estimate of the solutions
+of the above system of equations in a similar way as in Section A.3.
+
+We calculate the minimal value si, and the maximal value sax of s. They satisfy the
+following equations,
+
+2 A(t) + A(s —t) —2A(s)+ A(s—u)+2A(u) = ¢,
+
+oe A(t) + A(s — t) — 2A(s) +A(s — u) + 2 A(u)) = 0,
+2 & A(t) + A(s — t) —2A(s) + A(s—u) +2A(u)) = 0.
+
+UW
+
+They are rewritten
+
+2 A(t) + A(s — t) —2A(s)+ A(s—u)+2A(u) = ¢,
+2A'(t) = A(s—t),
+2A'(u) = A’(s—u).
+We note that this system of equations has exactly two solutions. Since the above system
+
+of equations is symmetric with respect to the exchange of t and u, the solutions of the
+form (t, Smin, U) and (t, Smax,U) satisfy that t = u. Hence, the above system of equations
+
+is rewritten
+
+2A(t) + A(s—t)—A(s) = de,
+
+2A(t) = A'(s—t).
+We note again that this system of equations has exactly two solutions. By calculating
+a solution of them by Newton’s method from (t,s) = (0.25, 0.55), we obtain Smin =
+
+0.547094... , and from (t,s) = (0.25, 0.7), we obtain sax = 0.688624... . Therefore, we
+obtain an estimate of s in A’ as
+
+0.54 < s < 0.7.
+
+To be precise (see Remark 3.2), we can rigorously verify the above estimate of the solutions
+of the above system of equations in a similar way as in Section A.2.
+
+We calculate the minimal value (s — t)min and the maximal value (s — t)max of s — t.
+Putting w = s —t, they satisfy the following equations,
+
+2 A(t) + A(w) — 2A(t+ w) + A(t +w—u)+2A(u) = ¢,
+
+5 (2 A(t) + A(w) — 2A(t+ w) + A(t + w—u)+2A(u)) = 0,
+
+— (2 A(t) + A(w) —2A(t+ w) + ACE + w—u)+2A(u)) = 0.
+
+g]o8ie
+
+49

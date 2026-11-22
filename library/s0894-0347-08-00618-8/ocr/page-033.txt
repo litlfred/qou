@@ -1,0 +1,56 @@
+NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS 553,
+
+Proof. Since stability (the strongly Rayleigh property) implies negative association
+by Theorem[4.9] the result follows from Proposition[5.1]when S is finite. For general
+S, approximate the exclusion process on S by processes on finite subsets S;, of S
+that increase to S, by taking the transposition rates for the process on S,, to be
+qj if i,7 € S, and zero otherwise. By the Trotter-Kurtz semigroup convergence
+theorem (see p. 28]), the processes on S;, converge to the process on S, so the
+result holds on S' as well. (See §1.3] for details.) Oo
+
+Remark 5.1. In particular, Theorem [5.2] proves Conjecture 22.2] and shows that its
+conclusion remains valid if the initial configuration is a product measure (since any
+such measure is obviously strongly Rayleigh; cf. Definition and 2.4).
+
+We conclude this section with an application of Theorem.2]to the extremal sta-
+tionary distributions for an irreducible symmetric exclusion process. Theorem 1.44
+of Chap. VIII] states that these are exactly {ji : a € H}, where
+
+(a) H= {a 2S [0,1]: 0; a jle(9) — a(2)] = 0 for each i} are the harmonic
+functions for Q with values in [0,1], and
+(b) fa = limp. VeT(t), where vp is the product measure on {0, 1}5 satisfying
+
+ve{n in = Lon A} = J] ali), ACS.
+icA
+
+Very little is known about jg other than
+(1) Ha = Ve if and only if a is constant, and
+
+(II) fa{n : (i) = 1} = a(t) for each i € S.
+As a consequence of Theorem [5.2] we can now add
+
+(IH) pa is negatively associated for each a € H.
+Remark 5.2. If S is finite and q;,; > 0 for all i,j, then as we noted in §3.5] the
+limiting distribution of 7, as t + oo is the symmetrization of the initial distribution.
+In {7 we construct examples of measures in $,,, 2 > 20, that are CNA+ but do
+not have ULC rank sequences. By Theorem in these counterexamples to
+Conjectures show that none of the properties NLC, h-NLC, Rayleigh/h-
+NLC+, CNA, or CNA+ is preserved by the symmetrization procedure (2), and by
+[55| Theorem 3.2], the same can be said about the NA property. Therefore, the
+analog of Proposition [5-1] fails for all the aforementioned properties.
+
+Remark 5.3. The analog of Theorem[5.2]for asymmetric exclusion processes is false.
+A simple example is obtained by taking S = {1,2} in which only transitions from
+state 1 to state 2 are allowed. If the initial distribution gives probability + to each
+of the configurations in {0,1}5, then the limiting distribution as t — oo is given by
+n({11}) = n({00}) = $, ({10}) = 0, and y-({01}) = 4. This measure is not NA.
+
+6. ALMOST EXCHANGEABLE MEASURES
+
+By Pemantle’s result (Theorem [3.7] in §3:5), for symmetric measures in f,, all
+five conditions NLC, h-NLC, Rayleigh/h-NLC+, CNA, and CNA+ are equivalent
+to the ULC condition for the rank sequence. Therefore, the relations between all
+these negative dependence properties are completely understood in the exchange-
+able case. In this section we study the almost exchangeable case, that is, measures
+whose generating polynomials are symmetric in all but possibly one variable (Def-
+inition 2.1). We prove that for such measures one has both h-NLC <= CNA and

@@ -2,7 +2,7 @@
 """
 g_A from confinement Frobenius reciprocity — instance of the master
 formula ⟨O⟩_T = Σ_{i,j ∈ A*(T)} u_i* (G^{-1})_{ij} ⟨O, b_j⟩
-(prop:confinement-frobenius-reciprocity).
+(conj:confinement-frobenius-reciprocity).
 
 This script REPLACES the prior conjugation-pattern computation
 ``g_A = (5/3) · |tr(β·σ₁·β⁻¹) / tr(σ₁)|``, which was structurally
@@ -77,6 +77,8 @@ from pyhecke.gram import (  # noqa: E402
     TR_M,
 )
 import mpmath as _mp  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()  # the LP gap certificate below was evaluated at mpmath's default 15
 from lp_dual_solver import (  # noqa: E402
     provenance,
     solve_operator_selection_lp,
@@ -278,13 +280,13 @@ w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this 
 w.set_description(
     "Axial coupling g_A as an instance of the master formula "
     "⟨O⟩_T = Σ_{i,j ∈ A*(T)} u_i (G⁻¹)_{ij} ⟨O,b_j⟩ "
-    "(prop:confinement-frobenius-reciprocity). "
+    "(conj:confinement-frobenius-reciprocity). "
     "Replaces the prior cyclic-trivial conjugation-pattern computation "
     "tr(β·σ₁·β⁻¹)/tr(σ₁) — see "
     "docs/audits/2026-05-06-frobenius-pairing-compute-audit.md § 3.1. "
     "Bound-state observable: g_A (axial coupling, Gamow-Teller form factor)."
 )
-w.set_content_block("prop:confinement-frobenius-reciprocity")
+w.set_content_block("conj:confinement-frobenius-reciprocity")
 
 w.add_parameter("q", q0)
 w.add_parameter("q_inv", qi0)
@@ -370,7 +372,7 @@ w.add_assertion(
 # certificate via `QOU.Mathlib.LPDuality.duality_gap_decomposition`
 # (sorry-free, unconditional), with a tolerance DERIVED from the
 # cancellation floor rather than chosen.
-_gap_rec = getattr(lp, "gap_recomputed_str", None)
+_gap_rec: str | None = getattr(lp, "gap_recomputed_str", None)  # a decimal string, not a float
 if _gap_rec is not None:
     _bits = getattr(lp, "precision_bits", None) or 53
     _dps = _mp.mpf(_bits) * _mp.log10(2)
@@ -395,7 +397,7 @@ w.add_assertion(
     computed=bool(len(active_set) >= 1),
     expected=True,
     tolerance=0,
-    source="prop:confinement-frobenius-reciprocity § master formula; "
+    source="conj:confinement-frobenius-reciprocity § master formula; "
            "boolean so an EMPTY active set fails (the numeric form with "
            "tolerance 10 passed on len=0)",
 )

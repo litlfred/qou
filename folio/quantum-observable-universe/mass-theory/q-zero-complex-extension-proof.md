@@ -2,13 +2,10 @@
 
 Each substrate identity is stated in the cited literature
 (Wenzl 1988; Jones 1987) over a commutative ring with $q$ a unit;
-the QOU formalisation enforces the same generic typing. The relevant Lean files
-([`hq-bi-filtration.lean`](hq-bi-filtration.lean),
-[`explicit-central-idempotent.lean`](explicit-central-idempotent.lean),
-[`categorical-q-lie-bracket.lean`](../quantum-observable-universes/categorical-q-lie-bracket.lean),
-[`bar-involution.lean`](bar-involution.lean)) all carry
-`{R : Type*} [CommRing R]` (or stronger) and `{q : R}` without an
-ordering predicate.
+the substrate identities used here (the bi-filtration of $H_q$, the
+explicit central idempotent, the categorical $q$-Lie bracket and the bar
+involution) are likewise stated over a commutative ring $R$ (or a stronger
+structure) with $q \in R$ and without any ordering predicate on $q$.
 
 The condition $\lvert q \rvert > 1$ on $\mathbb{C}$ is sufficient to
 make $q$ a unit (since $\lvert q \rvert > 0$ implies $q \neq 0$), so

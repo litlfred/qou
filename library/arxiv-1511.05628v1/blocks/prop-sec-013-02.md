@@ -1,0 +1,1 @@
+Let $\sigma_j$ denote the $j$-th generator of the Galois group from Equation [\[eq.sigma\]](#eq.sigma){reference-type="eqref" reference="eq.sigma"}, and let $$\epsilon_j(\theta)=a_{e_j}(\theta)^{-1} \,.$$ The next lemma was observed in [@GZ1].

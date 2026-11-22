@@ -44,6 +44,7 @@ import _path_bridge  # noqa: E402, F401
 import mpmath as mp  # noqa: E402
 
 from _precision import fmt as _fmt  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402  (AME registry)
 
 t0 = time.time()
 
@@ -54,7 +55,7 @@ def log(msg):
 
 # β-decay Q-value calibration E₀ (free-neutron), per prop:categorical-mass-markov.
 E_0_MEV = 0.78233341
-B_D_AME_MEV = 2.224573  # AME2020 deuteron binding (audit comparison only)
+B_D_AME_MEV = float(AME_B_DEUTERON_MEV_VALIDATION)  # AME2020 deuteron binding (audit comparison only)
 
 
 def main():

@@ -9,4 +9,7 @@ export default proposition({
   uses: ["def:mass-identity"],
   proofs: ["prf:mass-identity-exists"],
   tags: ["existence", "mass-identity", "inertial-mass"],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): One proves uniqueness in [uniqueness of the mass identity](#prop:mass-identity-unique)." },
+  ],
 });

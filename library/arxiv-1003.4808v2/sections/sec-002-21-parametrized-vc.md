@@ -7,10 +7,11 @@ section_number: 2.1
 pages: 6-9
 source_pdf: 1003.4808v2.pdf
 source_sha256: 72301d4bee491f86
-doc_brief: "Quantum Field Theory and the Volume Conjecture — 14 sections: Preliminaries; The many dimensions of the volume ; Parametrized VC"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.931
-latex_coverage_ratio: 0.9
+latex_coverage_ratio: 0.926
+doc_brief: "Quantum Field Theory and the Volume Conjecture — 15 sections: Front matter; Preliminaries; The many dimensions of the volume"
 ---
 The original volume conjecture only held for a special root of unity $q = e^{\frac{2\pi i}{N}}$. In order to generalize to arbitrary $q=e^{\frac{2\pi i}{k}}$, the appropriate limit to consider is
 

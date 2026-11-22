@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/aif-2009-59-1-347-0/sections/sec-023",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The Tschakaloff series",
+  "pageStart": 41,
+  "pageEnd": 42,
+  "contains": [
+    "library/aif-2009-59-1-347-0/blocks/prose-sec-023",
+    "library/aif-2009-59-1-347-0/blocks/prop-sec-023-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/aif-2009-59-1-347-0/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/aif-2009-59-1-347-0/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,0 +1,1 @@
+Fix i ≥1 and let µ = (2i+1, 1n−2i−1). Choosing λ from the shifted Plancherel measure on partitions of size n, deﬁne a random variable W = s n! zµ2n−l(µ) Xλ µ gλ . Then there is a constant Ai such that for all real x0,

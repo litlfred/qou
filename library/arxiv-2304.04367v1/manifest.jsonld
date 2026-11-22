@@ -1,0 +1,47 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2304.04367v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Angle-dependent pair production in the polarized two-photon Breit-Wheeler process",
+  "contains": [
+    "library/arxiv-2304.04367v1/sections/sec-000",
+    "library/arxiv-2304.04367v1/sections/sec-001",
+    "library/arxiv-2304.04367v1/sections/sec-002",
+    "library/arxiv-2304.04367v1/sections/sec-003",
+    "library/arxiv-2304.04367v1/sections/sec-004",
+    "library/arxiv-2304.04367v1/sections/sec-005",
+    "library/arxiv-2304.04367v1/sections/sec-006",
+    "library/arxiv-2304.04367v1/sections/sec-007",
+    "library/arxiv-2304.04367v1/sections/sec-008",
+    "library/arxiv-2304.04367v1/sections/sec-009",
+    "library/arxiv-2304.04367v1/sections/sec-010"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "arxiv-2304.04367v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "2304.04367.pdf",
+    "source_sha256": "63fc9a4a5f6b6b71cc542a312f4a01ea1285c88bf6f6957fd47cb918b117c65f",
+    "pages": 12,
+    "arxiv": {
+      "id": "2304.04367",
+      "version": "1",
+      "primary_class": "hep-ph",
+      "stamp_date": "10 Apr 2023"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

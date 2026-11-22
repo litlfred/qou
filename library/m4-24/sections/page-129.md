@@ -1,0 +1,60 @@
+---
+doc_id: m4-24
+doc_title: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface"
+section_id: page-129
+section_title: "Page 129"
+section_number: null
+pages: 129-129
+source_pdf: m4-24.pdf
+source_sha256: cf7c5e29b818e647
+toc_source: undetermined
+doc_brief: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3"
+---
+Problems on invariants of knots and 3-manifolds 501
+
+(3) Identify the I',-representations on relative SU (2)-moduli space from [77]
+with these TQFT’s, and find similar, higher rank theories.
+
+(4) Identify the yh! as L = 1-theories, if possible.
+
+The conceivable generalizations of the TQFT construction of Frohman and
+Nicas described in (1) include using different, possibly non-compact gauge
+groups instead of U(1) and using more refined versions of intersection homolo-
+gies for stratified moduli spaces. Given the theory for Q* the solution to item
+(2) will lead to well defined problems in sp-invariant theory. Constructions of
+L = 1-theories follow the schemes from (1) and (3). The identification in (4) is
+carried out for p= 5 in [211].
+
+The notion of finite length can be refined into the notion of q/l-solvable intro-
+duced in [212], indicating a TQFT over R = Mly]/y'*! such that the constant
+order TQFT over the ground ring M is of length q. This, clearly, defines a
+special case of a TQFT of length < (q-1+ q+). Murakami’s result [291]
+can be restated as saying that the Reshetikhin-Turaev theory gives rise to a
+1/1-solvable TQFT ys with ground ring F, (ie. a TQFT of length 3 over
+
+F,[y|/y?) such that
+1
+VIN) = 1 + ygrows(M) (47)
+
+for any closed homology sphere M. Following Ohtsuki’s work Murakami’s iden-
+tity (with some extra renormalizations by the order of H;(M)) extends also to
+rational homology spheres. Let us call a theory with this property a TQFT of
+Casson type.
+
+Recall, that the similar relation (46) for Acwyz for manifolds with bj\(M) > 1
+is already contained in the information of a homological (L = 0) TQFT, and is
+indeed a special evaluation of the Turaev-Milnor Torsion, see [212]. Given the
+richer structure of a 1/1-solvable TQFT we will expect new invariants = that
+are refinements of Acwz and the torsion invariants.
+
+To be more precise, note that for a pair (MM, y), where y : 71(M/) —» Z defines
+a cyclic cover, any TQFT VY yields an invariant V(M,y) = trace(V(Cy)) where
+Cy =M—:—-¥ and YC M is any surface dual to y. In this way the
+Frohman Nicas theories V) yields the coefficients of the Alexander Polynomial,
+and, as shown in [212], thus also Acwr-
+
+A more refined invariant, which, roughly speaking, generalizes the Alexander
+module, is the Turaev-Viro module Mry(M,y). It is described by Gilmer in
+[143]. Mrv(M,¥) is given, up to conjugacy, by V()/ker(V(Cy)%) (with
+
+Geometry & Topology Monographs, Volume 4 (2002)

@@ -8,6 +8,7 @@ pages: 34-35
 source_pdf: 9807106v2.pdf
 source_sha256: e3cd089e3df5d71f
 toc_source: inferred
+doc_brief: "An Extension of the Character Ring of sl(3) and Its Quantisation P. Furlan∗,† — We construct a commutative ring with identity which extends the ring of characters of ﬁnite dimensional representations"
 ---
 We would like to thank V. Dobrev, V. Molotkov, Tch. Palev, I. Penkov, and J.-B.
 Zuber for useful discussions, remarks, or, suggestions. We also thank all colleagues who

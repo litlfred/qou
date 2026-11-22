@@ -8,6 +8,7 @@ pages: 26-29
 source_pdf: candetgl.pdf
 source_sha256: d788af715428b8b2
 toc_source: inferred
+doc_brief: "The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics — 27 sections: Front matter; INTRODUCTION; PRELIMINARIES"
 ---
 In item ~9! in our list of standard information from Sec. III A, we asserted that in general,
 A(V) decays at ` like 1/r and that BS(V) decays at ` like 1/r2. In the special case that VeK(V),
@@ -39,8 +40,6 @@ uyu is very large, we have
 900
 J. Math. Phys., Vol. 42, No. 2, February 2001
 Cantarella, DeTurck, and Gluck
- This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to  IP:
-129.215.149.98 On: Sat, 10 May 2014 06:24:42
 uyuA~V!~y!'~1/4p!E
 VV~x! d~volx!.
 ~A3!
@@ -86,8 +85,6 @@ $y~uyu32uy2xu3!/uy2xu3%
 901
 J. Math. Phys., Vol. 42, No. 2, February 2001
 The Biot–Savart operator
- This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to  IP:
-129.215.149.98 On: Sat, 10 May 2014 06:24:42
 is bounded as y→`.
 Now the term
 $xuyu3/uy2xu3%
@@ -137,8 +134,6 @@ Hence
 902
 J. Math. Phys., Vol. 42, No. 2, February 2001
 Cantarella, DeTurck, and Gluck
- This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to  IP:
-129.215.149.98 On: Sat, 10 May 2014 06:24:42
 SE
 V¹w d~vol!D •C5E
 V~¹w!•C d~vol!

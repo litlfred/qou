@@ -1,0 +1,1116 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-hep-ph-9511320v1",
+ "status": "determined",
+ "body_size": 12.0,
+ "footnotes": [
+  {
+   "id": "fn-p002-1",
+   "page": 2,
+   "mark": "3",
+   "text": "Wearenotconsideringthedecupletstatesasdynamicaldegreesoffreedomin the eﬀective ﬁeld theory here.",
+   "marks": [
+    {
+     "page": 2,
+     "context": "recently,therenormalizationofalldivergencesatorderq"
+    },
+    {
+     "page": 2,
+     "context": "includingO(q"
+    },
+    {
+     "page": 2,
+     "context": "onlyhavetoconsiders–channelbaryonexcitations(likethe∆(1232),"
+    }
+   ],
+   "block": "library/arxiv-hep-ph-9511320v1/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p004-1",
+   "page": 4,
+   "mark": "4",
+   "text": "WearegratefultoHarryLeeforremindingusofthisproblem.Ofcourse,it has already been solved long time ago but using another approach than the one advocated here, see e.g. Weinberg’ s paper [17] and also section 4.",
+   "marks": [
+    {
+     "page": 4,
+     "context": "sourcestogivethelow–energytheorem,Eq.(3)."
+    }
+   ],
+   "block": "library/arxiv-hep-ph-9511320v1/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p013-1",
+   "page": 13,
+   "mark": "5",
+   "text": "Throughout,wedonotdiﬀerentiatebetweenthephysical(average)octetbaryon mass and its chiral limit value.",
+   "marks": [
+    {
+     "page": 13,
+     "context": "with m the average octet mass (in the chiral limit)."
+    }
+   ],
+   "block": "library/arxiv-hep-ph-9511320v1/blocks/prose-sec-006"
+  },
+  {
+   "id": "fn-p016-1",
+   "page": 16,
+   "mark": "6",
+   "text": "WegenericallydenotetheGoldstonebosonsaspions.",
+   "marks": [
+    {
+     "page": 16,
+     "context": "massivespin–1ﬁeldstothepions"
+    }
+   ],
+   "block": "library/arxiv-hep-ph-9511320v1/blocks/prose-sec-008"
+  },
+  {
+   "id": "fn-p023-1",
+   "page": 23,
+   "mark": "7",
+   "text": "ThesignintheexponentialisderivedfromZ[uµ, f + µν]∗= Z[uµ, f + µν] which can always be achieved by an appropriate choice of the phase of the in–state |0 , in >.",
+   "marks": [
+    {
+     "page": 23,
+     "context": "leadstothefollowinggeneratingfunctional"
+    }
+   ],
+   "block": "library/arxiv-hep-ph-9511320v1/blocks/prose-sec-012"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p001-1",
+   "page": 1,
+   "mark": "1",
+   "text": "email:borasoy@pythia.itkp.uni-bonn.de",
+   "block": "library/arxiv-hep-ph-9511320v1/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p001-2",
+   "page": 1,
+   "mark": "2",
+   "text": "email:meissner@pythia.itkp.uni-bonn.de ⋆Work supported in part by the Deutsche Forschungsgemeinschaft Preprint submitted to Elsevier Preprint",
+   "block": "library/arxiv-hep-ph-9511320v1/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p001-3",
+   "page": 1,
+   "mark": "5",
+   "text": "June 2022",
+   "block": "library/arxiv-hep-ph-9511320v1/blocks/prose-sec-front-matter"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "so–calledWeinbergterm,withacouplingstrength∼1/F"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "γµ(q1 + q2)µǫabcτ"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "4F"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "F"
+  },
+  {
+   "page": 4,
+   "mark": "c",
+   "context": "ρNN:−gρNN ǫ · γτ"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "M"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "F"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "ng universality (gρNN= gρππ≡g) and the KSFR relation [22], M"
+  },
+  {
+   "page": 4,
+   "mark": "g",
+   "context": "ρ= 2"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "ρ= 2g"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "ρ= 2g2F"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "q"
+  },
+  {
+   "page": 5,
+   "mark": "v",
+   "context": "˜Leﬀ[U, M, B, B∗] →¯Leﬀ[U, B] →Leﬀ[U, B"
+  },
+  {
+   "page": 6,
+   "mark": "†",
+   "context": "u"
+  },
+  {
+   "page": 6,
+   "mark": "†",
+   "context": "u†[∂µ −i(vµ + aµ)]u + u[∂µ −i(vµ −aµ)]u"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "whereasL(2,"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "L"
+  },
+  {
+   "page": 6,
+   "mark": "a",
+   "context": "2∂µW"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "4M"
+  },
+  {
+   "page": 6,
+   "mark": "a",
+   "context": "VW"
+  },
+  {
+   "page": 7,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "V−k"
+  },
+  {
+   "page": 7,
+   "mark": "g",
+   "context": "V−k2 −iǫ [gµρ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "V−k2 −iǫ [gµρgνσ(M"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "V−k"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "V−k2) + gµρ"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "V−k2) + gµρkν"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "V−k2) + gµρkνkσ−gµσ"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "V−k2) + gµρkνkσ−gµσkν"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "M"
+  },
+  {
+   "page": 7,
+   "mark": "4",
+   "context": "(2π)"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "M"
+  },
+  {
+   "page": 7,
+   "mark": "u",
+   "context": "L"
+  },
+  {
+   "page": 7,
+   "mark": "†",
+   "context": "Lu"
+  },
+  {
+   "page": 7,
+   "mark": "†",
+   "context": "Lu† + u"
+  },
+  {
+   "page": 7,
+   "mark": "u",
+   "context": "R"
+  },
+  {
+   "page": 7,
+   "mark": "u",
+   "context": "Ru,"
+  },
+  {
+   "page": 7,
+   "mark": "†",
+   "context": "Ru,uµ= iu"
+  },
+  {
+   "page": 7,
+   "mark": "†",
+   "context": "Ru,uµ= iu†∇µUu"
+  },
+  {
+   "page": 7,
+   "mark": "†",
+   "context": "Ru,uµ= iu†∇µUu†= u"
+  },
+  {
+   "page": 7,
+   "mark": "v",
+   "context": "R)aretheﬁeldstrengthsassociatedto"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "valuesareFV=154 MeVandGV=69 MeVinferredfromΓ(ρ"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "allFeynmangraphstoO(q"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "orderq)oroneﬁeldstrengthtensoroforderq"
+  },
+  {
+   "page": 8,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 8,
+   "mark": "4",
+   "context": "d4xd"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "L"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "Vµν Vµν−2 M"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "(2π)"
+  },
+  {
+   "page": 9,
+   "mark": "e",
+   "context": "(2π)4"
+  },
+  {
+   "page": 9,
+   "mark": "g",
+   "context": "(2π)4e−ik·(x−y)"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "(2π)4e−ik·(x−y) gµρ −kµ"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "(2π)4e−ik·(x−y) gµρ −kµkρ/M"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "k"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "k2−M"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "M"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "M"
+  },
+  {
+   "page": 10,
+   "mark": "6",
+   "context": "tions(whichareoforderq"
+  },
+  {
+   "page": 10,
+   "mark": "s",
+   "context": "µ"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "sorcontributestoorderq"
+  },
+  {
+   "page": 10,
+   "mark": "6",
+   "context": "the mesonsectorwhichare oforderq"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "vanceforsomeadditionalq"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "d4x d"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "thecompleteequivalenceofthetermsatorderq"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "areequivalentatorderq"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "whichcontributestotheprocessesunderconsiderationatorderq"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "ever,alsoadiﬀerenceatorderq"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "tion Γµ= −ivµ+O(φ"
+  },
+  {
+   "page": 12,
+   "mark": "f",
+   "context": "2FV"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "< B(p′)| J"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "µ|B(p) >=< B(p′)| ¯q γµλ"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "µ|B(p) >=< B(p′)| ¯q γµλa"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "< B(p′)| J"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "1(t) +i σµν"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "2(t)]{λ"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "1(t) +i σµν"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "2(t)][λ"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "withu(p)=u"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "withu(p)=ua(p)λ"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "withu(p)=ua(p)λa,¯u(p)=¯u"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "withu(p)=ua(p)λa,¯u(p)=¯ua(p)λ"
+  },
+  {
+   "page": 13,
+   "mark": "†",
+   "context": "withu(p)=ua(p)λa,¯u(p)=¯ua(p)λa"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "withu(p)=ua(p)λa,¯u(p)=¯ua(p)λa†andt=(p′−p)"
+  },
+  {
+   "page": 13,
+   "mark": "p",
+   "context": "isgivenbyF"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "orderq"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "orderq3intheeﬀectiveaction,i.e.toorderq"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "t"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "t −M"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "t −M"
+  },
+  {
+   "page": 13,
+   "mark": "4",
+   "context": "2(t) = FV"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "t −M"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "t"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "t −M"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "t −M"
+  },
+  {
+   "page": 13,
+   "mark": "4",
+   "context": "2(t) = FV"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "t −M"
+  },
+  {
+   "page": 13,
+   "mark": "4",
+   "context": "proportionaltoTD/Fonlystarttocontributeatorderq"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "t"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "t −M"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "t −M"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "t"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "t −M"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "t −M"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "t"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "t −M"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "t −M"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "t"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "t −M"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "t −M"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "M"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "rsareindenticalinthetensorandvectorﬁeldformulationtoorderO(q"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "Higher order terms, which will modify some of the t"
+  },
+  {
+   "page": 15,
+   "mark": "†",
+   "context": "(λA, λB"
+  },
+  {
+   "page": 15,
+   "mark": "†",
+   "context": "(λA, λB†) [λC, λD"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "F"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "F2π(M"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "4"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "−t"
+  },
+  {
+   "page": 16,
+   "mark": "t",
+   "context": "V−t)"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "F"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "F2π(M"
+  },
+  {
+   "page": 16,
+   "mark": "t",
+   "context": "4"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "2"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "whichisatleastoforderq"
+  },
+  {
+   "page": 19,
+   "mark": "5",
+   "context": "2Dγµγ"
+  },
+  {
+   "page": 19,
+   "mark": "5",
+   "context": "2Fγµγ"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "[Dµ, [Dν, Wλκ]] = O(q"
+  },
+  {
+   "page": 19,
+   "mark": "c",
+   "context": "µν,B"
+  },
+  {
+   "page": 19,
+   "mark": "c",
+   "context": "µν,Bc= C¯BT,¯B"
+  },
+  {
+   "page": 19,
+   "mark": "c",
+   "context": "µν,Bc= C¯BT,¯Bc= BTC,D"
+  },
+  {
+   "page": 19,
+   "mark": "c",
+   "context": "W"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "D"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "D2W,D"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "(D"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "(D2, W) ,D"
+  },
+  {
+   "page": 20,
+   "mark": "†",
+   "context": "PWµν(x) P"
+  },
+  {
+   "page": 20,
+   "mark": "†",
+   "context": "PWµν(x) P†= Wµν(˜x),PDµ(x) P"
+  },
+  {
+   "page": 20,
+   "mark": "†",
+   "context": "PB(x) P"
+  },
+  {
+   "page": 20,
+   "mark": "†",
+   "context": "PB(x) P†= γ0 B(˜x),P¯B(x) P"
+  },
+  {
+   "page": 20,
+   "mark": "†",
+   "context": "with˜xµ=xµ.WealsonotethatwhileWµνishermitean,W"
+  },
+  {
+   "page": 20,
+   "mark": "†",
+   "context": "covariantderivativeisanti-hermitean,D"
+  },
+  {
+   "page": 20,
+   "mark": "4",
+   "context": "Furthermore,uptoorderq"
+  },
+  {
+   "page": 21,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "k"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "k2−M"
+  },
+  {
+   "page": 21,
+   "mark": "4",
+   "context": "(2π)"
+  },
+  {
+   "page": 21,
+   "mark": "4",
+   "context": "startingatorderO(q"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "M"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "M"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "2Dµ DλWλν+ M"
+  },
+  {
+   "page": 22,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "d4"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "[DVµ] δ(∂µVµ)e"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "✷V"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "ν−∂ν (∂· V"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "ν−∂ν (∂· Va) + M"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "VV"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "whichforMV̸=0clearlyleadstothetransversalitycondition,∂· V"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "usnow examinethe generatingfunctionalmore closely.Denoteby V"
+  },
+  {
+   "page": 22,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "d4x LV= S[V"
+  },
+  {
+   "page": 22,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "d4x (Vµ −V"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "V"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "δ"
+  },
+  {
+   "page": 22,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 22,
+   "mark": "4",
+   "context": "d4x d"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "d4x d4y (Vµ −V"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "µ)(x) (Vν−V"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "V"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "µν] = exp(iS[V"
+  },
+  {
+   "page": 22,
+   "mark": "g",
+   "context": "V)"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "with M = (−i/2)[(✷+M"
+  },
+  {
+   "page": 22,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "d4"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "µ) e"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "µν] = exp(iS[V"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "[DVµ] δ(Vµ −V"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "2M"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "2M"
+  },
+  {
+   "page": 23,
+   "mark": "5",
+   "context": "onebytermsoforderO(q"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "V) Vµ −∂µ∂· V ) e"
+  },
+  {
+   "page": 23,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 23,
+   "mark": "x",
+   "context": "d4"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "[DVµ] δ((✷+ M"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "δ((✷+ M"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "V) Vµ −∂µ∂· V ) = δ(∂νVνµ + M"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "M"
+  },
+  {
+   "page": 23,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 23,
+   "mark": "x",
+   "context": "d4"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "exp (−i S[V"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "M"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "2M"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "∂µ∂ρ˜Wρν−∂ν∂ρ˜Wρµ + M"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "µ] ) = exp ( i S′[ ˜W"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "µν] = exp ( i S[V"
+  },
+  {
+   "page": 24,
+   "mark": "4",
+   "context": "d"
+  },
+  {
+   "page": 24,
+   "mark": "x",
+   "context": "d4"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "M"
+  }
+ ]
+}

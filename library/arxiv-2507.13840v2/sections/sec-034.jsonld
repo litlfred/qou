@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2507.13840v2/sections/sec-034",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Matrix product states algorithm for the PT negativity and the CCNR negativity",
+  "pageStart": 41,
+  "pageEnd": 42,
+  "contains": [
+    "library/arxiv-2507.13840v2/blocks/prose-sec-034"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2507.13840v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2507.13840v2/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0302267v2
-doc_title: "arXiv:math/0302267v2 [math.NT] 27 Feb 2003"
+doc_title: "Groupes fondamentaux motiviques de Tate mixte"
 section_id: sec-001-0-introduction
 section_title: "Introduction"
 section_number: 0
@@ -8,6 +8,7 @@ pages: 3-5
 source_pdf: 0302267v2.pdf
 source_sha256: c09c8cabd5f9d8e6
 toc_source: inferred
+doc_brief: "Groupes fondamentaux motiviques de Tate mixte — We deﬁne the category of mixed Tate motives over the ring of S-integers of a number ﬁeld."
 ---
 Si k est un corps de nombres, on dispose d’une cat´egorie tannakienne MT(k) des motifs
 de Tate mixte sur k, pour laquelle les groupes d’extensions de Q(0) par Q(n) ont la relation

@@ -1,0 +1,5354 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-1112.0030v2",
+  "pages": [
+    {
+      "page": 5,
+      "rotation": 0,
+      "drawings": 27,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1. For the conifold X, the space of stability conditions is one-dimensional. It is parametrized by the K¨ahler parameter N ∼log(a) = Vol(CP1). This space is divided by walls of marginal stability into a set of chambers, which can be identiﬁed with the set of integers Z."
+      ],
+      "labels": [
+        {
+          "text": "HOMOLOGICAL ALGEBRA OF KNOTS AND BPS STATES",
+          "bbox": [
+            193.44,
+            96.89,
+            418.51,
+            103.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            481.32,
+            96.89,
+            485.29,
+            103.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "The reason we denote the K¨ahler parameter by log(a) rather than a is that with",
+          "bbox": [
+            126.72,
+            116.21,
+            485.29,
+            128.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMIB10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "this convention a = qN is the standard variable of the HOMFLY polynomial / knot",
+          "bbox": [
+            126.72,
+            126.93,
+            485.42,
+            140.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMMIB10",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "homology.",
+          "bbox": [
+            126.72,
+            142.41,
+            170.64,
+            152.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "vol(CP1)",
+          "bbox": [
+            298.19,
+            160.72,
+            345.61,
+            179.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Bold",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.62,
+            13.71
+          ]
+        },
+        {
+          "text": "W",
+          "bbox": [
+            203.91,
+            199.5,
+            215.97,
+            213.22
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ZapfChancery-MediumItali"
+          ],
+          "sizes": [
+            13.71
+          ]
+        },
+        {
+          "text": "W",
+          "bbox": [
+            231.33,
+            199.5,
+            243.4,
+            213.22
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ZapfChancery-MediumItali"
+          ],
+          "sizes": [
+            13.71
+          ]
+        },
+        {
+          "text": "W1",
+          "bbox": [
+            258.76,
+            199.5,
+            272.1,
+            218.28
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-BoldItalic",
+            "ZapfChancery-MediumItali"
+          ],
+          "sizes": [
+            6.1,
+            13.71
+          ]
+        },
+        {
+          "text": "W",
+          "bbox": [
+            313.62,
+            199.5,
+            325.69,
+            213.22
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ZapfChancery-MediumItali"
+          ],
+          "sizes": [
+            13.71
+          ]
+        },
+        {
+          "text": "W",
+          "bbox": [
+            341.05,
+            199.5,
+            353.12,
+            213.22
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ZapfChancery-MediumItali"
+          ],
+          "sizes": [
+            13.71
+          ]
+        },
+        {
+          "text": "W",
+          "bbox": [
+            368.48,
+            199.5,
+            380.55,
+            213.22
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ZapfChancery-MediumItali"
+          ],
+          "sizes": [
+            13.71
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            217.62,
+            201.81,
+            220.67,
+            209.71
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            6.1
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            245.05,
+            201.81,
+            248.1,
+            209.71
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            6.1
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            272.48,
+            201.81,
+            275.52,
+            209.71
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            6.1
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            327.33,
+            201.81,
+            334.08,
+            209.71
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            6.1
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            354.76,
+            201.81,
+            361.5,
+            209.71
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            6.1
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            382.19,
+            201.81,
+            388.93,
+            209.71
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            6.1
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            214.19,
+            210.38,
+            217.24,
+            218.28
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            6.1
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            241.62,
+            210.38,
+            244.67,
+            218.28
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            6.1
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            323.91,
+            210.38,
+            326.95,
+            218.28
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            6.1
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            351.33,
+            210.38,
+            354.38,
+            218.28
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            6.1
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            378.76,
+            210.38,
+            381.81,
+            218.28
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            6.1
+          ]
+        },
+        {
+          "text": "Szendroi",
+          "bbox": [
+            294.62,
+            218.81,
+            307.83,
+            254.02
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.9
+          ]
+        },
+        {
+          "text": "region",
+          "bbox": [
+            303.19,
+            228.72,
+            316.4,
+            254.02
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.9
+          ]
+        },
+        {
+          "text": "N",
+          "bbox": [
+            404.48,
+            263.27,
+            413.62,
+            280.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic"
+          ],
+          "sizes": [
+            13.71
+          ]
+        },
+        {
+          "text": "−3",
+          "bbox": [
+            207.33,
+            282.85,
+            217.45,
+            294.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            9.14
+          ]
+        },
+        {
+          "text": "−2",
+          "bbox": [
+            234.76,
+            282.85,
+            244.87,
+            294.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            9.14
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            262.19,
+            282.85,
+            272.3,
+            294.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            9.14
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            291.33,
+            282.85,
+            295.91,
+            294.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            9.14
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            318.76,
+            282.85,
+            323.33,
+            294.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            9.14
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            347.91,
+            282.85,
+            352.48,
+            294.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            9.14
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            375.33,
+            282.85,
+            379.91,
+            294.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            9.14
+          ]
+        },
+        {
+          "text": "Figure 1. For the conifold X, the space of stability conditions",
+          "bbox": [
+            162.48,
+            304.03,
+            449.48,
+            314.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "is one-dimensional. It is parametrized by the K¨ahler parameter",
+          "bbox": [
+            162.48,
+            316.41,
+            449.57,
+            326.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "N ∼log(a) = Vol(CP1). This space is divided by walls of marginal",
+          "bbox": [
+            162.48,
+            326.93,
+            449.64,
+            345.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "stability into a set of chambers, which can be identiﬁed with the",
+          "bbox": [
+            162.48,
+            340.29,
+            449.38,
+            350.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "set of integers Z.",
+          "bbox": [
+            162.48,
+            351.82,
+            235.68,
+            362.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Another feature familiar to the practitioners of the reﬁned / motivic Donaldson-",
+          "bbox": [
+            144.6,
+            376.77,
+            485.48,
+            386.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Thomas theory is that HBPS can jump as one varies stability conditions [16, 17,",
+          "bbox": [
+            126.72,
+            388.5,
+            485.34,
+            405.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "18, 19, 20, 21]. Thus, in a closely related type IIA superstring compactiﬁcation",
+          "bbox": [
+            126.72,
+            400.38,
+            485.41,
+            410.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "on a Calabi-Yau 3-fold X, the stability parameters are the K¨ahler moduli of X,",
+          "bbox": [
+            126.72,
+            412.65,
+            485.4,
+            422.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "and in the present case there is only one K¨ahler modulus (1.8) given by the volume",
+          "bbox": [
+            126.72,
+            424.65,
+            485.38,
+            434.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of the CP1 cycle in X. Therefore, we conclude that the space (1.2) can jump as",
+          "bbox": [
+            126.72,
+            432.93,
+            485.36,
+            446.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "one changes the stability parameter N ∼Vol(CP1).",
+          "bbox": [
+            126.72,
+            447.17,
+            352.2,
+            465.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Luckily, in the case where X is the total space of the O(−1) ⊕O(−1) bundle",
+          "bbox": [
+            144.6,
+            460.19,
+            485.26,
+            477.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "over CP1 relevant to our applications, the wall-crossing behavior of the reﬁned",
+          "bbox": [
+            126.72,
+            468.81,
+            485.41,
+            482.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10",
+            "CMR7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "BPS invariants has been studied in the literature [22, 23, 18]. The one-dimensional",
+          "bbox": [
+            126.72,
+            484.14,
+            485.52,
+            494.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "space of stability conditions is divided into a set of chambers illustrated in Figure 1.",
+          "bbox": [
+            126.72,
+            496.29,
+            485.28,
+            506.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In each chamber, HBPS is constant and the jumps of closed BPS states occur at",
+          "bbox": [
+            126.72,
+            508.07,
+            485.42,
+            525.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the walls W±1",
+          "bbox": [
+            126.72,
+            518.67,
+            189.37,
+            537.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "characterized by diﬀerent types of “fragments”:",
+          "bbox": [
+            193.2,
+            520.29,
+            400.44,
+            530.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "n",
+          "bbox": [
+            178.32,
+            524.93,
+            183.24,
+            531.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "W1",
+          "bbox": [
+            241.68,
+            535.25,
+            256.33,
+            553.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": ":",
+          "bbox": [
+            269.88,
+            536.73,
+            272.64,
+            546.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "D2/D0 fragments",
+          "bbox": [
+            292.56,
+            536.73,
+            370.76,
+            546.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "n",
+          "bbox": [
+            251.52,
+            541.37,
+            256.44,
+            548.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "W−1",
+          "bbox": [
+            238.56,
+            550.35,
+            259.45,
+            568.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(1.9)",
+          "bbox": [
+            126.72,
+            551.73,
+            147.26,
+            561.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ":",
+          "bbox": [
+            269.88,
+            551.85,
+            272.64,
+            561.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "D2/D0 fragments",
+          "bbox": [
+            292.56,
+            551.85,
+            370.77,
+            561.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "n",
+          "bbox": [
+            248.4,
+            556.61,
+            253.32,
+            563.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "W0",
+          "bbox": [
+            241.68,
+            565.37,
+            256.33,
+            583.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": ":",
+          "bbox": [
+            269.88,
+            566.73,
+            272.64,
+            576.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "D0 fragments",
+          "bbox": [
+            292.56,
+            566.73,
+            352.29,
+            576.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "n",
+          "bbox": [
+            251.52,
+            571.37,
+            256.44,
+            578.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Notice, the set of chambers in this model can be identiﬁed with Z, the set of integer",
+          "bbox": [
+            126.72,
+            582.34,
+            485.33,
+            592.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "numbers. As we explain in the next section, this is not a coincidence. Namely,",
+          "bbox": [
+            126.72,
+            594.81,
+            485.4,
+            604.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "as we shall see, every fragment corresponds to a diﬀerential acting on the space",
+          "bbox": [
+            126.72,
+            606.69,
+            485.38,
+            616.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(1.2), so that in the present example one ﬁnds a set of diﬀerentials {dN} labeled",
+          "bbox": [
+            126.72,
+            618.47,
+            485.29,
+            635.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "by N ∈Z.",
+          "bbox": [
+            126.72,
+            630.1,
+            171.12,
+            647.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The diﬀerentials {dN} are part of the homological algebra of knots / BPS",
+          "bbox": [
+            144.6,
+            642.35,
+            485.41,
+            659.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "states, depending on whether one prefers to focus on the left or right side of the",
+          "bbox": [
+            126.72,
+            654.57,
+            485.26,
+            664.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "relation (1.2). For larger representations, in addition to the diﬀerentials {dN} one",
+          "bbox": [
+            126.72,
+            666.23,
+            485.38,
+            683.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ﬁnds colored diﬀerentials that allow to pass between homology theories associated",
+          "bbox": [
+            126.72,
+            678.45,
+            485.53,
+            688.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "with diﬀerent R. Even though a combinatorial deﬁnition of the majority of such",
+          "bbox": [
+            126.72,
+            690.45,
+            485.41,
+            700.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 11,
+      "rotation": 0,
+      "drawings": 12,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2. The physics of open strings between two stacks of La- grangian branes is described by the Landau-Ginzburg model with potential Wg,R."
+      ],
+      "labels": [
+        {
+          "text": "HOMOLOGICAL ALGEBRA OF KNOTS AND BPS STATES",
+          "bbox": [
+            193.44,
+            96.89,
+            418.51,
+            103.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "11",
+          "bbox": [
+            477.36,
+            96.89,
+            485.29,
+            103.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Figure 2. The physics of open strings between two stacks of La-",
+          "bbox": [
+            162.48,
+            276.43,
+            449.48,
+            286.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "grangian branes is described by the Landau-Ginzburg model with",
+          "bbox": [
+            162.48,
+            288.69,
+            449.41,
+            298.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "potential Wg,R.",
+          "bbox": [
+            162.48,
+            300.69,
+            229.92,
+            311.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "EUFM7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "For example, the arguments that lead to (3.1) can be easily generalized to R = Λr,",
+          "bbox": [
+            126.72,
+            329.93,
+            485.28,
+            341.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the r-th anti-symmetric representation of sl(N). The only diﬀerence is that, in",
+          "bbox": [
+            126.72,
+            343.29,
+            485.29,
+            353.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "this case, the corresponding brane systems (1.4) and (1.6) contain r coincident",
+          "bbox": [
+            126.72,
+            355.17,
+            485.42,
+            365.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "M5-branes supported on R × LK × D. Following the same arguments as in the",
+          "bbox": [
+            126.72,
+            366.7,
+            485.26,
+            385.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "case of the fundamental representation (r = 1) and zooming in closely on the local",
+          "bbox": [
+            126.72,
+            379.17,
+            485.4,
+            389.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "geometry of the brane intersection, after all the dualities we end up with a system",
+          "bbox": [
+            126.72,
+            391.05,
+            485.42,
+            401.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of intersecting D3-branes in ﬂat ten-dimensional space-time,",
+          "bbox": [
+            126.72,
+            403.05,
+            389.28,
+            413.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "R × W",
+          "bbox": [
+            338.76,
+            420.22,
+            367.49,
+            437.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(3.4)",
+          "bbox": [
+            126.72,
+            420.69,
+            147.27,
+            430.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "N D3-branes",
+          "bbox": [
+            239.4,
+            420.69,
+            296.25,
+            430.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ":",
+          "bbox": [
+            306.0,
+            420.69,
+            308.76,
+            430.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "r D3′-branes",
+          "bbox": [
+            240.96,
+            433.35,
+            296.25,
+            445.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "R × LK",
+          "bbox": [
+            338.76,
+            435.1,
+            371.61,
+            452.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": ":",
+          "bbox": [
+            306.0,
+            435.57,
+            308.76,
+            445.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "where, as in the previous discussion, for the purpose of deriving Wg,R we can",
+          "bbox": [
+            126.72,
+            453.33,
+            485.41,
+            464.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "EUFM7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "approximate W ≃R3 and LK ≃R3, so that W ∩LK = R.",
+          "bbox": [
+            126.72,
+            461.61,
+            409.2,
+            483.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Now, the open",
+          "bbox": [
+            418.44,
+            465.21,
+            485.29,
+            475.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "strings between two sets of D3-branes in (3.4) transform in the bifundamental",
+          "bbox": [
+            126.72,
+            477.21,
+            485.28,
+            487.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "representation (N, r) under the gauge symmetry U(N) × U(r) on the D3-branes.",
+          "bbox": [
+            126.72,
+            488.82,
+            485.52,
+            506.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Here, if we want to “integrate out” open strings ending on the D3′-branes, only",
+          "bbox": [
+            126.72,
+            499.59,
+            485.37,
+            511.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the second gauge factor should be considered dynamical, while U(N) should be",
+          "bbox": [
+            126.72,
+            513.09,
+            485.26,
+            523.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "treated as a global symmetry of the two-dimensional U(r) gauge theory on the",
+          "bbox": [
+            126.72,
+            524.97,
+            485.26,
+            534.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "brane intersection. In the infrared this theory ﬂows to a sigma-model based on the",
+          "bbox": [
+            126.72,
+            536.97,
+            485.26,
+            546.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Grassmannian manifold:",
+          "bbox": [
+            126.72,
+            548.97,
+            232.92,
+            558.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "U(N)",
+          "bbox": [
+            319.44,
+            563.13,
+            344.18,
+            573.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(3.5)",
+          "bbox": [
+            126.72,
+            569.85,
+            147.26,
+            579.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Gr(r, N) =",
+          "bbox": [
+            237.48,
+            569.85,
+            287.94,
+            579.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "U(r) × U(N −r) .",
+          "bbox": [
+            294.72,
+            569.85,
+            374.52,
+            593.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The potential of the corresponding Landau-Ginzburg model [47] is a homogeneous",
+          "bbox": [
+            126.72,
+            592.98,
+            485.48,
+            603.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "polynomial of degree N + 1,",
+          "bbox": [
+            126.72,
+            605.25,
+            249.6,
+            615.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Wsl(N),Λr(z1, . . . , zr) = xN+1",
+          "bbox": [
+            208.32,
+            620.93,
+            339.37,
+            633.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "+ . . . + xN+1",
+          "bbox": [
+            342.12,
+            621.05,
+            398.65,
+            632.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(3.6)",
+          "bbox": [
+            126.72,
+            622.89,
+            147.27,
+            632.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            400.92,
+            622.89,
+            403.68,
+            632.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "r",
+          "bbox": [
+            381.48,
+            627.65,
+            385.18,
+            634.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            322.2,
+            627.77,
+            326.17,
+            634.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "where the right-hand side should be viewed as a function of the variables zi of",
+          "bbox": [
+            126.72,
+            640.53,
+            485.44,
+            651.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "degree deg(zi) = i, i = 1, . . . , r, which are the elementary symmetric polynomials",
+          "bbox": [
+            126.72,
+            652.53,
+            485.36,
+            663.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "in the xj,",
+          "bbox": [
+            126.72,
+            664.41,
+            168.12,
+            675.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            282.0,
+            671.05,
+            296.39,
+            701.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "xj1xj2 · · · xji .",
+          "bbox": [
+            314.16,
+            680.03,
+            372.84,
+            699.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR5",
+            "CMSY10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "zi =",
+          "bbox": [
+            239.16,
+            680.25,
+            260.34,
+            691.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "j1<j2<···<ji",
+          "bbox": [
+            265.92,
+            694.11,
+            311.9,
+            701.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI7",
+            "CMR5",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        }
+      ]
+    },
+    {
+      "page": 22,
+      "rotation": 0,
+      "drawings": 54,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 3. The reduced S2-colored homology of the trefoil knot."
+      ],
+      "labels": [
+        {
+          "text": "SERGEI GUKOV AND MARKO STOˇSI´C",
+          "bbox": [
+            232.08,
+            95.09,
+            379.96,
+            103.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "22",
+          "bbox": [
+            126.72,
+            96.89,
+            134.65,
+            103.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "a",
+          "bbox": [
+            168.7,
+            108.33,
+            178.39,
+            133.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            19.38
+          ]
+        },
+        {
+          "text": "6",
+          "bbox": [
+            386.68,
+            137.45,
+            392.6,
+            152.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            11.84
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            144.48,
+            148.52,
+            150.94,
+            165.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            12.92
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            270.42,
+            176.21,
+            276.34,
+            191.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            11.84
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            309.18,
+            176.21,
+            315.1,
+            191.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            11.84
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            427.85,
+            176.21,
+            433.77,
+            191.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            11.84
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            379.41,
+            178.63,
+            385.33,
+            193.97
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            11.84
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            144.48,
+            187.27,
+            150.94,
+            204.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            12.92
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            144.48,
+            226.02,
+            150.94,
+            242.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            12.92
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            192.92,
+            236.75,
+            198.84,
+            252.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            11.84
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            309.17,
+            236.75,
+            315.1,
+            252.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            11.84
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            347.93,
+            236.75,
+            353.85,
+            252.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            11.84
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            425.43,
+            236.75,
+            431.35,
+            252.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            11.84
+          ]
+        },
+        {
+          "text": "q",
+          "bbox": [
+            456.91,
+            241.54,
+            466.6,
+            266.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            19.38
+          ]
+        },
+        {
+          "text": "−3",
+          "bbox": [
+            149.33,
+            276.88,
+            163.61,
+            293.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            12.92
+          ]
+        },
+        {
+          "text": "−2",
+          "bbox": [
+            188.08,
+            276.88,
+            202.37,
+            293.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            12.92
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            226.83,
+            276.88,
+            241.12,
+            293.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            12.92
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            268.0,
+            276.88,
+            274.46,
+            293.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            12.92
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            306.75,
+            276.88,
+            313.21,
+            293.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            12.92
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            347.93,
+            276.88,
+            354.38,
+            293.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            12.92
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            386.68,
+            276.88,
+            393.14,
+            293.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            12.92
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            423.01,
+            276.88,
+            429.46,
+            293.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            12.92
+          ]
+        },
+        {
+          "text": "Figure 3. The reduced S2-colored homology of the trefoil knot.",
+          "bbox": [
+            164.4,
+            304.97,
+            447.6,
+            316.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "This computation can be easily extended to many other small knots. We list",
+          "bbox": [
+            144.6,
+            335.37,
+            485.31,
+            345.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the results for all prime knots with up to 6 crossings in Tables 1 and 2. The fact",
+          "bbox": [
+            126.72,
+            347.37,
+            485.31,
+            357.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "that the structure described in this section works beautifully for all knots with up",
+          "bbox": [
+            126.72,
+            359.37,
+            485.29,
+            369.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "to 6 crossings is already an impressive test of our main Conjecture 4.2. However,",
+          "bbox": [
+            126.72,
+            371.25,
+            485.52,
+            381.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "to convince even hard-boiled skeptics, in appendix B we carry out a much more",
+          "bbox": [
+            126.72,
+            383.25,
+            485.38,
+            393.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "challenging computation of the colored HOMFLY homology for “thick” knots 819",
+          "bbox": [
+            126.72,
+            395.25,
+            484.93,
+            405.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "and 942.",
+          "bbox": [
+            126.72,
+            407.13,
+            162.24,
+            417.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "We notice that all computations of colored homologies in this paper are done",
+          "bbox": [
+            144.6,
+            419.13,
+            485.38,
+            429.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "by hand, only by using the existence and properties of the diﬀerentials described in",
+          "bbox": [
+            126.72,
+            431.01,
+            485.29,
+            440.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "this section. Moreover, in majority of the cases only a few of the diﬀerentials are",
+          "bbox": [
+            126.72,
+            443.01,
+            485.38,
+            452.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "used to obtain the result, which than matched perfectly all the remaining properties.",
+          "bbox": [
+            126.72,
+            455.01,
+            485.4,
+            464.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "4.5. Diﬀerentials for higher symmetric representations. Now let us",
+          "bbox": [
+            144.6,
+            486.9,
+            485.36,
+            497.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "consider the triply graded homology HSr of knots and links colored by the rep-",
+          "bbox": [
+            126.72,
+            492.57,
+            485.36,
+            516.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "resentation R = Sr with more general r ≥1. Much as in the case r = 2 considered",
+          "bbox": [
+            126.72,
+            507.57,
+            485.41,
+            528.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "in the previous subsection, we expect that HSr comes equipped with the following",
+          "bbox": [
+            126.72,
+            516.45,
+            485.46,
+            540.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "diﬀerentials:",
+          "bbox": [
+            126.72,
+            535.05,
+            180.0,
+            545.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "• canceling diﬀerential dSr",
+          "bbox": [
+            157.32,
+            546.77,
+            275.86,
+            566.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "of degree (−1, 1, −1), whose homology is one-",
+          "bbox": [
+            281.4,
+            549.47,
+            485.36,
+            566.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            267.24,
+            554.45,
+            271.21,
+            561.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "dimensional and consists of a degree (rS, −rS, 0) generator;",
+          "bbox": [
+            167.28,
+            561.47,
+            427.44,
+            578.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "• canceling diﬀerential dSr",
+          "bbox": [
+            157.32,
+            570.89,
+            275.86,
+            590.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "−r of degree (−1, −r, −3), which leaves behind a",
+          "bbox": [
+            267.24,
+            573.71,
+            485.34,
+            590.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "one-dimensional homology with a generator of degree (rS, r2S, 2rS);",
+          "bbox": [
+            167.28,
+            584.93,
+            465.24,
+            596.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "• for every 1 ≤k < r, there exists a vertical colored diﬀerential dSr",
+          "bbox": [
+            157.32,
+            595.61,
+            466.54,
+            615.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1−k of",
+          "bbox": [
+            457.92,
+            598.53,
+            485.44,
+            611.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "degree (−1, 1 −k, −1), such that the homology of HSr with respect to",
+          "bbox": [
+            167.28,
+            605.37,
+            485.34,
+            629.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "dSr",
+          "bbox": [
+            167.28,
+            622.61,
+            181.06,
+            635.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1−k is isomorphic to HSk;",
+          "bbox": [
+            172.44,
+            622.61,
+            285.0,
+            642.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "• for every 1 ≤m < r, there exists a universal colored diﬀerential dr→m",
+          "bbox": [
+            157.32,
+            637.31,
+            484.78,
+            654.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "which, when acting on HSr, leaves behind the homology HSm. In partic-",
+          "bbox": [
+            167.28,
+            646.49,
+            485.36,
+            666.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ular, the colored diﬀerential dr→(r−1) has degree (0, 1, 0).",
+          "bbox": [
+            167.28,
+            661.41,
+            416.4,
+            673.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "4.5.1. Colored superpolynomial PS3 for the trefoil. It can be computed by re-",
+          "bbox": [
+            144.6,
+            671.57,
+            485.36,
+            695.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "quiring that its specialization to t = −1 equals the reduced S3-colored HOMFLY",
+          "bbox": [
+            126.72,
+            688.97,
+            485.31,
+            707.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 26,
+      "rotation": 0,
+      "drawings": 60,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 4. The reduced Λ2-colored homology of the trefoil"
+      ],
+      "labels": [
+        {
+          "text": "SERGEI GUKOV AND MARKO STOˇSI´C",
+          "bbox": [
+            232.08,
+            95.09,
+            379.96,
+            103.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "26",
+          "bbox": [
+            126.72,
+            96.89,
+            134.65,
+            103.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Combining this data with the colored HOMFLY polynomial",
+          "bbox": [
+            126.72,
+            118.53,
+            388.92,
+            128.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(a, q) = a2(q−4 + q−2 + q−1 + q2) −a3(q−4 + q−3 + q−1 + 1) + a4q−3",
+          "bbox": [
+            168.48,
+            133.65,
+            478.09,
+            154.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMIB10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(5.6) P",
+          "bbox": [
+            126.72,
+            137.85,
+            160.36,
+            147.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "we easily ﬁnd the anti-symmetric version of the superpolynomial for the trefoil knot:",
+          "bbox": [
+            126.72,
+            154.89,
+            485.4,
+            164.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(5.7)",
+          "bbox": [
+            126.72,
+            166.77,
+            147.27,
+            176.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(31) = a2(q−4+q−2t2 +q−1t2 +q2t4)+a3(q−4t3+q−3t3 +q−1t5 +t5)+a4q−3t6",
+          "bbox": [
+            141.24,
+            177.45,
+            484.81,
+            192.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMIB10",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "P",
+          "bbox": [
+            126.72,
+            181.31,
+            133.64,
+            198.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "a",
+          "bbox": [
+            168.7,
+            202.05,
+            178.39,
+            227.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            19.38
+          ]
+        },
+        {
+          "text": "6",
+          "bbox": [
+            231.67,
+            231.17,
+            237.59,
+            246.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            11.84
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            144.48,
+            242.24,
+            150.94,
+            258.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            12.92
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            192.92,
+            269.93,
+            198.84,
+            285.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            11.84
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            309.17,
+            269.93,
+            315.09,
+            285.27
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            11.84
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            347.92,
+            269.93,
+            353.84,
+            285.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            11.84
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            238.94,
+            272.35,
+            244.86,
+            287.69
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            11.84
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            144.48,
+            280.99,
+            150.94,
+            297.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            12.92
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            144.48,
+            319.74,
+            150.94,
+            336.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            12.92
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            192.92,
+            330.47,
+            198.84,
+            345.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            11.84
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            270.42,
+            330.47,
+            276.34,
+            345.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            11.84
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            309.17,
+            330.47,
+            315.09,
+            345.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            11.84
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            425.43,
+            330.47,
+            431.35,
+            345.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            11.84
+          ]
+        },
+        {
+          "text": "q",
+          "bbox": [
+            456.91,
+            335.26,
+            466.6,
+            360.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            19.38
+          ]
+        },
+        {
+          "text": "−5",
+          "bbox": [
+            149.33,
+            370.6,
+            163.61,
+            387.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            12.92
+          ]
+        },
+        {
+          "text": "−4",
+          "bbox": [
+            188.08,
+            370.6,
+            202.36,
+            387.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            12.92
+          ]
+        },
+        {
+          "text": "−3",
+          "bbox": [
+            226.83,
+            370.6,
+            241.11,
+            387.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            12.92
+          ]
+        },
+        {
+          "text": "−2",
+          "bbox": [
+            268.0,
+            370.6,
+            282.29,
+            387.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            12.92
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            306.75,
+            370.6,
+            321.04,
+            387.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            12.92
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            347.92,
+            370.6,
+            354.38,
+            387.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            12.92
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            386.68,
+            370.6,
+            393.13,
+            387.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            12.92
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            423.0,
+            370.6,
+            429.46,
+            387.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            12.92
+          ]
+        },
+        {
+          "text": "Figure 4. The reduced Λ2-colored homology of the trefoil",
+          "bbox": [
+            177.24,
+            398.81,
+            434.88,
+            410.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "The homology H",
+          "bbox": [
+            144.6,
+            427.31,
+            220.21,
+            444.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(31) is shown on the Figure 4 below. It has the following",
+          "bbox": [
+            227.04,
+            427.53,
+            485.46,
+            438.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "diﬀerentials:",
+          "bbox": [
+            126.72,
+            439.53,
+            180.0,
+            449.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "−1 of (a, q, t)-degree (−1, −1, −3)",
+          "bbox": [
+            265.44,
+            454.37,
+            411.62,
+            473.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMIB10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "• canceling diﬀerential d",
+          "bbox": [
+            157.32,
+            456.47,
+            265.46,
+            473.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2 of (a, q, t)-degree (−1, 2, −1) reﬂects the fact that",
+          "bbox": [
+            264.0,
+            472.37,
+            485.3,
+            491.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMIB10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "• canceling diﬀerential d",
+          "bbox": [
+            157.32,
+            474.47,
+            264.02,
+            491.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Λ2 is trivial in sl(2) theory",
+          "bbox": [
+            167.28,
+            483.09,
+            285.21,
+            496.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "3 of (a, q, t)-degree (−1, 3, −1) reﬂects the fact that Λ2 ∼= Λ",
+          "bbox": [
+            222.48,
+            499.91,
+            485.35,
+            520.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMIB10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "• diﬀerential d",
+          "bbox": [
+            157.32,
+            503.63,
+            222.5,
+            520.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "in sl(3) theory and gives, cf. (5.5):",
+          "bbox": [
+            167.28,
+            515.46,
+            318.96,
+            525.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "a=q3",
+          "bbox": [
+            335.64,
+            533.5,
+            351.87,
+            539.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMIB5",
+            "CMR5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "a2q−4t0 + a2q−2t2 + a3q−3t3",
+          "bbox": [
+            202.68,
+            533.73,
+            329.53,
+            547.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMIB10",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Hsl(3),",
+          "bbox": [
+            357.96,
+            535.73,
+            385.28,
+            554.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(5.8)",
+          "bbox": [
+            126.72,
+            537.93,
+            147.26,
+            547.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            340.08,
+            537.93,
+            347.82,
+            547.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(31)",
+          "bbox": [
+            392.16,
+            537.93,
+            409.35,
+            548.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "0 of (a, q, t)-degree (−1, 0, −3) gives:",
+          "bbox": [
+            222.24,
+            557.81,
+            383.76,
+            577.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMIB10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "• diﬀerential d",
+          "bbox": [
+            157.32,
+            559.91,
+            222.26,
+            577.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "a2q−2t2 + a2q2t4 + a3q0t5 = at2P",
+          "bbox": [
+            199.56,
+            573.69,
+            349.04,
+            594.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMIB10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(31)(a, q2, t).",
+          "bbox": [
+            356.64,
+            575.45,
+            412.44,
+            588.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMIB10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(5.9)",
+          "bbox": [
+            126.72,
+            577.77,
+            147.26,
+            587.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2→1 of (a, q, t)-degree (0, 1, 0) gives:",
+          "bbox": [
+            264.48,
+            597.65,
+            420.0,
+            612.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMIB10",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "• universal diﬀerential d",
+          "bbox": [
+            157.32,
+            599.75,
+            264.5,
+            617.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "a2q−4t0 + a2q2t4 + a4q−3t6 = P",
+          "bbox": [
+            198.6,
+            613.65,
+            345.56,
+            634.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMIB10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(a2, q4, q−1t2)",
+          "bbox": [
+            353.16,
+            615.41,
+            413.31,
+            627.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMIB10",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(5.10)",
+          "bbox": [
+            126.72,
+            617.73,
+            152.3,
+            627.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "5.2. Mirror symmetry for knot homology. By computing the triply-graded",
+          "bbox": [
+            144.6,
+            637.26,
+            489.97,
+            647.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "homologies HSr(K) and HΛr(K) for various small knots, we discover the following",
+          "bbox": [
+            126.72,
+            646.49,
+            485.46,
+            666.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "remarkable symmetry between these two classes of theories, labeled by R = Sr and",
+          "bbox": [
+            126.72,
+            657.81,
+            485.41,
+            671.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "R = Λr:",
+          "bbox": [
+            126.72,
+            671.93,
+            161.64,
+            683.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "HΛr",
+          "bbox": [
+            254.16,
+            686.93,
+            271.42,
+            707.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "i,j,∗(K) ∼= HSr",
+          "bbox": [
+            262.56,
+            686.93,
+            325.3,
+            707.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(5.11)",
+          "bbox": [
+            126.72,
+            690.45,
+            152.3,
+            700.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "i,−j,∗(K).",
+          "bbox": [
+            316.56,
+            690.45,
+            357.84,
+            702.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 39,
+      "rotation": 0,
+      "drawings": 380,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 5. The reduced Kauﬀman homology of the knot T3,4 = 819. To avoid clutter, we show only canceling diﬀerentials d2, d1 and d0 (represented by red, green, and blue arrows, respectively)."
+      ],
+      "labels": [
+        {
+          "text": "HOMOLOGICAL ALGEBRA OF KNOTS AND BPS STATES",
+          "bbox": [
+            193.44,
+            96.89,
+            418.51,
+            103.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "39",
+          "bbox": [
+            477.36,
+            96.89,
+            485.29,
+            103.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "a",
+          "bbox": [
+            147.87,
+            110.95,
+            154.28,
+            127.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            12.82
+          ]
+        },
+        {
+          "text": "13",
+          "bbox": [
+            127.04,
+            137.54,
+            135.59,
+            148.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            8.55
+          ]
+        },
+        {
+          "text": "12",
+          "bbox": [
+            127.04,
+            163.17,
+            135.59,
+            174.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            8.55
+          ]
+        },
+        {
+          "text": "11",
+          "bbox": [
+            127.04,
+            188.81,
+            135.59,
+            199.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            8.55
+          ]
+        },
+        {
+          "text": "10",
+          "bbox": [
+            127.04,
+            214.45,
+            135.59,
+            225.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            8.55
+          ]
+        },
+        {
+          "text": "9",
+          "bbox": [
+            131.85,
+            240.09,
+            136.12,
+            251.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            8.55
+          ]
+        },
+        {
+          "text": "8",
+          "bbox": [
+            131.85,
+            265.73,
+            136.12,
+            276.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            8.55
+          ]
+        },
+        {
+          "text": "7",
+          "bbox": [
+            131.85,
+            291.36,
+            136.12,
+            302.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            8.55
+          ]
+        },
+        {
+          "text": "6",
+          "bbox": [
+            131.85,
+            317.0,
+            136.12,
+            328.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            8.55
+          ]
+        },
+        {
+          "text": "q",
+          "bbox": [
+            479.56,
+            327.27,
+            485.97,
+            343.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            12.82
+          ]
+        },
+        {
+          "text": "−6",
+          "bbox": [
+            147.87,
+            350.65,
+            157.32,
+            361.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            8.55
+          ]
+        },
+        {
+          "text": "−5",
+          "bbox": [
+            173.51,
+            350.65,
+            182.96,
+            361.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            8.55
+          ]
+        },
+        {
+          "text": "−4",
+          "bbox": [
+            199.15,
+            350.65,
+            208.6,
+            361.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            8.55
+          ]
+        },
+        {
+          "text": "−3",
+          "bbox": [
+            226.39,
+            350.65,
+            235.84,
+            361.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            8.55
+          ]
+        },
+        {
+          "text": "−2",
+          "bbox": [
+            252.03,
+            350.65,
+            261.48,
+            361.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            8.55
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            276.06,
+            350.65,
+            285.51,
+            361.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            8.55
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            304.9,
+            350.65,
+            309.18,
+            361.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            8.55
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            328.94,
+            350.65,
+            333.21,
+            361.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            8.55
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            354.58,
+            350.65,
+            358.85,
+            361.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            8.55
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            380.22,
+            350.65,
+            384.49,
+            361.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            8.55
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            407.46,
+            350.65,
+            411.73,
+            361.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            8.55
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            433.09,
+            350.65,
+            437.37,
+            361.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            8.55
+          ]
+        },
+        {
+          "text": "6",
+          "bbox": [
+            458.73,
+            350.65,
+            463.0,
+            361.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-BoldItalic"
+          ],
+          "sizes": [
+            8.55
+          ]
+        },
+        {
+          "text": "Figure 5. The reduced Kauﬀman homology of the knot T3,4 =",
+          "bbox": [
+            162.48,
+            371.23,
+            449.46,
+            383.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "819. To avoid clutter, we show only canceling diﬀerentials d2, d1",
+          "bbox": [
+            162.48,
+            383.61,
+            448.93,
+            394.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "and d0 (represented by red, green, and blue arrows, respectively).",
+          "bbox": [
+            162.48,
+            395.61,
+            448.32,
+            407.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "isomorphic (up to regrading) to the triply-graded HOMFLY homology.",
+          "bbox": [
+            167.28,
+            428.73,
+            485.52,
+            438.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "More precisely, they satisfy:",
+          "bbox": [
+            167.28,
+            440.73,
+            288.72,
+            450.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(a2q−2, q2, t),",
+          "bbox": [
+            317.88,
+            457.49,
+            376.44,
+            469.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMIB10",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(HKauﬀ, d→) = P",
+          "bbox": [
+            235.56,
+            457.97,
+            310.28,
+            476.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(a2q2t2, q2, t).",
+          "bbox": [
+            317.04,
+            480.29,
+            377.28,
+            492.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMIB10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(HKauﬀ, d←) = P",
+          "bbox": [
+            234.6,
+            480.65,
+            309.44,
+            499.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Again, it is straightforward to check that such diﬀerentials exist in both",
+          "bbox": [
+            167.28,
+            499.65,
+            485.29,
+            509.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "homologies HKauﬀ(942) and HKauﬀ(819).",
+          "bbox": [
+            167.28,
+            510.17,
+            343.56,
+            528.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "• There exists a diﬀerential d−2 of degree (−1, −3, −3), such that the a =",
+          "bbox": [
+            157.32,
+            521.21,
+            485.34,
+            540.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMIB10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "q−3 specialization of the homology (HKauﬀ, d−2) is isomorphic to the ho-",
+          "bbox": [
+            167.28,
+            531.93,
+            485.36,
+            552.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "mology Hsp(2),V .",
+          "bbox": [
+            167.28,
+            544.17,
+            240.48,
+            564.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Moreover, the triply-graded version holds: the Poincar´e polynomial",
+          "bbox": [
+            185.28,
+            559.77,
+            485.4,
+            569.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of the triply-graded homology (HKauﬀ, d−2) is equal to tSR(a1/2q−1/2, t),",
+          "bbox": [
+            167.28,
+            570.27,
+            485.28,
+            588.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(a = q2, q, t). This is true for 819, 942 and for all prime",
+          "bbox": [
+            251.52,
+            581.45,
+            485.38,
+            595.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMIB10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "where R(q, t) = P",
+          "bbox": [
+            167.28,
+            583.55,
+            243.92,
+            600.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "knots with up to 6 crossings.",
+          "bbox": [
+            167.28,
+            595.65,
+            293.16,
+            605.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Note that this generalizes and corrects the value predicted in [6]. We",
+          "bbox": [
+            185.28,
+            607.38,
+            485.26,
+            617.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "also note that (HKauﬀ, d−2) is signiﬁcantly smaller than HKauﬀ: for 819 it",
+          "bbox": [
+            167.28,
+            618.17,
+            485.31,
+            636.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "has only 11 generators, and for 942 it has only 9 generators.",
+          "bbox": [
+            167.28,
+            631.53,
+            428.52,
+            642.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "• Finally, although not explicitly stated in [6], the Kauﬀman homology",
+          "bbox": [
+            157.32,
+            655.14,
+            485.49,
+            672.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "enjoys the symmetry q ↔q−1:",
+          "bbox": [
+            167.28,
+            665.91,
+            299.76,
+            684.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "∼= HKauﬀ",
+          "bbox": [
+            299.28,
+            683.75,
+            340.36,
+            704.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "HKauﬀ",
+          "bbox": [
+            264.96,
+            684.65,
+            292.72,
+            703.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "i,−j,∗.",
+          "bbox": [
+            321.0,
+            686.61,
+            347.04,
+            698.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "i,j,∗",
+          "bbox": [
+            273.36,
+            691.11,
+            288.24,
+            698.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        }
+      ]
+    }
+  ]
+}

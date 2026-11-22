@@ -3,21 +3,26 @@
  "doc_id": "arxiv-2201.05665v1",
  "source_sha256": "bad7bde03d199a73",
  "brief": "HAROLD WIDOM’S WORK IN RANDOM MATRIX THEORY — This is a survey of Harold Widom’s work in random matrices.",
- "extended": "**HAROLD WIDOM’S WORK IN RANDOM MATRIX THEORY**\n\n*IVAN Z. CORWIN, PERCY A. DEIFT, AND ALEXANDER R. ITS*\n\n16 pp, 8 sections.\n\n**Abstract.** This is a survey of Harold Widom’s work in random matrices. We start with his pioneering papers on the sine-kernel determinant, continue with his and Craig Tracy’s groundbreaking results concerning the distribution functions of random matrix theory, touch on the remarkable universality of the Tracy-Widom distributions in mathematics and physics, and close with Tracy and Widom’s remarkable work on the asymmetric simple exclusion pro- cess.\n\n**Outline.** 2 The sine-kernel determinant; 1 Introduction; 3 The Tracy-Widom distribution functions; 4 Universality of the Tracy-Widom Distribution; 4.1 General invariant ensembles and the Wigner; 4.2 Random permutations; 5 The asymmetric simple exclusion process. Har; References",
+ "extended": "**HAROLD WIDOM’S WORK IN RANDOM MATRIX THEORY**\n\n*IVAN Z. CORWIN, PERCY A. DEIFT, AND ALEXANDER R. ITS*\n\n16 pp, 9 sections.\n\n**Abstract.** This is a survey of Harold Widom’s work in random matrices. We start with his pioneering papers on the sine-kernel determinant, continue with his and Craig Tracy’s groundbreaking results concerning the distribution functions of random matrix theory, touch on the remarkable universality of the Tracy-Widom distributions in mathematics and physics, and close with Tracy and Widom’s remarkable work on the asymmetric simple exclusion pro- cess.\n\n**Outline.** Front matter; 1 Introduction; 2 The sine-kernel determinant; 3 The Tracy-Widom distribution functions; 4 Universality of the Tracy-Widom Distribution; 4.1 General invariant ensembles and the Wigner; 4.2 Random permutations; 5 The asymmetric simple exclusion process. Har; References",
  "tokens": {
   "brief": 26,
-  "extended": 216
+  "extended": 219
  },
  "sections": [
   {
-   "id": "sec-000-2-the-sine-kernel-determinant",
-   "title": "The sine-kernel determinant",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-1"
   },
   {
-   "id": "sec-001-1-introduction",
+   "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-3"
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-2-the-sine-kernel-determinant",
+   "title": "The sine-kernel determinant",
+   "pages": "2-3"
   },
   {
    "id": "sec-002-3-the-tracy-widom-distribution-functions",

@@ -1,0 +1,24 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "tlcat",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "a730322ec9fe281c20846b6311cb6221e06a402ca33071267ff508bc4514601a",
+  "file": "TLCat.pdf"
+ },
+ "provenance": {
+  "title": "The Temperley-Lieb Category",
+  "authors": null,
+  "arxiv": null,
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

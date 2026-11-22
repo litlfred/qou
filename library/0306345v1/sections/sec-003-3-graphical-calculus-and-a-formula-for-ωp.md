@@ -8,7 +8,10 @@ pages: 9-12
 source_pdf: 0306345v1.pdf
 source_sha256: 936aa08026b2683b
 toc_source: inferred
+doc_brief: "Skein-theoretical derivation of some formulas of Habiro — We use skein theory to compute the coeﬃcients of certain power series considered by Habiro in his theory of sl2 invariants of integral homol"
+duplicate_of: "agt-v3-n1-p17-p"
 ---
+Graphical calculus and a formula for ωp
 Let us write ω = ω+ and put
 ωp =
 ∞
@@ -60,163 +63,83 @@ b
 a
 (26)
 Algebraic & Geometric Topology, Volume 3 (2003)
-546
-Gregor Masbaum
-n
-=
-· · ·
-· · ·
-,
-a
-b
-c
-=
-a
-b
-c
-k
-i
-j
+546 Gregor Masbaum
+
 Figure 2: How to expand colored edges and vertices. The boxes stand for appropriate
 Jones-Wenzl idempotents.
-Here the sum is over those colors c so that the triple (a, b, c) is admissible, we
-have ⟨c⟩= ⟨ec⟩= (−1)c[c + 1], and the trihedron coeﬃcient ⟨a, b, c⟩is (see
+
+Here the sum is over those colors c so that the triple (a,b,c) is admissible, we
+have (c) = (e-) = (—1)°{e + 1], and the trihedron coefficient (a,b,c) is (see
 [MV, Thm. 1]):
-⟨a, b, c⟩=
-a
-c
-b
-= (−1)i+j+k [i + j + k + 1]! [i]! [j]! [k]!
-[a]! [b]! [c]!
-(27)
-(here i, j, k are the internal colors as deﬁned in (25)). Note that ⟨n, n, 2n⟩=
-⟨2n⟩so that
-n
-n
-=
-n
-n
-2n
-n
-n
-+
-. . .
-(28)
+
+Cc
+
+_ viajar lit p++ A! A! La! ay!
+(a,b, ¢) = Co = (“i [a]! [B]! [ec]! (7)
+
+(here i,j,k are the internal colors as defined in (25)). Note that (n,n, 2n) =
+(2n) so that
+
+TU Soar< +o (28)
+
 We will need the following lemma.
-Lemma 3.1 For 0 ≤k ≤n, one has
+
+Lemma 3.1 For 0 <k <n, one has
+
 2n
-2n
-n
-n
-n
-n 2k
-= ([k]!)2
-[2k]!
-2n
-Proof This follows from the formula for the tetrahedron coeﬃcient given in
-[MV, Thm. 2]. (The sum over ζ in that formula reduces to just one term.)
+
+Proof This follows from the formula for the tetrahedron coefficient given in
+[MV, Thm. 2]. (The sum over ¢ in that formula reduces to just one term.) O
+
 The key observation is that
-2n
+
 2n
 n
-n
-Rk
-= 0
-for k̸ = n .
-(29)
+
+mi = 0 for k#n. (29)
+\ Jn
+2n
+
 Algebraic & Geometric Topology, Volume 3 (2003)
-Skein-theoretical derivation of some formulas of Habiro
-547
+Skein-theoretical derivation of some formulas of Habiro 547
+
 Indeed, if k < n, there are at most 2k vertical strands in the middle and so
-the result is zero because of the Jones-Wenzl idempotents f2n at the top and
-bottom. On the other hand, if k > n, the result is zero because Rk annihilates
+the result is zero because of the Jones-Wenzl idempotents fg, at the top and
+bottom. On the other hand, if k > n, the result is zero because R; annihilates
 all even polynomials in z of degree < 2k.
-If k = n one ﬁnds
-2n
-2n
+
+If k =n one finds
+2n 2n
 n
+
+Ral | = (-1)"({n}!)? . (30)
+
 n
-Rn
-= (−1)n({n}!)2
 2n
-.
-(30)
+
 Indeed, applying (28), one has
+
 2n
-2n
-n
-n
-Rn
-=
-2n
-2n
-n
-n
-Rn
-2n
-= ⟨Rn, e2n⟩
-⟨e2n⟩
-2n
-2n
-n
-n
-n
-n 2n
+
+"C BL Rn _ (Rnseon) Zan
+n 7 (€2n) n n
+
+2n 2n
+
 hence (30) follows from (5) and Lemma 3.1.
-On the other hand, since circling with ωp induces p full twists on even numbers
+
+On the other hand, since circling with w? induces p full twists on even numbers
 of strands (see (24)), we have, using (29), that
-µ−2p
-n
-cn,p
+
+2n 2n
+n n n
+Hy? Cnp fi = mu? af =
+n \ Jn
 2n
-2n
-n
-n
-Rn
-= µ−2p
-n
-2n
-2n
-n
-n
-ωp
-=
-2n
-2n
-n
-n
-· · ·
-(31)
+
 where there are 2p crossings in the last diagram. (See (3) for the twist eigen-
-values µi.) Applying the fusion equation (26), we have
-2n
-2n
-n
-n
-· · ·
-=
-n
-X
-k=0
-δ(2k; n, n)2p
-⟨2k⟩
-⟨n, n, 2k⟩
-2n
-2n
-n
-n
-n
-n 2k
-(32)
-where δ(c; a, b) is the half-twist coeﬃcient deﬁned by
-a
-b
-c
-= δ(c; a, b)
-a
-b
-c
-.
+values y;.) Applying the fusion equation (26), we have
+
 Algebraic & Geometric Topology, Volume 3 (2003)
 548
 Gregor Masbaum
@@ -256,4 +179,3 @@ k=0
 2k[2k + 1]
 [n + k + 1]! [n −k]! .
 (33)
-4

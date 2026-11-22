@@ -73,7 +73,7 @@ premature until then and has no bean of its own; it is recorded as a follow-on
 inside `qou-gkco`. (An earlier revision of this line cited a bean `qou-mlib`
 that was never created — corrected 2026-08-06.)
 
--- Ref: [manuscript] bean qou-ph1k; docs/coordination/1ppq-qbeta.md 2026-08-02
+-- Ref: [leitner2026] bean qou-ph1k; docs/coordination/1ppq-qbeta.md 2026-08-02
 -- Ref: [lewin1981] Polylogarithms and Associated Functions, L. Lewin
 -/
 import Mathlib.Analysis.SpecificLimits.Normed

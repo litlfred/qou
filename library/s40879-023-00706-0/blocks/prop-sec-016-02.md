@@ -1,0 +1,1 @@
+The Jacobian of Bring’s curve is isomorphic as a complex torus to E3 2 ×E1. Proof The proof in [29] is very general, considering Jacobians whose period matrix is invariant under Sn for any n. The isomorphism from the period matrix given in [54] is C #1 τ M$ D 0 0 E  = #1, τ diag(5, 5, 5, 1)$ 27 The isogeny classes 450b and 50b merge over Q[ √ −15].

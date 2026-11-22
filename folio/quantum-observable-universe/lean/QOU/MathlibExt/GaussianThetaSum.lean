@@ -79,11 +79,11 @@
   step is that complex power, which must be identified with the real `√(π/a)`
   on the positive imaginary axis (`hcpow`, via `Complex.ofReal_cpow`).
 
-  -- Ref: [manuscript] QOU/Knot/KashaevProdEndpoint.lean   (the (A) complement)
-  -- Ref: [manuscript] QOU/MathlibExt/RootsOfUnityProduct.lean
-  -- Ref: [manuscript] computations/probes/one_loop_c_sigma_tetrahedral_probe.py
-  -- Ref: [manuscript] computations/probes/laplace_sum_theta_exactness_probe.py
-  -- Ref: [manuscript] computations/probes/laplace_higher_remainder_probe.py
+  -- Ref: [leitner2026] QOU/Knot/KashaevProdEndpoint.lean   (the (A) complement)
+  -- Ref: [leitner2026] QOU/MathlibExt/RootsOfUnityProduct.lean
+  -- Ref: [leitner2026] computations/probes/one_loop_c_sigma_tetrahedral_probe.py
+  -- Ref: [leitner2026] computations/probes/laplace_sum_theta_exactness_probe.py
+  -- Ref: [leitner2026] computations/probes/laplace_higher_remainder_probe.py
 -/
 import Mathlib.NumberTheory.ModularForms.JacobiTheta.TwoVariable
 

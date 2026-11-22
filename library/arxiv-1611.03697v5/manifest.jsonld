@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1611.03697v5",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1611.03697v5/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "arxiv-1611.03697v5",
   "contains": [
+    "library/arxiv-1611.03697v5/sections/sec-front-matter",
     "library/arxiv-1611.03697v5/sections/sec-000",
     "library/arxiv-1611.03697v5/sections/sec-001",
     "library/arxiv-1611.03697v5/sections/sec-002",
@@ -59,10 +60,16 @@
     "library/arxiv-1611.03697v5/sections/sec-045",
     "library/arxiv-1611.03697v5/sections/sec-046",
     "library/arxiv-1611.03697v5/sections/sec-047",
-    "library/arxiv-1611.03697v5/sections/sec-048"
+    "library/arxiv-1611.03697v5/sections/sec-048",
+    "library/arxiv-1611.03697v5/sections/sec-049",
+    "library/arxiv-1611.03697v5/sections/sec-050",
+    "library/arxiv-1611.03697v5/sections/sec-051",
+    "library/arxiv-1611.03697v5/sections/sec-052",
+    "library/arxiv-1611.03697v5/sections/sec-053",
+    "library/arxiv-1611.03697v5/sections/sec-054"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",

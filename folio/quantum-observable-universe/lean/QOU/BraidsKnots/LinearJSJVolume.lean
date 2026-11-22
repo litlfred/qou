@@ -7,7 +7,7 @@ namespace QOU.BraidsKnots
 An opaque type representing the knot complement of an isotope `(Z, N)`.
 (Postulated — the construction lives in the categorical substrate.)
 -/
--- Ref: [manuscript] §brings-surface — the atomic knot complement of an
+-- Ref: [leitner2026] §brings-surface — the atomic knot complement of an
 -- isotope (Z,N) is a QOU substrate construction; this names it as an
 -- opaque input rather than re-deriving the categorical construction here.
 opaque AtomicKnot (Z N : ℕ) : Type
@@ -23,7 +23,7 @@ opaque Vol (K : Type) : ℝ
 /--
 The foundational topological volume quanta for the QOU nucleon blocks.
 -/
--- Ref: [manuscript] §mass-theory — Vol_p, Vol_n are the QOU proton/neutron
+-- Ref: [leitner2026] §mass-theory — Vol_p, Vol_n are the QOU proton/neutron
 -- block volume quanta (substrate-fixed constants), not external values.
 opaque Vol_p : ℝ
 opaque Vol_n : ℝ
@@ -67,17 +67,24 @@ rather than on a mislabelled axiom. -/
 
     This is the *open* part. It is a primary conjecture carrier: it takes no
     other conjecture class as a hypothesis, and **no instance is provided**. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/jsj-decomposition-linearity.md
-class AtomicJSJDecomposition : Prop where
-  /-- The linear volume law that the decomposition hypothesis delivers,
-      via Thurston additivity over the `Z + N` pieces. -/
-  volume_linear : ∀ Z N : ℕ,
-    Vol (AtomicKnot Z N) = (Z : ℝ) * Vol_p + (N : ℝ) * Vol_n
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/jsj-decomposition-linearity.md
+class AtomicJSJDecomposition where
+  /-- Total hyperbolic volume of the `Z` proton JSJ pieces. -/
+  protonPieceVol : ℕ → ℝ
+  /-- Total hyperbolic volume of the `N` neutron JSJ pieces. -/
+  neutronPieceVol : ℕ → ℝ
+  /-- Isotope-independent proton piece quantum: `Z` proton pieces have volume `Z · Vol_p`. -/
+  proton_piece_sum : ∀ Z : ℕ, protonPieceVol Z = (Z : ℝ) * Vol_p
+  /-- Isotope-independent neutron piece quantum: `N` neutron pieces have volume `N · Vol_n`. -/
+  neutron_piece_sum : ∀ N : ℕ, neutronPieceVol N = (N : ℝ) * Vol_n
+  /-- Thurston JSJ volume additivity across the proton and neutron piece clusters. -/
+  thurston_jsj_split : ∀ Z N : ℕ,
+    Vol (AtomicKnot Z N) = protonPieceVol Z + neutronPieceVol N
 
-/-- The linear law, conditional on the decomposition hypothesis. -/
-theorem JSJ_volume_additivity [AtomicJSJDecomposition] (Z N : ℕ) :
-    Vol (AtomicKnot Z N) = (Z : ℝ) * Vol_p + (N : ℝ) * Vol_n :=
-  AtomicJSJDecomposition.volume_linear Z N
+/-- The linear law, derived from the JSJ piece split and per-nucleon piece quanta. -/
+theorem JSJ_volume_additivity [ctx : AtomicJSJDecomposition] (Z N : ℕ) :
+    Vol (AtomicKnot Z N) = (Z : ℝ) * Vol_p + (N : ℝ) * Vol_n := by
+  rw [ctx.thurston_jsj_split Z N, ctx.proton_piece_sum Z, ctx.neutron_piece_sum N]
 
 /--
 **Cluster additivity.** Combining two nucleon clusters adds their volumes
@@ -108,6 +115,21 @@ theorem vol_proton_increment [AtomicJSJDecomposition] (Z N : ℕ) :
 -/
 theorem vol_neutron_increment [AtomicJSJDecomposition] (Z N : ℕ) :
     Vol (AtomicKnot Z (N + 1)) - Vol (AtomicKnot Z N) = Vol_n := by
+  rw [JSJ_volume_additivity, JSJ_volume_additivity]
+  simp only [Nat.cast_add, Nat.cast_one]
+  ring
+
+/-- **Vacuum normalisation.** At `Z = 0, N = 0`, the atomic knot volume vanishes. -/
+theorem vol_vacuum_zero [AtomicJSJDecomposition] :
+    Vol (AtomicKnot 0 0) = 0 := by
+  rw [JSJ_volume_additivity]
+  simp only [Nat.cast_zero]
+  ring
+
+/-- **Isobar volume difference.** Exchanging a neutron for a proton at fixed
+    mass number `A = Z + N + 1` shifts the hyperbolic volume by `Vol_p - Vol_n`. -/
+theorem vol_isobar_diff [AtomicJSJDecomposition] (Z N : ℕ) :
+    Vol (AtomicKnot (Z + 1) N) - Vol (AtomicKnot Z (N + 1)) = Vol_p - Vol_n := by
   rw [JSJ_volume_additivity, JSJ_volume_additivity]
   simp only [Nat.cast_add, Nat.cast_one]
   ring

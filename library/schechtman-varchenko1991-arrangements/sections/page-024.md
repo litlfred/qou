@@ -1,0 +1,73 @@
+---
+doc_id: schechtman-varchenko1991-arrangements
+doc_title: "Arrangements of hyperplanes and Lie algebra homology"
+section_id: page-024
+section_title: "Page 24"
+pages: 24-24
+pdf_page: 24
+source_pdf: schechtman-varchenko1991-arrangements.pdf
+source_sha256: 0100fd32438740f0
+text_source: ocr
+granularity: page
+doc_brief: "Arrangements of hyperplanes and Lie algebra homology — 56 sections: Page 1; Page 2; Page 3"
+---
+162 V.V. Schechtman and A.N. Varchenko
+
+We have by induction
+
+k
+dy X= — Y d; X,-;= —
+i=1
+
+ime
+
+xa dy Ve-i-p
+
+ko pk-1
+=~ x (x ees xy do dn Ye-ns
+
+n=1 \p=0 n=1
+
+and we are done.
+
+Step IJ. We can choose a solution y(A) to (4.6.5.3) convergent in a neighbourhood
+of zero.
+
+Indeed, since x(A), d(A) are convergent for small A, there exist constants
+A, M>1 such that |x;|, |d;|< AM! for all i. On every step of solving (4.6.5.4)
+we solve an equation of the form x=dy y. We may suppose that, given x such
+that dy x=0, we choose y such that |y| SM |x|. Then one shows by induction
+that |y;|< A 2'M?!*!, The Lemma is proved. 1
+
+4.6.6 Corollary. Let f(A): (A’, d(2)) > (A", d’(A)) be a map of complexes of finite
+dimensional complex vector spaces with f (A), d(A), d'(A) depending holomorphically
+on A for small 2. Suppose that f (0) is a quasiisomorphism.
+
+Then f (A) is a quasiisomorphism for small 4.
+
+Proof. Apply 4.6.5 to the cone of f(4). 0
+
+Now, applying the above corollary to I(A) (4.6.2) we get the assertion of
+Theorem 4.6. (J
+
+4.6.7 Remark. The idea of the above proof arose from the discussion with Misha
+Kapranov who explained to us the work [N]. We are very gratefull to him.
+
+4.6.8 Remark. Theorem 4.6 proves a weak form of a conjecture made by Aomoto
+
+[A].
+
+4.7 Remarks on relative cohomology. Let us denote by C,,,(U(@); S(a)) the
+complex of complex singular chains whose symplices may have a boundary
+on Y(@). Let C;, be the corresponding cochain complex. By definition
+
+(4.7.1) H(C,,(U(); S (=H, j, F(a)
+where j: U(@)OV.
+Fix a marking x of @ as in 4.2, and branches of log 4,, he@ in a neighbour-
+hood of x(V). Then the rule (4.2.4) defines the map of complexes
+(4.7.2) u'(a): C,,(U(@); f(a) > (F (©), d).
+It seems very probable that it is always a quasiisomorphism (cf. 4.3).
+
+Consider a symplex A(F) for some FeFl?(@). Put as usually ¢77=
+T] exp(2a(A) log 4).
+H

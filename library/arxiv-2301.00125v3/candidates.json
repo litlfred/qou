@@ -1,0 +1,145 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2301.00125v3",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "7ecd0cff7d6c2ec4ca969bc68728e9d29769c57dfa49b482addae9a11ff89cc0",
+  "file": "2301.00125v3.pdf"
+ },
+ "provenance": {
+  "title": "Generating Function for Pinsky\u2019s Combinatorial Second Moment Formula for the Generalized Ulam Problem",
+  "authors": "Samen Hossein",
+  "arxiv": {
+   "id": "2301.00125",
+   "version": "3",
+   "primary_class": "math.CO",
+   "stamp_date": "3 May 2023"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 4,
+  "by_kind": {
+   "lemma": 4
+  },
+  "formalization_candidates": 4,
+  "by_domain": {
+   "math": 4
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 4
+  },
+  "by_evidence_location": {
+   "in-paper": 4
+  },
+  "by_lean_status": {
+   "unformalized": 4
+  },
+  "needs_lean_proof": 4
+ },
+ "candidates": [
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3.4",
+   "name": null,
+   "statement": "So g(x; 1) \u2208(0, \u221e) by (65) and (214). Since \u0000g(x; \u03be) \u00012 and \u0000f(x; \u03be) \u00012 satisfy \u0000g(x; \u03be) \u00012 = Q1(x; \u03be) and \u0000f(x; \u03be) \u00012 = Q1(x; \u03be) \u03be2 , (216) and since g(x; 1) and f(x; 1) have the same phase (they are both real and positive) we see that g(x; \u03be)/\u03be and f(x; \u03be) are equal, for \u03be in a neighborhood of 1. But then de\ufb01ne the domain eD3(x) by eD3(x) = D2(x) \u2229D3(x) = \u0000U(0; d1(x)) \\ U(0; c1(x)) \u0001 \\ (c1(x), d1(x)) . (217) By analytic continuation this means \u2200\u03be \u2208eD3(x) , we have g(x; \u03be) = \u03be \u00b7 f(x; \u03be) . (218) This follows because eD3(x) is a connected, simply connected set. Therefore, there is unique analytic con- tinuation of both \u03be 7\u2192g(x; \u03be) and \u03be 7\u2192\u03be \u00b7 ",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-017-g-elementary-proofs-from-contour-deformations.md (p. 28-29)",
+   "external_refs": [],
+   "proof_excerpt": "We note that by continuity of the analytic function g, and the fact that D4(x) is a subset of the closure of D3(x) (which is all of C), we may give the alternative formula \u2200\u03be \u2208D4(x) , we have eg(x; \u03be) = lim \u03b6\u2192\u03be \u03b6\u2208D3(x) g(\u03b6) . (219) What we mean by saying this is the following: eq",
+   "section_file": "sections/sec-017-g-elementary-proofs-from-contour-deformations.md",
+   "section_title": "G Elementary proofs from contour deformations",
+   "pages": "28-29",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-017-g-elementary-proofs-from-contour-deformations.md (p. 28-29)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-017-01",
+   "block_iri": "library/arxiv-2301.00125v3/blocks/lem-sec-017-01",
+   "claim_id": "arxiv-2301.00125v3#lemma:3.4",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "I",
+   "name": null,
+   "statement": "1 For x, w \u2208(0, \u221e) satisfying 4x + w2 < 1, we have A2(x, w) = \u03c0 \u221a1 \u22124x Z \u2212(1\u22124x)1/2 \u2212(1+4x)\u22121/2 q\u00001 \u2212(1 + 4x)r2\u0001\u00001 \u2212(1 \u22124x)\u22121r2\u0001 \u00b7 Q1 \u0000x; L\u22121(r) \u0001 Q2 \u0000x, w; L\u22121(r) \u0001 dr . (255) Changing variables, by letting t = r/\u221a1 \u22124x, this gives A2(x, w) = 2 \u03c0 Z \u22121 \u2212(1\u221216x2)\u22121/2 q (1 \u2212t2) \u00001 \u2212(1 \u221216x2)t2\u0001 \u00b7 Q1 \u0000x; L\u22121(r \u221a1 \u22124x) \u0001 Q2 \u0000x, w; L\u22121(r \u221a1 \u22124x) \u0001 dr . (256) This still leaves the problem of determining the transformation behavior for Q1(x; \u00b7)/Q2(x, w; \u00b7). Fortunately, one easy solution is to obtain the partial fraction decomposition for this rational function.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-019-i-elliptic-integrals-and-linear-fractional-trans.md (p. 31-35)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-019-i-elliptic-integrals-and-linear-fractional-trans.md",
+   "section_title": "I Elliptic integrals and linear fractional transformations",
+   "pages": "31-35",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-019-i-elliptic-integrals-and-linear-fractional-trans.md (p. 31-35)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-019-01",
+   "block_iri": "library/arxiv-2301.00125v3/blocks/lem-sec-019-01",
+   "claim_id": "arxiv-2301.00125v3#lemma:I",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "I",
+   "name": null,
+   "statement": "2 Suppose AD \u2212BC\u0338 = 0 and suppose we have \u03c1 \u2208C \u222a{\u221e} \\ {\u2212D/C}, then for \u03a6 and \u03a6\u22121 as in (244) and (245), we have \u03a6\u22121(\u03be) \u2212\u03c1 = \u2212 C C\u03c1 + D + AD \u2212BC (C\u03c1 + D)2 \u00b7 \u03be \u2212\u03a6(\u03c1) . (257)",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-019-i-elliptic-integrals-and-linear-fractional-trans.md (p. 31-35)",
+   "external_refs": [],
+   "proof_excerpt": "Simply calculate \u03a6\u22121(\u03be) \u2212\u03c1 = D\u03be \u2212B \u2212C\u03be + A \u2212\u03c1 = D\u03be \u2212B + C\u03be\u03c1 \u2212A\u03c1 \u2212C\u03be + A = (D + C\u03c1) \u03be \u2212(A\u03c1 + B) \u2212C\u03be + A . (258) So 1 \u03a6\u22121(\u03be) \u2212\u03c1 = \u2212C\u03be + A (D + C\u03c1) \u03be \u2212(A\u03c1 + B) = 1 C\u03c1 + D \u00b7 \u2212C\u03be + A \u03be \u2212A\u03c1+B C\u03c1+D . (259) Rewriting this as a partial fraction, 1 \u03a6\u22121(\u03be) \u2212\u03c1 = \u2212 C C\u03c1 + D + 1 C\u03c1 + D \u00b7 C\u03be \u2212C",
+   "section_file": "sections/sec-019-i-elliptic-integrals-and-linear-fractional-trans.md",
+   "section_title": "I Elliptic integrals and linear fractional transformations",
+   "pages": "31-35",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-019-i-elliptic-integrals-and-linear-fractional-trans.md (p. 31-35)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-019-02",
+   "block_iri": "library/arxiv-2301.00125v3/blocks/lem-sec-019-02",
+   "claim_id": "arxiv-2301.00125v3#lemma:I",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "I",
+   "name": null,
+   "statement": "3 Let Z(x, w) = {A1(x, w), A2(x, w), b1(x, w), b2(x, w)}, which is the variety of roots of Q2(x, w; \u00b7). Then, as meromorphic function on C\u222a{\u221e}, we have the partial fraction decomposition of Q1(x; \u00b7)/Q2(x, w; \u00b7): \u2200z \u2208C \u222a{\u221e} \\ Z(x, w) , Q1(x; z) Q2(x, w; z) = 1 + X \u03c1\u2208Z(x,w) z \u2212\u03c1 \u00b7 w2\u03c12 x2 Y \u03c3\u2208Z(x,w)\\{\u03c1} \u03c1 \u2212\u03c3 . (261)",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-019-i-elliptic-integrals-and-linear-fractional-trans.md (p. 31-35)",
+   "external_refs": [],
+   "proof_excerpt": "Note that by equation (49) we have \u2200\u03c1 \u2208Z(x, w) , Q1(x; \u03c1) = Q2(x, w; \u03c1) + w2\u03c12 = w2\u03c12 , (262) because Z(x, w) is the variety of roots of Q2(x, w; \u00b7). By equation (56), we know that for each \u03c1 \u2208Z(x, w), we have 1 Q2(x, w; z) = 1 x2 \u00b7 (z \u2212\u03c1) Y \u03c3\u2208Z(x,w)\\{\u03c1} 1 z \u2212\u03c3 . (263) Therefore,",
+   "section_file": "sections/sec-019-i-elliptic-integrals-and-linear-fractional-trans.md",
+   "section_title": "I Elliptic integrals and linear fractional transformations",
+   "pages": "31-35",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-019-i-elliptic-integrals-and-linear-fractional-trans.md (p. 31-35)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-019-03",
+   "block_iri": "library/arxiv-2301.00125v3/blocks/lem-sec-019-03",
+   "claim_id": "arxiv-2301.00125v3#lemma:I",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  }
+ ]
+}

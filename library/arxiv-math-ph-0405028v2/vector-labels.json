@@ -1,0 +1,2093 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-math-ph-0405028v2",
+  "pages": [
+    {
+      "page": 2,
+      "rotation": 0,
+      "drawings": 13,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1: Rational surgery description of the Brieskorn homology sphere Σ(p1, p2, p3)"
+      ],
+      "labels": [
+        {
+          "text": "In this article we consider the Brieskorn homology spheres Σ(p1, p2, p3) where pi are pairwise",
+          "bbox": [
+            84.0,
+            69.37,
+            540.03,
+            87.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "coprime positive integers. This is the intersection of the singular complex surface",
+          "bbox": [
+            72.0,
+            86.29,
+            460.83,
+            102.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "z p1",
+          "bbox": [
+            253.92,
+            110.3,
+            270.89,
+            124.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR6"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "+ z p2",
+          "bbox": [
+            274.56,
+            110.3,
+            303.17,
+            124.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR6"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "+ z p3",
+          "bbox": [
+            306.84,
+            110.3,
+            335.45,
+            124.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR6"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "= 0",
+          "bbox": [
+            339.72,
+            112.95,
+            358.05,
+            124.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            259.32,
+            118.82,
+            263.55,
+            126.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            291.72,
+            118.82,
+            295.95,
+            126.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            324.0,
+            118.82,
+            328.23,
+            126.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "in complex three-space with the unit ﬁve-sphere |z1|2 + |z2|2 + |z3|2 = 1. The manifold Σ(2, 3, 5)",
+          "bbox": [
+            72.0,
+            131.67,
+            540.1,
+            156.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "is the Poincar´e homology sphere. These manifolds have a rational surgery description as in Fig. 1,",
+          "bbox": [
+            72.0,
+            149.29,
+            539.99,
+            165.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "and the fundamental group has the presentation",
+          "bbox": [
+            72.0,
+            166.21,
+            298.54,
+            182.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "D",
+          "bbox": [
+            184.8,
+            179.77,
+            192.1,
+            224.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "E",
+          "bbox": [
+            495.0,
+            179.77,
+            502.3,
+            224.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "h center, x pk",
+          "bbox": [
+            251.76,
+            182.89,
+            320.75,
+            234.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI12",
+            "CMMI6",
+            "CMMI8",
+            "Times-Roman"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            98.16,
+            183.37,
+            103.64,
+            227.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            163.56,
+            183.37,
+            169.04,
+            227.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "= h−qk for k = 1, 2, 3, x1 x2 x3 = 1",
+          "bbox": [
+            325.2,
+            186.13,
+            494.97,
+            207.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY8",
+            "Times-Roman"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(1.4)",
+          "bbox": [
+            517.08,
+            189.61,
+            540.02,
+            205.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "π1",
+          "bbox": [
+            86.88,
+            193.23,
+            97.71,
+            205.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Σ(p1, p2, p3)",
+          "bbox": [
+            103.68,
+            193.23,
+            163.54,
+            205.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            172.32,
+            193.23,
+            181.42,
+            205.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "x1, x2, x3, h",
+          "bbox": [
+            192.12,
+            193.23,
+            248.77,
+            205.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "k",
+          "bbox": [
+            309.48,
+            199.58,
+            313.89,
+            207.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "where qk ∈Z such that",
+          "bbox": [
+            72.0,
+            212.77,
+            182.96,
+            238.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMSY10",
+            "MSBM10",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            291.96,
+            235.1,
+            296.19,
+            243.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            285.48,
+            235.45,
+            302.74,
+            280.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "qk",
+          "bbox": [
+            306.24,
+            238.95,
+            315.81,
+            251.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(1.5)",
+          "bbox": [
+            517.08,
+            243.49,
+            540.02,
+            259.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "P",
+          "bbox": [
+            272.28,
+            247.11,
+            279.82,
+            259.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "= 1",
+          "bbox": [
+            321.48,
+            247.11,
+            339.69,
+            259.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "pk",
+          "bbox": [
+            305.88,
+            255.27,
+            316.17,
+            268.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "k=1",
+          "bbox": [
+            286.32,
+            264.14,
+            301.83,
+            272.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Here and hereafter we use",
+          "bbox": [
+            72.0,
+            273.97,
+            196.83,
+            289.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(1.6)",
+          "bbox": [
+            517.08,
+            297.01,
+            540.02,
+            312.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "P = P(p1, p2, p3) = p1 p2 p3",
+          "bbox": [
+            237.48,
+            300.63,
+            374.07,
+            314.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            300.06,
+            326.42,
+            305.91,
+            338.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "p1/q1",
+          "bbox": [
+            205.15,
+            370.22,
+            231.1,
+            382.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "p3/q3",
+          "bbox": [
+            378.28,
+            370.22,
+            404.23,
+            382.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "p2/q2",
+          "bbox": [
+            300.36,
+            434.32,
+            326.31,
+            447.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 1: Rational surgery description of the Brieskorn homology sphere Σ(p1, p2, p3)",
+          "bbox": [
+            130.56,
+            446.97,
+            481.47,
+            460.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "Helvetica",
+            "Times-Roman"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Asymptotic behavior of the quantum invariant for the homology spheres was studied in Refs. 19,",
+          "bbox": [
+            84.0,
+            485.29,
+            539.99,
+            501.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "20, 22, 34–39. Our purpose here is to reformulate these results number theoretically by use of",
+          "bbox": [
+            72.0,
+            502.21,
+            540.02,
+            518.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "properties of the modular form following a method of Lawrence and Zagier [23]. A key observation",
+          "bbox": [
+            72.0,
+            519.13,
+            540.22,
+            535.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "is a fact that the Witten–Reshetikhin–Turaev (WRT) invariant for the Brieskorn homology spheres",
+          "bbox": [
+            72.0,
+            536.05,
+            539.97,
+            552.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "is regarded as a limit value of the Eichler integral of the modular form with weight 3/2 as was",
+          "bbox": [
+            72.0,
+            552.97,
+            539.97,
+            568.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "suggested in Ref. 23. Using a nearly modular property of the Eichler integral, we can derive an",
+          "bbox": [
+            72.0,
+            569.89,
+            539.98,
+            585.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "exact asymptotic behavior of the WRT invariant. Correspondingly, we can ﬁnd an interpretation for",
+          "bbox": [
+            72.0,
+            586.81,
+            540.02,
+            602.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "topological invariants such as the Chern–Simons invariant, the Casson invariant [42], the Ohtsuki",
+          "bbox": [
+            72.0,
+            603.85,
+            540.08,
+            619.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "invariant [27–30], and the Ray–Singer–Reidemeister torsion from the viewpoint of the modular",
+          "bbox": [
+            72.0,
+            620.77,
+            540.14,
+            636.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "form.",
+          "bbox": [
+            72.0,
+            637.69,
+            98.27,
+            653.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "This paper is organized as follows. In section 2 we construct the WRT invariant for the Brieskorn",
+          "bbox": [
+            84.0,
+            661.57,
+            539.98,
+            677.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "homology spheres Σ(p1, p2, p3) following Ref. 22. We use a surgery description of the 3-manifold,",
+          "bbox": [
+            72.0,
+            678.49,
+            540.11,
+            694.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "and apply a formula in Ref. 13. In section 3 we introduce the modular form with weight 3/2. This",
+          "bbox": [
+            72.0,
+            695.41,
+            540.09,
+            711.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            303.72,
+            710.56,
+            308.2,
+            722.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        }
+      ]
+    },
+    {
+      "page": 11,
+      "rotation": 0,
+      "drawings": 18,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2: The number of the integral lattice points in the tetrahedron coincides with γ(p1, p2, p3)."
+      ],
+      "labels": [
+        {
+          "text": "ℓ3",
+          "bbox": [
+            301.2,
+            62.42,
+            310.35,
+            75.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(0, 0, p3)",
+          "bbox": [
+            313.53,
+            91.19,
+            355.51,
+            103.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "b",
+          "bbox": [
+            305.95,
+            97.18,
+            314.92,
+            106.15
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Type3 (200 0 R)"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "b",
+          "bbox": [
+            332.25,
+            161.48,
+            341.22,
+            170.45
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Type3 (200 0 R)"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "(0, p2, 0)",
+          "bbox": [
+            430.02,
+            216.31,
+            472.0,
+            229.07
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "b",
+          "bbox": [
+            424.85,
+            228.18,
+            433.82,
+            237.15
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Type3 (200 0 R)"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "ℓ2",
+          "bbox": [
+            453.64,
+            235.08,
+            462.8,
+            247.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(p1, 0, 0)",
+          "bbox": [
+            161.49,
+            238.96,
+            203.59,
+            251.72
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "b",
+          "bbox": [
+            213.35,
+            247.38,
+            222.32,
+            256.35
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Type3 (200 0 R)"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "ℓ1",
+          "bbox": [
+            167.89,
+            263.6,
+            177.04,
+            276.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 2: The number of the integral lattice points in the tetrahedron coincides with γ(p1, p2, p3).",
+          "bbox": [
+            110.16,
+            289.29,
+            501.69,
+            302.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "Helvetica",
+            "Times-Roman"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Let N3(p1, p2, p3) be the number of the integral lattice points (ℓ1, ℓ2, ℓ3) such that 0 < ℓk < pk",
+          "bbox": [
+            84.0,
+            332.05,
+            539.25,
+            349.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "and 0 < P",
+          "bbox": [
+            72.0,
+            343.45,
+            126.49,
+            396.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI12",
+            "CMR12",
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "pj < 1. Then by the symmetry of the triple,",
+          "bbox": [
+            134.04,
+            348.97,
+            341.51,
+            369.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMMI8",
+            "CMR12",
+            "Times-Roman"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "ℓj",
+          "bbox": [
+            134.4,
+            349.58,
+            140.93,
+            358.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "j",
+          "bbox": [
+            126.48,
+            359.06,
+            129.9,
+            367.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "(ℓ1, ℓ2, ℓ3)",
+          "bbox": [
+            203.04,
+            377.19,
+            251.62,
+            389.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(ℓ1, p2 −ℓ2, p3 −ℓ3)",
+          "bbox": [
+            312.0,
+            377.19,
+            410.98,
+            399.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(4.11)",
+          "bbox": [
+            511.08,
+            384.61,
+            540.02,
+            400.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(p1 −ℓ1, ℓ2, p3 −ℓ3)",
+          "bbox": [
+            203.04,
+            397.59,
+            302.02,
+            419.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(p1 −ℓ1, p2 −ℓ2, ℓ3)",
+          "bbox": [
+            312.0,
+            397.59,
+            410.98,
+            419.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "we have",
+          "bbox": [
+            72.0,
+            416.05,
+            111.15,
+            432.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "γ(p1, p2, p3) = D(p1, p2, p3) −N3(p1, p2, p3)",
+          "bbox": [
+            198.24,
+            439.83,
+            413.74,
+            460.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "It is well known that N3(p1, p2, p3) was computed by Mordell [26] (see also Ref. 32), and by",
+          "bbox": [
+            72.0,
+            458.77,
+            539.98,
+            475.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "substituting this result, we get eq. (4.8).",
+          "bbox": [
+            72.0,
+            475.69,
+            261.23,
+            491.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "□",
+          "bbox": [
+            530.76,
+            476.33,
+            540.05,
+            488.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSAM10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The Casson invariant λC(M) for the Brieskorn homology spheres M = Σ(p1, p2, p3) is given",
+          "bbox": [
+            84.0,
+            509.65,
+            540.22,
+            533.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "by [4,7] (also see, e.g., Ref. 41)",
+          "bbox": [
+            72.0,
+            526.57,
+            223.94,
+            542.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            95.88,
+            551.17,
+            101.36,
+            595.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            161.28,
+            551.17,
+            166.76,
+            595.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "= −1",
+          "bbox": [
+            170.04,
+            553.11,
+            198.81,
+            581.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "λC",
+          "bbox": [
+            81.96,
+            561.15,
+            94.83,
+            573.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Σ(p1, p2, p3)",
+          "bbox": [
+            101.4,
+            561.15,
+            161.26,
+            573.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "2 (s(p1 p2, p3) + s(p2 p3, p1) + s(p1 p3, p2))",
+          "bbox": [
+            192.96,
+            561.15,
+            401.02,
+            581.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "\u0012",
+          "bbox": [
+            323.4,
+            574.09,
+            332.2,
+            618.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0013",
+          "bbox": [
+            429.84,
+            574.09,
+            438.64,
+            618.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "−P",
+          "bbox": [
+            293.28,
+            583.11,
+            315.34,
+            611.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1 −1",
+          "bbox": [
+            332.16,
+            583.11,
+            363.57,
+            611.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            371.28,
+            583.11,
+            394.17,
+            611.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            401.88,
+            583.11,
+            424.77,
+            611.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "24 P −1",
+          "bbox": [
+            454.2,
+            583.11,
+            500.01,
+            619.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            462.72,
+            583.11,
+            468.57,
+            595.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(4.12)",
+          "bbox": [
+            511.08,
+            587.53,
+            540.02,
+            603.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            441.24,
+            591.15,
+            450.34,
+            603.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "p 2",
+          "bbox": [
+            353.88,
+            598.22,
+            366.87,
+            611.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "p 2",
+          "bbox": [
+            384.48,
+            598.22,
+            397.47,
+            611.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "p 2",
+          "bbox": [
+            415.08,
+            598.22,
+            428.07,
+            611.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "24",
+          "bbox": [
+            306.48,
+            599.43,
+            318.21,
+            611.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "8",
+          "bbox": [
+            494.16,
+            599.43,
+            500.01,
+            611.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            359.76,
+            605.3,
+            363.99,
+            613.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            390.36,
+            605.3,
+            394.59,
+            613.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            420.96,
+            605.3,
+            425.19,
+            613.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "With this result, we have the following theorem.",
+          "bbox": [
+            72.0,
+            616.21,
+            302.27,
+            632.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Theorem 6. The Casson invariant is a minus half of the number of the Eichler integrals which do",
+          "bbox": [
+            72.0,
+            643.92,
+            539.98,
+            660.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Bold",
+            "Times-Italic"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "not vanish at τ →N ∈Z;",
+          "bbox": [
+            72.0,
+            662.07,
+            198.86,
+            684.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMSY10",
+            "MSBM10",
+            "Times-Italic"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            230.88,
+            680.89,
+            236.36,
+            725.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            296.16,
+            680.89,
+            301.64,
+            725.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "= −1",
+          "bbox": [
+            305.04,
+            682.83,
+            333.69,
+            711.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(4.13)",
+          "bbox": [
+            511.08,
+            687.25,
+            540.02,
+            703.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "λC",
+          "bbox": [
+            216.96,
+            690.87,
+            229.83,
+            703.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Σ(p1, p2, p3)",
+          "bbox": [
+            236.28,
+            690.87,
+            296.14,
+            703.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "2 γ(p1, p2, p3)",
+          "bbox": [
+            327.84,
+            690.87,
+            395.02,
+            711.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "11",
+          "bbox": [
+            301.56,
+            710.56,
+            310.48,
+            722.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        }
+      ]
+    }
+  ]
+}

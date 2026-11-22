@@ -23,7 +23,7 @@ LaTeX label: `rem:markov-closure-map-axiomatic` (Track C Step B).
 
 -- Sibling-chapter dependency: `Link` inductive (with `hopfLink`
 -- constructor) defined in `braid-link-types.lean`.
--- Ref: [manuscript] rem:braid-link-types
+-- Ref: [leitner2026] rem:braid-link-types
 
 namespace QOU.BraidKnot
 
@@ -80,7 +80,7 @@ class TrackCReducedAxiom (q : ℝ) [MarkovClosureMap2Strand] : Prop where
 
 /-! ## Downstream: c_3 = -2 derived under reduced axiom -/
 
--- Ref: [manuscript] rem:markov-closure-map-axiomatic
+-- Ref: [leitner2026] rem:markov-closure-map-axiomatic
 -- Ref: [jones1985] doi:10.2307/1971403
 /-- **Track C c_3 = -2 derived from `TrackCReducedAxiom`.** Under the
     axiomatic Markov-closure-map class + Track-C reduced axiom, the

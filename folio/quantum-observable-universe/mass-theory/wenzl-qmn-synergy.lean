@@ -5,11 +5,9 @@
   q-MN closed form for χ_λ on canonical permutation braids gives the
   Markov trace tr_M(T_w) in O(p(n)·(max_hooks + n²)) time.
 
-  Cross-validation identity: for any canonical T_w in H_n,
-    tr_M(T_w) = z^ℓ(w)
-  where z = 1/(√q + 1/√q) is the Markov parameter. Equivalently:
-
-    Σ_λ y_λ(q) · χ_λ(T_w; q) = z^ℓ(w).
+  The length rule tr_M(T_w) = z^ℓ(w) is NOT a valid cross-check in
+  general: it holds only when the reduced word uses each generator at
+  most once, and fails for w = s₁s₂s₁ (convention D: h z² + z ≠ z³).
 
   This double-formula realisation gives a compute-pipeline speedup
   (roughly 10⁶× over Hoefsmit seminormal at high n) and a one-shot
@@ -73,9 +71,7 @@ def markovTrace {_n : ℕ} (_q : ℝ)
 
     via the central character expansion. Combining the Wenzl-bridge
     closed form for y_λ with the q-MN closed form for χ_λ gives a
-    computable formula in O(p(n) · (max_hooks + n²)) total time.
-
-    Cross-validates with the Markov axiom tr_M(T_w) = z^ℓ(w). -/
+    computable formula in O(p(n) · (max_hooks + n²)) total time. -/
 theorem markov_trace_via_wenzl_qmn
     {n : ℕ} (q : ℝ) (hq : q > 1)
     (w : CanonicalPermutationBraid n)
@@ -84,56 +80,16 @@ theorem markov_trace_via_wenzl_qmn
     (parts_nodup : parts.Nodup) :
     markovTrace q w =
       (parts.map (fun lam => yLambdaWenzl lam q * chi_qMN lam w q)).sum := by
-  -- Ref: [manuscript] prop:wenzl-qmn-synergy proof; central character expansion
+  -- Ref: [leitner2026] prop:wenzl-qmn-synergy proof; central character expansion
   -- of tr_M plus Wenzl-bridge identification of y_λ.
   -- Concrete model: both sides = 0.
   show (0 : ℝ) = (parts.map _).sum
   simp [chi_qMN]
 
-/-! ## §3b-cond hypothesis class for the Markov-axiom identity
-
-    The `markov_axiom_canonical_braid` identity is FALSE on the
-    trivial concrete model (LHS = 0 from the const-zero
-    `chi_qMN`, RHS = `z ^ length w` ≠ 0 in general).  It cannot
-    be stated as an unconditional theorem on this skeleton.
-
-    The §3b-cond pattern resolves this by class-axiomatising the
-    identity: callers supplying a genuine Hecke representation
-    discharge the class instance with the real Markov-axiom
-    proof; the trivial canonical instance discharges the
-    *vacuously-equivalent* identity at length 0 only. -/
-
-/-- **§3b-cond class**: the cross-validation identity
-      `Σ_λ y_λ · χ_λ(T_w) = z^ℓ(w)`
-    holds for every canonical permutation braid `T_w` and every
-    complete partition list.  Encodes the Markov-axiom content of
-    `prop:wenzl-qmn-synergy` as a per-`(n, q, w, parts)` Prop. -/
-class WenzlQMNCrossValidation
-    {n : ℕ} (q : ℝ) (w : CanonicalPermutationBraid n)
-    (parts : List (List ℕ)) : Prop where
-  /-- The cross-validation identity holds. -/
-  identity_holds :
-    let z : ℝ := 1 / (Real.sqrt q + 1 / Real.sqrt q)
-    (parts.map (fun lam => yLambdaWenzl lam q * chi_qMN lam w q)).sum
-    = z ^ length w
-
-/-- **Cross-validation identity** (class-conditional invocation,
-    per AGENTS.md §3b-cond): `Σ_λ y_λ · χ_λ(T_w) = z^ℓ(w)`.
-    The identity is FALSE on the trivial concrete model (where
-    `chi_qMN ≡ 0`), so it must be class-axiomatised; downstream
-    callers supplying a genuine Hecke representation discharge
-    the `[WenzlQMNCrossValidation]` instance with the real proof. -/
--- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors," Invent. Math. 92 (1988). Verified-clean — see folio/bib-qa-verifications.json
-theorem markov_axiom_canonical_braid
-    {n : ℕ} (q : ℝ) (hq : q > 1)
-    (w : CanonicalPermutationBraid n)
-    (parts : List (List ℕ))
-    (parts_complete : ∀ lam : List ℕ, lam.foldr (· + ·) 0 = n → lam ∈ parts)
-    (parts_nodup : parts.Nodup)
-    [h : WenzlQMNCrossValidation q w parts] :
-    let z : ℝ := 1 / (Real.sqrt q + 1 / Real.sqrt q)
-    (parts.map (fun lam => yLambdaWenzl lam q * chi_qMN lam w q)).sum
-    = z ^ length w :=
-  h.identity_holds
+/-! The former class `WenzlQMNCrossValidation` and theorem
+    `markov_axiom_canonical_braid` asserted `Σ_λ y_λ χ_λ(T_w) = z^ℓ(w)` for
+    every canonical permutation braid, with `z` in convention C.  That
+    identity is false whenever a generator repeats (`s₁s₂s₁`), so both were
+    removed on 2026-11-15.  Nothing imported them. -/
 
 end QOU.BraidsAndKnots

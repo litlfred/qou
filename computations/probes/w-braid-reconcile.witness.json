@@ -1,0 +1,218 @@
+{
+ "producer": "computations/probes/w_braid_reconcile_probe.py",
+ "bean": "qou-0whz",
+ "arithmetic": "exact (sympy over Q(q)); no floats",
+ "q0_anchor": "none (symbolic in q)",
+ "q0Anchor": "independent",
+ "q0AnchorReason": "probe never reads q0: every quantity is exact over Q(q) (sympy), q a free symbol; imports only sympy and the standard library",
+ "C1_K_orientation": [
+  {
+   "h_slot": "std",
+   "K_on_e1": "q^+1",
+   "markov": true,
+   "z": "q**3/(q**2 + 1)",
+   "z_is_zD": true,
+   "partial_trace": [
+    [
+     "q**2",
+     "0"
+    ],
+    [
+     "0",
+     "q**2"
+    ]
+   ]
+  },
+  {
+   "h_slot": "std",
+   "K_on_e1": "q^-1",
+   "markov": false,
+   "z": null,
+   "z_is_zD": false,
+   "partial_trace": [
+    [
+     "1",
+     "0"
+    ],
+    [
+     "0",
+     "q**2 + 1 - 1/q**2"
+    ]
+   ]
+  },
+  {
+   "h_slot": "swp",
+   "K_on_e1": "q^+1",
+   "markov": false,
+   "z": null,
+   "z_is_zD": false,
+   "partial_trace": [
+    [
+     "q**2 + 1 - 1/q**2",
+     "0"
+    ],
+    [
+     "0",
+     "1"
+    ]
+   ]
+  },
+  {
+   "h_slot": "swp",
+   "K_on_e1": "q^-1",
+   "markov": true,
+   "z": "q**3/(q**2 + 1)",
+   "z_is_zD": true,
+   "partial_trace": [
+    [
+     "q**2",
+     "0"
+    ],
+    [
+     "0",
+     "q**2"
+    ]
+   ]
+  }
+ ],
+ "C2_schur_weyl_weight_preservation": {
+  "coproduct": "E⊗K+1⊗E",
+  "s1": {
+   "K": true,
+   "E": true,
+   "F": true
+  },
+  "s2": {
+   "K": true,
+   "E": true,
+   "F": true
+  },
+  "T(3,5)": {
+   "K": true,
+   "E": true,
+   "F": true
+  },
+  "s1^4": {
+   "K": true,
+   "E": true,
+   "F": true
+  }
+ },
+ "C3_component_count": {
+  "max_components_3_strand_closure": 3,
+  "components_T35_closure": 1,
+  "rhs_min_components_p_trefoil_unknot": 5
+ },
+ "C4_over_under_transmission": [
+  {
+   "h_slot": "std",
+   "sign": "+",
+   "over_strand_carries": "e1",
+   "K_on_over_strand": "q",
+   "pure_transposition": true,
+   "exchange_term": [
+    "0",
+    "0",
+    "0",
+    "0"
+   ]
+  },
+  {
+   "h_slot": "std",
+   "sign": "+",
+   "over_strand_carries": "e2",
+   "K_on_over_strand": "q^-1",
+   "pure_transposition": false,
+   "exchange_term": [
+    "0",
+    "0",
+    "q - 1/q",
+    "0"
+   ]
+  },
+  {
+   "h_slot": "std",
+   "sign": "-",
+   "over_strand_carries": "e1",
+   "K_on_over_strand": "q",
+   "pure_transposition": true,
+   "exchange_term": [
+    "0",
+    "0",
+    "0",
+    "0"
+   ]
+  },
+  {
+   "h_slot": "std",
+   "sign": "-",
+   "over_strand_carries": "e2",
+   "K_on_over_strand": "q^-1",
+   "pure_transposition": false,
+   "exchange_term": [
+    "0",
+    "-q + 1/q",
+    "0",
+    "0"
+   ]
+  },
+  {
+   "h_slot": "swp",
+   "sign": "+",
+   "over_strand_carries": "e1",
+   "K_on_over_strand": "q^-1",
+   "pure_transposition": false,
+   "exchange_term": [
+    "0",
+    "q - 1/q",
+    "0",
+    "0"
+   ]
+  },
+  {
+   "h_slot": "swp",
+   "sign": "+",
+   "over_strand_carries": "e2",
+   "K_on_over_strand": "q",
+   "pure_transposition": true,
+   "exchange_term": [
+    "0",
+    "0",
+    "0",
+    "0"
+   ]
+  },
+  {
+   "h_slot": "swp",
+   "sign": "-",
+   "over_strand_carries": "e1",
+   "K_on_over_strand": "q^-1",
+   "pure_transposition": false,
+   "exchange_term": [
+    "0",
+    "0",
+    "-q + 1/q",
+    "0"
+   ]
+  },
+  {
+   "h_slot": "swp",
+   "sign": "-",
+   "over_strand_carries": "e2",
+   "K_on_over_strand": "q",
+   "pure_transposition": true,
+   "exchange_term": [
+    "0",
+    "0",
+    "0",
+    "0"
+   ]
+  }
+ ],
+ "checks": {
+  "C1": true,
+  "C2": true,
+  "C3": true,
+  "C4": true
+ }
+}

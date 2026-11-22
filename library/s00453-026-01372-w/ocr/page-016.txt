@@ -1,0 +1,49 @@
+21 Page 16 of 19 Algorithmica (2026) 88:21
+
+it is easy to see that F|,..., F, are a read-k family since f|,..., fy are read-k. We
+will show later that after applying inequality (11) on F),..., Fin, we can adapt the
+standard Chernoff bound proof to our case.
+
+Proof We will prove inequality (11) via induction on the number of independent
+variables m. For the base case m = 1, observe that there are at most k non-constant
+functions F; by definition. If there are fewer than k functions F;, we can also add
+identity functions without changing the product. As a result, we can without loss of
+generality assume that there are exactly k functions F;. The inequality then follows
+directly by the Generalized Hélder’s Inequality.
+
+Now assume we have proven the statement for m independent variables; we will
+try to prove it for m + 1. Again, let S = S, denote the set of functions F; which are
+influenced by X;. We have
+
+E| fel Fi = ETjes Fj- Iljes F;|
+= E[E [Tes Fi -Tyes Fi|X2.-.- Xm]
+
+= B[E[TMjes Fil X2.-+-. Xm] -Tygs Fi] (12)
+
+Here, the first equality is obvious, the second equality follows by the law of total expec-
+
+tation, and the third equality follows since Fj for j ¢ S only depends on X2,..., Xm-+1
+and is independent of X 1.
+
+After taking the conditional expectation, observe that Ell jes Fj|X2,...,Xm+i]
+
+is arandom variable which only depends on X2, ..., X41. In particular, these form
+
+a read-k family over m random variables, so we can apply the inductive hypothesis to
+claim that
+
+1/k
+B[Tljes FilX2s-+-s Xai] < (TMjesB | FeIX2,.+.. Xmsi])
+After combining this with equation (12), we have
+n k Uk
+B[ M1 Fi] SE| jes B[ FS Xo... Xai] Tes Fi] =A
+For j ¢ S, let G; = F; and for j € S, define
+1/k
+G; =E[ FAX, Xai]
+
+so that A = e[ T= Gi]. Observe that Gj; are again a read-k family on
+X2,..., Xm+1, 80 we can again apply the induction hypothesis to claim that
+
+A=E [T= G)| <TTjak ie =TTj-1E [ey
+
+aN Springer

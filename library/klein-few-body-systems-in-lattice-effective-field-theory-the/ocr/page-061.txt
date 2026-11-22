@@ -1,0 +1,70 @@
+5.2 Two-body-sector
+
+with Gy = (4/3) sin(2ak/L) + (1/6) sin(4k/L) and 7° according to Eq. (5.6).
+The isospin corrections caused by the pion mass differences are defined as
+
+2
+g. A a) > > Maro) aaro
+Vin = — » » [Gs,5,(%, — fy) ~ Gs,5,(% ~ iiy)| PS SAPs (7): . (5.34)
+BF a 51 Sol tly
+
+The pion propagator with charged pions reads
+
+- 5 qs Is
+Gs,.s,(4@) = ——5. (5.35)
+° M,.+4
+
+The charged pion mass is M,, = 139.57 MeV. Note that since isospin breaking is an NLO correction, we
+do not need to include the propagator discretization corrections analogous to Eqs. (5.32) and (5.33) for
+the charged pion propagator in Eq. (5.35). Hence, the complete 2N N2LO Hamiltonian reads
+
+10
+
+2N i TPEP | y/TPEP
+
+Axo. = » Vxto + Vo + Vato + Vox + Vip (5.36)
+=
+
+As we want to describe light nuclei in a later stage, we also have to include Coulomb forces as well as
+proton-proton and neutron-neutron contact terms (for details, see Ref. [82]),
+
+1
+
+yooul _ OEM . > its): 5.37
+5 » max OSifiy cay PoP pi): (5.37)
+
+ity
+yr = Cop . > a). 8
+= SPDT bp (pp (=. (5.38)
+
+n
+mm Cin . > >).
+
+waa Pn (4) p_ (A) =. (5.39)
+
+n
+
+with apy, the electromagnetic fine-structure constant and the projection densities are given in App. B.
+Thus, the complete electromagnetic contribution reads
+
+Van = VO ge yer yn, (5.40)
+
+The alert reader might notice that V’? and V’” are really strong isospin-breaking terms. We book them
+here, because V”? is used to renormalize the Coulomb potential.
+
+Now, the Hamiltonian is defined and, in the standard approach, we introduce a spherical wall boundary
+on the relative separation between nucleons in order to compute scattering phase shifts. This spherical
+wall is placed at radius R,,,); outside the interaction region. We then solve for standing waves solutions of
+the transfer matrix [33]
+
+: exp[—0, (Hire + Hyo)] + I) = alP), (5.41)
+with a, = a,/a and the energy given by
+log (A
+p= ese) | (5.42)
+a
+
+The solutions must be identified with the correct partial wave, then one could use the energy shift between
+the free and interacting system to calculate the phase shifts [61]. The NLO and N2LO energy corrections
+are implemented perturbatively just by calculating the corresponding matrix element. In what follows,
+
+55

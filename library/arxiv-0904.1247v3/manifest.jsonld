@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0904.1247v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0904.1247v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "arxiv-0904.1247v3",
   "contains": [
+    "library/arxiv-0904.1247v3/sections/sec-front-matter",
     "library/arxiv-0904.1247v3/sections/sec-000",
     "library/arxiv-0904.1247v3/sections/sec-001",
     "library/arxiv-0904.1247v3/sections/sec-002",
@@ -33,10 +34,18 @@
     "library/arxiv-0904.1247v3/sections/sec-019",
     "library/arxiv-0904.1247v3/sections/sec-020",
     "library/arxiv-0904.1247v3/sections/sec-021",
-    "library/arxiv-0904.1247v3/sections/sec-022"
+    "library/arxiv-0904.1247v3/sections/sec-022",
+    "library/arxiv-0904.1247v3/sections/sec-023",
+    "library/arxiv-0904.1247v3/sections/sec-024",
+    "library/arxiv-0904.1247v3/sections/sec-025",
+    "library/arxiv-0904.1247v3/sections/sec-026",
+    "library/arxiv-0904.1247v3/sections/sec-027",
+    "library/arxiv-0904.1247v3/sections/sec-028",
+    "library/arxiv-0904.1247v3/sections/sec-029",
+    "library/arxiv-0904.1247v3/sections/sec-030"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",

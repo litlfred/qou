@@ -1,1 +1,1 @@
-A braided symmetry for C is a natural isomorphism c(ρ, σ) ∈ (ρ⊗σ, σ⊗ρ)
+A braided symmetry for C is a natural isomorphism c(ρ, σ) ∈ (ρ⊗σ, σ⊗ρ) satisfying the normalization property c(ρ, ι) = c(ι, ρ) = 1ρ (5.7) and such that the following two hexagonal diagrams commute (ρ ⊗ σ) ⊗ τ α −−−→ ρ ⊗ (σ ⊗ τ )c −−−→ (σ ⊗ τ ) ⊗ ρ c⊗1   y   yα (σ ⊗ ρ) ⊗ τ α −−−→ σ ⊗ (ρ ⊗ τ )1⊗c −−−→ σ ⊗ (τ ⊗ ρ) (5.8)

@@ -4,52 +4,24 @@ doc_title: "Estimating the spectral gap of a trace-class Markov operator"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
-pages: 1-3
+pages: 1-4
 source_pdf: 1704.00850v3.pdf
 source_sha256: 09dd9c99453ba251
+toc_source: outline
+text_source: latex
+latex_prose_ratio: 0.978
+latex_coverage_ratio: 0.957
 doc_brief: "Estimating the spectral gap of a trace-class Markov operator — The utility of a Markov chain Monte Carlo algorithm is, in large part, determined by the size of the spectral gap of the corresponding"
 ---
-Markov chain Monte Carlo (MCMC) is widely used to estimate intractable integrals that represent expec-
-tations with respect to complicated probability distributions. Let π : S→ [0,∞) be a probability density
-function (pdf) with respect to a σ-ﬁnite measure µ, where (S,U,µ ) is some measure space. Suppose we
-Key words and phrases. Data augmentation algorithm, Eigenvalues, Hilbert-Schmidt operator, Markov chain, Monte Carlo
-1
-arXiv:1704.00850v3  [math.ST]  4 Apr 2019
-want to approximate the integral
-J :=
-∫
-S
-f(u)π(u)µ(du)
-for some functionf :S→ R. Then J can be estimated by ˆJm :=m−1∑m−1
-k=0 f(Φk), where{Φk}m−1
-k=0 are
-the ﬁrst m elements of a well-behaved Markov chain with stationary density π(·). Unlike classical Monte
-Carlo estimators, ˆJm is not based on iid random elements. Indeed, the elements of the chain are typically
-neither identically distributed nor independent. Given varπf, the variance of f(·) under the stationary dis-
-tribution, the accuracy of ˆJm is primarily determined by two factors: (i) the convergence rate of the Markov
-chain, and (ii) the correlation between thef(Φk)s when the chain is stationary. These two factors are related,
-and can be analyzed jointly under an operator theoretic framework.
-The starting point of the operator theoretic approach is the Hilbert space of functions that are square
-integrable with respect to the target pdf,π(·). The Markov transition function that gives rise toΦ ={Φk}∞
-k=0
-deﬁnes a linear (Markov) operator on this Hilbert space. (Formal deﬁnitions are given in Section 2.) If Φ is
-reversible, then it is geometrically ergodic if and only if the corresponding Markov operator admits a positive
-spectral gap (Roberts and Rosenthal, 1997; Kontoyiannis and Meyn, 2012). The gap, which is a real number
-in (0, 1], plays a fundamental role in determining the mixing properties of the Markov chain, with larger
-values corresponding to better performance. For instance, suppose Φ0 has pdfπ0(·) such thatdπ0/dπ is in
-the Hilbert space, and letd(Φk;π) denote the total variation distance between the distribution of Φk and the
-chain’s stationary distribution. Then, ifδ denotes the spectral gap, we have
-d(Φk;π)≤C(1−δ)k
-for all positive integersk, whereC depends onπ0 but not onk (Roberts and Rosenthal, 1997). Furthermore,
-(1−δ)k gives the maximal absolute correlation between Φj and Φj+k asj→∞ . It follows (see e.g. Mira
-and Geyer, 1999) that the asymptotic variance of√m( ˆJm−J) asm→∞ is bounded above by
-2−δ
-δ varπf.
-Unfortunately, it is impossible to calculate the spectral gaps of the Markov operators associated with practi-
-cally relevant MCMC algorithms, and even accurately approximating these quantities has proven extremely
-difﬁcult. In this paper, we develop a method of estimating the spectral gaps of Markov operators correspond-
-ing to a certain class of data augmentation (DA) algorithms (Tanner and Wong, 1987), and then show that
-the method can be extended to handle a much larger class of reversible MCMC algorithms.
-DA Markov operators are necessarily non-negative. Moreover, any non-negative Markov operator that is
-compact has a pure eigenvalue spectrum that is contained in the set [0, 1], and 1−δ is precisely the second
-2
+Markov chain Monte Carlo (MCMC) is widely used to estimate intractable integrals that represent expectations with respect to complicated probability distributions. Let $\pi: S \to
+        [0,\infty)$ be a probability density function (pdf) with respect to a $\sigma$-finite measure $\mu$, where $(S,\mathcal{U},\mu)$ is some measure space. Suppose we want to approximate the integral $$J := \int_S f(u) \pi(u) \mu(du)$$ for some function $f: S \to \mathbb{R}$. Then $J$ can be estimated by $\hat{J}_m := m^{-1} \sum_{k=0}^{m-1} f(\Phi_k),$ where $\{\Phi_k\}_{k=0}^{m-1}$ are the first $m$ elements of a well-behaved Markov chain with stationary density $\pi(\cdot)$. Unlike classical Monte Carlo estimators, $\hat{J}_m$ is not based on iid random elements. Indeed, the elements of the chain are typically neither identically distributed nor independent. Given $\mathrm{var}_{\pi}f,$ the variance of $f(\cdot)$ under the stationary distribution, the accuracy of $\hat{J}_m$ is primarily determined by two factors: (i) the convergence rate of the Markov chain, and (ii) the correlation between the $f(\Phi_k)$s when the chain is stationary. These two factors are related, and can be analyzed jointly under an operator theoretic framework.
+
+The starting point of the operator theoretic approach is the Hilbert space of functions that are square integrable with respect to the target pdf, $\pi(\cdot)$. The Markov transition function that gives rise to $\Phi =
+        \{\Phi_k\}_{k=0}^{\infty}$ defines a linear (Markov) operator on this Hilbert space. (Formal definitions are given in Section [\[MarkovOperators\]](#MarkovOperators){reference-type="ref" reference="MarkovOperators"}.) If $\Phi$ is reversible, then it is geometrically ergodic if and only if the corresponding Markov operator admits a positive *spectral gap* [@roberts1997geometric; @kontoyiannis2012geometric]. The gap, which is a real number in $(0,1]$, plays a fundamental role in determining the mixing properties of the Markov chain, with larger values corresponding to better performance. For instance, suppose $\Phi_0$ has pdf $\pi_0(\cdot)$ such that $d\pi_0/d\pi$ is in the Hilbert space, and let $d(\Phi_k;
+        \pi)$ denote the total variation distance between the distribution of $\Phi_k$ and the chain's stationary distribution. Then, if $\delta$ denotes the spectral gap, we have $$d(\Phi_k;\pi) \leq C(1-\delta)^k$$ for all positive integers $k,$ where $C$ depends on $\pi_0$ but not on $k$ [@roberts1997geometric]. Furthermore, $(1-\delta)^k$ gives the maximal absolute correlation between $\Phi_j$ and $\Phi_{j+k}$ as $j \to \infty$. It follows [see e.g. @mira1999ordering] that the asymptotic variance of $\sqrt{m}(\hat{J}_m - J)$ as $m \to \infty$ is bounded above by $$\frac{2-\delta}{\delta} \mathrm{var}_{\pi}f \,.$$ Unfortunately, it is impossible to calculate the spectral gaps of the Markov operators associated with practically relevant MCMC algorithms, and even accurately approximating these quantities has proven extremely difficult. In this paper, we develop a method of estimating the spectral gaps of Markov operators corresponding to a certain class of data augmentation (DA) algorithms [@tanner1987calculation], and then show that the method can be extended to handle a much larger class of reversible MCMC algorithms.
+
+DA Markov operators are necessarily non-negative. Moreover, any non-negative Markov operator that is compact has a pure eigenvalue spectrum that is contained in the set $[0,1]$, and $1-\delta$ is precisely the second largest eigenvalue. We propose a classical Monte Carlo estimator of $1-\delta$ for DA Markov operators that are *trace-class*, i.e. compact with summable eigenvalues. While compact operators were once thought to be rare in MCMC problems with uncountable state spaces [@chan1994discussion], a string of recent results suggests that trace-class DA Markov operators are not at all rare [see e.g. @qin2018trace; @chakraborty2016convergence; @choi2017anova; @pal2017trace]. Furthermore, by exploiting a simple trick, we are able to broaden the applicability of our method well beyond DA algorithms. Indeed, if a reversible Monte Carlo Markov chain has a Markov transition density (Mtd), and the corresponding Markov operator is Hilbert-Schmidt, then our method can be utilized to estimate its spectral gap. This is because the square of such a Markov operator can be represented as a trace-class DA Markov operator. A detailed explanation is provided in Section [\[daint\]](#daint){reference-type="ref" reference="daint"}.
+
+Of course, there is a large literature devoted to developing theoretical bounds on the second largest eigenvalue of a Markov operator [see e.g. @lawler1988bounds; @sinclair1989approximate; @diaconis1991geometric]. However, these results are typically not useful in situations where the state space, $S$, is uncountable or multi-dimensional, which is our main focus. There also exist a number of computational methods for approximating the eigenvalues of a Hilbert-Schmidt operator [see e.g. @garren2000estimating; @koltchinskii2000random; @ahues2001spectral; @chakraborty2017consistent]. Some such methods require sampling directly from $\pi(\cdot)$, which is impossible in an MCMC context. The others require the user to simulate the Markov chain of interest until it is nearly stationary. Unfortunately, we cannot know if a chain has converged unless we have some information on its convergence rate, which is essentially what these methods are trying to acquire in the first place. The classical Monte Carlo estimator that we introduce is calculated by simulating many copies of the Markov chain, each of a short length. These short chains need not be close to stationarity in order for the estimator to be valid. Although powerful, this method is quite expensive from a computational standpoint. Indeed, it works well only when the underlying dataset of the Bayesian model is small. On the other hand, it is important as a "proof of concept\" that it is actually possible to get a handle on the spectral gaps of Markov operators corresponding to MCMC algorithms on continuous state spaces, which, until now, have proven to be extremely elusive quantities.
+
+The rest of the paper is organized as follows. The notion of Markov operator is formalized in Section [\[MarkovOperators\]](#MarkovOperators){reference-type="ref" reference="MarkovOperators"}. In Section [\[powersum\]](#powersum){reference-type="ref" reference="powersum"}, it is shown that the second largest eigenvalue of a non-negative trace-class operator can be bounded above and below by functions of the power sums of the operator's eigenvalues. In Section [\[daint\]](#daint){reference-type="ref" reference="daint"}, DA Markov operators are formally defined, and the sum of the $k$th ($k\in \mathbb{N}$) power of the eigenvalues of a trace-class DA Markov operator is related to a functional of its Mtd. This functional is usually a multi-dimensional integral, and a classical Monte Carlo estimator of it is developed in Section [\[MC\]](#MC){reference-type="ref" reference="MC"}. The efficiency of the Monte Carlo estimator is studied in Section [\[efficiency\]](#efficiency){reference-type="ref" reference="efficiency"}. Finally, in Section [\[illustration\]](#illustration){reference-type="ref" reference="illustration"} we apply our method to a few well-known MCMC algorithms. Our examples include @albert1993bayesian's [-@albert1993bayesian] DA algorithm for Bayesian probit regression, and a DA algorithm for Bayesian linear regression with non-Gaussian errors [@liu1996bayesian]. Further application of the method can be found in [@zhang2019trace].

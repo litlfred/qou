@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-q-alg-9707006v1
-doc_title: "arXiv:q-alg/9707006v1 4 Jul 1997"
+doc_title: "Drinfeld twist for quantum su(2) in the adjoint representation"
 section_id: sec-011-52-quantum-symmetrization
 section_title: "Quantum symmetrization"
 section_number: 5.2
@@ -8,7 +8,9 @@ pages: 9-10
 source_pdf: 9707006v1.pdf
 source_sha256: b9513be9294f56d9
 toc_source: inferred
+doc_brief: "Drinfeld twist for quantum su(2) in the adjoint representation — We give a detailed description of the adjoint representation of Drinfeld’s twist element, as well as of its coproduct, for suq(2)."
 ---
+Quantum symmetrization
 We consider here the problem of quantum symmetrization of identical particle states. We supply, for reasons
 of self-containment, a brief exposition of the relevant theory, along the lines of [7], which contains a thorough
 discussion.
@@ -21,7 +23,6 @@ exchange of the two spaces, so that the classical permutation matrix P commutes 
 coproduct of the generators
 [P, ρ⊗2(∆c(x))] = 0,
 x ∈U(g),
-(37)
 where g is the Lie algebra under consideration and ρ the representation through which it acts on the one-particle
 states. In the quantum case, the lack of cocommutativity implies that the quantum group action mixes the two
 eigenspaces of P. The problem is rectiﬁed with the introduction of a quantum permutation operator P F , given
@@ -104,4 +105,3 @@ are possible).
 For example, for n = 3, Fq123 can be obtained from the crystal limit result of section 4 as
 Fq123 = Fq0123F10
 −1
-123.

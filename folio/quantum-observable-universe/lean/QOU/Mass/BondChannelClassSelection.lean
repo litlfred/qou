@@ -10,8 +10,9 @@
       (CAL-1 = m_e W-plane scale, CAL-2 = P_skew^β / q₀ W-plane modulus
       (dimensionless), CAL-3 = P_avg^π / m_π orthogonal meson class).  The
       count-alignment of the triple with the three H¹(Bring) degrees of
-      freedom is `QOU.Mass.calibrations_eq_cohomology` (content block
-      `mass-theory/calibration-cohomology-alignment`); this file needs only
+      freedom is the conjecture `conj:calibration-cohomology-alignment`
+      (content block `mass-theory/calibration-cohomology-alignment`; no Lean
+      carrier since 2026-11-20); this file needs only
       the three-element class inventory.
     * `BondChannelModel` — the two dimensionful scales m_e, m_π, a
       dimensionless q₀-rational factor per class (CAL-2's entire
@@ -43,8 +44,8 @@
   Yukawa-range insight, upgrading the audit's (a) from
   corpus-identification-composition to a §3b-cond conditional result.
 
-  -- Ref: [manuscript] docs/audits/2026-07-13-pion-radius-and-vol-to-radius-gaps.md §GAP 1 (a)
-  -- Ref: [manuscript] docs/coordination/binding-scale-is-hyperbolic-volume.md
+  -- Ref: [leitner2026] docs/audits/2026-07-13-pion-radius-and-vol-to-radius-gaps.md §GAP 1 (a)
+  -- Ref: [leitner2026] docs/coordination/binding-scale-is-hyperbolic-volume.md
 -/
 
 import Mathlib.Algebra.Ring.Defs
@@ -131,7 +132,7 @@ end BondChannelModel
     identification, AGENTS.md §Axiomatization is NOT a Proof).
 
     -- @conjecture: primary
-    -- Ref: [manuscript] docs/coordination/binding-scale-is-hyperbolic-volume.md -/
+    -- Ref: [leitner2026] docs/coordination/binding-scale-is-hyperbolic-volume.md -/
 class BindingVolumeLedger (R : Type*) [CommRing R]
     (M : BondChannelModel R) : Prop where
   /-- CAL-1 supports the bond channel only through the W-plane term. -/

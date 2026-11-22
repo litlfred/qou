@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1409.2849v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "7bf9646716fbb2477ff2bc89359ed41e854b9ba1f9c8fae9fd22d277223d0e92",
+  "file": "1409.2849v1.pdf"
+ },
+ "provenance": {
+  "title": "MOD-GAUSSIAN CONVERGENCE AND ITS APPLICATIONS FOR MODELS OF STATISTICAL MECHANICS",
+  "authors": "PIERRE-LO\u00cfC M\u00c9LIOT AND ASHKAN NIKEGHBALI",
+  "arxiv": {
+   "id": "1409.2849",
+   "version": "1",
+   "primary_class": "math.PR",
+   "stamp_date": "9 Sep 2014"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

@@ -9,7 +9,7 @@ by a permutation of indices and ambient isotopy within each fibre.
 
 ## References
 
-- [manuscript] §3 Lifting and Descent
+- [leitner2026] §3 Lifting and Descent
 -/
 
 namespace QOU
@@ -19,7 +19,7 @@ namespace QOU
     equivalent if related by a permutation σ and ambient isotopy.
 
     LaTeX: `\label{def:bundle-isotopy-equivalence}` -/
--- Ref: [manuscript] §3, Definition: Isotopy equivalence
+-- Ref: [leitner2026] §3, Definition: Isotopy equivalence
 structure BundleIsotopyEquiv where
   /-- Number of initial conditions. -/
   numPoints : ℕ

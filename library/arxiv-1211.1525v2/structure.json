@@ -8,7 +8,7 @@
   "pages": 31,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T16:28:27Z",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -21,12 +21,12 @@
   },
   "doi": null,
   "title": "PARTIAL TRANSPOSE OF RANDOM QUANTUM STATES: EXACT FORMULAS AND MEANDERS",
-  "authors_raw": "MOTOHISA FUKUDA AND PIOTR \u015aNIADY",
+  "authors_raw": "MOTOHISA FUKUDA AND PIOTR ŚNIADY",
   "title_lines": [
    "PARTIAL TRANSPOSE OF RANDOM QUANTUM STATES:",
    "EXACT FORMULAS AND MEANDERS"
   ],
-  "abstract": "We investigate the asymptotic behavior of the empirical eigenvalues distribution of the partial transpose of a random quantum state. The limiting distribution was previously investigated via Wishart random matrices indirectly (by approximating the matrix of trace 1 by the Wishart matrix of random trace) and shown to be the semicircular distribution or the free difference of two free Poisson distributions, de- pending on how dimensions of the concerned spaces grow. Our use of Wishart matrices gives exact combinatorial formulas for the moments of the partial transpose of the random state. We \ufb01nd three natural asymp- totic regimes in terms of geodesics on the permutation groups. Two of them correspond to the above two cases; the third one turns out to be a new matrix model for the meander polynomials. Moreover, we prove the convergence to the semicircular distribution together with its extreme eigenvalues under weaker assumptions, and show large deviation bound for the latter.",
+  "abstract": "We investigate the asymptotic behavior of the empirical eigenvalues distribution of the partial transpose of a random quantum state. The limiting distribution was previously investigated via Wishart random matrices indirectly (by approximating the matrix of trace 1 by the Wishart matrix of random trace) and shown to be the semicircular distribution or the free difference of two free Poisson distributions, de- pending on how dimensions of the concerned spaces grow. Our use of Wishart matrices gives exact combinatorial formulas for the moments of the partial transpose of the random state. We ﬁnd three natural asymp- totic regimes in terms of geodesics on the permutation groups. Two of them correspond to the above two cases; the third one turns out to be a new matrix model for the meander polynomials. Moreover, we prove the convergence to the semicircular distribution together with its extreme eigenvalues under weaker assumptions, and show large deviation bound for the latter.",
   "docinfo": {
    "Producer": "pdfTeX-1.40.12",
    "Creator": "LaTeX with hyperref package",
@@ -36,7 +36,7 @@
   "title_source": "text",
   "title_verified": false,
   "title_evidence": {
-   "heading": "PARTIAL TRANSPOSE OF RANDOM QUANTUM STATES: EXACT FORMULAS AND MEANDERS 1. I NTRODUCTION In this paper, we investigate asymptotic behavior of the empirical eigenvalues distribution of the partial transpose of the random quantum state (positive semide\ufb01nite Hermitian matrix of trace one). This problem",
+   "heading": "PARTIAL TRANSPOSE OF RANDOM QUANTUM STATES: EXACT FORMULAS AND MEANDERS 1. I NTRODUCTION In this paper, we investigate asymptotic behavior of the empirical eigenvalues distribution of the partial transpose of the random quantum state (positive semideﬁnite Hermitian matrix of trace one). This problem",
    "outline": "1. Introduction",
    "text": "PARTIAL TRANSPOSE OF RANDOM QUANTUM STATES: EXACT FORMULAS AND MEANDERS",
    "corroborated_by": [],
@@ -49,137 +49,464 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Preliminaries",
    "page": 3,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Free probability, noncrossing partitions and permutations",
    "page": 3,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Meanders",
    "page": 7,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Our model",
    "page": 8,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Moments of",
    "page": 8,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The case when dimensions of environment and both system parts are large",
    "page": 10,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Limiting eigenvalues",
    "page": 11,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Behavior of extreme eigenvalues",
    "page": 12,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The case when the environment space is fixed and its connection to Meanders",
    "page": 17,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Our model",
    "page": 17,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Random pure states",
    "page": 18,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Meander polynomials with our model",
    "page": 19,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The case when one of the system parts is fixed",
    "page": 21,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Concluding remark",
    "page": 23,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Appendix A. Lemmas for Section ??",
    "page": 23,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Appendix B. Measure concentration",
    "page": 29,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Acknowledgments",
    "page": 29,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 30,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
  "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "A graphical representation of a noncrossing par-",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "(a) Graphical representation of the permutation",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "(a) graphical representation of a noncrossing",
+   "page": 20,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Graphical representation of noncrossing parti-",
+   "page": 20,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
    "id": "sec-front-matter",
@@ -189,7 +516,9 @@
    "page_start": 1,
    "page_end": 1,
    "n_chars": 1104,
-   "n_words": 170
+   "n_words": 170,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-000-1-introduction",
@@ -199,7 +528,9 @@
    "page_start": 1,
    "page_end": 3,
    "n_chars": 4310,
-   "n_words": 703
+   "n_words": 703,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-2-preliminaries",
@@ -209,7 +540,9 @@
    "page_start": 3,
    "page_end": 3,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-21-free-probability-noncrossing-partitions-and-p",
@@ -219,7 +552,9 @@
    "page_start": 3,
    "page_end": 7,
    "n_chars": 6576,
-   "n_words": 1304
+   "n_words": 1304,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-22-meanders",
@@ -229,7 +564,9 @@
    "page_start": 7,
    "page_end": 8,
    "n_chars": 1183,
-   "n_words": 209
+   "n_words": 209,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-004-23-our-model",
@@ -239,7 +576,9 @@
    "page_start": 8,
    "page_end": 8,
    "n_chars": 888,
-   "n_words": 161
+   "n_words": 161,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-005-24-moments-of",
@@ -249,7 +588,9 @@
    "page_start": 8,
    "page_end": 10,
    "n_chars": 2872,
-   "n_words": 584
+   "n_words": 584,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-006-3-the-case-when-dimensions-of-environment-and-bo",
@@ -258,8 +599,10 @@
    "level": 1,
    "page_start": 10,
    "page_end": 11,
-   "n_chars": 824,
-   "n_words": 144
+   "n_chars": 821,
+   "n_words": 143,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-007-31-limiting-eigenvalues",
@@ -268,8 +611,10 @@
    "level": 2,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 2482,
-   "n_words": 483
+   "n_chars": 1907,
+   "n_words": 377,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-008-32-behavior-of-extreme-eigenvalues",
@@ -278,8 +623,10 @@
    "level": 2,
    "page_start": 12,
    "page_end": 17,
-   "n_chars": 7459,
-   "n_words": 1531
+   "n_chars": 8107,
+   "n_words": 1651,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-009-4-the-case-when-the-environment-space-is-fixed-a",
@@ -289,7 +636,9 @@
    "page_start": 17,
    "page_end": 17,
    "n_chars": 22,
-   "n_words": 3
+   "n_words": 3,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-010-41-our-model",
@@ -299,7 +648,9 @@
    "page_start": 17,
    "page_end": 18,
    "n_chars": 1625,
-   "n_words": 319
+   "n_words": 319,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-011-42-random-pure-states",
@@ -309,7 +660,9 @@
    "page_start": 18,
    "page_end": 19,
    "n_chars": 2899,
-   "n_words": 536
+   "n_words": 536,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-012-43-meander-polynomials-with-our-model",
@@ -319,7 +672,9 @@
    "page_start": 19,
    "page_end": 21,
    "n_chars": 2579,
-   "n_words": 477
+   "n_words": 477,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-013-5-the-case-when-one-of-the-system-parts-is-fixed",
@@ -329,7 +684,9 @@
    "page_start": 21,
    "page_end": 23,
    "n_chars": 2006,
-   "n_words": 382
+   "n_words": 382,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-014-6-concluding-remark",
@@ -337,39 +694,59 @@
    "title": "Concluding remark",
    "level": 1,
    "page_start": 23,
-   "page_end": 29,
-   "n_chars": 8898,
-   "n_words": 1870
+   "page_end": 23,
+   "n_chars": 389,
+   "n_words": 56,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-015-appendix-b-measure-concentration",
+   "id": "sec-015-appendix-a-lemmas-for-section",
+   "number": null,
+   "title": "Appendix A. Lemmas for Section ??",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 29,
+   "n_chars": 8468,
+   "n_words": 1807,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-016-appendix-b-measure-concentration",
    "number": null,
    "title": "Appendix B. Measure concentration",
    "level": 1,
    "page_start": 29,
    "page_end": 29,
-   "n_chars": 1233,
-   "n_words": 241
+   "n_chars": 1267,
+   "n_words": 245,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-016-acknowledgments",
+   "id": "sec-017-acknowledgments",
    "number": null,
    "title": "Acknowledgments",
    "level": 1,
    "page_start": 29,
    "page_end": 30,
    "n_chars": 524,
-   "n_words": 82
+   "n_words": 82,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-017-references",
+   "id": "sec-018-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 30,
    "page_end": 31,
    "n_chars": 3225,
-   "n_words": 408
+   "n_words": 408,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
@@ -377,7 +754,19 @@
   "likely_scanned": false,
   "toc_entries": 19,
   "toc_inferred_entries": 0,
-  "sections": 19,
-  "chars_total": 50709
+  "figure_entries": 4,
+  "figure_sequence_gaps": [
+   "figure 3"
+  ],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 20,
+  "chars_total": 50772,
+  "furniture_lines_stripped": 0,
+  "pages_read_in_print_order": [
+   12
+  ]
  }
 }

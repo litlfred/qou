@@ -5,20 +5,17 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/squier-burau-unitary-1984",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/squier-burau-unitary-1984/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "squier-burau-unitary-1984",
   "contains": [
-    "library/squier-burau-unitary-1984/sections/sec-000",
-    "library/squier-burau-unitary-1984/sections/sec-001",
-    "library/squier-burau-unitary-1984/sections/sec-002",
-    "library/squier-burau-unitary-1984/sections/sec-003",
-    "library/squier-burau-unitary-1984/sections/sec-004"
+    "library/squier-burau-unitary-1984/sections/sec-front-matter",
+    "library/squier-burau-unitary-1984/sections/sec-000"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "squier-burau-unitary-1984",
     "title_source": "slug",

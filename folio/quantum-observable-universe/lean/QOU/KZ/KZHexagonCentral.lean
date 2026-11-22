@@ -13,7 +13,7 @@ infinity `C = −A − B`. In the Drinfeld category the three residues are `t₁
 
 (`hexagon_central`), whenever `T` commutes with `A, B, C'`. Sorry-free.
 
--- Ref: [manuscript] beans/defs/qou-zoyv (stage S3)
+-- Ref: [leitner2026] beans/defs/qou-zoyv (stage S3)
 -/
 
 namespace QOU.KZ.KZHexagonCentral

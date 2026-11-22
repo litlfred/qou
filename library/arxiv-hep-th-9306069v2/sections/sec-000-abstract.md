@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9306069v2
-doc_title: "arXiv:hep-th/9306069v2 28 Jun 1993"
+doc_title: "The stretched horizon and black hole complementarity"
 section_id: sec-000-abstract
 section_title: "ABSTRACT"
 section_number: null
@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 9306069v2.pdf
 source_sha256: a140d10424f73233
 toc_source: inferred
+doc_brief: "The stretched horizon and black hole complementarity — Three postulates asserting the validity of conventional quantum theory, semi-classical general relativity and the statistical basis for"
 ---
 Three postulates asserting the validity of conventional quantum theory, semi-classical
 general relativity and the statistical basis for thermodynamics are introduced as a foundation

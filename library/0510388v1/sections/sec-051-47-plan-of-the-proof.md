@@ -1,6 +1,6 @@
 ---
 doc_id: 0510388v1
-doc_title: "ELECTRODYNAMICS and the GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE Dennis DeTurck and Herman Gluck"
+doc_title: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space"
 section_id: sec-051-47-plan-of-the-proof
 section_title: "Plan of the proof."
 section_number: 47
@@ -8,6 +8,7 @@ pages: 90-91
 source_pdf: 0510388v1.pdf
 source_sha256: c83c0f6a2eaa74f3
 toc_source: inferred
+doc_brief: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space — 64 sections: Front matter; ORGANIZATION; STATEMENTS OF RESULTS"
 ---
 Consider the usual vector convolutions,  
  
@@ -43,7 +44,4 @@ is the negative of the above gradient field, in which case, defining
  
 Gr(V)(y)  =  A(V, ϕ2)(y)  +  G(V, ϕ3)(y) 
  
-yields the desired  equation  ∆y Gr(V)(y)  =  V(y) . 
- 
- 
-91
+yields the desired  equation  ∆y Gr(V)(y)  =  V(y) .

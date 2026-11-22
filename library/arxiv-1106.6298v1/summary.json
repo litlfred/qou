@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1106.6298v1",
  "source_sha256": "23b0754067873a04",
- "brief": "ON THE UNIFICATION OF QUANTUM 3–MANIFOLD INVARIANTS — In 2006 Habiro initiated a construction of generating functions for Witten– Reshetikhin–Turaev (WRT) invariants known as uniﬁed WRT invariant s.",
- "extended": "**ON THE UNIFICATION OF QUANTUM 3–MANIFOLD INVARIANTS**\n\n*ANNA BELIAKOVA AND THANG LE*\n\n18 pp, 20 sections.\n\n**Abstract.** In 2006 Habiro initiated a construction of generating functions for Witten– Reshetikhin–Turaev (WRT) invariants known as uniﬁed WRT invariant s. In a series of papers together with Irmgard B¨ uhler and Christian Blanchet we ex tended his construc- tion to a larger class of 3–manifolds. The uniﬁed invariants provide a s trong tool to study properties of the whole collection of WRT invariants, e.g. their integrality, and hence, their categoriﬁcation. In this paper we give a survey on ideas and techniques used in the con struction of the uniﬁed invariants.\n\n**Outline.** Introduction; Background; 1.3 Kirby moves; 1 Quantum (WRT) invariants; 1.1 Notations and conventions; 1.2 The colored Jones polynomial; 1.4 Evaluation and Gauss sums; 2 Main Results; 2.2 Laplace transform; 2.1 Strategy of the proof; 2.4 Diagonalization using lens spaces; 3 Cyclotomic completions of polynomial rings; 3.1 On cyclotomic polynomials; 3.3 Taylor expansion; 3.4 Splitting of Sp and evaluation; 3.5 On the Ohtsuki series at roots of unity; 4 Laplace transform, Andrews identity and Frob; 4.3 Frobenius isomorphism\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: [Reshetikhin–Turaev] FL(ξ) is invariant under K1–Move.\n- Theorem 2: [Habiro] Suppose L is a link in S3 having zero linking matrix. Then there\n- Theorem 3: [Beliakova–B¨ uhler–Le]Suppose the components of a framed oriented link\n- Theorem 5: [Beliakova–B¨ uhler–Le]Suppose b = ±1 or b = ±pl where p is a prime and\n- Theorem 6.1: of [8] shows that if R ⊂ Q, S is R–connected, and there exists n ∈ S that is\n- Theorem 12: [Beliakova–B¨ uhler–Le]The Frobenius endomorphism Fb : Z[1/b][q]Nb →",
+ "brief": "ON THE UNIFICATION OF QUANTUM 3–MANIFOLD INVARIANTS — In 2006 Habiro initiated a construction of generating functions for Witten– Reshetikhin–Turaev (WRT) invariants known as uniﬁed WRT invariants.",
+ "extended": "**ON THE UNIFICATION OF QUANTUM 3–MANIFOLD INVARIANTS**\n\n*ANNA BELIAKOVA AND THANG LE*\n\n18 pp, 27 sections.\n\n**Abstract.** In 2006 Habiro initiated a construction of generating functions for Witten– Reshetikhin–Turaev (WRT) invariants known as uniﬁed WRT invariants. In a series of papers together with Irmgard B¨uhler and Christian Blanchet we extended his construc- tion to a larger class of 3–manifolds. The uniﬁed invariants provide a strong tool to study properties of the whole collection of WRT invariants, e.g. their integrality, and hence, their categoriﬁcation. In this paper we give a survey on ideas and techniques used in the construction of the uniﬁed invariants.\n\n**Outline.** Front matter; Introduction; Background; Unified invariants of integral homology 3–sphe; Unified invariants of rational homology 3–sphe; 1 Quantum (WRT) invariants; 1.1 Notations and conventions; 1.2 The colored Jones polynomial; 1.3 Kirby moves; 1.4 Evaluation and Gauss sums; 1.5 Definition of the WRT invariants; 1.6 Habiro's cyclotomic expansion of the color; 2 Main Results; 2.2 Laplace transform; 2.1 Strategy of the proof; 2.3 Definition of the unified invariant: diago; 2.4 Diagonalization using lens spaces; 3 Cyclotomic completions of polynomial rings",
  "tokens": {
   "brief": 49,
-  "extended": 442
+  "extended": 313
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-introduction",
    "title": "Introduction",
@@ -17,95 +22,125 @@
   {
    "id": "sec-001-background",
    "title": "Background",
-   "pages": "1-5"
+   "pages": "1-3"
   },
   {
-   "id": "sec-002-13-kirby-moves",
-   "title": "Kirby moves",
-   "pages": "5-5"
+   "id": "sec-002-unified-invariants-of-integral-homology-3spheres",
+   "title": "Unified invariants of integral homology 3–spheres",
+   "pages": "3-4"
   },
   {
-   "id": "sec-003-1-quantum-wrt-invariants",
+   "id": "sec-003-unified-invariants-of-rational-homology-3spheres",
+   "title": "Unified invariants of rational homology 3–spheres",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-004-1-quantum-wrt-invariants",
    "title": "Quantum (WRT) invariants",
    "pages": "5-5"
   },
   {
-   "id": "sec-004-11-notations-and-conventions",
+   "id": "sec-005-11-notations-and-conventions",
    "title": "Notations and conventions",
    "pages": "5-6"
   },
   {
-   "id": "sec-005-12-the-colored-jones-polynomial",
+   "id": "sec-006-12-the-colored-jones-polynomial",
    "title": "The colored Jones polynomial",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-007-13-kirby-moves",
+   "title": "Kirby moves",
    "pages": "6-7"
   },
   {
-   "id": "sec-006-14-evaluation-and-gauss-sums",
+   "id": "sec-008-14-evaluation-and-gauss-sums",
    "title": "Evaluation and Gauss sums",
-   "pages": "7-9"
+   "pages": "7-7"
   },
   {
-   "id": "sec-007-2-main-results",
+   "id": "sec-009-15-definition-of-the-wrt-invariants",
+   "title": "Definition of the WRT invariants",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-010-16-habiros-cyclotomic-expansion-of-the-colored-j",
+   "title": "Habiro's cyclotomic expansion of the colored Jones polynomial",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-011-2-main-results",
    "title": "Main Results",
    "pages": "9-10"
   },
   {
-   "id": "sec-008-22-laplace-transform",
+   "id": "sec-012-22-laplace-transform",
    "title": "Laplace transform",
    "pages": "10-10"
   },
   {
-   "id": "sec-009-21-strategy-of-the-proof",
+   "id": "sec-013-21-strategy-of-the-proof",
    "title": "Strategy of the proof",
    "pages": "10-11"
   },
   {
-   "id": "sec-010-24-diagonalization-using-lens-spaces",
+   "id": "sec-014-23-definition-of-the-unified-invariant-diagonal",
+   "title": "Definition of the unified invariant: diagonal case",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-015-24-diagonalization-using-lens-spaces",
    "title": "Diagonalization using lens spaces",
    "pages": "11-12"
   },
   {
-   "id": "sec-011-3-cyclotomic-completions-of-polynomial-rings",
+   "id": "sec-016-3-cyclotomic-completions-of-polynomial-rings",
    "title": "Cyclotomic completions of polynomial rings",
    "pages": "12-12"
   },
   {
-   "id": "sec-012-31-on-cyclotomic-polynomials",
+   "id": "sec-017-31-on-cyclotomic-polynomials",
    "title": "On cyclotomic polynomials",
    "pages": "12-13"
   },
   {
-   "id": "sec-013-33-taylor-expansion",
+   "id": "sec-018-33-taylor-expansion",
    "title": "Taylor expansion",
    "pages": "13-14"
   },
   {
-   "id": "sec-014-34-splitting-of-sp-and-evaluation",
+   "id": "sec-019-34-splitting-of-sp-and-evaluation",
    "title": "Splitting of Sp and evaluation",
    "pages": "14-14"
   },
   {
-   "id": "sec-015-35-on-the-ohtsuki-series-at-roots-of-unity",
+   "id": "sec-020-35-on-the-ohtsuki-series-at-roots-of-unity",
    "title": "On the Ohtsuki series at roots of unity",
    "pages": "14-15"
   },
   {
-   "id": "sec-016-4-laplace-transform-andrews-identity-and-frobeni",
+   "id": "sec-021-4-laplace-transform-andrews-identity-and-frobeni",
    "title": "Laplace transform, Andrews identity and Frobenius maps",
    "pages": "15-16"
   },
   {
-   "id": "sec-017-43-frobenius-isomorphism",
+   "id": "sec-022-42-andrews-identity",
+   "title": "Andrews identity",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-023-43-frobenius-isomorphism",
    "title": "Frobenius isomorphism",
    "pages": "16-17"
   },
   {
-   "id": "sec-018-44-integrality",
+   "id": "sec-024-44-integrality",
    "title": "Integrality",
    "pages": "17-17"
   },
   {
-   "id": "sec-019-references",
+   "id": "sec-025-references",
    "title": "References",
    "pages": "17-18"
   }
@@ -114,8 +149,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

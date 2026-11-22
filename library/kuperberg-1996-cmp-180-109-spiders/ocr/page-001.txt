@@ -1,0 +1,45 @@
+Commun Math Phys 180, 109-151 (1996) Communications in
+
+© Springer-Verlag 1996
+
+Spiders for Rank 2 Lie Algebras
+
+Greg Kuperberg
+
+Department of Mathematics, University of California, Davis, CA 95616, USA
+E-mail: greg@math ucdavis.edu
+
+Received: 19 December 1995 / Accepted: 26 January 1996
+
+Abstract: A spider is an axiomatization of the representation theory of a group,
+quantum group, Lie algebra, or other group or group-like object. It is also known as
+a spherical category, or a strict, monoidal category with a few extra properties, or
+by several other names. A recently useful point of view, developed by other authors,
+of the representation theory of sl(2) has been to present it as a spider by generators
+and relations. That is, one has an algebraic spider, defined by invariants of linear
+representations, and one identifies it as isomorphic to a combinatorial spider, given
+by generators and relations. We generalize this approach to the rank 2 simple Lie
+algebras, namely A2, B2, and Gp. Our combinatorial rank 2 spiders yield bases for
+invariant spaces which are probably related to Lusztig’s canonical bases, and they
+are useful for computing quantities such as generalized 6j-symbols and quantum
+link invariants. Their definition originates in definitions of the rank 2 quantum link
+invariants that were discovered independently by the author and Francois Jaeger.
+
+1. Introduction
+
+One of the problems of classical invariant theory is to characterize, for all n-tuples
+V,,...,Vn of finite-dimensional, irreducible representations over € of a compact
+group G or simple Lie algebra g, the vector space of multilinear functions
+
+LuV xX V2 xX +++ XV, 3 €
+
+which are invariant under the action of G or g. In more modern terminology, the
+problem is to characterize the dual vector space of invariant tensors
+
+Inv(V, @ V2 ®-+-@Vn),
+
+or just Inv(V) if V is a tensor product of irreducibles. (Also, instead of working over
+€, one might work over some other field FF of characteristic 0.) Of course, for a
+simple Lie algebra g, the dimension of such a vector space is given by Cartan—Weyl
+
+The author was supported by an NSF Postdoctoral Fellowship, grant #DMS-9107908

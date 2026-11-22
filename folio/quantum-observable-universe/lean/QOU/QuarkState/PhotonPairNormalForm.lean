@@ -7,7 +7,9 @@ hypothesis — NOT a finding, and NOT adopted —
   quark state := the degree ≥ 1 part of `NF(γ(φ)·γ(ψ))` in `H₃(q)`,
                  projected to the `(2,1)` Wedderburn channel,
 
-with `γ(φ) = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁` (`rem:knot-basis-color-content`).
+with `γ(φ) = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁` (`rem:knot-basis-color-content`, as written before the
+owner ruling of 2026-11-18 that made the last term `σ₀σ₁⁻¹`; that photon is the
+**straight chart** `photonStraight` below, and `def:photon` is `photon`).
 
 The hypothesis needs three things to be non-vacuous. This file proves what
 holds and records, as theorems, where it fails.
@@ -104,13 +106,20 @@ theorem s0_mul_s1 (h : R) : mulNF h s0 s1 = ![0, 0, 0, 0, 1, 0] := by
 theorem s1_mul_s0 (h : R) : mulNF h s1 s0 = ![0, 0, 0, 1, 0, 0] := by
   funext i; fin_cases i <;> simp [mulNF, mulσ₀, mulσ₁, s0, s1]
 
-/-- The photon with colour content: `γ(φ) = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁`,
-built with the algebra product (no basis label is trusted). -/
-def photon (h a0 a1 a2 : R) : Fin 6 → R :=
+/-- The photon in the **straight chart** `1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁`, built with
+the algebra product (no basis label is trusted).
+
+This was the corpus photon until the owner ruling of 2026-11-18 (bean `qou-99qc`,
+confirmed 2026-11-20). `def:photon` is now `1 + φ₀σ₀ + φ₁σ₁ + φ₀₁σ₀σ₁⁻¹` — `photon`
+below — and `photon h a0 a1 a2 = photonStraight h (a0 − h·a2) a1 a2`
+(`photon_eq_photonStraight`). Every theorem of this file stated on
+`photonStraight` / `pairNF` is a statement in the straight chart; the canonical
+chart's pair product is `pairNFChiral`. -/
+def photonStraight (h a0 a1 a2 : R) : Fin 6 → R :=
   e0 + a0 • s0 + a1 • s1 + a2 • mulNF h s0 s1
 
-theorem photon_eq (h a0 a1 a2 : R) : photon h a0 a1 a2 = ![1, a0, a1, 0, a2, 0] := by
-  rw [photon, s0_mul_s1]
+theorem photonStraight_eq (h a0 a1 a2 : R) : photonStraight h a0 a1 a2 = ![1, a0, a1, 0, a2, 0] := by
+  rw [photonStraight, s0_mul_s1]
   funext i; fin_cases i <;> simp [e0, s0, s1]
 
 /-- The flavour-flipped photon: every letter `σᵢ` replaced by
@@ -121,7 +130,7 @@ def photonBar (h a0 a1 a2 : R) : Fin 6 → R :=
 
 /-- `NF(γ(φ)·γ(ψ))`. -/
 def pairNF (h a0 a1 a2 b0 b1 b2 : R) : Fin 6 → R :=
-  mulNF h (photon h a0 a1 a2) (photon h b0 b1 b2)
+  mulNF h (photonStraight h a0 a1 a2) (photonStraight h b0 b1 b2)
 
 /-- **The γγ normal form** — reproduces table 5 of
 `trivial-knot-photon-interpretation` coordinate by coordinate (with
@@ -136,7 +145,58 @@ theorem pairNF_eq (h a0 a1 a2 b0 b1 b2 : R) :
         a2 * b0 + a1 * b2 + h * a2 * b2] := by
   funext i
   fin_cases i <;>
-    simp [pairNF, photon, mulNF, mulσ₀, mulσ₁, e0, s0, s1] <;> ring
+    simp [pairNF, photonStraight, mulNF, mulσ₀, mulσ₁, e0, s0, s1] <;> ring
+
+/-! ### The canonical photon: chiral vertex `σ₀σ₁⁻¹` (`def:photon`, ruling 2026-11-18) -/
+
+/-- `σ₁ − h` is the inverse of `σ₁` in the NF algebra. -/
+theorem s1_mul_s1inv (h : R) : mulNF h s1 (s1 - h • e0) = e0 := by
+  funext i; fin_cases i <;> simp [mulNF, mulσ₀, mulσ₁, s0, s1, e0]
+
+theorem s1inv_mul_s1 (h : R) : mulNF h (s1 - h • e0) s1 = e0 := by
+  funext i; fin_cases i <;> simp [mulNF, mulσ₀, mulσ₁, s0, s1, e0]
+
+/-- **`def:photon`**: `γ(φ) = 1 + φ₀σ₀ + φ₁σ₁ + φ₀₁·σ₀σ₁⁻¹`, `σ₁⁻¹ = σ₁ − h`. -/
+def photon (h a0 a1 a2 : R) : Fin 6 → R :=
+  e0 + a0 • s0 + a1 • s1 + a2 • mulNF h s0 (s1 - h • e0)
+
+theorem photon_eq (h a0 a1 a2 : R) :
+    photon h a0 a1 a2 = ![1, a0 - h * a2, a1, 0, a2, 0] := by
+  funext i; fin_cases i <;> simp [photon, mulNF, mulσ₀, mulσ₁, e0, s0, s1] <;> ring
+
+/-- Same element, straight coordinates: the `σ₀`-weight moves by `−h·φ₀₁`. -/
+theorem photon_eq_photonStraight (h a0 a1 a2 : R) :
+    photon h a0 a1 a2 = photonStraight h (a0 - h * a2) a1 a2 := by
+  rw [photon_eq, photonStraight_eq]
+
+/-- `NF(γ(φ)·γ(ψ))` for the canonical photon. -/
+def pairNFChiral (h a0 a1 a2 b0 b1 b2 : R) : Fin 6 → R :=
+  mulNF h (photon h a0 a1 a2) (photon h b0 b1 b2)
+
+theorem pairNFChiral_eq_pairNF (h a0 a1 a2 b0 b1 b2 : R) :
+    pairNFChiral h a0 a1 a2 b0 b1 b2 = pairNF h (a0 - h * a2) a1 a2 (b0 - h * b2) b1 b2 := by
+  simp only [pairNFChiral, pairNF, photon_eq_photonStraight]
+
+/-- **The γγ normal form of `def:photon`** (basis `1, σ₀, σ₁, L₋ = σ₁σ₀,
+`L₊ = σ₀σ₁, e⁻ = σ₀σ₁σ₀`). Recomputed independently in
+`computations/probes/gamma_gamma_pair_nf_h3_probe.py`. -/
+theorem pairNFChiral_eq (h a0 a1 a2 b0 b1 b2 : R) :
+    pairNFChiral h a0 a1 a2 b0 b1 b2 =
+      ![1 + a0 * b0 + a1 * b1 - h * (a0 * b2 + a2 * b0) + h ^ 2 * (a2 * b2),
+        a0 + b0 + h * a0 * b0 + a2 * b1 - h * (a2 + b2) - h ^ 2 * (a0 * b2 + a2 * b0)
+          + h ^ 3 * (a2 * b2),
+        a1 + b1 + h * a1 * b1 + a0 * b2 - h * (a2 * b2),
+        a1 * b0 + a2 * b2 - h * (a1 * b2),
+        a2 + b2 + a0 * b1 + h * (a0 * b2) - h ^ 2 * (a2 * b2),
+        a2 * b0 + a1 * b2] := by
+  rw [pairNFChiral_eq_pairNF, pairNF_eq]
+  funext i; fin_cases i <;> simp <;> ring
+
+/-- **`pairNF_affine` is a statement about the straight chart only.** In the
+canonical chart the identity coordinate of `γ(0,0,1)·γ(0,0,1)` is `1 + h²`. -/
+theorem pairNFChiral_deg0_quadratic (h : R) :
+    pairNFChiral h 0 0 1 0 0 1 0 = 1 + h ^ 2 := by
+  rw [pairNFChiral_eq]; simp
 
 /-- The order-`h¹` coefficient of `NF(γγ)`. -/
 def N1 (a0 a1 a2 b0 b1 b2 : R) : Fin 6 → R :=
@@ -182,22 +242,22 @@ theorem pairNF_deg0_h_free (h h' a0 a1 a2 b0 b1 b2 : R) :
 /-- Flavour is invisible at order zero: at `h = 0` the flipped photon IS the
 photon. -/
 theorem photonBar_order_zero (a0 a1 a2 : R) :
-    photonBar 0 a0 a1 a2 = photon 0 a0 a1 a2 := by
-  simp [photonBar, photon]
+    photonBar 0 a0 a1 a2 = photonStraight 0 a0 a1 a2 := by
+  simp [photonBar, photonStraight]
 
 /-- **Flavour reaches word degree 0 at order `h¹`.** Flipping `ψ`'s letters
 moves the degree-0 coordinate by `h·(h ψ₀₁ − φ₀ψ₀₁ − φ₁ψ₀₁ − ψ₀ − ψ₁)`. -/
 theorem flavour_reaches_deg0 (h a0 a1 a2 b0 b1 b2 : R) :
-    mulNF h (photon h a0 a1 a2) (photonBar h b0 b1 b2) 0
+    mulNF h (photonStraight h a0 a1 a2) (photonBar h b0 b1 b2) 0
       - pairNF h a0 a1 a2 b0 b1 b2 0
       = h * (h * b2 - a0 * b2 - a1 * b2 - b0 - b1) := by
-  simp [pairNF, photon, photonBar, mulNF, mulσ₀, mulσ₁, e0, s0, s1]; ring
+  simp [pairNF, photonStraight, photonBar, mulNF, mulσ₀, mulσ₁, e0, s0, s1]; ring
 
 /-- The witness: a horizontal photon `ψ = σ₀` against the bare core. The
 degree-0 coordinate moves by exactly `−h`, so "word degree 0 carries no
 flavour" fails whenever `h ≠ 0` (scope (a): true only modulo `h`). -/
 theorem flavour_reaches_deg0_witness (h : R) :
-    mulNF h (photon h 0 0 0) (photonBar h 1 0 0) 0 - pairNF h 0 0 0 1 0 0 0 = -h := by
+    mulNF h (photonStraight h 0 0 0) (photonBar h 1 0 0) 0 - pairNF h 0 0 0 1 0 0 0 = -h := by
   rw [flavour_reaches_deg0]; ring
 
 /-- The word-degree ≥ 1 part. -/
@@ -218,14 +278,14 @@ def connected (h a0 a1 a2 b0 b1 b2 : R) : Fin 6 → R :=
 
 theorem pairNF_eq_connected (h a0 a1 a2 b0 b1 b2 : R) :
     pairNF h a0 a1 a2 b0 b1 b2 =
-      photon h a0 a1 a2 + photon h b0 b1 b2 - e0 + connected h a0 a1 a2 b0 b1 b2 := by
-  rw [pairNF_eq, photon_eq, photon_eq]
+      photonStraight h a0 a1 a2 + photonStraight h b0 b1 b2 - e0 + connected h a0 a1 a2 b0 b1 b2 := by
+  rw [pairNF_eq, photonStraight_eq, photonStraight_eq]
   funext i; fin_cases i <;> simp [e0, connected] <;> ring
 
 theorem connected_eq_mulNF (h a0 a1 a2 b0 b1 b2 : R) :
     connected h a0 a1 a2 b0 b1 b2 =
-      mulNF h (photon h a0 a1 a2 - e0) (photon h b0 b1 b2 - e0) := by
-  rw [photon_eq, photon_eq]
+      mulNF h (photonStraight h a0 a1 a2 - e0) (photonStraight h b0 b1 b2 - e0) := by
+  rw [photonStraight_eq, photonStraight_eq]
   funext i; fin_cases i <;>
     simp [connected, mulNF, mulσ₀, mulσ₁, e0] <;> ring
 
@@ -365,11 +425,11 @@ theorem pairNF_three_letters_all_up [CharZero R] (a0 a1 a2 b0 b1 b2 : R)
 flavour is `−(ψ₀ + ψ₁ + (φ₀ + φ₁)ψ₀₁)`. The flavour comes from the photon's own
 letters: it is an INPUT, not produced by the collision. -/
 theorem pairBar_netFlavour (a0 a1 a2 b0 b1 b2 : R) :
-    netFlavour (mulNF (X : R[X]) (photon X (C a0) (C a1) (C a2))
+    netFlavour (mulNF (X : R[X]) (photonStraight X (C a0) (C a1) (C a2))
       (photonBar X (C b0) (C b1) (C b2))) = -(b0 + b1 + (a0 + a1) * b2) := by
   have hd := flavour_reaches_deg0 (R := R[X]) X (C a0) (C a1) (C a2) (C b0) (C b1) (C b2)
   have h0 := pairNF_formal a0 a1 a2 b0 b1 b2 0
-  have hv : mulNF (X : R[X]) (photon X (C a0) (C a1) (C a2))
+  have hv : mulNF (X : R[X]) (photonStraight X (C a0) (C a1) (C a2))
       (photonBar X (C b0) (C b1) (C b2)) 0 =
       C (pairNF 0 a0 a1 a2 b0 b1 b2 0) + C (-(b0 + b1 + (a0 + a1) * b2)) * X
         + C b2 * X ^ 2 := by
@@ -381,6 +441,81 @@ theorem pairBar_netFlavour (a0 a1 a2 b0 b1 b2 : R) :
   simp only [netFlavour, hPart, hv, Polynomial.coeff_add, Polynomial.coeff_C,
     Polynomial.coeff_C_mul, Polynomial.coeff_X_pow, Polynomial.coeff_X]
   simp
+
+/-! ## Flavour readout from a WORD of letters (bean `qou-qs1x`)
+
+A sum of letters loses which letter carries which bit (`letter_sum_flavour_swap`).
+A PRODUCT keeps it, except inside a run of consecutive letters on the SAME
+generator, because those commute (`sameGen_letters_commute`). The `h¹` part of the
+word reads the bits off directly (`word010_hPart_one`); a same-generator run
+leaves only the sum of its bits (`word001_hPart_one`). Measured over all
+placements and flavour assignments, exactly, by
+`computations/probes/quark_state/flavour_readout_word_probe.py`. -/
+
+/-- A letter with a general shift: `σ_g + c·h·1`. -/
+def letterH (h c : R) (g : Bool) : Fin 6 → R :=
+  (if g then s0 else s1) + (c * h) • e0
+
+/-- Letters on the same generator commute: they lie in the commutative
+subalgebra generated by `σ_g`. So flavour bits inside a same-generator run can
+only be read as a multiset. -/
+theorem sameGen_letters_commute (h a b : R) (g : Bool) :
+    mulNF h (letterH h a g) (letterH h b g) = mulNF h (letterH h b g) (letterH h a g) := by
+  cases g <;> (funext i; fin_cases i <;> simp [letterH, mulNF, mulσ₀, mulσ₁, e0, s0, s1] <;> ring)
+
+/-- The alternating word `ℓ₀(c₁)ℓ₁(c₂)ℓ₀(c₃)`. -/
+def word010 (h c1 c2 c3 : R) : Fin 6 → R :=
+  mulNF h (mulNF h (letterH h c1 true) (letterH h c2 false)) (letterH h c3 true)
+
+theorem word010_eq (h c1 c2 c3 : R) :
+    word010 h c1 c2 c3 =
+      ![c1 * c2 * c3 * h ^ 3 + c2 * h, h ^ 2 * (c1 * c2 + c2 * c3 + c2), c1 * c3 * h ^ 2,
+        c1 * h, c3 * h, 1] := by
+  funext i; fin_cases i <;> simp [word010, letterH, mulNF, mulσ₀, mulσ₁, e0, s0, s1] <;> ring
+
+/-- The builder-placement word `ℓ₀(c₁)ℓ₀(c₂)ℓ₁(c₃)`. -/
+def word001 (h c1 c2 c3 : R) : Fin 6 → R :=
+  mulNF h (mulNF h (letterH h c1 true) (letterH h c2 true)) (letterH h c3 false)
+
+theorem word001_eq (h c1 c2 c3 : R) :
+    word001 h c1 c2 c3 =
+      ![c1 * c2 * c3 * h ^ 3 + c3 * h, h ^ 2 * (c1 * c3 + c2 * c3 + c3), c1 * c2 * h ^ 2 + 1,
+        0, h * (c1 + c2 + 1), 0] := by
+  funext i; fin_cases i <;> simp [word001, letterH, mulNF, mulσ₀, mulσ₁, e0, s0, s1] <;> ring
+
+theorem word010_formal (c1 c2 c3 : R) :
+    word010 (X : R[X]) (C c1) (C c2) (C c3) =
+      ![C (c1 * c2 * c3) * X ^ 3 + C c2 * X, C (c1 * c2 + c2 * c3 + c2) * X ^ 2,
+        C (c1 * c3) * X ^ 2, C c1 * X, C c3 * X, 1] := by
+  rw [word010_eq]
+  funext i; fin_cases i <;> simp only [map_mul, map_add, map_one] <;> simp <;> ring
+
+/-- **Per-letter readout on the alternating word.** With `h` formal, the `h¹`
+part is `(c₂, 0, 0, c₁, c₃, 0)`: each letter's bit sits on its own coordinate
+(the word with that letter deleted). -/
+theorem word010_hPart_one (c1 c2 c3 : R) :
+    hPart 1 (word010 (X : R[X]) (C c1) (C c2) (C c3)) = ![c2, 0, 0, c1, c3, 0] := by
+  rw [word010_formal]
+  funext i
+  fin_cases i <;>
+    simp [hPart, Polynomial.coeff_C_mul_X_pow, Polynomial.coeff_C_mul_X, Polynomial.coeff_one,
+      Polynomial.coeff_add, Polynomial.coeff_mul_X_pow']
+
+theorem word001_formal (c1 c2 c3 : R) :
+    word001 (X : R[X]) (C c1) (C c2) (C c3) =
+      ![C (c1 * c2 * c3) * X ^ 3 + C c3 * X, C (c1 * c3 + c2 * c3 + c3) * X ^ 2,
+        C (c1 * c2) * X ^ 2 + 1, 0, C (c1 + c2 + 1) * X, 0] := by
+  rw [word001_eq]
+  funext i; fin_cases i <;> simp only [map_mul, map_add, map_one] <;> simp <;> ring
+
+/-- **The same-generator run on the builder word leaves only `c₁ + c₂`.** -/
+theorem word001_hPart_one (c1 c2 c3 : R) :
+    hPart 1 (word001 (X : R[X]) (C c1) (C c2) (C c3)) = ![c3, 0, 0, 0, c1 + c2 + 1, 0] := by
+  rw [word001_formal]
+  funext i
+  fin_cases i <;>
+    simp [hPart, Polynomial.coeff_C_mul_X_pow, Polynomial.coeff_C_mul_X, Polynomial.coeff_one,
+      Polynomial.coeff_add, Polynomial.coeff_mul_X_pow']
 
 end Generic
 
@@ -517,6 +652,23 @@ theorem gSplus_one (h2 : (2 : R) ≠ 0) : gSplus (1 : R) = -1 := by
   simp [gSplus]
   field_simp
   norm_num
+
+/-- **The `(2,1)` channel cannot see a global flavour flip of `Δ = σ₀σ₁σ₀`.**
+`ρ(Δ⁻¹) = ρ(Δ)`, equivalently the full twist `Δ²` acts as `1` on `(2,1)`. So on
+the alternating word, `uuu` and `ddd` have the same nucleon state, although the
+full normal forms differ (`word010_hPart_one`). -/
+theorem rho_delta_inv (q : R) (hq : q ≠ 0) :
+    lA q (-1) * lB q (-1) * lA q (-1) = rA q * rB q * rA q := by
+  simp only [lA, lB, rA, rB, Matrix.mul_fin_two]
+  ext i j; fin_cases i <;> fin_cases j <;> simp <;> field_simp <;> ring
+
+theorem rho_delta_sq (q : R) (hq : q ≠ 0) :
+    rA q * rB q * rA q * (rA q * rB q * rA q) = 1 := by
+  simp only [rA, rB, Matrix.mul_fin_two]
+  ext i j; fin_cases i <;> fin_cases j <;> simp
+  all_goals (try field_simp)
+  all_goals (try ring_nf)
+  all_goals (try simp)
 
 end Rep
 

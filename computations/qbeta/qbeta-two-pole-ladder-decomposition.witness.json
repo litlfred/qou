@@ -47,7 +47,7 @@
     "mpmath": "1.3.0"
   },
   "description": "Structural diagnostic (no fit/wiring): where the dominant (root 117.41, PR #1727) and subdominant silver (root 3.1154, PR #2454) F-poles each manifest in the canonical Q_β c_2..c_10 ladder. (1) Rung partition: dominant pole is TAIL-only, contributing <0.4% to open rungs c_3,c_4,c_5. (2) First test of the silver pole against the actual c_k: the dominant-peeled residual shows no clean +3.1154 geometric (sign-flips at k=6) — the ladder does not corroborate the silver zero as leading subdominant structure (matches PR #2454's caution). (3) The depth-2 annihilator of both roots leaves h_k≠0 (large at low k, ~1e-4 collapse in tail) => minimal denominator deg>=3 (re-confirms C5 from the pole side); h_k is the exact-extraction target for #2106/#2474. NO FLOAT, 70 dps. Exploratory.",
-  "contentBlock": "prop:q-beta-radius-of-convergence-gate",
+  "contentBlock": "conj:q-beta-radius-of-convergence-gate",
   "data": {
     "u_substrate": "0.008517234550156142189255573603309202969194221611630136163602977805856105",
     "u_silver": "0.3209834580317308973723915911963031012135113455031900587189492825779151",

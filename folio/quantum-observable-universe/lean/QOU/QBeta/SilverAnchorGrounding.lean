@@ -23,7 +23,7 @@ but never derived:
    variable it sits at `u_silver = u(1+√2) ≈ 0.321`, giving characteristic root
    `1/u_silver ≈ 3.12` (`RationalCoeffRecurrence.pole_reciprocal_is_char_root`),
    **not** the dominant tail ratio `1/u_substrate ≈ 117.4`
-   (`prop:q-beta-radius-of-convergence-gate`, PR #1727; `u_substrate ≈ 0.0085 <
+   (`conj:q-beta-radius-of-convergence-gate`, PR #1727; `u_substrate ≈ 0.0085 <
    u_silver`). The dominant pole is closer to `0` and comes from a *non-`Q_A`*
    source — so the silver/`Q_A` zero pins one *subdominant* root of the kernel's
    minimal denominator, and prunes the search for the dominant root (it is not

@@ -32,6 +32,30 @@ export default remark({
     "thm:q-ns-wellposedness",
   ],
   cites: ["cardona2021"],
+  authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-10-13",
+      body:
+        "**Re-scoped after owner ruling Q1 ($\\varTheta = f\\,\\xi^\\flat$, " +
+        "2026-10-13).** Withdrawn sentences, verbatim: \"The Levi form " +
+        "condition number isolates this contact degeneracy; it is the exact " +
+        "metric property that the $q$-deformation corrects. The quantum pressure " +
+        "term acts as an isotropic buffer preventing the Levi eigenvalues from " +
+        "crossing zero.\"; programme item 2, \"The Levi degeneracy conjecture " +
+        "isolates whether a given vortex collision targets the metric-Riemannian " +
+        "(regular) limit, where the contact form dies and the flow flattens, or " +
+        "the contact (blowup) limit, where the metric isolates non-degenerate " +
+        "dynamics. The Biot–Savart and hyperbolic overlap remarks frame these " +
+        "regimes explicitly as ODEs.\"; and the closing clause \"or triggers a " +
+        "contact-degenerate singularity\". Reason: in dimension 3 the Levi datum " +
+        "is the scalar $\\xi\\cdot\\mathrm{curl}\\,\\xi$ (no eigenvalues, no " +
+        "condition number), the blow-up branch (A) of `conj:levi-degeneracy` is " +
+        "withdrawn, and the Townsend ODEs describe core shape, not Levi data. " +
+        "Item 2 is restated on the surviving branch (B). The regime table is " +
+        "untouched and was not re-examined here. Bean `qou-fm7s`.",
+    },
+  ],
   tags: [
     "q-deformation",
     "contact-geometry",

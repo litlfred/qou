@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-9308100v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9308100v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-hep-th-9308100v1",
+  "title": "Gedanken Experiments Involving Black Holes",
   "contains": [
     "library/arxiv-hep-th-9308100v1/sections/sec-front-matter",
     "library/arxiv-hep-th-9308100v1/sections/sec-000",
@@ -23,7 +23,7 @@
     "library/arxiv-hep-th-9308100v1/sections/sec-008"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
     "status": "stated",
@@ -33,7 +33,9 @@
   },
   "meta": {
     "doc_id": "arxiv-hep-th-9308100v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "9308100v1.pdf",
     "source_sha256": "032c25faa757b650c462af1f847f2bdfbe4c5a4b066c1770dc108f30aafbbb7b",
     "pages": 22,

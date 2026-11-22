@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/s00526-018-1443-6/blocks/rem-sec-007-02",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "kind": "remark",
+  "pageStart": 6,
+  "pageEnd": 7,
+  "text": "rem-sec-007-02.md",
+  "derivedFrom": "library/s00526-018-1443-6/sections/sec-007",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s00526-018-1443-6/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "2.7",
+    "source_kind": "remark",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-007-23-faà-di-brunos-formula.md (p. 6-7)",
+    "claim_id": "s00526-018-1443-6#remark:2.7"
+  }
+}

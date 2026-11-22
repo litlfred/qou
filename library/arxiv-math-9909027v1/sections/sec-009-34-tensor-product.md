@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-9909027v1
-doc_title: "arXiv:math/9909027v1 [math.QA] 4 Sep 1999"
+doc_title: "Planar Algebras, I"
 section_id: sec-009-34-tensor-product
 section_title: "Tensor product"
 section_number: 3.4
@@ -8,6 +8,7 @@ pages: 79-80
 source_pdf: 9909027v1.pdf
 source_sha256: e6cd544cdc141d3b
 toc_source: inferred
+doc_brief: "Planar Algebras, I — We introduce a notion of planar algebra, the simplest example of which is a vector space of tensors, closed under planar contractions."
 ---
 Let P 1 = ∪kP 1
 k and P 2 = ∪kP 2

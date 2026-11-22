@@ -1,0 +1,1 @@
+Assume the hypotheses of Theorem 11.1 and let T = Te(x) for any x ∈∂B. If local( ˆr) is ﬁnite and nonempty then for any δ > 0 the torus T is homotopic in M to a cycle whose maximum height is less than h∗= −ˆr · x∗ outside of balls of radius δ around the points of W = local( ˆr).

@@ -1,0 +1,2640 @@
+{
+  "$schema": "folio-vector-figures/v1",
+  "doc_id": "arxiv-2111.04763v2",
+  "figures": [
+    {
+      "id": "vfig-p013",
+      "file": "figures/vfig-p013.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 13
+      },
+      "page": 13,
+      "rotation": 0,
+      "captionLabels": [
+        "1"
+      ],
+      "region": [
+        135.71,
+        94.19,
+        476.3,
+        246.32
+      ],
+      "assembly": {
+        "drawings": 62,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              135.71,
+              94.19,
+              374.12,
+              246.32
+            ],
+            "drawings": 39,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "ι1,2",
+              "ϕ(σ1)(τ)",
+              "ι0,2",
+              "ι0,1",
+              "ϕ(σ0)(τ)"
+            ]
+          },
+          {
+            "bbox": [
+              391.15,
+              101.01,
+              476.3,
+              246.32
+            ],
+            "drawings": 18,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "ι2,1",
+              "ϕ(σ2)(τ)"
+            ]
+          }
+        ],
+        "boxes": [],
+        "unlabelledClosedShapes": 40,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              260.59,
+              94.19,
+              374.12,
+              185.02
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              281.03,
+              185.02,
+              359.82,
+              185.02
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              294.65,
+              103.95,
+              294.65,
+              246.32
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              311.68,
+              185.02,
+              357.09,
+              185.02
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              311.68,
+              111.22,
+              311.68,
+              236.11
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              408.18,
+              185.02,
+              476.3,
+              185.02
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              391.15,
+              185.02,
+              462.0,
+              185.02
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              442.24,
+              103.95,
+              442.24,
+              246.32
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              396.82,
+              185.02,
+              425.21,
+              185.02
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              425.21,
+              111.22,
+              425.21,
+              236.11
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              135.71,
+              94.19,
+              271.94,
+              185.02
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              147.06,
+              185.02,
+              234.94,
+              185.02
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              192.47,
+              103.95,
+              192.47,
+              246.32
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              200.99,
+              185.02,
+              232.21,
+              185.02
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              152.74,
+              185.02,
+              183.96,
+              185.02
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              200.99,
+              111.22,
+              200.99,
+              236.11
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              183.96,
+              111.22,
+              183.96,
+              236.11
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              244.77,
+              355.19,
+              317.51,
+              355.19
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              321.56,
+              547.33,
+              333.34,
+              547.33
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              338.53,
+              617.03,
+              344.95,
+              617.03
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              338.3,
+              644.97,
+              352.79,
+              644.97
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              307.75,
+              666.96,
+              322.24,
+              666.96
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 55
+      }
+    },
+    {
+      "id": "vfig-p014",
+      "file": "figures/vfig-p014.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 14
+      },
+      "page": 14,
+      "rotation": 0,
+      "captionLabels": [
+        "2"
+      ],
+      "region": [
+        230.62,
+        94.23,
+        381.38,
+        307.82
+      ],
+      "assembly": {
+        "drawings": 64,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              230.62,
+              94.23,
+              381.38,
+              307.82
+            ],
+            "drawings": 64,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "I",
+              "II",
+              "III",
+              "IV"
+            ]
+          }
+        ],
+        "boxes": [],
+        "unlabelledClosedShapes": 36,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              230.62,
+              94.23,
+              381.38,
+              207.31
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              245.69,
+              207.31,
+              363.05,
+              207.31
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              306.0,
+              110.05,
+              306.0,
+              307.82
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              245.69,
+              207.31,
+              366.31,
+              207.31
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              306.0,
+              147.0,
+              356.26,
+              207.31
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              255.74,
+              147.0,
+              306.0,
+              207.31
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              255.74,
+              207.31,
+              306.0,
+              267.61
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              306.0,
+              207.31,
+              356.26,
+              267.61
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              306.0,
+              119.36,
+              342.64,
+              207.31
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              306.0,
+              207.31,
+              342.64,
+              295.25
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              269.36,
+              119.36,
+              306.0,
+              207.31
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              269.36,
+              207.31,
+              306.0,
+              295.25
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              306.0,
+              119.36,
+              330.43,
+              207.31
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              306.0,
+              207.31,
+              330.43,
+              295.25
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              281.57,
+              119.36,
+              306.0,
+              207.31
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              281.57,
+              207.31,
+              306.0,
+              295.25
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              306.0,
+              119.36,
+              318.21,
+              207.31
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              306.0,
+              207.31,
+              318.21,
+              295.25
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              293.79,
+              119.36,
+              306.0,
+              207.31
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              293.79,
+              207.31,
+              306.0,
+              295.25
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              306.0,
+              119.36,
+              324.32,
+              207.31
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              306.0,
+              207.31,
+              324.32,
+              295.25
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              287.68,
+              119.36,
+              306.0,
+              207.31
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              287.68,
+              207.31,
+              306.0,
+              295.25
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              324.85,
+              106.79,
+              324.85,
+              307.82
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              287.15,
+              106.79,
+              287.15,
+              307.82
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              315.42,
+              106.79,
+              315.42,
+              307.82
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              296.58,
+              106.79,
+              296.58,
+              307.82
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 23
+      }
+    },
+    {
+      "id": "vfig-p020",
+      "file": "figures/vfig-p020.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 20
+      },
+      "page": 20,
+      "rotation": 0,
+      "captionLabels": [
+        "3"
+      ],
+      "region": [
+        133.76,
+        92.22,
+        496.6,
+        296.32
+      ],
+      "assembly": {
+        "drawings": 28,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              133.76,
+              92.22,
+              496.6,
+              296.32
+            ],
+            "drawings": 22,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "C",
+              "...",
+              "...",
+              "A",
+              "Figure 3. The contour AN appears in the integral formula (69) for the",
+              "Kashaev invariant of the 41 knot, and it encircles the N poles (71). By doing",
+              "the integral along the contour C and picking the poles in the lower half plane,"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              133.76,
+              92.22,
+              496.6,
+              296.32
+            ],
+            "parent": null,
+            "labels": [
+              "C",
+              "...",
+              "...",
+              "A",
+              "Figure 3. The contour AN appears in the integral formula (69) for the",
+              "Kashaev invariant of the 41 knot, and it encircles the N poles (71). By doing",
+              "the integral along the contour C and picking the poles in the lower half plane,"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 14,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              242.15,
+              396.24,
+              248.01,
+              396.24
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              252.69,
+              429.41,
+              258.54,
+              429.41
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              246.19,
+              462.59,
+              252.04,
+              462.59
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              243.06,
+              495.76,
+              248.92,
+              495.76
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              273.13,
+              595.32,
+              278.98,
+              595.32
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              431.64,
+              689.8,
+              441.96,
+              689.8
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 69
+      }
+    },
+    {
+      "id": "vfig-p028",
+      "file": "figures/vfig-p028.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 28
+      },
+      "page": 28,
+      "rotation": 0,
+      "captionLabels": [
+        "4"
+      ],
+      "region": [
+        117.79,
+        244.8,
+        484.09,
+        412.54
+      ],
+      "assembly": {
+        "drawings": 256,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              117.79,
+              244.8,
+              212.14,
+              412.54
+            ],
+            "drawings": 21,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "ϕ(σ0)(x, τ)"
+            ]
+          },
+          {
+            "bbox": [
+              248.11,
+              244.8,
+              352.95,
+              412.54
+            ],
+            "drawings": 21,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "ϕ(σ1)(x, τ)"
+            ]
+          },
+          {
+            "bbox": [
+              379.26,
+              244.8,
+              484.09,
+              412.54
+            ],
+            "drawings": 21,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "ϕ(σ2)(x, τ)"
+            ]
+          }
+        ],
+        "boxes": [],
+        "unlabelledClosedShapes": 242,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              117.79,
+              328.67,
+              209.52,
+              328.67
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              164.97,
+              247.42,
+              164.97,
+              412.54
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              188.2,
+              328.67,
+              212.14,
+              328.67
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              186.98,
+              244.8,
+              186.98,
+              412.54
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              142.95,
+              244.8,
+              142.95,
+              412.54
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              248.11,
+              328.67,
+              345.09,
+              328.67
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              279.56,
+              247.42,
+              279.56,
+              412.54
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              325.86,
+              328.67,
+              352.95,
+              328.67
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              324.64,
+              244.8,
+              324.64,
+              412.54
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              384.5,
+              328.67,
+              481.47,
+              328.67
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              452.64,
+              247.42,
+              452.64,
+              412.54
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              379.26,
+              328.67,
+              406.34,
+              328.67
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              407.56,
+              244.8,
+              407.56,
+              412.54
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              118.03,
+              704.92,
+              135.15,
+              704.92
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 45
+      }
+    },
+    {
+      "id": "vfig-p029",
+      "file": "figures/vfig-p029.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 29
+      },
+      "page": 29,
+      "rotation": 0,
+      "captionLabels": [
+        "5"
+      ],
+      "region": [
+        219.7,
+        388.01,
+        392.3,
+        585.26
+      ],
+      "assembly": {
+        "drawings": 214,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              219.7,
+              388.01,
+              392.3,
+              585.26
+            ],
+            "drawings": 56,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "I",
+              "II",
+              "III",
+              "IV"
+            ]
+          }
+        ],
+        "boxes": [],
+        "unlabelledClosedShapes": 200,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              203.77,
+              233.93,
+              248.9,
+              233.93
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              303.2,
+              229.99,
+              313.51,
+              229.99
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              322.49,
+              229.99,
+              329.15,
+              229.99
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              416.39,
+              229.99,
+              426.7,
+              229.99
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              435.68,
+              229.99,
+              442.34,
+              229.99
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              200.98,
+              255.81,
+              246.1,
+              255.81
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              225.86,
+              486.63,
+              383.05,
+              486.63
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              306.0,
+              391.09,
+              306.0,
+              585.26
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              306.0,
+              486.63,
+              392.3,
+              486.63
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              219.7,
+              486.63,
+              306.0,
+              486.63
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              306.0,
+              449.44,
+              392.3,
+              486.63
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              306.0,
+              486.63,
+              392.3,
+              523.82
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              219.7,
+              449.44,
+              306.0,
+              486.63
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              219.7,
+              486.63,
+              306.0,
+              523.82
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 24
+      }
+    },
+    {
+      "id": "vfig-p043",
+      "file": "figures/vfig-p043.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 43
+      },
+      "page": 43,
+      "rotation": 0,
+      "captionLabels": [
+        "6"
+      ],
+      "region": [
+        105.7,
+        173.02,
+        506.29,
+        341.99
+      ],
+      "assembly": {
+        "drawings": 98,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              105.7,
+              173.02,
+              190.19,
+              341.99
+            ],
+            "drawings": 24,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "ι0,2",
+              "ι0,1",
+              "ι0,3",
+              "ϕ(σ0)(τ)"
+            ]
+          },
+          {
+            "bbox": [
+              210.83,
+              173.02,
+              295.31,
+              341.99
+            ],
+            "drawings": 23,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "ι1,2",
+              "ι1,3",
+              "ϕ(σ1)(τ)"
+            ]
+          },
+          {
+            "bbox": [
+              316.41,
+              173.02,
+              400.89,
+              341.99
+            ],
+            "drawings": 23,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "ι2,1",
+              "ι2,3",
+              "ϕ(σ2)(τ)"
+            ]
+          },
+          {
+            "bbox": [
+              421.81,
+              173.02,
+              506.29,
+              341.99
+            ],
+            "drawings": 24,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "ι3,2",
+              "ι3,1",
+              "ϕ(σ3)(τ)"
+            ]
+          }
+        ],
+        "boxes": [],
+        "unlabelledClosedShapes": 63,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              201.98,
+              127.86,
+              213.71,
+              127.86
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              264.7,
+              127.86,
+              276.43,
+              127.86
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              382.24,
+              127.86,
+              399.8,
+              127.86
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              105.7,
+              257.5,
+              187.25,
+              257.5
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              147.95,
+              175.96,
+              147.95,
+              341.99
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              147.95,
+              229.34,
+              190.19,
+              257.5
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              105.7,
+              229.34,
+              147.95,
+              257.5
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              158.39,
+              229.34,
+              190.19,
+              250.54
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              105.7,
+              229.34,
+              137.5,
+              250.54
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              147.95,
+              261.8,
+              147.95,
+              331.43
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              157.45,
+              173.02,
+              157.45,
+              341.99
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              138.44,
+              173.02,
+              138.44,
+              341.99
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              210.83,
+              257.5,
+              292.37,
+              257.5
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              253.07,
+              175.96,
+              253.07,
+              341.99
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              253.07,
+              257.5,
+              284.75,
+              289.18
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              273.24,
+              257.5,
+              295.31,
+              257.5
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              263.39,
+              267.83,
+              295.31,
+              299.75
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              272.08,
+              173.02,
+              272.08,
+              341.99
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              262.57,
+              173.02,
+              262.57,
+              341.99
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              316.41,
+              257.5,
+              397.95,
+              257.5
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              358.65,
+              175.96,
+              358.65,
+              341.99
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              316.41,
+              257.5,
+              358.65,
+              299.75
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              316.41,
+              257.5,
+              338.48,
+              257.5
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              316.41,
+              267.83,
+              348.33,
+              299.75
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              339.64,
+              173.02,
+              339.64,
+              341.99
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              349.15,
+              173.02,
+              349.15,
+              341.99
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              421.81,
+              257.5,
+              503.35,
+              257.5
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              464.05,
+              175.96,
+              464.05,
+              341.99
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              464.05,
+              215.26,
+              506.29,
+              257.5
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              421.81,
+              215.26,
+              464.05,
+              257.5
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              474.38,
+              215.26,
+              506.29,
+              247.18
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              421.81,
+              215.26,
+              453.73,
+              247.18
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              473.56,
+              173.02,
+              473.56,
+              341.99
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              454.55,
+              173.02,
+              454.55,
+              341.99
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              257.58,
+              700.84,
+              293.61,
+              700.84
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 51
+      }
+    },
+    {
+      "id": "vfig-p044",
+      "file": "figures/vfig-p044.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 44
+      },
+      "page": 44,
+      "rotation": 0,
+      "captionLabels": [
+        "7"
+      ],
+      "region": [
+        251.82,
+        315.49,
+        360.18,
+        541.07
+      ],
+      "assembly": {
+        "drawings": 103,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              251.82,
+              315.49,
+              360.18,
+              541.07
+            ],
+            "drawings": 103,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "I",
+              "II",
+              "IV",
+              "III",
+              "ι1,2",
+              "ι2,1",
+              "ι3,2",
+              "ι3,1",
+              "ι1,3",
+              "ι2,3",
+              "ι0,2",
+              "ι0,1",
+              "ι0,3"
+            ]
+          }
+        ],
+        "boxes": [],
+        "unlabelledClosedShapes": 49,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              251.82,
+              428.28,
+              358.09,
+              428.28
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              306.0,
+              322.01,
+              306.0,
+              536.65
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              331.82,
+              428.28,
+              360.18,
+              428.28
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              251.82,
+              428.28,
+              280.17,
+              428.28
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              319.39,
+              392.16,
+              360.18,
+              419.35
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              319.21,
+              441.49,
+              360.18,
+              482.47
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              251.82,
+              392.16,
+              292.6,
+              419.35
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              251.82,
+              441.49,
+              292.79,
+              482.47
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              306.0,
+              428.28,
+              360.18,
+              428.28
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              251.82,
+              428.28,
+              306.0,
+              428.28
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              306.0,
+              374.1,
+              360.18,
+              428.28
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              306.0,
+              428.28,
+              360.18,
+              482.47
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              251.82,
+              374.1,
+              306.0,
+              428.28
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              251.82,
+              428.28,
+              306.0,
+              482.47
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              306.0,
+              316.07,
+              338.51,
+              428.28
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              273.49,
+              316.07,
+              306.0,
+              428.28
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              306.0,
+              428.28,
+              338.51,
+              540.49
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              273.49,
+              428.28,
+              306.0,
+              540.49
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              306.0,
+              322.3,
+              319.41,
+              428.28
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              306.0,
+              318.17,
+              324.65,
+              428.28
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              292.59,
+              322.3,
+              306.0,
+              428.28
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              287.35,
+              318.17,
+              306.0,
+              428.28
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              306.0,
+              428.28,
+              319.41,
+              534.27
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              306.0,
+              428.28,
+              324.65,
+              538.4
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              292.59,
+              428.28,
+              306.0,
+              534.27
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              287.35,
+              428.28,
+              306.0,
+              538.4
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              306.0,
+              319.92,
+              306.0,
+              428.28
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              306.0,
+              428.28,
+              306.0,
+              536.65
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              306.0,
+              331.57,
+              360.18,
+              428.28
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              251.82,
+              331.57,
+              306.0,
+              428.28
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              306.0,
+              428.28,
+              360.18,
+              525.0
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              251.82,
+              428.28,
+              306.0,
+              525.0
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              306.0,
+              322.43,
+              329.16,
+              428.28
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              306.0,
+              315.49,
+              349.89,
+              428.28
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              282.84,
+              322.43,
+              306.0,
+              428.28
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              262.11,
+              315.49,
+              306.0,
+              428.28
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              306.0,
+              428.28,
+              329.16,
+              534.14
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              306.0,
+              428.28,
+              349.89,
+              541.07
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              282.84,
+              428.28,
+              306.0,
+              534.14
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              262.11,
+              428.28,
+              306.0,
+              541.07
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              306.0,
+              392.16,
+              360.18,
+              428.28
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              251.82,
+              392.16,
+              306.0,
+              428.28
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              306.0,
+              317.54,
+              320.63,
+              428.28
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              291.37,
+              317.54,
+              306.0,
+              428.28
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              306.0,
+              428.28,
+              320.63,
+              519.52
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              291.37,
+              428.28,
+              306.0,
+              519.52
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              306.0,
+              319.82,
+              331.6,
+              428.28
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              280.4,
+              319.82,
+              306.0,
+              428.28
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              306.0,
+              428.28,
+              331.6,
+              502.61
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              280.4,
+              428.28,
+              306.0,
+              502.61
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              293.81,
+              319.92,
+              293.81,
+              536.65
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              281.62,
+              319.92,
+              281.62,
+              536.65
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              318.19,
+              319.92,
+              318.19,
+              536.65
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              330.38,
+              319.92,
+              330.38,
+              536.65
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 38
+      }
+    },
+    {
+      "id": "vfig-p050",
+      "file": "figures/vfig-p050.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 50
+      },
+      "page": 50,
+      "rotation": 0,
+      "captionLabels": [
+        "8"
+      ],
+      "region": [
+        99.09,
+        109.37,
+        509.44,
+        245.22
+      ],
+      "assembly": {
+        "drawings": 283,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              99.09,
+              109.44,
+              181.38,
+              245.22
+            ],
+            "drawings": 23,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "ϕ(σ0)(x, τ)"
+            ]
+          },
+          {
+            "bbox": [
+              200.66,
+              109.37,
+              281.95,
+              243.5
+            ],
+            "drawings": 26,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "ϕ(σ1)(x, τ)"
+            ]
+          },
+          {
+            "bbox": [
+              293.73,
+              109.37,
+              374.96,
+              243.42
+            ],
+            "drawings": 26,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "ϕ(σ2)(x, τ)"
+            ]
+          },
+          {
+            "bbox": [
+              394.23,
+              109.44,
+              509.44,
+              245.22
+            ],
+            "drawings": 22,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "ϕ(σ3)(x, τ)"
+            ]
+          }
+        ],
+        "boxes": [],
+        "unlabelledClosedShapes": 251,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              99.09,
+              179.39,
+              179.33,
+              179.39
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              140.24,
+              111.49,
+              140.24,
+              245.22
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              159.26,
+              168.17,
+              181.38,
+              174.2
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              140.24,
+              168.17,
+              181.38,
+              179.39
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              99.09,
+              168.17,
+              121.21,
+              174.2
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              99.09,
+              168.17,
+              140.24,
+              179.39
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              158.34,
+              113.55,
+              158.34,
+              245.22
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              122.13,
+              113.55,
+              122.13,
+              245.22
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              200.66,
+              178.47,
+              275.85,
+              178.47
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              225.04,
+              111.4,
+              225.04,
+              243.5
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              261.76,
+              178.47,
+              281.95,
+              178.47
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              225.04,
+              178.47,
+              281.95,
+              201.75
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              243.81,
+              186.15,
+              281.95,
+              201.75
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              260.81,
+              113.44,
+              260.81,
+              243.5
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              242.93,
+              113.44,
+              242.93,
+              243.5
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              297.79,
+              178.43,
+              372.93,
+              178.43
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              350.59,
+              111.4,
+              350.59,
+              243.42
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              293.73,
+              178.43,
+              313.87,
+              178.43
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              293.73,
+              178.43,
+              350.59,
+              201.69
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              293.73,
+              186.11,
+              331.82,
+              201.69
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              314.85,
+              113.44,
+              314.85,
+              243.42
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              332.72,
+              113.44,
+              332.72,
+              243.42
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              398.35,
+              179.39,
+              503.27,
+              179.39
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              451.84,
+              111.49,
+              451.84,
+              245.22
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              394.23,
+              155.82,
+              451.84,
+              179.39
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              451.84,
+              155.82,
+              509.44,
+              179.39
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              394.23,
+              155.82,
+              432.82,
+              171.61
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              470.86,
+              155.82,
+              509.44,
+              171.61
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              469.94,
+              113.55,
+              469.94,
+              245.22
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              433.73,
+              113.55,
+              433.73,
+              245.22
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              304.36,
+              466.71,
+              365.26,
+              466.71
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              150.95,
+              671.88,
+              156.8,
+              671.88
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 108
+      }
+    }
+  ]
+}

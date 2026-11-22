@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/aif-2009-59-1-347-0/sections/sec-024",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The functional space H in the Borel plane",
+  "pageStart": 42,
+  "pageEnd": 45,
+  "contains": [
+    "library/aif-2009-59-1-347-0/blocks/prose-sec-024",
+    "library/aif-2009-59-1-347-0/blocks/def-sec-024-01",
+    "library/aif-2009-59-1-347-0/blocks/def-sec-024-02",
+    "library/aif-2009-59-1-347-0/blocks/prop-sec-024-03",
+    "library/aif-2009-59-1-347-0/blocks/lem-sec-024-04",
+    "library/aif-2009-59-1-347-0/blocks/lem-sec-024-05"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/aif-2009-59-1-347-0/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/aif-2009-59-1-347-0/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -65,7 +65,7 @@ Generic `{K : Type*} [Field K]` throughout (inverses appear only through
 archimedean construct.  The diagonal action and the evaluation are algebraic.
 
   -- Ref: [nguyen-tran-2021] strong AJ for 4₁;
-  --      [manuscript] mass-theory, prop:binding-genfun-qdifference;
+  --      [leitner2026] mass-theory, prop:binding-genfun-qdifference;
   --      docs/audits/2026-07-20-qlift-gauge-gap-synthesis.md
 -/
 

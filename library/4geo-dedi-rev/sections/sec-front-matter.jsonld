@@ -13,9 +13,12 @@
   "pageStart": 1,
   "pageEnd": 2,
   "contains": [
-    "library/4geo-dedi-rev/blocks/prose-sec-front-matter"
+    "library/4geo-dedi-rev/blocks/prose-sec-front-matter",
+    "library/4geo-dedi-rev/blocks/figure-img-p001-1",
+    "library/4geo-dedi-rev/blocks/figure-img-p001-2",
+    "library/4geo-dedi-rev/blocks/figure-img-p001-3"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/4geo-dedi-rev",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/4geo-dedi-rev",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/4geo-dedi-rev/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/4geo-dedi-rev/manifest.jsonld",
   "provenance": "ingested"
 }

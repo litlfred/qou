@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: ant-v14-n7-s-p03.pdf
 source_sha256: e32fde16c3ce0940
 toc_source: inferred
+doc_brief: "Nouvelles cohomologies de Weil en caractéristique positive — periods” admitting an explicit description by generators and relations."
 ---
 msp
 ALGEBRA AND NUMBER THEORY 14:7 (2020)
@@ -28,4 +29,3 @@ where AK is a K-algebra of “p-adic abstract periods” admitting an explicit d
 relations. We establish comparison theorems relating this new Weil cohomology to the classical ones:
 Berthelot’s rigid cohomology and the ℓ-adic cohomologies, for ℓ̸ = p. We also state some conjectures on
 the ring AK. One of these conjectures implies the independence of ℓin cohomology.
-1.

@@ -1,0 +1,151 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2007.13108v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "b298478f5f5b948df63ffd7aaccf2c6940ff65dcd23b1e25a39071a7dc7d40fa",
+  "file": "2007.13108v1.pdf"
+ },
+ "provenance": {
+  "title": "Log concavity and concentration of Lipschitz functions on the Boolean hypercube",
+  "authors": "Ronen Eldan\u2217and Omer Shamir\u2020",
+  "arxiv": {
+   "id": "2007.13108",
+   "version": "1",
+   "primary_class": "math.PR",
+   "stamp_date": "26 Jul 2020"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 4,
+  "by_kind": {
+   "proposition": 2,
+   "lemma": 2
+  },
+  "formalization_candidates": 4,
+  "by_domain": {
+   "math": 4
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 4
+  },
+  "by_evidence_location": {
+   "in-paper": 3,
+   "both": 1
+  },
+  "by_lean_status": {
+   "unformalized": 4
+  },
+  "needs_lean_proof": 4
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "fact",
+   "number": "11",
+   "name": null,
+   "statement": "One has, V ar\u03bdt[\u03d5] \u2264nTr(At).",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-008-31-estimating-the-variance-in-terms-of-the-trans.md (p. 9-11)",
+   "external_refs": [],
+   "proof_excerpt": "It is easily checked that \u03d5 is 1-Hamming-Lipschitz then its multi-linear extension sat- is\ufb01es |\u2202i\u03d5(x)| \u22641 for all x \u2208[\u22121, 1]n and i \u2208[n]. Therefore, its multi-linear extension is \u221an-Lipschitz with respect to the Euclidean distance, hence |\u03d5(x) \u2212\u03d5(y)| \u2264\u221an|x \u2212y|, \u2200x, y \u2208[\u22121, 1]n. S",
+   "section_file": "sections/sec-008-31-estimating-the-variance-in-terms-of-the-trans.md",
+   "section_title": "Estimating the variance in terms of the transportation distance between tilts",
+   "pages": "9-11",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-008-31-estimating-the-variance-in-terms-of-the-trans.md (p. 9-11)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "prop-sec-008-01",
+   "block_iri": "library/arxiv-2007.13108v1/blocks/prop-sec-008-01",
+   "claim_id": "arxiv-2007.13108v1#fact:11",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "12",
+   "name": null,
+   "statement": "For all t, r \u22650, we have almost surely, E[Tr(At+r)|Fr] \u2264ne\u2212t/8. (18)",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-008-31-estimating-the-variance-in-terms-of-the-trans.md (p. 9-11)",
+   "external_refs": [],
+   "proof_excerpt": "Fix i \u2208[n], and de\ufb01ne St := (At)i,i, Qt = \u27e8at, ei\u27e9. By part 3 of Proposition 9, we have that a\u221e|Ft has the law \u03bdt, meaning that Q\u221e:= limt\u2192\u221eQt exists almost surely, and that St = Var[Q\u221e|Ft]. Recall that at is a martingale and thus so is Qt and St = Var[Q\u221e|Ft] = E[Q2 \u221e|Ft] \u2212Q2 t = ",
+   "section_file": "sections/sec-008-31-estimating-the-variance-in-terms-of-the-trans.md",
+   "section_title": "Estimating the variance in terms of the transportation distance between tilts",
+   "pages": "9-11",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-008-31-estimating-the-variance-in-terms-of-the-trans.md (p. 9-11)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-008-02",
+   "block_iri": "library/arxiv-2007.13108v1/blocks/lem-sec-008-02",
+   "claim_id": "arxiv-2007.13108v1#lemma:12",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "13",
+   "name": null,
+   "statement": "Let \u03bd be a \u03b2-semi-log-concave measure on Cn. Let v \u2208Rn and let \u03b8 \u2208Sn\u22121. Then, for all 0 < \u03b5 < 0.1, we have W1(\u03c4v\u03bd, \u03c4v+\u03b5\u03b8\u03bd) \u22644\u03b5\u03b2n1\u22121/(32\u03b2).",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-008-31-estimating-the-variance-in-terms-of-the-trans.md (p. 9-11)",
+   "external_refs": [],
+   "proof_excerpt": "Use equation (20) with T = 16 log n. Invoke the above proposition and attain Var[\u03d5] \u22644T\u03b2n2\u22121/(16\u03b2) + n2e\u22122 log n \u2264C\u03b2n2\u22121/(17\u03b2), for a universal constant C > 0.",
+   "section_file": "sections/sec-008-31-estimating-the-variance-in-terms-of-the-trans.md",
+   "section_title": "Estimating the variance in terms of the transportation distance between tilts",
+   "pages": "9-11",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-008-31-estimating-the-variance-in-terms-of-the-trans.md (p. 9-11)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "prop-sec-008-03",
+   "block_iri": "library/arxiv-2007.13108v1/blocks/prop-sec-008-03",
+   "claim_id": "arxiv-2007.13108v1#proposition:13",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "14",
+   "name": null,
+   "statement": "Let \u03b5 > 0. Let Wt be a standard Brownian motion and let Yt, Zt be adapted to Wt, which satisfy Xt = \u03b5 + Wt + Z t Zsds and such that Zt \u22640, almost surely for all t. Let \u03c4 = inf{t; Xt = 0}. One has P(\u03c4 \u2265s) \u2264\u03b5 \u221as, \u2200s > 0.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "both",
+   "evidence_locator": "In-paper proof in sections/sec-009-32-proof-of-proposition-13-the-stochastic-coupli.md (p. 11-14) citing [11, Theorem 2.19], [0,s], [0, \u03b5]",
+   "external_refs": [
+    "[11, Theorem 2.19]",
+    "[0,s]",
+    "[0, \u03b5]"
+   ],
+   "proof_excerpt": "By the re\ufb02ection principle (see [11, Theorem 2.19]), we have P \u0012 min t\u2208[0,s] Xt \u2264\u2212\u03b5 \u0013 \u2265P \u0012 min t\u2208[0,s] |Wt + \u03b5| = 0 \u0013 = 2P(Ws \u2264\u2212\u03b5) = 1 \u22122(P(Ws \u2208[0, \u03b5]) \u22651 \u2212 2\u03b5 \u221a 2\u03c0s. Let t \u2192T (t) be the unique increasing function satisfying 4 Z T (t) 0 e\u22122\u03b2sds = t, \u22000 \u2264t \u22644 Z \u221e 0 e\u22122\u03b2sds. Accord",
+   "section_file": "sections/sec-009-32-proof-of-proposition-13-the-stochastic-coupli.md",
+   "section_title": "Proof of Proposition 13: The stochastic coupling",
+   "pages": "11-14",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: both, In-paper proof in sections/sec-009-32-proof-of-proposition-13-the-stochastic-coupli.md (p. 11-14) citing [11, Theorem 2.19], [0,s], [0, \u03b5]). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-009-01",
+   "block_iri": "library/arxiv-2007.13108v1/blocks/lem-sec-009-01",
+   "claim_id": "arxiv-2007.13108v1#lemma:14",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  }
+ ]
+}

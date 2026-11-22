@@ -7,29 +7,53 @@
   "bytes": 317282,
   "pages": 19,
   "text_source": "embedded",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:55Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 13,
+    "reason": "11 of 423 words are a stray single letter: the text layer splits words"
+   }
+  ]
  },
  "metadata": {
   "arxiv": null,
   "doi": "10.1007/s00453-026-01372-w",
-  "title": "Algorithmica (2026) 88:21 Concentration of Submodular Functions and Read-k Families Under Negative Dependence Sharmila Duppala 1 \u00b7 George Z. Li 2 \u00b7 Juan Luque 1 \u00b7 Aravind Srinivasan 1 \u00b7",
+  "title": "Concentration of Submodular Functions and Read-k Families Under Negative Dependence",
   "authors_raw": null,
   "title_lines": [
    "Algorithmica (2026) 88:21",
    "Concentration of Submodular Functions and Read-k",
    "Families Under Negative Dependence",
-   "Sharmila Duppala 1 \u00b7 George Z. Li 2 \u00b7 Juan Luque 1 \u00b7 Aravind Srinivasan 1 \u00b7"
+   "Sharmila Duppala1 · George Z. Li2 · Juan Luque1 · Aravind Srinivasan1 ·"
   ],
-  "abstract": "We study the question of whether submodular functions of random variables satisfying various notions of negative dependence satisfy Chernoff-like concentration inequal- ities. We prove such a concentration inequality for the lower tail when the random variables satisfy negative association or negative regression, partially resolving an open problem raised in ([ 1]). Previous work showed such concentration results for random variables that come from speci\ufb01c dependent-rounding algorithms ([ 2, 3]). We discuss some applications of our results to combinatorial optimization and beyond. We also show applications to the concentration of read- k families [4] under certain forms of negative dependence; we further show a simpli\ufb01ed proof of the entropy-method approach of [4].",
+  "abstract": "We study the question of whether submodular functions of random variables satisfying various notions of negative dependence satisfy Chernoff-like concentration inequal- ities. We prove such a concentration inequality for the lower tail when the random variables satisfy negative association or negative regression, partially resolving an open problem raised in ([1]). Previous work showed such concentration results for random variables that come from speciﬁc dependent-rounding algorithms ([2, 3]). We discuss some applications of our results to combinatorial optimization and beyond. We also show applications to the concentration of read-k families [4] under certain forms of negative dependence; we further show a simpliﬁed proof of the entropy-method approach of [4].",
   "docinfo": {
+   "Title": "Concentration of Submodular Functions and Read-k Families Under Negative Dependence",
    "Author": "Sharmila Duppala ",
-   "CreationDate": "D:20260214145740+05'30'",
-   "Creator": "Springer",
    "Producer": "Acrobat Distiller 10.1.8 (Windows)",
-   "Title": "Concentration of Submodular Functions and Read-k Families Under Negative Dependence"
-  }
+   "Creator": "Springer",
+   "CreationDate": "D:20260214145740+05'30'"
+  },
+  "title_raw": "Algorithmica (2026) 88:21 Concentration of Submodular Functions and Read-k Families Under Negative Dependence Sharmila Duppala1 · George Z. Li2 · Juan Luque1 · Aravind Srinivasan1 ·",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Concentration of Submodular Functions and Read-k Families Under Negative Dependence",
+   "heading": "Concentration of Submodular Functions and Read- k Families Under Negative Dependence",
+   "outline": "Concentration of Submodular Functions and Read-k Families Under Negative Dependence",
+   "text": "Algorithmica (2026) 88:21 Concentration of Submodular Functions and Read-k Families Under Negative Dependence Sharmila Duppala1 · George Z. Li2 · Juan Luque1 · Aravind Srinivasan1 ·",
+   "corroborated_by": [
+    "heading",
+    "outline",
+    "text",
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Algorithmica (2026) 88:21 Concentration of Submodular Functions and Read-k Families Under Negative Dependence Sharmila Duppala 1 · George Z. Li 2 · Juan Luque 1 · Aravind Srinivasan 1 ·"
  },
  "toc": [
   {
@@ -37,102 +61,327 @@
    "title": "Concentration of Submodular Functions and Read-k Families Under Negative Dependence",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Abstract",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Preliminaries",
    "page": 5,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 3,
    "title": "Notions of Negative Dependence",
    "page": 5,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 3,
    "title": "Submodular Functions",
    "page": 6,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Submodular Chernoff Bounds",
    "page": 7,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 3,
    "title": "1-Negative Association and Weak Negative Regression",
    "page": 7,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 3,
    "title": "Proof of Submodular Concentration",
    "page": 7,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 3,
    "title": "Concentration of read-k families",
    "page": 10,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Acknowledgements",
    "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "A 1-Negative Association and Weak Negative Regression",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "B Concentration of Read-k Families",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 3,
    "title": "References",
    "page": 17,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 68,
+   "n_words": 4,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-concentration-of-submodular-functions-and-read-k",
    "number": null,
@@ -140,8 +389,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 234,
-   "n_words": 43
+   "n_chars": 229,
+   "n_words": 38,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-abstract",
@@ -150,8 +401,10 @@
    "level": 2,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 869,
-   "n_words": 123
+   "n_chars": 866,
+   "n_words": 120,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-1-introduction",
@@ -160,8 +413,10 @@
    "level": 2,
    "page_start": 1,
    "page_end": 5,
-   "n_chars": 11855,
-   "n_words": 1856
+   "n_chars": 11882,
+   "n_words": 1895,
+   "label_start": null,
+   "label_end": "5"
   },
   {
    "id": "sec-003-2-preliminaries",
@@ -171,7 +426,9 @@
    "page_start": 5,
    "page_end": 5,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "5",
+   "label_end": "5"
   },
   {
    "id": "sec-004-21-notions-of-negative-dependence",
@@ -180,8 +437,10 @@
    "level": 3,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 2179,
-   "n_words": 430
+   "n_chars": 2172,
+   "n_words": 426,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
    "id": "sec-005-22-submodular-functions",
@@ -190,65 +449,97 @@
    "level": 3,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 1369,
-   "n_words": 290
+   "n_chars": 1352,
+   "n_words": 300,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
-   "id": "sec-006-31-1-negative-association-and-weak-negative-regr",
+   "id": "sec-006-3-submodular-chernoff-bounds",
+   "number": "3",
+   "title": "Submodular Chernoff Bounds",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "7",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-007-31-1-negative-association-and-weak-negative-regr",
    "number": "3.1",
    "title": "1-Negative Association and Weak Negative Regression",
    "level": 3,
    "page_start": 7,
    "page_end": 7,
-   "n_chars": 1396,
-   "n_words": 237
+   "n_chars": 1401,
+   "n_words": 242,
+   "label_start": "7",
+   "label_end": "7"
   },
   {
-   "id": "sec-007-32-proof-of-submodular-concentration",
+   "id": "sec-008-32-proof-of-submodular-concentration",
    "number": "3.2",
    "title": "Proof of Submodular Concentration",
    "level": 3,
    "page_start": 7,
    "page_end": 10,
-   "n_chars": 5675,
-   "n_words": 1065
+   "n_chars": 5877,
+   "n_words": 1276,
+   "label_start": "7",
+   "label_end": "10"
   },
   {
-   "id": "sec-008-33-concentration-of-read-k-families",
+   "id": "sec-009-33-concentration-of-read-k-families",
    "number": "3.3",
    "title": "Concentration of read-k families",
    "level": 3,
    "page_start": 10,
    "page_end": 12,
-   "n_chars": 4672,
-   "n_words": 987
+   "n_chars": 4653,
+   "n_words": 974,
+   "label_start": "10",
+   "label_end": "12"
   },
   {
-   "id": "sec-009-acknowledgements",
+   "id": "sec-010-acknowledgements",
    "number": null,
    "title": "Acknowledgements",
    "level": 2,
    "page_start": 12,
    "page_end": 17,
-   "n_chars": 11282,
-   "n_words": 2122
+   "n_chars": 11222,
+   "n_words": 2058,
+   "label_start": "12",
+   "label_end": "17"
   },
   {
-   "id": "sec-010-references",
+   "id": "sec-011-references",
    "number": null,
    "title": "References",
    "level": 3,
    "page_start": 17,
    "page_end": 19,
-   "n_chars": 6863,
-   "n_words": 856
+   "n_chars": 6835,
+   "n_words": 837,
+   "label_start": "17",
+   "label_end": "19"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 14,
-  "sections": 11,
-  "chars_total": 46394
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 13,
+  "chars_total": 46557,
+  "furniture_lines_stripped": 18
  }
 }

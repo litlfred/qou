@@ -9,13 +9,15 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Ordering mutations",
-  "pageStart": 34,
-  "pageEnd": 36,
+  "title": "Construction for A_n",
+  "pageStart": 32,
+  "pageEnd": 33,
   "contains": [
-    "library/arxiv-2104.04941v2/blocks/prose-sec-027"
+    "library/arxiv-2104.04941v2/blocks/prose-sec-027",
+    "library/arxiv-2104.04941v2/blocks/rem-sec-027-01",
+    "library/arxiv-2104.04941v2/blocks/prop-sec-027-02"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2104.04941v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2104.04941v2",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2104.04941v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2104.04941v2/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -8,6 +8,7 @@ pages: 15-16
 source_pdf: Chinta_2025_J._Phys._A__Math._Theor._58_035203.pdf
 source_sha256: baba83ca76c773d4
 toc_source: outline
+doc_brief: "The discrete analogue of the Gaussian — 13 sections: Front matter; The discrete analogue of the Gauss; Introduction"
 ---
 Consider a discrete tori in d dimensions, or equivalently, a rectangular box in the standard
 lattice Zd equipped with periodic boundary conditions, see figure 2. The question is how does

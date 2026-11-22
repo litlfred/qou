@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0405126v1
-doc_title: "arXiv:math/0405126v1 [math.GT] 7 May 2004"
+doc_title: "ASYMPTOTIC BEHAVIORS OF THE COLORED JONES POLYNOMIALS OF A TORUS KNOT"
 section_id: sec-001-2-proof
 section_title: "Proof"
 section_number: 2
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.919
 latex_coverage_ratio: 0.894
+doc_brief: "ASYMPTOTIC BEHAVIORS OF THE COLORED JONES POLYNOMIALS OF A TORUS KNOT — We study the asymptotic behaviors of the colored Jones polyno- mials of torus knots. Contrary to the works by R. Kashaev, O."
 ---
 When $t=e^{2\pi{r}\sqrt{-1}/N}$ for $r\in\mathbb{C}\setminus{\mathbb{Z}}$, $J_N\left(T(a,b);e^{2\pi{r}\sqrt{-1}/N}\right)$ can be given by the following integral form [@Kashaev/Tirkkonen:ZAPNS200 Lemma 1]. $$J_N\left(T(a,b),e^{2\pi{r}\sqrt{-1}/N}\right)
   =

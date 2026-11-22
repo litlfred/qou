@@ -1,0 +1,45 @@
+80 Univariate asymptotics
+
+The final step is to prove an approximation of the form
+
+= f. exp(I(1 - 8, + it)) dt ~ = f. exp [i —Bn) + at ~ pair? dt,
+
+(3.16)
+where /(1—£,, +it) is replaced by its second-degree Taylor approximation. This
+is very useful because, as a Gaussian integral, the right-hand side of (3.16) can
+be computed exactly,
+
+exp(I(1—Bn)) .
+
+(3.17)
+The estimate (3.16) — comparable to (3.13) with A = n+ 1 and g(t) = -/(. -—
+By, + it) —is verified through several integral bounds. The approximation (3.14)
+for 8, implies
+
+1 L, w2| a 1
+mm f-eo|s0 Bn) + 5" ~ Badlit) dt = onl Ba)
+
+mel ay oy”, (3.18)
+
+"(= Bn) = a-Ae +B
+
+so that the right-hand side of (3.17) is
+
+1
+TnI" = Ba) exp(/(1 — Bn))
+
+1 1
+~ 4/— - 1) log(l — B,) - 1+ —
+V Gwe exo( (n+ I log(1 — Bn) +3]
+1 -1/2 3/2 1/2 1 -1/2
+~ gare on (-r+ D(-n +0(n ))-1l+n +5 + O(n )
+1
+~ Va exp(2va).
+
+Our claimed asymptotic result for a, thus holds as long as we can show the
+left and right sides of (3.16) are equal up to an error that is 0 (134 exp (2 vn).
+The approximation (3.18) suggests that the main contributions to the integrals
+in (3.16) come from the region where #?n*/? is not too small, meaning |t| is
+roughly n->/4 or smaller. Accordingly, we pick a cutoff L = 2n-*/ log na little
+greater than that and break our integrals into the two parts |¢| < L and |¢| > L.
+Up to the cutoff the two integrals are close, and past the cutoff they are both

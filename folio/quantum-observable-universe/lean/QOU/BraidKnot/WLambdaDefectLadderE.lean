@@ -32,7 +32,7 @@ polynomial's **algebra** (factored ↔ the witness's expanded `int_coeffs_low_to
 `n=2..14` (held-out `12,13,14` included). The *derivation* of `E(n)` from the defect stays **deferred**
 — parallel to `C(n)`'s general-`n` Identity I. The Lean file formalizes the closed form's algebra and
 witness cross-check, not a derivation.
-Ref: [manuscript] docs/audits/2026-06-24-wlambda-defect-cn-closedform-crosscheck.md
+Ref: [leitner2026] docs/audits/2026-06-24-wlambda-defect-cn-closedform-crosscheck.md
 -/
 
 namespace QOU.BraidKnot.WLambdaDefect

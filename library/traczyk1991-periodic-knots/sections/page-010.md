@@ -1,0 +1,62 @@
+---
+doc_id: traczyk1991-periodic-knots
+doc_title: "Periodic knots and the skein polynomial"
+section_id: page-010
+section_title: "Page 10"
+pages: 10-10
+pdf_page: 10
+source_pdf: traczyk1991-periodic-knots.pdf
+source_sha256: 2e9236877cec4604
+text_source: ocr
+granularity: page
+doc_brief: "Periodic knots and the skein polynomial — 12 sections: Page 1; Page 2; Page 3"
+---
+82 P. Traczyk
+
+where t is an integer and w, is a polynomial in q and q~'. Each of the [y]! [8]!
+products is divisible by 1—q exactly p—1 times so we can rewrite the formula
+again as
+
+B
+Yus(a) [] (@'—44)
+
+i=-y
+
+1-Aq_  v(q)(1—qyr*
+
+where u,...u,-1, v are polynomials in g and q™', and v is not divisible by
+
+1—q. We know that the considered rational function reduces to a polynomial,
+what we want to study is the value of this polynomial at q=1. It is an elementary
+observation that this value is not affected if the exponents of q in the numerator
+polynomial are modified within their (mod p) congruence classes. Thus we can
+modify our formula without changing the value at q=1 to the form
+
+p-l
+
+i Ywe(@ T] G@i-44)
+i=0
+
+1-Aq_ —v(q)(1—q)P?—”
+
+and finally we can rewrite it as
+
+t a i Yw,(9)
+—Aq)) rev _.
+4 (1 (a a) v(g)(l—qy?
+
+It is now easy to see that the substitution q=1 gives the value c/'(1+1+...
++A?~1), which completes the proof of Lemma 3.10’ and the proof of the main
+theorem. 0
+
+4 An application involving satellites
+
+As announced in the Introduction the criterion for periodicity described in this
+paper excludes the possibility of period 5 for all but 16 10-crossing knots. Let
+us consider in detail one of them, the 10,46. The Py polynomial of 10,46 is
+trivial, so the criterion does not exclude the possibility of the considered knot
+being 5-periodic. However, the range of our criterion may be enhanced in the
+following manner.
+
+Assume that D is a periodic diagram representing a knot K. Let D be made
+up of p copies of a tangle T suitably connected. If the string of which D is

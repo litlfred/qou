@@ -1,0 +1,1 @@
+Let A and B be DG rings, let F, G : D(A) →D(B) be trian- gulated functors that commute with inﬁnite direct sums, and let η : F →G be a morphism of triangulated functors. Assume that ηA : F(A) →G(A) is an isomor- phism. Then η is an isomorphism.

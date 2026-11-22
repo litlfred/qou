@@ -1,0 +1,1 @@
+Let M be an object in an abelian cat- egory M. Suppose ρ1 : V1 →U and ρ2 : V2 →U are morphisms in M, such that (ρ1, ρ2) : V1 ⊕V2 →U is an epimorphism. Let W := V1 ×U V2, with projection morphisms σ1 : W →V1 and σ2 : W →V2. Then the sequence 0 →Γ(U, M) (ρ∗ 1,ρ∗ 2) −−−−→Γ(V1, M) × Γ(V2, M) (σ∗ 1,−σ∗ 2) −−−−−−→Γ(W, M) in Mod K is exact.

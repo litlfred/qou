@@ -166,6 +166,48 @@ letter's flavour shift (`netFlavour_letter`). Results:
 - What decides a photon's letter orientation (σ vs σ⁻¹) is not derived here. It may connect to
   `qou-qs2u` (u as polarization or chirality).
 
+## 4d. Flavour readout from a WORD of letters (bean `qou-qs1x`, research)
+
+A sum of letters loses the per-letter bits (§4c). A product keeps them, with one structural exception.
+The measurement was exact, over all 8 placements × 8 flavour assignments of core × ℓ(g₁)ℓ(g₂)ℓ(g₃),
+by `computations/probes/quark_state/flavour_readout_word_probe.py` (sympy, exact, no float, no target).
+Distinct objects out of 8 assignments:
+
+| placement (g₁g₂g₃) | full NF | h¹ part | (2,1) matrix | (2,1) trace |
+|---|---|---|---|---|
+| 000, 111 | 4 | 4 | 4 | 4 |
+| 001, 011, 100, 110 | 6 | 6 | 6 | 6 |
+| 010, 101 (alternating) | **8** | **8** | 7 | 7 |
+
+Findings, each proved in Lean (sorry-free):
+
+1. **Letters on the same generator commute** (`sameGen_letters_commute`). Inside a run of consecutive
+   same-generator letters, only the multiset of flavour bits is readable. This is the whole of the
+   collision structure in the NF columns: every class is a permutation orbit within such runs.
+2. **The h¹ part, the D1 quark state, carries all the readable information.** Its column equals the
+   full-NF column at every placement.
+   - Alternating word (`word010_hPart_one`): the h¹ part is (c₂, 0, 0, c₁, c₃, 0). Each letter's bit
+     sits on its own coordinate, namely the word with that letter deleted.
+   - Builder word σ₀σ₀σ₁ (`word001_hPart_one`): the h¹ part is (c₃, 0, 0, 0, c₁+c₂+1, 0). Only c₁+c₂
+     survives.
+3. **At the builder placement, the proton uud is uniquely readable but the neutron udd is not.**
+   - udd ≡ dud: the d can sit on either σ₀ slot.
+   - Reason: the neutron's two σ₀ slots carry different flavours, so the run hides which slot holds d.
+     The proton's two σ₀ slots carry the same flavour, so there is nothing to hide.
+4. **The (2,1) channel loses one more bit on the alternating word: uuu ≡ ddd.**
+   - Reason: ρ(Δ⁻¹) = ρ(Δ) for Δ = σ₀σ₁σ₀ (`rho_delta_inv`), because the full twist Δ² acts as 1 on
+     the (2,1) irrep (`rho_delta_sq`).
+   - So the nucleon state does not see a global flavour flip of Δ, while the full NF does.
+
+**What this does and does not settle.**
+- A per-letter readout map is derived, not chosen, wherever the word separates the letters: it is the h¹
+  coefficient on each deleted word.
+- Where the word does not separate them (same-generator runs), the residual freedom is exactly the
+  permutation of bits within the run. That is a finding, not something to fix.
+- Which placement is canonical is **not** decided here. The builder's (σ₀,σ₀,σ₁) is a code convention, and
+  the γγ/SDP selection (`qou-ales`) governs it.
+- What fixes a photon's letter orientation (σ vs σ⁻¹) is still open.
+
 ## 5. Verification
 
 `lean -DautoImplicit=false -s 65536` against the restored `cat/folio-assistant-sci/lake-cache/qou-v4-24-0`

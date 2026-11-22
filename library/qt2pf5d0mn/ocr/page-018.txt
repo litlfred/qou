@@ -1,0 +1,33 @@
+Section 2.1 Ribbon Fusion Categories
+
+elementary fact that one representation can be converted into any other one by finitely
+
+many local moves:
+
++++ (Aj Ag) A3 ++ > +++ Ay(AgA3) ++
+
+If X,, X2 are two representations which differ by one of the above local moves, then
+there is an isomorphism @(X,) —> @(X2) given by one of a,l,r tensoring with some
+identity morphisms. Thus if X), X2 are any two representations, there exists an isomor-
+phism ®@(X1) —+ @(X2) which is a composition of isomorphisms described above. In the
+Pentagon Axiom, there are two sequences of local moves converting ((A1A2)A3)A4 into
+A,(Ao(A3Aq)), and correspondingly there are two isomorphisms ((A,@ Az)®A3)®@ A, —>
+A, ® (Az ®(A3@ Ayg)), one going along the left and bottom side of the pentagon, the other
+going along the right side. The Pentagon Axiom requires that these two isomorphisms
+are equal. Similarly, in Triangle Axiom, the two isomorphisms (A @1)®B —> A@ B are
+also required to be equal. A little surprisingly, these two axioms actually imply that these
+
+isomorphisms are always equal, which is given by the MacLane Coherence Theorem.
+
+Theorem 2.1.1 (MacLane Coherence Theorem) If X1, X2 are any two repre-
+sentations of the same sequence of objects in a monoidal category C, then there is a unique
+
+isomorphism between @(X1) and @(X2) consisting of compositions of a,l,r's.
+
+We call the unique isomorphism in Theorem [2.1-T]a canonical isomorphism. A monoidal
+category (C,®,1,a,1,1r) is sometimes written as C for simplicity.
+A monoidal category C is defined to be strict if all the a,l,r’s are identity maps,
+
+namely, the canonical isomorphism between different representations are actually the
+
+9

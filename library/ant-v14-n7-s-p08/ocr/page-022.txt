@@ -1,0 +1,49 @@
+1932 Lillian B. Pierce and Junyan Xu
+
+In particular, if the reduction of F modulo q is (A, q)-admissible, then it stays (A, q)-admissible after
+any reordering of the variables (Lemma 3.5). We will assume (5-1) from now on, and will prove the
+statement of Theorem 1.1 with Hj = Amin and Hy, = Hmax-
+
+Fix a prime p{q such that p < Hmin, and split each coordinate x; € (N;, N; + Hi] into residue classes
+modulo p by writing x = ga+ pm with a, m € Z", where 0 < a; < p and m; € (Nj, Nj + Hj], for which
+we define
+
+=(Ni-—4iq)/p, H; = Hi/p
+
+for eachi=1,...,n. Then
+S(F:N,H)= Yo x(F@at pm)).
+a (mod p) me(N'.N’+H’]
+By the fact that x has period q, the homogeneity of F and the multiplicativity of x,
+SCF;N,H)=x(p?) Yo d x(Fim),
+a (mod p) me(N'.N’+H’]
+so that
+
+ISF;N, |<) |S(F: NN’, Ht).
+a (mod p)
+
+We now average over a set P of primes, P= {P < p< 2P: pt{q}, so that |P| >> P(log P)~!. We will
+later choose P so that
+
+P<H,, l<i<n. (5-2)
+Then
+|S(F: N, H)| <p Do ISN A). (5-3)
+P&P a (mod p)
+
+Here we recall that N’ and H’ depend on a and p. We now average over the starting points N’ and the
+lengths H’ in order to make them independent of a, p.
+
+Lemma 5.1. Fix M ¢ R" and L € R2,. Forany K < L,
+
+[S(F;M, Ky) <2"! SS max [SPs m, b)].
+k<2L
+
+me(M—L,M] —
+Proof. The first observation is that for any fixed M, K, and any fixed m with m; < M; for alli=1,...,n,
+S(F:M,K)= > (-b°S(F;m, M—m+ (1—8)-K), (5-4)
+8=(51,....5n)
+8:€{0,1}
+
+where o (6) = >; 5;. We will prove this momentarily, but first we see how it implies Lemma 5.1. For any
+K; < L;, and any m; with M; — L; < mj; < M;, we have
+
+0<M;—m;+(1—6;)K; <2L;,

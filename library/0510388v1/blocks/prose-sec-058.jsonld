@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/0510388v1/blocks/prose-sec-058",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "GAUSS LINKING INTEGRAL ON S3 AND H3",
+  "title": "Proof of Theorem 4.",
   "pageStart": 100,
-  "pageEnd": 100,
-  "text": "../sections/sec-058-gauss-linking-integral-on-s3-and-h3.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/0510388v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/0510388v1",
+  "pageEnd": 101,
+  "text": "../sections/sec-058-53-proof-of-theorem-4.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0510388v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0510388v1/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ihpmay2025",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ihpmay2025/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -42,10 +42,12 @@
     "library/ihpmay2025/sections/sec-027",
     "library/ihpmay2025/sections/sec-028",
     "library/ihpmay2025/sections/sec-029",
-    "library/ihpmay2025/sections/sec-030"
+    "library/ihpmay2025/sections/sec-030",
+    "library/ihpmay2025/sections/sec-031",
+    "library/ihpmay2025/sections/sec-032"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "ihpmay2025",
     "title_source": "slug",

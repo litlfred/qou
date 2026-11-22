@@ -47,3 +47,18 @@ removable-singularity extension, and the two periodicity loci are dense because 
 are countable unions of the factor lattices. The remaining hypotheses — that the *second* solution
 is comparable, meromorphic, and continuous where finite — are the honest content of "the physical
 $\Phi_b$ is a bona-fide meromorphic function", not a mathematical gap.
+
+## Published form of the product and the growth
+
+Faddeev, Kashaev and Volkov write the non-compact quantum dilogarithm, for
+$\mathrm{Re}\,b > 0$, $\mathrm{Im}\,b \ge 0$, as a ratio of two $q$-exponentials,
+$e_b(z) = (e^{2\pi(z + c_b)b}; q^2)_\infty \,/\, (e^{2\pi(z - c_b)b^{-1}}; \bar q^2)_\infty$
+with $q = e^{i\pi b^2}$ and $\bar q = e^{-i\pi b^{-2}}$, a meromorphic function on
+$\mathbb{C}$ whose zeros and poles lie on the lattices $\mp(c_b + mib + nib^{-1})$,
+$m, n \ge 0$ \cite[\S6.2, eq.~(21)]{faddeev-kashaev-volkov2000}. They give its
+behaviour as $|z| \to \infty$ in four sectors fixed by $\arg z$ relative to
+$\arg b$: constant $1$, a Gaussian $e^{i\pi z^2}$ times a constant, and two
+regimes given by Jacobi theta functions \cite[\S6.2, eq.~(22)]{faddeev-kashaev-volkov2000}.
+This is the explicit form of the product displayed above and of the sector-wise
+growth that the strip-growth hypothesis (i) compares against; the uniqueness
+argument above is not taken from that paper.

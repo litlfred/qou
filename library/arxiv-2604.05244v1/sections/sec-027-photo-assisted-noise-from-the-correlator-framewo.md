@@ -8,7 +8,9 @@ pages: 28-31
 source_pdf: 2604.05244v1.pdf
 source_sha256: a5097e763dd89d06
 toc_source: outline
+doc_brief: "Edge universality in Floquet sideband spectra — We show that, for non-interacting fermions under a monochromatic phase drive (Tien– Gordon regime), the outgoing sideband occupations at a sharp Fermi"
 ---
+Photo-assisted noise from the correlator framework (sketch)
 The photo-assisted noise formula (9.1) is a standard result of Floquet scattering theory [8, 9, 4].
 Here we do not re-derive it but briefly sketch how it connects to the correlator C of the main text,
 following [10], in order to make the appearance of the same discrete Bessel kernel in two different

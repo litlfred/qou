@@ -7,10 +7,11 @@ section_number: 2
 pages: 3-3
 source_pdf: 1210.6243v1.pdf
 source_sha256: 3ff2f5358b25586e
-doc_brief: "Controlled double-slit electron diffraction — Double-slit diﬀraction is a corner stone of quantum mechanics."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.984
+latex_prose_ratio: 0.992
+latex_coverage_ratio: 1.0
+doc_brief: "Controlled double-slit electron diﬀraction — Double-slit diﬀraction is a corner stone of quantum mechanics."
 ---
 The experimental setup is shown diagrammatically in figure [\[fig1\]](#fig1){reference-type="ref" reference="fig1"}a. An electron beam with energy of 600 eV was generated with a thermionic tungsten filament and several electrostatic lenses. The beam was collimated with a slit of 2 $\mu$m width and 10 $\mu$m height placed at 16.5 cm. The double-slit was located 30.5 cm from the collimation slit. The resulting patterns were magnified by an electrostatic quadrupole lens and imaged on a two-dimensional microchannel plate and phosphorus screen, then recorded with a charge-coupled device camera.
 

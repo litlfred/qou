@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-q-alg-9709040v1
-doc_title: "arXiv:q-alg/9709040v1 29 Sep 1997"
+doc_title: "Deformation quantization of Poisson manifolds"
 section_id: sec-035-61-admissible-graphs
 section_title: "Admissible graphs"
 section_number: 6.1
@@ -8,6 +8,7 @@ pages: 22-22
 source_pdf: 9709040v1.pdf
 source_sha256: 8baf650d86c5b8ab
 toc_source: inferred
+doc_brief: "Deformation quantization of Poisson manifolds — 75 sections: Front matter; Plans; Star-products"
 ---
 Deﬁnition. Admissible graph Γ is an oriented graph with labels such that
 1) the set of vertices VΓ is {1, . . ., n} ⊔{1, . . . , m} where n, m ∈Z≥0, 2n + 2 −m ≥0; vertices from the

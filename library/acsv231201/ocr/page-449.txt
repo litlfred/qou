@@ -1,0 +1,52 @@
+13.5 Algebraic GFs 431
+
+Problem 13.4. Give a complete analysis of algebraic generating functions f(x)
+with quadratic minimal polynomials.
+
+Problem 13.5. Can an algebraic series f(x) with nonnegative coefficients al-
+ways be embedded as the diagonal of a combinatorial rational function? Find
+an efficient algorithm that converts coefficient extraction for algebraic func-
+tions to coefficient extraction for rational functions in a way that preserves the
+combinatorial nature of the problem.
+
+Recent work [Gre+22] develops software to analyze a variety of algebraic
+generating functions, ultimately cataloguing 20 combinatorial examples. An
+alternative approach being developed [BJP23] integrates algebraic generating
+functions directly. If f is an algebraic function defined by P(z, f) = 0 and
+f() = c, with y = c a simple zero of P(0, y), coefficients of the power series
+expansion of f at the origin are given by
+
+_ ol
+
+~ Qni)é
+where T is a torus about the origin, sufficiently small so the polydisk with the
+same radii contains no singularities of f. Because (0, c) is a simple zero of P,
+there is a neighborhood N of (0, c) in C4*! such that projection z onto the first
+d coordinates of the hypersurface Vp in C“*! restricted to this neighborhood
+is a bi-analytic map to a neighborhood of the origin in C/. Choosing T smaller
+if necessary so as to be contained in this neighborhood of the origin, the set
+C = 2°'(T) is a small torus in Vp and (13.2) becomes
+
+dy
+
+[teen dz, (13.2)
+T
+
+1 rt
+= —— | ye "dz. 13.3
+. aay [* z (13.3)
+Aside from the high negative powers of z),..., Za, the integrand y has no
+
+denominator, however the coefficients a, may be recovered the same way as
+one recovers coefficients of rational functions. In the absence of critical points
+at infinity, the d-dimensional complex variety V. = “Vp M C4 has a Morse the-
+oretic decomposition into cycles attaining their maximum height near critical
+points of the height function hipo)(z) = Die r;log|zj|. One then resolves the
+chain C in this basis. For instance, if the surface Vp is smooth and there are
+no CPAI for P in the direction (7, 0) then the asymptotics of a, are given by
+some linear combination of ®,, from (9.4) over critical points w of P in the
+direction (7,0).
+
+Example 13.7. Let f(x) = aye be the Catalan generating function, with
+minimal polynomial P(x, y) = xy? — y + 1 = 0. The point (0, f(0)) = (0, 1) is
+a smooth point of Vp, and a small circle about (0, 1) in ‘V, projects by z toa

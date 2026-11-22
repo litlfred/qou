@@ -53,7 +53,7 @@ Base ring (§7c): the Markov parameter and trace values are archimedean
 
 Ref: [jones1987] https://www.jstor.org/stable/1971403
 Ref: [wenzl1988] https://doi.org/10.1007/BF01393699
-Ref: [manuscript] quantum-observable-universe/mass-theory/jet-filtered-knot-factor.md
+Ref: [leitner2026] quantum-observable-universe/mass-theory/jet-filtered-knot-factor.md
 -/
 import QOU.BraidKnot.JonesViaMarkovTrace
 import Mathlib.Data.List.Basic

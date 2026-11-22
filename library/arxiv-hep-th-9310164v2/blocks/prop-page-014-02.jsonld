@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-hep-th-9310164v2/blocks/prop-page-014-02",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 14,
+  "pageEnd": 14,
+  "text": "prop-page-014-02.md",
+  "derivedFrom": "library/arxiv-hep-th-9310164v2/sections/page-014",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9310164v2/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "3.8",
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/page-014.md (p. 14-14)",
+    "claim_id": "arxiv-hep-th-9310164v2#proposition:3.8",
+    "lean_status": "doc-cited-in-lean-unlinked-claim"
+  }
+}

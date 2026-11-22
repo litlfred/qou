@@ -1,0 +1,68 @@
+---
+doc_id: schechtman-varchenko1991-arrangements
+doc_title: "Arrangements of hyperplanes and Lie algebra homology"
+section_id: page-043
+section_title: "Page 43"
+pages: 43-43
+pdf_page: 43
+source_pdf: schechtman-varchenko1991-arrangements.pdf
+source_sha256: 0100fd32438740f0
+text_source: ocr
+granularity: page
+doc_brief: "Arrangements of hyperplanes and Lie algebra homology — 56 sections: Page 1; Page 2; Page 3"
+---
+Arrangements of hyperplanes and Lie algebra homology 181
+
+6.15.3 Remark. Let us give a pair of more explicit formulas for vy. First, for
+any xeM
+
+(6.15.3.1) vy (x)-=— x f,@e,X+Vy(x)_-,
+
+i=1
+
+where vy(x)--en_. @M,n__= @ nj.
+lal>1
+For a N-tuple of pairwise distinct integers (i(1), ..., i(N)), 1Si(j)<r; and
+(a(1), ..., a(N)e[n]*
+
+(6.15.3.2) val Si i FIT. SES ¥)
+
+=-5 5 aay, LAE
+PH11Sji<...<jpSN
+CASS. AG TB ea £88 RESP
+1 AG). IGM v.
+
+Both formulas are proved by induction on [A].
+
+6.16 From 3.4.5 follows that for general matrices B (i.e. for matrices B belonging
+to a Zarisky dense subset of the set of all rxr-matrices) the map S: b—b*
+is an isomorphism. Analogously, for general B and A,,..., 4, S: M—M* are
+isomorphisms. In this case properties 6.14.3 (resp., 6.15.2) uniquely determine
+v: b>bAb (resp., vy: b> b@ M).
+
+It follows easily that for general B, Av is a Lie cobracket (ie. satisfies the
+dual of the Jacobi identity), hence b is a Lie bialgebra, and M is a b-comodule.
+Hence, the same is true for any B, A;. So, we get
+
+6.16.1 Proposition. The map v:b >b Ab 6.14.1 defines a structure of a Lie bialge-
+bra on b. The map vy: M +b @ M defines a structure of a b-comodule on M.
+
+Alternatively, one can say that v, vy define the structures of a Lie algebra
+on b* and of a b*-module on M*.
+
+Consider n* as a subspace of b* by means of the projection bn. n* is
+a Lie subalgebra of b*.
+
+Warning. n with its bracket and a cobracket induced by the above bracket
+is not a Lie bialgebra!
+Consider the standard complex C,(n*, M*)=C,(n, M)*. From 6.6 follows
+
+6.16.2 Theorem. The map n, induces isomorphisms of complexes
+
+C.(n*, M*), > (A*~"(6 ,, »"*, d)
+for all 2.
+
+6.17 Let D(b) be the double of b. Recall [D, n° 13] that this is a Lie algebra
+equal to b@®b* as a space, with the bracket on b and b* defined by the Lie
+algebra structure on b and b*, and for beb, feb* [/, b]=7+5, Teb*, beb
+are defined by the rules 7(c)=¢([b, c]), ceb; 2 (5)=[/’, 2] (b), Z’eb*.

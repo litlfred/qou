@@ -2,192 +2,362 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1105.2919v1",
  "source_sha256": "6d94496f2093ddd0",
- "brief": "Chiral effective field theory and nuclear forces — We review how nuclear forces emerge from low-energy QCD via chiral eﬀective ﬁeld theory. The presentation is accessible to the non-specialist.",
- "extended": "**Chiral effective field theory and nuclear forces**\n\n*R. Machleidta,∗, D. R. Entem b*\n\n93 pp, 36 sections.\n\n**Abstract.** We review how nuclear forces emerge from low-energy QCD via chiral eﬀective ﬁeld theory. The presentation is accessible to the non-specialist. At the same time, we also provide considerable detailed information (mostly in appendices) for the beneﬁt of researchers who wish to start working in this ﬁeld.\n\n**Outline.** 1 Introduction and historical perspective; 2.1 Symmetries of low-energy QCD; 2.1.1 Chiral symmetry; 2.1.2 Explicit symmetry breaking; 2.1.3 Spontaneous symmetry breaking; 2.2.1 Relativistic formulation; 2.2.2 Heavy baryon formalism; 2.3 Nucleon contact Lagrangians; 3 Nuclear forces from EFT: Overview; 3.1 Chiral perturbation theory and power count; 3.2 The hierarchy of nuclear forces; 4 Two-nucleon interactions; 4.1.1 One-pion exchange; 4.1 Pion-exchange contributions in ChPT; 4.1.2 Two-pion exchange; 4.1.3 Three-pion exchange; 4.2 Perturbative NN scattering in peripheral p; 4.3 NN contact terms",
+ "brief": "Chiral eﬀective ﬁeld theory and nuclear forces — We review how nuclear forces emerge from low-energy QCD via chiral eﬀective ﬁeld theory. The presentation is accessible to the non-specialist.",
+ "extended": "**Chiral eﬀective ﬁeld theory and nuclear forces**\n\n*R. Machleidta,∗, D. R. Entemb*\n\n93 pp, 70 sections.\n\n**Abstract.** We review how nuclear forces emerge from low-energy QCD via chiral eﬀective ﬁeld theory. The presentation is accessible to the non-specialist. At the same time, we also provide considerable detailed information (mostly in appendices) for the beneﬁt of researchers who wish to start working in this ﬁeld.\n\n**Outline.** Front matter; 1 Introduction and historical perspective; 2 Effective field theory for low-energy QCD; 2.1 Symmetries of low-energy QCD; 2.1.1 Chiral symmetry; 2.1.2 Explicit symmetry breaking; 2.1.3 Spontaneous symmetry breaking; 2.2 Chiral effective Lagrangians; 2.2.1 Relativistic formulation; 2.2.2 Heavy baryon formalism; 2.3 Nucleon contact Lagrangians; 2.4 Summary: Effective Lagrangians organized b; 3 Nuclear forces from EFT: Overview; 3.1 Chiral perturbation theory and power count; 3.2 The hierarchy of nuclear forces; 4 Two-nucleon interactions; 4.1.1 One-pion exchange; 4.1 Pion-exchange contributions in ChPT",
  "tokens": {
-  "brief": 48,
-  "extended": 260
+  "brief": 47,
+  "extended": 264
  },
  "sections": [
   {
-   "id": "sec-000-1-introduction-and-historical-perspective",
-   "title": "Introduction and historical perspective",
-   "pages": "4-7"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-4"
   },
   {
-   "id": "sec-001-21-symmetries-of-low-energy-qcd",
+   "id": "sec-000-1-introduction-and-historical-perspective",
+   "title": "Introduction and historical perspective",
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-001-2-effective-field-theory-for-low-energy-qcd",
+   "title": "Effective field theory for low-energy QCD",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-002-21-symmetries-of-low-energy-qcd",
    "title": "Symmetries of low-energy QCD",
    "pages": "7-7"
   },
   {
-   "id": "sec-002-211-chiral-symmetry",
+   "id": "sec-003-211-chiral-symmetry",
    "title": "Chiral symmetry",
    "pages": "7-9"
   },
   {
-   "id": "sec-003-212-explicit-symmetry-breaking",
+   "id": "sec-004-212-explicit-symmetry-breaking",
    "title": "Explicit symmetry breaking",
    "pages": "9-10"
   },
   {
-   "id": "sec-004-213-spontaneous-symmetry-breaking",
+   "id": "sec-005-213-spontaneous-symmetry-breaking",
    "title": "Spontaneous symmetry breaking",
    "pages": "10-10"
   },
   {
-   "id": "sec-005-221-relativistic-formulation",
+   "id": "sec-006-22-chiral-effective-lagrangians",
+   "title": "Chiral effective Lagrangians",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-007-221-relativistic-formulation",
    "title": "Relativistic formulation",
    "pages": "10-12"
   },
   {
-   "id": "sec-006-222-heavy-baryon-formalism",
+   "id": "sec-008-222-heavy-baryon-formalism",
    "title": "Heavy baryon formalism",
    "pages": "12-15"
   },
   {
-   "id": "sec-007-23-nucleon-contact-lagrangians",
+   "id": "sec-009-23-nucleon-contact-lagrangians",
    "title": "Nucleon contact Lagrangians",
+   "pages": "15-15"
+  },
+  {
+   "id": "sec-010-24-summary-effective-lagrangians-organized-by-in",
+   "title": "Summary: Effective Lagrangians organized by interaction index",
    "pages": "15-16"
   },
   {
-   "id": "sec-008-3-nuclear-forces-from-eft-overview",
+   "id": "sec-011-3-nuclear-forces-from-eft-overview",
    "title": "Nuclear forces from EFT: Overview",
    "pages": "16-16"
   },
   {
-   "id": "sec-009-31-chiral-perturbation-theory-and-power-counting",
+   "id": "sec-012-31-chiral-perturbation-theory-and-power-counting",
    "title": "Chiral perturbation theory and power counting",
    "pages": "16-18"
   },
   {
-   "id": "sec-010-32-the-hierarchy-of-nuclear-forces",
+   "id": "sec-013-32-the-hierarchy-of-nuclear-forces",
    "title": "The hierarchy of nuclear forces",
    "pages": "18-19"
   },
   {
-   "id": "sec-011-4-two-nucleon-interactions",
+   "id": "sec-014-4-two-nucleon-interactions",
    "title": "Two-nucleon interactions",
    "pages": "19-20"
   },
   {
-   "id": "sec-012-411-one-pion-exchange",
+   "id": "sec-015-411-one-pion-exchange",
    "title": "One-pion exchange",
    "pages": "20-20"
   },
   {
-   "id": "sec-013-41-pion-exchange-contributions-in-chpt",
+   "id": "sec-016-41-pion-exchange-contributions-in-chpt",
    "title": "Pion-exchange contributions in ChPT",
    "pages": "20-21"
   },
   {
-   "id": "sec-014-412-two-pion-exchange",
+   "id": "sec-017-412-two-pion-exchange",
    "title": "Two-pion exchange",
    "pages": "21-25"
   },
   {
-   "id": "sec-015-413-three-pion-exchange",
+   "id": "sec-018-413-three-pion-exchange",
    "title": "Three-pion exchange",
    "pages": "25-26"
   },
   {
-   "id": "sec-016-42-perturbative-nn-scattering-in-peripheral-part",
+   "id": "sec-019-42-perturbative-nn-scattering-in-peripheral-part",
    "title": "Perturbative NN scattering in peripheral partial waves",
    "pages": "26-31"
   },
   {
-   "id": "sec-017-43-nn-contact-terms",
+   "id": "sec-020-43-nn-contact-terms",
    "title": "NN contact terms",
    "pages": "31-32"
   },
   {
-   "id": "sec-018-431-zeroth-order-lo",
+   "id": "sec-021-431-zeroth-order-lo",
    "title": "Zeroth order (LO)",
    "pages": "32-32"
   },
   {
-   "id": "sec-019-432-second-order-nlo",
+   "id": "sec-022-432-second-order-nlo",
    "title": "Second order (NLO)",
-   "pages": "32-35"
+   "pages": "32-33"
   },
   {
-   "id": "sec-020-45-renormalization",
+   "id": "sec-023-433-fourth-order-n3lo",
+   "title": "Fourth order (N3LO)",
+   "pages": "33-34"
+  },
+  {
+   "id": "sec-024-44-definition-of-nn-potential",
+   "title": "Definition of NN potential",
+   "pages": "34-36"
+  },
+  {
+   "id": "sec-025-45-renormalization",
    "title": "Renormalization",
-   "pages": "35-36"
+   "pages": "36-36"
   },
   {
-   "id": "sec-021-451-regularization-and-non-perturbative-renormal",
+   "id": "sec-026-451-regularization-and-non-perturbative-renormal",
    "title": "Regularization and non-perturbative renormalization",
    "pages": "36-37"
   },
   {
-   "id": "sec-022-452-renormalization-beyond-leading-order",
+   "id": "sec-027-452-renormalization-beyond-leading-order",
    "title": "Renormalization beyond leading order",
    "pages": "37-38"
   },
   {
-   "id": "sec-023-453-back-to-the-beginnings",
+   "id": "sec-028-453-back-to-the-beginnings",
    "title": "Back to the beginnings",
    "pages": "38-39"
   },
   {
-   "id": "sec-024-454-concluding-the-renormalization-issue",
+   "id": "sec-029-454-concluding-the-renormalization-issue",
    "title": "Concluding the renormalization issue",
    "pages": "39-41"
   },
   {
-   "id": "sec-025-46-constructing-quantitative-chiral-nn-potential",
+   "id": "sec-030-46-constructing-quantitative-chiral-nn-potential",
    "title": "Constructing quantitative chiral NN potentials",
    "pages": "41-41"
   },
   {
-   "id": "sec-026-461-what-order",
+   "id": "sec-031-461-what-order",
    "title": "What order?",
    "pages": "41-42"
   },
   {
-   "id": "sec-027-462-charge-dependence",
+   "id": "sec-032-462-charge-dependence",
    "title": "Charge-dependence",
-   "pages": "42-50"
+   "pages": "42-47"
   },
   {
-   "id": "sec-028-5-nuclear-many-body-forces",
+   "id": "sec-033-463-a-quantitative-nn-potential-at-n3lo",
+   "title": "A quantitative NN potential at N3LO",
+   "pages": "47-50"
+  },
+  {
+   "id": "sec-034-5-nuclear-many-body-forces",
    "title": "Nuclear many-body forces",
    "pages": "50-51"
   },
   {
-   "id": "sec-029-51-three-nucleon-forces",
+   "id": "sec-035-51-three-nucleon-forces",
    "title": "Three-nucleon forces",
    "pages": "51-51"
   },
   {
-   "id": "sec-030-511-next-to-leading-order",
+   "id": "sec-036-511-next-to-leading-order",
    "title": "Next-to-leading order",
    "pages": "51-51"
   },
   {
-   "id": "sec-031-512-next-to-next-to-leading-order",
+   "id": "sec-037-512-next-to-next-to-leading-order",
    "title": "Next-to-next-to-leading order",
    "pages": "51-52"
   },
   {
-   "id": "sec-032-513-next-to-next-to-next-to-leading-order",
+   "id": "sec-038-513-next-to-next-to-next-to-leading-order",
    "title": "Next-to-next-to-next-to-leading order",
-   "pages": "52-54"
+   "pages": "52-53"
   },
   {
-   "id": "sec-033-515-3nf-summary",
+   "id": "sec-039-514-the-3nf-at-n4lo",
+   "title": "The 3NF at N4LO",
+   "pages": "53-54"
+  },
+  {
+   "id": "sec-040-515-3nf-summary",
    "title": "3NF summary",
    "pages": "54-54"
   },
   {
-   "id": "sec-034-52-four-nucleon-forces",
+   "id": "sec-041-52-four-nucleon-forces",
    "title": "Four-nucleon forces",
-   "pages": "54-58"
+   "pages": "54-55"
   },
   {
-   "id": "sec-035-7-conclusions",
+   "id": "sec-042-6-introducing--isobar-degrees-of-freedom",
+   "title": "Introducing -isobar degrees of freedom",
+   "pages": "55-58"
+  },
+  {
+   "id": "sec-043-7-conclusions",
    "title": "Conclusions",
-   "pages": "58-93"
+   "pages": "58-59"
+  },
+  {
+   "id": "sec-044-appendix-a-notation-conventions-and-feynman-rule",
+   "title": "Appendix A Notation, conventions, and Feynman rules",
+   "pages": "59-59"
+  },
+  {
+   "id": "sec-045-appendix-a1-notation-and-conventions",
+   "title": "Appendix A.1 Notation and conventions",
+   "pages": "59-61"
+  },
+  {
+   "id": "sec-046-appendix-a2-feynman-rules",
+   "title": "Appendix A.2 Feynman rules",
+   "pages": "61-62"
+  },
+  {
+   "id": "sec-047-appendix-a21-leading-order",
+   "title": "Appendix A.2.1 Leading order",
+   "pages": "62-63"
+  },
+  {
+   "id": "sec-048-appendix-a22-next-to-leading-order",
+   "title": "Appendix A.2.2 Next-to-leading order",
+   "pages": "63-63"
+  },
+  {
+   "id": "sec-049-appendix-b-two-pion-exchange-contributions-to-th",
+   "title": "Appendix B Two-pion exchange contributions to the 2NF at NLO",
+   "pages": "63-63"
+  },
+  {
+   "id": "sec-050-appendix-b1-triangle-diagrams",
+   "title": "Appendix B.1 Triangle diagrams",
+   "pages": "63-63"
+  },
+  {
+   "id": "sec-051-appendix-b11-the-triangles-in-covariant-perturba",
+   "title": "Appendix B.1.1 The triangles in covariant perturbation theory",
+   "pages": "63-66"
+  },
+  {
+   "id": "sec-052-appendix-b12-dimensional-regularization-of-the-t",
+   "title": "Appendix B.1.2 Dimensional regularization of the triangles",
+   "pages": "66-68"
+  },
+  {
+   "id": "sec-053-appendix-b2-football-diagram",
+   "title": "Appendix B.2 Football diagram",
+   "pages": "68-68"
+  },
+  {
+   "id": "sec-054-appendix-b21-the-football-in-covariant-perturbat",
+   "title": "Appendix B.2.1 The football in covariant perturbation theory",
+   "pages": "68-70"
+  },
+  {
+   "id": "sec-055-appendix-b22-the-proper-calculation-of-the-footb",
+   "title": "Appendix B.2.2 The proper calculation of the football in time-ordered perturbation theory",
+   "pages": "70-71"
+  },
+  {
+   "id": "sec-056-appendix-b23-dimensional-regularization-of-the-f",
+   "title": "Appendix B.2.3 Dimensional regularization of the football",
+   "pages": "71-72"
+  },
+  {
+   "id": "sec-057-appendix-b3-box-and-crossed-box-diagrams",
+   "title": "Appendix B.3 Box and crossed box diagrams",
+   "pages": "72-77"
+  },
+  {
+   "id": "sec-058-appendix-b4-summary-of-2pe-contributions-at-nlo",
+   "title": "Appendix B.4 Summary of 2PE contributions at NLO",
+   "pages": "77-77"
+  },
+  {
+   "id": "sec-059-appendix-c-two-pion-exchange-contributions-to-th",
+   "title": "Appendix C Two-pion exchange contributions to the 2NF at NNLO",
+   "pages": "77-79"
+  },
+  {
+   "id": "sec-060-appendix-d-two-pion-exchange-contributions-to-th",
+   "title": "Appendix D Two-pion exchange contributions to the 2NF at N3LO",
+   "pages": "79-79"
+  },
+  {
+   "id": "sec-061-appendix-d1-one-loop-diagrams",
+   "title": "Appendix D.1 One-loop diagrams",
+   "pages": "79-79"
+  },
+  {
+   "id": "sec-062-appendix-d11-ci2-contributions",
+   "title": "Appendix D.1.1 ci2 contributions.",
+   "pages": "79-79"
+  },
+  {
+   "id": "sec-063-appendix-d12-cimn-contributions",
+   "title": "Appendix D.1.2 ci/MN contributions.",
+   "pages": "79-80"
+  },
+  {
+   "id": "sec-064-appendix-d13-1mn2-corrections",
+   "title": "Appendix D.1.3 1/MN2 corrections.",
+   "pages": "80-80"
+  },
+  {
+   "id": "sec-065-appendix-d2-two-loop-contributions",
+   "title": "Appendix D.2 Two-loop contributions.",
+   "pages": "80-82"
+  },
+  {
+   "id": "sec-066-appendix-d3-impact-of-individual-n3lo-contributi",
+   "title": "Appendix D.3 Impact of individual N3LO contributions on peripheral phase shifts",
+   "pages": "82-83"
+  },
+  {
+   "id": "sec-067-appendix-e-fourth-order-nn-contact-potential-par",
+   "title": "Appendix E Fourth order NN contact potential: Partial wave decomposition",
+   "pages": "83-85"
+  },
+  {
+   "id": "sec-068-appendix-f-parameters-of-n3lo-nn-potentials",
+   "title": "Appendix F Parameters of N3LO NN potentials",
+   "pages": "85-93"
   }
  ],
  "provenance": {

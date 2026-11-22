@@ -6,8 +6,9 @@
   "sha256": "9a57cb6e014d3ead46a259490c046a5a76877c1e3f4dcc0c18c0df748c4adcc2",
   "bytes": 1378358,
   "pages": 52,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -19,867 +20,1231 @@
    "stamp_date": "9 Nov 2008"
   },
   "doi": null,
-  "title": "Modern theory of nuclear forces",
-  "authors_raw": "Forschungszentrum J\u00fclich, Institut f\u00fcr Kernphysik (IKP-3) and J\u00fclich Center for Hadron Physics, D-52425 J\u00fclich",
+  "title": "Modern Theory of Nuclear Forces",
+  "authors_raw": "Forschungszentrum Jülich, Institut für Kernphysik (IKP-3) and Jülich Center for Hadron Physics, D-52425 Jülich",
+  "title_lines": [
+   "Modern Theory of Nuclear Forces",
+   "E. Epelbaum∗"
+  ],
   "abstract": null,
   "docinfo": {
    "Producer": "GPL Ghostscript 10.01.2",
-   "CreationDate": "D:20241126173701-05'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20241126173701-05'00'"
   },
-  "title_lines": [
-   "Modern Theory of Nuclear Forces",
-   "E. Epelbaum\u2217"
-  ],
-  "title_prev": "Modern Theory of Nuclear Forces E. Epelbaum\u2217"
+  "title_raw": "Modern Theory of Nuclear Forces E. Epelbaum∗",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Modern Theory of Nuclear Forces",
+   "text": "Modern Theory of Nuclear Forces E. Epelbaum∗",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Modern theory of nuclear forces"
  },
- "toc": [
+ "toc": [],
+ "toc_source": "undetermined",
+ "toc_undetermined_reason": "79% of the 24 sections it would cut hold under 50 characters (more than 25%) — headings without bodies, not chapters",
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted (79% of the 24 sections it would cut hold under 50 characters (more than 25%) — headings without bodies, not chapters): one section per page.",
+ "figures": [
   {
-   "level": 1,
-   "title": "QCD and Nuclear F orces 1",
-   "page": 1,
-   "source": "inferred",
-   "number": "I"
-  },
-  {
-   "level": 1,
-   "title": "Conventional approaches to the nuclear force problem 4",
-   "page": 1,
-   "source": "inferred",
-   "number": "C"
-  },
-  {
-   "level": 1,
-   "title": "EFT for F ew-Nucleon Systems: F oundations and",
-   "page": 1,
-   "source": "inferred",
-   "number": "II"
-  },
-  {
-   "level": 1,
-   "title": "Chiral EFT for few nucleons: applications 21",
-   "page": 1,
-   "source": "inferred",
-   "number": "C"
-  },
-  {
-   "level": 1,
-   "title": "EFT for halo nuclei 42",
-   "page": 1,
-   "source": "inferred",
-   "number": "C"
-  },
-  {
-   "level": 1,
-   "title": "Summary and perspectives 45",
-   "page": 1,
-   "source": "inferred",
-   "number": "IV"
-  },
-  {
-   "level": 1,
-   "title": "QCD AND NUCLEAR FORCES",
-   "page": 1,
-   "source": "inferred",
-   "number": "I"
-  },
-  {
-   "level": 1,
-   "title": "(\u00afuu + \u00afdd) + mu \u2212md",
-   "page": 3,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(\u00afuu \u2212 \u00afdd) ,",
-   "page": 3,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Conventional approaches to the nuclear force problem",
-   "page": 4,
-   "source": "inferred",
-   "number": "C"
-  },
-  {
-   "level": 1,
-   "title": "EFT FOR FEW-NUCLEON SYSTEMS:",
-   "page": 8,
-   "source": "inferred",
-   "number": "II"
-  },
-  {
-   "level": 1,
-   "title": "(Cs",
+   "kind": "figure",
+   "number": "5",
+   "title": "This summation gives the exact solution of the Lippmann-Schwinger equation for the Ct",
    "page": 9,
-   "source": "inferred",
-   "number": "0"
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "9"
   },
   {
-   "level": 1,
-   "title": "(\u20d7 \u03c31 +\u20d7 \u03c32) \u00b7\u20d7 q\u00d7\u20d7k +C6\u20d7 q\u00b7\u20d7 \u03c31\u20d7 q\u00b7\u20d7 \u03c32",
+   "kind": "figure",
+   "number": "7",
+   "title": "The data were used to precisely map the M1 response which governs the reaction np →dγ relevant to",
+   "page": 9,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "9"
+  },
+  {
+   "kind": "figure",
+   "number": "12",
+   "title": "",
    "page": 15,
-   "source": "inferred",
-   "number": "2"
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "15"
   },
   {
-   "level": 1,
-   "title": "( \u00afNN )( \u00afNS \u00b7uN ), (2.17)",
-   "page": 16,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "( \u00afNN )( \u00afN \u03c4 N ) \u00b7 ( \u00afN \u03c4N ). (2.21)",
-   "page": 16,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(ann +app) \u2212anp = 5.64 \u00b1 0.40 fm ,",
-   "page": 18,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(rnn +rpp) \u2212rnp = 0.03 \u00b1 0.06 fm .(2.26)",
-   "page": 18,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(charge-",
-   "page": 20,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Chiral EFT for few nucleons: applications",
-   "page": 21,
-   "source": "inferred",
-   "number": "C"
-  },
-  {
-   "level": 2,
-   "title": "MeV. These numbers are similar to the ones ob-",
-   "page": 23,
-   "source": "inferred",
-   "number": "28.30"
-  },
-  {
-   "level": 1,
-   "title": "(\u03c7+ \u2212 \u27e8\u03c7+\u27e9) \u03b4ijg\u00b5\u03bdT\u03bd",
-   "page": 29,
-   "source": "inferred",
-   "number": "5"
-  },
-  {
-   "level": 2,
-   "title": "MeV and m\u2206 0 = 1233.45 \u00b1 0.35 MeV (324) together",
-   "page": 29,
-   "source": "inferred",
-   "number": "0.30"
-  },
-  {
-   "level": 1,
-   "title": "MeV and |\u03b4m2",
-   "page": 29,
-   "source": "inferred",
-   "number": "8"
-  },
-  {
-   "level": 1,
-   "title": "(4\u03b1 \u2212 1)f,",
-   "page": 32,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "(1 + 2\u03b1)f, f \u039e\u039e \u03c0 = \u2212(1 \u2212 2\u03b1)f,",
-   "page": 32,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "(1 + 2\u03b1)f, f \u039e\u039b K = 1\u221a",
-   "page": 32,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "(1 \u2212\u03b1)f, f \u03a3\u03a3 \u03b78 = 2\u221a",
-   "page": 32,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "(1 \u2212\u03b1)f,",
-   "page": 32,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "TOWARDS A MANY-BODY EFT FOR NUCLEI",
-   "page": 39,
-   "source": "inferred",
-   "number": "III"
-  },
-  {
-   "level": 1,
-   "title": "A]\u22121|(x,y)(\u2044p +m)n(p)",
-   "page": 39,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "A]\u22121|(x,x\u2032) (\u2044q +m)n(q)",
-   "page": 39,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "A]\u22121|(y\u2032,y)(\u2044p +m)n(p)",
-   "page": 39,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "A)\u22121 that",
-   "page": 40,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "EFT for halo nuclei",
-   "page": 42,
-   "source": "inferred",
-   "number": "C"
-  },
-  {
-   "level": 1,
-   "title": "SUMMARY AND PERSPECTIVES",
-   "page": 45,
-   "source": "inferred",
-   "number": "IV"
-  },
-  {
-   "level": 1,
-   "title": "Acknowledgments",
-   "page": 45,
-   "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 46,
-   "source": "inferred",
-   "number": null
+   "kind": "figure",
+   "number": "38",
+   "title": "Fnn(k2), Fnc(k2), Fn(k2), and Fc(k2). A def-",
+   "page": 43,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "43"
   }
  ],
- "toc_source": "inferred",
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "52",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-i-qcd-and-nuclear-f-orces-1",
-   "number": "I",
-   "title": "QCD and Nuclear F orces 1",
+   "id": "page-001",
+   "number": null,
+   "title": "Page 1",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 51,
-   "n_words": 10
+   "n_chars": 4168,
+   "n_words": 616,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-c-conventional-approaches-to-the-nuclear-force-p",
-   "number": "C",
-   "title": "Conventional approaches to the nuclear force problem 4",
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
    "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 133,
-   "n_words": 22
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 5776,
+   "n_words": 1007,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
-   "id": "sec-002-ii-eft-for-f-ew-nucleon-systems-f-oundations-and",
-   "number": "II",
-   "title": "EFT for F ew-Nucleon Systems: F oundations and",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 118,
-   "n_words": 19
-  },
-  {
-   "id": "sec-003-c-chiral-eft-for-few-nucleons-applications-21",
-   "number": "C",
-   "title": "Chiral EFT for few nucleons: applications 21",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 363,
-   "n_words": 59
-  },
-  {
-   "id": "sec-004-c-eft-for-halo-nuclei-42",
-   "number": "C",
-   "title": "EFT for halo nuclei 42",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 104,
-   "n_words": 15
-  },
-  {
-   "id": "sec-005-iv-summary-and-perspectives-45",
-   "number": "IV",
-   "title": "Summary and perspectives 45",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 170,
-   "n_words": 13
-  },
-  {
-   "id": "sec-006-i-qcd-and-nuclear-forces",
-   "number": "I",
-   "title": "QCD AND NUCLEAR FORCES",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 3,
-   "n_chars": 10839,
-   "n_words": 1871
-  },
-  {
-   "id": "sec-007-2-uu-dd-mu-md",
-   "number": "2",
-   "title": "(\u00afuu + \u00afdd) + mu \u2212md",
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
    "level": 1,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 5118,
+   "n_words": 895,
+   "label_start": "3",
+   "label_end": "3"
   },
   {
-   "id": "sec-008-2-uu-dd",
-   "number": "2",
-   "title": "(\u00afuu \u2212 \u00afdd) ,",
-   "level": 1,
-   "page_start": 3,
-   "page_end": 4,
-   "n_chars": 5371,
-   "n_words": 923
-  },
-  {
-   "id": "sec-009-c-conventional-approaches-to-the-nuclear-force-p",
-   "number": "C",
-   "title": "Conventional approaches to the nuclear force problem",
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
    "level": 1,
    "page_start": 4,
-   "page_end": 8,
-   "n_chars": 22332,
-   "n_words": 3687
+   "page_end": 4,
+   "n_chars": 4691,
+   "n_words": 789,
+   "label_start": "4",
+   "label_end": "4"
   },
   {
-   "id": "sec-010-ii-eft-for-few-nucleon-systems",
-   "number": "II",
-   "title": "EFT FOR FEW-NUCLEON SYSTEMS:",
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 5555,
+   "n_words": 916,
+   "label_start": "5",
+   "label_end": "5"
+  },
+  {
+   "id": "page-006",
+   "number": null,
+   "title": "Page 6",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 5924,
+   "n_words": 995,
+   "label_start": "6",
+   "label_end": "6"
+  },
+  {
+   "id": "page-007",
+   "number": null,
+   "title": "Page 7",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 4600,
+   "n_words": 803,
+   "label_start": "7",
+   "label_end": "7"
+  },
+  {
+   "id": "page-008",
+   "number": null,
+   "title": "Page 8",
    "level": 1,
    "page_start": 8,
-   "page_end": 9,
-   "n_chars": 2225,
-   "n_words": 380
+   "page_end": 8,
+   "n_chars": 5921,
+   "n_words": 900,
+   "label_start": "8",
+   "label_end": "8"
   },
   {
-   "id": "sec-011-0-cs",
-   "number": "0",
-   "title": "(Cs",
+   "id": "page-009",
+   "number": null,
+   "title": "Page 9",
    "level": 1,
    "page_start": 9,
-   "page_end": 15,
-   "n_chars": 30435,
-   "n_words": 5170
+   "page_end": 9,
+   "n_chars": 5336,
+   "n_words": 888,
+   "label_start": "9",
+   "label_end": "9"
   },
   {
-   "id": "sec-012-2-\u03c31-\u03c32-qk-c6-q-\u03c31-q-\u03c32",
-   "number": "2",
-   "title": "(\u20d7 \u03c31 +\u20d7 \u03c32) \u00b7\u20d7 q\u00d7\u20d7k +C6\u20d7 q\u00b7\u20d7 \u03c31\u20d7 q\u00b7\u20d7 \u03c32",
+   "id": "page-010",
+   "number": null,
+   "title": "Page 10",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 3956,
+   "n_words": 724,
+   "label_start": "10",
+   "label_end": "10"
+  },
+  {
+   "id": "page-011",
+   "number": null,
+   "title": "Page 11",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 5561,
+   "n_words": 881,
+   "label_start": "11",
+   "label_end": "11"
+  },
+  {
+   "id": "page-012",
+   "number": null,
+   "title": "Page 12",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 5397,
+   "n_words": 861,
+   "label_start": "12",
+   "label_end": "12"
+  },
+  {
+   "id": "page-013",
+   "number": null,
+   "title": "Page 13",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 5651,
+   "n_words": 903,
+   "label_start": "13",
+   "label_end": "13"
+  },
+  {
+   "id": "page-014",
+   "number": null,
+   "title": "Page 14",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 3709,
+   "n_words": 680,
+   "label_start": "14",
+   "label_end": "14"
+  },
+  {
+   "id": "page-015",
+   "number": null,
+   "title": "Page 15",
    "level": 1,
    "page_start": 15,
-   "page_end": 16,
-   "n_chars": 2817,
-   "n_words": 481
+   "page_end": 15,
+   "n_chars": 3515,
+   "n_words": 625,
+   "label_start": "15",
+   "label_end": "15"
   },
   {
-   "id": "sec-013-2-nn-ns-un-217",
-   "number": "2",
-   "title": "( \u00afNN )( \u00afNS \u00b7uN ), (2.17)",
+   "id": "page-016",
+   "number": null,
+   "title": "Page 16",
    "level": 1,
    "page_start": 16,
    "page_end": 16,
-   "n_chars": 3554,
-   "n_words": 621
+   "n_chars": 5062,
+   "n_words": 898,
+   "label_start": "16",
+   "label_end": "16"
   },
   {
-   "id": "sec-014-2-nn-n-\u03c4-n-n-\u03c4n-221",
-   "number": "2",
-   "title": "( \u00afNN )( \u00afN \u03c4 N ) \u00b7 ( \u00afN \u03c4N ). (2.21)",
+   "id": "page-017",
+   "number": null,
+   "title": "Page 17",
    "level": 1,
-   "page_start": 16,
-   "page_end": 18,
-   "n_chars": 10317,
-   "n_words": 1818
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 6163,
+   "n_words": 991,
+   "label_start": "17",
+   "label_end": "17"
   },
   {
-   "id": "sec-015-2-ann-app-anp-564-040-fm",
-   "number": "2",
-   "title": "(ann +app) \u2212anp = 5.64 \u00b1 0.40 fm ,",
-   "level": 1,
-   "page_start": 18,
-   "page_end": 18,
-   "n_chars": 8,
-   "n_words": 3
-  },
-  {
-   "id": "sec-016-2-rnn-rpp-rnp-003-006-fm-226",
-   "number": "2",
-   "title": "(rnn +rpp) \u2212rnp = 0.03 \u00b1 0.06 fm .(2.26)",
+   "id": "page-018",
+   "number": null,
+   "title": "Page 18",
    "level": 1,
    "page_start": 18,
-   "page_end": 20,
-   "n_chars": 6503,
-   "n_words": 1176
+   "page_end": 18,
+   "n_chars": 4719,
+   "n_words": 844,
+   "label_start": "18",
+   "label_end": "18"
   },
   {
-   "id": "sec-017-2-charge",
-   "number": "2",
-   "title": "(charge-",
+   "id": "page-019",
+   "number": null,
+   "title": "Page 19",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 4826,
+   "n_words": 867,
+   "label_start": "19",
+   "label_end": "19"
+  },
+  {
+   "id": "page-020",
+   "number": null,
+   "title": "Page 20",
    "level": 1,
    "page_start": 20,
-   "page_end": 21,
-   "n_chars": 10186,
-   "n_words": 1746
+   "page_end": 20,
+   "n_chars": 5872,
+   "n_words": 1002,
+   "label_start": "20",
+   "label_end": "20"
   },
   {
-   "id": "sec-018-c-chiral-eft-for-few-nucleons-applications",
-   "number": "C",
-   "title": "Chiral EFT for few nucleons: applications",
+   "id": "page-021",
+   "number": null,
+   "title": "Page 21",
    "level": 1,
    "page_start": 21,
-   "page_end": 23,
-   "n_chars": 10849,
-   "n_words": 1829
+   "page_end": 21,
+   "n_chars": 5901,
+   "n_words": 989,
+   "label_start": "21",
+   "label_end": "21"
   },
   {
-   "id": "sec-019-2830-mev-these-numbers-are-similar-to-the-ones-o",
-   "number": "28.30",
-   "title": "MeV. These numbers are similar to the ones ob-",
-   "level": 2,
+   "id": "page-022",
+   "number": null,
+   "title": "Page 22",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 5131,
+   "n_words": 841,
+   "label_start": "22",
+   "label_end": "22"
+  },
+  {
+   "id": "page-023",
+   "number": null,
+   "title": "Page 23",
+   "level": 1,
    "page_start": 23,
-   "page_end": 29,
-   "n_chars": 23751,
-   "n_words": 4366
+   "page_end": 23,
+   "n_chars": 5203,
+   "n_words": 871,
+   "label_start": "23",
+   "label_end": "23"
   },
   {
-   "id": "sec-020-5-\u03c7-\u03c7-\u03b4ijg\u00b5\u03bdt\u03bd",
-   "number": "5",
-   "title": "(\u03c7+ \u2212 \u27e8\u03c7+\u27e9) \u03b4ijg\u00b5\u03bdT\u03bd",
+   "id": "page-024",
+   "number": null,
+   "title": "Page 24",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 4838,
+   "n_words": 845,
+   "label_start": "24",
+   "label_end": "24"
+  },
+  {
+   "id": "page-025",
+   "number": null,
+   "title": "Page 25",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 25,
+   "n_chars": 4579,
+   "n_words": 775,
+   "label_start": "25",
+   "label_end": "25"
+  },
+  {
+   "id": "page-026",
+   "number": null,
+   "title": "Page 26",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 4701,
+   "n_words": 882,
+   "label_start": "26",
+   "label_end": "26"
+  },
+  {
+   "id": "page-027",
+   "number": null,
+   "title": "Page 27",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 4681,
+   "n_words": 867,
+   "label_start": "27",
+   "label_end": "27"
+  },
+  {
+   "id": "page-028",
+   "number": null,
+   "title": "Page 28",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 28,
+   "n_chars": 4387,
+   "n_words": 792,
+   "label_start": "28",
+   "label_end": "28"
+  },
+  {
+   "id": "page-029",
+   "number": null,
+   "title": "Page 29",
    "level": 1,
    "page_start": 29,
    "page_end": 29,
-   "n_chars": 1151,
-   "n_words": 248
+   "n_chars": 4632,
+   "n_words": 861,
+   "label_start": "29",
+   "label_end": "29"
   },
   {
-   "id": "sec-021-030-mev-and-m-0-123345-035-mev-324-together",
-   "number": "0.30",
-   "title": "MeV and m\u2206 0 = 1233.45 \u00b1 0.35 MeV (324) together",
-   "level": 2,
-   "page_start": 29,
-   "page_end": 29,
-   "n_chars": 513,
-   "n_words": 114
-  },
-  {
-   "id": "sec-022-8-mev-and-\u03b4m2",
-   "number": "8",
-   "title": "MeV and |\u03b4m2",
+   "id": "page-030",
+   "number": null,
+   "title": "Page 30",
    "level": 1,
-   "page_start": 29,
-   "page_end": 32,
-   "n_chars": 14295,
-   "n_words": 2449
+   "page_start": 30,
+   "page_end": 30,
+   "n_chars": 5449,
+   "n_words": 884,
+   "label_start": "30",
+   "label_end": "30"
   },
   {
-   "id": "sec-023-3-4\u03b1-1f",
-   "number": "3",
-   "title": "(4\u03b1 \u2212 1)f,",
+   "id": "page-031",
+   "number": null,
+   "title": "Page 31",
    "level": 1,
-   "page_start": 32,
-   "page_end": 32,
-   "n_chars": 12,
-   "n_words": 5
+   "page_start": 31,
+   "page_end": 31,
+   "n_chars": 5346,
+   "n_words": 883,
+   "label_start": "31",
+   "label_end": "31"
   },
   {
-   "id": "sec-024-3-1-2\u03b1f-f-\u03be\u03be-\u03c0-1-2\u03b1f",
-   "number": "3",
-   "title": "(1 + 2\u03b1)f, f \u039e\u039e \u03c0 = \u2212(1 \u2212 2\u03b1)f,",
+   "id": "page-032",
+   "number": null,
+   "title": "Page 32",
    "level": 1,
    "page_start": 32,
    "page_end": 32,
-   "n_chars": 13,
-   "n_words": 5
+   "n_chars": 4524,
+   "n_words": 895,
+   "label_start": "32",
+   "label_end": "32"
   },
   {
-   "id": "sec-025-3-1-2\u03b1f-f-\u03be\u03bb-k-1",
-   "number": "3",
-   "title": "(1 + 2\u03b1)f, f \u039e\u039b K = 1\u221a",
+   "id": "page-033",
+   "number": null,
+   "title": "Page 33",
    "level": 1,
-   "page_start": 32,
-   "page_end": 32,
-   "n_chars": 23,
-   "n_words": 8
+   "page_start": 33,
+   "page_end": 33,
+   "n_chars": 6568,
+   "n_words": 1275,
+   "label_start": "33",
+   "label_end": "33"
   },
   {
-   "id": "sec-026-3-1-\u03b1f-f-\u03c3\u03c2-\u03b78-2",
-   "number": "3",
-   "title": "(1 \u2212\u03b1)f, f \u03a3\u03a3 \u03b78 = 2\u221a",
+   "id": "page-034",
+   "number": null,
+   "title": "Page 34",
    "level": 1,
-   "page_start": 32,
-   "page_end": 39,
-   "n_chars": 37182,
-   "n_words": 6802
+   "page_start": 34,
+   "page_end": 34,
+   "n_chars": 4800,
+   "n_words": 801,
+   "label_start": "34",
+   "label_end": "34"
   },
   {
-   "id": "sec-027-iii-towards-a-many-body-eft-for-nuclei",
-   "number": "III",
-   "title": "TOWARDS A MANY-BODY EFT FOR NUCLEI",
+   "id": "page-035",
+   "number": null,
+   "title": "Page 35",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 35,
+   "n_chars": 4588,
+   "n_words": 787,
+   "label_start": "35",
+   "label_end": "35"
+  },
+  {
+   "id": "page-036",
+   "number": null,
+   "title": "Page 36",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 36,
+   "n_chars": 5512,
+   "n_words": 950,
+   "label_start": "36",
+   "label_end": "36"
+  },
+  {
+   "id": "page-037",
+   "number": null,
+   "title": "Page 37",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 37,
+   "n_chars": 4541,
+   "n_words": 800,
+   "label_start": "37",
+   "label_end": "37"
+  },
+  {
+   "id": "page-038",
+   "number": null,
+   "title": "Page 38",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 38,
+   "n_chars": 5036,
+   "n_words": 862,
+   "label_start": "38",
+   "label_end": "38"
+  },
+  {
+   "id": "page-039",
+   "number": null,
+   "title": "Page 39",
    "level": 1,
    "page_start": 39,
    "page_end": 39,
-   "n_chars": 2118,
-   "n_words": 352
+   "n_chars": 4403,
+   "n_words": 748,
+   "label_start": "39",
+   "label_end": "39"
   },
   {
-   "id": "sec-028-0-a1xyp-mnp",
-   "number": "0",
-   "title": "A]\u22121|(x,y)(\u2044p +m)n(p)",
-   "level": 1,
-   "page_start": 39,
-   "page_end": 39,
-   "n_chars": 92,
-   "n_words": 19
-  },
-  {
-   "id": "sec-029-0-a1xx-q-mnq",
-   "number": "0",
-   "title": "A]\u22121|(x,x\u2032) (\u2044q +m)n(q)",
-   "level": 1,
-   "page_start": 39,
-   "page_end": 39,
-   "n_chars": 10,
-   "n_words": 2
-  },
-  {
-   "id": "sec-030-0-a1yyp-mnp",
-   "number": "0",
-   "title": "A]\u22121|(y\u2032,y)(\u2044p +m)n(p)",
-   "level": 1,
-   "page_start": 39,
-   "page_end": 40,
-   "n_chars": 1233,
-   "n_words": 224
-  },
-  {
-   "id": "sec-031-0-a1-that",
-   "number": "0",
-   "title": "A)\u22121 that",
+   "id": "page-040",
+   "number": null,
+   "title": "Page 40",
    "level": 1,
    "page_start": 40,
-   "page_end": 42,
-   "n_chars": 10664,
-   "n_words": 1891
+   "page_end": 40,
+   "n_chars": 5031,
+   "n_words": 901,
+   "label_start": "40",
+   "label_end": "40"
   },
   {
-   "id": "sec-032-c-eft-for-halo-nuclei",
-   "number": "C",
-   "title": "EFT for halo nuclei",
+   "id": "page-041",
+   "number": null,
+   "title": "Page 41",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 41,
+   "n_chars": 5133,
+   "n_words": 874,
+   "label_start": "41",
+   "label_end": "41"
+  },
+  {
+   "id": "page-042",
+   "number": null,
+   "title": "Page 42",
    "level": 1,
    "page_start": 42,
-   "page_end": 45,
-   "n_chars": 17136,
-   "n_words": 2896
+   "page_end": 42,
+   "n_chars": 5959,
+   "n_words": 1001,
+   "label_start": "42",
+   "label_end": "42"
   },
   {
-   "id": "sec-033-iv-summary-and-perspectives",
-   "number": "IV",
-   "title": "SUMMARY AND PERSPECTIVES",
+   "id": "page-043",
+   "number": null,
+   "title": "Page 43",
+   "level": 1,
+   "page_start": 43,
+   "page_end": 43,
+   "n_chars": 5117,
+   "n_words": 866,
+   "label_start": "43",
+   "label_end": "43"
+  },
+  {
+   "id": "page-044",
+   "number": null,
+   "title": "Page 44",
+   "level": 1,
+   "page_start": 44,
+   "page_end": 44,
+   "n_chars": 4505,
+   "n_words": 717,
+   "label_start": "44",
+   "label_end": "44"
+  },
+  {
+   "id": "page-045",
+   "number": null,
+   "title": "Page 45",
    "level": 1,
    "page_start": 45,
    "page_end": 45,
-   "n_chars": 1213,
-   "n_words": 184
+   "n_chars": 4750,
+   "n_words": 800,
+   "label_start": "45",
+   "label_end": "45"
   },
   {
-   "id": "sec-034-acknowledgments",
+   "id": "page-046",
    "number": null,
-   "title": "Acknowledgments",
-   "level": 1,
-   "page_start": 45,
-   "page_end": 46,
-   "n_chars": 654,
-   "n_words": 101
-  },
-  {
-   "id": "sec-035-references",
-   "number": null,
-   "title": "References",
+   "title": "Page 46",
    "level": 1,
    "page_start": 46,
+   "page_end": 46,
+   "n_chars": 5248,
+   "n_words": 970,
+   "label_start": "46",
+   "label_end": "46"
+  },
+  {
+   "id": "page-047",
+   "number": null,
+   "title": "Page 47",
+   "level": 1,
+   "page_start": 47,
+   "page_end": 47,
+   "n_chars": 5184,
+   "n_words": 966,
+   "label_start": "47",
+   "label_end": "47"
+  },
+  {
+   "id": "page-048",
+   "number": null,
+   "title": "Page 48",
+   "level": 1,
+   "page_start": 48,
+   "page_end": 48,
+   "n_chars": 5258,
+   "n_words": 966,
+   "label_start": "48",
+   "label_end": "48"
+  },
+  {
+   "id": "page-049",
+   "number": null,
+   "title": "Page 49",
+   "level": 1,
+   "page_start": 49,
+   "page_end": 49,
+   "n_chars": 5360,
+   "n_words": 989,
+   "label_start": "49",
+   "label_end": "49"
+  },
+  {
+   "id": "page-050",
+   "number": null,
+   "title": "Page 50",
+   "level": 1,
+   "page_start": 50,
+   "page_end": 50,
+   "n_chars": 5646,
+   "n_words": 1049,
+   "label_start": "50",
+   "label_end": "50"
+  },
+  {
+   "id": "page-051",
+   "number": null,
+   "title": "Page 51",
+   "level": 1,
+   "page_start": 51,
+   "page_end": 51,
+   "n_chars": 5376,
+   "n_words": 989,
+   "label_start": "51",
+   "label_end": "51"
+  },
+  {
+   "id": "page-052",
+   "number": null,
+   "title": "Page 52",
+   "level": 1,
+   "page_start": 52,
    "page_end": 52,
-   "n_chars": 35657,
-   "n_words": 6640
+   "n_chars": 3693,
+   "n_words": 685,
+   "label_start": "52",
+   "label_end": "52"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 37,
-  "sections": 36,
-  "chars_total": 262092,
-  "latex_overlay": {
-   "_schema": "latex-math-overlay/v1",
-   "main": "ehmrmp.tex",
-   "tex_sections": 24,
-   "overlaid": 5,
-   "thresholds": {
-    "title": 0.85,
-    "prose": 0.6,
-    "coverage": 0.5
-   },
-   "sections": [
-    {
-     "id": "sec-000-i-qcd-and-nuclear-f-orces-1",
-     "title": "QCD and Nuclear F orces 1",
-     "prose_ratio": 0.009,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-001-c-conventional-approaches-to-the-nuclear-force-p",
-     "title": "Conventional approaches to the nuclear force problem 4",
-     "prose_ratio": 0.016,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-002-ii-eft-for-f-ew-nucleon-systems-f-oundations-and",
-     "title": "EFT for F ew-Nucleon Systems: F oundations and",
-     "prose_ratio": 0.012,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-003-c-chiral-eft-for-few-nucleons-applications-21",
-     "title": "Chiral EFT for few nucleons: applications 21",
-     "prose_ratio": 0.022,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-004-c-eft-for-halo-nuclei-42",
-     "title": "EFT for halo nuclei 42",
-     "prose_ratio": 0.021,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-005-iv-summary-and-perspectives-45",
-     "title": "Summary and perspectives 45",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-006-i-qcd-and-nuclear-forces",
-     "title": "QCD AND NUCLEAR FORCES",
-     "prose_ratio": 0.769,
-     "coverage_ratio": 0.988,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-007-2-uu-dd-mu-md",
-     "title": "(\u00afuu + \u00afdd) + mu \u2212md",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-008-2-uu-dd",
-     "title": "(\u00afuu \u2212 \u00afdd) ,",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-009-c-conventional-approaches-to-the-nuclear-force-p",
-     "title": "Conventional approaches to the nuclear force problem",
-     "prose_ratio": 0.952,
-     "coverage_ratio": 0.997,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-010-ii-eft-for-few-nucleon-systems",
-     "title": "EFT FOR FEW-NUCLEON SYSTEMS:",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-011-0-cs",
-     "title": "(Cs",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-012-2-\u03c31-\u03c32-qk-c6-q-\u03c31-q-\u03c32",
-     "title": "(\u20d7 \u03c31 +\u20d7 \u03c32) \u00b7\u20d7 q\u00d7\u20d7k +C6\u20d7 q\u00b7\u20d7 \u03c31\u20d7 q\u00b7\u20d7 \u03c32",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-013-2-nn-ns-un-217",
-     "title": "( \u00afNN )( \u00afNS \u00b7uN ), (2.17)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-014-2-nn-n-\u03c4-n-n-\u03c4n-221",
-     "title": "( \u00afNN )( \u00afN \u03c4 N ) \u00b7 ( \u00afN \u03c4N ). (2.21)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-015-2-ann-app-anp-564-040-fm",
-     "title": "(ann +app) \u2212anp = 5.64 \u00b1 0.40 fm ,",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-016-2-rnn-rpp-rnp-003-006-fm-226",
-     "title": "(rnn +rpp) \u2212rnp = 0.03 \u00b1 0.06 fm .(2.26)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-017-2-charge",
-     "title": "(charge-",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-018-c-chiral-eft-for-few-nucleons-applications",
-     "title": "Chiral EFT for few nucleons: applications",
-     "prose_ratio": 0.335,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-019-2830-mev-these-numbers-are-similar-to-the-ones-o",
-     "title": "MeV. These numbers are similar to the ones ob-",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-020-5-\u03c7-\u03c7-\u03b4ijg\u00b5\u03bdt\u03bd",
-     "title": "(\u03c7+ \u2212 \u27e8\u03c7+\u27e9) \u03b4ijg\u00b5\u03bdT\u03bd",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-021-030-mev-and-m-0-123345-035-mev-324-together",
-     "title": "MeV and m\u2206 0 = 1233.45 \u00b1 0.35 MeV (324) together",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-022-8-mev-and-\u03b4m2",
-     "title": "MeV and |\u03b4m2",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-023-3-4\u03b1-1f",
-     "title": "(4\u03b1 \u2212 1)f,",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-024-3-1-2\u03b1f-f-\u03be\u03be-\u03c0-1-2\u03b1f",
-     "title": "(1 + 2\u03b1)f, f \u039e\u039e \u03c0 = \u2212(1 \u2212 2\u03b1)f,",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-025-3-1-2\u03b1f-f-\u03be\u03bb-k-1",
-     "title": "(1 + 2\u03b1)f, f \u039e\u039b K = 1\u221a",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-026-3-1-\u03b1f-f-\u03c3\u03c2-\u03b78-2",
-     "title": "(1 \u2212\u03b1)f, f \u03a3\u03a3 \u03b78 = 2\u221a",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-027-iii-towards-a-many-body-eft-for-nuclei",
-     "title": "TOWARDS A MANY-BODY EFT FOR NUCLEI",
-     "prose_ratio": 0.27,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-028-0-a1xyp-mnp",
-     "title": "A]\u22121|(x,y)(\u2044p +m)n(p)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-029-0-a1xx-q-mnq",
-     "title": "A]\u22121|(x,x\u2032) (\u2044q +m)n(q)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-030-0-a1yyp-mnp",
-     "title": "A]\u22121|(y\u2032,y)(\u2044p +m)n(p)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-031-0-a1-that",
-     "title": "A)\u22121 that",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-032-c-eft-for-halo-nuclei",
-     "title": "EFT for halo nuclei",
-     "prose_ratio": 0.933,
-     "coverage_ratio": 0.992,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-033-iv-summary-and-perspectives",
-     "title": "SUMMARY AND PERSPECTIVES",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-034-acknowledgments",
-     "title": "Acknowledgments",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-035-references",
-     "title": "References",
-     "result": "no matching \\section"
-    }
-   ]
-  }
+  "toc_entries": 0,
+  "toc_inferred_entries": 24,
+  "toc_inferred_mean_confidence": 1.0,
+  "toc_inferred_empty_share": 0.792,
+  "toc_inferred_method": "latex",
+  "figure_entries": 4,
+  "figure_sequence_gaps": [
+   "figure 1",
+   "figure 2",
+   "figure 3",
+   "figure 4",
+   "figure 6",
+   "figure 8",
+   "figure 9",
+   "figure 10",
+   "figure 11",
+   "figure 13",
+   "figure 14",
+   "figure 15",
+   "figure 16",
+   "figure 17",
+   "figure 18",
+   "figure 19",
+   "figure 20",
+   "figure 21",
+   "figure 22",
+   "figure 23",
+   "figure 24",
+   "figure 25",
+   "figure 26",
+   "figure 27",
+   "figure 28",
+   "figure 29",
+   "figure 30",
+   "figure 31",
+   "figure 32",
+   "figure 33",
+   "figure 34",
+   "figure 35",
+   "figure 36",
+   "figure 37"
+  ],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 52,
+  "chars_total": 262600,
+  "furniture_lines_stripped": 51
  }
 }

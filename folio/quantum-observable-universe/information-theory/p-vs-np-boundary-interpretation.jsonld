@@ -2,7 +2,8 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/rem-p-vs-np-boundary-interpretation",
@@ -14,12 +15,12 @@
   "kind": "remark",
   "title": "Geometric meaning of the boundary dichotomy and the three equivalent criteria",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-p-vs-np-boundary",
+    "papers/quantum-observable-universe/blocks/conj-p-vs-np-boundary",
     "papers/quantum-observable-universe/blocks/def-skein-resolution-obstruction",
     "papers/quantum-observable-universe/blocks/prop-p-bandwidth-bound",
     "papers/quantum-observable-universe/blocks/conj-quantum-computational-universality"
   ],
-  "interprets": "papers/quantum-observable-universe/blocks/prop-p-vs-np-boundary",
+  "interprets": "papers/quantum-observable-universe/blocks/conj-p-vs-np-boundary",
   "text": "p-vs-np-boundary-interpretation.md",
   "provenance": "authored"
 }

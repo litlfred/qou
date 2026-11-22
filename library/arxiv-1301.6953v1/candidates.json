@@ -3,12 +3,13 @@
  "doc_id": "arxiv-1301.6953v1",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "8c9231d0832df3b6f9fa790e80c2caeb63a3b6c75d187d76ada0f42769ec4372",
   "file": "1301.6953v1.pdf"
  },
  "provenance": {
-  "title": "LU TP 13-03 Januray 2013",
+  "title": "Chiral Perturbation Theory and Mesons",
   "authors": "Chiral Perturbation Theory and Mesons",
   "arxiv": {
    "id": "1301.6953",
@@ -20,9 +21,93 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
-  "formalization_candidates": 0
+  "candidates": 3,
+  "by_kind": {
+   "proposition": 3
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 3
+  },
+  "by_evidence_kind": {
+   "computational-simulation": 3
+  },
+  "by_evidence_location": {
+   "elsewhere": 1,
+   "in-paper": 2
+  }
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "As far as the plenary talks are concerned these are the experimental tests from NA48 [6] and KLOE [7], the connection with dispersion relations [8, 9] and the connection with lattice QCD [10 \u2013 12].",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [6], [7], [8, 9] in sections/sec-001-1-introduction.md",
+   "external_refs": [
+    "[6]",
+    "[7]",
+    "[8, 9]",
+    "[10 \u2013 12]"
+   ],
+   "quantitative_values": [],
+   "section_file": "sections/sec-001-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "2-5",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: elsewhere \u2014 Cites external source [6], [7], [8, 9] in sections/sec-001-1-introduction.md). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-001-01",
+   "block_iri": "library/arxiv-1301.6953v1/blocks/prop-sec-001-01",
+   "claim_id": "arxiv-1301.6953v1#prop-sec-001-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "Lattice QCD has now reached the stage where they can start determining the ChPT LECs.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-002-3-determining-low-energy-constants-in-the-contin.md (p. 5-7)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-002-3-determining-low-energy-constants-in-the-contin.md",
+   "section_title": "Determining low-energy-constants in the continuum",
+   "pages": "5-7",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-002-3-determining-low-energy-constants-in-the-contin.md (p. 5-7)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-002-01",
+   "block_iri": "library/arxiv-1301.6953v1/blocks/prop-sec-002-01",
+   "claim_id": "arxiv-1301.6953v1#prop-sec-002-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "The main idea was that lattice calculation can use our formulas to extrapolate to the massless case, see e.g. \\cite{Buchoff}.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-004-5-beyond-qcd.md (p. 8-10)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-004-5-beyond-qcd.md",
+   "section_title": "Beyond QCD",
+   "pages": "8-10",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-004-5-beyond-qcd.md (p. 8-10)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-004-01",
+   "block_iri": "library/arxiv-1301.6953v1/blocks/prop-sec-004-01",
+   "claim_id": "arxiv-1301.6953v1#prop-sec-004-01"
+  }
+ ]
 }

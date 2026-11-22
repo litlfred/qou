@@ -1,0 +1,1 @@
+The following sets generate morphisms of Cob(3)S2 and are both minimal: G1 = C ∪F ∪L ∪orientation reversal G2 = C ∪F ∪P ∪orientation reversal This proposition will be revisited as 3.3.7 and the proof will be presented there.

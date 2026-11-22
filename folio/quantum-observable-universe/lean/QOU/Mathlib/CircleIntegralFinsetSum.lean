@@ -21,7 +21,7 @@ Together with `MeromorphicOn.extract_zeros_poles` — which *is* present at the 
 factorisation supplies the finitely many factors, this supplies their finiteness,
 and the first lets the contour integral be taken term by term.
 
--- Ref: [manuscript] bean `qou-argp` — the converse theta zero locus.
+-- Ref: [leitner2026] bean `qou-argp` — the converse theta zero locus.
 -/
 
 open scoped Real

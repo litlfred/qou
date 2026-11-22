@@ -36,7 +36,7 @@ is what makes the loss vanish — the corners' shifted cells re-form a second st
 
 No ring: hooks are `ℕ`, and the identity is stated for an arbitrary `AddCommMonoid` target.
 
--- Ref: [manuscript] computations/deltalambda/rev_bounded_excess_lower_bound_probe.py
+-- Ref: [leitner2026] computations/deltalambda/rev_bounded_excess_lower_bound_probe.py
 -/
 
 namespace QOU.BraidKnot.HookSum
@@ -217,5 +217,25 @@ theorem rowDeletedYD_zero (k : ℕ) : rowDeletedYD k 0 = staircaseYD k := by
   ext ⟨i, j⟩
   simp only [YoungDiagram.mem_cells, mem_rowDeletedYD, mem_staircaseYD]
   omega
+
+/-- With a nonnegative `g`, the row-deleted shape's hook sum dominates the two staircase sums: the
+rectangle term is dropped.  This is the step `Σ ε(h) ≥ S_δ(k−r) + S_δ(r)` of the lower bound.
+Ported from #7802 (`cornerBlock_hookSum_ge`, an independent derivation of the same bound). -/
+theorem rowDeleted_hookSum_ge {N : Type*} [AddCommMonoid N] [PartialOrder N]
+    [IsOrderedAddMonoid N] (g : ℕ → N) (hg : ∀ m, 0 ≤ g m) (k r : ℕ) (hr : r ≤ k) :
+    ∑ c ∈ (staircaseYD (k - r)).cells, g (QOU.QBeta.WenzlWeight.hook (staircaseYD (k - r)) c)
+        + ∑ c ∈ (staircaseYD r).cells, g (QOU.QBeta.WenzlWeight.hook (staircaseYD r) c)
+      ≤ ∑ c ∈ (rowDeletedYD k r).cells, g (QOU.QBeta.WenzlWeight.hook (rowDeletedYD k r) c) := by
+  rw [rowDeleted_hookSum g k r hr]
+  exact le_add_of_nonneg_right (Finset.sum_nonneg fun i _ => Finset.sum_nonneg fun j _ => hg _)
+
+/-- The row-deleted shape has `T_{k−r} + T_r + r(k−r+1)` cells, i.e. `n = T_k + r`: the
+hook-sum decomposition at `g ≡ 1`.  Ported from #7802 (`cornerBlockYD_card`). -/
+theorem rowDeletedYD_card (k r : ℕ) (hr : r ≤ k) :
+    (rowDeletedYD k r).cells.card
+      = (staircaseYD (k - r)).cells.card + (staircaseYD r).cells.card + r * (k - r + 1) := by
+  have h := rowDeleted_hookSum (N := ℕ) (fun _ => 1) k r hr
+  simp only [Finset.sum_const, smul_eq_mul, mul_one, card_range] at h
+  exact h
 
 end QOU.BraidKnot.HookSum

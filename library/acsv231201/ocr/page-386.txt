@@ -1,0 +1,46 @@
+368 Cone point asymptotics
+
+¢ is given by its generalized Fourier transform yy, proving the theorem in
+the case that 8 > —d. Finally, if 8 < —d we observe that the generalized Fourier
+transform of a homogeneous function of degree a is always homogeneous of
+degree —a — d. Therefore, letting a run over all degrees of terms that are in the
+interval [8, —d], the remainder is expressed as the sum of finitely many terms of
+type O(\r|-*~%) together with a remainder that is at most O(1). This establishes
+that the remainder is O(|r|-P-“) and finishes the proof. a
+
+11.4 Examples and consequences
+
+We now give several examples computing asymptotics determined by a mini-
+mal point that is a Lorentzian quadratic.
+
+Example 11.41 (power of a cone). Let F(x, y,z) = 1/Q(x,y, 2)’ where
+OG, y,2) = (1- -y) + - x) - 2) + - yd = 2).
+
+Friedrichs and Lewy [FL28] were interested in nonnegativity of the power
+series coefficients of F when 8 = | while they studied a discretized time-
+dependent wave equation in two spatial dimensions; such nonnegativity was
+proven for 8 > 1/2 in classical work of Szegé [Sze33]. A vast generalization
+of this result, applying to the reciprocal of the Tutte polynomial of a graph with
+all variables e replaced by 1 — e, was later studied by Scott and Sokal [SS 14].
+
+In logarithmic coordinates (u, v, w) = exp(x, y, z), the leading homogeneous
+term of Q at the singular point (0, 0, 0) of log ‘V is the second elementary sym-
+metric function q(u,v,w) = uv + uw + vw. The power series expansion of F
+corresponds to the component of amoeba(Q)° containing points (-N, —N, —N)
+with N sufficiently large, and the normal cone at this singular point is the cone
+of all directions (r,s,t) such that r? + s*? + < 2(rs + rt + st). This cone
+is contained in the positive orthant and its boundary is tangent to the coor-
+dinate hyperplanes along the directions (1, 1,0), (1,0, 1), and (0, 1, 1). Thus,
+N = Nco,0)(B) is a symmetric cone inscribed in the positive orthant. Because
+nonnegativity of the coefficients is known for some £, the boundary of the
+amoeba is contained in the real variety; the real variety does not intersect the
+projective dual cone in log space, so this example satisfies Assumption (11.7).
+
+Substituting the result of Proposition 11.38 into Theorem 11.40, taking B to
+be greater than 1/2, we compute that the dual to g is 2(rs+st+rt)—(1? +5? +07)
+and deduce
+
+4's
+
+So 2 2 _ 2)p-3/2
+dp Valine - 1/2) (Qrs +2rt+2st-r-—s?-t yp

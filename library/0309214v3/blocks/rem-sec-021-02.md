@@ -1,0 +1,1 @@
+The reason we exclude the G2 Lie algebra is technical. Namely, at present we cannot prove that the structure constants of the multiplication of the quantized enveloping algebra of G2 with respect to a standard PBW basis, are q–holonomic; see Remark A.3. We believe however, that the theorem also holds for G2.

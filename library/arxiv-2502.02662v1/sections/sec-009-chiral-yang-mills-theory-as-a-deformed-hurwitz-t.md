@@ -7,10 +7,11 @@ section_number: null
 pages: 13-15
 source_pdf: 2502.02662v1.pdf
 source_sha256: 3f87983ce379a8d6
-doc_brief: "The String Dual to Two-dimensional Yang-Mills Theory Revisited — We propose that chiral two-dimensional Yang-Mills theory on a Riemann surface X is dual to a deformed stationary subsector of the"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.969
-latex_coverage_ratio: 0.892
+latex_coverage_ratio: 0.903
+doc_brief: "The String Dual to Two-dimensional Yang-Mills Theory Revisited — We propose that chiral two-dimensional Yang-Mills theory on a Riemann surface X is dual to a deformed stationary subsector of the"
 ---
 []{#Premise label="Premise"} We have all the necessary tools in hand to define a deformed Hurwitz theory that is manifestly dual to two-dimensional chiral Yang-Mills theory. As suggested at the end of section [\[YMObservables\]](#YMObservables){reference-type="ref" reference="YMObservables"}, we will focus on the degree $d$ sector of chiral Yang-Mills theory and postpone the discussion of the sum over degrees. Firstly, we consider the fixed-degree correlators of the chiral theory in the strict large $N$ limit: $$\begin{aligned}
     Z^{+}_{d}(U_1,\dots,U_k) &=\sum_{\alpha_1,\dots, \alpha_d\in Y^d} \left(\prod_{i=1}^{k} p_{\alpha_i}(U_i)\right)  \sum_{\lambda\in Y_d} \left(\frac{ d_{\lambda}}{d!}\right)^{2-2g} \prod_{i=1}^{k}  f_{\alpha_i}(\lambda)

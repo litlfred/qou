@@ -1,0 +1,54 @@
+Remark 6.26 In [JuLa2], the old quadratic relation was used. Using the natural surjection of
+RF] onto Yan(q) given by o; + g; and t; + t;, and normalising and re-scaling the specialised trace,
+invariants T'g,p(q, z) for oriented framed links were defined in Theorem 8].
+
+In Proposition 7] a skein relation is found for the invariant I'g,p, involving the braiding and
+the framing generators. It reads:
+
+oe
+
+Ta p(L+) - — Jol ap(L Te d Tan Lsx) (6.26)
+
+a
+
+where the links L,, L_, L, and L,,. are illustrated in in Fgwe
+
+Pe | fe | Ce | Ce |
+~*~ f ST j rT s_/a—s]o
+Ly = Bay _ = 6o,-1 Ls= pees Lex = pegid— oy
+
+Figure 6.1: The framed links in the skein relation in open braid form.
+
+Analogously, with the new quadratic relations, the invariant ®y,p satisfies the following skein relation:
+
+1 g/l? —q 2 dt
+®ad (L4) - Wp®a,p(L- )= = ®ap(L (6.27)
+7 v —a
+where the links Ly, D_ and L, are illustrated in Figure [6.1] The fact that the skein relation for ®g.p
+is very different from the skein relation for [yp is an indication that the two invariants may not be
+topologically equivalent. We also have computational data that seem to support this claim [Aj].
+
+6.4.2 Invariants from Yokonuma—Hecke algebras for classical knots and links
+
+Let £ denote the set of oriented classical links. By the Alexander Theorem, we have £L = Un, {@|a € By}.
+The classical braid group B,, injects into the framed braid group F,, = Z” x B,,, whereby elements of B,,
+are viewed as framed braids with all framings equal to zero. So, by the classical Markov braid equivalence,
+comprising conjugation in the groups B, and positive and negative stabilisations and destabilisations,
+and by treating the t;’s as formal generators, ®g,p(q,z) becomes an isotopy invariant of oriented classical
+links when restricted to L (see also [JuLa3]). This invariant of classical links will be denoted by O4,p(q, 2).
+Accordingly, for any classical braid a € B,, we have
+
+Ou,p(@) = A, (WV AD) trap(a) ,
+
+where Ap and Ap are given by (6.25), and ¢(a) is the sum of the exponents of the braiding generators
+o; in the word a.
+
+Remark 6.27 Following Remark the above construction yields 27 — 1 seemingly distinct isotopy
+invariants for classical links. However, we shall see soon that, for classical links, we only obtain one
+invariant for every d € N*.
+
+The invariants Oy p(q, z) need to be compared with known invariants of classical links, especially with
+the Homflypt polynomial. The Homflypt (or 2-variable Jones) polynomial P(q, z) is a 2-variable isotopy
+invariant of oriented classical links that was constructed from the Iwahori—Hecke algebras H,,(q) after
+normalising and re-scaling the Ocneanu trace . Here we define P(q, z) via the invariants Oq,p(q, 2),
+

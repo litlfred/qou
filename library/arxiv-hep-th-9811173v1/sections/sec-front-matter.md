@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9811173v1
-doc_title: "arXiv:hep-th/9811173v1 19 Nov 1998"
+doc_title: "Determinations of rational Dedekind-zeta invariants of hyperbolic manifolds and Feynman knots and links"
 section_id: sec-front-matter
 section_title: "Front matter"
 section_number: null
@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 9811173v1.pdf
 source_sha256: 986bf57947746523
 toc_source: inferred
+doc_brief: "Determinations of rational Dedekind-zeta invariants of hyperbolic manifolds and Feynman knots and links — We identify 998 closed hyperbolic 3-manifolds whose volumes are rationally related to"
 ---
 arXiv:hep-th/9811173v1  19 Nov 1998
 OUT–4102–76
@@ -47,4 +48,3 @@ a) CECM, Simon Fraser University, Burnaby, B.C. V5A 1S6, Canada;
 jborwein@cecm.sfu.ca; http://www.cecm.sfu.ca/ejborwein
 b) Physics Department, Open University, Milton Keynes MK7 6AA, UK;
 D.Broadhurst@open.ac.uk; http://physics.open.ac.uk/edbroadhu
-1

@@ -64,8 +64,8 @@ Nothing is wired; no instance of the open premise is fabricated.
 ⟹ tensor-generation chain* half sorry-free, tying rep theory to the landed order
 separation. It does **not** construct the highest-weight classification.
 
--- Ref: [manuscript] quantum-observable-universes/fundamental-object.ts (def:fundamental-object)
--- Ref: [manuscript] conj:binding-manybody-eq-jet-filtration (jet tower); def:tannaka-dual
+-- Ref: [leitner2026] quantum-observable-universes/fundamental-object.ts (def:fundamental-object)
+-- Ref: [leitner2026] conj:binding-manybody-eq-jet-filtration (jet tower); def:tannaka-dual
 -- Ref: rank-1 ⟹ one fundamental weight ⟹ one ⊗-generator (highest-weight theory):
 --   Fulton–Harris, *Representation Theory*, GTM 129, §11–§14 & §23 (fundamental reps,
 --   `SL₂`/rank-1: simples are `Sym^k(std)`); Bourbaki, *Groupes et algèbres de Lie*,

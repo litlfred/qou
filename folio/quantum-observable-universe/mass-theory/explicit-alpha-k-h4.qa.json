@@ -1,6 +1,6 @@
 {
   "$schema": "block-qa/v1",
-  "label": "prop:explicit-alpha-k-h4",
+  "label": "conj:explicit-alpha-k-h4",
   "kind": "proposition",
   "paths": {
     "ts": "folio/quantum-observable-universe/mass-theory/explicit-alpha-k-h4.ts",
@@ -48,6 +48,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "31ce41770fad",
+          "ts": "7288b74a2ba4",
+          "lean": "2afaf6177644",
+          "lean_statement": "5104607322e5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:26.679Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "S↔L: the statement (md:1-11) is a table of exact ℚ(q) coefficients for all five λ ⊢ 4. The Lean encodes one numeric row as ℝ literals (lean:39-44, `.e => -0.30555901` …), and α₃ is a literal (`def alpha_3_H4 : ℝ := 0.0034625204`, l.54). The \"orthogonality\" predicate is only |Σ coefficients| ≤ 1 (l.67-70), not χ_λ(r₃) = 0. The value bound is tautological over that literal (l.109-116). The header still uses the convention-C z = 1/(q^{1/2}+q^{-1/2}) (l.5). S↔P: the prf solves M·c = 0 *numerically at q₀* for one representative (prf:52-53, (−0.3056, 1.4541, −0.6127, −1.5593, 1)). That matches the md (1⁴) row at q₀ (checked by hand: −q⁹/Φ₍₄₎ = −0.30557, −q³/(q²+1) = −0.6127). It never derives the exact rational functions or the other four rows. The full-row-rank claim at generic q (prf:29-30) is asserted, and \"both sides agree to canonical precision\" is numerical.",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean"
       }
     ],
     "milnor-amalgamated-flow": [
@@ -1381,7 +1399,7 @@
         "reviewed_at": "2026-08-09T13:01:04.690Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "folio/quantum-observable-universe/mass-theory/explicit-alpha-k-h4.ts:0: forward ref: uses prop:wedderburn-bratteli-recursion (manifest pos 646) which appears after this block (pos 644) in the chapter | folio/quantum-observable-universe/mass-theory/explicit-alpha-k-h4.ts:0: forward ref: uses rem:y-lambda-sign-pattern (manifest pos 648) which appears after this block (pos 644) in the chapter"
+        "evidence": "folio/quantum-observable-universe/mass-theory/explicit-alpha-k-h4.ts:0: forward ref: uses conj:wedderburn-bratteli-recursion (manifest pos 646) which appears after this block (pos 644) in the chapter | folio/quantum-observable-universe/mass-theory/explicit-alpha-k-h4.ts:0: forward ref: uses rem:y-lambda-sign-pattern (manifest pos 648) which appears after this block (pos 644) in the chapter"
       }
     ],
     "detangler-section-band": [
@@ -1792,7 +1810,7 @@
         },
         "reviewed_at": "2026-08-21T15:49:23.299Z",
         "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
-        "evidence": "Full read of prop:explicit-alpha-k-h4 (5x5 coefficient table over Q(q), Phi_{(4)} definition, closing archimedean-wall note). Table rows are data; the only prose is the three-sentence closing note. No construction of this category present."
+        "evidence": "Full read of conj:explicit-alpha-k-h4 (5x5 coefficient table over Q(q), Phi_{(4)} definition, closing archimedean-wall note). Table rows are data; the only prose is the three-sentence closing note. No construction of this category present."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1826,7 +1844,7 @@
         },
         "reviewed_at": "2026-08-21T15:49:23.334Z",
         "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
-        "evidence": "Full read of prop:explicit-alpha-k-h4 (5x5 coefficient table over Q(q), Phi_{(4)} definition, closing archimedean-wall note). Table rows are data; the only prose is the three-sentence closing note. No construction of this category present."
+        "evidence": "Full read of conj:explicit-alpha-k-h4 (5x5 coefficient table over Q(q), Phi_{(4)} definition, closing archimedean-wall note). Table rows are data; the only prose is the three-sentence closing note. No construction of this category present."
       }
     ],
     "trap-em-dash": [
@@ -1860,7 +1878,7 @@
         },
         "reviewed_at": "2026-08-21T15:49:23.367Z",
         "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
-        "evidence": "Full read of prop:explicit-alpha-k-h4 (5x5 coefficient table over Q(q), Phi_{(4)} definition, closing archimedean-wall note). Table rows are data; the only prose is the three-sentence closing note. No construction of this category present."
+        "evidence": "Full read of conj:explicit-alpha-k-h4 (5x5 coefficient table over Q(q), Phi_{(4)} definition, closing archimedean-wall note). Table rows are data; the only prose is the three-sentence closing note. No construction of this category present."
       }
     ],
     "trap-triples": [
@@ -1894,7 +1912,7 @@
         },
         "reviewed_at": "2026-08-21T15:49:23.402Z",
         "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
-        "evidence": "Full read of prop:explicit-alpha-k-h4 (5x5 coefficient table over Q(q), Phi_{(4)} definition, closing archimedean-wall note). Table rows are data; the only prose is the three-sentence closing note. No construction of this category present."
+        "evidence": "Full read of conj:explicit-alpha-k-h4 (5x5 coefficient table over Q(q), Phi_{(4)} definition, closing archimedean-wall note). Table rows are data; the only prose is the three-sentence closing note. No construction of this category present."
       }
     ],
     "trap-closing-aphorism": [
@@ -1928,7 +1946,7 @@
         },
         "reviewed_at": "2026-08-21T15:49:23.447Z",
         "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
-        "evidence": "Full read of prop:explicit-alpha-k-h4 (5x5 coefficient table over Q(q), Phi_{(4)} definition, closing archimedean-wall note). Table rows are data; the only prose is the three-sentence closing note. No construction of this category present."
+        "evidence": "Full read of conj:explicit-alpha-k-h4 (5x5 coefficient table over Q(q), Phi_{(4)} definition, closing archimedean-wall note). Table rows are data; the only prose is the three-sentence closing note. No construction of this category present."
       }
     ],
     "trap-meta-commentary": [
@@ -1997,7 +2015,7 @@
         },
         "reviewed_at": "2026-08-21T15:49:23.484Z",
         "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
-        "evidence": "Full read of prop:explicit-alpha-k-h4 (5x5 coefficient table over Q(q), Phi_{(4)} definition, closing archimedean-wall note). Table rows are data; the only prose is the three-sentence closing note. No construction of this category present."
+        "evidence": "Full read of conj:explicit-alpha-k-h4 (5x5 coefficient table over Q(q), Phi_{(4)} definition, closing archimedean-wall note). Table rows are data; the only prose is the three-sentence closing note. No construction of this category present."
       }
     ],
     "trap-performed-warmth": [
@@ -2031,7 +2049,7 @@
         },
         "reviewed_at": "2026-08-21T15:49:23.519Z",
         "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
-        "evidence": "Full read of prop:explicit-alpha-k-h4 (5x5 coefficient table over Q(q), Phi_{(4)} definition, closing archimedean-wall note). Table rows are data; the only prose is the three-sentence closing note. No construction of this category present."
+        "evidence": "Full read of conj:explicit-alpha-k-h4 (5x5 coefficient table over Q(q), Phi_{(4)} definition, closing archimedean-wall note). Table rows are data; the only prose is the three-sentence closing note. No construction of this category present."
       }
     ],
     "trap-superlative": [
@@ -2065,7 +2083,7 @@
         },
         "reviewed_at": "2026-08-21T15:49:23.554Z",
         "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
-        "evidence": "Full read of prop:explicit-alpha-k-h4 (5x5 coefficient table over Q(q), Phi_{(4)} definition, closing archimedean-wall note). Table rows are data; the only prose is the three-sentence closing note. No construction of this category present."
+        "evidence": "Full read of conj:explicit-alpha-k-h4 (5x5 coefficient table over Q(q), Phi_{(4)} definition, closing archimedean-wall note). Table rows are data; the only prose is the three-sentence closing note. No construction of this category present."
       }
     ],
     "trap-nonspeakable": [
@@ -2124,6 +2142,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T15:49:23.622Z",
+  "updated_at": "2026-11-15T21:57:26.679Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

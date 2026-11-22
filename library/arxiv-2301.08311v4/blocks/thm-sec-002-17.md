@@ -1,0 +1,1 @@
+If un : R × [0, 1] →(Mn, Jn, Ln, K) is a sequence of Jn holomorphic strips from x+ to x−in the n−stretched manifolds, with boundary condition on Ln and K, and with bounded energy, i.e. E(u) < E < ∞, then there is a subsequence of un that converges to a broken strip. FLOER COHOMOLOGY AND HIGHER MUTATIONS

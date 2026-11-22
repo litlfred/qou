@@ -1,0 +1,56 @@
+4012 JOHN W. BARRETT AND BRUCE W. WESTBURY
+
+The linear map of state spaces is
+TOY@z@toH (oe '/t@ O 1 (r)y @O(r)z ® O(a)a,
+
+where o is the permutation (0, 1,2) + (1,2,0), and 7 is the permutation (0, 1,2)
+(2,1,0). As a map of linear functionals, this is the adjoint of the map
+
+AGB QYQ6O(c)6® BQ4@H aA.
+
+The symmetry property is equivalent to the identity
+try (4(0(c)5 @ 1) (1 @ 8(0)4) A) = tr, (BL @ 8) (a@ 1)),
+
+which holds in any spherical category.
+4, PIECEWISE-LINEAR MANIFOLDS
+
+The aim of this section is to describe a finite set of moves on the triangulations
+of a 3-manifold such that any two triangulations are related by a finite sequence
+of these moves. These moves are given by a theorem of Pachner. An extension of
+this result is possible to admit some singularities; the proof of this also yields an
+elementary reduction of Pachner’s result in three dimensions to Alexander’s result
+on stellar moves.
+
+Let o” be an n-simplex. For any p and q, the complexes given by the joins
+Oo? «04 and o” * o% are triangulations of the solid ball, B?*7, and have the same
+boundary, namely 00? * 004.
+
+Definition 4.1. For any k such that 0 < k <n, if X is any n-manifold with an
+identification of a boundary component with Oo" * d0"—*, then X Uda" «o"* is
+said to be obtained from X Uo* « do"—* by a bistellar move of order k.
+
+Example 4.2. Figure 7 shows a bistellar move of order 2 in a 3-manifold.
+On the left-hand side there are two tetrahedra with a common horizontal face.
+On the right there are three tetrahedra with a common vertical edge.
+
+The bistellar move of order 3 is drawn in Figure 8.
+Note that bistellar moves have the following properties:
+1. The inverse of a bistellar move of order k is a bistellar move of order n — k.
+2. A bistellar move on a manifold with boundary does not change the triangu-
+lation of the boundary.
+The main result which gives the application of the algebra to topology is proved
+in [15].
+
+Theorem 4.3. Two closed piecewise-linear n-manifolds are equivalent if and only
+if they are related by a finite sequence of bistellar moves.
+
+A slight extension of Pachner’s result is possible, allowing closed 3-manifolds
+with singularities at vertices.
+
+Definition 4.4. A singular manifold is a complex with simplexes of dimension at
+most three, such that the link of every edge is a circle and the link of every face is
+two points.
+
+It follows from the conditions that the link of a vertex in a singular manifold is
+a surface. The additional condition for a singular manifold to be a closed manifold
+is that the link of every vertex is a 2-sphere.

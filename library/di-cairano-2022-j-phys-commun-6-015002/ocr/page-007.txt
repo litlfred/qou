@@ -1,0 +1,82 @@
+IOP Publishing
+
+J. Phys. Commun. 6 (2022) 015002 LDiCairano
+
+First of all, we note that each element of the set {a;(X)}“ , plays the role of an equilibrium configuration of
+the respective heat bath particle for any fixed X € R®. In fact, one can demonstrate [33] that such equilibrium
+map can be always derived once that a generic interaction potential is given.
+
+In practice, given any Hamiltonian function of the form
+
+H (P, I, X, Q = Ha(P, X) + He, Q) + 7(Q, X),
+
+where Hy(P, X) and Hy(I, Q)are given in (20) and Y(Q, X) isa rather generic interaction term, one can
+define the global equilibrium map a(X) := {a(X), --- ,ay(X)}, imposing that any component of this map realizes
+the following requirement
+
+Va, (Q: X)|q=aix) = 05 (23)
+
+where we remind that Q = {q1,...,qn}.
+In other words, equation (23) provides an implicit relation between a and X. Therefore, the Taylor
+expansion (harmonic approximation) of the potential with respect to the equilibrium map a reads:
+
+V (Q, X) = ¥ (a(X), X)
+
+N
++ sh (4; — ai(X), Ki(q;, — @;(X)))2’, (24)
+ij=1
+where Kj := Va Va V (Q, X)|q—a(x) is, by construction, a constant matrix (in q) which just contains the
+oscillation frequencies around the equilibrium positions associated to each heat bath particle. The first term in
+the expansion (24) could, in general, depends on X and affects the equations of motion, however, if the
+dependence of the potential function, /”, on the X- and q-coordinates of the form ||X — qj|], sucha factor is X
+and Q-independent and hence it could be dropped as we will notice in the next example. On the contrary, the
+second one can be identified with the interaction potential introduced in equation (21). Depending on the
+mathematical structure of the initial potential /”, the resulting equilibrium map a(X) can depend on Xina
+general fashion.
+
+2.1.1. Examples of a possible equilibrium map.
+Let us consider a Lennard-Jones-like interaction potential of the form
+
+N c 12 c 6
+Vis(Q, X) = Yo 4N; ! - : , 25
+WQO= de of( xl (a) | °)
+
+where the parameters o;, 1; € R have the dimension ofan energy and a length, respectively; lastly, 6 € Rare
+dimensionless parameters. Note that we do not consider any mutual interaction between the heat bath particles.
+The requirement (23), namely:
+
+Va, Vis(Q*, X) = 0,
+where Q* = {a vee ax} is the equilibrium configuration of the heat bath, yields
+|X — 6q;|P = 2132, Vie [l, NI.
+
+This set of relations can be geometrically interpreted imaging that any particle, let us say, the i-th one, lies ona
+point of the sphere Sik, with radius R; = 2'/°o;. The reason why any point on the sphere is equivalent to each
+other is due to the fact we do not have any mutual interaction between the heat bath particles.
+Therefore, every equilibrium position vector q;° can be related to the heavy particle vector X, introducing
+any unit vector n(X) (||(X)||g2 = 1) such that
+gh % 4 2a
+
+Gi Gj
+
+n(X), Vie[l, NI}.
+
+In general, it could depend on X, for example, such as n(X) = X/||X||. Thus, the equilibrium map may read:
+
+X 2/60;
+a(X) = = +4
+
+i i
+
+n(X), Vie[l, NI. (26)
+In so doing, the first and second term in harmonic expansion (24) read
+N
+Vy(a(X), X) = —)o np
+i=1
+
+27/3 36n; €7
+2
+
+i
+
+Kj = Hess[%1;)ii(a(X), X) = )he. (27)
+

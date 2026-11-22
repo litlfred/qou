@@ -1,13 +1,14 @@
 ---
 doc_id: bsmf-2002-130-3-457-0
-doc_title: "Bull. Soc. math. France 130 (3), 2002, p. 457–491 HYPERIDEAL POLYHEDRA IN HYPERBOLIC 3-SPACE by Xiliang Bao & Francis Bonahon"
+doc_title: "Hyperideal polyhedra in hyperbolic 3-space"
 section_id: sec-front-matter
 section_title: "Front matter"
 section_number: null
-pages: 1-3
+pages: 1-4
 source_pdf: BSMF_2002__130_3_457_0.pdf
 source_sha256: 63f79235d0c13ba8
 toc_source: inferred
+doc_brief: "Hyperideal polyhedra in hyperbolic 3-space — — A hyperideal polyhedron is a non-compact polyhedron in the hyperbolic 3-space 3 which, in the projective model for 3 ⊂ 3, is just the intersection of 3"
 ---
 Bull. Soc. math. France
 130 (3), 2002, p. 457–491
@@ -146,3 +147,16 @@ attached to each edge e of Γ. There exists a hyperideal polyhedron P in H3 with
 dual graph isomorphic to Γ and with external dihedral angle θe along the edge
 corresponding to the edge e of Γ if and only if the following two conditions are
 satisﬁed:
+1) For every closed curve γ embedded in Γ and passing through the edges e1,
+e2, . . . , en of Γ, !n
+i=1 θei ≥2π with equality possible only if γ is the boundary
+of a component of S2 −Γ;
+2) For every arc γ embedded in Γ, passing through the edges e1, e2, . . . , en
+of Γ, joining two distinct vertices v1 and v2 which are in the closure of the same
+BULLETIN DE LA SOCI´ET´E MATH´EMATIQUE DE FRANCE
+460
+BAO (X.) & BONAHON (F.)
+component A of S2 −Γ but such that γ is not contained in the boundary of A,
+!n
+i=1 θei > π.
+In addition, for the projective polyhedron P Proj associated to P, a vertex of

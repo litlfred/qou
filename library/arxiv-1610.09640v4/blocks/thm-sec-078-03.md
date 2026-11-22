@@ -1,0 +1,1 @@
+Let M be an abelian category, and let J ⊆M be a full subcategory such that every object M ∈M admits a monomorphism M ↣I to some object I ∈J. Then every complex M ∈C+(M) admits a quasi-isomorphism ρ : M →I in C+ str(M), such that inf(I) = inf(M), and each Ip is an object of J.

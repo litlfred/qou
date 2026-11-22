@@ -76,8 +76,8 @@ modulus computations, which are genuinely archimedean (§7c).
 
 ## References
 
-- [manuscript] §5-brings-surface/sw-period-residue-sum
-- [manuscript] §5-brings-surface/sw-classical-jet-exactness
+- [leitner2026] §5-brings-surface/sw-period-residue-sum
+- [leitner2026] §5-brings-surface/sw-classical-jet-exactness
 
 LaTeX label: `prop:colour-cubic-branch-locus-reciprocal`
 -/
@@ -230,5 +230,20 @@ theorem period_eq_zero_of_all_residues_vanish
     {ι : Type*} (E : Finset ι) (res : ι → ℤ) (h : ∀ p ∈ E, res p = 0) :
     ∑ p ∈ E, res p = 0 :=
   Finset.sum_eq_zero h
+
+/-- **Non-vanishing of the colour-cubic discriminant at the bar-fixed real points `z = ±1` (`qou-l155`):**
+`disc 1 = 200` and `disc (-1) = 4`, so neither `z = 1` nor `z = -1` lies in the branch locus,
+and `wCubic 0 = 2`, `wCubic 1 = 29`. -/
+theorem disc_at_pm_one_and_wCubic_vals :
+    disc 1 = 200 ∧ disc (-1) = 4 ∧ wCubic 0 = 2 ∧ wCubic 1 = 29 := by
+  unfold disc wCubic
+  refine ⟨by norm_num, by norm_num, by norm_num, by norm_num⟩
+
+open QOU.Brings.RamificationParityMonodromy in
+/-- **Linearity of residue-slot annihilation under `ddz` (`qou-l155`):**
+Any `R`-linear combination of local Puiseux series has vanishing `t⁻²` residue slot after `ddz`. -/
+theorem ddz_linear_comb_residue_slot_eq_zero (a b : R) (f g : ℤ → R) :
+    ddz (fun e => a * f e + b * g e) (-2) = 0 :=
+  ddz_residue_slot_eq_zero _
 
 end QOU.Brings.ColourCubicBranchLocus

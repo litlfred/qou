@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-ph-9502366v1
-doc_title: "arXiv:hep-ph/9502366v1 22 Feb 1995"
+doc_title: "Chiral Perturbation Theory"
 section_id: sec-008-6-the-role-of-resonances-in-chpt
 section_title: "The role of resonances in ChPT"
 section_number: 6
@@ -8,6 +8,7 @@ pages: 21-25
 source_pdf: 9502366v1.pdf
 source_sha256: 56df064956ca03f8
 toc_source: inferred
+doc_brief: "Chiral Perturbation Theory — An introduction to the basic ideas and methods of Chiral Perturbation Theory is presented."
 ---
 It seems rather natural to expect that the lowest-mass resonances, such as ρ
 mesons, should have an important impact on the physics of the pseudoscalar bosons.
@@ -58,8 +59,6 @@ can be explicitly performed by expanding around the classical solution for the
 resonance ﬁelds.
 The formal procedure to introduce higher-mass states in the chiral Lagrangian
 was ﬁrst discussed by Coleman et al (1969) and Callan et al (1969). The wanted
-22
-A Pich
 ingredient for a non-linear representation of the chiral group is the compensating
 SU(3)V transformation h(φ, g) which appears under the action of G on the coset
 representative u(φ) [see equations (3.2) to (3.4)]:
@@ -139,8 +138,6 @@ R2
 ⋆
 The vector and axial-vector mesons are described in terms of antisymmetric tensor ﬁelds Vµν and
 Aµν (Gasser and Leutwyler 1984, Ecker et al 1989a) instead of the more familiar vector ﬁelds.
-Chiral Perturbation Theory
-23
 where MR, MR1 are the corresponding masses in the chiral limit. The interactions
 L2(R) read
 L2[V (1−−)] = FV
@@ -276,8 +273,6 @@ A
 A
 .
 (6.17)
-24
-A Pich
 The resulting values of the Li couplings (Ecker et al 1989a) are summarized in
 table 2, which compares the diﬀerent resonance-exchange contributions with the
 phenomenologically determined values of Lr
@@ -428,8 +423,6 @@ V ) .
 The last column in table 2 shows the predicted numerical values of the Li couplings,
 using the relations (6.19).
 The exchange of scalar resonances generates the contributions (Ecker et al 1989a):
-Chiral Perturbation Theory
-25
 LS+S1
 1
 = −c2

@@ -8,7 +8,9 @@ pages: 4-6
 source_pdf: Invariant_eigendistributions_2.pdf
 source_sha256: ee43c3ebeff95265
 toc_source: inferred
+doc_brief: "Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups — 18 sections: Front matter; Contents; Introduction."
 ---
+Lemma.
 The inclusion Bν →B induces a W-map H∗(Bν) →H∗(B). This map factors
 through the projection H∗(Bν) →H∗(Bν)A(ν) onto the A(ν)-invariants.
 REPRESENTATIONS OF WEYL GROUPS

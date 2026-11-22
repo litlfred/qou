@@ -1,0 +1,1 @@
+— Let M be a pure diﬀerence module over K with slope t n where g.c.d.(t, n) = 1 and n > 1. There exists a diﬀerence module N – 672 – Galois theory of q-diﬀerence equations over Kn such that Res(N) ∼= M. The module N is not unique. A similar statement holds for pure q-diﬀerence modules over K.

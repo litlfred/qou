@@ -64,7 +64,7 @@ class CoGroundStateSelection (ctx : CoLpDualBindingContext R) : Prop where
     beats the single bond: `Φ₁(3) ≤ Φ₁(1)`.  Derived by instantiating
     the minimisation *hypothesis* at `k = 1`. -/
 -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP duality, bond-order optimum)
--- Ref: [manuscript] quantum-observable-universe/molecular-construction/co-lp-dual-binding.md
+-- Ref: [leitner2026] quantum-observable-universe/molecular-construction/co-lp-dual-binding.md
 theorem co_triple_beats_single (ctx : CoLpDualBindingContext R)
     [hc : CoGroundStateSelection ctx] :
     ctx.Phi_1_k 3 ≤ ctx.Phi_1_k 1 :=
@@ -74,7 +74,7 @@ theorem co_triple_beats_single (ctx : CoLpDualBindingContext R)
     beats the double bond: `Φ₁(3) ≤ Φ₁(2)`.  Derived by instantiating
     the minimisation *hypothesis* at `k = 2`. -/
 -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP duality, bond-order optimum)
--- Ref: [manuscript] quantum-observable-universe/molecular-construction/co-lp-dual-binding.md
+-- Ref: [leitner2026] quantum-observable-universe/molecular-construction/co-lp-dual-binding.md
 theorem co_triple_beats_double (ctx : CoLpDualBindingContext R)
     [hc : CoGroundStateSelection ctx] :
     ctx.Phi_1_k 3 ≤ ctx.Phi_1_k 2 :=
@@ -88,7 +88,7 @@ theorem co_triple_beats_double (ctx : CoLpDualBindingContext R)
     `Φ₁(3) ≤ Φ₁(2)`.  The inequalities are derived from the §3b-cond
     hypothesis, not projected. -/
 -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP duality, bond-order optimum)
--- Ref: [manuscript] quantum-observable-universe/molecular-construction/co-lp-dual-binding.md
+-- Ref: [leitner2026] quantum-observable-universe/molecular-construction/co-lp-dual-binding.md
 theorem co_lp_dual_binding (ctx : CoLpDualBindingContext R)
     [hc : CoGroundStateSelection ctx] :
     ctx.k_star = 3 ∧

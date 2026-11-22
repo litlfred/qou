@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/kwiat-2024-jhepgc-elementary-fermions/sections/sec-011",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Eight Real Components",
+  "pageStart": 12,
+  "pageEnd": 13,
+  "contains": [
+    "library/kwiat-2024-jhepgc-elementary-fermions/blocks/prose-sec-011"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kwiat-2024-jhepgc-elementary-fermions/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kwiat-2024-jhepgc-elementary-fermions/manifest.jsonld",
+  "provenance": "ingested"
+}

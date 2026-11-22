@@ -1,0 +1,1 @@
+For every r with 1 ≤r ≤t, the entries of the matrices ek r, f k r are q–holonomic with respect to k, λ, and the coordinates of the entry. This Proposition follows immediately from Theorem 7 and Fact 0.

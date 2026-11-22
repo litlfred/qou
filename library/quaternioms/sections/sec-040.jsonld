@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/quaternioms/sections/sec-040",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The Principle of Associative Confinement",
+  "pageStart": 36,
+  "pageEnd": 37,
+  "contains": [
+    "library/quaternioms/blocks/prose-sec-040"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/quaternioms/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/quaternioms/manifest.jsonld",
+  "provenance": "ingested"
+}

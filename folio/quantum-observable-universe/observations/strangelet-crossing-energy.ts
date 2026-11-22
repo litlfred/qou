@@ -19,6 +19,11 @@ export default proposition({
   ],
   authorNotes: [
     {
+      kind: "refined-framing",
+      date: "2026-08-29",
+      body: "**Correction (2026-08-29, bean `qou-toul`).** This item previously read *\"Purely strong crossing energy … there is no Coulomb correction; the entire crossing energy lies in the symmetric (strong) channel\"*, with the count $n_+ + n_-$ on the weight $(q + q^{-1})$. Both halves were inherited from the channel swap then present in [the Coulomb-charge definition](#def:coulomb-charge), and both invert the conclusion: at $n_+ = n_-$ it is the *symmetric* term that vanishes. The stated energy also exceeded the true one by $2 N n_- q^{-1}$, a factor of $9.62$ at $q_0$. The proposition cited here carried the correct multiplicities throughout; only the citing text was wrong.",
+    },
+    {
       kind: "note",
       date: "2026-08-08",
       body:

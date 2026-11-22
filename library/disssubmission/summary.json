@@ -2,617 +2,272 @@
  "_schema": "library-summary/v1",
  "doc_id": "disssubmission",
  "source_sha256": "207fd5e3dc0d278d",
- "brief": "Tannakian categories of perverse sheaves on abelian varieties — 121 sections: Acknowledgements; Introduction; Introduction",
- "extended": "**Tannakian categories of perverse sheaves on abelian varieties**\n\n181 pp, 121 sections.\n\n**Outline.** Acknowledgements; Introduction; 4 Introduction; 6 Introduction; 1.1 The main result; 10 Chapter 1 – Vanishing theorems on abelian v; 1.2 A relative generic vanishing theorem 11; 12 Chapter 1 – Vanishing theorems on abelian v; 1.3 Kodaira-Nakano-type vanishing theorems; 1.3 Kodaira-Nakano-type vanishing theorems 13; 14 Chapter 1 – Vanishing theorems on abelian v; 1.4 Negligible perverse sheaves 15; 16 Chapter 1 – Vanishing theorems on abelian v; 1.5 The spectrum of a perverse sheaf 17; 18 Chapter 1 – Vanishing theorems on abelian v; 1.5 The spectrum of a perverse sheaf 19; 20 Chapter 1 – Vanishing theorems on abelian v; 1.5 The spectrum of a perverse sheaf 21",
+ "brief": "Tannakian categories of perverse sheaves on abelian varieties — 52 sections: Front matter; Introduction; Some commonly used notations",
+ "extended": "**Tannakian categories of perverse sheaves on abelian varieties**\n\n*Erlangung der Doktorwürde*\n\n181 pp, 52 sections.\n\n**Outline.** Front matter; Introduction; Some commonly used notations; 1 Vanishing theorems on abelian varieties; 1.1 The main result; 1.2 A relative generic vanishing theorem; 1.3 Kodaira-Nakano-type vanishing theorems; 1.4 Negligible perverse sheaves; 1.5 The spectrum of a perverse sheaf; 2 Proof of the vanishing theorem(s); 2.1 The setting; 2.2 Character twists and convolution; 2.3 An axiomatic framework; 2.4 The Andr´e-Kahn quotient; 2.5 Super Tannakian categories; 2.6 Perverse multiplier; 2.7 The main argument; 3 Perverse sheaves on semiabelian varieties",
  "tokens": {
-  "brief": 30,
-  "extended": 192
+  "brief": 33,
+  "extended": 170
  },
  "sections": [
   {
-   "id": "sec-000-acknowledgements",
-   "title": "Acknowledgements",
-   "pages": "5-9"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-9"
   },
   {
-   "id": "sec-001-introduction",
+   "id": "sec-000-introduction",
    "title": "Introduction",
-   "pages": "9-12"
+   "pages": "9-15"
   },
   {
-   "id": "sec-002-4-introduction",
-   "title": "Introduction",
-   "pages": "12-14"
+   "id": "sec-001-some-commonly-used-notations",
+   "title": "Some commonly used notations",
+   "pages": "15-17"
   },
   {
-   "id": "sec-003-6-introduction",
-   "title": "Introduction",
-   "pages": "14-17"
+   "id": "sec-002-1-vanishing-theorems-on-abelian-varieties",
+   "title": "Vanishing theorems on abelian varieties",
+   "pages": "17-17"
   },
   {
-   "id": "sec-004-11-the-main-result",
+   "id": "sec-003-11-the-main-result",
    "title": "The main result",
-   "pages": "17-18"
+   "pages": "17-19"
   },
   {
-   "id": "sec-005-10-chapter-1-vanishing-theorems-on-abelian-varie",
-   "title": "Chapter 1 – Vanishing theorems on abelian varieties",
-   "pages": "18-19"
-  },
-  {
-   "id": "sec-006-12-a-relative-generic-vanishing-theorem-11",
-   "title": "A relative generic vanishing theorem 11",
+   "id": "sec-004-12-a-relative-generic-vanishing-theorem",
+   "title": "A relative generic vanishing theorem",
    "pages": "19-20"
   },
   {
-   "id": "sec-007-12-chapter-1-vanishing-theorems-on-abelian-varie",
-   "title": "Chapter 1 – Vanishing theorems on abelian varieties",
-   "pages": "20-20"
-  },
-  {
-   "id": "sec-008-13-kodaira-nakano-type-vanishing-theorems",
+   "id": "sec-005-13-kodaira-nakano-type-vanishing-theorems",
    "title": "Kodaira-Nakano-type vanishing theorems",
-   "pages": "20-21"
+   "pages": "20-23"
   },
   {
-   "id": "sec-009-13-kodaira-nakano-type-vanishing-theorems-13",
-   "title": "Kodaira-Nakano-type vanishing theorems 13",
-   "pages": "21-22"
+   "id": "sec-006-14-negligible-perverse-sheaves",
+   "title": "Negligible perverse sheaves",
+   "pages": "23-25"
   },
   {
-   "id": "sec-010-14-chapter-1-vanishing-theorems-on-abelian-varie",
-   "title": "Chapter 1 – Vanishing theorems on abelian varieties",
-   "pages": "22-23"
+   "id": "sec-007-15-the-spectrum-of-a-perverse-sheaf",
+   "title": "The spectrum of a perverse sheaf",
+   "pages": "25-31"
   },
   {
-   "id": "sec-011-14-negligible-perverse-sheaves-15",
-   "title": "Negligible perverse sheaves 15",
-   "pages": "23-24"
+   "id": "sec-008-2-proof-of-the-vanishing-theorems",
+   "title": "Proof of the vanishing theorem(s)",
+   "pages": "31-31"
   },
   {
-   "id": "sec-012-16-chapter-1-vanishing-theorems-on-abelian-varie",
-   "title": "Chapter 1 – Vanishing theorems on abelian varieties",
-   "pages": "24-25"
-  },
-  {
-   "id": "sec-013-15-the-spectrum-of-a-perverse-sheaf-17",
-   "title": "The spectrum of a perverse sheaf 17",
-   "pages": "25-26"
-  },
-  {
-   "id": "sec-014-18-chapter-1-vanishing-theorems-on-abelian-varie",
-   "title": "Chapter 1 – Vanishing theorems on abelian varieties",
-   "pages": "26-27"
-  },
-  {
-   "id": "sec-015-15-the-spectrum-of-a-perverse-sheaf-19",
-   "title": "The spectrum of a perverse sheaf 19",
-   "pages": "27-28"
-  },
-  {
-   "id": "sec-016-20-chapter-1-vanishing-theorems-on-abelian-varie",
-   "title": "Chapter 1 – Vanishing theorems on abelian varieties",
-   "pages": "28-29"
-  },
-  {
-   "id": "sec-017-15-the-spectrum-of-a-perverse-sheaf-21",
-   "title": "The spectrum of a perverse sheaf 21",
-   "pages": "29-31"
-  },
-  {
-   "id": "sec-018-21-the-setting",
+   "id": "sec-009-21-the-setting",
    "title": "The setting",
-   "pages": "31-32"
+   "pages": "31-34"
   },
   {
-   "id": "sec-019-24-chapter-2-proof-of-the-vanishing-theorems",
-   "title": "Chapter 2 – Proof of the vanishing theorem(s)",
-   "pages": "32-33"
-  },
-  {
-   "id": "sec-020-21-the-setting-25",
-   "title": "The setting 25",
-   "pages": "33-34"
-  },
-  {
-   "id": "sec-021-26-chapter-2-proof-of-the-vanishing-theorems",
-   "title": "Chapter 2 – Proof of the vanishing theorem(s)",
-   "pages": "34-34"
-  },
-  {
-   "id": "sec-022-22-character-twists-and-convolution",
+   "id": "sec-010-22-character-twists-and-convolution",
    "title": "Character twists and convolution",
-   "pages": "34-35"
+   "pages": "34-38"
   },
   {
-   "id": "sec-023-22-character-twists-and-convolution-27",
-   "title": "Character twists and convolution 27",
-   "pages": "35-36"
-  },
-  {
-   "id": "sec-024-28-chapter-2-proof-of-the-vanishing-theorems",
-   "title": "Chapter 2 – Proof of the vanishing theorem(s)",
-   "pages": "36-37"
-  },
-  {
-   "id": "sec-025-22-character-twists-and-convolution-29",
-   "title": "Character twists and convolution 29",
-   "pages": "37-38"
-  },
-  {
-   "id": "sec-026-30-chapter-2-proof-of-the-vanishing-theorems",
-   "title": "Chapter 2 – Proof of the vanishing theorem(s)",
-   "pages": "38-38"
-  },
-  {
-   "id": "sec-027-23-an-axiomatic-framework",
+   "id": "sec-011-23-an-axiomatic-framework",
    "title": "An axiomatic framework",
-   "pages": "38-39"
+   "pages": "38-40"
   },
   {
-   "id": "sec-028-23-an-axiomatic-framework-31",
-   "title": "An axiomatic framework 31",
-   "pages": "39-40"
-  },
-  {
-   "id": "sec-029-24-the-andre-kahn-quotient",
+   "id": "sec-012-24-the-andre-kahn-quotient",
    "title": "The Andr´e-Kahn quotient",
-   "pages": "40-41"
+   "pages": "40-43"
   },
   {
-   "id": "sec-030-24-the-andre-kahn-quotient-33",
-   "title": "The Andr´e-Kahn quotient 33",
-   "pages": "41-43"
-  },
-  {
-   "id": "sec-031-25-super-tannakian-categories-35",
-   "title": "Super Tannakian categories 35",
+   "id": "sec-013-25-super-tannakian-categories",
+   "title": "Super Tannakian categories",
    "pages": "43-44"
   },
   {
-   "id": "sec-032-26-perverse-multiplier",
+   "id": "sec-014-26-perverse-multiplier",
    "title": "Perverse multiplier",
-   "pages": "44-45"
+   "pages": "44-46"
   },
   {
-   "id": "sec-033-26-perverse-multiplier-37",
-   "title": "Perverse multiplier 37",
-   "pages": "45-46"
-  },
-  {
-   "id": "sec-034-27-the-main-argument",
+   "id": "sec-015-27-the-main-argument",
    "title": "The main argument",
-   "pages": "46-47"
+   "pages": "46-49"
   },
   {
-   "id": "sec-035-27-the-main-argument-39",
-   "title": "The main argument 39",
-   "pages": "47-50"
+   "id": "sec-016-3-perverse-sheaves-on-semiabelian-varieties",
+   "title": "Perverse sheaves on semiabelian varieties",
+   "pages": "49-50"
   },
   {
-   "id": "sec-036-31-vanishing-theorems-revisited",
+   "id": "sec-017-31-vanishing-theorems-revisited",
    "title": "Vanishing theorems revisited",
-   "pages": "50-51"
+   "pages": "50-54"
   },
   {
-   "id": "sec-037-31-vanishing-theorems-revisited-43",
-   "title": "Vanishing theorems revisited 43",
-   "pages": "51-53"
-  },
-  {
-   "id": "sec-038-31-vanishing-theorems-revisited-45",
-   "title": "Vanishing theorems revisited 45",
-   "pages": "53-54"
-  },
-  {
-   "id": "sec-039-32-some-properties-of-convolution",
+   "id": "sec-018-32-some-properties-of-convolution",
    "title": "Some properties of convolution",
    "pages": "54-55"
   },
   {
-   "id": "sec-040-33-the-thick-subcategory-of-negligible-objects-4",
-   "title": "The thick subcategory of negligible objects 47",
-   "pages": "55-57"
+   "id": "sec-019-33-the-thick-subcategory-of-negligible-objects",
+   "title": "The thick subcategory of negligible objects",
+   "pages": "55-59"
   },
   {
-   "id": "sec-041-33-the-thick-subcategory-of-negligible-objects-4",
-   "title": "The thick subcategory of negligible objects 49",
-   "pages": "57-59"
+   "id": "sec-020-34-tannakian-categories",
+   "title": "Tannakian categories",
+   "pages": "59-62"
   },
   {
-   "id": "sec-042-34-tannakian-categories-51",
-   "title": "Tannakian categories 51",
-   "pages": "59-61"
-  },
-  {
-   "id": "sec-043-34-tannakian-categories-53",
-   "title": "Tannakian categories 53",
-   "pages": "61-62"
-  },
-  {
-   "id": "sec-044-35-nearby-cycles",
+   "id": "sec-021-35-nearby-cycles",
    "title": "Nearby cycles",
-   "pages": "62-63"
+   "pages": "62-66"
   },
   {
-   "id": "sec-045-35-nearby-cycles-55",
-   "title": "Nearby cycles 55",
-   "pages": "63-65"
-  },
-  {
-   "id": "sec-046-35-nearby-cycles-57",
-   "title": "Nearby cycles 57",
-   "pages": "65-66"
-  },
-  {
-   "id": "sec-047-36-specialization-of-characters",
+   "id": "sec-022-36-specialization-of-characters",
    "title": "Specialization of characters",
-   "pages": "66-67"
+   "pages": "66-69"
   },
   {
-   "id": "sec-048-36-specialization-of-characters-59",
-   "title": "Specialization of characters 59",
-   "pages": "67-69"
+   "id": "sec-023-37-variation-of-tannaka-groups-in-families",
+   "title": "Variation of Tannaka groups in families",
+   "pages": "69-77"
   },
   {
-   "id": "sec-049-37-variation-of-tannaka-groups-in-families-61",
-   "title": "Variation of Tannaka groups in families 61",
-   "pages": "69-71"
+   "id": "sec-024-4-the-tannaka-group-of-the-theta-divisor",
+   "title": "The Tannaka group of the theta divisor",
+   "pages": "77-81"
   },
   {
-   "id": "sec-050-37-variation-of-tannaka-groups-in-families-63",
-   "title": "Variation of Tannaka groups in families 63",
-   "pages": "71-73"
-  },
-  {
-   "id": "sec-051-37-variation-of-tannaka-groups-in-families-65",
-   "title": "Variation of Tannaka groups in families 65",
-   "pages": "73-75"
-  },
-  {
-   "id": "sec-052-37-variation-of-tannaka-groups-in-families-67",
-   "title": "Variation of Tannaka groups in families 67",
-   "pages": "75-75"
-  },
-  {
-   "id": "sec-053-1-x-and-hence-also-the-groupπx-is-ﬁnite-to-get-a",
-   "title": "(X) and hence also the groupΠ(X) is ﬁnite). To get around this",
-   "pages": "75-79"
-  },
-  {
-   "id": "sec-054-41-the-schottky-problem-in-genus-4-71",
-   "title": "The Schottky problem in genus 4 71",
-   "pages": "79-81"
-  },
-  {
-   "id": "sec-055-42-nondegenerate-bilinear-forms-73",
-   "title": "Nondegenerate bilinear forms 73",
+   "id": "sec-025-42-nondegenerate-bilinear-forms",
+   "title": "Nondegenerate bilinear forms",
    "pages": "81-82"
   },
   {
-   "id": "sec-056-43-local-monodromy",
+   "id": "sec-026-43-local-monodromy",
    "title": "Local monodromy",
-   "pages": "82-83"
+   "pages": "82-87"
   },
   {
-   "id": "sec-057-43-local-monodromy-75",
-   "title": "Local monodromy 75",
-   "pages": "83-85"
+   "id": "sec-027-44-degenerations-of-abelian-varieties",
+   "title": "Degenerations of abelian varieties",
+   "pages": "87-93"
   },
   {
-   "id": "sec-058-43-local-monodromy-77",
-   "title": "Local monodromy 77",
-   "pages": "85-87"
+   "id": "sec-028-45-proof-of-the-main-theorem",
+   "title": "Proof of the main theorem",
+   "pages": "93-96"
   },
   {
-   "id": "sec-059-44-degenerations-of-abelian-varieties-79",
-   "title": "Degenerations of abelian varieties 79",
-   "pages": "87-89"
+   "id": "sec-029-46-singularities-of-type-ak",
+   "title": "Singularities of type Ak",
+   "pages": "96-101"
   },
   {
-   "id": "sec-060-44-degenerations-of-abelian-varieties-81",
-   "title": "Degenerations of abelian varieties 81",
-   "pages": "89-91"
+   "id": "sec-030-5-a-family-of-surfaces-with-monodromy-we6",
+   "title": "A family of surfaces with monodromy W(E6)",
+   "pages": "101-103"
   },
   {
-   "id": "sec-061-44-degenerations-of-abelian-varieties-83",
-   "title": "Degenerations of abelian varieties 83",
-   "pages": "91-93"
+   "id": "sec-031-51-intersections-of-theta-divisors",
+   "title": "Intersections of theta divisors",
+   "pages": "103-110"
   },
   {
-   "id": "sec-062-45-proof-of-the-main-theorem-85",
-   "title": "Proof of the main theorem 85",
-   "pages": "93-95"
-  },
-  {
-   "id": "sec-063-45-proof-of-the-main-theorem-87",
-   "title": "Proof of the main theorem 87",
-   "pages": "95-96"
-  },
-  {
-   "id": "sec-064-46-singularities-of-typeak",
-   "title": "Singularities of typeAk",
-   "pages": "96-97"
-  },
-  {
-   "id": "sec-065-46-singularities-of-type-ak-89",
-   "title": "Singularities of type Ak 89",
-   "pages": "97-99"
-  },
-  {
-   "id": "sec-066-46-singularities-of-type-ak-91",
-   "title": "Singularities of type Ak 91",
-   "pages": "99-103"
-  },
-  {
-   "id": "sec-067-51-intersections-of-theta-divisors-95",
-   "title": "Intersections of theta divisors 95",
-   "pages": "103-105"
-  },
-  {
-   "id": "sec-068-51-intersections-of-theta-divisors-97",
-   "title": "Intersections of theta divisors 97",
-   "pages": "105-107"
-  },
-  {
-   "id": "sec-069-51-intersections-of-theta-divisors-99",
-   "title": "Intersections of theta divisors 99",
-   "pages": "107-109"
-  },
-  {
-   "id": "sec-070-51-intersections-of-theta-divisors-101",
-   "title": "Intersections of theta divisors 101",
-   "pages": "109-110"
-  },
-  {
-   "id": "sec-071-52-variations-of-hodge-structures",
+   "id": "sec-032-52-variations-of-hodge-structures",
    "title": "Variations of Hodge structures",
-   "pages": "110-111"
+   "pages": "110-114"
   },
   {
-   "id": "sec-072-52-variations-of-hodge-structures-103",
-   "title": "Variations of Hodge structures 103",
-   "pages": "111-113"
-  },
-  {
-   "id": "sec-073-52-variations-of-hodge-structures-105",
-   "title": "Variations of Hodge structures 105",
-   "pages": "113-114"
-  },
-  {
-   "id": "sec-074-53-integral-cohomology",
+   "id": "sec-033-53-integral-cohomology",
    "title": "Integral cohomology",
-   "pages": "114-115"
+   "pages": "114-117"
   },
   {
-   "id": "sec-075-53-integral-cohomology-107",
-   "title": "Integral cohomology 107",
-   "pages": "115-116"
+   "id": "sec-034-54-neron-severi-lattices",
+   "title": "N´eron-Severi lattices",
+   "pages": "117-123"
   },
   {
-   "id": "sec-076-2-h2yz",
-   "title": "H2(Y,Z)+",
-   "pages": "116-116"
+   "id": "sec-035-55-the-upper-bound-we6",
+   "title": "The upper bound W(E6)",
+   "pages": "123-127"
   },
   {
-   "id": "sec-077-0-z-0-z2z-0",
-   "title": "Z 0 Z/2Z 0 ···",
-   "pages": "116-117"
+   "id": "sec-036-56-negligible-constituents",
+   "title": "Negligible constituents",
+   "pages": "127-131"
   },
   {
-   "id": "sec-078-54-neron-severi-lattices-109",
-   "title": "N´eron-Severi lattices 109",
-   "pages": "117-119"
+   "id": "sec-037-57-jacobian-varieties",
+   "title": "Jacobian varieties",
+   "pages": "131-135"
   },
   {
-   "id": "sec-079-54-neron-severi-lattices-111",
-   "title": "N´eron-Severi lattices 111",
-   "pages": "119-121"
+   "id": "sec-038-58-the-difference-morphism",
+   "title": "The difference morphism",
+   "pages": "135-139"
   },
   {
-   "id": "sec-080-54-neron-severi-lattices-113",
-   "title": "N´eron-Severi lattices 113",
-   "pages": "121-123"
+   "id": "sec-039-59-a-smooth-global-family",
+   "title": "A smooth global family",
+   "pages": "139-143"
   },
   {
-   "id": "sec-081-55-the-upper-bound-we6-115",
-   "title": "The upper bound W(E6) 115",
-   "pages": "123-123"
-  },
-  {
-   "id": "sec-082-55-the-upper-boundwe6",
-   "title": "The upper boundW(E6)",
-   "pages": "123-125"
-  },
-  {
-   "id": "sec-083-55-the-upper-bound-we6-117",
-   "title": "The upper bound W(E6) 117",
-   "pages": "125-127"
-  },
-  {
-   "id": "sec-084-56-negligible-constituents-119",
-   "title": "Negligible constituents 119",
-   "pages": "127-129"
-  },
-  {
-   "id": "sec-085-56-negligible-constituents-121",
-   "title": "Negligible constituents 121",
-   "pages": "129-131"
-  },
-  {
-   "id": "sec-086-57-jacobian-varieties-123",
-   "title": "Jacobian varieties 123",
-   "pages": "131-133"
-  },
-  {
-   "id": "sec-087-57-jacobian-varieties-125",
-   "title": "Jacobian varieties 125",
-   "pages": "133-135"
-  },
-  {
-   "id": "sec-088-58-the-difference-morphism-127",
-   "title": "The difference morphism 127",
-   "pages": "135-137"
-  },
-  {
-   "id": "sec-089-58-the-difference-morphism-129",
-   "title": "The difference morphism 129",
-   "pages": "137-139"
-  },
-  {
-   "id": "sec-090-59-a-smooth-global-family-131",
-   "title": "A smooth global family 131",
-   "pages": "139-141"
-  },
-  {
-   "id": "sec-091-59-a-smooth-global-family-133",
-   "title": "A smooth global family 133",
-   "pages": "141-143"
-  },
-  {
-   "id": "sec-092-61-brill-noether-sheaves",
-   "title": "Brill-Noether sheaves",
+   "id": "sec-040-6-the-generic-rank-of-brill-noether-sheaves",
+   "title": "The generic rank of Brill-Noether sheaves",
    "pages": "143-145"
   },
   {
-   "id": "sec-093-62-a-formula-for-the-generic-rank-137",
-   "title": "A formula for the generic rank 137",
+   "id": "sec-041-62-a-formula-for-the-generic-rank",
+   "title": "A formula for the generic rank",
    "pages": "145-147"
   },
   {
-   "id": "sec-094-63-computations-in-the-symmetric-product-139",
-   "title": "Computations in the symmetric product 139",
-   "pages": "147-149"
+   "id": "sec-042-63-computations-in-the-symmetric-product",
+   "title": "Computations in the symmetric product",
+   "pages": "147-150"
   },
   {
-   "id": "sec-095-63-computations-in-the-symmetric-product-141",
-   "title": "Computations in the symmetric product 141",
-   "pages": "149-150"
-  },
-  {
-   "id": "sec-096-64-the-ﬁbres-of-multiple-abel-jacobi-maps",
+   "id": "sec-043-64-the-ﬁbres-of-multiple-abel-jacobi-maps",
    "title": "The ﬁbres of multiple Abel-Jacobi maps",
-   "pages": "150-151"
+   "pages": "150-152"
   },
   {
-   "id": "sec-097-64-the-ﬁbres-of-multiple-abel-jacobi-maps-143",
-   "title": "The ﬁbres of multiple Abel-Jacobi maps 143",
-   "pages": "151-152"
-  },
-  {
-   "id": "sec-098-65-betti-polynomials",
+   "id": "sec-044-65-betti-polynomials",
    "title": "Betti polynomials",
-   "pages": "152-153"
+   "pages": "152-154"
   },
   {
-   "id": "sec-099-65-betti-polynomials-145",
-   "title": "Betti polynomials 145",
-   "pages": "153-154"
-  },
-  {
-   "id": "sec-100-66-some-numerical-values",
+   "id": "sec-045-66-some-numerical-values",
    "title": "Some numerical values",
-   "pages": "154-155"
+   "pages": "154-159"
   },
   {
-   "id": "sec-101-66-some-numerical-values-147",
-   "title": "Some numerical values 147",
-   "pages": "155-157"
+   "id": "sec-046-appendix-a-reductive-super-groups",
+   "title": "Reductive super groups",
+   "pages": "159-165"
   },
   {
-   "id": "sec-102-66-some-numerical-values-149",
-   "title": "Some numerical values 149",
-   "pages": "157-177"
+   "id": "sec-047-appendix-b-irreducible-subgroups-with-bounded-de",
+   "title": "Irreducible subgroups with bounded determinant",
+   "pages": "165-171"
   },
   {
-   "id": "sec-103-bibliography",
+   "id": "sec-048-appendix-c-an-irreducible-subgroup-of-we6",
+   "title": "An irreducible subgroup of W(E6)",
+   "pages": "171-173"
+  },
+  {
+   "id": "sec-049-appendix-d-doubly-transitive-permutation-groups",
+   "title": "Doubly transitive permutation groups",
+   "pages": "173-177"
+  },
+  {
+   "id": "sec-050-bibliography",
    "title": "Bibliography",
-   "pages": "177-177"
-  },
-  {
-   "id": "sec-104-3-andreev-e-m-vinberg-e-b-and-elashvili-a-gorbit",
-   "title": "Andreev, E. M., Vinberg, E. B. and Elashvili, A. G.,Orbits of greatest dimension in",
-   "pages": "177-177"
-  },
-  {
-   "id": "sec-105-4-andreotti-a-and-mayer-a-lon-period-relations-f",
-   "title": "Andreotti, A. and Mayer, A. L.,On period relations for abelian integrals on algebraic",
-   "pages": "177-177"
-  },
-  {
-   "id": "sec-106-5-arbarello-e-cornalba-m-and-grifﬁths-p-ageometr",
-   "title": "Arbarello, E., Cornalba, M. and Grifﬁths, P. A.,Geometry of algebraic curves II,",
-   "pages": "177-177"
-  },
-  {
-   "id": "sec-107-6-arbarello-e-cornalba-m-grifﬁths-p-a-and-harris",
-   "title": "Arbarello, E., Cornalba, M., Grifﬁths, P. A. and Harris, J.,Geometry of algebraic",
-   "pages": "177-177"
-  },
-  {
-   "id": "sec-108-7-artin-m-grothendieck-a-and-verdier-j-l-eds-sem",
-   "title": "Artin, M., Grothendieck, A. and Verdier, J.-L. (eds.), S´eminaire de g´eom´etrie",
-   "pages": "177-177"
-  },
-  {
-   "id": "sec-109-9-beilinson-a-and-bernstein-ja-proof-of-jantzen",
-   "title": "Beilinson, A. and Bernstein, J.,A proof of Jantzen conjectures, Adv. Soviet Math.16",
-   "pages": "177-177"
-  },
-  {
-   "id": "sec-110-10-beilinson-a-bernstein-j-and-deligne-p-faiscea",
-   "title": "Beilinson, A., Bernstein, J. and Deligne, P., Faisceaux Pervers, Ast ´erisque 100",
-   "pages": "177-177"
-  },
-  {
-   "id": "sec-111-11-bierstone-e-and-milman-dcanonical-desingulari",
-   "title": "Bierstone, E. and Milman, D.,Canonical desingularization in characteristic zero",
-   "pages": "177-177"
-  },
-  {
-   "id": "sec-112-13-birkenhake-c-and-lange-hcomplex-abelian-varie",
-   "title": "Birkenhake, C. and Lange, H.,Complex abelian varieties (second ed.), Grundlehren",
-   "pages": "177-177"
-  },
-  {
-   "id": "sec-113-15-bosch-s-lutkebohmert-w-and-raynaud-mneron-mod",
-   "title": "Bosch, S., L¨utkebohmert, W. and Raynaud, M.,N´eron models, Ergeb. Math. Grenz-",
-   "pages": "177-177"
-  },
-  {
-   "id": "sec-114-17-brion-m-and-szamuely-tprime-to-petale-covers",
-   "title": "Brion, M. and Szamuely, T.,Prime-to-p´etale covers of algebraic groups and ho-",
-   "pages": "177-177"
-  },
-  {
-   "id": "sec-115-18-brown-k-scohomology-of-groups-grad-texts-in-m",
-   "title": "Brown, K. S.,Cohomology of groups, Grad. Texts in Math., vol. 87, Springer Verlag,",
-   "pages": "177-177"
-  },
-  {
-   "id": "sec-116-19-cameron-p-jfinite-permutation-groups-and-ﬁnit",
-   "title": "Cameron, P. J.,Finite permutation groups and ﬁnite simple groups, Bull. London",
-   "pages": "177-178"
-  },
-  {
-   "id": "sec-117-20-ciliberto-c-and-van-der-geer-gandreotti-mayer",
-   "title": "Ciliberto, C. and van der Geer, G.,Andreotti-Mayer loci and the Schottky problem,",
-   "pages": "178-178"
-  },
-  {
-   "id": "sec-118-21-conway-j-h-and-sloane-n-j-alow-dimensional-la",
-   "title": "Conway, J. H. and Sloane, N. J. A.,Low-dimensional lattices. I. Quadratic forms of",
-   "pages": "178-178"
-  },
-  {
-   "id": "sec-119-24-o-debarre-and-e-izadiampleness-of-intersectio",
-   "title": "O. Debarre and E. Izadi,Ampleness of intersections of translates of theta divisors in",
-   "pages": "178-178"
-  },
-  {
-   "id": "sec-120-25-debarre-osur-la-demonstration-de-a-weil-du-th",
-   "title": "Debarre, O.,Sur la d´emonstration de A. Weil du th´eor`eme de Torelli pour les courbes,",
-   "pages": "178-181"
+   "pages": "177-181"
   }
  ],
  "provenance": {

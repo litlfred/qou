@@ -129,7 +129,7 @@ def eulerChar (_n : ℕ) : ℤ := 2 - 2 * 4
     else, under a docstring about level-invariance. It now names `eulerChar`
     and states both halves of the claim, so it is false if `eulerChar` is
     wrong or level-sensitive. -/
--- Ref: [manuscript] §4/vertex-algebra-jet-relations
+-- Ref: [leitner2026] §4/vertex-algebra-jet-relations
 theorem euler_level_stable (n : ℕ) :
     eulerChar n = eulerChar 0 ∧ eulerChar n = -6 := by
   constructor <;> norm_num [eulerChar]
@@ -141,16 +141,15 @@ theorem euler_level_stable (n : ℕ) :
 /-- JC-4: The Yekutieli obstruction κ_n measures the transient part
     of the R-matrix at level n+1:
     κ_n = tr_M^{(n+1)}((1 - τ̂_n) Ř^{(n+1)}).
-    Perpetual obstruction: κ_n ≠ 0 for all n when χ = -6. -/
--- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
-axiom yekutieli_perpetual (hp : HeckeParams) (n : ℕ) :
-    -- The Chebyshev degree of the obstruction at level n is (p-1)/2,
-    -- which exceeds 4 for p ≥ 11. By genus-filtration-ideal, this
-    -- gives κ_n ≠ 0 at every level.
-    -- Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2010.06.007
-    hp.q > 1 → hp.q⁻¹ * (1 - hp.q⁻¹) ≠ 0
 
-/-- The obstruction coefficient q⁻¹(1-q⁻¹) is nonzero for q > 1 (proved). -/
+    **Re-scoped 2026-11-15 (owner decision, PR #7747).** This block used to
+    carry `axiom yekutieli_perpetual`, documented as "κ_n ≠ 0 for all n when
+    χ = -6" but stating only `q > 1 → q⁻¹(1 - q⁻¹) ≠ 0`. That statement is the
+    theorem below, so the axiom was removed (it had no consumers). The
+    documented claim is also withdrawn: on Bring's surface the jet obstruction
+    vanishes exactly when `n ∣ χ = -6`, i.e. for `n ∈ {1, 2, 3, 6}`, and
+    persists for `n ∤ 6` (item 3 of `thm:qu-to-qou`, bean `qou-lx8f`). What is
+    proved here is only that the coefficient `q⁻¹(1 - q⁻¹)` is nonzero. -/
 -- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
 theorem yekutieli_coeff_nonzero (q : ℝ) (hq : q > 1) :
     q⁻¹ * (1 - q⁻¹) ≠ 0 := by
@@ -181,7 +180,7 @@ structure DescentOperator (n : ℕ) (hp : HeckeParams) where
     (fermionic) parts.
 
     Proof: τ̂² = (ℓ ∘ 𝔡) ∘ (ℓ ∘ 𝔡) = ℓ ∘ (𝔡 ∘ ℓ) ∘ 𝔡 = ℓ ∘ id ∘ 𝔡 = ℓ ∘ 𝔡 = τ̂. -/
--- Ref: [manuscript] §4/vertex-algebra-jet-relations
+-- Ref: [leitner2026] §4/vertex-algebra-jet-relations
 -- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
 theorem descent_idempotent {n : ℕ} {hp : HeckeParams}
     (op : DescentOperator n hp)

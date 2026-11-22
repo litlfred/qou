@@ -7,10 +7,11 @@ section_number: 6.2
 pages: 16-16
 source_pdf: 1210.5756v1.pdf
 source_sha256: c7546a79a85b8dd5
-doc_brief: "Contact Graphs of Unit Sphere Packings Revisited ∗ — The contact graph of an arbitrary ﬁnite packing of unit balls in Euclidean 3-space is the (simple) graph whose vertices correspond to the packing"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.987
-latex_coverage_ratio: 0.987
+latex_coverage_ratio: 0.974
+doc_brief: "Contact Graphs of Unit Sphere Packings Revisited ∗ — The contact graph of an arbitrary ﬁnite packing of unit balls in Euclidean 3-space is the (simple) graph whose vertices correspond to the packing"
 ---
 Our goal is to show that the number of touching pairs in an arbitrary packing of spherical caps of angular radius $\pi/6$ on $\mathbb{S}^2$ is at most $25$. The proof presented here is indirect and it is based on the previous section. The details are as follows.
 

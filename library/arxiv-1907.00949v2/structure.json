@@ -7,11 +7,17 @@
   "bytes": 597737,
   "pages": 27,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 6,
+    "reason": "13 of 636 words are a stray single letter: the text layer splits words"
+   }
+  ],
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -26,13 +32,21 @@
   "title_lines": [
    "OPTIMIZATION ON FLAG MANIFOLDS"
   ],
-  "abstract": "A \ufb02ag is a sequence of nested subspaces. Flags are ubiquitous in numerical analysis, arising in \ufb01nite elements, multigrid, spectral, and pseudospectral methods for numerical pde; they arise in the form of Krylov subspaces in matrix computations, and as multiresolution analysis in wavelets constructions. They are common in statistics too \u2014 principal component, canonical cor- relation, and correspondence analyses may all be viewed as methods for extracting \ufb02ags from a data set. The main goal of this article is to develop the tools needed for optimizing over a set of \ufb02ags, which is a smooth manifold called the \ufb02ag manifold, and it contains the Grassmannian as the simplest special case. We will derive closed-form analytic expressions for various di\ufb00erential geometric objects required for Riemannian optimization algorithms on the \ufb02ag manifold; introduc- ing various systems of extrinsic coordinates that allow us to parameterize points, metrics, tangent spaces, geodesics, distance, parallel transport, gradients, Hessians in terms of matrices and ma- trix operations; and thereby permitting us to formulate steepest descent, conjugate gradient, and Newton algorithms on the \ufb02ag manifold using only standard numerical linear algebra.",
+  "abstract": "A ﬂag is a sequence of nested subspaces. Flags are ubiquitous in numerical analysis, arising in ﬁnite elements, multigrid, spectral, and pseudospectral methods for numerical pde; they arise in the form of Krylov subspaces in matrix computations, and as multiresolution analysis in wavelets constructions. They are common in statistics too — principal component, canonical cor- relation, and correspondence analyses may all be viewed as methods for extracting ﬂags from a data set. The main goal of this article is to develop the tools needed for optimizing over a set of ﬂags, which is a smooth manifold called the ﬂag manifold, and it contains the Grassmannian as the simplest special case. We will derive closed-form analytic expressions for various diﬀerential geometric objects required for Riemannian optimization algorithms on the ﬂag manifold; introduc- ing various systems of extrinsic coordinates that allow us to parameterize points, metrics, tangent spaces, geodesics, distance, parallel transport, gradients, Hessians in terms of matrices and ma- trix operations; and thereby permitting us to formulate steepest descent, conjugate gradient, and Newton algorithms on the ﬂag manifold using only standard numerical linear algebra.",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20190808023704Z",
-   "Creator": "LaTeX with hyperref package",
    "Producer": "pdfTeX-1.40.17",
-   "Title": ""
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20190808023704Z"
+  },
+  "title_raw": "OPTIMIZATION ON FLAG MANIFOLDS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "OPTIMIZATION ON FLAG MANIFOLDS 1. Introduction Launched around 20 years ago in a classic article of Edelman, Arias, and Smith [ 16 ], Riemannian manifold optimization is now entrenched as a mainstay of optimization theory [ 1 , 2 , 15 , 40 ]. While studies of optimization algorithms on Riemannian ma",
+   "outline": "1. Introduction",
+   "text": "OPTIMIZATION ON FLAG MANIFOLDS",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [
@@ -41,193 +55,617 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Flags in numerical analysis",
    "page": 2,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Flags in statistics",
    "page": 3,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Prior work and our contributions",
    "page": 4,
    "source": "outline",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Outline",
    "page": 4,
    "source": "outline",
-   "number": "1.4"
+   "number": "1.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "Basic differential geometry of homogeneous spaces",
    "page": 4,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Lie groups and Lie algebras",
    "page": 5,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Homogeneous spaces",
    "page": 5,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Geodesic orbit spaces",
    "page": 6,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Riemannian notions",
    "page": 7,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "Basic differential geometry of flag manifolds",
    "page": 7,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "Flag manifolds as matrix homogeneous spaces",
    "page": 9,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Orthogonal coordinates for the flag manifold",
    "page": 10,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Stiefel coordinates for the flag manifold",
    "page": 14,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 1,
    "title": "Flag manifolds as matrix manifolds",
    "page": 16,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "Projection coordinates for the flag manifold",
    "page": 17,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "Refined projection coordinates for the flag manifold",
    "page": 18,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 1,
    "title": "Riemannian Gradient and Hessian over the flag manifold",
    "page": 19,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 1,
    "title": "Optimization algorithms over flag manifolds",
    "page": 21,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 2,
    "title": "Steepest descent over a flag manifold",
    "page": 21,
    "source": "outline",
-   "number": "7.1"
+   "number": "7.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 2,
    "title": "Conjugate gradient over a flag manifold",
    "page": 22,
    "source": "outline",
-   "number": "7.2"
+   "number": "7.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 2,
    "title": "Newton and other algorithms over a flag manifold",
    "page": 22,
    "source": "outline",
-   "number": "7.3"
+   "number": "7.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 1,
    "title": "Numerical experiments",
    "page": 23,
    "source": "outline",
-   "number": "8"
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 2,
    "title": "Principal flags",
    "page": 23,
    "source": "outline",
-   "number": "8.1"
+   "number": "8.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 2,
    "title": "Nonlinear eigenflags",
    "page": 25,
    "source": "outline",
-   "number": "8.2"
+   "number": "8.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
   },
   {
    "level": 1,
    "title": "Conclusion",
    "page": 26,
    "source": "outline",
-   "number": "9"
+   "number": "9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   },
   {
    "level": 1,
    "title": "References",
    "page": 26,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Convergence trajectories for (52) on Flag(3, 7, 12; 60)",
+   "page": 24,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "24"
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Distance to true solution for (52) on Flag(3, 9, 21; k)",
+   "page": 24,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "24"
+  },
+  {
+   "kind": "table",
+   "number": "2",
+   "title": "Elapsed time for (52) on Flag(3, 9, 21; k)",
+   "page": 24,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "24"
+  },
+  {
+   "kind": "table",
+   "number": "3",
+   "title": "Distance to true solution for (52) on Flag(2, . . . , 2k; 60)",
+   "page": 24,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "24"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Convergence trajectories for (53) on Flag(3, 7, 12; 60)",
+   "page": 25,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "25"
+  },
+  {
+   "kind": "table",
+   "number": "4",
+   "title": "Elapsed time for (52) on Flag(2, . . . , 2k; 60). k",
+   "page": 25,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "25"
+  },
+  {
+   "kind": "table",
+   "number": "5",
+   "title": "Distance to true solution for (52) on Flag(2, . . . , 2k; 60). 8.2. Nonlinear eigenﬂags. This is a variation of the principal ﬂag problem (52): maximize",
+   "page": 25,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "25"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1323,
+   "n_words": 196,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -235,8 +673,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 3212,
-   "n_words": 503
+   "n_chars": 3219,
+   "n_words": 510,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
    "id": "sec-001-11-flags-in-numerical-analysis",
@@ -245,8 +685,10 @@
    "level": 2,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 2078,
-   "n_words": 328
+   "n_chars": 2099,
+   "n_words": 350,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
    "id": "sec-002-12-flags-in-statistics",
@@ -255,8 +697,10 @@
    "level": 2,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 3556,
-   "n_words": 624
+   "n_chars": 3695,
+   "n_words": 679,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
    "id": "sec-003-13-prior-work-and-our-contributions",
@@ -266,7 +710,9 @@
    "page_start": 4,
    "page_end": 4,
    "n_chars": 2066,
-   "n_words": 308
+   "n_words": 308,
+   "label_start": "4",
+   "label_end": "4"
   },
   {
    "id": "sec-004-14-outline",
@@ -276,7 +722,9 @@
    "page_start": 4,
    "page_end": 4,
    "n_chars": 575,
-   "n_words": 84
+   "n_words": 84,
+   "label_start": "4",
+   "label_end": "4"
   },
   {
    "id": "sec-005-2-basic-differential-geometry-of-homogeneous-spa",
@@ -285,8 +733,10 @@
    "level": 1,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 343,
-   "n_words": 54
+   "n_chars": 341,
+   "n_words": 53,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
    "id": "sec-006-21-lie-groups-and-lie-algebras",
@@ -294,128 +744,283 @@
    "title": "Lie groups and Lie algebras",
    "level": 2,
    "page_start": 5,
-   "page_end": 6,
-   "n_chars": 5119,
-   "n_words": 964
+   "page_end": 5,
+   "n_chars": 1503,
+   "n_words": 324,
+   "label_start": "5",
+   "label_end": "5"
   },
   {
-   "id": "sec-007-23-geodesic-orbit-spaces",
+   "id": "sec-007-22-homogeneous-spaces",
+   "number": "2.2",
+   "title": "Homogeneous spaces",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 3727,
+   "n_words": 745,
+   "label_start": "5",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-008-23-geodesic-orbit-spaces",
    "number": "2.3",
    "title": "Geodesic orbit spaces",
    "level": 2,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 1162,
-   "n_words": 212
+   "n_chars": 1134,
+   "n_words": 204,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
-   "id": "sec-008-24-riemannian-notions",
+   "id": "sec-009-24-riemannian-notions",
    "number": "2.4",
    "title": "Riemannian notions",
    "level": 2,
    "page_start": 7,
    "page_end": 7,
-   "n_chars": 2170,
-   "n_words": 400
+   "n_chars": 2184,
+   "n_words": 418,
+   "label_start": "7",
+   "label_end": "7"
   },
   {
-   "id": "sec-009-3-basic-differential-geometry-of-flag-manifolds",
+   "id": "sec-010-3-basic-differential-geometry-of-flag-manifolds",
    "number": "3",
    "title": "Basic differential geometry of flag manifolds",
    "level": 1,
    "page_start": 7,
    "page_end": 9,
-   "n_chars": 4293,
-   "n_words": 791
+   "n_chars": 4459,
+   "n_words": 957,
+   "label_start": "7",
+   "label_end": "9"
   },
   {
-   "id": "sec-010-4-flag-manifolds-as-matrix-homogeneous-spaces",
+   "id": "sec-011-4-flag-manifolds-as-matrix-homogeneous-spaces",
    "number": "4",
    "title": "Flag manifolds as matrix homogeneous spaces",
    "level": 1,
    "page_start": 9,
-   "page_end": 16,
-   "n_chars": 19587,
-   "n_words": 3760
+   "page_end": 10,
+   "n_chars": 2466,
+   "n_words": 540,
+   "label_start": "9",
+   "label_end": "10"
   },
   {
-   "id": "sec-011-5-flag-manifolds-as-matrix-manifolds",
+   "id": "sec-012-41-orthogonal-coordinates-for-the-flag-manifold",
+   "number": "4.1",
+   "title": "Orthogonal coordinates for the flag manifold",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 14,
+   "n_chars": 10629,
+   "n_words": 2310,
+   "label_start": "10",
+   "label_end": "14"
+  },
+  {
+   "id": "sec-013-42-stiefel-coordinates-for-the-flag-manifold",
+   "number": "4.2",
+   "title": "Stiefel coordinates for the flag manifold",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 6959,
+   "n_words": 1530,
+   "label_start": "14",
+   "label_end": "16"
+  },
+  {
+   "id": "sec-014-5-flag-manifolds-as-matrix-manifolds",
    "number": "5",
    "title": "Flag manifolds as matrix manifolds",
    "level": 1,
    "page_start": 16,
-   "page_end": 19,
-   "n_chars": 8980,
-   "n_words": 1593
+   "page_end": 17,
+   "n_chars": 982,
+   "n_words": 211,
+   "label_start": "16",
+   "label_end": "17"
   },
   {
-   "id": "sec-012-6-riemannian-gradient-and-hessian-over-the-flag",
+   "id": "sec-015-51-projection-coordinates-for-the-flag-manifold",
+   "number": "5.1",
+   "title": "Projection coordinates for the flag manifold",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 5592,
+   "n_words": 1199,
+   "label_start": "17",
+   "label_end": "18"
+  },
+  {
+   "id": "sec-016-52-refined-projection-coordinates-for-the-flag-m",
+   "number": "5.2",
+   "title": "Refined projection coordinates for the flag manifold",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 2715,
+   "n_words": 573,
+   "label_start": "18",
+   "label_end": "19"
+  },
+  {
+   "id": "sec-017-6-riemannian-gradient-and-hessian-over-the-flag",
    "number": "6",
    "title": "Riemannian Gradient and Hessian over the flag manifold",
    "level": 1,
    "page_start": 19,
    "page_end": 21,
-   "n_chars": 4229,
-   "n_words": 761
+   "n_chars": 4382,
+   "n_words": 916,
+   "label_start": "19",
+   "label_end": "21"
   },
   {
-   "id": "sec-013-7-optimization-algorithms-over-flag-manifolds",
+   "id": "sec-018-7-optimization-algorithms-over-flag-manifolds",
    "number": "7",
    "title": "Optimization algorithms over flag manifolds",
    "level": 1,
    "page_start": 21,
-   "page_end": 23,
-   "n_chars": 5379,
-   "n_words": 954
+   "page_end": 21,
+   "n_chars": 679,
+   "n_words": 107,
+   "label_start": "21",
+   "label_end": "21"
   },
   {
-   "id": "sec-014-8-numerical-experiments",
+   "id": "sec-019-71-steepest-descent-over-a-flag-manifold",
+   "number": "7.1",
+   "title": "Steepest descent over a flag manifold",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 1361,
+   "n_words": 283,
+   "label_start": "21",
+   "label_end": "22"
+  },
+  {
+   "id": "sec-020-72-conjugate-gradient-over-a-flag-manifold",
+   "number": "7.2",
+   "title": "Conjugate gradient over a flag manifold",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 2213,
+   "n_words": 444,
+   "label_start": "22",
+   "label_end": "22"
+  },
+  {
+   "id": "sec-021-73-newton-and-other-algorithms-over-a-flag-manif",
+   "number": "7.3",
+   "title": "Newton and other algorithms over a flag manifold",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 945,
+   "n_words": 162,
+   "label_start": "22",
+   "label_end": "23"
+  },
+  {
+   "id": "sec-022-8-numerical-experiments",
    "number": "8",
    "title": "Numerical experiments",
    "level": 1,
    "page_start": 23,
-   "page_end": 26,
-   "n_chars": 6143,
-   "n_words": 1155
+   "page_end": 23,
+   "n_chars": 905,
+   "n_words": 138,
+   "label_start": "23",
+   "label_end": "23"
   },
   {
-   "id": "sec-015-9-conclusion",
+   "id": "sec-023-81-principal-flags",
+   "number": "8.1",
+   "title": "Principal flags",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 25,
+   "n_chars": 3447,
+   "n_words": 701,
+   "label_start": "23",
+   "label_end": "25"
+  },
+  {
+   "id": "sec-024-82-nonlinear-eigenflags",
+   "number": "8.2",
+   "title": "Nonlinear eigenflags",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 1687,
+   "n_words": 340,
+   "label_start": "25",
+   "label_end": "26"
+  },
+  {
+   "id": "sec-025-9-conclusion",
    "number": "9",
    "title": "Conclusion",
    "level": 1,
    "page_start": 26,
    "page_end": 26,
-   "n_chars": 1262,
-   "n_words": 196
+   "n_chars": 1261,
+   "n_words": 195,
+   "label_start": "26",
+   "label_end": "26"
   },
   {
-   "id": "sec-016-references",
+   "id": "sec-026-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 26,
    "page_end": 27,
-   "n_chars": 7006,
-   "n_words": 1028
+   "n_chars": 6969,
+   "n_words": 991,
+   "label_start": "26",
+   "label_end": "27"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 27,
-  "sections": 17,
-  "chars_total": 77160,
+  "toc_inferred_entries": 0,
+  "figure_entries": 7,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 28,
+  "chars_total": 79517,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "arXiv.tex",
    "tex_sections": 26,
-   "overlaid": 16,
+   "overlaid": 26,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
     "coverage": 0.5
    },
    "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
@@ -428,15 +1033,15 @@
      "id": "sec-001-11-flags-in-numerical-analysis",
      "title": "Flags in numerical analysis",
      "prose_ratio": 0.98,
-     "coverage_ratio": 0.972,
+     "coverage_ratio": 0.981,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-12-flags-in-statistics",
      "title": "Flags in statistics",
-     "prose_ratio": 0.969,
-     "coverage_ratio": 0.924,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.947,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -467,85 +1072,165 @@
     {
      "id": "sec-006-21-lie-groups-and-lie-algebras",
      "title": "Lie groups and Lie algebras",
-     "prose_ratio": 0.988,
-     "coverage_ratio": 0.964,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.962,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-23-geodesic-orbit-spaces",
+     "id": "sec-007-22-homogeneous-spaces",
+     "title": "Homogeneous spaces",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-23-geodesic-orbit-spaces",
      "title": "Geodesic orbit spaces",
      "prose_ratio": 0.967,
-     "coverage_ratio": 0.935,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-008-24-riemannian-notions",
-     "title": "Riemannian notions",
-     "prose_ratio": 0.934,
      "coverage_ratio": 0.951,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-3-basic-differential-geometry-of-flag-manifolds",
+     "id": "sec-009-24-riemannian-notions",
+     "title": "Riemannian notions",
+     "prose_ratio": 0.934,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-3-basic-differential-geometry-of-flag-manifolds",
      "title": "Basic differential geometry of flag manifolds",
-     "prose_ratio": 0.994,
-     "coverage_ratio": 0.983,
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.993,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-010-4-flag-manifolds-as-matrix-homogeneous-spaces",
+     "id": "sec-011-4-flag-manifolds-as-matrix-homogeneous-spaces",
      "title": "Flag manifolds as matrix homogeneous spaces",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.98,
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-5-flag-manifolds-as-matrix-manifolds",
-     "title": "Flag manifolds as matrix manifolds",
-     "prose_ratio": 0.985,
-     "coverage_ratio": 0.966,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-012-6-riemannian-gradient-and-hessian-over-the-flag",
-     "title": "Riemannian Gradient and Hessian over the flag manifold",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.95,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-013-7-optimization-algorithms-over-flag-manifolds",
-     "title": "Optimization algorithms over flag manifolds",
-     "prose_ratio": 0.989,
-     "coverage_ratio": 0.963,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-014-8-numerical-experiments",
-     "title": "Numerical experiments",
-     "prose_ratio": 0.978,
+     "id": "sec-012-41-orthogonal-coordinates-for-the-flag-manifold",
+     "title": "Orthogonal coordinates for the flag manifold",
+     "prose_ratio": 0.937,
      "coverage_ratio": 0.937,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-015-9-conclusion",
-     "title": "Conclusion",
-     "prose_ratio": 0.99,
-     "coverage_ratio": 0.953,
+     "id": "sec-013-42-stiefel-coordinates-for-the-flag-manifold",
+     "title": "Stiefel coordinates for the flag manifold",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.963,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-016-references",
+     "id": "sec-014-5-flag-manifolds-as-matrix-manifolds",
+     "title": "Flag manifolds as matrix manifolds",
+     "prose_ratio": 0.917,
+     "coverage_ratio": 0.956,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-51-projection-coordinates-for-the-flag-manifold",
+     "title": "Projection coordinates for the flag manifold",
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.942,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-52-refined-projection-coordinates-for-the-flag-m",
+     "title": "Refined projection coordinates for the flag manifold",
+     "prose_ratio": 0.947,
+     "coverage_ratio": 0.927,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-017-6-riemannian-gradient-and-hessian-over-the-flag",
+     "title": "Riemannian Gradient and Hessian over the flag manifold",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.927,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-018-7-optimization-algorithms-over-flag-manifolds",
+     "title": "Optimization algorithms over flag manifolds",
+     "prose_ratio": 0.983,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-019-71-steepest-descent-over-a-flag-manifold",
+     "title": "Steepest descent over a flag manifold",
+     "prose_ratio": 0.905,
+     "coverage_ratio": 0.881,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-020-72-conjugate-gradient-over-a-flag-manifold",
+     "title": "Conjugate gradient over a flag manifold",
+     "prose_ratio": 0.916,
+     "coverage_ratio": 0.899,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-021-73-newton-and-other-algorithms-over-a-flag-manif",
+     "title": "Newton and other algorithms over a flag manifold",
+     "prose_ratio": 0.924,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-022-8-numerical-experiments",
+     "title": "Numerical experiments",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-023-81-principal-flags",
+     "title": "Principal flags",
+     "prose_ratio": 0.943,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-024-82-nonlinear-eigenflags",
+     "title": "Nonlinear eigenflags",
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.937,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-025-9-conclusion",
+     "title": "Conclusion",
+     "prose_ratio": 0.971,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-026-references",
      "title": "References",
      "result": "no matching \\section"
     }

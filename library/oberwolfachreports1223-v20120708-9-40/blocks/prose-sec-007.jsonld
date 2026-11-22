@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/oberwolfachreports1223-v20120708-9-40/blocks/prose-sec-007",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Using this criterion, for many (sub)families of knots we can conﬁrm",
-  "pageStart": 26,
-  "pageEnd": 49,
-  "text": "../sections/sec-007-2-using-this-criterion-for-many-subfamilies-of-k.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/oberwolfachreports1223-v20120708-9-40",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/oberwolfachreports1223-v20120708-9-40",
+  "title": "Hugh R Morton Mutant knots with symmetry",
+  "pageStart": 23,
+  "pageEnd": 23,
+  "text": "../sections/sec-007-hugh-r-morton-mutant-knots-with-symmetry.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/oberwolfachreports1223-v20120708-9-40/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/oberwolfachreports1223-v20120708-9-40/manifest.jsonld",
   "provenance": "ingested"
 }

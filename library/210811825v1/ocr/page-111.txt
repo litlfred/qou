@@ -1,0 +1,39 @@
+Appendix A
+
+GAP Code for Bolza Surface
+L]
+
+The following output gives details i try group of the Bolza surface, computed
+by the computer algebra package GAP [26]. We first define the group as a free group on
+the 4 generators introduced in Section 3.1 with the relevant relations. We confirm that
+the order of this group is 96, and the “StructureDescription” command tells us that it is
+isomorphic to GL2(Z3) = Ze.
+
+Representatives of each conjugacy class of Isom(B) are given by the command “Con-
+jugacyClasses”. Each row of the character table tell us the value of one of the characters
+on each of the 13 conjugacy classes of the group, where the conjugacy classes are in the
+same order as the output of “ConjugacyClasses”. The data at the top of the character
+table concerns the various “power maps” of the character table, and is irrelevant to this
+work. The interested reader can learn how to interpret this data by consulting the GAP
+manual. To interpret the character values on the different conjugacy classes, one must
+also be aware of the following notation used by GAP:
+
+E(x) := er.
+
+The “IrreducibleA ffordingRepresentation”s below the first set of irreducible represen-
+tations give a simpler set of representation matrices that are easier to work with, but
+correspond to the same character table. One may see more easily which of these corre-
+spond to rotations, and so on. Unfortunately it was not possible to calculate these for
+the four dimensional representations, b se of them for our analysis of the 2
+and 3 dimensional representations in Section 3.4.
+
+gap> f:=FreeGroup("r","s","t","u");
+<free group on the generators [ r, s, t, u |>
+gap> g:=f/[f.178,f.2°2,f.372,f.4°3,f.1ef.Qef.1*f.2,f.2*f.3*f.2ef.3,f.1*f.3*f.173*f.3,
+£.1°7*£.4°2ef.1°7*f.4°2,f.4° Qe f. 1x f.4°Qef.3%f.2,f.4ef.2*f.4xf.2,
+f.d%f.3%f.4°2ef£.2%f£.17° 7];
+<fp group on the generators [| r, s, t, u ]>
+
+gap> Order(g);
+
+101

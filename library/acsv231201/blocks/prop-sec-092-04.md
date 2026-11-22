@@ -1,0 +1,1 @@
+4. Every algebraic variety in Rd or Cd admits a Whitney strat- iﬁcation. □ In examples arising from combinatorial applications, it is often possible to deduce a stratiﬁcation directly from the form of the polynomials under consid- eration.

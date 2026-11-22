@@ -9,13 +9,15 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Asymptotic formulae",
-  "pageStart": 450,
-  "pageEnd": 451,
+  "title": "Higher order asymptotics",
+  "pageStart": 417,
+  "pageEnd": 420,
   "contains": [
-    "library/acsv231201/blocks/prose-sec-067"
+    "library/acsv231201/blocks/prose-sec-067",
+    "library/acsv231201/blocks/ex-sec-067-01",
+    "library/acsv231201/blocks/ex-sec-067-02"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/acsv231201",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/acsv231201",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/acsv231201/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/acsv231201/manifest.jsonld",
   "provenance": "ingested"
 }

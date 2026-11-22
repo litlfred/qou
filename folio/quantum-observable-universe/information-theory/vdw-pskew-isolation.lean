@@ -52,7 +52,7 @@ def barOdd (q qi : R) : R := q ^ 2 - qi ^ 2
     For the idempotents (`a = e₊`, `b = e₋`, `a+b = 1`) the bar-even part is the
     retained `cosh(2λ)·𝟙` carrier and the bar-odd part is `sinh(2λ)·(e₊−e₋)` —
     the discarded P_skew / van der Waals channel. Pure-`ring`, sorry-free. -/
--- Ref: [manuscript] information-theory/vdw-pskew-isolation
+-- Ref: [leitner2026] information-theory/vdw-pskew-isolation
 theorem hopf_bar_even_odd_decomposition (q qi a b : R) :
     2 * (q ^ 2 * a + qi ^ 2 * b)
       = barEven q qi * (a + b) + barOdd q qi * (a - b) := by
@@ -62,7 +62,7 @@ theorem hopf_bar_even_odd_decomposition (q qi a b : R) :
 /-- The bar-odd (van der Waals) part isolated: on the idempotents with
     `a + b = 1`, the whole bar-even contribution is `barEven q qi · 1` and the
     remainder is exactly `barOdd q qi · (a − b)`. -/
--- Ref: [manuscript] information-theory/vdw-pskew-isolation
+-- Ref: [leitner2026] information-theory/vdw-pskew-isolation
 theorem vdw_is_bar_odd_residual (q qi a b : R) (hpart : a + b = 1) :
     2 * (q ^ 2 * a + qi ^ 2 * b) - barEven q qi
       = barOdd q qi * (a - b) := by

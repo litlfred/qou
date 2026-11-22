@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/thurston/sections/page-015",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Page 15",
+  "pageStart": 15,
+  "pageEnd": 15,
+  "contains": [
+    "library/thurston/blocks/prose-page-015",
+    "library/thurston/blocks/figure-img-p015-1"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/thurston/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/thurston/manifest.jsonld",
+  "provenance": "ingested"
+}

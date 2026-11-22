@@ -7,10 +7,11 @@
   "bytes": 570629,
   "pages": 21,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -25,13 +26,21 @@
   "title_lines": [
    "THE PTOLEMY FIELD OF 3-MANIFOLD-REPRESENTATIONS"
   ],
-  "abstract": "The Ptolemy coordinates for boundary-unipotent SL(n, C)-representations of a 3-manifold group were introduced in [7] inspired by theA-coordinates on higher Teichm\u00a8 uller space due to Fock and Goncharov. In this paper, we de\ufb01ne the Ptolemy \ufb01eld of a (generic) PSL(2, C)-representation and prove that it coincides with the trace \ufb01eld of the represen- tation. This gives an e\ufb03cient algorithm to compute the trace \ufb01eld of a cusped hyperbolic manifold.",
+  "abstract": "The Ptolemy coordinates for boundary-unipotent SL(n, C)-representations of a 3-manifold group were introduced in [7] inspired by the A-coordinates on higher Teichm¨uller space due to Fock and Goncharov. In this paper, we deﬁne the Ptolemy ﬁeld of a (generic) PSL(2, C)-representation and prove that it coincides with the trace ﬁeld of the represen- tation. This gives an eﬃcient algorithm to compute the trace ﬁeld of a cusped hyperbolic manifold.",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20241127044050Z",
-   "Creator": "LaTeX with hyperref package",
    "Producer": "pdfTeX-1.40.12",
-   "Title": ""
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20241127044050Z"
+  },
+  "title_raw": "THE PTOLEMY FIELD OF 3-MANIFOLD-REPRESENTATIONS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "THE PTOLEMY FIELD OF 3 -MANIFOLD-REPRESENTATIONS Contents Introduction The Ptolemy coordinates Decorated SL(2 , C )-representations Obstruction classes and PSL(2 , C )-representations Our results Notation Triangulations Miscellaneous The Ptolemy varieties The SL(2 , C )-Ptolemy variety Obstruction c",
+   "outline": "1. Introduction",
+   "text": "THE PTOLEMY FIELD OF 3-MANIFOLD-REPRESENTATIONS",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [
@@ -40,395 +49,1031 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "The Ptolemy coordinates",
    "page": 2,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Decorated SL(2,C)-representations",
    "page": 2,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Obstruction classes and PSL(2,C)-representations",
    "page": 4,
    "source": "outline",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Our results",
    "page": 4,
    "source": "outline",
-   "number": "1.4"
+   "number": "1.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "Notation",
    "page": 6,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Triangulations",
    "page": 6,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Miscellaneous",
    "page": 7,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "The Ptolemy varieties",
    "page": 7,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "The SL(2,C)-Ptolemy variety",
    "page": 7,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Obstruction classes",
    "page": 8,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 1,
    "title": "The diagonal action",
    "page": 9,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "The reduced Ptolemy varieties",
    "page": 9,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Shapes and gluing equations",
    "page": 11,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "Proof that * is basic",
    "page": 11,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 1,
    "title": "The Ptolemy field and the trace field",
    "page": 12,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Explicit description of the Ptolemy field",
    "page": 12,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "The setup of the proof",
    "page": 12,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Proof for one cusp",
    "page": 13,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "The general case",
    "page": 13,
    "source": "outline",
-   "number": "5.4"
+   "number": "5.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "Proof of Proposition 1.9",
    "page": 15,
    "source": "outline",
-   "number": "5.5"
+   "number": "5.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 1,
    "title": "Ptolemy varieties for n>2",
    "page": 16,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "Definition of the Ptolemy variety",
    "page": 16,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "The diagonal action",
    "page": 16,
    "source": "outline",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "Representations",
    "page": 17,
    "source": "outline",
-   "number": "6.3"
+   "number": "6.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "Proof that * is basic",
    "page": 18,
    "source": "outline",
-   "number": "6.4"
+   "number": "6.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 1,
    "title": "References",
    "page": 20,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   }
  ],
  "toc_source": "outline",
- "sections": [
+ "toc_undetermined_reason": null,
+ "figures": [
   {
-   "id": "sec-000-11-the-ptolemy-coordinates",
-   "number": "1.1",
-   "title": "The Ptolemy coordinates",
-   "level": 2,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 379,
-   "n_words": 61
+   "kind": "figure",
+   "number": "1",
+   "title": "Ptolemy assignment; the Ptolemy relation (1.1) holds",
+   "page": 3,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
   },
   {
-   "id": "sec-001-1-introduction",
+   "kind": "figure",
+   "number": "2",
+   "title": "Natural cocycle; α is counter-diagonal, β ∈P",
+   "page": 3,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Decoration; equivariant assignment of cosets",
+   "page": 3,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Ordered triangulation of the ﬁgure 8 knot. The signs indicate the non-trivial obstruction class",
+   "page": 8,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Oriented triangulation of the ﬁgure 8 knot sister. The signs indicate the non-trivial obstruction class",
+   "page": 8,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Ptolemy assignment",
+   "page": 10,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "10"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "The diagonal action of (x1, x2)",
+   "page": 10,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "10"
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "Tree G with 1-cycle; G \\ ε1 is a maximal tree",
+   "page": 12,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "12"
+  },
+  {
+   "kind": "figure",
+   "number": "11",
+   "title": "Tree G with 3-cycle; G \\ ε1 is a maximal tree",
+   "page": 12,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "12"
+  },
+  {
+   "kind": "figure",
+   "number": "12",
+   "title": "Self edge",
+   "page": 13,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "13"
+  },
+  {
+   "kind": "figure",
+   "number": "13",
+   "title": "Edge between cusps",
+   "page": 13,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "13"
+  },
+  {
+   "kind": "figure",
+   "number": "14",
+   "title": "3-cycle case",
+   "page": 15,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "15"
+  },
+  {
+   "kind": "figure",
+   "number": "15",
+   "title": "Arbitrary edge ε",
+   "page": 15,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "15"
+  },
+  {
+   "kind": "figure",
+   "number": "16",
+   "title": "Basic generators, n = 2k + 1",
+   "page": 19,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "19"
+  },
+  {
+   "kind": "figure",
+   "number": "17",
+   "title": "Basic generators, n = 2k",
+   "page": 19,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": "19"
+  },
+  {
+   "kind": "figure",
+   "number": "18",
+   "title": "Basic generators, tree with 1-cycle",
+   "page": 20,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "20"
+  },
+  {
+   "kind": "figure",
+   "number": "19",
+   "title": "Basic generators, tree with 3-cycle",
+   "page": 20,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "20"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1716,
+   "n_words": 273,
+   "label_start": "1",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
-   "page_start": 1,
-   "page_end": 4,
-   "n_chars": 6952,
-   "n_words": 1183
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 15,
+   "n_words": 2,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
-   "id": "sec-002-14-our-results",
+   "id": "sec-001-11-the-ptolemy-coordinates",
+   "number": "1.1",
+   "title": "The Ptolemy coordinates",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 979,
+   "n_words": 163,
+   "label_start": "2",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-002-12-decorated-sl2c-representations",
+   "number": "1.2",
+   "title": "Decorated SL(2,C)-representations",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 2639,
+   "n_words": 460,
+   "label_start": "2",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-003-13-obstruction-classes-and-psl2c-representations",
+   "number": "1.3",
+   "title": "Obstruction classes and PSL(2,C)-representations",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1936,
+   "n_words": 347,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-004-14-our-results",
    "number": "1.4",
    "title": "Our results",
    "level": 2,
    "page_start": 4,
    "page_end": 6,
-   "n_chars": 4980,
-   "n_words": 822
+   "n_chars": 5024,
+   "n_words": 868,
+   "label_start": "4",
+   "label_end": "6"
   },
   {
-   "id": "sec-003-2-notation",
+   "id": "sec-005-2-notation",
    "number": "2",
    "title": "Notation",
    "level": 1,
    "page_start": 6,
    "page_end": 6,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "6",
+   "label_end": "6"
   },
   {
-   "id": "sec-004-21-triangulations",
+   "id": "sec-006-21-triangulations",
    "number": "2.1",
    "title": "Triangulations",
    "level": 2,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 1274,
-   "n_words": 204
+   "n_chars": 1275,
+   "n_words": 206,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
-   "id": "sec-005-22-miscellaneous",
+   "id": "sec-007-22-miscellaneous",
    "number": "2.2",
    "title": "Miscellaneous",
    "level": 2,
    "page_start": 7,
    "page_end": 7,
-   "n_chars": 717,
-   "n_words": 135
+   "n_chars": 748,
+   "n_words": 148,
+   "label_start": "7",
+   "label_end": "7"
   },
   {
-   "id": "sec-006-3-the-ptolemy-varieties",
+   "id": "sec-008-3-the-ptolemy-varieties",
    "number": "3",
    "title": "The Ptolemy varieties",
    "level": 1,
    "page_start": 7,
-   "page_end": 8,
-   "n_chars": 1845,
-   "n_words": 291
+   "page_end": 7,
+   "n_chars": 127,
+   "n_words": 16,
+   "label_start": "7",
+   "label_end": "7"
   },
   {
-   "id": "sec-007-32-obstruction-classes",
+   "id": "sec-009-31-the-sl2c-ptolemy-variety",
+   "number": "3.1",
+   "title": "The SL(2,C)-Ptolemy variety",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1660,
+   "n_words": 291,
+   "label_start": "7",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-010-32-obstruction-classes",
    "number": "3.2",
    "title": "Obstruction classes",
    "level": 2,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 2488,
-   "n_words": 419
+   "n_chars": 2533,
+   "n_words": 464,
+   "label_start": "8",
+   "label_end": "9"
   },
   {
-   "id": "sec-008-4-the-diagonal-action",
+   "id": "sec-011-4-the-diagonal-action",
    "number": "4",
    "title": "The diagonal action",
    "level": 1,
    "page_start": 9,
    "page_end": 9,
-   "n_chars": 954,
-   "n_words": 196
+   "n_chars": 969,
+   "n_words": 211,
+   "label_start": "9",
+   "label_end": "9"
   },
   {
-   "id": "sec-009-41-the-reduced-ptolemy-varieties",
+   "id": "sec-012-41-the-reduced-ptolemy-varieties",
    "number": "4.1",
    "title": "The reduced Ptolemy varieties",
    "level": 2,
    "page_start": 9,
    "page_end": 11,
-   "n_chars": 2956,
-   "n_words": 574
+   "n_chars": 3004,
+   "n_words": 622,
+   "label_start": "9",
+   "label_end": "11"
   },
   {
-   "id": "sec-010-42-shapes-and-gluing-equations",
+   "id": "sec-013-42-shapes-and-gluing-equations",
    "number": "4.2",
    "title": "Shapes and gluing equations",
    "level": 2,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 2326,
-   "n_words": 464
+   "n_chars": 2345,
+   "n_words": 483,
+   "label_start": "11",
+   "label_end": "12"
   },
   {
-   "id": "sec-011-5-the-ptolemy-field-and-the-trace-field",
+   "id": "sec-014-5-the-ptolemy-field-and-the-trace-field",
    "number": "5",
    "title": "The Ptolemy field and the trace field",
    "level": 1,
    "page_start": 12,
    "page_end": 12,
-   "n_chars": 834,
-   "n_words": 162
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "12",
+   "label_end": "12"
   },
   {
-   "id": "sec-012-52-the-setup-of-the-proof",
+   "id": "sec-015-51-explicit-description-of-the-ptolemy-field",
+   "number": "5.1",
+   "title": "Explicit description of the Ptolemy field",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 774,
+   "n_words": 165,
+   "label_start": "12",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-016-52-the-setup-of-the-proof",
    "number": "5.2",
    "title": "The setup of the proof",
    "level": 2,
    "page_start": 12,
    "page_end": 13,
-   "n_chars": 1260,
-   "n_words": 251
+   "n_chars": 1268,
+   "n_words": 259,
+   "label_start": "12",
+   "label_end": "13"
   },
   {
-   "id": "sec-013-53-proof-for-one-cusp",
+   "id": "sec-017-53-proof-for-one-cusp",
    "number": "5.3",
    "title": "Proof for one cusp",
    "level": 2,
    "page_start": 13,
    "page_end": 13,
-   "n_chars": 741,
-   "n_words": 145
+   "n_chars": 749,
+   "n_words": 153,
+   "label_start": "13",
+   "label_end": "13"
   },
   {
-   "id": "sec-014-54-the-general-case",
+   "id": "sec-018-54-the-general-case",
    "number": "5.4",
    "title": "The general case",
    "level": 2,
    "page_start": 13,
    "page_end": 15,
-   "n_chars": 3522,
-   "n_words": 634
+   "n_chars": 3618,
+   "n_words": 730,
+   "label_start": "13",
+   "label_end": "15"
   },
   {
-   "id": "sec-015-55-proof-of-proposition-19",
+   "id": "sec-019-55-proof-of-proposition-19",
    "number": "5.5",
    "title": "Proof of Proposition 1.9",
    "level": 2,
    "page_start": 15,
-   "page_end": 15,
-   "n_chars": 279,
-   "n_words": 48
+   "page_end": 16,
+   "n_chars": 1004,
+   "n_words": 174,
+   "label_start": "15",
+   "label_end": "16"
   },
   {
-   "id": "sec-016-62-the-diagonal-action",
+   "id": "sec-020-62-the-diagonal-action",
    "number": "6.2",
    "title": "The diagonal action",
    "level": 2,
-   "page_start": 15,
+   "page_start": 16,
    "page_end": 16,
-   "n_chars": 2328,
-   "n_words": 428
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "16",
+   "label_end": "16"
   },
   {
-   "id": "sec-017-63-representations",
+   "id": "sec-021-6-ptolemy-varieties-for-n2",
+   "number": "6",
+   "title": "Ptolemy varieties for n>2",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 588,
+   "n_words": 132,
+   "label_start": "16",
+   "label_end": "16"
+  },
+  {
+   "id": "sec-022-61-definition-of-the-ptolemy-variety",
+   "number": "6.1",
+   "title": "Definition of the Ptolemy variety",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 1514,
+   "n_words": 276,
+   "label_start": "16",
+   "label_end": "17"
+  },
+  {
+   "id": "sec-023-63-representations",
    "number": "6.3",
    "title": "Representations",
    "level": 2,
-   "page_start": 16,
+   "page_start": 17,
    "page_end": 20,
-   "n_chars": 7354,
-   "n_words": 1433
+   "n_chars": 6898,
+   "n_words": 1433,
+   "label_start": "17",
+   "label_end": "20"
   },
   {
-   "id": "sec-018-references",
+   "id": "sec-024-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 20,
    "page_end": 21,
-   "n_chars": 2444,
-   "n_words": 316
+   "n_chars": 2434,
+   "n_words": 306,
+   "label_start": "20",
+   "label_end": "21"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 27,
-  "sections": 19,
-  "chars_total": 43633,
+  "toc_inferred_entries": 0,
+  "figure_entries": 17,
+  "figure_sequence_gaps": [
+   "figure 3",
+   "figure 5"
+  ],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 1,
+    "items": [
+     "Our results"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 26,
+  "chars_total": 43817,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "PtolemyField.tex",
    "tex_sections": 37,
-   "overlaid": 12,
+   "overlaid": 16,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -436,33 +1081,56 @@
    },
    "sections": [
     {
-     "id": "sec-000-11-the-ptolemy-coordinates",
-     "title": "The Ptolemy coordinates",
-     "prose_ratio": 0.132,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
     },
     {
-     "id": "sec-001-1-introduction",
+     "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-002-14-our-results",
-     "title": "Our results",
-     "prose_ratio": 0.935,
-     "coverage_ratio": 0.929,
+     "id": "sec-001-11-the-ptolemy-coordinates",
+     "title": "The Ptolemy coordinates",
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-003-2-notation",
-     "title": "Notation",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-002-12-decorated-sl2c-representations",
+     "title": "Decorated SL(2,C)-representations",
+     "prose_ratio": 0.85,
+     "coverage_ratio": 0.944,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-004-21-triangulations",
+     "id": "sec-003-13-obstruction-classes-and-psl2c-representations",
+     "title": "Obstruction classes and PSL(2,C)-representations",
+     "prose_ratio": 0.92,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-14-our-results",
+     "title": "Our results",
+     "prose_ratio": 0.935,
+     "coverage_ratio": 0.961,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-2-notation",
+     "title": "Notation",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-21-triangulations",
      "title": "Triangulations",
      "prose_ratio": 0.957,
      "coverage_ratio": 0.959,
@@ -470,7 +1138,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-005-22-miscellaneous",
+     "id": "sec-007-22-miscellaneous",
      "title": "Miscellaneous",
      "prose_ratio": 0.974,
      "coverage_ratio": 0.974,
@@ -478,63 +1146,72 @@
      "converter": "latex"
     },
     {
-     "id": "sec-006-3-the-ptolemy-varieties",
+     "id": "sec-008-3-the-ptolemy-varieties",
      "title": "The Ptolemy varieties",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.833,
-     "result": "overlaid",
-     "converter": "latex"
+     "prose_ratio": 0.091,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-007-32-obstruction-classes",
+     "id": "sec-009-31-the-sl2c-ptolemy-variety",
+     "title": "The SL(2,C)-Ptolemy variety",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-32-obstruction-classes",
      "title": "Obstruction classes",
      "prose_ratio": 0.964,
-     "coverage_ratio": 0.72,
+     "coverage_ratio": 0.73,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-008-4-the-diagonal-action",
+     "id": "sec-011-4-the-diagonal-action",
      "title": "The diagonal action",
      "prose_ratio": 0.932,
-     "coverage_ratio": 0.931,
+     "coverage_ratio": 0.982,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-009-41-the-reduced-ptolemy-varieties",
+     "id": "sec-012-41-the-reduced-ptolemy-varieties",
      "title": "The reduced Ptolemy varieties",
      "prose_ratio": 0.891,
-     "coverage_ratio": 0.855,
+     "coverage_ratio": 0.926,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-010-42-shapes-and-gluing-equations",
+     "id": "sec-013-42-shapes-and-gluing-equations",
      "title": "Shapes and gluing equations",
      "prose_ratio": 0.883,
-     "coverage_ratio": 0.956,
+     "coverage_ratio": 0.964,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-011-5-the-ptolemy-field-and-the-trace-field",
+     "id": "sec-014-5-the-ptolemy-field-and-the-trace-field",
      "title": "The Ptolemy field and the trace field",
-     "prose_ratio": 0.933,
-     "coverage_ratio": 0.976,
+     "prose_ratio": null,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-015-51-explicit-description-of-the-ptolemy-field",
+     "title": "Explicit description of the Ptolemy field",
+     "prose_ratio": 0.884,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-012-52-the-setup-of-the-proof",
+     "id": "sec-016-52-the-setup-of-the-proof",
      "title": "The setup of the proof",
      "prose_ratio": 0.947,
-     "coverage_ratio": 0.92,
+     "coverage_ratio": 0.973,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-013-53-proof-for-one-cusp",
+     "id": "sec-017-53-proof-for-one-cusp",
      "title": "Proof for one cusp",
      "prose_ratio": 0.64,
      "coverage_ratio": 1.0,
@@ -542,32 +1219,48 @@
      "converter": "latex"
     },
     {
-     "id": "sec-014-54-the-general-case",
+     "id": "sec-018-54-the-general-case",
      "title": "The general case",
-     "prose_ratio": 0.408,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-015-55-proof-of-proposition-19",
-     "title": "Proof of Proposition 1.9",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-016-62-the-diagonal-action",
-     "title": "The diagonal action",
-     "prose_ratio": 0.356,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-017-63-representations",
-     "title": "Representations",
-     "prose_ratio": 0.877,
-     "coverage_ratio": 0.735,
+     "prose_ratio": 0.633,
+     "coverage_ratio": 0.891,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-018-references",
+     "id": "sec-019-55-proof-of-proposition-19",
+     "title": "Proof of Proposition 1.9",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-62-the-diagonal-action",
+     "title": "The diagonal action",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-021-6-ptolemy-varieties-for-n2",
+     "title": "Ptolemy varieties for n>2",
+     "prose_ratio": 0.919,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-022-61-definition-of-the-ptolemy-variety",
+     "title": "Definition of the Ptolemy variety",
+     "prose_ratio": 0.53,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-023-63-representations",
+     "title": "Representations",
+     "prose_ratio": 0.877,
+     "coverage_ratio": 0.803,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-024-references",
      "title": "References",
      "result": "no matching \\section"
     }

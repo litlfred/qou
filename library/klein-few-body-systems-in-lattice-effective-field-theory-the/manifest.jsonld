@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/klein-few-body-systems-in-lattice-effective-field-theory-the",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/klein-few-body-systems-in-lattice-effective-field-theory-the/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -70,10 +70,12 @@
     "library/klein-few-body-systems-in-lattice-effective-field-theory-the/sections/sec-055",
     "library/klein-few-body-systems-in-lattice-effective-field-theory-the/sections/sec-056",
     "library/klein-few-body-systems-in-lattice-effective-field-theory-the/sections/sec-057",
-    "library/klein-few-body-systems-in-lattice-effective-field-theory-the/sections/sec-058"
+    "library/klein-few-body-systems-in-lattice-effective-field-theory-the/sections/sec-058",
+    "library/klein-few-body-systems-in-lattice-effective-field-theory-the/sections/sec-059",
+    "library/klein-few-body-systems-in-lattice-effective-field-theory-the/sections/sec-060"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "klein-few-body-systems-in-lattice-effective-field-theory-the",
     "title_source": "pdf-info",

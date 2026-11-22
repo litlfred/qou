@@ -1,0 +1,58 @@
+33 Page 28 of 47 S. Jansen, L. Kolesnikov
+
+In the limit d > oo at fixed R > 0, the right-hand side converges from above to the familiar
+bound 1/e.
+
+Proof Let a > 0 satisfy condition (4.7). Set a(D) = aV(D) for D € De, choose some
+chopping map C and let D € D, (the snippet-size « > 0 will be specified later in the
+proof). For the simplest selection rule s choosing always the first snippet £1, condition (i) in
+Theorem 2.6 reads
+
+OO Uk
+ka
+< el V(DIVE)-V(D) (4.8)
+
+where D’ = D\ E).
+
+Notice that—unlike in the discrete case—terms of order higher than one in z do not
+necessarily vanish in the series in (4.8). Inspired by the proof of Theorem 4.7, we try first
+to bound the exponent on the left-hand side of (4.8), seeking a bound that separates Y :=
+Y, U---U Y, from E, and D’. If the constraint were that Ej C Y, we would conclude with
+strong subadditivity applied to B := Y and C := D’U E; that V(E}) + V(D'UY) <
+V(Y) + V(D' U E)). For the weaker constraint E} 1 Y # @, this is no longer true. Let
+Z € X. A straightforward case distinction reveals that under the indicator J, the inequality
+
+Izne, 4a) + Wzawuy)j4e) < Wzny¢e) + Wznw'vue,) 42)
+
+is correct for all possible values of the left-hand side except possibly 1 + 1. Indeed it may
+happen that Z intersects both E; and D’ U Y, hence a fortiori D’ U £1, but not Y, so that
+the right-hand side becomes 0 + 1. This happens precisely when Z intersects D’ and E, but
+not Y. The inequality becomes correct if we add the indicator of this event to the right-hand
+side. Integrating over Z, we obtain
+
+V(E\) + V(D'UY) < V(Y) + V(D'U E)) +f Uzne4@, znY=9, znp'¢a\A(dZ).
+x
+
+Moreover, there exists a constant C = C(S,d) > 0 that depends only on the dimension d
+and the shape S such that if k = 1 and Y = Y; € Xisa translate of S, then
+
+[ Izne, 4a, zay=o, znp'4o)4(dZ) < Ce.
+
+Indeed, on the left side we may drop the indicator that Z intersects D’ and see that it is
+sufficient to check
+
+[ Wzne,e0, zav-=0)M(Z) < Ce. (49)
+xX
+
+To see that such an estimate holds let B,(c) be a closed ball of radius ¢ around some c € Rd
+containing the snippet E, and let x € YM E, (by assumption this intersection is non-empty).
+Then x € B,(c) and the inequality
+
+Izng, 4a, zav=2) < WznB.0)40, x¢Z}
+
+holds pointwise in Z, thus also
+
+[ tizoe0,.2z0raMd2) = [ WznB.(o¢2,x¢z)A(dZ).
+x x
+
+D Springer

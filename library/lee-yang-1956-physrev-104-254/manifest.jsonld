@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/lee-yang-1956-physrev-104-254/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Question of Parity Conservation in Weak Interactions",
+  "contains": [
+    "library/lee-yang-1956-physrev-104-254/sections/page-001",
+    "library/lee-yang-1956-physrev-104-254/sections/page-002",
+    "library/lee-yang-1956-physrev-104-254/sections/page-003",
+    "library/lee-yang-1956-physrev-104-254/sections/page-004",
+    "library/lee-yang-1956-physrev-104-254/sections/page-005"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "lee-yang-1956-physrev-104-254",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "lee-yang-1956-physrev-104-254.pdf",
+    "source_sha256": "843105e97ca1fe26cd4b3a2075c81794cfad0cfca712ee02e5fec1d9bf07ae2c",
+    "pages": 5,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

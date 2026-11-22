@@ -31,7 +31,7 @@ is axiomatized.
 
 Verified `lean`-direct against pinned Mathlib (exit 0).
 
-Ref: [manuscript] docs/audits/2026-07-18-g3-stokes-keystone-evidence-base.md §8
+Ref: [leitner2026] docs/audits/2026-07-18-g3-stokes-keystone-evidence-base.md §8
 -/
 
 open Complex Module

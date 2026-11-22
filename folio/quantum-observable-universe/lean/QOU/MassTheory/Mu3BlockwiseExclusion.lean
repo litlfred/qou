@@ -60,7 +60,7 @@ log-supermodular: there is no forced invariant, so intra-block interference is n
 
 Verified `lean`-direct exit 0, sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-07-26-deltalambda-mu4-rhoF-cluster.md
+-- Ref: [leitner2026] docs/audits/2026-07-26-deltalambda-mu4-rhoF-cluster.md
 -/
 
 namespace QOU.MassTheory.Mu3BlockwiseExclusion

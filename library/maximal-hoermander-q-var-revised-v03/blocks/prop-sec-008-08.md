@@ -1,0 +1,1 @@
+Let a > 0, d ∈N and s > d min(1, a)/4. Let A = (−∆)a/2. Then exp(itA)f(x) →f(x) as t →0 for a.e. x ∈Rd if f ∈Hs(Rd). An application of Proposition 6.6 yields the following improvement in case of high dimension (e.g. d > 8 if a ∈(0, 1)).

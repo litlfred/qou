@@ -1,0 +1,1 @@
+Let (F, σ) be an idempotent copointed linear functor on M(A, gr), and assume that F is left exact and weakly stable. If I is a right F-acyclic object of M(A, gr), then F(I) is also a right F-acyclic object of M(A, gr).

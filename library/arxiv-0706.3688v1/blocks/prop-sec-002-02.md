@@ -1,0 +1,1 @@
+Let H be a Hilbert space of dimension n. Then an irreducible solu- tion with Z(AC) = C exists iﬀn = k2 is a square. It is given by AC = Mk(C) acting by left multiplication on itself and antilinear involution (2.8) J(x) = x∗, ∀x ∈Mk(C) . 3This is the only place where we use the hypothesis J2 = 1. WHY THE STANDARD MODEL

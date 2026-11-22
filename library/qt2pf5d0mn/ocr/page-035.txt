@@ -1,0 +1,38 @@
+Section 2.2 G-crossed Braided Spherical Fusion Categories (G-BSFC)
+5B A A 5B
+Xe ae
+A ~ B B a A
+Figure 2.11: c4.g (Left) and CA's (Right) for A € Cy
+
+Note that if G is trivial, then the definitions above are the same as those of spherical
+braided fusion categories, so a {e}-crossed braided spherical fusion category is simply a
+ribbon fusion category.
+
+Every G-BSFC is equivalent to a strict one as indicated the following theorem. Rough-
+ly speaking, an equivalence of G-BSFCs is an equivalence as a monoidal functor and it
+preserves all additional structures, e.g., crossed braiding, G-action, etc. For the rigorous
+
+definition, see [48].
+
+Theorem 2.2.3 [48/ Let D be a G-BSFC, then there exist a strict G-BSFC D' with a
+
+strict G-action and an equivalence F :D —+ D' of G-crossed braided categories.
+
+Thus there is no loss of generality to restrict the study on strict G-BSFCs with strict
+G-actions, which is the assumption for the rest of the paper. Namely, one can assume
+that the ax y,z,lx, 1x, Vg:x,¥> Fg: %q,hiX>€x are identities.
+
+Following [47], we can use the same picture for a regular braiding to represent the
+G-crossed braiding as shown in Figure [2.11]
+
+Similar to braided spherical fusion categories, here we can also define the twist 64 :
+A—+ 9A for g € C4 by the same picture:
+
+The following proposition is parallel to the properties of the regular twist.
+
+Proposition 2.2.4 In a G-crossed braided spherical fusion category, the twist 6.)
+
+satisfies the following properties:
+
+1. OaaB = (Oona ® Oop) ° CoB,A° CAB; Ae C,,B E Ch;
+26

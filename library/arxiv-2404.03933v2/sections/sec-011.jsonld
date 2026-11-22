@@ -9,13 +9,15 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Appendix C. Proof of Theorems 9.1, 9.2, 9.3",
-  "pageStart": 38,
-  "pageEnd": 41,
+  "title": "Appendix B. Proof of Theorem 6.3",
+  "pageStart": 31,
+  "pageEnd": 38,
   "contains": [
-    "library/arxiv-2404.03933v2/blocks/prose-sec-011"
+    "library/arxiv-2404.03933v2/blocks/prose-sec-011",
+    "library/arxiv-2404.03933v2/blocks/lem-sec-011-01",
+    "library/arxiv-2404.03933v2/blocks/lem-sec-011-02"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2404.03933v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2404.03933v2",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2404.03933v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2404.03933v2/manifest.jsonld",
   "provenance": "ingested"
 }

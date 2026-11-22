@@ -1,0 +1,68 @@
+using disc
+by simp (subst add-divide-distrib, simp)
+thus ?thesis
+by simp
+qed
+qed
+thus ?thesis
+using wv’ assms
+using poincare-distance-formula
+by (simp add: Let-def)
+qed
+
+lemma poincare-distance-triangle-inequality:
+assumes u € unit-disc and v € unit-disc and w € unit-disc
+shows poincare-distance u v + poincare-distance v w > poincare-distance uw (is ?P’ uv w)
+proof—
+have V w. w € unit-disc —> ?P'uvw (is ?P v u)
+proof (rule wlog-z-axis;where P=?P})
+fix x
+assume is-real zt 0 < Rex Rex < 1
+hence of-complez « € unit-disc
+by (simp add: cmod-eq-Re)
+
+show ?P 0), (of-complex x)
+proof safe
+fix w
+assume w € unit-disc
+then obtain w’ where w: w = of-complex w’
+using inf-or-of-complez|of w]
+by auto
+
+let ?2z = cmod x and ?w = cmod w' and ?xw = cmod (x — w’)
+
+have disc: ?a? < 1 ?w? < 1
+using unit-disc-cmod-square-lt-1[OF <of-complex x € unit-disc»|
+using unit-disc-cmod-square-lt-1[OF «w € unit-disc>| w
+by auto
+
+have poincare-distance (of-complex x) On + poincare-distance 0, w =
+arcosh (((1 + ?x7) * (1 + ?w?) + 4 * 2x * ?w) / ((1 — ?1*) * (1 — ?w?))) (is - = arcosh ?r1)
+using poincare-distance-formula-zero-sum|[OF <of-complez x € unit-disc» «w € unit-discy| w
+by (simp add: Let-def)
+moreover
+have poincare-distance (of-complez x) (of-compler w’) =
+arcosh (((1 — ?1*) * (1 — ?w?) + 2 * ?ew?) / ((1 — 22) * (1 — ?w?))) (is - = arcosh ?r2)
+using disc
+using poincare-distance-formula|OF <of-complex x € unit-discy «w € unit-dise] w
+by (subst add-divide-distrib) simp
+moreover
+have «: (1 — ?a?) « (1 — ?w?) + 2 * Paw? < (1 + 2a?) & (1 + ?w?) + 4 * Pa * Pw
+proof—
+have (cmod (a — w’))? < (emod « + cmod w')?
+using norm-triangle-ineg4 [of x w’]
+by (simp add: power-mono)
+thus ?thesis
+by (simp add: field-simps power2-sum)
+qed
+have arcosh ?r1 > arcosh ?r2
+proof (subst arcosh-mono)
+show ?r1 > 1
+using disc
+by (smt « le-divide-eq-1-pos mult-pos-pos zero-le-power2)
+next
+show ?r2 > 1
+using disc
+by simp
+
+66

@@ -8,7 +8,9 @@ pages: 2-14
 source_pdf: 2009.03688v6.pdf
 source_sha256: 8eb9b4cbe2690730
 toc_source: inferred
+doc_brief: "E 8 -singularity, invariant theory and modular forms — As an algebraic surface, the equation of E8-singularity x5 + y3 + z2 = 0 can be obtained from a quotient CY /SL(2, 13) over the modular curve"
 ---
+Introduction
 2.
 Standard construction: E8-singularity as the icosahedral singularity
 3.

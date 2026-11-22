@@ -40,7 +40,7 @@ order hypothesis, `0 < N`, is on the neutron count in `ℕ`. So the channel
 weights live in a generic `[CommRing R]` and the substrate evaluation is
 `R := ℝ`.
 
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/branching-qvalue-factorization.md
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/branching-qvalue-factorization.md
 -/
 
 open Finset
@@ -93,7 +93,7 @@ noncomputable def totalDeltaM (c : BranchingChannels R) (Z N : ℕ) : R :=
 /-- **Branching Q-value factorisation** ([`prop:branching-qvalue-factorization`]):
     `Σ Δm_e = a^Z · b^{N−1} · (a − b)`.  Derived sorry-free from the config-sum
     multiplicativity reduction and elementary algebra (`0 < N`). -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/branching-qvalue-factorization.md
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/branching-qvalue-factorization.md
 theorem branching_qvalue_factorization (c : BranchingChannels R) {Z N : ℕ}
     (h_N_pos : 0 < N) :
     totalDeltaM c Z N = c.a ^ Z * c.b ^ (N - 1) * (c.a - c.b) := by

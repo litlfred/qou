@@ -1,0 +1,1 @@
+If K is a smooth prime (not a connected sum) knot, then there exists a simple closed rectiﬁable γK of knot type K with E(γK) ≤E(γ) for all rectiﬁable loops γ which are topologically ambient isotopic to K.

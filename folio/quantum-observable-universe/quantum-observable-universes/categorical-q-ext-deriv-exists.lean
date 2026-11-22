@@ -1,4 +1,5 @@
 import QOU.QuantumObservableUniverse.Instanton
+import QOU.QuantumObservableUniverse.TrivialWitness
 
 
 /-!
@@ -12,7 +13,7 @@ LaTeX: `\label{prop:categorical-q-ext-deriv-exists}`
 
 ## References
 
-- [manuscript] §2-quantum-observable-universes/categorical-q-ext-deriv-exists
+- [leitner2026] §2-quantum-observable-universes/categorical-q-ext-deriv-exists
 - [majid2002] A Quantum Groups Primer (Cambridge UP), §5
 -/
 
@@ -20,32 +21,29 @@ universe u v
 
 namespace QOU
 
-/-- **External axiom (§3b-cond pattern): existence of the categorical
-    q-exterior derivative.**
+/-- **Existence of the categorical q-exterior derivative.** Was the axiom
+    `CategoricalQExtDeriv.exists_axiom`; proved 2026-11-15 (bean `qou-n2un`).
 
-    For every category `C` with monoidal structure, a
-    `CategoricalQExtDeriv C` term exists via the formula
-    `d_q = q⁻¹ d + (1 - q⁻¹) π_V ∘ d`.
+    Witness: the Frobenius–Hopf object at the tensor unit
+    (`QOU.TrivialWitness.unitFrobHopf`, which exists in every braided monoidal
+    category), with `d = π_V = 𝟙` and `q = q⁻¹ = 1`.
 
-    The substantive structure `CategoricalQExtDeriv` (Frobenius–Hopf
-    data, the classical differential `d`, the vertical projection
-    `proj_V` with idempotency, and the non-zero deformation parameter
-    `q`) is defined in `QOU.QuantumObservableUniverse.Instanton`;
-    its `dq` morphism and `dq_classical` reduction are proved there.
-    Constructing such data for an *arbitrary* monoidal `C` requires
-    Mathlib infrastructure not yet present, so existence is asserted
-    as a named axiom pending that infrastructure. -/
--- Ref: [majid2002] A Quantum Groups Primer (Cambridge UP), §5
-axiom CategoricalQExtDeriv.exists_axiom (C : Type u) [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C] :
-    Nonempty (CategoricalQExtDeriv C)
-
-/-- **Existence of the categorical q-exterior derivative** (conditional on
-    `CategoricalQExtDeriv.exists_axiom`). -/
+    **Scope.** This shows the structure is inhabited in every braided monoidal
+    category, so the former axiom was consistent. It also shows existence is
+    cheap: `CategoricalQExtDeriv` places no law on `d` (no `d ≫ d = 0`, no
+    Leibniz rule) and no compatibility between `π_V` and `d`, so it does not
+    pin down a q-exterior derivative. A non-trivial `d_q` needs those laws in
+    the structure. -/
 theorem CategoricalQExtDeriv.exists
     (C : Type u) [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] [CategoryTheory.BraidedCategory C] :
     Nonempty (CategoricalQExtDeriv C) :=
-  CategoricalQExtDeriv.exists_axiom C
+  ⟨{ frobHopf := QOU.TrivialWitness.unitFrobHopf C
+     d_classical := CategoryTheory.CategoryStruct.id _
+     proj_V := CategoryTheory.CategoryStruct.id _
+     q := 1
+     qinv := 1
+     q_mul_qinv := mul_one 1
+     proj_V_idem := CategoryTheory.Category.comp_id _ }⟩
 
 end QOU

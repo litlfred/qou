@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-ph-9302246v1
-doc_title: "arXiv:hep-ph/9302246v1 11 Feb 1993"
+doc_title: "Massive Spin-1 Field Chiral Lagrangian from an Extended Nambu-Jona-Lasinio Model of QCD"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.982
 latex_coverage_ratio: 1.0
+doc_brief: "Massive Spin-1 Field Chiral Lagrangian from an Extended Nambu-Jona-Lasinio Model of QCD — We present a calculation of the coupling constants in the massive spin-1 ﬁeld chiral Lagrangian to chiral"
 ---
 []{#1 label="1"}
 

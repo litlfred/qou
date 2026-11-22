@@ -13,9 +13,12 @@
   "pageStart": 14,
   "pageEnd": 14,
   "contains": [
-    "library/kirbycal/blocks/prose-page-014"
+    "library/kirbycal/blocks/prose-page-014",
+    "library/kirbycal/blocks/prop-page-014-01",
+    "library/kirbycal/blocks/cor-page-014-02",
+    "library/kirbycal/blocks/prop-page-014-03"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/kirbycal",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/kirbycal",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kirbycal/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kirbycal/manifest.jsonld",
   "provenance": "ingested"
 }

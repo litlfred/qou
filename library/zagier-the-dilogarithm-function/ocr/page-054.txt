@@ -1,0 +1,55 @@
+56 Don Zagier
+
+The higher coefficients are given by a formula essentially the same as in the
+case r = 1, except that the previous expression of the form I[A(u)| (2)
+with I[ | defined by equation (30) or (31) must now be replaced by its multi-
+dimensional generalization
+
+vont 5uAu ‘A (u)du  ~ y (2)
+am)” r
+n=0
+
+5H(0),
+
+where A is given by (30) and Az denotes the Laplacian with respect to the
+quadratic form uAut.
+We now use the proposition to classify the modular f4,8,¢ when r = 1.
+
+Theorem. The only (A, B,C) € Q4 xQxQ for which f4,5,c(z) is a modular
+form are those given in Table 1.
+
+The basic idea of the proof is that, if f(z) = F(q) is a modular form
+of weight k on some group I’, then the function g(z) = z~*f(—1/z) is also
+a modular form (on the group SI'S, where S = ({>')) and hence has an
+expansion as z — 0 of the form aoq”° +aiq"! +--+ for some rational exponents
+no < my < +--+ and non-zero algebraic coefficients ao, a1, ... . In particular
+we have F(e~*) = f(ie/2m) = (2mi/e)* ao ear no/e 4 Ole e-ke-an*m/e) and
+hence log F(e~*) = —4n?nge~! — kloge + ¢ + O(e%) for all N > 0 ase
+tends to 0, where c = log((27i)*ap). Comparing this with the expansion of
+log Fa,p,c(e~*) = log Fa,p(e7 *) - Cé as given in equation (35), we see that
+if fa,e,c(z) is a modular form of weight k then
+
+(i) the weight k must be 0 (i.e. fa,8,c(z) must be a modular function);
+(ii) the number c_1(A, B) must be 7? times a rational number;
+
+(iii) the number co(A, B) must be the logarithm of an algebraic number;
+(iv) the number c;(A, B) must be a rational number (namely, C); and
+(v) the numbers c;(A,B) must vanish for all j > 2.
+
+The conditions (ii)—(iv) are useless for numerical work, since the rationals lie
+dense in R, but condition (v) gives infinitely many constraints on the two real
+numbers A and B and can be used to determine their possible values. This
+approach was already used by Terhoeven in 1994 to prove a weaker version
+of the theorem, namely, that the only values of A € Qt for which fa.o,c is
+modular for some C' € Q are 1/2, 1 and 2. (See [36], where, however, the details
+of the calculation are not given.) To do this, Terhoeven computed c;(A,B) up
+to j = 2 using the method (c) above, as developed in his earlier joint paper [31].
+If fa.o,c is to be modular for some C’, then the number c2(A,0) must vanish.
+We have c2(A,0) = P(A, Q)/(A+Q-— AQ) for a certain polynomial P(A, Q)
+with rational coefficients (given after Proposition 5), where Q is the root
+of Q + Q4 = 1 in (0,1). By looking at the graph of the function 6(Q) =
+
+P( ne Q) on the interval (0,1), we find numerically that it has a simple
+
+zero at Q, = (3 — V/5)/2, a double zero at Qy = 1/2, a simple zero at Q3 =
+

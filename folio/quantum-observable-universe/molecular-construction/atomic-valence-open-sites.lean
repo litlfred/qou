@@ -1,4 +1,4 @@
--- Ref: [manuscript] Ch. 12, §atomic-valence-open-sites
+-- Ref: [leitner2026] Ch. 12, §atomic-valence-open-sites
 -- Valence and lone pairs as open bonding sites
 
 namespace QOU.Molecular

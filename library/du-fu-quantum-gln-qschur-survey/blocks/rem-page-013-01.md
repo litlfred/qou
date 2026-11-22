@@ -1,0 +1,1 @@
+(1) Some commuting relations between the ei and fi and the quantum Serre relations give rise to the braid relations (b) and (c). (2) Using the notation in [17], Ci corresponds to C′ si, and Ts = v−1Tsi.

@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-nucl-th-0006014v1
-doc_title: "arXiv:nucl-th/0006014v1 9 Jun 2000"
+doc_title: "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn)"
 section_id: sec-004-32-charge-independence-breaking
 section_title: "Charge independence breaking"
 section_number: 3.2
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.986
 latex_coverage_ratio: 0.993
+doc_brief: "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn) — 56 sections: Front matter; Introduction; The model"
 ---
 The major cause of CIB in the $NN$ interaction is pion mass splitting. Based upon the Bonn Full Model for the $NN$ interaction, the CIB due to pion mass splitting has been calculated carefully and systematically in Ref. [@LM98b].
 

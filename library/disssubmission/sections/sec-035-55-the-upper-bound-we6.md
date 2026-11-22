@@ -1,6 +1,6 @@
 ---
 doc_id: disssubmission
-doc_title: "I NAUGURAL -D ISSERTATION T ANNAKIAN C ATEGORIES OF P ERVERSE S HEAVES ON A BELIAN V ARIETIES"
+doc_title: "Tannakian categories of perverse sheaves on abelian varieties"
 section_id: sec-035-55-the-upper-bound-we6
 section_title: "The upper bound W(E6)"
 section_number: 5.5
@@ -8,6 +8,7 @@ pages: 123-127
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
 toc_source: inferred
+doc_brief: "Tannakian categories of perverse sheaves on abelian varieties — 52 sections: Front matter; Introduction; Some commonly used notations"
 ---
 115
 In particular, it follows that v ∧[Y] = 0 for all vectors v ∈H4(X,Z) of the
@@ -141,79 +142,46 @@ that the general ﬁbre of the Prym morphism
 R5 −→A4
 has dimension two. In studying this Prym morphism, E. Izadi has observed
 in [61, cor. 4.9] that for general x ∈X(C), among all the Prym-embedded
-118
-Chapter 5 – A family of surfaces
-curves precisely 27 are contained in the surface Y = Yx = Θ ∩Θx. This
-number suggests a relationship with the E6-lattice in the cohomology of this
-surface. Recall from [22] that the dual lattice E∗
-6 has precisely 27 pairs of
+118 Chapter 5 — A family of surfaces
+
+curves precisely 27 are contained in the surface Y = Y, = O©,. This
+number suggests a relationship with the E¢-lattice in the cohomology of this
+surface. Recall from [22] that the dual lattice Eg has precisely 27 pairs of
 minimal vectors, with norm 4/3. It turns out that the fundamental classes of
-Prym-embedded curves deﬁne such minimal vectors and are related to the
-glue vector λ = k+e ∈L with components k ∈K∗and e ∈E6(−1)∗that we
+Prym-embedded curves define such minimal vectors and are related to the
+glue vector A =k+e € L with components k € K* and e € Eg(—1)* that we
 studied in the proof of proposition 5.18.
-LEMMA 5.19. The above glue vector λ = k + e can be taken to be the
+
+LEMMA 5.19. The above glue vector A = k +e can be taken to be the
 fundamental class
-[ ˜C] ∈H2(Y,Z)+ ∼= L(2)
-of any Prym-embedded curve ˜C ⊂Y, and in this case the vector e ∈E6(−1)∗
-is a minimal vector with the norm b(e,e) = −4/3.
-Proof. Any cohomology class λ ∈H2(Y,Z)+ can be written uniquely
+[C] € H°(Y,Z)* & L(2)
+of any Prym-embedded curve C C Y, and in this case the vector e € Es(—1)*
+
+is a minimal vector with the norm b(e,e) = —4/3.
+
+Proof. Any cohomology class A € H?(Y,Z)+ can be written uniquely
 in the form
-λ = α +β
-with
-α ∈H2(X,Q), β ∈H2(X,Q)⊥⊂H2(Y,Q)+
-and such a class deﬁnes a glue vector iff α /∈H2(X,Z). The integrality
-of α can be checked via the Gysin morphism for the embedding i : Y ,→X
-since i!(λ) = α ∪[Θ]2 ∈H6(X,Q) is the image of α under the Lefschetz
+
+A=a+8 with a€H?(X,Q), Be H?(X,Q)1 Cc A’7(Y,Q)t
+and such a class defines a glue vector iff a ¢ H*(X,Z). The integrality
+of @ can be checked via the Gysin morphism for the embedding i: Y  X
+
+since i\(A) = aU [@]* € H®(X,Q) is the image of @ under the Lefschetz
 isomorphism in the following commutative diagram.
-H2(X,Q)
-∼=
-/
-i∗
-'P
-P
-P
-P
-P
-P
-P
-H6(X,Q)
-H2(Y,Q)+
-i!
-7n
-n
-n
-n
-n
-n
-n
-H2(X,Z)
-'P
-P
-P
-P
-P
-P
-P
-?
-O
-/ H6(X,Z)
-?
-O
-H2(Y,Z)+
-7n
-n
-n
-n
-n
-n
-n
-?
-O
-Now by [13, sect. 12.2] the fundamental class λ = α +β ∈H2(Y,Q)+ of a
-Prym-embedded curve satisﬁes
-α ∪[Θ]2 = i!(λ) = [Θ]3/3 /∈H6(X,Z)
+
+HP(Y,Q)*
+
+H?(X,Q) H®(X,Q)
+
+H?(X,Z) H°(X,Z)
+
+H?(Y,Z)*
+Now by [13, sect. 12.2] the fundamental class A = a + B € H?(Y,Q)* ofa
+Prym-embedded curve satisfies
+aU[OP = (A) = [O)7/3 ¢ H°(X,Z)
 and hence indeed provides a glue vector for our lattices. It also follows from
 the above that
-degY(α2) = degX(α2 ∪[Θ]2) = degX([Θ]4/9) = 8/3
-where the last equality is due to the Poincar´e formula. Furthermore, by
-deﬁnition λ ∈H2(Y,Q) is the class of a Prym-embedded curve ˜C ⊂Y and
+degy(a”) = degy(a*U[@}*) = degy([@]*/9) = 8/3
+
+where the last equality is due to the Poincaré formula. Furthermore, by
+definition A ¢ H?(Y,Q) is the class of a Prym-embedded curve € Cc Y and

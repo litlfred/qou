@@ -1,0 +1,1 @@
+The R-matrix of U † A′(g) is given by R = ΠΘ, where Π acts on a tensor product V ⊗ W of A′-free weight modules by Πv ⊗ w = x ⟨µ,ν⟩ v ⊗ w where µ and ν are weights of the weight vectors v and w respectively. Moreover we have (a) ∆(a ∗ ) = ∆(op)(a) ∗ , (b) R∗ = (R21) −1 , (c) v acts as the scalar x −⟨λ,λ+2ρ⟩ on an irreducible highest weight module with highest weight λ.

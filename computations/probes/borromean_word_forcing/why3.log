@@ -1,0 +1,49 @@
+n=3 maxlen=6: nodes 281, 0s, {6: {'pure_zero_lk_all_deletions_trivial': 16, 'brunnian': 4, 'examples': ["s0s1's0s1's0s1'", "s0's1s0's1s0's1", "s1s0's1s0's1s0'", "s1's0s1's0s1's0"]}}
+n=4 maxlen=6: nodes 2,217, 0s, {4: {'pure_zero_lk_all_deletions_trivial': 8, 'brunnian': 0, 'examples': []}, 6: {'pure_zero_lk_all_deletions_trivial': 80, 'brunnian': 0, 'examples': []}}
+n=5 maxlen=6: nodes 9,977, 0s, {4: {'pure_zero_lk_all_deletions_trivial': 24, 'brunnian': 0, 'examples': []}, 6: {'pure_zero_lk_all_deletions_trivial': 348, 'brunnian': 0, 'examples': []}}
+n=6 maxlen=6: nodes 31,673, 0s, {4: {'pure_zero_lk_all_deletions_trivial': 48, 'brunnian': 0, 'examples': []}, 6: {'pure_zero_lk_all_deletions_trivial': 1056, 'brunnian': 0, 'examples': []}}
+n=4 maxlen=8: nodes 25,527, 0s, {4: {'pure_zero_lk_all_deletions_trivial': 8, 'brunnian': 0, 'examples': []}, 6: {'pure_zero_lk_all_deletions_trivial': 80, 'brunnian': 0, 'examples': []}, 8: {'pure_zero_lk_all_deletions_trivial': 824, 'brunnian': 0, 'examples': []}}
+n=4 maxlen=10: nodes 335,517, 2s, {4: {'pure_zero_lk_all_deletions_trivial': 8, 'brunnian': 0, 'examples': []}, 6: {'pure_zero_lk_all_deletions_trivial': 80, 'brunnian': 0, 'examples': []}, 8: {'pure_zero_lk_all_deletions_trivial': 824, 'brunnian': 0, 'examples': []}, 10: {'pure_zero_lk_all_deletions_trivial': 9968, 'brunnian': 0, 'examples': []}}
+    n=4 nodes 2,000,000 13s
+    n=4 nodes 4,000,000 27s
+n=4 maxlen=12: nodes 4,915,107, 33s, {4: {'pure_zero_lk_all_deletions_trivial': 8, 'brunnian': 0, 'examples': []}, 6: {'pure_zero_lk_all_deletions_trivial': 80, 'brunnian': 0, 'examples': []}, 8: {'pure_zero_lk_all_deletions_trivial': 824, 'brunnian': 0, 'examples': []}, 10: {'pure_zero_lk_all_deletions_trivial': 9968, 'brunnian': 0, 'examples': []}, 12: {'pure_zero_lk_all_deletions_trivial': 124672, 'brunnian': 0, 'examples': []}}
+    n=4 nodes 2,000,000 16s
+    n=4 nodes 4,000,000 30s
+    n=4 nodes 6,000,000 45s
+    n=4 nodes 8,000,000 61s
+    n=4 nodes 10,000,000 76s
+    n=4 nodes 12,000,000 91s
+    n=4 nodes 14,000,000 108s
+    n=4 nodes 16,000,000 125s
+    n=4 nodes 18,000,000 143s
+    n=4 nodes 20,000,000 159s
+    n=4 nodes 22,000,000 175s
+    n=4 nodes 24,000,000 190s
+    n=4 nodes 26,000,000 206s
+    n=4 nodes 28,000,000 222s
+    n=4 nodes 30,000,000 239s
+    n=4 nodes 32,000,000 255s
+    n=4 nodes 34,000,000 273s
+    n=4 nodes 36,000,000 288s
+    n=4 nodes 38,000,000 302s
+    n=4 nodes 40,000,000 318s
+    n=4 nodes 42,000,000 333s
+    n=4 nodes 44,000,000 348s
+    n=4 nodes 46,000,000 366s
+    n=4 nodes 48,000,000 381s
+    n=4 nodes 50,000,000 398s
+    n=4 nodes 52,000,000 413s
+    n=4 nodes 54,000,000 429s
+    n=4 nodes 56,000,000 445s
+    n=4 nodes 58,000,000 461s
+    n=4 nodes 60,000,000 477s
+    n=4 nodes 62,000,000 494s
+    n=4 nodes 64,000,000 511s
+    n=4 nodes 66,000,000 528s
+    n=4 nodes 68,000,000 543s
+    n=4 nodes 70,000,000 559s
+    n=4 nodes 72,000,000 573s
+    n=4 nodes 74,000,000 588s
+    n=4 nodes 76,000,000 603s
+    n=4 nodes 78,000,000 619s
+n=4 maxlen=14: nodes 78,055,297, 620s, {4: {'pure_zero_lk_all_deletions_trivial': 8, 'brunnian': 0, 'examples': []}, 6: {'pure_zero_lk_all_deletions_trivial': 80, 'brunnian': 0, 'examples': []}, 8: {'pure_zero_lk_all_deletions_trivial': 824, 'brunnian': 0, 'examples': []}, 10: {'pure_zero_lk_all_deletions_trivial': 9968, 'brunnian': 0, 'examples': []}, 12: {'pure_zero_lk_all_deletions_trivial': 124672, 'brunnian': 0, 'examples': []}, 14: {'pure_zero_lk_all_deletions_trivial': 1650448, 'brunnian': 1232, 'examples': ["s0s0s1s2's1s0's1s2's2's1's0s1's2s1'", "s0s0s1s2's1s0's2's1's1's0s2s1's2s1'", "s0s0s1s2's1s0's2's1's1's2s0s1's2s1'", "s0s0s1s2's1s2's0's1's1's0s2s1's2s1'", "s0s0s1s2's1s2's0's1's1's2s0s1's2s1'"]}}

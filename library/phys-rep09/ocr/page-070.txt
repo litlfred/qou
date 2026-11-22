@@ -1,0 +1,69 @@
+220 S. Blanes et al. / Physics Reports 470 (2009) 151-238
+5.9. Magnus integrators for nonlinear differential equations
+
+The success of Magnus methods applied to the numerical integration of linear systems has motivated several attempts to
+adapt the schemes for solving time dependent nonlinear differential equations. For completeness we present some recently
+proposed generalizations of Magnus integrators. We consider two different problems: (i) a nonlinear matrix equation
+defined in a Lie group, and (ii) a general nonlinear equation to which the techniques of Section 3.4 can be applied.
+
+5.9.1. Nonlinear matrix equations in Lie groups
+As we have already mentioned, the strategy adopted by most Lie-group methods for solving the nonlinear matrix
+differential equation (139),
+
+Y=A(L,Y)Y, YO =%E¥Y
+
+defined in a Lie group 9, whilst preserving its Lie group structure, is to lift Y(t) from % to the underlying Lie algebra g
+(usually with the exponential map), then formulate and numerically solve there an associated differential equation, and
+finally map the solution back to 9. In this way, the discretization procedure works in a linear space rather than in the Lie
+group. In particular, the idea of the so-called Runge-Kutta-Munthe-Kaas class of schemes is to approximate the solution of
+the associated differential equation in the Lie algebra g by means of a classical Runge-Kutta method [59,179,180].
+
+To generalize Magnus integrators when A = A(t, Y), an important difference with respect to the linear case is that, now,
+multivariate integrals depend also on the value of the (unknown) variable Y at quadrature points. This leads to implicit
+methods and nonlinear algebraic equations in every step of the integration [181], which in general cannot compete in
+efficiency with other classes of geometric integrators such as splitting and composition methods.
+
+An obvious alternative is just to replace the integrals appearing in the nonlinear Magnus expansion developed in
+Section 3.3 by affordable quadratures, depending on the particular problem. If, for instance, we use Euler’s method to
+approximate the first term in (142), 2'"I(h) = hA(O, Yo) + @(h?) and 2/2! is discretized with the midpoint rule, we get
+the second order scheme
+
+hs
+v2) = hA (5. ely) = 2Pl(hy + 0(n?)
+
+Y; =e”Yp. (304)
+
+The same procedure can be carried out at higher orders, consistently discretizing the integrals appearing in 2!"!(h) for
+m > 2 [99].
+
+5.9.2. The general nonlinear problem
+In principle, it is possible to adapt all methods built for linear problems to the general nonlinear non-autonomous
+equation (159)
+
+x’ = f(t, x),
+or equivalently, the operator differential equation (160),
+
+fore ot, =
+a? 7 fy) Y= Xo.
+
+As we pointed out in Section 3.4, there are two problematic aspects when designing practical numerical schemes based on
+Magnus expansion in the nonlinear case. The first one is how to compute or approximate the truncated Magnus expansion
+(or its action on the initial conditions). The second one is how to evaluate the required Lie transforms. For example, to
+compute the Lie transform exp(tLy)) acting on y is equivalent to solving the autonomous differential equation x’ = f(x) at
+t = hwith x(0) = y, or x(t) = exp(tLtx,))Xo where Xp = y can be considered as a set of coordinates.
+
+Very often, the presence of Lie brackets in the exponent leads to fundamental difficulties, since the resulting vector
+fields usually have very complicated structures. Sometimes, however, this problem can be circumvented by using the same
+techniques, leading to commutator-free Magnus integrators in the linear case. In any case, one should bear in mind that the
+action of the exponentials in the methods designed for the linear case has to be replaced by their corresponding maps.
+Alternatively, if the method is formulated in terms of Lie transforms, the order of the exponentials has to be reversed,
+according to Eq. (155).
+
+Next we illustrate how to numerically solve the problem
+
+x’ = f, (t,x) + f(t, x) (305)
+
+using the scheme (299) with (303) and the coefficients aj, bj taken from MN¢-4 in Table 1.
+Let us consider the Duffing equation
+
+q’ +eq +q°—q=dcos(wt) (306)

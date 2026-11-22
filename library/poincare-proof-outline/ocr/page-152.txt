@@ -1,0 +1,68 @@
+have V y. V w. set-order A yw A 7 (A B € unit-disc. p BAW B) Ay XO A
+(4 y € unit-disc. w y) A (A x € unit-disc. y 2)
+— (4 BE unit-disc. point-between-sets p B w)
+(is ?P A X0)
+proof (rule wlog-positive-x-azis[where P=?P])
+show A € unit-disc
+by fact
+next
+show X0 € unit-disc
+by fact
+next
+show A # X0
+using (X0 # A» by simp
+next
+fix Muv
+let ?M = x. moebius-pt M x
+let ?Mu = ?Muand ?Mv = ?Mv
+assume hip: unit-disc-fiz M u € unit-disc v € unit-disc u 4 v
+?P ?Mu ?Mv
+show ?Puv
+proof safe
+fix pyry
+assume set-order u p w 7 (4 BEunit-disc. p BA w B) pv
+y € unit-disc w y x € unit-disc yp x
+
+let ?My = X'".3 X.g XA PMX =X!
+let ?Mp =A X35 Xb XA PMX =X!
+
+obtain My where My = ?My by simp
+obtain My where My) = ?Mw by simp
+
+have My ?Mv
+using (yp v> using (My = ?My»
+by blast
+moreover
+have = (4 B €unit-disc. My B \ My B)
+using (7 (4 Beunit-disc. yp B A w B)»
+using (My = ?My) «My = ?Mw»
+by (metis hip(1) moebius-pt-invert unit-disc-fiz-discl unit-disc-fiz-moebius-inv)
+moreover
+have 4 y € unit-disc. My y
+using <y € unit-discy «py y» «My = ?My» <unit-disc-fix M)
+by auto
+moreover
+have set-order ?Mu ?Mp ?Mw
+proof ((rule balll)+, rule imp!)
+fix Mz My
+assume Mz € unit-disc My € unit-disc ?My Mz A ?MwW My
+then obtain z y where py tA ?Max= MrypyA ?My = My
+by blast
+
+hence « € unit-disc y € unit-disc
+using «Mz € unit-discy «My € unit-disc) (unit-disc-fix M>
+by (metis moebius-pt-comp-inv-left unit-disc-fiz-discl wnit-disc-fiz-moebius-inv)+
+
+hence poincare-between u x y
+using <set-order u yp w»
+using (Mz € unit-disc» «My © unit-discy) «p & A ?M ax = May oy A ?My = My
+by blast
+
+then show poincare-between ?Mu Mx My
+using «pz A ?Max= Mx wyA ?My = My
+using (x € unit-disc> (y € unit-disc> (u € unit-disc» «unit-disc-fix M»
+using unit-disc-fir-moebius-preserve-poincare-between by blast
+
+qed
+
+hence set-order ?7Mu Mp My

@@ -3,13 +3,14 @@
  "doc_id": "arxiv-alg-geom-9705010v1",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "30ab8d0cc2d8f1aea8bd2c88419325f2533856ffc6b8217a385c5ac1fc6d70ab",
   "file": "9705010v1.pdf"
  },
  "provenance": {
-  "title": "Proceedings of Symposia in Pure Mathematics",
-  "authors": "Volume 00, 1997",
+  "title": "Seiberg-Witten Integrable Systems",
+  "authors": "Ron Y. Donagi",
   "arxiv": {
    "id": "alg-geom/9705010",
    "version": "1",
@@ -20,9 +21,43 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
-  "formalization_candidates": 0
+  "candidates": 1,
+  "by_kind": {
+   "proposition": 1
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 1
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  }
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "It was observed in [GKMMM] that the curves obtained in [KLTY], [AF] for the pure G = SU(n) theory are precisely the spectral curves of the periodic Toda system.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-023-pure-n2-sym.md (p. 31-31)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-023-pure-n2-sym.md",
+   "section_title": "Pure N=2 SYM",
+   "pages": "31-31",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-023-pure-n2-sym.md (p. 31-31)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-023-01",
+   "block_iri": "library/arxiv-alg-geom-9705010v1/blocks/prop-sec-023-01",
+   "claim_id": "arxiv-alg-geom-9705010v1#prop-sec-023-01"
+  }
+ ]
 }

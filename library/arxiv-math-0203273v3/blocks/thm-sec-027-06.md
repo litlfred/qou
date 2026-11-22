@@ -1,0 +1,1 @@
+5. The proreductive envelope of an afﬁne k-group H is of ﬁnite type over k (resp. ﬁnite dimensional) if and only if H is of ﬁnite type over k (resp. ﬁnite dimensional) and the prounipotent radical of H is of dimension ≤1.

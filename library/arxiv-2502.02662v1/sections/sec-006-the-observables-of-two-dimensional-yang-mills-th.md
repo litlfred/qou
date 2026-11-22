@@ -7,10 +7,11 @@ section_number: null
 pages: 9-10
 source_pdf: 2502.02662v1.pdf
 source_sha256: 3f87983ce379a8d6
-doc_brief: "The String Dual to Two-dimensional Yang-Mills Theory Revisited — We propose that chiral two-dimensional Yang-Mills theory on a Riemann surface X is dual to a deformed stationary subsector of the"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.968
-latex_coverage_ratio: 0.994
+latex_coverage_ratio: 1.0
+doc_brief: "The String Dual to Two-dimensional Yang-Mills Theory Revisited — We propose that chiral two-dimensional Yang-Mills theory on a Riemann surface X is dual to a deformed stationary subsector of the"
 ---
 []{#YMObservables label="YMObservables"} Two-dimensional Yang-Mills theory is invariant under area-preserving diffeomorphisms [@Witten:1991we] and therefore has no local observables. It is a prototypical example of an area dependent quantum field theory [@Runkel:2018uls], which is a mild generalization of a topological quantum field theory.
 

@@ -1,0 +1,52 @@
+24 Oberwolfach Report 28/2012
+
+Corks and Exotic Smooth Structures of 4-Manifolds
+CAGRI KARAKURT
+
+It is known that any two simply connected homotopy equivalent closed smooth
+4-manifolds differ by a surgery along a contractible codimension 0 sub-manifold
+so-called cork. Understanding gauge theoretical properties of corks play a crucial
+role in smooth classification of 4-manifolds. In this talk I will present a joint work
+with S. Akbulut on calculation of relative Ozsvaéth-Szabé invariants of an infinite
+family corks.
+
+Unlinking numbers of links and their families
+SLAVIK JABLAN
+
+The main topic of this talk is the Bernhard-Jablan Conjecture [2, 8, 9] and
+recent results related to it. The term “link” will be used for both knots and links.
+In this setting we have the following definition:
+
+Definition 1.
+
+a) The unlinking number u(D) of a link diagram D is the minimal number of
+crossing changes on the diagram required to obtain a diagram representing
+an unlink.
+
+b) The um(L) of a link L in R is the minimum of u(D) over all minimal
+crossing number diagrams D representing L.
+
+c) The unlinking number u(L) of a link L in R° is the minimum of u(D)
+over all diagrams D representing L.
+
+Computing unlinking number is usually very difficult and complex problem.
+Therefore we define BJ-unlinking number which is computable due to the algo-
+rithmic nature of its definition.
+
+Definition 2. For a given crossing v of a diagram D representing link L let Dy
+denote the link diagram obtained from D by switching crossing v.
+a) The BJ-unlinking number ug j(D) of a diagram D is defined recursively
+in the following manner:
+(1) upy(D) = 0 iff D represents an unlink.
+(2) ups(D) = 1+min upys(D,) where the first minimum is taken over all
+
+crossings v of D and the second minimum is taken over all minimal
+diagrams of a link represented by D, for which the value is already
+defined.
+
+b) The BJ-unlinking number ugs(L) of a link L upy(L) = min ups(D)
+
+where the minimum is taken over all minimal diagrams D representing L.
+
+Bernhard [2] in 1994 and independently Jablan in 1995, conjectured that for
+every link L we have that u(Z) = ugj(L).

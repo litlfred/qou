@@ -8,14 +8,14 @@
   "pages": 9,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:26Z",
+  "mtime": "2026-11-15T11:07:55Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "BULLETIN (New Series) OF THE",
+  "title": "A polynomial invariant for knots via von Neumann algebras",
   "authors_raw": "AMERICAN MATHEMATICAL SOCIETY",
   "title_lines": [
    "BULLETIN (New Series) OF THE"
@@ -33,15 +33,16 @@
    "text": "BULLETIN (New Series) OF THE",
    "corroborated_by": [],
    "browser_print": false
-  }
+  },
+  "title_prev": "BULLETIN (New Series) OF THE"
  },
  "toc": [
   {
    "level": 1,
-   "title": "-iyr",
+   "title": "- 1 -iyr",
    "page": 7,
    "source": "inferred",
-   "number": null,
+   "number": "1",
    "confidence": 0.6,
    "evidence": [
     "style"
@@ -167,20 +168,20 @@
    "level": 1,
    "page_start": 1,
    "page_end": 7,
-   "n_chars": 16745,
-   "n_words": 3735,
+   "n_chars": 16740,
+   "n_words": 3733,
    "label_start": "103",
    "label_end": "109"
   },
   {
-   "id": "sec-000--iyr",
-   "number": null,
-   "title": "-iyr",
+   "id": "sec-000-1---1--iyr",
+   "number": "1",
+   "title": "- 1 -iyr",
    "level": 1,
    "page_start": 7,
    "page_end": 9,
-   "n_chars": 5328,
-   "n_words": 1359,
+   "n_chars": 5334,
+   "n_words": 1360,
    "label_start": "109",
    "label_end": "111"
   }
@@ -200,6 +201,16 @@
    "items": []
   },
   "sections": 2,
-  "chars_total": 22073
+  "chars_total": 22074,
+  "furniture_lines_stripped": 0,
+  "headings_tidied": [
+   {
+    "title": "-iyr",
+    "page": 7,
+    "action": "rejoined",
+    "as": "- 1 -iyr",
+    "why": "opens in lower case"
+   }
+  ]
  }
 }

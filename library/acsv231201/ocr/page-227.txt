@@ -1,0 +1,36 @@
+7.4 Geometry 209
+method. Ultimately, we typically obtain an asymptotic formula of the form
+®,,(r) = w" - jr PP . (c@) + O(n) , (7.20)
+
+where again w varies smoothly with * away from quadratic degeneracies and
+certain cone boundaries, and the value w(?) is constant over a set of # of
+dimension k — 1. Since a smooth point is a special case of a transverse multiple
+point with & = 1, (7.19) is a special case of (7.20).
+
+4 N
+oN R, Ne
+— R
+P v,
+Ve x
+
+Figure 7.22 The logarithmic gradients of two transversely intersecting sheets at a
+critical point p decompose the first quadrant of R? into three cones.
+
+Example 7.39. Figure 7.22 illustrates two transversely intersecting smooth
+curves defined by the vanishing of two-dimensional functions Q)(x,y) and
+Q>(x,y) that meet at a single point p. There are two one-dimensional strata
+S; = V(Q)) \ pand S2 = V(Qz) \ p, containing points on exactly one of the
+curves, together with a zero-dimensional stratum containing only p. Given ¢
+there is at most one critical point z; on each stratum S ;, and hg is quadratically
+nondegenerate for any # in the positive quadrant. As f varies from a = (1,0)
+to y = (0, 1) it crosses through two “bad” directions, given by the logarithmic
+gradients Ny = (Viog Q1)(p) and Nz = (Viog Q2)(p) shown emanating from p.
+The zero-dimensional stratum p remains fixed, but the critical points z; move
+smoothly with 7 on their respective strata S ;. As * crosses the log-normal di-
+rection N> the critical point z2 collides with p, then when # crosses N; the
+point 2; collides with p. The positive quadrant in R? can thus be broken into
+three regions: the cone R; defined by the positive real span of a and No, the
+cone R2 defined by N2 and Nj, and the cone R3 defined by N, and y. It turns
+out that nz, = nz, = 1 on all regions, but np is equal to one on R2 and zero
+on R; U R3. Accordingly, the asymptotic expansion expressed in (7.2) changes
+across the boundaries of these regions. 4

@@ -8,12 +8,12 @@ pages: 1-2
 source_pdf: 1909.06744v1.pdf
 source_sha256: 82e3980da78c07da
 toc_source: inferred
+doc_brief: "Springer correspondence for symmetric spaces — This is a survey on the Springer correspondence for symmetric spaces."
 ---
 §1. Introduction
 §2. Springer correspondene for GLn
 §3. Springer correspondence for reductive groups
 §4. The interpretation via perverse sheaves
-1
 2
 §5. The generalized Springer correspondence
 §6. Geometric realization of Kostka polynomials

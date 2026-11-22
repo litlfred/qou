@@ -58,7 +58,7 @@ it (§3b-cond item 5).
 
 Scope-(a): a conditional reduction. It excludes no ingredient and refutes no route.
 
--- Ref: [manuscript] docs/coordination/s5-so3-keystone.md
+-- Ref: [leitner2026] docs/coordination/s5-so3-keystone.md
 -/
 
 namespace QOU.BraidKnot.Keystone

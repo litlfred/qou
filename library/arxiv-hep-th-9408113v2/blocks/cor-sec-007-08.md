@@ -1,0 +1,1 @@
+k X n=1 L         sin π k + 2 sin (n + 1)π k + 2     2   = 3k k + 2 · π2 6 . The interesting applications of the Corollary 4 to the study of thermodynamic proper- ties of the XXX model one can ﬁnd in [KR1] and [BR]. Dilogarithm identities Exercises to Section 2.1.

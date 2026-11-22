@@ -1,0 +1,122 @@
+KNOT-QUIVER CORRESPONDENCE FOR DOUBLE TWIST KNOTS
+
+PHYS. REV. D 108, 106023 (2023)
+
+Fo | Fe | Fe | | Fe | Fi Fy | Fx
+Fi | uy | Rk | R ~ | Rk LR R, | R
+Flrailafin itr : : T, | 7
+Fi | Ri [| Ti | un | : : Ry | Ry
+CK(p-m) =| — ~ —
+
+LR os U; R | R
+Fl | RT RT ; T; T;
+Fi | Ri | TT | RE : : U, | Ry
+Fi Ri Ti | RI : : RL | U,
+
+(9)
+
+where X' stands for transposition of matrix X, the row
+matrices
+
+Fy=(l-l 1-1), Fy =(00,...0.0),
+
+of size 1 x 2m and Fo = 0. Let X;, denote the following set
+of 2m x 2m matrices:
+
+Xp = {Up Og Re Res Ter Th, (10)
+
+where k = 1,2...p. All these matrices can be recursively
+obtained using
+
+X,=Xp1+2k-IJ V k>2,
+
+where J is a matrix of size 2m x 2m where all the elements
+are one. So, knowing the set X, is sufficient to determine
+the full quiver matrix CK(?.-™),
+
+It appears that the set X, for the simplest twist knot
+K(p = 1,-m = -1) = 4, will suffice to obtain X, for
+double twist knots K(p,—m) as K(p,—-m) = K*(m,—p)
+(K* denotes mirror image of the knot K). However, our
+matrix conjecture assumes p>m. Hence, our explicit
+computations of set X, for m = 2, 3 is not derivable from
+the CK(P-),
+
+In the following sections, we give some examples to
+validate our proposition and conjecture. Specifically, we
+work out the X; set matrices for double twist knots
+K(m,—m) for m = 1, 2, 3. This set is sufficient to obtain
+the explicit quiver presentations for all the double twist
+knots K(p,—m) where m = 1, 2, 3.
+
+A. Knot-quiver correspondence for K(p,- 1)
+
+K(p,—1) are known in the literature as ‘twist knots’
+which is the simplest class of double twist knots. In this
+case, we fix the parameter m= 1 and vary the other
+parameter p. The simplest example, we consider p = 1,
+ie., K(1,-1) = 4; knot. Using Eq. (8), we obtained the
+quiver form of 4; as
+
+S } (1) dst gq Pdo 2d dD dy 225
+
+dytetds=r
+
+J(4159) =
+
+x (734°),
+PP )a (PP )a (GP a(PiP)a (C32) a,
+2d) d3—4dyd3—d3-+-dy—2dpdy-+d}-+2ds—~2dyds-+2dyds_
+
+xq
+
+Thus, the quiver matrix
+
+0 |-1-1/ 0 0
+—1|-2 -2]-1 -l
+ch=}|-1)/-2-1} 0 0
+
+o;-1 071 ~=1
+oO };-1 0/1 2
+
+Similarly, we obtained other matrices for p = 2, 3 ice.,
+
+0 -1 -l 0 0 -1 -l 0 0
+-1 —2 -2 -1 -l —2 -2 -1 -l
+-1 —2 -1 0 0 -1 -l 0 0
+0 -1 0 1 1 0 0 1 1
+C= 0 -1 0 1 2 1 1 2 2
+-1 —2 -1 0 1 0 0 1 1
+-1 —2 -1 0 1 0 1 2 2
+0 -1 0 1 2 1 3 3
+0 -1 0 1 2 1 3 4
+oO | -1 -1 | 0 0 | -1 -1} 0 o | -1 -1] 0 0
+[2 2 7-1-1] 2 2p a | 2 a] at
+-1 | -2 -1 | 0 o | -1 -1}| 0 o | -1 -1[ 0 0
+o | -1 0 11 0 0 11 0 0 11
+o | -1 0 12 It 2.2 lot 2.2
+[2 1/0 1 0 0 1 1 0 0 11
+cs}-1] -2 -1 | 0 1 oo. 22 lot 22
+o | -1 0 1 2 12/3 3 2 2 [3 3
+o | -1 0 12 12/3 4] 3 3 | 4 4
+-1[-2 -1] 0 1 oo. 23 2 2 | 3 3
+-1 | -2 -1 | 0 1 oo. 203 203 | 4 4
+o | -1 0 1 2 1 2/])3 4])3 4]5 5
+o | -1 0 1 2 12/3 4 ]3 4 ]5 6
+
+These three examples confirm our conjecture for m = 1.
+For clarity, the explicit quiver matrix for any twist knot
+K(p, -1) is
+
+Fo | Fx | Fe Fy | Fe Fy | Fi
+Fo | Ur | Rk | Re RL R RR
+Fi | RT UO, T; T, : : qT, T,
+Fi | RT | TE | uy | Rk : Ry Ry
+CHP) _ : ~ 2 =
+FL | RT U; R, | OR,
+Fi | RT | | RP : T; T;
+Fe LRT | tl | Re Uy | Re
+Fi | RT | Ti | RE R, | U,
+(11)
+
+106023-5

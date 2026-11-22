@@ -10,7 +10,8 @@ source_sha256: 371611f719e6f53c
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.976
-latex_coverage_ratio: 0.964
+latex_coverage_ratio: 0.953
+doc_brief: "arXiv:math/0203206v1 [math.QA] 20 Mar 2002 — We give a pedagogical survey of those aspects of the abstract representation theory of quantum groups which are related to the Tannaka-Krein"
 ---
 Suppose that $(A,\Delta)$ is a discrete aqg with counit $\varepsilon$ and coinverse $S$. We now show that the semisimple tensor $*$-categories $\mathrm{Rep}_f (A,\Delta)$ and $\mathrm{Corep}_f (\hat{A},\hat{\Delta} )$ have conjugates, and provide a conjugate object for every non-zero object.
 

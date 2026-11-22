@@ -1,13 +1,15 @@
 ---
 doc_id: yuasa-rims-kokyuroku-2163-05
-doc_title: "Twist formulas for one-row colored A» webs and sl; tails of (2, 2m)-torus links"
+doc_title: "Twist formulas for one-row colored A_2 webs and sl_3 tails of (2,2m)-torus links"
 section_id: page-009
 section_title: "Page 9"
-section_number: null
 pages: 9-9
+pdf_page: 9
 source_pdf: yuasa-rims-kokyuroku-2163-05.pdf
 source_sha256: fa2a585b45c2185d
-toc_source: undetermined
+text_source: ocr
+granularity: page
+doc_brief: "Twist formulas for one-row colored A_2 webs and sl_3 tails of (2,2m)-torus links — 11 sections: Page 1; Page 2; Page 3"
 ---
 Definition 4.3 (the one-row colored s[3 tail of a link). The one-row colored sls colored
 Jones polynomial {FB (D}n of a link L is zero stable if there exists a formal power series

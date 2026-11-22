@@ -10,7 +10,8 @@ source_sha256: a5097e763dd89d06
 toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.979
-latex_coverage_ratio: 1.0
+latex_coverage_ratio: 0.989
+doc_brief: "Edge universality in Floquet sideband spectra — We show that, for non-interacting fermions under a monochromatic phase drive (Tien– Gordon regime), the outgoing sideband occupations at a sharp Fermi"
 ---
 Consider a scatterer driven by two commensurate tones at frequencies $\Omega$ and $2\Omega$, with amplitudes $A_1$ and $A_2$. The time-dependent gauge phase becomes $$\phi(t) = A_1\sin(\Omega t) + A_2\sin(2\Omega t + \varphi),$$ and the Floquet scattering amplitudes involve products of Bessel functions (or, more generally, Fourier coefficients of $e^{i\phi(t)}$) that depend on both $A_1$ and $A_2$. The resulting correlator $C=S^*NS^T$ still has a spectral edge near the largest populated sideband, but the edge geometry now depends on two parameters.
 

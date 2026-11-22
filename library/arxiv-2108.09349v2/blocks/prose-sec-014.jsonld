@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-2108.09349v2/blocks/prose-sec-014",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Coordinates for the space of positive angle structures",
-  "pageStart": 17,
-  "pageEnd": 18,
-  "text": "../sections/sec-014-42-coordinates-for-the-space-of-positive-angle-s.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2108.09349v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2108.09349v2",
+  "title": "The triangulations are veering",
+  "pageStart": 16,
+  "pageEnd": 17,
+  "text": "../sections/sec-014-41-the-triangulations-are-veering.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2108.09349v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2108.09349v2/manifest.jsonld",
   "provenance": "ingested"
 }

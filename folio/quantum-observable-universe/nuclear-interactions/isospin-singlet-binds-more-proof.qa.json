@@ -1240,7 +1240,24 @@
         "reviewed_at": "2026-08-24T19:33:25.640Z",
         "reviewed_sha": "5951b6c26fdcf9ae3c4da4cb5904cd0f881e7e30"
       }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ef0c2a8061fc",
+          "ts": "9fb3273c7a07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:56:10.081Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "notes": "pass with caveat: 2z−h=(q⁴+1)/(q(q²+1)) checked. μ₋=q²/(q²+1)²>0 used but not stated. The statement block's md:41-42 \"nature agrees\" is an empirical comparison in the proposition body"
+      }
     ]
   },
-  "updated_at": "2026-08-24T19:33:25.640Z"
+  "updated_at": "2026-11-15T21:56:10.081Z"
 }

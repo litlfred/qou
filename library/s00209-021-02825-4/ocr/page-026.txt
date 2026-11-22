@@ -1,0 +1,63 @@
+1384 J. Leake
+
+Lemma 6.11 Fix A, a € Nj, a linear operator T € Hom(V (A), V(@)), and any open circu-
+lar regions Cy,...,Cm, Bi, ..-, Bn S ce!. The following are equivalent.
+
+(i) T maps (C, x-+ +X Cm)-stable polynomials to weakly (By x- ++ x Bm)-stable polynomials.
+(ii) One of the following holds:
+
+(a) T maps (Cy x «++ x Cn)-stable polynomials to nonzero (By x +++ X Byy)-stable
+polynomials.
+
+(b) T = po- w for some weakly (By x --+ X By)-stable polynomial po € V(a) and
+some linear functional wy.
+
+Proof By appropriate SL2(C) action, we can assume WLOG that Cy, = By = D, the unit
+disc, for all k € [m].
+
+(i) => (ii). We show that if (a) is not the case, then (b) must hold. It follows from (i) that
+T maps D’’-stable polynomials to (possibly identically zero) D’-stable polynomials. So, if
+(a) is not the case, we have that T(p) = 0 for some D’-stable polynomial p € V(A).
+
+The rest of the argument is essentially the proof of necessity found in [1] for Theorem 1.1.
+Since the set of nonzero D”-stable polynomials is open in V (A), there is some ball B(p) C
+V(A) centered at p such that B(p) contains only D”-stable polynomials. So, T[B(p)] is an
+open set in the image of T containing 0 and otherwise consisting of D’”-stable polynomials.
+Therefore, the image of T is a vector space consisting of D’"-stable polynomials. Lemma
+4.12 (and appropriate SL2(C) action) then implies the image of T is of dimension < 1, and
+(b) follows.
+
+(ii) > (i). If (b) holds, then (i) is immediate. Otherwise, fix p € V(A) such that p is
+D’"-stable. For all n € N, define:
+
+Pn i= p(l—n")xy, y1, Ln! )xo, yo... C2! )Xm, Ym)
+
+So, Pn is D’”-stable for all n, and limy-+o0 Pn = p Coefficient-wise. By (ii), T (pp) is D’”-
+stable for all n, and by continuity, T(p) = limy—oo T (pn). Hurwitz’s theorem then implies
+T (p) is either identically zero or D’-stable. o
+
+This lemma then yields the following corollaries to Theorem 6.2. Applying the necessary
+maps to convert Symb to Symb zz as discussed above, these results give precisely the Borcea—
+Brandén characterization proven in Theorem 1.1 and more generally in Theorem 6.3 of [1].
+In particular, Corollary 6.12 can be seen as a unification of the complex characterization
+results of [1].
+
+Corollary 6.12 Fix 4,a@ € Nj, a linear operator T € Hom(V(A), V(q@)), and any open
+circular regions C,,..., Cin. The following are equivalent.
+
+(i) T preserves weak (C, x +++ X Cm)-stability.
+
+(ii) One of the following holds:
+
+(a) Symb(T) is (Cy XX Gn) x (Cy xX +++ X Cyp)-stable.
+(b) T = po- w for some weakly (C, x «++ X Cy)-stable polynomial po € V(a) and
+some linear functional wy.
+
+Proof The result follows from the Lemma 6.11 and Theorem 6.2 applied to an operator
+T which maps (Cy x +++ x Cy)-stable polynomials to nonzero (Cy x --- x Cy,,)-stable
+polynomials. Oo
+
+Corollary 6.13 Fix A, € Nj and a linear operator T € Hom(V(A), V(a)). T preserves
+weak stability iff one of the following holds:
+
+D Springer

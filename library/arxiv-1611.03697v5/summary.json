@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1611.03697v5",
  "source_sha256": "3d7e5a14a079c8c5",
- "brief": "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY — We study a class of Riemann-Hilbert problems arising naturally in Donald son-Thomas theory.",
- "extended": "**RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY**\n\n51 pp, 49 sections.\n\n**Abstract.** We study a class of Riemann-Hilbert problems arising naturally in Donald son-Thomas theory. In certain special cases we show that these problems hav e unique solutions which can be written explicitly as products of gamma functions. We brieﬂy explain c onnections with Gromov- Witten theory and exact WKB analysis.\n\n**Outline.** 1 Introduction; Plan of the paper; Acknowledgements; 2 BPS structures: initial definitions; 2.2 Donaldson-Thomas invariants; 2.3 Poisson algebraic torus; 2.4 Twisted torus; 2.5 Ray diagram; 2.6 Further terminology; 2.7 BPS automorphisms; 2.8 Doubling construction; 2.9 A basic example: the Kronecker quiver; 3 Summary of the contents of the paper; 3.1 The Riemann-Hilbert problem; 3.2 Solution in the uncoupled case; 3.3 Variations of BPS structure; 3.4 Tau functions; 3.5 Tau function in the uncoupled case\n\n**Extracted claims (proposals, not verified).**\n- Theorem 3.2: Let (Z, Γ , Ω) be a ﬁnite, uncoupled, integral BPS structure. Suppose that ξ∈ T\n- Theorem 3.4: Let (Γ , Zp, Ω p) be a framed, miniversal variation of ﬁnite, uncoupled, inte gral BPS\n- Theorem 5.3: Let (Z, Γ , Ω) be a ﬁnite, uncoupled, integral BPS structure. Suppose that ξ∈ T\n- Theorem 5.5: Let (Γ , Zp, Ω p) be a framed, miniversal variation of ﬁnite, uncoupled, inte gral BPS\n- Proposition 4.1: Let (Γ , Z, Ω) be a convergent BPS structure, and ∆ ⊂ C∗ a convex sector. For\n- Proposition 4.2: Suppose that (Γ , Z, Ω) is ray-ﬁnite, generic and integral. Then for any ray",
+ "brief": "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY — We study a class of Riemann-Hilbert problems arising naturally in Donaldson-Thomas theory.",
+ "extended": "**RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY**\n\n*TOM BRIDGELAND*\n\n51 pp, 56 sections.\n\n**Abstract.** We study a class of Riemann-Hilbert problems arising naturally in Donaldson-Thomas theory. In certain special cases we show that these problems have unique solutions which can be written explicitly as products of gamma functions. We brieﬂy explain connections with Gromov- Witten theory and exact WKB analysis.\n\n**Outline.** Front matter; 1 Introduction; Plan of the paper; Acknowledgements; 2 BPS structures: initial definitions; 2.1 Definition and terminology; 2.2 Donaldson-Thomas invariants; 2.3 Poisson algebraic torus; 2.4 Twisted torus; 2.5 Ray diagram; 2.6 Further terminology; 2.7 BPS automorphisms; 2.8 Doubling construction; 2.9 A basic example: the Kronecker quiver; 3 Summary of the contents of the paper; 3.1 The Riemann-Hilbert problem; 3.2 Solution in the uncoupled case; 3.3 Variations of BPS structure",
  "tokens": {
   "brief": 36,
-  "extended": 391
+  "extended": 232
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -27,91 +32,91 @@
   {
    "id": "sec-003-2-bps-structures-initial-definitions",
    "title": "BPS structures: initial definitions",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-004-21-definition-and-terminology",
+   "title": "Definition and terminology",
    "pages": "3-4"
   },
   {
-   "id": "sec-004-22-donaldson-thomas-invariants",
+   "id": "sec-005-22-donaldson-thomas-invariants",
    "title": "Donaldson-Thomas invariants",
    "pages": "4-4"
   },
   {
-   "id": "sec-005-23-poisson-algebraic-torus",
+   "id": "sec-006-23-poisson-algebraic-torus",
    "title": "Poisson algebraic torus",
    "pages": "4-5"
   },
   {
-   "id": "sec-006-24-twisted-torus",
+   "id": "sec-007-24-twisted-torus",
    "title": "Twisted torus",
    "pages": "5-5"
   },
   {
-   "id": "sec-007-25-ray-diagram",
+   "id": "sec-008-25-ray-diagram",
    "title": "Ray diagram",
    "pages": "5-6"
   },
   {
-   "id": "sec-008-26-further-terminology",
+   "id": "sec-009-26-further-terminology",
    "title": "Further terminology",
    "pages": "6-7"
   },
   {
-   "id": "sec-009-27-bps-automorphisms",
+   "id": "sec-010-27-bps-automorphisms",
    "title": "BPS automorphisms",
    "pages": "7-8"
   },
   {
-   "id": "sec-010-28-doubling-construction",
+   "id": "sec-011-28-doubling-construction",
    "title": "Doubling construction",
    "pages": "8-9"
   },
   {
-   "id": "sec-011-29-a-basic-example-the-kronecker-quiver",
+   "id": "sec-012-29-a-basic-example-the-kronecker-quiver",
    "title": "A basic example: the Kronecker quiver",
    "pages": "9-9"
   },
   {
-   "id": "sec-012-3-summary-of-the-contents-of-the-paper",
+   "id": "sec-013-3-summary-of-the-contents-of-the-paper",
    "title": "Summary of the contents of the paper",
    "pages": "9-9"
   },
   {
-   "id": "sec-013-31-the-riemann-hilbert-problem",
+   "id": "sec-014-31-the-riemann-hilbert-problem",
    "title": "The Riemann-Hilbert problem",
    "pages": "9-10"
   },
   {
-   "id": "sec-014-32-solution-in-the-uncoupled-case",
+   "id": "sec-015-32-solution-in-the-uncoupled-case",
    "title": "Solution in the uncoupled case",
    "pages": "10-11"
   },
   {
-   "id": "sec-015-33-variations-of-bps-structure",
+   "id": "sec-016-33-variations-of-bps-structure",
    "title": "Variations of BPS structure",
    "pages": "11-12"
   },
   {
-   "id": "sec-016-34-tau-functions",
+   "id": "sec-017-34-tau-functions",
    "title": "Tau functions",
    "pages": "12-13"
   },
   {
-   "id": "sec-017-35-tau-function-in-the-uncoupled-case",
+   "id": "sec-018-35-tau-function-in-the-uncoupled-case",
    "title": "Tau function in the uncoupled case",
    "pages": "13-14"
   },
   {
-   "id": "sec-018-36-two-classes-of-examples",
+   "id": "sec-019-36-two-classes-of-examples",
    "title": "Two classes of examples",
    "pages": "14-14"
   },
   {
-   "id": "sec-019-i-topological-strings",
+   "id": "sec-020-i-topological-strings",
    "title": "(i) Topological strings.",
-   "pages": "14-14"
-  },
-  {
-   "id": "sec-020-4-the-riemann-hilbert-problem",
-   "title": "The Riemann-Hilbert problem",
    "pages": "14-14"
   },
   {
@@ -120,137 +125,167 @@
    "pages": "14-15"
   },
   {
-   "id": "sec-022-41-analytic-bps-automorphisms",
+   "id": "sec-022-4-the-riemann-hilbert-problem",
+   "title": "The Riemann-Hilbert problem",
+   "pages": "15-15"
+  },
+  {
+   "id": "sec-023-41-analytic-bps-automorphisms",
    "title": "Analytic BPS automorphisms",
    "pages": "15-17"
   },
   {
-   "id": "sec-023-42-statement-of-the-problem",
+   "id": "sec-024-42-statement-of-the-problem",
    "title": "Statement of the problem",
    "pages": "17-18"
   },
   {
-   "id": "sec-024-43-remarks-on-the-formulation",
+   "id": "sec-025-43-remarks-on-the-formulation",
    "title": "Remarks on the formulation",
    "pages": "18-19"
   },
   {
-   "id": "sec-025-44-symmetries-of-the-problem",
+   "id": "sec-026-44-symmetries-of-the-problem",
    "title": "Symmetries of the problem",
    "pages": "19-20"
   },
   {
-   "id": "sec-026-45-null-vectors-and-uniqueness",
+   "id": "sec-027-45-null-vectors-and-uniqueness",
    "title": "Null vectors and uniqueness",
    "pages": "20-22"
   },
   {
-   "id": "sec-027-46-tau-functions",
+   "id": "sec-028-46-tau-functions",
    "title": "Tau functions",
    "pages": "22-23"
   },
   {
-   "id": "sec-028-5-explicit-solutions-in-the-finite-uncoupled-cas",
+   "id": "sec-029-5-explicit-solutions-in-the-finite-uncoupled-cas",
    "title": "Explicit solutions in the finite, uncoupled case",
    "pages": "23-23"
   },
   {
-   "id": "sec-029-51-doubled-a1-example",
+   "id": "sec-030-51-doubled-a1-example",
    "title": "Doubled A1 example",
-   "pages": "23-27"
+   "pages": "23-24"
   },
   {
-   "id": "sec-030-54-tau-function-in-the-uncoupled-case",
+   "id": "sec-031-52-solution-in-the-doubled-a1-case",
+   "title": "Solution in the doubled A1 case",
+   "pages": "24-26"
+  },
+  {
+   "id": "sec-032-53-the-finite-uncoupled-case",
+   "title": "The finite uncoupled case",
+   "pages": "26-27"
+  },
+  {
+   "id": "sec-033-54-tau-function-in-the-uncoupled-case",
    "title": "Tau function in the uncoupled case",
    "pages": "27-29"
   },
   {
-   "id": "sec-031-6-geometric-case-gromov-witten-invariants",
+   "id": "sec-034-6-geometric-case-gromov-witten-invariants",
    "title": "Geometric case: Gromov-Witten invariants",
    "pages": "29-29"
   },
   {
-   "id": "sec-032-61-gopakumar-vafa-invariants",
+   "id": "sec-035-61-gopakumar-vafa-invariants",
    "title": "Gopakumar-Vafa invariants",
    "pages": "29-30"
   },
   {
-   "id": "sec-033-62-torsion-sheaf-bps-invariants",
+   "id": "sec-036-62-torsion-sheaf-bps-invariants",
    "title": "Torsion sheaf BPS invariants",
-   "pages": "30-33"
+   "pages": "30-31"
   },
   {
-   "id": "sec-034-7-quadratic-differentials-and-exact-wkb-analysis",
+   "id": "sec-037-63-formal-computation-of-the--function",
+   "title": "Formal computation of the -function",
+   "pages": "31-33"
+  },
+  {
+   "id": "sec-038-7-quadratic-differentials-and-exact-wkb-analysis",
    "title": "Quadratic differentials and exact WKB analysis",
    "pages": "33-35"
   },
   {
-   "id": "sec-035-72-voros-symbols",
+   "id": "sec-039-72-voros-symbols",
    "title": "Voros symbols",
    "pages": "35-36"
   },
   {
-   "id": "sec-036-a1-introductory-remarks",
+   "id": "sec-040-appendix-a-variations-of-bps-structure",
+   "title": "Appendix A. Variations of BPS structure",
+   "pages": "36-36"
+  },
+  {
+   "id": "sec-041-a1-introductory-remarks",
    "title": "A.1. Introductory remarks",
    "pages": "36-37"
   },
   {
-   "id": "sec-037-a2-formal-completions",
+   "id": "sec-042-a2-formal-completions",
    "title": "A.2. Formal completions",
    "pages": "37-38"
   },
   {
-   "id": "sec-038-a3-lie-algebra-and-associated-group",
+   "id": "sec-043-a3-lie-algebra-and-associated-group",
    "title": "A.3. Lie algebra and associated group",
    "pages": "38-39"
   },
   {
-   "id": "sec-039-a4-products-over-rays",
+   "id": "sec-044-a4-products-over-rays",
    "title": "A.4. Products over rays",
    "pages": "39-40"
   },
   {
-   "id": "sec-040-a5-deforming-the-central-charge",
+   "id": "sec-045-a5-deforming-the-central-charge",
    "title": "A.5. Deforming the central charge",
    "pages": "40-40"
   },
   {
-   "id": "sec-041-a6-variations-of-bps-structure",
+   "id": "sec-046-a6-variations-of-bps-structure",
    "title": "A.6. Variations of BPS structure",
    "pages": "40-41"
   },
   {
-   "id": "sec-042-a7-behaviour-of-bps-invariants",
+   "id": "sec-047-a7-behaviour-of-bps-invariants",
    "title": "A.7. Behaviour of BPS invariants",
    "pages": "41-43"
   },
   {
-   "id": "sec-043-appendix-b-convergent-bps-structures",
+   "id": "sec-048-appendix-b-convergent-bps-structures",
    "title": "Appendix B. Convergent BPS structures",
    "pages": "43-43"
   },
   {
-   "id": "sec-044-b1-convergent-bps-structures",
+   "id": "sec-049-b1-convergent-bps-structures",
    "title": "B.1. Convergent BPS structures",
-   "pages": "43-45"
+   "pages": "43-44"
   },
   {
-   "id": "sec-045-b3-bps-automorphisms",
+   "id": "sec-050-b2-partially-defined-automorphisms",
+   "title": "B.2. Partially defined automorphisms",
+   "pages": "44-45"
+  },
+  {
+   "id": "sec-051-b3-bps-automorphisms",
    "title": "B.3. BPS automorphisms",
    "pages": "45-47"
   },
   {
-   "id": "sec-046-b4-compositions-of-bps-automorphisms",
+   "id": "sec-052-b4-compositions-of-bps-automorphisms",
    "title": "B.4. Compositions of BPS automorphisms",
    "pages": "47-48"
   },
   {
-   "id": "sec-047-b5-birational-transformations",
+   "id": "sec-053-b5-birational-transformations",
    "title": "B.5. Birational transformations",
    "pages": "48-50"
   },
   {
-   "id": "sec-048-references",
+   "id": "sec-054-references",
    "title": "References",
    "pages": "50-51"
   }
@@ -259,8 +294,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

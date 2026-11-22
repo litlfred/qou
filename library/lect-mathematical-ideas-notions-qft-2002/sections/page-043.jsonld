@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/lect-mathematical-ideas-notions-qft-2002/sections/page-043",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Page 43",
+  "pageStart": 43,
+  "pageEnd": 43,
+  "contains": [
+    "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-043",
+    "library/lect-mathematical-ideas-notions-qft-2002/blocks/def-page-043-01",
+    "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-043-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/lect-mathematical-ideas-notions-qft-2002/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/lect-mathematical-ideas-notions-qft-2002/manifest.jsonld",
+  "provenance": "ingested"
+}

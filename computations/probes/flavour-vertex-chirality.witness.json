@@ -1,0 +1,37 @@
+{
+ "producer": "computations/probes/flavour_vertex_chirality_probe.py",
+ "bean": "qou-g0jn",
+ "arithmetic": "exact (sympy over Q(q)); no floats",
+ "q0_anchor": "none (symbolic in q)",
+ "q0Anchor": "independent",
+ "q0AnchorReason": "exact sympy arithmetic over Q(q) with q a free symbol; no substrate q0 is read or substituted",
+ "C1_equivariant_vertex_space": {
+  "commutant_dim": 2,
+  "R_in_commutant": true
+ },
+ "C2_vertex_amplitudes": {
+  "rows": {
+   "P_plus_left": {
+    "a_identity": "1/(q**2 + 1)",
+    "b_W_minus_amplitude": "q/(q**2 + 1)",
+    "abs_b_sq": "q**2/(q**2 + 1)**2"
+   },
+   "P_minus_right": {
+    "a_identity": "q**2/(q**2 + 1)",
+    "b_W_minus_amplitude": "-q/(q**2 + 1)",
+    "abs_b_sq": "q**2/(q**2 + 1)**2"
+   },
+   "W_weak_vertex": {
+    "a_identity": "(1 - q**2)/(q**3 + q)",
+    "b_W_minus_amplitude": "2/(q**2 + 1)",
+    "abs_b_sq": "4/(q**2 + 1)**2"
+   }
+  },
+  "left_right_same_magnitude": true,
+  "left_right_opposite_sign": true
+ },
+ "checks": {
+  "C1": true,
+  "prediction_same_magnitude_opposite_sign": true
+ }
+}

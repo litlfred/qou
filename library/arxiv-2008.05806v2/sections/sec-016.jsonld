@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2008.05806v2/sections/sec-016",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Polarizabilities S(0)",
+  "pageStart": 13,
+  "pageEnd": 14,
+  "contains": [
+    "library/arxiv-2008.05806v2/blocks/prose-sec-016",
+    "library/arxiv-2008.05806v2/blocks/prop-sec-016-01",
+    "library/arxiv-2008.05806v2/blocks/prop-sec-016-02",
+    "library/arxiv-2008.05806v2/blocks/prop-sec-016-03",
+    "library/arxiv-2008.05806v2/blocks/prop-sec-016-04",
+    "library/arxiv-2008.05806v2/blocks/prop-sec-016-05"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2008.05806v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2008.05806v2/manifest.jsonld",
+  "provenance": "ingested"
+}

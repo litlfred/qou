@@ -1,0 +1,33 @@
+10.2 Main results on integrals 299
+
+The multiple point at p is not an arrangement point because the lattice of
+intersections of the two curves has rank 2 while the tangent lines to the curves
+at p coincide, and thus form a rank 1 lattice. Although p is not an arrange-
+ment point, this rational function is simple enough to allow us to compute
+asymptotics of its coefficients, which we do in Example 10.69 at the end of
+this chapter. 4
+
+Figure 10.8 Two curves intersecting tangentially.
+
+10.2 Main results on integrals
+
+Having surveyed the different types of multiple points we will analyze, we
+now present our main asymptotic results. Effective methods to compute the
+set critical(?) were described in Chapter 8, generically giving a finite set
+defined by explicit algorithmically computable polynomial equalities and in-
+equalities. Thus, it is enough to compute asymptotic approximations of the
+integrals that appear in (10.1), which is done in this section, and to determine
+(at least some of) the coefficients x, in (10.1), which is done in Section 10.3.
+In the important case of linear divisors there is a simple test to determine the
+coefficients x, (which are all 0 or +1), while in general we give results only in
+the presence of minimal critical points.
+
+Our first goal is to compute integrals over relative homology generators near
+multiple points. Suppose that p is a transverse multiple point on a stratum S
+
+of codimension k, so we can write
+P(z)
+F(z) = ———___—___ 10.3
+) Oi(zy™ +++ O(zyn (103)
+
+for a vector m = (m,...,m,) of positive integer exponents and analytic func-

@@ -1,0 +1,51 @@
+Invariants in Low-Dimensional Topology and Knot Theory 17
+
+vector space HE (Y) to a 3-manifold Y. The same is needed to have a diffeomor-
+phism action on HF, or to be able to talk about the contact element in Heegaard
+Floer homology (as opposed to just being able to say whether this element is zero
+or not). In [2], Ozsvath and Szabé attempted to prove these naturality properties
+of Heegaard Floer homology. However, as noticed by the author, there is a gap in
+their proof, they did not account for the way the Heegaard surface © is embedded
+in Y. Furthermore, it is unclear whether HF depends on the choice of basepoint
+(just like the fundamental group depends on a basepoint). As an analogy, one can
+consider simplicial homology, which depends on a triangulation, and since man-
+ifolds can carry several PL structures, it is a priori unclear how to compare the
+homology computed from triangulations lying in different PL structures. In that
+case, singular homology overcomes this problem.
+
+Intuitively, one should think of HF as assigning a Z2-vector space to every
+based diagram (X, a, 3, z) with © C Y. Hence, HF is a Z-vector bundle over the
+“space of diagrams”. A priori, this might be a non-trivial bundle, one could move
+
+& around a non-trivial loop and get a non-trivial automorphism of HF (X, a, B, z).
+This would mean that, a priori, the Goeritz group of the Heegaard splitting (Y, L)
+might act non-trivially on HF(S, a, B,z).
+
+As we show in [3], Heegaard Floer homology is in fact natural and is equipped
+with a diffeomorphism action. If D and D’ are both based diagrams of the based
+3-manifold (Y,p), then we construct an isomorphism ® pp: HF(D) > HF(D’).
+These satisfy the property that ®p- pv o ®p.p = Ppp. Then the vector space
+HF(Y,p) is defined to be
+
+[[#F)/ ~.
+D
+
+where the disjoint union is taken over all based diagrams D of (Y,p) with z = p,
+and the equivalence relation ~ is defined by requiring that x € HF (D) and
+we HF(D’) are equivalent if and only if 2’ = ®p,p/(x). Given a diffeomor-
+phism d: (Y,p) > (Y’,p’), we define the diffeomorphism map d,: HF(Y, p) >
+HE(Y’,p') as follows: Let D be a diagram of (Y,p), and D’ = d(D) the corre-
+sponding diagram of (Y’,p’). Then d, maps the equivalence class of x € HF(D)
+to the equivalence class of d,(a) € HF(D), where d, on the chain level is simply
+given by the map d induces from T, 1 Tg to Ty VT g:.
+
+In fact, we provide a set of axioms for arbitrary invariants of Heegaard diagrams
+that should be satisfied in order to give rise to a functorial invariant of 3-manifolds.
+The proof proceeds by studying the bifurcations of generic 2-parameter families of
+gradient vector fields on 3-manifolds. A Heegaard diagram ar from a generic
+gradient on Y, while bifurcations of generic 1-parameter families of gradients cor-
+respond to certain generalized Heegaard moves. We assign an isomorphism to
+every classical Heegaard move, and then show that no loop of moves produces a
+non-trivial monodromy, where a move can be a diffeomorphism © — &’ that is
+
+isotopic to the identity in Y (without this, it is impossible to compare HF for

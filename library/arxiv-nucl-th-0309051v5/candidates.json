@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-nucl-th-0309051v5",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "f7ede32125662908f6b09a68c0035d68903aa891b41502b61807c7fbd3a090f3",
+  "file": "0309051v5.pdf"
+ },
+ "provenance": {
+  "title": "Reinterpretation of Faddeev-Niemi Knot in Skyrme Theory",
+  "authors": "Y. M. Cho\u2217",
+  "arxiv": {
+   "id": "nucl-th/0309051",
+   "version": "5",
+   "primary_class": null,
+   "stamp_date": "24 Sep 2004"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

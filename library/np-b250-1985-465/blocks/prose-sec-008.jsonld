@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/np-b250-1985-465/blocks/prose-sec-008",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Tadpoles and unitarity corrections",
-  "pageStart": 21,
-  "pageEnd": 24,
-  "text": "../sections/sec-008-8-tadpoles-and-unitarity-corrections.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/np-b250-1985-465",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/np-b250-1985-465",
+  "title": "D(fl )f( v' a' s' p' O) = I dx [tr { i[fl' a~'] 8vuSf(x) + V.fl 8a.Sf(x)",
+  "pageStart": 15,
+  "pageEnd": 16,
+  "text": "../sections/sec-008-dfl-f-v-a-s-p-o-i-dx-tr-ifl-a-8vusfx-vfl-8asfx.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/np-b250-1985-465/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/np-b250-1985-465/manifest.jsonld",
   "provenance": "ingested"
 }

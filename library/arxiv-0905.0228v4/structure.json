@@ -6,10 +6,12 @@
   "sha256": "1744545d0f21094990dbcd087d38a50947a3ee737f2c10f89264512848d8b721",
   "bytes": 213208,
   "pages": 19,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,18 +23,25 @@
   "doi": null,
   "title": "A CURIOUS q-ANALOGUE OF HERMITE POLYNOMIALS",
   "authors_raw": "JOHANN CIGLER AND JIANG ZENG",
-  "abstract": "Two well-known q-Hermite polynomials are the continuous and discrete q-Hermite polynomials. In this paper we consider a new family of q-Hermite polynomials and prove several curious properties about these polynomials. One st riking property is the connection with q-Fibonacci and q-Lucas polynomials. The latter relation yields a generaliz ation of the Touchard-Riordan formula.",
-  "docinfo": {
-   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20210709004909-04'00'",
-   "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  },
-  "title_prev": "A CURIOUS q-ANALOGUE OF HERMITE POL YNOMIALS",
   "title_lines": [
    "A CURIOUS q-ANALOGUE OF HERMITE POLYNOMIALS"
-  ]
+  ],
+  "abstract": "Two well-known q-Hermite polynomials are the continuous and discrete q-Hermite polynomials. In this paper we consider a new family of q-Hermite polynomials and prove several curious properties about these polynomials. One striking property is the connection with q-Fibonacci and q-Lucas polynomials. The latter relation yields a generalization of the Touchard-Riordan formula.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20210709004909-04'00'"
+  },
+  "title_raw": "A CURIOUS q-ANALOGUE OF HERMITE POLYNOMIALS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "A CURIOUS q -ANALOGUE OF HERMITE POLYNOMIALS Contents Introduction The q -Hermite polynomials H n ( x, s | q ) The rescaled discrete q -Hermite polynomials II Connection with q -Fibonacci polynomials and q -Lucas polynomials Appendix Some well-known facts A second proof of Proposition 14 Acknowledge",
+   "outline": "1. Introduction",
+   "text": "A CURIOUS q-ANALOGUE OF HERMITE POLYNOMIALS",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -40,154 +49,404 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "The q-Hermite polynomials Hn(x,s|q)",
    "page": 4,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "The rescaled discrete q-Hermite polynomials II",
    "page": 7,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "Connection with q-Fibonacci polynomials and q-Lucas polynomials",
    "page": 12,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 1,
    "title": "Appendix",
    "page": 16,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "Some well-known facts",
    "page": 16,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "A second proof of Proposition 14",
    "page": 17,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "Acknowledgement",
    "page": 19,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 1,
    "title": "References",
    "page": 19,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 510,
+   "n_words": 69,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 7,
-   "n_chars": 11183,
-   "n_words": 2392
+   "page_end": 4,
+   "n_chars": 5689,
+   "n_words": 994,
+   "label_start": "1",
+   "label_end": "4"
   },
   {
-   "id": "sec-001-3-the-rescaled-discrete-q-hermite-polynomials-ii",
+   "id": "sec-001-2-the-q-hermite-polynomials-hnxsq",
+   "number": "2",
+   "title": "The q-Hermite polynomials Hn(x,s|q)",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 7,
+   "n_chars": 5206,
+   "n_words": 1132,
+   "label_start": "4",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-002-3-the-rescaled-discrete-q-hermite-polynomials-ii",
    "number": "3",
    "title": "The rescaled discrete q-Hermite polynomials II",
    "level": 1,
    "page_start": 7,
    "page_end": 12,
-   "n_chars": 6141,
-   "n_words": 1503
+   "n_chars": 5927,
+   "n_words": 1289,
+   "label_start": "7",
+   "label_end": "12"
   },
   {
-   "id": "sec-002-4-connection-with-q-fibonacci-polynomials-and-q",
+   "id": "sec-003-4-connection-with-q-fibonacci-polynomials-and-q",
    "number": "4",
    "title": "Connection with q-Fibonacci polynomials and q-Lucas polynomials",
    "level": 1,
    "page_start": 12,
    "page_end": 16,
-   "n_chars": 5754,
-   "n_words": 1506
+   "n_chars": 5583,
+   "n_words": 1335,
+   "label_start": "12",
+   "label_end": "16"
   },
   {
-   "id": "sec-003-5-appendix",
+   "id": "sec-004-5-appendix",
    "number": "5",
    "title": "Appendix",
    "level": 1,
    "page_start": 16,
    "page_end": 16,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "16",
+   "label_end": "16"
   },
   {
-   "id": "sec-004-51-some-well-known-facts",
+   "id": "sec-005-51-some-well-known-facts",
    "number": "5.1",
    "title": "Some well-known facts",
    "level": 2,
    "page_start": 16,
    "page_end": 17,
-   "n_chars": 2069,
-   "n_words": 457
+   "n_chars": 2012,
+   "n_words": 400,
+   "label_start": "16",
+   "label_end": "17"
   },
   {
-   "id": "sec-005-52-a-second-proof-of-proposition-14",
+   "id": "sec-006-52-a-second-proof-of-proposition-14",
    "number": "5.2",
    "title": "A second proof of Proposition 14",
    "level": 2,
    "page_start": 17,
    "page_end": 19,
-   "n_chars": 2215,
-   "n_words": 519
+   "n_chars": 2172,
+   "n_words": 476,
+   "label_start": "17",
+   "label_end": "19"
   },
   {
-   "id": "sec-006-acknowledgement",
+   "id": "sec-007-acknowledgement",
    "number": null,
    "title": "Acknowledgement",
    "level": 2,
    "page_start": 19,
    "page_end": 19,
-   "n_chars": 113,
-   "n_words": 17
+   "n_chars": 112,
+   "n_words": 16,
+   "label_start": "19",
+   "label_end": "19"
   },
   {
-   "id": "sec-007-references",
+   "id": "sec-008-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 19,
    "page_end": 19,
-   "n_chars": 2786,
-   "n_words": 429
+   "n_chars": 2752,
+   "n_words": 395,
+   "label_start": "19",
+   "label_end": "19"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 9,
-  "sections": 8,
-  "chars_total": 30261,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 10,
+  "chars_total": 29963,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
@@ -200,48 +459,58 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": 0.709,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.916,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-001-3-the-rescaled-discrete-q-hermite-polynomials-ii",
+     "id": "sec-001-2-the-q-hermite-polynomials-hnxsq",
+     "title": "The q-Hermite polynomials Hn(x,s|q)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-3-the-rescaled-discrete-q-hermite-polynomials-ii",
      "title": "The rescaled discrete q-Hermite polynomials II",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.936,
+     "coverage_ratio": 0.917,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-002-4-connection-with-q-fibonacci-polynomials-and-q",
+     "id": "sec-003-4-connection-with-q-fibonacci-polynomials-and-q",
      "title": "Connection with q-Fibonacci polynomials and q-Lucas polynomials",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.93,
+     "coverage_ratio": 0.955,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-003-5-appendix",
+     "id": "sec-004-5-appendix",
      "title": "Appendix",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-004-51-some-well-known-facts",
+     "id": "sec-005-51-some-well-known-facts",
      "title": "Some well-known facts",
      "prose_ratio": 0.549,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-005-52-a-second-proof-of-proposition-14",
+     "id": "sec-006-52-a-second-proof-of-proposition-14",
      "title": "A second proof of Proposition 14",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-006-acknowledgement",
+     "id": "sec-007-acknowledgement",
      "title": "Acknowledgement",
      "prose_ratio": 0.625,
      "coverage_ratio": 1.0,
@@ -249,7 +518,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-007-references",
+     "id": "sec-008-references",
      "title": "References",
      "result": "no matching \\section"
     }

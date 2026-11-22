@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-math-0508100v6/blocks/prose-sec-015",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "A reduction of Theorem 1.6 to estimates of the cyclotomic function",
-  "pageStart": 12,
-  "pageEnd": 12,
-  "text": "../sections/sec-015-5-a-reduction-of-theorem-16-to-estimates-of-the.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0508100v6",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0508100v6",
+  "title": "A reduction of Theorem 2.2 to estimates of the cyclotomic function",
+  "pageStart": 10,
+  "pageEnd": 10,
+  "text": "../sections/sec-015-4-a-reduction-of-theorem-22-to-estimates-of-the.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0508100v6/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0508100v6/manifest.jsonld",
   "provenance": "ingested"
 }

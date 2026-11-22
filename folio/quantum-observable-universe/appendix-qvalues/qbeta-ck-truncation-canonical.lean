@@ -78,7 +78,7 @@ class QbetaCkTruncationCanonicalExists : Prop where
     closed form for the `c_{k≥3}` exists. The `sorry` IS the conjecture
     (the open Habiro-element identification), per the §3b convention for
     Lean formalisation of conjectures. -/
--- Ref: [manuscript] conj:qbeta-ck-truncation-canonical
+-- Ref: [leitner2026] conj:qbeta-ck-truncation-canonical
 --   (folio/quantum-observable-universe/appendix-qvalues/qbeta-ck-truncation-canonical.md;
 --    docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md)
 -- Ref: [jones1985] doi:10.2307/1971403 (Hopf-link Jones polynomial)

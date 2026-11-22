@@ -1,0 +1,43 @@
+5.5 Higher order terms in the expansions 131
+
+standard; see [BH86; Won01] for real phase or [Ste93] for imaginary phase.
+We have not seen the complex phase result Theorem 5.2 stated before, though
+such a result was certainly understood to be true. The remaining statements
+and proofs via complex deformation methods are new, though not surprising.
+
+Theorem 5.4.8 from the first edition has been replaced by Theorem 5.3. The
+proof has been split into two parts. The first part, involving stratified Morse
+deformations, is a standard stratified construction and is summarized in Ap-
+pendix D. The second part, deforming a chain by complexifying and manipu-
+lating the chain through complex space, is new as far as we know and spelled
+out in Section 5.4.
+
+According to B. Lamel (personal communication), intrinsic complexifica-
+tions of strata of any stratified space (see Remark 5.12) should fit together to
+form a complex stratified space, provided the (real) tangent spaces E at every
+point satisfy ENiE = {0}. This would imply that Lemma 5.11 and hence Theo-
+rem 5.3 holds for any stratified space of dimension m analytically embedded in
+C”. However, this appears to require some condition about extending the (real)
+chart maps of each stratum beyond its boundary, which can be done with A?
+and M@' but not for arbitrary stratified spaces (where the boundary might be
+a singularity of the stratum). We could not find such an argument in the exist-
+ing literature, which is why Theorem 5.3 is restricted to products of stratified
+spaces for which we have explicit complexifications.
+
+The general approach, namely to stay in the analytic category and use de-
+formations suggested by stratified Morse theory for complex spaces, is an ex-
+tension of our treatment of univariate Fourier—Laplace integrals in Chapter 4.
+The main motivation for doing things the way we have is that the analysis of
+multiple points in Chapter 10 requires us to integrate over the product of a
+chain in ‘V with an abstract simplex; when integrating terms with imaginary
+phase over manifolds with boundary, one needs a way to eliminate boundary
+terms. A result similar to Theorem 5.3 was proved in [PV 19, Theorem 4.2], via
+an approach which avoids Morse theoretic contour deformation arguments, re-
+placing these by iterated integrals and single parameter steepest descent curves.
+
+The first edition of the book assumed a strong torality hypothesis when de-
+riving asymptotics (see, e.g., Corollaries 9.2.4 and 9.2.9 there), which allowed
+use of known techniques in the case where the phase is purely imaginary and
+the contour of integration has no boundary. In the present edition this overly
+strong hypothesis has been replaced by a weaker notion for which Theorem 5.3
+has been specifically designed (see Theorem 9.12).

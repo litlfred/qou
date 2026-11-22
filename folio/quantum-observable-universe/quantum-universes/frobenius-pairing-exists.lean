@@ -29,7 +29,7 @@ LaTeX: `\label{prop:frobenius-pairing-exists}`
 
 ## References
 
-- [manuscript] §1-quantum-universes/frobenius-pairing-exists
+- [leitner2026] §1-quantum-universes/frobenius-pairing-exists
 - [kock2004] Frobenius Algebras and 2D Topological Quantum Field
   Theories (Cambridge LMS 59), Ch 2
 -/
@@ -96,7 +96,7 @@ def FrobeniusHopfData.nonDegeneratePairing
     stub, which only re-asserted that the data exists; here the *pairing
     morphism and its non-degeneracy* are produced. -/
 -- Ref: [kock2004] Frobenius Algebras and 2D TQFT, Ch 2
--- Ref: [manuscript] quantum-observable-universe/quantum-universes/frobenius-pairing-exists.md
+-- Ref: [leitner2026] quantum-observable-universe/quantum-universes/frobenius-pairing-exists.md
 noncomputable def FrobeniusHopfData.frobeniusForm_exists
     {R : Type*} [CommRing R] (qu : QuantumUniverse.{u, v} R) :
     Nonempty

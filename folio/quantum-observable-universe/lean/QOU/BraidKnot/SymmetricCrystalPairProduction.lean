@@ -52,7 +52,7 @@ namespace SymmetricCrystalPairProduction
 
 /-- Unconditional structural lemma: bar-involution acts as the
     identity on every normal form.  Direct from `bar_invariant`. -/
--- Ref: [manuscript] braids-and-knots/symmetric-crystal-pair-production
+-- Ref: [leitner2026] braids-and-knots/symmetric-crystal-pair-production
 theorem barInvolution_eq_self
     {R : Type u} [CommRing R] {q : R}
     [C : CrystalGraphRealization R q]
@@ -62,7 +62,7 @@ theorem barInvolution_eq_self
   S.bar_invariant T
 
 /-- Bar-involution-twice is the identity (corollary of involutivity). -/
--- Ref: [manuscript] braids-and-knots/symmetric-crystal-pair-production
+-- Ref: [leitner2026] braids-and-knots/symmetric-crystal-pair-production
 theorem barInvolution_idem
     {R : Type u} [CommRing R] {q : R}
     [C : CrystalGraphRealization R q]
@@ -79,7 +79,7 @@ theorem barInvolution_idem
     therefore also a Kashiwara highest-weight vector.  This is the
     Lean shadow of the bar-conjugate det-law identity and the
     structural CPT-pairing observation. -/
--- Ref: [manuscript] braids-and-knots/symmetric-crystal-pair-production
+-- Ref: [leitner2026] braids-and-knots/symmetric-crystal-pair-production
 theorem nodeOf_barInvolution_highest_weight
     {R : Type u} [CommRing R] {q : R}
     [C : CrystalGraphRealization R q]
@@ -116,7 +116,7 @@ def canonical (R : Type u) [CommRing R] (q : R)
     SymmetricCrystalPairProduction R q where
   barInvolution T := T
   bar_involutive _ := rfl
-  -- Ref: [manuscript] conj:symmetric-crystal-pair-production (§3b-cond conjectural class;
+  -- Ref: [leitner2026] conj:symmetric-crystal-pair-production (§3b-cond conjectural class;
   --      discharged here by `barInvolution := id`, not by a `sorry` and not by the conjecture)
   bar_invariant _ := rfl
 

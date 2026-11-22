@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/qt2pf5d0mn/blocks/def-sec-003-01",
+  "@type": [
+    "folio-assistant-sci:Definition",
+    "doco:Section"
+  ],
+  "kind": "definition",
+  "pageStart": 16,
+  "pageEnd": 32,
+  "text": "def-sec-003-01.md",
+  "derivedFrom": "library/qt2pf5d0mn/sections/sec-003",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/qt2pf5d0mn/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_kind": "axiom",
+    "claim_domain": "math",
+    "evidence_kind": "axiomatic-definition",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper definition in sections/sec-003-ribbon-fusion-categories.md",
+    "claim_id": "qt2pf5d0mn#def-sec-003-01",
+    "lean_status": "unformalized"
+  }
+}

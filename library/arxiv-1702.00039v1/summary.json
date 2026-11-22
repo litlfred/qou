@@ -2,11 +2,11 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1702.00039v1",
  "source_sha256": "b47ca7d1cf7b44be",
- "brief": "Gentle introduction to Soergel bimodules I: The basics NICOLAS LIBEDINSKY — This paper is the ﬁrst of a series of introductory papers on the fascinating world of Soergel bimodules.",
- "extended": "**Gentle introduction to Soergel bimodules I: The basics NICOLAS LIBEDINSKY**\n\n47 pp, 43 sections.\n\n**Abstract.** This paper is the ﬁrst of a series of introductory papers on the fascinating world of Soergel bimodules. It is combinatorial in nature and should be accessible to a broad audience. The objective of this paper is to help the reader feel comfortable calculating with Soergel bimodules and to explain some of the important open problems in the ﬁeld. The motiva- tions, history and relations to other ﬁelds will be developed in subsequent papers of this series.\n\n**Outline.** 1 Introduction; 1.1 Declaration of intent; 1.3 Acknowledgements; 2 Classical level: Coxeter systems; 2.2 Baby examples; 2.4 Generalizing the baby examples: tesselatio; 2.4.1 Tesselations of the Euclidean plane; 2.4.2 Tesselations of the hyperbolic plane; 2.5 Generalizing the baby examples: more dimen; 2.6 More examples; 2.7 Bruhat order and an important property; 3 Quantum level: Hecke algebras; 3.2 Calculations of KL bases in examples; 3.2.1 Baby example A; 3.2.2 Baby example B; 3.2.3 Example C; 3.2.4 Example D; 3.3.1 Existence",
+ "brief": "Gentle introduction to Soergel bimodules I: The basics — This paper is the ﬁrst of a series of introductory papers on the fascinating world of Soergel bimodules.",
+ "extended": "**Gentle introduction to Soergel bimodules I: The basics**\n\n*NICOLAS LIBEDINSKY*\n\n47 pp, 50 sections.\n\n**Abstract.** This paper is the ﬁrst of a series of introductory papers on the fascinating world of Soergel bimodules. It is combinatorial in nature and should be accessible to a broad audience. The objective of this paper is to help the reader feel comfortable calculating with Soergel bimodules and to explain some of the important open problems in the ﬁeld. The motiva- tions, history and relations to other ﬁelds will be developed in subsequent papers of this series.\n\n**Outline.** 1 Introduction; 1.1 Declaration of intent; 1.2 ...Bum! Explosion of the field; 1.3 Acknowledgements; 2 Classical level: Coxeter systems; 2.1 Some definitions; 2.2 Baby examples; 2.3 Generalizing the baby examples: (infinite); 2.4 Generalizing the baby examples: tesselatio; 2.4.1 Tesselations of the Euclidean plane; 2.4.2 Tesselations of the hyperbolic plane; 2.5 Generalizing the baby examples: more dimen; 2.6 More examples; 2.7 Bruhat order and an important property; 3 Quantum level: Hecke algebras; 3.1 Kazhdan-Lusztig's theory; 3.2 Calculations of KL bases in examples; 3.2.1 Baby example A",
  "tokens": {
-  "brief": 45,
-  "extended": 280
+  "brief": 40,
+  "extended": 296
  },
  "sections": [
   {
@@ -17,210 +17,245 @@
   {
    "id": "sec-001-11-declaration-of-intent",
    "title": "Declaration of intent",
-   "pages": "1-3"
+   "pages": "1-2"
   },
   {
-   "id": "sec-002-13-acknowledgements",
+   "id": "sec-002-12-bum-explosion-of-the-field",
+   "title": "...Bum! Explosion of the field",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-003-13-acknowledgements",
    "title": "Acknowledgements",
    "pages": "3-3"
   },
   {
-   "id": "sec-003-2-classical-level-coxeter-systems",
+   "id": "sec-004-2-classical-level-coxeter-systems",
    "title": "Classical level: Coxeter systems",
    "pages": "3-3"
   },
   {
-   "id": "sec-004-22-baby-examples",
-   "title": "Baby examples",
-   "pages": "3-7"
+   "id": "sec-005-21-some-definitions",
+   "title": "Some definitions",
+   "pages": "3-3"
   },
   {
-   "id": "sec-005-24-generalizing-the-baby-examples-tesselations",
+   "id": "sec-006-22-baby-examples",
+   "title": "Baby examples",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-007-23-generalizing-the-baby-examples-infinite-regul",
+   "title": "Generalizing the baby examples: (infinite) regular polygons",
+   "pages": "4-7"
+  },
+  {
+   "id": "sec-008-24-generalizing-the-baby-examples-tesselations",
    "title": "Generalizing the baby examples: tesselations",
    "pages": "7-7"
   },
   {
-   "id": "sec-006-241-tesselations-of-the-euclidean-plane",
+   "id": "sec-009-241-tesselations-of-the-euclidean-plane",
    "title": "Tesselations of the Euclidean plane",
    "pages": "7-8"
   },
   {
-   "id": "sec-007-242-tesselations-of-the-hyperbolic-plane",
+   "id": "sec-010-242-tesselations-of-the-hyperbolic-plane",
    "title": "Tesselations of the hyperbolic plane",
    "pages": "8-9"
   },
   {
-   "id": "sec-008-25-generalizing-the-baby-examples-more-dimension",
+   "id": "sec-011-25-generalizing-the-baby-examples-more-dimension",
    "title": "Generalizing the baby examples: more dimensions",
    "pages": "9-10"
   },
   {
-   "id": "sec-009-26-more-examples",
+   "id": "sec-012-26-more-examples",
    "title": "More examples",
    "pages": "10-11"
   },
   {
-   "id": "sec-010-27-bruhat-order-and-an-important-property",
+   "id": "sec-013-27-bruhat-order-and-an-important-property",
    "title": "Bruhat order and an important property",
    "pages": "11-12"
   },
   {
-   "id": "sec-011-3-quantum-level-hecke-algebras",
+   "id": "sec-014-3-quantum-level-hecke-algebras",
    "title": "Quantum level: Hecke algebras",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-015-31-kazhdan-lusztigs-theory",
+   "title": "Kazhdan-Lusztig's theory",
    "pages": "12-14"
   },
   {
-   "id": "sec-012-32-calculations-of-kl-bases-in-examples",
+   "id": "sec-016-32-calculations-of-kl-bases-in-examples",
    "title": "Calculations of KL bases in examples",
    "pages": "14-14"
   },
   {
-   "id": "sec-013-321-baby-example-a",
+   "id": "sec-017-321-baby-example-a",
    "title": "Baby example A",
    "pages": "14-14"
   },
   {
-   "id": "sec-014-322-baby-example-b",
+   "id": "sec-018-322-baby-example-b",
    "title": "Baby example B",
    "pages": "14-15"
   },
   {
-   "id": "sec-015-323-example-c",
+   "id": "sec-019-323-example-c",
    "title": "Example C",
    "pages": "15-17"
   },
   {
-   "id": "sec-016-324-example-d",
+   "id": "sec-020-324-example-d",
    "title": "Example D",
    "pages": "17-18"
   },
   {
-   "id": "sec-017-331-existence",
+   "id": "sec-021-33-proof-of-theorem",
+   "title": "Proof of Theorem ??",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-022-331-existence",
    "title": "Existence",
    "pages": "18-18"
   },
   {
-   "id": "sec-018-332-uniqueness",
+   "id": "sec-023-332-uniqueness",
    "title": "Uniqueness",
    "pages": "18-19"
   },
   {
-   "id": "sec-019-34-our-favorite-open-questions-about-hecke-algeb",
+   "id": "sec-024-333-bxxw-is-a-basis",
+   "title": "{bx}xW is a basis",
+   "pages": "19-19"
+  },
+  {
+   "id": "sec-025-34-our-favorite-open-questions-about-hecke-algeb",
    "title": "Our favorite open questions about Hecke algebras",
    "pages": "19-20"
   },
   {
-   "id": "sec-020-4-categorical-level-in-the-baby-example-a",
+   "id": "sec-026-4-categorical-level-in-the-baby-example-a",
    "title": "Categorical level in the baby example A",
    "pages": "20-20"
   },
   {
-   "id": "sec-021-41-the-objects-soergel-bimodules",
+   "id": "sec-027-41-the-objects-soergel-bimodules",
    "title": "The objects: Soergel bimodules",
    "pages": "20-22"
   },
   {
-   "id": "sec-022-42-stability-of-soergel-bimodules",
+   "id": "sec-028-42-stability-of-soergel-bimodules",
    "title": "Stability of Soergel bimodules",
    "pages": "22-22"
   },
   {
-   "id": "sec-023-421-the-crucial-phenomena",
+   "id": "sec-029-421-the-crucial-phenomena",
    "title": "The crucial phenomena",
    "pages": "22-25"
   },
   {
-   "id": "sec-024-441-step-1",
+   "id": "sec-030-441-step-1",
    "title": "Step 1",
    "pages": "25-25"
   },
   {
-   "id": "sec-025-442-step-2",
+   "id": "sec-031-442-step-2",
    "title": "Step 2",
    "pages": "25-26"
   },
   {
-   "id": "sec-026-451-indecomposables",
+   "id": "sec-032-45-soergels-categorification-theorem",
+   "title": "Soergel's categorification Theorem",
+   "pages": "26-26"
+  },
+  {
+   "id": "sec-033-451-indecomposables",
    "title": "Indecomposables",
    "pages": "26-26"
   },
   {
-   "id": "sec-027-452-how-to-produce-an-algebra-from-soergel-bimod",
+   "id": "sec-034-452-how-to-produce-an-algebra-from-soergel-bimod",
    "title": "How to produce an algebra from Soergel bimodules",
    "pages": "26-27"
   },
   {
-   "id": "sec-028-453-recovering-the-hecke-algebra",
+   "id": "sec-035-453-recovering-the-hecke-algebra",
    "title": "Recovering the Hecke algebra",
    "pages": "27-29"
   },
   {
-   "id": "sec-029-5-soergel-bimodules-and-light-leaves-in-ranks-1",
+   "id": "sec-036-5-soergel-bimodules-and-light-leaves-in-ranks-1",
    "title": "Soergel bimodules and light leaves in ranks 1 and 2",
    "pages": "29-29"
   },
   {
-   "id": "sec-030-51-soergel-category-b-for-any-coxeter-system-ove",
+   "id": "sec-037-51-soergel-category-b-for-any-coxeter-system-ove",
    "title": "Soergel category B for any Coxeter system over R",
    "pages": "29-31"
   },
   {
-   "id": "sec-031-52-drawing-morphisms-one-color",
+   "id": "sec-038-52-drawing-morphisms-one-color",
    "title": "Drawing morphisms: one color",
    "pages": "31-34"
   },
   {
-   "id": "sec-032-53-one-color-light-leaves",
+   "id": "sec-039-53-one-color-light-leaves",
    "title": "One color light leaves",
    "pages": "34-35"
   },
   {
-   "id": "sec-033-54-two-colors-light-leaves",
+   "id": "sec-040-54-two-colors-light-leaves",
    "title": "Two colors light leaves",
    "pages": "35-37"
   },
   {
-   "id": "sec-034-6-light-leaves-in-general",
+   "id": "sec-041-6-light-leaves-in-general",
    "title": "Light leaves in general",
    "pages": "37-37"
   },
   {
-   "id": "sec-035-61-adjunction",
+   "id": "sec-042-61-adjunction",
    "title": "Adjunction",
    "pages": "37-38"
   },
   {
-   "id": "sec-036-62-a-new-morphism",
+   "id": "sec-043-62-a-new-morphism",
    "title": "A new morphism",
    "pages": "38-38"
   },
   {
-   "id": "sec-037-622-examples",
-   "title": "Examples",
-   "pages": "38-38"
-  },
-  {
-   "id": "sec-038-621-the-morphism-fsr",
+   "id": "sec-044-621-the-morphism-fsr",
    "title": "The morphism fsr",
-   "pages": "38-40"
+   "pages": "38-39"
   },
   {
-   "id": "sec-039-63-path-morphisms",
+   "id": "sec-045-622-examples",
+   "title": "Examples",
+   "pages": "39-40"
+  },
+  {
+   "id": "sec-046-63-path-morphisms",
    "title": "Path morphisms",
    "pages": "40-41"
   },
   {
-   "id": "sec-040-64-the-tree-ts",
+   "id": "sec-047-64-the-tree-ts",
    "title": "The tree Ts",
    "pages": "41-43"
   },
   {
-   "id": "sec-041-65-construction-of-the-double-leaves-basis",
+   "id": "sec-048-65-construction-of-the-double-leaves-basis",
    "title": "Construction of the double leaves basis",
    "pages": "43-44"
   },
   {
-   "id": "sec-042-7-final-calculations-examples-b-c-and-d",
+   "id": "sec-049-7-final-calculations-examples-b-c-and-d",
    "title": "Final calculations: examples B, C and D",
    "pages": "44-47"
   }

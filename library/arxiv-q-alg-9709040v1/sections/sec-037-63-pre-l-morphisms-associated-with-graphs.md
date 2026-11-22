@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-q-alg-9709040v1
-doc_title: "arXiv:q-alg/9709040v1 29 Sep 1997"
+doc_title: "Deformation quantization of Poisson manifolds"
 section_id: sec-037-63-pre-l-morphisms-associated-with-graphs
 section_title: "Pre-L∞-morphisms associated with graphs"
 section_number: 6.3
@@ -8,6 +8,7 @@ pages: 23-24
 source_pdf: 9709040v1.pdf
 source_sha256: 8baf650d86c5b8ab
 toc_source: inferred
+doc_brief: "Deformation quantization of Poisson manifolds — 75 sections: Front matter; Plans; Star-products"
 ---
 For any admissible graph Γ with n vertices of the ﬁrst type, m vertices of the second type, and 2n +
 m −2 + l edges where l ∈Z, we deﬁne a linear map UΓ : ⊗nTpoly(Rd)−→Dpoly(Rd)[1 + l −n]. This map

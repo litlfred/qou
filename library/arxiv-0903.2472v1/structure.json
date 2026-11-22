@@ -8,7 +8,7 @@
   "pages": 61,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:18Z",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -27,7 +27,7 @@
    "Exact Results for Perturbative Chern-Simons Theory",
    "with Complex Gauge Group"
   ],
-  "abstract": "We develop several methods that allow us to compute all-loop partition functions in perturbative Chern-Simons theory with complex gauge group GC, sometimes in multiple ways. In the background of a non-abelian irreducible \ufb02at connection, per- turbative GC invariants turn out to be interesting topological invariants, which are very di\ufb00erent from \ufb01nite type (Vassiliev) invariants obtained in a theory with compact gauge group G. We explore various aspects of these invariants and present an example where we compute them explicitly to high loop order. We also introduce a notion of \u201carithmetic TQFT\u201d and conjecture (with supporting numerical evidence) that SL(2, C) Chern-Simons theory is an example of such a theory. CALT-68-2716",
+  "abstract": "We develop several methods that allow us to compute all-loop partition functions in perturbative Chern-Simons theory with complex gauge group GC, sometimes in multiple ways. In the background of a non-abelian irreducible ﬂat connection, per- turbative GC invariants turn out to be interesting topological invariants, which are very diﬀerent from ﬁnite type (Vassiliev) invariants obtained in a theory with compact gauge group G. We explore various aspects of these invariants and present an example where we compute them explicitly to high loop order. We also introduce a notion of “arithmetic TQFT” and conjecture (with supporting numerical evidence) that SL(2, C) Chern-Simons theory is an example of such a theory. CALT-68-2716",
   "docinfo": {
    "Title": "arXiv:0903.2472v1  [hep-th]  13 Mar 2009",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
@@ -327,7 +327,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "Two kinds of 2-loop Feynman diagrams that contribute to S(\u03c1)",
+   "title": "Two kinds of 2-loop Feynman diagrams that contribute to S(ρ)",
    "page": 5,
    "confidence": 0.9,
    "evidence": [
@@ -340,7 +340,7 @@
   {
    "kind": "table",
    "number": "1",
-   "title": "Hierarchy of di\ufb00erential equations derived from bA(\u02c6l, \u02c6m) Z(\u03b1)(M; \u210f, u) = 0",
+   "title": "Hierarchy of diﬀerential equations derived from bA(ˆl, ˆm) Z(α)(M; ℏ, u) = 0",
    "page": 21,
    "confidence": 0.8,
    "evidence": [
@@ -378,7 +378,7 @@
   {
    "kind": "figure",
    "number": "5",
-   "title": "The complex z-plane, showing poles (X\u2019s) and zeroes (O\u2019s) of \u03a6\u210f(z) at \u210f= 3",
+   "title": "The complex z-plane, showing poles (X’s) and zeroes (O’s) of Φℏ(z) at ℏ= 3",
    "page": 37,
    "confidence": 0.8,
    "evidence": [
@@ -390,7 +390,7 @@
   {
    "kind": "figure",
    "number": "6",
-   "title": "a) \ufb01gure-8 knot 41, and b) three-twist knot 52",
+   "title": "a) ﬁgure-8 knot 41, and b) three-twist knot 52",
    "page": 44,
    "confidence": 0.8,
    "evidence": [
@@ -425,7 +425,7 @@
   {
    "kind": "figure",
    "number": "7",
-   "title": "Plots of |e\u03a5(\u210f,p,u)| and its logarithm at u = 0 and \u210f= i",
+   "title": "Plots of |eΥ(ℏ,p,u)| and its logarithm at u = 0 and ℏ= i",
    "page": 55,
    "confidence": 0.8,
    "evidence": [
@@ -437,7 +437,7 @@
   {
    "kind": "figure",
    "number": "8",
-   "title": "Plots of |e\u03a5(\u210f,p,u)| and its logarithm at u = 1",
+   "title": "Plots of |eΥ(ℏ,p,u)| and its logarithm at u = 1",
    "page": 56,
    "confidence": 0.6,
    "evidence": [
@@ -448,7 +448,7 @@
   {
    "kind": "figure",
    "number": "9",
-   "title": "Poles, zeroes, and critical points of e\u03a5(\u210f,p,u) for u = 1",
+   "title": "Poles, zeroes, and critical points of eΥ(ℏ,p,u) for u = 1",
    "page": 56,
    "confidence": 0.8,
    "evidence": [
@@ -634,9 +634,10 @@
    "physical": 20,
    "label": "19",
    "source": "printed",
-   "confidence": 0.7,
+   "confidence": 0.85,
    "evidence": [
-    "printed"
+    "printed",
+    "contents"
    ]
   },
   {
@@ -810,9 +811,10 @@
    "physical": 39,
    "label": "38",
    "source": "printed",
-   "confidence": 0.7,
+   "confidence": 0.85,
    "evidence": [
-    "printed"
+    "printed",
+    "contents"
    ]
   },
   {
@@ -1027,121 +1029,193 @@
    "level": 1,
    "page_start": 1,
    "page_end": 10,
-   "n_chars": 23922,
-   "n_words": 4000,
+   "n_chars": 23295,
+   "n_words": 3888,
    "label_start": null,
    "label_end": "9"
   },
   {
-   "id": "sec-000-21-feynman-diagrams-and-arithmetic-tqft",
+   "id": "sec-000-2-perturbation-theory-around-a-non-trivial-flat",
+   "number": "2",
+   "title": "Perturbation theory around a non-trivial flat connection",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 519,
+   "n_words": 80,
+   "label_start": "9",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-001-21-feynman-diagrams-and-arithmetic-tqft",
    "number": "2.1",
    "title": "Feynman diagrams and arithmetic TQFT",
    "level": 2,
    "page_start": 10,
    "page_end": 18,
-   "n_chars": 21680,
-   "n_words": 3844,
+   "n_chars": 21625,
+   "n_words": 3820,
    "label_start": "9",
    "label_end": "17"
   },
   {
-   "id": "sec-001-221-analytic-continuation",
+   "id": "sec-002-221-analytic-continuation",
    "number": "2.2.1",
    "title": "Analytic continuation",
    "level": 3,
    "page_start": 18,
-   "page_end": 23,
-   "n_chars": 11121,
-   "n_words": 2119,
+   "page_end": 20,
+   "n_chars": 4235,
+   "n_words": 762,
    "label_start": "17",
+   "label_end": "19"
+  },
+  {
+   "id": "sec-003-222-a-hierarchy-of-differential-equations",
+   "number": "2.2.2",
+   "title": "A hierarchy of differential equations",
+   "level": 3,
+   "page_start": 20,
+   "page_end": 23,
+   "n_chars": 6807,
+   "n_words": 1336,
+   "label_start": "19",
    "label_end": "22"
   },
   {
-   "id": "sec-002-23-classical-and-quantum-symmetries",
+   "id": "sec-004-23-classical-and-quantum-symmetries",
    "number": "2.3",
    "title": "Classical and quantum symmetries",
    "level": 2,
    "page_start": 23,
    "page_end": 25,
-   "n_chars": 6867,
-   "n_words": 1232,
+   "n_chars": 6853,
+   "n_words": 1226,
    "label_start": "22",
    "label_end": "24"
   },
   {
-   "id": "sec-003-24-brane-quantization",
+   "id": "sec-005-24-brane-quantization",
    "number": "2.4",
    "title": "Brane quantization",
    "level": 2,
    "page_start": 25,
    "page_end": 27,
-   "n_chars": 5817,
-   "n_words": 1080,
+   "n_chars": 4349,
+   "n_words": 830,
    "label_start": "24",
    "label_end": "26"
   },
   {
-   "id": "sec-004-31-ideal-triangulations-of-hyperbolic-3-manifold",
+   "id": "sec-006-3-a-state-integral-model-for-perturbative-sl2mat",
+   "number": "3",
+   "title": "A state integral model for perturbative $SL(2,{\\mathbb{C}})$ Chern-Simons theory",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 1381,
+   "n_words": 233,
+   "label_start": "26",
+   "label_end": "26"
+  },
+  {
+   "id": "sec-007-31-ideal-triangulations-of-hyperbolic-3-manifold",
    "number": "3.1",
    "title": "Ideal triangulations of hyperbolic 3-manifolds",
    "level": 2,
    "page_start": 27,
-   "page_end": 33,
-   "n_chars": 14629,
-   "n_words": 2601,
+   "page_end": 32,
+   "n_chars": 11237,
+   "n_words": 2000,
    "label_start": "26",
-   "label_end": "32"
+   "label_end": "31"
   },
   {
-   "id": "sec-005-33-quantum-dilogarithm",
+   "id": "sec-008-32-hikamis-invariant",
+   "number": "3.2",
+   "title": "Hikami's invariant",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 34,
+   "n_chars": 6550,
+   "n_words": 1134,
+   "label_start": "31",
+   "label_end": "33"
+  },
+  {
+   "id": "sec-009-33-quantum-dilogarithm",
    "number": "3.3",
    "title": "Quantum dilogarithm",
    "level": 2,
-   "page_start": 33,
+   "page_start": 34,
    "page_end": 43,
-   "n_chars": 24362,
-   "n_words": 4626,
-   "label_start": "32",
+   "n_chars": 21090,
+   "n_words": 4046,
+   "label_start": "33",
    "label_end": "42"
   },
   {
-   "id": "sec-006-4-examples-and-computations",
+   "id": "sec-010-4-examples-and-computations",
    "number": "4",
    "title": "Examples and computations",
    "level": 1,
    "page_start": 43,
-   "page_end": 51,
-   "n_chars": 16520,
-   "n_words": 3140,
+   "page_end": 44,
+   "n_chars": 2785,
+   "n_words": 481,
    "label_start": "42",
+   "label_end": "43"
+  },
+  {
+   "id": "sec-011-41-numerical-verification-of-the-arithmeticity-c",
+   "number": "4.1",
+   "title": "Numerical verification of the arithmeticity conjecture",
+   "level": 2,
+   "page_start": 44,
+   "page_end": 48,
+   "n_chars": 7417,
+   "n_words": 1435,
+   "label_start": "43",
+   "label_end": "47"
+  },
+  {
+   "id": "sec-012-42-perturbative-sl2mathbbc-invariants-for-the-fi",
+   "number": "4.2",
+   "title": "Perturbative $SL(2,{\\mathbb{C}})$ invariants for the figure-8 knot complement",
+   "level": 2,
+   "page_start": 48,
+   "page_end": 51,
+   "n_chars": 6133,
+   "n_words": 1183,
+   "label_start": "47",
    "label_end": "50"
   },
   {
-   "id": "sec-007-421-quantization",
+   "id": "sec-013-421-quantization",
    "number": "4.2.1",
    "title": "Quantization",
    "level": 3,
    "page_start": 51,
    "page_end": 52,
-   "n_chars": 2973,
-   "n_words": 556,
+   "n_chars": 2966,
+   "n_words": 553,
    "label_start": "50",
    "label_end": "51"
   },
   {
-   "id": "sec-008-geometric-branch",
+   "id": "sec-014-geometric-branch",
    "number": null,
    "title": "Geometric branch",
    "level": 3,
    "page_start": 52,
    "page_end": 54,
-   "n_chars": 3412,
-   "n_words": 540,
+   "n_chars": 3398,
+   "n_words": 534,
    "label_start": "51",
    "label_end": "53"
   },
   {
-   "id": "sec-009-conjugate-branch",
+   "id": "sec-015-conjugate-branch",
    "number": null,
    "title": "Conjugate branch",
    "level": 3,
@@ -1153,27 +1227,27 @@
    "label_end": "53"
   },
   {
-   "id": "sec-010-abelian-branch",
+   "id": "sec-016-abelian-branch",
    "number": null,
    "title": "Abelian branch",
    "level": 3,
    "page_start": 54,
-   "page_end": 54,
-   "n_chars": 87,
-   "n_words": 13,
+   "page_end": 55,
+   "n_chars": 1201,
+   "n_words": 225,
    "label_start": "53",
-   "label_end": "53"
+   "label_end": "54"
   },
   {
-   "id": "sec-011-422-state-integral-model",
+   "id": "sec-017-422-state-integral-model",
    "number": "4.2.2",
    "title": "State integral model",
    "level": 3,
-   "page_start": 54,
+   "page_start": 55,
    "page_end": 61,
-   "n_chars": 16277,
-   "n_words": 2843,
-   "label_start": "53",
+   "n_chars": 15165,
+   "n_words": 2617,
+   "label_start": "54",
    "label_end": "60"
   }
  ],
@@ -1195,10 +1269,9 @@
   },
   "toc_alignment": {
    "listed_not_found": {
-    "count": 2,
+    "count": 1,
     "items": [
-     "Introduction and summary",
-     "A hierarchy of di\ufb00erential equations"
+     "Introduction and summary"
     ]
    },
    "found_not_listed": {
@@ -1206,20 +1279,18 @@
     "items": []
    },
    "page_mismatch": {
-    "count": 2,
-    "items": [
-     "A state integral model for perturbative SL(2, C) Chern-Simons theory: listed p27, found p55",
-     "A state integral model for Z(\u03c1)(M; \u210f): listed p39, found p55"
-    ]
+    "count": 0,
+    "items": []
    }
   },
-  "sections": 13,
-  "chars_total": 148247,
+  "sections": 19,
+  "chars_total": 147586,
+  "furniture_lines_stripped": 60,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "statesum.tex",
    "tex_sections": 21,
-   "overlaid": 11,
+   "overlaid": 18,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1232,7 +1303,15 @@
      "result": "no matching \\section"
     },
     {
-     "id": "sec-000-21-feynman-diagrams-and-arithmetic-tqft",
+     "id": "sec-000-2-perturbation-theory-around-a-non-trivial-flat",
+     "title": "Perturbation theory around a non-trivial flat connection",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-21-feynman-diagrams-and-arithmetic-tqft",
      "title": "Feynman diagrams and arithmetic TQFT",
      "prose_ratio": 0.944,
      "coverage_ratio": 0.998,
@@ -1240,15 +1319,23 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-001-221-analytic-continuation",
+     "id": "sec-002-221-analytic-continuation",
      "title": "Analytic continuation",
-     "prose_ratio": 0.922,
-     "coverage_ratio": 0.987,
+     "prose_ratio": 0.934,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-23-classical-and-quantum-symmetries",
+     "id": "sec-003-222-a-hierarchy-of-differential-equations",
+     "title": "A hierarchy of differential equations",
+     "prose_ratio": 0.929,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-23-classical-and-quantum-symmetries",
      "title": "Classical and quantum symmetries",
      "prose_ratio": 0.942,
      "coverage_ratio": 0.989,
@@ -1256,39 +1343,71 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-24-brane-quantization",
+     "id": "sec-005-24-brane-quantization",
      "title": "Brane quantization",
-     "prose_ratio": 0.932,
-     "coverage_ratio": 0.969,
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.953,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-31-ideal-triangulations-of-hyperbolic-3-manifold",
+     "id": "sec-006-3-a-state-integral-model-for-perturbative-sl2mat",
+     "title": "A state integral model for perturbative $SL(2,{\\mathbb{C}})$ Chern-Simons theory",
+     "prose_ratio": 0.825,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-31-ideal-triangulations-of-hyperbolic-3-manifold",
      "title": "Ideal triangulations of hyperbolic 3-manifolds",
-     "prose_ratio": 0.858,
-     "coverage_ratio": 0.978,
+     "prose_ratio": 0.935,
+     "coverage_ratio": 0.971,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-33-quantum-dilogarithm",
+     "id": "sec-008-32-hikamis-invariant",
+     "title": "Hikami's invariant",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.949,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-33-quantum-dilogarithm",
      "title": "Quantum dilogarithm",
      "prose_ratio": 0.943,
-     "coverage_ratio": 0.91,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-4-examples-and-computations",
+     "id": "sec-010-4-examples-and-computations",
      "title": "Examples and computations",
-     "prose_ratio": 0.918,
-     "coverage_ratio": 0.994,
+     "prose_ratio": 0.952,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-421-quantization",
+     "id": "sec-011-41-numerical-verification-of-the-arithmeticity-c",
+     "title": "Numerical verification of the arithmeticity conjecture",
+     "prose_ratio": 0.92,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-42-perturbative-sl2mathbbc-invariants-for-the-fi",
+     "title": "Perturbative $SL(2,{\\mathbb{C}})$ invariants for the figure-8 knot complement",
+     "prose_ratio": 0.934,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-421-quantization",
      "title": "Quantization",
      "prose_ratio": 0.915,
      "coverage_ratio": 0.993,
@@ -1296,7 +1415,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-geometric-branch",
+     "id": "sec-014-geometric-branch",
      "title": "Geometric branch",
      "prose_ratio": 0.922,
      "coverage_ratio": 0.946,
@@ -1304,7 +1423,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-conjugate-branch",
+     "id": "sec-015-conjugate-branch",
      "title": "Conjugate branch",
      "prose_ratio": 0.944,
      "coverage_ratio": 0.971,
@@ -1312,16 +1431,18 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-010-abelian-branch",
+     "id": "sec-016-abelian-branch",
      "title": "Abelian branch",
-     "prose_ratio": 0.141,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.938,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-011-422-state-integral-model",
+     "id": "sec-017-422-state-integral-model",
      "title": "State integral model",
      "prose_ratio": 0.952,
-     "coverage_ratio": 0.509,
+     "coverage_ratio": 0.523,
      "result": "overlaid",
      "converter": "pandoc"
     }

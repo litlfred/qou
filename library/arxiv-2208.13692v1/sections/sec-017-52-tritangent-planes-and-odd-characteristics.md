@@ -7,11 +7,12 @@ section_number: 5.2
 pages: 31-32
 source_pdf: 2208.13692v1.pdf
 source_sha256: 567eff9fb44ef3e5
-doc_brief: "Bring's curve: old and new — Bring’s curve, the unique Riemann surface of genus 4 with automorphism group S5, has many exceptional properties."
-duplicate_of: "s40879-023-00706-0"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.947
 latex_coverage_ratio: 0.946
+doc_brief: "Bring’s curve: old and new — Bring’s curve, the unique Riemann surface of genus 4 with automorphism group S5, has many exceptional properties."
+duplicate_of: "s40879-023-00706-0"
 ---
 []{#subsec: tritangent planes label="subsec: tritangent planes"} Recall that when we consider the canonical embedding of a curve in $\mathbb{P}^{g-1}$, the intersection with a hyperplane gives an effective element of the canonical divisor class of the curve, as it corresponds to the zero-locus of a differential on the curve. A tritangent plane is a plane that intersects the curve tangentially in three points. If a hyperplane is tangent at each intersection (i.e. the intersection is of order 2) then this naturally constructs an effective theta divisor on the curve, and moreover every such theta characteristic $\theta$ gives a hyperplane [@Celik2019]. For any sextic that is the intersection of a smooth quadric and smooth quartic in $\mathbb{P}^3$, for example Bring's curve, the 120 tritangent planes are in 1-1 correspondence with the 120 odd theta characteristics [@Harris2017 Theorem 2.2].
 

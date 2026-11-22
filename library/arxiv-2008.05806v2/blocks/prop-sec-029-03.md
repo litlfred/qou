@@ -1,0 +1,1 @@
+The prediction obtained for the diﬀerence between the magnetic polarizability of proton and neutron [11] is in agreement with experiment, but this represents only a rather weak test of Reggeon dominance, because the un- certainties in the experimental result are rather large.

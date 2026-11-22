@@ -34,10 +34,10 @@ The archimedean companion (option C's prune: a unit-modulus KZ eigenvalue is nev
 
 Base ring §7c: everything here is over a generic field `K` (matrix and polynomial identities).
 
--- Ref: [manuscript] computations/probes/colour_cubic_branch_monodromy_probe.py
+-- Ref: [leitner2026] computations/probes/colour_cubic_branch_monodromy_probe.py
 -- Ref: [kohno1987] Kohno, *Monodromy representations of braid groups and Yang–Baxter equations*,
 --      Ann. Inst. Fourier 37 (1987) — KZ monodromy factors through the Hecke algebra.
--- Ref: [manuscript] docs/canonical-derivation-cheat-sheet.md §2a
+-- Ref: [leitner2026] docs/canonical-derivation-cheat-sheet.md §2a
 -/
 
 namespace QOU.Mass.HeckeQuadraticClassicalShadow

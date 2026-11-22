@@ -1,0 +1,50 @@
+R. Eldan, O. Shamir / Journal of Functional Analysis 282 (2022) 109392
+
+a
+
+conjectured to imply concentration of Lipschitz functions. Some notable first steps to-
+wards a theory unifying those notions appear in the work of Pemantle [13], to which we
+also refer for a review of these notions.
+
+The simplest notion of negative dependence is pairwise negative-correlations, hence
+the condition that E[X;X,;] < EX;EX; for alli 4 j. This condition, however, is too weak
+to imply any nontrivial concentration bounds. For example if (Xj, ..., Xn) are distributed
+as a uniformly chosen row of the nxn Hadamard matrix, then these variables are pairwise
+independent, and therefore have nonpositive correlations. However, if A is the subset of
+combinations given by the first n/2 rows and y(x) is the Hamming distance of x to the
+set A, then Var[y(X1,...,Xn)] =Q (n?).
+
+A stronger notion which appears in the literature is negative-association: We say
+that X1,..., Xp are negatively associated if for all I,J C [n] with IM J = @ and every
+monotone functions f : {0,1}/ > R and g: {0,1}7 — R one has E[f(Xy)g(Xy)] <
+Ef(X,)Eg(X,z). It was conjectured by E. Mossel that Lipschitz functions admit sub-
+Gaussian concentration with respect to such measures.
+
+To the best of our knowledge, there are two results in this direction in the literature:
+It was shown by Peres and Pemantle that sub-Gaussian concentration of Lipschitz func-
+tions hold for measures satisfying the strong-Rayleigh property ({14]), which amounts to
+stability of the generating polynomial of the measure. More recently, Garbe and Vondrak
+([9]) showed that concentration is implied by the negative-regression property. We also
+refer to their paper for a discussion of related bounds and questions.
+
+Here, we consider the following notion of negative dependence suggested by Wagner
+[18].
+
+Definition 8. (Rayleigh measures). We say that X,..., Xn satisfy the Rayleigh property
+if for every 0 € R” and for all i,j € [n], we have
+
+B [xiXje% 8] we] < BX | BLK; (6)
+
+In other words, X14, ..., Xn, satisfies the Rayleigh property if the correlations between all
+pairs are negative even after reweighing the measure by an exponential tilt. Equivalently,
+this is the largest family that exhibits pairwise negative correlations and is closed under
+the operation of applying a magnetic field.
+
+A corollary of our main theorem is the following concentration bound for measures
+with the Rayleigh property as well as a lower bound for the entropy.
+
+Corollary 9. If X1,...,Xn satisfy the Rayleigh property, then,
+1. For any 1-Hamming-Lipschitz function p, we have
+Var[p(X1,...,Xn)] < Cn?-*,
+
+for universal constants C,c > 0.

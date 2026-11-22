@@ -1,0 +1,1 @@
+Let χ = I −I′ = −sgn(rd) (2πi)d−1 Z N Ψ(z◦)(z◦)−r◦ dz◦ z1 · · · zd−1 , (9.14) with Ψ given by (9.13). Assuming the hypotheses of Theorem 9.5 when W(r) = {w( ˆr)}, |wr (ar −χ)| →0 exponentially in |r|, uniformly as r →∞with ˆr varying over M. The fact that we can obtain explicit asymptotic expansions is a consequence of the following result.

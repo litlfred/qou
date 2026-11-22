@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2605.28781v1
-doc_title: "THE SUM-PRODUCT CONJECTURE IS FALSE FOR REAL NUMBERS"
+doc_title: "The sum-product conjecture is false for real numbers"
 section_id: sec-009-32-the-unit-lattice
 section_title: "The unit lattice"
 section_number: 3.2
 pages: 8-9
 source_pdf: 2605.28781v1.pdf
 source_sha256: eee6d535af1996ca
-doc_brief: "THE SUM-PRODUCT CONJECTURE IS FALSE FOR REAL NUMBERS — We disprove the sum-product conjecture for real numbers by con- structing arbitrarily largeA⊂R(whose elements are algebraic integers in a number"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.984
-latex_coverage_ratio: 0.809
+latex_prose_ratio: 0.738
+latex_coverage_ratio: 0.989
+doc_brief: "The sum-product conjecture is false for real numbers — We disprove the sum-product conjecture for real numbers by con- structing arbitrarily large A ⊂R (whose elements are algebraic integers in a"
 ---
 The group of units $\mathcal{O}_K^\times$ of $K$ is the set of algebraic integers $\alpha$ such that $\alpha^{-1}$ is also an algebraic integer. By Dirichlet's unit theorem (see, for example, [@Ne99 Chapter 1.7]) the group of units (modulo the roots of unity) $\mathcal{O}_K^\times/\{\pm 1\}$ can be viewed as a lattice of rank $d-1$ in $\mathbb{R}^{d}$ via the embedding $$u\mapsto (\log \mathopen{}\left| \sigma_1(u)\mathclose{}\right|,\ldots,\log \mathopen{}\left| \sigma_d(u)\mathclose{}\right|).$$ This is a lattice of rank $d-1$ inside the hyperplane $$H=\{ x\in \mathbb{R}^d : x_1+\cdots+x_d=0\}.$$ The covolume of this lattice in $H$ is $\sqrt{d}R_K$, where $R_K$ is the regulator (see [@Ne99 Chapter 1, Proposition 7.5]). We write $$B^\times(Y) = \{ \alpha \in \mathcal{O}_K^\times : \mathopen{}\left| \log\mathopen{}\left| \sigma_i(\alpha)\mathclose{}\right|\mathclose{}\right|\leq Y\textrm{ for all }1\leq i\leq d\}.$$ We note here the trivial, but crucial, fact that integers in $B^\times(Y)$ are still bounded in the additive sense also, so that $$B^\times(Y)\subseteq B^+(e^Y).$$
 

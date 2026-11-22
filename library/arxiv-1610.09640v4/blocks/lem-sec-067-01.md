@@ -1,0 +1,1 @@
+Under Setups 9.2.8 and 9.2.10, assume that the direction indica- tors ♦1 and ♦2 are both ⟨empty⟩. Fix i ∈{1, 2}. Letting the object (M1, M2) in (9.2.11) vary, we get an isomorphism τi : F ◦Ti ≃ −→T ◦F of additive bifunctors Str(C1) × Str(C2) →Cstr(B, N).

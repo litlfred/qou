@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/ki6c/blocks/lem-sec-010-05",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "title": "[34]",
+  "pageStart": 22,
+  "pageEnd": 26,
+  "text": "lem-sec-010-05.md",
+  "derivedFrom": "library/ki6c/sections/sec-010",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ki6c/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "3.9",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "both",
+    "evidence_locator": "In-paper proof in sections/sec-010-35-verifying-the-assumption-of-the-saddle-point.md (p. 22-26) citing [34]",
+    "claim_id": "ki6c#lemma:3.9",
+    "lean_status": "unformalized"
+  }
+}

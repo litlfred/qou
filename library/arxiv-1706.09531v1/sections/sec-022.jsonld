@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1706.09531v1/sections/sec-022",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Concluding Remarks",
+  "pageStart": 55,
+  "pageEnd": 73,
+  "contains": [
+    "library/arxiv-1706.09531v1/blocks/prose-sec-022"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1706.09531v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1706.09531v1/manifest.jsonld",
+  "provenance": "ingested"
+}

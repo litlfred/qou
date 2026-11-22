@@ -1,0 +1,69 @@
+circline intersects the x-axis, but we do not need that.
+
+definition intersects-a-axis-cmat :: complex-mat = bool where
+[simp]: intersects-x-axis-cmat H = (let (A, B, C, D) = H in A= 0 V (Re B)? > (Re A)?)
+
+lift-definition intersects-2-axis-clmat :: circline-mat = bool is intersects-x-axis-cmat
+done
+
+lift-definition intersects-x-azis :: circline = bool is intersects-x-axis-clmat
+proof (transfer)
+fix H1 H2
+assume hh: hermitean H1 A H1 4 mat-zero and hermitean H2 \ H2 4 mat-zero
+obtain Ai B1 C1 D1 A2 B2 C2 D2 where *: H1 = (A1, B1, C1, D1) H2 = (A2, B2, C2, D2)
+by (cases H1, cases H2, auto)
+assume circline-eq-cmat H1 H2
+then obtain k where k: k 4 0 \ H2 = cork *sm H1
+by auto
+show intersects-z-azis-cmat H1 = intersects-x-axis-cmat H2
+proof —
+have k #4 0 => (Re Al)? < (Re B1)? <-> (k * Re A1)? < (k * Re B1)?
+by (smt mult-strict-left-mono power2-eq-square semiring-normalization-rules(13) zero-less-power2)
+thus ?thesis
+using * k
+by auto
+qed
+qed
+
+lemma intersects-x-axis-mk-circline:
+assumes is-real Aand A#0V B40
+shows intersects-x-axis (mk-circline A B (cnj B) A) + A= 0 V (Re B)? > (Re A)?
+proof—
+let ?H = (A, B, (cnj B), A)
+have hermitean ?H
+using <is-real A»
+unfolding hermitean-def mat-adj-def mat-cnj-def
+using eq-cnj-iff-real
+by auto
+moreover
+have ?H 4 mat-zero
+using assms
+by auto
+ultimately
+show ?thesis
+by (transfer, transfer, auto simp add: Let-def)
+qed
+
+lemma intersects-x-axis-iff :
+assumes is-poincare-line H
+shows (3 x € unit-disc. x € circline-set H / circline-set x-axis) > intersects-x-axis H
+proof—
+obtain Ac B C Dc where *: H = mk-circline Ac B C Dc hermitean (Ac, B, C, Dc) (Ac, B, C, De) # mat-zero
+using ex-mk-circline|of H]
+by auto
+hence (cmod B)? > (emod Ac)? Ac = De
+using assms
+using is-poincare-line-mk-circline
+by auto
+
+hence H = mk-circline (Re Ac) B (cnj B) (Re Ac) hermitean (cor (Re Ac), B, (cnj B), cor (Re Ac)) (cor (Re Ac),
+B, (cnj B), cor (Re Ac)) # mat-zero
+using hermitean-elems|of Ac B C Dc] *
+by auto
+then obtain A where
+*: H = mk-circline (cor A) B (cnj B) (cor A) (cor A, B, (cnj B), cor A) € hermitean-nonzero
+by auto
+
+show ?thesis
+
+98

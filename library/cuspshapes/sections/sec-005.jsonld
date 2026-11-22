@@ -9,17 +9,15 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Cusp shapes of tunnel number n manifolds",
-  "pageStart": 10,
-  "pageEnd": 12,
+  "title": "Pinched handlebodies",
+  "pageStart": 8,
+  "pageEnd": 10,
   "contains": [
     "library/cuspshapes/blocks/prose-sec-005",
     "library/cuspshapes/blocks/lem-sec-005-01",
-    "library/cuspshapes/blocks/lem-sec-005-02",
-    "library/cuspshapes/blocks/thm-sec-005-03",
-    "library/cuspshapes/blocks/cor-sec-005-04"
+    "library/cuspshapes/blocks/lem-sec-005-02"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/cuspshapes",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/cuspshapes",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/cuspshapes/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/cuspshapes/manifest.jsonld",
   "provenance": "ingested"
 }

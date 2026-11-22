@@ -23,7 +23,7 @@ the Seifert-cycle map is recorded in the manuscript and discharged
 separately (the manuscript proof relies on `prop:hecke-completeness`
 which is downstream of this lemma).
 
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/genus-ideal-characterisation.md
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/genus-ideal-characterisation.md
 -/
 
 namespace QOU.Archimedean
@@ -41,14 +41,14 @@ open Polynomial
 
     Discharged by the standard `Ideal.mk_ker` identity (kernel of the
     quotient projection equals the ideal we quotient by). -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/genus-ideal-characterisation.md
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/genus-ideal-characterisation.md
 theorem genus_ideal_characterisation :
     RingHom.ker
         (Ideal.Quotient.mk (Ideal.span {(X ^ 5 : Polynomial ℤ)}))
       = Ideal.span {(X ^ 5 : Polynomial ℤ)} := by
   -- The quotient-projection kernel coincides with the ideal we
   -- quotient by.  Mathlib provides this as `Ideal.mk_ker`.
-  -- Ref: [manuscript] Mathlib `Mathlib.RingTheory.Ideal.Quotient.Defs`
+  -- Ref: [leitner2026] Mathlib `Mathlib.RingTheory.Ideal.Quotient.Defs`
   exact Ideal.mk_ker
 
 end QOU.Archimedean

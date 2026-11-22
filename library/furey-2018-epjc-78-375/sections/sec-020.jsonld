@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/furey-2018-epjc-78-375/sections/sec-020",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "SU(2) ladder symmetry",
+  "pageStart": 9,
+  "pageEnd": 9,
+  "contains": [
+    "library/furey-2018-epjc-78-375/blocks/prose-sec-020"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/furey-2018-epjc-78-375/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/furey-2018-epjc-78-375/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -62,7 +62,7 @@ provably cannot separate `H 1` from `H 2` — transferring this there needs the 
 `g m ↦ q·1` for `m ≥ 2`); nothing here revives it, and it remains refuted by that bean's own
 `braid(1)` argument.
 
--- Ref: [manuscript] beans qou-p8yg, qou-ejde; Geck-Pfeiffer, *Characters of Finite Coxeter Groups
+-- Ref: [leitner2026] beans qou-p8yg, qou-ejde; Geck-Pfeiffer, *Characters of Finite Coxeter Groups
 --      and Iwahori-Hecke Algebras*, §8.1.
 -/
 

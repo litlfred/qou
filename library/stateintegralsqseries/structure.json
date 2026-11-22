@@ -6,7 +6,9 @@
   "sha256": "a5e86443f35e21c0f0c5f6b515379790b13e99d5390e555f29a04997cac2f1fd",
   "bytes": 276257,
   "pages": 16,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:55Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -15,17 +17,25 @@
   "doi": null,
   "title": "FROM STATE INTEGRALS TO q-SERIES",
   "authors_raw": "STAVROS GAROUFALIDIS AND RINAT KASHAEV",
-  "abstract": "It is well-known to the experts that multi-dimensional state integrals of prod- ucts of Faddeev’s quantum dilogarithm which arise in Quantum Topology can be written as ﬁnite sums of products of basic hypergeometric series in q =e2πiτ and ˜q =e−2πi/τ . We illustrate this fact by giving a detailed proof for a family of one-dimensional integrals which includes state-integral invariants of 4 1 and 52 knots.",
-  "docinfo": {
-   "Author": "",
-   "Title": "",
-   "Creator": "LaTeX with hyperref package",
-   "Producer": "pdfTeX-1.40.3",
-   "CreationDate": "D:20170828165221-04'00'"
-  },
   "title_lines": [
    "FROM STATE INTEGRALS TO q-SERIES"
-  ]
+  ],
+  "abstract": "It is well-known to the experts that multi-dimensional state integrals of prod- ucts of Faddeev’s quantum dilogarithm which arise in Quantum Topology can be written as ﬁnite sums of products of basic hypergeometric series in q = e2πiτ and ˜q = e−2πi/τ. We illustrate this fact by giving a detailed proof for a family of one-dimensional integrals which includes state-integral invariants of 41 and 52 knots.",
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.3",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20170828165221-04'00'"
+  },
+  "title_raw": "FROM STATE INTEGRALS TO q-SERIES",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "FROM STATE INTEGRALS TO q -SERIES Contents Introduction State-integrals and their q -series q -diﬀerence equations The case of the 4 1 knot The case of the 5 2 knot Proofs A residue computation The Taylor series of φ m ( x ) and e φ n ( x ) The connection with the diﬀerential operators δ l and e δ l",
+   "outline": "1. Introduction",
+   "text": "FROM STATE INTEGRALS TO q-SERIES",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -33,130 +43,351 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "State-integrals and their q-series",
    "page": 1,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "q-difference equations",
    "page": 4,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "The case of the 41 knot",
    "page": 4,
    "source": "outline",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "The case of the 52 knot",
    "page": 5,
    "source": "outline",
-   "number": "1.4"
+   "number": "1.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 1,
    "title": "Proofs",
    "page": 6,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "A residue computation",
    "page": 6,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "The Taylor series of m(x) and \"0365n(x)",
    "page": 8,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "The connection with the differential operators l and \"0365l",
    "page": 8,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Proof of Theorem 1.1",
    "page": 10,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Some auxiliary power series",
    "page": 10,
    "source": "outline",
-   "number": "2.5"
+   "number": "2.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Proof of Proposition 2.2",
    "page": 12,
    "source": "outline",
-   "number": "2.6"
+   "number": "2.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Proof of Lemma 1.5",
    "page": 13,
    "source": "outline",
-   "number": "2.7"
+   "number": "2.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 1,
    "title": "An application: state-integrals of the 41 and 52 knots",
    "page": 14,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 2,
    "title": "Proof of Corollary 1.7",
    "page": 14,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 2,
    "title": "Proof of Corollary 1.8",
    "page": 14,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 2,
    "title": "Acknowledgments",
    "page": 15,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 1,
    "title": "References",
    "page": 15,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 497,
+   "n_words": 78,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -164,8 +395,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 14,
+   "n_words": 2,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
    "id": "sec-001-11-state-integrals-and-their-q-series",
@@ -174,146 +407,224 @@
    "level": 2,
    "page_start": 1,
    "page_end": 4,
-   "n_chars": 5728,
-   "n_words": 999
+   "n_chars": 4911,
+   "n_words": 911,
+   "label_start": "1",
+   "label_end": "4"
   },
   {
-   "id": "sec-002-13-the-case-of-the-41-knot",
+   "id": "sec-002-12-q-difference-equations",
+   "number": "1.2",
+   "title": "q-difference equations",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 843,
+   "n_words": 156,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-003-13-the-case-of-the-41-knot",
    "number": "1.3",
    "title": "The case of the 41 knot",
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 1369,
-   "n_words": 264
+   "n_chars": 1380,
+   "n_words": 274,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
-   "id": "sec-003-14-the-case-of-the-52-knot",
+   "id": "sec-004-14-the-case-of-the-52-knot",
    "number": "1.4",
    "title": "The case of the 52 knot",
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 1481,
-   "n_words": 338
+   "n_chars": 1500,
+   "n_words": 357,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
-   "id": "sec-004-2-proofs",
+   "id": "sec-005-2-proofs",
    "number": "2",
    "title": "Proofs",
    "level": 1,
    "page_start": 6,
    "page_end": 6,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "6",
+   "label_end": "6"
   },
   {
-   "id": "sec-005-21-a-residue-computation",
+   "id": "sec-006-21-a-residue-computation",
    "number": "2.1",
    "title": "A residue computation",
    "level": 2,
    "page_start": 6,
-   "page_end": 10,
-   "n_chars": 4221,
-   "n_words": 841
+   "page_end": 8,
+   "n_chars": 3177,
+   "n_words": 725,
+   "label_start": "6",
+   "label_end": "8"
   },
   {
-   "id": "sec-006-24-proof-of-theorem-11",
+   "id": "sec-007-23-the-connection-with-the-differential-operator",
+   "number": "2.3",
+   "title": "The connection with the differential operators l and \"0365l",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 1089,
+   "n_words": 228,
+   "label_start": "8",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-008-24-proof-of-theorem-11",
    "number": "2.4",
    "title": "Proof of Theorem 1.1",
    "level": 2,
    "page_start": 10,
    "page_end": 10,
-   "n_chars": 503,
-   "n_words": 92
+   "n_chars": 514,
+   "n_words": 103,
+   "label_start": "10",
+   "label_end": "10"
   },
   {
-   "id": "sec-007-25-some-auxiliary-power-series",
+   "id": "sec-009-25-some-auxiliary-power-series",
    "number": "2.5",
    "title": "Some auxiliary power series",
    "level": 2,
    "page_start": 10,
    "page_end": 12,
-   "n_chars": 1642,
-   "n_words": 347
+   "n_chars": 1688,
+   "n_words": 392,
+   "label_start": "10",
+   "label_end": "12"
   },
   {
-   "id": "sec-008-26-proof-of-proposition-22",
+   "id": "sec-010-26-proof-of-proposition-22",
    "number": "2.6",
    "title": "Proof of Proposition 2.2",
    "level": 2,
    "page_start": 12,
    "page_end": 13,
-   "n_chars": 1559,
-   "n_words": 328
+   "n_chars": 1599,
+   "n_words": 368,
+   "label_start": "12",
+   "label_end": "13"
   },
   {
-   "id": "sec-009-27-proof-of-lemma-15",
+   "id": "sec-011-27-proof-of-lemma-15",
    "number": "2.7",
    "title": "Proof of Lemma 1.5",
    "level": 2,
    "page_start": 13,
    "page_end": 14,
-   "n_chars": 804,
-   "n_words": 139
+   "n_chars": 813,
+   "n_words": 148,
+   "label_start": "13",
+   "label_end": "14"
   },
   {
-   "id": "sec-010-3-an-application-state-integrals-of-the-41-and-5",
+   "id": "sec-012-3-an-application-state-integrals-of-the-41-and-5",
    "number": "3",
    "title": "An application: state-integrals of the 41 and 52 knots",
    "level": 1,
    "page_start": 14,
    "page_end": 14,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "14",
+   "label_end": "14"
   },
   {
-   "id": "sec-011-31-proof-of-corollary-17",
+   "id": "sec-013-31-proof-of-corollary-17",
    "number": "3.1",
    "title": "Proof of Corollary 1.7",
    "level": 2,
    "page_start": 14,
    "page_end": 14,
-   "n_chars": 540,
-   "n_words": 111
+   "n_chars": 555,
+   "n_words": 126,
+   "label_start": "14",
+   "label_end": "14"
   },
   {
-   "id": "sec-012-32-proof-of-corollary-18",
+   "id": "sec-014-32-proof-of-corollary-18",
    "number": "3.2",
    "title": "Proof of Corollary 1.8",
    "level": 2,
    "page_start": 14,
    "page_end": 15,
-   "n_chars": 1053,
-   "n_words": 256
+   "n_chars": 1075,
+   "n_words": 278,
+   "label_start": "14",
+   "label_end": "15"
   },
   {
-   "id": "sec-013-acknowledgments",
+   "id": "sec-015-acknowledgments",
    "number": null,
    "title": "Acknowledgments",
    "level": 2,
    "page_start": 15,
    "page_end": 15,
    "n_chars": 164,
-   "n_words": 26
+   "n_words": 26,
+   "label_start": "15",
+   "label_end": "15"
   },
   {
-   "id": "sec-014-references",
+   "id": "sec-016-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 15,
    "page_end": 16,
-   "n_chars": 3251,
-   "n_words": 467
+   "n_chars": 3225,
+   "n_words": 441,
+   "label_start": "15",
+   "label_end": "16"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 18,
-  "sections": 15,
-  "chars_total": 22315
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 3,
+    "items": [
+     "Introduction",
+     "A residue computation",
+     "Proof of Corollary 1.8 14 Acknowledgments"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 18,
+  "chars_total": 23044,
+  "furniture_lines_stripped": 0
  },
  "duplicate_of": "arxiv-1304.2705v1",
  "duplicate_note": "Same work as library/arxiv-1304.2705v1/, which was chosen as canonical because it is named by a references.ts entry. Kept on disk rather than deleted — existing citations may point here — but skipped by the ranking and the summary index so one work is not counted twice."

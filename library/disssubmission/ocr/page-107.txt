@@ -1,0 +1,49 @@
+5.1. Intersections of theta divisors 99
+
+at hand, let us briefly recall the definition and some basic features of Prym
+varieties in general, referring to loc. cit. for more details.
+
+For any covering C —> C of smooth projective curves we have a norm
+homomorphism
+
+Neyo: JC — JC
+
+between the corresponding Jacobian varieties, induced by the pushforward
+morphism on divisors. This norm homomorphism is always surjective. For
+an étale double covering its kernel has precisely two connected components,
+and one defines the Prym variety
+
+P = Prym(C/C) = (ker(Neyc))® C JC
+
+to be the connected component which contains the origin. By construction
+this is an abelian subvariety of JC. The special thing about étale double
+covers of curves is that this Prym variety also comes along with a principal
+polarization, indeed by loc. cit. the principal polarization on JC restricts
+on the Prym variety P to twice a principal polarization. Prym varieties are
+useful in the study of ppav’s since they are more general than Jacobian
+varieties but nevertheless still accessible in terms of algebraic curves. Note
+that if the curve C has genus g + | (say), then C has genus 2g + | due to the
+Riemann-Hurwitz formula [55, cor. IV.2.4], and then the Prym variety has
+dimension
+
+dim(P) = (2g+1)—(g+1) = g.
+
+Hence if we denote by .%, +, the coarse moduli space of smooth projective
+curves of genus g+1 and define #,,; to be the coarse moduli space of
+étale double covers of such curves, then we have a diagram
+
+Rett
+
+ve
+Mes Ay
+
+where @ is the forgetful morphism and where 7 is the morphism that assigns
+to a double covering its Prym variety. Here the morphism @ is generically
+finite of degree 2°+! — 1 because the étale double covers of a given curve
+correspond bijectively to the non-trivial two-torsion points on its Jacobian
+variety. The Prym morphism 7 plays an important role for the moduli of
+abelian varieties and has been studied a lot in the literature; as the most
+important results, we only mention that for g > 6 it is generically finite of
+degree one [39] but never injective [34]. In dimensions g < 6 the Prym
+morphism 7 is no longer generically finite but its fibres have a surprisingly
+rich geometric structure which is discussed in loc. cit.

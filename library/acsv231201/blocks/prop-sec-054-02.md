@@ -1,0 +1,1 @@
+If ˆr is a generic direction then the set of ﬁbers CB as B varies over components of MR on which h ˆr is bounded from below is a basis for Hd(M, −∞). Proof See Varchenko and Gelfand [VG87, page 268]. □

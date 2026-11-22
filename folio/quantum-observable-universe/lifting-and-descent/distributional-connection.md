@@ -1,4 +1,4 @@
-At the limit $n \to \infty$, we replace a single connection $A$ with a distributional connection represented by the series:
+At the limit $n \to \infty$, one replaces a single connection $A$ with a distributional connection represented by the series:
 
 $$
   A_\infty

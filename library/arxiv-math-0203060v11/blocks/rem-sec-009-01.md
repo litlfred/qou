@@ -1,0 +1,1 @@
+One says that an indecomposable multi-fusion category C′ is a quotient category of an indecomposable multi-fusion category C if there exists a tensor functor F : C →C′ such that any object of C′ is a subobject of F(X), X ∈C (See Section 5). It follows from the above that a given multi-fusion category C has only ﬁnitely many quotient categories.

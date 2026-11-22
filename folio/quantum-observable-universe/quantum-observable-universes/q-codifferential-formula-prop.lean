@@ -56,7 +56,7 @@ no such hypothesis, which is false for a degenerate pairing — the identically
 zero pairing satisfies bilinearity and admits every function as an adjoint.
 
 ## References
-- [manuscript] Ch. 2, §geometric-interpretations
+- [leitner2026] Ch. 2, §geometric-interpretations
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over `ℤ`).
 Part of the formal proof chain. The parameter `q` is the canonical
@@ -178,7 +178,7 @@ theorem q_codifferential_exists (A : ContactFormAlgebra R F) (q : Rˣ) :
     The formal adjoint of `d_q` is `δ_q = q⁻¹ δ + (1 - q⁻¹) L_ξ* ∘ ι_ξ`.
 
     This is the declaration `prop:q-codifferential-formula` resolves to. -/
--- Ref: [manuscript] Ch. 2, prop:q-codifferential-formula (closed form δ_q = q⁻¹δ + (1−q⁻¹)L_ξ*∘ι_ξ)
+-- Ref: [leitner2026] Ch. 2, prop:q-codifferential-formula (closed form δ_q = q⁻¹δ + (1−q⁻¹)L_ξ*∘ι_ξ)
 theorem q_codifferential_formula (A : ContactFormAlgebra R F) (q : Rˣ) :
     ∃ δ_q : F →ₗ[R] F,
       (∀ α β : F, A.inner (A.dq q α) β = A.inner α (δ_q β)) ∧

@@ -50,7 +50,7 @@ read from the paper. That is now a single small matrix rather than the whole
 Stokes data — the residual exposure is minimized, not eliminated.
 
 -- Ref: [garoufalidis-gu-marino2021] GGM 2012.00062 eqs (96), (97), (98), (17)
--- Ref: [manuscript] docs/audits/2026-08-11-route-c-bps-cohomology-scoping.md
+-- Ref: [leitner2026] docs/audits/2026-08-11-route-c-bps-cohomology-scoping.md
 -/
 
 namespace QOU.QBeta.StokesMatrixProvenance

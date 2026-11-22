@@ -1,0 +1,1 @@
+Let M be an abelian category with enough injectives, and let M ∈C(M) be a complex with bounded below cohomology. Then M has a K-injective resolution M →I, such that inf(I) = inf(H(M)), and every Ip is an injective object of M.

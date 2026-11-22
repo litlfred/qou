@@ -1,0 +1,35 @@
+the Markoy trace on Hg that produces the Jones polynomial can be calculated diagrammatically.
+The Kauffman state-sum for the Jones polynomial comes directly from this formalism for TLy.
+One of the goals of this work, only partially realized, is to find an analogous formalism for the
+Alexander polynomial.
+
+Alas, the story for the Alexander polynomial is not so simple. The Super Temperley-Lieb
+algebra ST Lag is defined as the intertwiner algebra for the quantum group associated to glI(1|1).
+Hence, the Markov trace on Ha giving the Alexander polynomial on braids factors through ST Lg.
+This algebra has Wedderburn components indexed by hook partitions. However, the ideal that
+consists of components that are not hooks is not cellular in the dominance order on partitions, and
+so STLq does not inherit the cellular structure from Hg and the map Hg -» ST La is quite subtle.
+We can obtain a basis for STL, but it has no clear connection to the standard basis for Hg, and so
+it is not obvious how to calculate the Markov trace directly. In fact, because the transition matrix
+from the standard basis for Hg to our basis for ST Lg is only defined upon extending scalars to Q(v),
+it is no longer clear that the Alexander invariant is a Laurent polynomial in Z[v,v7+]. The main
+result in this section is a presentation of the relations for STLq using some of the combinatorics
+of the symmetric group adapted to Ha.
+
+This is why in Chapter IV we start again using Young’s seminormal form for Hy. To
+begin, STLq is presented as a diagram algebra in the basis of matrix units of its Wedderburn
+components. As a result, a lot of complicated information is packaged in the idempotents in Hg
+that project onto STLq. Using character formulas of Geck and Jacon ([16], [17]} for the irreducible
+representations of Hq and building upon the work of Jones ((/24]), a combinatorial procedure is
+deduced for calculating the trace, and hence the Alexander polynomial, from a braid diagram
+directly. This state-sum has the appeal of being computable in terms of certain labeled diagrams
+(the basis for STLyz) that come from resolving crossings in the original braid. The trade-off for
+changing basis so drastically is the aforementioned difficulty that the formula gives the Alexander
+polynomial as a sum of rational functions involving quantum integers, obscuring the fact that the
+invariant is actually a Laurent polynomial.
+
+In Chapter V, we reprove the main theorem combinatorially. By analyzing possible states
+in the expansion of a braid diagram, we are able to check invariance under the Markov moves
+directly. Moreover, agreement with the Alexander polynomial is verified. This “naive” proof has
+
+an unexpected advantage: it may be possible to extend the state-sum formula to the multivariable

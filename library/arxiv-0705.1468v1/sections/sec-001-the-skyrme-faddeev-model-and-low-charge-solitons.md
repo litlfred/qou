@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-0705.1468v1
-doc_title: "Knots in the Skyrme-Faddeev model Paul Sutcliffe"
+doc_title: "Knots in the Skyrme-Faddeev model"
 section_id: sec-001-the-skyrme-faddeev-model-and-low-charge-solitons
 section_title: "The Skyrme-Faddeev model and low charge solitons"
 section_number: null
 pages: 3-7
 source_pdf: 0705.1468v1.pdf
 source_sha256: 4ff578cb3657e4a4
-doc_brief: "Knots in the Skyrme-Faddeev model Paul Sutcliffe — The Skyrme-Faddeev model is a modiﬁed sigma model in three-d imensional space, which has string-like topological solitons classiﬁed by th e"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.987
+latex_prose_ratio: 0.996
+latex_coverage_ratio: 1.0
+doc_brief: "Knots in the Skyrme-Faddeev model — The Skyrme-Faddeev model is a modiﬁed sigma model in three-dimensional space, which has string-like topological solitons classiﬁed by the integer-valued Hopf"
 ---
 The Skyrme-Faddeev model involves a map $\mbox{\boldmath $\phi$}:
 \hbox{\mybb R}^3\mapsto S^2,$ which is realized as a real three-component vector $\mbox{\boldmath $\phi$}=(\phi_1,\phi_2,\phi_3),$ of unit length, $\mbox{\boldmath $\phi$}\cdot\mbox{\boldmath $\phi$}=1.$ As this paper is concerned only with static solutions then the model can be defined by its energy $$E=\frac{1}{32\pi^2\sqrt{2}}\int \partial_i\mbox{\boldmath $\phi$}\cdot\partial_i\mbox{\boldmath $\phi$}

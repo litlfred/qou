@@ -1,0 +1,1 @@
+We can estimate the size of these corrections from the electromagnetic form factor of the pion, which is known to be well-reproduced by vector-meson dominance (VMD): F π± V (t) ≈ M 2 ρ M 2 ρ −t , (6.16) i.e. ⟨r2⟩π± V ≈6/M 2 ρ = 0.4 fm2, to be compared with the measured value ⟨r2⟩π± V = 0.439 ± 0.008 fm2.

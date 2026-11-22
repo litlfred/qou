@@ -41,6 +41,7 @@ from codata_constants import (
     AME_B_DEUTERON_MEV_VALIDATION,
     AME_B_TRITIUM_MEV_VALIDATION,
 )
+from codata_constants import AME_B_HE3_MEV_VALIDATION  # noqa: E402  (AME registry)
 
 # Precision must be raised BEFORE the module-scope constants below: at
 # import time mp.dps is still mpmath's default 15 (~binary64), and a
@@ -66,7 +67,7 @@ HBAR_Q = 1 - 1 / Q_0
 MU_0 = M_E_MEV / (mpf(3) * H / mpf(2))
 
 AME_MeV = {"D": AME_B_DEUTERON_MEV_VALIDATION, "T": AME_B_TRITIUM_MEV_VALIDATION,
-           "3He": mpf("7.71806")}
+           "3He": AME_B_HE3_MEV_VALIDATION}
 N_STRANDS = {"D": 6, "T": 9, "3He": 9}
 
 

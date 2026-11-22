@@ -26,10 +26,10 @@ LaTeX label: cross-cutting; cross-references
 
 ## References
 
-- [manuscript] archimedean-universe / torus-knot-shell-binding
-- [manuscript] archimedean-universe / brings-surface
-- [manuscript] archimedean-universe / torus-knot-generators
-- [manuscript] conj:magic-requires-higher-cohomology
+- [leitner2026] archimedean-universe / torus-knot-shell-binding
+- [leitner2026] archimedean-universe / brings-surface
+- [leitner2026] archimedean-universe / torus-knot-generators
+- [leitner2026] conj:magic-requires-higher-cohomology
 -/
 
 namespace QOU.Interactions.BringShellBinding
@@ -76,7 +76,7 @@ def bringCumulativeShells : List ℕ :=
 
 /-- **Theorem (computational).** The cumulative shell sizes of the
     six Bring torus knots are `{2, 8, 20, 28, 50, 82}`. -/
--- Ref: [manuscript] prop:torus-knot-shell-binding
+-- Ref: [leitner2026] prop:torus-knot-shell-binding
 theorem bringCumulativeShells_eq :
     bringCumulativeShells = [2, 8, 20, 28, 50, 82] := by
   decide
@@ -84,7 +84,7 @@ theorem bringCumulativeShells_eq :
 /-- **Lemma.** Each cumulative shell value is in the magic ladder
     (subset relation; the full ladder includes 126 which requires a
     7th torus knot not yet identified — open question). -/
--- Ref: [manuscript] prop:torus-knot-shell-binding
+-- Ref: [leitner2026] prop:torus-knot-shell-binding
 theorem bringCumulativeShells_subset_magicLadder :
     ∀ x ∈ bringCumulativeShells, x ∈ magicLadder := by
   intro x hx
@@ -111,7 +111,7 @@ def magicToBringKnot (n : ℕ) : Option TorusKnot :=
     corresponding Bring torus knot exists, has crossing number ≥ 3
     (= non-Hopf), and the crossing number monotonically grows along
     the ladder. -/
--- Ref: [manuscript] prop:torus-knot-shell-binding
+-- Ref: [leitner2026] prop:torus-knot-shell-binding
 theorem bring_knot_non_hopf_at_magic
     (n : ℕ) (hn : n ∈ ({2, 8, 20, 28, 50, 82} : Set ℕ)) :
     ∃ T : TorusKnot, magicToBringKnot n = some T ∧ T.q ≥ 3 := by
@@ -129,7 +129,7 @@ theorem bring_knot_non_hopf_at_magic
     proved (modulo the n=126 7th-knot question). The reverse
     direction — that NO non-magic n arises as a cumulative shell
     size — is conjectural. -/
--- Ref: [manuscript] prop:torus-knot-shell-binding
+-- Ref: [leitner2026] prop:torus-knot-shell-binding
 class BringShellBindingConjecture where
   /-- The 7th torus knot generating the n=126 shell. Currently
       unspecified in the paper; this typeclass field encodes the
@@ -145,7 +145,7 @@ class BringShellBindingConjecture where
 
 /-- Re-export: the proved-cumulative-shells theorem combined with
     the conjectural 7th-knot extension yields the full magic ladder. -/
--- Ref: [manuscript] prop:torus-knot-shell-binding
+-- Ref: [leitner2026] prop:torus-knot-shell-binding
 theorem magic_ladder_from_bring_knots
     [_B : BringShellBindingConjecture] :
     bringCumulativeShells ⊆ ([2, 8, 20, 28, 50, 82, 126] : List ℕ) := by
@@ -208,10 +208,10 @@ def magicIndex (n : ℕ) : Option ℕ :=
 
 /-- **Theorem.** `magicAt` and `magicIndex` are inverses on
     `{1, ..., 7}` and `{2, 8, 20, 28, 50, 82, 126}`. -/
--- Ref: [manuscript] prop:torus-knot-shell-binding
+-- Ref: [leitner2026] prop:torus-knot-shell-binding
 theorem magicAt_magicIndex (n : ℕ) (hn : n ∈ magicLadder) :
     magicAt (magicIndex n).get! = some n := by
-  -- Ref: [manuscript] prop:torus-knot-shell-binding
+  -- Ref: [leitner2026] prop:torus-knot-shell-binding
   -- `magicLadder` is the `Finset`-coercion of `QOU.Common.magicSet`; unfold to
   -- the `insert`-chain, turn membership into the 7-way disjunction via
   -- `Finset.mem_insert`/`mem_singleton`, then discharge each concrete value by
@@ -330,7 +330,7 @@ def shellSizeAt (i : ℕ) : Option ℕ :=
   | _ => none
 
 /-- **Cumulative shell sizes match the magic numbers.** -/
--- Ref: [manuscript] prop:torus-knot-shell-binding
+-- Ref: [leitner2026] prop:torus-knot-shell-binding
 theorem shellSizes_cumulative_match_magic :
     ∀ i, 1 ≤ i → i ≤ 7 →
       ∃ n s, magicAt i = some n
@@ -385,7 +385,7 @@ theorem shellSizes_cumulative_match_magic :
     `{2, 8, 20, 28, 50, 82}` is unconditionally subsumed under
     `magicLadder`. The full equivalence including n=126 awaits the
     7th torus-knot identification. -/
--- Ref: [manuscript] all magic-ladder conjectures
+-- Ref: [leitner2026] all magic-ladder conjectures
 theorem bring_partial_subsumes_magic :
     ∀ n ∈ ({2, 8, 20, 28, 50, 82} : Set ℕ), n ∈ magicLadder := by
   intro n hn

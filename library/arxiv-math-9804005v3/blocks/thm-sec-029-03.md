@@ -1,1 +1,1 @@
-Suppose that A is a noetherian k-algebra,R is an Auslander du-
+Suppose that A is a noetherian k-algebra,R is an Auslander du- alizing complex over A and CdimR is weakly symmetric. If SpecA is normally separated, then A is catenary. If in addition A is prime, then Tauvel’s height for- mula holds.

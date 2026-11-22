@@ -14,9 +14,9 @@ maps from descent, and the crossed structure from conjugation of
 
 ## References
 
-- [yekutieli2010] Central Extensions of Gerbes, §3–4
+- [yekutieli2014-descent] Combinatorial Descent Data for Gerbes, §1 (Defs 1.2, 1.5)
 - [yekutieli2015] Nonabelian Multiplicative Integration on Surfaces
-- [manuscript] §3 Lifting and Descent
+- [leitner2026] §3 Lifting and Descent
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
 Part of the formal proof chain. The parameter `q` is the canonical
@@ -58,7 +58,7 @@ trivialisations), 1-morphisms (gauge transitions), and 2-morphisms
 /-- A Yekutieli triple at level `n` over a manifold `M`:
     the datum `(x, g, a)` of local trivialisations, transition
     automorphisms, and deformation parameters. -/
--- Ref: [yekutieli2010] §3
+-- Ref: [yekutieli2014-descent] Def 1.5 (combinatorial descent datum (x, g, a))
 structure YekutielijTriple (M : Type*) where
   /-- Level in the brane tower. -/
   level : ℕ
@@ -77,14 +77,14 @@ At each level, `(SU_{qₙ}(2), 𝒪_M×)` forms a crossed module:
 the boundary map `∂ : 𝒪_M× → SU_{qₙ}(2)` sends units to
 central elements, and the action is conjugation. -/
 
-/-- A crossed module in the sense of Yekutieli [yekutieli2010]:
+/-- A crossed module in the sense of Yekutieli [yekutieli2014-descent]:
     a boundary homomorphism `∂ : N → G` and a `G`-action on `N`
     satisfying the Peiffer identity.
 
     Both carriers are groups (§7c): `N` models the band of units `𝒪_M×`
     and `G` the gauge group `SU_{qₙ}(2)`. No ring, field or division is
     involved — `g⁻¹` is the group inverse. -/
--- Ref: [yekutieli2010] §2, Definition 2.1
+-- Ref: [yekutieli2014-descent] Def 1.2 (crossed groupoid; one object = crossed module, Rem 1.3)
 structure CrossedModule where
   /-- The band `N = 𝒪_M×`, the group in which the 2-morphisms live. -/
   N : Type
@@ -117,8 +117,26 @@ in the category of crossed groupoids. -/
     - Codegeneracy maps `σʲ : 𝔊ₙ₊₁ → 𝔊ₙ` from descent
     - Crossed structure from conjugation via Ad(SU_{qₙ}(2))
 
-    LaTeX: `\label{prop:cosimplicial-crossed-groupoid}` -/
--- Ref: [yekutieli2010] §4, [manuscript] §3
+    LaTeX: `\label{prop:cosimplicial-crossed-groupoid}`
+
+    **🛑 Vacuity status (audited 2026-11-20, bean `qou-dx7g`; triage rank 41).**
+    This structure does **not** encode the proposition.  (1) The three
+    "cosimplicial identities" constrain only the `.level : ℕ` field of the
+    image triples, never the triples themselves, and they are not the
+    cosimplicial identities: there is one coface and one codegeneracy per
+    level rather than the indexed families `δⁱ : 𝔊ₙ → 𝔊ₙ₊₁` (`0 ≤ i ≤ n+1`) and
+    `σʲ : 𝔊ₙ₊₁ → 𝔊ₙ`, so `δʲδⁱ = δⁱδʲ⁻¹` cannot even be stated.  (2) No field
+    ties `coface` to `tripleAt` or to jet prolongation, and `crossedMod n` is
+    unrelated to the triple at level `n`; `cosimplicial_crossed_groupoid_exists`
+    inhabits it with level-shifts and `PUnit` crossed modules.  A faithful
+    version would take the cosimplicial object from Mathlib
+    (`CategoryTheory.CosimplicialObject`, whose identities are theorems) with
+    `[n] ↦ 𝔊ₙ` and the coface maps given by jet prolongation.  Neither the
+    brane tower (`QOU.Torsion.RecursiveBraneTower` is itself abstract) nor jet
+    prolongation is defined in the corpus, so the free fields — `tripleAt`,
+    `coface`, `codegeneracy`, `crossedMod` — stay free.  The library twin
+    `QOU.LiftingDescent.CosimplicialCrossedGroupoid` has the same shape. -/
+-- Ref: [yekutieli2014-descent] §1, text after Def 1.4, [leitner2026] §3
 structure CosimplicialCrossedGroupoid (M : Type*) where
   /-- The Yekutieli triple at each level. -/
   tripleAt : (n : ℕ) → YekutielijTriple M
@@ -148,12 +166,12 @@ structure CosimplicialCrossedGroupoid (M : Type*) where
     level is the central one, `∂` landing in the centre, so the Peiffer
     identity holds by conjugation-triviality and no archimedean
     specialisation to `ℝ` is required anywhere. -/
--- Ref: [yekutieli2010] §4, Theorem 4.2
--- Ref: [manuscript] §3, Proposition: Cosimplicial crossed groupoid
+-- Ref: [yekutieli2014-descent] §1, text after Def 1.4 (cosimplicial crossed groupoid = object of Δ(CrGrpd)); existence on the brane tower is ours, not Yekutieli's
+-- Ref: [leitner2026] §3, Proposition: Cosimplicial crossed groupoid
 theorem cosimplicial_crossed_groupoid_exists (M : Type*)
     [inst : Nonempty M] :
     Nonempty (CosimplicialCrossedGroupoid M) := by
-  -- Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2009.12.006
+  -- Ref: [yekutieli2014-descent] arXiv:1109.1919, §1
   obtain ⟨_⟩ := inst
   exact ⟨{
     tripleAt := fun n => ⟨n, id, fun _ => 1, fun _ => 1, fun _ => one_ne_zero⟩
@@ -172,7 +190,7 @@ theorem cosimplicial_crossed_groupoid_exists (M : Type*)
 
 /-- The Peiffer identity, read off a crossed module: the boundary intertwines
     the action with conjugation. -/
--- Ref: [yekutieli2010] §2, Remark 2.3
+-- Ref: [yekutieli2014-descent] Def 1.2(i) (D is G₁-equivariant: the Peiffer condition)
 theorem peiffer_central_automatic (cm : CrossedModule) (g : cm.G) (n : cm.N) :
     cm.boundary (cm.action g n) = g * cm.boundary n * g⁻¹ :=
   cm.peiffer g n

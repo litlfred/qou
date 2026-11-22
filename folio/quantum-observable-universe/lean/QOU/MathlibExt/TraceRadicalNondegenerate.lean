@@ -43,7 +43,7 @@ zero. The nonzero-weights hypothesis is *already discharged in this corpus* —
 `QOU.QBeta.TemperleyLiebTower.yw_pos` gives `0 < y_λ` for `1 < q` — so the
 decomposition is the sole remaining input.
 
--- Ref: [manuscript] rem:hecke-radical-is-temperley-lieb — the claim this serves.
+-- Ref: [leitner2026] rem:hecke-radical-is-temperley-lieb — the claim this serves.
 -/
 
 namespace QOU.MathlibExt.TraceRadicalNondegenerate

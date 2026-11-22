@@ -36,7 +36,7 @@ export default chapter({
       ],
     }),
     section({
-      title: "Crossing energy and Coulomb charge",
+      title: "Crossing energy, skein asymmetry, and the Coulomb–strong ratio",
       label: "sec:crossing-energy",
       blocks: [
         // def:crossing-energy and def:coulomb-charge relocated to
@@ -52,10 +52,10 @@ export default chapter({
         "crossing-energy-categorical-origin",
         "crossing-energy-trefoil",
         "commutative-crossing-energy",
+        "commutative-crossing-energy-table1-data",
+        "commutative-crossing-energy-table2-data",
         "branch-phase-mass-tower-witness",
         "categorical-coordinate-ring-dedup",
-        "commutative-crossing-energy-table2-data",
-        "commutative-crossing-energy-table1-data",
         "coulomb-strong-ratio-q-rational",
         "coulomb-strong-ratio-q-rational-proof",
         "skein-crossing-asymmetry-prop",

@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-math-0405249v5
-doc_title: "Twisted homology of quantum SL(2)"
+doc_title: "Twisted homology of quantum SL (2)"
 section_id: sec-004-hochschild-homology-of-hopf-algebras
 section_title: "hochschild homology of hopf algebras"
 section_number: null
 pages: 6-7
 source_pdf: 0405249v5.pdf
 source_sha256: bc699482e5cd7679
-doc_brief: "Twisted homology of quantum SL(2) — We calculate the twisted Hochschild and cyclic homology (in the sense of Kustermans, Murphy and Tuset) of the coordinate algebra o f the quan- tum SL(2) group"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.916
+latex_coverage_ratio: 0.949
+doc_brief: "Twisted homology of quantum SL (2) — We calculate the twisted Hochschild and cyclic homology (in the sense of Kustermans, Murphy and Tuset) of the coordinate algebra of the quan- tum SL(2) group"
 ---
 For arbitrary algebras, the Hochschild homologies are derived functors in the category of $\mathcal{A}\otimes \mathcal{A}^\mathrm{op}$-modules, and working with explicit resolutions usually involves lengthy calculations. But if $\mathcal{A}$ is a Hopf algebra then we can describe $H_\ast(\mathcal{A},\mathcal{M})$ for an arbitrary $\mathcal{A}$-bimodule $\mathcal{M}$ as a derived functor in the category of $\mathcal{A}$-modules. Define a right $\mathcal{A}$-module $\mathcal{M}'$ which is $\mathcal{M}$ as a vector space with right action given by $$\label{act}
     m \blacktriangleleft a :=  \sum \; S(a_{(2)}) \triangleright m \triangleleft

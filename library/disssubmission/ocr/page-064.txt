@@ -1,0 +1,49 @@
+56 Chapter 3 — Perverse sheaves on semiabelian varieties
+
+where a@ and B denote the forget support morphisms and where bc; and bc,.
+are the base change morphisms. Let us briefly recall how these latter two
+are defined — the direct image of the adjunction morphism K —> i, (i*(K))
+yields two morphisms
+
+Rfi(K) — Rfilis@(K))) = i(RAGT(K))),
+
+Rf(K) —> Rfs(ie@(K))) = ie(Rfe(F(K))),
+and again by adjunction these give rise to the base change morphisms bc,
+and bc, from above. We also remark [7, exp. XVII, th. 5.2.6] that as a
+result of the proper base change theorem, the base change morphism bc, is
+
+always an isomorphism. Putting K = Rj,(L) with L € D(¥q), we obtain a
+factorization
+
+Rfi(Py(L)) p Rf.(Yy(L))
+obo a
+Wz(Rf(L))
+
+where Py and ‘Pz denote the nearby cycles for Y + S resp. Z + S. We will
+apply this in the following two situations.
+
+First we take f : X — S to be the structure morphism with Y= X,Z=S
+and L = P. In this case the above diagram more explicitly says that the
+forget support morphism f for the cohomology of the nearby cycles Y(P)
+admits the following factorization.
+
+H2(X,,¥(P)) H*(Xs,'P(P))
+
+Ne
+
+H*(Xq,P)
+
+Now consider a character y of the tame fundamental group of X, and denote
+by % € II(X;) its pull-back to the fibre X, over the special point t = s or over
+the geometric generic point t = 7). The projection formula (see section 3.6)
+implies that we have
+WP (Py) = (L(P))x
+
+for any such character. In lemma 3.16 we will see that 7 can be chosen in
+such a way that the characters 7; and 7 are both generic. By the generic
+vanishing axiom GV(X;) we can therefore assume that the forget support
+morphism f is an isomorphism, in which case the above factorization shows
+that H*(X,,P(P)) is a direct summand of H*(X,,P). Furthermore, by the
+generic vanishing axiom GV (X;) we can also assume that all the occuring
+hypercohomology groups are concentrated in cohomology degree zero, in
+which case it follows that 0 < 7(‘¥(P)) < x(P). In particular, the nearby

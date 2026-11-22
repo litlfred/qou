@@ -1,0 +1,1295 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-1610.05082v3",
+  "pages": [
+    {
+      "page": 7,
+      "rotation": 0,
+      "drawings": 54,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1. The two tree lengths on an example"
+      ],
+      "labels": [
+        {
+          "text": "WEIGHTED DEPENDENCY GRAPHS AND THE ISING MODEL",
+          "bbox": [
+            184.53,
+            65.86,
+            427.47,
+            72.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "7",
+          "bbox": [
+            522.99,
+            65.86,
+            526.96,
+            72.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "x1 = (0, 1)",
+          "bbox": [
+            246.08,
+            85.04,
+            283.07,
+            94.34
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            5.66,
+            8.08
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            235.79,
+            111.01,
+            239.83,
+            119.09
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            8.08
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            259.06,
+            111.01,
+            263.11,
+            119.09
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            8.08
+          ]
+        },
+        {
+          "text": "x4 = (−1, 0)",
+          "bbox": [
+            129.23,
+            136.77,
+            172.51,
+            150.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.66,
+            8.08
+          ]
+        },
+        {
+          "text": "x2 = (1, 0)",
+          "bbox": [
+            298.01,
+            136.97,
+            335.01,
+            146.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            5.66,
+            8.08
+          ]
+        },
+        {
+          "text": "x3 = (0, −1)",
+          "bbox": [
+            246.08,
+            188.7,
+            289.36,
+            202.73
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.66,
+            8.08
+          ]
+        },
+        {
+          "text": "ℓ′",
+          "bbox": [
+            414.86,
+            212.38,
+            420.71,
+            223.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMSY8"
+          ],
+          "sizes": [
+            6.47,
+            9.7
+          ]
+        },
+        {
+          "text": "ℓT(A) = 4",
+          "bbox": [
+            220.11,
+            213.66,
+            261.51,
+            224.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            6.47,
+            9.7
+          ]
+        },
+        {
+          "text": "T(A) = 6",
+          "bbox": [
+            418.85,
+            213.66,
+            456.26,
+            224.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            6.47,
+            9.7
+          ]
+        },
+        {
+          "text": "Figure 1. The two tree lengths on an example",
+          "bbox": [
+            201.7,
+            237.31,
+            410.29,
+            249.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Proposition 2.2. For all A = {x1, . . . , xn} ﬁnite subset of Zd, we have",
+          "bbox": [
+            85.04,
+            264.75,
+            399.33,
+            284.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMTI10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ℓT (A) ≤ℓ′",
+          "bbox": [
+            250.37,
+            281.52,
+            295.75,
+            300.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "T (A) ≤2ℓT (A).",
+          "bbox": [
+            293.45,
+            283.45,
+            361.63,
+            300.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2.4. Weighted dependency graphs. Weighted dependency graphs have been introduced by the",
+          "bbox": [
+            85.04,
+            301.5,
+            527.0,
+            311.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "second author in [8]. The following is a simpliﬁed deﬁnition, suﬃcient for the purpose of this paper",
+          "bbox": [
+            85.04,
+            313.77,
+            527.04,
+            323.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(it corresponds to the case Ψ ≡1 of the general deﬁnition, given in [8]).",
+          "bbox": [
+            85.04,
+            325.47,
+            398.04,
+            342.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Deﬁnition 2.3. Let {Yα, α ∈A} be a family of random variables with ﬁnite moments, living in the",
+          "bbox": [
+            85.04,
+            343.52,
+            527.01,
+            360.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "same probability space; and let C = (C1, C2, · · · ) be a sequence of positive real numbers.",
+          "bbox": [
+            85.04,
+            355.47,
+            473.03,
+            372.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMIB10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "A weighted graph G is a C-weighted dependency graph for {Yα, α ∈A} if, for any multiset",
+          "bbox": [
+            96.99,
+            367.43,
+            526.98,
+            384.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMMIB10",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "B = {α1, . . . , αr} of elements of A, one has",
+          "bbox": [
+            85.04,
+            379.45,
+            273.13,
+            396.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "κ",
+          "bbox": [
+            238.09,
+            394.54,
+            247.15,
+            422.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0001\f\f\f\f ≤Cr M",
+          "bbox": [
+            294.25,
+            394.54,
+            340.58,
+            422.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            247.15,
+            400.91,
+            251.72,
+            410.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            340.58,
+            400.91,
+            345.14,
+            410.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            366.57,
+            400.91,
+            371.13,
+            410.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Yα; α ∈B",
+          "bbox": [
+            251.72,
+            401.88,
+            293.76,
+            419.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(2.2)",
+          "bbox": [
+            85.04,
+            402.13,
+            105.52,
+            412.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "G[B]",
+          "bbox": [
+            345.15,
+            402.13,
+            366.57,
+            412.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            371.14,
+            402.13,
+            373.91,
+            412.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Here G[B] denotes the graph induced by G on the vertex set B.",
+          "bbox": [
+            85.04,
+            424.56,
+            364.42,
+            434.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Weighted dependency graphs are a toolbox to prove central limit theorems. Here is a normality",
+          "bbox": [
+            96.99,
+            442.68,
+            527.0,
+            452.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "criterion, which is a slightly modiﬁed version of the main theorem in [8].",
+          "bbox": [
+            85.04,
+            454.63,
+            401.12,
+            464.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Theorem 2.4. Suppose that, for each n, {Yn,i, 1 ≤j ≤Nn} is a family of random variables with",
+          "bbox": [
+            85.04,
+            472.43,
+            526.98,
+            489.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ﬁnite moments deﬁned on the same probability space. Let C = (Cr)r≥1 be a ﬁxed sequence that does",
+          "bbox": [
+            85.04,
+            484.38,
+            526.95,
+            495.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "not depend on n.",
+          "bbox": [
+            85.04,
+            496.34,
+            159.0,
+            506.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Assume that, for each n, one has a C-weighted dependency graph Gn for {Yn,i, 1 ≤j ≤Nn} and",
+          "bbox": [
+            96.99,
+            508.29,
+            526.96,
+            525.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "denote ∆n −1 its maximal weighted degree.",
+          "bbox": [
+            85.04,
+            520.25,
+            274.72,
+            539.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Let Xn = PNn",
+          "bbox": [
+            96.99,
+            530.28,
+            162.06,
+            550.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "i=1 Yn,i and v2",
+          "bbox": [
+            151.36,
+            531.9,
+            214.27,
+            546.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n = V ar(Xn). Assume that there exists a sequence (an), an integer s ≥3",
+          "bbox": [
+            209.94,
+            532.96,
+            526.96,
+            550.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "and a real number v such that",
+          "bbox": [
+            85.04,
+            544.91,
+            215.74,
+            555.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(1) v2",
+          "bbox": [
+            101.98,
+            555.21,
+            130.26,
+            573.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n",
+          "bbox": [
+            125.93,
+            561.07,
+            130.85,
+            568.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "n→∞v2,",
+          "bbox": [
+            138.03,
+            561.45,
+            177.89,
+            578.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "−−−−→",
+          "bbox": [
+            135.54,
+            563.07,
+            162.7,
+            580.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "a2n",
+          "bbox": [
+            120.88,
+            569.52,
+            131.07,
+            581.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(2) for all n, a2",
+          "bbox": [
+            101.98,
+            580.35,
+            171.7,
+            592.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n ≤C2Nn∆n,",
+          "bbox": [
+            167.72,
+            581.97,
+            227.94,
+            601.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u0013 1",
+          "bbox": [
+            143.14,
+            592.5,
+            155.06,
+            606.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMR5"
+          ],
+          "sizes": [
+            4.98,
+            9.96
+          ]
+        },
+        {
+          "text": "s ∆n",
+          "bbox": [
+            151.69,
+            594.0,
+            172.83,
+            607.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u0012Nn",
+          "bbox": [
+            119.69,
+            596.38,
+            141.29,
+            607.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "−−−−→",
+          "bbox": [
+            177.29,
+            603.33,
+            204.46,
+            620.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(3)",
+          "bbox": [
+            101.98,
+            603.58,
+            114.71,
+            613.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "n→∞0.",
+          "bbox": [
+            179.79,
+            603.58,
+            214.97,
+            618.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "∆n",
+          "bbox": [
+            128.22,
+            610.41,
+            141.44,
+            620.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "an",
+          "bbox": [
+            161.12,
+            610.41,
+            171.31,
+            620.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Then in distribution,",
+          "bbox": [
+            96.99,
+            622.89,
+            188.02,
+            632.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Xn −E(Xn)",
+          "bbox": [
+            243.08,
+            631.44,
+            297.0,
+            652.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "d",
+          "bbox": [
+            311.79,
+            637.04,
+            315.94,
+            644.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "n→∞N(0, v2).",
+          "bbox": [
+            303.46,
+            638.8,
+            370.12,
+            657.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "−−−−→",
+          "bbox": [
+            300.96,
+            640.42,
+            328.13,
+            657.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "an",
+          "bbox": [
+            264.7,
+            647.5,
+            274.89,
+            657.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Proof: The proof is almost identical to the proof of the normality criterion in [8, Section 4.3] replacing",
+          "bbox": [
+            85.04,
+            663.31,
+            527.03,
+            673.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "σn by an. Indeed, as noticed in [8, Section 4.3], in the special case Ψ ≡1 (to which we restrict ourselves",
+          "bbox": [
+            85.04,
+            675.33,
+            526.96,
+            692.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "in this article), the quantities Rn and Qn deﬁned there can be replaced respectively by Nn (the number",
+          "bbox": [
+            85.04,
+            687.53,
+            526.98,
+            698.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "□",
+          "bbox": [
+            519.21,
+            697.0,
+            526.96,
+            706.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSAM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of vertices) and ∆n (the maximal weighted degree plus one).",
+          "bbox": [
+            85.04,
+            699.49,
+            349.66,
+            710.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        }
+      ]
+    }
+  ]
+}

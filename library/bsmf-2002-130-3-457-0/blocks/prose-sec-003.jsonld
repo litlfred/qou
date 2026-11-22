@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/bsmf-2002-130-3-457-0/blocks/prose-sec-003",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Proj associated to the hyperideal polyhedron P, the line segment joining v to v′",
-  "pageStart": 7,
-  "pageEnd": 8,
-  "text": "../sections/sec-003-p-proj-associated-to-the-hyperideal-polyhedron-p.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/bsmf-2002-130-3-457-0",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/bsmf-2002-130-3-457-0",
+  "title": "Necessary conditions",
+  "pageStart": 8,
+  "pageEnd": 10,
+  "text": "../sections/sec-003-2-necessary-conditions.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/bsmf-2002-130-3-457-0/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/bsmf-2002-130-3-457-0/manifest.jsonld",
   "provenance": "ingested"
 }

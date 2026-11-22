@@ -1,0 +1,48 @@
+102 Fourier-Laplace integrals in one variable
+
+The argument of the tangent to ¢(y_) at the origin is -o7/2 and thus differs
+from the argument of ¢(y,) by -oz. Mapping by the principal Ath root shrinks
+the difference in arguments by a factor of k, thus
+
+w(cyve yi = el" plegvy)'.
+Again the reversal of parametrization implies v_ = —v,, whence
+m= (1 ery, =
+(a
+with ¢ = —e'"/* as in the statement of the theorem. a
+
+Applications
+The following classical result is a direct corollary of our machinery.
+
+Proposition 4.7 (Watson’s Lemma). Let A : Ro — C have asymptotic devel-
+opment
+
+A(t) © x byt
+m=0
+
+for t near the origin, where —1 < Re{Bo} < Re{B1} < --- and Re{Bn} — 09 as
+m — ov. Then the Laplace transform
+
+L(A) = f * A(the™ dt
+0
+
+of A has an asymptotic series
+
+LA) © Y" BaD (Bm + LaF)
+
+m=0
+as A > ©,
+Proof Asin our previous arguments, we may replace the integral in the Laplace
+
+transform by an integral on [0, €] while introducing only an exponentially small
+error. Writing
+
+N
+A(t) = >" bth + Rv
+m=0
+
+for Ry = o(# Bm) at the origin, we may integrate term by term to get the
+first N terms of the expansion, up to an exponentially small correction from
+truncating the integral, then use Lemma 4.3 to see that the remainder satisfies
+
+| [Rone ai = O(a Relént-t)
+0

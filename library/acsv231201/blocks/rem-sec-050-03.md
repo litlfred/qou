@@ -1,0 +1,1 @@
+It is possible to expand the falling factorials in terms of the Stirling numbers of the second kind and collect powers of rd, to give an explicit formula for the coeﬃcients Ck in (9.4) at the cost of an even more unwieldy formula. Exercise 9.11. In the cases p = 1 and p = 2, explicitly compute the second term in the asymptotic expansion of Φw(r) in descending powers of rd.

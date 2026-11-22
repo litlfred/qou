@@ -17,7 +17,7 @@ LaTeX label: `ex:higher-forms-su2`
 
 ## References
 
-- [manuscript] §1 Example: Higher forms on O(SU(2))
+- [leitner2026] §1 Example: Higher forms on O(SU(2))
 -/
 
 namespace QOU.Examples
@@ -26,7 +26,7 @@ namespace QOU.Examples
     of the de Rham complex on O(SU(2)).
 
     LaTeX: `\label{ex:higher-forms-su2}` -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 structure SU2FormDimensions where
   /-- Rank of Ωᵏ(A) as a free left A-module, for each degree k. -/
   rank : ℕ → ℕ
@@ -42,7 +42,7 @@ structure SU2FormDimensions where
   rank_high : ∀ k, k ≥ 4 → rank k = 0
 
 /-- The differential form dimensions for SU(2). -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 def su2FormDims : SU2FormDimensions where
   rank := fun k => match k with
     | 0 => 1

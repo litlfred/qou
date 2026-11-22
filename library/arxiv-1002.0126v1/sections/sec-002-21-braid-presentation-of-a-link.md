@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1002.0126v1
-doc_title: "An introduction to the volume conjecture"
+doc_title: "AN INTRODUCTION TO THE VOLUME CONJECTURE"
 section_id: sec-002-21-braid-presentation-of-a-link
 section_title: "Braid presentation of a link"
 section_number: 2.1
 pages: 2-4
 source_pdf: 1002.0126v1.pdf
 source_sha256: ea218a0586a13490
-doc_brief: "An introduction to the volume conjecture — This is an introduction to the Volume Conjecture and its gene r- alizations for nonexperts."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.912
-latex_coverage_ratio: 0.92
+latex_coverage_ratio: 0.937
+doc_brief: "AN INTRODUCTION TO THE VOLUME CONJECTURE — This is an introduction to the Volume Conjecture and its gener- alizations for nonexperts."
 ---
 An $n$-braid is a collection of $n$ strands that go downwards monotonically from a set of fixed $n$ points to another set of fixed $n$ points as shown in Figure [1](#fig:braid){reference-type="ref" reference="fig:braid"}.
 

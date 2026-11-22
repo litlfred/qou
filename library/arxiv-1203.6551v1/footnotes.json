@@ -1,0 +1,2282 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1203.6551v1",
+ "status": "determined",
+ "pages_unread": [
+  9
+ ],
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p006-1",
+   "page": 6,
+   "mark": "1",
+   "text": "Caution:thisconventionagreeswiththatusedinSnap.However,inSnapPythe‘shape’ reported by the function cusp info() is the complex conjugate ¯τ.",
+   "marks": [
+    {
+     "page": 5,
+     "context": "tion of one of the cusps of M.Choose an oriented basis for H"
+    },
+    {
+     "page": 5,
+     "context": "ﬁllingalongthesimpleclosedcurvewithhomologyclass(a, b) ∈H"
+    },
+    {
+     "page": 6,
+     "context": "thismeansthatτwillhavenegativeimaginarypart."
+    }
+   ],
+   "block": "library/arxiv-1203.6551v1/blocks/prose-sec-001"
+  },
+  {
+   "id": "fn-p013-1",
+   "page": 13,
+   "mark": "2",
+   "text": "In[38],anon-standardorientationconventionformeridianandlongitudewasused;this was pointed out in [37]. Replacing the basis in [38] by meridian, −(longitude) corresponding to u, −v gives our version of the Neumann-Zagier formula.",
+   "marks": [
+    {
+     "page": 12,
+     "context": "2Q1(a, b)andˆQ"
+    },
+    {
+     "page": 12,
+     "context": "2Q"
+    },
+    {
+     "page": 12,
+     "context": "relativelyprimeintegerswithpi= a"
+    },
+    {
+     "page": 12,
+     "context": "i+ b"
+    },
+    {
+     "page": 12,
+     "context": "a"
+    },
+    {
+     "page": 12,
+     "context": "a2+ b"
+    },
+    {
+     "page": 12,
+     "context": "a2+ b2−π4(a4 −12a3b −6a"
+    },
+    {
+     "page": 12,
+     "context": "a2+ b2−π4(a4 −12a3b −6a2b"
+    },
+    {
+     "page": 12,
+     "context": "π"
+    },
+    {
+     "page": 12,
+     "context": "(a"
+    },
+    {
+     "page": 12,
+     "context": "(a2+ b"
+    },
+    {
+     "page": 12,
+     "context": "24 (a"
+    },
+    {
+     "page": 12,
+     "context": "24 (a2+ b"
+    },
+    {
+     "page": 12,
+     "context": "a"
+    },
+    {
+     "page": 12,
+     "context": "a2−b"
+    },
+    {
+     "page": 12,
+     "context": "(a"
+    },
+    {
+     "page": 12,
+     "context": "(a2+ b"
+    },
+    {
+     "page": 12,
+     "context": "(a"
+    },
+    {
+     "page": 12,
+     "context": "(a2+ b"
+    },
+    {
+     "page": 12,
+     "context": "Lemma4.6.Ifaandbareintegerswitha > b > 0,thenab(a"
+    },
+    {
+     "page": 12,
+     "context": "Lemma4.6.Ifaandbareintegerswitha > b > 0,thenab(a2−b"
+    },
+    {
+     "page": 12,
+     "context": "wherer"
+    },
+    {
+     "page": 12,
+     "context": "wherer2= a"
+    },
+    {
+     "page": 12,
+     "context": "wherer2= a2+ b"
+    },
+    {
+     "page": 12,
+     "context": "f(a, b) = ab(a"
+    },
+    {
+     "page": 12,
+     "context": "f(a, b) = ab(a2−b"
+    },
+    {
+     "page": 12,
+     "context": "Further,a"
+    },
+    {
+     "page": 12,
+     "context": "Further,a2+ b"
+    },
+    {
+     "page": 12,
+     "context": "Further,a2+ b2= r"
+    },
+    {
+     "page": 12,
+     "context": "Further,a2+ b2= r2anda > b > 0implythata"
+    },
+    {
+     "page": 12,
+     "context": "Further,a2+ b2= r2anda > b > 0implythata2≥r"
+    },
+    {
+     "page": 12,
+     "context": "f(a, b) = a(a + b)b(a −b) ≥a(a + b) · a/2 = a"
+    },
+    {
+     "page": 12,
+     "context": "Equation(4.5)showsthat,whenevera"
+    },
+    {
+     "page": 12,
+     "context": "Equation(4.5)showsthat,whenevera2+ b"
+    },
+    {
+     "page": 12,
+     "context": "a"
+    },
+    {
+     "page": 12,
+     "context": "a2−b"
+    },
+    {
+     "page": 12,
+     "context": "−C(a"
+    },
+    {
+     "page": 12,
+     "context": "−C(a2+ b"
+    },
+    {
+     "page": 12,
+     "context": "(a"
+    },
+    {
+     "page": 12,
+     "context": "(a2+ b"
+    },
+    {
+     "page": 12,
+     "context": "suchthatif(a, b)arerelativelyprimeintegerswitha>b>0anda"
+    },
+    {
+     "page": 12,
+     "context": "suchthatif(a, b)arerelativelyprimeintegerswitha>b>0anda2+ b"
+    },
+    {
+     "page": 12,
+     "context": "chthatif(a, b)arerelativelyprimeintegerswitha>b>0anda2+ b2≥R"
+    },
+    {
+     "page": 13,
+     "context": "aretheunique2-cuspedmanifoldsofvolumevω"
+    },
+    {
+     "page": 13,
+     "context": "1-cuspedmanifoldwithvolumelessthanvω"
+    },
+    {
+     "page": 13,
+     "context": "1-cuspedmanifoldwithvolumelessthanvω2butsuﬃcientlyclosetovω"
+    },
+    {
+     "page": 13,
+     "context": "T ,andchosemeridianandlongitudegeneratorsforH1(T )=Z"
+    },
+    {
+     "page": 13,
+     "context": "wherecn= 0forallevennandc1= −τwhereτisourcuspshapeparameter."
+    },
+    {
+     "page": 13,
+     "context": "∆V=|Im (c1)|π"
+    },
+    {
+     "page": 13,
+     "context": "∆V=|Im (τ)|π"
+    },
+    {
+     "page": 13,
+     "context": "r"
+    },
+    {
+     "page": 13,
+     "context": "3(p4−72p"
+    },
+    {
+     "page": 13,
+     "context": "3(p4−72p2q"
+    },
+    {
+     "page": 13,
+     "context": "3π"
+    },
+    {
+     "page": 13,
+     "context": "p"
+    },
+    {
+     "page": 13,
+     "context": "p2+ 12q"
+    },
+    {
+     "page": 13,
+     "context": "3(p"
+    },
+    {
+     "page": 13,
+     "context": "3(p2+ 12q"
+    },
+    {
+     "page": 13,
+     "context": "(p"
+    },
+    {
+     "page": 13,
+     "context": "(p2+ 12q"
+    },
+    {
+     "page": 13,
+     "context": "3π"
+    },
+    {
+     "page": 13,
+     "context": "r"
+    }
+   ],
+   "block": "library/arxiv-1203.6551v1/blocks/prose-sec-003"
+  }
+ ],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "i",
+   "context": "volumesx"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "hyperbolic 3-manifolds of lowest volume vω"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "ne cusp of the (−2, 3, 8)-pretzel link complement.Hence NC(y"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "sequenceofvolumesyiconvergingtovω"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "ispossibletoﬁndsequencesofvolumesx"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "N(xi)>xc x"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "NA(x"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "x"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "x"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "xi≤xNA(x"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "c 3-manifolds withtotallygeodesic boundary givingsequences x"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "boundarygrowsatleastasfastasxcx"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "linkcomplementsinS"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "ofvolumesv"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "ofvolumesvn→∞suchthatthenumberNL(v"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "nifolds is a constant multiple of n, this gives a sequence L"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "rate of #L"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "rate of #Lnis at least exponential in v"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "of the cusps of M.Choose an oriented basis for H1(T ; Z)∼= Z"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "ngthesimpleclosedcurvewithhomologyclass(a, b) ∈H1(T ; Z)∼= Z"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "Q(a, b) =L(a, b)"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "conventionforalinkcomplementinS"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "π"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "< C"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "where∆V (a, b) = V"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "π"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "Q(a, b)"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "π"
+  },
+  {
+   "page": 6,
+   "mark": "82",
+   "context": "∆V (a, b)−Q(a, b) ≤5."
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "π"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "thereexistsg> 2C"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "thereexistsg> 2C2suchthats ∈SQand|s −q"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "thereexistsg> 2C2suchthats ∈SQand|s −q0| < gimpliess = q"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "andlet∆V= V"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "andlet∆V= V0 −Vol(M(a"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "andlet∆V= V0 −Vol(M(a0, b"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "π"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "π"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "< C"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "< C"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "∆V−Q(a"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "∆V−Q(a0, b"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "|Q(a, b) −Q(a"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "|Q(a, b) −Q(a0, b"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "|Q(a, b) −Q(a0, b0)| < 2C"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "Hence Q(a"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "Hence Q(a0, b"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "GQ= {A ∈GL(2, Z) : Q(AX) = Q(X)forallX= (x, y) ∈Z"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "actiononhomologygivesanautomorphismg∗ofH"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "actiononhomologygivesanautomorphismg∗ofH1(T )∼=Z"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "Vol(M(a"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "Vol(M(a0, b"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "Vol(M(a0, b0)isatmostn(q"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "Vol(M(a0, b0)isatmostn(q0)/|GM|,wheren(q"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "Q(x, y) = |x + τy|2= (x + τy)(x + ¯τy) = x"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "x, y) = |x + τy|2= (x + τy)(x + ¯τy) = x2+ (τ+ ¯τ)xy + |τ|2y"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "Q(x, y) = ax"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "Q(x, y) = ax2+ bxy + cy"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "wherea, b, c ∈Z,thenD= b"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "gralquadraticformQ,i.e.Q(x"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "gralquadraticformQ,i.e.Q(x0, y"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "gralquadraticformQ,i.e.Q(x0, y0) = mwhere(x"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "gralquadraticformQ,i.e.Q(x0, y0) = mwhere(x0, y"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "gralquadraticformQ,i.e.Q(x0, y0) = mwhere(x0, y0) ∈Z"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "alquadraticformQ,i.e.Q(x0, y0) = mwhere(x0, y0) ∈Z2withgcd(x"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "adraticformQ,i.e.Q(x0, y0) = mwhere(x0, y0) ∈Z2withgcd(x0, y"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "ontheﬁgureeightknotcomplementM=m004witha"
+  },
+  {
+   "page": 8,
+   "mark": "b",
+   "context": "i+ 12"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "i+ 12b"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "Q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Q0(a, b) = a"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Q0(a, b) = a2+ ab + b"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "3i) is a cuberoot of −1 satisfying ω"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "|a + bω| = |ω"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "|a + bω| = |ωk(a + bω)| = |ω"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "|a + bω| = |ωk(a + bω)| = |ωk(a + b¯ω)| = |ω"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "fork=0, 1, . . . , 5.HenceQ"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "fork=0, 1, . . . , 5.HenceQ0hassymmetrygroupGQ"
+  },
+  {
+   "page": 8,
+   "mark": "6",
+   "context": "fork=0, 1, . . . , 5.HenceQ0hassymmetrygroupGQ0∼=D"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "orbitof(a, b)underGQ"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "Q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Q1(a, b) = |a + bτ|2= a"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Q1(a, b) = |a + bτ|2= a2+ 12b"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "Q1(a, b) = |a + bτ|2= a2+ 12b2= Q"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "ThisquadraticformhassymmetrygroupGQ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "ThisquadraticformhassymmetrygroupGQ1=D"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Q2(a, b) = |2a + 2bω|2= 4(a"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Q2(a, b) = |2a + 2bω|2= 4(a2+ ab + b"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "Q2(a, b) = |2a + 2bω|2= 4(a2+ ab + b2) = 4Q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "ThisquadraticformhassymmetrygroupGQ"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "ThisquadraticformhassymmetrygroupGQ2=GQ"
+  },
+  {
+   "page": 8,
+   "mark": "6",
+   "context": "ThisquadraticformhassymmetrygroupGQ2=GQ0=D"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "However,G"
+  },
+  {
+   "page": 8,
+   "mark": "003",
+   "context": "However,Gm"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "However,Gm003=D"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "asequenceofprimesp"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "asequenceofprimespi≡1 mod 12withp"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "asequenceofprimespi≡1 mod 12withpi→∞andpairs(a"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "asequenceofprimespi≡1 mod 12withpi→∞andpairs(ai, b"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "primeintegerswithpi= a"
+  },
+  {
+   "page": 10,
+   "mark": "b",
+   "context": "i+ 12"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "i+ 12b"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "Proposition2.5,hence(a, b)=(±a"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "Proposition2.5,hence(a, b)=(±ai, ±b"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "ononecuspofthe(−2, 3, 8)-pretzellinkcomplementM=m125witha"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "i+ b"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "Q"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "Q0(a, b) = a"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "Q0(a, b) = a2+ b"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "|a + bi| = |i"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "|a + bi| = |ik(a + bi)| = |i"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "fork=0, 1, . . . , 3,andQ"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "fork=0, 1, . . . , 3,andQ0hassymmetrygroupGQ"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "fork=0, 1, . . . , 3,andQ0hassymmetrygroupGQ0∼=D"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "orbitof(a, b)underGQ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "Q"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "Q1(a, b) = 2|a + bi|2= 2(a"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "Q1(a, b) = 2|a + bi|2= 2(a2+ b"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "Q1(a, b) = 2|a + bi|2= 2(a2+ b2) = 2Q"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "This quadratic form has symmetry group GQ"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "This quadratic form has symmetry group GQ1= GQ"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "This quadratic form has symmetry group GQ1= GQ0= D"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "orientation preserving symmetriesG"
+  },
+  {
+   "page": 11,
+   "mark": "125",
+   "context": "orientation preserving symmetriesGm"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "orientation preserving symmetriesGm125= C"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "Q"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "Q2(a, b) = |a + 2bi|2= (a"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "Q2(a, b) = |a + 2bi|2= (a2+ 4b"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "Q2(a, b) = |a + 2bi|2= (a2+ 4b2) = Q"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "This quadratic form has symmetry group GQ"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "This quadratic form has symmetry group GQ2= D"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "butG"
+  },
+  {
+   "page": 11,
+   "mark": "129",
+   "context": "butGm"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "butGm129= C"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "ifQ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "ifQ1(a, b) = Q"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "(ii)m + khasnoprimitiveintegerrepresentationasQ"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "intheformp = a"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "intheformp = a2+ b"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "p = (a′)"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "p = (a′)2+ (b′)"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "hasnorepresentationn = Q0(a, b) = a"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "hasnorepresentationn = Q0(a, b) = a2+ b"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "Proof.Letpbeanoddprimedividingn=a"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "Proof.Letpbeanoddprimedividingn=a2+ b"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "Lemma4.5.Ifn≡2mod4thenn=Q"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "Lemma4.5.Ifn≡2mod4thenn=Q2(a, b)=a"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "Lemma4.5.Ifn≡2mod4thenn=Q2(a, b)=a2+ 4b"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "2Q"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "Thisgivesasequenceofprimesp"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "Thisgivesasequenceofprimespi≡1 mod 4withp"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "Thisgivesasequenceofprimespi≡1 mod 4withpi→∞andpairs(a"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "Thisgivesasequenceofprimespi≡1 mod 4withpi→∞andpairs(ai, b"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "hence(a, b) = ±(a"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "hence(a, b) = ±(ai, b"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "hence(a, b) = ±(ai, bi), ±(−b"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "hence(a, b) = ±(ai, bi), ±(−bi, a"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "hence(a, b) = ±(ai, bi), ±(−bi, ai), ±(a"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "hence(a, b) = ±(ai, bi), ±(−bi, ai), ±(ai, −b"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "hence(a, b) = ±(ai, bi), ±(−bi, ai), ±(ai, −bi)or ± (b"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "hence(a, b) = ±(ai, bi), ±(−bi, ai), ±(ai, −bi)or ± (bi, a"
+  },
+  {
+   "page": 12,
+   "mark": "4",
+   "context": "a2+ b2−π"
+  },
+  {
+   "page": 12,
+   "mark": "4",
+   "context": "a2+ b2−π4(a"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "a2+ b2−π4(a4 −12"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "a2+ b2−π4(a4 −12a"
+  },
+  {
+   "page": 12,
+   "mark": "b",
+   "context": "a2+ b2−π4(a4 −12a3"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "a2+ b2−π4(a4 −12a3b −6"
+  },
+  {
+   "page": 12,
+   "mark": "b",
+   "context": "a2+ b2−π4(a4 −12a3b −6a2"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "a2+ b2−π4(a4 −12a3b −6a2b2 + 12ab"
+  },
+  {
+   "page": 12,
+   "mark": "4",
+   "context": "a2+ b2−π4(a4 −12a3b −6a2b2 + 12ab3 + b"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "(a2+ b2)"
+  },
+  {
+   "page": 12,
+   "mark": "4",
+   "context": "24 (a2+ b2)"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "∆V"
+  },
+  {
+   "page": 12,
+   "mark": "125",
+   "context": "∆Vm"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "∆Vm125(a, b) −∆V"
+  },
+  {
+   "page": 12,
+   "mark": "125",
+   "context": "∆Vm125(a, b) −∆Vm"
+  },
+  {
+   "page": 12,
+   "mark": "4",
+   "context": "∆Vm125(a, b) −∆Vm125(b, a) =π"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "(a2+ b2)"
+  },
+  {
+   "page": 12,
+   "mark": "4",
+   "context": "(a2+ b2)"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "Lemma4.6.Ifaandbareintegerswitha > b > 0,thenab(a2−b2) ≥r"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "f(a, b) = a(a + b)b(a −b) ≥a(a + b) · a/2 = a2(a + b)/2 ≥r"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "∆V"
+  },
+  {
+   "page": 12,
+   "mark": "125",
+   "context": "∆Vm"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "∆Vm125(a, b) −∆V"
+  },
+  {
+   "page": 12,
+   "mark": "125",
+   "context": "∆Vm125(a, b) −∆Vm"
+  },
+  {
+   "page": 12,
+   "mark": "4",
+   "context": "∆Vm125(a, b) −∆Vm125(b, a) ≥π"
+  },
+  {
+   "page": 12,
+   "mark": "4",
+   "context": "(a2+ b2)"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "cnu"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "wherec"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "wherecn= 0forallevennandc"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "h c"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "∆V=|Im (c"
+  },
+  {
+   "page": 13,
+   "mark": "4",
+   "context": "−2π"
+  },
+  {
+   "page": 13,
+   "mark": "4",
+   "context": "z"
+  },
+  {
+   "page": 13,
+   "mark": "4",
+   "context": "−2π"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "c"
+  },
+  {
+   "page": 13,
+   "mark": "4",
+   "context": "r"
+  },
+  {
+   "page": 13,
+   "mark": "6",
+   "context": "r"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "−3 = −τandc"
+  },
+  {
+   "page": 13,
+   "mark": "4",
+   "context": "3(p"
+  },
+  {
+   "page": 13,
+   "mark": "4",
+   "context": "3(p4−72p2q2+ 144q"
+  },
+  {
+   "page": 13,
+   "mark": "4",
+   "context": "3(p4−72p2q2+ 144q4)π"
+  },
+  {
+   "page": 13,
+   "mark": "4",
+   "context": "3(p2+ 12q2)"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "(p2+ 12q2)"
+  },
+  {
+   "page": 13,
+   "mark": "4",
+   "context": "−4π"
+  },
+  {
+   "page": 13,
+   "mark": "6",
+   "context": "r"
+  },
+  {
+   "page": 13,
+   "mark": "4",
+   "context": "3r"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "−18b"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "−18b2(2a + b)"
+  },
+  {
+   "page": 14,
+   "mark": "4",
+   "context": "−18b2(2a + b)2+ (2a + b)"
+  },
+  {
+   "page": 14,
+   "mark": "4",
+   "context": "−18b2(2a + b)2+ (2a + b)4+ 9b"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "2 (a"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "2 (a2+ ab + b"
+  },
+  {
+   "page": 14,
+   "mark": "4",
+   "context": "2 (a2+ ab + b2)−π"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "3π"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "3 (a"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "3 (a2+ ab + b"
+  },
+  {
+   "page": 14,
+   "mark": "4",
+   "context": "3 (a2+ ab + b2)"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "3π"
+  },
+  {
+   "page": 14,
+   "mark": "4",
+   "context": "−π"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "2r"
+  },
+  {
+   "page": 14,
+   "mark": "4",
+   "context": "r"
+  },
+  {
+   "page": 14,
+   "mark": "6",
+   "context": "r"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "u"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "so c"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "so c1= −τ= iandc"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "∆Vm125(p, q) =π"
+  },
+  {
+   "page": 14,
+   "mark": "4",
+   "context": "|z|2−2π"
+  },
+  {
+   "page": 14,
+   "mark": "4",
+   "context": "48z"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "p"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "p2+ q"
+  },
+  {
+   "page": 14,
+   "mark": "4",
+   "context": "p2+ q2−π"
+  },
+  {
+   "page": 14,
+   "mark": "4",
+   "context": "p2+ q2−π4(p"
+  },
+  {
+   "page": 14,
+   "mark": "p",
+   "context": "p2+ q2−π4(p4 −12"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "p2+ q2−π4(p4 −12p"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "p2+ q2−π4(p4 −12p3"
+  },
+  {
+   "page": 14,
+   "mark": "p",
+   "context": "p2+ q2−π4(p4 −12p3q −6"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "p2+ q2−π4(p4 −12p3q −6p"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "p2+ q2−π4(p4 −12p3q −6p2"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "p2+ q2−π4(p4 −12p3q −6p2q"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "p2+ q2−π4(p4 −12p3q −6p2q2 + 12pq"
+  },
+  {
+   "page": 14,
+   "mark": "4",
+   "context": "p2+ q2−π4(p4 −12p3q −6p2q2 + 12pq3 + q"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "π"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "(p"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "(p2+ q"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "(p2+ q2)"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "24 (p"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "24 (p2+ q"
+  },
+  {
+   "page": 14,
+   "mark": "4",
+   "context": "24 (p2+ q2)"
+  },
+  {
+   "page": 15,
+   "mark": "u",
+   "context": "e"
+  },
+  {
+   "page": 15,
+   "mark": "x",
+   "context": "(x −1)where"
+  },
+  {
+   "page": 15,
+   "mark": "u",
+   "context": "−6e"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "−6eu+ e"
+  },
+  {
+   "page": 15,
+   "mark": "u",
+   "context": "−6eu+ e2"
+  },
+  {
+   "page": 15,
+   "mark": "u",
+   "context": "−6eu+ e2u+ 1 + e"
+  },
+  {
+   "page": 15,
+   "mark": "u",
+   "context": "−6e"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "−6eu+ e"
+  },
+  {
+   "page": 15,
+   "mark": "u",
+   "context": "−6eu+ e2"
+  },
+  {
+   "page": 15,
+   "mark": "u",
+   "context": "−6eu+ e2u+ 1 + e"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "= (−2 + 2i)u +iu"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "Hencec"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "Hencec1= −τ= (−2 + 2i)andc"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "∆VWL(p, q) =2π"
+  },
+  {
+   "page": 15,
+   "mark": "4",
+   "context": "|z|2−2π"
+  },
+  {
+   "page": 15,
+   "mark": "4",
+   "context": "6z"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "p"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "p2−8q"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "p"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "p2+ 8pq + 8q"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "p"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "p2+ 4pq + 8q"
+  },
+  {
+   "page": 15,
+   "mark": "4",
+   "context": "p2+ 4pq + 8q2−π"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "2π"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "3 (p"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "3 (p2+ 4pq + 8q"
+  },
+  {
+   "page": 15,
+   "mark": "4",
+   "context": "3 (p2+ 4pq + 8q2)"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "∆V"
+  },
+  {
+   "page": 15,
+   "mark": "129",
+   "context": "∆Vm"
+  },
+  {
+   "page": 15,
+   "mark": "4",
+   "context": "a"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "a4−24a"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "a4−24a2b"
+  },
+  {
+   "page": 15,
+   "mark": "4",
+   "context": "a4−24a2b2+ 16b"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "a"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "a2+ 4b"
+  },
+  {
+   "page": 15,
+   "mark": "4",
+   "context": "a2+ 4b2−π"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "2π"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "3 (a"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "3 (a2+ 4b"
+  },
+  {
+   "page": 15,
+   "mark": "4",
+   "context": "3 (a2+ 4b2)"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "is section, we recall some results on hyperbolic graphs in S"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "beaspatialtrivalentgraphinS"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "beaspatialtrivalentgraphinS3andletNbeamanifoldobtainedfromS"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "ThisisillustratedinFigure6.HereweregardS"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "ThisisillustratedinFigure6.HereweregardS3asB"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "ThisisillustratedinFigure6.HereweregardS3asB3∪B"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "B"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "sphereS"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "sphereS2= ∂B"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "sphereS2= ∂B3.Aftergluing,wegetalinkorgraphinS"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "sphereS2= ∂B3.Aftergluing,wegetalinkorgraphinS2× S"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "thefundamentalgroupofS"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "thefundamentalgroupofS2× S"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "gram D, let Vbe the set of vertices of Pand NP= S"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "boundaryatinﬁnityS"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "∞ofhyperbolicspacetogive"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "whitefacesofeachpolyhedrondetermineacirclepackingofS"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "EuclideanstructureC/ΓwhereΓ∼=Z"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "horoballneighbourhoodsofthecuspsofS"
+  },
+  {
+   "page": 21,
+   "mark": "b",
+   "context": "Remark8.3.ForeachM"
+  },
+  {
+   "page": 21,
+   "mark": "b",
+   "context": "Remark8.3.ForeachMb,weﬁxthehoroballpackingH"
+  },
+  {
+   "page": 21,
+   "mark": "b",
+   "context": "toriforH"
+  },
+  {
+   "page": 22,
+   "mark": "b",
+   "context": "dottededgeinFigures10-12haslength1inthehorosphericaltoriforH"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "Theorem8.4.Letb"
+  },
+  {
+   "page": 22,
+   "mark": "b",
+   "context": "Theorem8.4.Letbibeabinarycyclicwordoflengthn≥3andletM"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "Theorem8.4.Letbibeabinarycyclicwordoflengthn≥3andletMb"
+  },
+  {
+   "page": 22,
+   "mark": "b",
+   "context": "ThenM"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "ThenMb"
+  },
+  {
+   "page": 22,
+   "mark": "b",
+   "context": "ThenMb1isisometrictoM"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "ThenMb1isisometrictoMb"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "ThenMb1isisometrictoMb2ifandonlyifb"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "ThenMb1isisometrictoMb2ifandonlyifb1andb"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "thenwecansplitbintoksubwords oftheform p"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "Let {p"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "Let {pi"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "Let {pi1, p"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "Let {pi1, pi"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "Let {pi1, pi2, ..., p"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "Let {pi1, pi2, ..., pi"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "et {pi1, pi2, ..., pik} be the decomposition of b, and let C"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "to the knot component produced by p"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "to the knot component produced by pi"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "e knot component produced by pij.We get a cyclic sequence {m"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": " knot component produced by pij.We get a cyclic sequence {mi"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "t component produced by pij.We get a cyclic sequence {mi1, m"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": " component produced by pij.We get a cyclic sequence {mi1, mi"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "t produced by pij.We get a cyclic sequence {mi1, mi2, ..., m"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": " produced by pij.We get a cyclic sequence {mi1, mi2, ..., mi"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "n ≥3,thesearethecuspsC"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "n ≥3,thesearethecuspsC1, . . . C"
+  },
+  {
+   "page": 22,
+   "mark": "b",
+   "context": "n ≥3,thesearethecuspsC1, . . . CkandC.FromM"
+  },
+  {
+   "page": 22,
+   "mark": "b",
+   "context": "cuspgraphC"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "cuspgraphCbwithvertices{v"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "cuspgraphCbwithvertices{v1, v"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "cuspgraphCbwithvertices{v1, v2, ..., v"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "cuspgraphCbwithvertices{v1, v2, ..., vk+1}asfollows.Welabelv"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "graphCbwithvertices{v1, v2, ..., vk+1}asfollows.Welabelvjbym"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "raphCbwithvertices{v1, v2, ..., vk+1}asfollows.Welabelvjbymi"
+  },
+  {
+   "page": 22,
+   "mark": "k",
+   "context": "1 ≤j≤kand v"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "−1,the modulusof C.Thenjoin v"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "−1,the modulusof C.Thenjoin viand v"
+  },
+  {
+   "page": 22,
+   "mark": "b",
+   "context": "in H"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": " Hb, horoball neighbourhoods of the cusps corresponding to v"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "oroball neighbourhoods of the cusps corresponding to viand v"
+  },
+  {
+   "page": 22,
+   "mark": "b",
+   "context": "toeachother.InH"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "toeachother.InHb,thehoroball neighbourhoodof eachcuspC"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "C"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "Cj−1,C"
+  },
+  {
+   "page": 22,
+   "mark": "b",
+   "context": "Cj−1,Cj+1(withindexmodulok),andC.Therefore,thegraphC"
+  },
+  {
+   "page": 22,
+   "mark": "b",
+   "context": "ase when b = 111 · · ·1 and k= 0 is slightly diﬀerent.Then M"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "−1asabove,twoknotcomponentsgivingcuspsC"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "−1asabove,twoknotcomponentsgivingcuspsC1, C"
+  },
+  {
+   "page": 22,
+   "mark": "b",
+   "context": "−1.Inthiscase,thecuspgraph C"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "word.Therefore giventwobinarycyclicwords b"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "word.Therefore giventwobinarycyclicwords b1andb"
+  },
+  {
+   "page": 22,
+   "mark": "b",
+   "context": "erefore giventwobinarycyclicwords b1andb2oflengthn,thegraphC"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "refore giventwobinarycyclicwords b1andb2oflengthn,thegraphCb"
+  },
+  {
+   "page": 22,
+   "mark": "b",
+   "context": "isisomorphictoC"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "isisomorphictoCb"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "isisomorphictoCb2asagraphwithlabelledverticesifandonlyifb"
+  },
+  {
+   "page": 22,
+   "mark": "b",
+   "context": "manifolds M"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "manifolds Mb"
+  },
+  {
+   "page": 22,
+   "mark": "b",
+   "context": "manifolds Mb1and M"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "manifolds Mb1and Mb"
+  },
+  {
+   "page": 22,
+   "mark": "b",
+   "context": "manifolds Mb1and Mb2takes the horoball packing H"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "manifolds Mb1and Mb2takes the horoball packing Hb"
+  },
+  {
+   "page": 22,
+   "mark": "b",
+   "context": "manifolds Mb1and Mb2takes the horoball packing Hb1to H"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "manifolds Mb1and Mb2takes the horoball packing Hb1to Hb"
+  },
+  {
+   "page": 22,
+   "mark": "b",
+   "context": "M"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "Mb"
+  },
+  {
+   "page": 22,
+   "mark": "b",
+   "context": "Mb1isisometrictoM"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "Mb1isisometrictoMb"
+  },
+  {
+   "page": 22,
+   "mark": "b",
+   "context": "Mb1isisometrictoMb2ifandonlyifthegraphC"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "Mb1isisometrictoMb2ifandonlyifthegraphCb"
+  },
+  {
+   "page": 22,
+   "mark": "b",
+   "context": "Mb1isisometrictoMb2ifandonlyifthegraphCb1isisomorphic toC"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "Mb1isisometrictoMb2ifandonlyifthegraphCb1isisomorphic toCb"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "Theorem8.5.Foreachn ≥3,thereareatleast2"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "thereare2"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "Chesebro-BeBlois[11]constructexamplesof2"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "volumew"
+  },
+  {
+   "page": 23,
+   "mark": "8",
+   "context": "volumewn≈24.092184n + 2V"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "(6)Aretheresequencesx"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "(6)Aretheresequencesxi→∞withN(x"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "(7)Aretheresequencesx"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "[13]D. A. Cox, Primes of the form x"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "[13]D. A. Cox, Primes of the form x2+ny"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "[40]D. Ruberman,Mutation and volumes of knotsin S"
+  }
+ ]
+}

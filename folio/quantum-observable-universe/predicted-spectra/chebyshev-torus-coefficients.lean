@@ -19,7 +19,7 @@ ring `R_q = ℤ[q, q⁻¹]`.
 LaTeX label: `def:chebyshev-torus-coefficients`
 
 ## References
-- [manuscript] §13/chebyshev-torus-coefficients
+- [leitner2026] §13/chebyshev-torus-coefficients
 -/
 
 namespace QOU.Archimedean

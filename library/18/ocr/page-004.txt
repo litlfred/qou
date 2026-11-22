@@ -1,0 +1,51 @@
+54 DARYL COOPER AND IGOR RIVIN
+
+Theorem 1.4. A conformal simplex cannot be deformed while keeping the
+solid angles fixed; that is, the set Cg, 55,53,5, C C1 is discrete.
+
+Proof. We have seen above that this is true for the regular simplex. To
+show the theorem, we modify the function S as follows: Let Sa,,a2,a3,a, =
+S+ 3) ajr;. Now Sq, ,a9,a3,04 iS still strictly concave subject to the condition
+1.2, but its gradient is ($1 + a1,...,$4 + a4). Hence the critical points of
+
+Saj,...,a, occurs when S; + a; = S; + a;, for all i,j < 4. This shows the
+assertion of the theorem. UO
+
+2. Another coordinate system
+
+While the radii r; are a natural set of coordinates for the space of confor-
+mal simplices, it turns out that, in many ways, the curvatures of the spheres
+are better. That is, instead of r1,...,r4, use K,,...,K4, where K;r; = 1.
+Using this parametrization embeds Cr as an open set in R*. Call this open
+set Ch.
+
+Consider again the function S, as in Section 1. As a function of Kk =
+(K1,...,4), S can be written as
+
+(2.1) S= So Si/Ki.
+
+The following lemma is shown the same way as in Lemma 1.1.
+
+Lemma 2.1.
+4
+
+dS =— > Sa.
+
+i=1
+The following result follows from the proof of Lemma 1.2
+
+Lemma 2.2. The Hessian H of S with respect to k is negative semi-
+definite — its null-space is spanned by the vector k.
+
+Proof. As before, it is clear that « is in the null-space of H, since this
+corresponds to rescaling the simplex. Now, differentiating Lemma 2.1, it is
+immediate that
+
+He OS; _ OSi_ 9 9
+
+w= = oT,
+0 OK rp 4
+
+when i 4 j. In particular, H;; is positive for i 4 j, by the proof of Lemma
+1.2, and the algebraic part of that proof now goes through unchanged to
+complete the proof of Lemma 2.2. O

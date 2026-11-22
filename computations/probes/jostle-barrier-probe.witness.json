@@ -1,0 +1,1850 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-15T18:31:00.661838+00:00",
+  "commitSha": "2c4d1ac7f32c03bb418eca0a5b3f8f96837000af",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 104787,
+  "computation": "jostle-barrier-probe",
+  "scriptFile": "jostle_barrier_probe.py",
+  "scriptHash": "85c27c261c11",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "mpmath": "1.4.1",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/jostle_barrier_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/jostle_barrier_probe.py"
+  },
+  "description": "Bottleneck (activation) barriers in crossings between stable products of three gamma-gamma particles, chain and ring, under reading 3 per bonded group and per particle (convention D, proton pin). Violating states are impassable. Model units.",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "dps": 40,
+    "k_values": [
+      3,
+      6
+    ],
+    "m_values": [
+      1,
+      2,
+      3
+    ],
+    "ring_bond_cost": {
+      "local": "4m",
+      "routed": "4m+48"
+    }
+  },
+  "data": {
+    "results": {
+      "feasible": {
+        "chain": [
+          {
+            "k": [
+              3,
+              3,
+              3
+            ],
+            "m": [
+              1,
+              2
+            ],
+            "cost_local": 30,
+            "cost_routed": 30
+          },
+          {
+            "k": [
+              3,
+              3,
+              3
+            ],
+            "m": [
+              2,
+              1
+            ],
+            "cost_local": 30,
+            "cost_routed": 30
+          },
+          {
+            "k": [
+              3,
+              3,
+              3
+            ],
+            "m": [
+              2,
+              2
+            ],
+            "cost_local": 34,
+            "cost_routed": 34
+          },
+          {
+            "k": [
+              3,
+              3,
+              6
+            ],
+            "m": [
+              1,
+              2
+            ],
+            "cost_local": 36,
+            "cost_routed": 36
+          },
+          {
+            "k": [
+              3,
+              3,
+              6
+            ],
+            "m": [
+              2,
+              1
+            ],
+            "cost_local": 36,
+            "cost_routed": 36
+          },
+          {
+            "k": [
+              3,
+              6,
+              3
+            ],
+            "m": [
+              1,
+              2
+            ],
+            "cost_local": 36,
+            "cost_routed": 36
+          },
+          {
+            "k": [
+              3,
+              6,
+              3
+            ],
+            "m": [
+              2,
+              1
+            ],
+            "cost_local": 36,
+            "cost_routed": 36
+          },
+          {
+            "k": [
+              6,
+              3,
+              3
+            ],
+            "m": [
+              1,
+              2
+            ],
+            "cost_local": 36,
+            "cost_routed": 36
+          },
+          {
+            "k": [
+              6,
+              3,
+              3
+            ],
+            "m": [
+              2,
+              1
+            ],
+            "cost_local": 36,
+            "cost_routed": 36
+          },
+          {
+            "k": [
+              3,
+              3,
+              3
+            ],
+            "m": [
+              2,
+              3
+            ],
+            "cost_local": 38,
+            "cost_routed": 38
+          },
+          {
+            "k": [
+              3,
+              3,
+              3
+            ],
+            "m": [
+              3,
+              2
+            ],
+            "cost_local": 38,
+            "cost_routed": 38
+          },
+          {
+            "k": [
+              3,
+              3,
+              6
+            ],
+            "m": [
+              2,
+              2
+            ],
+            "cost_local": 40,
+            "cost_routed": 40
+          },
+          {
+            "k": [
+              3,
+              6,
+              3
+            ],
+            "m": [
+              2,
+              2
+            ],
+            "cost_local": 40,
+            "cost_routed": 40
+          },
+          {
+            "k": [
+              6,
+              3,
+              3
+            ],
+            "m": [
+              2,
+              2
+            ],
+            "cost_local": 40,
+            "cost_routed": 40
+          },
+          {
+            "k": [
+              3,
+              6,
+              6
+            ],
+            "m": [
+              1,
+              2
+            ],
+            "cost_local": 42,
+            "cost_routed": 42
+          },
+          {
+            "k": [
+              3,
+              6,
+              6
+            ],
+            "m": [
+              2,
+              1
+            ],
+            "cost_local": 42,
+            "cost_routed": 42
+          },
+          {
+            "k": [
+              6,
+              3,
+              6
+            ],
+            "m": [
+              1,
+              2
+            ],
+            "cost_local": 42,
+            "cost_routed": 42
+          },
+          {
+            "k": [
+              6,
+              3,
+              6
+            ],
+            "m": [
+              2,
+              1
+            ],
+            "cost_local": 42,
+            "cost_routed": 42
+          },
+          {
+            "k": [
+              6,
+              6,
+              3
+            ],
+            "m": [
+              1,
+              2
+            ],
+            "cost_local": 42,
+            "cost_routed": 42
+          },
+          {
+            "k": [
+              6,
+              6,
+              3
+            ],
+            "m": [
+              2,
+              1
+            ],
+            "cost_local": 42,
+            "cost_routed": 42
+          },
+          {
+            "k": [
+              3,
+              3,
+              6
+            ],
+            "m": [
+              2,
+              3
+            ],
+            "cost_local": 44,
+            "cost_routed": 44
+          },
+          {
+            "k": [
+              3,
+              3,
+              6
+            ],
+            "m": [
+              3,
+              2
+            ],
+            "cost_local": 44,
+            "cost_routed": 44
+          },
+          {
+            "k": [
+              3,
+              6,
+              3
+            ],
+            "m": [
+              2,
+              3
+            ],
+            "cost_local": 44,
+            "cost_routed": 44
+          },
+          {
+            "k": [
+              3,
+              6,
+              3
+            ],
+            "m": [
+              3,
+              2
+            ],
+            "cost_local": 44,
+            "cost_routed": 44
+          },
+          {
+            "k": [
+              6,
+              3,
+              3
+            ],
+            "m": [
+              2,
+              3
+            ],
+            "cost_local": 44,
+            "cost_routed": 44
+          },
+          {
+            "k": [
+              6,
+              3,
+              3
+            ],
+            "m": [
+              3,
+              2
+            ],
+            "cost_local": 44,
+            "cost_routed": 44
+          },
+          {
+            "k": [
+              3,
+              6,
+              6
+            ],
+            "m": [
+              2,
+              2
+            ],
+            "cost_local": 46,
+            "cost_routed": 46
+          },
+          {
+            "k": [
+              6,
+              3,
+              6
+            ],
+            "m": [
+              2,
+              2
+            ],
+            "cost_local": 46,
+            "cost_routed": 46
+          },
+          {
+            "k": [
+              6,
+              6,
+              3
+            ],
+            "m": [
+              2,
+              2
+            ],
+            "cost_local": 46,
+            "cost_routed": 46
+          },
+          {
+            "k": [
+              6,
+              6,
+              6
+            ],
+            "m": [
+              1,
+              2
+            ],
+            "cost_local": 48,
+            "cost_routed": 48
+          },
+          {
+            "k": [
+              6,
+              6,
+              6
+            ],
+            "m": [
+              2,
+              1
+            ],
+            "cost_local": 48,
+            "cost_routed": 48
+          },
+          {
+            "k": [
+              3,
+              6,
+              6
+            ],
+            "m": [
+              2,
+              3
+            ],
+            "cost_local": 50,
+            "cost_routed": 50
+          },
+          {
+            "k": [
+              3,
+              6,
+              6
+            ],
+            "m": [
+              3,
+              2
+            ],
+            "cost_local": 50,
+            "cost_routed": 50
+          },
+          {
+            "k": [
+              6,
+              3,
+              6
+            ],
+            "m": [
+              2,
+              3
+            ],
+            "cost_local": 50,
+            "cost_routed": 50
+          },
+          {
+            "k": [
+              6,
+              3,
+              6
+            ],
+            "m": [
+              3,
+              2
+            ],
+            "cost_local": 50,
+            "cost_routed": 50
+          },
+          {
+            "k": [
+              6,
+              6,
+              3
+            ],
+            "m": [
+              2,
+              3
+            ],
+            "cost_local": 50,
+            "cost_routed": 50
+          },
+          {
+            "k": [
+              6,
+              6,
+              3
+            ],
+            "m": [
+              3,
+              2
+            ],
+            "cost_local": 50,
+            "cost_routed": 50
+          },
+          {
+            "k": [
+              6,
+              6,
+              6
+            ],
+            "m": [
+              2,
+              2
+            ],
+            "cost_local": 52,
+            "cost_routed": 52
+          },
+          {
+            "k": [
+              6,
+              6,
+              6
+            ],
+            "m": [
+              2,
+              3
+            ],
+            "cost_local": 56,
+            "cost_routed": 56
+          },
+          {
+            "k": [
+              6,
+              6,
+              6
+            ],
+            "m": [
+              3,
+              2
+            ],
+            "cost_local": 56,
+            "cost_routed": 56
+          }
+        ],
+        "ring": [
+          {
+            "k": [
+              3,
+              3,
+              3
+            ],
+            "m": [
+              1,
+              1,
+              2
+            ],
+            "cost_local": 34,
+            "cost_routed": 82
+          },
+          {
+            "k": [
+              3,
+              3,
+              3
+            ],
+            "m": [
+              1,
+              2,
+              1
+            ],
+            "cost_local": 34,
+            "cost_routed": 82
+          },
+          {
+            "k": [
+              3,
+              3,
+              3
+            ],
+            "m": [
+              2,
+              1,
+              1
+            ],
+            "cost_local": 34,
+            "cost_routed": 82
+          },
+          {
+            "k": [
+              3,
+              3,
+              3
+            ],
+            "m": [
+              1,
+              2,
+              2
+            ],
+            "cost_local": 38,
+            "cost_routed": 86
+          },
+          {
+            "k": [
+              3,
+              3,
+              3
+            ],
+            "m": [
+              2,
+              1,
+              2
+            ],
+            "cost_local": 38,
+            "cost_routed": 86
+          },
+          {
+            "k": [
+              3,
+              3,
+              3
+            ],
+            "m": [
+              2,
+              2,
+              1
+            ],
+            "cost_local": 38,
+            "cost_routed": 86
+          },
+          {
+            "k": [
+              3,
+              3,
+              6
+            ],
+            "m": [
+              1,
+              1,
+              2
+            ],
+            "cost_local": 40,
+            "cost_routed": 88
+          },
+          {
+            "k": [
+              3,
+              3,
+              6
+            ],
+            "m": [
+              1,
+              2,
+              1
+            ],
+            "cost_local": 40,
+            "cost_routed": 88
+          },
+          {
+            "k": [
+              3,
+              3,
+              6
+            ],
+            "m": [
+              2,
+              1,
+              1
+            ],
+            "cost_local": 40,
+            "cost_routed": 88
+          },
+          {
+            "k": [
+              3,
+              6,
+              3
+            ],
+            "m": [
+              1,
+              1,
+              2
+            ],
+            "cost_local": 40,
+            "cost_routed": 88
+          },
+          {
+            "k": [
+              3,
+              6,
+              3
+            ],
+            "m": [
+              1,
+              2,
+              1
+            ],
+            "cost_local": 40,
+            "cost_routed": 88
+          },
+          {
+            "k": [
+              3,
+              6,
+              3
+            ],
+            "m": [
+              2,
+              1,
+              1
+            ],
+            "cost_local": 40,
+            "cost_routed": 88
+          },
+          {
+            "k": [
+              6,
+              3,
+              3
+            ],
+            "m": [
+              1,
+              1,
+              2
+            ],
+            "cost_local": 40,
+            "cost_routed": 88
+          },
+          {
+            "k": [
+              6,
+              3,
+              3
+            ],
+            "m": [
+              1,
+              2,
+              1
+            ],
+            "cost_local": 40,
+            "cost_routed": 88
+          },
+          {
+            "k": [
+              6,
+              3,
+              3
+            ],
+            "m": [
+              2,
+              1,
+              1
+            ],
+            "cost_local": 40,
+            "cost_routed": 88
+          },
+          {
+            "k": [
+              3,
+              3,
+              3
+            ],
+            "m": [
+              2,
+              2,
+              2
+            ],
+            "cost_local": 42,
+            "cost_routed": 90
+          },
+          {
+            "k": [
+              3,
+              3,
+              6
+            ],
+            "m": [
+              1,
+              2,
+              2
+            ],
+            "cost_local": 44,
+            "cost_routed": 92
+          },
+          {
+            "k": [
+              3,
+              3,
+              6
+            ],
+            "m": [
+              2,
+              1,
+              2
+            ],
+            "cost_local": 44,
+            "cost_routed": 92
+          },
+          {
+            "k": [
+              3,
+              3,
+              6
+            ],
+            "m": [
+              2,
+              2,
+              1
+            ],
+            "cost_local": 44,
+            "cost_routed": 92
+          },
+          {
+            "k": [
+              3,
+              6,
+              3
+            ],
+            "m": [
+              1,
+              2,
+              2
+            ],
+            "cost_local": 44,
+            "cost_routed": 92
+          },
+          {
+            "k": [
+              3,
+              6,
+              3
+            ],
+            "m": [
+              2,
+              1,
+              2
+            ],
+            "cost_local": 44,
+            "cost_routed": 92
+          },
+          {
+            "k": [
+              3,
+              6,
+              3
+            ],
+            "m": [
+              2,
+              2,
+              1
+            ],
+            "cost_local": 44,
+            "cost_routed": 92
+          },
+          {
+            "k": [
+              6,
+              3,
+              3
+            ],
+            "m": [
+              1,
+              2,
+              2
+            ],
+            "cost_local": 44,
+            "cost_routed": 92
+          },
+          {
+            "k": [
+              6,
+              3,
+              3
+            ],
+            "m": [
+              2,
+              1,
+              2
+            ],
+            "cost_local": 44,
+            "cost_routed": 92
+          },
+          {
+            "k": [
+              6,
+              3,
+              3
+            ],
+            "m": [
+              2,
+              2,
+              1
+            ],
+            "cost_local": 44,
+            "cost_routed": 92
+          },
+          {
+            "k": [
+              3,
+              3,
+              3
+            ],
+            "m": [
+              2,
+              2,
+              3
+            ],
+            "cost_local": 46,
+            "cost_routed": 94
+          },
+          {
+            "k": [
+              3,
+              3,
+              3
+            ],
+            "m": [
+              2,
+              3,
+              2
+            ],
+            "cost_local": 46,
+            "cost_routed": 94
+          },
+          {
+            "k": [
+              3,
+              3,
+              3
+            ],
+            "m": [
+              3,
+              2,
+              2
+            ],
+            "cost_local": 46,
+            "cost_routed": 94
+          },
+          {
+            "k": [
+              3,
+              6,
+              6
+            ],
+            "m": [
+              1,
+              1,
+              2
+            ],
+            "cost_local": 46,
+            "cost_routed": 94
+          },
+          {
+            "k": [
+              3,
+              6,
+              6
+            ],
+            "m": [
+              1,
+              2,
+              1
+            ],
+            "cost_local": 46,
+            "cost_routed": 94
+          },
+          {
+            "k": [
+              3,
+              6,
+              6
+            ],
+            "m": [
+              2,
+              1,
+              1
+            ],
+            "cost_local": 46,
+            "cost_routed": 94
+          },
+          {
+            "k": [
+              6,
+              3,
+              6
+            ],
+            "m": [
+              1,
+              1,
+              2
+            ],
+            "cost_local": 46,
+            "cost_routed": 94
+          },
+          {
+            "k": [
+              6,
+              3,
+              6
+            ],
+            "m": [
+              1,
+              2,
+              1
+            ],
+            "cost_local": 46,
+            "cost_routed": 94
+          },
+          {
+            "k": [
+              6,
+              3,
+              6
+            ],
+            "m": [
+              2,
+              1,
+              1
+            ],
+            "cost_local": 46,
+            "cost_routed": 94
+          },
+          {
+            "k": [
+              6,
+              6,
+              3
+            ],
+            "m": [
+              1,
+              1,
+              2
+            ],
+            "cost_local": 46,
+            "cost_routed": 94
+          },
+          {
+            "k": [
+              6,
+              6,
+              3
+            ],
+            "m": [
+              1,
+              2,
+              1
+            ],
+            "cost_local": 46,
+            "cost_routed": 94
+          },
+          {
+            "k": [
+              6,
+              6,
+              3
+            ],
+            "m": [
+              2,
+              1,
+              1
+            ],
+            "cost_local": 46,
+            "cost_routed": 94
+          },
+          {
+            "k": [
+              3,
+              3,
+              6
+            ],
+            "m": [
+              2,
+              2,
+              2
+            ],
+            "cost_local": 48,
+            "cost_routed": 96
+          },
+          {
+            "k": [
+              3,
+              3,
+              6
+            ],
+            "m": [
+              3,
+              2,
+              1
+            ],
+            "cost_local": 48,
+            "cost_routed": 96
+          },
+          {
+            "k": [
+              3,
+              6,
+              3
+            ],
+            "m": [
+              2,
+              1,
+              3
+            ],
+            "cost_local": 48,
+            "cost_routed": 96
+          },
+          {
+            "k": [
+              3,
+              6,
+              3
+            ],
+            "m": [
+              2,
+              2,
+              2
+            ],
+            "cost_local": 48,
+            "cost_routed": 96
+          },
+          {
+            "k": [
+              6,
+              3,
+              3
+            ],
+            "m": [
+              1,
+              3,
+              2
+            ],
+            "cost_local": 48,
+            "cost_routed": 96
+          },
+          {
+            "k": [
+              6,
+              3,
+              3
+            ],
+            "m": [
+              2,
+              2,
+              2
+            ],
+            "cost_local": 48,
+            "cost_routed": 96
+          },
+          {
+            "k": [
+              3,
+              6,
+              6
+            ],
+            "m": [
+              1,
+              2,
+              2
+            ],
+            "cost_local": 50,
+            "cost_routed": 98
+          },
+          {
+            "k": [
+              3,
+              6,
+              6
+            ],
+            "m": [
+              2,
+              1,
+              2
+            ],
+            "cost_local": 50,
+            "cost_routed": 98
+          },
+          {
+            "k": [
+              3,
+              6,
+              6
+            ],
+            "m": [
+              2,
+              2,
+              1
+            ],
+            "cost_local": 50,
+            "cost_routed": 98
+          },
+          {
+            "k": [
+              6,
+              3,
+              6
+            ],
+            "m": [
+              1,
+              2,
+              2
+            ],
+            "cost_local": 50,
+            "cost_routed": 98
+          },
+          {
+            "k": [
+              6,
+              3,
+              6
+            ],
+            "m": [
+              2,
+              1,
+              2
+            ],
+            "cost_local": 50,
+            "cost_routed": 98
+          },
+          {
+            "k": [
+              6,
+              3,
+              6
+            ],
+            "m": [
+              2,
+              2,
+              1
+            ],
+            "cost_local": 50,
+            "cost_routed": 98
+          },
+          {
+            "k": [
+              6,
+              6,
+              3
+            ],
+            "m": [
+              1,
+              2,
+              2
+            ],
+            "cost_local": 50,
+            "cost_routed": 98
+          },
+          {
+            "k": [
+              6,
+              6,
+              3
+            ],
+            "m": [
+              2,
+              1,
+              2
+            ],
+            "cost_local": 50,
+            "cost_routed": 98
+          },
+          {
+            "k": [
+              6,
+              6,
+              3
+            ],
+            "m": [
+              2,
+              2,
+              1
+            ],
+            "cost_local": 50,
+            "cost_routed": 98
+          },
+          {
+            "k": [
+              3,
+              3,
+              6
+            ],
+            "m": [
+              2,
+              2,
+              3
+            ],
+            "cost_local": 52,
+            "cost_routed": 100
+          },
+          {
+            "k": [
+              3,
+              3,
+              6
+            ],
+            "m": [
+              2,
+              3,
+              2
+            ],
+            "cost_local": 52,
+            "cost_routed": 100
+          },
+          {
+            "k": [
+              3,
+              3,
+              6
+            ],
+            "m": [
+              3,
+              2,
+              2
+            ],
+            "cost_local": 52,
+            "cost_routed": 100
+          },
+          {
+            "k": [
+              3,
+              6,
+              3
+            ],
+            "m": [
+              2,
+              2,
+              3
+            ],
+            "cost_local": 52,
+            "cost_routed": 100
+          },
+          {
+            "k": [
+              3,
+              6,
+              3
+            ],
+            "m": [
+              2,
+              3,
+              2
+            ],
+            "cost_local": 52,
+            "cost_routed": 100
+          },
+          {
+            "k": [
+              3,
+              6,
+              3
+            ],
+            "m": [
+              3,
+              2,
+              2
+            ],
+            "cost_local": 52,
+            "cost_routed": 100
+          },
+          {
+            "k": [
+              6,
+              3,
+              3
+            ],
+            "m": [
+              2,
+              2,
+              3
+            ],
+            "cost_local": 52,
+            "cost_routed": 100
+          },
+          {
+            "k": [
+              6,
+              3,
+              3
+            ],
+            "m": [
+              2,
+              3,
+              2
+            ],
+            "cost_local": 52,
+            "cost_routed": 100
+          },
+          {
+            "k": [
+              6,
+              3,
+              3
+            ],
+            "m": [
+              3,
+              2,
+              2
+            ],
+            "cost_local": 52,
+            "cost_routed": 100
+          },
+          {
+            "k": [
+              6,
+              6,
+              6
+            ],
+            "m": [
+              1,
+              1,
+              2
+            ],
+            "cost_local": 52,
+            "cost_routed": 100
+          },
+          {
+            "k": [
+              6,
+              6,
+              6
+            ],
+            "m": [
+              1,
+              2,
+              1
+            ],
+            "cost_local": 52,
+            "cost_routed": 100
+          },
+          {
+            "k": [
+              6,
+              6,
+              6
+            ],
+            "m": [
+              2,
+              1,
+              1
+            ],
+            "cost_local": 52,
+            "cost_routed": 100
+          },
+          {
+            "k": [
+              3,
+              6,
+              6
+            ],
+            "m": [
+              2,
+              2,
+              2
+            ],
+            "cost_local": 54,
+            "cost_routed": 102
+          },
+          {
+            "k": [
+              3,
+              6,
+              6
+            ],
+            "m": [
+              3,
+              2,
+              1
+            ],
+            "cost_local": 54,
+            "cost_routed": 102
+          },
+          {
+            "k": [
+              6,
+              3,
+              6
+            ],
+            "m": [
+              1,
+              3,
+              2
+            ],
+            "cost_local": 54,
+            "cost_routed": 102
+          },
+          {
+            "k": [
+              6,
+              3,
+              6
+            ],
+            "m": [
+              2,
+              2,
+              2
+            ],
+            "cost_local": 54,
+            "cost_routed": 102
+          },
+          {
+            "k": [
+              6,
+              6,
+              3
+            ],
+            "m": [
+              1,
+              3,
+              2
+            ],
+            "cost_local": 54,
+            "cost_routed": 102
+          },
+          {
+            "k": [
+              6,
+              6,
+              3
+            ],
+            "m": [
+              2,
+              1,
+              3
+            ],
+            "cost_local": 54,
+            "cost_routed": 102
+          },
+          {
+            "k": [
+              6,
+              6,
+              3
+            ],
+            "m": [
+              2,
+              2,
+              2
+            ],
+            "cost_local": 54,
+            "cost_routed": 102
+          },
+          {
+            "k": [
+              6,
+              6,
+              6
+            ],
+            "m": [
+              1,
+              2,
+              2
+            ],
+            "cost_local": 56,
+            "cost_routed": 104
+          },
+          {
+            "k": [
+              6,
+              6,
+              6
+            ],
+            "m": [
+              2,
+              1,
+              2
+            ],
+            "cost_local": 56,
+            "cost_routed": 104
+          },
+          {
+            "k": [
+              6,
+              6,
+              6
+            ],
+            "m": [
+              2,
+              2,
+              1
+            ],
+            "cost_local": 56,
+            "cost_routed": 104
+          },
+          {
+            "k": [
+              3,
+              6,
+              6
+            ],
+            "m": [
+              2,
+              2,
+              3
+            ],
+            "cost_local": 58,
+            "cost_routed": 106
+          },
+          {
+            "k": [
+              3,
+              6,
+              6
+            ],
+            "m": [
+              2,
+              3,
+              2
+            ],
+            "cost_local": 58,
+            "cost_routed": 106
+          },
+          {
+            "k": [
+              3,
+              6,
+              6
+            ],
+            "m": [
+              3,
+              2,
+              2
+            ],
+            "cost_local": 58,
+            "cost_routed": 106
+          },
+          {
+            "k": [
+              6,
+              3,
+              6
+            ],
+            "m": [
+              2,
+              2,
+              3
+            ],
+            "cost_local": 58,
+            "cost_routed": 106
+          },
+          {
+            "k": [
+              6,
+              3,
+              6
+            ],
+            "m": [
+              2,
+              3,
+              2
+            ],
+            "cost_local": 58,
+            "cost_routed": 106
+          },
+          {
+            "k": [
+              6,
+              3,
+              6
+            ],
+            "m": [
+              3,
+              2,
+              2
+            ],
+            "cost_local": 58,
+            "cost_routed": 106
+          },
+          {
+            "k": [
+              6,
+              6,
+              3
+            ],
+            "m": [
+              2,
+              2,
+              3
+            ],
+            "cost_local": 58,
+            "cost_routed": 106
+          },
+          {
+            "k": [
+              6,
+              6,
+              3
+            ],
+            "m": [
+              2,
+              3,
+              2
+            ],
+            "cost_local": 58,
+            "cost_routed": 106
+          },
+          {
+            "k": [
+              6,
+              6,
+              3
+            ],
+            "m": [
+              3,
+              2,
+              2
+            ],
+            "cost_local": 58,
+            "cost_routed": 106
+          },
+          {
+            "k": [
+              6,
+              6,
+              6
+            ],
+            "m": [
+              1,
+              3,
+              2
+            ],
+            "cost_local": 60,
+            "cost_routed": 108
+          },
+          {
+            "k": [
+              6,
+              6,
+              6
+            ],
+            "m": [
+              2,
+              2,
+              2
+            ],
+            "cost_local": 60,
+            "cost_routed": 108
+          },
+          {
+            "k": [
+              6,
+              6,
+              6
+            ],
+            "m": [
+              2,
+              2,
+              3
+            ],
+            "cost_local": 64,
+            "cost_routed": 112
+          },
+          {
+            "k": [
+              6,
+              6,
+              6
+            ],
+            "m": [
+              2,
+              3,
+              2
+            ],
+            "cost_local": 64,
+            "cost_routed": 112
+          },
+          {
+            "k": [
+              6,
+              6,
+              6
+            ],
+            "m": [
+              3,
+              2,
+              2
+            ],
+            "cost_local": 64,
+            "cost_routed": 112
+          }
+        ]
+      },
+      "conventions": {
+        "local": {
+          "mirror_barrier": 4,
+          "ring_min": {
+            "k": [
+              3,
+              3,
+              3
+            ],
+            "m": [
+              1,
+              1,
+              2
+            ],
+            "cost": 34
+          },
+          "ring_min_barrier": 8
+        },
+        "routed": {
+          "mirror_barrier": 4,
+          "ring_min": {
+            "k": [
+              3,
+              3,
+              3
+            ],
+            "m": [
+              1,
+              1,
+              2
+            ],
+            "cost": 82
+          },
+          "ring_min_barrier": 56
+        }
+      }
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

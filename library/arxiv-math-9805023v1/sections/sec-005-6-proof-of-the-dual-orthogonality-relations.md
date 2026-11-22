@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-9805023v1
-doc_title: "arXiv:math/9805023v1 [math.CA] 6 May 1998"
+doc_title: "q-Laguerre polynomials and big q-Bessel functions and their orthogonality relations"
 section_id: sec-005-6-proof-of-the-dual-orthogonality-relations
 section_title: "Proof of the dual orthogonality relations."
 section_number: 6
@@ -8,6 +8,7 @@ pages: 13-20
 source_pdf: 9805023v1.pdf
 source_sha256: ea8758b2a2bf9d85
 toc_source: inferred
+doc_brief: "q-Laguerre polynomials and big q-Bessel functions and their orthogonality relations — The q-Laguerre polynomials correspond to an indetermined moment problem."
 ---
 In this section we prove the dual orthogonality relations of Corollary 4.3 by using a
 rigorous limit transition from the big q-Jacobi polynomials to the q-Bessel functions under

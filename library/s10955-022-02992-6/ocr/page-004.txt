@@ -1,0 +1,59 @@
+33 Page 4 of 47 S. Jansen, L. Kolesnikov
+
+conditions by Fernandez and Procacci in a rather general setup (see Corollaries 2.7 and 2.9,
+respectively). In Sect. 2.2, the same approach is used to prove a new, improved sufficient con-
+dition in the setup of abstract polymers (Proposition 2.4). The proof of the proposition relies
+on an auxiliary result (Lemma 2.5) which is proved in Appendix A. In the Sects. 2.3 and 2.4
+we consider the special case of hard-core interactions. Both in the continuum (Sect. 2.3) and
+in the discrete setup (Sect. 2.4), we provide model-specific characterizations of the conver-
+gence domain, stated in Theorems 2.6 and 2.7, respectively. As an immediate consequence
+of Theorem 2.7 we obtain an elementary proof of the well known Gruber—Kunz condition
+(Corollary 2.8). In Sect. 3, we present a forest-graph equality and other combinatorial results
+in order to prove Theorems 2.1, 2.6 and 2.7. Finally, in Sect. 4, Theorems 2.6 and 2.7 are used
+to obtain practitioner-type sufficient conditions for a class of hard-core interaction models,
+including new sufficient conditions for subset polymers in Z4 (Theorem 4.1) and hard objects
+in R¢ (Theorems 4.2 and 4.4).
+
+The reader interested primarily in the discrete setup of subset polymers is encouraged
+to jump directly to Subsect. 2.4, its main result being the characterization of the domain of
+convergence for the activity expansions p given by Theorem 2.7 (compare to Theorem 3.13).
+The main ideas behind the proof of Theorem 2.7 in Subsect. 3.4 and behind the application
+of Theorem 2.7 in Subsect. 4.1 can be transferred to the continuous setup as well.
+
+2 Main Results
+
+2.1 (Locally) Stable Pair Potentials
+
+Let (X, 4’) be a measurable space, 4 a o-finite reference measure, and v a pair potential, i.e.,
+v: Xx X — RU {oo} is measurable and symmetric—in the sense that v(x, y) = v(y, x)
+for any x, y € X. Corresponding to the potential v, Mayer’s f function is given by
+
+fy) = en Uy) — Y,
+
+We call the pair potential v stable if there exists a measurable map B : X — R 4 such
+that for any n € Nand x1,..., Xn EX
+
+T] G+ fei, xj) < ebte1 Bow (2.1)
+
+l<i<j<n
+holds; we call v locally stable or Penrose stable (due to O. Penrose, see [23]) if there exists
+
+a measurable map C : X — Ry, such that for any x9 € X,n € N and x,..., Xn EX
+satisfying TMhei<jenC + f(xi,xj)) #0
+
+n
+TG + £0, 1) < ee (2.2)
+i=l
+
+holds. Notice that every locally stable potential is stable and that every non-negative potential
+
+v is locally stable (with the choice C = 0).
+
+An activity function is a measurable map z : X — R. Physically relevant activities are
+non-negative but for the purpose of studying the convergence of expansions it can be helpful
+to admit negative (or complex) activities as well. We define the (signed) measure A, on V by
+
+A (B) =| z(x)a(dx), Bex. (2.3)
+B
+
+D Springer

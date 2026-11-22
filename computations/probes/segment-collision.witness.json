@@ -1,0 +1,268 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-10-12T18:22:07.817832+00:00",
+  "commitSha": "860f6dba1c2160677ff9a5204af7ca80522a9a80",
+  "assertions": [
+    {
+      "name": "trace_normalised_tr1_eq_1_at_n3_and_n6",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "y-lambda-at-q0"
+    },
+    {
+      "name": "evaluator_reproduces_committed_H3_nucleon_characters",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "chi-{proton,neutron}-h3-at-q0-50dps"
+    },
+    {
+      "name": "single_segment_marginal_universal_(1,zD,zD-h)_for_all_pairs",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean bridge_free / bridge_crossing / bridge_crossing_inv; 9 pairs incl. p, n, alternating core"
+    },
+    {
+      "name": "two_segment_probe_is_NOT_universal_(spread>1e-3)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "c = σ₁σ₂ reaches one strand into a's history"
+    },
+    {
+      "name": "sym_channel_weight_eq_(q4+q2+1)/(q2+1)^2",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean channel_weights_conventionD"
+    },
+    {
+      "name": "alt_channel_weight_eq_q2/(q2+1)^2_and_positive",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean alt_weight_ne_zero_conventionD"
+    },
+    {
+      "name": "ohara_cross_term_reflection_symmetric_E(pi-theta)=E(theta)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean segEnergy_reflect"
+    },
+    {
+      "name": "ohara_cross_term_minimum_at_pi/2_on_grid_at_every_ell",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean minimiser_eq_pi_div_two (achiral case)"
+    },
+    {
+      "name": "ohara_log_coefficient_approaches_2pi/sin(theta)_(1e-2_rel)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "polar asymptotics, ∫dφ/(1 − cosθ sin2φ) = 2π/|sinθ|"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "segment-collision",
+  "scriptFile": "segment_collision_probe.py",
+  "scriptHash": "914e04664aff",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "cd378682bfd642d0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/segment_collision_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/segment_collision_probe.py"
+  },
+  "q0Anchor": "proton",
+  "q0_anchor_reason": "q0 read from the committed y-lambda-at-q0 witness string",
+  "description": "PROBE (bean qou-jfx8): the owner's segment-collision reformulation. Q1 the single-segment collision state is universal (1, z_D, z_D − h)·tr a·tr b on every pair; a two-segment probe is not. Q2 Sym/Alt channel weights at convention D. Q3 the local O'Hara cross term of two segments is reflection-symmetric, minimal at θ = π/2, log coefficient 2π/sin θ. Nothing fitted, selected or wired.",
+  "weight_family": "markov_y_lambda_convention_D",
+  "z_D": "0.61268803714646525159582986394589924802630839154509",
+  "z_inv": "0.40362773835082593616498365081622430416655089628202",
+  "q1_rows": [
+    {
+      "a": "p",
+      "b": "p",
+      "free_ratio": "1.0",
+      "sigma_ratio": "0.612688037146465251595829863946",
+      "sigma_inv_ratio": "0.403627738350825936164983650816",
+      "two_segment_ratio": "1.24411558657633895547475229695"
+    },
+    {
+      "a": "p",
+      "b": "n",
+      "free_ratio": "1.0",
+      "sigma_ratio": "0.612688037146465251595829863946",
+      "sigma_inv_ratio": "0.403627738350825936164983650816",
+      "two_segment_ratio": "1.24411558657633895547475229695"
+    },
+    {
+      "a": "p",
+      "b": "sigma0^3",
+      "free_ratio": "1.0",
+      "sigma_ratio": "0.612688037146465251595829863946",
+      "sigma_inv_ratio": "0.403627738350825936164983650816",
+      "two_segment_ratio": "1.24411558657633895547475229695"
+    },
+    {
+      "a": "n",
+      "b": "p",
+      "free_ratio": "1.0",
+      "sigma_ratio": "0.612688037146465251595829863946",
+      "sigma_inv_ratio": "0.403627738350825936164983650816",
+      "two_segment_ratio": "1.4705730488130523025733038117"
+    },
+    {
+      "a": "n",
+      "b": "n",
+      "free_ratio": "1.0",
+      "sigma_ratio": "0.612688037146465251595829863946",
+      "sigma_inv_ratio": "0.403627738350825936164983650816",
+      "two_segment_ratio": "1.4705730488130523025733038117"
+    },
+    {
+      "a": "n",
+      "b": "sigma0^3",
+      "free_ratio": "1.0",
+      "sigma_ratio": "0.612688037146465251595829863946",
+      "sigma_inv_ratio": "0.403627738350825936164983650816",
+      "two_segment_ratio": "1.4705730488130523025733038117"
+    },
+    {
+      "a": "core",
+      "b": "p",
+      "free_ratio": "1.0",
+      "sigma_ratio": "0.612688037146465251595829863946",
+      "sigma_inv_ratio": "0.403627738350825936164983650816",
+      "two_segment_ratio": "0.380147052230759282107928162663"
+    },
+    {
+      "a": "core",
+      "b": "n",
+      "free_ratio": "1.0",
+      "sigma_ratio": "0.612688037146465251595829863946",
+      "sigma_inv_ratio": "0.403627738350825936164983650816",
+      "two_segment_ratio": "0.380147052230759282107928162663"
+    },
+    {
+      "a": "core",
+      "b": "sigma0^3",
+      "free_ratio": "1.0",
+      "sigma_ratio": "0.612688037146465251595829863946",
+      "sigma_inv_ratio": "0.403627738350825936164983650816",
+      "two_segment_ratio": "0.380147052230759282107928162663"
+    }
+  ],
+  "q1_single_segment_worst_dev": "4.2324e-50",
+  "q1_two_segment_spread": "1.0904259965822930205",
+  "q1_two_segment_p_vs_n_separation": "0.2264574622367133471",
+  "q2_sym_weight": "0.75270211325196540159377935162023613783017559887491",
+  "q2_alt_weight": "0.24729788674803459840622064837976386216982440112509",
+  "q3_theta_grid_over_pi": [
+    "0.0833333",
+    "0.166667",
+    "0.25",
+    "0.333333",
+    "0.416667",
+    "0.5",
+    "0.583333",
+    "0.666667",
+    "0.75",
+    "0.833333",
+    "0.916667"
+  ],
+  "q3_energy_d1": {
+    "0.5": [
+      "0.876693792004351",
+      "0.874114615852229",
+      "0.870662180521263",
+      "0.86728801143601",
+      "0.864865503164443",
+      "0.863988550685462",
+      "0.864865503164443",
+      "0.86728801143601",
+      "0.870662180521263",
+      "0.874114615852229",
+      "0.876693792004351"
+    ],
+    "2.0": [
+      "7.4776630608434",
+      "6.88132168010012",
+      "6.33060742374903",
+      "5.93546429463801",
+      "5.70492573952688",
+      "5.62960235560292",
+      "5.70492573952688",
+      "5.93546429463801",
+      "6.33060742374903",
+      "6.88132168010012",
+      "7.4776630608434"
+    ],
+    "10.0": [
+      "34.7785272454409",
+      "24.2130276778401",
+      "19.3447689317113",
+      "16.8218311258869",
+      "15.5675025342283",
+      "15.1844783157393",
+      "15.5675025342283",
+      "16.8218311258869",
+      "19.3447689317113",
+      "24.2130276778401",
+      "34.7785272454409"
+    ],
+    "50.0": [
+      "72.893686707214",
+      "44.2814033588276",
+      "33.5845319273974",
+      "28.4628121948354",
+      "26.0097306960386",
+      "25.2723034172764",
+      "26.0097306960386",
+      "28.4628121948354",
+      "33.5845319273974",
+      "44.2814033588276",
+      "72.893686707214"
+    ]
+  },
+  "q3_argmin_over_pi": {
+    "0.5": "0.5",
+    "2.0": "0.5",
+    "10.0": "0.5",
+    "50.0": "0.5"
+  },
+  "q3_log_coefficient": {
+    "0.5": {
+      "measured": "6.2830114614834",
+      "2pi_over_sin": "6.28318530717959"
+    },
+    "0.3333": {
+      "measured": "7.25494375611178",
+      "2pi_over_sin": "7.25519745693687"
+    },
+    "0.1667": {
+      "measured": "12.5652504843892",
+      "2pi_over_sin": "12.5663706143592"
+    }
+  }
+}

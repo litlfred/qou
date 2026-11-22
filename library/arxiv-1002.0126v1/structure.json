@@ -6,10 +6,18 @@
   "sha256": "ea218a0586a1349094e265496a903e14e1422811503036c78f6d37e3c0b9ecb9",
   "bytes": 604910,
   "pages": 39,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 35,
+    "reason": "13 of 618 words are a stray single letter: the text layer splits words"
+   }
+  ],
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -19,21 +27,28 @@
    "stamp_date": "31 Jan 2010"
   },
   "doi": null,
-  "title": "An introduction to the volume conjecture",
-  "authors_raw": null,
-  "abstract": "This is an introduction to the Volume Conjecture and its gene r- alizations for nonexperts. The Volume Conjecture states that a certain limit of the colo red Jones polynomial of a knot would give the volume of its complement. If we deform the parameter of the colored Jones polynomial we also conjectur e that it would also give the volume and the Chern\u2013Simons invariant of a three-ma nifold obtained by Dehn surgery determined by the parameter. I start with a de\ufb01nition of the colored Jones polynomial and i nclude ele- mentary examples and short description of elementary hyper bolic geometry.",
+  "title": "AN INTRODUCTION TO THE VOLUME CONJECTURE",
+  "authors_raw": "HITOSHI MURAKAMI",
+  "title_lines": [
+   "AN INTRODUCTION TO THE VOLUME CONJECTURE"
+  ],
+  "abstract": "This is an introduction to the Volume Conjecture and its gener- alizations for nonexperts. The Volume Conjecture states that a certain limit of the colored Jones polynomial of a knot would give the volume of its complement. If we deform the parameter of the colored Jones polynomial we also conjecture that it would also give the volume and the Chern–Simons invariant of a three-manifold obtained by Dehn surgery determined by the parameter. I start with a deﬁnition of the colored Jones polynomial and include ele- mentary examples and short description of elementary hyperbolic geometry.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20180529031540-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20180529031540-04'00'"
   },
-  "title_lines": [
-   "AN INTRODUCTION TO THE VOLUME CONJECTURE",
-   "HITOSHI MURAKAMI"
-  ],
-  "title_prev": "AN INTRODUCTION TO THE VOLUME CONJECTURE HITOSHI MURAKAMI"
+  "title_raw": "AN INTRODUCTION TO THE VOLUME CONJECTURE",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "AN INTRODUCTION TO THE VOLUME CONJECTURE 1. Introduction In 1995 Kashaev introduced a complex valued link invariant for an integer N ≥ 2 by using the quantum dilogarithm [15] and then he observed that his invariant grows exponentially with growth rate proportional to the volume of the knot complemen",
+   "outline": "1. Introduction",
+   "text": "AN INTRODUCTION TO THE VOLUME CONJECTURE",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "An introduction to the volume conjecture"
  },
  "toc": [
   {
@@ -41,130 +56,963 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "Link invariant from a Yang\u2013Baxter operator",
+   "title": "Link invariant from a Yang–Baxter operator",
    "page": 2,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Braid presentation of a link",
    "page": 2,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Yang\u2013Baxter operator",
+   "title": "Yang–Baxter operator",
    "page": 4,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Invariant",
    "page": 5,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Quantum (g,V) invariant",
    "page": 8,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Example of calculation",
    "page": 10,
    "source": "outline",
-   "number": "2.5"
+   "number": "2.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Volume conjecture",
    "page": 16,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Statement of the Volume Conjecture",
    "page": 16,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Proof of the Volume Conjecture for the figure-eight knot",
    "page": 18,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Knots and links for which the Volume Conjecture is proved",
    "page": 22,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Supporting evidence for the Volume Conjecture",
    "page": 22,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Approximation of the colored Jones polynomial",
    "page": 22,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Geometric interpretation of the limit",
    "page": 26,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Generalizations of the Volume Conjecture",
    "page": 29,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Complexification",
    "page": 29,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Deformation of the parameter",
    "page": 29,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 38,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "braid of braids β1 and β2 given by putting β2 below β1. It is well known (see for example [2]) that Bn is generated by σ1, σ2, . . . , σn−1 (Figure 2) with relations σiσj = σjσi",
+   "page": 2,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "ith generator of the n-braid group Bn Bn",
+   "page": 2,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "braid relation It is known that any knot or link can be presented as the closure of a braid",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "the ﬁgure-eight knot is presented as the closure of a braid Here the closure of an n-braid is obtained by connecting the n points on the top with the n points on the bottom without entanglement as shown in the middle picture of Figure 4",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "αβ is conjugate to β",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "β (βσ±",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Replace a generator with the R-matrix. Example 2.5. For the braid σ1σ−1",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "A braid and the corresponding homomorhism",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "A braid and its invariant",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "braid relation corresponds to the Yang–Baxter equation",
+   "page": 6,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "11",
+   "title": "invariance under a conjugation",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "12",
+   "title": "invariance under a stabilization",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "13",
+   "title": "skein triple",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "14",
+   "title": "We close all the strings except for the ﬁrst one. Then Tr1(Tr2(Tr3(Φ(β)µ⊗3))) coincides with the trace of µ times the scalar S",
+   "page": 10,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "15",
+   "title": "Draw the braid σ1σ−1",
+   "page": 11,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "16",
+   "title": "Label the ﬁrst (top-left) arc with N −1",
+   "page": 11,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "17",
+   "title": "The label of the next arc should be N −1, and the",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "18",
+   "title": "Label the top-right arc with i (0 ≤i ≤N −1)",
+   "page": 13,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "19",
+   "title": "The label of the left-middle arc should be i since the diﬀerence at the top crossing is 0",
+   "page": 13,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "20",
+   "title": "Choose j and k. Then the diﬀerence at the second top crossing is N −k −1",
+   "page": 14,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "21",
+   "title": "The label of the arc between the second top arc and the second bottom arc should be N −k+j−1. Note that j−k ≤0",
+   "page": 14,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "24",
+   "title": "In this case we need to put µ at each local minimum where the arc goes",
+   "page": 14,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "22",
+   "title": "The label of the arc between the second bottom crossing and the bottom-most crossing should be i + j −k. Note that",
+   "page": 15,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "23",
+   "title": "The label k should coincide with i",
+   "page": 15,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "25",
+   "title": "(2, 1)-cable of the ﬁgure-eight knot (Figure 26), one hyperbolic and one Seifert ﬁbered. Therefore we have",
+   "page": 17,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "26",
+   "title": "The JSJ decomposition of the (2, 1)-cable of the ﬁgure-eight knot",
+   "page": 18,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "27",
+   "title": "Graph of f(N; k) Put g(N; j) := Qj",
+   "page": 18,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "table of f(N; k) and g(N; j)",
+   "page": 19,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "28",
+   "title": "The complement of the ﬁgure-eight knot is decomposed into two ideal hyperbolic regular tetrahedra. Shadowed triangles make the boundary of the knot complement",
+   "page": 20,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "29",
+   "title": "An ideal hyperbolic tetrahedron is the part above the hemisphere surrounded by three perpendicular planes",
+   "page": 21,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "30",
+   "title": "A top view (right) of the ideal hyperbolic tetrahedron (left) is deﬁned (up to isometry) by the similarity class of this triangle. Therefore we can parametrize an ideal hyperbolic tetrahedron by a triple of positive numbers (α, β, γ) with α + β + γ = π. We denote it by ∆(α, β, γ)",
+   "page": 21,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "31",
+   "title": "Parametrization of ideal hyperbolic tetrahedra {z ∈C | Im z > 0} gives a parametrization of ideal hyperbolic tetrahedra. We",
+   "page": 26,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "32",
+   "title": "An octahedron put at a crossing",
+   "page": 27,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "33",
+   "title": "decomposition of the octahedron into ﬁve tetrahedra Now only two of the vertices are attached to the knot. We pull the two of the remaining four vertices to the top (+∞) and the other two to the bottom (−∞)",
+   "page": 27,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "34",
+   "title": "Pull the vertices to +∞and −∞. So far this is just formal parametrizations. We need to choose appropriate values for parameters so that the tetrahedra ﬁt together to provide a complete hyperbolic",
+   "page": 28,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "35",
+   "title": "Identifying the sides as indicated by the circles, we get a triangulation of the boundary torus. Here the single circles denote the arrow head of the single arrow, the double circles denote the arrow head of the double arrow, the circles with −denote the",
+   "page": 32,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "36",
+   "title": "The cycle e6 is the meridian and the cycle e1 + e6 + e2 + e8 + e3 + e4 is the longitude",
+   "page": 34,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "37",
+   "title": "(2, 1)-Dehn surgery along the ﬁgure-eight knot",
+   "page": 36,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 39,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 41,
+   "n_words": 5,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -172,18 +1020,22 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 3770,
-   "n_words": 639
+   "n_chars": 2936,
+   "n_words": 473,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-2-link-invariant-from-a-yangbaxter-operator",
    "number": "2",
-   "title": "Link invariant from a Yang\u2013Baxter operator",
+   "title": "Link invariant from a Yang–Baxter operator",
    "level": 1,
    "page_start": 2,
    "page_end": 2,
-   "n_chars": 95,
-   "n_words": 19
+   "n_chars": 889,
+   "n_words": 145,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-21-braid-presentation-of-a-link",
@@ -192,121 +1044,214 @@
    "level": 2,
    "page_start": 2,
    "page_end": 4,
-   "n_chars": 2050,
-   "n_words": 386
+   "n_chars": 1960,
+   "n_words": 361,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-23-invariant",
-   "number": "2.3",
-   "title": "Invariant",
+   "id": "sec-003-22-yangbaxter-operator",
+   "number": "2.2",
+   "title": "Yang–Baxter operator",
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 1449,
-   "n_words": 275
+   "n_chars": 1526,
+   "n_words": 286,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-004-22-yangbaxter-operator",
-   "number": "2.2",
-   "title": "Yang\u2013Baxter operator",
+   "id": "sec-004-23-invariant",
+   "number": "2.3",
+   "title": "Invariant",
    "level": 2,
    "page_start": 5,
-   "page_end": 10,
-   "n_chars": 6259,
-   "n_words": 1226
+   "page_end": 8,
+   "n_chars": 2886,
+   "n_words": 567,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-005-25-example-of-calculation",
+   "id": "sec-005-24-quantum-gv-invariant",
+   "number": "2.4",
+   "title": "Quantum (g,V) invariant",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 3264,
+   "n_words": 610,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-006-25-example-of-calculation",
    "number": "2.5",
    "title": "Example of calculation",
    "level": 2,
    "page_start": 10,
-   "page_end": 15,
-   "n_chars": 4585,
-   "n_words": 909
+   "page_end": 16,
+   "n_chars": 5535,
+   "n_words": 1057,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-006-3-volume-conjecture",
+   "id": "sec-007-3-volume-conjecture",
    "number": "3",
    "title": "Volume conjecture",
    "level": 1,
-   "page_start": 15,
-   "page_end": 22,
-   "n_chars": 11182,
-   "n_words": 2271
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 144,
+   "n_words": 25,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-007-4-supporting-evidence-for-the-volume-conjecture",
+   "id": "sec-008-31-statement-of-the-volume-conjecture",
+   "number": "3.1",
+   "title": "Statement of the Volume Conjecture",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 2235,
+   "n_words": 427,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-009-32-proof-of-the-volume-conjecture-for-the-figure",
+   "number": "3.2",
+   "title": "Proof of the Volume Conjecture for the figure-eight knot",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 22,
+   "n_chars": 6536,
+   "n_words": 1267,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-010-33-knots-and-links-for-which-the-volume-conjectu",
+   "number": "3.3",
+   "title": "Knots and links for which the Volume Conjecture is proved",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 912,
+   "n_words": 163,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-011-4-supporting-evidence-for-the-volume-conjecture",
    "number": "4",
    "title": "Supporting evidence for the Volume Conjecture",
    "level": 1,
    "page_start": 22,
    "page_end": 22,
-   "n_chars": 342,
-   "n_words": 63
+   "n_chars": 339,
+   "n_words": 60,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-008-41-approximation-of-the-colored-jones-polynomial",
+   "id": "sec-012-41-approximation-of-the-colored-jones-polynomial",
    "number": "4.1",
    "title": "Approximation of the colored Jones polynomial",
    "level": 2,
    "page_start": 22,
    "page_end": 26,
-   "n_chars": 6436,
-   "n_words": 1446
+   "n_chars": 6295,
+   "n_words": 1318,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-009-42-geometric-interpretation-of-the-limit",
+   "id": "sec-013-42-geometric-interpretation-of-the-limit",
    "number": "4.2",
    "title": "Geometric interpretation of the limit",
    "level": 2,
    "page_start": 26,
    "page_end": 29,
-   "n_chars": 4401,
-   "n_words": 856
+   "n_chars": 4367,
+   "n_words": 821,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-010-5-generalizations-of-the-volume-conjecture",
+   "id": "sec-014-5-generalizations-of-the-volume-conjecture",
    "number": "5",
    "title": "Generalizations of the Volume Conjecture",
    "level": 1,
    "page_start": 29,
    "page_end": 29,
-   "n_chars": 1091,
-   "n_words": 189
+   "n_chars": 69,
+   "n_words": 10,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-011-52-deformation-of-the-parameter",
+   "id": "sec-015-51-complexification",
+   "number": "5.1",
+   "title": "Complexification",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 29,
+   "n_chars": 935,
+   "n_words": 158,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-016-52-deformation-of-the-parameter",
    "number": "5.2",
    "title": "Deformation of the parameter",
    "level": 2,
    "page_start": 29,
    "page_end": 38,
-   "n_chars": 15030,
-   "n_words": 3236
+   "n_chars": 14922,
+   "n_words": 3124,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-012-references",
+   "id": "sec-017-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 38,
    "page_end": 39,
-   "n_chars": 6817,
-   "n_words": 1105
+   "n_chars": 6755,
+   "n_words": 1043,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 18,
-  "sections": 13,
-  "chars_total": 63507,
+  "toc_inferred_entries": 0,
+  "figure_entries": 38,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 19,
+  "chars_total": 62546,
+  "furniture_lines_stripped": 0,
+  "pages_read_in_print_order": [
+   2
+  ],
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "columbia.tex",
    "tex_sections": 24,
-   "overlaid": 10,
+   "overlaid": 16,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -314,60 +1259,99 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.981,
+     "prose_ratio": 0.732,
+     "coverage_ratio": 0.812,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-link-invariant-from-a-yangbaxter-operator",
-     "title": "Link invariant from a Yang\u2013Baxter operator",
+     "title": "Link invariant from a Yang–Baxter operator",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.128,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-002-21-braid-presentation-of-a-link",
+     "title": "Braid presentation of a link",
+     "prose_ratio": 0.912,
+     "coverage_ratio": 0.937,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-22-yangbaxter-operator",
+     "title": "Yang–Baxter operator",
+     "prose_ratio": 0.885,
+     "coverage_ratio": 0.949,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-23-invariant",
+     "title": "Invariant",
+     "prose_ratio": 0.892,
+     "coverage_ratio": 0.932,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-24-quantum-gv-invariant",
+     "title": "Quantum (g,V) invariant",
+     "prose_ratio": 0.875,
+     "coverage_ratio": 0.932,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-25-example-of-calculation",
+     "title": "Example of calculation",
+     "prose_ratio": 0.918,
+     "coverage_ratio": 0.961,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-3-volume-conjecture",
+     "title": "Volume conjecture",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-21-braid-presentation-of-a-link",
-     "title": "Braid presentation of a link",
-     "prose_ratio": 0.912,
-     "coverage_ratio": 0.92,
+     "id": "sec-008-31-statement-of-the-volume-conjecture",
+     "title": "Statement of the Volume Conjecture",
+     "prose_ratio": 0.906,
+     "coverage_ratio": 0.963,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-23-invariant",
-     "title": "Invariant",
-     "prose_ratio": 0.268,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-004-22-yangbaxter-operator",
-     "title": "Yang\u2013Baxter operator",
-     "prose_ratio": 0.639,
-     "coverage_ratio": 0.344,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
-    },
-    {
-     "id": "sec-005-25-example-of-calculation",
-     "title": "Example of calculation",
-     "prose_ratio": 0.858,
-     "coverage_ratio": 0.966,
+     "id": "sec-009-32-proof-of-the-volume-conjecture-for-the-figure",
+     "title": "Proof of the Volume Conjecture for the figure-eight knot",
+     "prose_ratio": 0.937,
+     "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-3-volume-conjecture",
-     "title": "Volume conjecture",
-     "prose_ratio": 0.986,
-     "coverage_ratio": 0.966,
+     "id": "sec-010-33-knots-and-links-for-which-the-volume-conjectu",
+     "title": "Knots and links for which the Volume Conjecture is proved",
+     "prose_ratio": 0.896,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-4-supporting-evidence-for-the-volume-conjecture",
+     "id": "sec-011-4-supporting-evidence-for-the-volume-conjecture",
      "title": "Supporting evidence for the Volume Conjecture",
      "prose_ratio": 0.897,
      "coverage_ratio": 1.0,
@@ -375,39 +1359,47 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-41-approximation-of-the-colored-jones-polynomial",
+     "id": "sec-012-41-approximation-of-the-colored-jones-polynomial",
      "title": "Approximation of the colored Jones polynomial",
      "prose_ratio": 0.944,
-     "coverage_ratio": 0.978,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-009-42-geometric-interpretation-of-the-limit",
-     "title": "Geometric interpretation of the limit",
-     "prose_ratio": 0.934,
      "coverage_ratio": 0.977,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-010-5-generalizations-of-the-volume-conjecture",
+     "id": "sec-013-42-geometric-interpretation-of-the-limit",
+     "title": "Geometric interpretation of the limit",
+     "prose_ratio": 0.934,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-5-generalizations-of-the-volume-conjecture",
      "title": "Generalizations of the Volume Conjecture",
-     "prose_ratio": 0.833,
+     "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-52-deformation-of-the-parameter",
-     "title": "Deformation of the parameter",
-     "prose_ratio": 0.949,
-     "coverage_ratio": 0.994,
+     "id": "sec-015-51-complexification",
+     "title": "Complexification",
+     "prose_ratio": 0.791,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-012-references",
+     "id": "sec-016-52-deformation-of-the-parameter",
+     "title": "Deformation of the parameter",
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-017-references",
      "title": "References",
      "result": "no matching \\section"
     }

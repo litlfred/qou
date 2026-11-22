@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-0905.0591v3/blocks/prose-sec-018",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Twisted Alexander polynomials, the Thurston norm and fibered manifolds",
-  "pageStart": 18,
-  "pageEnd": 21,
-  "text": "../sections/sec-018-6-twisted-alexander-polynomials-the-thurston-nor.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0905.0591v3",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0905.0591v3",
+  "title": "Ribbon knots and doubly slice knots",
+  "pageStart": 16,
+  "pageEnd": 17,
+  "text": "../sections/sec-018-53-ribbon-knots-and-doubly-slice-knots.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0905.0591v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0905.0591v3/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -67,7 +67,7 @@ from zero.
   and uniqueness, not the recursion. That is row 4.
 * **`Y₀`, `Y_∞`, the inverse, meromorphy** — bean `qou-c1ln` row 4, untouched.
 
--- Ref: [manuscript] computations/qbeta/c3_w2_c1_pole_divisor.py
+-- Ref: [leitner2026] computations/qbeta/c3_w2_c1_pole_divisor.py
 -- Ref: [ramis-sauloy-zhang2013] Astérisque 355 §3.3 (Ramis–Sauloy–Zhang)
 -/
 

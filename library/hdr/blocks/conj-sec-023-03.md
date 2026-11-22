@@ -1,0 +1,1 @@
+Let W be a complex reﬂection group. The partition into Rouquier families (for a suitably chosen cyclotomic Hecke algebra Hc of W) reﬁnes the CMc-partition, for all choices of c; that is, if E, E′ ∈Irr(W) belong to the same Rouquier family of Hc, then E ∼CM E′.

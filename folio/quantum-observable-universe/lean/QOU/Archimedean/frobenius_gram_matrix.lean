@@ -42,7 +42,7 @@ Each of (1) and (2) is a concrete equality discharged by direct
 computation (`decide`/`rfl`/`ring`); the symmetry is by definition of
 the matrix entries.
 
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/frobenius-gram-matrix.md
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/frobenius-gram-matrix.md
 -/
 
 namespace QOU.Archimedean
@@ -75,7 +75,7 @@ noncomputable def frobeniusGramMatrix : Matrix (Fin 6) (Fin 6) R :=
 
     This is the Markov-trace normalisation `tr_M(1) = 1`, recorded
     here as a direct entry of the matrix. -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/frobenius-gram-matrix.md
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/frobenius-gram-matrix.md
 theorem frobeniusGramMatrix_zero_zero :
     (frobeniusGramMatrix h z : Matrix (Fin 6) (Fin 6) R) 0 0 = 1 := by
   simp [frobeniusGramMatrix]
@@ -86,7 +86,7 @@ theorem frobeniusGramMatrix_zero_zero :
 
     Each off-diagonal pair is identical by construction, so the
     proof is by index-case analysis. -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/frobenius-gram-matrix.md
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/frobenius-gram-matrix.md
 theorem frobeniusGramMatrix_isSymm :
     (frobeniusGramMatrix h z : Matrix (Fin 6) (Fin 6) R).IsSymm := by
   ext i j
@@ -95,7 +95,7 @@ theorem frobeniusGramMatrix_isSymm :
 /-- **Proposition** (statement bundle):
     The matrix is well-defined and the (0, 0) entry coincides with
     `1` (Markov-trace normalisation). -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/frobenius-gram-matrix.md
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/frobenius-gram-matrix.md
 theorem frobenius_gram_matrix :
     (frobeniusGramMatrix h z : Matrix (Fin 6) (Fin 6) R) 0 0 = 1 :=
   frobeniusGramMatrix_zero_zero h z

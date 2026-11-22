@@ -48,7 +48,7 @@ Coxeter system.
 -- Ref: [bjornerbrenti2005] Combinatorics of Coxeter Groups, Thm 2.2.2 (the two orders agree)
 -- Ref: [humphreys1990] Reflection Groups and Coxeter Groups, §5.10
 -- Ref: [mathas1999] Iwahori–Hecke Algebras and Schur Algebras of the Symmetric Group, Prop 3.7
--- Ref: [manuscript] beans qou-3k66, qou-phir
+-- Ref: [leitner2026] beans qou-3k66, qou-phir
 -/
 
 namespace QOU.IwahoriHecke.BruhatConverse

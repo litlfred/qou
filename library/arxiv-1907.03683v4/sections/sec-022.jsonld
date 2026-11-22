@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1907.03683v4/sections/sec-022",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "A deformation of the Gamma kernel",
+  "pageStart": 26,
+  "pageEnd": 28,
+  "contains": [
+    "library/arxiv-1907.03683v4/blocks/prose-sec-022",
+    "library/arxiv-1907.03683v4/blocks/thm-sec-022-01",
+    "library/arxiv-1907.03683v4/blocks/rem-sec-022-02",
+    "library/arxiv-1907.03683v4/blocks/rem-sec-022-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1907.03683v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1907.03683v4/manifest.jsonld",
+  "provenance": "ingested"
+}

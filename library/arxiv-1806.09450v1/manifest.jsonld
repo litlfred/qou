@@ -5,20 +5,23 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1806.09450v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1806.09450v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1806.09450v1",
+  "title": "Deducing the symmetry of the standard model from the automorphism and structure groups of the exceptional Jordan algebra ∗",
   "contains": [
+    "library/arxiv-1806.09450v1/sections/sec-front-matter",
     "library/arxiv-1806.09450v1/sections/sec-000",
     "library/arxiv-1806.09450v1/sections/sec-001",
     "library/arxiv-1806.09450v1/sections/sec-002",
     "library/arxiv-1806.09450v1/sections/sec-003",
-    "library/arxiv-1806.09450v1/sections/sec-004"
+    "library/arxiv-1806.09450v1/sections/sec-004",
+    "library/arxiv-1806.09450v1/sections/sec-005",
+    "library/arxiv-1806.09450v1/sections/sec-006"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -28,7 +31,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1806.09450v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1806.09450v1.pdf",
     "source_sha256": "8556b67d97856446c79d3dfc2e3a9601902b4b097312e31d2528b43976b4182a",
     "pages": 16,

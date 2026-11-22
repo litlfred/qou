@@ -17,7 +17,7 @@ removed as measured-dead. See the structure's docstring.
 
 ## References
 
-- [manuscript] §3 Lifting and Descent
+- [leitner2026] §3 Lifting and Descent
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
 Part of the formal proof chain. The parameter `q` is the canonical
@@ -67,7 +67,7 @@ def q_inv_param : R_q := LaurentPolynomial.T (-1)
     the declaration, not to the token.** Consumption is not the test in any
     case; a field typed with the universe `Prop` is chosen by the constructor,
     so reading it constrains nothing even when the reader is genuine. -/
--- Ref: [manuscript] §3, Definition: Fibre-compatible hadron embedding
+-- Ref: [leitner2026] §3, Definition: Fibre-compatible hadron embedding
 structure HadronFibreEmbedding where
   /-- The base point in the projective line. -/
   theta : R_q

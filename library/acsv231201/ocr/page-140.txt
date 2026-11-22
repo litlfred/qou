@@ -1,0 +1,62 @@
+122 Multivariate Fourier—Laplace integrals
+
+Proof To prove the claim about the Jacobian determinant, we apply the chain
+tule to the equation ¢(W(y)) = S(y) and conclude that the Hessian matrix of S
+at the origin equals Jy H J. The Hessian of S is twice the identity matrix, so
+21 = JGH Jy and taking determinants gives the stated result.
+
+To prove the change of variables, we begin by writing
+
+d
+
+G(x) = » XjXE je(@)
+k=l
+for analytic functions $j, = ¢,,; with constant terms ¢;.(0) = H{ jx /2. There
+
+is plenty of freedom, but a convenient choice is to take
+
+rj(Tk — OjK) r
+
+PIKE O10 Gage 5.9
+init) O°)
+
+XjXebjx(@L) =
+|r[=2
+where a, are the Taylor coefficients of @ at x and 6;, = 1 if j = k and 0
+otherwise. For fixed r it is easy to check that
+
+jk = Ojk) _
+
+Irldri- 1)”
+
+1<jksd
+
+so that 6(@) = Yi jx XjxePjx(@), and oe coefficients on the terms of or-
+der precisely two verifies ¢;,(0) = Hj, /2. We may assume without loss of
+generality that 6; ;(0) = Hj; # 0 for all j, because there is always a unitary
+map U such that the Hessian of ¢ o U has nonvanishing diagonal entries, and
+if (60 U) ow =S for some Wo then do w = S, where W = Uo.
+
+We conclude with an induction. Since we are assuming that ¢, (0) # 0, the
+reciprocal 1/),)(a) and a branch of Voi) are both analytic in a neighbor-
+hood of the origin. If
+
+= Jot) +d + yeu 4
+2» P11(@)
+
+then the terms of yt of total degree at most one in x>,..., x, match those of ¢,
+since
+d
+Hw) — yi =D) xjxe (+e -
+
+jk=2
+
+ene (5.10)
+
+$11 (x)
+
+In the new coordinates y,, x2,x3,...,Xg, the Hessian matrix of ¢ is a (1,d —
+1) block matrix, where the submatrix H that corresponds to the variables
+
+.,xXq has determinant det#{‘)) = detH /¢i1 # 0. In fact, if H is real
+positive definite then so is H' a), provided the correct branch of the square root

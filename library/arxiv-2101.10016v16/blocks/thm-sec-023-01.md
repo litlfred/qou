@@ -1,1 +1,1 @@
-Theorem 24.1. Let A be a completely rational conformal net satisfying assumption (d).
+Let A be a completely rational conformal net satisfying assumption (d). Assume moreover that π 7→ D(π) := dim(FA(π)), π irreducible, gives a weak dimension function on the modular tensor category Rep(A). Then, the algebra A(A) admits a structure of a Ω-involutive weak quasi-Hopf C ∗ -algebra with a *-tensor equivalence EARep(A) → Rep+(A(A)) which, after composition with the forgetful functor : Rep(A) → Hilb is tensor isomorphic to FA.

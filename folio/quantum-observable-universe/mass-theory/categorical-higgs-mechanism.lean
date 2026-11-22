@@ -154,7 +154,7 @@ end EWHoefsmitData
     inlined copy of `conj:weinberg-angle-categorical`'s class; the
     identification `cot θ_W · tr_M(e_B⁺σ₅⁸) = tr_M(e_W⁺σ₁⁴)` over genuine
     Hecke data.  Tower status: ORDER-ZERO-ONLY (single ratio at `n = 6`). -/
--- Ref: [manuscript] conj:weinberg-angle-categorical
+-- Ref: [leitner2026] conj:weinberg-angle-categorical
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 class WeinbergAngleCategorical
     (R : Type*) [Field R] (q : R)
@@ -202,7 +202,7 @@ class WeinbergAngleCategorical
     No instance: constructing the Goldstone-eating linking and the
     post-breaking Markov traces from the substrate is the open content
     of `conj:categorical-higgs-mechanism` (Steps A–D of the `.md`). -/
--- Ref: [manuscript] conj:categorical-higgs-mechanism
+-- Ref: [leitner2026] conj:categorical-higgs-mechanism
 -- Ref: [kassel1995] §XIV (ribbon-category braiding; linking of closed braids)
 class CategoricalHiggsMechanism
     (R : Type*) [Field R] (q : R)

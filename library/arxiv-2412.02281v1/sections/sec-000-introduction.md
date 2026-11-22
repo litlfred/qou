@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2412.02281v1
-doc_title: "u + A"
+doc_title: "Explicit evaluation of the q -Stokes matrices for certain conﬂuent hypergeometric q -diﬀerence equations"
 section_id: sec-000-introduction
 section_title: "Introduction"
 section_number: null
 pages: 1-3
 source_pdf: 2412.02281v1.pdf
 source_sha256: ac4127cf4994b2ba
-doc_brief: "Explicit evaluation of the q-Stokes matrices for certain confluent hypergeometric q-difference equations — We prove a connection formula for the basic hypergeomtric fu nction nϕn−1 (a1,...,a n−1"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.975
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.808
+latex_coverage_ratio: 0.979
+doc_brief: "Explicit evaluation of the q -Stokes matrices for certain conﬂuent hypergeometric q -diﬀerence equations — We prove a connection formula for the basic hypergeomtric function nϕn−1 (a1, ..., an−1, 0"
 ---
 Set $q\in\mathbb{R}$ with $0<q<1$.    Take the Lie algebra ${\mathfrak {gl}_n}$ over the field of complex numbers with a positive integer $n$. Consider the confluent hypergeometric $q$-difference  system
 \begin{equation}\label{u+A/z}

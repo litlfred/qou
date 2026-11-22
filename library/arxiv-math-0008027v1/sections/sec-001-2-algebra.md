@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.951
 latex_coverage_ratio: 0.979
+doc_brief: "arXiv:math/0008027v1 [math.GT] 3 Aug 2000 — I follow Y."
 ---
 []{#sec:algebra label="sec:algebra"} In this section I describe Kashaev's link invariant [@Kashaev:MODPLA95] following Yokota. We fix an integer $N\ge2$ and put $q=\exp\left(2\pi\sqrt{-1}/N\right)$. Put $(x)_n=\prod_{k=1}^{n}(1-x^k)$ for $n\ge 0$. For integers $0{\le}k,l,m,n{\le}N-1$ we put $$\theta\!\left(\begin{smallmatrix} k & n \\ l & m \end{smallmatrix}\right)
   =

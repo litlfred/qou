@@ -101,7 +101,7 @@ algebra of the QOU.*
     categorical inputs, so the four-part claim is recorded as the
     conditional conjecture over the context rather than discharged by a
     fake projection. -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/genus-filtration-ideal.ts
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/genus-filtration-ideal.ts
 def genus_filtration_ideal (ctx : GenusFiltrationIdealContext) : Prop :=
   ctx.genus = 4 ∧
   ctx.EvalMatrixRank = 5 ∧

@@ -1,5 +1,1 @@
 **:defterm[Differential graded category]{#dg-category}.** A category enriched in cochain complexes over a commutative ring $R$: each hom-object $\mathrm{Hom}(X, Y)$ is a complex of $R$-modules, composition is a chain map $\mathrm{Hom}(Y, Z) \otimes \mathrm{Hom}(X, Y) \to \mathrm{Hom}(X, Z)$, and identities are cycles of degree zero. Taking zeroth cohomology of every hom-complex gives an ordinary category, the *homotopy category* of the dg category; a dg category with one object is a dg algebra. Dg categories are the setting in which Hochschild homology of a category, and functoriality of Hochschild homology under derived functors, are defined without choices.
-
-**Mathlib reference.**
-None for the dg-enriched notion. The underlying complexes are `HomologicalComplex` and `CochainComplex`.
-Import: `Mathlib.Algebra.Homology.HomologicalComplex`.

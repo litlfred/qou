@@ -1,0 +1,1 @@
+Let M be a compact, oriented 3-manifold with torus boundary and H2(M, Z) = 0. Then the state-integral FF,M : H1(∂M; C) →C is independent of the choice of ideal triangulation X and balanced angle structure θ, and thus defines a topological invariant of M.

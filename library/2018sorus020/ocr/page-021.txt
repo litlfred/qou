@@ -1,0 +1,36 @@
+\ = A pat 7%
+/o™
+= Ae 40
+
+FIGURE 1.1 — Kauffman skein relations. The indicated moves are performed locally,
+the rest of the link remains unchanged. The strands are supposed to depict bands
+of the framed links.
+
+1.1.4 Characters, reducibility and irreducibility
+
+From the previous definition of the character variety through trace functions, we
+have the following definition of points of the character variety, which enlightens on
+
+the terminology.
+
+Definition 1.1.12. A k-character is a k-point of the character variety in the sense
+of algebraic geometry, that means a morphism y : BIT] > k. Any representation
+p: T —+ SL2(k) induces a character x, : B[[] > k that sends Y, to Tr(p(7)).
+
+Remark 1.1.13. This definition generalizes to R-characters for any k-algebra R.
+
+Definition 1.1.14. A representation p : T — SLo(k) is reducible if there exists an
+
+invariant line in k?, and irreducible if not.
+
+The following standard lemma tells us that this notion can be defined at the level
+of characters. For any elements a, 3 € T, we will denote the commutator aBa7!67!
+by [a, 8].
+
+Lemma 1.1.15. Let k C K be a field extension (we take K to be either k, either
+a transcendental extension of k). A representation p : T — SLo(K) is absolutely
+
+irreducible (irreducible in an algebraic closure) iff there exists a, 3 € T such that
+Tr(p(aBa7!8-1)) £2.
+
+20

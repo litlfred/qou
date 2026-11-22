@@ -7,6 +7,7 @@ section_number: null
 pages: 19-20
 source_pdf: 0707.3910v1.pdf
 source_sha256: ad31f3cba16c4ea4
+toc_source: outline
 doc_brief: "LANDEN TRANSFORMATIONS AND THE INTEGRATION OF RATIONAL FUNCTIONS — We present a rational version of the classical Landen transfor- mation for elliptic integrals."
 ---
 [1] BOROS, G. - MOLL, V.: A criterion for unimodality. Elec. Jour. of Combinatorics, 6 (1999),

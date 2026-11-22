@@ -1,0 +1,57 @@
+---
+doc_id: cherednik1991-kz-dunkl
+doc_title: "A unification of Knizhnik-Zamolodchikov and Dunkl operators via affine Hecke algebras"
+section_id: page-001
+section_title: "Page 1"
+pages: 1-1
+pdf_page: 1
+source_pdf: cherednik1991-kz-dunkl.pdf
+source_sha256: cae9cf747bb98a46
+text_source: ocr
+granularity: page
+doc_brief: "A unification of Knizhnik-Zamolodchikov and Dunkl operators via affine Hecke algebras — 21 sections: Page 1; Page 2; Page 3"
+---
+Invent. math. 106, 411-431 (1991) lee
+nventiones
+
+mathematicae
+© Springer-Verlag 1991
+
+A unification of Knizhnik-Zamolodchikoy
+and Dunkl operators via affine Hecke algebras
+
+Ivan Cherednik*
+Research Institute for Mathematical Sciences, Kyoto 606, Japan
+
+Oblatum 20-XII-1990 & 25-III-1991
+
+Summary. Some generalizations of the Lusztig-Lascoux-Schiitzenberger operators
+for affine Hecke algebras are considered. As corollaries we obtain Lusztig’s isomor-
+phisms from affine Hecke algebras to their degenerate versions, a “natural” inter-
+pretation of the Dunkl operators and a new class of differential-difference
+operators generalizing Dunkl’s ones and the Knizhnik-Zamolodchikov operators
+from the two dimensional conformal field theory.
+
+Table of contents
+
+OIntroduction . 2... 2. ee 411
+1 Affine Hecke algebras and the Intertwiners .................0. 413
+2 The Lusztig-Lascoux-Schiitzenberger operators... ...........-0.- 417
+3 The unification, some examples 2. 2 2. ee 424
+Introduction
+
+The first aim of this paper is to consider natural vector versions of the Lusztig
+operators [Lu3] and the Lascoux-Schiitzenberger operators [LS1, LS2] and
+calculate (in the scalar case) the representations of the corresponding affine Hecke
+algebras in which these operators act. The key point of this calculation is equival-
+ent to some form of the main theorem from [Ka] (we give a new more simple proof
+of it.) As corollaries one obtains Lusztig’s isomorphisms between affine Hecke
+algebras and their degenerate (graded) versions [Lu1] and a natural construction
+of the Dunkl differential-difference operators [Du, He1] together with their trigon-
+ometric counterparts close to Heckman’s operators [He2]. The second aim is
+a unification of the Dunkl and the Knizhnik-Zamolodchikov operators from [Ch1,
+Ch 2] taking the vector analogue of the Lusztig operators as a basis. Given a root
+system 2X cR" and a representation of the corresponding Weyl group
+
+* On leave from A.N. Belozersky Lab., Bldg. “A”, Moscow State University, Moscow 119899,
+USSR

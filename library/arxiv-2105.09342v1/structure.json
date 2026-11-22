@@ -8,7 +8,7 @@
   "pages": 31,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:21Z",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -26,7 +26,7 @@
   "title_lines": [
    "A Unitary Matrix Model for q-deformed Plancherel Growth"
   ],
-  "abstract": "In this paper we construct a unitary matrix model that captures the asymptotic growth of Young diagrams under q-deformed Plancherel measure. The matrix model is a q analog of Gross-Witten-Wadia (GWW) matrix model. In the large N limit the model exhibits a third order phase transition between no-gap and gapped phases, which is a q-deformed version of the GWW phase transition. We show that the no-gap phase of this matrix model captures the asymptotic growth of Young diagrams equipped with q-deformed Plancherel measure. The no-gap solutions also satis\ufb01es a di\ufb00erential equation which is the q-analogue of the automodel equation. We further provide a droplet description for these growing Young diagrams. Quantising these droplets we identify the Young diagrams with coherent states in the Hilbert space. We also elaborate the connection between moments of Young diagrams and the in\ufb01nite number of commuting Hamiltonians obtained from the large N droplets and explicitly compute the moments for asymptotic Young diagrams.",
+  "abstract": "In this paper we construct a unitary matrix model that captures the asymptotic growth of Young diagrams under q-deformed Plancherel measure. The matrix model is a q analog of Gross-Witten-Wadia (GWW) matrix model. In the large N limit the model exhibits a third order phase transition between no-gap and gapped phases, which is a q-deformed version of the GWW phase transition. We show that the no-gap phase of this matrix model captures the asymptotic growth of Young diagrams equipped with q-deformed Plancherel measure. The no-gap solutions also satisﬁes a diﬀerential equation which is the q-analogue of the automodel equation. We further provide a droplet description for these growing Young diagrams. Quantising these droplets we identify the Young diagrams with coherent states in the Hilbert space. We also elaborate the connection between moments of Young diagrams and the inﬁnite number of commuting Hamiltonians obtained from the large N droplets and explicitly compute the moments for asymptotic Young diagrams.",
   "docinfo": {
    "Title": "A Unitary Matrix Model for q-deformed Plancherel Growth",
    "Author": "Suvankar Dutta; Debangshu Mukherjee; Neetu; Sanhita Parihar; ",
@@ -153,7 +153,7 @@
   },
   {
    "level": 1,
-   "title": "Appendix  A q analog of GWW phase transition",
+   "title": "Appendix A q analog of GWW phase transition",
    "page": 20,
    "source": "outline",
    "number": null,
@@ -163,7 +163,7 @@
   },
   {
    "level": 1,
-   "title": "Appendix  B Explicit computation of the partition function",
+   "title": "Appendix B Explicit computation of the partition function",
    "page": 22,
    "source": "outline",
    "number": null,
@@ -173,7 +173,7 @@
   },
   {
    "level": 1,
-   "title": "Appendix  C Calculation of automodel density for the second class \u00e0 la Strahov",
+   "title": "Appendix C Calculation of automodel density for the second class à la Strahov",
    "page": 23,
    "source": "outline",
    "number": null,
@@ -183,7 +183,7 @@
   },
   {
    "level": 2,
-   "title": "Appendix  C.1 Computing Hconst(h), H(h) and Hseries(h)",
+   "title": "Appendix C.1 Computing Hconst(h), H(h) and Hseries(h)",
    "page": 25,
    "source": "outline",
    "number": null,
@@ -193,7 +193,7 @@
   },
   {
    "level": 1,
-   "title": "Appendix  D Droplet quantisation",
+   "title": "Appendix D Droplet quantisation",
    "page": 26,
    "source": "outline",
    "number": null,
@@ -244,7 +244,7 @@
   {
    "kind": "figure",
    "number": "4",
-   "title": "The limit shape for a q-deformed (\u03bb = 0.8) Plancherel growth process (green curve) and its q \u21921 (\u03bb \u21920) limit (orange curve) for comparison",
+   "title": "The limit shape for a q-deformed (λ = 0.8) Plancherel growth process (green curve) and its q →1 (λ →0) limit (orange curve) for comparison",
    "page": 12,
    "confidence": 0.7,
    "evidence": [
@@ -256,7 +256,7 @@
   {
    "kind": "figure",
    "number": "5",
-   "title": "The limit shape for a q-deformed (\u03bb = 0.97) Plancherel growth process (green curve) and its q \u21921 (\u03bb \u21920) limit (orange curve) for comparison",
+   "title": "The limit shape for a q-deformed (λ = 0.97) Plancherel growth process (green curve) and its q →1 (λ →0) limit (orange curve) for comparison",
    "page": 17,
    "confidence": 0.7,
    "evidence": [
@@ -492,9 +492,9 @@
    "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 1,
-   "n_chars": 1490,
-   "n_words": 215,
+   "page_end": 2,
+   "n_chars": 2571,
+   "n_words": 435,
    "label_start": null,
    "label_end": null
   },
@@ -503,10 +503,10 @@
    "number": "1",
    "title": "Introduction",
    "level": 1,
-   "page_start": 1,
+   "page_start": 2,
    "page_end": 4,
-   "n_chars": 8820,
-   "n_words": 1487,
+   "n_chars": 7749,
+   "n_words": 1267,
    "label_start": null,
    "label_end": null
   },
@@ -612,9 +612,69 @@
    "title": "Conclusion",
    "level": 1,
    "page_start": 19,
+   "page_end": 20,
+   "n_chars": 2553,
+   "n_words": 410,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-010-appendix-a-q-analog-of-gww-phase-transition",
+   "number": null,
+   "title": "Appendix A q analog of GWW phase transition",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 22,
+   "n_chars": 1897,
+   "n_words": 373,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-011-appendix-b-explicit-computation-of-the-partition",
+   "number": null,
+   "title": "Appendix B Explicit computation of the partition function",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 1614,
+   "n_words": 397,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-012-appendix-c-calculation-of-automodel-density-for",
+   "number": null,
+   "title": "Appendix C Calculation of automodel density for the second class à la Strahov",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 25,
+   "n_chars": 4341,
+   "n_words": 947,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-013-appendix-c1-computing-hconsth-hh-and-hseriesh",
+   "number": null,
+   "title": "Appendix C.1 Computing Hconst(h), H(h) and Hseries(h)",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 1583,
+   "n_words": 388,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-014-appendix-d-droplet-quantisation",
+   "number": null,
+   "title": "Appendix D Droplet quantisation",
+   "level": 1,
+   "page_start": 26,
    "page_end": 31,
-   "n_chars": 22416,
-   "n_words": 4373,
+   "n_chars": 10150,
+   "n_words": 1818,
    "label_start": null,
    "label_end": null
   }
@@ -630,13 +690,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 11,
-  "chars_total": 57618,
+  "sections": 16,
+  "chars_total": 57350,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Qdeformed_Plancherel_note.tex",
    "tex_sections": 10,
-   "overlaid": 7,
+   "overlaid": 8,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -652,7 +713,7 @@
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": 0.945,
-     "coverage_ratio": 0.918,
+     "coverage_ratio": 0.997,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -676,7 +737,7 @@
      "id": "sec-003-31-solution-class-1-no-gap-solution",
      "title": "Solution class 1: No-gap solution",
      "prose_ratio": 0.554,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-004-32-q-deformed-automodel-class",
@@ -718,9 +779,35 @@
     {
      "id": "sec-009-6-conclusion",
      "title": "Conclusion",
-     "prose_ratio": 0.993,
-     "coverage_ratio": 0.279,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-appendix-a-q-analog-of-gww-phase-transition",
+     "title": "Appendix A q analog of GWW phase transition",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-appendix-b-explicit-computation-of-the-partition",
+     "title": "Appendix B Explicit computation of the partition function",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-appendix-c-calculation-of-automodel-density-for",
+     "title": "Appendix C Calculation of automodel density for the second class à la Strahov",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-appendix-c1-computing-hconsth-hh-and-hseriesh",
+     "title": "Appendix C.1 Computing Hconst(h), H(h) and Hseries(h)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-appendix-d-droplet-quantisation",
+     "title": "Appendix D Droplet quantisation",
+     "result": "no matching \\section"
     }
    ]
   }

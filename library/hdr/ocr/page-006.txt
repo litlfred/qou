@@ -1,0 +1,61 @@
+sont connues sous le nom d’algébres de Cherednik rationnelles. Elles dépendent de fagon cruciale @’un
+parametre t, et leur théorie des représentations varie beaucoup selon si ¢ est nul ou non.
+
+Sit # 0, il existe une catégorie de représentations de l’algébre de Cherednik rationnelle importante,
+la catégorie O, et un foncteur exact, le foncteur de Knizhnik-Zamalodchikov ou simplement KZ, de O
+vers la catégorie de représentations d’une certaine algébre de Hecke cyclotomique spécialisée H,(W) (la
+spécialisation dépend du choix des paramétres de l’algébre de Cherednik rationnelle; toute algébre de
+Hecke spécialisée peut étre obtenue de cette fagon). La catégorie O est une catégorie de plus haut poids, et
+elle contient un ensemble des modules standards {A(E£) | E € Irr(W)}, un ensemble des modules simples
+{L(E) | E € Irr(W)} et une matrice de décomposition qui décrit le nombre de fois que L(E) apparait dans
+la série de composition de A(E"’) pour E, E’ € Irr(W). L’exactitude de KZ nous permet de déduire la
+matrice de décomposition de H,,(W) de la matrice de décomposition de la catégorie O. En utilisant cette
+propriété, nous avons prouvé dans [CGG] l’existence des ensembles basiques canoniques pour tous les
+groupes de Coxeter finis et pour les groupes de réflexions complexes de type G(I,1,n) (en caractéristique
+0). En particulier, nous avons montré que E appartient a l’ensemble basique canonique pour H,)(W) si et
+seulement si KZ(L(£)) 4 0. Notre preuve de leur existence est assez générale et n’utilise pas le théoreéme
+d’Ariki pour le type G(I,1,n). Néanmoins la description explicite des ensembles basiques canoniques
+dans ces cas par des travaux antérieurs permet de déterminer quels modules simples sont envoyés sur
+zéro par le foncteur KZ. Nous avons aussi démontré que les images des modules standards via le foncteur
+KZ sont isomorphes aux modules cellulaires des algebres de Hecke.
+
+En ce qui concerne le cas t = 0, Gordon a introduit et étudié un quotient de dimension finie de
+Valgébre de Cherednik rationnelle, |’ algébre de Cherednik rationnelle restreinte, dont les modules simples
+sont paramétrés par Irr(W). La décomposition de cette algébre en blocs induit une partition de Irr(W),
+connue sous le nom de partition de Calogero—Moser. Nous pensons qu’il existe un lien entre la partition
+de Calogero—Moser et les familles de caractéres, d’abord suggéré par Gordon et Martino pour
+le type B. Dans tous les cas étudiés jusqu’A maintenant, la partition en familles de Rouquier (pour une
+algebre de Hecke cyclotomique choisie convenablement) rend la partition de Calogero—Moser plus fine
+(“la conjecture de Martino”), alors que pour les groupes de Coxeter finis les deux partitions coincident.
+Ce lien n’est pas encore expliqué, étant donné qu’il n’y a pas de connexion évidente entre les algébres
+de Hecke et les algebres de Cherednik rationnelles 4 t = 0. Motivés par cette idée, et afin de pouvoir
+construire une théorie des cellules de Kazhdan-Lusztig généralisée, Bonnafé et Rouquier ont utilisé la
+partition de Calogero—Moser pour développer une théorie des “cellules de Calogero—Moser” qui peut étre
+appliquée a tous les groupes de réflexions complexes [BoRo2]. Il reste A voir les fruits de cette
+approche trés récente.
+
+Les algebres de Yokonuma~Hecke ont été introduites par Yokonuma dans le contexte des groupes
+réductifs finis comme généralisations des algébres de Iwahori—Hecke. Elle sont définies comme des algébres
+d’endomorphismes de la représentation de permutation par rapport 4 un sous-groupe unipotent maximal,
+et peuvent ainsi étre vues comme des cas particuliers des algebres de Hecke unipotentes. Nous allons nous
+intéresser ici aux algeébres de Yokonuma-Hecke de type A, qui peuvent étre aussi définies indépendamment
+comme déformations des algébres de groupe des groupes de réflexions complexes de type G(I,1,n). Nous
+obtenons ainsi un autre type d’algébres de Hecke associées 4 G(I, 1,1), différentes des algebres de Ariki—
+Koike. Ayant étudié la théorie des représentations des algebres de Yokonuma—Hecke dans [ChPdA]],
+nous avons découvert beaucoup de similarités avec la théorie des représentations des algebres de Iwahori—
+Hecke de type A; ces similarités sont expliquées par un résultat de Lusztig ; qui a démontré que
+les algebres de Yokonuma~Hecke sont isomorphes 4 des sommes directes des algébres matricielles sur des
+produits tensoriels de certaines sous-algébres des algebres de Iwahori-Hecke.
+
+Nous avons aussi introduit et étudié beaucoup de nouvelles algébres intéressantes dans le contexte des
+algébres de Yokonuma-Hecke, qui sont obtenues comme généralisations (ou, comme elles sont appelées
+dans [JuLa5], “pondérisations”) d’algébres importantes dans le contexte des algebres de Iwahori—Hecke.
+Tout d’abord, nous avons les algebres de Yokonuma—Hecke affines et cyclotomiques, qui généralisent
+respectivement les algebres de Hecke affines de type A et les algebres de Ariki-Koike [ChPdA2]. En fait,
+nous avons montré dans que les algébres de Yokonuma-Hecke affines apparaissent aussi naturelle-
+ment dans l’étude des groupes réductifs p-adiques, avec une construction analogue a la construction
+de Yokonuma, alors que les algébres de Yokonuma~—Hecke cyclotomiques produisent en méme temps les
+algébres de Ariki-Koike et les algebres de Yokonuma-Hecke de type A, comme des quotients et des
+cas particuliers. De plus, nous avons trois généralisations possibles de l’algebre de Temperley—Lieb :
+V'algebre de Yokonuma—Temperley—Lieb [GJKLI], l’algebre de Temperley—Lieb A poids (“Framisation of
+

@@ -1,0 +1,67 @@
+done
+qed
+qed
+
+lemma poincare-collinear-zero-polar-form:
+assumes poincare-collinear {0n, of-complex x, of-complex y} and
+a # 0 and y ¥ 0 and of-complex x € unit-disc and of-complex y € wnit-disc
+shows 3 y rrzry. z= corrz * cise Ay =corry*cisp AN rr £0 AN ry #0
+proof—
+from «x 4 0» (y 4 0» obtain y vy’ rz ry where
+polar: x = cor rz * cis p y = cor ry * cis y'and y= Argz yp’ = Argy
+by (metis cmod-cis)
+hence rz 4 0 ry 4 0
+using (x # 0) cy # 0»
+by auto
+have of-complex y € circline-set (poincare-line 0; (of-complex x))
+using assms
+using unique-poincare-line|of 0), of-complex 2]
+unfolding poincare-collinear-def
+unfolding circline-set-def
+using of-complex-zero-iff
+by fastforce
+hence cnj x * y= u * cnjy
+using (x # 0) cy # 0»
+unfolding circline-set-def
+by simp (transfer, transfer, simp add: vec-cnj-def field-simps)
+hence cis(yp’ — y) = cis(p — ’)
+using polar (rz # 0» «ry # 0»
+by (simp add: cis-mult)
+hence sin (y’ — y) = 0
+using cis-diff-cis-opposite[of yp’ — y]
+by simp
+then obtain k :: int where y’ — y = k x pi
+using sin-zero-iff-int2[of yp’ — ¢]
+by auto
+hence «: y’ = y + k * pi
+by simp
+show ?thesis
+proof (cases even k)
+case True
+then obtain k’ where k = 2xk’
+using evenE by blast
+hence cis y = cis y!
+using * cos-periodic-int sin-periodic-int
+by (simp add: cis.ctr field-simps)
+thus ?thesis
+using polar «rx # 0» «ry # 0»
+by (rule-tac c= in eal, rule-tac z=rz in ez, rule-tac r=ry in exl) simp
+next
+case False
+then obtain k’ where k = 2xk’ + 1
+using oddE by blast
+hence cis y = — cis yp’
+using * cos-periodic-int sin-periodic-int
+by (simp add: cis.ctr complez-minus field-simps)
+thus ?thesis
+using polar «rx # 0» «ry # 0»
+by (rule-tac c= in eal, rule-tac c=rz in ezl, rule-tac z=—ry in exI) simp
+qed
+qed
+
+end
+
+theory Poincare-Lines-Ideal-Points
+imports Poincare-Lines
+
+begin

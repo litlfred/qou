@@ -6,10 +6,12 @@
   "sha256": "2de5a4f40d80174c10370befaf89d78ebc5290a1773452e01173a674d2cf7572",
   "bytes": 145065,
   "pages": 9,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,18 +22,28 @@
   },
   "doi": null,
   "title": "WDVV Equations as Functional Relations",
-  "authors_raw": "H.W. Braden 1 and A. Marshakov 2",
+  "authors_raw": "H.W. Braden1 and A. Marshakov2",
+  "title_lines": [
+   "WDVV Equations as Functional Relations"
+  ],
   "abstract": null,
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20210609173832-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20210609173832-04'00'"
   },
-  "title_lines": [
-   "WDVV Equations as Functional Relations"
-  ]
+  "title_raw": "WDVV Equations as Functional Relations",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "WDVV Equations as Functional Relations",
+   "outline": "Introduction",
+   "text": "WDVV Equations as Functional Relations",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -39,39 +51,133 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "WDVV and dispersionless Hirota equations",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The associativity equations as cocycle conditions",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Example: perturbative Seiberg-Witten prepotentials",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Discussion",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 437,
+   "n_words": 59,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
@@ -79,8 +185,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 6000,
-   "n_words": 1048
+   "n_chars": 5916,
+   "n_words": 952,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-wdvv-and-dispersionless-hirota-equations",
@@ -89,8 +197,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 5,
-   "n_chars": 4784,
-   "n_words": 919
+   "n_chars": 4749,
+   "n_words": 848,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-the-associativity-equations-as-cocycle-condition",
@@ -99,8 +209,10 @@
    "level": 1,
    "page_start": 5,
    "page_end": 7,
-   "n_chars": 1733,
-   "n_words": 421
+   "n_chars": 1732,
+   "n_words": 376,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-example-perturbative-seiberg-witten-prepotential",
@@ -109,8 +221,10 @@
    "level": 1,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 2051,
-   "n_words": 462
+   "n_chars": 2029,
+   "n_words": 397,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-004-discussion",
@@ -119,16 +233,26 @@
    "level": 1,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 4224,
-   "n_words": 681
+   "n_chars": 4203,
+   "n_words": 650,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 5,
-  "sections": 5,
-  "chars_total": 18792,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 6,
+  "chars_total": 19066,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
@@ -141,42 +265,47 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.996,
-     "coverage_ratio": 0.993,
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.932,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-wdvv-and-dispersionless-hirota-equations",
      "title": "WDVV and dispersionless Hirota equations",
-     "prose_ratio": 0.991,
-     "coverage_ratio": 0.983,
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.943,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-the-associativity-equations-as-cocycle-condition",
      "title": "The associativity equations as cocycle conditions",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.968,
+     "prose_ratio": 0.948,
+     "coverage_ratio": 0.96,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-example-perturbative-seiberg-witten-prepotential",
      "title": "Example: perturbative Seiberg-Witten prepotentials",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.968,
+     "prose_ratio": 0.932,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-discussion",
      "title": "Discussion",
-     "prose_ratio": 0.87,
-     "coverage_ratio": 0.974,
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.833,
      "result": "overlaid",
      "converter": "pandoc"
     }

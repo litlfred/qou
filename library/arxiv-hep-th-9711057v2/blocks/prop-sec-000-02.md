@@ -1,0 +1,1 @@
+Recently, a high-statistics lattice calculation directly demonstrated agreement between the random-matrix results and lattice data, not only for $\rho_s$ but also for the distribution of the smallest eigenvalue and for the microscopic spectral two-point correlator \cite{Berb97a}.

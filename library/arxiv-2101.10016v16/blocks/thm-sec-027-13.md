@@ -1,1 +1,1 @@
-Let A be a Hermitian (unitary) coboundary weak quasi-Hopf algebra
+Let A be a Hermitian (unitary) coboundary weak quasi-Hopf algebra with an antipode (S, α, β) such that S commutes with ∗. Then Reph(A) (Rep+(A)) is a Hermitian (unitary) ribbon category with the canonical duality (ρ ∨ = ρc, bρ, dρ) associated to A as in Example 14.7 if and only if β = α ∗ . This equation holds if A is discrete and admits an antipode of Kac type.

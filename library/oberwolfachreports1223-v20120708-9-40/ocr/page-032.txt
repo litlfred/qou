@@ -1,0 +1,63 @@
+32 Oberwolfach Report 28/2012
+
+We give a method to construct a sentence from any link diagram. The initial
+length of this sentence will be a linear multiple of the number of crossings in the
+diagram. By its construction, the crumple of the resulting link will be at worst
+quadratic on the number of crossings. As well, the number of crossings in any
+diagram of a sentence will be at most quadratic on the length of the sentence.
+This gives us an upper bound on the complexity of the diagrams as a function of
+the length of the descriptive sentence.
+
+As a Lemma, we show that given a trivial link and a descriptive sentence for
+a tar link equivalent to this link — and so also trivial — there is a simple isotopy
+occurring entirely within one of the spheres associated to the link such that the
+resultant link has a strictly smaller crumple. This gives an immediate algorithm
+to determine whether or not a link is trivial.
+
+Knowing this Lemma, we then prove that there is a strictly monotonic sequence
+on a 5-tuple describing a link. Each of the measures of this tuple is at worst
+quadratic on the number of crossings of the diagram used to generate the initial
+sentence, and so on the number of crossings of the original diagram. We show that
+there are a polynomial number of attempts needed before a move may be found
+that results in a strictly lower tuple from a trivial link. Taken together, these
+moves constitute an algorithm to decide whether or not a link is trivial. Those
+links that are trivial will produce a sequence of diagrams proceeding stepwise to a
+trivial diagram. Those links that are not trivial will terminate when none of the
+polynomial number of possible moves produces an improvement in the complexity
+tuple.
+
+‘We demonstrate the use of the algorithm on two trivial knot diagrams and give
+a complete description of the construction of the sentence and of the algorithm.
+
+REFERENCES
+
+[1] J. Birman and W. Menasco, Special positions for essential tori in link complements, Topol-
+ogy 33 (1994), no. 3, 525-556.
+
+Peter R. Cromwell, Embedding knots and links in an open book I: Basic properties, Topology
+Appl. 64 (1995), no. 1, 37-58.
+
+Ivan Dynnikov, Arc-presentation of links. monotonic simplification, Fund. Math. 190
+(2006), 29-76.
+
+Louis H. Kauffman and Sofia Lambropoulou, Unknots and molecular biology, Milan J. Math.
+74 (2006), 227-263.
+
+[5] Kunio Murasugi, Knot theory & its applications, Birkhauser, 1996, English edition.
+
+[6] Mitsuyuki Ochiai, Non-trivial projections of the trivial knot, Astérisque 192 (1987), 7-10.
+[7] Herbert Seifert, Uber das Geschlecht von Knoten, Math. Ann. 110 (1935), no. 1, 571-592.
+
+(2!
+
+3
+
+[4
+
+How to Fold a Manifold
+J. Scorr CARTER
+
+A classical result of J.W. Alexander states that any k + 2 dimensional oriented
+compact connected manifold can be obtained as a simple branched cover of the (k+
+2)-sphere with branch set an embedded k-dimensional manifold. Other important
+results include those of Hilden and Montesinos which indicate that a 3-dimensional

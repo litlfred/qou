@@ -1,0 +1,1 @@
+Assume that variables a and b satisfy the Weyl relation ab = qab. Then we have i) eq(b)eq(a) = eq(a + b), (2.57) ii) eq(a)eq(b) = eq(b −ba)eq(a) (2.58) = eq(a + b −ba) (2.59) = eq(b)eq(−ba)eq(a) (2.60) = eq(b)eq(a −ba) (2.61)

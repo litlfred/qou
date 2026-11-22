@@ -13,7 +13,7 @@ LaTeX: `\label{prop:atom-knot-unique}`
 namespace QOU.BraidKnot
 
 /-- **Uniqueness of atom-knot up to Markov equivalence.** -/
--- Ref: [manuscript] thm:jones-markov-trace
+-- Ref: [leitner2026] thm:jones-markov-trace
 theorem AtomKnot.unique_up_to_markov
     (K₁ K₂ : AtomKnot)
     (h_Z       : K₁.Z = K₂.Z)

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.989
 latex_coverage_ratio: 1.0
+doc_brief: "On Two-Dimensional Holonomy — We deﬁne the thin fundamental categorical group P2(M, ∗) of a based smooth manifold (M, ∗) as the categorical group whose objects are rank-1 homotopy classes of based"
 ---
 ::: Definition
 []{#K label="K"} Let $M$ be a manifold. A smooth map $J \colon[0,1]^3\to M$, say $J(t,s,x)=\G^x(t,s)=\g^x_s(t),$ where $t,s,x \in [0,1]$, is said to be a 3-path if:

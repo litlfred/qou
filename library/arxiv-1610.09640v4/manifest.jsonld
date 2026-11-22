@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.09640v4",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1610.09640v4",
+  "title": "Derived Categories",
   "contains": [
+    "library/arxiv-1610.09640v4/sections/sec-front-matter",
     "library/arxiv-1610.09640v4/sections/sec-000",
     "library/arxiv-1610.09640v4/sections/sec-001",
     "library/arxiv-1610.09640v4/sections/sec-002",
@@ -120,10 +121,26 @@
     "library/arxiv-1610.09640v4/sections/sec-106",
     "library/arxiv-1610.09640v4/sections/sec-107",
     "library/arxiv-1610.09640v4/sections/sec-108",
-    "library/arxiv-1610.09640v4/sections/sec-109"
+    "library/arxiv-1610.09640v4/sections/sec-109",
+    "library/arxiv-1610.09640v4/sections/sec-110",
+    "library/arxiv-1610.09640v4/sections/sec-111",
+    "library/arxiv-1610.09640v4/sections/sec-112",
+    "library/arxiv-1610.09640v4/sections/sec-113",
+    "library/arxiv-1610.09640v4/sections/sec-114",
+    "library/arxiv-1610.09640v4/sections/sec-115",
+    "library/arxiv-1610.09640v4/sections/sec-116",
+    "library/arxiv-1610.09640v4/sections/sec-117",
+    "library/arxiv-1610.09640v4/sections/sec-118",
+    "library/arxiv-1610.09640v4/sections/sec-119",
+    "library/arxiv-1610.09640v4/sections/sec-120",
+    "library/arxiv-1610.09640v4/sections/sec-121",
+    "library/arxiv-1610.09640v4/sections/sec-122",
+    "library/arxiv-1610.09640v4/sections/sec-123",
+    "library/arxiv-1610.09640v4/sections/sec-124",
+    "library/arxiv-1610.09640v4/sections/sec-125"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -133,7 +150,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1610.09640v4",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1610.09640v4.pdf",
     "source_sha256": "db5e7a5c5e85f95f7deedb675f4bd129add7006050ae018b836dd40cf4ada282",
     "pages": 459,

@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0601458v1/sections/sec-016",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "M-Stuff Types",
+  "pageStart": 44,
+  "pageEnd": 50,
+  "contains": [
+    "library/arxiv-math-0601458v1/blocks/prose-sec-016",
+    "library/arxiv-math-0601458v1/blocks/thm-sec-016-01",
+    "library/arxiv-math-0601458v1/blocks/thm-sec-016-02",
+    "library/arxiv-math-0601458v1/blocks/rem-sec-016-03",
+    "library/arxiv-math-0601458v1/blocks/thm-sec-016-04",
+    "library/arxiv-math-0601458v1/blocks/thm-sec-016-05"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0601458v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0601458v1/manifest.jsonld",
+  "provenance": "ingested"
+}

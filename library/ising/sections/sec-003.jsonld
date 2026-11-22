@@ -13,9 +13,12 @@
   "pageStart": 19,
   "pageEnd": 24,
   "contains": [
-    "library/ising/blocks/prose-sec-003"
+    "library/ising/blocks/prose-sec-003",
+    "library/ising/blocks/thm-sec-003-01",
+    "library/ising/blocks/lem-sec-003-02",
+    "library/ising/blocks/prop-sec-003-03"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ising",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ising",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ising/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ising/manifest.jsonld",
   "provenance": "ingested"
 }

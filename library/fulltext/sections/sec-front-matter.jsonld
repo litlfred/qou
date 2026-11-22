@@ -11,11 +11,12 @@
   ],
   "title": "Front matter",
   "pageStart": 1,
-  "pageEnd": 4,
+  "pageEnd": 3,
   "contains": [
-    "library/fulltext/blocks/prose-sec-front-matter"
+    "library/fulltext/blocks/prose-sec-front-matter",
+    "library/fulltext/blocks/figure-img-p003-1"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/fulltext",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/fulltext",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/fulltext/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/fulltext/manifest.jsonld",
   "provenance": "ingested"
 }

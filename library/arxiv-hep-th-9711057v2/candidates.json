@@ -1,0 +1,107 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-hep-th-9711057v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "acf5cdd7fe848f43b32d96d9b344fc222b0c7d3d1fa8950ce39495e2076237bb",
+  "file": "9711057v2.pdf"
+ },
+ "provenance": {
+  "title": "arXiv:hep-th/9711057v2 30 Apr 1998",
+  "authors": "T. Wilke1, T. Guhr1, and T. Wettig2",
+  "arxiv": {
+   "id": "hep-th/9711057",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "30 Apr 1998"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 3,
+  "by_kind": {
+   "proposition": 3
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 3
+  },
+  "by_evidence_kind": {
+   "computational-simulation": 3
+  },
+  "by_evidence_location": {
+   "in-paper": 3
+  }
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "Whether the results obtained in RMT correctly describe the microscopic spectrum of full QCD is a question that can only be answered by empirical evidence, most importantly by large-scale lattice QCD simulations.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-000-1-introduction.md (p. 1-2)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-2",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-000-1-introduction.md (p. 1-2)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-000-01",
+   "block_iri": "library/arxiv-hep-th-9711057v2/blocks/prop-sec-000-01",
+   "claim_id": "arxiv-hep-th-9711057v2#prop-sec-000-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "Recently, a high-statistics lattice calculation directly demonstrated agreement between the random-matrix results and lattice data, not only for $\\rho_s$ but also for the distribution of the smallest eigenvalue and for the microscopic spectral two-point correlator \\cite{Berb97a}.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-000-1-introduction.md (p. 1-2)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-2",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-000-1-introduction.md (p. 1-2)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-000-02",
+   "block_iri": "library/arxiv-hep-th-9711057v2/blocks/prop-sec-000-02",
+   "claim_id": "arxiv-hep-th-9711057v2#prop-sec-000-02"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "In the context of lattice QCD, it applies to SU(3) with dynamical staggered fermions.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-008-4-discussion.md (p. 9-10)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-008-4-discussion.md",
+   "section_title": "Discussion",
+   "pages": "9-10",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-008-4-discussion.md (p. 9-10)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-008-01",
+   "block_iri": "library/arxiv-hep-th-9711057v2/blocks/prop-sec-008-01",
+   "claim_id": "arxiv-hep-th-9711057v2#prop-sec-008-01"
+  }
+ ]
+}

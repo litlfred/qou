@@ -1,0 +1,53 @@
+identity), that is, S =I’ \ H. The space of square integrable functions on S' comes from
+
+the functions f € L?(H) that are invariant under the action of an isometry Cd
+
+Tiaf=fy'a=fe, vel,
+
+and are square integrable over any fundamental domain Fp of I (recall Definition 2.26).
+We obtain the Hilbert space L?(P \ H) by defining the obvious inner product
+(fu fe) = J fifedu
+J Fp
+
+on these functions, where dj: is the Riemannian measure. In a similar way, we can identify
+functions in C(I \ H) with the functions in C°°(H) that are invariant under the action
+of T,, y € l. We have seen that the Laplacian commutes with isometries; as a result it
+commutes with T, and thus maps C°(H) > C'°(H).
+
+Definition 2.43 (Point pair invariant) A point pair invariant for a Fuchsian group
+
+T is a functionk:H x H > C that satisfies the following relations:
+1. k(yz, yw) = k(z, w) for ally eT, z, w € H;
+2. k(z, w) = k(w, z) for all z, w € H.
+
+Such a function k(z, w) depends on the hyperbolic distance d(z, w) = u between the
+two points. In this way, we can view k as a function of one non-negative variable k(u).
+
+If we take k(z, w) to be the kernel of an integral operator
+
+(Lf)(z) = [¥. w)f (w)du,
+
+then L is invariant under the action of Isom(H). Both the Laplacian and L are inva
+
+under isometries, and in particular, we have the following theorem (see [38, Theorem
+
+1.9]):
+
+iant
+
+Theorem 2.44 The invariant integral operators commute with the Laplace operator.
+
+This commutative property gives a relation between eigenfunctions of the Laplacian
+
+and those of the invariant integral operators; in particular, if f is a solution to
+
+(Af — Af) =0,
+where \ = $ +1, then it is also a solution to
+Lf =hWf,
+
+lo h(t) can be computed from k(z, w) using the Selberg/Harish-Chandra transform
+|
+
+q(v) -[- k(u)(u — v)~2du,
+
+44

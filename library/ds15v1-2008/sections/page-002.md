@@ -1,0 +1,62 @@
+---
+doc_id: ds15v1-2008
+doc_title: "Rogers-Ramanujan-Slater Type Identities"
+section_id: page-002
+section_title: "Page 2"
+pages: 2-2
+pdf_page: 2
+source_pdf: ds15v1-2008.pdf
+source_sha256: aef155a324c6fdf4
+text_source: ocr
+granularity: page
+doc_brief: "Rogers-Ramanujan-Slater Type Identities — In this survey article, we present an expanded version of Lucy Slater’s famous list of identities of the Rogers-Ramanujan type, including identities of"
+---
+for |ab| < 1. It is called a theta function, despite the lack of a theta in the notation,
+because it is equivalent, via change of variable, to the theta function of Jacobi [46, p.
+463]:
+
+O(z, Ww) = > (=1)"w" e2", (1.1.2)
+where |w| < 1.
+The following special cases of f(a,b) arise so often that they were given there own
+special notation by Ramanujan [9, p. 11]:
+
+e(q) = f(4,9) (1.1.3)
+v(@) = f(a") (1.1.4)
+f(-@) = f(-4,-¢). (1.1.5)
+Ramanujan further defines
+_ fea’ 0°)
+x(q) = Fa (1.1.6)
+
+One of the most important results in the theory of theta functions is that they can be
+expressed as infinite products:
+
+Jacobi’s triple product identity. For |ab| <1,
+
+f(a, b) = (—a, —b, ab; ab) oo, (1.1.7)
+where so
+(A; W)oo 1= I[¢ — Aw”),
+n=0
+and
+
+(Aj, Ao,..., Ari W)oo = (Al; W)c0(Aa; W)oo + + (Ar; W)oo-
+An immediate corollary of (1.1.7) is thus
+Corollary 1.
+
+f(a) = (4 Doo (Buler [20])) (1.1.8)
+
+ola) — bi Dex val [i
+
+9) = Ca aan (Gaups [23]) (1.1.9)
+(PV) “af
+
+va) = (=4: 4 )oo (Gaups [23]) (1.1.10)
+
+x(a) = (4: 9") x0 aa)
+
+Sometimes a linear combination of two theta series can be expressed as a single infinite
+product. The quintuple product identity has probably been (re)discovered more than any
+other identity in the theory of q-series. The earliest published occurrence appears to be
+due to Fricke [21, p. 207, Eq. (6)]. See Cooper’s survey paper for a history and many
+proofs of the quintuple product identity [17].
+
+THE ELECTRONIC JOURNAL OF COMBINATORICS 15 (2008), #DS15 2

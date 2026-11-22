@@ -1,0 +1,78 @@
+S. Blanes et al. / Physics Reports 470 (2009) 151-238 177
+
+along the years, either to extend the procedure to a more general setting or to manipulate the series to achieve further
+improvements. In this section, we review some of these generalizations, with special emphasis on the treatment of nonlinear
+differential equations.
+
+First we reconsider an iterative method originally devised by Voslamber [92] for computing approximations 2“ (t)
+in Y(t) = exp(2(t)) for the linear equation Y’ = A(t)Y. The resulting approximation may be interpreted as a re-
+summation of terms in the Magnus series and possesses interesting features not shared by the corresponding truncation
+of the conventional Magnus expansion. Then we adapt the Magnus expansion to the physically relevant case of a periodic
+matrix A(t) with period T which incorporates, in a natural way, the structure of the solution ensured by the Floquet theorem.
+Next we go one step further and generalize the Magnus expansion to the so-called nonlinear Lie equation Y’ = A(t, Y)Y.
+Finally, we show how the procedure can be applied to any nonlinear explicitly time-dependent differential equation.
+Although the treatment is largely formal, in Section 5 we will see that it is of paramount importance for designing new
+and highly efficient numerical integration schemes for this class of differential equations. We particularize the treatment
+to the important case of Hamiltonian systems, and also establish an interesting connection with the Chen-Fliess series for
+nonlinear differential equations.
+
+3.1. Voslamber iterative method
+
+Let us consider Eq. (30) when there is a perturbation parameter ¢ in the (in general, complex) matrix A, i-e., Eq. (105).
+Theorem 9 guarantees that, for sufficiently small values of t, Y(t; ¢) = exp 2(t; €), where
+
+A(tre)= vie" Qy(t). (115)
+n=1
+
+The advantages of this representation and the approximations obtained when the series is truncated have been sufficiently
+recognized in the treatment done in previous sections. There is, however, a property of the exact solution not shared by any
+truncation of the series (115) which could be relevant in certain physical applications: (1/¢) a é"92,(t) with m > 1 is
+unbounded for ¢ + oo even when {2(t, €)/é is bounded uniformly with respect to ¢ under rather general assumptions on
+the matrix A(t) [92]. Notice that this is the case, in particular, for the adiabatic problem (93).
+When Schur’s unitary triangularization theorem [44] is applied to the exact solution Y(t; ¢) one has
+
+T, =UtYU, (116)
+where T, is an upper triangular matrix and U is unitary. In other words, Y is unitarily equivalent to an upper triangular
+matrix T,. Differentiating (116) and using (105), one arrives at
+
+T, = eU'AUT, + [T;, UTU’].
+
+Since the second term on the right hand side is not upper triangular, it follows at once that
+
+T(t) = exp («/ (U'AU),<s) .
+0
+
+where the subscript a denotes the upper triangular part (including terms on the main diagonal) of the corresponding matrix.
+Taking into account (116) one gets
+
+t
+Q(t, e) =U (/ (U'AU).€s) ui. (117)
+0
+Considering now the Frobenius norm (which is unitarily invariant, Section 1.2) of both sides of this equation, one has
+
+|2llr = lel
+
+t
+[ (U'AU) ds
+0
+
+C
+<|el | I(U*AU) qlleds
+F 0
+
+t t
+< if |UtAU||eds = ie [ [Alleds. (118)
+0 0
+
+If the spectral norm is considered instead, from inequalities (28), (29) and (118), one concludes that
+
+t
+|2ll2 < yrank(A) il f [|Allads.
+0
+
+In any case, what is important to stress here is that for the exact solution Q(t; ¢)/e is bounded uniformly with respect
+to the « parameter. Voslamber proceeds by deriving an algorithm for generating successive approximations of Y(t; ¢) =
+exp(2(t; €)) which, contrarily to the direct series expansion (115), preserve this property. His point of departure is to get a
+series expansion for the so-called dressed derivative of 2 [93]
+
+Pee? Qe, (119)

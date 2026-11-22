@@ -1,0 +1,42 @@
+1.2 Twisted cohomology
+
+In this section we recall the basics of twisted cohomology that we will use in the
+sequel of the manuscript. Given a group I’, we will denote by Z[I’] the group ring of
+
+I’, whose elements are formal sums )>_-, ney, ny € Z with multiplication e,e; = ey5
+
+er
+extended by linearity.
+
+We fix an abelian group A together with a left-action T x A — A,(y,a) HH y- a. It
+
+induces a right-action by a- y = y~! - a. It turns A into a Z[I]-module.
+
+Definition 1.2.1 (Group homology and cohomology). Let ET be the full simplex
+set over T, that is, the vertices of ET are in bijection with [, and any finite part of
+T of cardinal n defines an n — 1 simplex in ET. This space is contractile, and the
+natural transitive action of [ on itself by left multiplication induces an action on
+ET, denote by BI = ELT/T.
+
+Define the complex of twisted chains as the Z|[I|-modules :
+
+C,(T, A) =A Szr C, (ET)
+= {a® [0,---, a] Vy ET, a-7@ [h0,--- Ye] = @®@ [y%0,---, V1}
+
+and the complex of twisted co-chains as the Z|[I|-modules :
+
+C* (DP, A) = Homgprj(C;,(ET), A)
+={f DSA: fy. e) = 7° F(Q0;--- %e)F
+
+with boundary maps given by 0(a® [y0,---. J) = 0;(—1)'@® [y0,---4a,- Med E
+Cyl, A) and df (yo, --- e+) = Vi(-1)'F (00, +... Jis + Yet) € CHT, A). Re-
+call that the hat notation means that the term with a hat does not appear.
+
+As usual we denote by
+Z,(U, A) = ker: C,(P, A) > Cy_1, Z*(T, A) = kerd : C*(P, A) + Ch, A)
+and
+B,(l, A) =imd: Cyyi(T, A) > C;,(P, A), B*(P, A) = imd: CP-1(L, A) > C#(T, A)
+We define the twisted homology Z-modules as
+A,(T, A) = Z(T, A)/By(P, A)
+
+26

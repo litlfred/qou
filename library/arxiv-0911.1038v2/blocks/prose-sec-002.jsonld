@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-0911.1038v2/blocks/prose-sec-002",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "How to normalize the characters?",
-  "pageStart": 2,
-  "pageEnd": 3,
-  "text": "../sections/sec-002-13-how-to-normalize-the-characters.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0911.1038v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0911.1038v2",
+  "title": "Asymptotic shape of Young diagrams",
+  "pageStart": 1,
+  "pageEnd": 2,
+  "text": "../sections/sec-002-12-asymptotic-shape-of-young-diagrams.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0911.1038v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0911.1038v2/manifest.jsonld",
   "provenance": "ingested"
 }

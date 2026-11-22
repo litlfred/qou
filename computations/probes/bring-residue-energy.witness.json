@@ -1,0 +1,133 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-10-12T20:48:52.560033+00:00",
+  "commitSha": "e15f22e7de31c4ca4a8b34313e6fe155c7789d8e",
+  "assertions": [
+    {
+      "name": "weights_match_conventionD_closed_forms",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "SegmentCollisionDatum channel_weights_conventionD"
+    },
+    {
+      "name": "mu_at_t_1_is_zD",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Markov value of σ"
+    },
+    {
+      "name": "mu_at_t_minus1_is_zD_minus_h",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Markov value of σ⁻¹"
+    },
+    {
+      "name": "mu_at_t_2_is_markov_of_full_twist",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "σ² channel split"
+    },
+    {
+      "name": "chiral_split_identity",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean chiral_split"
+    },
+    {
+      "name": "canonical_mu_below_mirror",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean canonical_mu_lt_mirror"
+    },
+    {
+      "name": "mirror_equals_bar_involution",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean mirror_eq_bar"
+    },
+    {
+      "name": "classical_limit_achiral",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean classical_limit_achiral"
+    },
+    {
+      "name": "analytic_derivative_matches_numeric",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "μ'(t) formula"
+    },
+    {
+      "name": "mu_prime_at_0_eq_lnq_times_wS_minus_wA",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean hasDerivAt_mu_zero"
+    },
+    {
+      "name": "t_star_in_open_0_half_and_is_a_max_of_mu",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean mu_increasing_at_zero_conventionD"
+    },
+    {
+      "name": "q_equals_1_has_no_preferred_twist",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Lean mu_deriv_zero_classical"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "bring-residue-energy",
+  "scriptFile": "bring_residue_energy_probe.py",
+  "scriptHash": "51979dbcd0c8",
+  "scriptCommitSha": "e15f22e7de31c4ca4a8b34313e6fe155c7789d8e",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "cd378682bfd642d0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/bring_residue_energy_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/bring_residue_energy_probe.py"
+  },
+  "q0Anchor": "proton",
+  "q0AnchorReason": "q0 read from the committed y-lambda-at-q0 witness string",
+  "description": "PROBE (bean qou-jfx8): Bring energy E(ℓ) = −log μ(2ℓ), μ(t) = q^t w_S + q^{−t} cos(πt) w_A, convention-D bridge weights; validated against Markov values at t = ±1; canonical ℓ = −1/6 vs mirror. Modelling step (ambient linking as flow time 2ℓ) stated in the Lean file.",
+  "weight_family": "markov_y_lambda_convention_D",
+  "wS": "0.75270211325196540159377935162023613783017559887491",
+  "wA": "0.24729788674803459840622064837976386216982440112509",
+  "mu_canonical": "0.85499812418255453587484750690762636914963826957517",
+  "mu_mirror": "0.89876418722685717518141401708687344399254295213794",
+  "E_canonical": "0.15665600398631622789555257727130731133613804718584",
+  "E_mirror": "0.10673458456175454392631652495647556010551684677477",
+  "chiral_gap": "0.049921419424561683969236052314831751230621200411071",
+  "t_star": "0.021794385874568876890900102811342307034088342837369",
+  "collision_twist_s_star": "0.3551277192079022102242334361446756403674216761707",
+  "turning_angle_degrees": "63.922989457422397840362018506",
+  "E_at_t_star": "-0.00057360694514865950094919238662045052834470376037764"
+}

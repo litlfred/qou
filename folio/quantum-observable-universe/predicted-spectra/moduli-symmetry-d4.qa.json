@@ -60,6 +60,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "976a237dd7c6",
+          "ts": "b854d2bc9a1c",
+          "lean": "f70cebb17fb5",
+          "lean_statement": "d51024b1ce27"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:55:59.292Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "Sibling `.lean:103` (ref resolves only there) proves the three relations σ⁴=id, τ²=id, (στ)²=id on ℂ^× (correct). \"Faithful action of D₄ of order 8\" and the golden-octet orbit are not encoded (relations only give a quotient of D₄; the faithfulness argument is in a docstring). md:1 calls σ an \"involution\"; it has order 4. Core proof (prf:2-10) is correct: orbit of φ has 8 points so the action is faithful; (z⁴−3z²+1)(z⁴+3z²+1)=z⁸−7z⁴+1. The rest of the proof block has false statements (sympy): M = [[−1,4],[4,3]] has det −19, so M ∉ GL₂(ℤ) and ∉ GL₂(ℤ[i]) (prf:28,45); M^σ = S⁻¹MS fixes {iφ, −i/φ}, not {i/φ, −iφ} as written (prf:39); \"each matrix fixes exactly one coset of G₈\" contradicts each fixing two points; \"G₈ ∪ ζ₈-orbit form the full D₄-fixed locus on ℂ^×\" (prf:55): D₄ has no fixed point on ℂ^× (σq=q forces q=0)"
       }
     ],
     "milnor-amalgamated-flow": [
@@ -2128,6 +2146,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T04:23:29.378Z",
+  "updated_at": "2026-11-15T21:55:59.292Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -1,0 +1,26 @@
+198 Overview of analytic methods for multivariate GFs
+
+Figure 7.15 The zero set of Q = (23 — x°)(2-x-y-2).
+
+Stratified critical points
+
+A point p in a stratum S is said to be a (stratified) critical point for the height
+function h = hg if the restriction dh|s vanishes at p. Analogously to the smooth
+case above, because / is the real part of 6(z) = —r- log z the Cauchy—Riemann
+equations imply that p is a critical point if the gradient of ¢ lies in the normal
+space to S at p. If S has codimension k then there exists an open set U c
+C4 containing p and irreducible polynomials g),...,g, such that SA U =
+V(g1,.--,8%) AU (ie., S is locally defined by the polynomials g; near p).
+The point p is a critical point if and only if the gradient (V¢)(p) lies in the
+complex span of the gradients (V g1)(p),...,(V gx)(p). Although ¢ involves
+logarithms, its gradient is a rational function, so we may compute stratified
+critical point by solving polynomial systems. Computation of stratified critical
+points is discussed at greater length in Chapter 8.
+
+Recall from Chapter 6 that the logarithmic gradient of a differentiable func-
+tion f at z € C4 is the vector
+
+Viog f(Z) = (Zt fers «++» Za feg(2)) » (7.12)
+
+with the word logarithmic coming from the fact that the logarithmic gradient
+of f(z) at z = exp(x) is the gradient of (f o exp)(z) at z = a. If p is a smooth

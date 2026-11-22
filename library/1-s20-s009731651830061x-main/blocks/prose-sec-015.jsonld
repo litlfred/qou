@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/1-s20-s009731651830061x-main/blocks/prose-sec-015",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Second version",
-  "pageStart": 27,
-  "pageEnd": 31,
-  "text": "../sections/sec-015-42-second-version.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/1-s20-s009731651830061x-main",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/1-s20-s009731651830061x-main",
+  "title": "Constant term formula for the number of (m,n,k)-Magog trapezoids with prescribed numbers of minima and maxima",
+  "pageStart": 20,
+  "pageEnd": 21,
+  "text": "../sections/sec-015-4-constant-term-formula-for-the-number-of-mnk-ma.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1-s20-s009731651830061x-main/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1-s20-s009731651830061x-main/manifest.jsonld",
   "provenance": "ingested"
 }

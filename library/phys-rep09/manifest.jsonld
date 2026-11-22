@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/phys-rep09",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/phys-rep09/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "Physics Reports The Magnus expansion and some of its applications",
+  "title": "The Magnus expansion and some of its applications",
   "contains": [
     "library/phys-rep09/sections/sec-front-matter",
     "library/phys-rep09/sections/sec-000",
@@ -82,10 +82,21 @@
     "library/phys-rep09/sections/sec-067",
     "library/phys-rep09/sections/sec-068",
     "library/phys-rep09/sections/sec-069",
-    "library/phys-rep09/sections/sec-070"
+    "library/phys-rep09/sections/sec-070",
+    "library/phys-rep09/sections/sec-071",
+    "library/phys-rep09/sections/sec-072",
+    "library/phys-rep09/sections/sec-073",
+    "library/phys-rep09/sections/sec-074",
+    "library/phys-rep09/sections/sec-075",
+    "library/phys-rep09/sections/sec-076",
+    "library/phys-rep09/sections/sec-077",
+    "library/phys-rep09/sections/sec-078",
+    "library/phys-rep09/sections/sec-079",
+    "library/phys-rep09/sections/sec-080",
+    "library/phys-rep09/sections/sec-081"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "phys-rep09",
     "title_source": "corroborated",

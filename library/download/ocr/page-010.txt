@@ -1,0 +1,65 @@
+1394 S.G. Bobkov and F. Gétze
+
+and similarly for the half-axis (—oo, —h). Combining this bound with Corollary 3.2, with
+[a, b] =[—A, h], we obtain that, for all h > Ao,
+
++00
+ef |Fn(x) — Funids = —]1+6( 1
+
+Substituting h = (A + t)o with arbitrary t > 0, we get that
+
+1/3
+) | + 1200 40/2.
+
++00
+e| [Fy (x) — FQx)| dx < li +6((A+ n/n)? + tae].
+n
+
+—0o
+
+Finally, the choice t = logn leads to the desired estimate
+
+A+logn 13
+n ,
+
++00
+E | [Fa(s) — FUxplds < Co(
+
+—0o
+
+4. Large deviations above the mean
+
+In addition to the upper bound on the mean of the Kantorovich—Rubinstein distance W\(F;,, F),
+one may wonder how to bound large deviations of W;(F;,, F) above the mean. To this end, the
+following general observation may be helpful.
+
+Lemma 4.1. For all points x = (x1,.-.,%n),x' = (x},-+-,x,) in R", we have
+
+a 1 ,
+Wi(Fn, F,,) < J=llx — x' ll,
+
+Va
+
+a by tetbyh
+
+where Fy, = a ,F= a
+
+In other words, the canonical map T from R” to the space of all probability measures on the
+line, which assigns to each point an associated empirical measure, has a Lipschitz seminorm
+<7 with respect to the Kantorovich—Rubinstein distance. As usual, the Euclidean space R” is
+
+equipped with the Euclidean metric
+
+x — x! fier Pt ba — a
+
+Denote by Z; the collection of all (Borel) probability measures on the real line with finite first
+moment. The Kantorovich—Rubinstein distance in Z; may equivalently be defined (cf. [16,43])
+by
+
+W1(G, G’) =int [ lu —u'|da(u, u’),
+Tw
+
+where the infimum is taken over all (Borel) probability measures 7 on R x R with marginal
+distributions G and G’. In case of empirical measures G = F,, G’ = F/, associated to the points
+
+n?

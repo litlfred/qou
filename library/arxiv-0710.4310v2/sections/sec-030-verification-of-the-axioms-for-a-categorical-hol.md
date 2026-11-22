@@ -10,7 +10,8 @@ source_sha256: 9a7757f998b7f680
 toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.98
-latex_coverage_ratio: 1.0
+latex_coverage_ratio: 0.98
+doc_brief: "On Two-Dimensional Holonomy — We deﬁne the thin fundamental categorical group P2(M, ∗) of a based smooth manifold (M, ∗) as the categorical group whose objects are rank-1 homotopy classes of based"
 ---
 Let ${\Gc=(\d\colon E \to G,\tr)}$ be a Lie crossed module and let ${\mathfrak{G}=(\d \colon \le \to  \lg,\tr )}$ be the associated differential crossed module. Fix a smooth manifold $M$ with a base point $*$, a principal $G$-bundle $P$ over $M$ and an element $u\in P_*$, the fibre of $P$ over $*$. Consider a categorical connection $(\w,m)$ on $P$. Let us prove that the assignments $$[\g] \in \pi_1^1(M,*) \mapsto F^1_{(\w,u)}([\g]) \in G$$ and $$[\G] \in \P_2(M,*) \mapsto  F^2_{(\w,m,u)}([\G])  \in G \ltimes E,$$ defined in [\[dchcc\]](#dchcc){reference-type="ref" reference="dchcc"}, yield a categorical holonomy $F_{(\w,m,u)}\colon \Pc(M,*) \to \C(\Gc)$. To begin with, let us see that $F_{(\w,m,u)}$ defines a monoidal functor $\Pc_2(M,*) \to \C(\Gc)$. Here $\C(\Gc)$ is the categorical group constructed from $\Gc$; see [\[CCG\]](#CCG){reference-type="ref" reference="CCG"}.
 

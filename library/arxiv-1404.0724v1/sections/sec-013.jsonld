@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1404.0724v1/sections/sec-013",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Representations of sl2(C) and Lawrence-Krammer-Bigelow",
+  "pageStart": 20,
+  "pageEnd": 22,
+  "contains": [
+    "library/arxiv-1404.0724v1/blocks/prose-sec-013",
+    "library/arxiv-1404.0724v1/blocks/lem-sec-013-01",
+    "library/arxiv-1404.0724v1/blocks/prop-sec-013-02",
+    "library/arxiv-1404.0724v1/blocks/thm-sec-013-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1404.0724v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1404.0724v1/manifest.jsonld",
+  "provenance": "ingested"
+}

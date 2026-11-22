@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1409.2849v1/blocks/prose-sec-012",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Joint cumulants of the spins",
-  "pageStart": 32,
-  "pageEnd": 41,
-  "text": "../sections/sec-012-51-joint-cumulants-of-the-spins.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1409.2849v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1409.2849v1",
+  "title": "Local limit theorem and rate of convergence in the Ellis-Newman limit theorem",
+  "pageStart": 24,
+  "pageEnd": 24,
+  "text": "../sections/sec-012-4-local-limit-theorem-and-rate-of-convergence-in.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1409.2849v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1409.2849v1/manifest.jsonld",
   "provenance": "ingested"
 }

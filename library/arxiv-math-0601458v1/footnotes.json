@@ -1,0 +1,1748 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-math-0601458v1",
+ "status": "determined",
+ "pages_unread": [
+  10,
+  62
+ ],
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p005-1",
+   "page": 5,
+   "mark": "1",
+   "text": "FinSet0isJoyal’sB(for“bijection”).Itmakesnodiﬀerencefromwhichuniversewetake these sets - a skeletal version of FinSet0 consisting of only pure sets, one per cardinality, will do as well as any other for our purposes.",
+   "marks": [
+    {
+     "page": 5,
+     "context": "objectsareﬁnitesets,andwhosemorphismsarethebijections"
+    }
+   ],
+   "block": "library/arxiv-math-0601458v1/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p030-1",
+   "page": 30,
+   "mark": "2",
+   "text": "AtreatmentoftheconstructionofHilbertspacesfromstructuretypesappearsin[9].",
+   "marks": [
+    {
+     "page": 29,
+     "context": "P1: Vect"
+    },
+    {
+     "page": 29,
+     "context": "TheobjectsandmorphismsinVect"
+    },
+    {
+     "page": 29,
+     "context": "therearemanypairsmorphismsinVect"
+    },
+    {
+     "page": 30,
+     "context": "spacesomeofthebasicstructureforaHilbertspace"
+    },
+    {
+     "page": 30,
+     "context": "spaceofL"
+    },
+    {
+     "page": 30,
+     "context": "sothespaceofstatescanbeseenasℓ"
+    }
+   ],
+   "block": "library/arxiv-math-0601458v1/blocks/prose-sec-010"
+  },
+  {
+   "id": "fn-p035-1",
+   "page": 35,
+   "mark": "3",
+   "text": "Strictlyspeaking,the“groundﬁeld”hereisnot C but rather the setting for cardinalities R+, so we do not yet have a vector space. When we introduce M-stuﬀand get of groupoids, cardinalities in something like C, we will really have a vectorspace.",
+   "marks": [
+    {
+     "page": 35,
+     "context": "Ψ,recallthatthiscanbeseenasavectorinaspaceofstates"
+    }
+   ],
+   "block": "library/arxiv-math-0601458v1/blocks/prose-sec-013"
+  },
+  {
+   "id": "fn-p046-1",
+   "page": 46,
+   "mark": "5",
+   "text": "Since we are already thinking of sets as special kinds of categories here, this raises the question of what happens if we categorify M. We return to this in section 7.1.2.",
+   "marks": [
+    {
+     "page": 46,
+     "context": "elementsoftheset,andwithonlyidentitymorphisms"
+    }
+   ],
+   "block": "library/arxiv-math-0601458v1/blocks/prose-sec-016"
+  },
+  {
+   "id": "fn-p061-1",
+   "page": 61,
+   "mark": "6",
+   "text": "See,forinstance,MacLane[13].Thisdeﬁnitionincludesslightlymorethanthedeﬁnitionof a rig because we here explain the generalization of associativity for the monoidal operation. Also, we extend the “addition” operation to general colimits - of which coproducts, the equivalent of binary sums, are an example. Otherwise, the two defenitions have the same form.",
+   "marks": [
+    {
+     "page": 61,
+     "context": "conditions"
+    }
+   ],
+   "block": "library/arxiv-math-0601458v1/blocks/prose-sec-021"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p044-1",
+   "page": 44,
+   "mark": "4",
+   "text": "SeeappendixBforcommentsaboutsuch“overcategories”. The usual deﬁnition applies here by treating M as a set of elements, though we get some extra structure from the monoidal operation on M.",
+   "block": "library/arxiv-math-0601458v1/blocks/prose-sec-015"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "f"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "fkg"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "Deﬁnition1.AstructuretypeisafunctorfromthecategoryFinSet"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "F: FinSet"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "groupoidofﬁnitesetsandbijections(though,sinceallmapsinFinSet"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "|Fn|z"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "Similarly,wehavethetype“beingann-elementset”,denotedbyZ"
+  },
+  {
+   "page": 6,
+   "mark": "z",
+   "context": "hascardinality"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "hascardinalityz"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "lookatfunctorsfromFinSet"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "|(F· G)n|z"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "z"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "|F"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "|Fk| · |G"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "z"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "k!(n −k)!|F"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "k!(n −k)!|Fk| · |G"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "|Fk|z"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "·|G"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "·|Gn−k|z"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "Example2.DeﬁnethetypeZ"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "Z,“beingaone-elementset”.Inparticular,wesayZ"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "Z"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "Zn=Z× Z"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "Zn=Z× Zn−1.Thenbytheorem1,wehave|Z"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "Zn=Z× Zn−1.Thenbytheorem1,wehave|Zn|=z"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "wecaninterpretZ"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "structure intheproduct Z × Z"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "other,anddeﬁningthetotalorderrecursively.SoinfactaZ"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "thecardinalityis"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "thecardinalityisn!z"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "= z"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "Z"
+  },
+  {
+   "page": 7,
+   "mark": "z",
+   "context": "typeise"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "n!z"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "B∼= Z + B"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "thestructuretypeZisthetype”beingaone-elementset”(aleaf),andB"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "of the deﬁnition of Binto the B"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "B∼= Z + Z"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "B∼= Z + Z2+ 2Z"
+  },
+  {
+   "page": 8,
+   "mark": "4",
+   "context": "B∼= Z + Z2+ 2Z3+ 5Z"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "F: FinSet"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "state z"
+  },
+  {
+   "page": 9,
+   "mark": "f",
+   "context": "af(z) =d"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "relations,since[a, a∗](z"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "relations,since[a, a∗](zk) = aa∗(z"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "relations,since[a, a∗](zk) = aa∗(zk) −a∗a(z"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "dz(z"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "dz(zk+1) −z(kz"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "dz(zk+1) −z(kzk−1) = z"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "statez"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "energy should be zero:⟨z"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "energy should be zero:⟨zn, z"
+  },
+  {
+   "page": 11,
+   "mark": "†",
+   "context": "beself-adjoint.Butthenwemusthavea∗= a"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "a∗z"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "a∗zn−1, z"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "⟨z"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "⟨zn, z"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "z"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "zn−1, az"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "z"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "zn−1, n · z"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "z"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "zn−1, z"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "{z"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "{zn}by⟨z"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "{zn}by⟨zn, z"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "z"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "zn, φ"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "zn, φkz"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "∂zand"
+  },
+  {
+   "page": 12,
+   "mark": "z",
+   "context": "∂zanda∗= M"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "bradescribedabove,correspondstothestatez"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "state,Z"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "ofenergy,whichwecanexpressinthebasis{Z"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "houldbeclearthatAactslikediﬀerentiation,byseeinghowitactsonZ"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "sinceA(Z"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "totalordering),soA(Z"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "A(Z"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "A(Zn)∼= n · Z"
+  },
+  {
+   "page": 13,
+   "mark": "e",
+   "context": "∂z"
+  },
+  {
+   "page": 13,
+   "mark": "z",
+   "context": "∂ze"
+  },
+  {
+   "page": 13,
+   "mark": "z",
+   "context": "∂zez=e"
+  },
+  {
+   "page": 13,
+   "mark": "z",
+   "context": "makessense,since|EZ|=e"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "Z"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "(sinceZ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "asanO"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "(1−z)"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "(1−z)2 .Extendingthisfurther,anA"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "A(O)-structure (equivalently, O"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "the second, or to do this in the reverse order.Thus, A"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "O"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "O3+ O"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "(1−z)"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "patterncontinuesforgeneralA"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "(i.e.acategoryinwhichallmorphismsareiso),sinceFinSet"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "(Fn × Z"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "0)//S"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "ructures whose underlying setshave size n).Inthisdeﬁnition,Z"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "0is"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "earsinsidethesum(coproduct)isaweakquotientofthegroupoidFn× Z"
+  },
+  {
+   "page": 17,
+   "mark": "x",
+   "context": "{f"
+  },
+  {
+   "page": 17,
+   "mark": "f",
+   "context": "iareinG,and"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "iareinG,andf"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "iareinG,andfi∈hom(g"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "{f"
+  },
+  {
+   "page": 18,
+   "mark": "x",
+   "context": "{f"
+  },
+  {
+   "page": 18,
+   "mark": "x",
+   "context": "{f"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "a3-elementset,givingagroupoidwithcardinality"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "F: FinSet"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "morphismsinXwiththesameimageinFinSet"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "whicharefunctorsfromsomegroupoidXtoFinSet"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "inquestion.WecanthinkofastuﬀtypeΦ : X →FinSet"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "stuﬀtypesthisway,andthinkofthedualentity,Φ∗:FinSet"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "functors,sinceFinSet"
+  },
+  {
+   "page": 22,
+   "mark": "e",
+   "context": "impossible.Certainly,thiswillnothavecardinalitye"
+  },
+  {
+   "page": 22,
+   "mark": "z",
+   "context": "impossible.Certainly,thiswillnothavecardinalityee"
+  },
+  {
+   "page": 23,
+   "mark": "e",
+   "context": "generatingfunctionisnote"
+  },
+  {
+   "page": 23,
+   "mark": "z",
+   "context": "generatingfunctionisnotee"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "n!z"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "n∈FinSet"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "isthesetofisomorphismclassesofFinSet"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "|Φn|z"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "willassumeFinSet"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "|Xn|z"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "|1//Sn|kz"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "z"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "of z"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "of zninsuchpower series must beof theform"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "of zninsuchpower series must beof theforma"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "n!for"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "n!fora"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "Deﬁnition15.GivenagroupoidZ0andastuﬀtypeΦ:X→FinSet"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "sets,whoseobjectsarepairs(φ, z0)∈Φn× Z"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "0,whereφis"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "quotient(Fn× Z"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "0)//S"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "(Fn × Z"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "0)//S"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "thenelements.Thus,Xn≃G"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "0/S"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "|Xn|z"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "|G"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "|Gn//Sn|z"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "n!z"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "bymorphismsinZ0.Wesawin(8)thatitscardinalityise|Z"
+  },
+  {
+   "page": 28,
+   "mark": "0",
+   "context": "FinSet"
+  },
+  {
+   "page": 29,
+   "mark": "0",
+   "context": "I: OrdFinSet"
+  },
+  {
+   "page": 29,
+   "mark": "0",
+   "context": "I: OrdFinSet0→FinSet"
+  },
+  {
+   "page": 29,
+   "mark": "0",
+   "context": "takes any element in the groupoid OrdFinSet"
+  },
+  {
+   "page": 29,
+   "mark": "0",
+   "context": "morphismsareorder-preserving bijections)intoFinSet"
+  },
+  {
+   "page": 29,
+   "mark": "0",
+   "context": "Pj: FinSet"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "Hilbertspace,whichgaveus,onthebasisofpurestatesz"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "Hilbertspace,whichgaveus,onthebasisofpurestateszk,theform⟨z"
+  },
+  {
+   "page": 30,
+   "mark": "m",
+   "context": "bertspace,whichgaveus,onthebasisofpurestateszk,theform⟨zn, z"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "n∈Nψ"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "n∈Nψnφ"
+  },
+  {
+   "page": 31,
+   "mark": "x",
+   "context": "P"
+  },
+  {
+   "page": 31,
+   "mark": "0",
+   "context": "Sosupposewehavetwostuﬀtypes,namelyfunctorsΨ:X→FinSet"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "canalsodenotethisbyX ×FinSet"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "Deﬁnition17.Thegroupoid⟨Ψ, Φ⟩=X ×FinSet"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "veloped in section 3.1.2 is the inner product of stuﬀtypes Z"
+  },
+  {
+   "page": 33,
+   "mark": "m",
+   "context": "d in section 3.1.2 is the inner product of stuﬀtypes Znand Z"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": " be structure types.The stuﬀtype (in fact, structure type) Z"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "Anobjectoftheinnerproductgroupoid⟨Z"
+  },
+  {
+   "page": 34,
+   "mark": "m",
+   "context": "Anobjectoftheinnerproductgroupoid⟨Zn, Z"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "The morphisms of ⟨Z"
+  },
+  {
+   "page": 34,
+   "mark": "m",
+   "context": "The morphisms of ⟨Zn, Z"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "⟨Z"
+  },
+  {
+   "page": 34,
+   "mark": "m",
+   "context": "⟨Zn, Z"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "| ⟨Z"
+  },
+  {
+   "page": 34,
+   "mark": "m",
+   "context": "| ⟨Zn, Z"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "| ⟨Zn, Zm⟩| = ⟨|Z"
+  },
+  {
+   "page": 34,
+   "mark": "m",
+   "context": "| ⟨Zn, Zm⟩| = ⟨|Zn|, |Z"
+  },
+  {
+   "page": 35,
+   "mark": "0",
+   "context": "AstuﬀtypeΨ:X→FinSet"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "ﬁnition19.GiventwostuﬀoperatorsT ,T′withprojectionoperatorsp"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "tion19.GiventwostuﬀoperatorsT ,T′withprojectionoperatorsp1,p"
+  },
+  {
+   "page": 36,
+   "mark": "p",
+   "context": "1,"
+  },
+  {
+   "page": 36,
+   "mark": "p",
+   "context": "iactlike"
+  },
+  {
+   "page": 36,
+   "mark": "i",
+   "context": "iactlikep"
+  },
+  {
+   "page": 36,
+   "mark": "p",
+   "context": "iactlikepior"
+  },
+  {
+   "page": 36,
+   "mark": "a",
+   "context": "iasappropriate.TheproductofTby"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "PT ;p"
+  },
+  {
+   "page": 36,
+   "mark": "k",
+   "context": "H"
+  },
+  {
+   "page": 37,
+   "mark": "p",
+   "context": "T;"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "PT ;p"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "H"
+  },
+  {
+   "page": 37,
+   "mark": "0",
+   "context": "type(agroupoidoverFinSet"
+  },
+  {
+   "page": 37,
+   "mark": "0",
+   "context": "functor Ψ from X onto FinSet"
+  },
+  {
+   "page": 37,
+   "mark": "0",
+   "context": "pe T Ψ is a weak pullback of Tand Ψ, over the copy of FinSet"
+  },
+  {
+   "page": 37,
+   "mark": "0",
+   "context": "is the target of Ψ : X →FinSet"
+  },
+  {
+   "page": 37,
+   "mark": "0",
+   "context": "is the target of Ψ : X →FinSet0, and also of p2: T→FinSet"
+  },
+  {
+   "page": 37,
+   "mark": "0",
+   "context": "right,overthecopyofFinSet"
+  },
+  {
+   "page": 38,
+   "mark": "p",
+   "context": "2"
+  },
+  {
+   "page": 38,
+   "mark": "p",
+   "context": "1"
+  },
+  {
+   "page": 38,
+   "mark": "0",
+   "context": "inparticular,asmorphismsfromFinSet"
+  },
+  {
+   "page": 39,
+   "mark": "p",
+   "context": "2"
+  },
+  {
+   "page": 39,
+   "mark": "p",
+   "context": "1"
+  },
+  {
+   "page": 39,
+   "mark": "0",
+   "context": "inthisform,withT=FinSet"
+  },
+  {
+   "page": 39,
+   "mark": "0",
+   "context": "inthisform,withT=FinSet0withtwoprojectionfunctorstoFinSet"
+  },
+  {
+   "page": 39,
+   "mark": "k",
+   "context": "M"
+  },
+  {
+   "page": 40,
+   "mark": "0",
+   "context": "way,withgroupoidT∗= FinSet"
+  },
+  {
+   "page": 40,
+   "mark": "0",
+   "context": "ofFinSet"
+  },
+  {
+   "page": 40,
+   "mark": "*",
+   "context": "A"
+  },
+  {
+   "page": 40,
+   "mark": "n",
+   "context": "Z"
+  },
+  {
+   "page": 40,
+   "mark": "k",
+   "context": "Zn, Φ"
+  },
+  {
+   "page": 40,
+   "mark": "m",
+   "context": "Zn, ΦkZ"
+  },
+  {
+   "page": 40,
+   "mark": "k",
+   "context": "obtained by a pullback - and indeed, of the stuﬀoperator Φ"
+  },
+  {
+   "page": 40,
+   "mark": "k",
+   "context": "operators,etc.Now,thisΦ"
+  },
+  {
+   "page": 40,
+   "mark": "4",
+   "context": "ofΦ"
+  },
+  {
+   "page": 41,
+   "mark": "4",
+   "context": "Figure15.ExampleObjectFromΦ"
+  },
+  {
+   "page": 41,
+   "mark": "4",
+   "context": "Figure16.ExampleObjectFromΦ"
+  },
+  {
+   "page": 41,
+   "mark": "k",
+   "context": "orderinwhichweencounterobjectsfromAandA∗aswepassthroughΦ"
+  },
+  {
+   "page": 41,
+   "mark": "k",
+   "context": "wearereallydrawingobjectsoftheweakquotientΦ"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "thegroupoidisthusscaledby"
+  },
+  {
+   "page": 42,
+   "mark": "4",
+   "context": "objectfromthegroupoidΦ"
+  },
+  {
+   "page": 42,
+   "mark": "4",
+   "context": "Figure17.ExampleObjectinΦ"
+  },
+  {
+   "page": 42,
+   "mark": "3",
+   "context": "Ψ2, (Φ"
+  },
+  {
+   "page": 42,
+   "mark": "6",
+   "context": "Ψ2, (Φ3//S3)"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "Given two stuﬀtypes Ψ1: X"
+  },
+  {
+   "page": 42,
+   "mark": "0",
+   "context": "Given two stuﬀtypes Ψ1: X1→FinSet"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "Given two stuﬀtypes Ψ1: X1→FinSet0and Ψ2: X"
+  },
+  {
+   "page": 42,
+   "mark": "0",
+   "context": "Given two stuﬀtypes Ψ1: X1→FinSet0and Ψ2: X2→FinSet"
+  },
+  {
+   "page": 42,
+   "mark": "n",
+   "context": "theinnerproduct⟨Ψ1, Φ"
+  },
+  {
+   "page": 42,
+   "mark": "n",
+   "context": "objects involving objectsofΦ"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "objects involving objectsofΦnandofX"
+  },
+  {
+   "page": 42,
+   "mark": "6",
+   "context": "1,φ"
+  },
+  {
+   "page": 43,
+   "mark": "6",
+   "context": "1, Φ"
+  },
+  {
+   "page": 43,
+   "mark": "6",
+   "context": "1,φ"
+  },
+  {
+   "page": 43,
+   "mark": "5",
+   "context": "1, Φ"
+  },
+  {
+   "page": 44,
+   "mark": "n",
+   "context": "set” SisjustMS,equivalent toM"
+  },
+  {
+   "page": 46,
+   "mark": "x",
+   "context": "{f"
+  },
+  {
+   "page": 47,
+   "mark": "0",
+   "context": "NotethatwearestillthinkingofXaslyingoverFinSet"
+  },
+  {
+   "page": 47,
+   "mark": "0",
+   "context": "NotethatwearestillthinkingofXaslyingoverFinSet0,notMFinSet"
+  },
+  {
+   "page": 48,
+   "mark": "0",
+   "context": "Deﬁnition28.ThecardinalityofanM-stuﬀtypeΨ : X →FinSet"
+  },
+  {
+   "page": 48,
+   "mark": "n",
+   "context": "|Ψn|z"
+  },
+  {
+   "page": 48,
+   "mark": "0",
+   "context": "n∈FinSet"
+  },
+  {
+   "page": 48,
+   "mark": "0",
+   "context": "(Aswithastuﬀtype,thisdeﬁnitionrequiresustotakeFinSet"
+  },
+  {
+   "page": 48,
+   "mark": "0",
+   "context": "Proof.Wedeﬁnethemap(m, Ψ)7→mΨ,wheremΨ:mX→FinSet"
+  },
+  {
+   "page": 48,
+   "mark": "0",
+   "context": "properties of FinSet"
+  },
+  {
+   "page": 48,
+   "mark": "m",
+   "context": "x"
+  },
+  {
+   "page": 49,
+   "mark": "0",
+   "context": "Now,theinnerproductofstuﬀtypesΨ: X →FinSet"
+  },
+  {
+   "page": 49,
+   "mark": "0",
+   "context": "Now,theinnerproductofstuﬀtypesΨ: X →FinSet0andΦ: Y→FinSet"
+  },
+  {
+   "page": 49,
+   "mark": "0",
+   "context": "product X×FinSet"
+  },
+  {
+   "page": 49,
+   "mark": "0",
+   "context": "FinSet"
+  },
+  {
+   "page": 49,
+   "mark": "0",
+   "context": "FinSet0,theM-groupoid⟨Ψ, Φ⟩=X ⊗FinSet"
+  },
+  {
+   "page": 50,
+   "mark": "0",
+   "context": "set in the (skeletal version of) FinSet"
+  },
+  {
+   "page": 50,
+   "mark": "0",
+   "context": "Deﬁnition31.IfXisaU(1)-groupoidandΨ:X →FinSet"
+  },
+  {
+   "page": 50,
+   "mark": "n",
+   "context": "|Ψn|z"
+  },
+  {
+   "page": 50,
+   "mark": "n",
+   "context": "h|Ψn|z"
+  },
+  {
+   "page": 51,
+   "mark": "0",
+   "context": "FinSet"
+  },
+  {
+   "page": 53,
+   "mark": "3",
+   "context": "statewiththreeenergyquantachangesphasebye"
+  },
+  {
+   "page": 53,
+   "mark": "p",
+   "context": "2"
+  },
+  {
+   "page": 53,
+   "mark": "p",
+   "context": "1"
+  },
+  {
+   "page": 53,
+   "mark": "p",
+   "context": "2"
+  },
+  {
+   "page": 53,
+   "mark": "3",
+   "context": "θ"
+  },
+  {
+   "page": 53,
+   "mark": "p",
+   "context": "1"
+  },
+  {
+   "page": 53,
+   "mark": "3",
+   "context": "andthebijectionαx,tbetweenthem,andalsotheirassociatedlabelse"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "ectionαx,tbetweenthem,andalsotheirassociatedlabelse3iθandeiθ"
+  },
+  {
+   "page": 53,
+   "mark": "1",
+   "context": "ET× Xislabelledbytheproductofthelabelsontandx,namelyeiθ"
+  },
+  {
+   "page": 53,
+   "mark": "3",
+   "context": "ET× Xislabelledbytheproductofthelabelsontandx,namelyeiθ1e"
+  },
+  {
+   "page": 53,
+   "mark": "k",
+   "context": "SupposetheU(1)-stuﬀtypeinquestionhappenstojustbeZ"
+  },
+  {
+   "page": 53,
+   "mark": "k",
+   "context": "ank-elementﬁnitesetlabelledby1∈U(1)”.ThenwegetET (Z"
+  },
+  {
+   "page": 53,
+   "mark": "k",
+   "context": "nk-elementﬁnitesetlabelledby1∈U(1)”.ThenwegetET (Zk)∼=(eiθZ)"
+  },
+  {
+   "page": 54,
+   "mark": "n",
+   "context": "ψ, p(φ"
+  },
+  {
+   "page": 54,
+   "mark": "k",
+   "context": "Z"
+  },
+  {
+   "page": 54,
+   "mark": "n",
+   "context": "Zk|e−i(T −t"
+  },
+  {
+   "page": 54,
+   "mark": "n",
+   "context": "Zk|e−i(T −tn)NV e−i(t"
+  },
+  {
+   "page": 54,
+   "mark": "n",
+   "context": "Zk|e−i(T −tn)NV e−i(tn−t"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "Zk|e−i(T −tn)NV e−i(tn−tn−1)NV. . . V e−it"
+  },
+  {
+   "page": 54,
+   "mark": "l",
+   "context": "Zk|e−i(T −tn)NV e−i(tn−tn−1)NV. . . V e−it1NZ"
+  },
+  {
+   "page": 54,
+   "mark": "k",
+   "context": "Z"
+  },
+  {
+   "page": 54,
+   "mark": "l",
+   "context": "Zk|e−iT HZ"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "0≤t"
+  },
+  {
+   "page": 54,
+   "mark": "n",
+   "context": "0≤t1≤···≤t"
+  },
+  {
+   "page": 55,
+   "mark": "0",
+   "context": "∂tψ= −i(eitH"
+  },
+  {
+   "page": 55,
+   "mark": "0",
+   "context": "∂tψ= −i(eitH0V e−itH"
+  },
+  {
+   "page": 55,
+   "mark": "t",
+   "context": "Z"
+  },
+  {
+   "page": 55,
+   "mark": "0",
+   "context": "(eitH"
+  },
+  {
+   "page": 55,
+   "mark": "0",
+   "context": "(eitH0V e−itH"
+  },
+  {
+   "page": 55,
+   "mark": "0",
+   "context": "evolutionbyaphasefromanexpressionoftheformeitH"
+  },
+  {
+   "page": 55,
+   "mark": "k",
+   "context": "z"
+  },
+  {
+   "page": 55,
+   "mark": "l",
+   "context": "zk|e−iT Hz"
+  },
+  {
+   "page": 55,
+   "mark": "k",
+   "context": "Z"
+  },
+  {
+   "page": 55,
+   "mark": "l",
+   "context": "Zk|EiT HZ"
+  },
+  {
+   "page": 55,
+   "mark": "n",
+   "context": "O= e−i(T −t"
+  },
+  {
+   "page": 55,
+   "mark": "n",
+   "context": "O= e−i(T −tn)NV e−i(t"
+  },
+  {
+   "page": 55,
+   "mark": "n",
+   "context": "O= e−i(T −tn)NV e−i(tn−t"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "O= e−i(T −tn)NV e−i(tn−tn−1)NV. . . V e−it"
+  },
+  {
+   "page": 55,
+   "mark": "i",
+   "context": "Weknowthatthetermse−i(t"
+  },
+  {
+   "page": 55,
+   "mark": "i",
+   "context": "Weknowthatthetermse−i(ti−t"
+  },
+  {
+   "page": 55,
+   "mark": "i",
+   "context": "strandlabelledbyaphasee−i(t"
+  },
+  {
+   "page": 55,
+   "mark": "i",
+   "context": "strandlabelledbyaphasee−i(ti−t"
+  },
+  {
+   "page": 56,
+   "mark": "k",
+   "context": "Z"
+  },
+  {
+   "page": 56,
+   "mark": "l",
+   "context": "Zk|OZ"
+  },
+  {
+   "page": 56,
+   "mark": "1",
+   "context": "0≤t"
+  },
+  {
+   "page": 56,
+   "mark": "n",
+   "context": "0≤t1≤···≤t"
+  },
+  {
+   "page": 56,
+   "mark": "0",
+   "context": "Stuﬀtypes-groupoidsover FinSet"
+  },
+  {
+   "page": 57,
+   "mark": "0",
+   "context": "cribedbyanoperatorE−T .ThishasgroupoidandprojectionstoFinSet"
+  },
+  {
+   "page": 58,
+   "mark": "0",
+   "context": "onecopyofFinSet"
+  },
+  {
+   "page": 58,
+   "mark": "0",
+   "context": "oneortwomapstoFinSet"
+  },
+  {
+   "page": 58,
+   "mark": "0",
+   "context": "ndiceswouldamounttoidentifyingthecorrespondingcopiesofFinSet"
+  },
+  {
+   "page": 59,
+   "mark": "b",
+   "context": "generalizedspeciesasfunctorcategoriesbetween!Gand"
+  },
+  {
+   "page": 59,
+   "mark": "0",
+   "context": "!1=FinSet"
+  },
+  {
+   "page": 59,
+   "mark": "b",
+   "context": "ofstructureswhichcanbeputonthem.Wealsomentionedthe2-rig"
+  },
+  {
+   "page": 59,
+   "mark": "0",
+   "context": "ThegroupoidFinSet"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "G"
+  },
+  {
+   "page": 60,
+   "mark": "0",
+   "context": "WhydidwechoosethespeciﬁcgroupoidFinSet"
+  },
+  {
+   "page": 63,
+   "mark": "0",
+   "context": "groupoidsbothnaturallyforma2-category.StructuretypesF:FinSet"
+  },
+  {
+   "page": 63,
+   "mark": "0",
+   "context": "FinSet"
+  },
+  {
+   "page": 63,
+   "mark": "0",
+   "context": "et0.Inparticular,sincegroupoidsfroma2-category,ofwhichFinSet"
+  },
+  {
+   "page": 63,
+   "mark": "0",
+   "context": "WehavejustdescribedstuﬀtypesasfunctorsintoFinSet"
+  },
+  {
+   "page": 63,
+   "mark": "0",
+   "context": "→FinSet"
+  },
+  {
+   "page": 63,
+   "mark": "1",
+   "context": "meaningisclear).Giventwoobjects(X"
+  },
+  {
+   "page": 63,
+   "mark": "1",
+   "context": "meaningisclear).Giventwoobjects(X1, Ψ1)and(X"
+  },
+  {
+   "page": 63,
+   "mark": "1",
+   "context": "morphismsfunctorsF: X"
+  },
+  {
+   "page": 63,
+   "mark": "2",
+   "context": "morphismsfunctorsF: X1→X"
+  },
+  {
+   "page": 64,
+   "mark": "1",
+   "context": "Proof.The collections hom(Ψ1, Ψ2) involve functors from X"
+  },
+  {
+   "page": 64,
+   "mark": "2",
+   "context": "oof.The collections hom(Ψ1, Ψ2) involve functors from X1to X"
+  },
+  {
+   "page": 64,
+   "mark": "0",
+   "context": "functorsF1andF2betweengroupoidsmakethetrianglesoverFinSet"
+  },
+  {
+   "page": 64,
+   "mark": "0",
+   "context": "→FinSet"
+  },
+  {
+   "page": 66,
+   "mark": "b",
+   "context": "G.Wedeﬁne"
+  },
+  {
+   "page": 66,
+   "mark": "c",
+   "context": "G=1,wehave"
+  },
+  {
+   "page": 67,
+   "mark": "b",
+   "context": "havingonlytheidentitymorphisms.The2-rig"
+  },
+  {
+   "page": 67,
+   "mark": "1",
+   "context": "havingonlytheidentitymorphisms.The2-rigb!nisalsocalledSet[Z"
+  },
+  {
+   "page": 67,
+   "mark": "n",
+   "context": "heidentitymorphisms.The2-rigb!nisalsocalledSet[Z1, . . . , Z"
+  },
+  {
+   "page": 67,
+   "mark": "b",
+   "context": "the2-righom(!G,"
+  },
+  {
+   "page": 67,
+   "mark": "b",
+   "context": "2-righom(!G,"
+  }
+ ]
+}

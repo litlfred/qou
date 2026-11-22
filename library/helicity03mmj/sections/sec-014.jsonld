@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/helicity03mmj/sections/sec-014",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "References",
+  "pageStart": 22,
+  "pageEnd": 23,
+  "contains": [
+    "library/helicity03mmj/blocks/prose-sec-014"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/helicity03mmj/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/helicity03mmj/manifest.jsonld",
+  "provenance": "ingested"
+}

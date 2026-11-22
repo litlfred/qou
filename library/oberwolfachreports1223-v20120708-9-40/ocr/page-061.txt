@@ -1,0 +1,58 @@
+Invariants in Low-Dimensional Topology and Knot Theory 61
+
+Theorem 2 ((6]). For any free link, there exists a free braid whose closure is
+isotopic to the given link.
+
+In [3] Louis Kauffman and Sofia Lambropoulou using the L-move method to
+give a local version of the Markov theorem for virtual braids. Markov theorem
+for flat virtual links follows immediately from the argument of [3]. Together with
+Proposition 1, we proved the following main theorem. The most important thing
+in proving it is to deal with the virtualization moves. See [6] Lemma 3.4.
+
+Theorem 3 (Markov theorem for free links [6]). Two oriented free links are iso-
+topic if and only if two corresponding free braids differ by a finite sequence of free
+braid isotopy and the following moves and their inverses:
+
+(1) Flat conjugation.
+
+(2) Right virtual L-moves.
+
+(3) Right flat L-moves.
+
+(4) Right and left threaded L-moves.
+
+Remark 1. There is also a type of knot theory defined by virtual knots modulo
+virtualizations and we have the corresponding Markov theorem (|6| Theorem 3.7).
+
+The main motivation for our interest to Markov’s theorem for free links is
+that we would like to construct invariants for free knots out of free braids. We
+start tackling such problems by using classical objects, such as the Yang-Baxter
+equation. Let V be a vector space of dimension n and R:V @V +V@V bea
+linear transformation. We denote by Re the (a @ b,c @ d)-th matrix entry, where
+a,b,c and d belong to a set of the basis of V.
+
+Definition 3. Let Id be the identity map of V, then the Yang-Baxter equation is
+an equation on V®3 given by
+
+(1) (R@Id)(Id ® R)(R@ Id) = (Id@ R)(R@Id)(Id @ R).
+
+Remark 2. Note that (1) is considered over some field K. However, a simi-
+lar calculation of solutions to (1) can be performed on a module V, over a non-
+commutative ring K or a ring K with zero divi:
+
+rs.
+Let us take the following representation of the free braid group fB, on V®"
+(2) o,7ld@-.-@ld@® RR, e@ld@---@ld,
+ith, (i+1)st
+
+where R corresponds to the i-th and (i + 1)-st factors in V®” and satisfies the
+following conditions:
+
+(3) Re} = R, for all a,b, c,d being in the set of the basis of V;
+
+cl
+(4) R? = In, (Ing is the identity matrix of size n”).
+
+The first step in obtaining an invariant for free knots is to take the trace of the
+representation, and this trace is automatically invariant under flat conjugations.
+Nevertheless, the problem of finding such representations for which the trace is

@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-ph-9502366v1
-doc_title: "arXiv:hep-ph/9502366v1 22 Feb 1995"
+doc_title: "Chiral Perturbation Theory"
 section_id: sec-014-91-loops
 section_title: "Loops"
 section_number: 9.1
@@ -8,6 +8,7 @@ pages: 38-39
 source_pdf: 9502366v1.pdf
 source_sha256: 56df064956ca03f8
 toc_source: inferred
+doc_brief: "Chiral Perturbation Theory — An introduction to the basic ideas and methods of Chiral Perturbation Theory is presented."
 ---
 Goldstone loops generate non-analytic corrections to the lowest-order results (Li
 and Pagels 1971, Langacker and Pagels 1973, Pagels 1975).
@@ -25,8 +26,6 @@ AM 3
 (9.12)
 i.e. a non-analytic (in the quark masses) contribution proportional to M3/2 (Langacker
 and Pagels 1973).
-Chiral Perturbation Theory
-39
 The structure of the 1-loop generating functional has been analyzed in the SU(2)
 case by Gasser, Sainio and ˇSvark (1988), and later extended to SU(3) by Krause
 (1990). The presence of the large mass scale MB gives rise to a very complicated

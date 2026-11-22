@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.955
 latex_coverage_ratio: 1.0
+doc_brief: "arXiv:hep-th/9711057v2 30 Apr 1998 — 11 sections: Front matter; Introduction; Random-matrix theory for finite qu"
 ---
 It is a pleasure to thank P.H. Damgaard, J.J.M. Verbaarschot, and H.A.
 Weidenm\"uller for stimulating discussions.  T. Wettig acknowledges

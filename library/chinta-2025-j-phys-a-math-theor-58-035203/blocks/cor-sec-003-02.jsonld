@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/chinta-2025-j-phys-a-math-theor-58-035203/blocks/cor-sec-003-02",
+  "@type": [
+    "folio-assistant-sci:Corollary",
+    "doco:Section"
+  ],
+  "kind": "corollary",
+  "pageStart": 8,
+  "pageEnd": 11,
+  "text": "cor-sec-003-02.md",
+  "derivedFrom": "library/chinta-2025-j-phys-a-math-theor-58-035203/sections/sec-003",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/chinta-2025-j-phys-a-math-theor-58-035203/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "1",
+    "source_kind": "corollary",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-003-3-discrete-local-limit-theorem.md (p. 8-11)",
+    "claim_id": "chinta-2025-j-phys-a-math-theor-58-035203#corollary:1",
+    "lean_status": "unformalized"
+  }
+}

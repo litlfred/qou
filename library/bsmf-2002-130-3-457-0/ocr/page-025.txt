@@ -1,0 +1,48 @@
+HYPERIDEAL POLYHEDRA IN HYPERBOLIC 3-SPACE 481
+
+This completes the proof of Lemma 19. Oo
+
+We are now ready to complete the proof of the Infinitesimal Rigidity Lemma
+of Proposition 10.
+
+Proof of Proposition 10. — By Lemmas 14, 16 and 18, all the edges of Pt"
+are labelled by 0. This means that if, for each edge e of Pl", we consider the
+geodesic arc e! joining the vertices vi, v5 of Pie corresponding to the end
+vertices v1, v2 of e, the length of e’ has derivative 0 at t = 0. In addition, if
+two edges e1 and e2 of P*"" meet at the vertex v, the angle between e{ and e§
+at v’ also has derivative 0 at t = 0, because the tangent vector + = dat /dtjz=0
+is contained in the kernel of the tangent map Tap) (compare the polygons
+Q: which we used in the proofs of Lemmas 14, 16 and 18). Finally, we already
+saw in the proof of Lemma 16 that, for every face Q of P*"" that corresponds
+to a face of Pers, the vertices of PT" corresponding to the vertices of Q are
+infinitesimally coplanar near t = 0. If, among these faces Q of Pi" corre-
+sponding to faces of Pye, we successively go from one to the other by crossing
+one edge at a time, we conclude that there exists an isometry g, € PO(3, 1) of
+H®, depending differentiably on t and with go = Id, such that dg: (v')/dtj=9 = 0
+for every vertex v! of PT" corresponding to a vertex v of Pi™.
+
+Note that the vertices of the projective polyhedron P,+, namely the coordi-
+nates of x’, can be completely recovered from the vertices of Piren that corre-
+spond to vertices of Pi™", as intersection of projective lines passing through
+these points. It follows that dg:(x')/dt),-9 = 0. We conclude that
+
+0 = dge(a!)/dtjpoo = dge(a°)/dtypo + dar* /dt}p—0,
+
+= dgi(®(P)) /dty9 + &
+since go = Id, 2° = ®(P), and dat /dt\p=9 = &.
+In particular, the vector ¢ = —dg(®(P))/dtpoo = dg '(®(P))/dtyo
+is tangent to the curve t + g,'(®(P)) at t = 0. As a consequence, & is in
+the image of the tangent map at Id of the map PO(3,1) — (RP?) defined
+
+by g > g(®(P)).
+This is exactly what we needed to complete the proof of Proposition 10. O
+
+5. Convergence of hyperideal polyhedra
+We showed in Theorem 11 that the map 0 : Pp > Kr C R®, which to a
+hyperideal polyhedron associates its dihedral angles, is a local homeomorphism.
+This section is devoted to proving that it is a covering map.
+Recall that Kp was defined as the set of those @ € R” such that:
+0) For every e € E, the coordinate 0. of @ corresponding to e is in the
+interval ]0, z[;
+
+BULLETIN DE LA SOCIETE MATHEMATIQUE DE FRANCE

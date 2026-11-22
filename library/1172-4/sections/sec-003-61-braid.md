@@ -1,6 +1,6 @@
 ---
 doc_id: 1172-4
-doc_title: "Notes on Construction of the Knot Invariant from $\mathrm{O}\mathrm{u}\mathrm{a}\mathrm{n}\mathrm{t}\mathrm{u}\sim \mathrm{m}$ Dilogarithm Function 東京大学大学院裡掌野研究科物裡学專攻"
+doc_title: "Notes on Construction of the Knot Invariant from Quantum Dilogarithm Function"
 section_id: sec-003-61-braid
 section_title: "Braid"
 section_number: 6.1
@@ -8,7 +8,9 @@ pages: 13-19
 source_pdf: 1172-4.pdf
 source_sha256: ffc47732ce0138e9
 toc_source: inferred
+doc_brief: "Hikami, Notes on construction of the knot invariant from the quantum dilogarithm function (RIMS Kôkyûroku) — knot invariants built from Faddeev's quantum dilogarithm."
 ---
+Braid
 $G$roup
 The knot invariant can be constructed by use of solutions of the Yang-Baxter equa-
 tion $[30, 37]$ . We suppose that we have the enhanced Yang-Baxter operators
@@ -20,7 +22,6 @@ $(\mu\otimes\mu)\mathrm{R}=\mathrm{R}(\mu\otimes\mu)$,
 (6.1b)
 $\mathrm{T}\mathrm{r}_{2}(\mathrm{R}^{\pm 1}(1\otimes\mu))=\alpha^{\pm 1}\beta$ .
 (6.1c)
-56
 The ﬁrst one is called the braid relation (constant Yang-Baxter equation),
 and the
 $\mathit{0}$ther tw
@@ -56,7 +57,6 @@ deﬁned by eq. (6.3) in a limit
 $\gammaarrow 0$ with the
 $R$-matrix (5.13). A key point is that the
 meaning of the pentagon identity (4.10) becomes much clearer when we associate the
-57
 tetrahedron for the
 $S$-operators (5.9) as follows;
 $\langle p_{1},p_{2}|s|p_{1}/,p_{2}’\rangle=$
@@ -84,7 +84,6 @@ simply denotes the collapse of two tetrahedra into a plane, when the two triangl
 thereof are glued to each other;
 $=$
 $\delta(p_{1}-p_{1}^{l})\delta(p2^{-}p2)’\chi$
-58
 In the same way we have
 $\iint \mathrm{d}x\mathrm{d}y\langle p_{1}, x|s|p_{1}’, y\rangle\langle p_{2}, y|S-1|p_{2}’, X\rangle\sim\delta(p_{1}-p’2)\delta(p_{2}-p_{1})’$ .
 (6.6)
@@ -104,7 +103,6 @@ We then ﬁnd that the pentagon identity (4.10), which is explicitly rewritten a
 $\int \mathrm{d}x\langle p_{2},p3|S|x,p_{3}^{l}\rangle\langle p_{1}, x|s|p1’ p_{2}’\rangle l$
 $= \int\int\int \mathrm{d}y\mathrm{d}z\mathrm{d}w\langle p1,p2|S|y, Z\rangle\langle y,p3|S|p_{1}’, w\rangle\langle Z, w|S|p_{2},p_{3}\rangle\prime\prime$ ,
 (6.7)
-59
 can be viewed in a three dimensional picture as dividing a polytope in two ways;
 $Co$rollaries (next to eq. (4.12)) can be geometrically checked in the same manner.
 Once we have identiﬁed the asymptotic S-operators with the oriented tetrahedra, we
@@ -128,7 +126,6 @@ $L$. Then the invariant $Z(M)$ is associated to the link
 $L$ , and furthermore becomes a knot
 invariant [17]. This can be checked by showing that every
 $0$-simplexes of the octahedron
-60
 are on the link
 $L$ as follows. Using above three dimensional picture, we can see that
 the braid generators
@@ -157,7 +154,6 @@ $\mathrm{p}\mathrm{r}$oiection of tangle;
 $\langle\vec{p}|\mathrm{R}|p^{\vec{l}}\rangle=$
 $\langle p\gamma \mathrm{R}^{-1}|p^{\vec{\prime}}\rangle=$
 (6.10)
-61
 The link corresponds to the double lines in the octahedra (6.9) (important is that the
 $0$-simplexes are on the link), and the
 $\mathrm{c}\mathrm{r}o$ssing point denotes a line from
@@ -178,4 +174,3 @@ $0$-simplex belongs to exactly two 1-simplexes in
 $L$ by construction of the knot invariant
 from the braid generators. In conclusion the partition function $Z(M)$ becomes a knot
 invariant.
-7

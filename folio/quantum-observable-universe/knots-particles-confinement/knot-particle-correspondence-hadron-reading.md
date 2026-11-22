@@ -1,1 +1,1 @@
-In particular, each localized knot $(p, K)$ in a bundle corresponds to a unique irreducible summand. Hadrons correspond to tensor products of such summands bound by Hopf links.
+In particular, the invariant of each localized knot $(p, K)$ in a bundle is a weighted sum over the irreducible summands, $\sum_\lambda y_\lambda \chi_\lambda$; no single summand is assigned to it. Hadrons correspond to tensor products of such summands bound by Hopf links.

@@ -1,0 +1,73 @@
+---
+doc_id: schechtman-varchenko1991-arrangements
+doc_title: "Arrangements of hyperplanes and Lie algebra homology"
+section_id: page-044
+section_title: "Page 44"
+pages: 44-44
+pdf_page: 44
+source_pdf: schechtman-varchenko1991-arrangements.pdf
+source_sha256: 0100fd32438740f0
+text_source: ocr
+granularity: page
+doc_brief: "Arrangements of hyperplanes and Lie algebra homology — 56 sections: Page 1; Page 2; Page 3"
+---
+182 V.V. Schechtman and A.N. Varchenko
+
+Consider the space M* as in 6.16 and define the action of b@®b* on it.
+Namely, for beb, teM*, put bt(x)=t(—bx); the action of b* is defined as in
+6.16.
+
+6.17.1 Proposition. The above rule defines on M* the structure of a D(b)-module.
+
+Proof. We have to verify that [/, b] t=¢bt—bft for all feb*, beb, teM*.
+As in 6.16 we have to prove this for general B, A;. Suppose that 7(-)=S(-,
+c), ceb, t(-)=S(-, n), neM. Then [¢, b]=7+6 where b=[rc, b] if Etc, b]eb
+and 0 otherwise, 7(-)=S(-, [c, tb]) if [c, tb]eb and 0 otherwise. Hence, [b,
+¢)t(-)=S(-, [cb, c] n). On the other hand, (bf —7b) t(-)=S(-,(tbc—ctb) n)=S(-
+»Ctb,c]n. O
+
+7 Knizhnik-Zamolodchikov equations
+
+In this section we calculate the Gauss-Manin connection in the top cohomology
+of complexes studied in the previous section.
+
+7.1 Let us save the assumptions and notations from 6.1. Fix A=(k,,..., k,)eIN’;
+
+put N=|j|= > &k,; fix n weights A,,...,4,¢6*, n=2. Fix an epimorphism
+i=1
+
+n:(N]> [r] with # 2~'(i)=k; for alli. Put a(j)=«,,). Consider the arrangement
+
+@,4~ in C"*% with coordinates (z,,..., 2,3 t1,-.., ty). Define the collection of
+
+exponents
+
+a=a(Ay,..., Aik)! $nan 7
+where xe, x +0 is a complex parameter, by the rule
+
+(7.1.1) a(z;—z;=0)=(A;, 4))/K;
+a(t;—zj;=0)= —(a(i), A)/K;
+
+a(t;—t;=0)=(a(0), «()/«
+(cf. (6.5.1)).
+
+Denote by 4=Z(A,,...,4,3 k) the corresponding line bundle with an
+integrable connection over U(@,,4)), cf. (4.5), and % the local system of its
+horizontal sections.
+
+Let p: U(@,,4) > U(@,) be the projection on the first n coordinates. Abusing
+the language, we'll denote by z=(z,,...,Z,) a generic point of U(@,). Thus,
+Pig =U (Gy, w(2)) (cf. 5.1). We put A(2)=Ylp- 10.
+
+Denote by Q°(Y) the direct image p, of the relative de Rham complex
+of Y,. It is a complex of vector bundles over U(@,), whose fiber at z is Q'(Y),
+=02'(G,(z)) (cf. 4.5). Cohomology bundles
+
+H'(Q(L,)) =R'p, (LZ)
+
+are supplied with the Gauss-Manin integrable connection Vey.
+
+Denote by Q2o5(G(z)) (the complex of Orlik-Solomon forms) the image of
+(4.5.4); put Hos(G(z)) = Im(H’ (Qo5(G (2) > H(Q'(G,(z)))). This defines a sub-
+complex of bundles 09(4A)cQ(GZ). Put Ros p,y(G)=Im(A(Qs(H))
+> (QL).

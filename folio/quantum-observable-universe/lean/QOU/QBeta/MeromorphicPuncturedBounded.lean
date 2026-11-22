@@ -29,7 +29,7 @@ the honest physical hypothesis `MeromorphicOn Φ₁` for the arbitrary second so
 
 Verified `lean`-direct against the pinned Mathlib `Meromorphic` cone. Sorry-free.
 
--- Ref: [manuscript] docs/workplans/2026-07-26-faddeev-growth-estimate-epic-scope.md
+-- Ref: [leitner2026] docs/workplans/2026-07-26-faddeev-growth-estimate-epic-scope.md
 -/
 
 open Filter Topology Bornology

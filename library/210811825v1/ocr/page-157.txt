@@ -1,0 +1,46 @@
+We find that for a = 8476, b = —81120, and so on, the only positive real root of the
+polynomial whose square root lies in [0, y] is 21. Therefore, the turning points of h’(x)
+that we need to consider are at 0 and ,/x;. The second derivative
+
+2 (138158812? — 1983384010 + 6522998858 — 20857932006° — 67461660027 + 5465313000x7 — 843908625)
+5 (163a4 — 780x? + 9453)*
+
+is positive at 0 and negative at 21, so h(a) takes its maximum value at x1. We do not
+show the lengthy closed form here, but it is roughly equal to 1.04542. To find out how
+
+accurate this is, we can compare the Taylor series of sec?(z),
+
+Lee 2x4 n 176° 1. 6226 4 1382219 (x)
+3 45 315 14175 :
+with the Taylor series of our approximant, that is,
+Leate 2a4 4 176° 4 6228 4 28963210
+"T"3 " a5° 7 315 "297675
+We see that these agree for the first five terms, and so the error is the maximum value of
+138210 2896310" 5910?
+14175 297675 297675
+on [0, y]. This occurs at ¢, since sec?(x) is increasing on this interval, so our error is
+5910
+6x, = —
+"1. 297675
+
++0(e").
+
+=~ 0.000604461.
+
+Now
+
+2 > Ce - 51))
+
+is satisfied for positive 4 when
+
+rA< 4 w& 4.591456764,
+
+“5 (ix - dr1))
+that is, for any such \, ¢() does not have a zero on (0, p). Hence
+24
+
+(Od) > 5 (ix _ dr1))
+
+w 4591456764, i € {11, 12, 13}.
+
+147

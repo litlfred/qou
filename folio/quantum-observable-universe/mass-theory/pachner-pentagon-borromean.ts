@@ -11,7 +11,7 @@ export default conjecture({
   uses: [
     "prop:pentagon-uv-commutation",
     "prop:q-rogers-pentagon-archimedean",
-    "prop:quantum-dilogarithm-stratified",
+    "conj:quantum-dilogarithm-stratified",
     "def:quantum-dilogarithm-disambiguation",
     "def:borromean-baryon",
     "prop:atom-knot-exists",
@@ -19,7 +19,8 @@ export default conjecture({
   ],
   cites: [
     "pachner1991",
-    "faddeev1996",
+    "adams1985hyperbolic",
+    "faddeev_kashaev1994",
     "kashaev1997",
     "turaev-viro1992",
     "neumann-zagier1985",

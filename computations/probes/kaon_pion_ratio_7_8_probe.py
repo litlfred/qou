@@ -85,8 +85,9 @@ print(f"  Q_β (derived)  = {float(Q_beta):.6f} MeV  (vs 0.78233 CODATA, 1678 pp
 
 # m_μ/m_e (by construction)
 vol_41 = 2 * mp.clsin(2, mp.pi/3)
-hbar_q_sq = vol_41 / mpf('206.7682830')
-print(f"  m_μ/m_e        = Vol(4₁)/ℏ_q² = 206.7683 (exact)")
+from qou_substrate.constants import MASS_RATIO_MU_E_STR  # noqa: E402 — CODATA 2022, the live muon ratio
+hbar_q_sq = vol_41 / mpf(MASS_RATIO_MU_E_STR)
+print(f"  m_μ/m_e        = Vol(4₁)/ℏ_q² = {MASS_RATIO_MU_E_STR} (by construction)")
 
 # m_p (existing VolDensity)
 vol_b3 = 8 * catalan

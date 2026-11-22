@@ -1,1 +1,0 @@
-The backward morphism f∗: B∗→A∗in D(Aen, gr) is a

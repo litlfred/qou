@@ -15,7 +15,7 @@ Stage S4 of bean `qou-zoyv` (small-`ℏ` route to the duals of `D_ℏ`). For res
 
 Base: complete normed `ℂ`-algebra with `‖1‖ = 1`. Sorry-free.
 
--- Ref: [manuscript] beans/defs/qou-zoyv (stage S4)
+-- Ref: [leitner2026] beans/defs/qou-zoyv (stage S4)
 -/
 
 namespace QOU.KZ.SmallHbar

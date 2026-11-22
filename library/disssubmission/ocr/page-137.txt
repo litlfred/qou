@@ -1,0 +1,48 @@
+5.8. The difference morphism 129
+
+one-dimensional trivial representation plus only a single further irreducible
+representation. Now recall that by definition G(d,,) is a subgroup of the
+symmetric group Gy. If V = C% denotes the permutation representation
+of Gy, then the monodromy representation of the subgroup G(d,,) is simply
+the restriction of V to this subgroup. Note that V = 1@ W splits as the
+direct sum of the one-dimensional trivial representation plus an irreducible
+representation W of Gy with dimension N — 1. In these terms, the remarks
+at the beginning of the proof amount to the statement that the restriction
+of W to the subgroup G(d,,) < Gy remains irreducible.
+
+It is a general fact from the theory of permutation groups [91, th. 1(b)]
+that any subgroup of Gy with this irreducibility property is a 2-transitive
+subgroup. So by lemma D.1 in the appendix it will suffice to show that for a
+general curve C of genus g = 2n the monodromy group G(d,,) contains the
+hyperelliptic one from lemma 5.26. For this we consider a degeneration of
+a general curve into a hyperelliptic curve.
+
+Let p: @ > S be a flat, projective family of smooth curves of genus g
+over a smooth quasi-projective complex base curve S, and assume that the
+fibre @, = p~!(s) is hyperelliptic for some special point s = so € S(C) but
+non-hyperelliptic for all s A so. The existence of such families follows
+e.g. from [5, th. XII.9.1]. To rephrase our previous constructions in this
+relative setting, let 2 be the relative Picard scheme of @ over S as defined
+in [15, sect. 8.2], and denote by @, = (@ xs---Xs@)/Gy the n-th relative
+symmetric product. Let Y be a Poincaré bundle on @ xs x@;, so that for
+all s € S(C) and every divisor D € Gy,5(C) we have Z\¢.¢py = Og,(D).
+If pi,p2: © Xs Gn Xs Gn > CG Xs GE, denote the projections, then by the
+universal property of the Picard scheme the line bundle p}(7) ® p3}(27!)
+determines a morphism d, : G, Xs G, — 2 which on the fibres over each
+point s € S(C) restricts to the difference morphism from above.
+
+This being said, take an open subset U C 2 over which d, is finite étale
+of degree N and such that over every point s € S(C) the fibre U,; = UN &,
+is dense in .2;. Applying the semicontinuity lemma 5.27 below to the local
+system L = dy. (Ce,x.%,)|u, we obtain that the monodromy group of d,
+for a general curve of genus g = 2n contains the hyperelliptic one from
+lemma 5.26 as a subgroup. This finishes the proof. Oo
+
+For the above degeneration argument we have made use of the following
+semicontinuity property for monodromy groups in families. Let f: U > S
+be a smooth morphism of complex algebraic varieties whose target is a
+quasi-projective curve S, and consider a local system L of complex vector
+spaces on U with finite monodromy group. For any point uw € U(C) with
+image s = f(u) we denote by
+
+G(u) = Im(a(Us,u) —> Autc(Lu))

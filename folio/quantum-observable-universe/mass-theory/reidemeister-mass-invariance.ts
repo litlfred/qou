@@ -13,7 +13,7 @@ export default conjecture({
     "shell-transition",
     "writhe",
   ],
-  lean: { ref: "qou:QOU.Braiding.reidemeister_mass_invariance",
+  lean: { ref: "qou:identity_preserved_by_shell_transition",
     validation: "not_checked",
   },
   uses: ["rem:hydrogen-orbitals", "conj:borromean-quark"],

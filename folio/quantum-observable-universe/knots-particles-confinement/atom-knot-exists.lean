@@ -12,7 +12,7 @@ LaTeX: `\label{prop:atom-knot-exists}`
 namespace QOU.BraidKnot
 
 /-- **Existence of the atom-knot of type (Z, N).** -/
--- Ref: [manuscript] braids-and-knots/atom-knot
+-- Ref: [leitner2026] braids-and-knots/atom-knot
 theorem AtomKnot.exists (Z N : ℕ) : ∃ K : AtomKnot, K.Z = Z ∧ K.N = N := by
   exact ⟨{ Z := Z, N := N, protonBlock := [], neutronBlock := [], interBlock := [] }, rfl, rfl⟩
 

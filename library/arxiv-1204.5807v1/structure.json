@@ -8,7 +8,7 @@
   "pages": 27,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:19Z",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -22,7 +22,7 @@
   },
   "doi": null,
   "title": "FROM HOPF ALGEBRAS TO TENSOR CATEGORIES",
-  "authors_raw": "N. ANDRUSKIEWITSCH, I. ANGIONO, A. GARC\u00cdA IGLESIAS",
+  "authors_raw": "N. ANDRUSKIEWITSCH, I. ANGIONO, A. GARCÍA IGLESIAS",
   "title_lines": [
    "FROM HOPF ALGEBRAS TO TENSOR CATEGORIES"
   ],
@@ -38,7 +38,7 @@
   "title_verified": false,
   "title_evidence": {
    "metadata": "arXiv:1204.5807v1 [math.QA] 26 Apr 2012",
-   "heading": "FROM HOPF ALGEBRAS TO TENSOR CATEGORIES Introduction It follows from its very de\ufb01nition that the category Rep H of \ufb01nite-dimensional representations of a Hopf algebra H is a tensor category. There is a less obvious way to go from Hopf algebras with some extra structure (called spherical Hopf algebra",
+   "heading": "FROM HOPF ALGEBRAS TO TENSOR CATEGORIES Introduction It follows from its very deﬁnition that the category Rep H of ﬁnite-dimensional representations of a Hopf algebra H is a tensor category. There is a less obvious way to go from Hopf algebras with some extra structure (called spherical Hopf algebra",
    "text": "FROM HOPF ALGEBRAS TO TENSOR CATEGORIES",
    "corroborated_by": [],
    "browser_print": false
@@ -545,25 +545,13 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 2321,
-   "n_words": 382,
+   "n_chars": 4257,
+   "n_words": 703,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-001-13-hopf-algebras",
-   "number": "1.3",
-   "title": "Hopf algebras",
-   "level": 2,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 1876,
-   "n_words": 311,
-   "label_start": null,
-   "label_end": null
-  },
-  {
-   "id": "sec-002-1-preliminaries",
+   "id": "sec-001-1-preliminaries",
    "number": "1",
    "title": "Preliminaries",
    "level": 1,
@@ -575,7 +563,7 @@
    "label_end": null
   },
   {
-   "id": "sec-003-11-notations",
+   "id": "sec-002-11-notations",
    "number": "1.1",
    "title": "Notations",
    "level": 2,
@@ -587,7 +575,7 @@
    "label_end": null
   },
   {
-   "id": "sec-004-12-tensor-categories",
+   "id": "sec-003-12-tensor-categories",
    "number": "1.2",
    "title": "Tensor categories",
    "level": 2,
@@ -599,7 +587,7 @@
    "label_end": null
   },
   {
-   "id": "sec-005-14-nichols-algebras",
+   "id": "sec-004-14-nichols-algebras",
    "number": "1.4",
    "title": "Nichols algebras",
    "level": 2,
@@ -611,7 +599,7 @@
    "label_end": null
   },
   {
-   "id": "sec-006-2-spherical-hopf-algebras",
+   "id": "sec-005-2-spherical-hopf-algebras",
    "number": "2",
    "title": "Spherical Hopf algebras",
    "level": 1,
@@ -623,7 +611,7 @@
    "label_end": null
   },
   {
-   "id": "sec-007-22-spherical-categories",
+   "id": "sec-006-22-spherical-categories",
    "number": "2.2",
    "title": "Spherical Categories",
    "level": 2,
@@ -635,7 +623,7 @@
    "label_end": null
   },
   {
-   "id": "sec-008-23-quantum-dimensions",
+   "id": "sec-007-23-quantum-dimensions",
    "number": "2.3",
    "title": "Quantum dimensions",
    "level": 2,
@@ -647,31 +635,31 @@
    "label_end": null
   },
   {
-   "id": "sec-009-24-the-non-degenerate-quotient",
+   "id": "sec-008-24-the-non-degenerate-quotient",
    "number": "2.4",
    "title": "The non-degenerate quotient",
    "level": 2,
    "page_start": 8,
    "page_end": 11,
-   "n_chars": 7031,
-   "n_words": 1422,
+   "n_chars": 7028,
+   "n_words": 1421,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-010-25-pointed-or-copointed-pivotal-hopf-algebras",
+   "id": "sec-009-25-pointed-or-copointed-pivotal-hopf-algebras",
    "number": "2.5",
    "title": "Pointed or copointed pivotal Hopf algebras",
    "level": 2,
    "page_start": 11,
    "page_end": 11,
-   "n_chars": 1272,
-   "n_words": 272,
+   "n_chars": 1321,
+   "n_words": 279,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-011-26-spherical-hopf-algebras-with-involutory-pivot",
+   "id": "sec-010-26-spherical-hopf-algebras-with-involutory-pivot",
    "number": "2.6",
    "title": "Spherical Hopf algebras with involutory pivot",
    "level": 2,
@@ -683,7 +671,7 @@
    "label_end": null
   },
   {
-   "id": "sec-012-27-ribbon-hopf-algebras",
+   "id": "sec-011-27-ribbon-hopf-algebras",
    "number": "2.7",
    "title": "Ribbon Hopf algebras",
    "level": 2,
@@ -695,7 +683,7 @@
    "label_end": null
   },
   {
-   "id": "sec-013-28-cospherical-hopf-algebras",
+   "id": "sec-012-28-cospherical-hopf-algebras",
    "number": "2.8",
    "title": "Cospherical Hopf algebras",
    "level": 2,
@@ -707,31 +695,31 @@
    "label_end": null
   },
   {
-   "id": "sec-014-3-tilting-modules",
+   "id": "sec-013-3-tilting-modules",
    "number": "3",
    "title": "Tilting modules",
    "level": 1,
    "page_start": 16,
    "page_end": 17,
-   "n_chars": 3454,
-   "n_words": 560,
+   "n_chars": 2440,
+   "n_words": 388,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-015-31-quasi-hereditary-algebras-and-tilting-modules",
+   "id": "sec-014-31-quasi-hereditary-algebras-and-tilting-modules",
    "number": "3.1",
    "title": "Quasi-hereditary algebras and tilting modules",
    "level": 2,
    "page_start": 17,
    "page_end": 19,
-   "n_chars": 3435,
-   "n_words": 661,
+   "n_chars": 4514,
+   "n_words": 840,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-016-32-induced-and-produced",
+   "id": "sec-015-32-induced-and-produced",
    "number": "3.2",
    "title": "Induced and produced",
    "level": 2,
@@ -743,7 +731,7 @@
    "label_end": null
   },
   {
-   "id": "sec-017-33-finite-dimensional-nichols-algebras-of-diagon",
+   "id": "sec-016-33-finite-dimensional-nichols-algebras-of-diagon",
    "number": "3.3",
    "title": "Finite-dimensional Nichols algebras of diagonal type",
    "level": 2,
@@ -755,7 +743,7 @@
    "label_end": null
   },
   {
-   "id": "sec-018-34-the-small-quantum-groups",
+   "id": "sec-017-34-the-small-quantum-groups",
    "number": "3.4",
    "title": "The small quantum groups",
    "level": 2,
@@ -767,26 +755,26 @@
    "label_end": null
   },
   {
-   "id": "sec-019-35-generalized-quantum-groups",
+   "id": "sec-018-35-generalized-quantum-groups",
    "number": "3.5",
    "title": "Generalized quantum groups",
    "level": 2,
    "page_start": 24,
    "page_end": 25,
-   "n_chars": 2414,
-   "n_words": 474,
+   "n_chars": 2411,
+   "n_words": 473,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-020-acknowledgements",
+   "id": "sec-019-acknowledgements",
    "number": null,
    "title": "Acknowledgements",
    "level": 2,
    "page_start": 25,
    "page_end": 27,
-   "n_chars": 9498,
-   "n_words": 1416,
+   "n_chars": 9565,
+   "n_words": 1426,
    "label_start": null,
    "label_end": null
   }
@@ -797,7 +785,7 @@
   "toc_entries": 22,
   "toc_inferred_entries": 22,
   "toc_inferred_mean_confidence": 0.977,
-  "toc_inferred_empty_share": 0.048,
+  "toc_inferred_empty_share": 0.05,
   "toc_inferred_method": "latex",
   "figure_entries": 0,
   "figure_sequence_gaps": [],
@@ -805,13 +793,17 @@
    "count": 0,
    "items": []
   },
-  "sections": 22,
-  "chars_total": 68706,
+  "sections": 21,
+  "chars_total": 68941,
+  "furniture_lines_stripped": 0,
+  "pages_read_in_print_order": [
+   17
+  ],
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 39,
-   "overlaid": 14,
+   "overlaid": 16,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -826,23 +818,19 @@
     {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.507,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.904,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-001-13-hopf-algebras",
-     "title": "Hopf algebras",
-     "prose_ratio": 0.221,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-002-1-preliminaries",
+     "id": "sec-001-1-preliminaries",
      "title": "Preliminaries",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-003-11-notations",
+     "id": "sec-002-11-notations",
      "title": "Notations",
      "prose_ratio": 0.821,
      "coverage_ratio": 0.97,
@@ -850,14 +838,15 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-12-tensor-categories",
+     "id": "sec-003-12-tensor-categories",
      "title": "Tensor categories",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.305,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.921,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-005-14-nichols-algebras",
+     "id": "sec-004-14-nichols-algebras",
      "title": "Nichols algebras",
      "prose_ratio": 0.947,
      "coverage_ratio": 0.947,
@@ -865,7 +854,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-2-spherical-hopf-algebras",
+     "id": "sec-005-2-spherical-hopf-algebras",
      "title": "Spherical Hopf algebras",
      "prose_ratio": 0.957,
      "coverage_ratio": 0.917,
@@ -873,7 +862,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-22-spherical-categories",
+     "id": "sec-006-22-spherical-categories",
      "title": "Spherical Categories",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.906,
@@ -881,7 +870,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-23-quantum-dimensions",
+     "id": "sec-007-23-quantum-dimensions",
      "title": "Quantum dimensions",
      "prose_ratio": 0.918,
      "coverage_ratio": 0.932,
@@ -889,7 +878,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-24-the-non-degenerate-quotient",
+     "id": "sec-008-24-the-non-degenerate-quotient",
      "title": "The non-degenerate quotient",
      "prose_ratio": 0.944,
      "coverage_ratio": 0.941,
@@ -897,15 +886,15 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-010-25-pointed-or-copointed-pivotal-hopf-algebras",
+     "id": "sec-009-25-pointed-or-copointed-pivotal-hopf-algebras",
      "title": "Pointed or copointed pivotal Hopf algebras",
      "prose_ratio": 0.87,
-     "coverage_ratio": 0.96,
+     "coverage_ratio": 0.923,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-26-spherical-hopf-algebras-with-involutory-pivot",
+     "id": "sec-010-26-spherical-hopf-algebras-with-involutory-pivot",
      "title": "Spherical Hopf algebras with involutory pivot",
      "prose_ratio": 0.961,
      "coverage_ratio": 0.955,
@@ -913,7 +902,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-012-27-ribbon-hopf-algebras",
+     "id": "sec-011-27-ribbon-hopf-algebras",
      "title": "Ribbon Hopf algebras",
      "prose_ratio": 0.913,
      "coverage_ratio": 0.934,
@@ -921,7 +910,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-013-28-cospherical-hopf-algebras",
+     "id": "sec-012-28-cospherical-hopf-algebras",
      "title": "Cospherical Hopf algebras",
      "prose_ratio": 0.911,
      "coverage_ratio": 0.867,
@@ -929,34 +918,34 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-014-3-tilting-modules",
+     "id": "sec-013-3-tilting-modules",
      "title": "Tilting modules",
-     "prose_ratio": 0.989,
+     "prose_ratio": 0.784,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-015-31-quasi-hereditary-algebras-and-tilting-modules",
+     "id": "sec-014-31-quasi-hereditary-algebras-and-tilting-modules",
      "title": "Quasi-hereditary algebras and tilting modules",
      "prose_ratio": 0.96,
-     "coverage_ratio": 0.907,
+     "coverage_ratio": 0.69,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-016-32-induced-and-produced",
+     "id": "sec-015-32-induced-and-produced",
      "title": "Induced and produced",
      "prose_ratio": 0.538,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-017-33-finite-dimensional-nichols-algebras-of-diagon",
+     "id": "sec-016-33-finite-dimensional-nichols-algebras-of-diagon",
      "title": "Finite-dimensional Nichols algebras of diagonal type",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-018-34-the-small-quantum-groups",
+     "id": "sec-017-34-the-small-quantum-groups",
      "title": "The small quantum groups",
      "prose_ratio": 0.948,
      "coverage_ratio": 0.941,
@@ -964,7 +953,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-019-35-generalized-quantum-groups",
+     "id": "sec-018-35-generalized-quantum-groups",
      "title": "Generalized quantum groups",
      "prose_ratio": 0.966,
      "coverage_ratio": 0.959,
@@ -972,11 +961,11 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-020-acknowledgements",
+     "id": "sec-019-acknowledgements",
      "title": "Acknowledgements",
-     "prose_ratio": 0.767,
-     "coverage_ratio": 0.072,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.867,
+     "coverage_ratio": 0.079,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

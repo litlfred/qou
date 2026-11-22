@@ -1,0 +1,59 @@
+42 Don Zagier
+
+where q = e?*"* with z € § (upper half-plane) and
+
+n(z) _ qi/4 [[a _ q’), 95,3 (2) = > (—1)'r/101 qr /o,
+
+n=1 n =2j—1 (mod 10)
+
+The point is that 7(z), 05,1(z) and @5,2(z) are all modular forms of weight 1/2
+and therefore that the functions on the right-hand side of (23) are modular
+functions, i.e., they are invariant under z +> azth for all (24) belonging to
+some subgroup of finite index of SL(2,Z). Indeed, if we combine them into a
+single vector-valued function
+
+~1/00G a Oia
+g(2) = (Sis) (2€8, qh = e ),
+
+then we have transformation formulas with respect to the full modular group:
+
+2a
+
+gz+1) = (“° ) (2). 9(-2) =e ( ne) g(z) (24)
+
+60 z v5 sin? —sin =
+
+(with Gy := e?7/") and hence g(7(z)) = p(7)g(z) for all y € SL(2,Z) and
+some representation p: SL(2,Z) > GL(2,C).
+
+The functions G(q) and H(q) are special examples of what are called q-
+hypergeometric series, i.e., series of the form )>°° y An(q) where Ao(q) is a
+rational function and A;,(q) = R(q,q”)An-1(q) for all n > 1 for some rational
+function R(«,y) with iim dim R(e,y) = 0. (For G and H one has Ap = 1
+
+and R(x,y) = x~ly?/(1—y) or y?/(1 — y), respectively.) There are only a
+handful of examples known of g-hypergeometric series which are also modular,
+and, as already mentioned in the introduction to this section, the problem
+of describing when this happens in general is an important and fascinating
+question, but totally out of reach for the moment. A remarkable conjecture
+of Werner Nahm, discussed in more detail in his paper [30] in this volume as
+well as in his earlier articles [28], [29], relates the answer to this question in
+a very special case to dilogarithms and Bloch groups on the one hand and to
+rational conformal field theory on the other.
+
+Nahm’s conjecture actually concerns certain r-fold hypergeometric series
+(defined as above but with n running over (Z>0)" rather than just Z>o). Let
+A be a positive definite symmetric r x r matrix, B a vector of length r, and
+C ascalar, all three with rational coefficients. We define a function f4,3,c(z)
+by the r-fold g-hypergeometric series
+
+fa,B.c(z) = 3 qi”
+
+n=(nay..nr) € (Zs0)" (Qn. ++ (Q)n,
+
+*An+B'n+C
+
+(z€ 9)
+
+and ask when f4,8,c is a modular function. Nahm’s conjecture does not an-
+swer this question completely, but predicts which A can occur. If A = (aij)

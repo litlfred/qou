@@ -1,0 +1,99 @@
+---
+doc_id: phys-rep09
+doc_title: "The Magnus expansion and some of its applications"
+section_id: sec-068-the-differential-riccati-equation
+section_title: "The differential Riccati equation"
+section_number: null
+pages: 76-78
+source_pdf: phys-rep09.pdf
+source_sha256: cd345d3df9358efc
+toc_source: outline
+doc_brief: "The Magnus expansion and some of its applications — Article history: Accepted 13 November 2008 Available online 25 November 2008 editor: D.L."
+---
+Let us now consider the two-point boundary value problem in the t variable defined by the linear differential equation
+
+»_ (vi A(t) Bit)\ (yi;
+= = , O<t<T 334
+y (Y cw) Diy) \y, <ts< (334)
+with separated boundary conditions
+(Kir Ki2) (¥:) =n, (K21 K22) (7) =). (335)
+Y2} (=o Y2) par
+
+Here A € C1*4,B € C1*?,C © CP*4, D © CP*?, whereas y;, y2 € C’, y2, v1 € C4 and the matrices Kj have appropriate
+dimensions. We next introduce the time-dependent change of variables (or picture) y = Yo(t)w, with
+
+Yo(t) = (to ?) (336)
+
+and choose the matrix X € C?*4 so as to ensure that in the new variables w = Y, (Oy the system assumes the partly
+decoupled structure [191]
+
+_ (w,) _ (A+ Bx B w
+w= (W)=( (0) > xs) (m). (337)
+S. Blanes et al. / Physics Reports 470 (2009) 151-238 227
+
+together with the corresponding boundary conditions for w. It turns out that this is possible if, and only if, X(t) satisfies the
+so-called differential Riccati equation [192]
+
+X’ = C(t) + D(t)X — XA(t) — XB(t)X, —-X(0) = Xo (338)
+for some Xo. By requiring
+
+Xp = —Ky'Ku, (339)
+then the boundary conditions (335) also decouple as
+
+(0 Ki2)w(0) = 1, (Koi + Ko2X(T) Ko2) W(T) = yr. (340)
+
+Here we assume, without loss of generality, that K;2 is invertible. In this way, the original boundary value problem can be
+solved as follows [191,192]: (i) solve Eq. (338) with initial condition (339) from t = 0 tot = T; (ii) solve the w2-equation
+in (337) and (340), also from zero to T; (iii) solve the w,-equation in (337) from t = T to t = O and recover y = Yo(t)w. In
+other words, the solution of the original two-point boundary value problem can be obtained by solving a sequence of three
+different initial value problems, one of which involves the nonlinear equation (338). Obviously, steps (i) and (iii) can be solved
+using numerical integrators based on the Magnus expansion. It could be perhaps more surprising that these algorithms can,
+indeed, be used to integrate the Riccati equation in step (ii).
+
+Although the boundary value problem (334) is a convenient way to introduce the differential Riccati equation (338),
+this equation arises in many fields of science and engineering, such as linear quadratic optimal control, stability theory,
+stochastic control, differential games etc. Accordingly, it has received considerable attention in the literature, both focused
+on its theoretical aspects [193,194] and its numerical treatment [191,195,196].
+
+In order to apply Magnus methods to numerically solve the Riccati equation, we first apply the transformation
+
+X(t) =V(nw- l(t), (341)
+
+with V € C?*4,W € C4 and V(O) = Xo, W(0) = J, in the region where W(t) is invertible. Then Eq. (338) is equivalent
+to the linear system
+
+Y=S(NY®), YO) = (3) (342)
+with
+Y(t) = (7) . Ss(ty= (20 Do) (343)
+
+so that the previous Magnus integrators for linear problems can be applied here. Apparently, this system is similar to (334),
+but now we are dealing with an initial value problem and Y is a matrix instead of a vector.
+
+When dealing in general with the differential Riccati equation (338), it is meaningful to distinguish the following three
+cases:
+
+(i) The so-called symmetric Riccati equation, which corresponds to q = p, D(t) = —A(t)" real, and B(t), C(t) real
+and symmetric matrices. In this case, the solution satisfies X' = X. It is straightforward to show that this problem
+is equivalent to the treatment of the generalized time-dependent harmonic oscillator, described by the Hamiltonian
+function
+
+1 T T 1 T
+
+A= 5p Bp + P Alta — 54 C()a.
+The approximate solution attained by Magnus integrators, when applied to (342)-(343), can be seen as the exact
+solution corresponding to a perturbed symplectic matrix S(t) = S(t). In other words, we are solving, exactly, a
+perturbed Hamiltonian system so that the approximate solution, X, will share several properties of the exact solution,
+in particular X? = X.
+
+(ii) The linear non-homogeneous problem
+
+X! = D(t)X + C(t) (344)
+
+corresponds to the particular case A = 0 and B = 0 in (338).
+(iii) The problem
+
+X’ = D(t)X + XA(t) (345)
+
+is recovered from (338) by taking C = 0 and B = 0. It has been treated in [36] by developing an ad hoc Magnus-type
+expansion. Notice that the case p = q, D = —A corresponds to the linear isospectral system (238).
+228 S. Blanes et al. / Physics Reports 470 (2009) 151-238

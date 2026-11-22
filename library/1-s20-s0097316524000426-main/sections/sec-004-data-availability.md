@@ -7,7 +7,9 @@ section_number: null
 pages: 9-10
 source_pdf: 1-s2.0-S0097316524000426-main.pdf
 source_sha256: 76a8ab857163aa09
-doc_brief: "Proof of a conjecture of Ballantine and Merca on truncated sums of 6-regular partitions — 7 sections: Proof of a conjecture of Ballantin; Introduction; Proofs of Theorem 1.3 and Corollar"
+toc_source: outline
+doc_brief: "Proof of a conjecture of Ballantine and Merca on truncated sums of 6-regular partitions — Article history: In 2012, Andrews and Merca proved a truncated theorem on Received 27 December 2023 Euler’s"
 ---
 No data was used for the research described in the article.
-10 O.X.M. Yao / Journal of Combinatorial Theory, Series A 206 (2024) 105903
+10
+O.X.M. Yao / Journal of Combinatorial Theory, Series A 206 (2024) 105903

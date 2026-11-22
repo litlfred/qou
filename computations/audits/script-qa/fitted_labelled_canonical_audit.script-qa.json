@@ -2,7 +2,7 @@
   "$schema": "script-qa/v1",
   "script_path": "computations/audits/fitted_labelled_canonical_audit.py",
   "references": [
-    "prop:three-calibration-inputs"
+    "def:three-calibration-discipline"
   ],
   "language": "python",
   "source_hash": "aaff0df25751",

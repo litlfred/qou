@@ -1,0 +1,1 @@
+In quantum field theory the parameter m in the potential is called the mass parameter. To be more precise, in classical mechanics it has the meaning of frequency w of oscillations. However, in quantum theory thanks to Einstein frequency is identified with energy (EZ = hw/2z), while in relativisitic theory energy is identified with mass (again thanks to Einstein, E = mc”).

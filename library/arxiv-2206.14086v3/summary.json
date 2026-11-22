@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2206.14086v3",
  "source_sha256": "b6c27f820f963079",
- "brief": "KPZ limit theorems Jinho Baik∗ — One-dimensional interacting particle systems, 1+1 random growth models, and two-dimensional di- rected polymers deﬁne 2d height ﬁelds.",
- "extended": "**KPZ limit theorems Jinho Baik∗**\n\n*July 21, 2022*\n\n19 pp, 19 sections.\n\n**Abstract.** One-dimensional interacting particle systems, 1+1 random growth models, and two-dimensional di- rected polymers deﬁne 2d height ﬁelds. The KPZ universality conjecture posits that an appropriately scaled height function converges to a model-independent universal random ﬁeld for a large class of mod- els. We survey limit theorems for a few models and discuss changes that arise in diﬀerent domains. In particular, we present recent results on periodic domains. We also comment on integrable probability models, integrable diﬀerential equations, and universality.\n\n**Outline.** 1 Introduction; 2.1 TASEP; 2 TASEP, corner growth model, and exponential ; 2.4 Hydrodynamic limit and KPZ limit; 3.1 Poisson DLPP; 3 One-point distribution; 3.3 Exponential DLPP; 3.2 Longest increasing subsequence; 3.4 Integrable method; 4 Multi-point distributions; 6 Ring domain; 7 Formula of multi-point distribution function; 7.2 Periodic case; 7.3 Transition probabilities; 9.1 Thin DLPP; 9 Comments on universality; 9.2 Interacting particle systems; 9.3 TASEP, Coulomb gas, and random matrices",
+ "brief": "KPZ limit theorems — One-dimensional interacting particle systems, 1+1 random growth models, and two-dimensional di- rected polymers deﬁne 2d height ﬁelds.",
+ "extended": "**KPZ limit theorems**\n\n*Jinho Baik∗*\n\n19 pp, 25 sections.\n\n**Abstract.** One-dimensional interacting particle systems, 1+1 random growth models, and two-dimensional di- rected polymers deﬁne 2d height ﬁelds. The KPZ universality conjecture posits that an appropriately scaled height function converges to a model-independent universal random ﬁeld for a large class of mod- els. We survey limit theorems for a few models and discuss changes that arise in diﬀerent domains. In particular, we present recent results on periodic domains. We also comment on integrable probability models, integrable diﬀerential equations, and universality.\n\n**Outline.** Front matter; 1 Introduction; 2.1 TASEP; 2 TASEP, corner growth model, and exponential ; 2.2 Corner growth model; 2.3 Exponential DLPP; 2.4 Hydrodynamic limit and KPZ limit; 3.1 Poisson DLPP; 3 One-point distribution; 3.2 Longest increasing subsequence; 3.3 Exponential DLPP; 3.4 Integrable method; 4 Multi-point distributions; 5 Half-infinite space; 6 Ring domain; 7 Formula of multi-point distribution function; 7.1 Formula for KPZ fixed point; 7.2 Periodic case",
  "tokens": {
-  "brief": 41,
-  "extended": 291
+  "brief": 38,
+  "extended": 278
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -22,85 +27,110 @@
   {
    "id": "sec-002-2-tasep-corner-growth-model-and-exponential-dlpp",
    "title": "TASEP, corner growth model, and exponential DLPP",
-   "pages": "2-4"
+   "pages": "2-3"
   },
   {
-   "id": "sec-003-24-hydrodynamic-limit-and-kpz-limit",
+   "id": "sec-003-22-corner-growth-model",
+   "title": "Corner growth model",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-004-23-exponential-dlpp",
+   "title": "Exponential DLPP",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-005-24-hydrodynamic-limit-and-kpz-limit",
    "title": "Hydrodynamic limit and KPZ limit",
    "pages": "4-5"
   },
   {
-   "id": "sec-004-31-poisson-dlpp",
+   "id": "sec-006-31-poisson-dlpp",
    "title": "Poisson DLPP",
    "pages": "5-5"
   },
   {
-   "id": "sec-005-3-one-point-distribution",
+   "id": "sec-007-3-one-point-distribution",
    "title": "One-point distribution",
    "pages": "5-5"
   },
   {
-   "id": "sec-006-33-exponential-dlpp",
-   "title": "Exponential DLPP",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-007-32-longest-increasing-subsequence",
+   "id": "sec-008-32-longest-increasing-subsequence",
    "title": "Longest increasing subsequence",
    "pages": "5-6"
   },
   {
-   "id": "sec-008-34-integrable-method",
+   "id": "sec-009-33-exponential-dlpp",
+   "title": "Exponential DLPP",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-010-34-integrable-method",
    "title": "Integrable method",
    "pages": "6-7"
   },
   {
-   "id": "sec-009-4-multi-point-distributions",
+   "id": "sec-011-4-multi-point-distributions",
    "title": "Multi-point distributions",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-012-5-half-infinite-space",
+   "title": "Half-infinite space",
    "pages": "7-8"
   },
   {
-   "id": "sec-010-6-ring-domain",
+   "id": "sec-013-6-ring-domain",
    "title": "Ring domain",
    "pages": "8-9"
   },
   {
-   "id": "sec-011-7-formula-of-multi-point-distribution-functions",
+   "id": "sec-014-7-formula-of-multi-point-distribution-functions",
    "title": "Formula of multi-point distribution functions",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-015-71-formula-for-kpz-fixed-point",
+   "title": "Formula for KPZ fixed point",
    "pages": "9-10"
   },
   {
-   "id": "sec-012-72-periodic-case",
+   "id": "sec-016-72-periodic-case",
    "title": "Periodic case",
    "pages": "10-10"
   },
   {
-   "id": "sec-013-73-transition-probabilities",
+   "id": "sec-017-73-transition-probabilities",
    "title": "Transition probabilities",
-   "pages": "10-12"
+   "pages": "10-11"
   },
   {
-   "id": "sec-014-91-thin-dlpp",
+   "id": "sec-018-8-integrable-differential-equations",
+   "title": "Integrable differential equations",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-019-91-thin-dlpp",
    "title": "Thin DLPP",
    "pages": "12-12"
   },
   {
-   "id": "sec-015-9-comments-on-universality",
+   "id": "sec-020-9-comments-on-universality",
    "title": "Comments on universality",
    "pages": "12-13"
   },
   {
-   "id": "sec-016-92-interacting-particle-systems",
+   "id": "sec-021-92-interacting-particle-systems",
    "title": "Interacting particle systems",
    "pages": "13-13"
   },
   {
-   "id": "sec-017-93-tasep-coulomb-gas-and-random-matrices",
+   "id": "sec-022-93-tasep-coulomb-gas-and-random-matrices",
    "title": "TASEP, Coulomb gas, and random matrices",
    "pages": "13-13"
   },
   {
-   "id": "sec-018-94-universality-in-many-directions",
+   "id": "sec-023-94-universality-in-many-directions",
    "title": "Universality in many directions",
    "pages": "13-19"
   }

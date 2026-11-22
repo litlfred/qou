@@ -1,0 +1,1 @@
+— Let S = P1 ⊕· · ·⊕Pr be a direct sum of pure modules with slopes λ1 < · · · < λr. The functor F associated to S is represented by a free polynomial ring over C in N :=  i<j(λj −λi) · dimK Pi · dimK Pj variables. Equivalently, F, seen as a contravariant functor from C-schemes to sets, is represented by the aﬃne space AN C .

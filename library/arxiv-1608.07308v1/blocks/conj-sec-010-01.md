@@ -1,0 +1,1 @@
+For all braids σ, the glN spectral sequence on the homology of σ is induced by the contraction of: ∧•T ∨ n on FHilbdg n (C) with the section sN,0, which induces a differential on the vector space (1.14).

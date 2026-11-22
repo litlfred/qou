@@ -6,7 +6,7 @@ We record the explicit cell pairing and Volume Conjecture discharge steps for th
 
 **Step 1 (Bloch–Suslin depth-2 ID).**  Over $F = \mathbb{Q}(i)$:
 $\dim_\mathbb{Q} K_3^{\mathrm{ind}}(\mathbb{Q}(i)) \otimes \mathbb{Q} = 1$
-([`prop:borel-partial-resolution`](#prop:borel-partial-resolution),
+([Borel's theorem partially discharges the depth correspondence's sharpness target — explicit dimensions](#prop:borel-partial-resolution),
 since $\mathbb{Q}(i)$ has $r_1 = 0, r_2 = 1$). The Bloch–Suslin
 regulator's image is the line spanned by $D(i) = \mathrm{Cl}_2(\pi/2) = G$
 (Catalan's constant).
@@ -38,7 +38,7 @@ octahedron** (equivalently 4 ideal tetrahedra with shapes
 $\{1+i,\,(1+i)/2\}$ in the SnapPy triangulation), of volume
 $4 G = 8\,\Lambda(\pi/4) = 4\,\mathrm{Cl}_2(\pi/2) \approx 3.66386$ —
 exactly half the Borromean rings' two-octahedron $8G$. This Step-2
-geometric input is now **Lean-supported (sorry-free)**:
+geometric input is now **Lean-supported**:
 `QOU.Archimedean.WhiteheadVolume.vol_L5a1_eq_half_vol_B3`
 ($\mathrm{Vol}(L5a1) = \mathrm{Vol}(\mathcal B_3)/2$) and
 `vol_L5a1_eq_4_catalan`.

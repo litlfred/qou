@@ -8,10 +8,10 @@
   "pages": 16,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "math_source": "latex",
-  "mtime": null,
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,16 +21,26 @@
    "stamp_date": "14 Jan 2022"
   },
   "doi": null,
-  "title": "HAROLD WIDOM\u2019S WORK IN RANDOM MATRIX THEORY",
+  "title": "HAROLD WIDOM’S WORK IN RANDOM MATRIX THEORY",
   "authors_raw": "IVAN Z. CORWIN, PERCY A. DEIFT, AND ALEXANDER R. ITS",
   "title_lines": [
-   "HAROLD WIDOM\u2019S WORK IN RANDOM MATRIX THEORY"
+   "HAROLD WIDOM’S WORK IN RANDOM MATRIX THEORY"
   ],
-  "abstract": "This is a survey of Harold Widom\u2019s work in random matrices. We start with his pioneering papers on the sine-kernel determinant, continue with his and Craig Tracy\u2019s groundbreaking results concerning the distribution functions of random matrix theory, touch on the remarkable universality of the Tracy-Widom distributions in mathematics and physics, and close with Tracy and Widom\u2019s remarkable work on the asymmetric simple exclusion pro- cess.",
+  "abstract": "This is a survey of Harold Widom’s work in random matrices. We start with his pioneering papers on the sine-kernel determinant, continue with his and Craig Tracy’s groundbreaking results concerning the distribution functions of random matrix theory, touch on the remarkable universality of the Tracy-Widom distributions in mathematics and physics, and close with Tracy and Widom’s remarkable work on the asymmetric simple exclusion pro- cess.",
   "docinfo": {
    "Producer": "pdfTeX-1.40.21",
    "Creator": "LaTeX with hyperref",
    "CreationDate": "D:20220119022447Z"
+  },
+  "title_raw": "HAROLD WIDOM’S WORK IN RANDOM MATRIX THEORY",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "HAROLD WIDOM’S WORK IN RANDOM MATRIX THEORY 1. Introduction The distributions of random matrix theory govern the statistical properties of a wide variety of large systems which do not obey the usual laws of classical probability. Such systems appear in many diﬀerent areas of applied science and tech",
+   "outline": "1. Introduction",
+   "text": "HAROLD WIDOM’S WORK IN RANDOM MATRIX THEORY",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [
@@ -39,79 +49,318 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "The sine-kernel determinant",
    "page": 2,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "The Tracy-Widom distribution functions",
    "page": 3,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "Universality of the Tracy-Widom Distributions",
    "page": 6,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "General invariant ensembles and the Wigner ensembles",
    "page": 7,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Random permutations",
    "page": 9,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 1,
    "title": "The asymmetric simple exclusion process. Harold Widom's papers 133,134,135",
    "page": 10,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 1,
    "title": "References",
    "page": 14,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The eigenvalues of a large (2000 × 2000) GUE matrix. The full point process sits on the bottom of the ﬁgure, and the histogram records the density of points (approximating the Wigner semi-circle)",
+   "page": 2,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "2"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Harold and his wife, Linda Larkin, at Lake Sonoma in 2013. Photo courtesy of Craig Tracy",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "In the ASEP, particles jump left and right according to exponential clocks with rates q and p. All jumps are independent, and those that would lead to collisions are excluded (the grey ×)",
+   "page": 11,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Harold Widom with his long-time collaborator, Craig Tracy at Oberwolfach in May 2009. Seen on the blackboard is calculations related to their work on ASEP. Photo courtesy of the Archives of the Mathematisches Forschungsinstitut Oberwolfach",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "12"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-2-the-sine-kernel-determinant",
-   "number": "2",
-   "title": "The sine-kernel determinant",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 278,
-   "n_words": 38
+   "n_chars": 549,
+   "n_words": 83,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
-   "id": "sec-001-1-introduction",
+   "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2613,
+   "n_words": 393,
+   "label_start": "1",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-001-2-the-sine-kernel-determinant",
+   "number": "2",
+   "title": "The sine-kernel determinant",
+   "level": 1,
+   "page_start": 2,
    "page_end": 3,
-   "n_chars": 6434,
-   "n_words": 1111
+   "n_chars": 3789,
+   "n_words": 714,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
    "id": "sec-002-3-the-tracy-widom-distribution-functions",
@@ -121,7 +370,9 @@
    "page_start": 3,
    "page_end": 6,
    "n_chars": 7246,
-   "n_words": 1250
+   "n_words": 1250,
+   "label_start": "3",
+   "label_end": "6"
   },
   {
    "id": "sec-003-4-universality-of-the-tracy-widom-distributions",
@@ -131,7 +382,9 @@
    "page_start": 6,
    "page_end": 7,
    "n_chars": 1278,
-   "n_words": 201
+   "n_words": 201,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
    "id": "sec-004-41-general-invariant-ensembles-and-the-wigner-en",
@@ -141,7 +394,9 @@
    "page_start": 7,
    "page_end": 9,
    "n_chars": 5895,
-   "n_words": 1044
+   "n_words": 1044,
+   "label_start": "7",
+   "label_end": "9"
   },
   {
    "id": "sec-005-42-random-permutations",
@@ -151,7 +406,9 @@
    "page_start": 9,
    "page_end": 10,
    "n_chars": 3591,
-   "n_words": 635
+   "n_words": 635,
+   "label_start": "9",
+   "label_end": "10"
   },
   {
    "id": "sec-006-5-the-asymmetric-simple-exclusion-process-harold",
@@ -161,7 +418,9 @@
    "page_start": 10,
    "page_end": 14,
    "n_chars": 9638,
-   "n_words": 1666
+   "n_words": 1666,
+   "label_start": "10",
+   "label_end": "14"
   },
   {
    "id": "sec-007-references",
@@ -171,20 +430,30 @@
    "page_start": 14,
    "page_end": 16,
    "n_chars": 12141,
-   "n_words": 1847
+   "n_words": 1847,
+   "label_start": "14",
+   "label_end": "16"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 8,
-  "sections": 8,
-  "chars_total": 46501,
+  "toc_inferred_entries": 0,
+  "figure_entries": 4,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 9,
+  "chars_total": 46740,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "widom_06_09_21.tex",
    "tex_sections": 7,
-   "overlaid": 4,
+   "overlaid": 6,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -192,23 +461,31 @@
    },
    "sections": [
     {
-     "id": "sec-000-2-the-sine-kernel-determinant",
-     "title": "The sine-kernel determinant",
-     "prose_ratio": 0.071,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
     },
     {
-     "id": "sec-001-1-introduction",
+     "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.455,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.816,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-the-sine-kernel-determinant",
+     "title": "The sine-kernel determinant",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-002-3-the-tracy-widom-distribution-functions",
      "title": "The Tracy-Widom distribution functions",
-     "prose_ratio": 0.993,
-     "coverage_ratio": 0.985,
+     "prose_ratio": 0.87,
+     "coverage_ratio": 0.963,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -217,7 +494,7 @@
      "title": "Universality of the Tracy-Widom Distributions",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.299,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-004-41-general-invariant-ensembles-and-the-wigner-en",
@@ -238,8 +515,8 @@
     {
      "id": "sec-006-5-the-asymmetric-simple-exclusion-process-harold",
      "title": "The asymmetric simple exclusion process. Harold Widom's papers 133,134,135",
-     "prose_ratio": 0.998,
-     "coverage_ratio": 0.986,
+     "prose_ratio": 0.959,
+     "coverage_ratio": 0.976,
      "result": "overlaid",
      "converter": "pandoc"
     },

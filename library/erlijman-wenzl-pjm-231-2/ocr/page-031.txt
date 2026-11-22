@@ -1,0 +1,42 @@
+SUBFACTORS FROM BRAIDED C* TENSOR CATEGORIES 389
+
+5B. Notations and preliminaries. For any braided semisimple tensor category @
+we can define a scalar s,,, = Tr(Cy,,€a,), Where c,,,, is the braiding morphism for
+X;, @ X,,. The S-matrix is then given by (s,,,), where the rows and columns are
+labeled by the simple objects of €.
+
+Let now & be a full subcategory of &. We define Fg to be the set of simple
+objects X, in % for which s,,, = dim(X,) dim(X,,) for all simple objects X,, in €’.
+We will primarily be interested only in the cases = € and D = &’. We usually
+assume & to be fixed, in which case we may just write J for Tg.
+
+Let X = ®, m,X,, Y = Qn, X,, be objects in @, and let f : X > Y bea
+morphism. Then f can be written as f = @ fy, where fy :m,X), — ny Xj. For
+given f : X — Y, we define the morphism fz : Xz > Ya, where fz = Oy, eg fi»
+and Xz, Yz are defined accordingly. Also, we define pg(X) € End(X) to be the
+projection from X onto Xz.
+
+For a fixed object Z in @ and a morphism f : X — Y we define the morphism
+Pz(f):X > Y by
+
+Of course this picture corresponds to an algebraic expression involving rigidity
+and braiding morphisms. One can also check that for Z = Z; ® Zz, the operation
+Pz is also given by a picture involving two parallel rings labeled by Z; and Zp.
+If X,, X, are simple objects in €, it follows from the definitions that Px, (lx) =
+(sin/d,)1Lx,. For a formal linear combination Q = >), ou X,, with X,, simple
+objects in €, the morphism Po (f) can also be expressed as the sum au Ou Px, (f)-
+The following lemma is well-known and follows from the definitions:
+
+Lemma 5.3. With notations above,
+
+Px f= "fi, and Pal f)= Yoon" fi.
+4 A A A
+
+a
+
+We now state a straightforward generalization of the results in [Bruguiéres 2000,
+Lemma 1.3].
+
+Proposition 5.4. Fix the category G and let J =F. There exists a linear combina-
+tion Q= pea’ @,X , such that Pe( f) = fz for any morphism f in. Moreover,
+ Ondu = 1.

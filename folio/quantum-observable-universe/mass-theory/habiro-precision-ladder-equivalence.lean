@@ -28,11 +28,15 @@ and the higher c_k used for ppb-level fits were tuned against
 experiment (see prop:tau-M-asymptotic-rep-theory §Status). Only the
 a_m integrality is claimed here.
 
-Ref: [habiro2000] Habiro, "On the quantum sl_2 invariants of knots
-     and integral homology spheres" (2000)
+Ref: [habiro2004] Habiro, "A unified Witten-Reshetikhin-Turaev invariant
+     for integral homology spheres", Invent. Math. 171 (2008), Thm 4.5:
+     for a bottom knot T, J_T = sum_p a_p(T) sigma_p uniquely, with
+     a_p(T) in Z[q, q^-1]. Rem 4.6 there: the string-knot form is the
+     result announced in Habiro, "On the quantum sl_2 invariants of knots
+     and integral homology spheres" (2002), Thm 1.2, which has no key here.
 Ref: [jones1987] Jones, "Hecke algebra representations of braid
      groups and link polynomials" (1987)
-Ref: [manuscript] prop:habiro-precision-ladder-equivalence
+Ref: [leitner2026] prop:habiro-precision-ladder-equivalence
 -/
 
 namespace QOU.BraidKnot
@@ -81,10 +85,11 @@ noncomputable def HabiroExpansion.eval {R : Type*} [CommRing R]
     index set has cardinality `h.M + 1`, a finite natural number.
 
     This faithfully states the md's "the series terminates (`M < ∞`)",
-    replacing the prior placeholder `∃ M, True`.  (Habiro 2000 Thm 1.1
-    supplies the existence of such a finite expansion for any braid word;
-    here we record that the structure carries a finite bound.) -/
--- Ref: [habiro2000] Theorem 1.1
+    replacing the prior placeholder `∃ M, True`.  (The source result is
+    [habiro2004] Thm 4.5, an expansion for a KNOT that is an infinite
+    sum over p; it does not itself give a finite bound or cover links.
+    Here we only record that the structure carries a finite bound.) -/
+-- Ref: [habiro2004] Thm 4.5 (existence and uniqueness of the a_p)
 theorem habiro_terminates (h : HabiroExpansion) :
     (Finset.univ : Finset (Fin (h.M + 1))).card = h.M + 1 := by
   simp
@@ -139,8 +144,8 @@ theorem habiro_terminates (h : HabiroExpansion) :
     result stays in the image of `ℤ`, with the integer given by the
     ℤ-valued evaluation.  Over `ℚ[u]` coefficients the corresponding
     statement is false, which is the distinction the md is drawing. -/
--- Ref: [habiro2000] Corollary 1.2
--- Ref: [manuscript] witness habiro-expansion-atomic-probe.witness.json
+-- Ref: [habiro2004] Thm 4.5 (a_p(T) in Z[q, q^-1])
+-- Ref: [leitner2026] witness habiro-expansion-atomic-probe.witness.json
 theorem habiro_integral {R : Type*} [CommRing R]
     (h : HabiroExpansion) (m : Fin (h.M + 1)) (u₀ : ℤ) :
     (h.coeffs m).eval₂ (Int.castRingHom R) (u₀ : R)
@@ -163,7 +168,7 @@ theorem habiro_integral {R : Type*} [CommRing R]
     `docs/audits/2026-05-28-mu-p-tension-substrate-floor.md`).  Only the
     determinacy/integrality/finiteness of the `a_m` is claimed.  Replaces the
     prior placeholder `True`. -/
--- Ref: [habiro2000] Corollary 1.2
+-- Ref: [habiro2004] Thm 4.5 (a_p(T) in Z[q, q^-1])
 theorem habiro_evaluation_determined {R : Type*} [CommRing R]
     (h₁ h₂ : HabiroExpansion) (u : R)
     (hM : h₁.M = h₂.M) (hc : HEq h₁.coeffs h₂.coeffs) :
@@ -204,7 +209,7 @@ hypothesis; NO instance is provided, and production wires only c_2. -/
 /-- Abstract precision-ladder coefficient `c_k` (as used in the Q_β
     ladder). Opaque so the bridge class is non-vacuous (mirrors #1508's
     opaque `BlochWigner_unit_circle`). -/
--- Ref: [manuscript] prop:habiro-precision-ladder-equivalence
+-- Ref: [leitner2026] prop:habiro-precision-ladder-equivalence
 -- Converted `axiom` -> `opaque` 2026-09-04: this declares a SYMBOL, not a
 -- claim.  `axiom f : T` and `opaque f : T := <witness>` are equally opaque and
 -- equally uninformative, but only the first is recorded as a global axiom and
@@ -216,7 +221,7 @@ opaque precisionLadderCoeff : ℕ → ℝ := fun _ => 0
 /-- Abstract Habiro Taylor coefficient: the exact Taylor coefficient,
     at substrate q₀, of the Habiro tr_M expansion. Opaque (its closed
     form is the open multi-block derivation). -/
--- Ref: [habiro2000] Corollary 1.2
+-- Ref: [habiro2004] Thm 4.5 (a_p(T) in Z[q, q^-1])
 opaque habiroTaylorCoeff : ℕ → ℝ := fun _ => 0
 
 /-- **§3b-cond bridge class.** Axiomatises the OPEN equivalence between
@@ -225,7 +230,7 @@ opaque habiroTaylorCoeff : ℕ → ℝ := fun _ => 0
     bridge. Per the discipline note above it is NOT established beyond
     `c_2`; the class is purely conditional (no instance) and production
     wires only the Taylor-exact `c_2 = -1` rung. -/
--- Ref: [manuscript] prop:habiro-precision-ladder-equivalence
+-- Ref: [leitner2026] prop:habiro-precision-ladder-equivalence
 -- Ref: PR #1508 (§3b-cond conditional-class pattern)
 class QbetaHabiroTaylorBridgeClass : Prop where
   /-- The precision-ladder `c_k` equals the Habiro Taylor coefficient at
@@ -240,7 +245,7 @@ class QbetaHabiroTaylorBridgeClass : Prop where
     Mirrors `em_alpha_inv_full_form` (#1508): the class field carries
     the conditional content. This LOCKS the equivalence as the open
     derivation target without claiming it is established (only c_2 is). -/
--- Ref: [manuscript] prop:habiro-precision-ladder-equivalence
+-- Ref: [leitner2026] prop:habiro-precision-ladder-equivalence
 -- Ref: PR #1508 (§3b-cond conditional-class pattern)
 theorem precision_ladder_is_habiro_taylor
     [h : QbetaHabiroTaylorBridgeClass] (k : ℕ) :

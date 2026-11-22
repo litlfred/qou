@@ -1,0 +1,47 @@
+Invariants in Low-Dimensional Topology and Knot Theory 39
+
+Theorem 2 ([2]). Suppose (M,€) is supported by a spinal open book containing a
+page of genus 0. Then the symplectic fillings of (M,&) (up to symplectic deforma-
+tion equivalence) are in one-to-one correspondence with the Lefschetz fibrations (up
+to diffeomorphism) that restrict to the given spinal open book at their boundaries.
+
+This generalizes a result in [3] which covers the case 5 = D?. The main reason
+such results hold is that spinal open books always give rise to holomorphic curves:
+in general, one can choose data such that each genus g page of a spinal open book
+lifts to a holomorphic curve of index 2 — 2g in the symplectization, so for the case
+g = 0, these curves have the “expected” dimensions and can be extended to a
+family of holomorphic curves foliating any given filling. Alternatively, the genus 0
+pages in the symplectization can be counted in order to compute SFT, giving rise
+to the following:
+
+Theorem 3 ([2]). Suppose (M,€) is supported by a spinal open book containing a
+page of genus 0 with k+1 boundary components, and also a page of positive genus.
+Then [h*| =0 € HS¥T(M,€).
+
+The simplest examples are St-invariant contact structures on manifolds of the
+form S! x X, where © is a closed oriented surface. In this case the surfaces {*} x ©
+are convex, and the above theorem applies for instance if the dividing set consists
+of k+ 1 curves cutting © into two pieces, of which one has genus 0 and the other
+does not. It is shown in [1] that this contact manifold satisfies AT = k, hence it
+belongs to Ey \ x41.
+
+REFERENCES
+{1] J. Latschev and C. Wendl, Algebraic torsion in contact manifolds, Geom. Funct. Anal. 21
+(2011), no. 5, 1144-1195. With an appendix by M. Hutchings.
+(2] S. Lisi, J. Van Horn-Morris and C. Wendl, On symplectic fillings of spinal open book de-
+compositions, in preparation.
+[3] C. Wendl, Strongly fillable contact manifolds and J-holomorphic foliations, Duke Math. J.
+151 (2010), no. 3, 337-384.
+
+Vassiliev invariants for virtual knots
+HEATHER A. DYE
+
+I construct degree one, finite type invariants for virtual knots. This method
+focuses on the idea of partitioning the crossings in a virtual knot diagram into
+sets. The sets of crossings are not invariant under the Reidemeister moves, but
+the sum of the signs of the crossings in the set (the signed cardinality of the set)
+is an invariant of the knot.
+
+Let K4 denote a knot diagram with a positive crossing c. Correspondingly,
+let AK_ denote a knot diagram identical to kK except at a crossing c — where
+the over passing edge is switched to form a negative crossing. Let A’. denote a

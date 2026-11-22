@@ -12,7 +12,7 @@ Three independent sectors of physics—strong (mass ratios), electromagnetic (fi
 
 **Derived quantities within the window.**
 
-All entries below are zero-parameter predictions once we fix $q$ by any one of the preceding determinations.
+All entries below are zero-parameter predictions once $q$ is fixed by any one of the preceding determinations.
 
 *Dimensionless ratios.*
 

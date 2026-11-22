@@ -40,8 +40,10 @@ WHAT THE SUBSTRATE FIXES EXACTLY
 --------------------------------
 Two permutation-level data, both exact integers:
 
-  * the component count `mu = A + 1` (Lean: `QOU/Mass/SLq2LabelParity.lean`;
-    measured: `atom_closure_milnor_indeterminacy_probe`), and
+  * the component count `mu = A + 1` (measured by probe: `slq2_label_admits_even_a_only_probe`
+    and `atom_closure_milnor_indeterminacy_probe`, and verified below at A=2,3,4,6;
+    carried as a hypothesis `hmu : mu = A + 1` in `QOU/Mass/SLq2LabelParity.lean:77`
+    and `QOU/Mass/TorusKnotPages.lean:82` — bean `qou-d5hn`), and
   * the KNOT TYPE OF EACH COMPONENT, read off here by an exact-integer Kauffman
     bracket on the sub-braid that remains when the other strands are deleted.
 
@@ -690,9 +692,11 @@ def main() -> int:
             "Total curvature as the computable half of the serpenoid tower. Milnor: "
             "inf over the isotopy class of the total curvature equals 2*pi*b(L), and "
             "b(L) >= mu + #knotted components. The canonical closure has mu = A+1 "
-            "components (exact, Lean-proved) of which A are (2,odd)-torus knots on "
-            "both classical branches (exact-integer Kauffman bracket), so inf total "
-            "curvature >= 2*pi*(2A+1): extensive with slope 4*pi per nucleon. Under "
+            "components (exact integer permutation cycle count, probe-derived at "
+            "A=2,3,4,6; carried as hypothesis hmu : mu = A+1 in SLq2LabelParity.lean:77 "
+            "and TorusKnotPages.lean:82, bean qou-d5hn) of which A are (2,odd)-torus "
+            "knots on both classical branches (exact-integer Kauffman bracket), so inf "
+            "total curvature >= 2*pi*(2A+1): extensive with slope 4*pi per nucleon. Under "
             "Crofton, curvature = pi * (mean number of critical points of the height "
             "functions), which is the precise form of 'the oscillations happen at "
             "the saddle points'. The twist is not produced here.")

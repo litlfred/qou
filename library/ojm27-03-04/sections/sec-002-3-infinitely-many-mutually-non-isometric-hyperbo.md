@@ -1,6 +1,6 @@
 ---
 doc_id: ojm27-03-04
-doc_title: "Title Hyperbolic 3-manifolds with totally geodesic boundary Author(s)"
+doc_title: "Hyperbolic 3-manifolds with totally geodesic boundary"
 section_id: sec-002-3-infinitely-many-mutually-non-isometric-hyperbo
 section_title: "Infinitely many mutually non-isometric hyperbolic 3-manifolds with totally geodesic boundary of genus g"
 section_number: 3
@@ -8,6 +8,7 @@ pages: 11-16
 source_pdf: ojm27_03_04.pdf
 source_sha256: b357cc8378dae3fd
 toc_source: inferred
+doc_brief: "Fujii, Hyperbolic 3-manifolds with totally geodesic boundary (Osaka J. Math. 27(3), 1990, 539–553)."
 ---
 with totally geodesic boundary of genus g
 In this section we construct infinitely many mutually non-isometric hyper-

@@ -1,0 +1,60 @@
+328 Multiple point asymptotics
+
+(2) p € C4 isa strictly minimal contributing point of F in a direction f,.
+(3) Ina neighborhood of p, we can write
+_ P(z)
+
+O1(z) +++ On(z)
+
+with each Q; having nonvanishing gradient at p.
+
+F(z)
+
+The implicit function theorem implies the Weierstrass factorization
+W(z)
+
+T1ja1C - zav(2°))
+
+at p, where y(p) # 0 and the v; are analytic at p°® with v;(p°) = 1/pa. We call
+
+the v; the inverse roots of the Q; at p, and their reciprocals uj(z°) = 1/vj(z°)
+the roots of the Q; at p.
+
+F(z) = (10.25)
+
+Remark 10.56. More generally, we could have
+
+_ P(z)
+
+~ O12)" +++ Onlz ym
+
+for any positive integers m,. We stick to the simple pole case where m = 1
+for two reasons. First, the general case is already covered above. Second, it
+is always possible to reduce to the simple pole case using cohomological re-
+ductions (see [AY83, Theorem 17.6] or the definition of iterated residues for
+non-smooth higher order poles in Appendix C). Laurent series can also be
+treated in an analogous manner.
+
+F(z)
+
+Exercise 10.13. Show that Q(x, y) = 2 — x — 2y + y? has a multiple point at
+(1, 1), and find a Weierstrass factorization of 1/Q there.
+
+A residue sum
+
+Let w € D be sufficiently close to w and let C = T(wg), so that breaking apart
+the Cauchy integral for a, gives
+
+1 dza dz°
+=— F —_.,
+" Qni)4 Jaw) Lf oS (Zyr-1
+
+Analogously to the smooth case described in Chapter 9, for a sufficiently small
+neighborhood N of p® in T(p*) we can find a point w’ sufficiently close to
+p such that ha(p) > hp(w’) and N x C’ is disjoint from V for C’ = T(w’).
+
+Defining
+1 dza dz°
+ae F —_ 10.26
+* ap LL. S| (10.26)
+

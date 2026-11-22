@@ -1,0 +1,49 @@
+6 R. Eldan, O. Shamir / Journal of Functional Analysis 282 (2022) 109392
+
+2. One has,
+
+So H(X) < 2H(%,.... Xn)-
+
+ie[n}
+
+Proof of Corollary 9. Let v be the law of (2X; — 1,...,2X, — 1). Observe that the
+condition (6) is equivalent to
+
+I:Oj,LI(0) <0, ViXj.
+
+Therefore, Rayleigh property is equivalent to the fact that V?L[v](x) has non-positive
+off-diagonal entries for all x € R”. Let uw € R”. Define u = uy : u— where uz €
+[0,c0)" and u_ € (—oo,0)". Recall that V?L[v](x) is positive semi-definite and that
+(V?L[v](x)), , < 1 for all i (see the identity (8) below), so by convexity,
+
+(u, V?L[v](a)u) <2 (uz, V?L[v] (uz) +2 (u_, V?L[v](x)u_)
+u4, diag (V?L[v](x)) uy) + 2(u_, diag (V?L[v](x)) u_)
+u, diag (V?L[v](x)) u).
+
+2
+<2
+2¢
+Thus, v satisfies both (2) and (5) with 8 = 2. An application of Theorem 2 implies the
+first part, and an application of Theorem 6, the second. O
+
+It was pointed out to us by P. Nuti and J. Vondrak the Rayleigh property (by the the-
+orem of Feder and Mihail) implies the negative regression property ({9]), which in turn
+implies the stochastic covering property (see [14]) in the special case that the measure
+vy is homogeneous (namely when )>,X; is deterministic). Therefore, in the homoge-
+neous case, one attains a stronger version the above corollary (which gives sub-Gaussian
+concentration). In fact, the more recent paper [1] gives spectral gap in this case (see
+discussion below). However, all of the above seem to rely on homogeneity in a crucial
+way.
+
+1.8. Relation to the works of Anari, Liu, Oveis-Gharan and Vinzant and possible
+extensions to spectral gap
+
+A somewhat related notion of log-concavity of measures on the discrete hypercube
+was given in a series of works by Anari, Liu, Oveis-Gharan and Vinzant in [2,3,1]. Given
+{—1, 1}-Bernoulli random variables X),...,X; distributed according to a law v, which
+can be identified with a random subset A C [n] by X; = 21;¢4—1, the work [2] considers
+the generating polynomial
+
+Du (Z1y 5 Zn =E[[x.
+
+icA

@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1604.02688v1/blocks/prose-sec-027",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "A.1. Euler characteristic from generalised angle structures",
-  "pageStart": 51,
-  "pageEnd": 55,
-  "text": "../sections/sec-027-a1-euler-characteristic-from-generalised-angle-s.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1604.02688v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1604.02688v1",
+  "title": "A census of ideal triangulations",
+  "pageStart": 41,
+  "pageEnd": 42,
+  "text": "../sections/sec-027-121-a-census-of-ideal-triangulations.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1604.02688v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1604.02688v1/manifest.jsonld",
   "provenance": "ingested"
 }

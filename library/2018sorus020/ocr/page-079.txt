@@ -1,0 +1,51 @@
+2.4.3 The case when py is residually abelian
+
+In this section we treat the case when the residual reducible representation fy is
+abelian. This case is motivated by the example of the figure-eight knot complement,
+see Remark [3.3.1] In fact, if © is two holed torus, as soon as the boundary curve
+will be mapped to + Id by fy, then the representation py will be residually abelian.
+Computational evidences suggest that it is always the case. Remark that in this
+case, the eigenvalues of py(0X) are necessarily +1 because they are roots of unity
+with order that divides the number of boundary components of the surface U4.
+
+The main difference with the previous case is the following :
+
+Lemma 2.4.12. The O,-module H'(=, Ad ops), is isomorphic to Ov *™ BO, /(t™)
+
+for some positive integer m.
+
+Proof. Again H®(X, Ad ops) is trivial because py is not abelian, but in this case we
+
+have H°(d, Ad ops) ~ k. The Universal Coefficients theorem gives
+0 > H®(d, Ad opy), 0, On /(t) + H°(S, Adopy) >
+
+Tor(H(S, Ad ops)y,O,/(t)) > 0
+
+It follows that the torsion part of the module H1(X,Adops)v is isomorphic to
+
+O,/(t”) for some m, and the lemma follows. oO
+
+Again, we pick basis ¢,cs of the complexes of k(Y)-vector spaces C*(M;, Ad op;),
+C*(X, Adops) and basis h;, hy of their first homology group (the only one that is
+
+not trivial). We want to use the formula :
+
+tor(M,) tor(M)
+
+tor(M, Adop) = tor(S)
+
+tor(H)
+
+Proposition 2.4.13. The terms tor(M)) and tor(M:) lie in O%, but tor(X) has
+
+valuation m.
+
+Proof. The first part of the statement works in the same way than the proof of
+Proposition [2-4-4]
+
+Recall that © has the same homotopy type that a wedge of —y(X) +1 circles, hence
+the complex C*(X, Ad ops;) looks like
+
+slo(k(Y)) + slo(k(Y)) XO
+
+78

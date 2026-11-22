@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-2311.02632v2/blocks/prose-sec-011",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Numerical determination of the eigenspace associated to 1",
-  "pageStart": 32,
-  "pageEnd": 37,
-  "text": "../sections/sec-011-5-numerical-determination-of-the-eigenspace-asso.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2311.02632v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2311.02632v2",
+  "title": "Overview of the proof",
+  "pageStart": 21,
+  "pageEnd": 29,
+  "text": "../sections/sec-011-41-overview-of-the-proof.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2311.02632v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2311.02632v2/manifest.jsonld",
   "provenance": "ingested"
 }

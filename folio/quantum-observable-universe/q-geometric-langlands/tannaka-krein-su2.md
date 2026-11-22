@@ -1,6 +1,6 @@
-We execute the Tannaka--Krein reconstruction algorithm concretely for $\mathrm{SU}(2)$.
+The Tannaka--Krein reconstruction algorithm is executed concretely for $\mathrm{SU}(2)$.
 
-**Step 1: The monoidal category.** We start with $\mathbf{C} = \mathrm{Rep}(\mathrm{SU}_q(2))$ and the forgetful fibre functor $\tau \colon \mathbf{C} \to \mathrm{Vect}_\mathbb{C}$. The simple objects are $V_0, V_{1/2}, V_1, V_{3/2}, \ldots$ with dimension $\dim V_j = 2j + 1$.
+**Step 1: The monoidal category.** Start with $\mathbf{C} = \mathrm{Rep}(\mathrm{SU}_q(2))$ and the forgetful fibre functor $\tau \colon \mathbf{C} \to \mathrm{Vect}_\mathbb{C}$. The simple objects are $V_0, V_{1/2}, V_1, V_{3/2}, \ldots$ with dimension $\dim V_j = 2j + 1$.
 
 **Step 2: Compute the coend.** The reconstructed Hopf algebra is $H = \mathrm{coend}(\tau^\vee \otimes \tau)$:
 
@@ -34,6 +34,6 @@ $$
 
 The counit is $\varepsilon(t^j_{m,m'}) = \delta_{mm'}$. The antipode is $S(\alpha) = \bar\beta$, $S(\beta) = -q^{-1}\beta$, $S(\bar\alpha) = -q\bar\alpha$, and $S(\bar\beta) = \alpha$. Equivalently, $S(u) = u^{-1}$ where $u = \bigl(\begin{smallmatrix} \alpha & \beta \\ \bar\alpha & \bar\beta \end{smallmatrix}\bigr)$.
 
-**Result.** The algorithm outputs $H \cong \mathcal{O}_q(\mathrm{SU}(2))$. We recover the quantum coordinate ring entirely from the monoidal structure of its representation category. 
+**Result.** The algorithm outputs $H \cong \mathcal{O}_q(\mathrm{SU}(2))$. The quantum coordinate ring is recovered entirely from the monoidal structure of its representation category. 
 
 On Bring's quantum observable universe, $q$ assumes the value dictated by the Descartes condition. The reconstruction then yields $\mathcal{O}_{q_{\mathrm{Bring}}}(\mathrm{SU}(2))$ equipped with its $S_5$-equivariant structure. The weight spaces of $H$ automatically encode the Reeb spectrum.

@@ -15,7 +15,7 @@ genuinely a statement about loops in `ℂ ∖ Δ`, not about real intervals.
 
 Archimedean (ordering on `ℝ`), hence its own file per §7c; the identity it rests on is generic.
 
--- Ref: [manuscript] computations/probes/colour_cubic_branch_monodromy_probe.py
+-- Ref: [leitner2026] computations/probes/colour_cubic_branch_monodromy_probe.py
 -/
 
 namespace QOU.Mass.ColourCubicDiscriminantReal

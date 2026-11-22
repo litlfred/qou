@@ -1,0 +1,1 @@
+Balanced dualizing complexes were invented in order to make this theorem hold. Theorem 17.2.7 ﬁrst appeared in [161], in a slightly diﬀerent formulation, and with a complicated proof. The current formulation of the theorem, as well as the proof, are taken from [39, Proposition 3.4]. We thank R. Vyas for pointing out this proof to us.

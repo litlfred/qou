@@ -20,7 +20,7 @@
   Archimedean (ℝ): `arg`, `Λ` — §7c.
 
   -- Ref: [neumann-zagier1985] Volumes of hyperbolic three-manifolds
-  -- Ref: [manuscript] bean qou-52ch
+  -- Ref: [leitner2026] bean qou-52ch
 -/
 
 import QOU.Knot.FiveTwoVolumeConstant

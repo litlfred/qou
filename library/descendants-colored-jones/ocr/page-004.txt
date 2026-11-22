@@ -1,0 +1,44 @@
+2310 Stavros Garoufalidis and Rinat Kashaev
+
+In [Zagl0, Sec. 7.3,7.4] a method was proposed for defining all but the
+first row of this matrix, given a suitable ideal triangulation of the knot. But
+the first row of the above matrix remained elusive. The goal of this paper is
+to propose a definition for this first row and verify some of its conjectured
+properties. After a linear change of variables, the first row of the matrix J is
+conjecturally equal to one of the best-known quantum knot invariants, namely
+the colored Jones polynomials; see Conjecture 2.4 below.
+
+2.2. Definition of the descendants
+In this section we extend the 2-parameter colored Jones function J,(q) of a
+
+knot in 3-space into a 3-parameter descendant colored Jones function py”) (q)
+for n > 0, m € Z, which
+
+e specializes to the colored Jones polynomials J,(q) when m = 0 and
+n>1;
+
+e specializes to a sequence of elements of the Habiro ring DJ (™)(q) when
+n=0;
+
+e is determined by either of the above specializations;
+e is determined by a 3-parameter function DJ) («,q) by DJ&™(g) =
+DIO (q", q) for alln > 1.
+
+In other words, we have a commutative diagram
+
+DIE” (4g)
+aa
+(1) In(Q) r=q" DJ (q)
+
+NL
+
+DJ (x, q)
+
+To define the functions appearing in this diagram, we start with the colored
+Jones polynomials JK (q) € Z[q+] of a knot K (mostly omitted from the
+notation), colored by the n-dimensional irreducible representation of sl2 for
+n > 1 and normalized to be 1 at the unknot [Tur94]. In [Hab08] Habiro proved
+that the colored Jones polynomials can be written in the form
+
+(2) In(g) = So ena(QHe(q), — cnr(M =a (as aegis)
+k=0

@@ -1,0 +1,56 @@
+550 J. BORCEA, P. BRANDEN, AND T. M. LIGGETT
+
+Remark 4.4. There are now elementary proofs of Theorem [4.20]that avoid the mul-
+tivariate Obresckoff theorem; see [56]. Also, the referee sketched an elementary
+proof similar to those given in
+
+Proof of Theorem Let f € Cla,...,2n] be the generating polynomial of p.
+Hence f is stable and multi-affine. Assuming, as we may, that i = 1 and j = 2, we
+need to prove that
+
+OF (E15 €25-+-§n) + (1 — 9) (Eo, 81, --- bn) #0
+whenever &,...,€ € {z : Jm(z) > 0} (cf. Definition 2.9). By fixing &3,...,&n
+arbitrarily in the open upper half-plane and considering the multi-affine polynomial
+in variables z1, z2 given by
+
+(123, 22) > g(a, 22) = f (21, 22, €3,--+€n);
+
+we see that the problem reduces to proving that the linear operator Ty on multi-
+affine polynomials in two variables defined by
+
+To(h) (21, 22) = Oh(21, 22) + (1 — O)h(Z2, 21)
+preserves stability. Let us first show that Ty preserves real stability. For this let
+f (21, 22) = Goo + Go1z2 + a1021 + a112122 € R[z1, 29] \ {0}
+
+be real stable and set Dy = agoa11 — ao1ai9. By Theorem [4.1] we know that f is
+real stable if and only if Dy < 0. Since
+
+Dry p) = Ds — O(1 — 8) (aor — a10)? < Dg,
+
+it follows that Ty(f) is also real stable, as required. To deal with the (non-real)
+stable case first let h = g +if € C[z1, 22] be strictly stable and multi-affine. This
+means that h(z, z2) # 0 whenever Jm(z1) > 0 and Im(z2) > 0. By the multivariate
+Obreschkoff theorem we have that ag + {f is real stable or zero for all a, 3 € R.
+Hence, by the above, we also have that aT9(f) + 3Tg(g) is real stable or zero for all
+a, 3 €R. By the multivariate Obreschkoff theorem again this gives that Ty(g +if)
+or T9(g —if) is stable. However, one has
+
+To(h) (2,2) = h(2,2) = 92.2) + if (22),
+
+which is strictly stable by assumption. If Ty(g—if) is stable, then g(z, z) —if(z, z)
+is stable and g(z,z) + if(z, z) is strictly stable, which is impossible since it would
+imply that all zeros of (the strictly stable polynomial) g(z,z) + if(z,z) were real.
+Hence T(g +f) is stable.
+
+Now if € > 0 and p € C[z1, 29] is stable, then clearly p(z1 + ie, z2 + ie) is strictly
+stable (in the sense defined above), and thus any stable polynomial is the uniform
+limit on compact sets of strictly stable polynomials. By the multivariate version of
+Hurwitz’ classical theorem on the “continuity of zeros” (see, e.g., [8] Theorem 2.3]
+and Footnote 3, p. 96]) this proves that Ty preserves stability. Oo
+
+Remark 4.5. From Theorem[Z.20]it follows that the symmetrization ju, of a strongly
+Rayleigh measure ju is also strongly Rayleigh. A different proof is as follows. If pis a
+strongly Rayleigh measure on 2l"], then implies that the diagonal specialization
+A(gu.)(t) = A(gn)(t) (cf. Definition [2.8) is a real-rooted univariate polynomial and
+by the Grace-Walsh-Szegé theorem we conclude that the symmetrization jis of ju is
+also strongly Rayleigh.

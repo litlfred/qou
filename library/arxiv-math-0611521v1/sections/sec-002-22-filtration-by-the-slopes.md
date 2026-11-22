@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0611521v1
-doc_title: "arXiv:math/0611521v1 [math.QA] 17 Nov 2006"
+doc_title: "The q-analogue of the wild fundamental group"
 section_id: sec-002-22-filtration-by-the-slopes
 section_title: "Filtration by the slopes"
 section_number: 2.2
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.97
 latex_coverage_ratio: 0.981
+doc_brief: "The q-analogue of the wild fundamental group — We describe an explicit construction of galoisian Stokes operators for irregular linear q-difference equations."
 ---
 []{#subsection:filtration label="subsection:filtration"}
 

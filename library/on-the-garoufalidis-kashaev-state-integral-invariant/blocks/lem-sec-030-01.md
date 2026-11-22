@@ -1,1 +1,1 @@
-LetF be a local field (R or C). Then Ψa,c∈S ′(A), the space of tempered
+Let F be a local field (R or C). Then Ψa,c ∈S′(A), the space of tempered distributions on the Gaussian group A, provided: 0 ≤˙a, ˙b, ˙c ≤1, with ˙a + ˙b + ˙c = 1. (Here ˙b = 1 −˙a −˙c.) If all inequalities are strict, Ψa,c is locally integrable. This positivity guarantees convergence of the state-integral and compatibility with the Fourier analysis over A.

@@ -43,10 +43,10 @@ formula is a separate structural problem.
 ## References
 
 - [habiro2004cyclotomic] Habiro ring and q-Pochhammer convergence
-- [manuscript] prop:beta-decay-energy-scale §"calibration cross-check"
+- [leitner2026] prop:beta-decay-energy-scale §"calibration cross-check"
   (cites the 0.75% brane-tower correction as the gap between N=0
    single-tick and the convergent infinite product)
-- [manuscript] per-braid-mass-tower.md §"remainder bound"
+- [leitner2026] per-braid-mass-tower.md §"remainder bound"
   (gives |R_N| ≤ ℏ_q^{2(N+1)}/(1-ℏ_q²) — the per-N bound this
    convergence theorem implicitly underpins)
 -/
@@ -115,7 +115,7 @@ We state the corollary directly:
 
     This is the analytic content underpinning
     `mass-endomorphism-tower.lean §QOU.MassEndomorphism.Arch.quantumDilog`. -/
--- Ref: [manuscript] prop:beta-decay-energy-scale §"calibration cross-check"
+-- Ref: [leitner2026] prop:beta-decay-energy-scale §"calibration cross-check"
 -- Ref: [habiro2004cyclotomic] q-Pochhammer
 theorem quantumDilog_factors_nonzero
     {q z : ℝ} (hq : 1 < q) (hz : |z| < q) :
@@ -188,7 +188,7 @@ theorem summable_quantumDilog_terms {q z : ℝ} (hq : 1 < q) :
   (summable_q_inv_geometric hq).mul_right z
 
 /-- The denominator product `∏ (1 - q^{-(k+1)} z)` is `Multipliable`. -/
--- Ref: [manuscript] prop:beta-decay-energy-scale §"calibration cross-check"
+-- Ref: [leitner2026] prop:beta-decay-energy-scale §"calibration cross-check"
 theorem quantumDilog_denom_multipliable {q z : ℝ} (hq : 1 < q) :
     Multipliable (fun k : ℕ => 1 - q ^ (-((k : ℤ) + 1)) * z) := by
   have hsum : Summable (fun k : ℕ => -(q ^ (-((k : ℤ) + 1)) * z)) :=
@@ -206,7 +206,7 @@ theorem quantumDilog_denom_multipliable {q z : ℝ} (hq : 1 < q) :
     Each factor is non-zero by `quantumDilog_factors_nonzero`, and the
     inverse-factor terms are summable by comparison with the geometric
     series, so `Real.multipliable_one_add_of_summable` applies. -/
--- Ref: [manuscript] prop:beta-decay-energy-scale §"calibration cross-check"
+-- Ref: [leitner2026] prop:beta-decay-energy-scale §"calibration cross-check"
 -- Ref: [habiro2004cyclotomic] q-Pochhammer convergence
 theorem quantumDilog_multipliable {q z : ℝ} (hq : 1 < q) (hz : |z| < q) :
     Multipliable (fun k : ℕ => (1 - q ^ (-((k : ℤ) + 1)) * z)⁻¹) := by
@@ -295,7 +295,7 @@ via `Multipliable.tprod_eq_zero_mul`. Domain `|z| < 1` (so both `|z| < q` and
 > build). `maxHeartbeats` is raised below for a full `lake build` / overnight
 > laptop verification. If CI hits the same wall, treat it like the known
 > environment-timeout pattern, not a proof failure. -/
--- Ref: [manuscript] conj:brane-tower-z-habiro §"What survives the closure"
+-- Ref: [leitner2026] conj:brane-tower-z-habiro §"What survives the closure"
 -- Ref: [habiro2004cyclotomic] q-Pochhammer functional equation
 set_option maxHeartbeats 0 in
 theorem quantumDilog_functional_eq {q z : ℝ} (hq : 1 < q) (hz : |z| < 1) :

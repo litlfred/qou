@@ -1,0 +1,1 @@
+such that v · ˆr ≥1 for every ˆr ∈R. Deﬁne the vector ﬁeld⃗Vy(·) to be the constant vector v on a neighborhood N(y) of y suﬃciently small to avoid local( ˆr) for every ˆr ∈R, to avoid proper substrata of the stratum containing y, and such that v ∈Z(y′) for every y′ ∈N(y).

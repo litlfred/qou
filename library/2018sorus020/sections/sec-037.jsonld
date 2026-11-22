@@ -9,13 +9,15 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "An example : a direct computation of the torsion of the trefoil knot using its incompressible non-Seifert surface",
-  "pageStart": 66,
-  "pageEnd": 73,
+  "title": "The torsion at an ideal point",
+  "pageStart": 65,
+  "pageEnd": 66,
   "contains": [
-    "library/2018sorus020/blocks/prose-sec-037"
+    "library/2018sorus020/blocks/prose-sec-037",
+    "library/2018sorus020/blocks/thm-sec-037-01",
+    "library/2018sorus020/blocks/rem-sec-037-02"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/2018sorus020",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/2018sorus020",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/2018sorus020/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/2018sorus020/manifest.jsonld",
   "provenance": "ingested"
 }

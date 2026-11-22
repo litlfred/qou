@@ -1,0 +1,70 @@
+---
+doc_id: 9710022v2
+doc_title: "Harmonic Analysis on the quantum Lorentz group"
+section_id: page-024
+section_title: "Page 24"
+pages: 24-24
+pdf_page: 24
+source_pdf: 9710022v2.pdf
+source_sha256: e5ff373a1ec6884a
+text_source: ocr
+granularity: page
+doc_brief: "Harmonic Analysis on the quantum Lorentz group — This w ork b egins with a review of complexi cation and reali cation of Hopf algebras."
+---
+i mepeenall
+
+From this diagram we can apply the succession of moves of the previous proof, and we finally
+obtain a new expression for pAK/V (A, B) :
+
+r BA\|M 2 yA UND 1 KN N UMUK \1
+D D
+Ba YR IRF
+
+o
+
+Let us now study the case of the strange representations Cn ots. It is easy to show from
+the definition of 7, that the character of the one dimensional representation €, is the affiliated
+
+J
+element Wyerze(-D) Et (this is the way it appears in [36]). As a result from the fact that
+
+(A,B) (A,B) . 2 (A,B) :
+T OT; = 7 ® €s, we obtain that the character of the representation 7 © 7; can be written
+
+as:
+N u
+u N
+
+3.5 Left and right integral on SL,(2,C)g and its classical limit
+
+One of the main result of [36] is the proof that there exists a right and left integral on Fun-(SL,(2, C)r).
+Let hanr and han; be the linear forms defined on Fun-(AN,(2)) by the formula
+
+Le Dew ayrae (yg
+
+K M,N
+
+M K
+i my Em aBy. (96)
+
+Tp Tip Tp qT,
+hanr(E§) = [die §, hai (2$) = [dr]es (97)
+
+then these linear forms are respectively right and left integral of the discrete quantum group
+Fun,(AN,(2)).
+
+A complete study of existence and uniqueness of right and left integral has been done in the
+case of discrete quantum group in [44].
+
+Let hx be the unique normalized right and left integral on Fun(SUj(2)) . It is defined on
+
+I
+Fun,-(SUq(2)) by he (k%) = 67,0. Then the linear form h = hx ® hawnr, Satisfies:
+La <> dar J_ir
+h(ky @E%) = drolds]e Ss, (98)
+This linear form is a left and right integral on Fun-(SLq(2,C)g). This result as already been
+
+proved in [36], but we think that the following computation which is straighforward gives an
+alternative proof of this important theorem.
+
+24

@@ -1,0 +1,59 @@
+---
+doc_id: 9710022v2
+doc_title: "Harmonic Analysis on the quantum Lorentz group"
+section_id: page-054
+section_title: "Page 54"
+pages: 54-54
+pdf_page: 54
+source_pdf: 9710022v2.pdf
+source_sha256: e5ff373a1ec6884a
+text_source: ocr
+granularity: page
+doc_brief: "Harmonic Analysis on the quantum Lorentz group — This w ork b egins with a review of complexi cation and reali cation of Hopf algebras."
+---
+which is nicely pictured in the next subsection.
+We give the value of 6] symbols for one spin fixed to the value 0 or $ :
+
+0 B/B\_ AA|0])_ in _c [dc]
+{i é| oh Y(A,B,C) {3 3 a = Y(A,B,C)ei™(At+B-C) Tals] (174)
+
+{Pee Bap} oO poppy OED
+(16,5 ,}- Eig Pl sya
+
+{he 3 54a} er)
+Fee
+
+7.3 6—j coefficients and IRF pictures
+
+Pictorial representation
+
+-A B)|_ f[EA|D A B-| fF B|C
+coe Flos) < ~ (A BE] DS’
+
+D
+—E F IRF E FH irr
+“A BOS] upvry4 A BID “A BOC] upuryi A B| D
+se]-eeale) — [Sig]-apetenie)
+A ¢ AWA IRF F “Av IRF
+A in(A—B) [dp], 2 A in(A—B)/(dB]\1,,
+— eit 4-B) (Bl by (4 BO = ei™(A-B)(TE))2Y(A, B,C
+e A,B, e »B,
+Mo (a YB) ~ (ay) Y ABC)
+a Sine tne
+B
+=Y(A,B,C
+. (A,B,C)
+Relations cr
+Unitarity:
+E E E A D A p
+= bop Y(A,B,C) >» = dnp | a“ €
+F -C F D- —C- C E Cc F 5
+H H 7 mr H TRE B H RF ————~
+H IRF
+A D DOA ° A D DOA
+rsa] -|e4 -zfyew
+F F
+8, me IRF — BN B a IRF
+H IRF
+
+Racah relation:

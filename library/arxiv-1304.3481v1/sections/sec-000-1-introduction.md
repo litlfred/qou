@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1304.3481v1
-doc_title: "Quadruply-graded colored homology of knots"
+doc_title: "Quadruply-Graded Colored Homology of Knots"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
-pages: 1-8
+pages: 1-7
 source_pdf: 1304.3481v1.pdf
 source_sha256: d0840f2775c0f761
-doc_brief: "Quadruply-graded colored homology of knots — W e conjecture the existence of four independent gradings in the colored HOMFLY homology."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.976
+latex_coverage_ratio: 0.986
+doc_brief: "Quadruply-Graded Colored Homology of Knots — We conjecture the existence of four independent gradings in the colored HOMFLY homology."
 ---
 The categorification of quantum knot invariants started with Khovanov's seminal paper \cite{Khfirst}, where he defined a doubly-graded homology theory, whose homotopy type is an invariant of a knot, and such that its graded Euler characteristic is equal to the Jones polynomial. This opened a fast-growing field in low-dimensional topology and started work on categorification of other quantum knot invariants. Unlike the quantum polynomial invariants of a knot $K$, denoted by $P^{g,\lambda}(K)(q)$, which are explicitly defined for any representation $\lambda$ of Lie algebra $g$, their categorifications are known only in very few cases. In particular, in the case of the Lie algebras $sl(N)$ --- which is the case on which we focus in this paper --- the explicit categorification is known in the case of the fundamental representations $\lambda=\tableau1$ \cite{KRa}, and in a very few other cases. In addition, apart from the case of the Jones polynomial (fundamental representation of $sl(2)$), the definition of the homology theory is very complicated, which makes the computation of such invariants extremely hard.
 

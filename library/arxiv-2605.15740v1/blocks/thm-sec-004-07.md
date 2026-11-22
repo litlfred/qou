@@ -1,1 +1,0 @@
-Let(α k,βk)denote the Bailey pair in(2.22). Forp≥1andqany primitive

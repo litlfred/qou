@@ -81,7 +81,7 @@ about the genuine sets rather than about two conveniently-chosen images.
 None — the whole file is `ℕ`-valued counting on `Finset`s. Nothing archimedean, no fit.
 
 -- Ref: [stanley1999] https://doi.org/10.1017/CBO9780511609589
--- Ref: [manuscript] QOU/Mathlib/BurnsideViaBranching.lean
+-- Ref: [leitner2026] QOU/Mathlib/BurnsideViaBranching.lean
 -/
 
 namespace QOU.Mathlib

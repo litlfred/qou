@@ -1,0 +1,42 @@
+R. Eldan, O. Shamir / Journal of Functional Analysis 282 (2022) 109392 17
+dius — wil? = Aluz — w,|dW;, + 4dt + S,dt
+where
+(a) 5
+St = 2(ue — wr, av (ue) — av(we)) < 2Blue — wil’.
+
+Now define Y; = |u, — w;|. Invoking It6’s formula again, we have that up to time 7, one
+has
+
+d (luc _ w;|*) d [lus _ wi? t
+
+dY, = -
+‘ Qluz — we| Blu, — wy|>
+S,+4 16;u; — wi|*
+= 2dW, dt — dt
+it Qluz — wi| Buz — we|8
+= 2dW, + — Sy,
+2|u, — w,|
+
+Combining the two last displays, we learn that there exists an adapted process Z; such
+that
+
+dY, = 2dW,+ Zdt, Vt<rT (26)
+
+such that Z, < BY; almost surely for all t < 7. A final application of It6’s formula gives,
+
+d(e~P*Y,) = e P'dY, — Be“ *"'¥,dt = 2e-P'dW, + e~9"(Z, — BY; )dt. (27)
+
+Therefore, e~°'Y; is a supermartingale, and by the optional stopping theorem, we have
+E [Yinr] < eM [eM Vine] = eMYo = eMe.
+
+It follows that
+
+E[la,(w) ~ a,(0H))i] “< 6E [we — uel] < Bee. (28)
+
+It remains to bound the second summand in the right hand side of (23). To this end,
+recall that E is F,-measurable, so we have for all t > 1,
+
+E [tec nTr(A,(wr))| <P (E°) sup E [ nTr(A,(wr))| w= v| . (29)
+
+To give an upper bound for the right hand side, we will first need the following lemma
+which is a simple variant of the reflection principle for random walks.

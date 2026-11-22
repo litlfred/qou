@@ -15,7 +15,7 @@ LaTeX label: `def:su2-basis`
 
 ## References
 
-- [manuscript] Chapter 4, §SU(2)–SO(3)
+- [leitner2026] Chapter 4, §SU(2)–SO(3)
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
 Part of the formal proof chain. The parameter `q` is the canonical
@@ -41,7 +41,7 @@ noncomputable def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- **𝔰𝔲(2) basis data**: three generators e₁, e₂, e₃ with
     structure constants given by the Levi-Civita symbol. -/
--- Ref: [manuscript] Chapter 4
+-- Ref: [leitner2026] Chapter 4
 structure Su2Basis where
   /-- The Lie algebra carrier. -/
   LieAlg : Type*
@@ -58,7 +58,7 @@ structure Su2Basis where
 
 /-- The Killing form is negative definite on 𝔰𝔲(2):
     ⟨eₐ, eₐ⟩ = −½ for the standard normalisation. -/
--- Ref: [manuscript] Chapter 4
+-- Ref: [leitner2026] Chapter 4
 structure Su2KillingForm (K : Type*) [CommRing K] [Invertible (2 : K)]
     extends Su2Basis where
   /-- The Killing form. Codomain a generic commutative ring in which `2`

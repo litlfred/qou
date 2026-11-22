@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-9806163v1
-doc_title: "arXiv:math/9806163v1 [math.CO] 30 Jun 1998"
+doc_title: "Weights of Markov traces on Hecke algebras"
 section_id: sec-front-matter
 section_title: "Front matter"
 section_number: null
@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 9806163v1.pdf
 source_sha256: dba44975f29cb017
 toc_source: inferred
+doc_brief: "Weights of Markov traces on Hecke algebras — We compute the weights, i.e. the values at the minimal idempotents, for the Markov trace on the Hecke algebra of type Bn and type Dn."
 ---
 arXiv:math/9806163v1  [math.CO]  30 Jun 1998
 Weights of Markov Traces on Hecke Algebras∗
@@ -71,4 +72,3 @@ Acknowledgments:
 This paper is a part of my Ph.D. thesis at University of California, San
 Diego. I would like to thank my advisor Hans Wenzl for all the encouragement, for teaching
 me so much mathematics and for all the useful suggestions.
-1

@@ -6,10 +6,12 @@
   "sha256": "9a17abd36cc8a317e86c463e7b641bb0a1cef799920ff374e62f9cb229c2ea1b",
   "bytes": 556243,
   "pages": 15,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,18 +23,29 @@
   "doi": null,
   "title": "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials",
   "authors_raw": "A. Mironovb,c,d 1, A. Morozova,c,d 2",
-  "abstract": "We elaborate on the recent suggestion to consider averaging of Cauchy identities for the Schur functions over power sum variables. This procedure has apparent parallels with the Borel transform, only it changes the number of combinatorial factors like dR in the sums over Young diagrams instead of just factorials in ordinary sums over numbers. It provides a universal view on a number of previously known, but seemingly random identities.",
-  "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20230703003931Z",
-   "Creator": "LaTeX with hyperref",
-   "Producer": "pdfTeX-1.40.25",
-   "Title": ""
-  },
   "title_lines": [
    "On combinatorial generalization(s) of Borel transform: Averaging",
    "method in combinatorics of symmetric polynomials"
-  ]
+  ],
+  "abstract": "We elaborate on the recent suggestion to consider averaging of Cauchy identities for the Schur functions over power sum variables. This procedure has apparent parallels with the Borel transform, only it changes the number of combinatorial factors like dR in the sums over Young diagrams instead of just factorials in ordinary sums over numbers. It provides a universal view on a number of previously known, but seemingly random identities.",
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.25",
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20230703003931Z"
+  },
+  "title_raw": "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials Introduction",
+   "outline": "Introduction",
+   "text": "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "On combinatorial generalization(s) of Borel transform: Averaging method in combinatorics of symmetric polynomials Introduction"
  },
  "toc": [
   {
@@ -40,102 +53,308 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Basic example of averaging method",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "Simple generalizations",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Derivation of various sum formulas by the averaging method",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Extension to skew functions",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "A collection of sum formulas",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "The Gaussian measure",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Calculating various sums",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "Strong superintegrability and W-operators",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Strong integrability in Gaussian Hermitian matrix model",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Strong superintegrability in the p-Gaussian model",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 1,
    "title": "Relation of sum formulas to Ramanujan sums",
    "page": 11,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 1,
    "title": "Hurwitz tau-functions",
    "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 1,
    "title": "Conclusion",
    "page": 13,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "A picture, illustrating the concept of the combinatorial Borel transform (CBT) of the series. First, we introduce into the original series an auxiliary function Sr{¯p} such that its average over ¯p with an appropriate measure can change the coefficients",
+   "page": 2,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "2"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 873,
+   "n_words": 123,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
@@ -143,8 +362,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 6109,
-   "n_words": 1029
+   "n_chars": 6134,
+   "n_words": 1055,
+   "label_start": "1",
+   "label_end": "3"
   },
   {
    "id": "sec-001-basic-example-of-averaging-method",
@@ -153,8 +374,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 3409,
-   "n_words": 707
+   "n_chars": 3498,
+   "n_words": 769,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
    "id": "sec-002-simple-generalizations",
@@ -163,8 +386,10 @@
    "level": 1,
    "page_start": 4,
    "page_end": 4,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 22,
+   "n_words": 2,
+   "label_start": "4",
+   "label_end": "4"
   },
   {
    "id": "sec-003-derivation-of-various-sum-formulas-by-the-averag",
@@ -173,8 +398,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 2669,
-   "n_words": 561
+   "n_chars": 2761,
+   "n_words": 604,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
    "id": "sec-004-extension-to-skew-functions",
@@ -183,8 +410,10 @@
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 1726,
-   "n_words": 360
+   "n_chars": 1782,
+   "n_words": 393,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
    "id": "sec-005-a-collection-of-sum-formulas",
@@ -193,8 +422,10 @@
    "level": 2,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 2526,
-   "n_words": 595
+   "n_chars": 2650,
+   "n_words": 696,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
    "id": "sec-006-the-gaussian-measure",
@@ -203,8 +434,10 @@
    "level": 2,
    "page_start": 7,
    "page_end": 7,
-   "n_chars": 474,
-   "n_words": 86
+   "n_chars": 499,
+   "n_words": 93,
+   "label_start": "7",
+   "label_end": "7"
   },
   {
    "id": "sec-007-calculating-various-sums",
@@ -213,71 +446,103 @@
    "level": 2,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 1119,
-   "n_words": 199
+   "n_chars": 699,
+   "n_words": 145,
+   "label_start": "7",
+   "label_end": "8"
   },
   {
-   "id": "sec-008-strong-integrability-in-gaussian-hermitian-matri",
+   "id": "sec-008-strong-superintegrability-and-w-operators",
+   "number": null,
+   "title": "Strong superintegrability and W-operators",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 453,
+   "n_words": 68,
+   "label_start": "8",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-009-strong-integrability-in-gaussian-hermitian-matri",
    "number": null,
    "title": "Strong integrability in Gaussian Hermitian matrix model",
    "level": 2,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 1140,
-   "n_words": 217
+   "n_chars": 1199,
+   "n_words": 228,
+   "label_start": "8",
+   "label_end": "9"
   },
   {
-   "id": "sec-009-strong-superintegrability-in-the-p-gaussian-mode",
+   "id": "sec-010-strong-superintegrability-in-the-p-gaussian-mode",
    "number": null,
    "title": "Strong superintegrability in the p-Gaussian model",
    "level": 2,
    "page_start": 9,
    "page_end": 11,
-   "n_chars": 4064,
-   "n_words": 825
+   "n_chars": 4147,
+   "n_words": 867,
+   "label_start": "9",
+   "label_end": "11"
   },
   {
-   "id": "sec-010-relation-of-sum-formulas-to-ramanujan-sums",
+   "id": "sec-011-relation-of-sum-formulas-to-ramanujan-sums",
    "number": null,
    "title": "Relation of sum formulas to Ramanujan sums",
    "level": 1,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 1206,
-   "n_words": 251
+   "n_chars": 1276,
+   "n_words": 287,
+   "label_start": "11",
+   "label_end": "12"
   },
   {
-   "id": "sec-011-hurwitz-tau-functions",
+   "id": "sec-012-hurwitz-tau-functions",
    "number": null,
    "title": "Hurwitz tau-functions",
    "level": 1,
    "page_start": 12,
    "page_end": 13,
-   "n_chars": 3526,
-   "n_words": 703
+   "n_chars": 3586,
+   "n_words": 745,
+   "label_start": "12",
+   "label_end": "13"
   },
   {
-   "id": "sec-012-conclusion",
+   "id": "sec-013-conclusion",
    "number": null,
    "title": "Conclusion",
    "level": 1,
    "page_start": 13,
    "page_end": 15,
-   "n_chars": 6445,
-   "n_words": 1015
+   "n_chars": 6461,
+   "n_words": 1027,
+   "label_start": "13",
+   "label_end": "15"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 14,
-  "sections": 13,
-  "chars_total": 34413,
+  "toc_inferred_entries": 0,
+  "figure_entries": 1,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 15,
+  "chars_total": 36040,
+  "furniture_lines_stripped": 15,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 15,
-   "overlaid": 12,
+   "overlaid": 13,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -285,18 +550,23 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.971,
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.967,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-basic-example-of-averaging-method",
      "title": "Basic example of averaging method",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.974,
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.934,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -304,7 +574,7 @@
      "id": "sec-002-simple-generalizations",
      "title": "Simple generalizations",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-003-derivation-of-various-sum-formulas-by-the-averag",
@@ -318,7 +588,7 @@
      "id": "sec-004-extension-to-skew-functions",
      "title": "Extension to skew functions",
      "prose_ratio": 0.985,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -341,45 +611,53 @@
     {
      "id": "sec-007-calculating-various-sums",
      "title": "Calculating various sums",
-     "prose_ratio": 0.969,
-     "coverage_ratio": 0.954,
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.971,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-strong-integrability-in-gaussian-hermitian-matri",
+     "id": "sec-008-strong-superintegrability-and-w-operators",
+     "title": "Strong superintegrability and W-operators",
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-strong-integrability-in-gaussian-hermitian-matri",
      "title": "Strong integrability in Gaussian Hermitian matrix model",
      "prose_ratio": 0.966,
-     "coverage_ratio": 0.949,
+     "coverage_ratio": 0.966,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-strong-superintegrability-in-the-p-gaussian-mode",
+     "id": "sec-010-strong-superintegrability-in-the-p-gaussian-mode",
      "title": "Strong superintegrability in the p-Gaussian model",
      "prose_ratio": 0.986,
-     "coverage_ratio": 0.954,
+     "coverage_ratio": 0.967,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-010-relation-of-sum-formulas-to-ramanujan-sums",
+     "id": "sec-011-relation-of-sum-formulas-to-ramanujan-sums",
      "title": "Relation of sum formulas to Ramanujan sums",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.921,
+     "prose_ratio": 0.962,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-hurwitz-tau-functions",
+     "id": "sec-012-hurwitz-tau-functions",
      "title": "Hurwitz tau-functions",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.977,
+     "prose_ratio": 0.935,
+     "coverage_ratio": 0.993,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-012-conclusion",
+     "id": "sec-013-conclusion",
      "title": "Conclusion",
      "prose_ratio": 0.994,
      "coverage_ratio": 0.524,

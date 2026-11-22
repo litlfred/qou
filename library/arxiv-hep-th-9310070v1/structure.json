@@ -6,7 +6,9 @@
   "sha256": "b979ebf2f47a465388a723997e70cc863ce0a1ecc5f8a049d195b24014ff08b6",
   "bytes": 88534,
   "pages": 9,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -19,115 +21,245 @@
   },
   "doi": null,
   "title": "Quantum dilogarithm",
-  "authors_raw": "L.D. Faddeev1,2,†, R.M. Kashaev 1,∗,†",
-  "abstract": "A quantum generalization of Rogers’ ﬁve term, or “pentagon” dilogarithm identity is suggested. It is shown that the classical limit gives usua l Rogers’ identity. The case where the quantum identity is realized in ﬁnite dimensional space is also considered and the quantum dilogarithm is constructed as a function on Ferm at curve, while the identity itself is equivalent to the restricted star-triangle relat ion introduced by Bazhanov and Baxter. † Supported by the Russian Academy of Sciences and Academy of F inland ∗ On leave of absence from St. Petersburg Nuclear Physics Inst itute, Gatchina, St. Petersburg 188350, Russia",
-  "docinfo": {
-   "Producer": "GPL Ghostscript 10.01.2",
-   "CreationDate": "D:20241126154153-05'00'",
-   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
-   "Title": "arXiv:hep-th/9310070v1  13 Oct 1993"
-  },
+  "authors_raw": "L.D. Faddeev1,2,†, R.M. Kashaev1,∗,†",
   "title_lines": [
    "September, 1993",
    "Quantum Dilogarithm"
   ],
-  "title_prev": "September, 1993 Quantum Dilogarithm"
+  "abstract": "A quantum generalization of Rogers’ ﬁve term, or “pentagon” dilogarithm identity is suggested. It is shown that the classical limit gives usual Rogers’ identity. The case where the quantum identity is realized in ﬁnite dimensional space is also considered and the quantum dilogarithm is constructed as a function on Fermat curve, while the identity itself is equivalent to the restricted star-triangle relation introduced by Bazhanov and Baxter. † Supported by the Russian Academy of Sciences and Academy of Finland ∗On leave of absence from St. Petersburg Nuclear Physics Institute, Gatchina, St. Petersburg 188350, Russia",
+  "docinfo": {
+   "Title": "arXiv:hep-th/9310070v1  13 Oct 1993",
+   "Producer": "GPL Ghostscript 10.01.2",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "CreationDate": "D:20241126154153-05'00'"
+  },
+  "title_raw": "September, 1993 Quantum Dilogarithm",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:hep-th/9310070v1 13 Oct 1993",
+   "heading": "September, 1993 Quantum Dilogarithm L.D. Faddeev 1 , 2 , † , R.M. Kashaev 1 , ∗ , † 1 Research Institute for Theoretical Physics, P.O.Box 9 (Siltavuorenpenger 20C), SF-00014 University of Helsinki, Finland 2 St. Petersburg Branch of the Steklov Mathematical Institute, Fontanka 27, St. Petersburg 191",
+   "text": "September, 1993 Quantum Dilogarithm",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "arXiv:hep-th/9310070v1 13 Oct 1993"
  },
- "toc": [
+ "toc": [],
+ "toc_source": "undetermined",
+ "toc_undetermined_reason": "5 inferred entries, 60% of them starting on page(s) 1, 8 of 9 — a list found ON a page, not the document's structure",
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted (5 inferred entries, 60% of them starting on page(s) 1, 8 of 9 — a list found ON a page, not the document's structure): one section per page.",
+ "figures": [],
+ "pages": [
   {
-   "level": 1,
-   "title": "Abstract",
-   "page": 1,
-   "source": "inferred",
-   "number": null
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "level": 1,
-   "title": "Introduction",
-   "page": 2,
-   "source": "inferred",
-   "number": "1"
+   "physical": 2,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "Quantized Rogers’ Identity",
-   "page": 3,
-   "source": "inferred",
-   "number": "2"
+   "physical": 3,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "Quantum Dilogarithm at θN = 1",
-   "page": 5,
-   "source": "inferred",
-   "number": "3"
+   "physical": 4,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "References",
-   "page": 8,
-   "source": "inferred",
-   "number": null
+   "physical": 5,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   }
  ],
- "toc_source": "inferred",
  "sections": [
   {
-   "id": "sec-000-abstract",
+   "id": "page-001",
    "number": null,
-   "title": "Abstract",
+   "title": "Page 1",
    "level": 1,
    "page_start": 1,
-   "page_end": 2,
-   "n_chars": 629,
-   "n_words": 100
+   "page_end": 1,
+   "n_chars": 967,
+   "n_words": 135,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-1-introduction",
-   "number": "1",
-   "title": "Introduction",
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
    "level": 1,
    "page_start": 2,
-   "page_end": 3,
-   "n_chars": 2683,
-   "n_words": 513
+   "page_end": 2,
+   "n_chars": 2046,
+   "n_words": 366,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
-   "id": "sec-002-2-quantized-rogers-identity",
-   "number": "2",
-   "title": "Quantized Rogers’ Identity",
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
    "level": 1,
    "page_start": 3,
-   "page_end": 5,
-   "n_chars": 2866,
-   "n_words": 609
+   "page_end": 3,
+   "n_chars": 1930,
+   "n_words": 353,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
-   "id": "sec-003-3-quantum-dilogarithm-at-θn-1",
-   "number": "3",
-   "title": "Quantum Dilogarithm at θN = 1",
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1510,
+   "n_words": 301,
+   "label_start": "3",
+   "label_end": "3"
+  },
+  {
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
    "level": 1,
    "page_start": 5,
-   "page_end": 8,
-   "n_chars": 5961,
-   "n_words": 1161
+   "page_end": 5,
+   "n_chars": 1718,
+   "n_words": 330,
+   "label_start": "4",
+   "label_end": "4"
   },
   {
-   "id": "sec-004-references",
+   "id": "page-006",
    "number": null,
-   "title": "References",
+   "title": "Page 6",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 1542,
+   "n_words": 281,
+   "label_start": "5",
+   "label_end": "5"
+  },
+  {
+   "id": "page-007",
+   "number": null,
+   "title": "Page 7",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1305,
+   "n_words": 236,
+   "label_start": "6",
+   "label_end": "6"
+  },
+  {
+   "id": "page-008",
+   "number": null,
+   "title": "Page 8",
    "level": 1,
    "page_start": 8,
+   "page_end": 8,
+   "n_chars": 2827,
+   "n_words": 468,
+   "label_start": "7",
+   "label_end": "7"
+  },
+  {
+   "id": "page-009",
+   "number": null,
+   "title": "Page 9",
+   "level": 1,
+   "page_start": 9,
    "page_end": 9,
-   "n_chars": 1881,
-   "n_words": 329
+   "n_chars": 364,
+   "n_words": 56,
+   "label_start": "8",
+   "label_end": "8"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 5,
-  "sections": 5,
-  "chars_total": 14020
+  "toc_entries": 0,
+  "toc_inferred_entries": 5,
+  "toc_inferred_mean_confidence": 0.86,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 9,
+  "chars_total": 14209,
+  "furniture_lines_stripped": 0
  }
 }

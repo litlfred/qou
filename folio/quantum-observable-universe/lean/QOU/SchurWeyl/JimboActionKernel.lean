@@ -51,7 +51,7 @@ import Mathlib.RingTheory.TwoSidedIdeal.Kernel
 * Surjectivity onto the `U_q(sl₂)` commutant (Schur–Weyl proper) is not claimed: only the
   image's dimension and the kernel.
 
--- Ref: [jimbo1986]; [manuscript] bean qou-k4oq
+-- Ref: [jimbo1986]; [leitner2026] bean qou-k4oq
 -/
 
 namespace QOU.SchurWeyl.JimboActionKernel

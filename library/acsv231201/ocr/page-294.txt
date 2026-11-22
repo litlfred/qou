@@ -1,0 +1,44 @@
+276 Smooth point asymptotics
+
+move it in the (1, 0) direction halfway to ps, then up and around the boundary
+of the component containing ps; moving rightward to the edge of the picture
+and then upward into B’. Until the very end, this traces a single path in each of
+the two preimages of the log-modulus map. Therefore y will be a single arc,
+centered on the preimage of the point x’ where the amoeba was first entered
+(this boundary point having a single preimage) and extending downward until
+another piece of arc appears when passing through where the preimage size is
+four. This second arc can be made to occur below every critical point, therefore
+as acycle relative to —oo the cycle y is a simple arc in the preimage size 2 region
+with ps on its boundary.
+
+We conclude immediately that p\, p2, p3, p4,ps, and pe do not contribute.
+The first four are in fact higher than the origin, so the upward trajectories can-
+not possibly intersect the intersection cycle. For ps, it suffices to check that
+the two upward trajectories can be drawn to be disjoint from our choice of
+y. Indeed, the two ascent arcs, projected to the amoeba, move initially in the
+(-1,-1) direction, and can do so until they are higher than the highest point
+on the intersection cycle. Where they go after that is unclear, because upon
+entering the preimage size 4 region it is no longer clear which is the increasing
+time direction, so the image of the arcs may no longer be able to move in the
+(-—1,-1) direction. However, they are already high enough that they cannot in-
+tersect y. By symmetry, an identical argument (choosing a different y) shows
+that pe cannot contribute.
+
+By symmetry, p7 contributes if and only if pg contributes. By process of
+elimination, because we know the asymptotics are non-zero, these both con-
+tribute. To argue this geometrically, one needs to understand where the two
+ascent arcs from p7 go. The description in terms of the four preimages is a lit-
+tle complicated, but one finds in the end that the projections of the two ascent
+arcs to the amoeba pass around the hole (the region B) in opposite ways, one
+to the north and one to the south. This forces the intersection number with y to
+be +1; see [Wan22] for details.
+
+We conclude that the intersection cycle y is homologous to the sum of a
+homology generator going downward from p7 and a homology generator going
+downward from pg, with properly chosen signs. The coordinates of the critical
+points are algebraic numbers satisfying
+
+55 x5 +664 x7 +2840 x° +5780 x° +5610 x4 +2520 x +440 x? -44 x-45 =0.
+
+The points p7 and pg are on the diagonal, conjugate to each other, with co-
+ordinates —2.19... + i1.10.... The two contributions have opposite phases,

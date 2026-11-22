@@ -1,20 +1,12 @@
 ## Proof
 
-The Habiro ring $\widehat{\mathbb{Z}[q]}$ is by definition the
-inverse limit $\varprojlim_n \mathbb{Z}[q]/((q;q)_n)$; an element is
-specified by a coherent sequence of cyclotomic remainders
-\cite{habiro2004}. Existence of the
-expansion: the Markov trace of a finite braid word in the standard
-Hecke generators $\sigma_i$ lies in $\mathbb{Z}[q^{\pm 1/2}]$ after
-clearing the cyclotomic denominators that arise from the Wedderburn
-weights $w_\lambda(q) = \dim_q(\lambda)^2/[n]_q!$ (Markov–Jones
-integrality, \cite{jones1987} Thm 3). Sequential cyclotomic division
-by $(1 - q^{m+1})$ produces the unique sequence
-$\{a_m\} \subset \mathbb{Z}[q^{\pm 1}]$ with $\deg_q a_m \leq m$
-([atomic Habiro expansion](#cor:habiro-expansion-atomic), Step 2).
-Property (1) is immediate from $(q;q)_m(\zeta_n^{(j)}) = 0$ for
-$n \leq m$. Property (2) is the definition of the Habiro topology.
-Property (3) is the termination clause of the atomic case. $\square$
+*Part 1.* Induct on $n$. On $H_1(q) = R$ the trace is $\mathrm{tr}_M(1) = 1$. For $w \in S_{n+1} \setminus S_n$ the coset decomposition gives $T_w = T_u\,\sigma_n\,T_v$ with $u, v \in S_n$, so the Markov property and cyclicity give
+$\mathrm{tr}_M(T_w) = z\,\mathrm{tr}_M(T_v T_u)$.
+The product $T_v T_u$ expands in the standard basis of $H_n(q)$ with coefficients in $\mathbb{Z}[h]$, because the only relation used is $\sigma_i^{2} = h\,\sigma_i + 1$. By induction each $\mathrm{tr}_M(T_x)$, $x \in S_n$, is a polynomial in $z$ of degree at most $n-1$ over $\mathbb{Z}[h]$, so $\mathrm{tr}_M(T_w)$ has degree at most $n$. For $w \in S_n$ the induction hypothesis applies directly. Since $h \in \mathbb{Z}[q^{\pm 1}]$ and $(q^{2}+1)z = q^{3}$, multiplying by $(q^{2}+1)^{n-1}$ clears every denominator.
+
+*Part 2.* $\mathbb{Z}[q^{\pm1}] \subset \widehat{\mathbb{Z}[q]}$ because $q$ is a unit there. Sequential division by $(1 - q^{m+1})$ produces the coefficients $a_m$ ([atomic Habiro expansion](#cor:habiro-expansion-atomic), Step 2) \cite{habiro2004}.
+
+*Part 3.* Evaluation at a root of unity is a ring homomorphism on $\widehat{\mathbb{Z}[q]}$. If $z$ lay in $\widehat{\mathbb{Z}[q]}$, applying evaluation at $q = i$ to $(1+q^{2})z = q^{3}$ would give $0 = -i$. $\square$
 
 ## Inadequacy of the previous wording
 

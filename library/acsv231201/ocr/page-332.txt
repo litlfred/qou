@@ -1,0 +1,46 @@
+314 Multiple point asymptotics
+
+defining a hyperplane arrangement. Given a meromorphic function F(z) =
+P(z)/Q(z) with poles on the zero set of Q, Algorithm 4 terminates and pro-
+duces the claimed representation of F.
+
+Proof Let w be a circuit and consider the weight function
+n n
+(LI war | = » jaj.
+jel jel
+The reduction described in (10.15) replaces one term by a sum of terms whose
+denominators have greater weight but the same total degree (the sum of the ex-
+ponents that appear on the linear factors). Repeatedly applying the decompo-
+sition gives terms with the same total degree but successively higher weights.
+Because the weight function is bounded among terms whose total degree is
+fixed, the loop in the algorithm must terminate, and when it terminates every
+summand has a denominator whose linear factors form a y-independent set.
+Thus, the pole set of each summand returned forms a transverse hyperplane
+arrangement contained in V(Q). ao
+
+Corollary 10.34. If F(z) = >), arz” is a convergent power series expansion
+of a meromorphic function having poles on a hyperplane arrangement then
+asymptotics of a, can be computed by decomposing F into a sum of functions
+having poles on transverse hyperplane arrangements using Theorem 10.33 and
+applying Theorem 10.25 to each summand.
+
+We note that the sum may have a large number of terms, the computations
+can be difficult to carry out by hand, and a computer algebra system is often
+useful.
+
+Example 10.35. Let F = P(x,y)/Q(x,y), where P(x,y) = 1 and Q(x,y) =
+(3 — 2x - y)(3 — x — 2y)(2 — x— y)?, a simple variation of Example 10.32. The
+decomposition algorithm yields
+1
+Fe /3 + 1/3
+(3-x-2y(2-x-yR  (3-2x-y\(2-x- yy
+
+so that a, ~ (r —2s)?/2 for directions # = (r,s) with s/r € (1/2, 1), while
+dy ~ (s — 2r)’/2 when s/r € (1,2), and a, is exponentially small when s/r is
+bounded strictly away from these two intervals. 4
+
+Up to this point, our roadmap for general hyperplane arrangements has been
+to use matroid theory and algebra to reduce to the transverse case. We finish our
+treatment of linear divisors by describing the general topological story. We will
+not be using these results, but include some discussion because it can help un-
+derstand the non-linear case. The topology local to a critical point is the same

@@ -1,0 +1,1 @@
+A skein which is linearly isomorphic to A is used by Kawagoe [6] and other authors. Their version is based on the annulus with input and output points on the same component. More recently A has come into use, as its algebraic properties allow for some satisfyingly clean proofs. See also [14], and work by Lukac [10].

@@ -1,0 +1,67 @@
+Cluster Expansions: Necessary... Page 13 0f47 33
+
+(i) There exists a function a(.) from the finite subsets of Z4 to [0, ©) such that a(@) = Oand
+the following system of inequalities is satisfied: For all finite, non-empty subsets D C Zé
+there exists an x € D such that—setting D! := D\{x}—we have
+
+y (Vet DUY—a(D) < ga(D'Uix)) aD!) _ 4, (2.18)
+
+Yex:
+Yax, YND'=o
+
+(ii) T(D; z) is absolutely convergent for all finite subsets D C Z4.
+
+Moreover, if one of the equivalent conditions (hence, both) holds true, then, for all finite
+subsets D C Z4, we have
+
+%
+
+1
+
+log TD: d|< 7 DI MsevinvgoyleeM,--. Yad [eM) + 2x) < aD).
+k=1 (V1, YeeX*
+
+(2.19)
+
+The theorem is similar to Claim | in [1, Sect. 4.2]. As noted in [1], Theorem 2.7 allows
+for an easy recovery of the extended Gruber—-Kunz criterion. The criterion is named after
+Gruber and Kunz [12], who proved a similar condition but with a strict inequality. See [8]
+for a comparison of the Gruber—Kunz criterion to other classical conditions.
+
+Corollary 2.8 Let (z(X))xex be a non-negative activity. Suppose there exists some a > 0
+such that for all x € Z4,
+
+Soave! < e* - 1. (2.20)
+Ysax
+
+Then T (D; z) is absolutely convergent, for all finite subsets D C Z4.
+
+Proof Set a(D) := a|D|, where a > 0 satisfies the inequality from (2.20). Because of the
+additivity of a(-), we have a(DUY) = a(D)+<a(Y) for all finite, disjoint subsets D, Y C ZA,
+Therefore condition (2.18) becomes
+
+> 2(vyet® < et) _ 4,
+Yox:
+YND=S
+
+which depends on D only through the constraint YM D # © on the left-hand side. By the
+non-negativity of the activity z, it is clearly sufficient that
+
+Yi) AY < et) _ 4,
+Yax
+
+which holds true for all x € Z4 because of (2.20). oO
+
+Another immediate consequence of Theorem 2.7 is that convergence of cluster expansions
+implies exponential decay of the activities in the object size. Precisely, set
+
+ViD):= YO ay).
+Yex:
+YND#42
+
+Notice that if the activity is translationally invariant and not identically zero, one can choose
+an arbitrary polymer X € X with positive activity, say zo > 0, and obtain the bound
+
+V(D) = zolDI. (2.21)
+
+D Springer

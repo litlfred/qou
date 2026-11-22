@@ -19,6 +19,7 @@ export default proposition({
   uses: ["prop:fivetwo-trace-field", "prop:hyperbolic-knot-shape-fields"],
   cites: ["zagier1986", "ohtsuki2016"],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): Original wording: \"Every step uses only the standard axioms, and `SaddleRoots` is inhabited via the intermediate value theorem\"; \"a statement about a hyperbolic manifold, which is not formalised here\"." },
     {
       kind: "note",
       date: "2026-08-24",

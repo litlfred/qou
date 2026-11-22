@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/0510388v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0510388v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -74,11 +74,10 @@
     "library/0510388v1/sections/sec-059",
     "library/0510388v1/sections/sec-060",
     "library/0510388v1/sections/sec-061",
-    "library/0510388v1/sections/sec-062",
-    "library/0510388v1/sections/sec-063"
+    "library/0510388v1/sections/sec-062"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "0510388v1",
     "title_source": "pdf-info",

@@ -148,7 +148,7 @@ theorem braidAction_injective
     propositional and therefore `Subsingleton`-like — two proofs of
     the same existential agree as Props.  This is a scaffolding lemma
     showing the class can be used unconditionally to extract data. -/
--- Ref: [manuscript] braids-and-knots/hecke-anyonic-substrate
+-- Ref: [leitner2026] braids-and-knots/hecke-anyonic-substrate
 theorem normal_form_inhabited_of_action
     {R : Type u} [CommRing R] {q : R} [H : HeckeAnyonicSubstrate R q]
     (T : H.NormalForm) :
@@ -172,7 +172,7 @@ theorem normal_form_inhabited_of_action
     instance would silently discharge every `[HeckeAnyonicSubstrate R q]`
     hypothesis in the tree. Same disposition as
     `KazhdanLusztigClassicalLimit.canonical`. -/
--- Ref: [manuscript] conj:hecke-anyonic-substrate (counter-model, not a witness)
+-- Ref: [leitner2026] conj:hecke-anyonic-substrate (counter-model, not a witness)
 def zeroQCounterModel : HeckeAnyonicSubstrate ℤ 0 where
   NormalForm := ℤ
   braidAction i T := if i = 0 then -T else 0
@@ -183,7 +183,7 @@ def zeroQCounterModel : HeckeAnyonicSubstrate ℤ 0 where
 
 /-- `IsUnit q` is load-bearing in `braidAction_injective`: drop it and the
     statement is false, witnessed at `q = 0` on strand `1`. -/
--- Ref: [manuscript] conj:hecke-anyonic-substrate
+-- Ref: [leitner2026] conj:hecke-anyonic-substrate
 theorem braidAction_not_injective_at_zero :
     ¬ Function.Injective (zeroQCounterModel.braidAction 1) := by
   intro h

@@ -4,10 +4,11 @@ doc_title: "Équations aux q-différences"
 section_id: sec-001-2-breviaire
 section_title: "Br´eviaire"
 section_number: 2
-pages: 5-8
+pages: 5-7
 source_pdf: Equations_aux_q-differences.pdf
 source_sha256: 357d4e0b546b27e6
 toc_source: inferred
+doc_brief: "Équations aux q-différences — 14 sections: Front matter; Introduction; Br´eviaire"
 ---
 Nous consid´ererons des ´equations aux q-diﬀ´erences lin´eaires d’ordre n :
 (2.0.3)
@@ -175,11 +176,3 @@ qui permet, it´erativement, d’agrandir le disque de d´eﬁnition de F. Ce
 ph´enom`ene de propagation de la m´eromorphie est caract´eristique des ´equations
 aux q-diﬀ´erences complexes, mais aussi p-adiques, et est en contraste marqu´e
 avec la th´eorie des ´equations diﬀ´erentielles.
-3. Classiﬁcation et conﬂuence
-des syst`emes fuchsiens rationnels
-Dans le §3, le nombre complexe q est de module > 1 et les ai sont des
-fonctions rationnelles de la variable complexe x. Si λ ∈C∗, on note λqZ = [λ; q]
-la q-spirale discr`ete {λqn : n ∈Z}.
-SMF – Gazette – 96, Avril 2003
-´EQUATIONS AUX q-DIFF´ERENCES
-27

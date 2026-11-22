@@ -1,0 +1,1 @@
+The scheme 0Π1 is an A-torsor. In particular, the action of A on 1 ∈0Π1 deﬁnes an isomorphism of schemes a 7→a(1) : A −→0Π1 . (2.11) The action of A on 0Π1 deﬁnes, via this isomorphism, a new group law ◦: 0Π1 × 0Π1 →0Π1 . It is given explicitly on formal power series by Ihara’s formula A(x0, x1) ◦G(x0, x1) = G(x0, Ax1A−1)A (2.12)

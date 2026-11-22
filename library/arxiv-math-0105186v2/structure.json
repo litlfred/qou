@@ -8,7 +8,7 @@
   "pages": 71,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -21,7 +21,7 @@
    "stamp_date": "20 Jul 2002"
   },
   "doi": null,
-  "title": "arXiv:math/0105186v2 [math.SG] 20 Jul 2002",
+  "title": "A long exact sequence for symplectic Floer cohomology",
   "authors_raw": "Paul Seidel",
   "title_lines": [
    "A long exact sequence for",
@@ -45,7 +45,8 @@
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:math/0105186v2 [math.SG] 20 Jul 2002"
  },
  "toc": [
   {
@@ -936,8 +937,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 4,
-   "n_chars": 7143,
-   "n_words": 1177,
+   "n_chars": 7141,
+   "n_words": 1176,
    "label_start": null,
    "label_end": null
   },
@@ -947,153 +948,177 @@
    "title": "Dehn twists, and all that",
    "level": 1,
    "page_start": 4,
-   "page_end": 10,
-   "n_chars": 16356,
-   "n_words": 3129,
+   "page_end": 4,
+   "n_chars": 693,
+   "n_words": 118,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-002-12-the-local-model",
+   "id": "sec-002-11-exact-symplectic-geometry-and-fibrations",
+   "number": "1.1",
+   "title": "Exact symplectic geometry and fibrations",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 10,
+   "n_chars": 15680,
+   "n_words": 3014,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-12-the-local-model",
    "number": "1.2",
    "title": "The local model",
    "level": 2,
    "page_start": 10,
    "page_end": 17,
-   "n_chars": 18523,
-   "n_words": 3580,
+   "n_chars": 18535,
+   "n_words": 3582,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-003-13-vanishing-cycles",
+   "id": "sec-004-13-vanishing-cycles",
    "number": "1.3",
    "title": "Vanishing cycles",
    "level": 2,
    "page_start": 17,
    "page_end": 22,
-   "n_chars": 8583,
-   "n_words": 1681,
+   "n_chars": 8598,
+   "n_words": 1682,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-004-2-pseudo-holomorphic-sections",
+   "id": "sec-005-2-pseudo-holomorphic-sections",
    "number": "2",
    "title": "Pseudo-holomorphic sections",
    "level": 1,
    "page_start": 22,
    "page_end": 22,
-   "n_chars": 993,
-   "n_words": 154,
+   "n_chars": 1017,
+   "n_words": 155,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-005-21-a-simple-invariant",
+   "id": "sec-006-21-a-simple-invariant",
    "number": "2.1",
    "title": "A simple invariant",
    "level": 2,
    "page_start": 22,
    "page_end": 29,
-   "n_chars": 16443,
-   "n_words": 3216,
+   "n_chars": 16458,
+   "n_words": 3218,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-006-22-horizontality",
+   "id": "sec-007-22-horizontality",
    "number": "2.2",
    "title": "Horizontality",
    "level": 2,
    "page_start": 29,
    "page_end": 32,
-   "n_chars": 8273,
+   "n_chars": 8283,
    "n_words": 1595,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-007-23-a-vanishing-theorem",
+   "id": "sec-008-23-a-vanishing-theorem",
    "number": "2.3",
    "title": "A vanishing theorem",
    "level": 2,
    "page_start": 32,
    "page_end": 38,
-   "n_chars": 12625,
-   "n_words": 2463,
+   "n_chars": 12641,
+   "n_words": 2465,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-008-24-relative-invariants",
+   "id": "sec-009-24-relative-invariants",
    "number": "2.4",
    "title": "Relative invariants",
    "level": 2,
    "page_start": 38,
    "page_end": 45,
-   "n_chars": 19392,
-   "n_words": 3655,
+   "n_chars": 19408,
+   "n_words": 3656,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-009-25-horizontality-and-relative-invariants",
+   "id": "sec-010-25-horizontality-and-relative-invariants",
    "number": "2.5",
    "title": "Horizontality and relative invariants",
    "level": 2,
    "page_start": 45,
    "page_end": 51,
-   "n_chars": 11700,
-   "n_words": 2346,
+   "n_chars": 11736,
+   "n_words": 2349,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-010-3-wrapping-it-up",
+   "id": "sec-011-3-wrapping-it-up",
    "number": "3",
    "title": "Wrapping it up",
    "level": 1,
    "page_start": 51,
    "page_end": 51,
-   "n_chars": 725,
-   "n_words": 121,
+   "n_chars": 736,
+   "n_words": 123,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-011-31-preliminaries",
+   "id": "sec-012-31-preliminaries",
    "number": "3.1",
    "title": "Preliminaries",
    "level": 2,
    "page_start": 51,
-   "page_end": 60,
-   "n_chars": 21193,
-   "n_words": 4015,
+   "page_end": 55,
+   "n_chars": 8775,
+   "n_words": 1628,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-012-33-the-second-map",
+   "id": "sec-013-32-the-first-map",
+   "number": "3.2",
+   "title": "The first map",
+   "level": 2,
+   "page_start": 55,
+   "page_end": 60,
+   "n_chars": 12423,
+   "n_words": 2386,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-014-33-the-second-map",
    "number": "3.3",
    "title": "The second map",
    "level": 2,
    "page_start": 60,
    "page_end": 64,
-   "n_chars": 6697,
-   "n_words": 1293,
+   "n_chars": 6708,
+   "n_words": 1295,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-013-34-the-homotopy",
+   "id": "sec-015-34-the-homotopy",
    "number": "3.4",
    "title": "The homotopy",
    "level": 2,
    "page_start": 64,
    "page_end": 71,
-   "n_chars": 14500,
-   "n_words": 2554,
+   "n_chars": 14513,
+   "n_words": 2556,
    "label_start": null,
    "label_end": null
   }
@@ -1112,13 +1137,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 15,
-  "chars_total": 163282,
+  "sections": 17,
+  "chars_total": 163481,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "all.tex",
    "tex_sections": 16,
-   "overlaid": 2,
+   "overlaid": 3,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1141,69 +1167,82 @@
     {
      "id": "sec-001-1-dehn-twists-and-all-that",
      "title": "Dehn twists, and all that",
-     "prose_ratio": 0.626,
-     "coverage_ratio": 0.986,
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.968,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-12-the-local-model",
+     "id": "sec-002-11-exact-symplectic-geometry-and-fibrations",
+     "title": "Exact symplectic geometry and fibrations",
+     "prose_ratio": 0.609,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-12-the-local-model",
      "title": "The local model",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-003-13-vanishing-cycles",
+     "id": "sec-004-13-vanishing-cycles",
      "title": "Vanishing cycles",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-004-2-pseudo-holomorphic-sections",
+     "id": "sec-005-2-pseudo-holomorphic-sections",
      "title": "Pseudo-holomorphic sections",
      "prose_ratio": 0.084,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-005-21-a-simple-invariant",
+     "id": "sec-006-21-a-simple-invariant",
      "title": "A simple invariant",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-006-22-horizontality",
+     "id": "sec-007-22-horizontality",
      "title": "Horizontality",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-007-23-a-vanishing-theorem",
+     "id": "sec-008-23-a-vanishing-theorem",
      "title": "A vanishing theorem",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-008-24-relative-invariants",
+     "id": "sec-009-24-relative-invariants",
      "title": "Relative invariants",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-009-25-horizontality-and-relative-invariants",
+     "id": "sec-010-25-horizontality-and-relative-invariants",
      "title": "Horizontality and relative invariants",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-010-3-wrapping-it-up",
+     "id": "sec-011-3-wrapping-it-up",
      "title": "Wrapping it up",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-011-31-preliminaries",
+     "id": "sec-012-31-preliminaries",
      "title": "Preliminaries",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-012-33-the-second-map",
+     "id": "sec-013-32-the-first-map",
+     "title": "The first map",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-33-the-second-map",
      "title": "The second map",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-013-34-the-homotopy",
+     "id": "sec-015-34-the-homotopy",
      "title": "The homotopy",
      "result": "no matching \\section"
     }

@@ -1,0 +1,46 @@
+The descendant colored Jones polynomials 2313
+
+functions have annihilating ideals (i.e., ideals of linear g-difference equations)
+of maximal dimension.
+
+Proposition 2.3. DIJO” (q), DJ! (x, q) and DJ (q) are q-holonomic func-
+tions of (m,n), (m,x) and m, respectively. Linear q-difference equations for
+
+these functions can be obtained from one for the Habiro polynomials H;(q).
+
+Proof. The first part follows from the closure properties of g-holonomic func-
+tions explained in detail in [GL16], and the fact that the colored Jones polyno-
+mial (and hence, the sequence of Habiro polynomials) is g-holonomic [GL05]
+and ¢n,r(q) and gkn(q) are g-holonomic (in fact g-proper hypergeometric)
+functions. Using a computer implementation given by Koutschan [Kou09,
+Koul0], we can obtain a linear g-difference equation for DJ (™)(g) given one
+for Hj,(q). The obtained linear g-difference equations may not be of the small-
+est order. im
+
+The above proposition implies that the annihilating ideal of the 3-variable
+invariant DIM (x, q) is a knot invariant, and so is a minimal recursion of
+DJ! (2, q) with respect to x or m. Moreover, a minimal recursion with re-
+spect to m can be computed from a recursion for the Habiro polynomials H;
+as well as some of their initial values. This is illustrated in Section 2.5 below.
+
+The annihilating polynomial of DI (a, q) with respect to m has an ex-
+cess degree whose relation to the character variety of SL2(C)-representations
+is a challenging question discussed in Section 2.5 below.
+
+To effectively apply Proposition 2.3 we need to know a recursion for the
+Habiro polynomials of a knot. Such a recursion can be obtained from a q-
+hypergeometric formula for the Habiro polynomials, as was done in [GS06] for
+all twist knots using a formula for the Habiro polynomials given in [Hab02,
+Mas03]. Alternatively, one can use a recursion for J,(q), Equation (3) and
+the methods of [Koul0] to obtain a recursion for the Habiro polynomials.
+Although the above mentioned computer implementation in theory succeeds
+(and does so with a certified computation), in practice it may not termi-
+nate. As a concrete example, the colored Jones polynomials of the (—2, 3, 7)
+pretzel knot satisfy a guessed inhomogeneous sixth order q-difference equa-
+tion [GK12], but a direct attempt to find a recursion for its Habiro polyno-
+mials did not terminate. Instead, one can use the recursion for the colored
+Jones to compute several thousand values of them (modulo a prime) and
+Equation (3) to do the same for the Habiro polynomials, and with some hints
+for the shape of the Newton polygon to guess a recursion for the Habiro
+polynomials. This is explained in detail for the (—2, 3, 7) pretzel knot and for
+several other knots in forthcoming work [GK].

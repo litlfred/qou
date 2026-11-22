@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/vonneumann2015/sections/sec-015",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Order on projections",
+  "pageStart": 35,
+  "pageEnd": 40,
+  "contains": [
+    "library/vonneumann2015/blocks/prose-sec-015",
+    "library/vonneumann2015/blocks/thm-sec-015-01",
+    "library/vonneumann2015/blocks/rem-sec-015-02",
+    "library/vonneumann2015/blocks/rem-sec-015-03",
+    "library/vonneumann2015/blocks/rem-sec-015-04",
+    "library/vonneumann2015/blocks/rem-sec-015-05",
+    "library/vonneumann2015/blocks/thm-sec-015-06",
+    "library/vonneumann2015/blocks/thm-sec-015-07",
+    "library/vonneumann2015/blocks/cor-sec-015-08",
+    "library/vonneumann2015/blocks/cor-sec-015-09",
+    "library/vonneumann2015/blocks/thm-sec-015-10",
+    "library/vonneumann2015/blocks/thm-sec-015-11",
+    "library/vonneumann2015/blocks/cor-sec-015-12",
+    "library/vonneumann2015/blocks/cor-sec-015-13",
+    "library/vonneumann2015/blocks/cor-sec-015-14"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/vonneumann2015/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/vonneumann2015/manifest.jsonld",
+  "provenance": "ingested"
+}

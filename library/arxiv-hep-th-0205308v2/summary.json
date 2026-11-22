@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-hep-th-0205308v2",
  "source_sha256": "2de5a4f40d80174c",
- "brief": "WDVV Equations as Functional Relations — 5 sections: Introduction; WDVV and dispersionless Hirota equ; The associativity equations as coc",
- "extended": "**WDVV Equations as Functional Relations**\n\n*H.W. Braden 1 and A. Marshakov 2*\n\n9 pp, 5 sections.\n\n**Outline.** Introduction; WDVV and dispersionless Hirota equations; The associativity equations as cocycle conditi; Example: perturbative Seiberg-Witten prepotent; Discussion",
+ "brief": "WDVV Equations as Functional Relations — 6 sections: Front matter; Introduction; WDVV and dispersionless Hirota equ",
+ "extended": "**WDVV Equations as Functional Relations**\n\n*H.W. Braden1 and A. Marshakov2*\n\n9 pp, 6 sections.\n\n**Outline.** Front matter; Introduction; WDVV and dispersionless Hirota equations; The associativity equations as cocycle conditi; Example: perturbative Seiberg-Witten prepotent; Discussion",
  "tokens": {
-  "brief": 34,
-  "extended": 68
+  "brief": 28,
+  "extended": 71
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-introduction",
    "title": "Introduction",

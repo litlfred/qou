@@ -1,0 +1,53 @@
+44 Generating functions
+
+coefficient of z” in (2.8) gives the linear equation
+
+m D
+
+» uj (t= + Hj nes =0
+
+j=0 k=0
+
+having polynomial coefficients in n of degrees at most m. This is a non-trivial
+linear recurrence for {a,}, because for any k such that dyn = [z“]Pn(z) # 0 the
+coefficient Of dy—Kim iS Dngn’ + O(n!) # 0.
+
+Conversely, suppose that {a,,} is P-recursive and satisfies (2.10). The set of
+falling-factorial polynomials {(n + j); : j = 0} forms a basis for C[n] which
+is triangular with respect to the basis {ni : j = O}, hence each P;(n) is a finite
+linear combination P;(n) = Yj cx, (n+ jf); and substitution into (2.10) yields
+
+deg P,
+
+y » CK (N+ f)jdnak = 0.
+
+k=0 j=0
+
+The rules for differentiating formal power series extend to the differentiation
+of Laurent series, and imply that the coefficient of z” in the repeated derivative
+(J F(Q) is (n+ J)j Qn+k- Multiplying our last equality by z" and summing
+over all values of n thus gives the relation
+
+m_ deg Py
+
+» » Ckj (fo) =0.
+
+k=0 j=0
+
+Using the product rule, this becomes a non-trivial linear ODE in f(z) with
+coefficients in C[z, z~'], and multiplying through by a sufficiently high power
+of z proves that f(z) is D-finite. o
+
+Multivariate D-finite functions
+
+Generalizing the univariate definition, a multivariate formal power series f(z) €
+C[[z]] is called a D-finite sequence when f and all its iterated partial deriva-
+tives generate a finite dimensional vector space over C(z). The correct ana-
+logue of P-recursiveness in the multivariate case is not as obvious: the fol-
+lowing definition, recursive in the dimension d, comes from [Lip89, Defini-
+tion 3.2].
+
+Definition 2.25 (P-recursiveness in arbitrary dimension). Suppose d > 1 and
+P-recursiveness has been defined for arrays of dimension d — 1. Then the mul-
+tivariate sequence {a, : rT € N“ is said to be a P-recursive sequence if there is
+some positive integer k such that the following two conditions hold.

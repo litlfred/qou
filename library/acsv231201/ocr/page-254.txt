@@ -1,0 +1,46 @@
+236 Effective computations and ACSV
+
+which are minimal. Verifying minimality requires testing inequalities between
+the moduli of coordinate variables, a real algebraic problem that is more ex-
+pensive than simply computing critical points, but effective tests for minimality
+follow from the results in Section 6.4 of Chapter 6.
+
+Combinatorial expansions
+The simplest situation holds for combinatorial power series expansions, which
+we recall are power series expansions with all but a finite number of coeffi-
+cients being nonnegative. Corollary 6.39 implies that a point w € V is minimal
+with respect to such an expansion if and only if
+
+OAti|,...,twal)#0 (Ostst,
+which we can test algorithmically using Grobner bases.
+Example 8.20. We return again to the generating function
+
+xy(1 — x)
+(1 - x4 - xy(1 -— x - x2 +3 + x? y)
+
+F(x,y) = » ArsxX'y? =
+1820
+from Example 12.23 which, as a multivariate generating function, is combina-
+torial.
+
+In the direction # = (3/4, 1/4) there are four smooth critical points, cor-
+responding to the 4 roots of the quartic for x derived in Example 8.16. The
+point (1,0) also occurs as a solution to the critical point equations, but is not
+a smooth point, and we ignore it for now. Only one of the four smooth critical
+points a = (0.45040...,0.39142...) lies in the first quadrant, and there are
+no other critical points with the same coordinate-wise modulus. Thus o is the
+only smooth critical point which could be minimal. To verify that it is mini-
+mal, we need only check that the variety defined by adding Q(tx, ty) = 0 to the
+critical point equations has no solutions with (x,y) = o and0 < ft < 1. An-
+other Grébner basis computation shows that this new variety has 21 solutions,
+including the five critical points which correspond to tf = 1. The only element
+of the variety where (x, y) = o has t = 1, proving that o is minimal. 4
+
+The difficult part of this approach is working with the critical points implic-
+itly through their defining algebraic equations. Grobner basis computations can
+be slow, and theoretical complexity guarantees are weak in the worst case. Mel-
+ezer and Salvy [MS21] give a complexity analysis for smooth varieties using a
+Kronecker representation, which parametrizes the generically finite set of crit-
+ical points by the roots of a univariate polynomial in a new variable that is an
+integer linear combination of z),..., Za, t. Other alternatives include homotopy
+methods for polynomial system solving [LMS22], or proving minimality by

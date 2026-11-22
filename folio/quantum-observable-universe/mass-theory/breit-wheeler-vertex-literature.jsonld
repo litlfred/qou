@@ -2,7 +2,8 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/rem-breit-wheeler-vertex-literature",
@@ -18,6 +19,8 @@
   ],
   "interprets": "papers/quantum-observable-universe/blocks/def-exceptional-divisor",
   "cites": [
+    "references/arxiv-1910.09966v1",
+    "references/arxiv-1302.0342v1",
     "references/bilson-thompson2005",
     "references/bilsonthompson2007",
     "references/kauffman1991",

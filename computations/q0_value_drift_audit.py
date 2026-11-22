@@ -114,6 +114,16 @@ PIN_TOL_PPB = mpf("0.5")             # how close to a named pin counts as that p
 Q0_FIELD = re.compile(r"^(q_?0|q_?0_\d+dps|q0Value|q_zero|substrate_q)$", re.I)
 EXCLUDE_FIELD = re.compile(r"star|\*|anchor$|err|sigma|unit", re.I)
 
+# A field whose PATH names it as a retired / frozen pin is a deliberate
+# record of that pin, not a stale copy of the live one.  The type case is a
+# probe that evaluates one quantity "at every registered pin" and stores each
+# under a key such as `figures_at_retired` / `figures_at_frozen_A`: re-running
+# it reproduces the same retired value, because the retired value is its
+# subject.  Such a field is reported in its own class so it stays visible,
+# and only when it is still close to canonical (|d| < 100 ppb) -- a labelled
+# field far from every anchor is still `unknown`.
+RETIRED_LABEL = re.compile(r"retired|frozen", re.I)
+
 # Only values in this neighbourhood are substrate anchors at all.
 Q_LO, Q_HI = mpf("1.1"), mpf("1.12")
 
@@ -122,12 +132,14 @@ def _ppb(x: mpf) -> mpf:
     return (x - Q_CANONICAL) / Q_CANONICAL * mpf(10) ** 9
 
 
-def classify(x: mpf) -> tuple[str, mpf]:
+def classify(x: mpf, path: str = "") -> tuple[str, mpf]:
     d = _ppb(x)
     if abs(d) < mpf("1e-6"):
         return "canonical", d
     if abs(d - PROTON_PIN_PPB) < PIN_TOL_PPB:
         return "proton-pin", d
+    if abs(d) < mpf("100") and RETIRED_LABEL.search(path):
+        return "labelled-retired", d
     if abs(d) < mpf("100"):
         return "STALE", d
     return "unknown", d
@@ -143,7 +155,7 @@ def _walk(obj, path: str, out: list) -> None:
                 except Exception:
                     continue
                 if Q_LO < x < Q_HI:
-                    cls, d = classify(x)
+                    cls, d = classify(x, p)
                     out.append({"field": p, "value": str(v), "class": cls,
                                 "ppb_vs_canonical": float(d)})
             else:
@@ -186,10 +198,11 @@ def main() -> int:
     print("=" * 74)
     print("q0-VALUE DRIFT AUDIT")
     print("=" * 74)
-    for cls in ("canonical", "proton-pin", "STALE", "unknown"):
+    for cls in ("canonical", "proton-pin", "labelled-retired", "STALE", "unknown"):
         n = len(by.get(cls, []))
         note = {"proton-pin": "  (documented physical-observations layer — legitimate)",
-                "canonical": "  (CAL-2 muon pin — the computations/ convention)"}.get(cls, "")
+                "canonical": "  (CAL-2 muon pin — the computations/ convention)",
+                "labelled-retired": "  (field path names a retired/frozen pin — deliberate record)"}.get(cls, "")
         print(f"  {cls:<12} {n:>5}{note}")
     print(f"  {'TOTAL':<12} {len(rows):>5} q0-bearing fields in *.witness.json")
 

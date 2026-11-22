@@ -46,7 +46,7 @@ We **name** non-degeneracy as the bijectivity of the induced pairing
 map — a `Prop` over the context's primitive data — rather than
 projecting it from self-assuming `pairing_inj`/`pairing_surj` fields.
 An instance of this proposition is the open faithfulness claim. -/
--- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-1.ts
+-- Ref: [leitner2026] quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-1.ts
 def exists_axiom_1_frobenius [ctx : ExistsAxiom1FrobeniusContext] : Prop :=
     Function.Bijective ctx.pairing_map
 

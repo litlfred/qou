@@ -1,0 +1,49 @@
+2.2 Rational operations on generating functions 21
+
+of A, and 8,. (so that objects from A are always considered distinct from
+objects in 8).
+
+The combinatorial interpretations of equality, multiplication by variables
+and disjoint union are fairly simple, but already yield interesting examples.
+
+Example 2.1 (binary sequences with no repeated 1s). Let A, be the set of
+sequences of Os and Is of length n that do not begin with 1 and have no two
+consecutive 1s. Each such sequence ends either in 0 or in 01, and the previous
+terms can be any sequence in A,_, or A,_2, respectively. Thus, stripping off
+the last one or two symbols yields a bijective correspondence between A, and
+the disjoint union A,-; L) A;-2. At the generating function level, this would
+translate to A(z) = zA(z) + 27A(z), except the correspondence fails for n = 0 (it
+works forn = 1 if we take A, to be empty for n < 0). If we consider A to have
+a single object of size zero (the empty string) then correcting for this base case
+gives the equation
+
+A(z) = 1 + zA(z) + ZA(Z).
+
+Formal power series manipulations then allow us to rearrange and divide by
+1 —z—2? to obtain the generating function
+
+A(z) = 5H ltzt 27433 45ch4--
+
+l-z-z
+enumerating binary sequences with no repeated 1s. One may recognize A(z) as
+the (shifted) generating function for the Fibonacci numbers. 4
+
+Example 2.2 (binomial coefficients). Let A,,; be the set of colorings of the
+set [7 + s] = {1,...,7 + 5} for which r elements are red and s are green.
+Decomposing according to the color of the last element, A,.; is in bijective
+correspondence with the disjoint union of A,_;,; and A,,s-1. This is a com-
++5 +s-1 ts-1
+binatorial interpretation of the identity (’ *\ - (’ . + (’ . 1 and
+r r r-
+holds as long as r+ s > 0. It follows that F(x, y) — 1 = xF(x,y)+yF(x,y), and
+solving for F gives the generating function
+
+F(xy) = 1 = »y (’ + ‘ey
+1-x- y 1,820 r
+
+of the binomial coefficients. 4
+
+Product corresponds to convolution
+
+Let A(z) and B(z) enumerate classes A and 8, respectively. The definition of
+multiplication of power series shows that A(z)B(z) enumerates the product

@@ -1,0 +1,57 @@
+---
+doc_id: m4-24
+doc_title: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface"
+section_id: page-113
+section_title: "Page 113"
+section_number: null
+pages: 113-113
+source_pdf: m4-24.pdf
+source_sha256: cf7c5e29b818e647
+toc_source: undetermined
+doc_brief: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3"
+---
+Problems on invariants of knots and 3-manifolds 485
+
+7.4 Quantum hyperbolic invariants of 3-manifolds
+
+The main references for this section are [42, 43, 44], a review being [46]. In [44]
+the ideas of sections 7-9 in [43] are developed with some important differences
+in the way they are concretized.
+
+Let W be a compact closed oriented 3-manifold, L C W be a non-empty link,
+p bea flat principal B-bundle on W;; B is the upper triangular Borel subgroup
+of SL(2,C). In [43] one constructs a family of “quantum hyperbolic invariants”
+(QHI) Kn (W,L,p) € C, where N > 1 is any odd integer. This consists of two
+main steps:
+
+(1) For every triple (W, L,), the construction of so-called D-triangulations
+T =(T,H,D), where: (T,H) is a (singular) triangulation of (W, L) such
+that each edge has distinct vertices and H contains all the vertices of T;
+the “decoration” D is made of a full simplicial B-1-cocycle representing
+p on W, a branching (for instance one induced by a total ordering of the
+vertices of T’), and an integral charge. For these notions, see [46].
+
+(2) The proof that a suitable state sum Hy(T) does not depend on the choice
+of the D-triangulation T up to multiplication by N-th roots of unity, so
+that Ky(W,L,p) = Kn(T) = Hy(T)% actually defines an invariant.
+
+The proof of the existence of D-triangulations is difficult essentially due to
+strong global constraints in D. The main building-blocks of the state sums
+Hy(T) are the “quantum-dilogarithm” 6j-symbols of the N-dimensional cyclic
+representations of a quantum Borel subalgebra of U,,(si(2,C)), where w =
+exp(27i/N). Kashaev proposed in [195] a conjectural purely topological in-
+variant Ky(W,L) which should have been expressed by a state sum of this
+kind (although in his proposal there were no flat bundles and no notion of
+D-triangulation); in fact, Kj(W,L) appears as a special case of Ky (W, L, p)
+when p is the trivial flat B-bundle on W. The algebraic properties of the
+6j-symbols ensure the invariance of A.y(T) up to certain elementary moves on
+D-triangulations. Then, the proof of the full invariance of Ky(T) consists in
+connecting by such elementary moves any two D-triangulations of (W, L,p),
+which is not so easy to achieve.
+
+Problem 7.18 (S. Baseilhac, R. Benedetti) Generalize the construction of
+the QHI for flat principal G-bundles, for Lie groups G different from B.
+
+Section 7.4 was written by S. Baseilhac and R. Benedetti.
+
+Geometry & Topology Monographs, Volume 4 (2002)

@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-0001202v2
-doc_title: "arXiv:hep-th/0001202v2 29 Jan 2000"
+doc_title: "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees"
 section_id: sec-front-matter
 section_title: "Front matter"
 section_number: null
@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 0001202v2.pdf
 source_sha256: b2e3e22ea3d51c0b
 toc_source: inferred
+doc_brief: "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees — The renormalization of quantum ﬁeld theory twists the antipode of a non- cocommutative Hopf algebra"
 ---
 arXiv:hep-th/0001202v2  29 Jan 2000
 OUT–4102–85
@@ -39,4 +40,3 @@ handling the inﬁnite set of decorations of realistic quantum ﬁeld theory.
 Physics Dept, Open University, Milton Keynes MK7 6AA, UK
 2) Dirk.Kreimer@uni-mainz.de; http://dipmza.physik.uni-mainz.de/ekreimer
 Heisenberg Fellow, Physics Dept, Univ. Mainz, 55099 Mainz, Germany
-1

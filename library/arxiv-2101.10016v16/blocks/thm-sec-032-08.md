@@ -1,1 +1,1 @@
-The linear category Rep(A(Vgk)) becomes a pre-tensor category with tensor product defined by
+The associator of A(Vgk ) obtained transporting the associator of AW (g, q0, ℓ) via the twist T and isomorphism ϕ A(Vgk ) ≃ ϕ (AW (g, q0, ℓ))T as in Theorem 2.8 (a) is an associator satisfying the Def. 8.8 of CFT-type V-pre-associator ΦF0,G0, with V the collection of triples of simple objects of A(Vgk ) of the form (Vλ, V, V ), (V, Vλ, V ), (V, V, Vλ).

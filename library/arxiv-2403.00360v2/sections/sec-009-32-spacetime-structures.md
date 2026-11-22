@@ -7,10 +7,11 @@ section_number: 3.2
 pages: 11-12
 source_pdf: 2403.00360v2.pdf
 source_sha256: b0764ca18a83a84f
-doc_brief: "CAUSAL FERMION SYSTEMS AND OCTONIONS — We compare the structures and methods in the theory of causal fermion systems with approaches to fundamental physics based on division algebras, in par- ticular"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.958
-latex_coverage_ratio: 0.939
+latex_prose_ratio: 0.969
+latex_coverage_ratio: 0.959
+doc_brief: "CAUSAL FERMION SYSTEMS AND OCTONIONS — We compare the structures and methods in the theory of causal fermion systems with approaches to fundamental physics based on division algebras, in par- ticular"
 ---
 A causal fermion system describes a spacetime together with all structures therein. The structures are the causal and metric structures, spinors and interacting fields (for details see [@cfs Chapter 1]). All these spacetime structures are *inherent* in the sense that they use information already encoded in the causal fermion system. We now give a brief outline of the spacetime structures, with a focus on those structures which will be needed later on.
 

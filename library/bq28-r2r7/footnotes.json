@@ -1,0 +1,835 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "bq28-r2r7",
+ "status": "determined",
+ "body_size": 10.5,
+ "footnotes": [
+  {
+   "id": "fn-p001-1",
+   "page": 1,
+   "mark": "*",
+   "text": "Contact author: dgosset@uwaterloo.ca",
+   "marks": [
+    {
+     "page": 1,
+     "context": "Sergey Bravyi,1David Gosset,2,3,"
+    }
+   ],
+   "block": "library/bq28-r2r7/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p005-1",
+   "page": 5,
+   "mark": "2",
+   "text": "n−1−ℓ",
+   "marks": [
+    {
+     "page": 4,
+     "context": "zκ"
+    },
+    {
+     "page": 4,
+     "context": "zκ"
+    },
+    {
+     "page": 4,
+     "context": "zκ"
+    },
+    {
+     "page": 5,
+     "context": "Proof.Figure1deﬁnesatensorT∈C"
+    },
+    {
+     "page": 5,
+     "context": "Cℓ+2⊗C"
+    },
+    {
+     "page": 5,
+     "context": "Cℓ+2⊗C2, where C"
+    }
+   ],
+   "block": "library/bq28-r2r7/blocks/prose-sec-002"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p015-1",
+   "page": 15,
+   "mark": "96",
+   "text": "(2011). approximable in NP, Quantum Inf. Process. 14, 1 (2015). [31] The GAP Group, GAP – Groups, Algorithms, and Program- [50] Sandy Irani and Jiaqing Jiang, Commuting local Hamilto- ming, version 4.12.2, 2022. nian problem on 2D beyond qubits, ArXiv:2309.04910. [32] W. A. Stein et al., Sage Mathematics Software, version 9.8, [51] Paul Erdös and Joseph Lehner, The distribution of the num- The Sage Development Team, 2023, http://www.sagemath. ber of summands in the partitions of a positive integer, org Duke Math. J. 8, 335 (1941).",
+   "block": "library/bq28-r2r7/blocks/prose-sec-010"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "Sergey Bravyi,"
+  },
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "Sergey Bravyi,1David Gosset,2,3,*Vojtech Havlicek,"
+  },
+  {
+   "page": 2,
+   "mark": "†",
+   "context": "a"
+  },
+  {
+   "page": 2,
+   "mark": "a",
+   "context": "i+ℓ"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "i+ℓa"
+  },
+  {
+   "page": 2,
+   "mark": "†",
+   "context": "where ℓis an integer and the a"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "i(a"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "Jνj |1"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "Jνj |1n0"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "of the j th cycle, and |1"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "of the j th cycle, and |1n0"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "tor xλ∈{0, 1}2"
+  },
+  {
+   "page": 3,
+   "mark": "m",
+   "context": "of g. Consider a complex vector z∈C"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "the ambient Hilbert space C"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "Let S"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "plane, and let F1be a Hilbert space of functions f:S"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "dθf(e"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "dθf(eiθ)∗g(e"
+  },
+  {
+   "page": 3,
+   "mark": "j",
+   "context": "j =1λ"
+  },
+  {
+   "page": 3,
+   "mark": "m",
+   "context": "j =1λj= n. Here"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "andanorthonormalbasisoffunctions{f(x) = x"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "cleandf(x) = x"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "zκ"
+  },
+  {
+   "page": 4,
+   "mark": "m",
+   "context": "zκ"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "zκ"
+  },
+  {
+   "page": 4,
+   "mark": "m",
+   "context": "zκ"
+  },
+  {
+   "page": 4,
+   "mark": "z",
+   "context": "j =1"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "zκ"
+  },
+  {
+   "page": 4,
+   "mark": "m",
+   "context": "zκ"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "a"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "k+ℓ"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "k+ℓa"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "k>i∗a"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "k+ℓ"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "k+ℓa"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "2(X"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "2(Xk + iY"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "andleta"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "operatorsak, a"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "that is, aiaj= −aj ai and aia"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "j+ a"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "j"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "ja"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "jai= δ"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "jai= δi,"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "jai= δi,j Ifor all"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "jai= δi,j Ifor all i,"
+  },
+  {
+   "page": 5,
+   "mark": "d",
+   "context": "j =1"
+  },
+  {
+   "page": 5,
+   "mark": "j",
+   "context": "j =1d"
+  },
+  {
+   "page": 5,
+   "mark": "j",
+   "context": "j =1ν"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "string1"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "string1n0"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "state|xτ⟩ismappedto|1"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "state|xτ⟩ismappedto|1n0"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Jνj |1"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Jνj |1n0"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Jνj |1"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Jνj |1n0"
+  },
+  {
+   "page": 5,
+   "mark": "†",
+   "context": "a"
+  },
+  {
+   "page": 5,
+   "mark": "a",
+   "context": "k+ℓ"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "k+ℓa"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "j =1Jνj|1"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "j =1Jνj|1n"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "j =1Jνj|1n0"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "beabitstringoflength2n.Let|x| =\u00042"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "|ψg⟩can be computed in time O(nc(g)D"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "|ψg⟩can be computed in time O(nc(g)D3) = O(n"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "|ψg⟩can be computed in time O(nc(g)D3) = O(n2D"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "This takes time O(nD"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "χλ(g)"
+  },
+  {
+   "page": 6,
+   "mark": "a",
+   "context": "(aℓ!)ℓ"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "thatastateJν1|1"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "thatastateJν1|1n0"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "compressionscalesasO(nD"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "λ⊢nC"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "C"
+  },
+  {
+   "page": 7,
+   "mark": "†",
+   "context": "QFT"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "n|λ,"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "n|λ, i,"
+  },
+  {
+   "page": 8,
+   "mark": "†",
+   "context": "a given irrep λ ⊢n. Indeed, apply QFT"
+  },
+  {
+   "page": 8,
+   "mark": "h",
+   "context": "h∈Cg"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "h∈Cghis"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "forsomecomplexnumberb ∈C.HereI"
+  },
+  {
+   "page": 8,
+   "mark": "†",
+   "context": "|ωλ⟩= QFT"
+  },
+  {
+   "page": 8,
+   "mark": "g",
+   "context": "b =|C"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Pλ(g) =(χλ(g))"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "cientalgorithms.Toseethis,notethatχλ(g)"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "cientalgorithms.Toseethis,notethatχλ(g)2≤d"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Onecouldlookforcaseswhereboth|Eg|andχλ(g)"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Pg(λ) =(χλ(g))"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "f[g"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "f[gp(Bℓ,j )] = h"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "and all ℓ, j . Here g"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "h"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "hp(bℓ,j ) = (fgf−1)"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "h"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "hp(bℓ,j ) = f[g"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "hp(bℓ,j ) = f[gpf−1(bℓ,j )] = f[g"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "P0(x) =γ"
+  },
+  {
+   "page": 11,
+   "mark": "100",
+   "context": "χλ(g)foratleasta1 −1/n"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "g∈Sn. The algorithm has runtime nO(log"
+  },
+  {
+   "page": 11,
+   "mark": "c",
+   "context": "boundedasD ≤(n + 2)"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "O(n"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "O(n2D"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "Pr[c(g) ≥1 + ℓHn] ≤2e"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "Pr[c(g) ≥1 + ℓHn] ≤2e1−[ℓlog (ℓ)−ℓ+1]H"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "j =1"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "j =11/j= log (n) + O(1)isthe"
+  },
+  {
+   "page": 12,
+   "mark": "100",
+   "context": "cycles is at most 1/n"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "χλ(g),whichtakestimenO(log"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "normalized probability distribution P(x) = dx/2"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "Sincethesamplespacehassize2"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "granularityγ= 2"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "ℓ=1ℓ"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "ℓ=1ℓaℓ"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "Since aℓ! ≤(aℓ)"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "ℓ=1"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "is a partition of n. A notable special case is Kλ,(1"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "x"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "xi1x"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "xi1xi2 · · · x"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "Forexample,inthreevariablesh2= x"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "1+ x"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "2+ x"
+  },
+  {
+   "page": 13,
+   "mark": "†",
+   "context": "atorsˆxi:= a"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "i+1"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "i+1a"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "i+1ai,where"
+  },
+  {
+   "page": 13,
+   "mark": "†",
+   "context": "i+1ai,wherea(a"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "indices of dimension 2k + 1. We label basis vectors of C"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "indices of dimension 2k + 1. We label basis vectors of C2"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "ˆx"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "ˆxi1 ˆx"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "ˆxi1 ˆxi2 · · · ˆx"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "ˆx"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "ˆxi1 ˆx"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "ˆxi1 ˆxi2 · · · ˆx"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "which follows fromˆx"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "i= 0 for any index"
+  },
+  {
+   "page": 13,
+   "mark": "h",
+   "context": "j =1ˆ"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "state |xτ⟩= |1"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "state |xτ⟩= |1n0"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "ˆhμi|1"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "ˆhμi|1n0"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "Proof.Figure4deﬁnesatensorT∈C"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "Proof.Figure4deﬁnesatensorT∈C2⊗C"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "Proof.Figure4deﬁnesatensorT∈C2⊗C2"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "C"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "C2"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "C2k+1⊗C"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "C2k+1⊗C2,whereC"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "C"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "C2"
+  },
+  {
+   "page": 14,
+   "mark": "h",
+   "context": "j =1ˆ"
+  }
+ ]
+}

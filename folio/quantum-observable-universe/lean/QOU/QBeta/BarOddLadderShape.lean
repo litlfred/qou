@@ -27,7 +27,7 @@ inhabited) `FaddeevPhi`/`phiBProd` — is the single named open problem
 (`conj:algebraic-geometric-dilog-equivalence`).  Per §3b-tax the class
 carries content-bearing hypothesis fields and no conclusion projection.
 
--- Ref: [manuscript] docs/coordination/1ppq-qbeta.md (Φ_b arc entries, 2026-07-11/12)
+-- Ref: [leitner2026] docs/coordination/1ppq-qbeta.md (Φ_b arc entries, 2026-07-11/12)
 -/
 
 namespace QOU.QBeta

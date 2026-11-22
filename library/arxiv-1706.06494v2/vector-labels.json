@@ -1,0 +1,1658 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-1706.06494v2",
+  "pages": [
+    {
+      "page": 4,
+      "rotation": 0,
+      "drawings": 1259,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1: E(τ)/κ for diﬀerent systems. All systems were studied with 2 × 108 measurements. Some systems show a signal- to-noise problem and others yield an easy extraction of a constant plateau in the long-time-limit. The left panels all show two-fermion systems and the corresponding right panels show the three-fermion systems with the same parameters. In the top (middle) [bottom] two panels we show a system with repulsive (absent) [attractive] two-body forces. In the top four panels red (blue) [green] points correspond to repulsive (absent) [attractive] three body forces, where the blue points were sampled according to the HS distribution P1 and the other points according to P∞. The data in the mid two panels were generated with P∞and cj < 4 coeﬃcients tuned to exactly cancel the two-body force, and we show dashed lines for the corresponding non-interacting energies."
+      ],
+      "labels": [
+        {
+          "text": "4",
+          "bbox": [
+            557.11,
+            28.36,
+            562.1,
+            38.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Two Flavors",
+          "bbox": [
+            191.48,
+            54.67,
+            251.26,
+            66.36
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            10.03
+          ]
+        },
+        {
+          "text": "Three Flavors",
+          "bbox": [
+            417.11,
+            54.67,
+            485.35,
+            66.36
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            10.03
+          ]
+        },
+        {
+          "text": "4.25",
+          "bbox": [
+            98.62,
+            82.24,
+            117.22,
+            91.97
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "3.6",
+          "bbox": [
+            333.81,
+            82.24,
+            347.09,
+            91.97
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "3.8",
+          "bbox": [
+            333.81,
+            95.79,
+            347.09,
+            105.53
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "4.30",
+          "bbox": [
+            98.62,
+            98.05,
+            117.22,
+            107.78
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "λ (2) = + 1. 74",
+          "bbox": [
+            55.03,
+            108.41,
+            67.74,
+            162.29
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Cmmi10",
+            "Cmr10"
+          ],
+          "sizes": [
+            6.43,
+            9.19
+          ]
+        },
+        {
+          "text": "4.0",
+          "bbox": [
+            333.81,
+            109.34,
+            347.09,
+            119.08
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "4.35",
+          "bbox": [
+            98.62,
+            113.86,
+            117.22,
+            123.6
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "4.2",
+          "bbox": [
+            333.81,
+            122.9,
+            347.09,
+            132.63
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "4.40",
+          "bbox": [
+            98.62,
+            129.67,
+            117.22,
+            139.41
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "E/",
+          "bbox": [
+            79.09,
+            132.11,
+            88.28,
+            143.48
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Cmmi10"
+          ],
+          "sizes": [
+            9.19
+          ]
+        },
+        {
+          "text": "4.4",
+          "bbox": [
+            333.81,
+            136.45,
+            347.09,
+            146.18
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "4.45",
+          "bbox": [
+            98.62,
+            145.48,
+            117.22,
+            155.22
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "4.6",
+          "bbox": [
+            333.81,
+            150.0,
+            347.09,
+            159.74
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "4.50",
+          "bbox": [
+            98.62,
+            161.3,
+            117.22,
+            171.03
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "4.8",
+          "bbox": [
+            333.81,
+            163.55,
+            347.09,
+            173.29
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "4.55",
+          "bbox": [
+            98.62,
+            177.11,
+            117.22,
+            186.84
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "5.0",
+          "bbox": [
+            333.81,
+            177.11,
+            347.09,
+            186.84
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "5.60",
+          "bbox": [
+            98.62,
+            197.22,
+            117.22,
+            206.95
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "7.8",
+          "bbox": [
+            333.81,
+            197.22,
+            347.09,
+            206.95
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "8.0",
+          "bbox": [
+            333.81,
+            211.81,
+            347.09,
+            221.55
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "5.65",
+          "bbox": [
+            98.62,
+            213.03,
+            117.22,
+            222.77
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "8.2",
+          "bbox": [
+            333.81,
+            226.41,
+            347.09,
+            236.14
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "5.70",
+          "bbox": [
+            98.62,
+            228.84,
+            117.22,
+            238.58
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "λ (2) = 0",
+          "bbox": [
+            55.03,
+            235.16,
+            67.74,
+            265.33
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Cmmi10",
+            "Cmr10"
+          ],
+          "sizes": [
+            6.43,
+            9.19
+          ]
+        },
+        {
+          "text": "8.4",
+          "bbox": [
+            333.81,
+            241.0,
+            347.09,
+            250.74
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "5.75",
+          "bbox": [
+            98.62,
+            244.65,
+            117.22,
+            254.39
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "E/",
+          "bbox": [
+            79.09,
+            247.09,
+            88.28,
+            258.46
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Cmmi10"
+          ],
+          "sizes": [
+            9.19
+          ]
+        },
+        {
+          "text": "8.6",
+          "bbox": [
+            333.81,
+            255.6,
+            347.09,
+            265.33
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "5.80",
+          "bbox": [
+            98.62,
+            260.46,
+            117.22,
+            270.2
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "8.8",
+          "bbox": [
+            333.81,
+            270.19,
+            347.09,
+            279.93
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "5.85",
+          "bbox": [
+            98.62,
+            276.28,
+            117.22,
+            286.01
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "9.0",
+          "bbox": [
+            333.81,
+            284.79,
+            347.09,
+            294.52
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "5.90",
+          "bbox": [
+            98.62,
+            292.09,
+            117.22,
+            301.82
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "9.2",
+          "bbox": [
+            333.81,
+            299.38,
+            347.09,
+            309.12
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "P∞(φ);        λ (3) = + 0. 245",
+          "bbox": [
+            215.9,
+            310.96,
+            316.36,
+            327.46
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman",
+            "Cmmi10",
+            "Cmr10",
+            "Cmsy10"
+          ],
+          "sizes": [
+            5.85,
+            8.36
+          ]
+        },
+        {
+          "text": "7.15",
+          "bbox": [
+            98.62,
+            312.2,
+            117.22,
+            321.93
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "12.5",
+          "bbox": [
+            328.49,
+            312.2,
+            347.09,
+            321.93
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "P1(φ);        λ (3) = 0",
+          "bbox": [
+            215.9,
+            325.29,
+            290.14,
+            337.63
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman",
+            "Cmmi10",
+            "Cmr10"
+          ],
+          "sizes": [
+            5.85,
+            8.36
+          ]
+        },
+        {
+          "text": "7.20",
+          "bbox": [
+            98.62,
+            334.79,
+            117.22,
+            344.52
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "λ (2) = −1. 74",
+          "bbox": [
+            55.03,
+            338.37,
+            74.27,
+            392.25
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Cmmi10",
+            "Cmr10",
+            "Cmsy10"
+          ],
+          "sizes": [
+            6.43,
+            9.19
+          ]
+        },
+        {
+          "text": "P∞(φ);        λ (3) = −0. 245",
+          "bbox": [
+            215.9,
+            339.61,
+            316.36,
+            357.1
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman",
+            "Cmmi10",
+            "Cmr10",
+            "Cmsy10"
+          ],
+          "sizes": [
+            5.85,
+            8.36
+          ]
+        },
+        {
+          "text": "13.0",
+          "bbox": [
+            328.49,
+            343.82,
+            347.09,
+            353.56
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "7.25",
+          "bbox": [
+            98.62,
+            357.37,
+            117.22,
+            367.11
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "E/",
+          "bbox": [
+            79.09,
+            362.07,
+            88.28,
+            373.44
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Cmmi10"
+          ],
+          "sizes": [
+            9.19
+          ]
+        },
+        {
+          "text": "13.5",
+          "bbox": [
+            328.49,
+            375.44,
+            347.09,
+            385.18
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "7.30",
+          "bbox": [
+            98.62,
+            379.96,
+            117.22,
+            389.7
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "7.35",
+          "bbox": [
+            98.62,
+            402.55,
+            117.22,
+            412.29
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "14.0",
+          "bbox": [
+            328.49,
+            407.07,
+            347.09,
+            416.8
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "0.0",
+          "bbox": [
+            114.77,
+            424.78,
+            128.05,
+            434.51
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "0.1",
+          "bbox": [
+            154.74,
+            424.78,
+            168.03,
+            434.51
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "0.2",
+          "bbox": [
+            194.72,
+            424.78,
+            208.01,
+            434.51
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "0.3",
+          "bbox": [
+            234.7,
+            424.78,
+            247.98,
+            434.51
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "0.4",
+          "bbox": [
+            274.67,
+            424.78,
+            287.96,
+            434.51
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "0.5",
+          "bbox": [
+            314.65,
+            424.78,
+            327.94,
+            434.51
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "0.0",
+          "bbox": [
+            344.63,
+            424.78,
+            357.92,
+            434.51
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "0.1",
+          "bbox": [
+            384.61,
+            424.78,
+            397.9,
+            434.51
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "0.2",
+          "bbox": [
+            424.59,
+            424.78,
+            437.87,
+            434.51
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "0.3",
+          "bbox": [
+            464.56,
+            424.78,
+            477.85,
+            434.51
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "0.4",
+          "bbox": [
+            504.54,
+            424.78,
+            517.83,
+            434.51
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "0.5",
+          "bbox": [
+            544.52,
+            424.78,
+            557.81,
+            434.51
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "BitstreamVeraSans-Roman"
+          ],
+          "sizes": [
+            8.36
+          ]
+        },
+        {
+          "text": "τ ×",
+          "bbox": [
+            211.5,
+            436.81,
+            224.27,
+            452.8
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Cmmi10",
+            "Cmsy10"
+          ],
+          "sizes": [
+            9.19
+          ]
+        },
+        {
+          "text": "τ ×",
+          "bbox": [
+            441.37,
+            436.81,
+            454.14,
+            452.8
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Cmmi10",
+            "Cmsy10"
+          ],
+          "sizes": [
+            9.19
+          ]
+        },
+        {
+          "text": "Figure 1: E(τ)/κ for diﬀerent systems. All systems were studied with 2 × 108 measurements. Some systems show a signal-",
+          "bbox": [
+            54.0,
+            460.06,
+            562.08,
+            472.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI9",
+            "CMR6",
+            "CMR9",
+            "CMSY9",
+            "SFRM0900"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "to-noise problem and others yield an easy extraction of a constant plateau in the long-time-limit. The left panels all show",
+          "bbox": [
+            54.0,
+            474.33,
+            562.12,
+            483.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM0900"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "two-fermion systems and the corresponding right panels show the three-fermion systems with the same parameters. In the top",
+          "bbox": [
+            54.0,
+            484.79,
+            562.13,
+            493.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM0900"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "(middle) [bottom] two panels we show a system with repulsive (absent) [attractive] two-body forces. In the top four panels",
+          "bbox": [
+            54.0,
+            495.25,
+            562.13,
+            504.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM0900"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "red (blue) [green] points correspond to repulsive (absent) [attractive] three body forces, where the blue points were sampled",
+          "bbox": [
+            54.0,
+            505.71,
+            562.13,
+            514.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM0900"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "according to the HS distribution P1 and the other points according to P∞. The data in the mid two panels were generated",
+          "bbox": [
+            54.0,
+            516.16,
+            562.11,
+            526.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI9",
+            "CMR6",
+            "CMSY6",
+            "SFRM0900"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "with P∞and cj < 4 coeﬃcients tuned to exactly cancel the two-body force, and we show dashed lines for the corresponding",
+          "bbox": [
+            54.0,
+            526.62,
+            562.14,
+            536.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI9",
+            "CMR9",
+            "CMSY6",
+            "SFRM0900"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "non-interacting energies.",
+          "bbox": [
+            54.0,
+            537.1,
+            152.65,
+            546.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM0900"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "iary ﬁeld, allows for the direct inclusion of controllable",
+          "bbox": [
+            54.0,
+            569.94,
+            299.1,
+            579.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "a variety of cases, correctly handling all combinations of",
+          "bbox": [
+            317.01,
+            569.94,
+            562.11,
+            579.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "many-body forces into numerical calculations.",
+          "bbox": [
+            54.0,
+            581.9,
+            253.91,
+            591.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "attractive, repulsive, and absent two-body forces with at-",
+          "bbox": [
+            317.01,
+            581.9,
+            562.08,
+            591.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "tractive and repulsive three-body forces. While even the",
+          "bbox": [
+            317.01,
+            593.85,
+            562.07,
+            603.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Choosing a degree of auxiliary ﬁeld self-interaction",
+          "bbox": [
+            63.96,
+            594.05,
+            299.08,
+            604.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "agreement of the one-body energies found with the diﬀer-",
+          "bbox": [
+            317.01,
+            605.81,
+            562.05,
+            615.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ﬁxes the sampling distribution and limits the types of",
+          "bbox": [
+            54.0,
+            606.0,
+            299.06,
+            615.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ent methods is nontrivial, the agreement of the two-body",
+          "bbox": [
+            317.01,
+            617.76,
+            562.07,
+            627.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "fermion/auxiliary-ﬁeld interaction vertices. These inter-",
+          "bbox": [
+            54.0,
+            617.96,
+            299.08,
+            627.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "systems between methods and agreement of three-body",
+          "bbox": [
+            317.01,
+            629.72,
+            562.04,
+            639.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "actions in turn generate a slew of n-body forces. Sam-",
+          "bbox": [
+            54.0,
+            629.9,
+            299.07,
+            639.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "systems with exact results indicate a reliable understand-",
+          "bbox": [
+            317.01,
+            641.67,
+            562.06,
+            651.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "pling a gaussian distribution for the auxiliary ﬁeld recov-",
+          "bbox": [
+            54.0,
+            641.87,
+            299.09,
+            651.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ing and deﬁnite control over many-fermion interactions.",
+          "bbox": [
+            317.01,
+            653.63,
+            560.09,
+            663.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ers the original HS transformation, while uniform sam-",
+          "bbox": [
+            54.0,
+            653.82,
+            299.1,
+            663.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "pling in principle allows for the independent control of all",
+          "bbox": [
+            54.0,
+            665.78,
+            299.07,
+            675.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "One drawback of our method is that some combina-",
+          "bbox": [
+            326.98,
+            665.97,
+            562.07,
+            675.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "possible n-body forces, while intermediate distributions",
+          "bbox": [
+            54.0,
+            677.72,
+            299.07,
+            687.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "tions of strengths of many-body forces are only achiev-",
+          "bbox": [
+            317.01,
+            677.93,
+            562.09,
+            687.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "yield correlated forces.",
+          "bbox": [
+            54.0,
+            689.69,
+            152.09,
+            699.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "able with complex cj, opening the possibility of intro-",
+          "bbox": [
+            317.01,
+            689.87,
+            562.09,
+            700.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Because the c",
+          "bbox": [
+            499.03,
+            701.82,
+            562.1,
+            711.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We have demonstrated that on a two-site model, dif-",
+          "bbox": [
+            63.96,
+            701.84,
+            299.07,
+            711.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ducing a numerical sign problem [14].",
+          "bbox": [
+            317.01,
+            701.84,
+            489.36,
+            711.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "coeﬃcients appear nonlinearly in the higher-body λ co-",
+          "bbox": [
+            317.01,
+            713.78,
+            562.09,
+            723.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ferent sampling techniques reproduce the exact results in",
+          "bbox": [
+            54.0,
+            713.79,
+            299.04,
+            723.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    }
+  ]
+}

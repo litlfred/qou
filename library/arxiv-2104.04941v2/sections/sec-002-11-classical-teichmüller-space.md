@@ -10,7 +10,8 @@ source_sha256: 84426ed37754aa78
 toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.933
-latex_coverage_ratio: 0.99
+latex_coverage_ratio: 0.984
+doc_brief: "Fock–Goncharov Coordinates for Semisimple Lie Groups — Fock and Goncharov [FG06b] introduced cluster ensembles, providing a framework for coordi- nates on varieties of surface representations into"
 ---
 We start by describing the Fock--Goncharov program for the case of Lie
   groups of type $A_1$. Let $\Sigma$ be a surface that admits ideal

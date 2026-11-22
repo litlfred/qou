@@ -27,7 +27,7 @@ The proof is elementary: `1 − pʲ = (1−p)·Σ_{i<j} pⁱ` (`geom_sum_mul`), 
 `(1−p)` cancels and the ratio is `pʲ / Σ_{i<j} pⁱ`, continuous at `p=1` with
 value `1/j`.
 
--- Ref: [manuscript] conj:dilogarithm-archimedean-limit
+-- Ref: [leitner2026] conj:dilogarithm-archimedean-limit
 -- Ref: [faddeev1994] https://doi.org/10.1142/S0217732394002793
 -/
 

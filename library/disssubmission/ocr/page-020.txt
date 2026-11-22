@@ -1,0 +1,51 @@
+12 Chapter 1 — Vanishing theorems on abelian varieties
+
+Choose a point b € By(C). Consider the fibre F, = f—'(b), and for
+any character x denote by M, = Py| F, the restriction of Py to Fj, (in what
+follows we suppress the character twist in this notation). For the perverse
+cohomology sheaves
+
+Mj, = H~"(Ms)
+we have the spectral sequence
+EX’ = H-*(Fy,Mj) => HO") (Fj, My) = F07"*9 (RF(Py))p-
+
+Theorem 1.1 for F, = A shows that for most ¥ we have H~*(F;,,M;) = 0 for
+all s 4 0 and all r € Z. For such x the spectral sequence degenerates, i.e.
+
+HO-*(Rf(Py))y = (Fy, Mp).
+
+On the other hand, by (e) we can assume #~* (Rf.Py)p #0. By the above
+then ME £0. Since Mk = ?H°(M,[—k]), it follows by definition of the
+perverse f-structure that
+
+dim(Supp I~ '(Mp)) =i-k>0O forsome i€Z.
+
+Now by (a) the support of #7 (Py) is a union of certain strata Xg, so using
+the above dimension estimate and the definition of M, = Py|r, we find a
+stratum Xg C Supp #~'(Py) with dim(F,Xg) = i—k. Since by (b), (c)
+the stratum XB is equidimensional over Ba, it follows that
+
+dim(Supp #7'(Py)) > dim(Xg) = i-k+dim(Ba).
+
+But dim(Bg,) > k by property (d), so it follows that the perverse sheaf Py is
+not semi-perverse, a contradiction. O
+
+Note that in the proof of theorem 1.3 we have only used theorem 1.1 for
+the fibres f~!(b) = A but not for X itself. Indeed, using this observation
+and assuming theorem 1.1 only for simple abelian varieties, one can by
+induction on the dimension deduce for arbitrary abelian varieties a slightly
+weaker version of theorem 1.1 where most is replaced by generic [107].
+
+1.3. Kodaira-Nakano-type vanishing theorems
+
+From theorem 1.1 one easily recovers stronger versions of the generic
+vanishing theorems of Green and Lazarsfeld as follows. Let Y be a compact
+connected Kahler manifold of dimension d whose Albanese variety Alb(Y)
+is algebraic, and denote by
+
+f: Y — X = Alb(Y)
+the Albanese morphism. To pass from coherent to constructible sheaves,
+recall that every line bundle Y € Pic®(X) admits a flat connection; the
+
+horizontal sections with respect to such a connection form a local system
+corresponding to a character ¥ € II(X) such that Y = Ly @c Ox.

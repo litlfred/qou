@@ -1,0 +1,3494 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1208.2521v1",
+ "status": "determined",
+ "body_size": 12.0,
+ "footnotes": [
+  {
+   "id": "fn-p019-1",
+   "page": 19,
+   "mark": "2",
+   "text": "G. E. Andrews and R. Askey, Enumeration of partitions: The role of Eulerian series and q-orthogonal polynomials, Higher combinatorics, M. Aigner, ed., Reidel, 1977, pp. 3–26.",
+   "marks": [
+    {
+     "page": 18,
+     "context": "((qa+ qb)z −qc−1−1)u(qz) + (qc−1−qa+bz)u(q"
+    },
+    {
+     "page": 19,
+     "context": "ed.Thenweinitiallyobtain,undertheassumptionsthat|sxy| <1andx"
+    },
+    {
+     "page": 19,
+     "context": "henweinitiallyobtain,undertheassumptionsthat|sxy| <1andx2, y"
+    }
+   ],
+   "block": "library/arxiv-1208.2521v1/blocks/prose-page-019"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p019-2",
+   "page": 19,
+   "mark": "3",
+   "text": "H. Exton, A basic analogue of the Bessel-Cliﬀord equation, J˜n¯an¯abha 8 (1978), 49–56. 4. , q-Hypergeometric functions and applications, Ellis Horwood, 1983.",
+   "block": "library/arxiv-1208.2521v1/blocks/prose-page-019"
+  },
+  {
+   "id": "fn-p019-3",
+   "page": 19,
+   "mark": "5",
+   "text": "Ph. Feinsilver, Elements of q-harmonic analysis, J. Math. Anal. Appl. 141 (1989), 509–526.",
+   "block": "library/arxiv-1208.2521v1/blocks/prose-page-019"
+  },
+  {
+   "id": "fn-p019-4",
+   "page": 19,
+   "mark": "6",
+   "text": "G. Gasper and M. Rahman, Basic hypergeometric series, Cambridge University Press, 1990; second corrected and extended edition 2004.",
+   "block": "library/arxiv-1208.2521v1/blocks/prose-page-019"
+  },
+  {
+   "id": "fn-p019-5",
+   "page": 19,
+   "mark": "7",
+   "text": "W. Hahn, Beitr¨age zur Theorie der Heineschen Reihen, Math. Nachr. 2 (1949), 340–379. 8. , Die mechanische Deutung einer geometrischen Diﬀerenzgleichung, Z. Angew. Math. Mech. 33 (1953), 270–272.",
+   "block": "library/arxiv-1208.2521v1/blocks/prose-page-019"
+  },
+  {
+   "id": "fn-p019-6",
+   "page": 19,
+   "mark": "9",
+   "text": "E. Heine, Handbuch der Kugelfunctionen, Theorie und Anwendungen. Erster Band: Theorie der Kugelfunctionen und der verwandten Functionen, Reiner, Berlin, 1878.",
+   "block": "library/arxiv-1208.2521v1/blocks/prose-page-019"
+  },
+  {
+   "id": "fn-p019-7",
+   "page": 19,
+   "mark": "10",
+   "text": "M. E. H. Ismail, The zeros of basic Bessel functions, the functions Jν+ax(x), and associated orthogonal polynomials, J. Math. Anal. Appl. 86 (1982), 1–19.",
+   "block": "library/arxiv-1208.2521v1/blocks/prose-page-019"
+  },
+  {
+   "id": "fn-p019-8",
+   "page": 19,
+   "mark": "11",
+   "text": "T. H. Koornwinder, Jacobi functions as limit cases of q-ultraspherical polynomials, J. Math. Anal. Appl. 148 (1990), 44–54..",
+   "block": "library/arxiv-1208.2521v1/blocks/prose-page-019"
+  },
+  {
+   "id": "fn-p019-9",
+   "page": 19,
+   "mark": "12",
+   "text": "M. Rahman, An addition theorem and some product formulas for q-Bessel functions, Canad. J. Math. 40 (1988), 1203–1221.",
+   "block": "library/arxiv-1208.2521v1/blocks/prose-page-019"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "k",
+   "context": "(−1)"
+  },
+  {
+   "page": 1,
+   "mark": "k",
+   "context": "(−1)k(x/2)α+2"
+  },
+  {
+   "page": 1,
+   "mark": "q",
+   "context": "α(x;"
+  },
+  {
+   "page": 1,
+   "mark": "q",
+   "context": "α(x;"
+  },
+  {
+   "page": 1,
+   "mark": "k",
+   "context": "q"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "qk(k−1)/2(qα+k+1; q)∞(−x(1 −q)"
+  },
+  {
+   "page": 1,
+   "mark": "k",
+   "context": "qk(k−1)/2(qα+k+1; q)∞(−x(1 −q)2)"
+  },
+  {
+   "page": 2,
+   "mark": "j",
+   "context": "(1 −aq"
+  },
+  {
+   "page": 2,
+   "mark": "q",
+   "context": "k→∞(a;"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "k→∞(a; q)"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "f(q"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "f(qk) q"
+  },
+  {
+   "page": 2,
+   "mark": "z",
+   "context": "e"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "t"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "t"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "z"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "q"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "qk(k−1)/2z"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "(−1)"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "(−1)kq"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "(−1)kqk(k−1)/2z"
+  },
+  {
+   "page": 3,
+   "mark": "w",
+   "context": "1φ1(0;"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "((1 −p)λ)"
+  },
+  {
+   "page": 4,
+   "mark": "r",
+   "context": "((1 −p)λ)n+2"
+  },
+  {
+   "page": 4,
+   "mark": "r",
+   "context": "(−1)"
+  },
+  {
+   "page": 4,
+   "mark": "r",
+   "context": "(−1)rp"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "(p"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "(p2; p"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "(p2; p2)n+r(p"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "(p2; p2)n+r(p2; p"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "(−1)"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "(−1)kq"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "(−1)kqk(k−1)/2\u0001s−r+1z"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "\u0014a"
+  },
+  {
+   "page": 4,
+   "mark": "r",
+   "context": "\u0014a1, . . ., a"
+  },
+  {
+   "page": 4,
+   "mark": "q",
+   "context": "Cα(q; x) :=(1 −q)α (qα+1;"
+  },
+  {
+   "page": 4,
+   "mark": "q",
+   "context": "1φ1(0;"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "1φ1(0; qα+1; q, x(1 −q)"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "(−1)"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "(−1)kq"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "(−1)kqk(k−1)/2(q"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "(−1)kqk(k−1)/2(qkw; q)∞z"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "Proof.Substitutefor(q"
+  },
+  {
+   "page": 5,
+   "mark": "l",
+   "context": "qkl(−1)"
+  },
+  {
+   "page": 5,
+   "mark": "q",
+   "context": "qkl(−1)l"
+  },
+  {
+   "page": 5,
+   "mark": "l",
+   "context": "qkl(−1)l q"
+  },
+  {
+   "page": 5,
+   "mark": "w",
+   "context": "qkl(−1)l ql(l−1)/2"
+  },
+  {
+   "page": 5,
+   "mark": "l",
+   "context": "qkl(−1)l ql(l−1)/2 w"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "(−1)"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "(−1)kq"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "(−1)kqk(k−1)/2z"
+  },
+  {
+   "page": 5,
+   "mark": "l",
+   "context": "q"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "q"
+  },
+  {
+   "page": 5,
+   "mark": "q",
+   "context": "=(b, az;"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "Remark2.3.Forw:= q"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "(q"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "(q1−n; q)∞1φ1(0; q"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "(q1−n; q)∞1φ1(0; q1−n; q, z) = (−1)"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "(q1−n; q)∞1φ1(0; q1−n; q, z) = (−1)nq"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "(q1−n; q)∞1φ1(0; q1−n; q, z) = (−1)nqn(n−1)/2z"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "(q1−n; q)∞1φ1(0; q1−n; q, z) = (−1)nqn(n−1)/2zn(q"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "; q)∞1φ1(0; q1−n; q, z) = (−1)nqn(n−1)/2zn(qn+1; q)∞1φ1(0; q"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "0; q1−n; q, z) = (−1)nqn(n−1)/2zn(qn+1; q)∞1φ1(0; qn+1; q, q"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "|w|→∞(cf.(2.4))drasticallyimproveswhenwrunsoverthevaluesq"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 6,
+   "mark": "z",
+   "context": "eq(tz) Eq(−t−1z) =(t−1"
+  },
+  {
+   "page": 6,
+   "mark": "q",
+   "context": "eq(tz) Eq(−t−1z) =(t−1z;"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "t"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "tnz"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "tnzn(q"
+  },
+  {
+   "page": 6,
+   "mark": "q",
+   "context": "tnzn(qn+1;"
+  },
+  {
+   "page": 6,
+   "mark": "q",
+   "context": "1φ1(0;"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "1φ1(0; q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "1φ1(0; qn+1; q, z"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "t"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "tnz"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "tnzn(z"
+  },
+  {
+   "page": 6,
+   "mark": "q",
+   "context": "tnzn(z2;"
+  },
+  {
+   "page": 6,
+   "mark": "z",
+   "context": "1φ1(0;"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "1φ1(0; z"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "1φ1(0; z2; q, q"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "(−1)"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "(−1)kq"
+  },
+  {
+   "page": 6,
+   "mark": "l",
+   "context": "(−1)kqk(k−1)/2t"
+  },
+  {
+   "page": 6,
+   "mark": "l",
+   "context": "(−1)kqk(k−1)/2tl−kz"
+  },
+  {
+   "page": 6,
+   "mark": "l",
+   "context": "(q"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "(ql+1; q)∞(−1)"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "(ql+1; q)∞(−1)kq"
+  },
+  {
+   "page": 6,
+   "mark": "l",
+   "context": "(ql+1; q)∞(−1)kqk(k−1)/2t"
+  },
+  {
+   "page": 6,
+   "mark": "l",
+   "context": "(ql+1; q)∞(−1)kqk(k−1)/2tl−kz"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "t"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "tn−mz"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "tn−mzn(q"
+  },
+  {
+   "page": 6,
+   "mark": "q",
+   "context": "tn−mzn(qn+1;"
+  },
+  {
+   "page": 6,
+   "mark": "q",
+   "context": "1φ1(0;"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "1φ1(0; q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "1φ1(0; qn+1; q, z"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "× z"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "× zm(q"
+  },
+  {
+   "page": 6,
+   "mark": "q",
+   "context": "× zm(qm+1;"
+  },
+  {
+   "page": 6,
+   "mark": "q",
+   "context": "1φ1(0;"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "1φ1(0; q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "1φ1(0; qm+1; q, z"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "z"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "zk+n(q"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "zk+n(qn+k+1;"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "1φ1(0;"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "1φ1(0; q"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "1φ1(0; qn+k+1; q, z"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "× z"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": "× zk+m(q"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "× zk+m(qm+k+1;"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "1φ1(0;"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": "1φ1(0; q"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "1φ1(0; qm+k+1; q, z"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "z"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "zk+n(z"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "zk+n(z2;"
+  },
+  {
+   "page": 7,
+   "mark": "z",
+   "context": "1φ1(0;"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "1φ1(0; z"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "1φ1(0; z2; q, q"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "× z"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "× zk+m(z"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "× zk+m(z2;"
+  },
+  {
+   "page": 7,
+   "mark": "z",
+   "context": "1φ1(0;"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "1φ1(0; z"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": "1φ1(0; z2; q, q"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "α(x;"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "α(x;"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "t"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "tnz"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "tnzn(q"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "tnzn(qn+1;"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "2φ1(0, 0;"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "2φ1(0, 0; q"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "2φ1(0, 0; qn+1; q, −z"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "t"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "tnz"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "tnzn"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "tnznq"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "tnznqn(n−1)/2 (q"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "tnznqn(n−1)/2 (qn+1;"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "0φ1(−;"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "0φ1(−; q"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "0φ1(−; qn+1; q, −q"
+  },
+  {
+   "page": 7,
+   "mark": "z",
+   "context": "0φ1(−; qn+1; q, −qn"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "0φ1(−; qn+1; q, −qn z"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "z"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "zk+n(q"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "zk+n(qn+k+1;"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "2φ1(0, 0;"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "2φ1(0, 0; q"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "2φ1(0, 0; qn+k+1; q, −z"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "× z"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": "× zk+mq(m+k)(m+k−1)/2(q"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "× zk+mq(m+k)(m+k−1)/2(qm+k+1;"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "0φ1(−;"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": "0φ1(−; q"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": "0φ1(−; qm+k+1; q, −q"
+  },
+  {
+   "page": 7,
+   "mark": "z",
+   "context": "0φ1(−; qm+k+1; q, −qm+k"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "0φ1(−; qm+k+1; q, −qm+k z"
+  },
+  {
+   "page": 7,
+   "mark": "c",
+   "context": "0φ1(−;"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "0φ1(−; c; q, cz) = (z;"
+  },
+  {
+   "page": 7,
+   "mark": "c",
+   "context": "0φ1(−; c; q, cz) = (z; q)∞2φ1(0, 0;"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "(1 −x"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "(1 −x2/(2N"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "=2F1(−nN, nN+ α + β + 1; α + 1; x"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "=2F1(−nN, nN+ α + β + 1; α + 1; x2/(4N"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "−−−−→0F1(−; α + 1; −(λx/2)"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "pn(x; a, b; q) :=2φ1(q−n, abq"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "(pnpm)(q"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "(pnpm)(qk; a, b; q) (qa)"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "(pnpm)(qk; a, b; q) (qa)k(q"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "(pnpm)(qk; a, b; q) (qa)k(qk+1;"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "(q, q"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "(q"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "=(qa)"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "=(qa)n (1 −qab) (qb, q;"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "=(qa)n (1 −qab) (qb, q; q)"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "(1 −q"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "(1 −q2"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "tendsformally(termwise)to1φ1(0; aq; q, q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "q(k+n)(α+1)(q"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "q(k+n)(α+1)(q2α+2;"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "q(k+n)(α+1)(q2α+2; q"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "g(q"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "1φ1(0;"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "1φ1(0; q"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "1φ1(0; q2α+2;"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "1φ1(0; q2α+2; q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "1φ1(0; q2α+2; q2, q"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "1φ1(0; q2α+2; q2, q2"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "1φ1(0; q2α+2; q2, q2k+2"
+  },
+  {
+   "page": 8,
+   "mark": "f",
+   "context": "1φ1(0; q2α+2; q2, q2k+2n+2)"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "1φ1(0; q2α+2; q2, q2k+2n+2) f(q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "(q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "(q2; q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "q(k+n)(α+1)(q"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "q(k+n)(α+1)(q2α+2;"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "q(k+n)(α+1)(q2α+2; q"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "f(q"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "1φ1(0;"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "1φ1(0; q"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "1φ1(0; q2α+2;"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "1φ1(0; q2α+2; q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "1φ1(0; q2α+2; q2, q"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "1φ1(0; q2α+2; q2, q2"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "1φ1(0; q2α+2; q2, q2k+2"
+  },
+  {
+   "page": 8,
+   "mark": "g",
+   "context": "1φ1(0; q2α+2; q2, q2k+2n+2)"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "1φ1(0; q2α+2; q2, q2k+2n+2) g(q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "(q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "(q2; q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "where f, g are L"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "where f, g are L2-functions on the set {q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Jα(z; q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Jα(z; q2) :=zα (q"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "Jα(z; q2) :=zα (q2α+2;"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Jα(z; q2) :=zα (q2α+2; q"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "1φ1(0;"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "1φ1(0; q"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "1φ1(0; q2α+2;"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "1φ1(0; q2α+2; q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "1φ1(0; q2α+2; q2, q"
+  },
+  {
+   "page": 8,
+   "mark": "z",
+   "context": "1φ1(0; q2α+2; q2, q2"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "1φ1(0; q2α+2; q2, q2 z"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "(q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "(q2; q"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "f(q"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "f(qk),g(q"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "f(qk),g(qn)byq"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "f(qk),g(qn)byqkf(q"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "f(qk),g(qn)byqkf(qk),q"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "f(qk),g(qn)byqkf(qk),qng(q"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "q2"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "q2kJα(q"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "q2kJα(qk+n; q"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "q2kJα(qk+n; q2) f(q"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "g(q"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "q2"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "q2nJα(q"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "q2nJα(qk+n; q"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "q2nJα(qk+n; q2) g(q"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "f(q"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "Jα((1 −q)z; q"
+  },
+  {
+   "page": 9,
+   "mark": "z",
+   "context": "Jα((1 −q)z; q2) =(1 + q)−α"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "1φ1(0;"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "1φ1(0; q"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "1φ1(0; q2α+2;"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "1φ1(0; q2α+2; q"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "1φ1(0; q2α+2; q2, (1 −q"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "1φ1(0; q2α+2; q2, (1 −q2)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "1φ1(0; q2α+2; q2, (1 −q2)2 (qz/(1 + q))"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "Γq"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "Γ(α + 1)"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Γ(α + 1)0F"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "Γ(α + 1)0F1(−; α + 1; −z"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "(1 −q"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "(1 −q2)α(q"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "(1 −q2)α(q2α+2; q"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "Γq"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "(q"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "(q2; q"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "Forsuchqwecanreplaceq"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "Forsuchqwecanreplaceqk,q"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Forsuchqwecanreplaceqk,qnin(3.4)by(1 −q)"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "Forsuchqwecanreplaceqk,qnin(3.4)by(1 −q)1/2q"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Forsuchqwecanreplaceqk,qnin(3.4)by(1 −q)1/2qk,(1 −q)"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "Forsuchqwecanreplaceqk,qnin(3.4)by(1 −q)1/2qk,(1 −q)1/2q"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "f((1 −q)"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "f((1 −q)1/2q"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "f((1 −q)1/2qk),g((1 −q)"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "f((1 −q)1/2qk),g((1 −q)1/2q"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "f((1 −q)1/2qk),g((1 −q)1/2qn)byf(q"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "f((1 −q)1/2qk),g((1 −q)1/2qn)byf(qk),g(q"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "h(q"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "h(qj) q"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "f(x) Jα((1 −q)λx; q"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "g(λ) Jα((1 −q)λx; q"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "ereλin theﬁrstidentityandxinthesecondidentitytake thevaluesq"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(qα+1−t; q"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "qnqntJα(q"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "qnqntJα(qn; q"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(qα+1+t; q"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "(1 + q)"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(1 + q)tΓq"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "x"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "xtJα((1 −q)x; q"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "Γq"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "2"
+  },
+  {
+   "page": 10,
+   "mark": "t",
+   "context": "x"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "s"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "skx"
+  },
+  {
+   "page": 10,
+   "mark": "l",
+   "context": "skxky"
+  },
+  {
+   "page": 10,
+   "mark": "l",
+   "context": "skxkylt"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "t"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "tny"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "(sxy)"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "t"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "tny"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "tnyn(s−1xy−1;"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "tnyn(s−1xy−1; q)"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "\u0014s−1yx−1, q"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "t"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "tns−nx−n(s−1yx−1;"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "t"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "tny"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "tnyn(s−1xy−1, q1+n;"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "\u0014s−1yx−1, q"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "(q"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "= t"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "= tns−nx−n(s−1yx−1, q"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "= tns−nx−n(s−1yx−1, q1−n;"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "q"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "2(y −s−1x)"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "2(y −s−1x)1/2(y −sx)"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "2(y −s−1x)1/2(y −sx)1/2andt(y −s−1x)"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "t"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "tns"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "× y"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "× yn+k(q"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "× yn+k(qn+k+1;"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "1φ1(0;"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "1φ1(0; q"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "1φ1(0; qn+k+1; q, y"
+  },
+  {
+   "page": 11,
+   "mark": "x",
+   "context": "1φ1(0; qn+k+1; q, y2)"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "1φ1(0; qn+k+1; q, y2) x"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "1φ1(0; qn+k+1; q, y2) xk(q"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "1φ1(0; qn+k+1; q, y2) xk(qk+1;"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "1φ1(0;"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "1φ1(0; q"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "1φ1(0; qk+1; q, x"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "s"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "sky"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "skyn+k(q"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "skyn+k(qn+k+1;"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "1φ1(0;"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "1φ1(0; q"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "1φ1(0; qn+k+1; q, y"
+  },
+  {
+   "page": 11,
+   "mark": "x",
+   "context": "1φ1(0; qn+k+1; q, y2)"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "1φ1(0; qn+k+1; q, y2) x"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "1φ1(0; qn+k+1; q, y2) xk(q"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "1φ1(0; qn+k+1; q, y2) xk(qk+1;"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "1φ1(0;"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "1φ1(0; q"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "1φ1(0; qk+1; q, x"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "y"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "yn(s−1xy−1;"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "yn(s−1xy−1; q)"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "\u0014s−1yx−1, q"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "s−nx−n(s−1yx−1;"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "s"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "specialcasex = y,s = 1theright-handsideof(4.5)becomesy"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "Proposition4.2.For|sxy| < 1andx"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "Proposition4.2.For|sxy| < 1andx2, y"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "s"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "sky"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "skyn+k(y"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "skyn+k(y2;"
+  },
+  {
+   "page": 12,
+   "mark": "y",
+   "context": "1φ1(0;"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "1φ1(0; y"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "1φ1(0; y2; q, q"
+  },
+  {
+   "page": 12,
+   "mark": "x",
+   "context": "1φ1(0; y2; q, qn+k+1)"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "1φ1(0; y2; q, qn+k+1) x"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "1φ1(0; y2; q, qn+k+1) xm+k(x"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "1φ1(0; y2; q, qn+k+1) xm+k(x2;"
+  },
+  {
+   "page": 12,
+   "mark": "x",
+   "context": "1φ1(0;"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "1φ1(0; x"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "1φ1(0; x2; q, q"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "s−my"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "s−myn−m(s−1xy−1, y"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "s−myn−m(s−1xy−1, y2;"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "; q, q"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "y"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "s−nx"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "s−nxm−n(s−1yx−1, x"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "s−nxm−n(s−1yx−1, x2;"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "; q, q"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "x"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "ondexpressionontheright-handsidecanbechosenifs−1yx−1andq"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "s"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "skz"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "skzn+k(z"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "skzn+k(z2;"
+  },
+  {
+   "page": 12,
+   "mark": "z",
+   "context": "1φ1(0;"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "1φ1(0; z"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "1φ1(0; z2; q, q"
+  },
+  {
+   "page": 12,
+   "mark": "z",
+   "context": "1φ1(0; z2; q, qn+k+1)"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "1φ1(0; z2; q, qn+k+1) z"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "1φ1(0; z2; q, qn+k+1) zm+k(z"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "1φ1(0; z2; q, qn+k+1) zm+k(z2;"
+  },
+  {
+   "page": 12,
+   "mark": "z",
+   "context": "1φ1(0;"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "1φ1(0; z"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "1φ1(0; z2; q, q"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "s−mz"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "s−mzn−m(s−1, z"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "s−mzn−m(s−1, z2;"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "\u0014qs, sz"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "; q, q"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "(sz"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "z"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "s−nz"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "s−nzm−n(s−1, z"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "s−nzm−n(s−1, z2;"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "\u0014qs, sz"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "; q, q"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "(sz"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "z"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "where|sz"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "where|sz2|<1,z"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "q"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "qk(−γ+1)Jα(q"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "qk(−γ+1)Jα(qm+k; q"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "qk(−γ+1)Jα(qm+k; q2) Jβ(q"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "qk(−γ+1)Jα(qm+k; q2) Jβ(qn+k; q"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "qnβq"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "qnβqm(γ−β−1)(qα−β+γ+1, q"
+  },
+  {
+   "page": 13,
+   "mark": "q",
+   "context": "qnβqm(γ−β−1)(qα−β+γ+1, q2β+2;"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "qnβqm(γ−β−1)(qα−β+γ+1, q2β+2; q"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "(qα+β−γ+1, q"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "(qα+β−γ+1, q2; q"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "×2φ1(qβ−α−γ+1, qα+β−γ+1; q"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "×2φ1(qβ−α−γ+1, qα+β−γ+1; q2β+2; q"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "×2φ1(qβ−α−γ+1, qα+β−γ+1; q2β+2; q2, q"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "×2φ1(qβ−α−γ+1, qα+β−γ+1; q2β+2; q2, q2"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "×2φ1(qβ−α−γ+1, qα+β−γ+1; q2β+2; q2, q2n−2"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "qmαq"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "qmαqn(γ−α−1)(qβ−α+γ+1, q"
+  },
+  {
+   "page": 13,
+   "mark": "q",
+   "context": "qmαqn(γ−α−1)(qβ−α+γ+1, q2α+2;"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "qmαqn(γ−α−1)(qβ−α+γ+1, q2α+2; q"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "(qα+β−γ+1, q"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "(qα+β−γ+1, q2; q"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "×2φ1(qα−β−γ+1, qα+β−γ+1; q"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "×2φ1(qα−β−γ+1, qα+β−γ+1; q2α+2; q"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "×2φ1(qα−β−γ+1, qα+β−γ+1; q2α+2; q2, q"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "×2φ1(qα−β−γ+1, qα+β−γ+1; q2α+2; q2, q2"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "×2φ1(qα−β−γ+1, qα+β−γ+1; q2α+2; q2, q2m−2"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "Nowreplaceq"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "Nowreplaceqkbyq"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "that,asq↑1,q"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "that,asq↑1,qmtendstoaandq"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "×2F1((β −α −γ + 1)/2,(α + β −γ + 1)/2; β + 1; b"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "×2F1((β −α −γ + 1)/2,(α + β −γ + 1)/2; β + 1; b2/a"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "×2F1((α −β −γ + 1)/2,(α + β −γ + 1)/2; α + 1; a"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "×2F1((α −β −γ + 1)/2,(α + β −γ + 1)/2; α + 1; a2/b"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "t"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "tny"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "tnyn(s−1xy−1, q"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "tnyn(s−1xy−1, qn+1;"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "(q"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "\u0014q"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "; q, −y"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "s−1x)"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "s−1x)1/2(y −sx)"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "s−1x)1/2(y −sx)1/2andt(y −s−1x)"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "y"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "yn(s−1xy−1, q"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "yn(s−1xy−1, qn+1;"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "\u0014q"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "s"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "sky"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "; q, −y"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "(q"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "×(q"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "×(qk+n+1;"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "2φ1(0, 0;"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "2φ1(0, 0; q"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "2φ1(0, 0; qk+n+1; q, −y"
+  },
+  {
+   "page": 14,
+   "mark": "x",
+   "context": "2φ1(0, 0; qk+n+1; q, −y2)"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "2φ1(0, 0; qk+n+1; q, −y2) x"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "2φ1(0, 0; qk+n+1; q, −y2) xk"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "2φ1(0, 0; qk+n+1; q, −y2) xk q"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "2φ1(0, 0; qk+n+1; q, −y2) xk qk(k−1)/2(q"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "2φ1(0, 0; qk+n+1; q, −y2) xk qk(k−1)/2(qk+1;"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "0φ1(−;"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "0φ1(−; q"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "0φ1(−; qk+1; q, −q"
+  },
+  {
+   "page": 14,
+   "mark": "x",
+   "context": "0φ1(−; qk+1; q, −qk"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "0φ1(−; qk+1; q, −qkx"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "cos(z; q"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "cos(z; q2) :=1φ1(0; q; q"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "cos(z; q2) :=1φ1(0; q; q2, q"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "cos(z; q2) :=1φ1(0; q; q2, q2z"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "(−1)"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "(−1)kq"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "(−1)kqk(k+1)z"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "(−1)kqk(k+1)z2"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "=(q"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "=(q2;"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "=(q2; q"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "z"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "z1/2J−1/2(z; q"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "(q; q"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "sin(z; q"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "sin(z; q2) :=(1 −q)−1z 1φ1(0; q"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "sin(z; q2) :=(1 −q)−1z 1φ1(0; q3; q"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "sin(z; q2) :=(1 −q)−1z 1φ1(0; q3; q2, q"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "sin(z; q2) :=(1 −q)−1z 1φ1(0; q3; q2, q2z"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "(−1)"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "(−1)kq"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "(−1)kqk(k+1)z"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "(−1)kqk(k+1)z2"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "=(q"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "=(q2;"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "=(q2; q"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "z"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "z1/2J1/2(z; q"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "(q; q"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "cos((1 −q)z; q"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "sin((1 −q)z; q"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "compacta.Whenwesubstitute(5.2)or(5.4)in(3.4)andreplacef(q"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "pacta.Whenwesubstitute(5.2)or(5.4)in(3.4)andreplacef(qk),g(q"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "q−k/2f(q"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "q−k/2f(qk),q−n/2g(q"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "cos(q"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "cos(qk+n; q"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "g(q"
+  },
+  {
+   "page": 15,
+   "mark": "q",
+   "context": "g(qn) =(q;"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "g(qn) =(q; q"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "q"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "f(q"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "(q"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "(q2; q"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "sin(q"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "sin(qk+n; q"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "cos(q"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "cos(qk+n; q"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "f(q"
+  },
+  {
+   "page": 15,
+   "mark": "q",
+   "context": "f(qk) =(q;"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "f(qk) =(q; q"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "g(q"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "(q"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "(q2; q"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "sin(q"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "sin(qk+n; q"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "q"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "qk|f(q"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "qn|g(q"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "∈2Z.Replace q"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "∈2Z.Replace qk, q"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "by(1 −q)"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "by(1 −q)1/2q"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "by(1 −q)1/2qk,(1 −q)"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "by(1 −q)1/2qk,(1 −q)1/2q"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "by(1 −q)1/2qk,(1 −q)1/2qn,andthenf((1 −q)"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "by(1 −q)1/2qk,(1 −q)1/2qn,andthenf((1 −q)1/2q"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "by(1 −q)1/2qk,(1 −q)1/2qn,andthenf((1 −q)1/2qk),g((1 −q)"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "by(1 −q)1/2qk,(1 −q)1/2qn,andthenf((1 −q)1/2qk),g((1 −q)1/2q"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": ")1/2qk,(1 −q)1/2qn,andthenf((1 −q)1/2qk),g((1 −q)1/2qn)byf(q"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "g(q"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "cos((1 −q)λx; q"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "g(λ) =(1 + q)"
+  },
+  {
+   "page": 15,
+   "mark": "q",
+   "context": "d"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "Γq"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "sin((1 −q)λx; q"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "cos((1 −q)λx; q"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "f(x) =(1 + q)"
+  },
+  {
+   "page": 15,
+   "mark": "q",
+   "context": "d"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "Γq"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "sin((1 −q)λx; q"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "(1 −q) Dq,zcos(z; q"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "(1 −q) Dq,zcos(z; q2) = −qsin(qz; q"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "(1 −q) Dq,zsin(z; q"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "(1 −q) Dq,zsin(z; q2) = cos(z; q"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "\u001a−q"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "\u001a−q2 λ"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "iff(z) = cos(λz; q"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "(1 −q)"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "(1 −q)2(D"
+  },
+  {
+   "page": 16,
+   "mark": "f",
+   "context": "q"
+  },
+  {
+   "page": 16,
+   "mark": "z",
+   "context": "qf)(q−1"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "−q λ"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "iff(z) = sin(λz; q"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "Sothetwosystemsoffunctionsz7→cos(q"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "Sothetwosystemsoffunctionsz7→cos(qnz)(n∈Z)andz7→sin(q"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "z7→(1 −q)"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "z7→(1 −q)2(D"
+  },
+  {
+   "page": 16,
+   "mark": "f",
+   "context": "q"
+  },
+  {
+   "page": 16,
+   "mark": "z",
+   "context": "qf)(q−1"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "q"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "qk(D"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "q"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "qkf(q"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "qkf(qk) (D"
+  },
+  {
+   "page": 16,
+   "mark": "f",
+   "context": "q"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "qf)(q"
+  },
+  {
+   "page": 16,
+   "mark": "g",
+   "context": "qf)(qk−1)"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "qf)(qk−1) g(q"
+  },
+  {
+   "page": 16,
+   "mark": "g",
+   "context": "q"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "qg)(q"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "forf,gofﬁnitesupporton{q"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "Observethattheq-deformationofd"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "Observethattheq-deformationofd2/dx"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "breaking.Thetwo-dimensionaleigenspacesofd"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "breaking.Thetwo-dimensionaleigenspacesofd2/dx"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "binationf(z)ofcos(λz; q"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "binationf(z)ofcos(λz; q2)andsin(λz; q"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "(1 −q)"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "(1 −q)2(D"
+  },
+  {
+   "page": 16,
+   "mark": "f",
+   "context": "q"
+  },
+  {
+   "page": 16,
+   "mark": "z",
+   "context": "qf)(q−1"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "f(z) :=1φ1(0; −q"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "f(z) :=1φ1(0; −q1/2; q"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "f(z) :=1φ1(0; −q1/2; q1/2, ±iq"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "f(z) :=1φ1(0; −q1/2; q1/2, ±iq3/4λz) = cos(λz; q"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "f(z) :=1φ1(0; −q1/2; q1/2, ±iq3/4λz) = cos(λz; q2) ∓iq"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "z) :=1φ1(0; −q1/2; q1/2, ±iq3/4λz) = cos(λz; q2) ∓iq1/4sin(q"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "(0; −q1/2; q1/2, ±iq3/4λz) = cos(λz; q2) ∓iq1/4sin(q1/2λz; q"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "(cf.Exton[4,5.2.2.1]),whichsatisﬁes(5.6)withµ=−q"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "(cf.Exton[4,5.2.2.1]),whichsatisﬁes(5.6)withµ=−q2λ"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "n→∞2φ"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "n→∞2φ1(q−n, q"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "n→∞2φ1(q−n, qn+1ab; qa; q, q"
+  },
+  {
+   "page": 17,
+   "mark": "x",
+   "context": "n→∞2φ1(q−n, qn+1ab; qa; q, qn"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "n→∞2φ1(q−n, qn+1ab; qa; q, qnx) =1φ"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "Rn(x) :=2φ1(q−n, q"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "Rn(x) :=2φ1(q−n, qn+1ab; qa; q, q"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "(−1)"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "(−1)kq"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "(−1)kqk(k−1)/2x"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "(1 −q"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "(1 −qn−j+1) (1 −q"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "(1 −q"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "(1 −qn−j+1) (1 −q"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "≤q"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "q"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "qk(k−1)/2q−kM"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "q"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "qk(k−1)/2M"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "|Rn(x)| ≤q"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "q↑1"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "q↑11φ"
+  },
+  {
+   "page": 17,
+   "mark": "q",
+   "context": "q↑11φ1(0;"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "q↑11φ1(0; qα+1; q, (1 −q)"
+  },
+  {
+   "page": 17,
+   "mark": "z",
+   "context": "q↑11φ1(0; qα+1; q, (1 −q)2"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "q↑11φ1(0; qα+1; q, (1 −q)2z) =0F"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "(−1)"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "(−1)kq"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "(−1)kqk(k−1)/2(1 −q)"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "(−1)kqk(k−1)/2(1 −q)2"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "(−1)kqk(k−1)/2(1 −q)2kz"
+  },
+  {
+   "page": 17,
+   "mark": "q",
+   "context": "1φ1(0;"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "1φ1(0; qα+1; q, (1 −q)"
+  },
+  {
+   "page": 17,
+   "mark": "z",
+   "context": "1φ1(0; qα+1; q, (1 −q)2"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "(q−α/2|z|)"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "(2α/2|z|)"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "((q"
+  },
+  {
+   "page": 18,
+   "mark": "b",
+   "context": "((qa+ q"
+  },
+  {
+   "page": 18,
+   "mark": "c",
+   "context": "((qa+ qb)z −q"
+  },
+  {
+   "page": 18,
+   "mark": "c",
+   "context": "((qa+ qb)z −qc−1−1)u(qz) + (q"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "((qa+ qb)z −qc−1−1)u(qz) + (qc−1−q"
+  },
+  {
+   "page": 18,
+   "mark": "c",
+   "context": "2φ1(a, b;"
+  },
+  {
+   "page": 18,
+   "mark": "q",
+   "context": "2φ1(a, b; c; q, z) =(b, c/a, az, q/(az);"
+  },
+  {
+   "page": 18,
+   "mark": "q",
+   "context": "+(a, c/b, bz, q/(bz);"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "non-positiveintegerpowerofq,andwherea, b, c, z̸=0.Nowputz:=q"
+  },
+  {
+   "page": 18,
+   "mark": "c",
+   "context": "2φ1(a, b;"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "2φ1(a, b; c; q, q"
+  },
+  {
+   "page": 18,
+   "mark": "q",
+   "context": "2φ1(a, b; c; q, qn+1/a) =(qb/a, c/b;"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": " B.1.Formula (B.3) is valid for integer n if c, qb/a, q/a, q"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "taken on the right-handside if n ≥m andq"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "sideifm≥nandq"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "other for all integer values of m, n if s−1xy−1, q"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "l integer values of m, n if s−1xy−1, qn−ms−1xy−1, s−1yx−1, q"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "integervaluesofm, n.Finally,ifs−1xy−1, q"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "integerpowerofqbuts−1yx−1orq"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "ontheright-handside.Similarly,ifs−1yx−1, q"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "integerpowerofqbuts−1xy−1orq"
+  }
+ ]
+}

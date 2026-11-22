@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1112.0030v2
-doc_title: "Homological algebra of knots and BPS states"
+doc_title: "Homological Algebra of Knots and BPS States"
 section_id: sec-000-1-setting-the-stage
 section_title: "Setting the stage"
 section_number: 1
 pages: 1-7
 source_pdf: 1112.0030v2.pdf
 source_sha256: 745f143c2df4734b
-doc_brief: "Homological algebra of knots and BPS states — It is known that knot homologies admit a physical descriptio n as spaces of open BPS states. W e study operators and algebras acting on these spaces."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.945
+latex_coverage_ratio: 0.983
+doc_brief: "Homological Algebra of Knots and BPS States — It is known that knot homologies admit a physical description as spaces of open BPS states. We study operators and algebras acting on these spaces."
 ---
 \label{sec:intro}
 

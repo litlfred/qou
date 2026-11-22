@@ -1,0 +1,47 @@
+344 Cone point asymptotics
+
+Lemma 11.8. Assume the hypotheses of Theorem 11.1 as well as the smooth
+point assumption (*). Then the family {Z(y) : y € Taat} in Definition 11.7
+satisfies conclusions (i), (iii), and (iv) of Theorem 11.1.
+
+Note that we do not require conclusion (ii) of Theorem 11.1 for our special
+arguments about deformations in the smooth case below.
+
+Proof Conclusion (i) follows from part (b) of Theorem 6.44. For conclu-
+sion (iii), note that M(y) is by definition empty if g(a. + iy) # 0, in which
+case Z(y) is all of R@ and the conclusion is trivial. Assume therefore that
+q(x, + iy) = 0 and let AX = Ay) denote the vector (Viog Q)(exp(w. + iy))
+after normalizing to a unit vector and orienting to point away from B, so that
+N(y) is the ray parallel to A. The point exp(ax, + iy) is critical in directions
+precisely +A, because smooth points are critical precisely for directions paral-
+lel to the logarithmic gradient; this verifies that 7 € N(y) implies # is a critical
+direction. If # # +A then the dot product with # is unbounded both above
+and below on the halfspace Z(y) with outward normal A, so we can choose
+v € L(y) withh?-v = 1. If f = -A then? € tan,(B) = Z(y) and we can
+choose v = cf, where c = Alls! > 0. Conclusion (iv) follows from the fact
+that S = T(x.) NV is closed and Vjog Q is continuous and non-vanishing on
+S. im
+
+Theorem 11.9 (Theorem 11.4 for smooth points, self-contained). Assume the
+hypotheses of Theorem 11.4 as well as the smooth point assumption (*). Then
+for x € B, the torus T(a) is homotopic in M to a cycle C, with maximum
+height less than h, = —f. + &..
+
+Proof Fix x € Band mimic the proof of Theorem 11.4 up through (11.2).
+That is, for each y € Tra choose vectors u(y) € Z(y) and neighborhoods N(y)
+with u(y) € Z(y’) when y’ € N(y); then define Vy) via (11.2). We claim,
+picking N’(y) smaller if necessary, that over each N’(y) there is a sufficiently
+small 6 > 0 such that for all 0 < ¢ < 1,
+
+q(x. + iy’ + dUtV(y) + (1 -d(@- 2,)]) #0. (11.5)
+
+If g(x, + iy) # 0 then we can pick N’ and 6 to keep g from vanishing
+by continuity, so we assume that q(x, + iy) = 0. Nonvanishing of (11.5) for
+sufficiently small 6 follows from the Taylor expansion of the left-hand side in
+6. Specifically, because the gradient of g is a multiple of A, we have
+
+q(x. + iy + otV(y) + (1 - O(a - @,)])
+=0+6Xy): (tW(y) + (1 — D(a — w,)) +0(6).
+
+a)
+

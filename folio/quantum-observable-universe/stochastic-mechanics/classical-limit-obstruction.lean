@@ -11,7 +11,7 @@ LaTeX label: `def:classical-limit-obstruction`
 
 ## References
 - [yekutieli2010] https://doi.org/10.1016/j.aim.2009.12.006
-- [manuscript] §8/classical-limit-obstruction
+- [leitner2026] §8/classical-limit-obstruction
 -/
 
 set_option autoImplicit false
@@ -34,7 +34,7 @@ namespace QOU.AlgebraicSubstrate
     A property 𝒫(q) that holds for generic non-torsion q persists
     through q = 1 iff its obstruction class [𝒫] ∈ HH²(Ad) vanishes. -/
 -- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
--- Ref: [manuscript] §8/classical-limit-obstruction
+-- Ref: [leitner2026] §8/classical-limit-obstruction
 structure ClassicalLimitObstruction where
   /-- The underlying type of the obstruction group HH²(𝒰_q, Ad). -/
   carrier : Type*

@@ -1,0 +1,45 @@
+Remark 2.3.17. In the generic case when )? is a simple root, then the technical
+assumption is automatically satisfied and the theorem always holds : thus in this
+
+case tor(M, Adop) does not vanish at v.
+
+Proof. As \? is a root of order r of the Alexander polynomial, the Alexander module
+H,(M, k[t*"],) has (t — \*)-length equal to r, in other words, its (t — \”)-torsion is of
+
+the form © fish with > n; =r. In particular 1 <1 <r and from the Universal
+Coefficients Theorem, one obtains that dim H"(M,?) =le {1,...r}. If l =r, then
+we use Proposition 2.3.19] (postponed at the end of this section) to conclude that the
+map 6 in the sequence is injective, hence dim H!(M, K) = dim H1(M,7)-1=
+r —1. Otherwise | < r—1, and as dim(H1(M,k)) = 1, again by sequence the
+
+inequality dim(H1(M, K)) <r —1 holds.
+
+Now we consider the sequence (2.3). As the Alexander polynomial is symmetric, we
+know that dim(H1(M,\~?)) = dim(H1(M, )) < r. A careful observation of this
+exact sequence is now enough to prove that dim H!(M, Adop) < 2r—1. We denote
+
+this dimension by m.
+
+Consider the sequence of I-modules
+0 + sh(O,/(t)) 4 slo(O,/(#?)) 224 slo(O,/(t)) > 0
+
+From this we get
+
+0 > H'(M, Adop) > H*(M, Ad op’) *» H*(M, Ad of)
+#, H?(M, Adop) + H?(M, Adop’) + H?(M,Adop) 40 (2.5)
+where Adop’ denotes the homology of the complex with coefficients in sl2(O,/(t?)).
+
+By Lemma |2.3.18] below, the connection operator is nothing but the map B we
+defined above.
+
+m1
+
+We write H,(M,Adop), = O, ® @ O,/(t), hence we have H1(M,Adop) =
+i=l
+
+O,/(t)®@; Ov/(t). Moreover we have H,(M, Ad op’) ~ O,/(P?) OQ, Ov /(tm™),
+
+and by the Universal Coefficients Theorem,
+H"(M, Adop’) ~ Hom(H,(M, Adop’), O,/(t?)) ~ Hi(M, Adop’)
+
+61

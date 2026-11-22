@@ -1,0 +1,64 @@
+---
+doc_id: ram1991-frobenius-formula
+doc_title: "A Frobenius formula for the characters of the Hecke algebras"
+section_id: page-016
+section_title: "Page 16"
+pages: 16-16
+pdf_page: 16
+source_pdf: ram1991-frobenius-formula.pdf
+source_sha256: 26b2fc85338d9150
+text_source: ocr
+granularity: page
+doc_brief: "A Frobenius formula for the characters of the Hecke algebras — 28 sections: Page 1; Page 2; Page 3"
+---
+476 A. Ram
+
+Proof. The theorem follows immediately from Theorem 3.8 and Theorem
+4.13(a). O
+
+5 Formulas for the irreducible characters of H,
+
+(5.1) Theorem. For each T,, o€S,, there exists a Z[q] linear combination
+Co= >) Gort, »
+ube
+
+4g,€Z[q], such that x(T,) = x(cz) for all characters x of Hy.
+
+Proof. Let c be a composition of f and let yw be the partition of f determined by
+rearranging the parts of c in decreasing order. Then by Theorem 4.2 we know that
+tr(DT,,) = tr(DT,,). Since the Schur functions Sa, X2,...,X,) are linearly inde-
+pendent, it follows from Theorem 3.8 that y7(Z,,) = x E,) for all irreducible
+
+characters 7 of H. This shows that it is sufficient to prove that there exists a Z {q]
+linear combination
+
+d, = ¥ bach, »
+crf
+
+b,-€ €(q), such that x(Z;) = x(d,) for all characters y of Hy.
+
+Let x be a character of Hy and let aeS,. Let i be the first i such that
+o(i) > i + 1. The proof is by induction on i and reverse induction on o(i). Note that
+any o that does not have such an i is of the form y, for some cFf.
+
+Let j=o(i)—1. Since o '(j)>i and o ‘(j+1)=i we have that
+£(as;) < ¢(c) and thus 7, = 7;,,g;.-
+
+Case 1 ¢(s;os;) > ¢(08;):
+Then
+(Ts) = x(Tos,93)
+
+= X(9;Tes,)
+= X(Ty0s,) +
+Note now that for the permutation o’ = s;os; we have o'(i) = j = o(i) — 1.
+Case 2 ¢(s;as;) < ¢(a8;):
+Then 7,;,, = 9jT;,0s, and thus T, = gj T;,as,9j- SO
+X(Ta) = X(Gj Tis08593)
+= 1095 Teos,)
+= (q — )xXGjTyos;) + 1X(Tiyas;)
+= (¢ — Ix(Les,) + 4x (Teyos;) -
+Here again, for each of the permutations o’ = os; and o’ = s,os; we have that
+o'(i) =j =o(i)-— 1.
+
+Thus x(7,) can be written as a linear combination of y(T;-) where for each a’ we
+have that o’(i) = o(i) — 1. This completes the induction. 0

@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0908.3425v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0908.3425v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-0908.3425v1",
+  "title": "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector",
   "contains": [
+    "library/arxiv-0908.3425v1/sections/sec-front-matter",
     "library/arxiv-0908.3425v1/sections/sec-000",
     "library/arxiv-0908.3425v1/sections/sec-001",
     "library/arxiv-0908.3425v1/sections/sec-002",
@@ -57,10 +58,16 @@
     "library/arxiv-0908.3425v1/sections/sec-043",
     "library/arxiv-0908.3425v1/sections/sec-044",
     "library/arxiv-0908.3425v1/sections/sec-045",
-    "library/arxiv-0908.3425v1/sections/sec-046"
+    "library/arxiv-0908.3425v1/sections/sec-046",
+    "library/arxiv-0908.3425v1/sections/sec-047",
+    "library/arxiv-0908.3425v1/sections/sec-048",
+    "library/arxiv-0908.3425v1/sections/sec-049",
+    "library/arxiv-0908.3425v1/sections/sec-050",
+    "library/arxiv-0908.3425v1/sections/sec-051",
+    "library/arxiv-0908.3425v1/sections/sec-052"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -70,7 +77,9 @@
   },
   "meta": {
     "doc_id": "arxiv-0908.3425v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0908.3425v1.pdf",
     "source_sha256": "5e88d45bbc1c1b9b71ddc373cf08ce63ae9a6318c47067919d679c988d552479",
     "pages": 85,

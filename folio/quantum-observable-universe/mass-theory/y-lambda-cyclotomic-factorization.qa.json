@@ -1134,6 +1134,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "15ebb7f1161c",
+          "ts": "83758afeddd5",
+          "lean": "e4af19ffe7ec",
+          "lean_statement": "4a3b93f517ea"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:28.334Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "S↔L: ref is sibling-only and proves only n = 2, while the md claims n ∈ {2,3,4} (md:1), so it is a special case. Even at n = 2 the theorem is the tautology `∃ y, y * D = P` for a nonzero D, witnessed by P/D (lean:83-92). y is never tied to the Jones–Markov coefficient y_λ. The formalised data are convention C: `D_2 = Φ_4·Φ_8 = (t²+1)(t⁴+1)` with numerators t³+t²+1 and t⁶+t⁴−t³ (lean:14, 45-46, 61-66). The md is convention D, and the ts records that under D, D_2 = Φ_8² (ts:36-38). The docstring's \"all 18 partitions\" (lean:24, 80) is retracted in ts:38. q : ℝ is gratuitous for a statement over ℚ(q̌). S↔P: the prf runs in convention C. It writes \"z = q̌/(q̌²+1)\" (prf:7), against the statement's z = q̌⁶/(q̌⁴+1) (md:1), so it does not prove the D statement. Its key step is invalid as well. \"After reducing y_λ = s_λ/Z, the denominator D_n is a product of cyclotomic polynomials by the closure of cyclotomic factorisations under multiplication and division\" (prf:33-35) does not follow: dividing by Z_n moves Z_n's numerator into the denominator, and that numerator is not shown to be cyclotomic. The prf also ignores X's own non-cyclotomic denominator 1 + q̌² + q̌³ − q̌⁴ − q̌⁶ (prf:11), which enters every factor (1 − X Q^{c(x)}). The D-convention result (pure Φ_8 powers) rests on the probe (ts:36), not on this proof.",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean"
       }
     ],
     "milnor-amalgamated-flow": [
@@ -2188,6 +2206,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-23T20:03:46.524Z",
+  "updated_at": "2026-11-15T21:57:28.334Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

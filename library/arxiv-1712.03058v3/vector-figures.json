@@ -1,0 +1,954 @@
+{
+  "$schema": "folio-vector-figures/v1",
+  "doc_id": "arxiv-1712.03058v3",
+  "figures": [
+    {
+      "id": "vfig-p006",
+      "file": null,
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 6
+      },
+      "page": 6,
+      "rotation": 0,
+      "captionLabels": [
+        "1.1"
+      ],
+      "region": null,
+      "assembly": {
+        "drawings": 118,
+        "background": 0,
+        "groups": [],
+        "boxes": [],
+        "unlabelledClosedShapes": 109,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              205.84,
+              200.77,
+              229.21,
+              200.77
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              258.1,
+              200.77,
+              281.47,
+              200.77
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              310.36,
+              200.77,
+              328.47,
+              200.77
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              367.9,
+              200.77,
+              386.0,
+              200.77
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              414.89,
+              200.77,
+              438.26,
+              200.77
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              244.85,
+              164.15,
+              244.85,
+              187.52
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              349.37,
+              164.15,
+              349.37,
+              187.52
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              401.64,
+              164.15,
+              401.64,
+              187.52
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              205.84,
+              253.03,
+              439.09,
+              253.03
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 0
+      },
+      "unrendered_reason": "no drawing component on this page contains a text line, so there is no labelled region to render -- the caption candidates are recorded and nothing is claimed about what the page draws"
+    },
+    {
+      "id": "vfig-p014",
+      "file": "figures/vfig-p014.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 14
+      },
+      "page": 14,
+      "rotation": 0,
+      "captionLabels": [
+        "1.2"
+      ],
+      "region": [
+        155.42,
+        354.96,
+        438.88,
+        505.02
+      ],
+      "assembly": {
+        "drawings": 73,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              155.42,
+              354.96,
+              438.88,
+              505.02
+            ],
+            "drawings": 73,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "0",
+              "250",
+              "500",
+              "750",
+              "1000",
+              "0",
+              "10",
+              "20",
+              "30",
+              "40",
+              "50",
+              "Time (weeks)",
+              "Weekly new reported cases"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              155.42,
+              354.96,
+              438.88,
+              505.02
+            ],
+            "parent": null,
+            "labels": [
+              "0",
+              "250",
+              "500",
+              "750",
+              "1000",
+              "0",
+              "10",
+              "20",
+              "30",
+              "40",
+              "50",
+              "Time (weeks)",
+              "Weekly new reported cases"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 41,
+        "connectors": [],
+        "between": [],
+        "outside": 27
+      }
+    },
+    {
+      "id": "vfig-p016",
+      "file": "figures/vfig-p016.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 16
+      },
+      "page": 16,
+      "rotation": 0,
+      "captionLabels": [
+        "1.3",
+        "1.4"
+      ],
+      "region": [
+        127.08,
+        126.67,
+        467.24,
+        566.48
+      ],
+      "assembly": {
+        "drawings": 305,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              127.08,
+              126.67,
+              467.24,
+              306.75
+            ],
+            "drawings": 147,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "β",
+              "γ",
+              "loglik",
+              "nfail",
+              "0",
+              "25",
+              "50",
+              "75",
+              "100",
+              "0",
+              "25",
+              "50",
+              "75",
+              "100",
+              "0",
+              "5",
+              "10",
+              "15",
+              "0.3",
+              "0.4",
+              "0.5",
+              "0.6",
+              "0.7",
+              "-1000",
+              "-750",
+              "-500",
+              "-250",
+              "0.4",
+              "0.8",
+              "1.2",
+              "1.6",
+              "MIF2 Iteration"
+            ]
+          },
+          {
+            "bbox": [
+              139.3,
+              438.09,
+              295.2,
+              566.48
+            ],
+            "drawings": 83,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "-160",
+              "-158",
+              "-156",
+              "-154",
+              "0.90",
+              "0.95",
+              "1.00",
+              "1.05",
+              "1.10",
+              "1.15",
+              "β",
+              "Loglikelihood"
+            ]
+          },
+          {
+            "bbox": [
+              299.11,
+              438.09,
+              455.01,
+              566.48
+            ],
+            "drawings": 75,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "-160",
+              "-158",
+              "-156",
+              "-154",
+              "0.40",
+              "0.45",
+              "0.50",
+              "0.55",
+              "0.60",
+              "γ",
+              "Loglikelihood"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              127.08,
+              126.67,
+              467.24,
+              306.75
+            ],
+            "parent": null,
+            "labels": [
+              "0",
+              "25",
+              "50",
+              "75",
+              "100",
+              "0",
+              "25",
+              "50",
+              "75",
+              "100",
+              "0",
+              "5",
+              "10",
+              "15",
+              "0.3",
+              "0.4",
+              "0.5",
+              "0.6",
+              "0.7",
+              "-1000",
+              "-750",
+              "-500",
+              "-250",
+              "0.4",
+              "0.8",
+              "1.2",
+              "1.6",
+              "MIF2 Iteration"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              166.05,
+              207.92,
+              307.48,
+              220.36
+            ],
+            "parent": "b0",
+            "labels": [
+              "β"
+            ]
+          },
+          {
+            "id": "b2",
+            "bbox": [
+              324.28,
+              207.92,
+              465.72,
+              220.36
+            ],
+            "parent": "b0",
+            "labels": [
+              "γ"
+            ]
+          },
+          {
+            "id": "b3",
+            "bbox": [
+              166.05,
+              128.19,
+              307.48,
+              140.63
+            ],
+            "parent": "b0",
+            "labels": [
+              "loglik"
+            ]
+          },
+          {
+            "id": "b4",
+            "bbox": [
+              324.28,
+              128.19,
+              465.72,
+              140.63
+            ],
+            "parent": "b0",
+            "labels": [
+              "nfail"
+            ]
+          },
+          {
+            "id": "b5",
+            "bbox": [
+              139.3,
+              438.09,
+              295.2,
+              566.48
+            ],
+            "parent": null,
+            "labels": [
+              "-160",
+              "-158",
+              "-156",
+              "-154",
+              "0.90",
+              "0.95",
+              "1.00",
+              "1.05",
+              "1.10",
+              "1.15",
+              "β",
+              "Loglikelihood"
+            ]
+          },
+          {
+            "id": "b6",
+            "bbox": [
+              299.11,
+              438.09,
+              455.01,
+              566.48
+            ],
+            "parent": null,
+            "labels": [
+              "-160",
+              "-158",
+              "-156",
+              "-154",
+              "0.40",
+              "0.45",
+              "0.50",
+              "0.55",
+              "0.60",
+              "γ",
+              "Loglikelihood"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 96,
+        "connectors": [
+          {
+            "from": "b0",
+            "to": "b3",
+            "bbox": [
+              187.42,
+              140.63,
+              187.42,
+              206.39
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b3",
+            "bbox": [
+              219.88,
+              140.63,
+              219.88,
+              206.39
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b3",
+            "bbox": [
+              252.35,
+              140.63,
+              252.35,
+              206.39
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b3",
+            "bbox": [
+              284.82,
+              140.63,
+              284.82,
+              206.39
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b3",
+            "bbox": [
+              171.18,
+              140.63,
+              171.18,
+              206.39
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b3",
+            "bbox": [
+              203.65,
+              140.63,
+              203.65,
+              206.39
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b3",
+            "bbox": [
+              236.12,
+              140.63,
+              236.12,
+              206.39
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b3",
+            "bbox": [
+              268.59,
+              140.63,
+              268.59,
+              206.39
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b3",
+            "bbox": [
+              301.06,
+              140.63,
+              301.06,
+              206.39
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b1",
+            "bbox": [
+              187.42,
+              220.36,
+              187.42,
+              286.12
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b1",
+            "bbox": [
+              219.88,
+              220.36,
+              219.88,
+              286.12
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b1",
+            "bbox": [
+              252.35,
+              220.36,
+              252.35,
+              286.12
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b1",
+            "bbox": [
+              284.82,
+              220.36,
+              284.82,
+              286.12
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b1",
+            "bbox": [
+              171.18,
+              220.36,
+              171.18,
+              286.12
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b1",
+            "bbox": [
+              203.65,
+              220.36,
+              203.65,
+              286.12
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b1",
+            "bbox": [
+              236.12,
+              220.36,
+              236.12,
+              286.12
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b1",
+            "bbox": [
+              268.59,
+              220.36,
+              268.59,
+              286.12
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b1",
+            "bbox": [
+              301.06,
+              220.36,
+              301.06,
+              286.12
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b4",
+            "bbox": [
+              345.65,
+              140.63,
+              345.65,
+              206.39
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b4",
+            "bbox": [
+              378.12,
+              140.63,
+              378.12,
+              206.39
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b4",
+            "bbox": [
+              410.58,
+              140.63,
+              410.58,
+              206.39
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b4",
+            "bbox": [
+              443.05,
+              140.63,
+              443.05,
+              206.39
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b4",
+            "bbox": [
+              329.41,
+              140.63,
+              329.41,
+              206.39
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b4",
+            "bbox": [
+              361.88,
+              140.63,
+              361.88,
+              206.39
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b4",
+            "bbox": [
+              394.35,
+              140.63,
+              394.35,
+              206.39
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b4",
+            "bbox": [
+              426.82,
+              140.63,
+              426.82,
+              206.39
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b4",
+            "bbox": [
+              459.29,
+              140.63,
+              459.29,
+              206.39
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b2",
+            "bbox": [
+              345.65,
+              220.36,
+              345.65,
+              286.12
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b2",
+            "bbox": [
+              378.12,
+              220.36,
+              378.12,
+              286.12
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b2",
+            "bbox": [
+              410.58,
+              220.36,
+              410.58,
+              286.12
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b2",
+            "bbox": [
+              443.05,
+              220.36,
+              443.05,
+              286.12
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b2",
+            "bbox": [
+              329.41,
+              220.36,
+              329.41,
+              286.12
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b2",
+            "bbox": [
+              361.88,
+              220.36,
+              361.88,
+              286.12
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b2",
+            "bbox": [
+              394.35,
+              220.36,
+              394.35,
+              286.12
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b2",
+            "bbox": [
+              426.82,
+              220.36,
+              426.82,
+              286.12
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b2",
+            "bbox": [
+              459.29,
+              220.36,
+              459.29,
+              286.12
+            ]
+          }
+        ],
+        "between": [
+          "Figure 1.3: Diagnostic plot of the iterated ﬁltering algorithm for 100 it-",
+          "erations for simulated incidence data.",
+          "Shown is the evolution of the log-",
+          "likelihood (loglik), the number of ﬁltering failures in each mif2 iteration",
+          "(nfail) and parameter estimates for parameters β and γ per iteration for 10",
+          "trajectories with random starting values drawn from a hypercube."
+        ],
+        "outside": 9
+      }
+    },
+    {
+      "id": "vfig-p023",
+      "file": "figures/vfig-p023.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 23
+      },
+      "page": 23,
+      "rotation": 0,
+      "captionLabels": [
+        "1.5"
+      ],
+      "region": [
+        134.16,
+        451.14,
+        460.15,
+        604.55
+      ],
+      "assembly": {
+        "drawings": 44,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              134.16,
+              451.14,
+              460.15,
+              604.55
+            ],
+            "drawings": 43,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "0",
+              "25000",
+              "50000",
+              "75000",
+              "2001",
+              "2002",
+              "2003",
+              "2004",
+              "2005",
+              "2006",
+              "2007",
+              "2008",
+              "2009",
+              "Time (weeks)",
+              "Weekly new cases"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              134.16,
+              451.14,
+              460.15,
+              604.55
+            ],
+            "parent": null,
+            "labels": [
+              "0",
+              "25000",
+              "50000",
+              "75000",
+              "2001",
+              "2002",
+              "2003",
+              "2004",
+              "2005",
+              "2006",
+              "2007",
+              "2008",
+              "2009",
+              "Time (weeks)",
+              "Weekly new cases"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 2,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              342.05,
+              167.95,
+              350.08,
+              167.95
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 31
+      }
+    }
+  ]
+}

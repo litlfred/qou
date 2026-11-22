@@ -213,7 +213,7 @@ theorem degLexNat_right_compat (a b d : List ℕ) (h : degLexNat a b) :
     self-assuming `(hab : degLexNat a b) : degLexNat a b := hab`, which
     named the embedding nowhere and asserted nothing about it.
 
-    Reference: [manuscript] §3/ordering-jet-compatibility. -/
+    Reference: [leitner2026] §3/ordering-jet-compatibility. -/
 -- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
 theorem ordering_extends {φ : List ℕ → List ℕ} {a b : List ℕ}
     (hφa : φ a = a) (hφb : φ b = b) (hab : degLexNat a b) :
@@ -235,7 +235,7 @@ theorem wellfounded_at_level (n : ℕ) :
     bounded generator index because `degLexNat` is well-founded
     and the bounded-alphabet restriction is a subrelation. -/
 -- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
--- Ref: [manuscript] §3/ordering-jet-compatibility
+-- Ref: [leitner2026] §3/ordering-jet-compatibility
 theorem direct_limit_terminates (n : ℕ) (w : List ℕ)
     (_hw : ∀ g ∈ w, g < n) :
     Acc degLexNat w :=
@@ -271,9 +271,9 @@ structure JetStratifiedSystem (G : Type u) (k : Type v) [Ring k] where
   /-- The descended subsystem (inherited from level `n`). -/
   descended : RewritingSystem G k
   /-- The transient rules (new at level `n+1`). -/
-  transientRules : List (ReductionRule G k)
+  transientRules : Set (ReductionRule G k)
   /-- The full system is the union of descended and transient. -/
-  union_spec : full.rules = descended.rules ++ transientRules
+  union_spec : full.rules = descended.rules ∪ transientRules
 
 /-! ## §3  Jet-Stratified S-Polynomial Classification -/
 
@@ -298,20 +298,64 @@ def classifySPoly (c₁ c₂ : RuleClass) : SPolyClass :=
 
 /-! ## §4  Jet-Stratified GS Verification -/
 
-/-- **Descended GS inheritance** (axiom stub): if the descended
-    subsystem is already a GS basis (verified at level `n`), then
-    all descended × descended S-polynomials resolve to zero.
+/-- **Reduction is monotone in the rule set.** A single step in a system is a
+    single step in any system containing its rules: the witness is a rule, a
+    context and a coefficient, and only the membership of the rule changes. -/
+theorem SingleStepReduction.mono_rules
+    {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
+    {ord : AdmissibleOrder G} {sys₁ sys₂ : RewritingSystem G k}
+    (hsub : ∀ r ∈ sys₁.rules, r ∈ sys₂.rules)
+    {f g : AlgElement G k} (h : SingleStepReduction ord sys₁ f g) :
+    SingleStepReduction ord sys₂ f g := by
+  obtain ⟨r, hr, rest⟩ := h.exists_witness
+  exact ⟨⟨r, hsub r hr, rest⟩⟩
 
-    This is the key lemma that eliminates `O(|Σₙ|²)` checks.
+/-- Multi-step reduction is monotone in the rule set. -/
+theorem MultiStepReduction.mono_rules
+    {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
+    {ord : AdmissibleOrder G} {sys₁ sys₂ : RewritingSystem G k}
+    (hsub : ∀ r ∈ sys₁.rules, r ∈ sys₂.rules)
+    {f g : AlgElement G k} (h : MultiStepReduction ord sys₁ f g) :
+    MultiStepReduction ord sys₂ f g := by
+  induction h with
+  | refl => exact MultiStepReduction.refl _
+  | step _ hlast ih => exact MultiStepReduction.step ih (hlast.mono_rules hsub)
 
-    Axiomatised because the proof requires constructing the reduction
-    of each descended S-polynomial within the full system, showing that
-    the extra transient rules do not interfere with the descended
-    reduction (since transient leading monomials involve new generators
-    that cannot appear in descended monomials). -/
+/-- **Reduction to zero transfers to a larger system.** If `f` reduces to a zero
+    normal form in `sys₁`, it does so in any `sys₂ ⊇ sys₁`: the run lifts by
+    `mono_rules`, and a zero element is in normal form for every system
+    (`isNormalForm_of_isZero`). Normality itself does *not* transfer — a larger
+    system has more leading monomials — which is why the statement is about
+    reduction **to zero**, the only case the GS property needs. -/
+theorem reducesToZero_mono_rules
+    {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
+    {ord : AdmissibleOrder G} {sys₁ sys₂ : RewritingSystem G k}
+    (hsub : ∀ r ∈ sys₁.rules, r ∈ sys₂.rules) {f : AlgElement G k}
+    (h : ∃ nf, ReducesToNF ord sys₁ f nf ∧ nf.isZero) :
+    ∃ nf, ReducesToNF ord sys₂ f nf ∧ nf.isZero := by
+  obtain ⟨nf, hred, hz⟩ := h
+  exact ⟨nf, ⟨hred.reduces.mono_rules hsub, isNormalForm_of_isZero hz⟩, hz⟩
+
+/-- The descended rules are rules of the full system. -/
+theorem JetStratifiedSystem.descended_sub_full
+    {G : Type u} {k : Type v} [Ring k] (jss : JetStratifiedSystem G k) :
+    ∀ r ∈ jss.descended.rules, r ∈ jss.full.rules := by
+  intro r hr
+  rw [jss.union_spec]
+  exact Or.inl hr
+
+/-- **Descended GS inheritance** — a theorem (was an axiom until 2026-11-21).
+    If the descended subsystem is a GS basis, every descended × descended
+    overlap S-polynomial reduces to zero in the **full** system.
+
+    Proof: it reduces to zero in the descended system by hypothesis, and that
+    run is a run in the full system (`reducesToZero_mono_rules`). The old
+    docstring's worry — that transient rules might "interfere" — does not
+    arise: adding rules never removes a reduction, and zero is normal for every
+    system. No condition on the transient leading monomials is used. -/
 -- Ref: [fred2005] §3, Proposition 3.8
 -- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
-axiom descended_gs_inherited
+theorem descended_gs_inherited
     {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     (ord : AdmissibleOrder G)
     (jss : JetStratifiedSystem G k)
@@ -319,26 +363,34 @@ axiom descended_gs_inherited
     (oc : OverlapComposition G k ord)
     (h₁ : oc.rule₁ ∈ jss.descended.rules)
     (h₂ : oc.rule₂ ∈ jss.descended.rules) :
-    ∃ nf, ReducesToNF ord jss.full oc.spoly nf ∧ nf.isZero
+    ∃ nf, ReducesToNF ord jss.full oc.spoly nf ∧ nf.isZero :=
+  reducesToZero_mono_rules jss.descended_sub_full
+    (h_desc_gs.overlap_resolves oc h₁ h₂)
 
-/-- **Jet-stratified GS criterion** (axiom stub): the full system
-    at level `n+1` is a GS basis if and only if:
-    1. The descended subsystem is a GS basis (from level `n`), AND
-    2. All desc×trans and trans×trans S-polynomials resolve to zero.
+/-- The inclusion-composition twin of `descended_gs_inherited`. -/
+theorem descended_gs_inherited_inclusion
+    {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
+    (ord : AdmissibleOrder G)
+    (jss : JetStratifiedSystem G k)
+    (h_desc_gs : IsGrobnerShirshovBasis G k ord jss.descended)
+    (ic : InclusionComposition G k ord)
+    (h₁ : ic.inner ∈ jss.descended.rules)
+    (h₂ : ic.outer ∈ jss.descended.rules) :
+    ∃ nf, ReducesToNF ord jss.full ic.spoly nf ∧ nf.isZero :=
+  reducesToZero_mono_rules jss.descended_sub_full
+    (h_desc_gs.inclusion_resolves ic h₁ h₂)
 
-    Condition (1) is inherited.  Only condition (2) requires new
-    computation: `O(|Σₙ| · k + k²)` S-poly checks instead of
-    `O(|Σ_{n+1}|²)`.
+/-- **Jet-stratified GS criterion** — a theorem (was an axiom until 2026-11-21).
+    The full system at level `n+1` is a GS basis if the descended subsystem is
+    one and every composition involving at least one transient rule resolves.
 
-    Axiomatised because the full proof requires showing that the
-    descended subsystem's GS property lifts through the inclusion
-    into the full system, using `descended_gs_inherited` plus the
-    hypotheses on new S-polynomials.
-
-    Reference: [fred2005, §3], extended to jet towers. -/
+    Proof: split each composition of the full system on whether both rules are
+    descended. If so, `descended_gs_inherited` (or its inclusion twin) resolves
+    it; otherwise the hypothesis does. This is only the "if" half of the
+    original docstring's "if and only if"; that is all the axiom stated. -/
 -- Ref: [fred2005] §3, Proposition 3.8
 -- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
-axiom jet_stratified_gs_criterion
+theorem jet_stratified_gs_criterion
     {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     (ord : AdmissibleOrder G)
     (jss : JetStratifiedSystem G k)
@@ -351,7 +403,15 @@ axiom jet_stratified_gs_criterion
       ic.inner ∈ jss.full.rules → ic.outer ∈ jss.full.rules →
       ¬(ic.inner ∈ jss.descended.rules ∧ ic.outer ∈ jss.descended.rules) →
       ∃ nf, ReducesToNF ord jss.full ic.spoly nf ∧ nf.isZero) :
-    IsGrobnerShirshovBasis G k ord jss.full
+    IsGrobnerShirshovBasis G k ord jss.full where
+  overlap_resolves oc h₁ h₂ := by
+    by_cases hd : oc.rule₁ ∈ jss.descended.rules ∧ oc.rule₂ ∈ jss.descended.rules
+    · exact descended_gs_inherited ord jss h_desc_gs oc hd.1 hd.2
+    · exact h_new_overlap oc h₁ h₂ hd
+  inclusion_resolves ic h₁ h₂ := by
+    by_cases hd : ic.inner ∈ jss.descended.rules ∧ ic.outer ∈ jss.descended.rules
+    · exact descended_gs_inherited_inclusion ord jss h_desc_gs ic hd.1 hd.2
+    · exact h_new_inclusion ic h₁ h₂ hd
 
 /-! ## §5  Degree-Bucketed Reduction -/
 
@@ -363,7 +423,7 @@ structure DegreeBucket (G : Type u) (k : Type v) [Ring k] where
   /-- The degree (leading monomial length) for this bucket. -/
   degree : ℕ
   /-- Rules whose leading monomial has this degree. -/
-  rules : List (ReductionRule G k)
+  rules : Set (ReductionRule G k)
 
 /-- Partition a rewriting system into degree buckets.
 
@@ -376,8 +436,8 @@ noncomputable def bucketize {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     List (DegreeBucket G k) :=
   (List.range (maxDeg + 1)).map fun d => {
     degree := d,
-    rules := sys.rules.filter fun r =>
-      (leadingMonomial ord r.relation r.nonzero).length = d
+    rules := {r ∈ sys.rules |
+      (leadingMonomial ord r.relation r.nonzero).length = d}
   }
 
 /-! ### Degree-filtered reduction — axiom deleted 2026-09-06, it COLLAPSED the type
@@ -466,10 +526,10 @@ def spolySavings (m _k : ℕ) : ℕ := m * (m - 1) / 2
     computes the same normal forms as naive Buchberger, but with
     fewer S-polynomial checks and narrower per-step scanning.
 
-    The proof combines:
-    - `jet_stratified_gs_criterion` (skip desc×desc S-polys)
-    - `degree_filtered_reduction_correct` (narrow rule scanning)
-    - `normal_form_unique` (result is the same either way)
+    The proof is `jet_stratified_gs_criterion` (skip desc×desc S-polys),
+    a theorem since 2026-11-21, so this is now axiom-free. (The older text
+    also cited `degree_filtered_reduction_correct`, deleted 2026-09-06, and
+    `normal_form_unique`; neither is used.)
 
     Reference: [fred2005, §3] + [bergman1978, §5]. -/
 -- Ref: [fred2005] §3, Proposition 3.8

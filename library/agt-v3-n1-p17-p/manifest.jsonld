@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/agt-v3-n1-p17-p",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/agt-v3-n1-p17-p/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "Skein-theoretical derivation of some formulas of Habiro Introduction",
+  "title": "Skein-theoretical derivation of some formulas of Habiro",
   "contains": [
     "library/agt-v3-n1-p17-p/sections/sec-front-matter",
     "library/agt-v3-n1-p17-p/sections/sec-000",
@@ -21,7 +21,7 @@
     "library/agt-v3-n1-p17-p/sections/sec-006"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "agt-v3-n1-p17-p",
     "title_source": "corroborated",

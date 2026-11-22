@@ -1,0 +1,54 @@
+86 Chapter 4 — The Tannaka group of the theta divisor
+
+Now suppose that X is a general ppav. By lemma 4.6 the corresponding
+Tannaka group admits an embedding
+
+Sp(C) for even g,
+
+G = G9) > Glg) = {rete for odd g,
+
+and the representation V = @(6g) arises as the restriction of the standard
+representation of the classical group on the right hand side. For the proof
+of theorem 4.2 we will show that for a general ppav the group G must be
+as large as possible, using the lower bounds in proposition 4.12. We begin
+with the following observation.
+
+LEMMA 4.14. For a general ppav X with Tannaka group G = G(6e),
+the connected component G° C G is simple modulo its center.
+
+Proof. Let us first introduce some notations. For any reductive complex
+algebraic group H consider the derived group Ho. = [H°,H®]. This is a
+connected semisimple group, and we denote by
+
+7 0
+H- der
+
+its simply connected cover. The covering group A is a product of simply
+connected covers of simple algebraic groups. Furthermore, since by the
+theory of reductive groups [100, cor. 8.1.6] the connected component H° is
+the product of its derived group and its center (with finite intersection), any
+irreducible representation of H° is also irreducible under #7.
+
+We now return to the Tannaka group G = G(dg) for a general ppav. To
+prove the lemma we argue by contradiction. If the claim of the lemma is not
+true, then the simply connected cover of this Tannaka group can be written
+in the form
+
+G = G|xG
+for certain non-trivial simply connected groups G; and G2. Furthermore,
+for the representation V = @(6g) we have seen in lemma 4.13 that V|¢o is
+irreducible. Hence by the above remarks also G = G, x G? acts irreducibly
+on V so that we can write
+
+Vié = Vi @V2
+
+with certain irreducible representations V; € Repc¢(G;). Note that since V is
+a faithful representation of G, it follows from the definition of the simply
+connected covering group that the representations V; are non-trivial and in
+particular that dim(V;) > 1. Now consider a connected subgroup H <> G as
+in part (2) of proposition 4.12 so that
+
+161  ifg is even,
+
+Vin = W
+ln off if g is odd,

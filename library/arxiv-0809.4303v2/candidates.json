@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-0809.4303v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "21e28259b9c8542ffcc6146e9d27ae9e76098a4ee0db4110d0d17d6e9d61ca2f",
+  "file": "0809.4303v2.pdf"
+ },
+ "provenance": {
+  "title": "Exact vortex solutions in an extended Skyrme-Faddeev model",
+  "authors": "Instituto de F\u00b4\u0131sica de S\u00e3o Carlos; IFSC/USP;",
+  "arxiv": {
+   "id": "0809.4303",
+   "version": "2",
+   "primary_class": "hep-th",
+   "stamp_date": "5 May 2009"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

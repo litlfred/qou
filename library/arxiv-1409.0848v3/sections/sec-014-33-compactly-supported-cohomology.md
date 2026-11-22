@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.993
 latex_coverage_ratio: 0.961
+doc_brief: "FACTORIZATION HOMOLOGY OF STRATIFIED SPACES — This work forms a foundational study of factorization homology, or topological chiral homology, at the generality of stratiﬁed spaces with tangential"
 ---
 Let $\cE$ be a spectrum object of $\Psh_\ast(\cB)$, a model for which is as a functor $\cB^{\op} \to \spectra$.  
 Now, Corollary~1.4.4.5 of~\cite{HA} grants that a finite limit preserving functor from a stable $\infty$-category to $\spaces$ canonically factors through $\spectra \xra{\Omega^\infty} \spaces$.  

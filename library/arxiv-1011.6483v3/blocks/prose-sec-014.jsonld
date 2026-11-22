@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1011.6483v3/blocks/prose-sec-014",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Topological chiral homology as a factorization algebra",
-  "pageStart": 49,
-  "pageEnd": 55,
-  "text": "../sections/sec-014-54-topological-chiral-homology-as-a-factorizatio.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1011.6483v3",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1011.6483v3",
+  "title": "Locality axiom and the equivalence of topological chiral homology with higher Hochschild functor for CDGAs",
+  "pageStart": 43,
+  "pageEnd": 47,
+  "text": "../sections/sec-014-52-locality-axiom-and-the-equivalence-of-topolog.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1011.6483v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1011.6483v3/manifest.jsonld",
   "provenance": "ingested"
 }

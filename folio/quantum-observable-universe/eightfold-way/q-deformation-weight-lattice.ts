@@ -33,6 +33,7 @@ export default remark({
     ref: "qou:QOU.Eightfold.WeylInvarianceQDeformation.cartan_fixed_while_qSerre_moves",
   },
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): **What is $q$-independent — machine-checked.**\nThe following are proved in\n`QOU/Eightfold/WeylInvarianceQDeformation.lean`:\n\n**What the Lean does not establish.**\nThat Drinfeld--Jimbo quantisation leaves the root datum invariant is a\ntheorem of Lusztig/Kashiwara, cited here and *not* formalised in this\ncorpus; it belongs to the \"standard, but not formalised\" list below, not\nto the machine-checked list above.  What is machine-checked is the\n\n**What is $q$-independent — standard, but not formalised here.**\nThese follow from the Drinfeld--Jimbo construction and are cited here, not\nmachine-checked:" },
     {
       kind: "refined-framing",
       date: "2026-08-08",

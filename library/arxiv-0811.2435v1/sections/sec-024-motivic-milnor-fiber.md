@@ -1,0 +1,55 @@
+---
+doc_id: arxiv-0811.2435v1
+doc_title: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations"
+section_id: sec-024-motivic-milnor-fiber
+section_title: "Motivic Milnor fiber"
+section_number: null
+pages: 65-69
+source_pdf: 0811.2435v1.pdf
+source_sha256: 615b04eca83bcade
+toc_source: outline
+text_source: latex
+latex_prose_ratio: 0.994
+latex_coverage_ratio: 0.987
+doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 51 sections: Front matter; Introduction; Counting problems for 3-dimensiona"
+---
+Let $M$ be a complex manifold, $x_0\in M$. Recall, that for a germ $f$ of an analytic function at $x_0$ such that $f(x_0)=0$ one can define its *Milnor fiber* $MF_{x_0}(f)$, which is a locally trivial $C^{\infty}$-bundle over $S^1$ of manifolds with the boundary (defined only up to a diffeomorphism): $$\{z\in M|\,\,dist(z,x_0)\le\varepsilon_1, |f(z)|=\varepsilon_2\}\to S^1=\R/2\pi\Z\,\,,$$ where $z\mapsto \op{Arg}\,f(z)$. Here $dist$ is any smooth metric on $M$ near $x_0$, and there exists a constant $C=C(f,dist)$ and a positive integer $N=N(f)$ such that for $0<\varepsilon_1\le C$ and $0<\varepsilon_2<\varepsilon_1^N$ the $C^{\infty}$ type of the bundle is the same for all $\varepsilon_1,\varepsilon_2,dist$.
+
+In particular, taking the cohomology of the fibers we obtain a well-defined local system on $S^1$.
+
+There are several algebro-geometric versions of this construction (theories of nearby cycles). They produce analogs of local systems on $S^1$, for example $l$-adic representations of the group $\op{Gal}(\k((t))^{sep}/\k((t)))$ where $l\ne char\,\k$.
+
+There is a convenient model of the Milnor fiber in non-archimedean geometry. In order to describe it we note that the field $K=\k((t))$ is a non-archimedean field endowed with the (standard) valuation, and with the norm given by $|a|=c^{val(a)}$ for a given constant $c \in (0,1)$. Let $$f\in \k[[x_1,\dots,x_n]], f(0)=0$$ be a formal series considered as an element of $K[[x_1,\dots,x_n]]$. Clearly it is convergent in the non-archimedean sense in the domain $U\subset ({\bf A}^n_{\k})^{an}$ defined by inequalities $|x_i|<1, 1\le i\le n$. The non-archimedean analog of the Milnor fiber is given (at the level of points) by the fibration $$\{x=(x_1,\dots,x_n)\in U|\max_i|x_i|\le\varepsilon_1, 0<|f(x)|\le \varepsilon_2\}\to$$ $$\to \{w\in({\bf A}^1_{\k})^{an}|\,\,0<|w|\le \varepsilon_2\}\,\,,$$ where $\varepsilon_1,\varepsilon_2$ are positive numbers as above (cf. [@NicS]).
+
+Ideally, we would like to have the following picture. Let $V\to X$ be a vector bundle over a scheme of finite type $X/\k$, and $$f\in \prod_{n\geqslant 1}\Gamma(X,Sym^n(V^{\ast}))$$ be a function on the formal completion of zero section of $\op{tot}(V)$ vanishing on $X$. We would like to associate with such data a motivic Milnor fiber $$MF(f)\in Mot(X\times {\bf G}_m)\,\,.$$ Here the factor ${\bf G}_m$ replaces the circle $S^1$ in the analytic picture. Moreover, the motivic function $MF(f)$ should be "unramified\" in ${\bf G}_m$-direction (i.e. it should correspond to a ${\bf G}_m$-invariant stratification of $X\times {\bf G}_m$). In the case $\k=\C$ , assuming that $f$ is convergent near zero section, the value $MF_x(f)$ at a point $(x,\epsilon)\in X(\C)\times \C^\ast$ should be thought of as a representative of the alternating sum $$\sum_i(-1)^i[H^i(f^{-1}(\varepsilon)\cap B_{0,x})]$$ where $\varepsilon\ne 0$ is a sufficiently small complex number and $B_{0,x}$ is a small open ball around $0$ in the fiber $V_x$. Notice that here we use the usual cohomology and not the one with compact support.
+
+Also, we can consider the case when $X$ is a constructible set and $V\to X$ is a constructible vector bundle. We say that $f\in \prod_{n\geqslant 1}\Gamma(X,Sym^n(V^{\ast}))$ is constructible if $(X,V,f)$ is constructibly isomorphic to an algebraic family of formal functions over a scheme of finite type as above.
+
+This goal was achieved by Denef and Loeser (see [@DeLo1]) in the case $char\,\k=0$ by using motivic integration and resolution of singularities. In this case the group $Mot(X\times {\bf G}_m)$ is replaced by $Mot^{\mu}(X)$, where $\mu=\varprojlim_{n}\mu_n$ and $\mu$ acts trivially on $X$. Here $\mu_n$ is the group of $n$-th roots of $1$ in $\k$. We will always assume that $\mu$-action is "good\" in the sense that $\mu$ acts via a finite quotient $\mu_n$ and every its orbit is contained in an affine open subscheme. Notice that there is a homomorphism of groups $$Mot^{\mu}(X)\to Mot(X\times {\bf G}_m),\,\,\,
+[\pi:Y\to X]\mapsto [\pi_1:(Y\times {\bf G}_m)/\mu_n\to X\times {\bf G}_m]\,\,,$$ where $\mu$ acts on $Y$ via its quotient $\mu_n$ and $\pi_1(y,t)=\pi(y)t^n$.
+
+As we work with constructible sets, it is sufficient to define the motivic Milnor fiber not for a family, but for an individual formal germ of a function. Let $M$ be a smooth formal scheme over $\k$ with closed point $x_0$ and $f$ be a function on $M$ vanishing at $x_0$ (e.g. $M$ could be the formal completion at $0$ of a fiber of vector bundle $V\to X$ in the above notation). We assume that $f$ is not identically equal to zero near $x_0$, otherwise the Milnor fiber would be empty. Let us choose a simple normal crossing resolution of singularities $\pi:M'\to M$ of the hypersurface in $M$ given by the equation $f=0$ with exceptional divisors $D_j, j\in J$. The explicit formula for the motivic Milnor fiber from [@DeLo1] looks such as follows[^1].
+
+$$MF_{x_0}(f)=\sum_{I\subset J, I\ne \emptyset}(1-{\mathbb L})^{\#I-1}[\widetilde{{D_I}^0} \cap \pi^{-1}(x_0)]\in Mot^\mu
+(Spec(\k))\,\,,$$ where $D_I=\cap_{j\in I}D_j$, $D_I^0$ is the complement in $D_I$ to the union of all other exceptional divisors, and $\widetilde{{D_I}^0}\to D_I^0$ is a certain Galois cover with the Galois group $\mu_{m_I}$, where $m_I$ is the g.c.d. of the multiplicities of all divisors $D_i,i\in I$ (see [@DeLo1] for the details). Informally speaking, the fiber of the cover $\widetilde{{D_I}^0}\to D_I^0$ is the set of connected components of a non-zero level set of function $f\circ \pi$ near a point of $D_I^0$.
+
+The space $Mot^{\mu}(X)$ carries an associative product introduced by Looijenga (see [@Loo]) which is different from the one defined above. It is essential for the motivic Thom-Sebastiani theorem which will be discussed later. Let us sketch a construction of this product.
+
+First, let us introduce the commutative ring $Mot(X\times {\bf A}^1_{\k})_{conv}$ which coincides as an abelian group with $Mot(X\times {\bf A}^1_{\k})$ but carries the "convolution product\" $$[f_1: S_1\to X\times {\bf A}^1_{\k}]\circ[f_2: S_2\to X\times {\bf A}^1_{\k}]=[f_1\oplus f_2:S_1\times_X S_2\to X\times {\bf A}^1_{\k}],$$ where $(f_1\oplus f_2)(s_1,s_2)=(pr_X(f_1(s_1)),pr_{{\bf A}^1_{\k}}(f_1(s_1)) +pr_{{\bf A}^1_{\k}}(f_2(s_2)))$. The ring $Mot(X\times {\bf A}^1_{\k})_{conv}$ contains the ideal $${\bf I}:=pr_X^{\ast}(Mot(X))\,\,.$$ By definition we have an epimorphism of abelian groups $Mot(X)\to {\bf I}$. Let $$i:X\to X\times {\bf A}^1_{\k}, x\mapsto (x,0),\,\,\,j:X\times ({\bf A}^1_{\k}\setminus \{0\})\to X\times {\bf A}^1_{\k}$$ be natural embeddings. They give rise to an isomorphism of abelian groups $$i^{\ast}\oplus j^{\ast}:Mot(X\times {\bf A}^1_{\k})\simeq Mot(X)\oplus Mot( X\times ({\bf A}^1_{\k}\setminus \{0\}))\,\,.$$ Since $i^{\ast}\circ pr_X^{\ast}=id_{Mot(X)}$ we see that the restriction of $pr_X^{\ast}$ to ${\bf I}$ gives an isomorphism of abelian groups $${\bf I}\simeq Mot(X)\,\,,$$ and $j^{\ast}$ induces the isomorphism of groups $$Mot(X\times {\bf A}^1_{\k})/{\bf I}\simeq Mot( X\times ({\bf A}^1_{\k}\setminus \{0\}))\,\,.$$ Using the latter isomorphism we transfer the convolution product and endow $Mot( X\times ({\bf A}^1_{\k}\setminus \{0\}))$ with an associative product which we will call *exotic*.
+
+Recall that we have a homomorphism of groups $$Mot^{\mu}(X)\to Mot(X\times {\bf G}_m)=Mot( X\times ({\bf A}^1_{\k}\setminus \{0\}))\,\,.$$ One can check that the image of $Mot^{\mu}(X)$ is closed under the exotic product. Intuitively, the image consists of isotrivial families of varieties over $X\times ({\bf A}^1_{\k}\setminus\{0\})$ equipped with a flat connection which has finite (i.e. belonging to some $\mu_n$) monodromy. The complicated formula from [@Loo] coincides with the induced product on $Mot^{\mu}(X)$. In what follows we will use the notation $${\cal M}^{\mu}(X):=(Mot^{\mu}(X), \mathrm{\, exotic\,\,\,product})\,\,.$$
+
+Let $V\to X,\,V'\to Y$ be two constructible vector bundles endowed with constructible families $f,g$ of formal power series. We denote by $f\oplus g$ the sum of pullbacks of $f$ and $g$ to the constructible vector bundle $$pr_X^*V\oplus pr_Y^*V'\to X\times Y\,\,.$$ Then we have the following motivic version of Thom-Sebastiani theorem.
+
+::: thm
+([@DeLo2]) One has $$(1-MF(f\oplus g))=pr_X^*(1-MF(f))\cdot
+pr_Y^*(1-MF(g))\in {\cal M}^\mu (X\times Y)\,\,.$$
+:::
+
+One can make similar constructions in the equivariant setting. Let $X/\k$ be a constructible set endowed with the good action of an affine algebraic group $G$. We endow $X$ also with the trivial $\mu$-action. Then, similarly to the above, we can equip $Mot^{G\times \mu}(X)$ with the exotic product (by considering $G$-equivariant families over $X$ in the previous considerations). We will denote the resulting ring by ${\cal M}^{G,\mu}(X)$. Using the canonical resolution of singularities (see e.g. [@BiMi]) one can define the equivariant motivic Milnor fiber in the case of equivariant families of functions, and state the corresponding version of Thom-Sebastiani theorem.
+
+In the case of arbitrary $\k$ there is an $l$-adic version of the above results. More precisely, the theory of Milnor fiber is replaced by the theory of nearby cycles (see [@SGA]), with the convolution defined by Laumon [@Lau]. The Thom-Sebastiani theorem was proved in this case by Pierre Deligne and probably by Lei Fu (both unpublished).
+
+There is an analog of the Hodge polynomial in the story (see [@DeLo1], 3.1.3). Let us assume that $\k=\C$ for simplicity. Then we have a homomorphism of rings $${\cal M}^{\mu}(Spec(\k))\to \left\{\sum_{\alpha,\beta\in \Q,\alpha+\beta\in \Z}c_{\alpha,\beta}z_1^{\alpha}z_2^{\beta}\left|\,c_{\alpha,\beta}\in \Z\right.\right\}\,\,.$$ Namely, for a smooth projective $\mu_n$-scheme $Y$ we set $$[Y]\mapsto \sum_{p,q\geqslant 0, p,q\in \Z}(-1)^{p+q}\dim H^{p,q,0}(Y)z_1^pz_2^q+$$ $${}+\sum_{p,q\geqslant 0, p,q\in \Z}\sum_{1\le i\le n-1}(-1)^{p+q}\dim H^{p,q,i}(Y)z_1^{p+i/n}z_2^{q+1-i/n}\,\,,$$ where $H^{p,q,i}(Y)$ is the subspace of the cohomology $H^{p,q}(Y)$, where an element $\xi\in \mu_n$ acts by multiplication by $\xi^i$. The appearance of rational exponents was first time observed in the Hodge spectrum of a complex isolated singularity. Taking $z_1=z_2=q^{1/2}$ we obtain the corresponding Serre polynomial.
+
+[^1]: In [@DeLo1] it was assumed that $f$ is a regular function on a smooth scheme, but the formula and all the arguments work in the formal setting as well.

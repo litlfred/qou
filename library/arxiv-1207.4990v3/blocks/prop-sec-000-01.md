@@ -1,0 +1,1 @@
+On the other hand, it was observed in 1941 by van der Waerden [@vanderW] that the calculation of the Ising partition function is equivalent to the problem of counting closed polygons on the square lattice.

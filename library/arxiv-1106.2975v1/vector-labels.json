@@ -1,0 +1,921 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-1106.2975v1",
+  "pages": [
+    {
+      "page": 6,
+      "rotation": 0,
+      "drawings": 3,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 1.1. The polyanalytic Ginibre process with the kernel Km,n,q with m = n = 61 and q = 3. The simulation is based on the algorithm by Hough, Krishnapur, Peres, and Virág [15]."
+      ],
+      "labels": [
+        {
+          "text": "6",
+          "bbox": [
+            72.0,
+            71.93,
+            76.98,
+            81.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Haimi and Hedenmalm",
+          "bbox": [
+            196.71,
+            71.93,
+            301.62,
+            81.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 1.1. The polyanalytic Ginibre process with the kernel",
+          "bbox": [
+            107.86,
+            319.65,
+            390.46,
+            332.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Rpxsc",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Km,n,q with m = n = 61 and q = 3. The simulation is based on",
+          "bbox": [
+            107.86,
+            333.52,
+            390.46,
+            345.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Rpxmi",
+            "Rpxr",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the algorithm by Hough, Krishnapur, Peres, and Virág [15].",
+          "bbox": [
+            107.87,
+            346.3,
+            368.3,
+            356.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "we have the following asymptotics as m, n →+∞while n = m + O(1):",
+          "bbox": [
+            72.0,
+            377.46,
+            376.65,
+            390.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Pxsy",
+            "Rpxmi",
+            "Rpxr",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ˆB⟨z⟩",
+          "bbox": [
+            155.95,
+            397.08,
+            172.05,
+            409.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Pxsy",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma",
+            "WNCYR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "m,n,q(ξ) −→q−1L1",
+          "bbox": [
+            163.63,
+            397.67,
+            235.37,
+            412.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Pxsy",
+            "Rpxmi",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "q−1(|ξ|2)2e−|ξ|2",
+          "bbox": [
+            231.89,
+            397.67,
+            286.73,
+            413.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Pxsy",
+            "Rpxmi",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "for z ∈D,",
+          "bbox": [
+            297.69,
+            398.79,
+            342.38,
+            411.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Pxsy",
+            "Pxsyb",
+            "Rpxmi",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "q−1 denotes the (generalized) Laguerre polynomial of degree q −1 with",
+          "bbox": [
+            108.2,
+            420.87,
+            426.33,
+            437.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Pxsy",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "where L1",
+          "bbox": [
+            72.0,
+            422.2,
+            111.68,
+            433.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "q−1 has exactly q −1",
+          "bbox": [
+            340.73,
+            435.97,
+            426.33,
+            452.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Pxsy",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "parameter 1. It is well-known that the Laguerre polynomial L1",
+          "bbox": [
+            72.0,
+            437.31,
+            344.22,
+            448.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "strictly positive roots, which implies that the Berezin density will exhibit a typical",
+          "bbox": [
+            72.0,
+            452.44,
+            426.33,
+            462.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Fresnel-type ring pattern. This resembles what happens in the one-dimensional",
+          "bbox": [
+            72.0,
+            464.22,
+            426.33,
+            474.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "GUE case, where the zero density points for the Berezin density come from the",
+          "bbox": [
+            72.0,
+            476.35,
+            426.33,
+            486.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "zeros of the sine kernel. Actually, the analogy is more than a superﬁcial similarity.",
+          "bbox": [
+            72.0,
+            488.31,
+            426.33,
+            498.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "If we consider rather big values of q, and scale down to local distance (mq)−1/2,",
+          "bbox": [
+            72.0,
+            497.22,
+            426.33,
+            510.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Pxsy",
+            "Rpxmi",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "with",
+          "bbox": [
+            72.0,
+            512.62,
+            92.25,
+            522.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "m,n,q(ξ′) = (mq)−1 B⟨z⟩",
+          "bbox": [
+            170.15,
+            520.92,
+            259.42,
+            539.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Pxsy",
+            "Rpxmi",
+            "Rpxr",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma",
+            "WNCYR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "˜B⟨z⟩",
+          "bbox": [
+            162.47,
+            523.33,
+            178.57,
+            535.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Pxsy",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma",
+            "WNCYR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "z + (mq)−1/2ξ′\u0011",
+          "bbox": [
+            271.24,
+            523.92,
+            333.37,
+            537.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Pxex",
+            "Pxsy",
+            "Rpxmi",
+            "Rpxr",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u0010",
+          "bbox": [
+            267.51,
+            524.14,
+            271.24,
+            534.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Pxex"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            333.37,
+            527.03,
+            335.86,
+            536.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Rpxmi"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "m,n,q",
+          "bbox": [
+            250.99,
+            531.62,
+            267.01,
+            539.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Rpxmi",
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "then by the above we have, for z ∈D,",
+          "bbox": [
+            72.0,
+            543.41,
+            236.72,
+            556.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Pxsy",
+            "Pxsyb",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ˆB⟨z⟩",
+          "bbox": [
+            167.95,
+            563.13,
+            184.05,
+            575.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Pxsy",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma",
+            "WNCYR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "q−1(q−1|ξ′|2)2e−q−1|ξ′|2,",
+          "bbox": [
+            243.88,
+            563.17,
+            330.38,
+            579.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Pxsy",
+            "Rpxmi",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "m,n,q(ξ) −→q−2L1",
+          "bbox": [
+            175.62,
+            563.71,
+            247.37,
+            578.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Pxsy",
+            "Rpxmi",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "as m, n →+∞with n = m + O(1). Next, if we let q →+∞, we get that",
+          "bbox": [
+            72.0,
+            585.58,
+            372.48,
+            598.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Pxsy",
+            "Rpxmi",
+            "Rpxr",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u001a +∞",
+          "bbox": [
+            248.26,
+            604.59,
+            267.0,
+            620.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Pxex",
+            "Pxsy",
+            "Rpxr"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(−1)i|ξ′|2i",
+          "bbox": [
+            271.33,
+            606.8,
+            310.18,
+            620.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Pxsy",
+            "Rpxmi",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "= J1(2|ξ′|)2",
+          "bbox": [
+            323.3,
+            606.8,
+            369.54,
+            626.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Pxsy",
+            "Rpxmi",
+            "Rpxr",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "q−1(q−1|ξ′|2)2e−q−1|ξ′|2 −→",
+          "bbox": [
+            143.41,
+            607.68,
+            245.5,
+            629.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Pxsy",
+            "Rpxmi",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u001b2",
+          "bbox": [
+            311.88,
+            608.08,
+            320.03,
+            620.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Pxex",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            254.6,
+            612.43,
+            268.47,
+            622.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Pxex"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "q−2L1",
+          "bbox": [
+            124.61,
+            613.2,
+            146.9,
+            626.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Pxsy",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            371.23,
+            616.31,
+            373.72,
+            626.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Rpxmi"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "|ξ′|2",
+          "bbox": [
+            343.64,
+            621.35,
+            359.83,
+            633.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Pxsy",
+            "Rpxmi",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "i!(i + 1)!",
+          "bbox": [
+            274.11,
+            623.14,
+            307.9,
+            633.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Rpxr",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "i=0",
+          "bbox": [
+            256.49,
+            630.62,
+            266.58,
+            638.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Rpxr",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "where J1 is the standard Bessel function. The identity",
+          "bbox": [
+            72.0,
+            645.55,
+            304.81,
+            657.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "J1(2|ξ′|)",
+          "bbox": [
+            190.33,
+            660.93,
+            221.96,
+            674.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Pxsy",
+            "Rpxmi",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Z",
+          "bbox": [
+            235.35,
+            663.02,
+            242.07,
+            672.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Pxex"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "e2i Re[ξ′ ¯ζ]dA(ζ)",
+          "bbox": [
+            250.5,
+            666.76,
+            309.69,
+            681.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Pxsy",
+            "Rpxmi",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            225.92,
+            670.44,
+            232.58,
+            680.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Rpxr"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "|ξ′|",
+          "bbox": [
+            199.54,
+            675.3,
+            212.25,
+            687.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Pxsy",
+            "Rpxmi"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "D",
+          "bbox": [
+            242.07,
+            680.66,
+            248.34,
+            687.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Pxsyb"
+          ],
+          "sizes": [
+            6.97
+          ]
+        }
+      ]
+    }
+  ]
+}

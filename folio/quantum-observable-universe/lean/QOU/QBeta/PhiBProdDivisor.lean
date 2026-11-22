@@ -26,7 +26,7 @@ the honest, formalizable narrowing.
 
 Verified `lean`-direct against the pinned Mathlib `Log.Summable` cone + `PhiBProd`. Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-07-25-faddeev-uniqueness-keystone-state.md
+-- Ref: [leitner2026] docs/audits/2026-07-25-faddeev-uniqueness-keystone-state.md
 -/
 
 open Complex

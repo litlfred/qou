@@ -1,0 +1,935 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-math-0510265v3",
+ "status": "determined",
+ "body_size": 12.0,
+ "footnotes": [],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "e",
+   "context": "LetRbeak-algebra,wherekisaﬁeld,R"
+  },
+  {
+   "page": 1,
+   "mark": "e",
+   "context": "algebra of R, and Mbe an R-bimodule (equivalently,a left R"
+  },
+  {
+   "page": 1,
+   "mark": "e",
+   "context": "WehaveMR=R ⊗R"
+  },
+  {
+   "page": 1,
+   "mark": "e",
+   "context": "i-th derived functor takes Mto TorR"
+  },
+  {
+   "page": 1,
+   "mark": "i",
+   "context": "i≥0HH"
+  },
+  {
+   "page": 1,
+   "mark": "e",
+   "context": ". . . −→P2 ⊗R"
+  },
+  {
+   "page": 1,
+   "mark": "e",
+   "context": ". . . −→P2 ⊗ReM−→P1 ⊗R"
+  },
+  {
+   "page": 1,
+   "mark": "e",
+   "context": ". . . −→P2 ⊗ReM−→P1 ⊗ReM−→P0 ⊗R"
+  },
+  {
+   "page": 2,
+   "mark": "e",
+   "context": "resolutionbyfreeR"
+  },
+  {
+   "page": 2,
+   "mark": "e",
+   "context": "givenbythetensorproduct(overR"
+  },
+  {
+   "page": 2,
+   "mark": "e",
+   "context": "−−−−−−→R"
+  },
+  {
+   "page": 2,
+   "mark": "e",
+   "context": "0 −→R"
+  },
+  {
+   "page": 2,
+   "mark": "e",
+   "context": "between0andm)anditstotalspaceisnaturallythetensorproductofR"
+  },
+  {
+   "page": 2,
+   "mark": "m",
+   "context": "algebraRisthehomologyofthecomplexbuiltoutof2"
+  },
+  {
+   "page": 2,
+   "mark": "m",
+   "context": "HHi(R, M)∼= HH"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "i= Q[x"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "i= Q[x1, . . . , x"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "i= Q[x1, . . . , xi−1, x"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "i= Q[x1, . . . , xi−1, xi+x"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "i= Q[x1, . . . , xi−1, xi+xi+1, x"
+  },
+  {
+   "page": 3,
+   "mark": "x",
+   "context": "i= Q[x1, . . . , xi−1, xi+xi+1, xi"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "i= Q[x1, . . . , xi−1, xi+xi+1, xix"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "i= Q[x1, . . . , xi−1, xi+xi+1, xixi+1, x"
+  },
+  {
+   "page": 3,
+   "mark": "m",
+   "context": "i= Q[x1, . . . , xi−1, xi+xi+1, xixi+1, xi+2, . . . , x"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "iis"
+  },
+  {
+   "page": 3,
+   "mark": "x",
+   "context": "iisasubringofR′ofpolynomialswhicharesymmetricin"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "iisasubringofR′ofpolynomialswhicharesymmetricinx"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "i-moduleofrank"
+  },
+  {
+   "page": 3,
+   "mark": "x",
+   "context": "ibyplacing each"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "ibyplacing eachx"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "ias"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "iR′.It’s"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "iR′.It’sagradedR′-bimodule,freeofranktwoas"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "i(1) = (x"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "i(1) = (xi −x"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "i(1) = (xi −xi+1) ⊗1 + 1 ⊗(x"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "i(1) = (xi −xi+1) ⊗1 + 1 ⊗(xi −x"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "i"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "i"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "iandalltheirtensorproductshave"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "B"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "i∼= R"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "i∼= Ri ⊗Q[x"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "i∼= B"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "i∼= Bi ⊗Q[x"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "Example:m=2.Lety=x1−x2.ThenR=Q[y],R1=Q[y"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "B1= Q[y]⊗Q[y"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "jn∼= (B"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "jn∼= (Bj"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "jn∼= (Bj1⊗R B"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "jn∼= (Bj1⊗R Bj"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "jn∼= (Bj1⊗R Bj2⊗R · · · ⊗R B"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "jn∼= (Bj1⊗R Bj2⊗R · · · ⊗R Bj"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "jn∼= (Bj1⊗R Bj2⊗R · · · ⊗R Bjn) ⊗Q Q[x"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "j"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "j"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "Thus,thelefthandsidecanberecoveredfromthetensorproductB"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "Thus,thelefthandsidecanberecoveredfromthetensorproductBj"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "B"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "Bj"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "Bj2 ⊗R · · · ⊗R B"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "σ= σǫ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "j1σǫ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "j"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "j2. . . σǫ"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "3σ"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "3) ⊗RF(σ"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "iandB"
+  },
+  {
+   "page": 6,
+   "mark": "a",
+   "context": "iandBiwillbeassignedto"
+  },
+  {
+   "page": 6,
+   "mark": "a",
+   "context": "iandBiwillbeassignedtoadiagramwith"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "−→F"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "−→F"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "hasn + 1nontrivialterms,wherenisthelengthofσ.EachtermF"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "TheHochschildhomologyHH(R, F"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "TheHochschildhomologyHH(R, Fj(σ))ofthebimoduleF"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "−→HH(R, F"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "−→HH(R, F"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "FLYPTlinkpolynomial[HOMFLY],[PT].Byintroducingafractional"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "crossingofthebraidintwowaysandobtain2"
+  },
+  {
+   "page": 8,
+   "mark": "x",
+   "context": "1,multiplicationby"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "1,multiplicationbyx"
+  },
+  {
+   "page": 8,
+   "mark": "e",
+   "context": "Considerthepolynomialring"
+  },
+  {
+   "page": 8,
+   "mark": "e",
+   "context": "of(r + 1)melementsof"
+  },
+  {
+   "page": 8,
+   "mark": "e",
+   "context": "quencein"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "anyf∈S,theelementx"
+  },
+  {
+   "page": 8,
+   "mark": "e",
+   "context": "e we reach the top layerof variables,we take the quotient of"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(Ti −q"
+  },
+  {
+   "page": 10,
+   "mark": "w",
+   "context": "T"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "Tw=T"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "Tw=Ti"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "Tw=Ti1 . . . T"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "Tw=Ti1 . . . Tirifs"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "Tw=Ti1 . . . Tirifsi"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "Tw=Ti1 . . . Tirifsi1 . . . s"
+  },
+  {
+   "page": 10,
+   "mark": "s",
+   "context": "w.Inournotations,T"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "w.Inournotations,Tsi= T"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "w.Inournotations,Tsi= Ti.LeftmultiplicationbyT"
+  },
+  {
+   "page": 10,
+   "mark": "s",
+   "context": "\u001aT"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "\u001aTs"
+  },
+  {
+   "page": 10,
+   "mark": "w",
+   "context": "\u001aTsi"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "q2Tsiw + (q"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "i= q−1(1 + T"
+  },
+  {
+   "page": 10,
+   "mark": "w",
+   "context": "w},overall"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "w},overallw∈S"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "wherePy,w(q)∈Z[q"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "i.Multiplicationby"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "s"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "s"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "s"
+  },
+  {
+   "page": 12,
+   "mark": "s",
+   "context": "s1"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "s1s"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "s"
+  },
+  {
+   "page": 12,
+   "mark": "s",
+   "context": "s2"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "s2s"
+  },
+  {
+   "page": 13,
+   "mark": "s",
+   "context": "•B"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "•Bsi= B"
+  },
+  {
+   "page": 13,
+   "mark": "e",
+   "context": "•Bsi= Bi,andB"
+  },
+  {
+   "page": 13,
+   "mark": "z",
+   "context": "n"
+  },
+  {
+   "page": 13,
+   "mark": "z",
+   "context": "wheren"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "w}ofH"
+  },
+  {
+   "page": 13,
+   "mark": "z",
+   "context": "n"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "wactsbyleftmultiplicationonH"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "Example:whenm = 2,theﬂagvarietyisP"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "Example:whenm = 2,theﬂagvarietyisP1andGactsonP"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "Example:whenm = 2,theﬂagvarietyisP1andGactsonP1× P"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "diagonalandofP"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "diagonalandofP1× P"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "HG(P"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "HG(P"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "HG(P1× P"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "HG(P1× P1)∼= HB(P"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "HG(P1× P1)∼= HB(P1)∼= HSO(2)(P"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "wheredotdenotesapoint,andyageneratorofH"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "SO(2)actsonP"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "SO(2)actsonP1∼=S"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "urallytheinterval[−1, 1].ThecohomologycanberewrittenasH(S"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "ESO(2)).ThespaceS"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "S"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "R ⊗R"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "i)| dim(L"
+  },
+  {
+   "page": 14,
+   "mark": "m",
+   "context": "0 ⊂L1⊂L2⊂· · · ⊂Lm−1⊂C"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "i⊂L"
+  },
+  {
+   "page": 14,
+   "mark": "s",
+   "context": "uleB"
+  },
+  {
+   "page": 14,
+   "mark": "s",
+   "context": "uleBsi"
+  },
+  {
+   "page": 14,
+   "mark": "s",
+   "context": "uleBsisi+1"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "homology.Each term F"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "wB"
+  },
+  {
+   "page": 14,
+   "mark": "w",
+   "context": "wBn"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "diﬀerentialwithrespecttothesedirectsumdecompositionsofF"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "B"
+  },
+  {
+   "page": 15,
+   "mark": "w",
+   "context": "Bn"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "−→B"
+  },
+  {
+   "page": 15,
+   "mark": "y",
+   "context": "−→Bn"
+  },
+  {
+   "page": 15,
+   "mark": "j",
+   "context": "∂: F"
+  },
+  {
+   "page": 15,
+   "mark": "j",
+   "context": "∂: Fj(σ) −→F"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "uction toFmin(σ)is bestdoneinductivelyon the length of σ= σǫ"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "i"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "i1. . . σǫ"
+  },
+  {
+   "page": 15,
+   "mark": "r",
+   "context": "ir),forsome"
+  },
+  {
+   "page": 15,
+   "mark": "r",
+   "context": "ir),forsomer< n,tensoritwithF(σǫ"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "OncewefoundFmin(σǫ"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "i"
+  },
+  {
+   "page": 15,
+   "mark": "r",
+   "context": "i1. . . σǫ"
+  },
+  {
+   "page": 15,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 15,
+   "mark": "a",
+   "context": "min(σ),arrangetheminto"
+  },
+  {
+   "page": 15,
+   "mark": "s",
+   "context": "projectiveH"
+  },
+  {
+   "page": 15,
+   "mark": "s",
+   "context": "H"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "Example:Whenm=2andσ=σ"
+  },
+  {
+   "page": 15,
+   "mark": "a",
+   "context": "1,thereductionleadsto"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "computationofhomologygroupsHHH(σ).ThecomplexF(σ)consistsof2"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "d"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "d"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "d"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "d"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "d"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "d"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "d"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "whereR = Q[y], y= x1 −x2, R1= Q[y"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "whereR = Q[y], y= x1 −x2, R1= Q[y2]andB1= Q[y] ⊗Q[y"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "thetotalspaceoftheO(−1) ⊕O(−1)bundleoverP"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "BwtheendomorphismalgebraEndR"
+  },
+  {
+   "page": 16,
+   "mark": "w",
+   "context": "w∈S3B"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "directlyrequiresdealingwith6"
+  }
+ ]
+}

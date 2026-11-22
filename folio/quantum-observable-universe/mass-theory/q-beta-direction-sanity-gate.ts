@@ -1,16 +1,16 @@
-import { proposition } from "../../schema/builders";
+import { remark } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:q-beta-direction-sanity-gate",
+export default remark({
+  label: "rem:q-beta-direction-sanity-gate",
   title:
     "$\\mathfrak{Q}_\\beta$ precision-ladder $\\S 4(d)$ formalize-first gate — any candidate Habiro element $F(q_0)$ must have magnitude consistent with the target observable's order of magnitude; the $z(q_0) \\approx 0.6127 < 1$ direction obstruction is the canonical refutation precedent",
   lean: {
     ref: "qou:QOU.QBeta.DirectionSanityGate.qbeta_direction_sanity_magnitude_match",
     validation: "not_checked",
   },
+  interprets: "prop:q-beta-q-eq-one-shadow-gate",
   uses: [
     "prop:q-beta-q-eq-one-shadow-gate",
-    "prop:q-beta-radius-of-convergence-gate",
     "prop:q-beta-bar-even-kernel-invariant",
     "prop:q-beta-c-k-recursion-from-habiro-q-difference",
   ],
@@ -33,6 +33,13 @@ export default proposition({
     "no-fit",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The additive band $|m-t|\\le10t$ used by the Lean siblings is not this window" },
+    { kind: "status", date: "2026-11-16", body: "Demoted from proposition on owner ruling 2026-11-16 (card \"Demote all six\"): the claim is not proved from established results, so it is stated as a remark (a screening policy, not a theorem). Label renamed rem:q-beta-direction-sanity-gate -> rem:q-beta-direction-sanity-gate." },
+    {
+      kind: "caveat",
+      date: "2026-11-16",
+      body: "'Structurally REFUTED' replaced: a 10x window is a heuristic screen with no proved invariant, so it is a scope-(a) filter, not an exclusion (AGENTS 'Before declaring refuted'). Target magnitude is ~1 only on the retired z=1 base; ~1.76 on the ruled z_D base. Queued for demotion to a remark (it is a policy, not a theorem).",
+    },
     {
       kind: "status",
       body:

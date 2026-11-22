@@ -1,0 +1,53 @@
+4.2 The lattice Hamiltonian
+
+The interaction potential consists of two/three terms in the pionless/pionful theory at lowest order. The
+contact interaction consists of two terms which can be chosen as
+
+Hoon = 5 D|CP" “(0° G) + Cr D0) “GP; (4.2)
+i I
+
+where the terms are summed over all lattice sites # and the isospin index J = 1,2,3. These terms
+appear in both versions of the EFT considered here. In the pionful theory, one has in addition the
+one-pion-exchange potential
+
+Hope = ~~ 5 iy » Gss, (m1 - iin) p44 “ (1) ps4 (a) (4.3)
+oF © SATA,
+
+with g, the axial-vector coupling constant and F,, the pion decay constant. S,, Sy are the respective spin
+indices which run from | to 3. The corresponding lattice density operators read
+
+p' “ (8) =a), (Aa), (4.4)
+pi “(#) = a} | (8) ty ja, (8), (4.5)
+psi" (@) = a} | (@) os e717, (A), (4.6)
+
+and Gy 5, (a) represents the pion propagator times the pion-nucleon vertex and is defined as
+
+Gs,5, (#) = ry = it) v(ps,)¥(Ps,)
++2) 1c 1)‘, cos (kp)
+
+k=1 1
+
+(4.7)
+
+she
+
+with q, = Me + 6wo. V(Ps,), (Ps) are the discretized momentum components of the first and second
+pion field which yields v(p;) = 0, sin(p;) — 02 sin(2p)) = p)(1 + O(p})) with the coefficients summarized
+in Tab. 4.1. We only use an O(a’) discretization, because we do not want to expand the respective
+interaction too much. A further improved momentum approximation is linked to a further expanded
+derivative in position space including more interactions at distinct lattice points and the locality of the
+pion-nucleon interaction is lost. These momenta arise from the pion field derivative in the pion nucleon
+Lagrangian £,y = —g,/QF,)N'?: (@- VAN. To arrive at Eq. (4.7), we note that the pion propagator is
+derived from the discrete action for instantaneous pions which takes the form [32]
+
+San (1) = (" + sou) Darn + ME 1) M coy, (A) a, (78 +k). (4.8)
+
+Ahk
+
+This is reparametrized by 2/(#) = «/q,7)(i). Finally, the new pion action reads
+
+Sx, (7) = sma e+ Ye 1) ca (it), (A + KP) (4.9)
+
+” ik
+
+4l

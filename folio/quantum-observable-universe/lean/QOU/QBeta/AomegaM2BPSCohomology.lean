@@ -35,7 +35,7 @@ literature-open, and gated by the anti-laundering rule. Nothing here derives `A_
 `A_ω = 3` remains certified-as-GGM-DT-count, conditionally adopted.
 
 -- Ref: [garoufalidis-gu-marino2021] GGM 2012.00062 eqs (96)–(98), (188)
--- Ref: [manuscript] docs/audits/2026-08-11-route-c-bps-cohomology-scoping.md
+-- Ref: [leitner2026] docs/audits/2026-08-11-route-c-bps-cohomology-scoping.md
 -/
 
 namespace QOU.QBeta.AomegaM2BPSCohomology

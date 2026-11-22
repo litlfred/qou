@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/13116841v1/sections/sec-013",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "B Rank 1 tensor operators",
+  "pageStart": 13,
+  "pageEnd": 16,
+  "contains": [
+    "library/13116841v1/blocks/prose-sec-013"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/13116841v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/13116841v1/manifest.jsonld",
+  "provenance": "ingested"
+}

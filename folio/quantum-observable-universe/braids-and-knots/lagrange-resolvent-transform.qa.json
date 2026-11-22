@@ -1254,6 +1254,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "c2388c8cbee7",
+          "ts": "08d6a296b7ac",
+          "lean": "80d70407a147",
+          "lean_statement": "a42cc18e906f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:27:33.575Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "The .ts ref qou:QOU.BringsSurface.lagrange_resolvent_transform resolves to lean/QOU/BringsSurface/lagrange_resolvent_transform.lean:84, which returns ax.claim_equivariance from [LagrangeResolventEquivarianceAxiom] (the conclusion is assumed). The sibling .lean does prove n = 5 genuinely (lagrange_resolvent_w0_vanishes, lagrange_resolvent_diagonal_action), but the general-n claim is assumed, and the n = 5 quadric and cubic constraints are not encoded."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2477,6 +2495,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-11-15T21:27:33.575Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -14,7 +14,7 @@ LaTeX label: `def:neutrino-knot`
 
 ## References
 - [jones1987] https://doi.org/10.2307/1971403
-- [manuscript] Ch. 5, §neutrino-knot
+- [leitner2026] Ch. 5, §neutrino-knot
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
 Part of the formal proof chain. The parameter `q` is the canonical
@@ -26,7 +26,7 @@ namespace QOU.Archimedean
 
 noncomputable section
 /-- The neutrino is electrically neutral (zero crossing chirality). -/
--- Ref: [manuscript] Ch. 5, §neutrino-knot
+-- Ref: [leitner2026] Ch. 5, §neutrino-knot
 theorem neutrino_neutral : ({} : Neutrino).charge = 0 := rfl
 
 /-- The unknot has trivial genus. -/

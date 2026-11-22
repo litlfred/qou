@@ -1,0 +1,45 @@
+1240 Francois Guéritaud and David Futer
+
+making it hyperbolic lends itself to two approaches. One is complex, explicit and
+“local”: cross-ratio computations, particular hyperbolic isometries, etc (see eg Neumann
+and Zagier [20]). The other approach, first described by Rivin [22], de Verdiére [25]
+and Casson, is real-analytic and “global”: in order to make the structure complete, one
+kills its monodromy by maximizing the total hyperbolic volume (but combinatorial
+obstructions might arise). In the case of V,, the combinatorial structure of 1 is
+sufficiently well-understood to allow a nice interplay between the two approaches,
+yielding useful “medium-range” results (Section 8). The philosophy of such results is
+that if the structure with maximal volume is noncomplete, it should still be complete at
+“most” places, enabling us to make geometric statements.
+
+Akiyoshi [4], combining the methods of Akiyoshi, Sakuma, Wada and Yamashita [5]
+and Minsky [18], proved that the “combinatorially canonical” triangulation 7 must
+also be “geometrically canonical,” ie topologically dual to the Ford—Voronoi domain of
+V,. Lackenby [13], assuming the existence of the hyperbolic metric, derived the same
+result by a normal surface argument. In [10], we apply the methods of the present paper
+to extend the Akiyoshi—Lackenby theorem to quasifuchsian groups (where pleating
+laminations of the convex core replace the attractive and repulsive laminations of the
+monodromy y).
+
+Knowing the space of angle structures also allows for easy volume estimates, some of
+which are worked out in the Appendix: these estimates make the constants of Brock [8]
+explicit (and sharp) for the class of manifolds under consideration. Although the main
+results of the present paper are known, our ambition is to demonstrate that hyperbolic
+geometry and combinatorics (of the curve complex, say) can interact more intimately
+than at the level of coarse geometry, a phenomenon which seems to extend beyond
+punctured torus groups and begs to be further explored. Other references closely related
+to this subject include the beautiful article of Akiyoshi, Sakuma, Wada and Yamashita
+[6], which builds on the work of Jgrgensen and partly motivated our work [10], and the
+examples compiled in Alestalo and Helling [7], Helling [11] and Koch [12].
+
+The converse of Theorem 1.1 is true. If the trace 7 of the monodromy map y is in
+{—1,0, 1}, then [y] has finite order and Vy is Seifert fibered. If 7 = +2, then yp
+preserves a nontrivial simple closed curve ¥ (parallel to a rational eigenvector) in the
+punctured torus, and + defines an incompressible torus or Klein bottle in V,. In any
+case we get a topological obstruction to the existence of the hyperbolic metric.
+
+An attempt to be self-contained will be made in proving Theorem 1.1. The proof will
+deal primarily with the case where the eigenvalues of yp are positive. The other case
+is only a minor variant (in particular, V_, can be obtained by ungluing the metric
+tetrahedra of V, and regluing them in a slightly different way).
+
+Geometry & Topology 10 (2006)

@@ -1,0 +1,46 @@
+The Dilogarithm Function 39
+
+field becomes trivial in the Bloch group of a larger number field containing
+sufficiently many roots of unity.
+
+C. Dilogarithm identities from triangulated 3-manifolds. Finally, we
+describe a simple method for producing examples of torsion elements in Bloch
+groups, using combinatorial triangulated 3-manifolds. (See also [18].) For this
+purpose, it is convenient to think of L or D as functions of real or complex
+oriented 3-simplices. By an oriented n-simplex in P'(C) we mean an (n + 1)-
+tuple of points in P!(C) together with an ordering up to even permutations;
+more precisely, such a simplex has the form [xo,...,2,] with x; € P1(C)
+and with the convention that [v,(0),---;@x(n)] = sgn(7) [v0,---,n] for 7 €
+Gn+1. Let €,, denote the free abelian group on oriented n-simplices. There are
+cara maps 0: €,, > €,_1 defined by the usual formula 0([z9,...,2%n]) =
+
+eo (-1)'[20.--., Fi,--.,0n], and the sequence (with ¢((z]) = 1)
+3 & 3G 2G 2a 2 e Zz 0 (22)
+
+is exact. The function D : C > R defines a function D : €3; — R which
+associates to a 3-simplex in P!(C) the value of D on the cross-ratio of its
+vertices, D((a, b,c, d]) = D(s=4 boc), as in Chapter I. This is well-defined (i.e.,
+transforms under the action of 7 € G4 by sgn(7m)) and is 0 on O(€4) by the five-
+term relation, since the element V(x, y) in (17) is simply the boundary of the
+4-simplex [00, 0, 7,1, y~'] and any 4-simplex is equivalent to such a one under
+the action of PGL2(C) on €3. (Notice that D is invariant under the action
+of PGL2(C) on €3, since the cross-ratio is.) Because of the exactness of (22),
+
+we can say equivalently that D vanishes on Ker(€3 2, €2) or that it factors
+through 0: if we define a map D:@&— oR by D((a, b, c}) = —D({a, b,c, 00])
+(here “oo” could be replaced by any other fixed base-point x9 € P!(C)), then
+for every oriented 3-simplex [a, b, c,d] € €3 we have
+
+D(A((a,b,¢,d])) = D(—[a,b,¢] + {a,b, 4] — [a,¢,d] + [b, ¢, d))
+= D((a, b,c, 00] — [a, b, d, oo] + [a, ¢, d, 00] — [b, e, d, 00])
+D((a, b,c,d] — O(a, b, c,d, o0]))
+= D((a,b,¢,d})
+
+and hence D = Dod. ;
+
+We can think of an element € of Ker(€3 2, €2) as a closed, triangulated,
+oriented near-3-manifold M, smooth except possibly at its vertices (it is a
+union of oriented tetrahedra glued to each other along their faces, and is
+hence automatically smooth on the interior of its 3-, 2- or 1-simplices, while
+at a vertex its topology is that of a cone on some compact oriented surface),
+together with a map ¢ from the vertices of M to P!(C). Any such element € =

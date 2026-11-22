@@ -8,20 +8,20 @@
   "pages": 24,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:18Z",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": "10.1090/conm/541/10683",
-  "title": "Contemporary Mathematics From angled triangulations to hyperbolic structures",
-  "authors_raw": "David Futer and Fran\u00b8cois Gu\u00e9ritaud",
+  "title": "From angled triangulations to hyperbolic structures",
+  "authors_raw": "David Futer and Fran¸cois Guéritaud",
   "title_lines": [
    "Contemporary Mathematics",
    "From angled triangulations to hyperbolic structures"
   ],
-  "abstract": "This survey paper contains an elementary exposition of Casson and Rivin\u2019s technique for \ufb01nding the hyperbolic metric on a 3\u2013manifold M with toroidal boundary. We also survey a number of applications of this technique. The method involves subdividing M into ideal tetrahedra and solving a system of gluing equations to \ufb01nd hyperbolic shapes for the tetrahedra. The gluing equations decompose into a linear and non-linear part. The solutions to the linear equations form a convex polytope A. The solution to the non-linear part (unique if it exists) is a critical point of a certain volume functional on this polytope. The main contribution of this paper is an elementary proof of Rivin\u2019s theorem that a critical point of the volume functional on A produces a complete hyperbolic structure on M.",
+  "abstract": "This survey paper contains an elementary exposition of Casson and Rivin’s technique for ﬁnding the hyperbolic metric on a 3–manifold M with toroidal boundary. We also survey a number of applications of this technique. The method involves subdividing M into ideal tetrahedra and solving a system of gluing equations to ﬁnd hyperbolic shapes for the tetrahedra. The gluing equations decompose into a linear and non-linear part. The solutions to the linear equations form a convex polytope A. The solution to the non-linear part (unique if it exists) is a critical point of a certain volume functional on this polytope. The main contribution of this paper is an elementary proof of Rivin’s theorem that a critical point of the volume functional on A produces a complete hyperbolic structure on M.",
   "docinfo": {
    "Producer": "itext-paulo-155 (itextpdf.sf.net-lowagie.com)",
    "Creator": "pdftk 2.02 - www.pdftk.com",
@@ -31,11 +31,12 @@
   "title_source": "text",
   "title_verified": false,
   "title_evidence": {
-   "heading": "From angled triangulations to hyperbolic structures David Futer and Fran\u00b8cois Gu\u00b4eritaud",
+   "heading": "From angled triangulations to hyperbolic structures David Futer and Fran¸cois Gu´eritaud",
    "text": "Contemporary Mathematics From angled triangulations to hyperbolic structures",
    "corroborated_by": [],
    "browser_print": false
-  }
+  },
+  "title_prev": "Contemporary Mathematics From angled triangulations to hyperbolic structures"
  },
  "toc": [
   {
@@ -83,7 +84,7 @@
   },
   {
    "level": 1,
-   "title": "Leading\u2013trailing deformations",
+   "title": "Leading–trailing deformations",
    "page": 10,
    "source": "inferred",
    "number": "4",
@@ -144,7 +145,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "Left: the shape of an ideal tetrahedron is de\ufb01ned by three dihedral angles. Right: the gluing of tetrahedra, seen from an ideal vertex",
+   "title": "Left: the shape of an ideal tetrahedron is deﬁned by three dihedral angles. Right: the gluing of tetrahedra, seen from an ideal vertex",
    "page": 5,
    "confidence": 0.9,
    "evidence": [
@@ -157,7 +158,7 @@
   {
    "kind": "figure",
    "number": "2",
-   "title": "A normal path \u03c3 passing through the tessellation of a torus by boundary triangles",
+   "title": "A normal path σ passing through the tessellation of a torus by boundary triangles",
    "page": 6,
    "confidence": 0.9,
    "evidence": [
@@ -170,7 +171,7 @@
   {
    "kind": "figure",
    "number": "3",
-   "title": "The leading\u2013trailing deformation along \u03c3 increases the angles marked + and decreases the angles marked \u2296",
+   "title": "The leading–trailing deformation along σ increases the angles marked + and decreases the angles marked ⊖",
    "page": 11,
    "confidence": 0.9,
    "evidence": [
@@ -183,7 +184,7 @@
   {
    "kind": "figure",
    "number": "4",
-   "title": "The leading\u2013trailing deformation about a single edge e of M. Every increase to an angle in a tetrahedron is canceled out by a decrease to an adjacent angle",
+   "title": "The leading–trailing deformation about a single edge e of M. Every increase to an angle in a tetrahedron is canceled out by a decrease to an adjacent angle",
    "page": 11,
    "confidence": 0.9,
    "evidence": [
@@ -196,7 +197,7 @@
   {
    "kind": "figure",
    "number": "5",
-   "title": "Decomposing \u03c3 into smaller curves. Left: when two segments of \u03c3 pass through the same boundary triangle, we may cut and rejoin to form two normal curves \u03c3\u2032, \u03c3\u2032\u2032. Right: a local isotopy in the complement of the vertices may be required to ensure",
+   "title": "Decomposing σ into smaller curves. Left: when two segments of σ pass through the same boundary triangle, we may cut and rejoin to form two normal curves σ′, σ′′. Right: a local isotopy in the complement of the vertices may be required to ensure",
    "page": 12,
    "confidence": 0.9,
    "evidence": [
@@ -209,7 +210,7 @@
   {
    "kind": "figure",
    "number": "6",
-   "title": "Left: the boundary polygon Pv comprised of boundary triangles \u03941, . . . , \u0394j adjacent to v. In each \u0394i, the smallest angle",
+   "title": "Left: the boundary polygon Pv comprised of boundary triangles Δ1, . . . , Δj adjacent to v. In each Δi, the smallest angle",
    "page": 14,
    "confidence": 0.9,
    "evidence": [
@@ -222,7 +223,7 @@
   {
    "kind": "figure",
    "number": "7",
-   "title": "When \u03c3 crosses \u03c1 from right to left, the part of the polygon P to the left of \u03c1 contains an excess of two +\u2019s",
+   "title": "When σ crosses ρ from right to left, the part of the polygon P to the left of ρ contains an excess of two +’s",
    "page": 15,
    "confidence": 0.9,
    "evidence": [
@@ -470,22 +471,22 @@
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 3,
-   "n_chars": 6987,
-   "n_words": 1135,
+   "page_end": 4,
+   "n_chars": 9788,
+   "n_words": 1587,
    "label_start": "1",
-   "label_end": "3"
+   "label_end": "4"
   },
   {
    "id": "sec-001-2-gluing-equations",
    "number": "2",
    "title": "Gluing equations",
    "level": 1,
-   "page_start": 3,
+   "page_start": 4,
    "page_end": 7,
-   "n_chars": 11575,
-   "n_words": 1981,
-   "label_start": "3",
+   "n_chars": 8778,
+   "n_words": 1531,
+   "label_start": "4",
    "label_end": "7"
   },
   {
@@ -503,7 +504,7 @@
   {
    "id": "sec-003-4-leadingtrailing-deformations",
    "number": "4",
-   "title": "Leading\u2013trailing deformations",
+   "title": "Leading–trailing deformations",
    "level": 1,
    "page_start": 10,
    "page_end": 16,
@@ -564,6 +565,7 @@
    "items": []
   },
   "sections": 8,
-  "chars_total": 73541
+  "chars_total": 73545,
+  "furniture_lines_stripped": 0
  }
 }

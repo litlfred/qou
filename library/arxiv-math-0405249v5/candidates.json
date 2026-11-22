@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0405249v5",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "bc699482e5cd7679c881f01e2dd973253cebc2bccc86d8d4286b58075c571288",
+  "file": "0405249v5.pdf"
+ },
+ "provenance": {
+  "title": "Twisted homology of quantum SL (2)",
+  "authors": "Tom Hadfield\u22171, Ulrich Kr\u00e4hmer2",
+  "arxiv": {
+   "id": "math/0405249",
+   "version": "5",
+   "primary_class": null,
+   "stamp_date": "27 Jun 2005"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

@@ -3,12 +3,13 @@
  "doc_id": "arxiv-1604.01247v2",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "5a402405aadf5d54e235ff25aad1c10e6aecfa04b6cc7be348b5b8c8bfa5c3b9",
   "file": "1604.01247v2.pdf"
  },
  "provenance": {
-  "title": "EXCEPTIONAL QUANTUM GEOMETRY",
+  "title": "Exceptional quantum geometry and particle physics",
   "authors": "AND PARTICLE PHYSICS",
   "arxiv": {
    "id": "1604.01247",
@@ -20,105 +21,43 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 7,
+  "candidates": 1,
   "by_kind": {
-   "theorem": 2,
-   "remark": 3,
-   "proposition": 2
+   "proposition": 1
   },
-  "formalization_candidates": 4
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 1
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  }
  },
  "candidates": [
   {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "1",
-   "name": null,
-   "statement": "Let J be as above and de\ufb01ne xn \u2208 J for x \u2208 J and n \u2208 N+ by",
-   "section_file": "sections/sec-004-32-finite-quantum-spaces.md",
-   "section_title": "Finite quantum spaces",
-   "pages": "12-16",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "2",
-   "name": null,
-   "statement": "Any \ufb01nite-dimensional Euclidean Jordan algebra is a direct sum",
-   "section_file": "sections/sec-004-32-finite-quantum-spaces.md",
-   "section_title": "Finite quantum spaces",
-   "pages": "12-16",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": null,
-   "name": null,
-   "statement": "Notice that these actions are inner. It follows that F4 and its Lie",
-   "section_file": "sections/sec-004-32-finite-quantum-spaces.md",
-   "section_title": "Finite quantum spaces",
-   "pages": "12-16",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
    "kind": "proposition",
-   "source_kind": "proposition",
-   "number": "3",
-   "name": null,
-   "statement": "For any \ufb01rst order calculus (\u2126 1, d ) over J 8",
-   "section_file": "sections/sec-009-45-charge-conjugation.md",
-   "section_title": "Charge conjugation",
-   "pages": "23-30",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
+   "source_kind": "empirical-claim",
    "number": null,
    "name": null,
-   "statement": "Proposition 3 is very speci\ufb01c to the exceptional Jordan algebra",
-   "section_file": "sections/sec-009-45-charge-conjugation.md",
-   "section_title": "Charge conjugation",
-   "pages": "23-30",
+   "statement": "Some other structural inputs come almost directly from the experimental observation.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-000-1-introduction.md (p. 3-6)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "3-6",
    "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "proposition",
-   "source_kind": "proposition",
-   "number": "4",
-   "name": null,
-   "statement": "Any homomorphism \u03d5 of unital Jordan algebra of J 8",
-   "section_file": "sections/sec-009-45-charge-conjugation.md",
-   "section_title": "Charge conjugation",
-   "pages": "23-30",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": null,
-   "name": null,
-   "statement": "Notice that as Proposition 3, Proposition 4 is very speci\ufb01c to the",
-   "section_file": "sections/sec-009-45-charge-conjugation.md",
-   "section_title": "Charge conjugation",
-   "pages": "23-30",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-000-1-introduction.md (p. 3-6)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-000-01",
+   "block_iri": "library/arxiv-1604.01247v2/blocks/prop-sec-000-01",
+   "claim_id": "arxiv-1604.01247v2#prop-sec-000-01"
   }
  ]
 }

@@ -1,0 +1,49 @@
+134 G Kuperberg
+
++ -
++ -
+- - -_o + +e
+- + - +
+
+The morphism ® intertwines the combinatorial Hermitian adjoint with the usual
+Hermitian adjoint in the algebraic spider. Since Endz(V;) is closed under Hermitian
+adjoint, it must be semisimple.
+
+The category 2% does not contain the kernels and co-kernels of its morphisms,
+but it may be completed to a bigger category 2’, in which % is a full subcategory,
+by adding these vector spaces as new objects. The category 2’ then satisfies the
+hypotheses of the Tannaka—Krein duality theorem [8, p. 177], and must be the cat-
+egory of finite-dimensional representations of some compact group H. On the one
+hand, H C G, since everything in 2” is invariant under G. On the other hand, H
+cannot be any bigger than G, because for each choice of g, G is a maximal compact
+subgroup of the symmetry group of ®(t) for a vertex ¢. (For example, the symmetry
+group of a non-zero element of Invg,(V; ® V; ® V2) is sp(4,C), with maximal com-
+pact subgroup Spin(5).) Therefore 2’ is equivalent to the representation category
+of U(g), and % coincides with the algebraic g spider. 0
+
+and signs:
+
+It is more difficult to show that ® is injective. We will prove this in Sect. 6
+by demonstrating that the clasped web spaces and the web spaces of the clasped
+algebraic spider have equinumerous bases. If this is so for clasped web spaces,
+then it is also true for unclasped web spaces, which demonstrates that ® is an
+isomorphism between unclasped spiders. We can then define an internal clasp as
+@~'(x), where x is the highest-weight projection from any strand in the algebraic
+g spider to itself. This completes the definition of the clasped spiders, provided we
+verify the following lemma to show that ® maps stitch to contraction.
+
+Lemma 5.2. Suppose that s and t are strand types and w € W(st) is zero in the
+clasped web space W([s]t). Then w is annihilated by an internal clasp of type [s].
+
+Proof. We assume the injectivity of ® for unclasped web spaces, and we assume
+that w € B(st) is a basis web. Let A be the weight of s, and let w’ be w with an
+internal clasp attached. The tensor ®(w) may be interpreted as a homomorphism, in
+particular as a composition V; — V(A) — V, — V;, where u is the transverse strand
+type of a minimal cut path that separates s from ¢ in w. By hypothesis, the weight
+of u is lower than that of s. Therefore any map V(A) — V, must vanish, so w’ must
+vanish. O
+
+The following result is then a corollary of the discussion of this section:
+
+Theorem 5.3. The morphism © from the combinatorial to algebraic rank two spi-
+ders extends to clasped spiders.

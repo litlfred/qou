@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ki6c",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ki6c/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings Tomotada Ohtsuki and Yoshiyuki Yokota Introduction",
+  "title": "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings",
   "contains": [
     "library/ki6c/sections/sec-front-matter",
     "library/ki6c/sections/sec-000",
@@ -37,10 +37,11 @@
     "library/ki6c/sections/sec-022",
     "library/ki6c/sections/sec-023",
     "library/ki6c/sections/sec-024",
-    "library/ki6c/sections/sec-025"
+    "library/ki6c/sections/sec-025",
+    "library/ki6c/sections/sec-026"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "ki6c",
     "title_source": "corroborated",

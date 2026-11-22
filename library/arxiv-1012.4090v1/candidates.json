@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1012.4090v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "02fe4a5eb36ff0edb291ac6917e0f7cb99e1ccd43217af8498ffc29961fb83a7",
+  "file": "1012.4090v1.pdf"
+ },
+ "provenance": {
+  "title": "Generalized Skyrme Crystals",
+  "authors": "J. Silva Loboa,\u2217, R. S. Warda",
+  "arxiv": {
+   "id": "1012.4090",
+   "version": "1",
+   "primary_class": "hep-th",
+   "stamp_date": "18 Dec 2010"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

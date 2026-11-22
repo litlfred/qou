@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/symmetry-11-01298",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/symmetry-11-01298/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "Braids, 3-Manifolds, Elementary Particles: Number Theory and Symmetry in Particle Physics",
   "contains": [
+    "library/symmetry-11-01298/sections/sec-front-matter",
     "library/symmetry-11-01298/sections/sec-000",
     "library/symmetry-11-01298/sections/sec-001",
     "library/symmetry-11-01298/sections/sec-002",
@@ -32,10 +33,11 @@
     "library/symmetry-11-01298/sections/sec-018",
     "library/symmetry-11-01298/sections/sec-019",
     "library/symmetry-11-01298/sections/sec-020",
-    "library/symmetry-11-01298/sections/sec-021"
+    "library/symmetry-11-01298/sections/sec-021",
+    "library/symmetry-11-01298/sections/sec-022"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "symmetry-11-01298",
     "title_source": "pdf-info",

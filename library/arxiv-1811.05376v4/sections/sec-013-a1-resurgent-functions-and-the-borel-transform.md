@@ -7,10 +7,11 @@ section_number: null
 pages: 36-36
 source_pdf: 1811.05376v4.pdf
 source_sha256: a486709d0a78d19c
-doc_brief: "Resurgence Analysis of Quantum Invariants of Seifert Fibered Homology Spheres — For a Seifert ﬁbered homology sphereX we show that the q-series invariant ˆZ0(X;q) introduced by Gukov-Pei-Putrov-Vafa"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.942
-latex_coverage_ratio: 0.96
+latex_coverage_ratio: 1.0
+doc_brief: "Resurgence Analysis of Quantum Invariants of Seifert Fibered Homology Spheres — For a Seifert ﬁbered homology sphere X we show that the q-series invariant ˆZ0(X; q) introduced by"
 ---
 The theory of resurgence was originally developed by Écalle in [@Ecalle81a] and [@Ecalle81b]. See [@MitschiSauzin16] for an introduction to the mathematical theory of resurgence and see [@DunneUnsal15] for an introduction to the general use of resurgence in quantum field theory. Garoufalidis [@Garoufalidis08] and Witten [@Witten11] where the pioneers of the use of resurgence in quantum Chern-Simons theory.
 

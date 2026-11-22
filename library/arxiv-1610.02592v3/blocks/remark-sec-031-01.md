@@ -1,1 +1,0 @@
-Asshownintheproof, thetorsionparametersfor m arezero

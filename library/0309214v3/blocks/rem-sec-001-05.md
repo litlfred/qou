@@ -1,0 +1,1 @@
+The proof of Theorem 1 indicates that many statistical me- chanics models, with complicated partition functions that depend on several variables, are holonomic, provided that their local weights are holonomic. This observation may be of interest to statistical mechanics.

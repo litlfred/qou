@@ -1,0 +1,42 @@
+CHAPTER 1
+
+Vanishing theorems on abelian varieties
+
+As we mentioned in the introduction, our construction of Tannakian
+categories will be closely intertwined with a vanishing theorem for perverse
+sheaves on abelian varieties. In the first two chapters of this dissertation
+which are based on joint work with R. Weissauer [68], we discuss various
+incarnations of this vanishing theorem and explain how it may be proved in
+an abstract Tannakian framework.
+
+1.1. The main result
+
+Let X be a complex abelian variety. For characters y : 2|(X,0) —> C*
+of the fundamental group we denote by Ly the corresponding local system
+of complex vector spaces on X of rank one, and for a bounded constructible
+sheaf complex K € D>(X,C) we consider the twist Ky = K ®cLy. With
+these notations, our vanishing theorem can be formulated as
+
+THEOREM 1.1. Let P € Perv(X,C) be a perverse sheaf. Then for most
+characters x we have
+
+H'(X,Py)=0 for i#0.
+
+Here we use the following terminology: For abelian subvarieties A C X
+let K(A) be the group of characters y : 2(X,0) —> C* whose restriction
+to the subgroup 7(A,0) C 7 (X,0) is trivial. We then say that a statement
+holds for most characters ¥ if it holds for all 7 in the complement of a thin
+set of characters, where by a thin set of characters we mean a finite union
+of translates y;- K(Aj;) for certain non-zero abelian subvarieties A; C X and
+suitable characters y; of m(X,0). The same terminology will be used in
+theorems 1.4 and 1.5 below for line bundles Y € Pic®(X).
+
+The statement of theorem 1.1 can be sharpened as follows. Let II(X)
+denote the group of characters x of the fundamental group 7 (X,0); this is
+a complex algebraic torus. For a perverse sheaf P € Perv(X,C) we define
+the spectrum
+
+S(P) = {x € TX) | H'(X,P,) £0 for some i 40}
+
+to be the locus of all characters y € II(X) for which the vanishing in the
+above theorem fails in some cohomology degree. We will see in section 1.5

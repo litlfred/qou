@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1712.04212v4
-doc_title: "CONCENTRATION OF 1-LIPSCHITZ FUNCTIONS ON MANIFOLDS WITH BOUNDARY WITH DIRICHLET BOUNDARY CONDITION"
+doc_title: "1. Introduction"
 section_id: sec-005-6-infinite-dimensional-comparisons
 section_title: "Infinite dimensional comparisons"
 section_number: 6
 pages: 26-30
 source_pdf: 1712.04212v4.pdf
 source_sha256: 521911fc8724f3c2
-doc_brief: "CONCENTRATION OF 1-LIPSCHITZ FUNCTIONS ON MANIFOLDS WITH BOUNDARY WITH DIRICHLET BOUNDARY CONDITION — In this paper, we consider a concentration of measure problem on Riemannian manifolds with"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.894
+latex_coverage_ratio: 0.951
+doc_brief: "1. Introduction — In this paper, we consider a concentration of measure problem on Riemannian manifolds with boundary."
 ---
 \label{sec:Infinite dimensional comparisons}
 

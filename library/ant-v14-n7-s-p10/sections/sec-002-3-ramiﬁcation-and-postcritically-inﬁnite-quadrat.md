@@ -8,6 +8,7 @@ pages: 5-8
 source_pdf: ant-v14-n7-s-p10.pdf
 source_sha256: 8d3e47aa779ad9c7
 toc_source: inferred
+doc_brief: "Abelian extensions in dynamical Galois theory — 11 sections: Front matter; Introduction; Some algebraic lemmas"
 ---
 We recall standard facts and notation surrounding a ﬁnite Galois extension L/K of number ﬁelds; see
 Lang [1970, Chapter 1]. Given a prime p of K, by the Galois assumption we have a factorization of the

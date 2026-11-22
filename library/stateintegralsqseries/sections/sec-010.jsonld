@@ -9,13 +9,14 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "An application: state-integrals of the 41 and 52 knots",
-  "pageStart": 14,
-  "pageEnd": 14,
+  "title": "Proof of Proposition 2.2",
+  "pageStart": 12,
+  "pageEnd": 13,
   "contains": [
-    "library/stateintegralsqseries/blocks/prose-sec-010"
+    "library/stateintegralsqseries/blocks/prose-sec-010",
+    "library/stateintegralsqseries/blocks/lem-sec-010-01"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/stateintegralsqseries",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/stateintegralsqseries",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/stateintegralsqseries/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/stateintegralsqseries/manifest.jsonld",
   "provenance": "ingested"
 }

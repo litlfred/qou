@@ -8,7 +8,7 @@
   "pages": 88,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -20,7 +20,7 @@
    "stamp_date": "17 Aug 1994"
   },
   "doi": null,
-  "title": "arXiv:hep-th/9408099v1 17 Aug 1994",
+  "title": "Monopoles, duality and chiral symmetry breaking in N=2 supersymmetric QCD",
   "authors_raw": "N. Seiberg",
   "title_lines": [
    "Monopoles, Duality and Chiral Symmetry Breaking",
@@ -44,7 +44,8 @@
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:hep-th/9408099v1 17 Aug 1994"
  },
  "toc": [
   {
@@ -148,7 +149,7 @@
   },
   {
    "level": 1,
-   "title": "A \ufb01rst look at the quantum theory",
+   "title": "A ﬁrst look at the quantum theory",
    "page": 14,
    "source": "inferred",
    "number": "4",
@@ -176,7 +177,7 @@
   },
   {
    "level": 2,
-   "title": "A \ufb01rst look at the quantum moduli space",
+   "title": "A ﬁrst look at the quantum moduli space",
    "page": 15,
    "source": "inferred",
    "number": "4.2",
@@ -1294,9 +1295,9 @@
    "label_end": "13"
   },
   {
-   "id": "sec-006-4-a-\ufb01rst-look-at-the-quantum-theory",
+   "id": "sec-006-4-a-ﬁrst-look-at-the-quantum-theory",
    "number": "4",
-   "title": "A \ufb01rst look at the quantum theory",
+   "title": "A ﬁrst look at the quantum theory",
    "level": 1,
    "page_start": 14,
    "page_end": 14,
@@ -1318,9 +1319,9 @@
    "label_end": "14"
   },
   {
-   "id": "sec-008-42-a-\ufb01rst-look-at-the-quantum-moduli-space",
+   "id": "sec-008-42-a-ﬁrst-look-at-the-quantum-moduli-space",
    "number": "4.2",
-   "title": "A \ufb01rst look at the quantum moduli space",
+   "title": "A ﬁrst look at the quantum moduli space",
    "level": 2,
    "page_start": 15,
    "page_end": 17,
@@ -1537,6 +1538,7 @@
    "items": []
   },
   "sections": 26,
-  "chars_total": 168394
+  "chars_total": 168394,
+  "furniture_lines_stripped": 0
  }
 }

@@ -11,6 +11,8 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.966
 latex_coverage_ratio: 0.933
+doc_brief: "GRÖBNER-SHIRSHOV BASES FOR TEMPERLEY-LIEB ALGEBRAS — For Temperley-Lieb algebras of type B, we construct their Gröbner-Shirshov bases and the corresponding standard monomials, which give another"
+duplicate_of: "fd58d8e182edda805fed0946606c5ab82f81"
 ---
 In this section, we recall a basic theory of {\em \GS bases} for associative algebras so as to make the paper self-contained. There will be some properties listed without proofs which are well-known and necessary for this paper.
 

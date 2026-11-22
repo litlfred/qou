@@ -1,0 +1,1 @@
+It does not depend on a choice of the lifts of the cells ek i in the universal cover of M (because the Adjoint map is unimodular) nor of the basis {E, F, H} (because the Euler characteristic χ(M) vanishes) ; neither it depends on the conjugacy class of ρ.

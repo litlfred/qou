@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/sm10137-eng/blocks/prop-sec-005-02",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 10,
+  "pageEnd": 12,
+  "text": "prop-sec-005-02.md",
+  "derivedFrom": "library/sm10137-eng/sections/sec-005",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/sm10137-eng/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "3",
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "both",
+    "evidence_locator": "In-paper proof in sections/sec-005-6-wienerhopf-factorization-on-h-1mathbbr.md (p. 10-12) citing [0,R]",
+    "claim_id": "sm10137-eng#proposition:3",
+    "lean_status": "doc-cited-in-lean-unlinked-claim"
+  }
+}

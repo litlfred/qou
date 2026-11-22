@@ -6,10 +6,12 @@
   "sha256": "5e88d45bbc1c1b9b71ddc373cf08ce63ae9a6318c47067919d679c988d552479",
   "bytes": 1042330,
   "pages": 85,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -19,16 +21,31 @@
    "stamp_date": "24 Aug 2009"
   },
   "doi": null,
-  "title": "Chiral Perturbation Theory: Introduction and Recent Resul ts in the One-Nucleon Sector S. Scherer",
-  "authors_raw": "Institut f\u00a8 ur Kernphysik, Johannes Gutenberg-Universit\u00a8at Mainz",
-  "abstract": "We provide an introduction to the basic concepts of chiral pe rturbation theory and discuss some recent developments in the manifestly Lorentz-invariant f ormulation of the one-nucleon sector.",
+  "title": "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector",
+  "authors_raw": "S. Scherer",
+  "title_lines": [
+   "Chiral Perturbation Theory: Introduction and Recent Results",
+   "in the One-Nucleon Sector"
+  ],
+  "abstract": "We provide an introduction to the basic concepts of chiral perturbation theory and discuss some recent developments in the manifestly Lorentz-invariant formulation of the one-nucleon sector.",
   "docinfo": {
    "Producer": "GPL Ghostscript 10.01.2",
-   "CreationDate": "D:20241126173556-05'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  }
+   "CreationDate": "D:20241126173556-05'00'"
+  },
+  "title_raw": "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector",
+   "outline": "Introduction",
+   "text": "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Chiral Perturbation Theory: Introduction and Recent Resul ts in the One-Nucleon Sector S. Scherer"
  },
  "toc": [
   {
@@ -36,414 +53,1816 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Chiral symmetry and spontaneous symmetry breaking",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Quantum chromodynamics and chiral symmetry",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 3,
    "title": "The QCD Lagrangian",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 3,
    "title": "Chiral limit",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 3,
    "title": "Global symmetry currents of the light quark sector",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 3,
    "title": "Chiral algebra",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 3,
    "title": "Quark masses and chiral symmetry breaking",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 3,
    "title": "Green functions, chiral Ward identities, and generating functional",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 3,
    "title": "PCAC in the presence of an external electromagnetic field",
    "page": 15,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "Spontaneous symmetry breaking and Goldstone theorem",
    "page": 16,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 3,
    "title": "Linear sigma model",
    "page": 16,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 3,
    "title": "The hadron spectrum",
    "page": 17,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 3,
    "title": "The scalar singlet quark condensate",
    "page": 19,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 1,
    "title": "Mesonic chiral perturbation theory",
    "page": 21,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 2,
    "title": "Transformation properties of the Goldstone bosons",
    "page": 21,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 3,
    "title": "General considerations",
    "page": 21,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 3,
    "title": "Application to QCD",
    "page": 22,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 2,
    "title": "Effective Lagrangian and power-counting scheme",
    "page": 24,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
   },
   {
    "level": 3,
    "title": "The lowest-order effective Lagrangian",
    "page": 24,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
   },
   {
    "level": 3,
    "title": "Symmetry breaking through the quark masses",
    "page": 25,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
   },
   {
    "level": 3,
    "title": "Construction of invariants",
    "page": 27,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
   },
   {
    "level": 3,
-   "title": "Two simple applications: Pion decay and  scattering",
+   "title": "Two simple applications: Pion decay and scattering",
    "page": 29,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "29"
   },
   {
    "level": 3,
    "title": "Primer to dimensional regularization",
    "page": 33,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
   },
   {
    "level": 3,
    "title": "Power-counting scheme",
    "page": 35,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "35"
   },
   {
    "level": 2,
    "title": "Next-to-leading order",
    "page": 37,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "37"
   },
   {
    "level": 3,
    "title": "The O(q4) Lagrangian of Gasser and Leutwyler",
    "page": 38,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "38"
   },
   {
    "level": 3,
    "title": "The effective Wess-Zumino-Witten action",
    "page": 39,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "39"
   },
   {
    "level": 3,
    "title": "Masses of the Goldstone bosons",
    "page": 42,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "42"
   },
   {
    "level": 3,
    "title": "Electromagnetic polarizabilities of the pion",
    "page": 46,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "46"
   },
   {
    "level": 1,
    "title": "Baryonic chiral perturbation theory",
    "page": 49,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "49"
   },
   {
    "level": 2,
    "title": "Lagrangian",
    "page": 49,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "49"
   },
   {
    "level": 3,
    "title": "Transformation properties of the fields",
    "page": 49,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "49"
   },
   {
    "level": 3,
    "title": "Baryonic effective Lagrangian at lowest order",
    "page": 50,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "50"
   },
   {
    "level": 2,
    "title": "Renormalization and power counting",
    "page": 52,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "52"
   },
   {
    "level": 3,
    "title": "The generation of counter terms",
    "page": 52,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "52"
   },
   {
    "level": 3,
    "title": "Power counting for renormalized diagrams",
    "page": 54,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "54"
   },
   {
    "level": 3,
    "title": "The power-counting problem",
    "page": 54,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "54"
   },
   {
    "level": 2,
    "title": "Solutions to the power-counting problem",
    "page": 57,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "57"
   },
   {
    "level": 3,
    "title": "Heavy-baryon approach",
    "page": 57,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "57"
   },
   {
    "level": 3,
    "title": "Master integral",
    "page": 59,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "59"
   },
   {
    "level": 3,
    "title": "Infrared regularization",
    "page": 60,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "60"
   },
   {
    "level": 3,
    "title": "Extended on-mass-shell scheme",
    "page": 62,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "62"
   },
   {
    "level": 3,
    "title": "Dimensional counting analysis",
    "page": 64,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "64"
   },
   {
    "level": 1,
    "title": "Applications",
    "page": 65,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "65"
   },
   {
    "level": 2,
    "title": "Nucleon mass and sigma term at O(q4)",
    "page": 66,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "66"
   },
   {
    "level": 2,
    "title": "Chiral expansion of the nucleon mass to O(q6)",
    "page": 67,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "67"
   },
   {
    "level": 2,
    "title": "Form factors of the nucleon",
    "page": 68,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "68"
   },
   {
    "level": 3,
    "title": "Scalar form factor",
    "page": 68,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "68"
   },
   {
    "level": 3,
    "title": "Electromagnetic form factors",
    "page": 68,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "68"
   },
   {
    "level": 3,
    "title": "Axial and induced pseudoscalar form factors",
    "page": 72,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "72"
   },
   {
    "level": 3,
    "title": "Pion-nucleon form factor",
    "page": 75,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "75"
   },
   {
    "level": 1,
    "title": "Conclusion",
    "page": 76,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "76"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Comparison of QCD and ChPT",
+   "page": 3,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "table",
+   "number": "2",
+   "title": "Quark ﬂavors and their charges and masses. See [Manohar and Sachrajda, 2008] for details",
+   "page": 5,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "table",
+   "number": "3",
+   "title": "Totally antisymmetric non-vanishing structure constants of SU(3): [λa",
+   "page": 6,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "6"
+  },
+  {
+   "kind": "table",
+   "number": "4",
+   "title": "Transformation properties of the Dirac matrices Γ under parity. Γ",
+   "page": 13,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "13"
+  },
+  {
+   "kind": "table",
+   "number": "5",
+   "title": "Transformation properties of the Dirac matrices Γ under charge conjugation",
+   "page": 13,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "13"
+  },
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Pseudoscalar meson octet in an (I3, S) diagram. Baryon number B = 0. Masses in MeV",
+   "page": 18,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "18"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Baryon octet (J = 1",
+   "page": 19,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "19"
+  },
+  {
+   "kind": "table",
+   "number": "6",
+   "title": "Comparison between the symmetry-breaking patterns of a Heisenberg ferromagnet and QCD",
+   "page": 27,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "27"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Lowest-order Feynman diagram for ππ scattering. The vertex is derived from L2, denoted by",
+   "page": 31,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "31"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Generic one-loop diagram. The black box denotes some unspeciﬁed vertex structure which is irrelevant for the discussion",
+   "page": 33,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "33"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Path of integration in the complex k0 plane",
+   "page": 34,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "34"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Application of the power-counting formula of Eq. (138) in n = 4 dimensions",
+   "page": 36,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "36"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "The loop diagram is only suppressed if kmin > 0",
+   "page": 37,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "37"
+  },
+  {
+   "kind": "table",
+   "number": "7",
+   "title": "Renormalized low-energy coupling constants Lr",
+   "page": 39,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "39"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Self-energy diagrams at O(q4). Vertices derived from L2n are denoted by 2n in the interaction",
+   "page": 42,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "42"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "Unrenormalized propagator as the sum of irreducible self-energy diagrams. Hatched and crosshatched “vertices” denote one-particle-reducible and one-particle-irreducible contributions, respectively",
+   "page": 42,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "42"
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "Contribution of the pion loops to the π0 self energy",
+   "page": 43,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "43"
+  },
+  {
+   "kind": "figure",
+   "number": "11",
+   "title": "The reaction γp →γπ+n contains Compton scattering on a pion as a sub diagram in the t",
+   "page": 47,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "47"
+  },
+  {
+   "kind": "figure",
+   "number": "12",
+   "title": "Diﬀerential cross section averaged over 537 MeV < Eγ < 817 MeV and 1.5 M2",
+   "page": 47,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "47"
+  },
+  {
+   "kind": "figure",
+   "number": "13",
+   "title": "The cross section of the process γp →γπ+n integrated over s1 and t in the region where",
+   "page": 48,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "48"
+  },
+  {
+   "kind": "figure",
+   "number": "14",
+   "title": "One-loop contributions to the nucleon self energy. The number 1 in the interaction blobs",
+   "page": 54,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "54"
+  },
+  {
+   "kind": "figure",
+   "number": "15",
+   "title": "Renormalized one-loop self-energy diagram",
+   "page": 56,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "56"
+  },
+  {
+   "kind": "figure",
+   "number": "16",
+   "title": "s-channel pole diagram of πN scattering",
+   "page": 58,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "58"
+  },
+  {
+   "kind": "figure",
+   "number": "17",
+   "title": "Contributions to the nucleon self energy at O(q4). The number n in the interaction blobs",
+   "page": 66,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "66"
+  },
+  {
+   "kind": "figure",
+   "number": "18",
+   "title": "Pion mass dependence of the term k5M5 ln(M/mN) (solid line) for M < 400 MeV. For",
+   "page": 68,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "68"
+  },
+  {
+   "kind": "figure",
+   "number": "19",
+   "title": "Scalar form factor σ(t) as a function of t at O(q4)",
+   "page": 69,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "69"
+  },
+  {
+   "kind": "figure",
+   "number": "20",
+   "title": "Real and imaginary parts of the scalar form factor as a function of t at O(q3)",
+   "page": 69,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "69"
+  },
+  {
+   "kind": "figure",
+   "number": "21",
+   "title": "The Sachs form factors of the nucleon in manifestly Lorentz-invariant chiral perturbation theory at O(q4) without vector mesons",
+   "page": 70,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "70"
+  },
+  {
+   "kind": "figure",
+   "number": "22",
+   "title": "Feynman diagrams including vector mesons that contribute to the electromagnetic form factors of the nucleon up to and including O(q4). External leg corrections are not shown. Solid, wiggly,",
+   "page": 71,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "71"
+  },
+  {
+   "kind": "figure",
+   "number": "23",
+   "title": "The Sachs form factors of the nucleon in manifestly Lorentz-invariant chiral perturbation theory at O(q4) including vector mesons as explicit degrees of freedom. Full lines: results in the extended",
+   "page": 72,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "72"
+  },
+  {
+   "kind": "figure",
+   "number": "24",
+   "title": "The axial form factor GA in manifestly Lorentz-invariant ChPT at O(q4). Full line: result in",
+   "page": 74,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "74"
+  },
+  {
+   "kind": "figure",
+   "number": "25",
+   "title": "Diagram containing the axial-vector meson (double line) contributing to the form factors at O(q4)",
+   "page": 75,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "75"
+  },
+  {
+   "kind": "figure",
+   "number": "26",
+   "title": "Left panel: Axial form factor GA in manifestly Lorentz-invariant ChPT at O(q4) including",
+   "page": 76,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "76"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "52",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "53",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "54",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "55",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "56",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "57",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "58",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "59",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "60",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "61",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "62",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": "63",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 64,
+   "label": "64",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 65,
+   "label": "65",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 66,
+   "label": "66",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 67,
+   "label": "67",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 68,
+   "label": "68",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 69,
+   "label": "69",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 70,
+   "label": "70",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 71,
+   "label": "71",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 72,
+   "label": "72",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 73,
+   "label": "73",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 74,
+   "label": "74",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 75,
+   "label": "75",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 76,
+   "label": "76",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 77,
+   "label": "77",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 78,
+   "label": "78",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 79,
+   "label": "79",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 80,
+   "label": "80",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 81,
+   "label": "81",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 82,
+   "label": "82",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 83,
+   "label": "83",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 84,
+   "label": "84",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 85,
+   "label": "85",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 5115,
+   "n_words": 1628,
+   "label_start": "1",
+   "label_end": "2"
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
    "title": "Introduction",
    "level": 1,
-   "page_start": 1,
-   "page_end": 3,
-   "n_chars": 7865,
-   "n_words": 2085
-  },
-  {
-   "id": "sec-001-the-qcd-lagrangian",
-   "number": null,
-   "title": "The QCD Lagrangian",
-   "level": 3,
-   "page_start": 3,
+   "page_start": 2,
    "page_end": 4,
-   "n_chars": 3984,
-   "n_words": 644
+   "n_chars": 6855,
+   "n_words": 1056,
+   "label_start": "2",
+   "label_end": "4"
   },
   {
-   "id": "sec-002-chiral-symmetry-and-spontaneous-symmetry-breakin",
+   "id": "sec-001-chiral-symmetry-and-spontaneous-symmetry-breakin",
    "number": null,
    "title": "Chiral symmetry and spontaneous symmetry breaking",
    "level": 1,
    "page_start": 4,
    "page_end": 4,
-   "n_chars": 284,
-   "n_words": 51
+   "n_chars": 330,
+   "n_words": 53,
+   "label_start": "4",
+   "label_end": "4"
   },
   {
-   "id": "sec-003-quantum-chromodynamics-and-chiral-symmetry",
+   "id": "sec-002-quantum-chromodynamics-and-chiral-symmetry",
    "number": null,
    "title": "Quantum chromodynamics and chiral symmetry",
    "level": 2,
    "page_start": 4,
+   "page_end": 4,
+   "n_chars": 837,
+   "n_words": 134,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-003-the-qcd-lagrangian",
+   "number": null,
+   "title": "The QCD Lagrangian",
+   "level": 3,
+   "page_start": 4,
    "page_end": 6,
-   "n_chars": 3921,
-   "n_words": 749
+   "n_chars": 3048,
+   "n_words": 575,
+   "label_start": "4",
+   "label_end": "6"
   },
   {
    "id": "sec-004-chiral-limit",
@@ -452,8 +1871,10 @@
    "level": 3,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 2277,
-   "n_words": 436
+   "n_chars": 2256,
+   "n_words": 417,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
    "id": "sec-005-global-symmetry-currents-of-the-light-quark-sect",
@@ -462,8 +1883,10 @@
    "level": 3,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 1914,
-   "n_words": 385
+   "n_chars": 1943,
+   "n_words": 374,
+   "label_start": "7",
+   "label_end": "8"
   },
   {
    "id": "sec-006-chiral-algebra",
@@ -472,8 +1895,10 @@
    "level": 3,
    "page_start": 8,
    "page_end": 8,
-   "n_chars": 1544,
-   "n_words": 284
+   "n_chars": 1535,
+   "n_words": 262,
+   "label_start": "8",
+   "label_end": "8"
   },
   {
    "id": "sec-007-quark-masses-and-chiral-symmetry-breaking",
@@ -482,8 +1907,10 @@
    "level": 3,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 3158,
-   "n_words": 551
+   "n_chars": 3180,
+   "n_words": 539,
+   "label_start": "8",
+   "label_end": "9"
   },
   {
    "id": "sec-008-green-functions-chiral-ward-identities-and-gener",
@@ -492,8 +1919,10 @@
    "level": 3,
    "page_start": 9,
    "page_end": 15,
-   "n_chars": 14169,
-   "n_words": 2577
+   "n_chars": 14036,
+   "n_words": 2417,
+   "label_start": "9",
+   "label_end": "15"
   },
   {
    "id": "sec-009-pcac-in-the-presence-of-an-external-electromagne",
@@ -502,8 +1931,10 @@
    "level": 3,
    "page_start": 15,
    "page_end": 16,
-   "n_chars": 2248,
-   "n_words": 403
+   "n_chars": 2290,
+   "n_words": 399,
+   "label_start": "15",
+   "label_end": "16"
   },
   {
    "id": "sec-010-spontaneous-symmetry-breaking-and-goldstone-theo",
@@ -512,8 +1943,10 @@
    "level": 2,
    "page_start": 16,
    "page_end": 16,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 51,
+   "n_words": 6,
+   "label_start": "16",
+   "label_end": "16"
   },
   {
    "id": "sec-011-linear-sigma-model",
@@ -522,8 +1955,10 @@
    "level": 3,
    "page_start": 16,
    "page_end": 17,
-   "n_chars": 3806,
-   "n_words": 807
+   "n_chars": 3788,
+   "n_words": 776,
+   "label_start": "16",
+   "label_end": "17"
   },
   {
    "id": "sec-012-the-hadron-spectrum",
@@ -532,8 +1967,10 @@
    "level": 3,
    "page_start": 17,
    "page_end": 19,
-   "n_chars": 4994,
-   "n_words": 900
+   "n_chars": 4872,
+   "n_words": 850,
+   "label_start": "17",
+   "label_end": "19"
   },
   {
    "id": "sec-013-the-scalar-singlet-quark-condensate",
@@ -542,8 +1979,10 @@
    "level": 3,
    "page_start": 19,
    "page_end": 21,
-   "n_chars": 3892,
-   "n_words": 781
+   "n_chars": 3890,
+   "n_words": 756,
+   "label_start": "19",
+   "label_end": "21"
   },
   {
    "id": "sec-014-mesonic-chiral-perturbation-theory",
@@ -552,8 +1991,10 @@
    "level": 1,
    "page_start": 21,
    "page_end": 21,
-   "n_chars": 513,
-   "n_words": 86
+   "n_chars": 543,
+   "n_words": 85,
+   "label_start": "21",
+   "label_end": "21"
   },
   {
    "id": "sec-015-transformation-properties-of-the-goldstone-boson",
@@ -562,8 +2003,10 @@
    "level": 2,
    "page_start": 21,
    "page_end": 21,
-   "n_chars": 431,
-   "n_words": 70
+   "n_chars": 479,
+   "n_words": 74,
+   "label_start": "21",
+   "label_end": "21"
   },
   {
    "id": "sec-016-general-considerations",
@@ -572,8 +2015,10 @@
    "level": 3,
    "page_start": 21,
    "page_end": 22,
-   "n_chars": 3408,
-   "n_words": 679
+   "n_chars": 3389,
+   "n_words": 645,
+   "label_start": "21",
+   "label_end": "22"
   },
   {
    "id": "sec-017-application-to-qcd",
@@ -581,312 +2026,473 @@
    "title": "Application to QCD",
    "level": 3,
    "page_start": 22,
-   "page_end": 25,
-   "n_chars": 7197,
-   "n_words": 1453
+   "page_end": 24,
+   "n_chars": 2517,
+   "n_words": 522,
+   "label_start": "22",
+   "label_end": "24"
   },
   {
-   "id": "sec-018-symmetry-breaking-through-the-quark-masses",
+   "id": "sec-018-effective-lagrangian-and-power-counting-scheme",
+   "number": null,
+   "title": "Effective Lagrangian and power-counting scheme",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 677,
+   "n_words": 96,
+   "label_start": "24",
+   "label_end": "24"
+  },
+  {
+   "id": "sec-019-the-lowest-order-effective-lagrangian",
+   "number": null,
+   "title": "The lowest-order effective Lagrangian",
+   "level": 3,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 3886,
+   "n_words": 742,
+   "label_start": "24",
+   "label_end": "25"
+  },
+  {
+   "id": "sec-020-symmetry-breaking-through-the-quark-masses",
    "number": null,
    "title": "Symmetry breaking through the quark masses",
    "level": 3,
    "page_start": 25,
    "page_end": 27,
-   "n_chars": 5418,
-   "n_words": 1037
+   "n_chars": 5397,
+   "n_words": 989,
+   "label_start": "25",
+   "label_end": "27"
   },
   {
-   "id": "sec-019-construction-of-invariants",
+   "id": "sec-021-construction-of-invariants",
    "number": null,
    "title": "Construction of invariants",
    "level": 3,
    "page_start": 27,
-   "page_end": 33,
-   "n_chars": 15312,
-   "n_words": 2984
+   "page_end": 29,
+   "n_chars": 4501,
+   "n_words": 875,
+   "label_start": "27",
+   "label_end": "29"
   },
   {
-   "id": "sec-020-primer-to-dimensional-regularization",
+   "id": "sec-022-two-simple-applications-pion-decay-and-scatterin",
+   "number": null,
+   "title": "Two simple applications: Pion decay and scattering",
+   "level": 3,
+   "page_start": 29,
+   "page_end": 33,
+   "n_chars": 10526,
+   "n_words": 1959,
+   "label_start": "29",
+   "label_end": "33"
+  },
+  {
+   "id": "sec-023-primer-to-dimensional-regularization",
    "number": null,
    "title": "Primer to dimensional regularization",
    "level": 3,
    "page_start": 33,
    "page_end": 35,
-   "n_chars": 3665,
-   "n_words": 814
+   "n_chars": 3636,
+   "n_words": 762,
+   "label_start": "33",
+   "label_end": "35"
   },
   {
-   "id": "sec-021-power-counting-scheme",
+   "id": "sec-024-power-counting-scheme",
    "number": null,
    "title": "Power-counting scheme",
    "level": 3,
    "page_start": 35,
    "page_end": 37,
-   "n_chars": 4195,
-   "n_words": 815
+   "n_chars": 4161,
+   "n_words": 777,
+   "label_start": "35",
+   "label_end": "37"
   },
   {
-   "id": "sec-022-next-to-leading-order",
+   "id": "sec-025-next-to-leading-order",
    "number": null,
    "title": "Next-to-leading order",
    "level": 2,
    "page_start": 37,
    "page_end": 38,
-   "n_chars": 2294,
-   "n_words": 359
+   "n_chars": 2295,
+   "n_words": 342,
+   "label_start": "37",
+   "label_end": "38"
   },
   {
-   "id": "sec-023-the-oq4-lagrangian-of-gasser-and-leutwyler",
+   "id": "sec-026-the-oq4-lagrangian-of-gasser-and-leutwyler",
    "number": null,
    "title": "The O(q4) Lagrangian of Gasser and Leutwyler",
    "level": 3,
    "page_start": 38,
-   "page_end": 42,
-   "n_chars": 10618,
-   "n_words": 2071
+   "page_end": 39,
+   "n_chars": 3755,
+   "n_words": 701,
+   "label_start": "38",
+   "label_end": "39"
   },
   {
-   "id": "sec-024-masses-of-the-goldstone-bosons",
+   "id": "sec-027-the-effective-wess-zumino-witten-action",
+   "number": null,
+   "title": "The effective Wess-Zumino-Witten action",
+   "level": 3,
+   "page_start": 39,
+   "page_end": 42,
+   "n_chars": 6701,
+   "n_words": 1201,
+   "label_start": "39",
+   "label_end": "42"
+  },
+  {
+   "id": "sec-028-masses-of-the-goldstone-bosons",
    "number": null,
    "title": "Masses of the Goldstone bosons",
    "level": 3,
    "page_start": 42,
    "page_end": 46,
-   "n_chars": 8779,
-   "n_words": 1923
+   "n_chars": 8563,
+   "n_words": 1824,
+   "label_start": "42",
+   "label_end": "46"
   },
   {
-   "id": "sec-025-electromagnetic-polarizabilities-of-the-pion",
+   "id": "sec-029-electromagnetic-polarizabilities-of-the-pion",
    "number": null,
    "title": "Electromagnetic polarizabilities of the pion",
    "level": 3,
    "page_start": 46,
-   "page_end": 48,
-   "n_chars": 7318,
-   "n_words": 1318
-  },
-  {
-   "id": "sec-026-lagrangian",
-   "number": null,
-   "title": "Lagrangian",
-   "level": 2,
-   "page_start": 48,
    "page_end": 49,
-   "n_chars": 1809,
-   "n_words": 296
+   "n_chars": 9097,
+   "n_words": 1530,
+   "label_start": "46",
+   "label_end": "49"
   },
   {
-   "id": "sec-027-baryonic-chiral-perturbation-theory",
+   "id": "sec-030-baryonic-chiral-perturbation-theory",
    "number": null,
    "title": "Baryonic chiral perturbation theory",
    "level": 1,
    "page_start": 49,
-   "page_end": 52,
-   "n_chars": 9177,
-   "n_words": 1784
+   "page_end": 49,
+   "n_chars": 35,
+   "n_words": 4,
+   "label_start": "49",
+   "label_end": "49"
   },
   {
-   "id": "sec-028-renormalization-and-power-counting",
+   "id": "sec-031-lagrangian",
+   "number": null,
+   "title": "Lagrangian",
+   "level": 2,
+   "page_start": 49,
+   "page_end": 49,
+   "n_chars": 246,
+   "n_words": 41,
+   "label_start": "49",
+   "label_end": "49"
+  },
+  {
+   "id": "sec-032-transformation-properties-of-the-fields",
+   "number": null,
+   "title": "Transformation properties of the fields",
+   "level": 3,
+   "page_start": 49,
+   "page_end": 50,
+   "n_chars": 3063,
+   "n_words": 611,
+   "label_start": "49",
+   "label_end": "50"
+  },
+  {
+   "id": "sec-033-baryonic-effective-lagrangian-at-lowest-order",
+   "number": null,
+   "title": "Baryonic effective Lagrangian at lowest order",
+   "level": 3,
+   "page_start": 50,
+   "page_end": 52,
+   "n_chars": 5763,
+   "n_words": 1037,
+   "label_start": "50",
+   "label_end": "52"
+  },
+  {
+   "id": "sec-034-renormalization-and-power-counting",
    "number": null,
    "title": "Renormalization and power counting",
    "level": 2,
    "page_start": 52,
    "page_end": 52,
-   "n_chars": 1409,
-   "n_words": 238
+   "n_chars": 1431,
+   "n_words": 229,
+   "label_start": "52",
+   "label_end": "52"
   },
   {
-   "id": "sec-029-the-generation-of-counter-terms",
+   "id": "sec-035-the-generation-of-counter-terms",
    "number": null,
    "title": "The generation of counter terms",
    "level": 3,
    "page_start": 52,
    "page_end": 54,
-   "n_chars": 2743,
-   "n_words": 516
+   "n_chars": 2751,
+   "n_words": 501,
+   "label_start": "52",
+   "label_end": "54"
   },
   {
-   "id": "sec-030-power-counting-for-renormalized-diagrams",
+   "id": "sec-036-power-counting-for-renormalized-diagrams",
    "number": null,
    "title": "Power counting for renormalized diagrams",
    "level": 3,
    "page_start": 54,
    "page_end": 54,
-   "n_chars": 1163,
-   "n_words": 187
+   "n_chars": 1197,
+   "n_words": 185,
+   "label_start": "54",
+   "label_end": "54"
   },
   {
-   "id": "sec-031-the-power-counting-problem",
+   "id": "sec-037-the-power-counting-problem",
    "number": null,
    "title": "The power-counting problem",
    "level": 3,
    "page_start": 54,
    "page_end": 57,
-   "n_chars": 7326,
-   "n_words": 1511
+   "n_chars": 7185,
+   "n_words": 1420,
+   "label_start": "54",
+   "label_end": "57"
   },
   {
-   "id": "sec-032-solutions-to-the-power-counting-problem",
+   "id": "sec-038-solutions-to-the-power-counting-problem",
    "number": null,
    "title": "Solutions to the power-counting problem",
    "level": 2,
    "page_start": 57,
    "page_end": 57,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 39,
+   "n_words": 5,
+   "label_start": "57",
+   "label_end": "57"
   },
   {
-   "id": "sec-033-heavy-baryon-approach",
+   "id": "sec-039-heavy-baryon-approach",
    "number": null,
    "title": "Heavy-baryon approach",
    "level": 3,
    "page_start": 57,
    "page_end": 59,
    "n_chars": 2547,
-   "n_words": 482
+   "n_words": 465,
+   "label_start": "57",
+   "label_end": "59"
   },
   {
-   "id": "sec-034-master-integral",
+   "id": "sec-040-master-integral",
    "number": null,
    "title": "Master integral",
    "level": 3,
    "page_start": 59,
    "page_end": 60,
-   "n_chars": 2248,
-   "n_words": 483
+   "n_chars": 2266,
+   "n_words": 489,
+   "label_start": "59",
+   "label_end": "60"
   },
   {
-   "id": "sec-035-infrared-regularization",
+   "id": "sec-041-infrared-regularization",
    "number": null,
    "title": "Infrared regularization",
    "level": 3,
    "page_start": 60,
    "page_end": 62,
-   "n_chars": 5151,
-   "n_words": 1109
+   "n_chars": 5148,
+   "n_words": 1088,
+   "label_start": "60",
+   "label_end": "62"
   },
   {
-   "id": "sec-036-extended-on-mass-shell-scheme",
+   "id": "sec-042-extended-on-mass-shell-scheme",
    "number": null,
    "title": "Extended on-mass-shell scheme",
    "level": 3,
    "page_start": 62,
    "page_end": 64,
-   "n_chars": 6868,
-   "n_words": 1428
+   "n_chars": 6820,
+   "n_words": 1364,
+   "label_start": "62",
+   "label_end": "64"
   },
   {
-   "id": "sec-037-dimensional-counting-analysis",
+   "id": "sec-043-dimensional-counting-analysis",
    "number": null,
    "title": "Dimensional counting analysis",
    "level": 3,
    "page_start": 64,
    "page_end": 65,
-   "n_chars": 2760,
-   "n_words": 576
+   "n_chars": 2771,
+   "n_words": 561,
+   "label_start": "64",
+   "label_end": "65"
   },
   {
-   "id": "sec-038-applications",
+   "id": "sec-044-applications",
    "number": null,
    "title": "Applications",
    "level": 1,
    "page_start": 65,
    "page_end": 66,
-   "n_chars": 420,
-   "n_words": 78
+   "n_chars": 384,
+   "n_words": 74,
+   "label_start": "65",
+   "label_end": "66"
   },
   {
-   "id": "sec-039-nucleon-mass-and-sigma-term-at-oq4",
+   "id": "sec-045-nucleon-mass-and-sigma-term-at-oq4",
    "number": null,
    "title": "Nucleon mass and sigma term at O(q4)",
    "level": 2,
    "page_start": 66,
    "page_end": 67,
-   "n_chars": 3252,
-   "n_words": 671
+   "n_chars": 3245,
+   "n_words": 636,
+   "label_start": "66",
+   "label_end": "67"
   },
   {
-   "id": "sec-040-chiral-expansion-of-the-nucleon-mass-to-oq6",
+   "id": "sec-046-chiral-expansion-of-the-nucleon-mass-to-oq6",
    "number": null,
    "title": "Chiral expansion of the nucleon mass to O(q6)",
    "level": 2,
    "page_start": 67,
    "page_end": 68,
-   "n_chars": 2432,
-   "n_words": 433
+   "n_chars": 2398,
+   "n_words": 407,
+   "label_start": "67",
+   "label_end": "68"
   },
   {
-   "id": "sec-041-form-factors-of-the-nucleon",
+   "id": "sec-047-form-factors-of-the-nucleon",
    "number": null,
    "title": "Form factors of the nucleon",
    "level": 2,
    "page_start": 68,
    "page_end": 68,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 27,
+   "n_words": 5,
+   "label_start": "68",
+   "label_end": "68"
   },
   {
-   "id": "sec-042-scalar-form-factor",
+   "id": "sec-048-scalar-form-factor",
    "number": null,
    "title": "Scalar form factor",
    "level": 3,
    "page_start": 68,
    "page_end": 68,
-   "n_chars": 986,
-   "n_words": 178
+   "n_chars": 991,
+   "n_words": 167,
+   "label_start": "68",
+   "label_end": "68"
   },
   {
-   "id": "sec-043-electromagnetic-form-factors",
+   "id": "sec-049-electromagnetic-form-factors",
    "number": null,
    "title": "Electromagnetic form factors",
    "level": 3,
    "page_start": 68,
    "page_end": 72,
-   "n_chars": 9421,
-   "n_words": 1667
+   "n_chars": 9301,
+   "n_words": 1613,
+   "label_start": "68",
+   "label_end": "72"
   },
   {
-   "id": "sec-044-axial-and-induced-pseudoscalar-form-factors",
+   "id": "sec-050-axial-and-induced-pseudoscalar-form-factors",
    "number": null,
    "title": "Axial and induced pseudoscalar form factors",
    "level": 3,
    "page_start": 72,
    "page_end": 75,
-   "n_chars": 7491,
-   "n_words": 1289
+   "n_chars": 7415,
+   "n_words": 1235,
+   "label_start": "72",
+   "label_end": "75"
   },
   {
-   "id": "sec-045-pion-nucleon-form-factor",
+   "id": "sec-051-pion-nucleon-form-factor",
    "number": null,
    "title": "Pion-nucleon form factor",
    "level": 3,
    "page_start": 75,
    "page_end": 76,
-   "n_chars": 1849,
-   "n_words": 316
+   "n_chars": 1758,
+   "n_words": 289,
+   "label_start": "75",
+   "label_end": "76"
   },
   {
-   "id": "sec-046-conclusion",
+   "id": "sec-052-conclusion",
    "number": null,
    "title": "Conclusion",
    "level": 1,
    "page_start": 76,
    "page_end": 85,
-   "n_chars": 25019,
-   "n_words": 3973
+   "n_chars": 24798,
+   "n_words": 3762,
+   "label_start": "76",
+   "label_end": "85"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 53,
-  "sections": 47,
-  "chars_total": 217275,
+  "toc_inferred_entries": 0,
+  "figure_entries": 33,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 2,
+    "items": [
+     "April 10,",
+     "Introduction"
+    ]
+   },
+   "found_not_listed": {
+    "count": 3,
+    "items": [
+     "3.2.4 Two simple applications: Pion decay and ππ scattering",
+     "3.3.1 The O(q4) Lagrangian of Gasser and Leutwyler",
+     "5.2 Chiral expansion of the nucleon mass to O(q6)"
+    ]
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 54,
+  "chars_total": 215728,
+  "furniture_lines_stripped": 103,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "scherer_review_ppnp_final.tex",
    "tex_sections": 53,
-   "overlaid": 38,
+   "overlaid": 47,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -894,33 +2500,41 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.994,
+     "prose_ratio": 0.986,
      "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-001-the-qcd-lagrangian",
-     "title": "The QCD Lagrangian",
-     "prose_ratio": 0.242,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-002-chiral-symmetry-and-spontaneous-symmetry-breakin",
+     "id": "sec-001-chiral-symmetry-and-spontaneous-symmetry-breakin",
      "title": "Chiral symmetry and spontaneous symmetry breaking",
      "prose_ratio": 0.947,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.947,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-quantum-chromodynamics-and-chiral-symmetry",
+     "id": "sec-002-quantum-chromodynamics-and-chiral-symmetry",
      "title": "Quantum chromodynamics and chiral symmetry",
-     "prose_ratio": 0.97,
-     "coverage_ratio": 0.393,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.925,
+     "coverage_ratio": 0.909,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-the-qcd-lagrangian",
+     "title": "The QCD Lagrangian",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.914,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-004-chiral-limit",
@@ -934,7 +2548,7 @@
      "id": "sec-005-global-symmetry-currents-of-the-light-quark-sect",
      "title": "Global symmetry currents of the light quark sector",
      "prose_ratio": 0.976,
-     "coverage_ratio": 0.977,
+     "coverage_ratio": 0.953,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -950,7 +2564,7 @@
      "id": "sec-007-quark-masses-and-chiral-symmetry-breaking",
      "title": "Quark masses and chiral symmetry breaking",
      "prose_ratio": 0.958,
-     "coverage_ratio": 0.967,
+     "coverage_ratio": 0.979,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -958,7 +2572,7 @@
      "id": "sec-008-green-functions-chiral-ward-identities-and-gener",
      "title": "Green functions, chiral Ward identities, and generating functional",
      "prose_ratio": 0.975,
-     "coverage_ratio": 0.994,
+     "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -966,7 +2580,7 @@
      "id": "sec-009-pcac-in-the-presence-of-an-external-electromagne",
      "title": "PCAC in the presence of an external electromagnetic field",
      "prose_ratio": 0.957,
-     "coverage_ratio": 0.984,
+     "coverage_ratio": 0.974,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -974,13 +2588,13 @@
      "id": "sec-010-spontaneous-symmetry-breaking-and-goldstone-theo",
      "title": "Spontaneous symmetry breaking and Goldstone theorem",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-011-linear-sigma-model",
      "title": "Linear sigma model",
      "prose_ratio": 0.9,
-     "coverage_ratio": 0.993,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -988,7 +2602,7 @@
      "id": "sec-012-the-hadron-spectrum",
      "title": "The hadron spectrum",
      "prose_ratio": 0.963,
-     "coverage_ratio": 0.907,
+     "coverage_ratio": 0.924,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -996,7 +2610,7 @@
      "id": "sec-013-the-scalar-singlet-quark-condensate",
      "title": "The scalar singlet quark condensate",
      "prose_ratio": 0.949,
-     "coverage_ratio": 0.966,
+     "coverage_ratio": 0.963,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1004,7 +2618,7 @@
      "id": "sec-014-mesonic-chiral-perturbation-theory",
      "title": "Mesonic chiral perturbation theory",
      "prose_ratio": 0.95,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.95,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1020,52 +2634,76 @@
      "id": "sec-016-general-considerations",
      "title": "General considerations",
      "prose_ratio": 0.993,
-     "coverage_ratio": 0.987,
+     "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-017-application-to-qcd",
      "title": "Application to QCD",
-     "prose_ratio": 0.966,
-     "coverage_ratio": 0.993,
+     "prose_ratio": 0.962,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-018-symmetry-breaking-through-the-quark-masses",
-     "title": "Symmetry breaking through the quark masses",
-     "prose_ratio": 0.942,
-     "coverage_ratio": 0.986,
+     "id": "sec-018-effective-lagrangian-and-power-counting-scheme",
+     "title": "Effective Lagrangian and power-counting scheme",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-019-construction-of-invariants",
-     "title": "Construction of invariants",
-     "prose_ratio": 0.976,
-     "coverage_ratio": 0.961,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-020-primer-to-dimensional-regularization",
-     "title": "Primer to dimensional regularization",
-     "prose_ratio": 0.908,
+     "id": "sec-019-the-lowest-order-effective-lagrangian",
+     "title": "The lowest-order effective Lagrangian",
+     "prose_ratio": 0.961,
      "coverage_ratio": 0.98,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-021-power-counting-scheme",
-     "title": "Power-counting scheme",
-     "prose_ratio": 0.955,
-     "coverage_ratio": 0.983,
+     "id": "sec-020-symmetry-breaking-through-the-quark-masses",
+     "title": "Symmetry breaking through the quark masses",
+     "prose_ratio": 0.942,
+     "coverage_ratio": 0.977,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-022-next-to-leading-order",
+     "id": "sec-021-construction-of-invariants",
+     "title": "Construction of invariants",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-022-two-simple-applications-pion-decay-and-scatterin",
+     "title": "Two simple applications: Pion decay and scattering",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-023-primer-to-dimensional-regularization",
+     "title": "Primer to dimensional regularization",
+     "prose_ratio": 0.908,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-024-power-counting-scheme",
+     "title": "Power-counting scheme",
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-025-next-to-leading-order",
      "title": "Next-to-leading order",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
@@ -1073,59 +2711,85 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-023-the-oq4-lagrangian-of-gasser-and-leutwyler",
+     "id": "sec-026-the-oq4-lagrangian-of-gasser-and-leutwyler",
      "title": "The O(q4) Lagrangian of Gasser and Leutwyler",
-     "prose_ratio": 0.975,
-     "coverage_ratio": 0.952,
+     "prose_ratio": 0.959,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-024-masses-of-the-goldstone-bosons",
+     "id": "sec-027-the-effective-wess-zumino-witten-action",
+     "title": "The effective Wess-Zumino-Witten action",
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.938,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-028-masses-of-the-goldstone-bosons",
      "title": "Masses of the Goldstone bosons",
      "prose_ratio": 0.923,
-     "coverage_ratio": 0.975,
+     "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-025-electromagnetic-polarizabilities-of-the-pion",
+     "id": "sec-029-electromagnetic-polarizabilities-of-the-pion",
      "title": "Electromagnetic polarizabilities of the pion",
-     "prose_ratio": 0.805,
-     "coverage_ratio": 0.99,
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-026-lagrangian",
-     "title": "Lagrangian",
-     "prose_ratio": 0.121,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-027-baryonic-chiral-perturbation-theory",
+     "id": "sec-030-baryonic-chiral-perturbation-theory",
      "title": "Baryonic chiral perturbation theory",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-028-renormalization-and-power-counting",
+     "id": "sec-031-lagrangian",
+     "title": "Lagrangian",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.958,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-032-transformation-properties-of-the-fields",
+     "title": "Transformation properties of the fields",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-033-baryonic-effective-lagrangian-at-lowest-order",
+     "title": "Baryonic effective Lagrangian at lowest order",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-034-renormalization-and-power-counting",
      "title": "Renormalization and power counting",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.99,
+     "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-029-the-generation-of-counter-terms",
+     "id": "sec-035-the-generation-of-counter-terms",
      "title": "The generation of counter terms",
      "prose_ratio": 0.967,
-     "coverage_ratio": 0.944,
+     "coverage_ratio": 0.943,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-030-power-counting-for-renormalized-diagrams",
+     "id": "sec-036-power-counting-for-renormalized-diagrams",
      "title": "Power counting for renormalized diagrams",
      "prose_ratio": 0.975,
      "coverage_ratio": 1.0,
@@ -1133,7 +2797,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-031-the-power-counting-problem",
+     "id": "sec-037-the-power-counting-problem",
      "title": "The power-counting problem",
      "prose_ratio": 0.938,
      "coverage_ratio": 0.996,
@@ -1141,82 +2805,82 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-032-solutions-to-the-power-counting-problem",
+     "id": "sec-038-solutions-to-the-power-counting-problem",
      "title": "Solutions to the power-counting problem",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-033-heavy-baryon-approach",
+     "id": "sec-039-heavy-baryon-approach",
      "title": "Heavy-baryon approach",
      "prose_ratio": 0.978,
-     "coverage_ratio": 0.986,
+     "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-034-master-integral",
+     "id": "sec-040-master-integral",
      "title": "Master integral",
-     "prose_ratio": 0.98,
-     "coverage_ratio": 0.96,
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-035-infrared-regularization",
+     "id": "sec-041-infrared-regularization",
      "title": "Infrared regularization",
      "prose_ratio": 0.964,
-     "coverage_ratio": 0.975,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-036-extended-on-mass-shell-scheme",
+     "id": "sec-042-extended-on-mass-shell-scheme",
      "title": "Extended on-mass-shell scheme",
      "prose_ratio": 0.955,
-     "coverage_ratio": 0.973,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-037-dimensional-counting-analysis",
+     "id": "sec-043-dimensional-counting-analysis",
      "title": "Dimensional counting analysis",
      "prose_ratio": 0.965,
-     "coverage_ratio": 0.983,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-038-applications",
+     "id": "sec-044-applications",
      "title": "Applications",
      "prose_ratio": 0.917,
      "coverage_ratio": 0.48,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
-     "id": "sec-039-nucleon-mass-and-sigma-term-at-oq4",
+     "id": "sec-045-nucleon-mass-and-sigma-term-at-oq4",
      "title": "Nucleon mass and sigma term at O(q4)",
      "prose_ratio": 0.863,
-     "coverage_ratio": 0.993,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-040-chiral-expansion-of-the-nucleon-mass-to-oq6",
+     "id": "sec-046-chiral-expansion-of-the-nucleon-mass-to-oq6",
      "title": "Chiral expansion of the nucleon mass to O(q6)",
      "prose_ratio": 0.961,
-     "coverage_ratio": 0.969,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-041-form-factors-of-the-nucleon",
+     "id": "sec-047-form-factors-of-the-nucleon",
      "title": "Form factors of the nucleon",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-042-scalar-form-factor",
+     "id": "sec-048-scalar-form-factor",
      "title": "Scalar form factor",
      "prose_ratio": 0.774,
      "coverage_ratio": 1.0,
@@ -1224,35 +2888,35 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-043-electromagnetic-form-factors",
+     "id": "sec-049-electromagnetic-form-factors",
      "title": "Electromagnetic form factors",
      "prose_ratio": 0.967,
-     "coverage_ratio": 0.941,
+     "coverage_ratio": 0.951,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-044-axial-and-induced-pseudoscalar-form-factors",
+     "id": "sec-050-axial-and-induced-pseudoscalar-form-factors",
      "title": "Axial and induced pseudoscalar form factors",
      "prose_ratio": 0.934,
-     "coverage_ratio": 0.966,
+     "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-045-pion-nucleon-form-factor",
+     "id": "sec-051-pion-nucleon-form-factor",
      "title": "Pion-nucleon form factor",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.568,
+     "coverage_ratio": 0.59,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-046-conclusion",
+     "id": "sec-052-conclusion",
      "title": "Conclusion",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.3,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.275,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

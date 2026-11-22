@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2607.03827v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "965d69603381942abe2ab6ff20195f17afbbf9e7f215c098634664b1f87a98f7",
+  "file": "2607.03827v1.pdf"
+ },
+ "provenance": {
+  "title": "Affine cellular algebras and asymptotic algebras",
+  "authors": "PAULA A.A.B. CARVALHO, STEFFEN KOENIG, AND CHRISTIAN LOMP",
+  "arxiv": {
+   "id": "2607.03827",
+   "version": "1",
+   "primary_class": "math.RT",
+   "stamp_date": "4 Jul 2026"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

@@ -13,7 +13,7 @@ Formalization: extracted from jet-horizon.lean for content-block co-location.
 Source declaration: `QOU.BigBangState` in jet-horizon.lean
 
 ## References
-- [manuscript] §9/big-bang-state
+- [leitner2026] §9/big-bang-state
 -/
 
 namespace QOU
@@ -24,7 +24,7 @@ namespace QOU
     opaque carrier so this co-located content-block sibling is
     independently checkable by `lean`-direct without importing the
     full `qou` library cone. -/
--- Ref: [manuscript] def:jet-horizon
+-- Ref: [leitner2026] def:jet-horizon
 structure JetHorizon where
   /-- Opaque carrier of the jet-horizon datum. -/
   carrier : Type*
@@ -35,7 +35,7 @@ structure JetHorizon where
 
     Existence is not assumed: whether any affine chart admits
     a big bang state is a dynamical question. -/
--- Ref: [manuscript] §9/big-bang-state
+-- Ref: [leitner2026] §9/big-bang-state
 -- See: jet-horizon.lean § "Jet horizon" for prerequisite JetHorizon
 structure BigBangState extends JetHorizon where
   /-- Number of base points in the initial configuration. -/

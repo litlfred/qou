@@ -1230,6 +1230,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "f8b80b4859b4",
+          "ts": "3392f004fab7",
+          "lean": "7a13b11ca12f",
+          "lean_statement": "cc63d1de9756"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:26.559Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "S↔L: the .ts ref `beta2_approx` (lean:38-42) is only the numeric bound |β₂(1.10998) + 6.087| < 0.01. β₂ is *defined* as −2·[3]_q (lean:35 `noncomputable def beta2 (q : ℝ) : ℝ := -2 * qInt q 3`), so the claimed value is taken as a definition. Nothing ties it to the Φ₂ coefficient of the Wedderburn mass formula (md:1). The ℝ is gratuitous for the algebraic identity. (The number checks: [3]_{q₀} = 3.0437.) S↔P: the \"proof sketch\" is a heuristic. \"C(3,2) = 3 pairs … q-deforms to [3]_q\" (prf:5-6) is not a derivation, and the −2 comes from a \"doubling convention\" (prf:15-18). Step 1 is self-defeating: \"the determinant of the crossing matrix is −1 for all crossing types, making Φ₂ accumulate sign information\" (prf:11-13), but Φ₂ = Σ ln|det M_i|, and |−1| = 1 gives ln 1 = 0, so the absolute value destroys any sign. prf:21-23 has an empirical comparison (\"≈ 22.8 MeV, consistent with the strong-force binding energy scale\").",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2435,6 +2453,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T15:40:17.158Z",
+  "updated_at": "2026-11-15T21:57:26.559Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

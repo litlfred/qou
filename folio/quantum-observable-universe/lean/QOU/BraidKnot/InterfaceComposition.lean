@@ -58,7 +58,7 @@ theorem alternating_profile_ne_canonical :
 
 end InterfaceComposition
 
--- Ref: [manuscript] quantum-observable-universe/mass-theory/canonical-braid-interface-composition.ts
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/canonical-braid-interface-composition.ts
 
 /-- Placeholder carrier retained so the `lean.ref` URI
     `qou:QOU.BraidKnot.InterfaceComposition` resolves; the tabulated content

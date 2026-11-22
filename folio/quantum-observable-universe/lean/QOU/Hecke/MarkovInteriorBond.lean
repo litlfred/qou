@@ -80,7 +80,7 @@ convention-C or convention-D statement.
 
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 -- Ref: [wenzl1988] https://doi.org/10.1007/BF01393699
--- Ref: [manuscript] docs/audits/2026-09-07-route-c-step3-and-kz-level-plans.md §0b
+-- Ref: [leitner2026] docs/audits/2026-09-07-route-c-step3-and-kz-level-plans.md §0b
 -/
 
 namespace QOU.Hecke.MarkovInteriorBond

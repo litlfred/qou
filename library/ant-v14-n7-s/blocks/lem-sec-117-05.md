@@ -1,0 +1,1 @@
+If p log m ≤V ≤V(u, v, m), then N(V, u, v) ≪q2g+1 exp  − V 2 2V(u, v, m)  1 − log log m  ; if V(u, v, m) < V ≤1 13 log log mV(u, v, m), then N(V, u, v) ≪q2g+1 exp  − V 2 2V(u, v, m)  1 − 8V V(u, v, m) log log m 2 ; if V > 1 13 log log mV(u, v, m), then N(V, u, v) ≪q2g+1 exp  −V log V  . Using Lemma 4.5 above we can prove Theorem 4.1 as follows.

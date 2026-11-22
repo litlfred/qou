@@ -1,0 +1,1 @@
+The formula HN(W \ L) = Tr(HN(T ′ s )) expresses the quantum hyperbolic invariants of ﬁbered cusped manifolds as amplitudes between two markings of the ﬁber, identiﬁed with a pleated hyperbolic surface. For a similar construction based on representations of quantum Teichmuller spaces, see [9].

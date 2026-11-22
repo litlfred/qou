@@ -16,7 +16,7 @@ This is the condition named at the define-site `#quantum-flatness`; that it is a
 LaTeX label: `def:quantum-flatness`
 
 ## References
-- [manuscript] Ch. 2, §elaboration (2-group gauge theory)
+- [leitner2026] Ch. 2, §elaboration (2-group gauge theory)
 -/
 
 namespace QOU.QuantumObservableUniverse

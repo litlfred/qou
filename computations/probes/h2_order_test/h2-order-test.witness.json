@@ -1,0 +1,747 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-15T15:00:59.776347+00:00",
+  "commitSha": "428919bc80ba9a97ec9f2f36e1f05779936f2ecd",
+  "assertions": [
+    {
+      "name": "O2_levels_1_3_equal_bottom_particle_alone",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "tensor-product Markov factorisation"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "h2-order-test",
+  "scriptFile": "h2_order_test_probe.py",
+  "scriptHash": "aaf5f9bc23b8",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/h2_order_test/h2_order_test_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/h2_order_test/h2_order_test_probe.py"
+  },
+  "q0Anchor": "proton",
+  "q0AnchorReason": "q0 enters through cf.Q (committed y-lambda-at-q0 witness, proton pin)",
+  "description": "PROBE (bean qou-a1hh, owner 'measure first'): bare H2 = (atom1)(atom2), nucleon V^k k<=7, electron V^3 or sigma0^7 sigma1, atom orders pe/ep; reading 3 every level, convention D. Pre-registered. Nothing fitted or wired.",
+  "weight_family": "markov_y_lambda_convention_D",
+  "outcome": "i",
+  "molecules": {
+    "P=V1,E=V3,atom1=pe,atom2=pe": {
+      "fails": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10
+      ],
+      "every_level": false,
+      "bottom_alone_pass": false
+    },
+    "P=V1,E=V3,atom1=pe,atom2=ep": {
+      "fails": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "every_level": false,
+      "bottom_alone_pass": false
+    },
+    "P=V1,E=V3,atom1=ep,atom2=pe": {
+      "fails": [
+        6,
+        7,
+        9,
+        10
+      ],
+      "every_level": false,
+      "bottom_alone_pass": true
+    },
+    "P=V1,E=V3,atom1=ep,atom2=ep": {
+      "fails": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "every_level": false,
+      "bottom_alone_pass": true
+    },
+    "P=V1,E=torus_m7,atom1=pe,atom2=pe": {
+      "fails": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "every_level": false,
+      "bottom_alone_pass": false
+    },
+    "P=V1,E=torus_m7,atom1=pe,atom2=ep": {
+      "fails": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "every_level": false,
+      "bottom_alone_pass": false
+    },
+    "P=V1,E=torus_m7,atom1=ep,atom2=pe": {
+      "fails": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "every_level": false,
+      "bottom_alone_pass": false
+    },
+    "P=V1,E=torus_m7,atom1=ep,atom2=ep": {
+      "fails": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "every_level": false,
+      "bottom_alone_pass": false
+    },
+    "P=V2,E=V3,atom1=pe,atom2=pe": {
+      "fails": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "every_level": false,
+      "bottom_alone_pass": false
+    },
+    "P=V2,E=V3,atom1=pe,atom2=ep": {
+      "fails": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "every_level": false,
+      "bottom_alone_pass": false
+    },
+    "P=V2,E=V3,atom1=ep,atom2=pe": {
+      "fails": [
+        6,
+        7
+      ],
+      "every_level": false,
+      "bottom_alone_pass": true
+    },
+    "P=V2,E=V3,atom1=ep,atom2=ep": {
+      "fails": [
+        6,
+        7,
+        8
+      ],
+      "every_level": false,
+      "bottom_alone_pass": true
+    },
+    "P=V2,E=torus_m7,atom1=pe,atom2=pe": {
+      "fails": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        12
+      ],
+      "every_level": false,
+      "bottom_alone_pass": false
+    },
+    "P=V2,E=torus_m7,atom1=pe,atom2=ep": {
+      "fails": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "every_level": false,
+      "bottom_alone_pass": false
+    },
+    "P=V2,E=torus_m7,atom1=ep,atom2=pe": {
+      "fails": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        12
+      ],
+      "every_level": false,
+      "bottom_alone_pass": false
+    },
+    "P=V2,E=torus_m7,atom1=ep,atom2=ep": {
+      "fails": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "every_level": false,
+      "bottom_alone_pass": false
+    },
+    "P=V3,E=V3,atom1=pe,atom2=pe": {
+      "fails": [],
+      "every_level": true,
+      "bottom_alone_pass": true
+    },
+    "P=V3,E=V3,atom1=pe,atom2=ep": {
+      "fails": [],
+      "every_level": true,
+      "bottom_alone_pass": true
+    },
+    "P=V3,E=V3,atom1=ep,atom2=pe": {
+      "fails": [],
+      "every_level": true,
+      "bottom_alone_pass": true
+    },
+    "P=V3,E=V3,atom1=ep,atom2=ep": {
+      "fails": [],
+      "every_level": true,
+      "bottom_alone_pass": true
+    },
+    "P=V3,E=torus_m7,atom1=pe,atom2=pe": {
+      "fails": [],
+      "every_level": true,
+      "bottom_alone_pass": true
+    },
+    "P=V3,E=torus_m7,atom1=pe,atom2=ep": {
+      "fails": [],
+      "every_level": true,
+      "bottom_alone_pass": true
+    },
+    "P=V3,E=torus_m7,atom1=ep,atom2=pe": {
+      "fails": [
+        2,
+        3,
+        4
+      ],
+      "every_level": false,
+      "bottom_alone_pass": false
+    },
+    "P=V3,E=torus_m7,atom1=ep,atom2=ep": {
+      "fails": [
+        2,
+        3,
+        4
+      ],
+      "every_level": false,
+      "bottom_alone_pass": false
+    },
+    "P=V4,E=V3,atom1=pe,atom2=pe": {
+      "fails": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11
+      ],
+      "every_level": false,
+      "bottom_alone_pass": false
+    },
+    "P=V4,E=V3,atom1=pe,atom2=ep": {
+      "fails": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "every_level": false,
+      "bottom_alone_pass": false
+    },
+    "P=V4,E=V3,atom1=ep,atom2=pe": {
+      "fails": [
+        6,
+        7,
+        9,
+        10,
+        11
+      ],
+      "every_level": false,
+      "bottom_alone_pass": true
+    },
+    "P=V4,E=V3,atom1=ep,atom2=ep": {
+      "fails": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "every_level": false,
+      "bottom_alone_pass": true
+    },
+    "P=V4,E=torus_m7,atom1=pe,atom2=pe": {
+      "fails": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "every_level": false,
+      "bottom_alone_pass": false
+    },
+    "P=V4,E=torus_m7,atom1=pe,atom2=ep": {
+      "fails": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "every_level": false,
+      "bottom_alone_pass": false
+    },
+    "P=V4,E=torus_m7,atom1=ep,atom2=pe": {
+      "fails": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "every_level": false,
+      "bottom_alone_pass": false
+    },
+    "P=V4,E=torus_m7,atom1=ep,atom2=ep": {
+      "fails": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "every_level": false,
+      "bottom_alone_pass": false
+    },
+    "P=V5,E=V3,atom1=pe,atom2=pe": {
+      "fails": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "every_level": false,
+      "bottom_alone_pass": false
+    },
+    "P=V5,E=V3,atom1=pe,atom2=ep": {
+      "fails": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "every_level": false,
+      "bottom_alone_pass": false
+    },
+    "P=V5,E=V3,atom1=ep,atom2=pe": {
+      "fails": [
+        6
+      ],
+      "every_level": false,
+      "bottom_alone_pass": true
+    },
+    "P=V5,E=V3,atom1=ep,atom2=ep": {
+      "fails": [
+        6
+      ],
+      "every_level": false,
+      "bottom_alone_pass": true
+    },
+    "P=V5,E=torus_m7,atom1=pe,atom2=pe": {
+      "fails": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        12
+      ],
+      "every_level": false,
+      "bottom_alone_pass": false
+    },
+    "P=V5,E=torus_m7,atom1=pe,atom2=ep": {
+      "fails": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "every_level": false,
+      "bottom_alone_pass": false
+    },
+    "P=V5,E=torus_m7,atom1=ep,atom2=pe": {
+      "fails": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        12
+      ],
+      "every_level": false,
+      "bottom_alone_pass": false
+    },
+    "P=V5,E=torus_m7,atom1=ep,atom2=ep": {
+      "fails": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "every_level": false,
+      "bottom_alone_pass": false
+    },
+    "P=V6,E=V3,atom1=pe,atom2=pe": {
+      "fails": [],
+      "every_level": true,
+      "bottom_alone_pass": true
+    },
+    "P=V6,E=V3,atom1=pe,atom2=ep": {
+      "fails": [],
+      "every_level": true,
+      "bottom_alone_pass": true
+    },
+    "P=V6,E=V3,atom1=ep,atom2=pe": {
+      "fails": [],
+      "every_level": true,
+      "bottom_alone_pass": true
+    },
+    "P=V6,E=V3,atom1=ep,atom2=ep": {
+      "fails": [],
+      "every_level": true,
+      "bottom_alone_pass": true
+    },
+    "P=V6,E=torus_m7,atom1=pe,atom2=pe": {
+      "fails": [],
+      "every_level": true,
+      "bottom_alone_pass": true
+    },
+    "P=V6,E=torus_m7,atom1=pe,atom2=ep": {
+      "fails": [],
+      "every_level": true,
+      "bottom_alone_pass": true
+    },
+    "P=V6,E=torus_m7,atom1=ep,atom2=pe": {
+      "fails": [
+        2,
+        3,
+        4
+      ],
+      "every_level": false,
+      "bottom_alone_pass": false
+    },
+    "P=V6,E=torus_m7,atom1=ep,atom2=ep": {
+      "fails": [
+        2,
+        3,
+        4
+      ],
+      "every_level": false,
+      "bottom_alone_pass": false
+    },
+    "P=V7,E=V3,atom1=pe,atom2=pe": {
+      "fails": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "every_level": false,
+      "bottom_alone_pass": false
+    },
+    "P=V7,E=V3,atom1=pe,atom2=ep": {
+      "fails": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        12
+      ],
+      "every_level": false,
+      "bottom_alone_pass": false
+    },
+    "P=V7,E=V3,atom1=ep,atom2=pe": {
+      "fails": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "every_level": false,
+      "bottom_alone_pass": true
+    },
+    "P=V7,E=V3,atom1=ep,atom2=ep": {
+      "fails": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        12
+      ],
+      "every_level": false,
+      "bottom_alone_pass": true
+    },
+    "P=V7,E=torus_m7,atom1=pe,atom2=pe": {
+      "fails": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "every_level": false,
+      "bottom_alone_pass": false
+    },
+    "P=V7,E=torus_m7,atom1=pe,atom2=ep": {
+      "fails": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "every_level": false,
+      "bottom_alone_pass": false
+    },
+    "P=V7,E=torus_m7,atom1=ep,atom2=pe": {
+      "fails": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "every_level": false,
+      "bottom_alone_pass": false
+    },
+    "P=V7,E=torus_m7,atom1=ep,atom2=ep": {
+      "fails": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "every_level": false,
+      "bottom_alone_pass": false
+    }
+  },
+  "passing_by_atom1_order": {
+    "pe": [
+      [
+        "P=V3",
+        "E=V3"
+      ],
+      [
+        "P=V3",
+        "E=torus_m7"
+      ],
+      [
+        "P=V6",
+        "E=V3"
+      ],
+      [
+        "P=V6",
+        "E=torus_m7"
+      ]
+    ],
+    "ep": [
+      [
+        "P=V3",
+        "E=V3"
+      ],
+      [
+        "P=V6",
+        "E=V3"
+      ]
+    ]
+  }
+}

@@ -1,0 +1,49 @@
+2 Introduction
+
+we show that for any constructible sheaf F on X and a sufficiently general
+character 7 one has
+
+H'(X,F @cLy) = 0 forall i > dim(Supp(F)).
+
+An independent proof of this result has also been given by C. Schnell [94],
+using the Fourier-Mukai transform for holonomic Y-modules. Our proof
+is of a different flavour and is closely intertwined with the definition of the
+Tannakian categories we are interested in. It is based on an abstract quotient
+construction for semisimple tensor categories — we only use Y-modules
+at a single place in section 1.4 where we classify all perverse sheaves of
+Euler characteristic zero (which will be precisely the objects which become
+isomorphic to zero under the above quotient construction). At present we
+do not know whether this classification extends to algebraically closed base
+fields of positive characteristic p > 0, but otherwise all our arguments also
+work for /-adic constructible sheaves on abelian varieties over the algebraic
+closure of a finite field F,, for prime numbers / 4 p.
+
+Our Tannakian results are best formulated in the framework of perverse
+sheaves which has its historic roots in the theory of Z-modules [57] and
+in the sheaf-theoretic construction of intersection cohomology for singular
+varieties [10]. Let us for convenience briefly recall some basic definitions
+and notations from loc. cit. For any complex algebraic variety Z, we will
+denote by D?(Z,C) the derived category of bounded C-sheaf complexes
+whose cohomology sheaves are constructible for some stratification of Z
+into Zariski-locally closed subsets. This is a triangulated category, and one
+can define the full abelian subcategory
+
+Perv(Z,C) ¢ D?(Z,C)
+
+of perverse sheaves to be the core of the middle perverse t-structure. More
+explicitly, a sheaf complex K is said to be semi-perverse if its cohomology
+sheaves #~'(K) satisfy the support estimate dim(Supp #~'(K)) < i for
+all i € Z, and it is a perverse sheaf iff both K and its Verdier dual D(K) are
+semi-perverse. For example, the perverse intersection cohomology sheaf is
+by definition the intermediate extension
+
+6z = jix(Cy[dim(Z)]) € Perv(Z,C)
+
+where j : U <> Z denotes the inclusion of a smooth open dense subset. This
+perverse sheaf is self-dual with respect to Verdier duality, and it does not
+depend on the choice of the smooth open dense subset. Thus for smooth
+varieties Z the perverse intersection cohomology sheaf 6z coincides with
+the constant sheaf up to a degree shift. If Z is a closed subvariety of X with
+embedding i: Z — X, then the direct image i, : Perv(Z,C) — Perv(X,C)
+is a fully faithful functor, and in this case we will by abuse of notation also
+write 67 for the perverse sheaf i,(6z) € Perv(X,C).

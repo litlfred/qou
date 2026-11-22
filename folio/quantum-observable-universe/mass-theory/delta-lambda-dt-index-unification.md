@@ -38,13 +38,6 @@ $n(\lambda) = \sum_i \binom{\lambda'_i}{2}$, which is what removes the earlier $
 restriction: the chirality leg had been established only for small $n$ until that identity was
 proved in general.
 
-### Lean
-
-`QOU.BraidsAndKnots.dtEuler_eq_deltaLambda_unconditional` states the conjunction of both legs
-and is sorry-free. The value leg is `dtEulerG_eq_deltaLambdaG`; the chirality leg is
-`parity_eq_w0_sign_general`, which discharges $(\dagger)$ via
-`aStat_eq_sumChoose2_conjugate`.
-
 ### Scope — the value only
 
 This fixes the **per-partition value**. It does **not** address the many-body binding
@@ -52,9 +45,3 @@ This fixes the **per-partition value**. It does **not** address the many-body bi
 extensive one, so the missing contribution is a separate additive extensive term rather than a
 different choice of $\Delta_\lambda$. Six closure ansätze have failed on the deuteron for
 exactly that reason. Nothing here should be read as narrowing that gap.
-
-### Consumers
-
-The per-isotope binding algorithm consumes $\Delta_\lambda$ through
-[`alg:delta-lambda-closure`](#alg:delta-lambda-closure), which computes the value above and
-hands it to Step 9b.

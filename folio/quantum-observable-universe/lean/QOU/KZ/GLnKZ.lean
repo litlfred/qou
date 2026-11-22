@@ -23,7 +23,7 @@ This file proves, for these concrete residues:
 
 Sorry-free.
 
--- Ref: [manuscript] beans/defs/qou-zoyv (stage S1)
+-- Ref: [leitner2026] beans/defs/qou-zoyv (stage S1)
 -/
 
 namespace QOU.KZ.GLnKZ

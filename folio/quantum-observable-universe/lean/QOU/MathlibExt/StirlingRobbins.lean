@@ -57,9 +57,9 @@
   needs: the `−(π/12N)cot θ` refinement requires the `1/(12k)` term to `o(1/N)`
   accuracy, and either bound alone would leave an `O(1/N)` hole.
 
-  -- Ref: [manuscript] QOU/Knot/KashaevEndpointSplit.lean   (what consumes this)
-  -- Ref: [manuscript] QOU/Mathlib/StirlingUpperBound.lean  (the crude cousin)
-  -- Ref: [manuscript] computations/probes/kashaev_endpoint_split_probe.py
+  -- Ref: [leitner2026] QOU/Knot/KashaevEndpointSplit.lean   (what consumes this)
+  -- Ref: [leitner2026] QOU/Mathlib/StirlingUpperBound.lean  (the crude cousin)
+  -- Ref: [leitner2026] computations/probes/kashaev_endpoint_split_probe.py
 -/
 import Mathlib.Analysis.SpecialFunctions.Stirling
 

@@ -1,0 +1,55 @@
+NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS 527
+
+Definition 2.1. A complex measure j1 on 2!"! is called symmetric or exchangeable if
+o(u) = pw for any o € Gn, or equivalently, its generating polynomial g,, is symmetric
+in all n variables. We say that ps is almost symmetric or almost exchangeable if g,
+is symmetric in all but possibly one variable.
+
+Definition 2.2. If A is a collection of subsets of [n], we let x4 : 2"! > R be the
+characteristic function of A defined by y.4(S) = 1if S € Aand x4(S) =0if S¢ A.
+An increasing event A on 2!"1 is a collection of subsets of (n] that is closed upwards
+under containment, ie., if A € A and AC B C [nl], then B € A. Such an event
+depends only on the set Z(A) := I, U--- UI, (that is, on the variables/coordinate
+functions X; with i € Z(A)), where [),...,Im are the minimal sets of A with
+respect to inclusion. Any (non-identically zero) non-negative increasing function f
+on 2!"] may be written as f = an aix.4, for some increasing events A; on 2!")
+and a; > 0, 1<i<k. Clearly, f depends on the set Z(f) := Z(A1) U--- UZ(Ax).
+
+The weakest negative dependence property is the following (see, e.g., [65]).
+
+Definition 2.3. A measure € P, is said to be pairwise negatively correlated, or
+p-NC for short, if ju(X;) (Xj) > u(X;X;) whenever 1 <i # j <n. In terms of the
+generating polynomial g,, this translates into the inequalities
+AiGu(1)OjGu(1) 2 Oi0jg,1), LStiAj<n,
+where 1 € R” is as before the “all ones vector”. We say that a polynomial f € Py,
+is p-NC (pairwise negatively correlated) if it satisfies the above inequalities.
+As shown by the following example, NLC does not necessarily imply p-NC.
+
+Example 2.1. The measure pz € B4 with generating polynomial
+1
+Gul*, 22, 23,24) = (2122 + 2324)
+
+trivially satisfies NLC but p(X1X2) = 5 while pu(X1)u(X2) = 5, so yt is not p-NC.
+Definition 2.4 (Definition 2.4 in [65]). A measure p € $,, or a polynomial f € Pn
+satisfies the hereditary negative lattice condition or h-NLC if every projection sat-
+isfies NLC. One further says that ju (respectively, f) satisfies the strong hereditary
+negative lattice condition or h-NLC+ if every measure (respectively, polynomial)
+obtained from ju (respectively, f) by imposing an external field satisfies h-NLC.
+
+Definition 2.5. A polynomial f € P,, is called a Rayleigh polynomial if
+
+Of, OF of
+(4) Oz; (x 02; (x) 2 02,02; v) f(x)
+for all x = (11,...,%) € RY and 1 < i,j <n, where as usual Ry = (0,00). More
+generally, a multi-affine polynomial in R[z,,..., z,] with non-negative coefficients is
+
+called a Rayleigh polynomial if it satisfies the above condition. A measure ps € By,
+is said to be a Rayleigh measure if its generating polynomial g, is Rayleigh.
+
+The notion of a Rayleigh polynomial was introduced in §3.1], the terminology
+being motivated by its similarity with the Rayleigh monotonicity property of the
+(Kirchhoff) effective conductance of linear resistive electrical networks; see [20) [73].
+It was first considered for uniform measures on the set of bases of a matroid as
+a strengthening of weaker notions studied in The following properties of
+Rayleigh polynomials are consequences of Definition 2.5
+

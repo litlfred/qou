@@ -5,21 +5,23 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1308.2499v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1308.2499v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1308.2499v1",
+  "title": "Towards a regularity theory for integral Menger curvature",
   "contains": [
     "library/arxiv-1308.2499v1/sections/sec-front-matter",
     "library/arxiv-1308.2499v1/sections/sec-000",
     "library/arxiv-1308.2499v1/sections/sec-001",
     "library/arxiv-1308.2499v1/sections/sec-002",
     "library/arxiv-1308.2499v1/sections/sec-003",
-    "library/arxiv-1308.2499v1/sections/sec-004"
+    "library/arxiv-1308.2499v1/sections/sec-004",
+    "library/arxiv-1308.2499v1/sections/sec-005",
+    "library/arxiv-1308.2499v1/sections/sec-006"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -29,7 +31,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1308.2499v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1308.2499v1.pdf",
     "source_sha256": "3b20abdc0e1b0ba9efe4819ac385e38fa76fa0f0714465753cb931a49666c5bb",
     "pages": 32,
@@ -40,8 +44,8 @@
       "stamp_date": "12 Aug 2013"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

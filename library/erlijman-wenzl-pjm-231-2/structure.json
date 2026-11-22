@@ -1,0 +1,868 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "erlijman-wenzl-pjm-231-2",
+ "source": {
+  "file": "erlijman-wenzl-pjm-231-2.pdf",
+  "sha256": "1ee590e6f087b6818082811e182d1bbfa83090eb30486ad9eef704f03864b641",
+  "bytes": 429615,
+  "pages": 44,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:22:14Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 14,
+    "reason": "16 of 476 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 23,
+    "reason": "13 of 245 words are a stray single letter: the text layer splits words"
+   }
+  ]
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "Subfactors from braided C* tensor categories",
+  "authors_raw": "JULIANA ERLIJMAN AND HANS WENZL",
+  "title_lines": [
+   "Pacific",
+   "Mathematics",
+   "SUBFACTORS FROM BRAIDED C\u2217TENSOR CATEGORIES"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Title": "Subfactors from braided C* tensor categories",
+   "Author": "Juliana Erlijman and Hans Wenzl",
+   "Producer": "EditFlow, from Mathematical Sciences Publishers",
+   "Creator": "Pacific Journal of Mathematics vol. 231 (2007), no. 2 ",
+   "CreationDate": "D:20141129155631-08'00'"
+  },
+  "title_raw": "Pacific Mathematics SUBFACTORS FROM BRAIDED C\u2217TENSOR CATEGORIES",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Subfactors from braided C* tensor categories",
+   "heading": "Paci\ufb01c Journal of Mathematics",
+   "text": "Pacific Mathematics SUBFACTORS FROM BRAIDED C\u2217TENSOR CATEGORIES",
+   "corroborated_by": [
+    "text",
+    "page"
+   ],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Bimodules",
+   "page": 5,
+   "source": "inferred",
+   "number": "1",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "363"
+  },
+  {
+   "level": 1,
+   "title": "Categories",
+   "page": 9,
+   "source": "inferred",
+   "number": "2",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "367"
+  },
+  {
+   "level": 1,
+   "title": "The multisided construction",
+   "page": 13,
+   "source": "inferred",
+   "number": "3",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "371"
+  },
+  {
+   "level": 2,
+   "title": "In other words, we have a",
+   "page": 20,
+   "source": "inferred",
+   "number": "m",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "378"
+  },
+  {
+   "level": 1,
+   "title": "Bimodules and the principal graph",
+   "page": 25,
+   "source": "inferred",
+   "number": "4",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "383"
+  },
+  {
+   "level": 1,
+   "title": "Dual principal graph",
+   "page": 28,
+   "source": "inferred",
+   "number": "5",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "386"
+  },
+  {
+   "level": 1,
+   "title": "Examples",
+   "page": 36,
+   "source": "inferred",
+   "number": "6",
+   "confidence": 0.75,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "394"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgement",
+   "page": 40,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "398"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 40,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.65,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "398"
+  }
+ ],
+ "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Rigidity morphisms. In a \u2217tensor category we de\ufb01ne the categorical trace of an endomorphism f \u2208 End(X) by (2-2)",
+   "page": 11,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "369"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Conditional expectation. It is known and easy to check that this de\ufb01nition of conditional expectation coincides with the usual de\ufb01nition of conditional expectation in operator algebras (see [Orellana and Wenzl 2002, Proposition 1.4], for instance). Actually, one can show more: Let X1, X2, X3 be obje",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "370"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Inductive property of intertwining braids. Alternatively, the braid \u03b3n can be described as follows: arrange the points labeled by the numbers 1 up to ns in a rectangular pattern with height n and width s. Now we can numerate the points either by \ufb01rst going down the columns, or by \ufb01rst going to the r",
+   "page": 15,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "373"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Diagram (3-2) is a commuting diagram. Now we check that Diagram (3-2) is a commuting square, i.e., that (E Asn \u25e6 \u02c6un+1)(b) = (\u02c6un \u25e6E A\u2297s",
+   "page": 16,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "374"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Diagram (3-2) is a commuting square. which in turn equals (\u02c6un \u25e6E A\u2297s",
+   "page": 17,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "375"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Diagram (3-3) is a commuting diagram. lim ind Asn+|\u20d7m| = lim ind As(n+m1) that will carry the subfactor de\ufb01ned here, \u02c6u\u20d7m(N) = lim ind u\u20d7m,n(An+m1 \u2297\u00b7 \u00b7 \u00b7 \u2297An+ms)u\u2217\u20d7",
+   "page": 19,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": "377"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "Pictorial description of bn \u2208As(n+m1)",
+   "page": 20,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "378"
+  },
+  {
+   "kind": "figure",
+   "number": "11",
+   "title": "Pictorial representation of ShiftM",
+   "page": 22,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "380"
+  },
+  {
+   "kind": "figure",
+   "number": "12",
+   "title": "ShiftM",
+   "page": 23,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "381"
+  },
+  {
+   "kind": "figure",
+   "number": "14",
+   "title": "xr := (t\u2217\u20d7",
+   "page": 30,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "388"
+  },
+  {
+   "kind": "figure",
+   "number": "15",
+   "title": "(\u02dca\u22971sn) = xr(\u02dca\u22971sn)x\u2217",
+   "page": 30,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "388"
+  },
+  {
+   "kind": "figure",
+   "number": "17",
+   "title": "\u02c6fr : Ns",
+   "page": 32,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "390"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": "361",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "362",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "363",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "364",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "365",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "366",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "367",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "368",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "369",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "370",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "371",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "372",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "373",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "374",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "375",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "376",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "377",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "378",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "379",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "380",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "381",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "382",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "383",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "384",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "385",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "386",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "387",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "388",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "389",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "390",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "391",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "392",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "393",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "394",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "395",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "396",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "397",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "398",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "399",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 43,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 44,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 5,
+   "n_chars": 5856,
+   "n_words": 963,
+   "label_start": null,
+   "label_end": "363"
+  },
+  {
+   "id": "sec-000-1-bimodules",
+   "number": "1",
+   "title": "Bimodules",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 9,
+   "n_chars": 9861,
+   "n_words": 1814,
+   "label_start": "363",
+   "label_end": "367"
+  },
+  {
+   "id": "sec-001-2-categories",
+   "number": "2",
+   "title": "Categories",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 13,
+   "n_chars": 9571,
+   "n_words": 1857,
+   "label_start": "367",
+   "label_end": "371"
+  },
+  {
+   "id": "sec-002-3-the-multisided-construction",
+   "number": "3",
+   "title": "The multisided construction",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 20,
+   "n_chars": 11575,
+   "n_words": 2248,
+   "label_start": "371",
+   "label_end": "378"
+  },
+  {
+   "id": "sec-003-m-in-other-words-we-have-a",
+   "number": "m",
+   "title": "In other words, we have a",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 25,
+   "n_chars": 9556,
+   "n_words": 1892,
+   "label_start": "378",
+   "label_end": "383"
+  },
+  {
+   "id": "sec-004-4-bimodules-and-the-principal-graph",
+   "number": "4",
+   "title": "Bimodules and the principal graph",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 28,
+   "n_chars": 7472,
+   "n_words": 1358,
+   "label_start": "383",
+   "label_end": "386"
+  },
+  {
+   "id": "sec-005-5-dual-principal-graph",
+   "number": "5",
+   "title": "Dual principal graph",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 36,
+   "n_chars": 14256,
+   "n_words": 2861,
+   "label_start": "386",
+   "label_end": "394"
+  },
+  {
+   "id": "sec-006-6-examples",
+   "number": "6",
+   "title": "Examples",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 40,
+   "n_chars": 10388,
+   "n_words": 1847,
+   "label_start": "394",
+   "label_end": "398"
+  },
+  {
+   "id": "sec-007-acknowledgement",
+   "number": null,
+   "title": "Acknowledgement",
+   "level": 1,
+   "page_start": 40,
+   "page_end": 40,
+   "n_chars": 136,
+   "n_words": 22,
+   "label_start": "398",
+   "label_end": "398"
+  },
+  {
+   "id": "sec-008-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 40,
+   "page_end": 44,
+   "n_chars": 9479,
+   "n_words": 1330,
+   "label_start": "398",
+   "label_end": null
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 2,
+  "likely_scanned": false,
+  "toc_entries": 9,
+  "toc_inferred_entries": 9,
+  "toc_inferred_mean_confidence": 0.728,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 12,
+  "figure_sequence_gaps": [
+   "figure 6",
+   "figure 7",
+   "figure 10",
+   "figure 13",
+   "figure 16"
+  ],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 10,
+  "chars_total": 88150,
+  "furniture_lines_stripped": 0
+ }
+}

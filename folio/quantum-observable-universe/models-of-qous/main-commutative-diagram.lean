@@ -18,7 +18,7 @@ LaTeX label: `prop:main-commutative-diagram`
 
 ## References
 
-- [manuscript] §1-quantum-observable-universe/main-commutative-diagram
+- [leitner2026] §1-quantum-observable-universe/main-commutative-diagram
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
 Part of the formal proof chain. The parameter `q` is the canonical
@@ -45,7 +45,7 @@ def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
     The substrate parameter q mediates between geometric (gravity)
     and quantum (Schrödinger) descriptions. -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 structure MainCommutativeDiagram where
   /-- The substrate parameter q. -/
   q : R_q
@@ -83,7 +83,7 @@ structure MainCommutativeDiagram where
     `MainCommutativeDiagram`, which made this statement a restatement
     of its own hypothesis. The chain is
     `(1 − q⁻¹)·einstein = (1 − q⁻¹)·jet = section = schrodinger`. -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 theorem diagram_commutes (d : MainCommutativeDiagram) :
     (1 - d.qInv) * d.einsteinValue = d.schrodingerValue := by
   rw [← d.euler_lagrange, ← d.q_linearisation, d.parallel_transport]

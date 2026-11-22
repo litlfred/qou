@@ -1,1 +1,0 @@
-Belowisanopendiagram D oftheﬁgureeightknot:

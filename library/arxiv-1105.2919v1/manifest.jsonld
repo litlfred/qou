@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1105.2919v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1105.2919v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1105.2919v1",
+  "title": "Chiral eﬀective ﬁeld theory and nuclear forces",
   "contains": [
+    "library/arxiv-1105.2919v1/sections/sec-front-matter",
     "library/arxiv-1105.2919v1/sections/sec-000",
     "library/arxiv-1105.2919v1/sections/sec-001",
     "library/arxiv-1105.2919v1/sections/sec-002",
@@ -46,10 +47,43 @@
     "library/arxiv-1105.2919v1/sections/sec-032",
     "library/arxiv-1105.2919v1/sections/sec-033",
     "library/arxiv-1105.2919v1/sections/sec-034",
-    "library/arxiv-1105.2919v1/sections/sec-035"
+    "library/arxiv-1105.2919v1/sections/sec-035",
+    "library/arxiv-1105.2919v1/sections/sec-036",
+    "library/arxiv-1105.2919v1/sections/sec-037",
+    "library/arxiv-1105.2919v1/sections/sec-038",
+    "library/arxiv-1105.2919v1/sections/sec-039",
+    "library/arxiv-1105.2919v1/sections/sec-040",
+    "library/arxiv-1105.2919v1/sections/sec-041",
+    "library/arxiv-1105.2919v1/sections/sec-042",
+    "library/arxiv-1105.2919v1/sections/sec-043",
+    "library/arxiv-1105.2919v1/sections/sec-044",
+    "library/arxiv-1105.2919v1/sections/sec-045",
+    "library/arxiv-1105.2919v1/sections/sec-046",
+    "library/arxiv-1105.2919v1/sections/sec-047",
+    "library/arxiv-1105.2919v1/sections/sec-048",
+    "library/arxiv-1105.2919v1/sections/sec-049",
+    "library/arxiv-1105.2919v1/sections/sec-050",
+    "library/arxiv-1105.2919v1/sections/sec-051",
+    "library/arxiv-1105.2919v1/sections/sec-052",
+    "library/arxiv-1105.2919v1/sections/sec-053",
+    "library/arxiv-1105.2919v1/sections/sec-054",
+    "library/arxiv-1105.2919v1/sections/sec-055",
+    "library/arxiv-1105.2919v1/sections/sec-056",
+    "library/arxiv-1105.2919v1/sections/sec-057",
+    "library/arxiv-1105.2919v1/sections/sec-058",
+    "library/arxiv-1105.2919v1/sections/sec-059",
+    "library/arxiv-1105.2919v1/sections/sec-060",
+    "library/arxiv-1105.2919v1/sections/sec-061",
+    "library/arxiv-1105.2919v1/sections/sec-062",
+    "library/arxiv-1105.2919v1/sections/sec-063",
+    "library/arxiv-1105.2919v1/sections/sec-064",
+    "library/arxiv-1105.2919v1/sections/sec-065",
+    "library/arxiv-1105.2919v1/sections/sec-066",
+    "library/arxiv-1105.2919v1/sections/sec-067",
+    "library/arxiv-1105.2919v1/sections/sec-068"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -59,7 +93,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1105.2919v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1105.2919v1.pdf",
     "source_sha256": "6d94496f2093ddd05116bd66aa47443aba198a512121113b0858c2cbda34a684",
     "pages": 93,
@@ -70,8 +106,8 @@
       "stamp_date": "15 May 2011"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

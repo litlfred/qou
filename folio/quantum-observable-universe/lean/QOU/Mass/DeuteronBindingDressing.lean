@@ -35,7 +35,7 @@ are the same categorical object separated by the single Hecke factor `h`
 magnitude match to AME remains observation-tier and conditional on
 `conj:borromean-quark` (NOT wired — the Δ_λ gate stands).
 
--- Ref: [manuscript] quantum-observable-universe/mass-theory/deuteron-binding-dressing-proton-net.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/deuteron-binding-dressing-proton-net.md
 -/
 
 namespace QOU.Mass
@@ -45,7 +45,7 @@ open QOU.ParticleInteractions
 /-- **`Δ(net) = −h · net(p)` (division-free).**  The neutron−proton NF net
     difference is exactly `−h` times the proton NF net coefficient — the
     identity that ties the deuteron binding dressing to the `Q`-value. -/
--- Ref: [manuscript] quantum-observable-universe/mass-theory/deuteron-binding-dressing-proton-net.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/deuteron-binding-dressing-proton-net.md
 theorem delta_net_eq_neg_h_net_p [inst : BorromeanQuark] :
     inst.net_n - inst.net_p = - inst.h * inst.net_p := by
   rw [inst.proton_net, inst.neutron_net]; ring
@@ -53,7 +53,7 @@ theorem delta_net_eq_neg_h_net_p [inst : BorromeanQuark] :
 /-- **`Q_β = E₀ · h · net(p)`.**  Substituting `|Δ(net)| = h · net(p)`
     (from `delta_net_eq_neg_h_net_p` and `0 < h < 2`) into the `Q`-value
     ansatz gives the `Q`-value as `E₀` times `h · net(p)`. -/
--- Ref: [manuscript] quantum-observable-universe/mass-theory/deuteron-binding-dressing-proton-net.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/deuteron-binding-dressing-proton-net.md
 theorem qbeta_eq_E0_h_net_p [inst : BorromeanQuark] :
     inst.Q_β = inst.h * inst.net_p * (inst.m_e / (inst.q * (inst.q - 1))) := by
   -- net(p) = 1 − h/2 > 0 (since h < 2), and h > 0, so h·net(p) ≥ 0.
@@ -72,7 +72,7 @@ theorem qbeta_eq_E0_h_net_p [inst : BorromeanQuark] :
     `Q_β`-scaled trace difference `Q_β · Δtr / h` for any `Δtr`, i.e. the
     `(1 − h/2)` dressing on the `E₀` route is exactly `net(p)`, the
     bar-even partner of `Q_β` under the single Hecke factor `h`. -/
--- Ref: [manuscript] quantum-observable-universe/mass-theory/deuteron-binding-dressing-proton-net.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/deuteron-binding-dressing-proton-net.md
 theorem binding_dressing_eq_qbeta_over_h [inst : BorromeanQuark]
     (Dtr : ℝ) :
     (inst.m_e / (inst.q * (inst.q - 1))) * inst.net_p * Dtr

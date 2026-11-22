@@ -1,0 +1,70 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0501112v3",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "f95088789da2453ad00f1a60d147922bf270149fe5ffb01394643e0a1e60ac81",
+  "file": "0501112v3.pdf"
+ },
+ "provenance": {
+  "title": "arXiv:math/0501112v3 [math.CO] 31 May 2005",
+  "authors": "PIOTR \u015aNIADY",
+  "arxiv": {
+   "id": "math/0501112",
+   "version": "3",
+   "primary_class": null,
+   "stamp_date": "31 May 2005"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "proposition": 1
+  },
+  "formalization_candidates": 1,
+  "by_domain": {
+   "math": 1
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  },
+  "by_lean_status": {
+   "unformalized": 1
+  },
+  "needs_lean_proof": 1
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "5.2",
+   "name": null,
+   "statement": "For any partition \u03c0 of an n\u2013element set (5.9) deg \u03a3\u03c0 = n \u22122 genus\u03c0 .",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-033-54-geometric-interpretation-of-the-degree-of-sig.md (p. 29-30)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-033-54-geometric-interpretation-of-the-degree-of-sig.md",
+   "section_title": "Geometric interpretation of the degree of $\\Sigma_{\\pi}$",
+   "pages": "29-30",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-033-54-geometric-interpretation-of-the-degree-of-sig.md (p. 29-30)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "prop-sec-033-01",
+   "block_iri": "library/arxiv-math-0501112v3/blocks/prop-sec-033-01",
+   "claim_id": "arxiv-math-0501112v3#proposition:5.2",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  }
+ ]
+}

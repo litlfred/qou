@@ -16,7 +16,7 @@ The Lean encoding records the divergence claim as a `∀ M, ∃ ε,
 distance < ε → energy > M` statement against an abstract
 `NonSelfIntersectionContext`.
 
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/non-self-intersection.md
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/non-self-intersection.md
 -/
 
 namespace QOU.Braiding
@@ -40,7 +40,7 @@ class NonSelfIntersectionContext where
     For every threshold `M`, there exists a separation tolerance `ε`
     such that any knot whose strand separation is below `ε` has
     Möbius energy above `M`. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/non-self-intersection.md
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/non-self-intersection.md
 theorem non_self_intersection
     [ctx : NonSelfIntersectionContext] (M : ℝ) :
     ∃ ε > 0, ∀ ϱ, ctx.strandSeparation ϱ < ε → M < ctx.E_cat ϱ :=

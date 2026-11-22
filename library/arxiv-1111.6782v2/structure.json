@@ -7,11 +7,11 @@
   "bytes": 176220,
   "pages": 19,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,18 +21,28 @@
    "stamp_date": "18 Jan 2012"
   },
   "doi": null,
-  "title": "Stationary Points of O\u2019Hara\u2019s Knot Energies",
-  "authors_raw": "Simon Blatt\u2217 Philipp Reiter\u2217\u2217",
+  "title": "Stationary Points of O’Hara’s Knot Energies",
+  "authors_raw": "Simon Blatt∗",
   "title_lines": [
-   "Stationary Points of O\u2019Hara\u2019s Knot Energies"
+   "Stationary Points of O’Hara’s Knot Energies"
   ],
-  "abstract": "In this article we study the regularity of stationary points of the knot ener- gies E(\u03b1) introduced by O\u2019Hara in [ 14, 15, 16] in the range \u03b1\u2208 (2, 3). In a \ufb01rst step we prove that E(\u03b1) is C1 on the set of all regular embedded curves belonging to H(\u03b1+1)/2,2(R/Z, Rn) and calculate its derivative. After that we use the structure of the Euler-Lagrange equation to study the regularity of stationary points of E(\u03b1) plus a positive multiple of the length. We show that stationary po ints of \ufb01nite energy are of class C\u221e \u2014 so especially all local minimizers of E(\u03b1) among curves with \ufb01xed length are smooth.",
+  "abstract": "In this article we study the regularity of stationary points of the knot ener- gies E(α) introduced by O’Hara in [14, 15, 16] in the range α ∈(2, 3). In a ﬁrst step we prove that E(α) is C1 on the set of all regular embedded curves belonging to H(α+1)/2,2(R/Z, Rn) and calculate its derivative. After that we use the structure of the Euler-Lagrange equation to study the regularity of stationary points of E(α) plus a positive multiple of the length. We show that stationary points of ﬁnite energy are of class C∞— so especially all local minimizers of E(α) among curves with ﬁxed length are smooth.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181030142622-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20181030142622-04'00'"
+  },
+  "title_raw": "Stationary Points of O’Hara’s Knot Energies",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Stationary Points of O’Hara’s Knot Energies",
+   "outline": "1 Introduction",
+   "text": "Stationary Points of O’Hara’s Knot Energies",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -41,31 +51,218 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Continuous differentiability",
    "page": 4,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "Regularity of stationary points",
    "page": 13,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 1,
    "title": "A Results on fractional Sobolev spaces",
    "page": 17,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
    "id": "sec-front-matter",
@@ -74,8 +271,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 754,
-   "n_words": 130
+   "n_chars": 751,
+   "n_words": 127,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
    "id": "sec-000-1-introduction",
@@ -83,42 +282,68 @@
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 13,
-   "n_chars": 23406,
-   "n_words": 4078
+   "page_end": 4,
+   "n_chars": 8455,
+   "n_words": 1513,
+   "label_start": "1",
+   "label_end": "4"
   },
   {
-   "id": "sec-001-3-regularity-of-stationary-points",
+   "id": "sec-001-2-continuous-differentiability",
+   "number": "2",
+   "title": "Continuous differentiability",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 13,
+   "n_chars": 13867,
+   "n_words": 2855,
+   "label_start": "4",
+   "label_end": "13"
+  },
+  {
+   "id": "sec-002-3-regularity-of-stationary-points",
    "number": "3",
    "title": "Regularity of stationary points",
    "level": 1,
    "page_start": 13,
    "page_end": 17,
-   "n_chars": 7321,
-   "n_words": 1368
+   "n_chars": 7320,
+   "n_words": 1528,
+   "label_start": "13",
+   "label_end": "17"
   },
   {
-   "id": "sec-002-a-results-on-fractional-sobolev-spaces",
+   "id": "sec-003-a-results-on-fractional-sobolev-spaces",
    "number": null,
    "title": "A Results on fractional Sobolev spaces",
    "level": 1,
    "page_start": 17,
    "page_end": 19,
-   "n_chars": 4214,
-   "n_words": 709
+   "n_chars": 4220,
+   "n_words": 687,
+   "label_start": "17",
+   "label_end": "19"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 4,
-  "sections": 4,
-  "chars_total": 35695,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 5,
+  "chars_total": 34613,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "statpointohara.tex",
    "tex_sections": 4,
-   "overlaid": 2,
+   "overlaid": 3,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -133,25 +358,33 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.755,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.935,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-001-3-regularity-of-stationary-points",
+     "id": "sec-001-2-continuous-differentiability",
+     "title": "Continuous differentiability",
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-3-regularity-of-stationary-points",
      "title": "Regularity of stationary points",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.928,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-002-a-results-on-fractional-sobolev-spaces",
+     "id": "sec-003-a-results-on-fractional-sobolev-spaces",
      "title": "A Results on fractional Sobolev spaces",
      "prose_ratio": 0.946,
-     "coverage_ratio": 0.202,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.211,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2311.05446v3
-doc_title: "NEW BRUNN–MINKOWSKI AND FUNCTIONAL INEQUALITIES VIA CONVEXITY OF ENTROPY"
+doc_title: "New Brunn--Minkowski and functional inequalities via convexity of entropy"
 section_id: sec-001-11-improved-brunnminkowski-inequalities
 section_title: "Improved Brunn–Minkowski inequalities"
 section_number: 1.1
 pages: 1-3
 source_pdf: 2311.05446v3.pdf
 source_sha256: c5809730f598a56d
-doc_brief: "NEW BRUNN–MINKOWSKI AND FUNCTIONAL INEQUALITIES VIA CONVEXITY OF ENTROPY — We study the connection between the concavity properties of a measureνand the convexity properties of the associated"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.937
-latex_coverage_ratio: 0.882
+latex_coverage_ratio: 0.975
+doc_brief: "New Brunn--Minkowski and functional inequalities via convexity of entropy — We study the connection between the concavity properties of a measure ν and the convexity properties of the associated"
 ---
 Let $\nu$ be a Borel measure on $\mathbb{R}^{n}$. We say that $\nu$ satisfies a Brunn--Minkowski inequality with exponent $a$ if for all Borel sets $K_{0}, K_{1} \subseteq\mathbb{R}^{n}$ satisfying $\nu(K_{0}),\nu(K_{1})>0$ and every $0\le t \le1$ we have $$\label{eq:BM}
 \nu\left((1-t)K_{0}+ t K_{1}\right)\ge\left((1-t)\nu(K_{0})^{a}+ t \nu(K_{1})^{a}\right)^{1/a}.$$ Here $(1-t)K_{0} +t K_{1}=\left\{ (1-t) x+ t  y:\ x\in K_{0},\ y\in K_{1}\right\}$ is the $t$-*Minkowski average* of the sets $K_{0}$ and $K_{1}$. Note that the inequality becomes stronger as $a$ increases. The prototypical example is the classical BrunnMinkowski inequality, which states that the Lebesgue measure satisfies ([\[eq:BM\]](#eq:BM){reference-type="eqref" reference="eq:BM"}) with exponent $a=\frac{1}{n}$ (see e.g. [@Gardner02] for a survey on the BrunnMinkowski inequality and its importance). When $\nu$ is not the Lebesgue measure, inequalities such as [\[eq:BM\]](#eq:BM){reference-type="eqref" reference="eq:BM"} are sometimes called weighted Brunn--Minkowski inequalities.

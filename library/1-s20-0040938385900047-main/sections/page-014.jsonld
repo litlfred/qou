@@ -1,0 +1,49 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/1-s20-0040938385900047-main/sections/page-014",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Page 14",
+  "pageStart": 14,
+  "pageEnd": 14,
+  "contains": [
+    "library/1-s20-0040938385900047-main/blocks/prose-page-014",
+    "library/1-s20-0040938385900047-main/blocks/figure-img-p014-1",
+    "library/1-s20-0040938385900047-main/blocks/figure-img-p014-4",
+    "library/1-s20-0040938385900047-main/blocks/figure-img-p014-5",
+    "library/1-s20-0040938385900047-main/blocks/figure-img-p014-6",
+    "library/1-s20-0040938385900047-main/blocks/figure-img-p014-7",
+    "library/1-s20-0040938385900047-main/blocks/figure-img-p014-8",
+    "library/1-s20-0040938385900047-main/blocks/figure-img-p014-9",
+    "library/1-s20-0040938385900047-main/blocks/figure-img-p014-10",
+    "library/1-s20-0040938385900047-main/blocks/figure-img-p014-11",
+    "library/1-s20-0040938385900047-main/blocks/figure-img-p014-12",
+    "library/1-s20-0040938385900047-main/blocks/figure-img-p014-13",
+    "library/1-s20-0040938385900047-main/blocks/figure-img-p014-14",
+    "library/1-s20-0040938385900047-main/blocks/figure-img-p014-15",
+    "library/1-s20-0040938385900047-main/blocks/figure-img-p014-16",
+    "library/1-s20-0040938385900047-main/blocks/figure-img-p014-17",
+    "library/1-s20-0040938385900047-main/blocks/figure-img-p014-18",
+    "library/1-s20-0040938385900047-main/blocks/figure-img-p014-19",
+    "library/1-s20-0040938385900047-main/blocks/figure-img-p014-20",
+    "library/1-s20-0040938385900047-main/blocks/figure-img-p014-21",
+    "library/1-s20-0040938385900047-main/blocks/figure-img-p014-22",
+    "library/1-s20-0040938385900047-main/blocks/figure-img-p014-23",
+    "library/1-s20-0040938385900047-main/blocks/figure-img-p014-24",
+    "library/1-s20-0040938385900047-main/blocks/figure-img-p014-25",
+    "library/1-s20-0040938385900047-main/blocks/figure-img-p014-26",
+    "library/1-s20-0040938385900047-main/blocks/figure-img-p014-27",
+    "library/1-s20-0040938385900047-main/blocks/figure-img-p014-28",
+    "library/1-s20-0040938385900047-main/blocks/figure-img-p014-29",
+    "library/1-s20-0040938385900047-main/blocks/figure-img-p014-36"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1-s20-0040938385900047-main/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1-s20-0040938385900047-main/manifest.jsonld",
+  "provenance": "ingested"
+}

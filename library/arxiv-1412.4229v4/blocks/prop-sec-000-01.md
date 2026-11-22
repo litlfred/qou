@@ -1,1 +1,0 @@
-andDeﬁnition7.4. Thisconstructionisfunctorialinallarguments.

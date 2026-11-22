@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2306.13098v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2306.13098v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-2306.13098v2",
+  "title": "Three generations of colored fermions with S 3 family symmetry from Cayley-Dickson sedenions",
   "contains": [
+    "library/arxiv-2306.13098v2/sections/sec-front-matter",
     "library/arxiv-2306.13098v2/sections/sec-000",
     "library/arxiv-2306.13098v2/sections/sec-001",
     "library/arxiv-2306.13098v2/sections/sec-002",
@@ -22,10 +23,13 @@
     "library/arxiv-2306.13098v2/sections/sec-008",
     "library/arxiv-2306.13098v2/sections/sec-009",
     "library/arxiv-2306.13098v2/sections/sec-010",
-    "library/arxiv-2306.13098v2/sections/sec-011"
+    "library/arxiv-2306.13098v2/sections/sec-011",
+    "library/arxiv-2306.13098v2/sections/sec-012",
+    "library/arxiv-2306.13098v2/sections/sec-013",
+    "library/arxiv-2306.13098v2/sections/sec-014"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://creativecommons.org/licenses/by/4.0/",
   "licenceRecord": {
     "status": "stated",
@@ -35,7 +39,9 @@
   },
   "meta": {
     "doc_id": "arxiv-2306.13098v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "2306.13098v2.pdf",
     "source_sha256": "edeb214d587bfca4222762a184a20dfb181ee0cb6e2d1c999bdc8e92f47efef4",
     "pages": 18,

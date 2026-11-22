@@ -1,0 +1,50 @@
+2.3 Algebraic generating functions 31
+
+are often considered to be the second simplest class of generating functions,
+after rational series, to arise frequently in combinatorics. The main reason al-
+gebraic series arise often is that a decomposition of the elements in a combi-
+natorial class into products or disjoint unions involving smaller elements from
+the same class yields an algebraic equation satisfied by the generating function
+of the class. Perhaps the most famous example of a (non-rational) algebraic
+generating function is the following.
+
+Example 2.14 (binary trees and Catalan numbers). Let C be the class of planar
+rooted binary trees, defined recursively by saying that the empty tree lies in C
+and every element of C with n > 1 vertices is formed by a root vertex together
+with a left subtree L € C and a right subtree R € C such that the number of
+vertices in L and R sum to n — 1. The counting sequence c,, = |C,,| defines the
+Catalan numbers; Stanley [Sta15] lists 214 combinatorial classes enumerated
+by the Catalan numbers.
+
+The recursive definition for the elements of C gives a bijection of combina-
+torial classes between C and YURx CXC, where Y is the combinatorial class
+containing only the empty tree (to account for the case n = 0) and R is the
+class containing only the tree with one node (corresponding to a root vertex).
+At the generating function level, this bijection yields the algebraic equation
+
+F(2) = 14 2F(2), (2.3)
+
+which has a formal power series solution corresponding to the generating func-
+tion C(z) of C. To solve (2.3) in the ring of formal power series we first find
+solutions in the ring of germs of analytic functions, since we can perform our
+usual algebraic operations. The quadratic formula yields two solutions
+
+1+ vl-4z
+2z :
+
+The solution F(z) is not analytic at the origin, as its denominator vanishes
+when z = 0 but its numerator does not, so the generating function of C is
+
+F(z) =
+
+1- v1-4
+C2) = F(z) = aS =ltzt27 4534,
+Z
+From this explicit expression, the generalized binomial theorem yields the
+closed form cy, = a()- 4
+
+Exercise 2.6. Define the class of d-ary until the end trees by altering the defi-
+nition in Example 2.14 so that each vertex has at most d children unless all the
+children are leaves, in which case an arbitrary number is permitted. Adapt the
+argument from Example 2.14 to compute the generating function enumerating
+these trees by their number of vertices.

@@ -11,7 +11,7 @@ LaTeX: `\label{prop:categorical-proton-unique}`
 
 ## References
 
-- [manuscript] §6-archimedean-universe/categorical-proton-unique
+- [leitner2026] §6-archimedean-universe/categorical-proton-unique
 - [jones1987] Hecke Algebra Representations of Braid Groups
 -/
 

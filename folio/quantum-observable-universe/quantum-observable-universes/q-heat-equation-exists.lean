@@ -11,7 +11,7 @@ LaTeX: `\label{prop:q-heat-equation-exists}`
 
 ## References
 
-- [manuscript] §2-quantum-observable-universes/q-heat-equation-exists
+- [leitner2026] §2-quantum-observable-universes/q-heat-equation-exists
 - [kassel1995] Quantum Groups, §VII.4
 -/
 

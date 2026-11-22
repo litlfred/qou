@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.915
 latex_coverage_ratio: 0.918
+doc_brief: "arXiv:math/0501112v3 [math.CO] 31 May 2005 — We study asymptotics of reducible representations of the symmetric groups Sq for large q."
 ---
 The main result of this article is that the fluctuations of the shape of some random Young diagrams converge (after some rescaling) to a Gaussian distribution. Since the space of (generalized) Young diagrams is infinite-dimensional therefore we need to be very cautious when dealing with such statements. In fact, we will consider a family of functionals on Young diagrams and we show that the joint distribution of each finite set of these functionals converges to the Gaussian distribution.
 

@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1403.4021v2/sections/sec-020",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Number of connected components, special trace and change of variables",
+  "pageStart": 42,
+  "pageEnd": 44,
+  "contains": [
+    "library/arxiv-1403.4021v2/blocks/prose-sec-020"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1403.4021v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1403.4021v2/manifest.jsonld",
+  "provenance": "ingested"
+}

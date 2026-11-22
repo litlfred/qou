@@ -4,10 +4,11 @@ doc_title: "Moments of quadratic twists of elliptic curve L-functions over funct
 section_id: sec-003-2-n-ab-f-h
 section_title: ", N AB f h)"
 section_number: 2
-pages: 18-20
+pages: 18-21
 source_pdf: ant-v14-n7-s-p06.pdf
 source_sha256: 4881141ef679dd5a
 toc_source: inferred
+doc_brief: "Moments of quadratic twists of elliptic curve L-functions over function fields — 15 sections: Front matter; Introduction and statement of resu; Some useful lemmas"
 ---
 | f |3/2+α|h|3/2+β
 .
@@ -258,3 +259,26 @@ q1+α
 dudvdw
 |w|X+Y+deg(N)−deg(V1)+c1+2c2−2g+1 .
 If deg(V1) ≤X +Y +c1 +2c2 −2g, then we move the w contour to |w| = q−3/4, otherwise we move the
+w contour to |w| = q−5/4. Using the upper bounds for moments as in Theorem 4.1 (see Remark 4.2) we
+Moments of quadratic twists of elliptic curve L-functions over function ﬁelds
+1873
+ﬁnd that
+S(V̸ = 0) ≪q(X+Y)/2g11
+X
+c2≤Z
+c1+2c2≤2g+1
+X
+C1∈Mc1
+C2∈Mc2
+C1 | 1
+τ(C)τ10(C)
+√|C|
+≪q(X+Y)/2g11
+X
+C2∈M≤Z
+τ(C2)τ10(C2)
+√|g(C2)|
+≪q(X+Y+Z)/2g30,
+which ﬁnishes the proof of Lemma 3.4.
+□
+Proposition 3.1 follows upon combining the estimates and choosing Z = g −(X + Y)/4.

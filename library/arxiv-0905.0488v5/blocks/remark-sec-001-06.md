@@ -1,1 +1,0 @@
-Acrossedgroupoidisbetterknownasa strict 2-groupoid, oracrossed

@@ -52,7 +52,7 @@ which is not done here and is not attempted.
 `QOU.IwahoriHecke.MarkovTrace.markovTrace` remains `noncomputable opaque`.
 
 -- Ref: [jones1987] Hecke algebra representations of braid groups and link polynomials
--- Ref: [manuscript] bean qou-k4oq; AGENTS.md §"q₀ anchor convention" R1 (convention D canonical)
+-- Ref: [leitner2026] bean qou-k4oq; AGENTS.md §"q₀ anchor convention" R1 (convention D canonical)
 -/
 
 namespace QOU.IwahoriHecke.MarkovNormalized

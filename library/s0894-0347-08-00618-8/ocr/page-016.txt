@@ -1,0 +1,57 @@
+536 J. BORCEA, P. BRANDEN, AND T. M. LIGGETT
+
+In other words, an n x n P-matrix A is GKK if and only if the probability measure
+a on 2!"] defined by
+
+(8) pa(S) = A(S) det(A + 1)~t
+
+satisfies the negative lattice condition (NLC). It is not hard to see that the gener-
+ating polynomial of such a measure is
+
+Gua (2) = det(A + I)~ 1S A A(S)z5 = det(A+ I)“ det(A+Z), 29 = [a
+SC[n] ies
+where Z = diag(z1,..., Zn). Examples of GKK-matrices are:
+
+(1) Positive definite matrices.
+(II) Totally positive matrices, i.e., matrices for which all minors are positive.
+(IIH) Non-singular M-matrices; recall that an M-matriz (named after Minkowski)
+is a matrix with all non-negative principal minors and all non-positive off
+diagonal entries.
+
+An ambitious project would be to classify GKK-matrices according to the various
+negative dependence properties (introduced in that these matrices satisfy. This
+would take us beyond the scope of this paper. In what follows we will only briefly
+discuss some of these aspects.
+
+Definition 3.1. We say that a P-matrix A is a Rayleigh matriz if the associated
+probability measure ju.4 defined in (8) is Rayleigh (in the sense of Definition 2.5).
+
+By Theorem 4.4], Rayleigh matrices are GKK. In fact, the following holds.
+
+Theorem 3.3. Let A be ann x n matrix over C. The following are equivalent:
+(1) A is a Rayleigh matriz;
+(2) A+ X is a GKK-matrizx for all X = diag(x1,...,2%n), where x; > 0 for all
+1l<i<n.
+
+Proof. (1) = (2): As we already noted, by Theorem 4.4] Rayleigh matrices are
+Gkk, i by definition the set of all Rayleigh matrices is obviously closed under
+adding Pea diagonal matrices.
+
+(2) = (1): Let f = det(A+ - Then
+
+FeO GEC) — seg)
+= (A+ X)(i) (A+ Xj) ~ (A+ XY (id) “(A+ X90).
+
+Using the Hadamard-Fischer-Kotelyansky inequalities (7) for A+ X with S$ = {i}
+and T = {j} one gets the desired conclusion. o
+
+It follows immediately from Theorem[3.3]that non-singular M-matrices and pos-
+itive definite matrices are Rayleigh. Now for any s,t € (0,1) one can easily check
+that the matrix
+
+1 1/2 s/4
+(9) B=|]1/2 1 1/2
+t/4 1/2 1
+
+is totally positive. Given an n x n matrix A and two subsets $,T C [n] of the same
+size, we let A(S,T') denote the minor of A lying in rows indexed by S and columns

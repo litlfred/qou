@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-0705.2975v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "683d6bd44cea670426e95e11717cb371716d90c20b72a84518ec929c32b1620b",
+  "file": "0705.2975v1.pdf"
+ },
+ "provenance": {
+  "title": "On the De\ufb01nitions of Di\ufb00erence Galois Groups",
+  "authors": "Zo\u00e9 Chatzidakis\u2217, Charlotte Hardouin, Michael F. Singer\u2020",
+  "arxiv": {
+   "id": "0705.2975",
+   "version": "1",
+   "primary_class": "math.CA",
+   "stamp_date": "21 May 2007"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

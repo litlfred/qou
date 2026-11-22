@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.98
 latex_coverage_ratio: 0.992
+doc_brief: "MOD-φ CONVERGENCE, I: NORMALITY ZONES AND PRECISE DEVIATIONS — In this paper, we use the framework of mod-φ convergence to prove pre- cise large or moderate deviations for quite general sequences of"
 ---
 \subsection{Mod-\texorpdfstring{$\phi$}{phi} convergence}
 The notion of mod-$\phi$ convergence has been studied in the articles \cite{JKN11,DKN11,KN10,KN12,BKN09}, in connection with problems from number theory, random matrix theory and  probability theory. The main idea was to look for a natural renormalization of the characteristic functions of random variables which do not converge in law (instead of a renormalization of the random variables themselves). After this renormalization, the sequence of characteristic functions converges to some non-trivial limiting function. Here is the definition of mod-$\phi$ convergence that we will use throughout this article

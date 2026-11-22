@@ -1,6 +1,6 @@
 ---
 doc_id: 18
-doc_title: "Mathematical Research Letters 3, 51–60 (1996)"
+doc_title: "Combinatorial scalar curvature and rigidity of ball packings"
 section_id: sec-006-6-applications-to-ball-packing
 section_title: "Applications to ball packing"
 section_number: 6
@@ -8,6 +8,7 @@ pages: 8-9
 source_pdf: 18.pdf
 source_sha256: 0b7bf055085cb04b
 toc_source: inferred
+doc_brief: "Combinatorial scalar curvature and rigidity of ball packings — 11 sections: Front matter; Introduction; Conformal simplices"
 ---
 Consider the special case of the situation in the previous section where
 the metric on (M, T ) is in fact non-singular Euclidean or hyperbolic in the

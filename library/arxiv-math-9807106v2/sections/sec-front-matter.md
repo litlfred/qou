@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 9807106v2.pdf
 source_sha256: e3cd089e3df5d71f
 toc_source: inferred
+doc_brief: "An Extension of the Character Ring of sl(3) and Its Quantisation P. Furlan∗,† — We construct a commutative ring with identity which extends the ring of characters of ﬁnite dimensional representations"
 ---
 arXiv:math/9807106v2  [math.QA]  26 Nov 1998
 An Extension of the Character Ring of sl(3) and Its Quantisation

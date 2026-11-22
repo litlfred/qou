@@ -1,4 +1,4 @@
-We verify the cosimplicial identities and the crossed-module axioms.
+One verifies the cosimplicial identities and the crossed-module axioms.
 
 The coface and codegeneracy maps satisfy the four cosimplicial identities ([cosimplicial identities](#def:ccg-cosimplicial-identities)). At each level $n$, the pair $(\mathrm{SU}_{q_n}(2), \mathcal{O}_M^{\times})$ forms a crossed module ([crossed-module structure](#lem:ccg-crossed-module-structure)).
 

@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1906.12122v2/sections/sec-066",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "E Pion and electroweak reactions",
+  "pageStart": 53,
+  "pageEnd": 54,
+  "contains": [
+    "library/arxiv-1906.12122v2/blocks/prose-sec-066",
+    "library/arxiv-1906.12122v2/blocks/prop-sec-066-01",
+    "library/arxiv-1906.12122v2/blocks/prop-sec-066-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1906.12122v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1906.12122v2/manifest.jsonld",
+  "provenance": "ingested"
+}

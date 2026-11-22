@@ -1,0 +1,1 @@
+The pivotal operator T i jk computes as the conjugate of the mon- odromy of the cyclic operators: T i jk = Y −1Ti∗jkY Note that the statement of the lemma is well-deﬁned since the right-hand side is independent of the right dual structure maps needed to deﬁne Y (the dependency cancels due to the Y −1).

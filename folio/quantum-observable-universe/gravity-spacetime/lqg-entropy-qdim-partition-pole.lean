@@ -45,7 +45,7 @@ to `s⋆ = 2πγ ≈ 1.49 > 1`. An instance must state its own window.
 archimedean layer — `Real.exp`, the ordering used by IVT and by
 `StrictAntiOn`, and `Real.pi` in the Immirzi normalisation.
 
-Ref: [manuscript] conj:lqg-entropy-qdim-partition-pole
+Ref: [leitner2026] conj:lqg-entropy-qdim-partition-pole
 Ref: [domagala-lewandowski-2004]
 Ref: [meissner2004]
 Ref: [ashtekar-baez-corichi-krasnov-1998]

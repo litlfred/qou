@@ -1,0 +1,1 @@
+The multiplicative unitary W ∈B(H ⊗H) is given by W = e i 2πb2 log A−1⊗log ˆ Agb(B ⊗q ˆB ˆA−1) (4.61) = gb(q−1BA−1 ⊗ˆB)e i 2πb2 log A−1⊗log ˆ A, (4.62) W ∗ = e i 2πb2 log A⊗log ˆ Ag∗ b(q−1BA−1 ⊗ˆB) (4.63) = g∗ b(B ⊗q ˆB ˆA−1)e i 2πb2 log A⊗log ˆ A, (4.64) where A = e−2πbps, B = e2πbse−2πbpt (4.65) as before, and ˆA = e2πbs, ˆB = Gb(−it) ◦e2πbpt−2πbps ◦Gb(−it)−1. (4.66)

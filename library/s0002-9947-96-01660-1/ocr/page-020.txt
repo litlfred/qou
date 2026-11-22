@@ -1,0 +1,56 @@
+4016 JOHN W. BARRETT AND BRUCE W. WESTBURY
+Lemma 5.3.
+
+Z(0234)=K7t > (( ® Z(0123)) (P @ 1) (1 @ Z(0134)) (P @ 1)
+
+€01,€125
+e13,e14€S
+
+- (Z(1234) @ 1)(1@ Z(-0124))) TT] dimy(¢1»)).
+n=0,2,3,4
+in which tr3 is the partial trace over the third factor:
+(a®B®y)Pa@B tr(y).
+
+Proof. Follow the linear maps on each side of the Biedenharn-Elliot relation with
+the linear map
+
+K~ dim, (€01) dimg (e12) dim, (e14) (1 ® Z(—0124)) ,
+
+take the partial trace on the third factor and sum over €9; € J, e12 € J, and ey4 € J.
+The right-hand side of the Biedenharn-Elliot identity becomes the right-hand side
+of the equation in the statement of the lemma. The left-hand side becomes
+
+Ko! S©_ trs((Z(0234) @ 1) (1 @ Z(0124)) (1 ® Z(—0124))) dimy (eo1)
+
+€01,€12,e14E J
+
+- dimg (€12) dim, (e14) -
+Using the orthogonality relation of Proposition 5.2, this is equal to
+Kt . .
+dim, (ea) S tr3((Z(0234) @ 1)) dimg (e01) dim, (e12) .
+€01,e12E I
+Also,
+tr3((Z(0234) ® 1)) = Z(0234) dim Hom(ep2, e12 ® €01),
+
+using the ordinary vector space dimension dim. From the symmetry conditions and
+Lemma 2.14, it follows that
+
+S dim, (eo1) dim Hom(eg2, €12 ® eo1) = S dim,(eo1) dim Hom(eo1, é12 ® eo2)
+eo. e€o1
+= dim,(e12) dimg(eo2).
+Thus the left-hand side of the relation is equal to
+K~1Z(0234) S* (dim, (e12))” = 2(0234).
+e12€J
+Thus the lemma is proved.
+To complete the proof of Theorem 5.1, it remains to prove Proposition 5.2. The
+first step is
+
+Lemma 5.4 (Crossing). The following diagram is commutative:
+
+Ba H(e€23, €03, €02) ® H(e12, e02, €01) — Ba H(e23, €13, €12) ® H(e13, €03, €01)
+
+eo2 EF e13EJ
+
+agaacei)| ooa-e(ae) |
+
+Hom(eos, €23 ® (€12 ® €01)) —- Hom(eos, (e23 ® €12) ® €01)

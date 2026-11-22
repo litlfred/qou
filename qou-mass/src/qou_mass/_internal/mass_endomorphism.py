@@ -130,6 +130,16 @@ def qdim(part, n):
         den *= qint(h)
     return num / den if abs(den) > 1e-30 else 0
 
+# OWNER RULING 2026-11-20 (PR #8590): this V-hat deliberately keeps the
+# pre-convention-D W_sym/W_std/W_alt (q-Plancherel) mixture. The 11-18 ruling
+# moved pyhecke.atom to the convention-D Markov trace z*a+b, but here that puts
+# the proton V-hat (1.2824) past the Phi_q pole at q0 and m_p/m_e = inf
+# (qou-2tuv). Kept, labelled, until the pole is resolved. No number moves.
+VHAT_WEIGHTS_LABEL = (
+    "pre-convention-D mixture (q-Plancherel W_sym/W_std/W_alt), kept by owner "
+    "ruling 2026-11-20 until the Phi_q pole (qou-2tuv) is resolved; "
+    "convention-D z*a+b gives m_p/m_e = inf (PR #8590)"
+)
 # Wedderburn weights at baryon level n=3
 nf3 = qfact(3)
 w_sym = qdim((3,), 3) ** 2 / nf3
@@ -478,7 +488,9 @@ if __name__ == "__main__":
     print()
     print(f"m_p/m_e = {p_total / e_total:.4f}  (CODATA: 1836.152, error {abs(p_total/e_total - 1836.152)/1836.152*100:.2f}%)")
     print(f"m_n/m_e = {n_total / e_total:.4f}  (CODATA: 1838.684, error {abs(n_total/e_total - 1838.684)/1838.684*100:.2f}%)")
-    print(f"m_n/m_p = {n_total / p_total:.6f}  (CODATA: 1.001378, error {abs(n_total/p_total - 1.001378)/1.001378*100:.4f}%)")
+    from qou_substrate.codata import codata as _codata
+    _np = float(_codata("neutron-proton mass ratio").value_str)  # float64-ok: display-only % error in a report line
+    print(f"m_n/m_p = {n_total / p_total:.6f}  (CODATA: {_np:.6f}, error {abs(n_total/p_total - _np)/_np*100:.4f}%)")
     print(f"m_n - m_p (units of m_e) = {(n_total - p_total)/e_total:.4f}  (CODATA: 2.531)")
     print(f"Δm (MeV) = {(n_total - p_total)/e_total * 0.51100:.4f}  (CODATA: 1.293 MeV)")
 
@@ -511,6 +523,7 @@ if __name__ == "__main__":
         "Cross-term weight z² = tr_M(σ₀σ₁) derived from Hecke algebra."
     )
     w.add_parameter("q0", fmt(q0_mp))
+    w.add_parameter("vhat_weights", VHAT_WEIGHTS_LABEL)
     w.add_parameter("w_sym", fmt(w_sym_mp))
     w.add_parameter("w_std", fmt(w_std_mp))
     w.add_parameter("w_alt", fmt(w_alt_mp))

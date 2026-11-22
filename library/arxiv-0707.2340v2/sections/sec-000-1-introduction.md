@@ -4,13 +4,14 @@ doc_title: "NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
-pages: 1-4
+pages: 2-4
 source_pdf: 0707.2340v2.pdf
 source_sha256: bf0f91277a5874ff
 toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.985
-latex_coverage_ratio: 0.946
+latex_prose_ratio: 0.839
+latex_coverage_ratio: 0.997
+doc_brief: "NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS — We introduce the class of strongly Rayleigh probability measures by means of geometric properties of their generating polynomials that amount to"
 ---
 \label{s1}
 

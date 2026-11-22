@@ -54,7 +54,7 @@ Refs:
 - [jones1987] DOI 10.2307/2691504
 - [wenzl1988] DOI 10.1007/BF01404457
 - [orellana1998] DOI 10.1006/jabr.1998.7437
-- [manuscript] docs/workplans/2026-05-30-iwahori-hecke-mathlib-infra-plan.md
+- [leitner2026] docs/workplans/2026-05-30-iwahori-hecke-mathlib-infra-plan.md
 -/
 
 

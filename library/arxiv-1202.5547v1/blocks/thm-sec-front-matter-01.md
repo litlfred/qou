@@ -1,0 +1,1 @@
+The triple-graded dimension of Khovanov-Rozansky homology is an invariant of oriented links. Its bigraded Euler characteristic provides the HOMFLY 2-variable polynomial. Let HW := C(q)BW / ⟨(σs −q)(σs + 1)⟩be the Hecke algebra of W.

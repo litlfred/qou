@@ -6,10 +6,12 @@
   "sha256": "4d78ee89f0e67fbbb91bede3a42d648208e57b62e38425b1d56b0b50a2440bd2",
   "bytes": 140162,
   "pages": 8,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -19,16 +21,28 @@
    "stamp_date": "18 Feb 2007"
   },
   "doi": null,
-  "title": "Instituto de F \u00b4 \u0131sica Corpuscular, IFIC, CSIC-Universitat de Val`encia",
-  "authors_raw": "Apt. Correus 22085, E-46071 Val` encia, Spain",
+  "title": "Large-NC estimate of the chiral low-energy constants ∗",
+  "authors_raw": "J. Portolés",
+  "title_lines": [
+   "Large-NC estimate of the chiral low-energy constants ∗"
+  ],
   "abstract": null,
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20211108014811-05'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  }
+   "CreationDate": "D:20211108014811-05'00'"
+  },
+  "title_raw": "Large-NC estimate of the chiral low-energy constants ∗",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "Large- N C estimate of the chiral low-energy constants ∗ J. Portol´es 1. Introduction Chiral symmetry of massless Quantum Chromodynamics has become the key tool in the study of the very low-energy domain of strong interactions (typically E ∼ M π ), where QCD turns non-perturbative. It is indeed the",
+   "outline": "Introduction",
+   "text": "Large-NC estimate of the chiral low-energy constants ∗",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "Instituto de F ´ ısica Corpuscular, IFIC, CSIC-Universitat de Val`encia"
  },
  "toc": [
   {
@@ -36,39 +50,152 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The role of Resonance Chiral Theory",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Resonance contributions to the O(p6) LECs",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "K3 decays : determination of f+K0 -(0)",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Perspective",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "We display f tree",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Comparison of diﬀerent predictions for f K0π−",
+   "page": 7,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 657,
+   "n_words": 88,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
@@ -76,8 +203,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 2240,
-   "n_words": 409
+   "n_chars": 2220,
+   "n_words": 389,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-the-role-of-resonance-chiral-theory",
@@ -86,8 +215,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 4,
-   "n_chars": 5668,
-   "n_words": 955
+   "n_chars": 5553,
+   "n_words": 906,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-resonance-contributions-to-the-op6-lecs",
@@ -95,32 +226,56 @@
    "title": "Resonance contributions to the O(p6) LECs",
    "level": 1,
    "page_start": 4,
-   "page_end": 7,
-   "n_chars": 5559,
-   "n_words": 1080
+   "page_end": 5,
+   "n_chars": 2539,
+   "n_words": 451,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-perspective",
+   "id": "sec-003-k3-decays-determination-of-fk0--0",
+   "number": null,
+   "title": "K3 decays : determination of f+K0 -(0)",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 2919,
+   "n_words": 560,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-perspective",
    "number": null,
    "title": "Perspective",
    "level": 1,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 3686,
-   "n_words": 627
+   "n_chars": 3653,
+   "n_words": 594,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 5,
-  "sections": 4,
-  "chars_total": 17153,
+  "toc_inferred_entries": 0,
+  "figure_entries": 2,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 6,
+  "chars_total": 17541,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "euridice06.tex",
    "tex_sections": 6,
-   "overlaid": 2,
+   "overlaid": 3,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -128,33 +283,44 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.909,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-the-role-of-resonance-chiral-theory",
      "title": "The role of Resonance Chiral Theory",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-002-resonance-contributions-to-the-op6-lecs",
      "title": "Resonance contributions to the O(p6) LECs",
-     "prose_ratio": 0.565,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.542,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-003-perspective",
+     "id": "sec-003-k3-decays-determination-of-fk0--0",
+     "title": "K3 decays : determination of f+K0 -(0)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-perspective",
      "title": "Perspective",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.496,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.504,
+     "result": "overlaid",
+     "converter": "pandoc"
     }
    ]
   }

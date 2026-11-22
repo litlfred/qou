@@ -17,6 +17,7 @@ export default definition({
   },
   uses: ["prop:qou-canonical-action"],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): A witness now exists: [`mirror-split-continuum-em`](../../../computations/deltalambda/mirror-split-continuum-em.witness.json), computed by [`coulomb_energy.py`](../../../computations/coulomb_energy.py) with **zero fitted constants**." },
     {
       kind: "note",
       body:

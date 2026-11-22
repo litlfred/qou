@@ -1,1 +1,1 @@
-— Let ϵ ∈ (0,π ) and consider the sector Vϵ = {x ∈ C∗ :
+— Let € € (0,7) and consider the sector V. = {x € C* : |arga| < 7-—e}. Then the following uniform estimate holds for any (q,x) €

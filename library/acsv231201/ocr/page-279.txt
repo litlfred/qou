@@ -1,0 +1,47 @@
+9.2 The method of residue forms 261
+
+Proposition 9.26. Let F(z) = P(z)/Q(z) be the ratio of coprime polynomials
+P and Q. Fix a direction *, a component B of the complement of amoeba(Q)
+on which h» is bounded from below, and a component B’ on which hg is not
+bounded from below.
+
+(i) There is at most one minimal torus with respect to B and ? satisfying
+finite criticality and on which each critical point is smooth, contributing,
+and nondegenerate.
+
+(ii) Let T = T.(a) for some « € Band let T’ = T(x’) for some x’ €
+B’. Given the existence of the torus described in (i), the projection of
+INT(T,T’) to the relative homology group Ha-\(V:,V<c-«), for suffi-
+ciently small e > 0 and c = -f - x, equals }\ ,ew Yz, where the cycle yz
+is a generator for the cyclic local homology group Ha-1(V2"").
+
+(iii) The projection of [T] to (M, Mgc-e) is equal to >) sew OYz, where yz isa
+generator of the cyclic group Ha-1 (vz).
+
+Proof To prove (i), suppose there are two such tori T.(a) and T.(a’). Ap-
+plying Theorems 9.12 and 9.25 to the rational function F(z) = 1/Q(z) at the
+points in each torus gives two, necessarily equal, asymptotic series estimating
+the coefficients {@,} uniformly as |r| — oo with r/|r| remaining in some neigh-
+borhood R of # (we replace P by | and Q by its square-free part as this does not
+change the minimal tori or our nondegeneracy assumptions, but simplifies the
+asymptotic formulae). In particular, the leading term of each expansion ®,,(r)
+in (9.4) has the form C(w) exp(—r-a) exp(-ir-y)rf “OP with C nonvanishing.
+Summing the contributions of the finitely many points on T.(a) (respectively
+T.(x’)) gives a function of r that is nonvanishing at least on some finite-index
+sublattice of Z“. Furthermore, the terms given by the elements of T.(a) and
+the elements of T.(a’) differ from each other in exponential growth, because
+—ax-rand—a’ - r disagree on R except possibly for a set of codimension 1.
+This contradicts the fact that both expansions represent asymptotics for the
+same sequences, so two such tori cannot exist.
+
+To prove (ii), the deformation used to prove Theorem 5.3 shows that the
+intersection cycle may be deformed to a sum of elements of local homology
+groups. None of these can be zero because there is a term corresponding to
+each in (9.8). Similarly, each is a relative homology generator: this can be seen
+from the deformation, but an easier argument is that the corresponding term
+®,,(7r) is, up to sign, the integral obtained from a small (d — 1)-patch and we
+know the local homology generator is a (d — 1)-ball modulo its boundary (see,
+for example, Theorem C.38).
+
+Conclusion (iii) can be argued similarly to (ii), using the stratified descrip-
+tion of attachments from Theorem D.25 in place of Theorem C.38. Alterna-

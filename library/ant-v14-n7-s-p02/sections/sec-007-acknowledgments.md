@@ -8,6 +8,7 @@ pages: 35-36
 source_pdf: ant-v14-n7-s-p02.pdf
 source_sha256: fd2121feb180b282
 toc_source: inferred
+doc_brief: "Pro-unipotent harmonic actions and dynamical properties of p-adic cyclotomic multiple zeta values — 10 sections: Front matter; Introduction; Preliminaries"
 ---
 This work was done at Université Paris Diderot and Université de Strasbourg, with, respectively, the
 support of ERC grant 257638 and Labex IRMIA. It has been revised at Université de Genève and Ben

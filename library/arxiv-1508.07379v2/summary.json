@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1508.07379v2",
  "source_sha256": "c3dbf93d1cac198e",
- "brief": "Convergence of Mayer and Virial expansions and the Penrose t ree-graph identity — We establish new lower bounds for the convergence radius of the Ma yer series and the Virial series of a continuous",
- "extended": "**Convergence of Mayer and Virial expansions and the Penrose t ree-graph identity**\n\n*Aldo Procacci ∗, Sergio A. Yuhjtman †*\n\n15 pp, 5 sections.\n\n**Abstract.** We establish new lower bounds for the convergence radius of the Ma yer series and the Virial series of a continuous particle system interacting via a stable a nd tempered pair potential. Our bounds considerably improve those given by Penrose and Ruelle in 1963 for the Mayer series and by Lebowitz and Penrose in 1964 for the Virial s eries. To get our results we exploit the tree-graph identity given by Penrose in 1967 using a ne w partition scheme based on minimum spanning trees.\n\n**Outline.** 1 Introduction; 2 Model and Results; 3.1 General Penrose identity; 3.2 Partition scheme via minimum spanning tree; 5 Comparison with recent results and concludin\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: , id est a new tree graph inequality, deduced from the Penrose tree-g raph identity. In\n- Theorem 0: Let V be a stable and tempered pair potential with stability\n- Theorem 0: via a direct bound on Cn(β, Λ) by using the old Penrose tree-graph identity proposed\n- Theorem 1: Let V be a stable and tempered pair potential with stability const ant B. Then the\n- Theorem 2: Let V (x) be a pair potential. Let n ≥ 2. Let M :\n- Theorem 1: follows now straightforwardly. Indeed, from Prop osition 1 and Lemma 3 we get the",
+ "brief": "Convergence of Mayer and Virial expansions and the Penrose tree-graph identity — We establish new lower bounds for the convergence radius of the Mayer series and the Virial series of a continuous",
+ "extended": "**Convergence of Mayer and Virial expansions and the Penrose tree-graph identity**\n\n*Aldo Procacci∗, Sergio A. Yuhjtman†*\n\n15 pp, 10 sections.\n\n**Abstract.** We establish new lower bounds for the convergence radius of the Mayer series and the Virial series of a continuous particle system interacting via a stable and tempered pair potential. Our bounds considerably improve those given by Penrose and Ruelle in 1963 for the Mayer series and by Lebowitz and Penrose in 1964 for the Virial series. To get our results we exploit the tree-graph identity given by Penrose in 1967 using a new partition scheme based on minimum spanning trees.\n\n**Outline.** Front matter; 1 Introduction; 2 Model and Results; 2.2 Results; 3 Proof of Proposition ??; 3.1 General Penrose identity; 3.2 Partition scheme via minimum spanning tree; 3.3 Conclusion of the proof of Proposition ??; 4 Proof of Theorem ??; 5 Comparison with recent results and concludin",
  "tokens": {
-  "brief": 49,
-  "extended": 348
+  "brief": 48,
+  "extended": 234
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -17,20 +22,40 @@
   {
    "id": "sec-001-2-model-and-results",
    "title": "Model and Results",
-   "pages": "3-7"
+   "pages": "3-4"
   },
   {
-   "id": "sec-002-31-general-penrose-identity",
+   "id": "sec-002-22-results",
+   "title": "Results",
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-003-3-proof-of-proposition",
+   "title": "Proof of Proposition ??",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-004-31-general-penrose-identity",
    "title": "General Penrose identity",
    "pages": "7-8"
   },
   {
-   "id": "sec-003-32-partition-scheme-via-minimum-spanning-tree",
+   "id": "sec-005-32-partition-scheme-via-minimum-spanning-tree",
    "title": "Partition scheme via minimum spanning tree",
-   "pages": "8-13"
+   "pages": "8-11"
   },
   {
-   "id": "sec-004-5-comparison-with-recent-results-and-concluding",
+   "id": "sec-006-33-conclusion-of-the-proof-of-proposition",
+   "title": "Conclusion of the proof of Proposition ??",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-007-4-proof-of-theorem",
+   "title": "Proof of Theorem ??",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-008-5-comparison-with-recent-results-and-concluding",
    "title": "Comparison with recent results and concluding remarks",
    "pages": "13-15"
   }
@@ -39,8 +64,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

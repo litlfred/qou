@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/kuperberg-1996-cmp-180-109-spiders/sections/sec-001",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Pa,a<βa) = βa*",
+  "pageStart": 13,
+  "pageEnd": 27,
+  "contains": [
+    "library/kuperberg-1996-cmp-180-109-spiders/blocks/prose-sec-001",
+    "library/kuperberg-1996-cmp-180-109-spiders/blocks/lem-sec-001-01",
+    "library/kuperberg-1996-cmp-180-109-spiders/blocks/thm-sec-001-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kuperberg-1996-cmp-180-109-spiders/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kuperberg-1996-cmp-180-109-spiders/manifest.jsonld",
+  "provenance": "ingested"
+}

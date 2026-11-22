@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1905.02045v3",
  "source_sha256": "8e7eb17c7d1f4f4e",
- "brief": "MODULARITY AND VALUE DISTRIBUTION OF QUANTUM — We obtain an exact modularity relation for the q-Pochhammer symbol.",
- "extended": "**MODULARITY AND VALUE DISTRIBUTION OF QUANTUM**\n\n*INV ARIANTS OF HYPERBOLIC KNOTS*\n\n39 pp, 9 sections.\n\n**Abstract.** We obtain an exact modularity relation for the q-Pochhammer symbol. Using this formula, we show that Zagier’s modularity conjecture for a knot K essentially reduces to the arithmeticity conjecture for K. In particular, we show that Zagier’s conjecture holds for hyperbolic knots K ⁄= 7 2 with at most seven crossings. For K = 4 1, we also prove a complementary reciprocity formula which allows us to prove a law of large numbers for the values of the colored Jones polynomials at roots of unity. We conjecture a similar formula holds for all knots and we show that this is the case if one assumes a suitable version of Zagier’s conjecture.\n\n**Outline.** 1 Introduction; 1.1 Outline of the paper and sketch of the pro; Acknowledgment; Notation; 2 Two reciprocity formulae for the q-Pochhamme; 2.2 First reciprocity formula for the q-Pochha; 2.3 Sums of cotangents; 2.4 Second reciprocity formula for the q-Pochh; References",
+ "brief": "MODULARITY AND VALUE DISTRIBUTION OF QUANTUM INVARIANTS OF HYPERBOLIC KNOTS — We obtain an exact modularity relation for the q-Pochhammer symbol.",
+ "extended": "**MODULARITY AND VALUE DISTRIBUTION OF QUANTUM INVARIANTS OF HYPERBOLIC KNOTS**\n\n*S. BETTIN AND S. DRAPPEAU*\n\n39 pp, 14 sections.\n\n**Abstract.** We obtain an exact modularity relation for the q-Pochhammer symbol. Using this formula, we show that Zagier’s modularity conjecture for a knot K essentially reduces to the arithmeticity conjecture for K. In particular, we show that Zagier’s conjecture holds for hyperbolic knots K̸ = 72 with at most seven crossings. For K = 41, we also prove a complementary reciprocity formula which allows us to prove a law of large numbers for the values of the colored Jones polynomials at roots of unity. We conjecture a similar formula holds for all knots and we show that this is the case if one assumes a suitable version of Zagier’s conjecture.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Outline of the paper and sketch of the pro; Acknowledgment; Notation; 2 Two reciprocity formulae for the q-Pochhamme; 2.2 First reciprocity formula for the q-Pochha; 2.3 Sums of cotangents; 2.4 Second reciprocity formula for the q-Pochh; 3 Proof of Theorem ??; 3.2 Proof of Lemma ??; 4 Proof of Theorems ??; 5 Proof of Theorem ??; References",
  "tokens": {
-  "brief": 28,
-  "extended": 260
+  "brief": 36,
+  "extended": 293
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -47,10 +52,30 @@
   {
    "id": "sec-007-24-second-reciprocity-formula-for-the-q-pochhamm",
    "title": "Second reciprocity formula for the q-Pochhammer symbol",
-   "pages": "19-38"
+   "pages": "19-21"
   },
   {
-   "id": "sec-008-references",
+   "id": "sec-008-3-proof-of-theorem",
+   "title": "Proof of Theorem ??",
+   "pages": "21-31"
+  },
+  {
+   "id": "sec-009-32-proof-of-lemma",
+   "title": "Proof of Lemma ??",
+   "pages": "31-34"
+  },
+  {
+   "id": "sec-010-4-proof-of-theorems",
+   "title": "Proof of Theorems ??",
+   "pages": "34-35"
+  },
+  {
+   "id": "sec-011-5-proof-of-theorem",
+   "title": "Proof of Theorem ??",
+   "pages": "35-38"
+  },
+  {
+   "id": "sec-012-references",
    "title": "References",
    "pages": "38-39"
   }

@@ -1,0 +1,51 @@
+6.5 Additional constructions 163
+
+0.6
+
+0.4
+
+02 y 05
+
+-1 -08 -06 -04 -02 Of 02 04 06
+-0.2
+
+-04
+
+0.6 0.5
+
+-0.8
+
+-1 -1
+
+Figure 6.8 The real parts of V and V, with e = 1/10.
+
+Definition 6.47. If (X,d) is a metric space then the Hausdorff metric p on
+compact subsets of X is defined stepwise by
+
+d(x, Y) = inf d(x, y) (xe X and Y c X)
+d(Z, Y) = sup d(z, Y) (Z,Y c X)
+
+<eZ
+p(Z, Y) = max({d(Z, Y), d(¥, Z)} (Z,Y CX).
+
+Lemma 6.48 (algebraic tangent cone is the limiting secant cone). Let Q(z)
+be a polynomial vanishing to degree m > | at the origin. Define the m-
+homogeneous part A(z) = hom(Q), the remainder
+
+R(z) = Q(z) - A(z),
+
+and, for ¢ > 0, the scaled polynomial Q,(z) = e&" Q(ez). If V_ denotes the
+intersection of the zero set of Q, with the unit sphere S; and Vo denotes the
+intersection of the zero set of A with S, then V. — Vo in the Hausdorff metric
+
+ase— 0.
+
+Example 6.49. Let Q(x, y) = »° —xy+y’, which vanishes to order m = 2. The
+leading homogeneous part is A(x, y) = —xy, the remainder is R(x, y) = x? + y°,
+and Q,(x,y) = e(x? + y>) — xy. Figure 6.8 shows V and V, for « = 1/10,
+illustrating that V, is close to the union of the x and y axes Vp = Va. 4
+
+Proof On any compact set, including S|, the rescaled remainder «"""R(ez)
+goes to zero uniformly. If z, > z and z, € V1/, then, for each n,
+
+A (2n)| = [Quin (Zn) — Rijn (Zn)| = [Rin (Zn)| > 0,

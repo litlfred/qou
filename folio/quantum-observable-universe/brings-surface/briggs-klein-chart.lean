@@ -37,7 +37,7 @@ def q_inv_param : R_q := LaurentPolynomial.T (-1)
     ζ = exp(2πi/5) is a primitive 5th root of unity. The radial
     coordinate r is C₅-invariant.
 
-    Ref: [manuscript] Chapter 5, §Bundle structures -/
+    Ref: [leitner2026] Chapter 5, §Bundle structures -/
 structure BriggsKleinChart where
   /-- First resolvent coordinate w₁ ∈ ℂ. -/
   w₁ : ℂ
@@ -51,23 +51,23 @@ structure BriggsKleinChart where
   r_pos : 0 < r
 
 /-- The C₅ action order: the cyclic group acting by phase rotation. -/
--- Ref: [manuscript] Chapter 5, §Bundle structures
+-- Ref: [leitner2026] Chapter 5, §Bundle structures
 def c5_order : ℕ := 5
 
 /-- Primitive 5th root of unity phase angle. -/
--- Ref: [manuscript] Chapter 5, §Bundle structures
+-- Ref: [leitner2026] Chapter 5, §Bundle structures
 noncomputable def zeta_angle : ℝ := 2 * Real.pi / 5
 
 /-- The C₅ phase rotation on the k-th coordinate: ζᵏ · w.
     Since ζ⁵ = 1, the action is periodic with period 5. -/
--- Ref: [manuscript] Chapter 5, §Bundle structures
+-- Ref: [leitner2026] Chapter 5, §Bundle structures
 noncomputable def c5_phase_rotation (k : ℕ) (w : ℂ) : ℂ :=
   Complex.exp (↑(k * zeta_angle) * Complex.I) * w
 
 /-- The radial coordinate r = |w₁|² is C₅-invariant:
     |ζᵏ w₁|² = |ζᵏ|² · |w₁|² = 1 · |w₁|² = |w₁|².
     Here we express this for the normSq function. -/
--- Ref: [manuscript] Chapter 5, §Bundle structures
+-- Ref: [leitner2026] Chapter 5, §Bundle structures
 theorem c5_preserves_normSq (k : ℕ) (w : ℂ) :
     Complex.normSq (c5_phase_rotation k w) =
     Complex.normSq w := by

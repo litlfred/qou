@@ -9,6 +9,21 @@ reduced system to 39 digits and yet drives x0 to ~1e471 when lifted.
 Exit 0 iff the guard rejects it.
 """
 import ast, json, re, sys, mpmath as mp, sympy as sp
+import pathlib
+
+# qou-47nf: the fixture this guard replays has never existed in git history
+# (`git log --all` finds no `L6a4_c1_q_sl5_P.res`); it was a scratch file in the
+# author's working directory. Until the author says which degree-18 RUR from the
+# UNSATURATED reduction it was, the guard cannot run. Skip with that reason
+# rather than fail at collection, so nobody reads a green suite as "guard passed".
+_RES = pathlib.Path(__file__).resolve().parent / 'L6a4_c1_q_sl5_P.res'
+if not _RES.exists():
+    _REASON = ("qou-47nf: fixture L6a4_c1_q_sl5_P.res has never existed in git; "
+               "regression guard NOT run (unrecoverable data, owner decision 2026-11-15 option 2a)")
+    if __name__ == "__main__":
+        sys.exit("SKIPPED -- " + _REASON)
+    import pytest
+    pytest.skip(_REASON, allow_module_level=True)
 mp.mp.dps = 50
 core = ast.literal_eval(open('L6a4_c1_q_sl5_P.res').read().strip().rstrip(':'))[1]
 vnames, linform = core[3], core[4]; blk = core[5][1]

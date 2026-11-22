@@ -1146,7 +1146,7 @@
         },
         "reviewed_at": "2026-06-22T02:50:55.754Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Candidate flagged by heuristic scan \u2014 requires agent confirmation per lean-proof-vacuity-audit."
+        "notes": "Candidate flagged by heuristic scan — requires agent confirmation per lean-proof-vacuity-audit."
       },
       {
         "result": "pass",
@@ -1271,6 +1271,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "abedca35fef1",
+          "ts": "141de25a8dd3",
+          "lean": "b4ebdffcb56b",
+          "lean_statement": "d1be46e3af24"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:56:02.296Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "Lean ref `alexanderWeightDifference` is a `def` (never asserted). Siblings prove `(N-1) - N/2` facts in ℕ only, which match the statement only after identifying Δ_{T(2,N)}(q) with N/2 (its q=1 value); for q>1, [N/2]_q > N/2. `ΔE_open = (N-1) - Δ + E_activation` uses an undefined `E_activation`. `ring_opening_exceeds_closure` proves `N/2 < N-1`, which is not \"opening exceeds closure\""
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -1692,7 +1710,7 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling folio/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "folio/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean:1 \u2014 folio/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean:33:45: error: Function expected at"
+        "evidence": "folio/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean:1 — folio/quantum-observable-universe/organic-chemistry/ring-closure-barrier.lean:33:45: error: Function expected at"
       },
       {
         "field_hash": {
@@ -2373,6 +2391,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T07:01:12.519Z",
+  "updated_at": "2026-11-15T21:56:02.296Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

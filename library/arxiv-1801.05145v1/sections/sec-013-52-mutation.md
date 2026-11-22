@@ -10,7 +10,8 @@ source_sha256: 808da260edd433f7
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.978
-latex_coverage_ratio: 0.577
+latex_coverage_ratio: 0.938
+doc_brief: "MONOIDAL CATEGORIFICATION OF CLUSTER ALGEBRAS — We prove that the quantum cluster algebra structure of a unipotent quantum coordinate ring Aq(n(w)), associated with a symmetric Kac-Moody algebra and"
 ---
 For $k\in\Kex$, we define a $\K\times \K$-matrix  $E=(e_{ij})_{i,j\in\K}$ and a
 $\Kex\times \Kex$-matrix $F=(f_{ij})_{i,j\in\Kex}$ as follows:

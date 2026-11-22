@@ -9,29 +9,19 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Sheafification functors.",
-  "pageStart": 9,
-  "pageEnd": 16,
+  "title": "Preliminaries on sheaves and fibered categories",
+  "pageStart": 5,
+  "pageEnd": 9,
   "contains": [
     "library/arxiv-1409.4073v1/blocks/prose-sec-003",
-    "library/arxiv-1409.4073v1/blocks/example-sec-003-01",
-    "library/arxiv-1409.4073v1/blocks/remark-sec-003-02",
+    "library/arxiv-1409.4073v1/blocks/prop-sec-003-01",
+    "library/arxiv-1409.4073v1/blocks/prop-sec-003-02",
     "library/arxiv-1409.4073v1/blocks/prop-sec-003-03",
-    "library/arxiv-1409.4073v1/blocks/prop-sec-003-04",
+    "library/arxiv-1409.4073v1/blocks/rem-sec-003-04",
     "library/arxiv-1409.4073v1/blocks/prop-sec-003-05",
-    "library/arxiv-1409.4073v1/blocks/remark-sec-003-06",
-    "library/arxiv-1409.4073v1/blocks/prop-sec-003-07",
-    "library/arxiv-1409.4073v1/blocks/remark-sec-003-08",
-    "library/arxiv-1409.4073v1/blocks/prop-sec-003-09",
-    "library/arxiv-1409.4073v1/blocks/prop-sec-003-10",
-    "library/arxiv-1409.4073v1/blocks/remark-sec-003-11",
-    "library/arxiv-1409.4073v1/blocks/prop-sec-003-12",
-    "library/arxiv-1409.4073v1/blocks/remark-sec-003-13",
-    "library/arxiv-1409.4073v1/blocks/remark-sec-003-14",
-    "library/arxiv-1409.4073v1/blocks/prop-sec-003-15",
-    "library/arxiv-1409.4073v1/blocks/prop-sec-003-16"
+    "library/arxiv-1409.4073v1/blocks/rem-sec-003-06"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1409.4073v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1409.4073v1",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1409.4073v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1409.4073v1/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -9,13 +9,17 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "References",
-  "pageStart": 551,
-  "pageEnd": 571,
+  "title": "Integration of forms",
+  "pageStart": 470,
+  "pageEnd": 474,
   "contains": [
-    "library/acsv231201/blocks/prose-sec-082"
+    "library/acsv231201/blocks/prose-sec-082",
+    "library/acsv231201/blocks/rem-sec-082-01",
+    "library/acsv231201/blocks/thm-sec-082-02",
+    "library/acsv231201/blocks/figure-img-p472-1",
+    "library/acsv231201/blocks/figure-img-p472-145"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/acsv231201",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/acsv231201",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/acsv231201/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/acsv231201/manifest.jsonld",
   "provenance": "ingested"
 }

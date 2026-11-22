@@ -1,0 +1,110 @@
+{
+  "description": "Addendum 4: arbitrary energy maps g(eps) for the one-sided nucleon-rule lepton factor.",
+  "q0Anchor": "proton",
+  "q0": "1.1099785827513808076",
+  "eps_p": "0.4087181793411276168",
+  "eps_n": "0.33173764473976344437",
+  "f": "0.06788212191844927377",
+  "maps": {
+    "linear": {
+      "lepton_pair_MeV": "-1.61055922345",
+      "Q_MeV": "1.28512529471",
+      "both_positive": false
+    },
+    "abs": {
+      "lepton_pair_MeV": "-1.61055922345",
+      "Q_MeV": "1.28512529471",
+      "both_positive": false
+    },
+    "+log": {
+      "lepton_pair_MeV": "-11.3718565807",
+      "Q_MeV": "10.4896592638",
+      "both_positive": false
+    },
+    "-log": {
+      "lepton_pair_MeV": "11.3718565807",
+      "Q_MeV": "-10.4896592638",
+      "both_positive": false
+    },
+    "1/x (hbar/D)": {
+      "lepton_pair_MeV": "142.02780648",
+      "Q_MeV": "-139.627624797",
+      "both_positive": false
+    },
+    "x^2": {
+      "lepton_pair_MeV": "-0.702949247213",
+      "Q_MeV": "0.461979799328",
+      "both_positive": false
+    },
+    "x^-2": {
+      "lepton_pair_MeV": "5466.60042773",
+      "Q_MeV": "-5453.49278611",
+      "both_positive": false
+    },
+    "x^0.5": {
+      "lepton_pair_MeV": "-1.99851498553",
+      "Q_MeV": "1.73072927191",
+      "both_positive": false
+    },
+    "x^-0.5": {
+      "lepton_pair_MeV": "18.7674708203",
+      "Q_MeV": "-18.0402303355",
+      "both_positive": false
+    },
+    "affine, q=1 subtracted": {
+      "lepton_pair_MeV": "-0.124334606234",
+      "Q_MeV": "-0.201099322501",
+      "both_positive": false
+    },
+    "rho-weighted": {
+      "needed_rho_final_over_rho_p_gt": "14.7314192859",
+      "[2]^4/q": "14.7314192859"
+    }
+  },
+  "checks": [
+    {
+      "check": "ordering eps_p f < eps_n < eps_p",
+      "pass": true
+    },
+    {
+      "check": "linear: not both positive",
+      "pass": true
+    },
+    {
+      "check": "abs: not both positive",
+      "pass": true
+    },
+    {
+      "check": "+log: not both positive",
+      "pass": true
+    },
+    {
+      "check": "-log: not both positive",
+      "pass": true
+    },
+    {
+      "check": "1/x (hbar/D): not both positive",
+      "pass": true
+    },
+    {
+      "check": "x^2: not both positive",
+      "pass": true
+    },
+    {
+      "check": "x^-2: not both positive",
+      "pass": true
+    },
+    {
+      "check": "x^0.5: not both positive",
+      "pass": true
+    },
+    {
+      "check": "x^-0.5: not both positive",
+      "pass": true
+    },
+    {
+      "check": "affine q=1-subtracted: not both positive",
+      "pass": true
+    }
+  ]
+}

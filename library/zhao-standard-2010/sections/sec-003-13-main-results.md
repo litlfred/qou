@@ -8,7 +8,9 @@ pages: 5-6
 source_pdf: Zhao_standard_2010.pdf
 source_sha256: 94a70847c2937ba7
 toc_source: inferred
+doc_brief: "Standard Relations of Multiple Polylogarithm Values at Roots of Unity — Let N be a positive integer."
 ---
+Main results
 The main goal of this paper is to provide some extensive numerical evidence
 concerning the (in)completeness of the standard relations. Namely, these re-
 lations in general are not enough to produce all the Q-linear relation between
@@ -37,4 +39,3 @@ this paper were announced in [30].
 Documenta Mathematica 15 (2010) 1–34
 6
 Jianqiang Zhao
-1.4

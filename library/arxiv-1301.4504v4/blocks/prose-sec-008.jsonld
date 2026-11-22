@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1301.4504v4/blocks/prose-sec-008",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Two Counting Arguments",
-  "pageStart": 26,
-  "pageEnd": 27,
-  "text": "../sections/sec-008-34-two-counting-arguments.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1301.4504v4",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1301.4504v4",
+  "title": "Why is Alice's Computation Slower than the Black Hole Dynamics?",
+  "pageStart": 23,
+  "pageEnd": 26,
+  "text": "../sections/sec-008-33-why-is-alices-computation-slower-than-the-bla.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1301.4504v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1301.4504v4/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-ph-9502366v1
-doc_title: "arXiv:hep-ph/9502366v1 22 Feb 1995"
+doc_title: "Chiral Perturbation Theory"
 section_id: sec-023-references
 section_title: "References"
 section_number: null
@@ -8,6 +8,7 @@ pages: 50-57
 source_pdf: 9502366v1.pdf
 source_sha256: 56df064956ca03f8
 toc_source: inferred
+doc_brief: "Chiral Perturbation Theory — An introduction to the basic ideas and methods of Chiral Perturbation Theory is presented."
 ---
 Adler S L 1969 Phys. Rev. 177 2426–38
 Adler S L and Bardeen W A 1969 Phys. Rev. 182 1517–36
@@ -63,8 +64,6 @@ Dashen R and Weinstein M 1969 Phys. Rev. 183 1261–91
 Dawson S and Valencia G 1991 Nucl. Phys. B348 23–46; B352 27–44
 De R´ujula et al 1992 Nucl. Phys. B384 3–58
 Devlin T J and Dickey J O 1979 Rev. Mod. Phys. 51 237–50
-Chiral Perturbation Theory
-51
 Di Vecchia P 1980 Acta Phys. Austriaca Suppl. 22 341–81
 Di Vecchia P et al 1981 Nucl. Phys. B181 318–34
 Di Vecchia P and Veneziano G 1980 Nucl. Phys. B171 253–72
@@ -121,8 +120,6 @@ Geng C Q and Ng J N 1990 Phys. Rev. D42 1509–20
 Georgi H 1984 Weak Interactions and Modern Particle Theory (Benjamin / Cummings, Menlo Park)
 —— 1990 Phys. Lett. B240 447–50
 —— 1991 Nucl. Phys. B363 301–25
-52
-A Pich
 Gilman F J and Wise M B 1979 Phys. Rev. D20 2392–407
 Goity J L 1987 Z. Phys. C34 341–5
 Goldberger M L and Treiman S B 1958 Phys. Rev. 110 1178–84
@@ -179,8 +176,6 @@ Hungary, 1991 (World Scientiﬁc, Singapore)
 —— U-G 1993 Rep. Prog. Phys. 56 903–96
 —— 1994 hep-ph/9411300
 Mohapatra R N 1993 Prog. Part. Nucl. Phys. 31 39–76
-Chiral Perturbation Theory
-53
 Molzon W R et al 1978 Phys. Rev. Lett. 41 1213–6
 Morozumi T and Iwasaki H 1989 Progr. Theor. Phys. 82 371–9
 Nambu Y and Jona-Lasinio G 1961 Phys. Rev. 122 345–58
@@ -221,8 +216,6 @@ Wess J and Zumino B 1967 Phys. Rev. 163 1727–35
 —— 1971 Phys. Lett. 37B 95–7
 Witten E 1980 Ann. Phys., NY 128 363–75
 —— 1983 Nucl. Phys. B223 422–32
-54
-A Pich
 Figure captions
 Figure 1. Feynman diagrams for K0
 1 →γ∗γ∗.
@@ -236,8 +229,6 @@ unambiguous events of NA31 (Barr et al 1992), without acceptance corrections.
 Figure 4. Measured (Barr et al 1992) 2γ-invariant-mass distribution for KL →π0γγ
 (——), and estimated background (- - - -). The experimental acceptance is given by the
 crosses. The dotted line simulates the O(p4) ChPT prediction.
-Chiral Perturbation Theory
-55
 +
 π
 +
@@ -264,8 +255,6 @@ Figure 2. Feynman diagram for the K0
 1 →µ+µ−decay. The K0
 1γ∗γ∗vertex is generated through
 the one-loop diagrams shown in ﬁgure 1.
-56
-A Pich
 0.05
 0.1
 0.15
@@ -288,8 +277,6 @@ number of events / 20 MeV
 Figure 3. 2γ-invariant-mass distribution for KL →π0γγ: O(p4) (· · · · · ·), O(p6) with aV = 0
 (- - - -), O(p6) with aV = −0.9 (——). The spectrum is normalized to the 50 unambiguous events of
 NA31 (Barr et al 1992), without acceptance corrections.
-Chiral Perturbation Theory
-57
 14
 12
 10

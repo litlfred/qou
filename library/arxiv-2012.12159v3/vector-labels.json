@@ -1,0 +1,7665 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-2012.12159v3",
+  "pages": [
+    {
+      "page": 13,
+      "rotation": 0,
+      "drawings": 15,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1. Funk billiard reﬂection law"
+      ],
+      "labels": [
+        {
+          "text": "13",
+          "bbox": [
+            126.67,
+            94.71,
+            136.63,
+            104.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A Funk perspective on billiards, projective geometry and Mahler volume",
+          "bbox": [
+            147.37,
+            94.71,
+            464.67,
+            104.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "4. Funk billiards and duality",
+          "bbox": [
+            230.2,
+            120.04,
+            381.76,
+            132.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Let K ⊂int(L) in Pn be a pair of convex bodies. Using the L-Funk metric on",
+          "bbox": [
+            138.63,
+            136.53,
+            485.34,
+            150.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "K, we can consider the corresponding billiard dynamics inside K following [14],",
+          "bbox": [
+            126.67,
+            152.1,
+            485.35,
+            162.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "which we call the L-Funk billiard in K. As it is a non-reversible Finsler structure,",
+          "bbox": [
+            126.67,
+            164.05,
+            485.34,
+            174.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "some care should be taken, however the results we need go through unaltered. In",
+          "bbox": [
+            126.67,
+            176.01,
+            485.35,
+            185.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "particular, using [14, Lemma 3.3] we get the following description of the reﬂection",
+          "bbox": [
+            126.67,
+            187.96,
+            485.37,
+            197.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "law, illustrated in ﬁgure 1.",
+          "bbox": [
+            126.67,
+            199.92,
+            242.21,
+            209.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Assume q1 ∈∂K, and v ∈Sq1K is an incoming ray. Extend the ray until its ﬁrst",
+          "bbox": [
+            138.63,
+            211.75,
+            485.38,
+            223.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "intersection p0 with ∂L. Let Q1 be a hyperplane tangent to ∂K at q1, and P0 the",
+          "bbox": [
+            126.67,
+            223.83,
+            485.33,
+            235.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "hyperplane tangent to L at p0. Let z1 = RPn−2 be the intersection Q1 ∩P0, and",
+          "bbox": [
+            126.67,
+            232.17,
+            485.33,
+            247.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "note that z1 ⊂RPn \\ L. Let P1 be the other tangent hyperplane to ∂L through z1,",
+          "bbox": [
+            126.67,
+            244.0,
+            485.33,
+            259.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "and p1 ∈∂L the tangency point. The vector v′ ∈Sq1K pointing towards p1 is then",
+          "bbox": [
+            126.67,
+            255.95,
+            485.33,
+            271.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the outgoing ray.",
+          "bbox": [
+            126.67,
+            271.65,
+            200.6,
+            281.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "z1",
+          "bbox": [
+            239.59,
+            286.59,
+            247.51,
+            297.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            6.91,
+            9.96
+          ]
+        },
+        {
+          "text": "P0",
+          "bbox": [
+            268.62,
+            290.69,
+            278.29,
+            301.47
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            6.91,
+            9.96
+          ]
+        },
+        {
+          "text": "p0",
+          "bbox": [
+            300.2,
+            293.91,
+            308.48,
+            304.69
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            6.91,
+            9.96
+          ]
+        },
+        {
+          "text": "Q1",
+          "bbox": [
+            284.56,
+            308.34,
+            295.67,
+            319.12
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            6.91,
+            9.96
+          ]
+        },
+        {
+          "text": "v",
+          "bbox": [
+            312.14,
+            313.39,
+            316.85,
+            323.34
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "P1",
+          "bbox": [
+            235.91,
+            317.8,
+            245.58,
+            328.59
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            6.91,
+            9.96
+          ]
+        },
+        {
+          "text": "q1",
+          "bbox": [
+            315.47,
+            321.84,
+            323.18,
+            332.63
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            6.91,
+            9.96
+          ]
+        },
+        {
+          "text": "v′",
+          "bbox": [
+            302.93,
+            334.71,
+            309.9,
+            345.99
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.91,
+            9.96
+          ]
+        },
+        {
+          "text": "q2",
+          "bbox": [
+            253.22,
+            335.35,
+            260.93,
+            346.14
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            6.91,
+            9.96
+          ]
+        },
+        {
+          "text": "p1",
+          "bbox": [
+            234.75,
+            343.6,
+            243.03,
+            354.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            6.91,
+            9.96
+          ]
+        },
+        {
+          "text": "K",
+          "bbox": [
+            292.73,
+            354.52,
+            301.02,
+            364.48
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "L",
+          "bbox": [
+            353.68,
+            365.8,
+            360.31,
+            375.76
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "q0",
+          "bbox": [
+            332.75,
+            372.37,
+            340.46,
+            383.15
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            6.91,
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 1. Funk billiard reﬂection law",
+          "bbox": [
+            221.43,
+            419.59,
+            390.6,
+            431.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Remark 4.1. It is clear from this description that a proper Funk billiard trajectory",
+          "bbox": [
+            126.67,
+            443.75,
+            485.37,
+            453.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "when K, L are smooth and strictly convex, will extend indeﬁnitely, in terms of",
+          "bbox": [
+            126.67,
+            455.7,
+            485.36,
+            465.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "bounces, as a proper billiard trajectory.",
+          "bbox": [
+            126.67,
+            467.66,
+            296.39,
+            477.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "One can also consider the billiard deﬁned by the reverse Funk metric RFunkL(K).",
+          "bbox": [
+            138.63,
+            483.35,
+            485.33,
+            494.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Its billiard trajectories coincide with the time-reversed Funk billiard trajectories of",
+          "bbox": [
+            126.67,
+            495.31,
+            485.37,
+            505.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "FunkL(K).",
+          "bbox": [
+            126.67,
+            507.26,
+            174.33,
+            518.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "The same billiard can also be considered from an outer perspective: the phase",
+          "bbox": [
+            138.63,
+            519.22,
+            485.35,
+            529.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "space then consists of all (n −2)-dimensional planes z ⊂Pn that do not intersect",
+          "bbox": [
+            126.67,
+            527.56,
+            485.33,
+            541.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "L, and the billiard map mapping z0 to z1 is deﬁned by the same diagram, which",
+          "bbox": [
+            126.67,
+            543.13,
+            485.34,
+            554.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "is reproduced in ﬁgure 2 from the outer billiard perspective. By analogy with the",
+          "bbox": [
+            126.67,
+            555.08,
+            485.39,
+            565.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "aﬃne setting, we call this the outer Funk billiard on L with geometry set by K.",
+          "bbox": [
+            126.67,
+            567.04,
+            475.13,
+            577.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Example 4.1. Assume K ⊂B ⊂R2 are two discs centered at the origin. Then",
+          "bbox": [
+            126.67,
+            579.12,
+            485.33,
+            592.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR7",
+            "CMSY10",
+            "CMTI10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the resulting Funk billiard inside K coincides with the standard Euclidean one, as",
+          "bbox": [
+            126.67,
+            594.69,
+            485.32,
+            604.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "illustrated in ﬁgure 3. Indeed, take p0, p1 ∈∂B, and let z be the intersection of",
+          "bbox": [
+            126.67,
+            606.51,
+            485.33,
+            617.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the tangents to B at those points. Since ∡op0z = ∡op1z = ∡oq1z = π",
+          "bbox": [
+            126.67,
+            616.42,
+            434.41,
+            629.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMTI10",
+            "MSAM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2 , the points",
+          "bbox": [
+            430.22,
+            618.6,
+            485.33,
+            632.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "p0, p1, q1, z, o all lie on the circle having zo as its diameter.",
+          "bbox": [
+            126.67,
+            630.55,
+            396.26,
+            641.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "It follows that the",
+          "bbox": [
+            404.51,
+            630.55,
+            485.34,
+            640.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "incidence angle is ∡p0q1z = ∡p0p1z, while the reﬂected angle is ∡p1q1z = ∡p1p0z.",
+          "bbox": [
+            126.67,
+            640.33,
+            485.33,
+            653.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMTI10",
+            "MSAM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "It remains to note that |zp0| = |zp1|.",
+          "bbox": [
+            126.67,
+            654.33,
+            286.2,
+            665.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Examining the Funk billiard law description, we see it is projectively invariant.",
+          "bbox": [
+            138.63,
+            670.16,
+            485.4,
+            680.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The following provides an alternative proof of this fact, and extends the projective",
+          "bbox": [
+            126.67,
+            682.11,
+            485.39,
+            692.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "invariance to include the length spectrum.",
+          "bbox": [
+            126.67,
+            694.07,
+            310.84,
+            704.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 14,
+      "rotation": 0,
+      "drawings": 33,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2. Funk outer billiard reﬂection law",
+        "Figure 3. Funk billiard in concentric discs"
+      ],
+      "labels": [
+        {
+          "text": "14",
+          "bbox": [
+            126.67,
+            94.71,
+            136.63,
+            104.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A Funk perspective on billiards, projective geometry and Mahler volume",
+          "bbox": [
+            147.37,
+            94.71,
+            464.67,
+            104.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "z1",
+          "bbox": [
+            234.72,
+            117.23,
+            242.1,
+            127.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            6.45,
+            9.28
+          ]
+        },
+        {
+          "text": "P0",
+          "bbox": [
+            261.78,
+            121.05,
+            270.8,
+            131.11
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            6.45,
+            9.28
+          ]
+        },
+        {
+          "text": "p0",
+          "bbox": [
+            291.23,
+            124.05,
+            298.96,
+            134.11
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            6.45,
+            9.28
+          ]
+        },
+        {
+          "text": "z0",
+          "bbox": [
+            369.68,
+            134.17,
+            377.07,
+            144.22
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            6.45,
+            9.28
+          ]
+        },
+        {
+          "text": "Q1",
+          "bbox": [
+            276.65,
+            137.51,
+            287.01,
+            147.56
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            6.45,
+            9.28
+          ]
+        },
+        {
+          "text": "q1",
+          "bbox": [
+            305.47,
+            150.1,
+            312.66,
+            160.16
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            6.45,
+            9.28
+          ]
+        },
+        {
+          "text": "K",
+          "bbox": [
+            284.27,
+            180.57,
+            292.0,
+            189.86
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            9.28
+          ]
+        },
+        {
+          "text": "L",
+          "bbox": [
+            341.1,
+            191.09,
+            347.28,
+            200.37
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            9.28
+          ]
+        },
+        {
+          "text": "q0",
+          "bbox": [
+            321.58,
+            197.21,
+            328.77,
+            207.27
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            6.45,
+            9.28
+          ]
+        },
+        {
+          "text": "Figure 2. Funk outer billiard reﬂection law",
+          "bbox": [
+            208.41,
+            242.19,
+            403.62,
+            254.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "p0",
+          "bbox": [
+            293.42,
+            262.9,
+            303.17,
+            275.81
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR17"
+          ],
+          "sizes": [
+            9.3,
+            11.16
+          ]
+        },
+        {
+          "text": "q1",
+          "bbox": [
+            320.31,
+            286.51,
+            329.42,
+            299.42
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR17"
+          ],
+          "sizes": [
+            9.3,
+            11.16
+          ]
+        },
+        {
+          "text": "z",
+          "bbox": [
+            234.72,
+            287.95,
+            239.8,
+            299.1
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.16
+          ]
+        },
+        {
+          "text": "o",
+          "bbox": [
+            321.95,
+            319.35,
+            327.21,
+            330.51
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.16
+          ]
+        },
+        {
+          "text": "q0",
+          "bbox": [
+            350.49,
+            320.99,
+            359.6,
+            333.9
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR17"
+          ],
+          "sizes": [
+            9.3,
+            11.16
+          ]
+        },
+        {
+          "text": "p1",
+          "bbox": [
+            259.56,
+            351.37,
+            269.31,
+            364.28
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR17"
+          ],
+          "sizes": [
+            9.3,
+            11.16
+          ]
+        },
+        {
+          "text": "Figure 3. Funk billiard in concentric discs",
+          "bbox": [
+            210.59,
+            400.57,
+            401.44,
+            412.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Proposition 4.2. Choose a hyperplane at inﬁnity η ∈int(L∨). The corresponding",
+          "bbox": [
+            126.67,
+            429.31,
+            485.34,
+            440.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "L-Funk billiard reﬂection law in the interior of K is then independent of η, and",
+          "bbox": [
+            126.67,
+            442.63,
+            485.33,
+            452.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "thus projectively invariant. Furthermore, the L-Funk length of a periodic orbit is",
+          "bbox": [
+            126.67,
+            454.59,
+            485.34,
+            464.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "also projectively invariant.",
+          "bbox": [
+            126.67,
+            466.54,
+            241.77,
+            476.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Proof. Let dη(x, y) be the (L, η)-Funk distance from x to y. Replacing η by η′, we",
+          "bbox": [
+            126.67,
+            484.01,
+            485.32,
+            496.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "have dη′(x, y) = dη(x, y) + h(y) −h(x) for some h = hη,η′ by Proposition 3.7.",
+          "bbox": [
+            126.67,
+            496.84,
+            463.06,
+            508.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMSY5"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Now let p, r ∈∂K be ﬁxed points. Then p, q, r are consecutive reﬂection points of",
+          "bbox": [
+            138.63,
+            509.16,
+            485.33,
+            519.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the billiard if q is an extremal point for dη(p, q)+dη(q, r). Since dη′(p, q)+dη′(q, r) =",
+          "bbox": [
+            126.67,
+            521.25,
+            485.33,
+            532.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY5"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "dη(p, q) + dη(q, r) + h(r) −h(p), this condition is independent of η.",
+          "bbox": [
+            126.67,
+            533.07,
+            418.92,
+            544.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Finally, if p0, . . . , pN−1, pN = p0 is a periodic orbit, then evidently",
+          "bbox": [
+            138.63,
+            545.16,
+            427.05,
+            556.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "N−1",
+          "bbox": [
+            133.1,
+            562.26,
+            150.36,
+            569.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "N−1",
+          "bbox": [
+            218.72,
+            562.26,
+            235.98,
+            569.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "N−1",
+          "bbox": [
+            300.54,
+            562.26,
+            317.8,
+            569.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "N−1",
+          "bbox": [
+            406.49,
+            562.26,
+            423.75,
+            569.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            134.54,
+            570.16,
+            148.93,
+            580.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            220.15,
+            570.16,
+            234.55,
+            580.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            301.97,
+            570.16,
+            316.37,
+            580.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            407.92,
+            570.16,
+            422.32,
+            580.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(h(pj+1) −h(pj)) =",
+          "bbox": [
+            317.79,
+            572.34,
+            403.73,
+            583.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "dη′(pj, pj+1) =",
+          "bbox": [
+            152.02,
+            572.46,
+            215.96,
+            583.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY5"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "dη(pj, pj+1) +",
+          "bbox": [
+            237.64,
+            572.46,
+            298.33,
+            583.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "dη(pj, pj+1),",
+          "bbox": [
+            425.4,
+            572.46,
+            478.9,
+            583.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "j=0",
+          "bbox": [
+            134.84,
+            586.56,
+            148.63,
+            593.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "j=0",
+          "bbox": [
+            220.46,
+            586.56,
+            234.25,
+            593.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "j=0",
+          "bbox": [
+            302.27,
+            586.56,
+            316.06,
+            593.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "j=0",
+          "bbox": [
+            408.22,
+            586.56,
+            422.01,
+            593.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "□",
+          "bbox": [
+            477.58,
+            598.08,
+            485.33,
+            608.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSAM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "concluding the proof.",
+          "bbox": [
+            126.67,
+            600.26,
+            219.15,
+            610.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Example 4.2. Consider the Euclidean ball Bn ⊂Rn. The Funk Finsler norm in",
+          "bbox": [
+            126.67,
+            616.71,
+            485.35,
+            630.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI7",
+            "CMSY10",
+            "CMTI10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "int(Bn) is given by",
+          "bbox": [
+            126.67,
+            631.13,
+            209.45,
+            642.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(1 −|x|2)|v|2 + ⟨x, v⟩2",
+          "bbox": [
+            256.72,
+            648.11,
+            351.73,
+            660.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "p",
+          "bbox": [
+            246.76,
+            649.63,
+            256.72,
+            659.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "⟨x, v⟩",
+          "bbox": [
+            371.69,
+            651.04,
+            394.75,
+            661.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "φx(v) =",
+          "bbox": [
+            208.39,
+            657.91,
+            242.8,
+            668.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            355.63,
+            657.91,
+            363.38,
+            667.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1 −|x|2 .",
+          "bbox": [
+            366.79,
+            657.91,
+            403.61,
+            674.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1 −|x|2",
+          "bbox": [
+            283.06,
+            664.2,
+            315.42,
+            674.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "The ﬁrst summand is the Beltrami-Klein model of hyperbolic geometry . The second",
+          "bbox": [
+            126.67,
+            680.92,
+            485.38,
+            690.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Pn",
+          "bbox": [
+            260.55,
+            690.2,
+            275.99,
+            702.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            244.04,
+            691.29,
+            248.02,
+            698.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "summand is the 1-form",
+          "bbox": [
+            126.67,
+            692.87,
+            229.22,
+            702.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "j=1 xjdxj, which is exact. Consequently, for any",
+          "bbox": [
+            271.07,
+            692.87,
+            485.35,
+            705.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1−|x|2",
+          "bbox": [
+            234.36,
+            698.21,
+            257.2,
+            705.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR5",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        }
+      ]
+    },
+    {
+      "page": 15,
+      "rotation": 0,
+      "drawings": 25,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 4. Dual Funk - reverse Funk billiard dynamics"
+      ],
+      "labels": [
+        {
+          "text": "15",
+          "bbox": [
+            126.67,
+            94.71,
+            136.63,
+            104.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A Funk perspective on billiards, projective geometry and Mahler volume",
+          "bbox": [
+            147.37,
+            94.71,
+            464.67,
+            104.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "domain K ⊂int(Bn), the Bn-Funk billiard in K coincides with the hyperbolic",
+          "bbox": [
+            126.67,
+            120.93,
+            485.34,
+            132.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "billiard, and the length of periodic orbits is the same in both geometries.",
+          "bbox": [
+            126.67,
+            134.17,
+            440.37,
+            144.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A careful examination of the reﬂection law shows that it is anti-symmetric under",
+          "bbox": [
+            138.63,
+            151.66,
+            485.36,
+            161.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the duality (K, L) ↔(L∨, K∨), namely a Funk billiard trajectory in one naturally",
+          "bbox": [
+            126.67,
+            162.25,
+            485.39,
+            173.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "deﬁnes a reverse Funk billiard trajectory in the other, which we call the dual tra-",
+          "bbox": [
+            126.67,
+            175.57,
+            485.38,
+            185.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "jectory, as follows. Let us write Qj = LK(qj) = Tqj∂K ∈∂K∨for qj ∈∂K, and",
+          "bbox": [
+            126.67,
+            186.16,
+            485.34,
+            198.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "similarly Pj ∈∂L∨for pj ∈∂L. We identify the phase space with a subset of",
+          "bbox": [
+            126.67,
+            198.11,
+            485.34,
+            210.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "{(q, p) : q ∈∂K, p ∈∂L∨}, where (q, p) represents the outgoing ray from q in the",
+          "bbox": [
+            126.67,
+            210.07,
+            485.33,
+            221.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "direction of p.",
+          "bbox": [
+            126.67,
+            223.39,
+            187.34,
+            233.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The billiard tranformation (q0, p0) 7→(q1, p1) can be understood as two dual",
+          "bbox": [
+            138.63,
+            235.22,
+            485.34,
+            246.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "billiards unraveling simultaneously, taking alternating steps:",
+          "bbox": [
+            126.67,
+            247.3,
+            399.55,
+            257.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the Funk billiard",
+          "bbox": [
+            407.93,
+            247.3,
+            485.42,
+            257.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In P, the ray arrives",
+          "bbox": [
+            391.01,
+            257.08,
+            485.33,
+            269.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "FunkL(K), and the reverse Funk billiard RFunkK∨(L∨).",
+          "bbox": [
+            126.67,
+            257.89,
+            382.03,
+            270.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY5",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "at q1 ∈∂K, and Q1 = LK(q1) is marked on ∂K∨. In P∨, the interval from Q1 to",
+          "bbox": [
+            126.67,
+            269.04,
+            485.33,
+            282.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "P0 = LL(p0) (which avoids L∨) is extended until its second intersection P1 with",
+          "bbox": [
+            126.67,
+            281.8,
+            485.33,
+            294.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "∂L∨. Now p1 = LL∨(P1) ∈∂L is marked, and the outgoing ray from q1 is (q1, p1).",
+          "bbox": [
+            126.67,
+            293.75,
+            485.33,
+            306.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY5",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "This dual dynamic is illustrated in ﬁgure 4, where the same letter is used for both",
+          "bbox": [
+            126.67,
+            307.08,
+            485.37,
+            317.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "a point and its dual hyperplane.",
+          "bbox": [
+            126.67,
+            319.03,
+            267.1,
+            329.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "z1",
+          "bbox": [
+            133.35,
+            338.4,
+            141.81,
+            349.92
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.39,
+            10.64
+          ]
+        },
+        {
+          "text": "Q2",
+          "bbox": [
+            429.64,
+            339.55,
+            441.51,
+            351.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.39,
+            10.64
+          ]
+        },
+        {
+          "text": "P0",
+          "bbox": [
+            160.12,
+            339.81,
+            170.45,
+            351.33
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.39,
+            10.64
+          ]
+        },
+        {
+          "text": "q2",
+          "bbox": [
+            372.23,
+            340.77,
+            380.46,
+            352.29
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.39,
+            10.64
+          ]
+        },
+        {
+          "text": "p0",
+          "bbox": [
+            190.74,
+            342.78,
+            199.58,
+            354.3
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.39,
+            10.64
+          ]
+        },
+        {
+          "text": "Z1",
+          "bbox": [
+            340.17,
+            345.4,
+            350.92,
+            356.92
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.39,
+            10.64
+          ]
+        },
+        {
+          "text": "p1",
+          "bbox": [
+            361.34,
+            351.1,
+            370.19,
+            362.62
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.39,
+            10.64
+          ]
+        },
+        {
+          "text": "Q1",
+          "bbox": [
+            175.58,
+            356.07,
+            187.45,
+            367.59
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.39,
+            10.64
+          ]
+        },
+        {
+          "text": "P1",
+          "bbox": [
+            440.91,
+            358.85,
+            451.24,
+            370.37
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.39,
+            10.64
+          ]
+        },
+        {
+          "text": "P1",
+          "bbox": [
+            128.41,
+            364.79,
+            138.74,
+            376.31
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.39,
+            10.64
+          ]
+        },
+        {
+          "text": "q1",
+          "bbox": [
+            348.25,
+            368.48,
+            356.48,
+            380.0
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.39,
+            10.64
+          ]
+        },
+        {
+          "text": "q1",
+          "bbox": [
+            205.54,
+            368.51,
+            213.77,
+            380.04
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.39,
+            10.64
+          ]
+        },
+        {
+          "text": "z1",
+          "bbox": [
+            405.97,
+            373.36,
+            414.43,
+            384.88
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.39,
+            10.64
+          ]
+        },
+        {
+          "text": "Z1",
+          "bbox": [
+            169.57,
+            375.76,
+            180.32,
+            387.29
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.39,
+            10.64
+          ]
+        },
+        {
+          "text": "q2",
+          "bbox": [
+            145.19,
+            380.96,
+            153.43,
+            392.48
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.39,
+            10.64
+          ]
+        },
+        {
+          "text": "L∨",
+          "bbox": [
+            424.98,
+            384.34,
+            436.99,
+            396.39
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.39,
+            10.64
+          ]
+        },
+        {
+          "text": "p1",
+          "bbox": [
+            127.29,
+            388.56,
+            136.14,
+            400.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.39,
+            10.64
+          ]
+        },
+        {
+          "text": "P0",
+          "bbox": [
+            384.26,
+            396.89,
+            394.6,
+            408.41
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.39,
+            10.64
+          ]
+        },
+        {
+          "text": "K",
+          "bbox": [
+            183.49,
+            398.62,
+            192.36,
+            409.26
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            10.64
+          ]
+        },
+        {
+          "text": "Q1",
+          "bbox": [
+            369.13,
+            404.24,
+            381.0,
+            415.76
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.39,
+            10.64
+          ]
+        },
+        {
+          "text": "P2",
+          "bbox": [
+            453.85,
+            406.31,
+            464.19,
+            417.83
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.39,
+            10.64
+          ]
+        },
+        {
+          "text": "L",
+          "bbox": [
+            242.58,
+            409.01,
+            249.66,
+            419.65
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            10.64
+          ]
+        },
+        {
+          "text": "p0",
+          "bbox": [
+            407.38,
+            409.33,
+            416.22,
+            420.85
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.39,
+            10.64
+          ]
+        },
+        {
+          "text": "Q2",
+          "bbox": [
+            149.39,
+            413.24,
+            161.26,
+            424.76
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.39,
+            10.64
+          ]
+        },
+        {
+          "text": "q0",
+          "bbox": [
+            222.29,
+            415.06,
+            230.53,
+            426.58
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            7.39,
+            10.64
+          ]
+        },
+        {
+          "text": "K∨",
+          "bbox": [
+            423.88,
+            421.37,
+            438.43,
+            433.42
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.39,
+            10.64
+          ]
+        },
+        {
+          "text": "Figure 4. Dual Funk - reverse Funk billiard dynamics",
+          "bbox": [
+            185.25,
+            460.82,
+            426.79,
+            472.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We thus established the following.",
+          "bbox": [
+            138.63,
+            486.17,
+            287.42,
+            496.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Proposition 4.3. Let q0, q1, · · · ∈∂K be an L-Funk billiard trajectory in K. Let",
+          "bbox": [
+            126.67,
+            503.53,
+            485.33,
+            514.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR7",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "pj ∈∂L be the ﬁrst intersection of the extension of the oriented segment [qj, qj+1]",
+          "bbox": [
+            126.67,
+            515.49,
+            485.33,
+            526.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Then P0, P1, . . . is a K∨-",
+          "bbox": [
+            369.38,
+            526.2,
+            485.33,
+            538.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "CMSY7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "with ∂L, and Pj the hyperplane tangent to L at pj.",
+          "bbox": [
+            126.67,
+            527.57,
+            361.35,
+            539.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "reverse Funk billiard trajectory in L∨.",
+          "bbox": [
+            126.67,
+            538.16,
+            299.13,
+            549.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "In the plane, the two orbits have equal",
+          "bbox": [
+            308.09,
+            539.53,
+            485.34,
+            549.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "rotation number.",
+          "bbox": [
+            126.67,
+            551.48,
+            199.5,
+            561.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Remark 4.4. The stark similarity to the duality in Minkowski billiards is not",
+          "bbox": [
+            126.67,
+            568.98,
+            485.37,
+            578.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "without reason.",
+          "bbox": [
+            126.67,
+            580.93,
+            194.12,
+            590.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In the limit when L is much bigger than K, the Funk billiard",
+          "bbox": [
+            202.84,
+            580.93,
+            485.35,
+            590.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "becomes Minkowski, much like the hyperbolic plane is almost Euclidean in small",
+          "bbox": [
+            126.67,
+            592.89,
+            485.38,
+            602.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "scale. More precisely, take K ⊂L ⊂Rn, ﬁx a ∈L and set LR = a + R(L −a).",
+          "bbox": [
+            126.67,
+            602.67,
+            485.33,
+            616.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMTI10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Then as R →∞, the Funk billiard orbits in K converge to the Minkowski billiard",
+          "bbox": [
+            126.67,
+            616.67,
+            485.34,
+            626.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "orbits with geometry given by L centered at a. In particular, if L is the Euclidean",
+          "bbox": [
+            126.67,
+            628.75,
+            485.33,
+            638.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ball and a its center, we recover the Euclidean billiard inside K.",
+          "bbox": [
+            126.67,
+            640.71,
+            406.04,
+            650.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Consider the case of the projective plane.",
+          "bbox": [
+            138.63,
+            658.2,
+            326.44,
+            668.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Since the Funk billiard trajectory",
+          "bbox": [
+            334.47,
+            658.2,
+            485.38,
+            668.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "consists of straight segments and preserves the symplectic form on the phase space",
+          "bbox": [
+            126.67,
+            670.16,
+            485.31,
+            680.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "[14, Theorem 4.3], Birkhoﬀ’s theorem on the existence of two m-periodic orbits, for",
+          "bbox": [
+            126.67,
+            682.11,
+            485.35,
+            692.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "any m ≥2 and any rotation number, remains valid.",
+          "bbox": [
+            126.67,
+            693.94,
+            352.02,
+            704.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 16,
+      "rotation": 0,
+      "drawings": 34,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 5. 2-periodic orbits in a pair of discs",
+        "Figure 6. 2-periodic orbit"
+      ],
+      "labels": [
+        {
+          "text": "16",
+          "bbox": [
+            126.67,
+            94.71,
+            136.63,
+            104.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A Funk perspective on billiards, projective geometry and Mahler volume",
+          "bbox": [
+            147.37,
+            94.71,
+            464.67,
+            104.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "As an example, the two 2-periodic orbits when K ⊂L are two non-concentric",
+          "bbox": [
+            138.63,
+            122.08,
+            485.33,
+            132.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "circles appear in ﬁgure 5.",
+          "bbox": [
+            126.67,
+            134.17,
+            236.69,
+            144.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 5. 2-periodic orbits in a pair of discs",
+          "bbox": [
+            206.6,
+            294.31,
+            405.42,
+            306.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "To motivate the next result, let us consider 2-periodic orbits in general. Assume",
+          "bbox": [
+            138.63,
+            323.6,
+            485.34,
+            333.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "that q0, q1 ∈∂K are the bounce points of a 2-periodic orbit γ of the L-Funk billiard",
+          "bbox": [
+            126.67,
+            335.43,
+            485.35,
+            346.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "in K, and p0, p1 ∈∂L the corresponding intersection points, appearing on the line",
+          "bbox": [
+            126.67,
+            347.39,
+            485.37,
+            358.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "in the order p1, q0, q1, p0 as in ﬁgure 6. Note that γ is also a reverse Funk billiard",
+          "bbox": [
+            126.67,
+            359.47,
+            485.34,
+            370.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "orbit. Its Funk length is twice the Hilbert distance between the points:",
+          "bbox": [
+            126.67,
+            371.42,
+            436.52,
+            381.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "L (γ) = log |p1q1|",
+          "bbox": [
+            254.73,
+            388.13,
+            333.79,
+            407.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "|p1q0| + log |q0p0|",
+          "bbox": [
+            309.86,
+            388.13,
+            386.82,
+            412.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "LengthF",
+          "bbox": [
+            160.2,
+            392.88,
+            195.84,
+            404.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "L(γ) = LengthRF",
+          "bbox": [
+            190.78,
+            392.88,
+            265.82,
+            406.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "|q1p0| = 2dH",
+          "bbox": [
+            362.89,
+            393.22,
+            417.99,
+            412.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "L (q0, q1).",
+          "bbox": [
+            411.46,
+            395.0,
+            451.8,
+            407.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "p1",
+          "bbox": [
+            299.11,
+            430.75,
+            307.21,
+            441.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            6.77,
+            9.75
+          ]
+        },
+        {
+          "text": "P1",
+          "bbox": [
+            343.7,
+            447.39,
+            353.17,
+            457.95
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            6.77,
+            9.75
+          ]
+        },
+        {
+          "text": "q0",
+          "bbox": [
+            293.56,
+            455.82,
+            301.11,
+            466.37
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            6.77,
+            9.75
+          ]
+        },
+        {
+          "text": "Q0",
+          "bbox": [
+            327.26,
+            468.35,
+            338.13,
+            478.91
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            6.77,
+            9.75
+          ]
+        },
+        {
+          "text": "Q1",
+          "bbox": [
+            326.03,
+            488.49,
+            336.9,
+            499.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            6.77,
+            9.75
+          ]
+        },
+        {
+          "text": "q1",
+          "bbox": [
+            293.56,
+            493.01,
+            301.11,
+            503.57
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            6.77,
+            9.75
+          ]
+        },
+        {
+          "text": "P0",
+          "bbox": [
+            345.14,
+            499.79,
+            354.61,
+            510.35
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            6.77,
+            9.75
+          ]
+        },
+        {
+          "text": "p0",
+          "bbox": [
+            300.34,
+            525.07,
+            308.45,
+            535.62
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            6.77,
+            9.75
+          ]
+        },
+        {
+          "text": "Figure 6. 2-periodic orbit",
+          "bbox": [
+            246.41,
+            549.0,
+            365.61,
+            561.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Since,",
+          "bbox": [
+            138.63,
+            576.08,
+            164.09,
+            586.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "L (q0, q1) = 1",
+          "bbox": [
+            160.18,
+            591.86,
+            217.21,
+            611.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2 log[p1, q0, q1, p0] = 1",
+          "bbox": [
+            212.23,
+            591.86,
+            308.01,
+            615.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "dH",
+          "bbox": [
+            155.0,
+            596.82,
+            166.71,
+            608.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2 log[P1, Q0, Q1, P0] = dH",
+          "bbox": [
+            303.03,
+            596.82,
+            413.97,
+            615.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "K∨(P0, P1),",
+          "bbox": [
+            407.44,
+            598.6,
+            457.0,
+            610.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY5"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "it holds that dual 2-periodic orbits have equal length. In fact, the duality of billiard",
+          "bbox": [
+            126.67,
+            619.77,
+            485.43,
+            629.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "orbits extends to the metric realm in full generality.",
+          "bbox": [
+            126.67,
+            631.73,
+            353.01,
+            641.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We now assume K ⊂int(L) are smooth, strictly convex bodies in RPn.",
+          "bbox": [
+            138.63,
+            641.51,
+            448.7,
+            653.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Theorem 4.5. Dual periodic orbits in FunkL(K) and RFunkK∨(L∨) have equal",
+          "bbox": [
+            126.67,
+            661.53,
+            485.34,
+            673.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY5",
+            "CMSY7",
+            "CMTI10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "lengths.",
+          "bbox": [
+            126.67,
+            674.85,
+            159.52,
+            684.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We will need the following auxiliary fact of independent interest.",
+          "bbox": [
+            138.63,
+            694.07,
+            421.35,
+            704.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 19,
+      "rotation": 0,
+      "drawings": 28,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 7. Outer caustic"
+      ],
+      "labels": [
+        {
+          "text": "19",
+          "bbox": [
+            126.67,
+            94.71,
+            136.63,
+            104.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A Funk perspective on billiards, projective geometry and Mahler volume",
+          "bbox": [
+            147.37,
+            94.71,
+            464.67,
+            104.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In particular, if K is an ellipsoid nested in Bn, the Funk billiard in K is com-",
+          "bbox": [
+            138.63,
+            120.93,
+            485.32,
+            132.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "pletely integrable [34, 28]. We now recover and reﬁne this observation in the case",
+          "bbox": [
+            126.67,
+            134.17,
+            485.36,
+            144.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of the projective plane by analyzing the Funk billiard directly. Let K ⊂int(B) be",
+          "bbox": [
+            126.67,
+            145.99,
+            485.33,
+            156.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "nested conics in P2.",
+          "bbox": [
+            126.67,
+            155.9,
+            212.06,
+            168.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Theorem 5.1. Any given orbit in FunkB(K) remains tangent to a conic Qi, while",
+          "bbox": [
+            126.67,
+            176.02,
+            485.34,
+            186.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the points of the outer orbit all lie on a conic Qo. Furthermore, Qo belongs to the",
+          "bbox": [
+            126.67,
+            187.97,
+            485.33,
+            199.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "linear pencil of conics deﬁned by QK = ∂K, QB = ∂B, while Qi belongs to the dual",
+          "bbox": [
+            126.67,
+            199.93,
+            485.33,
+            211.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "pencil. Moreover, the quadruplet Qi, QK, QB, Qo is harmonic.",
+          "bbox": [
+            126.67,
+            211.88,
+            396.7,
+            223.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Proof. We ﬁrst observe that by Proposition 4.3, the existence of an inner caustic",
+          "bbox": [
+            126.67,
+            229.82,
+            485.36,
+            239.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "implies the existence of an outer caustic and vice versa. Moreover, the outer caustic",
+          "bbox": [
+            126.67,
+            241.78,
+            485.34,
+            251.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "belongs to the linear pencil of QK, QB if and only if the inner caustic lies on the",
+          "bbox": [
+            126.67,
+            253.73,
+            485.36,
+            265.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "dual pencil.",
+          "bbox": [
+            126.67,
+            265.69,
+            177.33,
+            275.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Let us establish the existence of an outer caustic which belongs to the linear",
+          "bbox": [
+            138.63,
+            277.64,
+            485.34,
+            287.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "pencil through QK and QB.",
+          "bbox": [
+            126.67,
+            289.6,
+            254.07,
+            301.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "We may assume B is the unit disc.",
+          "bbox": [
+            262.19,
+            289.6,
+            422.99,
+            299.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "By applying",
+          "bbox": [
+            431.11,
+            289.6,
+            485.35,
+            299.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "a projective transformation preserving B, we may further assume that QK is a",
+          "bbox": [
+            126.67,
+            301.56,
+            485.32,
+            313.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "centered ellipse, that is QK = {q : ⟨Aq, q⟩= 1}. Consider a point z0 ∈Bc, and let",
+          "bbox": [
+            126.67,
+            312.23,
+            485.34,
+            324.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "z1 be its image under the outer Funk billiard map. Each zj belongs to a unique conic",
+          "bbox": [
+            126.67,
+            325.47,
+            485.34,
+            336.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "in the linear pencil, which is parametrized by t ∈R, Qt := {⟨(A + tI)v, v⟩= 1 + t}.",
+          "bbox": [
+            126.67,
+            335.24,
+            485.33,
+            348.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "It remains to show that t1 = t2, or equivalently",
+          "bbox": [
+            126.67,
+            349.38,
+            332.83,
+            360.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "⟨Az0, z0⟩−1",
+          "bbox": [
+            241.77,
+            363.85,
+            296.78,
+            374.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "= ⟨Az1, z1⟩−1",
+          "bbox": [
+            300.74,
+            363.85,
+            367.47,
+            380.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            368.66,
+            370.72,
+            371.43,
+            380.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(4)",
+          "bbox": [
+            472.6,
+            370.72,
+            485.33,
+            380.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1 −|z0|2",
+          "bbox": [
+            251.14,
+            377.01,
+            286.91,
+            388.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1 −|z1|2",
+          "bbox": [
+            321.83,
+            377.01,
+            357.6,
+            388.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Let p0 ∈QB be the tangency point of [z0, z1]. Denoting ∥v∥A := ⟨Av, v⟩, we have",
+          "bbox": [
+            126.67,
+            392.58,
+            481.16,
+            404.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "|z0|2 −1",
+          "bbox": [
+            226.82,
+            404.76,
+            263.09,
+            419.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "|z1|2 −1 = |z0 −p0|2",
+          "bbox": [
+            226.82,
+            407.23,
+            319.03,
+            432.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "|z1 −p|2 = ∥z0 −p0∥2",
+          "bbox": [
+            280.99,
+            407.23,
+            379.9,
+            433.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            375.92,
+            413.59,
+            381.91,
+            420.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            383.61,
+            415.25,
+            386.38,
+            425.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "∥z1 −p0∥2",
+          "bbox": [
+            335.2,
+            420.98,
+            379.9,
+            433.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            375.92,
+            427.34,
+            381.91,
+            434.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "the last inequality due to the fact that z0, pp0, z1 lie on one line. Similarly,",
+          "bbox": [
+            126.67,
+            437.12,
+            452.27,
+            448.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "⟨Az1, z1⟩−1 = ∥z0 −q0∥2",
+          "bbox": [
+            245.95,
+            451.08,
+            360.77,
+            476.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "⟨Az0, z0⟩−1",
+          "bbox": [
+            245.95,
+            452.23,
+            300.96,
+            463.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            356.79,
+            457.44,
+            362.78,
+            464.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            364.48,
+            459.1,
+            367.25,
+            469.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "∥z1 −q1∥2",
+          "bbox": [
+            316.64,
+            464.84,
+            360.77,
+            477.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            356.79,
+            471.2,
+            362.78,
+            478.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Thus (4) becomes",
+          "bbox": [
+            126.67,
+            481.53,
+            204.26,
+            491.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "⇐⇒sin ∡Az0q0p0",
+          "bbox": [
+            287.62,
+            499.79,
+            367.2,
+            518.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSAM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "= sin ∡Az1q1p0",
+          "bbox": [
+            371.65,
+            499.79,
+            437.95,
+            518.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "MSAM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "∥z0 −q0∥A",
+          "bbox": [
+            171.07,
+            501.84,
+            217.22,
+            513.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "= ∥z1 −q1∥A",
+          "bbox": [
+            221.96,
+            501.84,
+            280.11,
+            518.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            439.64,
+            508.71,
+            442.41,
+            518.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "sin ∡Az0p0q0",
+          "bbox": [
+            312.61,
+            513.37,
+            367.2,
+            526.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "MSAM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "sin ∡Az1p0q1",
+          "bbox": [
+            383.37,
+            513.37,
+            437.95,
+            526.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "MSAM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "∥z0 −p0∥A",
+          "bbox": [
+            170.79,
+            515.41,
+            217.5,
+            526.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "∥z1 −p0∥A",
+          "bbox": [
+            233.68,
+            515.41,
+            280.39,
+            526.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "where ∡A is the angle with respect to ∥• ∥A. As ∡Az0p0q0 + ∡Az1p0q1 = π, it",
+          "bbox": [
+            126.67,
+            526.43,
+            485.33,
+            540.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSAM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "remains to notice that ∡Az0q0p0 = 1",
+          "bbox": [
+            126.67,
+            538.39,
+            286.58,
+            552.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "MSAM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2∡Aq0oq1 = ∡Az1q1p0.",
+          "bbox": [
+            282.6,
+            538.39,
+            381.35,
+            553.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "MSAM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "q0",
+          "bbox": [
+            307.9,
+            588.46,
+            314.94,
+            598.31
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            6.32,
+            9.1
+          ]
+        },
+        {
+          "text": "z0",
+          "bbox": [
+            220.36,
+            589.92,
+            227.6,
+            599.77
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            6.32,
+            9.1
+          ]
+        },
+        {
+          "text": "QK",
+          "bbox": [
+            322.88,
+            603.53,
+            335.2,
+            613.38
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            6.32,
+            9.1
+          ]
+        },
+        {
+          "text": "q1",
+          "bbox": [
+            290.59,
+            606.23,
+            297.63,
+            616.08
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            6.32,
+            9.1
+          ]
+        },
+        {
+          "text": "o",
+          "bbox": [
+            311.14,
+            614.81,
+            315.42,
+            623.91
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            9.1
+          ]
+        },
+        {
+          "text": "QB",
+          "bbox": [
+            335.35,
+            638.61,
+            347.1,
+            648.46
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            6.32,
+            9.1
+          ]
+        },
+        {
+          "text": "Qt",
+          "bbox": [
+            221.78,
+            646.77,
+            231.07,
+            656.63
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            6.32,
+            9.1
+          ]
+        },
+        {
+          "text": "p0",
+          "bbox": [
+            268.57,
+            648.13,
+            276.14,
+            657.98
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            6.32,
+            9.1
+          ]
+        },
+        {
+          "text": "z1",
+          "bbox": [
+            298.28,
+            668.18,
+            305.51,
+            678.03
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            6.32,
+            9.1
+          ]
+        },
+        {
+          "text": "Figure 7. Outer caustic",
+          "bbox": [
+            250.82,
+            691.89,
+            361.17,
+            704.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 20,
+      "rotation": 0,
+      "drawings": 10,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 8. Relating the inner and outer caustics"
+      ],
+      "labels": [
+        {
+          "text": "20",
+          "bbox": [
+            126.67,
+            94.71,
+            136.63,
+            104.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A Funk perspective on billiards, projective geometry and Mahler volume",
+          "bbox": [
+            147.37,
+            94.71,
+            464.67,
+            104.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "For the last statement, we consider a point z ∈Qt, tangent to QB at p and to",
+          "bbox": [
+            138.63,
+            122.08,
+            485.33,
+            133.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "QK at q as in ﬁgure 8.",
+          "bbox": [
+            126.67,
+            134.17,
+            225.17,
+            145.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "q",
+          "bbox": [
+            307.9,
+            183.1,
+            311.84,
+            192.2
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            9.1
+          ]
+        },
+        {
+          "text": "z",
+          "bbox": [
+            220.36,
+            184.56,
+            224.5,
+            193.66
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            9.1
+          ]
+        },
+        {
+          "text": "QK",
+          "bbox": [
+            322.88,
+            198.17,
+            335.2,
+            208.02
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            6.32,
+            9.1
+          ]
+        },
+        {
+          "text": "QB",
+          "bbox": [
+            335.35,
+            233.25,
+            347.1,
+            243.1
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            6.32,
+            9.1
+          ]
+        },
+        {
+          "text": "Qt",
+          "bbox": [
+            221.78,
+            241.42,
+            231.07,
+            251.27
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            6.32,
+            9.1
+          ]
+        },
+        {
+          "text": "p",
+          "bbox": [
+            268.57,
+            242.77,
+            273.04,
+            251.87
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            9.1
+          ]
+        },
+        {
+          "text": "Figure 8. Relating the inner and outer caustics",
+          "bbox": [
+            199.24,
+            286.53,
+            412.77,
+            298.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Deﬁne the conic Q by Q−1 := (Q−1",
+          "bbox": [
+            138.63,
+            311.56,
+            292.96,
+            325.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "B Qo)Q−1",
+          "bbox": [
+            282.76,
+            313.16,
+            327.71,
+            328.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "K . To show that Qi = Q, we ought to",
+          "bbox": [
+            317.51,
+            315.18,
+            485.33,
+            328.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "prove that p −q is tangent to Q. Now the line through p, q is represented in R3 by",
+          "bbox": [
+            126.67,
+            323.6,
+            485.33,
+            337.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "w := (p, 1) × (p −q, 0) = (J(p −q), det(p, p −q)), where J is the counterclockwise",
+          "bbox": [
+            126.67,
+            339.04,
+            485.31,
+            349.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "rotation by π",
+          "bbox": [
+            126.67,
+            349.54,
+            184.58,
+            361.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2 . It remains to check that",
+          "bbox": [
+            180.39,
+            351.12,
+            298.46,
+            364.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "⟨Q−1w, w⟩= 0 ⇐⇒⟨(I + tA−1)J(p −q), J(p −q)⟩−(1 + t) det(p, p −q)2 = 0.",
+          "bbox": [
+            133.25,
+            366.02,
+            478.75,
+            380.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Putting t = −⟨Az,z⟩−1",
+          "bbox": [
+            126.67,
+            387.08,
+            222.36,
+            399.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "and z = p + sJp = q + rJAq for some s, r ∈R, we ﬁnd",
+          "bbox": [
+            226.87,
+            387.49,
+            465.89,
+            399.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "|z|2−1",
+          "bbox": [
+            194.3,
+            395.0,
+            217.22,
+            402.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR5",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "|z|2 −1 = s2,",
+          "bbox": [
+            206.77,
+            406.18,
+            264.2,
+            420.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "⟨Az, z⟩= 1 + r2⟨AJAq, JAq⟩.",
+          "bbox": [
+            275.82,
+            408.64,
+            405.23,
+            420.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Since det(p, p −q)2 + ⟨p, p −q⟩2 = |p −q|2, the claimed equality becomes",
+          "bbox": [
+            126.67,
+            424.74,
+            445.27,
+            438.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "s2⟨p, p −q⟩2 = r2∥JAq∥2",
+          "bbox": [
+            179.66,
+            442.31,
+            287.68,
+            456.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "A(∥J(p −q)∥2",
+          "bbox": [
+            283.7,
+            444.65,
+            344.23,
+            458.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "A−1 −det(p, p −q)2).",
+          "bbox": [
+            340.25,
+            444.65,
+            432.34,
+            458.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMR7",
+            "CMSY10",
+            "CMSY5"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "The left hand side can be rewrriten as",
+          "bbox": [
+            126.67,
+            464.35,
+            293.48,
+            474.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "⟨sp, p −q⟩2 = ⟨sJp, J(p −q)⟩2 = ⟨z −p, J(p −q)⟩2 =",
+          "bbox": [
+            159.2,
+            478.17,
+            388.77,
+            492.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "⟨z −q, J(p −q)⟩2 = r2⟨JAq, J(p −q)⟩2 = r2⟨Aq, p −q⟩2.",
+          "bbox": [
+            207.52,
+            494.85,
+            452.81,
+            508.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "It thus remains to check that whenever |p| = 1 and ⟨Aq, q⟩= 1, one has",
+          "bbox": [
+            126.67,
+            517.36,
+            438.74,
+            527.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "⟨Aq, p −q⟩2 = ∥JAq∥2",
+          "bbox": [
+            185.33,
+            531.45,
+            282.22,
+            545.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "A(∥J(p −q)∥2",
+          "bbox": [
+            278.25,
+            533.78,
+            338.77,
+            547.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "A−1 −det(q, p −q)2).",
+          "bbox": [
+            334.8,
+            533.78,
+            426.68,
+            547.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMR7",
+            "CMSY10",
+            "CMSY5"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "We can write",
+          "bbox": [
+            126.67,
+            553.49,
+            184.26,
+            563.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A−1 −det(q, p −q)2 = ∥J(p −q)∥2",
+          "bbox": [
+            204.54,
+            567.31,
+            353.22,
+            583.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMR7",
+            "CMSY10",
+            "CMSY5"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "∥J(p −q)∥2",
+          "bbox": [
+            158.35,
+            569.64,
+            208.51,
+            581.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "A−1 −⟨J(p −q), q⟩2",
+          "bbox": [
+            349.24,
+            569.64,
+            434.38,
+            583.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMR7",
+            "CMSY10",
+            "CMSY5"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "= ∥J(p −q)∥2",
+          "bbox": [
+            292.54,
+            586.32,
+            353.22,
+            598.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "A−1 −⟨Aq, J(p −q)⟩2",
+          "bbox": [
+            349.24,
+            586.32,
+            441.85,
+            600.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMR7",
+            "CMSY10",
+            "CMSY5"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "A−1",
+          "bbox": [
+            437.87,
+            592.73,
+            452.65,
+            600.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR5",
+            "CMSY5"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "= ⟨J(p −q), ν⟩2",
+          "bbox": [
+            292.54,
+            603.0,
+            360.99,
+            614.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "A−1",
+          "bbox": [
+            357.01,
+            609.41,
+            371.79,
+            616.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR5",
+            "CMSY5"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "Jq",
+          "bbox": [
+            187.07,
+            622.94,
+            195.79,
+            629.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "A−1 = ⟨A−1Aq, Aq⟩= 1 and ⟨ν, Aq⟩A−1 = 0.",
+          "bbox": [
+            261.52,
+            623.67,
+            452.71,
+            637.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMR7",
+            "CMSY10",
+            "CMSY5",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "∥Jq∥A−1 , since ∥Aq∥2",
+          "bbox": [
+            175.52,
+            623.76,
+            265.5,
+            639.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMR7",
+            "CMSY10",
+            "CMSY5",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "where ν =",
+          "bbox": [
+            126.67,
+            625.04,
+            171.55,
+            635.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "It remains to check that",
+          "bbox": [
+            138.63,
+            638.78,
+            243.87,
+            648.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "∥Jq∥A−1⟨JAq, J(p −q)⟩= ∥JAq∥A⟨A−1Jq, J(p −q)⟩,",
+          "bbox": [
+            189.35,
+            662.61,
+            422.66,
+            675.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMR7",
+            "CMSY10",
+            "CMSY5",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "or equivalently that",
+          "bbox": [
+            126.67,
+            680.32,
+            212.51,
+            690.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "∥Jq∥A−1JAq = ∥JAq∥AA−1Jq.",
+          "bbox": [
+            237.75,
+            692.2,
+            374.25,
+            705.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMR7",
+            "CMSY10",
+            "CMSY5",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 25,
+      "rotation": 0,
+      "drawings": 46,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 9.",
+        "Figure 10."
+      ],
+      "labels": [
+        {
+          "text": "25",
+          "bbox": [
+            126.67,
+            94.71,
+            136.63,
+            104.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A Funk perspective on billiards, projective geometry and Mahler volume",
+          "bbox": [
+            147.37,
+            94.71,
+            464.67,
+            104.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "νx",
+          "bbox": [
+            347.42,
+            121.41,
+            354.48,
+            130.2
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            5.64,
+            8.12
+          ]
+        },
+        {
+          "text": "KP",
+          "bbox": [
+            303.15,
+            124.89,
+            313.47,
+            133.69
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            5.64,
+            8.12
+          ]
+        },
+        {
+          "text": "x",
+          "bbox": [
+            341.09,
+            136.68,
+            345.6,
+            144.8
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            8.12
+          ]
+        },
+        {
+          "text": "QP",
+          "bbox": [
+            272.12,
+            148.43,
+            281.97,
+            157.23
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            5.64,
+            8.12
+          ]
+        },
+        {
+          "text": "H−",
+          "bbox": [
+            355.05,
+            162.45,
+            366.65,
+            171.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.64,
+            8.12
+          ]
+        },
+        {
+          "text": "v",
+          "bbox": [
+            345.24,
+            172.15,
+            349.08,
+            180.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            8.12
+          ]
+        },
+        {
+          "text": "z",
+          "bbox": [
+            295.12,
+            185.7,
+            298.81,
+            193.81
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            8.12
+          ]
+        },
+        {
+          "text": "y",
+          "bbox": [
+            329.37,
+            191.12,
+            333.24,
+            199.23
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            8.12
+          ]
+        },
+        {
+          "text": "H+",
+          "bbox": [
+            353.31,
+            195.06,
+            364.81,
+            204.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            5.64,
+            8.12
+          ]
+        },
+        {
+          "text": "ϵ",
+          "bbox": [
+            342.62,
+            195.82,
+            345.82,
+            203.94
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            8.12
+          ]
+        },
+        {
+          "text": "p",
+          "bbox": [
+            295.95,
+            204.53,
+            299.94,
+            212.64
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            8.12
+          ]
+        },
+        {
+          "text": "c√ϵ",
+          "bbox": [
+            307.12,
+            204.62,
+            320.51,
+            218.58
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMSY10"
+          ],
+          "sizes": [
+            8.12
+          ]
+        },
+        {
+          "text": "Figure 9.",
+          "bbox": [
+            280.2,
+            233.2,
+            326.82,
+            243.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Thus again we ﬁnd that |ζK(α, x)| ≤c",
+          "bbox": [
+            138.63,
+            261.66,
+            307.98,
+            274.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ϵ. That is, ζK([0, 1] × ∂K ∩H−) ⊂c",
+          "bbox": [
+            304.54,
+            261.66,
+            467.89,
+            275.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ϵBn,",
+          "bbox": [
+            464.45,
+            261.96,
+            485.33,
+            275.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "and so",
+          "bbox": [
+            126.67,
+            275.2,
+            154.96,
+            285.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "|ζK([0, 1] × (∂K ∩H−))| ≤cϵ−n.",
+          "bbox": [
+            234.43,
+            286.84,
+            377.57,
+            299.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(6)",
+          "bbox": [
+            472.6,
+            288.71,
+            485.33,
+            298.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Deﬁne zK(y′), zQ(y′) : Rn−1 →R for |y′| < c√ϵ by having xK(y′) := (y′, zK(y′)) ∈",
+          "bbox": [
+            138.63,
+            297.0,
+            490.65,
+            315.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "∂K, xQ(y′) := (y′, zQ(y′)) ∈∂Q, and let νK(y′), νQ(y′) be the correspondning unit",
+          "bbox": [
+            126.67,
+            314.89,
+            485.36,
+            327.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2 |y′|2 + O(|y′|3).",
+          "bbox": [
+            350.35,
+            324.6,
+            424.44,
+            341.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "normals. Then zK(y′) = zQ(y′) + O(|y′|3) = −1 + ap",
+          "bbox": [
+            126.67,
+            325.5,
+            356.09,
+            339.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Q−",
+          "bbox": [
+            319.34,
+            353.21,
+            330.02,
+            361.93
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.64,
+            8.12
+          ]
+        },
+        {
+          "text": "K",
+          "bbox": [
+            303.15,
+            365.27,
+            309.92,
+            373.39
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            8.12
+          ]
+        },
+        {
+          "text": "Q",
+          "bbox": [
+            276.77,
+            389.39,
+            283.07,
+            397.51
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            8.12
+          ]
+        },
+        {
+          "text": "H−",
+          "bbox": [
+            355.05,
+            402.83,
+            366.65,
+            412.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.64,
+            8.12
+          ]
+        },
+        {
+          "text": "o",
+          "bbox": [
+            301.54,
+            408.71,
+            305.37,
+            416.83
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            8.12
+          ]
+        },
+        {
+          "text": "Q+",
+          "bbox": [
+            285.86,
+            414.74,
+            296.45,
+            423.54
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            5.64,
+            8.12
+          ]
+        },
+        {
+          "text": "ρp",
+          "bbox": [
+            290.9,
+            435.36,
+            298.98,
+            443.47
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            8.12
+          ]
+        },
+        {
+          "text": "H+",
+          "bbox": [
+            353.31,
+            435.44,
+            364.81,
+            444.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            5.64,
+            8.12
+          ]
+        },
+        {
+          "text": "ϵ",
+          "bbox": [
+            342.62,
+            436.2,
+            345.82,
+            444.32
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            8.12
+          ]
+        },
+        {
+          "text": "p",
+          "bbox": [
+            299.63,
+            444.71,
+            303.61,
+            452.83
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            8.12
+          ]
+        },
+        {
+          "text": "Figure 10.",
+          "bbox": [
+            277.45,
+            466.98,
+            329.57,
+            476.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2(ap ± 2ϵ1/3)|y′|2 + y2",
+          "bbox": [
+            290.88,
+            489.55,
+            390.67,
+            505.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            290.88,
+            491.58,
+            294.86,
+            498.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Deﬁne the ellipsoids Q± = {y :",
+          "bbox": [
+            138.63,
+            493.04,
+            284.52,
+            504.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n = 1}. It holds that",
+          "bbox": [
+            386.33,
+            493.04,
+            485.34,
+            505.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2(ap ± 2ϵ1/3)|y′|2 + O(|y′|3), and so for ϵ ≪1,",
+          "bbox": [
+            199.14,
+            502.83,
+            399.77,
+            519.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "zQ±(y′) = −1 + 1",
+          "bbox": [
+            126.67,
+            504.86,
+            203.12,
+            517.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY5",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Q+ ∩H+ ⊂K ∩H+ ⊂Q−∩H+.",
+          "bbox": [
+            232.04,
+            520.8,
+            379.96,
+            536.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Moreover, as |νK(y′) −νQ(y′)| = O(|y′|) and |y′| ≤cϵ1/2 ≪ϵ1/3, it is evident that",
+          "bbox": [
+            126.67,
+            539.21,
+            483.21,
+            553.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ζQ−([0, 1] × Q−∩H+) ⊂ζK([0, 1] × K ∩H+) ⊂ζQ+([0, 1] × Q+ ∩H+).",
+          "bbox": [
+            149.36,
+            559.19,
+            462.65,
+            572.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMR7",
+            "CMSY10",
+            "CMSY5",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "By estimate (6) applied to Q± and combined with Lemma 7.4, we have",
+          "bbox": [
+            126.67,
+            578.66,
+            438.56,
+            590.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "!",
+          "bbox": [
+            440.93,
+            595.45,
+            448.82,
+            605.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "k1/2",
+          "bbox": [
+            363.9,
+            595.74,
+            381.43,
+            608.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2−n+1",
+          "bbox": [
+            311.85,
+            602.02,
+            337.15,
+            615.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMR10",
+            "CMR5",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "p",
+          "bbox": [
+            369.09,
+            602.08,
+            373.2,
+            609.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "ζQ±([0, 1] × Q± ∩H+) = ϵ−(n+1)",
+          "bbox": [
+            158.76,
+            603.45,
+            301.8,
+            616.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY5",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2 ωn",
+          "bbox": [
+            329.01,
+            603.61,
+            349.97,
+            616.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR5"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "+ err±(p)",
+          "bbox": [
+            397.57,
+            605.32,
+            440.93,
+            616.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            450.48,
+            605.32,
+            453.24,
+            615.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "n+1",
+          "bbox": [
+            379.57,
+            611.44,
+            392.47,
+            616.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMR5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "⟨p, νp⟩",
+          "bbox": [
+            351.66,
+            613.97,
+            378.38,
+            624.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            384.33,
+            616.92,
+            387.72,
+            621.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "and applying (6) for K, the claim follows.",
+          "bbox": [
+            126.67,
+            631.98,
+            309.31,
+            641.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "□",
+          "bbox": [
+            477.58,
+            641.76,
+            485.33,
+            651.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSAM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Proposition 7.6. For q ∈int(K),",
+          "bbox": [
+            126.67,
+            663.96,
+            278.88,
+            674.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "volF",
+          "bbox": [
+            229.76,
+            680.41,
+            247.54,
+            692.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "K(BF",
+          "bbox": [
+            242.49,
+            681.25,
+            267.16,
+            694.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "R(q, K))",
+          "bbox": [
+            261.6,
+            682.53,
+            298.76,
+            694.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            323.51,
+            682.53,
+            328.49,
+            692.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "n −12−n−1",
+          "bbox": [
+            314.43,
+            685.91,
+            364.34,
+            706.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMR10",
+            "CMR5",
+            "CMSY10",
+            "CMSY5",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2 Ωn(K, q).",
+          "bbox": [
+            356.06,
+            687.56,
+            407.02,
+            700.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR5"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "lim",
+          "bbox": [
+            209.02,
+            689.27,
+            222.86,
+            699.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            302.72,
+            689.27,
+            310.47,
+            699.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "n−1",
+          "bbox": [
+            256.72,
+            695.33,
+            269.9,
+            700.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMR5",
+            "CMSY5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        },
+        {
+          "text": "R",
+          "bbox": [
+            271.09,
+            696.91,
+            277.09,
+            703.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "R→∞",
+          "bbox": [
+            204.98,
+            697.94,
+            226.9,
+            705.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "e",
+          "bbox": [
+            250.89,
+            698.05,
+            255.53,
+            708.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            261.61,
+            700.87,
+            265.0,
+            705.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR5"
+          ],
+          "sizes": [
+            4.98
+          ]
+        }
+      ]
+    }
+  ]
+}

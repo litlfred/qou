@@ -1,1 +1,1 @@
-A. The pairwise linking numbers p, q and r of the link L are
+The pairwise linking numbers p, q and r of the link L are equal to the degrees of its characteristic map gL on the 2-dimensional coordinate subtori of T 3, while twice Milnor’s µ-invariant for L is equal to Pontryagin’s ν-invariant for gL.

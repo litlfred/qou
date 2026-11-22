@@ -11,7 +11,7 @@ is k · E_cross(T(2,2)) plus inter-link interaction terms.
 
 ## References
 
-- [manuscript] Ch. 10, §1 Covalent bonding as shared sub-Hopf links
+- [leitner2026] Ch. 10, §1 Covalent bonding as shared sub-Hopf links
 -/
 
 namespace QOU.Organic
@@ -19,7 +19,7 @@ namespace QOU.Organic
 /-- A covalent bond of order `k` between two atoms.
     Each shared Hopf link contributes `E_cross(T(2,2))` to the
     crossing energy, plus pairwise inter-link interactions. -/
--- Ref: [manuscript] Ch. 10, Definition: Covalent bond (shared Hopf links)
+-- Ref: [leitner2026] Ch. 10, Definition: Covalent bond (shared Hopf links)
 structure CovalentBond where
   /-- Bond order: number of shared Hopf links (1 = single, 2 = double, 3 = triple). -/
   order : ℕ

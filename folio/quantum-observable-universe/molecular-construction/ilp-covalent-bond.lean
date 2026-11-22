@@ -1,35 +1,39 @@
 /-
-  The covalent bond operator selected by the universal ILP.
+  The H₂ covalent bond word under the one γγ rule (owner ruling 2026-11-15).
 
-  The same LP that derives B₃ for quark confinement derives
-  the inverse trefoil T(2,3)⁻¹ for molecular bonding.
+  Bond words are selected like every other canonical word: γγ construction plus
+  reading-3 confinement.  The word the earlier knot-list selection chose, the
+  inverse trefoil σ₀⁻¹σ₁⁻¹σ₀⁻¹, has three letters, and every γγ word has even
+  length, so the inverse trefoil is not admissible as a bond word.  Which γγ
+  word IS selected is a computation (witness `h2-gg-electron`), recorded in the
+  narrative of prop:ilp-covalent-bond.
 
-  Ref: [manuscript] Ch 12 §1, prop:ilp-covalent-bond
+  Replaced here: `covalent_bond_is_ilp_optimal : inverse_trefoil.length = 3 := rfl`
+  (it proved the length, not optimality) and `axiom h2_binding_energy`
+  (`∃ E, 0 < E ∧ E < 5`, which holds for E = 1 and says nothing about H₂).
+
+  Ref: [leitner2026] Ch 12 §1, prop:ilp-covalent-bond; bean qou-ales
 -/
 
-import Mathlib.Algebra.Order.Ring.Defs
-import Mathlib.Data.Real.Basic
+import QOU.QBeta.GammaGammaSelectedDeltaVanishes
 
 namespace QOU.Molecular
 
+open QOU.Mass.GammaGammaWordSelection QOU.QBeta.GammaGammaDelta
+
 /-- The inverse trefoil braid word σ₀⁻¹σ₁⁻¹σ₀⁻¹. -/
--- Ref: [manuscript] Ch 12 §1
-def inverse_trefoil : List (Fin 2 × Bool) :=
-  [(0, false), (1, false), (0, false)]  -- (generator, positive?)
+def inverse_trefoil : Word := [⟨0, false⟩, ⟨1, false⟩, ⟨0, false⟩]
 
-/-- The covalent bond is selected by the universal ILP as the
-    minimum-crossing knot with Frobenius-positive molecular state. -/
--- Ref: [manuscript] Ch 12 §1, def:universal-ilp-algorithm
-theorem covalent_bond_is_ilp_optimal :
-    inverse_trefoil.length = 3 := by
-  -- The inverse trefoil has 3 crossings = minimum non-trivial knot
-  rfl
+/-- **The inverse trefoil is not a γγ word**: it has odd length, and every γγ
+word has even length (`gammaGamma_length_even`).  So under the one γγ rule it
+cannot be the H₂ bond word. -/
+theorem inverse_trefoil_not_gammaGamma : ¬ GammaGammaWord inverse_trefoil :=
+  not_gammaGamma_of_odd_length (by decide)
 
-/-- H₂ binding energy from vertex volume model. -/
--- Ref: [manuscript] Ch 12 §3
--- sorry requires computation at q₀ ≈ 1.110
--- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
-axiom h2_binding_energy (q : ℝ) (hq : q > 1) :
-    ∃ E : ℝ, E > 0 ∧ E < 5.0  -- 4.48 eV predicted
+/-- **The γγ bond letter V³ is a γγ word**: three pair-production vertices at
+the junction site `s`. -/
+theorem bond_V3_gammaGamma (s : ℕ) :
+    GammaGammaWord (vertex s ++ (vertex s ++ (vertex s ++ []))) :=
+  .cons s (.cons s (.cons s .nil))
 
 end QOU.Molecular

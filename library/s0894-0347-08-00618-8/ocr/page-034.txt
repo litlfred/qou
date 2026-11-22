@@ -1,0 +1,60 @@
+554 J. BORCEA, P. BRANDEN, AND T. M. LIGGETT
+
+Rayleigh/h-NLC+ <= CNA+, which confirms Pemantle’s Conjecture in this
+case. In the next section we will use this result to show that the counterexamples
+in 20 or more variables that we construct there satisfy all negative dependence
+properties other than strongly Rayleigh.
+
+Let C be an m x n matrix (where m,n are allowed to be infinite), and let i and
+j be finite equi-numerous subsets of [m] and [n], respectively. Denote by C(i,j) the
+minor of C' with rows indexed by i and columns indexed by j. The Cauchy-Binet
+theorem, see, e.g., [49], asserts that
+
+(AB)ij)= YD AGK)B(K.5)
+k, |k|=|i|=[i
+for any m xX n matrix A and n x q matrix B, where 1 < m,n,q < ow, provided that
+the sum in the right-hand side converges absolutely.
+Recall the notion of (non-negative) LC sequence from Definition [2.8] For conve-
+nience, we first prove a technical result that will be frequently used later on.
+
+Lemma 6.1. Let {aj}? and {bj}%_9 be two LC sequences that satisfy
+(i) {aj + bj }% 9 is LC, and
+(ii) ajbj41 > aj4ib; for allO<j<n-1.
+
+Ift<k and bay > 0, then b,a, > 0 for all <r <k.
+
+Proof. Suppose that a, = 0 for some ¢ < r < k and let s be the largest such index.
+Assumption (ii) for j = s gives b, = 0, hence a, + bs = 0. This contradicts the “no
+internal zeros” part of assumption (i) (cf. Definition [2.8). Therefore a, > 0, and a
+similar argument shows that b, > 0 as well. O
+
+The following proposition shows that for almost exchangeable measures the
+Rayleigh property is the same as the negative lattice condition (NLC) closed under
+conditioning and external fields on the last variable. Indeed, condition (ii) follows
+directly from NLC while (i) follows from NLC after having imposed an external
+field on the last coordinate and then projected onto the first n coordinates.
+
+Proposition 6.2. Let  € PBn41 be such that its generating polynomial g = gy, is
+symmetric in its first n variables, so that
+
+n n
+G(215 ++ +5 Zn41) = Zn41 >, ApeK (21, +++, 2n) + So nex (a1, ves 2n)-
+k=0 k=0
+
+Then yw is Rayleigh if and only if
+
+(i) {Oax, + (1 —O)bp}R_9 is LC for all0 <@ <1, and
+
+(ii) Aber > angibe for allO<k<n-1.
+Proof. Suppose first that is Rayleigh. By Proposition[2.1]we get that if0 <6 <1,
+then g(z1,---,2n,9/(1 — @)) is a Rayleigh polynomial that is symmetric in all its
+n variables. Condition (i) now follows from the exchangeable case (Theorem B.7).
+Let S' C [n — 1] be of cardinality i. The NLC condition gives
+
+adigi = WSU {n+ 1})u(S VU {n}) > w(S'U {n,n + 1})u(S) = aizibi,
+which verifies (ii).
+Assume now that {ag }_9 and {bj }o Satisfy (i) and (ii). The inequality
+
+Og, Og ag ntl
+Fe GL) > Fege ale), FER 4j € ln)
+

@@ -8,14 +8,14 @@ Stage S5 of bean `qou-zoyv`. Hom-sets of `D_ℏ` are the `sl₂`-equivariant mat
 composition is matrix multiplication and `⊗` is the Kronecker product, both bilinear. So `D_ℏ` is
 preadditive, `ℂ`-linear, and monoidal-linear. Sorry-free.
 
--- Ref: [manuscript] beans/defs/qou-zoyv (stage S5)
+-- Ref: [leitner2026] beans/defs/qou-zoyv (stage S5)
 -/
 
 noncomputable section
 
 namespace QOU.KZ.Drinfeld
 
-open CategoryTheory MonoidalCategory Obj
+open CategoryTheory MonoidalCategory QOU.KZ.DrinfeldAssociator Obj
 
 /-- The equivariant matrices `X → Y` as a `ℂ`-subspace. -/
 def equivSub (X Y : Obj) : Submodule ℂ (Matrix (Idx Y) (Idx X) ℂ) where
@@ -42,12 +42,12 @@ instance : Linear ℂ Obj where
   smul_comp _ _ _ r f g := hom_ext (by simp [comp_val, Matrix.mul_smul])
   comp_smul _ _ _ f r g := hom_ext (by simp [comp_val, Matrix.smul_mul])
 
-variable (c : ℂ) [hc : Fact (Transcendental ℚ c)]
+variable (Ψ : Associator.{0}) (c : ℂ) [hc : Fact (Transcendental ℚ c)]
 
-instance : Preadditive (DH c) := inferInstanceAs (Preadditive Obj)
-instance : Linear ℂ (DH c) := inferInstanceAs (Linear ℂ Obj)
+instance : Preadditive (DH Ψ c) := inferInstanceAs (Preadditive Obj)
+instance : Linear ℂ (DH Ψ c) := inferInstanceAs (Linear ℂ Obj)
 
-instance : MonoidalPreadditive (DH c) where
+instance : MonoidalPreadditive (DH Ψ c) where
   whiskerLeft_zero := hom_ext (by
     show kron (1 : Matrix _ _ ℂ) (0 : Matrix _ _ ℂ) = 0
     ext y x; simp [kron_apply])
@@ -57,7 +57,7 @@ instance : MonoidalPreadditive (DH c) where
   whiskerLeft_add f g := hom_ext (kron_add_right _ f.1 g.1)
   add_whiskerRight f g := hom_ext (kron_add_left f.1 g.1 _)
 
-instance : MonoidalLinear ℂ (DH c) where
+instance : MonoidalLinear ℂ (DH Ψ c) where
   whiskerLeft_smul _ _ _ r f := hom_ext (kron_smul_right r _ f.1)
   smul_whiskerRight r _ _ f _ := hom_ext (kron_smul_left r f.1 _)
 

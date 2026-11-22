@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.958
 latex_coverage_ratio: 1.0
+doc_brief: "Edge universality in Floquet sideband spectra — We show that, for non-interacting fermions under a monochromatic phase drive (Tien– Gordon regime), the outgoing sideband occupations at a sharp Fermi"
 ---
 []{#sec:discrete-bessel label="sec:discrete-bessel"} We now derive the sideband correlation kernel for the Toeplitz scattering matrix [\[eq:ToeplitzS\]](#eq:ToeplitzS){reference-type="eqref" reference="eq:ToeplitzS"} acting on a zero-temperature Fermi sea [@MoskBuett2002; @PedersenBuett1998]. This requires specifying how the static scattering matrix $\mathcal U$ and the reservoir structure enter. The factored form $S^{\alpha\beta}_{nm}=\mathcal U^{\alpha\beta}(E)J_{n-m}(A)$ allows the $\mathcal U$ prefactors to be pulled out of the sideband sum in [\[eq:C\]](#eq:C){reference-type="eqref" reference="eq:C"}: $$C^{(\alpha)}_{np}(E)
   = \sum_m J_{n-m}(A)\,J_{p-m}(A)\;\underbrace{\sum_\beta \abs{\mathcal U^{\alpha\beta}(E)}^2 f_\beta(E_m)}_{\displaystyle\equiv\;\bar f_\alpha(E_m)}.

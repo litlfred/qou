@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/springer-1976-invent-36-173/sections/page-024",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Page 24",
+  "pageStart": 24,
+  "pageEnd": 24,
+  "contains": [
+    "library/springer-1976-invent-36-173/blocks/prose-page-024",
+    "library/springer-1976-invent-36-173/blocks/lem-page-024-01",
+    "library/springer-1976-invent-36-173/blocks/lem-page-024-02",
+    "library/springer-1976-invent-36-173/blocks/lem-page-024-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/springer-1976-invent-36-173/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/springer-1976-invent-36-173/manifest.jsonld",
+  "provenance": "ingested"
+}

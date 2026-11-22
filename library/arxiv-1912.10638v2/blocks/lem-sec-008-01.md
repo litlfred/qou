@@ -1,0 +1,1 @@
+There exists a neighborhood U ⊂ C2 of (1, 1)∈ C2 and two holomorphic families of non- degenerate critical points{z±(s1,s2)}(s1,s2)∈U for the families of potential functions Φ±(s1,s2)(z1,z 2) such that z±(1,1) = ( 1 2, 1 ) .

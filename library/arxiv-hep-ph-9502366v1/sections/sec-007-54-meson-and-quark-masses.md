@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-ph-9502366v1
-doc_title: "arXiv:hep-ph/9502366v1 22 Feb 1995"
+doc_title: "Chiral Perturbation Theory"
 section_id: sec-007-54-meson-and-quark-masses
 section_title: "Meson and quark masses"
 section_number: 5.4
@@ -8,6 +8,7 @@ pages: 18-21
 source_pdf: 9502366v1.pdf
 source_sha256: 56df064956ca03f8
 toc_source: inferred
+doc_brief: "Chiral Perturbation Theory — An introduction to the basic ideas and methods of Chiral Perturbation Theory is presented."
 ---
 The relations (3.25) get modiﬁed at O(p4). The additional contributions depend
 on the low-energy constants L4, L5, L6, L7 and L8. It is possible, however, to obtain
@@ -24,8 +25,6 @@ M 2
 K −M 2π
 ,
 (5.17)
-Chiral Perturbation Theory
-19
 get the same O(p4) correction (Gasser and Leutwyler 1985):
 Q1 = ms + ˆm
 2 ˆm
@@ -119,8 +118,6 @@ L′
 L′
 8 = L8 + 2ζ ,
 (5.24)
-20
-A Pich
 where α and β are arbitrary constants, and ζ = βf 2/(32αB0). The only information
 on the quark-mass matrix M that we used to construct the eﬀective Lagrangian was
 that it transforms as M →gRMg†
@@ -174,8 +171,6 @@ groups; although they use a rather diﬀerent framework, they get similar result
 (∆M 2
 K −∆M 2
 π)em = (1.0 ± 0.1) × 10−3 GeV2 (Donoghue, Holstein and Wyler 1992)
-Chiral Perturbation Theory
-21
 and (1.3 ± 0.4) × 10−3 GeV2 (Bijnens 1993b).
 A lower number is obtained if one
 assumes that the L7 coupling is dominated by the η′ contribution (see section 6);

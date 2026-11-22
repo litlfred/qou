@@ -1,1 +1,0 @@
-Here A =B =K, so C(A, M) = C(M) and C(B, N) = C(N). Let

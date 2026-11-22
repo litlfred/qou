@@ -1,0 +1,1 @@
+Let f : A →B be a DG ring homomorphism. The trian- gulated functor Restf is conservative. Namely a morphism φ : M →N in D(B) is an isomorphism if and only if the morphism Restf(φ) : Restf(M) →Restf(N) in D(A) is an isomorphism.

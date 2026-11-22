@@ -26,7 +26,7 @@ The **closed form** `shift(Z, N) = 18Z + 21N + 1` is *derived* here from
 those inputs by induction over `(Z, N)`, exactly as in the manuscript proof —
 not projected from a stored field.
 
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/per-nucleon-shift-additive-linearity.md
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/per-nucleon-shift-additive-linearity.md
 -/
 
 namespace QOU.BraidKnot
@@ -52,7 +52,7 @@ class PerNucleonShiftContext where
 
     Restates the two constant increments — this is the input recurrence
     itself, exposed as the named theorem. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/per-nucleon-shift-additive-linearity.md
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/per-nucleon-shift-additive-linearity.md
 theorem per_nucleon_shift_additive_linearity
     [ctx : PerNucleonShiftContext] (Z N : ℕ) (hZ : 1 ≤ Z) (hN : 1 ≤ N) :
     ctx.shift (Z + 1) N - ctx.shift Z N = 18 ∧
@@ -86,7 +86,7 @@ theorem per_nucleon_shift_row1 [ctx : PerNucleonShiftContext] :
     **Derived** by induction: the `N = 1` row from `per_nucleon_shift_row1`,
     then induction on `N` using the neutron-step increment.  This is a
     genuine recurrence-to-closed-form derivation, not a projection. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/per-nucleon-shift-additive-linearity.md
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/per-nucleon-shift-additive-linearity.md
 theorem per_nucleon_shift_closed_form
     [ctx : PerNucleonShiftContext] (Z N : ℕ) (hZ : 1 ≤ Z) (hN : 1 ≤ N) :
     ctx.shift Z N = 18 * (Z : ℤ) + 21 * (N : ℤ) + 1 := by

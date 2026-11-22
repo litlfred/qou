@@ -1,0 +1,43 @@
+The descendant colored Jones polynomials 2309
+
+This sequence of elements of the Habiro ring defines the top row of a matrix
+of knot invariants that arises in recent work of D. Zagier and the first author
+regarding the Refined Quantum Modularity Conjecture [GZ, GZ23].
+
+A second reformulation of the colored Jones polynomials comes from un-
+noticed work of the second author in 1994 regarding quantum R-matrices at
+roots of unity obtained from solutions of the pentagon identity [Kas96]. These
+R-matrix invariants (A) y,, of a knot K are defined for a primitive N-th root
+of unity ¢ (of strictly positive order), and for a number n € Z/NZ in Theo-
+rem 3.1 and are conjectured to be equivalent to the colored Jones polynomials
+of a knot; see Conjecture 3.2 below.
+
+2. The descendant colored Jones polynomials of a knot
+2.1. A conjectured matrix-valued invariant from [GZ, GZ23]
+
+We begin by explaining the most recent reappearance of the colored Jones
+polynomials. An extension of the Volume Conjecture is the Quantum Mod-
+ularity Conjecture of Zagier [Zagl0] which, roughly speaking, discusses the
+asymptotics of the Kashaev invariant at roots of unity. More recently, a Re-
+fined Quantum Modularity Conjecture was proposed in [GZ] which suggests
+the existence of a matrix-valued invariant defined at (and near) roots of unity.
+These conjectured matrix-valued invariants (denoted by J(x) for « € Q/Z)
+were studied in [GZ, Sec. 5] with explicit examples given for the 4; and the
+52 knots in Sections 7.1 and 7.2 of [GZ], respectively.
+
+The conjectured matrix-valued knot invariant J (defined as a 1-periodic
+function at the rationals, or alternatively as a function at the complex roots
+of unity), has many interesting analytic, arithmetic properties and geometric
+properties which are listed in detail in the introduction (Part 0) of [GZ]. The
+rows and columns of the matrix J are parametrized by the set of bound-
+ary parabolic SL2(C)-representations of the knot (assuming the latter set
+is finite), and this set always contains two distinguished elements, the triv-
+ial representation o9, and the geometric representation 01 of a hyperbolic
+knot. The go-column of J is (1,0,...,0)' but the oo-row is very interesting.
+Its (a9, 01)-entry is the Kashaev invariant of a knot, whereas the remaining
+entries are expected to be elements of the Habiro ring (whose definition is
+recalled below), tensored with the rational numbers. Moreover, the entries
+of each row of the matrix are expected to extend to sequences that satisfy
+a homogeneous recursion relation (if not the oo-row), or an inhomogeneous
+recursion (if the oo-row). In other words, the matrix J is expected to be a
+fundamental matrix solution of a q-holonomic module.

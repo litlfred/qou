@@ -1,1 +1,1 @@
-(a) If an object X is simple inA/S, then there exists a simple object M inA satisfying
+(a) If an object X is simple inA/S, then there exists a simple object M inA satisfying (i)Q(M)≃X, (ii) bk−ak +1≤N for 1≤k≤r, where ( (a1,b 1),..., (ar,br) ) is the multisegment associated with M. (b) Let ( (a1,b 1),..., (ar,br) ) be the multisegment associated with a simple object M in A. If bk−ak + 1≤N for 1≤k≤r, thenQ(M) is simple in A/S. SYMMETRIC QUIVER HECKE ALGEBRAS AND R-MATRICES 47

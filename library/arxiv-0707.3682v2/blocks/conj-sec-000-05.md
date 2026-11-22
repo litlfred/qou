@@ -1,1 +1,0 @@
-exist when p ⁄= 2 but have to be assumed to exist when p = 2.

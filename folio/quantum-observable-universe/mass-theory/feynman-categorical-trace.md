@@ -12,7 +12,7 @@ $$
   \mathrm{tr}_M\bigl(\rho(\beta)\bigr),
 $$
 
-*where the sum spans partitions $\lambda \vdash n$ with at most two parts. The Markov weights $w_\lambda$ satisfy the Markov property $\mathrm{tr}_M(x \sigma_n^{\pm 1}) = z^{\pm 1}\mathrm{tr}_M(x)$ and evaluate to $w_\lambda = \dim_q(V_\lambda) \cdot \dim(S_\lambda) / \dim_q(V^{\otimes n})$, with $\dim_q(V_\lambda) = [2j+1]_q$.*
+*where the sum spans partitions $\lambda \vdash n$ with at most two parts. The Markov weights $w_\lambda$ satisfy the Markov property $\mathrm{tr}_M(x \sigma_n) = z\,\mathrm{tr}_M(x)$ and $\mathrm{tr}_M(x \sigma_n^{-1}) = (z - h)\,\mathrm{tr}_M(x)$, $h = q - q^{-1}$, and evaluate to $w_\lambda = \dim_q(V_\lambda) / \dim_q(V^{\otimes n})$, with $\dim_q(V_\lambda) = [2j+1]_q$.*
 
 *The transition amplitude is a finite sum over $\lfloor n/2 \rfloor + 1$ terms. Its absolute value equals the categorical mass at a single brane level:*
 

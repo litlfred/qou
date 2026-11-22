@@ -2,90 +2,155 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-0601458v1",
  "source_sha256": "ef34611620cfd0bd",
- "brief": "CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS JEFFREY MORTON — Interest in combinatorial interpretations of mathematica l entities stems from the convenience of the concrete models they provi de.",
- "extended": "**CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS JEFFREY MORTON**\n\n68 pp, 16 sections.\n\n**Abstract.** Interest in combinatorial interpretations of mathematica l entities stems from the convenience of the concrete models they provi de. Finding a bijective proof of a seemingly obscure identity can reveal u nsuspected signiﬁ- cance to it. Finding a combinatorial model for some mathemat ical entity is a particular instance of the process called “categoriﬁcatio n”. Examples include the interpretation of /C6 as the Burnside rig of the category of ﬁnite sets with product and coproduct, and the interpretation of /C6 [x] as the category of com- binatorial species. This has interesting applications to q uantum mechanics, and in particular the quantum harmonic oscillator, via Joya l’s “species”, a new generalization called “stuﬀ types”, and operators betw een these, which can be represented as rudimentary Feynman diagrams for the o scillator.\n\n**Outline.** 1 Introduction; 2 Structure Types; 3 Structure Types and the Harmonic Oscillator; 3.1 The Quantum Harmonic Oscillator; 3.2 Structure Types and the Weyl Algebra; 4 Stuff Types; 4.1 Groupoids; 5 Stuff Types And Quantum Mechanics; 7 Conclusions; 7.2 Other Generalizations; 8 Acknowledgements; Appendix A. A Little Higher-Dimensional Algebr; Appendix B. Slice Categories and 2-Categories; Appendix C. Categorical Approaches to Generali; C.1. Generalized Species; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: If F and G are two structure types, then |F +G| =|F| +|G| and\n- Theorem 2: The category Set[Z] is a 2-rig whose monoidal operation ⊗ is the\n- Theorem 3: The structure type operators A and A∗ satisfy\n- Theorem 4: IfG andG′ are tame groupoids, then so are G +G′ andG×G ′, and\n- Theorem 5: The collection of Z0-coloured ﬁnite sets forms the object set of a cat-\n- Theorem 6: The cardinality of the weak quotient of a groupoid G by a group G",
+ "brief": "CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS — Interest in combinatorial interpretations of mathematical entities stems from the convenience of the concrete models they provide.",
+ "extended": "**CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS**\n\n*JEFFREY MORTON*\n\n68 pp, 29 sections.\n\n**Abstract.** Interest in combinatorial interpretations of mathematical entities stems from the convenience of the concrete models they provide. Finding a bijective proof of a seemingly obscure identity can reveal unsuspected signiﬁ- cance to it. Finding a combinatorial model for some mathematical entity is a particular instance of the process called “categoriﬁcation”. Examples include the interpretation of N as the Burnside rig of the category of ﬁnite sets with product and coproduct, and the interpretation of N[x] as the category of com- binatorial species. This has interesting applications to quantum mechanics, and in particular the quantum harmonic oscillator, via Joyal’s “species”, a new generalization called “stuﬀtypes”, and operators between these, which can be represented as rudimentary Feynman diagrams for the oscillator.\n\n**Outline.** Front matter; 1 Introduction; 2 Structure Types; 2.1 Categorification of N and N [[z]]; 3 Structure Types and the Harmonic Oscillator; 3.1 The Quantum Harmonic Oscillator; 3.2 Structure Types and the Weyl Algebra; 4 Stuff Types; 4.1 Groupoids; 4.2 Stuff Types as a Generalization of Structu; 4.3 Stuff Types As Power Series; 4.4 Forgetful Functors: Properties, Structure,; 5 Stuff Types And Quantum Mechanics; 5.1 Inner Product of Stuff Types; 5.2 Stuff Operators; 5.3 Feynman Diagrams and Stuff Operators; 6 M-Stuff Types And Quantum Mechanics; 6.1 M-Stuff Types",
  "tokens": {
-  "brief": 48,
-  "extended": 481
+  "brief": 43,
+  "extended": 376
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-3"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "2-3"
+   "pages": "3-4"
   },
   {
    "id": "sec-001-2-structure-types",
    "title": "Structure Types",
-   "pages": "3-8"
+   "pages": "4-4"
   },
   {
-   "id": "sec-002-3-structure-types-and-the-harmonic-oscillator",
+   "id": "sec-002-21-categorification-of-n-and-n-z",
+   "title": "Categorification of N and N [[z]]",
+   "pages": "4-8"
+  },
+  {
+   "id": "sec-003-3-structure-types-and-the-harmonic-oscillator",
    "title": "Structure Types and the Harmonic Oscillator",
-   "pages": "8-8"
+   "pages": "8-9"
   },
   {
-   "id": "sec-003-31-the-quantum-harmonic-oscillator",
+   "id": "sec-004-31-the-quantum-harmonic-oscillator",
    "title": "The Quantum Harmonic Oscillator",
-   "pages": "8-11"
+   "pages": "9-11"
   },
   {
-   "id": "sec-004-32-structure-types-and-the-weyl-algebra",
+   "id": "sec-005-32-structure-types-and-the-weyl-algebra",
    "title": "Structure Types and the Weyl Algebra",
    "pages": "11-14"
   },
   {
-   "id": "sec-005-4-stuff-types",
+   "id": "sec-006-4-stuff-types",
    "title": "Stuff Types",
    "pages": "14-14"
   },
   {
-   "id": "sec-006-41-groupoids",
+   "id": "sec-007-41-groupoids",
    "title": "Groupoids",
-   "pages": "14-30"
+   "pages": "14-20"
   },
   {
-   "id": "sec-007-5-stuff-types-and-quantum-mechanics",
+   "id": "sec-008-42-stuff-types-as-a-generalization-of-structure",
+   "title": "Stuff Types as a Generalization of Structure Types",
+   "pages": "20-24"
+  },
+  {
+   "id": "sec-009-43-stuff-types-as-power-series",
+   "title": "Stuff Types As Power Series",
+   "pages": "24-27"
+  },
+  {
+   "id": "sec-010-44-forgetful-functors-properties-structure-and-s",
+   "title": "Forgetful Functors: Properties, Structure, and Stuff",
+   "pages": "27-30"
+  },
+  {
+   "id": "sec-011-5-stuff-types-and-quantum-mechanics",
    "title": "Stuff Types And Quantum Mechanics",
-   "pages": "30-56"
+   "pages": "30-30"
   },
   {
-   "id": "sec-008-7-conclusions",
+   "id": "sec-012-51-inner-product-of-stuff-types",
+   "title": "Inner Product of Stuff Types",
+   "pages": "30-34"
+  },
+  {
+   "id": "sec-013-52-stuff-operators",
+   "title": "Stuff Operators",
+   "pages": "34-38"
+  },
+  {
+   "id": "sec-014-53-feynman-diagrams-and-stuff-operators",
+   "title": "Feynman Diagrams and Stuff Operators",
+   "pages": "38-43"
+  },
+  {
+   "id": "sec-015-6-m-stuff-types-and-quantum-mechanics",
+   "title": "M-Stuff Types And Quantum Mechanics",
+   "pages": "43-44"
+  },
+  {
+   "id": "sec-016-61-m-stuff-types",
+   "title": "M-Stuff Types",
+   "pages": "44-50"
+  },
+  {
+   "id": "sec-017-62-quantum-mechanics-mu1",
+   "title": "Quantum Mechanics: M=U(1)",
+   "pages": "50-56"
+  },
+  {
+   "id": "sec-018-7-conclusions",
    "title": "Conclusions",
+   "pages": "56-56"
+  },
+  {
+   "id": "sec-019-71-categorified-quantum-mechanics",
+   "title": "Categorified Quantum Mechanics",
    "pages": "56-58"
   },
   {
-   "id": "sec-009-72-other-generalizations",
+   "id": "sec-020-72-other-generalizations",
    "title": "Other Generalizations",
    "pages": "58-60"
   },
   {
-   "id": "sec-010-8-acknowledgements",
+   "id": "sec-021-8-acknowledgements",
    "title": "Acknowledgements",
    "pages": "60-61"
   },
   {
-   "id": "sec-011-appendix-a-a-little-higher-dimensional-algebra",
+   "id": "sec-022-appendix-a-a-little-higher-dimensional-algebra",
    "title": "Appendix A. A Little Higher-Dimensional Algebra",
    "pages": "61-62"
   },
   {
-   "id": "sec-012-appendix-b-slice-categories-and-2-categories",
+   "id": "sec-023-appendix-b-slice-categories-and-2-categories",
    "title": "Appendix B. Slice Categories and 2-Categories",
+   "pages": "62-62"
+  },
+  {
+   "id": "sec-024-b1-2-categories-of-stuff-types-and-stuff-operato",
+   "title": "B.1. 2-Categories of Stuff Types and Stuff Operators",
    "pages": "62-66"
   },
   {
-   "id": "sec-013-appendix-c-categorical-approaches-to-generalizin",
+   "id": "sec-025-appendix-c-categorical-approaches-to-generalizin",
    "title": "Appendix C. Categorical Approaches to Generalizing Species",
    "pages": "66-66"
   },
   {
-   "id": "sec-014-c1-generalized-species",
+   "id": "sec-026-c1-generalized-species",
    "title": "C.1. Generalized Species",
    "pages": "66-68"
   },
   {
-   "id": "sec-015-references",
+   "id": "sec-027-references",
    "title": "References",
    "pages": "68-68"
   }
@@ -94,8 +159,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

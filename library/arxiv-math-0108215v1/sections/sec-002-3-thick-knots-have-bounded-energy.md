@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.949
 latex_coverage_ratio: 0.628
+doc_brief: "arXiv:math/0108215v1 [math.GT] 30 Aug 2001 — The M¨obius energy of a knot is an energy functional for smooth curves based on an idea of self-repelling."
 ---
 In this section, we prove that the Möbius energy of a knot is bounded by the ropelength. Our goal is partly the theorem itself and partly the paradigm: any "energy" defined in terms of inverse-square distances should have an analogous bound, with the proof following this model.
 

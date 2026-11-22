@@ -63,9 +63,9 @@ The probe series surfaced 9 mathematical claims.  Status:
   8. Silver = CFL transition (physical claim): §3b-cond CLASS (needs density map)
   9. φ² = CFL/gCFL boundary (physical claim): §3b-cond CLASS (bar-mirror conjecture)
 
--- Ref: [manuscript] conj:metallic-piecewise-LP-vertex
--- Ref: [manuscript] conj:color-superconductivity-borromean
--- Ref: [manuscript] docs/audits/2026-06-09-metallic-q-csc-phase-synthesis.md
+-- Ref: [leitner2026] conj:metallic-piecewise-LP-vertex
+-- Ref: [leitner2026] conj:color-superconductivity-borromean
+-- Ref: [leitner2026] docs/audits/2026-06-09-metallic-q-csc-phase-synthesis.md
 -/
 
 namespace QOU.AlgebraicSubstrate.MetallicLPIdentities
@@ -338,8 +338,8 @@ class GaloisPairCharacterSum where
       class with no instance. -/
   holds : ∀ {n : ℕ} (lam : Nat.Partition n) (q : ℝ), 0 < q →
     chi lam q + chi (conj lam) q = (dim lam : ℝ) * (q - q⁻¹)
-  -- Ref: [manuscript] conj:galois-pair-character-sum
-  -- Ref: [manuscript] computations/metallic_q_symbolic_galois_proofs.py
+  -- Ref: [leitner2026] conj:galois-pair-character-sum
+  -- Ref: [leitner2026] computations/metallic_q_symbolic_galois_proofs.py
 
 /-- Conjectural witness: the n=2 LP active-set transition at δ_silver
     physically identifies the Color-Flavor-Locked transition density ρ_c.
@@ -358,8 +358,8 @@ class CSCSilverIsCFLTransition where
 
       Was `holds : Prop`, so the instance chose what "equals" meant. -/
   holds : rho delta_silver = rho_c
-  -- Ref: [manuscript] conj:color-superconductivity-borromean
-  -- Ref: [manuscript] docs/audits/2026-06-09-metallic-q-csc-phase-synthesis.md
+  -- Ref: [leitner2026] conj:color-superconductivity-borromean
+  -- Ref: [leitner2026] docs/audits/2026-06-09-metallic-q-csc-phase-synthesis.md
 
 /-- Conjectural witness: the bar-image φ² of the deconfinement boundary
     `q_gold = 1/φ²` predicts a CFL → gCFL (gapless CFL) or CCS
@@ -378,8 +378,8 @@ class BarMirrorPhi2CFLgCFLTransition where
       mass-radius relation above the silver-density crossover — a falsifiable
       claim that the `Prop` field could not state. -/
   holds : q_boundary = metallic 1 ^ 2
-  -- Ref: [manuscript] conj:bar-mirror-cfl-gcfl-transition
-  -- Ref: [manuscript] docs/audits/2026-06-09-metallic-q-csc-phase-synthesis.md
+  -- Ref: [leitner2026] conj:bar-mirror-cfl-gcfl-transition
+  -- Ref: [leitner2026] docs/audits/2026-06-09-metallic-q-csc-phase-synthesis.md
 
 /-! ## SDP degeneracy at cost-coincidence points
 
@@ -437,8 +437,8 @@ class SDPDegeneracyDetectsMetallic where
       whole class. -/
   holds : ∀ (n : ℕ) (q : ℝ), 0 < q → IsDegenerate n q →
     ∃ k, k ≤ n ∧ q = metallic k
-  -- Ref: [manuscript] conj:sdp-degeneracy-metallic-locus
-  -- Ref: [manuscript] computations/two_quark_active_set_mahler_sweep.py
+  -- Ref: [leitner2026] conj:sdp-degeneracy-metallic-locus
+  -- Ref: [leitner2026] computations/two_quark_active_set_mahler_sweep.py
   --        (empirically confirmed: AT δ_silver active set is empty;
   --         degenerate-vertex signature directly observed)
 

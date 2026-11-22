@@ -1,0 +1,1 @@
+Let A be a *-subalgebra of B(H). Then the unit ball of A is strongly dense in the unit ball of the weak closure M of A, and the self- adjoint part of the unit ball of A is strongly dense in the self-adjoint part of the unit ball of M.

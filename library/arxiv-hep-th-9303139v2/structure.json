@@ -8,10 +8,10 @@
   "pages": 149,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "math_source": "latex",
-  "mtime": null,
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,1244 +21,2054 @@
    "stamp_date": "5 Apr 1993"
   },
   "doi": null,
-  "title": "ITFA 93-10 March 1993 A.Morozov",
-  "authors_raw": "INTEGRABILITY AND MATRIX MODELS",
+  "title": "arXiv:hep-th/9303139v2 5 Apr 1993",
+  "authors_raw": null,
   "title_lines": [
    "ITFA 93-10",
    "March 1993",
-   "A.Morozov"
+   "A.Morozov",
+   "INTEGRABILITY AND MATRIX MODELS"
   ],
-  "abstract": "The theory of matrix models is reviewed from the point of view of its relation to integrable hierarchies. Discrete 1-matrix, 2-matrix, \u201dconformal\u201d (multicomponent) and Kontsevich models are considered in some detail, to- gether with the Ward identites (\u201dW-constraints\u201d), determinantal formulas and continuum limits, taking one kind of models into another. Subtle points and directions of the future research are also discussed. Lectures presented at the University of Amsterdam and the Dutch Institute for High Energy Physics(NIKHEF) in February-March 1993 1ITEP 117259 Moscow; morozov@vxdesy.desy.de 1",
+  "abstract": "The theory of matrix models is reviewed from the point of view of its relation to integrable hierarchies. Discrete 1-matrix, 2-matrix, ”conformal” (multicomponent) and Kontsevich models are considered in some detail, to- gether with the Ward identites (”W-constraints”), determinantal formulas and continuum limits, taking one kind of models into another. Subtle points and directions of the future research are also discussed. Lectures presented at the University of Amsterdam and the Dutch Institute for High Energy Physics(NIKHEF) in February-March 1993 1ITEP 117259 Moscow; morozov@vxdesy.desy.de 1",
   "docinfo": {
    "Title": "arXiv:hep-th/9303139v2  5 Apr 1993",
    "Producer": "GPL Ghostscript 10.01.2",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
    "CreationDate": "D:20241126153939-05'00'"
-  }
+  },
+  "title_raw": "ITFA 93-10 March 1993 A.Morozov INTEGRABILITY AND MATRIX MODELS",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:hep-th/9303139v2 5 Apr 1993",
+   "heading": "INTEGRABILITY AND MATRIX MODELS",
+   "text": "ITFA 93-10 March 1993 A.Morozov INTEGRABILITY AND MATRIX MODELS",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "ITFA 93-10 March 1993 A.Morozov"
  },
  "toc": [
-  {
-   "level": 1,
-   "title": "Abstract",
-   "page": 1,
-   "source": "inferred",
-   "number": null
-  },
   {
    "level": 1,
    "title": "Introduction",
    "page": 2,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Ward identities for the simplest matrix models",
    "page": 2,
    "source": "inferred",
-   "number": "2"
+   "number": "2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Ward identites versus equations of motion",
    "page": 2,
    "source": "inferred",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Virasoro constraints for the discrete 1-matrix model",
    "page": 2,
    "source": "inferred",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "CFT formulation of matrix models",
    "page": 2,
    "source": "inferred",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Gross-Newman equation",
    "page": 2,
    "source": "inferred",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Ward identities for Generalized Kontsevich Model",
    "page": 2,
    "source": "inferred",
-   "number": "2.5"
+   "number": "2.5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Discrete Virasoro constraints for the Gaussian Kontsevich model",
    "page": 2,
    "source": "inferred",
-   "number": "2.6"
+   "number": "2.6",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Continuous Virasoro constraints for the V = X3",
-   "page": 2,
+   "title": "Continuous Virasoro constraints for the $V = \\frac{X^3}{3}$ Kontsevich model",
+   "page": 32,
    "source": "inferred",
-   "number": "2.7"
-  },
-  {
-   "level": 1,
-   "title": "Kontsevich model",
-   "page": 2,
-   "source": "inferred",
-   "number": "3"
+   "number": "2.7",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Eigenvalue models",
-   "page": 2,
+   "page": 46,
    "source": "inferred",
-   "number": "3"
+   "number": "3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "What are eigenvalue models",
-   "page": 2,
+   "page": 46,
    "source": "inferred",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "1-matrix model",
+   "page": 47,
+   "source": "inferred",
+   "number": "3.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Itzykson-Zuber and Kontsevich integrals",
-   "page": 2,
+   "page": 49,
    "source": "inferred",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Conventional Multimatrix models",
-   "page": 2,
+   "page": 52,
    "source": "inferred",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Determinant formulas for eigenvalue models",
-   "page": 2,
+   "page": 53,
    "source": "inferred",
-   "number": "3.5"
+   "number": "3.5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Orthogonal polinomials",
-   "page": 2,
+   "page": 59,
    "source": "inferred",
-   "number": "3.6"
+   "number": "3.6",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Two-component models in Miwa parametrization",
-   "page": 2,
+   "title": "Scalar-product models in Miwa parametrization",
+   "page": 65,
    "source": "inferred",
-   "number": "3.7"
+   "number": "3.7",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Equivalence of the discrete 1-matrix and Gaussian Kontsevich models",
-   "page": 2,
+   "page": 66,
    "source": "inferred",
-   "number": "3.8"
+   "number": "3.8",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Volume of unitary group",
-   "page": 2,
+   "page": 68,
    "source": "inferred",
-   "number": "3.9"
+   "number": "3.9",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Integrable structure of eigenvalue models",
-   "page": 2,
+   "page": 70,
    "source": "inferred",
-   "number": "4"
+   "number": "4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The concept of integrability",
-   "page": 2,
+   "page": 70,
    "source": "inferred",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "The notion of \u03c4-function",
-   "page": 2,
+   "title": "The notion of $\\tau$-function",
+   "page": 75,
    "source": "inferred",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Basic determinant formula for the free-fermion correlator",
-   "page": 2,
+   "page": 83,
    "source": "inferred",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "Toda-lattice \u03c4-function and linear reductions of Toda-lattice hierar-",
-   "page": 2,
+   "title": "Toda-lattice $\\tau$-function and linear reductions of Toda hierarchy",
+   "page": 87,
    "source": "inferred",
-   "number": "4.5"
+   "number": "4.5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Fermion correlator in Miwa coordinates",
-   "page": 2,
+   "page": 92,
    "source": "inferred",
-   "number": "4.6"
+   "number": "4.6",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "String equations and generic concept of reduction",
-   "page": 2,
+   "title": "Matrix models versus $\\tau$-functions.",
+   "page": 99,
    "source": "inferred",
-   "number": "4.8"
+   "number": "4.7",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "String equations and general concept of reduction",
+   "page": 104,
+   "source": "inferred",
+   "number": "4.8",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "On the theory of GKM",
-   "page": 2,
+   "page": 110,
    "source": "inferred",
-   "number": "4.9"
+   "number": "4.9",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 2,
+   "title": "1-Matrix model versus Toda-chain hierarchy",
+   "page": 118,
+   "source": "inferred",
+   "number": "4.10",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Continuum limits of discrete matrix models",
-   "page": 2,
+   "page": 121,
    "source": "inferred",
-   "number": "5"
+   "number": "5",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "What is continuum limit",
-   "page": 3,
+   "page": 121,
    "source": "inferred",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "From Toda-chain to KdV",
-   "page": 3,
+   "page": 124,
    "source": "inferred",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Double-scaling limit of 1-matrix model",
-   "page": 3,
+   "page": 126,
    "source": "inferred",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "From Gaussian to X3-Kontsevich model",
-   "page": 3,
+   "title": "From Gaussian to $X^3$ Kontsevich model",
+   "page": 134,
    "source": "inferred",
-   "number": "5.4"
-  },
-  {
-   "level": 1,
-   "title": "Conclusion",
-   "page": 3,
-   "source": "inferred",
-   "number": "6"
-  },
-  {
-   "level": 1,
-   "title": "Acknowledgements",
-   "page": 3,
-   "source": "inferred",
-   "number": "7"
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 3,
-   "source": "inferred",
-   "number": "8"
-  },
-  {
-   "level": 1,
-   "title": "Introduction",
-   "page": 4,
-   "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "This is possible only for very special Kac-Moody algebras, and such formulation is",
-   "page": 25,
-   "source": "inferred",
-   "number": "10"
-  },
-  {
-   "level": 1,
-   "title": "Z X2",
-   "page": 30,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "This small correction is a manifestation of a very general phenomenon: from the",
-   "page": 31,
-   "source": "inferred",
-   "number": "13"
-  },
-  {
-   "level": 1,
-   "title": "Therefore it could be reasonable to use a di\ufb00erent notation: Ln instead of L2n. We",
-   "page": 35,
-   "source": "inferred",
-   "number": "14"
-  },
-  {
-   "level": 1,
-   "title": "Hm",
-   "page": 40,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "Hn",
-   "page": 40,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Hc1",
-   "page": 41,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Hb2",
-   "page": 41,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "Hc2",
-   "page": 41,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Here it is for the \ufb01rst time that we encounter an important idea: matrix models -",
-   "page": 43,
-   "source": "inferred",
-   "number": "16"
-  },
-  {
-   "level": 1,
-   "title": "This can be understood if one notes that matrix models",
-   "page": 46,
-   "source": "inferred",
-   "number": "18"
-  },
-  {
-   "level": 1,
-   "title": "Particles are always related to the \u201dangular (unitary-) matrix\u201d integrals (as everybody",
-   "page": 46,
-   "source": "inferred",
-   "number": "18"
-  },
-  {
-   "level": 1,
-   "title": "Of course, one can also use this link just with the aim to put the rich and beau-",
-   "page": 60,
-   "source": "inferred",
-   "number": "21"
-  },
-  {
-   "level": 1,
-   "title": "(\u2212d",
-   "page": 62,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "(h \u22122 d",
-   "page": 62,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "(det\u039b)N",
-   "page": 67,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "TrH2Det(\u039b \u2297I \u2212I \u2297H)",
-   "page": 67,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Note that this system of functions \u03d5k = i\u2212kHek(ih) looks like \u03d50 = 1, \u03d51 = h, \u03d52 =",
-   "page": 67,
-   "source": "inferred",
-   "number": "23"
-  },
-  {
-   "level": 1,
-   "title": "TrH2 = cN",
-   "page": 68,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "J D",
-   "page": 72,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Note that normalization factor here is di\ufb00erent by a factor of",
-   "page": 77,
-   "source": "inferred",
-   "number": "26"
-  },
-  {
-   "level": 1,
-   "title": "We once again emphasize that this trick is speci\ufb01c for the free fermions and for the",
-   "page": 78,
-   "source": "inferred",
-   "number": "27"
-  },
-  {
-   "level": 1,
-   "title": "Formulas in brackets are indeed correct, before them the usual symbolic relations are",
-   "page": 78,
-   "source": "inferred",
-   "number": "28"
-  },
-  {
-   "level": 1,
-   "title": "It is also the reason, why these are free-fermion tau-functions, that appear in the",
-   "page": 79,
-   "source": "inferred",
-   "number": "29"
-  },
-  {
-   "level": 1,
-   "title": "This relation is straightforward in the case of Virasoro constraints, since Virasoro",
-   "page": 80,
-   "source": "inferred",
-   "number": "30"
-  },
-  {
-   "level": 1,
-   "title": "((T a \u2297I + I \u2297T a)2 \u2212T aT a \u2297I \u2212I \u2297T aT a).) If further, T a \u2297T a",
-   "page": 81,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "U(z)J(z) =",
-   "page": 92,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "U(z)\u2202\u03c6(z) = \u2212",
-   "page": 92,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 2,
-   "title": "We remind that all conventional multimatrix models (with inter-matrix",
-   "page": 101,
-   "source": "inferred",
-   "number": "3.7"
-  },
-  {
-   "level": 1,
-   "title": "(\u2202\u03a6)2 (u) of antiperiodic \ufb01eld \u03a6(u)), are:",
-   "page": 131,
-   "source": "inferred",
-   "number": "2"
+   "number": "5.4",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Conclusion",
    "page": 138,
    "source": "inferred",
-   "number": null
+   "number": "6",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Acknowledgements",
    "page": 140,
    "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 140,
-   "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "The Kontsevich Integrals, Preprint SPhT/92-001, to appear in",
-   "page": 143,
-   "source": "inferred",
-   "number": "II"
+   "number": "7",
+   "confidence": 1.0,
+   "evidence": [
+    "latex",
+    "body"
+   ],
+   "page_label": null
   }
  ],
  "toc_source": "inferred",
- "sections": [
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
   {
-   "id": "sec-000-abstract",
-   "number": null,
-   "title": "Abstract",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 146,
-   "n_words": 22
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
-   "id": "sec-001-3-kontsevich-model",
-   "number": "3",
-   "title": "Kontsevich model",
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 39,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 40,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 41,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 42,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 43,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 44,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 45,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 46,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 47,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 48,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 49,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 50,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 51,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 52,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 53,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 54,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 55,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 56,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 57,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 58,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 59,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 60,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 61,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 62,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 63,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 64,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 65,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 66,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 67,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 68,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 69,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 70,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 71,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 72,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 73,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 74,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 75,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 76,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 77,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 78,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 79,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 80,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 81,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 82,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 83,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 84,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 85,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 86,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 87,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 88,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 89,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 90,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 91,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 92,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 93,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 94,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 95,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 96,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 97,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 98,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 99,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 100,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 101,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 102,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 103,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 104,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 105,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 106,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 107,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 108,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 109,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 110,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 111,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 112,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 113,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 114,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 115,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 116,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 117,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 118,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 119,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 120,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 121,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 122,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 123,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 124,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 125,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 126,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 127,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 128,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 129,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 130,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 131,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 132,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 133,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 134,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 135,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 136,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 137,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 138,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 139,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 140,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 141,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 142,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 143,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 144,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 145,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 146,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 147,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 148,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 149,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 389,
-   "n_words": 53
+   "n_chars": 730,
+   "n_words": 100,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-1-introduction",
+   "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 2,
    "page_end": 2,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-2-ward-identities-for-the-simplest-matrix-models",
+   "id": "sec-001-2-ward-identities-for-the-simplest-matrix-models",
    "number": "2",
    "title": "Ward identities for the simplest matrix models",
    "level": 1,
    "page_start": 2,
    "page_end": 2,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-004-21-ward-identites-versus-equations-of-motion",
+   "id": "sec-002-21-ward-identites-versus-equations-of-motion",
    "number": "2.1",
    "title": "Ward identites versus equations of motion",
    "level": 2,
    "page_start": 2,
    "page_end": 2,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-005-22-virasoro-constraints-for-the-discrete-1-matri",
+   "id": "sec-003-22-virasoro-constraints-for-the-discrete-1-matri",
    "number": "2.2",
    "title": "Virasoro constraints for the discrete 1-matrix model",
    "level": 2,
    "page_start": 2,
    "page_end": 2,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-006-23-cft-formulation-of-matrix-models",
+   "id": "sec-004-23-cft-formulation-of-matrix-models",
    "number": "2.3",
    "title": "CFT formulation of matrix models",
    "level": 2,
    "page_start": 2,
    "page_end": 2,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-007-24-gross-newman-equation",
+   "id": "sec-005-24-gross-newman-equation",
    "number": "2.4",
    "title": "Gross-Newman equation",
    "level": 2,
    "page_start": 2,
    "page_end": 2,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-008-25-ward-identities-for-generalized-kontsevich-mo",
+   "id": "sec-006-25-ward-identities-for-generalized-kontsevich-mo",
    "number": "2.5",
    "title": "Ward identities for Generalized Kontsevich Model",
    "level": 2,
    "page_start": 2,
    "page_end": 2,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-009-26-discrete-virasoro-constraints-for-the-gaussia",
+   "id": "sec-007-26-discrete-virasoro-constraints-for-the-gaussia",
    "number": "2.6",
    "title": "Discrete Virasoro constraints for the Gaussian Kontsevich model",
    "level": 2,
    "page_start": 2,
-   "page_end": 2,
-   "n_chars": 0,
-   "n_words": 0
+   "page_end": 32,
+   "n_chars": 55353,
+   "n_words": 9669,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-010-27-continuous-virasoro-constraints-for-the-v-x3",
+   "id": "sec-008-27-continuous-virasoro-constraints-for-the-v-fra",
    "number": "2.7",
-   "title": "Continuous Virasoro constraints for the V = X3",
+   "title": "Continuous Virasoro constraints for the $V = \\frac{X^3}{3}$ Kontsevich model",
    "level": 2,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 158,
-   "n_words": 21
+   "page_start": 32,
+   "page_end": 46,
+   "n_chars": 21332,
+   "n_words": 4261,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-011-3-eigenvalue-models",
+   "id": "sec-009-3-eigenvalue-models",
    "number": "3",
    "title": "Eigenvalue models",
    "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 0,
-   "n_words": 0
+   "page_start": 46,
+   "page_end": 46,
+   "n_chars": 17,
+   "n_words": 2,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-012-31-what-are-eigenvalue-models",
+   "id": "sec-010-31-what-are-eigenvalue-models",
    "number": "3.1",
    "title": "What are eigenvalue models",
    "level": 2,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 19,
-   "n_words": 3
+   "page_start": 46,
+   "page_end": 47,
+   "n_chars": 3429,
+   "n_words": 559,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-013-33-itzykson-zuber-and-kontsevich-integrals",
+   "id": "sec-011-32-1-matrix-model",
+   "number": "3.2",
+   "title": "1-matrix model",
+   "level": 2,
+   "page_start": 47,
+   "page_end": 49,
+   "n_chars": 2702,
+   "n_words": 506,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-012-33-itzykson-zuber-and-kontsevich-integrals",
    "number": "3.3",
    "title": "Itzykson-Zuber and Kontsevich integrals",
    "level": 2,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 0,
-   "n_words": 0
+   "page_start": 49,
+   "page_end": 52,
+   "n_chars": 4184,
+   "n_words": 784,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-014-34-conventional-multimatrix-models",
+   "id": "sec-013-34-conventional-multimatrix-models",
    "number": "3.4",
    "title": "Conventional Multimatrix models",
    "level": 2,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 0,
-   "n_words": 0
+   "page_start": 52,
+   "page_end": 53,
+   "n_chars": 1740,
+   "n_words": 324,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-015-35-determinant-formulas-for-eigenvalue-models",
+   "id": "sec-014-35-determinant-formulas-for-eigenvalue-models",
    "number": "3.5",
    "title": "Determinant formulas for eigenvalue models",
    "level": 2,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 0,
-   "n_words": 0
+   "page_start": 53,
+   "page_end": 59,
+   "n_chars": 9000,
+   "n_words": 1776,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-016-36-orthogonal-polinomials",
+   "id": "sec-015-36-orthogonal-polinomials",
    "number": "3.6",
    "title": "Orthogonal polinomials",
    "level": 2,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 0,
-   "n_words": 0
+   "page_start": 59,
+   "page_end": 65,
+   "n_chars": 10052,
+   "n_words": 1734,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-017-37-two-component-models-in-miwa-parametrization",
+   "id": "sec-016-37-scalar-product-models-in-miwa-parametrization",
    "number": "3.7",
-   "title": "Two-component models in Miwa parametrization",
+   "title": "Scalar-product models in Miwa parametrization",
    "level": 2,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 0,
-   "n_words": 0
+   "page_start": 65,
+   "page_end": 66,
+   "n_chars": 2695,
+   "n_words": 455,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-018-38-equivalence-of-the-discrete-1-matrix-and-gaus",
+   "id": "sec-017-38-equivalence-of-the-discrete-1-matrix-and-gaus",
    "number": "3.8",
    "title": "Equivalence of the discrete 1-matrix and Gaussian Kontsevich models",
    "level": 2,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 0,
-   "n_words": 0
+   "page_start": 66,
+   "page_end": 68,
+   "n_chars": 2634,
+   "n_words": 506,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-019-39-volume-of-unitary-group",
+   "id": "sec-018-39-volume-of-unitary-group",
    "number": "3.9",
    "title": "Volume of unitary group",
    "level": 2,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 0,
-   "n_words": 0
+   "page_start": 68,
+   "page_end": 70,
+   "n_chars": 2061,
+   "n_words": 397,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-020-4-integrable-structure-of-eigenvalue-models",
+   "id": "sec-019-4-integrable-structure-of-eigenvalue-models",
    "number": "4",
    "title": "Integrable structure of eigenvalue models",
    "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 0,
-   "n_words": 0
+   "page_start": 70,
+   "page_end": 70,
+   "n_chars": 41,
+   "n_words": 5,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-021-41-the-concept-of-integrability",
+   "id": "sec-020-41-the-concept-of-integrability",
    "number": "4.1",
    "title": "The concept of integrability",
    "level": 2,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 0,
-   "n_words": 0
+   "page_start": 70,
+   "page_end": 75,
+   "n_chars": 11813,
+   "n_words": 1908,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-022-42-the-notion-of-\u03c4-function",
+   "id": "sec-021-42-the-notion-of-tau-function",
    "number": "4.2",
-   "title": "The notion of \u03c4-function",
+   "title": "The notion of $\\tau$-function",
    "level": 2,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 47,
-   "n_words": 6
+   "page_start": 75,
+   "page_end": 83,
+   "n_chars": 15419,
+   "n_words": 2680,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-023-44-basic-determinant-formula-for-the-free-fermio",
+   "id": "sec-022-44-basic-determinant-formula-for-the-free-fermio",
    "number": "4.4",
    "title": "Basic determinant formula for the free-fermion correlator",
    "level": 2,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 0,
-   "n_words": 0
+   "page_start": 83,
+   "page_end": 87,
+   "n_chars": 4155,
+   "n_words": 913,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-024-45-toda-lattice-\u03c4-function-and-linear-reductions",
+   "id": "sec-023-45-toda-lattice-tau-function-and-linear-reductio",
    "number": "4.5",
-   "title": "Toda-lattice \u03c4-function and linear reductions of Toda-lattice hierar-",
+   "title": "Toda-lattice $\\tau$-function and linear reductions of Toda hierarchy",
    "level": 2,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 3,
-   "n_words": 1
+   "page_start": 87,
+   "page_end": 92,
+   "n_chars": 7858,
+   "n_words": 1427,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-025-46-fermion-correlator-in-miwa-coordinates",
+   "id": "sec-024-46-fermion-correlator-in-miwa-coordinates",
    "number": "4.6",
    "title": "Fermion correlator in Miwa coordinates",
    "level": 2,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 38,
-   "n_words": 5
+   "page_start": 92,
+   "page_end": 99,
+   "n_chars": 10413,
+   "n_words": 2149,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-026-48-string-equations-and-generic-concept-of-reduc",
-   "number": "4.8",
-   "title": "String equations and generic concept of reduction",
+   "id": "sec-025-47-matrix-models-versus-tau-functions",
+   "number": "4.7",
+   "title": "Matrix models versus $\\tau$-functions.",
    "level": 2,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 0,
-   "n_words": 0
+   "page_start": 99,
+   "page_end": 104,
+   "n_chars": 8815,
+   "n_words": 1495,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-026-48-string-equations-and-general-concept-of-reduc",
+   "number": "4.8",
+   "title": "String equations and general concept of reduction",
+   "level": 2,
+   "page_start": 104,
+   "page_end": 110,
+   "n_chars": 9433,
+   "n_words": 1762,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-027-49-on-the-theory-of-gkm",
    "number": "4.9",
    "title": "On the theory of GKM",
    "level": 2,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 47,
-   "n_words": 6
+   "page_start": 110,
+   "page_end": 118,
+   "n_chars": 16861,
+   "n_words": 2943,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-028-5-continuum-limits-of-discrete-matrix-models",
+   "id": "sec-028-410-1-matrix-model-versus-toda-chain-hierarchy",
+   "number": "4.10",
+   "title": "1-Matrix model versus Toda-chain hierarchy",
+   "level": 2,
+   "page_start": 118,
+   "page_end": 121,
+   "n_chars": 4051,
+   "n_words": 810,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-029-5-continuum-limits-of-discrete-matrix-models",
    "number": "5",
    "title": "Continuum limits of discrete matrix models",
    "level": 1,
-   "page_start": 2,
-   "page_end": 3,
-   "n_chars": 1,
-   "n_words": 1
+   "page_start": 121,
+   "page_end": 121,
+   "n_chars": 3,
+   "n_words": 1,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-029-51-what-is-continuum-limit",
+   "id": "sec-030-51-what-is-continuum-limit",
    "number": "5.1",
    "title": "What is continuum limit",
    "level": 2,
-   "page_start": 3,
-   "page_end": 3,
-   "n_chars": 0,
-   "n_words": 0
+   "page_start": 121,
+   "page_end": 124,
+   "n_chars": 6892,
+   "n_words": 1076,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-030-52-from-toda-chain-to-kdv",
+   "id": "sec-031-52-from-toda-chain-to-kdv",
    "number": "5.2",
    "title": "From Toda-chain to KdV",
    "level": 2,
-   "page_start": 3,
-   "page_end": 3,
-   "n_chars": 0,
-   "n_words": 0
+   "page_start": 124,
+   "page_end": 126,
+   "n_chars": 4869,
+   "n_words": 853,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-031-53-double-scaling-limit-of-1-matrix-model",
+   "id": "sec-032-53-double-scaling-limit-of-1-matrix-model",
    "number": "5.3",
    "title": "Double-scaling limit of 1-matrix model",
    "level": 2,
-   "page_start": 3,
-   "page_end": 3,
-   "n_chars": 0,
-   "n_words": 0
+   "page_start": 126,
+   "page_end": 134,
+   "n_chars": 13075,
+   "n_words": 2392,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-032-54-from-gaussian-to-x3-kontsevich-model",
+   "id": "sec-033-54-from-gaussian-to-x3-kontsevich-model",
    "number": "5.4",
-   "title": "From Gaussian to X3-Kontsevich model",
+   "title": "From Gaussian to $X^3$ Kontsevich model",
    "level": 2,
-   "page_start": 3,
-   "page_end": 3,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-033-6-conclusion",
-   "number": "6",
-   "title": "Conclusion",
-   "level": 1,
-   "page_start": 3,
-   "page_end": 3,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-034-7-acknowledgements",
-   "number": "7",
-   "title": "Acknowledgements",
-   "level": 1,
-   "page_start": 3,
-   "page_end": 3,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-035-8-references",
-   "number": "8",
-   "title": "References",
-   "level": 1,
-   "page_start": 3,
-   "page_end": 4,
-   "n_chars": 3,
-   "n_words": 2
-  },
-  {
-   "id": "sec-036-introduction",
-   "number": null,
-   "title": "Introduction",
-   "level": 1,
-   "page_start": 4,
-   "page_end": 25,
-   "n_chars": 42005,
-   "n_words": 7237
-  },
-  {
-   "id": "sec-037-10-this-is-possible-only-for-very-special-kac-mo",
-   "number": "10",
-   "title": "This is possible only for very special Kac-Moody algebras, and such formulation is",
-   "level": 1,
-   "page_start": 25,
-   "page_end": 30,
-   "n_chars": 8700,
-   "n_words": 1559
-  },
-  {
-   "id": "sec-038-2-z-x2",
-   "number": "2",
-   "title": "Z X2",
-   "level": 1,
-   "page_start": 30,
-   "page_end": 31,
-   "n_chars": 1830,
-   "n_words": 420
-  },
-  {
-   "id": "sec-039-13-this-small-correction-is-a-manifestation-of-a",
-   "number": "13",
-   "title": "This small correction is a manifestation of a very general phenomenon: from the",
-   "level": 1,
-   "page_start": 31,
-   "page_end": 35,
-   "n_chars": 6926,
-   "n_words": 1347
-  },
-  {
-   "id": "sec-040-14-therefore-it-could-be-reasonable-to-use-a-di\ufb00",
-   "number": "14",
-   "title": "Therefore it could be reasonable to use a di\ufb00erent notation: Ln instead of L2n. We",
-   "level": 1,
-   "page_start": 35,
-   "page_end": 39,
-   "n_chars": 5331,
-   "n_words": 1098
-  },
-  {
-   "id": "sec-041-2-hn",
-   "number": "2",
-   "title": "Hn",
-   "level": 1,
-   "page_start": 39,
-   "page_end": 39,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-042-1-hm",
-   "number": "1",
-   "title": "Hm",
-   "level": 1,
-   "page_start": 39,
-   "page_end": 40,
-   "n_chars": 1861,
-   "n_words": 352
-  },
-  {
-   "id": "sec-043-3-hb2",
-   "number": "3",
-   "title": "Hb2",
-   "level": 1,
-   "page_start": 40,
-   "page_end": 41,
-   "n_chars": 1246,
-   "n_words": 254
-  },
-  {
-   "id": "sec-044-2-hc1",
-   "number": "2",
-   "title": "Hc1",
-   "level": 1,
-   "page_start": 41,
-   "page_end": 41,
-   "n_chars": 5,
-   "n_words": 2
-  },
-  {
-   "id": "sec-045-2-hc2",
-   "number": "2",
-   "title": "Hc2",
-   "level": 1,
-   "page_start": 41,
-   "page_end": 43,
-   "n_chars": 4148,
-   "n_words": 773
-  },
-  {
-   "id": "sec-046-16-here-it-is-for-the-\ufb01rst-time-that-we-encounte",
-   "number": "16",
-   "title": "Here it is for the \ufb01rst time that we encounter an important idea: matrix models -",
-   "level": 1,
-   "page_start": 43,
-   "page_end": 46,
-   "n_chars": 4317,
-   "n_words": 845
-  },
-  {
-   "id": "sec-047-18-this-can-be-understood-if-one-notes-that-matr",
-   "number": "18",
-   "title": "This can be understood if one notes that matrix models",
-   "level": 1,
-   "page_start": 46,
-   "page_end": 46,
-   "n_chars": 653,
-   "n_words": 106
-  },
-  {
-   "id": "sec-048-18-particles-are-always-related-to-the-angular-u",
-   "number": "18",
-   "title": "Particles are always related to the \u201dangular (unitary-) matrix\u201d integrals (as everybody",
-   "level": 1,
-   "page_start": 46,
-   "page_end": 60,
-   "n_chars": 21561,
-   "n_words": 4027
-  },
-  {
-   "id": "sec-049-21-of-course-one-can-also-use-this-link-just-wit",
-   "number": "21",
-   "title": "Of course, one can also use this link just with the aim to put the rich and beau-",
-   "level": 1,
-   "page_start": 60,
-   "page_end": 62,
-   "n_chars": 2607,
-   "n_words": 433
-  },
-  {
-   "id": "sec-050-2-d",
-   "number": "2",
-   "title": "(\u2212d",
-   "level": 1,
-   "page_start": 62,
-   "page_end": 62,
-   "n_chars": 22,
-   "n_words": 7
-  },
-  {
-   "id": "sec-051-4-h-2-d",
-   "number": "4",
-   "title": "(h \u22122 d",
-   "level": 1,
-   "page_start": 62,
-   "page_end": 66,
-   "n_chars": 5632,
-   "n_words": 1031
-  },
-  {
-   "id": "sec-052-2-det\u03bbn",
-   "number": "2",
-   "title": "(det\u039b)N",
-   "level": 1,
-   "page_start": 66,
-   "page_end": 67,
-   "n_chars": 2659,
-   "n_words": 475
-  },
-  {
-   "id": "sec-053-2-trh2det\u03bb-i-i-h",
-   "number": "2",
-   "title": "TrH2Det(\u039b \u2297I \u2212I \u2297H)",
-   "level": 1,
-   "page_start": 67,
-   "page_end": 67,
-   "n_chars": 467,
-   "n_words": 91
-  },
-  {
-   "id": "sec-054-23-note-that-this-system-of-functions-\u03d5k-ikhekih",
-   "number": "23",
-   "title": "Note that this system of functions \u03d5k = i\u2212kHek(ih) looks like \u03d50 = 1, \u03d51 = h, \u03d52 =",
-   "level": 1,
-   "page_start": 67,
-   "page_end": 68,
-   "n_chars": 1292,
-   "n_words": 224
-  },
-  {
-   "id": "sec-055-2-trh2-cn",
-   "number": "2",
-   "title": "TrH2 = cN",
-   "level": 1,
-   "page_start": 68,
-   "page_end": 72,
-   "n_chars": 7540,
-   "n_words": 1276
-  },
-  {
-   "id": "sec-056-2-j-d",
-   "number": "2",
-   "title": "J D",
-   "level": 1,
-   "page_start": 72,
-   "page_end": 77,
-   "n_chars": 10551,
-   "n_words": 1738
-  },
-  {
-   "id": "sec-057-26-note-that-normalization-factor-here-is-di\ufb00ere",
-   "number": "26",
-   "title": "Note that normalization factor here is di\ufb00erent by a factor of",
-   "level": 1,
-   "page_start": 77,
-   "page_end": 78,
-   "n_chars": 1648,
-   "n_words": 283
-  },
-  {
-   "id": "sec-058-27-we-once-again-emphasize-that-this-trick-is-sp",
-   "number": "27",
-   "title": "We once again emphasize that this trick is speci\ufb01c for the free fermions and for the",
-   "level": 1,
-   "page_start": 78,
-   "page_end": 78,
-   "n_chars": 467,
-   "n_words": 68
-  },
-  {
-   "id": "sec-059-28-formulas-in-brackets-are-indeed-correct-befor",
-   "number": "28",
-   "title": "Formulas in brackets are indeed correct, before them the usual symbolic relations are",
-   "level": 1,
-   "page_start": 78,
-   "page_end": 79,
-   "n_chars": 1586,
-   "n_words": 297
-  },
-  {
-   "id": "sec-060-29-it-is-also-the-reason-why-these-are-free-ferm",
-   "number": "29",
-   "title": "It is also the reason, why these are free-fermion tau-functions, that appear in the",
-   "level": 1,
-   "page_start": 79,
-   "page_end": 80,
-   "n_chars": 1737,
-   "n_words": 296
-  },
-  {
-   "id": "sec-061-30-this-relation-is-straightforward-in-the-case",
-   "number": "30",
-   "title": "This relation is straightforward in the case of Virasoro constraints, since Virasoro",
-   "level": 1,
-   "page_start": 80,
-   "page_end": 81,
-   "n_chars": 1614,
-   "n_words": 275
-  },
-  {
-   "id": "sec-062-2-t-a-i-i-t-a2-t-at-a-i-i-t-at-a-if-further-t-a",
-   "number": "2",
-   "title": "((T a \u2297I + I \u2297T a)2 \u2212T aT a \u2297I \u2212I \u2297T aT a).) If further, T a \u2297T a",
-   "level": 1,
-   "page_start": 81,
-   "page_end": 92,
-   "n_chars": 16499,
-   "n_words": 3152
-  },
-  {
-   "id": "sec-063-0-uzjz",
-   "number": "0",
-   "title": "U(z)J(z) =",
-   "level": 1,
-   "page_start": 92,
-   "page_end": 92,
-   "n_chars": 1,
-   "n_words": 1
-  },
-  {
-   "id": "sec-064-0-uz\u03c6z",
-   "number": "0",
-   "title": "U(z)\u2202\u03c6(z) = \u2212",
-   "level": 1,
-   "page_start": 92,
-   "page_end": 101,
-   "n_chars": 13499,
-   "n_words": 2613
-  },
-  {
-   "id": "sec-065-37-we-remind-that-all-conventional-multimatrix-m",
-   "number": "3.7",
-   "title": "We remind that all conventional multimatrix models (with inter-matrix",
-   "level": 2,
-   "page_start": 101,
-   "page_end": 131,
-   "n_chars": 54835,
-   "n_words": 9721
-  },
-  {
-   "id": "sec-066-2-\u03c62-u-of-antiperiodic-\ufb01eld-\u03c6u-are",
-   "number": "2",
-   "title": "(\u2202\u03a6)2 (u) of antiperiodic \ufb01eld \u03a6(u)), are:",
-   "level": 1,
-   "page_start": 131,
+   "page_start": 134,
    "page_end": 138,
-   "n_chars": 10598,
-   "n_words": 2118
+   "n_chars": 5476,
+   "n_words": 1153,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-067-conclusion",
-   "number": null,
+   "id": "sec-034-6-conclusion",
+   "number": "6",
    "title": "Conclusion",
    "level": 1,
    "page_start": 138,
    "page_end": 140,
-   "n_chars": 5145,
-   "n_words": 835
+   "n_chars": 5154,
+   "n_words": 835,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-068-acknowledgements",
-   "number": null,
+   "id": "sec-035-7-acknowledgements",
+   "number": "7",
    "title": "Acknowledgements",
    "level": 1,
    "page_start": 140,
-   "page_end": 140,
-   "n_chars": 550,
-   "n_words": 93
-  },
-  {
-   "id": "sec-069-references",
-   "number": null,
-   "title": "References",
-   "level": 1,
-   "page_start": 140,
-   "page_end": 143,
-   "n_chars": 3332,
-   "n_words": 451
-  },
-  {
-   "id": "sec-070-ii-the-kontsevich-integrals-preprint-spht92-001",
-   "number": "II",
-   "title": "The Kontsevich Integrals, Preprint SPhT/92-001, to appear in",
-   "level": 1,
-   "page_start": 143,
    "page_end": 149,
-   "n_chars": 9456,
-   "n_words": 1220
+   "n_chars": 13433,
+   "n_words": 1775,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 71,
-  "sections": 71,
-  "chars_total": 251171,
+  "toc_entries": 36,
+  "toc_inferred_entries": 40,
+  "toc_inferred_mean_confidence": 1.0,
+  "toc_inferred_empty_share": 0.25,
+  "toc_inferred_method": "latex",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 37,
+  "chars_total": 253690,
+  "furniture_lines_stripped": 0,
+  "headings_tidied": [
+   {
+    "title": "$\\tilde W$-constraints for the asymmetric 2-matrix model",
+    "page": 36,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "$\\tilde W$-constraints for generic 2-matrix model",
+    "page": 39,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "$\\tilde W$-operators in Kontsevich model",
+    "page": 42,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "1-matrix model",
+    "page": 47,
+    "action": "rejoined",
+    "as": "1-matrix model",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "$\\tau$-function, associated with the free fermions",
+    "page": 76,
+    "action": "dropped",
+    "why": "opens in lower case"
+   }
+  ],
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 40,
-   "overlaid": 3,
+   "overlaid": 24,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1266,399 +2076,275 @@
    },
    "sections": [
     {
-     "id": "sec-000-abstract",
-     "title": "Abstract",
+     "id": "sec-front-matter",
+     "title": "Front matter",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-001-3-kontsevich-model",
-     "title": "Kontsevich model",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-002-1-introduction",
+     "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-003-2-ward-identities-for-the-simplest-matrix-models",
+     "id": "sec-001-2-ward-identities-for-the-simplest-matrix-models",
      "title": "Ward identities for the simplest matrix models",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-004-21-ward-identites-versus-equations-of-motion",
+     "id": "sec-002-21-ward-identites-versus-equations-of-motion",
      "title": "Ward identites versus equations of motion",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-005-22-virasoro-constraints-for-the-discrete-1-matri",
+     "id": "sec-003-22-virasoro-constraints-for-the-discrete-1-matri",
      "title": "Virasoro constraints for the discrete 1-matrix model",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-006-23-cft-formulation-of-matrix-models",
+     "id": "sec-004-23-cft-formulation-of-matrix-models",
      "title": "CFT formulation of matrix models",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-007-24-gross-newman-equation",
+     "id": "sec-005-24-gross-newman-equation",
      "title": "Gross-Newman equation",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-008-25-ward-identities-for-generalized-kontsevich-mo",
+     "id": "sec-006-25-ward-identities-for-generalized-kontsevich-mo",
      "title": "Ward identities for Generalized Kontsevich Model",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-009-26-discrete-virasoro-constraints-for-the-gaussia",
+     "id": "sec-007-26-discrete-virasoro-constraints-for-the-gaussia",
      "title": "Discrete Virasoro constraints for the Gaussian Kontsevich model",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.947,
+     "coverage_ratio": 0.157,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
-     "id": "sec-010-27-continuous-virasoro-constraints-for-the-v-x3",
-     "title": "Continuous Virasoro constraints for the V = X3",
-     "result": "no matching \\section"
+     "id": "sec-008-27-continuous-virasoro-constraints-for-the-v-fra",
+     "title": "Continuous Virasoro constraints for the $V = \\frac{X^3}{3}$ Kontsevich model",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-011-3-eigenvalue-models",
+     "id": "sec-009-3-eigenvalue-models",
      "title": "Eigenvalue models",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-012-31-what-are-eigenvalue-models",
+     "id": "sec-010-31-what-are-eigenvalue-models",
      "title": "What are eigenvalue models",
-     "prose_ratio": 0.007,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.893,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-013-33-itzykson-zuber-and-kontsevich-integrals",
+     "id": "sec-011-32-1-matrix-model",
+     "title": "1-matrix model",
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.681,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-012-33-itzykson-zuber-and-kontsevich-integrals",
      "title": "Itzykson-Zuber and Kontsevich integrals",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.927,
+     "coverage_ratio": 0.94,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-014-34-conventional-multimatrix-models",
+     "id": "sec-013-34-conventional-multimatrix-models",
      "title": "Conventional Multimatrix models",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-015-35-determinant-formulas-for-eigenvalue-models",
+     "id": "sec-014-35-determinant-formulas-for-eigenvalue-models",
      "title": "Determinant formulas for eigenvalue models",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.933,
+     "coverage_ratio": 0.956,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-016-36-orthogonal-polinomials",
+     "id": "sec-015-36-orthogonal-polinomials",
      "title": "Orthogonal polinomials",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-017-37-two-component-models-in-miwa-parametrization",
-     "title": "Two-component models in Miwa parametrization",
-     "result": "no matching \\section"
+     "id": "sec-016-37-scalar-product-models-in-miwa-parametrization",
+     "title": "Scalar-product models in Miwa parametrization",
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-018-38-equivalence-of-the-discrete-1-matrix-and-gaus",
+     "id": "sec-017-38-equivalence-of-the-discrete-1-matrix-and-gaus",
      "title": "Equivalence of the discrete 1-matrix and Gaussian Kontsevich models",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.939,
+     "coverage_ratio": 0.939,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-019-39-volume-of-unitary-group",
+     "id": "sec-018-39-volume-of-unitary-group",
      "title": "Volume of unitary group",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.918,
+     "coverage_ratio": 0.967,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-020-4-integrable-structure-of-eigenvalue-models",
+     "id": "sec-019-4-integrable-structure-of-eigenvalue-models",
      "title": "Integrable structure of eigenvalue models",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-021-41-the-concept-of-integrability",
+     "id": "sec-020-41-the-concept-of-integrability",
      "title": "The concept of integrability",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.984,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-022-42-the-notion-of-\u03c4-function",
-     "title": "The notion of \u03c4-function",
-     "prose_ratio": 0.013,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-021-42-the-notion-of-tau-function",
+     "title": "The notion of $\\tau$-function",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-023-44-basic-determinant-formula-for-the-free-fermio",
+     "id": "sec-022-44-basic-determinant-formula-for-the-free-fermio",
      "title": "Basic determinant formula for the free-fermion correlator",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.924,
+     "coverage_ratio": 0.914,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-024-45-toda-lattice-\u03c4-function-and-linear-reductions",
-     "title": "Toda-lattice \u03c4-function and linear reductions of Toda-lattice hierar-",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-023-45-toda-lattice-tau-function-and-linear-reductio",
+     "title": "Toda-lattice $\\tau$-function and linear reductions of Toda hierarchy",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-025-46-fermion-correlator-in-miwa-coordinates",
+     "id": "sec-024-46-fermion-correlator-in-miwa-coordinates",
      "title": "Fermion correlator in Miwa coordinates",
-     "prose_ratio": 0.011,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-026-48-string-equations-and-generic-concept-of-reduc",
-     "title": "String equations and generic concept of reduction",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-025-47-matrix-models-versus-tau-functions",
+     "title": "Matrix models versus $\\tau$-functions.",
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-026-48-string-equations-and-general-concept-of-reduc",
+     "title": "String equations and general concept of reduction",
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-027-49-on-the-theory-of-gkm",
      "title": "On the theory of GKM",
-     "prose_ratio": 0.009,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.954,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-028-5-continuum-limits-of-discrete-matrix-models",
+     "id": "sec-028-410-1-matrix-model-versus-toda-chain-hierarchy",
+     "title": "1-Matrix model versus Toda-chain hierarchy",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.958,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-029-5-continuum-limits-of-discrete-matrix-models",
      "title": "Continuum limits of discrete matrix models",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-029-51-what-is-continuum-limit",
+     "id": "sec-030-51-what-is-continuum-limit",
      "title": "What is continuum limit",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-030-52-from-toda-chain-to-kdv",
-     "title": "From Toda-chain to KdV",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-031-53-double-scaling-limit-of-1-matrix-model",
-     "title": "Double-scaling limit of 1-matrix model",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-032-54-from-gaussian-to-x3-kontsevich-model",
-     "title": "From Gaussian to X3-Kontsevich model",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-033-6-conclusion",
-     "title": "Conclusion",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-034-7-acknowledgements",
-     "title": "Acknowledgements",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-035-8-references",
-     "title": "References",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-036-introduction",
-     "title": "Introduction",
-     "prose_ratio": 0.964,
-     "coverage_ratio": 0.742,
+     "prose_ratio": 0.983,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-037-10-this-is-possible-only-for-very-special-kac-mo",
-     "title": "This is possible only for very special Kac-Moody algebras, and such formulation is",
-     "result": "no matching \\section"
+     "id": "sec-031-52-from-toda-chain-to-kdv",
+     "title": "From Toda-chain to KdV",
+     "prose_ratio": 0.964,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-038-2-z-x2",
-     "title": "Z X2",
-     "result": "no matching \\section"
+     "id": "sec-032-53-double-scaling-limit-of-1-matrix-model",
+     "title": "Double-scaling limit of 1-matrix model",
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-039-13-this-small-correction-is-a-manifestation-of-a",
-     "title": "This small correction is a manifestation of a very general phenomenon: from the",
-     "result": "no matching \\section"
+     "id": "sec-033-54-from-gaussian-to-x3-kontsevich-model",
+     "title": "From Gaussian to $X^3$ Kontsevich model",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-040-14-therefore-it-could-be-reasonable-to-use-a-di\ufb00",
-     "title": "Therefore it could be reasonable to use a di\ufb00erent notation: Ln instead of L2n. We",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-041-2-hn",
-     "title": "Hn",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-042-1-hm",
-     "title": "Hm",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-043-3-hb2",
-     "title": "Hb2",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-044-2-hc1",
-     "title": "Hc1",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-045-2-hc2",
-     "title": "Hc2",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-046-16-here-it-is-for-the-\ufb01rst-time-that-we-encounte",
-     "title": "Here it is for the \ufb01rst time that we encounter an important idea: matrix models -",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-047-18-this-can-be-understood-if-one-notes-that-matr",
-     "title": "This can be understood if one notes that matrix models",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-048-18-particles-are-always-related-to-the-angular-u",
-     "title": "Particles are always related to the \u201dangular (unitary-) matrix\u201d integrals (as everybody",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-049-21-of-course-one-can-also-use-this-link-just-wit",
-     "title": "Of course, one can also use this link just with the aim to put the rich and beau-",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-050-2-d",
-     "title": "(\u2212d",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-051-4-h-2-d",
-     "title": "(h \u22122 d",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-052-2-det\u03bbn",
-     "title": "(det\u039b)N",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-053-2-trh2det\u03bb-i-i-h",
-     "title": "TrH2Det(\u039b \u2297I \u2212I \u2297H)",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-054-23-note-that-this-system-of-functions-\u03d5k-ikhekih",
-     "title": "Note that this system of functions \u03d5k = i\u2212kHek(ih) looks like \u03d50 = 1, \u03d51 = h, \u03d52 =",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-055-2-trh2-cn",
-     "title": "TrH2 = cN",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-056-2-j-d",
-     "title": "J D",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-057-26-note-that-normalization-factor-here-is-di\ufb00ere",
-     "title": "Note that normalization factor here is di\ufb00erent by a factor of",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-058-27-we-once-again-emphasize-that-this-trick-is-sp",
-     "title": "We once again emphasize that this trick is speci\ufb01c for the free fermions and for the",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-059-28-formulas-in-brackets-are-indeed-correct-befor",
-     "title": "Formulas in brackets are indeed correct, before them the usual symbolic relations are",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-060-29-it-is-also-the-reason-why-these-are-free-ferm",
-     "title": "It is also the reason, why these are free-fermion tau-functions, that appear in the",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-061-30-this-relation-is-straightforward-in-the-case",
-     "title": "This relation is straightforward in the case of Virasoro constraints, since Virasoro",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-062-2-t-a-i-i-t-a2-t-at-a-i-i-t-at-a-if-further-t-a",
-     "title": "((T a \u2297I + I \u2297T a)2 \u2212T aT a \u2297I \u2212I \u2297T aT a).) If further, T a \u2297T a",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-063-0-uzjz",
-     "title": "U(z)J(z) =",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-064-0-uz\u03c6z",
-     "title": "U(z)\u2202\u03c6(z) = \u2212",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-065-37-we-remind-that-all-conventional-multimatrix-m",
-     "title": "We remind that all conventional multimatrix models (with inter-matrix",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-066-2-\u03c62-u-of-antiperiodic-\ufb01eld-\u03c6u-are",
-     "title": "(\u2202\u03a6)2 (u) of antiperiodic \ufb01eld \u03a6(u)), are:",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-067-conclusion",
+     "id": "sec-034-6-conclusion",
      "title": "Conclusion",
      "prose_ratio": 0.962,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.997,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-068-acknowledgements",
+     "id": "sec-035-7-acknowledgements",
      "title": "Acknowledgements",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-069-references",
-     "title": "References",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-070-ii-the-kontsevich-integrals-preprint-spht92-001",
-     "title": "The Kontsevich Integrals, Preprint SPhT/92-001, to appear in",
-     "result": "no matching \\section"
+     "coverage_ratio": 0.116,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

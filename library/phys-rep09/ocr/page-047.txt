@@ -1,0 +1,66 @@
+S. Blanes et al. / Physics Reports 470 (2009) 151-238 197
+
+Exact
+
+— — - Fer/Wilcox-1
+- Fer-2
+—-—- Fer-3
+
+0.6 4
+
+0.44
+
+Transition Probability (E=1)
+
+0.24
+
+0.0
+
+Fig. 11. Rectangular step: Transition probability as a function of y, with € = 1. Lines are coded as in Fig. 9. Computations up to third order, in the Interaction
+Picture.
+
+10 ——
+Exact
+ax, S81) —-—-- Iterative 2
+Q
+VY — — — Magnus 2
+=
+2Po065s \\e tee 1st order
+a
+o
+8
+2
+o
+c 044
+i]
+a
+2
+£
+* 024
+0.0
+0
+
+Fig. 12. Rectangular step: Transition probability in the two level system as a function of €, for y = 1.3: Exact result (204) (solid line), second iterate of
+Voslamber method (dashed line), second order ME (dotted line) and first Voslamber iterate (or order in ME) (dash-dotted line). Computations are done in
+the Interaction Picture.
+
+In Fig. 12, the various approximated transition probabilities, as well as the exact result (196), have been plotted as a
+function of € for a fixed value y = 1.5. We observe that the approximation from the second iterate keeps the trend of the
+exact solution in a better way than the second order Magnus approximation does.
+
+In Fig. 13 we have plotted the corresponding transition probabilities versus y for fixed value € = 1. Although locally, the
+second order Magnus approximation may be more accurate, it seems that the trend of the exact solution is mimicked for a
+longer interval of y.
+
+As it has already been pointed out above, the Magnus expansion works better the more sudden the perturbation. Thus,
+the re-summation involved in the iterative method slightly improves that issue. Further results on the present example may
+be found in [93].
+
+4.5. Linear periodic systems: Floquet-Magnus formalism
+
+Next we deal with a periodically driven harmonic oscillator, where the infinite expansions obtained from
+Floquet-Magnus recurrences (see Section 3.2), are utterly summed. Comparison with the exact solution illustrates the
+feasibility of the method.
+
+The particular system we consider is described by the Hamiltonian (179) with f(t) = 45 cos wt and wp < w. Once the
+recurrences of the Floquet-Magnus expansion (see Section 3.2) are explicitly computed for several orders, their general term

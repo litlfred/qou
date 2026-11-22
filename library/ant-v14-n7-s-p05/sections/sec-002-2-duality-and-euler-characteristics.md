@@ -8,6 +8,7 @@ pages: 4-13
 source_pdf: ant-v14-n7-s-p05.pdf
 source_sha256: 1c8e94ff62a8d920
 toc_source: inferred
+doc_brief: "Motivic Gauss–Bonnet formulas — 12 sections: Front matter; Introduction; X+ ∈SH(k) is dualizable. In partic"
 ---
 In this section, we review the strong dualizability of smooth projective schemes as objects of the stable
 motivic homotopy category, which supplies a notion of Euler characteristic for these schemes. We also

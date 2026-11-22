@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1007.1250v4/sections/sec-003",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Multiplicative Integration in Dimension One",
+  "pageStart": 35,
+  "pageEnd": 51,
+  "contains": [
+    "library/arxiv-1007.1250v4/blocks/prose-sec-003",
+    "library/arxiv-1007.1250v4/blocks/figure-img-p036-1",
+    "library/arxiv-1007.1250v4/blocks/figure-img-p045-1"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1007.1250v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1007.1250v4/manifest.jsonld",
+  "provenance": "ingested"
+}

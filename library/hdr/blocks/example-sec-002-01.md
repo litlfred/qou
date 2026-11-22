@@ -1,1 +1,0 @@
-Let G be a ﬁnite group. The linear map τ : Z[G]→ Z deﬁned by τ(1) = 1 and τ(g) = 0

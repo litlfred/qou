@@ -1,0 +1,53 @@
+38 Oberwolfach Report 28/2012
+
+hence the element (nk) vanishes in HSFT(M. ,€). Among other things, this implies
+that (M,€) cannot have an exact symplectic filling, as (h"] is nontrivial in HS?T()
+for every k > 0.
+
+With this example in mind, we define a numerical invariant, called the order of
+algebraic torsion, by
+
+AT(M, €) = sup{k > 0 | [h*-"] 40 € HSPT(M,€)} € {0,1,2,..., 00},
+
+and then define (M,€) to be in =, if and only if AT(M,€) > k. It follows imme-
+diately from the properties described above that if (/,) € =, and there is an
+exact cobordism from (M,€) to (M’,é’), then (M’,€’) € E,; in particular this is
+true whenever the latter is obtained from the former by Legendrian surgery, since
+Stein cobordisms are always exact.
+
+To find interesting examples of contact 3-manifolds with varying orders of al-
+gebraic torsion, one needs a source of existence and uniqueness results for holo-
+morphic curves. One such source is the relationship between Lefschetz fibrations
+and a certain generalization of open book decompositions. To motivate the idea,
+consider a Lefschetz fibration II : E + © whose base and generic fiber are both
+compact oriented surfaces with nonempty boundary. The boundary of EF then has
+two smooth faces OE = 0, £ U0,E, which each inherit fibrations
+
+OnE = | JE, 35
+
+zed
+
+Oy, E := Blay 3 OD ~ StU...U St.
+
+In the simplest example, if S is a disk, then the resulting decomposition of OF can
+be viewed as an open book decomposition, with 0),,E as a tubular neighborhood
+of the binding.
+
+More generally, we define a spinal open book on a closed oriented 3-manifold M
+to be a decomposition of the form M = MyUMp, where the two pieces (called the
+spine and paper respectively) both come with fibrations: the fibers of Mp > S$?
+are surfaces with boundary, the connected components of which are called pages,
+while fibers of My — ¥ are circles, with © being a compact oriented surface with
+boundary, the connected components of which are called vertebrae. We require
+additionally that the boundary of every page should be a disjoint union of fibers
+of the spine. We then say that a contact structure € is supported by the spinal
+open book if it admits a contact form a@ such that da is positive on the interiors
+of all pages and the fibers on My are closed Reeb orbits.
+
+It’s important to note that in these definitions, neither © nor the fibers of
+Mp — S' need be connected, so there can be multiple vertebrae and multiple
+families of pages with varying topological types, though in the specific example of
+the boundary of a Lefschetz fibration, this does not happen. Indeed, most spinal
+open books cannot be boundaries of Lefschetz fibrations, and this observation
+becomes very powerful in light of the following joint result with Sam Lisi and
+Jeremy Van Horn-Morris:

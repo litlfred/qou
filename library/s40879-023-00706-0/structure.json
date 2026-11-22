@@ -6,28 +6,44 @@
   "sha256": "4c5af312d2e5d6a75f1a67146f769bd8b1d959132ed411b7f8be07df6416037e",
   "bytes": 1159400,
   "pages": 46,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:55Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": "10.1007/s40879-023-00706-0",
-  "title": "Bring's curve: old and new",
-  "authors_raw": "Bring’s curve: old and new",
-  "abstract": "Bring’s curve, the unique Riemann surface of genus 4 with automorphism group S5, has many exceptional properties. We review, give new proofs of, and extend a number of these including giving the complete realisation of the automorphism group for a plane curve model, identifying a new elliptic quotient of the curve and the modular curve X 0(50), providing a complete description of the orbit decomposition of the theta characteristics, and identifying the unique invariant characteristic with the divisor of the Szeg˝o kernel. In achieving this we have used modern computational tools in Sagemath, Macaulay2, and Maple, for which notebooks demonstrating calculations are provided.",
-  "docinfo": {
-   "Author": "Harry W. Braden ",
-   "CreationDate": "D:20231216163914+05'30'",
-   "Creator": "Springer",
-   "Producer": "Acrobat Distiller 10.1.8 (Windows)",
-   "Title": "Bring’s curve: old and new"
-  },
+  "title": "Bring’s curve: old and new",
+  "authors_raw": "RESEARCH ARTICLE",
   "title_lines": [
-   "European Journal of Mathematics (2024) 10:3",
-   "RESEARCH ARTICLE"
+   "European Journal of Mathematics (2024) 10:3"
   ],
-  "title_prev": "European Journal of Mathematics (2024) 10:3 RESEARCH ARTICLE"
+  "abstract": "Bring’s curve, the unique Riemann surface of genus 4 with automorphism group S5, has many exceptional properties. We review, give new proofs of, and extend a number of these including giving the complete realisation of the automorphism group for a plane curve model, identifying a new elliptic quotient of the curve and the modular curve X0(50), providing a complete description of the orbit decomposition of the theta characteristics, and identifying the unique invariant characteristic with the divisor of the Szeg˝o kernel. In achieving this we have used modern computational tools in Sagemath, Macaulay2, and Maple, for which notebooks demonstrating calculations are provided.",
+  "docinfo": {
+   "Title": "Bring’s curve: old and new",
+   "Author": "Harry W. Braden ",
+   "Producer": "Acrobat Distiller 10.1.8 (Windows)",
+   "Creator": "Springer",
+   "CreationDate": "D:20231216163914+05'30'"
+  },
+  "title_raw": "European Journal of Mathematics (2024) 10:3",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Bring’s curve: old and new",
+   "heading": "Bring’s curve: old and new",
+   "outline": "Bring's curve: old and new",
+   "text": "European Journal of Mathematics (2024) 10:3",
+   "corroborated_by": [
+    "heading",
+    "outline",
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Bring's curve: old and new"
  },
  "toc": [
   {
@@ -35,399 +51,971 @@
    "title": "Bring's curve: old and new",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Abstract",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Defining equations and elementary properties",
    "page": 3,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 3,
    "title": "Basic properties",
    "page": 4,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 3,
    "title": "The period matrix",
    "page": 11,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 3,
    "title": "The automorphism group",
    "page": 14,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 2,
    "title": "Geometric points",
    "page": 17,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 3,
    "title": "Weierstrass points",
    "page": 19,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 3,
    "title": "Vertices and face-centres",
    "page": 22,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 2,
    "title": "Quotients by subgroups",
    "page": 23,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 3,
    "title": "Genera of quotients",
    "page": 24,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
   },
   {
    "level": 3,
    "title": "Relations between quotients",
    "page": 25,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
   },
   {
    "level": 3,
    "title": "Quotients by a 4- and 2,2-cycle",
    "page": 26,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   },
   {
    "level": 3,
    "title": "Quotients by a 3-cycle",
    "page": 30,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "30"
   },
   {
    "level": 3,
    "title": "Quotients by a transposition",
    "page": 32,
    "source": "outline",
-   "number": "4.5"
+   "number": "4.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "32"
   },
   {
    "level": 3,
    "title": "Summarising",
    "page": 35,
    "source": "outline",
-   "number": "4.6"
+   "number": "4.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "35"
   },
   {
    "level": 2,
    "title": "Theta characteristics",
    "page": 38,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "38"
   },
   {
    "level": 3,
    "title": "Abel–Jacobi and the Riemann constant vector",
    "page": 38,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "38"
   },
   {
    "level": 3,
    "title": "Tritangent planes and odd characteristics",
    "page": 39,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "39"
   },
   {
    "level": 3,
    "title": "Even characteristics",
    "page": 40,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "40"
   },
   {
    "level": 2,
    "title": "Conclusion",
    "page": 43,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "43"
   },
   {
    "level": 2,
    "title": "Acknowledgements",
    "page": 44,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "44"
   },
   {
    "level": 2,
    "title": "References",
    "page": 44,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "44"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "44",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-abstract",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 103,
+   "n_words": 9,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-brings-curve-old-and-new",
+   "number": null,
+   "title": "Bring's curve: old and new",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 178,
+   "n_words": 30,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-001-abstract",
    "number": null,
    "title": "Abstract",
    "level": 2,
    "page_start": 1,
    "page_end": 1,
    "n_chars": 860,
-   "n_words": 129
+   "n_words": 129,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-1-introduction",
+   "id": "sec-002-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 2,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 4404,
-   "n_words": 708
+   "n_chars": 4338,
+   "n_words": 689,
+   "label_start": null,
+   "label_end": "3"
   },
   {
-   "id": "sec-002-21-basic-properties",
+   "id": "sec-003-2-defining-equations-and-elementary-properties",
+   "number": "2",
+   "title": "Defining equations and elementary properties",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 3457,
+   "n_words": 653,
+   "label_start": "3",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-004-21-basic-properties",
    "number": "2.1",
    "title": "Basic properties",
    "level": 3,
-   "page_start": 3,
+   "page_start": 4,
    "page_end": 11,
-   "n_chars": 17106,
-   "n_words": 3687
+   "n_chars": 13465,
+   "n_words": 2894,
+   "label_start": "4",
+   "label_end": "11"
   },
   {
-   "id": "sec-003-22-the-period-matrix",
+   "id": "sec-005-22-the-period-matrix",
    "number": "2.2",
    "title": "The period matrix",
    "level": 3,
    "page_start": 11,
    "page_end": 14,
-   "n_chars": 5000,
-   "n_words": 1075
+   "n_chars": 4989,
+   "n_words": 1096,
+   "label_start": "11",
+   "label_end": "14"
   },
   {
-   "id": "sec-004-23-the-automorphism-group",
+   "id": "sec-006-23-the-automorphism-group",
    "number": "2.3",
    "title": "The automorphism group",
    "level": 3,
    "page_start": 14,
    "page_end": 17,
-   "n_chars": 8090,
-   "n_words": 1694
+   "n_chars": 7960,
+   "n_words": 1598,
+   "label_start": "14",
+   "label_end": "17"
   },
   {
-   "id": "sec-005-3-geometric-points",
+   "id": "sec-007-3-geometric-points",
    "number": "3",
    "title": "Geometric points",
    "level": 2,
    "page_start": 17,
    "page_end": 19,
-   "n_chars": 3398,
-   "n_words": 609
+   "n_chars": 3328,
+   "n_words": 584,
+   "label_start": "17",
+   "label_end": "19"
   },
   {
-   "id": "sec-006-31-weierstrass-points",
+   "id": "sec-008-31-weierstrass-points",
    "number": "3.1",
    "title": "Weierstrass points",
    "level": 3,
    "page_start": 19,
    "page_end": 22,
-   "n_chars": 9106,
-   "n_words": 1723
+   "n_chars": 9031,
+   "n_words": 1660,
+   "label_start": "19",
+   "label_end": "22"
   },
   {
-   "id": "sec-007-32-vertices-and-face-centres",
+   "id": "sec-009-32-vertices-and-face-centres",
    "number": "3.2",
    "title": "Vertices and face-centres",
    "level": 3,
    "page_start": 22,
    "page_end": 23,
-   "n_chars": 2402,
-   "n_words": 571
+   "n_chars": 2397,
+   "n_words": 569,
+   "label_start": "22",
+   "label_end": "23"
   },
   {
-   "id": "sec-008-4-quotients-by-subgroups",
+   "id": "sec-010-4-quotients-by-subgroups",
    "number": "4",
    "title": "Quotients by subgroups",
    "level": 2,
    "page_start": 23,
    "page_end": 24,
-   "n_chars": 1075,
-   "n_words": 189
+   "n_chars": 1058,
+   "n_words": 175,
+   "label_start": "23",
+   "label_end": "24"
   },
   {
-   "id": "sec-009-41-genera-of-quotients",
+   "id": "sec-011-41-genera-of-quotients",
    "number": "4.1",
    "title": "Genera of quotients",
    "level": 3,
    "page_start": 24,
    "page_end": 25,
-   "n_chars": 3151,
-   "n_words": 666
+   "n_chars": 3132,
+   "n_words": 650,
+   "label_start": "24",
+   "label_end": "25"
   },
   {
-   "id": "sec-010-42-relations-between-quotients",
+   "id": "sec-012-42-relations-between-quotients",
    "number": "4.2",
    "title": "Relations between quotients",
    "level": 3,
    "page_start": 25,
    "page_end": 26,
-   "n_chars": 2521,
-   "n_words": 462
+   "n_chars": 2502,
+   "n_words": 465,
+   "label_start": "25",
+   "label_end": "26"
   },
   {
-   "id": "sec-011-43-quotients-by-a-4--and-22-cycle",
+   "id": "sec-013-43-quotients-by-a-4--and-22-cycle",
    "number": "4.3",
    "title": "Quotients by a 4- and 2,2-cycle",
    "level": 3,
    "page_start": 26,
    "page_end": 30,
-   "n_chars": 8519,
-   "n_words": 1762
+   "n_chars": 8462,
+   "n_words": 1717,
+   "label_start": "26",
+   "label_end": "30"
   },
   {
-   "id": "sec-012-44-quotients-by-a-3-cycle",
+   "id": "sec-014-44-quotients-by-a-3-cycle",
    "number": "4.4",
    "title": "Quotients by a 3-cycle",
    "level": 3,
    "page_start": 30,
    "page_end": 32,
-   "n_chars": 3898,
-   "n_words": 772
+   "n_chars": 3883,
+   "n_words": 763,
+   "label_start": "30",
+   "label_end": "32"
   },
   {
-   "id": "sec-013-45-quotients-by-a-transposition",
+   "id": "sec-015-45-quotients-by-a-transposition",
    "number": "4.5",
    "title": "Quotients by a transposition",
    "level": 3,
    "page_start": 32,
    "page_end": 35,
-   "n_chars": 5125,
-   "n_words": 1085
+   "n_chars": 5075,
+   "n_words": 1063,
+   "label_start": "32",
+   "label_end": "35"
   },
   {
-   "id": "sec-014-46-summarising",
+   "id": "sec-016-46-summarising",
    "number": "4.6",
    "title": "Summarising",
    "level": 3,
    "page_start": 35,
    "page_end": 38,
-   "n_chars": 6923,
-   "n_words": 1286
+   "n_chars": 6935,
+   "n_words": 1299,
+   "label_start": "35",
+   "label_end": "38"
   },
   {
-   "id": "sec-015-5-theta-characteristics",
+   "id": "sec-017-5-theta-characteristics",
    "number": "5",
    "title": "Theta characteristics",
    "level": 2,
    "page_start": 38,
    "page_end": 38,
-   "n_chars": 1362,
-   "n_words": 237
+   "n_chars": 1354,
+   "n_words": 235,
+   "label_start": "38",
+   "label_end": "38"
   },
   {
-   "id": "sec-016-51-abeljacobi-and-the-riemann-constant-vector",
+   "id": "sec-018-51-abeljacobi-and-the-riemann-constant-vector",
    "number": "5.1",
    "title": "Abel–Jacobi and the Riemann constant vector",
    "level": 3,
    "page_start": 38,
    "page_end": 39,
-   "n_chars": 1074,
-   "n_words": 211
+   "n_chars": 1057,
+   "n_words": 215,
+   "label_start": "38",
+   "label_end": "39"
   },
   {
-   "id": "sec-017-52-tritangent-planes-and-odd-characteristics",
+   "id": "sec-019-52-tritangent-planes-and-odd-characteristics",
    "number": "5.2",
    "title": "Tritangent planes and odd characteristics",
    "level": 3,
    "page_start": 39,
    "page_end": 40,
-   "n_chars": 2683,
-   "n_words": 509
+   "n_chars": 2658,
+   "n_words": 501,
+   "label_start": "39",
+   "label_end": "40"
   },
   {
-   "id": "sec-018-53-even-characteristics",
+   "id": "sec-020-53-even-characteristics",
    "number": "5.3",
    "title": "Even characteristics",
    "level": 3,
    "page_start": 40,
    "page_end": 43,
-   "n_chars": 7400,
-   "n_words": 1395
+   "n_chars": 7284,
+   "n_words": 1360,
+   "label_start": "40",
+   "label_end": "43"
   },
   {
-   "id": "sec-019-6-conclusion",
+   "id": "sec-021-6-conclusion",
    "number": "6",
    "title": "Conclusion",
    "level": 2,
    "page_start": 43,
    "page_end": 44,
-   "n_chars": 2824,
-   "n_words": 457
+   "n_chars": 2797,
+   "n_words": 433,
+   "label_start": "43",
+   "label_end": "44"
   },
   {
-   "id": "sec-020-acknowledgements",
+   "id": "sec-022-acknowledgements",
    "number": null,
    "title": "Acknowledgements",
    "level": 2,
    "page_start": 44,
    "page_end": 44,
-   "n_chars": 1056,
-   "n_words": 154
+   "n_chars": 1042,
+   "n_words": 140,
+   "label_start": "44",
+   "label_end": "44"
   },
   {
-   "id": "sec-021-references",
+   "id": "sec-023-references",
    "number": null,
    "title": "References",
    "level": 2,
    "page_start": 44,
    "page_end": 46,
-   "n_chars": 9420,
-   "n_words": 1387
+   "n_chars": 9366,
+   "n_words": 1342,
+   "label_start": "44",
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 24,
-  "sections": 22,
-  "chars_total": 107397
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 25,
+  "chars_total": 106711,
+  "furniture_lines_stripped": 46
  },
  "duplicate_copies": [
   "arxiv-2208.13692v1"

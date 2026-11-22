@@ -7,8 +7,8 @@
   "bytes": 517228,
   "pages": 5,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -21,17 +21,27 @@
   },
   "doi": null,
   "title": "Sampling General N-Body Interactions with Auxiliary Fields",
-  "authors_raw": "Christopher K\u00f6rber,1,\u2217 Evan Berkowitz,1,\u2020 and Thomas Luu1,\u2021",
+  "authors_raw": "Christopher Körber,1, ∗Evan Berkowitz,1, † and Thomas Luu1, ‡",
   "title_lines": [
    "Sampling General N-Body Interactions with Auxiliary Fields"
   ],
   "abstract": null,
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20181014013019Z",
-   "Creator": "LaTeX with hyperref package",
    "Producer": "pdfTeX-1.40.17",
-   "Title": ""
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20181014013019Z"
+  },
+  "title_raw": "Sampling General N-Body Interactions with Auxiliary Fields",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Sampling General N-Body Interactions with Auxiliary Fields",
+   "outline": "Acknowledgements",
+   "text": "Sampling General N-Body Interactions with Auxiliary Fields",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -40,17 +50,84 @@
    "title": "Acknowledgements",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 1,
    "title": "References",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "E(τ)/κ for diﬀerent systems. All systems were studied with 2 × 108 measurements. Some systems show a signalto-noise problem and others yield an easy extraction of a constant plateau in the long-time-limit. The left panels all show two-fermion systems and the corresponding right panels show the three",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
    "id": "sec-front-matter",
@@ -59,8 +136,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 5,
-   "n_chars": 15874,
-   "n_words": 2680
+   "n_chars": 16041,
+   "n_words": 2862,
+   "label_start": null,
+   "label_end": "5"
   },
   {
    "id": "sec-000-acknowledgements",
@@ -69,15 +148,25 @@
    "level": 1,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 1975,
-   "n_words": 296
+   "n_chars": 1987,
+   "n_words": 308,
+   "label_start": "5",
+   "label_end": "5"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 2,
+  "toc_inferred_entries": 0,
+  "figure_entries": 1,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
   "sections": 2,
-  "chars_total": 17849
+  "chars_total": 18028,
+  "furniture_lines_stripped": 4
  }
 }

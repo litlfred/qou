@@ -1,0 +1,614 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1810.11563v1",
+ "status": "determined",
+ "body_size": 12.0,
+ "footnotes": [
+  {
+   "id": "fn-p009-1",
+   "page": 9,
+   "mark": "1",
+   "text": "Therearestilldetailsassociatedwithhowpreciselyaproductofgatesmustapproximateatarget state.",
+   "marks": [
+    {
+     "page": 9,
+     "context": "mpleoperations.Relativecomplexitywouldthenbefairlywelldeﬁned"
+    }
+   ],
+   "block": "library/arxiv-1810.11563v1/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p009-2",
+   "page": 9,
+   "mark": "2",
+   "text": "WecontinuetoworkwithsystemsofKqubits.Thespaceofstatesis2Kdimensional.",
+   "marks": [
+    {
+     "page": 9,
+     "context": "Complexitycanbedeﬁnedforstates"
+    }
+   ],
+   "block": "library/arxiv-1810.11563v1/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p010-2",
+   "page": 10,
+   "mark": "4",
+   "text": "InthecaseofmaximallyentangledsystemsImeanarestrictedformofcomplexityinwhichgates are only permitted to act on each side of the entangled system separately, thus preserving the maximal entanglement.",
+   "marks": [
+    {
+     "page": 10,
+     "context": "plexityofmaximallyentangledstates"
+    }
+   ],
+   "block": "library/arxiv-1810.11563v1/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p016-1",
+   "page": 16,
+   "mark": "5",
+   "text": "Theusualinner-productmetricisbothleftandrightinvariant.Itiscalledbi-invariant.",
+   "marks": [
+    {
+     "page": 16,
+     "context": "left-invariant"
+    }
+   ],
+   "block": "library/arxiv-1810.11563v1/blocks/prose-sec-008"
+  },
+  {
+   "id": "fn-p016-2",
+   "page": 16,
+   "mark": "6",
+   "text": "SeeDowling,Nielsenhttps://arxiv.org/pdf/quant-ph/0701004.pdf",
+   "marks": [
+    {
+     "page": 16,
+     "context": "geometry—right-invariantgeometry"
+    }
+   ],
+   "block": "library/arxiv-1810.11563v1/blocks/prose-sec-008"
+  },
+  {
+   "id": "fn-p017-1",
+   "page": 17,
+   "mark": "7",
+   "text": "SeealsoHenryLin,“CaleyGraphsandComplexityGeometry”,https://arxiv.org/pdf/1808. 06620.pdf.",
+   "marks": [
+    {
+     "page": 17,
+     "context": "Circuits can be usefully described using graph theory"
+    }
+   ],
+   "block": "library/arxiv-1810.11563v1/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p024-1",
+   "page": 24,
+   "mark": "8",
+   "text": "Ifwefollowanepsilonballfromtheidentityitwillnotingeneralperfectlycoincidewithanepsilon ball after executing a loop. There is a bit of sloppiness but it doesn’t seem to be important. Note that if ϵ is decreased the maximum complexity increases and the graph becomes bigger.",
+   "marks": [
+    {
+     "page": 24,
+     "context": "balls"
+    }
+   ],
+   "block": "library/arxiv-1810.11563v1/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p025-1",
+   "page": 25,
+   "mark": "9",
+   "text": "TherelationbetweencomplexityandsuchgeometrieswasdescribedinBrown,SusskindandZhao, https://arxiv.org/pdf/1608.02612.pdf.",
+   "marks": [
+    {
+     "page": 25,
+     "context": "chasthehyperbolicplane,withidentiﬁcationsthatrenderitcompact"
+    }
+   ],
+   "block": "library/arxiv-1810.11563v1/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p026-1",
+   "page": 26,
+   "mark": "10",
+   "text": "There is a very interesting paper by Zurek in which he argues that that the classical entopy of a system is the ensemble average of the Kolmogorov algorithmic complexity of states in phase space. [W. Zurek, Phys. Rev. A 40, 4731 (1989)] The idea is very similar to the connection between quantum-computational- complexity and entropy described by Brown et.al in https://arxiv.org/pdf/1701.0110.pdf",
+   "marks": [
+    {
+     "page": 26,
+     "context": "tyandclassicalentropy,ortheexistenceofasecondlawofcomplexity"
+    }
+   ],
+   "block": "library/arxiv-1810.11563v1/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p027-1",
+   "page": 27,
+   "mark": "11",
+   "text": "Stictlyspeaking,4K−1.",
+   "marks": [
+    {
+     "page": 27,
+     "context": "heauxiliarysystemisjusttheclassical4Kcollectionofcoordinates"
+    }
+   ],
+   "block": "library/arxiv-1810.11563v1/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p034-1",
+   "page": 34,
+   "mark": "12",
+   "text": "A“bridgetonowhere,”Susskind-Zhao2014..",
+   "marks": [
+    {
+     "page": 34,
+     "context": "one-sidedwormhole"
+    }
+   ],
+   "block": "library/arxiv-1810.11563v1/blocks/prose-sec-017"
+  },
+  {
+   "id": "fn-p039-1",
+   "page": 39,
+   "mark": "13",
+   "text": "Aboutamillisecondforasolarmassblackhole.",
+   "marks": [
+    {
+     "page": 39,
+     "context": "value.This takes a very short time"
+    }
+   ],
+   "block": "library/arxiv-1810.11563v1/blocks/prose-sec-019"
+  },
+  {
+   "id": "fn-p042-1",
+   "page": 42,
+   "mark": "14",
+   "text": "Thisistheno-collisionsassumptiondiscussedatlengthinLectureI.Itisexpectedtobecorrectfor sub-exponential time.",
+   "marks": [
+    {
+     "page": 42,
+     "context": "complexity"
+    }
+   ],
+   "block": "library/arxiv-1810.11563v1/blocks/prose-sec-021"
+  },
+  {
+   "id": "fn-p044-1",
+   "page": 44,
+   "mark": "15",
+   "text": "ThisformulaholdsuntilL/ladsisofordertheentropy.Beyondthatthecorrelationisdominatedby noise.",
+   "marks": [
+    {
+     "page": 44,
+     "context": "whereL(t)isthelengthofthewormhole"
+    }
+   ],
+   "block": "library/arxiv-1810.11563v1/blocks/prose-sec-022"
+  },
+  {
+   "id": "fn-p053-1",
+   "page": 53,
+   "mark": "17",
+   "text": "Itisagoodapproximationaslongasthetimesarenotexponentiallylarge,atwhichtheclassical geometric description is expected to break down.",
+   "marks": [
+    {
+     "page": 53,
+     "context": "t it is a good approximation to the volume of maximal slices"
+    }
+   ],
+   "block": "library/arxiv-1810.11563v1/blocks/prose-sec-027"
+  },
+  {
+   "id": "fn-p059-1",
+   "page": 59,
+   "mark": "18",
+   "text": "Theenergyofashockwavegrowsexponentiallywith|tw|.ForreasonsexplainedinSection13the",
+   "marks": [
+    {
+     "page": 59,
+     "context": "destroyingaﬁrewalloftremendousenergy"
+    }
+   ],
+   "block": "library/arxiv-1810.11563v1/blocks/prose-sec-029"
+  },
+  {
+   "id": "fn-p060-1",
+   "page": 60,
+   "mark": "19",
+   "text": "AttheendoftheﬁrstlectureIexplainedwhythetransitionissudden.",
+   "marks": [
+    {
+     "page": 60,
+     "context": "andthecomplexitysuddenly"
+    }
+   ],
+   "block": "library/arxiv-1810.11563v1/blocks/prose-sec-030"
+  },
+  {
+   "id": "fn-p072-1",
+   "page": 72,
+   "mark": "20",
+   "text": "Noticethatwedidthesamethingbyaddingasinglecleanqubit.",
+   "marks": [
+    {
+     "page": 72,
+     "context": "havetheeﬀectofrestoringtheuncomplexitytoitsmaximalvalue"
+    }
+   ],
+   "block": "library/arxiv-1810.11563v1/blocks/prose-sec-041"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p005-1",
+   "page": 5,
+   "mark": "2",
+   "text": "K",
+   "block": "library/arxiv-1810.11563v1/blocks/prose-sec-001"
+  },
+  {
+   "id": "fn-p010-1",
+   "page": 10,
+   "mark": "3",
+   "text": "Thebarin¯JindicatestimereversalorinrelativisticquantumﬁeldtheorytheCPToperation.",
+   "block": "library/arxiv-1810.11563v1/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p030-1",
+   "page": 30,
+   "mark": "2",
+   "text": "K",
+   "block": "library/arxiv-1810.11563v1/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p048-1",
+   "page": 48,
+   "mark": "16",
+   "text": "Alsoknownasthelogisticfunction.",
+   "block": "library/arxiv-1810.11563v1/blocks/prose-sec-025"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "#states = m"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "N!ϵ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "ϵ"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "SU(N) has (N"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "#unitaries = m(N"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "SU(N) is N"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "Thevolumeofanepsilon-ballofdimensionN"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "N"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "\u0000 N"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "\u0013 N"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "ϵ"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "ϵ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "theweaklogarithmicdependenceonϵ.Thelog"
+  },
+  {
+   "page": 11,
+   "mark": "†",
+   "context": "versalgateset.Weassumethatifgisinallowedset,soisg"
+  },
+  {
+   "page": 14,
+   "mark": "†",
+   "context": "d(UV ) = arccos|TrU"
+  },
+  {
+   "page": 16,
+   "mark": "†",
+   "context": "WU= (Wgngn−1.......g1W"
+  },
+  {
+   "page": 16,
+   "mark": "†",
+   "context": "But(Wgngn−1.......g1W"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "o achieve that tolerance.The increase is only logarithmic in"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "ϵ"
+  },
+  {
+   "page": 23,
+   "mark": "4",
+   "context": "therpointfollowsfromthefactthatthetotalnumberofunitariesis∼e"
+  },
+  {
+   "page": 25,
+   "mark": "4",
+   "context": "2.Thenumberofverticesinthegraphisofordere"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "isK.andtheauxiliaryentropySAislog d"
+  },
+  {
+   "page": 28,
+   "mark": "4",
+   "context": "trecur∼e"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "eiθ"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "eiθi= e−iE"
+  },
+  {
+   "page": 31,
+   "mark": "t",
+   "context": "eiθi= e−iEi"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "ds"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "ds2= −ρ"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "ds2= −ρ2dτ"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "ds2= −ρ2dτ2+ dρ"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "ds2= −ρ2dτ2+ dρ2+ r(ρ)"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "ds2= −ρ2dτ2+ dρ2+ r(ρ)2dΩ"
+  },
+  {
+   "page": 45,
+   "mark": "†",
+   "context": "W(t) = eiHtWe−iHt= U"
+  },
+  {
+   "page": 46,
+   "mark": "†",
+   "context": "W(t) = g"
+  },
+  {
+   "page": 46,
+   "mark": "†",
+   "context": "W(t) = g†....g"
+  },
+  {
+   "page": 46,
+   "mark": "g",
+   "context": "n−1"
+  },
+  {
+   "page": 46,
+   "mark": "†",
+   "context": "n−1g"
+  },
+  {
+   "page": 46,
+   "mark": "g",
+   "context": "nW"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "nWg"
+  },
+  {
+   "page": 46,
+   "mark": "g",
+   "context": "nWgn"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "nWgng"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "nWgngn−1....g"
+  },
+  {
+   "page": 47,
+   "mark": "s",
+   "context": "∆s =(K −s)"
+  },
+  {
+   "page": 47,
+   "mark": "s",
+   "context": "∆s =(K −s)"
+  },
+  {
+   "page": 48,
+   "mark": "s",
+   "context": "dτ=(K −s)"
+  },
+  {
+   "page": 49,
+   "mark": "t",
+   "context": "β"
+  },
+  {
+   "page": 51,
+   "mark": "†",
+   "context": "NowletusapplytheprecursorU"
+  },
+  {
+   "page": 51,
+   "mark": "†",
+   "context": "U"
+  },
+  {
+   "page": 53,
+   "mark": "w",
+   "context": "+ e(|τ"
+  },
+  {
+   "page": 54,
+   "mark": "w",
+   "context": "1 + e(|τ"
+  },
+  {
+   "page": 54,
+   "mark": "e",
+   "context": "2"
+  },
+  {
+   "page": 54,
+   "mark": "w",
+   "context": "2e−τL/2 + e|τ"
+  },
+  {
+   "page": 57,
+   "mark": "w",
+   "context": "2+ e(|τ"
+  },
+  {
+   "page": 64,
+   "mark": "e",
+   "context": "e"
+  },
+  {
+   "page": 66,
+   "mark": "3",
+   "context": "M(t)"
+  },
+  {
+   "page": 66,
+   "mark": "3",
+   "context": "M(t)3= M"
+  },
+  {
+   "page": 66,
+   "mark": "3",
+   "context": "dC/dt ∼M(t) = (M"
+  },
+  {
+   "page": 66,
+   "mark": "1",
+   "context": "0−t)"
+  },
+  {
+   "page": 66,
+   "mark": "4",
+   "context": "C(t) ∼M"
+  },
+  {
+   "page": 66,
+   "mark": "3",
+   "context": "0−(M"
+  },
+  {
+   "page": 66,
+   "mark": "4",
+   "context": "0−t)"
+  },
+  {
+   "page": 66,
+   "mark": "3",
+   "context": "InPlanckunitstheﬁnalcomplexityisoforderM"
+  },
+  {
+   "page": 66,
+   "mark": "2",
+   "context": "Cfinal∼S"
+  },
+  {
+   "page": 73,
+   "mark": "30",
+   "context": "of10"
+  },
+  {
+   "page": 74,
+   "mark": "†",
+   "context": "\u0012G"
+  },
+  {
+   "page": 75,
+   "mark": "†",
+   "context": "\u0012G"
+  },
+  {
+   "page": 75,
+   "mark": "†",
+   "context": "G"
+  },
+  {
+   "page": 75,
+   "mark": "2",
+   "context": "ThecircuitcanbesimpliﬁedbyusingH"
+  }
+ ]
+}

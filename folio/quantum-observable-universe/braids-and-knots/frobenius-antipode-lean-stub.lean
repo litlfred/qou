@@ -23,7 +23,7 @@ Used in Term 5 chirality derivation
 (prop:chirality-dual-space-derivation) and in the neutron tower
 closure (prop:frobenius-antipode-unifies-chirality-and-tower).
 
-LaTeX label: thm:frobenius-antipode-unifies-chirality-and-tower
+LaTeX label: conj:frobenius-antipode-unifies-chirality-and-tower
 -/
 
 namespace QOU.BraidKnot
@@ -93,7 +93,7 @@ theorem antipode_anti_hom (n : ℕ) (q : ℝ) (a b : HeckeAlgebra n q) :
     model supports — `S(σ_i)` and `σ_i` have the same Markov trace. -/
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 --      Ch. III (antipode on the Hecke / quantum-group algebra);
---      [manuscript] prop:frobenius-antipode-unifies-chirality-and-tower
+--      [leitner2026] prop:frobenius-antipode-unifies-chirality-and-tower
 theorem antipode_on_generator (n : ℕ) (q : ℝ) (i : ℕ) :
     markovTrace n q (antipodeS n q (heckeSigma n q i))
       = markovTrace n q (heckeSigma n q i) := rfl
@@ -175,7 +175,7 @@ def chiralityFactor (_n : ℕ) (q : ℝ) (_β : HeckeAlgebra _n q) : ℝ :=
     factors equals the factor of either — recorded here as the
     concrete `1 · 1 = 1` instance of multiplicativity.  The general
     per-pn-crossing product lives in the basis-vector model. -/
--- Ref: [manuscript] prop:chirality-dual-space-derivation
+-- Ref: [leitner2026] prop:chirality-dual-space-derivation
 --      (chirality factor a_K = ∏ (1 + sign·h));
 --      prop:frobenius-antipode-unifies-chirality-and-tower
 theorem chirality_multiplicative (n : ℕ) (q : ℝ)
@@ -186,7 +186,7 @@ theorem chirality_multiplicative (n : ℕ) (q : ℝ)
 
 /-- The chirality factor is real and bounded: on the scalar model it
     is identically `1` (the trivial chirality of an unbraided word). -/
--- Ref: [manuscript] prop:chirality-dual-space-derivation;
+-- Ref: [leitner2026] prop:chirality-dual-space-derivation;
 --      prop:frobenius-antipode-unifies-chirality-and-tower
 theorem chirality_real (n : ℕ) (q : ℝ) (β : HeckeAlgebra n q) :
     chiralityFactor n q β = 1 := by

@@ -1,0 +1,1 @@
+Suppose K and K′ are residue complexes over A that have the same dimension function. Then the homomorphism Q : HomCstr(A)(K, K′) →HomD(A)(K, K′) is bijective. In other words, for each morphism ψ : K →K′ in D(A) there is a unique strict homomorphism of complexes φ : K →K′ such that ψ = Q(φ).

@@ -4,13 +4,14 @@ doc_title: "BLOCH GROUPS, ALGEBRAIC K -THEORY, UNITS, AND NAHM’S CONJECTURE"
 section_id: sec-001-11-bloch-groups-and-associated-units
 section_title: "Bloch groups and associated units"
 section_number: 1.1
-pages: 1-4
+pages: 2-4
 source_pdf: 1712.04887v3.pdf
 source_sha256: 024317c20a1d8b66
 toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.946
-latex_coverage_ratio: 0.669
+latex_prose_ratio: 0.928
+latex_coverage_ratio: 0.951
+doc_brief: "BLOCH GROUPS, ALGEBRAIC K -THEORY, UNITS, AND NAHM’S CONJECTURE — Given an element of the Bloch group of a number ﬁeld F and a natural num- ber n, we construct an explicit unit in the ﬁeld Fn ="
 ---
 []{#sub.intro.bloch label="sub.intro.bloch"}
 

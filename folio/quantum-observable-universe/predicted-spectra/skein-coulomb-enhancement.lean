@@ -16,7 +16,7 @@ gives the Sommerfeld factor.
 LaTeX label: `prop:skein-coulomb-enhancement`
 
 ## References
-- [manuscript] §6/skein-coulomb-enhancement
+- [leitner2026] §6/skein-coulomb-enhancement
 
 **Ground ring**: `ℝ` (geometric/analytic realisation).
 Uses ℝ-specific analysis (trig, norms, real powers).
@@ -29,20 +29,20 @@ namespace QOU.Archimedean
 /-- The q-deformed Sommerfeld parameter: η_q = α_q · Z / β_e
     where α_q = (q - q⁻¹) · λ_α is the fine structure constant
     from the crossing asymmetry. -/
--- Ref: [manuscript] §6/skein-coulomb-enhancement
+-- Ref: [leitner2026] §6/skein-coulomb-enhancement
 noncomputable def sommerfeldParam (q : ℝ) (lambda_alpha : ℝ) (Z : ℕ) (beta_e : ℝ) : ℝ :=
   (q - 1/q) * lambda_alpha * Z / beta_e
 
 /-- The Skein-Coulomb enhancement factor:
     F_q(Z, E) = 2πη / (1 - e^{-2πη}). -/
--- Ref: [manuscript] §6/skein-coulomb-enhancement
+-- Ref: [leitner2026] §6/skein-coulomb-enhancement
 noncomputable def skeinCoulombFactor (eta : ℝ) : ℝ :=
   2 * Real.pi * eta / (1 - Real.exp (-2 * Real.pi * eta))
 
 /-- The enhancement factor is ≥ 1 for η > 0 (β⁻ decay).
     The Coulomb field of the daughter nucleus attracts the emitted
     electron, increasing the wave function overlap. -/
--- Ref: [manuscript] §6/skein-coulomb-enhancement
+-- Ref: [leitner2026] §6/skein-coulomb-enhancement
 theorem skeinCoulombFactor_ge_one (eta : ℝ) (heta : 0 < eta) :
     1 ≤ skeinCoulombFactor eta := by
   unfold skeinCoulombFactor
@@ -67,7 +67,7 @@ theorem skeinCoulombFactor_ge_one (eta : ℝ) (heta : 0 < eta) :
     convention (division by zero returns 0 in ℝ).  The physically
     meaningful statement is the limit lim_{η→0⁺} F(η) = 1, proved
     in `skeinCoulombFactor_limit_one` below. -/
--- Ref: [manuscript] §6/skein-coulomb-enhancement
+-- Ref: [leitner2026] §6/skein-coulomb-enhancement
 theorem skeinCoulombFactor_at_zero :
     skeinCoulombFactor 0 = 0 := by
   unfold skeinCoulombFactor
@@ -76,7 +76,7 @@ theorem skeinCoulombFactor_at_zero :
 /-- The physical statement: lim_{η→0⁺} F_q(η) = 1.
     This is the correct formulation of F(0) = 1 since the pointwise
     evaluation gives 0/0 = 0 in Lean. -/
--- Ref: [manuscript] §6/skein-coulomb-enhancement
+-- Ref: [leitner2026] §6/skein-coulomb-enhancement
 theorem skeinCoulombFactor_limit_one :
     ∀ ε > 0, ∃ δ > 0, ∀ eta : ℝ, 0 < eta → eta < δ →
     |skeinCoulombFactor eta - 1| < ε := by
@@ -90,7 +90,7 @@ theorem skeinCoulombFactor_limit_one :
   -- Strategy: From add_one_le_exp(x): 1+x ≤ e^x, so (1+x)e^{-x} ≤ 1,
   -- hence 1-e^{-x} ≥ x/(1+x), so F(η) = x/(1-e^{-x}) ≤ 1+x.
   -- Combined with F ≥ 1, |F-1| ≤ x = 2πη. Choose δ = ε/(2π+1).
-  -- Ref: [manuscript] §6/skein-coulomb-enhancement
+  -- Ref: [leitner2026] §6/skein-coulomb-enhancement
   intro ε hε
   refine ⟨ε / (2 * Real.pi + 1), div_pos hε (by linarith [Real.pi_pos]), ?_⟩
   intro eta heta heta_lt
@@ -143,7 +143,7 @@ theorem skeinCoulombFactor_limit_one :
   linarith
 
 /-- The Sommerfeld parameter is positive when q > 1, Z > 0, β_e > 0. -/
--- Ref: [manuscript] §6/skein-coulomb-enhancement
+-- Ref: [leitner2026] §6/skein-coulomb-enhancement
 theorem sommerfeldParam_pos (q : ℝ) (hq : 1 < q) (lambda_alpha : ℝ)
     (hla : 0 < lambda_alpha) (Z : ℕ) (hZ : 0 < Z) (beta_e : ℝ)
     (hb : 0 < beta_e) :
@@ -161,7 +161,7 @@ theorem sommerfeldParam_pos (q : ℝ) (hq : 1 < q) (lambda_alpha : ℝ)
 
 /-- The enhancement factor grows with Z (more protons = stronger
     Coulomb field = larger enhancement). -/
--- Ref: [manuscript] §6/skein-coulomb-enhancement
+-- Ref: [leitner2026] §6/skein-coulomb-enhancement
 theorem skeinCoulombFactor_monotone_eta (eta1 eta2 : ℝ)
     (h1 : 0 < eta1) (h2 : eta1 < eta2) :
     skeinCoulombFactor eta1 < skeinCoulombFactor eta2 := by
@@ -171,7 +171,7 @@ theorem skeinCoulombFactor_monotone_eta (eta1 eta2 : ℝ)
   -- Divide by d*e^{-x1}: (e^{x1}-1) > x1*(1-e^{-d})/d.
   -- RHS < x1 (since (1-e^{-d})/d < 1 by add_one_lt_exp(-d)).
   -- LHS > x1 (since e^{x1}-1 > x1 by add_one_lt_exp(x1)).
-  -- Ref: [manuscript] §6/skein-coulomb-enhancement
+  -- Ref: [leitner2026] §6/skein-coulomb-enhancement
   unfold skeinCoulombFactor
   rw [show (-2 * Real.pi * eta1) = -(2 * Real.pi * eta1) by ring,
       show (-2 * Real.pi * eta2) = -(2 * Real.pi * eta2) by ring]
@@ -243,7 +243,7 @@ theorem skeinCoulombFactor_monotone_eta (eta1 eta2 : ℝ)
   nlinarith [hstep7, hd1, hd2, hexp_x1_pos, mul_pos hx1_pos hd1]
 
 /-- Top-level alias matching the manifest declaration. -/
--- Ref: [manuscript] §6/skein-coulomb-enhancement
+-- Ref: [leitner2026] §6/skein-coulomb-enhancement
 noncomputable def skein_coulomb_enhancement (q : ℝ) (lambda_alpha : ℝ)
     (Z : ℕ) (beta_e : ℝ) : ℝ :=
   skeinCoulombFactor (sommerfeldParam q lambda_alpha Z beta_e)

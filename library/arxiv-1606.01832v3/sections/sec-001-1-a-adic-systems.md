@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1606.01832v3
-doc_title: "FLATNESS AND COMPLETION REVISITED AMNON YEKUTIELI"
+doc_title: "FLATNESS AND COMPLETION REVISITED"
 section_id: sec-001-1-a-adic-systems
 section_title: "a-Adic Systems"
 section_number: 1
 pages: 4-7
 source_pdf: 1606.01832v3.pdf
 source_sha256: da982c95b9674382
-doc_brief: "FLATNESS AND COMPLETION REVISITED AMNON YEKUTIELI — We continue investigating the interaction between ﬂatness and a- adic completion for inﬁnitely generated A-modules."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.993
+latex_coverage_ratio: 0.562
+doc_brief: "FLATNESS AND COMPLETION REVISITED — We continue investigating the interaction between ﬂatness and a- adic completion for inﬁnitely generated A-modules."
 ---
 \label{sec:adic-sys}
 

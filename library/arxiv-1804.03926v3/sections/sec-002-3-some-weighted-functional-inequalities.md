@@ -8,7 +8,9 @@ pages: 8-9
 source_pdf: 1804.03926v3.pdf
 source_sha256: 8ad8e2d5a8881a5b
 toc_source: outline
+doc_brief: "Weighted Poincaré inequalities, concentration inequalities and tail bounds related to Stein kernels in dimension one — We investigate links between the so-called Stein’s density approach in dimension"
 ---
+Some weighted functional inequalities
 Weighted functional inequalities appear naturally when generalizing Gaussian functional inequalities
 such as Poincar´e and log-Sobolev inequalities. They were put to emphasis for the generalized Cauchy
 distribution and more general κ-concave distributions by Bobkov and Ledoux [BL09b, BL09a], also in
@@ -33,4 +35,3 @@ nally, using a formula for the isoperimetric constant in dimension one due to Bo
 [BH97], we prove that a uniformly bounded Stein kernel is essentially suﬃcient to ensure a positive
 isoperimetric constant. Again, the problem in higher dimension seems much more involved and is
 left as an interesting open question.
-3.1

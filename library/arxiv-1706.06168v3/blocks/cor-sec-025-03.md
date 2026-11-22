@@ -1,0 +1,1 @@
+5. For k ≤m ≤n, consider the map DkU k : V (n −k) ⊗V (m −k) →V (n −k) ⊗V (m −k). We have: DkU k(xn−k ⊗xm−k) = k!(n + m −k + 1)! (n + m −2k + 1)! (xn−k ⊗xm−k)̸ = 0 In particular, xn−k ⊗xm−k is in the image of Dk : V (n) ⊗V (m) →V (n −k) ⊗V (m −k).

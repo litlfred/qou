@@ -1,0 +1,1 @@
+Let X ⊆Rd be an open neighborhood of the origin and let φ and A be smooth functions on X such that Re{φ} ≥0 on X. Further suppose that φ has a unique critical point on the support of A at the origin, that φ(0) = 0, and that the Hessian H of φ at 0 is nonsingular. Then for any positive integer M and λ > 0 there exist constants Lk(A, φ) such that

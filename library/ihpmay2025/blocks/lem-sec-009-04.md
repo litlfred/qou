@@ -1,0 +1,1 @@
+(Specialized Milnor-Svarc Lemma) If Γ is a convex cocompact Kleinian group and x ∈CH(Λ(Γ)), then there exists a finite generating set S for Γ, K ≥1 and C ≥0 so that ˆτx : KΓ,S →CH(Λ(Γ)) is K-bilipschitz and a (K, C)-quasi-isometry.

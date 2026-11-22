@@ -7,10 +7,17 @@
   "bytes": 1719884,
   "pages": 72,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 59,
+    "reason": "11 of 511 words are a stray single letter: the text layer splits words"
+   }
+  ],
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,19 +27,29 @@
    "stamp_date": "13 Feb 2014"
   },
   "doi": null,
-  "title": "FLOER COHOMOLOGY IN THE MIRROR OF THE PROJECTIVE",
-  "authors_raw": "PLANE AND A BINODAL CUBIC CURVE",
+  "title": "FLOER COHOMOLOGY IN THE MIRROR OF THE PROJECTIVE PLANE AND A BINODAL CUBIC CURVE",
+  "authors_raw": "JAMES PASCALEFF",
   "title_lines": [
-   "FLOER COHOMOLOGY IN THE MIRROR OF THE PROJECTIVE"
+   "FLOER COHOMOLOGY IN THE MIRROR OF THE PROJECTIVE",
+   "PLANE AND A BINODAL CUBIC CURVE"
   ],
-  "abstract": "We construct a family of Lagrangian submanifolds in the Landau\u2013 Ginzburg mirror to the projective plane equipped with a binodal cubic curve as anticanonical divisor. These objects correspond under mirror sy mmetry to the powers of the twisting sheaf O(1), and hence their Floer cohomology groups form an algebra isomorphic to the homogeneous coordinate ring. An inter esting feature is the presence of a singular torus \ufb01bration on the mirror, of which t he Lagrangians are sections. This gives rise to a distinguished basis of the Floer coho mology and the homogeneous coordinate ring parametrized by fractional inte gral points in the singular a\ufb03ne structure on the base of the torus \ufb01bration. The alg ebra structure on the Floer cohomology is computed using the symplectic techniques of Lefschetz \ufb01brations and the TQFT counting sections of such \ufb01brations. We als o show that our results agree with the tropical analog proposed by Abouzaid\u2013G ross\u2013Siebert. Extensions to a restricted class of singular a\ufb03ne manifolds and to mir rors of the complements of components of the anticanonical divisor are discus sed.",
+  "abstract": "We construct a family of Lagrangian submanifolds in the Landau– Ginzburg mirror to the projective plane equipped with a binodal cubic curve as anticanonical divisor. These objects correspond under mirror symmetry to the powers of the twisting sheaf O(1), and hence their Floer cohomology groups form an algebra isomorphic to the homogeneous coordinate ring. An interesting feature is the presence of a singular torus ﬁbration on the mirror, of which the Lagrangians are sections. This gives rise to a distinguished basis of the Floer cohomology and the homogeneous coordinate ring parametrized by fractional integral points in the singular aﬃne structure on the base of the torus ﬁbration. The algebra structure on the Floer cohomology is computed using the symplectic techniques of Lefschetz ﬁbrations and the TQFT counting sections of such ﬁbrations. We also show that our results agree with the tropical analog proposed by Abouzaid–Gross–Siebert. Extensions to a restricted class of singular aﬃne manifolds and to mirrors of the complements of components of the anticanonical divisor are discussed.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.08",
-   "CreationDate": "D:20140213205314-05'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  }
+   "CreationDate": "D:20140213205314-05'00'"
+  },
+  "title_raw": "FLOER COHOMOLOGY IN THE MIRROR OF THE PROJECTIVE PLANE AND A BINODAL CUBIC CURVE",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "FLOER COHOMOLOGY IN THE MIRROR OF THE PROJECTIVE PLANE AND A BINODAL CUBIC CURVE Contents Introduction Summary of results Context and related work Acknowledgments The ﬁber of W and its tropicalization Torus ﬁbrations on CP 2 \\ D and its mirror The topology of the map W Tropicalization in a singular",
+   "outline": "1. Introduction",
+   "text": "FLOER COHOMOLOGY IN THE MIRROR OF THE PROJECTIVE PLANE AND A BINODAL CUBIC CURVE",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "FLOER COHOMOLOGY IN THE MIRROR OF THE PROJECTIVE"
  },
  "toc": [
   {
@@ -40,240 +57,1196 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Summary of results",
    "page": 2,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Context and related work",
    "page": 5,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Acknowledgments",
    "page": 10,
    "source": "outline",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 1,
    "title": "The fiber of W and its tropicalization",
    "page": 11,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "Torus fibrations on CP2 D and its mirror",
    "page": 11,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "The topology of the map W",
    "page": 16,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "Tropicalization in a singular affine structure",
    "page": 17,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 1,
    "title": "Symplectic constructions",
    "page": 19,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 2,
    "title": "Symplectic monodromy associated to a Hessian metric",
    "page": 20,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 2,
    "title": "Focus-focus singularities and Lefschetz singularities",
    "page": 22,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 2,
    "title": "Lagrangians fibered over paths",
    "page": 25,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
   },
   {
    "level": 1,
    "title": "A degeneration of holomorphic triangles",
    "page": 32,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "32"
   },
   {
    "level": 2,
    "title": "Triangles as sections",
    "page": 32,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "32"
   },
   {
    "level": 2,
    "title": "Extending the fiber",
    "page": 37,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "37"
   },
   {
    "level": 2,
    "title": "Degenerating the fibration",
    "page": 38,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "38"
   },
   {
    "level": 2,
    "title": "Horizontal sections over a disk with one critical value",
    "page": 40,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "40"
   },
   {
    "level": 2,
    "title": "Polygons with fixed conformal structure",
    "page": 44,
    "source": "outline",
-   "number": "4.5"
+   "number": "4.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "44"
   },
   {
    "level": 2,
    "title": "Signs",
    "page": 52,
    "source": "outline",
-   "number": "4.6"
+   "number": "4.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "52"
   },
   {
    "level": 1,
    "title": "A tropical count of triangles",
    "page": 54,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "54"
   },
   {
    "level": 2,
    "title": "Tropical polygons",
    "page": 54,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "54"
   },
   {
    "level": 2,
    "title": "Tropical triangles for (CP2, D)",
    "page": 58,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "58"
   },
   {
    "level": 1,
-   "title": "Parallel monodromy\u2013invariant directions",
+   "title": "Parallel monodromy–invariant directions",
    "page": 60,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "60"
   },
   {
    "level": 2,
    "title": "Symplectic forms",
    "page": 60,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "60"
   },
   {
    "level": 2,
    "title": "Lagrangian submanifolds",
    "page": 61,
    "source": "outline",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "61"
   },
   {
    "level": 2,
    "title": "Holomorphic and tropical triangles",
    "page": 62,
    "source": "outline",
-   "number": "6.3"
+   "number": "6.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "62"
   },
   {
    "level": 1,
    "title": "Mirrors to divisor complements",
    "page": 63,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "63"
   },
   {
    "level": 2,
    "title": "Algebraic motivation",
    "page": 64,
    "source": "outline",
-   "number": "7.1"
+   "number": "7.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "64"
   },
   {
    "level": 2,
    "title": "Wrapping",
    "page": 64,
    "source": "outline",
-   "number": "7.2"
+   "number": "7.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "64"
   },
   {
    "level": 2,
    "title": "Continuation maps and products",
    "page": 68,
    "source": "outline",
-   "number": "7.3"
+   "number": "7.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "68"
   },
   {
    "level": 1,
    "title": "References",
    "page": 70,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "70"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The Lefschetz ﬁbration with a torus that maps to a circle",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "12"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "The aﬃne manifold B",
+   "page": 14,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "14"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The tropical ﬁber of W for ǫ > 0. (a) (w, u) coordinates. (b) (w, v) coordinates. (c) The tropical ﬁber Tǫ",
+   "page": 19,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "19"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "The ﬁbration B →I. Examples of the Hessian metrics such that ∂hB is g-orthogonal to the ﬁbers of η may be constructed by starting with the function (53)",
+   "page": 22,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "22"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "The Lagrangians L(0), L(1), and L(2). Parts of the ﬁgure corresponding to L(i) are labeled by i",
+   "page": 27,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "27"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "(a) The local picture of positive perturbation. (b) The end result when K = L(0) and L = L(2)",
+   "page": 28,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "28"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "The 1/4–integral points of B. 3.3.7. Hamiltonian isotopies. There is an alternative way to express the relationship between L(d) and L(0), which is by a Hamiltonian isotopy. There is a Hamiltonian function H on X(B) such that the time-d ﬂow of H takes L(0) to L(d). During the intermediate times of t",
+   "page": 32,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "32"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "The universal cover of X(I). where q1 and q2 lie in the same ﬁber, the preceding proposition says that the output p must also lie in the same ﬁber. This means that we can compute the contribution of p to µ2(q2, q1) by counting triangles that lie entirely in this ﬁber, since the projection of such a",
+   "page": 34,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "34"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "Attaching a band to close up one of the Lagrangians in the ﬁber. coordinates (s, t) ∈[0, a] × [−1, 1] on the band such that the part of the Lagrangian",
+   "page": 38,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "38"
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "Degenerating the ﬁbration",
+   "page": 39,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "39"
+  },
+  {
+   "kind": "figure",
+   "number": "11",
+   "title": "The base of the ﬁbration with the region of perturbation shaded. If we denote by Z again the horizontal lift with respect to the trivial connection,",
+   "page": 42,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "42"
+  },
+  {
+   "kind": "figure",
+   "number": "12",
+   "title": "(a) Negatively winding triangles with positive slopes have two slope increases (m denotes slope). (b) Removing the side S2",
+   "page": 51,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "51"
+  },
+  {
+   "kind": "figure",
+   "number": "13",
+   "title": "A tropical triangle. The dotted line extending up from the singular point is a tropical disk",
+   "page": 58,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "58"
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Mirrors to divisor complements",
+   "page": 63,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "63"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "52",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "53",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "54",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "55",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "56",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "57",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "58",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "59",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "60",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "61",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "62",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": "63",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 64,
+   "label": "64",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 65,
+   "label": "65",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 66,
+   "label": "66",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 67,
+   "label": "67",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 68,
+   "label": "68",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 69,
+   "label": "69",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 70,
+   "label": "70",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 71,
+   "label": "71",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 72,
+   "label": "72",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2420,
+   "n_words": 377,
+   "label_start": "1",
+   "label_end": "2"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 1070,
+   "n_words": 192,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
    "id": "sec-001-11-summary-of-results",
    "number": "1.1",
    "title": "Summary of results",
    "level": 2,
-   "page_start": 1,
+   "page_start": 2,
    "page_end": 5,
-   "n_chars": 9661,
-   "n_words": 1714
+   "n_chars": 7352,
+   "n_words": 1295,
+   "label_start": "2",
+   "label_end": "5"
   },
   {
    "id": "sec-002-12-context-and-related-work",
@@ -282,8 +1255,10 @@
    "level": 2,
    "page_start": 5,
    "page_end": 10,
-   "n_chars": 18971,
-   "n_words": 3407
+   "n_chars": 18854,
+   "n_words": 3264,
+   "label_start": "5",
+   "label_end": "10"
   },
   {
    "id": "sec-003-13-acknowledgments",
@@ -292,8 +1267,10 @@
    "level": 2,
    "page_start": 10,
    "page_end": 11,
-   "n_chars": 723,
-   "n_words": 122
+   "n_chars": 715,
+   "n_words": 114,
+   "label_start": "10",
+   "label_end": "11"
   },
   {
    "id": "sec-004-2-the-fiber-of-w-and-its-tropicalization",
@@ -301,212 +1278,360 @@
    "title": "The fiber of W and its tropicalization",
    "level": 1,
    "page_start": 11,
-   "page_end": 16,
-   "n_chars": 11372,
-   "n_words": 2350
+   "page_end": 11,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "11",
+   "label_end": "11"
   },
   {
-   "id": "sec-005-22-the-topology-of-the-map-w",
+   "id": "sec-005-21-torus-fibrations-on-cp2-d-and-its-mirror",
+   "number": "2.1",
+   "title": "Torus fibrations on CP2 D and its mirror",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 16,
+   "n_chars": 11248,
+   "n_words": 2265,
+   "label_start": "11",
+   "label_end": "16"
+  },
+  {
+   "id": "sec-006-22-the-topology-of-the-map-w",
    "number": "2.2",
    "title": "The topology of the map W",
    "level": 2,
    "page_start": 16,
-   "page_end": 19,
-   "n_chars": 8907,
-   "n_words": 1674
+   "page_end": 17,
+   "n_chars": 1678,
+   "n_words": 326,
+   "label_start": "16",
+   "label_end": "17"
   },
   {
-   "id": "sec-006-3-symplectic-constructions",
+   "id": "sec-007-23-tropicalization-in-a-singular-affine-structur",
+   "number": "2.3",
+   "title": "Tropicalization in a singular affine structure",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 19,
+   "n_chars": 7099,
+   "n_words": 1284,
+   "label_start": "17",
+   "label_end": "19"
+  },
+  {
+   "id": "sec-008-3-symplectic-constructions",
    "number": "3",
    "title": "Symplectic constructions",
    "level": 1,
    "page_start": 19,
    "page_end": 20,
-   "n_chars": 1426,
-   "n_words": 255
+   "n_chars": 1419,
+   "n_words": 248,
+   "label_start": "19",
+   "label_end": "20"
   },
   {
-   "id": "sec-007-31-symplectic-monodromy-associated-to-a-hessian",
+   "id": "sec-009-31-symplectic-monodromy-associated-to-a-hessian",
    "number": "3.1",
    "title": "Symplectic monodromy associated to a Hessian metric",
    "level": 2,
    "page_start": 20,
    "page_end": 22,
-   "n_chars": 5941,
-   "n_words": 1160
+   "n_chars": 5940,
+   "n_words": 1159,
+   "label_start": "20",
+   "label_end": "22"
   },
   {
-   "id": "sec-008-32-focus-focus-singularities-and-lefschetz-singu",
+   "id": "sec-010-32-focus-focus-singularities-and-lefschetz-singu",
    "number": "3.2",
    "title": "Focus-focus singularities and Lefschetz singularities",
    "level": 2,
    "page_start": 22,
-   "page_end": 32,
-   "n_chars": 27856,
-   "n_words": 5110
+   "page_end": 25,
+   "n_chars": 9438,
+   "n_words": 1630,
+   "label_start": "22",
+   "label_end": "25"
   },
   {
-   "id": "sec-009-4-a-degeneration-of-holomorphic-triangles",
+   "id": "sec-011-33-lagrangians-fibered-over-paths",
+   "number": "3.3",
+   "title": "Lagrangians fibered over paths",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 32,
+   "n_chars": 18186,
+   "n_words": 3319,
+   "label_start": "25",
+   "label_end": "32"
+  },
+  {
+   "id": "sec-012-4-a-degeneration-of-holomorphic-triangles",
    "number": "4",
    "title": "A degeneration of holomorphic triangles",
    "level": 1,
    "page_start": 32,
    "page_end": 32,
-   "n_chars": 498,
-   "n_words": 85
+   "n_chars": 494,
+   "n_words": 81,
+   "label_start": "32",
+   "label_end": "32"
   },
   {
-   "id": "sec-010-41-triangles-as-sections",
+   "id": "sec-013-41-triangles-as-sections",
    "number": "4.1",
    "title": "Triangles as sections",
    "level": 2,
    "page_start": 32,
-   "page_end": 40,
-   "n_chars": 21017,
-   "n_words": 3918
+   "page_end": 37,
+   "n_chars": 11538,
+   "n_words": 2177,
+   "label_start": "32",
+   "label_end": "37"
   },
   {
-   "id": "sec-011-44-horizontal-sections-over-a-disk-with-one-crit",
+   "id": "sec-014-42-extending-the-fiber",
+   "number": "4.2",
+   "title": "Extending the fiber",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 38,
+   "n_chars": 4174,
+   "n_words": 746,
+   "label_start": "37",
+   "label_end": "38"
+  },
+  {
+   "id": "sec-015-43-degenerating-the-fibration",
+   "number": "4.3",
+   "title": "Degenerating the fibration",
+   "level": 2,
+   "page_start": 38,
+   "page_end": 40,
+   "n_chars": 5196,
+   "n_words": 955,
+   "label_start": "38",
+   "label_end": "40"
+  },
+  {
+   "id": "sec-016-44-horizontal-sections-over-a-disk-with-one-crit",
    "number": "4.4",
    "title": "Horizontal sections over a disk with one critical value",
    "level": 2,
    "page_start": 40,
-   "page_end": 52,
-   "n_chars": 34078,
-   "n_words": 6643
+   "page_end": 44,
+   "n_chars": 10593,
+   "n_words": 2014,
+   "label_start": "40",
+   "label_end": "44"
   },
   {
-   "id": "sec-012-46-signs",
+   "id": "sec-017-45-polygons-with-fixed-conformal-structure",
+   "number": "4.5",
+   "title": "Polygons with fixed conformal structure",
+   "level": 2,
+   "page_start": 44,
+   "page_end": 52,
+   "n_chars": 23243,
+   "n_words": 4457,
+   "label_start": "44",
+   "label_end": "52"
+  },
+  {
+   "id": "sec-018-46-signs",
    "number": "4.6",
    "title": "Signs",
    "level": 2,
    "page_start": 52,
    "page_end": 54,
-   "n_chars": 4995,
-   "n_words": 893
+   "n_chars": 4953,
+   "n_words": 851,
+   "label_start": "52",
+   "label_end": "54"
   },
   {
-   "id": "sec-013-5-a-tropical-count-of-triangles",
+   "id": "sec-019-5-a-tropical-count-of-triangles",
    "number": "5",
    "title": "A tropical count of triangles",
    "level": 1,
    "page_start": 54,
    "page_end": 54,
-   "n_chars": 1218,
-   "n_words": 197
+   "n_chars": 1211,
+   "n_words": 190,
+   "label_start": "54",
+   "label_end": "54"
   },
   {
-   "id": "sec-014-51-tropical-polygons",
+   "id": "sec-020-51-tropical-polygons",
    "number": "5.1",
    "title": "Tropical polygons",
    "level": 2,
    "page_start": 54,
-   "page_end": 60,
-   "n_chars": 15906,
-   "n_words": 3073
+   "page_end": 58,
+   "n_chars": 10341,
+   "n_words": 1963,
+   "label_start": "54",
+   "label_end": "58"
   },
   {
-   "id": "sec-015-6-parallel-monodromyinvariant-directions",
+   "id": "sec-021-52-tropical-triangles-for-cp2-d",
+   "number": "5.2",
+   "title": "Tropical triangles for (CP2, D)",
+   "level": 2,
+   "page_start": 58,
+   "page_end": 60,
+   "n_chars": 5426,
+   "n_words": 1050,
+   "label_start": "58",
+   "label_end": "60"
+  },
+  {
+   "id": "sec-022-6-parallel-monodromyinvariant-directions",
    "number": "6",
-   "title": "Parallel monodromy\u2013invariant directions",
+   "title": "Parallel monodromy–invariant directions",
    "level": 1,
    "page_start": 60,
    "page_end": 60,
-   "n_chars": 969,
-   "n_words": 163
+   "n_chars": 965,
+   "n_words": 159,
+   "label_start": "60",
+   "label_end": "60"
   },
   {
-   "id": "sec-016-61-symplectic-forms",
+   "id": "sec-023-61-symplectic-forms",
    "number": "6.1",
    "title": "Symplectic forms",
    "level": 2,
    "page_start": 60,
    "page_end": 61,
-   "n_chars": 1470,
-   "n_words": 263
+   "n_chars": 1466,
+   "n_words": 259,
+   "label_start": "60",
+   "label_end": "61"
   },
   {
-   "id": "sec-017-62-lagrangian-submanifolds",
+   "id": "sec-024-62-lagrangian-submanifolds",
    "number": "6.2",
    "title": "Lagrangian submanifolds",
    "level": 2,
    "page_start": 61,
    "page_end": 62,
-   "n_chars": 4144,
-   "n_words": 754
+   "n_chars": 4123,
+   "n_words": 733,
+   "label_start": "61",
+   "label_end": "62"
   },
   {
-   "id": "sec-018-63-holomorphic-and-tropical-triangles",
+   "id": "sec-025-63-holomorphic-and-tropical-triangles",
    "number": "6.3",
    "title": "Holomorphic and tropical triangles",
    "level": 2,
    "page_start": 62,
    "page_end": 63,
-   "n_chars": 1765,
-   "n_words": 326
+   "n_chars": 1764,
+   "n_words": 325,
+   "label_start": "62",
+   "label_end": "63"
   },
   {
-   "id": "sec-019-7-mirrors-to-divisor-complements",
+   "id": "sec-026-7-mirrors-to-divisor-complements",
    "number": "7",
    "title": "Mirrors to divisor complements",
    "level": 1,
    "page_start": 63,
    "page_end": 64,
-   "n_chars": 2337,
-   "n_words": 419
+   "n_chars": 2339,
+   "n_words": 421,
+   "label_start": "63",
+   "label_end": "64"
   },
   {
-   "id": "sec-020-71-algebraic-motivation",
+   "id": "sec-027-71-algebraic-motivation",
    "number": "7.1",
    "title": "Algebraic motivation",
    "level": 2,
    "page_start": 64,
    "page_end": 64,
-   "n_chars": 2113,
-   "n_words": 436
+   "n_chars": 2073,
+   "n_words": 417,
+   "label_start": "64",
+   "label_end": "64"
   },
   {
-   "id": "sec-021-72-wrapping",
+   "id": "sec-028-72-wrapping",
    "number": "7.2",
    "title": "Wrapping",
    "level": 2,
    "page_start": 64,
    "page_end": 68,
-   "n_chars": 9958,
-   "n_words": 1881
+   "n_chars": 9924,
+   "n_words": 1847,
+   "label_start": "64",
+   "label_end": "68"
   },
   {
-   "id": "sec-022-73-continuation-maps-and-products",
+   "id": "sec-029-73-continuation-maps-and-products",
    "number": "7.3",
    "title": "Continuation maps and products",
    "level": 2,
    "page_start": 68,
    "page_end": 70,
-   "n_chars": 7231,
-   "n_words": 1341
+   "n_chars": 7164,
+   "n_words": 1302,
+   "label_start": "68",
+   "label_end": "70"
   },
   {
-   "id": "sec-023-references",
+   "id": "sec-030-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 70,
    "page_end": 72,
-   "n_chars": 7490,
-   "n_words": 1146
+   "n_chars": 7424,
+   "n_words": 1080,
+   "label_start": "70",
+   "label_end": "72"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 31,
-  "sections": 24,
-  "chars_total": 200046,
+  "toc_inferred_entries": 0,
+  "figure_entries": 14,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 1,
+    "items": [
+     "Signs"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 32,
+  "chars_total": 199830,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "cp2-conic-line.tex",
    "tex_sections": 47,
-   "overlaid": 21,
+   "overlaid": 28,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -514,16 +1639,23 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-001-11-summary-of-results",
      "title": "Summary of results",
-     "prose_ratio": 0.983,
-     "coverage_ratio": 0.823,
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -531,7 +1663,7 @@
      "id": "sec-002-12-context-and-related-work",
      "title": "Context and related work",
      "prose_ratio": 0.983,
-     "coverage_ratio": 0.984,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -539,122 +1671,176 @@
      "id": "sec-003-13-acknowledgments",
      "title": "Acknowledgments",
      "prose_ratio": 0.911,
-     "coverage_ratio": 0.945,
+     "coverage_ratio": 0.944,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-2-the-fiber-of-w-and-its-tropicalization",
      "title": "The fiber of W and its tropicalization",
-     "prose_ratio": 0.997,
-     "coverage_ratio": 0.694,
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-21-torus-fibrations-on-cp2-d-and-its-mirror",
+     "title": "Torus fibrations on CP2 D and its mirror",
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-22-the-topology-of-the-map-w",
+     "id": "sec-006-22-the-topology-of-the-map-w",
      "title": "The topology of the map W",
-     "prose_ratio": 0.988,
-     "coverage_ratio": 0.988,
+     "prose_ratio": 0.921,
+     "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-3-symplectic-constructions",
+     "id": "sec-007-23-tropicalization-in-a-singular-affine-structur",
+     "title": "Tropicalization in a singular affine structure",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-3-symplectic-constructions",
      "title": "Symplectic constructions",
      "prose_ratio": 0.951,
-     "coverage_ratio": 0.951,
+     "coverage_ratio": 0.974,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-31-symplectic-monodromy-associated-to-a-hessian",
+     "id": "sec-009-31-symplectic-monodromy-associated-to-a-hessian",
      "title": "Symplectic monodromy associated to a Hessian metric",
      "prose_ratio": 0.995,
-     "coverage_ratio": 0.968,
+     "coverage_ratio": 0.966,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-32-focus-focus-singularities-and-lefschetz-singu",
+     "id": "sec-010-32-focus-focus-singularities-and-lefschetz-singu",
      "title": "Focus-focus singularities and Lefschetz singularities",
-     "prose_ratio": 0.99,
-     "coverage_ratio": 0.987,
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-4-a-degeneration-of-holomorphic-triangles",
+     "id": "sec-011-33-lagrangians-fibered-over-paths",
+     "title": "Lagrangians fibered over paths",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-4-a-degeneration-of-holomorphic-triangles",
      "title": "A degeneration of holomorphic triangles",
      "prose_ratio": 0.442,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-010-41-triangles-as-sections",
+     "id": "sec-013-41-triangles-as-sections",
      "title": "Triangles as sections",
-     "prose_ratio": 0.978,
-     "coverage_ratio": 0.955,
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.93,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-44-horizontal-sections-over-a-disk-with-one-crit",
+     "id": "sec-014-42-extending-the-fiber",
+     "title": "Extending the fiber",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-43-degenerating-the-fibration",
+     "title": "Degenerating the fibration",
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-44-horizontal-sections-over-a-disk-with-one-crit",
      "title": "Horizontal sections over a disk with one critical value",
-     "prose_ratio": 0.992,
-     "coverage_ratio": 0.977,
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-012-46-signs",
+     "id": "sec-017-45-polygons-with-fixed-conformal-structure",
+     "title": "Polygons with fixed conformal structure",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-018-46-signs",
      "title": "Signs",
      "prose_ratio": 0.977,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-019-5-a-tropical-count-of-triangles",
+     "title": "A tropical count of triangles",
+     "prose_ratio": 0.987,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-020-51-tropical-polygons",
+     "title": "Tropical polygons",
+     "prose_ratio": 0.973,
      "coverage_ratio": 0.971,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-013-5-a-tropical-count-of-triangles",
-     "title": "A tropical count of triangles",
-     "prose_ratio": 0.987,
-     "coverage_ratio": 0.976,
+     "id": "sec-021-52-tropical-triangles-for-cp2-d",
+     "title": "Tropical triangles for (CP2, D)",
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.957,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-014-51-tropical-polygons",
-     "title": "Tropical polygons",
-     "prose_ratio": 0.974,
-     "coverage_ratio": 0.968,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-015-6-parallel-monodromyinvariant-directions",
-     "title": "Parallel monodromy\u2013invariant directions",
+     "id": "sec-022-6-parallel-monodromyinvariant-directions",
+     "title": "Parallel monodromy–invariant directions",
      "prose_ratio": 0.968,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-016-61-symplectic-forms",
+     "id": "sec-023-61-symplectic-forms",
      "title": "Symplectic forms",
      "prose_ratio": 0.961,
-     "coverage_ratio": 0.951,
+     "coverage_ratio": 0.962,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-017-62-lagrangian-submanifolds",
+     "id": "sec-024-62-lagrangian-submanifolds",
      "title": "Lagrangian submanifolds",
      "prose_ratio": 0.973,
-     "coverage_ratio": 0.984,
+     "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-018-63-holomorphic-and-tropical-triangles",
+     "id": "sec-025-63-holomorphic-and-tropical-triangles",
      "title": "Holomorphic and tropical triangles",
      "prose_ratio": 0.826,
      "coverage_ratio": 0.928,
@@ -662,39 +1848,39 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-019-7-mirrors-to-divisor-complements",
+     "id": "sec-026-7-mirrors-to-divisor-complements",
      "title": "Mirrors to divisor complements",
      "prose_ratio": 0.962,
-     "coverage_ratio": 0.82,
+     "coverage_ratio": 0.823,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-020-71-algebraic-motivation",
+     "id": "sec-027-71-algebraic-motivation",
      "title": "Algebraic motivation",
      "prose_ratio": 0.883,
-     "coverage_ratio": 0.985,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-021-72-wrapping",
+     "id": "sec-028-72-wrapping",
      "title": "Wrapping",
      "prose_ratio": 0.987,
-     "coverage_ratio": 0.973,
+     "coverage_ratio": 0.991,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-022-73-continuation-maps-and-products",
+     "id": "sec-029-73-continuation-maps-and-products",
      "title": "Continuation maps and products",
      "prose_ratio": 0.975,
-     "coverage_ratio": 0.962,
+     "coverage_ratio": 0.971,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-023-references",
+     "id": "sec-030-references",
      "title": "References",
      "result": "no matching \\section"
     }

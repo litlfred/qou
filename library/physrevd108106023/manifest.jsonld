@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/physrevd108106023",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/physrevd108106023/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -18,10 +18,11 @@
     "library/physrevd108106023/sections/sec-003",
     "library/physrevd108106023/sections/sec-004",
     "library/physrevd108106023/sections/sec-005",
-    "library/physrevd108106023/sections/sec-006"
+    "library/physrevd108106023/sections/sec-006",
+    "library/physrevd108106023/sections/sec-007"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "physrevd108106023",
     "title_source": "pdf-info",

@@ -1,0 +1,28 @@
+24. Proof of Theorem 2, formula (2) .
+
+Let V bea smooth vector field on S*. Thinking of V asa steady current flow,
+we defined the corresponding magnetic field BS(V) by
+
+BS(V)(y) = Js3 Py. V(x) xVy o(x, y) dx ?
+where (a) = (-1/4n’) (1-2) csc a.
+
+We saw in the preceding section that, as a consequence of the Key Lemma, the
+field BS(V) satisfies Maxwell's equation
+
+Vy XBS(V)(y) = V(y) + Vy Js3 VOX) © Vx bo(x, y) dx.
+
+To complete the proof of Theorem 2, formula (2), we need only show that BS(V)
+is divergence-free, and we do this as follows.
+
+Vy * BS(V)(y) = Vy e Js3 PyxV(x) X Vyb(x, y) dx
+= JSs3 Vy ° {PyxV(x) x Vyo(x, y)} dx ey
+
+and we will show that the integrand is identically zero. We use the standard
+formula
+
+V e(A XB) = (V XA) eB — Ae(V XB),
+and also the formula from Proposition 18.1,
+
+Vy X PyxV(x) = [yx V]/( + <x, y>).
+
+55

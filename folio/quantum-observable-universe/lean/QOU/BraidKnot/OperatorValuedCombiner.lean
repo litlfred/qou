@@ -87,8 +87,8 @@ namespace WenzlAOperator
     hypothesis (the conjecture).  This is the first nontrivial unwinding
     of the branching recursion: the 9-strand atomic χ-value is built
     from the 6-strand (deuteron) base case. -/
--- Ref: [manuscript] docs/audits/2026-05-31-binding-magic-A-wireup.md §"Concrete Lean gaps remaining"
--- Ref: [manuscript] docs/audits/2026-06-02-subgoal-1-phase-a-baseline.md §"Phase C — Lean target identified"
+-- Ref: [leitner2026] docs/audits/2026-05-31-binding-magic-A-wireup.md §"Concrete Lean gaps remaining"
+-- Ref: [leitner2026] docs/audits/2026-06-02-subgoal-1-phase-a-baseline.md §"Phase C — Lean target identified"
 -- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors," Invent. Math. 92 (1988)
 theorem combiner_value_three_eq
     {R : Type u} [CommRing R] {q : R}
@@ -113,7 +113,7 @@ def iteratedCombinerValue
     This proves `prop:operator-valued-combiner-convergence` using `Nat.rec`,
     establishing that the `A`-nucleon value is exactly the unwound
     accumulation from the `A=2` base case. -/
--- Ref: [manuscript] docs/audits/2026-06-02-subgoal-1-sdp-multiterm-and-tritium.md
+-- Ref: [leitner2026] docs/audits/2026-06-02-subgoal-1-sdp-multiterm-and-tritium.md
 theorem operator_valued_combiner_convergence
     {R : Type u} [CommRing R] {q : R}
     [CrystalGraphRealization R q]

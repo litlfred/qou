@@ -5,30 +5,52 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/9511222v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/9511222v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "9511222v1",
+  "title": "top.dvi",
   "contains": [
-    "library/9511222v1/sections/sec-000",
-    "library/9511222v1/sections/sec-001",
-    "library/9511222v1/sections/sec-002",
-    "library/9511222v1/sections/sec-003",
-    "library/9511222v1/sections/sec-004"
+    "library/9511222v1/sections/page-001",
+    "library/9511222v1/sections/page-002",
+    "library/9511222v1/sections/page-003",
+    "library/9511222v1/sections/page-004",
+    "library/9511222v1/sections/page-005",
+    "library/9511222v1/sections/page-006",
+    "library/9511222v1/sections/page-007",
+    "library/9511222v1/sections/page-008",
+    "library/9511222v1/sections/page-009",
+    "library/9511222v1/sections/page-010",
+    "library/9511222v1/sections/page-011",
+    "library/9511222v1/sections/page-012",
+    "library/9511222v1/sections/page-013",
+    "library/9511222v1/sections/page-014",
+    "library/9511222v1/sections/page-015",
+    "library/9511222v1/sections/page-016",
+    "library/9511222v1/sections/page-017",
+    "library/9511222v1/sections/page-018",
+    "library/9511222v1/sections/page-019",
+    "library/9511222v1/sections/page-020",
+    "library/9511222v1/sections/page-021",
+    "library/9511222v1/sections/page-022",
+    "library/9511222v1/sections/page-023",
+    "library/9511222v1/sections/page-024",
+    "library/9511222v1/sections/page-025",
+    "library/9511222v1/sections/page-026"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "9511222v1",
-    "title_source": "slug",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "9511222v1.pdf",
     "source_sha256": "2870b5b709d1f3586b0e3a4b50c7c5be76727c42f1c1ea037c4124047b8d18d7",
     "pages": 26,
     "arxiv": null,
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

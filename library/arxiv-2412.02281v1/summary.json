@@ -2,32 +2,37 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2412.02281v1",
  "source_sha256": "ac4127cf4994b2ba",
- "brief": "Explicit evaluation of the q-Stokes matrices for certain confluent hypergeometric q-difference equations — We prove a connection formula for the basic hypergeomtric fu nction nϕn−1 (a1,...,a n−1",
- "extended": "**Explicit evaluation of the q-Stokes matrices for certain confluent hypergeometric q-difference equations**\n\n*Jinghong Lin, Yiming Ma and Xiaomeng Xu*\n\n28 pp, 15 sections.\n\n**Abstract.** We prove a connection formula for the basic hypergeomtric fu nction nϕn−1 (a1,...,a n−1, 0;b1,...,b n−1;q,z ) by using the q-Borel resummation. As an application, we compute q-Stokes matrices of a special conﬂuent hypergeometricq-diﬀerence system with an irregular singularity. We show th at by letting q → 1, the q-Stokes matrices recover the known expressions of the Stokes matric es of the corresponding conﬂuent hypergeometric diﬀerential system.\n\n**Outline.** Introduction; Basic Hypergeometric Series; Connection Formula of the Equation (5); Basic Notations; q-Borel Resummation; Explicit Expression of Connection Formula of t; Connection Matrix, q-Stokes Matrix of the Syst; Fundamental Solution, Connection Matrix and q-; Diagonalization of the Upper Left Submatrix of; Fundamental Solutions of the System (33); Relationship between the System (33) and the E; Explicit Evaluation of Connection Matrix and q; Explicit Evaluation of Connection Matrix and q; Behavior of the Equation (5) and the System (2; Behavior of Connection Matrix and q-Stokes Mat\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: If the following condition holds for the matrix A:\n- Theorem 1.2: Fora1,a 2,...,a n−1,b 1,b 2,...,b n−1 such that\n- Theorem 2.26: If the following condition holds for a1,a 2,...,a n−1,b 1,b 2,...,b n−1:\n- Theorem 3.8: Under the condition (42), and for z,λ such that\n- Theorem 3.9: Under the condition (42), and for z,λ such that\n- Theorem 3.10: Under the condition (42), and for z,λ,µ such that",
+ "brief": "Explicit evaluation of the q -Stokes matrices for certain conﬂuent hypergeometric q -diﬀerence equations — We prove a connection formula for the basic hypergeomtric function nϕn−1 (a1, ..., an−1, 0",
+ "extended": "**Explicit evaluation of the q -Stokes matrices for certain conﬂuent hypergeometric q -diﬀerence equations**\n\n*Jinghong Lin, Yiming Ma and Xiaomeng Xu*\n\n28 pp, 17 sections.\n\n**Abstract.** We prove a connection formula for the basic hypergeomtric function nϕn−1 (a1, ..., an−1, 0; b1, ..., bn−1; q, z) by using the q-Borel resummation. As an application, we compute q-Stokes matrices of a special conﬂuent hypergeometric q-diﬀerence system with an irregular singularity. We show that by letting q →1, the q-Stokes matrices recover the known expressions of the Stokes matrices of the corresponding conﬂuent hypergeometric diﬀerential system.\n\n**Outline.** Front matter; Introduction; Connection Formula of the Equation (5); Basic Notations; Basic Hypergeometric Series; q-Borel Resummation; Explicit Expression of Connection Formula of t; Connection Matrix, q-Stokes Matrix of the Syst; Fundamental Solution, Connection Matrix and q-; Diagonalization of the Upper Left Submatrix of; Fundamental Solutions of the System (33); Relationship between the System (33) and the E; Explicit Evaluation of Connection Matrix and q; Explicit Evaluation of Connection Matrix and q; Behavior of the Equation (5) and the System (2; Behavior of the Connection Formula as q1; Behavior of Connection Matrix and q-Stokes Mat",
  "tokens": {
-  "brief": 48,
-  "extended": 426
+  "brief": 49,
+  "extended": 325
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-introduction",
    "title": "Introduction",
    "pages": "1-3"
   },
   {
-   "id": "sec-001-basic-hypergeometric-series",
-   "title": "Basic Hypergeometric Series",
-   "pages": "3-3"
-  },
-  {
-   "id": "sec-002-connection-formula-of-the-equation-5",
+   "id": "sec-001-connection-formula-of-the-equation-5",
    "title": "Connection Formula of the Equation (5)",
    "pages": "3-3"
   },
   {
-   "id": "sec-003-basic-notations",
+   "id": "sec-002-basic-notations",
    "title": "Basic Notations",
-   "pages": "3-5"
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-003-basic-hypergeometric-series",
+   "title": "Basic Hypergeometric Series",
+   "pages": "4-5"
   },
   {
    "id": "sec-004-q-borel-resummation",
@@ -77,10 +82,15 @@
   {
    "id": "sec-013-behavior-of-the-equation-5-and-the-system-2-as-q",
    "title": "Behavior of the Equation (5) and the System (2) as q1",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-014-behavior-of-the-connection-formula-as-q1",
+   "title": "Behavior of the Connection Formula as q1",
    "pages": "18-22"
   },
   {
-   "id": "sec-014-behavior-of-connection-matrix-and-q-stokes-matri",
+   "id": "sec-015-behavior-of-connection-matrix-and-q-stokes-matri",
    "title": "Behavior of Connection Matrix and q-Stokes Matrix of the System (2) as q1",
    "pages": "22-28"
   }
@@ -89,8 +99,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

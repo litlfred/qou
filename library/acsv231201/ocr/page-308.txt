@@ -1,0 +1,32 @@
+290 Smooth point asymptotics
+
+Additional exercises
+
+Exercise 9.13. Let Res be the residue map on meromorphic forms with simple
+poles on a smooth variety V, as defined in Proposition C.6. Prove that Res is
+functorial, meaning it commutes with bi-holomorphic changes of coordinate.
+
+Exercise 9.14. Let f(x,y) = x° — 3x +3-—y. In Example 9.39, asymptotics in
+the diagonal direction reveal a quadratic degeneracy. To see what a quadratic
+degeneracy means topologically, begin by computing the critical points in the
+direction r = (r, 1—r) as a function of r on the unit interval. There should usu-
+ally be two critical points. At what value r, of r is there a single critical point
+of multiplicity 2? Check whether this is the same r for which the quadratic
+term of /» near the critical point z(#) vanishes.
+
+Exercise 9.15. Let F(x, y) = 1/(1 — x — y)’. Compute the asymptotics for the
+power series coefficients a‘) and find the relation between these and the asymp-
+
+totics of the binomial coefficients a‘) = ("*). Verify this combinatorially by
+
+finding the exact value of a. Hint: When € = 2, the bivariate convolution
+of the binomial array with itself can be represented as divisions of r + s or-
+dered balls into r balls of one color and s of another, with a marker inserted
+somewhere dividing the balls into the two parts.
+
+Exercise 9.16. (higher-order cube root asymptotics) In Example 9.39, dividing
+the error when approximating the sequence by its leading asymptotic term by
+the leading asymptotic term gives 0.00111... when r = 100, hinting at the
+fact that the next nonvanishing asymptotic term is r~”/? for some m greater
+than 2. Compute enough derivatives of A and ¢ at zero to determine the next
+nonvanishing asymptotic term for a,,.

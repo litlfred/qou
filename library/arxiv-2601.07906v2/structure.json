@@ -7,10 +7,11 @@
   "bytes": 1358241,
   "pages": 117,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,19 +21,35 @@
    "stamp_date": "25 Mar 2026"
   },
   "doi": null,
-  "title": "March 2026 A universal sum over topologies in 3d gravity",
-  "authors_raw": "Alexandre Belin 1,2, Scott Collier 3,4, Lorenz Eberhardt 5, Diego Liska 6,7, Boris",
+  "title": "A universal sum over topologies in 3d gravity",
+  "authors_raw": "Alexandre Belin1,2, Scott Collier3,4, Lorenz Eberhardt5, Diego Liska6,7, Boris",
   "title_lines": [
    "March 2026",
    "A universal sum over topologies in 3d gravity"
   ],
-  "abstract": "We explore the sum over topologies in AdS 3 quantum gravity and its relationship with the statistical interpretation of the boundary theory. We formulate a statistical version of the conformal bootstrap that systematizes the universal sta- tistical properties of high-energy CFT 2 data. We identify a series of surgery moves on bulk manifolds that precisely reflect the requirements of typicality and crossing symmetry of the boundary ensemble. These surgery moves generate a large num- ber of bulk manifolds that have to be included in any reasonable definition of the gravitational path integral. We show that this procedure generates only on-shell (hyperbolic) manifolds, although it does not produce all of them. These proofs rely on structure theorems of 3-manifolds, which non-trivially interact with the require- ments of the statistical boundary ensemble. We illustrate the application of this procedure with many examples, such as Euclidean wormholes, twistedI-bundles and handlebody-knots. Our findings reveal a large space of possible choices of which manifolds can be included in the gravitational path integral, reflecting a wide range of possible statistical ensembles consistent with crossing symmetry and typicality. arXiv:2601.07906v2 [hep-th] 25 Mar 2026",
+  "abstract": "We explore the sum over topologies in AdS3 quantum gravity and its relationship with the statistical interpretation of the boundary theory. We formulate a statistical version of the conformal bootstrap that systematizes the universal sta- tistical properties of high-energy CFT2 data. We identify a series of surgery moves on bulk manifolds that precisely reflect the requirements of typicality and crossing symmetry of the boundary ensemble. These surgery moves generate a large num- ber of bulk manifolds that have to be included in any reasonable definition of the gravitational path integral. We show that this procedure generates only on-shell (hyperbolic) manifolds, although it does not produce all of them. These proofs rely on structure theorems of 3-manifolds, which non-trivially interact with the require- ments of the statistical boundary ensemble. We illustrate the application of this procedure with many examples, such as Euclidean wormholes, twisted I-bundles and handlebody-knots. Our findings reveal a large space of possible choices of which manifolds can be included in the gravitational path integral, reflecting a wide range of possible statistical ensembles consistent with crossing symmetry and typicality. arXiv:2601.07906v2 [hep-th] 25 Mar 2026",
   "docinfo": {
+   "Title": "A universal sum over topologies in 3d gravity",
    "Author": "Alexandre Belin; Scott Collier; Lorenz Eberhardt; Diego Liska; Boris Post",
-   "Creator": "arXiv GenPDF (tex2pdf:a6404ea)",
    "Producer": "pikepdf 8.15.1",
-   "Title": "A universal sum over topologies in 3d gravity"
-  }
+   "Creator": "arXiv GenPDF (tex2pdf:a6404ea)"
+  },
+  "title_raw": "March 2026 A universal sum over topologies in 3d gravity",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "A universal sum over topologies in 3d gravity",
+   "heading": "A universal sum over topologies in 3d gravity",
+   "outline": "Introduction",
+   "text": "March 2026 A universal sum over topologies in 3d gravity",
+   "corroborated_by": [
+    "heading",
+    "text",
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "March 2026 A universal sum over topologies in 3d gravity"
  },
  "toc": [
   {
@@ -40,254 +57,1684 @@
    "title": "Introduction",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "The statistical bootstrap",
    "page": 10,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Kinematic constraints",
    "page": 11,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "Crossing symmetry and modular invariance",
    "page": 13,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "Typicality and index contractions",
    "page": 16,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "Spectral statistics",
    "page": 21,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 1,
    "title": "Summing over handlebodies",
    "page": 22,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 2,
    "title": "The mapping class group",
    "page": 22,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 2,
    "title": "Handlebodies as conformal blocks",
    "page": 24,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
   },
   {
    "level": 2,
    "title": "Fixed-P partition functions",
    "page": 27,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
   },
   {
    "level": 2,
    "title": "The handlebody sum is crossing symmetric",
    "page": 34,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "34"
   },
   {
    "level": 1,
    "title": "Minimal completion of the handlebody sum",
    "page": 41,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "41"
   },
   {
    "level": 2,
    "title": "Handlebodies are not sufficient",
    "page": 41,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "41"
   },
   {
    "level": 2,
    "title": "The gravitational machine",
    "page": 46,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "46"
   },
   {
    "level": 2,
    "title": "The gravitational machine is hyperbolic",
    "page": 52,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "52"
   },
   {
    "level": 2,
    "title": "What 3-manifolds are generated?",
    "page": 58,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "58"
   },
   {
    "level": 1,
    "title": "The gravitational machine at work",
    "page": 62,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "62"
   },
   {
    "level": 2,
    "title": "Euclidean wormholes",
    "page": 63,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "63"
   },
   {
    "level": 2,
    "title": "Twisted I-bundles",
    "page": 64,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "64"
   },
   {
    "level": 2,
    "title": "Handlebody-knots",
    "page": 65,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "65"
   },
   {
    "level": 1,
    "title": "Discussion",
    "page": 73,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "73"
   },
   {
    "level": 1,
    "title": "3-manifold technology",
    "page": 79,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "79"
   },
   {
    "level": 2,
    "title": "(In)compressible surfaces in 3-manifolds",
    "page": 79,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "79"
   },
   {
    "level": 2,
    "title": "Wirtinger presentation of fundamental groups",
    "page": 81,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "81"
   },
   {
    "level": 2,
    "title": "Tricolorability and handlebodyness",
    "page": 85,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "85"
   },
   {
    "level": 1,
    "title": "The fundamental group of the gravitational machine",
    "page": 87,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "87"
   },
   {
    "level": 2,
    "title": "What is Bass-Serre theory?",
    "page": 87,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "87"
   },
   {
    "level": 2,
    "title": "Groups acting on trees",
    "page": 89,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "89"
   },
   {
    "level": 2,
    "title": "Fundamental theorem of Bass-Serre theory",
    "page": 91,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "91"
   },
   {
    "level": 2,
    "title": "Application to the gravitational machine",
    "page": 93,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "93"
   },
   {
    "level": 1,
    "title": "VTQFT technology",
    "page": 98,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "98"
   },
   {
    "level": 2,
    "title": "Virasoro TQFT identities",
    "page": 98,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "98"
   },
   {
    "level": 2,
    "title": "Kirby calculus",
    "page": 106,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "106"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Example of a crossing transformation γ on a genus-2 Riemann surface. The two sets of contractible cycles (the thick closed curves) lead to two distinct genus-2 handlebodies upon filling in the bulk",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "In section 4, we show that index contractions, in a statistical ensemble of heavy OPE coefficients, correspond to 3-manifold surgery where the gluing surface is a cylinder",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Examples of non-handlebodies with genus-2 boundary. These non-handlebodies are all necessary in the sum over topologies, in order for the statistical description of the CFT to be consistent. a) Complement of a handlebody-knot in S3. b) Twisted I-bundle",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "The three basic Moore-Seiberg moves, acting on embedded bordered surfaces in a given pair-of-pants decomposition of a Riemann surface. From left to right, these are the braiding transformation, the fusion move and the modular S-transform",
+   "page": 13,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "13"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "For a closed Riemann surface of genus g ⩾2, the mapping class group MCG(Σg) is generated by Dehn twists along the 2g + 1 cycles drawn in red",
+   "page": 23,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "23"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Two VTQFT diagrams that describe the same handlebody: one is in the sunset basis (left), the other in the dumbbell basis (right)",
+   "page": 36,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "36"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Pinching the innermost curve leads to two surfaces with fewer intersections with the boundary ∂M1 = ∂M2",
+   "page": 55,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "55"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Cartoon comparing 3d gravity to 2d JT gravity: in 3d, the hyperbolic manifolds with totally geodesic boundary are acylindrical, and in 2d the hyperbolic manifolds with geodesic boundaries have negative Euler characteristic",
+   "page": 61,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "61"
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "The irreducible non-trivial handlebody-knots with fewer than six crossings (omitting their mirror images). Among these examples, the gravitational machine generates the hyperbolic and cylindrical handlebody-knots, either through a self-gluing or a Dehn surgery on a handlebody. It does not generate t",
+   "page": 67,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "67"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "0",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "i",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "46",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "52",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "53",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "54",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "55",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "56",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "57",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "58",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "59",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "60",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "61",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "62",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": "63",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 64,
+   "label": "64",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 65,
+   "label": "65",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 66,
+   "label": "66",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 67,
+   "label": "67",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 68,
+   "label": "68",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 69,
+   "label": "69",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 70,
+   "label": "70",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 71,
+   "label": "71",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 72,
+   "label": "72",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 73,
+   "label": "73",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 74,
+   "label": "74",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 75,
+   "label": "75",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 76,
+   "label": "76",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 77,
+   "label": "77",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 78,
+   "label": "78",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 79,
+   "label": "79",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 80,
+   "label": "80",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 81,
+   "label": "81",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 82,
+   "label": "82",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 83,
+   "label": "83",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 84,
+   "label": "84",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 85,
+   "label": "85",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 86,
+   "label": "86",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 87,
+   "label": "87",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 88,
+   "label": "88",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 89,
+   "label": "89",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 90,
+   "label": "90",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 91,
+   "label": "91",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 92,
+   "label": "92",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 93,
+   "label": "93",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 94,
+   "label": "94",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 95,
+   "label": "95",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 96,
+   "label": "96",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 97,
+   "label": "97",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 98,
+   "label": "98",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 99,
+   "label": "99",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 100,
+   "label": "100",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 101,
+   "label": "101",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 102,
+   "label": "102",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 103,
+   "label": "103",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 104,
+   "label": "104",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 105,
+   "label": "105",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 106,
+   "label": "106",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 107,
+   "label": "107",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 108,
+   "label": "108",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 109,
+   "label": "109",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 110,
+   "label": "110",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 111,
+   "label": "111",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 112,
+   "label": "112",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 113,
+   "label": "113",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 114,
+   "label": "114",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 115,
+   "label": "115",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 116,
+   "label": "116",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 117,
+   "label": "117",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 3440,
+   "n_words": 486,
+   "label_start": "0",
+   "label_end": "4"
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
    "title": "Introduction",
    "level": 1,
    "page_start": 4,
-   "page_end": 9,
-   "n_chars": 14727,
-   "n_words": 2254
+   "page_end": 10,
+   "n_chars": 17091,
+   "n_words": 2691,
+   "label_start": "4",
+   "label_end": "10"
   },
   {
    "id": "sec-001-the-statistical-bootstrap",
    "number": null,
    "title": "The statistical bootstrap",
    "level": 1,
-   "page_start": 9,
+   "page_start": 10,
    "page_end": 11,
-   "n_chars": 4932,
-   "n_words": 817
+   "n_chars": 2727,
+   "n_words": 470,
+   "label_start": "10",
+   "label_end": "11"
   },
   {
    "id": "sec-002-kinematic-constraints",
@@ -296,8 +1743,10 @@
    "level": 2,
    "page_start": 11,
    "page_end": 13,
-   "n_chars": 4796,
-   "n_words": 793
+   "n_chars": 4855,
+   "n_words": 832,
+   "label_start": "11",
+   "label_end": "13"
   },
   {
    "id": "sec-003-crossing-symmetry-and-modular-invariance",
@@ -306,8 +1755,10 @@
    "level": 2,
    "page_start": 13,
    "page_end": 16,
-   "n_chars": 8822,
-   "n_words": 1456
+   "n_chars": 8982,
+   "n_words": 1580,
+   "label_start": "13",
+   "label_end": "16"
   },
   {
    "id": "sec-004-typicality-and-index-contractions",
@@ -316,8 +1767,10 @@
    "level": 2,
    "page_start": 16,
    "page_end": 21,
-   "n_chars": 12734,
-   "n_words": 2051
+   "n_chars": 12854,
+   "n_words": 2141,
+   "label_start": "16",
+   "label_end": "21"
   },
   {
    "id": "sec-005-spectral-statistics",
@@ -326,8 +1779,10 @@
    "level": 2,
    "page_start": 21,
    "page_end": 22,
-   "n_chars": 4148,
-   "n_words": 626
+   "n_chars": 4193,
+   "n_words": 653,
+   "label_start": "21",
+   "label_end": "22"
   },
   {
    "id": "sec-006-summing-over-handlebodies",
@@ -336,8 +1791,10 @@
    "level": 1,
    "page_start": 22,
    "page_end": 22,
-   "n_chars": 472,
-   "n_words": 75
+   "n_chars": 498,
+   "n_words": 78,
+   "label_start": "22",
+   "label_end": "22"
   },
   {
    "id": "sec-007-the-mapping-class-group",
@@ -346,8 +1803,10 @@
    "level": 2,
    "page_start": 22,
    "page_end": 24,
-   "n_chars": 3753,
-   "n_words": 617
+   "n_chars": 3837,
+   "n_words": 681,
+   "label_start": "22",
+   "label_end": "24"
   },
   {
    "id": "sec-008-handlebodies-as-conformal-blocks",
@@ -355,242 +1814,338 @@
    "title": "Handlebodies as conformal blocks",
    "level": 2,
    "page_start": 24,
-   "page_end": 34,
-   "n_chars": 23265,
-   "n_words": 3841
+   "page_end": 27,
+   "n_chars": 6068,
+   "n_words": 1069,
+   "label_start": "24",
+   "label_end": "27"
   },
   {
-   "id": "sec-009-the-handlebody-sum-is-crossing-symmetric",
+   "id": "sec-009-fixed-p-partition-functions",
+   "number": null,
+   "title": "Fixed-P partition functions",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 34,
+   "n_chars": 17487,
+   "n_words": 3036,
+   "label_start": "27",
+   "label_end": "34"
+  },
+  {
+   "id": "sec-010-the-handlebody-sum-is-crossing-symmetric",
    "number": null,
    "title": "The handlebody sum is crossing symmetric",
    "level": 2,
    "page_start": 34,
    "page_end": 41,
-   "n_chars": 15781,
-   "n_words": 2686
+   "n_chars": 15965,
+   "n_words": 2835,
+   "label_start": "34",
+   "label_end": "41"
   },
   {
-   "id": "sec-010-minimal-completion-of-the-handlebody-sum",
+   "id": "sec-011-minimal-completion-of-the-handlebody-sum",
    "number": null,
    "title": "Minimal completion of the handlebody sum",
    "level": 1,
    "page_start": 41,
    "page_end": 41,
-   "n_chars": 961,
-   "n_words": 151
+   "n_chars": 1002,
+   "n_words": 157,
+   "label_start": "41",
+   "label_end": "41"
   },
   {
-   "id": "sec-011-handlebodies-are-not-sufficient",
+   "id": "sec-012-handlebodies-are-not-sufficient",
    "number": null,
    "title": "Handlebodies are not sufficient",
    "level": 2,
    "page_start": 41,
    "page_end": 46,
-   "n_chars": 9722,
-   "n_words": 1627
+   "n_chars": 9826,
+   "n_words": 1704,
+   "label_start": "41",
+   "label_end": "46"
   },
   {
-   "id": "sec-012-the-gravitational-machine",
+   "id": "sec-013-the-gravitational-machine",
    "number": null,
    "title": "The gravitational machine",
    "level": 2,
    "page_start": 46,
    "page_end": 52,
-   "n_chars": 16027,
-   "n_words": 2658
+   "n_chars": 16155,
+   "n_words": 2763,
+   "label_start": "46",
+   "label_end": "52"
   },
   {
-   "id": "sec-013-the-gravitational-machine-is-hyperbolic",
+   "id": "sec-014-the-gravitational-machine-is-hyperbolic",
    "number": null,
    "title": "The gravitational machine is hyperbolic",
    "level": 2,
    "page_start": 52,
    "page_end": 58,
-   "n_chars": 15877,
-   "n_words": 2582
+   "n_chars": 16168,
+   "n_words": 2838,
+   "label_start": "52",
+   "label_end": "58"
   },
   {
-   "id": "sec-014-what-3-manifolds-are-generated",
+   "id": "sec-015-what-3-manifolds-are-generated",
    "number": null,
    "title": "What 3-manifolds are generated?",
    "level": 2,
    "page_start": 58,
    "page_end": 62,
-   "n_chars": 10208,
-   "n_words": 1593
+   "n_chars": 10339,
+   "n_words": 1696,
+   "label_start": "58",
+   "label_end": "62"
   },
   {
-   "id": "sec-015-the-gravitational-machine-at-work",
+   "id": "sec-016-the-gravitational-machine-at-work",
    "number": null,
    "title": "The gravitational machine at work",
    "level": 1,
    "page_start": 62,
    "page_end": 63,
-   "n_chars": 1954,
-   "n_words": 295
+   "n_chars": 1992,
+   "n_words": 304,
+   "label_start": "62",
+   "label_end": "63"
   },
   {
-   "id": "sec-016-euclidean-wormholes",
+   "id": "sec-017-euclidean-wormholes",
    "number": null,
    "title": "Euclidean wormholes",
    "level": 2,
    "page_start": 63,
-   "page_end": 65,
-   "n_chars": 5800,
-   "n_words": 947
+   "page_end": 64,
+   "n_chars": 2298,
+   "n_words": 390,
+   "label_start": "63",
+   "label_end": "64"
   },
   {
-   "id": "sec-017-handlebody-knots",
+   "id": "sec-018-twisted-i-bundles",
+   "number": null,
+   "title": "Twisted I-bundles",
+   "level": 2,
+   "page_start": 64,
+   "page_end": 65,
+   "n_chars": 3572,
+   "n_words": 613,
+   "label_start": "64",
+   "label_end": "65"
+  },
+  {
+   "id": "sec-019-handlebody-knots",
    "number": null,
    "title": "Handlebody-knots",
    "level": 2,
    "page_start": 65,
    "page_end": 73,
-   "n_chars": 13932,
-   "n_words": 2314
+   "n_chars": 14067,
+   "n_words": 2433,
+   "label_start": "65",
+   "label_end": "73"
   },
   {
-   "id": "sec-018-discussion",
+   "id": "sec-020-discussion",
    "number": null,
    "title": "Discussion",
    "level": 1,
    "page_start": 73,
    "page_end": 79,
-   "n_chars": 19373,
-   "n_words": 2993
+   "n_chars": 19426,
+   "n_words": 3036,
+   "label_start": "73",
+   "label_end": "79"
   },
   {
-   "id": "sec-019-3-manifold-technology",
+   "id": "sec-021-3-manifold-technology",
    "number": null,
    "title": "3-manifold technology",
    "level": 1,
    "page_start": 79,
    "page_end": 79,
-   "n_chars": 255,
-   "n_words": 44
+   "n_chars": 277,
+   "n_words": 46,
+   "label_start": "79",
+   "label_end": "79"
   },
   {
-   "id": "sec-020-incompressible-surfaces-in-3-manifolds",
+   "id": "sec-022-incompressible-surfaces-in-3-manifolds",
    "number": null,
    "title": "(In)compressible surfaces in 3-manifolds",
    "level": 2,
    "page_start": 79,
    "page_end": 81,
-   "n_chars": 5652,
-   "n_words": 789
+   "n_chars": 5864,
+   "n_words": 964,
+   "label_start": "79",
+   "label_end": "81"
   },
   {
-   "id": "sec-021-wirtinger-presentation-of-fundamental-groups",
+   "id": "sec-023-wirtinger-presentation-of-fundamental-groups",
    "number": null,
    "title": "Wirtinger presentation of fundamental groups",
    "level": 2,
    "page_start": 81,
    "page_end": 85,
-   "n_chars": 6938,
-   "n_words": 1136
+   "n_chars": 7154,
+   "n_words": 1311,
+   "label_start": "81",
+   "label_end": "85"
   },
   {
-   "id": "sec-022-tricolorability-and-handlebodyness",
+   "id": "sec-024-tricolorability-and-handlebodyness",
    "number": null,
    "title": "Tricolorability and handlebodyness",
    "level": 2,
    "page_start": 85,
    "page_end": 87,
-   "n_chars": 3003,
-   "n_words": 490
+   "n_chars": 3050,
+   "n_words": 505,
+   "label_start": "85",
+   "label_end": "87"
   },
   {
-   "id": "sec-023-the-fundamental-group-of-the-gravitational-machi",
+   "id": "sec-025-the-fundamental-group-of-the-gravitational-machi",
    "number": null,
    "title": "The fundamental group of the gravitational machine",
    "level": 1,
    "page_start": 87,
    "page_end": 87,
-   "n_chars": 722,
-   "n_words": 121
+   "n_chars": 777,
+   "n_words": 132,
+   "label_start": "87",
+   "label_end": "87"
   },
   {
-   "id": "sec-024-what-is-bass-serre-theory",
+   "id": "sec-026-what-is-bass-serre-theory",
    "number": null,
    "title": "What is Bass-Serre theory?",
    "level": 2,
    "page_start": 87,
    "page_end": 89,
-   "n_chars": 4249,
-   "n_words": 746
+   "n_chars": 4341,
+   "n_words": 815,
+   "label_start": "87",
+   "label_end": "89"
   },
   {
-   "id": "sec-025-groups-acting-on-trees",
+   "id": "sec-027-groups-acting-on-trees",
    "number": null,
    "title": "Groups acting on trees",
    "level": 2,
    "page_start": 89,
    "page_end": 91,
-   "n_chars": 4267,
-   "n_words": 716
+   "n_chars": 4371,
+   "n_words": 801,
+   "label_start": "89",
+   "label_end": "91"
   },
   {
-   "id": "sec-026-fundamental-theorem-of-bass-serre-theory",
+   "id": "sec-028-fundamental-theorem-of-bass-serre-theory",
    "number": null,
    "title": "Fundamental theorem of Bass-Serre theory",
    "level": 2,
    "page_start": 91,
    "page_end": 93,
-   "n_chars": 6418,
-   "n_words": 1113
+   "n_chars": 6538,
+   "n_words": 1197,
+   "label_start": "91",
+   "label_end": "93"
   },
   {
-   "id": "sec-027-application-to-the-gravitational-machine",
+   "id": "sec-029-application-to-the-gravitational-machine",
    "number": null,
    "title": "Application to the gravitational machine",
    "level": 2,
    "page_start": 93,
    "page_end": 98,
-   "n_chars": 10108,
-   "n_words": 1651
+   "n_chars": 10463,
+   "n_words": 1970,
+   "label_start": "93",
+   "label_end": "98"
   },
   {
-   "id": "sec-028-vtqft-technology",
+   "id": "sec-030-vtqft-technology",
    "number": null,
    "title": "VTQFT technology",
    "level": 1,
    "page_start": 98,
    "page_end": 98,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 16,
+   "n_words": 2,
+   "label_start": "98",
+   "label_end": "98"
   },
   {
-   "id": "sec-029-virasoro-tqft-identities",
+   "id": "sec-031-virasoro-tqft-identities",
    "number": null,
    "title": "Virasoro TQFT identities",
    "level": 2,
    "page_start": 98,
    "page_end": 106,
-   "n_chars": 12401,
-   "n_words": 2209
+   "n_chars": 12584,
+   "n_words": 2370,
+   "label_start": "98",
+   "label_end": "106"
   },
   {
-   "id": "sec-030-kirby-calculus",
+   "id": "sec-032-kirby-calculus",
    "number": null,
    "title": "Kirby calculus",
    "level": 2,
    "page_start": 106,
    "page_end": 117,
-   "n_chars": 24256,
-   "n_words": 3410
+   "n_chars": 24775,
+   "n_words": 3916,
+   "label_start": "106",
+   "label_end": "117"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 33,
-  "sections": 31,
-  "chars_total": 265553,
+  "toc_inferred_entries": 0,
+  "figure_entries": 9,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 0,
+    "items": []
+   },
+   "found_not_listed": {
+    "count": 3,
+    "items": [
+     "1 M is atoroidal.",
+     "2 M is ∂-irreducible.",
+     "3 M is acylindrical."
+    ]
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 34,
+  "chars_total": 273052,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "main.tex",
    "tex_sections": 22,
-   "overlaid": 19,
+   "overlaid": 21,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -598,10 +2153,15 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.905,
+     "coverage_ratio": 0.998,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -609,7 +2169,7 @@
      "id": "sec-001-the-statistical-bootstrap",
      "title": "The statistical bootstrap",
      "prose_ratio": 0.975,
-     "coverage_ratio": 0.57,
+     "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -617,7 +2177,7 @@
      "id": "sec-002-kinematic-constraints",
      "title": "Kinematic constraints",
      "prose_ratio": 0.952,
-     "coverage_ratio": 0.9,
+     "coverage_ratio": 0.942,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -625,7 +2185,7 @@
      "id": "sec-003-crossing-symmetry-and-modular-invariance",
      "title": "Crossing symmetry and modular invariance",
      "prose_ratio": 0.888,
-     "coverage_ratio": 0.936,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -633,7 +2193,7 @@
      "id": "sec-004-typicality-and-index-contractions",
      "title": "Typicality and index contractions",
      "prose_ratio": 0.963,
-     "coverage_ratio": 0.912,
+     "coverage_ratio": 0.981,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -641,7 +2201,7 @@
      "id": "sec-005-spectral-statistics",
      "title": "Spectral statistics",
      "prose_ratio": 0.942,
-     "coverage_ratio": 0.972,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -649,7 +2209,7 @@
      "id": "sec-006-summing-over-handlebodies",
      "title": "Summing over handlebodies",
      "prose_ratio": 0.947,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.947,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -657,155 +2217,171 @@
      "id": "sec-007-the-mapping-class-group",
      "title": "The mapping class group",
      "prose_ratio": 0.864,
-     "coverage_ratio": 0.902,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-008-handlebodies-as-conformal-blocks",
      "title": "Handlebodies as conformal blocks",
-     "prose_ratio": 0.951,
-     "coverage_ratio": 0.926,
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-009-the-handlebody-sum-is-crossing-symmetric",
+     "id": "sec-009-fixed-p-partition-functions",
+     "title": "Fixed-P partition functions",
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.997,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-the-handlebody-sum-is-crossing-symmetric",
      "title": "The handlebody sum is crossing symmetric",
      "prose_ratio": 0.928,
-     "coverage_ratio": 0.923,
+     "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-010-minimal-completion-of-the-handlebody-sum",
+     "id": "sec-011-minimal-completion-of-the-handlebody-sum",
      "title": "Minimal completion of the handlebody sum",
-     "prose_ratio": 0.985,
+     "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-011-handlebodies-are-not-sufficient",
+     "id": "sec-012-handlebodies-are-not-sufficient",
      "title": "Handlebodies are not sufficient",
      "prose_ratio": 0.903,
-     "coverage_ratio": 0.94,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-012-the-gravitational-machine",
+     "id": "sec-013-the-gravitational-machine",
      "title": "The gravitational machine",
      "prose_ratio": 0.929,
-     "coverage_ratio": 0.915,
+     "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-013-the-gravitational-machine-is-hyperbolic",
+     "id": "sec-014-the-gravitational-machine-is-hyperbolic",
      "title": "The gravitational machine is hyperbolic",
      "prose_ratio": 0.957,
-     "coverage_ratio": 0.864,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-014-what-3-manifolds-are-generated",
-     "title": "What 3-manifolds are generated?",
-     "prose_ratio": 0.911,
-     "coverage_ratio": 0.919,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-015-the-gravitational-machine-at-work",
-     "title": "The gravitational machine at work",
-     "prose_ratio": 0.937,
-     "coverage_ratio": 0.983,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-016-euclidean-wormholes",
-     "title": "Euclidean wormholes",
-     "prose_ratio": 0.883,
-     "coverage_ratio": 0.93,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-017-handlebody-knots",
-     "title": "Handlebody-knots",
-     "prose_ratio": 0.927,
-     "coverage_ratio": 0.94,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-018-discussion",
-     "title": "Discussion",
-     "prose_ratio": 0.912,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-019-3-manifold-technology",
+     "id": "sec-015-what-3-manifolds-are-generated",
+     "title": "What 3-manifolds are generated?",
+     "prose_ratio": 0.911,
+     "coverage_ratio": 0.997,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-016-the-gravitational-machine-at-work",
+     "title": "The gravitational machine at work",
+     "prose_ratio": 0.937,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-017-euclidean-wormholes",
+     "title": "Euclidean wormholes",
+     "prose_ratio": 0.787,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-018-twisted-i-bundles",
+     "title": "Twisted I-bundles",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-019-handlebody-knots",
+     "title": "Handlebody-knots",
+     "prose_ratio": 0.927,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-020-discussion",
+     "title": "Discussion",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-021-3-manifold-technology",
      "title": "3-manifold technology",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-020-incompressible-surfaces-in-3-manifolds",
+     "id": "sec-022-incompressible-surfaces-in-3-manifolds",
      "title": "(In)compressible surfaces in 3-manifolds",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-021-wirtinger-presentation-of-fundamental-groups",
+     "id": "sec-023-wirtinger-presentation-of-fundamental-groups",
      "title": "Wirtinger presentation of fundamental groups",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-022-tricolorability-and-handlebodyness",
+     "id": "sec-024-tricolorability-and-handlebodyness",
      "title": "Tricolorability and handlebodyness",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-023-the-fundamental-group-of-the-gravitational-machi",
+     "id": "sec-025-the-fundamental-group-of-the-gravitational-machi",
      "title": "The fundamental group of the gravitational machine",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-024-what-is-bass-serre-theory",
+     "id": "sec-026-what-is-bass-serre-theory",
      "title": "What is Bass-Serre theory?",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-025-groups-acting-on-trees",
+     "id": "sec-027-groups-acting-on-trees",
      "title": "Groups acting on trees",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-026-fundamental-theorem-of-bass-serre-theory",
+     "id": "sec-028-fundamental-theorem-of-bass-serre-theory",
      "title": "Fundamental theorem of Bass-Serre theory",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-027-application-to-the-gravitational-machine",
+     "id": "sec-029-application-to-the-gravitational-machine",
      "title": "Application to the gravitational machine",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-028-vtqft-technology",
+     "id": "sec-030-vtqft-technology",
      "title": "VTQFT technology",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-029-virasoro-tqft-identities",
+     "id": "sec-031-virasoro-tqft-identities",
      "title": "Virasoro TQFT identities",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-030-kirby-calculus",
+     "id": "sec-032-kirby-calculus",
      "title": "Kirby calculus",
      "result": "no matching \\section"
     }

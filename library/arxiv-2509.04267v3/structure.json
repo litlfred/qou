@@ -8,7 +8,7 @@
   "pages": 33,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:22Z",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -27,7 +27,7 @@
    "QUANTUM COCYCLE INVARIANTS OF KNOTS FROM YANG-BAXTER",
    "COHOMOLOGY"
   ],
-  "abstract": "Yang-Baxter operators (YBOs) have been employed to construct quantum knot invari- ants. More recently, cohomology theories for YBOs have been independently developed, drawing inspiration from analogous theories for quandles and other discrete algebraic structures. Quandle cohomology, in particular, gives rise to cocycle invariants for knots via 2-cocycles, which are closely related to quandle extensions, and knotted surfaces via 3-cocycles. These quandle cocycle knot invariants have also been shown to admit interpretations as quantum invariants. Similarly, 2-cocycles in Yang-Baxter cohomology can be interpreted in terms of deformations of YBOs. Building on these parallels, we introduce quantum cocycle invariants of knots using 2- cocycles of Yang\u2013Baxter cohomology, from the perspective of deformation theory. In particular, we demonstrate that the quandle cocycle invariant can be interpreted in this framework, while the quantum version yields stronger invariants in certain examples. We develop our theory along two primary approaches to quantum invariants: via trace con- structions and through (co)pairings. Explicit examples are provided, including those based on the Kauffman bracket. Furthermore, we show that both the Jones and Alexander polynomials can be derived within this framework as invariants arising from higher-order formal Laurent polynomial deformations via Yang-Baxter cohomology.",
+  "abstract": "Yang-Baxter operators (YBOs) have been employed to construct quantum knot invari- ants. More recently, cohomology theories for YBOs have been independently developed, drawing inspiration from analogous theories for quandles and other discrete algebraic structures. Quandle cohomology, in particular, gives rise to cocycle invariants for knots via 2-cocycles, which are closely related to quandle extensions, and knotted surfaces via 3-cocycles. These quandle cocycle knot invariants have also been shown to admit interpretations as quantum invariants. Similarly, 2-cocycles in Yang-Baxter cohomology can be interpreted in terms of deformations of YBOs. Building on these parallels, we introduce quantum cocycle invariants of knots using 2- cocycles of Yang–Baxter cohomology, from the perspective of deformation theory. In particular, we demonstrate that the quandle cocycle invariant can be interpreted in this framework, while the quantum version yields stronger invariants in certain examples. We develop our theory along two primary approaches to quantum invariants: via trace con- structions and through (co)pairings. Explicit examples are provided, including those based on the Kauffman bracket. Furthermore, we show that both the Jones and Alexander polynomials can be derived within this framework as invariants arising from higher-order formal Laurent polynomial deformations via Yang-Baxter cohomology.",
   "docinfo": {
    "Title": "Quantum Cocycle Invariants of Knots from Yang-Baxter Cohomology",
    "Author": "Masahico Saito; Emanuele Zappala",
@@ -671,8 +671,8 @@
    "level": 2,
    "page_start": 12,
    "page_end": 15,
-   "n_chars": 5486,
-   "n_words": 1231,
+   "n_chars": 5483,
+   "n_words": 1230,
    "label_start": "12",
    "label_end": "15"
   },
@@ -683,8 +683,8 @@
    "level": 2,
    "page_start": 15,
    "page_end": 19,
-   "n_chars": 11548,
-   "n_words": 2344,
+   "n_chars": 11636,
+   "n_words": 2357,
    "label_start": "15",
    "label_end": "19"
   },
@@ -761,7 +761,7 @@
    "found_not_listed": {
     "count": 1,
     "items": [
-     "1 Then there exists an"
+     "1 Then there exists an infinitesimal deformation ˜R = ϕ0 + ℏϕ1 = R + ℏϕ and ˜µ = µ + ℏµ1 on ˜V = k[[ℏ]]/(ℏ2) ⊗V such"
     ]
    },
    "page_mismatch": {
@@ -770,7 +770,8 @@
    }
   },
   "sections": 15,
-  "chars_total": 79963,
+  "chars_total": 80048,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "quantumcocy_arXiv_v3.tex",
@@ -807,14 +808,14 @@
      "id": "sec-002-22-knot-invariants-using-maximaminima",
      "title": "Knot invariants using maxima/minima",
      "prose_ratio": 0.429,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-003-3-yang-baxter-cohomology",
      "title": "Yang-Baxter cohomology",
      "prose_ratio": 0.931,
      "coverage_ratio": 0.314,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-004-31-yb-cohomology-in-low-dimensions",
@@ -859,7 +860,7 @@
     {
      "id": "sec-009-52-invariants-from-the-tensor-version-of-quandle",
      "title": "Invariants from the tensor version of quandle 2-cocycle invariants",
-     "prose_ratio": 0.963,
+     "prose_ratio": 0.966,
      "coverage_ratio": 0.969,
      "result": "overlaid",
      "converter": "pandoc"

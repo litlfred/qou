@@ -6,10 +6,12 @@
   "sha256": "6931e3ebca584de90bfb4efe82875c3f342a15db7e492c2956c70b53a7141b60",
   "bytes": 199563,
   "pages": 13,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,21 +22,29 @@
   },
   "doi": null,
   "title": "Proof of the volume conjecture for Whitehead chains",
-  "authors_raw": "November 29, 2021",
-  "abstract": "We prove the volume conjecture for an in\ufb01nite family of links called White- head chains that generalizes both the Whitehead link and the Borromean rings.",
-  "docinfo": {
-   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20211203101352-05'00'",
-   "Title": "",
-   "Creator": "LaTeX with hyperref package",
-   "Author": ""
-  },
+  "authors_raw": "Roland van der Veen",
   "title_lines": [
    "Proof of the volume conjecture for Whitehead",
-   "chains",
-   "Roland van der Veen"
+   "chains"
   ],
-  "title_prev": "Proof of the volume conjecture for Whitehead chains Roland van der Veen"
+  "abstract": "We prove the volume conjecture for an inﬁnite family of links called White- head chains that generalizes both the Whitehead link and the Borromean rings.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20211203101352-05'00'"
+  },
+  "title_raw": "Proof of the volume conjecture for Whitehead chains",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Proof of the volume conjecture for Whitehead chains",
+   "outline": "Introduction",
+   "text": "Proof of the volume conjecture for Whitehead chains",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -42,25 +52,154 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Proof of the main theorem",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Proof of the lemmas",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The tangles Belt, Twist and Clasp",
+   "page": 2,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 297,
+   "n_words": 46,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
@@ -68,8 +207,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 4017,
-   "n_words": 784
+   "n_chars": 3992,
+   "n_words": 747,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-proof-of-the-main-theorem",
@@ -78,8 +219,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 6,
-   "n_chars": 4903,
-   "n_words": 1061
+   "n_chars": 4864,
+   "n_words": 1001,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-proof-of-the-lemmas",
@@ -88,16 +231,26 @@
    "level": 1,
    "page_start": 6,
    "page_end": 13,
-   "n_chars": 11989,
-   "n_words": 2576
+   "n_chars": 11904,
+   "n_words": 2475,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 3,
-  "sections": 3,
-  "chars_total": 20909,
+  "toc_inferred_entries": 0,
+  "figure_entries": 1,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 4,
+  "chars_total": 21057,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "artikelscriptie7.tex",
@@ -110,26 +263,31 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.951,
-     "coverage_ratio": 0.989,
+     "prose_ratio": 0.94,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-proof-of-the-main-theorem",
      "title": "Proof of the main theorem",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-proof-of-the-lemmas",
      "title": "Proof of the lemmas",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.809,
      "result": "overlaid",
      "converter": "pandoc"
     }

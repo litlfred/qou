@@ -5,17 +5,42 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/mod-phi-convergence-approximation-of-discrete-measures-and-2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/mod-phi-convergence-approximation-of-discrete-measures-and-2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "Mod-$\\phi $ convergence: Approximation of discrete measures and harmonic analysis on the torus",
   "contains": [
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/sections/sec-front-matter",
     "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/sections/sec-000",
-    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/sections/sec-001"
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/sections/sec-001",
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/sections/sec-002",
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/sections/sec-003",
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/sections/sec-004",
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/sections/sec-005",
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/sections/sec-006",
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/sections/sec-007",
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/sections/sec-008",
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/sections/sec-009",
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/sections/sec-010",
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/sections/sec-011",
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/sections/sec-012",
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/sections/sec-013",
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/sections/sec-014",
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/sections/sec-015",
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/sections/sec-016",
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/sections/sec-017",
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/sections/sec-018",
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/sections/sec-019",
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/sections/sec-020",
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/sections/sec-021",
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/sections/sec-022",
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/sections/sec-023",
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/sections/sec-024",
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/sections/sec-025"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "mod-phi-convergence-approximation-of-discrete-measures-and-2",
     "title_source": "pdf-info",
@@ -25,8 +50,8 @@
     "pages": 84,
     "arxiv": null,
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

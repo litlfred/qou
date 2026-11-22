@@ -1,0 +1,1 @@
+Let λ = (λ1, λ2) be a partition, |λ| ≡0 (mod 2), and b2Λ0 λ (q) be the branching function for the level 2 vacuum representation 2Λ0 of the aﬃne Lie algebra c sl2. Then b2Λ0 λ (q) = lim N→∞q−NKλN,µN (q), where λN = (λ1 + 2N, λ2 + 2N) and µN = (2M), M = 1 2|λ| + 2N. Finally, let us generalize the identity (2.44)µ to the higher levels.

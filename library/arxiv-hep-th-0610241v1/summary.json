@@ -1,0 +1,151 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-hep-th-0610241v1",
+ "source_sha256": "6a71ab6f6459c070",
+ "brief": "Gravity and the standard model with neutrino mixing — We present an eﬀective uniﬁed theory based on noncommutative geometry for the standard model with neutrino mixing, minimally coupled to gravity.",
+ "extended": "**Gravity and the standard model with neutrino mixing**\n\n*ALI H. CHAMSEDDINE, ALAIN CONNES, AND MATILDE MARCOLLI*\n\n71 pp, 26 sections.\n\n**Abstract.** We present an eﬀective uniﬁed theory based on noncommutative geometry for the standard model with neutrino mixing, minimally coupled to gravity. The uniﬁcation is based on the symplectic unitary group in Hilbert space and on the spectral action. It yields all the detailed structure of the standard model with several predictions at uniﬁcation scale. Besides the familiar predictions for the gauge couplings as for GUT theories, it predicts the Higgs scattering parameter and the sum of the squares of Yukawa couplings. From these relations one can extract predictions at low energy, giving in particular a Higgs mass around 170 GeV and a top mass compatible with present experimental value. The geometric picture that emerges is that space-time is the product of an ordinary spin manifold (for which the theory would deliver Einstein gravity) by a ﬁnite noncommutative geometry F.\n\n**Outline.** Front matter; 1 Introduction; 2 The ﬁnite geometry; 2.1 The left-right symmetric algebra; 2.3 Real spectral triples; 2.4 The subalgebra and the order one condition; 2.5 Unimodularity and hypercharges; 2.6 The classiﬁcation of Dirac operators; 2.7 The moduli space of Dirac operators and th; 2.8 Dimension, KO-theory, and Poincar´e dualit; 3 The spectral action and the standard model; 3.1 Riemannian geometry and spectral triples; 3.2 The product geometry; 3.3 The real part of the product geometry; 3.4 The adjoint representation and the gauge s; 3.5 Inner ﬂuctuations and bosons; 3.6 The Dirac operator and its square; 3.7 The spectral action and the asymptotic exp",
+ "tokens": {
+  "brief": 45,
+  "extended": 424
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "2-5"
+  },
+  {
+   "id": "sec-001-2-the-ﬁnite-geometry",
+   "title": "The ﬁnite geometry",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-002-21-the-left-right-symmetric-algebra",
+   "title": "The left-right symmetric algebra",
+   "pages": "5-7"
+  },
+  {
+   "id": "sec-003-23-real-spectral-triples",
+   "title": "Real spectral triples",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-004-24-the-subalgebra-and-the-order-one-condition",
+   "title": "The subalgebra and the order one condition",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-005-25-unimodularity-and-hypercharges",
+   "title": "Unimodularity and hypercharges",
+   "pages": "10-12"
+  },
+  {
+   "id": "sec-006-26-the-classiﬁcation-of-dirac-operators",
+   "title": "The classiﬁcation of Dirac operators",
+   "pages": "12-15"
+  },
+  {
+   "id": "sec-007-27-the-moduli-space-of-dirac-operators-and-the-y",
+   "title": "The moduli space of Dirac operators and the Yukawa parameters",
+   "pages": "15-18"
+  },
+  {
+   "id": "sec-008-28-dimension-ko-theory-and-poincare-duality",
+   "title": "Dimension, KO-theory, and Poincar´e duality",
+   "pages": "18-20"
+  },
+  {
+   "id": "sec-009-3-the-spectral-action-and-the-standard-model",
+   "title": "The spectral action and the standard model",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-010-31-riemannian-geometry-and-spectral-triples",
+   "title": "Riemannian geometry and spectral triples",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-011-32-the-product-geometry",
+   "title": "The product geometry",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-012-33-the-real-part-of-the-product-geometry",
+   "title": "The real part of the product geometry",
+   "pages": "20-21"
+  },
+  {
+   "id": "sec-013-34-the-adjoint-representation-and-the-gauge-symm",
+   "title": "The adjoint representation and the gauge symmetries",
+   "pages": "21-22"
+  },
+  {
+   "id": "sec-014-35-inner-ﬂuctuations-and-bosons",
+   "title": "Inner ﬂuctuations and bosons",
+   "pages": "22-29"
+  },
+  {
+   "id": "sec-015-36-the-dirac-operator-and-its-square",
+   "title": "The Dirac operator and its square",
+   "pages": "29-30"
+  },
+  {
+   "id": "sec-016-37-the-spectral-action-and-the-asymptotic-expans",
+   "title": "The spectral action and the asymptotic expansion",
+   "pages": "30-34"
+  },
+  {
+   "id": "sec-017-4-the-lagrangian",
+   "title": "The Lagrangian",
+   "pages": "34-36"
+  },
+  {
+   "id": "sec-018-41-notation-for-the-standard-model",
+   "title": "Notation for the standard model",
+   "pages": "36-37"
+  },
+  {
+   "id": "sec-019-42-the-asymptotic-formula-for-the-spectral-actio",
+   "title": "The asymptotic formula for the spectral action",
+   "pages": "37-39"
+  },
+  {
+   "id": "sec-020-43-the-mass-relation",
+   "title": "The mass relation",
+   "pages": "39-40"
+  },
+  {
+   "id": "sec-021-44-the-coupling-of-fermions",
+   "title": "The coupling of fermions",
+   "pages": "40-47"
+  },
+  {
+   "id": "sec-022-45-the-self-interaction-of-the-gauge-bosons",
+   "title": "The self interaction of the gauge bosons",
+   "pages": "47-49"
+  },
+  {
+   "id": "sec-023-46-the-minimal-coupling-of-the-higgs-ﬁeld",
+   "title": "The minimal coupling of the Higgs ﬁeld",
+   "pages": "49-51"
+  },
+  {
+   "id": "sec-024-47-the-higgs-ﬁeld-self-interaction",
+   "title": "The Higgs ﬁeld self interaction",
+   "pages": "51-71"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

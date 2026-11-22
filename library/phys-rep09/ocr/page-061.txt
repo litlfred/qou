@@ -1,0 +1,66 @@
+S. Blanes et al. / Physics Reports 470 (2009) 151-238 211
+
+(E=0.3,7=10) (€=0.3,y=100)
+
+AKE
+
+Cayley6
+
+Fer
+Magnus-6 |
+
+e e
+i] wu
+DB BD
+° °
+Ss 4
+3 3.2 3.4 3.6 3.8 4
+Log(Evaluations) Log(Evaluations)
+
+Fig. 17. Rosen-Zener model: Same as Fig. 16 where we compare the performance of the 6th-order Magnus, symmetric-Fer, Cayley and RK6.
+
+(as often happens with matrices arising from the spatial discretization of partial differential equations). (ii) Second, for
+the numerical integration methods based on ME, one has to compute exp(C(h)), where C(h) = O(h?), h is a (not too large)
+step size and p > 1. In other words, the matrices to be exponentiated typically have a small norm (usually restricted by the
+convergence bounds of the expansion).
+
+In any case, prior to the computation of exp(C), it is important to have as much information about the exponent C as
+possible. Thus, for instance, if the matrix C resides in a Lie algebra, then exp(C) belongs to the corresponding Lie group
+and one has to decide whether this qualitative property has to be exactly preserved, or if constructing a sufficiently accurate
+approximation (e.g., at a higher order than the order of the integrator itself) is enough. Also, when C can be split into different
+parts, one may consider a factorization of the form exp(C) * exp(C;) exp(C2) - -- exp(Cm) if each individual exponential is
+easy to evaluate exactly.
+
+An important reference in this context is [138] and its updated version [139], where up to nineteen (or twenty
+in [139]) different numerical algorithms for computing the exponential of a matrix are carefully reviewed. An extensive
+software package for computing the matrix exponential is Expokit, developed by R. Sidje, with Fortran and Matlab versions
+available [140,141]. In addition to computing the matrix-valued function exp(C) for small, dense matrices C, Expokit has
+functions for computing the vector-valued function exp(C)v for both small, dense matrices and large, sparse matrices.
+
+5.6.1. Scaling and squaring with Padé approximation
+Among one of the least dubious ways of computing exp(C) is by scaling and squaring in combination with a diagonal
+Padé approximation [139]. The procedure is based on a fundamental property of the exponential function, namely
+
+e& = (eH
+
+for any integer j. The idea, then, is to choose j to be a power of two for which exp(C /j) can be reliably and efficiently computed,
+and then to form the matrix (exp(C/j))! by repeated squaring. If the integer j is chosen as the smallest power of two for which
+||C||/j < 1, then exp(C/j) can be satisfactorily computed by diagonal Padé approximants of order, say, m. This is roughly the
+method used by the built-in function expm in Matlab.
+
+For the integrators based on the Magnus expansion, as C = O(h?) with p > 1, one usually gets good approximations
+with relatively small values of j and m.
+
+As is well known, diagonal Padé approximants map the Lie algebra o,(n) to the J-orthogonal Lie group O,(n) and thus
+also constitute a valid alternative to the evaluation of the exponential matrix in Magnus-based methods for this particular
+Lie group. More specifically, if B € o,(n), then w2m(tB) € O,(n) for sufficiently small t € R, with
+
+Pm(A)
+Pm(—A)’
+
+provided the polynomials P,, are generated according to the recurrence
+
+Wam (a) = (276)
+
+PoAY=1, PiAY=2+A
+Pr(A) = 2(2m — 1)Pm—1(A) + 4?Pm—2(A).

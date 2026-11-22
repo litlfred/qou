@@ -1,1 +1,1 @@
-For any ϵ >0 and any point [T ] in the Teichm¨ uller space of the
+For any ϵ > 0 and any point [T] in the Teichm¨uller space of the torus, there exists a complete, ﬁnite volume, tunnel number one hyperbolic manifold M with a single cusp whose cusp shape is ϵ-close to [T]. A similar result holds for tunnel number n manifolds.

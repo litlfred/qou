@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2502.02662v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "3f87983ce379a8d668e2180183a0cb81624936d26a7698b68df1aeb50cdd8409",
+  "file": "2502.02662v1.pdf"
+ },
+ "provenance": {
+  "title": "The String Dual to Two-dimensional Yang-Mills Theory Revisited",
+  "authors": "Lior Benizri and Jan Troost",
+  "arxiv": {
+   "id": "2502.02662",
+   "version": "1",
+   "primary_class": "hep-th",
+   "stamp_date": "4 Feb 2025"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

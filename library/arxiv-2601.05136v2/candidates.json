@@ -3,13 +3,14 @@
  "doc_id": "arxiv-2601.05136v2",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "cee15456257d3028d54a86f851f3bc714779023b88b5d98c57206a784e73ede3",
   "file": "2601.05136v2.pdf"
  },
  "provenance": {
-  "title": "N(K,\u03c1,\u00b5 ) of a knotK, a representation\u03c1: \u03c01(S3\\K)\u2192 SL2(C), andalogarithm \u00b5ofameridianeigenvalueof \u03c1. Itcanbeinterpretedasa geometrictwistoftheKashaevinvariantorasaquantizationofthe SL2(C)",
-  "authors": null,
+  "title": "State integrals for the quantized SL 2 ( C ) Chern-Simons invariant",
+  "authors": "Calvin McPhail-Snyder",
   "arxiv": {
    "id": "2601.05136",
    "version": "2",
@@ -20,147 +21,52 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 10,
+  "candidates": 1,
   "by_kind": {
-   "lemma": 3,
-   "theorem": 2,
-   "proposition": 2,
-   "example": 1,
-   "remark": 1,
-   "conjecture": 1
+   "theorem": 1
   },
-  "formalization_candidates": 7
+  "formalization_candidates": 1,
+  "by_domain": {
+   "math": 1
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 1
+  },
+  "by_evidence_location": {
+   "both": 1
+  },
+  "by_lean_status": {
+   "unformalized": 1
+  },
+  "needs_lean_proof": 1
  },
  "candidates": [
   {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "2.8",
-   "name": "[McP25b,Theorem2]",
-   "statement": "Let\u03c1beadecoratedrepresentationand D anopendiagram",
-   "section_file": "sections/sec-006-gauge-transformations-and-nondegeneracy.md",
-   "section_title": "Gauge transformations and nondegeneracy",
-   "pages": "6-8",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "3",
-   "name": null,
-   "statement": "]beingessentialisequivalenttoapurelygroup-theoreticconditioncalled arc-faithfulness.",
-   "section_file": "sections/sec-006-gauge-transformations-and-nondegeneracy.md",
-   "section_title": "Gauge transformations and nondegeneracy",
-   "pages": "6-8",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "2.10",
-   "name": "[McP25b, Corollary 5.3]",
-   "statement": "Let\u03c1 be a decorated representation of a knotK andD",
-   "section_file": "sections/sec-006-gauge-transformations-and-nondegeneracy.md",
-   "section_title": "Gauge transformations and nondegeneracy",
-   "pages": "6-8",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "proposition",
-   "source_kind": "proposition",
-   "number": "2.12",
-   "name": null,
-   "statement": "Foranopenknotdiagram D thereisabijectionbetweenthesetsof",
-   "section_file": "sections/sec-007-segment-equations.md",
-   "section_title": "Segment equations",
-   "pages": "8-9",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "example",
-   "source_kind": "example",
-   "number": "3.2",
-   "name": null,
-   "statement": "Belowisanopendiagram D ofthe\ufb01gureeightknot:",
-   "section_file": "sections/sec-009-the-action-and-state-sums.md",
-   "section_title": "The action and state sums",
-   "pages": "9-11",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "3.4",
-   "name": null,
-   "statement": "Let\u03b2 bealog-coloringofanormalized,non-pinchedshadowcoloring.",
-   "section_file": "sections/sec-009-the-action-and-state-sums.md",
-   "section_title": "The action and state sums",
-   "pages": "9-11",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
    "kind": "theorem",
    "source_kind": "theorem",
    "number": "1",
    "name": null,
-   "statement": "Underthehypothesesabove Z\u03c8",
-   "section_file": "sections/sec-010-state-integrals.md",
+   "statement": "Under the hypotheses above Z\u03c8 N is given by the sum (3.10) Z\u03c8 N(K, \u03c1, \u00b5) = N |E|/2\u22121/2 X k\u2208ZE JN(D, \u00b5, \u03b2|k) over all state integrals. \u231f",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "both",
+   "evidence_locator": "In-paper proof in sections/sec-011-state-integrals.md (p. 11-12) citing [0,1]",
+   "external_refs": [
+    "[0,1]"
+   ],
+   "proof_excerpt": "De\ufb01ne a function F : RE \u2192C by F(t) := exp(NSN(D, \u00b5|t + \u03b2/N)). It restricts to a not-necessarily continuous, periodic function f : CE/ZE \u2192C. By Lemma 3.4(b) F is smooth and in particular (3.11) Z [0,1]E",
+   "section_file": "sections/sec-011-state-integrals.md",
    "section_title": "State integrals",
    "pages": "11-12",
    "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "proposition",
-   "source_kind": "proposition",
-   "number": "4.4",
-   "name": null,
-   "statement": "LetD be a diagram of a knotK. Generalized critical points ofS(D) are in",
-   "section_file": "sections/sec-013-the-classical-action.md",
-   "section_title": "The classical action",
-   "pages": "13-15",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "4.5",
-   "name": null,
-   "statement": "Neumann[Neu04]gaveanalgebraicmethodtocomputethe SL2(C)Chern-Simons",
-   "section_file": "sections/sec-013-the-classical-action.md",
-   "section_title": "The classical action",
-   "pages": "13-15",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "conjecture",
-   "source_kind": "conjecture",
-   "number": "1",
-   "name": null,
-   "statement": "LetK beahyperbolicknot. Supposethat \u03c1isadecoratedrepresentationof D that",
-   "section_file": "sections/sec-013-the-classical-action.md",
-   "section_title": "The classical action",
-   "pages": "13-15",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
+   "formalization_note": "Deductive math claim (evidence: both, In-paper proof in sections/sec-011-state-integrals.md (p. 11-12) citing [0,1]). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-011-01",
+   "block_iri": "library/arxiv-2601.05136v2/blocks/thm-sec-011-01",
+   "claim_id": "arxiv-2601.05136v2#theorem:1",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   }
  ]
 }

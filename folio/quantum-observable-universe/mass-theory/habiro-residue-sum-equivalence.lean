@@ -65,10 +65,10 @@ open Polynomial
       `Σ_m a_m(u_0) · (u_0;u_0)_m` with the residue spectral sum
       `descended + Σ_ℓ Res_{q→ζ_ℓ}(Φ_q · tr_{M,ℓ})`.
 
-    Concrete instances supply `archimedean_agreement` as a `sorry`-axiom
-    (AGENTS.md §3b), backed by the empirical witness
-    `markov-pipeline-cross-validation.witness.json` (relative
-    difference ≤ `1e-9` to machine epsilon for every available atom).
+    No physical-atom instance is provided here (the honest open state);
+    the numerical cross-pipeline agreement recorded in
+    `markov-pipeline-cross-validation.witness.json` is a computation, not
+    a Lean premise.
 
     Ref: [habiro2004], [jones1987]. -/
 class HabiroResidueSumEquivalence where
@@ -97,71 +97,25 @@ class HabiroResidueSumEquivalence where
   archimedean_agreement :
     (habiro_trace.map (Int.castRingHom ℝ)).eval (Real.sqrt q_0) = gb_mass
 
-/-! ## Proton (`A = 1`) example instance
+/-! ## Proton (`A = 1`) case — no instance here
 
-A schematic instance of `HabiroResidueSumEquivalence` for the
-proton braid `T_w(Z=1, N=0)`.  The actual `habiro_trace` polynomial
-has degree 48 (Markov-normalised proton trace, see
-`habiro-coefficients-atomic.witness.json`); rather than transcribing
-all 49 coefficients into Lean, we leave the polynomial as
-`schematicTrace` declared `noncomputable opaque`, with the
-agreement axiom witnessing the empirical certification produced by
-`markov_pipeline_cross_validator.py`.
+Until 2026-11-15 this file carried a `protonExample` instance whose
+`archimedean_agreement` field was supplied by an `axiom` equating the
+real evaluation of an opaque integer polynomial at `√q₀` with the decimal
+`2.1225825095` taken from a Python witness.  It was removed on owner
+instruction (no empirical or witness-certified numbers in formal
+statements).
 
-This instance demonstrates that the class is non-vacuous (has at
-least one inhabitant) and pins the proton's archimedean values for
-downstream proofs.  When the polynomial is fully transcribed (or
-imported via `import_habiro_witness` automation), this opaque
-declaration can be replaced with the explicit `Polynomial ℤ`. -/
+The proton identity stays an **open conjecture**, carried with no
+instance by `QOU.BraidKnot.HabiroResidueSumEquivalence.protonExample.archimedean_agreement`
+(`conj:gs-archimedean-agreement-residue`).  The machine-precision
+agreement of the two Python pipelines is a numerical observation and is
+recorded in the content block's prose, not here. -/
 
-/-- Schematic Habiro polynomial trace for the proton.  The actual
-    polynomial is the degree-48 element of `ℤ[u]` produced by
-    `habiro_coefficients_atomic.py` for `(Z=1, N=0,
-    include_inter=false)`; see
-    `habiro-coefficients-atomic.witness.json`. -/
-noncomputable opaque protonHabiroTrace : Polynomial ℤ
-
-/-- Substrate parameter `q_0 = 1.10997...` used throughout the
+/-- Substrate parameter `q_0 = 1.10997...` (proton pin) used throughout the
     physical-prediction chapters.  Real-valued; `Real.sqrt q_0`
     gives `u_0`. -/
 noncomputable def q_0_proton : ℝ := 1.1099785827513808  -- :leanval[q_0]{precision=17}
-
-/-- The empirically observed value `tr_M(p, q_0) ≈ 2.1225825095`
-    (see `markov-substrate-realization.witness.json`).  Identical
-    bit-pattern to the residue-spectral-sum value
-    `tr_M_at_q0_polynomial` in `term6-full-pole-sum.witness.json`
-    on `claude/continue-pr-442-DJRWm`. -/
-noncomputable def proton_gb_mass : ℝ := 2.1225825095
-
-/- Proton instance of `HabiroResidueSumEquivalence` (narrative for the
-    `protonExample` instance below; plain comment rather than a
-    docstring because the axiom + its docstring sit between — Lean
-    v4.24 rejects orphaned docstrings).
-
-    The `archimedean_agreement` field is supplied as `sorry` per
-    AGENTS.md §3b: a substrate axiom backed by the empirical
-    cross-pipeline witness (proton rel_diff = 0.00e+00 to machine
-    precision).  Concrete proof requires either:
-    * full transcription of `protonHabiroTrace` and direct numerical
-      evaluation, or
-    * the formal proof of the equivalence theorem reducing the
-      `eval` to the residue-sum closed form. -/
-/-- **External axiom (§3b-cond pattern):** archimedean agreement for
-    the proton instance, certified empirically at machine precision
-    by `markov_pipeline_cross_validator.py` (rel_diff = 0.0). -/
--- Ref: [habiro2004] A unified Witten-Reshetikhin-Turaev invariant for  — see folio/schema/references.ts
--- Ref: [jones1987] Hecke algebras and knot polynomials
-axiom protonExample_archimedean_agreement_axiom :
-    (protonHabiroTrace.map (Int.castRingHom ℝ)).eval (Real.sqrt q_0_proton)
-      = proton_gb_mass
-
-noncomputable instance protonExample : HabiroResidueSumEquivalence where
-  q_0 := q_0_proton
-  q_0_nonneg := by
-    unfold q_0_proton; norm_num
-  habiro_trace := protonHabiroTrace
-  gb_mass := proton_gb_mass
-  archimedean_agreement := protonExample_archimedean_agreement_axiom
 
 /-! ## Trivial-zero skeleton instance
 
@@ -169,14 +123,11 @@ A second, **fully Lean-verified** instance using the zero polynomial
 and zero gb-mass.  Both sides of `archimedean_agreement` evaluate to
 `0`; the equation holds by direct evaluation.  This proves the class
 is non-vacuous as a Lean type and provides a typeclass-resolution
-discharge target distinct from the witness-pinned proton example
-(whose archimedean agreement remains a `sorry` because no integer
-polynomial has eval at `Real.sqrt q_0_proton ≈ 1.05356` equal to
-the witness value `2.1225825095`).
+discharge target.
 -/
 
 /-- Trivial-zero skeleton: every numerical field is `0`. -/
--- Ref: [manuscript] habiro-residue-sum-equivalence §"Skeleton"
+-- Ref: [leitner2026] habiro-residue-sum-equivalence §"Skeleton"
 noncomputable instance trivialZero : HabiroResidueSumEquivalence where
   q_0 := 0
   q_0_nonneg := le_refl 0
@@ -189,8 +140,8 @@ noncomputable instance trivialZero : HabiroResidueSumEquivalence where
 
 /-! ## §3b-cond upgrade — archimedean agreement DERIVED from one algebraic input
 
-The `archimedean_agreement` field above (and the `protonExample` `axiom`)
-axiomatize the *whole* real equality. Per the formalize-first / anti-laundering
+The `archimedean_agreement` field above axiomatizes the *whole* real
+equality. Per the formalize-first / anti-laundering
 discipline that over-axiomatizes: the two constructions are two representations
 of one Habiro-ring element, and the residue is a Habiro-completion **projection**
 ("no analytic continuation", see `full-pole-structure-mass-trace.lean`), so the

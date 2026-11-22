@@ -1,1 +1,1 @@
-For any colored 3-simplex σ, and ˜s, ˜s′∈ F3 such that p4(˜s) = p4(˜s′) =
+If ˜s ∈F4, and σ is a colored 4-simplex, then ˜s(σ) satisﬁes Equation 4.19.

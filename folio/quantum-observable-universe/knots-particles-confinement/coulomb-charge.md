@@ -1,10 +1,10 @@
-Let $\mathfrak{H}$ be a knot composite with braid word $\beta$. Let $n_+(\beta)$ and $n_-(\beta)$ denote the number of positive and negative crossings in $\beta$. We define the **Coulomb charge** of $\mathfrak{H}$ as the halved writhe:
+Let $\mathfrak{H}$ be a knot composite with braid word $\beta$. Let $n_+(\beta)$ and $n_-(\beta)$ denote the number of positive and negative crossings in $\beta$. One defines the **Coulomb charge** of $\mathfrak{H}$ as the halved writhe:
 
 $$
   Q(\mathfrak{H}) =  \tfrac{1}{2}\bigl(n_+(\beta) - n_-(\beta)\bigr).
 $$
 
-By [the channel decomposition](#prop:crossing-energy-decomposition), the crossing energy of [the crossing-energy definition](#def:crossing-energy), $\mathfrak{E}_{\mathrm{cross}} = n_+ q - n_- q^{-1}$, splits as
+The crossing energy of [the crossing-energy definition](#def:crossing-energy), $\mathfrak{E}_{\mathrm{cross}} = n_+ q - n_- q^{-1}$, splits as
 
 $$
   \mathfrak{E}_{\mathrm{cross}}(\mathfrak{H})
@@ -20,8 +20,6 @@ The multiplicities are not interchangeable. The symmetric $\cosh$ weight carries
 - No composite carries a negative antisymmetric coefficient, so this decomposition supplies no attractive Coulomb channel and no negative charge.
 - The vanishing locus $n_+ = n_-$ annihilates the *symmetric* term, not the antisymmetric one; the antisymmetric-to-symmetric ratio diverges there rather than vanishing.
 
-The identification of $Q$ with an electromagnetic charge is therefore not established by this decomposition. The name is retained for continuity with the blocks that cite this label; the identification itself is [an open problem](#conj:sm-hypercharge-invariant), and any candidate must supply the second gauge-invariant datum that the writhe alone does not.
+The identification of $Q$ with an electromagnetic charge is therefore not established by this decomposition. The name is retained for continuity with the blocks that cite this label; the identification itself is an open problem, and any candidate must supply the second gauge-invariant datum that the writhe alone does not.
 
 **Ratio.** For a positive braid closure, $n_- = 0$ with $n_+ \geq 1$, the antisymmetric-to-symmetric ratio is $\tanh(\ln q) \approx 0.104$ at $q = q_0$, independent of $n_+$. For mixed crossing signs with $n_+ \neq n_-$ it acquires the multiplicity factor $\tfrac{n_+ + n_-}{n_+ - n_-}$ and is not a constant of the framework.
-
-> **Correction (2026-08-29, bean `qou-toul`).** This block previously assigned $\tfrac{1}{2}(n_+ + n_-)$ to the symmetric channel and $Q = \tfrac{1}{2}(n_+ - n_-)$ to the antisymmetric one — the two multiplicities exchanged. That decomposition does not reconstruct $\mathfrak{E}_{\mathrm{cross}}$: it exceeds it by $2 n_- q^{-1}$, agreeing only on positive braids. It also stated the $\tanh(\ln q)$ ratio unconditionally, where it holds only at $n_- = 0$, and read the trichotomy $Q \lessgtr 0$ as attractive-versus-repulsive Coulomb, which the corrected assignment does not support. [The channel decomposition](#prop:crossing-energy-decomposition) carried the correct multiplicities throughout; this block and its Lean sibling were the outliers.

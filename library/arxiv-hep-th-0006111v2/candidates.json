@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-hep-th-0006111v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "e024febd3d0886a3c757f96ade67e6a3449e5279d573ce577145f23670bc3fc2",
+  "file": "0006111v2.pdf"
+ },
+ "provenance": {
+  "title": "arXiv:hep-th/0006111v2 14 Jul 2003",
+  "authors": "Poul H. Damgaard",
+  "arxiv": {
+   "id": "hep-th/0006111",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "14 Jul 2003"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

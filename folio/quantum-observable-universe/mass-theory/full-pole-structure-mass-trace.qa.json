@@ -1127,6 +1127,42 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "d6147050ac32",
+          "ts": "ad778f177952",
+          "lean": "559294d1d930",
+          "lean_statement": "b4452cfc92ea"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:24.621Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "full-pole-structure-mass-trace.lean:105 `class HabiroCompletion where trace : Polynomial ℤ; coeff …; tail_in_ideal …` — arbitrary polynomial, no braid/tr_M, never asserted",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean"
+      },
+      {
+        "field_hash": {
+          "md": "2135f8b9731c",
+          "ts": "332db802f48c",
+          "lean": "be4f20117114",
+          "lean_statement": "b20b2fb27b92"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:08:07.953Z",
+        "reviewed_sha": "06a3439cc5ff0cdc91182a4199f03868f80ab9b8",
+        "severity": "major",
+        "evidence": "lean.ref is class HabiroCompletion with the Habiro-ideal property as a field, so item 2 is assumed. It is provable for any integer polynomial (habiro_expansion_exists in habiro-expansion-atomic). Items 1 and 3 are not encoded; I checked item 3 by hand (i^3 = -i, so (1+q^2)z = q^3 fails at q = i)."
       }
     ],
     "milnor-amalgamated-flow": [
@@ -2120,6 +2156,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T16:00:30.173Z",
+  "updated_at": "2026-11-16T07:08:07.953Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

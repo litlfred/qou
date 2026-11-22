@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2601.15862v1
-doc_title: "SYNTHETIC DIFFERENTIAL JET BUNDLES ARE REDUCED"
+doc_title: "Synthetic Differential Jet Bundles are Reduced"
 section_id: sec-001-2-statement-and-proof
 section_title: "Statement and Proof"
 section_number: 2
-pages: 1-14
+pages: 2-9
 source_pdf: 2601.15862v1.pdf
 source_sha256: e37fa9b4515f58d1
-doc_brief: "SYNTHETIC DIFFERENTIAL JET BUNDLES ARE REDUCED — We have previously observed that the theory of solutions of par- tial differential equations, regarded asdiffietiesinside jet bundles, acquires a"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.903
+latex_coverage_ratio: 0.976
+doc_brief: "Synthetic Differential Jet Bundles are Reduced — We have previously observed that the theory of solutions of par- tial differential equations, regarded as diffieties inside jet bundles, acquires a"
 ---
 We write $i_!$ (\cref{ToposOfFormalSmoothSets}) for the inclusion of smooth sets --- such as Fr{\'e}chet manifolds (\cref{FrechetManifoldsAsSmoothSets}) --- among formal smooth sets.
 

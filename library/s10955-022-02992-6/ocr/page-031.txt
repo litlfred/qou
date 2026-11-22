@@ -1,0 +1,58 @@
+Cluster Expansions: Necessary... Page 310f47 33
+
+therefore satisfies the measurability assumption from Theorem 2.6 (as a function on D, with
+the convention V(@) = 0). Furthermore, we have V,({y}) = |B,(0)| and V,.(Bs(y)) =
+|Bs(y) ® B,(0)| = |Bs4,(0)| (where @ denotes the Minkowski sum) for any y € R¢ and
+any numbers r,s > 0.
+
+The following auxiliary result turns out to be essential for the proof of the new sufficient
+condition:
+
+Lemma 4.3 Let D bea finite union of bounded convex regular closed subsets of R4 and let Dy
+be a d-dimensional ball in R4. The map (0, 00) 3 r BOPP) is monotonically
+decreasing inr.
+
+Proof First of all, observe that for sets D given by a finite union of convex, regular closed
+subsets of R@ the volume V,(D) can be written as
+
+V,(D) = |D| + S(D)r + o(7), (4.12)
+
+where S(D) denotes the surface area of D. This follows from a generalized version of the
+classical Steiner’s formula (see [27, Sect. 4.4]). In particular, we see that the map r +>
+
+V-(DiUD2)=V; (Di) +. gi “able in —
+(Da) is differentiable in r = 0.
+
+Next, we notice that the map satisfies the following semi-group property:
+V-+e(D) = Ve(D @ B,(0)).
+Therefore, to prove the claim of the lemma, it suffices to consider the differential at zero:
+lim I (eS UB) — V,(A) _ |AU Bl — A!) ;
+e\0 € V.(B) |B|
+
+where A := D; @ B,(0) and B := D2 @ B,(0).
+Using the formula (4.12), a simple computation shows that this limit is equal to
+|B] (S(A U B) — S(A)) — S(B) (JA U Bl — JAI)
+|B? ;
+
+The monotonicity in the claim of the lemma is then equivalent to
+|B] (S(A U B) — S(A)) — S(B) (JA U B| — |A]) < 0
+or, equivalently,
+BI _ _|AUBI~IA|
+S(B) — S(AUB)—S(A)
+
+Using the obvious identities |A U B| — |A] = |B| — |AM B| and S(A U B) — S(A) =
+S(B) — S(AN B), we can rewrite the last inequality as
+
+S(B) < S(AN B)
+
+|B] ~ |ANBI’
+
+which holds by the isoperimetric inequality since B = Dz @ B,(0) is a ball in R¢ (“the ball
+is the shape that minimizes the surface area for given volume”, see [7, 3.2.43]). o
+
+The following sufficient condition is, in some sense, a “continuous version” of the Gruber—
+Kunz criterion in the setup of hard spheres in R¢. The similarity in the form arises as follows:
+To establish the recurrence relations underlying the proof of Gruber—Kunz we selected a
+monomer, a single point in Z¢, from a configuration of polymers. We follow this idea in the
+
+D Springer

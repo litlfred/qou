@@ -5,21 +5,34 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1803.04009v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1803.04009v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1803.04009v2",
+  "title": "Symmetry enhancement and closing of knots in 3d/3d correspondence",
   "contains": [
+    "library/arxiv-1803.04009v2/sections/sec-front-matter",
     "library/arxiv-1803.04009v2/sections/sec-000",
     "library/arxiv-1803.04009v2/sections/sec-001",
     "library/arxiv-1803.04009v2/sections/sec-002",
     "library/arxiv-1803.04009v2/sections/sec-003",
     "library/arxiv-1803.04009v2/sections/sec-004",
-    "library/arxiv-1803.04009v2/sections/sec-005"
+    "library/arxiv-1803.04009v2/sections/sec-005",
+    "library/arxiv-1803.04009v2/sections/sec-006",
+    "library/arxiv-1803.04009v2/sections/sec-007",
+    "library/arxiv-1803.04009v2/sections/sec-008",
+    "library/arxiv-1803.04009v2/sections/sec-009",
+    "library/arxiv-1803.04009v2/sections/sec-010",
+    "library/arxiv-1803.04009v2/sections/sec-011",
+    "library/arxiv-1803.04009v2/sections/sec-012",
+    "library/arxiv-1803.04009v2/sections/sec-013",
+    "library/arxiv-1803.04009v2/sections/sec-014",
+    "library/arxiv-1803.04009v2/sections/sec-015",
+    "library/arxiv-1803.04009v2/sections/sec-016",
+    "library/arxiv-1803.04009v2/sections/sec-017"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -29,7 +42,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1803.04009v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1803.04009v2.pdf",
     "source_sha256": "8b34299b739cd2b0c5b91d5d0a684865020c3a5936671ef4ed089611a39645d0",
     "pages": 59,

@@ -27,8 +27,8 @@ Wedderburn step — over **ℚ** (S_n is a rational group), **not ℂ** — and 
 block-decomposition infrastructure absent from the pinned Mathlib.
 
 ## References
-- [manuscript] docs/audits/2026-06-23-keystone-identity-I-content-decomposition.md §"Proof of (B)"
-- [manuscript] docs/coordination/s5-so3-keystone.md (Identity I is the one carried RT input)
+- [leitner2026] docs/audits/2026-06-23-keystone-identity-I-content-decomposition.md §"Proof of (B)"
+- [leitner2026] docs/coordination/s5-so3-keystone.md (Identity I is the one carried RT input)
 -/
 
 open MonoidAlgebra Finset
@@ -117,5 +117,12 @@ theorem centralC2_coeff_one (n : ℕ) :
     show (n.choose 2 : R) = ((∑ i ∈ Finset.range n, i : ℕ) : R) by
       rw [Finset.sum_range_id, Nat.choose_two_right],
     Nat.cast_sum]
+
+/-- Subtracting the binomial identity coefficient from the squared Jucys-Murphy sum yields zero. -/
+theorem centralC2_coeff_one_sub_eq_zero (n : ℕ) :
+    ((∑ k : Fin n, (∑ i ∈ Finset.univ.filter (fun i : Fin n => i.val < k.val),
+        single (Equiv.swap i k) (1 : R)) ^ 2)) (1 : Equiv.Perm (Fin n))
+      - (n.choose 2 : R) = 0 := by
+  rw [centralC2_coeff_one, sub_self]
 
 end QOU.BraidKnot.JucysMurphyCoeff

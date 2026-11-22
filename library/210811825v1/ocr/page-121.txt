@@ -1,0 +1,65 @@
+plot (Th);
+fespace Vh(Th,P2);
+
+Vh ul, u2;
+
+real sigma — 0.00001;
+
+varf op(ul,u2)= int2d(Th)(dx(ul)*dx(u2)+ dy(ul)*dy(u2)— sigmax ul*u2)
++on (G2, ul=0)+on (G4, ul =0);
+
+varf b({ul] ,[u2]) = int2d (Th) ((4*ul*u2)/(1—x*2-y~>2)*2);
+
+matrix OP= op(Vh,Vh, solver=Crout , factorize=1);
+matrix B=b(Vh,Vh, solver=CG, eps=le —20);
+
+real[int] ev(nev);
+Vh[int] eV(nev);
+
+int k-EigenValue(OP,B,sym-true , sigma=sigma , value=ev , vector=eV, tol=le—10,maxit=0,ncv=0);
+for (int i=0;i<k;i++) {
+
+ul=eV [i];
+
+real gg = int2d(Th)(dx(ul)*dx(ul) + dy(ul)*dy(ul)); real mm int2d(Th)(ulxul) ;
+
+ofstream Eva(fnm, append);
+
+Eva << ev[i] << "\n";
+
+We have produced FreeFEM++ codes for other genus 2 surfaces during this project,
+and would like to include them in this appendix. First, we give the code that computes
+the spectrum of the surface with automorphism group Zio:
+int n = 50;
+int nev = 50;
+
+string fnm="Z10—Eigenvalues—n50—nev50.txt"; //file name for saving
+
+real r = 0.4133042381223985;
+-082044543098821;
+real s = 0.6687403049764225;
+
+a
+
+real c =
+
+real x01 = s;
+real y0l = 0;
+real x04 = s*cos(3*pi/5);
+real y04 = s*sin(3*pi/5);
+
+real x03 = s*cos(2«pi/5);
+real y03 = s*sin(2«pi/5);
+real x06 = s*cos(pi);
+
+real y06 = s*sin(pi);
+
+real x05 = s*cos(4*pi/5);
+real y05 = s*sin(4*pi/5);
+real x08 = s*cos(7*pi/5);
+real y08 = s*sin(7*pi/5);
+
+real x07 = s*cos(6*pi/5);
+real y07 = s*sin(6*pi/5);
+
+111

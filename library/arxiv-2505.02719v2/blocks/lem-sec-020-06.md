@@ -1,0 +1,1 @@
+4 Let 𝑡≥1. Then for all 𝜀> 0 and all 𝜏≤𝜎(𝑡−1, 𝜀) the following map 𝐻𝑡(R/Z, R𝑛) × 𝐻1−𝜏(R/Z, R𝑛) →𝐻1−𝑡(R/Z), (𝛾, ℎ) ↦→⟨𝛾′, ℎ′⟩ is well-defined and continuous, where 𝜎(·, ·) is the function defined in Lemma B.2.

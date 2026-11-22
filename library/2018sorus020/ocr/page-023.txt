@@ -1,0 +1,44 @@
+1.1.5 Saito’s Theorem and some consequences
+
+From the equivalence of the two definitions of the character variety, we know that
+any character y € X(I) is the character of a representation p : [T — SLo(k).
+The following theorem of Kyoji Saito generalizes this fact and has crucial
+applications for us. We detail the proof in Appendix [A] because it is not available
+
+in the literature.
+
+Theorem 1.1.17. Let R be a k-algebra, and x : B[[] + R an R-character. Assume
+that x(Aq,g)is invertible for some a, 8 €T, and let A,B € SLo(R) such that Tr A =
+x(Ya), Tr B = x(Yg), Tr AB = x(Yas). Then there exists a unique representation
+p: 1 —SL2(R) whose character is x and such that p(a) = A and p(B) = B.
+
+As a application of this theorem, one can deduce the following proposition, see
+
+[Mar15].
+
+Proposition 1.1.18. Let K be either an algebraically closed field or a degree one ex-
+tension of an algebraically closed field . Then the K-irreducible characters correspond
+
+bijectively to GL2-conjugacy classes of irreducible representations p : T —> SLo(K).
+
+Idea of the proof. Given an irreducible character y : BIT] > K, we fix a,8 € T
+such that y(Aq,s) is invertible and in order to use Saito’s Theorem, we produce
+A= (Ge) 0) and B= (° aw )) for some wu in an at most quadratic extension K
+of K such that u+u7! = x(Yag). Then we obtain a representation p : T —> SLo(IR)
+whose character is x, and general considerations about Brauer groups implies that
+p could have been picked, in fact, in SL2(K).
+
+The converse map is given by y(Yy) = Tr(p(7)), as usual. Oo
+
+Remark 1.1.19. This proposition enlightens about the quotient map 7 : R(T) >
+X(L). It says that given an irreducible k-character y € X(L), all representations in
+its fiber are pairwise conjugated, hence the fiber is isomorphic to the whole group
+PSLa(k). It is often summarized saying that on the irreducible open subset of the
+character variety, the algebraic quotient is a principal PSL2(k) bundle. On the other
+hand, both statement are false outside of the irreducible locus of X(T’) : in Example
+we have seen that the fiber of a central character contains non trivial repre-
+sentations, and it easy to see, for instance by a count of dimension, that fibers are
+
+2-dimensional, hence are not isomorphic to PSL2(k).
+
+22

@@ -12,9 +12,9 @@ structure needed for residue A's composite-operator promotion
 ## What this provides
 
 A type-level scaffold for the KLR algebra `R(Γ)` over a quiver `Γ`:
-- Underlying type (axiomatised)
-- Generators `e_i` (idempotents), `x_j` (dot generators), `T_k` (crossings)
-- Class for "categorifies the negative half U⁻_q(g) of a quantum group"
+- The quiver type `KLRQuiver` and the trivial quiver
+- (2026-11-15) The three `: True` marker classes were removed; the KLR
+  relations and the KLR theorem are recorded as open in bean `qou-n2un`
 
 Per AGENTS.md §7b (Symmetric-crystal techniques) the KLR ↔ KL bases
 decategorification is the categorical bridge to classical statistics;
@@ -41,13 +41,10 @@ structure KLRQuiver where
   /-- Adjacency multiplicity. -/
   adj : I → I → ℕ
 
-/-- A **KLR algebra** over a quiver `Γ` is an `R`-algebra `A` with
-generators `idem`, `dot`, `crossing` satisfying the KLR relations.
-Captured here as an opaque type-class for downstream consumers. -/
-class KLRAlgebra (Γ : KLRQuiver) (R A : Type*) [CommRing R] [Ring A] [Algebra R A] : Prop where
-  /-- KLR algebra structure exists for `A` over `R` (opaque marker for
-  the open derivation; instance gates the categorical promotion). -/
-  klr_structure : True
+/-! **Removed 2026-11-15: the `KLRAlgebra` marker class.** Its only field
+was `klr_structure : True`. Stating the KLR relations needs the idempotent,
+dot and crossing generators, which this file never defines; Mathlib has no
+KLR algebras. Recorded in bean `qou-n2un`. -/
 
 /-! ## Trivial KLR algebra (single-vertex quiver) -/
 
@@ -56,32 +53,28 @@ def trivialQuiver : KLRQuiver where
   I := Unit
   adj _ _ := 0
 
-/-! ## Conditional class for the U⁻_q categorification
+/-! ## Open: the U⁻_q categorification
 
 The deep claim: a KLR algebra `R(Γ)` categorifies the negative half
 of the quantum group `U_q(g)` associated to `Γ`. This is the
 Khovanov-Lauda-Rouquier theorem (2008-2010); not currently in Mathlib.
 
-Captured here as a conditional class. -/
+Not statable here yet; see the removal note below. -/
 
-/-- Conditional class axiomatising the KLR ↔ U⁻_q(g) categorification.
-NEAR-MATCH tier; instance not constructed. -/
-class KLRCategorifiesNegativeHalfUqg (Γ : KLRQuiver) : Prop where
-  /-- The KLR algebra `R(Γ)` categorifies U⁻_q(g) where `g = g(Γ)`
-  (opaque marker for Khovanov-Lauda-Rouquier theorem). -/
-  klr_uqg_categorification : True
+/-! **Removed 2026-11-15: `KLRCategorifiesNegativeHalfUqg`.** Its only
+field was `True`. The Khovanov–Lauda–Rouquier theorem (K₀ of graded
+projective `R(Γ)`-modules ≅ the integral form of `U⁻_q(g)`) needs graded
+module categories and quantum groups that Mathlib lacks. Recorded in bean `qou-n2un`. -/
 
 /-! ## Bridge to canonical basis
 
 The decategorification functor `[ · ]` maps KLR projectives to the
-canonical basis. The conditional class connects to the crystal
+canonical basis. A statement would connect to the crystal
 infrastructure in `KashiwaraCrystalBasic.lean`. -/
 
-/-- Conditional class bridging KLR projective modules to the Kashiwara
-canonical basis via the decategorification functor. -/
-class KLRDecategorifiesToCanonicalBasis (Γ : KLRQuiver) : Prop where
-  /-- The decategorification functor maps KLR projectives to the
-  canonical basis (opaque marker). -/
-  decategorification_to_canonical : True
+/-! **Removed 2026-11-15: `KLRDecategorifiesToCanonicalBasis`.** Its only
+field was `True`. The statement (indecomposable self-dual projectives map to
+Lusztig's canonical basis, characteristic 0) needs the same missing
+infrastructure. Recorded in bean `qou-n2un`. -/
 
 end QOU.Machinery

@@ -1,0 +1,48 @@
+386 Combinatorial applications
+
+for exact powers, but also for guasi-powers, meaning sequences of functions
+{fr(z)} satisfying
+
+Sn(Z) ~ Cng(z)» h(z)" (12.2)
+
+uniformly as z ranges over certain polydisks. Gaussian behavior of coeffi-
+cients of quasi-powers is the basis for the GF-sequence method developed by
+Bender, Richmond, and collaborators in a series of papers including [Ben73;
+BR83; GR92; BR99]; see also the work of Hwang extending this to algebraic-
+logarithmic singularities [Hwa96; Hwa98a; Hwa98b]. These papers give con-
+ditions under which a multivariate generating function
+
+co
+
+FO@ty--42aW) =D) faz)" (12.3)
+
+n=0
+
+is a quasi-power in the sense of (12.2). They then show that if g and / are
+analytic in a A-domain (recall Figure 3.1), if h has a unique dominant singu-
+larity where the boundary of the region intersects the positive real axis, and
+if the quadratic part of h is nondegenerate there, then, after a rescaling, the
+coefficients of f,(z) have a Gaussian limit distribution as n > oo.
+
+Riordan arrays
+
+An important combinatorial family of quasi-powers is the set of Riordan ar-
+rays {ay : n,k > 0} whose generating functions F(x,y) = Dneso dnkx"y*
+satisfy
+
+(262)
+
+PO) = Ty)
+
+(12.4)
+for some analytic functions ¢ and v with ¢(0) # 0. Just as (12.1) repre-
+sents sums of independent, identically distributed random variables when v
+is a probability generating function, the function (12.4) is a delayed renewal
+sum [Dur04, Section 3.4], where an initial random variable Xo may be added
+that is distributed differently from the others. Riordan arrays cover an enor-
+mous number of examples arising in applications, including many lattice path
+problems, and are useful for simplifying sums because of the Pascal-like re-
+currences the terms satisfy — see [Mer+97; Spr94].
+
+Remark 12.1. Some authors require that v(0) = 0 in (12.4), but we do not
+make this assumption.

@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1106.6298v1/blocks/prose-sec-010",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Diagonalization using lens spaces",
-  "pageStart": 11,
-  "pageEnd": 12,
-  "text": "../sections/sec-010-24-diagonalization-using-lens-spaces.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1106.6298v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1106.6298v1",
+  "title": "Habiro's cyclotomic expansion of the colored Jones polynomial",
+  "pageStart": 8,
+  "pageEnd": 9,
+  "text": "../sections/sec-010-16-habiros-cyclotomic-expansion-of-the-colored-j.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1106.6298v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1106.6298v1/manifest.jsonld",
   "provenance": "ingested"
 }

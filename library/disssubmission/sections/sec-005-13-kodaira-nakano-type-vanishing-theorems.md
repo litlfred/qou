@@ -1,6 +1,6 @@
 ---
 doc_id: disssubmission
-doc_title: "I NAUGURAL -D ISSERTATION T ANNAKIAN C ATEGORIES OF P ERVERSE S HEAVES ON A BELIAN V ARIETIES"
+doc_title: "Tannakian categories of perverse sheaves on abelian varieties"
 section_id: sec-005-13-kodaira-nakano-type-vanishing-theorems
 section_title: "Kodaira-Nakano-type vanishing theorems"
 section_number: 1.3
@@ -8,6 +8,7 @@ pages: 20-23
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
 toc_source: inferred
+doc_brief: "Tannakian categories of perverse sheaves on abelian varieties — 52 sections: Front matter; Introduction; Some commonly used notations"
 ---
 From theorem 1.1 one easily recovers stronger versions of the generic
 vanishing theorems of Green and Lazarsfeld as follows. Let Y be a compact

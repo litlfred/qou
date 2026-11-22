@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.887
 latex_coverage_ratio: 0.966
+doc_brief: "arXiv:math-ph/0010012v1 10 Oct 2000 — We review some recent results on random polynomials and their generalizations in complex and symplectic geometry."
 ---
 We have results on several levels: expected values, almost sure behaviour, and scaling asymptotics. The following theorems are valid on any complex or almost-complex symplectic manifold $(M, \omega)$, equipped with a hermitian complex line bundle of curvature $\omega.$
 

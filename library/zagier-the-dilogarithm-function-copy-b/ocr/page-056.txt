@@ -1,0 +1,49 @@
+58 Don Zagier
+explicit formulas for many more of the coefficients c;(A, B). An alternative
+approach might be to refine Proposition 5 by showing that
+
+oo
+
+log Fa,n(Ge*®) ~ So ejc(A, Ble? (E\0)
+
+j=-1
+
+for every root of unity ¢. If fa,s,c(z) is modular for some C € Q, then the
+logarithm of Fa,p,c(¢ e-*) = (Ce “© Fa p(Ce-*) has vanishing coefficient
+of e/ in its expansion at ¢ = 0 for every j > 1. In particular we must have
+c1,¢(A, B) = C for all roots of unity ¢ with the same constant C, so we get
+infinitely many constraints on A and B without having to calculate any of the
+Taylor expansions further than their O(e) term. I have not yet tried to carry
+this out, but it seems to hold out good prospects for an easier proof of the
+r = 1 case and perhaps a reasonable attack on the higher rank cases of the
+conjecture as well.
+
+Finally, we remark that Proposition 5 (or its generalization to r > 1) can
+be used to search efficiently for values of B for a given A for which f4,5,¢c may
+be modular for some C. Indeed, since the function ¢(€) = log(F'4,B(e*) must
+have a terminating asymptotic expansion of the form ce! +eo+e1e with an
+error term that is exponentially small in 1/e, we can simply check whether four
+successive values of né(a/n) (say, those with a = 1 and n = 20, 21, 22, 23) are
+approximated to high precision by a quadratic polynomial in n (i.e., whether
+the third difference of this 4-tuple is extremely small). In fact, since we know
+c_, by (30), we can look instead at three sucessive values of n¢(a/n)—c_1n?/a
+and check whether they lie on a line (i.e., whether their second difference
+vanishes) to high precision. This can be done very rapidly and therefore we
+can search through a large collection of candidate vectors B € Q" for those
+which can correspond to some modular f4.8,c. This is the method which was
+used to find the modular solutions for r = 2 amd 3 given in (d) and (e) of
+subsection B.
+
+4 Higher polylogarithms
+
+In Chapter I we already introduced the higher polylogarithm functions Li,,,(z),
+their one-valued modifications D,,(z), and the idea that there might be rela-
+tions among special values of Dedekind zeta functions at integral arguments
+and the values of polylogarithms at algebraic arguments, analogous to those
+existing for the dilogarithm. But at the time when that text was written, I
+knew only a few sporadic results, and the chapter ends with the sentence “the
+general picture is not yet clear.” After it was written I did a lot of numeri-
+cal calculations with special values of higher polylogarithm functions and was
+able to formulate a general conjecture which has now been proved in a small
+number and numerically verified in a large number of cases. Since there are
+already several expositions of these conjectures ([45], [46], Chapter 1 of [47]), I

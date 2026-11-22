@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/oberwolfachreports1223-v20120708-9-40/blocks/figure-img-p030-8926",
+  "@type": [
+    "folio-assistant-core:Figure",
+    "doco:Figure"
+  ],
+  "kind": "figure",
+  "file": "../images/img-p030-8926.png",
+  "pageStart": 30,
+  "pageEnd": 30,
+  "narrative": {
+    "text": null,
+    "state": "not-authored"
+  },
+  "derivedFrom": "library/oberwolfachreports1223-v20120708-9-40/sections/sec-013",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/oberwolfachreports1223-v20120708-9-40/manifest.jsonld",
+  "provenance": "ingested"
+}

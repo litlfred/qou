@@ -1,32 +1,52 @@
 A Frobenius formula for the characters of the Hecke algebras 477
+
 The following corollary is an immediate consequence of Theorem 5.1.
-(5.2) Corollary. Any character of H, is determined by its values on the elements Tr..
-μf.
-Since H  is semisimple and its irreducible components are indexed by partitions
-of f, every character of Hf must be a linear combination of the irreducible
-characters ×, a  f, of Hf. This implies that the set of values x(T,), a  f, is actually
-a minimal set of values necessary to determine the character x of Hf.
+
+(5.2) Corollary. Any character of H; is determined by its values on the elements T,,,
+abs.
+
+Since H, is semisimple and its irreducible components are indexed by partitions
+of f, every character of Hy must be a linear combination of the irreducible
+characters 7, Af, of H,. This implies that the set of values 7(T,,), ALF, is actually
+a minimal set of values necessary to determine the character y of Hy.
+
 The following is an example to illustrate the algorithm used for finding the
-linear combination c. in Theorem 5.1. The notation is such that 3421 denotes the
-permutation in two line notation.
-x(T3421) = (q - 1)x(T2431) + qx(T2341)
-= (q - 1)((q - 1)x(T2341) + qx(T2314)) + qx(T2341)
-= ((q - 1)2 + q)T, + (q - 1)qT2×1 :
+linear combination c, in Theorem 5.1. The notation is such that 3421 denotes the
+
+p (; 2 3
+permutation
+
+342 ') in two line notation.
+
+X(T3a21) = (4 — 1)x(Toaa1) + 9X(To3a1)
+= (4 — 1I)(q — 1)x(Ta3a1) + 9x(Taa14)) + 9X(Ta3a1)
+
+=(q—1? + 97,+ @- YaT,x,, -
+
 A formula in terms of characters of the symmetric group
-For each partition a = (ai, . . :, ak) of f let Φ^: CSf -→C be the character of the
-representation of S, given by inducing the trivial representation of the group
-Sa, × . . . × San to Sg. Let Φ"(μu) denote the value Φa on elements of S, of cycle type
-μ. It is well known that the βa(μ) are the coefficients in the expansion,
-pμ(x) = ZΦ^(μ)ma(x) , (5.3)
-of the power symmetric functions pμ(x) in terms of the monomial symmetric
-functions ma(x) in the variables X1, . . : , Xn.
-(5.4) Theorem. Let   f and let × be the irreducible character of the Hecke algebra
-Hr corresponding to 2. Then
-x~(T, I(qi - 1) xs,(v)Φu(v) ,
-(g - 1)(m)
-where v? is given by (1.1) and x$, is the irreducible character of S corresponding to the
-partition μ. The Vi are the parts of the partition v.
+For each partition A =(A,,...,4,) of f let 7: CS; C be the character of the
+representation of Sy given by inducing the trivial representation of the group
+
+Si, x... S,, to Sp. Let f*(u) denote the value ¢* on elements of S, of cycle type
+u. It is well known that the *() are the coefficients in the expansion,
+
+=) ¢*(wm x), (5.3)
+A
+
+of the power symmetric functions p,(x) in terms of the monomial symmetric
+functions m,(x) in the variables x,,..., Xp.
+
+(5.4) Theorem. Let A+ fand let y* be the irreducible character of the Hecke algebra
+H, corresponding to 4. Then
+
+1
+0G) =——ym ple 8, 00")
+
+where v? is given by (1.1) and yf, is the irreducible character of S ; corresponding to the
+partition yu. The v; are the parts of the partition v.
+
 Proof. Using the expansions in (4.10),
-hu(X(1 - t)s(X) = Z hu(X(1 - t)mμ(Y)is(X)m()
-I(1 - t")
-p(X)p(Y)Is;(X)m(Y) :
+
+hy (XL — sx) = x h,(X (1 — t))m,(Y)\s,cxym,7)
+
+-s Mee =F) 5X) Ps(P)lscemcr -

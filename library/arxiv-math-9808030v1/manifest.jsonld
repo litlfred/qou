@@ -5,17 +5,21 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9808030v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9808030v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-math-9808030v1",
+  "title": "Planscherel Measure on Eq(2)",
   "contains": [
     "library/arxiv-math-9808030v1/sections/sec-front-matter",
-    "library/arxiv-math-9808030v1/sections/sec-000"
+    "library/arxiv-math-9808030v1/sections/sec-000",
+    "library/arxiv-math-9808030v1/sections/sec-001",
+    "library/arxiv-math-9808030v1/sections/sec-002",
+    "library/arxiv-math-9808030v1/sections/sec-003",
+    "library/arxiv-math-9808030v1/sections/sec-004"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
     "status": "stated",
@@ -25,7 +29,9 @@
   },
   "meta": {
     "doc_id": "arxiv-math-9808030v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "9808030v1.pdf",
     "source_sha256": "7889d6481b876b122db7d7b347b534e45a66cc2023da0f777ba1974591251daa",
     "pages": 17,
@@ -36,8 +42,8 @@
       "stamp_date": "6 Aug 1998"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

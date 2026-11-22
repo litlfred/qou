@@ -1,0 +1,74 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0606222v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "5c2a45596d04dd07859d65fb200db8cacad17d1ef95b2d278997a79600e358f5",
+  "file": "0606222v2.pdf"
+ },
+ "provenance": {
+  "title": "QUANTUM DIMENSIONS AND THEIR NON-ARCHIMEDEAN DEGENERATIONS",
+  "authors": "URI ONN AND JASPER V. STOKMAN",
+  "arxiv": {
+   "id": "math/0606222",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "8 Nov 2006"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "theorem": 1
+  },
+  "formalization_candidates": 1,
+  "by_domain": {
+   "math": 1
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 1
+  },
+  "by_evidence_location": {
+   "both": 1
+  },
+  "by_lean_status": {
+   "unformalized": 1
+  },
+  "needs_lean_proof": 1
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "6.1",
+   "name": null,
+   "statement": "For \u03bb \u2208\u039bn we have the evaluation formulas (6.11) P L \u03bb (0) = \u2206\u03bb n Y i=1 \u0000qatn\u2212i, qabtn\u2212i; q \u0001 \u03bbi \u0000qabt2(n\u2212i); q \u0001 2\u03bbi (\u22121)\u03bbiq 2 \u03bbi(\u03bbi\u22121), QUANTUM DIMENSIONS AND THEIR NON-ARCHIMEDEAN DEGENERATIONS (6.12) P L \u03bb (t\u03c1) = \u2206\u03bb n Y i=1 \u0000qbtn\u2212i, qabtn\u2212i; q \u0001 \u03bbi \u0000qabt2(n\u2212i); q \u0001 2\u03bbi \u0000aq\u03bbitn\u2212i\u0001\u03bbi, (6.13) P L \u03bb (q\u22121b\u22121t\u2212\u03c1) = \u2206\u03bb n Y i=1 \u0000qbtn\u2212i, qabtn\u2212i; q \u0001 \u03bbi \u0000qabt2(n\u2212i); q \u0001 2\u03bbi \u0000qbtn\u2212i\u0001\u03bbi.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "both",
+   "evidence_locator": "In-paper proof in sections/sec-013-62-multivariable-little-q-jacobi-polynomials.md (p. 24-27) citing [29], [27], [27, Theorem 6.4]",
+   "external_refs": [
+    "[29]",
+    "[27]",
+    "[27, Theorem 6.4]"
+   ],
+   "proof_excerpt": "The evaluation formulas depend rationally on the parameters, hence it su\ufb03ces to prove the theorem for a suitable choice of Zariski dense complex values of the parameters a, b, q and t. The proof now uses the explicit limit transitions from Macdonald-Koornwinder polynomials to mul",
+   "section_file": "sections/sec-013-62-multivariable-little-q-jacobi-polynomials.md",
+   "section_title": "Multivariable little q-Jacobi polynomials",
+   "pages": "24-27",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: both, In-paper proof in sections/sec-013-62-multivariable-little-q-jacobi-polynomials.md (p. 24-27) citing [29], [27], [27, Theorem 6.4]). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-013-01",
+   "block_iri": "library/arxiv-math-0606222v2/blocks/thm-sec-013-01",
+   "claim_id": "arxiv-math-0606222v2#theorem:6.1",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  }
+ ]
+}

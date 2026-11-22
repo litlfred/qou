@@ -34,7 +34,7 @@ Each reduces to the `q`-factorial recursion `[n+1]_q! = [n]_q!·[n+1]_q` (`qFact
 repeatedly, `[1]_q = 1` (`qIntGeo_one'`), and commutativity (`ring`). Base ring: generic `[Field R]`
 (no archimedean construct — §7c). No fit; pure `q`-combinatorics.
 
--- Ref: [manuscript] docs/audits/2026-07-12-keystone-wlambda-derivation-mckay-e8-route.md
+-- Ref: [leitner2026] docs/audits/2026-07-12-keystone-wlambda-derivation-mckay-e8-route.md
 -- Ref: [macdonald1995] Symmetric Functions and Hall Polynomials, I.3 (q-hook-length formula)
 -/
 

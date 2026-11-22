@@ -1,0 +1,51 @@
+124 Chapter 5 — A family of surfaces
+
+PROPOSITION 5.24. Let X = JC be the Jacobian variety of a smooth
+non-hyperelliptic complex projective curve C of genus g = 4.
+
+(a) The above semisimple perverse sheaves 64. and 5— each contain
+the negligible constituent 5x precisely once.
+
+(b) After shrinking the open dense subset U C X in lemma 5.10 there
+exists an isomorphism
+
+V+ = dy (Coxe)lu-
+
+Proof. (a) We must check for the lowest hypercohomology degree that
+dim(H~8(X,6,)) = dim(H~8(X,6_)) = 1. For this we can use the same
+computation as in lemma 5.22, the only difference is that for a Jacobian
+variety the hypercohomology H*(X, dg) is larger than the one for a general
+ppav. Indeed it has been shown in [106, cor. 13(iii)] that if the curve C is
+not hyperelliptic, then
+
+H'+3(X,C) for i€ {—3, —2},
+
+H'(X,59) = ; ;
+(X40) [rose Cha wisexc) for i € {-1,0}.
+
+Compared with the computation in lemma 5.22, for i= —1 the extra direct
+summand H°(X,C) c H~!(X, 5g) gives a two-dimensional extra term
+
+H°(X,C) @H~3(X, 69) @ H~3(X, 69) @H°(X,C) C H~4*(X, 5g * 69).
+
+This extra term splits into two one-dimensional contributions, one in the
+symmetric and one in the alternating tensor square. Hence
+
+H4(X,5°(69)) = H*(X,L4) eC,
+H4(X,A*(69)) = H*(X,L_) @C,
+and our claim follows because S?(59) = Ly © 5, and A?(59) =L_@&_.
+
+(b) This is most conveniently checked in the setting of Brill-Noether
+sheaves and will be done after the proof of lemma 5.25 below. Oo
+
+Before we proceed further, let us recall from [106] some facts about
+Brill-Noether sheaves. Here we are mainly interested in their Tannakian
+description — more about their geometric construction can be found in the
+brief survey in section 6.1 below. Let X = JC be the Jacobian variety of a
+smooth non-hyperelliptic complex projective curve C of genus g > 2, and
+let C+ X be a translate of the Abel-Jacobi map such that the corresponding
+theta divisor © = W,_; is symmetric. Then by loc. cit. the convolutions of
+the perverse intersection cohomology sheaf dc € Perv(X,C) are described
+via corollary 2.14 by the Tannaka group
+
+G(8e) = Slog_2(C)

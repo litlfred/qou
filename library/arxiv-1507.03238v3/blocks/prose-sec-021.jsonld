@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1507.03238v3/blocks/prose-sec-021",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Simplex-degenerate edge sets",
-  "pageStart": 19,
-  "pageEnd": 20,
-  "text": "../sections/sec-021-74-simplex-degenerate-edge-sets.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1507.03238v3",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1507.03238v3",
+  "title": "Decorations, Ptolemy assignments and Bruhat cocycles",
+  "pageStart": 15,
+  "pageEnd": 16,
+  "text": "../sections/sec-021-61-decorations-ptolemy-assignments-and-bruhat-co.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1507.03238v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1507.03238v3/manifest.jsonld",
   "provenance": "ingested"
 }

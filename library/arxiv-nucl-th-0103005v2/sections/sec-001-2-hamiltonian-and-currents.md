@@ -10,7 +10,8 @@ source_sha256: c2aaa21b51d7bc10
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.982
-latex_coverage_ratio: 0.973
+latex_coverage_ratio: 0.971
+doc_brief: "arXiv:nucl-th/0103005v2 6 Mar 2001 — Accurate quantum Monte Carlo calculations of ground and low-lying excited states of light p-shell nuclei are now possible for realistic nuclear Hamiltonians that"
 ---
 The Hamiltonian used in this review use includes nonrelativistic kinetic energy, the AV18 $N\!N$ potential [@WSS95] and either the Urbana IX [@PPCW95] or one of the new Illinois series of $N\!N\!$ potential [@PPWC01]: $$H = \sum_{i} K_{i} + \sum_{i<j} v_{ij} + \sum_{i<j<k} V_{ijk} \ .
 \label{eq:H}$$ The kinetic energy operator has charge-independent (CI) and charge-symmetry-breaking (CSB) components, the latter due to the difference between proton and neutron masses, $$K_{i} = K^{CI}_{i} + K^{CSB}_{i} \equiv -\frac{\hbar^2}{4}

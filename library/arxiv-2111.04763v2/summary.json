@@ -2,22 +2,27 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2111.04763v2",
  "source_sha256": "760a7f9794e8baaa",
- "brief": "RESURGENCE OF CHERN–SIMONS THEORY AT THE TRIVIAL FLAT CONNECTION — Some years ago, it was conjectured by the first author that the Chern–Simons perturbation theory of a 3-manifold at the trivial flat",
- "extended": "**RESURGENCE OF CHERN–SIMONS THEORY AT THE TRIVIAL FLAT CONNECTION**\n\n*STAVROS GAROUFALIDIS, JIE GU, MARCOS MARIÑO, AND CAMPBELL WHEELER*\n\n59 pp, 16 sections.\n\n**Abstract.** Some years ago, it was conjectured by the first author that the Chern–Simons perturbation theory of a 3-manifold at the trivial flat connection is a resurgent power series. We describe completely the resurgent structure of the above series (including the location of the singularities and their Stokes constants) in the case of a hyperbolic knot complement in terms of an extended square matrix of(x,q)-series whose rows are indexed by the boundary parabolicSL 2(C)-flat connections, including the trivial one. We use our extended matrix to describe the Stokes constants of the above series, to define explicitly their Borel transform and to identify it with state–integrals.\n\n**Outline.** 1 Introduction; 1.1 Resurgence of Chern–Simons perturbation th; 1.2 A summary of our results; 1.3 Challenges; 1.4 Illustration with the two simplest hyperbo; Acknowledgements; 2.4 Borel resummation and Stokes constants; 2.5 The Andersen–Kashaev state-integral; 2.6 A new state-integral; 3.3 Borel resummation and Stokes constants; 4.2 The Habiro polynomials and the descendant ; 4.4 Borel resummation and Stokes constants; 4.5 (x,q)-series; 4.6 x-version of Borel resummation and Stokes ; 4.7 An analytic extension of the Kashaev invar; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 3: The matrixJ m(q)is a fundamental solution to the linearq-difference equation\n- Theorem 7: The descendant state-integral(76)can be expressed in terms of the series (6),\n- Theorem 10: W S,λ,µ(τ)extends to a holomorphic function onC ′ and equals to the matrix\n- Theorem 11: The matrixJ m(x,q)is a fundamental solution to the linearq-difference equa-\n- Theorem 17: The matrixJ m(q)is a fundamental solution to the linearq-difference equation",
+ "brief": "Resurgence of Chern-Simons theory at the trivial flat connection — Some years ago, it was conjectured by the first author that the Chern–Simons perturbation theory of a 3-manifold at the trivial flat",
+ "extended": "**Resurgence of Chern-Simons theory at the trivial flat connection**\n\n*STAVROS GAROUFALIDIS, JIE GU, MARCOS MARIÑO, AND CAMPBELL WHEELER*\n\n59 pp, 24 sections.\n\n**Abstract.** Some years ago, it was conjectured by the first author that the Chern–Simons perturbation theory of a 3-manifold at the trivial flat connection is a resurgent power series. We describe completely the resurgent structure of the above series (including the location of the singularities and their Stokes constants) in the case of a hyperbolic knot complement in terms of an extended square matrix of (x, q)-series whose rows are indexed by the boundary parabolic SL2(C)-flat connections, including the trivial one. We use our extended matrix to describe the Stokes constants of the above series, to define explicitly their Borel transform and to identify it with state–integrals.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Resurgence of Chern–Simons perturbation th; 1.2 A summary of our results; 1.3 Challenges; 1.4 Illustration with the two simplest hyperbo; Acknowledgements; 2 The 41 knot; 2.4 Borel resummation and Stokes constants; 2.5 The Andersen–Kashaev state-integral; 2.6 A new state-integral; 3 The x-variable; 3.3 Borel resummation and Stokes constants; 3.4 (u,) state-integrals; 3.5 An analytic extension of the colored Jones; 4 The 52-knot; 4.2 The Habiro polynomials and the descendant ; 4.4 Borel resummation and Stokes constants",
  "tokens": {
   "brief": 49,
-  "extended": 477
+  "extended": 355
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-1"
+   "pages": "2-2"
   },
   {
    "id": "sec-001-11-resurgence-of-chernsimons-perturbation-theory",
    "title": "Resurgence of Chern–Simons perturbation theory",
-   "pages": "1-4"
+   "pages": "2-4"
   },
   {
    "id": "sec-002-12-a-summary-of-our-results",
@@ -37,55 +42,90 @@
   {
    "id": "sec-005-acknowledgements",
    "title": "Acknowledgements",
-   "pages": "6-12"
+   "pages": "6-7"
   },
   {
-   "id": "sec-006-24-borel-resummation-and-stokes-constants",
+   "id": "sec-006-2-the-41-knot",
+   "title": "The 41 knot",
+   "pages": "7-12"
+  },
+  {
+   "id": "sec-007-24-borel-resummation-and-stokes-constants",
    "title": "Borel resummation and Stokes constants",
    "pages": "12-18"
   },
   {
-   "id": "sec-007-25-the-andersenkashaev-state-integral",
+   "id": "sec-008-25-the-andersenkashaev-state-integral",
    "title": "The Andersen–Kashaev state-integral",
    "pages": "18-19"
   },
   {
-   "id": "sec-008-26-a-new-state-integral",
+   "id": "sec-009-26-a-new-state-integral",
    "title": "A new state-integral",
-   "pages": "19-27"
+   "pages": "19-23"
   },
   {
-   "id": "sec-009-33-borel-resummation-and-stokes-constants",
+   "id": "sec-010-3-the-x-variable",
+   "title": "The x-variable",
+   "pages": "23-27"
+  },
+  {
+   "id": "sec-011-33-borel-resummation-and-stokes-constants",
    "title": "Borel resummation and Stokes constants",
-   "pages": "27-37"
+   "pages": "27-33"
   },
   {
-   "id": "sec-010-42-the-habiro-polynomials-and-the-descendant-kas",
+   "id": "sec-012-34-u-state-integrals",
+   "title": "(u,) state-integrals",
+   "pages": "33-35"
+  },
+  {
+   "id": "sec-013-35-an-analytic-extension-of-the-colored-jones-po",
+   "title": "An analytic extension of the colored Jones polynomial",
+   "pages": "35-36"
+  },
+  {
+   "id": "sec-014-4-the-52-knot",
+   "title": "The 52-knot",
+   "pages": "36-37"
+  },
+  {
+   "id": "sec-015-42-the-habiro-polynomials-and-the-descendant-kas",
    "title": "The Habiro polynomials and the descendant Kashaev invariants",
    "pages": "37-42"
   },
   {
-   "id": "sec-011-44-borel-resummation-and-stokes-constants",
+   "id": "sec-016-44-borel-resummation-and-stokes-constants",
    "title": "Borel resummation and Stokes constants",
    "pages": "42-47"
   },
   {
-   "id": "sec-012-45-xq-series",
+   "id": "sec-017-45-xq-series",
    "title": "(x,q)-series",
    "pages": "47-48"
   },
   {
-   "id": "sec-013-46-x-version-of-borel-resummation-and-stokes-con",
+   "id": "sec-018-46-x-version-of-borel-resummation-and-stokes-con",
    "title": "x-version of Borel resummation and Stokes constants",
    "pages": "48-52"
   },
   {
-   "id": "sec-014-47-an-analytic-extension-of-the-kashaev-invarian",
+   "id": "sec-019-47-an-analytic-extension-of-the-kashaev-invarian",
    "title": "An analytic extension of the Kashaev invariant and the colored Jones polynomial",
-   "pages": "52-56"
+   "pages": "52-53"
   },
   {
-   "id": "sec-015-references",
+   "id": "sec-020-48-a-new-state-integral-for-the-52-knot",
+   "title": "A new state-integral for the 52 knot?",
+   "pages": "53-54"
+  },
+  {
+   "id": "sec-021-appendix-a-q-series-identities",
+   "title": "Appendix A. q-series identities",
+   "pages": "54-56"
+  },
+  {
+   "id": "sec-022-references",
    "title": "References",
    "pages": "56-59"
   }
@@ -94,8 +134,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

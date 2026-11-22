@@ -43,7 +43,7 @@ depends on no QOU block. The route it prunes is scoped against
 `conj:complex-mass-constituent-functional`, which is **not yet on `main`** (open
 draft PR #4584) — that is a forward reference for the reader, not a dependency.
 
--- Ref: [manuscript] docs/audits/2026-08-02-charm-mass-frobenius-block-projection-negative.md
+-- Ref: [leitner2026] docs/audits/2026-08-02-charm-mass-frobenius-block-projection-negative.md
 -/
 
 namespace QOU.MassTheory.TrivialBlockWrithe

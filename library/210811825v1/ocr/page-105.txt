@@ -1,0 +1,61 @@
+As before, the symbolic output is too long to display here, but it gives us the bound
+
+29997
+2 rs
+lloull” > so00000°
+
+Next, we bound ||V¢j||? from above. We integrate the scalar product of
+
+Voi = w=
+rs
+
+with itself with respect to y to get
+
+gu(x) [won V1) dy
+
+vy
+
+- (S541) (ys (4) - (e+ (2))’- v=) |
+
+We approximate the integral of gu(x) using Simpson’s rule with n = 2522, that is,
+
+gu[x_] = Integrate[
+Grad[\[Phi][x, yl, {x, y}]-Grad[\[Phi]lx, yl, {x, y}], {y,
+Sqrt [r*2 — x*2], Sqrt[Csc[Pi/14]~2 — (x + Cot[Pi/14])~>2]}];
+gU = ((p)/(3 2252)) Total[{gu[0], gulp]
+Total [Table [
+2 guli], {i, 2 (p)/2252, 2250 (p)/2252, (xval)/1126}]],
+Total[Table[4 gu[i], {i, (p)/2252, 2251 (p)/2252, (p)/1126}]]}]
+
+to get the following upper bound:
+
+84077
+1000000
+
+Finally, we can take the quotient of our bounds to get an upper bound on the first positive
+
+IVa? <
+
+eigenvalue of the Klein quartic, namely
+
+84077
+A < 29997 ~ 2.8027.
+
+Comparedto the numerical value of 2.76, we see that this is a reasonably good bound.
+
+We get get one result quite quickly:
+
+Lemma 4.3 €, of the Klein quartic is not one dimensional.
+
+Proof: We start by ruling out the non-trivial one dimensional irreducible representation.
+We sce that reflection in each side of a (2, 3, 7) triangle changes the sign of a vector as it is
+moved around the surface by this representation. Therefore, we have Dirichlet boundary
+
+conditions on a (2, 3, 7) triangle. Its first eigenvalue is greater than or equal to the first
+
+eigenvalue of a hyperbolic disk of area 42 by the Faber-Krahn inequality. That is,
+Ai(p2) > Vz, > Un > 6,
+
+meaning 2 does not appear in the first eigenspace.
+
+95

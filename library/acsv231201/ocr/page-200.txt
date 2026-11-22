@@ -1,0 +1,43 @@
+182 Overview of analytic methods for multivariate GFs
+
+Similarly, because y = (1 — x)/(1 + x?) on Vg, the height function A(x, y)
+approaches zero as x > co on Vz. However, on Vz the circle |x| = 1/10 does
+flow to a saddle point of height greater than zero. Again we have a critical
+point at infinity, but this time it is of lower height than an actual saddle point
+on the variety. Thus, non-properness of the height function does not preclude
+an asymptotic analysis, as we can ignore points of height bounded below the
+saddle point if we care only about dominant asymptotic behavior. 4
+
+In Section 7.5 we discuss computable conditions, often satisfied in practice,
+that imply the conclusions of Morse theory we require apply even without a
+proper height function.
+
+Exercise 7.3. Let Q(x, y) = 1—-x-y-2y? and h(x, y) = —r log |x|— 2 log |y|
+be the height function corresponding to the r-diagonal sequence (4),n,;n).
+Prove that when r = (2,1) the height function h,(x,y) approaches a finite
+limit as y > oo and x — 0, and evaluate the limit. Prove that when r = (1, 1)
+the height function h,(x, y) has no finite limit as either x or y goes to infinity.
+
+7.2 The smooth case
+
+We now generalize the above argument to any rational function whose singular
+variety V is a complex manifold. The square-free part O of the polynomial Q
+is the product of its distinct irreducible factors over the complex numbers, and
+we say that Q is square-free if 0 = Q. We call z € V asmooth point if V O(z)
+is non-zero, and say that V is smooth if Q and all its partial derivatives never
+simultaneously vanish. The implicit function theorem implies that a smooth
+singular variety can be viewed both as a (d— 1)-dimensional complex manifold
+and as a (2d — 2)-dimensional real manifold, and both of these viewpoints will
+be beneficial. We introduce the square-free part of Q so that the converse also
+holds.
+
+Lemma 7.6. The inequality V O(z) # 0 holds for a point z € Vo if and only
+ifV is a smooth manifold in a neighborhood of z.
+
+Proof Sketch The forward implication follows from the implicit function the-
+orem. The converse, that V O(z) = 0 implies a geometric singularity, is harder
+to prove. Let mz denote the maximal ideal of functions vanishing at x in the
+ring of polynomial functions vanishing on ‘V, and let nz denote the maximal
+ideal of functions vanishing at a in the ring of germs of analytic functions at
+x (as defined in Definition 10.42 below). Then V O(a) = 0 implies mz /m?,
+has dimension d rather than d— 1 (see [Shal3, Exercise 2.2 and Theorem 2.1])

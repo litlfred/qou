@@ -214,6 +214,14 @@ def main() -> int:
             "the framework's ability to separate summands."
         ),
         "bean": "qou-qhs3",
+        "q0Anchor": "independent",
+        "q0AnchorReason": (
+            "every value is evaluated at q* ~ 0.7795, the root of "
+            "jonesSymmetric(q) = jonesMixed(q) found by findroot, and the "
+            "closed forms are checked pointwise at eight sample q (one of "
+            "them a typed copy of the muon pin, used only as a sample point "
+            "for an identity that holds at every q); no substrate pin is "
+            "read and no result depends on which pin q0 is"),
         "precision": {"mp_dps": mp.dps, "native_dps": 50,
                       "tolerance": mp.nstr(TOL, 3),
                       "float64_used": False},

@@ -46,7 +46,7 @@ concrete values follow.
 
 ## References
 
-- `prop:atom-knot-mass-derivation` (the formula)
+- `conj:atom-knot-mass-derivation` (the formula)
 - `QOU.BraidKnot.MassFormulaCategorical` (the abstract formula)
 - `QOU.BraidKnot.{Helium3,Deuteron,Tritium}Witness` (R5-full data)
 -/

@@ -43,7 +43,7 @@ $N - 1$ neutrons are spectators.
     data.  It is *not* asserted (no `theorem … := ⟨ctx.claim_*⟩`
     self-assuming projection); an instance discharging it is the open
     conditional claim. -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/spectator-normalization.ts
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/spectator-normalization.ts
 def SpectatorNormalization (ctx : SpectatorNormalizationContext) : Prop :=
     ctx.converting = 1 ∧ ctx.spectator_p = ctx.Z ∧ ctx.spectator_n = ctx.N - 1
 

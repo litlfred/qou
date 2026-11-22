@@ -23,9 +23,9 @@ by `lake build`.  The co-located documentation stub at
 content; that stub uses `namespace QOU.WedderburnMass` for legacy
 reasons.
 
--- Ref: [manuscript] conj:mass-endomorphism
--- Ref: [manuscript] conj:brane-tower-z-habiro
--- Ref: [manuscript] prop:quantum-dilogarithm-stratified
+-- Ref: [leitner2026] conj:mass-endomorphism
+-- Ref: [leitner2026] conj:brane-tower-z-habiro
+-- Ref: [leitner2026] conj:quantum-dilogarithm-stratified
 LaTeX label: `conj:mass-endomorphism`
 -/
 
@@ -49,7 +49,7 @@ namespace QOU.MassEndomorphism
     Polymorphic in the ground ring `R` (per
     `QOU.GroundRingAnnotations`, the formal-chain stub keeps `R`
     abstract; instances may specialise to `ℤ[q^±1]` or `ℝ`). -/
--- Ref: [manuscript] conj:mass-endomorphism
+-- Ref: [leitner2026] conj:mass-endomorphism
 class MassEndomorphism (R : Type*) [CommRing R] (β : Type*) where
   q : R
   N : ℕ
@@ -60,14 +60,14 @@ class MassEndomorphism (R : Type*) [CommRing R] (β : Type*) where
   vol_eq : tr_transient = vol_identity - tr_descended
 
 /-- The full categorical mass at brane-tower-saturation. -/
--- Ref: [manuscript] conj:mass-endomorphism §"Step 2"
+-- Ref: [leitner2026] conj:mass-endomorphism §"Step 2"
 def fullMass {R : Type*} [CommRing R] (β : Type*)
     [M : MassEndomorphism R β] : R :=
   M.tr_descended + M.tr_transient
 
 /-- Conditional theorem: under the mass-endomorphism conjecture, the
     full categorical mass equals the volume identity term. -/
--- Ref: [manuscript] conj:mass-endomorphism §"What is known", Step 2
+-- Ref: [leitner2026] conj:mass-endomorphism §"What is known", Step 2
 theorem fullMass_eq_volume {R : Type*} [CommRing R] (β : Type*)
     [M : MassEndomorphism R β] :
     fullMass β = M.vol_identity := by
@@ -78,7 +78,7 @@ theorem fullMass_eq_volume {R : Type*} [CommRing R] (β : Type*)
 /-- The brane-tower partial sum at level N, conditional on a
     `MassEndomorphism` instance.  Mirrors the
     `conj:brane-tower-z-habiro` Cauchy-sequence claim. -/
--- Ref: [manuscript] conj:brane-tower-z-habiro
+-- Ref: [leitner2026] conj:brane-tower-z-habiro
 def braneTowerPartialSum {R : Type*} [CommRing R] (β : Type*)
     [M : MassEndomorphism R β] : R :=
   M.tr_transient

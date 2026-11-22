@@ -1,0 +1,1 @@
+Let ρ: π1(C) →PSL(2, C) be deﬁned on generators α, β and γ1 of π1(C) by ρ(α) =  a  , ρ(β) =  b  , ρ(γ1) =  −1  , where a and b are complex numbers which are linearly independent over R with |a| > 4 and |b| > 4. Then ρ gives a hyperbolic structure on C(1; 2).

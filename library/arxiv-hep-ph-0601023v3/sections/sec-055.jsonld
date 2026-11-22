@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-hep-ph-0601023v3/sections/sec-055",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Renormalization of the $d=5$ and $d=6$ operators",
+  "pageStart": 173,
+  "pageEnd": 174,
+  "contains": [
+    "library/arxiv-hep-ph-0601023v3/blocks/prose-sec-055"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-0601023v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-0601023v3/manifest.jsonld",
+  "provenance": "ingested"
+}

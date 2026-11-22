@@ -7,10 +7,11 @@
   "bytes": 520862,
   "pages": 35,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,20 +21,28 @@
    "stamp_date": "14 Sep 2014"
   },
   "doi": null,
-  "title": "SHEAFIFICATION FUNCTORS AND TANNAKA\u2019S RECONSTRUCTION FABIO TONINI",
-  "authors_raw": null,
+  "title": "SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION",
+  "authors_raw": "FABIO TONINI",
   "title_lines": [
-   "SHEAFIFICATION FUNCTORS AND TANNAKA\u2019S RECONSTRUCTION",
-   "FABIO TONINI"
+   "SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION"
   ],
-  "abstract": "W e introduce \u201cshea\ufb01\ufb01cation\u201d functors from categories of (l ax monoidal) linear functors to categories of quasi-coherent sheaves (of algeb ras) of stacks. They generalize the homogeneous shea\ufb01\ufb01cation of graded modules for projective schemes and have applications in the theory of non-abelian Galois covers and of Cox rings an d homogeneous shea\ufb01\ufb01cation functors. Moreover, using this theory, we prove a non-neutr al form of Tannaka\u2019s reconstruction, extending the classical correspondence between torsors an d strong monoidal functors.",
+  "abstract": "We introduce “sheaﬁﬁcation” functors from categories of (lax monoidal) linear functors to categories of quasi-coherent sheaves (of algebras) of stacks. They generalize the homogeneous sheaﬁﬁcation of graded modules for projective schemes and have applications in the theory of non-abelian Galois covers and of Cox rings and homogeneous sheaﬁﬁcation functors. Moreover, using this theory, we prove a non-neutral form of Tannaka’s reconstruction, extending the classical correspondence between torsors and strong monoidal functors.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20220531103158-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  }
+   "CreationDate": "D:20220531103158-04'00'"
+  },
+  "title_raw": "SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION Introduction If G is an aﬃne group scheme over a ﬁeld k , classical Tannaka’s reconstruction problem consists in reconstructing the group G from Rep G k , its category of ﬁnite representations: if F : Rep G k −→ Vect k is the forgetful functor the",
+   "outline": "Introduction",
+   "text": "SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION FABIO TONINI"
  },
  "toc": [
   {
@@ -41,88 +50,453 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Notation",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 1,
    "title": "Acknowledgements",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 1,
    "title": "Preliminaries on sheaves and fibered categories",
    "page": 5,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 1,
    "title": "Sheafification functors.",
    "page": 9,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Sheafifying R-linear functors.",
    "page": 10,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Sheafifying R-linear monoidal functors.",
    "page": 14,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 1,
    "title": "Yoneda embeddings.",
    "page": 16,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 1,
    "title": "Group schemes and representations.",
    "page": 26,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   },
   {
    "level": 1,
    "title": "Tannaka reconstruction for stacks with the resolution property.",
    "page": 27,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
   },
   {
    "level": 1,
    "title": "References",
    "page": 33,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
   },
   {
    "level": 1,
    "title": "References",
    "page": 35,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "35"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 647,
+   "n_words": 84,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
@@ -130,8 +504,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 5,
-   "n_chars": 14569,
-   "n_words": 2815
+   "n_chars": 14341,
+   "n_words": 2592,
+   "label_start": null,
+   "label_end": "5"
   },
   {
    "id": "sec-001-notation",
@@ -140,8 +516,10 @@
    "level": 1,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 1228,
-   "n_words": 245
+   "n_chars": 1217,
+   "n_words": 234,
+   "label_start": "5",
+   "label_end": "5"
   },
   {
    "id": "sec-002-acknowledgements",
@@ -149,72 +527,128 @@
    "title": "Acknowledgements",
    "level": 1,
    "page_start": 5,
-   "page_end": 9,
-   "n_chars": 12245,
-   "n_words": 2573
+   "page_end": 5,
+   "n_chars": 177,
+   "n_words": 31,
+   "label_start": "5",
+   "label_end": "5"
   },
   {
-   "id": "sec-003-2-sheafification-functors",
+   "id": "sec-003-1-preliminaries-on-sheaves-and-fibered-categorie",
+   "number": "1",
+   "title": "Preliminaries on sheaves and fibered categories",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 9,
+   "n_chars": 11786,
+   "n_words": 2268,
+   "label_start": "5",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-004-2-sheafification-functors",
    "number": "2",
    "title": "Sheafification functors.",
    "level": 1,
    "page_start": 9,
-   "page_end": 16,
-   "n_chars": 20759,
-   "n_words": 4544
+   "page_end": 10,
+   "n_chars": 1618,
+   "n_words": 284,
+   "label_start": "9",
+   "label_end": "10"
   },
   {
-   "id": "sec-004-3-yoneda-embeddings",
+   "id": "sec-005-21-sheafifying-r-linear-functors",
+   "number": "2.1",
+   "title": "Sheafifying R-linear functors.",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 14,
+   "n_chars": 13087,
+   "n_words": 2562,
+   "label_start": "10",
+   "label_end": "14"
+  },
+  {
+   "id": "sec-006-22-sheafifying-r-linear-monoidal-functors",
+   "number": "2.2",
+   "title": "Sheafifying R-linear monoidal functors.",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 5235,
+   "n_words": 972,
+   "label_start": "14",
+   "label_end": "16"
+  },
+  {
+   "id": "sec-007-3-yoneda-embeddings",
    "number": "3",
    "title": "Yoneda embeddings.",
    "level": 1,
    "page_start": 16,
    "page_end": 26,
-   "n_chars": 29984,
-   "n_words": 6986
+   "n_chars": 28733,
+   "n_words": 5750,
+   "label_start": "16",
+   "label_end": "26"
   },
   {
-   "id": "sec-005-4-group-schemes-and-representations",
+   "id": "sec-008-4-group-schemes-and-representations",
    "number": "4",
    "title": "Group schemes and representations.",
    "level": 1,
    "page_start": 26,
    "page_end": 27,
-   "n_chars": 3824,
-   "n_words": 746
+   "n_chars": 3835,
+   "n_words": 727,
+   "label_start": "26",
+   "label_end": "27"
   },
   {
-   "id": "sec-006-5-tannaka-reconstruction-for-stacks-with-the-res",
+   "id": "sec-009-5-tannaka-reconstruction-for-stacks-with-the-res",
    "number": "5",
    "title": "Tannaka reconstruction for stacks with the resolution property.",
    "level": 1,
    "page_start": 27,
    "page_end": 35,
-   "n_chars": 23483,
-   "n_words": 5140
+   "n_chars": 22903,
+   "n_words": 4571,
+   "label_start": "27",
+   "label_end": "35"
   },
   {
-   "id": "sec-007-references",
+   "id": "sec-010-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 35,
    "page_end": 35,
-   "n_chars": 2130,
-   "n_words": 302
+   "n_chars": 2112,
+   "n_words": 284,
+   "label_start": "35",
+   "label_end": "35"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 12,
-  "sections": 8,
-  "chars_total": 108222,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 12,
+  "chars_total": 105691,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "monoidality.general.tex",
    "tex_sections": 10,
-   "overlaid": 6,
+   "overlaid": 7,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -222,10 +656,15 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.987,
-     "coverage_ratio": 0.988,
+     "prose_ratio": 0.947,
+     "coverage_ratio": 0.973,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -233,49 +672,68 @@
      "id": "sec-001-notation",
      "title": "Notation",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.957,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-acknowledgements",
      "title": "Acknowledgements",
-     "prose_ratio": 0.915,
-     "coverage_ratio": 0.972,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.058,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-003-2-sheafification-functors",
+     "id": "sec-003-1-preliminaries-on-sheaves-and-fibered-categorie",
+     "title": "Preliminaries on sheaves and fibered categories",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-2-sheafification-functors",
      "title": "Sheafification functors.",
-     "prose_ratio": 0.844,
-     "coverage_ratio": 0.987,
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.933,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-3-yoneda-embeddings",
+     "id": "sec-005-21-sheafifying-r-linear-functors",
+     "title": "Sheafifying R-linear functors.",
+     "prose_ratio": 0.739,
+     "coverage_ratio": 0.948,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-22-sheafifying-r-linear-monoidal-functors",
+     "title": "Sheafifying R-linear monoidal functors.",
+     "prose_ratio": 0.887,
+     "coverage_ratio": 0.913,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-3-yoneda-embeddings",
      "title": "Yoneda embeddings.",
-     "prose_ratio": 0.835,
-     "coverage_ratio": 0.991,
+     "prose_ratio": 0.791,
+     "coverage_ratio": 0.953,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-4-group-schemes-and-representations",
+     "id": "sec-008-4-group-schemes-and-representations",
      "title": "Group schemes and representations.",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-006-5-tannaka-reconstruction-for-stacks-with-the-res",
+     "id": "sec-009-5-tannaka-reconstruction-for-stacks-with-the-res",
      "title": "Tannaka reconstruction for stacks with the resolution property.",
-     "prose_ratio": 0.769,
-     "coverage_ratio": 0.989,
+     "prose_ratio": 0.724,
+     "coverage_ratio": 0.951,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-references",
+     "id": "sec-010-references",
      "title": "References",
      "result": "no matching \\section"
     }

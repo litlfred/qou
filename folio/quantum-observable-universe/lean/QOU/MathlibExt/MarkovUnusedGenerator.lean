@@ -68,7 +68,7 @@ archimedean content.
 
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 -- Ref: [wenzl1988] https://doi.org/10.1007/BF01393699
--- Ref: [manuscript] docs/audits/2026-08-19-bar-involution-is-isospin-conjugation.md §4g
+-- Ref: [leitner2026] docs/audits/2026-08-19-bar-involution-is-isospin-conjugation.md §4g
 -/
 
 namespace QOU.MathlibExt.MarkovUnusedGenerator

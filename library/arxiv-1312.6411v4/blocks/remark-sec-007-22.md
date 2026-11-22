@@ -1,1 +1,0 @@
-OurdeﬁnitionofdualizingDGmodules,Deﬁnition7.1,mightseem

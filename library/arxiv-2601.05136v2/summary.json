@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2601.05136v2",
  "source_sha256": "cee15456257d3028",
- "brief": "State integrals for the quantized SL₂(ℂ) Chern–Simons invariant — Previous work of the author and N.",
- "extended": "**State integrals for the quantized SL₂(ℂ) Chern–Simons invariant**\n\n19 pp, 15 sections.\n\n**Abstract.** Previous work of the author and N. Reshetikhin deﬁnes an invariant Zψ N(K,ρ,µ ) of a knotK, a representationρ: π1(S3\\K)→ SL2(C), andalogarithm µofameridianeigenvalueof ρ. Itcanbeinterpretedasa geometrictwistoftheKashaevinvariantorasaquantizationofthe SL2(C) Chern-Simonsinvariantandisdeﬁnedviaadiscretestate-suminvolving quantumdilogarithms. Inthispaperweshowhowtoexpress Zψ N(K,ρ,µ ) asasumovercontourintegralsinaspaceparametrizinghyperbolicstruc- tures on the knot complement. Such state integral presentations are an importantstepindeterminingtheasymptoticsofquantuminvariantsas predictedbytheVolumeConjecture. Wediscussthisperspectiveandthe remainingobstaclestoestablishingexponentialgrowthof Zψ N.\n\n**Outline.** Introduction; Background and motivation; Our results; Cyclic and principal type invariants; Preliminaries; Diagrams and colorings; Gauge transformations and nondegeneracy; Segment equations; Quantum dilogarithms; The action and state sums; State integrals; Classical dilogarithms; Asymptotics; The classical action; Barriers to moving the contour\n\n**Extracted claims (proposals, not verified).**\n- Theorem 3: ]beingessentialisequivalenttoapurelygroup-theoreticconditioncalled arc-faithfulness.\n- Theorem 1: Underthehypothesesabove Zψ\n- Proposition 2.12: Foranopenknotdiagram D thereisabijectionbetweenthesetsof\n- Proposition 4.4: LetD be a diagram of a knotK. Generalized critical points ofS(D) are in\n- Lemma 2.8: Letρbeadecoratedrepresentationand D anopendiagram\n- Lemma 2.10: Letρ be a decorated representation of a knotK andD",
+ "brief": "State integrals for the quantized SL 2 ( C ) Chern-Simons invariant — Previous work of the author and N.",
+ "extended": "**State integrals for the quantized SL 2 ( C ) Chern-Simons invariant**\n\n*Calvin McPhail-Snyder*\n\n19 pp, 18 sections.\n\n**Abstract.** Previous work of the author and N. Reshetikhin deﬁnes an invariant Zψ N(K, ρ, µ) of a knot K, a representation ρ: π1(S3 \\ K) →SL2(C), and a logarithm µ of a meridian eigenvalue of ρ. It can be interpreted as a geometric twist of the Kashaev invariant or as a quantization of the SL2(C) Chern-Simons invariant and is deﬁned via a discrete state-sum involving quantum dilogarithms. In this paper we show how to express Zψ N(K, ρ, µ) as a sum over contour integrals in a space parametrizing hyperbolic struc- tures on the knot complement. Such state integral presentations are an important step in determining the asymptotics of quantum invariants as predicted by the Volume Conjecture. We discuss this perspective and the remaining obstacles to establishing exponential growth of Zψ N.\n\n**Outline.** Front matter; Introduction; Background and motivation; Our results; Cyclic and principal type invariants; Preliminaries; Diagrams and colorings; Gauge transformations and nondegeneracy; Segment equations; State integrals for the quantized Chern-Simons; Quantum dilogarithms; The action and state sums; State integrals; Formal asymptotics; Classical dilogarithms; The classical action; Asymptotics; Barriers to moving the contour",
  "tokens": {
-  "brief": 25,
-  "extended": 412
+  "brief": 26,
+  "extended": 339
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
   {
    "id": "sec-000-introduction",
    "title": "Introduction",
@@ -50,37 +55,47 @@
    "pages": "8-9"
   },
   {
-   "id": "sec-008-quantum-dilogarithms",
+   "id": "sec-008-state-integrals-for-the-quantized-chern-simons-i",
+   "title": "State integrals for the quantized Chern-Simons invariant",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-009-quantum-dilogarithms",
    "title": "Quantum dilogarithms",
    "pages": "9-9"
   },
   {
-   "id": "sec-009-the-action-and-state-sums",
+   "id": "sec-010-the-action-and-state-sums",
    "title": "The action and state sums",
    "pages": "9-11"
   },
   {
-   "id": "sec-010-state-integrals",
+   "id": "sec-011-state-integrals",
    "title": "State integrals",
    "pages": "11-12"
   },
   {
-   "id": "sec-011-classical-dilogarithms",
+   "id": "sec-012-formal-asymptotics",
+   "title": "Formal asymptotics",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-013-classical-dilogarithms",
    "title": "Classical dilogarithms",
    "pages": "12-13"
   },
   {
-   "id": "sec-012-asymptotics",
-   "title": "Asymptotics",
-   "pages": "13-13"
-  },
-  {
-   "id": "sec-013-the-classical-action",
+   "id": "sec-014-the-classical-action",
    "title": "The classical action",
-   "pages": "13-15"
+   "pages": "13-14"
   },
   {
-   "id": "sec-014-barriers-to-moving-the-contour",
+   "id": "sec-015-asymptotics",
+   "title": "Asymptotics",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-016-barriers-to-moving-the-contour",
    "title": "Barriers to moving the contour",
    "pages": "15-19"
   }
@@ -89,8 +104,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

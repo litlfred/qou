@@ -1,0 +1,36 @@
+72 Univariate asymptotics
+
+Figure 3.1 A A-domain.
+
+(ii) If f(2) = 0(g(z)) as z > 1 then ay = o(by) as n > ©.
+(iii) If f(z) ~ g(z) as z > 1 then a, ~ by asn > &.
+
+Theorem 3.15 with g(z) = C(1 — z)® strengthens Theorem 3.12. So as not
+to devote too much space to computation, we only prove Theorem 3.15 for the
+subset of alg-log given by powers (1 — z)*.
+
+Proof for g(z) = (1—z)*. We need only prove the first two statements in the
+theorem, as the third follows as an immediate consequence. Cauchy’s integral
+formula implies a,, can be expressed as a sum of integrals
+
+1 1
+ayn = =f fen dz + ah fe" dz
+2ni Jy, 2ni Jy,
+
++ + fen dz + 4 fae" dz
+2ni Jy, 2ni Jy,
+
+defined by two parameters & and 7, where
+
+e y; is the circular arc parametrized by 1 + n~!e~" for é < t < 20 -&,
+
+© 72 is the line segment between 1 +n~!e and the number 8 of modulus 1 +7
+and arg(6B - 1) =é,
+
+© ¥3 is the arc on the circle of radius | + 7 running between f and f the long
+way, and
+
+e y4 is the conjugate of y2, oriented oppositely.
+
+Our argument works with any 0 < 7 < € and any 0 < & < z/2 large enough
+so that the curves are contained in A(1, €); see Figure 3.2 for an illustration.

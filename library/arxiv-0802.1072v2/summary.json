@@ -3,12 +3,17 @@
  "doc_id": "arxiv-0802.1072v2",
  "source_sha256": "6f4d93f0b7ba5cd7",
  "brief": "A note on closed 3-braids ∗ — This is a review article about knots and links of braid index 3.",
- "extended": "**A note on closed 3-braids ∗**\n\n*Joan S. Birman † and William W. Menasco ‡*\n\n14 pp, 7 sections.\n\n**Abstract.** This is a review article about knots and links of braid index 3. Its goal is to gather together, in one place, some of the tools that are special to knots and links of b raid index 3, in a form that could be useful for those who have a need to calculate, and ne ed to know precisely all the exceptional cases. Knots and links which are closed 3-braids are a very special c lass. Like 2-bridge knots and links, they are simple enough to admit a complete classiﬁcation. At the s ame time they are rich enough to serve as a source of examples on which, with luck, a researcher may b e able to test various conjectures. As an example, non-invertibility is a property of knots whic h is fairly subtle, yet we know (see Theorem 2 below) precisely which links of braid index 3 are an d are not invertible.\n\n**Outline.** Three basic theorems; Solving the conjugacy problem in B3; The band presentation; The word problem:; The conjugacy problem for 3-braids; Using Theorems 1,2, and 3; Some open questions and a survey of known resu\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: The classiﬁcation theorem [5]: LetL be a link type which is represented by the\n- Theorem 2: The invertibility theorem [5]: LetK be a link of braid index 3 with oriented 3-\n- Theorem 2: , however in Theorem 3 below we are interested expli citly in the conjugacy classes which\n- Theorem 3: The transversal classiﬁcation theorem [6]: LetTK be a transversal knot type\n- Theorem: s 1 and 2 . We need two more results before we can make Theorems 1 and 2 in to\n- Proposition 4: In the special case of 3-braids, if a knot type − →K is invertible, then it is",
+ "extended": "**A note on closed 3-braids ∗**\n\n*Joan S. Birman† and William W. Menasco‡*\n\n14 pp, 8 sections.\n\n**Abstract.** This is a review article about knots and links of braid index 3. Its goal is to gather together, in one place, some of the tools that are special to knots and links of braid index 3, in a form that could be useful for those who have a need to calculate, and need to know precisely all the exceptional cases. Knots and links which are closed 3-braids are a very special class. Like 2-bridge knots and links, they are simple enough to admit a complete classiﬁcation. At the same time they are rich enough to serve as a source of examples on which, with luck, a researcher may be able to test various conjectures. As an example, non-invertibility is a property of knots which is fairly subtle, yet we know (see Theorem 2 below) precisely which links of braid index 3 are and are not invertible.\n\n**Outline.** Front matter; Three basic theorems; Solving the conjugacy problem in B3; The band presentation; The word problem:; The conjugacy problem for 3-braids; Using Theorems 1,2, and 3; Some open questions and a survey of known resu",
  "tokens": {
   "brief": 23,
-  "extended": 436
+  "extended": 285
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-three-basic-theorems",
    "title": "Three basic theorems",
@@ -49,8 +54,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

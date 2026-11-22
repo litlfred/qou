@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0203194v1/sections/sec-081",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "On special values of hypergeometric functions attached to arithmetic $p$-adic triangle groups.",
+  "pageStart": 192,
+  "pageEnd": 194,
+  "contains": [
+    "library/arxiv-math-0203194v1/blocks/prose-sec-081",
+    "library/arxiv-math-0203194v1/blocks/figure-img-p194-1",
+    "library/arxiv-math-0203194v1/blocks/figure-img-p194-2"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203194v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203194v1/manifest.jsonld",
+  "provenance": "ingested"
+}

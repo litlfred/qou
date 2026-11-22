@@ -1,0 +1,1 @@
+1. Conventions for the superpolynomial in the vector rep- resentation: The case r = 1 corresponds to the (ordinary) HOMFLY polynomial and the Khovanov-Rozansky homology. The corresponding superpolynomial, to- gether with the structure of the triply-graded homology was studied in [3].

@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/sm10137-eng/sections/sec-006",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "§7 Proof of Lemma 3",
+  "pageStart": 12,
+  "pageEnd": 20,
+  "contains": [
+    "library/sm10137-eng/blocks/prose-sec-006",
+    "library/sm10137-eng/blocks/prop-sec-006-01",
+    "library/sm10137-eng/blocks/prop-sec-006-02",
+    "library/sm10137-eng/blocks/cor-sec-006-03",
+    "library/sm10137-eng/blocks/prop-sec-006-04",
+    "library/sm10137-eng/blocks/lem-sec-006-05"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/sm10137-eng/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/sm10137-eng/manifest.jsonld",
+  "provenance": "ingested"
+}

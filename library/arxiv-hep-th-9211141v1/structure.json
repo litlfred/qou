@@ -8,7 +8,7 @@
   "pages": 34,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -24,7 +24,7 @@
   "title": "arXiv:hep-th/9211141v1 1 Dec 1992",
   "authors_raw": "Level-Spacing Distributions and the Airy Kernel",
   "title_lines": [
-   "ITD 92/93\u20139"
+   "ITD 92/93–9"
   ],
   "abstract": null,
   "docinfo": {
@@ -33,13 +33,13 @@
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
    "CreationDate": "D:20241126153501-05'00'"
   },
-  "title_raw": "ITD 92/93\u20139",
+  "title_raw": "ITD 92/93–9",
   "title_source": "metadata",
   "title_verified": true,
   "title_evidence": {
    "metadata": "arXiv:hep-th/9211141v1 1 Dec 1992",
    "heading": "Level-Spacing Distributions and the Airy Kernel",
-   "text": "ITD 92/93\u20139",
+   "text": "ITD 92/93–9",
    "corroborated_by": [
     "page"
    ],
@@ -601,8 +601,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 1259,
-   "n_words": 194,
+   "n_chars": 1257,
+   "n_words": 193,
    "label_start": "1",
    "label_end": "2"
   },
@@ -612,14 +612,62 @@
    "title": "INTRODUCTION AND SUMMARY OF RESULTS",
    "level": 1,
    "page_start": 2,
-   "page_end": 9,
-   "n_chars": 9829,
-   "n_words": 1904,
+   "page_end": 4,
+   "n_chars": 3584,
+   "n_words": 659,
    "label_start": "2",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-001-12-the-system-of-partial-differential-equations",
+   "number": "1.2",
+   "title": "The System of Partial Differential Equations",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 1167,
+   "n_words": 254,
+   "label_start": "4",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-002-13-the-ordinary-differential-equations",
+   "number": "1.3",
+   "title": "The Ordinary Differential Equations",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 976,
+   "n_words": 198,
+   "label_start": "5",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-003-14-asymptotics-and-the-commuting-differential-op",
+   "number": "1.4",
+   "title": "Asymptotics and the Commuting Differential Operator",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 3291,
+   "n_words": 631,
+   "label_start": "6",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-004-15-probability-density-for-the-nth-largest-eigen",
+   "number": "1.5",
+   "title": "Probability Density for the $n^{th}$ Largest Eigenvalue",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 599,
+   "n_words": 128,
+   "label_start": "8",
    "label_end": "9"
   },
   {
-   "id": "sec-001-2-the-system-of-partial-differential-equations",
+   "id": "sec-005-2-the-system-of-partial-differential-equations",
    "number": "2",
    "title": "THE SYSTEM OF PARTIAL DIFFERENTIAL EQUATIONS",
    "level": 1,
@@ -631,51 +679,123 @@
    "label_end": "9"
   },
   {
-   "id": "sec-002-21-derivation-of-the-equations",
+   "id": "sec-006-21-derivation-of-the-equations",
    "number": "2.1",
    "title": "Derivation of the Equations",
    "level": 2,
    "page_start": 9,
    "page_end": 14,
-   "n_chars": 6472,
-   "n_words": 1402,
+   "n_chars": 6458,
+   "n_words": 1397,
    "label_start": "9",
    "label_end": "14"
   },
   {
-   "id": "sec-003-22-hamiltonian-structure",
+   "id": "sec-007-22-hamiltonian-structure",
    "number": "2.2",
    "title": "Hamiltonian Structure",
    "level": 2,
    "page_start": 14,
    "page_end": 16,
-   "n_chars": 1993,
-   "n_words": 364,
+   "n_chars": 1987,
+   "n_words": 362,
    "label_start": "14",
    "label_end": "16"
   },
   {
-   "id": "sec-004-3-the-ordinary-differential-equations",
+   "id": "sec-008-3-the-ordinary-differential-equations",
    "number": "3",
    "title": "THE ORDINARY DIFFERENTIAL EQUATIONS",
    "level": 1,
    "page_start": 16,
    "page_end": 17,
-   "n_chars": 1118,
-   "n_words": 240,
+   "n_chars": 1115,
+   "n_words": 239,
    "label_start": "16",
    "label_end": "17"
   },
   {
-   "id": "sec-005-4-asymptotics",
+   "id": "sec-009-4-asymptotics",
    "number": "4",
    "title": "ASYMPTOTICS",
    "level": 1,
    "page_start": 17,
-   "page_end": 34,
-   "n_chars": 21589,
-   "n_words": 4304,
+   "page_end": 17,
+   "n_chars": 0,
+   "n_words": 0,
    "label_start": "17",
+   "label_end": "17"
+  },
+  {
+   "id": "sec-010-41-asymptotics-via-painleve",
+   "number": "4.1",
+   "title": "Asymptotics via Painlev'e",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 19,
+   "n_chars": 3836,
+   "n_words": 753,
+   "label_start": "17",
+   "label_end": "19"
+  },
+  {
+   "id": "sec-011-42-asymptotics-via-the-commuting-differential-op",
+   "number": "4.2",
+   "title": "Asymptotics via the Commuting Differential Operator",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 21,
+   "n_chars": 2261,
+   "n_words": 472,
+   "label_start": "19",
+   "label_end": "21"
+  },
+  {
+   "id": "sec-012-421-the-region-xt-12",
+   "number": "4.2.1",
+   "title": "The region $x<<t^{-1/2}$",
+   "level": 3,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 532,
+   "n_words": 108,
+   "label_start": "21",
+   "label_end": "22"
+  },
+  {
+   "id": "sec-013-422-the-region-xt-2-t-xt14",
+   "number": "4.2.2",
+   "title": "The region $x>>t^{-2}$, $t-x>>t^{1/4}$",
+   "level": 3,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 1745,
+   "n_words": 418,
+   "label_start": "22",
+   "label_end": "23"
+  },
+  {
+   "id": "sec-014-423-the-region-x-tt14",
+   "number": "4.2.3",
+   "title": "The region $x-t>>t^{1/4}$",
+   "level": 3,
+   "page_start": 23,
+   "page_end": 25,
+   "n_chars": 2002,
+   "n_words": 439,
+   "label_start": "23",
+   "label_end": "25"
+  },
+  {
+   "id": "sec-015-425-the-asymptotics-of-lambda-i",
+   "number": "4.2.5",
+   "title": "The asymptotics of $\\lambda_i$",
+   "level": 3,
+   "page_start": 25,
+   "page_end": 34,
+   "n_chars": 10960,
+   "n_words": 2058,
+   "label_start": "25",
    "label_end": "34"
   }
  ],
@@ -685,7 +805,7 @@
   "toc_entries": 18,
   "toc_inferred_entries": 18,
   "toc_inferred_mean_confidence": 1.0,
-  "toc_inferred_empty_share": 0.167,
+  "toc_inferred_empty_share": 0.125,
   "toc_inferred_method": "latex",
   "figure_entries": 0,
   "figure_sequence_gaps": [],
@@ -693,13 +813,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 7,
-  "chars_total": 42260,
+  "sections": 17,
+  "chars_total": 41770,
+  "furniture_lines_stripped": 34,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 18,
-   "overlaid": 4,
+   "overlaid": 11,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -715,18 +836,50 @@
      "id": "sec-000-1-introduction-and-summary-of-results",
      "title": "INTRODUCTION AND SUMMARY OF RESULTS",
      "prose_ratio": 0.944,
-     "coverage_ratio": 0.578,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-001-2-the-system-of-partial-differential-equations",
-     "title": "THE SYSTEM OF PARTIAL DIFFERENTIAL EQUATIONS",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-001-12-the-system-of-partial-differential-equations",
+     "title": "The System of Partial Differential Equations",
+     "prose_ratio": 0.86,
+     "coverage_ratio": 0.881,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-002-21-derivation-of-the-equations",
+     "id": "sec-002-13-the-ordinary-differential-equations",
+     "title": "The Ordinary Differential Equations",
+     "prose_ratio": 0.845,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-14-asymptotics-and-the-commuting-differential-op",
+     "title": "Asymptotics and the Commuting Differential Operator",
+     "prose_ratio": 0.942,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-15-probability-density-for-the-nth-largest-eigen",
+     "title": "Probability Density for the $n^{th}$ Largest Eigenvalue",
+     "prose_ratio": 0.886,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-2-the-system-of-partial-differential-equations",
+     "title": "THE SYSTEM OF PARTIAL DIFFERENTIAL EQUATIONS",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-21-derivation-of-the-equations",
      "title": "Derivation of the Equations",
      "prose_ratio": 0.967,
      "coverage_ratio": 0.977,
@@ -734,7 +887,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-003-22-hamiltonian-structure",
+     "id": "sec-007-22-hamiltonian-structure",
      "title": "Hamiltonian Structure",
      "prose_ratio": 0.686,
      "coverage_ratio": 0.948,
@@ -742,16 +895,58 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-3-the-ordinary-differential-equations",
+     "id": "sec-008-3-the-ordinary-differential-equations",
      "title": "THE ORDINARY DIFFERENTIAL EQUATIONS",
-     "prose_ratio": 0.177,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.345,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-005-4-asymptotics",
+     "id": "sec-009-4-asymptotics",
      "title": "ASYMPTOTICS",
-     "prose_ratio": 0.978,
-     "coverage_ratio": 0.99,
+     "prose_ratio": null,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-010-41-asymptotics-via-painleve",
+     "title": "Asymptotics via Painlev'e",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-42-asymptotics-via-the-commuting-differential-op",
+     "title": "Asymptotics via the Commuting Differential Operator",
+     "prose_ratio": 0.944,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-421-the-region-xt-12",
+     "title": "The region $x<<t^{-1/2}$",
+     "prose_ratio": 0.278,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-013-422-the-region-xt-2-t-xt14",
+     "title": "The region $x>>t^{-2}$, $t-x>>t^{1/4}$",
+     "prose_ratio": 0.478,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-014-423-the-region-x-tt14",
+     "title": "The region $x-t>>t^{1/4}$",
+     "prose_ratio": 0.635,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-425-the-asymptotics-of-lambda-i",
+     "title": "The asymptotics of $\\lambda_i$",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "pandoc"
     }

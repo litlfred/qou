@@ -1,0 +1,41 @@
+40 Generating functions
+
+Dyck paths Motzkin paths Schroder paths
+
+Figure 2.3 Legal steps for three types of paths.
+
+e Classical Dyck paths occur when S = {(1, 1), (1, —1)}. Computing the quan-
+tities in Proposition 2.19 implies
+
+1 _ §00/x
+—x(y—p(x)) 1 — y&(x)
+
+where &(x) = (1- V1 - 4x*)/(2x). Setting y = 0 proves the well-known fact
+that the Dyck paths coming back to the x-axis at (2n,0) are counted by the
+Catalan number cy.
+
+e Motzkin paths occur when S = {(1, 1), (1,0), (1, -)}, ultimately giving the
+generating function
+
+F(x, y) =
+
+2
+l-x+ VI — 2x — 3x2 — 2xy
+
+e Schréder paths occur when S = {(1, 1), (2,0), (1, —)}, ultimately giving the
+generating function
+
+F(x,y) =
+
+2
+1+ VI — 6x2 +24 — 2 —2xy
+
+F(X y) =
+
+2.4 D-finite generating functions and diagonals
+
+The more explicitly a generating function is described, the better the prospects
+are for extracting information from it. This includes not only exact formu-
+lae and asymptotic estimation, but also additional properties like bijections to
+other classes and random sampling algorithms for objects in the class. Ratio-
+nal generating functions (with coefficients in the integers or rational numbers)

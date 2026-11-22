@@ -1,0 +1,37 @@
+Section 2.1 Ribbon Fusion Categories
+
+A |A
+
+A 'A
+Figure 2.2: Identities of a right dual
+
+A JA
+
+A 'A
+
+Figure 2.3: Identities of a left dual
+
+pivotal structure, the left dual will be the same as the right dual and thus the ambiguity
+will be gone. Composition of two morphisms corresponds to stacking one on top of the
+other; tensor products corresponds to juxtaposition. With these conventions, the two
+identities defining a right dual are illustrated by pictures in Figure [2.2 and the identities
+defining a left dual in Figure [2.3]
+
+The following lemma shows that if a right dual exists, then it is unique up to a unique
+
+isomorphism. In the same way one can also show the left dual is also unique.
+
+Lemma 2.1.5 If (A*, ba, da), (A*, ba, da) are both right duals of A, then there exists
+
+a unique isomorphism $: A* —+ A*, such that b4 = (I@@)ob4 and da = d40(¢"@I).
+
+Definition 2.1.6 A rigid monoidal category is a monoidal category such that there exists
+
+a right dual and a left dual for each object.
+
+In a rigid monoidal category, one can define the right (resp. left) dual of a morphism.
+For f € Hom(A, B), the right dual f* € Hom(B* @ A*) is defined as (dg @I)(1@ f ®
+I) o (I ® ba), or pictorially as Figure Similarly, the left dual *f € Hom(*B, *A) is
+
+defined as (J @ dz) 0 (I ® f @ 1) o (b4, @ 1), or pictorially as Figure [2.4|
+14

@@ -2,52 +2,67 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1011.1343v1",
  "source_sha256": "7d50e5e28e695191",
- "brief": "Chiral symmetry, nuclear forces and all that — 8 sections: The early days at Stony Brook; Flashback: The Texas revolution; The chiral theory of nuclear force",
- "extended": "**Chiral symmetry, nuclear forces and all that**\n\n*HISKP and Bethe Center for Theoretical Physics*\n\n19 pp, 8 sections.\n\n**Outline.** 1 The early days at Stony Brook; 3 Flashback: The Texas revolution; 4 The chiral theory of nuclear forces as a pre; 4.1 The nucleon-nucleon interaction; 4.2 Three-nucleon interactions; 4.3 The nuclear matter problem; 4.4 Back to square one - meson-exchange curren; 5 Flash forward: Combining nuclear EFT with la",
+ "brief": "Chiral symmetry, nuclear forces and all that — 11 sections: Front matter; The early days at Stony Brook; A first step: Studying pion-nucleo",
+ "extended": "**Chiral symmetry, nuclear forces and all that**\n\n*Ulf-G. Meißner*\n\n19 pp, 11 sections.\n\n**Outline.** Front matter; 1 The early days at Stony Brook; 2 A first step: Studying pion-nucleon scatteri; 3 Flashback: The Texas revolution; 4 The chiral theory of nuclear forces as a pre; 4.1 The nucleon-nucleon interaction; 4.2 Three-nucleon interactions; 4.3 The nuclear matter problem; 4.4 Back to square one - meson-exchange curren; 5 Flash forward: Combining nuclear EFT with la; 6 Some final words",
  "tokens": {
-  "brief": 39,
-  "extended": 111
+  "brief": 34,
+  "extended": 123
  },
  "sections": [
   {
-   "id": "sec-000-1-the-early-days-at-stony-brook",
-   "title": "The early days at Stony Brook",
-   "pages": "1-4"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
   },
   {
-   "id": "sec-001-3-flashback-the-texas-revolution",
+   "id": "sec-000-1-the-early-days-at-stony-brook",
+   "title": "The early days at Stony Brook",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-2-a-first-step-studying-pion-nucleon-scattering",
+   "title": "A first step: Studying pion-nucleon scattering in chiral perturbation theory",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-002-3-flashback-the-texas-revolution",
    "title": "Flashback: The Texas revolution",
    "pages": "4-7"
   },
   {
-   "id": "sec-002-4-the-chiral-theory-of-nuclear-forces-as-a-preci",
+   "id": "sec-003-4-the-chiral-theory-of-nuclear-forces-as-a-preci",
    "title": "The chiral theory of nuclear forces as a precision tool",
    "pages": "7-7"
   },
   {
-   "id": "sec-003-41-the-nucleon-nucleon-interaction",
+   "id": "sec-004-41-the-nucleon-nucleon-interaction",
    "title": "The nucleon-nucleon interaction",
    "pages": "7-9"
   },
   {
-   "id": "sec-004-42-three-nucleon-interactions",
+   "id": "sec-005-42-three-nucleon-interactions",
    "title": "Three-nucleon interactions",
    "pages": "9-10"
   },
   {
-   "id": "sec-005-43-the-nuclear-matter-problem",
+   "id": "sec-006-43-the-nuclear-matter-problem",
    "title": "The nuclear matter problem",
    "pages": "10-11"
   },
   {
-   "id": "sec-006-44-back-to-square-one---meson-exchange-currents",
+   "id": "sec-007-44-back-to-square-one---meson-exchange-currents",
    "title": "Back to square one - meson-exchange currents",
    "pages": "11-13"
   },
   {
-   "id": "sec-007-5-flash-forward-combining-nuclear-eft-with-latti",
+   "id": "sec-008-5-flash-forward-combining-nuclear-eft-with-latti",
    "title": "Flash forward: Combining nuclear EFT with lattice simulations",
-   "pages": "13-19"
+   "pages": "13-15"
+  },
+  {
+   "id": "sec-009-6-some-final-words",
+   "title": "Some final words",
+   "pages": "15-19"
   }
  ],
  "provenance": {

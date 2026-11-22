@@ -28,6 +28,7 @@
   holding only of the empty triangulation.
 
   -- Ref: [thurston1978] Ch. 4
+  -- Ref: [futer-gueritaud-angled] Def 2.4, Prop 2.5 (gluing equations give the hyperbolic metric); Thm 1.2 (complete structure = critical point of volume on angle structures) — held copy
   -- Ref: [neumann-zagier1985] §2
 -/
 import QOU.Archimedean.BlochWignerPositive
@@ -68,5 +69,14 @@ theorem vol_ne_zero_of_realises {M : Type*} [HyperbolicVolumeBridge M] {n : ℕ}
     (T : IdealTriangulation n) (m : M) (h : HyperbolicVolumeBridge.Realises T m) :
     HyperbolicVolumeBridge.vol m ≠ 0 :=
   ne_of_gt (vol_pos_of_realises hn T m h)
+
+/-- **Every realised manifold has strictly positive volume** — the `0 < n` hypothesis
+of `vol_pos_of_realises` is now discharged by the bridge's own `realises_nonempty`
+field (bean `qou-dx7g`), which excludes the empty-triangulation model that made it
+necessary. -/
+theorem vol_pos_of_realises' {M : Type*} [HyperbolicVolumeBridge M] {n : ℕ}
+    (T : IdealTriangulation n) (m : M) (h : HyperbolicVolumeBridge.Realises T m) :
+    0 < HyperbolicVolumeBridge.vol m :=
+  vol_pos_of_realises (HyperbolicVolumeBridge.realises_nonempty T m h) T m h
 
 end QOU.MathlibExt.ManifoldVolumePositive

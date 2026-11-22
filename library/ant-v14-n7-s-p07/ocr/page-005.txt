@@ -1,0 +1,45 @@
+Nonvanishing of hyperelliptic zeta functions over finite fields 1899
+
+because the form in which we present the proof here is conducive to proving the explicit bounds for
+the stable range obtained in Proposition 2.7 below. It would be interesting to address the questions of
+explicit bounds for the stable range in the more general situations considered by [loc. cit.], where the
+group-theoretic part of the proof of Proposition 2.7 would presumably be more complicated.
+
+When a = 1 and n is odd, Proposition 2.1 is essentially Theorem 8.8 of [Ellenberg et al. 2016], and
+indeed the proof here is a modification of the proof of that theorem.
+
+The reader may note that [Ellenberg et al. 2016, Theorem 8.8] requires not only that g is not a multiple
+of @ but that g is not congruent to 1 modulo £. We face no such restriction here. That’s because [loc. cit.,
+Theorem 8.8] computes arbitrary moments of the Cohen—Lenstra distribution, whereas we are only
+studying the analogue of the average size of the ¢-part of the class group. In the language of [loc. cit.,
+Theorem 8.8], we are only considering the case A = Z/€Z. The difference is as follows. In the proof, we
+will end up estimating the number of F,-points on a moduli space over F,, and the result will depend
+on that space having just one geometrically irreducible component defined over Fz. In the more general
+setting treated in [loc. cit., Theorem 8.8], that space has many geometric components, all but one of which
+have fields of definition containing jz~; so when q is congruent to 1 mod ¢ there are multiple F,-rational
+components. In the case treated here, the moduli space in question is geometrically irreducible, so this
+issue does not arise.
+
+Proof. We begin by observing that Ure Ong ma(f) can be interpreted as the number of F,-rational points
+of a certain moduli space.
+
+To this end we briefly recall the setup of [Ellenberg et al. 2016, Section 7].
+
+Let k be a field, let G be a finite group with trivial center, denote by e the identity element of G, and
+let c be a conjugacy-closed subset of G\e. By a tame G-cover of P! with monodromy type c we mean a
+triple (X, f, @) where
+
+¢ X is a smooth proper geometrically connected curve X/k;
+© f:x-> Plisa tamely ramified finite cover;
+¢ The image of tame inertia at each branch point of f excepting oo lies in c;
+
+e f is Galois with group G; that is, Aut(f) acts transitively on the geometric fibers of f and ¢ is an
+automorphism from G to Aut(f).
+
+Here by an isomorphism between two covers f : X > P! and f’: X’—> P! we mean a morphism
+w:X—>X with f/ow=f,nota pair (yy, c) with ¢ a nontrivial automorphism of P! and f’oy=10 f.
+In other words, our P! is “labeled”.
+
+Then, as in [Ellenberg et al. 2016, Section 7] (more or less immediate from a theorem of Romagny and
+Wewers [2006]), there is a scheme Hn@ ,, over Z[1/|G|] whose k-points (as long as k has characteristic
+prime to |G|) are in bijection with the isomorphism classes of tame G-covers of P! which have n branch

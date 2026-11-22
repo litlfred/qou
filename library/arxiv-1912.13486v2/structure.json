@@ -6,10 +6,12 @@
   "sha256": "9a8dbc1a143f7448e02fc7a60e40955738c1a63fc2badf03771a875897d0701b",
   "bytes": 1142020,
   "pages": 21,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,21 +22,29 @@
   },
   "doi": null,
   "title": "Index for a Model of 3d-3d Correspondence for Plumbed 3-Manifolds",
-  "authors_raw": "Yau Mathematical Sciences Center, Tsinghua University, Beijing 100084, China",
-  "abstract": "We consider theS2\u00d7qS1 supersymmetric index of a 3dN = 2 theory T [M3] when M3 is a plumbed 3-manifold. We engineer an e\ufb00ective description of T [M3] from the expression of the homological block for plumbed 3-manifolds as a D2\u00d7qS1 partition function of a 3d N = 2 theory T [M3] with a boundary condition. We check that the supersymmetric index for such a T [M3] is invariant under the 3d Kirby moves. arXiv:1912.13486v2 [hep-th] 22 Mar 2021",
-  "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20210323011414Z",
-   "Creator": "LaTeX with hyperref",
-   "Producer": "medialab",
-   "Title": ""
-  },
+  "authors_raw": "Hee-Joong Chung",
   "title_lines": [
    "Index for a Model of 3d-3d Correspondence for",
-   "Plumbed 3-Manifolds",
-   "Hee-Joong Chung"
+   "Plumbed 3-Manifolds"
   ],
-  "title_prev": "Index for a Model of 3d-3d Correspondence for Plumbed 3-Manifolds Hee-Joong Chung"
+  "abstract": "We consider the S2 ×q S1 supersymmetric index of a 3d N = 2 theory T[M3] when M3 is a plumbed 3-manifold. We engineer an eﬀective description of T[M3] from the expression of the homological block for plumbed 3-manifolds as a D2 ×q S1 partition function of a 3d N = 2 theory T[M3] with a boundary condition. We check that the supersymmetric index for such a T[M3] is invariant under the 3d Kirby moves. arXiv:1912.13486v2 [hep-th] 22 Mar 2021",
+  "docinfo": {
+   "Producer": "medialab",
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20210323011414Z"
+  },
+  "title_raw": "Index for a Model of 3d-3d Correspondence for Plumbed 3-Manifolds",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Index for a Model of 3d-3d Correspondence for Plumbed 3-Manifolds",
+   "outline": "1 Introduction",
+   "text": "Index for a Model of 3d-3d Correspondence for Plumbed 3-Manifolds",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -42,85 +52,443 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Supersymmetric index on S2 q S1 and factorization",
    "page": 3,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Supersymmetric index, factorization, and D2 q S1 partition function",
    "page": 3,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Analysis on homological block and index of lens space theory",
    "page": 9,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 1,
    "title": "Supersymmetric index of a 3d N=2 theory on S2 q S1 for plumbed 3-manifolds",
    "page": 10,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Engineering a 3d N=2 theory T[M3] from homological blocks",
    "page": 11,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Index for an effective description of T[M3]",
    "page": 14,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "3d Kirby move 1",
+   "page": 15,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "14"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "3d Kirby move 2",
+   "page": 16,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "15"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "3d Kirby move 3",
+   "page": 17,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "16"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "0",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 621,
+   "n_words": 103,
+   "label_start": "0",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 2,
-   "page_end": 9,
-   "n_chars": 16728,
-   "n_words": 2946
+   "page_end": 3,
+   "n_chars": 3470,
+   "n_words": 603,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
-   "id": "sec-001-22-analysis-on-homological-block-and-index-of-le",
+   "id": "sec-001-2-supersymmetric-index-on-s2-q-s1-and-factorizat",
+   "number": "2",
+   "title": "Supersymmetric index on S2 q S1 and factorization",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 206,
+   "n_words": 37,
+   "label_start": "2",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-002-21-supersymmetric-index-factorization-and-d2-q-s",
+   "number": "2.1",
+   "title": "Supersymmetric index, factorization, and D2 q S1 partition function",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 9,
+   "n_chars": 13161,
+   "n_words": 2482,
+   "label_start": "2",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-003-22-analysis-on-homological-block-and-index-of-le",
    "number": "2.2",
    "title": "Analysis on homological block and index of lens space theory",
    "level": 2,
    "page_start": 9,
+   "page_end": 10,
+   "n_chars": 3741,
+   "n_words": 716,
+   "label_start": "8",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-004-3-supersymmetric-index-of-a-3d-n2-theory-on-s2-q",
+   "number": "3",
+   "title": "Supersymmetric index of a 3d N=2 theory on S2 q S1 for plumbed 3-manifolds",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 401,
+   "n_words": 76,
+   "label_start": "9",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-005-31-engineering-a-3d-n2-theory-tm3-from-homologic",
+   "number": "3.1",
+   "title": "Engineering a 3d N=2 theory T[M3] from homological blocks",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 14,
+   "n_chars": 10748,
+   "n_words": 1979,
+   "label_start": "10",
+   "label_end": "13"
+  },
+  {
+   "id": "sec-006-32-index-for-an-effective-description-of-tm3",
+   "number": "3.2",
+   "title": "Index for an effective description of T[M3]",
+   "level": 2,
+   "page_start": 14,
    "page_end": 21,
-   "n_chars": 55710,
-   "n_words": 5714
+   "n_chars": 39717,
+   "n_words": 3570,
+   "label_start": "13",
+   "label_end": "20"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 7,
-  "sections": 2,
-  "chars_total": 72438,
+  "toc_inferred_entries": 0,
+  "figure_entries": 3,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 8,
+  "chars_total": 72065,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "indexplumbing.tex",
    "tex_sections": 14,
-   "overlaid": 1,
+   "overlaid": 6,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -128,19 +496,64 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.913,
-     "coverage_ratio": 0.941,
+     "prose_ratio": 0.918,
+     "coverage_ratio": 0.982,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-001-22-analysis-on-homological-block-and-index-of-le",
+     "id": "sec-001-2-supersymmetric-index-on-s2-q-s1-and-factorizat",
+     "title": "Supersymmetric index on S2 q S1 and factorization",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-21-supersymmetric-index-factorization-and-d2-q-s",
+     "title": "Supersymmetric index, factorization, and D2 q S1 partition function",
+     "prose_ratio": 0.916,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-22-analysis-on-homological-block-and-index-of-le",
      "title": "Analysis on homological block and index of lens space theory",
-     "prose_ratio": 0.99,
-     "coverage_ratio": 0.437,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.926,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-3-supersymmetric-index-of-a-3d-n2-theory-on-s2-q",
+     "title": "Supersymmetric index of a 3d N=2 theory on S2 q S1 for plumbed 3-manifolds",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-31-engineering-a-3d-n2-theory-tm3-from-homologic",
+     "title": "Engineering a 3d N=2 theory T[M3] from homological blocks",
+     "prose_ratio": 0.933,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-32-index-for-an-effective-description-of-tm3",
+     "title": "Index for an effective description of T[M3]",
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.283,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

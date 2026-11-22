@@ -1,0 +1,49 @@
+Problems on invariants of knots and 3-manifolds 463
+
+Remark It is known, see [78], that each a € HZ (X ;A) gives an abelian
+
+extension A> Y 2 X , where Y = A x X, which forms a quandle with the
+binary operation given by (a1,21) * (a2, 72) = (a1 + b(@1, 22), 01 * 2) using a
+2-cocycle ¢ representing a, and p denotes the natural projection.
+
+Let a1,@2,--- ,ay be a sequence of generators of Q(K) associated with over
+paths of a diagram of K which are chosen as going around kK. Adjacent
+generators a; and ag are related by a, * b = ag (or a; = ag * b) for some
+generator b. Let p(b) be a pre-image of p(b) under the projection p. Then,
+Ss ab) (resp. Sx) induces a map p~'(a1) — p~!(a2), which does not depend on
+
+the choice of a pre-image of p(b). Composing such maps, we have a sequence of
+maps p~!(a1) > p7'(az) > --- > p-!(ay) — p7'(a1). The composite map of
+these maps can be expressed a+> a+ m(p) (a € A) for some m(p) € A. Then,
+the quandle cocycle invariant can be presented by ®a() = >, m(p) € Z[A],
+
+Pp
+where the sum runs over all representations p of Q(K) to X.
+
+In particular, as shown in [78], the number of representations Q(K) > X
+that can lift to representations Q(K) — Y is equal to the coefficient of the
+unit of A in ®,(). For example, when A = Z/2Z, it follows that, writing
+®,(K) = a+ bt (where ¢ is the generator of Z/2Z), a is equal to the number
+of representations Q(K) — X that can lift to representations Q(K) > Y, and
+b is equal to the number of those that do not.
+
+In this way we can compute ®,() in terms of the abelian extension associated
+to a.
+
+Problem 5.7 Find relations between quandle cocycle invariants and knot in-
+variants known so far, such as quantum invariants.
+
+Remark When a = 0 and X is an Alexander quandle, ®a(K) can be pre-
+sented by using the ith Alexander polynomial, as mentioned in a remark of
+Problem 5.6.
+
+Remark (M. Grafia) The quandle cocycle invariants can be presented by
+knot invariants derived from certain ribbon categories [155].
+
+A central extension of a group G gives an abelian extension of the conjugation
+quandle of G. It is known that an abelian extension of a group G can be
+characterized by the cohomology group H?(G; A) for a G-module A. Motivated
+by this cohomology group we introduce A(X ; A) of a quandle X for an “X-
+module” A as follows. We call an abelian group A an X-module of a quandle
+
+Geometry & Topology Monographs, Volume 4 (2002)

@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-2404.03933v2/blocks/prose-sec-003",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Recursive formulae for Uq(sl2) and uq(sl2) tensor products.",
-  "pageStart": 13,
-  "pageEnd": 14,
-  "text": "../sections/sec-003-5-recursive-formulae-for-uqsl2-and-uqsl2-tensor.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2404.03933v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2404.03933v2",
+  "title": "Restriction from Uq(sl2) to uq(sl2)",
+  "pageStart": 11,
+  "pageEnd": 13,
+  "text": "../sections/sec-003-4-restriction-from-uqsl2-to-uqsl2.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2404.03933v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2404.03933v2/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,0 +1,101 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1704.06561v2",
+ "source_sha256": "e1d800fa0b122dbb",
+ "brief": "Leading isospin-breaking corrections to pion, kaon and charmed-meson masses with Twisted-Mass fermions — 16 sections: Front matter; I Introduction; II Simulation details",
+ "extended": "**Leading isospin-breaking corrections to pion, kaon and charmed-meson masses with Twisted-Mass fermions**\n\n*D. Giusti, V. Lubicz, and C. Tarantino*\n\n47 pp, 16 sections.\n\n**Outline.** Front matter; I Introduction; II Simulation details; III Evaluation of the IB corrections; A Determination of mfcrit; B Extraction of the e.m. and strong IB correct; IV Analysis of the pion mass splitting M+ - M0; V Determination of 0; VI Analysis of and determination of md - mu; VII Determination of K0; VIII QED and strong IB corrections in charmed ; A Electromagnetic and strong IB corrections to; B Electromagnetic corrections to MD+ + MD0; C Electromagnetic corrections to the Ds+-meson; Acknowledgements; A Numerical evaluation of the diagrams ??(a) -\n\n**Extracted claims (proposals, not verified).**\n- Proposition: In the last few years the determination of several observables in ﬂavor physics by lattice QCD reached such a precision that both electromagnetic (e.m.) eﬀects and strong isospin\n- Proposition: Using a variety of diﬀerent methods to include QED eﬀects in lattice QCD simulations, several collaborations have recently obtained remarkably accurate results for the hadron\n- Proposition: Till now the inclusion of QED eﬀects in lattice QCD simulations has been carried out follow- ing mainly two methods: in the ﬁrst one QED is added directly to the action and\n- Proposition: Instead the experimental value of the kaon mass 1 The quark mass ratio mu/md is renormalization group invariant in pure QCD only.\n- Proposition: In section VI we determine the light quark mass diﬀerence bmd −bmu using the experimental value of the kaon mass splitting MK+ −MK0, while section VII is devoted to the evaluation\n- Proposition: Using our result for bmd −bmu, we present the ﬁrst lattice determination of the D-meson mass diﬀerence MD+ −MD0.",
+ "tokens": {
+  "brief": 42,
+  "extended": 457
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-000-i-introduction",
+   "title": "I Introduction",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-001-ii-simulation-details",
+   "title": "II Simulation details",
+   "pages": "4-8"
+  },
+  {
+   "id": "sec-002-iii-evaluation-of-the-ib-corrections",
+   "title": "III Evaluation of the IB corrections",
+   "pages": "8-11"
+  },
+  {
+   "id": "sec-003-a-determination-of-mfcrit",
+   "title": "A Determination of mfcrit",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-004-b-extraction-of-the-em-and-strong-ib-corrections",
+   "title": "B Extraction of the e.m. and strong IB corrections",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-005-iv-analysis-of-the-pion-mass-splitting-m---m0",
+   "title": "IV Analysis of the pion mass splitting M+ - M0",
+   "pages": "13-19"
+  },
+  {
+   "id": "sec-006-v-determination-of-0",
+   "title": "V Determination of 0",
+   "pages": "19-22"
+  },
+  {
+   "id": "sec-007-vi-analysis-of-and-determination-of-md---mu",
+   "title": "VI Analysis of and determination of md - mu",
+   "pages": "22-29"
+  },
+  {
+   "id": "sec-008-vii-determination-of-k0",
+   "title": "VII Determination of K0",
+   "pages": "29-31"
+  },
+  {
+   "id": "sec-009-viii-qed-and-strong-ib-corrections-in-charmed-me",
+   "title": "VIII QED and strong IB corrections in charmed mesons",
+   "pages": "31-31"
+  },
+  {
+   "id": "sec-010-a-electromagnetic-and-strong-ib-corrections-to-m",
+   "title": "A Electromagnetic and strong IB corrections to MD+ - MD0",
+   "pages": "31-36"
+  },
+  {
+   "id": "sec-011-b-electromagnetic-corrections-to-md-md0",
+   "title": "B Electromagnetic corrections to MD+ + MD0",
+   "pages": "36-39"
+  },
+  {
+   "id": "sec-012-c-electromagnetic-corrections-to-the-ds-meson-ma",
+   "title": "C Electromagnetic corrections to the Ds+-meson mass",
+   "pages": "39-42"
+  },
+  {
+   "id": "sec-013-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "42-42"
+  },
+  {
+   "id": "sec-014-a-numerical-evaluation-of-the-diagrams-a---e",
+   "title": "A Numerical evaluation of the diagrams ??(a) - ??(e)",
+   "pages": "42-47"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

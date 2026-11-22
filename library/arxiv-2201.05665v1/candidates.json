@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2201.05665v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "bad7bde03d199a733f54dd787a0ac90f394c40a99658f54dd26f5128f1bd2c99",
+  "file": "2201.05665v1.pdf"
+ },
+ "provenance": {
+  "title": "HAROLD WIDOM\u2019S WORK IN RANDOM MATRIX THEORY",
+  "authors": "IVAN Z. CORWIN, PERCY A. DEIFT, AND ALEXANDER R. ITS",
+  "arxiv": {
+   "id": "2201.05665",
+   "version": "1",
+   "primary_class": "math-ph",
+   "stamp_date": "14 Jan 2022"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

@@ -1,0 +1,45 @@
+226 Effective computations and ACSV
+
+e the irreducible decomposition of V(1), which is the set of irreducible vari-
+eties V,,...,V, such that V(J) = V, U--- UV, (an irreducible variety is
+a variety that cannot be written as the union of two proper subvarieties);
+
+e the ideal quotient I : J, which is the ideal {f € K[z]: fg € J for all g € J};
+
+e the ideal saturation I : J”, which is defined as the largest ideal in the even-
+tually stable increasing chain of ideals
+
+Tcorl:Jocr:Poc
+
+Geometrically, VU : J®) is the smallest algebraic set containing all points
+in VU) \ VJ);
+
+e the dimension of an ideal I, equal to the dimension of the algebraic set V(J)
+and defined as the maximum d € N such that there exist irreducible varieties
+Vi,...,Va with Vo CV; ©--- CVa CVU).
+
+Describing algorithms for these operations is the domain of a computer algebra
+textbook, such as [BW93], and we simply use implementations in computer
+algebra software as black boxes.
+
+Example 8.6. Consider the ideals J = (3 — x— 2y,3 — 2x—y) and J = (x-y).
+Then J is prime and VI = J, and the quotient and saturation of J by J both
+equal the ideal (1) = Q[x,y]. The ideal / has dimension 0, since V(J) is the
+single point (1, 1). 4
+
+8.2. Computing critical points
+
+The results of Chapter 7 illustrate that the main objects involved in our asymp-
+totic analysis are the critical points of F in directions r. In order to describe
+the critical points of F, we must first decompose the singular set V of F into
+a Whitney stratification. Recall from Section 7.3 (or Appendix D) that this is a
+partition of V into smooth manifolds of various dimensions satisfying specific
+conditions on how they fit together.
+
+8.2.1 Effective Whitney stratification
+
+The algebraic set V(Q) = V(Q) forms the singular variety V. Lemma 7.6
+from Chapter 7 implies that the algebraic set W, defined by the polynomial
+system
+
+O(z) = @.,(z) = ++ = O.,(z) = 0 (8.1)

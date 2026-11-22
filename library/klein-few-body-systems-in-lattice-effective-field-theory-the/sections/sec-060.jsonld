@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/sections/sec-060",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Bibliography",
+  "pageStart": 103,
+  "pageEnd": 111,
+  "contains": [
+    "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-060"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/klein-few-body-systems-in-lattice-effective-field-theory-the/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/klein-few-body-systems-in-lattice-effective-field-theory-the/manifest.jsonld",
+  "provenance": "ingested"
+}

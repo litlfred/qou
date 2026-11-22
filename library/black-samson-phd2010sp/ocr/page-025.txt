@@ -1,0 +1,34 @@
+17
+
+Definition 11.4.2. Let TL/,(6) consist of the C(v)-vector space on the set of isotopy classes of
+
+Temperley-Lieb diagrams [D] on d strands, endowed with a multiplication defined by
+[Di][Da] = 6°22 [Dy 0 Da] (11.23)
+
+The quantity 6 is called the loop value, which we assume is non-zero.
+
+Lemma II.4.3. Up to isotopy, there are Cg distinct arc diagrams on d strands. Hence,
+dim TL(6) = Ca (11.24)
+
+Proof. There is a bijection between isotopy classes of Temperley-Lieb diagrams on d strands and
+isotopy classes of (0,2d)-arc diagrams, as illustrated in (Figure II.5). It is well known that the
+
+latter set has size Cy 0
+
+Figure II.5: The correspondence between (d, d)-diagrams and (0, 2d)-diagrams.
+
+Let Iq denote the TL diagram in which each strand is a vertical segment. It’s clear that
+(Ju] is the unit for TL/,(6). For each i = 1,...,d—1, let Uj be the TL diagram with a single
+cap-cup pair occurring at positions (i,i-+ 1) and vertical line segments elsewhere (see Figure IT.6).
+
+oN o™ oN
+
+Figure II.6: The generating diagrams J, and Uj, U3,U3 in TL4(4).
+
+Lemma I1.4.4, Buery TL diagram D ond strands is isotopic to the composition Uj, o---0 Uj, for
+
+some sequence (i1,...,4¢) of integers with 0 < ij <d. Therefore, (D| = [Uj,]---[Uj,] € TL4(6).
+
+Proof. The proof is by induction on d and sub-induction on the location of the leftmost cap on
+
+the bottom of the diagram D (see [25, Theorem 5.34]). Oo

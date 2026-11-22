@@ -8,7 +8,7 @@
   "pages": 11,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:19Z",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -21,13 +21,13 @@
    "stamp_date": "29 Mar 2012"
   },
   "doi": null,
-  "title": "AMERICAN MATHEMATICAL SOCIETY S 0002-9947(XX)0000-0",
-  "authors_raw": "GR\u00d6BNER-SHIRSHOV BASIS AND REDUCED WORDS FOR",
+  "title": "Groebner-Shirshov basis and reduced words for affine Weyl group A_n",
+  "authors_raw": "GRÖBNER-SHIRSHOV BASIS AND REDUCED WORDS FOR",
   "title_lines": [
    "AMERICAN MATHEMATICAL SOCIETY",
    "S 0002-9947(XX)0000-0"
   ],
-  "abstract": "Using Buchberger-Shirshov Algorithm and Composition-Diamond lemma we obtain the reduced Gr\u00a8obner-Shirshov bases of f An and classify all reduced words of the a\ufb03ne Weyl group f An.",
+  "abstract": "Using Buchberger-Shirshov Algorithm and Composition-Diamond lemma we obtain the reduced Gr¨obner-Shirshov bases of f An and classify all reduced words of the aﬃne Weyl group f An.",
   "docinfo": {
    "Producer": "pdfTeX-1.40.12",
    "Creator": "LaTeX with hyperref package",
@@ -37,12 +37,13 @@
   "title_source": "text",
   "title_verified": false,
   "title_evidence": {
-   "heading": "GR \u00a8 OBNER-SHIRSHOV BASIS AND REDUCED WORDS FOR AFFINE WEYL GROUP f 1. Introduction Gr\u00a8obner-Shirshov bases and normal form of the elements were already found for the Coxeter groups of type A n , B n and D n in [1]. They also proposed a conjecture for the general form of Gr\u00a8obner-Shirshov bases for",
+   "heading": "GR ¨ OBNER-SHIRSHOV BASIS AND REDUCED WORDS FOR AFFINE WEYL GROUP f 1. Introduction Gr¨obner-Shirshov bases and normal form of the elements were already found for the Coxeter groups of type A n , B n and D n in [1]. They also proposed a conjecture for the general form of Gr¨obner-Shirshov bases for",
    "outline": "1. Introduction",
    "text": "AMERICAN MATHEMATICAL SOCIETY S 0002-9947(XX)0000-0",
    "corroborated_by": [],
    "browser_print": false
-  }
+  },
+  "title_prev": "AMERICAN MATHEMATICAL SOCIETY S 0002-9947(XX)0000-0"
  },
  "toc": [
   {
@@ -57,7 +58,7 @@
   },
   {
    "level": 1,
-   "title": "Gr\u00f6bner-Shirshov Basis and Reduced Words",
+   "title": "Gröbner-Shirshov Basis and Reduced Words",
    "page": 3,
    "source": "outline",
    "number": "2",
@@ -194,9 +195,9 @@
    "label_end": null
   },
   {
-   "id": "sec-001-2-gr\u00f6bner-shirshov-basis-and-reduced-words",
+   "id": "sec-001-2-gröbner-shirshov-basis-and-reduced-words",
    "number": "2",
-   "title": "Gr\u00f6bner-Shirshov Basis and Reduced Words",
+   "title": "Gröbner-Shirshov Basis and Reduced Words",
    "level": 1,
    "page_start": 3,
    "page_end": 7,
@@ -243,6 +244,7 @@
   },
   "sections": 5,
   "chars_total": 23495,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "makalefinal.tex",
@@ -268,8 +270,8 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-001-2-gr\u00f6bner-shirshov-basis-and-reduced-words",
-     "title": "Gr\u00f6bner-Shirshov Basis and Reduced Words",
+     "id": "sec-001-2-gröbner-shirshov-basis-and-reduced-words",
+     "title": "Gröbner-Shirshov Basis and Reduced Words",
      "prose_ratio": 0.97,
      "coverage_ratio": 0.826,
      "result": "overlaid",

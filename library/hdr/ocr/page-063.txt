@@ -1,0 +1,54 @@
+For the second part, as mentioned earlier, a computer program has been developed on Mathematica,
+which calculates the specialised trace trq,p (and thus the invariants 94) by using only the five rules of
+Theorem and the new quadratic relation. Now, out of 4.188 links (with up to 11 crossings), there
+are 89 pairs of P-equivalent links which do not differ only by orientation, that is, they are different links
+if considered as unoriented links. Using the data from LinkInfo [ChaLi], we computed the invariants Oq
+on all of them. Out of these 89 P-equivalent pairs of links, 83 are still Og-equivalent for generic d, yet
+we found that the following six pairs of 3-component P-equivalent links are not Oq-equivalent for every
+d>1:
+
+L11n358{0, 1} | L11n418{0,0}
+L112467{0,1} | L11a527{0, 0}
+L11n325{1, 1} ]| £11n424{0,0}
+L10n79{1,1} | L10n95{1,0}
+111a404{1,1} | L110428{0, 1}
+L10n76{1,1} | L11n425{1,0}
+
+Table 6.1: Six P-equivalent pairs of 3-component links which are not Og-equivalent.
+
+Further, in [CJKL| Theorem 7.3], we have proved diagrammatically that the invariants Qq, for d > 1,
+distinguish the pair of P-equivalent links L11n358{0, 1} and L11n418{0, oF] using another remarkable
+property of the invariants Og, namely [CJKL] Theorem 6.19}:
+
+Theorem 6.35 The invariants Oy can be completely defined via the Homflypt skein relation.
+
+The above result derives from the fact that the invariants Og satisfy a special skein relation
+Proposition 6.8], which can only be applied on crossings involving two different components (and thus,
+it cannot be applied, for example, on knots). Consider the standard Conway triple L, L_, Lo, as in the
+following figure, where different colours represent different components:
+
+B B
+| a |
+
+Figure 6.2: The links in the special skein relation in open braid form.
+
+Then the skein relation (6 (6.27) for the framed link invariants ®g,p becomes:
+
+asa Ly)- Vda pn(L (q'?? = q-'/?) By p(Lo),
+
+which in turn yields the eons skein relation for the invariants Oq:
+
+a (Ls) — V/q\d@a(L_) = (q'/? — q7/?) Oa(Lo), (6.30)
+
+where D = Z/dZ. Note that this is exactly the skein relation
+
+(6.28) of the Homflypt polynomial P(q, Ap).
+
+Remark 6.36 With the old quadratic relations for the Yokonuma-—Hecke algebra, we would not have
+been able to derive the special skein relation ( The reason is that the skein relation (6.26
+invariants [yp contains also diagrams L,, of L, with framings which cannot be collected together (to
+form Lo) since they belong to different components.
+
+Similar diagrammatic proofs can be given for the remaining five pairs.
+
+60

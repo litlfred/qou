@@ -100,15 +100,16 @@ theorem zeroSDP_feasible_one : zeroSDP.IsFeasible 1 :=
 theorem zeroSDP_feasible_zero : zeroSDP.IsFeasible 0 :=
   ⟨psd_zero 1, fun i => i.elim⟩
 
-/-- The generic-ring strict-complementarity pair at `Φ⋆ = 0`.  Both
-    `dual_feas` and `obj_eq` are `True` placeholders in
-    `StrongDualityPair`, so they discharge with `trivial`. -/
+/-- The generic strict-complementarity pair at `Φ⋆ = 0`.  The dual
+    slack of `zeroSDP` is `0`, so dual feasibility and the zero gap hold
+    for the same reason as in `rsc` below. -/
 def scPair : StrictComplementarityPair zeroSDP where
   Φstar := 0
   ystar := fun i => i.elim
   primal_feas := zeroSDP_feasible_zero
-  dual_feas := trivial
-  obj_eq := trivial
+  dual_feas := by
+    rw [zeroSDP_dualSlack]; exact psd_zero 1
+  obj_eq := by simp [SDPPrimal.objAt, SDPPrimal.dualObjAt, zeroSDP]
   active := ∅
   active_dual_pos := fun i hi => hi.elim
   inactive_dual_zero := fun i _ => i.elim

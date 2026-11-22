@@ -6,7 +6,9 @@
   "sha256": "affd571adbaac3fcbabcbfd349ad8731638f75bd9f5c29e4f49d8162d191512f",
   "bytes": 729477,
   "pages": 73,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -14,21 +16,33 @@
   "arxiv": null,
   "doi": "10.2140/agt.2007.7.845",
   "title": "Quantum hyperbolic geometry",
-  "authors_raw": "We construct a new family, indexed by odd integers N\u0015 1, of.2C 1/–dimensional",
+  "authors_raw": "STEPHANE BASEILHAC",
+  "title_lines": [
+   "Quantum hyperbolic geometry"
+  ],
   "abstract": null,
   "docinfo": {
-   "Creator": "Algebraic Geometry & Topology",
-   "Author": "Stephane BaseilhacRiccardo Benedetti",
    "Title": "Quantum hyperbolic geometry",
+   "Author": "Stephane BaseilhacRiccardo Benedetti",
    "Producer": "pdfTeX-1.40.3",
+   "Creator": "LaTeX with hyperref package",
    "CreationDate": "D:20080503131834+01'00'"
   },
-  "title_lines": [
-   "Quantum hyperbolic geometry",
-   "STEPHANE BASEILHAC",
-   "RICCARDO BENEDETTI"
-  ],
-  "title_prev": "Quantum hyperbolic geometry STEPHANE BASEILHAC RICCARDO BENEDETTI"
+  "title_raw": "Quantum hyperbolic geometry",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Quantum hyperbolic geometry",
+   "heading": "Quantum hyperbolic geometry 1 Introduction",
+   "outline": "1. Introduction",
+   "text": "Quantum hyperbolic geometry",
+   "corroborated_by": [
+    "heading",
+    "text",
+    "page"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -36,198 +50,1271 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "845"
   },
   {
    "level": 1,
    "title": "Universal QHG",
    "page": 5,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "849"
   },
   {
    "level": 2,
    "title": "Building blocks",
    "page": 5,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "849"
   },
   {
    "level": 2,
    "title": "QHG triangulated pseudomanifolds",
    "page": 14,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "858"
   },
   {
    "level": 2,
    "title": "QHG universal functor",
    "page": 16,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "860"
   },
   {
    "level": 2,
    "title": "Towards geometric specializations",
    "page": 18,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "862"
   },
   {
    "level": 1,
    "title": "Parameters for PSL(2,C)-characters of surfaces",
    "page": 24,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "868"
   },
   {
    "level": 2,
    "title": "Efficient triangulations",
    "page": 25,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "869"
   },
   {
    "level": 2,
    "title": "Cocycle parameters",
    "page": 27,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "871"
   },
   {
    "level": 2,
    "title": "Cross-ratio parameters",
    "page": 30,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "874"
   },
   {
    "level": 1,
    "title": "The QHFT bordism category",
    "page": 37,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "881"
   },
   {
    "level": 2,
    "title": "Marked topological bordisms",
    "page": 37,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "881"
   },
   {
    "level": 2,
    "title": "Boundary structures",
    "page": 39,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "883"
   },
   {
    "level": 1,
    "title": "The QHFT functor",
    "page": 41,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "885"
   },
   {
    "level": 2,
    "title": "From QHFT bordisms to QHG-triangulated pseudomanifolds",
    "page": 41,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "885"
   },
   {
    "level": 2,
    "title": "Amplitudes",
    "page": 43,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "887"
   },
   {
    "level": 2,
    "title": "QHFT variants",
    "page": 46,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "890"
   },
   {
    "level": 2,
    "title": "Mapping class group representations",
    "page": 47,
    "source": "outline",
-   "number": "5.4"
+   "number": "5.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "891"
   },
   {
    "level": 2,
    "title": "Tunneling the (+)/(-) states",
    "page": 48,
    "source": "outline",
-   "number": "5.5"
+   "number": "5.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "892"
   },
   {
    "level": 1,
    "title": "Partition functions",
    "page": 50,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "894"
   },
   {
    "level": 2,
    "title": "QHFT vs QHFT-0 partition functions",
    "page": 51,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "895"
   },
   {
    "level": 2,
    "title": "Invariants of cusped manifolds and surgery formulas",
    "page": 52,
    "source": "outline",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "896"
   },
   {
    "level": 2,
    "title": "Manifolds that fiber over the circle",
    "page": 62,
    "source": "outline",
-   "number": "6.3"
+   "number": "6.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "906"
   },
   {
    "level": 2,
    "title": "Example: the figure-eight knot complement",
    "page": 64,
    "source": "outline",
-   "number": "6.4"
+   "number": "6.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "908"
   },
   {
    "level": 1,
    "title": "References",
    "page": 71,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "915"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "I –tetrahedra and dual encoding",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "850"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "A diagonal exchange",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "856"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The pentagon relation",
+   "page": 13,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "857"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "The moves on naked singular triangulations",
+   "page": 15,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "859"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "A 2 $ 3 QHG move (x1 D y=x, x2 D y.1 \u0000 x/=x.1 \u0000 y/, and x3 D .1 \u0000 x/=.1 \u0000 y/)",
+   "page": 17,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "861"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "The ﬂips with marked corners",
+   "page": 26,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "870"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "The branched triangulated cell sv",
+   "page": 27,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "871"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "More economic e-triangulation",
+   "page": 35,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "879"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "The recipe for reading off holonomies from exponential I –parameters",
+   "page": 36,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "880"
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "Notation for Log–I –parameters",
+   "page": 39,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "883"
+  },
+  {
+   "kind": "figure",
+   "number": "11",
+   "title": "An I –cusp",
+   "page": 42,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "886"
+  },
+  {
+   "kind": "figure",
+   "number": "12",
+   "title": "Pasting opposite vertical sides yields an instance of C.T; b/ for the once-punctured torus S , based on an economic triangulation of S as in Remark 3.13",
+   "page": 50,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "894"
+  },
+  {
+   "kind": "figure",
+   "number": "13",
+   "title": "A special admissible triangulation of B",
+   "page": 51,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "895"
+  },
+  {
+   "kind": "figure",
+   "number": "14",
+   "title": "An instance of double cone on a disc",
+   "page": 58,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "902"
+  },
+  {
+   "kind": "figure",
+   "number": "15",
+   "title": "A normal path a in Link(v) running parallel to a blowing-up",
+   "page": 59,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "903"
+  },
+  {
+   "kind": "figure",
+   "number": "16",
+   "title": "For any ﬁxed tetrahedron  of T all three ﬂattenings may be eventually",
+   "page": 60,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "904"
+  },
+  {
+   "kind": "figure",
+   "number": "17",
+   "title": "Lifts to e–triangulations (economic ones – see Remark 3.13 – at the ﬁrst row) of ﬂip moves on the corresponding ideal triangulations near marked corners. The tetrahedron associated to the ﬁrst ﬂip (ﬁrst and third ones for the second row) degenerates for a sequence s with (\u0000)–Log–I – parameters",
+   "page": 62,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "906"
+  },
+  {
+   "kind": "figure",
+   "number": "18",
+   "title": "The composition of ﬂip transformations for the monodromy of",
+   "page": 65,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "909"
+  },
+  {
+   "kind": "figure",
+   "number": "19",
+   "title": "The face and edge identiﬁcations for the canonical geodesic ideal",
+   "page": 65,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "909"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "845",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "846",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "847",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "848",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "849",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "850",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "851",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "852",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "853",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "854",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "855",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "856",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "857",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "858",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "859",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "860",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "861",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "862",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "863",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "864",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "865",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "866",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "867",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "868",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "869",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "870",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "871",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "872",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "873",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "874",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "875",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "876",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "877",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "878",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "879",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "880",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "881",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "882",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "883",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "884",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "885",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "886",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "887",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "888",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "889",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "890",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "891",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "892",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "893",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "894",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "895",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "896",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "897",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "898",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "899",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "900",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "901",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "902",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "903",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "904",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "905",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "906",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": "907",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 64,
+   "label": "908",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 65,
+   "label": "909",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 66,
+   "label": "910",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 67,
+   "label": "911",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 68,
+   "label": "912",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 69,
+   "label": "913",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 70,
+   "label": "914",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 71,
+   "label": "915",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 72,
+   "label": "916",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 73,
+   "label": "917",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1569,
+   "n_words": 239,
+   "label_start": "845",
+   "label_end": "845"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 4,
-   "n_chars": 7274,
-   "n_words": 1171
+   "page_end": 5,
+   "n_chars": 9618,
+   "n_words": 1594,
+   "label_start": "845",
+   "label_end": "849"
   },
   {
    "id": "sec-001-2-universal-qhg",
    "number": "2",
    "title": "Universal QHG",
    "level": 1,
-   "page_start": 4,
+   "page_start": 5,
    "page_end": 5,
-   "n_chars": 2234,
-   "n_words": 371
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "849",
+   "label_end": "849"
   },
   {
    "id": "sec-002-21-building-blocks",
@@ -236,8 +1323,10 @@
    "level": 2,
    "page_start": 5,
    "page_end": 14,
-   "n_chars": 17658,
-   "n_words": 3167
+   "n_chars": 18062,
+   "n_words": 3571,
+   "label_start": "849",
+   "label_end": "858"
   },
   {
    "id": "sec-003-22-qhg-triangulated-pseudomanifolds",
@@ -246,8 +1335,10 @@
    "level": 2,
    "page_start": 14,
    "page_end": 16,
-   "n_chars": 4209,
-   "n_words": 727
+   "n_chars": 4286,
+   "n_words": 804,
+   "label_start": "858",
+   "label_end": "860"
   },
   {
    "id": "sec-004-23-qhg-universal-functor",
@@ -256,8 +1347,10 @@
    "level": 2,
    "page_start": 16,
    "page_end": 18,
-   "n_chars": 3997,
-   "n_words": 684
+   "n_chars": 4067,
+   "n_words": 754,
+   "label_start": "860",
+   "label_end": "862"
   },
   {
    "id": "sec-005-24-towards-geometric-specializations",
@@ -265,147 +1358,243 @@
    "title": "Towards geometric specializations",
    "level": 2,
    "page_start": 18,
-   "page_end": 27,
-   "n_chars": 20528,
-   "n_words": 3613
+   "page_end": 24,
+   "n_chars": 14979,
+   "n_words": 2739,
+   "label_start": "862",
+   "label_end": "868"
   },
   {
-   "id": "sec-006-32-cocycle-parameters",
+   "id": "sec-006-3-parameters-for-psl2c-characters-of-surfaces",
+   "number": "3",
+   "title": "Parameters for PSL(2,C)-characters of surfaces",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 2060,
+   "n_words": 366,
+   "label_start": "868",
+   "label_end": "869"
+  },
+  {
+   "id": "sec-007-31-efficient-triangulations",
+   "number": "3.1",
+   "title": "Efficient triangulations",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 27,
+   "n_chars": 3663,
+   "n_words": 734,
+   "label_start": "869",
+   "label_end": "871"
+  },
+  {
+   "id": "sec-008-32-cocycle-parameters",
    "number": "3.2",
    "title": "Cocycle parameters",
    "level": 2,
    "page_start": 27,
    "page_end": 30,
-   "n_chars": 7103,
-   "n_words": 1300
+   "n_chars": 7234,
+   "n_words": 1429,
+   "label_start": "871",
+   "label_end": "874"
   },
   {
-   "id": "sec-007-33-cross-ratio-parameters",
+   "id": "sec-009-33-cross-ratio-parameters",
    "number": "3.3",
    "title": "Cross-ratio parameters",
    "level": 2,
    "page_start": 30,
    "page_end": 37,
-   "n_chars": 16257,
-   "n_words": 2907
+   "n_chars": 16445,
+   "n_words": 3085,
+   "label_start": "874",
+   "label_end": "881"
   },
   {
-   "id": "sec-008-4-the-qhft-bordism-category",
+   "id": "sec-010-4-the-qhft-bordism-category",
    "number": "4",
    "title": "The QHFT bordism category",
    "level": 1,
    "page_start": 37,
    "page_end": 37,
-   "n_chars": 146,
-   "n_words": 23
+   "n_chars": 147,
+   "n_words": 24,
+   "label_start": "881",
+   "label_end": "881"
   },
   {
-   "id": "sec-009-41-marked-topological-bordisms",
+   "id": "sec-011-41-marked-topological-bordisms",
    "number": "4.1",
    "title": "Marked topological bordisms",
    "level": 2,
    "page_start": 37,
    "page_end": 39,
-   "n_chars": 4152,
-   "n_words": 747
+   "n_chars": 4229,
+   "n_words": 816,
+   "label_start": "881",
+   "label_end": "883"
   },
   {
-   "id": "sec-010-42-boundary-structures",
+   "id": "sec-012-42-boundary-structures",
    "number": "4.2",
    "title": "Boundary structures",
    "level": 2,
    "page_start": 39,
    "page_end": 41,
-   "n_chars": 4215,
-   "n_words": 764
+   "n_chars": 4307,
+   "n_words": 857,
+   "label_start": "883",
+   "label_end": "885"
   },
   {
-   "id": "sec-011-5-the-qhft-functor",
+   "id": "sec-013-5-the-qhft-functor",
    "number": "5",
    "title": "The QHFT functor",
    "level": 1,
    "page_start": 41,
    "page_end": 41,
-   "n_chars": 463,
-   "n_words": 77
+   "n_chars": 495,
+   "n_words": 94,
+   "label_start": "885",
+   "label_end": "885"
   },
   {
-   "id": "sec-012-51-from-qhft-bordisms-to-qhg-triangulated-pseudo",
+   "id": "sec-014-51-from-qhft-bordisms-to-qhg-triangulated-pseudo",
    "number": "5.1",
    "title": "From QHFT bordisms to QHG-triangulated pseudomanifolds",
    "level": 2,
    "page_start": 41,
    "page_end": 43,
-   "n_chars": 5916,
-   "n_words": 993
+   "n_chars": 6015,
+   "n_words": 1092,
+   "label_start": "885",
+   "label_end": "887"
   },
   {
-   "id": "sec-013-52-amplitudes",
+   "id": "sec-015-52-amplitudes",
    "number": "5.2",
    "title": "Amplitudes",
    "level": 2,
    "page_start": 43,
    "page_end": 46,
-   "n_chars": 6477,
-   "n_words": 1103
+   "n_chars": 6593,
+   "n_words": 1214,
+   "label_start": "887",
+   "label_end": "890"
   },
   {
-   "id": "sec-014-53-qhft-variants",
+   "id": "sec-016-53-qhft-variants",
    "number": "5.3",
    "title": "QHFT variants",
    "level": 2,
    "page_start": 46,
    "page_end": 47,
-   "n_chars": 2538,
-   "n_words": 446
+   "n_chars": 2555,
+   "n_words": 463,
+   "label_start": "890",
+   "label_end": "891"
   },
   {
-   "id": "sec-015-54-mapping-class-group-representations",
+   "id": "sec-017-54-mapping-class-group-representations",
    "number": "5.4",
    "title": "Mapping class group representations",
    "level": 2,
    "page_start": 47,
-   "page_end": 50,
-   "n_chars": 7336,
-   "n_words": 1249
+   "page_end": 48,
+   "n_chars": 2585,
+   "n_words": 518,
+   "label_start": "891",
+   "label_end": "892"
   },
   {
-   "id": "sec-016-6-partition-functions",
+   "id": "sec-018-55-tunneling-the---states",
+   "number": "5.5",
+   "title": "Tunneling the (+)/(-) states",
+   "level": 2,
+   "page_start": 48,
+   "page_end": 50,
+   "n_chars": 4855,
+   "n_words": 871,
+   "label_start": "892",
+   "label_end": "894"
+  },
+  {
+   "id": "sec-019-6-partition-functions",
    "number": "6",
    "title": "Partition functions",
    "level": 1,
    "page_start": 50,
-   "page_end": 52,
-   "n_chars": 3711,
-   "n_words": 661
+   "page_end": 51,
+   "n_chars": 1627,
+   "n_words": 318,
+   "label_start": "894",
+   "label_end": "895"
   },
   {
-   "id": "sec-017-62-invariants-of-cusped-manifolds-and-surgery-fo",
+   "id": "sec-020-61-qhft-vs-qhft-0-partition-functions",
+   "number": "6.1",
+   "title": "QHFT vs QHFT-0 partition functions",
+   "level": 2,
+   "page_start": 51,
+   "page_end": 52,
+   "n_chars": 2096,
+   "n_words": 388,
+   "label_start": "895",
+   "label_end": "896"
+  },
+  {
+   "id": "sec-021-62-invariants-of-cusped-manifolds-and-surgery-fo",
    "number": "6.2",
    "title": "Invariants of cusped manifolds and surgery formulas",
    "level": 2,
    "page_start": 52,
-   "page_end": 71,
-   "n_chars": 40057,
-   "n_words": 7408
+   "page_end": 64,
+   "n_chars": 28755,
+   "n_words": 5626,
+   "label_start": "896",
+   "label_end": "908"
   },
   {
-   "id": "sec-018-references",
+   "id": "sec-022-64-example-the-figure-eight-knot-complement",
+   "number": "6.4",
+   "title": "Example: the figure-eight knot complement",
+   "level": 2,
+   "page_start": 64,
+   "page_end": 71,
+   "n_chars": 12120,
+   "n_words": 2633,
+   "label_start": "908",
+   "label_end": "915"
+  },
+  {
+   "id": "sec-023-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 71,
    "page_end": 73,
-   "n_chars": 5367,
-   "n_words": 781
+   "n_chars": 5368,
+   "n_words": 772,
+   "label_start": "915",
+   "label_end": "917"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 25,
-  "sections": 19,
-  "chars_total": 159638
+  "toc_inferred_entries": 0,
+  "figure_entries": 19,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 25,
+  "chars_total": 163730,
+  "furniture_lines_stripped": 0
  },
  "duplicate_copies": [
   "arxiv-math-0611504v1"

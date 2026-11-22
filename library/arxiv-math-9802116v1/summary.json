@@ -1,0 +1,76 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-9802116v1",
+ "source_sha256": "be7999751ffb6db3",
+ "brief": "Quasialgebra structure of the octonions — We show that the octonions are a twisting of the group algebra of Z2 × Z2 × Z2 in the quasitensor category of representations of a quasi-Hopf algebra asso",
+ "extended": "**Quasialgebra structure of the octonions**\n\n*Helena Albuquerque1*\n\n34 pp, 11 sections.\n\n**Abstract.** We show that the octonions are a twisting of the group algebra of Z2 × Z2 × Z2 in the quasitensor category of representations of a quasi-Hopf algebra asso- ciated to a group 3-cocycle. We consider general quasi-associative algebras of this type and some general constructions for them, including quasi-linear algebra and representation theory, and an automorphism quasi-Hopf algebra. Other examples include the higher 2n-onion Cayley algebras and examples associated to Hadamard matrices.\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries: General constructions; 3 More about the quasi-algebras kFG; 4 Cayley algebras; ii The quaternion algebra is of this form with; iii The octonion algebra is of this form with; 5 New quasialgebras; 6 Automorphism quasi-Hopf algebras; 7 Quasiassociative linear algebra; References",
+ "tokens": {
+  "brief": 49,
+  "extended": 232
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-2-preliminaries-general-constructions",
+   "title": "Preliminaries: General constructions",
+   "pages": "2-7"
+  },
+  {
+   "id": "sec-002-3-more-about-the-quasi-algebras-kfg",
+   "title": "More about the quasi-algebras kFG",
+   "pages": "7-15"
+  },
+  {
+   "id": "sec-003-4-cayley-algebras",
+   "title": "Cayley algebras",
+   "pages": "15-19"
+  },
+  {
+   "id": "sec-004-ii-the-quaternion-algebra-is-of-this-form-with",
+   "title": "The quaternion algebra is of this form with",
+   "pages": "19-19"
+  },
+  {
+   "id": "sec-005-iii-the-octonion-algebra-is-of-this-form-with",
+   "title": "The octonion algebra is of this form with",
+   "pages": "19-20"
+  },
+  {
+   "id": "sec-006-5-new-quasialgebras",
+   "title": "New quasialgebras",
+   "pages": "20-24"
+  },
+  {
+   "id": "sec-007-6-automorphism-quasi-hopf-algebras",
+   "title": "Automorphism quasi-Hopf algebras",
+   "pages": "24-30"
+  },
+  {
+   "id": "sec-008-7-quasiassociative-linear-algebra",
+   "title": "Quasiassociative linear algebra",
+   "pages": "30-33"
+  },
+  {
+   "id": "sec-009-references",
+   "title": "References",
+   "pages": "33-34"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

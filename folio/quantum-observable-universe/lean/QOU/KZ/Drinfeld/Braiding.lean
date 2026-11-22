@@ -9,7 +9,7 @@ objects and would break naturality for maps between tensor powers of different l
 
 Sorry-free.
 
--- Ref: [manuscript] beans/defs/qou-zoyv (stage S3)
+-- Ref: [leitner2026] beans/defs/qou-zoyv (stage S3)
 -/
 
 noncomputable section

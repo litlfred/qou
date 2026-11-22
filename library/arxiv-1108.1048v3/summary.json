@@ -2,11 +2,11 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1108.1048v3",
  "source_sha256": "6f2b83450ba923d0",
- "brief": "CONSTRUCTION OF IRREDUCIBLE REPRESENTATIONS OVER KHOVANOV-LAUDA-ROUQUIER ALGEBRAS — We give an explicit construction of irreducible modules ove r Khovanov-Lauda- Rouquier algebras R and their",
- "extended": "**CONSTRUCTION OF IRREDUCIBLE REPRESENTATIONS OVER KHOVANOV-LAUDA-ROUQUIER ALGEBRAS**\n\n*OF FINITE CLASSICAL TYPE*\n\n45 pp, 9 sections.\n\n**Abstract.** We give an explicit construction of irreducible modules ove r Khovanov-Lauda- Rouquier algebras R and their cyclotomic quotients Rλ for ﬁnite classical types using a crystal basis theoretic approach. More precisely, for each element v of the crystal B(∞ ) (resp. B(λ )), we ﬁrst construct certain modules ∆( a; k) labeled by the adapted string a of v. We then prove that the head of the induced module Ind ( ∆( a; 1)⊠· · ·⊠∆( a; n) ) is irreducible and that every irreducible R-module (resp. Rλ-module) can be realized as the irreducible head of one of the induced modules Ind(∆( a; 1) ⊠ · · ·⊠ ∆( a; n)). Moreover, we show that our construction is compatible with the crystal structure o n B(∞ ) (resp. B(λ )).\n\n**Outline.** Front matter; Introduction; 1.1 Crystals; 1 Crystals and Khovanov-Lauda-Rouquier Algebra; 1.2 Khovanov-Lauda-Rouquier algebras; 1.3 Construction of irreducible R-modules; 2 Description of Nk(v) for Finite Type Via Ada; 3 Explicit Construction of Irreducible Modules; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.6: The sextuple (B(∞), wt, ˜ei, ˜fi, εi, ϕi) (resp.\n- Theorem 3.2: Let (A, P, Π , P∨, Π ∨) be a Cartan datum of ﬁnite classical type. For v ∈\n- Theorem 3.2: and Proposition 3.1 combine to give the followin g explicit description of the\n- Proposition 1.10: (1) For v ∈ B(∞), let Nk(v) be the irreducible module deﬁned by (1.4). Then hd Ind\n- Proposition 2.2: Let (A, P, Π , P∨, Π ∨) be a Cartan datum of ﬁnite type. Then S has\n- Proposition 2.3: Let (A, P, Π , P∨, Π ∨) be a Cartan datum of ﬁnite type. For v ∈ B(∞) and",
+ "brief": "CONSTRUCTION OF IRREDUCIBLE REPRESENTATIONS OVER KHOVANOV-LAUDA-ROUQUIER ALGEBRAS — We give an explicit construction of irreducible modules over Khovanov-Lauda- Rouquier algebras R and their",
+ "extended": "**CONSTRUCTION OF IRREDUCIBLE REPRESENTATIONS OVER KHOVANOV-LAUDA-ROUQUIER ALGEBRAS**\n\n*OF FINITE CLASSICAL TYPE*\n\n45 pp, 10 sections.\n\n**Abstract.** We give an explicit construction of irreducible modules over Khovanov-Lauda- Rouquier algebras R and their cyclotomic quotients Rλ for ﬁnite classical types using a crystal basis theoretic approach. More precisely, for each element v of the crystal B(∞) (resp. B(λ)), we ﬁrst construct certain modules ∆(a; k) labeled by the adapted string a of v. We then prove that the head of the induced module Ind \u0000∆(a; 1)⊠· · ·⊠∆(a; n) \u0001 is irreducible and that every irreducible R-module (resp. Rλ-module) can be realized as the irreducible head of one of the induced modules Ind(∆(a; 1) ⊠· · · ⊠∆(a; n)). Moreover, we show that our construction is compatible with the crystal structure on B(∞) (resp. B(λ)).\n\n**Outline.** Front matter; Introduction; 1.1 Crystals; 1 Crystals and Khovanov-Lauda-Rouquier Algebra; 1.2 Khovanov-Lauda-Rouquier algebras; 1.3 Construction of irreducible R-modules; 2 Description of Nk(v) for Finite Type Via Ada; 3 Explicit Construction of Irreducible Modules; 4 Proof of Theorem ??; References",
  "tokens": {
   "brief": 47,
-  "extended": 433
+  "extended": 290
  },
  "sections": [
   {
@@ -47,10 +47,15 @@
   {
    "id": "sec-006-3-explicit-construction-of-irreducible-modules-f",
    "title": "Explicit Construction of Irreducible Modules for Finite Classical Type",
-   "pages": "17-44"
+   "pages": "17-28"
   },
   {
-   "id": "sec-007-references",
+   "id": "sec-007-4-proof-of-theorem",
+   "title": "Proof of Theorem ??",
+   "pages": "28-44"
+  },
+  {
+   "id": "sec-008-references",
    "title": "References",
    "pages": "44-45"
   }
@@ -59,8 +64,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

@@ -1,0 +1,56 @@
+HYPERIDEAL POLYHEDRA IN HYPERBOLIC 3-SPACE A73
+
+(i) the intersection of a face of P,+ with the complement in H? of the interiors
+of all the H‘; such a face is a polygon contained in a hyperbolic plane, whose
+sides are either geodesic or horocyclic, and whose internal angles are all equal
+to aT.
+
+(ii) the intersection of P,+ with the hyperbolic plane 0H associated to a
+strictly hyperideal vertex x‘; such a face is a hyperbolic polygon with geodesic
+sides and, at each of its vertices, its internal angle is equal to the dihedral angle
+of the corresponding edge of P,Q HI.
+
+(iii) the intersection of P,+ with the horosphere 0H! associated to an ideal
+vertex x; such a face is a euclidean polygon with geodesic sides and, at each
+of its vertices, its internal angle is equal to the internal dihedral angle of the
+corresponding edge of P,: NH.
+
+Recall that in the construction of PT"" we have a degree of freedom in the
+choice of the horospherical H! associated to the ideal vertices of P,. We will
+use this freedom to impose an additional condition on the faces of type (iii).
+By adjusting the height of the corresponding horospheres 0H‘, we can always
+arrange that the area of each face of type (iii) is constant, independent of t.
+
+Note that the polyhedra Piren all have the combinatorial type of the polyhe-
+dron Pr “ obtained by truncating the polyhedron PP roj (which, as a reminder,
+was defined by subdividing the faces of pyre into triangles).
+
+Consider now the unsubdivided polyhedron Py *°) and truncate it to PE.
+Each vertex v of Pi™” is also a vertex of PIrun, and is therefore associated to
+a vertex v' of PT",
+
+For each edge e of PJ", look at its end vertices vj, ve, and consider the
+hyperbolic distance d(v{, vi) between the corresponding vertices v{, v5 of PI".
+Label the edge e by the symbol +, 0 or — according to whether the derivative
+of d(vj, v5) at t = 0 is positive, zero or negative.
+
+Our goal is to show that all the edges are actually labelled by 0. This will
+require a few preparatory lemmas.
+
+If Q is a polygon with each of its edges labelled by a symbol +, 0 or —, define
+the number of sign changes of OQ as the minimum number of vertices v1, ..., Un
+which one needs to remove from 0Q so that the edges in each component
+of 0Q — {v1,...,Un} have the same sign, namely are either all in {+,0} or all
+in {—,0}. Note that the number of sign changes is always even.
+
+We will first show that, for each face f of Pj, either all the edges of f
+are labelled by 0, or it admits at least 4 sign changes in its boundary. In other
+words, there cannot be 0 or 2 sign changes in the boundary of f, unless all the
+edges of f are labelled by 0.
+
+We begin with faces of Type (iii), contained in horospheres. The argument
+uses the following euclidean geometry lemma, which is an infinitesimal and
+simpler version of Lemma Mz of [15] (a result attributed there to A.D. Alek-
+sandrov).
+
+BULLETIN DE LA SOCIETE MATHEMATIQUE DE FRANCE

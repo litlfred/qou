@@ -1,0 +1,35 @@
+244 Effective computations and ACSV
+
+CLO05] and the monograph [Stu02], and further historical details can be found
+in the survey [Cox20].
+
+The theory of D-finite functions has a long history, going back at least to
+Abel. Major contributions were made by Fuchs, Frobenius, and G. D. Birkhoff,
+among others. Their use in combinatorial applications was pioneered by Zeil-
+berger. The book [Mel21] gives further details on computational approaches to
+D-finite generating functions.
+
+We have tried to present this book in such a way as to ensure a long shelf-
+life. In the present chapter it was useful for concreteness to mention specific
+implementations, even though these implementations may no longer be the
+state of the art in the future. Nevertheless, the specific packages we mention,
+in addition to the entire Sage computer algebra system, have open source code
+and practice modern version control and archiving. We thus expect they will
+prove useful for a long time to come.
+
+Additional exercises
+
+Exercise 8.5. Let R be an integral domain. The resultant of two polynomials
+P(x) = po +--+ + prx” and Q(x) = go +--+ + qsx* in R[x] with p,q, # isa
+polynomial res,(p,q) in po,..-, Pr, 9o,---»9r that vanishes if and only if P and
+Q share a root in the algebraic closure of R. Let a and £ be algebraic numbers
+with P(a) = 0 and Q(B) = 0 for P,Q € Z[x]. Find annihilating polynomials in
+Z{[x] for the sum a + £, the product af, and, when £ # 0, the quotient a/f in
+terms of the resultants of explicit polynomials depending on P and Q.
+
+Exercise 8.6. Suppose that a set of algebraic equations has a single solution
+Z = (z,...,Za). Prove that z is a rational point by showing that each co-
+ordinate z; is the solution to a univariate algebraic equation having only one
+solution. Similarly, prove that if a zero-dimensional variety consists of two
+points {z, w} then either it is reducible and the two points are rational, or it is
+irreducible and both are quadratic and algebraically conjugate.

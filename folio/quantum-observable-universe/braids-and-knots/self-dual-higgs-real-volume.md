@@ -1,4 +1,4 @@
-The figure-eight knot $4_1$ (the Higgs mechanism) is amphichiral. Under the bar-involution $\sigma\colon q \mapsto q^{-1}$, its colored Jones polynomial is fixed:
+The figure-eight knot $4_1$ (the Higgs mechanism) is amphichiral \cite{witten2011}. Under the bar-involution $\sigma\colon q \mapsto q^{-1}$, its colored Jones polynomial is fixed:
 $$
   J_N(4_1; q) = J_N(4_1; q^{-1}) \qquad (\forall N).
 $$

@@ -50,7 +50,7 @@ Base ring (§7c): `ℝ` for the numeric bracket facts (archimedean ordering / `a
 abstract bound lemma is stated over `ℝ` as well since it is an `abs`/`≤` statement; it
 uses no field-specific structure beyond an ordered field with `abs`.
 
--- Ref: [manuscript] computations/deltalambda/s5so3-geometric-wlambda-a4-helium.witness.json
+-- Ref: [leitner2026] computations/deltalambda/s5so3-geometric-wlambda-a4-helium.witness.json
    (forward 0-fit; B(⁴He)_AME & |μ₄| targets only, never inverted).
 -- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors", Invent. Math. 92 (1988) 349-383.
 -/

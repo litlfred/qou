@@ -5,16 +5,20 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1302.0342v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1302.0342v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1302.0342v1",
+  "title": "Tying knots in light ﬁelds",
   "contains": [
-    "library/arxiv-1302.0342v1/sections/sec-000"
+    "library/arxiv-1302.0342v1/sections/page-001",
+    "library/arxiv-1302.0342v1/sections/page-002",
+    "library/arxiv-1302.0342v1/sections/page-003",
+    "library/arxiv-1302.0342v1/sections/page-004",
+    "library/arxiv-1302.0342v1/sections/page-005"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -24,7 +28,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1302.0342v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1302.0342v1.pdf",
     "source_sha256": "ec2ca6ba7896456d896716824fe40854ea931f164b9a710f98f1cc9d8edb93ca",
     "pages": 5,

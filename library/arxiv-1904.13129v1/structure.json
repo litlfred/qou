@@ -8,7 +8,7 @@
   "pages": 24,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:21Z",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -21,25 +21,25 @@
    "stamp_date": "30 Apr 2019"
   },
   "doi": null,
-  "title": "On the regularity of critical points for O\u2019Hara\u2019s knot energies: From smoothness to analyticity",
+  "title": "On the regularity of critical points for O’Hara’s knot energies: From smoothness to analyticity",
   "authors_raw": "Nicole Vorderobermeier",
   "title_lines": [
-   "On the regularity of critical points for O\u2019Hara\u2019s knot",
+   "On the regularity of critical points for O’Hara’s knot",
    "energies: From smoothness to analyticity"
   ],
-  "abstract": "We prove the analyticity of smooth critical points for O\u2019Hara\u2019s knot energies E\u03b1,p, with p = 1 and 2 < \u03b1 < 3, subject to a \ufb01xed length constraint. This implies, together with the main result in [BR13], that bounded energy critical points of E\u03b1,1 subject to a \ufb01xed length constraint are not only C\u221ebut also analytic. Our approach is based on Cauchy\u2019s method of majorants and a decomposition of the gradient that was adapted from the M\u00f6bius energy case E2,1 in [BV19].",
+  "abstract": "We prove the analyticity of smooth critical points for O’Hara’s knot energies Eα,p, with p = 1 and 2 < α < 3, subject to a ﬁxed length constraint. This implies, together with the main result in [BR13], that bounded energy critical points of Eα,1 subject to a ﬁxed length constraint are not only C∞but also analytic. Our approach is based on Cauchy’s method of majorants and a decomposition of the gradient that was adapted from the Möbius energy case E2,1 in [BV19].",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "LaTeX with hyperref package",
    "CreationDate": "D:20211110104056-05'00'"
   },
-  "title_raw": "On the regularity of critical points for O\u2019Hara\u2019s knot energies: From smoothness to analyticity",
+  "title_raw": "On the regularity of critical points for O’Hara’s knot energies: From smoothness to analyticity",
   "title_source": "heading",
   "title_verified": true,
   "title_evidence": {
-   "heading": "On the regularity of critical points for O\u2019Hara\u2019s knot energies: From smoothness to analyticity",
+   "heading": "On the regularity of critical points for O’Hara’s knot energies: From smoothness to analyticity",
    "outline": "1. Introduction",
-   "text": "On the regularity of critical points for O\u2019Hara\u2019s knot energies: From smoothness to analyticity",
+   "text": "On the regularity of critical points for O’Hara’s knot energies: From smoothness to analyticity",
    "corroborated_by": [
     "text"
    ],
@@ -89,7 +89,7 @@
   },
   {
    "level": 2,
-   "title": "Fa\u00e0 di Bruno's formula",
+   "title": "Faà di Bruno's formula",
    "page": 5,
    "source": "outline",
    "number": "2.3",
@@ -387,8 +387,8 @@
    "level": 2,
    "page_start": 4,
    "page_end": 6,
-   "n_chars": 3036,
-   "n_words": 552,
+   "n_chars": 3034,
+   "n_words": 551,
    "label_start": null,
    "label_end": null
   },
@@ -398,26 +398,62 @@
    "title": "Decomposition of the first variation of E",
    "level": 1,
    "page_start": 6,
-   "page_end": 14,
-   "n_chars": 16615,
-   "n_words": 3298,
+   "page_end": 7,
+   "n_chars": 3582,
+   "n_words": 723,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-005-6-the-form-of-the-lower-order-remainder-terms-r1",
+   "id": "sec-005-4-an-estimate-for-the-q-term",
+   "number": "4",
+   "title": "An estimate for the Q term",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 3007,
+   "n_words": 580,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-006-5-a-fractional-leibniz-rule-and-the-form-of-pt-q",
+   "number": "5",
+   "title": "A fractional leibniz rule and the form of PT Q",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 14,
+   "n_chars": 9989,
+   "n_words": 1985,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-007-6-the-form-of-the-lower-order-remainder-terms-r1",
    "number": "6",
    "title": "The form of the lower order remainder terms R1 and R2",
    "level": 1,
    "page_start": 14,
-   "page_end": 23,
-   "n_chars": 16101,
-   "n_words": 3440,
+   "page_end": 17,
+   "n_chars": 4980,
+   "n_words": 1115,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-006-references",
+   "id": "sec-008-7-proof-of-the-main-theorem-by-cauchys-method-of",
+   "number": "7",
+   "title": "Proof of the main theorem by Cauchy's method of majorants",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 23,
+   "n_chars": 11059,
+   "n_words": 2314,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-009-references",
    "number": null,
    "title": "References",
    "level": 1,
@@ -440,13 +476,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 8,
-  "chars_total": 49972,
+  "sections": 11,
+  "chars_total": 49871,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 11,
-   "overlaid": 5,
+   "overlaid": 8,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -471,7 +508,7 @@
      "title": "Preliminaries",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.016,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-002-21-fractional-sobolev-spaces",
@@ -492,21 +529,45 @@
     {
      "id": "sec-004-3-decomposition-of-the-first-variation-of-e",
      "title": "Decomposition of the first variation of E",
-     "prose_ratio": 0.955,
-     "coverage_ratio": 0.97,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.974,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-6-the-form-of-the-lower-order-remainder-terms-r1",
+     "id": "sec-005-4-an-estimate-for-the-q-term",
+     "title": "An estimate for the Q term",
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.865,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-5-a-fractional-leibniz-rule-and-the-form-of-pt-q",
+     "title": "A fractional leibniz rule and the form of PT Q",
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-6-the-form-of-the-lower-order-remainder-terms-r1",
      "title": "The form of the lower order remainder terms R1 and R2",
      "prose_ratio": 0.948,
-     "coverage_ratio": 0.979,
+     "coverage_ratio": 0.89,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-references",
+     "id": "sec-008-7-proof-of-the-main-theorem-by-cauchys-method-of",
+     "title": "Proof of the main theorem by Cauchy's method of majorants",
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-references",
      "title": "References",
      "result": "no matching \\section"
     }

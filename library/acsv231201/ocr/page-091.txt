@@ -1,0 +1,33 @@
+3.4 Transfer theorems 73
+
+Suppose first that f(z) = O((1 — z)®) near z = 1, so that for some K > 0 the
+inequality |f(z)| < K|1— z|* holds everywhere on the curves.
+
+Figure 3.2 The contour y.
+
+On y; the modulus of f is at most Kn-* and the modulus of z~"~! is at most
+(1-n"!)"-! < 2e < 6 so, since the length of the curve is less than 27n“!, the
+Cauchy integral over y; has size at most 6Kn~°"!.
+
+On y3 the z~""! factor reduces the modulus of the integrand to at most
+C(n)(1 +n)", where C(7) grows at most polynomially with 7. Thus, the Cauchy
+integral over y3 is O(n~’) for any N EN.
+
+By symmetry, it remains only to bound the integral over y2. Set w = e and
+parametrize the integral as z = 1+ (w/n)t for t from 1 to En, where E = |B - 1].
+We have | f(z)| < Klz— 1|* = K(t/n)* and |g-""! = [1 + at so
+
+En a =n-1
+f floe™ad < [ [f@lle™ dz < f k(t p+4]" 4
+Y Y 1 n n n
+0 -n-1
+< Kn! f ere at.
+1 n
+G.11)
+
+The inequality |1 + wt/n| > 1+ Re{wt/n} = 1 + (t/n) cos(é) implies an upper
+
+bound of
+0 =n-1
+f t% (: + en) dt
+1 n

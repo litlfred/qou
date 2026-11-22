@@ -2,195 +2,270 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1402.4615v3",
  "source_sha256": "b6e7c795cd1a7cd2",
- "brief": "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS — In this paper, we consider a deformation of Plancherel meas ure linked to Jack polynomials.",
- "extended": "**GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS**\n\n*MACIEJ DOŁ ˛ EGA AND VALENTIN FÉRAY*\n\n71 pp, 37 sections.\n\n**Abstract.** In this paper, we consider a deformation of Plancherel meas ure linked to Jack polynomials. Our main result is the descripti on of the ﬁrst and second-order asymptotics of the bulk of a random Young diagram under this dis- tribution, which extends celebrated results of Vershik-Ke rov and Logan-Shepp (for the ﬁrst order asymptotics) and Kerov (for the second or der asymptotics). This gives more evidence of the connection with Gaussian β -ensemble, already suggested by some work of Matsumoto. Our main tool is a polynomiality result for the structure con stant of some quantities that we call Jack characters, recently introduced by Lassalle. We be- lieve that this result is also interested in itself and we give several other applica- tions of it. 1. I NTRODUCTION 1.1. Jack deformation of Plancherel measure and random matrices.\n\n**Outline.** 1.1 Jack deformation of Plancherel measure and; 1.2 Main result; 1.3 Jack polynomials and Jack measure; 1.4 Ingredients of the proof; 1.5 Second main result: polynomiality of struc; 1.7 Outline of the paper; 2.1 Polynomial functions on the set of Young d; 2.2 Transition measure and free cumulants; 2.3 Generalized Young diagrams; 2.4 Continuous Young diagrams; 2.5 -polynomial functions; 3.1 Notations; 3.2 How to compute Jack character polynomials?; 3.3 A triangular subsystem; 3.5 A second bound on degrees; 3.7 Yet another gradation and bound on degrees; 3.8 Gradations and characters; 4.1 Structure constants are polynomials in\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: For eachn, let λ(n) be a random Young diagram of sizen distributed\n- Theorem 1.2: Choose a sequence (Ξ k)k=2,3,... of independent standard Gaussian\n- Theorem 1.3: We use the same notation as in Theorem 1.2. Then, for any integer\n- Theorem 1.4: Fix three partitions µ, ν and π. The structure constant g(α)\n- Theorem 7.1: Let (W, W ∗) be an exchangeable\n- Theorem 1.2: states that ˜Wd converges in distribution towards a vector of indepen-",
+ "brief": "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS — In this paper, we consider a deformation of Plancherel measure linked to Jack polynomials.",
+ "extended": "**GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS**\n\n*MACIEJ DOŁ ˛EGA AND VALENTIN FÉRAY*\n\n71 pp, 52 sections.\n\n**Abstract.** In this paper, we consider a deformation of Plancherel measure linked to Jack polynomials. Our main result is the description of the ﬁrst and second-order asymptotics of the bulk of a random Young diagram under this dis- tribution, which extends celebrated results of Vershik-Kerov and Logan-Shepp (for the ﬁrst order asymptotics) and Kerov (for the second order asymptotics). This gives more evidence of the connection with Gaussian β-ensemble, already suggested by some work of Matsumoto. Our main tool is a polynomiality result for the structure constant of some quantities that we call Jack characters, recently introduced by Lassalle. We be- lieve that this result is also interested in itself and we give several other applica- tions of it.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Jack deformation of Plancherel measure and; 1.2 Main result; 1.3 Jack polynomials and Jack measure; 1.4 Ingredients of the proof; 1.5 Second main result: polynomiality of struc; 1.6 An open problem: edge fluctuations of Jack; 1.7 Outline of the paper; 2 Jack characters and Kerov polynomials; 2.1 Polynomial functions on the set of Young d; 2.2 Transition measure and free cumulants; 2.3 Generalized Young diagrams; 2.4 Continuous Young diagrams; 2.5 -polynomial functions; 3 Polynomiality in Kerov's expansion; 3.1 Notations; 3.2 How to compute Jack character polynomials?",
  "tokens": {
-  "brief": 44,
-  "extended": 536
+  "brief": 43,
+  "extended": 382
  },
  "sections": [
   {
-   "id": "sec-000-11-jack-deformation-of-plancherel-measure-and-ra",
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-11-jack-deformation-of-plancherel-measure-and-ra",
    "title": "Jack deformation of Plancherel measure and random matrices",
-   "pages": "1-4"
+   "pages": "1-5"
   },
   {
-   "id": "sec-001-12-main-result",
+   "id": "sec-002-12-main-result",
    "title": "Main result",
-   "pages": "4-5"
+   "pages": "5-5"
   },
   {
-   "id": "sec-002-13-jack-polynomials-and-jack-measure",
+   "id": "sec-003-13-jack-polynomials-and-jack-measure",
    "title": "Jack polynomials and Jack measure",
    "pages": "5-7"
   },
   {
-   "id": "sec-003-14-ingredients-of-the-proof",
+   "id": "sec-004-14-ingredients-of-the-proof",
    "title": "Ingredients of the proof",
    "pages": "7-10"
   },
   {
-   "id": "sec-004-15-second-main-result-polynomiality-of-structure",
+   "id": "sec-005-15-second-main-result-polynomiality-of-structure",
    "title": "Second main result: polynomiality of structure constants of Jack characters",
    "pages": "10-12"
   },
   {
-   "id": "sec-005-17-outline-of-the-paper",
+   "id": "sec-006-16-an-open-problem-edge-fluctuations-of-jack-mea",
+   "title": "An open problem: edge fluctuations of Jack measure",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-007-17-outline-of-the-paper",
    "title": "Outline of the paper",
    "pages": "12-12"
   },
   {
-   "id": "sec-006-21-polynomial-functions-on-the-set-of-young-diag",
+   "id": "sec-008-2-jack-characters-and-kerov-polynomials",
+   "title": "Jack characters and Kerov polynomials",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-009-21-polynomial-functions-on-the-set-of-young-diag",
    "title": "Polynomial functions on the set of Young diagrams",
    "pages": "12-14"
   },
   {
-   "id": "sec-007-22-transition-measure-and-free-cumulants",
+   "id": "sec-010-22-transition-measure-and-free-cumulants",
    "title": "Transition measure and free cumulants",
    "pages": "14-15"
   },
   {
-   "id": "sec-008-23-generalized-young-diagrams",
+   "id": "sec-011-23-generalized-young-diagrams",
    "title": "Generalized Young diagrams",
    "pages": "15-17"
   },
   {
-   "id": "sec-009-24-continuous-young-diagrams",
+   "id": "sec-012-24-continuous-young-diagrams",
    "title": "Continuous Young diagrams",
    "pages": "17-17"
   },
   {
-   "id": "sec-010-25--polynomial-functions",
+   "id": "sec-013-25--polynomial-functions",
    "title": "-polynomial functions",
    "pages": "17-19"
   },
   {
-   "id": "sec-011-31-notations",
+   "id": "sec-014-3-polynomiality-in-kerovs-expansion",
+   "title": "Polynomiality in Kerov's expansion",
+   "pages": "19-19"
+  },
+  {
+   "id": "sec-015-31-notations",
    "title": "Notations",
    "pages": "19-19"
   },
   {
-   "id": "sec-012-32-how-to-compute-jack-character-polynomials",
+   "id": "sec-016-32-how-to-compute-jack-character-polynomials",
    "title": "How to compute Jack character polynomials?",
    "pages": "19-22"
   },
   {
-   "id": "sec-013-33-a-triangular-subsystem",
+   "id": "sec-017-33-a-triangular-subsystem",
    "title": "A triangular subsystem",
-   "pages": "22-26"
+   "pages": "22-24"
   },
   {
-   "id": "sec-014-35-a-second-bound-on-degrees",
+   "id": "sec-018-34-a-first-bound-on-the-degree",
+   "title": "A first bound on the degree",
+   "pages": "24-26"
+  },
+  {
+   "id": "sec-019-35-a-second-bound-on-degrees",
    "title": "A second bound on degrees",
    "pages": "26-27"
   },
   {
-   "id": "sec-015-37-yet-another-gradation-and-bound-on-degrees",
+   "id": "sec-020-37-yet-another-gradation-and-bound-on-degrees",
    "title": "Yet another gradation and bound on degrees",
    "pages": "27-30"
   },
   {
-   "id": "sec-016-38-gradations-and-characters",
+   "id": "sec-021-38-gradations-and-characters",
    "title": "Gradations and characters",
    "pages": "30-31"
   },
   {
-   "id": "sec-017-41-structure-constants-are-polynomials-in",
+   "id": "sec-022-4-polynomiality-of-structure-constants-of-jack-c",
+   "title": "Polynomiality of structure constants of Jack characters",
+   "pages": "31-31"
+  },
+  {
+   "id": "sec-023-41-structure-constants-are-polynomials-in",
    "title": "Structure constants are polynomials in",
    "pages": "31-32"
   },
   {
-   "id": "sec-018-42-projection-on-functions-on-young-diagrams-of",
+   "id": "sec-024-42-projection-on-functions-on-young-diagrams-of",
    "title": "Projection on functions on Young diagrams of size n",
-   "pages": "32-37"
+   "pages": "32-33"
   },
   {
-   "id": "sec-019-53-a-technical-lemma-obtained-by-polynomial-inte",
+   "id": "sec-025-5-special-values-of-and-polynomial-interpolation",
+   "title": "Special values of and polynomial interpolation",
+   "pages": "33-37"
+  },
+  {
+   "id": "sec-026-53-a-technical-lemma-obtained-by-polynomial-inte",
    "title": "A technical lemma obtained by polynomial interpolation",
    "pages": "37-38"
   },
   {
-   "id": "sec-020-61-convergence-of-polynomial-functions",
-   "title": "Convergence of polynomial functions",
-   "pages": "38-40"
+   "id": "sec-027-6-jack-measure-law-of-large-numbers",
+   "title": "Jack measure: law of large numbers",
+   "pages": "38-39"
   },
   {
-   "id": "sec-021-62-shape-convergence",
+   "id": "sec-028-61-convergence-of-polynomial-functions",
+   "title": "Convergence of polynomial functions",
+   "pages": "39-40"
+  },
+  {
+   "id": "sec-029-62-shape-convergence",
    "title": "Shape convergence",
+   "pages": "40-40"
+  },
+  {
+   "id": "sec-030-7-jack-measure-central-limit-theorem-for-jack-ch",
+   "title": "Jack measure: central limit theorem for Jack characters",
    "pages": "40-41"
   },
   {
-   "id": "sec-022-72-an-exchangeable-pair",
+   "id": "sec-031-72-an-exchangeable-pair",
    "title": "An exchangeable pair",
    "pages": "41-43"
   },
   {
-   "id": "sec-023-73-checking-hypotheses",
+   "id": "sec-032-73-checking-hypotheses",
    "title": "Checking hypotheses",
    "pages": "43-45"
   },
   {
-   "id": "sec-024-74-error-term",
+   "id": "sec-033-74-error-term",
    "title": "Error term",
    "pages": "45-50"
   },
   {
-   "id": "sec-025-75-proof-of-the-central-limit-theorem",
+   "id": "sec-034-75-proof-of-the-central-limit-theorem",
    "title": "Proof of the central limit theorem",
    "pages": "50-51"
   },
   {
-   "id": "sec-026-76-speed-in-convergence",
+   "id": "sec-035-76-speed-in-convergence",
    "title": "Speed in convergence",
    "pages": "51-53"
   },
   {
-   "id": "sec-027-77-fluctuations-of-other-polynomial-functions",
+   "id": "sec-036-77-fluctuations-of-other-polynomial-functions",
    "title": "Fluctuations of other polynomial functions",
+   "pages": "53-53"
+  },
+  {
+   "id": "sec-037-8-jack-measure-central-limit-theorems-for-young",
+   "title": "Jack measure: central limit theorems for Young diagrams and transition measures",
    "pages": "53-54"
   },
   {
-   "id": "sec-028-81-extended-algebra-of-polynomial-functions-and",
+   "id": "sec-038-81-extended-algebra-of-polynomial-functions-and",
    "title": "Extended algebra of polynomial functions and gradations",
    "pages": "54-56"
   },
   {
-   "id": "sec-029-82-proof-of-theorem-81",
+   "id": "sec-039-82-proof-of-theorem-81",
    "title": "Proof of Theorem 8.1",
    "pages": "56-58"
   },
   {
-   "id": "sec-030-83-informal-reformulation-of-theorem-81",
+   "id": "sec-040-83-informal-reformulation-of-theorem-81",
    "title": "Informal reformulation of Theorem 8.1",
-   "pages": "58-60"
+   "pages": "58-59"
   },
   {
-   "id": "sec-031-a2-linear-terms-in-kerov-polynomials",
+   "id": "sec-041-appendix-a-kerov-polynomials",
+   "title": "Appendix A. Kerov polynomials",
+   "pages": "59-59"
+  },
+  {
+   "id": "sec-042-a1-comparison-with-lassalles-normalizations",
+   "title": "A.1. Comparison with Lassalle's normalizations",
+   "pages": "59-60"
+  },
+  {
+   "id": "sec-043-a2-linear-terms-in-kerov-polynomials",
    "title": "A.2. Linear terms in Kerov polynomials",
    "pages": "60-62"
   },
   {
-   "id": "sec-032-a3-high-degree-terms-of-kerov-polynomials-for-de",
+   "id": "sec-044-a3-high-degree-terms-of-kerov-polynomials-for-de",
    "title": "A.3. High degree terms of Kerov polynomials for deg1",
    "pages": "62-63"
   },
   {
-   "id": "sec-033-b1-recovering-a-recent-result-of-vassilieva",
-   "title": "B.1. Recovering a recent result of Vassilieva",
-   "pages": "63-65"
+   "id": "sec-045-appendix-b-other-consequences-of-the-second-main",
+   "title": "Appendix B. Other consequences of the second main result",
+   "pages": "63-63"
   },
   {
-   "id": "sec-034-b3-symmetric-functions-of-contents",
+   "id": "sec-046-b1-recovering-a-recent-result-of-vassilieva",
+   "title": "B.1. Recovering a recent result of Vassilieva",
+   "pages": "63-64"
+  },
+  {
+   "id": "sec-047-b2-gouldens-and-jacksons-b-conjecture",
+   "title": "B.2. Goulden's and Jackson's b-conjecture",
+   "pages": "64-65"
+  },
+  {
+   "id": "sec-048-b3-symmetric-functions-of-contents",
    "title": "B.3. Symmetric functions of contents",
    "pages": "65-68"
   },
   {
-   "id": "sec-035-acknowledgments",
+   "id": "sec-049-acknowledgments",
    "title": "Acknowledgments",
    "pages": "68-68"
   },
   {
-   "id": "sec-036-references",
+   "id": "sec-050-references",
    "title": "References",
    "pages": "68-71"
   }
@@ -199,8 +274,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

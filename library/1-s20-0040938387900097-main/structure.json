@@ -7,67 +7,453 @@
   "bytes": 826058,
   "pages": 13,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "STATE MODELS AND THE JONES POLYNOMIAL (f&riced in recisrdfirm I Srpremher 1986) $1. INTRODIJ\u2019CTION IN THIS PAPER I construct a state model for the (original) Jones polynomial [5]. (In [6] a state",
-  "authors_raw": null,
+  "title": "STATE MODELS AND THE JONES POLYNOMIAL",
+  "authors_raw": "AND THE JONES",
   "title_lines": [
-   "STATE MODELS AND THE JONES POLYNOMIAL",
-   "(f&riced in recisrdfirm I Srpremher 1986)",
-   "$1. INTRODIJ\u2019CTION",
-   "IN THIS PAPER I construct a state model for the (original) Jones polynomial [5]. (In [6] a state"
+   "STATE MODELS"
   ],
   "abstract": null,
   "docinfo": {
-   "CreationDate": "D:20011006162647",
-   "Producer": "Acrobat 3.0 Import Plug-in\u0000",
-   "Creator": "\u6341\u6f72\u6162\u2074\u2e33\u2030\u6143\u7470\u7275\u2065\u6c50\u6775\u692dn",
-   "Title": "PII: 0040-9383(87)90009-7"
-  }
+   "Title": "PII: 0040-9383(87)90009-7",
+   "Producer": "Acrobat 3.0 Import Plug-in",
+   "Creator": "Acrobat 3.0 Capture Plug-in",
+   "CreationDate": "D:20011006162647"
+  },
+  "title_raw": "STATE MODELS",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "PII: 0040-9383(87)90009-7",
+   "heading": "STATE MODELS AND THE JONES POLYNOMIAL",
+   "text": "STATE MODELS",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "STATE MODELS AND THE JONES POLYNOMIAL (f&riced in recisrdfirm I Srpremher 1986) $1. INTRODIJ’CTION IN THIS PAPER I construct a state model for the (original) Jones polynomial [5]. (In [6] a state"
  },
- "toc": [
+ "toc": [],
+ "toc_source": "undetermined",
+ "toc_undetermined_reason": "5 inferred entries, 60% of them starting on page(s) 2, 3 of 13 — a list found ON a page, not the document's structure",
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted (5 inferred entries, 60% of them starting on page(s) 2, 3 of 13 — a list found ON a page, not the document's structure): one section per page.",
+ "figures": [
   {
-   "level": 1,
-   "title": "References",
-   "page": 13,
-   "source": "inferred",
-   "number": null
-  }
- ],
- "toc_source": "inferred",
- "sections": [
-  {
-   "id": "sec-front-matter",
-   "number": null,
-   "title": "Front matter",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 13,
-   "n_chars": 25632,
-   "n_words": 4350
+   "kind": "figure",
+   "number": "1",
+   "title": "",
+   "page": 2,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "396"
   },
   {
-   "id": "sec-000-references",
+   "kind": "figure",
+   "number": "2",
+   "title": "This label A marks the two local regions swept out by turning the overcrossing",
+   "page": 2,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "396"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "399"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "400"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "401"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "401"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "",
+   "page": 10,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "404"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "",
+   "page": 11,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "405"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "406"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "396",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "397",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "398",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "399",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "400",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "401",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "402",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "403",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "404",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "405",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "406",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
+ "sections": [
+  {
+   "id": "page-001",
    "number": null,
-   "title": "References",
+   "title": "Page 1",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 3105,
+   "n_words": 475,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 2206,
+   "n_words": 366,
+   "label_start": "396",
+   "label_end": "396"
+  },
+  {
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 1725,
+   "n_words": 294,
+   "label_start": "397",
+   "label_end": "397"
+  },
+  {
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1032,
+   "n_words": 160,
+   "label_start": "398",
+   "label_end": "398"
+  },
+  {
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 1983,
+   "n_words": 314,
+   "label_start": "399",
+   "label_end": "399"
+  },
+  {
+   "id": "page-006",
+   "number": null,
+   "title": "Page 6",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 1867,
+   "n_words": 301,
+   "label_start": "400",
+   "label_end": "400"
+  },
+  {
+   "id": "page-007",
+   "number": null,
+   "title": "Page 7",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1435,
+   "n_words": 247,
+   "label_start": "401",
+   "label_end": "401"
+  },
+  {
+   "id": "page-008",
+   "number": null,
+   "title": "Page 8",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 2561,
+   "n_words": 431,
+   "label_start": "402",
+   "label_end": "402"
+  },
+  {
+   "id": "page-009",
+   "number": null,
+   "title": "Page 9",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 2813,
+   "n_words": 510,
+   "label_start": "403",
+   "label_end": "403"
+  },
+  {
+   "id": "page-010",
+   "number": null,
+   "title": "Page 10",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 2019,
+   "n_words": 332,
+   "label_start": "404",
+   "label_end": "404"
+  },
+  {
+   "id": "page-011",
+   "number": null,
+   "title": "Page 11",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 1849,
+   "n_words": 297,
+   "label_start": "405",
+   "label_end": "405"
+  },
+  {
+   "id": "page-012",
+   "number": null,
+   "title": "Page 12",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 3204,
+   "n_words": 503,
+   "label_start": "406",
+   "label_end": "406"
+  },
+  {
+   "id": "page-013",
+   "number": null,
+   "title": "Page 13",
    "level": 1,
    "page_start": 13,
    "page_end": 13,
-   "n_chars": 2079,
-   "n_words": 333
+   "n_chars": 3049,
+   "n_words": 454,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 1,
-  "sections": 2,
-  "chars_total": 27711
+  "toc_entries": 0,
+  "toc_inferred_entries": 5,
+  "toc_inferred_mean_confidence": 0.72,
+  "toc_inferred_empty_share": 0.2,
+  "toc_inferred_method": "font",
+  "figure_entries": 9,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 13,
+  "chars_total": 28848,
+  "furniture_lines_stripped": 0
  }
 }

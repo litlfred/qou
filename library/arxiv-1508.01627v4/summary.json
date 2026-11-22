@@ -3,10 +3,10 @@
  "doc_id": "arxiv-1508.01627v4",
  "source_sha256": "778e60219862e371",
  "brief": "REPRESENTATION THEORY An Electronic Journal of the American Mathematical Society (Xxxx XX, XXXX) S 1088-4165(XX)0000-0 A MURNAGHAN–NAKAYAMA RULE FOR VALUES OF UNIPOTENT CHARACTERS IN CLASSICAL GROUPS",
- "extended": "**REPRESENTATION THEORY An Electronic Journal of the American Mathematical Society (Xxxx XX, XXXX) S 1088-4165(XX)0000-0 A MURNAGHAN–NAKAYAMA RULE FOR VALUES OF UNIPOTENT CHARACTERS IN CLASSICAL GROUPS**\n\n23 pp, 20 sections.\n\n**Abstract.** We derive a Murnaghan–Nakayama type formula for the values of unipotent characters of ﬁnite classical groups on regular semisimple elements. This relies on Asai’s explicit decomposition of Lusztig restriction. We use our formula to show that most complex irreducible characters vanish on some ℓ-singular element for certain primes ℓ. As an application we classify the simple endotrivial modules of the ﬁnite quasi-simple classical groups. As a further application we show that for ﬁnite simple classical groups and primes ℓ≥3 the ﬁrst Cartan invariant in the principal ℓ-block is larger than 2 unless Sylow ℓ-subgroups are cyclic.\n\n**Outline.** Front matter; 1 Introduction; 2.2 Regular semisimple elements; 2 Maximal tori in classical groups; 2.1 Weyl groups and maximal tori in symplectic; 2.3 Maximal connected reductive subgroups; 3 A Murnaghan–Nakayama rule; 3.1 Lusztig restriction; 3.2 Symbols; 3.3 Unipotent characters of symplectic and ort; 3.4 Values of unipotent characters at regular ; 4.2 Unipotent characters; 4 Vanishing of characters; 4.1 Non-unipotent characters; 5 Simple endotrivial modules; 5.1 On certain unipotent characters; 5.2 Simple endotrivial modules in classical ty; 6 Zeroes of characters of quasi-simple groups\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: Let ℓ> 2 be a prime and G a ﬁnite quasi-simple group of ℓ-rank at least 3. Then for any\n- Theorem 2: Let G be a ﬁnite quasi-simple group of classical Lie type Bn, Cn, Dn or 2Dn with non-\n- Theorem 3: Let G be a ﬁnite simple group of classical Lie type Bn, Cn, Dn or 2Dn. Let ℓ> 2 be a\n- Theorem 7.1: Let G be a ﬁnite simple group of classical Lie type Bn, Cn, Dn or 2Dn. Let ℓ> 2 be a\n- Proposition 2: Let G be a ﬁnite simple group of Lie type in characteristic p. Then\n- Lemma 2.1: ) which may be of independent interest.",
+ "extended": "**REPRESENTATION THEORY An Electronic Journal of the American Mathematical Society (Xxxx XX, XXXX) S 1088-4165(XX)0000-0 A MURNAGHAN–NAKAYAMA RULE FOR VALUES OF UNIPOTENT CHARACTERS IN CLASSICAL GROUPS**\n\n23 pp, 20 sections.\n\n**Abstract.** We derive a Murnaghan–Nakayama type formula for the values of unipotent characters of ﬁnite classical groups on regular semisimple elements. This relies on Asai’s explicit decomposition of Lusztig restriction. We use our formula to show that most complex irreducible characters vanish on some ℓ-singular element for certain primes ℓ. As an application we classify the simple endotrivial modules of the ﬁnite quasi-simple classical groups. As a further application we show that for ﬁnite simple classical groups and primes ℓ≥3 the ﬁrst Cartan invariant in the principal ℓ-block is larger than 2 unless Sylow ℓ-subgroups are cyclic.\n\n**Outline.** Front matter; 1 Introduction; 2 Maximal tori in classical groups; 2.1 Weyl groups and maximal tori in symplectic; 2.2 Regular semisimple elements; 2.3 Maximal connected reductive subgroups; 3 A Murnaghan–Nakayama rule; 3.1 Lusztig restriction; 3.2 Symbols; 3.3 Unipotent characters of symplectic and ort; 3.4 Values of unipotent characters at regular ; 4 Vanishing of characters; 4.1 Non-unipotent characters; 4.2 Unipotent characters; 5 Simple endotrivial modules; 5.1 On certain unipotent characters; 5.2 Simple endotrivial modules in classical ty; 6 Zeroes of characters of quasi-simple groups",
  "tokens": {
   "brief": 49,
-  "extended": 516
+  "extended": 370
  },
  "sections": [
   {
@@ -20,19 +20,19 @@
    "pages": "1-2"
   },
   {
-   "id": "sec-001-22-regular-semisimple-elements",
-   "title": "Regular semisimple elements",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-002-2-maximal-tori-in-classical-groups",
+   "id": "sec-001-2-maximal-tori-in-classical-groups",
    "title": "Maximal tori in classical groups",
    "pages": "2-2"
   },
   {
-   "id": "sec-003-21-weyl-groups-and-maximal-tori-in-symplectic-an",
+   "id": "sec-002-21-weyl-groups-and-maximal-tori-in-symplectic-an",
    "title": "Weyl groups and maximal tori in symplectic and orthogonal groups",
-   "pages": "2-5"
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-003-22-regular-semisimple-elements",
+   "title": "Regular semisimple elements",
+   "pages": "3-5"
   },
   {
    "id": "sec-004-23-maximal-connected-reductive-subgroups",
@@ -42,12 +42,12 @@
   {
    "id": "sec-005-3-a-murnaghannakayama-rule",
    "title": "A Murnaghan–Nakayama rule",
-   "pages": "5-5"
+   "pages": "5-6"
   },
   {
    "id": "sec-006-31-lusztig-restriction",
    "title": "Lusztig restriction",
-   "pages": "5-6"
+   "pages": "6-6"
   },
   {
    "id": "sec-007-32-symbols",
@@ -65,19 +65,19 @@
    "pages": "7-9"
   },
   {
-   "id": "sec-010-42-unipotent-characters",
-   "title": "Unipotent characters",
-   "pages": "9-9"
-  },
-  {
-   "id": "sec-011-4-vanishing-of-characters",
+   "id": "sec-010-4-vanishing-of-characters",
    "title": "Vanishing of characters",
    "pages": "9-9"
   },
   {
-   "id": "sec-012-41-non-unipotent-characters",
+   "id": "sec-011-41-non-unipotent-characters",
    "title": "Non-unipotent characters",
-   "pages": "9-14"
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-012-42-unipotent-characters",
+   "title": "Unipotent characters",
+   "pages": "10-14"
   },
   {
    "id": "sec-013-5-simple-endotrivial-modules",
@@ -114,8 +114,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

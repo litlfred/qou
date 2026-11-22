@@ -2,29 +2,28 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/thm-ns-singularity-descartes",
   "@type": [
-    "folio-assistant-core:Theorem",
+    "folio-assistant-sci:Theorem",
     "doco:Section"
   ],
   "label": "thm:ns-singularity-descartes",
   "kind": "theorem",
-  "title": "The Descartes universe is NS-singular: Navier--Stokes admits finite-time blowup",
+  "title": "Topology of the Reeb bundle of the Descartes universe",
   "uses": [
-    "papers/quantum-observable-universe/blocks/thm-observability-q-independent"
+    "papers/quantum-observable-universe/blocks/thm-qu-to-qou"
   ],
   "tags": [
     "theorem",
     "navier-stokes",
-    "blowup",
     "descartes",
-    "millennium-problem",
     "categorical"
   ],
-  "leanRef": "qou:QOU.FluidDynamics.ns_singularity_descartes",
+  "leanRef": "qou:QOU.FluidDynamics.descartes_kummer_root_levels",
   "text": "ns-singularity-descartes.md",
   "provenance": "authored"
 }

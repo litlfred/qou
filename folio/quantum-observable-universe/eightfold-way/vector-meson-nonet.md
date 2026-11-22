@@ -23,9 +23,7 @@ $s\bar{s}$ probability of the heavy state is convention-independent, and
 
 The vector nonet is **ideally mixed** --- the $\phi$ is $s\bar{s}$ to within
 half a percentage point --- while the pseudoscalar nonet sits about as far
-from ideal as it can.  Values from
-[`nonet-mixing-purity.witness.json`](../../../computations/nonet-mixing-purity.witness.json);
-PDG central values are comparators, and nothing here is fitted.
+from ideal as it can.  PDG central values are comparators, and nothing here is fitted.
 
 This is also why Gell-Mann--Okubo appears to *fail* on the vector nonet.
 Applied to the physical states, the relation deviates by $\approx 6\%$ for the
@@ -37,13 +35,10 @@ $\omega$ is not the octet member at all, because the nonet is ideally mixed.
 
 [The GMO relation](#rem:meson-mass-splitting) is an **identity** of the
 first-order octet-breaking ansatz: it holds for every choice of the breaking
-parameters, so reproducing it is evidence for nothing.  The decuplet
-equal-spacing rule behind the $\Omega^-$ prediction is the same
-(`QOU/Eightfold/DecupletEqualSpacing.lean`, established later in this
-chapter).
+parameters, so reproducing it is evidence for nothing.
 
 The mixing is the opposite case, and this too is a theorem
-(`QOU/Eightfold/NonetMixingUnconstrained.lean`, sorry-free).  Holding fixed the
+.  Holding fixed the
 octet member $m_8$ that Gell-Mann--Okubo determines, *every* pair of physical
 masses is realisable by choosing the singlet entry and the octet--singlet
 mixing:
@@ -64,7 +59,7 @@ one parameter --- the parameter on which the two nonets disagree.
 
 **Open, and not currently attemptable.**  The nonet needs the singlet, which is
 unavailable at $\dim V = 2$: the alternating channel vanishes below $N = 3$
-(`RowCapObstruction.lean`), so the $\eta'$ and its vector counterpart do not
+, so the $\eta'$ and its vector counterpart do not
 exist framework-side.  The vector nonet therefore inherits the $N = 3$ problem
 of [the open-problems ledger](#sec:eightfold-open-problems) in full.
 

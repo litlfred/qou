@@ -1,1 +1,1 @@
-Let A be a weak quasi-Hopf algebra. Then the new weak quasi-Hopf
+Let A be a weak quasi-Hopf algebra. Then the new weak quasi-Hopf algebra with same algebra structure and counit but coproduct S⊗S◦∆op◦S −1 and associator S ⊗ S ⊗ S(Φ321) is a twist of A by a unique partially invertible element f ∈ A ⊗ A such that γ = f · ∆(α), δ = ∆(β) · f −1 . (6.17)

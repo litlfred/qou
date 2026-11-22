@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ki52",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ki52/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -22,10 +22,11 @@
     "library/ki52/sections/sec-007",
     "library/ki52/sections/sec-008",
     "library/ki52/sections/sec-009",
-    "library/ki52/sections/sec-010"
+    "library/ki52/sections/sec-010",
+    "library/ki52/sections/sec-011"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "ki52",
     "title_source": "corroborated",

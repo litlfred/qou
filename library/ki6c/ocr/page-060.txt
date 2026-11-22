@@ -1,0 +1,51 @@
+Lemma B.1. Let F(x, z) be a smooth concave function whose maximal value is positive
+and Hesse matrix is negative definite. Then, the domain (95) is a convex domain and its
+boundary is a smooth curve whose curvature is non-zero everywhere.
+
+Proof. We choose any point on the boundary of the domain (95). It is sufficient to show
+that the curvature of the boundary curve at this point is non-zero. By changing the
+coordinate (x, z) by an affine transformation appropriately, we can assume that this point
+is the origin (0,0), and the domain (95) is in the upper half plane and it is tangent to the
+x-axis at the origin. Then, in a neighborhood of the origin, we can present the boundary
+curve as z = f(a) with some smooth function f defined in a neighborhood of 0. It is
+sufficient to show that f”(0) 4 0.
+
+We show that f”(0) 4 0, as follows. Since the boundary curve is given by F(a, z) = 0,
+we have that F(z, f(x)) = 0. Its differential is given by
+
+F,(a,z) + F.(x,z) f(x) = 0,
+where the subscripts of x and z means 2 and Z respectively. Since the domain (95) is
+tangent to the x-axis at the origin, F,(0,0) = f’(0) = 0. Further, the differential of the
+above formula is given by
+Fy. (a, 2) +2 Frz(x, 2) f'() + F.2(2, 2) (f'(x))” + F,(x,z) f"(x) = 0.
+By putting « = z = 0, we have that
+Fra (0,0) + F.(0,0) f"(0) = 0.
+
+We obtain (Fre) from the Hesse matrix
+
+Prox Fy:
+
+Fy: Fz
+by restricting R? to Rx {0}. Since the Hesse matrix is negative definite, we obtain that
+F,,(a, 2) < 0 for any (a, z). Further, we consider the function g(z) = F'(0,z). This is a
+concave function such that g”(z) < 0 and the maximal point 2 of g(z) is positive. Hence,
+
+the function g'(z) is monotonically decreasing, and g’(z) = 0 for z > 0. Therefore,
+F.(0,0) = g’(0) > 0. Hence, we obtain that
+Fy, (0, 0)
+(0) = -—=—— > 0,
+PO = 70.0) * °
+
+as required. Oo
+
+B.2 Curvature of the boundary of the domain {Re V(t, s,u) > <,}
+
+In this section, we consider 3-variable case. Instead of the function Re Vit, $,U) —Sp, We
+consider a function F(a, y, z) in general.
+
+Let F(a,y,z) be a smooth concave function whose maximal value is positive. Then,
+the domain
+
+{(z,y,z) ER’ | F(a,y,z) > 0} (96)
+
+60

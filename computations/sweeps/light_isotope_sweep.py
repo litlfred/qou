@@ -28,7 +28,7 @@ on A = Z+N nucleons:
 β-decay calibration: E_0 = 0.78233341 MeV / |tr_M(n) - tr_M(p)|.
 Binding: B = E_0 · (|tr_M(free)| - |tr_M(atom)|).
 
-Frobenius correction per prop:partition-sum-proton-residual and
+Frobenius correction per conj:partition-sum-proton-residual and
 thm:frobenius-codim-universal:
   Δ_Frob = m_e · (2 + 1/[2]_q) ≈ 1.276 MeV (universal, n=3)
 
@@ -65,6 +65,7 @@ from syt_prefix_cache import BlockCache, build_seminormal_matrices_cached
 from witness_base import WitnessBuilder  # noqa: E402
 from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 from codata_constants import AME_B_HE4_MEV_VALIDATION
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION  # noqa: E402  (AME registry)
 
 
 M_E = M_E_MEV
@@ -252,9 +253,9 @@ if __name__ == "__main__":
 
     # ─── Isotope sweep ────────────────────────────────────────
     ISOTOPES = [
-        ("D",   1, 1,  2.22457),
+        ("D",   1, 1,  float(AME_B_DEUTERON_MEV_VALIDATION)),
         ("T",   1, 2,  8.48180),
-        ("3He", 2, 1,  7.71806),
+        ("3He", 2, 1,  float(AME_B_HE3_MEV_VALIDATION)),
         ("4He", 2, 2, AME_B_HE4_MEV_VALIDATION),
     ]
     print(f"{'iso':>5} {'A':>3}  {'|tr_free|':>14} {'|tr_atom|':>14} "
@@ -353,7 +354,7 @@ if __name__ == "__main__":
             "prop:schur-weyl-mass-decomposition",
             "thm:frobenius-codim-universal",
             "thm:knot-mass-formula-unified",
-            "prop:partition-sum-proton-residual",
+            "conj:partition-sum-proton-residual",
         ],
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "parameters": {

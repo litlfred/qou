@@ -26,7 +26,7 @@ is the division-free product `q · η · (↑u⁻¹)²`.  Over a field with
 `ring` identity.
 
 ## References
-- [manuscript] §9/information-bandwidth
+- [leitner2026] §9/information-bandwidth
 -/
 
 namespace QOU.Information
@@ -37,7 +37,7 @@ namespace QOU.Information
 
     The product of the speed of light c_q = 1/(q - 1), the iteration
     count n_R(q) = 1/ℏ_q, and the operational entropy η_q per fibre. -/
--- Ref: [manuscript] §9/information-bandwidth
+-- Ref: [leitner2026] §9/information-bandwidth
 def informationBandwidth {R : Type*} [CommRing R]
     (q η : R) (u : Rˣ) (_hu : (u : R) = q - 1) : R :=
   q * η * (↑u⁻¹ : R) ^ 2
@@ -45,11 +45,11 @@ def informationBandwidth {R : Type*} [CommRing R]
 /-- The information bandwidth factors as c_q · n_R · η, with
     c_q = 1/(q - 1) = `↑u⁻¹` the speed of light and
     n_R = 1/ℏ_q = q/(q-1) = `q · ↑u⁻¹`. -/
--- Ref: [manuscript] §9/information-bandwidth
+-- Ref: [leitner2026] §9/information-bandwidth
 theorem informationBandwidth_eq_factored {R : Type*} [CommRing R]
     (q η : R) (u : Rˣ) (hu : (u : R) = q - 1) :
     informationBandwidth q η u hu = (↑u⁻¹ : R) * (q * (↑u⁻¹ : R)) * η := by
-  -- Ref: [manuscript] §9/information-bandwidth
+  -- Ref: [leitner2026] §9/information-bandwidth
   unfold informationBandwidth
   ring
 

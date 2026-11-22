@@ -1,0 +1,41 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/oberwolfachreports1223-v20120708-9-40/sections/sec-023",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Torus bundles, and the lower central series of metabelian groups",
+  "pageStart": 46,
+  "pageEnd": 48,
+  "contains": [
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/prose-sec-023",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/thm-sec-023-01",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/thm-sec-023-02",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/cor-sec-023-03",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/cor-sec-023-04",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/cor-sec-023-05",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/thm-sec-023-06",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/thm-sec-023-07",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/figure-img-p047-1",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/figure-img-p047-7",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/figure-img-p047-13",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/figure-img-p047-19",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/figure-img-p047-25",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/figure-img-p047-31",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/figure-img-p048-1",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/figure-img-p048-8",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/figure-img-p048-15",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/figure-img-p048-22",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/figure-img-p048-29",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/figure-img-p048-36",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/figure-img-p048-43"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/oberwolfachreports1223-v20120708-9-40/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/oberwolfachreports1223-v20120708-9-40/manifest.jsonld",
+  "provenance": "ingested"
+}

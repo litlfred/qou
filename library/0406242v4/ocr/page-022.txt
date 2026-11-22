@@ -1,0 +1,45 @@
+1260 Francois Guéritaud and David Futer
+
+C. We shall no longer distinguish L|R‘L from L|R*|L here, and shall formulate all
+properties in terms of complex numbers in order to keep track of oriented angles. We
+make two consecutive nodes (ie lifts of the (2k + 4)—valent vertex of A associated
+to the full subword LR*L) coincide with —1 and 1 in C, and also denote by u; the
+complex coordinate of the copy of u; between these nodes (the index i actually ranges
+from —1 to k+ 1; see Figure 9). Incidentally, one can show that the u; form (part of)
+an orbit of a certain deck transformation of the universal cover H? > Vo. We will
+discuss this more at the end of Section 10.
+
+We arrange matters so that Im(uo) < 0 and u, lies on the open segment (ug, 1). While
+removing any node disconnects the fan, Condition (1)-iii implies that the image of the
+embedding is invariant under a horizontal translation of length 2. In particular, the
+geometric link of each node, such as 1 or —1, is completely determined. To prove the
+assertion of the Lemma, it is sufficient to show that Re(ug) < 0. Assume Re(uo) > 0
+(so uo lies in the lower-right quadrant) and aim for a contradiction.
+
+The similarity property of the triangles with vertices 1, uj,uj+; and —1,u;, uj; is
+expressed by the relation weir =* aH , hence by induction
+
+(ui — Du; + 1) = i — Dw-1 + 1) = ++ = (a — Duo +: 2) =: K.
+
+Then, as uw; sits between | and ug, the number u; — | is a positive (real) multiple of
+ug — 1, so K is a positive multiple of u3 — 1 which implies Im(K) < 0. Let D be the
+line through 0 and the points +\/K: either D is vertical, or D visits the upper-left and
+lower-right (open) quadrants. Let D’ be the line through 1, parallel to D; and define
+ui := 2+u; forall i. By definition of K, the rays [1, ui+1) and [1, u/) are symmetric with
+respect to D’. Moreover, the rays through uo, W1,..., Ue, Metis Ups Uy, +++, Up, U1, Uo
+issuing from 1 (in that cyclic order) divide C into angular sectors of sum 27 realizing
+the geometric link of a node of the fan, as specified by the angles x;, y;,z; > 0. Finally,
+since all these angles are nonnegative, the symmetry of the link with respect to D’
+implies that for all —1 <i <k, the point uv} (resp. u;+1) is on the right (resp. left) of
+D’.
+
+Recall Im(up) < 0. Suppose by induction Im(u;) < 0 for some 0 < i < k. Then
+Im(uj) < 0. Considering the direction of D’ and the symmetry property with respect to
+D’, this implies Im(u;+1) < 0. By an immediate induction, the angular sector uz41 lui,
+(just above 1) is larger than 7. But it is an angle of the link at the node 1 (namely,
+Zk+1), giving a contradiction. im
+
+Of course, a statement similar to Lemma 8.2 holds for subwords LR'L, and also for
+R\LER, R\L'|R and RLE|R.
+
+Geometry & Topology 10 (2006)

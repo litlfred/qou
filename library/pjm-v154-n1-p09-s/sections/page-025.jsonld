@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/pjm-v154-n1-p09-s/sections/page-025",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Page 25",
+  "pageStart": 25,
+  "pageEnd": 25,
+  "contains": [
+    "library/pjm-v154-n1-p09-s/blocks/prose-page-025"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/pjm-v154-n1-p09-s/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/pjm-v154-n1-p09-s/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,0 +1,51 @@
+240 Effective computations and ACSV
+
+and thus
+
+li) x Tj set .
+0) = ly + = 0.
+(x): ) p) we (W)Ws41 + st
+
+Repeating this argument with indices s + 2,...,d shows that the gradient of ¢
+vanishes at 8 = 0. im
+
+Recall from Definitions 7.11 and 7.34 that a nondegenerate critical point w
+is a critical point where the Hessian of ¢ at the origin is nonsingular; integrals
+near nondegenerate critical points are those to which we can apply the tech-
+niques of Chapter 5. Although the Hessian matrix can always be computed in
+terms of derivatives of the g;, which themselves can be determined through
+implicit differentiation or the determinant expressions derived in our proof of
+Lemma 8.21, in the smooth case things are simple enough to derive an explicit
+expression for the Hessian matrix itself.
+
+Lemma 8.22. Suppose w is a critical point where H,,(w) # 0 and let
+
+tre) . (r° . 0)
+
+Yd
+
+$(9) = |
+
+in the variables 0 = (0,,...,0g-1), where (we) = (wie, see wate”),
+Then the (d — 1) x (d - 1) Hessian matrix of ¢ at 9 = 0 has (i, j)th entry
+
+ViVj + Uij — ViUia - ViUjat+ViViUaa sit j
+
+Hij = , (8.7)
+Vi + V2 + Uj; — 2ViU ia + V?U aa fief
+where
+ww jH.,z,(w) i
+i= wwe) ang y= (8.8)
+waH-,(w) Ya
+
+for all 1 < j < d. If, more generally, H,,(w) # 0 then the same formula holds
+when d is replaced by k.
+
+Exercise 8.4. Use the chain rule to prove Lemma 8.22.
+
+8.4.2 Numeric analytic continuation of D-finite functions
+
+Recall from Chapter 2 that a D-finite equation is a linear differential equation
+with polynomial coefficients, and a D-finite function is one that satisfies a D-
+finite equation. Because the diagonal of any multivariate rational function is
+D-finite, we can use D-finite equations as data structures to manipulate and

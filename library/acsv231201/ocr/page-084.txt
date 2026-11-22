@@ -1,0 +1,55 @@
+66 Univariate asymptotics
+
+implies x Le (2) = a, and (3.6) can be rearranged to give
+
+! 1 dz
+= =n-1 7) 4
+Gn = — », Res lz f@)| + ai J, SOs .
+JF *
+
+Since f(z) is analytic on the circle C,, which is a compact set, the function
+| f(z) is bounded on C,, and
+
+1 dz
+mi J, (on
+
+The stated forms for the residues follow from Lemma 3.6. ia)
+
+< max|f(z)|-S7" = O(S").
+zeCy
+
+As was observed above for rational functions, if f(z) satisfies the conditions
+of Proposition 3.7 and has a unique singularity closest to the origin then the
+contribution of this point determines dominant asymptotics of a,, up to an
+exponentially smaller error. If f(z) has multiple poles of minimal modulus,
+and several of them have maximum order, then we must consider cancellation
+between their asymptotic contributions.
+
+Example 3.8 (surjection asymptotics). As seen in Example 2.53, the number
+a, of surjections from a set of size n has exponential generating function
+
+IO = 5
+
+This function is meromorphic in the entire complex plane, with poles at the
+solutions & = {log2 + k2zi : k € Z} to the equation 2 — e* = 0 in the com-
+plex plane. Writing p(z) = 1 and q(z) = 2 — e*, we see that w € & implies
+p(w), q’(w) # 0, so every element of = is a simple pole. Because log 2 is the
+unique element of & with minimal modulus, Proposition 3.7 implies
+
+an —p(log2) 1yVow.y"
+n! (log 2)q’(log 2) \log2) 2 \log2)~
+
+In fact, because all singularities of f(z) are poles, Proposition 3.7 allows us
+to obtain an asymptotic expansion of a, to arbitrary accuracy. If S > 0 is not
+equal to the modulus of any element in =, and &s denotes the elements of =
+with modulus at most S, then
+
+Gn AC)
+
+nl ae. wq'(w)
+
+1
+=n -ny _ * n=l =n
+o"+O(S")= 5 > w +0(S").
+
+wees

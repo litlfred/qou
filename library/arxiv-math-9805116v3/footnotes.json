@@ -1,0 +1,1586 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-math-9805116v3",
+ "status": "determined",
+ "body_size": 10.9,
+ "footnotes": [
+  {
+   "id": "fn-p001-1",
+   "page": 1,
+   "mark": "1",
+   "text": "ResearchInstituteforParticleandNuclearPhysics,Budapest,H-1525Budapest114,P.O.B.49,Hungary E-mail: BGABR@rmki.kfki.hu Supported by the Hungarian Scientiﬁc Research Fund, OTKA – T 016 233",
+   "marks": [
+    {
+     "page": 1,
+     "context": "GabriellaB¨ohm"
+    }
+   ],
+   "block": "library/arxiv-math-9805116v3/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p001-2",
+   "page": 1,
+   "mark": "2",
+   "text": "Institutf¨urTheoretischePhysik,FU–BerlinArnimallee14,D-14195Berlin,Germany E-mail: NILL@mail.physik.fu-berlin.de Supported by the DFG, SFB 288 ”Diﬀerentialgeometrie und Quantenphysik”",
+   "marks": [
+    {
+     "page": 1,
+     "context": "GabriellaB¨ohm1,FlorianNill"
+    }
+   ],
+   "block": "library/arxiv-math-9805116v3/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p001-3",
+   "page": 1,
+   "mark": "3",
+   "text": "ResearchInstituteforParticleandNuclearPhysics,Budapest,H-1525Budapest114,P.O.B.49,Hungary E-mail: SZLACH@rmki.kfki.hu Supported by the Hungarian Scientiﬁc Research Fund, OTKA – T 020 285.",
+   "marks": [
+    {
+     "page": 1,
+     "context": "GabriellaB¨ohm1,FlorianNill2,Korn´elSzlach´anyi"
+    }
+   ],
+   "block": "library/arxiv-math-9805116v3/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p006-1",
+   "page": 6,
+   "mark": "1",
+   "text": "Intakingthetransposeofastatementwith⊓L/RusethefactthatinaWBA ⟨ϕ, ⊓L(x)⟩= ⟨ˆ1(1) ⊗ˆ1(2), 1(1) ⊗x⟩⟨ϕ, 1(2)⟩= ⟨ˆ⊓L(ϕ), x⟩and similarly ⟨ϕ, ⊓R(x)⟩= ⟨ˆ⊓R(ϕ), x⟩.",
+   "marks": [
+    {
+     "page": 6,
+     "context": "Asaﬁrstapplicationofthedualityprincipletake"
+    }
+   ],
+   "block": "library/arxiv-math-9805116v3/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p011-1",
+   "page": 11,
+   "mark": "2",
+   "text": "InfactqisanidempotentonlyifconsideredasanelementofA ⊗Aop.",
+   "marks": [
+    {
+     "page": 10,
+     "context": "rtoproveinvertibilityofSnoticethatthedescendingchainA⊃S(A)⊃S"
+    },
+    {
+     "page": 11,
+     "context": "enoughtoproveinvertibilityofSundertheadditionalassumptionS"
+    },
+    {
+     "page": 11,
+     "context": "tiplicationmapofA[18].Suchaqwillbecalledaseparableidempotent"
+    }
+   ],
+   "block": "library/arxiv-math-9805116v3/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p023-1",
+   "page": 23,
+   "mark": "3",
+   "text": "AlthoughthisisclearfromthefactthatALissemisimple,constructingtheconcretebasesλa,rawasnot in vain since it will help to compute the commutant in (3.38).",
+   "marks": [
+    {
+     "page": 23,
+     "context": "NoticethatEqn(3.35)meansthatALIRisﬁnitelygeneratedprojective"
+    }
+   ],
+   "block": "library/arxiv-math-9805116v3/blocks/prose-sec-007"
+  },
+  {
+   "id": "fn-p025-1",
+   "page": 25,
+   "mark": "4",
+   "text": "AsanexampleconsiderM2(ZZ2),thesemisimplealgebraoftwobytwomatricesovertheﬁeldofmod2 residue classes. Fix a set of matrix units {eij} and introduce the coproduct ∆(eij): = eij ⊗eij. Then we have two normalized left integrals lj = P",
+   "marks": [
+    {
+     "page": 25,
+     "context": "sharingbothproperties."
+    }
+   ],
+   "block": "library/arxiv-math-9805116v3/blocks/prose-sec-007"
+  },
+  {
+   "id": "fn-p025-2",
+   "page": 25,
+   "mark": "i",
+   "text": "eijfor j= 1, 2 neither of which is non-degenerate.The only non-degenerate left integral is l = l1 + l2 for which however ⊓L(l) = 0.",
+   "marks": [
+    {
+     "page": 24,
+     "context": "S2(bi)⇀(β"
+    }
+   ],
+   "block": "library/arxiv-math-9805116v3/blocks/prose-sec-007"
+  },
+  {
+   "id": "fn-p025-3",
+   "page": 25,
+   "mark": "5",
+   "text": "HereweusethestandardnotationsfL, fR: A→ˆAdeﬁnedbyfL(x):=f ↼xandfR(x):=x ⇀fforany f ∈ˆA.",
+   "marks": [
+    {
+     "page": 25,
+     "context": "Proof :ByLemma3.2.d)iflisaleftintegralsuchthatλ⇀l= 1then"
+    }
+   ],
+   "block": "library/arxiv-math-9805116v3/blocks/prose-sec-007"
+  }
+ ],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "g",
+   "context": "R,"
+  },
+  {
+   "page": 1,
+   "mark": "g",
+   "context": "R,gL∈AL,"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "aHaarintegralhandacanonicalgrouplikeelementg≥0implementingS"
+  },
+  {
+   "page": 8,
+   "mark": "x",
+   "context": "A:"
+  },
+  {
+   "page": 8,
+   "mark": "x",
+   "context": "A:"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "If{bi}isaK-basisofAand{β"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "If{bi}isaK-basisofAand{βi} ⊂ˆAisitsdualbasis,⟨β"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "bi ⊗ˆ⊓L(β"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "⊓L(bi) ⊗β"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "⊓R(bi) ⊗β"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "bi ⊗ˆ⊓R(β"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "1∈S"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "1∈Sn+1(A)=S"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "1∈Sn+1(A)=Sn(A)⊂S"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "WewanttoshowthatthisimpliesS"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "WewanttoshowthatthisimpliesSn(A) = S"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "WewanttoshowthatthisimpliesSn(A) = Sn−1(A).ReplacingAbyS"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "ymmetric,orsemisimple,andstudyquestionsrelatedtoinnernessofS"
+  },
+  {
+   "page": 14,
+   "mark": "4",
+   "context": "tric,orsemisimple,andstudyquestionsrelatedtoinnernessofS2orS"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "bi ⊗m · β"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "β"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "Here{bi}denotesanarbitrarybasisofAand{β"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "Here{bi}denotesanarbitrarybasisofAand{βi}isitsdualbasis:⟨β"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "β"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "β"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "β"
+  },
+  {
+   "page": 19,
+   "mark": "h",
+   "context": "βi"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "β"
+  },
+  {
+   "page": 19,
+   "mark": "h",
+   "context": "βi"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "β"
+  },
+  {
+   "page": 19,
+   "mark": "h",
+   "context": "βi"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "S(x(2))x(3) ⇀β"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "(x(2) ⇀β"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "S(x(1))⇀(β"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "AL Aandmakeitinto"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "choosingabasis{λ"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "ˆS"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "ˆS2(β"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "(xbi)↼ˆS"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "(xbi)↼ˆS2(β"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "Thedualbasessatisfy⟨λ"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "⟨λ"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "⟨ˆL(β"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "⟨ˆL(βi) ,xS(bi)⟩= ⟨S"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "⟨ˆL(βi) ,xS(bi)⟩= ⟨S2(bj)⇀β"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "⟨ˆL(βi) ,xS(bi)⟩= ⟨S2(bj)⇀βjβ"
+  },
+  {
+   "page": 20,
+   "mark": "k",
+   "context": "⟨ˆL(βi) ,xS(bi)⟩= ⟨S2(bj)⇀βjβi,xS(bi)⟩= ⟨β"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "P(λ ⊗x):=S"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "i(λ"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "i(λi⊗x"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "iS"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "iS2(1(1)) ⇀λ"
+  },
+  {
+   "page": 21,
+   "mark": "x",
+   "context": "iS2(1(1)) ⇀λi⊗1(2)"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "iS2(1(1)) ⇀λi⊗1(2)x"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "NowassumePλ"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "NowassumePλi ⊗x"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "[λi ⊗S(1(1))(1(2)xi) −S"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "p=p"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "setsofelements{ra}inIRand{λ"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "(r, λ"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "aλ"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "aλa ·f(r"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "λ"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "(r, λ"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "(r, λ"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "forallr ∈IR.Nowweclaimthatapairofdualbases{ra}ofIRand{λ"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "ofK-duality,i.e.⟨λ"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "(λ"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "(λ"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "⟨λ"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "⟨λ"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "⟨λ"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "(1), r⟩⟨ˆS−1(λ)λ"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "(2), S(r"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "⟨λλ"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "(1), r⟩⟨λ"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "S(ra)⇀λ"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "(2), S(r"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "S"
+  },
+  {
+   "page": 24,
+   "mark": "j",
+   "context": "S2(bi)⇀(βiβ"
+  },
+  {
+   "page": 24,
+   "mark": "j",
+   "context": "ˆL(β"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "λ"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "(r, λ"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "ALIR∼=⊕aMat (n"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "ALIR∼=⊕aMat (na× m"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "ALIR∼=⊕aMat (na× ma,D"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "(dimK Da) n"
+  },
+  {
+   "page": 25,
+   "mark": "r",
+   "context": "∗and"
+  },
+  {
+   "page": 26,
+   "mark": "a",
+   "context": "i"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "ia"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "iai⊗b"
+  },
+  {
+   "page": 26,
+   "mark": "a",
+   "context": "i"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "ia"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "iai⊗b"
+  },
+  {
+   "page": 26,
+   "mark": "f",
+   "context": "i"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "R(β"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "R(βi) ⊗b"
+  },
+  {
+   "page": 26,
+   "mark": "a",
+   "context": "i"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "ia"
+  },
+  {
+   "page": 26,
+   "mark": "b",
+   "context": "iai"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "iaib"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "AisaWHAwhichisFrobeniusthenonemayaskthequestionwhetherθA= [S"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "θf= S"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "Proof :θλ= S"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "S"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "TheinnernessofS"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "functionalonAthemodularautomorphismofwhichisS"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "Conversely,letS"
+  },
+  {
+   "page": 28,
+   "mark": "4",
+   "context": "ThenS"
+  },
+  {
+   "page": 28,
+   "mark": "4",
+   "context": "S"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "θ"
+  },
+  {
+   "page": 28,
+   "mark": "a",
+   "context": "R⇀ψ↼aL"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "laL= l↼αR= l↼(ˆh↼h) = h(l↼ˆh) = h( ˆS"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "nowcomputethemodularautomorphismofˆhusingtheinformationθλ= S"
+  },
+  {
+   "page": 28,
+   "mark": "a",
+   "context": "θˆh= Ad"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "θˆh= Ad aR◦S"
+  },
+  {
+   "page": 29,
+   "mark": "a",
+   "context": "Ad"
+  },
+  {
+   "page": 29,
+   "mark": "a",
+   "context": "Ad aL◦S−2=θˆh=Ad"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "Ad aL◦S−2=θˆh=Ad aR◦S"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "h"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "β"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "where{bi}and{β"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "iβ"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "iβiψ↼S−2(b"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "⟨β"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "Tr AQ−(y) ◦Q−(x) ◦S−2= Tr AQ−(y) ◦S−2◦Q−(S"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "χ(yS"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "ˆS"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "β"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "⟨ˆ1(1), S−1(1(2))1(1)⟩ˆ1(2) ↼S−2(l) = ˆ1↼S−2(l) =ˆS"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "existsag∈A×suchthatgxg−1=S"
+  },
+  {
+   "page": 30,
+   "mark": "x",
+   "context": "i"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "ix"
+  },
+  {
+   "page": 30,
+   "mark": "g",
+   "context": "ixi"
+  },
+  {
+   "page": 30,
+   "mark": "y",
+   "context": "ixig−1"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "ixig−1y"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "functionalψ.Inparticularθχ=S"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "g∈A×implementingS"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "M"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "M"
+  },
+  {
+   "page": 32,
+   "mark": "r",
+   "context": "Mnr= Mat(n"
+  },
+  {
+   "page": 32,
+   "mark": "c",
+   "context": "A"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "M"
+  },
+  {
+   "page": 32,
+   "mark": "c",
+   "context": "a∈Sec A"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "phismsuchthat(∗◦S)"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "gxg−1=S"
+  },
+  {
+   "page": 32,
+   "mark": "r",
+   "context": "r= e"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "r} for the C∗-algebra A and deﬁne the antiautomorphism S"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "¯r.ThenS"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "0= id Aand∗◦S"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "0= id Aand∗◦S0= S"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "0= id Aand∗◦S0= S0◦∗.SinceS ◦S"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "(∗◦S)"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "S"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "henceT:= CS0(C−1) = CC∗[S0(C)C∗]−1= CC∗K−1∗implementsS"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "u = K−1∗(K∗K)"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "S(C)S"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "g′ispositiveinvertible,implementsS"
+  },
+  {
+   "page": 33,
+   "mark": "a",
+   "context": "AˆA"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "agimplementingS"
+  },
+  {
+   "page": 33,
+   "mark": "k",
+   "context": "k⊗a"
+  },
+  {
+   "page": 33,
+   "mark": "k",
+   "context": "k⊗ak|a"
+  },
+  {
+   "page": 34,
+   "mark": "g",
+   "context": "q}forAandlet"
+  },
+  {
+   "page": 34,
+   "mark": "x",
+   "context": "i"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "ix"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "ixi⊗y"
+  },
+  {
+   "page": 34,
+   "mark": "g",
+   "context": "q"
+  },
+  {
+   "page": 34,
+   "mark": "e",
+   "context": "qg−1/2 ⊗g−1/2"
+  },
+  {
+   "page": 34,
+   "mark": "g",
+   "context": "q"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "qg"
+  },
+  {
+   "page": 34,
+   "mark": "1",
+   "context": "qg1/2 ⊗g"
+  },
+  {
+   "page": 34,
+   "mark": "e",
+   "context": "qg1/2 ⊗g1/2"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "Proof :Thequasibasisofχ=g⇀τisPx"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "Proof :Thequasibasisofχ=g⇀τisPxig−1⊗y"
+  },
+  {
+   "page": 34,
+   "mark": "y",
+   "context": "i"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "iy"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "iyi⊗x"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "iS−1(x"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "iS−1(xi) ⊗S−1(y"
+  },
+  {
+   "page": 34,
+   "mark": "q",
+   "context": "q= ⊓L(e"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "ii)gxg−1= S"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "P x"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "P xi ⊗y"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "Thereforec"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "Thereforec2⇀ϕ ≡c⇀ϕ↼c = ϕforallϕ ∈ˆA.Thusc"
+  },
+  {
+   "page": 36,
+   "mark": "x",
+   "context": "Rwith"
+  },
+  {
+   "page": 36,
+   "mark": "x",
+   "context": "Rwith xL∈ALand"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "R"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "R1(2)=xxR"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "R"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "R1(2)=x"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "R1(2)=x1(1)⊗x"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "gL:= (ˆh⇀h)"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "gR= (h↼ˆh)"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "areinvariantunderS"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "g"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "S"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": ".SoaretheC∗-algebrasgeneratedbyeachofthem,pointwise.HenceS(g"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "L)"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "L)2≥0.Ontheotherhand S(gL)"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "L)2≥0.Ontheotherhand S(gL)2= S(g"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "S−1(g"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "L) = S(g"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "L)thereforeS(gL) = S(g"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "L) = g"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "thereforeS(gL)isthepositivesquarerootofg"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "validforxR∈AR,suﬃces.Thereforeˆ1 ↼g"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "L,orˆ1 ↼g"
+  },
+  {
+   "page": 37,
+   "mark": "g",
+   "context": "L=ˆ"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "L=ˆg"
+  },
+  {
+   "page": 37,
+   "mark": "g",
+   "context": "R=ˆ"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "R=ˆg"
+  },
+  {
+   "page": 37,
+   "mark": "g",
+   "context": "R"
+  },
+  {
+   "page": 37,
+   "mark": "h",
+   "context": "Lˆ"
+  },
+  {
+   "page": 37,
+   "mark": "g",
+   "context": "Lˆhˆ"
+  },
+  {
+   "page": 37,
+   "mark": "g",
+   "context": "R"
+  },
+  {
+   "page": 37,
+   "mark": "x",
+   "context": "L,for"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "ii):Theidentityˆh ⇀h=g"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "Rimplies"
+  },
+  {
+   "page": 37,
+   "mark": "g",
+   "context": "Rimplies1=ˆh ⇀h ↼ˆ"
+  },
+  {
+   "page": 37,
+   "mark": "g",
+   "context": "L=1 ↼ˆ"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "L=1 ↼ˆg"
+  },
+  {
+   "page": 37,
+   "mark": "h",
+   "context": "R(ˆ"
+  },
+  {
+   "page": 37,
+   "mark": "g",
+   "context": "R(ˆhˆ"
+  },
+  {
+   "page": 37,
+   "mark": "h",
+   "context": "Lˆ"
+  },
+  {
+   "page": 37,
+   "mark": "g",
+   "context": "Lˆhˆ"
+  },
+  {
+   "page": 37,
+   "mark": "h",
+   "context": "R⇀ˆ"
+  },
+  {
+   "page": 37,
+   "mark": "h",
+   "context": "R⇀ˆ"
+  },
+  {
+   "page": 37,
+   "mark": "g",
+   "context": "R)ˆ"
+  },
+  {
+   "page": 37,
+   "mark": "g",
+   "context": "R)ˆgR=ˆ"
+  },
+  {
+   "page": 37,
+   "mark": "g",
+   "context": "L"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "whereρR= ⊓R(l)⇀ˆ1andρL= S−1(⊓R(l))⇀ˆ1 =ˆS"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "ii)Iflisnon-degeneratethenlisnormalizediﬀl"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": ")lisofpositivetype,i.e.⟨ϕ∗ϕ, l⟩≥0forallϕ∈ˆA,iﬀ⊓R(l)≥0iﬀρR∈ˆg"
+  },
+  {
+   "page": 38,
+   "mark": "g",
+   "context": "+ˆ"
+  },
+  {
+   "page": 38,
+   "mark": "a",
+   "context": "Randthereexists"
+  },
+  {
+   "page": 38,
+   "mark": "l",
+   "context": "AR.ii):"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "AR.ii):l"
+  },
+  {
+   "page": 38,
+   "mark": "l",
+   "context": "AR.ii):l2= limplies(⊓L(l) −1)"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "Thenintroducingξ=⊓R(l)"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "Thenintroducingξ=⊓R(l)1/2⇀ˆ1wehave⊓R(l)"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "Thenintroducingξ=⊓R(l)1/2⇀ˆ1wehave⊓R(l)1/2=ξ ⇀1,S−1(⊓R(l)"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "(1 ↼ˆS−1(ξ))∗=1 ↼ξ∗thereforel=hS−1(⊓R(l)"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "(1 ↼ˆS−1(ξ))∗=1 ↼ξ∗thereforel=hS−1(⊓R(l)1/2) ⊓R(l)"
+  },
+  {
+   "page": 38,
+   "mark": "g",
+   "context": "R⇀ˆ1)∗=ˆ"
+  },
+  {
+   "page": 38,
+   "mark": "x",
+   "context": "R.Thereforetheequality⊓R(l) = xR∗xRforsome"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "ρR=(xR⇀ˆ1)(xR∗⇀ˆ1)=ˆg"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "(xR⇀ˆ1)ˆg"
+  },
+  {
+   "page": 38,
+   "mark": "g",
+   "context": "Rηη∗ˆ"
+  },
+  {
+   "page": 38,
+   "mark": "f",
+   "context": "i"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "if"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "ifi⊗e"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "ifi⊗ei∈B ⊗Bisindependentofthechoiceof{e"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "iE(xf"
+  },
+  {
+   "page": 38,
+   "mark": "e",
+   "context": "iE(xfi)"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "iE(xfi)e"
+  },
+  {
+   "page": 38,
+   "mark": "f",
+   "context": "i"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "if"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "ifiE(e"
+  },
+  {
+   "page": 38,
+   "mark": "x",
+   "context": "ifiE(ei"
+  },
+  {
+   "page": 38,
+   "mark": "x",
+   "context": "ifiE(eix),"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "c)Pf"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "c)Pfie"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "ixf"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "ixfi⊗e"
+  },
+  {
+   "page": 38,
+   "mark": "f",
+   "context": "i"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "if"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "ifi⊗e"
+  },
+  {
+   "page": 38,
+   "mark": "x",
+   "context": "ifi⊗ei"
+  },
+  {
+   "page": 38,
+   "mark": "x",
+   "context": "ifi⊗eix,"
+  },
+  {
+   "page": 38,
+   "mark": "f",
+   "context": "i"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "if"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "ifi⊗e"
+  },
+  {
+   "page": 38,
+   "mark": "e",
+   "context": "i"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "ie"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "iei⊗θ−1(f"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "iθ(e"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "iθ(ei) ⊗f"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "fi ⊗ei≡S"
+  },
+  {
+   "page": 39,
+   "mark": "e",
+   "context": "i"
+  },
+  {
+   "page": 39,
+   "mark": "i",
+   "context": "ie"
+  },
+  {
+   "page": 39,
+   "mark": "f",
+   "context": "iei"
+  },
+  {
+   "page": 39,
+   "mark": "i",
+   "context": "ieif"
+  },
+  {
+   "page": 39,
+   "mark": "x",
+   "context": "ieifialwaysimplements θ−1, i.e.xq= qθ(x) for"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "isprovesthatθisinnerandthereforesoisthesquareoftheantipode,S"
+  },
+  {
+   "page": 39,
+   "mark": "f",
+   "context": "i"
+  },
+  {
+   "page": 39,
+   "mark": "i",
+   "context": "if"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "ifiγ"
+  },
+  {
+   "page": 39,
+   "mark": "e",
+   "context": "ifiγ2"
+  },
+  {
+   "page": 39,
+   "mark": "i",
+   "context": "ifiγ2e"
+  }
+ ]
+}

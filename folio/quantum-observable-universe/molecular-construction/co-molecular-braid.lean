@@ -1,4 +1,4 @@
--- Ref: [manuscript] Ch. 10, §co-molecular-braid
+-- Ref: [leitner2026] Ch. 10, §co-molecular-braid
 -- Carbon monoxide CO as a molecular braid
 
 namespace QOU.Molecular

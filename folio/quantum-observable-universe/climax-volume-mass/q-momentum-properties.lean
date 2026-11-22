@@ -30,7 +30,7 @@ def qMomentumP {k : Type*} [Field k] (q : k) (crossingSigns : List ℤ) :
     Iwahori–Hecke algebra; the foldl-decomposition is in the companion
     `QMomentum` file. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
--- Ref: [manuscript] climax-volume-mass/q-momentum-properties
+-- Ref: [leitner2026] climax-volume-mass/q-momentum-properties
 theorem qMomentumP_additive {k : Type*} [Field k] (q : k) (s₁ s₂ : List ℤ) :
     qMomentumP q (s₁ ++ s₂) = qMomentumP q s₁ + qMomentumP q s₂ := by
   -- The fold with accumulator `acc + g ε` is a sum: the initial

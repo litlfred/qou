@@ -126,7 +126,7 @@ theorem borromean3_alt_char :
     nonzero off-diagonal entries, meaning e⁻ ≠ 0 for the proton.
 
     The typed crossings break any symmetry that B₃ had and
-    introduce the trefoil (e⁻) component. The SIGN of this
+    introduce the e⁻ (σ₀σ₁σ₀) component. The SIGN of this
     component is negative (demand), establishing the beta decay
     receptivity.
 

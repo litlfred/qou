@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0203194v1/sections/sec-090",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Topology of Rigid Analytic Space.",
+  "pageStart": 220,
+  "pageEnd": 222,
+  "contains": [
+    "library/arxiv-math-0203194v1/blocks/prose-sec-090",
+    "library/arxiv-math-0203194v1/blocks/lem-sec-090-01",
+    "library/arxiv-math-0203194v1/blocks/prop-sec-090-02",
+    "library/arxiv-math-0203194v1/blocks/cor-sec-090-03",
+    "library/arxiv-math-0203194v1/blocks/prop-sec-090-04",
+    "library/arxiv-math-0203194v1/blocks/cor-sec-090-05",
+    "library/arxiv-math-0203194v1/blocks/thm-sec-090-06",
+    "library/arxiv-math-0203194v1/blocks/rem-sec-090-07"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203194v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203194v1/manifest.jsonld",
+  "provenance": "ingested"
+}

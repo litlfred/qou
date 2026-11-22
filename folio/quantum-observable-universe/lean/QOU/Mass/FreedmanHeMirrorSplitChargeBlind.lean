@@ -6,7 +6,7 @@ Arc context (em-linking; beans `qou-o6ml`, `qou-0hdx`). The Freedman–He energy
 bound for a divergence-free field on an invariant domain modelled on an
 `n`-component link `L`, as stated by Komendarczyk (arXiv:0808.1533v1, eq. (43),
 p. 26; verified in this repo at
-`library/arxiv-0808.1533v1/sections/sec-001-energy-bound.md:203-216`), is
+`library/arxiv-0808.1533v1/sections/sec-005-energy-bound.md:203-216`), is
 
   `E_{3/2}(X) ≥ (π/16)^{1/4} · (Σ_{k=1..n} ac(L_k, L)|Flux(X_k)|) · min_k |Flux(X_k)|`
 

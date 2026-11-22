@@ -1,0 +1,67 @@
+have is-real ?Ail
+by simp
+
+have sgn (Re ?Bil / Re ?Ail) = sgn (Re ?Bal / Re ?Aa1)
+proof—
+have Re ?Bil / Re ?Ail = (Im ?i1l * 2 — Im ?i2 * 2) /
+(Im ?i2 « (Re ?i1 * 2) — Im ?i1 = (Re 7i2 * 2))
+using <cmod ?i1 = 1» <cmod ?i2 = 1)
+by (auto simp add: complex-mult-cnj-cmod field-simps)
+also have ... = (Im ?i1 — Im ?i2) /
+(Im ?i2 « (Re ?i1) — Im ?i1 * (Re ?i2)) (is ... = Pexpr)
+apply (subst left-diff-distrib|symmetric])
+apply (subst semiring-normalization-rules(18))+
+apply (subst left-diff-distrib|symmetric])
+by (metis mult.commute mult-divide-mult-cancel-left-if zero-neg-numeral)
+finally have 1: Re ?Bil / Re ?Ail = (Im ?i1 — Im ?i2) / (Im ?i2 * (Re ?i1) — Im ?i1 * (Re ?i2))
+
+have Re ?Bal / Re ?Aal = (Im ?i1 * 20 — Im ?i2 * 20) /
+(Im ?i2 * (Re ?i1 * 16) — Im ?il * (Re ?i2 * 16))
+using <cmod (to-complex i1) = 1) <cmod (to-complex i2) = 1>
+by (auto simp add: complex-mult-cnj-cmod field-simps)
+also have ... = (20 / 16) « ((Im ?i1 — Im ?i2) /
+(Im ?i2 « (Re ?i1) — Im ?i1 * (Re ?i2)))
+apply (subst left-diff-distrib|symmetric] )+
+apply (subst semiring-normalization-rules(18))+
+apply (subst left-diff-distrib|symmetric] )+
+by (metis (no-types, opaque-lifting) field-class. field-divide-inverse mult.commute times-divide-times-eq)
+finally have 2: Re ?Bal / Re ?Aal = (5 / 4) * ((Im ?i1 — Im ?i2) / (Im ?i2 * (Re 2i1) — Im %i1
+* (Re ?i2)))
+by simp
+
+have ?expr # 0
+using ‘Re ?Bal / Re ?Aal < —1»
+apply (subst (asm) 2)
+by linarith
+
+thus ?thesis
+apply (subst 1, subst 2)
+apply (simp only: sgn-mult)
+by simp
+
+qed
+
+moreover
+
+have il # inversion i2
+by (simp add: <i1 4 i2> inv(2))
+
+have (Re ?Bil / Re ?Ail)? > 1
+proof—
+have ?Ail = 0 V (Re ?Bi1l)? > (Re ?Ai1)?
+using <intersects-x-axis ?lxy
+using (il A i2> <i1 F Con? (i2 F con? dil F inversion i2>
+using intersects-z-axis-mk-circline|of ?Ail ?Bi1] «?Ai1l #4 0 V ?Bil # O» <is-real ?Ail>
+using poincare-line-non-homogenous|of il i2] «?lx = ?lir
+by metis
+
+moreover
+have ?Ai1 4 0
+proof (rule ccontr)
+assume — ?thesis
+hence 0;, € circline-set ?li
+unfolding circline-set-def
+apply simp
+apply (transfer, transfer, case-tac i1, case-tac i2)
+
+166

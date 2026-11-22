@@ -1,1 +1,1 @@
-If A is a left noetherian ring, then every direct sum of injec-
+Let M and N be abelian categories, and let F0 φ0 −→F1 φ1 −→F2 be a sequence of additive functors M →N. (1) If F0 φ0 −→F1 φ1 −→F2 →0 is an exact sequence of additive functors, and if the functors F0 and F1 are both right exact, then the functor F2 is right exact. (2) If 0 →F0 φ0 −→F1 φ1 −→F2 is an exact sequence of additive functors, and if the functors F1 and F2 are both left exact, then the functor F0 is left exact.

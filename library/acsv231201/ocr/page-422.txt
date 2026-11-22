@@ -1,0 +1,50 @@
+404 Combinatorial applications
+
+tion obtained by one embedding procedure is too difficult to analyze, it may be
+possible to find one better suited to ACSV.
+
+Example 12.21. The combinatorial univariate algebraic generating function
+Vl-—x-1=),, a,x" is the main diagonal of
+2(Y¥x- 1(¥ + DY
+Y2x+2Y¥x-Y+x-2°
+
+It is easily checked that among affine points of the singular variety, there are
+no non-smooth points and no critical points for the main diagonal direction,
+so asymptotics are determined by a critical point at infinity. The generating
+function 2xY/(2 — x — Y) has the same main diagonal but is much easier to
+analyze, giving a, ~ (an)~'/?, as we expect from Newton’s binomial theorem
+and Stirling’s approximation. 4
+
+See Section 13.5 for further discussion on ACSV and algebraic generating
+functions.
+
+12.7 Additional worked examples
+
+We now run through several other examples.
+
+Example 12.22 (A constant coefficient bivariate recurrence). Consider the
+constant coefficient linear recurrence
+
+f(m,n) = f(m- 1,n- 1) + f(m-1,n-2)+2f(m-2,n- 1) (m,n > 2)
+
+with boundary conditions f(m,n) = 0 if m < O orn < Oand f(m,n) = 1
+when 0 < m < 1 or0 < 7 < 1. Grau Ribas [Gra] asked for the limit
+of f(n + 1,n + 1)/f(n,n) which, based on numerical computations such as
+Ff(100, 100)/ (99, 99) = 2.70265 ..., appears to exist and be close to e.
+Introducing the generating function F(x, y) = Yinn f(m,n)xy", the defining
+
+recurrence of f implies
+
+F(X y) =
+
+Ox, y)
+
+with Q(x, y) = 1 — xy — xy? — 2x’y. Grébner basis computations verify that V
+is smooth, and the critical points in the main diagonal direction are the points
+(x, 2x) where x is a root of 8x? + 2x? — 1. If w = 0.85... denotes the unique
+real root of 8x? + 2x? — 1 then Lemma 6.41 implies that (w,2w) is minimal,
+and it is the only critical point on the torus T(w, 2w). The limit
+
+fintijn+1) 1
+pase,
+f(n,n) 2w?

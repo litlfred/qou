@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2412.02281v1/sections/sec-015",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Behavior of Connection Matrix and q-Stokes Matrix of the System (2) as q1",
+  "pageStart": 22,
+  "pageEnd": 28,
+  "contains": [
+    "library/arxiv-2412.02281v1/blocks/prose-sec-015",
+    "library/arxiv-2412.02281v1/blocks/prop-sec-015-01",
+    "library/arxiv-2412.02281v1/blocks/prop-sec-015-02",
+    "library/arxiv-2412.02281v1/blocks/prop-sec-015-03",
+    "library/arxiv-2412.02281v1/blocks/prop-sec-015-04",
+    "library/arxiv-2412.02281v1/blocks/prop-sec-015-05",
+    "library/arxiv-2412.02281v1/blocks/prop-sec-015-06",
+    "library/arxiv-2412.02281v1/blocks/lem-sec-015-07",
+    "library/arxiv-2412.02281v1/blocks/rem-sec-015-08"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2412.02281v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2412.02281v1/manifest.jsonld",
+  "provenance": "ingested"
+}

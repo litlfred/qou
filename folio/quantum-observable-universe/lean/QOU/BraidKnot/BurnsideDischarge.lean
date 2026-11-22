@@ -48,7 +48,7 @@ Oka–Vershik assembly. Both of those are now discharged, so it is derived outri
 Bridges (1) and (2) were always axiom-clean.
 
 -- Ref: [sagan2001] Sagan, The Symmetric Group §1.10–§3.10 (RSK; Σ (f^λ)² = n!)
--- Ref: [manuscript] docs/scope/2026-06-24-identity-i-plancherel-snrep-infra-program.md (axiom (i))
+-- Ref: [leitner2026] docs/scope/2026-06-24-identity-i-plancherel-snrep-infra-program.md (axiom (i))
 -/
 
 namespace QOU.BraidKnot.BurnsideDischarge

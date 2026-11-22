@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/fd58d8e182edda805fed0946606c5ab82f81/sections/page-004",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Page 4",
+  "pageStart": 4,
+  "pageEnd": 4,
+  "contains": [
+    "library/fd58d8e182edda805fed0946606c5ab82f81/blocks/prose-page-004",
+    "library/fd58d8e182edda805fed0946606c5ab82f81/blocks/ex-page-004-01",
+    "library/fd58d8e182edda805fed0946606c5ab82f81/blocks/rem-page-004-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/fd58d8e182edda805fed0946606c5ab82f81/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/fd58d8e182edda805fed0946606c5ab82f81/manifest.jsonld",
+  "provenance": "ingested"
+}

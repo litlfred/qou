@@ -5,11 +5,11 @@ export default proposition({
   title:
     "Algebraic stratification of the Φ$_q$ tower in $H_n(R, q)$ (no 3-manifold language)",
   lean: {
-    ref: "qou:QOU.BraidKnot.phi_q_tower_algebraic_stratification",
+    ref: "qou:QOU.BraidKnot.phi_q_tower_algebraic_stratification_of_pentagon",
     validation: "not_checked",
   },
   uses: ["def:phi-q-piece"],
-  cites: ["bokut1978", "shirshov1962", "jones1987"],
+  cites: ["shirshov1962", "jones1987"],
   tags: [
     "phi-q",
     "stratification",

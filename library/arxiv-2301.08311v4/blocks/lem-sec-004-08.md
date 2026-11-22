@@ -1,1 +1,1 @@
-The Cauchy-Riemann problem,
+If u touches the critical points of πm, the index of the vertical linearized operator DV is n −1 + 2mc(u) and the horizontal index is 1 + µ(πm ◦u) −πm ◦u−1 weighted(∞) −2mc(u) Ind(DV ) = n −1 + 2mc(u) Ind(DH) = 1 + µ(πm ◦u) −πm ◦u−1 weighted(∞) −2mc(u)

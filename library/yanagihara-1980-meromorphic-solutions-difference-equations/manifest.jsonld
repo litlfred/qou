@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/yanagihara-1980-meromorphic-solutions-difference-equations",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/yanagihara-1980-meromorphic-solutions-difference-equations/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -31,7 +31,7 @@
     "library/yanagihara-1980-meromorphic-solutions-difference-equations/sections/page-018"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "yanagihara-1980-meromorphic-solutions-difference-equations",
     "title_source": "slug",

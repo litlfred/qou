@@ -1,0 +1,69 @@
+{
+ "producer": "computations/probes/emission_reading_chirality_probe.py",
+ "bean": "qou-g0jn",
+ "arithmetic": "exact (sympy over Q(q)); q0 used only for display",
+ "q0_anchor": "proton (display only)",
+ "q0Anchor": "proton",
+ "q0AnchorReason": "algebra is exact over Q(q); the only numeric column (ratio_sq_at_q0) substitutes Q0, a 16-digit rational of the proton pin",
+ "q0Value": "1.109978582751381",
+ "checks": {
+  "W_corpus_eq_qinv_J": true,
+  "W_mirror_eq_q_J": true
+ },
+ "coefficients": {
+  "corpus_s": [
+   "(1 - q**2)/(q**3 + q)",
+   "2/(q**2 + 1)"
+  ],
+  "corpus_s^-1": [
+   "(q**2 - 1)/(q**3 + q)",
+   "2/(q**2 + 1)"
+  ],
+  "mirror_s": [
+   "(-q**3 + q)/(q**2 + 1)",
+   "2*q**2/(q**2 + 1)"
+  ],
+  "mirror_s^-1": [
+   "(q**3 - q)/(q**2 + 1)",
+   "2*q**2/(q**2 + 1)"
+  ]
+ },
+ "rows": [
+  {
+   "word": "V^3 = (s1 s2^-1)^3",
+   "T_dd": "-(q**6 - 2*q**4 - 1)*(q**8 - q**4 + 3*q**2 - 1)/q**6",
+   "A_corpus": "-12*(q**6 - 2*q**4 - 1)*(q**8 - q**4 + 3*q**2 - 1)/(q**6*(q**2 + 1))",
+   "A_mirror": "-12*(q**6 - 2*q**4 - 1)*(q**8 - q**4 + 3*q**2 - 1)/(q**4*(q**2 + 1))",
+   "ratio_sq": "q**(-4)",
+   "ratio_sq_at_q0": "0.658781816976",
+   "ratio_is_q_minus4": true
+  },
+  {
+   "word": "s1 s2^-1",
+   "T_dd": "2 - q**4",
+   "A_corpus": "-4*(q**4 - 2)/(q**2 + 1)",
+   "A_mirror": "-4*q**2*(q**4 - 2)/(q**2 + 1)",
+   "ratio_sq": "q**(-4)",
+   "ratio_sq_at_q0": "0.658781816976",
+   "ratio_is_q_minus4": true
+  },
+  {
+   "word": "s1^4",
+   "T_dd": "(q**2 + 1)*(q**8 + q**4 - q**2 + 1)/q**4",
+   "A_corpus": "8*(q**8 + q**4 - q**2 + 1)/q**4",
+   "A_mirror": "8*(q**8 + q**4 - q**2 + 1)/q**2",
+   "ratio_sq": "q**(-4)",
+   "ratio_sq_at_q0": "0.658781816976",
+   "ratio_is_q_minus4": true
+  },
+  {
+   "word": "(s1 s2)^5",
+   "T_dd": "3*q**8 - q**6 - q**4 + q**2 - 1",
+   "A_corpus": "20*(3*q**8 - q**6 - q**4 + q**2 - 1)/(q**2 + 1)",
+   "A_mirror": "20*q**2*(3*q**8 - q**6 - q**4 + q**2 - 1)/(q**2 + 1)",
+   "ratio_sq": "q**(-4)",
+   "ratio_sq_at_q0": "0.658781816976",
+   "ratio_is_q_minus4": true
+  }
+ ]
+}

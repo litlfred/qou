@@ -1,1 +1,1 @@
-s 12.4.11 and 12.4.13. Or look in any standard textbook on homological
+In the situation of Theorem 10.2.9, suppose K has enough K-projectives, and let (P, ρ) be a system of K-projective resolutions. Then the function P extends uniquely to a triangulated functor P : D →Kprj, such that IdKprj = P ◦Q |Kprj, and ρ : Q ◦P ⇒IdD is an isomorphism of triangulated func- tors.

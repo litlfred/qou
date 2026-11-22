@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/2018sorus020/sections/sec-049",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The non-split case",
+  "pageStart": 96,
+  "pageEnd": 100,
+  "contains": [
+    "library/2018sorus020/blocks/prose-sec-049",
+    "library/2018sorus020/blocks/prop-sec-049-01",
+    "library/2018sorus020/blocks/lem-sec-049-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/2018sorus020/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/2018sorus020/manifest.jsonld",
+  "provenance": "ingested"
+}

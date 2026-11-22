@@ -8,4 +8,5 @@ export default remark({
   uses: [
     "def:q-dilogarithm",
   ],
+  cites: ["besser2000", "besser-dejeu2008", "schlesinger2001"],
 });

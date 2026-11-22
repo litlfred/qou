@@ -1,0 +1,49 @@
+a
+
+results, including Equation (1.3), by removing the restriction that the surface must be of
+
+negatively curved, that is, it is true for arbitrary Riemannian metrics.
+
+Comparing eigenvalues
+
+In general, we cannot compute eigenvalues of surfaces, or domains within surfaces, ex-
+plicitly. There are several analytical tools that use the geometry of the surface to create
+both upper and lower bounds on particular eigenvalues. To bound eigenvalues from be-
+low, we can compare them to the eigenvalues of disks having equivalent area; these are
+
+known to minimize the eigenvalue provided a certain condition is satisfied, namely the
+
+isoperimetric oe
+
+Definition 1.13 (Isoperimetric inequality) Let D be an open disk in the hyperbolic
+plane H (see Section 2.2 for a discussion on hyperbolic geometry). An open domain Q in
+
+a hyperbolic surface S is said to satisfy the isoperimetric inequality if
+A(Q) = A(D) => 1(0Q) > (AD),
+
+with equality if and only if Q is isometric to D, where A(Q) denotes the area of Q, and
+1(0Q) denotes the length of its boundary.
+
+Caution must be used with this definition, since there exists a whole class of results
+called isoperimetric inequalities that relate the area of a domain to its perimeter, and
+do not take into account physical properties such as torsional rigidity. Isoperimetric
+inequalities are said to have their origins in ancient Carthage, where Queen Dido was
+tasked with delimiting the boundary of her new city, such that it would occupy a region
+that could be encompassed by a single ox-hide. Legend has it that she cut the hide
+into long thin strips and chose a circular boundary, having conjectured that this would
+
+maximize the area of land. More succinctly we have the famous formula
+L? > 4rA,
+
+where a curve C' of length L encloses a region of area A, and equality holds if and only
+if C is a circle. We take this form of the inequality from [65], where Osserman gives
+an interesting historical exposition of significant results following on from this classical
+theorem.
+
+The term isoperimetric inequality is used interchangeably in the literature for problems
+of the above type, and those of more relevance to this work: isoperimetric problems, where
+(often) variational calculus is used to show that in a certain class of domains. a physical
+
+property is shown to be extremal for radially symmetric regions. In [67], Payne gives a
+
+10

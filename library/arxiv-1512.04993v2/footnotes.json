@@ -1,0 +1,2647 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1512.04993v2",
+ "status": "determined",
+ "body_size": 12.0,
+ "footnotes": [
+  {
+   "id": "fn-p007-1",
+   "page": 7,
+   "mark": "1",
+   "text": "Notethatwithourconventions,timeonbothsidesofFig.1increasesupwards.",
+   "marks": [
+    {
+     "page": 7,
+     "context": "whichpuriﬁesthethermalstateofoneside."
+    }
+   ],
+   "block": "library/arxiv-1512.04993v2/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p009-1",
+   "page": 9,
+   "mark": "2",
+   "text": "Modernhard-drivesareveryfarfromtheselimits.A2015-eralaptopSSDweighs100grams,has an area of 100cm2 and stores 1TB = 8 × 1012 useful classical bits. This is a factor of 1028 below the 1041 qubits of the Bekenstein bound, and a factor of 1054 below the 1067 qubits of the holographic bound. Moore’s “law” predicts we will run up against the fundamental limits at the start of the twenty-third century.",
+   "marks": [
+    {
+     "page": 8,
+     "context": "Gℓ"
+    },
+    {
+     "page": 8,
+     "context": "SincethecosmologicalconstantΛisproportionalto−1/ℓ"
+    },
+    {
+     "page": 9,
+     "context": "Blackholessaturatetheholographicbound."
+    }
+   ],
+   "block": "library/arxiv-1512.04993v2/blocks/prose-sec-001"
+  },
+  {
+   "id": "fn-p010-1",
+   "page": 10,
+   "mark": "3",
+   "text": "Ingeneral,thisconceptisonlyusefulforsystemsdescribedbyk-localHamiltonianwithk≪N. For more discussion, see Appendix A.1",
+   "marks": [
+    {
+     "page": 10,
+     "context": "tolookapproximatelythermal."
+    }
+   ],
+   "block": "library/arxiv-1512.04993v2/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p012-1",
+   "page": 12,
+   "mark": "4",
+   "text": "Theworld’sfastest“supercomputer”isthecollectionofallthebitcoinminers,whichhavea total FLOP rate of 5 million petaFLOPs, about a thousand times more than all the single site supercomputers combined.",
+   "marks": [
+    {
+     "page": 12,
+     "context": "persecond,"
+    }
+   ],
+   "block": "library/arxiv-1512.04993v2/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p013-1",
+   "page": 13,
+   "mark": "5",
+   "text": "Wehavearguedthatblackholesmaybethefastestcomputersinnature,atleastwithinsome restricted class. Even assuming this is true, it is important to appreciate what this does and does not mean. It means that nothing can implement quantum gates any faster than a black hole (at ﬁxed energy). It certainly means that nothing can simulate the complete output from a black hole any faster than the black hole itself can produce that output (at ﬁxed energy). It does not mean that a black hole can beat you at chess. This is not a phenomenon unique to black holes. For our purposes, a “computer” is a device that implements a unitary operation. This is useful if you are interested in implementing that unitary—if you are interested in the state of the Hawking radiation that emerges after a certain input has been thrown into the black hole, for example. If instead you have another question in mind—factorization, chess strategy, etc.—then the unitary is useful to you only if combined with other computing resources to “encode” the problem instance in terms of ingoing perturbations into the black hole, and to “decode” the Hawking radiation output of the black hole in terms of a strategy recommendation. For a generic problem, the computational resources needed to encode and decode the question are expected to be no smaller than the computational resources required to just solve the problem directly, without reference to the black hole. For generic problems, therefore, black holes don’t help. (See Chapter 6 of [40].)",
+   "marks": [
+    {
+     "page": 13,
+     "context": "inthesensethattheysaturatethecomplexiﬁcationboundEq.2.12."
+    }
+   ],
+   "block": "library/arxiv-1512.04993v2/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p015-1",
+   "page": 15,
+   "mark": "6",
+   "text": "M−µQisnaturalwhenviewingµasanelectrostaticpotentialwhichmodiﬁesthetotalenergy. For another perspective on the proposed bound, note that the complexity of eiµQt oscillates in time with period 2π/µ because Q has integer spectrum. We believe that the combination M −µQ serves to remove this rapidly oscillating portion of the complexity.",
+   "marks": [
+    {
+     "page": 15,
+     "context": "potentialµ."
+    }
+   ],
+   "block": "library/arxiv-1512.04993v2/blocks/prose-sec-007"
+  },
+  {
+   "id": "fn-p015-2",
+   "page": 15,
+   "mark": "7",
+   "text": "InearlierworktheintegralinEq.2.20wasreplacedbythesimplerexpressionTS.Generallythe two are approximately the same, but in §4 we will encounter a case in which they are not. This is the case of near-extremal large charged AdS black holes.",
+   "marks": [
+    {
+     "page": 15,
+     "context": "ey eﬃciently use all of their internal energy to complexify."
+    }
+   ],
+   "block": "library/arxiv-1512.04993v2/blocks/prose-sec-007"
+  },
+  {
+   "id": "fn-p017-1",
+   "page": 17,
+   "mark": "8",
+   "text": "Itshouldbepointedoutthatwhiletherateofchangeofactionfromtheregionbehindthepast horizon is exponentially small in time, that exponential could in principle be multiplied by a UV- divergent quantity. We address this unresolved subtlety in §8.2.5 and in [41]. Note that it is not always the case that an arbitrarily small region has arbitrarily small action. A simple illustration of this is provided by a two-sphere, whose action is topological and ﬁnite even as the sphere becomes arbitrarily small. We thank Henry Maxﬁeld for discussion.",
+   "marks": [
+    {
+     "page": 17,
+     "context": "beindependentoftimeatlatetimes."
+    }
+   ],
+   "block": "library/arxiv-1512.04993v2/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p018-1",
+   "page": 18,
+   "mark": "9",
+   "text": "Wehaveperformedacompletelyclassicalcalculation,withℏ=0. Quantum mechanics can destabilize suﬃciently small black holes. In the canonical ensemble, large and intermediate black holes (rh ∼> ℓAdS) are stable. In the microcanonical ensemble, even much smaller black holes may be stable.",
+   "marks": [
+    {
+     "page": 18,
+     "context": "length."
+    }
+   ],
+   "block": "library/arxiv-1512.04993v2/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p031-1",
+   "page": 31,
+   "mark": "10",
+   "text": "HereourconventionsforprecursorsW(t)arethatHamiltonianevolutiontLincreasestothe future, but Killing time evolution in the left side of the bulk eternal black hole geometry increases to the past.",
+   "marks": [
+    {
+     "page": 31,
+     "context": "acting on the left boundary."
+    }
+   ],
+   "block": "library/arxiv-1512.04993v2/blocks/prose-sec-019"
+  },
+  {
+   "id": "fn-p033-1",
+   "page": 33,
+   "mark": "11",
+   "text": "Fig.8isonlyreallyappropriateforD=2 + 1.ForD>3,theleftandrightboundariesof the Kruskal diagram are no longer at uv = −1 [54]. Since this complication does not change the asymptotic value of the complexity of the state, it will be neglected.",
+   "marks": [
+    {
+     "page": 33,
+     "context": "TheKruskaldiagramofthisgeometryisshowninFig.8."
+    }
+   ],
+   "block": "library/arxiv-1512.04993v2/blocks/prose-sec-021"
+  },
+  {
+   "id": "fn-p033-2",
+   "page": 33,
+   "mark": "12",
+   "text": "Inthissection,wewillbeinterestedonlyintheintersectionofWandtheEinstein-Rosenbridge. The portion of W outside of the black hole interior is time independent and divergent. Therefore, dropping this region is a consistent regularization of the complexity for all of the states that we consider.",
+   "marks": [
+    {
+     "page": 33,
+     "context": "ndtheintersectionofWandtheblackholeinteriorshownislightgray."
+    }
+   ],
+   "block": "library/arxiv-1512.04993v2/blocks/prose-sec-021"
+  },
+  {
+   "id": "fn-p046-2",
+   "page": 46,
+   "mark": "14",
+   "text": "Thisequationcaninprinciplecontainanotherterm,callitO,ontheRHS.Thistermmusthave the property that V †O = 0 and represents a high-energy contribution not captured by acting with H(L/2) and then V . It can nevertheless be argued to be irrelevant for the complexity growth. To fully show that the eﬀective IR time evolution is approximately unitary one would have to examine this correction term more carefully.",
+   "marks": [
+    {
+     "page": 46,
+     "context": "whereVisonelayeroftheRGcircuit,"
+    }
+   ],
+   "block": "library/arxiv-1512.04993v2/blocks/prose-sec-026"
+  },
+  {
+   "id": "fn-p048-1",
+   "page": 48,
+   "mark": "15",
+   "text": "Reference [6] did not claim that TSwas a bound on complexity growth; only that it was a natural expectation for the rate of growth of complexity for a black hole.",
+   "marks": [
+    {
+     "page": 48,
+     "context": "perature"
+    }
+   ],
+   "block": "library/arxiv-1512.04993v2/blocks/prose-sec-027"
+  },
+  {
+   "id": "fn-p051-1",
+   "page": 51,
+   "mark": "16",
+   "text": "Insomecases,wecanquantitativelythinkofcomplexityastheintegralofthe“size”ofan operator over time [7], where the growth of the operator is a manifestation of the system scrambling. An example of this is given by the operator shown in Fig. 14.",
+   "marks": [
+    {
+     "page": 51,
+     "context": "acrossitsdegreesoffreedom,itcannotcompute[65]."
+    }
+   ],
+   "block": "library/arxiv-1512.04993v2/blocks/prose-sec-033"
+  },
+  {
+   "id": "fn-p051-2",
+   "page": 51,
+   "mark": "17",
+   "text": "WethankHenryMaxﬁeldforhelpfuldiscussionsthatpromptedustorevisitthisissue.",
+   "marks": [
+    {
+     "page": 51,
+     "context": "twolightsheets,isdivergent."
+    }
+   ],
+   "block": "library/arxiv-1512.04993v2/blocks/prose-sec-033"
+  },
+  {
+   "id": "fn-p057-1",
+   "page": 57,
+   "mark": "18",
+   "text": "WethankDouglasStanfordforquestionsanddiscussionsleadingtothecreationofthissection.",
+   "marks": [
+    {
+     "page": 57,
+     "context": "context,andwhetheritisreasonabletohaveaboundoncomplexity."
+    }
+   ],
+   "block": "library/arxiv-1512.04993v2/blocks/prose-sec-041"
+  },
+  {
+   "id": "fn-p058-1",
+   "page": 58,
+   "mark": "19",
+   "text": "Inparticular,wethankDouglasStanfordforemphasizingthispoint.",
+   "marks": [
+    {
+     "page": 58,
+     "context": "changethewayinwhichwemeasureC."
+    }
+   ],
+   "block": "library/arxiv-1512.04993v2/blocks/prose-sec-042"
+  },
+  {
+   "id": "fn-p060-1",
+   "page": 60,
+   "mark": "20",
+   "text": "WehaveﬁxedarelativeboostambiguitybydemandingthattheboundarytimetLiscontinuous.",
+   "marks": [
+    {
+     "page": 60,
+     "context": "andinthepatchwithenergyM+ Etherelationshipis"
+    }
+   ],
+   "block": "library/arxiv-1512.04993v2/blocks/prose-sec-043"
+  },
+  {
+   "id": "fn-p060-2",
+   "page": 60,
+   "mark": "21",
+   "text": "Note:inthisAppendixwehavereversedourtimeconventionsforprecursorsW(t).Here,we will take both left boundary Hamiltonian time evolution tL and Killing time evolution in the bulk to increase to the past.",
+   "marks": [
+    {
+     "page": 60,
+     "context": "tL=−∞."
+    }
+   ],
+   "block": "library/arxiv-1512.04993v2/blocks/prose-sec-043"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p046-1",
+   "page": 46,
+   "mark": "13",
+   "text": "Foradditionalworkontherelationshipbetweentensornetworksandgeometry,seealso[56–63].",
+   "block": "library/arxiv-1512.04993v2/blocks/prose-sec-026"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "a",
+   "context": "AdamR.Brown"
+  },
+  {
+   "page": 1,
+   "mark": "b",
+   "context": "AdamR.Browna,DanielA.Roberts"
+  },
+  {
+   "page": 1,
+   "mark": "a",
+   "context": "AdamR.Browna,DanielA.Robertsb,LeonardSusskind"
+  },
+  {
+   "page": 1,
+   "mark": "a",
+   "context": "BrianSwingle"
+  },
+  {
+   "page": 1,
+   "mark": "a",
+   "context": "BrianSwinglea,andYingZhao"
+  },
+  {
+   "page": 6,
+   "mark": "e",
+   "context": "quantumrecurrencetimeO(e"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "|ψ(tL, tR)⟩= e−i(HL"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "|ψ(tL, tR)⟩= e−i(HLtL+HR"
+  },
+  {
+   "page": 7,
+   "mark": "e",
+   "context": "α"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "advancesthephaseofe"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "no faster than t∗∼N"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "N"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "⟨W(t) VW(t) V ⟩β= f"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "⟨W(t) VW(t) V ⟩β= f0 −f"
+  },
+  {
+   "page": 12,
+   "mark": "12",
+   "context": "Eq.2.12isfast.A100g2015-eraCPUmanagesabout10"
+  },
+  {
+   "page": 12,
+   "mark": "50",
+   "context": "persecond,4muchlessthanthepermitted10"
+  },
+  {
+   "page": 13,
+   "mark": "0",
+   "context": "gatesnecessarytoconstruct|ψ⟩.Weﬁxasimplereferencestate|ψ"
+  },
+  {
+   "page": 13,
+   "mark": "0",
+   "context": "minimumnumberofgatesnecessarytoproduce|ψ⟩from|ψ"
+  },
+  {
+   "page": 13,
+   "mark": "0",
+   "context": "equireonlythat|ψ⟩becloselyapproximatedbyastateproducedfrom|ψ"
+  },
+  {
+   "page": 13,
+   "mark": "0",
+   "context": "referencestate|ψ"
+  },
+  {
+   "page": 14,
+   "mark": "t",
+   "context": "|ψ(tL, tR)⟩= e−i(HL+µQL)"
+  },
+  {
+   "page": 14,
+   "mark": "t",
+   "context": "|ψ(tL, tR)⟩= e−i(HL+µQL)tLe−i(HR−µQR)"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "ds"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "ds2=−f(r)dt"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "ds2=−f(r)dt2+dr"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "f(r)+ r"
+  },
+  {
+   "page": 16,
+   "mark": "d",
+   "context": "f(r)+ r2"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "f(r)+ r2dΩ"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "r2(D−3)+r"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "GQ"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "ℓ"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "B"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "B"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "AB"
+  },
+  {
+   "page": 17,
+   "mark": "g",
+   "context": "2R"
+  },
+  {
+   "page": 17,
+   "mark": "g",
+   "context": "2Rgµν+ Λ"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "2ℓ"
+  },
+  {
+   "page": 17,
+   "mark": "r",
+   "context": "= −ΩD−2"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "8πGℓ"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "2n"
+  },
+  {
+   "page": 18,
+   "mark": "h",
+   "context": "\u0013\u0015r"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "M+ΩD−2"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "(D −2) + (D −1)"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "(D −2) + (D −1)r"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "ℓ"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "isoforderδ"
+  },
+  {
+   "page": 20,
+   "mark": "0",
+   "context": "B"
+  },
+  {
+   "page": 20,
+   "mark": "0",
+   "context": "B"
+  },
+  {
+   "page": 20,
+   "mark": "0",
+   "context": "AB"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "r"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "\u0012Q"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "−r"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "−+ r+r−+ r"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "Gℓ"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "+Q"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "r"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "ℓ"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "1 +r"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "−+ r−r++ r"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "=Q"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "−Q"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "ℓ"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "M"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "M2−Q"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "Q"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "ds"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "ds2= −f(r)dt"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "f(r)dr"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "f(r)dr2 + r"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "2r"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "=(r"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "=(r2 −r"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "+)(r"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "+)(r2 −r"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "r"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "−8GM+(8GJ)"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "ℓ"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "r"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "r2ℓ"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "4r"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "8GM=r"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "++ r"
+  },
+  {
+   "page": 21,
+   "mark": "r",
+   "context": "=2"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "ℓ"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "ℓ"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "= −(r"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "+−r"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "4Gℓ"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "=r"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "+−r"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "M"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "M2−J"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "4Gℓ"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "ℓ"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "ofe"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "M−ΩJ=r"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "++ r"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "2r"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "=r"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "+−r"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "M"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "M2−J"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "8Gℓ"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "8Gℓ"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "8Gℓ"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "ℓ"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "M"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "M2−J"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "ℓ"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "dt=r"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "+−r"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "M"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "M2−J"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "4Gℓ"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "ℓ"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "+GQ"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "r"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "r"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "GQ"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "−Q"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "M"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "M2−Q"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "=ℓ"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "27(Gµ"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "27(Gµ2 −1)(2Gµ"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "27(Gµ2 −1)(2Gµ2 + 1)"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "G"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "G2M"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "=ℓ"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "3µ"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "3µ2(Gµ"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "Q"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "GQ"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "ℓ"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "r"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "+GQ"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "ℓ"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "r"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "ext=3ℓ"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "=Gℓ"
+  },
+  {
+   "page": 25,
+   "mark": "4",
+   "context": "AdSµ"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "Q"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "largecomparedtoℓAdS,theextremallinebecomesQ∼M"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "(M−µQ) −(M−µQ)gs= 2(M−MQ) + O(M−MQ)"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "ds"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "+r"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "dr"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "dt"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "+ r"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "+ r2dΩ"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "ℓ"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "r"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "ℓ"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "¯r"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "ds"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "+r"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "dr"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "ℓ"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "dt"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "+ r"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "+ r2dΩ"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "¯r"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "ℓ"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "r"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "ℓ"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "ℓ"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "t"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "¯r"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "ℓ"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "¯r"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "ℓ"
+  },
+  {
+   "page": 31,
+   "mark": "t",
+   "context": "e−iHL"
+  },
+  {
+   "page": 31,
+   "mark": "t",
+   "context": "e−iHLtLe−iHR"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "e−iHLtLe−iHRtRW(t"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "e−iHLtLe−iHRtRW(tn) . . . W(t"
+  },
+  {
+   "page": 31,
+   "mark": "t",
+   "context": "whereW(t)=eiHL"
+  },
+  {
+   "page": 31,
+   "mark": "t",
+   "context": "whereW(t)=eiHLtWe−iHL"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "Eq.6.1letusdialthetimest"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "Eq.6.1letusdialthetimest1 · · · t"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "tusdialthetimest1 · · · tnandinsomecasesthespatialpositionsx"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "etimest1 · · · tnandinsomecasesthespatialpositionsx1 · · · x"
+  },
+  {
+   "page": 32,
+   "mark": "t",
+   "context": "tL[7]andmatchingcancellationeﬀectsbetweeneiHL"
+  },
+  {
+   "page": 32,
+   "mark": "t",
+   "context": "tL[7]andmatchingcancellationeﬀectsbetweeneiHLtande−iHL"
+  },
+  {
+   "page": 32,
+   "mark": "t",
+   "context": "e−iHL"
+  },
+  {
+   "page": 32,
+   "mark": "t",
+   "context": "e−iHLtLe−iHR"
+  },
+  {
+   "page": 32,
+   "mark": "w",
+   "context": "e−iHLtLe−iHRtRW(t"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "ds"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "ds2=−A(uv) 2dudv + B(uv) dΩ"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "D−2+ 2A(uv)h δ(u) du"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "B(uv) = r"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "f′(rh)"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "rD−3+r"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "ℓ"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "4πℓ"
+  },
+  {
+   "page": 33,
+   "mark": "r",
+   "context": "β"
+  },
+  {
+   "page": 33,
+   "mark": "t",
+   "context": "β"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "ℓ"
+  },
+  {
+   "page": 33,
+   "mark": "h",
+   "context": "r"
+  },
+  {
+   "page": 33,
+   "mark": "w",
+   "context": "smearedovertheentireboundary.Forlarge|t"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "e"
+  },
+  {
+   "page": 33,
+   "mark": "w",
+   "context": "e2π|t"
+  },
+  {
+   "page": 33,
+   "mark": "w",
+   "context": "β(|t"
+  },
+  {
+   "page": 33,
+   "mark": "0",
+   "context": "0+ h < v"
+  },
+  {
+   "page": 34,
+   "mark": "w",
+   "context": "|t"
+  },
+  {
+   "page": 34,
+   "mark": "w",
+   "context": "|tw| −t∗≤tR.Right:largeshifthwith|t"
+  },
+  {
+   "page": 34,
+   "mark": "t",
+   "context": "β"
+  },
+  {
+   "page": 34,
+   "mark": "t",
+   "context": "β"
+  },
+  {
+   "page": 34,
+   "mark": "w",
+   "context": "|t"
+  },
+  {
+   "page": 34,
+   "mark": "w",
+   "context": "|t"
+  },
+  {
+   "page": 34,
+   "mark": "0",
+   "context": "|tw|−t∗= tR or h = v"
+  },
+  {
+   "page": 34,
+   "mark": "0",
+   "context": "functionduetothetransitionofthegeometryoftheWatthepointh=v"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "oproceed,wewillcomputetheactionofregionIIforarbitraryWedgesu"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "ceed,wewillcomputetheactionofregionIIforarbitraryWedgesu1, v"
+  },
+  {
+   "page": 35,
+   "mark": "w",
+   "context": "SincetL, tR, |t"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "SincetL, tR, |tw|>0,wecansafelyassumeu"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "SincetL, tR, |tw|>0,wecansafelyassumeu1, v"
+  },
+  {
+   "page": 35,
+   "mark": "r",
+   "context": "Abulk= −ΩD−2"
+  },
+  {
+   "page": 35,
+   "mark": "u",
+   "context": "2πlog"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "2πlog u"
+  },
+  {
+   "page": 35,
+   "mark": "v",
+   "context": "2πlog u1"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "2πlog u1v"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "πGℓ"
+  },
+  {
+   "page": 35,
+   "mark": "h",
+   "context": "\u0013\u0015r"
+  },
+  {
+   "page": 35,
+   "mark": "r",
+   "context": "M+ΩD−2"
+  },
+  {
+   "page": 35,
+   "mark": "r",
+   "context": "(D −2) + (D −1)"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "(D −2) + (D −1)r"
+  },
+  {
+   "page": 35,
+   "mark": "u",
+   "context": "2πlog"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "2πlog u"
+  },
+  {
+   "page": 35,
+   "mark": "v",
+   "context": "2πlog u1"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "2πlog u1v"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "ℓ"
+  },
+  {
+   "page": 35,
+   "mark": "u",
+   "context": "2πlog"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "2πlog u"
+  },
+  {
+   "page": 35,
+   "mark": "v",
+   "context": "2πlog u1"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "2πlog u1v"
+  },
+  {
+   "page": 35,
+   "mark": "w",
+   "context": "|t"
+  },
+  {
+   "page": 35,
+   "mark": "w",
+   "context": "A|t"
+  },
+  {
+   "page": 36,
+   "mark": "w",
+   "context": "Now, let’s consider the geometry with large shift |t"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "contributionfromthebottomregionbyagainusingEq.6.12,butwith u"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "v"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "−h.(It’sOKtoﬂipitupsidedown.)Thistimeusingthefactthatv"
+  },
+  {
+   "page": 36,
+   "mark": "w",
+   "context": "A|t"
+  },
+  {
+   "page": 36,
+   "mark": "w",
+   "context": "tL −tR + 2(|t"
+  },
+  {
+   "page": 36,
+   "mark": "t",
+   "context": "the fact that W(tw) = eiHL"
+  },
+  {
+   "page": 36,
+   "mark": "w",
+   "context": "the fact that W(tw) = eiHLt"
+  },
+  {
+   "page": 36,
+   "mark": "t",
+   "context": "the fact that W(tw) = eiHLtwWe−iHL"
+  },
+  {
+   "page": 36,
+   "mark": "w",
+   "context": "the fact that W(tw) = eiHLtwWe−iHLt"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "perturbationofonlyoneoftheN"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "willgrowexponentially,coveringallN"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "2πlog N"
+  },
+  {
+   "page": 36,
+   "mark": "w",
+   "context": "Inthelimitstudiedinthelastsection,thetimeoftheshock|t"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "E/Mwastakentozero,suchthatthequantityh ∼e"
+  },
+  {
+   "page": 36,
+   "mark": "w",
+   "context": "E/Mwastakentozero,suchthatthequantityh ∼e2πt"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "callysymmetricshockwavesdescribedbyshiftsh"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "β(t∗±t"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "anda“−”forieven.Wewillalsoassumethatalltheshocksarestrong,h"
+  },
+  {
+   "page": 38,
+   "mark": "f",
+   "context": "C∼t"
+  },
+  {
+   "page": 38,
+   "mark": "f",
+   "context": "t"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "tf≡|t"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "tf≡|t1 −tR| + |t"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "tf≡|t1 −tR| + |t2 −t"
+  },
+  {
+   "page": 38,
+   "mark": "n",
+   "context": "tf≡|t1 −tR| + |t2 −t1| + . . . |tL −t"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "anditwasassumedthat|t"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "anditwasassumedthat|ti−t"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "of the shocks are strong h"
+  },
+  {
+   "page": 39,
+   "mark": "t",
+   "context": "e−iHL"
+  },
+  {
+   "page": 39,
+   "mark": "6",
+   "context": "e−iHLtLW(t"
+  },
+  {
+   "page": 39,
+   "mark": "5",
+   "context": "e−iHLtLW(t6)W(t"
+  },
+  {
+   "page": 39,
+   "mark": "4",
+   "context": "e−iHLtLW(t6)W(t5)W(t"
+  },
+  {
+   "page": 39,
+   "mark": "3",
+   "context": "e−iHLtLW(t6)W(t5)W(t4)W(t"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "e−iHLtLW(t6)W(t5)W(t4)W(t3)W(t"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "e−iHLtLW(t6)W(t5)W(t4)W(t3)W(t2)W(t"
+  },
+  {
+   "page": 39,
+   "mark": "t",
+   "context": "e−iHLtLW(t6)W(t5)W(t4)W(t3)W(t2)W(t1) e−iHR"
+  },
+  {
+   "page": 39,
+   "mark": "i",
+   "context": "A"
+  },
+  {
+   "page": 39,
+   "mark": "h",
+   "context": "2πlog"
+  },
+  {
+   "page": 39,
+   "mark": "i",
+   "context": "2πlog h"
+  },
+  {
+   "page": 39,
+   "mark": "h",
+   "context": "2πlog hi−1"
+  },
+  {
+   "page": 39,
+   "mark": "i",
+   "context": "2πlog hi−1h"
+  },
+  {
+   "page": 39,
+   "mark": "n",
+   "context": "A"
+  },
+  {
+   "page": 39,
+   "mark": "f",
+   "context": "An shocks= 2M(t"
+  },
+  {
+   "page": 39,
+   "mark": "t",
+   "context": "e−iHL"
+  },
+  {
+   "page": 39,
+   "mark": "t",
+   "context": "e−iHLtLe−iHR"
+  },
+  {
+   "page": 39,
+   "mark": "x",
+   "context": "e−iHLtLe−iHRtRW"
+  },
+  {
+   "page": 39,
+   "mark": "w",
+   "context": "e−iHLtLe−iHRtRWx(t"
+  },
+  {
+   "page": 39,
+   "mark": "t",
+   "context": "whereasusualWx(tw) = eiHL"
+  },
+  {
+   "page": 39,
+   "mark": "w",
+   "context": "whereasusualWx(tw) = eiHLt"
+  },
+  {
+   "page": 39,
+   "mark": "t",
+   "context": "whereasusualWx(tw) = eiHLtwWx e−iHL"
+  },
+  {
+   "page": 39,
+   "mark": "w",
+   "context": "whereasusualWx(tw) = eiHLtwWx e−iHLt"
+  },
+  {
+   "page": 40,
+   "mark": "w",
+   "context": "β(|t"
+  },
+  {
+   "page": 40,
+   "mark": "w",
+   "context": "hockstateandthesphericallysymmetricone-shockstate.Theearly|t"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "spatialdirectionsaswellastheN"
+  },
+  {
+   "page": 41,
+   "mark": "0",
+   "context": "theboundaryofWmovesoﬀthesingularity(e.g.thepointh(x)=v"
+  },
+  {
+   "page": 41,
+   "mark": "w",
+   "context": "thegrowthwith|t"
+  },
+  {
+   "page": 41,
+   "mark": "w",
+   "context": "ispositiondependent,theactioninWisnolongersimplylinearint"
+  },
+  {
+   "page": 41,
+   "mark": "w",
+   "context": "(|t"
+  },
+  {
+   "page": 42,
+   "mark": "t",
+   "context": "Figure14:AtensornetworkfortheoperatorWx(tw)=eiHL"
+  },
+  {
+   "page": 42,
+   "mark": "w",
+   "context": "Figure14:AtensornetworkfortheoperatorWx(tw)=eiHLt"
+  },
+  {
+   "page": 42,
+   "mark": "t",
+   "context": "Figure14:AtensornetworkfortheoperatorWx(tw)=eiHLtwWx e−iHL"
+  },
+  {
+   "page": 42,
+   "mark": "w",
+   "context": "Figure14:AtensornetworkfortheoperatorWx(tw)=eiHLtwWx e−iHLt"
+  },
+  {
+   "page": 42,
+   "mark": "t",
+   "context": "representstheevolutione−iHL"
+  },
+  {
+   "page": 42,
+   "mark": "w",
+   "context": "representstheevolutione−iHLt"
+  },
+  {
+   "page": 42,
+   "mark": "t",
+   "context": "thegreenrepresentsthereverseevolutioneiHL"
+  },
+  {
+   "page": 42,
+   "mark": "w",
+   "context": "thegreenrepresentsthereverseevolutioneiHLt"
+  },
+  {
+   "page": 42,
+   "mark": "t",
+   "context": "e−iHL"
+  },
+  {
+   "page": 42,
+   "mark": "t",
+   "context": "e−iHLtLe−iHR"
+  },
+  {
+   "page": 42,
+   "mark": "x",
+   "context": "e−iHLtLe−iHRtRW"
+  },
+  {
+   "page": 42,
+   "mark": "n",
+   "context": "e−iHLtLe−iHRtRWx"
+  },
+  {
+   "page": 42,
+   "mark": "n",
+   "context": "e−iHLtLe−iHRtRWxn(t"
+  },
+  {
+   "page": 42,
+   "mark": "x",
+   "context": "e−iHLtLe−iHRtRWxn(tn) . . . W"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "e−iHLtLe−iHRtRWxn(tn) . . . Wx"
+  },
+  {
+   "page": 42,
+   "mark": "1",
+   "context": "e−iHLtLe−iHRtRWxn(tn) . . . Wx1(t"
+  },
+  {
+   "page": 42,
+   "mark": "w",
+   "context": "ent on the transition in complexity growth that occurs at |t"
+  },
+  {
+   "page": 42,
+   "mark": "w",
+   "context": "(|t"
+  },
+  {
+   "page": 43,
+   "mark": "w",
+   "context": "On the other hand, for tR> |t"
+  },
+  {
+   "page": 43,
+   "mark": "w",
+   "context": "(|t"
+  },
+  {
+   "page": 44,
+   "mark": "13",
+   "context": "itstimedevelopment."
+  },
+  {
+   "page": 44,
+   "mark": "†",
+   "context": "V"
+  },
+  {
+   "page": 44,
+   "mark": "k",
+   "context": "ρ(L, T) = V"
+  },
+  {
+   "page": 44,
+   "mark": "k",
+   "context": "ρ(L, T) = Vkρ(L/2"
+  },
+  {
+   "page": 44,
+   "mark": "0",
+   "context": "numberoflatticesitesis(LΛ"
+  },
+  {
+   "page": 44,
+   "mark": "k",
+   "context": "|TFD(L, T)⟩= V"
+  },
+  {
+   "page": 44,
+   "mark": "k",
+   "context": "|TFD(L, T)⟩= Vk⊗(V∗)"
+  },
+  {
+   "page": 44,
+   "mark": "k",
+   "context": "|TFD(L, T)⟩= Vk⊗(V∗)k|TFD(L/2"
+  },
+  {
+   "page": 44,
+   "mark": "0",
+   "context": "|TFD(L, T)⟩= Vk⊗(V∗)k|TFD(L/2k, Λ"
+  },
+  {
+   "page": 44,
+   "mark": "0",
+   "context": "on the second factor.The state |TFD(L′, Λ"
+  },
+  {
+   "page": 44,
+   "mark": "0",
+   "context": "econd factor.The state |TFD(L′, Λ0)⟩roughly consists of (L′Λ"
+  },
+  {
+   "page": 44,
+   "mark": "0",
+   "context": "Cnaive= CRG + cΛ"
+  },
+  {
+   "page": 44,
+   "mark": "0",
+   "context": "Cnaive= CRG + cΛ0(LΛ"
+  },
+  {
+   "page": 46,
+   "mark": "k",
+   "context": "V"
+  },
+  {
+   "page": 46,
+   "mark": "k",
+   "context": "Vk= V"
+  },
+  {
+   "page": 46,
+   "mark": "k",
+   "context": "I(L/2"
+  },
+  {
+   "page": 46,
+   "mark": "k",
+   "context": "I(L/2k)−iδt2−∆H"
+  },
+  {
+   "page": 46,
+   "mark": "k",
+   "context": "I(L/2k)−iδt2−∆HkH(L/2"
+  },
+  {
+   "page": 46,
+   "mark": "k",
+   "context": "longer scale for time 2−∆H"
+  },
+  {
+   "page": 46,
+   "mark": "k",
+   "context": "renormalizedHamiltonianwithUVscaleΛ0/2"
+  },
+  {
+   "page": 46,
+   "mark": "k",
+   "context": "renormalizedHamiltonianwithUVscaleΛ0/2kactingon(LΛ0/2"
+  },
+  {
+   "page": 46,
+   "mark": "k",
+   "context": "HamiltonianisΛ0/2"
+  },
+  {
+   "page": 46,
+   "mark": "k",
+   "context": "amiltonianisΛ0/2k= Tandthenumberofsitesonwhichitactsis(LΛ0/2"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "um mechanics (coupled to the other sites) and we expect c ∼N"
+  },
+  {
+   "page": 49,
+   "mark": "h",
+   "context": "(largeblackholes, r"
+  },
+  {
+   "page": 49,
+   "mark": "h",
+   "context": "(smallblackholes, r"
+  },
+  {
+   "page": 50,
+   "mark": "4",
+   "context": "stringscaleℓsbyλ = (ℓAdS/ℓs)"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "r"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "tanh"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "cosh"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "cosh"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "4Gℓ"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "FµνFµν∼⃗B"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "FµνFµν∼⃗B2−⃗E"
+  },
+  {
+   "page": 55,
+   "mark": "e",
+   "context": "Atextremelylatetimes,oforderthequantumrecurrencetimee"
+  },
+  {
+   "page": 56,
+   "mark": "n",
+   "context": "themanifoldU(2"
+  },
+  {
+   "page": 56,
+   "mark": "t",
+   "context": "ϵ)),i.e.notquitelinearlyin"
+  },
+  {
+   "page": 56,
+   "mark": "†",
+   "context": "e−iHt= UHe−ihtU"
+  },
+  {
+   "page": 57,
+   "mark": "†",
+   "context": "increasinglyinhibitsthecancellationofUHandU"
+  },
+  {
+   "page": 57,
+   "mark": "2",
+   "context": "averageenergyof|θ⟩isapproximatelysin"
+  },
+  {
+   "page": 57,
+   "mark": "2",
+   "context": "|θ⟩islikelygivenbyE(withoutanysin"
+  },
+  {
+   "page": 57,
+   "mark": "i",
+   "context": "iH"
+  },
+  {
+   "page": 57,
+   "mark": "i",
+   "context": "iHiwhereeachH"
+  },
+  {
+   "page": 57,
+   "mark": "i",
+   "context": "iHiwhereeachHiactsonlyonthe"
+  },
+  {
+   "page": 60,
+   "mark": "h",
+   "context": "rr −r"
+  },
+  {
+   "page": 60,
+   "mark": "h",
+   "context": "rr −r"
+  },
+  {
+   "page": 60,
+   "mark": "h",
+   "context": "e−r"
+  },
+  {
+   "page": 60,
+   "mark": "t",
+   "context": "e−rh"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "e−rhtL/ℓ"
+  },
+  {
+   "page": 60,
+   "mark": "r",
+   "context": "e"
+  },
+  {
+   "page": 60,
+   "mark": "h",
+   "context": "er"
+  },
+  {
+   "page": 60,
+   "mark": "t",
+   "context": "erh"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "erhtL/ℓ"
+  },
+  {
+   "page": 60,
+   "mark": "h",
+   "context": "r −˜r"
+  },
+  {
+   "page": 60,
+   "mark": "h",
+   "context": "r −˜r"
+  },
+  {
+   "page": 60,
+   "mark": "h",
+   "context": "e−˜r"
+  },
+  {
+   "page": 60,
+   "mark": "t",
+   "context": "e−˜rh"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "e−˜rhtL/ℓ"
+  },
+  {
+   "page": 60,
+   "mark": "h",
+   "context": "e˜r"
+  },
+  {
+   "page": 60,
+   "mark": "t",
+   "context": "e˜rh"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "e˜rhtL/ℓ"
+  },
+  {
+   "page": 60,
+   "mark": "h",
+   "context": "tL=−∞.21Wemusthave˜r"
+  },
+  {
+   "page": 60,
+   "mark": "h",
+   "context": "tL=−∞.21Wemusthave˜rh>r"
+  },
+  {
+   "page": 60,
+   "mark": "h",
+   "context": "u0= e−r"
+  },
+  {
+   "page": 60,
+   "mark": "t",
+   "context": "u0= e−rh"
+  },
+  {
+   "page": 60,
+   "mark": "w",
+   "context": "u0= e−rht"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "u0= e−rhtw/ℓ"
+  },
+  {
+   "page": 60,
+   "mark": "h",
+   "context": "˜u0= e−˜r"
+  },
+  {
+   "page": 60,
+   "mark": "t",
+   "context": "˜u0= e−˜rh"
+  },
+  {
+   "page": 60,
+   "mark": "w",
+   "context": "˜u0= e−˜rht"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "˜u0= e−˜rhtw/ℓ"
+  },
+  {
+   "page": 60,
+   "mark": "0",
+   "context": "1 −˜u"
+  },
+  {
+   "page": 60,
+   "mark": "0",
+   "context": "1 −u"
+  },
+  {
+   "page": 60,
+   "mark": "h",
+   "context": "1 + ˜u0˜v= r"
+  },
+  {
+   "page": 61,
+   "mark": "h",
+   "context": "shockisdrawninblueandtravelsalongthesurfaceu0=e−r"
+  },
+  {
+   "page": 61,
+   "mark": "t",
+   "context": "shockisdrawninblueandtravelsalongthesurfaceu0=e−rh"
+  },
+  {
+   "page": 61,
+   "mark": "w",
+   "context": "shockisdrawninblueandtravelsalongthesurfaceu0=e−rht"
+  },
+  {
+   "page": 61,
+   "mark": "2",
+   "context": "shockisdrawninblueandtravelsalongthesurfaceu0=e−rhtw/ℓ"
+  },
+  {
+   "page": 61,
+   "mark": "h",
+   "context": "˜u0= e−˜r"
+  },
+  {
+   "page": 61,
+   "mark": "t",
+   "context": "˜u0= e−˜rh"
+  },
+  {
+   "page": 61,
+   "mark": "w",
+   "context": "˜u0= e−˜rht"
+  },
+  {
+   "page": 61,
+   "mark": "2",
+   "context": "˜u0= e−˜rhtw/ℓ"
+  },
+  {
+   "page": 61,
+   "mark": "h",
+   "context": "\u0012(˜r"
+  },
+  {
+   "page": 61,
+   "mark": "h",
+   "context": "\u0012(˜rh −r"
+  },
+  {
+   "page": 61,
+   "mark": "h",
+   "context": "\u0012(˜rh −rh) + (˜r"
+  },
+  {
+   "page": 61,
+   "mark": "h",
+   "context": "\u0012(˜rh −rh) + (˜rh + r"
+  },
+  {
+   "page": 61,
+   "mark": "0",
+   "context": "\u0012(˜rh −rh) + (˜rh + rh)u"
+  },
+  {
+   "page": 61,
+   "mark": "h",
+   "context": "(˜r"
+  },
+  {
+   "page": 61,
+   "mark": "h",
+   "context": "(˜rh + r"
+  },
+  {
+   "page": 61,
+   "mark": "h",
+   "context": "(˜rh + rh) + (˜r"
+  },
+  {
+   "page": 61,
+   "mark": "h",
+   "context": "(˜rh + rh) + (˜rh −r"
+  },
+  {
+   "page": 61,
+   "mark": "0",
+   "context": "(˜rh + rh) + (˜rh −rh)u"
+  },
+  {
+   "page": 61,
+   "mark": "w",
+   "context": "Nownormallywe’dexpandEq.B.6inthelimitϵ→0andt"
+  },
+  {
+   "page": 61,
+   "mark": "0",
+   "context": "Nownormallywe’dexpandEq.B.6inthelimitϵ→0andtw→∞,withϵ/u"
+  },
+  {
+   "page": 61,
+   "mark": "w",
+   "context": "condition.However,sincet"
+  },
+  {
+   "page": 61,
+   "mark": "2",
+   "context": "4ℓ"
+  },
+  {
+   "page": 61,
+   "mark": "2",
+   "context": "4ℓ"
+  },
+  {
+   "page": 61,
+   "mark": "2",
+   "context": "(1 + uv)"
+  },
+  {
+   "page": 61,
+   "mark": "0",
+   "context": "(1 + uv)2dudv|u=u"
+  },
+  {
+   "page": 61,
+   "mark": "2",
+   "context": "(1 + ˜u˜v)"
+  },
+  {
+   "page": 61,
+   "mark": "d",
+   "context": "(1 + ˜u˜v)2"
+  },
+  {
+   "page": 61,
+   "mark": "0",
+   "context": "(1 + ˜u˜v)2d˜ud˜v|˜u=˜u"
+  },
+  {
+   "page": 61,
+   "mark": "0",
+   "context": "˜u′(u)|u=u"
+  },
+  {
+   "page": 62,
+   "mark": "0",
+   "context": "whichgoeslike−ϵ/4u"
+  },
+  {
+   "page": 62,
+   "mark": "w",
+   "context": "|ψ⟩= W(t"
+  },
+  {
+   "page": 62,
+   "mark": "t",
+   "context": "where W(tw) = e−iHL"
+  },
+  {
+   "page": 62,
+   "mark": "w",
+   "context": "where W(tw) = e−iHLt"
+  },
+  {
+   "page": 62,
+   "mark": "t",
+   "context": "where W(tw) = e−iHLtwWeiHL"
+  },
+  {
+   "page": 62,
+   "mark": "w",
+   "context": "where W(tw) = e−iHLtwWeiHLt"
+  },
+  {
+   "page": 62,
+   "mark": "2",
+   "context": "perturbation—its energy scales with N"
+  },
+  {
+   "page": 63,
+   "mark": "h",
+   "context": "leavingtheboundaryittravelsalongthenullsurfaceu0=e−r"
+  },
+  {
+   "page": 63,
+   "mark": "t",
+   "context": "leavingtheboundaryittravelsalongthenullsurfaceu0=e−rh"
+  },
+  {
+   "page": 63,
+   "mark": "w",
+   "context": "leavingtheboundaryittravelsalongthenullsurfaceu0=e−rht"
+  },
+  {
+   "page": 63,
+   "mark": "2",
+   "context": "leavingtheboundaryittravelsalongthenullsurfaceu0=e−rhtw/ℓ"
+  },
+  {
+   "page": 63,
+   "mark": "h",
+   "context": "˜u0=e−˜r"
+  },
+  {
+   "page": 63,
+   "mark": "t",
+   "context": "˜u0=e−˜rh"
+  },
+  {
+   "page": 63,
+   "mark": "w",
+   "context": "˜u0=e−˜rht"
+  },
+  {
+   "page": 63,
+   "mark": "2",
+   "context": "˜u0=e−˜rhtw/ℓ"
+  },
+  {
+   "page": 63,
+   "mark": "0",
+   "context": "v"
+  },
+  {
+   "page": 63,
+   "mark": "r",
+   "context": "v0= −e"
+  },
+  {
+   "page": 63,
+   "mark": "h",
+   "context": "v0= −er"
+  },
+  {
+   "page": 63,
+   "mark": "t",
+   "context": "v0= −erh"
+  },
+  {
+   "page": 63,
+   "mark": "w",
+   "context": "v0= −erht"
+  },
+  {
+   "page": 63,
+   "mark": "2",
+   "context": "v0= −erhtw/ℓ"
+  },
+  {
+   "page": 63,
+   "mark": "0",
+   "context": "AdSorequivalently¯v"
+  },
+  {
+   "page": 63,
+   "mark": "h",
+   "context": "AdSorequivalently¯v0= −e˜r"
+  },
+  {
+   "page": 63,
+   "mark": "t",
+   "context": "AdSorequivalently¯v0= −e˜rh"
+  },
+  {
+   "page": 63,
+   "mark": "w",
+   "context": "AdSorequivalently¯v0= −e˜rht"
+  },
+  {
+   "page": 63,
+   "mark": "2",
+   "context": "AdSorequivalently¯v0= −e˜rhtw/ℓ"
+  },
+  {
+   "page": 64,
+   "mark": "0",
+   "context": "v"
+  },
+  {
+   "page": 64,
+   "mark": "r",
+   "context": "v0= −e"
+  },
+  {
+   "page": 64,
+   "mark": "h",
+   "context": "v0= −er"
+  },
+  {
+   "page": 64,
+   "mark": "t",
+   "context": "v0= −erh"
+  },
+  {
+   "page": 64,
+   "mark": "w",
+   "context": "v0= −erht"
+  },
+  {
+   "page": 64,
+   "mark": "2",
+   "context": "v0= −erhtw/ℓ"
+  },
+  {
+   "page": 64,
+   "mark": "0",
+   "context": "¯v"
+  },
+  {
+   "page": 64,
+   "mark": "h",
+   "context": "¯v0= −e˜r"
+  },
+  {
+   "page": 64,
+   "mark": "t",
+   "context": "¯v0= −e˜rh"
+  },
+  {
+   "page": 64,
+   "mark": "w",
+   "context": "¯v0= −e˜rht"
+  },
+  {
+   "page": 64,
+   "mark": "2",
+   "context": "¯v0= −e˜rhtw/ℓ"
+  },
+  {
+   "page": 64,
+   "mark": "0",
+   "context": "v"
+  },
+  {
+   "page": 64,
+   "mark": "0",
+   "context": "¯v"
+  },
+  {
+   "page": 64,
+   "mark": "h",
+   "context": "\u0012(˜r"
+  },
+  {
+   "page": 64,
+   "mark": "h",
+   "context": "\u0012(˜rh −r"
+  },
+  {
+   "page": 64,
+   "mark": "0",
+   "context": "\u0012(˜rh −rh)u"
+  },
+  {
+   "page": 64,
+   "mark": "h",
+   "context": "\u0012(˜rh −rh)u0 −(˜r"
+  },
+  {
+   "page": 64,
+   "mark": "h",
+   "context": "\u0012(˜rh −rh)u0 −(˜rh + r"
+  },
+  {
+   "page": 64,
+   "mark": "0",
+   "context": "¯u(u) = −˜u"
+  },
+  {
+   "page": 64,
+   "mark": "h",
+   "context": "(˜r"
+  },
+  {
+   "page": 64,
+   "mark": "h",
+   "context": "(˜rh + r"
+  },
+  {
+   "page": 64,
+   "mark": "0",
+   "context": "(˜rh + rh)u"
+  },
+  {
+   "page": 64,
+   "mark": "h",
+   "context": "(˜rh + rh)u0 −(˜r"
+  },
+  {
+   "page": 64,
+   "mark": "h",
+   "context": "(˜rh + rh)u0 −(˜rh −r"
+  },
+  {
+   "page": 64,
+   "mark": "0",
+   "context": "u(¯u = 0) =u"
+  },
+  {
+   "page": 64,
+   "mark": "0",
+   "context": "whichgoeslikeu"
+  },
+  {
+   "page": 64,
+   "mark": "0",
+   "context": "whichgoeslikeu0ϵ/4 ∼0inthelimitofϵ/4u"
+  }
+ ]
+}

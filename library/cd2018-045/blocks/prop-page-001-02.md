@@ -1,0 +1,1 @@
+The Cottingham Formula provides a means of determining the QED corrections from the forward Compton Am- plitude, but this is challenged by the need for a subtraction function and the mixing of the QED and QCD (electro-weak) effects.

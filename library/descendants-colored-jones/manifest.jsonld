@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/descendants-colored-jones",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/descendants-colored-jones/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "descendants-colored-jones",
+  "title": "The descendant colored Jones polynomials",
   "contains": [
+    "library/descendants-colored-jones/sections/sec-front-matter",
     "library/descendants-colored-jones/sections/sec-000",
     "library/descendants-colored-jones/sections/sec-001",
     "library/descendants-colored-jones/sections/sec-002",
@@ -23,13 +24,17 @@
     "library/descendants-colored-jones/sections/sec-009",
     "library/descendants-colored-jones/sections/sec-010",
     "library/descendants-colored-jones/sections/sec-011",
-    "library/descendants-colored-jones/sections/sec-012"
+    "library/descendants-colored-jones/sections/sec-012",
+    "library/descendants-colored-jones/sections/sec-013",
+    "library/descendants-colored-jones/sections/sec-014"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "descendants-colored-jones",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "descendants_colored_jones.pdf",
     "source_sha256": "f00693a5926c074ffad7e37e63032d6f2a20c55598d1b37497760948cb6992fc",
     "pages": 28,

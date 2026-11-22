@@ -1,0 +1,45 @@
+180 Overview of analytic methods for multivariate GFs
+
+Figure 7.5 Left: The gradient flow of |x| = 1/10 at three points in time, plotted on
+C? \ {0, 1} when arranged by height h(x) = h(a + ib). Right: The curves under the
+flow plotted in the complex plane.
+
+i}
+
+r
+
+ao]
+
+aa
+Peele i
+
+T
+
+main diagonal direction r = (1, 1) of the power series expansion of F(x, y) =
+1/Q(x, y) with Q(x, y) = (1 — x -— y)(1 — 3x). The factor 1 — x — y is the same
+as in the above examples, but having the second factor change from | + 3x to
+1 — 3x moves the non-smooth point to (1/3, 2/3). Because the height h(x, y) =
+—log x - logy is now larger at (1/3,2/3) than (1/2, 1/2), we can no longer
+easily rule out the non-smooth point. In fact, following Method One from the
+last example shows
+
+1 1 dx n 1 1 dx
+a, == —— — ————
+Oni Se-tpsjen 1 3x xD = xy Qt Siero P= 3x x1 = xy!
+
+1/3 1 1 dx
+— _ -1 —_______ — es
+= Res 1/3) Sat oat * Oni Iiyei TP Se ay
+1/9 n+1
+==(2 4"),
+(5) +004")
+
+More generally, if V is no longer a manifold then we compute a Whitney strat-
+ification, partitioning V into a finite collection of manifolds such that the local
+geometry of V is consistent near the points in any fixed element of the par-
+tition. We then perform an analysis similar to the smooth case on each of the
+manifolds, obtaining a set of equations for each manifold that characterizes
+the points of interest for our asymptotic calculations. The asymptotic contri-
+bution of such a point depends on the geometry near the singularity. In this
+text we study singularities where V is locally smooth (in Chapter 9), looks
+like the union of hyperplanes (in Chapter 10), or looks like a cone point (in

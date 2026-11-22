@@ -2,7 +2,8 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/rem-alpha-em-categorical-trace-ratio-interpretation",
@@ -14,7 +15,7 @@
   "kind": "remark",
   "title": "Interpretation: $\\alpha_{EM}$ as $h^2$ over force-carrier categorical traces, and its role in the Hartree-energy conjecture",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-force-carrier-intertwining-correspondence",
+    "papers/quantum-observable-universe/blocks/conj-force-carrier-intertwining-correspondence",
     "papers/quantum-observable-universe/blocks/conj-e-hartree-categorical-derivation"
   ],
   "interprets": "papers/quantum-observable-universe/blocks/prop-alpha-em-categorical-trace-ratio",

@@ -1,0 +1,1 @@
+For G : V →V′ a symmetric monoidal functor between ⊗-presentable ∞-categories whose restriction to underlying ∞-categories preserves geometric realizations, there is a canonical equivalence R ◦G ≃ −→G ◦ R of functors AlgDiskB n (V) →Fun⊗(MﬂdB n , V′).

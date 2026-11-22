@@ -4,13 +4,14 @@ doc_title: "Quantum Computation vs. Firewalls"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
-pages: 2-8
+pages: 3-8
 source_pdf: 1301.4504v4.pdf
 source_sha256: 201acc5bb1d4b6a0
-doc_brief: "Quantum Computation vs. Firewalls — In this paper we discuss quantum computational restrictions on the types of thought experiments recently used by Almheiri, Marolf, Polchinski, and Sully to argue"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.999
-latex_coverage_ratio: 0.999
+latex_prose_ratio: 0.926
+latex_coverage_ratio: 0.997
+doc_brief: "Quantum Computation vs. Firewalls — In this paper we discuss quantum computational restrictions on the types of thought experiments recently used by Almheiri, Marolf, Polchinski, and Sully to argue"
 ---
 The recently proposed firewall phenomenon [@Almheiri:2012rt] has dramatically emphasized the extent to which black holes remain interesting and mysterious in quantum gravity. Using "reasonable" assumptions about the structure of the quantum theory of black holes, the authors of [@Almheiri:2012rt], henceforth referred to as AMPS, have argued that unitarity of black hole evaporation, along with some limited form of locality, is inconsistent with a smooth horizon for an observer falling into an "old" black hole.[^1] There has been significant discussion of this claim in the literature, but in our view none of the followup work so far has decisively challenged the original argument.
 

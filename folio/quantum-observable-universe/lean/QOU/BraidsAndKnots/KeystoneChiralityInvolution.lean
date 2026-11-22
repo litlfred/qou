@@ -33,7 +33,7 @@ max diff 0.0 at q₀); these are its formalized facets.
 
 Refs:
 - [macdonald1995] Symmetric Functions and Hall Polynomials, I.1 (conjugate / hooks)
-- [manuscript] docs/audits/2026-06-16-keystone-index-necessary-conditions.md (C2)
+- [leitner2026] docs/audits/2026-06-16-keystone-index-necessary-conditions.md (C2)
 -/
 
 open QOU.MathlibExt.QPartitionCombinatorics

@@ -13,7 +13,7 @@ the divisibility relation β | f.
 LaTeX label: `def:leading-terms`
 
 ## References
-- [manuscript] §1/leading-terms
+- [leitner2026] §1/leading-terms
 -/
 
 namespace QOU.UnitalGroebner
@@ -38,7 +38,7 @@ structure Term where
     - LM(f) = b₁  (leading monomial)
     - LC(f) = c₁  (leading coefficient)
     - LT(f) = c₁ · b₁ (leading term) -/
--- Ref: [manuscript] §1/leading-terms
+-- Ref: [leitner2026] §1/leading-terms
 structure LeadingTerm where
   /-- The leading monomial LM(f): largest basis element. -/
   leadingMono : B
@@ -49,7 +49,7 @@ structure LeadingTerm where
 
 /-- Divisibility: β divides f if there exist u, v ∈ B and scalar ∈ R*
     such that scalar · LT(u · β · v) = LT(f). -/
--- Ref: [manuscript] §1/leading-terms
+-- Ref: [leitner2026] §1/leading-terms
 structure Divides (β : B) (lt_f : LeadingTerm R B) where
   /-- Left multiplier in B. -/
   u : B

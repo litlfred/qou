@@ -1,0 +1,1 @@
+It is customary to use a cutoﬀin momentum space: restrict the integration to the euclidean sphere Q2 ≤Λ2 and write the regularized Cottingham formula as mΛ γ = e2 2m(2π)4 Z Q2≤Λ2 d4Q Q2 {3Q2 ¯T + 2(Q2 4 −1 4Q2)T2} .

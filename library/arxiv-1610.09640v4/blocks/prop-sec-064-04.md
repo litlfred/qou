@@ -1,0 +1,1 @@
+Assume A is a nonpositive DG ring. For every object M ∈ C(A, M) there is a distinguished triangle smt≥i+1(M) →M →smt≤i(M) →Top(smt≥i+1(M)) in D(A, M)op. The truncations are performed in C(A, M) as above.

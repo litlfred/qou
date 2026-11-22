@@ -47,7 +47,7 @@
   Scope (a): nothing here refutes the Rademacher function; it shows the
   Rademacher route cannot distinguish the two anchors, for a structural reason.
 
-  -- Ref: [manuscript] bean qou-aspz; computations/probes/qbeta_rdmr_rademacher_winding_probe.py
+  -- Ref: [leitner2026] bean qou-aspz; computations/probes/qbeta_rdmr_rademacher_winding_probe.py
   -- Ref: [ghys2007] Knots and dynamics (ICM 2006) — Rademacher function as a
   --      homogeneous quasimorphism; the RL word count on hyperbolic classes
 -/

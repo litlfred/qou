@@ -1,0 +1,1 @@
+Let φ(x) ∈K[x] be a polynomial of degree d ≥2, let α ∈K be a nonexceptional point for φ, and assume that the pair (φ, α) is K-conjugate to the pair (Td, β) for β ∈K. Then K∞(φ, α)/K is an abelian extension if and only if β = ζ + 1/ζ for some root of unity ζ ∈K and (φ, α) is K ab-conjugate to (Td, β).

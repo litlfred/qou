@@ -136,6 +136,38 @@
         },
         "reviewed_at": "2026-06-28T22:34:58.468Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "d4e72ab259a9",
+          "ts": "276cc4fe3e5f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:25.510Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "critical",
+        "evidence": "CRITICAL false statement: md:3 'one of the eight ideal octahedra tessellating the Borromean complement' — it is 2 regular ideal octahedra (8G = 2 × 4G, V_oct ≈ 3.6639); proof:31-32 'G = Λ(π/4) = ½V_oct' (G = 2Λ(π/4) = V_oct/4); proof:35-39 'effective cell count = 5/2 × 2/5 = 1' with 5/2 unexplained",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: other"
+      },
+      {
+        "field_hash": {
+          "md": "6fc2b8c93249",
+          "ts": "276cc4fe3e5f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:13:24.389Z",
+        "reviewed_sha": "5f209b510c5b50294fd755d263c17c75d49be3ed",
+        "evidence": "Branching table checked; with the stated half-symmetric weights the share 2/5 follows."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -945,7 +977,7 @@
           "in_degree": 0,
           "cone_size": 369,
           "depth": 59,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1484,7 +1516,7 @@
         "reviewed_at": "2026-08-22T02:34:07.023Z",
         "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
         "evidence": "Proof reads in short steps.",
-        "notes": "TABLE RECOMPUTED ROW BY ROW AND IT IS CORRECT: (4)->(3), dim 1, trivial 1; (3,1)->(3)+(2,1), dim 3, trivial 1; (2,2)->(2,1), dim 2, trivial 0; (2,1,1)->(2,1)+(1^3), dim 3, trivial 0; (1^4)->(1^3), dim 1, trivial 0. Independent invariant: sum of dim^2 = 1+9+4+9+1 = 24 = 4!, passes. Conjugate pairing {(4),(1^4)}, {(3,1),(2,1,1)} and self-conjugate (2,2) also correct. TWO FINDINGS OUTSIDE THE TABLE. (1) UNEXPLAINED FACTOR OF 2: the proof derives dim_half-sym = 1+3+1 = 5 and the trivial factor 2/5, then writes 'effective cell count = (5/2) x (2/5) = 1' calling 5/2 the half-sym count. Its own half-sym count is 5, and 5 x (2/5) = 2, not 1. The 5/2 appears nowhere above it, and the sibling witness reports h0_equals_5_over_2 = FALSE. (2) THREE HYPERBOLIC-GEOMETRY ERRORS IN ONE PARENTHETICAL, recomputed at 20 dps: G = Cl_2(pi/2) = 0.9159655942, while Lambda(pi/4) = 0.4579827971 = G/2, so G = Lambda(pi/4) is wrong by a factor 2 (correct: G = 2 Lambda(pi/4)); V_oct = 8 Lambda(pi/4) = 4G = 3.6638624, so G = (1/2) V_oct is wrong (correct: G = V_oct/4); and Vol(B_3) = 8G = 7.3277248 = 2 V_oct, i.e. the Borromean complement is TWO regular ideal octahedra, not eight \u2014 the 8 in 8G counts Catalan-constant units. Consequently the 8-fold tessellation, the per-cell ratio 1/8, and one of the EIGHT ideal octahedral cells are all wrong; with 2 cells the ratio is 1/2. This is the documented Lambda-vs-Cl_2 hazard (right value, wrong function name) with a cell count inferred from the wrong name. PROPOSED: Vol(B_3) = 8G = 2 V_oct with G = Cl_2(pi/2) = 2 Lambda(pi/4) = V_oct/4, and rebuild the cell argument on 2 cells."
+        "notes": "TABLE RECOMPUTED ROW BY ROW AND IT IS CORRECT: (4)->(3), dim 1, trivial 1; (3,1)->(3)+(2,1), dim 3, trivial 1; (2,2)->(2,1), dim 2, trivial 0; (2,1,1)->(2,1)+(1^3), dim 3, trivial 0; (1^4)->(1^3), dim 1, trivial 0. Independent invariant: sum of dim^2 = 1+9+4+9+1 = 24 = 4!, passes. Conjugate pairing {(4),(1^4)}, {(3,1),(2,1,1)} and self-conjugate (2,2) also correct. TWO FINDINGS OUTSIDE THE TABLE. (1) UNEXPLAINED FACTOR OF 2: the proof derives dim_half-sym = 1+3+1 = 5 and the trivial factor 2/5, then writes 'effective cell count = (5/2) x (2/5) = 1' calling 5/2 the half-sym count. Its own half-sym count is 5, and 5 x (2/5) = 2, not 1. The 5/2 appears nowhere above it, and the sibling witness reports h0_equals_5_over_2 = FALSE. (2) THREE HYPERBOLIC-GEOMETRY ERRORS IN ONE PARENTHETICAL, recomputed at 20 dps: G = Cl_2(pi/2) = 0.9159655942, while Lambda(pi/4) = 0.4579827971 = G/2, so G = Lambda(pi/4) is wrong by a factor 2 (correct: G = 2 Lambda(pi/4)); V_oct = 8 Lambda(pi/4) = 4G = 3.6638624, so G = (1/2) V_oct is wrong (correct: G = V_oct/4); and Vol(B_3) = 8G = 7.3277248 = 2 V_oct, i.e. the Borromean complement is TWO regular ideal octahedra, not eight — the 8 in 8G counts Catalan-constant units. Consequently the 8-fold tessellation, the per-cell ratio 1/8, and one of the EIGHT ideal octahedral cells are all wrong; with 2 cells the ratio is 1/2. This is the documented Lambda-vs-Cl_2 hazard (right value, wrong function name) with a cell count inferred from the wrong name. PROPOSED: Vol(B_3) = 8G = 2 V_oct with G = Cl_2(pi/2) = 2 Lambda(pi/4) = V_oct/4, and rebuild the cell argument on 2 cells."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1507,6 +1539,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T02:34:07.023Z",
+  "updated_at": "2026-11-16T07:13:24.389Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

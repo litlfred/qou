@@ -7,10 +7,11 @@ section_number: null
 pages: 6-8
 source_pdf: 2603.12136v1.pdf
 source_sha256: e9c50616344b24e0
-doc_brief: "Folding Mixed-Integer Linear Programs and Reflection Symmetries — For mixed-integer linear programming and linear programming it is well known that symmetries can have a negative impact on the"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.966
-latex_coverage_ratio: 0.673
+latex_coverage_ratio: 1.0
+doc_brief: "Folding Mixed-Integer Linear Programs and Reflection Symmetries — For mixed-integer linear programming and linear programming it is well known that symmetries can have a negative impact on the"
 ---
 First, we introduce equitable partitions of linear programs as presented in [@Grohe2014]. Given a matrix $A\in \R^{V\times W}$, DRCR iteratively computes partitions $\MP_i$ and $\MQ_i$ of $V$ and $W$, the rows and columns of $A$. Let $\MP_0 = \{ V\}$ and $\MQ_0 = \{ W\}$. A partition $(\MP,\MQ)$ of the rows and columns of $A$ is said to be *equitable* if for all $P\in \MP,Q\in\MQ$ it holds that $$\begin{aligned}
     \label{eq_folding_row_sums}

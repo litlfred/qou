@@ -2,20 +2,80 @@
  "_schema": "library-summary/v1",
  "doc_id": "download-1",
  "source_sha256": "bbb001c909958e8a",
- "brief": "Central and Lp-concentration of 1-Lipschitz maps into R-trees — In this paper, we study the Le ´vy-Milman concentration phenomenon of 1-Lipschitz maps from mm-spaces to R-trees.",
- "extended": "**Central and Lp-concentration of 1-Lipschitz maps into R-trees**\n\n*By Kei FUNANO*\n\n24 pp, 2 sections.\n\n**Abstract.** In this paper, we study the Le ´vy-Milman concentration phenomenon of 1-Lipschitz maps from mm-spaces to R-trees. Our main theorems assert that the concentration to R-trees is equivalent to the concentration to the real line.\n\n**Outline.** 2.3 Center of mass of a measure on a CAT(0)-sp; References",
+ "brief": "Central and L p -concentration of 1-Lipschitz maps into R -trees — In this paper, we study the Le´vy-Milman concentration phenomenon of 1-Lipschitz maps from mm-spaces to R-trees.",
+ "extended": "**Central and L p -concentration of 1-Lipschitz maps into R -trees**\n\n*By Kei FUNANO*\n\n24 pp, 14 sections.\n\n**Abstract.** In this paper, we study the Le´vy-Milman concentration phenomenon of 1-Lipschitz maps from mm-spaces to R-trees. Our main theorems assert that the concentration to R-trees is equivalent to the concentration to the real line.\n\n**Outline.** Front matter; 1 Introduction.; 2 Preliminaries.; 2.1 Basics of the concentration and the Lp-con; 2.1.1 Observable diameter and separation dista; 2.1.2 Observable Lp-variation.; 2.2 Basics of R-trees.; 2.3 Center of mass of a measure on a CAT(0)-sp; 2.3.1 Basics of the center of mass of a measur; 2.3.2 Observable central radius.; 3 Existence of a median in an R-tree.; 4 The necessity in Proposition 2.12 for R-tree; 5 Proof of the main theorems.; References",
  "tokens": {
   "brief": 44,
-  "extended": 104
+  "extended": 205
  },
  "sections": [
   {
-   "id": "sec-000-23-center-of-mass-of-a-measure-on-a-cat0-space-a",
-   "title": "Center of mass of a measure on a CAT(0)-space and observ-",
-   "pages": "7-23"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
   },
   {
-   "id": "sec-001-references",
+   "id": "sec-000-1-introduction",
+   "title": "Introduction.",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-001-2-preliminaries",
+   "title": "Preliminaries.",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-002-21-basics-of-the-concentration-and-the-lp-concen",
+   "title": "Basics of the concentration and the Lp-concentration.",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-003-211-observable-diameter-and-separation-distance",
+   "title": "Observable diameter and separation distance.",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-004-212-observable-lp-variation",
+   "title": "Observable Lp-variation.",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-005-22-basics-of-r-trees",
+   "title": "Basics of R-trees.",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-006-23-center-of-mass-of-a-measure-on-a-cat0-space-a",
+   "title": "Center of mass of a measure on a CAT(0)-space and observable central radius.",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-007-231-basics-of-the-center-of-mass-of-a-measure-on",
+   "title": "Basics of the center of mass of a measure on a CAT(0)-space.",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-008-232-observable-central-radius",
+   "title": "Observable central radius.",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-009-3-existence-of-a-median-in-an-r-tree",
+   "title": "Existence of a median in an R-tree.",
+   "pages": "11-13"
+  },
+  {
+   "id": "sec-010-4-the-necessity-in-proposition-212-for-r-trees",
+   "title": "The necessity in Proposition 2.12 for R-trees.",
+   "pages": "13-16"
+  },
+  {
+   "id": "sec-011-5-proof-of-the-main-theorems",
+   "title": "Proof of the main theorems.",
+   "pages": "16-23"
+  },
+  {
+   "id": "sec-012-references",
    "title": "References",
    "pages": "23-24"
   }

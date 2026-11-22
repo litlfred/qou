@@ -93,10 +93,10 @@
 
   Sorry-free. No `axiom`, no conditional class, no `native_decide`.
 
-  -- Ref: [manuscript] computations/qbeta/qbeta_embedding_energy_can_discriminate_probe.py
-  -- Ref: [manuscript] computations/qbeta/qbeta_bring_ohara_bridge_probe.py
-  -- Ref: [manuscript] tools/pyhecke/python/pyhecke/lp_dual_solver.py
-  -- Ref: [manuscript] .beans/qou-99qc , .beans/qou-pzsi , .beans/qou-ales
+  -- Ref: [leitner2026] computations/qbeta/qbeta_embedding_energy_can_discriminate_probe.py
+  -- Ref: [leitner2026] computations/qbeta/qbeta_bring_ohara_bridge_probe.py
+  -- Ref: [leitner2026] tools/pyhecke/python/pyhecke/lp_dual_solver.py
+  -- Ref: [leitner2026] .beans/qou-99qc , .beans/qou-pzsi , .beans/qou-ales
 -/
 import Mathlib.Algebra.BigOperators.Group.List.Basic
 import Mathlib.Data.List.Perm.Basic

@@ -10,7 +10,8 @@ source_sha256: 0ccaeeabd8de6b5f
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.936
-latex_coverage_ratio: 0.949
+latex_coverage_ratio: 0.974
+doc_brief: "Integer Polynomial Optimization in Fixed Dimension — 5 sections: Front matter; Introduction; Computational Complexity Bounds"
 ---
 Mixed integer non-linear programs combine the hardness of combinatorial explosion with the non-convexity of non-linear functions. For example, the well-known optimality conditions developed for differentiable objective functions have no meaning when the variables are discrete. Thus, it is perhaps not surprising that already linear integer programming with general quadratic constraints is undecidable [@jeroslow]. Nevertheless, when the number of variables is fixed discrete optimization problems often become tractable and efficient polynomial algorithms exist (e.g. [@bar; @khachiyanporkolab; @lenstra]). It is thus natural to ask *what is the complexity of integer non-linear optimization assuming that the number of variables is fixed?* We study the problem $$\label{model} \hbox{maximize} \  f(x_1,\dots,x_d) \
   \hbox{subject to} \ g_i(x_1,\dots,x_d) \geq 0, \ x \in  \mathbb Z^d.$$ Here $f,g_i$ are polynomials with integral coefficients. Note that all throughout the paper we assume that the number of variables is fixed. Here are our two contributions to the theory:

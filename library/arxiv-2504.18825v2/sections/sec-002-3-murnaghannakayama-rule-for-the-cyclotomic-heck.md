@@ -4,13 +4,13 @@ doc_title: "Murnaghan-Nakayama rule for the cyclotomic Hecke algebra and applica
 section_id: sec-002-3-murnaghannakayama-rule-for-the-cyclotomic-heck
 section_title: "Murnaghan–Nakayama rule for the cyclotomic Hecke algebra"
 section_number: 3
-pages: 11-18
+pages: 12-18
 source_pdf: 2504.18825v2.pdf
 source_sha256: 829f97190cb1c8ad
 toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.949
-latex_coverage_ratio: 0.846
+latex_coverage_ratio: 0.972
 doc_brief: "Murnaghan-Nakayama rule for the cyclotomic Hecke algebra and applications — We establish a Murnaghan–Nakayama rule for the irreducible characters of the cyclotomic Hecke algebra Hm,n(q, u) on Shoji’s"
 ---
 \label{s:M-N}

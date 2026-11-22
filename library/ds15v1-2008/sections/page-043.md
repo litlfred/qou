@@ -1,0 +1,68 @@
+---
+doc_id: ds15v1-2008
+doc_title: "Rogers-Ramanujan-Slater Type Identities"
+section_id: page-043
+section_title: "Page 43"
+pages: 43-43
+pdf_page: 43
+source_pdf: ds15v1-2008.pdf
+source_sha256: aef155a324c6fdf4
+text_source: ocr
+granularity: page
+doc_brief: "Rogers-Ramanujan-Slater Type Identities — In this survey article, we present an expanded version of Lucy Slater’s famous list of identities of the Rogers-Ramanujan type, including identities of"
+---
+Note that the case a = q in (6.1.5) implies that, for |g) < 1 and y € C,
+ico qh rian
+
+a es
+“= (=9, )n+1
+
+The tables are to be understood as follows: let the parameters have the specified values
+in the specified transformations (listed in the first column), and then, if applicable, make
+the indicated base changes in either both sides of the transformation or else recognize
+that one of the series equals the series in the corresponding identity, after the indicated
+base change.
+
+For example, from row one of Table 3, if the indicated substitutions are made in
+Transformation 6.1.13, we get that
+
+ico q” *+n (1 /q)” ico (V/?;4 qr (n+1) 2(— q ¥?)\r
+ue Te (FONE Dn Cer =e SET (G.@)n
+
+From 8.6 on Slater’s list, the left side equals (—q, —q?, q?; @)oo/(d; Qoo- Replace q by ¢
+and we have that
+
+(<0, =44 1° 1")oo( == es (=1)"
+(PP )oo = ( APP )n
+
+Finally, replace q by —q and we have Identity $.29 from Slater’s list.
+As a second example, from row 5 of the table, if the indicated value y = q°/? is
+substituted in Transformation 6.1.9, we get
+
+iad q’ (n+2)/2 iad _ +2n
+ier = Gece
+— IE Dn oo <— (
+
+The series on the right is the series in Identity $.14 (with q replaced by q?). Thus it
+follows that so
+
+3 gnint2)/2 _ 1
+
+(P,Q) n(GQDn (45/7: q)o0(G4, 9°: "10
+
+Replacing q¢ by q? and dividing both sides by 1 — q leads to Identity $.96.
+
+The transformations also imply some identities which we believe to be new. For
+example, if we set c = —q?, d = q'/? and then replace q by q? in (6.1.17), the series on
+the right side becomes that in $38 (up to a multiple of 1 — q) and leads to the following
+identity:
+
+~ f) er vin" o_7 8, ey (954°)
+Eas = (9-905 0 ora: 6.1.22
+ee (—2 nt ( (145 Too (
+A similar pairing of S39 and vd (61.10 leads to the following:
+Ss (a5 Pang? (-1)" 3s (7: doo
+oor = PP Pe (6.1.23)
+n=0 (8; B)n(—@5 9") n (94; 4") 00
+
+THE ELECTRONIC JOURNAL OF COMBINATORICS 15 (2008), #DS15 43

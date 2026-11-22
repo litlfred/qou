@@ -1,0 +1,61 @@
+12.7 Additional worked examples 411
+
+Example 12.29 (Serial Dictatorship). The trivariate sequence
+
+(1)
+0
+
+ifl<s<t<r
+Anjr = .
+otherwise
+
+arises in the study of the Serial Dictatorship algorithm for allocating indivisible
+goods (it gives the probability, under IID uniform strict preferences of r agents
+over r items, that the sth agent receives its rth most preferred item).
+
+The generating function for the numerators b,s; = (; ~) is
+
+xyz
+
+F Z= b ys _ .
+(%y,2) » ri = Ga aw
+
+15,020
+Let Qi(x,y,z) = 1-z- xz and Qo(x,y,z) = 1 — xyz. Because Q, is inde-
+pendent of y, points on the stratum where Q; vanishes but Q> is non-zero can
+only be critical points for directions (r, s,t) with s = 0. Similarly, the stratum
+where Q, is non-zero but Q» vanishes contains only critical points in the main
+diagonal direction (which results in a trivial sequence). Thus, all interesting
+directions correspond to points where both factors vanish, which is the curve
+parametrized by (x, 1/(1 — x), (1 — x)/x) for x # 0.
+
+A point on this curve is a contributing point for asymptotics in the direction
+(r, s, t) if and only if the direction lies in the lognormal cone at the point. This
+means that (r, s,f) = A(1,0, 1 — x) + uw, 1, 1) for some A, > 0. Solving this
+system gives the unique contributing point
+
+(= r-s —*)
+r-s't-s’r-t
+for any such direction, when r > t > s > 0. Each such point is minimal by
+
+Corollary 6.39. Theorem 10.38 applies and yields the dominant asymptotic
+behavior. We obtain the first-order approximation for the numerator
+
+(r= sy?
+Vin(r = 2 (t= sy ‘
+The relative error is less than 2% even for (r, s,t) = (20,5, 10). Note that the
+approximation is uniform in the union of the cones spanned by (1, 1, 1) and
+
+(1,0, 1 — x) as x ranges over any compact subset of (0, 1). The cones cover the
+entire range of interest r >t > s> 0. 4
+
+Dest
+
+Example 12.30 (Infinite products: Quivers and Littlewood—Richardson coeffi-
+cients). Consider the infinite product generating function
+
+Cc
+
+Foxy)=[] (1 -x-y)!
+
+i=l

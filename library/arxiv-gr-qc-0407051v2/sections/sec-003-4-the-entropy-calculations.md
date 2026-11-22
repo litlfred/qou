@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-gr-qc-0407051v2
-doc_title: "arXiv:gr-qc/0407051v2 23 Aug 2004"
+doc_title: "Black hole entropy from quantum geometry"
 section_id: sec-003-4-the-entropy-calculations
 section_title: "The entropy calculations"
 section_number: 4
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.98
 latex_coverage_ratio: 0.995
+doc_brief: "Black hole entropy from quantum geometry — Quantum Geometry (the modern Loop Quantum Gravity using graphs and spin-networks instead of the loops) provides microscopic degrees of freedom that account"
 ---
 To find an upper bound for the number $N(a)$ introduced in the previous section (recall that $a=4\pi\gamma{\ell}_{\rm Pl}^2k$, and $k\in {\mathbb{N}}$), consider the set $M^+_k$ of all the finite sequences $(m_1,...,m_n)$ of non-zero elements of $\frac{1}{2}{\mathbb{Z}}$ which satisfy the inequality in ([\[mzero\]](#mzero){reference-type="ref" reference="mzero"}), but do not necessarily sum to zero,that is, $$M^+_k\ :=\ \{ (m_1,...,m_n)\ \Big|\ n\in{\mathbb{N}},\
 0\not=m_1,...,m_n\in\frac{1}{2}{\mathbb{Z}},\

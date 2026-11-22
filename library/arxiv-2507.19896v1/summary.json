@@ -2,55 +2,75 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2507.19896v1",
  "source_sha256": "a3f23d5a08b397ee",
- "brief": "Generalized Markov traces and Jucys-Murphy elements — WegiveasimpleconstructionofMarkovtracesforIwahori-Heckealgebrasassociated with infinite series of crystallographic Coxeter groups.",
- "extended": "**Generalized Markov traces and Jucys-Murphy elements**\n\n*Kostiantyn Tolmachov, Heorhii Zhylinskyi*\n\n12 pp, 9 sections.\n\n**Abstract.** WegiveasimpleconstructionofMarkovtracesforIwahori-Heckealgebrasassociated with infinite series of crystallographic Coxeter groups. In typesB and D it is new, and generalizes a known construction in typeA employing symmetric polynomials in multiplicative Jucys-Murphy elements.\n\n**Outline.** Coxeter groups.; Introduction.; Iwahori-Hecke algebras.; Acknowledgments.; Iwahori-Hecke algebras and multiplicative Jucy; Some central elements in the classical Iwahori; Markov traces.; Markov traces via Jucys-Murphy elements.; Geometric Markov traces.",
+ "brief": "Generalized Markov traces and Jucys-Murphy elements — We give a simple construction of Markov traces for Iwahori-Hecke algebras associated with infinite series of crystallographic Coxeter groups.",
+ "extended": "**Generalized Markov traces and Jucys-Murphy elements**\n\n*Kostiantyn Tolmachov, Heorhii Zhylinskyi*\n\n12 pp, 13 sections.\n\n**Abstract.** We give a simple construction of Markov traces for Iwahori-Hecke algebras associated with infinite series of crystallographic Coxeter groups. In types B and D it is new, and generalizes a known construction in type A employing symmetric polynomials in multiplicative Jucys-Murphy elements.\n\n**Outline.** Front matter; Introduction.; Acknowledgments.; Iwahori-Hecke algebras and multiplicative Jucy; Coxeter groups.; Iwahori-Hecke algebras.; Trace functional and a pairing on H(W,S).; ``Full twist'' and Jucys-Murphy elements.; Some central elements in the classical Iwahori; Markov traces.; Markov traces via Jucys-Murphy elements.; General Markov traces in types B, D.; Geometric Markov traces.",
  "tokens": {
-  "brief": 46,
-  "extended": 169
+  "brief": 48,
+  "extended": 207
  },
  "sections": [
   {
-   "id": "sec-000-coxeter-groups",
-   "title": "Coxeter groups.",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-1"
   },
   {
-   "id": "sec-001-introduction",
+   "id": "sec-000-introduction",
    "title": "Introduction.",
    "pages": "1-2"
   },
   {
-   "id": "sec-002-iwahori-hecke-algebras",
-   "title": "Iwahori-Hecke algebras.",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-003-acknowledgments",
+   "id": "sec-001-acknowledgments",
    "title": "Acknowledgments.",
    "pages": "2-2"
   },
   {
-   "id": "sec-004-iwahori-hecke-algebras-and-multiplicative-jucys",
+   "id": "sec-002-iwahori-hecke-algebras-and-multiplicative-jucys",
    "title": "Iwahori-Hecke algebras and multiplicative Jucys-Murphy elements.",
-   "pages": "2-4"
+   "pages": "2-2"
   },
   {
-   "id": "sec-005-some-central-elements-in-the-classical-iwahori-h",
+   "id": "sec-003-coxeter-groups",
+   "title": "Coxeter groups.",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-004-iwahori-hecke-algebras",
+   "title": "Iwahori-Hecke algebras.",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-005-trace-functional-and-a-pairing-on-hws",
+   "title": "Trace functional and a pairing on H(W,S).",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-006-full-twist-and-jucys-murphy-elements",
+   "title": "``Full twist'' and Jucys-Murphy elements.",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-007-some-central-elements-in-the-classical-iwahori-h",
    "title": "Some central elements in the classical Iwahori-Hecke algebras.",
    "pages": "4-5"
   },
   {
-   "id": "sec-006-markov-traces",
+   "id": "sec-008-markov-traces",
    "title": "Markov traces.",
    "pages": "5-5"
   },
   {
-   "id": "sec-007-markov-traces-via-jucys-murphy-elements",
+   "id": "sec-009-markov-traces-via-jucys-murphy-elements",
    "title": "Markov traces via Jucys-Murphy elements.",
-   "pages": "5-9"
+   "pages": "5-7"
   },
   {
-   "id": "sec-008-geometric-markov-traces",
+   "id": "sec-010-general-markov-traces-in-types-b-d",
+   "title": "General Markov traces in types B, D.",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-011-geometric-markov-traces",
    "title": "Geometric Markov traces.",
    "pages": "9-12"
   }

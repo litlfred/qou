@@ -1,0 +1,1567 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-math-9910019v1",
+  "pages": [
+    {
+      "page": 1,
+      "rotation": 0,
+      "drawings": 18,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1). We denote by π the conﬁguration of n random points. With probability 1, no two points have",
+        "Figure 1: random points in a rectangle"
+      ],
+      "labels": [
+        {
+          "text": "Symmetrized random permutations",
+          "bbox": [
+            163.08,
+            154.87,
+            464.23,
+            172.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            17.22
+          ]
+        },
+        {
+          "text": "arXiv:math/9910019v1  [math.CO]  5 Oct 1999",
+          "bbox": [
+            10.94,
+            172.36,
+            37.62,
+            554.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            20.0
+          ]
+        },
+        {
+          "text": "Jinho Baik∗and",
+          "bbox": [
+            219.24,
+            190.81,
+            313.57,
+            204.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12",
+            "CMR12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Eric M. Rains†",
+          "bbox": [
+            325.32,
+            190.81,
+            411.52,
+            204.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "September 23, 1999",
+          "bbox": [
+            263.52,
+            217.43,
+            363.69,
+            229.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            72.96,
+            278.89,
+            81.02,
+            293.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "Introduction",
+          "bbox": [
+            97.2,
+            278.89,
+            185.97,
+            293.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "Suppose that we are selecting n points, p1, p2, · · · , pn, at random in a rectangle, say R = [0, 1] × [0, 1] (see",
+          "bbox": [
+            72.96,
+            308.01,
+            554.14,
+            325.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 1). We denote by π the conﬁguration of n random points. With probability 1, no two points have",
+          "bbox": [
+            72.96,
+            323.49,
+            554.38,
+            333.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "same x-coordinates nor y-coordinates. An up/right path of π is a collection of points pi1, pi2, · · · , pik such that",
+          "bbox": [
+            72.96,
+            339.09,
+            554.18,
+            356.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMSY10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "x(pi1) < x(pi2) < · · · < x(pik) and y(pi1) < y(pi2) < · · · < y(pik). The length of such a path is deﬁned by the",
+          "bbox": [
+            72.96,
+            354.57,
+            554.14,
+            371.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMSY10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "number of the points in the path. Now we denote by ln(π) the length of the longest up/right path of a random",
+          "bbox": [
+            72.96,
+            370.17,
+            554.3,
+            380.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "points conﬁguration π.",
+          "bbox": [
+            72.96,
+            385.65,
+            172.08,
+            395.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            242.76,
+            423.34,
+            247.96,
+            437.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.41
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            242.76,
+            438.96,
+            247.96,
+            452.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.41
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            242.76,
+            457.18,
+            247.96,
+            471.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.41
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            242.76,
+            488.41,
+            247.96,
+            502.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.41
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            242.76,
+            509.23,
+            247.96,
+            523.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.41
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            273.99,
+            537.86,
+            279.2,
+            551.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.41
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            297.41,
+            537.86,
+            302.62,
+            551.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.41
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            313.03,
+            537.86,
+            318.24,
+            551.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.41
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            341.66,
+            537.86,
+            346.86,
+            551.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.41
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            362.48,
+            537.86,
+            367.69,
+            551.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.41
+          ]
+        },
+        {
+          "text": "Figure 1: random points in a rectangle",
+          "bbox": [
+            228.96,
+            568.53,
+            398.38,
+            578.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "As one can see from Figure 1, a conﬁguration of n points gives rise a permutation. For the example at",
+          "bbox": [
+            87.96,
+            596.01,
+            554.18,
+            605.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000 1 2 3 4 5",
+          "bbox": [
+            248.28,
+            605.81,
+            285.37,
+            640.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            287.04,
+            610.54,
+            291.6,
+            640.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "hand, the corresponding permutation is",
+          "bbox": [
+            72.96,
+            611.61,
+            245.12,
+            621.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ". Therefore we can identity random points in R and random",
+          "bbox": [
+            291.6,
+            611.61,
+            554.3,
+            621.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "5 1 3 2 4",
+          "bbox": [
+            254.52,
+            616.61,
+            285.37,
+            623.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "permutations, and we use the same notation π. In this identiﬁcation, ln(π) is the length of the longest increasing",
+          "bbox": [
+            72.96,
+            627.09,
+            554.34,
+            637.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "subsequence of a random permutation.",
+          "bbox": [
+            72.96,
+            642.69,
+            242.04,
+            652.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The longest increasing subsequence has been of great interest for a long time (see e.g. [1], [29], [4]). Especially",
+          "bbox": [
+            87.96,
+            658.29,
+            554.24,
+            668.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "as n →∞, it is known that E(ln) ∼2√",
+          "bbox": [
+            72.96,
+            666.57,
+            264.86,
+            690.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n [27], [39, 40] (also [2, 34, 24]) and Var(ln) ∼c0n1/3 [4] with",
+          "bbox": [
+            264.72,
+            670.17,
+            554.17,
+            690.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "∗Princeton University and Institite for Advanced Study, New Jersey, jbaik@math.princeton.edu",
+          "bbox": [
+            83.88,
+            689.5,
+            438.02,
+            698.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8",
+            "CMSY6"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "†AT&T Research, New Jersey, rains@research.att.com",
+          "bbox": [
+            84.36,
+            700.06,
+            284.97,
+            709.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8",
+            "CMSY6"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            311.16,
+            734.97,
+            316.14,
+            744.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 12,
+      "rotation": 0,
+      "drawings": 57,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2: random turn vicious walkers and Young tableaux"
+      ],
+      "labels": [
+        {
+          "text": "t",
+          "bbox": [
+            145.05,
+            103.4,
+            148.47,
+            119.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            12.32
+          ]
+        },
+        {
+          "text": "6",
+          "bbox": [
+            129.64,
+            136.77,
+            135.81,
+            153.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            12.32
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            129.64,
+            157.3,
+            135.81,
+            173.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            12.32
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            437.68,
+            167.57,
+            443.84,
+            184.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            12.32
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            463.38,
+            167.6,
+            469.54,
+            184.04
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            12.32
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            483.92,
+            167.6,
+            490.08,
+            184.04
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            12.32
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            129.64,
+            177.84,
+            135.81,
+            194.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            12.32
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            437.68,
+            188.11,
+            443.84,
+            204.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            12.32
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            463.38,
+            188.14,
+            469.54,
+            204.58
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            12.32
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            483.92,
+            188.14,
+            490.08,
+            204.58
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            12.32
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            129.64,
+            198.37,
+            135.81,
+            214.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            12.32
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            437.68,
+            208.64,
+            443.84,
+            225.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            12.32
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            463.38,
+            208.68,
+            469.54,
+            225.11
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            12.32
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            129.64,
+            216.34,
+            135.81,
+            232.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            12.32
+          ]
+        },
+        {
+          "text": "6",
+          "bbox": [
+            463.38,
+            226.64,
+            469.54,
+            243.08
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            12.32
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            437.68,
+            229.18,
+            443.84,
+            245.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            12.32
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            129.64,
+            236.88,
+            135.81,
+            253.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            12.32
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            129.64,
+            257.41,
+            135.81,
+            273.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            12.32
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            222.05,
+            275.38,
+            228.21,
+            291.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            12.32
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            242.59,
+            275.38,
+            248.75,
+            291.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            12.32
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            263.12,
+            275.38,
+            269.29,
+            291.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            12.32
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            283.66,
+            275.38,
+            289.82,
+            291.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            12.32
+          ]
+        },
+        {
+          "text": "Figure 2: random turn vicious walkers and Young tableaux",
+          "bbox": [
+            184.44,
+            308.73,
+            442.77,
+            318.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "back to their original positions. The ﬁrst n steps gives a Young tableaux and the next n step gives another",
+          "bbox": [
+            72.96,
+            340.53,
+            554.21,
+            350.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Young tableaux. So we are in the situation of pairs of Young tableaux, i.e. β = 2 case. Especially if the number",
+          "bbox": [
+            72.96,
+            356.13,
+            554.21,
+            366.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of particles are inﬁnite, the statistics of the moves made by the leftmost particle is identical to the length of",
+          "bbox": [
+            72.96,
+            371.61,
+            554.2,
+            381.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the longest increasing subsequence of a random permutation : GUE ﬂuctuation [17].",
+          "bbox": [
+            72.96,
+            387.21,
+            441.24,
+            397.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "4.4",
+          "bbox": [
+            72.96,
+            417.43,
+            90.12,
+            429.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Symmetrized versions of Johansson’s model",
+          "bbox": [
+            103.68,
+            417.43,
+            360.97,
+            429.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "In [22], Johansson introduced a certain model which has several probabilistic interpretations, as a randomly",
+          "bbox": [
+            72.96,
+            441.21,
+            554.25,
+            451.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "growing Young diagram, a totally asymmetric one dimensional exclusion process, a certain zero-temperature",
+          "bbox": [
+            72.96,
+            456.81,
+            554.38,
+            466.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "directed polymer in a random environment or as a kind of ﬁrst-passage site percolation model. Here we consider",
+          "bbox": [
+            72.96,
+            472.29,
+            554.21,
+            482.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the symmetrized versions. The limiting distributions are parallel to the results of Section 3 depending on the",
+          "bbox": [
+            72.96,
+            487.89,
+            554.14,
+            497.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "symmetry type.",
+          "bbox": [
+            72.96,
+            503.37,
+            141.36,
+            513.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Each model is deﬁned on M, a subset of Z2, and at each site (i, j) ∈M, we deﬁne a random variable w(i, j)",
+          "bbox": [
+            87.96,
+            516.74,
+            554.19,
+            536.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "of geometric distribution. We are interested in “the length of the longest up/right path”. Let g(q) denote the",
+          "bbox": [
+            72.96,
+            534.45,
+            554.14,
+            544.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "geometric distribution with parameter q. Let 0 < q < 1, and let α, β ≥0 such that α√",
+          "bbox": [
+            72.96,
+            543.81,
+            455.3,
+            567.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "q, β√",
+          "bbox": [
+            455.4,
+            543.81,
+            479.06,
+            560.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "q < 1. Otherwise",
+          "bbox": [
+            479.04,
+            550.05,
+            554.26,
+            560.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We denote by (j, k) ր (j′, k′) the set of",
+          "bbox": [
+            370.68,
+            564.17,
+            554.2,
+            582.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "stated, the random variables w(i, j) are independent each other.",
+          "bbox": [
+            72.96,
+            565.53,
+            362.64,
+            575.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "up/right paths π from (j, k) to (j′, k′).",
+          "bbox": [
+            72.96,
+            579.77,
+            241.2,
+            591.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(i). Let M = Z2",
+          "bbox": [
+            79.68,
+            604.34,
+            149.05,
+            616.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "+. Let",
+          "bbox": [
+            145.08,
+            606.57,
+            173.42,
+            618.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "w(i, j) ∼g(q).",
+          "bbox": [
+            295.32,
+            632.13,
+            356.76,
+            649.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(4.8)",
+          "bbox": [
+            533.76,
+            632.13,
+            554.3,
+            642.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Deﬁne",
+          "bbox": [
+            97.92,
+            657.57,
+            125.38,
+            667.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            287.28,
+            680.62,
+            301.67,
+            710.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "G (N) = max{",
+          "bbox": [
+            213.84,
+            683.13,
+            281.82,
+            700.16
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "w(i, j) : π ∈(1, 1) ր (N, N)}.",
+          "bbox": [
+            308.88,
+            683.13,
+            438.24,
+            700.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(4.9)",
+          "bbox": [
+            533.76,
+            683.13,
+            554.3,
+            693.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(i,j)∈π",
+          "bbox": [
+            281.88,
+            697.73,
+            306.94,
+            709.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "12",
+          "bbox": [
+            308.64,
+            734.97,
+            318.66,
+            744.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    }
+  ]
+}

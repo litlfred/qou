@@ -1,0 +1,76 @@
+S. Blanes et al. / Physics Reports 470 (2009) 151-238 181
+
+In [99] a general procedure for devising Magnus expansions for the nonlinear equation (139) is introduced. It is based on
+applying Picard’s iteration on the associated differential equation in the Lie algebra and retaining in each iteration the terms
+necessary to increase the order, while maintaining the explicit character of the expansion. The resulting methods are thus
+explicit by design and are expressed in terms of integrals.
+
+As usual, the starting point in the formalism is to represent the solution of (139) in the form
+
+Y(t) = exp(2(t, Yo))Yo. (140)
+Then one obtains the differential equation satisfied by 2:
+Q' = dexpg' (A(t, e7 Yo), 2(0) =0, (141)
+
+where d exp! is given by (38). Now, as in the linear case, one can apply Picard’s iteration to Eq. (141), giving instead
+
+C
+alm) = | AeEXP ani AG: e2'™Oyy)ds
+0
+
+t 00
+By (mm)
+-/ Fp ttoime A 8 Sy)ds, m>0.
+0 ko“
+
+The next step in getting explicit approximations is to truncate appropriately the d exp~! operator in the above expansion.
+Roughly speaking, when the whole series for dexp~' is considered, the power series expansion of the iterate function
+Q(t), k > 1, only reproduces the expansion of the solution $2(t) up to a certain order, say m. In consequence, the
+(infinite) power series of 2!I(t) and Q!**+"(t) differ in terms @(t™*'), The idea is then to discard in 2'*\(t) all terms of
+order greater than m. This of course requires careful analysis of each term in the expansion. For instance, 2!°! = O implies
+that (2!"l)’ = A(t, Yo) and therefore
+
+t
+Q(t) = | A(s, Yo)ds = Q(t, Yo) + O(t?).
+0
+
+Since
+A(s, €2"' Yo) = ACO, Yo) + O(5)
+
+it follows at once that
+1 t
+3 [ [2"(s), As, e?"" Yoy]ds = O°).
+0
+
+When this second term in 2!!(t) is included and 2"! is computed, it turns out that 2! reproduces correctly the expression
+of 2'7! up to O(t?). Therefore we truncate d exp! at the k = 0 term and take
+
+t
+22l(e) -|/ Als, e2'"Yp)ds.
+0
+
+With greater generality, we let
+
+t
+att) -|/ A(s, Yo)ds (142)
+0
+
+m—2 t
+By {m—1]
+amo=y al, adiin-iigA(S 07” "Yo)ds, m > 2
+k=0 ~
+
+and take the approximation Q(t) ~ !™(t). This results in an explicit approximate solution that involves a linear
+combination of multiple integrals of nested commutators, so that 2!"!(t) € g for all m > 1. It can also be proved that
+2'"\(t), once inserted in (140), provides an explicit approximation Y!!(t) for the solution of (139) that is correct up to
+terms 9(t"*+') [99]. In addition, 2!"!(t) reproduces exactly the sum of the first m terms in the 2 series of the usual Magnus
+expansion for the linear equation Y’ = A(t)Y. It makes sense, then, to regard the scheme (142) as an explicit Magnus
+expansion for the nonlinear equation (139).
+
+This procedure can be easily adapted to construct an exponential representation of the solution for the differential system
+
+Y’=[A(t,Y),Y],  Y(@) = Yo € Sym(n). (143)
+
+Here Sym(n) stands for the set of n x n symmetric real matrices and the (sufficiently smooth) function A maps R; x Sym(n)
+into so(n), the Lie algebra of n x n real skew-symmetric matrices. It is well known that the solution itself remains in Sym(n)
+for allt > 0. Furthermore, the eigenvalues of Y(t) are independent of time, i.e., Y(t) has the same eigenvalues as Yo.
+This remarkable qualitative feature of the system (143) is the reason why it is called an isospectral flow. Such flows have

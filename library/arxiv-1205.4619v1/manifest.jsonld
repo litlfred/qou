@@ -5,21 +5,26 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1205.4619v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1205.4619v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1205.4619v1",
+  "title": "Quaternion-Octonion Unitary Symmetries and Analogous Casimir Operators",
   "contains": [
+    "library/arxiv-1205.4619v1/sections/sec-front-matter",
     "library/arxiv-1205.4619v1/sections/sec-000",
     "library/arxiv-1205.4619v1/sections/sec-001",
     "library/arxiv-1205.4619v1/sections/sec-002",
     "library/arxiv-1205.4619v1/sections/sec-003",
     "library/arxiv-1205.4619v1/sections/sec-004",
-    "library/arxiv-1205.4619v1/sections/sec-005"
+    "library/arxiv-1205.4619v1/sections/sec-005",
+    "library/arxiv-1205.4619v1/sections/sec-006",
+    "library/arxiv-1205.4619v1/sections/sec-007",
+    "library/arxiv-1205.4619v1/sections/sec-008",
+    "library/arxiv-1205.4619v1/sections/sec-009"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -29,7 +34,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1205.4619v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1205.4619v1.pdf",
     "source_sha256": "8c76e30a52dca57172c7e85a53f7bf3a80d81a537d4ff204b11c852a2a374709",
     "pages": 17,

@@ -1,0 +1,46 @@
+Invariants in Low-Dimensional Topology and Knot Theory 55
+
+manifold with some boundary conditions that arose from a (doubly pointed) Hee-
+gaard diagram for S* compatible with the knot. As such, the chain groups were
+combinatorial but one could not, a priori, compute the boundary map for a partic-
+ular example. However, Sucharit Sarkar discovered an criterion that would ensure
+that the count of certain holomorphic disks was combinatorials. This idea was
+used by Manolescu, Ozsvath, and Sarker in [2] to give a combinatorial descrip-
+tion of link Floer homology using grid diagrams. Using this description, in [3},
+Manolescu, Ozsvath, Szdbo, and D. Thurston gave a self-contained, combinatorial
+proof that link Floer homology is an invariant.
+
+We generalize the combinatorial description and proof in (2, 3] for certain spatial
+graphs. The class of spatial graphs that we work with are embeddings of oriented
+graphs with a transverse disk at each vertex splitting up the incoming and outgoing
+edges. Morevoer, we require that there must be the same number of incoming edges
+as outgoing edges at each vertex. We call these spatial graphs balanced.
+
+To define the chain complex, we first introduce the notion of a graph grid
+diagram for a balanced spatial graph. Roughly, a grid diagram for a spatial graph
+is an n x n grid of squares each of which is decorated with an X, an O, or is empty
+and that satisfies some conditions. Like for links, there is precisely one O per row
+and column. However, there may be many Xs in each row and column but they
+must be grouped around a single O and be in L-formation. An O grouped with
+multiple Xs corresponds to a vertex of the spatial graph. Note, for this definition,
+we do not need to have the same number of incoming edges as outgoing edges. See
+Figure 1 for an example.
+
+oO x
+oO| x
+oO|x
+x 2)
+oO| x|xX
+
+FIGURE 1. Example of a graph grid diagram
+
+We associate an oriented spatial graph to a grid diagram by connecting the
+Xs to the Os vertically and the Os to the Xs horizontally. We also use the
+convention that the vertical strands go over the horizontal strands. See Figure 2
+for an example.
+
+We prove that any two representative for the same spatial graph are related by
+a sequence of graph grid moves.
+
+Theorem 1. If f : G — S° is a balanced graph then there is grid diagram gr(f)
+representing f. Moreover, if gr(f) and gr’(f) are two grid diagrams representing

@@ -1,0 +1,45 @@
+STUDYING LINKS VIA CLOSED BRAIDS III 103
+
+details from Figure 6.2. We have cut T open between the first and
+second strands. We see that W contains the subword 4 (b2)~!b3,
+which is equivalent to (b7)~!(b3)’+!. We conclude that W does not
+have shortest syllable length and is therefore not admissible.
+
+Thus the only possibility is that each singularity of type [1 — 4] is
+followed by another of type [1 — 4]. This completes the proof of
+Lemma 6.5, and so also of the Classification Theorem. oO
+
+7. The algorithm and applications. Our task in this section is to
+translate the Classification Theorem of §6 into an algorithm to decide
+whether two links which are defined by closed 3-braids have the same
+oriented link type in oriented 3-space. This problem is reduced, via
+the Classification Theorem, to two other problems:
+
+Problem A. Find unique representatives for conjugacy classes in B3.
+
+Problem B. Identify the unique representatives of the conjugacy
+classes which correspond to links which are represented by more than
+one conjugacy class of 3-braids.
+
+There are several known solutions to Problem A and our algorithm
+will use the solution which was given by Schreier in 1924 [Sc]. As
+noted earlier, a new and different solution, due to P. J. Xu, is given in
+[X]. In the latter conjugacy classes are represented by shortest words
+in the elementary braids a;, a2, a3 which were used in the body of
+this manuscript; the unique representatives of conjugacy classes are
+shortest words in these generators, and therefore determine a surface
+of maximum Euler characteristic with the link as its boundary. Our
+reason for choosing Schreier’s solution over Xu’s at this time are that
+it is a little bit easier to use than Xu’s. Moreover, Xu has not yet
+succeeded in finding normal forms which are expressed in terms of
+shortest syllables as well as shortest words, so we do not have the
+ability at this time to translate her work into an optimum algorithm
+which orders braids by the complexity function which was the basis
+of the work in this paper.
+
+7.1. Schreier’s solution to the conjugacy problem [Sc].
+
+Step 0. We assume that we are given a 3-braid W = W(L) which
+is defined as a product of powers of the elementary braids a; and a2
+and their inverses, where a, = 0), 2 = 02, 43 = 020,07 ' Our goal
+is to find a unique representative for the conjugacy class of W in B3.

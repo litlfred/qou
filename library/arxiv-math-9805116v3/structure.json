@@ -8,7 +8,7 @@
   "pages": 40,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:24Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -21,12 +21,12 @@
    "stamp_date": "8 Jun 1999"
   },
   "doi": null,
-  "title": "arXiv:math/9805116v3 [math.QA] 8 Jun 1999",
-  "authors_raw": "I. Integral Theory and C\u2217-structure",
+  "title": "Weak Hopf Algebras I: Integral Theory and C*-structure",
+  "authors_raw": "I. Integral Theory and C∗-structure",
   "title_lines": [
    "Weak Hopf Algebras"
   ],
-  "abstract": "We give an introduction to the theory of weak Hopf algebras proposed recently as a coassociative alternative of weak quasi-Hopf algebras. We follow an axiomatic approach keeping as close as possible to the \u201dclassical\u201d theory of Hopf algebras. The emphasis is put on the new structure related to the presence of canonical subalgebras AL and AR in any weak Hopf algebra A that play the role of non-commutative numbers in many respects. A theory of integrals is developed in which we show how the algebraic properties of A, such as the Frobenius property, or semisimplicity, or innerness of the square of the antipode, are related to the existence of non-degenerate, normalized, or Haar integrals. In case of C\u2217-weak Hopf algebras we prove the existence of a unique Haar measure h \u2208A and of a canonical grouplike element g \u2208A implementing the square of the antipode and factorizing into left and right elements g = gL g\u22121 R , gL \u2208AL, gR \u2208AR. Further discussion of the C\u2217-case will be presented in Part II. To appear in J. Algebra 1 Research Institute for Particle and Nuclear Physics, Budapest, H-1525 Budapest 114, P.O.B. 49, Hungary E-mail: BGABR@rmki.kfki.hu Supported by the Hungarian Scienti\ufb01c Research Fund, OTKA \u2013 T 016 233 2 Institut f\u00a8ur Theoretische Physik, FU\u2013Berlin Arnimallee 14, D-14195 Berlin, Germany E-mail: NILL@mail.physik.fu-berlin.de Supported by the DFG, SFB 288 \u201dDi\ufb00erentialgeometrie und Quantenphysik\u201d 3 Research Institute for Particle and Nuclear Physics, Budapest, H-1525 Budapest 114, P.O.B. 49, Hungary E-mail: SZLACH@rmki.kfki.hu Supported by the Hungarian Scienti\ufb01c Research Fund, OTKA \u2013 T 020 285. 1",
+  "abstract": "We give an introduction to the theory of weak Hopf algebras proposed recently as a coassociative alternative of weak quasi-Hopf algebras. We follow an axiomatic approach keeping as close as possible to the ”classical” theory of Hopf algebras. The emphasis is put on the new structure related to the presence of canonical subalgebras AL and AR in any weak Hopf algebra A that play the role of non-commutative numbers in many respects. A theory of integrals is developed in which we show how the algebraic properties of A, such as the Frobenius property, or semisimplicity, or innerness of the square of the antipode, are related to the existence of non-degenerate, normalized, or Haar integrals. In case of C∗-weak Hopf algebras we prove the existence of a unique Haar measure h ∈A and of a canonical grouplike element g ∈A implementing the square of the antipode and factorizing into left and right elements g = gL g−1 R , gL ∈AL, gR ∈AR. Further discussion of the C∗-case will be presented in Part II. To appear in J. Algebra 1 Research Institute for Particle and Nuclear Physics, Budapest, H-1525 Budapest 114, P.O.B. 49, Hungary E-mail: BGABR@rmki.kfki.hu Supported by the Hungarian Scientiﬁc Research Fund, OTKA – T 016 233 2 Institut f¨ur Theoretische Physik, FU–Berlin Arnimallee 14, D-14195 Berlin, Germany E-mail: NILL@mail.physik.fu-berlin.de Supported by the DFG, SFB 288 ”Diﬀerentialgeometrie und Quantenphysik” 3 Research Institute for Particle and Nuclear Physics, Budapest, H-1525 Budapest 114, P.O.B. 49, Hungary E-mail: SZLACH@rmki.kfki.hu Supported by the Hungarian Scientiﬁc Research Fund, OTKA – T 020 285.",
   "docinfo": {
    "Title": "arXiv:math/9805116v3  [math.QA]  8 Jun 1999",
    "Producer": "GPL Ghostscript 10.01.2",
@@ -38,13 +38,14 @@
   "title_verified": true,
   "title_evidence": {
    "metadata": "arXiv:math/9805116v3 [math.QA] 8 Jun 1999",
-   "heading": "Weak Hopf Algebras I. Integral Theory and C \u2217 -structure",
+   "heading": "Weak Hopf Algebras I. Integral Theory and C ∗ -structure",
    "text": "Weak Hopf Algebras",
    "corroborated_by": [
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:math/9805116v3 [math.QA] 8 Jun 1999"
  },
  "toc": [
   {
@@ -616,22 +617,22 @@
    "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 3,
-   "n_chars": 7303,
-   "n_words": 1500,
+   "page_end": 4,
+   "n_chars": 9666,
+   "n_words": 1897,
    "label_start": "1",
-   "label_end": "3"
+   "label_end": "4"
   },
   {
    "id": "sec-000-11-the-axioms",
    "number": "1.1",
    "title": "The axioms",
    "level": 2,
-   "page_start": 3,
+   "page_start": 4,
    "page_end": 6,
-   "n_chars": 6564,
-   "n_words": 1201,
-   "label_start": "3",
+   "n_chars": 4267,
+   "n_words": 812,
+   "label_start": "4",
    "label_end": "6"
   },
   {
@@ -641,8 +642,8 @@
    "level": 2,
    "page_start": 6,
    "page_end": 9,
-   "n_chars": 5836,
-   "n_words": 1093,
+   "n_chars": 5842,
+   "n_words": 1091,
    "label_start": "6",
    "label_end": "9"
   },
@@ -652,105 +653,129 @@
    "title": "Weak Hopf algebras",
    "level": 2,
    "page_start": 9,
-   "page_end": 14,
-   "n_chars": 11691,
-   "n_words": 2118,
+   "page_end": 12,
+   "n_chars": 5708,
+   "n_words": 1017,
    "label_start": "9",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-003-14-the-trivial-representation",
+   "number": "1.4",
+   "title": "The \"trivial\" representation",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 5954,
+   "n_words": 1095,
+   "label_start": "12",
    "label_end": "14"
   },
   {
-   "id": "sec-003-15-integrals-in-weak-hopf-algebras",
+   "id": "sec-004-15-integrals-in-weak-hopf-algebras",
    "number": "1.5",
    "title": "Integrals in weak Hopf algebras",
    "level": 2,
    "page_start": 14,
    "page_end": 16,
-   "n_chars": 5662,
-   "n_words": 1086,
+   "n_chars": 5684,
+   "n_words": 1088,
    "label_start": "14",
    "label_end": "16"
   },
   {
-   "id": "sec-004-16-weak-hopf-modules",
+   "id": "sec-005-16-weak-hopf-modules",
    "number": "1.6",
    "title": "Weak Hopf modules",
    "level": 2,
    "page_start": 16,
    "page_end": 21,
-   "n_chars": 7658,
-   "n_words": 1629,
+   "n_chars": 7657,
+   "n_words": 1626,
    "label_start": "16",
    "label_end": "21"
   },
   {
-   "id": "sec-005-17-restrictions-on-the-algebraic-structure",
+   "id": "sec-006-17-restrictions-on-the-algebraic-structure",
    "number": "1.7",
    "title": "Restrictions on the algebraic structure",
    "level": 2,
    "page_start": 21,
    "page_end": 22,
-   "n_chars": 3730,
-   "n_words": 722,
+   "n_chars": 3763,
+   "n_words": 725,
    "label_start": "21",
    "label_end": "22"
   },
   {
-   "id": "sec-006-18-non-degenerate-integrals",
+   "id": "sec-007-18-non-degenerate-integrals",
    "number": "1.8",
    "title": "Non-degenerate integrals",
    "level": 2,
    "page_start": 22,
    "page_end": 26,
-   "n_chars": 8902,
-   "n_words": 1782,
+   "n_chars": 8911,
+   "n_words": 1779,
    "label_start": "22",
    "label_end": "26"
   },
   {
-   "id": "sec-007-19-2-sided-non-degenerate-integrals",
+   "id": "sec-008-19-2-sided-non-degenerate-integrals",
    "number": "1.9",
    "title": "2-sided non-degenerate integrals",
    "level": 2,
    "page_start": 26,
    "page_end": 29,
-   "n_chars": 5707,
-   "n_words": 1137,
+   "n_chars": 5727,
+   "n_words": 1136,
    "label_start": "26",
    "label_end": "29"
   },
   {
-   "id": "sec-008-110-haar-integrals",
+   "id": "sec-009-110-haar-integrals",
    "number": "1.10",
    "title": "Haar integrals",
    "level": 2,
    "page_start": 29,
-   "page_end": 33,
-   "n_chars": 10220,
-   "n_words": 1944,
+   "page_end": 31,
+   "n_chars": 6153,
+   "n_words": 1175,
    "label_start": "29",
+   "label_end": "31"
+  },
+  {
+   "id": "sec-010-111-first-consequences-of-the-c-structure",
+   "number": "1.11",
+   "title": "First consequences of the $C^*$-structure",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 33,
+   "n_chars": 4026,
+   "n_words": 761,
+   "label_start": "31",
    "label_end": "33"
   },
   {
-   "id": "sec-009-112-the-haar-measure-and-selfduality",
+   "id": "sec-011-112-the-haar-measure-and-selfduality",
    "number": "1.12",
    "title": "The Haar measure and selfduality",
    "level": 2,
    "page_start": 33,
    "page_end": 35,
-   "n_chars": 4702,
-   "n_words": 933,
+   "n_chars": 4725,
+   "n_words": 935,
    "label_start": "33",
    "label_end": "35"
   },
   {
-   "id": "sec-010-113-the-canonical-grouplike-element",
+   "id": "sec-012-113-the-canonical-grouplike-element",
    "number": "1.13",
    "title": "The canonical grouplike element",
    "level": 2,
    "page_start": 35,
    "page_end": 40,
-   "n_chars": 13040,
-   "n_words": 2459,
+   "n_chars": 13054,
+   "n_words": 2457,
    "label_start": "35",
    "label_end": "40"
   }
@@ -787,13 +812,23 @@
     "items": []
    }
   },
-  "sections": 12,
-  "chars_total": 91015,
+  "sections": 14,
+  "chars_total": 91137,
+  "furniture_lines_stripped": 40,
+  "headings_tidied": [
+   {
+    "title": "2-sided non-degenerate integrals",
+    "page": 26,
+    "action": "rejoined",
+    "as": "2-sided non-degenerate integrals",
+    "why": "opens in lower case"
+   }
+  ],
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 14,
-   "overlaid": 11,
+   "overlaid": 13,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -809,7 +844,7 @@
      "id": "sec-000-11-the-axioms",
      "title": "The axioms",
      "prose_ratio": 0.987,
-     "coverage_ratio": 0.627,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -817,20 +852,28 @@
      "id": "sec-001-12-weak-bialgebras",
      "title": "Weak bialgebras",
      "prose_ratio": 0.976,
-     "coverage_ratio": 0.964,
+     "coverage_ratio": 0.952,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-002-13-weak-hopf-algebras",
      "title": "Weak Hopf algebras",
-     "prose_ratio": 0.985,
-     "coverage_ratio": 0.994,
+     "prose_ratio": 0.989,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-003-15-integrals-in-weak-hopf-algebras",
+     "id": "sec-003-14-the-trivial-representation",
+     "title": "The \"trivial\" representation",
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-15-integrals-in-weak-hopf-algebras",
      "title": "Integrals in weak Hopf algebras",
      "prose_ratio": 0.953,
      "coverage_ratio": 0.989,
@@ -838,7 +881,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-004-16-weak-hopf-modules",
+     "id": "sec-005-16-weak-hopf-modules",
      "title": "Weak Hopf modules",
      "prose_ratio": 0.98,
      "coverage_ratio": 0.995,
@@ -846,15 +889,15 @@
      "converter": "latex"
     },
     {
-     "id": "sec-005-17-restrictions-on-the-algebraic-structure",
+     "id": "sec-006-17-restrictions-on-the-algebraic-structure",
      "title": "Restrictions on the algebraic structure",
      "prose_ratio": 0.966,
-     "coverage_ratio": 0.993,
+     "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-006-18-non-degenerate-integrals",
+     "id": "sec-007-18-non-degenerate-integrals",
      "title": "Non-degenerate integrals",
      "prose_ratio": 0.97,
      "coverage_ratio": 0.963,
@@ -862,7 +905,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-007-19-2-sided-non-degenerate-integrals",
+     "id": "sec-008-19-2-sided-non-degenerate-integrals",
      "title": "2-sided non-degenerate integrals",
      "prose_ratio": 0.972,
      "coverage_ratio": 0.972,
@@ -870,23 +913,31 @@
      "converter": "latex"
     },
     {
-     "id": "sec-008-110-haar-integrals",
+     "id": "sec-009-110-haar-integrals",
      "title": "Haar integrals",
-     "prose_ratio": 0.984,
-     "coverage_ratio": 0.99,
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.991,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-009-112-the-haar-measure-and-selfduality",
+     "id": "sec-010-111-first-consequences-of-the-c-structure",
+     "title": "First consequences of the $C^*$-structure",
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-011-112-the-haar-measure-and-selfduality",
      "title": "The Haar measure and selfduality",
      "prose_ratio": 0.962,
-     "coverage_ratio": 0.993,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-010-113-the-canonical-grouplike-element",
+     "id": "sec-012-113-the-canonical-grouplike-element",
      "title": "The canonical grouplike element",
      "prose_ratio": 0.975,
      "coverage_ratio": 0.512,

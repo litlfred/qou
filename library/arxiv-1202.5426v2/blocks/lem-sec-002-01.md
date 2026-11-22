@@ -1,0 +1,1 @@
+For any s ∈[0, 1 2) there exists θ > 0 such that for any Br ⊂[0, 1], Λ > 4 ∥|D|s⟨g′, |D| 2 g′⟩∥( 1+2s ,∞),Br ≲∥|D| 2 g′∥ (2,∞),BΛr+ Λ−θ ∥|D| 2 g′∥(2,∞),R ∞ X k=1 2−θk ∥|D| 2 g′∥(2,∞),B2kΛr+r 2 +s. (3.11) For the readers’ convenience, a proof will be given in the appendix.

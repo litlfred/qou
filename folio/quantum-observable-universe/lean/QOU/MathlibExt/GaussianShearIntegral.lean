@@ -41,9 +41,9 @@
   `integral_gaussian_complex` (the complex-covariance Gaussian, `0 < re b`) and
   `integral_fintype_prod_volume_eq_pow` (`∫_{ι→E} ∏ f(x i) = (∫ f)^{card ι}`).
 
-  -- Ref: [manuscript] QOU/OneLoopPrefactorInvariance.lean  (what consumes this)
-  -- Ref: [manuscript] QOU/MathlibExt/GaussianThetaSum.lean (the (B) companion)
-  -- Ref: [manuscript] computations/probes/one_loop_vdv_constant_closed_form_probe.py
+  -- Ref: [leitner2026] QOU/OneLoopPrefactorInvariance.lean  (what consumes this)
+  -- Ref: [leitner2026] QOU/MathlibExt/GaussianThetaSum.lean (the (B) companion)
+  -- Ref: [leitner2026] computations/probes/one_loop_vdv_constant_closed_form_probe.py
 -/
 import Mathlib.Analysis.SpecialFunctions.Gaussian.GaussianIntegral
 import Mathlib.MeasureTheory.Integral.Pi

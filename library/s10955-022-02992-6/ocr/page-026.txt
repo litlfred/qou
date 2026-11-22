@@ -1,0 +1,50 @@
+33 Page 26 of 47 S. Jansen, L. Kolesnikov
+
+In the limit d + oo at fixed k > 2, the right-hand side converges from above to the familiar
+bound 1/e.
+
+Proof of Theorem 4.1 We apply Theorem 2.7 with a(D) := aV(D). We check that V(-) is
+strongly subadditive. Let B, C be finite subsets of Z¢. Then for every polymer X,
+
+ItxnB¢ea) + Wxncgea) = Wxncpucy¢e) + Wxnvenc)¢2}-
+
+Indeed if X intersects B but not C (or C but not B), the inequality reads 1 + 0 > 1+ 0 and
+it is true. If X intersects both B and C, the inequality reads 1 + 1 > 1+ Ixncenc)4e@) and
+it is true as well. Finally if X intersects neither B nor C, then both sides of the inequality
+vanish. Summing over all polymers X, we get
+
+V(B) + V(C) > V(BUC) + V(BNC). (4.3)
+Now we turn to the criterion (i) from Theorem 2.7. Condition (2.18) for D’ = @ reads
+
+|S] zerV) < eV) _ 1,
+
+it is satisfied because of V({x}) = |S| and the assumption (4.2). For non-empty D’, we
+bound the left-hand side of condition (2.18) with the help of the strong subadditivity. The
+inequality (4.3) applied to B = D’ U {x} and C = X yields
+
+V(D' U fx}) + V(X) = V(D'UX) + Vx}, (4.4)
+for x € Z4\ D',x e€ X,and XN D’ = @, and
+
+V(D'U X)— VD) < VD! U {x}) + V(X) — V(D’) — Vfx})
+= V(D'U {x}) — V(D') + V(S) = |S}.
+
+This provides an X-independent bound for the exponent in the left-hand side of condi-
+tion (2.18). The number of summands on the left-hand side of condition (2.18) is given by the
+number of active polymers intersecting x but not D’, which is equal to V(D/U{x}) — V(D’).
+Thus to prove (2.18) it suffices to show that
+
+(V(D! Ufx}) — V(D)) eV PUD -VBIFVS=ISIL < gel ¥D'UAD-VDI_ 1 (4,5)
+In view of condition (4.2), the last inequality in turn follows once we check
+(v(D' Ufx}) — v(D’))(e!5! _ eV OVED-VP)ISII < |S] (etVPUED-VO _ 1)
+or equivalently,
+
+1 — exp(—a|S|) < 1 — exp(—a@R)
+
+isi < R . R:=V(D'U{x}) — VD).
+
+Because of the subadditivity of V, we have R > V({x}) = |S|. The exponential map
+X +> exp(—a@x) is convex and therefore the difference quotient is monotone increasing, i.e.,
+(exp(—ax) — 1)/x < (exp(—ay) — 1))/y whenever 0 < x < y. We apply the inequality to
+x = Rand y = |S| and obtain the required bound. ia
+
+D Springer

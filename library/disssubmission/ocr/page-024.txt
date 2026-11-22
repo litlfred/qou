@@ -1,0 +1,49 @@
+16 Chapter 1 — Vanishing theorems on abelian varieties
+
+Proof. Via the Riemann-Hilbert correspondence [57] we can consider P
+as a Y-module. For Z C X closed and irreducible, let Az C T*X be the
+closure in T*X of the conormal bundle in X to the smooth locus of Z. As in
+loc. cit. we write the characteristic cycle of P as a finite formal sum
+
+CC(P) = y nz:‘Az with nzeéNo,
+ZX
+where Z runs through all closed irreducible subsets of X. From CC(P) the
+support of P can be recovered via SuppP = U,,,.49Z. Furthermore, by the
+microlocal index formula [44, th. 9.1] we have
+
+x(P) = y nz-dz with dz= [Ax] . [Az] EZ.
+ZCX
+The intersection numbers dz are well-defined even though Az is not proper
+for Z # X, see loc. cit. for details. Now if X is a simple abelian variety, then
+lemma 1.8 below implies (a), and if we additionally assume dim(X) > 1,
+also (b) follows in view of lemma 1.9 below. The non-simple case can be
+reduced to the simple case, see [107]. O
+
+The reduction to the case of simple abelian varieties in loc. cit. works for
+ground fields k of characteristic p > 0 as well, but we do not know how to
+deal with simple abelian varieties in that case. For k = C, Christian Schnell
+has given in [94, cor. 3.11] a different proof of proposition 1.6(a) via the
+Fourier-Mukai transform for -modules.
+
+COROLLARY 1.7. A simple perverse sheaf P € Perv(X,C) has Euler
+characteristic zero iff H*(X , Py) = 0 for most characters x.
+
+Proof. “<=” holds by corollary 2.2. For “=>” take a positive-dimensional
+abelian subvariety A X with quotient g : X -» B= X/A and acharacter @
+such that P = Lg ® q*(Q)|dim(A)] for some perverse sheaf Q on B as in
+proposition 1.6(a). We can assume that the Euler characteristic of Q is not
+zero. Then we claim that
+
+AY(X, Py) = H°(B,Rqx(Py)) = H°(B, Rqx(Lgz) @ Qldim(A)])
+
+vanishes iff the restriction of the local system Lgy to A = ker(q) C X is
+not trivial. Indeed, if this restriction is non-trivial, then by base change one
+checks that Rq.(Lgz) = 0 and hence a fortiori H*(X, Py) = 0. On the other
+hand, if this restriction is trivial, then Lpy = q*(Ly) for some character y
+and then H*(X,P,) = H*(A,C) ® H*(B, Qy)|dim(A)] is non-zero since the
+Euler characteristic of Qy is not zero. Oo
+
+For completeness we include the following two elementary lemmas
+
+about characteristic cycles that have been used, in the case of simple abelian
+varieties, in the proof of proposition 1.6.

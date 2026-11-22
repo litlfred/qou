@@ -65,7 +65,7 @@ is wired to production; the landed `NaStokesPartBOrdering` class is untouched.
 (`Equiv.Perm (Fin 3)`), the fibre side.  The purely-algebraic `holonomy` primitives it
 builds on (`YekutieliIntegration.lean`) are over a generic `Monoid` / `Group`.
 
--- Ref: [manuscript] docs/coordination/dilog-part-b-cusp-attack.md (2026-07-26 na-Stokes insight); bean qou-zbcj
+-- Ref: [leitner2026] docs/coordination/dilog-part-b-cusp-attack.md (2026-07-26 na-Stokes insight); bean qou-zbcj
 -- Ref: [yekutieli2015] https://doi.org/10.1142/9537
 -/
 

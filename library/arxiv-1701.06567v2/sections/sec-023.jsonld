@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1701.06567v2/sections/sec-023",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Homological blocks and WRT invariant",
+  "pageStart": 47,
+  "pageEnd": 48,
+  "contains": [
+    "library/arxiv-1701.06567v2/blocks/prose-sec-023"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1701.06567v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1701.06567v2/manifest.jsonld",
+  "provenance": "ingested"
+}

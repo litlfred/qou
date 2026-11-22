@@ -1,0 +1,1 @@
+2.14. — Part of these conclusions stay true for more general DK,σ-modules. In the proposition, as well as in the corollary, the map is a monomorphism if M is an arbitrary DK,σ-module and N is a K-projective DK,σ-module; and an isomorphism if M or N is a diﬀerence module, the other being an arbitrary DK,σ-module. APPENDIX A. CLASSIFICATION OF ISOGRADED FILTERED DIFFERENCE MODULES

@@ -31,6 +31,8 @@ export default conjecture({
     "audit-flag-13a",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): **Conjectural status.** A Lean proof requires formalized definitions for the graded trace and residues, ..." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): **Lean encoding.** Encoded as the class-field axiom `spectral_decomposition` on `GBResidueSpectralSum`. Instances supply this identity." },
     {
       kind: "note",
       date: "2026-08-08",

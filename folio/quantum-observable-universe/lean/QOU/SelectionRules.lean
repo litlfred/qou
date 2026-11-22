@@ -27,7 +27,7 @@ Two eigenspaces of two different symmetries recur:
 
 2. **Sign / positivity** (the `Δ_λ` per-isotope binding sector).
    - The `Δ_λ` target is **mixed-sign** (`Δ_λ = sgn(w₀)·dim`, Lean-proved
-     `QOU.BraidsAndKnots.S5SO3FiberAction.PartitionOf5.deltaSign_mixed`).
+     `QOU.BraidsAndKnots.deltaSign_mixed`).
    - `nonneg_sum_ne_neg_target` is the common cause of TWO of the six refuted Δ_λ
      ansätze (`QOU.BraidKnot.DeltaLambdaRefutation`): the Frobenius co-Casimir
      `1/dim_q(λ) > 0` (row B, `coCasimir_wrong_sign`) and the crystal-graph KL route

@@ -1,0 +1,6018 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "104171-qt-83",
+  "pages": [
+    {
+      "page": 12,
+      "rotation": 0,
+      "drawings": 16,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1. The domain ¹.t; s/ j Re yV .t;s/ \u0015 &Rº."
+      ],
+      "labels": [
+        {
+          "text": "680",
+          "bbox": [
+            63.72,
+            61.63,
+            80.25,
+            72.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "T. Ohtsuki",
+          "bbox": [
+            220.2,
+            62.46,
+            261.59,
+            72.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            9.88
+          ]
+        },
+        {
+          "text": "We will show that the asymptotic expansion of (9) is of order eN&R times",
+          "bbox": [
+            78.72,
+            83.36,
+            418.03,
+            97.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIS",
+            "MT2MIT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            5.81,
+            7.39,
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "polynomial order in N, where &R is the real part of & which is given in the",
+          "bbox": [
+            63.72,
+            100.75,
+            418.04,
+            116.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            7.39,
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "introduction,",
+          "bbox": [
+            63.72,
+            114.79,
+            120.1,
+            125.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "&R D Re & D 0:4501096100 : : ::",
+          "bbox": [
+            170.88,
+            133.39,
+            311.02,
+            156.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            7.39,
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "Hence, we can ignore summands of (9) in the domain where Re yV .t; s/ \u0014 &R \u0000 \",",
+          "bbox": [
+            63.72,
+            158.18,
+            418.19,
+            183.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            7.39,
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "since they do not contribute to the resulting expansion. Further, as we can see in",
+          "bbox": [
+            63.72,
+            174.07,
+            418.05,
+            185.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "Figure 1, Re yV .t; s/ \u0000 &R is positive only for .t; s/ in a particular subdomain of .",
+          "bbox": [
+            63.72,
+            186.26,
+            418.19,
+            206.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            7.39,
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "In the following lemma, we consider to restrict  to a smaller domain 0 which",
+          "bbox": [
+            63.72,
+            198.31,
+            418.17,
+            214.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYS",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            7.39,
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "includes this subdomain; this restriction will be used to verify the assumptions of",
+          "bbox": [
+            63.72,
+            216.19,
+            418.14,
+            227.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "the Poisson summation formula and the saddle point method later.",
+          "bbox": [
+            63.72,
+            230.23,
+            353.63,
+            241.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "1.0",
+          "bbox": [
+            161.28,
+            263.32,
+            170.11,
+            270.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "0.8",
+          "bbox": [
+            161.28,
+            291.47,
+            170.11,
+            298.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            218.04,
+            299.41,
+            225.68,
+            308.91
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIT"
+          ],
+          "sizes": [
+            9.5
+          ]
+        },
+        {
+          "text": "0.6",
+          "bbox": [
+            161.28,
+            319.11,
+            170.11,
+            326.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            211.08,
+            346.21,
+            221.1,
+            358.11
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYF"
+          ],
+          "sizes": [
+            6.65,
+            9.5
+          ]
+        },
+        {
+          "text": "0.4",
+          "bbox": [
+            161.28,
+            347.76,
+            170.11,
+            354.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "0.2",
+          "bbox": [
+            161.28,
+            374.9,
+            170.11,
+            381.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "0.2",
+          "bbox": [
+            198.33,
+            409.45,
+            207.41,
+            416.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "0.4",
+          "bbox": [
+            226.31,
+            409.45,
+            235.39,
+            416.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "0.6",
+          "bbox": [
+            254.29,
+            409.45,
+            263.38,
+            416.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "0.8",
+          "bbox": [
+            282.27,
+            409.45,
+            291.36,
+            416.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "1.0",
+          "bbox": [
+            310.25,
+            409.45,
+            319.34,
+            416.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "Figure 1. The domain ¹.t; s/ j Re yV .t;s/ \u0015 &Rº.",
+          "bbox": [
+            146.76,
+            428.13,
+            335.11,
+            446.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIT",
+            "MT2SYT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            6.65,
+            9.5,
+            9.88
+          ]
+        },
+        {
+          "text": "Lemma 2.1. We put",
+          "bbox": [
+            63.72,
+            463.98,
+            153.89,
+            475.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Bold",
+            "ZTermes-Italic"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "0 D ¹.t; s/ 2  j 0:04 \u0014 t \u0014 0:4; 0:05 \u0014 s \u0014 0:4; t C s \u0014 0:6º:",
+          "bbox": [
+            99.84,
+            487.22,
+            382.06,
+            509.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT"
+          ],
+          "sizes": [
+            7.39,
+            10.56
+          ]
+        },
+        {
+          "text": "Then, the following domain",
+          "bbox": [
+            63.72,
+            518.14,
+            184.05,
+            529.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Italic"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "¹.t; s/ 2 R2 j Re yV .t; s/ \u0015 &R \u0000 \"º",
+          "bbox": [
+            166.2,
+            541.34,
+            315.67,
+            568.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "ZTermes-Regular",
+            "dsrom12"
+          ],
+          "sizes": [
+            7.39,
+            10.45,
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "(11)",
+          "bbox": [
+            399.84,
+            545.35,
+            418.14,
+            556.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "is included in 0 for some suﬃciently small \" > 0.",
+          "bbox": [
+            63.72,
+            568.42,
+            283.55,
+            584.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYS",
+            "ZTermes-Italic"
+          ],
+          "sizes": [
+            7.39,
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "We give a proof of the lemma in Appendix D. we can graphically observe the",
+          "bbox": [
+            63.72,
+            602.95,
+            418.04,
+            613.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "inclusion of the lemma in Figure 1.",
+          "bbox": [
+            63.72,
+            616.99,
+            216.35,
+            627.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.98
+          ]
+        }
+      ]
+    },
+    {
+      "page": 15,
+      "rotation": 0,
+      "drawings": 19,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2. The domain ¹z 2 C j Re az2 < 0º is shaded."
+      ],
+      "labels": [
+        {
+          "text": "683",
+          "bbox": [
+            401.64,
+            61.63,
+            418.17,
+            72.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "On the asymptotic expansion of the Kashaev invariant of the 52 knot",
+          "bbox": [
+            105.48,
+            62.46,
+            376.31,
+            73.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            6.65,
+            9.5,
+            9.88
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            273.24,
+            129.31,
+            277.6,
+            135.97
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIF"
+          ],
+          "sizes": [
+            6.65
+          ]
+        },
+        {
+          "text": "p",
+          "bbox": [
+            266.04,
+            132.73,
+            273.7,
+            144.63
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2SYF"
+          ],
+          "sizes": [
+            6.65
+          ]
+        },
+        {
+          "text": "\u0000a",
+          "bbox": [
+            273.72,
+            137.47,
+            284.82,
+            150.03
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIF",
+            "MT2SYF"
+          ],
+          "sizes": [
+            6.65
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            206.4,
+            155.23,
+            210.76,
+            161.89
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIF"
+          ],
+          "sizes": [
+            6.65
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            191.16,
+            157.53,
+            198.04,
+            173.72
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2SYT"
+          ],
+          "sizes": [
+            9.5
+          ]
+        },
+        {
+          "text": "p",
+          "bbox": [
+            199.2,
+            158.65,
+            206.86,
+            170.55
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2SYF"
+          ],
+          "sizes": [
+            6.65
+          ]
+        },
+        {
+          "text": "z1",
+          "bbox": [
+            289.8,
+            160.33,
+            298.6,
+            170.17
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIT"
+          ],
+          "sizes": [
+            6.65,
+            9.5
+          ]
+        },
+        {
+          "text": "\u0000a",
+          "bbox": [
+            206.88,
+            163.39,
+            217.98,
+            175.95
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIF",
+            "MT2SYF"
+          ],
+          "sizes": [
+            6.65
+          ]
+        },
+        {
+          "text": "C",
+          "bbox": [
+            255.84,
+            185.17,
+            262.32,
+            194.67
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIT"
+          ],
+          "sizes": [
+            9.5
+          ]
+        },
+        {
+          "text": "z0",
+          "bbox": [
+            193.08,
+            187.21,
+            201.88,
+            197.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIT"
+          ],
+          "sizes": [
+            6.65,
+            9.5
+          ]
+        },
+        {
+          "text": "Figure 2. The domain ¹z 2 C j Re az2 < 0º is shaded.",
+          "bbox": [
+            133.32,
+            218.17,
+            348.55,
+            238.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIT",
+            "MT2SYT",
+            "ZTermes-Regular",
+            "dsrom12"
+          ],
+          "sizes": [
+            6.65,
+            9.41,
+            9.5,
+            9.88
+          ]
+        },
+        {
+          "text": "Proof. By replacing z with z=p",
+          "bbox": [
+            63.72,
+            244.22,
+            209.11,
+            262.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT",
+            "ZTermes-Italic",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "\u0000a, we can reduce the proof to the case where",
+          "bbox": [
+            209.16,
+            251.59,
+            418.16,
+            270.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "a D \u00001. Putting a D \u00001, we show that",
+          "bbox": [
+            63.72,
+            265.63,
+            233.93,
+            284.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "p",
+          "bbox": [
+            242.04,
+            281.3,
+            251.47,
+            299.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2SYT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "Z z1",
+          "bbox": [
+            164.64,
+            284.0,
+            182.97,
+            321.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA",
+            "MT2MIF",
+            "MT2MIS"
+          ],
+          "sizes": [
+            5.81,
+            7.39,
+            10.56
+          ]
+        },
+        {
+          "text": "\u0019",
+          "bbox": [
+            251.52,
+            288.76,
+            258.07,
+            299.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "e\u0000Nz2dz D",
+          "bbox": [
+            185.64,
+            292.38,
+            236.83,
+            314.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT"
+          ],
+          "sizes": [
+            5.81,
+            7.39,
+            10.56
+          ]
+        },
+        {
+          "text": "C O.e\u0000\"N/:",
+          "bbox": [
+            263.64,
+            294.05,
+            317.26,
+            314.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT"
+          ],
+          "sizes": [
+            7.39,
+            10.56
+          ]
+        },
+        {
+          "text": "p",
+          "bbox": [
+            240.96,
+            296.42,
+            250.39,
+            314.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2SYT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "N",
+          "bbox": [
+            250.44,
+            305.08,
+            258.52,
+            315.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "z0",
+          "bbox": [
+            170.28,
+            307.88,
+            178.17,
+            316.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIS"
+          ],
+          "sizes": [
+            5.81,
+            7.39
+          ]
+        },
+        {
+          "text": "p",
+          "bbox": [
+            188.52,
+            320.9,
+            197.95,
+            338.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2SYT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "\u00001 e\u0000Nz2dz D p",
+          "bbox": [
+            95.76,
+            322.1,
+            175.75,
+            348.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT"
+          ],
+          "sizes": [
+            5.81,
+            7.39,
+            10.56
+          ]
+        },
+        {
+          "text": "R 1",
+          "bbox": [
+            90.96,
+            323.33,
+            106.09,
+            360.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA",
+            "MT2SYS"
+          ],
+          "sizes": [
+            7.39,
+            10.56
+          ]
+        },
+        {
+          "text": "Since",
+          "bbox": [
+            63.72,
+            329.47,
+            88.16,
+            340.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "N, it is suﬃcient to show that",
+          "bbox": [
+            197.88,
+            329.47,
+            328.25,
+            340.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "\u0019=",
+          "bbox": [
+            175.68,
+            329.68,
+            188.52,
+            340.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "Z 1",
+          "bbox": [
+            247.92,
+            347.93,
+            266.65,
+            385.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA",
+            "MT2SYS"
+          ],
+          "sizes": [
+            7.39,
+            10.56
+          ]
+        },
+        {
+          "text": "Z z0",
+          "bbox": [
+            116.52,
+            347.96,
+            134.85,
+            385.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA",
+            "MT2MIF",
+            "MT2MIS"
+          ],
+          "sizes": [
+            5.81,
+            7.39,
+            10.56
+          ]
+        },
+        {
+          "text": "e\u0000Nz2dz D O.e\u0000\"N/;",
+          "bbox": [
+            138.48,
+            356.46,
+            235.16,
+            378.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT"
+          ],
+          "sizes": [
+            5.81,
+            7.39,
+            10.56
+          ]
+        },
+        {
+          "text": "e\u0000Nz2dz D O.e\u0000\"N/:",
+          "bbox": [
+            268.8,
+            356.46,
+            365.38,
+            378.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT"
+          ],
+          "sizes": [
+            5.81,
+            7.39,
+            10.56
+          ]
+        },
+        {
+          "text": "\u00001",
+          "bbox": [
+            122.04,
+            371.81,
+            136.21,
+            385.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2SYS"
+          ],
+          "sizes": [
+            7.39
+          ]
+        },
+        {
+          "text": "z1",
+          "bbox": [
+            253.44,
+            371.84,
+            261.33,
+            380.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIS"
+          ],
+          "sizes": [
+            5.81,
+            7.39
+          ]
+        },
+        {
+          "text": "We show the latter formula. (The former formula can be shown similarly.) The",
+          "bbox": [
+            63.72,
+            390.07,
+            418.16,
+            401.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "latter formula is calculated",
+          "bbox": [
+            63.72,
+            404.11,
+            181.05,
+            415.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "Z Re z1",
+          "bbox": [
+            202.2,
+            420.92,
+            230.49,
+            458.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA",
+            "MT2MIF",
+            "MT2MIS",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            5.81,
+            7.39,
+            8.13,
+            10.56
+          ]
+        },
+        {
+          "text": "Z 1",
+          "bbox": [
+            127.08,
+            421.13,
+            145.81,
+            458.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA",
+            "MT2SYS"
+          ],
+          "sizes": [
+            7.39,
+            10.56
+          ]
+        },
+        {
+          "text": "Z 1",
+          "bbox": [
+            286.2,
+            421.13,
+            304.93,
+            458.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA",
+            "MT2SYS"
+          ],
+          "sizes": [
+            7.39,
+            10.56
+          ]
+        },
+        {
+          "text": "e\u0000Nz2dz D",
+          "bbox": [
+            148.08,
+            429.54,
+            199.27,
+            451.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT"
+          ],
+          "sizes": [
+            5.81,
+            7.39,
+            10.56
+          ]
+        },
+        {
+          "text": "e\u0000Nz2dz C",
+          "bbox": [
+            233.28,
+            429.54,
+            283.87,
+            451.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT"
+          ],
+          "sizes": [
+            5.81,
+            7.39,
+            10.56
+          ]
+        },
+        {
+          "text": "e\u0000Nz2dz;",
+          "bbox": [
+            312.48,
+            429.54,
+            354.68,
+            444.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS"
+          ],
+          "sizes": [
+            5.81,
+            7.39,
+            10.56
+          ]
+        },
+        {
+          "text": "Re z1",
+          "bbox": [
+            291.72,
+            444.67,
+            309.69,
+            453.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIS",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            5.81,
+            7.39,
+            8.13
+          ]
+        },
+        {
+          "text": "z1",
+          "bbox": [
+            132.6,
+            444.92,
+            140.49,
+            453.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIS"
+          ],
+          "sizes": [
+            5.81,
+            7.39
+          ]
+        },
+        {
+          "text": "z1",
+          "bbox": [
+            207.72,
+            444.92,
+            215.61,
+            453.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIS"
+          ],
+          "sizes": [
+            5.81,
+            7.39
+          ]
+        },
+        {
+          "text": "and the two terms of the right-hand side are estimated",
+          "bbox": [
+            63.72,
+            463.15,
+            300.09,
+            474.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "Z Re z1",
+          "bbox": [
+            154.8,
+            482.24,
+            183.09,
+            519.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA",
+            "MT2MIF",
+            "MT2MIS",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            5.81,
+            7.39,
+            8.13,
+            10.56
+          ]
+        },
+        {
+          "text": "Z Re z1",
+          "bbox": [
+            242.52,
+            482.24,
+            270.93,
+            519.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA",
+            "MT2MIF",
+            "MT2MIS",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            5.81,
+            7.39,
+            8.13,
+            10.56
+          ]
+        },
+        {
+          "text": "ˇˇˇˇ",
+          "bbox": [
+            149.64,
+            486.96,
+            153.07,
+            537.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "ˇˇˇˇ \u0014",
+          "bbox": [
+            225.12,
+            486.96,
+            239.56,
+            537.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA",
+            "MT2SYT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "e\u0000Nz2dz",
+          "bbox": [
+            185.88,
+            490.86,
+            224.61,
+            506.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS"
+          ],
+          "sizes": [
+            5.81,
+            7.39,
+            10.56
+          ]
+        },
+        {
+          "text": "je\u0000Nz2j \u0001 jdzj",
+          "bbox": [
+            273.6,
+            490.86,
+            332.18,
+            512.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT"
+          ],
+          "sizes": [
+            5.81,
+            7.39,
+            10.56
+          ]
+        },
+        {
+          "text": "z1",
+          "bbox": [
+            160.32,
+            506.36,
+            168.21,
+            514.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIS"
+          ],
+          "sizes": [
+            5.81,
+            7.39
+          ]
+        },
+        {
+          "text": "z1",
+          "bbox": [
+            248.16,
+            506.36,
+            256.05,
+            514.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIS"
+          ],
+          "sizes": [
+            5.81,
+            7.39
+          ]
+        },
+        {
+          "text": "Z Re z1",
+          "bbox": [
+            242.52,
+            516.92,
+            270.93,
+            554.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA",
+            "MT2MIF",
+            "MT2MIS",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            5.81,
+            7.39,
+            8.13,
+            10.56
+          ]
+        },
+        {
+          "text": "e\u0000N Re z2jdzj",
+          "bbox": [
+            273.6,
+            525.54,
+            330.5,
+            547.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            5.81,
+            7.39,
+            8.13,
+            10.56
+          ]
+        },
+        {
+          "text": "\u0014",
+          "bbox": [
+            231.6,
+            529.58,
+            239.56,
+            547.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2SYT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "z1",
+          "bbox": [
+            248.16,
+            540.92,
+            256.05,
+            549.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIS"
+          ],
+          "sizes": [
+            5.81,
+            7.39
+          ]
+        },
+        {
+          "text": "Z Re z1",
+          "bbox": [
+            242.52,
+            551.48,
+            270.93,
+            588.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA",
+            "MT2MIF",
+            "MT2MIS",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            5.81,
+            7.39,
+            8.13,
+            10.56
+          ]
+        },
+        {
+          "text": "e\u0000N Re z2",
+          "bbox": [
+            273.6,
+            559.98,
+            311.73,
+            575.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            5.81,
+            7.39,
+            8.13,
+            10.56
+          ]
+        },
+        {
+          "text": "1jdzj",
+          "bbox": [
+            307.56,
+            563.92,
+            330.5,
+            582.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIT",
+            "MT2SYT"
+          ],
+          "sizes": [
+            5.81,
+            10.56
+          ]
+        },
+        {
+          "text": "\u0014",
+          "bbox": [
+            231.6,
+            564.14,
+            239.56,
+            582.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2SYT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "z1",
+          "bbox": [
+            248.16,
+            575.6,
+            256.05,
+            583.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIS"
+          ],
+          "sizes": [
+            5.81,
+            7.39
+          ]
+        },
+        {
+          "text": "D j Im z1j \u0001 e\u0000N Re z2",
+          "bbox": [
+            231.6,
+            589.02,
+            320.25,
+            611.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            5.81,
+            7.39,
+            8.13,
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            316.08,
+            594.66,
+            319.89,
+            600.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIF"
+          ],
+          "sizes": [
+            5.81
+          ]
+        },
+        {
+          "text": "D O.e\u0000\"N/;",
+          "bbox": [
+            231.6,
+            610.73,
+            285.92,
+            631.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT"
+          ],
+          "sizes": [
+            7.39,
+            10.56
+          ]
+        }
+      ]
+    },
+    {
+      "page": 17,
+      "rotation": 0,
+      "drawings": 19,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 3. The domain ¹z 2 C j Re .z/ < 0º is shaded."
+      ],
+      "labels": [
+        {
+          "text": "685",
+          "bbox": [
+            401.64,
+            61.63,
+            418.17,
+            72.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "On the asymptotic expansion of the Kashaev invariant of the 52 knot",
+          "bbox": [
+            105.48,
+            62.46,
+            376.31,
+            73.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            6.65,
+            9.5,
+            9.88
+          ]
+        },
+        {
+          "text": "z1",
+          "bbox": [
+            289.8,
+            160.33,
+            298.6,
+            170.17
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIT"
+          ],
+          "sizes": [
+            6.65,
+            9.5
+          ]
+        },
+        {
+          "text": "z0",
+          "bbox": [
+            184.2,
+            179.17,
+            193.0,
+            189.01
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIT"
+          ],
+          "sizes": [
+            6.65,
+            9.5
+          ]
+        },
+        {
+          "text": "C",
+          "bbox": [
+            255.84,
+            187.21,
+            262.32,
+            196.71
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIT"
+          ],
+          "sizes": [
+            9.5
+          ]
+        },
+        {
+          "text": "Figure 3. The domain ¹z 2 C j Re .z/ < 0º is shaded.",
+          "bbox": [
+            131.4,
+            219.83,
+            350.47,
+            238.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT",
+            "ZTermes-Regular",
+            "dsrom12"
+          ],
+          "sizes": [
+            9.41,
+            9.5,
+            9.88
+          ]
+        },
+        {
+          "text": "Proof. We show the proposition modifying a proof of the saddle point method",
+          "bbox": [
+            63.72,
+            249.82,
+            418.17,
+            260.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Italic",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "written in [39].5 We show the proposition, for simplicity, putting a D \u00001 as in",
+          "bbox": [
+            63.72,
+            261.31,
+            418.05,
+            282.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT",
+            "ZTermes-Regular",
+            "ntxsups-Regular"
+          ],
+          "sizes": [
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "the proof of Proposition 3.1. We put Or.z/ D r.z/=z2. Since Or.z/ is analytic in a",
+          "bbox": [
+            63.72,
+            276.56,
+            418.16,
+            296.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            7.39,
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "neighborhood of 0, there exists a suﬃciently small ı1 > 0 such that",
+          "bbox": [
+            63.72,
+            292.03,
+            357.89,
+            304.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            7.39,
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            236.28,
+            311.57,
+            244.57,
+            325.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2SYS"
+          ],
+          "sizes": [
+            7.39
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            232.92,
+            320.28,
+            247.86,
+            351.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "bkC2zk",
+          "bbox": [
+            249.72,
+            320.48,
+            281.21,
+            340.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS"
+          ],
+          "sizes": [
+            7.39,
+            10.56
+          ]
+        },
+        {
+          "text": "Or.z/ D",
+          "bbox": [
+            199.8,
+            322.72,
+            229.99,
+            340.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "iD1",
+          "bbox": [
+            233.28,
+            337.73,
+            247.57,
+            351.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2SYS"
+          ],
+          "sizes": [
+            7.39
+          ]
+        },
+        {
+          "text": "for jzj < ı1. Let w be a non-negative real parameter. For each ﬁxed w, we have",
+          "bbox": [
+            63.72,
+            354.31,
+            418.16,
+            372.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            7.39,
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "that",
+          "bbox": [
+            63.72,
+            368.35,
+            80.21,
+            379.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            237.12,
+            376.49,
+            245.41,
+            390.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2SYS"
+          ],
+          "sizes": [
+            7.39
+          ]
+        },
+        {
+          "text": "ew Or.z/ D",
+          "bbox": [
+            191.64,
+            383.54,
+            230.35,
+            405.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT"
+          ],
+          "sizes": [
+            7.39,
+            10.56
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            233.76,
+            385.32,
+            248.7,
+            417.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "Pk.w/zk",
+          "bbox": [
+            250.92,
+            385.52,
+            289.61,
+            399.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT"
+          ],
+          "sizes": [
+            7.39,
+            10.56
+          ]
+        },
+        {
+          "text": "kD0",
+          "bbox": [
+            233.28,
+            403.25,
+            249.13,
+            416.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2SYS"
+          ],
+          "sizes": [
+            7.39
+          ]
+        },
+        {
+          "text": "for jzj < ı1, where Pk.w/ is a polynomial in w of degree \u0014 k. Since Or.0/ D 0,",
+          "bbox": [
+            63.72,
+            416.23,
+            418.07,
+            434.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            7.39,
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "there exist small ı2 > 0 and \"1 > 0 such that jOr.x/j \u0014 \"1 for \u0000ı2 \u0014 x \u0014 ı2; we",
+          "bbox": [
+            63.72,
+            430.27,
+            418.04,
+            450.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            7.39,
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "can further assume that \"1 < 1 and ı2 \u0014 ı1. For each ﬁxed integer m > 0, we can",
+          "bbox": [
+            63.72,
+            444.31,
+            418.17,
+            464.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            7.39,
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "put",
+          "bbox": [
+            63.72,
+            458.35,
+            77.81,
+            469.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "m",
+          "bbox": [
+            211.2,
+            468.92,
+            217.85,
+            476.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS"
+          ],
+          "sizes": [
+            7.39
+          ]
+        },
+        {
+          "text": "ew Or.x/ D",
+          "bbox": [
+            164.4,
+            475.94,
+            203.59,
+            498.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT"
+          ],
+          "sizes": [
+            7.39,
+            10.56
+          ]
+        },
+        {
+          "text": "Pk.w/xk C RmxmC1",
+          "bbox": [
+            224.28,
+            475.94,
+            316.93,
+            498.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT"
+          ],
+          "sizes": [
+            7.39,
+            10.56
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            207.0,
+            477.6,
+            221.94,
+            509.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "(17)",
+          "bbox": [
+            399.84,
+            479.83,
+            418.14,
+            490.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "kD0",
+          "bbox": [
+            206.52,
+            495.53,
+            222.37,
+            509.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2SYS"
+          ],
+          "sizes": [
+            7.39
+          ]
+        },
+        {
+          "text": "for \u0000ı2 \u0014 x \u0014 ı2 and any w \u0015 0, where RmxmC1 is the error term, which is",
+          "bbox": [
+            63.72,
+            505.75,
+            418.03,
+            529.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            7.39,
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "estimated by",
+          "bbox": [
+            63.72,
+            523.63,
+            119.13,
+            534.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "ˇˇˇˇ Re d mC1",
+          "bbox": [
+            148.32,
+            543.41,
+            195.97,
+            595.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            7.39,
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "ˇˇˇˇ Im d mC1",
+          "bbox": [
+            322.92,
+            543.41,
+            370.81,
+            595.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            7.39,
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "ˇˇˇˇ;",
+          "bbox": [
+            228.0,
+            544.8,
+            234.32,
+            595.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA",
+            "MT2MIT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "ˇˇˇˇ:",
+          "bbox": [
+            402.84,
+            544.8,
+            409.06,
+            595.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA",
+            "MT2MIT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "dxmC1 ew Or.x/",
+          "bbox": [
+            168.36,
+            550.37,
+            227.56,
+            572.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS"
+          ],
+          "sizes": [
+            7.39,
+            10.56
+          ]
+        },
+        {
+          "text": "dxmC1 ew Or.x/",
+          "bbox": [
+            343.2,
+            550.37,
+            402.4,
+            572.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS"
+          ],
+          "sizes": [
+            7.39,
+            10.56
+          ]
+        },
+        {
+          "text": "j Re Rmj \u0014 max",
+          "bbox": [
+            72.84,
+            552.31,
+            144.33,
+            570.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            7.39,
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "j Im Rmj \u0014 max",
+          "bbox": [
+            247.08,
+            552.31,
+            318.93,
+            570.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            7.39,
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "jxj\u0014ı2",
+          "bbox": [
+            123.12,
+            562.37,
+            146.13,
+            575.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIS",
+            "MT2SYS"
+          ],
+          "sizes": [
+            5.81,
+            7.39
+          ]
+        },
+        {
+          "text": "jxj\u0014ı2",
+          "bbox": [
+            297.72,
+            562.37,
+            320.73,
+            575.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIS",
+            "MT2SYS"
+          ],
+          "sizes": [
+            5.81,
+            7.39
+          ]
+        },
+        {
+          "text": "5 As for the 1-variable case, a proof of a more general statement of the saddle point method",
+          "bbox": [
+            80.4,
+            580.66,
+            418.17,
+            591.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "ZTermes-Regular",
+            "ntxsups-Regular"
+          ],
+          "sizes": [
+            8.45,
+            8.79,
+            9.29
+          ]
+        },
+        {
+          "text": "is written in [39], though the multi-variable case is not written in [39]. We review (a simpler",
+          "bbox": [
+            63.72,
+            594.27,
+            418.18,
+            603.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            9.29
+          ]
+        },
+        {
+          "text": "modiﬁcation of) the proof of [39], in order to generalize it to the multi-variable case later",
+          "bbox": [
+            63.72,
+            606.27,
+            418.17,
+            615.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            9.29
+          ]
+        },
+        {
+          "text": "(Proposition 3.5).",
+          "bbox": [
+            63.72,
+            618.27,
+            128.68,
+            627.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            9.29
+          ]
+        }
+      ]
+    },
+    {
+      "page": 26,
+      "rotation": 0,
+      "drawings": 15,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 4. The domain ¹z 2 C j Re az2 < 0º is shaded."
+      ],
+      "labels": [
+        {
+          "text": "694",
+          "bbox": [
+            63.72,
+            61.63,
+            80.25,
+            72.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "T. Ohtsuki",
+          "bbox": [
+            220.2,
+            62.46,
+            261.59,
+            72.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            9.88
+          ]
+        },
+        {
+          "text": "Proposition 4.1. Let a; c be complex numbers satisfying that",
+          "bbox": [
+            63.72,
+            85.38,
+            331.13,
+            96.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "ZTermes-Bold",
+            "ZTermes-Italic"
+          ],
+          "sizes": [
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "j Im cj < \u0000\u0019",
+          "bbox": [
+            226.56,
+            110.2,
+            282.91,
+            135.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "2 Re1",
+          "bbox": [
+            277.44,
+            110.2,
+            303.6,
+            135.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "Rea < 0;",
+          "bbox": [
+            173.88,
+            117.43,
+            213.8,
+            128.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "a:",
+          "bbox": [
+            298.08,
+            117.64,
+            307.9,
+            135.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "We put",
+          "bbox": [
+            63.72,
+            147.1,
+            94.01,
+            158.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Italic"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "° k",
+          "bbox": [
+            170.16,
+            168.04,
+            184.18,
+            207.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA",
+            "MT2MIT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "ˇˇˇ k 2 Z; b0 \u0014 k",
+          "bbox": [
+            229.32,
+            172.24,
+            302.02,
+            219.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "dsrom12"
+          ],
+          "sizes": [
+            7.39,
+            10.45,
+            10.56
+          ]
+        },
+        {
+          "text": "±",
+          "bbox": [
+            329.4,
+            175.68,
+            334.78,
+            207.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "N C c 2 C",
+          "bbox": [
+            176.76,
+            177.65,
+            226.39,
+            205.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT",
+            "dsrom12"
+          ],
+          "sizes": [
+            10.45,
+            10.56
+          ]
+        },
+        {
+          "text": "ƒ D",
+          "bbox": [
+            147.12,
+            179.68,
+            167.23,
+            197.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "N \u0014 b1",
+          "bbox": [
+            294.6,
+            179.68,
+            328.93,
+            205.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT"
+          ],
+          "sizes": [
+            7.39,
+            10.56
+          ]
+        },
+        {
+          "text": "and",
+          "bbox": [
+            63.72,
+            204.46,
+            80.25,
+            215.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Italic"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "C D ¹t C c 2 C j t 2 R; b0 \u0014 t \u0014 b1º",
+          "bbox": [
+            147.12,
+            225.89,
+            315.07,
+            247.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "dsrom12"
+          ],
+          "sizes": [
+            7.39,
+            10.45,
+            10.56
+          ]
+        },
+        {
+          "text": "for some b0; b1 2 R and \"0 > 0 satisfying that Re.b0 C c/ < 0 < Re.b1 C c/ and",
+          "bbox": [
+            63.72,
+            254.09,
+            418.17,
+            275.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "ZTermes-Italic",
+            "ZTermes-Regular",
+            "dsrom12"
+          ],
+          "sizes": [
+            7.39,
+            10.45,
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "Re a.bi C c/2 < \u0000\"0 .i D 0; 1/; see Figure 4. Then, there exists \" > 0 such that",
+          "bbox": [
+            63.72,
+            266.32,
+            411.29,
+            289.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "ZTermes-Italic",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            7.39,
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            151.44,
+            294.64,
+            156.72,
+            305.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "Z",
+          "bbox": [
+            222.96,
+            295.2,
+            228.54,
+            326.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "eN\u0001az2 D",
+          "bbox": [
+            179.76,
+            295.22,
+            220.03,
+            320.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT"
+          ],
+          "sizes": [
+            5.81,
+            7.39,
+            10.56
+          ]
+        },
+        {
+          "text": "eN\u0001az2dz C O.e\u0000\"N/:",
+          "bbox": [
+            237.6,
+            298.26,
+            333.94,
+            320.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT"
+          ],
+          "sizes": [
+            5.81,
+            7.39,
+            10.56
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            162.48,
+            299.64,
+            177.42,
+            331.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "N",
+          "bbox": [
+            149.16,
+            309.52,
+            157.24,
+            320.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "C",
+          "bbox": [
+            228.48,
+            313.64,
+            234.18,
+            321.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS"
+          ],
+          "sizes": [
+            7.39
+          ]
+        },
+        {
+          "text": "z2ƒ",
+          "bbox": [
+            161.88,
+            317.21,
+            178.03,
+            330.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2SYS"
+          ],
+          "sizes": [
+            7.39
+          ]
+        },
+        {
+          "text": "We note that \" depends on a, c and \"0.",
+          "bbox": [
+            63.72,
+            342.55,
+            232.18,
+            353.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            7.39,
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "b1 C c",
+          "bbox": [
+            289.8,
+            446.65,
+            315.78,
+            464.48
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIT",
+            "MT2SYT"
+          ],
+          "sizes": [
+            6.65,
+            9.5
+          ]
+        },
+        {
+          "text": "b0 C c",
+          "bbox": [
+            176.16,
+            461.65,
+            202.26,
+            479.48
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIT",
+            "MT2SYT"
+          ],
+          "sizes": [
+            6.65,
+            9.5
+          ]
+        },
+        {
+          "text": "ƒ",
+          "bbox": [
+            255.84,
+            463.57,
+            263.41,
+            473.07
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIT"
+          ],
+          "sizes": [
+            9.5
+          ]
+        },
+        {
+          "text": "Figure 4. The domain ¹z 2 C j Re az2 < 0º is shaded.",
+          "bbox": [
+            132.84,
+            504.49,
+            349.03,
+            524.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIT",
+            "MT2SYT",
+            "ZTermes-Regular",
+            "dsrom12"
+          ],
+          "sizes": [
+            6.65,
+            9.41,
+            9.5,
+            9.88
+          ]
+        },
+        {
+          "text": "Proof. By Proposition 3.1, the required formula is rewritten",
+          "bbox": [
+            63.72,
+            542.62,
+            324.81,
+            553.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Italic",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "p",
+          "bbox": [
+            270.6,
+            561.62,
+            280.03,
+            579.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2SYT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "p",
+          "bbox": [
+            246.48,
+            562.7,
+            255.91,
+            580.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2SYT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "\u0019 \u0001",
+          "bbox": [
+            255.96,
+            570.28,
+            268.16,
+            588.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "N",
+          "bbox": [
+            279.96,
+            570.28,
+            288.04,
+            580.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "eN\u0001a.k=NCc/2 D",
+          "bbox": [
+            173.4,
+            570.86,
+            242.35,
+            595.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT"
+          ],
+          "sizes": [
+            5.81,
+            7.39,
+            10.56
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            150.36,
+            575.28,
+            165.3,
+            606.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "C O.e\u0000\"N/:",
+          "bbox": [
+            293.16,
+            575.45,
+            346.78,
+            595.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT"
+          ],
+          "sizes": [
+            7.39,
+            10.56
+          ]
+        },
+        {
+          "text": "p",
+          "bbox": [
+            256.56,
+            577.94,
+            265.99,
+            595.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2SYT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "\u0000a",
+          "bbox": [
+            266.04,
+            585.4,
+            279.38,
+            603.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "k2Z",
+          "bbox": [
+            150.0,
+            591.78,
+            165.55,
+            606.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2SYS",
+            "dsrom10"
+          ],
+          "sizes": [
+            7.39,
+            7.61
+          ]
+        },
+        {
+          "text": "b0\u0014k=N\u0014b1",
+          "bbox": [
+            135.12,
+            602.69,
+            179.97,
+            616.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIS",
+            "MT2SYS"
+          ],
+          "sizes": [
+            5.81,
+            7.39
+          ]
+        }
+      ]
+    },
+    {
+      "page": 29,
+      "rotation": 0,
+      "drawings": 17,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 5. The domain ¹z 2 C j Re .z/ < 0º is shaded."
+      ],
+      "labels": [
+        {
+          "text": "697",
+          "bbox": [
+            401.64,
+            61.63,
+            418.17,
+            72.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "On the asymptotic expansion of the Kashaev invariant of the 52 knot",
+          "bbox": [
+            105.48,
+            62.46,
+            376.31,
+            73.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            6.65,
+            9.5,
+            9.88
+          ]
+        },
+        {
+          "text": "b1 C c",
+          "bbox": [
+            292.8,
+            160.33,
+            318.78,
+            178.16
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIT",
+            "MT2SYT"
+          ],
+          "sizes": [
+            6.65,
+            9.5
+          ]
+        },
+        {
+          "text": "b0 C c",
+          "bbox": [
+            194.16,
+            173.29,
+            220.14,
+            191.12
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIT",
+            "MT2SYT"
+          ],
+          "sizes": [
+            6.65,
+            9.5
+          ]
+        },
+        {
+          "text": "ƒ",
+          "bbox": [
+            255.84,
+            177.25,
+            263.41,
+            186.75
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MT2MIT"
+          ],
+          "sizes": [
+            9.5
+          ]
+        },
+        {
+          "text": "Figure 5. The domain ¹z 2 C j Re .z/ < 0º is shaded.",
+          "bbox": [
+            131.28,
+            219.83,
+            350.59,
+            238.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT",
+            "ZTermes-Regular",
+            "dsrom12"
+          ],
+          "sizes": [
+            9.41,
+            9.5,
+            9.88
+          ]
+        },
+        {
+          "text": "Proof. The sum of the left-hand side of the required formula is rewritten",
+          "bbox": [
+            63.72,
+            255.34,
+            382.53,
+            266.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Italic",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "\u0010 k",
+          "bbox": [
+            259.68,
+            275.68,
+            273.94,
+            315.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA",
+            "MT2MIT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "\u0010",
+          "bbox": [
+            228.6,
+            283.32,
+            234.35,
+            315.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "\u0011\u0011",
+          "bbox": [
+            296.28,
+            283.32,
+            307.8,
+            315.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            188.28,
+            284.88,
+            203.22,
+            316.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "exp",
+          "bbox": [
+            211.44,
+            287.11,
+            227.01,
+            298.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "(35)",
+          "bbox": [
+            399.84,
+            287.11,
+            418.14,
+            298.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "N \u0001",
+          "bbox": [
+            234.36,
+            287.32,
+            258.71,
+            305.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "N C c",
+          "bbox": [
+            266.52,
+            287.32,
+            295.73,
+            313.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": ":",
+          "bbox": [
+            307.8,
+            287.32,
+            310.66,
+            297.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "k2Z",
+          "bbox": [
+            187.92,
+            301.38,
+            203.47,
+            316.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2SYS",
+            "dsrom10"
+          ],
+          "sizes": [
+            7.39,
+            7.61
+          ]
+        },
+        {
+          "text": "b0\u0014k=N\u0014b1",
+          "bbox": [
+            173.04,
+            309.53,
+            217.89,
+            323.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIF",
+            "MT2MIS",
+            "MT2SYS"
+          ],
+          "sizes": [
+            5.81,
+            7.39
+          ]
+        },
+        {
+          "text": "In order to apply the Poisson summation formula (30), we put",
+          "bbox": [
+            63.72,
+            331.51,
+            334.49,
+            342.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "\u0010 z",
+          "bbox": [
+            190.08,
+            349.0,
+            204.09,
+            388.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA",
+            "MT2MIT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "\u0010 z",
+          "bbox": [
+            282.48,
+            349.0,
+            296.49,
+            388.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA",
+            "MT2MIT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "\u0011",
+          "bbox": [
+            226.8,
+            356.64,
+            232.56,
+            388.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "\u0010",
+          "bbox": [
+            251.52,
+            356.64,
+            257.28,
+            388.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "\u0011\u0011",
+          "bbox": [
+            319.08,
+            356.64,
+            330.6,
+            388.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "exp",
+          "bbox": [
+            234.24,
+            360.55,
+            249.81,
+            371.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "f .z/ D g",
+          "bbox": [
+            148.32,
+            360.76,
+            189.75,
+            378.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "N C c",
+          "bbox": [
+            197.04,
+            360.76,
+            226.25,
+            386.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "N \u0001",
+          "bbox": [
+            257.28,
+            360.76,
+            281.51,
+            378.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "N C c",
+          "bbox": [
+            289.44,
+            360.76,
+            318.53,
+            386.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": ";",
+          "bbox": [
+            330.6,
+            360.76,
+            333.56,
+            371.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "where g is a diﬀerentiable function on R C c satisfying that",
+          "bbox": [
+            63.72,
+            388.02,
+            325.97,
+            408.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT",
+            "ZTermes-Regular",
+            "dsrom12"
+          ],
+          "sizes": [
+            10.45,
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "´",
+          "bbox": [
+            201.6,
+            415.92,
+            208.73,
+            447.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "if w 2 C;",
+          "bbox": [
+            227.64,
+            418.39,
+            268.64,
+            436.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            208.68,
+            418.6,
+            213.96,
+            429.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "g.w/ D",
+          "bbox": [
+            164.52,
+            426.28,
+            198.67,
+            444.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "if w … N.C/;",
+          "bbox": [
+            227.64,
+            435.31,
+            286.28,
+            453.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            208.68,
+            435.52,
+            213.96,
+            446.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "if w 2 N.C/ \u0000 C:",
+          "bbox": [
+            238.8,
+            459.79,
+            317.38,
+            478.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "0 \u0014 g.w/ \u0014 1",
+          "bbox": [
+            164.52,
+            460.0,
+            225.12,
+            478.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "Here, N.C/ is a neighborhood of C in RCc such that N.C/\u0000C is included in the",
+          "bbox": [
+            63.72,
+            485.46,
+            418.04,
+            505.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT",
+            "ZTermes-Regular",
+            "dsrom12"
+          ],
+          "sizes": [
+            10.45,
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "domain ¹z 2 C j Re .z/ < \u0000\"0=2º. Then, the Fourier transform of f is given by",
+          "bbox": [
+            63.72,
+            499.49,
+            418.05,
+            519.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "ZTermes-Regular",
+            "dsrom12"
+          ],
+          "sizes": [
+            7.39,
+            10.45,
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "\u0010 z",
+          "bbox": [
+            168.48,
+            520.96,
+            182.49,
+            560.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA",
+            "MT2MIT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "\u0010 z",
+          "bbox": [
+            260.88,
+            520.96,
+            274.89,
+            560.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA",
+            "MT2MIT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "p",
+          "bbox": [
+            330.12,
+            523.97,
+            337.35,
+            537.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2SYS"
+          ],
+          "sizes": [
+            7.39
+          ]
+        },
+        {
+          "text": "Z",
+          "bbox": [
+            148.44,
+            525.96,
+            154.02,
+            557.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "\u0011",
+          "bbox": [
+            205.2,
+            528.6,
+            210.96,
+            560.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "\u0010",
+          "bbox": [
+            229.92,
+            528.6,
+            235.68,
+            560.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "\u0011\u0011",
+          "bbox": [
+            297.48,
+            528.6,
+            309.0,
+            560.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "Of .\u0010/ D",
+          "bbox": [
+            113.16,
+            530.18,
+            145.51,
+            550.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "e\u00002\u0019",
+          "bbox": [
+            309.0,
+            530.45,
+            329.57,
+            543.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS"
+          ],
+          "sizes": [
+            7.39,
+            10.56
+          ]
+        },
+        {
+          "text": "\u00001\u0010zdz",
+          "bbox": [
+            337.44,
+            530.45,
+            368.13,
+            543.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS"
+          ],
+          "sizes": [
+            7.39,
+            10.56
+          ]
+        },
+        {
+          "text": "exp",
+          "bbox": [
+            212.64,
+            532.51,
+            228.21,
+            543.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "g",
+          "bbox": [
+            162.24,
+            532.72,
+            168.15,
+            543.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "N C c",
+          "bbox": [
+            175.56,
+            532.72,
+            204.65,
+            558.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "N \u0001",
+          "bbox": [
+            235.68,
+            532.72,
+            259.91,
+            550.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "N C c",
+          "bbox": [
+            267.84,
+            532.72,
+            296.93,
+            558.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "R",
+          "bbox": [
+            153.96,
+            542.82,
+            159.99,
+            550.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "dsrom10"
+          ],
+          "sizes": [
+            7.61
+          ]
+        },
+        {
+          "text": "p",
+          "bbox": [
+            257.28,
+            557.45,
+            264.51,
+            570.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2SYS"
+          ],
+          "sizes": [
+            7.39
+          ]
+        },
+        {
+          "text": "Z",
+          "bbox": [
+            159.84,
+            559.44,
+            165.42,
+            591.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "g.w/eN. .w/\u00002\u0019",
+          "bbox": [
+            184.56,
+            563.93,
+            256.73,
+            577.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS"
+          ],
+          "sizes": [
+            7.39,
+            10.56
+          ]
+        },
+        {
+          "text": "\u00001\u0010.w\u0000c//dw;",
+          "bbox": [
+            264.48,
+            563.93,
+            323.0,
+            577.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS"
+          ],
+          "sizes": [
+            7.39,
+            10.56
+          ]
+        },
+        {
+          "text": "D N",
+          "bbox": [
+            136.68,
+            566.2,
+            156.52,
+            584.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "RCc",
+          "bbox": [
+            165.36,
+            576.3,
+            181.85,
+            591.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2SYS",
+            "dsrom10"
+          ],
+          "sizes": [
+            7.39,
+            7.61
+          ]
+        },
+        {
+          "text": "where we put",
+          "bbox": [
+            63.72,
+            597.79,
+            122.69,
+            608.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "w D z=N C c:",
+          "bbox": [
+            208.44,
+            617.2,
+            273.34,
+            635.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        }
+      ]
+    },
+    {
+      "page": 62,
+      "rotation": 0,
+      "drawings": 13,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 6. The graph of ƒ.t/ for 0 \u0014 t \u0014 1."
+      ],
+      "labels": [
+        {
+          "text": "730",
+          "bbox": [
+            63.72,
+            61.63,
+            80.25,
+            72.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "T. Ohtsuki",
+          "bbox": [
+            220.2,
+            62.46,
+            261.59,
+            72.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            9.88
+          ]
+        },
+        {
+          "text": "D. Proof of Lemma 2.1",
+          "bbox": [
+            186.48,
+            85.38,
+            295.38,
+            96.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Bold"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "In this appendix, we give a proof of Lemma 2.1.",
+          "bbox": [
+            63.72,
+            110.95,
+            273.71,
+            121.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "Proof of Lemma 2.1. We put",
+          "bbox": [
+            63.72,
+            132.82,
+            189.29,
+            143.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Italic",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "p",
+          "bbox": [
+            289.2,
+            151.73,
+            296.43,
+            165.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2SYS"
+          ],
+          "sizes": [
+            7.39
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            232.32,
+            153.04,
+            237.6,
+            163.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "\u0010",
+          "bbox": [
+            210.36,
+            156.36,
+            216.12,
+            188.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "\u0011",
+          "bbox": [
+            314.28,
+            156.36,
+            320.04,
+            188.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "\u00001t/",
+          "bbox": [
+            296.4,
+            158.21,
+            314.26,
+            171.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYS"
+          ],
+          "sizes": [
+            7.39,
+            10.56
+          ]
+        },
+        {
+          "text": "Li2.e2\u0019",
+          "bbox": [
+            255.36,
+            158.24,
+            288.65,
+            171.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            7.39,
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "ƒ.t/ D Re",
+          "bbox": [
+            161.88,
+            160.15,
+            208.64,
+            178.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "p",
+          "bbox": [
+            230.04,
+            160.7,
+            239.47,
+            178.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2SYT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "2\u0019",
+          "bbox": [
+            217.32,
+            169.36,
+            229.15,
+            179.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "\u00001",
+          "bbox": [
+            239.52,
+            169.36,
+            252.48,
+            187.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "for t 2 R. We note that this function has period 1, and ƒ.\u0000t/ D \u0000ƒ.t/. Since",
+          "bbox": [
+            63.72,
+            186.42,
+            404.24,
+            206.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT",
+            "ZTermes-Regular",
+            "dsrom12"
+          ],
+          "sizes": [
+            10.45,
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "ƒ0.t/ D \u0000 log.2 sin \u0019t/",
+          "bbox": [
+            189.72,
+            209.81,
+            292.3,
+            230.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYS",
+            "MT2SYT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            7.39,
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "for 0 < t < 1, the behavior of ƒ.t/ is as follows.",
+          "bbox": [
+            63.72,
+            235.27,
+            275.15,
+            246.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            206.28,
+            253.88,
+            210.61,
+            261.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS"
+          ],
+          "sizes": [
+            7.39
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            252.96,
+            253.88,
+            257.29,
+            261.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS"
+          ],
+          "sizes": [
+            7.39
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            303.48,
+            253.88,
+            307.81,
+            261.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS"
+          ],
+          "sizes": [
+            7.39
+          ]
+        },
+        {
+          "text": "t",
+          "bbox": [
+            134.52,
+            257.92,
+            137.59,
+            268.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            159.84,
+            257.92,
+            165.12,
+            268.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            352.8,
+            257.92,
+            358.08,
+            268.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "\u0001 \u0001 \u0001",
+          "bbox": [
+            175.56,
+            258.14,
+            186.68,
+            276.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2SYT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "\u0001 \u0001 \u0001",
+          "bbox": [
+            230.28,
+            258.14,
+            241.4,
+            276.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2SYT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "\u0001 \u0001 \u0001",
+          "bbox": [
+            269.04,
+            258.14,
+            280.16,
+            276.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2SYT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "\u0001 \u0001 \u0001",
+          "bbox": [
+            331.44,
+            258.14,
+            342.56,
+            276.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2SYT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "6",
+          "bbox": [
+            206.28,
+            261.92,
+            210.61,
+            269.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS"
+          ],
+          "sizes": [
+            7.39
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            252.96,
+            261.92,
+            257.29,
+            269.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS"
+          ],
+          "sizes": [
+            7.39
+          ]
+        },
+        {
+          "text": "6",
+          "bbox": [
+            303.48,
+            261.92,
+            307.81,
+            269.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS"
+          ],
+          "sizes": [
+            7.39
+          ]
+        },
+        {
+          "text": "!",
+          "bbox": [
+            224.76,
+            273.84,
+            243.29,
+            294.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2SYT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "!",
+          "bbox": [
+            263.4,
+            273.84,
+            281.93,
+            294.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2SYT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "!",
+          "bbox": [
+            173.53,
+            274.33,
+            192.06,
+            295.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2SYT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "!",
+          "bbox": [
+            329.41,
+            274.33,
+            347.94,
+            295.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2SYT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "ƒ. 1",
+          "bbox": [
+            197.04,
+            274.4,
+            214.69,
+            287.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT"
+          ],
+          "sizes": [
+            7.39,
+            10.56
+          ]
+        },
+        {
+          "text": "\u0000ƒ. 1",
+          "bbox": [
+            290.52,
+            274.4,
+            315.85,
+            294.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT"
+          ],
+          "sizes": [
+            7.39,
+            10.56
+          ]
+        },
+        {
+          "text": "ƒ.t/",
+          "bbox": [
+            126.48,
+            276.52,
+            146.74,
+            287.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            159.84,
+            276.52,
+            165.12,
+            287.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "6/",
+          "bbox": [
+            210.36,
+            276.52,
+            219.82,
+            289.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT"
+          ],
+          "sizes": [
+            7.39,
+            10.56
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            252.48,
+            276.52,
+            257.76,
+            287.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "6/",
+          "bbox": [
+            311.52,
+            276.52,
+            320.86,
+            289.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT"
+          ],
+          "sizes": [
+            7.39,
+            10.56
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            352.8,
+            276.52,
+            358.08,
+            287.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "Here, ƒ. 1",
+          "bbox": [
+            63.72,
+            298.28,
+            108.25,
+            311.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            7.39,
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "6/ D 0:161533 : : :. See Figure 6 for the graph of ƒ.t/.",
+          "bbox": [
+            103.92,
+            300.19,
+            341.87,
+            318.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            7.39,
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "0.15",
+          "bbox": [
+            161.78,
+            332.98,
+            174.0,
+            339.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "0.10",
+          "bbox": [
+            162.15,
+            345.38,
+            174.37,
+            352.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "0.05",
+          "bbox": [
+            161.9,
+            358.66,
+            174.12,
+            365.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "0.8",
+          "bbox": [
+            279.72,
+            365.35,
+            288.8,
+            372.35
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "0.2",
+          "bbox": [
+            199.11,
+            365.47,
+            208.19,
+            372.47
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "1.0",
+          "bbox": [
+            306.77,
+            365.53,
+            315.41,
+            372.53
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "0.4",
+          "bbox": [
+            225.67,
+            365.6,
+            234.75,
+            372.6
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "0.6",
+          "bbox": [
+            252.95,
+            365.72,
+            262.03,
+            372.72
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "−",
+          "bbox": [
+            156.24,
+            383.95,
+            160.08,
+            390.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "0.05",
+          "bbox": [
+            161.9,
+            384.29,
+            174.12,
+            391.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "−",
+          "bbox": [
+            156.24,
+            396.7,
+            160.08,
+            403.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "0.10",
+          "bbox": [
+            162.15,
+            397.38,
+            174.37,
+            404.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "−",
+          "bbox": [
+            156.24,
+            409.57,
+            160.08,
+            416.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SymbolMT"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "0.15",
+          "bbox": [
+            161.78,
+            410.11,
+            174.0,
+            417.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.0
+          ]
+        },
+        {
+          "text": "Figure 6. The graph of ƒ.t/ for 0 \u0014 t \u0014 1.",
+          "bbox": [
+            156.36,
+            432.66,
+            325.51,
+            449.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            9.5,
+            9.88
+          ]
+        },
+        {
+          "text": "We consider the domain",
+          "bbox": [
+            78.72,
+            461.23,
+            185.01,
+            472.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "¹.t; s/ 2 R2 j Re yV .t; s/ \u0015 &Rº:",
+          "bbox": [
+            173.4,
+            480.74,
+            308.62,
+            503.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "ZTermes-Regular",
+            "dsrom12"
+          ],
+          "sizes": [
+            7.39,
+            10.45,
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "(79)",
+          "bbox": [
+            399.84,
+            484.75,
+            418.14,
+            495.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": "For t; s 2 R,",
+          "bbox": [
+            63.72,
+            506.33,
+            118.19,
+            526.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT",
+            "ZTermes-Regular",
+            "dsrom12"
+          ],
+          "sizes": [
+            10.45,
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "Re yV .t; s/ D \u0000ƒ.\u0000t/ \u0000 2ƒ.\u0000s/ D ƒ.t/ C 2ƒ.s/:",
+          "bbox": [
+            132.48,
+            529.82,
+            349.42,
+            550.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "\u0000 1",
+          "bbox": [
+            105.48,
+            548.96,
+            115.21,
+            586.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA",
+            "MT2MIS"
+          ],
+          "sizes": [
+            7.39,
+            10.56
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            116.4,
+            554.4,
+            120.66,
+            586.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "Since 2ƒ",
+          "bbox": [
+            63.72,
+            555.07,
+            105.48,
+            566.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "\u0000 &R D \u00000:127043 : : : < 0, the values of ƒ.t/ and ƒ.s/ must be",
+          "bbox": [
+            123.72,
+            555.07,
+            418.16,
+            578.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            7.39,
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "6",
+          "bbox": [
+            110.88,
+            561.32,
+            115.21,
+            568.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIS"
+          ],
+          "sizes": [
+            7.39
+          ]
+        },
+        {
+          "text": "positive when .t; s/ is in the domain (79). Hence, the domain (79) is included in",
+          "bbox": [
+            63.72,
+            569.11,
+            418.05,
+            580.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.56,
+            10.98
+          ]
+        },
+        {
+          "text": "the area",
+          "bbox": [
+            63.72,
+            583.15,
+            98.24,
+            594.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.98
+          ]
+        },
+        {
+          "text": ".t; s/ 2 R2 ˇˇ 0 \u0014 t \u0014 0:5; 0 \u0014 s \u0014 0:5",
+          "bbox": [
+            155.88,
+            594.76,
+            323.16,
+            634.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA",
+            "MT2MIS",
+            "MT2MIT",
+            "MT2SYT",
+            "dsrom12"
+          ],
+          "sizes": [
+            7.39,
+            10.45,
+            10.56
+          ]
+        },
+        {
+          "text": "®",
+          "bbox": [
+            150.96,
+            596.64,
+            155.89,
+            628.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "¯",
+          "bbox": [
+            323.16,
+            596.64,
+            328.09,
+            628.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2EXA"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": ":",
+          "bbox": [
+            328.08,
+            597.52,
+            330.94,
+            608.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT"
+          ],
+          "sizes": [
+            10.56
+          ]
+        },
+        {
+          "text": "We assume that 0 \u0014 t \u0014 0:5 and 0 \u0014 s \u0014 0:5 in the following of this proof.",
+          "bbox": [
+            63.72,
+            616.99,
+            390.11,
+            635.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MT2MIT",
+            "MT2SYT",
+            "ZTermes-Regular"
+          ],
+          "sizes": [
+            10.56,
+            10.98
+          ]
+        }
+      ]
+    }
+  ]
+}

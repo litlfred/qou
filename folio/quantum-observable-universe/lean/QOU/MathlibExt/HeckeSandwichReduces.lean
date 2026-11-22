@@ -109,7 +109,7 @@ trace, not a carrier.
 **Nothing here derives the bond product.** That reading of the atom word remains
 measured, per `DisjointBlockTraceLaw`'s own statement of scope.
 
--- Ref: [manuscript] bean qou-301d; Kassel-Turaev, *Braid Groups*, ch. 4;
+-- Ref: [leitner2026] bean qou-301d; Kassel-Turaev, *Braid Groups*, ch. 4;
 --      Geck-Pfeiffer, *Characters of Finite Coxeter Groups and Iwahori-Hecke
 --      Algebras*, §4.4 (the tower decomposition `H_{n+1} = H_n + H_n g_n H_n`).
 -/

@@ -6,6 +6,7 @@ import QOU.SchurWeyl.TwoRowCorners
 import QOU.Mathlib.YoungLatticeUpOperator
 import QOU.Mathlib.BallotNumbers
 import QOU.Mathlib.StandardYoungTableauBot
+import QOU.Mathlib.TwoRowDimCatalan
 
 /-!
 # The two-row standard-tableau count is the ballot number
@@ -42,12 +43,13 @@ the term that must vanish is `ballot (2j+1) (j+1)`, which is exactly `ballot_bou
 already proved for a different purpose.  Bean `qou-7wf6` noted that one lemma resolves both; this
 is the second use.
 
--- Ref: [manuscript] beans qou-7vht, qou-7wf6.
+-- Ref: [leitner2026] beans qou-7vht, qou-7wf6.
 -/
 
 namespace QOU.SchurWeyl.TwoRowSYTBallot
 
 open QOU.Mathlib QOU.SchurWeyl
+open QOU.BraidKnot.IdentityI (dimHLF)
 
 variable {m k : ℕ}
 
@@ -206,5 +208,29 @@ theorem numSYT_twoRow_eq_ballot (m k : ℕ) (h : k ≤ m) :
           rw [show (M + 1 + (j + 1) : ℕ) = M + j + 1 + 1 from by omega,
             show (M + (j + 1) : ℕ) = M + j + 1 from by omega,
             show (M + 1 + j : ℕ) = M + j + 1 from by omega, hbs]
+
+/-- **The two-row tableau COUNT equals the hook-length-formula VALUE**, at general `m, k`.
+
+This is the bridge the corpus was missing.  `dimHLF l := (sz l).factorial / prodHooks l` is the
+hook length *formula*; `numStandardYoungTableaux μ := Nat.card (StandardYoungTableau μ)` is the
+genuine *count*.  Frame–Robinson–Thrall — the theorem that the two agree for **every** shape — is
+absent from Mathlib and is proved in this corpus only for `n ≤ 4` (by `decide`) plus `n = 5`.
+
+For **two-row** shapes it needs none of that: both sides were already identified with the same
+ballot number, one side in August (`QOU.Mathlib.dimHLF_two_row_eq_ballot`) and the other by
+`numSYT_twoRow_eq_ballot` above, so composing the two identifications suffices at general `m, k`.
+
+Cited by `QOU.Mathlib.TwoRowDimCatalan`'s module docstring, whose claim that
+`dimHLF_two_row_sq_sum` is "a statement about actual standard-Young-tableau counts" is true
+**because of this theorem** — before it, that file's `dimHLF` was a formula value with no proved
+tie to any tableau count at general `n`.
+
+-- Ref: [leitner2026] bean qou-7vht item 1. -/
+theorem numSYT_twoRow_eq_dimHLF (m k : ℕ) (h : k ≤ m) :
+    (numStandardYoungTableaux (twoRow m k h) : ℤ) = ((dimHLF [m, k] : ℕ) : ℤ) := by
+  have hk2 : 2 * k ≤ m + k := by omega
+  have hd := dimHLF_two_row_eq_ballot (m + k) k hk2
+  rw [show m + k - k = m from by omega] at hd
+  rw [numSYT_twoRow_eq_ballot m k h, ← hd]
 
 end QOU.SchurWeyl.TwoRowSYTBallot

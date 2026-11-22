@@ -26,13 +26,13 @@ move `γ` from above `β_𝔋` to below it.
        costs `|q − q⁻¹|` in Skein units, weighted by `|c_w|`);
     2. `mass_energy_equiv` — mass–energy equivalence `m_𝔋 = E_𝔋 · (q − 1)²`
        (the factor `(q − 1)² = 1/c_q²` converts Skein/spatial units to
-       mass/temporal units), from [`thm:mass-energy-equivalence`].
+       mass/temporal units), from [`def:mass-energy`].
 
   The headline equation is obtained by substitution + `ring`; it is
   **not** a field of the context, so the projection-vacuity test is not
   triggered (§3b-cond item 5).
 
--- Ref: [manuscript] quantum-observable-universe/information-theory/photon-threading-mass.md
+-- Ref: [leitner2026] quantum-observable-universe/information-theory/photon-threading-mass.md
 -/
 
 namespace QOU.Information
@@ -69,7 +69,7 @@ class PhotonThreadingMassContext where
 
     `m_𝔋 = (q − 1)² · |q − q⁻¹| · Σ_w |c_w|`, *derived* by substituting
     the crossing-energy definition into mass–energy equivalence. -/
--- Ref: [manuscript] quantum-observable-universe/information-theory/photon-threading-mass.md
+-- Ref: [leitner2026] quantum-observable-universe/information-theory/photon-threading-mass.md
 theorem photon_threading_mass [ctx : PhotonThreadingMassContext] :
     ctx.m_H = (ctx.q - 1) ^ 2 * |ctx.q - ctx.q⁻¹| *
       (Finset.range ctx.n_steps).sum (fun i => ctx.c_w_abs i) := by

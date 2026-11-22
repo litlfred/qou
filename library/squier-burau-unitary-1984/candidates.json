@@ -3,21 +3,63 @@
  "doc_id": "squier-burau-unitary-1984",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "5087ee3cb48679d1b4a879274d17d3eae09d0dcc90e4cfd5af18c6152a873796",
   "file": "squier-burau-unitary-1984.pdf"
  },
  "provenance": {
-  "title": "PROCEEDINGS OF THE AMERICAN MATHEMATICAL SOCIETY",
-  "authors": "Volume 90. Number 2, February 1984",
+  "title": "The Burau representation is unitary",
+  "authors": "CRAIG C. SQUIEr'",
   "arxiv": null,
   "doi": null
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
-  "formalization_candidates": 0
+  "candidates": 1,
+  "by_kind": {
+   "theorem": 1
+  },
+  "formalization_candidates": 1,
+  "by_domain": {
+   "math": 1
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  },
+  "by_lean_status": {
+   "unformalized": 1
+  },
+  "needs_lean_proof": 1
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "There exists a nonsingular (n \u2014 1) X (w \u2014 1) matrix J0 over Z[t, t']] such that for each w in Bn it follows that \u00df(w)*J0\u00df(w) \u2014 J0. (See \u00a7\u00a71 and 2 below for notation.) View Z[t, r'] as a subring of Z[s, s_1] where s2 \u2014 t. Over Z[s, s~l], a change-of-basis replaces J0 by a matrix / which is Hermi- tian: J = J*. Thus, in the new basis, the Burau representation is unitary relative to the Hermitian form /. (Below, we actually deal with / first and derive the theorem as stated as a corollary.) Finally, we note that for each of the standard generators a, of Bn, \u00df(ot) is a unitary reflection. (See \u00a73 for details.) An important open question is whethe",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-000-j5-gl-zm.md (p. 1-4)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-000-j5-gl-zm.md",
+   "section_title": "/J:5\u201e-GL\u201e_,(Z[M-'])",
+   "pages": "1-4",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-000-j5-gl-zm.md (p. 1-4)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-000-01",
+   "block_iri": "library/squier-burau-unitary-1984/blocks/thm-sec-000-01",
+   "claim_id": "squier-burau-unitary-1984#thm-sec-000-01",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  }
+ ]
 }

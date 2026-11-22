@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0506456v1
-doc_title: "arXiv:math/0506456v1 [math.QA] 22 Jun 2005"
+doc_title: "Asymptotics of the quantum invariants for surgeries on the figure 8 knot"
 section_id: sec-front-matter
 section_title: "Front matter"
 section_number: null
@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0506456v1.pdf
 source_sha256: ce11210245a29eec
 toc_source: inferred
+doc_brief: "Asymptotics of the quantum invariants for surgeries on the figure-8 knot (Andersen–Hansen, JKTR) — asymptotic expansion of the SU(2) Reshetikhin–Turaev invariants for surgeries on 4₁."
 ---
 arXiv:math/0506456v1  [math.QA]  22 Jun 2005
 Journal of Knot Theory and Its Ramiﬁcations

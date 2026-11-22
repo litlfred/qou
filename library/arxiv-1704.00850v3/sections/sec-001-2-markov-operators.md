@@ -4,114 +4,29 @@ doc_title: "Estimating the spectral gap of a trace-class Markov operator"
 section_id: sec-001-2-markov-operators
 section_title: "Markov operators"
 section_number: 2
-pages: 3-5
+pages: 4-5
 source_pdf: 1704.00850v3.pdf
 source_sha256: 09dd9c99453ba251
+toc_source: outline
+text_source: latex
+latex_prose_ratio: 0.984
+latex_coverage_ratio: 1.0
 doc_brief: "Estimating the spectral gap of a trace-class Markov operator — The utility of a Markov chain Monte Carlo algorithm is, in large part, determined by the size of the spectral gap of the corresponding"
 ---
-are trace-class, i.e. compact with summable eigenvalues. While compact operators were once thought to be
-rare in MCMC problems with uncountable state spaces (Chan and Geyer, 1994), a string of recent results
-suggests that trace-class DA Markov operators are not at all rare (see e.g. Qin and Hobert, 2018; Chakraborty
-and Khare, 2017; Choi and Rom ´an, 2017; Pal et al., 2017). Furthermore, by exploiting a simple trick, we
-are able to broaden the applicability of our method well beyond DA algorithms. Indeed, if a reversible
-Monte Carlo Markov chain has a Markov transition density (Mtd), and the corresponding Markov operator
-is Hilbert-Schmidt, then our method can be utilized to estimate its spectral gap. This is because the square
-of such a Markov operator can be represented as a trace-class DA Markov operator. A detailed explanation
-is provided in Section 4.
-Of course, there is a large literature devoted to developing theoretical bounds on the second largest
-eigenvalue of a Markov operator (see e.g. Lawler and Sokal, 1988; Sinclair and Jerrum, 1989; Diaconis and
-Stroock, 1991). However, these results are typically not useful in situations where the state space, S, is
-uncountable or multi-dimensional, which is our main focus. There also exist a number of computational
-methods for approximating the eigenvalues of a Hilbert-Schmidt operator (see e.g. Garren and Smith, 2000;
-Koltchinskii and Gin ´e, 2000; Ahues et al., 2001; Chakraborty and Khare, 2019+). Some such methods
-require sampling directly from π(·), which is impossible in an MCMC context. The others require the user
-to simulate the Markov chain of interest until it is nearly stationary. Unfortunately, we cannot know if a
-chain has converged unless we have some information on its convergence rate, which is essentially what
-these methods are trying to acquire in the ﬁrst place. The classical Monte Carlo estimator that we introduce
-is calculated by simulating many copies of the Markov chain, each of a short length. These short chains need
-not be close to stationarity in order for the estimator to be valid. Although powerful, this method is quite
-expensive from a computational standpoint. Indeed, it works well only when the underlying dataset of the
-Bayesian model is small. On the other hand, it is important as a “proof of concept” that it is actually possible
-to get a handle on the spectral gaps of Markov operators corresponding to MCMC algorithms on continuous
-state spaces, which, until now, have proven to be extremely elusive quantities.
-The rest of the paper is organized as follows. The notion of Markov operator is formalized in Section 2.
-In Section 3, it is shown that the second largest eigenvalue of a non-negative trace-class operator can be
-bounded above and below by functions of the power sums of the operator’s eigenvalues. In Section 4, DA
-Markov operators are formally deﬁned, and the sum of the kth (k ∈ N) power of the eigenvalues of a
-trace-class DA Markov operator is related to a functional of its Mtd. This functional is usually a multi-
-dimensional integral, and a classical Monte Carlo estimator of it is developed in Section 5. The efﬁciency
-3
-of the Monte Carlo estimator is studied in Section 6. Finally, in Section 7 we apply our method to a few
-well-known MCMC algorithms. Our examples include Albert and Chib’s (1993) DA algorithm for Bayesian
-probit regression, and a DA algorithm for Bayesian linear regression with non-Gaussian errors (Liu, 1996).
-Further application of the method can be found in Zhang et al. (2019).
-2 Markov operators
-Assume that the Markov chain Φ has a Markov transition density,p(u,·), u∈S, such that, for any measur-
-ableA⊂S andu∈S,
-P(Φk∈A|Φ0 =u) =
-∫
-A
-p(k)(u,u′)µ(du′),
-where
-p(k)(u,·) :=
-
-
-
-p(u,·) k = 1
-∫
-Sp(k−1)(u,u′)p(u′,·)µ(du′) k> 1
-is the k-step Mtd corresponding to p(u,·). We will assume throughout that Φ is Harris ergodic, i.e. irre-
-ducible, aperiodic and Harris recurrent. Deﬁne a Hilbert space consisting of complex valued functions on S
-that are square integrable with respect toπ(·), namely
-L2(π) :=
-{
-f :S→ C
-
-∫
-S
-|f(u)|2π(u)µ(du)<∞
-}
-.
-Forf,g ∈L2(π), their inner product is given by
-⟨f,g⟩π =
-∫
-S
-f(u)g(u)π(u)µ(du).
-We assume thatU is countably generated, which implies that L2(π) is separable and admits a countable
-orthonormal basis (see e.g. Billingsley, 1995, Theorem 19.2). The transition density p(u,·), u∈ S deﬁnes
-the following linear operatorP. For anyf∈L2(π),
-Pf (u) =
-∫
-S
-p(u,u′)f(u′)µ(du′).
-The spectrum of a linear operatorL is deﬁned to be
-σ(L) =
-{
-λ∈ C
-⏐⏐ (L−λI)−1 doesn’t exist or is unbounded
-}
-,
-where I is the identity operator. It is well-known that σ(P ) is a closed subset of the unit disk in C. Let
-f0∈L2(π) be the normalized constant function, i.e.f0(u)≡ 1, thenPf 0 =f0. (This is just a fancy way of
-saying that 1 is an eigenvalue with constant eigenfunction, which is true of all Markov operators deﬁned by
-4
-ergodic chains.) Denote by P0 the operator such that P0f = Pf−⟨f,f 0⟩πf0 for allf∈ L2(π). Then the
-spectral gap ofP is deﬁned as
-δ = 1− sup
-{
-|λ|
-⏐⏐⏐λ∈σ(P0)
-}
-.
-For the remainder of this section, we assume thatP is non-negative (and thus self-adjoint) and compact.
-This implies that σ(P )⊂ [0, 1], and that any non-vanishing element of σ(P ) is necessarily an eigenvalue
-of P . Furthermore, there are at most countably many eigenvalues, and they can accumulate only at the
-origin. Let λ0,λ 1,...,λ κ be the decreasingly ordered strictly positive eigenvalues ofP taking into account
-multiplicity, where0≤κ≤∞ . Thenλ0 = 1 andλ1 is what we previously referred to as the “second largest
-eigenvalue” of the Markov operator. If κ = 0, we set λ1 = 0 (which corresponds to the trivial case where
-{Φk}∞
-k=0 are iid). Since Φ is Harris ergodic, λ1 must be strictly less than 1. Also, the compactness of P
-implies that ofP0, and it’s easy to show thatσ(P0) =σ(P )\{1}. Hence, Φ is geometrically ergodic and the
-spectral gap is
-δ = 1−λ1> 0.
-For further background on the spectrum of a linear operator, see e.g. Helmberg (2014) or Ahues et al. (2001).
+[]{#MarkovOperators label="MarkovOperators"}
+
+Assume that the Markov chain $\Phi$ has a Markov transition density, $p(u, \cdot),\,u \in S$, such that, for any measurable $A \subset S$ and $u \in S$, $$\mathbb{P}(\Phi_k \in A|\Phi_0 = u) = \int_A p^{(k)}(u,u') \,
+        \mu(du') \,,$$ where $$p^{(k)}(u,\cdot) := \left\{
+    \begin{array}{@{}ll@{}}
+    p(u,\cdot)  & k=1 \\
+    \int_S p^{(k-1)}(u,u') p(u',\cdot) \, \mu(du') & k > 1 \,
+    \end{array} \right.$$ is the $k$-step Mtd corresponding to $p(u,\cdot)$. We will assume throughout that $\Phi$ is Harris ergodic, i.e. irreducible, aperiodic and Harris recurrent. Define a Hilbert space consisting of complex valued functions on $S$ that are square integrable with respect to $\pi(\cdot),$ namely $$L^2(\pi) := \Big\{ f:S \to \mathbb{C} \; \Big \arrowvert \,
+        \int_{S} |f(u)|^2 \pi(u) \, \mu(du) < \infty \Big\} \,.$$ For $f, g \in L^2(\pi),$ their inner product is given by $$\langle f, g \rangle_{\pi} = \int_{S} f(u) \overline{g(u)}
+        \pi(u) \, \mu(du) \,.$$ We assume that $\mathcal{U}$ is countably generated, which implies that $L^2(\pi)$ is separable and admits a countable orthonormal basis [see e.g. @billingsley2008probability Theorem 19.2]. The transition density $p(u,\cdot), \, u\in S$ defines the following linear operator $P.$ For any $f \in L^2(\pi),$ $$Pf(u) = \int_{S} p(u,u') f(u') \, \mu(du') \,.$$ The spectrum of a linear operator $L$ is defined to be $$\sigma(L) = \big \{ \lambda \in \mathbb{C} \, \big | \,
+        (L-\lambda I)^{-1} \text{ doesn't exist or is unbounded} \big
+        \} \,,$$ where $I$ is the identity operator. It is well-known that $\sigma(P)$ is a closed subset of the unit disk in $\mathbb{C}.$ Let $f_0 \in L^2(\pi)$ be the normalized constant function, i.e. $f_0(u) \equiv 1$, then $Pf_0 = f_0$. (This is just a fancy way of saying that 1 is an eigenvalue with constant eigenfunction, which is true of *all* Markov operators defined by ergodic chains.) Denote by $P_0$ the operator such that $P_0 f = Pf - \langle f, f_0 \rangle_{\pi} f_0$ for all $f \in
+        L^2(\pi).$ Then the spectral gap of $P$ is defined as $$\delta = 1 - \sup \Big\{ |\lambda| \, \Big| \, \lambda \in
+        \sigma(P_0) \Big\} \,.$$
+
+For the remainder of this section, we assume that $P$ is non-negative (and thus self-adjoint) and compact. This implies that $\sigma(P) \subset [0,1]$, and that any non-vanishing element of $\sigma(P)$ is necessarily an eigenvalue of $P$. Furthermore, there are at most countably many eigenvalues, and they can accumulate only at the origin. Let $\lambda_0, \lambda_1, \dots, \lambda_{\kappa}$ be the decreasingly ordered strictly positive eigenvalues of $P$ taking into account multiplicity, where $0 \leq \kappa \leq
+        \infty$. Then $\lambda_0=1$ and $\lambda_1$ is what we previously referred to as the "second largest eigenvalue" of the Markov operator. If $\kappa = 0$, we set $\lambda_1 = 0$ (which corresponds to the trivial case where $\{\Phi_k\}_{k=0}^{\infty}$ are iid). Since $\Phi$ is Harris ergodic, $\lambda_1$ must be strictly less than $1$. Also, the compactness of $P$ implies that of $P_0$, and it's easy to show that $\sigma(P_0) = \sigma(P) \backslash \{1\}$. Hence, $\Phi$ is geometrically ergodic and the spectral gap is $$\delta = 1-\lambda_1 > 0 \,.$$ For further background on the spectrum of a linear operator, see e.g. [@helmberg2014introduction] or [@ahues2001spectral].

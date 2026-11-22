@@ -658,7 +658,7 @@
           "in_degree": 0,
           "cone_size": 20,
           "depth": 14,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1059,6 +1059,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07T23:33:29.067070+00:00"
         }
+      },
+      {
+        "field_hash": {
+          "md": "88cacedb9a5c",
+          "ts": "1cfc435c464a",
+          "lean": "8b6a5d36e8f5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:55:14.670Z",
+        "reviewed_sha": "2ddd93430a21609842c768a1e983ab7fda5cf639",
+        "severity": "critical",
+        "evidence": "Lean takes `h_crit : F≫P⁻ = 0`, which is the conclusion, in place of criticality. Classically false: an anti-self-dual instanton is a critical point (an absolute minimum at negative charge) with F⁻ ≠ 0. Non-self-dual critical points also exist (Sibner–Sibner–Uhlenbeck 1989). The Bogomolny argument gives minima in one class, not all critical points.",
+        "notes": "Hand review 2026-11-15 (statement vs narrative proof); issue #8020. "
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1242,7 +1260,7 @@
         "reviewed_at": "2026-06-28T11:19:33.145Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "evidence": "categorical-self-duality-proof.lean:1 \u2014 folio/quantum-observable-universe/quantum-observable-universes/categorical-self-duality-proof.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ContinuousFunction/Basic.olean' of module Mathlib.Topology.ContinuousFunction.Basic does not exist",
+        "evidence": "categorical-self-duality-proof.lean:1 — folio/quantum-observable-universe/quantum-observable-universes/categorical-self-duality-proof.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ContinuousFunction/Basic.olean' of module Mathlib.Topology.ContinuousFunction.Basic does not exist",
         "notes": "The Lean sibling folio/quantum-observable-universe/quantum-observable-universes/categorical-self-duality-proof.lean fails compilation, indicating a reproducibility failure."
       },
       {
@@ -1803,6 +1821,6 @@
       }
     ]
   },
-  "updated_at": "2026-10-10T12:00:00.000Z",
+  "updated_at": "2026-11-15T21:55:14.670Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

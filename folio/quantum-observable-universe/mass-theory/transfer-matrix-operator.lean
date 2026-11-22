@@ -15,14 +15,14 @@ an instance of this operator.
 LaTeX label: `def:transfer-matrix-operator`
 
 ## References
-- [manuscript] §6/transfer-matrix-operator
+- [leitner2026] §6/transfer-matrix-operator
 - [jones1987] https://doi.org/10.2307/1971403
 -/
 
 namespace QOU.Archimedean
 
 /-- Crossing coefficients (c, d) determined by knot types. -/
--- Ref: [manuscript] §6/transfer-matrix-operator
+-- Ref: [leitner2026] §6/transfer-matrix-operator
 structure CrossingCoeffs where
   c : ℝ  -- σ coefficient
   d : ℝ  -- identity coefficient
@@ -30,7 +30,7 @@ structure CrossingCoeffs where
 /-- The transfer matrix from crossing coefficients.
     T(c,d) = ( c·(q-q⁻¹)+d,  c )
              (     c,         d ) -/
--- Ref: [manuscript] §6/transfer-matrix-operator
+-- Ref: [leitner2026] §6/transfer-matrix-operator
 structure TransferMatrixOp where
   q : ℝ
   coeffs : CrossingCoeffs
@@ -44,7 +44,7 @@ structure TransferMatrixOp where
   m₂₂ : ℝ := coeffs.d
 
 /-- The three nuclear crossing types. -/
--- Ref: [manuscript] §6/transfer-matrix-operator
+-- Ref: [leitner2026] §6/transfer-matrix-operator
 noncomputable def ppCoeffs : CrossingCoeffs := ⟨1, 0⟩
 
 noncomputable def nnCoeffs (q : ℝ) : CrossingCoeffs :=
@@ -58,23 +58,23 @@ noncomputable def mixCoeffs (q : ℝ) : CrossingCoeffs :=
 /-- The photon-electron crossing has the same coefficients as pp.
     This is because the photon (empty knot) has J(q) = 1,
     contributing no deformation. -/
--- Ref: [manuscript] §6/transfer-matrix-operator
+-- Ref: [leitner2026] §6/transfer-matrix-operator
 noncomputable def photonElectronCoeffs : CrossingCoeffs := ppCoeffs
 
 /-- Proof: photon-electron = proton-proton crossing coefficients. -/
--- Ref: [manuscript] §6/transfer-matrix-operator
+-- Ref: [leitner2026] §6/transfer-matrix-operator
 theorem photon_electron_eq_pp :
     photonElectronCoeffs = ppCoeffs := rfl
 
 /-- The Hecke chain step: (aσ + b) × (cσ + d) → a'σ + b'
     via σ² = (q-q⁻¹)σ + 1. -/
--- Ref: [manuscript] §6/transfer-matrix-operator
+-- Ref: [leitner2026] §6/transfer-matrix-operator
 noncomputable def heckeStep (q a b c d : ℝ) : ℝ × ℝ :=
   (a * c * (q - 1/q) + a * d + b * c,  -- a'
    a * c + b * d)                        -- b'
 
 /-- The interaction operator: Δ = T_after - T_before. -/
--- Ref: [manuscript] §6/transfer-matrix-operator
+-- Ref: [leitner2026] §6/transfer-matrix-operator
 structure InteractionOp where
   q : ℝ
   /-- Transfer matrix before interaction. -/
@@ -87,14 +87,14 @@ structure InteractionOp where
   delta_d : ℝ := after.d - before.d
 
 /-- Beta decay operator (universal). -/
--- Ref: [manuscript] §6/transfer-matrix-operator
+-- Ref: [leitner2026] §6/transfer-matrix-operator
 noncomputable def betaDecayOp (q : ℝ) : InteractionOp where
   q := q
   before := nnCoeffs q
   after := mixCoeffs q
 
 /-- Photon absorption operator (R-I extension). -/
--- Ref: [manuscript] §6/transfer-matrix-operator
+-- Ref: [leitner2026] §6/transfer-matrix-operator
 noncomputable def photonAbsorptionOp (q : ℝ) : InteractionOp where
   q := q
   before := ⟨0, 1⟩  -- identity (no crossing before)
@@ -102,7 +102,7 @@ noncomputable def photonAbsorptionOp (q : ℝ) : InteractionOp where
 
 /-- The eigenvalues of T_pp (= T_{γe}) determine hydrogen energy levels.
     λ± = ½[(q-q⁻¹) ± √((q-q⁻¹)² + 4)] -/
--- Ref: [manuscript] §6/transfer-matrix-operator
+-- Ref: [leitner2026] §6/transfer-matrix-operator
 noncomputable def T_pp_eigenvalue_plus (q : ℝ) : ℝ :=
   let disc_sqrt := Real.sqrt ((q - 1/q)^2 + 4)
   ((q - 1/q) + disc_sqrt) / 2
@@ -112,13 +112,13 @@ noncomputable def T_pp_eigenvalue_minus (q : ℝ) : ℝ :=
   ((q - 1/q) - disc_sqrt) / 2
 
 /-- The eigenvalues of T_pp are real and distinct for q > 0. -/
--- Ref: [manuscript] §6/transfer-matrix-operator
+-- Ref: [leitner2026] §6/transfer-matrix-operator
 theorem T_pp_eigenvalues_real (q : ℝ) (hq : 0 < q) :
     0 < (q - 1/q)^2 + 4 := by
   positivity
 
 /-- det(T_pp) = -1 (the product of eigenvalues). -/
--- Ref: [manuscript] §6/transfer-matrix-operator
+-- Ref: [leitner2026] §6/transfer-matrix-operator
 -- det = (q-q⁻¹)·0 - 1·1 = -1
 theorem T_pp_det (q : ℝ) :
     let t : TransferMatrixOp := { q := q, coeffs := ppCoeffs }

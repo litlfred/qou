@@ -1,0 +1,1 @@
+Let C and C ′ be semisimple tensor categories endowed with integral weak dimension functions D and D′respectively compatible with a linear equivalence E : C → C ′ . Then E admits the structure of a tensor equivalence if and only if the corresponding weak quasi-bialgebras are isomorphic up to twist.

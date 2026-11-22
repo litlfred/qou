@@ -8,6 +8,7 @@ pages: 36-36
 source_pdf: ant-v14-n7-s-p02.pdf
 source_sha256: fd2121feb180b282
 toc_source: inferred
+doc_brief: "Pro-unipotent harmonic actions and dynamical properties of p-adic cyclotomic multiple zeta values — 10 sections: Front matter; Introduction; Preliminaries"
 ---
 [Besser 2002] A. Besser, “Coleman integration using the Tannakian formalism”, Math. Ann. 322:1 (2002), 19–48. MR Zbl
 [Coleman 1982] R. F. Coleman, “Dilogarithms, regulators and p-adic L-functions”, Invent. Math. 69:2 (1982), 171–208. MR

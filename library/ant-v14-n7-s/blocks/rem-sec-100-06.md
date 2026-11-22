@@ -1,0 +1,1 @@
+Let X ∈SmB and let V →X be a rank r vector bundle. Under the identiﬁcation Th(V ) = πX#6V (1X) and the isomorphisms Ea,b(X, det V ) ≃HomSH(X)(1X, Sa+2,b+1 ∧6−det V π∗ XE) and E2r+a,r+b(Th(V )) ≃HomSH(X)(1X, S2r+a,r+b ∧6−V π∗ XE), the Thom isomorphism ϑV : Ea,b(X, det V ) →E2r+a,r+b(Th(V )) is the map induced by ϑE V . Motivic Gauss–Bonnet formulas

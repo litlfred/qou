@@ -1,0 +1,47 @@
+Cellular algebras and diagram algebras 143
+
+§2. Cellular algebras and Temperley-Lieb algebras
+
+Cellular algebras were first defined in [15] in terms of the existence
+of a basis with specified multiplicative properties. Subsequently, there
+has been a significant literature (cf. [25], [26], [27], [28] and [13]) in
+which structural definitions have been given, in terms of the existence
+of certain filtrations, and in which cellular algebras have been compared
+with quasi-hereditary algebras; in particular much is now known about
+their characterisation in terms of global dimension, Cartan matrix and
+representation type. The main point of a cellular structure is that it
+is preserved under specialisation, so that cellularity is a particularly
+effective way of studying algebras which are not semisimple, but are
+deformations of semisimple algebras.
+
+Tn this work, we shall use the original definition. Let R be a commu-
+tative ring with 1, and let A be an R-algebra which is free over R, and
+which we assume for the moment to be of finite rank (although many
+of the concepts will be applied when A has infinite rank). To specify
+acellular structure for A, we require a “cell datum”, which consists of:
+(i) a poset T, (ii) for each t € T, a set M(t), and (iii) an injection
+Ter M(t) x M(t) ©, A, whose image is an R-basis {C% 7} of A which
+satisfies
+
+aCgr = > ra(S", S)C& 7 + lower terms
+(2.1) S'eM(t)
+(a€ A,ra(S’, S) € R),
+
+where “lower terms” indicates a linear combination of basis elements
+Chu pn with t’ < t. In addition, one requires that the map Cg. +> Chg,
+extended R-linearly, be an anti-automorphism a +> a* of A.
+
+We shall review briefly the representation theory of cellular algebras.
+To start with, for each t € T, one has the cell module W(t); this has
+R-basis {Cs | S € M(t)}, and A acts on the left by the rule
+
+(2.2) a.Cs =) ra(S',8)Cs for ae A, SE M(t).
+
+It follows from 2.1 that 2.2 defines an action.
+The cell module W(t) has a natural R-bilinear form ¢; : W(t) x
+W(t) — R, defined by
+
+(2.3) (Cr)? = ¢4(Cs,Cr)C§,7 + lower terms.
+
+It is easily shown ([15]) that the form ¢; is symmetric and invariant
+under the action of A, i.e. that for any two elements z,y € W(t) and

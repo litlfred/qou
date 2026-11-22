@@ -1,0 +1,57 @@
+360 Cone point asymptotics
+
+interior of N(z) for each z € local(?,). Fixing x + u € B, there is a vector
+field 7] : Tat > R4 and an € > 0 such that the following are true.
+
+(i) His a smooth section of K*®.
+
+(ii) For each y € localarg(f.), the vector field 7(y + -) is 1-homogeneous
+in a neighborhood of 0.
+
+(iii) There is an € > 0 such that the homotopy ®, = owl avoids log V except
+att=1andy€local(?f,).
+
+(iv) There is a constant c > 0 and a neighborhood R of *, such that -? -
+nw) < —clw — y| for every w in some neighborhood of each y €
+local(#,) and every F ER.
+
+Proof We glue together vector fields on Tyga in small balls around each point
+
+using a partition of unity. Fix p > 0 to be determined later. For a point y €
+
+localarg(?) define N(y) to be the ball of radius p centered at y, and define
+
+the vector field Vy on Ny) to be the projective vector field 7 from Lemma 11.31
+for the homogenization of g at y. Suppose now that y ¢ localarg(7.). As in
+
+the proofs of Theorems 11.4 and 11.5, we pick a vector v in the cone Z(y) from
+
+Theorem 11.1 such that v- # > 1 for every 7 € R. Define the vector field Vy(-)
+
+to be the constant vector v on a neighborhood N(y) of y sufficiently small
+
+to avoid local(#) for every 7 € R, to avoid proper substrata of the stratum
+
+containing y, and such that v € Z(y’) for every y’ € N(y).
+
+We now have neighborhoods N(y) and vector fields Vy on N(y) chosen for
+all y € That whether or not y € localarg(7.). Fix a subcover {N(w) : w € E}
+indexed by some finite set E. Choose a partition of unity {y} subordinate to
+this cover and define the vector field 7 : Thar > R¢ by
+
+Ay) = >) vo(y)Vw),
+weE
+mirroring the definition of Vin (11.2).
+
+Conclusion (i) is immediate from the partition of unity construction and the
+fact that 7 was built from vectors Vw (y) € Z(y) for w ¢ localarg or Vw(y) €
+K?¥ ¢ Z(y) for w € localarg, provided that p was chosen sufficiently small;
+see part (iii) of Lemma 11.27. Conclusions (ii) and (iv) are immediate from the
+conclusion of Lemma 11.31 and the fact that each element of local(?,) is
+forced to be in E. We prove Conclusion (iii) in three cases.
+
+The easiest case occurs when y is not in N(w) for any w € local(?.).
+Then by convexity 7(y) € Z(y) and we already know Conclusion (iii) for
+such y from Conclusion (ii) of Theorem 11.1. The second case occurs when
+y € N’(w) = Nw) \ Uwsew Nw’) for some w € local(#.). Then 7 is
+defined as in Lemma 11.31 applied to the homogenization A of g near w. We

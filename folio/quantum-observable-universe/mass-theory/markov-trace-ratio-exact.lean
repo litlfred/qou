@@ -25,7 +25,7 @@ LaTeX label: `prop:markov-trace-ratio-exact`
 
 ## References
 - [jones1987] Jones, "Hecke algebra representations of braid groups and link polynomials"
-- [manuscript] §5/archimedean-image-table
+- [leitner2026] §5/archimedean-image-table
 -/
 
 namespace QOU.BraidsKnots
@@ -43,7 +43,7 @@ noncomputable def jonesNormFactor (n : ℕ) (q : ℝ) (hq : 0 < q) : ℝ :=
     Markov traces of two braids equals the ratio of their Jones
     polynomials. The normalisation factor `C(n, q)` cancels. -/
 -- Ref: [jones1987] §3
--- Ref: [manuscript] §5/archimedean-image-table (row 4, "∝ tr_M")
+-- Ref: [leitner2026] §5/archimedean-image-table (row 4, "∝ tr_M")
 theorem markov_trace_ratio_exact
     (n : ℕ) (q : ℝ) (hq : 0 < q)
     (tr_M₁ tr_M₂ : ℝ)
@@ -68,7 +68,7 @@ theorem markov_trace_ratio_exact
     proportional to Gram matrix entries from Jones polynomials.
     The proportionality constant is `C²` (one factor per braid in
     the inner product `tr_M(β_i · β_j)`). -/
--- Ref: [manuscript] §5/archimedean-image-table
+-- Ref: [leitner2026] §5/archimedean-image-table
 theorem gram_entry_proportional
     (n : ℕ) (q : ℝ) (hq : 0 < q)
     (tr_M_ij : ℝ) :

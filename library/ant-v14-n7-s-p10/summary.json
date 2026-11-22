@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "ant-v14-n7-s-p10",
  "source_sha256": "8d3e47aa779ad9c7",
- "brief": "Abelian extensions in dynamical Galois theory — 11 sections: Introduction; Some algebraic lemmas; Ramiﬁcation and postcritically inﬁ",
- "extended": "**Abelian extensions in dynamical Galois theory**\n\n*Jesse Andrews and Clayton Petsche*\n\n22 pp, 11 sections.\n\n**Outline.** 1 Introduction; 2 Some algebraic lemmas; 3 Ramiﬁcation and postcritically inﬁnite quadr; 4 Heights and Bogomolov constants; 4 We conclude; 5 Powering maps and Chebyshev maps; 6 Maps with small Arakelov–Zhang pairing; 7 The map x2 − 1; 8 Numerical approximation of Archimedean Arake; Acknowledgements; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: The Conjecture is true for all quadratic stable pairs(φ,α) over Q.\n- Theorem 8: Letφ(x)∈ K[x] be a quadratic polynomial which is not postcritically ﬁnite, letα∈ K , and\n- Theorem 3.1: of [loc. cit .], in the sense that our result implies that the hypotheses of that theorem can\n- Theorem 9: [Amoroso and Zannier 2000]. If L/K ab is a ﬁnite extension of degree D=[ L: K ab], then\n- Theorem 10: [Amoroso and Dvornicich 2000]. Ifα∈ Q(µ2∞) is nonzero and not a root of unity, then\n- Theorem 12: Letφ(x)∈ K[x] be a polynomial of degree d≥ 2, letα∈ K be a nonexceptional point for",
+ "brief": "Abelian extensions in dynamical Galois theory — 11 sections: Front matter; Introduction; Some algebraic lemmas",
+ "extended": "**Abelian extensions in dynamical Galois theory**\n\n*Jesse Andrews and Clayton Petsche*\n\n22 pp, 11 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 Some algebraic lemmas; 3 Ramiﬁcation and postcritically inﬁnite quadr; 4 Heights and Bogomolov constants; 5 Powering maps and Chebyshev maps; 6 Maps with small Arakelov–Zhang pairing; 8 Numerical approximation of Archimedean Arake; Acknowledgements; References; Guidelines for Authors",
  "tokens": {
-  "brief": 33,
-  "extended": 267
+  "brief": 27,
+  "extended": 109
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -30,46 +35,40 @@
    "pages": "8-9"
   },
   {
-   "id": "sec-004-4-we-conclude",
-   "title": "We conclude",
-   "pages": "9-9"
-  },
-  {
-   "id": "sec-005-5-powering-maps-and-chebyshev-maps",
+   "id": "sec-004-5-powering-maps-and-chebyshev-maps",
    "title": "Powering maps and Chebyshev maps",
    "pages": "9-11"
   },
   {
-   "id": "sec-006-6-maps-with-small-arakelovzhang-pairing",
+   "id": "sec-005-6-maps-with-small-arakelovzhang-pairing",
    "title": "Maps with small Arakelov–Zhang pairing",
-   "pages": "11-13"
+   "pages": "11-15"
   },
   {
-   "id": "sec-007-7-the-map-x2-1",
-   "title": "The map x2 − 1",
-   "pages": "13-15"
-  },
-  {
-   "id": "sec-008-8-numerical-approximation-of-archimedean-arakelo",
+   "id": "sec-006-8-numerical-approximation-of-archimedean-arakelo",
    "title": "Numerical approximation of Archimedean Arakelov–Zhang integrals",
    "pages": "15-17"
   },
   {
-   "id": "sec-009-acknowledgements",
+   "id": "sec-007-acknowledgements",
    "title": "Acknowledgements",
    "pages": "17-18"
   },
   {
-   "id": "sec-010-references",
+   "id": "sec-008-references",
    "title": "References",
-   "pages": "18-22"
+   "pages": "18-21"
+  },
+  {
+   "id": "sec-009-guidelines-for-authors",
+   "title": "Guidelines for Authors",
+   "pages": "21-22"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

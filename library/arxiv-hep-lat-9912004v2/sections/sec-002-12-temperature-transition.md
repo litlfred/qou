@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.95
 latex_coverage_ratio: 1.0
+doc_brief: "arXiv:hep-lat/9912004v2 9 Mar 2000 — 11 sections: Front matter; Chiral Random Matrix Theory; Introduction"
 ---
 Strictly speaking, in the continuum limit $a\to 0$, non-zero temperature is realized for lattices $n_x^3\times n_t$ with $T=1/(n_t\,a(\beta_g))$ and $n_t/n_x\to 0$. In that limit, for vanishing quark mass $m$, one expects a phase transition at $T_c$. In [@MILC96] the critical temperature was estimated to lie between 143 and 154 MeV. For $T<T_c$ chiral symmetry is broken spontaneously, with massless pseudoscalars and $\left\langle\overline{\psi}\psi\right\rangle\neq 0$; above $T_c$ we expect restoration of this symmetry. Whereas for pure Yang-Mills theory the deconfinement transition is associated with a breaking of the center-symmetry with the Polyakov loop as order parameter, this symmetry is explicitly broken by the fermion action. Nevertheless, remnants of the original breaking feature of the Polyakov loop persist even for small fermion masses.
 

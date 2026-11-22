@@ -1,0 +1,49 @@
+4.3 Analytic versus smooth functions 107
+
+is rapidly decreasing, so the asymptotics for J(A) may be read off as the sum
+of contributions local to each x;. Indeed, for each i let [a;,b;] be a tiny inter-
+val containing x;, with all intervals disjoint, and let €,,...,& be a partition of
+unity subordinate to {[a;,b;] : 1 < i < d}. Once we see how to obtain asymp-
+totics in a neighborhood of x; containing no other critical points, we can write
+A(x) = Ao(x) + an A(x)é;(x), so that the support of Ap contains no x;. The
+integral f Ao(x)e* dx is rapidly decreasing by the Localization Lemma, so
+as long as the integrals
+
+b Dj
+T4a)= f acngiane@ dx = [Acne dx
+
+a Gi
+
+sum to something not rapidly decreasing, the asymptotic development of J (A)
+is obtained by summing the developments of the (A).
+
+We thus need only consider integrals over domains where the derivative of
+the phase vanishes at a single point. Our main univariate result for integrals
+with purely imaginary phase is the asymptotic development described in the
+following result.
+
+Theorem 4.10. Let ¢ and A be smooth real functions defined on R with A
+having compact support in an interval (a, b) whose closure contains zero. Let
+k > 2and ¢ > 0 be integers and suppose the power series coefficients for A
+and ¢ at the origin are {bj} and {cj} as in Theorem 4.6, with cx > 0. Suppose
+that ¢’ vanishes in {a, b] at the origin but nowhere else, and let A = (Ao g)-g'
+
+1k
+
+where g is the inverse function to x > (@/cx)'!*. Then as A > oo there is an
+
+asymptotic development
+
+b ©
+Ia) = f A(x) exp(iAg(x)) dx ~ » ajClk, pice ay Or,
+
+a =
+The coefficients a; are obtained from the power series coefficients ao, ...,aj
+for A exactly as in part (iii) of Theorem 4.1. If the asymptotic expansion is
+computed up to an O(amenik) error term then this error term can be explicitly
+bounded by a continuous function of the suprema of the first N + | derivatives
+of ¢ and A on the support of A. The kth root of icxA in this expansion is the
+principal root.
+
+The rest of this chapter is devoted to proving Theorem 4.10, using the steps
+outlined above.

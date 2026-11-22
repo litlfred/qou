@@ -48,8 +48,8 @@
   Neither `(log(2 sin))′` nor `(cos/sin)′` is in Mathlib in this form either;
   both are proved here from the chain and quotient rules.
 
-  -- Ref: [manuscript] QOU/Knot/KashaevReflectionTrapezoid.lean  (what consumes this)
-  -- Ref: [manuscript] computations/probes/kashaev_reflection_probe.py
+  -- Ref: [leitner2026] QOU/Knot/KashaevReflectionTrapezoid.lean  (what consumes this)
+  -- Ref: [leitner2026] computations/probes/kashaev_reflection_probe.py
 -/
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.IntegrationByParts
 import Mathlib.Analysis.Calculus.Deriv.Pow

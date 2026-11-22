@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-q-alg-9707006v1
-doc_title: "arXiv:q-alg/9707006v1 4 Jul 1997"
+doc_title: "Drinfeld twist for quantum su(2) in the adjoint representation"
 section_id: sec-006-41-preliminaries
 section_title: "Preliminaries"
 section_number: 4.1
@@ -8,7 +8,9 @@ pages: 5-6
 source_pdf: 9707006v1.pdf
 source_sha256: b9513be9294f56d9
 toc_source: inferred
+doc_brief: "Drinfeld twist for quantum su(2) in the adjoint representation — We give a detailed description of the adjoint representation of Drinfeld’s twist element, as well as of its coproduct, for suq(2)."
 ---
+Preliminaries
 The method
 Consider the matrix representation Cq ≡ρ⊗2
 r (∆(Cq)) of the coproduct of the quantum casimir. Its eigenvectors
@@ -56,4 +58,3 @@ blocks of Cq are also equal to each other (since H has opposite eigenvalues in t
 then follows, from (18), that the above property holds for Fq as well. We will present any matrix W, with the
 structure described above, in the form {µW , DW , TW } where µW , DW , TW are 1, 2 and 3-dimensional matrices
 respectively.
-4.2

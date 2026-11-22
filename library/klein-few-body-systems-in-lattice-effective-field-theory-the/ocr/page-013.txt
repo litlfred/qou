@@ -1,0 +1,59 @@
+1.5 Quantum Monte Carlo methods - status and open challenges
+
+almost fulfilled in nucleons. Then the energy at a given time step f is defined as
+
+Olog Z,(t)
+
+E =- 1.14
+4) a (1.14)
+and the ground state energy is calculated by an infinite time extrapolation
+
+Ey = jim E,(t). (1.15)
+
+Details on NLEFT and its practical implementation will be given in Chap. 3.
+
+This method was first used at leading order (LO) in the two-body sector [32] and rapidly extended to
+next-to-leading order (NLO) and next-to-next-to-leading order (N2LO) and the three-body sector as well
+as many-particle calculations. For details see [33] and references therein. The Hoyle state was calculated
+ab initio with a very high accuracy. In addition, it was shown that the quark masses can vary by only
+2 before the carbon production collapses and life as we know it becomes impossible [34, 35]. Another
+process was the first ab initio calculation of alpha-alpha scattering using the adiabatic projection method
+[36].
+
+In spite of the quite impressive results in NLEFT, one has to look for possible issues of the theory
+with great detail to estimate the systematic errors and - if possible - find a way to reduce them. One of
+the main systematic errors is caused by the lattice discretization. Although such a discretization also
+exists in lattice QCD, the situation in NLEFT is different as the lattice spacing is linked to a cutoff, which
+should not exceed the physical breakdown scale of the theory. The standard lattice spacing for most
+of the calculations so far is a = 1.97 fm, which is approximately A ~ 314 MeV. The proton radius is
+= 0.85 fm [37] equivalent to ~ 730 MeV and the general cutoff of the theory is A ~ 500 MeV equivalent
+to 1.24 fm. This means that one should investigate physical observables, regularization schemes, etc.
+at least in the range from 1 fm to 2 fm for systematic errors and see whether or not they depend on the
+cutoff/ lattice spacing in this area. From a lattice QCD and/ or continuum EFT point of view it would
+be interesting as well to see whether one could decouple the lattice spacing from the cutoff, i.e. a fixed
+cutoff regulator for the effective potentials can be used thereby the lattice spacing can be sent to zero,
+such that its limit depends only on computational limits but not on physical ones [38].
+
+Additionally, in the case of effective many-body calculations it was always necessary to introduce
+a four-body force to absorb lattice spacing errors. It has been argued that this artifact vanishes once
+the lattice spacing is small enough but it was never really tested. As a result, the Tjon line cannot be
+reproduced in the framework of NLEFT for coarse lattices while it is reproduced in continuum effective
+field theory.
+
+As the nuclear effective theory includes a lot of additional operators in the sense of an effective theory,
+one could also include additional operators in the sense of Symanzik’s improvement program [3, 4].
+From a lattice theory point of view it is quite interesting to see whether we can set up a clear counting
+scheme that absorbs lattice spacing artifacts order-by-order and what is the applicability range of such a
+scheme.
+
+This thesis is organized as the following.
+
+Chap. 2 reviews effective field theory for few- and many-nucleon systems and the theory of scattering.
+
+The aforementioned theory is transferred on the lattice in Chap. 3. We will explain the discretization
+procedure and give an introduction into solution methods — exact methods as well as Monte Carlo
+methods.
+
+In Chap. 4 we have a look at the leading-order NN system with focus on the deuteron bound state
+and the S wave effective range expansion. The evolution of low-energy coupling constants as well as
+leading-order observables with respect to the lattice spacing are shown and arguments for a special

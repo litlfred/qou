@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0203160v3",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "a84f478d72d40af25ad556602a5d27cd81e14931527abe71f4ab931597d0297d",
+  "file": "0203160v3.pdf"
+ },
+ "provenance": {
+  "title": "arXiv:math/0203160v3 [math.QA] 28 Oct 2002",
+  "authors": "Momar Dieng",
+  "arxiv": {
+   "id": "math/0203160",
+   "version": "3",
+   "primary_class": null,
+   "stamp_date": "28 Oct 2002"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

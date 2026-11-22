@@ -30,7 +30,7 @@ Consequence: spectral sequence pages E_r^{ℓ,*} stratify by
 curvature-rank, and the six-term mass formula is the rank-by-rank
 decomposition of the Markov-trace pairing.
 
--- Ref: [manuscript] prop:curvature-rank-gb-stratification
+-- Ref: [leitner2026] prop:curvature-rank-gb-stratification
 -/
 
 namespace QOU.WedderburnMass

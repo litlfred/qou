@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-hep-th-0610241v1/sections/sec-016",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The spectral action and the asymptotic expansion",
+  "pageStart": 30,
+  "pageEnd": 34,
+  "contains": [
+    "library/arxiv-hep-th-0610241v1/blocks/prose-sec-016",
+    "library/arxiv-hep-th-0610241v1/blocks/thm-sec-016-01",
+    "library/arxiv-hep-th-0610241v1/blocks/lem-sec-016-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0610241v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0610241v1/manifest.jsonld",
+  "provenance": "ingested"
+}

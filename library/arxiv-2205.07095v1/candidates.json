@@ -3,13 +3,14 @@
  "doc_id": "arxiv-2205.07095v1",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "2ec6916399150e2d1cf3e406b98e7cc316a40d790eb048fe5659774482ff0354",
   "file": "2205.07095v1.pdf"
  },
  "provenance": {
-  "title": "Virial Expansions for Correlation Functions in Canonical Ensemble A. L. Rebenko",
-  "authors": "Institute of Mathematics, Ukrainian National Academy of Sciences , Kyiv, Ukraine",
+  "title": "Virial Expansions for Correlation Functions in Canonical Ensemble",
+  "authors": "Institute of Mathematics, Ukrainian National Academy of Sciences, Kyiv, Ukraine",
   "arxiv": {
    "id": "2205.07095",
    "version": "1",
@@ -20,79 +21,9 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 5,
-  "by_kind": {
-   "lemma": 1,
-   "proposition": 2,
-   "remark": 2
-  },
-  "formalization_candidates": 3
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "2.1",
-   "name": null,
-   "statement": "For all measurable functions G : \u0393 0 \u21a6\u2192R and H : \u0393 0 \u00d7 \u0393 0 \u21a6\u2192",
-   "section_file": "sections/sec-001-2-on-some-mathematical-concepts.md",
-   "section_title": "On some mathematical concepts",
-   "pages": "3-4",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "proposition",
-   "source_kind": "proposition",
-   "number": "4.1",
-   "name": null,
-   "statement": "From initial conditions (4.48)-(4.49) it follows that",
-   "section_file": "sections/sec-008-42-graphic-interpretation-of-solutions.md",
-   "section_title": "Graphic interpretation of solutions.",
-   "pages": "10-13",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "4.1",
-   "name": null,
-   "statement": "The set D(\u03b7;\u03b3) is the set of rooted graph, connected compo-",
-   "section_file": "sections/sec-008-42-graphic-interpretation-of-solutions.md",
-   "section_title": "Graphic interpretation of solutions.",
-   "pages": "10-13",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "4.2",
-   "name": null,
-   "statement": "According to (4.34), integration is performed at the points of",
-   "section_file": "sections/sec-008-42-graphic-interpretation-of-solutions.md",
-   "section_title": "Graphic interpretation of solutions.",
-   "pages": "10-13",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "proposition",
-   "source_kind": "proposition",
-   "number": "4.2",
-   "name": null,
-   "statement": "The solution of the recurrence relation (4.47) can be",
-   "section_file": "sections/sec-008-42-graphic-interpretation-of-solutions.md",
-   "section_title": "Graphic interpretation of solutions.",
-   "pages": "10-13",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  }
- ]
+ "candidates": []
 }

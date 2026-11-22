@@ -1,0 +1,48 @@
+8 Introduction
+
+a, aS n — oo, To estimate a, when its generating function f is known, we
+begin with Cauchy’s integral formula
+
+an = a olf) dz. (1.3)
+
+2ni Jo
+
+Equation (1.3) represents a, by a complex contour integral on a sufficiently
+small circle C around the origin, and one may apply complex analytic methods
+to obtain an asymptotic estimate. The necessary knowledge of residues and
+contour shifting may be found in an introductory complex variables text such
+as [Con78b; BG91], with a particularly nice treatment of univariate saddle
+point integration found in [Hen88; Hen91]. In particular, the singularities of
+f(z) play a large role in characterizing asymptotic behavior.
+
+The situation for multivariate arrays is nothing like the situation for uni-
+variate arrays. In 1974, when Bender published his review article [Ben74] on
+asymptotic enumeration, the literature on asymptotics of multivariate generat-
+ing functions was in its infancy. Bender’s concluding section urges research in
+this area:
+
+Practically nothing is known about asymptotics for recursions in two variables even
+when a generating function is available. Techniques for obtaining asymptotics from
+bivariate generating functions would be quite useful.
+
+In the 1980s and 1990s, a small body of results was developed by Bender,
+Richmond, Gao, and others, giving the first partial answers to asymptotic ques-
+tions for multivariate generating functions. The first paper to concentrate on
+extracting asymptotics from multivariate generating functions was [Ben73], al-
+ready published at the time of Bender’s survey, but the seminal paper is [BR83].
+The authors work under the hypothesis that F has a singularity of the form
+A/(Zq — g(#))4 on the graph of a smooth function g, for some real exponent
+q, where x denotes (z),...,Zg-1). They show, under appropriate further hy-
+potheses on F, that the probability measure jz, one obtains by renormalizing
+{a, : rq = n} to sum to | converges to a multivariate normal distribution when
+appropriately rescaled. Their method, which we call the GF-sequence method,
+is to break the d-dimensional array {a,.} into a sequence of (d— 1)-dimensional
+slices and consider the sequence of (d — 1)-variate generating functions
+
+fal) = * ana”,
+
+rerg=n
+
+They show that, asymptotically as n — oo,
+
+Jn(@) ~ Cng(w)h(ay" (1.4)

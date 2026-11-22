@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-2301.08311v4/blocks/thm-sec-004-14",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "title": "Outside Transversality",
+  "pageStart": 44,
+  "pageEnd": 54,
+  "text": "thm-sec-004-14.md",
+  "derivedFrom": "library/arxiv-2301.08311v4/sections/sec-004",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2301.08311v4/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "5.18",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-004-5-regularity.md (p. 44-54)",
+    "claim_id": "arxiv-2301.08311v4#theorem:5.18",
+    "lean_status": "unformalized"
+  }
+}

@@ -1,0 +1,53 @@
+3.2 Estimate of the range of A’
+
+In this section, we calculate the concrete values of the bounds of the inequalities in (31)
+so that they satisfy that A — A’ C (30).
+
+Putting A as in Section 2.2, we have that
+ReV(t,s,u) = 2A(t) + A(s) + A(u).
+We consider the domain
+
+{(t,s,u) € A | 2A(t) + A(s) +A(u) > s,}, (34)
+
+where we put ¢, = 0.5035603... as in (41). We note that this domain is symmetric with
+respect to the exchange of s and u. The aim of this section is to show that this domain
+is included in the interior of the domain A’ of (31). For this purpose, we estimate ranges
+of t, s, u and t+s+u in the domain (34).
+
+We calculate the minimal value tmin and the maximal value tmax of t. Since A(-) <
+AQ),
+2A(t) > cp- 2A(=) = 0.180494... .
+
+The minimal and maximal values of t are solutions of the following equation,
+1
+2A(t) = sp —2A(z). (35)
+
+Noting that the behavior of A(t) is as shown in Section 2.2, this equation has exactly
+two solutions in 0 < t < 0.5. By calculating a solution of this equation by Newton’s
+method from ¢t = 0.01, we obtain tmin = 0.0364809..., and from t = 0.4, we obtain
+tmax = 0.363674... . Therefore, we obtain an estimate of t in A’ as
+
+0.03 < t < 0.4.
+
+Remark 3.1. To be precise, the above argument is not partially rigorous, since we do
+not estimate the error terms of the numerical solutions of Newton’s method, though the
+above argument is practically useful, since we can guess that such error terms would be
+sufficiently small for the above purpose. In order to complete the above argument, we
+give a rigorous proof of estimates of solutions of (35) in Lemma A.1.
+
+We calculate the minimal value sin and the maximal value Smax of s. Since A(-) <
+ACG)
+6)
+
+1
+A(s) > Sy - 3A(z) = 0.0189614... .
+The minimal and maximal values of s are solutions of the following equation,
+5)
+6)
+
+Similarly as above, we note that this equation has exactly two solutions in 0 < s < 0.5.
+By calculating a solution of the equation by Newton’s method from s = 0.001, we obtain
+
+A(s) = s,—3A(
+
+16

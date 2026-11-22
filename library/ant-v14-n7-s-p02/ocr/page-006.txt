@@ -1,0 +1,54 @@
+1716 David Jarossay
+
+which generalizes the crystalline Frobenius on myn eR (pl \ {0, 4x, o}) iterated w times. Considering
+
+two parameters @ and @ with @ | @ and not just @ will also be useful in [Jarossay 2017] to shed light on
+the computation of p-adic cyclotomic multiple zeta values.
+
+1. Preliminaries
+
+In this section we establish the framework of this paper. We review some definitions and properties about
+the pro-unipotent fundamental groupoid of P! \ {0, 4, 00}, some results from [Jarossay 2015] and we
+add to them a few new definitions and notations. Throughout this paper, N and N* will denote the set of
+nonnegative and positive integers, respectively.
+
+1A. The pro-unipotent fundamental groupoid of P' \ {0, wy, 00}.
+
+IAL. The de Rham realization. Let X be P! \ {0, 4, 00} over the p-adic field K, with the notations
+of Section 0A. The de Rham pro-unipotent fundamental groupoid mim aR Xx ), in the sense of [Deligne
+1989], is a groupoid in pro-affine schemes over X. Its base points are the points of X and the nonzero
+
+tangent vectors at {0, 4, 00} C P!, called tangential base-points. The groupoid structure is defined by
+
+the morphisms mR OX x, Z,y) x mR OX x, y,x)> aynek
+
+[loc. cit., Section 12.9], each mm aR ox, y, x) is canonically isomorphic to the spectrum of the shuffle
+
+(Xx, z, x) for any base-points x, y, z. By
+
+Hopf algebra O11“ over the alphabet eouyy = {ex | x € {0} Un (K)}. This isomorphism is compatible
+with the groupoid structure.
+Following [Deligne and Goncharov 2005], for any N-th root of unity € € wn(K), we denote by
+
+Teo = myn X, Te, Io). Let f + f be the isomorphism IT) 9 > TI¢,9 induced by the automorphism
+
+xt> &x of X by functoriality of 77".
+
+Let K (eouny)) be the noncommutative K-algebra of formal power series over the noncommuting
+variables e,, x € {OU (K)}. We will write an element f € K (eoupy)) as f ((ex)x) = f Cex) xe(0}Uun(K))
+or f(€o, (€e)e) = f(€o, (€¢)e). The coefficient in f of a word w on the alphabet eou,,, is denoted by
+fw]. This notation extends by linearity to linear combinations of words, and if for any n > 0 wy, is
+a linear combination of words of weight n, we denote by fo wn] = pany Fflwn] if this series
+converges. We have a canonical inclusion Spec(O"n )(K) C K (oun); namely, Spec(OMl nw )(K)
+is the group of elements satisfying the shuffle equation: for all words w, w’, f[w] f[w’] = f[wilw’]
+where III is the shuffle product of words on the alphabet egu,.-
+
+1A2. Motivic Galois action and byproducts. The motivic version of in(p! \ {0, 4, Co}) is constructed
+in [Deligne and Goncharov 2005, Section 5].
+
+Let G® be the motivic Galois group associated with the Tannakian category of mixed Tate motives
+over ky unramified at p prime to N, and with the canonical fiber functor w. There is a semidirect product
+decomposition G,, = G,, « U,, where U,, is pro-unipotent.
+
+One has an action of G® on IT,,9. Let V® be the group of automorphisms defined in [Deligne and
+Goncharov 2005, Section 5.10]. There is a morphism U® — V® sending the action of U® on ITj,9 to an

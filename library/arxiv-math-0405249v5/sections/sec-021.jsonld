@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0405249v5/sections/sec-021",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Conclusions",
+  "pageStart": 27,
+  "pageEnd": 27,
+  "contains": [
+    "library/arxiv-math-0405249v5/blocks/prose-sec-021"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0405249v5/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0405249v5/manifest.jsonld",
+  "provenance": "ingested"
+}

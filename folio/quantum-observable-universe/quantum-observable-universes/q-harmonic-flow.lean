@@ -29,7 +29,7 @@ group `V`, `dq` is its time-derivative `∂_t q`, and `Δq` is the
 `q`-Laplacian. No archimedean structure is required (the structural
 content is `dq = -Δq q`), so this lives ring/group-generic per §7c.
 
-Ref: [manuscript] docs/scope/2026-06-16-local-q-evolution-routes.md Step 3,
+Ref: [leitner2026] docs/scope/2026-06-16-local-q-evolution-routes.md Step 3,
 prop:germ-commutator-q-curvature, prop:q-gaussian-solves-q-heat
 -/
 

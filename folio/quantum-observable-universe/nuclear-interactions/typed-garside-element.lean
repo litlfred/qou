@@ -6,7 +6,7 @@
   After Hecke reduction, this gives the normal form of the nuclear
   braid in H_A(q).
 
-  Ref: [manuscript] §6.3c, Definition def:typed-garside-element
+  Ref: [leitner2026] §6.3c, Definition def:typed-garside-element
 -/
 
 import Mathlib.Data.Real.Basic
@@ -50,7 +50,7 @@ def neutronCount (ord : NuclearOrdering) : ℕ :=
     `Nat.choose_two_right` holds for all `A : ℕ`. -/
 theorem garside_crossing_count (A : ℕ) (_hA : 2 ≤ A) :
     A * (A - 1) / 2 = Nat.choose A 2 := by
-  -- Ref: [manuscript] Definition def:typed-garside-element
+  -- Ref: [leitner2026] Definition def:typed-garside-element
   exact (Nat.choose_two_right A).symm
 
 /-- **Leading-term structural input.** The typed Garside element has the
@@ -78,7 +78,7 @@ class TypedGarsideLeadingTerm where
 /-- **Leading-term theorem (conditional on `TypedGarsideLeadingTerm`).**
     The leading term of the typed Garside element of any nuclear ordering
     `ord` (arity ≥ 2) is the standard Garside word `Δ_{|ord|}`. -/
--- Ref: [manuscript] Definition def:typed-garside-element
+-- Ref: [leitner2026] Definition def:typed-garside-element
 theorem typed_garside_leading_term [g : TypedGarsideLeadingTerm]
     (ord : NuclearOrdering) (hlen : 2 ≤ ord.length) :
     g.leadingWord ord = g.garsideWord ord.length :=
@@ -93,7 +93,7 @@ theorem typed_garside_leading_term [g : TypedGarsideLeadingTerm]
     The Lean content is the vanishing of the `pp` coefficient, which is
     exactly the algebraic reason the typing collapses to the standard
     element. -/
--- Ref: [manuscript] Definition def:typed-garside-element
+-- Ref: [leitner2026] Definition def:typed-garside-element
 theorem pure_proton_garside_is_standard (q : ℝ) :
     typedCrossingCoeff q .proton .proton = 0 := by
   unfold typedCrossingCoeff
@@ -102,7 +102,7 @@ theorem pure_proton_garside_is_standard (q : ℝ) :
 /-- Top-level Prop alias matching the manifest `lean.ref`
     `qou:QOU.Archimedean.TypedGarsideElement`. The named claim is the
     pure-proton collapse: the `pp` typed crossing coefficient vanishes. -/
--- Ref: [manuscript] Definition def:typed-garside-element
+-- Ref: [leitner2026] Definition def:typed-garside-element
 def TypedGarsideElement : Prop :=
   ∀ q : ℝ, typedCrossingCoeff q .proton .proton = 0
 

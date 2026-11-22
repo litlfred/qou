@@ -8,6 +8,7 @@ pages: 2-3
 source_pdf: ant-v14-n7-s-p04.pdf
 source_sha256: 6abd838a4c933311
 toc_source: inferred
+doc_brief: "Elliptic curves over totally real cubic fields are modular — 7 sections: Front matter; Introduction; Images mod 3, 5, 7 and modularity"
 ---
 Let p ≥3 be a prime. Write B(p) for a Borel subgroup of GL2(Fp), and Cs(p) and Cns(p) respectively
 for a split and nonsplit Cartan subgroup. Let C+

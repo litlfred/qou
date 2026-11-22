@@ -35,7 +35,7 @@ commutative ring (§7c: nothing archimedean is used) via the identity
 isolated `(Z, N)` values where `c_{λλ'} = 0` — is exactly where the block
 diagonalises; the PSD feasibility derived here holds throughout.
 
--- Ref: [manuscript] quantum-observable-universe/observations/sdp-regime-switch.md
+-- Ref: [leitner2026] quantum-observable-universe/observations/sdp-regime-switch.md
 -/
 
 namespace QOU.Observations
@@ -83,7 +83,7 @@ class SDPRegimeSwitchContext (R : Type*) [CommRing R] [LinearOrder R]
     semidefiniteness of the block, not a restatement of the scalar slacks.
     Proof: for `d > 0`, `d·Q = (d·x₀ + c·x₁)² + (dd' − c²)·x₁² ≥ 0`; for
     `d = 0`, `c² ≤ 0` forces `c = 0` and `Q = d'·x₁² ≥ 0`. -/
--- Ref: [manuscript] quantum-observable-universe/observations/sdp-regime-switch.md
+-- Ref: [leitner2026] quantum-observable-universe/observations/sdp-regime-switch.md
 theorem SDPRegimeSwitch [ctx : SDPRegimeSwitchContext R] (l l' : ℕ) (x0 x1 : R) :
     0 ≤ (ctx.μ l - ctx.y_0 - ctx.y l) * x0 ^ 2
       + 2 * ctx.c_couple l l' * x0 * x1

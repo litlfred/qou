@@ -1,0 +1,85 @@
+---
+doc_id: ds15v1-2008
+doc_title: "Rogers-Ramanujan-Slater Type Identities"
+section_id: page-021
+section_title: "Page 21"
+pages: 21-21
+pdf_page: 21
+source_pdf: ds15v1-2008.pdf
+source_sha256: aef155a324c6fdf4
+text_source: ocr
+granularity: page
+doc_brief: "Rogers-Ramanujan-Slater Type Identities — In this survey article, we present an expanded version of Lucy Slater’s famous list of identities of the Rogers-Ramanujan type, including identities of"
+---
+iad qr 2 (—@?: @2)n-2(1 + grt?)
+
+= q
+_ a= gaa) * n=2 (a)an
+(M.-S.-Z. [34])
+we q) =1+ = (Pn (F@n (S. 72)
+=1+ = oo (Gessel-Stanton [24, Eq. (7.13)])
+
+n=1
+
+2.16.2 Quintuple Products
+
+Qd,-g Se
+ica 4m (S. 83)
+Q(¢, -@) 7 oo ghent)) s
+f(-@ ~ dX (Q)on+1 ( , 84)
+_ > _— (Starcher [44, p. 809, Eq. (3.29)]; S. 85)
+n=0 2n
+aa, —q) 7 oo gn n+1)
+f(-@ ~ y (q Jon+1 (Ss. 86)
+
+2.18 Mod 18 Identities
+2.18.1 Triple Products
+
+f=P =P?) ROP PPP )nl—Dn41
+~(-4) n=O (Q)on+2(@)n
+(Dyson [12, p. 434 (D1)]; S. 76)
+f(-d°, -¢"") _ gD (—g) (Gs Gn
+~(-4) n=0 (Q)n(Qenti
+(Dyson [12, p. 434 (D2)|; S. 77c)
+f(-@, -¢q) =] . POMP (GB B)n— c Vn4t
+=1+
+y(-4) nal (G)2n(@)n—
+
+(Dyson [12, p. 434 (D3)]; S. 178)
+2.18.2 Quintuple Products
+
+our Dr
+
+n=0
+
+n (n+1)( 5)n
+
+(M.-S. [32], Eq. (1.3)
+
+)n( Q)on
+
+THE ELECTRONIC JOURNAL OF COMBINATORICS 15 (2008), #DS15
+
+(2.16.7)
+
+(2.16.8)
+
+(2.16.9)
+
+(2.16.10)
+
+(2.16.11)
+
+(2.16.12)
+
+(2.16.13)
+
+(2.18.1)
+
+(2.18.2)
+
+(2.18.3)
+
+(2.18.4)
+
+21

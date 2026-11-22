@@ -1,0 +1,1 @@
+Let E be a vector bundle on a ﬁbered category X over R then: 1) the sheaf det E is a quotient of a direct sum of the E⊗m for m ∈N; 2) if X is deﬁned over Q then (Symq E)∨is a quotient of (E∨)⊗q. 3) the sheaf Symq(E ⊗M)∨, for a locally free R-module M, is a quotient of a direct sum of ﬁnite tensor products of the Syma(E)∨for a ∈N.

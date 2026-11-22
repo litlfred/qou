@@ -1,0 +1,1 @@
+Let A and B be DG rings, let F : D(A) →D(B) be an equivalence of triangulated categories, and let L ∈D(A). Then L is an algebraically perfect DG A-module if and only if F(L) is an algebraically perfect DG B-module.

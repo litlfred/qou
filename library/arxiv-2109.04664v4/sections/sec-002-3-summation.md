@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.953
 latex_coverage_ratio: 0.955
+doc_brief: "ON THE ASYMPTOTIC BEHAVIOR OF THE COLORED JONES POLYNOMIAL OF THE FIGURE-EIGHT KNOT ASSOCIATED WITH A REAL NUMBER — We study the asymptotic behavior of the N-dimensional colored Jones polynomial"
 ---
 In this section, we use the quantum dilogarithm $T_N(z)$ to express $J_N(E;e^{\xi/N})$ without the product of a sequence.
 

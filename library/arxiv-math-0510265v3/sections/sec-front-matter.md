@@ -8,6 +8,7 @@ pages: 1-17
 source_pdf: 0510265v3.pdf
 source_sha256: 548a0eece08bd967
 toc_source: inferred
+doc_brief: "Triply-graded link homology and Hochschild homology of Soergel bimodules — We trade matrix factorizations and Koszul complexes for Hochschild homology of Soergel bimodules to modify the construction"
 ---
 arXiv:math/0510265v3  [math.GT]  28 May 2006
 Triply-graded link homology and Hochschild

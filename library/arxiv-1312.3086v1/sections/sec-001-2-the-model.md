@@ -8,7 +8,9 @@ pages: 2-3
 source_pdf: 1312.3086v1.pdf
 source_sha256: ff328e7c7cbdc70c
 toc_source: inferred
+doc_brief: "Quantum repeater with Rydberg blocked atomic ensembles in ﬁber-coupled cavities — 10 sections: Front matter; Introduction; The model"
 ---
+THE MODEL
 Our quantum repeater setup consists of N atomic en-
 sembles placed in cavities which are linked by optical
 ﬁbers (see Fig. 1a). Neighboring cavities are separated
@@ -93,7 +95,6 @@ the assumptions we make below on the ﬁber transmis-
 sion/losses).
 Driving the upper transition |r±⟩←→
 |ϕ±⟩with a laser ﬁeld with detuning ∆± and Rabi fre-
-3
 Blockade radius
 Na atoms
 a+,a-
@@ -205,4 +206,3 @@ typically of the order of 22km (corresponding to losses
 of 0.2dB/km). The probability for loosing one photon
 (+, −) during the transmission along a ﬁber mode of
 length L0 is thus given by (1 −ηt).
-III.

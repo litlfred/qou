@@ -46,7 +46,7 @@ def qbracket (q h : Rˣ) (k : ℕ) : R :=
 
 /-- **`δ_q(T_{2,k}) = h·[k]_q`** with `h = q − q⁻¹` — the pre-archimedean
     q-dimension identity (no `π`, no field). Sorry-free. -/
--- Ref: [manuscript] mass-theory/alpha-basis-knot-delta-q
+-- Ref: [leitner2026] mass-theory/alpha-basis-knot-delta-q
 theorem deltaQ_eq_h_qbracket (q h : Rˣ) (k : ℕ)
     (hh : (h : R) = (q : R) - (↑q⁻¹ : R)) :
     deltaQ q k = ((q : R) - (↑q⁻¹ : R)) * qbracket q h k := by

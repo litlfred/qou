@@ -1,0 +1,738 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-math-9905032v2",
+  "pages": [
+    {
+      "page": 2,
+      "rotation": 0,
+      "drawings": 655,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1. The limit shape of a typical diagram."
+      ],
+      "labels": [
+        {
+          "text": "2",
+          "bbox": [
+            126.72,
+            93.26,
+            131.33,
+            102.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI",
+          "bbox": [
+            189.24,
+            93.26,
+            423.06,
+            102.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "We denote the Plancherel measure on partitions of n by Mn",
+          "bbox": [
+            138.6,
+            114.03,
+            445.9,
+            126.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Mn(λ) = (dim λ)2",
+          "bbox": [
+            228.24,
+            131.42,
+            319.71,
+            153.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "|λ| = n ,",
+          "bbox": [
+            340.32,
+            140.65,
+            381.85,
+            161.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(1.1)",
+          "bbox": [
+            126.72,
+            140.91,
+            150.85,
+            152.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            323.4,
+            140.91,
+            326.65,
+            152.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "n!",
+          "bbox": [
+            294.0,
+            149.07,
+            304.21,
+            161.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "where dim λ is the dimension of the corresponding representation of",
+          "bbox": [
+            126.72,
+            164.31,
+            485.41,
+            176.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "S(n). The asymptotic properties of these measures as n →∞have",
+          "bbox": [
+            126.72,
+            177.97,
+            485.21,
+            198.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "been studied very intensively, see the References and below.",
+          "bbox": [
+            126.72,
+            192.27,
+            433.33,
+            204.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "In the seventies, Logan and Shepp [21] and, independently, Vershik",
+          "bbox": [
+            138.6,
+            206.19,
+            485.22,
+            218.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "and Kerov [36, 38] discovered the following measure concentration phe-",
+          "bbox": [
+            126.72,
+            220.11,
+            485.23,
+            232.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "nomenon for Mn as n →∞. Let λ be a partition of n and let i and",
+          "bbox": [
+            126.72,
+            233.77,
+            485.31,
+            254.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "j be the usual coordinates on the diagrams, namely, the row number",
+          "bbox": [
+            126.72,
+            248.07,
+            485.15,
+            260.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "and the column number. Introduce new coordinates u and v by",
+          "bbox": [
+            126.72,
+            261.99,
+            452.58,
+            273.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "u = j −i",
+          "bbox": [
+            244.32,
+            278.77,
+            292.12,
+            299.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "v = i + j",
+          "bbox": [
+            312.24,
+            279.03,
+            358.48,
+            299.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            271.56,
+            286.57,
+            281.52,
+            307.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            338.76,
+            286.57,
+            348.72,
+            307.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "n ,",
+          "bbox": [
+            281.52,
+            287.19,
+            298.57,
+            307.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "n ,",
+          "bbox": [
+            348.72,
+            287.19,
+            365.65,
+            307.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "that is, we ﬂip the diagram, rotate it 135◦as in Figure 1, and scale it",
+          "bbox": [
+            126.72,
+            312.14,
+            485.29,
+            325.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "by the factor of n−1/2 in both directions.",
+          "bbox": [
+            126.72,
+            323.19,
+            334.47,
+            339.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 1. The limit shape of a typical diagram.",
+          "bbox": [
+            179.52,
+            547.02,
+            432.53,
+            559.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "After this scaling, the Plancherel measures Mn converge as n →∞",
+          "bbox": [
+            138.6,
+            574.45,
+            485.36,
+            595.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(see [21, 36, 38] for precise statements) to the delta measure supported",
+          "bbox": [
+            126.72,
+            588.63,
+            485.19,
+            600.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "on the following shape:",
+          "bbox": [
+            126.72,
+            602.55,
+            244.71,
+            614.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "{|u| ≤2, |u| ≤v ≤Ω(u)} ,",
+          "bbox": [
+            238.44,
+            622.21,
+            371.65,
+            642.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "where the function Ω(u) is deﬁned by",
+          "bbox": [
+            126.72,
+            643.11,
+            319.02,
+            655.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(",
+          "bbox": [
+            218.52,
+            653.89,
+            228.16,
+            697.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            325.68,
+            655.81,
+            335.64,
+            676.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            239.64,
+            656.65,
+            245.12,
+            700.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "4 −u2\u0001",
+          "bbox": [
+            335.64,
+            656.65,
+            372.92,
+            700.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            229.8,
+            664.22,
+            234.03,
+            672.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "|u| ≤2 ,",
+          "bbox": [
+            389.88,
+            665.65,
+            430.33,
+            686.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "u arcsin(u/2) +",
+          "bbox": [
+            245.16,
+            665.91,
+            323.04,
+            677.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            375.0,
+            665.91,
+            378.25,
+            677.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "π",
+          "bbox": [
+            229.32,
+            673.1,
+            234.18,
+            681.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Ω(u) =",
+          "bbox": [
+            178.56,
+            673.95,
+            215.15,
+            685.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "|u| ,",
+          "bbox": [
+            228.12,
+            682.45,
+            246.85,
+            703.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "|u| > 2 .",
+          "bbox": [
+            389.88,
+            682.45,
+            430.09,
+            703.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    }
+  ]
+}

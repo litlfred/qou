@@ -1,0 +1,51 @@
+Nonvanishing of hyperelliptic zeta functions over finite fields 1905
+
+and consider only fields of characteristic p. We note that, if xf is a quadratic character of F(x), then
+L(s, xf) can vanish only at a point s such that q* is a g-Weil number of weight 1. We first recall the
+following lemma relating the vanishing of the L-function of a quadratic character in terms of the Frobenius
+eigenvalues of a hyperelliptic curve;
+
+Lemma 3.1. Let f be a monic squarefree polynomial in F4[x] and x ¢ be the quadratic character with
+conductor f. Let C be the hyperelliptic curve defined by y? = f (x) and let P € Z{[x] be the characteristic
+polynomial of geometric Frobenius acting on the Jacobian of C. Then for any s #0, L(s, x¢) = 0 if and
+only if P(q*) =0.
+
+This is immediate from the description of P as the numerator of the zeta function of C, and the
+connection of the latter to L(s, x) (see, for instance, [Rudnick 2010, Section 2]).
+
+Theorem 3.2. For any squarefree polynomial f € Qn q, let L(s, x) be the Dirichlet L-function associ-
+ated to the quadratic character x ¢ as was defined in Section 2A. Then for any s # 0,
+
+lim sup {fe Ong | L(s, xp) = 0}| K gq li
+noo 1Qn,q|
+
+where the limit is taken over all powers q of a fixed odd prime number p.
+
+Proof. Fix an odd prime number p, and let g be a power of p. By Lemma 3.1, L(s, x¢) =0 is equivalent
+
+to P(q~*) =0 where P(x) € Z[x] is the characteristic polynomial of Frobenius acting on the Jacobian of
+
+the hyperelliptic curve defined by y? = f (x). Thus, the set { f € On.q | L(s, xf) = 0} is the same as O85.
+By Chebotarev’s density theorem, we can (for large enough q) find a prime
+
+1 /q\ 2%
+
+mod which g,:, the minimal polynomial of p*, splits completely. Let a € Z/IZ such that g,:(a) =0 mod ¢.
+If q = p’, then any f with L(x;, 8) =0 has mg: (f) > 0. So
+
+a
+JOfgl _ 1Onal
+
+IQngl ~ |Qn.gl
+and now we can apply Corollary 2.6 to conclude using the second equation of Section 2A that, for all
+sufficiently large t, we have
+
+. 10%'4| 1 1-1/2
+lim su “—<——+C,q 2
+ose [Ongl  €—1
+The required bound follows from Proposition 2.7. oO
+
+Results on the vanishing of quadratic L-functions over function fields can be used to study the rank
+distribution of quadratic twist families of constant abelian varieties. In the following corollary, we show
+that as the constant field grows (so the characteristic is not changing), the probability for a quadratic twist
+of a constant abelian variety to have positive rank goes to 0. In the elliptic curve case, this agrees with

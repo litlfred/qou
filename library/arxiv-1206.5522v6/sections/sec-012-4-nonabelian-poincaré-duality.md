@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.984
 latex_coverage_ratio: 0.98
+doc_brief: "FACTORIZATION HOMOLOGY OF TOPOLOGICAL MANIFOLDS — Factorization homology theories of topological manifolds, after Beilinson, Drinfeld and Lurie, are homology-type theories for topological n-manifolds"
 ---
 Applying Theorem [\[homology\]](#homology){reference-type="ref" reference="homology"}, we offer a slightly different perspective, and proof, of the nonabelian Poincaré duality of Salvatore [@salvatore], Segal [@segallocal], and Lurie [@dag], which calculate factorization homology with coefficients in iterated loop spaces as a compactly supported mapping space.
 

@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.05082v3/sections/sec-015",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Weighted dependency graphs and central limit theorems",
+  "pageStart": 16,
+  "pageEnd": 19,
+  "contains": [
+    "library/arxiv-1610.05082v3/blocks/prose-sec-015",
+    "library/arxiv-1610.05082v3/blocks/thm-sec-015-01",
+    "library/arxiv-1610.05082v3/blocks/lem-sec-015-02",
+    "library/arxiv-1610.05082v3/blocks/cor-sec-015-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.05082v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.05082v3/manifest.jsonld",
+  "provenance": "ingested"
+}

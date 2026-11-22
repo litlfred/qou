@@ -1,0 +1,55 @@
+68 Univariate asymptotics
+Our second preliminary result concerns expansions of power functions.
+
+Lemma 3.10. For any a € C the series (1—z)* has the power series expansion
+a
+1-2 - yn
+a-2"= ("): ;
+n=0
+which converges for |z| < 1, where
+a) MHja(@- j+ 1)
+n} n! :
+Furthermore, if a ¢ N then there is a series expansion
+
+a) ne! - ex
+(") ~ T(-a) f * » “]
+
+k=1
+
+as n — ©, where each e, is a polynomial in a of degree 2k that can be com-
+puted explicitly.
+
+Proof The series expansion of (1 — z)* is Newton’s generalized binomial the-
+orem. The series expansion for () follows from an asymptotic analysis of the
+Euler Gamma function, and can be found in [FS09, Theorem VI.1]. oO
+
+Darboux’s method consists of decomposing a generating function of interest
+into the sum of an error term that can be bounded by Lemma 3.9 and a finite
+number of terms that can be asymptotically approximated with Lemma 3.10.
+The method dates back to nineteenth-century work of Darboux on complex
+functions with algebraic singularities.
+
+Example 3.11. The techniques of Section 2.5 often give non-rational (or even
+non-algebraic) generating functions to which Darboux’s method can be ap-
+plied. For instance, if C denotes the class of even length cycles of length at
+least four, with exponential generating function
+
+2n 2
+
+Zz 1 1 z
+
+C(z) = > = = log cy
+n>2
+
+Qn! 2 "1-2 2°
+
+then the class P of permutations with disjoint cycles of even length at least
+four has exponential generating function
+
+ew l2
+
+P(z) = LO =
+
+l-z
+
+Since P is a function of z’, we make the substitution ¢ = z? and analyze f(t) =

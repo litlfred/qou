@@ -8,6 +8,7 @@ pages: 5-6
 source_pdf: FT_DPM_Quaternion_Kernel_IEEE_TIT_2014.pdf
 source_sha256: aa2f1eb73610a81b
 toc_source: inferred
+doc_brief: "Quaternion Reproducing Kernel Hilbert Spaces: Existence and Uniqueness Conditions — The existence and uniqueness conditions of quater- nion reproducing kernel Hilbert spaces (QRKHS) are established"
 ---
 The introduced quaternion-valued feature spaces allow us
 to adopt the standard regression formulation, that is,
@@ -16,8 +17,6 @@ N
 
 i=1
 ai K(x, xi), ai ∈H.
-TOBAR AND MANDIC: QUATERNION REPRODUCING KERNEL HILBERT SPACES
-5741
 The following lemma states properties of quaternion posi-
 tive deﬁnite kernels.
 Lemma 2: Let K = Kr +i Ki + j K j +kKk be a quaternion

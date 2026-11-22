@@ -14,8 +14,8 @@ h/2 contributions that propagate to the c_5 closed form via the
 Leibniz product expansion of Markov-trace.
 -/
 
--- Ref: [manuscript] prop:silver-ratio-beta-decay-null
--- Ref: [manuscript] prop:neutron-qvalue-symbolic
+-- Ref: [leitner2026] prop:silver-ratio-beta-decay-null
+-- Ref: [leitner2026] prop:neutron-qvalue-symbolic
 -- Ref: [wenzl1988] doi:10.1007/BF01404457 (Hecke Markov trace)
 -- Ref: [hoefsmit1974] (Hoefsmit seminormal forms)
 -- Ref: [jones1985] doi:10.2307/1971403 (Hopf-link Jones polynomial)

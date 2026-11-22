@@ -8,7 +8,7 @@
   "pages": 16,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -24,23 +24,23 @@
   "title": "arXiv:math/0108215v1 [math.GT] 30 Aug 2001",
   "authors_raw": "Department of Mathematics and Computer Science",
   "title_lines": [
-   "M\u00f6bius Energy of Thick Knots",
+   "Möbius Energy of Thick Knots",
    "Eric J. Rawdon 2"
   ],
-  "abstract": "The M\u00a8obius energy of a knot is an energy functional for smooth curves based on an idea of self-repelling. If a knot has a thick tubular neighborhood, we would intuitively expect the energy to be low. In this paper, we give explicit bounds for energy in terms of the ropelength of the knot, i.e. the ratio of the length of a thickest tube to its radius.",
+  "abstract": "The M¨obius energy of a knot is an energy functional for smooth curves based on an idea of self-repelling. If a knot has a thick tubular neighborhood, we would intuitively expect the energy to be low. In this paper, we give explicit bounds for energy in terms of the ropelength of the knot, i.e. the ratio of the length of a thickest tube to its radius.",
   "docinfo": {
    "Title": "arXiv:math/0108215v1  [math.GT]  30 Aug 2001",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
    "CreationDate": "D:20211030042215-04'00'"
   },
-  "title_raw": "M\u00f6bius Energy of Thick Knots Eric J. Rawdon 2",
+  "title_raw": "Möbius Energy of Thick Knots Eric J. Rawdon 2",
   "title_source": "metadata",
   "title_verified": true,
   "title_evidence": {
    "metadata": "arXiv:math/0108215v1 [math.GT] 30 Aug 2001",
-   "heading": "M\u00a8obius Energy of Thick Knots",
-   "text": "M\u00f6bius Energy of Thick Knots Eric J. Rawdon 2",
+   "heading": "M¨obius Energy of Thick Knots",
+   "text": "Möbius Energy of Thick Knots Eric J. Rawdon 2",
    "corroborated_by": [
     "page"
    ],
@@ -243,8 +243,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 778,
-   "n_words": 122,
+   "n_chars": 776,
+   "n_words": 121,
    "label_start": null,
    "label_end": null
   },
@@ -255,8 +255,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 5128,
-   "n_words": 910,
+   "n_chars": 5137,
+   "n_words": 909,
    "label_start": null,
    "label_end": "3"
   },
@@ -267,8 +267,8 @@
    "level": 1,
    "page_start": 3,
    "page_end": 8,
-   "n_chars": 8719,
-   "n_words": 1876,
+   "n_chars": 8718,
+   "n_words": 1872,
    "label_start": "3",
    "label_end": "8"
   },
@@ -279,8 +279,8 @@
    "level": 1,
    "page_start": 8,
    "page_end": 16,
-   "n_chars": 13173,
-   "n_words": 2671,
+   "n_chars": 13180,
+   "n_words": 2667,
    "label_start": "8",
    "label_end": "16"
   }
@@ -300,7 +300,8 @@
    "items": []
   },
   "sections": 4,
-  "chars_total": 27798,
+  "chars_total": 27811,
+  "furniture_lines_stripped": 15,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "boundsv15.tex",
@@ -321,14 +322,14 @@
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": 0.97,
-     "coverage_ratio": 0.946,
+     "coverage_ratio": 0.942,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-the-lemmas",
      "title": "The Lemmas",
-     "prose_ratio": 0.967,
+     "prose_ratio": 0.97,
      "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "pandoc"

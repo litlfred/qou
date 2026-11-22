@@ -6,7 +6,7 @@ $$
 
 The unknot has Seifert genus $0$, crossing number $0$, and a trivial Skein polynomial $J_\nu(q) = 1$. It contributes no hyperbolic volume and thus carries no topological mass. Instead, neutrino mass arises entirely from vacuum drag.
 
-We draw the neutrino as a simple circle.
+The neutrino is drawn as a simple circle.
 
 The unknot dictates the neutrino's physical properties:
 - **Zero crossing chirality:** The lack of crossings ensures electrical neutrality ($Q(\nu) = 0$).

@@ -73,7 +73,7 @@ convention-**C** parameter `1/(√q + 1/√q)` and must **not** be used as the b
 for these statements (bean `qou-um5h`).
 
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
--- Ref: [manuscript] docs/audits/2026-08-19-bar-involution-is-isospin-conjugation.md
+-- Ref: [leitner2026] docs/audits/2026-08-19-bar-involution-is-isospin-conjugation.md
 -/
 
 namespace QOU.MathlibExt.MarkovBondRule
@@ -88,7 +88,7 @@ noncomputable def markovZ (q : R) : R := q ^ 3 / (q ^ 2 + 1)
 noncomputable def hq (q : R) : R := q - q⁻¹
 
 /-- The leading flavour split `f = (q-1)²(1 - q⁻⁴)/3` — `Δm/M_N`, the
-    proton-neutron mass split (`prop:flavor-split-substrate`). -/
+    proton-neutron mass split (`conj:flavor-split-substrate-mass`). -/
 noncomputable def flavorSplit (q : R) : R := (q - 1) ^ 2 * (1 - q⁻¹ ^ 4) / 3
 
 /-- The coefficient of the single proton-neutron interface letter,

@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.965
 latex_coverage_ratio: 0.977
+doc_brief: "SOERGEL CALCULUS — The monoidal category of Soergel bimodules is an incarnation of the Hecke category, a fundamental object in representation theory."
 ---
 Beginning with the seminal work \cite{KaL1} of Kazhdan and Lusztig it was realised that the Hecke algebra admits a categorification, which has come to be known as the Hecke category. 
  According to Grothendieck's function-sheaf dictionary, the algebra of $B$-biinvariant functions on $G$ should be categorified by some version of $B$-biequivariant sheaves on $G$. For concreteness, we now suppose that $G$ is a complex reductive group with Borel subgroup $B$ and maximal torus $T \subset G$. The Hecke category (in its simplest geometric incarnation) is the additive subcategory of semi-simple complexes

@@ -1,10 +1,11 @@
 **Proposition (conditional on
-[`conj:q-aubin-lions`](#conj:q-aubin-lions),
-[`conj:ns-counterexample`](#conj:ns-counterexample),
-[`conj:critical-exponent`](#conj:critical-exponent),
-[`prop:blowup-yekutieli`](#prop:blowup-yekutieli),
+[q-deformed Aubin--Lions lemma: compactness of the solution family as $q \to 1$](#conj:q-aubin-lions),
+[Counter-example to Navier--Stokes regularity via $q \to 1$ degeneration](#conj:ns-counterexample),
+[Critical exponent of the enstrophy divergence at $q = 1$](#conj:critical-exponent),
+[Blowup mechanism as Yekutieli lifting obstruction in the brane tower](#prop:blowup-yekutieli),
+[Vorticity lower bound for anti-parallel filament collision as $q \to 1$](#conj:vorticity-lower-bound),
 and
-[`conj:regularity-breakdown`](#conj:regularity-breakdown);
+[Regularity breakdown at $q = 1$: the classical limit as a phase transition](#conj:regularity-breakdown);
 "Root-of-unity truncation").**
 
 Let $(\mathbf{C}, A, \tau)$ be a QOU with substrate parameter $q$ not a root of unity ([QOU axiom](#def:substrate-parameter)). As $q \to 1$ through the roots of unity $q = e^{i\pi/\kappa}$, the representation category truncates to a finite modular tensor category; blowup arises only in the $\kappa \to \infty$ accumulation. For an anti-parallel vortex pair with core aspect ratio $\kappa(t)$:
@@ -12,8 +13,6 @@ Let $(\mathbf{C}, A, \tau)$ be a QOU with substrate parameter $q$ not a root of 
 $$
   \boxed{
     \text{NS blows up}
-    \iff
-    \text{Levi form stays non-degenerate at collision}
     \iff
     \kappa(t) = O(1).
   }
@@ -39,7 +38,7 @@ The core truncation mechanism — driven exclusively by the vanishing of the $q$
 
  where $S$ acts as the modular $S$-matrix. The resulting representation category devolves directly into a **modular tensor category** — identically matching the required algebraic input driving Chern--Simons TQFT cleanly at level $\kappa$.
 3. **$q = 1$ (classical limit).**
- Spans an infinite array of simple objects evaluating $[k]_1 = k$ (strictly polynomial scaling). All truncation ceases. All exponential damping vanishes. This establishes exactly the [regularity breakdown](#conj:regularity-breakdown) regime.
+ Spans an infinite array of simple objects evaluating $[k]_1 = k$ (strictly polynomial scaling). All truncation ceases. All exponential damping vanishes.
 
 **Root-of-unity regularity is stronger than generic.**
 
@@ -76,12 +75,12 @@ relying on some shared universal constant $C$. The resulting mathematical bound 
 
 **The refined gap.**
 
-The baseline [vorticity lower bound](#prop:vorticity-lower-bound) strictly mandates $\sup_t \kappa(t) \leq C$, keeping $C$ rigidly independent of $q$. The unified root-of-unity analysis directly supplies $\kappa(t) \leq 1 + C(\kappa-1)$, which visibly scales alongside $\kappa$. The absolute question zeroes in on the **rate of growth**:
+The baseline [vorticity lower bound](#conj:vorticity-lower-bound) strictly mandates $\sup_t \kappa(t) \leq C$, keeping $C$ rigidly independent of $q$. The unified root-of-unity analysis directly supplies $\kappa(t) \leq 1 + C(\kappa-1)$, which visibly scales alongside $\kappa$. The absolute question zeroes in on the **rate of growth**:
 
 - Assuming $\kappa(t) \leq C_0$ uniformly (operating entirely independent of $\kappa$): the physical core remains permanently circular. The rigorous lower bound flawlessly holds. NS definitively blows up. The counter-example stands mathematically established.
 - Assuming $\kappa(t) \sim \kappa$ (exhibiting purely linear growth): the physical core safely flattens exactly mirroring the rate unlocking new modes. Physical vorticity safely spreads forming a wide sheet. The strict lower bound $\omega \geq c/(T^*-t)$ potentially fails. NS may function as completely regular.
 - Assuming $\kappa(t) \sim \kappa^\beta$ spanning $0 < \beta < 1$: an intermediate regime triggers. The firm lower bound holds cleanly provided $\beta < 1/2$ (confirming the physical flattening remains mathematically slower than the approach).
 
-The explicit [Levi form condition number](#def:levi-form-defect) governing the vortex core rigidly evaluates to $\lambda_{\max}/\lambda_{\min}$, perfectly equating to $\kappa(t)^2$. The underlying contact structure mathematically degenerates (flipping completely integrable) exactly if and only if $\lambda_{\min} \to 0$, driving $\kappa(t) \to \infty$. This establishes the boxed equivalence stated above.
+An earlier version of this proposition identified $\kappa(t)^2$ with a Levi form condition number $\lambda_{\max}/\lambda_{\min}$ and inserted "the Levi form stays non-degenerate at collision" as a middle term of the boxed equivalence. That reading is withdrawn. On the three-dimensional flow domain the Levi datum of the vorticity plane field is the single scalar $\xi\cdot\mathrm{curl}\,\xi$ ([core Levi form](#prop:core-levi-form)), so there is no eigenvalue pair and no condition number, and the blow-up implication from non-degenerate Levi data is refuted by a Beltrami solution ([Levi degeneracy conjecture](#conj:levi-degeneracy)). The core aspect ratio $\kappa(t)$ is kept as a statement about the core shape only.
 
 **Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

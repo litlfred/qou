@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-9910019v1
-doc_title: "arXiv:math/9910019v1 [math.CO] 5 Oct 1999"
+doc_title: "Symmetrized random permutations"
 section_id: sec-004-41-random-involutions-and-random-signed-involuti
 section_title: "Random involutions and random signed involutions"
 section_number: 4.1
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.971
 latex_coverage_ratio: 0.994
+doc_brief: "Symmetrized random permutations — 8 sections: Front matter; Introduction; Tracy-Widom distribution functions"
 ---
 The ensemble $S^\symmO_{n,m}$ is the set of involutions with 
 $n$ 2-cycles and $m$ 1-cycles.

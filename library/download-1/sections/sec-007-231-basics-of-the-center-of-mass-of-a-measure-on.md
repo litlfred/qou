@@ -8,7 +8,9 @@ pages: 7-9
 source_pdf: Download (1).pdf
 source_sha256: bbb001c909958e8a
 toc_source: inferred
+doc_brief: "Central and L p -concentration of 1-Lipschitz maps into R -trees — In this paper, we study the Le´vy-Milman concentration phenomenon of 1-Lipschitz maps from mm-spaces to R-trees."
 ---
+Basics of the center of mass of a measure on a CAT(0)-space.
 In this subsection, we review Sturm’s works about measures on a CAT(0)-
 space. We refer to [8] and [15] for details. A geodesic metric space X is called a
 CAT(0)-space if we have
@@ -110,4 +112,3 @@ Let X be a CAT(0)-space. Given
 K. FUNANO
 ;  2 P1ðXÞ, we have dXðcðÞ; cðÞÞ  dW
 1 ð; Þ.
-2.3.2

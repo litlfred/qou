@@ -43,11 +43,11 @@ results from the probes:
   - The conjecture is **narrowed** to (M1), (M2), (M3) — three concrete
     falsifiable forms.
 
--- Ref: [manuscript] QOU.AlgebraicSubstrate.MetallicHierarchy
--- Ref: [manuscript] docs/audits/2026-06-08-metallic-q-hierarchy-proof.md
--- Ref: [manuscript] computations/metallic_q_wenzl_sign_sweep.py
--- Ref: [manuscript] computations/metallic_q_jones_sign_sweep.py
--- Ref: [manuscript] computations/metallic_q_quark_bifurcation.py
+-- Ref: [leitner2026] QOU.AlgebraicSubstrate.MetallicHierarchy
+-- Ref: [leitner2026] docs/audits/2026-06-08-metallic-q-hierarchy-proof.md
+-- Ref: [leitner2026] computations/metallic_q_wenzl_sign_sweep.py
+-- Ref: [leitner2026] computations/metallic_q_jones_sign_sweep.py
+-- Ref: [leitner2026] computations/metallic_q_quark_bifurcation.py
 -/
 
 namespace QOU.KnotTheory.MetallicPiecewise

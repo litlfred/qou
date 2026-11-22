@@ -7,10 +7,11 @@ section_number: null
 pages: 1-3
 source_pdf: 2402.01890v4.pdf
 source_sha256: e1eeb2865f0b53e1
-doc_brief: "On the spherical partition algebra — For k ∈ N we introduce an idempotent subalgebra, the spherical partition algebra SP k, of the partition algebra Pk, that we define using an embedding associated"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.782
+latex_coverage_ratio: 0.951
+doc_brief: "On the spherical partition algebra — For k ∈N we introduce an idempotent subalgebra, the spherical partition algebra SPk, of the partition algebra Pk, that we define using an embedding associated"
 ---
 The {\it partition algebra} $ \ParAlg  $ arose around thirty years ago 
 in the second named author's work on the Potts model in statistical mechanics, 

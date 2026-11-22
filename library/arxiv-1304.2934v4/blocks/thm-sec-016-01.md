@@ -1,0 +1,1 @@
+Suppose φ non-lattice, and consider as before a sequence (Xn)n∈N that con- verges mod-φ on a band S(c,d) with c < 0 < d. If x ∈(η′(0), η′(d)), then P[Xn ≥tnx] = exp(−tnF(x)) h p 2πtnη′′(h) ψ(h) (1 + o(1)) where as usual h is deﬁned by the implicit equation η′(h) = x.

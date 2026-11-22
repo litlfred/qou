@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1808.02836v2/blocks/prose-sec-004",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Other classes of hyperbolic 3–manifolds",
-  "pageStart": 3,
+  "title": "The anatomy of a minimal ideal triangulation",
+  "pageStart": 4,
   "pageEnd": 4,
-  "text": "../sections/sec-004-13-other-classes-of-hyperbolic-3manifolds.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1808.02836v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1808.02836v2",
+  "text": "../sections/sec-004-2-the-anatomy-of-a-minimal-ideal-triangulation.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1808.02836v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1808.02836v2/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -10,7 +10,7 @@ import Mathlib.Analysis.Complex.Basic
 rigid when additionally `‖ℏ‖ ≤ 1/12` (`Duals`). This file shows the two conditions are not
 vacuous together: `ℏ = L/14` with `L = ∑ 10^{-k!}` Liouville's number works. Sorry-free.
 
--- Ref: [manuscript] beans/defs/qou-zoyv (stage S4)
+-- Ref: [leitner2026] beans/defs/qou-zoyv (stage S4)
 -/
 
 namespace QOU.KZ.Drinfeld

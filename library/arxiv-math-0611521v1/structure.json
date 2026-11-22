@@ -8,7 +8,7 @@
   "pages": 22,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:24Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -21,12 +21,12 @@
    "stamp_date": "17 Nov 2006"
   },
   "doi": null,
-  "title": "arXiv:math/0611521v1 [math.QA] 17 Nov 2006",
-  "authors_raw": "J.-P. Ramis\u2217, J. Sauloy \u2020",
+  "title": "The q-analogue of the wild fundamental group",
+  "authors_raw": "J.-P. Ramis∗, J. Sauloy †",
   "title_lines": [
    "THE q-ANALOGUE OF THE WILD FUNDAMENTAL GROUP"
   ],
-  "abstract": "We describe an explicit construction of galoisian Stokes operators for irregular linear q-difference equations. These operators are parameterized by the points of an elliptic curve minus a \ufb01nite set of singularities. Taking residues at these singularities, one gets q-analogues of alien derivations which freely generate the Lie algebra of the Stokes subgroup of the Galois group.",
+  "abstract": "We describe an explicit construction of galoisian Stokes operators for irregular linear q-difference equations. These operators are parameterized by the points of an elliptic curve minus a ﬁnite set of singularities. Taking residues at these singularities, one gets q-analogues of alien derivations which freely generate the Lie algebra of the Stokes subgroup of the Galois group.",
   "docinfo": {
    "Title": "arXiv:math/0611521v1  [math.QA]  17 Nov 2006",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
@@ -44,7 +44,8 @@
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:math/0611521v1 [math.QA] 17 Nov 2006"
  },
  "toc": [
   {
@@ -331,8 +332,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 511,
-   "n_words": 76,
+   "n_chars": 509,
+   "n_words": 75,
    "label_start": null,
    "label_end": null
   },
@@ -343,7 +344,7 @@
    "level": 1,
    "page_start": 1,
    "page_end": 8,
-   "n_chars": 30696,
+   "n_chars": 30705,
    "n_words": 5271,
    "label_start": null,
    "label_end": null
@@ -355,8 +356,8 @@
    "level": 2,
    "page_start": 8,
    "page_end": 10,
-   "n_chars": 3947,
-   "n_words": 725,
+   "n_chars": 3957,
+   "n_words": 726,
    "label_start": null,
    "label_end": null
   },
@@ -367,8 +368,8 @@
    "level": 2,
    "page_start": 10,
    "page_end": 12,
-   "n_chars": 5707,
-   "n_words": 1130,
+   "n_chars": 5728,
+   "n_words": 1133,
    "label_start": null,
    "label_end": null
   },
@@ -379,8 +380,8 @@
    "level": 2,
    "page_start": 12,
    "page_end": 14,
-   "n_chars": 4385,
-   "n_words": 854,
+   "n_chars": 4400,
+   "n_words": 855,
    "label_start": null,
    "label_end": null
   },
@@ -391,8 +392,8 @@
    "level": 1,
    "page_start": 14,
    "page_end": 14,
-   "n_chars": 3,
-   "n_words": 1,
+   "n_chars": 38,
+   "n_words": 5,
    "label_start": null,
    "label_end": null
   },
@@ -402,21 +403,33 @@
    "title": "Stokes operators are galois",
    "level": 2,
    "page_start": 14,
-   "page_end": 19,
-   "n_chars": 13403,
-   "n_words": 2510,
+   "page_end": 16,
+   "n_chars": 5342,
+   "n_words": 990,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-006-4-conclusion",
+   "id": "sec-006-32-alien-derivations-and-q-borel-transform",
+   "number": "3.2",
+   "title": "Alien derivations and $q$-Borel transform",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 19,
+   "n_chars": 8046,
+   "n_words": 1518,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-007-4-conclusion",
    "number": "4",
    "title": "Conclusion",
    "level": 1,
    "page_start": 19,
    "page_end": 22,
-   "n_chars": 8357,
-   "n_words": 1264,
+   "n_chars": 8368,
+   "n_words": 1265,
    "label_start": null,
    "label_end": null
   }
@@ -427,7 +440,7 @@
   "toc_entries": 9,
   "toc_inferred_entries": 9,
   "toc_inferred_mean_confidence": 0.944,
-  "toc_inferred_empty_share": 0.143,
+  "toc_inferred_empty_share": 0.125,
   "toc_inferred_method": "latex",
   "figure_entries": 0,
   "figure_sequence_gaps": [],
@@ -435,13 +448,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 8,
-  "chars_total": 67009,
+  "sections": 9,
+  "chars_total": 67093,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 9,
-   "overlaid": 6,
+   "overlaid": 7,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -457,14 +471,14 @@
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": 0.979,
-     "coverage_ratio": 0.974,
+     "coverage_ratio": 0.973,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-21-general-facts",
      "title": "General facts",
-     "prose_ratio": 0.988,
+     "prose_ratio": 0.994,
      "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "pandoc"
@@ -480,7 +494,7 @@
     {
      "id": "sec-003-23-stokes-operators",
      "title": "Stokes operators",
-     "prose_ratio": 0.952,
+     "prose_ratio": 0.959,
      "coverage_ratio": 0.946,
      "result": "overlaid",
      "converter": "pandoc"
@@ -489,21 +503,29 @@
      "id": "sec-004-3-stokes-operators-and-alien-derivations",
      "title": "Stokes operators and alien derivations",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-005-31-stokes-operators-are-galois",
      "title": "Stokes operators are galois",
-     "prose_ratio": 0.951,
-     "coverage_ratio": 0.957,
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.981,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-4-conclusion",
+     "id": "sec-006-32-alien-derivations-and-q-borel-transform",
+     "title": "Alien derivations and $q$-Borel transform",
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-4-conclusion",
      "title": "Conclusion",
      "prose_ratio": 0.983,
-     "coverage_ratio": 0.508,
+     "coverage_ratio": 0.507,
      "result": "overlaid",
      "converter": "pandoc"
     }

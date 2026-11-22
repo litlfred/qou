@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1803.04009v2/sections/sec-011",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "3d N=2 Dualities from Surgery calculus",
+  "pageStart": 43,
+  "pageEnd": 44,
+  "contains": [
+    "library/arxiv-1803.04009v2/blocks/prose-sec-011"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1803.04009v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1803.04009v2/manifest.jsonld",
+  "provenance": "ingested"
+}

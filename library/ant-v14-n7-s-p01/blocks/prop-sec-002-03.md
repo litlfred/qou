@@ -1,1 +1,1 @@
-(i) The Siegel units arenorm-compatible, in the sense that if N′|N and N and N′ have
+(i) The Siegel units are norm-compatible, in the sense that if N ′|N and N and N ′ have the same prime divisors, then under the natural map pr : Y(M, N) →Y(M, N ′) we have (pr)∗(cgN) = cgN ′. (ii) The de Rham realisation of gN is the Eisenstein series d log(gN)(τ) = −2πi F(2) 1/N(τ) dτ.

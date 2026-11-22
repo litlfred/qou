@@ -53,10 +53,10 @@ LEAVES OPEN (gap remains conjectural):
 
 ## References
 
-- [manuscript] conj:brane-tower-z-habiro §"Status of n_⋆"
-- [manuscript] prop:habiro-expansion-atomic (proven `m_max` bound)
-- [manuscript] prop:neutron-qvalue-symbolic (β-decay operator)
-- [manuscript] per-braid-mass-tower.md (remainder bound at level N)
+- [leitner2026] conj:brane-tower-z-habiro §"Status of n_⋆"
+- [leitner2026] prop:habiro-expansion-atomic (proven `m_max` bound)
+- [leitner2026] prop:neutron-qvalue-symbolic (β-decay operator)
+- [leitner2026] per-braid-mass-tower.md (remainder bound at level N)
 
 ## Cross-PR context (cycles 4 + 5, 2026-05-11)
 
@@ -117,7 +117,7 @@ structure NStarCandidates where
   /-- All three substrate-derived candidates agree. -/
   agreement : habiroMMax = coxeterLength ∧ coxeterLength = generatorRank
 
--- Ref: [manuscript] §brane-tower-z-habiro "Status of n_⋆"
+-- Ref: [leitner2026] §brane-tower-z-habiro "Status of n_⋆"
 /-- The β-decay sector instance: all three candidates give n_⋆ = 2. -/
 def betaDecayNStarCandidates : NStarCandidates where
   habiroMMax := 2        -- ⌈√(2·deg_u Δ_NF)⌉ = ⌈√4⌉ = 2
@@ -139,7 +139,7 @@ def betaDecayNStarCandidates : NStarCandidates where
     `B_target, eps > 0` by picking `Phi_proj = B_target`. Taking
     `phiProj` as a concrete input is the strictly-stronger
     requirement.) -/
--- Ref: [manuscript] conj:brane-tower-z-habiro §"What this conjecture
+-- Ref: [leitner2026] conj:brane-tower-z-habiro §"What this conjecture
 --      would buy"
 -- See PR #637 review copilot-pull-request-reviewer comment on
 --      RecoversWithRelativeError tautology
@@ -160,8 +160,8 @@ cyclotomic projection at n_⋆ = 2. CURRENTLY UNCLOSED — the
 projection's analytic value is conjectural per
 `brane-tower-z-habiro.md §"Status of n_⋆"`. -/
 
--- Ref: [manuscript] prop:neutron-qvalue-symbolic
--- Ref: [manuscript] conj:brane-tower-z-habiro
+-- Ref: [leitner2026] prop:neutron-qvalue-symbolic
+-- Ref: [leitner2026] conj:brane-tower-z-habiro
 /-- 1 ppb closure target: the cyclotomic projection at `n_⋆ = 2`
     must produce a `Phi_proj` matching `Q_β^CODATA = 0.78233341` MeV
     to within `1 × 10⁻⁹` relative error. This proposition is
@@ -176,8 +176,8 @@ def betaDecayRecoveryTarget (phiProj : ℝ) : Prop :=
     at the `2 × 10⁻³` level, which is the *empirical depth-N=0*
     closure (1.31 keV residual). 1 ppb closure requires the open
     lift formula. -/
--- Ref: [manuscript] prop:neutron-qvalue-symbolic
--- Ref: [manuscript] per-braid-mass-tower.md §"remainder bound at level N"
+-- Ref: [leitner2026] prop:neutron-qvalue-symbolic
+-- Ref: [leitner2026] per-braid-mass-tower.md §"remainder bound at level N"
 theorem betaDecayRecovery_at_N0_within_0_2_percent :
     RecoversWithRelativeError 2 0.7836 0.78233341 0.002 := by
   refine ⟨?_, ?_, ?_⟩
@@ -203,7 +203,7 @@ theorem betaDecayRecovery_at_N0_within_0_2_percent :
     This is the honest replacement for the previous `: True := trivial`
     (vacuous) marker: the `Prop` carries the real existential content; the
     *absence of any proof term* is the honest open state. -/
--- Ref: [manuscript] conj:brane-tower-z-habiro §"Status of n_⋆"
+-- Ref: [leitner2026] conj:brane-tower-z-habiro §"Status of n_⋆"
 def betaDecayRecoveryTarget_1ppb_remains_conjectural : Prop :=
   ∃ phiProj : ℝ, betaDecayRecoveryTarget phiProj
 

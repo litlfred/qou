@@ -14,7 +14,7 @@ SnapPy 3.3.2 was installed in-sandbox and every hyperbolicity statement below is
 ## 1. The owner's discharge succeeds for Class A
 
 Authoritative in-corpus list: H. Murakami, *An introduction to the volume conjecture*
-§3.3, [`library/arxiv-1002.0126v1/sections/sec-006-3-volume-conjecture.md`](../library/arxiv-1002.0126v1/sections/sec-006-3-volume-conjecture.md) lines 431–447.
+§3.3, [`library/arxiv-1002.0126v1/sections/sec-007-3-volume-conjecture.md`](../library/arxiv-1002.0126v1/sections/sec-007-3-volume-conjecture.md) lines 431–447.
 
 | QOU knot | Vol | Role | KVC |
 |---|---|---|---|
@@ -167,7 +167,7 @@ The library ingest surfaced **Ito, *Braid ordering and the geometry of closed br
 (arXiv:0805.1447v2)**, now at [`library/arxiv-0805.1447v2/`](../library/arxiv-0805.1447v2/).
 It reframes the result above.
 
-**Verified in the ingested text** ([`sec-006-5-nielsen-thurston-classification…`](../library/arxiv-0805.1447v2/sections/sec-006-5-nielsen-thurston-classification-and-the-geomet.md)):
+**Verified in the ingested text** ([`sec-006-5-nielsen-thurston-classification…`](../library/arxiv-0805.1447v2/sections/sec-009-5-nielsen-thurston-classification-and-the-geomet.md)):
 every braid is exactly one of **periodic**, **reducible**, or **pseudo-Anosov**, and
 
 > *"F admits a complete hyperbolic structure **if and only if** φ is pseudo-Anosov"*, while

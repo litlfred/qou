@@ -17,7 +17,7 @@ LaTeX label: `def:categorical-laplace`
 
 ## References
 
-- [manuscript] §2-quantum-observable-universes/categorical-laplace
+- [leitner2026] §2-quantum-observable-universes/categorical-laplace
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]`.  Base-ring independent — the
 pairing is abstract Hopf-algebraic; integral realisation is
@@ -32,7 +32,7 @@ abbrev R_q := LaurentPolynomial ℤ
 /-- **Categorical Laplace transform data**: a monoidal functor
     from q-convolution to pointwise product, given abstractly
     as the Hopf pairing with the real-exponential grouplike. -/
--- Ref: [manuscript] §2
+-- Ref: [leitner2026] §2
 structure CategoricalLaplace (A : Type*) where
   /-- Pairing: f ↦ (s ↦ ⟨exp_q(-s·), f⟩). -/
   transform : (A → A) → R_q → (A → A)
@@ -49,7 +49,7 @@ structure CategoricalLaplace (A : Type*) where
 
 /-- **Laplace-Fourier Wick rotation**: Fourier at ξ equals Laplace
     at s = iξ (in any base ring containing √(-1)). -/
--- Ref: [manuscript] §2
+-- Ref: [leitner2026] §2
 def CategoricalLaplace.toFourier
     {A : Type*} (L : CategoricalLaplace A)
     (i_elem : R_q)  -- an element playing the role of √(-1)

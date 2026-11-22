@@ -62,7 +62,7 @@ numerically (the paper's mass ordering is necessary, not sufficient; the
 What is closed is the *class-level* "why the even tower is
 non-generational", not the per-boson identification.
 
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/electroweak-higgs-torus-link-triplet.md
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/electroweak-higgs-torus-link-triplet.md
 -/
 
 namespace QOU.ParticleInteractions
@@ -80,7 +80,7 @@ addition law, proved by two-step induction on `m` from the recurrence. -/
     Derived by two-step induction on `m` from
     `morganVoyceB_recurrence`; it is the polynomial Fibonacci addition
     law specialised to `b₁ = 1`, `b₂ = X`. -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/electroweak-higgs-torus-link-triplet.md
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/electroweak-higgs-torus-link-triplet.md
 theorem morganVoyceB_add (m n : ℕ) :
     morganVoyceB (m + n + 1)
       = morganVoyceB (m + 1) * morganVoyceB (n + 1)
@@ -108,7 +108,7 @@ theorem morganVoyceB_add (m n : ℕ) :
 /-- `b_n ∣ b_{n·k}`: the continuant coefficient of every multiple winding
     is divisible by that of the base winding. Proved by induction on `k`
     from the addition formula. -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/electroweak-higgs-torus-link-triplet.md
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/electroweak-higgs-torus-link-triplet.md
 theorem morganVoyceB_dvd_mul (n k : ℕ) : morganVoyceB n ∣ morganVoyceB (n * k) := by
   induction k with
   | zero => simp [morganVoyceB]
@@ -124,7 +124,7 @@ theorem morganVoyceB_dvd_mul (n k : ℕ) : morganVoyceB n ∣ morganVoyceB (n * 
 /-- **Strong divisibility of the Morgan–Voyce continuant.**
     `a ∣ n ⇒ b_a ∣ b_n` — the general theorem behind the fermion
     generation-exclusion instances and the boson harmonic tower. -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/electroweak-higgs-torus-link-triplet.md
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/electroweak-higgs-torus-link-triplet.md
 theorem morganVoyceB_dvd_of_dvd {a n : ℕ} (h : a ∣ n) :
     morganVoyceB a ∣ morganVoyceB n := by
   obtain ⟨k, rfl⟩ := h
@@ -139,7 +139,7 @@ theorem morganVoyceB_dvd_of_dvd {a n : ℕ} (h : a ∣ n) :
     there is no even "prime generation" — every even winding factors
     through `b₂`, matching the non-generational gauge/link character of
     bosons (`boson_iff_even`). -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/electroweak-higgs-torus-link-triplet.md
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/electroweak-higgs-torus-link-triplet.md
 theorem b2_dvd_even (k : ℕ) : morganVoyceB 2 ∣ morganVoyceB (2 * k) :=
   morganVoyceB_dvd_mul 2 k
 
@@ -163,17 +163,17 @@ theorem morganVoyceB_eight :
   simp only [morganVoyceB]; ring
 
 /-- **`W ↔ T(2,4)` is a `b₂`-harmonic**: `b₄ = b₂·(X² + 2)`. -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/electroweak-higgs-torus-link-triplet.md
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/electroweak-higgs-torus-link-triplet.md
 theorem b2_dvd_b4 : morganVoyceB 2 ∣ morganVoyceB 4 :=
   ⟨X ^ 2 + 2, by rw [morganVoyceB_two, morganVoyceB_four]; ring⟩
 
 /-- **`Z ↔ T(2,6)` is a `b₂`-harmonic**: `b₆ = b₂·(X⁴ + 4X² + 3)`. -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/electroweak-higgs-torus-link-triplet.md
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/electroweak-higgs-torus-link-triplet.md
 theorem b2_dvd_b6 : morganVoyceB 2 ∣ morganVoyceB 6 :=
   ⟨X ^ 4 + 4 * X ^ 2 + 3, by rw [morganVoyceB_two, morganVoyceB_six]; ring⟩
 
 /-- **`H ↔ T(2,8)` is a `b₂`-harmonic**: `b₈ = b₂·(X⁶ + 6X⁴ + 10X² + 4)`. -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/electroweak-higgs-torus-link-triplet.md
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/electroweak-higgs-torus-link-triplet.md
 theorem b2_dvd_b8 : morganVoyceB 2 ∣ morganVoyceB 8 :=
   ⟨X ^ 6 + 6 * X ^ 4 + 10 * X ^ 2 + 4,
     by rw [morganVoyceB_two, morganVoyceB_eight]; ring⟩
@@ -181,7 +181,7 @@ theorem b2_dvd_b8 : morganVoyceB 2 ∣ morganVoyceB 8 :=
 /-- **`H`'s continuant factors through `W`'s**: `b₄ ∣ b₈` with cofactor
     `X⁴ + 4X² + 2` (`b₈ = b₄·(X⁴ + 4X² + 2)`), the internal harmonic
     `T(2,8) = (T(2,4))²`-type factorisation on the normal-form data. -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/electroweak-higgs-torus-link-triplet.md
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/electroweak-higgs-torus-link-triplet.md
 theorem b4_dvd_b8 : morganVoyceB 4 ∣ morganVoyceB 8 :=
   ⟨X ^ 4 + 4 * X ^ 2 + 2,
     by rw [morganVoyceB_four, morganVoyceB_eight]; ring⟩
@@ -192,7 +192,7 @@ theorem b4_dvd_b8 : morganVoyceB 4 ∣ morganVoyceB 8 :=
     tower, whose prime windings `3,5,7` are mutually non-divisible
     (the fermion generation-exclusion result, PR #4456): the boson
     tower is uniformly non-generational. -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/electroweak-higgs-torus-link-triplet.md
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/electroweak-higgs-torus-link-triplet.md
 theorem boson_tower_is_uniformly_harmonic :
     morganVoyceB 2 ∣ morganVoyceB 4 ∧
     morganVoyceB 2 ∣ morganVoyceB 6 ∧

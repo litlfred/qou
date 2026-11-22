@@ -20,8 +20,11 @@ In Leray's similarity variables the profile is a function `U = U(s)` of
 `s = -log(T* - t)`. Two regularity classes:
 
 * **continuous self-similar** — `U` is `s`-*independent* (steady);
-* **discretely self-similar (DSS)** — `U` is `s`-*periodic* with some period `P`
-  (set by the root-of-unity scaling `λ_κ`, `P = 2 log λ_κ`).
+* **discretely self-similar (DSS)** — `U` is `s`-*periodic* with some period
+  `P > 0` (`P = 2 log λ` for the scaling factor `λ > 1`; no value of `P` is
+  fixed, and in particular it is not tied to the root-of-unity ladder
+  `q_κ = exp(iπ/κ)`, which `def:substrate-parameter` excludes — see
+  `QOU.FluidDynamics.DSSObstructions.qKappa_is_root_of_unity`).
 
 Nečas–Růžička–Šverák (Acta Math. 176, 1996) exclude the *steady* finite-energy
 profile. This file records the clean structural reason the DSS class **survives**
@@ -45,8 +48,8 @@ no-go itself is a cited literature theorem, not re-proved here.
 Archimedean: `U : ℝ → ℝ` on the similarity time `s ∈ ℝ`. `ℝ` is correct.
 
 ## References
-- [manuscript] fluid-dynamics/leray-profile, leray-profile-construction,
-  regularity-breakdown
+- [leitner2026] fluid-dynamics/leray-profile, leray-profile-construction,
+  regularity-breakdown, leray-profile-exclusions
 - Nečas–Růžička–Šverák, Acta Math. 176 (1996) 283–294 (`necas-ruzicka-sverak1996`)
 -/
 
@@ -58,15 +61,15 @@ namespace QOU.FluidDynamics
 def SelfSimilar (U : ℝ → ℝ) : Prop := ∀ s, U s = U 0
 
 /-- The similarity profile `U(s)` is **discretely self-similar** with period `P`
-    if it is `P`-periodic in `s` (`P = 2 log λ_κ` for the root-of-unity scaling
-    `λ_κ`). -/
+    if it is `P`-periodic in `s` (`P = 2 log λ` for the scaling factor `λ`;
+    no value of `P` is fixed). -/
 def DSSPeriodic (U : ℝ → ℝ) (P : ℝ) : Prop := ∀ s, U (s + P) = U s
 
 /-- **Steady = periodic for every period.** A similarity profile is
     (continuously) self-similar iff it is discretely self-similar for *every*
     period `P`. Hence the NRŠ-excluded steady class is precisely the intersection
     of all the DSS classes. -/
--- Ref: [manuscript] fluid-dynamics/leray-profile
+-- Ref: [leitner2026] fluid-dynamics/leray-profile
 theorem selfSimilar_iff_all_periods (U : ℝ → ℝ) :
     SelfSimilar U ↔ ∀ P, DSSPeriodic U P := by
   constructor
@@ -79,7 +82,7 @@ theorem selfSimilar_iff_all_periods (U : ℝ → ℝ) :
     profile that takes some value `≠ U 0` is not self-similar — so it lies in the
     complement of the NRŠ-excluded steady class and is not touched by the no-go.
     This is the class the discretely-self-similar re-scope lives in. -/
--- Ref: [manuscript] fluid-dynamics/leray-profile, regularity-breakdown
+-- Ref: [leitner2026] fluid-dynamics/leray-profile, regularity-breakdown
 theorem dss_not_selfSimilar_of_nonconstant {U : ℝ → ℝ}
     (hwit : ∃ s, U s ≠ U 0) : ¬ SelfSimilar U := by
   rintro h
@@ -90,7 +93,7 @@ theorem dss_not_selfSimilar_of_nonconstant {U : ℝ → ℝ}
     every period (its `s`-independence is the degenerate case of periodicity);
     the content of the re-scope is that the converse fails — non-steady
     single-period profiles exist in principle and are what NRŠ leaves open. -/
--- Ref: [manuscript] fluid-dynamics/leray-profile
+-- Ref: [leitner2026] fluid-dynamics/leray-profile
 theorem selfSimilar_isDSS {U : ℝ → ℝ} (h : SelfSimilar U) (P : ℝ) :
     DSSPeriodic U P :=
   (selfSimilar_iff_all_periods U).mp h P

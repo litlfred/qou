@@ -1,1 +1,7 @@
-Let $H$ be a commutative formal group over $\mathbb{F}_p$ equipped with a skewed-Poisson structure $\pi_<$ (a biderivation $\pi_<\colon\mathcal{O}(H)\otimes\mathcal{O}(H)\to\mathcal{O}(H)$ satisfying a graded anti-symmetry and a $p$-truncated Jacobi condition). The **Witt vector lift** is the formal group $\widehat{G}$ over $W(\mathbb{F}_p) \cong \mathbb{Z}_p$ obtained by integrating $\pi_<$ in the sense of Fresse. The distribution algebra $\mathrm{Dist}(\widehat{G})$ is the $p$-adic completion of the universal enveloping algebra $\mathcal{U}(\mathrm{Lie}(H))$ deformed by $\pi_<$.
+Let $k$ be a perfect field of characteristic $p$, let $W(k)$ be its ring of Witt vectors, and let $\varphi\colon W(k)\to k$ be the reduction map. Let $H$ be a formal group law over $k$. A **Witt vector lift** of $H$ is a formal group law $G$ over $W(k)$, of the same dimension, whose base change along $\varphi$ is $H$:
+
+$$
+G \otimes_{W(k),\,\varphi} k \;=\; H .
+$$
+
+If $G$ is commutative then so is its reduction. The definition asserts nothing about existence or uniqueness of a lift, and it does not involve a Poisson structure.

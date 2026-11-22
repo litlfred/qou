@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2404.02087v1
-doc_title: "Extreme plasmons Aakash A. Sahai 1 1Department of Electrical Engineering, University of Colorado Denver, Denver, CO 80204 ∗ Nanosciences largely rely on plasmons which are quasipar"
+doc_title: "Extreme plasmons"
 section_id: sec-006-small-amplitude-plasmons-quantum-model
 section_title: "Small-amplitude plasmons: Quantum model"
 section_number: null
 pages: 3-5
 source_pdf: 2404.02087v1.pdf
 source_sha256: ac92bd0dff8ad907
-doc_brief: "Extreme plasmons Aakash A. Sahai 1 1Department of Electrical Engineering, University of Colorado Denver, Denver, CO 80204 ∗ Nanosciences largely rely on plasmons which are quasiparticles constituted b"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.978
-latex_coverage_ratio: 0.983
+latex_coverage_ratio: 0.993
+doc_brief: "Extreme plasmons — 15 sections: Extreme plasmons; Introduction; Quantum framework"
 ---
 \label{subsec:quantum-small-plasmons}
 Quantum mechanical framework of small-amplitude plasmons was developed by Pines et. al. \cite{Pines-Bohm-PhysRev-1952, Pines-PhysRev-1953} to explain experimental observations. As the electronic states whether in the ground (equilibrium) or the excited (plasmon) state of conduction electrons, are valid only at discrete wavevectors, such a framework is indispensable. 

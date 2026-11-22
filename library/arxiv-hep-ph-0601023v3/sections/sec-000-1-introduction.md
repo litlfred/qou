@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-ph-0601023v3
-doc_title: "arXiv:hep-ph/0601023v3 23 Apr 2007"
+doc_title: "Proton Stability in Grand Unified Theories, in Strings and in Branes"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
@@ -10,7 +10,8 @@ source_sha256: 875ab040b50487a1
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.997
-latex_coverage_ratio: 1.0
+latex_coverage_ratio: 0.998
+doc_brief: "Proton Stability in Grand Unified Theories, in Strings and in Branes — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes"
 ---
 The Standard Model of strong, and the electro-weak interactions, 
 given by the gauge group $SU(3)_C\times SU(2)_L\times U(1)_Y$,   

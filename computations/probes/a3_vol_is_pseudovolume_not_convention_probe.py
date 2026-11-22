@@ -80,6 +80,7 @@ B_EXP = {"D": AME_B_DEUTERON_MEV_VALIDATION, "3He": AME_B_HE3_MEV_VALIDATION,
 # the literals the A3 producers carry
 B_OVER_ME_FILE = {"D": mpf("4.353"), "3He": mpf("15.10"), "4He": mpf("55.37")}
 VOL_FILE = {"D": mpf("12.776"), "3He": mpf("12.554"), "4He": mpf("12.554")}
+# witness-copy-intentional: the retired value, kept as a record of what the A3 producers used.
 VOL_RETIRED_BLOCH = mpf("4.40083251612")     # Vol(6_2), retired 2026-08-29
 VOL_RULED_DEUTERON = mpf(0)                  # canonical braid closure, flat
 

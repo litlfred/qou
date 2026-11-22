@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2111.06645/sections/sec-025",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "A.3 The two matrix-valued cocycles for the 4_1 knot agree",
+  "pageStart": 28,
+  "pageEnd": 32,
+  "contains": [
+    "library/arxiv-2111.06645/blocks/prose-sec-025",
+    "library/arxiv-2111.06645/blocks/lem-sec-025-01",
+    "library/arxiv-2111.06645/blocks/prop-sec-025-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2111.06645/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2111.06645/manifest.jsonld",
+  "provenance": "ingested"
+}

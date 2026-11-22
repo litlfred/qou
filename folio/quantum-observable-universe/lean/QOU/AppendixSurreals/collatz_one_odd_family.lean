@@ -665,4 +665,58 @@ theorem genNoCycle_of_lead {R : Type*} [CommRing R] (φ : R →+* ℤ) (q : R) (
   nlinarith [htight, hAmul, hAle, h2pos, hlead, e2,
              pow_nonneg (by norm_num : (0 : ℤ) ≤ 2) (r m + m)]
 
+/-! ### Clustered-residue finiteness, lower height bound, and divisibility exclusion (`qou-4ocd`)
+
+When `genNoCycle_of_lead` does not fire on any rotation of a cyclic word of `m`
+odd steps, every even run `r i` satisfies `2 ^ (r i + m - 1) < 3 ^ m`, so each
+`r i` is bounded above by a constant `B` depending only on `m`. The theorem
+`runSum_le_of_bounded` bounds the total even-run sum `runSum r m ≤ m * B`,
+certifying that the clustered residue for each fixed `m` is finite. Within that
+finite clustered residue, `genSteinerNumZ_ge_lower` proves `3^m - 2^m ≤ M_m`,
+and `genNoCycle_of_nondiv` discharges any clustered word whose `q = 1` height
+fails integer divisibility `(2^{runSum r m + m} - 3^m) ∣ M_m`. -/
+
+/-- If every even run is bounded by `B`, the total even-run sum over `m` odd
+    steps obeys `runSum r m ≤ m * B`. -/
+theorem runSum_le_of_bounded (r : ℕ → ℕ) (B : ℕ) (hb : ∀ i, r i ≤ B) (m : ℕ) :
+    runSum r m ≤ m * B := by
+  induction m with
+  | zero =>
+    simp only [runSum, Nat.zero_mul, le_refl]
+  | succ n ih =>
+    have hn := hb n
+    simp only [runSum]
+    calc runSum r n + r n ≤ n * B + B := Nat.add_le_add ih hn
+      _ = (n + 1) * B := by ring
+
+/-- Exact lower bound `3^m - 2^m ≤ genSteinerNumZ r m` for any even-run profile `r`. -/
+theorem genSteinerNumZ_ge_lower (r : ℕ → ℕ) (m : ℕ) :
+    (3 : ℤ) ^ m - 2 ^ m ≤ genSteinerNumZ r m := by
+  induction m with
+  | zero =>
+    simp only [genSteinerNumZ, pow_zero, sub_self, le_refl]
+  | succ n ih =>
+    simp only [genSteinerNumZ]
+    have hpow : (2 : ℤ) ^ n ≤ 2 ^ (runSum r n + n) :=
+      pow_le_pow_right₀ (by norm_num) (by omega)
+    have e3 : (3 : ℤ) ^ (n + 1) = 3 * 3 ^ n := by rw [pow_succ]; ring
+    have e2 : (2 : ℤ) ^ (n + 1) = 2 * 2 ^ n := by rw [pow_succ]; ring
+    linarith
+
+/-- **Clustered-residue divisibility exclusion.** Even when a word lies inside
+    the clustered regime (`2^{r m + m} < 3^{m+1}`) where `genNoCycle_of_lead`
+    does not apply, if `(2^{runSum r m + m} - 3^m)` does not divide
+    `genSteinerNumZ r m` in `ℤ`, then no cycle exists. -/
+theorem genNoCycle_of_nondiv {R : Type*} [CommRing R] (φ : R →+* ℤ) (q : R) (v : ℕ → R)
+    (r : ℕ → ℕ) (hq : φ q = 1)
+    (hrel : ∀ i, (q + 1) ^ (r i + 1) * v (i + 1) = (q ^ 2 + q + 1) * v i + 1)
+    (m : ℕ) (hcyc : v m = v 0)
+    (hndvd : ¬ ((2 : ℤ) ^ (runSum r m + m) - 3 ^ m ∣ genSteinerNumZ r m)) : False := by
+  refine no_cycle_of_q_one_height φ _ (v 0) _ (genForced q v r hrel m hcyc) ?_
+  intro hdvd
+  simp only [map_sub, map_pow, map_add, map_one, hq,
+    genSteinerNum_map φ q r hq] at hdvd
+  norm_num at hdvd
+  exact hndvd hdvd
+
 end QOU.AppendixSurreals

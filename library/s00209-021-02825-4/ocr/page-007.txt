@@ -1,0 +1,60 @@
+A representation theoretic explanation... 1365
+
+We let CP! denote the projective space of lines in C?, and we will also identify this space
+with the Riemann sphere. Note that CP! can also be considered as a compact version of C
+with one extra point added at infinity. We will often identify CP! with C (up to this extra
+point) via stereographic projection. A circular region is then an open or closed disc, half-
+plane, or complement of a disc in C. The set of circular regions is transitive under the action
+of Mobius transformations. We also use the name circular regions to refer to the stereographic
+projections into CP!. Closed half-planes and complements of discs projected into CP! will
+contain the point at infinity. Throughout, we will let 0S denote the boundary of (the closure
+of) the set § in CP! and let S° denote the interior of S.
+
+There is also a natural ordering structure on Nj’, along with a few basic operations that
+
+will be used throughout. Fix A = (Aj,..., Am) anda = (q@,..., Qm) in Ni", and fix
+B= (P1,.--, Bn) in N}. We say a < A whenever ax < Ax forallk € [m]. We define A+a@ :=
+(Aiton, .. 5 kmbOin), [AL t= Artes bam, and ALB = (At... 65 Ams Bis. Bp) € NOW.
+
+We also make use of a number of shorthands. Fix jz, 4 € Ng! such that jz < 2. We define
+
+x“ eC[u,..., Xm] via x! := xy1 xh? -- + xm". Similarly, we define df := O44 + ON",
+where 0, := Z. When considering V (A), we define y* and ay in the same way. Further, we
+
+_ AY. AL gh Dm) Be _
+define A! := A,!--- Aj! and A) = meno! = (i) ee (i). Finally, we denote (—1) :=
+
+(-DHt ee (- Dem = (HII,
+
+2.2 Homogeneous polynomials
+
+The usual degree-n homogenization of a polynomial f € C"[x] is defined on monomials as
+follows and is extended linearly.
+
+Hmg,, : C"[x] > V(n)
+xk Db xk ynk
+More generally, for A € Ng the degree-d homogenization is defined on monomials as follows
+and is extended linearly.
+
+Hmg, : C*Lx1,....%m] > VA)
+
+xl py x yh
+
+C"[x] and V(n) are isomorphic as vector spaces via Hmg,, and we will mainly utilize
+bivariate homogeneous polynomials in V (7) over the usual univariate polynomials in C”[x].
+What homogeneity gets us is a simplification of a number of issues related to the fact that
+polynomials in C"[x] have at most n zeros. Specifically, it is more natural to think of the
+missing zeros (when the number of zeros is less than n) as being “at infinity”. Certain
+results require premises restricting to convex regions or to polynomials of degree exactly
+n (e.g., the classical Grace-Walsh—Szeg6 coincidence theorem), and such details vanish
+when considering homogeneous polynomials with possible roots at infinity. Another way
+to say this is that we consider polynomials in V(n) to have exactly n roots in CP!, which
+can also be thought of as the Riemann sphere. We also consider polynomials p(x, y) =
+P(X1, Y1,--+,Xms Ym) € V(A) to have zeros in (CP!)”, where each pair (xx, yg) corresponds
+to a single factor of CP! in (CP!)”.
+
+We use the notation (a : b) € CP!, which is meant to give off the connotation of a ratio;
+that is, (a : b) should feel like a/b. We also use the notation (a : b) = ((a1 :by),..-, (Qn?
+bm)) € (CP!)”, Note that this connotation aligns with the idea of considering the zeros of
+
+D Springer

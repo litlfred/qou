@@ -1,0 +1,68 @@
+moreover
+
+have i € circline-set 212
+using (t1 # £2) «x1 € unit-disc) (#2 € unit-discy
+using <i € ideal-points 712»
+by (simp add: ideal-points-on-circline)
+
+moreover
+
+have x 4 inversion x
+using (x € unit-disc»
+using inversion-noteq-unit-disc by fastforce
+
+moreover
+
+have « #i
+using (x € unit-disc»
+using <i € circline-set unit-circle) circline-set-def inversion-noteg-unit-disc
+by fastforce+
+
+moreover
+
+have inversion x 4 i
+using <i € circline-set unit-circley «x # 1) circline-set-def inversion-unit-circle
+by fastforce
+
+ultimately
+
+have 7/1 = 712
+using unique-circline-set|of x inversion x i]
+by blast
+
+hence 0, € circline-set 712
+by (metis «a # 0n» poincare-line-circline-set(1))
+
+thus False
+using ‘7— poincare-collinear {On, t1, t2}>
+unfolding poincare-collinear-def
+using <poincare-collinear {x, 21, x2}) (a1 # 2) (21 € unit-disc» «x2 € unit-disc» poincare-collinear-def unique-poincare-line
+by auto
+qed
+
+lemma limiting-parallels:
+assumes a € unit-disc and r1 € unit-disc and «2 € unit-disc and — poincare-on-line a «1 «2
+shows Jal €unit-disc. 4 a2€unit-disc.
+— poincare-on-line a al a2 A
+— poincare-ray-meets-line a al x1 x2 A — poincare-ray-meets-line a a2 x1 x2 NA
+(V a'Eunit-disc. poincare-in-angle a' al a a2 —+ poincare-ray-meets-line a a’ x1 x2) (is ?P a x1 x2)
+proof—
+have ~ poincare-collinear {a, x1, x2}
+using (— poincare-on-line a x1 x2»
+unfolding poincare-on-line-def
+by simp
+
+have V «1 x2. x1 € unit-disc A x2 € unit-disc A — poincare-collinear {a, r1, 12} —> ?P a xl x2 (is ?Q a)
+proof (rule wlog-zero|OF <a € unit-disc»])
+fix au
+assume *: u € unit-disc cmod a < 1
+hence uf: unit-disc-fix (blaschke a)
+by simp
+assume *«: ?Q (moebius-pt (blaschke a) u)
+show ?Qu
+proof safe
+fix cl 12
+let ?M = moebius-pt (blaschke a)
+assume wz: t1 € unit-disc x2 € unit-disc — poincare-collinear {u, x1, x2}
+
+160

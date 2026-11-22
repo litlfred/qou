@@ -10,7 +10,7 @@ the β-decay Q-value decays exponentially in the truncation depth.
 For a fixed free-neutron sector `K ⊂ H₃(q)` evaluated at the substrate
 `q = q₀`, let `R N` be the depth-`N` truncation remainder
 `R N = Q_β^(N) − Q_β^exact` (Form A or Form B,
-`prop:q-beta-spectral-bridge`).  The conjecture asserts there exist
+`conj:q-beta-spectral-bridge`).  The conjecture asserts there exist
 constants `C, c > 0`, depending only on the sector data, with
 
   |R N| ≤ C · exp(−c · N)   for all N.
@@ -50,7 +50,7 @@ namespace QOU.Interactions
     estimate.  No instance is provided here, faithfully representing the
     conjecture's open state. -/
 -- Ref: [jones1985] doi:10.2307/1971403   (Markov trace / brane-tower trace structure)
--- Ref: [manuscript] conj:archimedean-remainder-exponential-decay
+-- Ref: [leitner2026] conj:archimedean-remainder-exponential-decay
 class ArchimedeanRemainderExponentialDecay (remainder : ℕ → ℝ) : Prop where
   /-- Exponential-decay control of the truncation remainder: there is a
       positive prefactor `C` and positive rate `c` with

@@ -8,9 +8,19 @@
   "pages": 36,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:18Z",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 20,
+    "reason": "10 of 443 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 21,
+    "reason": "10 of 485 words are a stray single letter: the text layer splits words"
+   }
+  ]
  },
  "metadata": {
   "arxiv": null,
@@ -502,8 +512,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 688,
-   "n_words": 101,
+   "n_chars": 685,
+   "n_words": 100,
    "label_start": "1711",
    "label_end": "1711"
   },
@@ -514,7 +524,7 @@
    "level": 1,
    "page_start": 1,
    "page_end": 6,
-   "n_chars": 14403,
+   "n_chars": 14411,
    "n_words": 2444,
    "label_start": "1711",
    "label_end": "1716"
@@ -538,8 +548,8 @@
    "level": 1,
    "page_start": 14,
    "page_end": 21,
-   "n_chars": 16136,
-   "n_words": 3076,
+   "n_chars": 15814,
+   "n_words": 2993,
    "label_start": "1724",
    "label_end": "1731"
   },
@@ -550,8 +560,8 @@
    "level": 1,
    "page_start": 21,
    "page_end": 29,
-   "n_chars": 17514,
-   "n_words": 3551,
+   "n_chars": 17414,
+   "n_words": 3535,
    "label_start": "1731",
    "label_end": "1739"
   },
@@ -631,6 +641,7 @@
    "items": []
   },
   "sections": 10,
-  "chars_total": 90879
+  "chars_total": 90462,
+  "furniture_lines_stripped": 1
  }
 }

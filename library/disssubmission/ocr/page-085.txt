@@ -1,0 +1,44 @@
+4.3. Local monodromy 77
+
+inserted to be conform with the graded pieces on the left).
+
+Gr2(¥i(8)) P_o(6)(—2)
+Gri(¥,(5)) P(S)(-1) = |v
+Gro(¥i(5)) Py(8) =\v  Po(5)(-1)
+Gr-1(¥1(8)) P-1(6) =|N
+Gr_2(¥i(6)) P_(8)
+
+The lower boundary entries Py(5),P_1(5),P_2(6),... of the triangle are the
+graded pieces of the specialization
+
+sp(5) = ker(N : (5) > ¥1(8)(—1)),
+
+with Po(5) as the top quotient. Accordingly the graded pieces of sp(5)
+determine those of all the Gr;(‘¥;(5)). Furthermore, in the case of mixed
+perverse sheaves of geometric origin in the sense of [10, chapt. 6] we have
+the following result due to O. Gabber [9, th 5.1.2].
+
+REMARK 4.8. If 6 is pure of weight w, then each Gr;(¥1(8)) is pure
+of weight w+i so that the monodromy filtration coincides with the weight
+filtration up to an index shift.
+
+In this case, to compute the graded pieces Gr;(‘¥;(5)) we only need
+to determine the specialization sp(6) and its weight filtration. Returning
+again to the general case, let us denote by j : ¥p <> Y resp. i: Ys + Y the
+embedding of the generic resp. special fibre. Recall [60, p. 48] that the
+perverse f-structure on Y is defined by
+
+Ke?DS(Y) <=> *K €PD©"(¥,) and j*K € "DS"! (Yq),
+Ke?D*°(Y) <= i'K €"D*°(¥,) and j*K €’D* (Yq).
+
+We denote by P(Y) the abelian category of perverse sheaves which is the
+core of the above perverse t-structure. By abuse of notation we also write 5
+for the pull-back to P(Y;) of the perverse sheaf 6 € P(Y,,). Then Artin’s
+affine vanishing theorem implies that the direct image complexes Rj: (5[1])
+and Rj.(6[1]) are perverse, see loc. cit. This being said, we define the
+intermediate extension
+
+Jis(6[1]) = tm(Rj,(6[1]) — Rj.(S[1]))
+
+to be the image of the natural morphism between these two direct image
+complexes in the abelian category P(Y).

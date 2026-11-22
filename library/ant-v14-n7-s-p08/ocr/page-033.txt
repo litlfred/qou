@@ -1,0 +1,55 @@
+Burgess bounds for short character sums evaluated at forms 1943
+
+We make the approximation that © = (r — 1)/(n — 1), which is an identity when n = 2, and will not be
+far from the truth, when we later take r very large. Then we compute that after this approximation, 6 can
+
+be represented as a function of r by
+
+fane(t) a br-c
+r)=—-- ;
+a,b,c r r(r—-1)
+where
+(n+ co)B n 1
+a= —, b=-, c=-.
+2 4 4
+As a function of r, this attains a maximum at
+r=(a—b) {(a—c) + V(a— 0)? — (a—0)(a—b)}. (7-8)
+To have r > 0 we must have (a — b) > 0, that is
+n 1 co
+
+(7-9)
+
+B > Bnco = 2n + co) = 2 2(n+c9)’
+
+agreeing with our previous observation. Thus from now on we assume f = Bn,cy + K for some small k,
+and we will study how 6 = 6,(k) behaves as k — 0. From (7-7) with B = Bnicg + & (and without
+approximating ©), we see that for any r,
+
+n+co 1
+YO
+
+8 =b,(k) =
+
+To maximize this, according to (7-8), as k > 0 we will take r to be the integer closest to
+n—-1
+«(n+ co)
+For an approximation, we set r = (n — 1)/(k(n + co)) in the expression for 6,,(«), and using the
+approximation © ~ r/(n — 1) (which is reasonable as « — 0 since then r — 00), we see that
+
+wy (n +9)” 2
+
+i) ® Toye
+
+(7-10)
+
+as k —> 0. Here we use © because we have made two types of approximations: first, we used approximations
+of the value of © and r for simplicity, which introduced errors that become vanishing small, relative to
+the true size of 5,(k), as k — 0. Second, to simplify certain expressions, we used the fact that we are in
+the limiting case k > 0.
+
+Alternatively, we can encapsulate the restriction (7-9) by recording it as the restriction
+
+|| || Hinin >> [EE ||! P00!" >> (qnPy! Feo!
+
+where 6 = By -, + « for any small « > 0. Therefore we will obtain a nontrivial bound as long as
+||| Amin >> g”/?+* for any small « > 0.

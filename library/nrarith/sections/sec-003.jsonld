@@ -13,9 +13,19 @@
   "pageStart": 9,
   "pageEnd": 15,
   "contains": [
-    "library/nrarith/blocks/prose-sec-003"
+    "library/nrarith/blocks/prose-sec-003",
+    "library/nrarith/blocks/prop-sec-003-01",
+    "library/nrarith/blocks/thm-sec-003-02",
+    "library/nrarith/blocks/thm-sec-003-03",
+    "library/nrarith/blocks/prop-sec-003-04",
+    "library/nrarith/blocks/cor-sec-003-05",
+    "library/nrarith/blocks/cor-sec-003-06",
+    "library/nrarith/blocks/lem-sec-003-07",
+    "library/nrarith/blocks/rem-sec-003-08",
+    "library/nrarith/blocks/lem-sec-003-09",
+    "library/nrarith/blocks/thm-sec-003-10"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/nrarith",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/nrarith",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/nrarith/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/nrarith/manifest.jsonld",
   "provenance": "ingested"
 }

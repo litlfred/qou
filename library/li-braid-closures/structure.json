@@ -7,27 +7,39 @@
   "bytes": 287014,
   "pages": 16,
   "text_source": "embedded",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:55Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "Knot polynomials on braid closures Eddy Li",
+  "title": "Knot polynomials on braid closures",
   "authors_raw": "January 29, 2025",
   "title_lines": [
    "Knot polynomials on braid closures",
    "Eddy Li"
   ],
-  "abstract": "We explore properties of the Jones and Alexander polynomials of braid closures of braids of index 3. We analyze how the evaluations of these polynomials att=\u22121 force implications regarding the topological structure of the braid closure, such as its number of circles or the existence of splittings. As a consequence, we construct an infinite number of pairs of distinct non-split links that have the same HOMFLYPT polynomial.",
+  "abstract": "We explore properties of the Jones and Alexander polynomials of braid closures of braids of index 3. We analyze how the evaluations of these polynomials at t = −1 force implications regarding the topological structure of the braid closure, such as its number of circles or the existence of splittings. As a consequence, we construct an infinite number of pairs of distinct non-split links that have the same HOMFLYPT polynomial.",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20260131024756Z",
-   "Creator": "LaTeX with hyperref",
    "Producer": "pdfTeX-1.40.27",
-   "Title": ""
-  }
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20260131024756Z"
+  },
+  "title_raw": "Knot polynomials on braid closures Eddy Li",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Knot polynomials on braid closures",
+   "outline": "Introduction",
+   "text": "Knot polynomials on braid closures Eddy Li",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Knot polynomials on braid closures Eddy Li"
  },
  "toc": [
   {
@@ -35,81 +47,274 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Preliminaries",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "The braid group",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Young diagrams",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Specht modules of the Hecke algebra",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "The HOMFLYPT polynomial",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 1,
    "title": "Closures of 3-braids",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Split Links",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Knots",
    "page": 13,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "4-braids and beyond",
    "page": 15,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 1,
    "title": "Acknowledgments",
    "page": 15,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 497,
+   "n_words": 81,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
@@ -117,8 +322,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 2807,
-   "n_words": 473
+   "n_chars": 2897,
+   "n_words": 551,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
    "id": "sec-001-preliminaries",
@@ -127,8 +334,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 2,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 13,
+   "n_words": 1,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
    "id": "sec-002-the-braid-group",
@@ -137,8 +346,10 @@
    "level": 2,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 1136,
-   "n_words": 185
+   "n_chars": 1192,
+   "n_words": 228,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
    "id": "sec-003-young-diagrams",
@@ -147,8 +358,10 @@
    "level": 2,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 659,
-   "n_words": 116
+   "n_chars": 705,
+   "n_words": 149,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
    "id": "sec-004-specht-modules-of-the-hecke-algebra",
@@ -157,8 +370,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 6,
-   "n_chars": 4577,
-   "n_words": 861
+   "n_chars": 4749,
+   "n_words": 1003,
+   "label_start": "4",
+   "label_end": "6"
   },
   {
    "id": "sec-005-the-homflypt-polynomial",
@@ -166,56 +381,86 @@
    "title": "The HOMFLYPT polynomial",
    "level": 2,
    "page_start": 6,
-   "page_end": 9,
-   "n_chars": 4094,
-   "n_words": 649
+   "page_end": 8,
+   "n_chars": 2623,
+   "n_words": 489,
+   "label_start": "6",
+   "label_end": "8"
   },
   {
-   "id": "sec-006-split-links",
+   "id": "sec-006-closures-of-3-braids",
+   "number": null,
+   "title": "Closures of 3-braids",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 1608,
+   "n_words": 278,
+   "label_start": "8",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-007-split-links",
    "number": null,
    "title": "Split Links",
    "level": 2,
    "page_start": 9,
    "page_end": 13,
-   "n_chars": 7086,
-   "n_words": 1315
+   "n_chars": 7305,
+   "n_words": 1524,
+   "label_start": "9",
+   "label_end": "13"
   },
   {
-   "id": "sec-007-knots",
+   "id": "sec-008-knots",
    "number": null,
    "title": "Knots",
    "level": 2,
    "page_start": 13,
    "page_end": 15,
-   "n_chars": 3918,
-   "n_words": 716
+   "n_chars": 4049,
+   "n_words": 842,
+   "label_start": "13",
+   "label_end": "15"
   },
   {
-   "id": "sec-008-4-braids-and-beyond",
+   "id": "sec-009-4-braids-and-beyond",
    "number": null,
    "title": "4-braids and beyond",
    "level": 2,
    "page_start": 15,
    "page_end": 15,
-   "n_chars": 795,
-   "n_words": 136
+   "n_chars": 828,
+   "n_words": 152,
+   "label_start": "15",
+   "label_end": "15"
   },
   {
-   "id": "sec-009-acknowledgments",
+   "id": "sec-010-acknowledgments",
    "number": null,
    "title": "Acknowledgments",
    "level": 1,
    "page_start": 15,
    "page_end": 16,
-   "n_chars": 1373,
-   "n_words": 193
+   "n_chars": 1396,
+   "n_words": 201,
+   "label_start": "15",
+   "label_end": "16"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 11,
-  "sections": 10,
-  "chars_total": 26445
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 12,
+  "chars_total": 27862,
+  "furniture_lines_stripped": 0
  }
 }

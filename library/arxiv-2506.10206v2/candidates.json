@@ -3,13 +3,14 @@
  "doc_id": "arxiv-2506.10206v2",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "d0631a9abd9b1da35ba729381b8abcf5811d472139f359e25e2a527f70d99c1b",
   "file": "2506.10206v2.pdf"
  },
  "provenance": {
-  "title": "5), and Q(\u221a\u22127)",
-  "authors": "Moreover, single-term dilogarithm evaluations are introduced and derived",
+  "title": "Analytic Dilogarithm Identities",
+  "authors": "Cetin Hakimoglu-Brown",
   "arxiv": {
    "id": "2506.10206",
    "version": "2",
@@ -20,197 +21,9 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 14,
-  "by_kind": {
-   "theorem": 6,
-   "example": 6,
-   "lemma": 1,
-   "remark": 1
-  },
-  "formalization_candidates": 7
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "2",
-   "name": null,
-   "statement": "The closed-form evaluation",
-   "section_file": "sections/sec-013-31-a-full-solution-to-a-problem-due-to-sun.md",
-   "section_title": "A full solution to a problem due to Sun",
-   "pages": "7-9",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "1",
-   "name": null,
-   "statement": "is used. Consequently, we obtain the equality of",
-   "section_file": "sections/sec-017-34-identities-related-of-an-evaluation-for-the-i.md",
-   "section_title": "Identities related of an evaluation for the inverse tangent in-",
-   "pages": "12-13",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "3",
-   "name": null,
-   "statement": "For complex u, letL(u) denote the three-term dilogarithm combination",
-   "section_file": "sections/sec-022-6-a-proof-of-campbells-conjecture.md",
-   "section_title": "A proof of Campbell\u2019s conjecture",
-   "pages": "16-18",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "example",
-   "source_kind": "example",
-   "number": "1",
-   "name": null,
-   "statement": "Setting u =\u22121 we obtain a single-term complex dilogarithm evaluation, with",
-   "section_file": "sections/sec-022-6-a-proof-of-campbells-conjecture.md",
-   "section_title": "A proof of Campbell\u2019s conjecture",
-   "pages": "16-18",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "4",
-   "name": null,
-   "statement": "The three-term dilogarithm combination",
-   "section_file": "sections/sec-023-61-related-dilogarithm-identities.md",
-   "section_title": "Related dilogarithm identities",
-   "pages": "18-19",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "example",
-   "source_kind": "example",
-   "number": "5",
-   "name": null,
-   "statement": "Setting u =\u22121 in Theorem 5, this yields",
-   "section_file": "sections/sec-024-4-li2.md",
-   "section_title": "Li2",
-   "pages": "19-21",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "example",
-   "source_kind": "example",
-   "number": "7",
-   "name": null,
-   "statement": "Setting u =\u22127 in Theorem 5, this yields",
-   "section_file": "sections/sec-024-4-li2.md",
-   "section_title": "Li2",
-   "pages": "19-21",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "example",
-   "source_kind": "example",
-   "number": "8",
-   "name": null,
-   "statement": "Using Theorem 5, we have also discovered the ladder relation such that",
-   "section_file": "sections/sec-024-4-li2.md",
-   "section_title": "Li2",
-   "pages": "19-21",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "example",
-   "source_kind": "example",
-   "number": "11",
-   "name": null,
-   "statement": "Settingu = 1/2+i\u00b5, it is possible to derive additional single-term dilogarithms",
-   "section_file": "sections/sec-028-3-li2z2-6-li2z-ln2zz2-6-lnz-lnz-1-\u03c02.md",
-   "section_title": "Li2(z2) + 6 Li2(z) =\u2212 ln2(z\u2212z2)\u2212 6 ln(z) ln(z + 1) +\u03c02",
-   "pages": "22-23",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "5",
-   "name": null,
-   "statement": "In this direction, we begin by setting",
-   "section_file": "sections/sec-045-115-a-modified-watson-\u03c0.md",
-   "section_title": "A modified Watson \u03c0",
-   "pages": "33-33",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "example",
-   "source_kind": "example",
-   "number": "16",
-   "name": null,
-   "statement": "Form =\u22124 we have that h5 + 2h4 + 4h3 + 3h2 + 2h + 1 = 0. This can be",
-   "section_file": "sections/sec-047-121-a-three-term-ladder-relation.md",
-   "section_title": "A three-term ladder relation",
-   "pages": "34-34",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "6",
-   "name": null,
-   "statement": "For the unique rooth in the interval (0, 1) ofx6\u2212x5\u2212x4\u22126x3\u2212x2\u2212x+1 = 0,",
-   "section_file": "sections/sec-048-122-five-term-ladder-relations-part-1.md",
-   "section_title": "Five-term ladder relations, part 1",
-   "pages": "34-35",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "7",
-   "name": null,
-   "statement": "Let h denote the unique root in the interval (0, 1) of x6\u2212 3x5 + 5x4\u2212 8x3 +",
-   "section_file": "sections/sec-052-123-a-six-term-ladder-relation.md",
-   "section_title": "A six-term ladder relation",
-   "pages": "35-36",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "1",
-   "name": null,
-   "statement": "Since the sexic polynomial in Theorem 7 is symmetric, it can be reduced to a",
-   "section_file": "sections/sec-054-2-li2h6-4-li2h4-4-li2h3-3.md",
-   "section_title": "Li2(h6) + 4 Li2(h4) + 4 Li2(h3)\u2212 3",
-   "pages": "36-37",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  }
- ]
+ "candidates": []
 }

@@ -1,0 +1,38 @@
+37
+
+IV.2. Construction of the State-sum
+
+Begin with a word a € 31% in the braid generators o1,...,¢a-1 and their inverses, which
+
+we picture as a diagram drawn up the page as the word is read from right to left.
+
+oale XK bel otebe | X be |
+
+rrtl rere
+
+Construct permutation diagrams from the braid diagram by replacing each crossing by one
+
+Kx - | le xX
+Xo | be xX
+
+Definition IV,.2.1. A permutation diagram x is admissible if
+
+of two resolutions:
+
+(P1) the first (leftmost) strand goes straight through without crossing any other strands, and
+(P2) the underlying permutation is the identity.
+
+A state is a pair (x,¢), where x is an admissible permutation diagram and « is an assignment of a
+
+sign + to each strand such that
+(S1) the first (leftmost) sign is +, and
+(S2) no two strands of the same sign cross.
+
+Let S(a) dencte the set of states for a. To a state (x,e) € S(a@), we associate a weight
+M(a,x,€) € C(v) defined by multiplying together certain scalars, one for each resolved crossing.
+
+The scalar associated to a positive crossing of strands in positions r and r + 1 is given in (IV.10).
+
+I
+
+For a negative crossing, replace v by v~* in each expression.

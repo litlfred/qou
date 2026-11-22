@@ -27,10 +27,10 @@ sorry-free conditional theorem follows the same pattern as
 prop:em-coupling-bring-zero-mode: take the class as `[Instance]`,
 unpack the existential, conclude.
 
--- Ref: [manuscript] prop:shell-correction-term-seven
--- Ref: [manuscript] prop:chirality-writhe-ribbon-derivation
--- Ref: [manuscript] conj:brane-tower-z-habiro
--- Ref: [manuscript] prop:em-coupling-bring-zero-mode
+-- Ref: [leitner2026] prop:shell-correction-term-seven
+-- Ref: [leitner2026] prop:chirality-writhe-ribbon-derivation
+-- Ref: [leitner2026] conj:brane-tower-z-habiro
+-- Ref: [leitner2026] prop:em-coupling-bring-zero-mode
 -- Ref: [borel1974] Borel, "Stable real cohomology of arithmetic groups," Ann. Sci. ENS 7 (1974)
 -/
 
@@ -46,7 +46,7 @@ namespace QOU.Archimedean.OpenProblems
     constraint `α_5 < 0` is binding-enhancing — confirmed
     empirically (helium-4 doubly magic excess) and structurally
     (level-5 = first shell-closure quorum). -/
--- Ref: [manuscript] conj:shell-correction-term-seven
+-- Ref: [leitner2026] conj:shell-correction-term-seven
 -- Ref: [mayer1949] Mayer 1949, Phys. Rev. 75 p.1969, DOI 10.1103/PhysRev.75.1969
 noncomputable def alpha5_value : ℝ := -1  -- sign-constraint witness; magnitude awaits derivation
 
@@ -58,18 +58,22 @@ noncomputable def alpha5_value : ℝ := -1  -- sign-constraint witness; magnitud
     enhancing structural argument from
     `shell-correction-term-seven.md` §"Supporting (structural)"
     item 2. -/
--- Ref: [manuscript] conj:shell-correction-term-seven
+-- Ref: [leitner2026] conj:shell-correction-term-seven
 class Term7ShellCorrectionClass : Prop where
   /-- Structural existence of `α_5 < 0` as a categorical-derivation
       output (binding-enhancing sign from shell-closure quorum). -/
   alpha5_derived : ∃ a : ℝ, a < 0 ∧ a = alpha5_value
 
-/-- **Term 7 conditional theorem (sorry-free).** Given the class,
-    the shell correction has the binding-enhancing sign and
-    matches the carrier value. -/
--- Ref: [manuscript] conj:shell-correction-term-seven
-theorem term7_structural [hT : Term7ShellCorrectionClass] :
-    ∃ a : ℝ, a < 0 ∧ a = alpha5_value := hT.alpha5_derived
+/-- **Term 7 conditional theorem (sorry-free).** Given the class and any
+    positive level-5 character weight `chi5 > 0`, the Term-7 shell correction
+    `a * chi5` is strictly negative (binding-enhancing) and `a` matches the
+    carrier value `alpha5_value`. -/
+-- Ref: [leitner2026] conj:shell-correction-term-seven
+theorem term7_structural [hT : Term7ShellCorrectionClass]
+    {chi5 : ℝ} (hchi : 0 < chi5) :
+    ∃ a : ℝ, a < 0 ∧ a = alpha5_value ∧ a * chi5 < 0 := by
+  obtain ⟨a, ha_neg, ha_eq⟩ := hT.alpha5_derived
+  exact ⟨a, ha_neg, ha_eq, mul_neg_of_neg_of_pos ha_neg hchi⟩
 
 /-- **Term 7 — unconditional instance (sign witness only).**
 
@@ -81,7 +85,7 @@ theorem term7_structural [hT : Term7ShellCorrectionClass] :
     sequence at ℓ=5. A future instance with the correct magnitude
     requires the explicit structural derivation in
     `conj:shell-correction-term-seven`. -/
--- Ref: [manuscript] conj:shell-correction-term-seven
+-- Ref: [leitner2026] conj:shell-correction-term-seven
 instance term7ShellCorrectionInstance : Term7ShellCorrectionClass where
   alpha5_derived := by
     refine ⟨-1, ?_, ?_⟩
@@ -89,8 +93,9 @@ instance term7ShellCorrectionInstance : Term7ShellCorrectionClass where
     · rfl
 
 theorem term7_structural_unconditional :
-    ∃ a : ℝ, a < 0 ∧ a = alpha5_value :=
-  term7_structural
+    ∃ a : ℝ, a < 0 ∧ a = alpha5_value := by
+  obtain ⟨a, ha_neg, ha_eq, _⟩ := term7_structural (chi5 := 1) one_pos
+  exact ⟨a, ha_neg, ha_eq⟩
 
 
 /-! ## Chirality factor (deuterium 1+h ansatz) -/
@@ -106,7 +111,7 @@ theorem term7_structural_unconditional :
     (Wedderburn-weighted, see §"Substituting into a_K").
     The simplified ansatz `1 + w·h` is the special case
     `⟨c⟩_β = 1`, which holds only for specific braids. -/
--- Ref: [manuscript] prop:chirality-writhe-ribbon-derivation
+-- Ref: [leitner2026] prop:chirality-writhe-ribbon-derivation
 noncomputable def chirality_factor_first_order
     (h : ℝ) (writhe : ℤ) (avg_content : ℝ) : ℝ :=
   1 + (writhe : ℝ) * avg_content * h
@@ -119,7 +124,7 @@ noncomputable def chirality_factor_first_order
     "paper-empirical ansatz" of the trivial case `⟨c⟩ = 1` is one
     inhabited instance; the structural content is in the
     character-weighted average computation. -/
--- Ref: [manuscript] prop:chirality-writhe-ribbon-derivation
+-- Ref: [leitner2026] prop:chirality-writhe-ribbon-derivation
 class ChiralityFactorClass (a_K : ℝ → ℤ → ℝ → ℝ) : Prop where
   /-- Structural derivation of the chiral-case first-order factor from
       the Kauffman framing formula on the Hecke ribbon category, with
@@ -163,7 +168,7 @@ class ChiralityFactorClass (a_K : ℝ → ℤ → ℝ → ℝ) : Prop where
     previous encoding could not state it at all (its `a_K` was
     existentially quantified, so there was no fixed function to
     evaluate). -/
--- Ref: [manuscript] prop:chirality-writhe-ribbon-derivation
+-- Ref: [leitner2026] prop:chirality-writhe-ribbon-derivation
 theorem kauffman_eval_at_zero (a_K : ℝ → ℤ → ℝ → ℝ)
     [hC : ChiralityFactorClass a_K] (writhe : ℤ) (avg_content : ℝ) :
     a_K 0 writhe avg_content = 1 := by
@@ -183,7 +188,7 @@ theorem kauffman_eval_at_zero (a_K : ℝ → ℤ → ℝ → ℝ)
     isotopes lies near the first pole of `Φ_q` at `z = q_0 ≈ 1.11`,
     making each summand enormous and the analytic series divergent.
     A uniform z-Habiro bound regulates this. -/
--- Ref: [manuscript] conj:brane-tower-z-habiro
+-- Ref: [leitner2026] conj:brane-tower-z-habiro
 noncomputable def brane_tower_pole : ℝ := 1.11  -- approximate q_0
 
 /-- **z-Habiro convergence class.** A concrete instance asserts the
@@ -191,7 +196,7 @@ noncomputable def brane_tower_pole : ℝ := 1.11  -- approximate q_0
     `∑ Φ_q(z_i)` along the deformation `|V_i| → 1`. The bound is
     independent of which Yekutieli finite-slice or q-Habiro
     truncation is taken. -/
--- Ref: [manuscript] conj:brane-tower-z-habiro
+-- Ref: [leitner2026] conj:brane-tower-z-habiro
 class ZHabiroConvergenceClass : Prop where
   /-- The regularised brane-tower sum is finite for every
       isotope-relevant input, uniformly bounded by `M < q_0`. -/
@@ -201,7 +206,7 @@ class ZHabiroConvergenceClass : Prop where
       ∀ z < brane_tower_pole, brane_tower_sum z ≤ M
 
 /-- **z-Habiro conditional theorem (sorry-free).** -/
--- Ref: [manuscript] conj:brane-tower-z-habiro
+-- Ref: [leitner2026] conj:brane-tower-z-habiro
 theorem brane_tower_finite [hZ : ZHabiroConvergenceClass] :
     ∃ (brane_tower_sum : ℝ → ℝ) (M : ℝ),
       M > 0 ∧ M < brane_tower_pole ∧
@@ -214,7 +219,7 @@ theorem brane_tower_finite [hZ : ZHabiroConvergenceClass] :
 /-- The next-order self-energy correction to `1/α_EM` after the
     `2/(3π)` Bring zero-mode: empirically `≈ α/(4π) ≈ 5.81×10⁻⁴`,
     bringing the residual to `+5.7×10⁻⁸` (within CODATA error). -/
--- Ref: [manuscript] prop:em-coupling-bring-zero-mode
+-- Ref: [leitner2026] prop:em-coupling-bring-zero-mode
 noncomputable def alpha_over_4pi_target (alpha : ℝ) : ℝ :=
   alpha / (4 * Real.pi)
 
@@ -223,7 +228,7 @@ noncomputable def alpha_over_4pi_target (alpha : ℝ) : ℝ :=
     variate polylogarithm regulator on a higher Bloch group
     `B_n(ℂ)` for some `n ≥ 3` (Goncharov 1995 conjectures cover
     the relevant uniqueness up to scalar). -/
--- Ref: [manuscript] prop:em-coupling-bring-zero-mode
+-- Ref: [leitner2026] prop:em-coupling-bring-zero-mode
 -- Ref: [borel1974], [bloch2000]
 class AlphaOver4PiClass : Prop where
   /-- The next-order coefficient is realised as a higher
@@ -233,7 +238,7 @@ class AlphaOver4PiClass : Prop where
       regulator elem = alpha_over_4pi_target alpha
 
 /-- **α/(4π) conditional theorem (sorry-free).** -/
--- Ref: [manuscript] prop:em-coupling-bring-zero-mode
+-- Ref: [leitner2026] prop:em-coupling-bring-zero-mode
 theorem alpha_over_4pi_structural
     [hA : AlphaOver4PiClass]
     (alpha : ℝ) :
@@ -259,7 +264,7 @@ spectral-sequence derivation. We leave it as the residual
 conjectural input; an instance closure awaits the upstream
 structural derivation in `conj:shell-correction-term-seven`. -/
 
--- Ref: [manuscript] prop:chirality-writhe-ribbon-derivation
+-- Ref: [leitner2026] prop:chirality-writhe-ribbon-derivation
 /-- Inhabitedness witness — the class is consistent, at the trivial
     `a_K = ` the first-order polynomial itself.
 
@@ -284,7 +289,7 @@ example : ChiralityFactorClass chirality_factor_first_order :=
     merely that *some* `M < q_0` exists. The instance below
     formally satisfies the §3b-cond hook; the structural claim
     remains in the upstream block. -/
--- Ref: [manuscript] conj:brane-tower-z-habiro
+-- Ref: [leitner2026] conj:brane-tower-z-habiro
 instance zHabiroConvergenceInstance : ZHabiroConvergenceClass where
   uniform_bound := by
     use fun _ => 1
@@ -298,7 +303,7 @@ instance zHabiroConvergenceInstance : ZHabiroConvergenceClass where
     as a multivariate polylogarithm regulator on a higher Bloch
     group `B_n(ℂ)` (Goncharov 1995 / Borel 1974) — remains
     upstream and is not addressed by this formal closure. -/
--- Ref: [manuscript] prop:em-coupling-bring-zero-mode
+-- Ref: [leitner2026] prop:em-coupling-bring-zero-mode
 -- Ref: [borel1974], [bloch2000]
 instance alphaOver4PiInstance : AlphaOver4PiClass where
   higher_bloch_realised := fun alpha => ⟨ℝ, id, alpha_over_4pi_target alpha, rfl⟩
@@ -329,7 +334,7 @@ instance alphaOver4PiInstance : AlphaOver4PiClass where
     it is not a derivation of the chirality factor: the witness is the
     first-order polynomial itself. An instance at the actual Kauffman
     ribbon-twist evaluation is the open work. -/
--- Ref: [manuscript] prop:chirality-writhe-ribbon-derivation
+-- Ref: [leitner2026] prop:chirality-writhe-ribbon-derivation
 theorem chirality_factor_class_consistent :
     ∃ a_K : ℝ → ℤ → ℝ → ℝ, ChiralityFactorClass a_K :=
   ⟨chirality_factor_first_order,

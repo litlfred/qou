@@ -133,6 +133,32 @@ not a derivation — `L_q` is a free geometric scale (`fluid-dynamics/discrete-v
 calls it "the q-deformed filament length"; the Kelvin-dispersion derivation takes
 `L_q = L`, the period).  The honest statement is that the tower factor is a
 one-parameter family in `L_q` and the implemented value selects one member.
+
+## 2026-11-15 (issue #8053): `L_q = √ℏ_q` is derived, and it is a CEILING
+
+Two facts close the `L_q` freedom, both algebraic.
+
+1. **The value.**  The `q`-Laplacian `Δ_q = −(z D_q)²` on `k[z, z⁻¹]` satisfies
+   `Δ_q zᵏ = −[k]_q² zᵏ` exactly — no length occurs.  The factor `ℏ_q / L_q²` is
+   an archimedean unit-restoring step (`kelvin-dispersion-derivation-steps`).
+   The tower `Σ ℏ_q^{2n} Δ^{(n)}` lives in the same dimensionless ring, so the
+   eigenvalue that belongs there is `[1]_q² = 1`: `λ₁ = 1`, i.e. `L_q = √ℏ_q`.
+   That supersedes the "choice" reading of the paragraph above.
+
+2. **The ceiling** (`lam_le_one_of_pow_bounded`, `towerFactor_le_simple`).  If
+   `Δ^{(n)} = λ₁ⁿ` on the leading mode (Step 3 of the decay proof) and
+   `|Δ^{(n)}| ≤ Δ_max` for all `n` (`prop:delta-max-uniform-bound`), then
+   `λ₁ ≤ 1`, so EVERY admissible `L_q` has `L_q ≥ √ℏ_q` and the tower factor
+   is at most `1 / (1 − ℏ_q²)` (≈ 1.0099 at `q₀`).  A factor ≈ 1.2 (what the
+   convention-D `c_k` ladder would need) requires `λ₁ ≈ 17`, i.e.
+   `Δ^{(n)} ~ 17ⁿ`, which that proposition excludes.  The `L_q` route cannot
+   supply it.
+
+Caveats, so nobody over-reads this: the corpus has two definitions of
+`Δ^{(n)}` (iterated `q`-Laplacian here; free − atom binding in
+`prop:jet-tower-convergence`), identified in this file; and the
+`delta-max-uniform-bound` proof has soft steps.  If that proposition fell, item 1
+would stand and item 2 would not.
 -/
 
 /-- **The tower of an ITERATED residual.**  With `Δ^{(n)}` the `n`-th iterate,
@@ -172,6 +198,40 @@ theorem leadingMode_lam_eq_one_iff {q Lq : ℝ} (hL : Lq ≠ 0) :
   have hL2 : Lq ^ 2 ≠ 0 := pow_ne_zero 2 hL
   rw [div_eq_one_iff_eq hL2]
   exact ⟨fun h => h.symm, fun h => h.symm⟩
+
+/-- **A uniformly bounded power sequence has ratio at most `1`.**  If
+`|λⁿ| ≤ M` for every `n` then `λ ≤ 1`: for `λ > 1` the powers are unbounded
+(Archimedean property).  With `Δ^{(n)} = λ₁ⁿ` and `M = Δ_max` this is the
+statement that `prop:delta-max-uniform-bound` forces `λ₁ ≤ 1`, i.e.
+`L_q ≥ √ℏ_q`. -/
+theorem lam_le_one_of_pow_bounded {lam M : ℝ} (hM : ∀ n : ℕ, |lam ^ n| ≤ M) :
+    lam ≤ 1 := by
+  by_contra h
+  push_neg at h
+  obtain ⟨n, hn⟩ := pow_unbounded_of_one_lt M h
+  have h1 : lam ^ n ≤ M := le_trans (le_abs_self _) (hM n)
+  linarith
+
+/-- **The tower-factor ceiling.**  For `0 ≤ λ ≤ 1` the iterated tower factor
+`1/(1 − ℏ_q² λ)` is at most the implemented `1/(1 − ℏ_q²)`. -/
+theorem towerFactor_le_simple {q lam : ℝ} (hq : 1 < q) (hlam1 : lam ≤ 1) :
+    (1 - hbarQ q ^ 2 * lam)⁻¹ ≤ (1 - hbarQ q ^ 2)⁻¹ := by
+  have hr : hbarQ q ^ 2 < 1 := hbarQ_sq_lt_one hq
+  have hpos : 0 < 1 - hbarQ q ^ 2 := by linarith
+  have hle : 1 - hbarQ q ^ 2 ≤ 1 - hbarQ q ^ 2 * lam := by
+    have : hbarQ q ^ 2 * lam ≤ hbarQ q ^ 2 * 1 :=
+      mul_le_mul_of_nonneg_left hlam1 (sq_nonneg _)
+    linarith
+  exact inv_anti₀ hpos hle
+
+/-- **No admissible `L_q` raises the tower factor above `1/(1 − ℏ_q²)`.**  If the
+leading-mode residual `Δ^{(n)} = λⁿ` is uniformly bounded in `n` (the content of
+`prop:delta-max-uniform-bound`) then the tower factor is at most the implemented
+one, whatever `L_q` is. -/
+theorem towerFactor_le_simple_of_uniform_bound {q lam M : ℝ} (hq : 1 < q)
+    (hM : ∀ n : ℕ, |lam ^ n| ≤ M) :
+    (1 - hbarQ q ^ 2 * lam)⁻¹ ≤ (1 - hbarQ q ^ 2)⁻¹ :=
+  towerFactor_le_simple hq (lam_le_one_of_pow_bounded hM)
 
 /-- The gap between the two results above, as a statement rather than a comment:
 a uniform bound does NOT give level-independence.  Witnessed by an alternating

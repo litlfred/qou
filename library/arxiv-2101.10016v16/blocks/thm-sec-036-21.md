@@ -1,1 +1,1 @@
-We have that αˆHL is an associativity morphism of Rep(A(Vgk
+Let us consider (Rep(A(Vgk)), ⊠P(z), Z(αHL)) as a vertex tensor category as in Def. 37.17. Then (Rep(A(Vgk )), ⊠) becomes a tensor category with the unique associativity morphisms (Rep(A(Vgk)), ⊠, αˆHL) making the identity functor with natural transformation η of (37.50) into a tensor equivalence. Recall from Theorem 37.19 that Z : (Rep(Vgk), ⊠P(z), αHL) → (Rep(A(Vgk)), ⊠P(z), Z(αHL)) is an equivalence of vertex tensor categories.

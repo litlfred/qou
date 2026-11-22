@@ -1,0 +1,1 @@
+Given the non-perturbative nature of QCD, the only contribution from the counterterm we can determine exactly, without resorting to non-perturbative methods such as lattice QCD (LQCD), is the exact cancellation of the UV divergence appearing from the integral and the isovector quark mass operator.

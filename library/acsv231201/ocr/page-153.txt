@@ -1,0 +1,40 @@
+6.1 Laurent series 135
+
+naturally capture properties related to all convergent series expansions of the
+function. Thus, even if one wishes to stay within the realm of power series, a
+knowledge of Laurent expansions provides insight into the analysis that can
+help in real applications.
+
+The second section of this chapter surveys basic properties of amoebas, and
+describes their use in analytic combinatorics, while the third section introduces
+some basics from convex geometry and describes their connection to polyno-
+mial amoebas. The fourth section studies the boundary points of amoebas and
+minimal singularities, which are very important to our ACSV analysis. The
+final section collects some related topics that are needed in later chapters.
+
+Notational remarks
+To simplify notation we extend the logarithm and exponential functions coor-
+dinatewise to vectors,
+
+log(z) := (log z1,..., log za)
+exp(a) := (e"',...,e),
+and define the coordinatewise log-modulus Relog map
+Relog(z) := (log|zi|,..., log |zal).
+The inverse image of a € R¢ under the Relog map is the exponential torus
+T.(x) := Relog!(a) = {z€C!: zj| = e* for all j}.
+
+Note that the torus T(z) passing through z is equal to T,(Relog(z)). As we will
+soon see, the image of the singular set of a multivariate meromorphic function
+under the Relog map provides important information about its analytic behav-
+ior.
+
+6.1 Laurent series
+
+A Laurent polynomial is a finite complex linear combination of monomials
+z” with integer exponents r. The ring of Laurent polynomials C lz, z"] =
+¢c [ar > qi, sees Zds z;'| consists of the set of all Laurent polynomials, with addi-
+tion and multiplication defined analogously to the polynomial ring C[z]. Since
+a Laurent polynomial has only a finite number of terms, the algebraic structure
+of C[z, z~!] is similar to the algebraic structure of C[z]. On the other hand, the
+space of formal Laurent expressions in z is the complex vector space L(z) of
+formal complex linear combinations of monomials z” as r ranges over all of

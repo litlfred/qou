@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/resur-and-mld-calc-d-sauzin-hal",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/resur-and-mld-calc-d-sauzin-hal/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "Resurgence and Mould Calculus",
   "contains": [
+    "library/resur-and-mld-calc-d-sauzin-hal/sections/sec-front-matter",
     "library/resur-and-mld-calc-d-sauzin-hal/sections/sec-000",
     "library/resur-and-mld-calc-d-sauzin-hal/sections/sec-001",
     "library/resur-and-mld-calc-d-sauzin-hal/sections/sec-002",
@@ -19,10 +20,18 @@
     "library/resur-and-mld-calc-d-sauzin-hal/sections/sec-005",
     "library/resur-and-mld-calc-d-sauzin-hal/sections/sec-006",
     "library/resur-and-mld-calc-d-sauzin-hal/sections/sec-007",
-    "library/resur-and-mld-calc-d-sauzin-hal/sections/sec-008"
+    "library/resur-and-mld-calc-d-sauzin-hal/sections/sec-008",
+    "library/resur-and-mld-calc-d-sauzin-hal/sections/sec-009",
+    "library/resur-and-mld-calc-d-sauzin-hal/sections/sec-010",
+    "library/resur-and-mld-calc-d-sauzin-hal/sections/sec-011",
+    "library/resur-and-mld-calc-d-sauzin-hal/sections/sec-012",
+    "library/resur-and-mld-calc-d-sauzin-hal/sections/sec-013",
+    "library/resur-and-mld-calc-d-sauzin-hal/sections/sec-014",
+    "library/resur-and-mld-calc-d-sauzin-hal/sections/sec-015",
+    "library/resur-and-mld-calc-d-sauzin-hal/sections/sec-016"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "resur-and-mld-calc-d-sauzin-hal",
     "title_source": "pdf-info",

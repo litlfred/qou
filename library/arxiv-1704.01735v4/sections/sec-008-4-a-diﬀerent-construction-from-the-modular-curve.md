@@ -8,6 +8,7 @@ pages: 30-33
 source_pdf: 1704.01735v4.pdf
 source_sha256: 3935747ae9291f76
 toc_source: inferred
+doc_brief: "Modular curves, invariant theory and E 8 — The E8 root lattice can be constructed from the modular curve X(13) by the invariant theory for the simple group PSL(2, 13)."
 ---
 X(13) to E8
 4.1. E8-singularity: from X(13) to E8

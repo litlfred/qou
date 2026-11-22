@@ -1,0 +1,1 @@
+Let λ be a Young diagram with n cells. Set M = Pn j=1 M(j). Then M is central in Hn and Meλ = mλeλ where mλ = X (k,l)∈λ s(l−k)[l −k] = X (k,l)∈λ s2(l−k) −1 s −s−1 . The Young diagram λ is determined by mλ and n.

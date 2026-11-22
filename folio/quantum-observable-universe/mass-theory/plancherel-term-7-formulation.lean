@@ -29,7 +29,7 @@ Properties:
 3. Curvature-rank binning: depth(λ) = height(λ)−1 stratifies the
    centre of H_n(q) by GB filtration depth.
 
--- Ref: [manuscript] prop:plancherel-term-7-formulation
+-- Ref: [leitner2026] prop:plancherel-term-7-formulation
 -/
 
 namespace QOU.WedderburnMass

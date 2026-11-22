@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0606435v2/sections/sec-040",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "$A$-decomposition (joint with Hirasawa-Ishiwata)",
+  "pageStart": 63,
+  "pageEnd": 68,
+  "contains": [
+    "library/arxiv-math-0606435v2/blocks/prose-sec-040",
+    "library/arxiv-math-0606435v2/blocks/thm-sec-040-01",
+    "library/arxiv-math-0606435v2/blocks/figure-img-p065-1",
+    "library/arxiv-math-0606435v2/blocks/figure-img-p065-2",
+    "library/arxiv-math-0606435v2/blocks/figure-img-p065-3",
+    "library/arxiv-math-0606435v2/blocks/figure-img-p065-4",
+    "library/arxiv-math-0606435v2/blocks/figure-img-p065-5",
+    "library/arxiv-math-0606435v2/blocks/figure-img-p065-6",
+    "library/arxiv-math-0606435v2/blocks/figure-img-p065-7",
+    "library/arxiv-math-0606435v2/blocks/figure-img-p065-8",
+    "library/arxiv-math-0606435v2/blocks/figure-img-p065-9",
+    "library/arxiv-math-0606435v2/blocks/figure-img-p065-10"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0606435v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0606435v2/manifest.jsonld",
+  "provenance": "ingested"
+}

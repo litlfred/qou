@@ -1,0 +1,49 @@
+106 Fourier-Laplace integrals in one variable
+
+Lemma 4.9 (Localization Lemma). Suppose ¢ is real and $'(x) # 0 for all
+x € (a,b). Then L(A) is rapidly decreasing, meaning that for any fixed N > 0
+we have I(a) = OV") as A> ~,
+
+Proof Our assumption that A is supported on a subset of the domain of in-
+tegration allows us to integrate by parts without introducing boundary terms.
+Integrating by parts with U = A/(iAg’) and dV = idd’e'* dx gives
+
+> d[A
+a iAG(x)
+(a) = [ e <(s)ooax,
+
+and by repeating this N > 1 times we obtain
+
+b
+(a) = f (2) DN (AY) dx, (4.14)
+where D is the differential operator f 1 (d/dx)(f /i¢’). If
+Ky = (b—a) sup |DNA(x)| (4.15)
+asx<b
+
+then |Z(A)| < A~’ Ky, which proves that I is a rapidly decreasing function of
+a. a
+
+Remarks. (i) In the analytic case, if ¢’ is nowhere vanishing then the con-
+tour can be pushed down along a gradient flow so that the maximum
+of Re{i¢} is strictly negative, resulting in an exponentially (rather than
+rapidly) decreasing integral.
+
+(ii) Since ¢’ does not vanish, we may change variables to y = ¢(x) and the
+conclusion of Lemma 4.9 is equivalent to the perhaps more familiar state-
+ment that the Fourier transform of the smooth function A(y) obtained is
+rapidly decreasing.
+
+(iii) While Lemma 4.9 is stated only for purely imaginary phase functions,
+the same argument shows that (A) is rapidly decreasing whenever the
+real part of ¢ is nonnegative and ¢’ is nonvanishing.
+
+Exercise 4.8. Suppose ¢(x) = x and A(x) is periodic with fundamental domain
+(-2, 7].
+
+(a) Show that there is no boundary term when integrating J over [—z, 7].
+(b) Applying the Localization Lemma with A(x) = 1 + cos(x), what value do
+you get for K> in the bound |Z(A)| < K2a~??
+
+We call Lemma 4.9 the Localization Lemma for the following reason. Sup-
+pose we allow ¢’ to vanish on some finite set of points x),...,x@ € [a,b].
+Then the contribution to J(A) from any closed region not containing some x;

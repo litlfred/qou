@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/s10955-022-02992-6/sections/sec-015",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Single-Type Hard-Core System in mathbbRd",
+  "pageStart": 27,
+  "pageEnd": 30,
+  "contains": [
+    "library/s10955-022-02992-6/blocks/prose-sec-015",
+    "library/s10955-022-02992-6/blocks/rem-sec-015-01",
+    "library/s10955-022-02992-6/blocks/ex-sec-015-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s10955-022-02992-6/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s10955-022-02992-6/manifest.jsonld",
+  "provenance": "ingested"
+}

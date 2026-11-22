@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-q-alg-9709040v1
-doc_title: "arXiv:q-alg/9709040v1 29 Sep 1997"
+doc_title: "Deformation quantization of Poisson manifolds"
 section_id: sec-052-71-formal-geometry-in-the-sense-of-i-gelfand-and
 section_title: "Formal geometry (in the sense of I. Gelfand and D. Kazhdan)"
 section_number: 7.1
@@ -8,6 +8,7 @@ pages: 31-31
 source_pdf: 9709040v1.pdf
 source_sha256: 8baf650d86c5b8ab
 toc_source: inferred
+doc_brief: "Deformation quantization of Poisson manifolds — 75 sections: Front matter; Plans; Star-products"
 ---
 Let X be a smooth manifold of dimension d. We associate with X two inﬁnite-dimensional manifolds,
 Xcoor and Xaff. The manifold Xcoor consists of pairs (x, f) where x is a point of X and f is an inﬁnite

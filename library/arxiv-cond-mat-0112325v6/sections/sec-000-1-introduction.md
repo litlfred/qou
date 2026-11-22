@@ -10,7 +10,8 @@ source_sha256: f09f5047bd12651c
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.643
-latex_coverage_ratio: 1.0
+latex_coverage_ratio: 0.99
+doc_brief: "Knots in Condensed Matters — 6 sections: Front matter; Introduction; Knot in Skyrme theory"
 ---
 Topological objects (monopoles, vortices, skyrmions, etc.) 
 have played an increasingly important role

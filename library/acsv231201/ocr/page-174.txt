@@ -1,0 +1,43 @@
+156 Laurent series, amoebas, and convex geometry
+
+a
+biel
+a
+
+S|
+
+=a
+
+Figure 6.6 V does not intersect the open polydisk with the large torus on its
+boundary.
+
+T(tw) NV = @ for all t € (0, 1) then w is minimal, and if w is minimal then
+no point with coordinatewise smaller modulus can lie in V. Qo
+
+Although the hypotheses of Corollary 6.36 can be checked computationally,
+this requires one to decide the satisfiability of inequalities involving the moduli
+of coordinates, which is computationally expensive (see Chapter 8 for further
+discussion on algorithms to certify minimality). Luckily, there is one special
+case that occurs often in applications and greatly simplifies the analysis.
+
+Definition 6.37. A combinatorial series is a Laurent series )),<za dp 2” such
+that a, > 0 for all but a finite number of r € Z7.
+
+Proposition 6.38 (multivariate Vivanti-Pringsheim). Let f(z) = Yiregd apz”
+be a convergent combinatorial power series expansion with domain of conver-
+gence D. Then w € V,, is a minimal point if and only if (\wi|,...,|wal) is also
+a minimal point (and, in particular, lies in V,.).
+
+Proposition 6.38 is a multivariate generalization of the classical univariate
+case [FSO9, Theorem IV.6], and is proved analogously.
+
+Proof Towards a contradiction, suppose that w € ODN R4 and f is analytic
+at w. Then there exists some € > 0 such that f is analytic in a ball of radius
+4de centered at w. The Taylor expansion of f at v = w — €1 is
+
+(r)
+fe= EME",
+
+rend
+
+where r! = r;!---ry!. Differentiating the power series expansion of f at the

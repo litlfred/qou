@@ -1,0 +1,61 @@
+6.5. Betti polynomials 145
+
+We first deal with (i). For m € {0,1} this is easily verified. In general one
+computes that (t7! +1)-Py = Pn41+Pn—1 andt—! +t = €?—2, so we have
+the recursion formula
+
+Pati = (€? —2)- Pm — Pn-1-
+Assuming by induction that we already know the lemma for P,, and Py_1,
+the coefficient of E?° on the right hand side is
+(-1ym tre [( m+c )+2 (metre) _ ( m+c )].
+
+m—c+1 m—c m—1—ce
+
+m+2+e
+
+The expression in square brackets is equal to (m 1c
+
+addition formulae
+
+(mre) —( m+c ) _ (mre), ( m+c )+ (mre) _ (mrirey,
+
+m—c m—|—c. m—C. m—c+1 m—c. m+l—e
+
+) due to the binomial
+
+(mee) + (mee) = (mete)
+
+This finishes the induction step and thereby proves equation (i). For (ii)
+
+note that
+(-1)""* (mire) _ ((2e.”)
+
+m—c m—c
+
+and that for m < 0 this binomial coefficient vanishes if c > 0. So it follows
+that
+
+y (—1)"~¢ (78 ) (mire) _ y (78 ) ((3e.").
+
+m>0 _ me meZ _ me
+
+Now the sum on the right hand side is the coefficient of ¢¢~¢ in the power
+series expansion of
+
+(L4278(1 2)? = (14 1)76-eD
+so that equation (ii) follows by direct inspection. Oo
+
+Using the above lemma we can compute the Euler characteristic of the
+stalk cohomology of °5% for any partition @ and thereby conclude our proof
+of the recursion formula in theorem 6.1 as follows.
+
+COROLLARY 6.8. For any x € X(C) and any partition & = (d\,...,dn)
+we have the formula
+
+x(H(5%)x) = (18 Ye TT CS”).
+hone ST
+Proof. We have already remarked above that the negligible complex “5”
+is a direct sum of degree shifts of dy. Hence for any x € X(C) we can write
+it in the form
+
+“6% = °(°5"),[-g] @c dy.

@@ -51,7 +51,7 @@
 
   ## References
   - [stanley1999] Enumerative Combinatorics 2 (q-hook / fake degrees)
-  - [manuscript] §mass-theory/binding-period-involution-statistic
+  - [leitner2026] §mass-theory/binding-period-involution-statistic
 
   Ground ring (§7c): every declaration is over a generic `Field` with explicit
   `q ≠ 0` / `q^2 ≠ 1` hypotheses. No `ℝ`, no ordering, no archimedean construct.

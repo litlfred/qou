@@ -1,0 +1,58 @@
+Chapter 1 Introduction and Motivation
+
+trial wave function |),
+
+7 (¥,| H iz)
+(er |r)
+
+H is the Hamiltonian of the systems. It is crucial to find a trial wave function as close as possible to the
+
+exact ground state wave function. Therefore, it is suitable to make a separation ansatz,
+
+v > Ep. (1.8)
+
+|Pr) =F |®), (1.9)
+
+where ¥ reflects the short-range physics while |®) is optimized for the long-range part. The short-
+range part consists of pair functions fulfilling a modified Schrédinger-equation that includes the exact
+Schrédinger equation as well as variational modifications. The long-range part just reflects the antisym-
+metry of the wave function. One of the severe problems is the exponential scaling of required computer
+time with the number of particles making it hard to use in the many-body sector. Nowadays, VMC is
+used to create good trial wave functions |‘¥) for a time-evolution which leads to the ground state at
+infinite time. This method is called Green’s function Monte Carlo, where the ground state wave function
+is defined as
+
+|'¥o) = lim exp[—(H ~ Ep) r] |r). (1.10)
+
+Ey is introduced for normalization reasons of the wave function and it can be identified with the ground
+state energy. It is not possible to calculate the equation for infinite times, and one therefore evaluates the
+equation for several time steps. After N time steps the wave function reads
+
+[Wo (Ry) = I] (Ry| exp [-(H — Eo)T] IRy-1) vee (R,|exp [-(H - Ep) t] |Ro) |"). (1.11)
+LN
+
+R, are the possible paths and they can be calculated using Monte Carlo methods. Nevertheless, the
+scaling is again very bad, and it is difficult to scale this up to many-particle calculations. This scheme
+can be modified by the introduction of auxiliary fields which change the two-particle interaction to a
+one-particle interaction via Hubbard-Stratonovitch transformation. Green’s function Monte Carlo was
+used to calculate light and medium-mass nuclei mainly up to oxygen-16 [29, 30] and for the calculation
+of the Hoyle state, where the theoretical prediction is 10.4(5) MeV, which is far off from the experimental
+value of 7.65 MeV [31].
+
+Another approach is NLEFT, which discretizes space (and time) and uses the chiral Lagrangian as the
+underlying theory making ab initio calculations possible. Generally, one confines the physical system in
+a discrete box of size L? with spatial lattice length L = N,a with N; nodes and lattice spacing a. Finally,
+one solves the Schrodinger equation
+
+H|¥) = E|®), (1.12)
+
+using the Lanczos algorithm for sparse matrices. This approach scales at least with D3%>-) where N P
+is the number of particles and even stronger if the particles have inner spin-isospin structure. Hence it
+is limited to very few particles. For more particles, the time direction is discretized as well and Monte
+Carlo methods are used again to calculate the corresponding generating functional,
+
+Z,@) = (¥,|exp(-H)|P,), (1.13)
+
+where |‘¥,) is a prepared initial state. While any arbitrary initial state with non-zero overlap with the
+ground state would be applicable, it might be advisable to use states reflecting the expected symmetry of
+the ground state for improved convergence. A famous example is the Wigner SU(4) symmetry which is

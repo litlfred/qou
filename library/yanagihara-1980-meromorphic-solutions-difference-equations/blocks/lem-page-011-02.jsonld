@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/lem-page-011-02",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "pageStart": 11,
+  "pageEnd": 11,
+  "text": "lem-page-011-02.md",
+  "derivedFrom": "library/yanagihara-1980-meromorphic-solutions-difference-equations/sections/page-011",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/yanagihara-1980-meromorphic-solutions-difference-equations/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "16",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/page-011.md (p. 11-11)",
+    "claim_id": "yanagihara-1980-meromorphic-solutions-difference-equations#lemma:16",
+    "lean_status": "unformalized"
+  }
+}

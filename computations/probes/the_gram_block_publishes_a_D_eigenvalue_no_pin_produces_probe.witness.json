@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T18:22:55.885166+00:00",
-  "commitSha": "c2ca50928f0d89f5159939a87e0d4204ce4afe77",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-15T20:11:10.236407+00:00",
+  "commitSha": "6898a93de88af7d81d0c34b80d3a9160e6ba9680",
   "assertions": [
     {
       "name": "no registered q0 produces the published 4.23033920 — so it is a transcription error, not a pin difference",
@@ -48,11 +48,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 42,
   "computation": "the_gram_block_publishes_a_D_eigenvalue_no_pin_produces_probe",
   "scriptFile": "the_gram_block_publishes_a_D_eigenvalue_no_pin_produces_probe.py",
-  "scriptHash": "fb605057d93e",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "73230aa55e05",
+  "scriptCommitSha": "547b78208f6bb667ec8b3580f16390a74dbb9ce4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -60,14 +60,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e87a23f8d6fd6732"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "24ca776b0ad05497"
   },
   "invocation": {
     "argv": [
@@ -130,5 +131,7 @@
     "The C column is NOT verified. Convention C is excised, so no independent computation of it exists in the corpus. The 2.0e-8 figure recorded here is the published eigenvalues multiplied against the published determinant -- internal consistency, which a set of wrong-but-consistent numbers would also pass.",
     "Asserts the CORRECTED state, not the defect. A probe that asserts a defect goes red the moment the fix lands -- the muon_pin_three_values failure qou-i229 already records.",
     "Says nothing about the signature reading; this block already settled that and withdrew its earlier indefinite/Lorentzian claim in 748ba9b1."
-  ]
+  ],
+  "q0Anchor": "ambiguous",
+  "q0AnchorReason": "comparison by design: evaluates the published Gram D-eigenvalue at every registered pin (proton, live CODATA-2022 muon, retired CODATA-2018 muon) to show none of them produces it"
 }

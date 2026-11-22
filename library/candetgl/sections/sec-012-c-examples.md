@@ -8,6 +8,7 @@ pages: 12-13
 source_pdf: candetgl.pdf
 source_sha256: d788af715428b8b2
 toc_source: inferred
+doc_brief: "The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics — 27 sections: Front matter; INTRODUCTION; PRELIMINARIES"
 ---
 We give three examples to illustrate Proposition 1, each in ‘‘bare bones’’ format, and invite
 the interested reader to carry out the supporting calculations.
@@ -54,8 +55,6 @@ operator BS.
 886
 J. Math. Phys., Vol. 42, No. 2, February 2001
 Cantarella, DeTurck, and Gluck
- This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to  IP:
-129.215.149.98 On: Sat, 10 May 2014 06:24:42
 With this in mind, we invite the reader to conﬁrm Maxwell’s equation ~3.10! in this case by
 computing that
 Er522rrˆ

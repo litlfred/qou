@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-0707.2340v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "bf0f91277a5874ffca7c63af3dbfb4a97dde8c977aa4c061cefbca8fddedb301",
+  "file": "0707.2340v2.pdf"
+ },
+ "provenance": {
+  "title": "NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS",
+  "authors": "JULIUS BORCEA, PETTER BR\u00c4ND\u00c9N, AND THOMAS M. LIGGETT",
+  "arxiv": {
+   "id": "0707.2340",
+   "version": "2",
+   "primary_class": "math.PR",
+   "stamp_date": "27 Jul 2008"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

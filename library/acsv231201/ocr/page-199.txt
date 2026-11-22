@@ -1,0 +1,32 @@
+7.1 Some illustrative examples 181
+
+Figure 7.6 The gradient flow of |x| = 1/10 at three points in time, plotted on
+C? \ {0, 1} when arranged by height A(x) = h(a + ib). Left: The flow on Vj_y-xy-
+Right: The flow on V)_._,.2y.
+
+Chapter 11). Studying flows on general algebraic varieties requires us to adapt
+tools from stratified Morse theory. 4
+
+Exercise 7.2. Sketch the vector field —(V h)(a, b) on the right-hand side of
+Figure 7.5.
+
+Gradient flows form an important component of our analytic toolbox. In-
+deed, rather than computing a flow for each example, standard results in Morse
+theory usually guarantee the existence of flows that push domains of integra-
+tion down to points where saddle point approximations can be computed. Un-
+fortunately, these results require the height map to be proper (meaning that the
+set of points with height in a closed interval is compact). Because this proper-
+ness condition is usually not satisfied in our setting, it is possible for the desired
+flows not to exist.
+
+Example 7.5 (Critical Points at Infinity). Consider the diagonal sequences
+n,n of the power series expansions of 1/A(x, y) and 1/B(x, y), where A(x, y) =
+1—y-—xy and B(x, y) = 1—x-y—x’y. The negative gradient flows of the circle
+|x| = 1/10 on V4 and Vz are shown in Figure 7.6. Because y = 1/(x + 1) on
+Va, the product xy = x/(x + 1) — 1 as x — ov, and thus the height function
+A(x, y) = — log |x|—log |y| > 0. as x > oo on V4. Since h(x, y) can stay bounded
+as (x,y) goes to infinity, the height function is not proper. As seen in the left
+of Figure 7.6, the circle |x| = 1/10 stays at bounded height but never reaches a
+saddle. In fact, V4 contains no saddles, and we say that it has a critical point
+
+at infinity.

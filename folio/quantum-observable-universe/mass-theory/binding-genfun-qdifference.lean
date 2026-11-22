@@ -24,7 +24,7 @@ LaTeX label: `prop:binding-genfun-qdifference`.
 
 ## References
 
-- [manuscript] §mass-theory/binding-genfun-qdifference
+- [leitner2026] §mass-theory/binding-genfun-qdifference
 
 **Ground ring**: `ℝ` (kernel evaluated at the substrate `q₀`).
 See `GroundRingAnnotations.lean`.
@@ -49,41 +49,43 @@ structure BindingQDifferenceRecurrence where
   depth : ℕ
   /-- The body-order binding terms `B_n`. -/
   term : ℕ → ℝ
-  /-- Coefficients `c_j(q₀)` of the depth-`d` q-difference annihilating
-      operator obtained from `R` by clearing denominators. -/
-  opCoeff : ℕ → ℝ
-  /-- The fibre q-difference equation in coefficient form: the operator
-      annihilates the term sequence, `∑_{j≤d} c_j B_{n+j} = 0` for all `n`. -/
+  /-- Coefficients `c_{n,j}(q₀)` of the depth-`d` q-difference annihilating
+      operator at position `n`, obtained from `R` by clearing denominators.
+      They depend on `n` through `q^n`. -/
+  opCoeff : ℕ → ℕ → ℝ
+  /-- The fibre q-difference equation in coefficient form:
+      `∑_{j≤d} c_{n,j} B_{n+j} = 0` for all `n`. -/
   annihilates :
-    ∀ n, ∑ j ∈ Finset.range (depth + 1), opCoeff j * term (n + j) = 0
-  /-- The operator has order exactly `d`: its leading coefficient is nonzero. -/
-  leading_ne_zero : opCoeff depth ≠ 0
+    ∀ n, ∑ j ∈ Finset.range (depth + 1), opCoeff n j * term (n + j) = 0
+  /-- The operator has order exactly `d` at every position: its leading
+      coefficient is nonzero. -/
+  leading_ne_zero : ∀ n, opCoeff n depth ≠ 0
 
 /-- **L3.** The body terms obey the depth-`d` linear recurrence read off from
     the q-difference kernel:
 
-      `B_{n+d} = ∑_{j<d} (-c_j / c_d) · B_{n+j}`.
+      `B_{n+d} = ∑_{j<d} (-c_{n,j} / c_{n,d}) · B_{n+j}`.
 
     **Derived**, not projected: peel the top (`j = d`) term of the
     annihilation identity `∑_{j≤d} c_j B_{n+j} = 0` and solve for `B_{n+d}`
-    (`c_d ≠ 0`). The kernel `a_j = -c_j / c_d` is thus an output of `R`, not
-    a fit — the q-holonomic ⟹ P-recursive passage. -/
--- Ref: [manuscript] §mass-theory/binding-genfun-qdifference
+    (`c_{n,d} ≠ 0`). The coefficients `a_{n,j} = -c_{n,j} / c_{n,d}` are an
+    output of `R` and depend on `n` — the q-holonomic ⟹ q-recursive passage. -/
+-- Ref: [leitner2026] §mass-theory/binding-genfun-qdifference
 theorem binding_qdifference_recurrence (S : BindingQDifferenceRecurrence) (n : ℕ) :
     S.term (n + S.depth)
       = ∑ j ∈ Finset.range S.depth,
-          (- S.opCoeff j / S.opCoeff S.depth) * S.term (n + j) := by
-  have hd := S.leading_ne_zero
+          (- S.opCoeff n j / S.opCoeff n S.depth) * S.term (n + j) := by
+  have hd := S.leading_ne_zero n
   have h := S.annihilates n
   rw [Finset.sum_range_succ] at h
   have hcong : ∀ j ∈ Finset.range S.depth,
-      (- S.opCoeff j / S.opCoeff S.depth) * S.term (n + j)
-        = (- (S.opCoeff S.depth)⁻¹) * (S.opCoeff j * S.term (n + j)) := by
+      (- S.opCoeff n j / S.opCoeff n S.depth) * S.term (n + j)
+        = (- (S.opCoeff n S.depth)⁻¹) * (S.opCoeff n j * S.term (n + j)) := by
     intro j _
     ring
   rw [Finset.sum_congr rfl hcong, ← Finset.mul_sum]
-  have hsum : (∑ j ∈ Finset.range S.depth, S.opCoeff j * S.term (n + j))
-      = - (S.opCoeff S.depth * S.term (n + S.depth)) := by linarith [h]
+  have hsum : (∑ j ∈ Finset.range S.depth, S.opCoeff n j * S.term (n + j))
+      = - (S.opCoeff n S.depth * S.term (n + S.depth)) := by linarith [h]
   rw [hsum, neg_mul_neg, ← mul_assoc, inv_mul_cancel₀ hd, one_mul]
 
 end QOU.Mass

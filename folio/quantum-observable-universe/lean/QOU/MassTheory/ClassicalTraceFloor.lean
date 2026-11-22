@@ -68,7 +68,7 @@ arrived at from the permutation rather than from the interface list. So the
 floor's `A`-dependence *is* the chain structure, and phrasing the hypothesis this
 way makes that visible instead of tabulating two opaque counts.
 
--- Ref: [manuscript] bean qou-zrx2; computations/probes/classical_floor_derivation_probe.py
+-- Ref: [leitner2026] bean qou-zrx2; computations/probes/classical_floor_derivation_probe.py
 -/
 
 namespace QOU.MassTheory

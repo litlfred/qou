@@ -2,17 +2,18 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prop-boltzmann-constant",
+  "@id": "papers/quantum-observable-universe/blocks/def-boltzmann-constant",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Definition",
     "doco:Section"
   ],
-  "label": "prop:boltzmann-constant",
-  "kind": "proposition",
-  "title": "Boltzmann constant is unity in QOU natural units",
+  "label": "def:boltzmann-constant",
+  "kind": "definition",
+  "title": "Boltzmann constant in QOU natural units",
   "uses": [
     "papers/quantum-observable-universe/blocks/def-quantum-temperature"
   ],

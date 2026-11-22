@@ -8,6 +8,7 @@ pages: 18-20
 source_pdf: 1909.06744v1.pdf
 source_sha256: 82e3980da78c07da
 toc_source: inferred
+doc_brief: "Springer correspondence for symmetric spaces — This is a survey on the Springer correspondence for symmetric spaces."
 ---
 uni, the case H = SO2n+1
 In this section, we consider the generalized Springer correspondence for Gιθ

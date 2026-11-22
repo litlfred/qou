@@ -248,7 +248,7 @@
             1
           ]
         ],
-        "contentBlock": "prop:force-carrier-intertwining-correspondence",
+        "contentBlock": "conj:force-carrier-intertwining-correspondence",
         "verdict": "SAFE",
         "reason": "trace-only: the number goes through a Markov trace, which puts weight zero on tall blocks by the row cap."
       },
@@ -263,7 +263,7 @@
             1
           ]
         ],
-        "contentBlock": "prop:force-carrier-intertwining-correspondence",
+        "contentBlock": "conj:force-carrier-intertwining-correspondence",
         "verdict": "SAFE",
         "reason": "inert: neither a spectral nor a trace reading."
       },

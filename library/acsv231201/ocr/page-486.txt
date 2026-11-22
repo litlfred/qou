@@ -1,0 +1,44 @@
+468 Algebraic topology
+
+the complex multiples of p, while the 1-chains are the complex multiples of ¢.
+Any 0-chain is trivially a cycle, and the only boundary is 0€ = p — p = 0, so
+H,(S') = C. This computation also shows that every 1-chain is a cycle, and
+there are no non-trivial boundaries because there are no 2-cycles, so H,(S') =
+C while H,(S') = 0 for k > 2. 4
+
+Exercise B.3. Compute the homology of the circle by triangulating it, veri-
+fying you get the same result as Example B.6. Compute the homology of the
+sphere S? using similar techniques.
+
+B.2 Tools for homology
+
+Although we can compute the homology of a variety, or the complement of a
+variety, by triangulating the space and computing simplicial homology, this can
+be very expensive (such algorithms are generally considered efficient if they
+run in single-exponential instead of doubly-exponential time; see [Bas08] for
+a survey of complexity results in this area). Furthermore, instead of computing
+the entire set of homology groups of a singular variety, we often only need
+some partial information in our integral manipulations, for instance throwing
+away topological information that does not affect dominant asymptotics.
+
+Because of such considerations, it is useful to have additional tools to com-
+pute homology. One of the most effective approaches is to work recursively,
+studying a space X using a subspace A C X and the quotient space X/A. The
+relationship between the homology groups of X, X/A, and A is explicit but
+intricate, with the homologies fitting into a type of nesting structure. We thus
+require some additional algebraic constructions to describe precisely what is
+going on.
+
+An exact sequence of abelian groups (and in particular, complex vector
+spaces) is a sequence of maps
+
++ Xngt mes y, Lyx) Foes
+where the image of each map is equal to the kernel of the next. For instance, an
+exact sequence of the form 0 SASB says 0 = Image(e) = Kernel(a), so a
+is injective, while an exact sequence of the form A “B30 says Image(@) =
+Kernel(e) = B, so a is surjective. A short exact sequence is an exact sequence
+of the form
+
+0O->X-~ Y>Z- 0,
+
+meaning the map from X to Y is injective and the map from Y to Z is surjective.

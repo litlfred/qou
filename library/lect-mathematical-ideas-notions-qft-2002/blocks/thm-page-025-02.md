@@ -1,0 +1,1 @@
+(1) There exists a limit Woo := limn—co me, This limit is given by the formula por) oo = Yd] g;") > aut)’ n TeGt (n)[0] |Aut(T)| where G*” (n) 0] denotes the set of planar connected twisted fat graphs, i.e. those which have genus zero. (2) Moreover, there exists an expansion In Zy /N? = Dg>o a,N~*8, where

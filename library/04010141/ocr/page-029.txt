@@ -1,0 +1,48 @@
+Cellular algebras and diagram algebras 169
+
+number of entries of the array which are equal to i. If the partition of
+n which corresponds to the Young diagram is 4, we call the array an
+I — labelling of A, or simply an J-partition (of n). Clearly describes
+the GL(V)-orbit of the nilpotent transformation E.
+
+Remark 7.12. The distinct [-partitions of n parametrise the nilpo-
+tent representations of Q,. of total dimension n, with two I-partitions
+deemed to be the same if one is obtained from the other by permuting
+rows (necessarily of the same length). We denote an J-labelling of by
+a symbol (4,1), where I refers to the labelling. In view of (7.9)(i), corre-
+sponding to each I-partition (A, 1), we have a standard module for He(q),
+which we denote by M(),1), which is uniquely defined up to isomorphism;
+similarly for the top quotient L(,,) mentioned above. Further, in view of
+(7.9) (ii), we also have associated to (A, 1) a corresponding variety, which
+we denote O(,,; the closure relation among these varieties defines a
+partial order among I-partitions, which we denote <.
+
+Lusztig (see [30, §5 and Appendix]) has given a necessary and suf-
+ficient criterion for L(,,1) to be non-zero. Say that (A,1) is aperiodic if
+for each m € Zo there exists an element i € J such that (,1) does not
+have a row of length m starting with i. Then L,,, 4 0 if and only if
+(,)) is aperiodic.
+
+We may now express (7.3) in the language of I-partitions as follows.
+
+ue”
+
+Note that the dimension vector d of an J-partition determines the “s
+in the corresponding pair (s, N).
+Corollary 7.13. Let (4,1) and (X’,1') be two I-partitions with the
+
+same dimension vector such that (X',l’) < (A, 1) in the sense above, and
+suppose that (A,1) is aperiodic. Define
+
+(7.14) Kano) =. dim 238 ny (ICOay))t*
+j20
+Then
+(7.15) Moy: Lol = Koyy,ory()-
+Tf (A, 1) and (X’,l’) do not have the same dimension vector, [M(,,1)
+Lown] =0.
+
+Our result (6.9) pertains to I-partitions with at most 2 parts (rows).
+Note that in this case, the criterion (6.3) given in our result (6.2) for
+L,a,n to be non-zero coincides with Lusztig’s aperiodicity. Denote the set
+of I-partitions with dimension vector d by P(d), and the set of elements
+of P(d) with at most 2 parts by PS?(d). The subsets corresponding

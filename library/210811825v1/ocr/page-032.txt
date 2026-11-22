@@ -1,0 +1,48 @@
+O O
+
+Theorem 1.27 The dimension of the first eigenspace of A(B) is 3.
+
+This result was stated by Jenni in [42] after being proved in his thesis [41]. Upon
+careful inspection, a gap was found in this proof, relating to the analysis of 3 and 4
+dimensional irreducible representations. In this work, we give a proof, utilizing the entire
+automorphish group as opbosed to asmaller subgroup. We give the associated irreducible
+representation explicitly. The proof relies on a conjecture, for which numerical evidence
+is given in Appendix C. We also suggest how this conjecture may be proved in future
+
+work. We also prove
+Theorem 1.28 The dimension of the second eigenspace of A(B) is 4.
+
+Remark 1.29 Both of these theorems are consistent with the numerical calculations of
+eigenvalues listed in Table C.1. We observed in the numerics that there are 3 eigenvalues
+
+roughly equal to 3.84 and 4 eigenvalues roughly equal to 5.85.
+
+The Klein quartic
+
+The Klein quartic, also called Klein’s curve, has the largest automorphism group of all
+compact Riemann surfaces of genus 3. Klein studied the quotient of the hyperbolic plane
+
+by Fuchsian groups, that is, discrete subgroups of PSL2(R). He found the group
+
+(7) = PSL2(Z;) C1
+
+to be of particular interest, and highlighted some of its special properties [48]. Since
+then, it has been studied extensively both as a Riemann surfacd ahd as an algebraic
+curve; the best introduction is the book “The Eightfold Way” [53], written to accompany
+the installation of a statue of the surface at the MSRI, Berkeley. The book covers the
+geometry of the surface, a number theoretical approach to the surface, and many topics
+in algebra that highlight the extensive interest in the curve. So far, however, the spectral
+theory of the surface remains relatively untouched; the large symmetry group suggests
+that surface may maximize A; among genus 3 compact Riemann surfaces.
+
+Freobtanr the surface by associating sides 2n + 1 and 2n+6 mod (14),n=0,...,6
+
+i ). It is possible to tessellate this fundamental polygon with 336 triangles (see
+igure 4.2). This corresponds to the full isometry group of the surface, PGL2(Z7), which
+
+has order 336. The group of orientation preserving isometries is half the size of this, that
+is, 168. This means that the Klein quartic not only has the largest automorphism group
+
+for genus 3, it is also optimal, by the following classical theorem.
+
+22

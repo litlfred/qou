@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0302267v2
-doc_title: "arXiv:math/0302267v2 [math.NT] 27 Feb 2003"
+doc_title: "Groupes fondamentaux motiviques de Tate mixte"
 section_id: sec-002-1-motifs-de-tate-mixte-sur-lanneau-des-s-entiers
 section_title: "Motifs de Tate mixte sur l’anneau des S-entiers de k"
 section_number: 1
@@ -8,6 +8,7 @@ pages: 5-15
 source_pdf: 0302267v2.pdf
 source_sha256: c09c8cabd5f9d8e6
 toc_source: inferred
+doc_brief: "Groupes fondamentaux motiviques de Tate mixte — We deﬁne the category of mixed Tate motives over the ring of S-integers of a number ﬁeld."
 ---
 1.1. Soit k un corps. Nombre de r´esultats cit´es d´ependant de la r´esolution des singularit´es,
 nous supposons k de caract´eristique 0. Hanamura (1995), Levine (1998) et Voevodsky

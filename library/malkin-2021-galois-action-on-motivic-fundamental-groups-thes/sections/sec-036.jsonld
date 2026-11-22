@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/sections/sec-036",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The weight 4 case: Euler complexes",
+  "pageStart": 109,
+  "pageEnd": 112,
+  "contains": [
+    "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-036",
+    "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/lem-sec-036-01",
+    "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/thm-sec-036-02",
+    "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/lem-sec-036-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/manifest.jsonld",
+  "provenance": "ingested"
+}

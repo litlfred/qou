@@ -1,4 +1,4 @@
-*The atomic binding energy derives directly from the six terms. It requires zero empirical parameter fits:*
+*The atomic binding energy is assembled from the six terms, with energy scales $E_{0,\beta}$ (the β-decay scale), $\alpha = m_e \cdot 8G$ ([conj:binding-scale-catalan](#conj:binding-scale-catalan)) and $m_e$:*
 
 $$
 \begin{aligned}
@@ -17,3 +17,10 @@ $$
 $$
 
 The scale difference separating $T_1$ from $T_2+T_3$ isolates the weak scale from the hadronic core.
+
+**Comparison boundary.** No derived value of $E_{0,\beta}$ is on record.
+The numerical evaluation sets it to the measured free-neutron β-decay
+$Q$-value (the CAL-2 proxy), and takes the free-particle baseline
+$Z\,m_{\mathfrak{p}} + N\,m_{\mathfrak{n}} + Z\,m_e$ from CODATA. Those
+inputs belong to the comparison with AME binding energies, not to the
+assembly stated above.

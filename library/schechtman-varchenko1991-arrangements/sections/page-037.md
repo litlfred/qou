@@ -1,0 +1,69 @@
+---
+doc_id: schechtman-varchenko1991-arrangements
+doc_title: "Arrangements of hyperplanes and Lie algebra homology"
+section_id: page-037
+section_title: "Page 37"
+pages: 37-37
+pdf_page: 37
+source_pdf: schechtman-varchenko1991-arrangements.pdf
+source_sha256: 0100fd32438740f0
+text_source: ocr
+granularity: page
+doc_brief: "Arrangements of hyperplanes and Lie algebra homology — 56 sections: Page 1; Page 2; Page 3"
+---
+Arrangements of hyperplanes and Lie algebra homology 175
+
+Let us consider the square
+
+(6.8.9) " | In
+Oj
+
+A, ——> A,
+where ef is the conjugate to the multiplication by e;.
+6.8.10 Lemma. If j=j, then
+
+ny ex =(— 1y*? KON).
+
+Proof. This follows easily from the relation in A,:
+6.8.11 Lemma.
+
+oJ
+p+i
+1 2 p-1 P
+
+oO O mes
+i, in Ip-1 Ip
+
+P 1 +1 +2 p+1
+=> (-1)-4 ° ‘ 2 O° q q q O70
+
+q=0 hh Ih iq j ig+t ip
+
+Proof of 6.8.11 Induction by p, using the Orlik-Solomon relation
+
+ej ej ej
+° YY vA
+2
+ete te e+e e =0
+i k i k i k
+
+(e=o or x). O
+
+Now let us consider the Shapovalov form S: M,-> M#. For ceXy S(f,)
+is the image of the canonical generator of M$ under the composition
+
+ey : eS (2) 5 eb (Nn) =
+M$—— May Me), 02) > +s MF.
+
+From this remark and from 6.8.10 follows 6.6 for A=(1, 1, ..., 1) and p=0.
+
+6.8.12 Remark. In assumptions of 6.8.11 identify spaces /,, , with the corre-
+sponding spaces of differential forms. Define operators resy,, (resp., resy1): Ay.
+> @, as follows. For a form w=a(t));-; take its residue along the hyperplane
+t;=t; (resp., t;=z,) and then put t;=¢; (resp., t;=2,).
+
+One verifies easily that after identification (6.8.5) the operator resj1+ > resy,,
+corresponds (up to a sign) to f* (cf. 6.8.10). ui
+
+6.9 Proof of 6.6 for A=(1, 1,..., 1), n=0 and p=1. We'll reduce to the case
+n=1, p=0, using the following trick.

@@ -378,7 +378,7 @@ def main() -> int:
     vals_q0_norm = [results[A]["alpha_5_normalized_q0"] for A in [2, 3, 4]]
     spread_n = max(vals_q0_norm) - min(vals_q0_norm)
     median_n = sorted(vals_q0_norm)[len(vals_q0_norm) // 2]
-    rel_spread_n = spread_n / abs(median_n) if median_n != 0 else float("inf")
+    rel_spread_n = spread_n / abs(median_n) if median_n != 0 else mp.inf
     print(f"  α_5(2)/[6]!, α_5(3)/[9]!, α_5(4)/[12]! at q_0:")
     for A in [2, 3, 4]:
         print(f"    A={A}: {results[A]['alpha_5_normalized_q0']:+.6e}")
@@ -391,7 +391,7 @@ def main() -> int:
     vals_q0_raw = [results[A]["alpha_5_raw_q0"] for A in [2, 3, 4]]
     spread_r = max(vals_q0_raw) - min(vals_q0_raw)
     median_r = sorted(vals_q0_raw)[len(vals_q0_raw) // 2]
-    rel_spread_r = spread_r / abs(median_r) if median_r != 0 else float("inf")
+    rel_spread_r = spread_r / abs(median_r) if median_r != 0 else mp.inf
     for A in [2, 3, 4]:
         print(f"    A={A}: {results[A]['alpha_5_raw_q0']:+.6e}")
     print(f"  Range: {spread_r:.4e}, median: {median_r:.4e}")

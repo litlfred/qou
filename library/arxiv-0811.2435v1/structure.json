@@ -6,10 +6,22 @@
   "sha256": "615b04eca83bcadea694b71a073c1bdb91fa776c2659656e13b2e7b727259bb1",
   "bytes": 1120865,
   "pages": 148,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 104,
+    "reason": "12 of 219 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 106,
+    "reason": "18 of 208 words are a stray single letter: the text layer splits words"
+   }
+  ],
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,18 +33,27 @@
   "doi": null,
   "title": "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations",
   "authors_raw": "Donaldson-Thomas invariants and cluster",
-  "abstract": null,
-  "docinfo": {
-   "Producer": "GPL Ghostscript 10.01.2",
-   "CreationDate": "D:20241126173749-05'00'",
-   "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  },
   "title_lines": [
    "Stability structures, motivic"
   ],
-  "title_prev": "Stability structures, motivic"
+  "abstract": null,
+  "docinfo": {
+   "Producer": "GPL Ghostscript 10.01.2",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20241126173749-05'00'"
+  },
+  "title_raw": "Stability structures, motivic",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations",
+   "outline": "Introduction",
+   "text": "Stability structures, motivic",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -40,361 +61,1646 @@
    "title": "Introduction",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Counting problems for 3-dimensional Calabi-Yau varieties",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Non-commutative varieties with polarization",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Donaldson-Thomas invariants for non-commutative 3d Calabi-Yau varieties",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Multiplicative wall-crossing formula",
    "page": 10,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Some analogies and speculations",
    "page": 15,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "About the content of the paper",
    "page": 17,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 1,
    "title": "Stability conditions for graded Lie algebras",
    "page": 20,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 2,
    "title": "Stability data",
    "page": 20,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 2,
    "title": "Reformulation of the stability data",
    "page": 22,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 2,
    "title": "Topology and the wall-crossing formula",
    "page": 25,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
   },
   {
    "level": 2,
    "title": "Crossing the wall of second kind",
    "page": 30,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "30"
   },
   {
    "level": 2,
    "title": "Invariants () and the dilogarithm",
    "page": 32,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "32"
   },
   {
    "level": 2,
    "title": "Symplectic double torus",
    "page": 33,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
   },
   {
    "level": 2,
    "title": "Complex integrable systems and stability data",
    "page": 35,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "35"
   },
   {
    "level": 2,
    "title": "Relation with the works of Joyce, and of Bridgeland and Toledano-Laredo",
    "page": 38,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "38"
   },
   {
    "level": 2,
    "title": "Stability data on gl(n)",
    "page": 43,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "43"
   },
   {
    "level": 1,
    "title": "Ind-constructible categories and stability structures",
    "page": 45,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "45"
   },
   {
    "level": 2,
    "title": "Ind-constructible categories",
    "page": 45,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "45"
   },
   {
    "level": 2,
    "title": "Stack of objects",
    "page": 48,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "48"
   },
   {
    "level": 2,
    "title": "Ind-constructible Calabi-Yau categories and potentials",
    "page": 53,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "53"
   },
   {
    "level": 2,
    "title": "Topology on the space of stability structures",
    "page": 56,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "56"
   },
   {
    "level": 1,
    "title": "Motivic functions and motivic Milnor fiber",
    "page": 60,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "60"
   },
   {
    "level": 2,
    "title": "Recollection on motivic functions",
    "page": 60,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "60"
   },
   {
    "level": 2,
    "title": "Motivic functions in the equivariant setting",
    "page": 62,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "62"
   },
   {
    "level": 2,
    "title": "Motivic Milnor fiber",
    "page": 65,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "65"
   },
   {
    "level": 2,
    "title": "An integral identity",
    "page": 69,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "69"
   },
   {
    "level": 2,
    "title": "Equivalence relation on motivic functions",
    "page": 73,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "73"
   },
   {
    "level": 2,
    "title": "Numerical realization of motivic functions",
    "page": 75,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "75"
   },
   {
    "level": 1,
    "title": "Orientation data on odd Calabi-Yau categories",
    "page": 77,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "77"
   },
   {
    "level": 2,
    "title": "Remarks on the motivic Milnor fiber of a quadratic form",
    "page": 77,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "77"
   },
   {
    "level": 2,
    "title": "Orientation data",
    "page": 80,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "80"
   },
   {
    "level": 2,
    "title": "Orientation data from a splitting of bifunctors",
    "page": 83,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "83"
   },
   {
    "level": 1,
    "title": "Motivic Donaldson-Thomas invariants",
    "page": 84,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "84"
   },
   {
    "level": 2,
    "title": "Motivic Hall algebra and stability data",
    "page": 84,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "84"
   },
   {
    "level": 2,
    "title": "Motivic weights and stability data on motivic quantum tori",
    "page": 92,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "From motivic Hall algebra to motivic quantum torus",
    "page": 95,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "95"
   },
   {
    "level": 2,
    "title": "Examples",
    "page": 102,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "102"
   },
   {
    "level": 2,
    "title": "D0-D6 BPS bound states: an example related to the MacMahon function",
    "page": 105,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "105"
   },
   {
    "level": 1,
    "title": "Quasi-classical limit and integrality conjecture",
    "page": 109,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "109"
   },
   {
    "level": 2,
    "title": "Quasi-classical limit, numerical DT-invariants",
    "page": 109,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "109"
   },
   {
    "level": 2,
    "title": "Deformation invariance and intermediate Jacobian",
    "page": 112,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "112"
   },
   {
    "level": 2,
    "title": "Absence of poles in the series AVHall",
    "page": 115,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "115"
   },
   {
    "level": 2,
    "title": "Reduction to the case of category of modules",
    "page": 120,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "120"
   },
   {
    "level": 2,
    "title": "Evidence for the integrality conjecture",
    "page": 125,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "125"
   },
   {
    "level": 1,
    "title": "Donaldson-Thomas invariants and cluster transformations",
    "page": 128,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "128"
   },
   {
    "level": 2,
    "title": "Spherical collections and mutations",
    "page": 128,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "128"
   },
   {
    "level": 2,
    "title": "Orientation data for cluster collections",
    "page": 136,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "136"
   },
   {
    "level": 2,
    "title": "Quantum DT-invariants for quivers",
    "page": 137,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "137"
   },
   {
    "level": 2,
    "title": "Quivers and cluster transformations",
    "page": 137,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "137"
   },
   {
    "level": 1,
    "title": "References",
    "page": 142,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 40,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 41,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 42,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 45,
+   "label": "45",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 47,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 48,
+   "label": "48",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 50,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 51,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 52,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 53,
+   "label": "53",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 55,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 56,
+   "label": "56",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 58,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 59,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 60,
+   "label": "60",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 62,
+   "label": "62",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 64,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 65,
+   "label": "65",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 66,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 67,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 68,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 69,
+   "label": "69",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 70,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 71,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 72,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 73,
+   "label": "73",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 74,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 75,
+   "label": "75",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 76,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 77,
+   "label": "77",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 78,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 79,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 80,
+   "label": "80",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 81,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 82,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 83,
+   "label": "83",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 84,
+   "label": "84",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 85,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 86,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 87,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 88,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 89,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 90,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 91,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 92,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 93,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 94,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 95,
+   "label": "95",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 96,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 97,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 98,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 99,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 100,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 101,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 102,
+   "label": "102",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 103,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 104,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 105,
+   "label": "105",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 106,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 107,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 108,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 109,
+   "label": "109",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 110,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 111,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 112,
+   "label": "112",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 113,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 114,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 115,
+   "label": "115",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 116,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 117,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 118,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 119,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 120,
+   "label": "120",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 121,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 122,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 123,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 124,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 125,
+   "label": "125",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 126,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 127,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 128,
+   "label": "128",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 129,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 130,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 131,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 132,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 133,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 134,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 135,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 136,
+   "label": "136",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 137,
+   "label": "137",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 138,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 139,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 140,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 141,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 142,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 143,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 144,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 145,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 146,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 147,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 148,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 3841,
+   "n_words": 1028,
+   "label_start": null,
+   "label_end": "3"
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
@@ -402,8 +1708,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 12,
+   "n_words": 1,
+   "label_start": "3",
+   "label_end": "3"
   },
   {
    "id": "sec-001-counting-problems-for-3-dimensional-calabi-yau-v",
@@ -412,8 +1720,10 @@
    "level": 2,
    "page_start": 3,
    "page_end": 5,
-   "n_chars": 4381,
-   "n_words": 758
+   "n_chars": 4393,
+   "n_words": 728,
+   "label_start": "3",
+   "label_end": "5"
   },
   {
    "id": "sec-002-non-commutative-varieties-with-polarization",
@@ -422,8 +1732,10 @@
    "level": 2,
    "page_start": 5,
    "page_end": 9,
-   "n_chars": 8862,
-   "n_words": 1579
+   "n_chars": 8856,
+   "n_words": 1590,
+   "label_start": "5",
+   "label_end": "9"
   },
   {
    "id": "sec-003-donaldson-thomas-invariants-for-non-commutative",
@@ -432,8 +1744,10 @@
    "level": 2,
    "page_start": 9,
    "page_end": 10,
-   "n_chars": 2701,
-   "n_words": 456
+   "n_chars": 2733,
+   "n_words": 463,
+   "label_start": "9",
+   "label_end": "10"
   },
   {
    "id": "sec-004-multiplicative-wall-crossing-formula",
@@ -442,8 +1756,10 @@
    "level": 2,
    "page_start": 10,
    "page_end": 15,
-   "n_chars": 8677,
-   "n_words": 1626
+   "n_chars": 8618,
+   "n_words": 1664,
+   "label_start": "10",
+   "label_end": "15"
   },
   {
    "id": "sec-005-some-analogies-and-speculations",
@@ -452,8 +1768,10 @@
    "level": 2,
    "page_start": 15,
    "page_end": 17,
-   "n_chars": 5337,
-   "n_words": 917
+   "n_chars": 5332,
+   "n_words": 884,
+   "label_start": "15",
+   "label_end": "17"
   },
   {
    "id": "sec-006-about-the-content-of-the-paper",
@@ -462,8 +1780,10 @@
    "level": 2,
    "page_start": 17,
    "page_end": 20,
-   "n_chars": 8199,
-   "n_words": 1392
+   "n_chars": 8151,
+   "n_words": 1319,
+   "label_start": "17",
+   "label_end": "20"
   },
   {
    "id": "sec-007-stability-conditions-for-graded-lie-algebras",
@@ -472,8 +1792,10 @@
    "level": 1,
    "page_start": 20,
    "page_end": 20,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 44,
+   "n_words": 6,
+   "label_start": "20",
+   "label_end": "20"
   },
   {
    "id": "sec-008-stability-data",
@@ -482,8 +1804,10 @@
    "level": 2,
    "page_start": 20,
    "page_end": 22,
-   "n_chars": 2976,
-   "n_words": 563
+   "n_chars": 2974,
+   "n_words": 567,
+   "label_start": "20",
+   "label_end": "22"
   },
   {
    "id": "sec-009-reformulation-of-the-stability-data",
@@ -492,8 +1816,10 @@
    "level": 2,
    "page_start": 22,
    "page_end": 25,
-   "n_chars": 6291,
-   "n_words": 1200
+   "n_chars": 6304,
+   "n_words": 1201,
+   "label_start": "22",
+   "label_end": "25"
   },
   {
    "id": "sec-010-topology-and-the-wall-crossing-formula",
@@ -502,8 +1828,10 @@
    "level": 2,
    "page_start": 25,
    "page_end": 30,
-   "n_chars": 10687,
-   "n_words": 1989
+   "n_chars": 10333,
+   "n_words": 2038,
+   "label_start": "25",
+   "label_end": "30"
   },
   {
    "id": "sec-011-crossing-the-wall-of-second-kind",
@@ -511,332 +1839,507 @@
    "title": "Crossing the wall of second kind",
    "level": 2,
    "page_start": 30,
-   "page_end": 33,
-   "n_chars": 6337,
-   "n_words": 1181
+   "page_end": 32,
+   "n_chars": 4383,
+   "n_words": 847,
+   "label_start": "30",
+   "label_end": "32"
   },
   {
-   "id": "sec-012-symplectic-double-torus",
+   "id": "sec-012-invariants-and-the-dilogarithm",
+   "number": null,
+   "title": "Invariants () and the dilogarithm",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 33,
+   "n_chars": 1707,
+   "n_words": 317,
+   "label_start": "32",
+   "label_end": "33"
+  },
+  {
+   "id": "sec-013-symplectic-double-torus",
    "number": null,
    "title": "Symplectic double torus",
    "level": 2,
    "page_start": 33,
    "page_end": 35,
-   "n_chars": 2840,
-   "n_words": 532
+   "n_chars": 2870,
+   "n_words": 541,
+   "label_start": "33",
+   "label_end": "35"
   },
   {
-   "id": "sec-013-complex-integrable-systems-and-stability-data",
+   "id": "sec-014-complex-integrable-systems-and-stability-data",
    "number": null,
    "title": "Complex integrable systems and stability data",
    "level": 2,
    "page_start": 35,
    "page_end": 38,
-   "n_chars": 7196,
-   "n_words": 1357
+   "n_chars": 7230,
+   "n_words": 1351,
+   "label_start": "35",
+   "label_end": "38"
   },
   {
-   "id": "sec-014-relation-with-the-works-of-joyce-and-of-bridgela",
+   "id": "sec-015-relation-with-the-works-of-joyce-and-of-bridgela",
    "number": null,
    "title": "Relation with the works of Joyce, and of Bridgeland and Toledano-Laredo",
    "level": 2,
    "page_start": 38,
    "page_end": 43,
-   "n_chars": 7333,
-   "n_words": 1377
+   "n_chars": 7403,
+   "n_words": 1558,
+   "label_start": "38",
+   "label_end": "43"
   },
   {
-   "id": "sec-015-stability-data-on-gln",
+   "id": "sec-016-stability-data-on-gln",
    "number": null,
    "title": "Stability data on gl(n)",
    "level": 2,
    "page_start": 43,
    "page_end": 45,
-   "n_chars": 2755,
-   "n_words": 491
+   "n_chars": 2799,
+   "n_words": 515,
+   "label_start": "43",
+   "label_end": "45"
   },
   {
-   "id": "sec-016-ind-constructible-categories-and-stability-struc",
+   "id": "sec-017-ind-constructible-categories-and-stability-struc",
    "number": null,
    "title": "Ind-constructible categories and stability structures",
    "level": 1,
    "page_start": 45,
    "page_end": 48,
-   "n_chars": 7477,
-   "n_words": 1263
+   "n_chars": 7504,
+   "n_words": 1302,
+   "label_start": "45",
+   "label_end": "48"
   },
   {
-   "id": "sec-017-stack-of-objects",
+   "id": "sec-018-stack-of-objects",
    "number": null,
    "title": "Stack of objects",
    "level": 2,
    "page_start": 48,
    "page_end": 53,
-   "n_chars": 11180,
-   "n_words": 1930
+   "n_chars": 11141,
+   "n_words": 1934,
+   "label_start": "48",
+   "label_end": "53"
   },
   {
-   "id": "sec-018-ind-constructible-calabi-yau-categories-and-pote",
+   "id": "sec-019-ind-constructible-calabi-yau-categories-and-pote",
    "number": null,
    "title": "Ind-constructible Calabi-Yau categories and potentials",
    "level": 2,
    "page_start": 53,
    "page_end": 56,
-   "n_chars": 7090,
-   "n_words": 1263
+   "n_chars": 7079,
+   "n_words": 1304,
+   "label_start": "53",
+   "label_end": "56"
   },
   {
-   "id": "sec-019-topology-on-the-space-of-stability-structures",
+   "id": "sec-020-topology-on-the-space-of-stability-structures",
    "number": null,
    "title": "Topology on the space of stability structures",
    "level": 2,
    "page_start": 56,
    "page_end": 60,
-   "n_chars": 7086,
-   "n_words": 1304
+   "n_chars": 7093,
+   "n_words": 1328,
+   "label_start": "56",
+   "label_end": "60"
   },
   {
-   "id": "sec-020-recollection-on-motivic-functions",
+   "id": "sec-021-motivic-functions-and-motivic-milnor-fiber",
+   "number": null,
+   "title": "Motivic functions and motivic Milnor fiber",
+   "level": 1,
+   "page_start": 60,
+   "page_end": 60,
+   "n_chars": 41,
+   "n_words": 6,
+   "label_start": "60",
+   "label_end": "60"
+  },
+  {
+   "id": "sec-022-recollection-on-motivic-functions",
    "number": null,
    "title": "Recollection on motivic functions",
    "level": 2,
    "page_start": 60,
    "page_end": 62,
-   "n_chars": 3418,
-   "n_words": 592
+   "n_chars": 3420,
+   "n_words": 640,
+   "label_start": "60",
+   "label_end": "62"
   },
   {
-   "id": "sec-021-motivic-functions-in-the-equivariant-setting",
+   "id": "sec-023-motivic-functions-in-the-equivariant-setting",
    "number": null,
    "title": "Motivic functions in the equivariant setting",
    "level": 2,
    "page_start": 62,
-   "page_end": 69,
-   "n_chars": 13063,
-   "n_words": 2358
+   "page_end": 65,
+   "n_chars": 4498,
+   "n_words": 821,
+   "label_start": "62",
+   "label_end": "65"
   },
   {
-   "id": "sec-022-an-integral-identity",
+   "id": "sec-024-motivic-milnor-fiber",
+   "number": null,
+   "title": "Motivic Milnor fiber",
+   "level": 2,
+   "page_start": 65,
+   "page_end": 69,
+   "n_chars": 8575,
+   "n_words": 1645,
+   "label_start": "65",
+   "label_end": "69"
+  },
+  {
+   "id": "sec-025-an-integral-identity",
    "number": null,
    "title": "An integral identity",
    "level": 2,
    "page_start": 69,
    "page_end": 73,
-   "n_chars": 6204,
-   "n_words": 1109
+   "n_chars": 6322,
+   "n_words": 1209,
+   "label_start": "69",
+   "label_end": "73"
   },
   {
-   "id": "sec-023-equivalence-relation-on-motivic-functions",
+   "id": "sec-026-equivalence-relation-on-motivic-functions",
    "number": null,
    "title": "Equivalence relation on motivic functions",
    "level": 2,
    "page_start": 73,
    "page_end": 75,
-   "n_chars": 4879,
-   "n_words": 855
+   "n_chars": 4937,
+   "n_words": 874,
+   "label_start": "73",
+   "label_end": "75"
   },
   {
-   "id": "sec-024-numerical-realization-of-motivic-functions",
+   "id": "sec-027-numerical-realization-of-motivic-functions",
    "number": null,
    "title": "Numerical realization of motivic functions",
    "level": 2,
    "page_start": 75,
-   "page_end": 80,
-   "n_chars": 9204,
-   "n_words": 1711
+   "page_end": 77,
+   "n_chars": 3539,
+   "n_words": 725,
+   "label_start": "75",
+   "label_end": "77"
   },
   {
-   "id": "sec-025-orientation-data",
+   "id": "sec-028-orientation-data-on-odd-calabi-yau-categories",
+   "number": null,
+   "title": "Orientation data on odd Calabi-Yau categories",
+   "level": 1,
+   "page_start": 77,
+   "page_end": 77,
+   "n_chars": 167,
+   "n_words": 27,
+   "label_start": "77",
+   "label_end": "77"
+  },
+  {
+   "id": "sec-029-remarks-on-the-motivic-milnor-fiber-of-a-quadrat",
+   "number": null,
+   "title": "Remarks on the motivic Milnor fiber of a quadratic form",
+   "level": 2,
+   "page_start": 77,
+   "page_end": 80,
+   "n_chars": 5543,
+   "n_words": 1006,
+   "label_start": "77",
+   "label_end": "80"
+  },
+  {
+   "id": "sec-030-orientation-data",
    "number": null,
    "title": "Orientation data",
    "level": 2,
    "page_start": 80,
    "page_end": 83,
-   "n_chars": 3886,
-   "n_words": 649
+   "n_chars": 3922,
+   "n_words": 670,
+   "label_start": "80",
+   "label_end": "83"
   },
   {
-   "id": "sec-026-orientation-data-from-a-splitting-of-bifunctors",
+   "id": "sec-031-orientation-data-from-a-splitting-of-bifunctors",
    "number": null,
    "title": "Orientation data from a splitting of bifunctors",
    "level": 2,
    "page_start": 83,
    "page_end": 84,
-   "n_chars": 2362,
-   "n_words": 434
+   "n_chars": 2412,
+   "n_words": 443,
+   "label_start": "83",
+   "label_end": "84"
   },
   {
-   "id": "sec-027-motivic-donaldson-thomas-invariants",
+   "id": "sec-032-motivic-donaldson-thomas-invariants",
    "number": null,
    "title": "Motivic Donaldson-Thomas invariants",
    "level": 1,
    "page_start": 84,
    "page_end": 84,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 35,
+   "n_words": 3,
+   "label_start": "84",
+   "label_end": "84"
   },
   {
-   "id": "sec-028-motivic-hall-algebra-and-stability-data",
+   "id": "sec-033-motivic-hall-algebra-and-stability-data",
    "number": null,
    "title": "Motivic Hall algebra and stability data",
    "level": 2,
    "page_start": 84,
    "page_end": 92,
-   "n_chars": 13277,
-   "n_words": 2328
+   "n_chars": 13358,
+   "n_words": 2411,
+   "label_start": "84",
+   "label_end": null
   },
   {
-   "id": "sec-029-motivic-weights-and-stability-data-on-motivic-qu",
+   "id": "sec-034-motivic-weights-and-stability-data-on-motivic-qu",
    "number": null,
    "title": "Motivic weights and stability data on motivic quantum tori",
    "level": 2,
    "page_start": 92,
    "page_end": 95,
-   "n_chars": 5640,
-   "n_words": 1031
+   "n_chars": 5667,
+   "n_words": 1052,
+   "label_start": null,
+   "label_end": "95"
   },
   {
-   "id": "sec-030-from-motivic-hall-algebra-to-motivic-quantum-tor",
+   "id": "sec-035-from-motivic-hall-algebra-to-motivic-quantum-tor",
    "number": null,
    "title": "From motivic Hall algebra to motivic quantum torus",
    "level": 2,
    "page_start": 95,
    "page_end": 102,
-   "n_chars": 10141,
-   "n_words": 1800
+   "n_chars": 10117,
+   "n_words": 1852,
+   "label_start": "95",
+   "label_end": "102"
   },
   {
-   "id": "sec-031-examples",
+   "id": "sec-036-examples",
    "number": null,
    "title": "Examples",
    "level": 2,
    "page_start": 102,
    "page_end": 105,
-   "n_chars": 4248,
-   "n_words": 843
+   "n_chars": 4053,
+   "n_words": 809,
+   "label_start": "102",
+   "label_end": "105"
   },
   {
-   "id": "sec-032-d0-d6-bps-bound-states-an-example-related-to-the",
+   "id": "sec-037-d0-d6-bps-bound-states-an-example-related-to-the",
    "number": null,
    "title": "D0-D6 BPS bound states: an example related to the MacMahon function",
    "level": 2,
    "page_start": 105,
    "page_end": 109,
-   "n_chars": 6315,
-   "n_words": 1114
+   "n_chars": 6037,
+   "n_words": 1098,
+   "label_start": "105",
+   "label_end": "109"
   },
   {
-   "id": "sec-033-quasi-classical-limit-and-integrality-conjecture",
+   "id": "sec-038-quasi-classical-limit-and-integrality-conjecture",
    "number": null,
    "title": "Quasi-classical limit and integrality conjecture",
    "level": 1,
    "page_start": 109,
    "page_end": 109,
-   "n_chars": 4,
-   "n_words": 1
+   "n_chars": 50,
+   "n_words": 6,
+   "label_start": "109",
+   "label_end": "109"
   },
   {
-   "id": "sec-034-quasi-classical-limit-numerical-dt-invariants",
+   "id": "sec-039-quasi-classical-limit-numerical-dt-invariants",
    "number": null,
    "title": "Quasi-classical limit, numerical DT-invariants",
    "level": 2,
    "page_start": 109,
    "page_end": 112,
-   "n_chars": 5564,
-   "n_words": 992
+   "n_chars": 5552,
+   "n_words": 994,
+   "label_start": "109",
+   "label_end": "112"
   },
   {
-   "id": "sec-035-deformation-invariance-and-intermediate-jacobian",
+   "id": "sec-040-deformation-invariance-and-intermediate-jacobian",
    "number": null,
    "title": "Deformation invariance and intermediate Jacobian",
    "level": 2,
    "page_start": 112,
-   "page_end": 120,
-   "n_chars": 13558,
-   "n_words": 2439
+   "page_end": 115,
+   "n_chars": 5915,
+   "n_words": 1008,
+   "label_start": "112",
+   "label_end": "115"
   },
   {
-   "id": "sec-036-reduction-to-the-case-of-category-of-modules",
+   "id": "sec-041-absence-of-poles-in-the-series-avhall",
+   "number": null,
+   "title": "Absence of poles in the series AVHall",
+   "level": 2,
+   "page_start": 115,
+   "page_end": 120,
+   "n_chars": 7569,
+   "n_words": 1436,
+   "label_start": "115",
+   "label_end": "120"
+  },
+  {
+   "id": "sec-042-reduction-to-the-case-of-category-of-modules",
    "number": null,
    "title": "Reduction to the case of category of modules",
    "level": 2,
    "page_start": 120,
    "page_end": 125,
-   "n_chars": 9845,
-   "n_words": 1759
+   "n_chars": 9729,
+   "n_words": 1777,
+   "label_start": "120",
+   "label_end": "125"
   },
   {
-   "id": "sec-037-evidence-for-the-integrality-conjecture",
+   "id": "sec-043-evidence-for-the-integrality-conjecture",
    "number": null,
    "title": "Evidence for the integrality conjecture",
    "level": 2,
    "page_start": 125,
    "page_end": 128,
-   "n_chars": 6651,
-   "n_words": 1201
+   "n_chars": 6430,
+   "n_words": 1243,
+   "label_start": "125",
+   "label_end": "128"
   },
   {
-   "id": "sec-038-spherical-collections-and-mutations",
+   "id": "sec-044-donaldson-thomas-invariants-and-cluster-transfor",
+   "number": null,
+   "title": "Donaldson-Thomas invariants and cluster transformations",
+   "level": 1,
+   "page_start": 128,
+   "page_end": 128,
+   "n_chars": 15,
+   "n_words": 1,
+   "label_start": "128",
+   "label_end": "128"
+  },
+  {
+   "id": "sec-045-spherical-collections-and-mutations",
    "number": null,
    "title": "Spherical collections and mutations",
    "level": 2,
    "page_start": 128,
    "page_end": 136,
-   "n_chars": 14413,
-   "n_words": 2556
+   "n_chars": 14415,
+   "n_words": 2678,
+   "label_start": "128",
+   "label_end": "136"
   },
   {
-   "id": "sec-039-orientation-data-for-cluster-collections",
+   "id": "sec-046-orientation-data-for-cluster-collections",
    "number": null,
    "title": "Orientation data for cluster collections",
    "level": 2,
    "page_start": 136,
    "page_end": 137,
-   "n_chars": 1532,
-   "n_words": 266
+   "n_chars": 1451,
+   "n_words": 263,
+   "label_start": "136",
+   "label_end": "137"
   },
   {
-   "id": "sec-040-quantum-dt-invariants-for-quivers",
+   "id": "sec-047-quantum-dt-invariants-for-quivers",
    "number": null,
    "title": "Quantum DT-invariants for quivers",
    "level": 2,
    "page_start": 137,
    "page_end": 137,
-   "n_chars": 1465,
-   "n_words": 259
+   "n_chars": 1495,
+   "n_words": 278,
+   "label_start": "137",
+   "label_end": "137"
   },
   {
-   "id": "sec-041-quivers-and-cluster-transformations",
+   "id": "sec-048-quivers-and-cluster-transformations",
    "number": null,
    "title": "Quivers and cluster transformations",
    "level": 2,
    "page_start": 137,
    "page_end": 143,
-   "n_chars": 9220,
-   "n_words": 1715
+   "n_chars": 9229,
+   "n_words": 1787,
+   "label_start": "137",
+   "label_end": null
   },
   {
-   "id": "sec-042-references",
+   "id": "sec-049-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 143,
    "page_end": 148,
-   "n_chars": 8299,
-   "n_words": 1132
+   "n_chars": 8231,
+   "n_words": 1064,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 51,
-  "sections": 43,
-  "chars_total": 270593,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 1,
+    "items": [
+     "November 26,"
+    ]
+   },
+   "found_not_listed": {
+    "count": 2,
+    "items": [
+     "6.2 Motivic weights and stability data on motivic quantum tori",
+     "8.4 Quivers and cluster transformations"
+    ]
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 51,
+  "chars_total": 273524,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "DT-22.tex",
    "tex_sections": 50,
-   "overlaid": 38,
+   "overlaid": 43,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -844,16 +2347,21 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-introduction",
      "title": "Introduction",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-001-counting-problems-for-3-dimensional-calabi-yau-v",
      "title": "Counting problems for 3-dimensional Calabi-Yau varieties",
      "prose_ratio": 0.99,
-     "coverage_ratio": 0.996,
+     "coverage_ratio": 0.995,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -861,7 +2369,7 @@
      "id": "sec-002-non-commutative-varieties-with-polarization",
      "title": "Non-commutative varieties with polarization",
      "prose_ratio": 0.988,
-     "coverage_ratio": 0.958,
+     "coverage_ratio": 0.982,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -869,7 +2377,7 @@
      "id": "sec-003-donaldson-thomas-invariants-for-non-commutative",
      "title": "Donaldson-Thomas invariants for non-commutative 3d Calabi-Yau varieties",
      "prose_ratio": 0.993,
-     "coverage_ratio": 0.974,
+     "coverage_ratio": 0.993,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -877,7 +2385,7 @@
      "id": "sec-004-multiplicative-wall-crossing-formula",
      "title": "Multiplicative wall-crossing formula",
      "prose_ratio": 0.994,
-     "coverage_ratio": 0.968,
+     "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -885,7 +2393,7 @@
      "id": "sec-005-some-analogies-and-speculations",
      "title": "Some analogies and speculations",
      "prose_ratio": 0.984,
-     "coverage_ratio": 0.979,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -893,7 +2401,7 @@
      "id": "sec-006-about-the-content-of-the-paper",
      "title": "About the content of the paper",
      "prose_ratio": 0.995,
-     "coverage_ratio": 0.993,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -901,13 +2409,13 @@
      "id": "sec-007-stability-conditions-for-graded-lie-algebras",
      "title": "Stability conditions for graded Lie algebras",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-008-stability-data",
      "title": "Stability data",
      "prose_ratio": 0.993,
-     "coverage_ratio": 0.937,
+     "coverage_ratio": 0.967,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -915,7 +2423,7 @@
      "id": "sec-009-reformulation-of-the-stability-data",
      "title": "Reformulation of the stability data",
      "prose_ratio": 0.996,
-     "coverage_ratio": 0.973,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -923,20 +2431,28 @@
      "id": "sec-010-topology-and-the-wall-crossing-formula",
      "title": "Topology and the wall-crossing formula",
      "prose_ratio": 0.997,
-     "coverage_ratio": 0.948,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-011-crossing-the-wall-of-second-kind",
      "title": "Crossing the wall of second kind",
-     "prose_ratio": 0.996,
-     "coverage_ratio": 0.973,
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.995,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-012-symplectic-double-torus",
+     "id": "sec-012-invariants-and-the-dilogarithm",
+     "title": "Invariants () and the dilogarithm",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-symplectic-double-torus",
      "title": "Symplectic double torus",
      "prose_ratio": 0.992,
      "coverage_ratio": 0.97,
@@ -944,235 +2460,279 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-013-complex-integrable-systems-and-stability-data",
+     "id": "sec-014-complex-integrable-systems-and-stability-data",
      "title": "Complex integrable systems and stability data",
      "prose_ratio": 0.993,
-     "coverage_ratio": 0.975,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-014-relation-with-the-works-of-joyce-and-of-bridgela",
+     "id": "sec-015-relation-with-the-works-of-joyce-and-of-bridgela",
      "title": "Relation with the works of Joyce, and of Bridgeland and Toledano-Laredo",
      "prose_ratio": 0.996,
-     "coverage_ratio": 0.939,
+     "coverage_ratio": 0.97,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-015-stability-data-on-gln",
+     "id": "sec-016-stability-data-on-gln",
      "title": "Stability data on gl(n)",
      "prose_ratio": 0.986,
-     "coverage_ratio": 0.967,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-016-ind-constructible-categories-and-stability-struc",
-     "title": "Ind-constructible categories and stability structures",
-     "prose_ratio": 0.987,
-     "coverage_ratio": 0.938,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-017-stack-of-objects",
-     "title": "Stack of objects",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.96,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-018-ind-constructible-calabi-yau-categories-and-pote",
-     "title": "Ind-constructible Calabi-Yau categories and potentials",
-     "prose_ratio": 0.996,
-     "coverage_ratio": 0.935,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-019-topology-on-the-space-of-stability-structures",
-     "title": "Topology on the space of stability structures",
-     "prose_ratio": 0.991,
-     "coverage_ratio": 0.937,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-020-recollection-on-motivic-functions",
-     "title": "Recollection on motivic functions",
-     "prose_ratio": 0.992,
-     "coverage_ratio": 0.97,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-021-motivic-functions-in-the-equivariant-setting",
-     "title": "Motivic functions in the equivariant setting",
-     "prose_ratio": 0.992,
-     "coverage_ratio": 0.97,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-022-an-integral-identity",
-     "title": "An integral identity",
-     "prose_ratio": 0.995,
-     "coverage_ratio": 0.979,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-023-equivalence-relation-on-motivic-functions",
-     "title": "Equivalence relation on motivic functions",
-     "prose_ratio": 0.97,
-     "coverage_ratio": 0.958,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-024-numerical-realization-of-motivic-functions",
-     "title": "Numerical realization of motivic functions",
-     "prose_ratio": 0.99,
-     "coverage_ratio": 0.932,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-025-orientation-data",
-     "title": "Orientation data",
-     "prose_ratio": 0.984,
-     "coverage_ratio": 0.964,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-026-orientation-data-from-a-splitting-of-bifunctors",
-     "title": "Orientation data from a splitting of bifunctors",
-     "prose_ratio": 0.902,
      "coverage_ratio": 0.973,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-027-motivic-donaldson-thomas-invariants",
+     "id": "sec-017-ind-constructible-categories-and-stability-struc",
+     "title": "Ind-constructible categories and stability structures",
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.961,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-018-stack-of-objects",
+     "title": "Stack of objects",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-019-ind-constructible-calabi-yau-categories-and-pote",
+     "title": "Ind-constructible Calabi-Yau categories and potentials",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-020-topology-on-the-space-of-stability-structures",
+     "title": "Topology on the space of stability structures",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-021-motivic-functions-and-motivic-milnor-fiber",
+     "title": "Motivic functions and motivic Milnor fiber",
+     "prose_ratio": null,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-022-recollection-on-motivic-functions",
+     "title": "Recollection on motivic functions",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-023-motivic-functions-in-the-equivariant-setting",
+     "title": "Motivic functions in the equivariant setting",
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-024-motivic-milnor-fiber",
+     "title": "Motivic Milnor fiber",
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-025-an-integral-identity",
+     "title": "An integral identity",
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-026-equivalence-relation-on-motivic-functions",
+     "title": "Equivalence relation on motivic functions",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-027-numerical-realization-of-motivic-functions",
+     "title": "Numerical realization of motivic functions",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.939,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-028-orientation-data-on-odd-calabi-yau-categories",
+     "title": "Orientation data on odd Calabi-Yau categories",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.938,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-029-remarks-on-the-motivic-milnor-fiber-of-a-quadrat",
+     "title": "Remarks on the motivic Milnor fiber of a quadratic form",
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-030-orientation-data",
+     "title": "Orientation data",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-031-orientation-data-from-a-splitting-of-bifunctors",
+     "title": "Orientation data from a splitting of bifunctors",
+     "prose_ratio": 0.911,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-032-motivic-donaldson-thomas-invariants",
      "title": "Motivic Donaldson-Thomas invariants",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-028-motivic-hall-algebra-and-stability-data",
+     "id": "sec-033-motivic-hall-algebra-and-stability-data",
      "title": "Motivic Hall algebra and stability data",
      "prose_ratio": 0.992,
-     "coverage_ratio": 0.956,
+     "coverage_ratio": 0.974,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-029-motivic-weights-and-stability-data-on-motivic-qu",
+     "id": "sec-034-motivic-weights-and-stability-data-on-motivic-qu",
      "title": "Motivic weights and stability data on motivic quantum tori",
      "prose_ratio": 0.99,
-     "coverage_ratio": 0.942,
+     "coverage_ratio": 0.977,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-030-from-motivic-hall-algebra-to-motivic-quantum-tor",
+     "id": "sec-035-from-motivic-hall-algebra-to-motivic-quantum-tor",
      "title": "From motivic Hall algebra to motivic quantum torus",
      "prose_ratio": 0.99,
-     "coverage_ratio": 0.958,
+     "coverage_ratio": 0.993,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-031-examples",
+     "id": "sec-036-examples",
      "title": "Examples",
      "prose_ratio": 0.993,
-     "coverage_ratio": 0.924,
+     "coverage_ratio": 0.923,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-032-d0-d6-bps-bound-states-an-example-related-to-the",
+     "id": "sec-037-d0-d6-bps-bound-states-an-example-related-to-the",
      "title": "D0-D6 BPS bound states: an example related to the MacMahon function",
      "prose_ratio": 0.991,
-     "coverage_ratio": 0.964,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-033-quasi-classical-limit-and-integrality-conjecture",
+     "id": "sec-038-quasi-classical-limit-and-integrality-conjecture",
      "title": "Quasi-classical limit and integrality conjecture",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-034-quasi-classical-limit-numerical-dt-invariants",
+     "id": "sec-039-quasi-classical-limit-numerical-dt-invariants",
      "title": "Quasi-classical limit, numerical DT-invariants",
      "prose_ratio": 1.0,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-040-deformation-invariance-and-intermediate-jacobian",
+     "title": "Deformation invariance and intermediate Jacobian",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-041-absence-of-poles-in-the-series-avhall",
+     "title": "Absence of poles in the series AVHall",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-042-reduction-to-the-case-of-category-of-modules",
+     "title": "Reduction to the case of category of modules",
+     "prose_ratio": 0.997,
      "coverage_ratio": 0.97,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-035-deformation-invariance-and-intermediate-jacobian",
-     "title": "Deformation invariance and intermediate Jacobian",
-     "prose_ratio": 0.993,
-     "coverage_ratio": 0.947,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-036-reduction-to-the-case-of-category-of-modules",
-     "title": "Reduction to the case of category of modules",
-     "prose_ratio": 0.997,
-     "coverage_ratio": 0.954,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-037-evidence-for-the-integrality-conjecture",
+     "id": "sec-043-evidence-for-the-integrality-conjecture",
      "title": "Evidence for the integrality conjecture",
      "prose_ratio": 0.991,
-     "coverage_ratio": 0.962,
+     "coverage_ratio": 0.978,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-038-spherical-collections-and-mutations",
+     "id": "sec-044-donaldson-thomas-invariants-and-cluster-transfor",
+     "title": "Donaldson-Thomas invariants and cluster transformations",
+     "prose_ratio": null,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-045-spherical-collections-and-mutations",
      "title": "Spherical collections and mutations",
      "prose_ratio": 0.988,
-     "coverage_ratio": 0.946,
+     "coverage_ratio": 0.979,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-039-orientation-data-for-cluster-collections",
+     "id": "sec-046-orientation-data-for-cluster-collections",
      "title": "Orientation data for cluster collections",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.927,
+     "coverage_ratio": 0.974,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-040-quantum-dt-invariants-for-quivers",
+     "id": "sec-047-quantum-dt-invariants-for-quivers",
      "title": "Quantum DT-invariants for quivers",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.925,
+     "coverage_ratio": 0.949,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-041-quivers-and-cluster-transformations",
+     "id": "sec-048-quivers-and-cluster-transformations",
      "title": "Quivers and cluster transformations",
      "prose_ratio": 0.996,
-     "coverage_ratio": 0.964,
+     "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-042-references",
+     "id": "sec-049-references",
      "title": "References",
      "result": "no matching \\section"
     }

@@ -1,0 +1,48 @@
+8.1 Techniques for polynomial systems 225
+
+Example 8.4. Consider the generating function
+
+ay = 3)
+(= x)4 = xy = x - x? +3 + xy)’
+
+F(x, y) = » Aysx'y* =
+rs20
+
+discussed further in Example 12.23 of Chapter 12. If P and Q denote the
+numerator and denominator of F, then the ideal J formed by Q and all its
+partial derivatives characterizes points where V could be non-smooth. Us-
+ing the lexicographic term order with x > y we obtain a Grébner basis B =
+[; 2_Ix+ytI1,xy-y, |. Solving the last polynomial of B, which contains
+only y, implies that any point in V(/) must satisfy y = 0, and substituting this
+into the first element of B gives V(J) = {(1, 0)}. Thus, ‘V is a locally a manifold
+near any of its points except (1,0). A Taylor expansion of Q near (1,0) shows
+that it locally looks like two curves touching at a point. 4
+
+Example 8.5. The fact that V(/) contains only points with explicit rational
+coordinates in Example 8.4 is not reflective of the general situation. Often, one
+has a point w of interest with (non-rational) algebraic coordinates defined only
+implicitly and wants to simplify another algebraic quantity depending on w.
+When all the quantities involved are algebraic, the results can be simplified
+using the multivariate division algorithm and Grobner bases.
+
+For instance, suppose we want to compute an expansion of Q in Example 8.4
+at one of the points (a,b) € V where a = v2 (there are two such points, at
+each of which y is a degree-four algebraic number). Dividing the polynomial
+Q(X + a, Y + b) by the ideal [a? — 2, O(a, b)] using, for instance, the Grébner
+basis with respect to the lexicographic order where a > b > X > Y gives the
+polynomial
+
+—(6ab + 6b” — 20a — 5b + 28)X - (4ab-a+2)¥+----—X*Y
+
+describing the expansion of Q at (a,b) in terms of X = x-aand Y = y-b.
+The coefficients have been reduced using the algebraic relations satisfied by a
+and b, in this case showing that Q vanishes to first order at (a, b). 4
+
+Grobner basis computations also serve as primitives in algorithms to com-
+pute many other fundamental properties of ideals J, J c K[z], including
+
+e the radical VI = {fe K[z]: f* € 7 for some k € N};
+
+e the prime decomposition of I, which is the set of prime ideals P\,..., P,
+such that VI = P; N---M P, (an ideal is prime if fg € J implies f € J or
+gel;

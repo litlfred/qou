@@ -8,6 +8,7 @@ pages: 7-8
 source_pdf: FT_DPM_Quaternion_Kernel_IEEE_TIT_2014.pdf
 source_sha256: aa2f1eb73610a81b
 toc_source: inferred
+doc_brief: "Quaternion Reproducing Kernel Hilbert Spaces: Existence and Uniqueness Conditions — The existence and uniqueness conditions of quater- nion reproducing kernel Hilbert spaces (QRKHS) are established"
 ---
 The polynomial kernel is standard in kernel-based estima-
 tion due to its robustness and ease of implementation. For real-
@@ -132,8 +133,6 @@ where θ(·) is assumed to be Lebesgue integrable and bounded
 on the compact set X ⊊Hn, while the identity (a)
 = is a
 consequence of Fubini’s theorem [10].
-TOBAR AND MANDIC: QUATERNION REPRODUCING KERNEL HILBERT SPACES
-5743
 Fig. 1.
 Real (left) and i-imaginary (right) parts of KQP. The colourmap is
 dark blue for −13 · 103, white for the interval [−10, 10], and red for 13 · 103

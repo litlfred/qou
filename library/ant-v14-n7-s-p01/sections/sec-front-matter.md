@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: ant-v14-n7-s-p01.pdf
 source_sha256: 976199bfca4ac086
 toc_source: inferred
+doc_brief: "p-adic Asai L-functions of Bianchi modular forms — 11 sections: Front matter; Introduction; Preliminaries and notation"
 ---
 msp
 ALGEBRA AND NUMBER THEORY 14:7 (2020)

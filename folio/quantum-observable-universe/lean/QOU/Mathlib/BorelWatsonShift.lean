@@ -30,7 +30,7 @@
 
   Archimedean (ℂ): complex holomorphy and continuity.
 
-  -- Ref: [manuscript] bean el8w tranche 5 — Watson uniqueness brick 4b-ii shift
+  -- Ref: [leitner2026] bean el8w tranche 5 — Watson uniqueness brick 4b-ii shift
 -/
 
 import Mathlib.Analysis.Calculus.DiffContOnCl

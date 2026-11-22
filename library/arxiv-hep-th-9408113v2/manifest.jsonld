@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-9408113v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9408113v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-hep-th-9408113v2",
+  "title": "Dilogarithm identities",
   "contains": [
     "library/arxiv-hep-th-9408113v2/sections/sec-front-matter",
     "library/arxiv-hep-th-9408113v2/sections/sec-000",
@@ -27,7 +27,7 @@
     "library/arxiv-hep-th-9408113v2/sections/sec-012"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
     "status": "stated",
@@ -37,7 +37,9 @@
   },
   "meta": {
     "doc_id": "arxiv-hep-th-9408113v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "9408113v2.pdf",
     "source_sha256": "dadd96e1155e820f574cdfb25213f86bfdd416ad01ceca69eb5f7d9110f214fb",
     "pages": 96,

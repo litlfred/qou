@@ -37,7 +37,7 @@ path-ordered first-order transports `(1 + δq₁)(1 + δq₂)` and
 **derived** by genuine (non-commutative) ring algebra, along with both
 consequences.
 
-Ref: [manuscript] rem:two-observer-parallelogram, def:q-flat-connection
+Ref: [leitner2026] rem:two-observer-parallelogram, def:q-flat-connection
 -/
 
 namespace QOU.LocalQ

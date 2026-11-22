@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.927
 latex_coverage_ratio: 0.975
+doc_brief: "MOD-φ CONVERGENCE, I: NORMALITY ZONES AND PRECISE DEVIATIONS — In this paper, we use the framework of mod-φ convergence to prove pre- cise large or moderate deviations for quite general sequences of"
 ---
 The goal of this paper is to prove that the framework of mod-$\phi$ convergence as described in Definition~\ref{def:modphi} is suitable to obtain {\em precise}  large and moderate deviation results for the sequence $(X_n)_{n \in \N}$
 (throughout the paper, we call {\em precise deviation result} an equivalent of the deviation probability itself and not on its logarithm). Namely, our results are the following.\vspace{2mm}

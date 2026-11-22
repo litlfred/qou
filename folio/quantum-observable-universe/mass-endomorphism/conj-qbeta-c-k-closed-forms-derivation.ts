@@ -1,9 +1,13 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "prop:qbeta-c-k-closed-forms",
+  interprets: "conj:qbeta-c-k-closed-forms",
   label: "rem:qbeta-c-k-closed-forms-derivation",
   title: "Open derivation paths, precision leverage, and SDP evidence for the $c_k$",
   tags: ["qbeta", "precision-ladder", "ck-coefficients", "sdp", "derivation-chain"],
-  uses: ["prop:qbeta-c-k-closed-forms"],
+  uses: ["conj:qbeta-c-k-closed-forms"],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): The empirical $c_k$ from `binding_q_target_sweep` are **fits**" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): The Hecke–KLR bridge supplies scaffolding ([Kazhdan–Lusztig classical limit](#conj:kazhdan-lusztig-classical-limit))." },
+  ],
 });

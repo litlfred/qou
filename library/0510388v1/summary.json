@@ -2,61 +2,331 @@
  "_schema": "library-summary/v1",
  "doc_id": "0510388v1",
  "source_sha256": "c83c0f6a2eaa74f3",
- "brief": "ELECTRODYNAMICS and the GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE — 10 sections: Magnetic fields in R; Vector-valued Green’s operators in; IN LEFT-TRANSLATION FORMAT",
- "extended": "**ELECTRODYNAMICS and the GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE**\n\n*Dennis DeTurck and Herman Gluck*\n\n108 pp, 10 sections.\n\n**Outline.** 3 Magnetic fields in R; 6 Vector-valued Green’s operators in R; 3 IN LEFT-TRANSLATION FORMAT; C PROOFS ON S; 3 IN PARALLEL TRANSPORT FORMAT; 14 Geodesics in S; 15 The vector triple product in R; 16 Explicit formula for parallel transport in ; 17 The method of moving frames in S; References",
+ "brief": "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space — 64 sections: Front matter; ORGANIZATION; STATEMENTS OF RESULTS",
+ "extended": "**Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space**\n\n*Dennis DeTurck and Herman Gluck*\n\n108 pp, 64 sections.\n\n**Outline.** Front matter; ORGANIZATION; A STATEMENTS OF RESULTS; 1 Linking integrals in R3 , S3 and H3 .; 2 The route to Gauss's linking integral.; 3 Magnetic fields in R3 , S3 and H3 .; 4 Left-invariant vector fields on S3 .; 5 Scalar-valued Green's operators in R3 , S3 a; 6 Vector-valued Green's operators in R3 , S3 a; 7 Classical electrodynamics and Maxwell's equa; B PROOFS ON S3 IN LEFT-TRANSLATION FORMAT; 8 Proof scheme for Theorem 3, formula (1).; 9 The calculus of vector convolutions in R3 .; 10 The calculus of vector convolutions in S3 .; 11 Proof of Theorem 3, formula (1).; 12 Proof of Theorem 2, formula (1).; C PROOFS ON S3 IN PARALLEL TRANSPORT FORMAT; 13 Parallel transport in S3 .",
  "tokens": {
-  "brief": 47,
-  "extended": 113
+  "brief": 38,
+  "extended": 213
  },
  "sections": [
   {
-   "id": "sec-000-3-magnetic-fields-in-r",
-   "title": "Magnetic fields in R",
-   "pages": "8-17"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
   },
   {
-   "id": "sec-001-6-vector-valued-greens-operators-in-r",
-   "title": "Vector-valued Green’s operators in R",
-   "pages": "17-22"
+   "id": "sec-000-organization",
+   "title": "ORGANIZATION",
+   "pages": "2-3"
   },
   {
-   "id": "sec-002-3-in-left-translation-format",
-   "title": "IN LEFT-TRANSLATION FORMAT",
-   "pages": "22-34"
+   "id": "sec-001-a-statements-of-results",
+   "title": "STATEMENTS OF RESULTS",
+   "pages": "3-3"
   },
   {
-   "id": "sec-003-c-proofs-on-s",
-   "title": "PROOFS ON S",
+   "id": "sec-002-1-linking-integrals-in-r3-s3-and-h3",
+   "title": "Linking integrals in R3 , S3 and H3 .",
+   "pages": "3-7"
+  },
+  {
+   "id": "sec-003-2-the-route-to-gausss-linking-integral",
+   "title": "The route to Gauss's linking integral.",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-004-3-magnetic-fields-in-r3-s3-and-h3",
+   "title": "Magnetic fields in R3 , S3 and H3 .",
+   "pages": "8-12"
+  },
+  {
+   "id": "sec-005-4-left-invariant-vector-fields-on-s3",
+   "title": "Left-invariant vector fields on S3 .",
+   "pages": "12-15"
+  },
+  {
+   "id": "sec-006-5-scalar-valued-greens-operators-in-r3-s3-and-h3",
+   "title": "Scalar-valued Green's operators in R3 , S3 and H3 .",
+   "pages": "15-17"
+  },
+  {
+   "id": "sec-007-6-vector-valued-greens-operators-in-r3-s3-and-h3",
+   "title": "Vector-valued Green's operators in R3 , S3 and H3 .",
+   "pages": "17-21"
+  },
+  {
+   "id": "sec-008-7-classical-electrodynamics-and-maxwells-equatio",
+   "title": "Classical electrodynamics and Maxwell's equations on S3 and H3 .",
+   "pages": "21-22"
+  },
+  {
+   "id": "sec-009-b-proofs-on-s3-in-left-translation-format",
+   "title": "PROOFS ON S3 IN LEFT-TRANSLATION FORMAT",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-010-8-proof-scheme-for-theorem-3-formula-1",
+   "title": "Proof scheme for Theorem 3, formula (1).",
+   "pages": "22-24"
+  },
+  {
+   "id": "sec-011-9-the-calculus-of-vector-convolutions-in-r3",
+   "title": "The calculus of vector convolutions in R3 .",
+   "pages": "24-27"
+  },
+  {
+   "id": "sec-012-10-the-calculus-of-vector-convolutions-in-s3",
+   "title": "The calculus of vector convolutions in S3 .",
+   "pages": "27-30"
+  },
+  {
+   "id": "sec-013-11-proof-of-theorem-3-formula-1",
+   "title": "Proof of Theorem 3, formula (1).",
+   "pages": "30-32"
+  },
+  {
+   "id": "sec-014-12-proof-of-theorem-2-formula-1",
+   "title": "Proof of Theorem 2, formula (1).",
+   "pages": "32-34"
+  },
+  {
+   "id": "sec-015-c-proofs-on-s3-in-parallel-transport-format",
+   "title": "PROOFS ON S3 IN PARALLEL TRANSPORT FORMAT",
    "pages": "34-34"
   },
   {
-   "id": "sec-004-3-in-parallel-transport-format",
-   "title": "IN PARALLEL TRANSPORT FORMAT",
+   "id": "sec-016-13-parallel-transport-in-s3",
+   "title": "Parallel transport in S3 .",
    "pages": "34-36"
   },
   {
-   "id": "sec-005-14-geodesics-in-s",
-   "title": "Geodesics in S",
+   "id": "sec-017-14-geodesics-in-s3",
+   "title": "Geodesics in S3 .",
    "pages": "36-38"
   },
   {
-   "id": "sec-006-15-the-vector-triple-product-in-r",
-   "title": "The vector triple product in R",
+   "id": "sec-018-15-the-vector-triple-product-in-r4",
+   "title": "The vector triple product in R4 .",
    "pages": "38-39"
   },
   {
-   "id": "sec-007-16-explicit-formula-for-parallel-transport-in-s",
-   "title": "Explicit formula for parallel transport in S",
+   "id": "sec-019-16-explicit-formula-for-parallel-transport-in-s3",
+   "title": "Explicit formula for parallel transport in S3 .",
    "pages": "39-40"
   },
   {
-   "id": "sec-008-17-the-method-of-moving-frames-in-s",
-   "title": "The method of moving frames in S",
-   "pages": "40-107"
+   "id": "sec-020-17-the-method-of-moving-frames-in-s3",
+   "title": "The method of moving frames in S3 .",
+   "pages": "40-43"
   },
   {
-   "id": "sec-009-references",
-   "title": "References",
+   "id": "sec-021-18-curls-and-divergences",
+   "title": "Curls and divergences.",
+   "pages": "43-46"
+  },
+  {
+   "id": "sec-022-19-statement-of-the-key-lemma",
+   "title": "Statement of the Key Lemma.",
+   "pages": "46-47"
+  },
+  {
+   "id": "sec-023-20-the-first-term-on-the-lhs-of-the-key-lemma",
+   "title": "The first term on the LHS of the Key Lemma.",
+   "pages": "47-50"
+  },
+  {
+   "id": "sec-024-21-the-second-term-on-the-lhs-of-the-key-lemma",
+   "title": "The second term on the LHS of the Key Lemma.",
+   "pages": "50-52"
+  },
+  {
+   "id": "sec-025-22-the-rhs-of-the-key-lemma",
+   "title": "The RHS of the Key Lemma.",
+   "pages": "52-53"
+  },
+  {
+   "id": "sec-026-23-maxwells-equation-on-s3",
+   "title": "Maxwell's equation on S3 .",
+   "pages": "53-55"
+  },
+  {
+   "id": "sec-027-24-proof-of-theorem-2-formula-2",
+   "title": "Proof of Theorem 2, formula (2) .",
+   "pages": "55-57"
+  },
+  {
+   "id": "sec-028-25-the-greens-operator-on-s3-in-parallel-transpo",
+   "title": "The Green's operator on S3 in parallel transport format.",
+   "pages": "57-58"
+  },
+  {
+   "id": "sec-029-26-plan-of-the-proof",
+   "title": "Plan of the proof.",
+   "pages": "58-59"
+  },
+  {
+   "id": "sec-030-27-some-formulas-that-we-will-use",
+   "title": "Some formulas that we will use.",
+   "pages": "59-60"
+  },
+  {
+   "id": "sec-031-28-the-curl-of-av-ϕy",
+   "title": "The curl of A(V, ϕ)(y) .",
+   "pages": "60-63"
+  },
+  {
+   "id": "sec-032-29-the-divergence-of-av-ϕ2",
+   "title": "The divergence of A(V, ϕ2) .",
+   "pages": "63-65"
+  },
+  {
+   "id": "sec-033-30-step-2---finding-and-using-the-kernel-functio",
+   "title": "Step 2 - Finding and using the kernel function ϕ3 .",
+   "pages": "65-69"
+  },
+  {
+   "id": "sec-034-31-finding-an-explicit-formula-for-ψ",
+   "title": "Finding an explicit formula for Ψ .",
+   "pages": "69-71"
+  },
+  {
+   "id": "sec-035-32-explicit-formula-for-ϕ3",
+   "title": "Explicit formula for ϕ3 .",
+   "pages": "71-72"
+  },
+  {
+   "id": "sec-036-d-proofs-in-h3-in-parallel-transport-format",
+   "title": "PROOFS IN H3 IN PARALLEL TRANSPORT FORMAT",
+   "pages": "72-72"
+  },
+  {
+   "id": "sec-037-33-the-hyperboloid-model-of-hyperbolic-3-space",
+   "title": "The hyperboloid model of hyperbolic 3-space.",
+   "pages": "72-74"
+  },
+  {
+   "id": "sec-038-34-isometries-of-h3",
+   "title": "Isometries of H3 .",
+   "pages": "74-75"
+  },
+  {
+   "id": "sec-039-35-geodesics-in-h3",
+   "title": "Geodesics in H3 .",
+   "pages": "75-76"
+  },
+  {
+   "id": "sec-040-36-the-vector-triple-product-in-r13",
+   "title": "The vector triple product in R1,3 .",
+   "pages": "76-77"
+  },
+  {
+   "id": "sec-041-37-explicit-formula-for-parallel-transport-in-h3",
+   "title": "Explicit formula for parallel transport in H3 .",
+   "pages": "77-78"
+  },
+  {
+   "id": "sec-042-38-the-method-of-moving-frames-in-h3",
+   "title": "The method of moving frames in H3 .",
+   "pages": "78-80"
+  },
+  {
+   "id": "sec-043-39-curls-and-divergences",
+   "title": "Curls and divergences.",
+   "pages": "80-82"
+  },
+  {
+   "id": "sec-044-40-statement-of-the-key-lemma",
+   "title": "Statement of the Key Lemma.",
+   "pages": "82-83"
+  },
+  {
+   "id": "sec-045-41-the-first-term-on-the-lhs-of-the-key-lemma",
+   "title": "The first term on the LHS of the Key Lemma.",
+   "pages": "83-85"
+  },
+  {
+   "id": "sec-046-42-the-second-term-on-the-lhs-of-the-key-lemma",
+   "title": "The second term on the LHS of the Key Lemma.",
+   "pages": "85-86"
+  },
+  {
+   "id": "sec-047-43-the-rhs-of-the-key-lemma",
+   "title": "The RHS of the Key Lemma.",
+   "pages": "86-87"
+  },
+  {
+   "id": "sec-048-44-maxwells-equation-in-h3",
+   "title": "Maxwell's equation in H3 .",
+   "pages": "87-88"
+  },
+  {
+   "id": "sec-049-45-proof-of-theorem-2-formula-3",
+   "title": "Proof of Theorem 2, formula (3) .",
+   "pages": "88-89"
+  },
+  {
+   "id": "sec-050-46-the-greens-operator-on-h3-in-parallel-transpo",
+   "title": "The Green's operator on H3 in parallel transport format.",
+   "pages": "89-90"
+  },
+  {
+   "id": "sec-051-47-plan-of-the-proof",
+   "title": "Plan of the proof.",
+   "pages": "90-91"
+  },
+  {
+   "id": "sec-052-48-some-formulas-that-we-will-use",
+   "title": "Some formulas that we will use.",
+   "pages": "91-92"
+  },
+  {
+   "id": "sec-053-49-the-curl-of-av-ϕy",
+   "title": "The curl of A(V, ϕ)(y) .",
+   "pages": "92-94"
+  },
+  {
+   "id": "sec-054-50-the-divergence-of-av-ϕ2",
+   "title": "The divergence of A(V, ϕ2) .",
+   "pages": "94-95"
+  },
+  {
+   "id": "sec-055-51-step-2---finding-and-using-the-kernel-functio",
+   "title": "Step 2 - Finding and using the kernel function ϕ3 .",
+   "pages": "95-98"
+  },
+  {
+   "id": "sec-056-52-non-uniqueness-of-the-greens-operator-in-h3",
+   "title": "Non-uniqueness of the Green's operator in H3 .",
+   "pages": "98-100"
+  },
+  {
+   "id": "sec-057-e-electrodynamics-and-the-gauss-linking-integral",
+   "title": "ELECTRODYNAMICS AND THE GAUSS LINKING INTEGRAL ON S3 AND H3",
+   "pages": "100-100"
+  },
+  {
+   "id": "sec-058-53-proof-of-theorem-4",
+   "title": "Proof of Theorem 4.",
+   "pages": "100-101"
+  },
+  {
+   "id": "sec-059-54-proof-scheme-for-theorem-1",
+   "title": "Proof scheme for Theorem 1.",
+   "pages": "101-104"
+  },
+  {
+   "id": "sec-060-55-proof-of-theorem-1-formula-1",
+   "title": "Proof of Theorem 1, formula (1).",
+   "pages": "104-106"
+  },
+  {
+   "id": "sec-061-56-proof-of-theorem-1-formulas-2-and-3",
+   "title": "Proof of Theorem 1, formulas (2) and (3) .",
+   "pages": "106-107"
+  },
+  {
+   "id": "sec-062-references",
+   "title": "REFERENCES",
    "pages": "107-108"
   }
  ],

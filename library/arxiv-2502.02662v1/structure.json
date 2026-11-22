@@ -7,10 +7,11 @@
   "bytes": 551240,
   "pages": 34,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -28,11 +29,21 @@
   ],
   "abstract": "We propose that chiral two-dimensional Yang-Mills theory on a Riemann surface X is dual to a deformed stationary subsector of the Gromov-Witten theory of X. Firstly, we argue that the algebraic structure that underlies the large N limit of the chiral gauge theory is a partial permutation Frobenius algebra of observables which codes covering maps of all degrees simultaneously. Secondly, we exploit the Gromov-Witten/Hurwitz correspondence to interpret chiral Yang-Mills theory as a finite deformation of a Gromov- Witten theory by an area-dependent transposition interaction and an operator that codes a compactification of Hurwitz space. The proposed string dual manifestly includes an integral over the moduli space of Riemann surfaces as well as the identification of closed string states as completed cycles. arXiv:2502.02662v1 [hep-th] 4 Feb 2025",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20250206010240Z",
-   "Creator": "LaTeX with hyperref",
    "Producer": "pdfTeX-1.40.25",
-   "Title": ""
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20250206010240Z"
+  },
+  "title_raw": "The String Dual to Two-dimensional Yang-Mills Theory Revisited",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "The String Dual to Two-dimensional Yang-Mills Theory Revisited",
+   "outline": "Introduction",
+   "text": "The String Dual to Two-dimensional Yang-Mills Theory Revisited",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -41,205 +52,689 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "The Hurwitz Topological Quantum Field Theory",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "The Hurwitz Theory at Fixed Degree",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "The Extended Hurwitz Theory",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "The String Dual",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 1,
    "title": "From Two-dimensional Yang-Mills to Hurwitz",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "The Observables of Two-dimensional Yang-Mills Theory",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "The Schur-Weyl Dictionary",
    "page": 10,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "The Gross-Taylor Expansion",
    "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "Chiral Yang-Mills Theory as a Deformed Hurwitz Theory",
    "page": 13,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 1,
    "title": "The Stringy Structure of Chiral Yang-Mills Theory",
    "page": 15,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 2,
    "title": "A Double Expansion",
    "page": 15,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 2,
    "title": "Vertex Operators",
    "page": 16,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "A Stringy Deformation",
    "page": 17,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 1,
    "title": "A Deformed Gromov-Witten Theory",
    "page": 19,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 2,
    "title": "The Partial Permutation Algebra of Yang-Mills Theory",
    "page": 19,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 2,
    "title": "The Duality Map",
    "page": 20,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 2,
    "title": "The Gromov-Witten Formulation",
    "page": 21,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 2,
    "title": "The Inverse Map",
    "page": 23,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 2,
    "title": "Remarks on Wilson Loops",
    "page": 24,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 1,
    "title": "Conclusions",
    "page": 25,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
   },
   {
    "level": 1,
    "title": "Useful Identities",
    "page": 26,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
   },
   {
    "level": 1,
    "title": "Determining the Dictionary",
    "page": 26,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
   },
   {
    "level": 1,
    "title": "Phase Transitions",
    "page": 27,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   },
   {
    "level": 2,
    "title": "Analytical Phase Transitions",
    "page": 28,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
   },
   {
    "level": 2,
    "title": "Numerical Phase Transitions",
    "page": 30,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "29"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The domains of convergence of the renormalized identity one-point function (on the left) and of the renormalized transposition one-point function (on the right)",
+   "page": 31,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "30"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "The one-point function for a renormalized identity class insertion as a function of t",
+   "page": 32,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "31"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "2",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "3",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "5",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "7",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "8",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "9",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "11",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "12",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "14",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "15",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "16",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "18",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "19",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "20",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "22",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "23",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "24",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "25",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "26",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "27",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "29",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1116,
+   "n_words": 160,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
    "title": "Introduction",
    "level": 1,
    "page_start": 2,
-   "page_end": 2,
-   "n_chars": 0,
-   "n_words": 0
+   "page_end": 3,
+   "n_chars": 3459,
+   "n_words": 869,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
    "id": "sec-001-the-hurwitz-topological-quantum-field-theory",
    "number": null,
    "title": "The Hurwitz Topological Quantum Field Theory",
    "level": 1,
-   "page_start": 2,
+   "page_start": 3,
    "page_end": 4,
-   "n_chars": 5896,
-   "n_words": 1248
+   "n_chars": 2394,
+   "n_words": 373,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
    "id": "sec-002-the-hurwitz-theory-at-fixed-degree",
@@ -248,8 +743,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 4,
-   "n_chars": 2139,
-   "n_words": 353
+   "n_chars": 2187,
+   "n_words": 372,
+   "label_start": "3",
+   "label_end": "3"
   },
   {
    "id": "sec-003-the-extended-hurwitz-theory",
@@ -258,8 +755,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 6,
-   "n_chars": 3792,
-   "n_words": 643
+   "n_chars": 3839,
+   "n_words": 668,
+   "label_start": "3",
+   "label_end": "5"
   },
   {
    "id": "sec-004-the-string-dual",
@@ -268,8 +767,10 @@
    "level": 2,
    "page_start": 6,
    "page_end": 8,
-   "n_chars": 7271,
-   "n_words": 1141
+   "n_chars": 7327,
+   "n_words": 1186,
+   "label_start": "5",
+   "label_end": "7"
   },
   {
    "id": "sec-005-from-two-dimensional-yang-mills-to-hurwitz",
@@ -278,8 +779,10 @@
    "level": 1,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 835,
-   "n_words": 134
+   "n_chars": 875,
+   "n_words": 137,
+   "label_start": "7",
+   "label_end": "8"
   },
   {
    "id": "sec-006-the-observables-of-two-dimensional-yang-mills-th",
@@ -288,8 +791,10 @@
    "level": 2,
    "page_start": 9,
    "page_end": 10,
-   "n_chars": 3837,
-   "n_words": 649
+   "n_chars": 3923,
+   "n_words": 689,
+   "label_start": "8",
+   "label_end": "9"
   },
   {
    "id": "sec-007-the-schur-weyl-dictionary",
@@ -298,8 +803,10 @@
    "level": 2,
    "page_start": 10,
    "page_end": 12,
-   "n_chars": 3863,
-   "n_words": 657
+   "n_chars": 3934,
+   "n_words": 708,
+   "label_start": "9",
+   "label_end": "11"
   },
   {
    "id": "sec-008-the-gross-taylor-expansion",
@@ -308,8 +815,10 @@
    "level": 2,
    "page_start": 12,
    "page_end": 13,
-   "n_chars": 4703,
-   "n_words": 778
+   "n_chars": 4731,
+   "n_words": 784,
+   "label_start": "11",
+   "label_end": "12"
   },
   {
    "id": "sec-009-chiral-yang-mills-theory-as-a-deformed-hurwitz-t",
@@ -318,8 +827,10 @@
    "level": 2,
    "page_start": 13,
    "page_end": 15,
-   "n_chars": 5447,
-   "n_words": 919
+   "n_chars": 5525,
+   "n_words": 955,
+   "label_start": "12",
+   "label_end": "14"
   },
   {
    "id": "sec-010-the-stringy-structure-of-chiral-yang-mills-theor",
@@ -328,8 +839,10 @@
    "level": 1,
    "page_start": 15,
    "page_end": 15,
-   "n_chars": 189,
-   "n_words": 29
+   "n_chars": 239,
+   "n_words": 36,
+   "label_start": "14",
+   "label_end": "14"
   },
   {
    "id": "sec-011-a-double-expansion",
@@ -337,19 +850,23 @@
    "title": "A Double Expansion",
    "level": 2,
    "page_start": 15,
-   "page_end": 15,
-   "n_chars": 90,
-   "n_words": 12
+   "page_end": 16,
+   "n_chars": 3451,
+   "n_words": 619,
+   "label_start": "14",
+   "label_end": "15"
   },
   {
    "id": "sec-012-vertex-operators",
    "number": null,
    "title": "Vertex Operators",
    "level": 2,
-   "page_start": 15,
+   "page_start": 16,
    "page_end": 17,
-   "n_chars": 6228,
-   "n_words": 1067
+   "n_chars": 2985,
+   "n_words": 510,
+   "label_start": "15",
+   "label_end": "16"
   },
   {
    "id": "sec-013-a-stringy-deformation",
@@ -358,8 +875,10 @@
    "level": 2,
    "page_start": 17,
    "page_end": 19,
-   "n_chars": 3155,
-   "n_words": 538
+   "n_chars": 3220,
+   "n_words": 588,
+   "label_start": "16",
+   "label_end": "18"
   },
   {
    "id": "sec-014-a-deformed-gromov-witten-theory",
@@ -368,8 +887,10 @@
    "level": 1,
    "page_start": 19,
    "page_end": 19,
-   "n_chars": 664,
-   "n_words": 107
+   "n_chars": 696,
+   "n_words": 111,
+   "label_start": "18",
+   "label_end": "18"
   },
   {
    "id": "sec-015-the-partial-permutation-algebra-of-yang-mills-th",
@@ -378,8 +899,10 @@
    "level": 2,
    "page_start": 19,
    "page_end": 20,
-   "n_chars": 2337,
-   "n_words": 381
+   "n_chars": 2417,
+   "n_words": 417,
+   "label_start": "18",
+   "label_end": "19"
   },
   {
    "id": "sec-016-the-duality-map",
@@ -388,8 +911,10 @@
    "level": 2,
    "page_start": 20,
    "page_end": 21,
-   "n_chars": 2885,
-   "n_words": 493
+   "n_chars": 2929,
+   "n_words": 526,
+   "label_start": "19",
+   "label_end": "20"
   },
   {
    "id": "sec-017-the-gromov-witten-formulation",
@@ -398,8 +923,10 @@
    "level": 2,
    "page_start": 21,
    "page_end": 23,
-   "n_chars": 3566,
-   "n_words": 598
+   "n_chars": 3608,
+   "n_words": 617,
+   "label_start": "20",
+   "label_end": "22"
   },
   {
    "id": "sec-018-the-inverse-map",
@@ -408,8 +935,10 @@
    "level": 2,
    "page_start": 23,
    "page_end": 24,
-   "n_chars": 2875,
-   "n_words": 494
+   "n_chars": 2943,
+   "n_words": 552,
+   "label_start": "22",
+   "label_end": "23"
   },
   {
    "id": "sec-019-remarks-on-wilson-loops",
@@ -418,8 +947,10 @@
    "level": 2,
    "page_start": 24,
    "page_end": 25,
-   "n_chars": 2325,
-   "n_words": 379
+   "n_chars": 2360,
+   "n_words": 396,
+   "label_start": "23",
+   "label_end": "24"
   },
   {
    "id": "sec-020-conclusions",
@@ -428,8 +959,10 @@
    "level": 1,
    "page_start": 25,
    "page_end": 26,
-   "n_chars": 3551,
-   "n_words": 548
+   "n_chars": 3560,
+   "n_words": 548,
+   "label_start": "24",
+   "label_end": "25"
   },
   {
    "id": "sec-021-useful-identities",
@@ -438,8 +971,10 @@
    "level": 1,
    "page_start": 26,
    "page_end": 26,
-   "n_chars": 879,
-   "n_words": 149
+   "n_chars": 909,
+   "n_words": 163,
+   "label_start": "25",
+   "label_end": "25"
   },
   {
    "id": "sec-022-determining-the-dictionary",
@@ -448,8 +983,10 @@
    "level": 1,
    "page_start": 26,
    "page_end": 27,
-   "n_chars": 1551,
-   "n_words": 285
+   "n_chars": 1596,
+   "n_words": 308,
+   "label_start": "25",
+   "label_end": "26"
   },
   {
    "id": "sec-023-phase-transitions",
@@ -458,8 +995,10 @@
    "level": 1,
    "page_start": 27,
    "page_end": 28,
-   "n_chars": 1292,
-   "n_words": 208
+   "n_chars": 1307,
+   "n_words": 209,
+   "label_start": "26",
+   "label_end": "27"
   },
   {
    "id": "sec-024-analytical-phase-transitions",
@@ -468,8 +1007,10 @@
    "level": 2,
    "page_start": 28,
    "page_end": 30,
-   "n_chars": 5563,
-   "n_words": 959
+   "n_chars": 5630,
+   "n_words": 1004,
+   "label_start": "27",
+   "label_end": "29"
   },
   {
    "id": "sec-025-numerical-phase-transitions",
@@ -478,21 +1019,47 @@
    "level": 2,
    "page_start": 30,
    "page_end": 34,
-   "n_chars": 9741,
-   "n_words": 1390
+   "n_chars": 9787,
+   "n_words": 1421,
+   "label_start": "29",
+   "label_end": "33"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 26,
-  "sections": 26,
-  "chars_total": 84674,
+  "toc_inferred_entries": 0,
+  "figure_entries": 2,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 1,
+    "items": [
+     "Introduction"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 27,
+  "chars_total": 86947,
+  "furniture_lines_stripped": 33,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "main.tex",
    "tex_sections": 21,
-   "overlaid": 17,
+   "overlaid": 19,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -500,31 +1067,38 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.637,
+     "coverage_ratio": 0.89,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-001-the-hurwitz-topological-quantum-field-theory",
      "title": "The Hurwitz Topological Quantum Field Theory",
      "prose_ratio": 0.971,
-     "coverage_ratio": 0.167,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.276,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-002-the-hurwitz-theory-at-fixed-degree",
      "title": "The Hurwitz Theory at Fixed Degree",
      "prose_ratio": 0.933,
-     "coverage_ratio": 0.99,
+     "coverage_ratio": 0.98,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-the-extended-hurwitz-theory",
      "title": "The Extended Hurwitz Theory",
-     "prose_ratio": 0.927,
-     "coverage_ratio": 0.971,
+     "prose_ratio": 0.933,
+     "coverage_ratio": 0.982,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -532,7 +1106,7 @@
      "id": "sec-004-the-string-dual",
      "title": "The String Dual",
      "prose_ratio": 0.969,
-     "coverage_ratio": 0.948,
+     "coverage_ratio": 0.969,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -548,7 +1122,7 @@
      "id": "sec-006-the-observables-of-two-dimensional-yang-mills-th",
      "title": "The Observables of Two-dimensional Yang-Mills Theory",
      "prose_ratio": 0.968,
-     "coverage_ratio": 0.994,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -556,14 +1130,14 @@
      "id": "sec-007-the-schur-weyl-dictionary",
      "title": "The Schur-Weyl Dictionary",
      "prose_ratio": 0.961,
-     "coverage_ratio": 0.989,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-008-the-gross-taylor-expansion",
      "title": "The Gross-Taylor Expansion",
-     "prose_ratio": 0.913,
+     "prose_ratio": 0.917,
      "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "pandoc"
@@ -572,7 +1146,7 @@
      "id": "sec-009-chiral-yang-mills-theory-as-a-deformed-hurwitz-t",
      "title": "Chiral Yang-Mills Theory as a Deformed Hurwitz Theory",
      "prose_ratio": 0.969,
-     "coverage_ratio": 0.892,
+     "coverage_ratio": 0.903,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -580,27 +1154,29 @@
      "id": "sec-010-the-stringy-structure-of-chiral-yang-mills-theor",
      "title": "The Stringy Structure of Chiral Yang-Mills Theory",
      "prose_ratio": 0.354,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-011-a-double-expansion",
      "title": "A Double Expansion",
-     "prose_ratio": 0.026,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.954,
+     "coverage_ratio": 0.906,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-012-vertex-operators",
      "title": "Vertex Operators",
      "prose_ratio": 0.96,
-     "coverage_ratio": 0.677,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-013-a-stringy-deformation",
      "title": "A Stringy Deformation",
-     "prose_ratio": 0.985,
-     "coverage_ratio": 0.952,
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.965,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -616,14 +1192,14 @@
      "id": "sec-015-the-partial-permutation-algebra-of-yang-mills-th",
      "title": "The Partial Permutation Algebra of Yang-Mills Theory",
      "prose_ratio": 0.958,
-     "coverage_ratio": 0.966,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-016-the-duality-map",
      "title": "The Duality Map",
-     "prose_ratio": 0.984,
+     "prose_ratio": 0.992,
      "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "pandoc"
@@ -632,7 +1208,7 @@
      "id": "sec-017-the-gromov-witten-formulation",
      "title": "The Gromov-Witten Formulation",
      "prose_ratio": 0.981,
-     "coverage_ratio": 0.987,
+     "coverage_ratio": 0.993,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -640,22 +1216,22 @@
      "id": "sec-018-the-inverse-map",
      "title": "The Inverse Map",
      "prose_ratio": 0.964,
-     "coverage_ratio": 0.985,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-019-remarks-on-wilson-loops",
      "title": "Remarks on Wilson Loops",
-     "prose_ratio": 0.976,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-020-conclusions",
      "title": "Conclusions",
-     "prose_ratio": 1.0,
+     "prose_ratio": 0.989,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"

@@ -18,7 +18,7 @@ second-row hydride angles `CH₄ 109.47° / NH₃ 106.88° / H₂O 104.72°` wit
 `0.22°` (`molecular_angle_symmetric_block_general.py`).
 
 ## References
-- [manuscript] Ch. 12, Proposition: symmetric-block domain weight
+- [leitner2026] Ch. 12, Proposition: symmetric-block domain weight
 -/
 
 namespace QOU.Molecular

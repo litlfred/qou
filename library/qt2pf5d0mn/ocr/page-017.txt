@@ -1,0 +1,42 @@
+Section 2.1 Ribbon Fusion Categories
+
+1. Pentagon Axiom:
+
+(A® B)@C)@D
+
+ee ee
+
+(A®(BeC))@D (A® B)®(C@D)
+A® ((B®C)®D) Loan op A® (B® (C®@D))
+. (2.1)
+
+2. Triangle Axiom:
+
+OA1,B
+
+(A®1)® B—> A®8(1@B)
+
+2.2
+rate | ln ( )
+
+A®B
+
+The bi-functor ® is called the tensor product functor, and A® B, f @g are called the
+tensor product of A and B, the tensor product of f and g, respectively.
+
+Thus a monoidal category can be thought of as a generalization (or more precisely,
+a categorification) of a monoid such that the product and unit are given by the tensor
+product functor ® and the object 1, respectively, and that the axioms for associativity
+and unit hold only up to isomorphisms. In a monoid (or a group), different orders
+of multiplying a sequence of elements result in the same answer due to the axioms of
+associativity and unit. In a monoidal category, since associativity only holds up to
+isomorphism, we can only expect different orders of taking tensor product of a sequence
+of objects result in isomorphic objects.
+
+Given a sequence of objects A = (Aj,---,An), a representation X of A is an ex-
+pression obtained by first inserting 1’s in the sequence A,---A, and then putting in
+parentheses so that it gives a well-defined order of taking tensor product of the objects.
+Denote by ®@(X) the object resulting from taking tensor product in X. For instance,
+X, = (A, Ag) A3 and X2 = (A,1)(A2A3) are both representations of (A;, Ag, A3). It is an
+
+8

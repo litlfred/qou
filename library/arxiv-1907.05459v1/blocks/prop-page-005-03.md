@@ -1,0 +1,1 @@
+If the regularization scheme used respects chiral symmetry, then the counterterm must be proportional to a quark mass operator.3 If we focus on the DIS contribution to the Cottingham Formula, we have δMDIS ≃3αfs 16πM Z ΛUV ΛDIS dQ2 Q2  −Q2T1(0,Q2)+M2 Z 1 0dx[2xF1(x)+F2(x)]  +c.t.

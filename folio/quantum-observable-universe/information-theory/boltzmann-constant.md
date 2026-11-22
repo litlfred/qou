@@ -1,4 +1,4 @@
-In natural QOU units, we set the Boltzmann constant to unity: $k_B = 1$. The quantum Planck constant $\hbar_q$ formally replaces the classical thermal energy $k_B T_{\mathrm{phys}}$:
+**Definition.** In QOU natural units the **Boltzmann constant** is set to $k_B := 1$. With the quantum temperature $T_q = \hbar_q$ of [def:quantum-temperature](#def:quantum-temperature), the thermal energy is then
 $$
-  k_B \, T_{\mathrm{phys}} = \hbar_q = \frac{q-1}{q}.
+  k_B \, T_q = T_q = \hbar_q = \frac{q-1}{q}.
 $$

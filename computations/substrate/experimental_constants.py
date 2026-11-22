@@ -191,7 +191,7 @@ with _mpm.workdps(_CONST_DPS):
 # (17 + 6 + 4 + 4 importers), so the `f"{x:.6f}"` break that made three
 # producers un-runnable in qou-9q4h has no site to fire at here.
 with _mpm.workdps(_CONST_DPS):
-    G_F_MEV     = _mpm.mpf("1.1663788e-11")   # ± 0.0000006e-11 MeV⁻²
+    G_F_MEV     = _mpm.mpf("1.1663787e-11")   # ± 0.0000006e-11 MeV⁻²; CODATA 2022 (library/codata-2022/values.json). Was 1.1663788 (the PDG value), 2026-11-20.
     G_F_MEV_ERR = _mpm.mpf("0.0000006e-11")
 
 # DERIVED EXACTLY, not stored. Since the 2019 SI redefinition both h and e are
@@ -341,12 +341,15 @@ VOL_4_1_50DPS_STR       = "2.0298832128193072500424051085490405718833786150606"
 # uncertainty" convention). For true high-precision (50 dp+)
 # evaluation, callers should compute via SnapPy / mpmath at the
 # call site.
+# witness-copy-intentional: source constant (SnapPy); downstream witnesses copy it, not
+# the reverse.
 VOL_6_2          = 4.400832516123046  # SnapPy 6_2 volume
 VOL_6_2_ERR      = 1e-15
 VOL_8_11         = 8.286316817806593  # SnapPy 8_11 volume
 VOL_8_11_ERR     = 1e-15
 VOL_L6A4         = 7.3277247534177521  # Borromean = 8·G (per VOL_BORROMEAN above)
 VOL_L6A4_ERR     = 1e-15
+# witness-copy-intentional: source constant (SnapPy), as VOL_6_2.
 VOL_7_SQ_1       = 4.749499981874439  # Whitehead-pair / α-α coupling knot
 VOL_7_SQ_1_ERR   = 1e-15
 # EIGHT_G defined later (depends on CATALAN constant defined below).

@@ -1,0 +1,70 @@
+in poincare-line uv = mk-circline A B (cnj B) A
+using assms
+unfolding unit-disc-def disc-def inversion-def
+apply (simp add: Let-def)
+proof (transfer, transfer, safe)
+
+fix ul u2 v1 v2
+assume wv: (ul, u2) # vec-zero (vl, v2) # vec-zero
+
+a (ul, U2) &y oy 7 (v1, v2) %y Xv
+
+a (ul, u2) %y (vl, v2) 7 (ul, u2) &y conjugate-cvec (reciprocal-cvec (v1, v2))
+let ?u = to-complex-cvec (ul, u2) and ?v = to-complex-cvec (v1, v2)
+let ?A =i x (?u * cnj ?v — ?u * cnj Pu)
+let ?B =i * (?u * ((cor (cmod ?u))? + 1) — ?u * ((cor (emod ?v))? + 1))
+let ?C = — (i * (enj ?v * ((cor (emod ?u))? + 1) — enj ?u * ((cor (emod ?v))? + 1)))
+let ?D = ?A
+let ?H = (?A, ?B, ?C, ?D)
+
+let ?den = ul * cnj u2 * cnj vl * v2 — v1 * cnj v2 * cnj ul * u2
+
+have u2 4 0 v2 40
+using uv
+using inf-cvec-z2-zero-iff
+by blast+
+
+have 7 (ul, u2) %» (enj v2, enj v1)
+using uv(6)
+by (simp add: vec-cnj-def)
+moreover
+have (cnj v2, cnj v1) # vec-zero
+using wv(2)
+by auto
+ultimately
+have *: ul « cnj vl 4 u2 * cnj v2 ul *« v2 4 us * v1
+using wv(5) uv(1) wo(2) <u2 F 0» (v2 FO»
+using complex-cvec-eq-mix
+by blast+
+
+show circline-eq-cmat (poincare-line-cvec-cmat (ul, u2) (v1, v2))
+(mk-circline-cmat ?A ?B ?C ?D)
+proof (cases ?den # 0)
+case True
+
+let ?nom = v1 * cnj v2 * (ul * cnj ul + u2 * cnj u2) — ul * cnj u2 * (vl * cnj vl + v2 * cnj v2)
+let ?H' = mk-poincare-line-cmat (Re (i * ?den)) (i * ?nom)
+
+have circline-eq-cmat ?H ?H’
+proof —
+let ?k = (u2 * cnj v2) * (v2 * cnj u2)
+have is-real ?k
+using eq-cnj-iff-real
+by fastforce
+hence cor (Re ?k) = ?k
+using complex-of-real-Re
+by blast
+
+have Re (i * ?den) = Re ?k * ?A
+proof—
+have ?A = cnj ?A
+by (simp add: field-simps)
+hence is-real ?A
+using eq-cnj-iff-real
+by fastforce
+moreover
+have i * ?den = cnj (i * ?den)
+by (simp add: field-simps)
+hence is-real (i « ?den)
+
+21

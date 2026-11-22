@@ -1,0 +1,43 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-q-alg-9702017v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Idempotents of Hecke algebras of type A",
+  "contains": [
+    "library/arxiv-q-alg-9702017v2/sections/sec-front-matter",
+    "library/arxiv-q-alg-9702017v2/sections/sec-000",
+    "library/arxiv-q-alg-9702017v2/sections/sec-001",
+    "library/arxiv-q-alg-9702017v2/sections/sec-002",
+    "library/arxiv-q-alg-9702017v2/sections/sec-003",
+    "library/arxiv-q-alg-9702017v2/sections/sec-004",
+    "library/arxiv-q-alg-9702017v2/sections/sec-005"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "arxiv-q-alg-9702017v2",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "9702017v2.pdf",
+    "source_sha256": "282c911abb2a54e96f0ecf36ce34d3cf9a8f248171e8594c9f05469089920951",
+    "pages": 40,
+    "arxiv": {
+      "id": "q-alg/9702017",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "7 Feb 2019"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

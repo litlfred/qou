@@ -1,0 +1,3463 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-1301.6953v1",
+  "pages": [
+    {
+      "page": 3,
+      "rotation": 0,
+      "drawings": 652,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1: We need to pick a vacuum expectation value indicated by the arrow. The massless mode corresponds to an excitation along the bot- tom of the valley.",
+        "Figure 2: An example of the power-counting, on the left the rules for the lowest order vertex, propagator and loop integration. On the right showing how it leads to the two one-loop diagrams being p4 while the tree level lowest-order vertex is p2."
+      ],
+      "labels": [
+        {
+          "text": "Johan Bijnens",
+          "bbox": [
+            455.76,
+            52.51,
+            511.96,
+            65.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Chiral Perturbation Theory and Mesons",
+          "bbox": [
+            83.28,
+            53.53,
+            243.52,
+            65.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "rules:",
+          "bbox": [
+            256.8,
+            88.47,
+            280.83,
+            103.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "one loop example:",
+          "bbox": [
+            397.2,
+            88.47,
+            477.39,
+            103.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(p2)2 (1/p2)2 p4 = p4",
+          "bbox": [
+            413.16,
+            135.43,
+            508.22,
+            152.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "p2",
+          "bbox": [
+            303.6,
+            138.85,
+            312.99,
+            154.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "1/p2",
+          "bbox": [
+            291.84,
+            181.81,
+            312.87,
+            197.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "We need to pick",
+          "bbox": [
+            132.72,
+            184.51,
+            199.62,
+            197.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 1:",
+          "bbox": [
+            83.28,
+            184.6,
+            123.08,
+            198.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Bold"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(p2)(1/p2) p4 = p4",
+          "bbox": [
+            397.08,
+            195.25,
+            483.27,
+            210.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "a vacuum expectation value",
+          "bbox": [
+            83.28,
+            197.71,
+            199.66,
+            211.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "R d4p",
+          "bbox": [
+            228.48,
+            202.51,
+            253.01,
+            241.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            9.82,
+            10.91
+          ]
+        },
+        {
+          "text": "p4",
+          "bbox": [
+            303.6,
+            208.69,
+            312.99,
+            223.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "indicated by the arrow. The",
+          "bbox": [
+            83.28,
+            210.91,
+            199.66,
+            224.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "massless mode corresponds",
+          "bbox": [
+            83.28,
+            223.99,
+            199.96,
+            237.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "to an excitation along the bot-",
+          "bbox": [
+            83.28,
+            237.19,
+            199.64,
+            250.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 2: An example of the power-counting, on the left the rules for",
+          "bbox": [
+            228.48,
+            237.91,
+            512.0,
+            251.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Bold",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "tom of the valley.",
+          "bbox": [
+            83.28,
+            250.27,
+            152.85,
+            263.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the lowest order vertex, propagator and loop integration. On the right",
+          "bbox": [
+            228.48,
+            250.99,
+            512.05,
+            264.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "showing how it leads to the two one-loop diagrams being p4 while the",
+          "bbox": [
+            228.48,
+            260.59,
+            512.02,
+            277.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.37,
+            9.96
+          ]
+        },
+        {
+          "text": "tree level lowest-order vertex is p2.",
+          "bbox": [
+            228.48,
+            276.4,
+            368.61,
+            290.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.37,
+            9.96
+          ]
+        },
+        {
+          "text": "Let me show these now in a little more detail. Quantum Chromodynamics (QCD) for nF equal mass",
+          "bbox": [
+            83.28,
+            310.83,
+            511.84,
+            327.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "quarks has an obvious global symmetry under the continuous interchange of the quarks SU(nF).",
+          "bbox": [
+            83.28,
+            325.83,
+            511.89,
+            341.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Looking at the purely strong Lagrangian (density)",
+          "bbox": [
+            83.28,
+            340.71,
+            301.11,
+            355.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "LQCD = ∑",
+          "bbox": [
+            177.0,
+            363.81,
+            235.48,
+            386.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "Symbol",
+            "Times-Italic",
+            "rsfs10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            15.71
+          ]
+        },
+        {
+          "text": "[i ¯qLD/qL +i ¯qRD/qR −mq( ¯qRqL + ¯qLqR)],",
+          "bbox": [
+            244.2,
+            368.19,
+            418.34,
+            391.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(2.1)",
+          "bbox": [
+            491.04,
+            368.19,
+            511.83,
+            382.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "q=u,d,s",
+          "bbox": [
+            216.84,
+            383.5,
+            242.74,
+            393.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "Times-Italic"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "we see that in the limit of mq = 0 there is actually the larger SU(nF)×SU(nF)R global symmetry.",
+          "bbox": [
+            83.28,
+            404.07,
+            511.77,
+            426.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Another way to see is that in the massless case left- and right-handed are no longer related by",
+          "bbox": [
+            83.28,
+            418.95,
+            511.85,
+            433.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Lorentz-transformations since we cannot go the rest-frame of a massless particle.",
+          "bbox": [
+            83.28,
+            433.83,
+            437.13,
+            448.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The global chiral symmetry SU(3)L × SU(3)R in QCD is spontaneously broken to the vector",
+          "bbox": [
+            103.68,
+            449.31,
+            511.71,
+            472.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "subgroup SU(3)V by the vacuum expectation value ⟨¯qq⟩= ⟨¯qLqR + ¯qRqL⟩̸ = 0. Since in this process",
+          "bbox": [
+            83.28,
+            464.19,
+            511.72,
+            486.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "8 generators are broken we get 8 Goldstone Bosons and their interactions vanish at zero momentum.",
+          "bbox": [
+            83.28,
+            479.19,
+            511.77,
+            493.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "This is shown pictorially for one broken generator in Fig. 1. The fact that the interaction vanishes at",
+          "bbox": [
+            83.28,
+            494.07,
+            511.95,
+            508.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "zero momentum allows us to introduce a proper power-counting along the lines discussed in [13].",
+          "bbox": [
+            83.28,
+            508.95,
+            511.77,
+            523.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "This is shown for the example of ππ-scattering at one loop in Fig. 2.",
+          "bbox": [
+            83.28,
+            523.83,
+            382.29,
+            538.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Symbol",
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The basic principle just described has been used in very many circumstances. One needs to",
+          "bbox": [
+            103.68,
+            539.31,
+            511.85,
+            553.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "decide which chiral perturbation theory is appropriate for the problem at hand. Some examples are",
+          "bbox": [
+            83.28,
+            554.19,
+            511.84,
+            568.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "• Which chiral symmetry: SU(Nf)L ×SU(Nf)R, for Nf = 2,3,... and extensions to (partially)",
+          "bbox": [
+            99.6,
+            580.23,
+            511.59,
+            603.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "quenched",
+          "bbox": [
+            110.4,
+            595.11,
+            151.85,
+            609.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "• Or beyond QCD",
+          "bbox": [
+            99.6,
+            615.63,
+            182.48,
+            637.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "• Space-time symmetry: Continuum or broken on the lattice: Wilson, staggered, mixed action",
+          "bbox": [
+            99.6,
+            636.15,
+            511.73,
+            658.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "• Volume: Inﬁnite, ﬁnite in space, ﬁnite T",
+          "bbox": [
+            99.6,
+            656.55,
+            285.43,
+            678.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "• Which interactions to include beyond the strong one",
+          "bbox": [
+            99.6,
+            677.07,
+            338.32,
+            699.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "• Which particles included as non Goldstone Bosons",
+          "bbox": [
+            99.6,
+            697.59,
+            332.68,
+            719.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "• My general belief: if it involves soft pions (or soft K,η) some version of ChPT exists.",
+          "bbox": [
+            99.6,
+            718.11,
+            485.13,
+            740.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "Symbol",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            294.96,
+            751.71,
+            300.42,
+            766.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        }
+      ]
+    },
+    {
+      "page": 6,
+      "rotation": 0,
+      "drawings": 136,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 3: The quality of the relations found in [31]. Shown are the NLO and NNLO predictions for combinations of observables with vanishes NNLO LEC contributions as well as the experimental/dispersive results for the same combinations."
+      ],
+      "labels": [
+        {
+          "text": "Johan Bijnens",
+          "bbox": [
+            455.76,
+            52.51,
+            511.96,
+            65.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Chiral Perturbation Theory and Mesons",
+          "bbox": [
+            83.28,
+            53.53,
+            243.52,
+            65.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            130.47,
+            97.06,
+            138.51,
+            110.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            9.64
+          ]
+        },
+        {
+          "text": "disp/exp",
+          "bbox": [
+            394.32,
+            107.67,
+            430.23,
+            120.92
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            9.64
+          ]
+        },
+        {
+          "text": "0.8",
+          "bbox": [
+            122.43,
+            120.95,
+            138.51,
+            134.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            9.64
+          ]
+        },
+        {
+          "text": "NLO+NNLO",
+          "bbox": [
+            377.98,
+            122.13,
+            430.23,
+            135.38
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            9.64
+          ]
+        },
+        {
+          "text": "NLO",
+          "bbox": [
+            410.4,
+            136.6,
+            430.23,
+            149.85
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            9.64
+          ]
+        },
+        {
+          "text": "0.6",
+          "bbox": [
+            122.43,
+            144.9,
+            138.51,
+            158.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            9.64
+          ]
+        },
+        {
+          "text": "0.4",
+          "bbox": [
+            122.43,
+            168.8,
+            138.51,
+            182.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            9.64
+          ]
+        },
+        {
+          "text": "0.2",
+          "bbox": [
+            122.43,
+            192.75,
+            138.51,
+            206.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            9.64
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            130.47,
+            216.64,
+            138.51,
+            229.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            9.64
+          ]
+        },
+        {
+          "text": "-0.2",
+          "bbox": [
+            121.9,
+            240.53,
+            138.51,
+            253.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            9.64
+          ]
+        },
+        {
+          "text": "-0.4",
+          "bbox": [
+            121.9,
+            264.48,
+            138.51,
+            277.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            9.64
+          ]
+        },
+        {
+          "text": "-0.6",
+          "bbox": [
+            121.9,
+            288.38,
+            138.51,
+            301.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            9.64
+          ]
+        },
+        {
+          "text": "-0.8",
+          "bbox": [
+            121.9,
+            312.32,
+            138.51,
+            325.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            9.64
+          ]
+        },
+        {
+          "text": "-1",
+          "bbox": [
+            129.94,
+            336.22,
+            138.51,
+            349.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            9.64
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            140.28,
+            345.86,
+            148.32,
+            359.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            9.64
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            187.37,
+            345.86,
+            195.41,
+            359.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            9.64
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            234.52,
+            345.86,
+            242.56,
+            359.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            9.64
+          ]
+        },
+        {
+          "text": "6",
+          "bbox": [
+            281.61,
+            345.86,
+            289.65,
+            359.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            9.64
+          ]
+        },
+        {
+          "text": "8",
+          "bbox": [
+            328.75,
+            345.86,
+            336.8,
+            359.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            9.64
+          ]
+        },
+        {
+          "text": "10",
+          "bbox": [
+            373.17,
+            345.86,
+            386.57,
+            359.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            9.64
+          ]
+        },
+        {
+          "text": "12",
+          "bbox": [
+            420.31,
+            345.86,
+            433.72,
+            359.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            9.64
+          ]
+        },
+        {
+          "text": "14",
+          "bbox": [
+            467.4,
+            345.86,
+            480.81,
+            359.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            9.64
+          ]
+        },
+        {
+          "text": "The quality of the relations found in [31]. Shown are the NLO and NNLO predictions for",
+          "bbox": [
+            134.64,
+            367.99,
+            512.0,
+            381.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 3:",
+          "bbox": [
+            83.28,
+            368.08,
+            123.44,
+            381.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Bold"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "combinations of observables with vanishes NNLO LEC contributions as well as the experimental/dispersive",
+          "bbox": [
+            83.28,
+            381.07,
+            512.5,
+            394.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "results for the same combinations.",
+          "bbox": [
+            83.28,
+            394.27,
+            220.05,
+            407.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "from resonance exchance and are thus intrinsically less well estimated. In addition, often the large",
+          "bbox": [
+            83.28,
+            432.27,
+            511.72,
+            446.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Nc suppressed terms in the order p6 lagrangian contribute with large coefﬁcients as well and all",
+          "bbox": [
+            83.28,
+            443.19,
+            511.83,
+            463.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "estimates so far of the LECs rely on large Nc to a large extent. One big question is thus whether we",
+          "bbox": [
+            83.28,
+            462.03,
+            511.96,
+            478.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "are really testing ChPT or simply doing a phenomenological ﬁt. In order to answer this question",
+          "bbox": [
+            83.28,
+            476.91,
+            511.62,
+            491.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "a systematic search for relations that are independent of the Cr",
+          "bbox": [
+            83.28,
+            491.74,
+            357.7,
+            506.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "i was done [31]. We found there 35",
+          "bbox": [
+            354.12,
+            491.79,
+            511.85,
+            509.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "relations between 76 observables and of these 13 had sufﬁcient data to study their success. There",
+          "bbox": [
+            83.28,
+            506.79,
+            511.84,
+            521.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "were 7 relations in ππ scattering which worked about the same for two and three ﬂavour ChPT.",
+          "bbox": [
+            83.28,
+            521.67,
+            512.01,
+            536.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Symbol",
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The two relations involving a−",
+          "bbox": [
+            83.28,
+            536.55,
+            218.47,
+            551.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "3 did not work well in either case. Of the 5 extra relations involving",
+          "bbox": [
+            212.28,
+            536.55,
+            511.5,
+            554.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "ππ and πK scattering three worked well, one of the bad ones involved a−",
+          "bbox": [
+            82.75,
+            551.43,
+            401.35,
+            566.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "Symbol",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "3 and the last one had very",
+          "bbox": [
+            395.16,
+            551.43,
+            511.85,
+            569.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "large NNLO corrections. The ﬁnal relation involves Kℓ4 and did not work well probably because",
+          "bbox": [
+            83.28,
+            566.31,
+            511.6,
+            582.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "ChPT fails to describe the quadratic slope in the F form-factor [32, 33]. The quality of the relations",
+          "bbox": [
+            83.28,
+            581.31,
+            511.6,
+            595.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "is shown in Fig. 3. The conclusion is that three ﬂavour ChPT “sort of” works taking into account",
+          "bbox": [
+            83.28,
+            596.19,
+            511.59,
+            610.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "that the relations involve very large correlations and that thus the experimental or dispersive input",
+          "bbox": [
+            83.28,
+            611.07,
+            511.71,
+            625.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "errors might be underestimated.",
+          "bbox": [
+            83.28,
+            625.95,
+            221.61,
+            640.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The previous major ﬁt to determine the Lr",
+          "bbox": [
+            103.68,
+            643.54,
+            293.86,
+            658.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "i using NNLO formulas dates back to 2001 [34].",
+          "bbox": [
+            290.76,
+            643.59,
+            511.77,
+            661.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Given that many more calculations in three ﬂavour ChPT at NNLO have been performed since",
+          "bbox": [
+            83.28,
+            658.47,
+            511.72,
+            673.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "and that the experimental input used then has also changed, an update has become necessary. This",
+          "bbox": [
+            83.28,
+            673.35,
+            511.96,
+            687.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "was done in [35] and the main results are summarized in Tab. 2. The old programs in the isospin",
+          "bbox": [
+            83.28,
+            688.23,
+            511.73,
+            702.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "conserving versions were rewritten in C++ for this purpose. The ﬁrst column uses the old input",
+          "bbox": [
+            83.28,
+            703.11,
+            511.71,
+            717.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "values and reproduces the old ﬁt [34] which was done isospin violation included. The next columns",
+          "bbox": [
+            83.28,
+            718.11,
+            511.72,
+            732.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "6",
+          "bbox": [
+            294.96,
+            751.71,
+            300.41,
+            766.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        }
+      ]
+    },
+    {
+      "page": 9,
+      "rotation": 0,
+      "drawings": 96,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 4: The left plot shows the form-factor f+ in D →πeν and D →Keν decays from CLEO [46]. In the right hand side the D →Keν has been corrected with the chiral logarithms via f+D→π = f+D→KFD→π/FD→K [42]."
+      ],
+      "labels": [
+        {
+          "text": "Johan Bijnens",
+          "bbox": [
+            455.76,
+            52.51,
+            511.96,
+            65.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Chiral Perturbation Theory and Mesons",
+          "bbox": [
+            83.28,
+            53.53,
+            243.52,
+            65.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1.2",
+          "bbox": [
+            105.59,
+            100.74,
+            117.98,
+            111.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.26
+          ]
+        },
+        {
+          "text": "1.2",
+          "bbox": [
+            314.15,
+            100.74,
+            326.54,
+            111.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.26
+          ]
+        },
+        {
+          "text": "f+ D→π",
+          "bbox": [
+            171.15,
+            106.11,
+            194.2,
+            119.23
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol",
+            "Times-Roman"
+          ],
+          "sizes": [
+            6.61,
+            8.26
+          ]
+        },
+        {
+          "text": "f+ D→πFD→K/FD→π",
+          "bbox": [
+            337.23,
+            106.11,
+            402.76,
+            119.23
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol",
+            "Times-Roman"
+          ],
+          "sizes": [
+            6.61,
+            8.26
+          ]
+        },
+        {
+          "text": "f+ D→K",
+          "bbox": [
+            170.0,
+            118.51,
+            194.2,
+            131.62
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol",
+            "Times-Roman"
+          ],
+          "sizes": [
+            6.61,
+            8.26
+          ]
+        },
+        {
+          "text": "f+ D→K",
+          "bbox": [
+            378.56,
+            118.51,
+            402.76,
+            131.62
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol",
+            "Times-Roman"
+          ],
+          "sizes": [
+            6.61,
+            8.26
+          ]
+        },
+        {
+          "text": "1.1",
+          "bbox": [
+            105.59,
+            128.01,
+            117.98,
+            139.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.26
+          ]
+        },
+        {
+          "text": "1.1",
+          "bbox": [
+            314.15,
+            128.01,
+            326.54,
+            139.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.26
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            111.79,
+            155.27,
+            117.98,
+            166.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.26
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            320.35,
+            155.27,
+            326.54,
+            166.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.26
+          ]
+        },
+        {
+          "text": "f+(q2)",
+          "bbox": [
+            80.73,
+            165.14,
+            96.16,
+            184.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            6.61,
+            8.26
+          ]
+        },
+        {
+          "text": "f+(q2)",
+          "bbox": [
+            289.29,
+            165.14,
+            304.72,
+            184.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            6.61,
+            8.26
+          ]
+        },
+        {
+          "text": "0.9",
+          "bbox": [
+            105.59,
+            182.54,
+            117.98,
+            193.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.26
+          ]
+        },
+        {
+          "text": "0.9",
+          "bbox": [
+            314.15,
+            182.54,
+            326.54,
+            193.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.26
+          ]
+        },
+        {
+          "text": "0.8",
+          "bbox": [
+            105.59,
+            209.8,
+            117.98,
+            220.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.26
+          ]
+        },
+        {
+          "text": "0.8",
+          "bbox": [
+            314.15,
+            209.8,
+            326.54,
+            220.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.26
+          ]
+        },
+        {
+          "text": "0.7",
+          "bbox": [
+            105.59,
+            237.07,
+            117.98,
+            248.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.26
+          ]
+        },
+        {
+          "text": "0.7",
+          "bbox": [
+            314.15,
+            237.07,
+            326.54,
+            248.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.26
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            119.84,
+            258.97,
+            126.04,
+            269.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.26
+          ]
+        },
+        {
+          "text": "0.2",
+          "bbox": [
+            138.56,
+            258.97,
+            150.95,
+            269.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.26
+          ]
+        },
+        {
+          "text": "0.4",
+          "bbox": [
+            160.37,
+            258.97,
+            172.76,
+            269.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.26
+          ]
+        },
+        {
+          "text": "0.6",
+          "bbox": [
+            182.18,
+            258.97,
+            194.58,
+            269.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.26
+          ]
+        },
+        {
+          "text": "0.8",
+          "bbox": [
+            203.99,
+            258.97,
+            216.39,
+            269.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.26
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            228.9,
+            258.97,
+            235.1,
+            269.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.26
+          ]
+        },
+        {
+          "text": "1.2",
+          "bbox": [
+            247.62,
+            258.97,
+            260.01,
+            269.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.26
+          ]
+        },
+        {
+          "text": "1.4",
+          "bbox": [
+            269.43,
+            258.97,
+            281.83,
+            269.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.26
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            328.4,
+            258.97,
+            334.6,
+            269.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.26
+          ]
+        },
+        {
+          "text": "0.2",
+          "bbox": [
+            347.12,
+            258.97,
+            359.51,
+            269.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.26
+          ]
+        },
+        {
+          "text": "0.4",
+          "bbox": [
+            368.93,
+            258.97,
+            381.32,
+            269.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.26
+          ]
+        },
+        {
+          "text": "0.6",
+          "bbox": [
+            390.74,
+            258.97,
+            403.14,
+            269.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.26
+          ]
+        },
+        {
+          "text": "0.8",
+          "bbox": [
+            412.55,
+            258.97,
+            424.95,
+            269.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.26
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            437.46,
+            258.97,
+            443.66,
+            269.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.26
+          ]
+        },
+        {
+          "text": "1.2",
+          "bbox": [
+            456.18,
+            258.97,
+            468.57,
+            269.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.26
+          ]
+        },
+        {
+          "text": "1.4",
+          "bbox": [
+            477.99,
+            258.97,
+            490.39,
+            269.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            8.26
+          ]
+        },
+        {
+          "text": "q2 [GeV2]",
+          "bbox": [
+            187.78,
+            269.79,
+            221.69,
+            283.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            6.61,
+            8.26
+          ]
+        },
+        {
+          "text": "q2 [GeV2]",
+          "bbox": [
+            396.34,
+            269.79,
+            430.25,
+            283.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            6.61,
+            8.26
+          ]
+        },
+        {
+          "text": "Figure 4: The left plot shows the form-factor f+ in D →πeν and D →Keν decays from CLEO [46]. In the",
+          "bbox": [
+            83.28,
+            287.95,
+            512.02,
+            308.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "Symbol",
+            "Times-Bold",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.37,
+            9.96
+          ]
+        },
+        {
+          "text": "right hand side the D →Keν has been corrected with the chiral logarithms via f+D→π = f+D→KFD→π/FD→K",
+          "bbox": [
+            83.28,
+            301.15,
+            511.08,
+            321.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "Symbol",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.37,
+            9.96
+          ]
+        },
+        {
+          "text": "[42].",
+          "bbox": [
+            83.28,
+            314.23,
+            102.57,
+            327.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "symmetries [47, 48]",
+          "bbox": [
+            83.28,
+            346.71,
+            170.79,
+            361.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "SU(2N) →SO(2N),",
+          "bbox": [
+            268.56,
+            373.35,
+            358.46,
+            395.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "SU(2N) →Sp(2N).",
+          "bbox": [
+            370.56,
+            373.35,
+            459.86,
+            395.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(5.1)",
+          "bbox": [
+            491.04,
+            373.35,
+            511.83,
+            387.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "SU(N)×SU(N) →SU(N),",
+          "bbox": [
+            135.36,
+            374.47,
+            256.58,
+            395.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "Times-Italic"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The cases correspond to a complex, real and pseudo-real representation for the N fermions. The",
+          "bbox": [
+            83.28,
+            400.11,
+            511.96,
+            414.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "global symmetry group in the latter two cases is SU(2N) since both fermion and antifermion are in",
+          "bbox": [
+            83.28,
+            415.11,
+            511.85,
+            429.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the same representation of the gauge group. Many one-loop results existed especially for the ﬁrst",
+          "bbox": [
+            83.28,
+            429.99,
+            511.95,
+            444.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "case, the equal mass case has been pushed to two-loop order in [49 – 51]. The main observation",
+          "bbox": [
+            83.28,
+            444.87,
+            511.49,
+            459.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "[49] is that the whole machinery developed for ChPT can be brought over with a few simple mod-",
+          "bbox": [
+            83.28,
+            459.75,
+            511.83,
+            474.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "iﬁcations to the three cases given above. This allowed us to perform the calculations for the mass",
+          "bbox": [
+            83.28,
+            474.63,
+            511.84,
+            489.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "and decay constants [49], meson-meson scattering [50] and the electroweak precision parameters",
+          "bbox": [
+            83.28,
+            489.63,
+            511.6,
+            504.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "[51]. The main idea was that lattice calculation can use our formulas to extrapolate to the massless",
+          "bbox": [
+            83.28,
+            504.51,
+            511.72,
+            519.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "case, see e.g. [52].",
+          "bbox": [
+            83.28,
+            519.39,
+            164.13,
+            533.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The main trick involved is that in all cases mesons can be described by a unitary matrix U =",
+          "bbox": [
+            103.68,
+            534.63,
+            511.99,
+            549.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            139.32,
+            543.7,
+            148.41,
+            562.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "2F)) with the Xa a different set of generators for the three cases. All ﬂavour sums",
+          "bbox": [
+            148.56,
+            545.55,
+            511.84,
+            564.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "exp(iφaXa/(",
+          "bbox": [
+            83.28,
+            549.46,
+            139.35,
+            564.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "Symbol",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "in the equal mass case can be done using the relations",
+          "bbox": [
+            83.28,
+            564.39,
+            317.56,
+            578.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "⟨XaAXaB⟩= ⟨A⟩⟨B⟩−1",
+          "bbox": [
+            87.24,
+            586.95,
+            199.01,
+            616.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "⟨XaA⟩⟨XaB⟩= ⟨AB⟩−1",
+          "bbox": [
+            296.28,
+            586.95,
+            407.93,
+            616.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "⟨AB⟩,",
+          "bbox": [
+            204.0,
+            595.39,
+            230.06,
+            616.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "Times-Italic"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "⟨A⟩⟨B⟩.",
+          "bbox": [
+            412.92,
+            595.39,
+            447.38,
+            616.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "Times-Italic"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "NF",
+          "bbox": [
+            189.72,
+            602.95,
+            201.67,
+            617.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "NF",
+          "bbox": [
+            398.64,
+            602.95,
+            410.59,
+            617.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "+ 1",
+          "bbox": [
+            180.96,
+            615.51,
+            197.57,
+            637.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "⟨XaA⟩⟨XaB⟩= 1",
+          "bbox": [
+            296.28,
+            615.51,
+            370.85,
+            644.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2⟨AB⟩+ 1",
+          "bbox": [
+            365.4,
+            615.51,
+            412.01,
+            644.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "⟨XaAXaB⟩= ⟨A⟩⟨B⟩",
+          "bbox": [
+            87.24,
+            616.63,
+            178.23,
+            644.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "Times-Italic"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2⟨AJSBTJS⟩−⟨AB⟩",
+          "bbox": [
+            192.12,
+            616.63,
+            279.27,
+            644.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2⟨AJSBTJS⟩−⟨A⟩⟨B⟩",
+          "bbox": [
+            406.56,
+            616.63,
+            502.11,
+            644.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            281.64,
+            626.14,
+            284.66,
+            637.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            504.48,
+            626.14,
+            507.5,
+            637.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            160.32,
+            630.39,
+            165.77,
+            644.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "2NF",
+          "bbox": [
+            259.08,
+            630.39,
+            276.43,
+            645.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2NF",
+          "bbox": [
+            477.72,
+            630.39,
+            495.07,
+            645.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "+ 1",
+          "bbox": [
+            180.96,
+            644.07,
+            197.57,
+            666.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "⟨XaA⟩⟨XaB⟩= 1",
+          "bbox": [
+            296.28,
+            644.07,
+            370.85,
+            673.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2⟨AB⟩−1",
+          "bbox": [
+            365.4,
+            644.07,
+            412.01,
+            673.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "⟨XaAXaB⟩= ⟨A⟩⟨B⟩",
+          "bbox": [
+            87.24,
+            645.19,
+            178.23,
+            673.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "Times-Italic"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2⟨AJABTJA⟩−⟨AB⟩",
+          "bbox": [
+            192.12,
+            645.19,
+            280.95,
+            673.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2⟨AJABTJA⟩−⟨A⟩⟨B⟩",
+          "bbox": [
+            406.56,
+            645.19,
+            503.79,
+            673.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            283.32,
+            654.82,
+            286.34,
+            665.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            504.96,
+            654.82,
+            507.98,
+            665.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            160.32,
+            658.95,
+            165.77,
+            673.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "2NF",
+          "bbox": [
+            260.76,
+            658.95,
+            278.11,
+            674.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2NF",
+          "bbox": [
+            479.4,
+            658.95,
+            496.75,
+            674.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(5.2)",
+          "bbox": [
+            491.04,
+            672.03,
+            511.83,
+            686.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "!",
+          "bbox": [
+            397.92,
+            700.73,
+            406.55,
+            733.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "!",
+          "bbox": [
+            469.92,
+            700.73,
+            478.55,
+            733.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "0 I",
+          "bbox": [
+            381.0,
+            701.19,
+            394.71,
+            715.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "0 −I",
+          "bbox": [
+            445.8,
+            701.19,
+            467.43,
+            723.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The lines are for the complex, real and pseudo-real case and JS =",
+          "bbox": [
+            83.28,
+            708.39,
+            368.0,
+            724.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": ", JA =",
+          "bbox": [
+            406.56,
+            708.39,
+            432.8,
+            724.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            478.56,
+            708.39,
+            481.29,
+            722.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "I 0",
+          "bbox": [
+            381.6,
+            716.07,
+            395.93,
+            730.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            458.88,
+            716.07,
+            464.33,
+            730.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "I",
+          "bbox": [
+            446.52,
+            717.19,
+            450.15,
+            730.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "9",
+          "bbox": [
+            294.96,
+            751.71,
+            300.41,
+            766.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.91
+          ]
+        }
+      ]
+    }
+  ]
+}

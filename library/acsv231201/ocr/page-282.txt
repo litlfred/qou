@@ -1,0 +1,41 @@
+264 Smooth point asymptotics
+
+Assumption 9.2 (No CPAI). For any branch y(x) = Cx°(1+0(1)) of Q(x, y) =
+0 as x > 0 we have a # -§ and for any branch x(y) = C'y'(1 + o(1)) of
+O(x,y) = 0 as y > 0 we have B # -i.
+
+When Assumption 9.2 holds we can be very explicit about the behavior of
+the height function near the coordinate axes.
+
+Lemma 9.27. Assume there are no CPAI. For any sufficiently small ¢ > 0,
+fixed 6 € [-2,z], and branch y(x) of Q(x, y) = 0 near x = 0, the parametrized
+height function
+
+hg(t) =h (te, y(t”)
+
+is monotonic for t € [0, €]. Furthermore, if y(x) ~ Cx" as x — 0 then
+
+. o) ifa > -?/8
+lim hg(t) = :
+130" oo ifa <—-?/s
+
+Proof Puiseux’s theorem implies we can always find a € Q,C € C, anda
+function @ with @(x) and x@’(x) in o(1) such that y(x) = Cx*(1 + A(x)) as
+x — 0. The height function is the real part of H(x, y) = —7 log x — Slog y, so
+
+d
+to = cos(@Re [Hx(x, y(@x))] — sin(@)Im [Hx(x, y(x))],
+
+where
+Thus
+Sat) ~
+
+which is strictly positive or strictly negative under Assumption 9.2. Finally, we
+note
+
+ho(t) ~ log (Cr*-**)
+for ¢ sufficiently small, giving the stated asymptotic behavior. ia)
+
+Corollary 9.28. Under Assumption 9.2 the connected components of X*° are
+diffeomorphic to disjoint open disks with their origins removed, corresponding
+to the branches y(x) ~ Cx* of Q(x, y) = 0 as x > 0 with -7/8 <a <0.

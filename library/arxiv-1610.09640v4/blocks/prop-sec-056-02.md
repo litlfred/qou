@@ -1,1 +1,1 @@
-Given a DG bifunctorF : C1×C2→D, there are induced
+If N is a thick abelian subcategory of M then DN(M) is a full triangulated subcategory of D(M).

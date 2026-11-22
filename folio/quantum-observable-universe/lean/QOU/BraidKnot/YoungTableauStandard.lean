@@ -543,8 +543,12 @@ Checked exactly for `k = 3..11` in
 [`computations/combinatorics/branching_two_one_route_probe.py`](../../../../../computations/combinatorics/branching_two_one_route_probe.py).
 **That probe confirms the route's arithmetic, not its open input**: it computes `f^{λ/μ}` *by*
 the skew branching recursion, so it assumes that rule rather than verifying it.  So this is a
-credible route with one real obligation left, **not** a proof — `branching_two_one` stays
-open, and no instance of the class exists. -/
+credible route with one real obligation left, **not** a proof.
+
+**Since closed:** the skew branching rule is proved (`factorial_mul_skewPair_of_le`,
+`QOU.Mathlib.SkewBranchingSum`), `branching_two_one_holds` is proved sorry-free in
+`QOU.Mathlib.SkewBranchingTwoOne`, and that file supplies the instance
+`rskIdentitiesContextInstance`. -/
 
 class RSKIdentitiesContext where
   branching_two_one : ∀ (k : ℕ), 3 ≤ k → 3 * (∑ p : Nat.Partition k, dimSYT p * fDimSkew (partitionShape p) mu21) = Nat.factorial k

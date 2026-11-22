@@ -90,7 +90,7 @@ Two further facts finish the matter, both in `ExtensionClass`:
 
 Anyone quoting a value for this Ext group must say which relation they mean.
 
--- Ref: [manuscript] quantum-observable-universe/information-theory
+-- Ref: [leitner2026] quantum-observable-universe/information-theory
 -/
 
 namespace QOU.Mathlib.HeckeExtOne

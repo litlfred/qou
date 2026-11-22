@@ -37,7 +37,7 @@ satisfies the depth-`d` polynomial relation `M^d = Σ_{j<d} c_j • M^j`
 (Cayley–Hamilton on the finite-rank period space), then its powers obey the
 depth-`d` linear recurrence `M^{n+d} = Σ_{j<d} c_j • M^{n+j}` for every `n`,
 with the SAME `n`-independent kernel. Hence so does every period orbit. -/
--- Ref: [manuscript] §mass-theory/prolonged-periods-fixed-depth
+-- Ref: [leitner2026] §mass-theory/prolonged-periods-fixed-depth
 theorem prolongation_fixed_depth_recurrence
     (M : Module.End R V) (d : ℕ) (c : Fin d → R)
     (hCH : (M ^ d) = ∑ j : Fin d, c j • (M ^ (j : ℕ))) (n : ℕ) :

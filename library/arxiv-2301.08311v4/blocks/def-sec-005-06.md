@@ -1,0 +1,1 @@
+A map u : D →CPn with boundary on the Lagrangian T R+iϵ or T γ for a cylindrical γ is called elementary when u−1(CPn−1 ∞) = {1} and the eigenvalue of the leading order eigenfunction of u as in Theorem 3.2 of [Sch16] is π/n. We denote the set of elementary discs that maps 1 7→p ∈T n−1 Clif and boundary on T R+iϵ or T γ by Mp(R + iϵ), Mp(γ) respectively.

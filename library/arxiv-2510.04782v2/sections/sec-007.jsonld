@@ -9,17 +9,19 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "The main result",
-  "pageStart": 25,
-  "pageEnd": 28,
+  "title": "Habiro rings of étale extensions",
+  "pageStart": 15,
+  "pageEnd": 20,
   "contains": [
     "library/arxiv-2510.04782v2/blocks/prose-sec-007",
-    "library/arxiv-2510.04782v2/blocks/thm-sec-007-01",
-    "library/arxiv-2510.04782v2/blocks/example-sec-007-02",
-    "library/arxiv-2510.04782v2/blocks/prop-sec-007-03",
-    "library/arxiv-2510.04782v2/blocks/thm-sec-007-04"
+    "library/arxiv-2510.04782v2/blocks/rem-sec-007-01",
+    "library/arxiv-2510.04782v2/blocks/thm-sec-007-02",
+    "library/arxiv-2510.04782v2/blocks/rem-sec-007-03",
+    "library/arxiv-2510.04782v2/blocks/lem-sec-007-04",
+    "library/arxiv-2510.04782v2/blocks/cor-sec-007-05",
+    "library/arxiv-2510.04782v2/blocks/rem-sec-007-06"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2510.04782v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2510.04782v2",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2510.04782v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2510.04782v2/manifest.jsonld",
   "provenance": "ingested"
 }

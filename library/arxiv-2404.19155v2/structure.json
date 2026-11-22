@@ -7,10 +7,11 @@
   "bytes": 692539,
   "pages": 21,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,22 +21,30 @@
    "stamp_date": "15 May 2025"
   },
   "doi": null,
-  "title": "Octahedral coordinates from the Wirtinger presentation Calvin McPhail-Snyder Duke University calvin@sl2.site",
-  "authors_raw": null,
+  "title": "Octahedral coordinates from the Wirtinger presentation",
+  "authors_raw": "Calvin McPhail-Snyder",
   "title_lines": [
-   "Octahedral coordinates from the Wirtinger presentation",
-   "Calvin McPhail-Snyder",
-   "Duke University",
-   "calvin@sl2.site"
+   "Octahedral coordinates from the Wirtinger presentation"
   ],
-  "abstract": "Let\u03c1 be a representation of a knot group (or more generally, the funda- mental group of a tangle complement) intoSL2(C) expressed in terms of the Wirtinger generators of a diagramD. This diagram also determines an ideal triangulation of the complement called the octahedral decompo- sition.\u03c1 induces a hyperbolic structure on the complement ofD, and in this note we give a direct algebraic formula for the geometric parameters of the octahedral decomposition induced by this structure. Our formula gives a new, explicit criterion for whether\u03c1 occurs as a critical point of the diagram\u2019s Neumann-Zagier\u2013Yokota potential function.",
+  "abstract": "Let ρ be a representation of a knot group (or more generally, the funda- mental group of a tangle complement) into SL2(C) expressed in terms of the Wirtinger generators of a diagram D. This diagram also determines an ideal triangulation of the complement called the octahedral decompo- sition. ρ induces a hyperbolic structure on the complement of D, and in this note we give a direct algebraic formula for the geometric parameters of the octahedral decomposition induced by this structure. Our formula gives a new, explicit criterion for whether ρ occurs as a critical point of the diagram’s Neumann-Zagier–Yokota potential function.",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20250516003823Z",
-   "Creator": "LaTeX with hyperref",
    "Producer": "pdfTeX-1.40.25",
-   "Title": ""
-  }
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20250516003823Z"
+  },
+  "title_raw": "Octahedral coordinates from the Wirtinger presentation",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Octahedral coordinates from the Wirtinger presentation",
+   "outline": "Introduction",
+   "text": "Octahedral coordinates from the Wirtinger presentation",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Octahedral coordinates from the Wirtinger presentation Calvin McPhail-Snyder Duke University calvin@sl2.site"
  },
  "toc": [
   {
@@ -43,65 +52,430 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Octahedral colorings",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "The holonomy of an octahedral coloring",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 1,
    "title": "Gauge transformations",
    "page": 13,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 1,
    "title": "Shape parameters and the potential function",
    "page": 14,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 1,
    "title": "Bibliography",
    "page": 19,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Positive (left) and negative (right) crossings with our standard labeling",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "In this case we say that region j′ is below region j across segment i. We write",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Rules for decorated SL2(C) colorings",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "We can consistently assign colors to the regions around a positive crossing be-",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Generators of the fundamental groupoid Π(D) of a tangle diagram",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Deriving the middle relation at a crossing",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "This tangle has regions 0, 1, 2, 3 and segments 1, 2, 3. The over path for region",
+   "page": 10,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "9"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Graphical description of gauge transformations. The thick strands represent bundles of incoming and outgoing segments (possibly empty) with arbitrary colorings",
+   "page": 13,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "12"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "One can divide the octahedron at a crossing into four tetrahedra, one for each region touching the crossing. The shape parameters are then given as ratios of the b and m-coordinates, as in equation (23)",
+   "page": 15,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "14"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 989,
+   "n_words": 140,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
    "title": "Introduction",
    "level": 1,
    "page_start": 2,
-   "page_end": 3,
-   "n_chars": 6903,
-   "n_words": 1060
+   "page_end": 4,
+   "n_chars": 8291,
+   "n_words": 1294,
+   "label_start": "1",
+   "label_end": "3"
   },
   {
    "id": "sec-001-octahedral-colorings",
    "number": null,
    "title": "Octahedral colorings",
    "level": 1,
-   "page_start": 3,
+   "page_start": 4,
    "page_end": 7,
-   "n_chars": 8728,
-   "n_words": 1489
+   "n_chars": 7545,
+   "n_words": 1406,
+   "label_start": "3",
+   "label_end": "6"
   },
   {
    "id": "sec-002-the-holonomy-of-an-octahedral-coloring",
@@ -110,8 +484,10 @@
    "level": 1,
    "page_start": 7,
    "page_end": 13,
-   "n_chars": 12492,
-   "n_words": 2205
+   "n_chars": 12740,
+   "n_words": 2450,
+   "label_start": "6",
+   "label_end": "12"
   },
   {
    "id": "sec-003-gauge-transformations",
@@ -120,8 +496,10 @@
    "level": 1,
    "page_start": 13,
    "page_end": 14,
-   "n_chars": 2082,
-   "n_words": 342
+   "n_chars": 2105,
+   "n_words": 363,
+   "label_start": "12",
+   "label_end": "13"
   },
   {
    "id": "sec-004-shape-parameters-and-the-potential-function",
@@ -130,8 +508,10 @@
    "level": 1,
    "page_start": 14,
    "page_end": 19,
-   "n_chars": 12012,
-   "n_words": 2035
+   "n_chars": 12217,
+   "n_words": 2237,
+   "label_start": "13",
+   "label_end": "18"
   },
   {
    "id": "sec-005-bibliography",
@@ -140,16 +520,26 @@
    "level": 1,
    "page_start": 19,
    "page_end": 21,
-   "n_chars": 6759,
-   "n_words": 913
+   "n_chars": 6745,
+   "n_words": 897,
+   "label_start": "18",
+   "label_end": "20"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 6,
-  "sections": 6,
-  "chars_total": 48976,
+  "toc_inferred_entries": 0,
+  "figure_entries": 9,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 7,
+  "chars_total": 50632,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "note.tex",
@@ -162,42 +552,47 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.997,
-     "coverage_ratio": 0.991,
+     "prose_ratio": 0.896,
+     "coverage_ratio": 0.893,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-octahedral-colorings",
      "title": "Octahedral colorings",
-     "prose_ratio": 0.946,
-     "coverage_ratio": 0.975,
+     "prose_ratio": 0.818,
+     "coverage_ratio": 0.925,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-the-holonomy-of-an-octahedral-coloring",
      "title": "The holonomy of an octahedral coloring",
-     "prose_ratio": 0.913,
-     "coverage_ratio": 0.984,
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.839,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-gauge-transformations",
      "title": "Gauge transformations",
-     "prose_ratio": 0.993,
-     "coverage_ratio": 0.976,
+     "prose_ratio": 0.655,
+     "coverage_ratio": 0.936,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-shape-parameters-and-the-potential-function",
      "title": "Shape parameters and the potential function",
-     "prose_ratio": 0.967,
-     "coverage_ratio": 0.976,
+     "prose_ratio": 0.84,
+     "coverage_ratio": 0.892,
      "result": "overlaid",
      "converter": "pandoc"
     },

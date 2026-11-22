@@ -1,0 +1,1 @@
+If K is a real Hilbert space with complex structure J, mapping a(f) to 1 2(c(f)−ic(Jf)) deﬁnes an isomorphism of the CAR algebra of the complex Hilbert space onto the Cliﬀord algebra of K. The inverse map is given by c(f) 7→a(f) + a(f)∗.

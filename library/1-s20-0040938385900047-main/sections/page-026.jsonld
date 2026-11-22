@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/1-s20-0040938385900047-main/sections/page-026",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Page 26",
+  "pageStart": 26,
+  "pageEnd": 26,
+  "contains": [
+    "library/1-s20-0040938385900047-main/blocks/prose-page-026",
+    "library/1-s20-0040938385900047-main/blocks/figure-img-p026-22",
+    "library/1-s20-0040938385900047-main/blocks/figure-img-p026-23",
+    "library/1-s20-0040938385900047-main/blocks/figure-img-p026-24",
+    "library/1-s20-0040938385900047-main/blocks/figure-img-p026-25",
+    "library/1-s20-0040938385900047-main/blocks/figure-img-p026-236",
+    "library/1-s20-0040938385900047-main/blocks/figure-img-p026-237",
+    "library/1-s20-0040938385900047-main/blocks/figure-img-p026-238"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1-s20-0040938385900047-main/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1-s20-0040938385900047-main/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -21,7 +21,7 @@ Vol(4₁)/ℏ_q²` (fixes `q_0`).*
 The Lean encoding records uniqueness as a `∀ G', (additive G' ∧
 functorial G' ∧ normalised G') → G' = Geom` claim.
 
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/geom-universality.md
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/geom-universality.md
 -/
 
 namespace QOU.BraidKnot
@@ -64,7 +64,7 @@ def GeomUniversalityContext.IsNormalised
 
     Any additive + normalised functional on knot complements
     coincides with the categorical `Geom`. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/geom-universality.md
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/geom-universality.md
 theorem geom_universality
     [ctx : GeomUniversalityContext] (G' : ctx.Knot → ℝ)
     (h_add : ctx.IsAdditive G') (h_norm : ctx.IsNormalised G') :

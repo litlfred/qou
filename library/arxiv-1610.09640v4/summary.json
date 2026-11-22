@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1610.09640v4",
  "source_sha256": "db5e7a5c5e85f95f",
- "brief": "Derived Categories | Amnon Yekutieli | 14 Apr 2019 DERIVED CATEGORIES AMNON YEKUTIELI — This is the fourth (and last) prepublication version of a book on derived categories, that will be published by",
- "extended": "**Derived Categories | Amnon Yekutieli | 14 Apr 2019 DERIVED CATEGORIES AMNON YEKUTIELI**\n\n*Dedicated to Alexander Grothendieck, in Memoriam*\n\n459 pp, 110 sections.\n\n**Abstract.** This is the fourth (and last) prepublication version of a book on derived categories, that will be published by Cambridge University Press. The purpose of the book is to provide solid foundations for the theory of derived categories, and to present several applications of this theory incommutative and noncommutative algebra. The emphasis is on constructions and examples, rather than on axiomatics. Here is a brief description of the book. After a review of standard facts on abelian categories, we studydiﬀerential graded algebrain depth (including DG rings, DG modules, DG categories and DG functors). We then move totriangulated categoriesand triangulated functorsbetween them, and explain how they arise from the DG background. Speciﬁcally, we talk about the homotopy categoryK(A, M) of DGA-modules in M, whereA is a DG ring andM is an abelian category.\n\n**Outline.** 0 Introduction; 0.1 On the Subject; 0.2 A Motivating Discussion: Duality; 0.3 On the Book; 0.4 Synopsis of the Book; 0.5 What Is Not in the Book; 0.6 Prerequisites and Recommended Bibliography; 0.7 Credo, Writing Style and Goals; 0.8 Acknowledgments; 1.1 Set Theory; 1.2 Notation and Conventions; 1.3 Epimorphisms and Monomorphisms; 1.4 Products and Coproducts; 1.5 Equivalence of Categories; 1.6 Bifunctors; 1.7 Representable Functors; 1.8 Inverse and Direct Limits; 2 Abelian Categories and Additive Functors\n\n**Extracted claims (proposals, not verified).**\n- Theorem 5.5.1: says that given a DG functorF as in (0.4.1), with translation\n- Theorem 1.7.4: The Yoneda functorYC is fully faithful.\n- Theorem 1.7.8: The dual Yoneda functor Y∨\n- Theorem 2.4.1: Let M be a small abelian category. ThenM is\n- Theorem 2.7.10: Let A be a ring andI an A-module. Assume\n- Theorem 2.7.13: LetA be any ring. The categoryModA has enough injectives.",
+ "brief": "Derived Categories — This is the fourth (and last) prepublication version of a book on derived categories, that will be published by Cambridge University Press.",
+ "extended": "**Derived Categories**\n\n*Amnon Yekutieli*\n\n459 pp, 127 sections.\n\n**Abstract.** This is the fourth (and last) prepublication version of a book on derived categories, that will be published by Cambridge University Press. The purpose of the book is to provide solid foundations for the theory of derived categories, and to present several applications of this theory in commutative and noncommutative algebra. The emphasis is on constructions and examples, rather than on axiomatics. Here is a brief description of the book. After a review of standard facts on abelian categories, we study diﬀerential graded algebra in depth (including DG rings, DG modules, DG categories and DG functors). We then move to triangulated categories and triangulated functors between them, and explain how they arise from the DG background. Speciﬁcally, we talk about the homotopy category K(A, M) of DG A-modules in M, where A is a DG ring and M is an abelian category.\n\n**Outline.** Front matter; 0 Introduction; 0.1 On the Subject; 0.2 A Motivating Discussion: Duality; 0.3 On the Book; 0.4 Synopsis of the Book; 0.5 What Is Not in the Book; 0.6 Prerequisites and Recommended Bibliography; 0.7 Credo, Writing Style and Goals; 0.8 Acknowledgments; 1 Basic Facts on Categories; 1.1 Set Theory; 1.2 Notation and Conventions; 1.3 Epimorphisms and Monomorphisms; 1.4 Products and Coproducts; 1.5 Equivalence of Categories; 1.6 Bifunctors; 1.7 Representable Functors",
  "tokens": {
-  "brief": 49,
-  "extended": 497
+  "brief": 40,
+  "extended": 360
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-7"
+  },
   {
    "id": "sec-000-0-introduction",
    "title": "Introduction",
@@ -55,507 +60,587 @@
    "pages": "24-25"
   },
   {
-   "id": "sec-009-11-set-theory",
+   "id": "sec-009-1-basic-facts-on-categories",
+   "title": "Basic Facts on Categories",
+   "pages": "25-25"
+  },
+  {
+   "id": "sec-010-11-set-theory",
    "title": "Set Theory",
    "pages": "25-25"
   },
   {
-   "id": "sec-010-12-notation-and-conventions",
+   "id": "sec-011-12-notation-and-conventions",
    "title": "Notation and Conventions",
    "pages": "25-26"
   },
   {
-   "id": "sec-011-13-epimorphisms-and-monomorphisms",
+   "id": "sec-012-13-epimorphisms-and-monomorphisms",
    "title": "Epimorphisms and Monomorphisms",
    "pages": "26-27"
   },
   {
-   "id": "sec-012-14-products-and-coproducts",
+   "id": "sec-013-14-products-and-coproducts",
    "title": "Products and Coproducts",
    "pages": "27-28"
   },
   {
-   "id": "sec-013-15-equivalence-of-categories",
+   "id": "sec-014-15-equivalence-of-categories",
    "title": "Equivalence of Categories",
    "pages": "28-29"
   },
   {
-   "id": "sec-014-16-bifunctors",
+   "id": "sec-015-16-bifunctors",
    "title": "Bifunctors",
    "pages": "29-29"
   },
   {
-   "id": "sec-015-17-representable-functors",
+   "id": "sec-016-17-representable-functors",
    "title": "Representable Functors",
    "pages": "29-30"
   },
   {
-   "id": "sec-016-18-inverse-and-direct-limits",
+   "id": "sec-017-18-inverse-and-direct-limits",
    "title": "Inverse and Direct Limits",
    "pages": "30-33"
   },
   {
-   "id": "sec-017-2-abelian-categories-and-additive-functors",
+   "id": "sec-018-2-abelian-categories-and-additive-functors",
    "title": "Abelian Categories and Additive Functors",
    "pages": "33-33"
   },
   {
-   "id": "sec-018-21-linear-categories",
+   "id": "sec-019-21-linear-categories",
    "title": "Linear Categories",
    "pages": "33-33"
   },
   {
-   "id": "sec-019-22-additive-categories",
+   "id": "sec-020-22-additive-categories",
    "title": "Additive Categories",
-   "pages": "33-38"
+   "pages": "33-34"
   },
   {
-   "id": "sec-020-24-a-method-for-producing-proofs-in-abelian-cate",
+   "id": "sec-021-23-abelian-categories",
+   "title": "Abelian Categories",
+   "pages": "34-38"
+  },
+  {
+   "id": "sec-022-24-a-method-for-producing-proofs-in-abelian-cate",
    "title": "A Method for Producing Proofs in Abelian Categories",
    "pages": "38-42"
   },
   {
-   "id": "sec-021-25-additive-functors",
+   "id": "sec-023-25-additive-functors",
    "title": "Additive Functors",
    "pages": "42-46"
   },
   {
-   "id": "sec-022-26-projective-objects",
+   "id": "sec-024-26-projective-objects",
    "title": "Projective Objects",
    "pages": "46-47"
   },
   {
-   "id": "sec-023-27-injective-objects",
+   "id": "sec-025-27-injective-objects",
    "title": "Injective Objects",
    "pages": "47-51"
   },
   {
-   "id": "sec-024-3-differential-graded-algebra",
+   "id": "sec-026-3-differential-graded-algebra",
    "title": "Differential Graded Algebra",
-   "pages": "51-59"
+   "pages": "51-58"
   },
   {
-   "id": "sec-025-33-dg-rings-and-modules",
+   "id": "sec-027-32-dg-k-modules",
+   "title": "DG K-Modules",
+   "pages": "58-59"
+  },
+  {
+   "id": "sec-028-33-dg-rings-and-modules",
    "title": "DG Rings and Modules",
    "pages": "59-62"
   },
   {
-   "id": "sec-026-34-dg-categories",
+   "id": "sec-029-34-dg-categories",
    "title": "DG Categories",
    "pages": "62-64"
   },
   {
-   "id": "sec-027-35-dg-functors",
+   "id": "sec-030-35-dg-functors",
    "title": "DG Functors",
    "pages": "64-65"
   },
   {
-   "id": "sec-028-36-complexes-in-abelian-categories",
+   "id": "sec-031-36-complexes-in-abelian-categories",
    "title": "Complexes in Abelian Categories",
    "pages": "65-66"
   },
   {
-   "id": "sec-029-37-the-long-exact-cohomology-sequence",
+   "id": "sec-032-37-the-long-exact-cohomology-sequence",
    "title": "The Long Exact Cohomology Sequence",
-   "pages": "66-74"
+   "pages": "66-71"
   },
   {
-   "id": "sec-030-39-contravariant-dg-functors",
+   "id": "sec-033-38-the-dg-category-cam",
+   "title": "The DG Category C(A,M)",
+   "pages": "71-74"
+  },
+  {
+   "id": "sec-034-39-contravariant-dg-functors",
    "title": "Contravariant DG Functors",
    "pages": "74-79"
   },
   {
-   "id": "sec-031-4-translations-and-standard-triangles",
+   "id": "sec-035-4-translations-and-standard-triangles",
    "title": "Translations and Standard Triangles",
    "pages": "79-79"
   },
   {
-   "id": "sec-032-41-the-translation-functor",
+   "id": "sec-036-41-the-translation-functor",
    "title": "The Translation Functor",
    "pages": "79-82"
   },
   {
-   "id": "sec-033-42-the-standard-triangle-of-a-strict-morphism",
+   "id": "sec-037-42-the-standard-triangle-of-a-strict-morphism",
    "title": "The Standard Triangle of a Strict Morphism",
    "pages": "82-83"
   },
   {
-   "id": "sec-034-43-the-gauge-of-a-graded-functor",
+   "id": "sec-038-43-the-gauge-of-a-graded-functor",
    "title": "The Gauge of a Graded Functor",
    "pages": "83-84"
   },
   {
-   "id": "sec-035-44-the-translation-isomorphism-of-a-dg-functor",
+   "id": "sec-039-44-the-translation-isomorphism-of-a-dg-functor",
    "title": "The Translation Isomorphism of a DG Functor",
    "pages": "84-85"
   },
   {
-   "id": "sec-036-45-standard-triangles-and-dg-functors",
+   "id": "sec-040-45-standard-triangles-and-dg-functors",
    "title": "Standard Triangles and DG Functors",
    "pages": "85-87"
   },
   {
-   "id": "sec-037-46-examples-of-dg-functors",
+   "id": "sec-041-46-examples-of-dg-functors",
    "title": "Examples of DG Functors",
    "pages": "87-91"
   },
   {
-   "id": "sec-038-5-triangulated-categories-and-functors",
+   "id": "sec-042-5-triangulated-categories-and-functors",
    "title": "Triangulated Categories and Functors",
    "pages": "91-94"
   },
   {
-   "id": "sec-039-52-triangulated-and-cohomological-functors",
+   "id": "sec-043-52-triangulated-and-cohomological-functors",
    "title": "Triangulated and Cohomological Functors",
-   "pages": "94-102"
+   "pages": "94-96"
   },
   {
-   "id": "sec-040-54-the-homotopy-category-is-triangulated",
+   "id": "sec-044-53-some-properties-of-triangulated-categories",
+   "title": "Some Properties of Triangulated Categories",
+   "pages": "96-102"
+  },
+  {
+   "id": "sec-045-54-the-homotopy-category-is-triangulated",
    "title": "The Homotopy Category is Triangulated",
    "pages": "102-109"
   },
   {
-   "id": "sec-041-55-from-dg-functors-to-triangulated-functors",
+   "id": "sec-046-55-from-dg-functors-to-triangulated-functors",
    "title": "From DG Functors to Triangulated Functors",
    "pages": "109-110"
   },
   {
-   "id": "sec-042-56-the-opposite-homotopy-category-is-triangulate",
+   "id": "sec-047-56-the-opposite-homotopy-category-is-triangulate",
    "title": "The Opposite Homotopy Category is Triangulated",
    "pages": "110-113"
   },
   {
-   "id": "sec-043-6-localization-of-categories",
+   "id": "sec-048-6-localization-of-categories",
    "title": "Localization of Categories",
    "pages": "113-113"
   },
   {
-   "id": "sec-044-62-ore-localization",
-   "title": "Ore Localization",
-   "pages": "113-113"
-  },
-  {
-   "id": "sec-045-61-the-formalism-of-localization",
+   "id": "sec-049-61-the-formalism-of-localization",
    "title": "The Formalism of Localization",
-   "pages": "113-123"
+   "pages": "113-114"
   },
   {
-   "id": "sec-046-63-localization-of-linear-categories",
+   "id": "sec-050-62-ore-localization",
+   "title": "Ore Localization",
+   "pages": "114-124"
+  },
+  {
+   "id": "sec-051-63-localization-of-linear-categories",
    "title": "Localization of Linear Categories",
-   "pages": "123-127"
+   "pages": "124-127"
   },
   {
-   "id": "sec-047-71-localization-of-triangulated-categories",
+   "id": "sec-052-7-the-derived-category-dam",
+   "title": "The Derived Category D(A,M)",
+   "pages": "127-127"
+  },
+  {
+   "id": "sec-053-71-localization-of-triangulated-categories",
    "title": "Localization of Triangulated Categories",
-   "pages": "127-139"
+   "pages": "127-132"
   },
   {
-   "id": "sec-048-75-the-embedding-of-m-in-dm",
+   "id": "sec-054-72-definition-of-the-derived-category",
+   "title": "Definition of the Derived Category",
+   "pages": "132-135"
+  },
+  {
+   "id": "sec-055-73-boundedness-conditions-in-kam",
+   "title": "Boundedness Conditions in K(A,M)",
+   "pages": "135-138"
+  },
+  {
+   "id": "sec-056-74-thick-subcategories-of-m",
+   "title": "Thick Subcategories of M",
+   "pages": "138-139"
+  },
+  {
+   "id": "sec-057-75-the-embedding-of-m-in-dm",
    "title": "The Embedding of M in D(M)",
    "pages": "139-140"
   },
   {
-   "id": "sec-049-76-the-opposite-derived-category-is-triangulated",
+   "id": "sec-058-76-the-opposite-derived-category-is-triangulated",
    "title": "The Opposite Derived Category is Triangulated",
    "pages": "140-143"
   },
   {
-   "id": "sec-050-8-derived-functors",
+   "id": "sec-059-8-derived-functors",
    "title": "Derived Functors",
    "pages": "143-143"
   },
   {
-   "id": "sec-051-81-2-categorical-notation",
+   "id": "sec-060-81-2-categorical-notation",
    "title": "2-Categorical Notation",
-   "pages": "143-147"
+   "pages": "143-145"
   },
   {
-   "id": "sec-052-83-abstract-derived-functors",
+   "id": "sec-061-82-functor-categories",
+   "title": "Functor Categories",
+   "pages": "145-147"
+  },
+  {
+   "id": "sec-062-83-abstract-derived-functors",
    "title": "Abstract Derived Functors",
    "pages": "147-155"
   },
   {
-   "id": "sec-053-84-triangulated-derived-functors",
+   "id": "sec-063-84-triangulated-derived-functors",
    "title": "Triangulated Derived Functors",
    "pages": "155-162"
   },
   {
-   "id": "sec-054-85-contravariant-triangulated-derived-functors",
+   "id": "sec-064-85-contravariant-triangulated-derived-functors",
    "title": "Contravariant Triangulated Derived Functors",
    "pages": "162-165"
   },
   {
-   "id": "sec-055-9-dg-and-triangulated-bifunctors",
+   "id": "sec-065-9-dg-and-triangulated-bifunctors",
    "title": "DG and Triangulated Bifunctors",
    "pages": "165-165"
   },
   {
-   "id": "sec-056-91-dg-bifunctors",
+   "id": "sec-066-91-dg-bifunctors",
    "title": "DG Bifunctors",
    "pages": "165-167"
   },
   {
-   "id": "sec-057-92-triangulated-bifunctors",
+   "id": "sec-067-92-triangulated-bifunctors",
    "title": "Triangulated Bifunctors",
    "pages": "167-171"
   },
   {
-   "id": "sec-058-93-derived-bifunctors",
+   "id": "sec-068-93-derived-bifunctors",
    "title": "Derived Bifunctors",
    "pages": "171-175"
   },
   {
-   "id": "sec-059-101-k-injective-dg-modules",
+   "id": "sec-069-10-resolving-subcategories-of-kam",
+   "title": "Resolving Subcategories of K(A,M)",
+   "pages": "175-175"
+  },
+  {
+   "id": "sec-070-101-k-injective-dg-modules",
    "title": "K-Injective DG Modules",
    "pages": "175-179"
   },
   {
-   "id": "sec-060-102-k-projective-dg-modules",
+   "id": "sec-071-102-k-projective-dg-modules",
    "title": "K-Projective DG Modules",
    "pages": "179-181"
   },
   {
-   "id": "sec-061-103-k-flat-dg-modules",
+   "id": "sec-072-103-k-flat-dg-modules",
    "title": "K-Flat DG Modules",
    "pages": "181-182"
   },
   {
-   "id": "sec-062-104-opposite-resolving-subcategories",
+   "id": "sec-073-104-opposite-resolving-subcategories",
    "title": "Opposite Resolving Subcategories",
    "pages": "182-185"
   },
   {
-   "id": "sec-063-11-existence-of-resolutions",
+   "id": "sec-074-11-existence-of-resolutions",
    "title": "Existence of Resolutions",
    "pages": "185-185"
   },
   {
-   "id": "sec-064-111-direct-and-inverse-limits-of-complexes",
+   "id": "sec-075-111-direct-and-inverse-limits-of-complexes",
    "title": "Direct and Inverse Limits of Complexes",
    "pages": "185-187"
   },
   {
-   "id": "sec-065-112-totalizations",
+   "id": "sec-076-112-totalizations",
    "title": "Totalizations",
    "pages": "187-200"
   },
   {
-   "id": "sec-066-114-k-projective-resolutions-in-ca",
+   "id": "sec-077-114-k-projective-resolutions-in-ca",
    "title": "K-Projective Resolutions in C(A)",
    "pages": "200-208"
   },
   {
-   "id": "sec-067-115-k-injective-resolutions-in-cm",
+   "id": "sec-078-115-k-injective-resolutions-in-cm",
    "title": "K-Injective Resolutions in C+(M)",
-   "pages": "208-221"
+   "pages": "208-214"
   },
   {
-   "id": "sec-068-12-adjunctions-equivalences-and-cohomological-di",
+   "id": "sec-079-116-k-injective-resolutions-in-ca",
+   "title": "K-Injective Resolutions in C(A)",
+   "pages": "214-221"
+  },
+  {
+   "id": "sec-080-12-adjunctions-equivalences-and-cohomological-di",
    "title": "Adjunctions, Equivalences and Cohomological Dimension",
    "pages": "221-221"
   },
   {
-   "id": "sec-069-121-boundedness-conditions-revisited",
+   "id": "sec-081-121-boundedness-conditions-revisited",
    "title": "Boundedness Conditions Revisited",
    "pages": "221-223"
   },
   {
-   "id": "sec-070-122-the-bifunctor-rhom",
+   "id": "sec-082-122-the-bifunctor-rhom",
    "title": "The Bifunctor RHom",
    "pages": "223-227"
   },
   {
-   "id": "sec-071-124-cohomological-dimensions-of-functors-and-obj",
+   "id": "sec-083-124-cohomological-dimensions-of-functors-and-obj",
    "title": "Cohomological Dimensions of Functors and Objects",
    "pages": "227-231"
   },
   {
-   "id": "sec-072-125-theorems-on-functors-satisfying-finiteness-c",
+   "id": "sec-084-125-theorems-on-functors-satisfying-finiteness-c",
    "title": "Theorems on Functors Satisfying Finiteness Conditions",
    "pages": "231-235"
   },
   {
-   "id": "sec-073-126-derived-restriction-induction-and-coinductio",
+   "id": "sec-085-126-derived-restriction-induction-and-coinductio",
    "title": "Derived Restriction, Induction and Coinduction Functors",
    "pages": "235-238"
   },
   {
-   "id": "sec-074-127-dg-ring-quasi-isomorphisms",
+   "id": "sec-086-127-dg-ring-quasi-isomorphisms",
    "title": "DG Ring Quasi-Isomorphisms",
    "pages": "238-240"
   },
   {
-   "id": "sec-075-128-existence-of-dg-ring-resolutions",
+   "id": "sec-087-128-existence-of-dg-ring-resolutions",
    "title": "Existence of DG Ring Resolutions",
    "pages": "240-245"
   },
   {
-   "id": "sec-076-129-the-derived-tensor-evaluation-morphism",
+   "id": "sec-088-129-the-derived-tensor-evaluation-morphism",
    "title": "The Derived Tensor-Evaluation Morphism",
    "pages": "245-248"
   },
   {
-   "id": "sec-077-1210-hom-tensor-formulas-for-weakly-commutative",
+   "id": "sec-089-1210-hom-tensor-formulas-for-weakly-commutative",
    "title": "Hom-Tensor Formulas for Weakly Commutative DG Rings",
    "pages": "248-253"
   },
   {
-   "id": "sec-078-13-dualizing-complexes-over-commutative-rings",
+   "id": "sec-090-13-dualizing-complexes-over-commutative-rings",
    "title": "Dualizing Complexes over Commutative Rings",
-   "pages": "253-265"
+   "pages": "253-263"
   },
   {
-   "id": "sec-079-133-residue-complexes",
+   "id": "sec-091-132-interlude-the-matlis-classification-of-injec",
+   "title": "Interlude: The Matlis Classification of Injective Modules",
+   "pages": "263-265"
+  },
+  {
+   "id": "sec-092-133-residue-complexes",
    "title": "Residue Complexes",
    "pages": "265-273"
   },
   {
-   "id": "sec-080-134-van-den-bergh-rigidity",
+   "id": "sec-093-134-van-den-bergh-rigidity",
    "title": "Van den Bergh Rigidity",
    "pages": "273-280"
   },
   {
-   "id": "sec-081-135-rigid-dualizing-and-residue-complexes",
+   "id": "sec-094-135-rigid-dualizing-and-residue-complexes",
    "title": "Rigid Dualizing and Residue Complexes",
    "pages": "280-285"
   },
   {
-   "id": "sec-082-14-perfect-and-tilting-dg-modules-over-nc-dg-rin",
+   "id": "sec-095-14-perfect-and-tilting-dg-modules-over-nc-dg-rin",
    "title": "Perfect and Tilting DG Modules over NC DG Rings",
    "pages": "285-285"
   },
   {
-   "id": "sec-083-141-algebraically-perfect-dg-modules",
+   "id": "sec-096-141-algebraically-perfect-dg-modules",
    "title": "Algebraically Perfect DG Modules",
    "pages": "285-295"
   },
   {
-   "id": "sec-084-142-derived-morita-theory",
+   "id": "sec-097-142-derived-morita-theory",
    "title": "Derived Morita Theory",
    "pages": "295-302"
   },
   {
-   "id": "sec-085-143-dg-bimodules-over-k-flat-dg-rings",
+   "id": "sec-098-143-dg-bimodules-over-k-flat-dg-rings",
    "title": "DG Bimodules over K-Flat DG Rings",
    "pages": "302-308"
   },
   {
-   "id": "sec-086-144-tilting-dg-bimodules",
+   "id": "sec-099-144-tilting-dg-bimodules",
    "title": "Tilting DG Bimodules",
    "pages": "308-314"
   },
   {
-   "id": "sec-087-145-tilting-bimodule-complexes-over-rings",
+   "id": "sec-100-145-tilting-bimodule-complexes-over-rings",
    "title": "Tilting Bimodule Complexes over Rings",
    "pages": "314-323"
   },
   {
-   "id": "sec-088-15-algebraically-graded-noncommutative-rings",
+   "id": "sec-101-15-algebraically-graded-noncommutative-rings",
    "title": "Algebraically Graded Noncommutative Rings",
    "pages": "323-323"
   },
   {
-   "id": "sec-089-151-categories-of-algebraically-graded-modules",
+   "id": "sec-102-151-categories-of-algebraically-graded-modules",
    "title": "Categories of Algebraically Graded Modules",
    "pages": "323-331"
   },
   {
-   "id": "sec-090-152-properties-of-algebraically-graded-modules",
+   "id": "sec-103-152-properties-of-algebraically-graded-modules",
    "title": "Properties of Algebraically Graded Modules",
    "pages": "331-338"
   },
   {
-   "id": "sec-091-153-resolutions-and-derived-functors",
+   "id": "sec-104-153-resolutions-and-derived-functors",
    "title": "Resolutions and Derived Functors",
    "pages": "338-345"
   },
   {
-   "id": "sec-092-154-artin-schelter-regular-graded-rings",
+   "id": "sec-105-154-artin-schelter-regular-graded-rings",
    "title": "Artin-Schelter Regular Graded Rings",
    "pages": "345-351"
   },
   {
-   "id": "sec-093-16-derived-torsion-over-nc-graded-rings",
+   "id": "sec-106-16-derived-torsion-over-nc-graded-rings",
    "title": "Derived Torsion over NC Graded Rings",
    "pages": "351-351"
   },
   {
-   "id": "sec-094-161-quasi-compact-finite-dimensional-functors",
+   "id": "sec-107-161-quasi-compact-finite-dimensional-functors",
    "title": "Quasi-Compact Finite Dimensional Functors",
    "pages": "351-355"
   },
   {
-   "id": "sec-095-162-weakly-stable-and-idempotent-copointed-funct",
+   "id": "sec-108-162-weakly-stable-and-idempotent-copointed-funct",
    "title": "Weakly Stable and Idempotent Copointed Functors",
    "pages": "355-358"
   },
   {
-   "id": "sec-096-163-graded-torsion-weak-stability-and-idempotenc",
+   "id": "sec-109-163-graded-torsion-weak-stability-and-idempotenc",
    "title": "Graded Torsion: Weak Stability and Idempotence",
    "pages": "358-367"
   },
   {
-   "id": "sec-097-164-representability-of-derived-torsion",
+   "id": "sec-110-164-representability-of-derived-torsion",
    "title": "Representability of Derived Torsion",
    "pages": "367-371"
   },
   {
-   "id": "sec-098-165-symmetry-of-derived-torsion",
+   "id": "sec-111-165-symmetry-of-derived-torsion",
    "title": "Symmetry of Derived Torsion",
    "pages": "371-377"
   },
   {
-   "id": "sec-099-166-nc-mgm-equivalence",
+   "id": "sec-112-166-nc-mgm-equivalence",
    "title": "NC MGM Equivalence",
    "pages": "377-385"
   },
   {
-   "id": "sec-100-17-balanced-dualizing-complexes-over-nc-graded-r",
+   "id": "sec-113-17-balanced-dualizing-complexes-over-nc-graded-r",
    "title": "Balanced Dualizing Complexes over NC Graded Rings",
-   "pages": "385-392"
+   "pages": "385-385"
   },
   {
-   "id": "sec-101-173-balanced-dc-existence",
+   "id": "sec-114-171-graded-nc-dualizing-complexes",
+   "title": "Graded NC Dualizing Complexes",
+   "pages": "385-389"
+  },
+  {
+   "id": "sec-115-172-balanced-dc-definition-uniqueness-and-local",
+   "title": "Balanced DC: Definition, Uniqueness and Local Duality",
+   "pages": "389-392"
+  },
+  {
+   "id": "sec-116-173-balanced-dc-existence",
    "title": "Balanced DC: Existence",
    "pages": "392-402"
   },
   {
-   "id": "sec-102-174-balanced-trace-morphisms",
+   "id": "sec-117-174-balanced-trace-morphisms",
    "title": "Balanced Trace Morphisms",
    "pages": "402-411"
   },
   {
-   "id": "sec-103-18-rigid-noncommutative-dualizing-complexes",
+   "id": "sec-118-18-rigid-noncommutative-dualizing-complexes",
    "title": "Rigid Noncommutative Dualizing Complexes",
-   "pages": "411-425"
+   "pages": "411-418"
   },
   {
-   "id": "sec-104-183-interlude-graded-rings-of-laurent-type",
+   "id": "sec-119-182-rigid-nc-dc-definition-and-uniqueness",
+   "title": "Rigid NC DC: Definition and Uniqueness",
+   "pages": "418-425"
+  },
+  {
+   "id": "sec-120-183-interlude-graded-rings-of-laurent-type",
    "title": "Interlude: Graded Rings of Laurent Type",
    "pages": "425-429"
   },
   {
-   "id": "sec-105-184-graded-rigid-nc-dc",
+   "id": "sec-121-184-graded-rigid-nc-dc",
    "title": "Graded Rigid NC DC",
    "pages": "429-435"
   },
   {
-   "id": "sec-106-185-filtered-rings-and-existence-of-rigid-nc-dc",
+   "id": "sec-122-185-filtered-rings-and-existence-of-rigid-nc-dc",
    "title": "Filtered Rings and Existence of Rigid NC DC",
    "pages": "435-440"
   },
   {
-   "id": "sec-107-186-twisted-calabi-yau-rings",
+   "id": "sec-123-186-twisted-calabi-yau-rings",
    "title": "Twisted Calabi-Yau Rings",
    "pages": "440-447"
   },
   {
-   "id": "sec-108-references",
+   "id": "sec-124-references",
    "title": "References",
    "pages": "447-454"
   },
   {
-   "id": "sec-109-index",
+   "id": "sec-125-index",
    "title": "Index",
    "pages": "454-459"
   }
@@ -564,8 +649,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

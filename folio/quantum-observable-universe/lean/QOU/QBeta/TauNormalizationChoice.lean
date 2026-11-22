@@ -34,7 +34,7 @@ conditional theorems against.
 
 - [neumann-zagier1985] Neumann & Zagier, "Volumes of hyperbolic
   three-manifolds," Topology 24 (1985). https://doi.org/10.1016/0040-9383(85)90004-7
-- [manuscript] docs/audits/2026-08-02-pzzl-kappa-shape-vs-pot-S-normalization.md
+- [leitner2026] docs/audits/2026-08-02-pzzl-kappa-shape-vs-pot-S-normalization.md
 -/
 
 namespace QOU.QBeta.TauNormalizationChoice

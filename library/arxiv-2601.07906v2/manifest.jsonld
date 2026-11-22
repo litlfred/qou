@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2601.07906v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2601.07906v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "A universal sum over topologies in 3d gravity",
   "contains": [
+    "library/arxiv-2601.07906v2/sections/sec-front-matter",
     "library/arxiv-2601.07906v2/sections/sec-000",
     "library/arxiv-2601.07906v2/sections/sec-001",
     "library/arxiv-2601.07906v2/sections/sec-002",
@@ -41,10 +42,12 @@
     "library/arxiv-2601.07906v2/sections/sec-027",
     "library/arxiv-2601.07906v2/sections/sec-028",
     "library/arxiv-2601.07906v2/sections/sec-029",
-    "library/arxiv-2601.07906v2/sections/sec-030"
+    "library/arxiv-2601.07906v2/sections/sec-030",
+    "library/arxiv-2601.07906v2/sections/sec-031",
+    "library/arxiv-2601.07906v2/sections/sec-032"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",

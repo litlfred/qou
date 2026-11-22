@@ -8,20 +8,26 @@
   "pages": 72,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:25Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 7,
+    "reason": "19 of 384 words are a stray single letter: the text layer splits words"
+   }
+  ]
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings Tomotada Ohtsuki and Yoshiyuki Yokota Introduction",
+  "title": "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings",
   "authors_raw": "Tomotada Ohtsuki",
   "title_lines": [
    "On the asymptotic expansions of",
    "the Kashaev invariant of the knots with 6 crossings"
   ],
-  "abstract": "We give presentations of the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings. In particular, we show the volume conjecture for these knots, which states that the leading terms of the expansions present the hyperbolic volume and the Chern-Simons invariant of the complements of the knots. As higher coe\ufb03cients of the expansions, we obtain a new series of invariants of these knots. A non-trivial part of the proof is to apply the saddle point method to calculate the asymptotic expansion of an integral which presents the Kashaev invariant. A key step of this part is to give a concrete homotopy of the (real 3-dimensional) domain of the integral in C3 in such a way that the boundary of the domain always stays in a certain domain in C3 given by the potential function of the hyperbolic structure. Mathematics Subject Classi\ufb01cation (2010). Primary: 57M27. Secondary: 57M25, 57M50.",
+  "abstract": "We give presentations of the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings. In particular, we show the volume conjecture for these knots, which states that the leading terms of the expansions present the hyperbolic volume and the Chern-Simons invariant of the complements of the knots. As higher coeﬃcients of the expansions, we obtain a new series of invariants of these knots. A non-trivial part of the proof is to apply the saddle point method to calculate the asymptotic expansion of an integral which presents the Kashaev invariant. A key step of this part is to give a concrete homotopy of the (real 3-dimensional) domain of the integral in C3 in such a way that the boundary of the domain always stays in a certain domain in C3 given by the potential function of the hyperbolic structure. Mathematics Subject Classiﬁcation (2010). Primary: 57M27. Secondary: 57M25, 57M50.",
   "docinfo": {
    "Producer": "dvipdfmx (20110311)",
    "Creator": " TeX output 2016.11.15:2223",
@@ -37,7 +43,8 @@
     "text"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings Tomotada Ohtsuki and Yoshiyuki Yokota Introduction"
  },
  "toc": [
   {
@@ -85,7 +92,7 @@
   },
   {
    "level": 2,
-   "title": "De\ufb01nition of the Kashaev invariant",
+   "title": "Deﬁnition of the Kashaev invariant",
    "page": 7,
    "source": "inferred",
    "number": "2.3",
@@ -141,7 +148,7 @@
   },
   {
    "level": 2,
-   "title": "Estimate of the range of \u2206\u2032",
+   "title": "Estimate of the range of ∆′",
    "page": 16,
    "source": "inferred",
    "number": "3.2",
@@ -211,7 +218,7 @@
   },
   {
    "level": 2,
-   "title": "Estimate of the range of \u2206\u2032",
+   "title": "Estimate of the range of ∆′",
    "page": 30,
    "source": "inferred",
    "number": "4.2",
@@ -281,7 +288,7 @@
   },
   {
    "level": 2,
-   "title": "Estimate of the range of \u2206\u2032",
+   "title": "Estimate of the range of ∆′",
    "page": 48,
    "source": "inferred",
    "number": "5.2",
@@ -421,7 +428,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "The graph of \u039b(t) for 0 \u2264t \u22641",
+   "title": "The graph of Λ(t) for 0 ≤t ≤1",
    "page": 6,
    "confidence": 0.9,
    "evidence": [
@@ -447,7 +454,7 @@
   {
    "kind": "figure",
    "number": "3",
-   "title": "Contour lines of Re \u02c6V (0.8 + X\u221a\u22121, 0.18 + Y \u221a\u22121, 0.1) \u2212\u03c2R",
+   "title": "Contour lines of Re ˆV (0.8 + X√−1, 0.18 + Y √−1, 0.1) −ςR",
    "page": 37,
    "confidence": 0.9,
    "evidence": [
@@ -460,7 +467,7 @@
   {
    "kind": "figure",
    "number": "4",
-   "title": "The set of (t, s) satisfying that Re \u02c6V (t, s, u) \u2265\u03c2 for some u",
+   "title": "The set of (t, s) satisfying that Re ˆV (t, s, u) ≥ς for some u",
    "page": 48,
    "confidence": 0.9,
    "evidence": [
@@ -985,8 +992,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1042,
-   "n_words": 171,
+   "n_chars": 1040,
+   "n_words": 170,
    "label_start": null,
    "label_end": null
   },
@@ -997,7 +1004,7 @@
    "level": 1,
    "page_start": 1,
    "page_end": 4,
-   "n_chars": 7397,
+   "n_chars": 7408,
    "n_words": 1390,
    "label_start": null,
    "label_end": null
@@ -1009,7 +1016,7 @@
    "level": 1,
    "page_start": 4,
    "page_end": 6,
-   "n_chars": 2157,
+   "n_chars": 2167,
    "n_words": 510,
    "label_start": null,
    "label_end": null
@@ -1021,20 +1028,20 @@
    "level": 2,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 1181,
-   "n_words": 310,
+   "n_chars": 1183,
+   "n_words": 307,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-003-23-de\ufb01nition-of-the-kashaev-invariant",
+   "id": "sec-003-23-deﬁnition-of-the-kashaev-invariant",
    "number": "2.3",
-   "title": "De\ufb01nition of the Kashaev invariant",
+   "title": "Deﬁnition of the Kashaev invariant",
    "level": 2,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 1550,
-   "n_words": 348,
+   "n_chars": 1409,
+   "n_words": 278,
    "label_start": null,
    "label_end": null
   },
@@ -1045,8 +1052,8 @@
    "level": 2,
    "page_start": 8,
    "page_end": 11,
-   "n_chars": 5679,
-   "n_words": 1318,
+   "n_chars": 5705,
+   "n_words": 1321,
    "label_start": null,
    "label_end": null
   },
@@ -1057,8 +1064,8 @@
    "level": 2,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 1889,
-   "n_words": 406,
+   "n_chars": 1909,
+   "n_words": 409,
    "label_start": null,
    "label_end": null
   },
@@ -1069,20 +1076,20 @@
    "level": 2,
    "page_start": 12,
    "page_end": 16,
-   "n_chars": 5685,
-   "n_words": 1363,
+   "n_chars": 5718,
+   "n_words": 1370,
    "label_start": null,
    "label_end": null
   },
   {
    "id": "sec-007-32-estimate-of-the-range-of",
    "number": "3.2",
-   "title": "Estimate of the range of \u2206\u2032",
+   "title": "Estimate of the range of ∆′",
    "level": 2,
    "page_start": 16,
    "page_end": 18,
-   "n_chars": 4907,
-   "n_words": 1000,
+   "n_chars": 4931,
+   "n_words": 1005,
    "label_start": null,
    "label_end": null
   },
@@ -1093,8 +1100,8 @@
    "level": 2,
    "page_start": 18,
    "page_end": 20,
-   "n_chars": 2699,
-   "n_words": 652,
+   "n_chars": 2729,
+   "n_words": 656,
    "label_start": null,
    "label_end": null
   },
@@ -1105,8 +1112,8 @@
    "level": 2,
    "page_start": 20,
    "page_end": 22,
-   "n_chars": 3476,
-   "n_words": 933,
+   "n_chars": 3530,
+   "n_words": 940,
    "label_start": null,
    "label_end": null
   },
@@ -1117,8 +1124,8 @@
    "level": 2,
    "page_start": 22,
    "page_end": 26,
-   "n_chars": 7816,
-   "n_words": 2023,
+   "n_chars": 7864,
+   "n_words": 2030,
    "label_start": null,
    "label_end": null
   },
@@ -1129,20 +1136,20 @@
    "level": 2,
    "page_start": 26,
    "page_end": 30,
-   "n_chars": 4828,
-   "n_words": 1213,
+   "n_chars": 4861,
+   "n_words": 1220,
    "label_start": null,
    "label_end": null
   },
   {
    "id": "sec-012-42-estimate-of-the-range-of",
    "number": "4.2",
-   "title": "Estimate of the range of \u2206\u2032",
+   "title": "Estimate of the range of ∆′",
    "level": 2,
    "page_start": 30,
    "page_end": 33,
-   "n_chars": 6538,
-   "n_words": 1479,
+   "n_chars": 6562,
+   "n_words": 1484,
    "label_start": null,
    "label_end": null
   },
@@ -1153,8 +1160,8 @@
    "level": 2,
    "page_start": 33,
    "page_end": 35,
-   "n_chars": 2528,
-   "n_words": 630,
+   "n_chars": 2558,
+   "n_words": 634,
    "label_start": null,
    "label_end": null
   },
@@ -1165,8 +1172,8 @@
    "level": 2,
    "page_start": 35,
    "page_end": 37,
-   "n_chars": 2868,
-   "n_words": 771,
+   "n_chars": 2922,
+   "n_words": 778,
    "label_start": null,
    "label_end": null
   },
@@ -1177,8 +1184,8 @@
    "level": 2,
    "page_start": 37,
    "page_end": 44,
-   "n_chars": 12666,
-   "n_words": 3199,
+   "n_chars": 12714,
+   "n_words": 3206,
    "label_start": null,
    "label_end": null
   },
@@ -1189,20 +1196,20 @@
    "level": 2,
    "page_start": 44,
    "page_end": 48,
-   "n_chars": 4629,
-   "n_words": 1146,
+   "n_chars": 4662,
+   "n_words": 1153,
    "label_start": null,
    "label_end": null
   },
   {
    "id": "sec-017-52-estimate-of-the-range-of",
    "number": "5.2",
-   "title": "Estimate of the range of \u2206\u2032",
+   "title": "Estimate of the range of ∆′",
    "level": 2,
    "page_start": 48,
    "page_end": 50,
-   "n_chars": 4468,
-   "n_words": 973,
+   "n_chars": 4492,
+   "n_words": 978,
    "label_start": null,
    "label_end": null
   },
@@ -1213,8 +1220,8 @@
    "level": 2,
    "page_start": 50,
    "page_end": 52,
-   "n_chars": 2860,
-   "n_words": 722,
+   "n_chars": 2890,
+   "n_words": 726,
    "label_start": null,
    "label_end": null
   },
@@ -1225,8 +1232,8 @@
    "level": 2,
    "page_start": 52,
    "page_end": 53,
-   "n_chars": 2265,
-   "n_words": 585,
+   "n_chars": 2319,
+   "n_words": 592,
    "label_start": null,
    "label_end": null
   },
@@ -1236,62 +1243,74 @@
    "title": "Verifying the assumption of the saddle point method",
    "level": 2,
    "page_start": 53,
-   "page_end": 56,
-   "n_chars": 4444,
-   "n_words": 1086,
+   "page_end": 55,
+   "n_chars": 3980,
+   "n_words": 1008,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-021-estimate-of-solutions-of-35",
+   "id": "sec-021-a-estimate-of-solutions-of-systems-of-equations",
+   "number": null,
+   "title": "A Estimate of solutions of systems of equations",
+   "level": 1,
+   "page_start": 55,
+   "page_end": 56,
+   "n_chars": 509,
+   "n_words": 84,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-022-estimate-of-solutions-of-35",
    "number": null,
    "title": "Estimate of solutions of (35)",
    "level": 2,
    "page_start": 56,
    "page_end": 56,
-   "n_chars": 694,
-   "n_words": 145,
+   "n_chars": 720,
+   "n_words": 149,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-022-estimate-of-a-solution-of-36",
+   "id": "sec-023-estimate-of-a-solution-of-36",
    "number": null,
    "title": "Estimate of a solution of (36)",
    "level": 2,
    "page_start": 56,
    "page_end": 58,
-   "n_chars": 2006,
-   "n_words": 437,
+   "n_chars": 2033,
+   "n_words": 442,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-023-estimate-of-a-solution-of-58",
+   "id": "sec-024-estimate-of-a-solution-of-58",
    "number": null,
    "title": "Estimate of a solution of (58)",
    "level": 2,
    "page_start": 58,
    "page_end": 59,
-   "n_chars": 3026,
-   "n_words": 655,
+   "n_chars": 3053,
+   "n_words": 660,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-024-curvature-of-the-boundary-of-a-convex-domain-in",
+   "id": "sec-025-curvature-of-the-boundary-of-a-convex-domain-in",
    "number": null,
    "title": "Curvature of the boundary of a convex domain in a plane",
    "level": 2,
    "page_start": 59,
    "page_end": 70,
-   "n_chars": 19271,
-   "n_words": 4434,
+   "n_chars": 19327,
+   "n_words": 4445,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-025-references",
+   "id": "sec-026-references",
    "number": null,
    "title": "References",
    "level": 1,
@@ -1317,7 +1336,8 @@
    "count": 0,
    "items": []
   },
-  "sections": 27,
-  "chars_total": 123951
+  "sections": 28,
+  "chars_total": 124577,
+  "furniture_lines_stripped": 0
  }
 }

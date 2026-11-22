@@ -61,7 +61,7 @@ theorem planck_ne_zero {q : ℝ} (hq : 1 < q) : planck q ≠ 0 :=
 
     Since ℏ(q) = 1 - q⁻¹ is continuous and ℏ(1) = 0, this follows
     from continuity of subtraction and inversion at q = 1 ≠ 0. -/
--- Ref: [manuscript] Chapter 8, Section 5
+-- Ref: [leitner2026] Chapter 8, Section 5
 theorem planck_tendsto_zero :
     Tendsto planck (nhdsWithin 1 (Set.Ioi 1)) (nhds 0) := by
   rw [← planck_one]
@@ -72,14 +72,14 @@ theorem planck_tendsto_zero :
 
     Since Ω(q) = ℏ(q)⁻¹ and ℏ(q) → 0⁺ from the right,
     the Reeb period diverges. -/
--- Ref: [manuscript] Chapter 8, Section 5
+-- Ref: [leitner2026] Chapter 8, Section 5
 theorem reeb_period_tendsto_atTop :
     Tendsto (fun q => |reebPeriod q|)
       (nhdsWithin 1 (Set.Ioi 1)) atTop := by
   -- planck q → 0⁺ as q → 1⁺ (planck_tendsto_zero), and planck q > 0
   -- for q > 1 (planck_pos). The inverse of a positive function tending
   -- to 0⁺ tends to +∞; the absolute value then also tends to +∞.
-  -- Ref: [manuscript] Chapter 8, Section 5
+  -- Ref: [leitner2026] Chapter 8, Section 5
   have hgt : Tendsto planck (nhdsWithin 1 (Set.Ioi 1)) (𝓝[>] 0) := by
     apply tendsto_nhdsWithin_of_tendsto_nhds_of_eventually_within _
       planck_tendsto_zero

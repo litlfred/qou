@@ -52,7 +52,7 @@
 
   Archimedean (ℝ): ordering, `log`, `sin`, `cos` -- §7c.
 
-  -- Ref: [manuscript] beans qou-idvt (T3), qou-krvm (iv)
+  -- Ref: [leitner2026] beans qou-idvt (T3), qou-krvm (iv)
   -- Ref: [thurston1978] Ch. 7 (the volume of an ideal simplex)
 -/
 

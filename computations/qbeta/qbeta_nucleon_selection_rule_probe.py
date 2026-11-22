@@ -84,10 +84,12 @@ Z_D = q**3 / (q**2 + 1)
 STATED_P = mp.mpf("1.0065")
 STATED_N = mp.mpf("0.7976")
 
+_CHECKS: list[str] = []
 _FAILURES: list[str] = []
 
 
 def check(name, ok, detail, w=None):
+    _CHECKS.append(name)
     print(f"  [{'PASS' if ok else 'FAIL'}] {name}")
     print(f"         {detail}")
     if w is not None:
@@ -346,7 +348,7 @@ def main() -> int:
     print("    Owner call on the four values remains qou-bg3w.")
     w.add_data("scope", "(a) scope-limited; adjudicates no net value")
 
-    total = 4
+    total = len(_CHECKS)
     print(f"  {total - len(_FAILURES)}/{total} checks passed")
     for f in _FAILURES:
         print(f"    FAILED: {f}")

@@ -48,6 +48,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "40b6040bb4ed",
+          "ts": "2d062d9da723",
+          "lean": "edef31f1a30c",
+          "lean_statement": "b34920a87b4e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:10:00.616Z",
+        "reviewed_sha": "06a3439cc5ff0cdc91182a4199f03868f80ab9b8",
+        "severity": "major",
+        "evidence": "markov_trace_product builds a MarkovTraceProduct whose traceValue is set to the product, so the conclusion is rfl (the proof comment says so). The md theorem (tr_M of a generator-monotone word equals the product) is not encoded. I checked the md counterexample: sigma0 sigma1 sigma0 sigma1 gives h^2z^2 + hz + z^2 against (hz+1)^2, difference -(q^4+q^2+1)/(q^2+1)^2."
       }
     ],
     "milnor-amalgamated-flow": [
@@ -2118,6 +2136,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T21:32:31.179Z",
+  "updated_at": "2026-11-16T07:10:00.616Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

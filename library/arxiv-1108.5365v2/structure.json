@@ -7,10 +7,11 @@
   "bytes": 755598,
   "pages": 92,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -25,15 +26,25 @@
   "title_lines": [
    "Representation of the Quantum Plane, its Quantum"
   ],
-  "abstract": "We give complete detail of the description of the GNS represe ntation of the quantum plane A and its dual \u02c6A as a von Neumann algebra. In particu- lar we obtain a rather surprising result that the multiplica tive unitary W is manageable in this quantum semigroup context. We study the q uantum dou- ble group construction introduced by Woronowicz, and using Baaj and Vaes\u2019 construction of the multiplicative unitary Wm, we give the GNS description of the quantum double D(A) which is equivalent to GL+ q (2, R). Furthermore we study the fundamental corepresentation T \u03bb,t and its matrix coe\ufb03cients, and show that it can be expressed by the b-hypergeometric function. We also study the regular corepresentation and representatio n induced by Wm, and prove that the space of L2 functions on the quantum double decomposes into the continuous series representation of Uq ~q(gl(2, R)) with the quantum dilogarithm |Sb(Q + 2i\u03b1 )|2 as the Plancherel measure. Finally we describe certain representation theoretic meaning of integral tran sforms involving the quantum dilogarithm function. \u2217 Kavli IPMU, The University of Tokyo, 5-1-5 Kashiwanoha, Kas hiwa, 277-8583, Chiba, Japan Email: ivan.ip@ipmu.jp 1",
+  "abstract": "We give complete detail of the description of the GNS representation of the quantum plane A and its dual ˆ A as a von Neumann algebra. In particu- lar we obtain a rather surprising result that the multiplicative unitary W is manageable in this quantum semigroup context. We study the quantum dou- ble group construction introduced by Woronowicz, and using Baaj and Vaes’ construction of the multiplicative unitary Wm, we give the GNS description of the quantum double D(A) which is equivalent to GL+ q (2, R). Furthermore we study the fundamental corepresentation T λ,t and its matrix coeﬃcients, and show that it can be expressed by the b-hypergeometric function. We also study the regular corepresentation and representation induced by Wm, and prove that the space of L2 functions on the quantum double decomposes into the continuous series representation of Uqeq(gl(2, R)) with the quantum dilogarithm |Sb(Q + 2iα)|2 as the Plancherel measure. Finally we describe certain representation theoretic meaning of integral transforms involving the quantum dilogarithm function. ∗Kavli IPMU, The University of Tokyo, 5-1-5 Kashiwanoha, Kashiwa, 277-8583, Chiba, Japan Email: ivan.ip@ipmu.jp 1",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20180603005801-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20180603005801-04'00'"
   },
-  "title_prev": "Representation of the Quantum Plane, its Quantum"
+  "title_raw": "Representation of the Quantum Plane, its Quantum",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL +",
+   "outline": "1 Introduction",
+   "text": "Representation of the Quantum Plane, its Quantum",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL +"
  },
  "toc": [
   {
@@ -41,300 +52,1300 @@
    "title": "Introduction",
    "page": 3,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "Preliminaries",
    "page": 8,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Mellin transform",
    "page": 9,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Weight and multiplier algebra of a C*-algebra",
    "page": 10,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "GNS representation and Tomita-Takesaki's theory",
    "page": 11,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "The multiplicative unitary",
    "page": 13,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "q-commuting operators",
    "page": 15,
    "source": "outline",
-   "number": "2.5"
+   "number": "2.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 1,
    "title": "The quantum dilogarithm",
    "page": 16,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "Definition and properties",
    "page": 16,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "Integral transformations",
    "page": 19,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 1,
    "title": "The quantum plane",
    "page": 22,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 2,
    "title": "Motivations from classical ax+b group",
    "page": 23,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 2,
    "title": "The quantum plane algebra and its modular double",
    "page": 23,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 2,
    "title": "The Haar functional",
    "page": 27,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
   },
   {
    "level": 2,
    "title": "The GNS description",
    "page": 28,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "28"
   },
   {
    "level": 2,
    "title": "Modular maps and the right picture",
    "page": 31,
    "source": "outline",
-   "number": "4.5"
+   "number": "4.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "31"
   },
   {
    "level": 2,
    "title": "The multiplicative unitary",
    "page": 34,
    "source": "outline",
-   "number": "4.6"
+   "number": "4.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "34"
   },
   {
    "level": 1,
    "title": "The dual space",
    "page": 39,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "39"
   },
   {
    "level": 2,
    "title": "Definitions",
    "page": 39,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "39"
   },
   {
    "level": 2,
    "title": "The non-degenerate pairing",
    "page": 41,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "41"
   },
   {
    "level": 2,
    "title": "The GNS description",
    "page": 44,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "44"
   },
   {
    "level": 2,
    "title": "The multiplicative unitary and modular maps",
    "page": 46,
    "source": "outline",
-   "number": "5.4"
+   "number": "5.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "46"
   },
   {
    "level": 1,
    "title": "Transformation to new Hilbert spaces",
    "page": 47,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "47"
   },
   {
    "level": 2,
    "title": "Unitary transformations",
    "page": 47,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "47"
   },
   {
    "level": 2,
    "title": "The representation space",
    "page": 48,
    "source": "outline",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "48"
   },
   {
    "level": 2,
    "title": "The corepresentation space",
    "page": 51,
    "source": "outline",
-   "number": "6.3"
+   "number": "6.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "51"
   },
   {
    "level": 1,
    "title": "The quantum double construction",
    "page": 53,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "53"
   },
   {
    "level": 2,
    "title": "Definitions",
    "page": 53,
    "source": "outline",
-   "number": "7.1"
+   "number": "7.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "53"
   },
   {
    "level": 2,
    "title": "The matrix coefficients and the fundamental corepresentation",
    "page": 58,
    "source": "outline",
-   "number": "7.2"
+   "number": "7.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "58"
   },
   {
    "level": 2,
    "title": "The multiplicative unitary",
    "page": 61,
    "source": "outline",
-   "number": "7.3"
+   "number": "7.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "61"
   },
   {
    "level": 2,
    "title": "The left regular corepresentation",
    "page": 66,
    "source": "outline",
-   "number": "7.4"
+   "number": "7.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "66"
   },
   {
    "level": 2,
    "title": "The right regular corepresentation",
    "page": 72,
    "source": "outline",
-   "number": "7.5"
+   "number": "7.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "72"
   },
   {
    "level": 1,
    "title": "Regular representation",
    "page": 75,
    "source": "outline",
-   "number": "8"
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "75"
   },
   {
    "level": 2,
    "title": "Pairing with Uq(gl(2,R))",
    "page": 75,
    "source": "outline",
-   "number": "8.1"
+   "number": "8.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "75"
   },
   {
    "level": 2,
    "title": "The principal series representation",
    "page": 77,
    "source": "outline",
-   "number": "8.2"
+   "number": "8.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "77"
   },
   {
    "level": 2,
    "title": "Casimir operator",
    "page": 79,
    "source": "outline",
-   "number": "8.3"
+   "number": "8.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "79"
   },
   {
    "level": 2,
    "title": "Left regular representation",
    "page": 82,
    "source": "outline",
-   "number": "8.4"
+   "number": "8.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "82"
   },
   {
    "level": 2,
    "title": "Right regular representation",
    "page": 85,
    "source": "outline",
-   "number": "8.5"
+   "number": "8.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "85"
   },
   {
    "level": 2,
    "title": "The modular double",
    "page": 87,
    "source": "outline",
-   "number": "8.6"
+   "number": "8.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "87"
   },
   {
    "level": 1,
    "title": "Representation theoretic meaning for certain integral transforms",
    "page": 88,
    "source": "outline",
-   "number": "9"
+   "number": "9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "88"
   },
   {
    "level": 1,
    "title": "References",
    "page": 89,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "89"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "52",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "53",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "54",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "55",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "56",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "57",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "58",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "59",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "60",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "61",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "62",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": "63",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 64,
+   "label": "64",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 65,
+   "label": "65",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 66,
+   "label": "66",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 67,
+   "label": "67",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 68,
+   "label": "68",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 69,
+   "label": "69",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 70,
+   "label": "70",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 71,
+   "label": "71",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 72,
+   "label": "72",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 73,
+   "label": "73",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 74,
+   "label": "74",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 75,
+   "label": "75",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 76,
+   "label": "76",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 77,
+   "label": "77",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 78,
+   "label": "78",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 79,
+   "label": "79",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 80,
+   "label": "80",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 81,
+   "label": "81",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 82,
+   "label": "82",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 83,
+   "label": "83",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 84,
+   "label": "84",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 85,
+   "label": "85",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 86,
+   "label": "86",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 87,
+   "label": "87",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 88,
+   "label": "88",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 89,
+   "label": "89",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 90,
+   "label": "90",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 91,
+   "label": "91",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 92,
+   "label": "92",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 4162,
+   "n_words": 1126,
+   "label_start": "1",
+   "label_end": "3"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
-   "page_start": 2,
+   "page_start": 3,
    "page_end": 8,
-   "n_chars": 18793,
-   "n_words": 3616
+   "n_chars": 15988,
+   "n_words": 2678,
+   "label_start": "3",
+   "label_end": "8"
   },
   {
    "id": "sec-001-2-preliminaries",
@@ -342,342 +1353,519 @@
    "title": "Preliminaries",
    "level": 1,
    "page_start": 8,
-   "page_end": 8,
-   "n_chars": 166,
-   "n_words": 29
+   "page_end": 9,
+   "n_chars": 671,
+   "n_words": 106,
+   "label_start": "8",
+   "label_end": "9"
   },
   {
    "id": "sec-002-21-mellin-transform",
    "number": "2.1",
    "title": "Mellin transform",
    "level": 2,
-   "page_start": 8,
-   "page_end": 13,
-   "n_chars": 6850,
-   "n_words": 1243
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 1869,
+   "n_words": 363,
+   "label_start": "9",
+   "label_end": "10"
   },
   {
-   "id": "sec-003-24-the-multiplicative-unitary",
+   "id": "sec-003-22-weight-and-multiplier-algebra-of-a-c-algebra",
+   "number": "2.2",
+   "title": "Weight and multiplier algebra of a C*-algebra",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 2286,
+   "n_words": 434,
+   "label_start": "10",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-004-23-gns-representation-and-tomita-takesakis-theor",
+   "number": "2.3",
+   "title": "GNS representation and Tomita-Takesaki's theory",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 2239,
+   "n_words": 426,
+   "label_start": "11",
+   "label_end": "13"
+  },
+  {
+   "id": "sec-005-24-the-multiplicative-unitary",
    "number": "2.4",
    "title": "The multiplicative unitary",
    "level": 2,
    "page_start": 13,
    "page_end": 15,
-   "n_chars": 3321,
-   "n_words": 602
+   "n_chars": 3388,
+   "n_words": 644,
+   "label_start": "13",
+   "label_end": "15"
   },
   {
-   "id": "sec-004-25-q-commuting-operators",
+   "id": "sec-006-25-q-commuting-operators",
    "number": "2.5",
    "title": "q-commuting operators",
    "level": 2,
    "page_start": 15,
    "page_end": 16,
-   "n_chars": 2244,
-   "n_words": 404
+   "n_chars": 2276,
+   "n_words": 416,
+   "label_start": "15",
+   "label_end": "16"
   },
   {
-   "id": "sec-005-3-the-quantum-dilogarithm",
+   "id": "sec-007-3-the-quantum-dilogarithm",
    "number": "3",
    "title": "The quantum dilogarithm",
    "level": 1,
    "page_start": 16,
-   "page_end": 19,
-   "n_chars": 3039,
-   "n_words": 570
+   "page_end": 16,
+   "n_chars": 174,
+   "n_words": 28,
+   "label_start": "16",
+   "label_end": "16"
   },
   {
-   "id": "sec-006-32-integral-transformations",
+   "id": "sec-008-31-definition-and-properties",
+   "number": "3.1",
+   "title": "Definition and properties",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 19,
+   "n_chars": 2886,
+   "n_words": 561,
+   "label_start": "16",
+   "label_end": "19"
+  },
+  {
+   "id": "sec-009-32-integral-transformations",
    "number": "3.2",
    "title": "Integral transformations",
    "level": 2,
    "page_start": 19,
    "page_end": 22,
-   "n_chars": 4400,
-   "n_words": 871
+   "n_chars": 4429,
+   "n_words": 882,
+   "label_start": "19",
+   "label_end": "22"
   },
   {
-   "id": "sec-007-4-the-quantum-plane",
+   "id": "sec-010-4-the-quantum-plane",
    "number": "4",
    "title": "The quantum plane",
    "level": 1,
    "page_start": 22,
    "page_end": 23,
-   "n_chars": 2737,
-   "n_words": 525
+   "n_chars": 1071,
+   "n_words": 181,
+   "label_start": "22",
+   "label_end": "23"
   },
   {
-   "id": "sec-008-42-the-quantum-plane-algebra-and-its-modular-dou",
+   "id": "sec-011-41-motivations-from-classical-axb-group",
+   "number": "4.1",
+   "title": "Motivations from classical ax+b group",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 1675,
+   "n_words": 342,
+   "label_start": "23",
+   "label_end": "23"
+  },
+  {
+   "id": "sec-012-42-the-quantum-plane-algebra-and-its-modular-dou",
    "number": "4.2",
    "title": "The quantum plane algebra and its modular double",
    "level": 2,
    "page_start": 23,
    "page_end": 27,
-   "n_chars": 6612,
-   "n_words": 1216
+   "n_chars": 6668,
+   "n_words": 1231,
+   "label_start": "23",
+   "label_end": "27"
   },
   {
-   "id": "sec-009-43-the-haar-functional",
+   "id": "sec-013-43-the-haar-functional",
    "number": "4.3",
    "title": "The Haar functional",
    "level": 2,
    "page_start": 27,
    "page_end": 28,
-   "n_chars": 1452,
-   "n_words": 286
+   "n_chars": 1469,
+   "n_words": 286,
+   "label_start": "27",
+   "label_end": "28"
   },
   {
-   "id": "sec-010-44-the-gns-description",
+   "id": "sec-014-44-the-gns-description",
    "number": "4.4",
    "title": "The GNS description",
    "level": 2,
    "page_start": 28,
    "page_end": 31,
-   "n_chars": 3759,
-   "n_words": 715
+   "n_chars": 3772,
+   "n_words": 710,
+   "label_start": "28",
+   "label_end": "31"
   },
   {
-   "id": "sec-011-45-modular-maps-and-the-right-picture",
+   "id": "sec-015-45-modular-maps-and-the-right-picture",
    "number": "4.5",
    "title": "Modular maps and the right picture",
    "level": 2,
    "page_start": 31,
    "page_end": 34,
-   "n_chars": 3170,
-   "n_words": 628
+   "n_chars": 3179,
+   "n_words": 608,
+   "label_start": "31",
+   "label_end": "34"
   },
   {
-   "id": "sec-012-46-the-multiplicative-unitary",
+   "id": "sec-016-46-the-multiplicative-unitary",
    "number": "4.6",
    "title": "The multiplicative unitary",
    "level": 2,
    "page_start": 34,
    "page_end": 39,
-   "n_chars": 7131,
-   "n_words": 1403
+   "n_chars": 7237,
+   "n_words": 1485,
+   "label_start": "34",
+   "label_end": "39"
   },
   {
-   "id": "sec-013-5-the-dual-space",
+   "id": "sec-017-5-the-dual-space",
    "number": "5",
    "title": "The dual space",
    "level": 1,
    "page_start": 39,
-   "page_end": 41,
-   "n_chars": 2979,
-   "n_words": 575
+   "page_end": 39,
+   "n_chars": 466,
+   "n_words": 83,
+   "label_start": "39",
+   "label_end": "39"
   },
   {
-   "id": "sec-014-52-the-non-degenerate-pairing",
+   "id": "sec-018-51-definitions",
+   "number": "5.1",
+   "title": "Definitions",
+   "level": 2,
+   "page_start": 39,
+   "page_end": 41,
+   "n_chars": 2519,
+   "n_words": 490,
+   "label_start": "39",
+   "label_end": "41"
+  },
+  {
+   "id": "sec-019-52-the-non-degenerate-pairing",
    "number": "5.2",
    "title": "The non-degenerate pairing",
    "level": 2,
    "page_start": 41,
    "page_end": 44,
-   "n_chars": 4398,
-   "n_words": 723
+   "n_chars": 4462,
+   "n_words": 763,
+   "label_start": "41",
+   "label_end": "44"
   },
   {
-   "id": "sec-015-53-the-gns-description",
+   "id": "sec-020-53-the-gns-description",
    "number": "5.3",
    "title": "The GNS description",
    "level": 2,
    "page_start": 44,
    "page_end": 46,
-   "n_chars": 3146,
-   "n_words": 616
+   "n_chars": 3197,
+   "n_words": 650,
+   "label_start": "44",
+   "label_end": "46"
   },
   {
-   "id": "sec-016-54-the-multiplicative-unitary-and-modular-maps",
+   "id": "sec-021-54-the-multiplicative-unitary-and-modular-maps",
    "number": "5.4",
    "title": "The multiplicative unitary and modular maps",
    "level": 2,
    "page_start": 46,
    "page_end": 47,
-   "n_chars": 1318,
-   "n_words": 256
+   "n_chars": 1362,
+   "n_words": 262,
+   "label_start": "46",
+   "label_end": "47"
   },
   {
-   "id": "sec-017-6-transformation-to-new-hilbert-spaces",
+   "id": "sec-022-6-transformation-to-new-hilbert-spaces",
    "number": "6",
    "title": "Transformation to new Hilbert spaces",
    "level": 1,
    "page_start": 47,
    "page_end": 47,
-   "n_chars": 306,
-   "n_words": 56
+   "n_chars": 343,
+   "n_words": 61,
+   "label_start": "47",
+   "label_end": "47"
   },
   {
-   "id": "sec-018-61-unitary-transformations",
+   "id": "sec-023-61-unitary-transformations",
    "number": "6.1",
    "title": "Unitary transformations",
    "level": 2,
    "page_start": 47,
    "page_end": 48,
-   "n_chars": 917,
-   "n_words": 174
+   "n_chars": 951,
+   "n_words": 186,
+   "label_start": "47",
+   "label_end": "48"
   },
   {
-   "id": "sec-019-62-the-representation-space",
+   "id": "sec-024-62-the-representation-space",
    "number": "6.2",
    "title": "The representation space",
    "level": 2,
    "page_start": 48,
    "page_end": 51,
-   "n_chars": 3119,
-   "n_words": 586
+   "n_chars": 3188,
+   "n_words": 633,
+   "label_start": "48",
+   "label_end": "51"
   },
   {
-   "id": "sec-020-63-the-corepresentation-space",
+   "id": "sec-025-63-the-corepresentation-space",
    "number": "6.3",
    "title": "The corepresentation space",
    "level": 2,
    "page_start": 51,
    "page_end": 53,
-   "n_chars": 3654,
-   "n_words": 668
+   "n_chars": 3735,
+   "n_words": 725,
+   "label_start": "51",
+   "label_end": "53"
   },
   {
-   "id": "sec-021-7-the-quantum-double-construction",
+   "id": "sec-026-7-the-quantum-double-construction",
    "number": "7",
    "title": "The quantum double construction",
    "level": 1,
    "page_start": 53,
-   "page_end": 61,
-   "n_chars": 10724,
-   "n_words": 2052
+   "page_end": 53,
+   "n_chars": 31,
+   "n_words": 4,
+   "label_start": "53",
+   "label_end": "53"
   },
   {
-   "id": "sec-022-73-the-multiplicative-unitary",
+   "id": "sec-027-71-definitions",
+   "number": "7.1",
+   "title": "Definitions",
+   "level": 2,
+   "page_start": 53,
+   "page_end": 58,
+   "n_chars": 5987,
+   "n_words": 1246,
+   "label_start": "53",
+   "label_end": "58"
+  },
+  {
+   "id": "sec-028-72-the-matrix-coefficients-and-the-fundamental-c",
+   "number": "7.2",
+   "title": "The matrix coefficients and the fundamental corepresentation",
+   "level": 2,
+   "page_start": 58,
+   "page_end": 61,
+   "n_chars": 4821,
+   "n_words": 897,
+   "label_start": "58",
+   "label_end": "61"
+  },
+  {
+   "id": "sec-029-73-the-multiplicative-unitary",
    "number": "7.3",
    "title": "The multiplicative unitary",
    "level": 2,
    "page_start": 61,
    "page_end": 66,
-   "n_chars": 6865,
-   "n_words": 1419
+   "n_chars": 6917,
+   "n_words": 1447,
+   "label_start": "61",
+   "label_end": "66"
   },
   {
-   "id": "sec-023-74-the-left-regular-corepresentation",
+   "id": "sec-030-74-the-left-regular-corepresentation",
    "number": "7.4",
    "title": "The left regular corepresentation",
    "level": 2,
    "page_start": 66,
    "page_end": 72,
-   "n_chars": 6691,
-   "n_words": 1253
+   "n_chars": 6874,
+   "n_words": 1406,
+   "label_start": "66",
+   "label_end": "72"
   },
   {
-   "id": "sec-024-75-the-right-regular-corepresentation",
+   "id": "sec-031-75-the-right-regular-corepresentation",
    "number": "7.5",
    "title": "The right regular corepresentation",
    "level": 2,
    "page_start": 72,
    "page_end": 75,
-   "n_chars": 4527,
-   "n_words": 866
+   "n_chars": 4579,
+   "n_words": 887,
+   "label_start": "72",
+   "label_end": "75"
   },
   {
-   "id": "sec-025-8-regular-representation",
+   "id": "sec-032-8-regular-representation",
    "number": "8",
    "title": "Regular representation",
    "level": 1,
    "page_start": 75,
    "page_end": 75,
-   "n_chars": 261,
-   "n_words": 42
+   "n_chars": 283,
+   "n_words": 43,
+   "label_start": "75",
+   "label_end": "75"
   },
   {
-   "id": "sec-026-81-pairing-with-uqgl2r",
+   "id": "sec-033-81-pairing-with-uqgl2r",
    "number": "8.1",
    "title": "Pairing with Uq(gl(2,R))",
    "level": 2,
    "page_start": 75,
    "page_end": 77,
-   "n_chars": 3429,
-   "n_words": 615
+   "n_chars": 3475,
+   "n_words": 639,
+   "label_start": "75",
+   "label_end": "77"
   },
   {
-   "id": "sec-027-82-the-principal-series-representation",
+   "id": "sec-034-82-the-principal-series-representation",
    "number": "8.2",
    "title": "The principal series representation",
    "level": 2,
    "page_start": 77,
    "page_end": 79,
-   "n_chars": 2295,
-   "n_words": 414
+   "n_chars": 2354,
+   "n_words": 441,
+   "label_start": "77",
+   "label_end": "79"
   },
   {
-   "id": "sec-028-83-casimir-operator",
+   "id": "sec-035-83-casimir-operator",
    "number": "8.3",
    "title": "Casimir operator",
    "level": 2,
    "page_start": 79,
    "page_end": 82,
-   "n_chars": 3723,
-   "n_words": 650
+   "n_chars": 3771,
+   "n_words": 690,
+   "label_start": "79",
+   "label_end": "82"
   },
   {
-   "id": "sec-029-84-left-regular-representation",
+   "id": "sec-036-84-left-regular-representation",
    "number": "8.4",
    "title": "Left regular representation",
    "level": 2,
    "page_start": 82,
    "page_end": 85,
-   "n_chars": 4524,
-   "n_words": 818
+   "n_chars": 4601,
+   "n_words": 870,
+   "label_start": "82",
+   "label_end": "85"
   },
   {
-   "id": "sec-030-85-right-regular-representation",
+   "id": "sec-037-85-right-regular-representation",
    "number": "8.5",
    "title": "Right regular representation",
    "level": 2,
    "page_start": 85,
    "page_end": 87,
-   "n_chars": 2151,
-   "n_words": 385
+   "n_chars": 2226,
+   "n_words": 434,
+   "label_start": "85",
+   "label_end": "87"
   },
   {
-   "id": "sec-031-86-the-modular-double",
+   "id": "sec-038-86-the-modular-double",
    "number": "8.6",
    "title": "The modular double",
    "level": 2,
    "page_start": 87,
    "page_end": 88,
-   "n_chars": 1771,
-   "n_words": 299
+   "n_chars": 1797,
+   "n_words": 309,
+   "label_start": "87",
+   "label_end": "88"
   },
   {
-   "id": "sec-032-9-representation-theoretic-meaning-for-certain-i",
+   "id": "sec-039-9-representation-theoretic-meaning-for-certain-i",
    "number": "9",
    "title": "Representation theoretic meaning for certain integral transforms",
    "level": 1,
    "page_start": 88,
    "page_end": 89,
-   "n_chars": 2536,
-   "n_words": 465
+   "n_chars": 2629,
+   "n_words": 515,
+   "label_start": "88",
+   "label_end": "89"
   },
   {
-   "id": "sec-033-references",
+   "id": "sec-040-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 89,
    "page_end": 92,
-   "n_chars": 6307,
-   "n_words": 979
+   "n_chars": 6267,
+   "n_words": 939,
+   "label_start": "89",
+   "label_end": "92"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 41,
-  "sections": 34,
-  "chars_total": 139315,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 0,
+    "items": []
+   },
+   "found_not_listed": {
+    "count": 4,
+    "items": [
+     "9 Representation theoretic meaning for certain integral transforms 88",
+     "2 . The limit converges uniformly for any compact set in C.",
+     "8.6 The modular double",
+     "9 Representation theoretic meaning for certain integral transforms"
+    ]
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 42,
+  "chars_total": 142274,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 40,
-   "overlaid": 26,
+   "overlaid": 31,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -685,37 +1873,60 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-2-preliminaries",
      "title": "Preliminaries",
-     "prose_ratio": 0.314,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-002-21-mellin-transform",
      "title": "Mellin transform",
-     "prose_ratio": 0.985,
-     "coverage_ratio": 0.878,
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-003-24-the-multiplicative-unitary",
+     "id": "sec-003-22-weight-and-multiplier-algebra-of-a-c-algebra",
+     "title": "Weight and multiplier algebra of a C*-algebra",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-23-gns-representation-and-tomita-takesakis-theor",
+     "title": "GNS representation and Tomita-Takesaki's theory",
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.965,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-24-the-multiplicative-unitary",
      "title": "The multiplicative unitary",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.951,
+     "coverage_ratio": 0.983,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-004-25-q-commuting-operators",
+     "id": "sec-006-25-q-commuting-operators",
      "title": "q-commuting operators",
      "prose_ratio": 0.96,
      "coverage_ratio": 0.96,
@@ -723,39 +1934,55 @@
      "converter": "latex"
     },
     {
-     "id": "sec-005-3-the-quantum-dilogarithm",
+     "id": "sec-007-3-the-quantum-dilogarithm",
      "title": "The quantum dilogarithm",
-     "prose_ratio": 0.94,
-     "coverage_ratio": 0.952,
+     "prose_ratio": 0.933,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-006-32-integral-transformations",
+     "id": "sec-008-31-definition-and-properties",
+     "title": "Definition and properties",
+     "prose_ratio": 0.938,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-32-integral-transformations",
      "title": "Integral transformations",
      "prose_ratio": 0.983,
-     "coverage_ratio": 0.952,
+     "coverage_ratio": 0.967,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-007-4-the-quantum-plane",
+     "id": "sec-010-4-the-quantum-plane",
      "title": "The quantum plane",
-     "prose_ratio": 0.958,
-     "coverage_ratio": 0.966,
+     "prose_ratio": 0.961,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-008-42-the-quantum-plane-algebra-and-its-modular-dou",
+     "id": "sec-011-41-motivations-from-classical-axb-group",
+     "title": "Motivations from classical ax+b group",
+     "prose_ratio": 0.956,
+     "coverage_ratio": 0.967,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-012-42-the-quantum-plane-algebra-and-its-modular-dou",
      "title": "The quantum plane algebra and its modular double",
      "prose_ratio": 0.96,
-     "coverage_ratio": 0.921,
+     "coverage_ratio": 0.955,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-009-43-the-haar-functional",
+     "id": "sec-013-43-the-haar-functional",
      "title": "The Haar functional",
      "prose_ratio": 0.968,
      "coverage_ratio": 0.952,
@@ -763,154 +1990,172 @@
      "converter": "latex"
     },
     {
-     "id": "sec-010-44-the-gns-description",
+     "id": "sec-014-44-the-gns-description",
      "title": "The GNS description",
      "prose_ratio": 0.974,
-     "coverage_ratio": 0.918,
+     "coverage_ratio": 0.926,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-011-45-modular-maps-and-the-right-picture",
+     "id": "sec-015-45-modular-maps-and-the-right-picture",
      "title": "Modular maps and the right picture",
      "prose_ratio": 0.405,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-012-46-the-multiplicative-unitary",
+     "id": "sec-016-46-the-multiplicative-unitary",
      "title": "The multiplicative unitary",
      "prose_ratio": 0.383,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-013-5-the-dual-space",
+     "id": "sec-017-5-the-dual-space",
      "title": "The dual space",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.929,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-014-52-the-non-degenerate-pairing",
-     "title": "The non-degenerate pairing",
-     "prose_ratio": 0.731,
-     "coverage_ratio": 0.919,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-015-53-the-gns-description",
-     "title": "The GNS description",
-     "prose_ratio": 0.296,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-016-54-the-multiplicative-unitary-and-modular-maps",
-     "title": "The multiplicative unitary and modular maps",
-     "prose_ratio": 0.979,
-     "coverage_ratio": 0.958,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-017-6-transformation-to-new-hilbert-spaces",
-     "title": "Transformation to new Hilbert spaces",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-018-61-unitary-transformations",
-     "title": "Unitary transformations",
+     "id": "sec-018-51-definitions",
+     "title": "Definitions",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.941,
+     "coverage_ratio": 0.924,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-019-62-the-representation-space",
-     "title": "The representation space",
+     "id": "sec-019-52-the-non-degenerate-pairing",
+     "title": "The non-degenerate pairing",
+     "prose_ratio": 0.731,
+     "coverage_ratio": 0.934,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-020-53-the-gns-description",
+     "title": "The GNS description",
+     "prose_ratio": 0.296,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-021-54-the-multiplicative-unitary-and-modular-maps",
+     "title": "The multiplicative unitary and modular maps",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-022-6-transformation-to-new-hilbert-spaces",
+     "title": "Transformation to new Hilbert spaces",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.899,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-020-63-the-corepresentation-space",
-     "title": "The corepresentation space",
-     "prose_ratio": 0.958,
-     "coverage_ratio": 0.915,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-021-7-the-quantum-double-construction",
-     "title": "The quantum double construction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.807,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-022-73-the-multiplicative-unitary",
-     "title": "The multiplicative unitary",
-     "prose_ratio": 0.339,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-023-74-the-left-regular-corepresentation",
-     "title": "The left regular corepresentation",
-     "prose_ratio": 0.974,
-     "coverage_ratio": 0.943,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-024-75-the-right-regular-corepresentation",
-     "title": "The right regular corepresentation",
-     "prose_ratio": 0.955,
-     "coverage_ratio": 0.936,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-025-8-regular-representation",
-     "title": "Regular representation",
-     "prose_ratio": 0.123,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-026-81-pairing-with-uqgl2r",
-     "title": "Pairing with Uq(gl(2,R))",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-027-82-the-principal-series-representation",
-     "title": "The principal series representation",
-     "prose_ratio": 0.925,
-     "coverage_ratio": 0.931,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-028-83-casimir-operator",
-     "title": "Casimir operator",
-     "prose_ratio": 0.975,
      "coverage_ratio": 0.962,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-029-84-left-regular-representation",
-     "title": "Left regular representation",
-     "prose_ratio": 0.942,
-     "coverage_ratio": 0.983,
+     "id": "sec-023-61-unitary-transformations",
+     "title": "Unitary transformations",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.971,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-030-85-right-regular-representation",
+     "id": "sec-024-62-the-representation-space",
+     "title": "The representation space",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.942,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-025-63-the-corepresentation-space",
+     "title": "The corepresentation space",
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.939,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-026-7-the-quantum-double-construction",
+     "title": "The quantum double construction",
+     "prose_ratio": 0.02,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-027-71-definitions",
+     "title": "Definitions",
+     "prose_ratio": 0.54,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-028-72-the-matrix-coefficients-and-the-fundamental-c",
+     "title": "The matrix coefficients and the fundamental corepresentation",
+     "prose_ratio": 0.56,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-029-73-the-multiplicative-unitary",
+     "title": "The multiplicative unitary",
+     "prose_ratio": 0.339,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-030-74-the-left-regular-corepresentation",
+     "title": "The left regular corepresentation",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-031-75-the-right-regular-corepresentation",
+     "title": "The right regular corepresentation",
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.945,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-032-8-regular-representation",
+     "title": "Regular representation",
+     "prose_ratio": 0.131,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-033-81-pairing-with-uqgl2r",
+     "title": "Pairing with Uq(gl(2,R))",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-034-82-the-principal-series-representation",
+     "title": "The principal series representation",
+     "prose_ratio": 0.925,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-035-83-casimir-operator",
+     "title": "Casimir operator",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-036-84-left-regular-representation",
+     "title": "Left regular representation",
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-037-85-right-regular-representation",
      "title": "Right regular representation",
      "prose_ratio": 0.946,
      "coverage_ratio": 1.0,
@@ -918,23 +2163,23 @@
      "converter": "latex"
     },
     {
-     "id": "sec-031-86-the-modular-double",
+     "id": "sec-038-86-the-modular-double",
      "title": "The modular double",
      "prose_ratio": 0.987,
-     "coverage_ratio": 0.988,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-032-9-representation-theoretic-meaning-for-certain-i",
+     "id": "sec-039-9-representation-theoretic-meaning-for-certain-i",
      "title": "Representation theoretic meaning for certain integral transforms",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.954,
+     "coverage_ratio": 0.966,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-033-references",
+     "id": "sec-040-references",
      "title": "References",
      "result": "no matching \\section"
     }

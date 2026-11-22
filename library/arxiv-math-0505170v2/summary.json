@@ -2,25 +2,35 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-0505170v2",
  "source_sha256": "0846b74f9c7c55cb",
- "brief": "AN AVERAGING PROCESS FOR UNIPOTENT GROUP ACTIONS AMNON YEKUTIELI — W e present an averaging process for sections of a torsor unde r a unipotent group.",
- "extended": "**AN AVERAGING PROCESS FOR UNIPOTENT GROUP ACTIONS AMNON YEKUTIELI**\n\n11 pp, 3 sections.\n\n**Abstract.** W e present an averaging process for sections of a torsor unde r a unipotent group. This process allows one to integrate local sections of such a torsor into a global simplicial section. The results of this paper have applica- tions to deformation quantization of algebraic varieties. 0. Introduction Let K be a ﬁeld of characteristic 0. For any natural number q let K[t0, . . . , t q] be the polynomial algebra, and let ∆ q K be the geometric q-dimensional simplex ∆ q K := Spec K[t0, . . . , t q]/ (t0 + · · ·+ tq − 1). Our main result is the following theorem. Theorem 0.1. Let G be a unipotent algebraic group over K, let X be a K-scheme, let Z be a G-torsor over X, and let Y be any X-scheme. Suppose f = (f0, . . . , f q) is a sequence of X-morphisms fi : Y → Z.\n\n**Outline.** 0 Introduction; 2 Simplicial Sections; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 0.1: Let G be a unipotent algebraic group over K, let X be a K-scheme,\n- Theorem 0.1: was discovered in the course of research on defor mation quantization\n- Theorem 1.11: Let G be a unipotent algebraic group over K, let X be a K-scheme,\n- Theorem 2.2: Assume Scenario 2.1. Suppose U ⊂ X is an open set and\n- Corollary 0.2: Let G be a unipotent group over K. Suppose Z is a set with\n- Corollary 2.7: ). This approach was inspired by work of Bott [B o] on simplicial",
+ "brief": "AN AVERAGING PROCESS FOR UNIPOTENT GROUP ACTIONS — We present an averaging process for sections of a torsor under a unipotent group.",
+ "extended": "**AN AVERAGING PROCESS FOR UNIPOTENT GROUP ACTIONS**\n\n*AMNON YEKUTIELI*\n\n11 pp, 5 sections.\n\n**Abstract.** We present an averaging process for sections of a torsor under a unipotent group. This process allows one to integrate local sections of such a torsor into a global simplicial section. The results of this paper have applica- tions to deformation quantization of algebraic varieties. 0. Introduction Let K be a ﬁeld of characteristic 0. For any natural number q let K[t0, . . . , tq] be the polynomial algebra, and let ∆q K be the geometric q-dimensional simplex ∆q K := Spec K[t0, . . . , tq]/(t0 + · · · + tq −1). Our main result is the following theorem. Theorem 0.1. Let G be a unipotent algebraic group over K, let X be a K-scheme, let Z be a G-torsor over X, and let Y be any X-scheme. Suppose f = (f0, . . . , fq) is a sequence of X-morphisms fi : Y →Z.\n\n**Outline.** Front matter; 0 Introduction; 1 The Averaging Process; 2 Simplicial Sections; References",
  "tokens": {
-  "brief": 37,
-  "extended": 365
+  "brief": 33,
+  "extended": 242
  },
  "sections": [
   {
-   "id": "sec-000-0-introduction",
-   "title": "Introduction",
-   "pages": "1-8"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
   },
   {
-   "id": "sec-001-2-simplicial-sections",
+   "id": "sec-000-0-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-1-the-averaging-process",
+   "title": "The Averaging Process",
+   "pages": "2-8"
+  },
+  {
+   "id": "sec-002-2-simplicial-sections",
    "title": "Simplicial Sections",
    "pages": "8-10"
   },
   {
-   "id": "sec-002-references",
+   "id": "sec-003-references",
    "title": "References",
    "pages": "10-11"
   }
@@ -29,8 +39,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

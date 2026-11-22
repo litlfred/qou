@@ -1,1 +1,1 @@
-The open set B in Definition 2.3 is called the mutation
+Given an admissible path γ, we call the curve γ′ as constructed in Definition 2.8 the mutated admissible path of γ.

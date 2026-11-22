@@ -16,7 +16,7 @@ content-block `.lean` convention.
 
 ## References
 - [kassel1995] Kassel, "Quantum Groups," GTM 155, §IV (Hecke algebras)
-- [manuscript] Ch. 12, Definition: Parabolic Hecke subalgebra
+- [leitner2026] Ch. 12, Definition: Parabolic Hecke subalgebra
 -/
 
 namespace QOU.Molecular

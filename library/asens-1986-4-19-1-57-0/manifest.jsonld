@@ -1,0 +1,68 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/asens-1986-4-19-1-57-0/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Entropy and index for subfactors",
+  "contains": [
+    "library/asens-1986-4-19-1-57-0/sections/sec-front-matter",
+    "library/asens-1986-4-19-1-57-0/sections/sec-000",
+    "library/asens-1986-4-19-1-57-0/sections/sec-001",
+    "library/asens-1986-4-19-1-57-0/sections/sec-002",
+    "library/asens-1986-4-19-1-57-0/sections/sec-003",
+    "library/asens-1986-4-19-1-57-0/sections/sec-004",
+    "library/asens-1986-4-19-1-57-0/sections/sec-005",
+    "library/asens-1986-4-19-1-57-0/sections/sec-006",
+    "library/asens-1986-4-19-1-57-0/sections/sec-007",
+    "library/asens-1986-4-19-1-57-0/sections/sec-008",
+    "library/asens-1986-4-19-1-57-0/sections/sec-009",
+    "library/asens-1986-4-19-1-57-0/sections/sec-010",
+    "library/asens-1986-4-19-1-57-0/sections/sec-011",
+    "library/asens-1986-4-19-1-57-0/sections/sec-012",
+    "library/asens-1986-4-19-1-57-0/sections/sec-013",
+    "library/asens-1986-4-19-1-57-0/sections/sec-014",
+    "library/asens-1986-4-19-1-57-0/sections/sec-015",
+    "library/asens-1986-4-19-1-57-0/sections/sec-016",
+    "library/asens-1986-4-19-1-57-0/sections/sec-017",
+    "library/asens-1986-4-19-1-57-0/sections/sec-018",
+    "library/asens-1986-4-19-1-57-0/sections/sec-019",
+    "library/asens-1986-4-19-1-57-0/sections/sec-020",
+    "library/asens-1986-4-19-1-57-0/sections/sec-021",
+    "library/asens-1986-4-19-1-57-0/sections/sec-022",
+    "library/asens-1986-4-19-1-57-0/sections/sec-023",
+    "library/asens-1986-4-19-1-57-0/sections/sec-024",
+    "library/asens-1986-4-19-1-57-0/sections/sec-025",
+    "library/asens-1986-4-19-1-57-0/sections/sec-026",
+    "library/asens-1986-4-19-1-57-0/sections/sec-027",
+    "library/asens-1986-4-19-1-57-0/sections/sec-028",
+    "library/asens-1986-4-19-1-57-0/sections/sec-029",
+    "library/asens-1986-4-19-1-57-0/sections/sec-030",
+    "library/asens-1986-4-19-1-57-0/sections/sec-031",
+    "library/asens-1986-4-19-1-57-0/sections/sec-032",
+    "library/asens-1986-4-19-1-57-0/sections/sec-033",
+    "library/asens-1986-4-19-1-57-0/sections/sec-034",
+    "library/asens-1986-4-19-1-57-0/sections/sec-035",
+    "library/asens-1986-4-19-1-57-0/sections/sec-036"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "asens-1986-4-19-1-57-0",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "ASENS_1986_4_19_1_57_0.pdf",
+    "source_sha256": "09b6a599167bb9e814141dd41f2a7bf624dc99675f9c15ed7f74506297e3809e",
+    "pages": 51,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

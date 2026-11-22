@@ -1,0 +1,1 @@
+To explore the dependence of the localized-delocalized mode transition on the temperature and the lattice spacing we performed the simulations at three different lattice spacings $a=0.06, 0.082$ and $0.125$ fm and three different temporal lattice extensions $N_t=4, 6, 8$.

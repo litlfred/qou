@@ -27,9 +27,9 @@
 
   and the Taylor step itself is `QOU.MathlibExt.abs_taylor_two_le`.
 
-  -- Ref: [manuscript] QOU/MathlibExt/TaylorRemainder.lean
-  -- Ref: [manuscript] QOU/Knot/KashaevArgmax.lean
-  -- Ref: [manuscript] QOU/OneLoopPrefactorInvariance.lean
+  -- Ref: [leitner2026] QOU/MathlibExt/TaylorRemainder.lean
+  -- Ref: [leitner2026] QOU/Knot/KashaevArgmax.lean
+  -- Ref: [leitner2026] QOU/OneLoopPrefactorInvariance.lean
 -/
 import QOU.Archimedean.LobachevskyDerivative
 import QOU.MathlibExt.TaylorRemainder

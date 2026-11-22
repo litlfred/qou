@@ -1,0 +1,61 @@
+---
+doc_id: m4-24
+doc_title: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface"
+section_id: page-033
+section_title: "Page 33"
+section_number: null
+pages: 33-33
+source_pdf: m4-24.pdf
+source_sha256: cf7c5e29b818e647
+toc_source: undetermined
+doc_brief: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3"
+---
+Problems on invariants of knots and 3-manifolds 405
+
+Conjecture 2.11 (S. Willerton [401]) Let v3 be as above. If a knot K has
+a diagram with n crossings, then
+
+n(n? — 1)
+v(K)| < |S],
+ies()1 < |
+Remark It is shown in [401] that the (2,n) torus knot gives the equality of
+this formula.
+
+2.5 Dimensions of spaces of Vassiliev invariants
+
+We denote by A(S*4; R) conn the submodule of A(S1; R) spanned by Jacobi dia-
+grams with connected uni-trivalent graphs. As a graded vector space A(S!; Q)
+is isomorphic to the symmetric tensor algebra of A(S';Q)coun- A Vassiliev in-
+variant v is called primitive if v(ki#K2) = v(k1) + v(K2) for any oriented
+knots K, and Ky. The degree d subspace of A(S*;Q)conn is dual to the dth
+graded vector space for Q-valued primitive Vassiliev invariants.
+
+Problem 2.12 Determine the dimension of the space of primitive Vassiliev
+invariants of each degree d. Equivalently, determine the dimension of the space
+
+A(S!;Q)®), for each d.
+
+CE EE
+dim A(S)®, Jofijtifif2]3]5]s [12] 18 J 27
+
+dim A(S!)(@ 1}1/2]3]6] 10] 19 | 33 | 60 | 104 | 184
+dim A(S'V®/FI 1] o0];1]}1]3 {4 | 9 | 14] 27] 44 | 80
+| d re
+dim A(St)®. |} 39 | 55 | > 78 | > 108
+dim A(S1) |] 316 | 548 | > 932 | > 1591
+dim A(S')/FT |] 132 | 232 | > 384 | > 659
+
+Table 1: Some dimensions given in [67, 224]
+
+Remark The dimension of A(S!;Q), can partially be computed as follows.
+
+conn
+
+Let B denote the vector space over Q spanned by vertex-oriented uni-trivalent
+graphs subject to the AS and IHX relations, and let B®, denote the subspace
+
+‘conn
+
+of B spanned by connected uni-trivalent graphs with 2d vertices.
+
+Geometry & Topology Monographs, Volume 4 (2002)

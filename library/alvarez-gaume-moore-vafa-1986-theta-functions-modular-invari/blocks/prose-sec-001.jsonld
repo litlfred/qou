@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/blocks/prose-sec-001",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa",
-  "pageStart": 2,
-  "pageEnd": 2,
-  "text": "../sections/sec-001-2-l-alvarez-gaume-g-moore-and-c-vafa.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari",
+  "title": "Vi",
+  "pageStart": 3,
+  "pageEnd": 10,
+  "text": "../sections/sec-001-17-vi.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/manifest.jsonld",
   "provenance": "ingested"
 }

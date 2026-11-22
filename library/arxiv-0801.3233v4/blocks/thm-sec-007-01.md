@@ -1,1 +1,1 @@
-A.5([Ye5]). LetC be a smoothK-algebra.
+5 ([Ye5]). Let C be a smooth K-algebra. (1) Any star product ⋆on C[[ℏ]] is gauge equivalent to a diﬀerential star prod- uct ⋆′. (2) Let ⋆and ⋆′ be diﬀerential star products on C[[ℏ]], and let g : ⋆→⋆′ be a gauge equivalence. Then g is a diﬀerential gauge equivalence.

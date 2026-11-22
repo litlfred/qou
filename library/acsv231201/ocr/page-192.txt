@@ -1,0 +1,47 @@
+174 Overview of analytic methods for multivariate GFs
+
+The approach taken in Example 7.2 is known as the surgery method for
+multivariate asymptotics. It works by performing an explicit deformation to
+move the torus of integration in the Cauchy integral near a critical point, then
+changing the radius in one coordinate to enclose singularities. The ordinary
+(univariate) residue theorem, a localization argument, and the saddle point re-
+sults from Chapters 4 and 5 then yield asymptotics.
+
+Although this approach can be generalized successfully, as will be done in
+Section 9.1 of Chapter 9, such explicit deformations require additional assump-
+tions on the singularities where local behavior of F(z) determines asymptotics.
+In particular, such singularities need to be minimal in the sense of Section 6.4,
+meaning they lie on the boundary of the domain of convergence of the Lau-
+rent expansion being considered. In fact, we require finite minimality, meaning
+such singularities are minimal and only a finite number of other singularities
+have the same coordinatewise modulus. Although this is usually not an unrea-
+sonable assumption, in practice it can be very expensive to verify formally (see
+Chapter 8 for more details).
+
+Exercise 7.1. Suppose we perturb Example 7.2 by taking Q,(x,y) = 1 -
+x—y-— ey’ for some e > -1. Let D, = {(x,y) € C : |al, yl < pe} where
+Pe = (vi +E- 1) /e the positive root of Q,(x, x). When ¢ = 0, the function
+1/Q,(x, y) is the function in (7.3), whose power series domain of convergence
+contains Do = {(x,y) € C? : [al |y| < 1/2}.
+
+(a) As ¢ > 0, determine the first two terms of the asymptotic behavior of p,.
+(b) When ¢ > 0, is there an easy way to see that 1/Q(x, y) is analytic on D,?
+(c) When —-1 < € < 0, can you show that 1/Q(x, y) is analytic on D,?
+
+(d) What can you say when € < -1?
+
+We now study an example where the surgery method does not directly apply,
+and sketch a more general topological method for multivariate asymptotics.
+Although the topological method applies in a wider variety of situations, as its
+name suggests it will require more advanced constructions from topology and
+differential geometry. Our next example also illustrates how the topological
+approach generalizes hands-on surgery in the smooth case to a topologically
+characterized contour integration.
+
+Example 7.3 (Non-Minimal Contributing Points). Consider the (1, 1)-diagonal
+sequence a,,,, of the power series expansion
+
+1 a
+FO) = Ba = dau’,
+
+i720

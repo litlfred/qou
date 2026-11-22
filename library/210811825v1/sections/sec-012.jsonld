@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/210811825v1/sections/sec-012",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Second eigenspace of Bolza surface",
+  "pageStart": 95,
+  "pageEnd": 98,
+  "contains": [
+    "library/210811825v1/blocks/prose-sec-012",
+    "library/210811825v1/blocks/lem-sec-012-01",
+    "library/210811825v1/blocks/thm-sec-012-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/210811825v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/210811825v1/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { conjecture } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:vorticity-lower-bound",
+export default conjecture({
+  label: "conj:vorticity-lower-bound",
   lean: { ref: "qou:QOU.FluidDynamics.vorticity_lower_bound_conditional", validation: "not_checked" },
   title:
     "Vorticity lower bound for anti-parallel filament collision as $q \\to 1$",
@@ -18,6 +18,12 @@ export default proposition({
     "last-gap",
   ],
   authorNotes: [
+    {
+      kind: "status",
+      date: "2026-11-15",
+      body:
+        "Demoted from proposition to conjecture (owner ruling 2026-11-15). Nothing derives the three claims: the Lean class `VorticityLowerBoundContext` carries (a), (b), (c) as fields and `vorticity_lower_bound_conditional` returns them, and the block depends on `conj:q-aubin-lions`. The class stays as the conjecture's carrier.",
+    },
     {
       kind: "note",
       body:

@@ -1,0 +1,68 @@
+---
+doc_id: schechtman-varchenko1991-arrangements
+doc_title: "Arrangements of hyperplanes and Lie algebra homology"
+section_id: page-051
+section_title: "Page 51"
+pages: 51-51
+pdf_page: 51
+source_pdf: schechtman-varchenko1991-arrangements.pdf
+source_sha256: 0100fd32438740f0
+text_source: ocr
+granularity: page
+doc_brief: "Arrangements of hyperplanes and Lie algebra homology — 56 sections: Page 1; Page 2; Page 3"
+---
+Arrangements of hyperplanes and Lie algebra homology 189
+7.5.5 Lemma.
+6 -
+Fp 1 9= 2 Viin(y, €)—d((Y.4/6t,) 4 n(y, 8)
+i jai
+where the sum in the second summand is taken over all p lying in the i-th branch.
+ie. pe{y(a), p(a+J), ..., y(b)}, €° (i) =[a, b].
+Proof. By differentiation.
+
+7.5.6 Now suppose that 4 is arbitrary. Then forms n(y, 6) are sums of forms
+of the type (7.5.1).
+Operators Vj; defined by (7.5.2) are 2,-equivariant, and one has the same
+formula as in 7.5.5, with the evident modification of the exact form summand.
+Theorem 7.2.5’ will follow from
+
+7.5.7 Lemma. For every xeM*
+
+=) n(Qijx)
+
+K 2;—-Z;
+
+Visn(x)
+
+The proof will occupy next n°s.
+We may, and shall suppose that n=2. Put V=V,).
+
+7.6 First we'll calculate the action of Q=Q,,. We'll use notation: fj... i,
+
+=fi, Sins iy..iv] = Dis Dib Diy fig] ---1 the same with e7s.
+7.6.1 Lemma. Let f=fj, iy. @=e;,..;,EU9, x=f-veM(A). Then ex=0 if q>N;
+
+and
+ex= Y Sir Sig, Sip,
+
+iSpi<...<pgSN
+
+Le Leh, |S, d] Fi, V Singer Sin?
+ifqsN.
+
+Proof. We have ex=efv=[e, f]v. By the Leibniz rule (a, bc]=[a, b]c+b[a, c],
+we have
+
+N
+Le flv= ¥ fifip sles Siplips 1 Siw”
+p=t
+
+This proves 7.6.1 for q=1. For q>1 use induction on q: [e, f,,] is the sum
+of products of q—1 es, and we may use the induction hypothesis. [
+
+7.6.2 Lemma. We have an identity in Ug:
+[.-- Lei ind Sid Sind» Sind = K (Ceis.cix ds Dhin..iw)) hin
+Proof. K(Lei,..iv (fiy...in=K fj) where @=(... (fei, ivl fb fil 1;
+
+Fix ,J=S.a;e;. Hence, K(, f;,)=4;,- On the other hand the left hand side of
+1.6.2 is (2, fi, 1=ajy hy:

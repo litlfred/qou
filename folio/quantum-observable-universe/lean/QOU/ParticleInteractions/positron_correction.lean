@@ -19,7 +19,7 @@ boxed identity `Q = Σ_char·m_e + m_e` is **derived** from them by ring
 algebra.  The regime-applicability case split is encoded by an `if`-defined
 `applied_correction` and both branches are derived, not projected.
 
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/positron-correction.md
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/positron-correction.md
 -/
 
 namespace QOU.ParticleInteractions
@@ -59,7 +59,7 @@ noncomputable def appliedPositronCorrection [ctx : PositronCorrectionContext] : 
     `Q = Σ_char · m_e + m_e`, where the `+m_e` is the positron action
     `(m_{e⁺}/m_e)·m_e = 1·m_e`.  Derived from the structural form
     `Q = (Σ_char + r)·m_e` and `r = 1` by ring algebra — not a projection. -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/positron-correction.md
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/positron-correction.md
 theorem positron_correction [ctx : PositronCorrectionContext] :
     ctx.Q = ctx.«Σ_char» * ctx.m_e + ctx.m_e ∧
     (ctx.is_pair_creation → appliedPositronCorrection = ctx.m_e) ∧

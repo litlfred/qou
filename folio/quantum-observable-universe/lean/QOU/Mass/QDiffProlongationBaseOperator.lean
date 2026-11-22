@@ -33,7 +33,7 @@ laundering the anti-fit gate forbids. It only records a proved, standard, non-ci
 ingredient. §7c: core identity over generic `CommRing`; `[n]_q` naming over `Field`.
 Sorry-free. No fit; nothing wired.
 
--- Ref: [manuscript] docs/audits/2026-07-20-zgeometric-prolongation-symbol-scoping.md (W1/G1)
+-- Ref: [leitner2026] docs/audits/2026-07-20-zgeometric-prolongation-symbol-scoping.md (W1/G1)
 -/
 import QOU.MathlibExt.QIntegerFactorial
 

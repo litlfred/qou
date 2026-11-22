@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2605.20846v1
-doc_title: "Topological Field Theories and the Algebraic Structures of the Two-Sphere Chris Li"
+doc_title: "Topological Field Theories and the Algebraic Structures of the Two-Sphere"
 section_id: sec-005-spherical-morse-functions
 section_title: "Spherical Morse Functions"
 section_number: null
 pages: 32-38
 source_pdf: 2605.20846v1.pdf
 source_sha256: db27cb6d01c4f2fb
-doc_brief: "Topological Field Theories and the Algebraic Structures of the Two-Sphere Chris Li — We give two presentations for bordisms ofS 2 in the 3-dimensional oriented bor- dism category Cob(3), encoding the"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.962
+latex_coverage_ratio: 0.972
+doc_brief: "Topological Field Theories and the Algebraic Structures of the Two-Sphere — We give two presentations for bordisms of S2 in the 3-dimensional oriented bor- dism category Cob(3), encoding the"
 ---
 \label{sec:Cob2Cob3Iso}
 Before we proceed to show that the commutative Frobenius relations are sufficient among CF generators, it is necessary to examine their Morse theory. We will prove in this section that there is an isomorphism between the categories $\operatorname{Cob}( 3)_{S^2,CF} $ and $\operatorname{Cob}( 2)$ in theorem \ref{thm:Cob2Cob3CFIso}. Furthermore we show that $G_1 $ and $G_2 $ are both minimal in proposition \ref{prop:G1G2minimal}.

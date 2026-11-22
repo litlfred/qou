@@ -78,7 +78,7 @@ theorem qIntegerRescaled_succ (q : ℝ) (k : ℕ) :
     Proof: `qIntegerRescaled q k = ∑_{j=0}^{k-1} q^{2j}` is a sum
     of `k ≥ 1` terms, each positive (since `q^{2j} > 0` when
     `q > 0`). Sum of positive terms is positive. -/
--- Ref: [manuscript] sdp-dual-without-demand §I.1
+-- Ref: [leitner2026] sdp-dual-without-demand §I.1
 theorem qIntegerRescaled_pos
     {q : ℝ} (hq : 0 < q) {k : ℕ} (hk : 1 ≤ k) :
     0 < qIntegerRescaled q k := by
@@ -92,7 +92,7 @@ theorem qIntegerRescaled_pos
 
 /-- **Strict monotonicity of the rescaled q-integer at `q > 1`.**
     For `q > 1`, the rescaled q-integer grows with `k`. -/
--- Ref: [manuscript] sdp-dual-without-demand §I.1
+-- Ref: [leitner2026] sdp-dual-without-demand §I.1
 theorem qIntegerRescaled_strict_mono
     {q : ℝ} (hq : 1 < q) {k : ℕ} :
     qIntegerRescaled q k < qIntegerRescaled q (k + 1) := by
@@ -111,7 +111,7 @@ theorem qIntegerRescaled_strict_mono
     The actual hook-length-formula content requires Young diagrams,
     deferred to `MathlibBridge.lean`. Here we record the abstract
     structural fact: ratios of positive q-integers are positive. -/
--- Ref: [manuscript] sdp-dual-without-demand §I.1
+-- Ref: [leitner2026] sdp-dual-without-demand §I.1
 theorem positive_ratio_of_positive_qIntegers
     {q : ℝ} (hq : 0 < q) {a b : ℕ} (ha : 1 ≤ a) (hb : 1 ≤ b) :
     0 < qIntegerRescaled q a / qIntegerRescaled q b := by
@@ -124,7 +124,7 @@ theorem positive_ratio_of_positive_qIntegers
 /-- Sums of products of rescaled q-integers (with positive factors)
     are positive. This is the abstract structural fact behind the
     Hecke-trace functional summing positive Wedderburn weights. -/
--- Ref: [manuscript] sdp-dual-without-demand §I.2
+-- Ref: [leitner2026] sdp-dual-without-demand §I.2
 theorem sum_of_positive_qInteger_products_pos
     {q : ℝ} (hq : 0 < q)
     (s : Finset ℕ) (hs : s.Nonempty)

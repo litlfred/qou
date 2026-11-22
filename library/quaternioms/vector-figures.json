@@ -1,0 +1,465 @@
+{
+  "$schema": "folio-vector-figures/v1",
+  "doc_id": "quaternioms",
+  "figures": [
+    {
+      "id": "vfig-p008",
+      "file": null,
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 8
+      },
+      "page": 8,
+      "rotation": 0,
+      "captionLabels": [
+        "1"
+      ],
+      "region": null,
+      "assembly": {
+        "drawings": 4,
+        "background": 0,
+        "groups": [],
+        "boxes": [],
+        "unlabelledClosedShapes": 0,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              35.72,
+              51.29,
+              558.99,
+              51.29
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              36.0,
+              51.29,
+              559.28,
+              51.29
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              285.74,
+              674.55,
+              290.6,
+              674.55
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              317.14,
+              674.55,
+              322.0,
+              674.55
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 0
+      },
+      "unrendered_reason": "no drawing component on this page contains a text line, so there is no labelled region to render -- the caption candidates are recorded and nothing is claimed about what the page draws"
+    },
+    {
+      "id": "vfig-p013",
+      "file": "figures/vfig-p013.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 13
+      },
+      "page": 13,
+      "rotation": 0,
+      "captionLabels": [
+        "2"
+      ],
+      "region": [
+        245.14,
+        72.07,
+        359.53,
+        169.5
+      ],
+      "assembly": {
+        "drawings": 28,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              245.14,
+              72.07,
+              355.69,
+              100.41
+            ],
+            "drawings": 1,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "Quaternionic circuit",
+              "UH"
+            ]
+          },
+          {
+            "bbox": [
+              246.42,
+              141.15,
+              359.53,
+              169.5
+            ],
+            "drawings": 1,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "Embedded complex circuit",
+              "UC"
+            ]
+          }
+        ],
+        "boxes": [],
+        "unlabelledClosedShapes": 6,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              35.72,
+              51.29,
+              558.99,
+              51.29
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              36.0,
+              51.29,
+              559.28,
+              51.29
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              245.14,
+              72.07,
+              355.69,
+              100.41
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              171.24,
+              86.24,
+              241.88,
+              86.24
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              355.89,
+              86.24,
+              426.53,
+              86.24
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              246.42,
+              141.15,
+              359.53,
+              169.5
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              172.52,
+              155.33,
+              243.16,
+              155.33
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              359.73,
+              155.33,
+              430.37,
+              155.33
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              145.44,
+              94.83,
+              145.44,
+              142.79
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              449.16,
+              94.62,
+              449.89,
+              144.09
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              347.51,
+              293.59,
+              361.39,
+              293.59
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              356.41,
+              295.59,
+              361.39,
+              295.59
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              312.14,
+              345.7,
+              317.12,
+              345.7
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              347.25,
+              345.7,
+              352.23,
+              345.7
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              411.41,
+              359.63,
+              416.39,
+              359.63
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              454.84,
+              359.63,
+              459.82,
+              359.63
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              294.84,
+              409.59,
+              308.71,
+              409.59
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              303.73,
+              411.59,
+              308.71,
+              411.59
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              391.76,
+              409.59,
+              405.63,
+              409.59
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              400.65,
+              411.59,
+              405.63,
+              411.59
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              326.55,
+              565.33,
+              340.43,
+              565.33
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              335.45,
+              567.34,
+              340.43,
+              567.34
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 127
+      }
+    },
+    {
+      "id": "vfig-p015",
+      "file": null,
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 15
+      },
+      "page": 15,
+      "rotation": 0,
+      "captionLabels": [
+        "3"
+      ],
+      "region": null,
+      "assembly": {
+        "drawings": 2,
+        "background": 0,
+        "groups": [],
+        "boxes": [],
+        "unlabelledClosedShapes": 0,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              35.72,
+              51.29,
+              558.99,
+              51.29
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              36.0,
+              51.29,
+              559.28,
+              51.29
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 0
+      },
+      "unrendered_reason": "no drawing component on this page contains a text line, so there is no labelled region to render -- the caption candidates are recorded and nothing is claimed about what the page draws"
+    },
+    {
+      "id": "vfig-p016",
+      "file": null,
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 16
+      },
+      "page": 16,
+      "rotation": 0,
+      "captionLabels": [
+        "4"
+      ],
+      "region": null,
+      "assembly": {
+        "drawings": 2,
+        "background": 0,
+        "groups": [],
+        "boxes": [],
+        "unlabelledClosedShapes": 0,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              35.72,
+              51.29,
+              558.99,
+              51.29
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              36.0,
+              51.29,
+              559.28,
+              51.29
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 0
+      },
+      "unrendered_reason": "no drawing component on this page contains a text line, so there is no labelled region to render -- the caption candidates are recorded and nothing is claimed about what the page draws"
+    }
+  ]
+}

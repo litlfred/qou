@@ -9,7 +9,7 @@
   No asymptotic content (no Reeb density, no Mostow + Gromov, no
   volume-conjecture identification) enters the derivation.
 
-  Refs: prop:atom-knot-mass-derivation, prop:gb-spectral-sequence,
+  Refs: conj:atom-knot-mass-derivation, prop:gb-spectral-sequence,
         prop:spectral-sequence-collapse, prop:wedderburn-trace-identity,
         thm:jones-markov-trace, prop:archimedean-realization-functor.
 -/
@@ -59,7 +59,7 @@ structure CategoricalLeg (T_w : Type*) where
     (Yekutieli finite slice + `E_2` collapse + Wenzl + `q`-MN) is the
     open categorical input.
 
-    Ref: [manuscript] prop:gb-spectral-sequence +
+    Ref: [leitner2026] prop:gb-spectral-sequence +
          prop:spectral-sequence-collapse +
          prop:e-infinity-page-identifications. -/
 def categorical_leg_to_markov_trace {T_w : Type*} (L : CategoricalLeg T_w) : Prop :=
@@ -90,7 +90,7 @@ structure ArchimedeanRealization (T_w : Type*) where
 
     Named as the `Prop` relating the realised mass `B` to the
     electron scale, the SDP multiplicity, and the realified trace
-    (pattern C).  Ref: [manuscript] prop:archimedean-realization-functor. -/
+    (pattern C).  Ref: [leitner2026] prop:archimedean-realization-functor. -/
 def archimedean_realization_to_mev {T_w : Type*}
     (A : ArchimedeanRealization T_w) : Prop :=
   A.B = A.m_e * (A.ρ : ℝ) * A.traceAtQ0
@@ -111,7 +111,7 @@ def post_archimedean_naming_borrowed {K : Type*}
     (A : ArchimedeanRealization K) (volName : ℝ) : Prop :=
   volName * ((A.ρ : ℝ) * A.m_e) = A.B
 
-/-- **The full proof of `prop:atom-knot-mass-derivation`.**
+/-- **The full proof of `conj:atom-knot-mass-derivation`.**
 
     The end-to-end claim is the conjunction of the two derivation legs:
     the categorical leg (finite-sum Markov trace) and the Archimedean

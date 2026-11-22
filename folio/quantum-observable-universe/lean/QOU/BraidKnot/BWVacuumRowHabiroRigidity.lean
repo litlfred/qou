@@ -33,7 +33,7 @@ hypothesis and derives its "no-fit" consequence.
 
 Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-07-12-fibre-observable-categorical-not-analytic.md
+-- Ref: [leitner2026] docs/audits/2026-07-12-fibre-observable-categorical-not-analytic.md
 -- Ref: [murakami-murakami2001] https://doi.org/10.1007/BF02392716
 -/
 import Mathlib.Data.Complex.Basic

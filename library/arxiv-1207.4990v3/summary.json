@@ -2,60 +2,70 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1207.4990v3",
  "source_sha256": "02aa065f4f65b857",
- "brief": "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results Percy Deift — 10 sections: Setting the problem; Toeplitz meets Ising; Back to Isi",
- "extended": "**Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results Percy Deift**\n\n*Courant Institute, New York*\n\n70 pp, 10 sections.\n\n**Outline.** 1 Setting the problem; 2 Toeplitz meets Ising; 4 Back to Ising; 5 New questions for SSLT; 6 Fisher-Hartwig singularities. Fisher-Hartwig; 7 Basor-Tracy conjecture; 8 Hankel and Toeplitz+Hankel determinants; 9 Some applications; 10 Block Toeplitz matrices; 11 Double-scaling limits",
+ "brief": "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results — 12 sections: Front matter; Setting the problem; Toeplitz meets Ising",
+ "extended": "**Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results**\n\n*Percy Deift*\n\n70 pp, 12 sections.\n\n**Outline.** Front matter; 1 Setting the problem; 2 Toeplitz meets Ising; 3 Szego's Theorem; 4 Back to Ising; 5 New questions for SSLT; 6 Fisher-Hartwig singularities. Fisher-Hartwig; 7 Basor-Tracy conjecture; 8 Hankel and Toeplitz+Hankel determinants; 9 Some applications; 10 Block Toeplitz matrices; 11 Double-scaling limits",
  "tokens": {
-  "brief": 50,
-  "extended": 120
+  "brief": 47,
+  "extended": 121
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-3"
+  },
+  {
    "id": "sec-000-1-setting-the-problem",
    "title": "Setting the problem",
-   "pages": "2-9"
+   "pages": "3-9"
   },
   {
    "id": "sec-001-2-toeplitz-meets-ising",
    "title": "Toeplitz meets Ising",
-   "pages": "9-23"
+   "pages": "9-12"
   },
   {
-   "id": "sec-002-4-back-to-ising",
+   "id": "sec-002-3-szegos-theorem",
+   "title": "Szego's Theorem",
+   "pages": "12-23"
+  },
+  {
+   "id": "sec-003-4-back-to-ising",
    "title": "Back to Ising",
    "pages": "23-27"
   },
   {
-   "id": "sec-003-5-new-questions-for-sslt",
+   "id": "sec-004-5-new-questions-for-sslt",
    "title": "New questions for SSLT",
    "pages": "27-29"
   },
   {
-   "id": "sec-004-6-fisher-hartwig-singularities-fisher-hartwig-co",
+   "id": "sec-005-6-fisher-hartwig-singularities-fisher-hartwig-co",
    "title": "Fisher-Hartwig singularities. Fisher-Hartwig conjecture",
    "pages": "29-36"
   },
   {
-   "id": "sec-005-7-basor-tracy-conjecture",
+   "id": "sec-006-7-basor-tracy-conjecture",
    "title": "Basor-Tracy conjecture",
    "pages": "36-40"
   },
   {
-   "id": "sec-006-8-hankel-and-toeplitzhankel-determinants",
+   "id": "sec-007-8-hankel-and-toeplitzhankel-determinants",
    "title": "Hankel and Toeplitz+Hankel determinants",
    "pages": "40-42"
   },
   {
-   "id": "sec-007-9-some-applications",
+   "id": "sec-008-9-some-applications",
    "title": "Some applications",
    "pages": "42-45"
   },
   {
-   "id": "sec-008-10-block-toeplitz-matrices",
+   "id": "sec-009-10-block-toeplitz-matrices",
    "title": "Block Toeplitz matrices",
    "pages": "45-49"
   },
   {
-   "id": "sec-009-11-double-scaling-limits",
+   "id": "sec-010-11-double-scaling-limits",
    "title": "Double-scaling limits",
    "pages": "49-70"
   }

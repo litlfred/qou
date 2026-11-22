@@ -1,0 +1,1 @@
+Let A be a quantised enveloping algebra of a ﬁnite dimensional semisimple Lie algebra at a root of unity. Assume that the order, k, of the quantum parameter q is at least the Coxeter number of the Lie algebra. Then the category of tilting modules is spherical and the non-degenerate quotient is ﬁnite with non-zero dimension, satisfying the hypotheses of Theorem 5.1.

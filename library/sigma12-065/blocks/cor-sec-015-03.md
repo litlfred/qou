@@ -1,0 +1,1 @@
+Assuming the conditions of Lemma 1 and that ψ ∈Aut(C), then R ψ(Q) Q ω is a 2N(g −1)-torsion point. Although these simple results do not necessarily give the best bound on the order of the torsion point for the vectors involved, we see that, given a suitable symmetry and fixed point, we have that KQ is a torsion point: 2KQA = nΠ [L −Id]−1 = n(M −Id)−1Π = n

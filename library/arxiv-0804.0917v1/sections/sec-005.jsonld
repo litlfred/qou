@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0804.0917v1/sections/sec-005",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Verma module over the coefficient algebra of a free Lie conformal algebra",
+  "pageStart": 10,
+  "pageEnd": 11,
+  "contains": [
+    "library/arxiv-0804.0917v1/blocks/prose-sec-005"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0804.0917v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0804.0917v1/manifest.jsonld",
+  "provenance": "ingested"
+}

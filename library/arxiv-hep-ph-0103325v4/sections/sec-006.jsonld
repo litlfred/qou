@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-hep-ph-0103325v4/sections/sec-006",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Mass relations from anyonic realization of $U_q(su_N)$",
+  "pageStart": 6,
+  "pageEnd": 6,
+  "contains": [
+    "library/arxiv-hep-ph-0103325v4/blocks/prose-sec-006"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-0103325v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-0103325v4/manifest.jsonld",
+  "provenance": "ingested"
+}

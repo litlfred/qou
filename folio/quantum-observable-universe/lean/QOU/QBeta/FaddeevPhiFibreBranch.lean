@@ -55,7 +55,7 @@ All results are generic over a field `K` (never specialised to `ℂ`), per §7c.
 
 -- Ref: [faddeev1995] Faddeev, "Discrete Heisenberg–Weyl group and modular
 --        group", Lett. Math. Phys. 34 (1995) 249. https://doi.org/10.1007/BF01872779
--- Ref: [manuscript] docs/audits/2026-07-13-phib-proof-status-and-monodromy-datum-gap-audit.md
+-- Ref: [leitner2026] docs/audits/2026-07-13-phib-proof-status-and-monodromy-datum-gap-audit.md
 -/
 import QOU.QBeta.CyclicQuantumDilog
 

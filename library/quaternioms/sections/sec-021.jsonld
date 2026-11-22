@@ -9,13 +9,15 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Theoretical Equivalence to Complex Quantum Circuits",
-  "pageStart": 20,
-  "pageEnd": 21,
+  "title": "Complexity Landscape and Feasibility",
+  "pageStart": 19,
+  "pageEnd": 20,
   "contains": [
-    "library/quaternioms/blocks/prose-sec-021"
+    "library/quaternioms/blocks/prose-sec-021",
+    "library/quaternioms/blocks/prop-sec-021-01",
+    "library/quaternioms/blocks/rem-sec-021-02"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/quaternioms",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/quaternioms",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/quaternioms/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/quaternioms/manifest.jsonld",
   "provenance": "ingested"
 }

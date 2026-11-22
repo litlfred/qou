@@ -52,9 +52,9 @@ Base ring (§7c): the factorisation and the root `iff` are generic
 (`CommRing` / `Field`); only the `z = 1` exclusion is archimedean (`ℝ`,
 ordering), and it lives below the wall as a separate lemma.
 
--- Ref: [manuscript] computations/qbeta/qbeta_admissible_functionals_bracket_probe.py
+-- Ref: [leitner2026] computations/qbeta/qbeta_admissible_functionals_bracket_probe.py
    (the exact y_(1³)(z), its two roots {q, z_D}, and z=1 excluded; 15/15)
--- Ref: [manuscript] .beans/qou-99qc (admissible set COMPLETE, solved not sampled)
+-- Ref: [leitner2026] .beans/qou-99qc (admissible set COMPLETE, solved not sampled)
 -- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors",
 --       Invent. Math. 92 (1988) 349-383.
 -/

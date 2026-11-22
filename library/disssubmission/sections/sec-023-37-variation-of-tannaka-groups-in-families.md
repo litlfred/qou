@@ -1,6 +1,6 @@
 ---
 doc_id: disssubmission
-doc_title: "I NAUGURAL -D ISSERTATION T ANNAKIAN C ATEGORIES OF P ERVERSE S HEAVES ON A BELIAN V ARIETIES"
+doc_title: "Tannakian categories of perverse sheaves on abelian varieties"
 section_id: sec-023-37-variation-of-tannaka-groups-in-families
 section_title: "Variation of Tannaka groups in families"
 section_number: 3.7
@@ -8,6 +8,7 @@ pages: 69-77
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
 toc_source: inferred
+doc_brief: "Tannakian categories of perverse sheaves on abelian varieties — 52 sections: Front matter; Introduction; Some commonly used notations"
 ---
 61
 are an epi- resp. an isomorphism. The ﬁnal statement then follows from the
@@ -264,81 +265,63 @@ and consider the morphism
 Rp∗(RH om(ΛZ,Q∗r)) −→RH om(ΛS,W ⊗r) ∼= W ⊗r
 which corresponds by adjunction to the composite morphism ψ given by
 the following diagram (where the diagonal arrow on the left comes from
-66
-Chapter 3 – Perverse sheaves on semiabelian varieties
-the adjoint of the relative K¨unneth isomorphism).
-RH om(ΛZ,Q∗r)
-ψ
-/
-(Q
-Q
-Q
-Q
-Q
-Q
-Q
-Q
-Q
-Q
-Q
-Q
-Q
-p!(RH om(ΛS,W ⊗r))
-RH om(p∗(ΛS), p!(W ⊗r))
-∼=
-5k
-k
-k
-k
-k
-k
-k
-k
-k
-k
-k
-k
-k
-k
+66 Chapter 3 — Perverse sheaves on semiabelian varieties
+
+the adjoint of the relative Ktinneth isomorphism).
+
+y
+
+RHom(Az, O*")
+
+RHAom(p*(As), p (W*"))
+
+p (RH om(As, W°"))
+
 As a candidate for the constructible subsheaf in part (c) we take the image of
-the induced morphism H 0(ϕ) on the stalk cohomology sheaves in degree
-zero. After shrinking S we can by loc. cit. assume that the occuring RH om
+the induced morphism .#°(@) on the stalk cohomology sheaves in degree
+zero. After shrinking S we can by loc. cit. assume that the occuring R#om
 commute with base change. If we put
-K = (Ps ⊕P∨
-s )∗r
-and denote by χs the restriction of the character χ to the geometric ﬁbre Xs,
+
+K = (Ps@PY)*”
+
+and denote by 4; the restriction of the character x to the geometric fibre X;,
 then on stalks we obtain a commutative diagram
-H0(Xs,RH om(δ0,Kχs))
-H 0(ϕ)s
-/ H0(Xs,Kχs)
-L
-i∈Z Exti(δ0, pH−i(K)χs)
-/ Hom(δ0, pH0(K)χs)
-O
-where the Ext and Hom in the lower row refer to the abelian category P(Xs)
-and where the vertical identiﬁcations come from Gabber’s decomposition
-theorem by which Kχs ∼=
-L
-i∈Z
-pHi(K)χs[−i]. The fact that H 0(ϕ)s factors
+
+Pall .
+H(X;, RAom(8y,Ky,)) ——
+
+H®(X;,Ky;)
+
+|
+
+Hom(d,"H(K) z)
+
+Diez Ext'(5p,"H"(K) z,)
+
+where the Ext and Hom in the lower row refer to the abelian category P(X;)
+and where the vertical identifications come from Gabber’s decomposition
+theorem by which Ky, © @jez?H'(K)y,[—i]. The fact that #°(@); factors
 over the projection in the lower row follows from the observation that by
-part (b) we have H•(Xs, pH−i(K)χs) = 0 for all i̸ = 0. Hence (c) follows as
-well, and we are done.
-□
-In the above proof we have used that after a suitable quasi-ﬁnite ´etale
-base change there exist enough characters χ ∈Π(X) so that we can apply
-the vanishing theorem from section 3.1 ﬁbre by ﬁbre. More precisely we
+part (b) we have H°(X;,?H"(K)y,) = 0 for all i# 0. Hence (c) follows as
+well, and we are done. O
+
+In the above proof we have used that after a suitable quasi-finite étale
+base change there exist enough characters ¥ € II(X) so that we can apply
+
+the vanishing theorem from section 3.1 fibre by fibre. More precisely we
 have the following result.
-LEMMA 3.21. Let P ∈D(X) be a complex which restricts to a perverse
-sheaf on each geometric ﬁbre of the abelian scheme X →S, and suppose
+
+LEMMA 3.21. Let P € D(X) be a complex which restricts to a perverse
+sheaf on each geometric fibre of the abelian scheme X — S, and suppose
 that S is irreducible. Then there exists
-• a quasi-ﬁnite ´etale morphism f : S′ →S,
-• a character χ ∈Π(X′) for the abelian scheme X′ = X ×S S′,
-such that the direct image of P′ = (idX, f)∗(P) ∈D(X′) under the structure
-morphism p : X′ →S′ satisﬁes
-H i(Rp∗(P′ ⊗Λ Lχ)) = 0
-for all
-i̸ = 0.
+
+© a quasi-finite étale morphism f : S' > S,
+e acharacter x € T1(X') for the abelian scheme X' = X x35",
+
+such that the direct image of P' = (idx, f)*(P) € D(X") under the structure
+morphism p : X' — S' satisfies
+
+FE\(Rp.(P'@,Ly)) = 0 forall i#0.
 3.7. Variation of Tannaka groups in families
 67
 Proof. Take a geometric generic point η of S. The set of all torsion

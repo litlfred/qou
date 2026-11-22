@@ -1,0 +1,1 @@
+The corrected symmetric Hodge correlators in depth 2 satisfy the second shuﬄe (dihedral symmetry) relations modulo terms of lower depth that are independent of the base point. The corrected element for 푆푚0,푚′ 0 ⊗(0) ⊗푆푚1,푚′ 1 ⊗(푥1) ⊗푆푚2,푚′ 2 ⊗(푥1 + 푥2) + 푆푚0,푚′ 0 ⊗(0) ⊗푆푚2,푚′ 2 ⊗(푥2) ⊗푆푚1,푚′ 1 ⊗(푥1 + 푥2) (3.13) lies in the kernel of the map Cor푠for every 푠.

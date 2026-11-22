@@ -12,15 +12,15 @@ Canonical action of a quantum observable universe.
 
 A QOU (C, A, τ) with connection ∇, substrate parameter q, q-Hodge star ⋆_q,
 and state ψ : 𝟙 → A determines a categorical action S_q = tr(ℒ_q), unique
-up to a scalar λ ∈ R×.  The squared Dirac operator decomposes via
-Frobenius–Hopf structure into gravity + gauge + matter terms.
+up to a scalar λ ∈ R×, with gravity, gauge and matter terms.  (The
+Dirac-squared decomposition is not stated here; see the note below.)
 
 LaTeX label: `prop:qou-canonical-action`
 
 ## References
 
 - [kock2004] https://doi.org/10.1017/CBO9780511615443
-- [manuscript] §2 Quantum Geometry
+- [leitner2026] §2 Quantum Geometry
 -/
 
 open scoped CategoryTheory CategoryTheory.MonoidalCategory
@@ -48,24 +48,12 @@ structure QOUCanonicalAction (C : Type u) [CategoryTheory.Category.{v} C]
       `∫_A(ψ*·𝒟_∇ψ)`. -/
   action : CategoricalAction C fh
 
-/-- **Dirac squared decomposition.**
-
-    𝒟_∇² = q · R_∫ + tr_A(F_∇ ∧_q ⋆_q F_∇)
-
-    The squared Dirac operator decomposes via the Frobenius–Hopf
-    structure into the Frobenius–Ricci scalar (gravity) and the
-    q-Yang–Mills density (gauge). -/
--- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
-noncomputable def qou_canonical_action_dirac_sq
-    {C : Type u} [CategoryTheory.Category.{v} C]
-    [CategoryTheory.MonoidalCategory C]
-    [CategoryTheory.BraidedCategory C]
-    (fh : FrobeniusHopfData C)
-    (ca : QOUCanonicalAction C fh) :
-    -- The Dirac squared operator decomposes into gravity + gauge.
-    -- In the morphism language: 𝒟² = gravity_endo + gauge_endo
-    ca.action.gravity ≫ ca.action.gauge = ca.action.gravity ≫ ca.action.gauge :=
-  rfl
+/-! **The former `qou_canonical_action_dirac_sq` was vacuous** (removed
+    2026-11-15). Its docstring claimed `𝒟_∇² = q · R_∫ + tr_A(F_∇ ∧_q ⋆_q F_∇)`,
+    but its type was `x = x` (`gravity ≫ gauge = gravity ≫ gauge := rfl`).
+    `CategoricalAction` carries no Dirac operator, so the identity cannot be
+    stated yet. A real statement needs `𝒟_∇` as data. Recorded as open in bean
+    `qou-n2un`. -/
 
 /-- **Uniqueness up to scalar** (conditional conjecture, named not asserted).
 
@@ -104,7 +92,7 @@ noncomputable def qou_canonical_action_dirac_sq
     two terms that are already endomorphisms of `𝟙_ C` the two sides agree in
     any case, since `End(𝟙_C)` is commutative in a monoidal category, though
     nothing here needs or asserts that. -/
--- Ref: [manuscript] §2, Proposition: Canonical action
+-- Ref: [leitner2026] §2, Proposition: Canonical action
 -- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
 def qou_canonical_action_unique_up_to_scalar
     {C : Type u} [CategoryTheory.Category.{v} C]

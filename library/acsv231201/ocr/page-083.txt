@@ -1,0 +1,57 @@
+3.2 Meromorphic asymptotics 65
+
+where P(n) is a polynomial in n of degree k — | with leading term expansion
+
+k p@)
+
+k-2
+oqo) + O(n").
+
+P(n) =n! (1)!
+
+Proof The vanishing of the repeated derivatives of g implies g(z) = a) (Z-
+
+w)* + A(z\(z — w)**! for some function f(z) analytic at z = w, so (3.7) yields
+
+1 de p(2)
+Res f(z)z"! = im| as | z oy,
+zw (k—D! 20| dz g m D+ (2 = w)h(2)
+The product rule gives a finite sum expression for the repeated derivative in
+this limit, each term of which is a multiple of w~” times a polynomial in n. The
+leading term of this polynomial in n is contained only in the summand
+
+lim (=n)!
+
+pz) BO nay} EP) nk
+ol qo) “a1 (2 ) o
+Fe +(-o)h(z) &
+
+~ go)
++ Ow" nk),
+
+and algebraic simplification gives the stated result. ia)
+
+Exercise 3.2. Compute P(n) in Lemma 3.6 when f(z) = p(z)/q(z) = (2z -
+I/(2-z-el).
+
+Combining Lemma 3.6 with (3.7) gives a generalization of Proposition 3.1
+from rational functions to functions whose closest singularities to the origin
+are poles.
+
+Proposition 3.7 (meromorphic coefficients). Suppose that f(z) is analytic on
+a closed disk D = {z € C: |z| < S} for some S > 0, except at a nonempty
+collection {p,,..., pr} of non-zero poles of orders k,,...,K, lying in the interior
+of D. Then there exist polynomials P,(n),...,P,(n) inn such that
+
+"If = — D7 Pimp," + OS™"),
+j=1
+
+J
+
+where Pj(n) has degree xj — 1. If f(z) = p(z)/q(z) represents f as a ratio of
+analytic functions at z = pj; with p(pj) # 0 then the polynomial P (n) is the
+polynomial P(n) in Lemma 3.6 with w = pj and k = kj. The terms of P j(n) can
+be computed explicitly from the evaluations of the first x; — | derivatives of p
+and the first 2x; derivatives of q at z = pj.
+
+Proof Because f is analytic inside and on C_, the Cauchy integral formula

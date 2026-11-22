@@ -1,0 +1,69 @@
+using (My = ?My) «My = ?Mw»
+by simp
+ultimately
+have 4 Mb € unit-disc. point-between-sets Mp Mb My
+using hip(5)
+by blast
+then obtain Mb where bbb:
+Mb € unit-disc point-between-sets ?My Mb ?Mw
+using (My = ?My) «My = ?Mw»
+by auto
+
+let ?b = moebius-pt (moebius-inu M) Mb
+show J 6b € unit-disc. point-between-sets p b w
+proof (rule-tac z=?b in bexI, (rule balll)+, rule imp!)
+fix ry
+assume z € unit-disc y € unit-disc p x A Wy
+hence poincare-between u x y
+using <set-order u yp w»
+by blast
+
+let ?Mz = ?Maand ?My = ?My
+
+have ?Myp ?Mx ?Mw ?My
+using (p tA Ww y>
+by blast+
+have ?Mzx € unit-disc ?My € unit-disc
+using (x € unit-disc> (unit-disc-fir M> <y € unit-disc»
+by auto
+
+hence poincare-between ?Mx Mb ?My
+using «?My ?Ma> «?My ?My) <?Ma € unit-discy «?My € unit-discy bbb
+by auto
+
+then show poincare-between x ?b y
+using <unit-disc-fix My
+using <x € unit-disc) <y € unit-disc) «(Mb € unit-discy «?Max € unit-discy «?My € unit-disc»
+using unit-disc-fiz-moebius-preserve-poincare-between|of M x ?b y]
+by auto
+next
+show ?b € unit-disc
+using bbb <unit-disc-fix M>
+by auto
+qed
+qed
+next
+fix X
+assume zu: is-real X 0 < Re X Re X < 1
+let ?X = of-compler X
+show ?P 0), ?X
+proof ((rule alll)+, rule impl, (erule conjE)+)
+fix py
+assume set-order 0; y w 7 (4 BEunit-disc. p BA w B) py ?X
+dyeunit-disc. w y dxeunit-disc. yp x
+have ?X € unit-disc
+using xx
+by (simp add: cmod-eq-Re)
+
+have ywpos: V y € unit-disc. W y —> (is-real (to-complex y) A Re (to-complex y) > 0)
+proof(rule balll, rule imp!)
+
+fix y
+
+let ?y = to-complex y
+
+assume y € unit-disc w y
+
+hence poincare-between 0, ?X y
+using <set-order 0n y w>
+using <?X € unit-discy «p ?X»

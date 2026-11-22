@@ -1,0 +1,51 @@
+148 Laurent series, amoebas, and convex geometry
+
+Example 6.21. The growth rate of the power series expansion of
+
+x-y r+s-1 r+s—1 '
+f(%y) = Tox = » ( J-( x’y®
+*~Y 530 s r
+in the direction 7 = (1, 1) is —oo, because a,,, = 0 for all n > 0, however the
+neighborhood growth rate in the direction # is log 2. For instance, |dn,n44|!/" >
+2 as n — co whenever k # 0 is a fixed integer. S
+
+Computing the growth rate of a multidimensional sequence can be difficult,
+however it is possible to bound the growth rate using the behavior of f on
+its domain of convergence D. For any w € D, bounding the Cauchy integral
+expression
+
+lay] =
+
+1\é
+(4) f(z" dz
+2ni Tw)
+
+by the maximum modulus of its integrand times the surface area of its domain
+of integration gives
+
+lay| < |w"| > max |f(z)]. (6.4)
+zeT(w)
+The dual rate of f over D (or B) is the quantity
+B(P) := inf —F - Relog(z) = inf -#- a. (6.5)
+zEeD weB
+
+Optimizing (6.4) over w € D implies
+
+lim sup |ap|!/" < inf jw" , (6.6)
+r900 weD
+so that
+BP) < BP) < BYP) (6.7)
+
+for any direction 7.
+
+Remark 6.22. Equation (6.7) is the multivariate analogue of relationship (3.5)
+between the radius of convergence of a univariate power series and exponential
+growth, however in the multivariate case we get an inequality instead of an
+equality. The dual rate is an example of a Legendre transform (see the notes at
+the end of this chapter).
+
+Remark 6.23. To compute f*(#) it is sufficient to minimize the function |z|*
+on the closure D. Writing z = x + iy for real variables 2 and y implies
+lz?” = (xf + yf)" ++] +3)” for any v € R’. Thus, if # has positive rational
+coordinates and f represents a rational function then (potentially after taking
+powers of some variables to remove fractional powers) we can represent the

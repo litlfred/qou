@@ -11,4 +11,4 @@ $$
 $$
   2\,\mathrm{barOdd}(q\,q') = \mathrm{barOdd}(q)\,\mathrm{barEven}(q') + \mathrm{barEven}(q)\,\mathrm{barOdd}(q').
 $$
-Additive rapidity corresponds to multiplicative holonomy — the boost group law. All three identities are formalized sorry-free over a generic field: `holonomy_hyperbola`, `barEven_mul`, `barOdd_mul`. At a real substrate $q_0 > 1$ the turn is a genuine boost of rapidity $\ln q_0$; only at a root of unity ($\lvert q \rvert = 1$) is it a compact $U(1)$ spin.
+Additive rapidity corresponds to multiplicative holonomy — the boost group law. All three identities hold over a generic field. At a real substrate $q_0 > 1$ the turn is a genuine boost of rapidity $\ln q_0$; only at a root of unity ($\lvert q \rvert = 1$) is it a compact $U(1)$ spin.

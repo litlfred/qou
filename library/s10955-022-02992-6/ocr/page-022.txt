@@ -1,0 +1,55 @@
+33 Page 22 of 47 S. Jansen, L. Kolesnikov
+
+for non-empty D € D, and a(@) := 0. Furthermore, for D € D, with E),..., Em € E, and
+C(D) = {E\,..., Em}, let Es € E, be given by Es((z;,...,£,,)) for some selection rule s(-)
+and set D’ := D\Ey. Exploiting the fixed point equation for T (-; z) from Proposition 3.10,
+we get
+
+Item (i) of Theorem 2.6 follows upon multiplication with exp(—a(D’)) on both sides (in fact,
+we have shown that the inequality from item (i) holds for every choice of s € {1,..., m}).
+
+The implication (i) = (ii) follows from Proposition 3.10 by an induction over N similar to
+the proof of Theorem 2.1 on p. 20. Indeed, check that for the induction step it is sufficient
+that the corresponding system of Kirkwood-Salsburg inequalities holds for all finite disjoint
+unions of snippets (for any choice of the chopping map C, the snippet-size ¢ > 0 and the
+selection rule s). Bound (2.17) is then established using the triangle inequality, the alternating
+sign property, and Eq. (2.15). Oo
+
+3.4 Recurrence Relations for Subset Polymers: Proof of Theorem 2.7
+
+Just as in the continuous case, we will show that the expansions T solve a system of integral
+equations in the discrete setup. We do so by providing a recursive formula for the corre-
+sponding coefficients lyk
+
+Lemma 3.11 For all finite subsets D! C Z4, all x € Z4 \ D', and all k € N,
+
+lag (D! U {x}, Yi... Ye
+
+= O14 (D' V1, Ye) + YO (FH Myjox.rinv=o)) 9f (DU Yi, (Y)) jz)
+
+with gh =l1.
+
+Proof Notice that the analogue of Lemma 3.9 holds in the discrete setup of subset poly-
+mers as well, in particular for the choice Do := {x} and D, := D’. However, since two
+disjoint polymers Y; and Y cannot both intersect the same monomer x, only the summands
+corresponding to L = @ and |L| = 1 in the sum on the right-hand side of the identity in
+Lemma 3.9 provide non-trivial contributions. Oo
+
+Let D be a finite non-empty subset of Z4 and z a non-negative activity function. Set
+
+oo
+
+- 1
+
+T(D; z) =1+005 Yo olan (D. Yi. Yee) 2%)
+k=l" (¥1,...,¥e)eX*
+
+and for N € N,
+
+Ty (D; z) := lypj\<n)
+1
+tg LE Morty pcm Plc, Yi Vide) +20).
+
+(3.10)
+
+D Springer

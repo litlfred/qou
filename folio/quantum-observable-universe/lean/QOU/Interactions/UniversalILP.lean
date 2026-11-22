@@ -43,7 +43,7 @@ levels and the ILP Gram dimension is constant across them.  We
 **name** this as a `Prop` over the context's primitive data, rather
 than projecting it from self-assuming `h_*` fields — an instance of
 this proposition is the open structural claim. -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/universal-ilp-algorithm.ts
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/universal-ilp-algorithm.ts
 def UniversalILP [ctx : UniversalILPContext] : Prop :=
     ctx.n_levels = 4 ∧
     ∀ ℓ : ℕ, ℓ < ctx.n_levels → ctx.gram_dim ℓ = ctx.gram_dim 0

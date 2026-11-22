@@ -8,9 +8,15 @@
   "pages": 46,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:24Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 9,
+    "reason": "10 of 450 words are a stray single letter: the text layer splits words"
+   }
+  ]
  },
  "metadata": {
   "arxiv": {
@@ -20,7 +26,7 @@
    "stamp_date": "29 Sep 1997"
   },
   "doi": null,
-  "title": "arXiv:q-alg/9709040v1 29 Sep 1997",
+  "title": "Deformation quantization of Poisson manifolds",
   "authors_raw": "Maxim Kontsevich",
   "title_lines": [
    "DEFORMATION QUANTIZATION OF POISSON MANIFOLDS, I"
@@ -37,13 +43,14 @@
   "title_verified": true,
   "title_evidence": {
    "metadata": "arXiv:q-alg/9709040v1 29 Sep 1997",
-   "heading": "DEFORMATION QUANTIZATION OF POISSON MANIFOLDS, I Maxim Kontsevich 0. Introduction In this paper it is proven that any \ufb01nite-dimensional Poisson manifold can be canonically quantized (in the sense of deformation quantization). Informally, it means that the set of equivalence classes of associative al",
+   "heading": "DEFORMATION QUANTIZATION OF POISSON MANIFOLDS, I Maxim Kontsevich 0. Introduction In this paper it is proven that any ﬁnite-dimensional Poisson manifold can be canonically quantized (in the sense of deformation quantization). Informally, it means that the set of equivalence classes of associative al",
    "text": "DEFORMATION QUANTIZATION OF POISSON MANIFOLDS, I",
    "corroborated_by": [
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:q-alg/9709040v1 29 Sep 1997"
  },
  "toc": [
   {
@@ -203,7 +210,7 @@
   },
   {
    "level": 1,
-   "title": "Deformation theory via di\ufb00erential graded Lie algebras",
+   "title": "Deformation theory via diﬀerential graded Lie algebras",
    "page": 7,
    "source": "inferred",
    "number": "3",
@@ -217,7 +224,7 @@
   },
   {
    "level": 2,
-   "title": "Maurer-Cartan equation in di\ufb00erential graded Lie algebras",
+   "title": "Maurer-Cartan equation in diﬀerential graded Lie algebras",
    "page": 7,
    "source": "inferred",
    "number": "3.2",
@@ -315,7 +322,7 @@
   },
   {
    "level": 2,
-   "title": "Pre-L\u221e-morphisms",
+   "title": "Pre-L∞-morphisms",
    "page": 11,
    "source": "inferred",
    "number": "4.2",
@@ -329,7 +336,7 @@
   },
   {
    "level": 2,
-   "title": "L\u221e-algebras and L\u221e-morphisms",
+   "title": "L∞-algebras and L∞-morphisms",
    "page": 11,
    "source": "inferred",
    "number": "4.3",
@@ -371,7 +378,7 @@
   },
   {
    "level": 3,
-   "title": "Homotopy classi\ufb01cation of L\u221e-algebras",
+   "title": "Homotopy classiﬁcation of L∞-algebras",
    "page": 13,
    "source": "inferred",
    "number": "4.5.1",
@@ -385,7 +392,7 @@
   },
   {
    "level": 3,
-   "title": "Deformation functors at \ufb01xed points of Q",
+   "title": "Deformation functors at ﬁxed points of Q",
    "page": 14,
    "source": "inferred",
    "number": "4.5.2",
@@ -413,7 +420,7 @@
   },
   {
    "level": 3,
-   "title": "Two di\ufb00erential graded Lie algebras",
+   "title": "Two diﬀerential graded Lie algebras",
    "page": 15,
    "source": "inferred",
    "number": "4.6.1",
@@ -469,7 +476,7 @@
   },
   {
    "level": 1,
-   "title": "Con\ufb01guration spaces and their compacti\ufb01cations",
+   "title": "Conﬁguration spaces and their compactiﬁcations",
    "page": 18,
    "source": "inferred",
    "number": "5",
@@ -483,7 +490,7 @@
   },
   {
    "level": 2,
-   "title": "De\ufb01nitions",
+   "title": "Deﬁnitions",
    "page": 18,
    "source": "inferred",
    "number": "5.1",
@@ -553,7 +560,7 @@
   },
   {
    "level": 2,
-   "title": "Di\ufb00erential forms on con\ufb01guration spaces",
+   "title": "Diﬀerential forms on conﬁguration spaces",
    "page": 22,
    "source": "inferred",
    "number": "6.2",
@@ -567,7 +574,7 @@
   },
   {
    "level": 2,
-   "title": "Pre-L\u221e-morphisms associated with graphs",
+   "title": "Pre-L∞-morphisms associated with graphs",
    "page": 23,
    "source": "inferred",
    "number": "6.3",
@@ -623,7 +630,7 @@
   },
   {
    "level": 4,
-   "title": "Second subcase of S1: n2 \u22653",
+   "title": "Second subcase of S1: n2 ≥3",
    "page": 26,
    "source": "inferred",
    "number": "6.4.1.2",
@@ -679,7 +686,7 @@
   },
   {
    "level": 3,
-   "title": "We \ufb01nish the proof of the theorem from 6.4",
+   "title": "We ﬁnish the proof of the theorem from 6.4",
    "page": 27,
    "source": "inferred",
    "number": "6.4.3",
@@ -931,7 +938,7 @@
   },
   {
    "level": 3,
-   "title": "Pictures for the cup-product in polyvector \ufb01elds",
+   "title": "Pictures for the cup-product in polyvector ﬁelds",
    "page": 37,
    "source": "inferred",
    "number": "8.2.1",
@@ -973,7 +980,7 @@
   },
   {
    "level": 2,
-   "title": "First application: Du\ufb02o-Kirillov isomorphism",
+   "title": "First application: Duﬂo-Kirillov isomorphism",
    "page": 39,
    "source": "inferred",
    "number": "8.3",
@@ -1029,7 +1036,7 @@
   },
   {
    "level": 3,
-   "title": "Comparison with the Du\ufb02o-Kirillov isomorphism",
+   "title": "Comparison with the Duﬂo-Kirillov isomorphism",
    "page": 43,
    "source": "inferred",
    "number": "8.3.4",
@@ -1509,26 +1516,14 @@
    "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 1,
-   "n_chars": 34,
-   "n_words": 4,
-   "label_start": "1",
-   "label_end": "1"
-  },
-  {
-   "id": "sec-000-1-deformation-quantization",
-   "number": "1",
-   "title": "Deformation quantization",
-   "level": 1,
-   "page_start": 1,
    "page_end": 2,
-   "n_chars": 3927,
-   "n_words": 593,
+   "n_chars": 4011,
+   "n_words": 603,
    "label_start": "1",
    "label_end": "2"
   },
   {
-   "id": "sec-001-02-plans",
+   "id": "sec-000-02-plans",
    "number": "0.2",
    "title": "Plans",
    "level": 1,
@@ -1540,7 +1535,7 @@
    "label_end": "2"
   },
   {
-   "id": "sec-002-11-star-products",
+   "id": "sec-001-11-star-products",
    "number": "1.1",
    "title": "Star-products",
    "level": 2,
@@ -1552,14 +1547,26 @@
    "label_end": "2"
   },
   {
-   "id": "sec-003-03-acknowledgements",
+   "id": "sec-002-03-acknowledgements",
    "number": "0.3",
    "title": "Acknowledgements",
    "level": 1,
    "page_start": 2,
+   "page_end": 2,
+   "n_chars": 47,
+   "n_words": 9,
+   "label_start": "2",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-003-1-deformation-quantization",
+   "number": "1",
+   "title": "Deformation quantization",
+   "level": 1,
+   "page_start": 2,
    "page_end": 3,
-   "n_chars": 1469,
-   "n_words": 272,
+   "n_chars": 1393,
+   "n_words": 260,
    "label_start": "2",
    "label_end": "3"
   },
@@ -1648,9 +1655,9 @@
    "label_end": "7"
   },
   {
-   "id": "sec-011-3-deformation-theory-via-di\ufb00erential-graded-lie",
+   "id": "sec-011-3-deformation-theory-via-diﬀerential-graded-lie",
    "number": "3",
-   "title": "Deformation theory via di\ufb00erential graded Lie algebras",
+   "title": "Deformation theory via diﬀerential graded Lie algebras",
    "level": 1,
    "page_start": 7,
    "page_end": 7,
@@ -1660,9 +1667,9 @@
    "label_end": "7"
   },
   {
-   "id": "sec-012-32-maurer-cartan-equation-in-di\ufb00erential-graded",
+   "id": "sec-012-32-maurer-cartan-equation-in-diﬀerential-graded",
    "number": "3.2",
-   "title": "Maurer-Cartan equation in di\ufb00erential graded Lie algebras",
+   "title": "Maurer-Cartan equation in diﬀerential graded Lie algebras",
    "level": 2,
    "page_start": 7,
    "page_end": 8,
@@ -1678,25 +1685,13 @@
    "level": 2,
    "page_start": 8,
    "page_end": 8,
-   "n_chars": 316,
-   "n_words": 49,
+   "n_chars": 1031,
+   "n_words": 165,
    "label_start": "8",
    "label_end": "8"
   },
   {
-   "id": "sec-014-342-hochschild-complex",
-   "number": "3.4.2",
-   "title": "Hochschild complex",
-   "level": 3,
-   "page_start": 8,
-   "page_end": 8,
-   "n_chars": 607,
-   "n_words": 100,
-   "label_start": "8",
-   "label_end": "8"
-  },
-  {
-   "id": "sec-015-34-examples",
+   "id": "sec-014-34-examples",
    "number": "3.4",
    "title": "Examples",
    "level": 2,
@@ -1708,15 +1703,27 @@
    "label_end": "8"
   },
   {
-   "id": "sec-016-341-tangent-complex",
+   "id": "sec-015-341-tangent-complex",
    "number": "3.4.1",
    "title": "Tangent complex",
    "level": 3,
    "page_start": 8,
-   "page_end": 10,
-   "n_chars": 2741,
-   "n_words": 529,
+   "page_end": 9,
+   "n_chars": 591,
+   "n_words": 116,
    "label_start": "8",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-016-342-hochschild-complex",
+   "number": "3.4.2",
+   "title": "Hochschild complex",
+   "level": 3,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 2100,
+   "n_words": 381,
+   "label_start": "9",
    "label_end": "10"
   },
   {
@@ -1746,7 +1753,7 @@
   {
    "id": "sec-019-42-pre-l-morphisms",
    "number": "4.2",
-   "title": "Pre-L\u221e-morphisms",
+   "title": "Pre-L∞-morphisms",
    "level": 2,
    "page_start": 11,
    "page_end": 11,
@@ -1758,7 +1765,7 @@
   {
    "id": "sec-020-43-l-algebras-and-l-morphisms",
    "number": "4.3",
-   "title": "L\u221e-algebras and L\u221e-morphisms",
+   "title": "L∞-algebras and L∞-morphisms",
    "level": 2,
    "page_start": 11,
    "page_end": 13,
@@ -1792,9 +1799,9 @@
    "label_end": "13"
   },
   {
-   "id": "sec-023-451-homotopy-classi\ufb01cation-of-l-algebras",
+   "id": "sec-023-451-homotopy-classiﬁcation-of-l-algebras",
    "number": "4.5.1",
-   "title": "Homotopy classi\ufb01cation of L\u221e-algebras",
+   "title": "Homotopy classiﬁcation of L∞-algebras",
    "level": 3,
    "page_start": 13,
    "page_end": 14,
@@ -1804,9 +1811,9 @@
    "label_end": "14"
   },
   {
-   "id": "sec-024-452-deformation-functors-at-\ufb01xed-points-of-q",
+   "id": "sec-024-452-deformation-functors-at-ﬁxed-points-of-q",
    "number": "4.5.2",
-   "title": "Deformation functors at \ufb01xed points of Q",
+   "title": "Deformation functors at ﬁxed points of Q",
    "level": 3,
    "page_start": 14,
    "page_end": 15,
@@ -1828,9 +1835,9 @@
    "label_end": "15"
   },
   {
-   "id": "sec-026-461-two-di\ufb00erential-graded-lie-algebras",
+   "id": "sec-026-461-two-diﬀerential-graded-lie-algebras",
    "number": "4.6.1",
-   "title": "Two di\ufb00erential graded Lie algebras",
+   "title": "Two diﬀerential graded Lie algebras",
    "level": 3,
    "page_start": 15,
    "page_end": 16,
@@ -1846,8 +1853,8 @@
    "level": 4,
    "page_start": 16,
    "page_end": 17,
-   "n_chars": 3850,
-   "n_words": 686,
+   "n_chars": 3843,
+   "n_words": 685,
    "label_start": "16",
    "label_end": "17"
   },
@@ -1858,8 +1865,8 @@
    "level": 3,
    "page_start": 17,
    "page_end": 18,
-   "n_chars": 1815,
-   "n_words": 302,
+   "n_chars": 1835,
+   "n_words": 305,
    "label_start": "17",
    "label_end": "18"
   },
@@ -1876,9 +1883,9 @@
    "label_end": "18"
   },
   {
-   "id": "sec-030-51-de\ufb01nitions",
+   "id": "sec-030-51-deﬁnitions",
    "number": "5.1",
-   "title": "De\ufb01nitions",
+   "title": "Deﬁnitions",
    "level": 2,
    "page_start": 18,
    "page_end": 18,
@@ -1888,9 +1895,9 @@
    "label_end": "18"
   },
   {
-   "id": "sec-031-5-con\ufb01guration-spaces-and-their-compacti\ufb01cations",
+   "id": "sec-031-5-conﬁguration-spaces-and-their-compactiﬁcations",
    "number": "5",
-   "title": "Con\ufb01guration spaces and their compacti\ufb01cations",
+   "title": "Conﬁguration spaces and their compactiﬁcations",
    "level": 1,
    "page_start": 18,
    "page_end": 19,
@@ -1948,9 +1955,9 @@
    "label_end": "22"
   },
   {
-   "id": "sec-036-62-di\ufb00erential-forms-on-con\ufb01guration-spaces",
+   "id": "sec-036-62-diﬀerential-forms-on-conﬁguration-spaces",
    "number": "6.2",
-   "title": "Di\ufb00erential forms on con\ufb01guration spaces",
+   "title": "Diﬀerential forms on conﬁguration spaces",
    "level": 2,
    "page_start": 22,
    "page_end": 23,
@@ -1962,7 +1969,7 @@
   {
    "id": "sec-037-63-pre-l-morphisms-associated-with-graphs",
    "number": "6.3",
-   "title": "Pre-L\u221e-morphisms associated with graphs",
+   "title": "Pre-L∞-morphisms associated with graphs",
    "level": 2,
    "page_start": 23,
    "page_end": 24,
@@ -2010,7 +2017,7 @@
   {
    "id": "sec-041-6412-second-subcase-of-s1-n2-3",
    "number": "6.4.1.2",
-   "title": "Second subcase of S1: n2 \u22653",
+   "title": "Second subcase of S1: n2 ≥3",
    "level": 4,
    "page_start": 26,
    "page_end": 26,
@@ -2056,14 +2063,14 @@
    "label_end": "27"
   },
   {
-   "id": "sec-045-643-we-\ufb01nish-the-proof-of-the-theorem-from-64",
+   "id": "sec-045-643-we-ﬁnish-the-proof-of-the-theorem-from-64",
    "number": "6.4.3",
-   "title": "We \ufb01nish the proof of the theorem from 6.4",
+   "title": "We ﬁnish the proof of the theorem from 6.4",
    "level": 3,
    "page_start": 27,
    "page_end": 28,
-   "n_chars": 588,
-   "n_words": 124,
+   "n_chars": 581,
+   "n_words": 123,
    "label_start": "27",
    "label_end": "28"
   },
@@ -2074,8 +2081,8 @@
    "level": 3,
    "page_start": 28,
    "page_end": 28,
-   "n_chars": 293,
-   "n_words": 56,
+   "n_chars": 343,
+   "n_words": 64,
    "label_start": "28",
    "label_end": "28"
   },
@@ -2098,8 +2105,8 @@
    "level": 2,
    "page_start": 28,
    "page_end": 29,
-   "n_chars": 1586,
-   "n_words": 316,
+   "n_chars": 1579,
+   "n_words": 315,
    "label_start": "28",
    "label_end": "29"
   },
@@ -2110,8 +2117,8 @@
    "level": 3,
    "page_start": 29,
    "page_end": 30,
-   "n_chars": 2581,
-   "n_words": 491,
+   "n_chars": 2606,
+   "n_words": 495,
    "label_start": "29",
    "label_end": "30"
   },
@@ -2122,8 +2129,8 @@
    "level": 3,
    "page_start": 30,
    "page_end": 30,
-   "n_chars": 482,
-   "n_words": 77,
+   "n_chars": 496,
+   "n_words": 79,
    "label_start": "30",
    "label_end": "30"
   },
@@ -2182,8 +2189,8 @@
    "level": 3,
    "page_start": 32,
    "page_end": 32,
-   "n_chars": 958,
-   "n_words": 184,
+   "n_chars": 951,
+   "n_words": 183,
    "label_start": "32",
    "label_end": "32"
   },
@@ -2194,8 +2201,8 @@
    "level": 4,
    "page_start": 32,
    "page_end": 34,
-   "n_chars": 3847,
-   "n_words": 738,
+   "n_chars": 3881,
+   "n_words": 744,
    "label_start": "32",
    "label_end": "34"
   },
@@ -2206,8 +2213,8 @@
    "level": 4,
    "page_start": 34,
    "page_end": 35,
-   "n_chars": 1717,
-   "n_words": 336,
+   "n_chars": 1710,
+   "n_words": 335,
    "label_start": "34",
    "label_end": "35"
   },
@@ -2218,8 +2225,8 @@
    "level": 3,
    "page_start": 35,
    "page_end": 36,
-   "n_chars": 1670,
-   "n_words": 281,
+   "n_chars": 1698,
+   "n_words": 286,
    "label_start": "35",
    "label_end": "36"
   },
@@ -2272,9 +2279,9 @@
    "label_end": "37"
   },
   {
-   "id": "sec-063-821-pictures-for-the-cup-product-in-polyvector-\ufb01",
+   "id": "sec-063-821-pictures-for-the-cup-product-in-polyvector-ﬁ",
    "number": "8.2.1",
-   "title": "Pictures for the cup-product in polyvector \ufb01elds",
+   "title": "Pictures for the cup-product in polyvector ﬁelds",
    "level": 3,
    "page_start": 37,
    "page_end": 38,
@@ -2302,20 +2309,20 @@
    "level": 3,
    "page_start": 38,
    "page_end": 39,
-   "n_chars": 180,
-   "n_words": 36,
+   "n_chars": 173,
+   "n_words": 35,
    "label_start": "38",
    "label_end": "39"
   },
   {
-   "id": "sec-066-83-first-application-du\ufb02o-kirillov-isomorphism",
+   "id": "sec-066-83-first-application-duﬂo-kirillov-isomorphism",
    "number": "8.3",
-   "title": "First application: Du\ufb02o-Kirillov isomorphism",
+   "title": "First application: Duﬂo-Kirillov isomorphism",
    "level": 2,
    "page_start": 39,
    "page_end": 39,
-   "n_chars": 0,
-   "n_words": 0,
+   "n_chars": 49,
+   "n_words": 5,
    "label_start": "39",
    "label_end": "39"
   },
@@ -2350,20 +2357,20 @@
    "level": 4,
    "page_start": 41,
    "page_end": 43,
-   "n_chars": 4274,
-   "n_words": 793,
+   "n_chars": 4267,
+   "n_words": 792,
    "label_start": "41",
    "label_end": "43"
   },
   {
-   "id": "sec-070-834-comparison-with-the-du\ufb02o-kirillov-isomorphis",
+   "id": "sec-070-834-comparison-with-the-duﬂo-kirillov-isomorphis",
    "number": "8.3.4",
-   "title": "Comparison with the Du\ufb02o-Kirillov isomorphism",
+   "title": "Comparison with the Duﬂo-Kirillov isomorphism",
    "level": 3,
    "page_start": 43,
    "page_end": 44,
-   "n_chars": 2529,
-   "n_words": 424,
+   "n_chars": 2582,
+   "n_words": 430,
    "label_start": "43",
    "label_end": "44"
   },
@@ -2410,7 +2417,7 @@
   "toc_entries": 74,
   "toc_inferred_entries": 74,
   "toc_inferred_mean_confidence": 0.749,
-  "toc_inferred_empty_share": 0.068,
+  "toc_inferred_empty_share": 0.081,
   "toc_inferred_method": "font",
   "figure_entries": 0,
   "figure_sequence_gaps": [],
@@ -2419,6 +2426,7 @@
    "items": []
   },
   "sections": 75,
-  "chars_total": 116008
+  "chars_total": 116311,
+  "furniture_lines_stripped": 0
  }
 }

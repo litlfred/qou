@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1702.00039v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "b47ca7d1cf7b44be8ddad2be40c75dc8299d50c112dbedb64078d8f5cbb4341e",
+  "file": "1702.00039v1.pdf"
+ },
+ "provenance": {
+  "title": "Gentle introduction to Soergel bimodules I: The basics",
+  "authors": "NICOLAS LIBEDINSKY",
+  "arxiv": {
+   "id": "1702.00039",
+   "version": "1",
+   "primary_class": "math.RT",
+   "stamp_date": "31 Jan 2017"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

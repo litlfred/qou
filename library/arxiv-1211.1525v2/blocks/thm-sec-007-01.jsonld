@@ -3,7 +3,7 @@
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
       "@base": "https://litlfred.github.io/folio/",
-      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant/folio-assistant-sci/ns#"
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1211.1525v2/blocks/thm-sec-007-01",
@@ -16,6 +16,16 @@
   "pageEnd": 12,
   "text": "thm-sec-007-01.md",
   "derivedFrom": "library/arxiv-1211.1525v2/sections/sec-007",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1211.1525v2",
-  "provenance": "ingested"
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1211.1525v2/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "3.1",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-007-31-limiting-eigenvalues.md (p. 11-12)",
+    "claim_id": "arxiv-1211.1525v2#theorem:3.1",
+    "lean_status": "unformalized"
+  }
 }

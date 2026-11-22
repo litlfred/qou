@@ -1,6 +1,6 @@
 ---
 doc_id: kondev-2021-chinese-phys-c-45-030001
-doc_title: "The NUBASE2020 evaluation of nuclear physics properties *"
+doc_title: "The NUBASE2020 evaluation of nuclear physics properties"
 section_id: sec-013-4-conclusions-and-outlook
 section_title: "Conclusions and outlook"
 section_number: 4
@@ -8,7 +8,9 @@ pages: 14-15
 source_pdf: Kondev_2021_Chinese_Phys._C_45_030001.pdf
 source_sha256: 29b14ce8a7c0ecac
 toc_source: inferred
+doc_brief: "The NUBASE2020 evaluation of nuclear physics properties — 119 sections: Front matter; Introduction; Isomers"
 ---
+Conclusions and outlook
 The NUBASE2020 evaluated nuclear data library contains
 the recommended values for the basic nuclear physics prop-
 erties for all known nuclei, such as mass excess, excitation

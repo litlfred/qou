@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-beta-cos-resummation-comparison",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-beta-cos-resummation-comparison",
+  "kind": "remark",
+  "title": "$\\mathfrak{Q}_\\beta$ cos-resummation compared with measurement at the proton pin",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-beta-cos-resummation"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-q-beta-cos-resummation",
+  "tags": [
+    "q-beta",
+    "cos-resummation",
+    "comparison-with-measurement"
+  ],
+  "text": "q-beta-cos-resummation-comparison.md",
+  "provenance": "authored"
+}

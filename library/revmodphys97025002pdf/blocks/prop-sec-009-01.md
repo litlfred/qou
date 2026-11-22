@@ -1,0 +1,1 @@
+Included as an input datum in the 2022 adjustment is a new experimental value of ae with ur of 1.1 × 10−10, which is 2.2 times smaller than that of the value reported in 2008 and used as an input datum in the 2018 adjustment.

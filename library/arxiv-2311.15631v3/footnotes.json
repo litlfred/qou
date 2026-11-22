@@ -1,0 +1,2239 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-2311.15631v3",
+ "status": "determined",
+ "body_size": 12.0,
+ "footnotes": [
+  {
+   "id": "fn-p002-1",
+   "page": 2,
+   "mark": "1",
+   "text": "Theyarealsocalledquantumsubgroup,consensablealgebra,ornormalalgebradependingoncontexts.",
+   "marks": [
+    {
+     "page": 2,
+     "context": "connected´etalealgebras"
+    },
+    {
+     "page": 2,
+     "context": "Vec"
+    }
+   ],
+   "block": "library/arxiv-2311.15631v3/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p003-1",
+   "page": 3,
+   "mark": "2",
+   "text": "Hereisthereason.LetCbeamultitensorcategoryandA ∈Cbeaconnectedseparablealgebra.Then, CA is a semisimple tensor category with simple unit A ∈CA. If C is ﬁnite, CA is ﬁnite. Thus, for a ﬁnite multitensor category C and connected separable algebra A ∈C, CA is a fusion category. (Recall a fusion category is deﬁned as ﬁnite semisimple tensor category.)",
+   "marks": [
+    {
+     "page": 2,
+     "context": "(FPdimC(ci))"
+    },
+    {
+     "page": 3,
+     "context": "AnFCCwithD"
+    },
+    {
+     "page": 3,
+     "context": "´etalealgebraAinaBFCBiscalledLagrangianif(FPdimB(A))"
+    },
+    {
+     "page": 3,
+     "context": "Inoursetup,BAisknowntobeafusioncategory."
+    }
+   ],
+   "block": "library/arxiv-2311.15631v3/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p004-1",
+   "page": 4,
+   "mark": "4",
+   "text": "WhenBismodular,itcanbecomputedwiththeformula \u0012e2πihi \u00132 rank(B) X",
+   "marks": [
+    {
+     "page": 4,
+     "context": "whereν2(b)istheFrobenius-Schurindicator[7]."
+    }
+   ],
+   "block": "library/arxiv-2311.15631v3/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p004-2",
+   "page": 4,
+   "mark": "k",
+   "text": "didj ν2(bk) := Nij . (1.17) e2πihj D2(B) i,j=1",
+   "marks": [
+    {
+     "page": 4,
+     "context": "e2πih"
+    },
+    {
+     "page": 4,
+     "context": "e2πi(hi+hj)id"
+    },
+    {
+     "page": 4,
+     "context": "e2πih"
+    },
+    {
+     "page": 4,
+     "context": "e2πi(hi+hj) d"
+    }
+   ],
+   "block": "library/arxiv-2311.15631v3/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p007-1",
+   "page": 7,
+   "mark": "5",
+   "text": "Apre-MFCwithXhhasS-matrix(inthebasis{1, X}) \u0012 1 \u0013 dX eS = . e−4πih dX",
+   "marks": [
+    {
+     "page": 7,
+     "context": "4."
+    }
+   ],
+   "block": "library/arxiv-2311.15631v3/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p010-1",
+   "page": 10,
+   "mark": "6",
+   "text": "Simpleobjects{1, X, Y }obeyfusionrules",
+   "marks": [
+    {
+     "page": 10,
+     "context": "however,ithasFrobenius-Perrondimension"
+    }
+   ],
+   "block": "library/arxiv-2311.15631v3/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p010-2",
+   "page": 10,
+   "mark": "7",
+   "text": "Thenotationin[12]isthefollowing.Arankrfusionringwithnnon-self-dualsimpleobjectsisdenoted by FRr,n . The subscript i = 1, . . . labels diﬀerent fusion rings with the same r and n. i",
+   "marks": [
+    {
+     "page": 10,
+     "context": "NIM-reps.Hence,weareleftwithranktwoBA’s.Theyhavefusionrings"
+    }
+   ],
+   "block": "library/arxiv-2311.15631v3/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p011-1",
+   "page": 11,
+   "mark": "8",
+   "text": "ThefourthwithfusionringFR3,0 does not seem to have a common name. Thus, we call it psu(2)5",
+   "marks": [
+    {
+     "page": 11,
+     "context": "´etalealgebrasintheﬁrstfour"
+    }
+   ],
+   "block": "library/arxiv-2311.15631v3/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p013-1",
+   "page": 13,
+   "mark": "9",
+   "text": "Employingtheknown[9]associatorsFbi,bj,bk = 1, one can easily solve hexagon equations to ﬁnd R- bl matrices RX,X = RX,Y = RY,X = RY,Y = +1, Y",
+   "marks": [
+    {
+     "page": 13,
+     "context": "computehalf-braidingscb,b′’s.Weﬁnd"
+    }
+   ],
+   "block": "library/arxiv-2311.15631v3/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p014-1",
+   "page": 14,
+   "mark": "10",
+   "text": "Wecouldtaketherankthreefusionringwithmultiplicityintoaccount,butitisruledoutbecause FPdim > FPdim(B) = 4.",
+   "marks": [
+    {
+     "page": 14,
+     "context": "ssumefusionringsofBA’sbemultiplicity-free.Then,thereareseven"
+    }
+   ],
+   "block": "library/arxiv-2311.15631v3/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p014-2",
+   "page": 14,
+   "mark": "11",
+   "text": "AneasiestwaytoseethisfactistorealizethatXgeneratesanomaly-freeZ/2Zsymmetryinphysical systems.",
+   "marks": [
+    {
+     "page": 14,
+     "context": "onnected,theonlypossibilityisA∼=1 ⊕X.Indeed,thisisanalgebra,"
+    }
+   ],
+   "block": "library/arxiv-2311.15631v3/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p015-1",
+   "page": 15,
+   "mark": "12",
+   "text": "Seealso[19]forclassiﬁcationofMFCsatrankﬁve.",
+   "marks": [
+    {
+     "page": 15,
+     "context": "arecompletelyclassiﬁed[18,9]."
+    }
+   ],
+   "block": "library/arxiv-2311.15631v3/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p016-1",
+   "page": 16,
+   "mark": "13",
+   "text": "Forbsu(2)2,BAcorrespondstotheA3Dynkindiagram.Thus,thecategoryBAhasthreesimpleobjects, implying A ∼= 1. For bsp(4)1 and bso(7)1, they do not admit exotic quantum subgroups. That is, all nontrivial algebras are their centers Z/2Z. However, simple objects generating them are fermions, and the Z/2Z algebras fail to be commutative. Thus, they are also completely anisotropic. For ( be8)2, its only nontrivial algebra is the Z/2Z [23], but it is fermionic and fails to be commutative. Thus, the MFC is also completely anisotropic, and our results are consistent. Of course, the critical Ising model is described by an Ising MFC with hY = 1/16. The MFC is known (see, e.g., [25]) to be completely anisotropic, and our results are consistent. (The MFC has only one nontrivial connected separable algebra A ∼= 1 ⊕X, but since X is a fermion cX,X ∼= −id1, it fails to be commutative.) See also [26] for classiﬁcation of connected ´etale algebras in minimal models.",
+   "marks": [
+    {
+     "page": 16,
+     "context": "Ourresultsareconsistentwiththem."
+    }
+   ],
+   "block": "library/arxiv-2311.15631v3/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p018-1",
+   "page": 18,
+   "mark": "16",
+   "text": "TheconditionisneededbecauseifdY= −1,thecandidatehas dB(A) = dB(1) + dB(Y ) = 0, a contradiction.",
+   "marks": [
+    {
+     "page": 18,
+     "context": "isknown[29]tobeconnected´etalewhendY=2."
+    }
+   ],
+   "block": "library/arxiv-2311.15631v3/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p018-2",
+   "page": 18,
+   "mark": "17",
+   "text": "Thehalf-braidingsaregivenby cX,X ∼= id1, cX,Y ∼= idY , cY,Y ∼= id1 + idX + idY . One of the easiest ways to get these is as follows. First, since we know A ∼= 1 ⊕Y is commutative, we learn cY,Y ∼= id1 + idX + idY . Then, one can easily solve hexagon equations to get the results above. From the half-braidings, one immedi- ately ﬁnds \u0010 \u0011 cA,A ∼= 6 ∼= idA⊗A. ι · id1 · p + ι · idX · p + 2ι · idY · p",
+   "marks": [
+    {
+     "page": 18,
+     "context": "alledpositiveif∀b∈B,db∈N×.Namely,A∼=1 ⊕X⊕2Yisconnected´etale"
+    }
+   ],
+   "block": "library/arxiv-2311.15631v3/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p022-1",
+   "page": 22,
+   "mark": "18",
+   "text": "Actually,wecandoalittlemore.Wecanshowa Lemma. An upper bound on rank(B0 A) is eight. Namely, rank(B0 A) cannot be nine. Proof. Assume the opposite, and suppose rank(B0 A) = 9. Then, it is either pointed or non-pointed. If it is pointed, we only have two possibilities, B0 A ≃Vec1 Z/9Z, Vec1 Z/3Z×Z/3Z. The MFCs with such fusion rings cannot match the additive central charges. Thus, we are left with non-pointed possibilities. A rank nine",
+   "marks": [
+    {
+     "page": 22,
+     "context": "on rank(BA)."
+    }
+   ],
+   "block": "library/arxiv-2311.15631v3/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p022-3",
+   "page": 22,
+   "mark": "4",
+   "text": "sin2 π non-pointed, there exists a non-invertible object c ∈C with FPdimC(c) > 1. It enters the Frobenius-Perron dimension by squared sum, FPdim(C) ≡P9",
+   "marks": [
+    {
+     "page": 21,
+     "context": "7,"
+    }
+   ],
+   "block": "library/arxiv-2311.15631v3/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p022-8",
+   "page": 22,
+   "mark": "19",
+   "text": "WethankVictorOstrikforteachingusanupperboundonFPdimB(A)intherelatedwork[3].",
+   "marks": [
+    {
+     "page": 22,
+     "context": "A) ≥1,weobtainaninequality"
+    }
+   ],
+   "block": "library/arxiv-2311.15631v3/blocks/prose-sec-004"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p022-2",
+   "page": 22,
+   "mark": "7",
+   "text": "isstronglyconstrained.Sinceitis",
+   "block": "library/arxiv-2311.15631v3/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p022-4",
+   "page": 22,
+   "mark": "i",
+   "text": "=1(FPdimC(ci))2=(FPdimC(c))2+ · · · .Sinceanyobjecthas FPdimC(ci) ≥1, P",
+   "block": "library/arxiv-2311.15631v3/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p022-5",
+   "page": 22,
+   "mark": "c",
+   "text": "i̸=c(FPdimC(ci))2≥8,andwemusthave1<FPdimC(c)<2,orthesquaredsum reaches ten. Here, it is known [4] that such Frobenius-Perron dimension is expressed as FPdimC = 2 cos π n for a natural number n larger than three (n = 3 is ruled out by our assumption FPdimC > 1). Since the function is monotonically increasing, the smallest Frobenius-Perron dimension is achieved when n = 4, √ or FPdimC = 2. The Frobenius-Perron dimensions of such fusion categories exceed the upper bound",
+   "block": "library/arxiv-2311.15631v3/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p022-6",
+   "page": 22,
+   "mark": "7",
+   "text": "≈9.3,leadingtoacontradiction.□",
+   "block": "library/arxiv-2311.15631v3/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p022-7",
+   "page": 22,
+   "mark": "4",
+   "text": "sin2 π",
+   "block": "library/arxiv-2311.15631v3/blocks/prose-sec-004"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "i",
+   "context": "(see [1] for deﬁnitions).Its simple objects are denoted c"
+  },
+  {
+   "page": 1,
+   "mark": "c",
+   "context": "trL(a"
+  },
+  {
+   "page": 1,
+   "mark": "c",
+   "context": "trL(ac)=trR(a"
+  },
+  {
+   "page": 1,
+   "mark": "c",
+   "context": "objectc∈Cisdeﬁnedasd"
+  },
+  {
+   "page": 1,
+   "mark": "c",
+   "context": "objectc∈Cisdeﬁnedasdc:=trL(a"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "D"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "d"
+  },
+  {
+   "page": 1,
+   "mark": "i",
+   "context": "rite the braided fusion category (BFC) Band simple objects b"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "c"
+  },
+  {
+   "page": 2,
+   "mark": "j",
+   "context": "ci ⊗c"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "largestpositiveeigenvalueFPdimC(c"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "sitiveeigenvalueFPdimC(ci)calledFrobenius-Perrondimensionofc"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "eeigenvalueFPdimC(ci)calledFrobenius-Perrondimensionofci(orN"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "(FPdimC(c"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "CwithD2(C)=FPdim(C)iscalledpseudo-unitary,andunitaryif∀c∈C,d"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "(n"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "n"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "niFPdimB(b"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "(ι"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "(ιi ⊗ι"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "(ιi ⊗ιj) · c"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "(ιi ⊗ιj) · ca"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "(ιi ⊗ιj) · caj,a"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "(ιi ⊗ιj) · caj,ai · c"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "(ιi ⊗ιj) · caj,ai · ca"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "(ιi ⊗ιj) · caj,ai · cai,a"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "(ιi ⊗ιj) · caj,ai · cai,aj· (p"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "(ιi ⊗ιj) · caj,ai · cai,aj· (pi ⊗p"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "wherep"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "wherepi:A→a"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "wherepi:A→aiandι"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "wherepi:A→aiandιi:a"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "directsumA∼=a"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "directsumA∼=a1 ⊕a"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "directsumA∼=a1 ⊕a2 ⊕· · · ⊕a"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "irectsumA∼=a1 ⊕a2 ⊕· · · ⊕an,respectively.Thedoublebraidingc"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "rectsumA∼=a1 ⊕a2 ⊕· · · ⊕an,respectively.Thedoublebraidingca"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "tsumA∼=a1 ⊕a2 ⊕· · · ⊕an,respectively.Thedoublebraidingcaj,a"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "A∼=a1 ⊕a2 ⊕· · · ⊕an,respectively.Thedoublebraidingcaj,ai· c"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "∼=a1 ⊕a2 ⊕· · · ⊕an,respectively.Thedoublebraidingcaj,ai· ca"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "1 ⊕a2 ⊕· · · ⊕an,respectively.Thedoublebraidingcaj,ai· cai,a"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "objectsai, ajcanbecomputedfromtheformula"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "e"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "c"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "ca"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "caj,a"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "caj,ai · c"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "caj,ai · ca"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "caj,ai · cai,a"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "e"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "e2πi(h"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "e2πi(hi+h"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "(ι"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "(ιj⊗ι"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "(ιj⊗ιi) · c"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "(ιj⊗ιi) · ca"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "(ιj⊗ιi) · cai,a"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "(ιj⊗ιi) · cai,aj· (p"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "(ιj⊗ιi) · cai,aj· (pi ⊗p"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "cb,b∼= e−2πih"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "cb,b∼= e−2πihbν"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "cb,b∼= e−2πihbν2(b)id"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "e"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "eSi,j:= tr(c"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "eSi,j:= tr(cb"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "eSi,j:= tr(cbj,b"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "eSi,j:= tr(cbj,bi· c"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "eSi,j:= tr(cbj,bi· cb"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "eSi,j:= tr(cbj,bi· cbi,b"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "e"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "e2πi(h"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "e2πi(hi+h"
+  },
+  {
+   "page": 4,
+   "mark": "d",
+   "context": "e2πi(hi+hj)"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "Ti,j= e"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "Ti,j= e2πih"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "(ST )"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "(ST )3= e"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "(ST )3= e2πic(B)/8S"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "nordertogetadditionalconstraints,weusetheinternalHom[8].Form"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "ertogetadditionalconstraints,weusetheinternalHom[8].Form1, m"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "(m"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "(m1, m"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "M(c ⊲m"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "M(c ⊲m1, m"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "(m"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "(m1, c ⊲m"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "∀c ∈C, ∀m"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "∀c ∈C, ∀m1, m"
+  },
+  {
+   "page": 6,
+   "mark": "h",
+   "context": "Thepre-MFCsB’shavetwosimpleobjects{1, X"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "ThequantumdimensiondXisasolutionofd"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "D"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "h = 0,"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "4,"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "2,"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "4,"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "=ν"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "(dX, h) = (1, 0), (−1,"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "(dX, h) = (1,"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "−id"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "cX,X∼= e−2πihXαdXid"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "(dX, h) = (1,"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "4), (−1,"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "+i · id"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "(dX, h) = (1,"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "4), (−1,"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "−i · id"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "erefore,thecandidate(2.4)iscommutativeiﬀ(dX, h)=(1, 0), (−1,"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "2)mod"
+  },
+  {
+   "page": 8,
+   "mark": "h",
+   "context": "2)mod1for"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "Table3:Connected´etalealgebrainranktwopre-MFCB≃Vec"
+  },
+  {
+   "page": 8,
+   "mark": "h",
+   "context": "Thepre-MFCsB’shavetwosimpleobjects{1, X"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "ThequantumdimensiondXisasolutionofd"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "D"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "e"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "e"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "5,"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "5,"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "FR"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "FR2,"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "1, FR"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "1, FR2,"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "Letm"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "Letm1, m"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "1 ⊲m"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "1 ⊲mj∼= m"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "X⊲m"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "X⊲m1∼= m"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "X⊲m"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "X⊲m2∼= m"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "X⊲m2∼= m1 ⊕m"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "F(m"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "F(mj)∼= F(1 ⊲m"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "(m, 1 ⊲m"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "F(m"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "F(m2)∼= F(X⊲m"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "(m, X⊲m"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "F(m"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "F(m1) ⊕F(m"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "F(m1) ⊕F(m2)∼= F(X⊲m"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(m, X⊲m"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "witha, b ∈N.Ifm∼= m"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "F(m"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "weneeda = 1,orA∼= F(m"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "weneedb = 0andfusionringFR"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "weneedb = 0andfusionringFR2,"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "A∼= 1givingBA≃B.Theothercasem∼= m"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "umption of pivotal structure, there are ﬁve fusion rings, FR"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "ption of pivotal structure, there are ﬁve fusion rings, FR3,"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "1, FR"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "1, FR3,"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "1, FR"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "1, FR3,"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "2, FR"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "2, FR3,"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "3, K(1,"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "3, K(1, 0,"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "B≃Vec"
+  },
+  {
+   "page": 11,
+   "mark": "h",
+   "context": "Thepre-MFCsB’shavethreesimpleobjects{1, X"
+  },
+  {
+   "page": 11,
+   "mark": "h",
+   "context": "Thepre-MFCsB’shavethreesimpleobjects{1, XhX, Y"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "ThequantumdimensionsdX, dYaresolutionsofd"
+  },
+  {
+   "page": 12,
+   "mark": "d",
+   "context": "X=dY ,"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "X=dY ,d"
+  },
+  {
+   "page": 12,
+   "mark": "d",
+   "context": "Y=dX,"
+  },
+  {
+   "page": 12,
+   "mark": "d",
+   "context": "Y=dX,dX"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "D"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "hX= hY= 0,"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "3,"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "FR"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "FR1,"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "1, FR"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "1, FR2,"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "1, FR"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "1, FR3,"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "FR"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "FR1,"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "1, FR"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "1, FR3,"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "cY,X· cX,Y∼= e−4πihXid"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "3,"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "cX,Y∼= id"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "Table6:Connected´etalealgebrainrankthreepre-MFCB≃Vec"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "In other words, the pre-MFCs Vec"
+  },
+  {
+   "page": 13,
+   "mark": "h",
+   "context": "Z/3Z’s with nontrivial conformal dimensions"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "3,"
+  },
+  {
+   "page": 13,
+   "mark": "h",
+   "context": "Thepre-MFCsB’shavethreesimpleobjects{1, X"
+  },
+  {
+   "page": 13,
+   "mark": "h",
+   "context": "Thepre-MFCsB’shavethreesimpleobjects{1, XhX, Y"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "dX, dYaresolutionsofd"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "X= 1,"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "X= 1,dX"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "X= 1,dXdY= dY ,"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "X= 1,dXdY= dY ,d"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "D"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "commutativebecausecX,X∼= −id"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "FR"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "FR1,"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "1, FR"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "1, FR2,"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "1, FR"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "1, FR3,"
+  },
+  {
+   "page": 14,
+   "mark": "4",
+   "context": "1, FR"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "1, FR4,"
+  },
+  {
+   "page": 14,
+   "mark": "4",
+   "context": "1, FR"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "1, FR4,"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "noone-dimensionalNIM-rep,andthefusionringFR"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "noone-dimensionalNIM-rep,andthefusionringFR1,"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "thelastcandidateFR"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "thelastcandidateFR2,"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "to becommutativebecauseXis afermioncX,X∼= −id"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "modulesB"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "FPdim(B"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "(FPdimB(A))"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "e"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "e2πic(B)/8= e"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "e2πic(B)/8= e2πic(B"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "Here,thefullsubcategoryB"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "p · cA,m · cm,A= p.SinceB"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "rank(B"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "In our example,we learn the maximal rank of B"
+  },
+  {
+   "page": 15,
+   "mark": "0",
+   "context": "B"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "bsu(2)"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "bsp(4)"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "bso(7)"
+  },
+  {
+   "page": 15,
+   "mark": "8",
+   "context": "(be"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "(be8)"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "Connected´etalealgebrasinMFCsC(g, k)describingbg"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "Suchconnected´etalealgebraswereclassiﬁedin[5](forbsu(2)"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "etalealgebraswereclassiﬁedin[5](forbsu(2)k),in[21](forbsu(3)"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "(forbsu(4)"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "B≃Rep(S"
+  },
+  {
+   "page": 16,
+   "mark": "h",
+   "context": "Thepre-MFCsB’shavethreesimpleobjects{1, X"
+  },
+  {
+   "page": 16,
+   "mark": "h",
+   "context": "Thepre-MFCsB’shavethreesimpleobjects{1, XhX, Y"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "ThequantumdimensionsdX, dYare(nonzero)solutionstod"
+  },
+  {
+   "page": 16,
+   "mark": "d",
+   "context": "X=1,"
+  },
+  {
+   "page": 16,
+   "mark": "d",
+   "context": "X=1,dX"
+  },
+  {
+   "page": 16,
+   "mark": "d",
+   "context": "X=1,dXdY=dY ,"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "X=1,dXdY=dY ,d"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "D"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "3,"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "FR"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "FR1,"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "1, FR"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "1, FR2,"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "1, FR"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "1, FR3,"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "1, FR"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "1, FR3,"
+  },
+  {
+   "page": 17,
+   "mark": "4",
+   "context": "2, FR"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "2, FR4,"
+  },
+  {
+   "page": 17,
+   "mark": "6",
+   "context": "2, FR"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "2, FR6,"
+  },
+  {
+   "page": 17,
+   "mark": "6",
+   "context": "1, FR"
+  },
+  {
+   "page": 17,
+   "mark": "4",
+   "context": "1, FR6,"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "FR"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "FR1,"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "1, FR"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "1, FR2,"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "1, FR"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "1, FR3,"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "1, FR"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "1, FR3,"
+  },
+  {
+   "page": 18,
+   "mark": "14",
+   "context": "ﬁrsttwocandidatesfailtosatisfythenecessarycondition(1.9),"
+  },
+  {
+   "page": 18,
+   "mark": "15",
+   "context": "ioms,however,luckily,wedonotneedanycomputation."
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "asfollows.IsasymmetricfusioncategoryB≃Rep(S"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "B≃Rep(S"
+  },
+  {
+   "page": 18,
+   "mark": "b",
+   "context": "calledpositiveif∀b∈B,d"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "cA,A · cA,A∼= (2 + 4e−4πihY)ι · id"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "cA,A · cA,A∼= (1 + e−4πihY)ι · id"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "withFrobenius-PerrondimensionthreeisVec"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "objects should form Vec"
+  },
+  {
+   "page": 19,
+   "mark": "j",
+   "context": "withn"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "eﬁrstisnothingbutthetrivialconnected´etalealgebraA∼=1givingB"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "Vec"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "Connected´etalealgebrainrankthreenon-symmetricpre-MFCB≃Rep(S"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "Vec"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "le9:Connected´etalealgebrainrankthreesymmetricpre-MFCB≃Rep(S"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "forsymmetricB≃Rep(S"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "anisotropic,whiletheothersixB≃Rep(S"
+  },
+  {
+   "page": 21,
+   "mark": "5",
+   "context": "B≃psu(2)"
+  },
+  {
+   "page": 21,
+   "mark": "h",
+   "context": "Thepre-MFCsB’shavethreesimpleobjects{1, X"
+  },
+  {
+   "page": 21,
+   "mark": "h",
+   "context": "Thepre-MFCsB’shavethreesimpleobjects{1, XhX, Y"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "’shavethreesimpleobjects{1, XhX, YhY }obeyingthefusionringFR"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "havethreesimpleobjects{1, XhX, YhY }obeyingthefusionringFR3,"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "FPdimB(X) =sin"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "FPdimB(Y ) =sin"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "4 sin"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "ThequantumdimensionsdX, dYaresolutionsofd"
+  },
+  {
+   "page": 21,
+   "mark": "d",
+   "context": "X=1 + dY ,"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "X=1 + dY ,d"
+  },
+  {
+   "page": 21,
+   "mark": "d",
+   "context": "Y=1 + dX+ dY ,"
+  },
+  {
+   "page": 21,
+   "mark": "d",
+   "context": "Y=1 + dX+ dY ,dX"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": ", −sin"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "),(−sin"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "),(sin"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": ",sin"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "cos"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "cos"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "D"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "4 cos"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "4 cos"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "4 cos2"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "4 sin"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "7,"
+  },
+  {
+   "page": 21,
+   "mark": "6",
+   "context": "7,"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "7,"
+  },
+  {
+   "page": 21,
+   "mark": "5",
+   "context": "7,"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "7,"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "FR"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "FR1,"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "1, FR"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "1, FR3,"
+  },
+  {
+   "page": 22,
+   "mark": "5",
+   "context": "Table10:Connected´etalealgebrainrankthreepre-MFCB≃psu(2)"
+  },
+  {
+   "page": 22,
+   "mark": "5",
+   "context": "Theorem.AllB≃psu(2)"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "obey(2.10).SinceFPdim(B"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "1 ≤(FPdimB(A))"
+  },
+  {
+   "page": 23,
+   "mark": "j",
+   "context": "withn"
+  },
+  {
+   "page": 23,
+   "mark": "j",
+   "context": "withnj∈N.Inordertogetconnectedalgebra,wesetn"
+  },
+  {
+   "page": 23,
+   "mark": "j",
+   "context": "withnj∈N.Inordertogetconnectedalgebra,wesetnj= 1forb"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "nX sin"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "idateisnothingbutthetrivialconnected´etalealgebraA∼=1givingB"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "cA,A · cA,A∼= (1 + e−4πihX)ι · id"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "cA,A · cA,A∼= (1 + e−4πihX)ι · id1 · p + 2ι · idX· p + e"
+  },
+  {
+   "page": 23,
+   "mark": "h",
+   "context": "· cA,A∼= (1 + e−4πihX)ι · id1 · p + 2ι · idX· p + e2πi(hY −2"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "(B≃Vec"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "(B≃Vec"
+  },
+  {
+   "page": 24,
+   "mark": "h",
+   "context": "Z/3Zwith"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "(B≃Vec"
+  },
+  {
+   "page": 24,
+   "mark": "h",
+   "context": "Z/3Zwith"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "(B≃Rep(S"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "(B≃Rep(S"
+  },
+  {
+   "page": 24,
+   "mark": "5",
+   "context": "(B≃psu(2)"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "Vec"
+  },
+  {
+   "page": 25,
+   "mark": "h",
+   "context": "Z/3Zwith"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "SymmetricRep(S"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "ConformaldimensionsofB≃Rep(S"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "Therearetwoclassesofpre-MFCswithfusionringFR"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "Therearetwoclassesofpre-MFCswithfusionringFR3,"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "ThesymmetricRep(S"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "d"
+  },
+  {
+   "page": 25,
+   "mark": "e",
+   "context": "Sincethe(i, j)componentisdeﬁnedby"
+  },
+  {
+   "page": 25,
+   "mark": "b",
+   "context": "Sincethe(i, j)componentisdeﬁnedbyeSi,j:=tr(c"
+  },
+  {
+   "page": 25,
+   "mark": "j",
+   "context": "Sincethe(i, j)componentisdeﬁnedbyeSi,j:=tr(cb"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "Sincethe(i, j)componentisdeﬁnedbyeSi,j:=tr(cbj,b"
+  },
+  {
+   "page": 25,
+   "mark": "b",
+   "context": "Sincethe(i, j)componentisdeﬁnedbyeSi,j:=tr(cbj,bi·c"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "Sincethe(i, j)componentisdeﬁnedbyeSi,j:=tr(cbj,bi·cb"
+  },
+  {
+   "page": 25,
+   "mark": "j",
+   "context": "Sincethe(i, j)componentisdeﬁnedbyeSi,j:=tr(cbj,bi·cbi,b"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "e"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "e"
+  },
+  {
+   "page": 25,
+   "mark": "d",
+   "context": "e2πi(hi+hj)"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "e2πi(hi+hj)d"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "sayse"
+  },
+  {
+   "page": 25,
+   "mark": "e",
+   "context": "Y= 2"
+  },
+  {
+   "page": 25,
+   "mark": "d",
+   "context": "Y= 2e−4πihY+ e−2πihY"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "Similarly,the(3, 3)componentimposesd"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "e−4πihY(2 + e"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "with(3, 3)componentequalsto(−2).(Wealreadyusede"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "−2 = e−4πihY(2 + e"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "3,"
+  },
+  {
+   "page": 26,
+   "mark": "b",
+   "context": "3isrealizedbyevenprimariesinthe"
+  },
+  {
+   "page": 26,
+   "mark": "4",
+   "context": "3isrealizedbyevenprimariesinthebsu(2)"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "2πarccos"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "e"
+  },
+  {
+   "page": 26,
+   "mark": "5",
+   "context": "ConformaldimensionsofB≃psu(2)"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "e−4πihX+ e"
+  },
+  {
+   "page": 26,
+   "mark": "h",
+   "context": "e−4πihX+ e2πi(hY −2"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "e−4πihY+ e"
+  },
+  {
+   "page": 26,
+   "mark": "h",
+   "context": "e−4πihY+ e2πi(hX−2"
+  },
+  {
+   "page": 26,
+   "mark": "b",
+   "context": "i,j.Sinceallsimpleobjectsareself-dual"
+  },
+  {
+   "page": 26,
+   "mark": "e",
+   "context": "TheS-matrixobeys"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "TheS-matrixobeyseS"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "e−4πihX+ e"
+  },
+  {
+   "page": 26,
+   "mark": "h",
+   "context": "e−4πihX+ e2πi(hY −2"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "e−4πihY+ e"
+  },
+  {
+   "page": 26,
+   "mark": "h",
+   "context": "e−4πihY+ e2πi(hX−2"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "sin"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "sin"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "sin"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "sin"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "cos"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "cos"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "7,"
+  },
+  {
+   "page": 26,
+   "mark": "6",
+   "context": "7,"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "7,"
+  },
+  {
+   "page": 26,
+   "mark": "4",
+   "context": "7,"
+  },
+  {
+   "page": 26,
+   "mark": "5",
+   "context": "7,"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "7,"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "uchthatB≃Rep(G)[30].TheonlypossibilitiesinourcaseisG=Z/3Z, S"
+  }
+ ]
+}

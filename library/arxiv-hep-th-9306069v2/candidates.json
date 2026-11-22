@@ -3,13 +3,14 @@
  "doc_id": "arxiv-hep-th-9306069v2",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "a140d10424f732333b390701057b3dbc73d34eb7871ea46d85ee4f7c50285d3a",
   "file": "9306069v2.pdf"
  },
  "provenance": {
-  "title": "Department of Physics",
-  "authors": "Stanford University, Stanford, CA 94305-4060",
+  "title": "The stretched horizon and black hole complementarity",
+  "authors": "Leonard Susskind",
   "arxiv": {
    "id": "hep-th/9306069",
    "version": "2",
@@ -20,9 +21,45 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
-  "formalization_candidates": 0
+  "candidates": 1,
+  "by_kind": {
+   "proposition": 1
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 1
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  }
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "Semi-classical solutions It was observed in [23] that the global causal nature of dynamical semi-classical ge- ometries depends on the incoming energy \ufb02ux.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-002-2-two-dimensional-dilaton-gravity.md (p. 8-18)",
+   "external_refs": [
+    "[23]"
+   ],
+   "quantitative_values": [],
+   "section_file": "sections/sec-002-2-two-dimensional-dilaton-gravity.md",
+   "section_title": "Two-dimensional dilaton gravity",
+   "pages": "8-18",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-002-2-two-dimensional-dilaton-gravity.md (p. 8-18)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-002-01",
+   "block_iri": "library/arxiv-hep-th-9306069v2/blocks/prop-sec-002-01",
+   "claim_id": "arxiv-hep-th-9306069v2#prop-sec-002-01"
+  }
+ ]
 }

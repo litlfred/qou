@@ -8,12 +8,8 @@ pages: 1-2
 source_pdf: 0406276v1.pdf
 source_sha256: 8fdf4b5950e8b5f5
 toc_source: inferred
+doc_brief: "The GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE — 16 sections: Front matter; Linking integrals in S3 and H3 .; Historical background."
 ---
-1
- 
- 
- 
- 
 The GAUSS LINKING INTEGRAL 
  
 on the 3-SPHERE  
@@ -44,7 +40,4 @@ on the 3-sphere and in hyperbolic 3-space.
  
  
  
-                                                                                                             June 2004 
- 
- 
-2
+                                                                                                             June 2004

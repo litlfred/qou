@@ -27,7 +27,7 @@ type-checked `.lean` sibling that genuinely refers to the library object.
 
 LaTeX: `\label{def:categorical-lagrangian}`
 
-Ref: [manuscript] §1-quantum-observable-universe
+Ref: [leitner2026] §1-quantum-observable-universe
 -/
 
 open scoped CategoryTheory CategoryTheory.MonoidalCategory

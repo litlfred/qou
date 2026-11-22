@@ -1,0 +1,67 @@
+9.3 Smooth bivariate functions 271
+
+inhabits two consecutive ones, making a right-angle turn as it passes through
+the saddle.
+
+Finally, we evaluate the univariate integral over this cycle. To compute the
+residue form in this example it is easiest to parametrize a neighborhood of
+(2, 1/8) in V by the x-coordinate and use Proposition C.8 from Appendix C
+with j = 2 to see that
+
+—P(y)
+
+_ es ee _
+w = Res (Fo, yx Cy "dx A dy) = xy) O,(, CO) yo
+
+x "yxy" dx.
+
+Moving the origin to x = 2, equals
+1
+
+2ni
+
+w= 4" facren dx
+Y Y
+
+where the series expansions for A and ¢ are given by
+
+3 4
+
+A(x) = 5 - = + O(x°)
+
+4
+da) =~ + 00").
+
+Applying Theorem 4.1 to evaluate the integral on the segment —y;,; using the
+parametrization x = (i — 1)t for 0 < t < € gives a series for a fo that begins
+
+qn ee + d+ V25/4) ja
+
+4n 8x
+
++ ow] .
+
+Similarly, on y; we parametrize by x = (—i — 1)t and obtain the complex con-
+jugate of the previous expansion,
+
+«( ft, Ge) VING/A) 5/4
+
+4n 8x
+
++ ow] .
+
+When the two contributions are summed the first terms cancel and we are left
+with
+
+4" V2T(5/4) 4
+
+a
+
+ann ~
+
+9.3.2 Laurent series
+
+In this section we discuss what can be done when the hypotheses of Algo-
+rithm 3 are satisfied, except that the series in question is a Laurent series rather
+than an ordinary power series. We first revisit Algorithm 3 from a different
+point of view, involving intersection numbers of middle-dimensional cycles.

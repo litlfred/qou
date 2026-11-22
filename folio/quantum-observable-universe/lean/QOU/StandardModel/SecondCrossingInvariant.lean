@@ -77,7 +77,7 @@ group-theoretic reduction, not the identification.
 
 ## References
 
-- [manuscript] Appendix: Toward the Standard Model; hypercharge audit
+- [leitner2026] Appendix: Toward the Standard Model; hypercharge audit
   `docs/audits/2026-06-02-u1-hypercharge-assignment.md`.
 - [milnor1954] μ̄ triple-linking invariant; indeterminacy mod gcd of
   pairwise linkings.

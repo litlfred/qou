@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0409393v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "2107d961f60655395a65e6ced4d6874854f3e7e834c42c2c820adedb13912d17",
+  "file": "0409393v1.pdf"
+ },
+ "provenance": {
+  "title": "ALGEBRAIC CONSTRUCTION OF THE STOKES SHEAF FOR IRREGULAR LINEAR q-DIFFERENCE EQUATIONS",
+  "authors": "Jacques Sauloy",
+  "arxiv": {
+   "id": "math/0409393",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "21 Sep 2004"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

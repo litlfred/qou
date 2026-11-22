@@ -7,10 +7,11 @@
   "bytes": 1238312,
   "pages": 43,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,18 +21,26 @@
    "stamp_date": "15 Oct 2010"
   },
   "doi": null,
-  "title": "ON BLOCKS OF DELIGNE\u2019S CATEGORY Rep(St)",
+  "title": "ON BLOCKS OF DELIGNE’S CATEGORY Rep(St)",
   "authors_raw": "JONATHAN COMES AND VICTOR OSTRIK",
   "title_lines": [
-   "ON BLOCKS OF DELIGNE\u2019S CATEGORY Rep(St)"
+   "ON BLOCKS OF DELIGNE’S CATEGORY Rep(St)"
   ],
-  "abstract": "We describe blocks in Deligne\u2019s category Re p(St).",
+  "abstract": "We describe blocks in Deligne’s category Rep(St).",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20181023223940Z",
-   "Creator": "LaTeX with hyperref package",
    "Producer": "pdfTeX-1.40.10",
-   "Title": ""
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20181023223940Z"
+  },
+  "title_raw": "ON BLOCKS OF DELIGNE’S CATEGORY Rep(St)",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "ON BLOCKS OF DELIGNE’S CATEGORY Rep( S t ) . 1. Introduction Let F be a ﬁeld of characteristic zero and t ∈ F . Recently P. Deligne introduced the tensor category Rep( S t ) which in a certain precise sense interpolates the categories Rep( S d ) of F − linear representations of the symmetric groups",
+   "outline": "1. Introduction",
+   "text": "ON BLOCKS OF DELIGNE’S CATEGORY Rep(St)",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [
@@ -40,402 +49,936 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Terminology and notation conventions",
    "page": 2,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The tensor category Rep(St)",
    "page": 2,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Motivation",
    "page": 2,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Definition of Rep(St; F)",
    "page": 7,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "2.3.",
    "page": 11,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Indecomposable objects in Rep(St)",
    "page": 12,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Classification of indecomposable objects of Rep(St)",
    "page": 12,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Lifting objects",
    "page": 15,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
-   "title": "On  Rep(St; F) for generic t",
+   "title": "On Rep(St; F) for generic t",
    "page": 18,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The interpolation functor Rep(Sd; F)Rep(Sd; F)",
    "page": 19,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Dimensions",
    "page": 21,
    "source": "outline",
-   "number": "3.5"
+   "number": "3.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Endomorphisms of the identity functor",
    "page": 23,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Interpolating sums of r-cycles",
    "page": 23,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Frobenius' formula",
    "page": 26,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Blocks",
    "page": 27,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Blocks in additive categories",
    "page": 27,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "5.2.",
    "page": 28,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "On the equivalence relation t",
    "page": 29,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The functor -L()",
    "page": 31,
    "source": "outline",
-   "number": "5.4"
+   "number": "5.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Proof of result on blocks",
    "page": 34,
    "source": "outline",
-   "number": "5.5"
+   "number": "5.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Description of a non-semisimple block",
    "page": 37,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The nontrivial block in Rep(S0; F)",
    "page": 37,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Comparison of non-semisimple blocks in Rep(Sd; F).",
    "page": 39,
    "source": "outline",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Description of blocks via Martin",
    "page": 40,
    "source": "outline",
-   "number": "6.3"
+   "number": "6.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Appendix A. On lifting idempotents",
    "page": 41,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "references",
    "page": 41,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "References",
    "page": 42,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 39,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 40,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 41,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 42,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 43,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 133,
+   "n_words": 19,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 1,
-   "n_chars": 2523,
-   "n_words": 421
-  },
-  {
-   "id": "sec-001-21-motivation",
-   "number": "2.1",
-   "title": "Motivation",
-   "level": 2,
-   "page_start": 1,
    "page_end": 2,
-   "n_chars": 1266,
-   "n_words": 207
+   "n_chars": 3862,
+   "n_words": 631,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-11-terminology-and-notation-conventions",
+   "id": "sec-001-11-terminology-and-notation-conventions",
    "number": "1.1",
    "title": "Terminology and notation conventions",
    "level": 2,
    "page_start": 2,
    "page_end": 2,
-   "n_chars": 1235,
-   "n_words": 233
+   "n_chars": 1271,
+   "n_words": 269,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-2-the-tensor-category-repst",
+   "id": "sec-002-2-the-tensor-category-repst",
    "number": "2",
    "title": "The tensor category Rep(St)",
    "level": 1,
    "page_start": 2,
-   "page_end": 11,
-   "n_chars": 16278,
-   "n_words": 2899
+   "page_end": 2,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-004-23",
+   "id": "sec-003-21-motivation",
+   "number": "2.1",
+   "title": "Motivation",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 7,
+   "n_chars": 9348,
+   "n_words": 1943,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-22-definition-of-repst-f",
+   "number": "2.2",
+   "title": "Definition of Rep(St; F)",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 11,
+   "n_chars": 7119,
+   "n_words": 1276,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-005-23",
    "number": null,
    "title": "2.3.",
    "level": 2,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 978,
-   "n_words": 188
+   "n_chars": 1048,
+   "n_words": 198,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-005-3-indecomposable-objects-in-repst",
+   "id": "sec-006-3-indecomposable-objects-in-repst",
    "number": "3",
    "title": "Indecomposable objects in Rep(St)",
    "level": 1,
    "page_start": 12,
-   "page_end": 15,
-   "n_chars": 9113,
-   "n_words": 1664
+   "page_end": 12,
+   "n_chars": 36,
+   "n_words": 5,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-006-32-lifting-objects",
+   "id": "sec-007-31-classification-of-indecomposable-objects-of-r",
+   "number": "3.1",
+   "title": "Classification of indecomposable objects of Rep(St)",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 15,
+   "n_chars": 9180,
+   "n_words": 1796,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-008-32-lifting-objects",
    "number": "3.2",
    "title": "Lifting objects",
    "level": 2,
    "page_start": 15,
-   "page_end": 21,
-   "n_chars": 15533,
-   "n_words": 3012
+   "page_end": 18,
+   "n_chars": 6892,
+   "n_words": 1377,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-007-35-dimensions",
+   "id": "sec-009-33-on-repst-f-for-generic-t",
+   "number": "3.3",
+   "title": "On Rep(St; F) for generic t",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 5025,
+   "n_words": 1075,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-010-34-the-interpolation-functor-repsd-frepsd-f",
+   "number": "3.4",
+   "title": "The interpolation functor Rep(Sd; F)Rep(Sd; F)",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 21,
+   "n_chars": 3615,
+   "n_words": 689,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-011-35-dimensions",
    "number": "3.5",
    "title": "Dimensions",
    "level": 2,
    "page_start": 21,
    "page_end": 23,
-   "n_chars": 4390,
-   "n_words": 858
+   "n_chars": 2899,
+   "n_words": 574,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-008-4-endomorphisms-of-the-identity-functor",
+   "id": "sec-012-4-endomorphisms-of-the-identity-functor",
    "number": "4",
    "title": "Endomorphisms of the identity functor",
    "level": 1,
    "page_start": 23,
    "page_end": 23,
-   "n_chars": 342,
-   "n_words": 58
+   "n_chars": 2294,
+   "n_words": 471,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-009-41-interpolating-sums-of-r-cycles",
+   "id": "sec-013-41-interpolating-sums-of-r-cycles",
    "number": "4.1",
    "title": "Interpolating sums of r-cycles",
    "level": 2,
    "page_start": 23,
-   "page_end": 26,
-   "n_chars": 8403,
-   "n_words": 1618
+   "page_end": 27,
+   "n_chars": 8687,
+   "n_words": 1806,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-010-5-blocks",
+   "id": "sec-014-5-blocks",
    "number": "5",
    "title": "Blocks",
    "level": 1,
-   "page_start": 26,
+   "page_start": 27,
    "page_end": 27,
-   "n_chars": 2023,
-   "n_words": 384
+   "n_chars": 475,
+   "n_words": 100,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-011-51-blocks-in-additive-categories",
+   "id": "sec-015-42-frobenius-formula",
+   "number": "4.2",
+   "title": "Frobenius' formula",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 1058,
+   "n_words": 214,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-016-51-blocks-in-additive-categories",
    "number": "5.1",
    "title": "Blocks in additive categories",
    "level": 2,
    "page_start": 27,
    "page_end": 28,
-   "n_chars": 1265,
-   "n_words": 221
+   "n_chars": 1276,
+   "n_words": 232,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-012-52",
+   "id": "sec-017-52",
    "number": null,
    "title": "5.2.",
    "level": 2,
    "page_start": 28,
-   "page_end": 34,
-   "n_chars": 14440,
-   "n_words": 2791
+   "page_end": 29,
+   "n_chars": 2437,
+   "n_words": 518,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-013-55-proof-of-result-on-blocks",
+   "id": "sec-018-53-on-the-equivalence-relation-t",
+   "number": "5.3",
+   "title": "On the equivalence relation t",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 34,
+   "n_chars": 12328,
+   "n_words": 2627,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-019-55-proof-of-result-on-blocks",
    "number": "5.5",
    "title": "Proof of result on blocks",
    "level": 2,
    "page_start": 34,
    "page_end": 37,
-   "n_chars": 6755,
-   "n_words": 1175
+   "n_chars": 6832,
+   "n_words": 1254,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-014-6-description-of-a-non-semisimple-block",
+   "id": "sec-020-6-description-of-a-non-semisimple-block",
    "number": "6",
    "title": "Description of a non-semisimple block",
    "level": 1,
    "page_start": 37,
-   "page_end": 39,
-   "n_chars": 5767,
-   "n_words": 1075
+   "page_end": 37,
+   "n_chars": 204,
+   "n_words": 34,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-015-62-comparison-of-non-semisimple-blocks-in-repsd",
+   "id": "sec-021-61-the-nontrivial-block-in-reps0-f",
+   "number": "6.1",
+   "title": "The nontrivial block in Rep(S0; F)",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 39,
+   "n_chars": 5575,
+   "n_words": 1089,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-022-62-comparison-of-non-semisimple-blocks-in-repsd",
    "number": "6.2",
    "title": "Comparison of non-semisimple blocks in Rep(Sd; F).",
    "level": 2,
    "page_start": 39,
    "page_end": 40,
-   "n_chars": 2852,
-   "n_words": 464
+   "n_chars": 2881,
+   "n_words": 493,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-016-63-description-of-blocks-via-martin",
+   "id": "sec-023-63-description-of-blocks-via-martin",
    "number": "6.3",
    "title": "Description of blocks via Martin",
    "level": 2,
    "page_start": 40,
    "page_end": 41,
-   "n_chars": 2254,
-   "n_words": 435
+   "n_chars": 2300,
+   "n_words": 481,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-017-appendix-a-on-lifting-idempotents",
+   "id": "sec-024-appendix-a-on-lifting-idempotents",
    "number": null,
    "title": "Appendix A. On lifting idempotents",
    "level": 1,
    "page_start": 41,
    "page_end": 42,
-   "n_chars": 2520,
-   "n_words": 520
+   "n_chars": 2552,
+   "n_words": 552,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-018-references",
+   "id": "sec-025-references",
    "number": null,
    "title": "references",
    "level": 1,
    "page_start": 42,
    "page_end": 43,
-   "n_chars": 2614,
-   "n_words": 358
+   "n_chars": 2603,
+   "n_words": 347,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 28,
-  "sections": 19,
-  "chars_total": 100551,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 27,
+  "chars_total": 101930,
+  "furniture_lines_stripped": 0,
+  "pages_read_in_print_order": [
+   23
+  ],
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "blocks.tex",
    "tex_sections": 25,
-   "overlaid": 11,
+   "overlaid": 10,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -443,134 +986,175 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.686,
-     "coverage_ratio": 0.978,
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.956,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-001-21-motivation",
-     "title": "Motivation",
-     "prose_ratio": 0.097,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-002-11-terminology-and-notation-conventions",
+     "id": "sec-001-11-terminology-and-notation-conventions",
      "title": "Terminology and notation conventions",
      "prose_ratio": 0.91,
-     "coverage_ratio": 0.968,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-2-the-tensor-category-repst",
+     "id": "sec-002-2-the-tensor-category-repst",
      "title": "The tensor category Rep(St)",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-004-23",
+     "id": "sec-003-21-motivation",
+     "title": "Motivation",
+     "prose_ratio": 0.652,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-22-definition-of-repst-f",
+     "title": "Definition of Rep(St; F)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-23",
      "title": "2.3.",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-005-3-indecomposable-objects-in-repst",
+     "id": "sec-006-3-indecomposable-objects-in-repst",
      "title": "Indecomposable objects in Rep(St)",
-     "prose_ratio": 0.958,
-     "coverage_ratio": 0.925,
+     "prose_ratio": null,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-007-31-classification-of-indecomposable-objects-of-r",
+     "title": "Classification of indecomposable objects of Rep(St)",
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.964,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-32-lifting-objects",
+     "id": "sec-008-32-lifting-objects",
      "title": "Lifting objects",
-     "prose_ratio": 0.923,
-     "coverage_ratio": 0.912,
-     "result": "overlaid",
-     "converter": "latex"
+     "prose_ratio": 0.545,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-007-35-dimensions",
+     "id": "sec-009-33-on-repst-f-for-generic-t",
+     "title": "On Rep(St; F) for generic t",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-34-the-interpolation-functor-repsd-frepsd-f",
+     "title": "The interpolation functor Rep(Sd; F)Rep(Sd; F)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-35-dimensions",
      "title": "Dimensions",
-     "prose_ratio": 0.921,
-     "coverage_ratio": 0.878,
+     "prose_ratio": 0.817,
+     "coverage_ratio": 0.898,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-4-endomorphisms-of-the-identity-functor",
+     "id": "sec-012-4-endomorphisms-of-the-identity-functor",
      "title": "Endomorphisms of the identity functor",
      "prose_ratio": 0.963,
-     "coverage_ratio": 1.0,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "coverage_ratio": 0.278,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
-     "id": "sec-009-41-interpolating-sums-of-r-cycles",
+     "id": "sec-013-41-interpolating-sums-of-r-cycles",
      "title": "Interpolating sums of r-cycles",
-     "prose_ratio": 0.861,
-     "coverage_ratio": 0.918,
+     "prose_ratio": 0.947,
+     "coverage_ratio": 0.798,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-010-5-blocks",
+     "id": "sec-014-5-blocks",
      "title": "Blocks",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.013,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-011-51-blocks-in-additive-categories",
+     "id": "sec-015-42-frobenius-formula",
+     "title": "Frobenius' formula",
+     "prose_ratio": 0.359,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-016-51-blocks-in-additive-categories",
      "title": "Blocks in additive categories",
-     "prose_ratio": 0.276,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.537,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-012-52",
+     "id": "sec-017-52",
      "title": "5.2.",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-013-55-proof-of-result-on-blocks",
+     "id": "sec-018-53-on-the-equivalence-relation-t",
+     "title": "On the equivalence relation t",
+     "prose_ratio": 0.925,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-019-55-proof-of-result-on-blocks",
      "title": "Proof of result on blocks",
      "prose_ratio": 0.886,
-     "coverage_ratio": 0.893,
+     "coverage_ratio": 0.93,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-014-6-description-of-a-non-semisimple-block",
+     "id": "sec-020-6-description-of-a-non-semisimple-block",
      "title": "Description of a non-semisimple block",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.686,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.074,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-015-62-comparison-of-non-semisimple-blocks-in-repsd",
+     "id": "sec-021-61-the-nontrivial-block-in-reps0-f",
+     "title": "The nontrivial block in Rep(S0; F)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-62-comparison-of-non-semisimple-blocks-in-repsd",
      "title": "Comparison of non-semisimple blocks in Rep(Sd; F).",
      "prose_ratio": 0.923,
-     "coverage_ratio": 0.822,
+     "coverage_ratio": 0.898,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-016-63-description-of-blocks-via-martin",
+     "id": "sec-023-63-description-of-blocks-via-martin",
      "title": "Description of blocks via Martin",
      "prose_ratio": 0.881,
-     "coverage_ratio": 0.946,
+     "coverage_ratio": 0.967,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-017-appendix-a-on-lifting-idempotents",
+     "id": "sec-024-appendix-a-on-lifting-idempotents",
      "title": "Appendix A. On lifting idempotents",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-018-references",
+     "id": "sec-025-references",
      "title": "references",
      "result": "no matching \\section"
     }

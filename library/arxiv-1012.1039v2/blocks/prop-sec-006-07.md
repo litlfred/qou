@@ -1,1 +1,1 @@
-A.10. Suppose R > 2d +C and k > 2R + 1 , where C is the constant
+9. If R > 2d and aR(ω)̸ = 0, then aR(ω)algvol(σω) > 0.

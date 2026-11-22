@@ -1,0 +1,31 @@
+186 Overview of analytic methods for multivariate GFs
+
+map y + oy is well defined as a map from the homology group Hy_\(V,.) to
+Hya(M).
+
+Theorem C.2 of Appendix C implies that o : Hy-\(V.) — Ha(M) is injec-
+tive, and if T’ is any torus contained in M then pulling back [T — T’] € Ha(M)
+via 0 gives a well-defined class INT(T, T’) € Ha_1(V.) known as the intersec-
+tion class of T and T’. By construction, [T] — [T’] = o INT(T,T’) in Ha(M),
+
+so that
+1 \ 1\ 1\
+ar =| 5 w=\5— w+! —, w
+° (i f (= Sooenrn (=i ,
+
+One can picture o INT(T, T’) by imagining a continuous deformation of T to
+T’. If this deformation is sufficiently generic it will intersect V, transversely,
+with the intersection yielding INT(T, T’). The tube around INT(T, T’) is thus
+the chain that needs to be added to account for passing the deformation through
+Y,. See Figure 7.7 for an illustration.
+
+V Tv
+
+Figure 7.7 An intersection class of T and T’ with respect to ‘V.
+
+If we pick a torus T’ so that Sp. w = 0 then we have succeeded in expressing
+the Cauchy integral as an integral over a tube around a curve in ‘V,. Corol-
+lary 6.29 implies the existence of such a torus, giving the following.
+
+Proposition 7.12. Assume F is the ratio of coprime polynomials F(z) =
+P(z)/Q(z). As r > © in the direction # there exists a torus T’ such that

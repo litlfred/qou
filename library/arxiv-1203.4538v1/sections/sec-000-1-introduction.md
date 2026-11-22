@@ -7,10 +7,11 @@ section_number: 1
 pages: 1-2
 source_pdf: 1203.4538v1.pdf
 source_sha256: 5e44909e355c78d6
-doc_brief: "The exponential-logarithmic equivalence classes of surreal numbers — 7 sections: Introduction.; Preliminaries on surreal numbers.; Sign sequences."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.989
+latex_prose_ratio: 0.922
+latex_coverage_ratio: 0.986
+doc_brief: "The exponential-logarithmic equivalence classes of surreal numbers — 9 sections: Front matter; Introduction.; Preliminaries on surreal numbers."
 ---
 In his monograph [@gonshor_surreal], H. Gonshor showed that Conway's real closed field of surreal numbers carries an exponential and logarithmic map. Subsequently, L. van den Dries and P. Ehrlich showed in [@ehrlich-vdd:surreal-exp] that it is a model of the elementary theory of the field of real numbers with the exponential function. In this paper, we give a complete description of the exponential equivalence classes (see Theorem [\[theo:kappa-equivEL\]](#theo:kappa-equivEL){reference-type="ref" reference="theo:kappa-equivEL"}) in the spirit of the classical Archimedean and multiplicative equivalence classes (see Theorem [\[theo:NO-series-gene\]](#theo:NO-series-gene){reference-type="ref" reference="theo:NO-series-gene"} and Proposition [\[prop:N0-Hahn\]](#prop:N0-Hahn){reference-type="ref" reference="prop:N0-Hahn"}). This description is made in terms of a recursive formula as well as a sign sequence formula for the family of representatives *of minimal length* of these exponential classes.
 

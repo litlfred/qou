@@ -1,0 +1,32 @@
+47. Plan of the proof.
+Consider the usual vector convolutions,
+
+A(V, o)(y) = Sie Py VOX) (x, y) dx
+
+BV, o)(y) = Jus PVG) x Vyo@% y) dx
+
+a(V. o)(y) = Sus PyxVx) © Vyb(x, y) dx
+
+GV, o)(y) = Vy eV, oy) = Vy Sus PyxV(x) ¢ Vyb(%, y) dx.
+Step 1. First we will determine the unknown kernel function so as to make
+
+Vy Xx ACV, 6)(y) = — BCV, ody) = — BS(V)(y) .
+The solution we obtain is not unique.
+Step 2. Then, as a consequence of Maxwell's equation, we will have
+— Vy xVy XACV, b2)(y) = Vy XBS(V)(y)
+
+= Vy) — Vy Jin Vx © VX) oo(x, y) dx.
+Hence
+
+yA(V, b2)(y) = — Vy XVy XACV, b2)(y) + VyoVy © ACV, b2)(y))
+= Vy) — Vy Jin Vi * VOX) bo(x,y) dx + VoVy * ACY, 2)(y))
+= V(y) + some gradient field .
+
+We then find the kernel function 3; sothat ,G(V,3)(y) = G(V, 3)(y)
+is the negative of the above gradient field, in which case, defining
+
+Gr(V)(y) = ACV, b2)(y) + G(V, o3)(y)
+
+yields the desired equation ,Gr(V)(y) = V(y).
+
+90

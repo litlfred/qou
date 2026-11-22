@@ -43,7 +43,7 @@ structure MagicShellCouplingKappa (R : Type*) [Field R] where
   /-- `[3]_q = q² + 1 + q⁻²`. -/
   br3_def : br3 = q ^ 2 + 1 + q⁻¹ ^ 2
 
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa-table-data.ts
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa-table-data.ts
 
 /-- The q-integer identity `[3]_q = [2]_q² − 1` (since
     `(q + q⁻¹)² = q² + 2 + q⁻²`). -/

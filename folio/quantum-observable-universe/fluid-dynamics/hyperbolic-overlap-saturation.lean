@@ -101,12 +101,14 @@ theorem lambda_lt_quasi_steady
   have hlt : Γ < 2 * Γ + π_ * ν := by linarith
   exact div_lt_div_of_pos_left hπν hΓ hlt
 
-/-- **Strict positivity of the Levi condition number.**  The
+/-- **Strict positivity of the squared core aspect ratio.**  The
     corrected asymptotic ratio $\kappa^2 = \lambda$ is strictly
-    positive, so the Levi form does *not* degenerate at the
-    collision (qualitative branch-A statement of
-    `conj:levi-degeneracy`).  The numerical value is
-    $\pi\nu/(2\Gamma + \pi\nu)$, not $\pi\nu/\Gamma$. -/
+    positive: the cores lock into a finite elliptical profile.  The
+    numerical value is $\pi\nu/(2\Gamma + \pi\nu)$, not
+    $\pi\nu/\Gamma$.  (Re-scoped 2026-10-13: $\kappa^2$ is the core
+    aspect ratio, not a Levi condition number, and its positivity is no
+    longer read as branch (A) of `conj:levi-degeneracy`, which is
+    withdrawn.) -/
 theorem kappa_squared_pos
     (Γ π_ ν : ℝ) (hΓ : 0 < Γ) (hπ : 0 < π_) (hν : 0 < ν) :
     0 < lambda Γ π_ ν :=

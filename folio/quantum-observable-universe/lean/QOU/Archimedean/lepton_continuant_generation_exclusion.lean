@@ -66,7 +66,7 @@ primality parenthetical, replaced by the continuant-divisibility theorem.
 The remaining bridge — "normal-form-independent winding ⟹ physical
 generation", plus the mass map — stays open (bean `qou-x4qm`).
 
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.md
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.md
 -/
 
 namespace QOU.Archimedean
@@ -102,13 +102,13 @@ theorem morganVoyceB_nine :
     and the explicit cofactor `X⁶ + 6X⁴ + 9X² + 1`, so `b₃ ∣ b₉`.  This
     is the precise form of `σ⁹ = (σ³)³ factors through generation 1` on
     the Gröbner–Shirshov normal-form data. -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.md
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.md
 theorem t29_harmonic_of_first_generation :
     morganVoyceB 9 = morganVoyceB 3 * (X ^ 6 + 6 * X ^ 4 + 9 * X ^ 2 + 1) := by
   rw [morganVoyceB_three, morganVoyceB_nine]; ring
 
 /-- `b₃ ∣ b₉` (the divisibility form of `t29_harmonic_of_first_generation`). -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.md
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.md
 theorem b3_dvd_b9 : morganVoyceB 3 ∣ morganVoyceB 9 :=
   ⟨X ^ 6 + 6 * X ^ 4 + 9 * X ^ 2 + 1, t29_harmonic_of_first_generation⟩
 
@@ -127,7 +127,7 @@ private theorem b3_not_isUnit : ¬ IsUnit (X ^ 2 + 1 : Polynomial ℤ) := by
 /-- **Winding 5 is not a harmonic of generation 1.**  `b₅` leaves the
     unit remainder `−1` modulo `b₃` (`b₅ = b₃·(X²+2) − 1`), so a common
     divisor would divide `1`; but `b₃` is not a unit.  Hence `¬ (b₃ ∣ b₅)`. -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.md
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.md
 theorem not_b3_dvd_b5 : ¬ morganVoyceB 3 ∣ morganVoyceB 5 := by
   rw [morganVoyceB_three, morganVoyceB_five]
   intro h
@@ -142,7 +142,7 @@ theorem not_b3_dvd_b5 : ¬ morganVoyceB 3 ∣ morganVoyceB 5 := by
 
 /-- **Winding 7 is not a harmonic of generation 1.**  `b₇ = b₃·(X⁴+4X²+2) − 1`,
     the same unit-remainder argument as `not_b3_dvd_b5`. -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.md
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.md
 theorem not_b3_dvd_b7 : ¬ morganVoyceB 3 ∣ morganVoyceB 7 := by
   rw [morganVoyceB_three, morganVoyceB_seven]
   intro h
@@ -162,7 +162,7 @@ theorem not_b3_dvd_b7 : ¬ morganVoyceB 3 ∣ morganVoyceB 7 := by
     derived content of the dictionary's asserted "(odd primes)": the
     generations are the odd windings whose normal-form coefficient does not
     factor through a smaller one. -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.md
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/lepton-meson-torus-knot-dictionary.md
 theorem three_generation_windings_are_the_nonharmonic_ones :
     morganVoyceB 3 ∣ morganVoyceB 9 ∧
     ¬ morganVoyceB 3 ∣ morganVoyceB 5 ∧

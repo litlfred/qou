@@ -1,0 +1,48 @@
+394 Combinatorial applications
+
+paths by time spent among the common members of each workgroup and by
+total length is (J — zA)~!, where
+
+Ku Ku 0 0
+1 1 1 0
+A= 0 1 1 1
+
+0 0 WwW Ww
+
+with u tracking time among common Group | members, v tracking time among
+common Group 2 members, and z tracking the total time. The entries of (J —
+zA)"! are rational functions with common denominator Q(Ku, Lv, z), where
+
+Olu, v,z) = uz +ur2v—uz—udve 2v—-22-w4t lt oveur,
+
+and the coefficient of z” in the power series expansion of any entry gives a prob-
+ability distribution for the amount of time spent among the common members
+of each group after time n. Using Grébner bases (or simply by computing a
+resultant) it can be shown that the system Q(u, v, z) = Q-(u, v, Zz) = 0 has no so-
+lutions with u,v > 0. Thus, by the limit theorem discussed in Theorem 12.33
+below, the times spent in Group | and Group 2 as a portion of the length n
+converge to m = — Vjog O(K, L, zo), where Zo is the minimal modulus root of
+f(2) = O(K,L,2).
+
+The portion of time spent among the common members of Group | is given
+by KQ,(K, L, z)/(zoQ-(K, L, Zo)). Plugging in K = L = 1, for example, we
+see that Q(1,1,z) = 1 — 4z + 32? + 223 — z+ so z = 0.382 and a proportion
+of approximately 0.154 of the time is spent among the common members of
+Group 1. If bosses and employees had equal access to communication then,
+by symmetry, this portion would be 1/4, so the effect of communicating only
+through bosses reduced the time each message spends with each non-boss by
+nearly 40%. This effect is more marked when the workgroups have different
+sizes: increasing the size of the second group to 2, we plug in K = | and
+L = 2 to find that z) = 0.311 and the fraction of time spent among the common
+members in Group | plummets to just under 0.038. 4
+
+Example 12.11 (One-dimensional quantum walk). In Example 9.47 the notion
+of a quantum random walk, and its associated spacetime generating function
+F, was introduced. Letting p(r,n) denote the amplitude for the random walk to
+be at location r at time n, we have
+
+F(z) = )) p(r.n)x'y" =(I- yy",
+
+rnz0
+
+where U is akxk unitary matrix and M is akxk diagonal matrix whose entries

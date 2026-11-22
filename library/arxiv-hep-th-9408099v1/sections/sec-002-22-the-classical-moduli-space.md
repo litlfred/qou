@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9408099v1
-doc_title: "arXiv:hep-th/9408099v1 17 Aug 1994"
+doc_title: "Monopoles, duality and chiral symmetry breaking in N=2 supersymmetric QCD"
 section_id: sec-002-22-the-classical-moduli-space
 section_title: "The classical moduli space"
 section_number: 2.2
@@ -8,6 +8,7 @@ pages: 8-8
 source_pdf: 9408099v1.pdf
 source_sha256: b534faddd2e3aa71
 toc_source: inferred
+doc_brief: "Seiberg–Witten, Monopoles, duality and chiral symmetry breaking in N=2 supersymmetric QCD (1994) — exact metric on the moduli space of quantum vacua and exact stable-state spectrum for SU(2) with…"
 ---
 The classical moduli space of this theory has a branch with non-zero a. Along this ﬂat
 direction the gauge symmetry is unbroken and all the M particles acquire a mass. Since

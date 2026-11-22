@@ -10,6 +10,7 @@ source_sha256: 3499c40ea150a617
 toc_source: outline
 doc_brief: "Constructing equivalences between fusion categories of quantum groups and of vertex operator algebras via quantum gauge groups — This paper establishes connections between a problem posed by"
 ---
+The role of braid group duality for the generating object in
 determining the full braided tensor structure for the proof of (d).
 The uniqueness Theorems 8.13 and 8.19 both apply under a central duality property of
 the fundamental representation V with respect to the braid group representation in the

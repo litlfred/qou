@@ -1,1 +1,1 @@
-Fix a prime p and a p-complete torsion-free ring S. Suppose that
+If f is an invertible Lp(ξ)-section of Definition 1.3 of Section 1.5, then there exists a unique lift to collections f(q) = (fm(x))m≥1, fm(x) ∈(R∧ p [ζm]×/m + xKp[ζm][[x]]) (203) of power series satisfying the conditions of integrality and gluing, i.e., φp bf(qp) bf(q)p ∈ Y (m,p)=1 exp p xR∧ p [ζm][[x]]  and f(qσ) f(q)σ−1 ∈ Y (m,p)=1 R∧ p [ζm][[x]] , (204) STAVROS GAROUFALIDIS, PETER SCHOLZE, CAMPBELL WHEELER, AND DON ZAGIER where σ ∈Z× p and bf is as in equation (22).

@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/sections/sec-034",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Relating the modular and Bianchi complexes to the Galois Lie coalgebra",
+  "pageStart": 106,
+  "pageEnd": 109,
+  "contains": [
+    "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-034",
+    "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/thm-sec-034-01",
+    "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/thm-sec-034-02",
+    "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/conj-sec-034-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/manifest.jsonld",
+  "provenance": "ingested"
+}

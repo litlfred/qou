@@ -1,6 +1,6 @@
 ---
 doc_id: 022201-1-online
-doc_title: "Online  Export Citation RESEARCH ARTICLE | FEBRUARY 01 2021 Efficient algorithms for approximating quantum partition functions Ryan L. Mann  ; Tyler Helmuth"
+doc_title: "Efficient algorithms for approximating quantum partition functions"
 section_id: sec-002-i-introduction
 section_title: "INTRODUCTION"
 section_number: I
@@ -8,6 +8,7 @@ pages: 2-3
 source_pdf: 022201_1_online.pdf
 source_sha256: 50331bf18a2bd4d5
 toc_source: inferred
+doc_brief: "Efficient algorithms for approximating quantum partition functions — 13 sections: Front matter; AFFILIATIONS; ABSTRACT"
 ---
 Classical algorithms for approximating partition functions of quantum models that make use of cluster expansions have occurred in two
 recent papers.1,2 In this paper, we provide a simple and concise exposition of how to construct such algorithms, with the intent of making the
@@ -40,8 +41,6 @@ J. Math. Phys. 62, 022201 (2021); doi: 10.1063/5.0013689
  30 August 2026 09:11:26
 Journal of
 Mathematical Physics
-ARTICLE
-scitation.org/journal/jmp
 methods have also been used to design classical algorithms for quantum models.1,2,9,15–17 The goal of this paper is to convey the simplicity
 and flexibility of the third method that results from using the cluster expansion formalism. We emphasize that ideas of this type have previ-
 ously been used to establish similar algorithms: for ∣β∣≤(10e2Δ)−1 with quasi-polynomial runtime1 and for ∣β∣≤(16e3Δ)−1 with polynomial

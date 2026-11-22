@@ -1,0 +1,63 @@
+532 J. BORCEA, P. BRANDEN, AND T. M. LIGGETT
+
+In {7 we construct examples of measures in 8, for any n > 20 that disprove
+all these three conjectures (for the strongest of these, namely Conjecture 2
+can actually find counterexamples already in $3 and $84; see Remark[7.2). In fact,
+our examples show that the strongest negative association property (CNA+) need
+not even give rise to an SLC rank sequence (Definition 2.8), thus invalidating a
+still weaker version of Conjecture Moreover, these same examples show that
+neither the PHR property (Definition 2.6) nor indeed any of the properties weaker
+than strongly Rayleigh implies the ULC property, and also that Conjecture
+fails even under extra assumptions like those suggested in Problem 6]. This
+confirms once again the delicate nature of negative dependence.
+
+The FKG theorem is a powerful tool that allows one to establish (global) pos-
+itive correlation inequalities and limit theorems from a local (usually easier to check)
+condition, namely the positive lattice condition PLC. By contrast, there is as yet
+no general and practical local-to-global device for negative dependence/association.
+The NLC property is not closed under projections and implies neither the NA nor
+the (weaker) p-NC property, so the negative version of the FKG theorem fails. As a
+potential remedy to this situation, in Conjecture 2] Pemantle conjectured that
+the implications CNA = h-NLC and CNA+ = Rayleigh/h-NLC+ (established in
+(65); cf. Remark 2.4) are actually equivalences:
+
+Conjecture 2.6. h-NLC = CNA and Rayleigh/h-NLC+ = CNA+.
+
+We prove Conjecture for almost symmetric measures (cf. Definition [2.1).
+Since PHR measures are CNA+ (Theorem [4.10), we are naturally led to consider
+the following related problem.
+
+Problem 2.7. Is PHR = Rayleigh/h-NLC+?
+
+Note that if true, this would prove the second part of Conjecture In {7
+we show that the answer to Problem [2.7] is negative, and that in fact the class of
+PHR measures is strictly contained in the class of CNA+ measures. The question
+whether Conjecture 2.6Jis true in full generality therefore remains open.
+
+We summarize the implications between the various notions of negative depen-
+dence discussed so far in Figure [I] Compared with the one in [65] §II.B], this dia-
+gram contains five extra classes — three “old” (ULC, p-NC, NLC) and two “new”
+(strongly Rayleigh, PHR) — and disregards the classes called JNRD, JNRD+ in
+(65).
+
+As we already noted, the above examples and those in the next sections show
+that the left horizontal, down left, and all vertical implications in Figure[JJare strict,
+while the question as to whether the right horizontal implications are also strict is
+open (cf. Conjecture 2.6). Note also that there is no arrow pointing towards ULC
+from anything “below” strongly Rayleigh.
+
+In §1.B & §IIL.C] it was pointed out that the notions of stochastic domination
+and truncation are also useful when studying (positive or) negative dependence.
+
+IN)
+io
+
+Definition 2.14. If u,v € $B, are such that p(A) > v(A) for any increasing event
+A on 21, one says that ju stochastically dominates v, written ps > v or v = pL.
+
+Definition 2.15. Let wp ¢ B, and 1<p<gq<vn. The truncation of pu to [p,q] is
+the conditional measure
+
+n
+p,q (= (. | PS SOx < ) € Bn,
+i=l

@@ -1,0 +1,68 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0610241v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Gravity and the standard model with neutrino mixing",
+  "contains": [
+    "library/arxiv-hep-th-0610241v1/sections/sec-front-matter",
+    "library/arxiv-hep-th-0610241v1/sections/sec-000",
+    "library/arxiv-hep-th-0610241v1/sections/sec-001",
+    "library/arxiv-hep-th-0610241v1/sections/sec-002",
+    "library/arxiv-hep-th-0610241v1/sections/sec-003",
+    "library/arxiv-hep-th-0610241v1/sections/sec-004",
+    "library/arxiv-hep-th-0610241v1/sections/sec-005",
+    "library/arxiv-hep-th-0610241v1/sections/sec-006",
+    "library/arxiv-hep-th-0610241v1/sections/sec-007",
+    "library/arxiv-hep-th-0610241v1/sections/sec-008",
+    "library/arxiv-hep-th-0610241v1/sections/sec-009",
+    "library/arxiv-hep-th-0610241v1/sections/sec-010",
+    "library/arxiv-hep-th-0610241v1/sections/sec-011",
+    "library/arxiv-hep-th-0610241v1/sections/sec-012",
+    "library/arxiv-hep-th-0610241v1/sections/sec-013",
+    "library/arxiv-hep-th-0610241v1/sections/sec-014",
+    "library/arxiv-hep-th-0610241v1/sections/sec-015",
+    "library/arxiv-hep-th-0610241v1/sections/sec-016",
+    "library/arxiv-hep-th-0610241v1/sections/sec-017",
+    "library/arxiv-hep-th-0610241v1/sections/sec-018",
+    "library/arxiv-hep-th-0610241v1/sections/sec-019",
+    "library/arxiv-hep-th-0610241v1/sections/sec-020",
+    "library/arxiv-hep-th-0610241v1/sections/sec-021",
+    "library/arxiv-hep-th-0610241v1/sections/sec-022",
+    "library/arxiv-hep-th-0610241v1/sections/sec-023",
+    "library/arxiv-hep-th-0610241v1/sections/sec-024"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "arxiv-hep-th-0610241v1",
+    "title_source": "editorial",
+    "title_from": "structure.json metadata.title_correction.title",
+    "title_verified": true,
+    "title_correction": {
+      "title": "Gravity and the standard model with neutrino mixing",
+      "basis": "arXiv API record hep-th/0610241v1 (Chamseddine, Connes, Marcolli; Adv. Theor. Math. Phys. 11:991-1089, 2007); the text layer's first line is the arXiv stamp",
+      "corrected_on": "2026-11-15",
+      "extracted": "arXiv:hep-th/0610241v1 23 Oct 2006"
+    },
+    "source_file": "hep-th-0610241.pdf",
+    "source_sha256": "6a71ab6f6459c070b3de77c0ea8f5b660d7bea3547906baffa14c2aae0d0c687",
+    "pages": 71,
+    "arxiv": {
+      "id": "hep-th/0610241",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "23 Oct 2006"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 9806003v2.pdf
 source_sha256: e34739e703aae6db
 toc_source: inferred
+doc_brief: "Statistical analysis and the equivalent of a Thouless energy in lattice QCD Dirac spectra — 14 sections: Front matter; Introduction; Complete Dirac spectra in SU(2) ga"
 ---
 arXiv:hep-lat/9806003v2  2 Dec 1998
 Statistical analysis and the equivalent of a Thouless energy in lattice QCD Dirac

@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 9711057v2.pdf
 source_sha256: acf5cdd7fe848f43
 toc_source: inferred
+doc_brief: "arXiv:hep-th/9711057v2 30 Apr 1998 — 11 sections: Front matter; Introduction; Random-matrix theory for finite qu"
 ---
 arXiv:hep-th/9711057v2  30 Apr 1998
 The microscopic spectrum of the QCD Dirac operator with ﬁnite quark masses

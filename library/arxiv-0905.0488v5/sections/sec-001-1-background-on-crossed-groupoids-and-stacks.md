@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-0905.0488v5
-doc_title: "TWISTED DEFORMATION QUANTIZATION OF ALGEBRAIC VARIETIES AMNON YEKUTIELI"
+doc_title: "TWISTED DEFORMATION QUANTIZATION OF ALGEBRAIC VARIETIES"
 section_id: sec-001-1-background-on-crossed-groupoids-and-stacks
 section_title: "Background on Crossed Groupoids and Stacks"
 section_number: 1
 pages: 11-15
 source_pdf: 0905.0488v5.pdf
 source_sha256: fcf8dee7cd3849b9
-doc_brief: "TWISTED DEFORMATION QUANTIZATION OF ALGEBRAIC VARIETIES AMNON YEKUTIELI — Let X be a smooth algebraic variety over a ﬁeldK containing the real numbers."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.989
+latex_coverage_ratio: 0.954
+doc_brief: "TWISTED DEFORMATION QUANTIZATION OF ALGEBRAIC VARIETIES — Let X be a smooth algebraic variety over a ﬁeld K containing the real numbers. We introduce the notion of twisted associative (resp."
 ---
 \label{sec:back}
 \numberwithin{equation}{section}

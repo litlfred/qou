@@ -1,0 +1,62 @@
+INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS 4015
+
+Let (ij) + ej, for 0 <i <j < 4 bea labelling of the standard 4-simplex (01234).
+This determines partition functions for each tetrahedron in the boundary,
+
+zetia = {1324 eis cal z(4(o2sa)) = {6 8 ac
+
+€34 €24 €14 €34 €24 €04
+
+z((orss)) = {0 03 cal , z(4(o124)) = {0 on cl ,
++ ~ +
+
+€34 €14 €04 €14 €04
+
+2(4(0128)) = {0 02 ca
+
+223 €13 E03
+
+The invariance of C(M) under bistellar moves follows from the next proposition.
+Let P be the map 7 @ yr y@ x.
+Proposition 5.2 (Orthogonality). The map
+
+dimg(eo2) $* Z(0123)Z(—0123) dim, (ers)
+
+e136 I
+
+is equal to the identity map on H(eg3, €03, €02) ® H(e12, €02, €01)-
+(Biedenharn-Elliot). The equality
+
+(Z(0234) ® 1) (1 @ Z(0124))
+= ¥} dim,(e13)(1 @ 2(0123))(P @ 1) (1 @ Z(0134)) (P @ 1) (Z(1234) @ 1)
+
+e136]
+holds.
+These equalities hold for all choices of labels {e;;} not explicitly summed over.
+
+The proof of these will be given below, after completing the proof of Theorem
+5.1. Theorem 5.1 will follow once it has been established that C(M) is invariant
+under bistellar moves of orders 2 and 3. The bistellar moves of order 1 and 0 are
+the inverses of these moves.
+
+The simplicial invariant can be decomposed as Z(M,ly) = tr(Z(X), Z(D'))
+and Z(N,ly) = tr(Z(X), Z(D?)), where D1 and D? are the simplicial disks in the
+bistellar moves, D!U D? = 0(01234), M = XUD!, N = XUD?, and XU(01234) is
+labelled with restriction I,¢ to M and ly to N. The linear map Z(X) is defined to
+be the partial trace over the state spaces of all triangles not in the boundary of X of
+the tensor product of the partition functions for each oriented labelled tetrahedron
+in X. The linear maps Z(D1) and Z(D?) are defined likewise.
+
+The invariance of C(M) under bistellar moves follows by establishing that
+
+Kk » (oon jaincte))} =k" » (oon came) ;
+
+In this formula, vt, v? are the number of vertices internal to D1, D? (i.e., not on
+the boundary); the product is over edges internal to D! or D?, and the summation
+is over labellings which are fixed on 0D! = 0D? but range over all values in J for
+all edges internal to D! or D?.
+
+For the bistellar move of order 2, there are no internal vertices and the equality
+is the Biedenharn-Elliot identity of Proposition 5.2.
+
+For the bistellar move of order 3, the required identity is

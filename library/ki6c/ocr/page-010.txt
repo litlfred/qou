@@ -1,0 +1,69 @@
+where h(x,y,z) is some polynomial in derivatives of g(x,y,z) and (a,y,z). Here,
+we obtain the second ne by repeatedly using the fact that f," F’(w)G(w)dw +
+Sf Fw)G'(w)dw = f° (F(w)G(w))'dw = 0 if F(w)G(w) = 0 for w € R= (a,b). Since
+the above integral is bounded Soave of (x,y,z), f(x,y, 2) satisfies the assumption
+
+(14) of the Poisson summation formula. Further, f(t,s,u) also satisfies (14). Therefore,
+by the Poisson summation formula (13),
+
+(21) = » f (m1, mz, ms).
+
+mi,ma,mg €Z
+
+When (m1, mz2,™m3) 4 (0,0,0), we have that
+
+—1 ). 1
+
+4n?N? (m3 + m3 + m3)?
+
+«| h(x, y, 2) N (vou) —2nV—1 (mi (w@—€1)+m2(y—c2)+m3(z—e3) )) dx dy dz
+R34
+
+3+(c1,¢2,¢3)
+
+-1 ) 1
+4n2N’ (mi? + m3 + m3)?
+
+f(m, ma, m3) = N?(
+
+= N*(
+
+(22)
+x | U(2,y, 2) N (vou) —2nV/=1 (m1 (a—c1)+m2(y—c2)+m3(z—c3) )) de dy dz
+D
+-1 \2 1
++ N?( \.
+An?N m? + m3 + m2)?
+(mz 2 3) (23)
+
+«| A(x, y, 2) N (vew2) —2nV—T (m1 (x—c1)+m2(y—c2)-+ms3(z—c3)) ») de dy dz,
+N(D)—D
+
+where W(x, y, z) is some polynomial in (at most the 4th) derivatives of w(x, y, z). Further,
+since Rew(x,y, 2) < €o/2 for (x,y,z) € N(D) -— D
+
+So (23) = O(N")
+(m1 ,m2,m3)A(0,0,0)
+
+for some €; > 0. Furthermore, when m; > 0, pushing the contour D into the domain
+
+(16), we obtain
+So (22) = Oe")
+
+m1,m2,m3 EZ
+m1>0
+
+for some €) > 0. Similarly we obtain
+
+So (22) = Oe %*)
+
+m1,m2,m3 EZ
+mi<0
+for some €3 > 0, by pushing D into the domain (15). Hence,
+
+So (22) = So (22) +O(e-%*)
+
+(m1,m2,m3)A(0,0,0) (m1,m2,m3)A(0,0,0)
+m4=0
+
+10

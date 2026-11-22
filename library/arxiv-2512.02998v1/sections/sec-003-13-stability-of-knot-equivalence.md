@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2512.02998v1
-doc_title: "STABILITY OFKNOT EQUIVALENCE AT LOW REGULARITY, AND SYMMETRIC CRITICAL KNOTS FOR THEMÖBIUS ENERGY"
+doc_title: "Stability of knot equivalence at low regularity, and symmetric critical knots for the M\'obius energy"
 section_id: sec-003-13-stability-of-knot-equivalence
 section_title: "Stability of knot equivalence"
 section_number: 1.3
 pages: 3-4
 source_pdf: 2512.02998v1.pdf
 source_sha256: 146ff93cd70baad4
-doc_brief: "STABILITY OFKNOT EQUIVALENCE AT LOW REGULARITY, AND SYMMETRIC CRITICAL KNOTS FOR THEMÖBIUS ENERGY — We present sufficient criteria for the equivalence of tame knots at low regularity."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.955
-latex_coverage_ratio: 0.844
+latex_coverage_ratio: 0.914
+doc_brief: "Stability of knot equivalence at low regularity, and symmetric critical knots for the M\'obius energy — We present sufficient criteria for the equivalence of tame knots at low regularity."
 ---
 As an immediate consequence of Theorem~\ref{thm:isomorphic} in combination with
 part (iii) of Theorem~\ref{thm:gordon-luecke} we obtain a simple

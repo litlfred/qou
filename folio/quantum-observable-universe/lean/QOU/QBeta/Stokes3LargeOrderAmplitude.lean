@@ -60,7 +60,7 @@ drivers, and nothing claims the resurgent amplitude identification is closed.
 Base ring is `ℝ` (archimedean: `Real.cos`, order, limits).
 
 -- Ref: [garoufalidis-gu-marino2021] GGM 2012.00062 (Stokes constant 3; eq 46/60)
--- Ref: [manuscript] docs/audits/2026-08-01-stokes3-largeorder-amplitude-41.md
+-- Ref: [leitner2026] docs/audits/2026-08-01-stokes3-largeorder-amplitude-41.md
 -/
 
 namespace QOU.QBeta.Stokes3LargeOrderAmplitude
@@ -139,5 +139,11 @@ theorem action_recip_tendsto (κ : ℕ → ℝ) (A : ℝ)
     Tendsto (fun n : ℕ => κ (n + 1) / ((n : ℝ) * κ n)) atTop (𝓝 A⁻¹) := by
   have h := inst.action_limit.inv₀ (ne_of_gt inst.hA)
   exact h.congr (fun n => inv_div ((n : ℝ) * κ n) (κ (n + 1)))
+
+/-- Two-sided interval bound `-A_amp ≤ A_amp * Real.cos (θ n) ∧ A_amp * Real.cos (θ n) ≤ A_amp`
+for a conjugate-pair oscillation term with `0 ≤ A_amp`. -/
+theorem cos_envelope_interval_bounds (A_amp : ℝ) (hA : 0 ≤ A_amp) (θ : ℕ → ℝ) (n : ℕ) :
+    -A_amp ≤ A_amp * Real.cos (θ n) ∧ A_amp * Real.cos (θ n) ≤ A_amp :=
+  abs_le.mp (cos_envelope A_amp hA θ n)
 
 end QOU.QBeta.Stokes3LargeOrderAmplitude

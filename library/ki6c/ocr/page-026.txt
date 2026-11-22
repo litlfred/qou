@@ -1,0 +1,51 @@
+R if t+s+u
+min{R, g3(t,s,u)} if t+s+u
+
+2 5
+<5.
+
+o3(t, 5,u) =
+
+NIB WIE
+
+We note that, since g3(t, s,u) > co ast+s+u—> 3, 93(t, 8, u) is continuous, and similarly,
+we can check that 9: (t,s,u) and go(t, s,u) are also continuous. We set the ending of the
+homotopy by
+
+A = {(t+ Hl(t.s,wVv-l, s+ g(t, s,u)V—-1,ut g(t, s,u)v—1) € C? | (t,s,u) € A’}.
+
+Further, we define the internal part Aj (0 < 6 < 1) of the homotopy by setting it along
+the flow from (t, 8, u) determined by the vector field ( - or -2f, —2f).
+We show (50), as follows. From the definition of A’,
+
+an’ c {(t,s,u) €C? | Re V(t,s,u) <c,}.
+
+Further, by the construction of the homotopy, Re V monotonically decreases by the ho-
+motopy. Hence, (50) holds.
+We show (48) and (49), as follows. Consider the following functions
+
+F(t,s,u,X,Y,Z) = ReV(t+XV—-1, s+ YV-1, ut+ Zv-1),
+h(t,s,u) = F(t, s, u, Alt.s,u), golt,s,u), Galt, s,u))-
+
+When 3t+2s+u > 3, —h(t, s, u) is sufficiently large (because we let R be sufficiently large),
+and (49) holds in this case. Similarly, we can check that (49) holds when g(t, s,u) = +R.
+The remaining case is the case where @;(t,s,u) = gi(t,s,u) for i = 1,2,3. In this case,
+we show (49), as follows. It is shown from the definitions of g;(t,s,u) that 22 = 0
+at x = gilt, 8, u) and 5 = 0 at Y = go(t,s,u) and oF = 0 at Z = g3(t,s,u). Hence,
+Im ® =Im& = Im 5 = Oat (t+m(t,s,u)V—1, stp(t,s,u)V/—l, utgg(t, s,u)V—I).
+Further, oh = Re & and oh = Re® and gh = Re & at (t + g(t,s,u)V—I, 5 +
+p(t, s,u)/—I, ut g(t, s,u)V—1). Therefore, when (t,s, u) is a critial point of h(t, s,u),
+(t+ n(t.s,u)V—1, s+ m(t,s,u)V—1, ut ga(t, s,u)V—1) is a critical point of V. Hence,
+by Lemma 3.3, h(t,s,u) has a unique maximal point at (t,s,uv) = (Reto, Re so, Re wg).
+Therefore, (48) and (49) hold. Oo
+
+4 The 6) knot
+
+In this section, we show Theorem 1.1 for the 6) knot. We give a proof of the theorem in
+Section 4.1, using lemmas shown in Section 4.2-4.5.
+
+4.1 Proof of Theorem 1.1 for the 6, knot
+
+In this section, we show a proof of Theorem 1.1 for the 62 knot.
+
+26

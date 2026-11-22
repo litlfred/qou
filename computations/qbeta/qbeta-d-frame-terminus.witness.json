@@ -1,11 +1,27 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-31T04:29:07.350279+00:00",
-  "commitSha": "6855a21deeac1683607b91a41650fd2066b75240",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-11-15T22:42:09.360654+00:00",
+  "commitSha": "a729482cb284bb439f697cd1efc4eef26bf9cd6f",
   "assertions": [
     {
-      "name": "normalisation y_3 + 2 y_21 = 1 at z_D (the cap leg is closed)",
+      "name": "normalisation y_3 + 2 y_21 = 1 at z_D (two-row representative t = 0)",
+      "computed": "1.0",
+      "expected": "1.0",
+      "passed": true,
+      "tolerance": "0.5",
+      "unit": "bool"
+    },
+    {
+      "name": "fixed y_21(z_D) non-negative t = y_(1^3) >= 0 cannot reach g_required (g(t) = g(z_D) - 2t)",
+      "computed": "1.0",
+      "expected": "1.0",
+      "passed": true,
+      "tolerance": "0.5",
+      "unit": "bool"
+    },
+    {
+      "name": "Ocneanu z_required reproduces g_required = y_3(z_req) - y_(1^3)(z_req) but has y_(1^3)(z_req) < 0",
       "computed": "1.0",
       "expected": "1.0",
       "passed": true,
@@ -22,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "qbeta-d-frame-terminus",
   "scriptFile": "qbeta_d_frame_terminus_probe.py",
-  "scriptHash": "cf36ce49578f",
-  "scriptCommitSha": "dd7bd61b56405a5262815fcfb2e03e3228baf72f",
+  "scriptHash": "ea780af3a678",
+  "scriptCommitSha": "a729482cb284bb439f697cd1efc4eef26bf9cd6f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,14 +50,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "e186e42e6d8dd38a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "a9f23cb94545f585"
   },
   "invocation": {
     "argv": [
@@ -49,7 +65,7 @@
     ],
     "reproduce": "python3 -u computations/qbeta/qbeta_d_frame_terminus_probe.py"
   },
-  "description": "With the two-row cap derived rather than ruled, the missing convention-D Q_beta factor has exactly three places to live -- the block-weight pairing, the decay element's character ratio, and the trace->MeV scale -- and all three are measured-negative. Records the needed character ratio as a target for a future DERIVATION, explicitly not as a search criterion.",
+  "description": "Three-place decomposition of the missing convention-D Q_beta factor at the z = z_D two-row representative (y_{(1^3)} = 0) together with the qou-vuaj warrant correction (citing QOU.QBeta.DecayFibreBarParity.threeRow_undetermined_by_decay and cap_member_of_family rather than the mass-scoped FibreDimensionForcesTL.lean) and an explicit 1-parameter sweep over free t = y_{(1^3)}. Records the needed character ratio as a target for a future DERIVATION, explicitly not as a search criterion.",
   "data": {
     "g_forced": "0.50540422650393080319",
     "g_required": "0.88912581044405784613",
@@ -62,14 +78,103 @@
       "q^2": "20.5976",
       "[2]_q - h/2": "22.86"
     },
+    "warrant_correction_qou_vuaj": {
+      "mass_channel_theorem": "QOU/BraidsAndKnots/FibreDimensionForcesTL.lean",
+      "mass_channel_scope": "Explicitly mass-scoped via lem:feynman-eigenbasis-decomposition (2-eigenvalue mass operator => dim V_mass = 2 => Lambda^3_q V_mass = 0). Does NOT prove dim V_decay = 2 or force y_{(1^3)} = 0 in the decay channel; bean qou-n1dj is status todo.",
+      "decay_channel_theorem": "QOU.QBeta.DecayFibreBarParity.threeRow_undetermined_by_decay + QOU.QBeta.DecayFibreBarParity.cap_member_of_family",
+      "decay_channel_scope": "Because chi^{(2,1)}(Delta_S) = 0 and chi^{(1^3)}(Delta_S) = -chi^{(3)}(Delta_S), the decay trace pairing depends on the weights only through g = y_{(3)} - y_{(1^3)}. Setting t = y_{(1^3)} = 0 (`cap_member_of_family`) is the two-row representative selected by the Convention-D ruling z = z_D, not forced by the decay observable."
+    },
+    "free_y111_family_analysis": {
+      "parameter": "t = y_{(1^3)}",
+      "lean_warrant": "QOU.QBeta.DecayFibreBarParity.threeRow_undetermined_by_decay",
+      "slice_B1_fixed_y21_at_zD": {
+        "y_21_fixed": "0.24729788674803459841",
+        "formula": "y_{(3)}(t) = g(z_D) - t, g(t) = y_{(3)}(t) - t = g(z_D) - 2t",
+        "admissible_nonneg_t_interval": [
+          "0",
+          "0.50540422650393080319"
+        ],
+        "g_range_on_nonneg_t": [
+          "-0.50540422650393080319",
+          "0.50540422650393080319"
+        ],
+        "t_required_for_g_required": "-0.19186079197006352147",
+        "nonneg_t_reaches_g_required": false,
+        "conclusion": "At fixed y_{(2,1)}(z_D), increasing t = y_{(1^3)} >= 0 strictly decreases g(t) = g(z_D) - 2t away from g_required; reaching g_required requires t = -0.19186079197006352147 < 0 (violating positivity).",
+        "sweep_grid": [
+          {
+            "t_over_y3_zD": "0",
+            "t_y111": "0.0",
+            "y_3": "0.50540422650393080319",
+            "y_21": "0.24729788674803459841",
+            "g_pairing": "0.50540422650393080319",
+            "shortfall_vs_g_required": "1.75923699054611"
+          },
+          {
+            "t_over_y3_zD": "0.05",
+            "t_y111": "0.025270211325196540159",
+            "y_3": "0.48013401517873426303",
+            "y_21": "0.24729788674803459841",
+            "g_pairing": "0.45486380385353772287",
+            "shortfall_vs_g_required": "1.95470776727345"
+          },
+          {
+            "t_over_y3_zD": "0.10",
+            "t_y111": "0.050540422650393080319",
+            "y_3": "0.45486380385353772287",
+            "y_21": "0.24729788674803459841",
+            "g_pairing": "0.40432338120314464255",
+            "shortfall_vs_g_required": "2.19904623818263"
+          },
+          {
+            "t_over_y3_zD": "0.25",
+            "t_y111": "0.1263510566259827008",
+            "y_3": "0.37905316987794810239",
+            "y_21": "0.24729788674803459841",
+            "g_pairing": "0.25270211325196540159",
+            "shortfall_vs_g_required": "3.51847398109221"
+          },
+          {
+            "t_over_y3_zD": "0.50",
+            "t_y111": "0.25270211325196540159",
+            "y_3": "0.25270211325196540159",
+            "y_21": "0.24729788674803459841",
+            "g_pairing": "0.0",
+            "shortfall_vs_g_required": "inf"
+          },
+          {
+            "t_over_y3_zD": "1.0",
+            "t_y111": "0.50540422650393080319",
+            "y_3": "0.0",
+            "y_21": "0.24729788674803459841",
+            "g_pairing": "-0.50540422650393080319",
+            "shortfall_vs_g_required": "-1.75923699054611"
+          }
+        ]
+      },
+      "slice_B2_full_simplex_abandoning_zD": {
+        "formula": "y_{(3)} = g + t, y_{(2,1)} = (1 - g - 2t)/2, y_{(1^3)} = t",
+        "t_interval_for_g_required_on_simplex": [
+          "0",
+          "0.055437094777971076935"
+        ],
+        "ocneanu_z_required": "0.99850030256301299719",
+        "ocneanu_weights_at_z_required": {
+          "y_3": "0.87499511422126066497",
+          "y_21": "0.069567791000768258093",
+          "y_111": "-0.014130696222797181158"
+        },
+        "conclusion": "On the 1-parameter Ocneanu Markov curve, reaching g = g_required requires z_required = 0.998500302563 in (z_D, q), where y_{(1^3)}(z_required) = -0.0141306962 < 0 (violating weight positivity); across the entire non-negative nontrivial Ocneanu region z in (-1/q, z_D] where y_{(1^3)}(z) >= 0, g(z) <= g(z_D) = 0.5054042265. Reaching g = g_required with non-negative weights requires abandoning both z = z_D and the Ocneanu Markov trace relation for the general 2-simplex segment t in [0, 0.0554370948], which introduces unpinned free parameters."
+      }
+    },
     "legs": {
-      "g (block weights)": "CLOSED — the cap is derived, z_D forced, no freedom left",
+      "g (block weights)": "REPRESENTATIVE-PINNED AT z_D (g(z_D) = 0.5054042265 at t = y_{(1^3)} = 0; at fixed y_{(2,1)}(z_D), free t >= 0 gives g(t) = g(z_D) - 2t <= g(z_D); reaching g_required = 0.8891258104 requires abandoning z = z_D)",
       "chi (element characters)": "NEGATIVE — needed ratio matches no declared form",
       "K (trace->MeV scale)": "NEGATIVE — enumerated 2026-08-29, nothing within 6.31%"
     },
     "not_claimed": "that the framework or convention D is wrong, or that no closure exists; only that none is findable by any enumeration this corpus has run",
     "free_parameters": 0,
-    "verdict": "SCOPE-(a) TERMINUS. With the two-row cap DERIVED (2-dim mass fibre; FibreDimensionForcesTL, bean qou-n1dj), z = z_D is forced and the block-weight leg has NO remaining freedom -- g = 0.5054042265 against a required 0.8891258104. The other two legs are measured-negative: the character ratio an element would need, 1.5516573513, matches no declared form (nearest [3]_q/[2]_q at 2.45 %, next 3/2 at 3.33 % -- basket distance, not isolation), and the trace->MeV scale was enumerated on 2026-08-29 with nothing within 6.31 %. So no parameter-free closure of the convention-D Q_beta exists in any of the three legs, joining the four correction classes already closed. NOT a proved impossibility: this is an enumeration over declared classes, and a DERIVED (not searched) decay element with the right character ratio would still close it. Searching for such an element on the number would be a fit, so the ratio is recorded as a target to check a future derivation against, never as a search criterion.",
+    "verdict": "SCOPE-(a) TERMINUS (conditional on the Convention-D z = z_D representative, plus explicit 1-parameter free-y_{(1^3)} sweep per qou-vuaj). Warrant correction: QOU/BraidsAndKnots/FibreDimensionForcesTL.lean is explicitly mass-scoped (lem:feynman-eigenbasis-decomposition) and bean qou-n1dj is todo; on the decay side, QOU.QBeta.DecayFibreBarParity.threeRow_undetermined_by_decay proves the decay trace pairing depends on the weights only through g = y_{(3)} - y_{(1^3)}, leaving t = y_{(1^3)} undetermined by the decay channel alone, with t = 0 (`cap_member_of_family`) the two-row representative selected by the Convention-D ruling z = z_D. At the z = z_D (t = 0) representative, g(z_D) = 0.5054042265 against a required 0.8891258104. Across the 1-parameter family at fixed y_{(2,1)}(z_D), g(t) = g(z_D) - 2t <= 0.5054042265 for all t = y_{(1^3)} >= 0, so non-negative 3-row weight moves g in the wrong direction (reaching g_required at fixed y_{(2,1)}(z_D) would require negative weight t = -0.1918607920). On the 1-parameter Ocneanu Markov curve y_lambda(z), reaching g_required requires z_required = 0.9985003026 in (z_D, q), where y_{(1^3)}(z_required) = -0.0141306962 < 0 (violating weight positivity); across the entire non-negative nontrivial Ocneanu region z in (-1/q, z_D] where y_{(1^3)}(z) >= 0, g(z) <= g(z_D) = 0.5054042265. Only by abandoning both z = z_D and the Ocneanu Markov relation for the general 2-simplex y_{(3)} = g_required + t, y_{(2,1)} = (1 - g_required - 2t)/2, y_{(1^3)} = t with t in [0, 0.0554370948] is g_required reachable with non-negative weights, at the cost of unpinned free parameters. The other two legs at z = z_D remain measured-negative: the character ratio an element would need, 1.5516573513, matches no declared form (nearest [3]_q/[2]_q at 2.45 %, next 3/2 at 3.33 % -- basket distance, not isolation), and the trace->MeV scale was enumerated on 2026-08-29 with nothing within 6.31 %. NOT a proved impossibility: this is an enumeration over declared classes, and a DERIVED (not searched) decay element with the right character ratio would still close it.",
     "scope": "(a) enumeration over declared classes, NOT a proved impossibility",
     "q0Anchor": "proton",
     "q0Value": "1.1099785827513808075916690956107688798744991218736"

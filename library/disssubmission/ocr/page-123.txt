@@ -1,0 +1,46 @@
+5.5. The upper bound W(E6) 115
+
+In particular, it follows that v A [Y] = 0 for all vectors v € H4(X,Z) of the
+form v = xp AX, AXm AX, OF V = XK AXA Xm AYn OF V = XEAVIA Yn AYn
+or v= yA ¥1 \¥mAYn With arbitrary indices k,/,m,n, and also for all vectors
+of the form v = xz Ax; \¥m A Yn with {k,1} A {m,n}. However, for k # 1
+one easily checks that
+
+Xe AX AYR AYA [Y] = —2-@
+for the cohomology class
+@ = x Ay Av AxgAyg = 4-0}
+mapped to | under the degree isomorphism degy : H*(X,Z) — Z.
+
+Now consider the basis of the lattice Ly = A?(H!(X,Z)) consisting of
+the vectors uj, = x;/\y, with i,k € {1,2,3,4} and of the vectors vj, = x; Axx
+and wiz = yj \yg with 1 <i<k <4. It follows from the above that the
+bilinear form b is non-zero only on those pairs of the above vectors whose
+wedge product has the form +x; \xm Ay; \Ym with 1 #4 m. So the only
+non-zero scalar products between our basis vectors are
+
+b(uji, Uek) = xi Nyi NXE AYEA [Y] = 2 fori x k,
+b (wig, Unt) =i AYR AXE AYi A [Y] = —2 for ik, and
+D( Vig, Wik) = b(Wig, Vik) = Vi NY ANXj AXA [Y] =-—2fori<k.
+
+Hence we obtain an orthogonal sum decomposition
+
+Lx = (uii,---,taa) © CD (ins tei) B Vie, Wik)
+1<i<k<4
+
+where (u11,...,444) = A(2) and where (ujx,ugi) = (Vik, ik) = U(2). Oo
+
+5.5. The upper bound W(E£¢)
+
+Let us now come back to the local system which underlies the variation
+of Hodge structures V; on the open dense subset U C X in lemma 5.10
+for g = 4, assuming that the theta divisor of our ppav is smooth. Since
+all constructions in the proof of that lemma make sense on the level of
+integral cohomology, we can in fact consider V as a polarized variation
+of Z-Hodge structures. Proposition 5.12 then allows to identify the fibres
+of this variation of Hodge structures with the lattice Kt & Es(—1) up toa
+rescaling of the bilinear form by a factor two.
+
+This being said, consider the monodromy group G of the local system
+underlying V. Since the monodromy action for any smooth proper family
+of varieties preserves the intersection form on the cohomology of the fibres,
+it follows from the above that G must be contained in the automorphism

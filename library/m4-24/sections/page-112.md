@@ -1,0 +1,57 @@
+---
+doc_id: m4-24
+doc_title: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface"
+section_id: page-112
+section_title: "Page 112"
+section_number: null
+pages: 112-112
+source_pdf: m4-24.pdf
+source_sha256: cf7c5e29b818e647
+toc_source: undetermined
+doc_brief: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3"
+---
+484 T. Ohtsuki (Editor)
+
+Remark (S. Kojima) The Chern-Simons invariant CS(J/) of non-hyperbolic
+3-manifolds M should be defined satisfying the following two requirements.
+One is that CS(—M) = —CS(M), where —M denotes M with the opposite
+orientation. The other is the requirement explained as follows. Let K be a
+hyperbolic knot in a 3-manifold N. Then, it is known that Ni(pq) has a
+hyperbolic structure except for finitely many (p,q), where N, K:(pq) denotes the
+3-manifold obtained from N by Dehn surgery along the slope of type (p,q), and
+that such hyperbolic structures can be obtained in a deformation space of the
+hyperbolic structures of N— K parameterized by a natural complex parameter,
+which can be presented by two real parameters p and q. Moreover, the function
+
+CS(M) + V—Ivol(M) (43)
+
+is a holomorphic function of the complex parameter. Note that vol(MW) can
+extend for non-hyperbolic 3-manifolds M by redefining it to be a constant
+multiple of the simplicial volume ||M/||. CS(Z) should be defined such that,
+for appropriate?® knots K in any closed 3-manifold N, the function (43) on
+the family {JN, K:(p,q) tp. can extend to a holomorphic function of a complex
+parameter presented by p and q appropriately.
+
+Problem 7.17 (T. Ohtsuki) Give a “complex structure” to the set of 3-
+manifolds. More precisely, find an embedding (or, an immersion) of the set
+of 3-manifolds to some complex variety such that its restriction to the set
+{Niip,q) | p? + q? >> 0} can be extended to a holomorphic map of the above
+
+mentioned complex parameter for any (hyperbolic) knot K in any 3-manifold
+N.
+
+We would expect some structures of the set of 3-manifolds such as mentioned in
+Problems 7.17 and Problem 10.16. Such structures would yield new viewpoints
+in the study of (the set of, and invariants of) 3-manifolds.
+
+Remark As mentioned above, the set {Nic.(p,q) | p? +q° >> 0} can be em-
+bedded in C, on which the function (43) is holomorphic. In this sense, the
+infinite family of Nj (p,q) has a “complex structure” around the infinity point
+of (p,q). The volume conjecture says that the function (43) would be obtained
+as a certain limit of some series of quantum invariants. This suggests that the
+above “complex structure” would extend to the whole set of 3-manifolds.
+
+26These knots should include, not only all hyperbolic knots, but also other knots. They
+might not include the trivial knot.
+
+Geometry & Topology Monographs, Volume 4 (2002)

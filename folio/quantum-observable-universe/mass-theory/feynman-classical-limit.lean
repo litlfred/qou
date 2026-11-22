@@ -40,26 +40,32 @@ namespace QOU.FeynmanClassicalLimit.ConditionalAudit
     the Jones polynomial loses all knot-discrimination — `J_K(1) = 1`
     for every knot `K` (clause 4 of `prop:feynman-classical-limit`).
 
-    Concrete content (shape of the claim): a `jonesAtOne : KnotCode → ℝ`
-    evaluator that is identically `1` — the `q → 1` degeneration of the
-    Markov-trace link invariant. The full categorical degeneration is
-    formalised in `QOU.FeynmanPathIntegrals.ClassicalLimitDegeneration`;
-    this class carries the open conjectural input (existence of the
-    standard-part map realising it) as a Prop. -/
--- Ref: [manuscript] conj:classical-limit-stpart
-class ClassicalLimitStpart : Prop where
-  /-- In the `q → 1` limit every knot's Jones value collapses to `1`:
-      there is a knot-invariant evaluator that is constantly `1`. -/
-  jones_trivial_at_one :
-    ∃ jonesAtOne : ℕ → ℝ, ∀ K : ℕ, jonesAtOne K = 1
+    Content: for a given knot-indexed Jones evaluator `jones K q`, the
+    value at `q = 1` is `1` for every knot. The evaluator is a parameter,
+    so the class constrains it rather than asserting that some constant
+    function exists. (Before 2026-11-16 the field read
+    `∃ jonesAtOne : ℕ → ℝ, ∀ K, jonesAtOne K = 1`, which
+    `⟨fun _ => 1, fun _ => rfl⟩` proves outright: a carrier that asserted
+    nothing.) The full categorical degeneration is in
+    `QOU.FeynmanPathIntegrals.ClassicalLimitDegeneration`. -/
+-- Ref: [leitner2026] conj:classical-limit-stpart
+class ClassicalLimitStpart (jones : ℕ → ℝ → ℝ) : Prop where
+  /-- In the `q → 1` limit every knot's Jones value collapses to `1`. -/
+  jones_trivial_at_one : ∀ K : ℕ, jones K 1 = 1
 
-/-- **Conditional on `conj:classical-limit-stpart`.** The `q → 1`
-    Jones evaluator cannot distinguish two distinct knots: for all
-    `K₁ K₂`, `jonesAtOne K₁ = jonesAtOne K₂`. Derived from the class
+/-- **Conditional on `conj:classical-limit-stpart`.** At `q = 1` the
+    Jones evaluator cannot distinguish two knots. Derived from the class
     hypothesis (both values equal `1`), not assumed. -/
-theorem feynman_classical_limit_g3_conditional [inst : ClassicalLimitStpart] :
-    ∃ jonesAtOne : ℕ → ℝ, ∀ K₁ K₂ : ℕ, jonesAtOne K₁ = jonesAtOne K₂ := by
-  obtain ⟨jonesAtOne, hone⟩ := inst.jones_trivial_at_one
-  exact ⟨jonesAtOne, fun K₁ K₂ => by rw [hone K₁, hone K₂]⟩
+theorem feynman_classical_limit_g3_conditional (jones : ℕ → ℝ → ℝ)
+    [inst : ClassicalLimitStpart jones] :
+    ∀ K₁ K₂ : ℕ, jones K₁ 1 = jones K₂ 1 := fun K₁ K₂ => by
+  rw [inst.jones_trivial_at_one K₁, inst.jones_trivial_at_one K₂]
+
+/-- The class is not trivially inhabited: an evaluator with
+    `jones 0 1 = 0` admits no instance. -/
+theorem classicalLimitStpart_not_trivial :
+    ¬ ClassicalLimitStpart (fun _ _ => (0 : ℝ)) := fun h => by
+  have := h.jones_trivial_at_one 0
+  norm_num at this
 
 end QOU.FeynmanClassicalLimit.ConditionalAudit

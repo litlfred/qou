@@ -1,0 +1,58 @@
+38 4, THE q-SCHUR ALGEBRA
+
+Let T be a row semistandard j-tableau of type v and define first(T) to
+be the unique row standard p-tableau such that v(first(T)) = T and first(T) & t
+whenever ¢ is a row standard tableau such that v(t) =T. It is also easy to see that
+there exists a unique row standard tableau last(T) such that v(last(T)) = T and
+tD last(T) whenever t is another row standard tableau such that v(t) = T.
+4.6 Example Suppose that ys = (4, 4) and let T be the y-tableau ak Then Tis
+of type v = (2, 1,3, 2), first(T) =
+then pd y = (2,1,1,2,1,1) sine
+stabilizer of first (T).
+
+Let d € Ay and let T= (td) and $ = p(t’d-!). Then we have shown that $
+and T are both row semistandard and that
+
+47 SS o&m= YO T= Yom Te.
+
+yeDy weG,dG, reDy
+H(t’y)=s v(We)aT
+
+The clement d also determines an .#-module homomorphism gi, : MY’ — M#
+given by
+
+gu(mh) = So Toh, for all h € %.
+
+weS,d,
+
+In fact, these elements give a basis of Hom (M’, M").
+4.8 Theorem Let jt and v be compositions of n. Then Homs(M”, M") is free as
+an R-module with basis { yi, |}dE Dy}.
+Proof. Suppose that ¢ € Homjy(M”,M*"). Then, for all h € 3, we have that
+
+y(myh) = g(m,)h; hence, y is completely determined by ¢(m,). By Corollary 3.4
+there exist rg € R such that
+
+e(m,) = ram, Ta.
+dé Py
+Choose  € Y, of minimal length such that r, # 0. If # ¢ Fy then by Propo-
+sition 4.5 there exists s € SG, such that &(as) = &(#) —1. Then as € Y,
+and
+
+g(m) = 47" e(myTs) = a7! SS rary TT = remy Tes + > bay Ta
+deD, deF,
+
+for some bg € R such that b,, = 0. In particular, this shows that m,Txs is
+involved in y(m,) contrary to our assumption that x is an element of minimal
+length with r, #0. Therefore, x € Y,, and, consequently, y’ = ¢—azg belongs to
+Hom (M”,M"). Furthermore, g/(m,) is a linear combination of a terms of the
+form m, Tj where d € Y, and dF «x. In fact, the above argument shows that m,Ty
+is not involved in ¢’(m,) whenever G,dG6, = G,2%G,. Hence, we can repeat this
+argument to write ¢ as linear combination of maps yj, with # € Fy, as required.
+
+Finally, it remains to check that on | d€ Y,, } is linearly independent. This
+follows because { ¢4,,(my) | d € Fur } is a linearly independent subset of M“ (being
+sums over distinct (G,,,G,)-double cosets by (4.7)). a
+
+4.9 Corollary Let 4: and v be compositions of n. Then Homy(M’,M") and
+M" 0 M”’* are canonically isomorphic as R-modules.

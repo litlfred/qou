@@ -1,0 +1,1 @@
+Suppose that V = {x ∈Rd : Q(x) = 0} and that ∇Q(p) , 0. If η is the quadratic part of Q at p Smooth point asymptotics and η⊥is the restriction of η to the hyperplane orthogonal to ∇Q(p) then the curvature of V at p is given by K = ||η⊥|| ||(∇Q)(p)||d−1 , (9.22) where ||(∇Q)(p)||2 denotes the Euclidean norm of the gradient of Q at p. Proof Replacing Q by ||(∇Q)(p)||−1

@@ -96,6 +96,27 @@
       "description": "Lean build caches, one orphan branch per package and toolchain, restored so a build starts warm. Declared here, on the folio that builds the Lean packages, rather than as a row in folio-assistant's special-branches.json (owner, 2026-10-03). MIGRATED 2026-10-05 (owner: \"migratez qou\") from the legacy `lake-cache/<member>` names: scripts/lib/lake-cache-family.sh writes the declared name and reads it first, falling back to `lake-cache/<member>`, whose branches are kept and never deleted (AGENTS.md rule 9). `lake-cache/` is where a member is mounted; the restore scripts untar into `.lake/`, which the dot-prefix guard forbids declaring."
     },
     {
+      "id": "wheel-cache",
+      "path": "wheel-cache/",
+      "graphTypologies": [
+        "wheel-cache"
+      ],
+      "storage": {
+        "branchPrefix": "cat/qou/wheel-cache/",
+        "keyedBy": "family",
+        "keyFrom": "<package>-<version>-<cpython-tag>-<platform>-<source-key>, e.g. pyhecke-native-0.9.0-cp313-linux_x86_64-<12 hex>"
+      },
+      "description": "Built wheels of qou's native Python extensions, today only `pyhecke-native` (not on PyPI; a maturin build takes about 2.5 min per container). One orphan branch per package, version, CPython tag, platform and source key, where the source key hashes the git trees of `tools/pyhecke-native` and `tools/hecke-engine`. Read and written by scripts/wheel-cache.sh, which keeps its git objects in a private bare repository rather than the checkout; scripts/build-pyhecke-native.sh restores before it builds and seeds after a clean build passes its convention gate. `wheel-cache/` is where a member is mounted; nothing is tracked there. Bean qou-dgkf."
+    },
+    {
+      "id": "qou-typologies",
+      "path": "typologies/",
+      "graphTypologies": [
+        "typologies"
+      ],
+      "description": "The graph typologies qou owns, one folio-graph-typology/v1 node per file. There is no central registry for subgraph types (owner, 2026-10-04): a harness declares its own. Today it holds `wheel-cache`, the kind of the directory above."
+    },
+    {
       "id": "fsh-guts",
       "path": "fsh-guts/",
       "source": {
@@ -108,6 +129,21 @@
       ],
       "description": "Deprecated and retired material, kept and addressable, deliberately absent from the rendered site (platform kind `fsh-guts`, holds: context). Kept on its own branch, `cat/cat-harness/fsh-guts`, not on main: `bun run state:mount` (from folio-assistant/) puts it at `fsh-guts/`, and `state:push` splices edits back. Holds the parked renderers and workflows from the migration (bean qou-6u3n) and older scratch. A file is a graph node only if it declares `$schema: folio-fsh-guts/v1`; the rest is kept bytes, which this declaration makes discoverable rather than claiming they are nodes. Also holds the three former `_deprecated/` trees under `fsh-guts/deprecated/` (computations, docs/audits, qou-mass data).",
       "_comment": "Declared 2026-10-04, story TOOLS T2 (bean qou-4r5m), as a plain path. Moved to the platform's `source: {kind: branch}` form 2026-10-10 on owner instruction (\"_deprecated is now branch cat/cat-harness/fsh-guts ... migrate if not\", then option 2, full cut-over), bean qou-6u3n. Same shape as the platform's own fsh-guts declaration in folio-assistant.json."
+    },
+    {
+      "id": "beans",
+      "path": "beans/",
+      "scope": "repository",
+      "source": {
+        "kind": "branch",
+        "branch": "cat/cat-harness/beans",
+        "keyedBy": "tip"
+      },
+      "graphTypologies": [
+        "beans"
+      ],
+      "description": "The bean work-plan (beans/beans.json + beans/defs/, the layout the `beans` CLI reads through .beans.yml). Kept on its own branch, `cat/cat-harness/beans`, not on main (owner, 2026-10-10, re-confirmed 2026-11-15; issue #7642). The session-start hook installs the platform if it is absent and mounts it at `beans/` (`state:mount`); there is no read-only fallback (owner, 2026-11-15). An edit is pushed back with `bun folio-assistant/cat-harness-tools/scripts/branch-store.ts push --id beans`, a splice with `expect` that never forces, so a bean edit is no longer a commit in a PR.",
+      "_comment": "Same shape as the platform's own beans declaration (`scope: repository`, which dependents do not inherit, so qou declares its own) and as qou's fsh-guts entry above. The branch name is the owner's choice over the documented folio convention `cat/qou/beans`; the declaration names it explicitly, so no tool needs to compose it."
     }
   ],
   "_platform_scope_comment": "LOAD-BEARING since 2026-10-04: the pin moved to 26c5d37b9 (platform main), which reads this file through readDeclaration. The 2026-09-26 note that it was inert applied to the old pin df28d02."

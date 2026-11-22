@@ -172,7 +172,8 @@ def main() -> int:
                 "size, not a coincidental lookalike.",
     })
 
-    b.save()
+    b.save(extra={"q0Anchor": "ambiguous", "q0AnchorReason": (
+            "comparison by design: evaluates z_3 = q^3/[3]_q and h_q at both the proton pin (Q_50_DIGIT_STR) and the live CODATA-2022 muon pin to identify which anchor a recorded literal was computed at")})
 
     print(f"literal under test: {LITERAL_STR}\n")
     print(f"{'candidate':<28} {'value':<36} {'rel vs literal'}")

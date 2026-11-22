@@ -1,0 +1,1 @@
+For z, t ∈C such that 0 < |t| < |z|−1 there is the absolutely convergent expansion eq(tz) Eq(−t−1z) = (t−1z; q)∞ (tz; q)∞ = ∞ X n=−∞ tn zn (qn+1; q)∞ (q; q)∞ 1φ1(0; qn+1; q, z2) (2.7) = ∞ X n=−∞ tn zn (z2; q)∞ (q; q)∞ 1φ1(0; z2; q, qn+1). (2.8)

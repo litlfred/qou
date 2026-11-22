@@ -1,0 +1,26 @@
+Section 2.1 Ribbon Fusion Categories
+
+A is denoted by I, or I when it is clear from the context what the sub index should be.
+
+2.1 Ribbon Fusion Categories
+
+In this section, we give a review of monoidal category theories, which are the prelim-
+inaries to the concept of G-crossed braided spherical fusion categories. In the following
+subsections, we will talk about some basic ingredients such as tensor product, dual,
+
+braiding, fusion, etc.
+
+2.1.1 Monoidal Categories
+
+A bi-functor ® on C is a functor ®@ : CxC —+C such that @(ff', 99) =F, 9 FU 9’).
+A bi-functor is usually thought of as a binary operation and @(A, B), @(f,g) are written
+as A®@ B,f ® g, respectively. Given A € C°, define A@-: C —> C as a functor by
+(A®-)(B) := A@B and (A®-)(f) := Id4® f. The functor -@ A is defined analogously.
+
+A monoidal category is a tuple (C, ®,1,a,1,r), where C is a category, @:C xC —>C
+is a bi-functor, 1 € C° is an object, and a,/,r are natural isomorphisms @ 0 (@ x Ide) —>
+@o0(Ide x ®), 1@- —4 Ide, -®1 —> Ide, respectively. Namely, for A, B,C € C°, there
+are natural isomorphisms a4.5,c : (A®B)@C =,A® (B®C), l4:1@A Ss Ara:
+A@1—>+ A. These isomorphisms need to satisfy the Pentagon Axiom and Triangle
+
+Axiom:

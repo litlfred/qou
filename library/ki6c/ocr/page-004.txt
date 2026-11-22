@@ -1,0 +1,52 @@
+(3) directly. We give such a homotopy concretely in Sections 3.5, 4.5, 5.5 for the 61, 62,
+63 knots respectively. This part of the proof is quite non-trivial; in fact, we note that we
+can not make such a homotopy for the 7) knot as shown in [21].
+
+By the method of this paper, the asymptotic behavior of the Kashaev invariant is
+discussed for the hyperbolic knots with 7 crossings in [21] and for some hyperbolic knots
+with 8 crossings in [24].
+
+The paper is organized as follows. In Section 2, we review definitions and basic prop-
+erties of the notation used in this paper. In Sections 3, 4, 5, we show proofs of Theorem
+1.1 for the 6, 62, 63 knots respectively. In Appendices A, B, C and D, we show proofs of
+some lemmas used in Sections 3, 4, 5.
+
+The authors would like to thank Tudor Dimofte, Kazuo Habiro, Hitoshi Murakami,
+Toshie Takata and Dylan Thurston for helpful comments.
+
+2 Preliminaries
+
+In this section, we review definitions and basic properties of the notation used in this
+paper.
+
+2.1 Integral presentation of (q)n
+
+In this section, we review the integral expression of q-factorials (q), and their basic prop-
+erties.
+Let N be an integer > 2. We put g = exp(27,/—1/N), and put
+(a), = (l—2)(1—2?)---(1— 2")
+
+for n > 0. It is known [18] (see also [20]) that for any n,m with n < m,
+
+(Q)n(@)n—n-1 = N, (4)
+1
+Zs, niin 6)
+
+Following Faddeev [5], we define a holomorphic function y(t) on {t € C | 0 < Ret < 1}
+
+by
+oo e(2t-1a dy
+= f oa
+_oo 4@ sinh sinh(«/N)
+
+noting that this integrand has poles at na/—1 (n € Z), where, to avoid the pole at 0, we
+choose the following contour of the integral,
+
+y = (-o,-1] U {zEC | \z| =1, Imz>0} U [1,00).
+It is known [7, 31] that
+
+(Qn = exp (osu) ~ (A)
+
+(@n = exp (o(1 - at ) - y(1 - sx)):
+
+4

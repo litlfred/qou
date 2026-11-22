@@ -5,21 +5,36 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/cherednik1991-kz-dunkl",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/cherednik1991-kz-dunkl/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "cherednik1991-kz-dunkl",
   "contains": [
-    "library/cherednik1991-kz-dunkl/sections/sec-front-matter",
-    "library/cherednik1991-kz-dunkl/sections/sec-000",
-    "library/cherednik1991-kz-dunkl/sections/sec-001",
-    "library/cherednik1991-kz-dunkl/sections/sec-002",
-    "library/cherednik1991-kz-dunkl/sections/sec-003",
-    "library/cherednik1991-kz-dunkl/sections/sec-004"
+    "library/cherednik1991-kz-dunkl/sections/page-001",
+    "library/cherednik1991-kz-dunkl/sections/page-002",
+    "library/cherednik1991-kz-dunkl/sections/page-003",
+    "library/cherednik1991-kz-dunkl/sections/page-004",
+    "library/cherednik1991-kz-dunkl/sections/page-005",
+    "library/cherednik1991-kz-dunkl/sections/page-006",
+    "library/cherednik1991-kz-dunkl/sections/page-007",
+    "library/cherednik1991-kz-dunkl/sections/page-008",
+    "library/cherednik1991-kz-dunkl/sections/page-009",
+    "library/cherednik1991-kz-dunkl/sections/page-010",
+    "library/cherednik1991-kz-dunkl/sections/page-011",
+    "library/cherednik1991-kz-dunkl/sections/page-012",
+    "library/cherednik1991-kz-dunkl/sections/page-013",
+    "library/cherednik1991-kz-dunkl/sections/page-014",
+    "library/cherednik1991-kz-dunkl/sections/page-015",
+    "library/cherednik1991-kz-dunkl/sections/page-016",
+    "library/cherednik1991-kz-dunkl/sections/page-017",
+    "library/cherednik1991-kz-dunkl/sections/page-018",
+    "library/cherednik1991-kz-dunkl/sections/page-019",
+    "library/cherednik1991-kz-dunkl/sections/page-020",
+    "library/cherednik1991-kz-dunkl/sections/page-021"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "cherednik1991-kz-dunkl",
     "title_source": "slug",

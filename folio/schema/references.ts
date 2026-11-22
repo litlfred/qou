@@ -334,6 +334,7 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "garoufalidis-le-2005" },
 
   // ── Lê 2006 — AJ conjecture proved for a large class of 2-bridge knots ──
+  { id: "le2000" },
   { id: "le2006" },
 
   // ── Garoufalidis–Lê 2011 — asymptotics; Borromean VC via Habiro expansion ──
@@ -410,6 +411,8 @@ const ORDER: Array<FileSlot | Reference> = [
 
   // ── Fred 2005 (dissertation) ──────────────────────────────────
   { id: "fred2005" },
+  { id: "leitner2006" },
+  { id: "luweinstein1990" },
 
   // ── Schrijver 1986 ────────────────────────────────────────────
   { id: "schrijver1986theory" },
@@ -440,6 +443,7 @@ const ORDER: Array<FileSlot | Reference> = [
 
   // ── Lusztig 1993 ──────────────────────────────────────────────
   { id: "lusztig1993" },
+  { id: "lusztig2003" },
 
   // ── Atiyah 1988 ───────────────────────────────────────────────
   { id: "atiyah1988" },
@@ -598,6 +602,8 @@ const ORDER: Array<FileSlot | Reference> = [
 
   { id: "stanley1999" },
 
+  { id: "steinberg1964" },
+
   { id: "feray2010" },
 
   { id: "fulton1997" },
@@ -643,6 +649,11 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "necas-ruzicka-sverak1996" },
 
   { id: "tsai1998" },
+  { id: "leray1934" },
+  { id: "seregin2012" },
+  { id: "chae2013adss" },
+  { id: "chae-wolf2016dss" },
+  { id: "bradshaw-tsai2018survey" },
 
   { id: "leitner-2018" },
 
@@ -773,6 +784,43 @@ const ORDER: Array<FileSlot | Reference> = [
 
   // ── Nature Physics: Scheeler et al. 2014 ────────────────────────
   { id: "scheeler2014" },
+
+  // ── Adv. Math.: Enciso, Lucà & Peralta-Salas 2017 ───────────────
+  // Smooth NS solutions reconnecting vortex lines/tubes of any topology.
+  ref({
+    id: "enciso2017",
+    type: "article-journal",
+    title: "Vortex reconnection in the three dimensional Navier–Stokes equations",
+    author: [
+      { family: "Enciso", given: "Alberto" },
+      { family: "Lucà", given: "Renato" },
+      { family: "Peralta-Salas", given: "Daniel" },
+    ],
+    "container-title": "Advances in Mathematics",
+    volume: "309",
+    page: "452-486",
+    DOI: "10.1016/j.aim.2017.01.025",
+    issued: { "date-parts": [[2017]] },
+    URL: "https://arxiv.org/abs/1606.06176",
+  }),
+
+  // ── Ann. Math.: Ebin & Marsden 1970 ─────────────────────────────
+  // Incompressible flow on a compact Riemannian manifold; the
+  // deformation-tensor form of the viscous term.
+  ref({
+    id: "ebin-marsden1970",
+    type: "article-journal",
+    title: "Groups of diffeomorphisms and the motion of an incompressible fluid",
+    author: [
+      { family: "Ebin", given: "David G." },
+      { family: "Marsden", given: "Jerrold E." },
+    ],
+    "container-title": "Annals of Mathematics",
+    volume: "92",
+    issue: "1",
+    page: "102-163",
+    issued: { "date-parts": [[1970]] },
+  }),
 
   // ── PRL: Christenson et al. 1964 (CP violation in kaons) ────────
   { id: "christenson1964" },
@@ -1129,6 +1177,9 @@ const ORDER: Array<FileSlot | Reference> = [
   // ── Mathas 1999 (Iwahori–Hecke Algebras and Schur Algebras) ──
   { id: "mathas1999" },
 
+  // ── q-Schur generation (G3.4 Dipper–James route, stream 16) ──
+  { id: "doty2006" },
+
   // ── Mathas 2004 (Mackey filtration for cyclotomic Hecke) ────
   { id: "mathas2004mackey" },
 
@@ -1157,6 +1208,9 @@ const ORDER: Array<FileSlot | Reference> = [
 
   // ── Gödel 1931: incompleteness theorems ──────────────────────
   { id: "goedel1931" },
+
+  // ── Gödel 1949: rotating cosmological solution ──────────────
+  { id: "goedel1949" },
 
   // ── Turing 1936: computable numbers ────────────────────────
   { id: "turing1936" },
@@ -1446,6 +1500,44 @@ const ORDER: Array<FileSlot | Reference> = [
 
   { id: "tao2019" },
 
+  // ── Vorticity-direction regularity criteria (geometric depletion) ──
+  // Used by fluid-dynamics/core-levi-form.md and
+  //          fluid-dynamics/levi-degeneracy-conjecture.md (Q1 re-scope,
+  //          owner 2026-10-13). Bibliographic data confirmed via secondary
+  //          sources (docs/audits/2026-10-12-ns-v1-geometric-depletion.md §1);
+  //          primary texts not held in library/, DOI not verified, so omitted.
+  ref({
+    id: "constantin1993",
+    type: "article-journal",
+    title:
+      "Direction of vorticity and the problem of global regularity for the Navier-Stokes equations",
+    author: [
+      { family: "Constantin", given: "Peter" },
+      { family: "Fefferman", given: "Charles" },
+    ],
+    "container-title": "Indiana University Mathematics Journal",
+    issued: { "date-parts": [[1993]] },
+    volume: "42",
+    issue: "3",
+    page: "775-789",
+  }),
+
+  ref({
+    id: "beiraodaveiga2002",
+    type: "article-journal",
+    title:
+      "On the regularizing effect of the vorticity direction in incompressible viscous flows",
+    author: [
+      { family: "Beirão da Veiga", given: "Hugo" },
+      { family: "Berselli", given: "Luigi C." },
+    ],
+    "container-title": "Differential and Integral Equations",
+    issued: { "date-parts": [[2002]] },
+    volume: "15",
+    issue: "3",
+    page: "345-356",
+  }),
+
   // ── Townsend: viscous vortex-core strain dynamics ───────────────
   // Used by fluid-dynamics/townsend-biot-savart-strain.md and
   //          fluid-dynamics/hyperbolic-overlap-saturation.md
@@ -1506,6 +1598,7 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "horn-johnson-2013" },
 
   { id: "kassel2008" },
+  { id: "polyak2010" },
 
   { id: "murphy1981" },
 
@@ -1519,6 +1612,7 @@ const ORDER: Array<FileSlot | Reference> = [
   // separately. The 5 baryon-product-from-alt.lean Ref lines need to be
   // re-keyed to `fulton-harris1991` in a follow-up cleanup.
   { id: "fulton-harris1991" },
+  { id: "farkas-kra1992" },
 
   { id: "wald1984" },
 
@@ -2171,6 +2265,8 @@ const ORDER: Array<FileSlot | Reference> = [
 
   { id: "reshetikhin-turaev1990" },
 
+  { id: "turaev1988" },
+
   { id: "faddeev-kashaev-volkov2000" },
 
   { id: "andersen-mistegard2020" },
@@ -2705,10 +2801,65 @@ const ORDER: Array<FileSlot | Reference> = [
   { id: "fukuda2012" },
   { id: "melnikov2025" },
   { id: "tarabunga2025" },
-  // 2026-11-15: Turaev 1988, split from the GDZ scan of Invent. Math. 92 and ingested as library/turaev1988/.
-  { id: "turaev1988" },
-  // 2026-11-15: Proctor 1988, same scan, ingested as library/proctor1988/.
+  // 2026-11-15: Proctor 1988, from the GDZ scan of Invent. Math. 92, ingested as library/proctor1988/.
   { id: "proctor1988" },
+  // 2026-11-15: held library document registered (bean qou-mzv5).
+  { id: "murakami2008-acta-vietnam" },
+  // 2026-11-15: owner uploads (commit 947381c) ingested into library/ (epic qou-s4ws).
+  { id: "grimus1993lr" },
+  { id: "czakon-gluza-hejczyk-2003" },
+  { id: "doty-giaquinto-2002" },
+  { id: "fileviezperez-ohmer-2017" },
+  { id: "alvarado-aranda-2018" },
+  { id: "crivellin-matias-2022" },
+  { id: "du1995weyl" },
+  { id: "du-fu-qschur-survey" },
+  { id: "lee-yang-1956" },
+  { id: "wu1957parity" },
+  { id: "kwiat2024" },
+  { id: "kuperberg1991g2" },
+  { id: "kuperberg1996spiders" },
+  { id: "erlijman-wenzl-2007" },
+  // 2026-11-15: arXiv sources ingested into library/ (epic qou-s4ws).
+  { id: "chamseddine-connes-2008-why-sm" },
+  { id: "chamseddine-connes-marcolli-2007" },
+  { id: "furey2018" },
+  { id: "li-zhou-zhou-2019" },
+  { id: "zhao-tang-wan-2021" },
+  { id: "zhao-wu-ababekri-2023" },
+  { id: "senjanovic2011" },
+  { id: "pati2017" },
+  { id: "rosso1988" },
+  { id: "milnor1950" },
+  // 2026-11-18: owner uploads Batch A ingested into library/ (commit 521b87dca7, epic qou-s4ws).
+  { id: "morton-2001-skein-murphy" },
+  { id: "morton-lukac-2001" },
+  { id: "lukac-2001" },
+  { id: "hadji-morton-2009" },
+  { id: "kauffman-lomonaco-2007" },
+  { id: "geer-patureau-mirand-turaev-2013" },
+  { id: "tubbenhauer-vaz-2023" },
+  { id: "dudek-edwards-thomas-2012" },
+  { id: "horsley-et-al-2012-octet-baryon" },
+  { id: "walker-loud-carlson-miller-2012" },
+  { id: "borsanyi-et-al-2015" },
+  { id: "gasser-hoferichter-leutwyler-rusetsky-2020" },
+  { id: "horsley-et-al-2016-qcd-qed" },
+  { id: "giusti-et-al-2017" },
+  { id: "bakshi-gupta-2020" },
+  // 2026-11-18: owner uploads Batch B (commit 521b87dca7) ingested into library/ (epic qou-s4ws).
+  { id: "walker-loud-2019" },
+  { id: "gasser-leutwyler-rusetsky-2020-epjc" },
+  { id: "gasser-leutwyler-rusetsky-2021" },
+  { id: "sutton-tubbenhauer-wedrich-zhu-2023" },
+  { id: "romiti-2022" },
+  { id: "can-qcdsf-2025" },
+  { id: "aiston-morton-1997" },
+  { id: "pimsner-popa-1986" },
+  { id: "kauffman-tlcat" },
+  { id: "geer-patureau-mirand-turaev-2009" },
+  { id: "lickorish1993skeins" },
+  { id: "jones2015vonneumann" },
 ];
 
 export const references: Reference[] = assemble(ORDER);

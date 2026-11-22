@@ -7,10 +7,11 @@ section_number: 1.2
 pages: 6-6
 source_pdf: 1305.7175v4.pdf
 source_sha256: 5a09955f4fb6a57e
-doc_brief: "NONLINEAR TRACES — W e combine the theory of traces in homotopical algebra with s heaf theory in de- rived algebraic geometry to deduce general ﬁxed point and ch aracter formulas."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.947
 latex_coverage_ratio: 1.0
+doc_brief: "NONLINEAR TRACES — We combine the theory of traces in homotopical algebra with sheaf theory in de- rived algebraic geometry to deduce general ﬁxed point and character formulas."
 ---
 This work has many inspirations. It is heavily reliant on the $\infty$-categorical foundations of higher algebra, derived algebraic geometry and sheaf theory due to Lurie [@HA; @SAG] and Gaitsgory-Rozenblyum [@GR]. It is also inspired by Lurie's cobordism hypothesis with singularities [@TFT], which provides a powerful unifying tool for higher algebra. Already in the setting of one-dimensional field theory, this result can be viewed as a vast generalization of the classical theory Hochschild and cyclic homology and characters therein [@Loday], (in particular the natural cyclic symmetry of Hochschild homology is generalized to a circle action on the dimensions of arbitrary dualizable objects). In particular, the formal properties of traces we use are simple instances of the cobordism hypothesis with singularities on marked intervals and cylinders. The work of Toën and Vezzosi [@TV] on traces and higher Chern characters of sheaves of categories (and in particular the role of the cobordism hypothesis therein) has also profoundly influenced our thinking.
 

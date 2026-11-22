@@ -11,4 +11,6 @@ $$
 
 *where $c^\nu_{\lambda_1, \ldots, \lambda_k}$ is the iterated Littlewood–Richardson coefficient.*
 
-This convolutional structure provides massive speedups. Computing the full atomic braid character normally requires intractable $H_{3A}$ seminormal matrices. By decomposing the canonical vacuum block into per-nucleon factors, we push the evaluation down to $H_3$ characters contracted against Schur structure constants.
+The bridge replaces one character computation in $H_n$ by a sum of products of characters in the parabolic factors $H_{n_i}$. For an $A$-nucleon braid that is $H_{3A}$ against $A$ copies of $H_3$, whose irreducible blocks have dimensions $1, 2, 1$; the cost of the right-hand side is then carried by the number of Littlewood–Richardson tuples contributing to $\nu$ rather than by $\dim V_\nu$. This block wires no computation, so no timing or complexity is claimed for either side.
+
+The coefficient $c^\nu_{\lambda_1, \ldots, \lambda_k}$ enters the identity as a *count*, not as a weight supplied by hand: restricting $V_\nu$ along the parabolic chain yields one copy of $V_{\lambda_1} \otimes \cdots \otimes V_{\lambda_k}$ per Littlewood–Richardson tableau, and the character is the sum over those copies. The displayed form follows by summing a constant over each copy set. The sum-over-copies is taken as a hypothesis and the displayed form is derived from it, so the two claims are kept apart.

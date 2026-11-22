@@ -347,6 +347,8 @@ def main():
         "recipe": "computations/probes/gg_ntower/preregistration.md (4544d19380)",
         "issue": 7727,
         "q0": Q_50_DIGIT_STR,
+        "q0Anchor": "proton",
+        "q0Value": Q_50_DIGIT_STR,
         "checks": checks,
         "results": results,
         "wall_seconds": int(time.time() - T0),

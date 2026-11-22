@@ -2,192 +2,102 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-0203206v1",
  "source_sha256": "371611f719e6f53c",
- "brief": "Representations of Algebraic Quantum Groups and Reconstruction Theorems for Tensor Categories — We give a pedagogical survey of those aspects of the abstract representation theory of quantum groups",
- "extended": "**Representations of Algebraic Quantum Groups and Reconstruction Theorems for Tensor Categories**\n\n*M. Müger, J. E. Roberts and L. Tuset*\n\n43 pp, 36 sections.\n\n**Abstract.** We give a pedagogical survey of those aspects of the abstract representation theory of quantum groups which are related to the Tannaka-Krein reconstruction prob lem. We show that every concrete semisimple tensor ∗-category with conjugates is equivalent to the category of ﬁ nite dimensional non-degenerate ∗- representations of a discrete algebraic quantum group. Wor king in the self-dual framework of algebraic quantum groups, we then relate this to earlier results of S. L . Woronowicz and S. Yamagami. We establish the relation between braidings and R-matrices in this context. Our approach emphasizes the role of the natural transformations of the embedding functor. Thanks t o the semisimplicity of our categories and the emphasis on representations rather than corepresentation s, our proof is more direct and conceptual than previous reconstructions.\n\n**Outline.** Abstract; 1 Introduction; 2.1 Tensor Categories; 2 Preliminaries; 2 For all X,Y,Z ∈ C the following diagram comm; 3 The following compositions are the identity ; 3 Nk; 1 For every pair ( i,j ) there are only ﬁnitel; 4 N 0; 5 If C is braided, cf. Section 6, then Nk; 2.2 Algebraic Quantum Groups; 2 The linear mappings T1,T 2 fromA ⊗A into M (; 1 (ε ⊗ι)(∆(a)(1 ⊗b)) = ab,; 2 (ι ⊗ε)(∆(a)(b ⊗ 1)) = ab,; 2.3 Discrete and Compact Case; 2 S2(a) = faf −1 ∀a ∈A,; 2.4 Examples; 3 Representation Theory",
+ "brief": "arXiv:math/0203206v1 [math.QA] 20 Mar 2002 — We give a pedagogical survey of those aspects of the abstract representation theory of quantum groups which are related to the Tannaka-Krein",
+ "extended": "**arXiv:math/0203206v1 [math.QA] 20 Mar 2002**\n\n*M. Müger, J. E. Roberts and L. Tuset*\n\n43 pp, 18 sections.\n\n**Abstract.** We give a pedagogical survey of those aspects of the abstract representation theory of quantum groups which are related to the Tannaka-Krein reconstruction problem. We show that every concrete semisimple tensor ∗-category with conjugates is equivalent to the category of ﬁnite dimensional non-degenerate ∗- representations of a discrete algebraic quantum group. Working in the self-dual framework of algebraic quantum groups, we then relate this to earlier results of S. L. Woronowicz and S. Yamagami. We establish the relation between braidings and R-matrices in this context. Our approach emphasizes the role of the natural transformations of the embedding functor. Thanks to the semisimplicity of our categories and the emphasis on representations rather than corepresentations, our proof is more direct and conceptual than previous reconstructions.\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries; 2.1 Tensor Categories; 2.2 Algebraic Quantum Groups; 2.3 Discrete and Compact Case; 2.4 Examples; 3 Representation Theory; 3.1 The Universal Corepresentation; 3.2 Representations vs. Corepresentations as T; 3.3 Conjugates for Representations and Corepre; 4 Cocommutative Algebraic Quantum Groups vs. C; 5 From Concrete Tensor Categories to Discrete ; 5.1 Natural Transformations of $*$-Preserving ; 5.2 Concrete Tensor $*$-Categories and Discret; 5.3 Conjugates and Antipodes: Discrete Quantum; 5.4 The Non-$*$ Case; 6 Concrete Braided and Symmetric Categories",
  "tokens": {
-  "brief": 49,
-  "extended": 385
+  "brief": 46,
+  "extended": 399
  },
  "sections": [
   {
-   "id": "sec-000-abstract",
-   "title": "Abstract",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-1"
   },
   {
-   "id": "sec-001-1-introduction",
+   "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-2"
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-2-preliminaries",
+   "title": "Preliminaries",
+   "pages": "3-3"
   },
   {
    "id": "sec-002-21-tensor-categories",
    "title": "Tensor Categories",
-   "pages": "2-3"
+   "pages": "3-6"
   },
   {
-   "id": "sec-003-2-preliminaries",
-   "title": "Preliminaries",
-   "pages": "3-4"
-  },
-  {
-   "id": "sec-004-2-for-all-xyz-c-the-following-diagram-commutes",
-   "title": "For all X,Y,Z ∈ C the following diagram commutes:",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-005-3-the-following-compositions-are-the-identity-mo",
-   "title": "The following compositions are the identity morphisms of F (X)",
-   "pages": "4-5"
-  },
-  {
-   "id": "sec-006-3-nk",
-   "title": "Nk",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-007-1-for-every-pair-ij-there-are-only-ﬁnitely-many",
-   "title": "For every pair ( i,j ) there are only ﬁnitely many k ∈ IC such that Nk",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-008-4-n-0",
-   "title": "N 0",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-009-5-if-c-is-braided-cf-section-6-then-nk",
-   "title": "If C is braided, cf. Section 6, then Nk",
-   "pages": "5-6"
-  },
-  {
-   "id": "sec-010-22-algebraic-quantum-groups",
+   "id": "sec-003-22-algebraic-quantum-groups",
    "title": "Algebraic Quantum Groups",
-   "pages": "6-6"
+   "pages": "6-9"
   },
   {
-   "id": "sec-011-2-the-linear-mappings-t1t-2-froma-a-into-m-a-a-s",
-   "title": "The linear mappings T1,T 2 fromA ⊗A into M (A ⊗A) such that",
-   "pages": "6-7"
-  },
-  {
-   "id": "sec-012-1-ε-ιa1-b-ab",
-   "title": "(ε ⊗ι)(∆(a)(1 ⊗b)) = ab,",
-   "pages": "7-7"
-  },
-  {
-   "id": "sec-013-2-ι-εab-1-ab",
-   "title": "(ι ⊗ε)(∆(a)(b ⊗ 1)) = ab,",
-   "pages": "7-9"
-  },
-  {
-   "id": "sec-014-23-discrete-and-compact-case",
+   "id": "sec-004-23-discrete-and-compact-case",
    "title": "Discrete and Compact Case",
-   "pages": "9-10"
+   "pages": "9-11"
   },
   {
-   "id": "sec-015-2-s2a-faf-1-a-a",
-   "title": "S2(a) = faf −1 ∀a ∈A,",
-   "pages": "10-11"
-  },
-  {
-   "id": "sec-016-24-examples",
+   "id": "sec-005-24-examples",
    "title": "Examples",
    "pages": "11-12"
   },
   {
-   "id": "sec-017-3-representation-theory",
+   "id": "sec-006-3-representation-theory",
    "title": "Representation Theory",
    "pages": "12-12"
   },
   {
-   "id": "sec-018-31-the-universal-corepresentation",
+   "id": "sec-007-31-the-universal-corepresentation",
    "title": "The Universal Corepresentation",
    "pages": "12-14"
   },
   {
-   "id": "sec-019-32-representations-vs-corepresentations-as-tenso",
-   "title": "Representations vs. Corepresentations as Tensor ∗-Categories",
+   "id": "sec-008-32-representations-vs-corepresentations-as-tenso",
+   "title": "Representations vs. Corepresentations as Tensor $*$-Categories",
    "pages": "14-17"
   },
   {
-   "id": "sec-020-2-s-η-βv-ξ-ξ-βv-η-ξη-k",
-   "title": "(S ⊗ (·,η ))βV (ξ) = ( ∗ ⊗ (ξ, ·))βV (η) ∀ξ,η ∈K,",
-   "pages": "17-17"
-  },
-  {
-   "id": "sec-021-33-conjugates-for-representations-and-corepresen",
+   "id": "sec-009-33-conjugates-for-representations-and-corepresen",
    "title": "Conjugates for Representations and Corepresentations",
-   "pages": "17-19"
+   "pages": "17-20"
   },
   {
-   "id": "sec-022-1-v-1-j-j-1-j-js2-ιv",
-   "title": "V (1 ⊗J ∗J) = (1 ⊗J ∗J)(S2 ⊗ι)V ,",
-   "pages": "19-19"
-  },
-  {
-   "id": "sec-023-2-v-corepf-a",
-   "title": "V ∈ Corepf (A, ∆) ,",
-   "pages": "19-20"
-  },
-  {
-   "id": "sec-024-4-cocommutative-algebraic-quantum-groups-vs-comp",
-   "title": "Cocommutative Algebraic Quantum Groups vs. Compact Group s",
+   "id": "sec-010-4-cocommutative-algebraic-quantum-groups-vs-comp",
+   "title": "Cocommutative Algebraic Quantum Groups vs. Compact Groups",
    "pages": "20-25"
   },
   {
-   "id": "sec-025-5-from-concrete-tensor-categories-to-discrete-qu",
-   "title": "From Concrete Tensor Categories to Discrete Quantum Group s",
+   "id": "sec-011-5-from-concrete-tensor-categories-to-discrete-qu",
+   "title": "From Concrete Tensor Categories to Discrete Quantum Groups",
    "pages": "25-25"
   },
   {
-   "id": "sec-026-51-natural-transformations-of--preserving-functo",
-   "title": "Natural Transformations of ∗-Preserving Functors",
+   "id": "sec-012-51-natural-transformations-of--preserving-functo",
+   "title": "Natural Transformations of $*$-Preserving Functors",
    "pages": "25-28"
   },
   {
-   "id": "sec-027-52-concrete-tensor--categories-and-discrete-quan",
-   "title": "Concrete Tensor ∗-Categories and Discrete Quantum Semigroups",
-   "pages": "28-30"
+   "id": "sec-013-52-concrete-tensor--categories-and-discrete-quan",
+   "title": "Concrete Tensor $*$-Categories and Discrete Quantum Semigroups",
+   "pages": "28-32"
   },
   {
-   "id": "sec-028-1-a",
-   "title": "(a),",
-   "pages": "30-30"
-  },
-  {
-   "id": "sec-029-2-let-a-m-a-as-aij-axixj-and-a-aij-ai-aj-we-ﬁnd",
-   "title": "Let a ∈M (A). As ∆( a)ij =aXi⊗Xj and (a ⊗a)ij =ai ⊗aj we ﬁnd",
-   "pages": "30-32"
-  },
-  {
-   "id": "sec-030-53-conjugates-and-antipodes-discrete-quantum-gro",
+   "id": "sec-014-53-conjugates-and-antipodes-discrete-quantum-gro",
    "title": "Conjugates and Antipodes: Discrete Quantum Groups",
    "pages": "32-36"
   },
   {
-   "id": "sec-031-54-the-non--case",
-   "title": "The Non- ∗ Case",
+   "id": "sec-015-54-the-non--case",
+   "title": "The Non-$*$ Case",
    "pages": "36-37"
   },
   {
-   "id": "sec-032-6-concrete-braided-and-symmetric-categories",
+   "id": "sec-016-6-concrete-braided-and-symmetric-categories",
    "title": "Concrete Braided and Symmetric Categories",
-   "pages": "37-37"
-  },
-  {
-   "id": "sec-033-1-ιr-r13r23",
-   "title": "(∆ ⊗ι)(R) = R13R23,",
-   "pages": "37-37"
-  },
-  {
-   "id": "sec-034-2-ι-r-r13r12",
-   "title": "(ι ⊗ ∆)( R) = R13R12,",
-   "pages": "37-41"
-  },
-  {
-   "id": "sec-035-references",
-   "title": "References",
-   "pages": "41-43"
+   "pages": "37-43"
   }
  ],
  "provenance": {

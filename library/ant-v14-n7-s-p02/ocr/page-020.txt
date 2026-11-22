@@ -1,0 +1,59 @@
+1730 David Jarossay
+
+2B2. The iteration of the harmonic Frobenius. As in Section 2A2, we move from discussing the Frobenius
+at (1, 0), in Section 2A2, to discussing the harmonic Frobenius. We first describe how the map iter! "
+
+depends on its parameters A and a.
+
+Definition 2B.4. For any d € N*, let t,,.<a : K (@oupy)) > K(eoupy) be the map which sends f =
+
+Vw word flwlw to Vw word, depth(w)<d flwlw.
+
+Proposition 2B.5. Let A, A, a be three formal variables. There exists a map
+iter!9(A, A,a): Ady, jc (€1) > K (eoupyLA, al(A), (2-2)
+
+such that, for any f € Ada, (xy (1) word w,a € N* such that a > depth(w) and i € K \ {0} which is
+not a root of unity, we have
+
+JC Pw] = iter!9(A, 0", a)( fw]
+
+iter,
+Proof. With the assumptions of the statement, let d = depth(w); knowing that g[@] = 1, dualizing the
+multiplication of the a factors in (1-17) gives
+
+weal ii— ii—
+iter,') (g)[w => > > grileg, (All VAd jeirt(e))e Ewa] X--+
+O<d'<d 0<i, <+++<igr<a—1 Wi, AB,..., Win ~D
+Wi Wi yy =W
+
+x gM Ne, EAM iy t(Ce))e)[Wi (2-3)
+
+We have assumed that a > d; let us thus separate the indices i; < d and i; > d:
+
+~ bw = yy yD
+
+O<d'<d 0<ij <--<ig<a-1_ 0d" <d!<d 0<ij <-<ign<d d<igny) <-<iy <a-1
+
+This yields an expression of (2-3), as a K-linear combination indexed by {(d",d')|0<d” <d'<d}x
+{deconcatenations of w in d’ nonempty subwords} which is independent of a but depends polynomially
+of 4, and with coefficients as well independent of a and polynomial functions of A, of the numbers
+
+DS Ae, A Ad giant (Ce) Wig] Xx (AE He0, (24! AD seigrt (Ce) EM Wigr]-
+d<iyn<+-<iy<a-1
+
+(2-4)
+Let «® = g® — 1 and € = gO! — 1. For 0 <ij <a—1, we have (where t,,<q is defined in
+Definition 2B.4)
+
+ij ij \.m’ m
+Ty, <a (Ad, ayi;-1(€)) = » (in Gin EE ‘eges"!
+
+mj wn! jen
+When i; > d, the collection of conditions hy Sli nce weunie x if m’, <ij,mj +m’, +1 < d} is equivalent
+to {mj,m’, ¢N, mj +m, +1 <d); thus, dualizing in (2-4) each factor g(A'i—!e, (AUT! Ad .ij-1 (€e))e)
+
+tells us that (2-4) is a linear combination, independent of a and i, of sums
+
+EEL n Nn)
+
+d<ign <-<iy'<a—1 j=d"

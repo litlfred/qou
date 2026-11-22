@@ -1,0 +1,31 @@
+Spiders for Rank 2 Lie Algebras 145
+
+Lemma 7.1. [fs is a segregated sign string and t* is another sign string of lower
+or incomparable weight, then a basis web w € B(st) has either a “U” or a “Y”
+attached to s.
+
+Proof. The proof is also similar to that of Lemma 6.5. We assume the minimal
+counterexample. First, the web w must be connected, for if a connected component
+meets ¢ but not s, it may be discarded to produce a smaller counterexample; if it
+meets s but not ¢, then it is a smaller counterexample; and if all components meet
+both s and ¢, then one of them must be a smaller counterexample. Second, there
+can be no “Y” or “H” attached at ¢, for otherwise they may be discarded to pro-
+duce a smaller counterexample. (Note that a “U” attached to ¢ has already been
+eliminated.)
+
+Since w is non-elliptic, the total exterior curvature is at least 360°. Since there
+is no “U,” “Y,” or “H” attached at ¢*, the total curvature along ¢ is at most 0°.
+Moreover, unless w is a bare strand (which is not a counterexample), the two arcs
+connecting s to ¢ have curvature at most 120°. By the hypothesis that s has no “Y,”
+the curvature in each segregated segment of S is at most 0° also. Finally, since s
+has no “U,” the curvature at the single arc connecting opposite signs of s is at most
+60°, for a total of at most 300°, a contradiction:
+
+By Lemma 7.1, if a web w € W(ss*) annihilates any “U” or “Y,” it satisfies
+the annihilation axiom of a clasp. Moreover, among terms in w, only f, (the web
+consisting solely of parallel strands) has the weight of s as its cut weight. Therefore
+all other terms are annihilated by such w, and the annihilation property implies that
+w is an idempotent under concatenation if the coefficient of the leading term B, is
+1. Given these facts, an argument by induction (see Wenzl [24] and Ohtsuki and
+Yamada [16]) establishes that
+

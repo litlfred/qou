@@ -9,15 +9,13 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Simplicial Sections",
-  "pageStart": 8,
-  "pageEnd": 10,
+  "title": "The Averaging Process",
+  "pageStart": 2,
+  "pageEnd": 8,
   "contains": [
-    "library/arxiv-math-0505170v2/blocks/prose-sec-001",
-    "library/arxiv-math-0505170v2/blocks/thm-sec-001-01",
-    "library/arxiv-math-0505170v2/blocks/cor-sec-001-02"
+    "library/arxiv-math-0505170v2/blocks/prose-sec-001"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0505170v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0505170v2",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0505170v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0505170v2/manifest.jsonld",
   "provenance": "ingested"
 }

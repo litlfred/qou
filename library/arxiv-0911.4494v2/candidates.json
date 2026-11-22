@@ -3,13 +3,14 @@
  "doc_id": "arxiv-0911.4494v2",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "1ba1c79686b12d984c69492e90a923ed7ca108d283c813d9b5d1a78791349226",
   "file": "0911.4494v2.pdf"
  },
  "provenance": {
-  "title": "The geometry of Markov traces Ben Webster Geordie Williamson",
-  "authors": "Department of Mathematics, Mathematical Institute",
+  "title": "The geometry of Markov traces",
+  "authors": "Ben Webster",
   "arxiv": {
    "id": "0911.4494",
    "version": "2",
@@ -20,184 +21,9 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 13,
-  "by_kind": {
-   "theorem": 7,
-   "remark": 2,
-   "proposition": 2,
-   "corollary": 2
-  },
-  "formalization_candidates": 11
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": null,
-   "name": null,
-   "statement": "The Jones-Ocneanu trace applied to the Kazhdan-Lusztig bas is element C \u2032",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-2",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": null,
-   "name": null,
-   "statement": "The geometrically de\ufb01ned trace Tr\u0393satis\ufb01es the following properties:",
-   "section_file": "sections/sec-001-2-hecke-algebras.md",
-   "section_title": "Hecke algebras",
-   "pages": "2-3",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": null,
-   "name": null,
-   "statement": "Any simple B \u00d7 B-equivariant perverse sheaf on G is B \u2206-equivariantly formal.",
-   "section_file": "sections/sec-001-2-hecke-algebras.md",
-   "section_title": "Hecke algebras",
-   "pages": "2-3",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "1",
-   "name": null,
-   "statement": "This is a stronger notion of a Markov trace than used by Geck-Lambropoulou,",
-   "section_file": "sections/sec-002-acknowledgments.md",
-   "section_title": "Acknowledgments",
-   "pages": "3-4",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "4",
-   "name": "See [Spr82]",
-   "statement": "The Hecke algebra H\u0393can be identi\ufb01ed with KB\u00d7B(G)0. Under this",
-   "section_file": "sections/sec-003-3-hecke-algebras-and-geometry.md",
-   "section_title": "Hecke algebras and geometry",
-   "pages": "4-9",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "6",
-   "name": null,
-   "statement": "The linear extension of the function Tr\u0393(C\u2032",
-   "section_file": "sections/sec-003-3-hecke-algebras-and-geometry.md",
-   "section_title": "Hecke algebras and geometry",
-   "pages": "4-9",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": null,
-   "name": null,
-   "statement": "De\ufb01nition 7. A simple perverse sheaf in D b",
-   "section_file": "sections/sec-004-5-character-sheaves-and-character-expansions.md",
-   "section_title": "Character sheaves and character expansions",
-   "pages": "9-11",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "proposition",
-   "source_kind": "proposition",
-   "number": "8",
-   "name": null,
-   "statement": "The weight \u031f\u03c7 of the character \u03c7 in Tr is",
-   "section_file": "sections/sec-004-5-character-sheaves-and-character-expansions.md",
-   "section_title": "Character sheaves and character expansions",
-   "pages": "9-11",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "proposition",
-   "source_kind": "proposition",
-   "number": "9",
-   "name": null,
-   "statement": "IfV,W are character sheaves and Ext\u2022",
-   "section_file": "sections/sec-004-5-character-sheaves-and-character-expansions.md",
-   "section_title": "Character sheaves and character expansions",
-   "pages": "9-11",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "10",
-   "name": null,
-   "statement": "Any unipotent character sheaf is G \u2206-equivariantly formal.",
-   "section_file": "sections/sec-004-5-character-sheaves-and-character-expansions.md",
-   "section_title": "Character sheaves and character expansions",
-   "pages": "9-11",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "corollary",
-   "source_kind": "corollary",
-   "number": "11",
-   "name": null,
-   "statement": "For any G and any w \u2208 W, the sheaf ICw is B\u2206-equivariantly formal.",
-   "section_file": "sections/sec-004-5-character-sheaves-and-character-expansions.md",
-   "section_title": "Character sheaves and character expansions",
-   "pages": "9-11",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "corollary",
-   "source_kind": "corollary",
-   "number": "13",
-   "name": null,
-   "statement": "For all characters \u03bd\u2208 \u02c6W, we have M \u03bd(q, t) = PV\u03bd(q, t). In particular, by",
-   "section_file": "sections/sec-005-6-character-sheaves-and-molien-series.md",
-   "section_title": "Character sheaves and Molien series",
-   "pages": "11-13",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "2",
-   "name": null,
-   "statement": "The above identi\ufb01cation of the cohomology of a character she af with a",
-   "section_file": "sections/sec-005-6-character-sheaves-and-molien-series.md",
-   "section_title": "Character sheaves and Molien series",
-   "pages": "11-13",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  }
- ]
+ "candidates": []
 }

@@ -8,6 +8,7 @@ pages: 14-14
 source_pdf: 2208.12678v4.pdf
 source_sha256: 406d36ff4968091d
 toc_source: outline
+doc_brief: "STATIONARY CURVES UNDER THE MÖBIUS-PLATEAU ENERGY — Plateau problems with elastic boundary energies have been of recent theoretical and applied interest."
 ---
 [BV18]
 Simon Blatt and Nicole Vorderobermeier, On the analyticity of critical points of the M¨obius energy, Calculus of

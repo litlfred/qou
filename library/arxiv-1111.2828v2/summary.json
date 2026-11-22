@@ -3,16 +3,21 @@
  "doc_id": "arxiv-1111.2828v2",
  "source_sha256": "90e2f5a9b978d403",
  "brief": "THE COMPLEX VOLUME OF SL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — For a compact 3-manifold M with arbitrary (possibly empty) boundary, we give a parametrization of the set of conjugacy classes of",
- "extended": "**THE COMPLEX VOLUME OF SL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS**\n\n*STA VROS GAROUF ALIDIS, DYLAN P. THURSTON, AND CHRISTIAN K. ZICKERT*\n\n44 pp, 27 sections.\n\n**Abstract.** For a compact 3-manifold M with arbitrary (possibly empty) boundary, we give a parametrization of the set of conjugacy classes of boundary -unipotent representations of π 1(M ) into SL(n, C). Our parametrization uses Ptolemy coordinates, which are i nspired by coordinates on higher Teichmüller spaces due to Fock and Goncharov. We sh ow that a boundary-unipotent representation determines an element in Neumann’s extende d Bloch group ˆB(C), and use this to obtain an eﬃcient formula for the Cheeger-Chern-Simons inv ariant, and in particular for the vol- ume. Computations for the census manifolds show that bounda ry-unipotent representations are abundant, and numerical comparisons with census volumes, s uggest that the volume of a represen- tation is an integral linear combination of volumes of hyper bolic 3-manifolds.\n\n**Outline.** 1 Introduction; 1.1 Statement of our results; 1.3 Overview of the paper; 1.4 Acknowledgment; 2 The Cheeger-Chern-Simons classes; 2.1 Simply connected, simple Lie groups; 2.2 Complex groups and volume; 2.3 The universal classes and group cohomology; 2.4 Compact manifolds with boundary; 2.5 Central elements of order 2; 3 The extended Bloch group; 3.1 The regulator; 4 Decorations of representations; 4.1 The fundamental class of a decorated repre; 5 Generic decorations and Ptolemy coordinates; 5.1 The geometry of the Ptolemy coordinates; 6 A chain complex of Ptolemy assignments; 6.1 The map to the extended Bloch group",
+ "extended": "**THE COMPLEX VOLUME OF SL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS**\n\n*STAVROS GAROUFALIDIS, DYLAN P. THURSTON, AND CHRISTIAN K. ZICKERT*\n\n44 pp, 31 sections.\n\n**Abstract.** For a compact 3-manifold M with arbitrary (possibly empty) boundary, we give a parametrization of the set of conjugacy classes of boundary-unipotent representations of π1(M) into SL(n, C). Our parametrization uses Ptolemy coordinates, which are inspired by coordinates on higher Teichmüller spaces due to Fock and Goncharov. We show that a boundary-unipotent representation determines an element in Neumann’s extended Bloch group bB(C), and use this to obtain an eﬃcient formula for the Cheeger-Chern-Simons invariant, and in particular for the vol- ume. Computations for the census manifolds show that boundary-unipotent representations are abundant, and numerical comparisons with census volumes, suggest that the volume of a represen- tation is an integral linear combination of volumes of hyperbolic 3-manifolds.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Statement of our results; 1.3 Overview of the paper; 1.4 Acknowledgment; 2 The Cheeger-Chern-Simons classes; 2.1 Simply connected, simple Lie groups; 2.2 Complex groups and volume; 2.3 The universal classes and group cohomology; 2.4 Compact manifolds with boundary; 2.5 Central elements of order 2; 3 The extended Bloch group; 3.1 The regulator; 3.3 Arbitrary fields; 4 Decorations of representations; 4.1 The fundamental class of a decorated repre; 5 Generic decorations and Ptolemy coordinates; 5.1 The geometry of the Ptolemy coordinates",
  "tokens": {
   "brief": 48,
-  "extended": 408
+  "extended": 394
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-4"
+   "pages": "2-4"
   },
   {
    "id": "sec-001-11-statement-of-our-results",
@@ -70,77 +75,92 @@
    "pages": "12-13"
   },
   {
-   "id": "sec-012-4-decorations-of-representations",
+   "id": "sec-012-33-arbitrary-fields",
+   "title": "Arbitrary fields",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-013-4-decorations-of-representations",
    "title": "Decorations of representations",
    "pages": "13-14"
   },
   {
-   "id": "sec-013-41-the-fundamental-class-of-a-decorated-represen",
+   "id": "sec-014-41-the-fundamental-class-of-a-decorated-represen",
    "title": "The fundamental class of a decorated representation",
    "pages": "14-15"
   },
   {
-   "id": "sec-014-5-generic-decorations-and-ptolemy-coordinates",
+   "id": "sec-015-5-generic-decorations-and-ptolemy-coordinates",
    "title": "Generic decorations and Ptolemy coordinates",
    "pages": "15-16"
   },
   {
-   "id": "sec-015-51-the-geometry-of-the-ptolemy-coordinates",
+   "id": "sec-016-51-the-geometry-of-the-ptolemy-coordinates",
    "title": "The geometry of the Ptolemy coordinates",
-   "pages": "16-18"
+   "pages": "16-17"
   },
   {
-   "id": "sec-016-6-a-chain-complex-of-ptolemy-assignments",
+   "id": "sec-017-53-cross-ratios-and-flattenings",
+   "title": "Cross-ratios and flattenings",
+   "pages": "17-18"
+  },
+  {
+   "id": "sec-018-6-a-chain-complex-of-ptolemy-assignments",
    "title": "A chain complex of Ptolemy assignments",
    "pages": "18-19"
   },
   {
-   "id": "sec-017-61-the-map-to-the-extended-bloch-group",
+   "id": "sec-019-61-the-map-to-the-extended-bloch-group",
    "title": "The map to the extended Bloch group",
    "pages": "19-20"
   },
   {
-   "id": "sec-018-62-stabilization",
+   "id": "sec-020-62-stabilization",
    "title": "Stabilization",
    "pages": "20-22"
   },
   {
-   "id": "sec-019-7-independence-of-the-decoration",
+   "id": "sec-021-7-independence-of-the-decoration",
    "title": "Independence of the decoration",
    "pages": "22-26"
   },
   {
-   "id": "sec-020-9-recovering-a-representation-from-its-ptolemy-c",
+   "id": "sec-022-9-recovering-a-representation-from-its-ptolemy-c",
    "title": "Recovering a representation from its Ptolemy coordinates",
    "pages": "26-34"
   },
   {
-   "id": "sec-021-92-proof-of-theorem-13-and-theorem-18",
+   "id": "sec-023-92-proof-of-theorem-13-and-theorem-18",
    "title": "Proof of Theorem 1.3 and Theorem 1.8",
    "pages": "34-35"
   },
   {
-   "id": "sec-022-10-examples",
+   "id": "sec-024-10-examples",
    "title": "Examples",
-   "pages": "35-40"
+   "pages": "35-39"
   },
   {
-   "id": "sec-023-111-essential-edges",
+   "id": "sec-025-11-the-irreducible-representations-of-3942613a45",
+   "title": "The irreducible representations of `39`42`\"613A``45`47`\"603ASL(2,C)",
+   "pages": "39-40"
+  },
+  {
+   "id": "sec-026-111-essential-edges",
    "title": "Essential edges",
    "pages": "40-41"
   },
   {
-   "id": "sec-024-12-gluing-equations-and-ptolemy-assignments",
+   "id": "sec-027-12-gluing-equations-and-ptolemy-assignments",
    "title": "Gluing equations and Ptolemy assignments",
    "pages": "41-42"
   },
   {
-   "id": "sec-025-13-other-fields",
+   "id": "sec-028-13-other-fields",
    "title": "Other fields",
    "pages": "42-42"
   },
   {
-   "id": "sec-026-references",
+   "id": "sec-029-references",
    "title": "References",
    "pages": "42-44"
   }

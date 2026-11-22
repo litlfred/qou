@@ -1,0 +1,1 @@
+Let D be a non-empty subset of Z/dZ and let XD be the corresponding solution of the E–system. If 0 /∈D, then the invariants obtained from CTLd,n(q) coincide with the invariants obtained from Yd,n(q). If 0 ∈D, then the invariants obtained from CTLd,n(q) coincide witht the invariants obtained from FTLd,n(q).

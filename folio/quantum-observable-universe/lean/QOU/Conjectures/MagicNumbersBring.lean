@@ -25,7 +25,7 @@ LaTeX label: `conj:magic-numbers-bring`
 
 ## References
 
-- [manuscript] §"Magic numbers from Bring's surface"
+- [leitner2026] §"Magic numbers from Bring's surface"
 - [klein1888] Klein, classification of S₅-stable sub-lattices on Bring's curve
 -/
 

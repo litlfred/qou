@@ -1,0 +1,46 @@
+COMBINATORIAL SCALAR CURVATURE 59
+
+interior (though the boundary may be polyhedral). The conformality of the
+structure means that there are Euclidean (resp. hyperbolic) balls centered
+at the vertices of TJ, such that the radius of the ball B, centered at v is
+equal to ry. Two of such balls B, and B, are tangent whenever v and w
+share an edge, and Theorem 5.1 tells us:
+
+Theorem 6.1. Let M® be a Euclidean (hyperbolic) 3-manifold with poly-
+hedral boundary. A ball packing whose nerve is a triangulation T of M is
+cannot be deformed (except by rescaling in the Euclidean case) while keeping
+the solid angles at the boundary of M fixed.
+
+Note. If M is aclosed manifold the clause following “while’ is vacuous. The
+theorem says that the sets of structures corresponding to ball-packings are
+discrete subsets of C; and Cy respectively.
+
+A particularly simple example of a Euclidean manifold with boundary
+is a polyhedron in R”. Since one can always stereographically project the
+sphere S” onto R” in such a way that n + 1 mutually tangent spheres go
+to spheres all of radius one (as observed in [2]), the above theorem implies:
+
+Theorem 6.2. The geometry of ball-packing of the sphere S? whose nerve
+is a triangulation T is rigid up to Mobius transformations.
+
+7. Remarks and questions
+
+The results above can be viewed as generalizing of the work of Colin
+de Verdiére [2] to higher dimensions. A rather difficult problem (perhaps
+intractable in dimension greater than 3) is obtaining any sort of existence
+results. It is known that no analogue of the results in two dimensions
+(that any triangulation of a surface is the nerve a circle packing) exists
+(see [4]), but no characterization is known. Indeed, it is not obvious to
+the authors that there is an infinite family of ball-packings of $3. Nor is
+it obvious that every hyperbolic manifold admits even one ball-packing. A
+characterization of those Euclidean 3 manifolds (even those homeomorphic
+to the torus T?) which admit ball-packings is also somewhat elusive (the
+results above indicate that only a countable family of metrics on T? can be
+packed by balls).
+
+The hypothesis in sections 5 and 6 requiring M* to be a manifold is
+clearly too strong — almost any semi-simplicial complex works just as well,
+though there are some degenerate examples, like two simplices joined at
+the vertices only. A necessary and sufficient condition is that if, for each
+connected component of M we form a graph G7, whose vertices are top-
+dimensional faces of T and such that two vertices are joined by an edge

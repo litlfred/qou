@@ -1,0 +1,45 @@
+Canonical triangulations 1279
+
+slope s out of the fiber at the corresponding level. (These are exactly the closed curves
+whose length was estimated in Section 10.) The resulting drilled bundle turns out to be
+an n—fold cyclic cover of the Borromean rings complement, with volume 2nvg .
+
+We can recover V, by Dehn filling the extra cusps of the drilled bundle. Because
+volume goes down under Dehn filling, Vol(V,,) < 2nvg. If we pick a word 2 with very
+long syllables, as in Section 10, the resulting bundle V,, has volume arbitrarily close to
+the volume of this surgery parent. Oo
+
+Corollary B.2 Let V, be a 4—punctured sphere bundle defined by the cyclic word
+OQ = ROL... R&L?, Then
+
+4nv3 < Vol(V,) < 4nvg.
+
+B.2 Volume estimates for links
+
+The volumes of link complements can also be estimated in terms of diagrams. We
+say that a link diagram D is reduced if no single crossing separates D. Its twist
+number tw(D) is the number of equivalence classes of crossings, where two crossings
+are considered equivalent if there is a loop in the projection plane intersecting D
+transversely precisely in the two crossings. When the diagram D depicts a two-bridge
+link constructed from a braid, as in Figure 13, tw(D) is precisely the number of syllables
+of the word 2) describing the braid.
+
+Theorem B.3_ Let D be a reduced alternating diagram of a hyperbolic two-bridge link
+K. Then
+2v3 tw(D) — 2.7066 < Vol(S3\K) < 2vg(tw(D) — 1).
+
+The upper bound is sharp, and the lower bound is asymptotically sharp.
+
+There are known diagrammatic volume bounds for the general class of alternating
+links. On the lower side, Agol, Storm, and W Thurston proved that the volume of
+an alternating link is at least 4 (tw(D) — 2) [3], improving an earlier bound due to
+Lackenby [14]. On the upper side, Agol and D Thurston proved an asymptotically sharp
+bound of 10v3(tw(D) — 1) [14, Appendix]. Numerically, Theorem B.3 improves the
+multiplicative constant in the lower bound from 1.8312 to 2.0299 and the multiplicative
+constant in the upper bound from 10.1494 to 7.3277 (in the special case of 2—bridge
+links).
+
+Compared to its predecessors, Theorem B.3 is less general, but uses only very elementary
+methods. The proof in [3] relies in a fundamental way on Perelman’s results about the
+
+Geometry & Topology 10 (2006)

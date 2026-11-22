@@ -3,6 +3,8 @@
  "issue": 7777,
  "q0_pin": "proton",
  "q0": "1.1099785827513808075916690956107688798744991218736",
+ "q0Anchor": "proton",
+ "q0Value": "1.1099785827513808075916690956107688798744991218736",
  "R3_survivors": {
   "R3a_V": {
    "annihilate e0 on the right": {
@@ -1275,5 +1277,5 @@
   "P2_pair_closure_identities": true,
   "P3_one_sided_ideals": true
  },
- "wall_seconds": 11.3
+ "elapsed_sec": 6.7
 }

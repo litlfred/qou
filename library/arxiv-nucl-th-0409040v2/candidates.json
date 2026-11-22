@@ -3,13 +3,14 @@
  "doc_id": "arxiv-nucl-th-0409040v2",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "986093ee95b94b241d0bd0147d8769ea42a3c23486c9a8d849af0d5155d7f9a2",
   "file": "0409040v2.pdf"
  },
  "provenance": {
-  "title": "On the correlation between the binding energies of the trito n and the \u03b1-particle L. Platter \u2217",
-  "authors": "Forschungszentrum J\u00a8 ulich, Institut f\u00a8 ur Kernphysik, D-52425 J\u00a8 ulich, Germany and",
+  "title": "On the correlation between the binding energies of the triton and the alpha-particle",
+  "authors": "L. Platter\u2217",
   "arxiv": {
    "id": "nucl-th/0409040",
    "version": "2",
@@ -20,9 +21,67 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
-  "formalization_candidates": 0
+  "candidates": 2,
+  "by_kind": {
+   "proposition": 2
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 2
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 2
+  },
+  "by_evidence_location": {
+   "in-paper": 2
+  }
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "Our results agree with the (Coulomb corrected) experimental value Bexp \u03b1 = (29.0\u00b10.1) MeV to within 10%.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-front-matter.md (p. 1-6)",
+   "external_refs": [],
+   "quantitative_values": [
+    "29.0\u00b10.1"
+   ],
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-6",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-front-matter.md (p. 1-6)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-front-matter-01",
+   "block_iri": "library/arxiv-nucl-th-0409040v2/blocks/prop-sec-front-matter-01",
+   "claim_id": "arxiv-nucl-th-0409040v2#prop-sec-front-matter-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "Our results are in good agreement with the experimental value and agree within the expected error bounds given by an estimate of higher order contributions.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-front-matter.md (p. 1-6)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-6",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-front-matter.md (p. 1-6)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-front-matter-02",
+   "block_iri": "library/arxiv-nucl-th-0409040v2/blocks/prop-sec-front-matter-02",
+   "claim_id": "arxiv-nucl-th-0409040v2#prop-sec-front-matter-02"
+  }
+ ]
 }

@@ -9,13 +9,15 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Arithmetic and Comparison Operators",
-  "pageStart": 16,
-  "pageEnd": 17,
+  "title": "Quantification",
+  "pageStart": 14,
+  "pageEnd": 15,
   "contains": [
-    "library/arxiv-1603.06017v2/blocks/prose-sec-018"
+    "library/arxiv-1603.06017v2/blocks/prose-sec-018",
+    "library/arxiv-1603.06017v2/blocks/figure-img-p015-1",
+    "library/arxiv-1603.06017v2/blocks/figure-img-p015-2"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1603.06017v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1603.06017v2",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1603.06017v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1603.06017v2/manifest.jsonld",
   "provenance": "ingested"
 }

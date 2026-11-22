@@ -108,7 +108,7 @@ and there is no value to instantiate. A file of that name would have to
 contradict §4 of this one.
 
 Ref: [habiro2004] https://doi.org/10.2140/gt.2004.8.1127
-Ref: [manuscript] conj:binding-manybody-eq-jet-filtration
+Ref: [leitner2026] conj:binding-manybody-eq-jet-filtration
 -/
 
 open Finset Polynomial

@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-9907032v1
-doc_title: "arXiv:math/9907032v1 [math.GT] 6 Jul 1999"
+doc_title: "Combinatorial optimization in geometry"
 section_id: sec-002-11-singular-similarity-structures
 section_title: "Singular similarity structures."
 section_number: 1.1
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.959
 latex_coverage_ratio: 0.995
+doc_brief: "Combinatorial optimization in geometry (Rivin) — extends and unifies results on ideal polyhedra in H³ to singular Euclidean structures on surfaces, possibly with infinitely many singularities."
 ---
 Consider an oriented surface $S$, possibly with boundary, and with a number of distinguished points $\{p_1, \ldots, p_n\}$. A *similarity structure* on $S$ is given by an atlas for $S
 \backslash \{p_1, \ldots, p_n\}$, such that the transition maps are Euclidean similarities. A similarity structure induces a holonomy representation $H_s$ of $\Gamma = \pi_1(S \backslash \{p_1, \ldots,

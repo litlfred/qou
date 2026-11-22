@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/agt-v7-n2-p13-s/sections/sec-022",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Example: the figure-eight knot complement",
+  "pageStart": 64,
+  "pageEnd": 71,
+  "contains": [
+    "library/agt-v7-n2-p13-s/blocks/prose-sec-022",
+    "library/agt-v7-n2-p13-s/blocks/rem-sec-022-01",
+    "library/agt-v7-n2-p13-s/blocks/rem-sec-022-02",
+    "library/agt-v7-n2-p13-s/blocks/rem-sec-022-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/agt-v7-n2-p13-s/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/agt-v7-n2-p13-s/manifest.jsonld",
+  "provenance": "ingested"
+}

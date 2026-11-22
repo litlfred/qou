@@ -45,7 +45,7 @@ where collapse itself was assumed — given the grading, collapse now follows.
 the result is available over `R_q = ℤ[q, q⁻¹]`, where the corpus actually
 works, and not only after specialising to `ℝ`.
 
--- Ref: [manuscript] quantum-observable-universe/qbeta
+-- Ref: [leitner2026] quantum-observable-universe/qbeta
 -/
 
 namespace QOU.Mathlib.BarGradedCollapse

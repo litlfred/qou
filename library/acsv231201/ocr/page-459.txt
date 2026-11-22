@@ -1,0 +1,43 @@
+A.1 Manifolds 441
+
+are smooth as functions on R¢ (this holds trivially when UN V = 0), and we
+call M a real d-manifold if there exists a collection of pairwise-compatible
+charts of dimension d that cover M. Any additional charts that are compatible
+with the charts defining a manifold must also be compatible with each other, so
+any collection of charts covering a manifold is contained in a uniquely defined
+maximal set of compatible charts, known as an atlas. This makes some of the
+notation easier by allowing us to assume that for any given p € M there is a
+chart map taking p to the origin in R%, since we can always subtract a constant
+from a chart map to obtain another chart map.
+
+Example A.5 (real projective d-space). Let M = (rR \0) / (a + Az) de-
+note the set of non-zero vectors modulo non-zero scalar multiples, which can
+be identified with the set of lines through the origin in R“*!. It is conventional
+to write an element of M as (xo : x1 : 2X2 : ++: : Xa), With the colons in
+place of commas indicating that multiplying every coordinate by a non-zero
+real number gives a different representation for the same element. For each
+O<a<dlet Uy, ={a¢ M: Xq # 0}, and define chart maps ¢y : Us > R¢
+by ¢a(x) := (xj/Xe)j4a- This defines the manifold RP“ of real projective d-
+space. 4
+
+Recall from Section 8.2 that if Q is a polynomial in x,...,xy of total de-
+gree m then the homogenization of Q is the polynomial Ox, *1, veeyXq) =
+XG O(x1/x0,.--,Xa/Xo) in Xo, X1,---,Xa- Because every monomial appearing in
+@ has degree m by construction, Q(x) = A’”Q(a) and the zero set of Q in
+R@ is closed under scalar multiples. Thus, Q defines a real projective variety
+Vo =(x@e RP“! : Ox) = 0).
+
+Exercise A.2. Let Q(a) = 1 — x* — y*. (1) What subset of R? is the union
+of equivalence classes making up the real projective variety Vo? (2) Is the
+projective variety Vo a manifold? (3) Intuitively, what simple shape is Vo
+equivalent to?
+
+A complex d-manifold is defined analogously to a real d-manifold, except
+that the chart maps go to C@ and the transition maps between charts need to
+be holomorphic. Analytic functions from C“ to C4 are smooth when viewed as
+maps from R* to R™4, so all complex d-manifolds may be viewed as real (2d)-
+manifolds. We also define the complex projective d-space CP“ analogously to
+real projective space and, overloading notation, use Vo to denote the complex
+projective variety defined by a polynomial Q. When writing Vo, we make sure
+it is understood whether we are referring to the real or complex projectiviza-
+tion.

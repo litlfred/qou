@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 0111205v1.pdf
 source_sha256: 66325a21651aff89
 toc_source: inferred
+doc_brief: "arXiv:math/0111205v1 [math.CT] 19 Nov 2001 — For every tensor category C there is a braided tensor category Z(C), the ‘center’ of C."
 ---
 arXiv:math/0111205v1  [math.CT]  19 Nov 2001
 From Subfactors to Categories and Topology II.
@@ -48,5 +49,4 @@ category C with the braiding ˜cX,Y = c−1
 Y,X.
 ∗Supported by EU through the TMR Networks “Noncommutative Geometry” and “Algebraic Lie Represen-
 tations”, by MSRI through NSF grant DMS-9701755 and by NWO.
-1
 1

@@ -90,7 +90,7 @@ the matrix/Hecke machinery this argument does not use.
 - [birman1974] J. Birman, *Braids, Links, and Mapping Class Groups*,
   Annals of Mathematics Studies 82, Princeton (1974) — §1.2 for the
   natural surjection `Bₙ ↠ Sₙ` and §2.2 for the closure.
-- [manuscript] `docs/audits/2026-08-21-deuteron-knot-assignment-adjudication.md`
+- [leitner2026] `docs/audits/2026-08-21-deuteron-knot-assignment-adjudication.md`
 -/
 
 namespace QOU.BraidsAndKnots

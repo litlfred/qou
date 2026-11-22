@@ -1,0 +1,80 @@
+hence ul/u2 = v1/v2
+using complez-eqI by blast
+thus False
+using wv (7 (ul, u2) %y (v1, v2)»
+using *(1) *«(2) complex-cvec-eq-mix[OF *(1) *(2)]
+by (auto simp add: field-simps)
+qed
+
+moreover
+
+have Re Al #0 V Re B1 01 V ImB1 40
+using <?H1 4 mat-zeroy **
+by (metis complex-cnj-zero complez-of-real-Re mat-zero-def of-real-0)
+
+ultimately
+
+obtain k where
+k: Re A2 =k * Re Al Re B2 = k * Re B1 Im B2 =k * Im B1
+using linear-system-homogenous-3-2[of Ax y z. 1 * + Re (ul / u2) * y+ Im (ul / u2) * z1 Re (ul/u2) Im
+(ul /u2)
+Avy z. 1 * «a+ Re (vl / v2) * y+ Im (vl / v2) * 21 Re (v1/v2) Im (v1/v2)
+Re A2 Re B2 Im B2 Re Al Re B1 Im B1|
+by (auto simp add: field-simps)
+
+have Re A2 40 V Re B2 40V Im B2 40
+
+using <?H2 # mat-zero» **
+
+by (metis complex-cnj-zero complez-of-real-Re mat-zero-def of-real-0)
+hence k 4 0
+
+using k
+
+by auto
+
+show circline-eq-cmat ?H1 ?H2
+using ** k «k 4 0»
+by (auto simp add: vec-cnj-def) (rule-tac s=k in exI, auto simp add: complex.expand)
+qed
+qed
+qed
+
+The only h-line that goes trough zero and a non-zero point on the x-axis is the x-axis.
+
+lemma is-poincare-line-0-real-is-x-axis:
+assumes is-poincare-line | 0; € circline-set |
+x € circline-set 1M circline-set x-aris x # On © A On
+shows | = z-axis
+using assms
+using is-poincare-line-trough-zero-trough-infty|OF assms(1—2)|
+using unique-circline-set[of x On con)
+by auto
+
+The only h-line that goes trough zero and a non-zero point on the y-axis is the y-axis.
+lemma is-poincare-line-0-imag-is-y-axis:
+
+assumes is-poincare-line | 0; € circline-set |
+
+y € circline-set 1 circline-set y-aris y # On y # On
+
+shows | = y-axis
+
+using assms
+
+using is-poincare-line-trough-zero-trough-infty|OF assms(1—2)|
+
+using unique-circline-set[of y On oon]
+
+by auto
+
+4.1.6 H-isometries preserve h-lines
+
+H-isometries are defined as homographies (actions of Mébius transformations) and antihomographies (compo-
+sitions of actions of Mébius transformations with conjugation) that fix the unit disc (map it onto itself). They
+also map h-lines onto h-lines
+
+We prove a bit more general lemma that states that all Mébius transformations that fix the unit circle (not
+necessary the unit disc) map h-lines onto h-lines
+
+14

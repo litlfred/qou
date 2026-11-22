@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/cherednik1991-kz-dunkl/sections/page-014",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Page 14",
+  "pageStart": 14,
+  "pageEnd": 14,
+  "contains": [
+    "library/cherednik1991-kz-dunkl/blocks/prose-page-014",
+    "library/cherednik1991-kz-dunkl/blocks/thm-page-014-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/cherednik1991-kz-dunkl/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/cherednik1991-kz-dunkl/manifest.jsonld",
+  "provenance": "ingested"
+}

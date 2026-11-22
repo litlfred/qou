@@ -84,4 +84,3 @@ group between tensor powers of the fundamental representation, to apply our uniq
 theorem.
 16
 C. PINZARI
-5.

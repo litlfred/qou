@@ -14,7 +14,7 @@ It is also functorial: `reidx e' · reidx e = reidx (e.trans e')` and `reidx (re
 
 Sorry-free.
 
--- Ref: [manuscript] beans/defs/qou-zoyv (stage S2)
+-- Ref: [leitner2026] beans/defs/qou-zoyv (stage S2)
 -/
 
 noncomputable section

@@ -70,7 +70,7 @@ numeric target, positive coefficients).
 
 ## References
 
-- [manuscript] §mass-theory/binding-manybody-jet-filtration (`conj:binding-manybody-eq-jet-filtration`)
+- [leitner2026] §mass-theory/binding-manybody-jet-filtration (`conj:binding-manybody-eq-jet-filtration`)
 - [milnor1954] https://doi.org/10.2307/1969685  (Milnor link invariants; Brunnian μ̄₁₂₃)
 -/
 import Mathlib.Tactic

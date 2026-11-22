@@ -20,7 +20,7 @@ commutation or to the retraction `𝔡_{n+1} ∘ ℓ_n = id`.*
 The Lean encoding records the four identities as a `Prop`-valued
 conjunction against an abstract `CcgCosimplicialIdentitiesContext`.
 
--- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.md
+-- Ref: [leitner2026] quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.md
 -/
 
 namespace QOU.LiftingDescent
@@ -61,7 +61,7 @@ class CcgCosimplicialIdentitiesContext where
 /-- **Cosimplicial identities** ([`def:ccg-cosimplicial-identities`]).
 
     Two main identities (face-face, degeneracy-degeneracy). -/
--- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.md
+-- Ref: [leitner2026] quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.md
 def ccg_cosimplicial_identities
     [ctx : CcgCosimplicialIdentitiesContext] (n i j : ℕ) (x : ctx.Obj n) (y : ctx.Obj (n + 2)) :
     -- Face-face: `δʲ ∘ δⁱ = δⁱ ∘ δ^{j−1}` for `i < j`.

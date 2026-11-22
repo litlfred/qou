@@ -1,0 +1,1 @@
+Let p ∈{2, 3}. Let G be a ﬁnite group and let B be a p-block of G with a nontrivial normal defect group D. Then |Irr0(B)σ1| = p if, and only if, D is cyclic. In particular, Conjecture B follows from the Alperin–McKay–Navarro conjecture.

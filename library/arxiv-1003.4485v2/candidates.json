@@ -3,13 +3,14 @@
  "doc_id": "arxiv-1003.4485v2",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "714d73873cecd73a2d14ff1661b6ab778124421222b1ec3990acc3f0448a67f0",
   "file": "1003.4485v2.pdf"
  },
  "provenance": {
-  "title": "email: baez@math.ucr.edu huerta@math.ucr.edu",
-  "authors": "March 24, 2010",
+  "title": "An Invitation to Higher Gauge Theory",
+  "authors": "John C. Baez and John Huerta",
   "arxiv": {
    "id": "1003.4485",
    "version": "2",
@@ -20,91 +21,9 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 6,
-  "by_kind": {
-   "theorem": 5,
-   "lemma": 1
-  },
-  "formalization_candidates": 6
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "1",
-   "name": null,
-   "statement": "For any Lie group G and any smooth manifold M , there is a",
-   "section_file": "sections/sec-001-2-categories-and-connections.md",
-   "section_title": "Categories and Connections",
-   "pages": "3-11",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "1",
-   "name": null,
-   "statement": "says this is almost all there is to being a connection. The on ly",
-   "section_file": "sections/sec-001-2-categories-and-connections.md",
-   "section_title": "Categories and Connections",
-   "pages": "3-11",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": null,
-   "name": null,
-   "statement": "There is a one-to-one correspondence between smooth functo rs",
-   "section_file": "sections/sec-001-2-categories-and-connections.md",
-   "section_title": "Categories and Connections",
-   "pages": "3-11",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": null,
-   "name": null,
-   "statement": "For any Lie 2-group G and any smooth manifold M , there is a",
-   "section_file": "sections/sec-002-3-2-categories-and-2-connections.md",
-   "section_title": "2-Categories and 2-Connections",
-   "pages": "11-14",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "2",
-   "name": null,
-   "statement": "Given a crossed module (G, H, t, \u03b1), there is a unique 2-group G",
-   "section_file": "sections/sec-004-33-2-groups.md",
-   "section_title": "2-Groups",
-   "pages": "15-21",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "3",
-   "name": null,
-   "statement": "For any Lie 2-group G and any smooth manifold M , there is a",
-   "section_file": "sections/sec-005-34-2-connections.md",
-   "section_title": "2-Connections",
-   "pages": "21-27",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  }
- ]
+ "candidates": []
 }

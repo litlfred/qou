@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1508.05448v1/sections/sec-031",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Patience Sorting",
+  "pageStart": 112,
+  "pageEnd": 115,
+  "contains": [
+    "library/arxiv-1508.05448v1/blocks/prose-sec-031",
+    "library/arxiv-1508.05448v1/blocks/figure-img-p115-1"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1508.05448v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1508.05448v1/manifest.jsonld",
+  "provenance": "ingested"
+}

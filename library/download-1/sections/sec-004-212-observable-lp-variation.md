@@ -8,7 +8,9 @@ pages: 5-6
 source_pdf: Download (1).pdf
 source_sha256: bbb001c909958e8a
 toc_source: inferred
+doc_brief: "Central and L p -concentration of 1-Lipschitz maps into R -trees — In this paper, we study the Le´vy-Milman concentration phenomenon of 1-Lipschitz maps from mm-spaces to R-trees."
 ---
+Observable Lp-variation.
 Let ðX; dX; XÞ be an mm-space and ðY ; dY Þ a metric space. Given a Borel
 measure  on Y and p 2 ð0; þ1Þ, we put
 VpðÞ :¼
@@ -42,4 +44,3 @@ See [3, Subsection 2.4] for the relationships between the observable diameter
 Central and Lp-concentration of 1-Lipschitz maps into R-trees
 487
 and the observable Lp-variation.
-2.2.

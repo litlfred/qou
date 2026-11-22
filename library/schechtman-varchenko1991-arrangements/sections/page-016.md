@@ -1,0 +1,70 @@
+---
+doc_id: schechtman-varchenko1991-arrangements
+doc_title: "Arrangements of hyperplanes and Lie algebra homology"
+section_id: page-016
+section_title: "Page 16"
+pages: 16-16
+pdf_page: 16
+source_pdf: schechtman-varchenko1991-arrangements.pdf
+source_sha256: 0100fd32438740f0
+text_source: ocr
+granularity: page
+doc_brief: "Arrangements of hyperplanes and Lie algebra homology — 56 sections: Page 1; Page 2; Page 3"
+---
+154 V.V. Schechtman and A.N. Varchenko
+
+3.8 Corollary. Put
+
+N
+(3.8.1) det S*(a)= [] (det S?(a)— *"”.
+p=0
+Then
+(3.8.2) det S'(a)=Const-[] a(L)°**
+L
+
+where the product is taken over all edges of @.
+
+This formula should be compared with [V, Theorem 1.1]. The proof of
+3.7 will occupy the rest of the section. It will consist of three steps.
+
+3.9 Step I. S and Laplace operators
+
+Let @ be a central arrangement with a unique vertex v in V=C.
+
+Matrix elements of S%(a) are homogeneous degree N polynomials in a(H).
+In this n° we’ll show that S%(a) may be decomposed into a product of N opera-
+tors whose matrix elements are linear in a(H). (In fact, each framing of @ induces
+such a decomposition.) These last operators have remarkable form (Const —
+Laplace operator).
+
+Choose HypeG
+
+3.9.1 Lemma. The rectangle
+
+SN-'(@ a)
+FN 1G) A" "(Gy,)
+(2.5.2) {: |:
+F*"(6; Ho) AN-'(6; Ho)
+(2.5.3) |: SN (6) lien
+
+FN@) AN)
+
+commutes. Here the right vertical arrow is the restriction of (—1)%~‘d:
+AN*(6) > A (@) to AX! (6; Hy) A '(@).
+Proof. Follows immediately from (3.2.3). 1
+
+Now consider the (non-central!) arrangement @ =@,, in the (N— 1)-dimen-
+sional space. Let d, d* be differentials in .o/°(C); 7=dd*+d*d. In particular,
+JN-1 a gn-2 gent.
+
+3.9.2 Lemma. The diagram
+
+aN-1
+
+a" *(6;H)—~—_> Af "(@)
+
+(1.4.2) } | (1.5.1)
+
+tN-1@) a(v)—aN-! AN 1@)
+
+commutes.

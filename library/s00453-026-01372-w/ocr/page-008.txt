@@ -1,0 +1,48 @@
+21 Page 8 of 19 Algorithmica (2026) 88:21
+
+Proof Observe that in order to prove the lemma, it suffices to prove
+Elg(X1,...,Xi,..-, Xn)] < Elg(X1,...,X7,.-.,Xm)], ()
+
+i
+
+since we can iteratively apply the above inequality to each X; (note that we can do
+this because independent variables are also negatively associated). For simplicity of
+notation and without loss of generality, we will prove the inequality fori = 1.
+By considering the cases of X; = 0 and X; = | separately, we have
+8(X1,..-, Xn) = X1- Bl, X2,--., Xn) + UL — X1) + 8, X2,--., Xn),
+
+where the equality holds pointwise on the underlying probability space. Via simple
+algebraic manipulations, we can rewrite the right hand side as
+
+X + [g(1, X2,-.., Xn) — 80, X2,.--, Xn] + 8 (0, X2,..-, Xn).
+
+Taking expectations, we now have that E[g(X1, ..., X,)] can be written as
+
+E[X: -[g(, X2,..., Xn) — g(0, X2, .-)Xn)]] + E[g(0, XQ, 002, X,)] (2)
+Observe that X is clearly an increasing function of X;, and (gd, X2,...,Xn) -
+g(O, X2,..., Xn)) is an increasing function of X2,..., X» by supermodularity of g.
+Therefore, by 1-negative association, we have that the first term is upper bounded by
+
+E[X)] - Elg, X2,..., Xn)) — gO, Xo, --., Xn)]-
+
+Consequently, the entire expression in (2) is upper bounded by
+
+E[X,]- E[g(1, X2,..., Xn) — g(0, X2,..., Xn)] + Elg(O, X2,..., Xn)]-
+Since X; and Xj have the same marginal distributions, the above is exactly equal to
+
+E[X7] - El[g(1, X2,-.., Xn) — gO, X2,..., Xn)] + Elg(O, X2,...,Xn)]-
+And since xt is independent with X>,..., X,, by assumption, the above is equal to
+
+E[X} - g(1, X2,..., Xn) — 90, X2,..., Xn)] + Elg(O, X2,..., Xn)I-
+
+In particular, observe that this is in the exact same form as Equation 2, except with X,
+replaced with X}. Note that when we transformed the left-hand side of Equation 1 to
+Equation 2, we never used any properties of the random variables X;,..., X» other
+than the fact that they take values in {0, 1}. As a result, we can reverse the direction
+of all of the equalities to show that the above expression is equal to
+
+Elg(Xj, X2,..., Xn)I,
+
+which completes the proof of the lemma. Oo
+
+aN Springer

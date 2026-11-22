@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/du-fu-quantum-gln-qschur-survey/sections/page-009",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Page 9",
+  "pageStart": 9,
+  "pageEnd": 9,
+  "contains": [
+    "library/du-fu-quantum-gln-qschur-survey/blocks/prose-page-009",
+    "library/du-fu-quantum-gln-qschur-survey/blocks/lem-page-009-01",
+    "library/du-fu-quantum-gln-qschur-survey/blocks/lem-page-009-02",
+    "library/du-fu-quantum-gln-qschur-survey/blocks/thm-page-009-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/du-fu-quantum-gln-qschur-survey/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/du-fu-quantum-gln-qschur-survey/manifest.jsonld",
+  "provenance": "ingested"
+}

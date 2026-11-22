@@ -1,0 +1,923 @@
+{
+  "$schema": "folio-document-images/v1",
+  "doc_id": "equations-aux-q-differences",
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 0.000367,
+        "imagesOnPage": 7,
+        "page": 1
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      },
+      "placements": [
+        {
+          "page": 1,
+          "coverage": 0.000367,
+          "imagesOnPage": 7
+        },
+        {
+          "page": 1,
+          "coverage": 8e-06,
+          "imagesOnPage": 7
+        },
+        {
+          "page": 1,
+          "coverage": 2.6e-05,
+          "imagesOnPage": 7
+        },
+        {
+          "page": 1,
+          "coverage": 1e-05,
+          "imagesOnPage": 7
+        },
+        {
+          "page": 1,
+          "coverage": 2.5e-05,
+          "imagesOnPage": 7
+        },
+        {
+          "page": 1,
+          "coverage": 1e-05,
+          "imagesOnPage": 7
+        },
+        {
+          "page": 1,
+          "coverage": 5.7e-05,
+          "imagesOnPage": 7
+        }
+      ]
+    },
+    {
+      "id": "img-p002-1",
+      "file": "images/img-p002-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 1.9e-05,
+        "imagesOnPage": 5,
+        "page": 2
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      },
+      "placements": [
+        {
+          "page": 2,
+          "coverage": 1.9e-05,
+          "imagesOnPage": 5
+        },
+        {
+          "page": 2,
+          "coverage": 2.7e-05,
+          "imagesOnPage": 5
+        },
+        {
+          "page": 2,
+          "coverage": 3.5e-05,
+          "imagesOnPage": 5
+        },
+        {
+          "page": 2,
+          "coverage": 3.2e-05,
+          "imagesOnPage": 5
+        },
+        {
+          "page": 2,
+          "coverage": 3.5e-05,
+          "imagesOnPage": 5
+        }
+      ]
+    },
+    {
+      "id": "img-p005-1",
+      "file": "images/img-p005-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 7.6e-05,
+        "imagesOnPage": 2,
+        "page": 5
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      },
+      "placements": [
+        {
+          "page": 5,
+          "coverage": 7.6e-05,
+          "imagesOnPage": 2
+        },
+        {
+          "page": 5,
+          "coverage": 8e-06,
+          "imagesOnPage": 2
+        }
+      ]
+    },
+    {
+      "id": "img-p006-1",
+      "file": "images/img-p006-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 8.2e-05,
+        "imagesOnPage": 7,
+        "page": 6
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      },
+      "placements": [
+        {
+          "page": 6,
+          "coverage": 8.2e-05,
+          "imagesOnPage": 7
+        },
+        {
+          "page": 6,
+          "coverage": 8.3e-05,
+          "imagesOnPage": 7
+        },
+        {
+          "page": 6,
+          "coverage": 4e-05,
+          "imagesOnPage": 7
+        },
+        {
+          "page": 6,
+          "coverage": 3.7e-05,
+          "imagesOnPage": 7
+        },
+        {
+          "page": 6,
+          "coverage": 8e-06,
+          "imagesOnPage": 7
+        },
+        {
+          "page": 6,
+          "coverage": 7.8e-05,
+          "imagesOnPage": 7
+        },
+        {
+          "page": 6,
+          "coverage": 2.2e-05,
+          "imagesOnPage": 7
+        }
+      ]
+    },
+    {
+      "id": "img-p008-1",
+      "file": "images/img-p008-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 5.7e-05,
+        "imagesOnPage": 1,
+        "page": 8
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      }
+    },
+    {
+      "id": "img-p010-1",
+      "file": "images/img-p010-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 4.3e-05,
+        "imagesOnPage": 2,
+        "page": 10
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      },
+      "placements": [
+        {
+          "page": 10,
+          "coverage": 4.3e-05,
+          "imagesOnPage": 2
+        },
+        {
+          "page": 10,
+          "coverage": 2.9e-05,
+          "imagesOnPage": 2
+        }
+      ]
+    },
+    {
+      "id": "img-p011-1",
+      "file": "images/img-p011-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 1.5e-05,
+        "imagesOnPage": 1,
+        "page": 11
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      }
+    },
+    {
+      "id": "img-p012-1",
+      "file": "images/img-p012-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 1.8e-05,
+        "imagesOnPage": 5,
+        "page": 12
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      },
+      "placements": [
+        {
+          "page": 12,
+          "coverage": 1.8e-05,
+          "imagesOnPage": 5
+        },
+        {
+          "page": 12,
+          "coverage": 8e-06,
+          "imagesOnPage": 5
+        },
+        {
+          "page": 12,
+          "coverage": 3.3e-05,
+          "imagesOnPage": 5
+        },
+        {
+          "page": 12,
+          "coverage": 1e-05,
+          "imagesOnPage": 5
+        },
+        {
+          "page": 12,
+          "coverage": 5.7e-05,
+          "imagesOnPage": 5
+        }
+      ]
+    },
+    {
+      "id": "img-p013-1",
+      "file": "images/img-p013-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 1.3e-05,
+        "imagesOnPage": 4,
+        "page": 13
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      },
+      "placements": [
+        {
+          "page": 13,
+          "coverage": 1.3e-05,
+          "imagesOnPage": 4
+        },
+        {
+          "page": 13,
+          "coverage": 7.4e-05,
+          "imagesOnPage": 4
+        },
+        {
+          "page": 13,
+          "coverage": 7.8e-05,
+          "imagesOnPage": 4
+        },
+        {
+          "page": 13,
+          "coverage": 2.2e-05,
+          "imagesOnPage": 4
+        }
+      ]
+    },
+    {
+      "id": "img-p014-1",
+      "file": "images/img-p014-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 5.6e-05,
+        "imagesOnPage": 8,
+        "page": 14
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      },
+      "placements": [
+        {
+          "page": 14,
+          "coverage": 5.6e-05,
+          "imagesOnPage": 8
+        },
+        {
+          "page": 14,
+          "coverage": 8.9e-05,
+          "imagesOnPage": 8
+        },
+        {
+          "page": 14,
+          "coverage": 5.6e-05,
+          "imagesOnPage": 8
+        },
+        {
+          "page": 14,
+          "coverage": 8.9e-05,
+          "imagesOnPage": 8
+        },
+        {
+          "page": 14,
+          "coverage": 5.6e-05,
+          "imagesOnPage": 8
+        },
+        {
+          "page": 14,
+          "coverage": 8.9e-05,
+          "imagesOnPage": 8
+        },
+        {
+          "page": 14,
+          "coverage": 5.6e-05,
+          "imagesOnPage": 8
+        },
+        {
+          "page": 14,
+          "coverage": 8.9e-05,
+          "imagesOnPage": 8
+        }
+      ]
+    },
+    {
+      "id": "img-p015-1",
+      "file": "images/img-p015-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 8.3e-05,
+        "imagesOnPage": 22,
+        "page": 15
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      },
+      "placements": [
+        {
+          "page": 15,
+          "coverage": 8.3e-05,
+          "imagesOnPage": 22
+        },
+        {
+          "page": 15,
+          "coverage": 4e-05,
+          "imagesOnPage": 22
+        },
+        {
+          "page": 15,
+          "coverage": 4e-06,
+          "imagesOnPage": 22
+        },
+        {
+          "page": 15,
+          "coverage": 8e-06,
+          "imagesOnPage": 22
+        },
+        {
+          "page": 15,
+          "coverage": 3.5e-05,
+          "imagesOnPage": 22
+        },
+        {
+          "page": 15,
+          "coverage": 1.2e-05,
+          "imagesOnPage": 22
+        },
+        {
+          "page": 15,
+          "coverage": 5e-06,
+          "imagesOnPage": 22
+        },
+        {
+          "page": 15,
+          "coverage": 1e-05,
+          "imagesOnPage": 22
+        },
+        {
+          "page": 15,
+          "coverage": 9e-06,
+          "imagesOnPage": 22
+        },
+        {
+          "page": 15,
+          "coverage": 8e-06,
+          "imagesOnPage": 22
+        },
+        {
+          "page": 15,
+          "coverage": 3.5e-05,
+          "imagesOnPage": 22
+        },
+        {
+          "page": 15,
+          "coverage": 1.2e-05,
+          "imagesOnPage": 22
+        },
+        {
+          "page": 15,
+          "coverage": 5e-06,
+          "imagesOnPage": 22
+        },
+        {
+          "page": 15,
+          "coverage": 9e-06,
+          "imagesOnPage": 22
+        },
+        {
+          "page": 15,
+          "coverage": 3.5e-05,
+          "imagesOnPage": 22
+        },
+        {
+          "page": 15,
+          "coverage": 1.2e-05,
+          "imagesOnPage": 22
+        },
+        {
+          "page": 15,
+          "coverage": 5e-06,
+          "imagesOnPage": 22
+        },
+        {
+          "page": 15,
+          "coverage": 9e-06,
+          "imagesOnPage": 22
+        },
+        {
+          "page": 15,
+          "coverage": 9e-06,
+          "imagesOnPage": 22
+        },
+        {
+          "page": 15,
+          "coverage": 9e-06,
+          "imagesOnPage": 22
+        },
+        {
+          "page": 15,
+          "coverage": 3.5e-05,
+          "imagesOnPage": 22
+        },
+        {
+          "page": 15,
+          "coverage": 1.2e-05,
+          "imagesOnPage": 22
+        }
+      ]
+    },
+    {
+      "id": "img-p018-1",
+      "file": "images/img-p018-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 1.6e-05,
+        "imagesOnPage": 1,
+        "page": 18
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      }
+    },
+    {
+      "id": "img-p020-1",
+      "file": "images/img-p020-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 3.2e-05,
+        "imagesOnPage": 12,
+        "page": 20
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      },
+      "placements": [
+        {
+          "page": 20,
+          "coverage": 3.2e-05,
+          "imagesOnPage": 12
+        },
+        {
+          "page": 20,
+          "coverage": 2.1e-05,
+          "imagesOnPage": 12
+        },
+        {
+          "page": 20,
+          "coverage": 1.4e-05,
+          "imagesOnPage": 12
+        },
+        {
+          "page": 20,
+          "coverage": 3.8e-05,
+          "imagesOnPage": 12
+        },
+        {
+          "page": 20,
+          "coverage": 8e-06,
+          "imagesOnPage": 12
+        },
+        {
+          "page": 20,
+          "coverage": 2.3e-05,
+          "imagesOnPage": 12
+        },
+        {
+          "page": 20,
+          "coverage": 1.3e-05,
+          "imagesOnPage": 12
+        },
+        {
+          "page": 20,
+          "coverage": 1.2e-05,
+          "imagesOnPage": 12
+        },
+        {
+          "page": 20,
+          "coverage": 1.7e-05,
+          "imagesOnPage": 12
+        },
+        {
+          "page": 20,
+          "coverage": 7e-06,
+          "imagesOnPage": 12
+        },
+        {
+          "page": 20,
+          "coverage": 7e-06,
+          "imagesOnPage": 12
+        },
+        {
+          "page": 20,
+          "coverage": 8e-06,
+          "imagesOnPage": 12
+        }
+      ]
+    },
+    {
+      "id": "img-p021-1",
+      "file": "images/img-p021-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 2.3e-05,
+        "imagesOnPage": 17,
+        "page": 21
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      },
+      "placements": [
+        {
+          "page": 21,
+          "coverage": 2.3e-05,
+          "imagesOnPage": 17
+        },
+        {
+          "page": 21,
+          "coverage": 2.6e-05,
+          "imagesOnPage": 17
+        },
+        {
+          "page": 21,
+          "coverage": 4.1e-05,
+          "imagesOnPage": 17
+        },
+        {
+          "page": 21,
+          "coverage": 3.3e-05,
+          "imagesOnPage": 17
+        },
+        {
+          "page": 21,
+          "coverage": 2e-06,
+          "imagesOnPage": 17
+        },
+        {
+          "page": 21,
+          "coverage": 6.7e-05,
+          "imagesOnPage": 17
+        },
+        {
+          "page": 21,
+          "coverage": 4.1e-05,
+          "imagesOnPage": 17
+        },
+        {
+          "page": 21,
+          "coverage": 3.3e-05,
+          "imagesOnPage": 17
+        },
+        {
+          "page": 21,
+          "coverage": 2e-06,
+          "imagesOnPage": 17
+        },
+        {
+          "page": 21,
+          "coverage": 1e-05,
+          "imagesOnPage": 17
+        },
+        {
+          "page": 21,
+          "coverage": 1.4e-05,
+          "imagesOnPage": 17
+        },
+        {
+          "page": 21,
+          "coverage": 2e-06,
+          "imagesOnPage": 17
+        },
+        {
+          "page": 21,
+          "coverage": 2.6e-05,
+          "imagesOnPage": 17
+        },
+        {
+          "page": 21,
+          "coverage": 2.6e-05,
+          "imagesOnPage": 17
+        },
+        {
+          "page": 21,
+          "coverage": 5.2e-05,
+          "imagesOnPage": 17
+        },
+        {
+          "page": 21,
+          "coverage": 3.1e-05,
+          "imagesOnPage": 17
+        },
+        {
+          "page": 21,
+          "coverage": 1.4e-05,
+          "imagesOnPage": 17
+        }
+      ]
+    },
+    {
+      "id": "img-p022-1",
+      "file": "images/img-p022-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 8e-06,
+        "imagesOnPage": 8,
+        "page": 22
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      },
+      "placements": [
+        {
+          "page": 22,
+          "coverage": 8e-06,
+          "imagesOnPage": 8
+        },
+        {
+          "page": 22,
+          "coverage": 4e-06,
+          "imagesOnPage": 8
+        },
+        {
+          "page": 22,
+          "coverage": 3.6e-05,
+          "imagesOnPage": 8
+        },
+        {
+          "page": 22,
+          "coverage": 3.2e-05,
+          "imagesOnPage": 8
+        },
+        {
+          "page": 22,
+          "coverage": 4.1e-05,
+          "imagesOnPage": 8
+        },
+        {
+          "page": 22,
+          "coverage": 3.3e-05,
+          "imagesOnPage": 8
+        },
+        {
+          "page": 22,
+          "coverage": 2e-06,
+          "imagesOnPage": 8
+        },
+        {
+          "page": 22,
+          "coverage": 1e-05,
+          "imagesOnPage": 8
+        }
+      ]
+    },
+    {
+      "id": "img-p023-1",
+      "file": "images/img-p023-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 3.1e-05,
+        "imagesOnPage": 5,
+        "page": 23
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      },
+      "placements": [
+        {
+          "page": 23,
+          "coverage": 3.1e-05,
+          "imagesOnPage": 5
+        },
+        {
+          "page": 23,
+          "coverage": 1.7e-05,
+          "imagesOnPage": 5
+        },
+        {
+          "page": 23,
+          "coverage": 5e-06,
+          "imagesOnPage": 5
+        },
+        {
+          "page": 23,
+          "coverage": 3e-06,
+          "imagesOnPage": 5
+        },
+        {
+          "page": 23,
+          "coverage": 3.8e-05,
+          "imagesOnPage": 5
+        }
+      ]
+    },
+    {
+      "id": "img-p024-1",
+      "file": "images/img-p024-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 5.2e-05,
+        "imagesOnPage": 1,
+        "page": 24
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      }
+    },
+    {
+      "id": "img-p025-1",
+      "file": "images/img-p025-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 2e-06,
+        "imagesOnPage": 2,
+        "page": 25
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      },
+      "placements": [
+        {
+          "page": 25,
+          "coverage": 2e-06,
+          "imagesOnPage": 2
+        },
+        {
+          "page": 25,
+          "coverage": 2e-06,
+          "imagesOnPage": 2
+        }
+      ]
+    },
+    {
+      "id": "img-p026-1",
+      "file": "images/img-p026-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 7e-06,
+        "imagesOnPage": 4,
+        "page": 26
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      },
+      "placements": [
+        {
+          "page": 26,
+          "coverage": 7e-06,
+          "imagesOnPage": 4
+        },
+        {
+          "page": 26,
+          "coverage": 7e-06,
+          "imagesOnPage": 4
+        },
+        {
+          "page": 26,
+          "coverage": 7e-06,
+          "imagesOnPage": 4
+        },
+        {
+          "page": 26,
+          "coverage": 5.7e-05,
+          "imagesOnPage": 4
+        }
+      ]
+    },
+    {
+      "id": "img-p027-1",
+      "file": "images/img-p027-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 1.6e-05,
+        "imagesOnPage": 7,
+        "page": 27
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      },
+      "placements": [
+        {
+          "page": 27,
+          "coverage": 1.6e-05,
+          "imagesOnPage": 7
+        },
+        {
+          "page": 27,
+          "coverage": 2.5e-05,
+          "imagesOnPage": 7
+        },
+        {
+          "page": 27,
+          "coverage": 5e-06,
+          "imagesOnPage": 7
+        },
+        {
+          "page": 27,
+          "coverage": 4e-06,
+          "imagesOnPage": 7
+        },
+        {
+          "page": 27,
+          "coverage": 2.3e-05,
+          "imagesOnPage": 7
+        },
+        {
+          "page": 27,
+          "coverage": 5.7e-05,
+          "imagesOnPage": 7
+        },
+        {
+          "page": 27,
+          "coverage": 4e-06,
+          "imagesOnPage": 7
+        }
+      ]
+    }
+  ]
+}

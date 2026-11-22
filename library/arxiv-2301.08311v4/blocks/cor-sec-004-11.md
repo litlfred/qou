@@ -1,1 +1,1 @@
-Letu : Σ→ Cn be a holomorphic punctured disc with boundary on a torus segment
+The moduli space Min of vertically constrained discs in Cn with boundary on Tγ is a smooth manifold and the evaluation map evp at any boundary puncture p that takes a map u to the starting point of the Reeb chord u is asymptotic to at the puncture p, evp : Mvc in →T±, is a submersion to the Legendrian torus.

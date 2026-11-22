@@ -1,0 +1,1071 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-2103.00651v1",
+ "status": "determined",
+ "body_size": 10.9,
+ "footnotes": [
+  {
+   "id": "fn-p004-1",
+   "page": 4,
+   "mark": "2",
+   "text": "σ2∥f∥2",
+   "marks": [
+    {
+     "page": 3,
+     "context": "2σ"
+    },
+    {
+     "page": 3,
+     "context": "ǫ"
+    },
+    {
+     "page": 3,
+     "context": "2σ"
+    },
+    {
+     "page": 3,
+     "context": "4σ"
+    },
+    {
+     "page": 3,
+     "context": "ǫ"
+    },
+    {
+     "page": 3,
+     "context": "ǫ2(1−ε)"
+    },
+    {
+     "page": 3,
+     "context": "ǫ"
+    },
+    {
+     "page": 3,
+     "context": "2τ"
+    },
+    {
+     "page": 3,
+     "context": "2τ2p σ"
+    },
+    {
+     "page": 3,
+     "context": "4σ"
+    },
+    {
+     "page": 3,
+     "context": "4σ2τ"
+    },
+    {
+     "page": 4,
+     "context": "2σ"
+    },
+    {
+     "page": 4,
+     "context": "λ"
+    },
+    {
+     "page": 4,
+     "context": "λ2σ"
+    },
+    {
+     "page": 4,
+     "context": "σ"
+    },
+    {
+     "page": 4,
+     "context": "2σ"
+    },
+    {
+     "page": 4,
+     "context": "λ"
+    },
+    {
+     "page": 4,
+     "context": "λ"
+    },
+    {
+     "page": 4,
+     "context": "λ2ǫ"
+    },
+    {
+     "page": 4,
+     "context": "P(∥f(X) −Eν[f(X)]∥2≥ǫ) ≤e−λ"
+    },
+    {
+     "page": 4,
+     "context": "P(∥f(X) −Eν[f(X)]∥2≥ǫ) ≤e−λ2ǫ"
+    },
+    {
+     "page": 4,
+     "context": "2σ"
+    }
+   ],
+   "block": "library/arxiv-2103.00651v1/blocks/prose-sec-002"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p004-2",
+   "page": 4,
+   "mark": "2",
+   "text": "σ2∥f∥2",
+   "block": "library/arxiv-2103.00651v1/blocks/prose-sec-002"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "k",
+   "context": "isaparametervectortakingvaluesinacompactsetΘ⊂R"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "surable spaceX"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "surable spaceXiandequiptheproduct spaceX = X"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "surable spaceXiandequiptheproduct spaceX = X1 × · × X"
+  },
+  {
+   "page": 2,
+   "mark": "c",
+   "context": "metricd"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "metricdc(x, y)=P"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "1{x"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "1{xi̸=y"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "1{xi̸=yi},wherex=(x"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "1{xi̸=yi},wherex=(x1, . . . , x"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "1{xi̸=yi},wherex=(x1, . . . , xn), y=(y"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "1{xi̸=yi},wherex=(x1, . . . , xn), y=(y1, . . . , y"
+  },
+  {
+   "page": 2,
+   "mark": "c",
+   "context": "i=1"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "i=1c"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "σ"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "σ2=P"
+  },
+  {
+   "page": 2,
+   "mark": "f",
+   "context": "i/4 for every"
+  },
+  {
+   "page": 2,
+   "mark": "d",
+   "context": "i/4 for every f: X →R which is 1-Lipschitz with respect to"
+  },
+  {
+   "page": 2,
+   "mark": "c",
+   "context": "i/4 for every f: X →R which is 1-Lipschitz with respect to d"
+  },
+  {
+   "page": 2,
+   "mark": "c",
+   "context": "i=1"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "i=1c"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "ametricspace(X, d)suchthatX∼ν,therandomvariablef(X)isσ"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "whereY⊆R"
+  },
+  {
+   "page": 2,
+   "mark": "p",
+   "context": "whereY⊆RkanddYisanyℓ"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "over, let P"
+  },
+  {
+   "page": 2,
+   "mark": "0",
+   "context": " set of all probability measures ρ on X such that Eρ[dX(X, x"
+  },
+  {
+   "page": 2,
+   "mark": "0",
+   "context": "holdsforanarbitrary(andthereforeforall)x"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "holdsforanarbitrary(andthereforeforall)x0∈X.TheL"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "ρ, ˜ρ ∈P"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "spaceX"
+  },
+  {
+   "page": 2,
+   "mark": "d",
+   "context": "log"
+  },
+  {
+   "page": 2,
+   "mark": "d",
+   "context": "dρlog"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "Theorem1Let(X, dX)and(Y, dY)betwoPolishspaces,whereY⊆R"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "inequalityW"
+  },
+  {
+   "page": 3,
+   "mark": "p",
+   "context": "extendedtoanyℓ"
+  },
+  {
+   "page": 3,
+   "mark": "p",
+   "context": "Eν[f(X)]∈f(X))theinequality∥y −Eν[f(X)]∥p≤τ"
+  },
+  {
+   "page": 3,
+   "mark": "p",
+   "context": "dueto{∥f(X) −Eν[f(X)]∥p≥ǫ} ⊆{∥f(X) −Eν[f(X)]∥2≥ǫ/τ"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "ε-netof the unit Euclideansphere S"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "ε-netof the unit Euclideansphere Sk−1inR"
+  },
+  {
+   "page": 3,
+   "mark": "e",
+   "context": "λ>0"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "arzinequalityand⟨w∗, f(X) −Eν[f(X)]⟩ismeanzero.AssumingthatW"
+  },
+  {
+   "page": 4,
+   "mark": "e",
+   "context": "λ>0"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "letZ∼N(0, I"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "2, ∀q∈R"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "that W"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "wherethelastequalityholdsforanyλ∈Rsuchthatλ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "wherethelastequalityholdsforanyλ∈Rsuchthatλ2σ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "e−λ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "e−λ2ǫ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "1 −λ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "1 −λ2σ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "ǫ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "4σ"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "(X, dX)and(Y, dY)betwoPolishspaces,whereY⊆R"
+  },
+  {
+   "page": 5,
+   "mark": "p",
+   "context": "(X, dX)and(Y, dY)betwoPolishspaces,whereY⊆RkanddYisanℓ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "2σ"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "1.W"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "isasub-Gaussianvectorwithσ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "λ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "λ2∥h∥2qσ"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": ", ∀h ∈R"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "onenonzerocoordinate,e.g.,f=˜fe"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "onenonzerocoordinate,e.g.,f=˜fe1andh=e"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "∥f∥Lip-Lipschitzfunctionande"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "Lipschitzfunctionande1istheﬁrstelementofthecanonicalbasisinR"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "ConsiderasampleX0:"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "ConsiderasampleX0:n−1= {X"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "ConsiderasampleX0:n−1= {X0, X"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "ConsiderasampleX0:n−1= {X0, X1, . . . , X"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "time, ﬁnite-state Markov chain (X"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "time, ﬁnite-state Markov chain (Xk)"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "matrixP = [Pij]andX"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "ˆπ"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "ˆπi(X0:"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "BytheErgodicTheoremforMarkovchainsBr´emaud(2013),ˆπ"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "BytheErgodicTheoremforMarkovchainsBr´emaud(2013),ˆπi→π"
+  },
+  {
+   "page": 6,
+   "mark": "f",
+   "context": "i∈E"
+  },
+  {
+   "page": 6,
+   "mark": "g",
+   "context": "i∈Ef(i)"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "i∈Ef(i)g(i)π(i)inℓ"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "∈Ef(i)g(i)π(i)inℓ2(π)LevinandPeres(2017).Duetoergodicity,min"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "min"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "Theorem2LetX0:"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "spaceEandstationarymeasureπ.Thenforanymeasurablefunctiong: E"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "P̺(g(X0:"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "Pπ(g(X0:"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "Theorem3ConsideraMarkovchain(X"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "Theorem3ConsideraMarkovchain(Xk)"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "trix P= [Pij] and Dobrushin coeﬃcient r< 1.For x0:"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "trix P= [Pij] and Dobrushin coeﬃcient r< 1.For x0:n−1, ˜x0:"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": " P= [Pij] and Dobrushin coeﬃcient r< 1.For x0:n−1, ˜x0:n−1∈X"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "ij] and Dobrushin coeﬃcient r< 1.For x0:n−1, ˜x0:n−1∈Xnlet˜d"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": " and Dobrushin coeﬃcient r< 1.For x0:n−1, ˜x0:n−1∈Xnlet˜d1,X"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "Dobrushin coeﬃcient r< 1.For x0:n−1, ˜x0:n−1∈Xnlet˜d1,Xn(x0:"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": " coeﬃcient r< 1.For x0:n−1, ˜x0:n−1∈Xnlet˜d1,Xn(x0:n−1, ˜x0:"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "P"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "1(x"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "1(xk̸=˜x"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "W"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "2(1 −r)"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "whereν= P̺isthemeasureon(X = X"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "whereν= P̺isthemeasureon(X = Xn, dX=˜d"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "whereν= P̺isthemeasureon(X = Xn, dX=˜d1,X"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "f(x0:"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "f(x0:n−1) = ∥ˆπ(x0:"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "f(x0:n−1) = ∥ˆπ(x0:n−1) −π∥p.Assumethatx = x0:"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "f(x0:n−1) = ∥ˆπ(x0:n−1) −π∥p.Assumethatx = x0:n−1and˜x =˜x0:"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "oftherandomsequenceX0:"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "|f(x) −f(˜x)| ≤∥ˆπ(x0:"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "|f(x) −f(˜x)| ≤∥ˆπ(x0:n−1) −ˆπ(˜x0:"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "˜d"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "˜d1,E"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "˜d1,En(x0:"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "˜d1,En(x0:n−1, ˜x0:"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "1(x"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "1(xk̸=˜x"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "2/n for any x0:"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "2/n for any x0:n−1, ˜x0:"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "single element).This can be easily seen by expressingˆπ(x0:"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "nt).This can be easily seen by expressingˆπ(x0:n−1) = (1/n)P"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "i)e"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "i)ei,where{e"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "Pπ(∥ˆπ(X0:"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "Pπ(∥ˆπ(X0:n−1) −π∥p≥Eπ[∥ˆπ(X0:"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "Pπ(∥ˆπ(X0:n−1) −π∥p≥Eπ[∥ˆπ(X0:n−1) −π∥p] + ǫ) ≤e−2"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "Pπ(∥ˆπ(X0:n−1) −π∥p≥Eπ[∥ˆπ(X0:n−1) −π∥p] + ǫ) ≤e−21−2/pnǫ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "∥ˆπ(X0:n−1) −π∥p≥Eπ[∥ˆπ(X0:n−1) −π∥p] + ǫ) ≤e−21−2/pnǫ2(1−r)"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "orequivalently,∀ǫ > Eπ[∥ˆπ(X0:"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "Pπ(∥ˆπ(X0:"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "Pπ(∥ˆπ(X0:n−1) −π∥p≥ǫ) ≤e−2"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "Pπ(∥ˆπ(X0:n−1) −π∥p≥ǫ) ≤e−21−2/p"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "Pπ(∥ˆπ(X0:n−1) −π∥p≥ǫ) ≤e−21−2/pn(ǫ−Eπ[∥ˆπ(X0:"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "Pπ(∥ˆπ(X0:n−1) −π∥p≥ǫ) ≤e−21−2/pn(ǫ−Eπ[∥ˆπ(X0:n−1)−π∥p])"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "(∥ˆπ(X0:n−1) −π∥p≥ǫ) ≤e−21−2/pn(ǫ−Eπ[∥ˆπ(X0:n−1)−π∥p])2(1−r)"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "Theorem2nowimpliesthat∀ǫ > Eπ[∥ˆπ(X0:"
+  },
+  {
+   "page": 7,
+   "mark": "e",
+   "context": "2,π"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "2,πe−2−2/p"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "2,πe−2−2/pn(ǫ−Eπ[∥ˆπ(X0:"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "2,πe−2−2/pn(ǫ−Eπ[∥ˆπ(X0:n−1)−π∥p])"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "2,πe−2−2/pn(ǫ−Eπ[∥ˆπ(X0:n−1)−π∥p])2(1−r)"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "P̺(∥ˆπ(X0:"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "Finally,foranyδ∈(0, 1)andanyǫ > Eπ[∥ˆπ(X0:"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "ally,foranyδ∈(0, 1)andanyǫ > Eπ[∥ˆπ(X0:n−1) −π∥p],P̺(∥ˆπ(X0:"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "(ǫ −Eπ[∥ˆπ(X0:"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "(ǫ −Eπ[∥ˆπ(X0:n−1) −π∥p])"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "(ǫ −Eπ[∥ˆπ(X0:n−1) −π∥p])2(1 −r)"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "|ˆπ"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "|ˆπi −π"
+  },
+  {
+   "page": 7,
+   "mark": "p",
+   "context": "|ˆπi −πi|p≥ǫ"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "|ˆπ"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "|ˆπi −Eπ[ˆπ"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "wheretheunionboundandthefactthatˆπ"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "thiscasef(x) = f(x0:"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "thiscasef(x) = f(x0:n−1) =ˆπ"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "thiscasef(x) = f(x0:n−1) =ˆπi(x0:"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "˜d"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "˜d1,E"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "˜d1,En(x0:"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "˜d1,En(x0:n−1, ˜x0:"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "∀x0:"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "∀x0:n−1, ˜x0:"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "∀x0:n−1, ˜x0:n−1∈E"
+  },
+  {
+   "page": 7,
+   "mark": "e",
+   "context": "2,π"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "2,πe−K−2/pnǫ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "2,πe−K−2/pnǫ2(1−r)"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "P̺(∥ˆπ(X0:"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Finally,foranyδ∈(0, 1)andanyǫ>0,P̺(∥ˆπ(X0:"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "ǫ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "ǫ2(1 −r)"
+  },
+  {
+   "page": 8,
+   "mark": "p",
+   "context": "thehierarchyofℓ"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "thehierarchyofℓp-normsinR"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "thehierarchyofℓp-normsinRkwehavethatτ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "k,τ"
+  },
+  {
+   "page": 8,
+   "mark": "p",
+   "context": "k,τ2=1,τ"
+  },
+  {
+   "page": 8,
+   "mark": "p",
+   "context": "τ"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "τp"
+  },
+  {
+   "page": 8,
+   "mark": "p",
+   "context": "τp1≤τ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "τp1≤τp"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "τp1≤τp2forp"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "τp1≤τp2forp1≥p"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "2τ"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "P̺(∥ˆπ(X0:"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Therefore,foranyδ∈(0, 1),anyǫ>0andanyε∈(0, 1],P̺(∥ˆπ(X0:"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "2τ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "ǫ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "ǫ2(1 −ε)"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "ǫ2(1 −ε)2(1 −r)"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "min"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "mini∈E π(i)andoftenmin"
+  },
+  {
+   "page": 8,
+   "mark": "m",
+   "context": "mini∈E π(i)andoftenmini∈E π(i)≍1/K"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "forp ∈{1, 2}.Forchainssuchthatmin"
+  },
+  {
+   "page": 8,
+   "mark": "p",
+   "context": "p ∈{1, 2}.Wealsonotethatdependingonthegeometryoff(X),fandν,τ"
+  }
+ ]
+}

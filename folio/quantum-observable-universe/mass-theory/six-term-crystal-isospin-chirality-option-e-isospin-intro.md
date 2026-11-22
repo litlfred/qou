@@ -1,1 +1,3 @@
-We now test the Option E isospin convention. We verify its substrate-level behavior, tabulate the crystal-basis paths, and prove the chirality dual-space derivation. The evaluated mass predictions aim directly to resolve the empirical discrepancies.
+In the Kashiwara crystal limit $q \to 0$, the irreducible modules of the quantum group $U_q(\mathfrak{sl}_2)$ admit canonical crystal bases on which the Kashiwara operators $\tilde e_i, \tilde f_i$ act as partial bijections. Lifting the isospin quantum number from the crystal graph to finite $q_0$ requires choosing an embedding of the isospin involution into the Hecke algebra.
+
+This section evaluates the crystal-basis isospin embedding (Option E), tabulates the Path-A crystal weights across the light baryon and nuclear multiplets, derives the chirality dual-space pairing, and proves that the Frobenius Hopf antipode unifies the chirality involution with the neutron mass-tower closure.

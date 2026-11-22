@@ -7,4 +7,4 @@ $$
   w_\lambda \cdot \mathrm{tr}_{S_\lambda}\bigl(\rho_n(\beta)\bigr).
 $$
 
-*This equals the Jones--Markov trace $\mathrm{tr}_M\bigl(\rho(\beta)\bigr)$ on $H_n(R, q)$, where the Markov weights are $w_\lambda = \dim_q(V_\lambda) \cdot \dim(S_\lambda) / \dim_q(V^{\otimes n})$.*
+*This equals the Jones--Markov trace $\mathrm{tr}_M\bigl(\rho(\beta)\bigr)$ on $H_n(R, q)$, where the Markov weights are $w_\lambda = \dim_q(V_\lambda) / \dim_q(V^{\otimes n})$.*

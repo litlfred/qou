@@ -1,0 +1,315 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "022201-1-online",
+ "status": "determined",
+ "body_size": 9.0,
+ "footnotes": [
+  {
+   "id": "fn-p008-6",
+   "page": 8,
+   "mark": "32",
+   "text": "H. J. Ryser, Combinatorial Mathematics (Mathematical Association of America, 1963), Vol. 14. J. Math. Phys. 62, 022201 (2021); doi: 10.1063/5.0013689 62, 022201-7 © Author(s) 2021",
+   "marks": [
+    {
+     "page": 7,
+     "context": "as in the derivation of Ryser’s formula for the permanent,"
+    }
+   ],
+   "block": "library/022201-1-online/blocks/prose-sec-009"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p008-1",
+   "page": 8,
+   "mark": "26",
+   "text": "M.Jenssen,P.Keevash,andW.Perkins,inProceedingsoftheThirtiethAnnualACM-SIAMSymposiumonDiscreteAlgorithms(SIAM,2019),pp.2235–2247; arXiv:1807.04804.",
+   "block": "library/022201-1-online/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p008-2",
+   "page": 8,
+   "mark": "27",
+   "text": "C. Liao, J. Lin, P. Lu, and Z. Mao, in Approximation, Randomization, and Combinatorial Optimization. Algorithms and Techniques (APPROX/RANDOM 2019) (Schloss Dagstuhl-Leibniz-Zentrum fuer Informatik, 2019); arXiv:1903.07531.",
+   "block": "library/022201-1-online/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p008-3",
+   "page": 8,
+   "mark": "29",
+   "text": "C. Carlson, E. Davies, and A. Kolla, arXiv:2003.01154 (2020).",
+   "block": "library/022201-1-online/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p008-4",
+   "page": 8,
+   "mark": "30",
+   "text": "C. Borgs, R. Kotecký, and D. Ueltschi, Commun. Math. Phys. 181, 409 (1996).",
+   "block": "library/022201-1-online/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p008-5",
+   "page": 8,
+   "mark": "31",
+   "text": "C. Borgs, J. Chayes, J. Kahn, and L. Lovász, Random Struct. Algorithms 42, 1 (2013); arXiv:1002.0115.",
+   "block": "library/022201-1-online/blocks/prose-sec-009"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "x",
+   "context": ". The Hilbert space on the hypergraph is given by HG∶= ⊗x∈XH"
+  },
+  {
+   "page": 2,
+   "mark": "e",
+   "context": ". An interaction Φ assigns a self-adjoint operator Φ(e) on H"
+  },
+  {
+   "page": 2,
+   "mark": "x",
+   "context": "raction Φ assigns a self-adjoint operator Φ(e) on He∶= ⊗x∈eH"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "scheme for a sequence of complex numbers (z"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "ithm that, for any n and ϵ > 0, produces a complex number ˆz"
+  },
+  {
+   "page": 2,
+   "mark": "4",
+   "context": "e"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "ract clusterexpansionforquantumspinsystemsofNetoˇcnýandRedig"
+  },
+  {
+   "page": 2,
+   "mark": "4",
+   "context": "rithmic framework of Helmuth, Perkins, and Regts."
+  },
+  {
+   "page": 2,
+   "mark": "13",
+   "context": "aches:thecorrelationdecaymethod,11,12Markov-chainMonteCarlo,"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "usly been used to establish similar algorithms: for ∣β∣≤(10e"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "r algorithms: for ∣β∣≤(10e2Δ)−1with quasi-polynomial runtime"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": " ∣β∣≤(10e2Δ)−1with quasi-polynomial runtime1and for ∣β∣≤(16e"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "runtime."
+  },
+  {
+   "page": 3,
+   "mark": "18",
+   "context": "this is an alternate route to the results of Patel and Regts"
+  },
+  {
+   "page": 3,
+   "mark": "14",
+   "context": "method."
+  },
+  {
+   "page": 3,
+   "mark": "19",
+   "context": "by Mayer in the study of imperfect gases"
+  },
+  {
+   "page": 3,
+   "mark": "20",
+   "context": "Preiss."
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "log(ZG(β)). Netoˇcný and Redig"
+  },
+  {
+   "page": 4,
+   "mark": "20",
+   "context": "of Kotecký and Preiss."
+  },
+  {
+   "page": 4,
+   "mark": "4",
+   "context": "e"
+  },
+  {
+   "page": 4,
+   "mark": "4",
+   "context": "exp(O(m)) ⋅∣V(G)∣O(1). Helmuth, Perkins, and Regts"
+  },
+  {
+   "page": 5,
+   "mark": "4",
+   "context": "e"
+  },
+  {
+   "page": 5,
+   "mark": "30",
+   "context": "of classical systems."
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "Proof.Our proof follows the work of Netoˇcný and Redig."
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "(−β)"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "(−β)"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "e inner sum as a product over disjoint objects. Let S = (ei)"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "(−β)"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "i=1∣γ"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "i=1∣γ"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "(−β)"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "(−β)∣γ"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "(−β)∣γ"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "(−β)∣γ"
+  },
+  {
+   "page": 6,
+   "mark": "4",
+   "context": "e"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "For a vertex x, there are at most(eΔ)"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "(2e"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "(2e2Δ)"
+  },
+  {
+   "page": 7,
+   "mark": "e",
+   "context": "n −1)(2"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "n −1)(2e"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "n −1)(2e2Δ)"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "(2e"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "(2e2Δ)(2e"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "(2e2Δ)(2e2Δ + 1)"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "∣β∣k(e"
+  },
+  {
+   "page": 7,
+   "mark": "4",
+   "context": "e"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "e"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "Φ(γσ(i)) = (−1)"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "(−β)"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "β"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "e first sum is over all subsets of [n], of which there are 2"
+  }
+ ]
+}

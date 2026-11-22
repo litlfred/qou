@@ -6,7 +6,7 @@ export default remark({
   title: "Proton: NF construction, mass, charge, and computational backing",
   tags: ["proton", "hadron", "baryon", "color-tube", "knot", "categorical"],
   uses: ["def:categorical-proton", "conj:borromean-quark"],
-  cites: ["manuscript"],
+  cites: ["leitner2026"],
   computation: {
     engine: "python",
     script: "computations/codata_masses.py",
@@ -91,5 +91,7 @@ export default remark({
         "cites a computation for its choice. Bean `qou-vtlj`; adjudication " +
         "belongs to `qou-bg3w`.",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict):  ([gluon ledger](#rem:gluon-stabiliser-ledger))" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict):  ([gluon ledger](#rem:gluon-stabiliser-ledger))" },
   ],
 });

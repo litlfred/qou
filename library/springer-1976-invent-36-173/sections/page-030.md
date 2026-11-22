@@ -1,0 +1,73 @@
+---
+doc_id: springer-1976-invent-36-173
+doc_title: "springer-1976-invent-36-173"
+section_id: page-030
+section_title: "Page 30"
+pages: 30-30
+pdf_page: 30
+source_pdf: springer-1976-invent-36-173.pdf
+source_sha256: dc3217946960a8e0
+text_source: ocr
+granularity: page
+doc_brief: "Trigonometric Sums, Green Functions of Finite Groups and Representations of Weyl Groups — 35 sections: Page 1; Page 2; Page 3"
+---
+202 T.A. Springer
+
+Now &% is reduced to a point. So, in the situation of 4.4, the representation
+rf =rQ is a 1-dimensional representation of W.
+
+7.4. Lemma. In this case, rf is the sign representation of W.
+
+The proof of this is rather similar to that of 3.12, so we shall be brief.
+
+As in the proof of 3.12, we have to compare ¢, and ¢,, for two adjacent Borel
+subgroups B, B' containing T. Using the proper parabolic subgroup P containing
+B and B’ one reduces to the rank 1 case. Then the result follows from 1.6 (ii)
+(using also 2.11, if necessary).
+
+7.5. Proposition. If A is contained in only one Borel subgroup then Q; « (A)=1.
+
+This follows from 7.4, using also 3.13. Of course, it must be assumed that (t’)”
+(or at least t’, see 5.2 (a)) contains strongly regular elements.
+
+The corresponding result for the Green functions of [10] is proved in [loc.cit.,
+9.16]. In that case the corresponding unipotent elements are indeed the regular
+ones, by a result of Steinberg [28, p. 59].
+
+7.6. GL,. Let G=GL,. Then the Q; , are defined in all characteristics, as
+soon as q is sufficiently large (since, as one readily sees, t’ always contains strongly
+regular elements). In fact, the Q,,, can be defined for any g. First, if the F-stable
+maximal torus Tis minisotropic (i.e. if its image in SL,, is anisotropic) then one
+checks that (t’)* always contains strongly regular elements, so then Q7. g is defined.
+From the classification of F-stable maximal tori of GL, ([4, p. 126]) it follows
+that a non-minisotropic F-stable maximal torus T is contained in a proper
+F-stable parabolic subgroup P. Let P be minimal with this property and let L
+be the Levi subgroup of P containing T. Then L is F-stable and is a product of
+GL,,’s. Moreover, Tis minisotropic in L. We can then define Q,, ¢ by the formula
+of 5.5, defining Q, , in the obvious way. One can prove that the orthogonality
+relations of 5.6 remain valid.
+
+7.7 If G=GL,, the centralizer of any element of G is connected (4, p. 233].
+So all groups C(A) of no. 6 are reduced to 1. The varieties @Y have been studied
+for G=GL, by N. Spaltenstein (see [21]). It follows from his results that the
+odd-dimensional cohomology of @, vanishes, and that the eigenvalues of F*
+on H?!(@G, E) all are q'. Also, dim @§=4 (dim Z,(A)—n) in all characteristics.
+Let T bea split maximal F-stable torus of GL,, let T,, be an F-stable torus defined
+by twisting T with we W. The results just quoted and 5.10 then imply the following
+theorem, for G=GL,,.
+
+7.8. Theorem. There is a polynomial a;(w,A)T' such that Qr, g(A)=
+
+izo
+> a;(w, A)q'. The function w+ a,(w, A) is a group character of W=6G,.
+izo
+. Using what was said in 7.6, it follows that this is true for all q. A priori, the
+a;(w, A) might depend on p, but from Green’s results about these polynomials
+one knows that this is not so [4, p. 140].
+
+The leading coefficient of the polynomial of 7.8 gives an irreducible character
+of S,, and we obtain thus a parametrization of the irreducible characters of S,,
+by the nilpotent orbits of gl,, as follows from 6.10.
+
+We next shall discuss the Green functions for groups of type B, and G,. The
+general results to be discussed first will be useful for these special cases.

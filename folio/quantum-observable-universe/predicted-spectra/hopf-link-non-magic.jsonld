@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-hopf-link-non-magic",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:hopf-link-non-magic",
+  "kind": "remark",
+  "title": "Hopf link as the canonical non-magic knot operator (lowest cohomological degree)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-torus-knot-shell-binding"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-knot-operator-selection",
+  "tags": [
+    "hopf-link",
+    "knot-operator",
+    "cohomology",
+    "non-magic",
+    "torus-knot",
+    "spectral-sequence"
+  ],
+  "text": "hopf-link-non-magic.md",
+  "provenance": "authored"
+}

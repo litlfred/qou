@@ -1,0 +1,78 @@
+have 1 — (Rex)? 40
+using &
+by (smt power2-eq-1-iff)
+thus ?thesis
+by (simp add: divide-eq-eq)
+qed
+also have ... <> a? * (Re x)? — 2xaxRe x + (Rex)? = 0
+by (simp add: power2-diff field-simps)
+also have ... + Re x *« (a? * Rea — 2x a+ Re2r)=0
+by (simp add: power2-eq-square field-simps)
+also have ... <> ?rhs
+using ‘Re x # 0)
+by (simp add: mult.commute mult.left-commute power2-eq-square)
+finally
+show ?thesis
+
+qed
+
+moreover
+
+have arcosh (1 + 2 * ((a — Re x)? / ((1 — a”) * (1 — (Re x)”)))) = arcosh (1 + 2 * a? / (1 — a?)) <> Plhs
+using «—1 < aA a< 1) x mult-left-cancellof 2::real (a — Re x)” / ((1 — a”) * (1 — (Re 2)*)) a? / (1 — a?)|
+by (subst arcosh-eq-iff, simp-all add: square-le-1)
+
+ultimately
+
+show poincare-distance (of-complex (cor a)) (of-complez x) = poincare-distance (of-complex (cor a)) Oh <>
+
+(Rez) *a*a-—2*a+Rex=0
+using x
+by (auto simp add: poincare-distance-formula cmod-eq-Re)
+qed
+
+show ?P ?z On
+proof
+
+let ?a = (1 — sqrt(1 — (Re x)?)) / (Re z)
+let ?b = (1 + sqrt(1 — (Re 2)”)) / (Re x)
+
+have is-real ?a
+by simp
+moreover
+have 1 — (Re x)? > 0
+using x
+by (smt power2-eq-1-iff square-le-1)
+have |?a| < 1
+proof (cases Re « > 0)
+case True
+have (1 — Re 2)? < 1 — (Re x)?
+using (Rex > 0) x
+by (simp add: power2-eq-square field-simps)
+hence 1 — Re x < sqrt (1 — (Re ))
+using real-less-rsqrt by fastforce
+thus ?thesis
+using «1 — (Re x)? > 0) ‘Rex > 0»
+by simp
+next
+case False
+hence Re x < 0
+using ‘Re x # 0)
+by simp
+
+have 1 + Rex > 0
+using (Re x > —1>
+by simp
+
+hence 2xRe z + 2*Re xxRe xz < 0
+using (Re xz < 0»
+
+by (metis comm-semiring-class. distrib mult.commute mult-2-right mult-less-0-iff one-add-one zero-less-double-add-iff-zero-less-s'
+
+hence (1 + Re x)? < 1 — (Rex)?
+by (simp add: power2-eq-square field-simps)
+
+hence 1 + Re x < sqrt (1 — (Re x))
+using «1 — (Re x)? > 0»
+
+61

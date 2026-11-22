@@ -1,0 +1,43 @@
+tor(M;, hi) € k(Y). We pick any basis of H'(M, Adop), and again H as a basis of
+H?(M, Adop). Then we have the following theorem of Milnor [Mil66] :
+
+Theorem 2.4.3.
+
+tor(M,) tor(M:
+tor(M, Adop) = ee tor(H) € Qeyy/n
+This equality (and the left-hand side term) does not depend on the choice of bases
+
+we made.
+Proposition 2.4.4. The terms tor(M,), tor(M2) and tor(X) lie in OF
+
+Proof. Those factors are torsion of based complex of k(Y)-vector spaces with based
+homology, hence they lie in k(Y)* by definition. Since the representations pi, py
+and py, are convergent, one can define the complexes of O,-modules C*(", Ad ops;)y,
+C*(M,, Adop;), and C*(M2, Adop}), with their homology groups. Moreover, we
+could have chosen the bases cy, ¢1, C2, hy, hi, he of the paragraph above to generate
+those terms as O,-modules, because C*(X, Adops),y,...,H*(M;, Adop;), are free
+O,,-modules (see Remark [2.4.5), and those choices do not affect the computation of
+the torsion. To be precise, we assume that we have chosen for instance a basis hg
+of the free O,-module H!(Mp, Adop}), that spans H!(M2, Adop}) as a k(Y)-vector
+space, and that it is mapped on a basis through the isomorphism of k(Y)-vector
+spaces H!(Mz, Adop) + H*(Mo, Adops). Finally, the map H1(M,,Adop1), >
+H1(5, Adops)), identifies the basis h, to a sub-basis of hy.
+
+Now we prove that the torsions of this complexes lie in OF : let us perform the
+computation for, say, M,. The complex is C°(M,, Adop;), A C1(M,, Adopy)y.
+Since H°(M,, Adop,), is trivial, the matrix A is the matrix of an injective O,-linear
+morphism. Moreover, H!(M, Adop;), is free, hence its determinant is an invertible
+det A € OF as claimed. Oo
+
+Since tor(M;), tor(M2) and tor(X) take values in O*, the valuation of tor(M, Ad op)
+
+is determined by the torsion of the exact sequence H.
+
+Remark 2.4.5. 1. As we wish to compute the valuation of the torsion, it would
+be better to study a complex of O,-modules, having in mind Theorem [2.3.3]
+That will be the first step of the proof.
+
+2. Notice that we have isomorphisms : k(Y) > H'!(M,Adop),1 +4 (Zp)p7!
+and H?(M, Adop) > k(Y),A# Tr(\(0M)#).
+
+73

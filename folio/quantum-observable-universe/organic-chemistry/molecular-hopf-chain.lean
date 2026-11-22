@@ -10,7 +10,7 @@ Crossing energy is (N-1) · E_bond(k).
 
 ## References
 
-- [manuscript] Ch. 10, §2 Molecular Hopf chains and rings
+- [leitner2026] Ch. 10, §2 Molecular Hopf chains and rings
 -/
 
 namespace QOU.Organic
@@ -20,7 +20,7 @@ namespace QOU.Organic
     inlined here for single-file `lean`-direct checking).  Fields match
     the canonical declaration's structure. -/
 -- canonical decl: QOU.Organic.CovalentBond
--- Ref: [manuscript] Ch. 10, Definition: Covalent bond (shared Hopf links)
+-- Ref: [leitner2026] Ch. 10, Definition: Covalent bond (shared Hopf links)
 structure CovalentBond where
   /-- Bond order: number of shared Hopf links (1 = single, 2 = double, 3 = triple). -/
   order : ℕ
@@ -30,7 +30,7 @@ structure CovalentBond where
   order_le : order ≤ 3
 
 /-- A molecular Hopf chain: N atoms bonded pairwise in a line. -/
--- Ref: [manuscript] Ch. 10, Definition: Molecular Hopf chain (open)
+-- Ref: [leitner2026] Ch. 10, Definition: Molecular Hopf chain (open)
 structure MolecularHopfChain where
   /-- Number of atoms in the chain. -/
   length : ℕ
@@ -45,13 +45,13 @@ def MolecularHopfChain.numBonds (c : MolecularHopfChain) : ℕ :=
 
 /-- The linking matrix of a chain is tridiagonal:
     L_{ij} = k when |i-j| = 1, and 0 otherwise. -/
--- Ref: [manuscript] Ch. 10, Definition: Molecular Hopf chain (open)
+-- Ref: [leitner2026] Ch. 10, Definition: Molecular Hopf chain (open)
 def MolecularHopfChain.linkingMatrix (c : MolecularHopfChain)
     (i j : Fin c.length) : ℕ :=
   if (i.val + 1 = j.val) ∨ (j.val + 1 = i.val) then c.bondOrder.order
   else 0
 
-/-- Alexander weight of a chain: (N-1) · Δ_{T(2,2)}(q) = N-1. -/
+/-- reduced Alexander weight (linking number) of a chain: (N-1) · Δ̃_{T(2,2)}(q) = N-1. -/
 def MolecularHopfChain.alexanderWeight (c : MolecularHopfChain) : ℕ :=
   c.length - 1
 

@@ -9,13 +9,19 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Monodromy interpretation of the pivotal operators",
+  "title": "The pivotal indicators",
   "pageStart": 21,
   "pageEnd": 24,
   "contains": [
-    "library/arxiv-1502.02882v2/blocks/prose-sec-014"
+    "library/arxiv-1502.02882v2/blocks/prose-sec-014",
+    "library/arxiv-1502.02882v2/blocks/ex-sec-014-01",
+    "library/arxiv-1502.02882v2/blocks/lem-sec-014-02",
+    "library/arxiv-1502.02882v2/blocks/cor-sec-014-03",
+    "library/arxiv-1502.02882v2/blocks/lem-sec-014-04",
+    "library/arxiv-1502.02882v2/blocks/ex-sec-014-05",
+    "library/arxiv-1502.02882v2/blocks/rem-sec-014-06"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1502.02882v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1502.02882v2",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1502.02882v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1502.02882v2/manifest.jsonld",
   "provenance": "ingested"
 }

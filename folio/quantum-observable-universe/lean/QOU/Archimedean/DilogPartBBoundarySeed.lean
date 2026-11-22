@@ -14,7 +14,7 @@ is dominated by `δ·log δ`-type quantities with `δ = 1−xqⁿ → 0`, and th
 closes it.  Proved from the continuity of Mathlib's entropy function
 `Real.negMulLog = −t·log t` at `0`.
 
--- Ref: [manuscript] conj:dilogarithm-archimedean-limit
+-- Ref: [leitner2026] conj:dilogarithm-archimedean-limit
 -/
 
 namespace QOU.Archimedean

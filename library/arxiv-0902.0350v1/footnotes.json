@@ -1,0 +1,897 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-0902.0350v1",
+ "status": "determined",
+ "body_size": 10.9,
+ "footnotes": [
+  {
+   "id": "fn-p010-1",
+   "page": 10,
+   "mark": "1",
+   "text": "There is a large amount of code copying in Ferguson’s code,resulting in a much larger code base. The number of distinct lines is difficult to measure",
+   "marks": [
+    {
+     "page": 10,
+     "context": "codebase"
+    }
+   ],
+   "block": "library/arxiv-0902.0350v1/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p031-1",
+   "page": 31,
+   "mark": "2",
+   "text": "calc-2799256461,calc-5470795818",
+   "marks": [
+    {
+     "page": 30,
+     "context": "1, u"
+    },
+    {
+     "page": 30,
+     "context": "1, u"
+    },
+    {
+     "page": 30,
+     "context": "1, u"
+    },
+    {
+     "page": 30,
+     "context": "1, u"
+    },
+    {
+     "page": 30,
+     "context": "2} does not cross {u1, u"
+    },
+    {
+     "page": 30,
+     "context": "1, u"
+    },
+    {
+     "page": 30,
+     "context": "1, u"
+    },
+    {
+     "page": 30,
+     "context": "1, u"
+    },
+    {
+     "page": 30,
+     "context": "1, u"
+    },
+    {
+     "page": 30,
+     "context": "1, u"
+    },
+    {
+     "page": 30,
+     "context": "1, u"
+    },
+    {
+     "page": 30,
+     "context": "2, u"
+    },
+    {
+     "page": 30,
+     "context": "1||> 2.85and||u"
+    },
+    {
+     "page": 30,
+     "context": "1, u"
+    },
+    {
+     "page": 30,
+     "context": "1, u"
+    },
+    {
+     "page": 30,
+     "context": "1, u"
+    },
+    {
+     "page": 31,
+     "context": "Intervalcalculations"
+    }
+   ],
+   "block": "library/arxiv-0902.0350v1/blocks/prose-sec-010"
+  },
+  {
+   "id": "fn-p034-1",
+   "page": 34,
+   "mark": "3",
+   "text": "calc-7431506800,calc-5568465464,calc-4741571261,calc-6915275259",
+   "marks": [
+    {
+     "page": 34,
+     "context": "(i, j)=dih(0, u2, wi, wj).Thenintervalarithmeticcalculations"
+    }
+   ],
+   "block": "library/arxiv-0902.0350v1/blocks/prose-sec-010"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p035-1",
+   "page": 35,
+   "mark": "8",
+   "text": "Section 9 assumes that the diagonal belongs to a quarter in the Q-system, but Lemma 10.14 uses these results when {0, v} has 0 or",
+   "block": "library/arxiv-0902.0350v1/blocks/prose-sec-010"
+  },
+  {
+   "id": "fn-p035-2",
+   "page": 35,
+   "mark": "1",
+   "text": "anchors. To make this coherent, we should assume throughout Section 9 that we have the weaker condition that whenever {0, v} has two or more anchors, it is a diagonal of a quarter in the Q-system. The proofs of Section 9 all go through in this context. (Lemma 9.7 is all that is relevant here.) [p.87,Definition 9.3] In definition of ∆(v, W e), we can have some Q (as in Fig 9.1) with negative orientation. In this case, Ev ∩Ei can clip the other side. We want the object without clipping. ∆(v, W e) should be understood as the unclipped object.",
+   "block": "library/arxiv-0902.0350v1/blocks/prose-sec-010"
+  },
+  {
+   "id": "fn-p037-1",
+   "page": 37,
+   "mark": "8",
+   "text": "We claim these deformations produce √ a diagonal of length less than",
+   "block": "library/arxiv-0902.0350v1/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p037-2",
+   "page": 37,
+   "mark": "8",
+   "text": "between opposite corners of the quadrilateral. (If not, the deformations produce a rhombus with side 2 and diagonals both greater √ than 8, which is a geometric impossibility.) We cut the quad cluster along the √ diagonal of length",
+   "block": "library/arxiv-0902.0350v1/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p037-3",
+   "page": 37,
+   "mark": "8",
+   "text": "and continue with deformations until the top edges on each √",
+   "block": "library/arxiv-0902.0350v1/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p037-4",
+   "page": 37,
+   "mark": "8",
+   "text": ". We may apply calc-474496219 and calc- simplex are (y4, y5, y6) = (2, 2, 8990938295 to the two separate simplices to obtain the result. Now we may assume that the heights of v1, v3 are at most 2.3. If either height is at least 2.1, the result follows from calc-5127197465, which gives the bound of 0 on each half.",
+   "block": "library/arxiv-0902.0350v1/blocks/prose-sec-011"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 4,
+   "mark": "5",
+   "context": "runs some 10"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "non-existenceofconfigurationsofseveralpointsinR"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "(x −x1)"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "(x −x1)2+ (y −y1)"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "(x −x1)2+ (y −y1)2= (x −x2)"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "(x −x1)2+ (y −y1)2= (x −x2)2+ (y −y2)"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "(x −x1)2+ (y −y1)2= (x −x2)2+ (y −y2)2= (x −x3)"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "(x −x1)2+ (y −y1)2= (x −x2)2+ (y −y2)2= (x −x3)2+ (y −y3)"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "speck,weinvariablyjustneedthespecialcaseR"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "e.g.vectorcrossproducts,arespecifictoR"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "ricstatementsinR"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "Forexample,supposewewishtoverifythatifaquadraticequationax"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "bx + c = 0hasarealroot,thenb"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "algebraiccertificateb"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "algebraiccertificateb2−4ac=(2ax + b)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "algebraiccertificateb2−4ac=(2ax + b)2−4a(ax"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "therequiredfactfollowseasily:(2ax + b)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "4a(ax"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "4a(ax2+ bx + c)=0becausexisaroot,andsowededuceb"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "complexanalysisisthefollowinginR"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "y"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "y"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "y"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "y"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "y"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "y"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "y"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "y"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "y"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "y"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "y"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "y"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "2(y"
+  },
+  {
+   "page": 13,
+   "mark": "y",
+   "context": "1"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "1y"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "1y2+ y"
+  },
+  {
+   "page": 13,
+   "mark": "y",
+   "context": "1y2+ y1"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "1y2+ y1y"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "2+ y"
+  },
+  {
+   "page": 13,
+   "mark": "y",
+   "context": "1"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "1y"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "1y3+ y"
+  },
+  {
+   "page": 13,
+   "mark": "y",
+   "context": "2"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "2y"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "2y3+ y"
+  },
+  {
+   "page": 13,
+   "mark": "y",
+   "context": "2y3+ y1"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "2y3+ y1y"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "+ y2y"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "3−y"
+  },
+  {
+   "page": 13,
+   "mark": "y",
+   "context": "3−y1"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "3−y1y"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "4−y"
+  },
+  {
+   "page": 13,
+   "mark": "y",
+   "context": "4−y2"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "4−y2y"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "5−y"
+  },
+  {
+   "page": 13,
+   "mark": "y",
+   "context": "5−y3"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "5−y3y"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "x −xisclearly0.Subdividing[a, b]into[a,"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "First,algebraiclawssuchas√a≤b⇔a≤b"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "First,algebraiclawssuchas√a≤b⇔a≤b2(ifb≥0)and"
+  },
+  {
+   "page": 14,
+   "mark": "a",
+   "context": "arctan a+arctan b = arctan"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "t"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "13t"
+  },
+  {
+   "page": 14,
+   "mark": "4",
+   "context": "t"
+  },
+  {
+   "page": 14,
+   "mark": "t",
+   "context": "4−37"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "B"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "x"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "xi(1 −x)"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "Forapolynomialpandavectorb ∈R"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "bi · B"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "pointsinR"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "et S= {0, v, , u1, u2} be a set of four distinct points in R"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "Lemma2.LetS={v, w, u1, u2, v0}beasetoffivedistinctpointsinR"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "Lemma3.LetS={v, w, u1, u2, v0}beasetoffivedistinctpointsinR"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "distinct points in R"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "2||≤3."
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "2} ⊆R"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "2"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "22−(3.2/2)"
+  },
+  {
+   "page": 29,
+   "mark": "3",
+   "context": "2}⊆R"
+  },
+  {
+   "page": 29,
+   "mark": "a",
+   "context": "2}⊆R3be"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "1, u"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "2||≤3."
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "1−u"
+  },
+  {
+   "page": 29,
+   "mark": "91",
+   "context": "1−u2||≥2."
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "1||, ||u"
+  },
+  {
+   "page": 29,
+   "mark": "85",
+   "context": "2||≥2."
+  },
+  {
+   "page": 29,
+   "mark": "91",
+   "context": "2||≥2."
+  },
+  {
+   "page": 29,
+   "mark": "64",
+   "context": "1||≥3."
+  },
+  {
+   "page": 29,
+   "mark": "91",
+   "context": "2||≥2."
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "2||= 3."
+  },
+  {
+   "page": 29,
+   "mark": "3",
+   "context": "2} ⊆R"
+  },
+  {
+   "page": 29,
+   "mark": "91",
+   "context": "1||< 2."
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "1, u"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "1, u2},or(2){v, w}passesthrough{u"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "2} does not cross {u"
+  },
+  {
+   "page": 30,
+   "mark": "u",
+   "context": "2} does not cross {u1, u2}.So"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "2, u"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "2−u"
+  },
+  {
+   "page": 30,
+   "mark": "91",
+   "context": "1||≥2."
+  },
+  {
+   "page": 30,
+   "mark": "64",
+   "context": "1||≤3."
+  },
+  {
+   "page": 30,
+   "mark": "u",
+   "context": "1, u2}.Otherwise,"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "2liesintheconvexhullof{0, u"
+  },
+  {
+   "page": 30,
+   "mark": "51",
+   "context": "2||> 2."
+  },
+  {
+   "page": 30,
+   "mark": "85",
+   "context": "1||> 2."
+  },
+  {
+   "page": 30,
+   "mark": "85",
+   "context": "2||> 2."
+  },
+  {
+   "page": 30,
+   "mark": "91",
+   "context": "2||<2."
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "2, u"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "2, u"
+  },
+  {
+   "page": 30,
+   "mark": "3",
+   "context": "inR"
+  },
+  {
+   "page": 31,
+   "mark": "3",
+   "context": "Lemma10.Let{u1, u2, w, v}beasetoffourdistinctpointsinR"
+  },
+  {
+   "page": 32,
+   "mark": "3",
+   "context": "Lemma11.Let{u1, u2, w, v}beasetoffourdistinctpointsinR"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "1, u"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "1, u"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "1−u"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "1−u2||≤3."
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "1, u"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "1, u"
+  },
+  {
+   "page": 33,
+   "mark": "a",
+   "context": "1, u2}liesin"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "1||, ||v −u"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "1||, ||v −u2||, ||w −u"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "1||, ||v −u2||, ||w −u1||, ||w −u"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "1, u"
+  },
+  {
+   "page": 33,
+   "mark": "51",
+   "context": "1||≤2."
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "1, u"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "1, u"
+  },
+  {
+   "page": 33,
+   "mark": "a",
+   "context": "1, u2}is"
+  },
+  {
+   "page": 33,
+   "mark": "51",
+   "context": "1||≥2."
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "1||≥2.51or||v −u"
+  },
+  {
+   "page": 33,
+   "mark": "51",
+   "context": "1||≥2.51or||v −u2||≥2."
+  },
+  {
+   "page": 33,
+   "mark": "u",
+   "context": "1}, moving"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "1}, moving u"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "1, until||u"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "1||= 3."
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "1||> 3."
+  },
+  {
+   "page": 36,
+   "mark": "w",
+   "context": "w={x∈R"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "w={x∈Rw∩(0, {u, w})|ϵ"
+  },
+  {
+   "page": 37,
+   "mark": "u",
+   "context": "[p.139,Lemma12.18,proof,ℓ+3]C0(|v|, π)⇝C"
+  },
+  {
+   "page": 37,
+   "mark": "t",
+   "context": "0(2"
+  },
+  {
+   "page": 37,
+   "mark": "0",
+   "context": "0(2t"
+  },
+  {
+   "page": 37,
+   "mark": "0",
+   "context": "0(2t0, π)) −πmax⇝τ"
+  },
+  {
+   "page": 37,
+   "mark": "u",
+   "context": "0(2t0, π)) −πmax⇝τ0(C"
+  },
+  {
+   "page": 37,
+   "mark": "u",
+   "context": "[p.139,Lemma12.18,proof,ℓ+6]τ0(C"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "0(2."
+  },
+  {
+   "page": 37,
+   "mark": "t",
+   "context": "0⇝(2"
+  },
+  {
+   "page": 37,
+   "mark": "0",
+   "context": "0⇝(2t"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "0⇝(2t0)"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "[p.144,ℓ+11,ℓ+17]2t"
+  }
+ ]
+}

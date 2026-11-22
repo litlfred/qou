@@ -44,7 +44,7 @@ $\tau \colon \mathcal{A}_\infty \to \mathbb{C}$ be the
 brane levels $n$ and $m$ is a zigzag of coface and codegeneracy maps
 
     The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
--- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/weak-equiv-invariance.ts
+-- Ref: [leitner2026] quantum-observable-universe/lifting-and-descent/weak-equiv-invariance.ts
 theorem weak_equiv_invariance [ctx : WeakEquivInvarianceContext] :
     ∀ n m : ℕ, ctx.weak_equiv n m → ctx.τ_value n = ctx.τ_value m :=
   ctx.impl_weak_equiv_invariance ctx.invariance_active

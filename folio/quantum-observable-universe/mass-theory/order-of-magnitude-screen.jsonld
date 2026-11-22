@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-order-of-magnitude-screen",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:order-of-magnitude-screen",
+  "kind": "proposition",
+  "title": "The order-of-magnitude screen $\\mathrm{Scr}_\\lambda(t,x)$: monotone in the threshold, multiplicative, conditional rejection, finite-ladder bound, and the threshold-free direction obstruction",
+  "tags": [
+    "q-beta",
+    "formalize-first",
+    "direction-sanity",
+    "screen",
+    "no-fit"
+  ],
+  "leanRef": "qou:QOU.MassCore.OrderOfMagnitudeScreen.not_screen_pow_of_le",
+  "text": "order-of-magnitude-screen.md",
+  "leanSource": "order-of-magnitude-screen.lean",
+  "provenance": "authored"
+}

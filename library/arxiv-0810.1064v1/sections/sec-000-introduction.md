@@ -7,10 +7,11 @@ section_number: null
 pages: 1-2
 source_pdf: 0810.1064v1.pdf
 source_sha256: b2d7514c5382ceaa
-doc_brief: "Multiple polylogarithm values at roots of unity — For any positive integer N let µ N be the group of the N th roots of unity."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.984
+latex_prose_ratio: 0.994
+latex_coverage_ratio: 1.0
+doc_brief: "Multiple polylogarithm values at roots of unity — For any positive integer N let µN be the group of the Nth roots of unity."
 ---
 Double shuffle relations have played significant roles in the study of multiple zeta values in recent years. These relations can be easily generalized to the special values of multiple polylogarithms at roots of unity (MPV for short): $$\label{equ:seriesdefn}
 Li_{s_1,\dots,s_n}(\zeta_1,\dots,\zeta_n):=\sum_{k_1>\dots>k_n>0}

@@ -1,7 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "prop:composite-crossing-parity",
+  interprets: "conj:composite-crossing-parity",
   label: "rem:crossing-parity-test",
   title: "Observational test of the $Z$-parity sublimation rule",
   tags: [
@@ -12,7 +12,7 @@ export default remark({
     "condensed-matter",
   ],
   uses: [
-    "prop:composite-crossing-parity",
+    "conj:composite-crossing-parity",
     "prop:phase-transition-boundary",
   ],
 });

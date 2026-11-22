@@ -38,7 +38,7 @@ stated; it was previously `⟨h, trivially-true⟩`.
 
 ## References
 
-- [manuscript] §5/generation-completeness
+- [leitner2026] §5/generation-completeness
 - [kauffman1991] https://doi.org/10.1142/1116
 -/
 
@@ -112,7 +112,7 @@ theorem reachable_of_unknotting (k : K) : Reachable S k :=
     `reachable_of_unknotting`, i.e. `GenerationScheme.unknotting_realised`
     composed with `unknot_generator`. -/
 -- Ref: [kauffman1991] Kauffman, "Knots and Physics," World Scientific 1991
--- Ref: [manuscript] §5/generation-completeness
+-- Ref: [leitner2026] §5/generation-completeness
 theorem generation_completeness (k : K) (_h_embed : isEmbeddable S k) :
     Reachable S k :=
   reachable_of_unknotting S k

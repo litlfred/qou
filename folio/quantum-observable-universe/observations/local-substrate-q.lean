@@ -22,7 +22,7 @@ LaTeX label: `prop:local-substrate-q`
 ## References
 
 - CODATA 2018 recommended values
-- [manuscript] §11-experimental-evidence/local-substrate-q
+- [leitner2026] §11-experimental-evidence/local-substrate-q
 
 **Ground ring**: `ℝ` (archimedean realisation).
 Evaluates formal results at q₀ ≈ 1.1098 for comparison with
@@ -39,7 +39,7 @@ namespace QOU.Experimental
 
     q is the unique real root > 1 of:
     `(1 - q⁻¹)² = Vol(4₁) / (m_μ/m_e)` -/
--- Ref: CODATA 2018, [manuscript] §11
+-- Ref: CODATA 2018, [leitner2026] §11
 structure LocalSubstrateQ where
   /-- Hyperbolic volume of the figure-eight knot.
       `Vol(4₁) = 2 Cl₂(π/3) = 6 Λ(π/3) ≈ 2.02988` — two regular ideal
@@ -62,7 +62,7 @@ structure LocalSubstrateQ where
     From `(1 - q⁻¹)² = c`, taking positive square root:
     `1 - q⁻¹ = √c`, so `q⁻¹ = 1 - √c`, i.e. `q = 1/(1 - √c)`.
     For q > 1 we need `0 < √c < 1`, i.e. `0 < c < 1`. -/
--- Ref: [manuscript] §11
+-- Ref: [leitner2026] §11
 theorem unique_q_solution (c : ℝ) (hc_pos : 0 < c) (hc_lt : c < 1) :
     ∃! (q : ℝ), 1 < q ∧ (1 - q⁻¹) ^ 2 = c := by
   use (1 - Real.sqrt c)⁻¹

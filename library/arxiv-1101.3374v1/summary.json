@@ -2,25 +2,70 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1101.3374v1",
  "source_sha256": "01d76c1d259c1d51",
- "brief": "PONTRYAGIN INVARIANTS AND INTEGRAL FORMULAS FOR MILNOR’S TRIPLE LINKING NUMBER — To each three-component link in the 3-sphere, we associate a geometrically natural characteristic map from the 3-torus",
- "extended": "**PONTRYAGIN INVARIANTS AND INTEGRAL FORMULAS FOR MILNOR’S TRIPLE LINKING NUMBER**\n\n*DENNIS DETURCK, HERMAN GLUCK, RAFAL KOMENDARCZYK*\n\n60 pp, 3 sections.\n\n**Abstract.** To each three-component link in the 3-sphere, we associate a geometrically natural characteristic map from the 3-torus to the 2-sphere, and show that the pairwise linking numbers and Milnor triple linking number that classify the link up to link ho- motopy correspond to the Pontryagin invariants that classify its characteristic map up to homotopy. This can be viewed as a natural extension of the familiar fact that the linking number of a two-component link in 3-space is the degree of its associated Gauss map from the 2-torus to the 2-sphere. When the pairwise linking numbers are all zero, we give an integral formula for the triple linking number analogous to the Gauss integral for the pairwise linking numbers.\n\n**Outline.** 1 Introduction; 4 Explicit formulas for the characteristic map; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem: A. Let L be a 3-component link in S3. Then the pairwise linking\n- Theorem: A, and that, just as for gL, depends a priori on the choice of a projection to the\n- Theorem: B. If the pairwise linking numbers of a three-component link L inS3\n- Theorem: A asserts, among other things, that L and L′ are link homotopic if and only\n- Theorem: A it will be more convenient, for the most part, to use an alternative form of\n- Theorem: A asserts that the degrees of gL on the coordinate 2-tori of T 3 are equal to the",
+ "brief": "Pontryagin invariants and integral formulas for Milnor's triple linking number — To each three-component link in the 3-sphere, we associate a geometrically natural characteristic map from the 3-torus",
+ "extended": "**Pontryagin invariants and integral formulas for Milnor's triple linking number**\n\n*DENNIS DETURCK, HERMAN GLUCK, RAFAL KOMENDARCZYK*\n\n60 pp, 12 sections.\n\n**Abstract.** To each three-component link in the 3-sphere, we associate a geometrically natural characteristic map from the 3-torus to the 2-sphere, and show that the pairwise linking numbers and Milnor triple linking number that classify the link up to link ho- motopy correspond to the Pontryagin invariants that classify its characteristic map up to homotopy. This can be viewed as a natural extension of the familiar fact that the linking number of a two-component link in 3-space is the degree of its associated Gauss map from the 2-torus to the 2-sphere. When the pairwise linking numbers are all zero, we give an integral formula for the triple linking number analogous to the Gauss integral for the pairwise linking numbers.\n\n**Outline.** Front matter; 1 Introduction; 2 The Milnor -invariant; 3 The Pontryagin -invariant; 4 Explicit formulas for the characteristic map; 5 The Pontryagin -invariant of the characteris; 6 Proof of Theorem ??; 7 Sketch of an algebraic proof of Theorem ??; 8 Proof of Theorem ??, formulas (1) and (2); 9 Fourier series and the Proof of Theorem ??, ; Appendix. Whitehead's integral formula for the; References",
  "tokens": {
   "brief": 49,
-  "extended": 386
+  "extended": 326
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-20"
+   "pages": "1-9"
   },
   {
-   "id": "sec-001-4-explicit-formulas-for-the-characteristic-map",
+   "id": "sec-001-2-the-milnor--invariant",
+   "title": "The Milnor -invariant",
+   "pages": "9-12"
+  },
+  {
+   "id": "sec-002-3-the-pontryagin--invariant",
+   "title": "The Pontryagin -invariant",
+   "pages": "12-20"
+  },
+  {
+   "id": "sec-003-4-explicit-formulas-for-the-characteristic-map",
    "title": "Explicit formulas for the characteristic map",
-   "pages": "20-57"
+   "pages": "20-25"
   },
   {
-   "id": "sec-002-references",
+   "id": "sec-004-5-the-pontryagin--invariant-of-the-characteristi",
+   "title": "The Pontryagin -invariant of the characteristic map",
+   "pages": "25-41"
+  },
+  {
+   "id": "sec-005-6-proof-of-theorem",
+   "title": "Proof of Theorem ??",
+   "pages": "41-43"
+  },
+  {
+   "id": "sec-006-7-sketch-of-an-algebraic-proof-of-theorem",
+   "title": "Sketch of an algebraic proof of Theorem ??",
+   "pages": "43-45"
+  },
+  {
+   "id": "sec-007-8-proof-of-theorem-formulas-1-and-2",
+   "title": "Proof of Theorem ??, formulas (1) and (2)",
+   "pages": "45-48"
+  },
+  {
+   "id": "sec-008-9-fourier-series-and-the-proof-of-theorem-formul",
+   "title": "Fourier series and the Proof of Theorem ??, formula (3)",
+   "pages": "48-56"
+  },
+  {
+   "id": "sec-009-appendix-whiteheads-integral-formula-for-the-hop",
+   "title": "Appendix. Whitehead's integral formula for the Hopf invariant",
+   "pages": "56-57"
+  },
+  {
+   "id": "sec-010-references",
    "title": "References",
    "pages": "57-60"
   }
@@ -29,8 +74,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

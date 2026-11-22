@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1312.3086v1/sections/sec-008",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Derivation of the expression of the average number of steps in entanglement generation",
+  "pageStart": 9,
+  "pageEnd": 10,
+  "contains": [
+    "library/arxiv-1312.3086v1/blocks/prose-sec-008"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1312.3086v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1312.3086v1/manifest.jsonld",
+  "provenance": "ingested"
+}

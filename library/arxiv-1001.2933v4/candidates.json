@@ -3,6 +3,7 @@
  "doc_id": "arxiv-1001.2933v4",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "b02636c86d593c02b0b1ca992c1584c52874bc5d7e0aafdaeed5b5b381654c5c",
   "file": "1001.2933v4.pdf.txt"
@@ -20,25 +21,9 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 1,
-  "by_kind": {
-   "theorem": 1
-  },
-  "formalization_candidates": 1
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "1.1",
-   "name": null,
-   "statement": "). Instead of simply setting \u01eb = 0, we can consider the limit n \u2192 \u221e, \u01eb \u2192 0 with",
-   "section_file": "sections/sec-021-5-3-the-figure-eight-knot.md",
-   "section_title": "The Figure-Eight Knot",
-   "pages": "108-121",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  }
- ]
+ "candidates": []
 }

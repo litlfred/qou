@@ -1,0 +1,1 @@
+Let ϕ: C →C be an orientation-preserving homeomorphism. Then ϕ is quasi- conformal if and only if it extends to a homeomorphism Φ: H3 ∪C →H3 ∪C whose restriction to H3 is bilipschitz (with respect to the hyperbolic metric).

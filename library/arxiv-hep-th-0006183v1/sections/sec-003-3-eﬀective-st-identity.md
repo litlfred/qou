@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-0006183v1
-doc_title: "arXiv:hep-th/0006183v1 23 Jun 2000"
+doc_title: "Fine-tuning and the Wilson renormalization group"
 section_id: sec-003-3-eﬀective-st-identity
 section_title: "Eﬀective ST identity"
 section_number: 3
@@ -8,6 +8,7 @@ pages: 4-5
 source_pdf: 0006183v1.pdf
 source_sha256: 2c9c4d97ce4f71a3
 toc_source: inferred
+doc_brief: "Fine-tuning and the Wilson renormalization group — We use the Wilson renormalization group (RG) formulation to solve the ﬁne-tuning proce- dure needed in renormalization schemes breaking the gauge"
 ---
 In the RG formulation the ST identity for the physical eﬀective action Γ[Φ, γ] ≡Γ[Φ, γ; 0, ∞]
 is ensured if the cutoﬀeﬀective action satisﬁes a modiﬁed ST [3]-[7]. As usual in studying
@@ -85,4 +86,3 @@ which reduce the number of independent equations [3]. In the next section we wil
 these ﬁne-tuning equations at one-loop order tuning the couplings of the UV action at this
 order. Besides determining these couplings this calculation provides a direct check of the
 solvability of the ﬁne-tuning problem.
-4

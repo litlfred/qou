@@ -16,6 +16,10 @@ export default remark({
   uses: ["prop:fivetwo-trace-field", "prop:fivetwo-saddle-sum-rule"],
   authorNotes: [
     {
+      kind: "refined-framing",
+      body: "The corpus previously recorded the bar-odd channel's arithmetic home as Q(√−7), inferred from det(5_2) = 7; that identification was retracted.",
+    },
+    {
       kind: "status",
       date: "2026-08-19",
       body:

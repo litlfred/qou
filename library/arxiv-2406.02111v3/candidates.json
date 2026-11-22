@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2406.02111v3",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "d7be0c3f08b4d42a20fe9ae75651bec95417263c9e92d1796bb3d2cb3ea2f8e7",
+  "file": "2406.02111v3.pdf"
+ },
+ "provenance": {
+  "title": "Categorical Quantum Volume Operator",
+  "authors": "Alexander Hahn ,1, \u2217Sebastian Murk ,2, \u2020 Sukhbinder Singh,3, \u2021 and Gavin K. Brennen",
+  "arxiv": {
+   "id": "2406.02111",
+   "version": "3",
+   "primary_class": "gr-qc",
+   "stamp_date": "29 Aug 2024"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

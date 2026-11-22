@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-astro-ph-0203462v1/blocks/prose-sec-008",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Is the r-process universal ?",
-  "pageStart": 13,
-  "pageEnd": 16,
-  "text": "../sections/sec-008-5-is-the-r-process-universal.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-astro-ph-0203462v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-astro-ph-0203462v1",
+  "title": "The lighter elements, 38$\\leq$Z$\\leq$48",
+  "pageStart": 8,
+  "pageEnd": 10,
+  "text": "../sections/sec-008-43-the-lighter-elements-38leqzleq48.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-astro-ph-0203462v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-astro-ph-0203462v1/manifest.jsonld",
   "provenance": "ingested"
 }

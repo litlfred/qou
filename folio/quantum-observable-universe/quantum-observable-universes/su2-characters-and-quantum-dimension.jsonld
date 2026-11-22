@@ -1,0 +1,41 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ex-su2-characters-and-quantum-dimension",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:su2-characters-and-quantum-dimension",
+  "kind": "example",
+  "title": "$\\mathrm{SU}(2)$ characters, and the quantum dimension as one evaluation of them",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-chern-character",
+    "papers/quantum-observable-universe/blocks/def-grothendieck-group-of-a-qou",
+    "papers/quantum-observable-universe/blocks/ex-quantum-universe-su2"
+  ],
+  "foreshadows": [
+    "papers/quantum-observable-universe/blocks/rem-euler-characteristic-of-the-regular-representation"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-chern-character",
+  "cites": [
+    "references/fulton-harris1991",
+    "references/kassel1995"
+  ],
+  "tags": [
+    "su2",
+    "character",
+    "quantum-dimension",
+    "chern-character",
+    "grothendieck-group"
+  ],
+  "leanRef": "qou:QOU.Examples.su2Character",
+  "text": "su2-characters-and-quantum-dimension.md",
+  "leanSource": "su2-characters-and-quantum-dimension.lean",
+  "provenance": "authored"
+}

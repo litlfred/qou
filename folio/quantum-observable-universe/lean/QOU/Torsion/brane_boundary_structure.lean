@@ -24,7 +24,7 @@ modes; the Reeb involution `ξ ↦ −ξ` reverses orientation across it.*
 The Lean encoding records the four properties as fields of an
 abstract `BraneBoundaryContext`.
 
--- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/brane-boundary-structure.md
+-- Ref: [leitner2026] quantum-observable-universe/lifting-and-descent/brane-boundary-structure.md
 -/
 
 namespace QOU.Torsion
@@ -56,7 +56,7 @@ class BraneBoundaryContext where
 /-- **Brane-boundary structure** ([`prop:brane-boundary-structure`]).
 
     All four structural properties hold for the boundary `∂A_n`. -/
--- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/brane-boundary-structure.md
+-- Ref: [leitner2026] quantum-observable-universe/lifting-and-descent/brane-boundary-structure.md
 theorem brane_boundary_structure [ctx : BraneBoundaryContext] :
     ctx.Codim_at_least_2 ∧
     ctx.ExceptionalKernel ∧

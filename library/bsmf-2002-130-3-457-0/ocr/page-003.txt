@@ -1,0 +1,56 @@
+HYPERIDEAL POLYHEDRA IN HYPERBOLIC 3-SPACE 459
+
+intersection P of H? with a compact convex polyhedron PP" of RP? with the
+following properties:
+
+1) Every vertex of PP?° is located outside of H®;
+
+2) Every edge of PP'°) meets HI.
+
+Note that we allow vertices of PP?°i to be located on the unit sphere 0,,H?
+bounding HI*, so that hyperideal polyhedra include ideal polyhedra as a special
+case.
+
+From now on, we will restrict attention to the dimension n = 3. Following
+the standard low-dimensional terminology, we will call vertex any 0-dimensional
+face or cell, an edge will be a 1-dimensional face or cell, and we will reserve the
+word face for any 2-dimensional face or cell.
+
+To describe the combinatorics of a hyperideal polyhedron P, it is convenient
+to consider the dual graph T of the cell decomposition of 0P, namely the graph
+whose vertices correspond to the (2-dimensional) faces of P, and where two
+vertices v and v’ are connected by an edge exactly when the corresponding
+faces f and f’ of P have an edge in common. Note that I is also the dual
+graph of the projective polyhedron PP" associated to P.
+
+The graph [ must be planar, in the sense that it can be embedded in the
+sphere S?. In addition, T is 3-connected in the sense that it cannot be discon-
+nected or reduced to a single point by removing 0, 1 or 2 vertices and their
+adjacent edges; this easily follows from the fact that two distinct faces of PP?
+can only meet along the empty set, one vertex or one edge. A famous theorem
+of Steinitz states that a graph is the dual graph of a convex polyhedron in R®
+if and only if it is planar and 3-connected; see [8]. A classical consequence of 3-
+connectedness is that the embedding of I in S? is unique up to homeomorphism
+of S?; see for instance [9, §32]. In particular, it intrinsically makes sense to talk
+of the components of S? — TI’. Note that these components of S? — T naturally
+correspond to the vertices of PP?°,
+
+The results are simpler to state if, instead of the internal dihedral angle a,
+of the polyhedron P along the edge e, we consider the external dihedral an-
+gle 0c = 7 — ae € 0,7.
+
+THEOREM 1. — Let T be a 3-connected planar graph with a weight 0. € ]0,x[
+attached to each edge e of . There exists a hyperideal polyhedron P in H° with
+dual graph isomorphic to T and with external dihedral angle 0. along the edge
+corresponding to the edge e of V if and only if the following two conditions are
+satisfied:
+
+1) For every closed curve y embedded in T and passing through the edges e1,
+
+€2,..., en of T, ea 0, > 2m with equality possible only if y is the boundary
+of a component of S? —T;
+2) For every arc y embedded in T, passing through the edges e1, €2, ..., €n
+
+of T, joining two distinct vertices v1 and v2 which are in the closure of the same
+
+BULLETIN DE LA SOCIETE MATHEMATIQUE DE FRANCE

@@ -5,21 +5,23 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1105.0091v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1105.0091v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "A central limit theorem for the characters of the infinite symmetric group and of the infinite Hecke algebra",
   "contains": [
+    "library/arxiv-1105.0091v1/sections/sec-front-matter",
     "library/arxiv-1105.0091v1/sections/sec-000",
     "library/arxiv-1105.0091v1/sections/sec-001",
     "library/arxiv-1105.0091v1/sections/sec-002",
     "library/arxiv-1105.0091v1/sections/sec-003",
     "library/arxiv-1105.0091v1/sections/sec-004",
-    "library/arxiv-1105.0091v1/sections/sec-005"
+    "library/arxiv-1105.0091v1/sections/sec-005",
+    "library/arxiv-1105.0091v1/sections/sec-006"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -41,8 +43,8 @@
       "stamp_date": "30 Apr 2011"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

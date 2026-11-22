@@ -4,12 +4,13 @@
 Class-axiomatized stub for `conj:electron-shells-hopf`: the
 electron-cloud structure of a neutral atom — shell capacities
 2, 8, 18, 32, … = 2n² — arises from the closed sub-Hopf-link
-factorization of the multi-electron trefoil chain. A maximal
+factorization of the multi-electron chain (each electron the word
+σ₀σ₁σ₀ ∈ B₃, closure: the Hopf link). A maximal
 closed sub-Hopf link at linking level `n` admits exactly `2n²`
-trefoils; the noble gases are the atoms whose electron cloud
+electrons; the noble gases are the atoms whose electron cloud
 is a union of such closed sub-links.
 
--- Ref: [manuscript]
+-- Ref: [leitner2026]
 Per `AGENTS.md §3b-cond`, opaque Props + class fields + sorry
 instance per claim. Algebraic tier only — the numerical
 photon-energy and selection-rule matches belong to a future
@@ -17,14 +18,14 @@ Archimedean tier (per gemini review on #721).
 
 ## References
 
-- `[manuscript]` `conj:electron-shells-hopf`
-- `[manuscript]` `prop:torus-hopf-stability`
+- `[leitner2026]` `conj:electron-shells-hopf`
+- `[leitner2026]` `prop:torus-hopf-stability`
 -/
 
 namespace QOU.ElectronShellsHopf
 
 /-- **Shell-capacity claim**: the maximal closed sub-Hopf link
-    at linking level `n` consists of exactly `2n²` trefoils. -/
+    at linking level `n` consists of exactly `2n²` electrons. -/
 opaque ShellCapacity2nSquaredHolds : Prop
 
 /-- **Noble-gas closure claim**: atoms whose electron cloud is a

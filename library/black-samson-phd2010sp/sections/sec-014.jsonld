@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/black-samson-phd2010sp/sections/sec-014",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "V.2. Markov JVloves",
+  "pageStart": 51,
+  "pageEnd": 58,
+  "contains": [
+    "library/black-samson-phd2010sp/blocks/prose-sec-014",
+    "library/black-samson-phd2010sp/blocks/lem-sec-014-01",
+    "library/black-samson-phd2010sp/blocks/thm-sec-014-02",
+    "library/black-samson-phd2010sp/blocks/lem-sec-014-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/black-samson-phd2010sp/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/black-samson-phd2010sp/manifest.jsonld",
+  "provenance": "ingested"
+}

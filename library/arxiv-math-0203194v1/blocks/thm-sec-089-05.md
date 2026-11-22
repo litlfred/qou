@@ -1,0 +1,1 @@
+The functor gives the equivalence of the following categories, (i) the category of quasi-compact admissible formal R-schemes, localized by admissible formal blow-up’s, (ii) the category of quasi-compact and quasi-separated rigid analytic spaces over K. The reader ﬁnds a nice comprehensive account of the proof of this the- orem in [BL93].

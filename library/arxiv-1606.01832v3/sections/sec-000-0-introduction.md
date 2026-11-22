@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1606.01832v3
-doc_title: "FLATNESS AND COMPLETION REVISITED AMNON YEKUTIELI"
+doc_title: "FLATNESS AND COMPLETION REVISITED"
 section_id: sec-000-0-introduction
 section_title: "Introduction"
 section_number: 0
 pages: 1-4
 source_pdf: 1606.01832v3.pdf
 source_sha256: da982c95b9674382
-doc_brief: "FLATNESS AND COMPLETION REVISITED AMNON YEKUTIELI — We continue investigating the interaction between ﬂatness and a- adic completion for inﬁnitely generated A-modules."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.755
+latex_coverage_ratio: 0.946
+doc_brief: "FLATNESS AND COMPLETION REVISITED — We continue investigating the interaction between ﬂatness and a- adic completion for inﬁnitely generated A-modules."
 ---
 In this paper we continue investigating the interaction between flatness 
 and adic completion for infinitely generated modules over a commutative 

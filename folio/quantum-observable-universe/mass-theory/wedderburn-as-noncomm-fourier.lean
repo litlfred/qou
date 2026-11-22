@@ -19,7 +19,7 @@ LaTeX label: `prop:wedderburn-as-noncomm-fourier`
 - [jones1987] https://doi.org/10.2307/1971403
 - [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2 (Ch. XII)
 - [fulton1997] Young Tableaux (Cambridge University Press, 1997).
-- [manuscript] braids-and-knots / wedderburn-as-noncomm-fourier
+- [leitner2026] braids-and-knots / wedderburn-as-noncomm-fourier
 -/
 
 namespace QOU.WedderburnFourier
@@ -80,7 +80,7 @@ class IsInverseFourier (D : NonCommFourierData) where
     interface, the trace of `β` is reconstructed from its
     non-commutative Fourier coefficients `{χ_λ(β)}`.
 -/
--- Ref: [manuscript] prop:wedderburn-as-noncomm-fourier
+-- Ref: [leitner2026] prop:wedderburn-as-noncomm-fourier
 theorem peter_weyl_decomposition
     (D : NonCommFourierData) [F : IsInverseFourier D] (β : D.carrier) :
     D.tr β =

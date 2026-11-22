@@ -1,0 +1,48 @@
+48 Chapter 3 — Perverse sheaves on semiabelian varieties
+
+Proof. To prove the twist invariance of the Euler characteristic, we can
+by dévissage assume that the complex K is a constructible sheaf placed in
+a single cohomology degree. Then [59, cor. 2.9] says that if j: X GX
+denotes a smooth compactification, then j;(K) and j;(Kg) have the same
+Euler characteristic (the assumptions of the corollary are satisfied since x is
+a tame character, see sect. 2.6 of loc. cit.). Since for the Euler characteristic
+it makes no difference whether we use compactly supported or ordinary
+hypercohomology [70], it follows that ¥(K) = 7(Kg). The equivalence of
+the three conditions (a) — (c) then follows via corollary 3.3. O
+
+Recall that a full subcategory of an abelian category is said to be a Serre
+subcategory if it is stable under the formation of arbitrary subquotients and
+extensions. More generally, a full triangulated subcategory of a triangulated
+category is called a thick subcategory if it has the following property: For
+any morphism f : K — L which factors over an object of the subcategory
+and has its cone in the subcategory, the objects K and L must both belong
+to the subcategory as well.
+
+COROLLARY 3.6. The subcategory S C P is Serre, and T C D is thick.
+
+Proof. Let 0 —+ P —> Q —+ R —> 0 be a short exact sequence in the
+abelian category P. Theorem 3.1 says that for a generic character ¥ € II(X)
+the hypercohomology of the perverse sheaves P,, Qy and Ry is concentrated
+in degree zero so that the long exact sequence in hypercohomology reduces
+to a short exact sequence
+
+0 — H°(X,Py) — H°(X,Qy) — H°(X,Ry) — 0.
+
+Therefore lemma 3.5 shows that @Q lies in S if and only if both P and R are
+in S. Hence S C P is a Serre subcategory, and then the subcategory T C D
+is thick by [41, prop. 3.6.1(i)]. O
+
+In particular, localizing the abelian category P at the class of morphisms
+whose kernel and cokernel lie in the Serre subcategory S we can form the
+abelian quotient category P = P/S in the sense of [42, chap. III]. Note that
+the category P has the same objects as P and that for any objects Pi, Py
+the elements of Homp(P,, P) can be represented by equivalence classes of
+diagrams in P of the form
+
+a
+Pi Py
+
+where the kernel and cokernel of the morphism /) lie in S. In the same
+way, localizing the triangulated category D at the class of morphisms whose
+cone lies in the thick subcategory T we can form the triangulated quotient
+category D = D/T as described in [82, sect. 2.1].

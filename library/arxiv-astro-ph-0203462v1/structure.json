@@ -8,7 +8,7 @@
   "pages": 20,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -27,7 +27,7 @@
    "Astronomy & Astrophysics manuscript no",
    "(will be inserted by hand later)"
   ],
-  "abstract": "We present a high-resolution (R=75,000, S/N \u223c500) spectroscopic analysis of the bright (V=11.7), extreme halo giant CS 31082-001 ([Fe/H] = \u22122.9), obtained in an ESO-VLT Large Programme dedicated to very metal-poor stars. We \ufb01nd CS 31082-001 to be extremely rich in r-process elements, comparable in this respect only to the similarly metal-poor, but carbon-enriched, giant CS 22892-052 . As a result of the extreme overabundance of the heaviest r-process elements, and negligible blending from CH and CN molecular lines, a reliable measurement is obtained of the U II line at 386 nm, for the \ufb01rst time in a halo star, along with numerous lines of Th II, as well as lines of 25 other r-process elements. Abundance estimates for a total of 43 elements (44 counting Hydrogen) are reported in CS 31082-001 , almost half of the entire periodic table. The main atmospheric parameters of CS 31082-001 are as follows: Teff = 4825 \u00b1 50 K, log g = 1.5 \u00b1 0.3 (cgs), [Fe/H] = \u22122.9 \u00b10.1 (in LTE), and microturbulence 1.8\u00b1 0.2 km/s. Carbon and nitrogen are not signi\ufb01cantly enhanced relative to iron. As usual in giant stars, Li is depleted by dilution (log(Li/H)=0.85). The \u03b1-elements show the usual enhancements with respect to iron, with [O/Fe]= 0.6 \u00b1 0.2 (from [O I] 6300 \u02daA), [Mg/Fe]= 0.45 \u00b1 0.16, [Si/Fe]= 0.24 \u00b1 0.1, and [Ca/Fe]= 0.41 \u00b1 0.08, while [Al/Fe] is near \u22120.5. The r-process elements show unusual patterns: among the lightest elements (Z\u223c40), Sr and Zr follow the Solar r-element distribution, but Ag is down by 0.8 dex. All elements with 56 \u2264Z \u226472 follow the Solar r-element pattern, reduced by about 1.25 dex. Accordingly, the [r/Fe] enhancement is about +1.7 dex (a factor of 50), very similar to that of CS 22892-052 . Pb, in contrast, seems to be below the shifted Solar r-process distribution, possibly indicating an error in the latter, while thorium is more enhanced than the lighter nuclides. In CS 31082-001 , log(Th/Eu) is \u22120.22\u00b1 0.07, higher than in the Solar System (\u22120.46) or in CS 2",
+  "abstract": "We present a high-resolution (R=75,000, S/N ∼500) spectroscopic analysis of the bright (V=11.7), extreme halo giant CS 31082-001 ([Fe/H] = −2.9), obtained in an ESO-VLT Large Programme dedicated to very metal-poor stars. We ﬁnd CS 31082-001 to be extremely rich in r-process elements, comparable in this respect only to the similarly metal-poor, but carbon-enriched, giant CS 22892-052 . As a result of the extreme overabundance of the heaviest r-process elements, and negligible blending from CH and CN molecular lines, a reliable measurement is obtained of the U II line at 386 nm, for the ﬁrst time in a halo star, along with numerous lines of Th II, as well as lines of 25 other r-process elements. Abundance estimates for a total of 43 elements (44 counting Hydrogen) are reported in CS 31082-001 , almost half of the entire periodic table. The main atmospheric parameters of CS 31082-001 are as follows: Teff = 4825 ± 50 K, log g = 1.5 ± 0.3 (cgs), [Fe/H] = −2.9 ±0.1 (in LTE), and microturbulence 1.8± 0.2 km/s. Carbon and nitrogen are not signiﬁcantly enhanced relative to iron. As usual in giant stars, Li is depleted by dilution (log(Li/H)=0.85). The α-elements show the usual enhancements with respect to iron, with [O/Fe]= 0.6 ± 0.2 (from [O I] 6300 ˚A), [Mg/Fe]= 0.45 ± 0.16, [Si/Fe]= 0.24 ± 0.1, and [Ca/Fe]= 0.41 ± 0.08, while [Al/Fe] is near −0.5. The r-process elements show unusual patterns: among the lightest elements (Z∼40), Sr and Zr follow the Solar r-element distribution, but Ag is down by 0.8 dex. All elements with 56 ≤Z ≤72 follow the Solar r-element pattern, reduced by about 1.25 dex. Accordingly, the [r/Fe] enhancement is about +1.7 dex (a factor of 50), very similar to that of CS 22892-052 . Pb, in contrast, seems to be below the shifted Solar r-process distribution, possibly indicating an error in the latter, while thorium is more enhanced than the lighter nuclides. In CS 31082-001 , log(Th/Eu) is −0.22± 0.07, higher than in the Solar System (−0.46) or in CS 2",
   "docinfo": {
    "Title": "arXiv:astro-ph/0203462v1  26 Mar 2002",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
@@ -206,19 +206,6 @@
   },
   {
    "level": 1,
-   "title": "The age of CS,31082-001,",
-   "page": 14,
-   "source": "inferred",
-   "number": "6",
-   "confidence": 1.0,
-   "evidence": [
-    "latex",
-    "body"
-   ],
-   "page_label": "14"
-  },
-  {
-   "level": 1,
    "title": "Conclusions and future work",
    "page": 16,
    "source": "inferred",
@@ -237,7 +224,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "Comparison of the spectrum of CS 31082-001(thick line) and CS 22892-052 (narrow line) showing the much reduced molecular band strength in the former. Upper panel: CN 3871 and 3883\u02daA band heads; lower panel: G band (CH). The spectrum of CS 22892-052was obtained during the comissioning of the spectrog",
+   "title": "Comparison of the spectrum of CS 31082-001(thick line) and CS 22892-052 (narrow line) showing the much reduced molecular band strength in the former. Upper panel: CN 3871 and 3883˚A band heads; lower panel: G band (CH). The spectrum of CS 22892-052was obtained during the comissioning of the spectrog",
    "page": 3,
    "confidence": 0.9,
    "evidence": [
@@ -250,7 +237,7 @@
   {
    "kind": "figure",
    "number": "2",
-   "title": "Fit of CH lines of the G band in CS 31082-001. Dots: observations: lines: synthetic spectra computed for the abundances indicated in the \ufb01gure",
+   "title": "Fit of CH lines of the G band in CS 31082-001. Dots: observations: lines: synthetic spectra computed for the abundances indicated in the ﬁgure",
    "page": 4,
    "confidence": 0.9,
    "evidence": [
@@ -263,7 +250,7 @@
   {
    "kind": "figure",
    "number": "3",
-   "title": "The forbidden [O I] 6300 \u02daA line in CS 31082-001. Symbols as in Fig. 2",
+   "title": "The forbidden [O I] 6300 ˚A line in CS 31082-001. Symbols as in Fig. 2",
    "page": 4,
    "confidence": 0.9,
    "evidence": [
@@ -288,7 +275,7 @@
   {
    "kind": "table",
    "number": "2",
-   "title": "Colors and e\ufb00ective temperature of CS 31082- 001",
+   "title": "Colors and eﬀective temperature of CS 31082- 001",
    "page": 5,
    "confidence": 0.8,
    "evidence": [
@@ -300,7 +287,7 @@
   {
    "kind": "figure",
    "number": "4",
-   "title": "The observed Nb II 3215 \u02daA, Ru I 3799 \u02daA, and Rh I 3434 \u02daA lines in CS 31082-001. Symbols as in Fig. 2",
+   "title": "The observed Nb II 3215 ˚A, Ru I 3799 ˚A, and Rh I 3434 ˚A lines in CS 31082-001. Symbols as in Fig. 2",
    "page": 6,
    "confidence": 0.9,
    "evidence": [
@@ -313,7 +300,7 @@
   {
    "kind": "figure",
    "number": "5",
-   "title": "The observed Pd I 3242 \u02daA, Ag I 3281 \u02daA, and 3383 \u02daA lines in CS 31082-001. Symbols as in Fig. 2",
+   "title": "The observed Pd I 3242 ˚A, Ag I 3281 ˚A, and 3383 ˚A lines in CS 31082-001. Symbols as in Fig. 2",
    "page": 6,
    "confidence": 0.7,
    "evidence": [
@@ -325,7 +312,7 @@
   {
    "kind": "figure",
    "number": "6",
-   "title": "The observed Eu 4129 and Hf II 3999 \u02daA line in CS 31082-001. Symbols as in Fig. 2",
+   "title": "The observed Eu 4129 and Hf II 3999 ˚A line in CS 31082-001. Symbols as in Fig. 2",
    "page": 7,
    "confidence": 0.9,
    "evidence": [
@@ -349,7 +336,7 @@
   {
    "kind": "figure",
    "number": "7",
-   "title": "The observed Os I 4261 \u02daA, 4420 \u02daA, and Ir I 3513 \u02daA lines in CS 31082-001. Symbols as in Fig. 2",
+   "title": "The observed Os I 4261 ˚A, 4420 ˚A, and Ir I 3513 ˚A lines in CS 31082-001. Symbols as in Fig. 2",
    "page": 9,
    "confidence": 0.9,
    "evidence": [
@@ -373,7 +360,7 @@
   {
    "kind": "figure",
    "number": "8",
-   "title": "The observed Pb I 4057 \u02daA lines in CS 31082- 001 (upper",
+   "title": "The observed Pb I 4057 ˚A lines in CS 31082- 001 (upper",
    "page": 10,
    "confidence": 0.9,
    "evidence": [
@@ -386,7 +373,7 @@
   {
    "kind": "figure",
    "number": "9",
-   "title": "The observed Th II 3351 \u02daA, 3434\u02daA, 4019\u02daA and 4086\u02daA lines in CS 31082-001. Dots: observations; line: synthetic spectrum computed for the mean Th abundance, log \u01eb(Th)=-0.98",
+   "title": "The observed Th II 3351 ˚A, 3434˚A, 4019˚A and 4086˚A lines in CS 31082-001. Dots: observations; line: synthetic spectrum computed for the mean Th abundance, log ǫ(Th)=-0.98",
    "page": 11,
    "confidence": 0.9,
    "evidence": [
@@ -399,7 +386,7 @@
   {
    "kind": "figure",
    "number": "10",
-   "title": "The observed U II 3859 \u02daA line in CS 31082-001. Symbols as in Fig. 2. The best \ufb01t is found for log \u01eb(U)=\u22121.92",
+   "title": "The observed U II 3859 ˚A line in CS 31082-001. Symbols as in Fig. 2. The best ﬁt is found for log ǫ(U)=−1.92",
    "page": 12,
    "confidence": 0.9,
    "evidence": [
@@ -412,7 +399,7 @@
   {
    "kind": "figure",
    "number": "11",
-   "title": "Top: Neutron-capture-element abundances of CS 31082-001compared to the Solar System r-process scaled to match the 56\u2264Z\u226469 elemental abundances of",
+   "title": "Top: Neutron-capture-element abundances of CS 31082-001compared to the Solar System r-process scaled to match the 56≤Z≤69 elemental abundances of",
    "page": 13,
    "confidence": 0.9,
    "evidence": [
@@ -734,14 +721,50 @@
    "title": "Error budget",
    "level": 2,
    "page_start": 7,
-   "page_end": 13,
-   "n_chars": 22866,
-   "n_words": 3982,
+   "page_end": 8,
+   "n_chars": 3710,
+   "n_words": 673,
    "label_start": "7",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-008-43-the-lighter-elements-38leqzleq48",
+   "number": "4.3",
+   "title": "The lighter elements, 38$\\leq$Z$\\leq$48",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 6429,
+   "n_words": 1127,
+   "label_start": "8",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-009-44-the-second-peak-elements-56leqzleq72",
+   "number": "4.4",
+   "title": "The second-peak elements, 56$\\leq$Z$\\leq$72",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 3243,
+   "n_words": 543,
+   "label_start": "10",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-010-45-the-third-peak-elements-and-the-actinides-76l",
+   "number": "4.5",
+   "title": "The third-peak elements and the actinides, 76$\\leq$Z$\\leq$92",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 9359,
+   "n_words": 1622,
+   "label_start": "11",
    "label_end": "13"
   },
   {
-   "id": "sec-008-5-is-the-r-process-universal",
+   "id": "sec-011-5-is-the-r-process-universal",
    "number": "5",
    "title": "Is the r-process universal ?",
    "level": 1,
@@ -753,14 +776,14 @@
    "label_end": "16"
   },
   {
-   "id": "sec-009-7-conclusions-and-future-work",
+   "id": "sec-012-7-conclusions-and-future-work",
    "number": "7",
    "title": "Conclusions and future work",
    "level": 1,
    "page_start": 16,
    "page_end": 20,
-   "n_chars": 17859,
-   "n_words": 3116,
+   "n_chars": 17856,
+   "n_words": 3115,
    "label_start": "16",
    "label_end": "20"
   }
@@ -768,10 +791,10 @@
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 14,
+  "toc_entries": 13,
   "toc_inferred_entries": 14,
   "toc_inferred_mean_confidence": 1.0,
-  "toc_inferred_empty_share": 0.1,
+  "toc_inferred_empty_share": 0.071,
   "toc_inferred_method": "latex",
   "figure_entries": 17,
   "figure_sequence_gaps": [
@@ -784,41 +807,39 @@
   },
   "toc_alignment": {
    "listed_not_found": {
-    "count": 33,
+    "count": 31,
     "items": [
      "Cowley R.C., Aikman G.C.C. & Fisher W.A. 1977, Publ. Dom. McWilliam, A., Preston, G. W., Sneden, C., & Searle, L. 1995, Astrophys. Obs. Victoria, 15, 37 AJ 109,",
      "Delyannis, C. 1998, AJ 116, 2489 Michaud, G. Charland, Y., Vauclair, S., & Vauclair, G. 1976, Cutri, R.M., et al., 2002, Second Incremental Data Release ApJ 210,",
-     "Kotzlowski, H. 2000, in \u201dOptical and IR Telescope Washington D.C., 1970) Instrumentation and Detectors\u201d, Masanori Iye and Alan Musiol, K., & Labuz, S. 1993, Phys. Scr. 27,",
+     "Kotzlowski, H. 2000, in ”Optical and IR Telescope Washington D.C., 1970) Instrumentation and Detectors”, Masanori Iye and Alan Musiol, K., & Labuz, S. 1993, Phys. Scr. 27,",
      "Moorwood (Eds.), Proc. SPIE Vol. 4008, p. 534 Nilsson, H., Ivarsson, S., Johansson, S., & Lundberg, H. 2001 Depagne, E., et al., 2002, in preparation A&A 381,",
-     "Edvardsson, B., Andersen, J., Gustafsson, B., et al. 1993 A&A Nilsson, H., Zhang, Z., Lundberg, H., Johansson, S., & 275, 101 Nordstr\u00a8om, B. 2001, A&A 382,",
-     "Fouqu\u00b4e, P., Chevallier, L., Cohen, M., et al. 2000 A&AS 141, Nissen, P., Primas, F., & Asplund, M., 2001, New Astronomy 313 Reviews, 45,",
+     "Edvardsson, B., Andersen, J., Gustafsson, B., et al. 1993 A&A Nilsson, H., Zhang, Z., Lundberg, H., Johansson, S., & 275, 101 Nordstr¨om, B. 2001, A&A 382,",
+     "Fouqu´e, P., Chevallier, L., Cohen, M., et al. 2000 A&AS 141, Nissen, P., Primas, F., & Asplund, M., 2001, New Astronomy 313 Reviews, 45,",
      "Gallagher, A., 1967, Phys. Rev. 157, 24 Norris, J.E., Ryan, S.G., & Beers, T.C. 2001, ApJ 561,",
-     "Goly, A., Kusz, J., Nguyen Quang, B., & Weniger, S. 1991, J. Pagel, B., & Tautvai\u02d8sien`e, G. 1997, MNRAS 288,",
+     "Goly, A., Kusz, J., Nguyen Quang, B., & Weniger, S. 1991, J. Pagel, B., & Tautvai˘sien`e, G. 1997, MNRAS 288,",
      "Quant. Spectrosc. Radiat. Transfer 45, 157 Plez, B. 1998 A&A 337,",
-     "Goriely, S., & Arnould, M. 2001, A&A in press Plez, B., Brett, J.M., & Nordlund, \u02daA. 1992, A&A 256,",
+     "Goriely, S., & Arnould, M. 2001, A&A in press Plez, B., Brett, J.M., & Nordlund, ˚A. 1992, A&A 256,",
      "Goriely, S., & Clerbaux, B. 1999, A&A 346, 798 Plez, B., Smith, & V.V., Lambert, D.L. 1993, ApJ 418,",
-     "Gratton, R.G. & Sneden, C., 1994, A&A 287, 927 Prantzos, N., Hashimoto, M., & Nomoto, K. 1990, A&A 234, Gustafsson, B., Bell, R. A., Eriksson, K., & Nordlund, \u02daA.,",
+     "Gratton, R.G. & Sneden, C., 1994, A&A 287, 927 Prantzos, N., Hashimoto, M., & Nomoto, K. 1990, A&A 234, Gustafsson, B., Bell, R. A., Eriksson, K., & Nordlund, ˚A.,",
      "A&A 42, 407 Prasad, C.V.V., & Bernath, P.F. 1992, JMS 156,",
-     "Gustafsson, B., & Mitzuno-Wiedner, M. 2001 in \u201dAstrophysical Prasad, C.V.V., Bernath, P.F., Frum, C., & Engleman, R.Jr. Timescales\u201d, PASP Conf. Series 245, 271 1992, JMS 151,",
+     "Gustafsson, B., & Mitzuno-Wiedner, M. 2001 in ”Astrophysical Prasad, C.V.V., Bernath, P.F., Frum, C., & Engleman, R.Jr. Timescales”, PASP Conf. Series 245, 271 1992, JMS 151,",
      "Qian, Y.-Z., Wasserburg, G. J. 2001a, 552, L55 Whaling, W. 1982, ApJ 261,",
      "Qian, Y.-Z., Wasserburg, G. J. 2001b, 559,",
      "Hill, V., Plez, B., Cayrel, C., & Beers, T. 2001 in Qian, Y.-Z., Wasserburg, G. J. 2002, 567,",
-     "\u201dAstrophysical Timescales\u201d, PASP Conf. Series 245,",
+     "”Astrophysical Timescales”, PASP Conf. Series 245,",
      "Reader, J., & Sansonetti, C.J. 1986, Phys. Rev. 33,",
-     "Israelian, G., Garc\u00b4\u0131a L\u00b4opez, R., Ram\u00b4on, J., & Rebolo, R. 1998, Rehfuss, B.D., Suh, M.H., & Miller, T.A. 1992, JMS 151,",
+     "Israelian, G., Garc´ıa L´opez, R., Ram´on, J., & Rebolo, R. 1998, Rehfuss, B.D., Suh, M.H., & Miller, T.A. 1992, JMS 151,",
      "ApJ 507,",
      "Ryan, S.G., Norris, J.E., & Beers, T.C. 1992, ApJ, 471,",
-     "Schatz, H., Toejnes, R., Kratz, K.-L., et al. 2002, in preparation 1988, JMS 127,",
+     "1988, JMS 127,",
      "Sneden, C., McWilliam, A., Preston, G. W., et al. 1996, ApJ, Jaschek, M., & Malaroda, S. 1970, Nature, 225,",
      "Johnson, J., & Bolte M. 2001, ApJ 554, 888 467,",
-     "J\u00f8rgensen, U.G., Larsson, M., Iwamae, A., & Yu, B. 1996, A&A Sneden, C., Cowan, J. J., Burris, D. L. & Truran, J. W. 1998, 315, 204 ApJ, 496,",
-     "Kwiatkowski, M., Zimmermann, P., Bi\u00b4emont, E., & Grevesse, L25 N. 1984, A&A 135, 59 Spite, M. 1967, Ann. Astrophys. 30,",
+     "Jørgensen, U.G., Larsson, M., Iwamae, A., & Yu, B. 1996, A&A Sneden, C., Cowan, J. J., Burris, D. L. & Truran, J. W. 1998, 315, 204 ApJ, 496,",
+     "N. 1984, A&A 135, 59 Spite, M. 1967, Ann. Astrophys. 30,",
      "Lage, C.S. & Whaling, W. 1976, J. Quant. Spectrosc. Radiat. Tsujimoto, T., Shigeyama, T., & Yoshii, Y. 2000, ApJ 531, L33 Transfer 16, 537 Anthony-Twarog, B.J., & Twarog, B. 2000 AJ 119,",
      "Larsson, M., Siegbahn, P.E.M., & Agren, H. 1983, ApJ 272, Umeda, H., & Nomoto, K. 2002, ApJ 565,",
      "369 Van Eck, S., Goriely, S., Jorissen, A., & Plez, B. 2001, Nature Lawler, J.E., Bonvallet, G., & Sneden, C. 2001a ApJ 556,452 412,",
-     "Lawler, J.E., Wickli\ufb00e, M.E., Sen Harog, E.A., & Sneden, C. Vladilo, G., Bonifacio, P., Centuri\u00b4on, M., & Molaro, P. 2000, 2001b, ApJ 563, 1088 ApJ, 543,",
-     "S. 1996, ApJS, 107, 475 A. 1985, Phys. Scr. 31,",
-     "Luque, J., & Crosley, D.R. 1999 SRI International Report MP Westin, J., Sneden, C., Gustafsson, B. & Cowan, J. J. 2000, 99-009 ApJ, 530,"
+     "Lawler, J.E., Wickliﬀe, M.E., Sen Harog, E.A., & Sneden, C. Vladilo, G., Bonifacio, P., Centuri´on, M., & Molaro, P. 2000, 2001b, ApJ 563, 1088 ApJ, 543,"
     ]
    },
    "found_not_listed": {
@@ -838,13 +859,22 @@
     "items": []
    }
   },
-  "sections": 11,
-  "chars_total": 81634,
+  "sections": 14,
+  "chars_total": 81506,
+  "furniture_lines_stripped": 1,
+  "headings_tidied": [
+   {
+    "title": "The age of CS,31082-001,",
+    "page": 14,
+    "action": "dropped",
+    "why": "ends with a comma"
+   }
+  ],
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "M2317.tex",
    "tex_sections": 14,
-   "overlaid": 8,
+   "overlaid": 11,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -876,7 +906,7 @@
      "id": "sec-002-3-abundance-analysis-and-derived-abundances-of-t",
      "title": "Abundance analysis, and derived abundances of the lighter elements",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-003-31-model-atmosphere-and-stellar-parameters",
@@ -913,13 +943,37 @@
     {
      "id": "sec-007-42-error-budget",
      "title": "Error budget",
-     "prose_ratio": 0.977,
-     "coverage_ratio": 0.995,
+     "prose_ratio": 0.912,
+     "coverage_ratio": 0.932,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-43-the-lighter-elements-38leqzleq48",
+     "title": "The lighter elements, 38$\\leq$Z$\\leq$48",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.96,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-44-the-second-peak-elements-56leqzleq72",
+     "title": "The second-peak elements, 56$\\leq$Z$\\leq$72",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-45-the-third-peak-elements-and-the-actinides-76l",
+     "title": "The third-peak elements and the actinides, 76$\\leq$Z$\\leq$92",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-008-5-is-the-r-process-universal",
+     "id": "sec-011-5-is-the-r-process-universal",
      "title": "Is the r-process universal ?",
      "prose_ratio": 0.99,
      "coverage_ratio": 0.992,
@@ -927,11 +981,11 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-7-conclusions-and-future-work",
+     "id": "sec-012-7-conclusions-and-future-work",
      "title": "Conclusions and future work",
      "prose_ratio": 0.995,
      "coverage_ratio": 0.402,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

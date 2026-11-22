@@ -1,0 +1,81 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-9201302v1",
+ "source_sha256": "67987dd432f58488",
+ "brief": "The Quantum G_2 Link Invariant — We derive an inductive, combinatorial deﬁnition of a polynomial-valued regular isotopy invariant of links and tangled graphs.",
+ "extended": "**The Quantum G_2 Link Invariant**\n\n*October 7, 1991*\n\n17 pp, 12 sections.\n\n**Abstract.** We derive an inductive, combinatorial deﬁnition of a polynomial-valued regular isotopy invariant of links and tangled graphs. We show that the invariant equals the Reshetikhin-Turaev invariant corre- sponding to the exceptional simple Lie algebra G2. It is therefore related to G2 in the same way that the HOMFLY polynomial is related to An and the Kauﬀman polynomial is related to Bn, Cn, and Dn. We give parallel constructions for the other rank 2 Lie algebras and present some combinatorial conjectures motivated by the new inductive deﬁnitions. This paper is divided into two parts. In the ﬁrst part we derive from ﬁrst principles some variants of the link invariant known as the Jones polynomial. In the second part we show that these invariants are the same known invariants constructed using rank 2 Lie algebras, and we discuss some of their properties.\n\n**Outline.** Front matter; 1 Invariants of links and graphs; 2 Acknowledgments; 2.1 Topological preliminaries; 2.2 Linearly recurrent invariants; 2.3 Constructing a freeway invariant; 2.4 Two other polynomial invariants; 2.5 A few calculations; 3 Invariants of Lie algebra representations; 3.1 Invariants of colored ribbon graphs; 3.3 Questions open to the author; References",
+ "tokens": {
+  "brief": 39,
+  "extended": 331
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-1-invariants-of-links-and-graphs",
+   "title": "Invariants of links and graphs",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-001-2-acknowledgments",
+   "title": "Acknowledgments",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-002-21-topological-preliminaries",
+   "title": "Topological preliminaries",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-003-22-linearly-recurrent-invariants",
+   "title": "Linearly recurrent invariants",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-004-23-constructing-a-freeway-invariant",
+   "title": "Constructing a freeway invariant",
+   "pages": "6-9"
+  },
+  {
+   "id": "sec-005-24-two-other-polynomial-invariants",
+   "title": "Two other polynomial invariants",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-006-25-a-few-calculations",
+   "title": "A few calculations",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-007-3-invariants-of-lie-algebra-representations",
+   "title": "Invariants of Lie algebra representations",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-008-31-invariants-of-colored-ribbon-graphs",
+   "title": "Invariants of colored ribbon graphs",
+   "pages": "12-14"
+  },
+  {
+   "id": "sec-009-33-questions-open-to-the-author",
+   "title": "Questions open to the author",
+   "pages": "14-17"
+  },
+  {
+   "id": "sec-010-references",
+   "title": "References",
+   "pages": "17-17"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

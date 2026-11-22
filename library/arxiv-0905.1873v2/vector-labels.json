@@ -1,0 +1,2163 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-0905.1873v2",
+  "pages": [
+    {
+      "page": 3,
+      "rotation": 0,
+      "drawings": 561,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 4 illustrates for 4He the same rapid conver- gence with Nmax of an SRG-evolved interaction. How- ever, in this case the asymptotic value of the energy dif- fers slightly because of the omitted induced four-body contribution. (The SRG-evolved asymptotic values for diﬀerent ℏΩdiﬀer by only 10 keV, so the gap between the converged bare/L-S results and the SRG results is dominated by the induced NNNN rather than incomplete convergence). Convergence is even faster for lower λ val- ues [19], ensuring a useful range for the analysis of few-"
+      ],
+      "labels": [
+        {
+          "text": "3",
+          "bbox": [
+            557.16,
+            28.65,
+            562.14,
+            38.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "TABLE I: Deﬁnitions of the various calculations.",
+          "bbox": [
+            209.28,
+            61.56,
+            406.6,
+            70.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "NN-only",
+          "bbox": [
+            136.92,
+            78.6,
+            171.06,
+            87.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "No initial NNN interaction and do not keep NNN-induced interaction.",
+          "bbox": [
+            203.88,
+            78.6,
+            487.12,
+            87.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "NN + NNN-induced",
+          "bbox": [
+            88.8,
+            91.32,
+            171.19,
+            100.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "No initial NNN interaction but keep the SRG-induced NNN interaction.",
+          "bbox": [
+            203.88,
+            91.32,
+            494.8,
+            100.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "Include an initial NNN interaction and keep the SRG-induced NNN interaction.",
+          "bbox": [
+            203.88,
+            103.91,
+            527.19,
+            113.12
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR9",
+            "CMTI9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "NN + NNN",
+          "bbox": [
+            123.12,
+            104.16,
+            171.06,
+            113.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "−26",
+          "bbox": [
+            342.61,
+            137.01,
+            356.89,
+            149.02
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            9.22
+          ]
+        },
+        {
+          "text": "served in all SRG calculations of light nuclei [3]. When",
+          "bbox": [
+            54.0,
+            141.81,
+            299.04,
+            151.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "bare (36)",
+          "bbox": [
+            482.84,
+            150.34,
+            516.37,
+            162.63
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.22
+          ]
+        },
+        {
+          "text": "bare (36)",
+          "bbox": [
+            482.84,
+            150.34,
+            516.37,
+            162.63
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.22
+          ]
+        },
+        {
+          "text": "the induced NNN is included, the evolution is close to",
+          "bbox": [
+            54.0,
+            153.21,
+            299.1,
+            163.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "4He",
+          "bbox": [
+            392.44,
+            157.85,
+            420.45,
+            187.82
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            13.04,
+            18.44
+          ]
+        },
+        {
+          "text": "LS (36)",
+          "bbox": [
+            482.84,
+            160.92,
+            511.26,
+            173.22
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.22
+          ]
+        },
+        {
+          "text": "LS (36)",
+          "bbox": [
+            482.84,
+            160.92,
+            511.26,
+            173.22
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.22
+          ]
+        },
+        {
+          "text": "unitary and the pattern only depends slightly on an ini-",
+          "bbox": [
+            54.0,
+            164.73,
+            299.0,
+            174.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "LS (28)",
+          "bbox": [
+            482.84,
+            171.46,
+            511.26,
+            183.76
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.22
+          ]
+        },
+        {
+          "text": "LS (28)",
+          "bbox": [
+            482.84,
+            171.46,
+            511.26,
+            183.76
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.22
+          ]
+        },
+        {
+          "text": "tial NNN interaction. In both cases the dotted line rep-",
+          "bbox": [
+            54.0,
+            176.13,
+            299.12,
+            186.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "SRG (2.0/36)",
+          "bbox": [
+            482.84,
+            182.05,
+            532.52,
+            194.35
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.22
+          ]
+        },
+        {
+          "text": "SRG (2.0/36)",
+          "bbox": [
+            482.84,
+            182.05,
+            532.52,
+            194.35
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.22
+          ]
+        },
+        {
+          "text": "−27",
+          "bbox": [
+            342.79,
+            183.13,
+            357.07,
+            195.14
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            9.22
+          ]
+        },
+        {
+          "text": "resents the converged value for the initial Hamiltonian.",
+          "bbox": [
+            54.0,
+            187.65,
+            299.16,
+            197.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "SRG (2.0/28)",
+          "bbox": [
+            482.84,
+            192.58,
+            532.52,
+            204.88
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.22
+          ]
+        },
+        {
+          "text": "SRG (2.0/28)",
+          "bbox": [
+            482.84,
+            192.58,
+            532.52,
+            204.88
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.22
+          ]
+        },
+        {
+          "text": "At large λ, the discrepancy is due to a lack of conver-",
+          "bbox": [
+            54.0,
+            199.05,
+            299.36,
+            209.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "gence at Nmax = 18, but at λ < 3 fm−1 SRG decoupling",
+          "bbox": [
+            54.0,
+            206.13,
+            299.1,
+            221.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "3LO (500 MeV)",
+          "bbox": [
+            468.48,
+            210.15,
+            534.68,
+            226.92
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.3,
+            10.32
+          ]
+        },
+        {
+          "text": "N",
+          "bbox": [
+            461.06,
+            213.15,
+            468.51,
+            226.92
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.32
+          ]
+        },
+        {
+          "text": "E [MeV]",
+          "bbox": [
+            326.61,
+            215.11,
+            341.37,
+            254.73
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.06
+          ]
+        },
+        {
+          "text": "takes over and the discrepancy is due to short-range in-",
+          "bbox": [
+            54.0,
+            221.97,
+            299.0,
+            231.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "NN + NNN",
+          "bbox": [
+            477.49,
+            228.11,
+            525.75,
+            241.88
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            10.32
+          ]
+        },
+        {
+          "text": "−28",
+          "bbox": [
+            342.85,
+            229.2,
+            357.13,
+            241.21
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            9.22
+          ]
+        },
+        {
+          "text": "duced four-body forces, which therefore contribute about",
+          "bbox": [
+            54.0,
+            233.49,
+            299.07,
+            243.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "50 keV net at λ = 2 fm−1. This is small compared to the",
+          "bbox": [
+            54.0,
+            242.57,
+            299.02,
+            254.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "rough estimate in Ref. [20] that the contribution from",
+          "bbox": [
+            54.0,
+            256.41,
+            299.18,
+            266.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the long-ranged part of the N3LO four-nucleon force to",
+          "bbox": [
+            54.0,
+            266.44,
+            299.1,
+            277.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "−29",
+          "bbox": [
+            342.71,
+            275.26,
+            356.99,
+            287.27
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            9.22
+          ]
+        },
+        {
+          "text": "4He binding is of order a few hundred keV. If needed,",
+          "bbox": [
+            54.0,
+            277.96,
+            299.04,
+            289.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "−28.4",
+          "bbox": [
+            445.23,
+            280.55,
+            462.18,
+            290.16
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            7.37
+          ]
+        },
+        {
+          "text": "we could evolve 4-body matrix elements in A = 4 and",
+          "bbox": [
+            54.0,
+            290.73,
+            299.17,
+            300.69
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "will do so when nuclear structure codes can accomodate",
+          "bbox": [
+            54.0,
+            302.25,
+            299.26,
+            312.21
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "−28.5",
+          "bbox": [
+            445.44,
+            302.49,
+            462.39,
+            312.1
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            7.37
+          ]
+        },
+        {
+          "text": "8",
+          "bbox": [
+            462.92,
+            311.65,
+            466.61,
+            321.49
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.37
+          ]
+        },
+        {
+          "text": "10 12 14 16 18 20",
+          "bbox": [
+            472.62,
+            311.65,
+            538.18,
+            321.55
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.37
+          ]
+        },
+        {
+          "text": "them.",
+          "bbox": [
+            54.0,
+            313.65,
+            78.84,
+            323.61
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "−30",
+          "bbox": [
+            342.61,
+            321.41,
+            356.89,
+            333.42
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            9.22
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            357.04,
+            326.75,
+            361.65,
+            339.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.22
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            375.51,
+            326.75,
+            380.12,
+            339.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.22
+          ]
+        },
+        {
+          "text": "8",
+          "bbox": [
+            412.49,
+            326.75,
+            417.1,
+            339.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.22
+          ]
+        },
+        {
+          "text": "10",
+          "bbox": [
+            428.5,
+            326.75,
+            437.72,
+            339.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.22
+          ]
+        },
+        {
+          "text": "12",
+          "bbox": [
+            446.91,
+            326.75,
+            456.13,
+            339.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.22
+          ]
+        },
+        {
+          "text": "14",
+          "bbox": [
+            465.38,
+            326.75,
+            474.59,
+            339.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.22
+          ]
+        },
+        {
+          "text": "18",
+          "bbox": [
+            502.35,
+            326.75,
+            511.57,
+            339.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.22
+          ]
+        },
+        {
+          "text": "20",
+          "bbox": [
+            520.69,
+            326.75,
+            529.91,
+            339.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.22
+          ]
+        },
+        {
+          "text": "22",
+          "bbox": [
+            539.1,
+            326.75,
+            548.32,
+            339.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.22
+          ]
+        },
+        {
+          "text": "6",
+          "bbox": [
+            393.94,
+            326.81,
+            398.55,
+            339.1
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.22
+          ]
+        },
+        {
+          "text": "16",
+          "bbox": [
+            483.81,
+            326.81,
+            493.03,
+            339.1
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.22
+          ]
+        },
+        {
+          "text": "−6.0",
+          "bbox": [
+            79.78,
+            329.89,
+            96.33,
+            341.87
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            9.2
+          ]
+        },
+        {
+          "text": "Nmax",
+          "bbox": [
+            440.75,
+            334.95,
+            462.23,
+            353.22
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.82,
+            11.06
+          ]
+        },
+        {
+          "text": "3H",
+          "bbox": [
+            251.88,
+            343.12,
+            271.66,
+            373.03
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            13.01,
+            18.4
+          ]
+        },
+        {
+          "text": "3LO (500 MeV)",
+          "bbox": [
+            176.47,
+            350.78,
+            247.22,
+            368.73
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.81,
+            11.04
+          ]
+        },
+        {
+          "text": "N",
+          "bbox": [
+            168.47,
+            354.0,
+            176.45,
+            368.73
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.04
+          ]
+        },
+        {
+          "text": "FIG. 4: (Color online) Ground-state energy of 4He as a func-",
+          "bbox": [
+            317.04,
+            362.36,
+            562.15,
+            374.24
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR6",
+            "CMR9"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "−6.5",
+          "bbox": [
+            80.05,
+            365.35,
+            96.6,
+            377.34
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            9.2
+          ]
+        },
+        {
+          "text": "tion of the basis size Nmax for an N3LO NN interaction [15]",
+          "bbox": [
+            317.04,
+            372.8,
+            562.12,
+            385.64
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI9",
+            "CMR6",
+            "CMR9"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "bare (28)",
+          "bbox": [
+            211.56,
+            377.38,
+            245.02,
+            389.66
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.2
+          ]
+        },
+        {
+          "text": "with an initial NNN interaction [1, 18]. Unevolved (bare) re-",
+          "bbox": [
+            317.04,
+            386.16,
+            562.03,
+            395.12
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "L-S (28)",
+          "bbox": [
+            211.56,
+            387.9,
+            242.99,
+            400.17
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.2
+          ]
+        },
+        {
+          "text": "sults are compared with Lee-Suzuki (L-S) and SRG evolved",
+          "bbox": [
+            317.04,
+            396.59,
+            562.15,
+            405.56
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "SRG (2.0/20)",
+          "bbox": [
+            211.56,
+            398.41,
+            261.14,
+            410.69
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.2
+          ]
+        },
+        {
+          "text": "−7.0",
+          "bbox": [
+            79.78,
+            400.65,
+            96.33,
+            412.64
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            9.2
+          ]
+        },
+        {
+          "text": "to λ = 2.0 fm−1 at ℏΩ= 28 and 36 MeV.",
+          "bbox": [
+            317.04,
+            403.31,
+            480.88,
+            416.12
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI9",
+            "CMR6",
+            "CMR9",
+            "CMSY6",
+            "MSBM10"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "E [MeV]",
+          "bbox": [
+            63.85,
+            407.85,
+            78.57,
+            447.4
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.04
+          ]
+        },
+        {
+          "text": "NN (+ NNN-",
+          "bbox": [
+            210.32,
+            428.18,
+            269.28,
+            442.91
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.04
+          ]
+        },
+        {
+          "text": "−7.5",
+          "bbox": [
+            80.05,
+            436.11,
+            96.6,
+            448.1
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            9.2
+          ]
+        },
+        {
+          "text": "does the optimal ℏΩ.) We also compare to a Lee-Suzuki",
+          "bbox": [
+            317.04,
+            436.35,
+            562.2,
+            448.65
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "induced)",
+          "bbox": [
+            235.95,
+            439.25,
+            274.59,
+            453.97
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.04
+          ]
+        },
+        {
+          "text": "(L-S) eﬀective interaction, which has been used in the",
+          "bbox": [
+            317.04,
+            450.09,
+            562.06,
+            460.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "NCSM to greatly improve convergence [21, 22]. These",
+          "bbox": [
+            317.04,
+            461.61,
+            562.06,
+            471.57
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "−8.0",
+          "bbox": [
+            79.78,
+            471.42,
+            96.33,
+            483.4
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            9.2
+          ]
+        },
+        {
+          "text": "eﬀective interactions result from unitary transformations",
+          "bbox": [
+            317.04,
+            473.01,
+            562.28,
+            482.97
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "NN + NNN",
+          "bbox": [
+            221.81,
+            477.07,
+            273.42,
+            491.8
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            11.04
+          ]
+        },
+        {
+          "text": "within the model space of a given nucleus, in contrast to",
+          "bbox": [
+            317.04,
+            484.53,
+            562.02,
+            494.49
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the free-space transformation of the SRG, which yields",
+          "bbox": [
+            317.04,
+            495.93,
+            562.04,
+            505.89
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "−8.5",
+          "bbox": [
+            80.05,
+            506.88,
+            96.6,
+            518.86
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            9.2
+          ]
+        },
+        {
+          "text": "nucleus-independent matrix elements.",
+          "bbox": [
+            317.04,
+            507.45,
+            481.32,
+            517.41
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The SRG calculations are variational and converge",
+          "bbox": [
+            327.0,
+            519.09,
+            562.42,
+            529.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            109.7,
+            519.28,
+            114.3,
+            531.56
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.2
+          ]
+        },
+        {
+          "text": "8",
+          "bbox": [
+            136.09,
+            519.28,
+            140.69,
+            531.56
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.2
+          ]
+        },
+        {
+          "text": "12",
+          "bbox": [
+            159.93,
+            519.28,
+            169.13,
+            531.56
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.2
+          ]
+        },
+        {
+          "text": "20",
+          "bbox": [
+            212.53,
+            519.28,
+            221.73,
+            531.56
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.2
+          ]
+        },
+        {
+          "text": "24",
+          "bbox": [
+            238.82,
+            519.28,
+            248.02,
+            531.56
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.2
+          ]
+        },
+        {
+          "text": "28",
+          "bbox": [
+            265.21,
+            519.28,
+            274.41,
+            531.56
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.2
+          ]
+        },
+        {
+          "text": "16",
+          "bbox": [
+            186.25,
+            519.34,
+            195.45,
+            531.61
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.2
+          ]
+        },
+        {
+          "text": "Nmax",
+          "bbox": [
+            180.07,
+            527.47,
+            201.5,
+            545.7
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.81,
+            11.04
+          ]
+        },
+        {
+          "text": "smoothly and rapidly from above with or without an",
+          "bbox": [
+            317.04,
+            530.61,
+            562.09,
+            540.57
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "initial three-body force. The dramatic improvement in",
+          "bbox": [
+            317.04,
+            542.01,
+            562.09,
+            551.97
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "convergence rate compared to the initial interaction is",
+          "bbox": [
+            317.04,
+            553.53,
+            562.04,
+            563.49
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "FIG. 3: (Color online) Ground-state energy of 3H as a func-",
+          "bbox": [
+            54.0,
+            554.84,
+            299.11,
+            566.72
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR6",
+            "CMR9"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "seen even though the χEFT interaction is relatively soft.",
+          "bbox": [
+            317.04,
+            564.93,
+            562.08,
+            574.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "tion of the basis size Nmax for an N3LO NN interaction [15]",
+          "bbox": [
+            54.0,
+            565.4,
+            299.08,
+            578.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI9",
+            "CMR6",
+            "CMR9"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "Thus, once evolved, a much smaller Nmax basis is ade-",
+          "bbox": [
+            317.04,
+            576.33,
+            562.16,
+            587.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "with and without an initial NNN interaction [1, 18].",
+          "bbox": [
+            54.0,
+            578.76,
+            275.56,
+            587.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "Un-",
+          "bbox": [
+            283.92,
+            578.76,
+            299.11,
+            587.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "evolved (“bare”) and Lee-Suzuki (L-S) results with ℏΩ=",
+          "bbox": [
+            54.0,
+            587.09,
+            299.12,
+            598.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9",
+            "MSBM10"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "quate for a desired accuracy and extrapolating in Nmax",
+          "bbox": [
+            317.04,
+            587.85,
+            561.7,
+            598.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "28 MeV are compared with SRG at ℏΩ= 20 MeV evolved",
+          "bbox": [
+            54.0,
+            597.53,
+            299.11,
+            608.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9",
+            "MSBM10"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "is also feasible.",
+          "bbox": [
+            317.04,
+            599.25,
+            381.72,
+            609.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "to λ = 2.0 fm−1.",
+          "bbox": [
+            54.0,
+            606.98,
+            119.2,
+            619.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI9",
+            "CMR6",
+            "CMR9",
+            "CMSY6"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "Figure 4 illustrates for 4He the same rapid conver-",
+          "bbox": [
+            327.0,
+            609.64,
+            562.28,
+            620.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "gence with Nmax of an SRG-evolved interaction. How-",
+          "bbox": [
+            317.04,
+            622.41,
+            562.16,
+            633.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "In Fig. 3, we show the triton ground-state energy as",
+          "bbox": [
+            63.96,
+            633.93,
+            299.12,
+            643.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ever, in this case the asymptotic value of the energy dif-",
+          "bbox": [
+            317.04,
+            633.93,
+            562.04,
+            643.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "a function of the oscillator basis size, Nmax, for various",
+          "bbox": [
+            54.0,
+            645.33,
+            299.24,
+            655.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "fers slightly because of the omitted induced four-body",
+          "bbox": [
+            317.04,
+            645.33,
+            562.17,
+            655.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "calculations. The lower (upper) curves are with (with-",
+          "bbox": [
+            54.0,
+            656.85,
+            299.0,
+            666.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "contribution. (The SRG-evolved asymptotic values for",
+          "bbox": [
+            317.04,
+            656.85,
+            562.13,
+            666.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "diﬀerent ℏΩdiﬀer by only 10 keV, so the gap between",
+          "bbox": [
+            317.04,
+            665.91,
+            562.09,
+            678.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "out) an initial three-body force (see Table I). The con-",
+          "bbox": [
+            54.0,
+            668.25,
+            299.11,
+            678.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "vergence of the bare interaction is compared with the",
+          "bbox": [
+            54.0,
+            679.77,
+            299.02,
+            689.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the converged bare/L-S results and the SRG results is",
+          "bbox": [
+            317.04,
+            679.77,
+            562.04,
+            689.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "SRG evolved to λ = 2.0 fm−1. The oscillator parame-",
+          "bbox": [
+            54.0,
+            688.85,
+            299.24,
+            701.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "dominated by the induced NNNN rather than incomplete",
+          "bbox": [
+            317.04,
+            691.17,
+            562.06,
+            701.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ter ℏΩin each case was chosen roughly to optimize the",
+          "bbox": [
+            54.0,
+            700.35,
+            299.02,
+            712.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "convergence). Convergence is even faster for lower λ val-",
+          "bbox": [
+            317.04,
+            702.69,
+            562.16,
+            712.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "convergence of each Hamiltonian.",
+          "bbox": [
+            54.0,
+            714.09,
+            203.64,
+            724.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(As λ decreases, so",
+          "bbox": [
+            212.04,
+            714.09,
+            299.1,
+            724.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ues [19], ensuring a useful range for the analysis of few-",
+          "bbox": [
+            317.04,
+            714.09,
+            562.04,
+            724.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    }
+  ]
+}

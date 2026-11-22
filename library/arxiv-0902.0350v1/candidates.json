@@ -3,12 +3,13 @@
  "doc_id": "arxiv-0902.0350v1",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "4591687132c93973fa7cef71802fea61da8375d3cc6545d0667a8bbeaf20e7bc",
   "file": "0902.0350v1.pdf"
  },
  "provenance": {
-  "title": "A REVISION OF THE PROOFOF THE KEPLER CONJECTURE",
+  "title": "A REVISION OF THE PROOF OF THE KEPLER CONJECTURE",
   "authors": "THOMAS C. HALES, JOHN HARRISON, SEAN MCLAUGHLIN, TOBIAS NIPKOW",
   "arxiv": {
    "id": "0902.0350",
@@ -20,209 +21,9 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 15,
-  "by_kind": {
-   "theorem": 3,
-   "lemma": 11,
-   "remark": 1
-  },
-  "formalization_candidates": 14
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "1",
-   "name": null,
-   "statement": "Any tame plane graph is isomorphic to a graph in the Archive.",
-   "section_file": "sections/sec-006-6-tame-graph-enumeration.md",
-   "section_title": "Tame graph enumeration",
-   "pages": "16-19",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "2",
-   "name": null,
-   "statement": "If a tame and final graphg is reachable from Seedp via next-",
-   "section_file": "sections/sec-006-6-tame-graph-enumeration.md",
-   "section_title": "Tame graph enumeration",
-   "pages": "16-19",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "3",
-   "name": null,
-   "statement": "If the graph \u0393 = (U,E ) is not biconnected, then a nontriv-",
-   "section_file": "sections/sec-009-8-biconnected-graphs.md",
-   "section_title": "Biconnected graphs",
-   "pages": "22-35",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "1",
-   "name": null,
-   "statement": "LetS ={0,v,,u 1,u 2} be a set of four distinct points inR3 whose",
-   "section_file": "sections/sec-009-8-biconnected-graphs.md",
-   "section_title": "Biconnected graphs",
-   "pages": "22-35",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "2",
-   "name": null,
-   "statement": "Let S ={v,w,u 1,u 2,v 0} be a set of five distinct points inR3",
-   "section_file": "sections/sec-009-8-biconnected-graphs.md",
-   "section_title": "Biconnected graphs",
-   "pages": "22-35",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "3",
-   "name": null,
-   "statement": "Let S ={v,w,u 1,u 2,v 0} be a set of five distinct points inR3",
-   "section_file": "sections/sec-009-8-biconnected-graphs.md",
-   "section_title": "Biconnected graphs",
-   "pages": "22-35",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "1",
-   "name": null,
-   "statement": "As an aside, we mention that this issue of biconnected graphs",
-   "section_file": "sections/sec-009-8-biconnected-graphs.md",
-   "section_title": "Biconnected graphs",
-   "pages": "22-35",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "4",
-   "name": null,
-   "statement": "There does not exist a setS ={0,v,w,u 1,u 2,u\u2032",
-   "section_file": "sections/sec-009-8-biconnected-graphs.md",
-   "section_title": "Biconnected graphs",
-   "pages": "22-35",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "5",
-   "name": null,
-   "statement": "LetS ={u,v,w} be a triangle such that each side has length at",
-   "section_file": "sections/sec-009-8-biconnected-graphs.md",
-   "section_title": "Biconnected graphs",
-   "pages": "22-35",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "9",
-   "name": null,
-   "statement": "There does not exist a set of seven distinct points",
-   "section_file": "sections/sec-009-8-biconnected-graphs.md",
-   "section_title": "Biconnected graphs",
-   "pages": "22-35",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "10",
-   "name": null,
-   "statement": "Let{u1,u 2,w,v} be a set of four distinct points inR3 (in the",
-   "section_file": "sections/sec-009-8-biconnected-graphs.md",
-   "section_title": "Biconnected graphs",
-   "pages": "22-35",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "11",
-   "name": null,
-   "statement": "Let{u1,u 2,w,v} be a set of four distinct points inR3 (in the",
-   "section_file": "sections/sec-009-8-biconnected-graphs.md",
-   "section_title": "Biconnected graphs",
-   "pages": "22-35",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "10",
-   "name": null,
-   "statement": "implies that{u1,u 2} is a special edge ofE\u2032 with corner v. In",
-   "section_file": "sections/sec-009-8-biconnected-graphs.md",
-   "section_title": "Biconnected graphs",
-   "pages": "22-35",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "12",
-   "name": null,
-   "statement": "In this context, there does not exist a set of six points{0,v,w,u 1,u\u2032",
-   "section_file": "sections/sec-009-8-biconnected-graphs.md",
-   "section_title": "Biconnected graphs",
-   "pages": "22-35",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "13",
-   "name": null,
-   "statement": "Let{0,u 1,u 2,v,w} be a set of five distinct points such that",
-   "section_file": "sections/sec-009-8-biconnected-graphs.md",
-   "section_title": "Biconnected graphs",
-   "pages": "22-35",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  }
- ]
+ "candidates": []
 }

@@ -1,0 +1,1943 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "symmetry-11-01298",
+  "pages": [
+    {
+      "page": 17,
+      "rotation": 0,
+      "drawings": 1,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 7. Branching sets—Left: 6-Plat for the knot cpomplement, Center: a 3-Braid as 6-Braid as example, Right: 6-Braid for the link complement"
+      ],
+      "labels": [
+        {
+          "text": "Symmetry 2019, 11, 1298",
+          "bbox": [
+            76.31,
+            57.13,
+            159.78,
+            65.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Bold",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "17 of 26",
+          "bbox": [
+            491.81,
+            57.26,
+            518.74,
+            65.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Figure 7. Branching sets—Left: 6-Plat for the knot cpomplement, Center: a 3-Braid as 6-Braid as",
+          "bbox": [
+            97.79,
+            164.27,
+            497.48,
+            173.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Bold",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            8.97,
+            9.06
+          ]
+        },
+        {
+          "text": "example, Right: 6-Braid for the link complement",
+          "bbox": [
+            97.79,
+            177.09,
+            290.57,
+            186.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Bold",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "Finally, bosons and fermions are represented as 3-braids. Our model agrees with the Bilson–Thompson",
+          "bbox": [
+            97.79,
+            199.7,
+            518.74,
+            209.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.86
+          ]
+        },
+        {
+          "text": "model but with the exception that we do not ﬁx the braid. In particular, we do not believe that the",
+          "bbox": [
+            76.54,
+            213.24,
+            518.74,
+            223.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            10.06
+          ]
+        },
+        {
+          "text": "difference between an electron and myon is given by a different braid.",
+          "bbox": [
+            76.54,
+            226.82,
+            384.66,
+            236.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "5. Electric Charge and Quasimodularity",
+          "bbox": [
+            76.54,
+            249.93,
+            256.15,
+            259.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Bold"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We argued above that all knot complements admitting a hyperbolic geometry (geometry of",
+          "bbox": [
+            97.79,
+            269.45,
+            518.74,
+            279.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            10.06
+          ]
+        },
+        {
+          "text": "negative, constant scalar curvature) have the properties of fermions, i.e., spin 1",
+          "bbox": [
+            76.54,
+            280.82,
+            417.08,
+            292.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            9.88
+          ]
+        },
+        {
+          "text": "2, are pressureless p = 0",
+          "bbox": [
+            413.29,
+            282.06,
+            518.74,
+            295.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            9.88,
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "in cosmology and fulﬁll the Dirac equation (see also the previous section for the action functional).",
+          "bbox": [
+            76.54,
+            296.47,
+            520.49,
+            306.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            10.06
+          ]
+        },
+        {
+          "text": "However, a particle can carry charges (electrical or others like color, etc.).",
+          "bbox": [
+            76.54,
+            310.05,
+            396.57,
+            320.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "5.1. Electric Charge as Dehn Twist of the Boundary",
+          "bbox": [
+            76.54,
+            333.09,
+            283.4,
+            343.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We described above the knot complement as a branched covering branched along a braid. What",
+          "bbox": [
+            97.79,
+            352.75,
+            518.74,
+            362.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.95
+          ]
+        },
+        {
+          "text": "is the meaning of a charge in this description? Let us start with the case of an electric charge. Given a",
+          "bbox": [
+            76.54,
+            366.27,
+            518.74,
+            376.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.95
+          ]
+        },
+        {
+          "text": "complex line bundle over C(K) × (0, 1) with connection A and curvature F = dA, we then have the",
+          "bbox": [
+            76.54,
+            378.66,
+            518.74,
+            389.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96,
+            10.06,
+            10.38
+          ]
+        },
+        {
+          "text": "Maxwell equations:",
+          "bbox": [
+            76.54,
+            393.28,
+            162.89,
+            403.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "d ∗F = ∗j,",
+          "bbox": [
+            299.91,
+            405.68,
+            345.62,
+            416.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "dF = 0",
+          "bbox": [
+            249.78,
+            405.82,
+            279.86,
+            416.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "with the Hodge operator ∗and the 4-current 1-form j. The electric charge Qe is given by",
+          "bbox": [
+            76.12,
+            425.95,
+            462.37,
+            438.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "ˆ",
+          "bbox": [
+            298.83,
+            441.29,
+            304.37,
+            451.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "esint10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "∗F",
+          "bbox": [
+            323.56,
+            454.57,
+            334.79,
+            465.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "Qe =",
+          "bbox": [
+            260.49,
+            454.7,
+            282.96,
+            466.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            7.57,
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "∂C(K)=T2",
+          "bbox": [
+            283.73,
+            472.86,
+            319.07,
+            482.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "PazoMath-Italic",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            5.98,
+            7.57,
+            7.89
+          ]
+        },
+        {
+          "text": "in the temporal gauge (normal to the boundary of C(K)) using d ∗F = ∗j and Stokes theorem. The",
+          "bbox": [
+            76.54,
+            494.1,
+            518.74,
+            505.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96,
+            10.06,
+            10.38
+          ]
+        },
+        {
+          "text": "magnetic charge Qm is deﬁned in an analogous way",
+          "bbox": [
+            76.54,
+            508.54,
+            305.15,
+            520.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            9.96
+          ]
+        },
+        {
+          "text": "ˆ",
+          "bbox": [
+            292.36,
+            522.95,
+            297.9,
+            532.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "esint10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Qm =",
+          "bbox": [
+            251.07,
+            536.37,
+            276.49,
+            548.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            7.57,
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "F = 0,",
+          "bbox": [
+            317.34,
+            536.37,
+            344.43,
+            547.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "∂C(K)=T2",
+          "bbox": [
+            277.26,
+            554.52,
+            312.6,
+            563.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "PazoMath-Italic",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            5.98,
+            7.57,
+            7.89
+          ]
+        },
+        {
+          "text": "but it is zero because of dF = 0. By the formulas above, we obtain a restriction of the complex line",
+          "bbox": [
+            76.54,
+            575.36,
+            518.74,
+            586.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96,
+            10.06,
+            10.38
+          ]
+        },
+        {
+          "text": "bundle to the boundary ∂C(K) = T2. A complex line bundle over T2 is determined by the twists of the",
+          "bbox": [
+            76.54,
+            586.29,
+            518.74,
+            600.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "PazoMath-Italic",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            9.86,
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "ﬁbers w.r.t. the lattice Z2 in the deﬁnition of the torus T2 = C/Z2. However, which twist is related to",
+          "bbox": [
+            76.54,
+            598.76,
+            518.74,
+            613.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "MSBM10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "the electric charge? Consider a cylinder S1 × [0, 1] and identify the ends of the interval to get T2 again.",
+          "bbox": [
+            76.54,
+            612.14,
+            520.48,
+            626.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            9.9,
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "A complex line bundle over S1 × [0, 1] with curvature F gives the integral",
+          "bbox": [
+            76.15,
+            625.65,
+            398.71,
+            640.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "ˆ",
+          "bbox": [
+            239.87,
+            644.6,
+            245.41,
+            654.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "esint10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ˆ",
+          "bbox": [
+            288.87,
+            644.6,
+            294.41,
+            654.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "esint10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ˆ",
+          "bbox": [
+            336.92,
+            644.6,
+            342.46,
+            654.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "esint10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A −",
+          "bbox": [
+            309.26,
+            657.89,
+            326.72,
+            668.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "F =",
+          "bbox": [
+            261.1,
+            658.02,
+            277.83,
+            668.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            357.32,
+            658.82,
+            364.51,
+            668.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "S1×[0,1]",
+          "bbox": [
+            228.52,
+            676.26,
+            256.76,
+            684.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            5.98,
+            7.57,
+            7.89
+          ]
+        },
+        {
+          "text": "S1×{1}",
+          "bbox": [
+            278.6,
+            676.26,
+            304.67,
+            684.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            5.98,
+            7.57,
+            7.89
+          ]
+        },
+        {
+          "text": "S1×{0}",
+          "bbox": [
+            326.65,
+            676.26,
+            352.73,
+            684.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            5.98,
+            7.57,
+            7.89
+          ]
+        },
+        {
+          "text": "using F = dA, which is only non-trivial if the two integrals differ. It can be realized by a twist of one",
+          "bbox": [
+            76.54,
+            697.16,
+            518.74,
+            708.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96,
+            9.99,
+            10.38
+          ]
+        },
+        {
+          "text": "side (say S1 × {1}), also called a Dehn twist. Dually by using d ∗F = ∗j, we get",
+          "bbox": [
+            76.54,
+            706.92,
+            424.6,
+            721.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "ˆ",
+          "bbox": [
+            241.75,
+            725.88,
+            247.29,
+            735.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "esint10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ˆ",
+          "bbox": [
+            280.29,
+            725.88,
+            285.83,
+            735.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "esint10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "∗j =",
+          "bbox": [
+            255.63,
+            739.16,
+            275.28,
+            750.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "d ∗F = ∗F|1 −∗F|0,",
+          "bbox": [
+            294.17,
+            739.16,
+            381.24,
+            751.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "Qe =",
+          "bbox": [
+            214.26,
+            739.29,
+            236.74,
+            751.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            7.57,
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "[0,1]",
+          "bbox": [
+            237.5,
+            757.41,
+            251.54,
+            765.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            7.89
+          ]
+        },
+        {
+          "text": "[0,1]",
+          "bbox": [
+            276.04,
+            757.41,
+            290.08,
+            765.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            7.89
+          ]
+        }
+      ]
+    },
+    {
+      "page": 18,
+      "rotation": 0,
+      "drawings": 2,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 8. Dehn twist represented by a braid."
+      ],
+      "labels": [
+        {
+          "text": "Symmetry 2019, 11, 1298",
+          "bbox": [
+            76.31,
+            57.13,
+            159.78,
+            65.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Bold",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "18 of 26",
+          "bbox": [
+            491.81,
+            57.26,
+            518.74,
+            65.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "which is non-zero by a Dehn twist along [0, 1]. Therefore, charges can be detected by Dehn twists",
+          "bbox": [
+            76.12,
+            89.73,
+            518.74,
+            100.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            10.06,
+            10.38
+          ]
+        },
+        {
+          "text": "along the boundary. A Dehn twist along the meridian represents the magnetic charge, whereas a",
+          "bbox": [
+            76.54,
+            104.14,
+            518.74,
+            114.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            10.06
+          ]
+        },
+        {
+          "text": "Dehn twist along the longitude is an electric charge. The number of twists is the charge, i.e., we",
+          "bbox": [
+            76.54,
+            117.65,
+            518.74,
+            127.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            10.06
+          ]
+        },
+        {
+          "text": "obtain automatically a quantization of the electric and magnetic charge. Furthermore, there is a",
+          "bbox": [
+            76.54,
+            131.16,
+            518.74,
+            141.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            10.06
+          ]
+        },
+        {
+          "text": "simple algebraic description of the twists, which agrees with the description of electromagnetic",
+          "bbox": [
+            76.54,
+            144.67,
+            518.74,
+            154.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            10.06
+          ]
+        },
+        {
+          "text": "duality using SL(2, Z). As noted above, the torus can be obtained by T2 = C/Z2 w.r.t. the lattice Z2.",
+          "bbox": [
+            76.54,
+            153.67,
+            520.48,
+            168.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "MSBM10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            9.96,
+            10.04,
+            10.38
+          ]
+        },
+        {
+          "text": "An automorphism of the torus is given by a the group SL(2, Z) acting via rational transformations on",
+          "bbox": [
+            76.15,
+            168.52,
+            518.74,
+            181.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "MSBM10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.89,
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "C, i.e.,",
+          "bbox": [
+            76.54,
+            182.03,
+            104.16,
+            195.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSBM10",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "!",
+          "bbox": [
+            200.46,
+            194.81,
+            208.35,
+            204.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "!",
+          "bbox": [
+            368.09,
+            194.81,
+            375.98,
+            204.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "· z = az + b",
+          "bbox": [
+            378.15,
+            197.62,
+            429.24,
+            215.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "a",
+          "bbox": [
+            175.61,
+            198.61,
+            180.03,
+            208.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "b",
+          "bbox": [
+            190.42,
+            198.61,
+            195.04,
+            208.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "a",
+          "bbox": [
+            343.24,
+            198.61,
+            347.66,
+            208.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "b",
+          "bbox": [
+            358.07,
+            198.61,
+            362.68,
+            208.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "∈SL(2, Z), ad −bc = 1 →",
+          "bbox": [
+            211.35,
+            202.09,
+            326.96,
+            215.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "MSBM10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "cz + d.",
+          "bbox": [
+            403.02,
+            205.33,
+            433.05,
+            221.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "c",
+          "bbox": [
+            175.72,
+            212.12,
+            179.77,
+            222.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "d",
+          "bbox": [
+            190.24,
+            212.12,
+            195.22,
+            222.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "c",
+          "bbox": [
+            343.35,
+            212.12,
+            347.41,
+            222.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "d",
+          "bbox": [
+            357.88,
+            212.12,
+            362.86,
+            222.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Then, the two possible Dehn twists are given by",
+          "bbox": [
+            76.23,
+            232.74,
+            287.31,
+            242.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "7→",
+          "bbox": [
+            281.66,
+            256.4,
+            292.29,
+            266.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            10.38
+          ]
+        },
+        {
+          "text": "z + 1,",
+          "bbox": [
+            302.5,
+            256.53,
+            326.71,
+            267.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "z",
+          "bbox": [
+            267.03,
+            257.33,
+            271.45,
+            267.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            302.51,
+            269.98,
+            316.87,
+            286.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "7→",
+          "bbox": [
+            281.66,
+            275.62,
+            292.29,
+            286.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            10.38
+          ]
+        },
+        {
+          "text": "z",
+          "bbox": [
+            267.03,
+            276.55,
+            271.45,
+            286.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "z,",
+          "bbox": [
+            312.17,
+            276.72,
+            320.56,
+            293.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "which is known from electromagnetic duality. However, this group also has another meaning. Let",
+          "bbox": [
+            76.12,
+            303.04,
+            518.74,
+            313.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            10.06
+          ]
+        },
+        {
+          "text": "Di f f (T2) be the diffeomorphism group of the torus. All coordinate transformations, known as",
+          "bbox": [
+            76.86,
+            314.72,
+            518.74,
+            326.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            9.96,
+            10.06,
+            10.38
+          ]
+        },
+        {
+          "text": "diffeomorphisms connected to the identity, are forming a (normal) subgroup Di f f0(T2) ⊂Di f f (T2).",
+          "bbox": [
+            76.54,
+            328.23,
+            520.48,
+            341.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            9.96,
+            9.99,
+            10.38
+          ]
+        },
+        {
+          "text": "Then, the factor space MCG(T2) = Di f f (T2)/Di f f0(T2) is a group, known as a mapping classes",
+          "bbox": [
+            76.23,
+            341.74,
+            518.74,
+            354.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            9.96,
+            10.06,
+            10.38
+          ]
+        },
+        {
+          "text": "group, and generated by Dehn twists, i.e., MCG(T2) = SL(2, Z) or the mapping class group is the",
+          "bbox": [
+            76.54,
+            353.91,
+            518.74,
+            367.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "MSBM10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            9.96,
+            10.06,
+            10.38
+          ]
+        },
+        {
+          "text": "modular group. An element of the mapping class group is a global diffeomorphism (also called isotopy)",
+          "bbox": [
+            76.54,
+            370.56,
+            519.74,
+            380.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.86
+          ]
+        },
+        {
+          "text": "that cannot be described by coordinate transformations, i.e., full twists cannot be undone by a sequence",
+          "bbox": [
+            76.54,
+            384.24,
+            518.74,
+            394.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.86
+          ]
+        },
+        {
+          "text": "of inﬁnitesimal rotations. Then, different charges belong to different mapping (or isotopy) classes. Up",
+          "bbox": [
+            76.54,
+            397.71,
+            519.04,
+            407.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.91
+          ]
+        },
+        {
+          "text": "to now, we have a full symmetry between electric and magnetic charges (geometrically expressed by",
+          "bbox": [
+            76.54,
+            411.18,
+            519.13,
+            421.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.98
+          ]
+        },
+        {
+          "text": "the torus). Now, we will show that this behavior changed for the extension to the knot complement.",
+          "bbox": [
+            76.54,
+            424.65,
+            520.49,
+            434.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            10.03
+          ]
+        },
+        {
+          "text": "Technically, it will be expressed by a change from modular to quasimodular functions.",
+          "bbox": [
+            76.23,
+            438.21,
+            455.26,
+            448.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "5.2. Electric Charge as a Frame of the Knot Complement",
+          "bbox": [
+            76.53,
+            461.25,
+            302.31,
+            471.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Ital"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "However, what does change in the knot complement and in the branched covering? As a toy",
+          "bbox": [
+            97.79,
+            480.84,
+            519.13,
+            490.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            10.06
+          ]
+        },
+        {
+          "text": "example, we consider the complement of the unknot D2 × S1. Then, the Dehn twist along the meridian",
+          "bbox": [
+            76.54,
+            489.7,
+            518.74,
+            504.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "URWPalladioL-Ital",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            7.57,
+            9.86,
+            9.96,
+            10.38
+          ]
+        },
+        {
+          "text": "of the boundary torus will be trivialized. By a result of McCullough (see for instance [61]), every",
+          "bbox": [
+            76.54,
+            507.85,
+            519.13,
+            517.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96,
+            10.06
+          ]
+        },
+        {
+          "text": "Dehn twist along the longitude induces a diffeomorphism of the solid torus. Then, the complement",
+          "bbox": [
+            76.54,
+            521.38,
+            518.74,
+            531.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            10.03
+          ]
+        },
+        {
+          "text": "of the unknot can carry an electric charge (by a Dehn twist) but no magnetic charge. This result can",
+          "bbox": [
+            76.54,
+            534.88,
+            518.74,
+            544.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            10.05
+          ]
+        },
+        {
+          "text": "be generalized to all knot complements (which are homologically equivalent to the solid torus). The",
+          "bbox": [
+            76.54,
+            548.42,
+            518.74,
+            558.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            10.01
+          ]
+        },
+        {
+          "text": "effect on the branched covering can also be obtained by considering the boundary. The boundary is",
+          "bbox": [
+            76.54,
+            561.91,
+            518.74,
+            571.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            10.03
+          ]
+        },
+        {
+          "text": "a torus written as two-fold branched covering branched along 4 points. A Dehn twist is given by a",
+          "bbox": [
+            76.54,
+            575.4,
+            518.74,
+            585.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            10.06
+          ]
+        },
+        {
+          "text": "permutation of the branching points that leads to a twist of the braid as a branching set of the knot",
+          "bbox": [
+            76.24,
+            588.91,
+            518.74,
+            598.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            10.06
+          ]
+        },
+        {
+          "text": "complement (see Figure 8).",
+          "bbox": [
+            76.54,
+            602.49,
+            195.33,
+            612.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 8. Dehn twist represented by a braid.",
+          "bbox": [
+            210.01,
+            747.46,
+            385.27,
+            756.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "URWPalladioL-Bold",
+            "URWPalladioL-Roma"
+          ],
+          "sizes": [
+            8.97
+          ]
+        }
+      ]
+    }
+  ]
+}

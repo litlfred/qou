@@ -1,0 +1,70 @@
+fix H
+
+assume hh: hermitean H \ H # mat-zero
+
+obtain A B C D where «: H = (A, B, C, D)
+by (cases H, auto)
+
+obtain 211 212 z21 222 where +x: (z11, z12) = calc-ideal-point1-cvec A B (221, 222) = calc-ideal-point2-cvec A B
+by (cases calc-ideal-point1-cvec A B, cases calc-ideal-point2-cvec A B) auto
+
+assume is-poincare-line-cmat H
+hence V (z1, 22) € calc-ideal-points-cmat-cvec H. Axz1*cnj z1 + Bxenj z1*2z2 + Cxz1x*cnj 22 + Dxz2xcnj 22 = 0
+using * ** hh
+using hermitean-elems|of A B C D|
+using calc-ideal-point1-on-circline[of 211 z12 A B|
+using calc-ideal-point2-on-circline[of 221 z22 A B|
+by (auto simp del: calc-ideal-point1-cvec-def calc-ideal-point2-cvec-def )
+thus Ball (calc-ideal-points-cmat-cvec H) (on-circline-cmat-cvec H)
+using on-circline-cmat-cvec-circline-equation *
+by (auto simp del: on-circline-cmat-cvec-def calc-ideal-points-cmat-cvec-def simp add: field-simps)
+qed
+
+Calculated ideal points of an h-line are different
+
+lemma calc-ideal-points-cvec-different [simp]:
+assumes (cmod B)? > (cmod A)? is-real A
+shows 7— (calc-ideal-point1-cvec A B %, calc-ideal-point2-cvec A B)
+using assms
+by (auto) (auto simp add: cmod-def)
+
+lemma calc-ideal-points-different:
+assumes is-poincare-line H
+shows 3 il € (calc-ideal-points H). 4 i2 € (calc-ideal-points H). i1 # i2
+using assms
+proof (transfer, transfer)
+fix H
+assume hh: hermitean H \ H # mat-zero is-poincare-line-cmat H
+obtain A B C D where «: H = (A, B, C, D)
+by (cases H, auto)
+hence is-real A using hh hermitean-elems by auto
+thus 5 i1 €calc-ideal-points-cmat-cvec H. 3i2€calc-ideal-points-cmat-cvec H. 7 il Sy i2
+using * hh calc-ideal-points-cvec-different|of A B]
+apply (rule-tac x=calc-ideal-point1-cvec A B in bez!)
+apply (rule-tac x=calc-ideal-point2-cvec A B in bex!)
+by auto
+qed
+
+lemma two-calc-ideal-points [simp]:
+assumes is-poincare-line H
+shows card (calc-ideal-points H) = 2
+proof—
+have 4 z € calc-ideal-points H. A y € calc-ideal-points H. z € calc-ideal-points H.z=xVz2=y
+by (transfer, transfer, case-tac H, simp del: calc-ideal-point1-cvec-def calc-ideal-point2-cvec-def )
+then obtain z y where *: calc-ideal-points H = {x, y}
+by auto
+moreover
+have z 4 y
+using calc-ideal-points-different|OF assms| *
+by auto
+ultimately
+show ?thesis
+by auto
+qed
+
+4.3.2 Ideal points
+
+Next we give a genuine definition of ideal points — these are the intersections of the h-line with the unit circle
+
+definition ideal-points :: circline = complex-homo set where
+ideal-points H = circline-intersection H unit-circle

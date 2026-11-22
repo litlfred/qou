@@ -16,4 +16,7 @@ export default definition({
     "markov-trace",
     "non-degenerate",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): — [`MarkovGramDegenerate.lean`](../lean/QOU/QBeta/MarkovGramDegenerate.lean))" },
+  ],
 });

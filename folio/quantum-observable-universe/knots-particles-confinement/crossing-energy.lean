@@ -17,7 +17,7 @@ LaTeX label: `def:crossing-energy`
 
 ## References
 
-- [manuscript] Ch. 4, §10
+- [leitner2026] Ch. 4, §10
 - [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 
 **Ground ring**: this Lean sibling is the archimedean specialisation
@@ -48,7 +48,7 @@ def BraidWord.numCrossings (w : BraidWord) : ℕ :=
   w.length
 
 /-- Positive + negative = total crossings. -/
--- Ref: [manuscript] Ch. 4, §10
+-- Ref: [leitner2026] Ch. 4, §10
 theorem BraidWord.pos_plus_neg_eq_total (w : BraidWord) :
     w.numPositive + w.numNegative = w.numCrossings := by
   simp only [numPositive, numNegative, numCrossings]
@@ -87,7 +87,7 @@ theorem BraidWord.pos_plus_neg_eq_total (w : BraidWord) :
       antisymmetric (Coul) ← (n₊ + n₋)   the count;  sinh is sign-blind
 
     The two were swapped here and in `def:coulomb-charge`. -/
--- Ref: [manuscript] Ch. 4, §10
+-- Ref: [leitner2026] Ch. 4, §10
 structure CrossingEnergy where
   /-- The braid word representing the linking pattern. -/
   braidWord : BraidWord
@@ -120,7 +120,7 @@ noncomputable def CrossingEnergy.coulombContribution (E : CrossingEnergy) : ℝ 
 /-- The crossing energy decomposes as baseline + Coulomb contribution:
 
       E_cross = ½(n₊ − n₋)(q + q⁻¹) + ½(n₊ + n₋)(q − q⁻¹) -/
--- Ref: [manuscript] Ch. 4, §10
+-- Ref: [leitner2026] Ch. 4, §10
 theorem CrossingEnergy.decomposition (E : CrossingEnergy) :
     E.value = E.baseline + E.coulombContribution := by
   simp only [value, baseline, coulombContribution]

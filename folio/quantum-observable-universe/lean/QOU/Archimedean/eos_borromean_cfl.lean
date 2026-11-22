@@ -147,7 +147,7 @@ $q =
     many-body inputs, so the three-part EOS claim is recorded as the
     conditional conjecture over the context rather than discharged by a
     fake projection. -/
--- Ref: [manuscript] quantum-observable-universe/observations/eos-borromean-cfl.ts
+-- Ref: [leitner2026] quantum-observable-universe/observations/eos-borromean-cfl.ts
 def eos_borromean_cfl (ctx : EosBorromeanCflContext) : Prop :=
   (ctx.ε_B = ctx.M_B * ctx.n_B +
     (3 / 5) * (ctx.hbar_q ^ 2 * (3 * Real.pi ^ 2) ^ ((2 : ℝ) / 3) /

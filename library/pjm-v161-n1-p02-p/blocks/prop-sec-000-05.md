@@ -1,0 +1,1 @@
+S 3 split along F u Ω has four open components. Their closures are 3-balls B{f B 2, B 3 and a solid torus T. The bound- ary dBif i = 1,2,3, is made up of r, digonsf a disc subset of F+ which contains D/+i and a disc subset of F~ which contains Df . The boundary dΊ is a union of r - rx+r2 + r3 digons and subsets of F + and F~.

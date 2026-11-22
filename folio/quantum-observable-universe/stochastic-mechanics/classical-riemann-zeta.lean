@@ -36,7 +36,7 @@ structure ClassicalRiemannZeta where
   zeta : ℂ → ℂ
   /-- Dirichlet series representation: ζ(s) = Σ_{n≥1} n^{-s}
       for Re(s) > 1. -/
-  -- Ref: [manuscript] Chapter 8, Section 5
+  -- Ref: [leitner2026] Chapter 8, Section 5
   dirichlet_series :
     ∀ (s : ℂ), 1 < s.re →
       HasSum (fun n : ℕ+ => (↑(n : ℕ) : ℂ) ^ (-s)) (zeta s)

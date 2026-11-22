@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2108.09349v2
-doc_title: "GEOMETRIC TRIANGULATIONS OF A FAMILY OF HYPERBOLIC 3-BRAIDS BARBARA NIMERSHIEM"
+doc_title: "GEOMETRIC TRIANGULATIONS OF A FAMILY OF HYPERBOLIC 3-BRAIDS"
 section_id: sec-004-21-forming-a-three-stranded-full-twist
 section_title: "Forming a three-stranded full twist"
 section_number: 2.1
 pages: 3-4
 source_pdf: 2108.09349v2.pdf
 source_sha256: 4c732bfcbf3dfb16
-doc_brief: "GEOMETRIC TRIANGULATIONS OF A FAMILY OF HYPERBOLIC 3-BRAIDS BARBARA NIMERSHIEM — We construct topological triangulations for complements of ( −2, 3,n )-pretzel knots and links with n≥ 7."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.956
 latex_coverage_ratio: 0.987
+doc_brief: "GEOMETRIC TRIANGULATIONS OF A FAMILY OF HYPERBOLIC 3-BRAIDS — We construct topological triangulations for complements of (−2, 3, n)-pretzel knots and links with n ≥7."
 ---
 \label{sec:fulltwist}  
 

@@ -1,0 +1,1 @@
+Let S(ω) : S(B, P) →S(B, P) be the linear map induced from a geometric partition ω of P. (a) If λ(ω) and µ(ω) are inseparable then S(ω) = 0. (b) If λ(ω) is just separable from µ(ω) (when µ(ω) = λ(ω)∨) then S(ω) has rank 1. Its image is spanned by S(ω)(T), where T is any tangle whose arcs separate λ(ω) from µ(ω).

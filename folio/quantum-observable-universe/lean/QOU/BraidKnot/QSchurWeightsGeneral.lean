@@ -16,7 +16,7 @@ Proof: induction on n using Wenzl's branching rule (Theorem 5 of
 
 Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors"
 Ref: [ram1991] Ram, "A Frobenius formula for the characters"
-Ref: [manuscript] prop:q-schur-y-lambda-closed-form
+Ref: [leitner2026] prop:q-schur-y-lambda-closed-form
 -/
 
 namespace QOU.BraidKnot

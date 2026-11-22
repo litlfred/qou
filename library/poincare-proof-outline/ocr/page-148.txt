@@ -1,0 +1,68 @@
+have y € positive-y-axis
+proof —
+have (xz. [x 4 0; poincare-between 0p (of-complex (i / 2)) (of-complex x); is-imag x; — 1 < Im x] = 0 < Imax
+by (smt add.left-neutral complex.expand divide-complex-def complex-eq divide-less-0-1-iff divide-less-eq-1-pos imagi-
+nary-unit.simps(1) mult.left-neutral of-real-1 of-real-add of-real-divide of-real-eq-0-iff one-add-one poincare-between-y-axis-Ouv
+zero-complex.simps(1) zero-complex.simps(2) zero-less-divide-1-iff)
+thus ?thesis
+using <y € circline-set y-axis) (y A On> <y € unit-disc)
+using acy
+unfolding circline-set-y-axis positive-y-azis-def
+by (auto simp add: cmod-eq-Im abs-less-iff)
+qed
+
+have « # y
+using <x € positive-x-axis) <y € positive-y-axis)
+unfolding positive-z-azis-def positive-y-azis-def circline-set-x-axis circline-set-y-azxis
+by auto
+
+assume zty: poincare-between x ?t y
+let ?xy = poincare-line x y
+
+have ?t € circline-set ?xy
+using xty poincare-between-poincare-line-uzv|OF «x # y» (xz € unit-disc» <y € unit-discy «?t € unit-dise>]
+by simp
+
+moreover
+
+have ?ry 4 z-axis
+using poincare-line-circline-set|OF «x # y>] <y € positive-y-azis»
+by (auto simp add: circline-set-x-axis positive-y-axis-def)
+hence intersects-x-axis-positive ?xy
+using intersects-z-axis-positive-iff [of ?xy] «x # y» (x € unit-disc» (x € positive-z-azis»
+by auto
+
+moreover
+
+have ?ry # y-azis
+using poincare-line-circline-set|OF «x # y>] «x € positive-z-axis»
+by (auto simp add: circline-set-y-azis positive-z-axis-def )
+hence intersects-y-azis-positive ?ry
+using intersects-y-axis-positive-iff|of ?xy] «x # y> ‘y € unit-disc <y € positive-y-azis)
+by auto
+
+ultimately
+
+show False
+using negated-euclidean-ariom-auzlof fry] «x # y>
+unfolding circline-set-def
+by auto
+qed
+qed
+
+Alternate form of the Euclidean axiom — this one is much easier to prove
+
+lemma negated-euclidean-axiom':
+shows J abc.
+a € unit-disc \ b € unit-disc A c € unit-disc A 7(poincare-collinear {a, b, c}) A
+(4 a. x € unit-dise A
+poincare-distance a x = poincare-distance b x
+poincare-distance a x = poincare-distance c x)
+proof—
+let 2a = of-complex (i/2)
+let. 2b = of-complex (—i/2)
+let 2c = of-complex (1/5)
+
+have (i/2) 4 (-i/2)
+
+148

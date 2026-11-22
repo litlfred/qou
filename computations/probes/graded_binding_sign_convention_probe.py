@@ -451,7 +451,8 @@ def main() -> int:
     b = {"pp": z0, "pn": z0 + dpn0, "nn": z0 - h0}
     L = {k: -mp.log(v) for k, v in b.items()}
     m_e = mp.mpf(_ME_STR)
-    E0_N0 = m_e / (q0 * (q0 - 1))
+    import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+    E0_N0 = _qbeta_e0.order_zero_scaled(m_e, q0)  # order-zero E_0, routed (owner ruling 2026-11-20, #8590)
     hbar_q = 1 - 1 / q0
     E0_full = E0_N0 / (1 - hbar_q ** 2)
     print(f"    q0      = {mp.nstr(q0, 25)}   (proton pin, qou_substrate.q_at)")

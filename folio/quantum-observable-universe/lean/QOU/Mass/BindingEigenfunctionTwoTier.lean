@@ -69,8 +69,8 @@ Base ring: `[Field R]` for the symmetric q-integers `[k]_q = (qᵏ−q⁻ᵏ)/(q
 allows `Field` for `x⁻¹`), plus a pure `[CommRing R]` companion for the
 division-free Habiro-tail polynomial identity. Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-06-27-lever1-qinvolution-cyclotomic-kernel.md §"Stage 2"
--- Ref: [manuscript] docs/audits/2026-06-26-binding-period-qinvolution-qhermite-identification.md
+-- Ref: [leitner2026] docs/audits/2026-06-27-lever1-qinvolution-cyclotomic-kernel.md §"Stage 2"
+-- Ref: [leitner2026] docs/audits/2026-06-26-binding-period-qinvolution-qhermite-identification.md
 -/
 import Mathlib.Tactic
 

@@ -78,9 +78,9 @@ structural framework:
    `L2_100x_SharedRoot.lean`).
 
 Refs:
-- [manuscript] docs/audits/2026-05-18-delta-lambda-gating-context.md
-- [manuscript] docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md
-- [manuscript] docs/audits/2026-05-25-gap-closure-structural-analysis.md
+- [leitner2026] docs/audits/2026-05-18-delta-lambda-gating-context.md
+- [leitner2026] docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md
+- [leitner2026] docs/audits/2026-05-25-gap-closure-structural-analysis.md
 - [kashiwara1991] DOI 10.1215/S0012-7094-91-06321-0
 - [lusztig1990] DOI 10.2307/2152736
 - [brundankleshchev2009] DOI 10.1007/s00222-009-0204-8

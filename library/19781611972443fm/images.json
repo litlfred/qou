@@ -1,0 +1,68 @@
+{
+  "$schema": "folio-document-images/v1",
+  "doc_id": "19781611972443fm",
+  "images": [
+    {
+      "id": "img-p006-1",
+      "file": "images/img-p006-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 0.001072,
+        "imagesOnPage": 1,
+        "page": 6
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      },
+      "placements": [
+        {
+          "page": 6,
+          "coverage": 0.001072,
+          "imagesOnPage": 1
+        },
+        {
+          "page": 7,
+          "coverage": 0.001072,
+          "imagesOnPage": 1
+        },
+        {
+          "page": 8,
+          "coverage": 0.001072,
+          "imagesOnPage": 1
+        },
+        {
+          "page": 10,
+          "coverage": 0.001072,
+          "imagesOnPage": 1
+        },
+        {
+          "page": 11,
+          "coverage": 0.001072,
+          "imagesOnPage": 3
+        },
+        {
+          "page": 11,
+          "coverage": 5e-06,
+          "imagesOnPage": 3
+        },
+        {
+          "page": 11,
+          "coverage": 5e-06,
+          "imagesOnPage": 3
+        },
+        {
+          "page": 15,
+          "coverage": 0.001072,
+          "imagesOnPage": 1
+        },
+        {
+          "page": 16,
+          "coverage": 0.001072,
+          "imagesOnPage": 1
+        }
+      ]
+    }
+  ]
+}

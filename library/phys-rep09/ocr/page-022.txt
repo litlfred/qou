@@ -1,0 +1,69 @@
+172 S. Blanes et al. / Physics Reports 470 (2009) 151-238
+
+Now we can apply Theorem 9 and obtain the following sharp bound.
+
+Theorem 10. The Baker-Campbell-Hausdorff series in the form (81) converges absolutely when ||X;|| + ||X2|| <2.
+This result can be generalized, of course, to any number of non commuting operators Xj, X2, . . . , Xq. Specifically, the series
+Z = log(e*! e&® ... eXa),
+
+converges absolutely if ||X1|| + [|X|] + «+» + [|Xqll < 2.
+
+2.9. Preliminary linear transformations
+
+To improve the accuracy and the bounds on the convergence domain of the Magnus series for a given problem, it is quite
+common to first consider a linear transformation on the system in such a way that the resulting differential equation can be
+more easily handled in a certain sense, to be specified for each problem. To illustrate the procedure, let us consider a simple
+example.
+
+Example. Suppose we have the 2 x 2 matrix
+A(t) = a(t)X1 + B(t)X2, (84)
+
+where X;, and X; are given by (76) and @ and # are complex functions of time, a, 8 : R —> C. Then the exact solution of
+Y’ =A(t)Y, Y(0) = Lis
+
+t
+Jf a(s)ds ds, els: %(s2)482 ~ fg! a(s2)ds2
+e isyerel syye
+V(t) = , B(s1) ; (85)
+0 en Jo a(sids
+
+Let us factorize the solution as Y(t) = Yo(t)Y1 (t), with Yo(t) the solution of the initial value problem defined by
+
+% = Ao(t)¥o — An(t) = a(t)X = (0 20) (86)
+
+and Yo (0) = I. Then, the equation satisfied by Y, is
+
+~ ~ ~ ~ 2 [fb a(s)ds
+=A (OK, with; = ¥oA¥o — Ao = (° pipers ). (87)
+
+so that the first term of the Magnus expansion applied to (87) already provides the exact solution (85). O
+
+This, of course, is not the typical behavior, but in any case, if the transformation Yo in the factorization Y(t) = Yo(t)Y1 (t)
+is chosen appropriately, the first few terms in the Magnus series applied to the equation satisfied by Y; usually give very
+accurate approximations.
+
+Since this kind of preliminary transformation is frequently used in Quantum Mechanics, we specialize the treatment to
+this particular setting here, and consider Eq. (4) instead. In other words, we write (30) in the more conventional form of the
+time dependent Schédinger equation
+
+VO ~ Aue, (88)
+dt
+where H = H/(ih), h is the reduced Planck constant, H is the Hamiltonian and U corresponds to the evolution operator.
+
+As in the example, suppose that H can be split into two pieces, H= Ho + eH, with Ho a solvable Hamiltonian and
+€ < 1asmall perturbation parameter. In such a situation, one tries to integrate out the Ay piece so as to circumscribe
+the approximation to the Ay piece. In the case of Eq. (88), this is carried out by means of a linear time-dependent
+transformation. In Quantum Mechanics, this preliminary linear transformation corresponds to a new evolution picture, such
+as the interaction or the adiabatic picture.
+
+Among other possibilities, we may factorize the time-evolution operator as
+
+U(t) = G(t)Ug(t)G*(0), (89)
+
+where G(t) is a linear transformation whose purpose is yet to be defined. In the new G-Picture, the corresponding time-
+evolution operator Uc obeys the equation
+
+Ug(t) =He(t)Uc(t), Ag (t) = GI (A (HGct) — Gh(Ne'(t). (90)
+
+The choice of G depends on the nature of the problem at hand. There is no generic formal recipe to find out the
+most appropriate G. In the spirit of canonical transformations of Classical Mechanics, one should build up the very Uc

@@ -300,7 +300,7 @@ theorem q_hecke_eigenvalue {M : Type u} [inst : FibreFunctorRigidity.{u, v} M]
 
     LaTeX: `\label{prop:q-gl-obstruction-calc}` (arithmetic core)
     uses: `def:q-flat-connection`, `def:quantum-characteristic-classes` -/
--- Ref: [manuscript] Chapter 3, §Kummer-filtration-obstruction
+-- Ref: [leitner2026] Chapter 3, §Kummer-filtration-obstruction
 theorem obstruction_finite_divisors (χ : ℤ) (hχ : χ ≠ 0) :
     Set.Finite {n : ℕ | n ≥ 1 ∧ (↑n : ℤ) ∣ χ} := by
   apply Set.Finite.subset (Int.natAbs χ).divisors.finite_toSet
@@ -316,7 +316,7 @@ theorem obstruction_finite_divisors (χ : ℤ) (hχ : χ ≠ 0) :
 
     LaTeX: `\label{prop:q-gl-obstruction-calc}` (persistence)
     uses: `def:q-flat-connection`, `def:quantum-characteristic-classes` -/
--- Ref: [manuscript] Chapter 3, §Kummer-filtration-obstruction
+-- Ref: [leitner2026] Chapter 3, §Kummer-filtration-obstruction
 theorem obstruction_cofinite_persistence (χ : ℤ) (hχ : χ ≠ 0) :
     Set.Infinite {n : ℕ | n ≥ 1 ∧ ¬ (↑n : ℤ) ∣ χ} := by
   -- Strategy: {n ≥ 1} is infinite (complement of the finite {0}),

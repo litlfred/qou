@@ -8,6 +8,7 @@ pages: 3-3
 source_pdf: 0006111v2.pdf
 source_sha256: e024febd3d0886a3
 toc_source: undetermined
+doc_brief: "arXiv:hep-th/0006111v2 14 Jul 2003 — 6 sections: Page 1; Page 2; Page 3"
 ---
 fermion species, with the partition function now being evaluated in a ﬁxed topological sector of eﬀective charge
 ν = 1 + 2/β. Taking into account the deﬁnition (2), we then get, with Z(β)

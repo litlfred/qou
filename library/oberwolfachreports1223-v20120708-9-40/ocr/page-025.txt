@@ -1,0 +1,54 @@
+Invariants in Low-Dimensional Topology and Knot Theory 25
+
+Definition 3. Let S denote the set of numbers in the unreduced' Conway sym-
+bol C(L) of a link L [3]. Given C(L) and an arbitrary (non-empty) subset S =
+{a1,a2,..., am} of S, the family Fg(L) of knots or links derived from L is con-
+
+structed by substituting each a; € S, a; #1 in C(L) by sgn(a)(|a|-+n), forn € Nt.
+
+For even integers n > 0 this construction preserves the number of components,
+i.e., we obtain (sub)families of links with the same number of components. If all
+parameters in a Conway symbol of a knot or link are 1, 2, or 3, such a link is called
+generating.
+
+For alternating knots, signature can be computed by using a combinatorial for-
+mula derived by P. Traczyk [14]. We will use this formula, proved by J. Przytycki,
+in the following form, taken from [13], Theorem 7.8, Part (2):
+
+Theorem 1. /f D is a reduced alternating diagram of an oriented knot, then
+1 1 1 1
+op= gut 5 —B)= —3¥ + 5 (lDs+l —|Ds_|),
+
+where w is the writhe of D, W is the number of white regions in the checkerboard
+coloring of D, which is for alternating minimal diagrams equal to the number of
+cycles |D,4| in the state s+, and B is the number of black regions in the checker.
+board coloring of D equal to the number of the cycles |D,_| in the state s—.
+
+Introducing orientation of a knot, every n-twist (chain of digons) becomes par-
+allel or anti-parallel.
+
+Lemma 2. By replacing n-twist (n > 2) by (n+ 2)-twist in the Conway symbol of
+an alternating knot K, the signature changes by —2 if the replacement is made in a
+parallel twist with positive crossings, the signature changes by +2 if the replacement
+is made in a parallel twist with negative crossings, and remains unchanged if the
+replacement is made in an anti-parallel twist.
+
+Theorem 3. The signature ox of an alternating knot K given by its Conway
+
+symbol is
+n
+OK = » —2 [=| c + 2c0,
+
+where the sum is taken over all parallel twists nj, c; € {1,—-1} is the sign of
+crossings belonging to a parallel twist n;, and 2co is an integer constant which can
+be computed from the signature of the generating knot.
+
+The proof of this theorem follows directly form the preceding Lemma, claiming
+that only additions of twists in parallel twists in a Conway symbol result in the
+change of signature, and that by every such addition, signature changes by —2c;.
+Notice that the condition that we are making twist replacements in the standard
+Conway symbols, i.e., Conway symbols with the maximal twists, is essential for
+computation of general formulae for the signature of alternating knot families.
+
+1The Conway notation is called unreduced if 1’s denoting elementary tangles in vertices are
+not omitted in symbols of polyhedral links.

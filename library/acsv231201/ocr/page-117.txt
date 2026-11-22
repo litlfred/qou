@@ -1,0 +1,38 @@
+4.2 Complex phase 99
+
+image of y, bi-analytically into the cone K. With this choice of kth root, the
+change of variables (4.8) becomes
+
+1k
+aM Mh o(v)} ; (4.12)
+Ck
+
+y= fey = mtr
+
+where 7 = v7! p(cyv*)'/* and the branch of the kth root of the series in paren-
+theses fixes 1. Thus f’(0) = 7 and the inverse function x(y) is defined as in
+the proof of Theorem 4.6, with cl = 7 in (4.9). Analogously to the proof of
+Theorem 4.6, we then have
+
+I. f Ay) exp(—ay*) dy, (4.13)
+y
+
+where y = f o y, is the image of y, under our change of variables.
+
+Figure 4.2 The path 7 in the cone K and the line segments @ and B.
+
+Let p = f(y(e)) denote the endpoint of 7 with real part p’ > 0 and define
+the line segments a = [0, p’] and 8 = [p’, p] in the complex plane. As seen in
+Figure 4.2, the contour ¥ is homotopic to a + B, hence f h(z) dz = f A(z) dz +
+i A(z) dz for any analytic function /. On compact subsets of K, the real part of
+y* is bounded from below by a positive constant, so there are positive constants
+C and p such that
+
+|A() exp(-ay)| < Ce?*
+
+on f (the reason we chose the principal value for our root was to ensure that 8
+lies inside K). We conclude that
+
+T,= f A(y) exp(—ay') dy + Ra
+
+a

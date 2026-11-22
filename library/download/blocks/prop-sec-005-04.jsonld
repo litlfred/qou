@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/download/blocks/prop-sec-005-04",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 16,
+  "pageEnd": 20,
+  "text": "prop-sec-005-04.md",
+  "derivedFrom": "library/download/sections/sec-005",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/download/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "6.4",
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Inline argument in sections/sec-005-local-behavior-of-empirical-distributions.md",
+    "claim_id": "download#proposition:6.4",
+    "lean_status": "unformalized"
+  }
+}

@@ -8,6 +8,7 @@ pages: 10-12
 source_pdf: Invariant_eigendistributions_2.pdf
 source_sha256: ee43c3ebeff95265
 toc_source: inferred
+doc_brief: "Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups — 18 sections: Front matter; Contents; Introduction."
 ---
 As a ﬁrst and immediate application of Theorem 5.1 we derive a formula for the global character of a
 (g, K)-module as a contour integral over the characteristic cycle of the corresponding (D, K)-module.

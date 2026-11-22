@@ -1,0 +1,45 @@
+11.2 Proof of Theorem 11.1 357
+
+real numbers. We will apply this in logarithmic space to the function
+qG = hom(q,x + iy) where q = Q 0 exp and exp(a + iy) is a minimal
+point of V. The deformation will avoid the zero set Vi of g except for
+touching it at a single point (the origin) at a single time (t = 1). This step
+is accomplished by Lemma 11.32.
+
+(ii) Letting g = Qo exp, we apply Step (i) to the homogenization g of g near
+each point x+iy with y € localarg (so that exp(a+iy) is a critical point
+in direction #, for Q and #, lies in the normal cone there). We then use
+a partition of unity to piece these local log-projective contours together
+with the one from Theorem 11.4. This is accomplished in Theorem 11.33,
+resulting in a deformation of the contour that avoids V, except at t = 1
+with y € localarg and is projective in a neighborhood of localarg.
+
+(iii) We stop the homotopy a bit early near localarg in order to obtain a cy-
+cle that avoids V, = log V entirely. This is discussed in Definition 11.34.
+
+(iv) In the next section, we will see that on the domains of integration of
+interest any rational function F = P/Q has local expansions in powers of
+1/A, where A is a homogenization of Q. This leads to a powerful theorem
+showing the asymptotics in this case to be given essentially by the Fourier
+transform of @.
+
+As above, assume we have fixed Q along with a component B of amoeba(Q°)
+and a point a € OB, let q = Qoexp, and fix a point 2+iyo where g vanishes. We
+assume without loss of generality that yo = 0, with everything in this section
+working equally well for any non-zero yo € Tra. Because we want a log-
+projective contour, we work mainly in logarithmic coordinates. The log space
+L = R’ © i(R/2z) is a discrete quotient of R“ @ iR“, so for analyses taking
+place in a sufficiently small neighborhood in L£ it makes sense to consider the
+computations in C“. In particular, while q is not a polynomial on the log space
+L£, it is analytic at x and its leading homogeneous term Ag is a complex scalar
+multiple of a real homogeneous polynomial g of the same degree as the leading
+homogeneous part of q(a + iy + w) in w. Let Vj denote the zero set of q.
+
+Because the homogeneous polynomial g is hyperbolic with some cone of hy-
+perbolicity Ko containing tan,,(B), Definition 11.16 and part (7) of Lemma 11.27
+imply the existence of a lower semi-continuous family of real cones K??(y)
+of hyperbolicity for the homogenizations of g at y as y varies, with all cones
+containing tang(B). For y ¢ V3, the cone K?5(y) may be taken to be all of
+R‘. By homogeneity, K7#(Ay) = K?(y) for any real A > 0.
+
+Definition 11.30. Recall the normal cone normal,.(B) = — tanz(B)*. We say

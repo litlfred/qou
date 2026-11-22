@@ -38,7 +38,7 @@ remains **true**, and this file is precisely a count of dimensions.  Do not cite
 What it does buy: the dimension obstruction to that identification is gone.  Previously the two
 sides were a count and a formula with no bridge; now they agree, for every `n`.
 
--- Ref: [manuscript] beans qou-7vht, qou-7wf6, qou-8iru, qou-cds1.
+-- Ref: [leitner2026] beans qou-7vht, qou-7wf6, qou-8iru, qou-cds1.
 -/
 
 namespace QOU.SchurWeyl.TraceQuotCatalan

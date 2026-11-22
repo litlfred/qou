@@ -1,0 +1,81 @@
+have V z. V y. poincare-between a x b \ poincare-between a b y \ x € unit-disc
+A y € unit-dise —+ poincare-between x b y (is ?P a b)
+proof (rule wlog-positive-x-azis[;where P=?P])
+show a € unit-disc
+using assms by simp
+next
+show b € unit-disc
+using assms by simp
+next
+show a + b
+using False by simp
+next
+fix Muv
+assume *: unit-disc-fix M u € unit-disc v € unit-disc u # v
+Va y. poincare-between (moebius-pt M u) x (moebius-pt M v) A
+poincare-between (moebius-pt M u) (moebius-pt M v) y A
+a € unit-disc \ y € unit-disc —>
+poincare-between x (moebius-pt M v) y
+show Vz y. poincare-between u x v A poincare-between uv y A « € unit-disc \ y € unit-disc
+—> poincare-between xv y
+proof safe
+fix ry
+assume poincare-between u x v poincare-between uv y x € unit-disc y € unit-disc
+
+have poincare-between (moebius-pt M u) (moebius-pt M x) (moebius-pt M v)
+using <poincare-between u x v> <unit-disc-fix My «x € unit-discy (u € unit-disc> <v € unit-disc)
+by simp
+
+moreover
+
+have poincare-between (moebius-pt M u) (moebius-pt M v) (moebius-pt M y)
+using <poincare-between u v y> <unit-disc-fix M> <y € unit-disc) (wu € unit-discy «v € unit-disc»
+by simp
+
+moreover
+
+have (moebius-pt M x) € unit-disc
+using <unit-disc-fix M> «x € unit-discy by simp
+
+moreover
+
+have (moebius-pt M y) € unit-disc
+using <unit-disc-fix M> <y € unit-discy by simp
+
+ultimately
+
+have poincare-between (moebius-pt M x) (moebius-pt M v) (moebius-pt M y)
+using * by blast
+
+thus poincare-between xv y
+using <y € unit-disc) * (x € unit-disc) by simp
+
+qed
+next
+fix x
+assume zz: is-realaz 0 < Rex Rex < 1
+hence of-complez « € unit-disc
+using cmod-eq-Re by auto
+hence of-complex « # on
+by simp
+have of-compler x # On
+using «tz by auto
+have of-complex x € circline-set x-axis
+using zx by simp
+show Vm n. poincare-between 0, m (of-complex x) A poincare-between 0), (of-complex x) n A
+m € unit-disc A n € unit-disc —>+ poincare-between m (of-complex x) n
+proof safe
+fix mn
+assume **: poincare-between 0; m (of-complez x) poincare-between 0), (of-complex x) n
+m € unit-disc n € unit-disc
+
+show poincare-between m (of-complex x) n
+
+proof (cases m = 0p)
+case True
+thus ?thesis
+
+using ** by auto
+next
+
+88

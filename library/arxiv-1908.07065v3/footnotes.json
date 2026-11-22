@@ -1,0 +1,2296 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1908.07065v3",
+ "status": "determined",
+ "body_size": 10.9,
+ "footnotes": [
+  {
+   "id": "fn-p013-1",
+   "page": 13,
+   "mark": "1",
+   "text": "Anticipatingtheidentiﬁcationwithquantumperiods,thisequationdoesnotmeanthatthedyonicandmag- netic quamtum periods ΠD(u, ℏ), ΠB(u, ℏ) are identical at u = 0, as ℏis identiﬁed with θ diﬀerently, c.f. (3.39).",
+   "marks": [
+    {
+     "page": 13,
+     "context": "andthat"
+    }
+   ],
+   "block": "library/arxiv-1908.07065v3/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p019-1",
+   "page": 19,
+   "mark": "2",
+   "text": "In[7]itwasalsopointedoutthat(3.69)admitsmanyboundaryconditionsatθ→−∞. However, it is claimed there that the correct boundary condition for the quantum period is precisely of the type (B.14), namely, ϵ(θ) ∼θ/2 + . . . for θ →−∞, which is not quite correct for the reasons explained here.",
+   "marks": [
+    {
+     "page": 19,
+     "context": "π"
+    },
+    {
+     "page": 19,
+     "context": "D)"
+    },
+    {
+     "page": 19,
+     "context": "periodswearestudying"
+    }
+   ],
+   "block": "library/arxiv-1908.07065v3/blocks/prose-sec-007"
+  },
+  {
+   "id": "fn-p022-1",
+   "page": 22,
+   "mark": "4",
+   "text": "Recallthatforℏ=0,intheelectricframebotha(u)andaD(u)areconvergentseriesofΛ2/uuptothe monopole and dyon points. The prepotential, which is related to a, aD by the special geometry relation, is thus also convergent series of Λ/a up to these points. The NS free energy is its smooth deformation which tends to enlarge the domain of convergence.",
+   "marks": [
+    {
+     "page": 22,
+     "context": "aroundthesemiclassicalregion|Λ/a| ≪1"
+    },
+    {
+     "page": 22,
+     "context": "2Λ"
+    },
+    {
+     "page": 22,
+     "context": "Thisleadstoaseriesexpansionfora(u, ℏ)inpowersofΛ"
+    }
+   ],
+   "block": "library/arxiv-1908.07065v3/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p027-1",
+   "page": 27,
+   "mark": "2",
+   "text": "ℏs+(ΠA+2ΠB)",
+   "marks": [
+    {
+     "page": 26,
+     "context": "cn−1=(−1)nB"
+    },
+    {
+     "page": 26,
+     "context": "cnz"
+    },
+    {
+     "page": 26,
+     "context": "z"
+    }
+   ],
+   "block": "library/arxiv-1908.07065v3/blocks/prose-sec-010"
+  },
+  {
+   "id": "fn-p027-2",
+   "page": 27,
+   "mark": "5",
+   "text": "WealsonoticethattheexactBperiodΠex mations of the quantum B period ΠB(E, ℏ).",
+   "marks": [
+    {
+     "page": 27,
+     "context": "andℏ= 1.Weﬁndthatallstabiliseddigitsareinagreement(26ofthem)"
+    }
+   ],
+   "block": "library/arxiv-1908.07065v3/blocks/prose-sec-010"
+  },
+  {
+   "id": "fn-p030-1",
+   "page": 30,
+   "mark": "6",
+   "text": "While presenting these results at the conference Irregular singularities in Quantum Field Theory (http://irregular.rd.ciencias.ulisboa.pt/conference), S. Lukyanov informed us that he had independently derived this result [63] by using completely diﬀerent methods.",
+   "marks": [
+    {
+     "page": 30,
+     "context": "(2.14)"
+    }
+   ],
+   "block": "library/arxiv-1908.07065v3/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p030-2",
+   "page": 30,
+   "mark": "7",
+   "text": "In evaluating the derivative of the periods w.r.t. E, we used the quantum Matone relation (4.14) and instanton calculus.",
+   "marks": [
+    {
+     "page": 30,
+     "context": "ccontinuationofinstantoncalculusbeyondthesemiclassicalregion"
+    }
+   ],
+   "block": "library/arxiv-1908.07065v3/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p032-1",
+   "page": 32,
+   "mark": "8",
+   "text": "ThisagreeswithanunpublishedcalculationofY.Hatsuda,whoobtainedthesameresultbyconsideringthe semiclassical expansion of the spectral traces.",
+   "marks": [
+    {
+     "page": 32,
+     "context": "ﬁrsttermsintheasymptoticscanbeeasilyworkedout,andoneﬁnds"
+    }
+   ],
+   "block": "library/arxiv-1908.07065v3/blocks/prose-sec-013"
+  },
+  {
+   "id": "fn-p036-1",
+   "page": 36,
+   "mark": "9",
+   "text": "Strictlyspeakingthisisthefour-dimensionallimitof[75].Thistypeofexpressionsﬁrstappearedin[82]as compatibility conditions between the exact quantization conditions of [2, 3] and those of [55, 83, 84]. A diﬀerent connection between blowup and Painlev´e equations was used in [85–87] to prove the so-called Kiev formula [76, 88] or its q-deformed version [89, 90].",
+   "marks": [
+    {
+     "page": 36,
+     "context": "YoshiokablowupequationsforSU(2)pureSYM[79–81]canbewrittenas"
+    }
+   ],
+   "block": "library/arxiv-1908.07065v3/blocks/prose-sec-014"
+  },
+  {
+   "id": "fn-p042-1",
+   "page": 42,
+   "mark": "10",
+   "text": "Thereisafactorof2missingineq.(4.4)of[19].",
+   "marks": [
+    {
+     "page": 42,
+     "context": "orrectionisproportionaltotheeﬀectivecentralchargeofthetheory"
+    }
+   ],
+   "block": "library/arxiv-1908.07065v3/blocks/prose-sec-018"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p019-2",
+   "page": 19,
+   "mark": "3",
+   "text": "Alternativelywecanjustifythisboundaryconditionbyusingtheresultsinsection5,seeequation(5.40).",
+   "block": "library/arxiv-1908.07065v3/blocks/prose-sec-007"
+  },
+  {
+   "id": "fn-p028-1",
+   "page": 28,
+   "mark": "2",
+   "text": "ℏs+(ΠA+2ΠB)",
+   "block": "library/arxiv-1908.07065v3/blocks/prose-sec-010"
+  },
+  {
+   "id": "fn-p028-2",
+   "page": 28,
+   "mark": "2",
+   "text": "ℏs−(ΠA)",
+   "block": "library/arxiv-1908.07065v3/blocks/prose-sec-010"
+  },
+  {
+   "id": "fn-p045-1",
+   "page": 45,
+   "mark": "107",
+   "text": "(2017) 1–30, [1603.01174]. [66] A. Voros, The zeta function of the quartic oscillator, Nucl. Phys. B165 (1980) 209–236. [67] A. Gorsky, A. Milekhin and N. Sopenko, Bands and gaps in Nekrasov partition function, JHEP",
+   "block": "library/arxiv-1908.07065v3/blocks/prose-sec-018"
+  },
+  {
+   "id": "fn-p045-2",
+   "page": 45,
+   "mark": "01",
+   "text": "(2018) 133, [1712.02936]. [68] M. Beccaria, On the large Ω-deformations in the Nekrasov-Shatashvili limit of N = 2∗SYM, JHEP 07 (2016) 055, [1605.00077]. [69] P. Dorey and R. Tateo, Anharmonic oscillators, the thermodynamic Bethe ansatz, and nonlinear integral equations, J.Phys. A32 (1999) L419–L425, [hep-th/9812211]. [70] P. Dorey, C. Dunning and R. Tateo, The ODE/IM Correspondence, J. Phys. A40 (2007) R205, [hep-th/0703066]. [71] S. L. Lukyanov, Critical values of the Yang-Yang functional in the quantum sine-Gordon model, Nucl. Phys. B853 (2011) 475–507, [1105.2836]. [72] V. Y. Novokshenov, Movable poles of the solutions of painleve’s equation of the third kind and their relation with mathieu functions, Functional Analysis and Its Applications 20 (1986) 113–123.",
+   "block": "library/arxiv-1908.07065v3/blocks/prose-sec-018"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "a",
+   "context": "AlbaGrassi"
+  },
+  {
+   "page": 1,
+   "mark": "b",
+   "context": "AlbaGrassia,JieGu"
+  },
+  {
+   "page": 1,
+   "mark": "b",
+   "context": "AlbaGrassia,JieGubandMarcosMari˜no"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "−ℏ"
+  },
+  {
+   "page": 4,
+   "mark": "x",
+   "context": "Z"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "Y"
+  },
+  {
+   "page": 4,
+   "mark": "d",
+   "context": "Y2−iℏ"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "pn(x, E)ℏ"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "p2n(x, E)ℏ"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "p2n(x, E)ℏ2"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "p2n+1(x, E)ℏ"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "p2n+1(x, E)ℏ2"
+  },
+  {
+   "page": 4,
+   "mark": "p",
+   "context": "dxlog"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "p2n= (−1)"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "y"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "γℏ"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "γℏ2"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "H(p, x) = p"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "V (x) = 2Λ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "H = p"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "H = p2+ 2Λ"
+  },
+  {
+   "page": 5,
+   "mark": "x",
+   "context": "Z"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "E −2Λ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "2Λ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "\u0012E −2Λ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "\u0012E −2Λ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "E + 2Λ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "E + 2Λ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "E + 2Λ"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "modulusm=k"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "Zπ"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "4Λ"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "E −2Λ"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "E + 2Λ"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "2Λ"
+  },
+  {
+   "page": 6,
+   "mark": "16",
+   "context": "A(0) = (1 + i)"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "A(0) = (1 + i)16π"
+  },
+  {
+   "page": 6,
+   "mark": "16",
+   "context": "B(0) = −i"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "B(0) = −i16π"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "Γ(1/4)"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "Γ(1/4)"
+  },
+  {
+   "page": 6,
+   "mark": "a",
+   "context": "B(E) = 2i"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "ℏ"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "ℏ2"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "A,B(E) = O"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "48(4 −E"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "fnℏ"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "fnℏ2"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "wesplitℏ= e"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "bF(e"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "where"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "(2n)!ζ"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "(2n)!ζ2"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "The analytic properties of"
+  },
+  {
+   "page": 7,
+   "mark": "e",
+   "context": "Z"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "bF(e"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "branchofN= 2theoriescompactiﬁedonR"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "branchofN= 2theoriescompactiﬁedonR3× S"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "aD=∂F"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "compactiﬁedonR"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "compactiﬁedonR3× S"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(ζ′)"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(ζ′)2−ζ"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "Zγ= e"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "ζ′= −e"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "ζ= −e"
+  },
+  {
+   "page": 10,
+   "mark": "d",
+   "context": "sinh(θ −θ′+ iφ′−iφ)"
+  },
+  {
+   "page": 10,
+   "mark": "b",
+   "context": "ormal limit).The Borel singularities of the Borel transforms"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "m)⟩= −n"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "m)⟩= −ne"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "m+ n"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "m+ nm"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "2πi (Cγ"
+  },
+  {
+   "page": 12,
+   "mark": "d",
+   "context": "2πi (Cγm+ Cγ"
+  },
+  {
+   "page": 12,
+   "mark": "d",
+   "context": "2πiCγ"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "2πiCγ"
+  },
+  {
+   "page": 12,
+   "mark": "d",
+   "context": "2πiCγ"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "Zd= e"
+  },
+  {
+   "page": 12,
+   "mark": "d",
+   "context": "Zd= eiφ"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "Zm= −ie"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "Zm= −ieiφ"
+  },
+  {
+   "page": 12,
+   "mark": "d",
+   "context": "φ"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "φd=φ"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "−e"
+  },
+  {
+   "page": 12,
+   "mark": "d",
+   "context": "−eiφ"
+  },
+  {
+   "page": 12,
+   "mark": "d",
+   "context": "= exp (−ϵ"
+  },
+  {
+   "page": 12,
+   "mark": "d",
+   "context": "= exp (−ϵd(θ −iφ"
+  },
+  {
+   "page": 12,
+   "mark": "d",
+   "context": "= exp (−ϵd(θ −iφd)) = exp (−eϵ"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "ie"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "ieiφ"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "= exp (−ϵ"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "= exp (−ϵm(θ −iφ"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "= exp (−ϵm(θ −iφm)) = exp (−eϵ"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "eL"
+  },
+  {
+   "page": 12,
+   "mark": "d",
+   "context": "eϵ"
+  },
+  {
+   "page": 12,
+   "mark": "d",
+   "context": "eϵd(θ) = π|Z"
+  },
+  {
+   "page": 12,
+   "mark": "d",
+   "context": "eL"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "eϵ"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "eϵm(θ) = π|Z"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "eϵ"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "eϵd(x + iφ"
+  },
+  {
+   "page": 13,
+   "mark": "s",
+   "context": "ℏ"
+  },
+  {
+   "page": 13,
+   "mark": "s",
+   "context": "ℏ"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "eϵ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "s(ΠD,B)(ℏ) = Zd,m + O(ℏ"
+  },
+  {
+   "page": 14,
+   "mark": "s",
+   "context": "ℏ"
+  },
+  {
+   "page": 14,
+   "mark": "s",
+   "context": "ℏ"
+  },
+  {
+   "page": 14,
+   "mark": "e",
+   "context": "2"
+  },
+  {
+   "page": 14,
+   "mark": "s",
+   "context": "ℏ"
+  },
+  {
+   "page": 14,
+   "mark": "s",
+   "context": "ℏ"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "∼2A−2"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "µ3A"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "µ4A"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "Dℏ"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "Dℏ2"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "D)"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "D)"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "alsoindicatesthattheBoreltransform"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "πiCγ"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "Zm= ie"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "Zm= ieiφ"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "Ze= e"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "Ze= eiφ"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "Zℓ= e"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "−e"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "−eiφ"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "= exp (−ϵ"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "= exp (−ϵe(θ −iφ"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "= exp (−ϵe(θ −iφe)) = exp (−eϵ"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "−i e"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "−i eiφ"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "= exp (−ϵ"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "= exp (−ϵm(θ −iφ"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "= exp (−ϵm(θ −iφm)) = exp (−eϵ"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "−e"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "eL"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "eϵ"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "eϵe(θ) = π|Z"
+  },
+  {
+   "page": 16,
+   "mark": "d",
+   "context": "cosh(θ −θ′+ iφm −iφe)"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "eL"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "eϵ"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "eϵm(θ) = π|Z"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "sincetheWbosonisavectormultiplet[6].Intheequationforeϵ"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "eL"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "eL"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "eL"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "eL"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "eL"
+  },
+  {
+   "page": 16,
+   "mark": "s",
+   "context": "ℏ"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "eϵ"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "eϵ"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "eϵe(x + iφ"
+  },
+  {
+   "page": 16,
+   "mark": "s",
+   "context": "ℏ"
+  },
+  {
+   "page": 16,
+   "mark": "s",
+   "context": "ℏ"
+  },
+  {
+   "page": 17,
+   "mark": "s",
+   "context": "ℏ"
+  },
+  {
+   "page": 17,
+   "mark": "s",
+   "context": "ℏ"
+  },
+  {
+   "page": 17,
+   "mark": "s",
+   "context": "ℏ"
+  },
+  {
+   "page": 17,
+   "mark": "s",
+   "context": "ℏ"
+  },
+  {
+   "page": 18,
+   "mark": "d",
+   "context": "π cosh(θ −θ′)"
+  },
+  {
+   "page": 18,
+   "mark": "e",
+   "context": "Dπ−1"
+  },
+  {
+   "page": 18,
+   "mark": "e",
+   "context": "\u00012"
+  },
+  {
+   "page": 18,
+   "mark": "s",
+   "context": "ℏ"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "ϵ(n)e(1−2"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "π2"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "D)2"
+  },
+  {
+   "page": 21,
+   "mark": "t",
+   "context": "Y"
+  },
+  {
+   "page": 21,
+   "mark": "t",
+   "context": "Yt= (y"
+  },
+  {
+   "page": 21,
+   "mark": "t",
+   "context": "1, y"
+  },
+  {
+   "page": 21,
+   "mark": "t",
+   "context": "vY (s) = y"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "(−1)NΛ"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "ϵ2→0ϵ"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "ϵ2→0ϵ2 log Z(a; iℏ, ϵ"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "7ℏ"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "7ℏ2−5a"
+  },
+  {
+   "page": 22,
+   "mark": "8",
+   "context": "Λ"
+  },
+  {
+   "page": 22,
+   "mark": "16",
+   "context": "Λ"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "a"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "a2+ ℏ"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "(a"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "(a2+ ℏ"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "(a2+ ℏ2)"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "(a2+ ℏ2)3(a"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "(a2+ ℏ2)3(a2+ 4ℏ"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "u =a"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "riaterangeoftheparametersΛ,E,ℏaroundthesemiclassicalregion|Λ"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "\u0012 ℏ"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "1 +i"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "1 −i"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "Λ"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "recover the WKB periods (2.22).More precisely, at order ℏ"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "recover the WKB periods (2.22).More precisely, at order ℏ2"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "ℏ"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "ℏ2"
+  },
+  {
+   "page": 23,
+   "mark": "u",
+   "context": "A(E= 2"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "ℏ"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "ℏ2"
+  },
+  {
+   "page": 23,
+   "mark": "u",
+   "context": "B(E= 2"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "Y"
+  },
+  {
+   "page": 23,
+   "mark": "d",
+   "context": "Y2(x) −iℏ"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "= E −2Λ"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "Yn(x, ℏ, E)Λ"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "Yn(x, ℏ, E)Λ2"
+  },
+  {
+   "page": 23,
+   "mark": "d",
+   "context": "2Y0Y1 −iℏ"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "2Y0Y1 −iℏdY"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "4E + ℏ"
+  },
+  {
+   "page": 23,
+   "mark": "d",
+   "context": "EYn(x, ℏ, E) −iℏ"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "EYn(x, ℏ, E) −iℏdY"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "Y2(x, ℏ, E) = −4E"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "Y2(x, ℏ, E) = −4E2 + 5Eℏ"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "8E −ℏ"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "4E −5ℏ"
+  },
+  {
+   "page": 23,
+   "mark": "4",
+   "context": "cosh(2x) + ℏ"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "E (E + ℏ"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "E (E + ℏ2) (4E + ℏ"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "E (E + ℏ2) (4E + ℏ2)"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "Eℏ"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "4E"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "60E"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "60E2+ 35Eℏ"
+  },
+  {
+   "page": 24,
+   "mark": "4",
+   "context": "60E2+ 35Eℏ2+ 2ℏ"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "4E"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "4E3/2(E + ℏ"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "4E3/2(E + ℏ2) (4E + ℏ"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "4E3/2(E + ℏ2) (4E + ℏ2)"
+  },
+  {
+   "page": 24,
+   "mark": "5",
+   "context": "I6(E, ℏ) = −6720E"
+  },
+  {
+   "page": 24,
+   "mark": "4",
+   "context": "I6(E, ℏ) = −6720E5 + 18480E"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "I6(E, ℏ) = −6720E5 + 18480E4ℏ"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "I6(E, ℏ) = −6720E5 + 18480E4ℏ2 + 15260E"
+  },
+  {
+   "page": 24,
+   "mark": "4",
+   "context": "I6(E, ℏ) = −6720E5 + 18480E4ℏ2 + 15260E3ℏ"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "I6(E, ℏ) = −6720E5 + 18480E4ℏ2 + 15260E3ℏ4 + 4705E"
+  },
+  {
+   "page": 24,
+   "mark": "6",
+   "context": "I6(E, ℏ) = −6720E5 + 18480E4ℏ2 + 15260E3ℏ4 + 4705E2ℏ"
+  },
+  {
+   "page": 24,
+   "mark": "8",
+   "context": "6(E, ℏ) = −6720E5 + 18480E4ℏ2 + 15260E3ℏ4 + 4705E2ℏ6 + 413Eℏ"
+  },
+  {
+   "page": 24,
+   "mark": "10",
+   "context": " = −6720E5 + 18480E4ℏ2 + 15260E3ℏ4 + 4705E2ℏ6 + 413Eℏ8 + 18ℏ"
+  },
+  {
+   "page": 24,
+   "mark": "5",
+   "context": "4E"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "4E5/2(E + ℏ"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "4E5/2(E + ℏ2)"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "4E5/2(E + ℏ2)2(4E + ℏ"
+  },
+  {
+   "page": 24,
+   "mark": "5",
+   "context": "4E5/2(E + ℏ2)2(4E + ℏ2)"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "4E5/2(E + ℏ2)2(4E + ℏ2)5(4E + 9ℏ"
+  },
+  {
+   "page": 24,
+   "mark": "4",
+   "context": "I2m(E, ℏ)Λ"
+  },
+  {
+   "page": 24,
+   "mark": "m",
+   "context": "I2m(E, ℏ)Λ4"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "4Λ"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "2,"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "2Λ"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "2Λ"
+  },
+  {
+   "page": 24,
+   "mark": "d",
+   "context": "Yn(X, ℏ, E)"
+  },
+  {
+   "page": 24,
+   "mark": "x",
+   "context": "X= e"
+  },
+  {
+   "page": 24,
+   "mark": "d",
+   "context": "EYn(X, ℏ, E) −iℏX"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "EYn(X, ℏ, E) −iℏXdY"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "Y"
+  },
+  {
+   "page": 24,
+   "mark": "d",
+   "context": "Y2(x, ℏ, E) −ℏ"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "dx(x, ℏ, E) = E −2Λ"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "ℏ"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "ℏ2, −4Λ"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "ℏ"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "ℏ2, −4Λ"
+  },
+  {
+   "page": 24,
+   "mark": "d",
+   "context": "Y(x, ℏ, E) = −ℏ"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "ℏ"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "ℏ"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "ℏ"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "ℏ2 , −4Λ"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "ℏ"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "ℏ2 , −4Λ"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "ℏ"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "ℏ"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "ℏ"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "ℏ2 , −4Λ"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "ℏ"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "ℏ2 , −4Λ"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "ℏ"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "ℏ"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "ℏ"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "ℏ2, −4Λ"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "A(E, ℏ) = 2π"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "ℏ"
+  },
+  {
+   "page": 25,
+   "mark": "28",
+   "context": "evaluatetheseries(4.28)bytruncatingituptoorderΛ"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "A(100,"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "A(0,"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "A(0, 3π) = 0.1501122164563802133431995..."
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "hand,wehavetheBorelresummationoftheall-ordersWKBexpansioninℏ"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "\u00132"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "cn−1=(−1)"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "cn−1=(−1)nB2"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "cnz2"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "\u00132"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 27,
+   "mark": "a",
+   "context": "D(u, ℏ) := 4i"
+  },
+  {
+   "page": 27,
+   "mark": "a",
+   "context": "B(E, ℏ) and 2i"
+  },
+  {
+   "page": 27,
+   "mark": "s",
+   "context": "2ℏ"
+  },
+  {
+   "page": 27,
+   "mark": "s",
+   "context": "2ℏ"
+  },
+  {
+   "page": 28,
+   "mark": "s",
+   "context": "ℏ"
+  },
+  {
+   "page": 28,
+   "mark": "s",
+   "context": "ℏ"
+  },
+  {
+   "page": 28,
+   "mark": "s",
+   "context": "2ℏ"
+  },
+  {
+   "page": 28,
+   "mark": "s",
+   "context": "2ℏ"
+  },
+  {
+   "page": 29,
+   "mark": "s",
+   "context": "2ℏ"
+  },
+  {
+   "page": 29,
+   "mark": "s",
+   "context": "2ℏ"
+  },
+  {
+   "page": 29,
+   "mark": "s",
+   "context": "2ℏ"
+  },
+  {
+   "page": 29,
+   "mark": "s",
+   "context": "2ℏ"
+  },
+  {
+   "page": 29,
+   "mark": "s",
+   "context": "2ℏ"
+  },
+  {
+   "page": 29,
+   "mark": "s",
+   "context": "2ℏ"
+  },
+  {
+   "page": 29,
+   "mark": "a",
+   "context": "B= 2πa + 2i"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "LetObeanoperatoronL"
+  },
+  {
+   "page": 29,
+   "mark": "m",
+   "context": "(−1)(ℓ−1)"
+  },
+  {
+   "page": 29,
+   "mark": "m",
+   "context": "(−1)(ℓ−1)mℓZ"
+  },
+  {
+   "page": 29,
+   "mark": "m",
+   "context": "mℓ!ℓ"
+  },
+  {
+   "page": 30,
+   "mark": "u",
+   "context": "A,B(E, ℏ)aregivenby(4.18)andA(ℏ)isan"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "4ℏ"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "A(0, ℏ))"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "A(0, ℏ))2csch"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "B(0, ℏ))"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "−sech"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "antCYgeometryisthecanonicalbundleoverF0,alsoknownasresolvedY"
+  },
+  {
+   "page": 31,
+   "mark": "0",
+   "context": "tCYgeometryisthecanonicalbundleoverF0,alsoknownasresolvedY2,"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "O −κ = (RΛ)"
+  },
+  {
+   "page": 31,
+   "mark": "x",
+   "context": "O −κ = (RΛ)2(e"
+  },
+  {
+   "page": 31,
+   "mark": "p",
+   "context": "O −κ = (RΛ)2(ex+ e−x) −κ + e"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "where J(µ, ξ, ℏ) is the grand potential of the resolved Y"
+  },
+  {
+   "page": 31,
+   "mark": "0",
+   "context": "where J(µ, ξ, ℏ) is the grand potential of the resolved Y2,"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "κ = 2 + ER"
+  },
+  {
+   "page": 31,
+   "mark": "3",
+   "context": "κ = 2 + ER2+ O(R"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "R"
+  },
+  {
+   "page": 31,
+   "mark": "a",
+   "context": "G(E) = −∂E"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "2Λ"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "ℏ"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "ℏ2"
+  },
+  {
+   "page": 33,
+   "mark": "i",
+   "context": "NS(α,"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "\u0012 ℏ"
+  },
+  {
+   "page": 33,
+   "mark": "i",
+   "context": "NS(α,"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "Λ"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "\u0012 ℏ"
+  },
+  {
+   "page": 33,
+   "mark": "i",
+   "context": "NS(α,"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "Λ"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "\u0012 ℏ"
+  },
+  {
+   "page": 33,
+   "mark": "i",
+   "context": "NS(α,"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "Λ"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "B(κ)ℏ"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "B(κ)ℏ2"
+  },
+  {
+   "page": 33,
+   "mark": "4",
+   "context": "numberNbmeansthatwetruncatetheseries(4.13)atorderΛ"
+  },
+  {
+   "page": 33,
+   "mark": "b",
+   "context": "numberNbmeansthatwetruncatetheseries(4.13)atorderΛ4N"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "µ = e"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "P"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "µ = Λ"
+  },
+  {
+   "page": 34,
+   "mark": "s",
+   "context": "\u0013−2"
+  },
+  {
+   "page": 34,
+   "mark": "s",
+   "context": "\u00132"
+  },
+  {
+   "page": 34,
+   "mark": "a",
+   "context": "s = −i"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "E≈a"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "andbysolvingnumericallytheTBA(3.69)with(5.28).WeuseP"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "dbysolvingnumericallytheTBA(3.69)with(5.28).WeuseP2=−E=5,µ=Λ"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "Γ (1/4)"
+  },
+  {
+   "page": 35,
+   "mark": "4",
+   "context": "orderΛ"
+  },
+  {
+   "page": 35,
+   "mark": "b",
+   "context": "orderΛ4N"
+  },
+  {
+   "page": 35,
+   "mark": "s",
+   "context": "2ℏ"
+  },
+  {
+   "page": 36,
+   "mark": "s",
+   "context": "2ℏ"
+  },
+  {
+   "page": 36,
+   "mark": "4",
+   "context": "e"
+  },
+  {
+   "page": 36,
+   "mark": "i",
+   "context": "e4π"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "\u0013−a"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "ℏ"
+  },
+  {
+   "page": 36,
+   "mark": "a",
+   "context": "G(1 −i"
+  },
+  {
+   "page": 36,
+   "mark": "a",
+   "context": "ℏ)G(1 + i"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "2a"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "2a2−ℏ"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "a"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "a2ℏ"
+  },
+  {
+   "page": 36,
+   "mark": "8",
+   "context": "a2ℏ2+Λ"
+  },
+  {
+   "page": 36,
+   "mark": "4",
+   "context": "1 −2Λ"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "a"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "a2ℏ"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "a2ℏ2(a"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "a2ℏ2(a2+ ℏ"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "a2ℏ2(a2+ ℏ2)"
+  },
+  {
+   "page": 36,
+   "mark": "12",
+   "context": "a2ℏ2(a2+ ℏ2)2+ O(Λ"
+  },
+  {
+   "page": 38,
+   "mark": "p",
+   "context": "e"
+  },
+  {
+   "page": 38,
+   "mark": "k",
+   "context": "(−1)"
+  },
+  {
+   "page": 39,
+   "mark": "0",
+   "context": "totheYN,"
+  },
+  {
+   "page": 39,
+   "mark": "i",
+   "context": "(−1)"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "(−1)NΛ"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "(−1)NΛ"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "α"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "I−iℏϵ"
+  },
+  {
+   "page": 39,
+   "mark": "t",
+   "context": "c2(Y"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "I) + ϵ"
+  },
+  {
+   "page": 39,
+   "mark": "3",
+   "context": "α"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "\u0011\u0011−(n·α)"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "\u0011\u0011−(n·α)"
+  },
+  {
+   "page": 40,
+   "mark": "a",
+   "context": "ℏ"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "1 −e−2πa"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "1 −e−2πa"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "1 −e−2π(a"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "1 −e−2π(a1+a"
+  },
+  {
+   "page": 40,
+   "mark": "e",
+   "context": "1 −e−2π(a1+a2)/ℏ"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "1 −e−2π(a1+a2)/ℏe−2πa"
+  },
+  {
+   "page": 40,
+   "mark": "e",
+   "context": "1 −e−2π(a1+a2)/ℏe−2πa2/ℏ"
+  },
+  {
+   "page": 40,
+   "mark": "i",
+   "context": "1 −e−2π(a1+a2)/ℏe−2πa2/ℏe"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "1 −e−2π(a1+a2)/ℏe−2πa2/ℏeiφ"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "1 −e−2π(a"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "1 −e−2π(a1+a"
+  },
+  {
+   "page": 40,
+   "mark": "e",
+   "context": "1 −e−2π(a1+a2)/ℏ"
+  },
+  {
+   "page": 40,
+   "mark": "i",
+   "context": "1 −e−2π(a1+a2)/ℏe"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "1 −e−2π(a1+a2)/ℏeiφ"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "\u0010πa"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "\u0010πa"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "e−π(a"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "−i"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "3(φ"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "3(φ1+φ"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "b"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "a = 1 −2p =1 −b"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "1 + b"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "1 + b"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "u(x) = −P"
+  },
+  {
+   "page": 41,
+   "mark": "1",
+   "context": "+µ"
+  },
+  {
+   "page": 41,
+   "mark": "b",
+   "context": "µ = µ"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "E= −P"
+  },
+  {
+   "page": 41,
+   "mark": "16",
+   "context": "+ 4Plog"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "Γ(1/4)"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "ceﬀ= 1 + 24P"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "1 + 24P"
+  }
+ ]
+}

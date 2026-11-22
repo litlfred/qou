@@ -6,10 +6,12 @@
   "sha256": "d7375d4fee00dd9895ab8bab2ee23a9f69b74698ce303abd84def586a4fd3baf",
   "bytes": 127442,
   "pages": 5,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,20 +22,27 @@
   },
   "doi": null,
   "title": "A version of the volume conjecture",
-  "authors_raw": "Y. Yokota and the author proved that for the figure-eight knot E and a complex",
-  "abstract": "W e propose a version of the volume conjecture that would rela te a certain limit of the colored Jones polynomials of a knot to th e volume function de\ufb01ned by a representation of the fundamental group of the kn ot complement to the special linear group of degree two over complex number s. W e also con\ufb01rm the conjecture for the \ufb01gure-eight knot and torus kno ts. This version is di\ufb00erent from S. Gukov\u2019s because of a choice of polarizati on.",
+  "authors_raw": "HITOSHI MURAKAMI",
+  "title_lines": [
+   "A VERSION OF THE VOLUME CONJECTURE"
+  ],
+  "abstract": "We propose a version of the volume conjecture that would relate a certain limit of the colored Jones polynomials of a knot to the volume function deﬁned by a representation of the fundamental group of the knot complement to the special linear group of degree two over complex numbers. We also conﬁrm the conjecture for the ﬁgure-eight knot and torus knots. This version is diﬀerent from S. Gukov’s because of a choice of polarization.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181122094633-05'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20181122094633-05'00'"
   },
-  "title_lines": [
-   "A VERSION OF THE VOLUME CONJECTURE",
-   "HITOSHI MURAKAMI"
-  ],
-  "title_prev": "A VERSION OF THE VOLUME CONJECTURE HITOSHI MURAKAMI"
+  "title_raw": "A VERSION OF THE VOLUME CONJECTURE",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "A VERSION OF THE VOLUME CONJECTURE 1. Introduction For a knot K in the three-sphere S 3 , one can deﬁne the colored Jones polynomial J N ( K ; t ) as the quantum invariant corresponding to the N -dimensional irreducible representation of the Lie algebra sl (2; C ) [5, 9] (see also [8]). K ; exp(2 π",
+   "outline": "1. Introduction",
+   "text": "A VERSION OF THE VOLUME CONJECTURE",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "A VERSION OF THE VOLUME CONJECTURE"
  },
  "toc": [
   {
@@ -41,39 +50,115 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "A conjecture",
    "page": 1,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Proof",
    "page": 3,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "Comments",
    "page": 4,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "References",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 541,
+   "n_words": 88,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -81,8 +166,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1416,
-   "n_words": 267
+   "n_chars": 1400,
+   "n_words": 251,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
    "id": "sec-001-2-a-conjecture",
@@ -91,8 +178,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 4218,
-   "n_words": 884
+   "n_chars": 4141,
+   "n_words": 806,
+   "label_start": "1",
+   "label_end": "3"
   },
   {
    "id": "sec-002-3-proof",
@@ -101,8 +190,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 1847,
-   "n_words": 479
+   "n_chars": 1776,
+   "n_words": 407,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
    "id": "sec-003-4-comments",
@@ -111,8 +202,10 @@
    "level": 1,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 2261,
-   "n_words": 513
+   "n_chars": 2183,
+   "n_words": 436,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
    "id": "sec-004-references",
@@ -121,16 +214,26 @@
    "level": 1,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 2754,
-   "n_words": 440
+   "n_chars": 2741,
+   "n_words": 417,
+   "label_start": "5",
+   "label_end": "5"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 5,
-  "sections": 5,
-  "chars_total": 12496,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 6,
+  "chars_total": 12782,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "pvc.tex",
@@ -143,34 +246,39 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.97,
+     "prose_ratio": 0.868,
+     "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-a-conjecture",
      "title": "A conjecture",
-     "prose_ratio": 0.915,
-     "coverage_ratio": 0.982,
+     "prose_ratio": 0.854,
+     "coverage_ratio": 0.906,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-3-proof",
      "title": "Proof",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.976,
+     "prose_ratio": 0.884,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-4-comments",
      "title": "Comments",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.964,
+     "prose_ratio": 0.849,
+     "coverage_ratio": 0.976,
      "result": "overlaid",
      "converter": "pandoc"
     },

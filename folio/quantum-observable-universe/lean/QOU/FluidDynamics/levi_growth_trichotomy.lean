@@ -7,106 +7,73 @@ import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.FieldSimp
 
 /-!
-# QOU.FluidDynamics.levi_growth_trichotomy — Levi condition-number trichotomy
+# QOU.FluidDynamics.levi_growth_trichotomy — growth-exponent trichotomy (re-scoped)
 
-Refines the `conj:levi-degeneracy` **dichotomy** into an exhaustive **trichotomy**
-on the growth exponent of the Levi condition number, per the q-NS gap audit
-Finding 3
-([`docs/audits/2026-07-18-q-ns-classical-gap-decomposition.md`](../../../../../../docs/audits/2026-07-18-q-ns-classical-gap-decomposition.md)).
+## 🛑 Re-scoped 2026-10-13 — this file no longer carries Levi data
 
-**Scope discipline (owner directive 2026-07-24).** *Given a QOU*, `C_L(κ)` is the
-Levi condition number of the QOU's own vortex-core geometry along its
-root-of-unity ladder, and "NS-singular / NS-regular" below mean the QOU's
-**internal** `q = 1` flow. This is a statement about QOUs; it does not decide the
-classical `ℝ³` Navier–Stokes problem.
+Owner ruling Q1 (2026-10-13) re-scoped the Levi chain onto `Θ = f·ξ♭`, with
+`ξ = ω/|ω|` the vorticity direction on the 3D flow domain
+(`prop:core-levi-form`). In dimension 3 the Levi form of a plane field is
+`1 × 1`: its datum is the single scalar `ξ·curl ξ`. There is **no Levi
+condition number**, so the quantity `C_L(κ)` this file used to be about, its
+growth exponent `β`, and the marginal regime `0 < β < 1` (regime C) are
+**withdrawn as undefined** (`conj:levi-degeneracy`). Branch (A) of that
+conjecture — "`β = 0` ⇒ Levi non-degenerate ⇒ blow-up" — is **withdrawn**,
+refuted under `Θ = f·ξ♭` by the Beltrami flow
+(`LeviDegeneracyQ1.beltrami_refutes_branchA`). Branch (B) survives as an open
+conjecture **on the Levi scalar**, carried by `LeviDegeneracyQ1.LeviDegeneracy`,
+not here.
 
-## The problem with the dichotomy
+What changed in this file:
 
-`conj:levi-degeneracy` states "*exactly one* of (A) `C_L(κ) = O(1)` / (B)
-`C_L(κ) ~ κ`". These are **not complementary**: an intermediate rate
-`C_L(κ) ~ κ^β` with `0 < β < 1` satisfies neither, so as written the conjecture
-could be vacuously false. The `LeviDegeneracy` class in
-`fluid-dynamics/levi-degeneracy-conjecture.lean` encodes the degeneracy *set*,
-not the growth *rate*, so it does not capture the dichotomy at all.
+* The carrier `LeviGrowthTrichotomy (leviNonDegenerate : Prop)` is renamed
+  `GrowthExponent`, its `condNumber` field is renamed `seq`, and its two branch
+  fields are **removed**: `branchA : beta = 0 → leviNonDegenerate` encoded the
+  withdrawn branch (A), and `branchB : beta = 1 → ¬ leviNonDegenerate` was a
+  statement about the exponent of an undefined condition number. The
+  `leviNonDegenerate` parameter goes with them.
+* `levi_branches_exclusive` is removed: its content was `(0 : ℝ) ≠ 1` and it
+  asserted exclusivity of two branches one of which is withdrawn.
+* `bounded_condNumber_forces_beta_zero` becomes `bounded_seq_forces_beta_zero`
+  (deprecated alias kept). Its mathematics is unchanged: a bounded positive
+  sequence has `limsup log a_κ / log κ = 0`. What is withdrawn is its former
+  reading as "the branch-(A) identification of `β = 0` with `C_L = O(1)`".
 
-## The fix
+What remains is unconditional real analysis about the growth exponent of a
+positive sequence, and it is stated as such. It is still used, by
+`levi_pair_channel_branch_b.lean`, for a quantity that is well-defined: the
+inverse squared core aspect ratio of the Townsend model
+(`rem:townsend-biot-savart-strain`, `rem:hyperbolic-overlap-saturation`). That
+is a fluid-shape quantity, not Levi data — for a straight anti-parallel pair the
+Levi scalar is `0` for every core shape (`prop:core-levi-form`, Examples).
 
-Introduce the growth exponent `β = limsup_κ (log C_L(κ) / log κ) ∈ [0, 1]` and
-state the exhaustive trichotomy:
+## History (kept as a record)
 
-* **β = 0** — `C_L = O(1)`, Levi non-degenerate ⇒ (categorically) NS-singular
-  (branch A);
-* **β = 1** — `C_L ~ κ`, Levi degenerates / core → sheet ⇒ NS-regular (branch B);
-* **0 < β < 1** — marginal `C_L ~ κ^β`, **undetermined** (the window the
-  dichotomy silently dropped).
-
-## Rewritten 2026-08-30 — the structure did not tie `beta` to `condNumber`
-
-The previous `LeviGrowthTrichotomy` carried `condNumber : ℕ → ℝ` and `beta : ℝ`
-with **no field relating them**, and `leviNonDegenerate : Prop` as a free field
-the instance chose for itself. Two instances were built against the old
-definition to measure what it asserted, and both type-check:
-
-* `condNumber = fun _ => 0`, `beta = 1/2`, `leviNonDegenerate = True` — a
-  "condition number" that is identically zero, an exponent unrelated to it, and
-  both branch fields vacuous because `1/2` is neither `0` nor `1`;
-* `condNumber = fun _ => 1` (so `C_L = O(1)`, true exponent `0`) with `beta = 1`
-  — the *opposite* branch of the conjecture, accepted without complaint.
-
-So `condNumber` was decoration and `beta` was a free real: assuming
-`LeviGrowthTrichotomy` bought nothing about a Levi condition number. And the
-three theorems below used only `beta_mem`, which made them facts about a real in
-`[0,1]` dressed as facts about a Levi trichotomy — the inversion AGENTS.md
-§"Conditional-proved ≠ premise-established" warns about, and the same defect
-`appendix-surreals/surreal-squeeze.lean` records in its own history.
-
-Both are fixed:
-
-* `beta` is pinned to `condNumber` by a two-sided `limsup` characterisation
-  stated without `Filter` — for every `ε > 0`, `condNumber κ ≤ κ^(β+ε)`
-  eventually, and `κ^(β-ε) ≤ condNumber κ` infinitely often. Together these say
-  exactly `limsup_κ log C_L(κ) / log κ = β`.
-* `leviNonDegenerate` is a **parameter**, not a field, so an instance can no
-  longer choose the proposition its own branch fields are about.
-* The elementary trichotomy facts are restated on a bare real `β`, where their
-  unconditional character is visible; the structure-level corollaries are kept
-  for consumers.
-
-The tie has a payoff beyond hygiene: `bounded_condNumber_forces_beta_zero`
-**derives** the `.md`'s identification of branch A with `C_L = O(1)`, which was
-previously an unstated coincidence between two unrelated fields.
-
-## Honest scope
-
-This formalises the **classification structure** — that the correct statement is
-a trichotomy and that the marginal window is a genuine third case. It does
-**not** compute the actual `β` (which branch the real `C_L(κ)` growth falls
-into): that value is the open content of `conj:levi-degeneracy` and, via
-Bridge B, the Clay problem.
+2026-07-18: the `conj:levi-degeneracy` dichotomy was refined to a trichotomy on
+`β ∈ [0, 1]`, since `0 < β < 1` satisfied neither branch. 2026-08-30: the old
+carrier had no field tying `beta` to `condNumber` (two degenerate instances
+type-checked, one taking `C_L ≡ 1` with `β = 1`); the two-sided `limsup`
+characterisation `beta_upper` / `beta_lower` below was added and is kept. Both
+earlier forms are in git history.
 
 ## Base ring (§7c)
-Archimedean: `β` and `C_L` are real (a `limsup` of real log-ratios, an order
-comparison). `ℝ` is correct — this block is on the archimedean side of the wall.
+Archimedean: `β` and the sequence are real (a `limsup` of real log-ratios, an
+order comparison). `ℝ` is correct.
 
 ## References
-- [manuscript] fluid-dynamics/levi-degeneracy-conjecture (`conj:levi-degeneracy`),
-  core-levi-form, ns-obstruction-tower
+- [leitner2026] fluid-dynamics/levi-degeneracy-conjecture (`conj:levi-degeneracy`),
+  core-levi-form, townsend-biot-savart-strain
 -/
 
 namespace QOU.FluidDynamics
 
-/-! ### The elementary facts, stated where they live
+/-! ### The elementary facts
 
-`conj:levi-degeneracy` asserts that the three regimes are mutually exclusive and
-exhaustive on `β ∈ [0,1]`. That assertion is **true and unconditional** — it is
-ordered-field trichotomy — and it is stated here on a bare real so that nothing
-about it looks conjectural. The structure-level corollaries follow. -/
+Every exponent in `[0, 1]` is `0`, in the open window, or `1`. This is
+ordered-field trichotomy, unconditional, stated on a bare real. -/
 
-/-- **The trichotomy is exhaustive on `[0, 1]`.** Every bounded-rate exponent
-    falls into one of `β = 0`, `0 < β < 1`, `β = 1` — so the original two-branch
-    dichotomy (`β = 0` xor `β = 1`) is *not* a valid partition; the marginal
-    window `0 < β < 1` is the missing third case. -/
--- Ref: [manuscript] fluid-dynamics/levi-degeneracy-conjecture (Finding 3)
+/-- **The trichotomy is exhaustive on `[0, 1]`.** Every exponent in `[0, 1]`
+    is `0`, in `(0, 1)`, or `1`. -/
 theorem beta_trichotomy {β : ℝ} (h0 : 0 ≤ β) (h1 : β ≤ 1) :
     β = 0 ∨ (0 < β ∧ β < 1) ∨ β = 1 := by
   rcases eq_or_lt_of_le h0 with h | h
@@ -115,93 +82,65 @@ theorem beta_trichotomy {β : ℝ} (h0 : 0 ≤ β) (h1 : β ≤ 1) :
     · exact Or.inr (Or.inr h')
     · exact Or.inr (Or.inl ⟨h, h'⟩)
 
-/-- **The marginal window is a genuine third case.** When `0 < β < 1`, neither
-    `β = 0` nor `β = 1` holds, so neither branch is triggered. -/
--- Ref: [manuscript] fluid-dynamics/levi-degeneracy-conjecture (Finding 3)
+/-- **The open window is a genuine third case.** When `0 < β < 1`, neither
+    `β = 0` nor `β = 1` holds. -/
 theorem beta_marginal_undetermined {β : ℝ} (h : 0 < β ∧ β < 1) :
     β ≠ 0 ∧ β ≠ 1 :=
   ⟨ne_of_gt h.1, ne_of_lt h.2⟩
 
-/-! ### The conjectural structure
+/-! ### The growth-exponent carrier
 
-Everything below is conditional. Assuming `LeviGrowthTrichotomy` is assuming an
-open conjecture, and the fields are chosen so that the assumption has content. -/
+Not a conjecture: `GrowthExponent a` is the data of a positive real sequence
+together with its exponent `limsup_κ log a_κ / log κ`, assumed to lie in
+`[0, 1]`. It carries no Levi or blow-up content. -/
 
-/-- Growth-rate data for the Levi condition number `C_L(κ)` along the
-    root-of-unity ladder `q_κ = e^{iπ/κ}`, refining `conj:levi-degeneracy`.
+/-- A positive real sequence `seq` with growth exponent
+    `beta = limsup_κ log seq(κ) / log κ ∈ [0, 1]`, the `limsup` written out
+    without `Filter` as `beta_upper` / `beta_lower`.
 
-    The proposition `leviNonDegenerate` — "the Levi form is non-degenerate along
-    the ladder", both eigenvalues positive — is a **parameter**: the branch
-    fields are claims about a *given* non-degeneracy predicate, not about one the
-    instance is free to invent.
-
-    `beta` is the growth exponent `limsup_κ log C_L(κ) / log κ`, and
-    `beta_upper` / `beta_lower` are that `limsup` written out without `Filter`.
-    They are what makes `condNumber` load-bearing rather than decorative; see the
-    file docstring for the two instances that satisfied the previous definition
-    with no content at all. -/
-structure LeviGrowthTrichotomy (leviNonDegenerate : Prop) where
-  /-- The Levi condition number `C_L(κ)` at ladder step `κ`. -/
-  condNumber : ℕ → ℝ
-  /-- A condition number is positive — without this `log C_L` is meaningless and
-      the exponent below is not about anything. -/
-  condNumber_pos : ∀ κ : ℕ, 0 < condNumber κ
-  /-- Growth exponent `β = limsup_κ log C_L(κ) / log κ`. -/
+    Formerly `LeviGrowthTrichotomy`, with `seq` read as the Levi condition
+    number and two branch fields; both readings and both fields are withdrawn
+    (file docstring). -/
+structure GrowthExponent where
+  /-- The sequence `a_κ`. -/
+  seq : ℕ → ℝ
+  /-- Positivity — without it `log a_κ` is meaningless. -/
+  seq_pos : ∀ κ : ℕ, 0 < seq κ
+  /-- Growth exponent `β = limsup_κ log a_κ / log κ`. -/
   beta : ℝ
-  /-- **Bounded-rate regime:** `0 ≤ β ≤ 1` (`C_L` grows no faster than `κ`). -/
+  /-- **Bounded-rate regime:** `0 ≤ β ≤ 1`. -/
   beta_mem : 0 ≤ beta ∧ beta ≤ 1
-  /-- **`beta` is an upper exponent for `condNumber`:** for every `ε > 0`,
-      `C_L(κ) ≤ κ^(β+ε)` for all large `κ`. -/
+  /-- **`beta` is an upper exponent:** for every `ε > 0`, `a_κ ≤ κ^(β+ε)` for
+      all large `κ`. -/
   beta_upper : ∀ ε : ℝ, 0 < ε → ∃ N : ℕ, ∀ κ : ℕ, N ≤ κ →
-    condNumber κ ≤ (κ : ℝ) ^ (beta + ε)
-  /-- **…and it is attained:** for every `ε > 0`, `κ^(β-ε) ≤ C_L(κ)` for
-      infinitely many `κ`.  Upper and lower together say exactly
-      `limsup_κ log C_L(κ) / log κ = β`; the upper bound alone would be satisfied
-      by any exponent at least the true one. -/
+    seq κ ≤ (κ : ℝ) ^ (beta + ε)
+  /-- **…and it is attained:** for every `ε > 0`, `κ^(β-ε) ≤ a_κ` for
+      infinitely many `κ`. Upper and lower together say exactly
+      `limsup_κ log a_κ / log κ = β`. -/
   beta_lower : ∀ ε : ℝ, 0 < ε → ∀ N : ℕ, ∃ κ : ℕ, N ≤ κ ∧
-    (κ : ℝ) ^ (beta - ε) ≤ condNumber κ
-  /-- **Branch A:** `β = 0` (`C_L = O(1)`) ⇒ Levi non-degenerate (NS-singular). -/
-  branchA : beta = 0 → leviNonDegenerate
-  /-- **Branch B:** `β = 1` (`C_L ~ κ`) ⇒ Levi degenerates (NS-regular). -/
-  branchB : beta = 1 → ¬ leviNonDegenerate
+    (κ : ℝ) ^ (beta - ε) ≤ seq κ
 
 /-- Structure-level form of `beta_trichotomy`. -/
-theorem levi_trichotomy_exhaustive {P : Prop} (T : LeviGrowthTrichotomy P) :
+theorem growthExponent_trichotomy (T : GrowthExponent) :
     T.beta = 0 ∨ (0 < T.beta ∧ T.beta < 1) ∨ T.beta = 1 :=
   beta_trichotomy T.beta_mem.1 T.beta_mem.2
 
 /-- Structure-level form of `beta_marginal_undetermined`. -/
-theorem levi_marginal_undetermined {P : Prop} (T : LeviGrowthTrichotomy P)
+theorem growthExponent_marginal (T : GrowthExponent)
     (h : 0 < T.beta ∧ T.beta < 1) : T.beta ≠ 0 ∧ T.beta ≠ 1 :=
   beta_marginal_undetermined h
 
-/-- **Branches A and B are mutually exclusive.**  Stated honestly: the content is
-    `(0 : ℝ) ≠ 1`, so the hypotheses are jointly unsatisfiable and no instance is
-    consulted.  It is kept because the `.md` asserts exclusivity, not because the
-    structure supplies it. -/
--- Ref: [manuscript] fluid-dynamics/levi-degeneracy-conjecture
-theorem levi_branches_exclusive {β : ℝ} (hA : β = 0) (hB : β = 1) : False := by
-  rw [hA] at hB; exact zero_ne_one hB
+/-! ### A bounded sequence has exponent `0` -/
 
-/-! ### The tie earns its keep
-
-`conj:levi-degeneracy` branch (A) reads "*β = 0: bounded growth,
-`C_L(κ) = O(1)`*" — it treats the exponent and the boundedness as the same
-condition.  Under the previous definition that identification was unstated and
-unprovable, since nothing connected `beta` to `condNumber`; the file docstring's
-second measurement is a counterexample to it.  With `beta_lower` in place one
-direction is a theorem. -/
-
-/-- **A bounded condition number forces `β = 0`.**  If `C_L` is bounded then no
+/-- **A bounded sequence has exponent `0`.**  If `a` is bounded then no
     positive exponent survives `beta_lower`, because `κ^(β/2) → ∞` overtakes any
-    bound.  This is the `.md`'s branch-(A) identification, derived rather than
-    assumed. -/
--- Ref: [manuscript] fluid-dynamics/levi-degeneracy-conjecture (branch A)
-theorem bounded_condNumber_forces_beta_zero {P : Prop}
-    (T : LeviGrowthTrichotomy P) (hb : ∃ M : ℝ, ∀ κ : ℕ, T.condNumber κ ≤ M) :
+    bound.  (Its former reading as the branch-(A) identification of `β = 0`
+    with a bounded Levi condition number is withdrawn; file docstring.) -/
+theorem bounded_seq_forces_beta_zero
+    (T : GrowthExponent) (hb : ∃ M : ℝ, ∀ κ : ℕ, T.seq κ ≤ M) :
     T.beta = 0 := by
   obtain ⟨M, hM⟩ := hb
-  have hMpos : 0 < M := lt_of_lt_of_le (T.condNumber_pos 0) (hM 0)
+  have hMpos : 0 < M := lt_of_lt_of_le (T.seq_pos 0) (hM 0)
   by_contra hne
   have hpos : 0 < T.beta := lt_of_le_of_ne T.beta_mem.1 (Ne.symm hne)
   have hhalf : 0 < T.beta / 2 := by linarith
@@ -223,22 +162,28 @@ theorem bounded_condNumber_forces_beta_zero {P : Prop}
     Real.rpow_le_rpow (by linarith) hNκ hhalf.le
   have hexp : T.beta - T.beta / 2 = T.beta / 2 := by ring
   rw [hexp] at hκ
-  have : M < T.condNumber κ := by
+  have : M < T.seq κ := by
     calc M = c ^ (T.beta / 2) := hcM.symm
     _ < (N : ℝ) ^ (T.beta / 2) := step1
     _ ≤ (κ : ℝ) ^ (T.beta / 2) := step2
-    _ ≤ T.condNumber κ := hκ
+    _ ≤ T.seq κ := hκ
   exact absurd (hM κ) (not_le.mpr this)
 
-/-! ### Consistency and refutability
+@[deprecated bounded_seq_forces_beta_zero (since := "2026-10-13")]
+alias bounded_condNumber_forces_beta_zero := bounded_seq_forces_beta_zero
 
-The carrier is inhabited, so assuming it is not assuming a contradiction; and the
-tie is refutable, which is what the previous definition lacked. -/
+@[deprecated growthExponent_trichotomy (since := "2026-10-13")]
+alias levi_trichotomy_exhaustive := growthExponent_trichotomy
 
-/-- Inhabitedness: `C_L ≡ 1` with exponent `0` satisfies every field. -/
-noncomputable example : LeviGrowthTrichotomy True where
-  condNumber := fun _ => 1
-  condNumber_pos := fun _ => one_pos
+@[deprecated growthExponent_marginal (since := "2026-10-13")]
+alias levi_marginal_undetermined := growthExponent_marginal
+
+/-! ### Consistency and refutability -/
+
+/-- Inhabitedness: `a ≡ 1` with exponent `0` satisfies every field. -/
+noncomputable example : GrowthExponent where
+  seq := fun _ => 1
+  seq_pos := fun _ => one_pos
   beta := 0
   beta_mem := ⟨le_refl 0, zero_le_one⟩
   beta_upper := by
@@ -253,15 +198,11 @@ noncomputable example : LeviGrowthTrichotomy True where
     have h1 : (1 : ℝ) ≤ ((max N 1 : ℕ) : ℝ) := by
       exact_mod_cast Nat.one_le_iff_ne_zero.mpr (by positivity)
     exact Real.rpow_le_one_of_one_le_of_nonpos h1 (by linarith)
-  branchA := fun _ => trivial
-  branchB := by intro h; exact absurd h (by norm_num)
 
-/-- **The tie is refutable.**  A bounded `condNumber` can no longer coexist with
-    `beta = 1`: that pair is the file docstring's second measurement, which the
-    previous definition accepted.  Now it is impossible. -/
-example {P : Prop} (T : LeviGrowthTrichotomy P)
-    (h : T.condNumber = fun _ => 1) : T.beta ≠ 1 := by
-  have : T.beta = 0 := bounded_condNumber_forces_beta_zero T ⟨1, by simp [h]⟩
+/-- **The tie is refutable.**  A bounded sequence cannot carry `beta = 1`. -/
+example (T : GrowthExponent)
+    (h : T.seq = fun _ => 1) : T.beta ≠ 1 := by
+  have : T.beta = 0 := bounded_seq_forces_beta_zero T ⟨1, by simp [h]⟩
   rw [this]; norm_num
 
 end QOU.FluidDynamics

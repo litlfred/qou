@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2412.04241v2
-doc_title: "THE HABIRO RING OF A NUMBER FIELD"
+doc_title: "The Habiro ring of a number field"
 section_id: sec-002-12-integrality-and-congruence-experiments
 section_title: "Integrality and congruence experiments"
 section_number: 1.2
-pages: 1-4
+pages: 2-4
 source_pdf: 2412.04241v2.pdf
 source_sha256: 308d1dd1c42bd979
-doc_brief: "THE HABIRO RING OF A NUMBER FIELD — We introduce the Habiro ring of a number field K and modules over it graded by K3(K)."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.994
-latex_coverage_ratio: 0.638
+latex_prose_ratio: 0.983
+latex_coverage_ratio: 0.962
+doc_brief: "The Habiro ring of a number field — We introduce the Habiro ring of a number field K and modules over it graded by K3(K)."
 ---
 \label{sub.intexp}
 

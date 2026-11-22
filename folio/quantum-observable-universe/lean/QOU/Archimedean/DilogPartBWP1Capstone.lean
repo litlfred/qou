@@ -23,7 +23,7 @@ positive-factor W-P1 sum `(q − 1)·Σ_{k<n} log(1 − x·qᵏ)` converges to
 where `1 − x·qⁿ ≥ c(q − 1)` can fail along the resonant `n = ⌊log_q(1/x)⌋`
 sequence — remains the research residual (bean `qou-jplv`).
 
--- Ref: [manuscript] conj:dilogarithm-archimedean-limit
+-- Ref: [leitner2026] conj:dilogarithm-archimedean-limit
 -- Ref: [faddeev1994] https://doi.org/10.1142/S0217732394002793
 -/
 

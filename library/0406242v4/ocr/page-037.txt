@@ -1,0 +1,45 @@
+Canonical triangulations 1275
+
+Proof The range, concavity, and hinge conditions imply that all the tetrahedron angles
+Xi, Yi, Zj are positive, and the claim that their sum is 7 is immediate from Figure 5. For
+each pleated surface $;, the pleating angles sum to 0 by construction. Therefore, it
+remains to check the angle sum around each edge e of S°\K.
+
+If e is not the core of S; or S., the combinatorial picture of Figure 18 is the same as
+the one for torus bundles. Thus, as in Section 5, each layer A; contributes precisely
+the difference between the pleating angles of the neighboring surfaces, and the sum
+around e simplifies to 27. If e is the core of a clasp, say the core of S,, the left panel
+of Figure 19 shows that four sectors contribute dihedral angles at e: two sectors that
+have angle z,, plus two fans of angles above pleated surface S;, each having dihedral
+angle 2w;. Thus, because z; + 2w; = 7, the total angle sum at e is 27. o
+
+By Lemma A.2, our triangulation will have an angle structure whenever we set
+Wo = We = 7/2 and interpolate between these parameters in a way that satisfies the
+range, concavity, and hinge conditions. One can always do this graphically, by first
+fixing w; for the hinge indices and then connecting the hinges by pieces of parabolas,
+as in Figure 6 (this is where we use the hypothesis that 2 contains at least one hinge).
+
+Lemma A.3 Let P be the open affine polyhedron of angle structures for the triangu-
+lation of S3\K, parameterized by sequences G, W1,--++;We-1, 5). as in Lemma A.2.
+Then a point of P is a critical point of the volume functional V if and only if the
+corresponding tetrahedron shapes give a complete hyperbolic structure on S°\K.
+
+Just like Lemma 6.2, this is an instance of a much more general theorem of Rivin, Chan,
+and Hodgson [9, 22]. It is also possible to prove Lemma A.3 directly, using the same
+line of argument as in Lemma 6.2, although in the setting of two-bridge links this would
+require considering a number of special cases.
+
+A.5 Flat tetrahedra never maximize volume
+
+The proof that the maximum of V occurs in the interior of P closely tracks Section 7—
+Section 9 of Guéritaud’s paper. We begin by ruling out many types of degeneracies on
+
+OP.
+
+Lemma A.4 Let (w),..., We—1) be the point of P at which the volume functional V
+
+attains its maximum. Then (wj) has the following properties:
+
+(1) For each i, if one of x;, y;, z; is 0, then two are 0, ie A; is flat.
+
+Geometry & Topology 10 (2006)

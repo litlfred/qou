@@ -1,1 +1,1 @@
-Let S be a multiplicatively closed set of morphisms in a category
+The T-additive category K(A, M), with the set of distinguished triangles deﬁned above, is a triangulated category.

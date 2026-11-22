@@ -7,10 +7,11 @@
   "bytes": 266084,
   "pages": 21,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,21 +22,28 @@
   },
   "doi": null,
   "title": "Braid ordering and the geometry of closed braid",
-  "authors_raw": null,
+  "authors_raw": "TETSUYA ITO",
   "title_lines": [
    "BRAID ORDERING AND THE GEOMETRY OF",
-   "CLOSED BRAID",
-   "TETSUYA ITO"
+   "CLOSED BRAID"
   ],
-  "abstract": "The relationships between braid ordering and the ge- ometry of its closure is studied. We prove that if an essential closed surface F in the complements of closed braid has relatively small genus with respect to the Dehornoy \ufb02oor of the braid, F is circular-foliated in a sense of Birman-Menasco\u2019s Braid foliation theory. As an application of the result, we prove that if Dehornoy \ufb02oor of braids are larger than three, Nielsen-Thurston classi\ufb01cat ion of braids and the geometry of their closure\u2019s complements are in one-to-one correspondence. Using this result, we construct in\ufb01 n- itely many hyperbolic knots explicitly from pseudo-Anosov element of mapping class groups.",
+  "abstract": "The relationships between braid ordering and the ge- ometry of its closure is studied. We prove that if an essential closed surface F in the complements of closed braid has relatively small genus with respect to the Dehornoy ﬂoor of the braid, F is circular-foliated in a sense of Birman-Menasco’s Braid foliation theory. As an application of the result, we prove that if Dehornoy ﬂoor of braids are larger than three, Nielsen-Thurston classiﬁcation of braids and the geometry of their closure’s complements are in one-to-one correspondence. Using this result, we construct inﬁn- itely many hyperbolic knots explicitly from pseudo-Anosov element of mapping class groups.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181026173032-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20181026173032-04'00'"
   },
-  "title_prev": "BRAID ORDERING AND THE GEOMETRY OF CLOSED BRAID TETSUYA ITO"
+  "title_raw": "BRAID ORDERING AND THE GEOMETRY OF CLOSED BRAID",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "BRAID ORDERING AND THE GEOMETRY OF CLOSED BRAID 1. Introduction In this paper we study an application of left-invariant total ordering of braid group B n to knot theory. An left-invariant total ordering, called Dehornoy ordering is an interesting structure of braid groups found in 1990’s by Dehornoy",
+   "outline": "1. Introduction",
+   "text": "BRAID ORDERING AND THE GEOMETRY OF CLOSED BRAID",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "BRAID ORDERING AND THE GEOMETRY OF CLOSED BRAID"
  },
  "toc": [
   {
@@ -43,95 +51,418 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Braid ordering and Dehornoy floor",
    "page": 4,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Dehornoy ordering, Dehornoy floor",
    "page": 4,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The geometric meaning of Dehornoy ordering and Dehornoy floor",
    "page": 6,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "More precious estimation of Dehornoy floor",
    "page": 7,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Braid Foliation",
    "page": 8,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Proof of theorem ??",
    "page": 9,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Tiled essential surface",
    "page": 10,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Mixed foliated surface",
    "page": 12,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Nielsen-Thurston classification and the geometry of closed braid complements",
    "page": 16,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Nielsen-Thurston classification",
    "page": 16,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Proof of Theorem ??",
    "page": 18,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 20,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "exchange move, stabilization and destabilization",
+   "page": 2,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Examples of periodic (a), pseudo-Anosov (b), reducible (c) braids all of whose closure are (2, 3)- Torus knots",
+   "page": 3,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Graph Γ and examples",
+   "page": 7,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "bb-tile,bc-annulus,cc-pants",
+   "page": 9,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Model of intersection and bb-singularity Iterating this argument, we conclude that sub-braid βi in the interval",
+   "page": 11,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Braiding in [θ1 + ε, θ3 −ε]: bb-singularity case V (i) = 0 for i ≤3, and Euler characteristic formula in lemma 1 become 8g −8 =",
+   "page": 12,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Model of bc-singularity",
+   "page": 13,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Braiding in [θ1 + ε, θ3 −ε]: bc-singularity case □ Then, we want to estimate the minimal valance of vertices. Since there might be all types of singularity in the foliation of F, in general decomposition into regions dose not deﬁne usual sense of cellular decomposition: bc-region is annulus, and cc-",
+   "page": 13,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "Construction of be-tile Note that there might exist be-tile which has no singular point or two singular points, but from construction of be-tile, be-tile with zero singularity and be-tile with two singularity must occur in pairs in each neighbor of vertex, so the notion of vertex and valance deﬁned",
+   "page": 14,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "Preimage surgery",
+   "page": 15,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 782,
+   "n_words": 120,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -139,8 +470,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 4,
-   "n_chars": 6029,
-   "n_words": 1004
+   "n_chars": 5980,
+   "n_words": 955,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-2-braid-ordering-and-dehornoy-floor",
@@ -148,82 +481,140 @@
    "title": "Braid ordering and Dehornoy floor",
    "level": 1,
    "page_start": 4,
-   "page_end": 6,
-   "n_chars": 5067,
-   "n_words": 1010
+   "page_end": 4,
+   "n_chars": 831,
+   "n_words": 152,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-22-the-geometric-meaning-of-dehornoy-ordering-an",
+   "id": "sec-002-21-dehornoy-ordering-dehornoy-floor",
+   "number": "2.1",
+   "title": "Dehornoy ordering, Dehornoy floor",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 4073,
+   "n_words": 749,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-22-the-geometric-meaning-of-dehornoy-ordering-an",
    "number": "2.2",
    "title": "The geometric meaning of Dehornoy ordering and Dehornoy floor",
    "level": 2,
    "page_start": 6,
-   "page_end": 8,
-   "n_chars": 2714,
-   "n_words": 541
+   "page_end": 7,
+   "n_chars": 1037,
+   "n_words": 187,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-3-braid-foliation",
+   "id": "sec-004-23-more-precious-estimation-of-dehornoy-floor",
+   "number": "2.3",
+   "title": "More precious estimation of Dehornoy floor",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1489,
+   "n_words": 295,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-005-3-braid-foliation",
    "number": "3",
    "title": "Braid Foliation",
    "level": 1,
    "page_start": 8,
-   "page_end": 10,
-   "n_chars": 4641,
-   "n_words": 853
+   "page_end": 9,
+   "n_chars": 4148,
+   "n_words": 731,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-004-41-tiled-essential-surface",
+   "id": "sec-006-4-proof-of-theorem",
+   "number": "4",
+   "title": "Proof of theorem ??",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 442,
+   "n_words": 89,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-007-41-tiled-essential-surface",
    "number": "4.1",
    "title": "Tiled essential surface",
    "level": 2,
    "page_start": 10,
    "page_end": 12,
-   "n_chars": 4404,
-   "n_words": 931
+   "n_chars": 4179,
+   "n_words": 854,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-005-42-mixed-foliated-surface",
+   "id": "sec-008-42-mixed-foliated-surface",
    "number": "4.2",
    "title": "Mixed foliated surface",
    "level": 2,
    "page_start": 12,
    "page_end": 16,
-   "n_chars": 7205,
-   "n_words": 1343
+   "n_chars": 7000,
+   "n_words": 1274,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-006-5-nielsen-thurston-classification-and-the-geomet",
+   "id": "sec-009-5-nielsen-thurston-classification-and-the-geomet",
    "number": "5",
    "title": "Nielsen-Thurston classification and the geometry of closed braid complements",
    "level": 1,
    "page_start": 16,
    "page_end": 20,
-   "n_chars": 9066,
-   "n_words": 1628
+   "n_chars": 8964,
+   "n_words": 1526,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-007-references",
+   "id": "sec-010-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 20,
    "page_end": 21,
-   "n_chars": 2054,
-   "n_words": 289
+   "n_chars": 2050,
+   "n_words": 285,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 13,
-  "sections": 8,
-  "chars_total": 41180,
+  "toc_inferred_entries": 0,
+  "figure_entries": 10,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 12,
+  "chars_total": 40975,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "paper.tex",
    "tex_sections": 12,
-   "overlaid": 7,
+   "overlaid": 9,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -231,47 +622,73 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.996,
-     "coverage_ratio": 0.96,
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.964,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-braid-ordering-and-dehornoy-floor",
      "title": "Braid ordering and Dehornoy floor",
-     "prose_ratio": 0.995,
-     "coverage_ratio": 0.723,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-22-the-geometric-meaning-of-dehornoy-ordering-an",
-     "title": "The geometric meaning of Dehornoy ordering and Dehornoy floor",
-     "prose_ratio": 0.964,
-     "coverage_ratio": 0.971,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-003-3-braid-foliation",
-     "title": "Braid Foliation",
-     "prose_ratio": 0.908,
-     "coverage_ratio": 0.97,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-004-41-tiled-essential-surface",
-     "title": "Tiled essential surface",
-     "prose_ratio": 0.947,
+     "id": "sec-002-21-dehornoy-ordering-dehornoy-floor",
+     "title": "Dehornoy ordering, Dehornoy floor",
+     "prose_ratio": 0.976,
      "coverage_ratio": 0.982,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-42-mixed-foliated-surface",
+     "id": "sec-003-22-the-geometric-meaning-of-dehornoy-ordering-an",
+     "title": "The geometric meaning of Dehornoy ordering and Dehornoy floor",
+     "prose_ratio": 0.948,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-23-more-precious-estimation-of-dehornoy-floor",
+     "title": "More precious estimation of Dehornoy floor",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-3-braid-foliation",
+     "title": "Braid Foliation",
+     "prose_ratio": 0.894,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-4-proof-of-theorem",
+     "title": "Proof of theorem ??",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-41-tiled-essential-surface",
+     "title": "Tiled essential surface",
+     "prose_ratio": 0.947,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-42-mixed-foliated-surface",
      "title": "Mixed foliated surface",
      "prose_ratio": 0.963,
      "coverage_ratio": 0.988,
@@ -279,15 +696,15 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-5-nielsen-thurston-classification-and-the-geomet",
+     "id": "sec-009-5-nielsen-thurston-classification-and-the-geomet",
      "title": "Nielsen-Thurston classification and the geometry of closed braid complements",
-     "prose_ratio": 0.997,
-     "coverage_ratio": 0.997,
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-references",
+     "id": "sec-010-references",
      "title": "References",
      "result": "no matching \\section"
     }

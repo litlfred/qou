@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0808.1533v1/sections/sec-003",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Definition of ``123-helicity'' on invariant unlinked handlebodies.",
+  "pageStart": 14,
+  "pageEnd": 18,
+  "contains": [
+    "library/arxiv-0808.1533v1/blocks/prose-sec-003",
+    "library/arxiv-0808.1533v1/blocks/figure-img-p015-1"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0808.1533v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0808.1533v1/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/1104248094/blocks/prose-sec-007",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Let G be connected and semi-simple, then every Poisson Lie group structure on G",
-  "pageStart": 9,
-  "pageEnd": 9,
-  "text": "../sections/sec-007-2-let-g-be-connected-and-semi-simple-then-every.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/1104248094",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/1104248094",
+  "title": "Hochschild and Cyclic Homology of Quantum Groups",
+  "pageStart": 25,
+  "pageEnd": 26,
+  "text": "../sections/sec-007-6-hochschild-and-cyclic-homology-of-quantum-grou.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1104248094/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1104248094/manifest.jsonld",
   "provenance": "ingested"
 }

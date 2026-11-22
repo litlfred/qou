@@ -9,6 +9,9 @@ export default remark({
     "prop:categorical-mass-markov",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): - [`crossing-energy-interpretation.md`](../observations/crossing-energy-interpretation.md) — `sinh(log q)` = Coulomb channel identification" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): - [`bar-involution.md`](../braids-and-knots/bar-involution.md) — bar projection definition" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): Per\n[`crossing-energy-interpretation.md`](../observations/crossing-energy-interpretation.md)," },
     {
       kind: "refined-framing",
       date: "2026-05-25",

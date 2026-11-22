@@ -1,0 +1,1 @@
+Using the Mellin transform, we can also write T λ s,α(z) as T λ s,α(z) = 2πb Z ∞ (xz11 + z21)b−1(l−iα)(xz12 + z22)b−1(l+iα)xb−1(−l+is) dx x  N Q 2b . (7.28) This can be seen as the generalization of the matrix coeﬃcients in the compact case, see e.g. [11].

@@ -7,10 +7,11 @@
   "bytes": 313443,
   "pages": 31,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,19 +22,27 @@
   },
   "doi": null,
   "title": "SECOND ORDER FREENESS AND FLUCTUATIONS OF RANDOM MATRICES: II. UNITARY RANDOM MATRICES",
-  "authors_raw": "JAMES A. MINGO (\u2217), PIOTR \u015aNIADY (\u2021), AND ROLAND SPEICHER (\u2217)(\u2020)",
+  "authors_raw": "JAMES A. MINGO (∗), PIOTR ŚNIADY (‡), AND ROLAND SPEICHER (∗)(†)",
   "title_lines": [
    "SECOND ORDER FREENESS AND FLUCTUATIONS",
    "OF RANDOM MATRICES:",
    "II. UNITARY RANDOM MATRICES"
   ],
-  "abstract": "We extend the relation between random matrices and free probability theory from the level of expectations to the level of \ufb02uctuations. We show how the concept of \u201csecond order freenes s\u201d, which was introduced in Part I, allows one to understand global \ufb02uctuations of Haar distributed unitary random matrices. In par- ticular, independence between the unitary ensemble and another ensemble goes in the large N limit over into asymptotic second order freeness. Two important consequences of our general th eory are: (i) we obtain a natural generalization of a theorem of Diaconis and Shahshahani to the case of several independent unitary mat ri- ces; (ii) we can show that global \ufb02uctuations in unitarily invariant multi-matrix models are not universal.",
+  "abstract": "We extend the relation between random matrices and free probability theory from the level of expectations to the level of ﬂuctuations. We show how the concept of “second order freeness”, which was introduced in Part I, allows one to understand global ﬂuctuations of Haar distributed unitary random matrices. In par- ticular, independence between the unitary ensemble and another ensemble goes in the large N limit over into asymptotic second order freeness. Two important consequences of our general theory are: (i) we obtain a natural generalization of a theorem of Diaconis and Shahshahani to the case of several independent unitary matri- ces; (ii) we can show that global ﬂuctuations in unitarily invariant multi-matrix models are not universal.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181105055003-05'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20181105055003-05'00'"
+  },
+  "title_raw": "SECOND ORDER FREENESS AND FLUCTUATIONS OF RANDOM MATRICES: II. UNITARY RANDOM MATRICES",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "SECOND ORDER FREENESS AND FLUCTUATIONS OF RANDOM MATRICES: II. UNITARY RANDOM MATRICES 1. Introduction In Part I of this series [MSp] we introduced the concept of second order freeness as the mathematical concept for dealing with the large N limit of ﬂuctuations of N × N -random matrices. Whereas Vo",
+   "outline": "1. Introduction",
+   "text": "SECOND ORDER FREENESS AND FLUCTUATIONS OF RANDOM MATRICES: II. UNITARY RANDOM MATRICES",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [
@@ -42,74 +51,337 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Preliminaries",
    "page": 3,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The lattice of partitions",
    "page": 3,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Permutations",
    "page": 4,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "A triangle inequality",
    "page": 5,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Haar distributed unitary random matrices and the Weingarten function",
    "page": 6,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Second order freeness",
    "page": 7,
    "source": "outline",
-   "number": "2.5"
+   "number": "2.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Asymptotic second order freeness for unitary random matrices",
    "page": 10,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Failure of Universality for multi-matrix models",
    "page": 27,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 30,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 957,
+   "n_words": 145,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -117,8 +389,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 4417,
-   "n_words": 721
+   "n_chars": 4379,
+   "n_words": 683,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-2-preliminaries",
@@ -128,7 +402,9 @@
    "page_start": 3,
    "page_end": 3,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-21-the-lattice-of-partitions",
@@ -137,8 +413,10 @@
    "level": 2,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 2173,
-   "n_words": 510
+   "n_chars": 2130,
+   "n_words": 467,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-22-permutations",
@@ -147,8 +425,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 2638,
-   "n_words": 501
+   "n_chars": 2615,
+   "n_words": 478,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-004-23-a-triangle-inequality",
@@ -157,8 +437,10 @@
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 1453,
-   "n_words": 360
+   "n_chars": 1404,
+   "n_words": 313,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-005-24-haar-distributed-unitary-random-matrices-and",
@@ -167,8 +449,10 @@
    "level": 2,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 3126,
-   "n_words": 585
+   "n_chars": 3147,
+   "n_words": 555,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-006-25-second-order-freeness",
@@ -177,8 +461,10 @@
    "level": 2,
    "page_start": 7,
    "page_end": 10,
-   "n_chars": 4379,
-   "n_words": 1020
+   "n_chars": 4337,
+   "n_words": 978,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-007-3-asymptotic-second-order-freeness-for-unitary-r",
@@ -186,32 +472,56 @@
    "title": "Asymptotic second order freeness for unitary random matrices",
    "level": 1,
    "page_start": 10,
-   "page_end": 30,
-   "n_chars": 37348,
-   "n_words": 8261
+   "page_end": 27,
+   "n_chars": 29352,
+   "n_words": 6280,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-008-references",
+   "id": "sec-008-4-failure-of-universality-for-multi-matrix-model",
+   "number": "4",
+   "title": "Failure of Universality for multi-matrix models",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 30,
+   "n_chars": 7239,
+   "n_words": 1266,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-009-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 30,
    "page_end": 31,
-   "n_chars": 3113,
-   "n_words": 465
+   "n_chars": 3087,
+   "n_words": 439,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 10,
-  "sections": 9,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 11,
   "chars_total": 58647,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 12,
-   "overlaid": 7,
+   "overlaid": 8,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -219,10 +529,15 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.824,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -230,7 +545,7 @@
      "id": "sec-001-2-preliminaries",
      "title": "Preliminaries",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-002-21-the-lattice-of-partitions",
@@ -252,7 +567,7 @@
      "id": "sec-004-23-a-triangle-inequality",
      "title": "A triangle inequality",
      "prose_ratio": 0.968,
-     "coverage_ratio": 0.952,
+     "coverage_ratio": 0.953,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -260,7 +575,7 @@
      "id": "sec-005-24-haar-distributed-unitary-random-matrices-and",
      "title": "Haar distributed unitary random matrices and the Weingarten function",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.987,
+     "coverage_ratio": 0.981,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -268,20 +583,28 @@
      "id": "sec-006-25-second-order-freeness",
      "title": "Second order freeness",
      "prose_ratio": 0.969,
-     "coverage_ratio": 0.956,
+     "coverage_ratio": 0.955,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-007-3-asymptotic-second-order-freeness-for-unitary-r",
      "title": "Asymptotic second order freeness for unitary random matrices",
-     "prose_ratio": 0.831,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.973,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-008-references",
+     "id": "sec-008-4-failure-of-universality-for-multi-matrix-model",
+     "title": "Failure of Universality for multi-matrix models",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-references",
      "title": "References",
      "result": "no matching \\section"
     }

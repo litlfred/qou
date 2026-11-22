@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1711.08944v2",
  "source_sha256": "ad7a020e7e92b788",
- "brief": "The second largest eigenvalues of some Cayley graphs on alternating groups ∗ — Let An denote the alternating group of degree n with n ≥ 3.",
- "extended": "**The second largest eigenvalues of some Cayley graphs on alternating groups ∗**\n\n*Xueyi Huang, Qiongxiang Huang †*\n\n12 pp, 2 sections.\n\n**Abstract.** Let An denote the alternating group of degree n with n ≥ 3. The al- ternating group graph AGn, extended alternating group graph EAGn and complete alternating group graph CAG n are the Cayley graphs Cay( An, T1), Cay( An, T2) and Cay( An, T3), respectively, where T1 = {(1, 2, i), (1, i, 2) | 3 ≤ i ≤ n}, T2 = {(1, i, j), (1, j, i) | 2 ≤ i < j ≤ n} and T3 = {(i, j, k), (i, k, j) | 1 ≤ i < j < k ≤ n}. In this paper, we determine the second largest eigenvalues of AGn, EAGn and CAG n.\n\n**Outline.** 1 Introduction; 2 The second largest eigenvalue of AGn\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.3: Let AGn be the alternating group graph with n ≥ 4. Then the two\n- Theorem 3.2: Let EAGn be the extended alternating group graph with n ≥ 3.\n- Theorem 2.3: , one can easily verify that the induce subgraph of EAGn on Xi(2) is\n- Theorem 3.4: Let CAG n be the complete alternating group graph with n ≥ 3.\n- Proposition 1: There exists an i such that\n- Lemma 2.1: Let G be a graph with adjacency matrix A(G), and let Π :",
+ "brief": "The second largest eigenvalues of some Cayley graphs on alternating groups ∗ — Let An denote the alternating group of degree n with n ≥3.",
+ "extended": "**The second largest eigenvalues of some Cayley graphs on alternating groups ∗**\n\n*Xueyi Huang*\n\n12 pp, 4 sections.\n\n**Abstract.** Let An denote the alternating group of degree n with n ≥3. The al- ternating group graph AGn, extended alternating group graph EAGn and complete alternating group graph CAGn are the Cayley graphs Cay(An, T1), Cay(An, T2) and Cay(An, T3), respectively, where T1 = {(1, 2, i), (1, i, 2) | 3 ≤i ≤n}, T2 = {(1, i, j), (1, j, i) | 2 ≤i < j ≤n} and T3 = {(i, j, k), (i, k, j) | 1 ≤i < j < k ≤n}. In this paper, we determine the second largest eigenvalues of AGn, EAGn and CAGn.\n\n**Outline.** Front matter; 1 Introduction; 2 The second largest eigenvalue of AGn; 3 The second largest eigenvalues of EAGn and C",
  "tokens": {
   "brief": 34,
-  "extended": 295
+  "extended": 183
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -17,15 +22,19 @@
   {
    "id": "sec-001-2-the-second-largest-eigenvalue-of-agn",
    "title": "The second largest eigenvalue of AGn",
-   "pages": "3-12"
+   "pages": "3-7"
+  },
+  {
+   "id": "sec-002-3-the-second-largest-eigenvalues-of-eagn-and-cag",
+   "title": "The second largest eigenvalues of EAGn and CAGn",
+   "pages": "7-12"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

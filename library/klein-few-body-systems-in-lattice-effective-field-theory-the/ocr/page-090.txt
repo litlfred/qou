@@ -1,0 +1,55 @@
+Appendix A Special functions and algebras
+
+As the Riccati-Bessel functions do not represent in- and outgoing wave functions, we have to use the
+Hankel functions, which are a linear combination of the former ones defined as
+
+hy (z) = u, (z) + in, (2). (A.10)
+
+Then hj (z) represents an outgoing and incoming partial wave, respectively.
+
+The confluent hypergeometric function which is necessary for the Coulomb wave functions reads
+
+co
+
+Tat) Tb) 2
+Flabs2)= ), T@ TO+nal (A1D
+
+Similar to the regular and irregular Bessel functions, there exists a second confluent hypergeometric
+function U which is defined as
+T(1-b T(b-1
+
+(i -b) ( ) eb Fla
+
+U(a,b;z) = ri F(a, b;z) +
+
+Ta—b+1) T@ —b+1,2—b;z). (A.12)
+
+Depending on the evaluation procedure, it may be useful to replace the functions F and U by the
+corresponding Whittaker functions,
+
+My n(@) = exo () oF (m —k+ : 1+ 2m), (A.13)
+7%) mth 1
+Wan(2) = exp (5) 2 2U|m—-k+ gil tem : (A.14)
+
+The aforementioned I function is defined by
+
+(z+ l= i drt exp(—d), (A.15)
+0
+
+and fulfills the recursive equation
+T(z + 1) = I (z). (A.16)
+
+A.2 Pauli matrices and spin algebra
+The Pauli matrices are the generators of the SU(2) algebra. They are defined as
+
+01 0 -i 1 0
+a=(; 0) a=(; 0): os=(j ‘) (A172)
+
+and fulfill the following angular momentum algebra,
+[1.07] = 2i€ nor (A.18)
+
+with ¢;, the totally antisymmetric Levi-Civita tensor. The respective spin matrix is defined as
+
+S= 5a, (A.19)
+
+84

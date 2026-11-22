@@ -2,7 +2,7 @@
 """qbeta_direction_sanity_gate_probe.py — verify the §4(d) direction-
 sanity formalize-first gate for the Q_β c_k precision ladder.
 
-Sibling probe to `prop:q-beta-direction-sanity-gate`. Codifies the
+Sibling probe to `rem:q-beta-direction-sanity-gate`. Codifies the
 §4(d) formalize-first invariant from
 `docs/audits/2026-06-04-qbeta-ck-refuted-class-map-and-open-axis.md` +
 `docs/audits/2026-06-05-qbeta-formalize-first-gates-consolidation.md`:
@@ -73,13 +73,13 @@ def main() -> int:
     )
     builder.set_description(
         "Verifies the §4(d) direction-sanity gate from "
-        "prop:q-beta-direction-sanity-gate. Computes the target "
+        "rem:q-beta-direction-sanity-gate. Computes the target "
         "magnitude at q_0 (Q_β^CODATA / [Q_A · cos(α_eff)] ≈ 0.998), "
         "demonstrates ACCEPT on a synthetic-passing candidate "
         "(|F(q_0)| = 1.001) and REJECT on a PR #1850-style failing "
         "candidate (z < 1 multiplier against target > 1)."
     )
-    builder.set_content_block("prop:q-beta-direction-sanity-gate")
+    builder.set_content_block("rem:q-beta-direction-sanity-gate")
 
     print("=" * 78)
     print(" Direction-sanity §4(d) gate — sympy verification")
@@ -215,7 +215,7 @@ def main() -> int:
         expected=1,
         tolerance=0,
         source=("§4(d) direction-sanity gate from "
-                "prop:q-beta-direction-sanity-gate: verifies "
+                "rem:q-beta-direction-sanity-gate: verifies "
                 "(1) target magnitude Q_β / [Q_A · cos(α_eff)] ≈ 0.998 "
                 "at substrate q_0 (ladder contributes ~0.18%); "
                 "(2) gate ACCEPTS synthetic candidate F(q_0) = 1.001 "

@@ -7,27 +7,41 @@
   "bytes": 173622,
   "pages": 19,
   "text_source": "embedded",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "Advances in Mathematics 143, 357\u0015375 (1999) Spherical Categories John W. Barrett",
-  "authors_raw": "School of Mathematical Sciences , University of Nottingham , University Park",
+  "title": "Spherical Categories",
+  "authors_raw": "Spherical Categories",
   "title_lines": [
-   "Advances in Mathematics 143, 357\u0015375 (1999)",
-   "Spherical Categories",
-   "John W. Barrett"
+   "Advances in Mathematics 143, 357\u0015375 (1999)"
   ],
   "abstract": null,
   "docinfo": {
+   "Title": "Spherical Categories",
    "Author": "Barrett, J. W., et al.",
-   "CreationDate": "D:19990421073851Z",
    "Producer": "Acrobat Distiller 3.02 voor Power Macintos",
-   "Title": "Spherical Categories"
-  }
+   "CreationDate": "D:19990421073851Z"
+  },
+  "title_raw": "Advances in Mathematics 143, 357\u0015375 (1999)",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Spherical Categories",
+   "heading": "Spherical Categories",
+   "outline": "INTRODUCTION",
+   "text": "Advances in Mathematics 143, 357\u0015375 (1999)",
+   "corroborated_by": [
+    "heading",
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Advances in Mathematics 143, 357\u0015375 (1999) Spherical Categories John W. Barrett"
  },
  "toc": [
   {
@@ -35,65 +49,274 @@
    "title": "INTRODUCTION",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "357"
   },
   {
    "level": 1,
    "title": "MONOIDAL CATEGORIES WITH DUALS",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "358"
   },
   {
    "level": 1,
    "title": "SPHERICAL CATEGORIES",
    "page": 9,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "365"
   },
   {
    "level": 2,
    "title": "FIG. 1",
    "page": 11,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "367"
   },
   {
    "level": 1,
    "title": "SPHERICAL HOPF ALGEBRAS",
    "page": 14,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "370"
   },
   {
    "level": 1,
    "title": "REFERENCES",
    "page": 18,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "374"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "357",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "358",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "359",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "360",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "361",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "362",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "363",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "364",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "365",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "366",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "367",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "368",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "369",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "370",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "371",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "372",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "373",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "374",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "375",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-1-monoidal-categories-with-duals",
-   "number": "1",
-   "title": "MONOIDAL CATEGORIES WITH DUALS",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 727,
-   "n_words": 117
+   "n_chars": 1162,
+   "n_words": 174,
+   "label_start": "357",
+   "label_end": "357"
   },
   {
-   "id": "sec-001-introduction",
+   "id": "sec-000-introduction",
    "number": null,
    "title": "INTRODUCTION",
    "level": 1,
    "page_start": 1,
+   "page_end": 2,
+   "n_chars": 3704,
+   "n_words": 591,
+   "label_start": "357",
+   "label_end": "358"
+  },
+  {
+   "id": "sec-001-1-monoidal-categories-with-duals",
+   "number": "1",
+   "title": "MONOIDAL CATEGORIES WITH DUALS",
+   "level": 1,
+   "page_start": 2,
    "page_end": 9,
-   "n_chars": 16241,
-   "n_words": 2880
+   "n_chars": 12261,
+   "n_words": 2193,
+   "label_start": "358",
+   "label_end": "365"
   },
   {
    "id": "sec-002-2-spherical-categories",
@@ -102,8 +325,10 @@
    "level": 1,
    "page_start": 9,
    "page_end": 10,
-   "n_chars": 699,
-   "n_words": 119
+   "n_chars": 676,
+   "n_words": 118,
+   "label_start": "365",
+   "label_end": "366"
   },
   {
    "id": "sec-003-fig-1",
@@ -112,8 +337,10 @@
    "level": 2,
    "page_start": 10,
    "page_end": 14,
-   "n_chars": 6475,
-   "n_words": 1242
+   "n_chars": 6300,
+   "n_words": 1153,
+   "label_start": "366",
+   "label_end": "370"
   },
   {
    "id": "sec-004-3-spherical-hopf-algebras",
@@ -122,8 +349,10 @@
    "level": 1,
    "page_start": 14,
    "page_end": 18,
-   "n_chars": 9664,
-   "n_words": 1766
+   "n_chars": 9510,
+   "n_words": 1698,
+   "label_start": "370",
+   "label_end": "374"
   },
   {
    "id": "sec-005-references",
@@ -132,15 +361,28 @@
    "level": 1,
    "page_start": 18,
    "page_end": 19,
-   "n_chars": 1658,
-   "n_words": 260
+   "n_chars": 1607,
+   "n_words": 252,
+   "label_start": "374",
+   "label_end": "375"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 6,
-  "sections": 6,
-  "chars_total": 35464
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 7,
+  "chars_total": 35220,
+  "furniture_lines_stripped": 36,
+  "pages_read_in_print_order": [
+   9
+  ]
  }
 }

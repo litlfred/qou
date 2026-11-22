@@ -1,0 +1,45 @@
+INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS 4013
+
+O-9
+
+FIGURE 7
+
+L\\ -
+
+FIGURE 8
+
+The result is based on the reduction of Alexander’s stellar moves to bistellar
+moves. The theorem for stellar moves is given in [8, Chapter II, §D, Theorem
+IL.17].
+
+Theorem 4.5. Two finite simplicial complexes are piecewise-linear homeomorphic
+if and only if they are related by a finite sequence of stellar moves.
+
+Our generalisation of Pachner’s result is the following theorem.
+
+Theorem 4.6. Two triangulated singular 3-manifolds are piecewise-linearly home-
+omorphic if and only if they are related by a finite sequence of bistellar moves.
+
+Proof. It is sufficient to show that each stellar move can be obtained as a finite
+sequence of bistellar moves. In dimension three, this can be done explicitly. The
+stellar move on a 3-simplex is a bistellar move. The stellar move on a triangle is a
+composite of two bistellar moves, using the condition that the link of the triangle is
+5°. Finally, the stellar move on an edge is a composite of bistellar moves, using the
+condition that the link of an edge is a triangulation of S!. This later construction
+is done explicitly as follows.
+
+Let NS be the vertices of an edge which is in p tetrahedra. Label the vertices
+of these p tetrahedra so that the vertices of these tetrahedra are
+
+NSE, Ej41 forl<i<p.
+
+This gives a triangulation of the 3-ball which looks like an orange with p segments.
+Doing stellar subdivision on the edge NS gives a triangulation of the 3-ball with
+2p tetrahedra. This is like slicing the orange in half, cutting each segment in half.
+
+In order to obtain this complex from the original one by bistellar moves, first do a
+bistellar move of order 4 on the tetrahedron NSE, £2. This introduces a new vertex
+which we label O. This gives the right number of vertices but only p+3 tetrahedra.
+Now for j = 2,3,... ,n do a bistellar move of order 3 on the two tetrahedra ON SE;
+and NSE;E;+41. This has the effect of introducing the edge OE;,1 and replaces
+the two tetrahedra by the three tetrahedra ON Ej Ej41, OSE; Ej41 and ONSEj41.

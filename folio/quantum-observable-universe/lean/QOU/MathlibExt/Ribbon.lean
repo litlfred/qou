@@ -55,7 +55,7 @@ braided (right-rigid) category; no `ℝ` appears.
 * [turaev1994] Turaev, *Quantum invariants of knots and 3-manifolds* — ribbon categories and the
   ribbon trace.
 
--- Ref: [manuscript] docs/coordination/s5-so3-keystone.md
+-- Ref: [leitner2026] docs/coordination/s5-so3-keystone.md
 -/
 
 namespace QOU.MathlibExt

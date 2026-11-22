@@ -1,0 +1,62 @@
+216 S. Blanes et al. / Physics Reports 470 (2009) 151-238
+
+Aj = sin (t(-4?)) b Aj = log (t(ii)/(i+i))
+
+RK6
+
+log(Error)
+i
+o
+a
+log(Error)
+
+0 05 1 15 2
+log(Time) log(Time)
+
+Fig. 19. Error as a function of time (in logarithmic scale) obtained with different 6-th order integrators for h = 1/20: (a) problem (283); (b) problem (284).
+5.8. Modified Magnus integrators
+
+5.8.1. Variations on the basic algorithm
+
+The examples collected in Sections 5.5 and 5.7 show that the numerical methods constructed from the Magnus expansion
+can be, computationally, very efficient indeed. It is fair to say, however, that this efficiency can be seriously affected when
+dealing with certain types of problems.
+
+Suppose, for instance, that one has to numerically integrate a problem defined in SU(n). Although Magnus integrators
+are unconditionally stable in this setting (since they preserve unitarity up to round-off, independently of the step size h), in
+practice only small values of h are used for achieving accurate results. Otherwise the convergence of the series is not assured.
+Of course, the use of small time steps may render the algorithm exceedingly costly.
+
+In other applications, the problem depends on several parameters, so that the integration has to be carried out for
+different values of the parameters. In that case, the overall integration procedure can be computationally very expensive.
+
+In view of all these difficulties, it is hardly surprising that several modifications of the standard algorithm of Magnus
+integrators had been developed to try to minimize these undesirable effects and get specially adapted integrators for
+particular problems.
+
+One basic tool, used time and again in this context, is performing a preliminary linear transformation, similarly to those
+introduced in Section 2.9. These transformations can be carried out either for the whole integration interval or at each step
+in the process. Given an appropriately chosen transformation, Yo (t), one factorizes Y(t) = Yo(t)Y; (t), where the unknown
+Y (t) satisfies the equation
+
+Yj = Bt); (285)
+
+and B(t) depends on A(t) and Yo(t). This transformation makes sense, of course, if ||B(t)|| < ||A(t)|| and thus typically Yo is
+chosen in such a way that the norm of B verifies the above inequality. As a consequence, Magnus integrators can be applied
+on (285) with larger time steps also providing more accurate results.
+
+Alternatively, for problems where, in addition to the time step h there is another parameter (E, say), one may analyze the
+Magnus expansion in terms of h and E. This allows us to identify which terms at each order in the series expansion give the
+main contribution to the error, and to design methods which include these terms in their formulation. The resulting schemes
+should then provide more accurate results at a moderate computational cost without altering the convergence domain. As
+a general rule, it is always desirable to have, in advance, as much information about the equation and the properties of its
+solution as possible, and then to try to incorporate all this information into the algorithm.
+
+Let us review some useful possibilities in this context. From (241) one has
+
+A(t) = a9 + ta, 4+ 17a) +---, (286)
+
+where t = t — f1/2. The first term is exactly solvable (4p) = A(ti/2)) and, for many problems, it just provides the main
+contribution to the evolution of the system. In that case, it makes sense to take
+
+Yo(t) = ef tn40 = elt—tAltr2)

@@ -142,7 +142,7 @@ theorem markov_inv
     (h_below : tr.belowTop n x) :
     tr.tr (x * inv_top) = (tr.z - tr.h) * tr.tr x := by
   -- Ref: [jones1987] https://doi.org/10.2307/1971403
-  -- Ref: [manuscript] markov-axiom-recursive-ascent (QOU narrative)
+  -- Ref: [leitner2026] markov-axiom-recursive-ascent (QOU narrative)
   -- Step 1: rewrite using the supplied trace decomposition.
   rw [h_inv_decomp]
   -- Step 2: apply (M2) Markov peel to tr (x * top n).
@@ -188,7 +188,7 @@ theorem markov_pair_z2
     (h_below_pred : tr.belowTop (n - 1) x) :
     tr.tr (x * tr.top (n - 1) * tr.top n) = tr.z ^ 2 * tr.tr x := by
   -- Ref: [jones1987] https://doi.org/10.2307/1971403
-  -- Ref: [manuscript] prop:markov-pair-z2 (QOU narrative)
+  -- Ref: [leitner2026] prop:markov-pair-z2 (QOU narrative)
   -- Step 1: lift h_below_pred from belowTop (n-1) to belowTop n
   -- via the tower-nesting axiom (N1).
   have h_succ : (n - 1) + 1 = n := by omega

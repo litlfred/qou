@@ -1,0 +1,1 @@
+Each periodic diagram may be considered to be made up of several identical tangles suitably connected. In this example we consider periodic knots made up of 5, 7 and 11 copies of the tangle given in Fig. 1.1. Their respective polynomials (before the coefficients are reduced) are: —7/~?— 18-221? —-15/* —51®, —121-?-37—47/7?—28]*—71® and —261-?—84—-1141?—771* 221°.

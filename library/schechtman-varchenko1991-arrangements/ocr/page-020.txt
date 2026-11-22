@@ -1,38 +1,53 @@
 158 V.V. Schechtman and A.N. Varchenko
+
 The aim of this and the next n° is to construct (well defined up to a homotopy)
 quasiisomorphisms
-C (V, Y() -→(g(C)z, d).
-For an edge L of 6 put
-(4.2.1) L=L\(U HL); (%)n= 0A
-%3H
-H+L
-Let us call a marking x of  a choice of a point x(L)eL for every edge
-L (including V). Fix such a marking x. To every flag F-(L  ... LP), Liegit;
-let us assign the singular p-simplex 4(F)=△x(F): P-→V, where 4p
-= (to, ..., t,)eIRp+1 It;≥0; Zt; = 1) is the standard oriented p-simplex. Namely,
-if x; -(0, ... 0, 1, 0... 0) with 1 on i-th place, put
-(4.2.2) 4(F)(x;) = x(L) 4(F)(0) = x(V),
-and extend this map to △p by IR-affinity.
+
+C(V, Y(€)) + (F (®)z, a).
+
+For an edge L of @ put
+(4.2.1) DP=L\(\) HAL); V°:=U(@).
+WoL
+
+Let us call a marking x of @ a choice of a point x(L)eL° for every edge
+L (including V). Fix such a marking x. To every flag F=(L'>...> 17), Le@*;
+let us assign the singular p-simplex A(F)=4,(F): 4?->V, where A?
+={(to, ..., tp)eIR?**|t;20; )'t;= 1} is the standard oriented p-simplex. Namely,
+if x,=(0, ...0, 1, 0...0) with 1 on i-th place, put
+
+(4.2.2) AFx)=x(L),  A(F)(0)=x(V),
+
+and extend this map to A” by R-affinity.
 Now define maps
-(4.2.3) uP =uP: CP(V, Y(C) -→P(C)z
+
+(4.2.3) w=ul: CV, Y(@)>F')z
+
 by the rule
-(4.2.4) uP(β) = Φ(4(F)
-FeFIP(C)
-for βeCp(V, Y(). One verifies directly that up define the map of complexes
-(4.2.5) u =ux: C'(V, Y() -→(g'(C)z, d)
-4.2.6 Lemma. Any pair of markings x, x' defines a canonical homotopy
-(4.2.6.1) h(x, x): C(V, Y() -→(C)z[- 1]
-between ux and ux. In particular, the map induced by (4.2.5) in homology is indepen-
+
+(4.2.4) w= YY o(A(F)
+FeF1P(@)
+
+for peC?(V, Y(@)). One verifies directly that u? define the map of complexes
+(4.2.5) w=u: C(V, Y(@)>(F @)z, a).
+
+4.2.6 Lemma. Any pair of markings x, x’ defines a canonical homotopy
+(4.2.6.1) h(x, x’): C(V, Y(®) > F (®@)z[—-1]
+
+between u, and u,.. In particular, the map induced by (4.2.5) in homology is indepen-
 dent of the choice of the marking.
-For a triple of markings x, x', x" h(x, x')+ h(x', x) is homotopic to h(x, x").
-(Recall that for a graded group A = @ AP A[n] denotes the shifted graded group
-(A[n])P= Ap+n)
-Proof. To construct h(x, x'), it is sufficient to suppose that x(L)= x'(L) for all
-edges L except for a one. Suppose for example that x(L) = x'(L) for all L except
-() s()  )    ss     
-- an affine span of (x'(V), x(V), x(L), ..:, x(LP). This defines the map (4.2.6.1).
-Details are left to the reader.
-4.3 Theorem. Maps (4.2.5) are quasisomorphisms
+
+For a triple of markings x, x’, x” h(x, x')+h(x', x”) is homotopic to h(x, x’).
+(Recall that for a graded group A= @ A? A[n] denotes the shifted graded group
+(A[n])?= 4?*")
+
+Proof. To construct h(x, x’), it is sufficient to suppose that x(L)=x'(L) for all
+edges L except for a one. Suppose for example that x(L)=x'(L) for all L except
+for V. Then we can assign to every p-flag F=(L'...L?) a (p+1)-simplex 4(F)
+— an affine span of (x’(V), x(V), x(L), ..., x(L’)). This defines the map (4.2.6.1).
+Details are left to the reader. 1
+
+4.3 Theorem. Maps (4.2.5) are quasiisomorphisms.
 Proof. We'll prove that the adjoint maps
-(4.3.1) u*: (α'(C)z, d*) -→C.(V, Y(C))
+(4.3.1) u*: (f"(€)z,d*) > CV, Y(@))
+
 are quasiisomorphisms.

@@ -1,0 +1,244 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1910.12400v2",
+ "source": {
+  "file": "1910.12400.pdf",
+  "sha256": "fdab4ab385400e3437d15bfe4a45cb27680587680167954303860ff5728dc5e9",
+  "bytes": 1019895,
+  "pages": 9,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T10:15:59Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1910.12400",
+   "version": "2",
+   "primary_class": "nucl-ex",
+   "stamp_date": "4 Aug 2021"
+  },
+  "doi": null,
+  "title": "Measurement of e + e \u2212 Momentum and Angular Distributions from Linearly Polarized Photon Collisions",
+  "authors_raw": "Photon Collisions",
+  "title_lines": [
+   "Measurement of e+e\u2212Momentum and Angular Distributions from Linearly Polarized"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.21",
+   "Creator": "TeX",
+   "CreationDate": "D:20210805022056Z"
+  },
+  "title_raw": "Measurement of e+e\u2212Momentum and Angular Distributions from Linearly Polarized",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Measurement of e + e \u2212 Momentum and Angular Distributions from Linearly Polarized Photon Collisions",
+   "text": "Measurement of e+e\u2212Momentum and Angular Distributions from Linearly Polarized",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "STAR",
+   "page": 6,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "6"
+  }
+ ],
+ "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "A Feynman diagram for the exclusive Breit-Wheeler process and the related Light-by-Light scattering process illustrating the unique angular distribution predicted for each process due to the initial photon polarization",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "The \u03c72",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "All observables are reported for kinematic acceptance within P\u22a5< 0.1 GeV with the Mee limits noted in each panel",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "The \u2206\u03c6 = \u03c6ee \u2212\u03c6e distribution from UPCs and 60 \u221280% central collisions for Mee > 0.45 GeV with calculations from QED [44], STARLight [35] and from the publicly available SuperChic3 code [8]",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 6,
+   "n_chars": 25236,
+   "n_words": 4096,
+   "label_start": null,
+   "label_end": "6"
+  },
+  {
+   "id": "sec-000-star",
+   "number": null,
+   "title": "STAR",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 9,
+   "n_chars": 18075,
+   "n_words": 2915,
+   "label_start": "6",
+   "label_end": "9"
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 1,
+  "toc_inferred_entries": 1,
+  "toc_inferred_mean_confidence": 0.6,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 4,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 2,
+  "chars_total": 43311,
+  "furniture_lines_stripped": 8,
+  "pages_read_in_print_order": [
+   6
+  ]
+ }
+}

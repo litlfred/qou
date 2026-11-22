@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1208.1663v2
-doc_title: "The 3D index of an ideal triangulation and angle structures"
+doc_title: "THE 3D INDEX OF AN IDEAL TRIANGULATION AND ANGLE STRUCTURES"
 section_id: sec-005-3-axioms-for-the-tetrahedron-index
 section_title: "Axioms for the tetrahedron index"
 section_number: 3
 pages: 8-10
 source_pdf: 1208.1663v2.pdf
 source_sha256: 87e94e429d58386c
-doc_brief: "The 3D index of an ideal triangulation and angle structures — The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of ideal triangulations of 3-manifolds with r torii boundary"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.979
-latex_coverage_ratio: 0.897
+latex_prose_ratio: 0.896
+latex_coverage_ratio: 0.917
+doc_brief: "THE 3D INDEX OF AN IDEAL TRIANGULATION AND ANGLE STRUCTURES — The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of ideal triangulations of 3-manifolds with r torii boundary"
 ---
 []{#sec.axioms label="sec.axioms"}
 

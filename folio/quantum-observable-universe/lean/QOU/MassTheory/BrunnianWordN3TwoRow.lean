@@ -49,9 +49,9 @@ body (still open, `qou-v7ro`; the `BrunnianDeficitRecursion` instance stays unfa
 
 ## References
 
-- Ref: [manuscript] `docs/audits/2026-08-30-milnor-recursion-forall-A-PROVED.md` — the certified ∀A
+- Ref: [leitner2026] `docs/audits/2026-08-30-milnor-recursion-forall-A-PROVED.md` — the certified ∀A
   recursion and the `D_A` closed form.
-- Ref: [manuscript] `docs/audits/2026-09-03-milnor-brick3-reroast.md` — the sharpened residual gap and
+- Ref: [leitner2026] `docs/audits/2026-09-03-milnor-brick3-reroast.md` — the sharpened residual gap and
   the reduced-Burau + esymm route this brick instantiates at `n = 3`.
 
 **Base ring (§7c).** Generic `Field` (needed only for `q⁻¹`); no `ℝ`, no ordering, no `Real.*`, no

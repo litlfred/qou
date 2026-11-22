@@ -1,1 +1,0 @@
-Since S3 is a Weyl group, the algebra Q(q)Hq(S3,l ) is split semisimple. Now, following

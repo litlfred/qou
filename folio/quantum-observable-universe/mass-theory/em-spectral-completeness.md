@@ -30,10 +30,10 @@ is a free $R$-module of rank $2$ with the following structure.*
    $$
    *and $\{q^{1/2},\, -q^{-1/2}\}$ are the only eigenvalues of
    $c_{A,A}$ on $A \otimes A$.*
-4. *(Plancherel completeness.) The Plancherel weights*
+4. *(Trace completeness.) With $\dim_q V_+ = [3]_q$ and $\dim_q V_- = 1$,
+   the normalised categorical traces of the idempotents*
    $$
-     w_+ \;=\; \frac{(\dim_q V_+)^2}{[2]_q!},
-     \qquad
-     w_- \;=\; \frac{(\dim_q V_-)^2}{[2]_q!}
+     w_\pm \;:=\; \frac{\mathrm{tr}_q(e_\pm)}{\mathrm{tr}_q(\mathrm{id}_{A \otimes A})}
+     \;=\; \frac{\dim_q V_\pm}{[2]_q^{\,2}}
    $$
-   *satisfy $w_+ + w_- = 1$ in $R \otimes \mathbb{Q}$.*
+   *satisfy $w_+ + w_- = 1$, because $[3]_q + 1 = [2]_q^{\,2}$.*

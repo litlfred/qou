@@ -9,13 +9,17 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "INTRODUCTION",
-  "pageStart": 1,
-  "pageEnd": 2,
+  "title": "THE q-RATIONAL MURNAGHAN-NAKAYAMA RULE",
+  "pageStart": 8,
+  "pageEnd": 18,
   "contains": [
-    "library/1-s2-0-0097316595900136-main/blocks/prose-sec-000"
+    "library/1-s2-0-0097316595900136-main/blocks/prose-sec-000",
+    "library/1-s2-0-0097316595900136-main/blocks/thm-sec-000-01",
+    "library/1-s2-0-0097316595900136-main/blocks/cor-sec-000-02",
+    "library/1-s2-0-0097316595900136-main/blocks/thm-sec-000-03",
+    "library/1-s2-0-0097316595900136-main/blocks/rem-sec-000-04"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/1-s2-0-0097316595900136-main",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/1-s2-0-0097316595900136-main",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1-s2-0-0097316595900136-main/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1-s2-0-0097316595900136-main/manifest.jsonld",
   "provenance": "ingested"
 }

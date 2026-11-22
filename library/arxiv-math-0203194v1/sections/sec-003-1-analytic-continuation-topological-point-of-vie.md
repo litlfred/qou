@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0203194v1
-doc_title: "Period mappings and differential equations. From C to Cp Tôhoku-Hokkaidô lectures in Arithmetic Geometry"
+doc_title: "Period mappings and differential equations. From C to Cp"
 section_id: sec-003-1-analytic-continuation-topological-point-of-vie
 section_title: "Analytic continuation; topological point of view."
 section_number: 1
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.712
+doc_brief: "Period mappings and differential equations. From C to Cp — 101 sections: Front matter; Purpose of this book.; Contents of this book."
 ---
 \label{sec-1}
 

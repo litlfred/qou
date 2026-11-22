@@ -1,8 +1,8 @@
 {
   "engine": "python (mpf 50 dps; reads ⁴He H₁₂ witness)",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-06T06:47:30.811328+00:00",
-  "commitSha": "14f16b7d05582cbc533dfa96bbf9a624c728ae5d",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-20T15:24:31.450870+00:00",
+  "commitSha": "40ea11e76e34296773847bc25bc442a00441d161",
   "assertions": [
     {
       "name": "rho_F_not_a_constant_and_no_two_row_ratio_derives_it",
@@ -17,8 +17,8 @@
   "durationMs": 4,
   "computation": "he4-rho-F-two-row-stratum-search",
   "scriptFile": "he4_rho_F_two_row_stratum_search.py",
-  "scriptHash": "334ad7fe539e",
-  "scriptCommitSha": "69a9799bfa369dd397af0cf1e1ffe31301573993",
+  "scriptHash": "c75131434622",
+  "scriptCommitSha": "40ea11e76e34296773847bc25bc442a00441d161",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,14 +26,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "832ce4e14a00d523"
   },
   "invocation": {
     "argv": [
@@ -46,13 +47,13 @@
     "q0_anchor": "proton/experimental (q_parameter.Q_MP)"
   },
   "data": {
-    "target_rho_F_he4": "1.88916937086",
+    "target_rho_F_he4": "1.88916859639",
     "rho_F_obs": {
-      "4He": "1.8891694",
+      "4He": "1.8891686",
       "16O": "2.130136",
       "40Ca": "2.2837207"
     },
-    "rho_F_drift_spread_frac": "0.2088491",
+    "rho_F_drift_spread_frac": "0.20884959",
     "closest_two_row_ratio": {
       "(y[12]+y[11,1])/y[12]": "1.7817796"
     }

@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/kohno1987-aif/blocks/prose-sec-004",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "MONODROMY OF /i-POINT FUNCTIONS",
+  "title": "MONODROMY OF /i-POINT FUNCTIONS IN TWO DIMENSIONAL CONFORMAL FIELD THEORY",
   "pageStart": 13,
-  "pageEnd": 18,
-  "text": "../sections/sec-004-2-monodromy-of-i-point-functions.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/kohno1987-aif",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/kohno1987-aif",
+  "pageEnd": 23,
+  "text": "../sections/sec-004-2-monodromy-of-i-point-functions-in-two-dimensio.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kohno1987-aif/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kohno1987-aif/manifest.jsonld",
   "provenance": "ingested"
 }

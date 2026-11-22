@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9506138v1
-doc_title: "arXiv:hep-th/9506138v1 21 Jun 1995"
+doc_title: "Black Hole Complementarity vs. Locality"
 section_id: sec-011-b1-a-four-point-amplitude-involving-commutators
 section_title: "A Four Point Amplitude Involving Commutators"
 section_number: B.1
@@ -8,6 +8,7 @@ pages: 22-25
 source_pdf: 9506138v1.pdf
 source_sha256: bb85afba0530402c
 toc_source: inferred
+doc_brief: "Black Hole Complementarity vs. Locality — 18 sections: Front matter; Introduction; The Nice-Slice Argument"
 ---
 In this Appendix we present the calculation of the matrix element
 C(4; 3; 2; 1) = ⟨0|[ΦH(4), ΦH(3)][ΦH(2), ΦH(1)]|0⟩.
@@ -26,7 +27,6 @@ X
 γ
 M (1)(4, 3; γ)M (1)(1, 2; γ)∗.
 (B.3)
-21
 >
 σ
 0
@@ -90,7 +90,6 @@ s
 (B.6)
 where P is the functional integral on the string world sheet shown in ﬁg. 3, (the other
 cyclic ordering, 1243, does not contribute to the Regge behavior of interest).
-22
 It is convenient to take the external times |σ0
 r| to be large. The inverse of the mapping
 ρ(z) = σ0 + iσ1 = α1 log(z) + α2 log(z −x) −α3 log(1 −z) + ¯ρ
@@ -153,7 +152,6 @@ s /2
 s
 .
 (B.11)
-23
 The determinant J can now be determined by comparison with the on-shell four-point
 function, using the fact that J is independent of the transverse momenta,
 J(αs, σ0

@@ -2,27 +2,37 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-0410111v2",
  "source_sha256": "0ccaeeabd8de6b5f",
- "brief": "Integer Polynomial Optimization in Fixed Dimension Jesús A. De Loera University of California, Dept. of Mathematics, Davis CA 95 616, USA email: deloera@math.ucdavis.edu http://www.math.ucdavis.edu/~d",
- "extended": "**Integer Polynomial Optimization in Fixed Dimension Jesús A. De Loera University of California, Dept. of Mathematics, Davis CA 95 616, USA email: deloera@math.ucdavis.edu http://www.math.ucdavis.edu/~deloera**\n\n7 pp, 3 sections.\n\n**Outline.** 3 FPT AS for Optimizing Non-Negative Polynomia; 25 Id − 28z2; References",
+ "brief": "Integer Polynomial Optimization in Fixed Dimension — 5 sections: Front matter; Introduction; Computational Complexity Bounds",
+ "extended": "**Integer Polynomial Optimization in Fixed Dimension**\n\n*Raymond Hemmecke*\n\n7 pp, 5 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 Computational Complexity Bounds; 3 FPTAS for Optimizing Non-Negative Polynomial; 4 An extension to the mixed integer case",
  "tokens": {
-  "brief": 50,
-  "extended": 79
+  "brief": 31,
+  "extended": 65
  },
  "sections": [
   {
-   "id": "sec-000-3-fpt-as-for-optimizing-non-negative-polynomials",
-   "title": "FPT AS for Optimizing Non-Negative Polynomials over Inte ger Points of Polytopes",
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-2-computational-complexity-bounds",
+   "title": "Computational Complexity Bounds",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-002-3-fptas-for-optimizing-non-negative-polynomials",
+   "title": "FPTAS for Optimizing Non-Negative Polynomials over Integer Points of Polytopes",
    "pages": "2-6"
   },
   {
-   "id": "sec-001-25-id-28z2",
-   "title": "Id − 28z2",
+   "id": "sec-003-4-an-extension-to-the-mixed-integer-case",
+   "title": "An extension to the mixed integer case",
    "pages": "6-7"
-  },
-  {
-   "id": "sec-002-references",
-   "title": "References",
-   "pages": "7-7"
   }
  ],
  "provenance": {

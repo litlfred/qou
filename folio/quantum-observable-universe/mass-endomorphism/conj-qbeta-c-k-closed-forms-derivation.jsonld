@@ -2,7 +2,8 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/rem-qbeta-c-k-closed-forms-derivation",
@@ -14,9 +15,9 @@
   "kind": "remark",
   "title": "Open derivation paths, precision leverage, and SDP evidence for the $c_k$",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-qbeta-c-k-closed-forms"
+    "papers/quantum-observable-universe/blocks/conj-qbeta-c-k-closed-forms"
   ],
-  "interprets": "papers/quantum-observable-universe/blocks/prop-qbeta-c-k-closed-forms",
+  "interprets": "papers/quantum-observable-universe/blocks/conj-qbeta-c-k-closed-forms",
   "tags": [
     "qbeta",
     "precision-ladder",

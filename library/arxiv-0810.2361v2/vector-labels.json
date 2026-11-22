@@ -1,0 +1,3350 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-0810.2361v2",
+  "pages": [
+    {
+      "page": 2,
+      "rotation": 0,
+      "drawings": 54,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1. A Span of Sets"
+      ],
+      "labels": [
+        {
+          "text": "2",
+          "bbox": [
+            126.72,
+            96.89,
+            130.69,
+            103.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "JEFFREY C. MORTON",
+          "bbox": [
+            262.92,
+            96.89,
+            349.08,
+            103.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Figure 1. A Span of Sets",
+          "bbox": [
+            247.8,
+            235.27,
+            364.17,
+            245.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "This makes sense for spans of ﬁnite sets. Similarly, we will be considering an",
+          "bbox": [
+            138.6,
+            263.49,
+            485.41,
+            273.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "analogous construction for spans of essentially ﬁnite groupoids.",
+          "bbox": [
+            126.72,
+            275.49,
+            403.56,
+            285.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "There is a physical motivation here in quantum mechanics. If Y is the (discrete)",
+          "bbox": [
+            138.6,
+            287.19,
+            485.3,
+            297.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "set of classical (pure) states of a system, then L(Y ) = C[Y ], the space of linear",
+          "bbox": [
+            126.72,
+            297.11,
+            485.33,
+            309.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "combinations of states in Y , is the Hilbert space of the corresponding quantum",
+          "bbox": [
+            126.72,
+            311.07,
+            485.42,
+            321.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "mechanical system. (More generally, if Y is a measure space, one takes L2(Y )). In",
+          "bbox": [
+            126.72,
+            321.89,
+            485.29,
+            333.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the span, we think of X as a set of “processes” x, each with a designated “source”",
+          "bbox": [
+            126.72,
+            335.07,
+            485.58,
+            345.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "or starting state s(x) ∈Y and “target” or ending state t(x) ∈Z. Then the linear",
+          "bbox": [
+            126.72,
+            346.95,
+            485.33,
+            357.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "transformation described by the matrix T can be seen in the following way, which",
+          "bbox": [
+            126.72,
+            358.95,
+            485.41,
+            369.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "we shall generalize later on:",
+          "bbox": [
+            126.72,
+            371.13,
+            247.2,
+            381.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Given a linear combination of elements of Y (that is, a function f : Y →C),",
+          "bbox": [
+            138.6,
+            380.75,
+            485.28,
+            392.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "transport f to X by “pulling back” along s. That is, s∗f(x) = f(s(x)). Then",
+          "bbox": [
+            126.72,
+            393.65,
+            485.29,
+            404.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "“push forward” to Z by taking the sum over all elements of X mapping down to a",
+          "bbox": [
+            126.72,
+            406.71,
+            485.34,
+            416.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "chosen one in Z:",
+          "bbox": [
+            126.72,
+            418.71,
+            198.72,
+            428.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            308.4,
+            433.06,
+            322.78,
+            451.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "t∗s∗f(z) =",
+          "bbox": [
+            254.16,
+            433.61,
+            300.78,
+            446.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "s∗f(x)",
+          "bbox": [
+            329.28,
+            433.61,
+            357.86,
+            445.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(3)",
+          "bbox": [
+            126.72,
+            435.57,
+            139.46,
+            445.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "t(x)=z",
+          "bbox": [
+            303.6,
+            450.04,
+            327.32,
+            457.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "This precisely gives matrix multiplication by the matrix described above, and can",
+          "bbox": [
+            126.72,
+            463.29,
+            485.41,
+            473.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "clearly also be seen as a “sum over histories”: the value of t∗s∗f(z) is a sum, over",
+          "bbox": [
+            126.72,
+            473.81,
+            485.45,
+            485.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "all histories x ending at z, of the value of f at the source s(x). This illustrates",
+          "bbox": [
+            126.72,
+            486.99,
+            485.36,
+            497.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "a contrast between classical and quantum processes.",
+          "bbox": [
+            126.72,
+            499.17,
+            361.56,
+            509.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Classically, states succeed",
+          "bbox": [
+            370.2,
+            499.17,
+            485.41,
+            509.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "each other by exactly one process. In the quantum picture, every possible process",
+          "bbox": [
+            126.72,
+            511.05,
+            485.48,
+            521.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "contributes to evolution of a state.",
+          "bbox": [
+            126.72,
+            523.05,
+            284.88,
+            533.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In particular, there is an interpretation of",
+          "bbox": [
+            293.88,
+            523.05,
+            485.44,
+            533.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "quantum processes in terms of “matrix mechanics”, which takes a sum (in the form",
+          "bbox": [
+            126.72,
+            534.93,
+            485.42,
+            544.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of matrix multiplication) over all histories joining ﬁxed start and end states. This",
+          "bbox": [
+            126.72,
+            546.93,
+            485.36,
+            556.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "is exactly what is shown in our example.",
+          "bbox": [
+            126.72,
+            558.93,
+            304.08,
+            568.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "It is not too diﬃcult to check that the linearization of spans of sets gets along",
+          "bbox": [
+            138.6,
+            570.81,
+            485.46,
+            580.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "with composition, so that the composite of spans (by pullback, giving a set of",
+          "bbox": [
+            126.72,
+            582.81,
+            485.44,
+            592.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "composite paths) agrees with composition of linear maps. That is, that the process",
+          "bbox": [
+            126.72,
+            594.81,
+            485.48,
+            604.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "is functorial. This fact makes it possible to think of categorifying this process, in",
+          "bbox": [
+            126.72,
+            606.69,
+            485.28,
+            616.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "order to explicitly include symmetries of both states and histories as fundamental",
+          "bbox": [
+            126.72,
+            618.69,
+            485.28,
+            628.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "concepts. A categoriﬁed version of this process should be a 2-functor.",
+          "bbox": [
+            126.72,
+            630.57,
+            430.2,
+            640.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "One way to generalize spans of sets, which is seen in [2], uses groupoids (cate-",
+          "bbox": [
+            138.6,
+            642.57,
+            485.36,
+            652.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "gories whose morphisms are all invertible) instead of sets. One reason to consider",
+          "bbox": [
+            126.72,
+            654.57,
+            485.45,
+            664.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "this is that it often happens that the conﬁguration space can naturally be thought",
+          "bbox": [
+            126.72,
+            666.45,
+            485.42,
+            676.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of not as a set but as a groupoid. This happens particularly when there are sym-",
+          "bbox": [
+            126.72,
+            678.45,
+            485.36,
+            688.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "metry operations acting on the set of conﬁgurations, and we explicitly represent",
+          "bbox": [
+            126.72,
+            690.45,
+            485.54,
+            700.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 5,
+      "rotation": 0,
+      "drawings": 90,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2. A Span of Groupoids"
+      ],
+      "labels": [
+        {
+          "text": "2-VECTOR SPACES AND GROUPOIDS",
+          "bbox": [
+            231.96,
+            96.89,
+            379.99,
+            103.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            481.32,
+            96.89,
+            485.29,
+            103.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "2. The Bicategory Span(FinGpd)",
+          "bbox": [
+            223.2,
+            118.15,
+            388.71,
+            128.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The main purpose of this paper is to describe a weak 2-functor",
+          "bbox": [
+            138.6,
+            136.53,
+            413.81,
+            146.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(6)",
+          "bbox": [
+            126.72,
+            161.13,
+            139.47,
+            171.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Λ : Span(FinGpd) →2Vect",
+          "bbox": [
+            243.6,
+            161.13,
+            368.41,
+            171.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In this section, we will describe the source bicategory, Span(FinGpd).",
+          "bbox": [
+            126.72,
+            185.85,
+            435.6,
+            195.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "First, the objects of Span(FinGpd).",
+          "bbox": [
+            138.6,
+            197.85,
+            299.16,
+            207.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Deﬁnition 2.0.1. An essentially ﬁnite groupoid is one which is equivalent to a",
+          "bbox": [
+            126.72,
+            220.38,
+            485.33,
+            230.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMBXTI10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ﬁnite groupoid. A ﬁnitely generated groupoid is one with a ﬁnite set of objects,",
+          "bbox": [
+            126.72,
+            232.26,
+            485.21,
+            242.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBXTI10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "and all of whose morphisms are generated under composition by a ﬁnite set of",
+          "bbox": [
+            126.72,
+            244.53,
+            485.33,
+            254.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "morphisms. An essentially ﬁnitely generated groupoid is one which is equivalent",
+          "bbox": [
+            126.72,
+            256.26,
+            485.23,
+            266.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBXTI10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "to a ﬁnitely generated one.",
+          "bbox": [
+            126.72,
+            268.41,
+            242.81,
+            278.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Note that, in particular, essentially ﬁnitely generated groupoids must be essen-",
+          "bbox": [
+            138.6,
+            291.21,
+            485.36,
+            301.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "tially ﬁnite, since every object has an identity morphism. We will use the term",
+          "bbox": [
+            126.72,
+            303.21,
+            485.42,
+            313.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "“essentially ﬁnite” to mean both of these conditions. Next we describe the mor-",
+          "bbox": [
+            126.72,
+            315.21,
+            485.48,
+            325.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "phisms of Span(FinGpd).",
+          "bbox": [
+            126.72,
+            327.09,
+            242.16,
+            337.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In any category C, a span is a diagram of the form:",
+          "bbox": [
+            138.6,
+            339.09,
+            364.8,
+            349.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(7)",
+          "bbox": [
+            126.72,
+            363.81,
+            139.47,
+            373.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            301.44,
+            364.59,
+            309.69,
+            374.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            312.84,
+            370.31,
+            317.82,
+            380.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "XYDASH10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            316.08,
+            373.31,
+            321.06,
+            383.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "XYDASH10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "~}}}}}}}}",
+          "bbox": [
+            273.36,
+            373.67,
+            300.42,
+            404.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "XYCMAT10",
+            "XYDASH10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            319.2,
+            376.19,
+            324.18,
+            386.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "XYDASH10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            322.44,
+            379.07,
+            327.42,
+            389.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "XYDASH10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            325.56,
+            382.07,
+            330.54,
+            392.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "XYDASH10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            328.68,
+            384.95,
+            333.66,
+            394.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "XYDASH10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            331.92,
+            387.95,
+            336.9,
+            397.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "XYDASH10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "s",
+          "bbox": [
+            288.48,
+            388.12,
+            292.24,
+            395.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "t",
+          "bbox": [
+            320.52,
+            389.32,
+            323.53,
+            396.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            335.04,
+            390.83,
+            340.02,
+            403.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "XYCMAT10",
+            "XYDASH10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A1",
+          "bbox": [
+            259.68,
+            401.19,
+            271.09,
+            412.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "A2",
+          "bbox": [
+            340.44,
+            401.19,
+            351.85,
+            412.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "In particular, we want to reproduce the “linearization” associated to spans of sets",
+          "bbox": [
+            138.6,
+            426.45,
+            485.37,
+            436.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "which we discussed in the introduction. The idea is that given a span of groupoids,",
+          "bbox": [
+            126.72,
+            438.45,
+            485.52,
+            448.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "as in Figure 2 (which suppresses the homomorphisms labelling the strands in the",
+          "bbox": [
+            126.72,
+            450.45,
+            485.26,
+            460.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "span, but should be compared with Figure 1), there will be a “transfer” 2-linear",
+          "bbox": [
+            126.72,
+            462.33,
+            485.46,
+            472.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "map from the KV 2-vector space associated to the source of the span, to that",
+          "bbox": [
+            126.72,
+            474.33,
+            485.31,
+            484.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "associated to the target.",
+          "bbox": [
+            126.72,
+            486.21,
+            232.32,
+            496.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 2. A Span of Groupoids",
+          "bbox": [
+            234.0,
+            688.03,
+            377.97,
+            698.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 16,
+      "rotation": 0,
+      "drawings": 60,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 3 is an illustration of an object in [X, Vect].",
+        "Figure 3. A Vect-valued Presheaf on X"
+      ],
+      "labels": [
+        {
+          "text": "16",
+          "bbox": [
+            126.72,
+            96.89,
+            134.65,
+            103.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "JEFFREY C. MORTON",
+          "bbox": [
+            262.92,
+            96.89,
+            349.08,
+            103.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "□",
+          "bbox": [
+            477.6,
+            116.04,
+            485.34,
+            126.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSAM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We notice that we are speaking here of groupoids, and any groupoid X is equiv-",
+          "bbox": [
+            138.6,
+            137.73,
+            485.36,
+            147.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "alent to its opposite category Xop, by an equivalence that leaves objects intact",
+          "bbox": [
+            126.72,
+            147.4,
+            485.42,
+            159.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "and replaces each morphism by its inverse. So there is no real diﬀerence between",
+          "bbox": [
+            126.72,
+            161.61,
+            485.41,
+            171.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "[X, Vect], the category of Vect-valued functors from X, and [Xop, Vect], the cate-",
+          "bbox": [
+            126.72,
+            171.4,
+            485.36,
+            183.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "gory of Vect-valued presheaves (or just “Vect-presheaves”) on X. (We also should",
+          "bbox": [
+            126.72,
+            185.61,
+            485.41,
+            195.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "note that, since our groupoids are discrete, there is no distinction here between",
+          "bbox": [
+            126.72,
+            197.49,
+            485.41,
+            207.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "sheaves and presheaves).",
+          "bbox": [
+            126.72,
+            209.49,
+            234.0,
+            219.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 3 is an illustration of an object in [X, Vect].",
+          "bbox": [
+            138.6,
+            221.31,
+            364.08,
+            231.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 3. A Vect-valued Presheaf on X",
+          "bbox": [
+            214.68,
+            420.91,
+            396.57,
+            431.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMCSC10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We will use the terminology of “presheaves” for objects of [X, Vect] for the",
+          "bbox": [
+            138.6,
+            443.79,
+            485.26,
+            453.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "sake of highlighting the connection between these results and the usual facts about",
+          "bbox": [
+            126.72,
+            455.85,
+            485.43,
+            465.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "presheaves of sets in topos theory - which again raises questions about topologically",
+          "bbox": [
+            126.72,
+            467.85,
+            485.49,
+            477.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "interesting groupoids. This will be addressed in later work, but for now we consider",
+          "bbox": [
+            126.72,
+            479.85,
+            485.45,
+            489.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the algebraic aspect of the 2-linearization construction by itself.",
+          "bbox": [
+            126.72,
+            491.73,
+            405.0,
+            501.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "4.2. The Ambidextrous Adjunction. Now we want to highlight a result analo-",
+          "bbox": [
+            126.72,
+            511.41,
+            485.48,
+            521.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "gous to a standard result for set-valued presheaves (see, e.g. MacLane and Moerdijk",
+          "bbox": [
+            126.72,
+            523.41,
+            485.37,
+            533.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "[14], Theorem 1.9.2). This is that functors between groupoids induce 2-linear maps",
+          "bbox": [
+            126.72,
+            535.41,
+            485.36,
+            545.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "between the 2-vector spaces of Vect-presheaves on them. For Set-presheaves, there",
+          "bbox": [
+            126.72,
+            547.29,
+            485.38,
+            557.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "will be a left and a right adjoint to this functor. For Vect-presheaves, these coin-",
+          "bbox": [
+            126.72,
+            559.29,
+            485.36,
+            569.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "cide, as we have seen in Theorem 3.2.4 (an inspection of the proof shows that this",
+          "bbox": [
+            126.72,
+            571.29,
+            485.25,
+            581.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "is essentially because a ﬁnite dimensional vector space V is naturally isomorphic",
+          "bbox": [
+            126.72,
+            582.99,
+            485.5,
+            593.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "to its double dual V ††, while the analogous statement is false for sets). Thus, one",
+          "bbox": [
+            126.72,
+            593.81,
+            485.38,
+            605.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "says that the “pushforward” map is an ambidextrous adjoint for the pullback. For",
+          "bbox": [
+            126.72,
+            607.05,
+            485.34,
+            617.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "much more on ambidextrous adjunctions and their relation to TQFTs, see Lauda",
+          "bbox": [
+            126.72,
+            619.05,
+            485.34,
+            629.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "[11]). This is one important motivation for the present work. We summarize the",
+          "bbox": [
+            126.72,
+            631.05,
+            485.26,
+            641.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "statement as follows.",
+          "bbox": [
+            126.72,
+            642.93,
+            217.44,
+            652.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Proposition 4.2.1. If X and Y are essentially ﬁnite groupoids, a functor f :",
+          "bbox": [
+            126.72,
+            661.23,
+            485.28,
+            671.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Y →X gives two 2-linear maps between KV 2-vector spaces:",
+          "bbox": [
+            126.72,
+            673.41,
+            389.45,
+            683.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "f ∗: [X, Vect] →[Y, Vect]",
+          "bbox": [
+            249.48,
+            688.49,
+            362.52,
+            700.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(41)",
+          "bbox": [
+            126.72,
+            690.45,
+            144.5,
+            700.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 17,
+      "rotation": 0,
+      "drawings": 77,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 4. A Functor F : Y →X Between Groupoids"
+      ],
+      "labels": [
+        {
+          "text": "2-VECTOR SPACES AND GROUPOIDS",
+          "bbox": [
+            231.96,
+            96.89,
+            379.99,
+            103.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "17",
+          "bbox": [
+            477.36,
+            96.89,
+            485.29,
+            103.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "called “pullback along f” and",
+          "bbox": [
+            126.72,
+            118.35,
+            254.09,
+            128.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "f∗: [Y, Vect] →[X, Vect]",
+          "bbox": [
+            250.08,
+            140.19,
+            361.92,
+            151.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(42)",
+          "bbox": [
+            126.72,
+            140.37,
+            144.51,
+            150.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the (two-sided) adjoint to f ∗, called “pushforward along f”",
+          "bbox": [
+            126.72,
+            160.73,
+            384.08,
+            172.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Proof. For any functor F : X →Vect,",
+          "bbox": [
+            126.72,
+            183.15,
+            292.56,
+            193.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "f ∗(F) = F ◦f",
+          "bbox": [
+            274.8,
+            203.21,
+            336.19,
+            215.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(43)",
+          "bbox": [
+            126.72,
+            205.05,
+            144.51,
+            215.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "which is a functor from Y to Vect, the pullback of F along f.",
+          "bbox": [
+            126.72,
+            226.71,
+            399.48,
+            236.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "To see that this is a 2-linear map, we recall that it is enough to show it is C-linear,",
+          "bbox": [
+            138.6,
+            236.63,
+            485.52,
+            248.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "since then biproducts will automatically be preserved. But a linear combination of",
+          "bbox": [
+            126.72,
+            250.77,
+            485.44,
+            260.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "maps in some hom-category in [X, Vect] is taken by f ∗to the corresponding linear",
+          "bbox": [
+            126.72,
+            261.41,
+            485.33,
+            272.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "combination in the hom-category in [Y, Vect], where maps are now between vector",
+          "bbox": [
+            126.72,
+            274.59,
+            485.46,
+            284.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "spaces thought of over y ∈Y.",
+          "bbox": [
+            126.72,
+            286.47,
+            256.44,
+            296.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "So indeed there is a 2-linear map f ∗. But then by Theorem 3.2.4, there is a",
+          "bbox": [
+            138.6,
+            297.29,
+            485.34,
+            308.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "□",
+          "bbox": [
+            477.6,
+            308.16,
+            485.34,
+            318.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSAM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "two-sided adjoint of f ∗, denoted f∗.",
+          "bbox": [
+            126.72,
+            309.17,
+            282.6,
+            321.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 4. A Functor F : Y →X Between Groupoids",
+          "bbox": [
+            187.44,
+            505.39,
+            424.65,
+            515.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMCSC10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In Figure 4, we see the essential information contained in a functor of groupoids.",
+          "bbox": [
+            138.6,
+            537.69,
+            485.52,
+            547.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Any groupoid is equivalent to a skeletal one (that is, one with just one object in",
+          "bbox": [
+            126.72,
+            549.69,
+            485.29,
+            559.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "each isomorphism class), so we illustrate this case. A skeletal groupoid can be seen",
+          "bbox": [
+            126.72,
+            561.69,
+            485.41,
+            571.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "as a set of objects, each labelled by a group. A functor between groupoids is a",
+          "bbox": [
+            126.72,
+            573.57,
+            485.34,
+            583.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "set map, where each “strand” of the set map (i.e. each pair (yi, xj) of source and",
+          "bbox": [
+            126.72,
+            585.39,
+            485.41,
+            596.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "image under the map) is labelled by a homomorphism fi. This takes the group Gi",
+          "bbox": [
+            126.72,
+            597.27,
+            484.74,
+            607.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "of automorphisms of the source yi to the group Hj of automorphisms of the target",
+          "bbox": [
+            126.72,
+            609.27,
+            485.43,
+            620.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "xj.",
+          "bbox": [
+            126.72,
+            621.27,
+            139.32,
+            631.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "It will be useful to have another, more explicit, way to describe the “pushfor-",
+          "bbox": [
+            138.6,
+            633.33,
+            485.48,
+            643.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ward” map than the matrix-dependent view of Theorem 3.2.4. Fortunately, there",
+          "bbox": [
+            126.72,
+            645.33,
+            485.38,
+            655.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "is a more intrinsic way to describe the 2-linear map f∗, the adjoint of f ∗.",
+          "bbox": [
+            126.72,
+            655.85,
+            445.8,
+            667.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Deﬁnition 4.2.2. For a given x ∈X, the comma category (f ↓x) has objects",
+          "bbox": [
+            126.72,
+            678.27,
+            485.26,
+            688.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "which are objects y ∈Y equipped with maps f(y) →x in X, and morphisms which",
+          "bbox": [
+            126.72,
+            690.27,
+            485.21,
+            700.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 19,
+      "rotation": 0,
+      "drawings": 80,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 5 illustrates the induced representation schematically, for a single object.",
+        "Figure 5. Induced Representation from Homomorphism"
+      ],
+      "labels": [
+        {
+          "text": "2-VECTOR SPACES AND GROUPOIDS",
+          "bbox": [
+            231.96,
+            96.89,
+            379.99,
+            103.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "19",
+          "bbox": [
+            477.36,
+            96.89,
+            485.29,
+            103.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Which is just the direct sum (i.e. biproduct) over the isomorphism classes in the",
+          "bbox": [
+            126.72,
+            118.53,
+            485.26,
+            128.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "essential preimage of the corresponding vector spaces. However, this is not the",
+          "bbox": [
+            126.72,
+            130.53,
+            485.26,
+            140.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "colimit: an object in the essential preimage is a pair (y, g), but we note that if y",
+          "bbox": [
+            126.72,
+            142.23,
+            485.0,
+            152.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "and y′ are isomorphic in Y, such isomorphisms induce isomorphisms of the spaces",
+          "bbox": [
+            126.72,
+            150.81,
+            485.36,
+            164.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "F(y), and the colimit will be a quotient which identiﬁes these spaces. In general, the",
+          "bbox": [
+            126.72,
+            166.23,
+            485.26,
+            176.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "colimit will be a direct sum over isomorphism classes [y] in the essential preimage.",
+          "bbox": [
+            126.72,
+            178.11,
+            485.52,
+            188.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Each term of the sum is isomorphic to the induced representation of F(y) under",
+          "bbox": [
+            126.72,
+            190.11,
+            485.34,
+            200.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the homomorphism determined by f.",
+          "bbox": [
+            126.72,
+            201.99,
+            288.84,
+            212.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Now, consider what the induced representations are for each isomorphism class.",
+          "bbox": [
+            138.6,
+            214.17,
+            485.4,
+            224.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Any isomorphism class [y] of objects in Y determines a group G = Aut(y), and sim-",
+          "bbox": [
+            126.72,
+            225.99,
+            485.36,
+            236.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ilarly [x] ∈X",
+          "bbox": [
+            126.72,
+            237.87,
+            184.46,
+            248.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "determines H = Aut(x). So this reduces to the case where Y and X",
+          "bbox": [
+            187.68,
+            237.87,
+            485.3,
+            248.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "are just groups (seen as one-object categories), so we have a group homomorphism",
+          "bbox": [
+            126.72,
+            250.05,
+            485.54,
+            260.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "f : G →H. Using the induced algebra homomorphism f : C[G] →C[H], one can",
+          "bbox": [
+            126.72,
+            259.79,
+            485.41,
+            272.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "directly construct the induced homomorphism as a quotient: f∗V = C[H] ⊗C[G] V .",
+          "bbox": [
+            126.72,
+            271.67,
+            485.28,
+            285.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7",
+            "MSBM10",
+            "MSBM7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "So for general groupoids, with V = F(y), we have the direct sum:",
+          "bbox": [
+            138.6,
+            285.75,
+            425.04,
+            295.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "M",
+          "bbox": [
+            268.44,
+            302.5,
+            283.49,
+            320.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "C[Aut(x)] ⊗C[Aut(y)] F(y)",
+          "bbox": [
+            290.52,
+            302.75,
+            400.71,
+            316.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10",
+            "MSBM7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(f∗F)(x) =",
+          "bbox": [
+            211.2,
+            304.83,
+            260.22,
+            315.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(46)",
+          "bbox": [
+            126.72,
+            305.01,
+            144.51,
+            314.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "f(y)∼",
+          "bbox": [
+            262.92,
+            317.93,
+            284.38,
+            326.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "=x",
+          "bbox": [
+            278.16,
+            319.48,
+            288.91,
+            327.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Figure 5 illustrates the induced representation schematically, for a single object.",
+          "bbox": [
+            138.6,
+            332.97,
+            485.4,
+            342.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 5. Induced Representation from Homomorphism",
+          "bbox": [
+            180.72,
+            493.87,
+            431.42,
+            504.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "4.3. Units and Counits. We have observed that the pullback and pushforward",
+          "bbox": [
+            126.72,
+            527.01,
+            485.53,
+            536.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "maps f ∗and f∗are both left and right adjoints. Thus there are two adjunctions",
+          "bbox": [
+            126.72,
+            537.65,
+            485.36,
+            549.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "to consider: f ∗⊣f∗, where pushforward is right adjoint to pullback; and f∗⊣f ∗",
+          "bbox": [
+            126.72,
+            549.53,
+            484.92,
+            561.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "where pushforward is left adjoint to pullback. For convenience, we refer to these",
+          "bbox": [
+            126.72,
+            562.89,
+            485.26,
+            572.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "as the “right adjunction” and “left adjunction” respectively, after the position of",
+          "bbox": [
+            126.72,
+            574.89,
+            485.44,
+            584.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the pushforward. Each adjunction has unit and counit, so there are four natural",
+          "bbox": [
+            126.72,
+            586.77,
+            485.4,
+            596.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "transformations to describe. We will identify them as “right” and “left” unit and",
+          "bbox": [
+            126.72,
+            598.77,
+            485.41,
+            608.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "counit following the convention above. Thus, we have:",
+          "bbox": [
+            126.72,
+            610.77,
+            363.48,
+            620.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ηL : Id[Y,Vect] =⇒f ∗f∗",
+          "bbox": [
+            255.84,
+            637.85,
+            356.28,
+            651.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX7",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(47)",
+          "bbox": [
+            126.72,
+            639.69,
+            144.51,
+            649.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ǫL :f∗f ∗=⇒Id[X,Vect]",
+          "bbox": [
+            256.8,
+            653.33,
+            354.33,
+            666.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX7",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(48)",
+          "bbox": [
+            126.72,
+            655.17,
+            144.51,
+            665.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ηR : Id[X,Vect] =⇒f∗f ∗",
+          "bbox": [
+            255.24,
+            668.93,
+            356.04,
+            682.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX7",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(49)",
+          "bbox": [
+            126.72,
+            670.77,
+            144.51,
+            680.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ǫR :f ∗f∗=⇒Id[Y,Vect]",
+          "bbox": [
+            256.2,
+            684.41,
+            354.57,
+            697.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX7",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(50)",
+          "bbox": [
+            126.72,
+            686.37,
+            144.51,
+            696.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+1. HALVERSON AND AL MANE
+
+and
+
+S> AME) = AM Pyoe! ( Il | ( Il “'), (4.5)
+
+LEL(P) sE€SC de€DC
+
+The expansion in (4.5) is equal to zero if there is more than one connected compo-
+nent in P.
+
+The following is our extension of the poset theorem to include values of k > 1.
+
+Theorem 4.6. Let P bea planar poset (as defined above) with unique minimal
+element u. Let P = P \ {u}. Then
+
+So AML) = (ga AMP),
+
+LeEL(P)
+
+and, for 1 <k<r-—1,
+
+S- AWB) = AMP -gt qe ( I | ( Il “i')
+
+LeL(P) s€SC deDC
+|DC|
+x dt- Jre(2pc )hk—t—ce(@sc)
+
+where cc is the number of connected components of P, ex(zpc) is the elementary
+symmetric function in the variables {rqa,d € DC}, and hp_t—ce(esc) is the homo-
+geneous symmetric function in the variables {xs5,5 € SC}.
+
+Proof. For cach s € SC define P, to be the same poset as P except with the
+additional relations s < s', for s # s’ € SC, and all other relations implied by
+transitivity. Each poset P, is planar, and each linear extension of P, must place
+the sharp corner s (a minimal element of P) immediately after u in the ordering,
+so we have
+
+So AMD = SSS AML) = SO wt ust SS AML.)
+
+LEL(P) s€SC 7,EL(P,) s€SC L,€L(P,)
+
+In P we have wt)(a,b) = wt (a,b), so by [HR], Theorem 5.3, the second sum
+can be computed as
+
+S- AW (T..) = S- AOE.) =AM= AMP),
+
+L,€L(P;) L;€L(P3;)
+
+since P, is connected. Moreover, wt (u,s)—! = 1 for each s € SC, so the case
+k = 0 is proved.

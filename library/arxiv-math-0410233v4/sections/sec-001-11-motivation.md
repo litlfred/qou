@@ -4,13 +4,14 @@ doc_title: "CUSP SHAPES UNDER CONE DEFORMATION"
 section_id: sec-001-11-motivation
 section_title: "Motivation"
 section_number: 1.1
-pages: 1-2
+pages: 1-3
 source_pdf: 0410233v4.pdf
 source_sha256: 1f7215c9f21aa2b7
 toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.61
-latex_coverage_ratio: 0.971
+latex_prose_ratio: 0.939
+latex_coverage_ratio: 0.982
+doc_brief: "CUSP SHAPES UNDER CONE DEFORMATION — A horospherical torus about a cusp of a hyperbolic manifold inherits a Euclidean similarity structure, called a cusp shape."
 ---
 The interplay between geometry and topology is an important theme in the study of 3--manifolds. Since Thurston's work in the late 1970's, it has been known that any Haken 3--manifold has a geometric decomposition [@thurston]. Recently Perelman has announced a proof that any closed, orientable 3--manifold has such a decomposition (the geometrization conjecture). However, it is important not only to know the existence of a geometric structure on a 3--manifold, but also to understand the relation between that structure and the topological description of the manifold.
 

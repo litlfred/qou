@@ -7,10 +7,11 @@
   "bytes": 308042,
   "pages": 30,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,21 +21,29 @@
    "stamp_date": "2 May 2024"
   },
   "doi": null,
-  "title": "Classification of connected \u00e9tale algebras in pre-modular fusion categories up to rank three Ken KIKUCHI",
-  "authors_raw": "Department of Physics, National Taiwan University, Taipei 10617, Taiwan",
+  "title": "Classification of connected étale algebras in pre-modular fusion categories up to rank three",
+  "authors_raw": "Ken KIKUCHI",
   "title_lines": [
-   "Classification of connected \u00e9tale algebras in pre-modular",
-   "fusion categories up to rank three",
-   "Ken KIKUCHI"
+   "Classification of connected étale algebras in pre-modular",
+   "fusion categories up to rank three"
   ],
-  "abstract": "We classify connected \u00b4 etale algebras A\u2019s in pre-modular fusion categories B with rank(B) \u2264 3 including degenerate and non-(pseudo-)unitary ones. We c omment on Lagrangian algebras and physical applications to ground st ate degeneracy and proof of spontaneous B-symmetry breaking.",
+  "abstract": "We classify connected ´etale algebras A’s in pre-modular fusion categories B with rank(B) ≤3 including degenerate and non-(pseudo-)unitary ones. We comment on Lagrangian algebras and physical applications to ground state degeneracy and proof of spontaneous B-symmetry breaking.",
   "docinfo": {
    "Producer": "GPL Ghostscript 10.01.2",
-   "CreationDate": "D:20240502202733-04'00'",
    "Creator": "LaTeX with hyperref",
-   "Title": "",
-   "Author": ""
-  }
+   "CreationDate": "D:20240502202733-04'00'"
+  },
+  "title_raw": "Classification of connected étale algebras in pre-modular fusion categories up to rank three",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "Classiﬁcation of connected ´etale algebras in pre-modular fusion categories up to rank three",
+   "outline": "Introduction",
+   "text": "Classification of connected étale algebras in pre-modular fusion categories up to rank three",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "Classification of connected étale algebras in pre-modular fusion categories up to rank three Ken KIKUCHI"
  },
  "toc": [
   {
@@ -42,102 +51,488 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Classification",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Rank one",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Rank two",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "BVecZ/2Z",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "BFib",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Rank three",
    "page": 11,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "BVecZ/3Z1",
    "page": 11,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "BIsing",
    "page": 13,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "BRep(S3)",
    "page": 16,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "Bpsu(2)5",
    "page": 21,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Physical applications",
    "page": 23,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Conformal dimensions of BRep(S3)",
    "page": 25,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Conformal dimensions of Bpsu(2)5",
    "page": 26,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Connected ´etale algebras in pre-MFC B with rank(B) ≤3",
+   "page": 2,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "2",
+   "title": "Connected ´etale algebra in rank one pre-MFC B ≃VectC",
+   "page": 6,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "3",
+   "title": "Connected ´etale algebra in rank two pre-MFC B ≃Vec1",
+   "page": 8,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "4",
+   "title": "Connected ´etale algebra in rank two pre-MFC B ≃Vec−1",
+   "page": 8,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "5",
+   "title": "Connected ´etale algebra in rank two pre-MFC B ≃Fib",
+   "page": 11,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "6",
+   "title": "Connected ´etale algebra in rank three pre-MFC B ≃Vec1",
+   "page": 13,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "7",
+   "title": "Connected ´etale algebra in rank three pre-MFC B ≃Ising",
+   "page": 15,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "8",
+   "title": "Connected ´etale algebra in rank three non-symmetric pre-MFC B ≃Rep(S3)",
+   "page": 20,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "9",
+   "title": "Connected ´etale algebra in rank three symmetric pre-MFC B ≃Rep(S3)",
+   "page": 20,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "table",
+   "number": "10",
+   "title": "Connected ´etale algebra in rank three pre-MFC B ≃psu(2)5",
+   "page": 22,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 505,
+   "n_words": 67,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
@@ -145,61 +540,115 @@
    "level": 1,
    "page_start": 1,
    "page_end": 5,
-   "n_chars": 8433,
-   "n_words": 1660
+   "n_chars": 8259,
+   "n_words": 1488,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-rank-one",
+   "id": "sec-001-classification",
+   "number": null,
+   "title": "Classification",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 13,
+   "n_words": 1,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-rank-one",
    "number": null,
    "title": "Rank one",
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 556,
-   "n_words": 109
+   "n_chars": 555,
+   "n_words": 101,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-rank-two",
+   "id": "sec-003-rank-two",
    "number": null,
    "title": "Rank two",
    "level": 2,
    "page_start": 6,
    "page_end": 11,
-   "n_chars": 7103,
-   "n_words": 1566
+   "n_chars": 6970,
+   "n_words": 1426,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-rank-three",
+   "id": "sec-004-rank-three",
    "number": null,
    "title": "Rank three",
    "level": 2,
    "page_start": 11,
    "page_end": 23,
-   "n_chars": 22940,
-   "n_words": 4671
+   "n_chars": 22540,
+   "n_words": 4271,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-004-physical-applications",
+   "id": "sec-005-physical-applications",
    "number": null,
    "title": "Physical applications",
    "level": 1,
    "page_start": 23,
+   "page_end": 25,
+   "n_chars": 3025,
+   "n_words": 561,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-006-conformal-dimensions-of-breps3",
+   "number": null,
+   "title": "Conformal dimensions of BRep(S3)",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 1494,
+   "n_words": 316,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-007-conformal-dimensions-of-bpsu25",
+   "number": null,
+   "title": "Conformal dimensions of Bpsu(2)5",
+   "level": 1,
+   "page_start": 26,
    "page_end": 30,
-   "n_chars": 12890,
-   "n_words": 2143
+   "n_chars": 8187,
+   "n_words": 1124,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 14,
-  "sections": 5,
-  "chars_total": 51922,
+  "toc_inferred_entries": 0,
+  "figure_entries": 10,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 9,
+  "chars_total": 51548,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 12,
-   "overlaid": 4,
+   "overlaid": 5,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -207,43 +656,65 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.992,
-     "coverage_ratio": 0.983,
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.976,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-001-rank-one",
+     "id": "sec-001-classification",
+     "title": "Classification",
+     "prose_ratio": null,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-rank-one",
      "title": "Rank one",
      "prose_ratio": 0.875,
-     "coverage_ratio": 0.8,
+     "coverage_ratio": 0.833,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-rank-two",
+     "id": "sec-003-rank-two",
      "title": "Rank two",
      "prose_ratio": 0.937,
-     "coverage_ratio": 0.974,
+     "coverage_ratio": 0.978,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-rank-three",
+     "id": "sec-004-rank-three",
      "title": "Rank three",
      "prose_ratio": 0.967,
-     "coverage_ratio": 0.987,
+     "coverage_ratio": 0.979,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-physical-applications",
+     "id": "sec-005-physical-applications",
      "title": "Physical applications",
      "prose_ratio": 0.991,
-     "coverage_ratio": 0.379,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-conformal-dimensions-of-breps3",
+     "title": "Conformal dimensions of BRep(S3)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-conformal-dimensions-of-bpsu25",
+     "title": "Conformal dimensions of Bpsu(2)5",
+     "result": "no matching \\section"
     }
    ]
   }

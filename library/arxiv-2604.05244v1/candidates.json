@@ -1,0 +1,63 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2604.05244v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "a5097e763dd89d06ccdddc79920f425d30d320a8f8ac6e1dc4150be11d5f7314",
+  "file": "2604.05244v1.pdf"
+ },
+ "provenance": {
+  "title": "Edge universality in Floquet sideband spectra",
+  "authors": "Miguel Tierz",
+  "arxiv": {
+   "id": "2604.05244",
+   "version": "1",
+   "primary_class": "cond-mat.mes-hall",
+   "stamp_date": "6 Apr 2026"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "proposition": 1
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 1
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  }
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "The cleanest experimental test is therefore the collapse plot: define $$\\mathcal S_A(s) := \\frac{h}{4e^3\\mathcal T(1-\\mathcal T)}\\;\\kappa_A\\,\\Delta_I(V), \\qquad s = \\frac{|eV|/\\hbar\\Omega - A}{\\kappa_A}. \\label{eq:collapse-obs}$$ The prediction is $\\mathcal S_A(s)\\to K_{\\mathop{\\mathrm{Ai}}}(s,s)$, independently of $A$.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-018-the-plateau-deficit.md (p. 20-23)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-018-the-plateau-deficit.md",
+   "section_title": "The plateau deficit",
+   "pages": "20-23",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-018-the-plateau-deficit.md (p. 20-23)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-018-01",
+   "block_iri": "library/arxiv-2604.05244v1/blocks/prop-sec-018-01",
+   "claim_id": "arxiv-2604.05244v1#prop-sec-018-01"
+  }
+ ]
+}

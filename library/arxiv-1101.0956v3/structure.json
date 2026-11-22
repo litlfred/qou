@@ -6,10 +6,12 @@
   "sha256": "28fffdb404e885017ea586c077b33fc65bb6062cdde667887254fb33ae323642",
   "bytes": 352177,
   "pages": 44,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -19,22 +21,29 @@
    "stamp_date": "25 Jul 2011"
   },
   "doi": null,
-  "title": "Algebraic constructions in the category of vector bundles",
-  "authors_raw": null,
-  "abstract": "In this paper we present the category of generalized Lie algebroids . Important results (a theorem of Maurer-Cartan type, theorems of Cartan type,...) emphasize the importance and the utility of the objects of this new category.",
-  "docinfo": {
-   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20210111000418-05'00'",
-   "Title": "",
-   "Creator": "LaTeX with hyperref package",
-   "Author": ""
-  },
+  "title": "ALGEBRAIC CONSTRUCTIONS IN THE CATEGORY OF VECTOR BUNDLES",
+  "authors_raw": "CONSTANTIN M. ARCUS¸",
   "title_lines": [
    "ALGEBRAIC CONSTRUCTIONS",
-   "IN THE CATEGORY OF VECTOR BUNDLES",
-   "CONSTANTIN M. ARCUS \u00b8"
+   "IN THE CATEGORY OF VECTOR BUNDLES"
   ],
-  "title_prev": "CONSTANTIN M. ARCUS \u00b8"
+  "abstract": "In this paper we present the category of generalized Lie algebroids. Important results (a theorem of Maurer-Cartan type, theorems of Cartan type,...) emphasize the importance and the utility of the objects of this new category.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20210111000418-05'00'"
+  },
+  "title_raw": "ALGEBRAIC CONSTRUCTIONS IN THE CATEGORY OF VECTOR BUNDLES",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "Contents Introduction",
+   "outline": "1 Introduction",
+   "text": "ALGEBRAIC CONSTRUCTIONS IN THE CATEGORY OF VECTOR BUNDLES",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "Algebraic constructions in the category of vector bundles"
  },
  "toc": [
   {
@@ -42,171 +51,706 @@
    "title": "Introduction",
    "page": 17,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Preliminaries",
    "page": 18,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "The category of generalized Lie algebroids",
    "page": 21,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "The pull-back Lie algebroid of a generalized Lie algebroid",
    "page": 7,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Interior Differential Systems",
    "page": 8,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 1,
    "title": "Exterior differential calculus",
    "page": 23,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Exterior Differential Systems",
    "page": 13,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 1,
    "title": "References",
    "page": 13,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 1,
    "title": "Introduction",
    "page": 17,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "The category of generalized Lie algebroids",
    "page": 18,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "Interior Differential Systems",
    "page": 21,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 1,
    "title": "Exterior differential calculus",
    "page": 23,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 1,
    "title": "Exterior Differential Systems",
    "page": 36,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 1,
    "title": "Torsion and curvature forms. Identities of Cartan and Bianchi type",
    "page": 38,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 1,
    "title": "References",
    "page": 38,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 7,
+   "n_chars": 10534,
+   "n_words": 2290,
+   "label_start": "1",
+   "label_end": "7"
+  },
   {
    "id": "sec-000-31-the-pull-back-lie-algebroid-of-a-generalized",
    "number": "3.1",
    "title": "The pull-back Lie algebroid of a generalized Lie algebroid",
    "level": 2,
    "page_start": 7,
-   "page_end": 15,
-   "n_chars": 14214,
-   "n_words": 4081
+   "page_end": 8,
+   "n_chars": 1462,
+   "n_words": 340,
+   "label_start": "7",
+   "label_end": "8"
   },
   {
-   "id": "sec-001-references",
+   "id": "sec-001-32-interior-differential-systems",
+   "number": "3.2",
+   "title": "Interior Differential Systems",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 13,
+   "n_chars": 8827,
+   "n_words": 2110,
+   "label_start": "8",
+   "label_end": "13"
+  },
+  {
+   "id": "sec-002-41-exterior-differential-systems",
+   "number": "4.1",
+   "title": "Exterior Differential Systems",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 15,
+   "n_chars": 3034,
+   "n_words": 710,
+   "label_start": "13",
+   "label_end": "15"
+  },
+  {
+   "id": "sec-003-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 15,
-   "page_end": 16,
-   "n_chars": 2766,
-   "n_words": 398
+   "page_end": 17,
+   "n_chars": 2995,
+   "n_words": 418,
+   "label_start": "15",
+   "label_end": "2"
   },
   {
-   "id": "sec-002-1-introduction",
+   "id": "sec-004-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
-   "page_start": 16,
+   "page_start": 17,
    "page_end": 18,
-   "n_chars": 3972,
-   "n_words": 925
+   "n_chars": 3602,
+   "n_words": 754,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
-   "id": "sec-003-2-the-category-of-generalized-lie-algebroids",
+   "id": "sec-005-2-the-category-of-generalized-lie-algebroids",
    "number": "2",
    "title": "The category of generalized Lie algebroids",
    "level": 1,
    "page_start": 18,
-   "page_end": 38,
-   "n_chars": 33072,
-   "n_words": 9748
+   "page_end": 21,
+   "n_chars": 4182,
+   "n_words": 1009,
+   "label_start": "3",
+   "label_end": "6"
   },
   {
-   "id": "sec-004-6-torsion-and-curvature-forms-identities-of-cart",
+   "id": "sec-006-3-interior-differential-systems",
+   "number": "3",
+   "title": "Interior Differential Systems",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 23,
+   "n_chars": 2831,
+   "n_words": 669,
+   "label_start": "6",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-007-4-exterior-differential-calculus",
+   "number": "4",
+   "title": "Exterior differential calculus",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 36,
+   "n_chars": 21058,
+   "n_words": 5041,
+   "label_start": "8",
+   "label_end": "21"
+  },
+  {
+   "id": "sec-008-5-exterior-differential-systems",
+   "number": "5",
+   "title": "Exterior Differential Systems",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 38,
+   "n_chars": 2554,
+   "n_words": 589,
+   "label_start": "21",
+   "label_end": "23"
+  },
+  {
+   "id": "sec-009-6-torsion-and-curvature-forms-identities-of-cart",
    "number": "6",
    "title": "Torsion and curvature forms. Identities of Cartan and Bianchi type",
    "level": 1,
    "page_start": 38,
    "page_end": 44,
-   "n_chars": 9481,
-   "n_words": 2451
+   "n_chars": 8947,
+   "n_words": 1906,
+   "label_start": "23",
+   "label_end": "29"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 15,
-  "sections": 5,
-  "chars_total": 63505,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 11,
+  "chars_total": 70026,
+  "furniture_lines_stripped": 44,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Algebraic_constructions_in_the_category_of_vector_bundles.tex",
    "tex_sections": 6,
-   "overlaid": 3,
+   "overlaid": 6,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -214,38 +758,81 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-31-the-pull-back-lie-algebroid-of-a-generalized",
      "title": "The pull-back Lie algebroid of a generalized Lie algebroid",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-001-references",
+     "id": "sec-001-32-interior-differential-systems",
+     "title": "Interior Differential Systems",
+     "prose_ratio": 0.848,
+     "coverage_ratio": 0.452,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-002-41-exterior-differential-systems",
+     "title": "Exterior Differential Systems",
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-references",
      "title": "References",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-002-1-introduction",
+     "id": "sec-004-1-introduction",
      "title": "Introduction",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.975,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-2-the-category-of-generalized-lie-algebroids",
+     "id": "sec-005-2-the-category-of-generalized-lie-algebroids",
      "title": "The category of generalized Lie algebroids",
-     "prose_ratio": 0.995,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-6-torsion-and-curvature-forms-identities-of-cart",
-     "title": "Torsion and curvature forms. Identities of Cartan and Bianchi type",
-     "prose_ratio": 0.971,
-     "coverage_ratio": 1.0,
+     "id": "sec-006-3-interior-differential-systems",
+     "title": "Interior Differential Systems",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.96,
      "result": "overlaid",
      "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-4-exterior-differential-calculus",
+     "title": "Exterior differential calculus",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-5-exterior-differential-systems",
+     "title": "Exterior Differential Systems",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-6-torsion-and-curvature-forms-identities-of-cart",
+     "title": "Torsion and curvature forms. Identities of Cartan and Bianchi type",
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.497,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

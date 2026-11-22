@@ -1,0 +1,31 @@
+1.5. The spectrum of a perverse sheaf 21
+
+Now for P of geometric origin the perverse sheaves Ny € E(X) in (b)
+and hence also all their simple constituents N are of geometric origin. Each
+such constituent has the form N = Lg ® qg*(Q)[dim(A)] for suitable @ and
+some abelian subvariety A C X as in proposition 1.6(a). In this situation
+the pullback i*(N) to A is an isotypic multiple of i*(L@) and of geometric
+origin. Hence II(i)(@) is a torsion character. Writing .7(N) = 7 -K(A) we
+can take for ~~! any torsion character in II(i)~! (II(i)(@)). Oo
+
+The above arguments can also be generalized to the relative setting of
+theorem 1.3. For a homomorphism f : X — B of abelian varieties, define
+the relative spectrum .7;(P) of a perverse sheaf P € Perv(X,C) to be the
+set of all y € II(X) such that Rf, (Py) is not perverse. By abuse of notation,
+for x € II(X) and w € II(B) we write yy = x - (II(f)(w)) € T(X). Then
+the projection formula shows
+
+Rf.(Pyy) = (Rf.(Py)) yw;
+hence .Y;(P) is invariant under II(B). In particular, if B = X/A for an
+abelian subvariety A C X, then .%-(P) is determined by its image  ¢(P)
+in II(A) = I1(X)/II(B). Furthermore, in the situation of theorem 1.3 the
+assertion for most characters can be read in II(A), i.e. in the stronger sense
+
+that S /(P) is contained in a finite union of translates of proper algebraic
+subtori of II(A). Indeed we have
+
+LEMMA 1.12. .7/(P) C.A(P)-II(B).
+
+Proof. Vf a character x is not in .Y(P) -TI(B), then for any y € II(B)
+we have yy ¢ /(P) and hence H"(X,Pyy) = H"(B,(Rf.(Py))y) 4 0 for
+some n # 0. By theorem 1.1 then Rf,(Pz) is not perverse. im

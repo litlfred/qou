@@ -1,1 +1,1 @@
-Let K be a totally real ﬁeld and E an elliptic curve over K . Suppose 5 is not a
+Let K be a totally real ﬁeld and E an elliptic curve over K. Suppose 5 is not a square in K, and ρ E,5 is irreducible. Then E is modular. For p = 7 we use the following result of Kalyanswamy [2018, Proposition 4.3 and Theorem 4.4].

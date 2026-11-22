@@ -68,7 +68,7 @@ and $N$ neutrons ($A = Z + N$) is determined by:*
     data.  It is *not* asserted (no `theorem … := ⟨ctx.claim_*⟩`
     self-assuming projection); a discharging instance is the open
     conditional claim. -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/ground-state-ordering.ts
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/ground-state-ordering.ts
 def ground_state_ordering {R : Type*} [Ring R] (ctx : GroundStateOrderingContext R) : Prop :=
     (ctx.Z ≤ ctx.N → 4 ≤ ctx.A →
       ∀ k : ℕ, ctx.ordering k =

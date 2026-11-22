@@ -8,7 +8,9 @@ pages: 4-6
 source_pdf: S0894-0347-00-00337-4.pdf
 source_sha256: 1c6848281fc2804c
 toc_source: outline
+doc_brief: "AMERICAN MATHEMATICAL SOCIETY S 0894-0347(00)00337-4 — 22 sections: Front matter; Plancherel measures; Introduction"
 ---
+1.3. Asymptotics in the bulk of the spectrum. Given a sequence of subsets
 X(n) = {x1(n) < · · · < xs(n)} ⊂Z ,
 where s = |X(n)| is some ﬁxed integer, we call this sequence regular if the limits
 ai = lim

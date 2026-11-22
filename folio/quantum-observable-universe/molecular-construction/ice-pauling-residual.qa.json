@@ -92,6 +92,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
         }
+      },
+      {
+        "field_hash": {
+          "md": "962002f84ae3",
+          "ts": "1f46e793f619",
+          "lean": "a8b10bec1c0b",
+          "lean_statement": "26d9ce87d812"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:56:02.480Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "minor",
+        "evidence": "Lean proves the arithmetic `C(4,2)·(1/2)² = 3/2` over ℚ; the ice rule is not encoded. Statement says \"subject to the ice rule … the per-molecule multiplicity is W₁ = 3/2\" as exact; the proof correctly says it is Pauling's independent-bond estimate. As an exact claim it is false: Nagle (1966) gives W ≈ 1.5069 for ice I_h. Statement also says \"agrees closely with the measured ice calorimetry\" (empirical)"
       }
     ],
     "proof-statement-integrity": [
@@ -2498,6 +2516,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T07:00:52.328Z",
+  "updated_at": "2026-11-15T21:56:02.480Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -27,7 +27,7 @@ These relate to the unshifted resolvent invariants $S = \sum_{k=1}^{4}w_k$ and $
 \end{equation}
 ```
 
-The second identity uses $\sum_{k=1}^{4}\zeta^{-k} = -1$. The inverse Lagrange resolvent transform ([Lagrange resolvents](#rem:lagrange-resolvents)) yields
+The second identity uses $\sum_{k=1}^{4}\zeta^{-k} = -1$. The inverse [Lagrange resolvent transform](#prop:lagrange-resolvent-transform) yields
 
 ```tex
 \begin{equation}\label{eq:z-from-SD}

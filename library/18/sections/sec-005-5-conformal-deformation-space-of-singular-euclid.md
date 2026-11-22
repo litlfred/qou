@@ -1,6 +1,6 @@
 ---
 doc_id: 18
-doc_title: "Mathematical Research Letters 3, 51–60 (1996)"
+doc_title: "Combinatorial scalar curvature and rigidity of ball packings"
 section_id: sec-005-5-conformal-deformation-space-of-singular-euclid
 section_title: "Conformal deformation space of singular Euclidean metrics"
 section_number: 5
@@ -8,6 +8,7 @@ pages: 7-8
 source_pdf: 18.pdf
 source_sha256: 0b7bf055085cb04b
 toc_source: inferred
+doc_brief: "Combinatorial scalar curvature and rigidity of ball packings — 11 sections: Front matter; Introduction; Conformal simplices"
 ---
 Consider a closed three-dimensional manifold M 3, together with a topo-
 logical triangulation T . If we equip all of the simplices of T with metrics,

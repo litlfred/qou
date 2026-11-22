@@ -1,0 +1,48 @@
+9.3 Smooth bivariate functions 275
+
+Figure 9.6. Six of the components are unbounded and correspond to vertices on
+the perimeter of the Newton polygon, and the seventh component is a bounded
+component corresponding to the origin, which is an interior lattice point of the
+Newton polygon.
+
+Exercise 9.9. Laurent polynomials whose Newton polygons are as in Example
+9.37 can have as many as nine components in the amoeba complement. How-
+ever the specific Laurent polynomial Q(x, y) under consideration only admits
+seven.
+
+(a) Let Q,4(x,y) denote the sum of the three monomials in Q that have x-
+degree 1. How many distinct values do the magnitudes of the roots of
+Ox(y) take?
+
+(b) Let Q,(x,y) denote the sum of the three monomials of Q that have x-
+degree —1. How many distinct values do the magnitudes of the roots of
+Q,-(y) take?
+
+(c) Explain why there is only one amoeba ‘tentacle’ in the negative x direction
+whereas there are two in the positive x direction.
+
+Continuing our current example, the component unbounded in the (—1,-1)
+direction corresponds to a power series expansion. However, the series of com-
+binatorial interest in this case is the one corresponding to the bounded com-
+ponent, which we call B. Specifically, asymptotics of this series in the (1, 1)
+direction are desired. For the component B’ we may choose any where /(1,1)
+is unbounded from below, and for specificity we choose the component in the
+upper right.
+
+A quick computation shows the variety Vg to be smooth and identifies eight
+critical points in the direction 7? parallel to (1, 1). Their projections under the
+Relog map are shown on the amoeba in Figure 9.6 and denoted by p),..., ps.
+All but two of the points, p3 and p4, are on the boundary of the amoeba, and
+the four points p. = p; and pg = p7 come in conjugate pairs.
+
+As described immediately prior to the example, we choose an explicit in-
+tersection cycle y by moving the product of circles represented by the point
+a € B to one represented by a point in B’. The size of a fiber amoeba”! (a)
+for x € B only changes when crossing a point of the amoeba contour drawn in
+Figure 9.6, so by sampling points and performing algebraic computations it is
+possible to determine that the interior of the amoeba has four regions on which
+the log-modulus map from V to amoeba(Q) is two-to-one, while the map is
+four-to-one on the remainder of the amoeba (the four-to-one regions are more
+heavily shaded in Figure 9.6).
+
+To construct the intersection cycle y, we first choose a to be the origin and

@@ -13,7 +13,7 @@ A two-variable linear system `∂_a S = Ωa S`, `∂_b S = Ωb S` on a subset of
 * `isSol2_comp` — pulling such a solution back along a map `ψ` gives a solution of the
   pulled-back system (chain rule).
 
--- Ref: [manuscript] docs/audits/2026-10-11-drinfeld-kohno-sl2-via-emvz.md §2 Step 1
+-- Ref: [leitner2026] docs/audits/2026-10-11-drinfeld-kohno-sl2-via-emvz.md §2 Step 1
 -/
 
 set_option autoImplicit false

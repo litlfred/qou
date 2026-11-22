@@ -1,0 +1,63 @@
+Appendix B
+
+GAP Code for Klein Quartic
+[Ld
+
+The GAP code in this appendix has the same format as that in Appendix A; please refer
+to the commentary there in order to interpret this code.
+
+gap> f:=FreeGroup("a","b","c");
+
+<free group on the generators [ a, b, c |>
+
+gap> g:=f/[f.172,f.272,f£.372,(f.1*f.2)72,(f.2*f.3)73,(f.1*f.3)77,(f.1*f.2ef.3)>8]
+
+<fp group on the generators [ a, b, c |>
+
+gap> Order(g);
+
+336
+
+gap> StructureDescription(g);
+
+"PSL(3 ,2):C2"
+
+gap> ConjugacyClasses(g);
+
+[ <identity ...>°G, b°G, bxc*G, axbxckax(cxaxb)*2*(c#a)*2*0°G,
+axckas(cxaxb)*2*(cxa)*2*c7G, cxa°G, becxa*G, (axbx(cxa)*2*c)*2°G,
+bx(ckaxb*cxa)~2xb*c7G |
+
+gap> RequirePackage("repsn");
+
+Repsn for Constructing Representations of Finite Groups
+Version 3.0.2
+
+Written by
+Vahid Dabbaghian
+
+true
+
+gap> Display (CharacterTable(g));
+
+CT1
+2 4 1 1 2 4 3 3 3
+3 1 1 1 «21
+7 1 1
+
+la 3a 6a 2a 7a 2b 8a 4a 8b
+2P la 3a 3a la 7a la 4a 2b 4a
+3P la la 2a 2a 7a 2b 8b 4a 8a
+5P la 3a 6a 2a 7a 2b 8b 4a 8a
+7P la 3a Ga 2a la 2b 8a 4a 8b
+
+X.1 11111 1 2°21 «24
+X.2 1 1-1 -— 1 1 1-1
+X.3 6 -1-2~. 2.
+X.4 6 -1 2 A. -A
+X.5 6 .-1 2-A. A
+X. 7 1-1-1 -1 1-1 1
+X. 7 1 1 1 . -1 -1 -1-1
+X. 8-1-1 2 1
+
+105

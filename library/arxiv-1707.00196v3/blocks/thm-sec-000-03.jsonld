@@ -3,7 +3,7 @@
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
       "@base": "https://litlfred.github.io/folio/",
-      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant/folio-assistant-sci/ns#"
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1707.00196v3/blocks/thm-sec-000-03",
@@ -16,6 +16,16 @@
   "pageEnd": 5,
   "text": "thm-sec-000-03.md",
   "derivedFrom": "library/arxiv-1707.00196v3/sections/sec-000",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1707.00196v3",
-  "provenance": "ingested"
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1707.00196v3/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "III",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "elsewhere",
+    "evidence_locator": "Cites external source [30, 31] in sections/sec-000-1-introduction.md",
+    "claim_id": "arxiv-1707.00196v3#theorem:III",
+    "lean_status": "unformalized"
+  }
 }

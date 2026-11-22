@@ -1,0 +1,65 @@
+Theorem 6.14 Let \ € P(n). We have that Vy) is an irreducible representation of C(q)TLn(q) if and
+only if the Young diagram of X has at most two columns.
+
+Now, let n EN, and let i = (i1,...,i)) and k = (k1,...kp) be two p-tuples of non-negative integers,
+with 0 <p<n-—1. We denote by %,, the set of pairs (i,k) such that
+
+l<iy <ig<+++<ip<n-1 and i;-kj >1 Vj =1,...,p.
+For (i,k) € Sin, we set
+GJigk = (Gir Jiy—1 «+» Jiy—br ) (Jin GJig—1 + + Jig—ka) «++ (Gig Giy—1 «+ Jip—kp) © Hn(Q)-
+
+We take ggg to be equal to 1. We have that the set
+
+Bin = {gw lw € Gn} = {gin | (E) € Hn}
+
+is the standard basis of H,,(q) as a Clg, q~+]-module.
+Further, let us denote by &,, the subset of ,, consisting of the pairs (i,k) such that
+
+l<iy <ig<-++<ip<n—-1 and 1<iy—ky <ig—kg <-++<ip—kyp Sn-1.
+
+Jones has shown that the set
+Brn = {gist | (8) € Tn}
+
+is a basis of TL, (q) as a C[g,q7+]-module. We have |BT"| = C,,, where C;, is the n-th Catalan number,
+
+1.€.,
+1 /2n 1 Q/n\?
+m= (= y (i) -
+
+k=0
+
+6.3.1 The Yokonuma—Temperley—Lieb algebra
+
+Let d € N* and let n € N with n > 3. The Yokonuma-—Temperley—Lieb algebra YTLan(q) is defined as
+the quotient of the Yokonuma-Hecke algebra Yy,,(q) by the ideal Ign := (91,2)
+
+Since the algebra C(q)Yuan(q) is semisimple, the algebra C(qg)YTLa,n(q) is also semisimple and its
+irreducible representations are precisely the irreducible representations of C(q)Ya,n(q) that pass to the
+quotient. That is, for AX € P(d,n), Vy is an irreducible representation of C(q)YTLan(q) if and only if
+91,2(v,) = 0 for every standard d-tableau T of shape X. It is easy to see that the latter is equivalent to
+the trivial representation not being a direct summand of the restriction Res (BA), where E> is the
+irreducible representation of the complex reflection group G(d,1,n) labelled by A. Unfortunately, this
+restriction for d > 1 does not correspond to the simple removal of boxes from the Young diagram of »
+(as in the symmetric group case), but it is controlled by the so-called Littlewood—Richardson coefficients.
+Using algebraic combinatorics, we obtain the following description of the irreducible representations of
+
+C(q)¥TLan (9) Theorem 3]:
+
+Theorem 6.15 Let X = (AO, 2, MED) € Pld, n). We have that Vy is an irreducible representation
+of C(qyY¥TLan(q) if and only if the Young diagram of X has at most two columns in total, that is,
+
+Dico M? <2.
+Using the fact that the algebra C(q)YTLa,,(q) is semisimple and the above description of its irre-
+
+ducible representations, we have been able to calculate the dimension of the Yokonuma—Temperley—Lieb
+
+algebra Proposition 4]. We have
+
+_ n(@?—d)+@ +d
+
+dime(q) (C(q)YTLan(q)) Cy, — (d? — d).
+
+What is more, we have shown in that YTLa,n(q) is a free C[g, q~!]-module of rank equal to the
+dimension above. However, note that, even though the set
+
+Bin = (tt... 02 Gi.8 | (LK) € Gn, OS ry Sd = 1 for all j =1,2,...,n}

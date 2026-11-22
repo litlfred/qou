@@ -13,8 +13,8 @@
   comfortably for `N` past a small threshold — but it is a hypothesis, not a
   triviality, and `Int.toNat` would silently clamp instead of failing.
 
-  -- Ref: [manuscript] QOU/Knot/KashaevWindowSum.lean
-  -- Ref: [manuscript] QOU/MathlibExt/GaussianWindowSum.lean
+  -- Ref: [leitner2026] QOU/Knot/KashaevWindowSum.lean
+  -- Ref: [leitner2026] QOU/MathlibExt/GaussianWindowSum.lean
 -/
 import QOU.Knot.KashaevWindowSum
 import QOU.MathlibExt.GaussianWindowSum

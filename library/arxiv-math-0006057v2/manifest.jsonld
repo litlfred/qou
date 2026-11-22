@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0006057v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0006057v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-math-0006057v2",
+  "title": "Finite Quantum Groupoids and Their Applications",
   "contains": [
     "library/arxiv-math-0006057v2/sections/sec-front-matter",
     "library/arxiv-math-0006057v2/sections/sec-000",
@@ -34,10 +34,15 @@
     "library/arxiv-math-0006057v2/sections/sec-019",
     "library/arxiv-math-0006057v2/sections/sec-020",
     "library/arxiv-math-0006057v2/sections/sec-021",
-    "library/arxiv-math-0006057v2/sections/sec-022"
+    "library/arxiv-math-0006057v2/sections/sec-022",
+    "library/arxiv-math-0006057v2/sections/sec-023",
+    "library/arxiv-math-0006057v2/sections/sec-024",
+    "library/arxiv-math-0006057v2/sections/sec-025",
+    "library/arxiv-math-0006057v2/sections/sec-026",
+    "library/arxiv-math-0006057v2/sections/sec-027"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
     "status": "stated",
@@ -47,7 +52,9 @@
   },
   "meta": {
     "doc_id": "arxiv-math-0006057v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0006057v2.pdf",
     "source_sha256": "c881434fe9f4b04fb71fe64491e955051c9dd270b93ca6f80fce3eb25f3485d2",
     "pages": 44,

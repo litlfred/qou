@@ -10,6 +10,7 @@ source_sha256: 18321b615ffc968b
 toc_source: outline
 doc_brief: "A Tutorial on Knots and Quantum Mechanics — These notes review a description of quantum mechanics in terms of the topology of spaces, basing on the axioms of Topological Quantum Field Theory and path"
 ---
+Topological Quantum Mechanics
 Let us imagine the most simple situation: a one-dimensional TQFT. We will follow a physics-level
 exposition in [59]. See [60,61] for a more formal mathematical construction.
 16
@@ -130,4 +131,3 @@ dimensional case, calculation of trace is not intuitive: Closing a braid (an ope
 computes the Markov trace, rather then the ordinary trace. The regular trace should instead be computed
 as a sum of all diagonal elements. Embedding the construction in three dimensions clarifies the difference.
 18
-3.3

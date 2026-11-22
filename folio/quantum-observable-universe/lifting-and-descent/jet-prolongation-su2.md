@@ -1,4 +1,4 @@
-We explicitly construct the [jet prolongation](#prop:jet-prolongation) of $A = \mathcal{O}(\mathrm{SU}(2))$.
+One explicitly constructs the [jet prolongation](#prop:jet-prolongation) of $A = \mathcal{O}(\mathrm{SU}(2))$.
 
 **Kähler differentials.** The module of Kähler differentials is $\Omega^1(A) = \ker(m \colon A \otimes A \to A)$. For the left-invariant calculus on $\mathrm{SU}(2)$, this yields:
 $$

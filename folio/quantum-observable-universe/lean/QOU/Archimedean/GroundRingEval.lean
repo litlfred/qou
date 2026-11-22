@@ -66,7 +66,7 @@ ring; τ is a functor from the braided category
 to be constructible says nothing about τ, and `evalAt` should not be cited as
 progress on it.
 
--- Ref: [manuscript] quantum-observable-universe/substrate-parameter.md
+-- Ref: [leitner2026] quantum-observable-universe/substrate-parameter.md
 -/
 
 namespace QOU.Archimedean

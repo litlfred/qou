@@ -1,0 +1,771 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-2607.29018v1",
+  "pages": [
+    {
+      "page": 13,
+      "rotation": 0,
+      "drawings": 15,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1: Two forbidden subgraphs for line graphs"
+      ],
+      "labels": [
+        {
+          "text": "Theorem 5.1. Let n ≥2, and let S be a nonempty normal set in Sn. Then Cay(Sn, S) is a",
+          "bbox": [
+            62.36,
+            93.17,
+            532.91,
+            106.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathItalic8-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Bold",
+            "LMRoman12-Italic",
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "line graph if and only if one of the following holds:",
+          "bbox": [
+            62.36,
+            109.55,
+            322.24,
+            121.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Italic"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(a) S = Sn \\ {e}, and hence Cay(Sn, S) ∼= Kn!;",
+          "bbox": [
+            62.36,
+            132.1,
+            303.91,
+            149.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathItalic8-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Italic",
+            "LMRoman12-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(b) S = An \\ {e}, and hence Cay(Sn, S) ∼= 2Kn!/2;",
+          "bbox": [
+            61.71,
+            158.3,
+            319.81,
+            175.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathItalic8-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Italic",
+            "LMRoman12-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(c) n = 4 and S = {(1 2)(3 4), (1 3)(2 4), (1 4)(2 3)}, and hence Cay(Sn, S) ∼= 6K4.",
+          "bbox": [
+            63.01,
+            184.51,
+            479.75,
+            201.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathItalic8-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Italic",
+            "LMRoman12-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Our proof of Theorem 5.1 is based on Beineke’s characterization of line graphs. In 1970,",
+          "bbox": [
+            79.92,
+            214.35,
+            532.98,
+            226.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "he proved [3] that a graph is a line graph if and only if it does not contain any one of the",
+          "bbox": [
+            62.36,
+            230.59,
+            533.0,
+            242.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "nine forbidden graphs as an induced subgraph. For our purposes, we only show two of these",
+          "bbox": [
+            62.36,
+            246.83,
+            532.95,
+            258.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "nine forbidden subgraphs, denoted by H1 and H2, in Figure 1.",
+          "bbox": [
+            62.36,
+            263.07,
+            381.58,
+            276.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMRoman12-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "τ1",
+          "bbox": [
+            152.59,
+            288.35,
+            163.77,
+            303.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            9.56,
+            14.35
+          ]
+        },
+        {
+          "text": "τ1",
+          "bbox": [
+            457.74,
+            312.07,
+            468.92,
+            327.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            9.56,
+            14.35
+          ]
+        },
+        {
+          "text": "τ2",
+          "bbox": [
+            183.19,
+            334.23,
+            194.37,
+            349.69
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            9.56,
+            14.35
+          ]
+        },
+        {
+          "text": "ω",
+          "bbox": [
+            234.22,
+            335.31,
+            242.97,
+            349.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "δ",
+          "bbox": [
+            92.99,
+            337.2,
+            99.22,
+            351.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "τ2",
+          "bbox": [
+            457.74,
+            346.09,
+            468.92,
+            361.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            9.56,
+            14.35
+          ]
+        },
+        {
+          "text": "δ",
+          "bbox": [
+            384.56,
+            349.06,
+            390.78,
+            363.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "τ3",
+          "bbox": [
+            152.59,
+            380.11,
+            163.77,
+            395.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            9.56,
+            14.35
+          ]
+        },
+        {
+          "text": "τ3",
+          "bbox": [
+            457.74,
+            380.11,
+            468.92,
+            395.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            9.56,
+            14.35
+          ]
+        },
+        {
+          "text": "H1",
+          "bbox": [
+            161.34,
+            405.1,
+            174.64,
+            417.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "H2",
+          "bbox": [
+            420.14,
+            405.1,
+            433.44,
+            417.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic10-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Figure 1: Two forbidden subgraphs for line graphs",
+          "bbox": [
+            168.53,
+            428.4,
+            426.77,
+            440.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The following lemma deals with the case when the connection set contains all transposi-",
+          "bbox": [
+            79.92,
+            460.6,
+            532.93,
+            472.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "tions. In its proof we write x ∼y to denote that x and y are adjacent in the Cayley graph",
+          "bbox": [
+            62.36,
+            476.7,
+            532.95,
+            488.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Cay(Sn, S) under consideration.",
+          "bbox": [
+            62.36,
+            493.08,
+            225.74,
+            505.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathItalic8-Regular",
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Lemma 5.2. Let n ≥2, and let S be a nonempty normal set in Sn which contains the",
+          "bbox": [
+            62.36,
+            519.14,
+            532.91,
+            533.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathItalic8-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Bold",
+            "LMRoman12-Italic",
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "conjugacy class of all transpositions. Then Cay(Sn, S) is a line graph if and only if S =",
+          "bbox": [
+            62.36,
+            535.52,
+            532.92,
+            548.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathItalic8-Regular",
+            "LMRoman12-Italic",
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Sn \\ {e}, or equivalently, Cay(Sn, S) ∼= Kn!.",
+          "bbox": [
+            62.36,
+            548.11,
+            286.21,
+            565.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathItalic8-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Italic",
+            "LMRoman12-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Proof. The sufficiency is obvious. It remains to prove the necessity.",
+          "bbox": [
+            62.36,
+            577.96,
+            407.66,
+            589.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Italic",
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Suppose that Cay(Sn, S) is a line graph.",
+          "bbox": [
+            79.92,
+            594.2,
+            296.6,
+            607.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathItalic8-Regular",
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Then by Beineke’s characterization it does",
+          "bbox": [
+            306.78,
+            594.2,
+            532.93,
+            606.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "not contain H1 or H2 (see Figure 1) as an induced subgraph. We aim to prove that every",
+          "bbox": [
+            62.36,
+            610.44,
+            532.96,
+            624.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMRoman12-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "permutation σ ∈Sn with |supp(σ)| ≥2 belongs to S. We prove this statement by induction",
+          "bbox": [
+            62.36,
+            626.53,
+            532.96,
+            640.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathItalic8-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "on |supp(σ)|.",
+          "bbox": [
+            62.36,
+            642.77,
+            130.48,
+            654.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "If |supp(σ)| = 2, then the statement follows from the assumption that S",
+          "bbox": [
+            140.6,
+            642.77,
+            532.29,
+            654.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "contains all transpositions. If |supp(σ)| = 3, then σ ∈S, for otherwise an induced subgraph",
+          "bbox": [
+            62.36,
+            659.01,
+            532.98,
+            671.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "of Cay(Sn, S) isomorphic to H2 can be easily found by taking δ = e, τ1 = (1 2), τ2 = (2 3),",
+          "bbox": [
+            62.36,
+            675.39,
+            532.93,
+            689.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathItalic8-Regular",
+            "LMRoman12-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "and τ3 = (1 3) in Figure 1.",
+          "bbox": [
+            62.36,
+            691.63,
+            197.08,
+            705.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMRoman12-Regular",
+            "LMRoman8-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Assume inductively that for some k ≥4 every permutation in Sn with support size at",
+          "bbox": [
+            79.92,
+            707.73,
+            532.92,
+            721.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathItalic8-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "most k −1 belongs to S. We now show that for an arbitrary permutation σ ∈Sn with",
+          "bbox": [
+            62.36,
+            723.97,
+            532.91,
+            737.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathItalic8-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "|supp(σ)| = k we must have σ ∈S. Suppose first that the cycle decomposition of σ contains",
+          "bbox": [
+            62.36,
+            740.21,
+            532.97,
+            752.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMMathItalic12-Regular",
+            "LMMathSymbols10-Regular",
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "13",
+          "bbox": [
+            291.79,
+            771.71,
+            303.5,
+            783.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "LMRoman12-Regular"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    }
+  ]
+}

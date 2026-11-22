@@ -10,6 +10,7 @@ source_sha256: 18321b615ffc968b
 toc_source: outline
 doc_brief: "A Tutorial on Knots and Quantum Mechanics — These notes review a description of quantum mechanics in terms of the topology of spaces, basing on the axioms of Topological Quantum Field Theory and path"
 ---
+Topological Tangling and Quantum Entanglement
 Quantum entanglement is a property of quantum mechanical systems quantified by correlations.
 A
 canonical example of quantum entanglement is the correlation in the Einstein-Podolsky-Rosen (EPR) or
@@ -101,4 +102,3 @@ of AdS/CFT correspondence [94]. The latter states a duality between a nongravita
 space Σ and a gravitational theory in some M such that Σ = ∂M, is the boundary of M. In this context
 entanglement between different parts of Σ corresponds to specific geometries of the spacetime manifold
 M.
-4.2

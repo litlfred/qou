@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1412.4711v1",
  "source_sha256": "4fb1d6ee062cca8c",
- "brief": "CHARACTER VARIETIES FOR SL (3, C): THE FIGURE EIGHT KNOT — We give a description of several representation varieties of the fundamental group of the complement of the ﬁgure eight knot in PGL(3, C) or",
- "extended": "**CHARACTER VARIETIES FOR SL (3, C): THE FIGURE EIGHT KNOT**\n\n*E. FALBEL, A. GUILLOUX, P.-V. KOSELEFF*\n\n29 pp, 20 sections.\n\n**Abstract.** We give a description of several representation varieties of the fundamental group of the complement of the ﬁgure eight knot in PGL(3, C) or PSL(3 , C). We obtain a description of the projection of the representation variety into the character variety of the boundary torus into SL(3, C).\n\n**Outline.** Introduction; 1 Representation spaces; 1.1 Representation variety and character varie; 1.2 Decorated versions; 1.3 Peripheral representations: choosing a mer; 1.4 Deformation variety; 2.1 Triangulation; 1.5 A diagram; 1.6 The A-variety; 2.2 Presentations; 2 The figure eight knot complement; 3 The deformation variety for the figure eight; 3.1 Computational tools; 3.3 Overview of the computations.; 3.4 Explicit computations for the Figure Eight; 4 Eigenvalues of peripheral representations; 4.1 A-variety; 4.2 Where are some already known representatio",
+ "brief": "CHARACTER VARIETIES FOR SL(3, C): THE FIGURE EIGHT KNOT — We give a description of several representation varieties of the fundamental group of the complement of the ﬁgure eight knot in PGL(3, C) or",
+ "extended": "**CHARACTER VARIETIES FOR SL(3, C): THE FIGURE EIGHT KNOT**\n\n*E. FALBEL, A. GUILLOUX, P.-V. KOSELEFF*\n\n29 pp, 25 sections.\n\n**Abstract.** We give a description of several representation varieties of the fundamental group of the complement of the ﬁgure eight knot in PGL(3, C) or PSL(3, C). We obtain a description of the projection of the representation variety into the character variety of the boundary torus into SL(3, C).\n\n**Outline.** Front matter; Introduction; 1 Representation spaces; 1.1 Representation variety and character varie; 1.2 Decorated versions; 1.3 Peripheral representations: choosing a mer; 1.4 Deformation variety; 1.5 A diagram; 1.6 The A-variety; 2 The figure eight knot complement; 2.1 Triangulation; 2.2 Presentations; 3 The deformation variety for the figure eight; 3.1 Computational tools; 3.2 An algebraic representation of Defor ( M, ; 3.3 Overview of the computations.; 3.4 Explicit computations for the Figure Eight; 4 Eigenvalues of peripheral representations",
  "tokens": {
   "brief": 49,
-  "extended": 249
+  "extended": 248
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-introduction",
    "title": "Introduction",
@@ -40,29 +45,29 @@
    "pages": "6-8"
   },
   {
-   "id": "sec-006-21-triangulation",
-   "title": "Triangulation",
-   "pages": "8-8"
-  },
-  {
-   "id": "sec-007-15-a-diagram",
+   "id": "sec-006-15-a-diagram",
    "title": "A diagram",
    "pages": "8-8"
   },
   {
-   "id": "sec-008-16-the-a-variety",
+   "id": "sec-007-16-the-a-variety",
    "title": "The A-variety",
    "pages": "8-9"
   },
   {
-   "id": "sec-009-22-presentations",
-   "title": "Presentations",
+   "id": "sec-008-2-the-figure-eight-knot-complement",
+   "title": "The figure eight knot complement",
    "pages": "9-9"
   },
   {
-   "id": "sec-010-2-the-figure-eight-knot-complement",
-   "title": "The figure eight knot complement",
+   "id": "sec-009-21-triangulation",
+   "title": "Triangulation",
    "pages": "9-10"
+  },
+  {
+   "id": "sec-010-22-presentations",
+   "title": "Presentations",
+   "pages": "10-10"
   },
   {
    "id": "sec-011-3-the-deformation-variety-for-the-figure-eight-k",
@@ -72,40 +77,60 @@
   {
    "id": "sec-012-31-computational-tools",
    "title": "Computational tools",
-   "pages": "11-13"
+   "pages": "11-12"
   },
   {
-   "id": "sec-013-33-overview-of-the-computations",
+   "id": "sec-013-32-an-algebraic-representation-of-defor-m-t",
+   "title": "An algebraic representation of Defor ( M, T )",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-014-33-overview-of-the-computations",
    "title": "Overview of the computations.",
    "pages": "13-16"
   },
   {
-   "id": "sec-014-34-explicit-computations-for-the-figure-eight-kn",
+   "id": "sec-015-34-explicit-computations-for-the-figure-eight-kn",
    "title": "Explicit computations for the Figure Eight Knot complement.",
    "pages": "16-19"
   },
   {
-   "id": "sec-015-4-eigenvalues-of-peripheral-representations",
+   "id": "sec-016-4-eigenvalues-of-peripheral-representations",
    "title": "Eigenvalues of peripheral representations",
    "pages": "19-20"
   },
   {
-   "id": "sec-016-41-a-variety",
+   "id": "sec-017-41-a-variety",
    "title": "A-variety",
    "pages": "20-20"
   },
   {
-   "id": "sec-017-42-where-are-some-already-known-representations",
+   "id": "sec-018-42-where-are-some-already-known-representations",
    "title": "Where are some already known representations ?",
    "pages": "20-22"
   },
   {
-   "id": "sec-018-5-deforming-representations-another-way-to-param",
+   "id": "sec-019-5-deforming-representations-another-way-to-param",
    "title": "Deforming representations: another way to parametrize the components",
-   "pages": "22-28"
+   "pages": "22-24"
   },
   {
-   "id": "sec-019-references",
+   "id": "sec-020-51-the-first-component-r1",
+   "title": "The first component, R1",
+   "pages": "24-25"
+  },
+  {
+   "id": "sec-021-52-the-other-two-components-r2-and-r3",
+   "title": "The other two components, R2 and R3",
+   "pages": "25-26"
+  },
+  {
+   "id": "sec-022-53-a-focus-on-the-pu21-case",
+   "title": "A focus on the PU(2,1) case",
+   "pages": "26-28"
+  },
+  {
+   "id": "sec-023-references",
    "title": "References",
    "pages": "28-29"
   }

@@ -1,0 +1,49 @@
+44 Chapter 3 — Perverse sheaves on semiabelian varieties
+
+Proof. We first claim that for any given perverse sheaf P € P(X), the set
+of all characters 7 which violate the conditions in our assumption GV(X)
+forms a closed subset of the scheme II(X). To see this, consider the Mellin
+transforms .@(P) and .%,(P) as defined in [41, sect. 3.3] (in loc. cit. the
+definition is only given for algebraic tori, but it carries over verbatim to the
+case at hand). These Mellin transforms are objects of the bounded derived
+category of coherent sheaves on II(X) with the property that for all i € Z
+and any character y € II(X) we have isomorphisms
+
+Hi(X,Py) = 20\(Li, M(P)),
+H'(X,Py) = H\(Liy.M,(P)),
+
+where iy : {7} — II(X) denotes the embedding of the closed point given by
+the chosen character. Furthermore, we have a morphism .“%(P) —>.@,(P)
+which induces via the above identifications the forget support morphism on
+cohomology. Since on a Noetherian scheme the support of any coherent
+sheaf is a closed subset, it follows that the locus of all characters y which
+violate GV (X) forms a closed subset .Y(P) C II(X) as claimed.
+
+We must show that under the assumption GV (A) the complement of this
+closed subset .7(P) meets every irreducible component of II(X). So we
+must see that for at least one character 7 in each component the properties
+in GV(X) hold. To this end consider the exact sequence
+
+oo-rboxba so
+
+which defines the given semiabelian variety. Lemma 3.2 below will show
+that every component of II(X) contains a character x such that the forget
+support morphism
+Rfi(Py) —> Rfe(Py)
+
+is an isomorphism. In this case Artin’s vanishing theorem for the affine
+morphism f also shows that these two isomorphic direct image complexes
+are perverse [41, lemma 2.4]. For all @ € II(A) and y = f*(@) € II(X) the
+projection formula furthermore says
+
+(RA(Py))9 = Rfi(Pyy) and (Rf(Py))o = Rf (Pry),
+hence we are finished by an application of the vanishing assumption GV(A)
+to these perverse direct images. Oo
+
+To fill in the missing statement in the above proof, we consider the given
+semiabelian variety as a torsor f : ¥ —> A under the torus T in the sense
+of [74, sect. III.4]. The condition of being a torsor is satisfied since clearly
+the morphism X x, T —> X x4X, (x,t) > (x, a1) is an isomorphism. The
+result we are looking for only uses the structure as a torsor, and for its proof
+it will be convenient to forget that our base A is an abelian variety. So we
+will work in the following setting.

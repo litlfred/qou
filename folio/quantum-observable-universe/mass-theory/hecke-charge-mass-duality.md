@@ -35,7 +35,7 @@ $(\int_A \otimes \mathrm{id}) \circ \Delta$, which projects
 through the Frobenius form (collapsing tower data) and
 comultiplies (probing the tower depth).
 Its Markov trace
-([mass via Markov trace](#prop:hecke-mass-trace)) gives the
+([mass via Markov trace](#conj:hecke-mass-trace)) gives the
 categorical mass $\mathfrak{m} = \lvert \mathrm{tr}_M(\Phi_{\mathrm{mass}}(\beta)) \rvert$,
 a **vertical** invariant measuring resistance to
 transport through the comultiplication.

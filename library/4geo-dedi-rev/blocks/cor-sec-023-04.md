@@ -1,0 +1,1 @@
+(1) The trace of Lφ ρλ(µ) is an invariant of (Mφ, r, κ) and µ, well-deﬁned up to multipli- cation by 4N-th roots of unity. It depends on the isotopy class of φ and satisﬁes Hred N (Mφ, r, κ) = X ρλ(µ)⊂ρλ Trace  Lφ ρλ(µ)  . (2) The invariants Trace  Lφ ρλ(µ)  do not depend on the values of the weight κ on longitudes.

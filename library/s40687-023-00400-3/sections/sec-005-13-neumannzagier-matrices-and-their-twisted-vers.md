@@ -1,215 +1,245 @@
 ---
 doc_id: s40687-023-00400-3
-doc_title: "bonn.mpg.de/stavros 2MaxPlanckInstitutefor Mathematics,Bonn,Germany Fulllistofauthorinformationis availableattheendofthearticle DedicatedtoWalterNeumann andDonZagier,withadmiration"
+doc_title: "Twisted Neumann–Zagier matrices"
 section_id: sec-005-13-neumannzagier-matrices-and-their-twisted-vers
 section_title: "Neumann–Zagier matrices and their twisted version"
 section_number: 1.3
 pages: 4-7
 source_pdf: s40687-023-00400-3.pdf
 source_sha256: fd7638a8cf512a99
+toc_source: outline
 doc_brief: "TWISTED NEUMANN–ZAGIER MATRICES — The Neumann–Zagier matrices of an ideal triangulation are integer matrices with symplectic properties whose entries encode the number of tetrahedra that wind around"
 duplicate_of: "arxiv-2109.00379v1"
 ---
 Having already discussed the torsion and twisted torsion, we now recall some basic facts
 from ideal triangulations of 3-manifolds and their gluing equations, following [22,26].
 Let M be an oriented hyperbolic 3-manifold with a torus boundary component (often
-called a one-cusped hyperbolic 3-manifold) equipped with an ideal triangulationT .A n
-Eulercharacteristicargumentshowsthatthenumber N oftetrahedrain T isequaltothe
-number of edges. We order the edgesei and the tetrahedra/Delta1j of T for 1≤ i, j ≤ N.A
+called a one-cusped hyperbolic 3-manifold) equipped with an ideal triangulation T . An
+Euler characteristic argument shows that the number N of tetrahedra in T is equal to the
+number of edges. We order the edges ei and the tetrahedra j of T for 1 ≤i, j ≤N. A
 quad type of a tetrahedron is a pair of opposite edges; hence each tetrahedron has three
-quad types. We ﬁx an orientation and a quad type of each tetrahedron/Delta1
-j so that each
-edgeof /Delta1j admitsashapeparameteramong
-zj ,z ′
-j = 1
-1 − zj
+quad types. We ﬁx an orientation and a quad type of each tetrahedron j so that each
+edge of j admits a shape parameter among
+zj, z′
+j =
+1
+1 −zj
 , or z′′
-j = 1 − 1
+j = 1 −1
 zj
-∈ C \{0,1}
-with opposite edges having same parameters (see Fig.1). We denote by□ the three pairs
-ofoppositeedgesofatetrahedron,sothattheedgesof □ areassignedtheedgeparameter
-z□ .
-A complete hyperbolic structure ofM can be described by a special solution of the
+∈C \ {0, 1}
+with opposite edges having same parameters (see Fig. 1). We denote by □the three pairs
+of opposite edges of a tetrahedron, so that the edges of □are assigned the edge parameter
+z□.
+A complete hyperbolic structure of M can be described by a special solution of the
 gluing equations. The latter describe the holonomy of the hyperbolic structure around
-eachedge e
-i of T ,andhavethe(logarithmic)form
-N∑
+each edge ei of T , and have the (logarithmic) form
+N
+
 j=1
-(
+
 Gij log zj + G′
 ij log z′
 j + G′′
 ij log z′′
 j
-)
+
 = 2π
 √
-−1. (5)
-Here G, G′and G′′arethegluingequationmatriceswhoserowsandcolumnsareindexed
-by the edges and by the tetrahedra ofT , respectively, such that the (i, j)-entry of G□ is
-the number of edges of/Delta1j with parameter z□
-j is incident to the edgeei in T .I tw i l lb e
-convenienttointroduce ζ-variables
-ζ = dlog z
-dz = 1
-z , ζ′= dlog z′
-dz = 1
-1 − z , ζ′′= dlog z′′
-dz = 1
-z(z −1) (6)
-following[25]. Note thatthe three shape parameters ineach tetrahedronsatisfy the rela-
-tion zz′z′′=− 1, and this implies the linear relationζ + ζ′+ ζ′′= 0. Thus one can
-eliminate the variableζ′from any expression given in terms ofζ ,ζ′,a n dζ′′, arriving at
+−1.
+(5)
+Here G, G′ and G′′ are the gluing equation matrices whose rows and columns are indexed
+by the edges and by the tetrahedra of T , respectively, such that the (i, j)-entry of G□is
+the number of edges of j with parameter z□
+j
+is incident to the edge ei in T . It will be
+convenient to introduce ζ-variables
+ζ = d log z
+dz
+= 1
+z ,
+ζ ′ = d log z′
+dz
+=
+1
+1 −z ,
+ζ ′′ = d log z′′
+dz
+=
+1
+z(z −1)
+(6)
+following [25]. Note that the three shape parameters in each tetrahedron satisfy the rela-
+tion zz′z′′ = −1, and this implies the linear relation ζ + ζ ′ + ζ ′′ = 0. Thus one can
+eliminate the variable ζ ′ from any expression given in terms of ζ, ζ ′, and ζ ′′, arriving at
 the Neumann–Zagier matrices
-A := G − G′, B := G′′− G′. (7)
-Notethat
-Gdiag(ζ) + G′diag(ζ′) + G′′diag(ζ′′) = Adiag(ζ) + Bdiag(ζ′′)( 8 )
-S. Garoufalidis, S. Yoon Res Math Sci (2023) 10:37 Page 5 of 23 37
-wherediag( ζ□ )denotesthediagonalmatrixwithdiagonalentries ζ□
-1 ,... ,ζ□
+A := G −G′,
+B := G′′ −G′.
+(7)
+Note that
+G diag(ζ) + G′ diag(ζ ′) + G′′ diag(ζ ′′) = A diag(ζ) + B diag(ζ ′′)
+(8)
+where diag(ζ □) denotes the diagonal matrix with diagonal entries ζ □
+1 , . . . , ζ □
 N .
-TheNZmatriceshaveremarkablepropertiesdiscoveredin[ 22]whichisastartingpoint
-forthequantizationofthegluingequationsandforpassingfromhyperbolicgeometryto
-quantumtopology.ThesymplecticpropertyoftheNZmatricesimpliesthat
-AB
-T = BAT . (9)
-Therearetwoenhancementsofthegluingequationsandoftheircorrespondingmatri-
-ces.Theﬁrstisobtainedbylookingatthecusp,i.e.,theperipheral(alsocalledboundary)
-torusofthe3-manifold.Bya peripheral curve,wemeananoriented,homotopicallynon-
-trivial,simpleclosedcurveintheperipheraltorusof M.Aperipheralcurve γ givesatriple
-(C
-γ , C′
+The NZ matrices have remarkable properties discovered in [22] which is a starting point
+for the quantization of the gluing equations and for passing from hyperbolic geometry to
+quantum topology. The symplectic property of the NZ matrices implies that
+ABT = BAT.
+(9)
+There are two enhancements of the gluing equations and of their corresponding matri-
+ces. The ﬁrst is obtained by looking at the cusp, i.e., the peripheral (also called boundary)
+torus of the 3-manifold. By a peripheral curve, we mean an oriented, homotopically non-
+trivial, simple closed curve in the peripheral torus of M. A peripheral curve γ gives a triple
+(Cγ , C′
 γ , C′′
-γ)ofrowvectorsin ZN thatdescribethecompletenessequationas
-N∑
+γ ) of row vectors in ZN that describe the completeness equation as
+N
+
 j=1
-(
+
 Cγ j log zj + C′
 γ j log z′
 j + C′′
 γ j log z′′
 j
-)
-= 0. (10)
-Fixingaperipheralcurve γ,let G□
-γ denotethematrixobtainedfrom G□ byreplacingthe
-lastrowby C□
-γ ,andlikewisefor Aγ and Bγ.
-The second enhancement is acombinatorial ﬂattening of T ,t h a ti sat r i p l e(f, f ′,f ′′)o f
-columnvectorsin ZN suchthat
-Gf + G′f ′+ G′′f ′′= (2,... ,2)T , (11)
-f + f ′+ f ′′= (1,... ,1)T , (12)
+
+= 0.
+(10)
+Fixing a peripheral curve γ , let G□
+γ denote the matrix obtained from G□by replacing the
+last row by C□
+γ , and likewise for Aγ and Bγ .
+The second enhancement is a combinatorial ﬂattening of T , that is a triple (f, f ′, f ′′) of
+column vectors in ZN such that
+Gf + G′f ′ + G′′f ′′ = (2, . . . , 2)T,
+(11)
+f + f ′ + f ′′ = (1, . . . , 1)T,
+(12)
 Cγ f + C′
-γ f ′+ C′′
-γ f ′′= 0 (13)
-for any peripheral curveγ. This term was introduced in [6, Sec.4.4] as a necessary ingre-
+γ f ′ + C′′
+γ f ′′ = 0
+(13)
+for any peripheral curve γ . This term was introduced in [6, Sec.4.4] as a necessary ingre-
 dient to deﬁne the 1-loop invariant (and there, it was called a combinatorial ﬂattening
 compatible with any peripheral curve). Every ideal triangulation has combinatorial ﬂat-
-tenings[21,Thm.4.5].
-ThisconcludesourdiscussionoftheNZmatrices.Wenowintroduceatwistedversion
-oftheNZmatricesofanidealtriangulation
-T ofa3-manifold M asabove.Wewillﬁxan
-epimorphism α : π1(M) → Zand aperipheral curveμsatisfying α(μ) = 1.For instance,
-if M is a knot complement inS3, thenα is the abelianization map andμ is a meridian
-of the knot. Let~M and M(n) denote the cyclic covers ofM corresponding toα−1(0) and
-α−1(nZ), respectively. The ideal triangulation~T of the inﬁnite cyclic cover~M induced
-from T isequippedwithanactionofthedecktransformationgroup Z(generatedbythe
-μ-action),andinducesanidealtriangulation T (n) ofthe n-foldcycliccover M(n).
-We choose lifts~ei and ~/Delta1j of ei and /Delta1j to ~T , respectively, and fork ∈ Z let G□
+tenings [21, Thm.4.5].
+This concludes our discussion of the NZ matrices. We now introduce a twisted version
+of the NZ matrices of an ideal triangulation T of a 3-manifold M as above. We will ﬁx an
+epimorphism α : π1(M) →Z and a peripheral curve μ satisfying α(μ) = 1. For instance,
+if M is a knot complement in S3, then α is the abelianization map and μ is a meridian
+of the knot. Let 
+M and M(n) denote the cyclic covers of M corresponding to α−1(0) and
+α−1(nZ), respectively. The ideal triangulation T of the inﬁnite cyclic cover 
+M induced
+from T is equipped with an action of the deck transformation group Z (generated by the
+μ-action), and induces an ideal triangulation T (n) of the n-fold cyclic cover M(n).
+We choose liftsei and j of ei and j to T , respectively, and for k ∈Z let G□
 k be the
-N × N matrix whose (i, j)-entry is the number of edges ofμk · ~/Delta1j with parameter z□
+N × N matrix whose (i, j)-entry is the number of edges of μk · j with parameter z□
 j
-is incident to the edge~ei in ~T . Note thatG□
+is incident to the edge ei in T . Note that G□
 k is a zero matrix for all but ﬁnitely many
-k, as there are ﬁnitely many tetrahedra around~ei. We deﬁne thetwisted gluing equation
-matrices G□ (t)of T by
-G□ (t): =
-∑
+k, as there are ﬁnitely many tetrahedra aroundei. We deﬁne the twisted gluing equation
+matrices G□(t) of T by
+G□(t) :=
+
 k∈Z
 G□
-k tk (14)
-andthe twisted Neumann–Zagier matrices by
-A(t): = G(t) − G′(t), B(t): = G′′(t) − G′(t). (15)
-37 Page 6 of 23 S. Garoufalidis, S. Yoon Res Math Sci (2023) 10:37
-(Moregenerally,if X(t)isamatrixwithentriesin Z[t±1],wedenoteby Xk thecoeﬃcient
-of tk in X(t).)Notethattherowsandcolumnsofthesematricesareindexedbytheedges
-and tetrahedra ofT , respectively, and that their entries are in the ringZ[t±1]. Since the
-above matrices are well deﬁned after ﬁxing lifts of each edge and tetrahedron ofT ,a
-diﬀerent choice of lifts changesG□ (t), A(t)a n dB(t) by multiplication from the left or
-right by the same diagonal matrix diag(tc1 ,t c2 ,... ,t cN ) for integersc1,c2,... ,c N. This
-ambiguitypropagatestoanyinvariantconstructedusingthesematrices.
-AﬁrstpropertyofthetwistedNZmatrices A(t)and B(t)isthattheydeterminetheNZ
-matrices A(n) and B(n) of the cyclic coversT (n) of T , and moreover they do so via block
+k tk
+(14)
+and the twisted Neumann–Zagier matrices by
+A(t) := G(t) −G′(t),
+B(t) := G′′(t) −G′(t).
+(15)
+37
+Page 6 of 23
+(More generally, if X(t) is a matrix with entries in Z[t±1], we denote by Xk the coeﬃcient
+of tk in X(t).) Note that the rows and columns of these matrices are indexed by the edges
+and tetrahedra of T , respectively, and that their entries are in the ring Z[t±1]. Since the
+above matrices are well deﬁned after ﬁxing lifts of each edge and tetrahedron of T , a
+diﬀerent choice of lifts changes G□(t), A(t) and B(t) by multiplication from the left or
+right by the same diagonal matrix diag(tc1, tc2, . . . , tcN ) for integers c1, c2, . . . , cN. This
+ambiguity propagates to any invariant constructed using these matrices.
+A ﬁrst property of the twisted NZ matrices A(t) and B(t) is that they determine the NZ
+matrices A(n) and B(n) of the cyclic covers T (n) of T , and moreover they do so via block
 circulant matrices, i.e., square matrices such that each row is obtained by its predecessor
-by a cyclic shift. We refer to [4]a n d[24] for details on the properties of block circulant
+by a cyclic shift. We refer to [4] and [24] for details on the properties of block circulant
 matrices.
 Theorem 1.1 We have
-X
-(n) =
+X(n) =
 ⎛
-⎜⎜⎜
-⎜⎝
-∑
+⎜⎜⎜⎜⎝
+
 r≡0 Xr
-∑
-r≡1 Xr ··· ∑
-r≡n−1 Xr∑
+
+r≡1 Xr · · · 
+
 r≡n−1 Xr
-∑
-r≡0 Xr ··· ∑
+
+r≡n−1 Xr
+
+r≡0 Xr · · · 
+
 r≡n−2 Xr
-..
-.
-..
-. . . . ..
-.∑
+...
+...
+...
+...
+
 r≡1 Xr
-∑
-r≡2 Xr ··· ∑
+
+r≡2 Xr · · ·
+
 r≡0 Xr
 ⎞
-⎟⎟⎟
-⎟⎠
+⎟⎟⎟⎟⎠
 (16)
-for X = G
-□ , A or B.
+for X = G□, A or B.
 The twisted NZ matrices satisfy a twisted version of the symplectic property of Equa-
-tion(9).
+tion (9).
 Theorem 1.2 We have
-A(t)B(1/t)T = B(t)A(1/t)T . (17)
-In other words,A(t)B(1/t)T is symmetric under tranposition followed byt ↦→ 1/t.I n
-particular, A(ω)B(ω)∗ is Hermitian forω ∈ Cwith |ω|= 1a n ds oi sB(ω)−1A(ω)i fB(ω)
-is non-singular. HereX∗ is the complex conjugate of the transpose of a matrixX.N o t e
-that given any ideal triangulation, we can choose quads so thatB (hence alsoB(t), since
-B(1) = B)isinvertible;see[ 6,App.A].
-Remark 1.3 OnecancheckthatEquation( 17)(orequivalently,itsrestrictionto n-throots
-ofunity t)isequivalenttothat A(n)(B(n))T = B(n)(A(n))T forall n ≥ 1.
+A(t)B(1/t)T = B(t)A(1/t)T.
+(17)
+In other words, A(t)B(1/t)T is symmetric under tranposition followed by t 	→1/t. In
+particular, A(ω)B(ω)∗is Hermitian for ω ∈C with |ω| = 1 and so is B(ω)−1A(ω) if B(ω)
+is non-singular. Here X∗is the complex conjugate of the transpose of a matrix X. Note
+that given any ideal triangulation, we can choose quads so that B (hence also B(t), since
+B(1) = B) is invertible; see [6, App.A].
+Remark 1.3 One can check that Equation (17) (or equivalently, its restriction to n-th roots
+of unity t) is equivalent to that A(n)(B(n))T = B(n)(A(n))T for all n ≥1.
 We now come to a conjectural property of the twisted NZ matrices, which we have
-checkedinnumerousexamples.
+checked in numerous examples.
 Conjecture 1.4 The Laurent polynomials det(A(t)) and det(B(t)) are palindromic, i.e.,
-satisfy p(t) = εtr p(1/t)forsome ε =± 1andaninteger r.
+satisfy p(t) = εtrp(1/t) for some ε = ±1 and an integer r.
 We next discuss the behavior of the twisted NZ matrices under a 2–3 Pachner move
-relatinganidealtriangulation T with N tetrahedratoanotherone T with N+1tetrahedra.
-Recallthatsuchamoveisdeterminedbytwotetrahedrawithacommonfacein T ,which
-becomethreetetrahedrawithacommonedgein T asshowninFig. 2below.Letuswrite
-thetwistedNZmatrices A(t)and B(t)ofthetriangulation T schematicallyincolumnsas
-A(t) = (a1,a 2,a i), B(t) = (b1,b 2,b i), (18)
-S. Garoufalidis, S. Yoon Res Math Sci (2023) 10:37 Page 7 of 23 37
-with ai meaning (a3,a4, ..., aN) and similarly forbi.L e tA(t)a n dB(t) denote the corre-
-spondingtwistedNZmatricesof T .
+relating an ideal triangulation T with N tetrahedra to another one T with N +1 tetrahedra.
+Recall that such a move is determined by two tetrahedra with a common face in T , which
+become three tetrahedra with a common edge in T as shown in Fig. 2 below. Let us write
+the twisted NZ matrices A(t) and B(t) of the triangulation T schematically in columns as
+A(t) = (a1, a2, ai),
+B(t) = (b1, b2, bi),
+(18)
+with ai meaning (a3, a4, ..., aN) and similarly for bi. Let A(t) and B(t) denote the corre-
+sponding twisted NZ matrices of T .
 Theorem 1.5 With the above notation, there exists a lower triangular matrix P with 1’s
 on the diagonal such that
 P A(t) =
-(
-−1 −1 −10
+
+−1
+−1 −1 0
 b1 + b2 a1 a2 ai
-)
-,P B(t) =
-(
-−1 −1 −10
+
+,
+P B(t) =
+
+−1
+−1
+−1
+0
 0 a2 + b1 a1 + b2 bi
-)
-. (19)
-Thiscorrectstheomissionof P in[6,Eqn.(3.27)],whichdoesnotaﬀectthevalidityofthe
-proofsin[ 6].
+
+.
+(19)
+This corrects the omission of P in [6, Eqn.(3.27)], which does not aﬀect the validity of the
+proofs in [6].

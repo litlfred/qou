@@ -20,7 +20,7 @@ the framework's connection with KZ is *not* asserted. Archimedean by nature (`�
 
 -- Ref: [kohno1987] Kohno, Ann. Inst. Fourier 37 (1987) — KZ monodromy factors through the Hecke
 --      algebra, with `q` a root of unity at rational level.
--- Ref: [manuscript] docs/audits/2026-09-06-step-2-plan-hecke-monodromy.md §2C
+-- Ref: [leitner2026] docs/audits/2026-09-06-step-2-plan-hecke-monodromy.md §2C
 -/
 
 namespace QOU.Mass.KZUnitModulusPrune

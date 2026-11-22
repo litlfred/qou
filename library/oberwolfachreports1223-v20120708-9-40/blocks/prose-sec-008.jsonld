@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/oberwolfachreports1223-v20120708-9-40/blocks/prose-sec-008",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Any Kato is a deformation of blown up Hopf surfaces and has ( intriguing)b2",
-  "pageStart": 49,
-  "pageEnd": 49,
-  "text": "../sections/sec-008-0-any-kato-is-a-deformation-of-blown-up-hopf-sur.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/oberwolfachreports1223-v20120708-9-40",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/oberwolfachreports1223-v20120708-9-40",
+  "title": "Cork twisting exotic Stein 4-manifolds",
+  "pageStart": 23,
+  "pageEnd": 23,
+  "text": "../sections/sec-008-cork-twisting-exotic-stein-4-manifolds.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/oberwolfachreports1223-v20120708-9-40/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/oberwolfachreports1223-v20120708-9-40/manifest.jsonld",
   "provenance": "ingested"
 }

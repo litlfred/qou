@@ -36,7 +36,24 @@ top and `e_k² = δ e_k` fires. So this is a lemma with a proof, not a fit.
     k ∈ I'          always -- every product lands on a normal form whose I contains k
     |I'| = |J'|     always -- as it must, but it is checked rather than assumed
 
-## 🛑 What is NOT settled
+## 🛑 CORRECTED — the `(I', J')` rule was IN THIS CORPUS all along
+
+The section below said the `loops = 0` rule was "NOT identified" and "genuinely
+more intricate than an insertion". The measurement is right; the verdict is
+wrong. **It is a published Gröbner-Shirshov reduction and the folio's own
+bibliography records it** — `content/schema/references.ts` line 10450,
+`[kimlee2018]`, marked "Read in full 2026-08-09", names the two rewriting
+families `E_{i,j}E_i − E_{i−2,j}E_i` and `E_jE_{i,j} − E_jE_{i,j+2}` outright.
+Those two, with `E_i² → δE_i` and far commutation, reproduce **all 3456
+products below with zero mismatches**; `tl_gs_reduction_probe.py` checks it,
+together with closure on 19,413 monomial pairs and confluence.
+
+The rule is more intricate than an insertion — but it is *known*, and the
+sentence "none of the simple candidates fits" was a statement about my search,
+not about the corpus. What failed was corpus-grep **path 5** (ingested
+sources), run only after the guesses were exhausted rather than before them.
+
+The original text follows, uncorrected, because the numbers in it stand.
 
 **The `(I', J')` formula for the `loops = 0` branch.** 2378 products, and none
 of the simple candidates fits: `I' = I ∪ {k}` fails 1821, `I' ⊆ I ∪ {k}` fails

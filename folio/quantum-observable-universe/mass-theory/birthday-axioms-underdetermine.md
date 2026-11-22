@@ -1,6 +1,6 @@
 ## An axiom set that admits a model it was not meant to admit
 
-The corpus's `SurrealField` class asks for more than an ordered field. It also demands Conway's birthday — a map $\mathrm{birthday} : K \to \mathrm{Ordinal}$ — constrained by six axioms: its values at $0$ and $1$, its invariance under negation, a bound for sums, a bound for averages, and a bound of $\omega$ on the birthdays of real numbers.
+The surreal-field axiom system used in this corpus asks for more than an ordered field. It also demands Conway's birthday — a map $\mathrm{birthday} : K \to \mathrm{Ordinal}$ — constrained by six axioms: its values at $0$ and $1$, its invariance under negation, a bound for sums, a bound for averages, and a bound of $\omega$ on the birthdays of real numbers.
 
 Those six do not pin down the intended object.
 
@@ -20,7 +20,7 @@ A function taking only the values $0$ and $1$ is visibly not Conway's birthday, 
 
 The average bound is documented in the corpus as "exactly Conway's $\{L \mid R\}$ recipe" and as "genuinely independent" of the sum bound. Under $\beta$ it holds for a reason that has nothing to do with either: the right-hand side is at least $0 + 1 = 1$ whatever $x$ and $y$ are, and the left-hand side is at most $1$ because $\beta$ is bounded by $1$. The inequality is satisfied by slack alone. Under a bounded birthday the axiom constrains nothing.
 
-That is the sharpest form of the defect. The axiom carrying the most design commentary is the one the unintended model satisfies most trivially, and no amount of reading the commentary would reveal that — only exhibiting the model does.
+That is the sharpest form of the defect. The axiom carrying the most design commentary is the one the unintended model satisfies by default, and no amount of reading the commentary would reveal that — only exhibiting the model does.
 
 ## What follows, and what does not
 
@@ -28,7 +28,7 @@ That is the sharpest form of the defect. The axiom carrying the most design comm
 
 **What does not follow.** The axioms are not *inconsistent*, and nothing here says the surreal material built on them is wrong. It says that material is weaker than its vocabulary suggests, and that the gap is invisible from inside.
 
-The practical consequence is recorded in the formalisation: the resulting `SurrealField` structure on $\mathbb{R}^*$ is a plain definition and deliberately **never** a global instance. Registering it globally would silently apply every `SurrealField`-generic theorem to the hyperreals under a birthday that is not Conway's — turning a documented defect into a silent one.
+The practical consequence: the structure on $\mathbb{R}^*$ given by $\beta$ must **never** be treated as the intended one. Doing so would silently apply every theorem proved from these axioms to the hyperreals under a birthday that is not Conway's — turning a documented defect into a silent one.
 
 ## The limit-transfer conjecture, and why this does not rescue it
 

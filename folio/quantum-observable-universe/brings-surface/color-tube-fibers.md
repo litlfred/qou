@@ -1,4 +1,4 @@
-Let $z \in \mathbb{P}^1(\mathbb{C})$. The **color tube** at $z$ is the affine curve defined over $\mathbb{Z}[z]$ by the color tube cubic. We denote it $R_z$, $G_z$, or $B_z$ according to which color tube coordinate $\mathbf{r}_z$, $\mathbf{g}_z$, or $\mathbf{b}_z$ is used:
+Let $z \in \mathbb{P}^1(\mathbb{C})$. The **color tube** at $z$ is the affine curve defined over $\mathbb{Z}[z]$ by the color tube cubic. It is denoted $R_z$, $G_z$, or $B_z$ according to which color tube coordinate $\mathbf{r}_z$, $\mathbf{g}_z$, or $\mathbf{b}_z$ is used:
 
 ```tex
 \begin{equation}\label{eq:color-tube-fiber-def}

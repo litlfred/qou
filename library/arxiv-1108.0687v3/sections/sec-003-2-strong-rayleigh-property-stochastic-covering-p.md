@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1108.0687v3
-doc_title: "Concentration of Lipschitz functionals of determinantal a nd other strong Rayleigh measures"
+doc_title: "Concentration of Lipschitz functionals of determinantal and other strong Rayleigh measures"
 section_id: sec-003-2-strong-rayleigh-property-stochastic-covering-p
 section_title: "Strong Rayleigh property, stochastic covering property, and other negative dependence conditions"
 section_number: 2
 pages: 4-6
 source_pdf: 1108.0687v3.pdf
 source_sha256: 66ba88e13a429a0a
-doc_brief: "Concentration of Lipschitz functionals of determinantal a nd other strong Rayleigh measures — Let {X1,...,X n} be a collection of binary valued random variables and let f : {0, 1}n → R be a Lipschitz"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.988
-latex_coverage_ratio: 0.939
+latex_prose_ratio: 0.965
+latex_coverage_ratio: 0.977
+doc_brief: "Concentration of Lipschitz functionals of determinantal and other strong Rayleigh measures — Let {X1, . . ."
 ---
 []{#sec:covering label="sec:covering"}
 

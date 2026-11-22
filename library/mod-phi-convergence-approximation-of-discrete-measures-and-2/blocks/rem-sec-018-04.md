@@ -1,0 +1,1 @@
+— A central limit theorem for the random variables Yn has been proved by Rhoades in [51]. Our results immediately yield the speed of convergence of this analogue on function ﬁelds of the Erdős–Kac central limit theorem.

@@ -2,7 +2,8 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/rem-hyperbolic-overlap-saturation",
@@ -12,10 +13,9 @@
   ],
   "label": "rem:hyperbolic-overlap-saturation",
   "kind": "remark",
-  "title": "Hyperbolic-overlap strain saturation: $\\kappa^2 = \\pi\\nu/(2\\Gamma+\\pi\\nu)$ preserves Levi non-degeneracy",
+  "title": "Hyperbolic-overlap strain saturation: the core aspect ratio locks at $\\kappa^2 = \\pi\\nu/(2\\Gamma+\\pi\\nu)$",
   "uses": [
-    "papers/quantum-observable-universe/blocks/conj-ns-counterexample",
-    "papers/quantum-observable-universe/blocks/def-ns-obstruction",
+    "papers/quantum-observable-universe/blocks/prop-core-levi-form",
     "papers/quantum-observable-universe/blocks/rem-townsend-biot-savart-strain"
   ],
   "interprets": "papers/quantum-observable-universe/blocks/conj-levi-degeneracy",

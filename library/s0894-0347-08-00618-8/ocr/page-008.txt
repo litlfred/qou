@@ -1,0 +1,62 @@
+528 J. BORCEA, P. BRANDEN, AND T. M. LIGGETT
+
+Proposition 2.1. If f(z1,...,2n) is Rayleigh, then so are the following polynomi-
+als:
+
+(2) f(z1 +a1,...,2n +n) whenever a; > 0, i € [n];
+
+(3) f(z1,---;2n)le<a; for anya; >0,1<i<n;
+
+(4) f(@iz1,---,@nZn) for all a; > 0, i € [nl];
+
+(5) the “inversion” of f, i.e., the polynomial 21 -+-2,f(z74,.--
+
+-1).
+en ,
+
+(6) the polynomial in nk variables f (ko a Zi,---, kot an zni)
+
+To prove (1) note that by induction it is enough to do it for S = {i} and arbitrary
+
+i € [n]. This follows by first writing
+f(21,-++52n) = Oi f (Z1,--+,2n) + f(Z1s-+ +5 2n)lei=0
+
+and then letting z; — oo in the Rayleigh inequalities (4) for f corresponding to
+pairs of variables indexed by distinct j,k € [n] \ {i}.
+Proposition 2.2. A measure in B, or a polynomial in P, is Rayleigh if and only
+if it is h-NLCH.
+
+Proof. In Theorem 4.4] it was proved that if f € P, is Rayleigh, then f satisfies
+NLC, which combined with Proposition shows that f is h-NLC+. To prove the
+converse statement, let i, 7 € [n] with i 4 j and set
+
+9(2i, 2) = f (214+ +s 2) lp=1, kE[n}\ {i,9}+
+If f is h-NLC+, then g satisfies NLC (which in this case implies that 9(zi, z;)
+is in fact a real stable polynomial; see Definition in and Theorem
+in {4). In particular, we deduce that 0;0;f(1) < 0;f(1)0;f(1), where 1 stands
+for the “all ones vector” as in Definition Using the external field condition
+given in Definition 2.4] we see that the aforementioned inequality also holds for the
+
+polynomial f(x121,...,@n2n) whenever x; > 0, i € [n], which by Definition
+amounts to saying that f is Rayleigh. oO
+
+Remark 2.2. It is interesting to note that one actually has the following analog of
+Proposition for the h-NLC property: a measure yw € J, — or its generating
+polynomial g,, € P, — is h-NLC if and only if g, satisfies the Rayleigh inequalities
+(@ for all x = (21,...,a,) with x; € {0,1, co}, i € [n].
+
+Definition 2.6. A homogeneous Rayleigh measure is one whose generating poly-
+nomial is homogeneous and Rayleigh. The set of all measures that are projections
+of homogeneous Rayleigh measures is denoted by PHR.
+
+Let us now recall the key concept of negative association. For probability mea-
+sures this notion is usually defined as follows (cf., e.g., (72).
+
+Definition 2.7. A measure ju € Pp is called negatively associated or NA if
+
+[ru [eine | red
+
+for any increasing functions F,G on 2") that depend on disjoint sets of coordinates
+(cf. Definition[2.2). One says that pz is conditionally negatively associated or CNA if
+each measure obtained from yu by conditioning on some (or none) of the values of the
+variables is NA. Finally, yu is called strongly conditionally negatively associated or

@@ -1,0 +1,1 @@
+12.1 (Geck). The characters within a given ζ-block have the same ζ-defect, so we can speak of the defect of the block itself. Moreover: (1) If the defect is 0, then the block is a singleton. (2) If the defect is 1, then the block is a line of characters ordered by a-value. Its block ideal is isomorphic to a Brauer tree algebra of type A (see below).

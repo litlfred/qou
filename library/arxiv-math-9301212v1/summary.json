@@ -2,36 +2,36 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-9301212v1",
  "source_sha256": "029787800ddf73e5",
- "brief": "APPEARED IN BULLETIN OF THE — A physically natural potential energy for simple closed cur ves in R3 is shown to be invariant under M¨ obius transformations.",
- "extended": "**APPEARED IN BULLETIN OF THE**\n\n*AMERICAN MATHEMATICAL SOCIETY*\n\n5 pp, 5 sections.\n\n**Abstract.** A physically natural potential energy for simple closed cur ves in R3 is shown to be invariant under M¨ obius transformations. Thi s leads to the rapid resolution of several open problems: round circles are prec isely the absolute minima for energy; there is a minimum energy threshold below which k notting cannot occur; minimizers within prime knot types exist and are regular. Fi nally, the number of knot types with energy less than any constant M is estimated. Consider a rectiﬁable curve γ(u) in the Euclidean 3-space R3, where u belongs to R1 or S1. Deﬁne its energy by E(γ) = ∫ ∫ { 1 |γ(u) − γ(v)|2 − 1 D(γ(u), γ (v))2 } | ˙γ(u)|| ˙γ(v)| du dv, where D(γ(u), γ (v)) is the shortest arc distance between γ(u) and γ(v) on the curve. The second term of the integrand is called a regularization (see [O1–O 3, FH]).\n\n**Outline.** Front matter; 2 STEVE BRYSON, M. H. FREEDMAN, Z.-X. HE, AND ; 4 STEVE BRYSON, M. H. FREEDMAN, Z.-X. HE, AND ; 0 (1 − t)f ′(u + εt) dt; References",
+ "brief": "arXiv:math/9301212v1 [math.GT] 1 Jan 1993 — A physically natural potential energy for simple closed curves in R3 is shown to be invariant under M¨obius transformations.",
+ "extended": "**arXiv:math/9301212v1 [math.GT] 1 Jan 1993**\n\n*AMERICAN MATHEMATICAL SOCIETY*\n\n5 pp, 5 sections.\n\n**Abstract.** A physically natural potential energy for simple closed curves in R3 is shown to be invariant under M¨obius transformations. This leads to the rapid resolution of several open problems: round circles are precisely the absolute minima for energy; there is a minimum energy threshold below which knotting cannot occur; minimizers within prime knot types exist and are regular. Finally, the number of knot types with energy less than any constant M is estimated. Consider a rectiﬁable curve γ(u) in the Euclidean 3-space R3, where u belongs to R1 or S1. Deﬁne its energy by E(γ) = ZZ \u001a 1 |γ(u) −γ(v)|2 − 1 D(γ(u), γ(v))2 \u001b |˙γ(u)||˙γ(v)| du dv, where D(γ(u), γ(v)) is the shortest arc distance betweenγ(u) and γ(v) on the curve. The second term of the integrand is called a regularization (see [O1–O3, FH]).\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5",
  "tokens": {
-  "brief": 39,
-  "extended": 269
+  "brief": 42,
+  "extended": 242
  },
  "sections": [
   {
-   "id": "sec-front-matter",
-   "title": "Front matter",
-   "pages": "1-2"
+   "id": "page-001",
+   "title": "Page 1",
+   "pages": "1-1"
   },
   {
-   "id": "sec-000-2-steve-bryson-m-h-freedman-z-x-he-and-zhenghan",
-   "title": "STEVE BRYSON, M. H. FREEDMAN, Z.-X. HE, AND ZHENGHAN W ANG",
-   "pages": "2-4"
+   "id": "page-002",
+   "title": "Page 2",
+   "pages": "2-2"
   },
   {
-   "id": "sec-001-4-steve-bryson-m-h-freedman-z-x-he-and-zhenghan",
-   "title": "STEVE BRYSON, M. H. FREEDMAN, Z.-X. HE, AND ZHENGHAN W ANG",
+   "id": "page-003",
+   "title": "Page 3",
+   "pages": "3-3"
+  },
+  {
+   "id": "page-004",
+   "title": "Page 4",
    "pages": "4-4"
   },
   {
-   "id": "sec-002-0-1-tf-u-εt-dt",
-   "title": "(1 − t)f ′(u + εt) dt",
-   "pages": "4-5"
-  },
-  {
-   "id": "sec-003-references",
-   "title": "References",
+   "id": "page-005",
+   "title": "Page 5",
    "pages": "5-5"
   }
  ],

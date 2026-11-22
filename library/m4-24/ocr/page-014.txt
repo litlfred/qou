@@ -1,0 +1,29 @@
+386 T. Ohtsuki (Editor)
+
+that time it has come to absorb large parts of modern geometry and topol-
+ogy, including symplectic topology, Donaldson/Seiberg-Witten theory, Floer
+homology, enumerative algebraic geometry, etc. It is remarkable that three-
+dimensional TQFT has remained isolated from it for so long, but finally there
+is a connection, as explained in the paper by Vafa and Gopakumar [149] (though
+prefigured by Witten [404]), and now under investigation by many geometers.
+The basic idea is that the HOMFLY polynomial can be reformulated as a gen-
+erating function counting pseudo-holomorphic curves in a certain Calabi-Yau
+manifold, with boundary condition a Lagrangian submanifold associated to the
+knot. (This is the one place where the HOMFLY and not the Jones polynomial
+is essential!) The importance of this connection can hardly be overestimated, as
+it should allow the exchange of powerful techniques between the two subjects.
+
+Figure 2: The upper pictures show the distribution of zeros of the Jones polynomial for
+alternating knots of 11 and 12 crossings [262]. The lower picture shows the distribution
+of zeros of the Jones polynomial for 12 crossing non-alternating knots [262]. See [262]
+for further pictures for alternating knots with 10 and 13 crossings.
+
+1.1.3. Numerical experiments
+
+The following problem might characterize the form of the Jones polynomial of
+knots in some sense.
+
+Problem 1.9 (X.-S. Lin) Describe the set of zeros of the Jones polynomial
+of all (alternating) knots.
+
+Geometry & Topology Monographs, Volume 4 (2002)

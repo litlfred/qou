@@ -2,37 +2,42 @@
  "_schema": "library-summary/v1",
  "doc_id": "np-b250-1985-465",
  "source_sha256": "8568b8322e820427",
- "brief": "Nuclear Physics B250 (1985) 465-516 North-Holland Publishing Company CHIRAL PERTURBATION THEORY: EXPANSIONS IN THE MASS OF THE STRANGE QUARK* J. GASSER lnstitut f~r Theoretische Physik der Universitii",
- "extended": "**Nuclear Physics B250 (1985) 465-516 North-Holland Publishing Company CHIRAL PERTURBATION THEORY: EXPANSIONS IN THE MASS OF THE STRANGE QUARK* J. GASSER lnstitut f~r Theoretische Physik der Universitiit Bern, 3012 Bern, Switzerland**\n\n52 pp, 22 sections.\n\n**Outline.** 1 Introduction; 2 Chirai symmetry; 1 O(x) tr \"\"~ 16rr 2 . (G~,,G ). (2.2); 3 Effective low-energy lagrangian; 4 Ground state; 5 Low-energy expansion at leading order; 6 Effective lagrangian to order p4; 7 Loops; 8 Tadpoles and unitarity corrections; 9 Vacuum expectation values; 10 Masses and decay constants; 2 Pa* P'o; 2 MR /z~ -/x,, (M2\"--M2K')QCD=(md--mo)Bo 1 +3/; 1 M~ , In K (10.25) Cl=167r2F ~ 1 M~-M~, \"; 1 M 2 M~-\" M~} f-\"- ,13M2,71n.. +M~ln--~ . (10; 12 The ~/'; 13 Large No, Zweig rule; 14 Values of the low-energy constants",
+ "brief": "Chiral Perturbation Theory: Expansions in the Mass of the Strange Quark — 43 sections: Front matter; Introduction; Gasser, H. Leutwvler / Chiral pert",
+ "extended": "**Chiral Perturbation Theory: Expansions in the Mass of the Strange Quark**\n\n*North-Holland Publishing Company*\n\n52 pp, 43 sections.\n\n**Outline.** Front matter; 1 Introduction; J Gasser, H. Leutwvler / Chiral perturbation t; 3 Effective low-energy lagrangian; 4 Ground state; J Gasser, H. Leut~Tler / Chiral perturbation t; 5 Low-energy expansion at leading order; 6 Effective lagrangian to order p4; Z = Z, +ZA+Z,+Zoo~,,,op; D(fl )f( v' a' s' p' O) = I dx [tr { i[fl' a~'; J Gasser, H. Leutwyler / ('hiral perturbation ; Nc I; 483 and D stands for the differential operator; C V UV.U V~O>-aS(V' ~'-+U V.CV- ~-+U V.O>-; _N(F~_IF~,.L~j+); 8 Tadpoles and unitarity corrections; M~ln(MZp/pf)-M~ln(M~/p. 2) M~- MZo; 9 Vacuum expectation values",
  "tokens": {
-  "brief": 50,
-  "extended": 201
+  "brief": 37,
+  "extended": 184
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-2"
+   "pages": "1-5"
   },
   {
-   "id": "sec-001-2-chirai-symmetry",
-   "title": "Chirai symmetry",
-   "pages": "2-3"
+   "id": "sec-001-j-gasser-h-leutwvler-chiral-perturbation-theory",
+   "title": "Gasser, H. Leutwvler / Chiral perturbation theory",
+   "pages": "5-6"
   },
   {
-   "id": "sec-002-1-ox-tr-16rr-2-gg-22",
-   "title": "O(x) tr \"\"~ 16rr 2 . (G~,,G ). (2.2)",
-   "pages": "3-6"
-  },
-  {
-   "id": "sec-003-3-effective-low-energy-lagrangian",
+   "id": "sec-002-3-effective-low-energy-lagrangian",
    "title": "Effective low-energy lagrangian",
    "pages": "6-8"
   },
   {
-   "id": "sec-004-4-ground-state",
+   "id": "sec-003-4-ground-state",
    "title": "Ground state",
    "pages": "8-11"
+  },
+  {
+   "id": "sec-004-j-gasser-h-leuttler-chiral-perturbation-theoo",
+   "title": "Gasser, H. Leut~Tler / Chiral perturbation theoo'",
+   "pages": "11-11"
   },
   {
    "id": "sec-005-5-low-energy-expansion-at-leading-order",
@@ -42,80 +47,180 @@
   {
    "id": "sec-006-6-effective-lagrangian-to-order-p4",
    "title": "Effective lagrangian to order p4",
-   "pages": "15-17"
+   "pages": "15-15"
   },
   {
-   "id": "sec-007-7-loops",
-   "title": "Loops",
-   "pages": "17-21"
+   "id": "sec-007-z-z-zazzooop",
+   "title": "Z = Z, +ZA+Z,+Zoo~,,,op",
+   "pages": "15-15"
   },
   {
-   "id": "sec-008-8-tadpoles-and-unitarity-corrections",
+   "id": "sec-008-dfl-f-v-a-s-p-o-i-dx-tr-ifl-a-8vusfx-vfl-8asfx",
+   "title": "D(fl )f( v' a' s' p' O) = I dx [tr { i[fl' a~'] 8vuSf(x) + V.fl 8a.Sf(x)",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-009-j-gasser-h-leutwyler-hiral-perturbation-theory",
+   "title": "Gasser, H. Leutwyler / ('hiral perturbation theory",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-010-nc-i",
+   "title": "Nc I",
+   "pages": "16-19"
+  },
+  {
+   "id": "sec-011-483-and-d-stands-for-the-differential-operator-a",
+   "title": "and D stands for the differential operator ^ab I F• -- tr([A\",Ah]F,)",
+   "pages": "19-20"
+  },
+  {
+   "id": "sec-012-c-v-uvu-vo-asv--u-vcv---u-vo",
+   "title": "V UV.U V~O>-aS(V' ~'-+U V.CV- ~-+U V.O>-",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-013--nf-iflj",
+   "title": "_N(F~_IF~,.L~j+)",
+   "pages": "20-21"
+  },
+  {
+   "id": "sec-014-8-tadpoles-and-unitarity-corrections",
    "title": "Tadpoles and unitarity corrections",
-   "pages": "21-24"
+   "pages": "21-23"
   },
   {
-   "id": "sec-009-9-vacuum-expectation-values",
+   "id": "sec-015-mlnmzppf-mlnmp-2-m--mzo",
+   "title": "M~ln(MZp/pf)-M~ln(M~/p. 2) M~- MZo",
+   "pages": "23-24"
+  },
+  {
+   "id": "sec-016-9-vacuum-expectation-values",
    "title": "Vacuum expectation values",
    "pages": "24-25"
   },
   {
-   "id": "sec-010-10-masses-and-decay-constants",
+   "id": "sec-017-1-01-ul0",
+   "title": "} <01 ul0 -!",
+   "pages": "25-25"
+  },
+  {
+   "id": "sec-018-m--m-in-m",
+   "title": "M%- M% In _M.!]",
+   "pages": "25-25"
+  },
+  {
+   "id": "sec-019-10-masses-and-decay-constants",
    "title": "Masses and decay constants",
    "pages": "25-26"
   },
   {
-   "id": "sec-011-2-pa-po",
-   "title": "Pa* P'o",
-   "pages": "26-28"
+   "id": "sec-020-j-gasser-h-leutwyler-chiral-perturbation-theory",
+   "title": "Gasser. H. Leutwyler / Chiral perturbation theory",
+   "pages": "26-27"
   },
   {
-   "id": "sec-012-2-mr-z--x-m2--m2kqcdmd--mobo-1-3zn-2-2",
-   "title": "MR /z~ -/x,, (M2\"--M2K')QCD=(md--mo)Bo 1 +3/zn+ 2 2",
-   "pages": "28-30"
+   "id": "sec-021-k-m-mj-mj",
+   "title": "K~ = (m~+ mj+ mJ ~",
+   "pages": "27-28"
   },
   {
-   "id": "sec-013-1-m-in-k-1025-cl167r2f-1-m-m",
-   "title": "M~ , In K (10.25) Cl=167r2F ~ 1 M~-M~, \"",
+   "id": "sec-022-j-gasser-h-leutwvler-chiral-perturbation-theo",
+   "title": "Gasser, H. Leutwvler / Chiral perturbation theo~",
+   "pages": "28-29"
+  },
+  {
+   "id": "sec-023-mk--mkqcd",
+   "title": "(MK°--MK')QCD",
+   "pages": "29-29"
+  },
+  {
+   "id": "sec-024-mk-m-min",
+   "title": "MK-M,-M,,In",
+   "pages": "29-30"
+  },
+  {
+   "id": "sec-025-mk",
+   "title": "^ (MK",
    "pages": "30-30"
   },
   {
-   "id": "sec-014-1-m-2-m--m-f---13m271n-mln---1027-c2--167r2f-m-m",
-   "title": "M 2 M~-\" M~} f-\"- ,13M2,71n.. +M~ln--~ . (10.27) C2- 167r2F ~ M~-M;~I. M~,",
-   "pages": "30-34"
+   "id": "sec-026-mln",
+   "title": "+M~ln--~",
+   "pages": "30-30"
   },
   {
-   "id": "sec-015-12-the",
-   "title": "The ~/'",
-   "pages": "34-38"
+   "id": "sec-027-1-comparison-with-su2-x-su2",
+   "title": "!. Comparison with SU(2) x SU(2)",
+   "pages": "30-33"
   },
   {
-   "id": "sec-016-13-large-no-zweig-rule",
+   "id": "sec-028-j-gasser-h-leutwyler-hiral-perturbation-theory",
+   "title": "Gasser, H. Leutwyler / ('hiral perturbation theory",
+   "pages": "33-33"
+  },
+  {
+   "id": "sec-029-m-mocdmu",
+   "title": "(M~*-M;°)ocD=(mu -",
+   "pages": "33-38"
+  },
+  {
+   "id": "sec-030-j-gasser-h-leutwyler-chiral-perturbation-theory",
+   "title": "Gasser. H. Leutwyler / Chiral perturbation theory",
+   "pages": "38-38"
+  },
+  {
+   "id": "sec-031-13-large-no-zweig-rule",
    "title": "Large No, Zweig rule",
-   "pages": "38-42"
+   "pages": "38-41"
   },
   {
-   "id": "sec-017-14-values-of-the-low-energy-constants",
+   "id": "sec-032-z-gasser-h-leuttler-chiral-perturbation-theoo",
+   "title": "Gasser, H. Leut~Tler/ Chiral perturbation theoo'",
+   "pages": "41-42"
+  },
+  {
+   "id": "sec-033-14-values-of-the-low-energy-constants",
    "title": "Values of the low-energy constants",
-   "pages": "42-46"
+   "pages": "42-43"
   },
   {
-   "id": "sec-018-15-summary",
-   "title": "Summary",
-   "pages": "46-48"
+   "id": "sec-034-j-gasser-h-leutwvler-chiral-perturbation-theory",
+   "title": "Gasser, H. Leutwvler / Chiral perturbation theory",
+   "pages": "43-45"
   },
   {
-   "id": "sec-019-1-g-s3-1fins",
-   "title": "G ~/~ / £s=°3 1fins ///~/",
-   "pages": "48-49"
+   "id": "sec-035-8bom",
+   "title": ", 8Bom~,~",
+   "pages": "45-45"
   },
   {
-   "id": "sec-020-appendix",
+   "id": "sec-036-fkf--k",
+   "title": "FKF-~-K=",
+   "pages": "45-49"
+  },
+  {
+   "id": "sec-037-appendix",
    "title": "Appendix",
-   "pages": "49-51"
+   "pages": "49-50"
   },
   {
-   "id": "sec-021-references",
+   "id": "sec-038-j-gasser-h-leutwyler-chiral-perturbation-theory",
+   "title": "Gasser, H. Leutwyler / Chiral perturbation theory'",
+   "pages": "50-50"
+  },
+  {
+   "id": "sec-039-j-pj-ppj2-gsj3",
+   "title": "= (J ; p.J~; p.p~J2+ g.~sJ3) •",
+   "pages": "50-51"
+  },
+  {
+   "id": "sec-040-2-ja",
+   "title": "Ja\"",
+   "pages": "51-51"
+  },
+  {
+   "id": "sec-041-references",
    "title": "References",
    "pages": "51-52"
   }

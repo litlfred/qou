@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/s0025-5718-07-02027-3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s0025-5718-07-02027-3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "s0025-5718-07-02027-3",
   "contains": [
+    "library/s0025-5718-07-02027-3/sections/sec-front-matter",
     "library/s0025-5718-07-02027-3/sections/sec-000",
     "library/s0025-5718-07-02027-3/sections/sec-001",
     "library/s0025-5718-07-02027-3/sections/sec-002",
@@ -18,10 +19,12 @@
     "library/s0025-5718-07-02027-3/sections/sec-004",
     "library/s0025-5718-07-02027-3/sections/sec-005",
     "library/s0025-5718-07-02027-3/sections/sec-006",
-    "library/s0025-5718-07-02027-3/sections/sec-007"
+    "library/s0025-5718-07-02027-3/sections/sec-007",
+    "library/s0025-5718-07-02027-3/sections/sec-008",
+    "library/s0025-5718-07-02027-3/sections/sec-009"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "s0025-5718-07-02027-3",
     "title_source": "slug",

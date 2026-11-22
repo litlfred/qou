@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/helicity03mmj/sections/sec-013",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Acknowledgments",
+  "pageStart": 22,
+  "pageEnd": 22,
+  "contains": [
+    "library/helicity03mmj/blocks/prose-sec-013"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/helicity03mmj/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/helicity03mmj/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,1 +1,0 @@
-An example of a structure-type is the type Binary trees , which we

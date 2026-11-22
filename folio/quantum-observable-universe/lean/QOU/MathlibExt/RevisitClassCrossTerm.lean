@@ -60,7 +60,7 @@ Generic `CommRing R`, `Ring A`, through `MarkovTrace` (T1–T3). The Hecke quadr
 relation and far commutation are hypotheses on the generators where used; each theorem names
 exactly the ones it needs.
 
--- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/MathlibExt/MarkovTraceInterleavedCrossTerm.lean
+-- Ref: [leitner2026] folio/quantum-observable-universe/lean/QOU/MathlibExt/MarkovTraceInterleavedCrossTerm.lean
 -- Ref: [jones1987] https://doi.org/10.2307/1971403 — the Markov trace on the Hecke tower.
 -/
 

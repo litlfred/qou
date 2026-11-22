@@ -331,7 +331,7 @@ def main() -> int:
             "No claim that the character-closure identity is wrong. It is not; the "
             "declaring probe verifies it correctly on abstract braids and it holds "
             "in either convention.")
-        print(f"\nWitness: {wb.save()}")
+        print(f"\nWitness: {wb.save(extra={"q0Anchor": "ambiguous", "q0AnchorReason": 'compares figures across pins on purpose: reads the proton bridge (atomic-tr-m-mpfr-50dps-proton) and the muon bridge (atomic-tr-m-mpfr-50dps) witnesses and hardcoded proton-pin C/D-frame values, to attribute published renderings'})}")
     except Exception as e:  # pragma: no cover
         print(f"\n(witness emit skipped: {e})")
 

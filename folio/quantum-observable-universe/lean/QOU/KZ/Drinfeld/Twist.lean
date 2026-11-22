@@ -11,7 +11,7 @@ Stage S5 of bean `qou-zoyv`. `Ω_X = tsl(X, X)` is the Casimir of the diagonal `
 `β_{Y,X} β_{X,Y} = exp(2πiℏ t^{sl}_{X,Y})`; together these are the balancing axiom.
 Sorry-free.
 
--- Ref: [manuscript] beans/defs/qou-zoyv (stage S5)
+-- Ref: [leitner2026] beans/defs/qou-zoyv (stage S5)
 -/
 
 noncomputable section

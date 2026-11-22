@@ -106,10 +106,10 @@ failed; that is recorded in the probe rather than dropped.
 
 Ground ring `ℝ` (§7c: archimedean — real powers).
 
--- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/Mass/CoordinationSurfaceDeficit.lean
--- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/MassTheory/ChainBindingNoSaturationPeak.lean
--- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/Mass/AffineCountIsNotASurfaceTerm.lean
--- Ref: [manuscript] computations/mass_at_3A_proper.py (atom_braid_word_3A: one bond letter per pair)
+-- Ref: [leitner2026] folio/quantum-observable-universe/lean/QOU/Mass/CoordinationSurfaceDeficit.lean
+-- Ref: [leitner2026] folio/quantum-observable-universe/lean/QOU/MassTheory/ChainBindingNoSaturationPeak.lean
+-- Ref: [leitner2026] folio/quantum-observable-universe/lean/QOU/Mass/AffineCountIsNotASurfaceTerm.lean
+-- Ref: [leitner2026] computations/mass_at_3A_proper.py (atom_braid_word_3A: one bond letter per pair)
 -/
 
 namespace QOU.Mass.SurfaceExponentIsDimension

@@ -43,20 +43,6 @@ between the two paths.  The current run achieves:
 | D (deuteron, $A=2$)              | $0.1774369242$ | $0.1774369242$ | $0$ |
 
 All differences fall within the relative tolerance $10^{-9}$ — the
-two paths agree to machine epsilon.  This is direct empirical evidence
-for the analytic identity stated above.
-
-**Cross-validation infrastructure.** The check is run by
-the formal derivation; output witness
-`markov-pipeline-cross-validation.witness.json` records:
-
-- Per-atom assertion `tr_M_at_q0_archimedean[atom]` with a relative
-  tolerance proportional to `AGREEMENT_RTOL = 1e-9`.
-- Diagnostic fields `realizer_value`, `term6_value`, `abs_diff`,
-  `rel_diff` for each common atom.
-- Asymmetric atom coverage (atoms present in only one input pipeline).
-
-The validator skips when one of its inputs is absent (forward
-compatibility), and uses the standard `WitnessBuilder` so
-the formal derivation automatically reruns it whenever either input
-witness changes.
+two paths agree to machine epsilon.  This is numerical evidence for the
+analytic identity stated above, not a proof; it is not used as a premise, and the proton case remains the
+open conjecture [Archimedean agreement (proton instance)](#conj:gs-archimedean-agreement-residue).

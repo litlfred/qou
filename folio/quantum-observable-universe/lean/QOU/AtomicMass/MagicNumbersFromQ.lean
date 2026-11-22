@@ -54,7 +54,7 @@ open scoped BigOperators
     (`MassDerivation.substrate_q`); the unified 50-digit witness
     lives in `q-pinning` and tightens this without changing the
     `Phi_signal` tabulation, which branches only on `K` and `Z`. -/
--- Ref: [manuscript] algebraic-substrate/q-pinning
+-- Ref: [leitner2026] algebraic-substrate/q-pinning
 noncomputable def q_zero : ℝ := (11097 : ℝ) / 10000
 
 /-! ## Hoefsmit character signal — concrete tabulation
@@ -139,7 +139,7 @@ theorem Phi_signal_at_26 (q : ℝ) : Phi_signal 10 26 q = 0 := by
 /-- **Hoefsmit witness at Z = 8.** From manuscript Table 1:
     `δ² Φ(8) = 33.2 > 0`. Now proved from the `Phi_signal`
     tabulation. -/
--- Ref: [manuscript] observations/magic-numbers-from-q (Table 1, Z=8)
+-- Ref: [leitner2026] observations/magic-numbers-from-q (Table 1, Z=8)
 theorem hoefsmit_witness_8 : delta2_Phi 10 8 q_zero > 0 := by
   unfold delta2_Phi
   rw [show (8 : ℕ) - 1 = 7 from rfl, show (8 : ℕ) - 2 = 6 from rfl]
@@ -148,7 +148,7 @@ theorem hoefsmit_witness_8 : delta2_Phi 10 8 q_zero > 0 := by
 
 /-- **Hoefsmit witness at Z = 20.** From manuscript Table 1:
     `δ² Φ(20) = 20.4 > 0`. -/
--- Ref: [manuscript] observations/magic-numbers-from-q (Table 1, Z=20)
+-- Ref: [leitner2026] observations/magic-numbers-from-q (Table 1, Z=20)
 theorem hoefsmit_witness_20 : delta2_Phi 10 20 q_zero > 0 := by
   unfold delta2_Phi
   rw [show (20 : ℕ) - 1 = 19 from rfl, show (20 : ℕ) - 2 = 18 from rfl]
@@ -157,7 +157,7 @@ theorem hoefsmit_witness_20 : delta2_Phi 10 20 q_zero > 0 := by
 
 /-- **Hoefsmit witness at Z = 28.** From manuscript Table 1:
     `δ² Φ(28) = 4.4 > 0`. -/
--- Ref: [manuscript] observations/magic-numbers-from-q (Table 1, Z=28)
+-- Ref: [leitner2026] observations/magic-numbers-from-q (Table 1, Z=28)
 theorem hoefsmit_witness_28 : delta2_Phi 10 28 q_zero > 0 := by
   unfold delta2_Phi
   rw [show (28 : ℕ) - 1 = 27 from rfl, show (28 : ℕ) - 2 = 26 from rfl]
@@ -165,7 +165,7 @@ theorem hoefsmit_witness_28 : delta2_Phi 10 28 q_zero > 0 := by
   norm_num
 
 /-- **Exact value of the Z=8 second difference.** -/
--- Ref: [manuscript] observations/magic-numbers-from-q (Table 1)
+-- Ref: [leitner2026] observations/magic-numbers-from-q (Table 1)
 theorem delta2_Phi_at_8 : delta2_Phi 10 8 q_zero = (332 : ℝ) / 10 := by
   unfold delta2_Phi
   rw [show (8 : ℕ) - 1 = 7 from rfl, show (8 : ℕ) - 2 = 6 from rfl]
@@ -173,7 +173,7 @@ theorem delta2_Phi_at_8 : delta2_Phi 10 8 q_zero = (332 : ℝ) / 10 := by
   ring
 
 /-- **Exact value of the Z=20 second difference.** -/
--- Ref: [manuscript] observations/magic-numbers-from-q (Table 1)
+-- Ref: [leitner2026] observations/magic-numbers-from-q (Table 1)
 theorem delta2_Phi_at_20 : delta2_Phi 10 20 q_zero = (204 : ℝ) / 10 := by
   unfold delta2_Phi
   rw [show (20 : ℕ) - 1 = 19 from rfl, show (20 : ℕ) - 2 = 18 from rfl]
@@ -181,7 +181,7 @@ theorem delta2_Phi_at_20 : delta2_Phi 10 20 q_zero = (204 : ℝ) / 10 := by
   ring
 
 /-- **Exact value of the Z=28 second difference.** -/
--- Ref: [manuscript] observations/magic-numbers-from-q (Table 1)
+-- Ref: [leitner2026] observations/magic-numbers-from-q (Table 1)
 theorem delta2_Phi_at_28 : delta2_Phi 10 28 q_zero = (44 : ℝ) / 10 := by
   unfold delta2_Phi
   rw [show (28 : ℕ) - 1 = 27 from rfl, show (28 : ℕ) - 2 = 26 from rfl]
@@ -192,7 +192,7 @@ theorem delta2_Phi_at_28 : delta2_Phi 10 28 q_zero = (44 : ℝ) / 10 := by
     second-difference signal decreases monotonically along the
     magic sequence `8 → 20 → 28`, reflecting the hierarchical
     Hecke-level resolution of higher shells. -/
--- Ref: [manuscript] observations/magic-numbers-from-q (Interpretation §)
+-- Ref: [leitner2026] observations/magic-numbers-from-q (Interpretation §)
 theorem delta2_declining :
     delta2_Phi 10 8 q_zero > delta2_Phi 10 20 q_zero
     ∧ delta2_Phi 10 20 q_zero > delta2_Phi 10 28 q_zero := by
@@ -203,12 +203,12 @@ theorem delta2_declining :
 /-! ## Predicted magic numbers — sanity lemmas -/
 
 /-- The predicted set is exactly `{2, 8, 20, 28}`. -/
--- Ref: [manuscript] observations/magic-numbers-from-q
+-- Ref: [leitner2026] observations/magic-numbers-from-q
 theorem predictedMagicNumbers_eq :
     predictedMagicNumbers = [2, 8, 20, 28] := rfl
 
 /-- Membership in the predicted-magic list. -/
--- Ref: [manuscript] observations/magic-numbers-from-q
+-- Ref: [leitner2026] observations/magic-numbers-from-q
 theorem mem_predictedMagicNumbers (Z : ℕ) :
     Z ∈ predictedMagicNumbers ↔ Z = 2 ∨ Z = 8 ∨ Z = 20 ∨ Z = 28 := by
   unfold predictedMagicNumbers
@@ -224,7 +224,7 @@ theorem mem_predictedMagicNumbers (Z : ℕ) :
     `Z = 2` is below the `K = 3` Hecke threshold and therefore not
     covered by this `K = 10` second-difference test (it appears at
     a lower truncation level). -/
--- Ref: [manuscript] observations/magic-numbers-from-q
+-- Ref: [leitner2026] observations/magic-numbers-from-q
 -- Ref: [mayer1949] On closed shells in nuclei. II — see folio/schema/references.ts
 -- Ref: [mayer1955] Elementary Theory of Nuclear Shell Structure — see folio/schema/references.ts
 theorem magic_numbers_from_q :

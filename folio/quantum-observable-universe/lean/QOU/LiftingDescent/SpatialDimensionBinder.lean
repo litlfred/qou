@@ -54,7 +54,7 @@ geometry itself. Formalising the geometry is a separate and much larger task.
 Base ring §7c: none — group theory and `ℕ`, no `ℝ`, nothing archimedean.
 
 -- Ref: [yekutieli2015] https://arxiv.org/abs/1007.1250 — Thm 0.4.2 (2-dim Stokes).
--- Ref: [manuscript] folio/quantum-observable-universe/lifting-and-descent/descent-reduction-two.md
+-- Ref: [leitner2026] folio/quantum-observable-universe/lifting-and-descent/descent-reduction-two.md
 -/
 
 namespace QOU.LiftingDescent.SpatialDimension

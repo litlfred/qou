@@ -8,6 +8,7 @@ pages: 8-12
 source_pdf: symmetry-04-00039-v3.pdf
 source_sha256: 1aa8a81916887f8e
 toc_source: inferred
+doc_brief: "Knots on a Torus: A Model of the Elementary Particles — Two knots; just two rudimentary knots, the unknot and the trefoil."
 ---
 To anticipate what we have to look forward to in what follows, here’s another quotation [3]: “The 
 topologically iconic Moebius strip (MS) is a closed ribbon that incorporates a single half-twist but it 

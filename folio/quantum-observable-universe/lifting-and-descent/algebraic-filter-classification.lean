@@ -10,7 +10,7 @@ exhausts all harmonic forms in the q-harmonic basis.
 
 ## References
 
-- [manuscript] Ch. 3, §7
+- [leitner2026] Ch. 3, §7
 -/
 
 namespace QOU.Torsion
@@ -18,7 +18,7 @@ namespace QOU.Torsion
 /-- Classification of a harmonic form by its commutator with the curvature.
     A form is either fermionic (nonzero commutator) or bosonic (zero commutator).
     This is an exhaustive dichotomy by the law of excluded middle. -/
--- Ref: [manuscript] Ch. 3, §7
+-- Ref: [leitner2026] Ch. 3, §7
 inductive AlgebraicFilterClass where
   | fermionic : AlgebraicFilterClass  -- [F_A, α] ≠ 0
   | bosonic : AlgebraicFilterClass    -- [F_A, α] = 0

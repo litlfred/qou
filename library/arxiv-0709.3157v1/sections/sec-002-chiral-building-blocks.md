@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-0709.3157v1
-doc_title: "V . Mateu"
+doc_title: "Chiral Lagrangians with tensor sources"
 section_id: sec-002-chiral-building-blocks
 section_title: "Chiral building blocks"
 section_number: null
 pages: 3-3
 source_pdf: 0709.3157v1.pdf
 source_sha256: 22a0d9a93c9dcb8d
-doc_brief: "V . Mateu — The implementation of tensor sources in Chiral Lagrangians allows the computation of Green functions and form factors involving tensor currents , that is, quark bilinears of the form ¯qi"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.982
+latex_prose_ratio: 0.977
+latex_coverage_ratio: 0.988
+doc_brief: "Chiral Lagrangians with tensor sources — The implementation of tensor sources in Chiral Lagrangians allows the computation of Green functions and form factors involving tensor currents, that is"
 ---
 $\chi$PT is based on the spontaneous breakdown of the global $G=SU(n_f)_L\otimes SU(n_f)_R$ flavour symmetry down to its subgroup $SU(n_f)_V$. The dynamical fields $\phi^a=(\pi,K,\eta)$ are assumed to be the (pseudo--)Goldstone bosons associated to this breakdown. The general formalism for effective Lagrangians with spontaneously broken symmetries was worked out by Callan, Coleman, Wess and Zumino [@CWZ], and for our case groups the $n_f^2-1$ fields in the matrix $u$ transforming under $G$ as $$u(\phi^a)\,=\,{\mathrm{exp}}\left(\frac{i}{2\,F_0}\,\,\phi^a\,\lambda^a\right)\,,\quad u(\phi^a)\rightarrow g_R\,u(\phi^a)\,h^{\dagger}\,=\,h\,u(\phi^a)\,g_L^{\dagger}\, .\label{CCWZ}$$ $h$ is the so called compensating field and depends on $g_{L\,R}$ and $u$ itself. Eq. ([\[CCWZ\]](#CCWZ){reference-type="ref" reference="CCWZ"}) defines a non--linear representation of the chiral group $G$.
 

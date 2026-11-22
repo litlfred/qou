@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2311.05446v3
-doc_title: "NEW BRUNN–MINKOWSKI AND FUNCTIONAL INEQUALITIES VIA CONVEXITY OF ENTROPY"
+doc_title: "New Brunn--Minkowski and functional inequalities via convexity of entropy"
 section_id: sec-008-4-dimensional-convexity-properties-of-the-gaussi
 section_title: "Dimensional convexity properties of the Gaussian relative entropy"
 section_number: 4
 pages: 18-25
 source_pdf: 2311.05446v3.pdf
 source_sha256: c5809730f598a56d
-doc_brief: "NEW BRUNN–MINKOWSKI AND FUNCTIONAL INEQUALITIES VIA CONVEXITY OF ENTROPY — We study the connection between the concavity properties of a measureνand the convexity properties of the associated"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.941
-latex_coverage_ratio: 0.984
+latex_prose_ratio: 0.857
+latex_coverage_ratio: 0.985
+doc_brief: "New Brunn--Minkowski and functional inequalities via convexity of entropy — We study the connection between the concavity properties of a measure ν and the convexity properties of the associated"
 ---
 []{#sec: gaussian label="sec: gaussian"} In this section, we will differentiate the relative entropy $D(\cdot \Vert \nu)$, where $\textnormal{ d}\nu = e^{-V} \textnormal{ d}x$, directly along displacement interpolations without decomposing it into two parts as in the previous section. While we focus on the Gaussian measure, $\nu = \gamma$, we will introduce the relevant setup for a general $\nu$.
 

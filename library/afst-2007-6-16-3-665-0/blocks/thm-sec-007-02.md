@@ -1,0 +1,1 @@
+— The functor v from the category of the split diﬀerence modules over K to the category of the vector bundles on Eq is bijective on isomorphy classes of objects. This bijection respects tensor products.

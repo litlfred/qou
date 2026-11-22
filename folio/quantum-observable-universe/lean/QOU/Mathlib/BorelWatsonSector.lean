@@ -28,7 +28,7 @@
   Archimedean (ℂ): genuinely archimedean — `Complex.cpow`, `Complex.exp`,
   `Real.cos`, ordering.
 
-  -- Ref: [manuscript] bean el8w tranche 5 — Watson uniqueness brick 4b-i
+  -- Ref: [leitner2026] bean el8w tranche 5 — Watson uniqueness brick 4b-i
 -/
 
 import Mathlib.Analysis.SpecialFunctions.Pow.Complex

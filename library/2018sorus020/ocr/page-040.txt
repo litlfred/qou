@@ -1,0 +1,45 @@
+Let 7, be the Bass-Serre tree associated to v, and consider the action of T on T,.
+— As the tautological representation is convergent, the subtree T’ of fixed points
+is non empty.
+— The tree T” is finite, because if not it would contain an half-line, hence from
+Subsection the tautological representation would fix a line in (on and it
+would contradict the irreducibility of p.
+
+— The tree T’ is a segment : assume it contains a vertex of valence at least 3
+u
+
+U
+
+Then t, u and v represents three distincts points in KP', fixed by the residual
+representation p. Hence p(f) Cc {+ Id} but it is a contradiction with the first
+part of the proposition.
+
+— We just proved that T” is of the following form :
+So S| 82 Sn-1 Sn
+
+Fix a basis such that s; is the lattice O, @ t'O,. Then for any y €T, p(y) =
+(28) 10)) € SL2(O,), with c(y) € (t”). We conclude by noting that for some
++ €T, we have b(y) € O* ; because if not there should be an other fixed point
+at the left of so. Finally, p is not residually abelian, and residually reducible
+as soon as n > 0.
+
+Oo
+
+1.4.2 Alexander module
+
+Here we recall the basic theory of Alexander module. We assume for simplicity that
+M’s first Betti number b(M) is equal to 1, despite the theory can be extended to
+higher cases. We refer to for proofs and details on this theory.
+
+We call abelianization an epimorphism y : m(M) — Z. As b;(M) = 1, there are
+two possible choices for the homomorphism y, but nothing we will state here will
+depend on this choice. Moreover, we abuse of the term abelianization because we
+omit the possibly non trivial torsion part of the abelianization of the fundamental
+group.
+
+We call the infinite cyclic covering the regular covering M with deck transforma-
+tion’s group Z. Let Z = (t), we denote by A the group ring A = Z[Z] = Z[t*']. The
+
+action of Z on M turns the homology groups H,(M) into A-modules, and we call
+
+39

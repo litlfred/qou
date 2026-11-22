@@ -7,10 +7,11 @@ section_number: null
 pages: 15-17
 source_pdf: 0811.2435v1.pdf
 source_sha256: 615b04eca83bcade
-doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 43 sections: Introduction; Counting problems for 3-dimensiona; Non-commutative varieties with pol"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.984
-latex_coverage_ratio: 0.979
+latex_coverage_ratio: 0.992
+doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 51 sections: Front matter; Introduction; Counting problems for 3-dimensiona"
 ---
 The above formulas for symplectomorphisms are partially motivated by [@KoSo1], Section 10, where similar formulas appeared in a different problem. Both formulas involve Hamiltonian vector fields associated with the dilogarithm function. The problem discussed in [@KoSo1] was the reconstruction of the rigid analytic K3 surface from its skeleton, which is a sphere $S^2$ equipped with an integral affine structure, singular at a finite set of points. The group which is very similar to the pro-nilpotent group $G_V$ was introduced in the loc. cit. where we assigned symplectomorphisms to edges of a certain tree in $S^2$. That tree should be thought of as an analog of the walls in the space of stability structures. Edges of the tree (we called them "lines\" in [@KoSo1]) correspond to pseudo-holomorphic discs with the boundary on the Lagrangian toric fibers of the dual K3 surface. When we approach the "large complex structure limit\" cusp in the moduli space of K3 surfaces, the discs degenerate into gradient lines of some smooth functions on $S^2$, thus defining edges of the tree. Hence the reconstruction problem for K3 surfaces (and for higher-dimensional Calabi-Yau manifolds, see [@GS1], [@GS2]) is governed by the counting of rational curves in the mirror dual Calabi-Yau manifold. This observation suggests by analogy the questions below.
 

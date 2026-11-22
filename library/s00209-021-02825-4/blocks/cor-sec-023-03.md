@@ -1,0 +1,1 @@
+Fix λ, α ∈Nm 0 and a linear operator T ∈Hom(V (λ), V (α)). T preserves weak stability iff one of the following holds: A representation theoretic explanation... (a) Symb(T ) is (Hm −× Hm +)-stable. (b) T ≡p0 · ψ for some weakly stable polynomial p0 ∈V (α) and some linear functional ψ.

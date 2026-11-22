@@ -45,15 +45,31 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
+import ast
 import json
 import re
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
+from _source_normalise import code_only, identifiers_only
 from witness_base import WitnessBuilder
 
 HERE = Path(__file__).parent
+
+# Symbols exported by `q_parameter` / `qou_substrate.constants` that are NOT
+# q₀ or q₀-derived quantities (knot volumes, mass ratios, CODATA masses).
+# Importing ONLY these from `q_parameter` (e.g. `from q_parameter import MASS_RATIO_MU_E`
+# in `knot-volumes.py`) does not make the script a q₀ consumer (bean qou-5li4).
+NON_Q0_QPARAM_SYMBOLS = frozenset({
+    "VOL_FIGURE_EIGHT", "VOL_FIGURE_EIGHT_50_STR", "VOL_FIGURE_EIGHT_ERR",
+    "VOL_4_1", "vol_4_1_at",
+    "CATALAN_G", "VOL_BORROMEAN", "vol_borromean_at",
+    "MASS_RATIO_MU_E", "MASS_RATIO_MU_E_ERR", "MASS_RATIO_MU_E_STR", "MASS_RATIO_MU_E_ERR_STR",
+    "MASS_RATIO_P_E", "MASS_RATIO_P_E_ERR", "MASS_RATIO_P_E_STR", "MASS_RATIO_P_E_ERR_STR",
+    "M_E_MEV", "M_E_MEV_ERR", "M_P_MEV", "M_P_MEV_ERR",
+    "M_N_MEV", "M_N_MEV_ERR", "Q_NEUTRON_MEV", "Q_NEUTRON_MEV_ERR",
+})
 
 # Markers we look for in each script
 MARKERS = {
@@ -155,16 +171,50 @@ OVER_COUNT_MN_NOT_INPUT = {
 }
 
 
-def classify_script(path: Path) -> dict:
-    """Read script and tally which canonical inputs it uses."""
+def _imports_q0_from_q_parameter(src: str, ident_code: str) -> bool:
+    """True when `src` imports a q₀-bearing symbol from `q_parameter`.
+
+    `from q_parameter import MASS_RATIO_MU_E` imports only the CODATA ratio
+    (already tracked by `MASS_RATIO_MU_E`), not q₀ (bean qou-5li4).
+    """
     try:
-        text = path.read_text(encoding="utf-8")
-    except (OSError, UnicodeDecodeError):
-        return None
+        tree = ast.parse(src)
+    except (SyntaxError, ValueError):
+        return bool(MARKERS["q_parameter"].search(ident_code))
+    imported: set[str] = set()
+    bare_import = False
+    for node in ast.walk(tree):
+        if isinstance(node, ast.ImportFrom) and node.module and node.module.endswith("q_parameter"):
+            for a in node.names:
+                imported.add(a.name)
+        elif isinstance(node, ast.Import):
+            for a in node.names:
+                if a.name.endswith("q_parameter"):
+                    bare_import = True
+    if bare_import:
+        return True
+    if not imported:
+        return False
+    return not (imported <= NON_Q0_QPARAM_SYMBOLS)
+
+
+def _classify_source(text: str, script_name: str) -> dict | None:
+    """Classify Python source text by which canonical inputs it uses."""
     if "import" not in text and "def " not in text:
         return None  # data file, skip
-    code = _strip_comments(text)
-    found = {key: bool(rx.search(code)) for key, rx in MARKERS.items()}
+    # Strip comments and docstrings for filename markers; strip ALL strings
+    # as well for identifier markers so prose mentioning `Q_beta` or `M_P_MEV`
+    # does not trigger a calibration-discipline classification (bean qou-5li4).
+    code = code_only(text)
+    ident_code = identifiers_only(text)
+    found: dict[str, bool] = {}
+    for key, rx in MARKERS.items():
+        if key == "q_parameter":
+            found[key] = _imports_q0_from_q_parameter(text, ident_code)
+        elif key == "substrate_splitting_witness":
+            found[key] = bool(rx.search(code))
+        else:
+            found[key] = bool(rx.search(ident_code))
     # Determine alignment status
     uses_m_p = found["M_P_MEV"]
     uses_m_n = found["M_N_MEV"]
@@ -201,7 +251,7 @@ def classify_script(path: Path) -> dict:
         # Two hadronic inputs — over-count if Q_β not also used.
         # Triaged false-positives (registry sources + m_n-as-comparison)
         # are reclassified out of the over-count (bean j1hg, 2026-06-22).
-        if path.name in OVER_COUNT_MN_NOT_INPUT or "over-count-3-input" in text:
+        if script_name in OVER_COUNT_MN_NOT_INPUT or "over-count-3-input" in text:
             scheme = (
                 "m_n-not-an-input (registry-source or m_n comparison-only; "
                 "triaged 2026-06-22, not a 4th calibration input)"
@@ -223,7 +273,7 @@ def classify_script(path: Path) -> dict:
     else:
         scheme = "no-hadronic-input (substrate-only or pure dimensionless)"
     return {
-        "script":     path.name,
+        "script":     script_name,
         "found":      found,
         "scheme":     scheme,
         "uses_canonical_q0_source":     uses_canonical_q0,
@@ -231,7 +281,50 @@ def classify_script(path: Path) -> dict:
     }
 
 
+def classify_script(path: Path) -> dict | None:
+    """Read script and tally which canonical inputs it uses."""
+    try:
+        text = path.read_text(encoding="utf-8")
+    except (OSError, UnicodeDecodeError):
+        return None
+    return _classify_source(text, path.name)
+
+
+def _selftest() -> int:
+    """Verify non-q0 imports from q_parameter and prose Q_beta mentions do not false-fire."""
+    fails: list[str] = []
+
+    kv = classify_script(HERE.parent / "knot-volumes.py")
+    if kv is None or kv["uses_canonical_q0_source"]:
+        fails.append("knot-volumes.py (imports only MASS_RATIO_MU_E) was credited as q0 consumer")
+    if kv is not None and not kv["found"]["MASS_RATIO_MU_E"]:
+        fails.append("knot-volumes.py lost MASS_RATIO_MU_E marker")
+
+    prose_qb = _classify_source(
+        '"""Docstring discussing Q_beta and M_P_MEV."""\n'
+        'import os\n'
+        'DESC = "Evaluates Q_beta without reading Q_NEUTRON_MEV"\n',
+        "synthetic_prose.py",
+    )
+    if prose_qb is None or prose_qb["found"]["Q_NEUTRON"] or prose_qb["scheme"] == "Q_β-only-hadronic":
+        fails.append("prose-only Q_beta triggered Q_β-only-hadronic scheme")
+
+    code_qb = _classify_source(
+        "from experimental_constants import Q_NEUTRON_MEV\nx = Q_NEUTRON_MEV\n",
+        "synthetic_code.py",
+    )
+    if code_qb is None or code_qb["scheme"] != "Q_β-only-hadronic":
+        fails.append("real Q_NEUTRON_MEV usage did not classify as Q_β-only-hadronic")
+
+    for f in fails:
+        print(f"  FAIL  {f}")
+    print("self-test:", "PASS" if not fails else f"FAIL ({len(fails)})")
+    return 1 if fails else 0
+
+
 def main():
+    if "--self-test" in sys.argv or "--selftest" in sys.argv:
+        raise SystemExit(_selftest())
     rows = []
     # Scan the compute tree (computations/), not just audits/ (reorg
     # scan-root fix). Skip _deprecated and the audits/ dir itself.

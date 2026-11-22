@@ -79,7 +79,7 @@ noncomputable def numerator_n2_partition_11 (t : ℝ) : ℝ :=
     well-defined precisely because `D_2 ≠ 0` (a positive cyclotomic
     product, not the constant `1`).  `n = 3, 4` (all 18 partitions) are
     witness-verified and the general statement is tracked. -/
--- Ref: [manuscript] prop:y-lambda-cyclotomic-factorization
+-- Ref: [leitner2026] prop:y-lambda-cyclotomic-factorization
 theorem y_lambda_cyclotomic_factorization (t : ℝ) :
     cyclotomicDenominator_n2 t ≠ 0 ∧
     (∃ y : ℝ, y * cyclotomicDenominator_n2 t = numerator_n2_partition_2 t) ∧

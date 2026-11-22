@@ -91,7 +91,7 @@ theorem one_sub_w_ne_zero : (1 : ℂ) - w ≠ 0 :=
 /-! ### The triangulation -/
 
 /-- The regular ideal tetrahedron. -/
-noncomputable def regularTet : IdealTetrahedron := ⟨w, w_im_pos⟩
+noncomputable def regularTet : IdealTetrahedron := .ofIm w w_im_pos
 
 /-- **The 4₁ ideal triangulation**: two regular tetrahedra, per SnapPy. -/
 noncomputable def figureEightTriangulation : IdealTriangulation 2 :=

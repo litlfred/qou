@@ -7,302 +7,873 @@
   "bytes": 587553,
   "pages": 42,
   "text_source": "embedded",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:55Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 16,
+    "reason": "14 of 506 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 40,
+    "reason": "13 of 388 words are a stray single letter: the text layer splits words"
+   }
+  ]
  },
  "metadata": {
   "arxiv": null,
   "doi": "10.1007/s00209-021-02825-4",
-  "title": "Mathematische Zeitschrift (2022) 300:1359\u20131400 A representation theoretic explanation of the Borcea\u2013Br\u00e4nd\u00e9n characterization Jonathan Leake 1 \u00a9 The Author(s) 2021",
-  "authors_raw": null,
+  "title": "A representation theoretic explanation of the Borcea–Brändén characterization",
+  "authors_raw": "Mathematische Zeitschrift",
   "title_lines": [
-   "Mathematische Zeitschrift (2022) 300:1359\u20131400",
-   "A representation theoretic explanation of the",
-   "Borcea\u2013Br\u00e4nd\u00e9n characterization",
-   "Jonathan Leake 1",
-   "\u00a9 The Author(s) 2021"
+   "Mathematische Zeitschrift (2022) 300:1359–1400"
   ],
-  "abstract": "In 2009, Borcea and Br\u00e4nd\u00e9n characterized all linear operators on multivariate polynomials which preserve the property of being non-vanishing (stable) on products of prescribed open circular regions. We give a representation theoretic interpretation of their \ufb01ndings, which generalizes and simpli\ufb01es their result and leads to a conceptual uni\ufb01cation of many related results in polynomial stability theory. At the heart of this uni\ufb01cation is a generalized Grace\u2019s theorem which addresses polynomials whose roots are all contained in some real interval or ray. This generalization allows us to extend the Borcea\u2013Br\u00e4nd\u00e9n result to characterize a certain subclass of the linear operators which preserve such polynomials.",
+  "abstract": "In 2009, Borcea and Brändén characterized all linear operators on multivariate polynomials which preserve the property of being non-vanishing (stable) on products of prescribed open circular regions. We give a representation theoretic interpretation of their ﬁndings, which generalizes and simpliﬁes their result and leads to a conceptual uniﬁcation of many related results in polynomial stability theory. At the heart of this uniﬁcation is a generalized Grace’s theorem which addresses polynomials whose roots are all contained in some real interval or ray. This generalization allows us to extend the Borcea–Brändén result to characterize a certain subclass of the linear operators which preserve such polynomials.",
   "docinfo": {
+   "Title": "A representation theoretic explanation of the Borcea–Brändén characterization",
    "Author": "Jonathan Leake ",
-   "CreationDate": "D:20210808172847+05'30'",
    "Creator": "Springer",
-   "Title": "A representation theoretic explanation of the Borcea\u2013Br\u00e4nd\u00e9n characterization"
-  }
+   "CreationDate": "D:20210808172847+05'30'"
+  },
+  "title_raw": "Mathematische Zeitschrift (2022) 300:1359–1400",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "A representation theoretic explanation of the Borcea–Brändén characterization",
+   "heading": "Mathematische Zeitschrift A representation theoretic explanation of the Borcea–Brändén characterization",
+   "outline": "A representation theoretic explanation of the Borcea–Brändén characterization",
+   "text": "Mathematische Zeitschrift (2022) 300:1359–1400",
+   "corroborated_by": [
+    "heading",
+    "outline",
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Mathematische Zeitschrift (2022) 300:1359–1400 A representation theoretic explanation of the Borcea–Brändén characterization Jonathan Leake 1 © The Author(s) 2021"
  },
  "toc": [
   {
    "level": 1,
-   "title": "A representation theoretic explanation of the Borcea\u2013Br\u00e4nd\u00e9n characterization",
+   "title": "A representation theoretic explanation of the Borcea–Brändén characterization",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1359"
   },
   {
    "level": 2,
    "title": "Abstract",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1359"
   },
   {
    "level": 2,
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1359"
   },
   {
    "level": 3,
    "title": "The main idea",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1361"
   },
   {
    "level": 3,
    "title": "A generalized Grace's theorem and interval- and ray-rootedness",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1362"
   },
   {
    "level": 3,
    "title": "A roadmap",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1363"
   },
   {
    "level": 3,
    "title": "Preliminaries",
    "page": 6,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1364"
   },
   {
    "level": 4,
    "title": "Notation",
    "page": 6,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1364"
   },
   {
    "level": 4,
    "title": "Homogeneous polynomials",
    "page": 7,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1365"
   },
   {
    "level": 4,
    "title": "Homogeneous polynomials as representations",
    "page": 8,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1366"
   },
   {
    "level": 5,
    "title": "The action of SL2(C)",
    "page": 8,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1366"
   },
   {
    "level": 5,
    "title": "An important invariant map, and apolarity",
    "page": 9,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1367"
   },
   {
    "level": 5,
    "title": "The symbol of an operator",
    "page": 10,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1368"
   },
   {
    "level": 4,
    "title": "Polynomial stability theory",
    "page": 12,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1370"
   },
   {
    "level": 5,
    "title": "Polar derivatives",
    "page": 13,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1371"
   },
   {
    "level": 5,
    "title": "Projective convexity and Laguerre's theorem",
    "page": 14,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1372"
   },
   {
    "level": 5,
    "title": "Real stable polynomials",
    "page": 15,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1373"
   },
   {
    "level": 3,
    "title": "Grace's theorem",
    "page": 16,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1374"
   },
   {
    "level": 4,
    "title": "Other regions",
    "page": 17,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1375"
   },
   {
    "level": 4,
    "title": "Evaluation symbols",
    "page": 19,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1377"
   },
   {
    "level": 2,
    "title": "Stability properties of complex linear operators",
    "page": 20,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1378"
   },
   {
    "level": 3,
    "title": "Weak stability preservation",
    "page": 21,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1379"
   },
   {
    "level": 3,
    "title": "Strong stability preservation",
    "page": 22,
    "source": "outline",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1380"
   },
   {
    "level": 3,
-   "title": "Deriving the complex Borcea\u2013Br\u00e4nd\u00e9n characterization",
+   "title": "Deriving the complex Borcea–Brändén characterization",
    "page": 25,
    "source": "outline",
-   "number": "6.3"
+   "number": "6.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1383"
   },
   {
    "level": 2,
    "title": "Stability properties of real linear operators",
    "page": 27,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1385"
   },
   {
    "level": 3,
    "title": "Weak real stability preservation",
    "page": 27,
    "source": "outline",
-   "number": "7.1"
+   "number": "7.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1385"
   },
   {
    "level": 3,
    "title": "Strong real stability preservation",
    "page": 28,
    "source": "outline",
-   "number": "7.2"
+   "number": "7.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1386"
   },
   {
    "level": 3,
-   "title": "Deriving the real Borcea\u2013Br\u00e4nd\u00e9n characterization",
+   "title": "Deriving the real Borcea–Brändén characterization",
    "page": 29,
    "source": "outline",
-   "number": "7.3"
+   "number": "7.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1387"
   },
   {
    "level": 3,
    "title": "Ray and interval stability",
    "page": 30,
    "source": "outline",
-   "number": "7.4"
+   "number": "7.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1388"
   },
   {
    "level": 2,
    "title": "Acknowledgements",
    "page": 34,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1392"
   },
   {
    "level": 2,
    "title": "A Tensor product decomposition of SL2(C) representations",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1359"
   },
   {
    "level": 3,
    "title": "A.1 Decomposition of V(n) tensor V(m)",
    "page": 34,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1392"
   },
   {
    "level": 3,
    "title": "A.2 Decomposition of V(lambda) tensor V(mu)",
    "page": 37,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1395"
   },
   {
    "level": 3,
-   "title": "B The Grace\u2013Walsh\u2013Szego coincidence theorem",
+   "title": "B The Grace–Walsh–Szego coincidence theorem",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1364"
   },
   {
    "level": 4,
    "title": "B.1 Polarization and projection",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1364"
   },
   {
    "level": 4,
    "title": "B.2 The coincidence theorem",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1365"
   },
   {
    "level": 4,
    "title": "References",
    "page": 41,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1399"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1359",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "1360",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "1361",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "1362",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "1363",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "1364",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "1365",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "1366",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "1367",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "1368",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "1369",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "1370",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "1371",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "1372",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "1373",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "1374",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "1375",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "1376",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "1377",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "1378",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "1379",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "1380",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "1381",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "1382",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "1383",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "1384",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "1385",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "1386",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "1387",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "1388",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "1389",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "1390",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "1391",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "1392",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "1393",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "1394",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "1395",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "1396",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "1397",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "1398",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "1399",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "1400",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-a-representation-theoretic-explanation-of-the-bo",
+   "id": "sec-front-matter",
    "number": null,
-   "title": "A representation theoretic explanation of the Borcea\u2013Br\u00e4nd\u00e9n characterization",
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 153,
-   "n_words": 24
+   "n_chars": 115,
+   "n_words": 7,
+   "label_start": "1359",
+   "label_end": "1359"
+  },
+  {
+   "id": "sec-000-a-representation-theoretic-explanation-of-the-bo",
+   "number": null,
+   "title": "A representation theoretic explanation of the Borcea–Brändén characterization",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 152,
+   "n_words": 23,
+   "label_start": "1359",
+   "label_end": "1359"
   },
   {
    "id": "sec-001-abstract",
@@ -312,7 +883,9 @@
    "page_start": 1,
    "page_end": 1,
    "n_chars": 716,
-   "n_words": 103
+   "n_words": 103,
+   "label_start": "1359",
+   "label_end": "1359"
   },
   {
    "id": "sec-002-1-introduction",
@@ -321,8 +894,10 @@
    "level": 2,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 7202,
-   "n_words": 1155
+   "n_chars": 7181,
+   "n_words": 1230,
+   "label_start": "1359",
+   "label_end": "1361"
   },
   {
    "id": "sec-003-the-main-idea",
@@ -330,19 +905,23 @@
    "title": "The main idea",
    "level": 3,
    "page_start": 3,
-   "page_end": 5,
-   "n_chars": 7231,
-   "n_words": 1227
+   "page_end": 4,
+   "n_chars": 4615,
+   "n_words": 772,
+   "label_start": "1361",
+   "label_end": "1362"
   },
   {
-   "id": "sec-004-21-notation",
-   "number": "2.1",
-   "title": "Notation",
-   "level": 4,
-   "page_start": 5,
+   "id": "sec-004-a-generalized-graces-theorem-and-interval--and-r",
+   "number": null,
+   "title": "A generalized Grace's theorem and interval- and ray-rootedness",
+   "level": 3,
+   "page_start": 4,
    "page_end": 5,
-   "n_chars": 252,
-   "n_words": 40
+   "n_chars": 2862,
+   "n_words": 476,
+   "label_start": "1362",
+   "label_end": "1363"
   },
   {
    "id": "sec-005-a-roadmap",
@@ -351,8 +930,10 @@
    "level": 3,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 2759,
-   "n_words": 432
+   "n_chars": 2755,
+   "n_words": 431,
+   "label_start": "1363",
+   "label_end": "1364"
   },
   {
    "id": "sec-006-2-preliminaries",
@@ -361,225 +942,325 @@
    "level": 3,
    "page_start": 6,
    "page_end": 6,
-   "n_chars": 274,
-   "n_words": 42
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "1364",
+   "label_end": "1364"
   },
   {
-   "id": "sec-007-22-homogeneous-polynomials",
+   "id": "sec-007-21-notation",
+   "number": "2.1",
+   "title": "Notation",
+   "level": 4,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 3064,
+   "n_words": 652,
+   "label_start": "1364",
+   "label_end": "1365"
+  },
+  {
+   "id": "sec-008-22-homogeneous-polynomials",
    "number": "2.2",
    "title": "Homogeneous polynomials",
    "level": 4,
-   "page_start": 6,
+   "page_start": 7,
    "page_end": 8,
-   "n_chars": 4974,
-   "n_words": 999
+   "n_chars": 2166,
+   "n_words": 414,
+   "label_start": "1365",
+   "label_end": "1366"
   },
   {
-   "id": "sec-008-3-homogeneous-polynomials-as-representations",
+   "id": "sec-009-3-homogeneous-polynomials-as-representations",
    "number": "3",
    "title": "Homogeneous polynomials as representations",
    "level": 4,
    "page_start": 8,
    "page_end": 8,
    "n_chars": 959,
-   "n_words": 159
+   "n_words": 159,
+   "label_start": "1366",
+   "label_end": "1366"
   },
   {
-   "id": "sec-009-31-the-action-of-sl2c",
+   "id": "sec-010-31-the-action-of-sl2c",
    "number": "3.1",
    "title": "The action of SL2(C)",
    "level": 5,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 2617,
-   "n_words": 509
+   "n_chars": 2611,
+   "n_words": 503,
+   "label_start": "1366",
+   "label_end": "1367"
   },
   {
-   "id": "sec-010-32-an-important-invariant-map-and-apolarity",
+   "id": "sec-011-32-an-important-invariant-map-and-apolarity",
    "number": "3.2",
    "title": "An important invariant map, and apolarity",
    "level": 5,
    "page_start": 9,
    "page_end": 10,
-   "n_chars": 3739,
-   "n_words": 739
+   "n_chars": 3708,
+   "n_words": 716,
+   "label_start": "1367",
+   "label_end": "1368"
   },
   {
-   "id": "sec-011-33-the-symbol-of-an-operator",
+   "id": "sec-012-33-the-symbol-of-an-operator",
    "number": "3.3",
    "title": "The symbol of an operator",
    "level": 5,
    "page_start": 10,
    "page_end": 12,
-   "n_chars": 4140,
-   "n_words": 810
+   "n_chars": 4100,
+   "n_words": 773,
+   "label_start": "1368",
+   "label_end": "1370"
   },
   {
-   "id": "sec-012-4-polynomial-stability-theory",
+   "id": "sec-013-4-polynomial-stability-theory",
    "number": "4",
    "title": "Polynomial stability theory",
    "level": 4,
    "page_start": 12,
    "page_end": 13,
-   "n_chars": 1545,
-   "n_words": 256
+   "n_chars": 1497,
+   "n_words": 253,
+   "label_start": "1370",
+   "label_end": "1371"
   },
   {
-   "id": "sec-013-41-polar-derivatives",
+   "id": "sec-014-41-polar-derivatives",
    "number": "4.1",
    "title": "Polar derivatives",
    "level": 5,
    "page_start": 13,
-   "page_end": 15,
-   "n_chars": 6342,
-   "n_words": 1220
+   "page_end": 14,
+   "n_chars": 2635,
+   "n_words": 502,
+   "label_start": "1371",
+   "label_end": "1372"
   },
   {
-   "id": "sec-014-43-real-stable-polynomials",
+   "id": "sec-015-42-projective-convexity-and-laguerres-theorem",
+   "number": "4.2",
+   "title": "Projective convexity and Laguerre's theorem",
+   "level": 5,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 3596,
+   "n_words": 654,
+   "label_start": "1372",
+   "label_end": "1373"
+  },
+  {
+   "id": "sec-016-43-real-stable-polynomials",
    "number": "4.3",
    "title": "Real stable polynomials",
    "level": 5,
    "page_start": 15,
-   "page_end": 17,
-   "n_chars": 7341,
-   "n_words": 1454
+   "page_end": 16,
+   "n_chars": 5186,
+   "n_words": 972,
+   "label_start": "1373",
+   "label_end": "1374"
   },
   {
-   "id": "sec-015-51-other-regions",
+   "id": "sec-017-5-graces-theorem",
+   "number": "5",
+   "title": "Grace's theorem",
+   "level": 3,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 2019,
+   "n_words": 362,
+   "label_start": "1374",
+   "label_end": "1375"
+  },
+  {
+   "id": "sec-018-51-other-regions",
    "number": "5.1",
    "title": "Other regions",
    "level": 4,
    "page_start": 17,
    "page_end": 19,
-   "n_chars": 6728,
-   "n_words": 1439
+   "n_chars": 6558,
+   "n_words": 1387,
+   "label_start": "1375",
+   "label_end": "1377"
   },
   {
-   "id": "sec-016-52-evaluation-symbols",
+   "id": "sec-019-52-evaluation-symbols",
    "number": "5.2",
    "title": "Evaluation symbols",
    "level": 4,
    "page_start": 19,
    "page_end": 20,
-   "n_chars": 2966,
-   "n_words": 602
+   "n_chars": 2975,
+   "n_words": 614,
+   "label_start": "1377",
+   "label_end": "1378"
   },
   {
-   "id": "sec-017-6-stability-properties-of-complex-linear-operato",
+   "id": "sec-020-6-stability-properties-of-complex-linear-operato",
    "number": "6",
    "title": "Stability properties of complex linear operators",
    "level": 2,
    "page_start": 20,
    "page_end": 21,
-   "n_chars": 902,
-   "n_words": 128
+   "n_chars": 1419,
+   "n_words": 212,
+   "label_start": "1378",
+   "label_end": "1379"
   },
   {
-   "id": "sec-018-62-strong-stability-preservation",
-   "number": "6.2",
-   "title": "Strong stability preservation",
-   "level": 3,
-   "page_start": 21,
-   "page_end": 21,
-   "n_chars": 481,
-   "n_words": 66
-  },
-  {
-   "id": "sec-019-61-weak-stability-preservation",
+   "id": "sec-021-61-weak-stability-preservation",
    "number": "6.1",
    "title": "Weak stability preservation",
    "level": 3,
    "page_start": 21,
-   "page_end": 25,
-   "n_chars": 12092,
-   "n_words": 2358
+   "page_end": 22,
+   "n_chars": 1832,
+   "n_words": 318,
+   "label_start": "1379",
+   "label_end": "1380"
   },
   {
-   "id": "sec-020-63-deriving-the-complex-borceabr\u00e4nd\u00e9n-characteri",
+   "id": "sec-022-62-strong-stability-preservation",
+   "number": "6.2",
+   "title": "Strong stability preservation",
+   "level": 3,
+   "page_start": 22,
+   "page_end": 25,
+   "n_chars": 10194,
+   "n_words": 2014,
+   "label_start": "1380",
+   "label_end": "1383"
+  },
+  {
+   "id": "sec-023-63-deriving-the-complex-borceabrändén-characteri",
    "number": "6.3",
-   "title": "Deriving the complex Borcea\u2013Br\u00e4nd\u00e9n characterization",
+   "title": "Deriving the complex Borcea–Brändén characterization",
    "level": 3,
    "page_start": 25,
    "page_end": 27,
-   "n_chars": 5497,
-   "n_words": 994
+   "n_chars": 5534,
+   "n_words": 1037,
+   "label_start": "1383",
+   "label_end": "1385"
   },
   {
-   "id": "sec-021-7-stability-properties-of-real-linear-operators",
+   "id": "sec-024-7-stability-properties-of-real-linear-operators",
    "number": "7",
    "title": "Stability properties of real linear operators",
    "level": 2,
    "page_start": 27,
    "page_end": 27,
    "n_chars": 95,
-   "n_words": 14
+   "n_words": 14,
+   "label_start": "1385",
+   "label_end": "1385"
   },
   {
-   "id": "sec-022-71-weak-real-stability-preservation",
+   "id": "sec-025-71-weak-real-stability-preservation",
    "number": "7.1",
    "title": "Weak real stability preservation",
    "level": 3,
    "page_start": 27,
-   "page_end": 27,
-   "n_chars": 447,
-   "n_words": 73
+   "page_end": 28,
+   "n_chars": 2512,
+   "n_words": 427,
+   "label_start": "1385",
+   "label_end": "1386"
   },
   {
-   "id": "sec-023-72-strong-real-stability-preservation",
+   "id": "sec-026-72-strong-real-stability-preservation",
    "number": "7.2",
    "title": "Strong real stability preservation",
    "level": 3,
-   "page_start": 27,
+   "page_start": 28,
    "page_end": 29,
-   "n_chars": 4801,
-   "n_words": 921
+   "n_chars": 2729,
+   "n_words": 522,
+   "label_start": "1386",
+   "label_end": "1387"
   },
   {
-   "id": "sec-024-73-deriving-the-real-borceabr\u00e4nd\u00e9n-characterizat",
+   "id": "sec-027-73-deriving-the-real-borceabrändén-characterizat",
    "number": "7.3",
-   "title": "Deriving the real Borcea\u2013Br\u00e4nd\u00e9n characterization",
+   "title": "Deriving the real Borcea–Brändén characterization",
    "level": 3,
    "page_start": 29,
    "page_end": 30,
-   "n_chars": 3575,
-   "n_words": 686
+   "n_chars": 3551,
+   "n_words": 665,
+   "label_start": "1387",
+   "label_end": "1388"
   },
   {
-   "id": "sec-025-74-ray-and-interval-stability",
+   "id": "sec-028-74-ray-and-interval-stability",
    "number": "7.4",
    "title": "Ray and interval stability",
    "level": 3,
    "page_start": 30,
    "page_end": 34,
-   "n_chars": 11957,
-   "n_words": 2285
+   "n_chars": 11763,
+   "n_words": 2161,
+   "label_start": "1388",
+   "label_end": "1392"
   },
   {
-   "id": "sec-026-acknowledgements",
+   "id": "sec-029-acknowledgements",
    "number": null,
    "title": "Acknowledgements",
    "level": 2,
    "page_start": 34,
-   "page_end": 41,
-   "n_chars": 18832,
-   "n_words": 3614
+   "page_end": 34,
+   "n_chars": 2491,
+   "n_words": 403,
+   "label_start": "1392",
+   "label_end": "1392"
   },
   {
-   "id": "sec-027-references",
+   "id": "sec-030-a1-decomposition-of-vn-tensor-vm",
+   "number": null,
+   "title": "A.1 Decomposition of V(n) tensor V(m)",
+   "level": 3,
+   "page_start": 34,
+   "page_end": 41,
+   "n_chars": 15943,
+   "n_words": 3079,
+   "label_start": "1392",
+   "label_end": "1399"
+  },
+  {
+   "id": "sec-031-references",
    "number": null,
    "title": "References",
    "level": 4,
    "page_start": 41,
    "page_end": 42,
-   "n_chars": 2469,
-   "n_words": 362
+   "n_chars": 2450,
+   "n_words": 349,
+   "label_start": "1399",
+   "label_end": "1400"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 37,
-  "sections": 28,
-  "chars_total": 121086
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 33,
+  "chars_total": 119983,
+  "furniture_lines_stripped": 40
  }
 }

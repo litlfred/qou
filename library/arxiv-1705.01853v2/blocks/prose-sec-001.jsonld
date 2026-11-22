@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1705.01853v2/blocks/prose-sec-001",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Line Operators in the Standard Model",
-  "pageStart": 8,
-  "pageEnd": 11,
-  "text": "../sections/sec-001-3-line-operators-in-the-standard-model.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1705.01853v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1705.01853v2",
+  "title": "An Example: $SU(N)$ vs $SU(N)/{\\bf Z}_N$",
+  "pageStart": 6,
+  "pageEnd": 7,
+  "text": "../sections/sec-001-an-example-sun-vs-sunbf-z-n.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1705.01853v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1705.01853v2/manifest.jsonld",
   "provenance": "ingested"
 }

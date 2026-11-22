@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/kuperberg-1996-cmp-180-109-spiders/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Equinumeration",
+  "pageStart": 27,
+  "pageEnd": 40,
+  "contains": [
+    "library/kuperberg-1996-cmp-180-109-spiders/blocks/prose-sec-002",
+    "library/kuperberg-1996-cmp-180-109-spiders/blocks/thm-sec-002-01",
+    "library/kuperberg-1996-cmp-180-109-spiders/blocks/thm-sec-002-02",
+    "library/kuperberg-1996-cmp-180-109-spiders/blocks/thm-sec-002-03",
+    "library/kuperberg-1996-cmp-180-109-spiders/blocks/thm-sec-002-04",
+    "library/kuperberg-1996-cmp-180-109-spiders/blocks/lem-sec-002-05",
+    "library/kuperberg-1996-cmp-180-109-spiders/blocks/lem-sec-002-06",
+    "library/kuperberg-1996-cmp-180-109-spiders/blocks/lem-sec-002-07",
+    "library/kuperberg-1996-cmp-180-109-spiders/blocks/lem-sec-002-08",
+    "library/kuperberg-1996-cmp-180-109-spiders/blocks/lem-sec-002-09",
+    "library/kuperberg-1996-cmp-180-109-spiders/blocks/thm-sec-002-10",
+    "library/kuperberg-1996-cmp-180-109-spiders/blocks/thm-sec-002-11",
+    "library/kuperberg-1996-cmp-180-109-spiders/blocks/lem-sec-002-12",
+    "library/kuperberg-1996-cmp-180-109-spiders/blocks/lem-sec-002-13"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kuperberg-1996-cmp-180-109-spiders/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kuperberg-1996-cmp-180-109-spiders/manifest.jsonld",
+  "provenance": "ingested"
+}

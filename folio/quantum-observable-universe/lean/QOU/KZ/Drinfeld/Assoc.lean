@@ -16,49 +16,49 @@ and its inverse is `Φ_KZ(ℏ t_{S_Y,S_Z}, ℏ t_{S_X,S_Y}) · reidx(sumAssoc)�
 
 Sorry-free.
 
--- Ref: [manuscript] beans/defs/qou-zoyv (stage S2)
+-- Ref: [leitner2026] beans/defs/qou-zoyv (stage S2)
 -/
 
 noncomputable section
 
 namespace QOU.KZ.Drinfeld
 
-open CategoryTheory Finset QOU.KZ.FuchsianFormal QOU.KZ.BlockResidues QOU.KZ.KZPentagon Obj
+open CategoryTheory Finset QOU.KZ.FuchsianFormal QOU.KZ.BlockResidues QOU.KZ.DrinfeldAssociator Obj
 
 attribute [local instance] Matrix.linftyOpNormedRing Matrix.linftyOpNormedAlgebra
 
-variable {c : ℂ} (hc : Transcendental ℚ c)
-include hc
+variable (Ψ : Associator.{0}) {c : ℂ} (hc : Transcendental ℚ c)
+include Ψ hc
 
 section Blocks
 
-variable {L : Type*} [Fintype L] [DecidableEq L]
+variable {L : Type} [Fintype L] [DecidableEq L]
 
 theorem nonResonant_tB (S T : Finset L) : NonResonant (c • tB ℂ 2 S T) := by
   rw [tB_intCast]; exact nonResonant_cast hc _
 
-omit hc in
+omit Ψ hc in
 theorem commute_smul_tB_diag (S T : Finset L) (a : Matrix (Fin 2) (Fin 2) ℂ) :
     Commute (diag L a) (c • tB ℂ 2 S T) :=
   ((commute_tB_diag S T a).symm).smul_right c
 
 /-- `Φ(ℏ t_{S,T}, ℏ t_{T,U})` on `V^{⊗L}`. -/
 def ΦB (S T U : Finset L) : EndL L :=
-  Φ (c • tB ℂ 2 S T) (c • tB ℂ 2 T U) (nonResonant_tB hc S T) (nonResonant_tB hc T U)
+  Ψ.ΦN (c • tB ℂ 2 S T) (c • tB ℂ 2 T U) (nonResonant_tB Ψ hc S T) (nonResonant_tB Ψ hc T U)
 
 theorem commute_diag_ΦB (S T U : Finset L) (a : Matrix (Fin 2) (Fin 2) ℂ) :
-    Commute (diag L a) (ΦB hc S T U) :=
-  KZHexagonCentral.commute_Φ _ _ (commute_smul_tB_diag S T a) (commute_smul_tB_diag T U a)
+    Commute (diag L a) (ΦB Ψ hc S T U) :=
+  Ψ.commute_ΦN _ _ (commute_smul_tB_diag S T a) (commute_smul_tB_diag T U a)
 
 theorem ΦB_mul_ΦB_swap (S T U : Finset L) :
-    ΦB hc S T U * Φ (c • tB ℂ 2 T U) (c • tB ℂ 2 S T) (nonResonant_tB hc T U)
-      (nonResonant_tB hc S T) = 1 :=
-  (KZShiftPhi.Φ_swap_mul _ _ _ _).2
+    ΦB Ψ hc S T U * Ψ.ΦN (c • tB ℂ 2 T U) (c • tB ℂ 2 S T) (nonResonant_tB Ψ hc T U)
+      (nonResonant_tB Ψ hc S T) = 1 :=
+  (Ψ.ΦN_swap_mul _ _ _ _).2
 
 theorem ΦB_swap_mul_ΦB (S T U : Finset L) :
-    Φ (c • tB ℂ 2 T U) (c • tB ℂ 2 S T) (nonResonant_tB hc T U) (nonResonant_tB hc S T) *
-      ΦB hc S T U = 1 :=
-  (KZShiftPhi.Φ_swap_mul _ _ _ _).1
+    Ψ.ΦN (c • tB ℂ 2 T U) (c • tB ℂ 2 S T) (nonResonant_tB Ψ hc T U) (nonResonant_tB Ψ hc S T) *
+      ΦB Ψ hc S T U = 1 :=
+  (Ψ.ΦN_swap_mul _ _ _ _).1
 
 end Blocks
 
@@ -77,31 +77,31 @@ def assocLegs (X Y Z : Obj) : Leaves (tensor (tensor X Y) Z) ≃ Leaves (tensor 
 /-- The associator matrix. -/
 def αmat (X Y Z : Obj) :
     Matrix (Idx (tensor X (tensor Y Z))) (Idx (tensor (tensor X Y) Z)) ℂ :=
-  reidx (assocLegs X Y Z) * ΦB hc (blkX X Y Z) (blkY X Y Z) (blkZ X Y Z)
+  reidx (assocLegs X Y Z) * ΦB Ψ hc (blkX X Y Z) (blkY X Y Z) (blkZ X Y Z)
 
 /-- The inverse associator matrix. -/
 def αinv (X Y Z : Obj) :
     Matrix (Idx (tensor (tensor X Y) Z)) (Idx (tensor X (tensor Y Z))) ℂ :=
-  Φ (c • tB ℂ 2 (blkY X Y Z) (blkZ X Y Z)) (c • tB ℂ 2 (blkX X Y Z) (blkY X Y Z))
-      (nonResonant_tB hc _ _) (nonResonant_tB hc _ _) * reidx (assocLegs X Y Z).symm
+  Ψ.ΦN (c • tB ℂ 2 (blkY X Y Z) (blkZ X Y Z)) (c • tB ℂ 2 (blkX X Y Z) (blkY X Y Z))
+      (nonResonant_tB Ψ hc _ _) (nonResonant_tB Ψ hc _ _) * reidx (assocLegs X Y Z).symm
 
-theorem αmat_mul_αinv (X Y Z : Obj) : αmat hc X Y Z * αinv hc X Y Z = 1 := by
-  rw [αmat, αinv, Matrix.mul_assoc, ← Matrix.mul_assoc (ΦB hc _ _ _), ΦB_mul_ΦB_swap,
+theorem αmat_mul_αinv (X Y Z : Obj) : αmat Ψ hc X Y Z * αinv Ψ hc X Y Z = 1 := by
+  rw [αmat, αinv, Matrix.mul_assoc, ← Matrix.mul_assoc (ΦB Ψ hc _ _ _), ΦB_mul_ΦB_swap,
     Matrix.one_mul, reidx_mul, Equiv.symm_trans_self, reidx_refl]
 
-theorem αinv_mul_αmat (X Y Z : Obj) : αinv hc X Y Z * αmat hc X Y Z = 1 := by
+theorem αinv_mul_αmat (X Y Z : Obj) : αinv Ψ hc X Y Z * αmat Ψ hc X Y Z = 1 := by
   rw [αmat, αinv, Matrix.mul_assoc, ← Matrix.mul_assoc (reidx _), reidx_mul,
     Equiv.self_trans_symm, reidx_refl, Matrix.one_mul, ΦB_swap_mul_ΦB]
 
-theorem equivariant_αmat (X Y Z : Obj) : Equivariant (αmat hc X Y Z) := by
+theorem equivariant_αmat (X Y Z : Obj) : Equivariant (αmat Ψ hc X Y Z) := by
   intro a _
   rw [ρ_eq_diag, ρ_eq_diag, αmat, ← Matrix.mul_assoc, ← reidx_diag, Matrix.mul_assoc,
-    (commute_diag_ΦB hc _ _ _ a).eq, Matrix.mul_assoc]
+    (commute_diag_ΦB Ψ hc _ _ _ a).eq, Matrix.mul_assoc]
 
-theorem equivariant_αinv (X Y Z : Obj) : Equivariant (αinv hc X Y Z) := by
+theorem equivariant_αinv (X Y Z : Obj) : Equivariant (αinv Ψ hc X Y Z) := by
   intro a _
   rw [ρ_eq_diag, ρ_eq_diag, αinv, ← Matrix.mul_assoc,
-    (KZHexagonCentral.commute_Φ _ _ (commute_smul_tB_diag _ _ a)
+    (Ψ.commute_ΦN _ _ (commute_smul_tB_diag _ _ a)
       (commute_smul_tB_diag _ _ a)).eq, Matrix.mul_assoc, Matrix.mul_assoc]
   congr 1
   have := reidx_diag (assocLegs X Y Z).symm a

@@ -1,0 +1,62 @@
+4006 JOHN W. BARRETT AND BRUCE W. WESTBURY
+
+Lemma 3.2. Given any ordered 6-tuple of elements of I, (a,b,c,d,e, f), and an
+ordered 6-tuple of isomorphisms, (a,b, Gc, Od, be, bf), where da: a—a’,...,of: f
+— f', then the following diagram commutes:
+
+Hom(f,d ® b) ® Hom(b,c ® a) ——— Hom(f’,d’ ® b’) ®@ Hom(b’,c’ @ a’)
+
+abe adypeed
+oid Ke ah
+Hom(e,d @ c) ® Hom(f,e ® a) ——— Hom(e’,d’ @ c’) ® Hom(f",e’ @ a’)
+
+Also, the diagram for the opposite orientation commutes:
+Hom(f,d ® b) ® Hom(b,c ® a) ——— Hom(f’,d’ @ b') ®@ Hom(b’,c’ @ a’)
+
+abe adypeed
+(< e i} I Ne e aa
+Hom(e,d @ c) ® Hom(f,e ® a) ——— Hom(e’,d’ ®c’) ® Hom(f’,e’ @ a’)
+
+Proof. First, in the diagram
+
+omtry(a—)
+a
+
+Hom(e,d ® c) Hom*(d ® c, e)
+
+| |
+
+Hom(e’,d’ @ c’) aobuler), Hom*(d' @ c’, e’)
+
+the horizontal arrows are defined by the pairings, the left vertical arrow by the
+induced isomorphism of the previous definition, and the right vertical arrow by
+the adjoint of the map 3 > (¢. ® a) 3;". This diagram, and a similar diagram
+obtained by replacing e,d,c with f,e,a, commute. These diagrams are used to
+compute the action of the isomorphisms of the statement of the lemma on the
+linear functionals in the definition of the partition function.
+
+The first diagram in the statement of the lemma commutes as a consequence of
+the identity
+
+try $7'B(a ® bv)(1 ® (6, '6($e ® Ga))) (ba @ Ge) be) ® 1) (be @ ba) VF
+= trz(G(1 @ 6)(a @ 1)9).
+The proof that the second diagram commutes is similar.
+
+Proposition 3.3. Let M be a closed simplicial manifold. Let l, and lz be two
+labellings such that the two labels associated to any edge are isomorphic. Then,
+
+Z(M,h) = Z(M,1y).
+
+Proof. According to the previous lemma, the map V(M) — V(M) is conjugated by
+the induced isomorphism on the state space of each triangle. The invariant Z(M)
+is the trace of this map and is invariant under conjugation by a linear map.
+
+Next, we determine the behaviour of the simplicial invariant Z(M/) under combi-
+natorial maps. For this, it is necessary to use the properties of duals in the spherical
+category.
+
+Definition 3.4. Let f: M@ — N be a combinatorial isomorphism of simplicial
+complexes. Let e be any edge of M, labelled by a, and let b be the label of edge
+f(e) in N. Then f is compatible with these labellings if b = a in the case that
+f preserves the orientation of the edge, and b = @ in the case that f reverses the
+orientation.

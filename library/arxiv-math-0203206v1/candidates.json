@@ -1,0 +1,70 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0203206v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "371611f719e6f53ce655b98560163dfc538246e949059cf8c2f790bfc81c154c",
+  "file": "0203206v1.pdf"
+ },
+ "provenance": {
+  "title": "arXiv:math/0203206v1 [math.QA] 20 Mar 2002",
+  "authors": "M. M\u00fcger, J. E. Roberts and L. Tuset",
+  "arxiv": {
+   "id": "math/0203206",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "20 Mar 2002"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "proposition": 1
+  },
+  "formalization_candidates": 1,
+  "by_domain": {
+   "math": 1
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  },
+  "by_lean_status": {
+   "unformalized": 1
+  },
+  "needs_lean_proof": 1
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "2.18",
+   "name": null,
+   "statement": "Let (A, \u2206) be an aqg with analytic extension (Ar, \u2206r). Then 1. (A, \u2206) is compact and commutative i\ufb00there exists a compact group G such that (Ar, \u2206r) \u223c= (C(G), \u2206r). 2. (A, \u2206) is discrete and cocommutative i\ufb00there exists a compact group G such that (Ar, \u2206r) \u223c= (C\u2217 r (G), \u2206r). Again these two cases are dual to each other. Here C(G) denotes the C*-algebra of continuous functions on G with uniform norm, whereas C\u2217 r (G) denotes the reduced group C*-algebra of G. Since a compact group G is amenable, C\u2217 r (G) coincides with the universal group C*-algebra C\u2217(G), and therefore, as we shall see very explicitly in the next section, the representation th",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-006-3-representation-theory.md (p. 12-12)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-006-3-representation-theory.md",
+   "section_title": "Representation Theory",
+   "pages": "12-12",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-006-3-representation-theory.md (p. 12-12)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "prop-sec-006-01",
+   "block_iri": "library/arxiv-math-0203206v1/blocks/prop-sec-006-01",
+   "claim_id": "arxiv-math-0203206v1#proposition:2.18",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  }
+ ]
+}

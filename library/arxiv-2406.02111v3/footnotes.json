@@ -1,0 +1,2060 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-2406.02111v3",
+ "status": "determined",
+ "pages_unread": [
+  6,
+  13
+ ],
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p001-1",
+   "page": 1,
+   "mark": "†",
+   "text": "sebastian.murk@oist.jp",
+   "marks": [
+    {
+     "page": 1,
+     "context": "AlexanderHahn,1, ∗SebastianMurk,2,"
+    }
+   ],
+   "block": "library/arxiv-2406.02111v3/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p001-2",
+   "page": 1,
+   "mark": "‡",
+   "text": "qsukhi@gmail.com",
+   "marks": [
+    {
+     "page": 1,
+     "context": "AlexanderHahn,1, ∗SebastianMurk,2, †SukhbinderSingh,3,"
+    }
+   ],
+   "block": "library/arxiv-2406.02111v3/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p001-3",
+   "page": 1,
+   "mark": "1",
+   "text": "Inthisarticle,wedescribegraphsusingthelanguageofstringdiagrams,",
+   "marks": [
+    {
+     "page": 1,
+     "context": "links (also referred to as “edges”)."
+    }
+   ],
+   "block": "library/arxiv-2406.02111v3/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p004-1",
+   "page": 4,
+   "mark": "2",
+   "text": "While the volume operator is technicallyˆV∝ \u00011/4, where the dag- ger symbol † indicates the adjoint, we take the liberty to refer to ˆQ itself as the volume operator as well when there is no need (in terms of their",
+   "marks": [
+    {
+     "page": 3,
+     "context": "the eigenvalue relation⃗L"
+    },
+    {
+     "page": 3,
+     "context": "2spanninga"
+    },
+    {
+     "page": 4,
+     "context": "instead.Using (⃗L1 +⃗L3)"
+    },
+    {
+     "page": 4,
+     "context": "instead.Using (⃗L1 +⃗L3)2= L"
+    },
+    {
+     "page": 4,
+     "context": "13= L"
+    },
+    {
+     "page": 4,
+     "context": "1+ L"
+    },
+    {
+     "page": 4,
+     "context": "4(ακ −ακ′) ⟨ικ| L"
+    },
+    {
+     "page": 4,
+     "context": "13−L"
+    },
+    {
+     "page": 4,
+     "context": "1−L"
+    },
+    {
+     "page": 4,
+     "context": "⟨ικ| L"
+    },
+    {
+     "page": 4,
+     "context": "wherewehavemadeuseofthefactthatL"
+    },
+    {
+     "page": 4,
+     "context": "1andL"
+    },
+    {
+     "page": 4,
+     "context": "the gravitational and reduced Planck constant, respectively."
+    },
+    {
+     "page": 4,
+     "context": "4(ακ −ακ′) ⟨ικ| L"
+    },
+    {
+     "page": 4,
+     "context": "as a final result. In Ref. [2], the term ⟨ικ| L"
+    },
+    {
+     "page": 4,
+     "context": "(⃗L1 +⃗L2)"
+    },
+    {
+     "page": 4,
+     "context": "L"
+    },
+    {
+     "page": 4,
+     "context": "1+ L"
+    },
+    {
+     "page": 4,
+     "context": "L"
+    },
+    {
+     "page": 4,
+     "context": "2+ 2⃗L1·⃗L"
+    },
+    {
+     "page": 4,
+     "context": "2⟨ικ| [(⃗L1 +⃗L"
+    },
+    {
+     "page": 4,
+     "context": "2⟨ικ| [(⃗L1 +⃗L2)"
+    },
+    {
+     "page": 4,
+     "context": "⟨ικ| L"
+    },
+    {
+     "page": 4,
+     "context": "−⟨ικ| (⃗L1 ·⃗L3)L"
+    },
+    {
+     "page": 4,
+     "context": "where the last step follows from the Casimir property of L"
+    },
+    {
+     "page": 4,
+     "context": "L"
+    }
+   ],
+   "block": "library/arxiv-2406.02111v3/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p004-2",
+   "page": 4,
+   "mark": "3",
+   "text": "For a comprehensive derivation of the Wigner 6jsymbol and possible de- physical relevance) to account for the various prefactors that appear in Eq. (2.4). compositions, for instance into Wigner 3jm symbols, see Ref. [39].",
+   "marks": [
+    {
+     "page": 4,
+     "context": "3+ 2⃗L1·⃗L"
+    },
+    {
+     "page": 4,
+     "context": "3(8πGℏγ)"
+    },
+    {
+     "page": 4,
+     "context": "2+ 2⃗L1·⃗L2,⃗L1·⃗L"
+    },
+    {
+     "page": 4,
+     "context": "2⟨ικ| [(⃗L1 +⃗L2)2,⃗L1 ·⃗L"
+    },
+    {
+     "page": 4,
+     "context": "12(⃗L1·⃗L"
+    },
+    {
+     "page": 4,
+     "context": "wherethecurlybracketsdenoteWigner6jsymbols."
+    },
+    {
+     "page": 4,
+     "context": "2(ακ −ακ′) ⟨ικ|⃗L1 ·⃗L"
+    }
+   ],
+   "block": "library/arxiv-2406.02111v3/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p008-1",
+   "page": 8,
+   "mark": "1",
+   "text": "ℓj2",
+   "marks": [
+    {
+     "page": 8,
+     "context": "Fj"
+    },
+    {
+     "page": 8,
+     "context": "Fj"
+    },
+    {
+     "page": 8,
+     "context": "Fj"
+    },
+    {
+     "page": 8,
+     "context": "Fj"
+    },
+    {
+     "page": 8,
+     "context": "Fj"
+    },
+    {
+     "page": 8,
+     "context": "Fj"
+    },
+    {
+     "page": 8,
+     "context": "Fℓ∗j"
+    },
+    {
+     "page": 8,
+     "context": "Fj"
+    },
+    {
+     "page": 8,
+     "context": "Fj"
+    },
+    {
+     "page": 8,
+     "context": "Fℓ∗j"
+    }
+   ],
+   "block": "library/arxiv-2406.02111v3/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p008-2",
+   "page": 8,
+   "mark": "3",
+   "text": "p∗",
+   "marks": [
+    {
+     "page": 7,
+     "context": "Fκ′j"
+    },
+    {
+     "page": 7,
+     "context": "Fκj"
+    },
+    {
+     "page": 8,
+     "context": "Fκ′j"
+    },
+    {
+     "page": 8,
+     "context": "Fκj"
+    },
+    {
+     "page": 8,
+     "context": "Fj1j2j"
+    },
+    {
+     "page": 8,
+     "context": "Fj1j2j"
+    },
+    {
+     "page": 8,
+     "context": "Fκ′j"
+    },
+    {
+     "page": 8,
+     "context": "Fκj"
+    },
+    {
+     "page": 8,
+     "context": "Fj1j2j"
+    },
+    {
+     "page": 8,
+     "context": "Fj1j2j"
+    },
+    {
+     "page": 8,
+     "context": "Rj2j"
+    },
+    {
+     "page": 8,
+     "context": "Rj"
+    },
+    {
+     "page": 8,
+     "context": "Fκ′j"
+    },
+    {
+     "page": 8,
+     "context": "Fκj"
+    },
+    {
+     "page": 8,
+     "context": "Fj1j2j"
+    },
+    {
+     "page": 8,
+     "context": "Fj1j2j"
+    },
+    {
+     "page": 8,
+     "context": "Rj2j"
+    },
+    {
+     "page": 8,
+     "context": "Rj"
+    },
+    {
+     "page": 8,
+     "context": "Fκ′j"
+    },
+    {
+     "page": 8,
+     "context": "Fκj"
+    },
+    {
+     "page": 8,
+     "context": "Fj1j2j"
+    },
+    {
+     "page": 8,
+     "context": "Fj1j2j"
+    },
+    {
+     "page": 8,
+     "context": "Rj2j"
+    },
+    {
+     "page": 8,
+     "context": "Rj"
+    }
+   ],
+   "block": "library/arxiv-2406.02111v3/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p009-1",
+   "page": 9,
+   "mark": "4",
+   "text": "κ′∗",
+   "marks": [
+    {
+     "page": 8,
+     "context": "Fκ′j3j"
+    },
+    {
+     "page": 8,
+     "context": "Fκj3j"
+    },
+    {
+     "page": 8,
+     "context": "Fκ′j3j"
+    },
+    {
+     "page": 8,
+     "context": "Fκj3j"
+    },
+    {
+     "page": 8,
+     "context": "Fκ′j3j"
+    },
+    {
+     "page": 8,
+     "context": "Fκj3j"
+    },
+    {
+     "page": 8,
+     "context": "Fκ′j3j"
+    },
+    {
+     "page": 8,
+     "context": "Fκj3j"
+    },
+    {
+     "page": 9,
+     "context": "Fκ′j3j"
+    },
+    {
+     "page": 9,
+     "context": "Fκj3j"
+    },
+    {
+     "page": 9,
+     "context": "3j"
+    },
+    {
+     "page": 9,
+     "context": "3j1j"
+    },
+    {
+     "page": 9,
+     "context": "3j"
+    },
+    {
+     "page": 9,
+     "context": "Fκ′j3j"
+    },
+    {
+     "page": 9,
+     "context": "Fκj3j"
+    },
+    {
+     "page": 9,
+     "context": "3j1j"
+    },
+    {
+     "page": 9,
+     "context": "Fκ′j3j"
+    },
+    {
+     "page": 9,
+     "context": "Fκj3j"
+    }
+   ],
+   "block": "library/arxiv-2406.02111v3/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p009-3",
+   "page": 9,
+   "mark": "3",
+   "text": "j1j4",
+   "marks": [
+    {
+     "page": 9,
+     "context": "Fκ′j"
+    },
+    {
+     "page": 9,
+     "context": "Fκj"
+    },
+    {
+     "page": 9,
+     "context": "Fj1j2j"
+    },
+    {
+     "page": 9,
+     "context": "Fj1j2j"
+    },
+    {
+     "page": 9,
+     "context": "Rj2j"
+    },
+    {
+     "page": 9,
+     "context": "Rj"
+    },
+    {
+     "page": 9,
+     "context": "Fj"
+    },
+    {
+     "page": 9,
+     "context": "Fκ′j"
+    },
+    {
+     "page": 9,
+     "context": "Fκj"
+    },
+    {
+     "page": 9,
+     "context": "Fj1j2j"
+    },
+    {
+     "page": 9,
+     "context": "Fj1j2j"
+    },
+    {
+     "page": 9,
+     "context": "nκRj2j"
+    },
+    {
+     "page": 9,
+     "context": "Rj"
+    },
+    {
+     "page": 9,
+     "context": "Fj"
+    },
+    {
+     "page": 9,
+     "context": "Fκ′j"
+    },
+    {
+     "page": 9,
+     "context": "Fκj"
+    }
+   ],
+   "block": "library/arxiv-2406.02111v3/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p011-1",
+   "page": 11,
+   "mark": "1",
+   "text": "κ",
+   "marks": [
+    {
+     "page": 10,
+     "context": "Fj"
+    },
+    {
+     "page": 10,
+     "context": "Fj"
+    },
+    {
+     "page": 11,
+     "context": "Fj"
+    },
+    {
+     "page": 11,
+     "context": "Fj"
+    },
+    {
+     "page": 11,
+     "context": "Fj"
+    },
+    {
+     "page": 11,
+     "context": "Fj"
+    },
+    {
+     "page": 11,
+     "context": "Fj"
+    },
+    {
+     "page": 11,
+     "context": "Fj"
+    },
+    {
+     "page": 11,
+     "context": "Fj"
+    },
+    {
+     "page": 11,
+     "context": "Fj"
+    },
+    {
+     "page": 11,
+     "context": "Fj"
+    },
+    {
+     "page": 11,
+     "context": "Fj"
+    }
+   ],
+   "block": "library/arxiv-2406.02111v3/blocks/prose-sec-010"
+  },
+  {
+   "id": "fn-p012-1",
+   "page": 12,
+   "mark": "2",
+   "text": "πi",
+   "marks": [
+    {
+     "page": 11,
+     "context": "Fj1j"
+    },
+    {
+     "page": 11,
+     "context": "Fj1j"
+    },
+    {
+     "page": 11,
+     "context": "Fj"
+    },
+    {
+     "page": 11,
+     "context": "Fj"
+    },
+    {
+     "page": 11,
+     "context": "Fj1j"
+    },
+    {
+     "page": 11,
+     "context": "Fj1j"
+    },
+    {
+     "page": 11,
+     "context": "Fj"
+    },
+    {
+     "page": 11,
+     "context": "Fj"
+    },
+    {
+     "page": 11,
+     "context": "Fj1j"
+    },
+    {
+     "page": 11,
+     "context": "Fj1j"
+    },
+    {
+     "page": 11,
+     "context": "Fj"
+    },
+    {
+     "page": 11,
+     "context": "Fj"
+    },
+    {
+     "page": 11,
+     "context": "Fj1j"
+    },
+    {
+     "page": 11,
+     "context": "Fj1j"
+    },
+    {
+     "page": 11,
+     "context": "Fj"
+    },
+    {
+     "page": 11,
+     "context": "Fj"
+    },
+    {
+     "page": 11,
+     "context": "Fj1j"
+    },
+    {
+     "page": 11,
+     "context": "Fj1j"
+    }
+   ],
+   "block": "library/arxiv-2406.02111v3/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p016-1",
+   "page": 16,
+   "mark": "4",
+   "text": "A category is called small if both the class of objects and the class of mor- (Springer International Publishing, Cham, 2017). phisms are sets. [50] J. Fuchs and T. Grøsfjeld, Tetrahedral symmetry of 6j-symbols",
+   "marks": [
+    {
+     "page": 16,
+     "context": "thatitissmall."
+    }
+   ],
+   "block": "library/arxiv-2406.02111v3/blocks/prose-sec-015"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p001-4",
+   "page": 1,
+   "mark": "§",
+   "text": "gavin.brennen@mq.edu.au see Sec. III.1.",
+   "block": "library/arxiv-2406.02111v3/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p009-2",
+   "page": 9,
+   "mark": "4",
+   "text": "κ∗",
+   "block": "library/arxiv-2406.02111v3/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p009-4",
+   "page": 9,
+   "mark": "3",
+   "text": "j1j4",
+   "block": "library/arxiv-2406.02111v3/blocks/prose-sec-009"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "theory is q=e"
+  },
+  {
+   "page": 2,
+   "mark": "p",
+   "context": "theory is q=eiℓ"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "q= e"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "q= ei"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "Itcarriesahalf-integerspinjℓ∈N"
+  },
+  {
+   "page": 3,
+   "mark": "j",
+   "context": "(−1)"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "jℓ∈N"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "2spanning"
+  },
+  {
+   "page": 3,
+   "mark": "j",
+   "context": "2spanninga2"
+  },
+  {
+   "page": 3,
+   "mark": "j",
+   "context": "thetensorrepresentationKv=Inv (H"
+  },
+  {
+   "page": 3,
+   "mark": "j",
+   "context": "thetensorrepresentationKv=Inv (Hj1⊗H"
+  },
+  {
+   "page": 3,
+   "mark": "j",
+   "context": "thetensorrepresentationKv=Inv (Hj1⊗Hj2⊗· · · H"
+  },
+  {
+   "page": 3,
+   "mark": "m",
+   "context": "w"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "wm"
+  },
+  {
+   "page": 3,
+   "mark": "4",
+   "context": "wm1···m"
+  },
+  {
+   "page": 3,
+   "mark": "m",
+   "context": "where w"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "where wm"
+  },
+  {
+   "page": 3,
+   "mark": "4",
+   "context": "where wm1···m"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "3+ 2⃗L"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "13|ικ′⟩−(α"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "13|ικ′⟩−(αj1+ α"
+  },
+  {
+   "page": 4,
+   "mark": "q",
+   "context": "3(8πGℏγ)3/2"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "2+ 2⃗L"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "2+ 2⃗L1·⃗L2,⃗L"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "2⟨ικ| [(⃗L"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "2⟨ικ| [(⃗L1 +⃗L2)2,⃗L"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "12(⃗L"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "2(ακ −ακ′) ⟨ικ|⃗L"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "\u0000 ˆQ"
+  },
+  {
+   "page": 5,
+   "mark": "c",
+   "context": "N"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "k⃗L"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "In the basis {|ιk⟩}, which is an eigenbasis of (⃗L1 +⃗L2)"
+  },
+  {
+   "page": 5,
+   "mark": "c",
+   "context": "vector spaces of dimension N"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "4[(⃗L"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "4[(⃗L1+⃗L"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "4[(⃗L1+⃗L2)"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "4[(⃗L1+⃗L2)2, (⃗L"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "4[(⃗L1+⃗L2)2, (⃗L2+⃗L"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "4[(⃗L1+⃗L2)2, (⃗L2+⃗L3)"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "transforming to a basis in which (⃗L2+⃗L3)"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "Wigner 6j symbols, evaluating the action of (⃗L2+⃗L3)"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "transformingback.Ifinsteadoneevaluates(⃗L2+⃗L3)"
+  },
+  {
+   "page": 5,
+   "mark": "c",
+   "context": "egories, i.e. N"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "L"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "Fκ′j3"
+  },
+  {
+   "page": 7,
+   "mark": "4",
+   "context": "Fκ′j3j"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "Fκj3"
+  },
+  {
+   "page": 7,
+   "mark": "4",
+   "context": "Fκj3j"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "Fκ′j3"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "Fκj3"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "Fj1"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Fj1j"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "Fj1j2"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "Fj1"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Fj1j"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "Fj1j2"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "Fκ′j3"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "Fκj3"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "Fj1"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Fj1j"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "Fj1j2"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "Fj1"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Fj1j"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "Fj1j2"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "R"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Rj"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "Rj2"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "R"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "Rj3"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Rj3j"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "Fκ′j3"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "Fκj3"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "Fj1"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Fj1j"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "Fj1j2"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "Fj1"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Fj1j"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "Fj1j2"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "R"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Rj"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "Rj2"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "R"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "Rj3"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Rj3j"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Fℓ∗j1"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "1ℓj"
+  },
+  {
+   "page": 8,
+   "mark": "p",
+   "context": "3"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "Fκ′j3"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "Fκj3"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "Fj1"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Fj1j"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "Fj1j2"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "Fj1"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Fj1j"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "Fj1j2"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "R"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Rj"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "Rj2"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "R"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "Rj3"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Rj3j"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Fℓ∗j1"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "Fκ′j3"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "Fκj3"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Fj"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "Fj1"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "Fj1j"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "Fj1j2"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Fj"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "Fj1"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "Fj1j"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "Fj1j2"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "4κ∗d"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "4κ∗dj"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Fℓ∗j"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "Fℓ∗j1"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "1ℓj"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "R"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "Rj"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "Rj2"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "R"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "Rj3"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "Rj3j"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "3"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "1"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "1ℓj"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "3"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "3"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "ai(a"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Fℓ∗j"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "Fℓ∗j1"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "3"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "3j"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "3j1"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "where{a"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "i=1isthe⟨·, ·⟩-dualbasis.AsperEq.(3.9),L"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "1"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "Fj3"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "1"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "3"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "Fκ′j3"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "Fκj3"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Fj"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "Fj1"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "Fj1j"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "Fj1j2"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Fj"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "Fj1"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "Fj1j"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "Fj1j2"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "nκR"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "nκRj"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "nκRj2"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "R"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "Rj3"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "Rj3j"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "Fj3"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "1"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "3"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "3j"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "3j1"
+  },
+  {
+   "page": 9,
+   "mark": "a",
+   "context": "F"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "Fκ′j3"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "Fκj3"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "4(ακ −ακ′) ⟨ικ| L"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "L"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "Fj1"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "Fj1j"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "Fj1"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "Fj1j"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "Fj1"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "Fj1"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "Fj2"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "Fj2j"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "Fj2j3"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "Fj2j3j"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "Fj2"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "Fj2j"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "Fj2j3"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "Fj2j3j"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "\u0011−1d"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "\u0011−1dj2d"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "Fj1"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "Fj1"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "Fj2"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "Fj2j"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "Fj2j3"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "Fj2j3j"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "Fj2"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "Fj2j"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "Fj2j3"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "Fj2j3j"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "\u0011−1d"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "\u0011−1dj2d"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "Fj1"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "Fj1"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "Fj2"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "Fj2j"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "Fj2j3"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "Fj2j3j"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "Fj2"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "Fj2j"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "Fj2j3"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "Fj2j3j"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "Fj1"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "Fj1"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "Fj2"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "Fj2j"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "Fj2j3"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "Fj2j3j"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "Fj2"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "Fj2j"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "Fj2j3"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "Fj2j3j"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "Fj1"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "F"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "Fj1"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "−e−3π"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "−e−4π"
+  },
+  {
+   "page": 14,
+   "mark": "a",
+   "context": "2,ˆQis"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "2,ˆQisa"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "2isthesameasas"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "2isthesameasasjmax=1inFig."
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "2, the volume operator becomes a"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "i∈I"
+  },
+  {
+   "page": 17,
+   "mark": "c",
+   "context": "N"
+  },
+  {
+   "page": 17,
+   "mark": "c",
+   "context": "Here, the N"
+  },
+  {
+   "page": 17,
+   "mark": "c",
+   "context": "hom-set of a fusion product V"
+  },
+  {
+   "page": 17,
+   "mark": "c",
+   "context": "ab, such that dim(V"
+  },
+  {
+   "page": 17,
+   "mark": "c",
+   "context": "ab)=N"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "can fix a basis.For V"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "can fix a basis.For Va"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "can fix a basis.For Va1,...,a"
+  },
+  {
+   "page": 19,
+   "mark": "d",
+   "context": "F"
+  },
+  {
+   "page": 19,
+   "mark": "e",
+   "context": "F"
+  },
+  {
+   "page": 19,
+   "mark": "b",
+   "context": "F"
+  }
+ ]
+}

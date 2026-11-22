@@ -1,1 +1,1 @@
-The counit ε of a weak quasi-bialgebra A is unique. If A is a weak
+The counit ε of a weak quasi-bialgebra A is unique. If A is a weak quasi-Hopf algebra with antipode S the counit satisfies ε ◦ S = ε. If A is an Ω-involutive weak quasi-bialgebra then ε(a ∗ ) = ε(a), for every a ∈ A.

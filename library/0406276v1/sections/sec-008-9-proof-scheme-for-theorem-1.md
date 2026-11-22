@@ -8,6 +8,7 @@ pages: 22-24
 source_pdf: 0406276v1.pdf
 source_sha256: 8fdf4b5950e8b5f5
 toc_source: inferred
+doc_brief: "The GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE — 16 sections: Front matter; Linking integrals in S3 and H3 .; Historical background."
 ---
 With steady-state electrodynamics in hand, we can follow what we imagine to be 
 Gauss's second line of reasoning and obtain the linking integral formulas on  S3   
@@ -27,7 +28,6 @@ loop  K2 ,  and then apply Ampere's Law to get the formula for the linking integ
  
  
  
-23
  
 We can view  V  as the limit of divergence-free current flows  Vε  supported in 
 smaller and smaller tubular neighborhoods  Nε  of  K1 ,  each disjoint from  K2 ,  and 
@@ -68,7 +68,4 @@ where now  ϕ(α)  =  (π — α) csc α ,  giving us formula (2) of Theorem 1.
 ∙  Note that the third integral in the formula for  BS(V)  in left-translation format  
 on  S3 ,  given in Theorem 2 part (1), is missing from the corresponding linking 
 integral, given in Theorem 1 part (1), because the approximating current flows  Vε 
-are all divergence-free. 
- 
- 
-24
+are all divergence-free.

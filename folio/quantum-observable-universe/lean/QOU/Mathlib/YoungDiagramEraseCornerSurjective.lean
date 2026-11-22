@@ -39,7 +39,7 @@ this file is the bare surjectivity, which is what a `∀ ν` quantifier needs to
 
 Nothing archimedean; no ring; no fit.
 
--- Ref: [manuscript] bean qou-ejde, step 3's stated gap.
+-- Ref: [leitner2026] bean qou-ejde, step 3's stated gap.
 -/
 
 namespace QOU.Mathlib

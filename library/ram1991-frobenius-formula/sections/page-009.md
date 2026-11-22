@@ -1,0 +1,83 @@
+---
+doc_id: ram1991-frobenius-formula
+doc_title: "A Frobenius formula for the characters of the Hecke algebras"
+section_id: page-009
+section_title: "Page 9"
+pages: 9-9
+pdf_page: 9
+source_pdf: ram1991-frobenius-formula.pdf
+source_sha256: 26b2fc85338d9150
+text_source: ocr
+granularity: page
+doc_brief: "A Frobenius formula for the characters of the Hecke algebras — 28 sections: Page 1; Page 2; Page 3"
+---
+A Frobenius formula for the characters of the Hecke algebras 469
+
+Proof. Let d, be the dimension of the irreducible representation of CS, corres-
+ponding to J. Using (1.2) we have that
+
+1
+tr(Dp,) = q, TP)
+
+1 d, A
+= >> a) tr(Do) .
+df dy, Bile te Do)
+
+Since both %8,(0) and tr(Do) are constant on conjugacy classes C, in S,,
+
+tr(Dp,) = ah (Hw) trDy,)|Cul
+
+= Y 7 wee
+ub
+where y? is given by (1.1). Thus, by [Mac, (7.6)], tr(Dp,) is the Schur function
+s,(x). O
+
+(3.8) Theorem. For any heH,,
+tr(Dh) = x x*(h)s,(x) ,
+
+where, for each At f, x’ is the corresponding irreducible character of Hy and s,(x) is
+the corresponding Schur function in the variables x1,...,Xn-
+
+Proof. Let {p?}, AF f, 1 Si<d, be a partition of unity in H, with the property
+that when we specialize g = 1 each p? is well defined and that, at q = 1, { p?|,-1} is
+a partition of unity of CS,. Partitions of unity for H, that satisfy this property are
+known, see the remark below. For each J and each 1 <i < d, let hj be the constant
+in C(q) such that p/hp} = hip}. Note that the h} are the diagonal elements of the
+matrix of h in the irreducible representation corresponding to J determined by this
+partition of unity. Thus, for each A, Yihi = x7().
+
+Since the action of . D and p} commute in all cases, the trace property gives that
+tr(Dp?hp#) = tr(Dpp?h) = 0 unless A = p and i = j.
+
+tr(Dh) = Y_ tr(Dp? hp)
+Stila,
+= tr(Dp?hp})
+
+FE
+i
+
+Wn
+
+Ws,
+ee
+x
+
+1 a
+
+= hi tr(Dp?) .
+rf
+
+1si
+
+Ws
+
+d,
+
+ll
+
+By virtue of Lemma 3.5, tr(Dp) = s,(x) for all 1 <i < dj. Since }\;h} = x*(h) we
+
+have that
+
+tr(Dh) = ¥° x*(h)s,(x)
+Arf

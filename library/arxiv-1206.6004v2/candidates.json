@@ -3,13 +3,14 @@
  "doc_id": "arxiv-1206.6004v2",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "b490672c8c3557dda09fc2e7da4095885c3cb4d17a03f7ac7aab54dd82740f3d",
   "file": "1206.6004v2.pdf"
  },
  "provenance": {
-  "title": null,
-  "authors": null,
+  "title": "Symmetry, Integrability and Geometry: Methods and Applications",
+  "authors": "SIGMA 8 (2012), 065, 20 pages",
   "arxiv": {
    "id": "1206.6004",
    "version": "2",
@@ -20,106 +21,9 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 7,
-  "by_kind": {
-   "theorem": 3,
-   "lemma": 1,
-   "remark": 2,
-   "corollary": 1
-  },
-  "formalization_candidates": 5
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "2",
-   "name": null,
-   "statement": "The homology cycles \u03b11 and \u03b12 for the Hulek\u2013Craig branched cover reproduce the",
-   "section_file": "sections/sec-006-43-understanding-the-isomorphism-f.md",
-   "section_title": "Understanding the isomorphism f",
-   "pages": "9-15",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "1",
-   "name": null,
-   "statement": "Suppose the automorphism \u03c3 has order N > 1. If L\u2212 Id is invertible and Q is",
-   "section_file": "sections/sec-008-52-symmetries-and-the-vector-of-riemann-constant.md",
-   "section_title": "Symmetries and the vector of Riemann constants",
-   "pages": "16-19",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "1",
-   "name": null,
-   "statement": "We have the map\u03c0 :C\u2192C /\u27e8\u03c3\u27e9. Any holomorphic differential on C/\u27e8\u03c3\u27e9 pulls back",
-   "section_file": "sections/sec-008-52-symmetries-and-the-vector-of-riemann-constant.md",
-   "section_title": "Symmetries and the vector of Riemann constants",
-   "pages": "16-19",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "corollary",
-   "source_kind": "corollary",
-   "number": "1",
-   "name": null,
-   "statement": "Assuming the conditions of Lemma 1 and that \u03c8 \u2208 Aut(C), then",
-   "section_file": "sections/sec-008-52-symmetries-and-the-vector-of-riemann-constant.md",
-   "section_title": "Symmetries and the vector of Riemann constants",
-   "pages": "16-19",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "3",
-   "name": null,
-   "statement": "For the Riera and Rodr\u00b4 \u0131guez homology basis of Bring\u2019s curve we have that the",
-   "section_file": "sections/sec-008-52-symmetries-and-the-vector-of-riemann-constant.md",
-   "section_title": "Symmetries and the vector of Riemann constants",
-   "pages": "16-19",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "4",
-   "name": null,
-   "statement": "Bring\u2019s curve has a unique invariant spin-structure.",
-   "section_file": "sections/sec-008-52-symmetries-and-the-vector-of-riemann-constant.md",
-   "section_title": "Symmetries and the vector of Riemann constants",
-   "pages": "16-19",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "2",
-   "name": null,
-   "statement": "Klein\u2019s curve has a unique invariant spin structure [14] and we have shown elsewhere",
-   "section_file": "sections/sec-008-52-symmetries-and-the-vector-of-riemann-constant.md",
-   "section_title": "Symmetries and the vector of Riemann constants",
-   "pages": "16-19",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  }
- ]
+ "candidates": []
 }

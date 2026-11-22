@@ -2,40 +2,50 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1105.0091v1",
  "source_sha256": "7d6f72e016b25027",
- "brief": "E-mail: meliot@phare.normalesup.org — In this paper, we review the representation theory of the inﬁnite symmetric group, and we extend the works of Kerov and Vershik by proving that the irreducible",
- "extended": "**E-mail: meliot@phare.normalesup.org**\n\n70 pp, 6 sections.\n\n**Abstract.** In this paper, we review the representation theory of the inﬁnite symmetric group, and we extend the works of Kerov and Vershik by proving that the irreducible characters ofS∞ always satisfy a central limit theorem. Hence, for any point of the Thoma simplex, the corresponding measures on the levels Yn of the Young graph have a property of gaussian concentration. By using the Robinson-Schensted-Knuth algorithm and the theory of Pitman operators, we relate these results to the properties of certain random per- mutations obtained by riﬄe shuﬄes, and to the behaviour of random walks conditioned to stay in a Weyl chamber.\n\n**Outline.** 2 Quasi-symmetric functions and a link with ra; 3 Observables of Young diagrams and their cumu; 4 Kerov-Vershik law of large numbers; 5 Central limit theorems for characters and fo; 6 Pitman operators and a link with conditioned; 7 Jones-Ocneanu traces of Hecke algebras and (",
+ "brief": "A central limit theorem for the characters of the infinite symmetric group and of the infinite Hecke algebra — In this paper, we review the representation theory of the inﬁnite symmetric group, and",
+ "extended": "**A central limit theorem for the characters of the infinite symmetric group and of the infinite Hecke algebra**\n\n70 pp, 8 sections.\n\n**Abstract.** In this paper, we review the representation theory of the inﬁnite symmetric group, and we extend the works of Kerov and Vershik by proving that the irreducible characters of S∞always satisfy a central limit theorem. Hence, for any point of the Thoma simplex, the corresponding measures on the levels Yn of the Young graph have a property of gaussian concentration. By using the Robinson-Schensted-Knuth algorithm and the theory of Pitman operators, we relate these results to the properties of certain random per- mutations obtained by riﬄe shuﬄes, and to the behaviour of random walks conditioned to stay in a Weyl chamber.\n\n**Outline.** Front matter; 1 Representation theory of the infinite symmet; 2 Quasi-symmetric functions and a link with ra; 3 Observables of Young diagrams and their cumu; 4 Kerov-Vershik law of large numbers; 5 Central limit theorems for characters and fo; 6 Pitman operators and a link with conditioned; 7 Jones-Ocneanu traces of Hecke algebras and (",
  "tokens": {
   "brief": 49,
-  "extended": 247
+  "extended": 281
  },
  "sections": [
   {
-   "id": "sec-000-2-quasi-symmetric-functions-and-a-link-with-rand",
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-000-1-representation-theory-of-the-infinite-symmetri",
+   "title": "Representation theory of the infinite symmetric group",
+   "pages": "4-12"
+  },
+  {
+   "id": "sec-001-2-quasi-symmetric-functions-and-a-link-with-rand",
    "title": "Quasi-symmetric functions and a link with random permutations",
    "pages": "12-22"
   },
   {
-   "id": "sec-001-3-observables-of-young-diagrams-and-their-cumula",
+   "id": "sec-002-3-observables-of-young-diagrams-and-their-cumula",
    "title": "Observables of Young diagrams and their cumulants",
    "pages": "22-31"
   },
   {
-   "id": "sec-002-4-kerov-vershik-law-of-large-numbers",
+   "id": "sec-003-4-kerov-vershik-law-of-large-numbers",
    "title": "Kerov-Vershik law of large numbers",
    "pages": "31-36"
   },
   {
-   "id": "sec-003-5-central-limit-theorems-for-characters-and-for",
+   "id": "sec-004-5-central-limit-theorems-for-characters-and-for",
    "title": "Central limit theorems for characters and for partitions",
    "pages": "36-42"
   },
   {
-   "id": "sec-004-6-pitman-operators-and-a-link-with-conditioned-r",
+   "id": "sec-005-6-pitman-operators-and-a-link-with-conditioned-r",
    "title": "Pitman operators and a link with conditioned random walks and brownian matrices",
    "pages": "42-57"
   },
   {
-   "id": "sec-005-7-jones-ocneanu-traces-of-hecke-algebras-and-qt",
+   "id": "sec-006-7-jones-ocneanu-traces-of-hecke-algebras-and-qt",
    "title": "Jones-Ocneanu traces of Hecke algebras and (q,t)-Plancherel measures",
    "pages": "57-70"
   }

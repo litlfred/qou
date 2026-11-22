@@ -1,0 +1,39 @@
+Arithmetic of Hyperbolic Manifolds = 291
+
+filling, so W""(p, s) = W""(p+2s, —p—s). Note that (p,s) and (—p, —s) Dehn filling
+mean the same thing, and (p’, s’) = (p+ 2s, —p—s) implies (p’+ s,s’) = (s,-p—s),
+so the orientation preserving commensurability of the theorem is proved. The reflection
+symmetries of W” take (p,s) Dehn filling to (p,—p —s) and (p+ 2s,—s) Dehn
+filling, so W’"(p, s) = W"(p, —p — s) and W”(p + 2s, —s). This gives the orientation
+reversing commensurabilities of the theorem. Oo
+
+If W(p1, 41; p2,q2) denotes the result of Dehn filling at both cusps of W (that is,
+(p1,q1) and (p2,q2) Dehn surgery on the two components of the Whitehead link) and
+similarly for W” then the same argument shows:
+
+Proposition 5.2. W"’ (pi, 81; po, 82) = —W" (pi, —pi — $1; p2 + 282, —82), where the
+minus sign signifies reversed orientation, so W(p1, 491; p2,42) is commensurable with
+—W(p1, —pi/2 — 41; po + 4q2, —42). a
+
+Figure 9
+
+Proof of “only if” of part (ii) of Theorem 5.1... We must show non-hyperbolicity for
+the cases claimed. For this it suffices, by the commensurability statement of part (i),
+to consider the five cases (p,s) = (1,0), (2,0), (2,-1), (8,—1), and (4,—2). The
+(p, s) chain link is then respectively the unknot, the (4, 2) cable link, the two component
+unlink, the (3,3) cable link, and the link pictured in Fig. 9, which has an essential
+torus separating the pairs of parallel components. None of these admits a complete finite
+volume hyperbolic structure. Oo
+
+6. Surgery on one component of the Whitehead link complement
+
+6.1. In[T] Thurston describes how to obtain the complement W of the Whitehead link
+(Fig. 5) by identifying faces of an ideal octahedron in pairs. The identification matches
+face A with A’, B with B’, etc., in Fig. 10, so as to respect the labeling of the edges.
+If the octahedron is taken to be a regular ideal octahedron in hyperbolic space, then
+one obtains the complete finite volume hyperbolic structure on W. As described in
+[T] (see also [NZ]), by deforming the octahedron to differently shaped ideal hyperbolic
+octahedra one obtains incomplete hyperbolic structures on W, whose metric completions
+are hyperbolic Dehn surgeries and generalized Dehn surgeries on the Whitehead link.
+We refer the reader to [T] and [NZ] for details on generalized hyperbolic Dehn
+surgery. The essential point is that a generalized Dehn surgery on W is parameterized by

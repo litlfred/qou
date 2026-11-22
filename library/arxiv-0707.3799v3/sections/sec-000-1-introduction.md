@@ -4,13 +4,14 @@ doc_title: "Equivariant Satake category and Kostant-Whittaker reduction"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
-pages: 1-3
+pages: 2-3
 source_pdf: 0707.3799v3.pdf
 source_sha256: 0b29cbced7939f72
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.991
-latex_coverage_ratio: 0.833
+latex_coverage_ratio: 0.996
+doc_brief: "Equivariant Satake category and Kostant-Whittaker reduction — 24 sections: Front matter; Introduction; Notation and statements of the res"
 ---
 Let $G$ be a semi-simple algebraic group over an algebraically closed characteristic zero field $\mathsf k$. The fundamental object of the geometric Langlands duality theory is the so-called *Satake category ${Perv_{{\bf G_O}}(\Gr)}$*. The latter is defined as the category of perverse sheaves on the affine (loop) Grassmannian $\Gr$ equivariant with respect to the group of regular loops ${\bf G_O}$.
 

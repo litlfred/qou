@@ -48,7 +48,7 @@ hide how much it is doing:
 Neither gap is formal bookkeeping; both are real, and this file stops at the honest boundary.
 
 -- Ref: [jones1987] Hecke algebra representations of braid groups and link polynomials
--- Ref: [manuscript] bean qou-k4oq
+-- Ref: [leitner2026] bean qou-k4oq
 -/
 
 namespace QOU.IwahoriHecke.BraidTower

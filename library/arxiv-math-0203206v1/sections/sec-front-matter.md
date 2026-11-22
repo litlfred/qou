@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0203206v1.pdf
 source_sha256: 371611f719e6f53c
 toc_source: inferred
+doc_brief: "arXiv:math/0203206v1 [math.QA] 20 Mar 2002 — We give a pedagogical survey of those aspects of the abstract representation theory of quantum groups which are related to the Tannaka-Krein"
 ---
 arXiv:math/0203206v1  [math.QA]  20 Mar 2002
 Representations of Algebraic Quantum Groups and
@@ -28,4 +29,3 @@ previous reconstructions. As a special case, we reprove the classical Tannaka-Kr
 It is only here that analytic aspects enter, otherwise we proceed in a purely algebraic way. In particular, the
 existence of a Haar functional is reduced to a well known general result concerning discrete multiplier Hopf
 ∗-algebras.
-1

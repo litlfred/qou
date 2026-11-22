@@ -7,8 +7,10 @@ section_number: 2
 pages: 3-5
 source_pdf: 1108.3035v2.pdf
 source_sha256: 935bf1bd3e13821b
+toc_source: outline
 doc_brief: "Random Matrix Theory for the Hermitian Wilson Dirac Operator and the chGUE – GUE Transition — We introduce a random two-matrix model interpolating between a chiral Hermitian (2n + ν) × (2n+ν) matrix"
 ---
+The Random Matrix Model
 In this section we ﬁrst introduce our matrix model and explain why it describes the transition between
 the diﬀerent symmetry classes of random matrices from the chGUE to the GUE. Then we point out
 the relation to the related Wilson chiral RMT previously introduced in [20] as well as to WchPT in
@@ -29,7 +31,6 @@ limit to the chGUE. The real parameter m denotes the quark mass, as will become 
 This ﬁrst part of /D5 is what we are used to in the chGUE (up to the sign in m). The second part
 H = H† is a quadratic Hermitian matrix of size N ≡2n + ν with complex elements. It corresponds
 to the GUE part of /D5, breaking chiral symmetry.
-3
 The matrices W and H are distributed with the following Gaussian probability measures:
 P1(W)
 =
@@ -149,7 +150,6 @@ dU det[U]νe
 2 mpΣV Tr(U+U†)+ 1
 2zpΣV Tr(U−U†)−ap2V W8Tr(U2+U† 2) .
 (2.8)
-4
 Here we have to match the large-N with the large-V inﬁnite volume limit1
 ˆm ≡mpΣV = m
 √
@@ -210,4 +210,3 @@ Furthermore, the choice of parametrisation in a in our model is more convenient 
 the symmetry transition from the chGUE at a = 0 to the GUE at a = 1. Compared to that in D5 eq.
 (2.5) the transition starting at a = 0 corresponds to the chGUE too, then leading via a = O(1) of a
 full N × N GUE to a decoupling for a ≫1 into two GUEs of sizes n and n + ν respectively.
-3

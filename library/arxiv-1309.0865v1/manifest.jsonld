@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1309.0865v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1309.0865v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -51,10 +51,15 @@
     "library/arxiv-1309.0865v1/sections/sec-036",
     "library/arxiv-1309.0865v1/sections/sec-037",
     "library/arxiv-1309.0865v1/sections/sec-038",
-    "library/arxiv-1309.0865v1/sections/sec-039"
+    "library/arxiv-1309.0865v1/sections/sec-039",
+    "library/arxiv-1309.0865v1/sections/sec-040",
+    "library/arxiv-1309.0865v1/sections/sec-041",
+    "library/arxiv-1309.0865v1/sections/sec-042",
+    "library/arxiv-1309.0865v1/sections/sec-043",
+    "library/arxiv-1309.0865v1/sections/sec-044"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",

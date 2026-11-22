@@ -1,0 +1,1 @@
+Under LSI(σ 2), for any F -integrable Borel-measurable function f on R and for any t > 0, logEet(  f dFn−  f dF) ≤t  [Ptσ 2/nf −f ]dF, (5.5) logEet(  f dF−  f dFn) ≤t  [f −Qtσ 2/nf ]dF. (5.6) Note that the second inequality may be derived from the ﬁrst by changing f to −f .

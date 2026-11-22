@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/oberwolfachreports1223-v20120708-9-40/blocks/prose-sec-005",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Partial biquandles are now deﬁned onallpairs—in particular taking thedouble",
-  "pageStart": 12,
-  "pageEnd": 12,
-  "text": "../sections/sec-005-2-partial-biquandles-are-now-deﬁned-onallpairsin.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/oberwolfachreports1223-v20120708-9-40",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/oberwolfachreports1223-v20120708-9-40",
+  "title": "Naturality of Heegaard Floer homology",
+  "pageStart": 16,
+  "pageEnd": 19,
+  "text": "../sections/sec-005-naturality-of-heegaard-floer-homology.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/oberwolfachreports1223-v20120708-9-40/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/oberwolfachreports1223-v20120708-9-40/manifest.jsonld",
   "provenance": "ingested"
 }

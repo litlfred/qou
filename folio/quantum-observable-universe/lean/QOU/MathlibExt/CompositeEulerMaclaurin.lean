@@ -36,8 +36,8 @@
   chasing.  No analytic extension is needed.  See that file for the elementary
   `O(x²)` bound that replaces it.
 
-  -- Ref: [manuscript] QOU/MathlibExt/CorrectedTrapezoid.lean   (the one-cell rule)
-  -- Ref: [manuscript] QOU/Knot/KashaevEndpointSplit.lean       (where logSinc enters)
+  -- Ref: [leitner2026] QOU/MathlibExt/CorrectedTrapezoid.lean   (the one-cell rule)
+  -- Ref: [leitner2026] QOU/Knot/KashaevEndpointSplit.lean       (where logSinc enters)
 -/
 import QOU.MathlibExt.CorrectedTrapezoid
 

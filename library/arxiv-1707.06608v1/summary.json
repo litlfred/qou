@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1707.06608v1",
  "source_sha256": "7b7db6dce87dc81e",
- "brief": "Fractional Hopfions in the Faddeev-Skyrme model with a symmetry breaking potential — We construct new solutions of the Faddeev-Skyrme model with a symmetry breaking potential admittingS1 vacuum.",
- "extended": "**Fractional Hopfions in the Faddeev-Skyrme model with a symmetry breaking potential**\n\n*A. Samoilenka† and Ya. Shnir†⋆*\n\n22 pp, 10 sections.\n\n**Abstract.** We construct new solutions of the Faddeev-Skyrme model with a symmetry breaking potential admittingS1 vacuum. It includes, as a limiting case, the usualSO(3) symmetry breaking mass term, another limit corresponds to the potentialm2φ2 1, which gives a mass to the corresponding component of the scalar ﬁeld. However we ﬁnd that the spacial distribution of the energy density of these solutions has more complicated structure, than in the case of the usual Hopﬁons, typically it represents two separate linked tubes with diﬀerent thicknesses and positions. In order to classify these conﬁgurations we deﬁne a counterpart of the usual position curve, which represents a collection of loopsC1,C−1 corresponding to the preimages of the points⃗φ = (±1∓µ, 0, 0), respectively. Then the Hopf invariant can be deﬁned asQ = link(C1,C−1).\n\n**Outline.** 1 Introduction; 2 The model; 3 Initial approximation; 4 Numerical results; 4.1 Q=1; 4.2 Q=2; 4.3.1 Degrees 3 and 4; 4.3.2 Degrees 5,6 and 7; 5 Compact solutions; 6 Summary",
+ "brief": "Fractional Hopﬁons in the Faddeev-Skyrme model with a symmetry breaking potential — We construct new solutions of the Faddeev-Skyrme model with a symmetry breaking potential admitting S1 vacuum.",
+ "extended": "**Fractional Hopﬁons in the Faddeev-Skyrme model with a symmetry breaking potential**\n\n*A. Samoilenka† and Ya. Shnir†⋆*\n\n22 pp, 12 sections.\n\n**Abstract.** We construct new solutions of the Faddeev-Skyrme model with a symmetry breaking potential admitting S1 vacuum. It includes, as a limiting case, the usual SO(3) symmetry breaking mass term, another limit corresponds to the potential m2φ2 1, which gives a mass to the corresponding component of the scalar ﬁeld. However we ﬁnd that the spacial distribution of the energy density of these solutions has more complicated structure, than in the case of the usual Hopﬁons, typically it represents two separate linked tubes with diﬀerent thicknesses and positions. In order to classify these conﬁgurations we deﬁne a counterpart of the usual position curve, which represents a collection of loops C1, C−1 corresponding to the preimages of the points⃗φ = (±1 ∓µ, 0, 0), respectively. Then the Hopf invariant can be deﬁned as Q = link(C1, C−1).\n\n**Outline.** Front matter; 1 Introduction; 2 The model; 3 Initial approximation; 4 Numerical results; 4.1 Q=1; 4.2 Q=2; 4.3 Multisoliton configurations; 4.3.1 Degrees 3 and 4; 4.3.2 Degrees 5,6 and 7; 5 Compact solutions; 6 Summary",
  "tokens": {
   "brief": 48,
-  "extended": 292
+  "extended": 306
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -40,22 +45,27 @@
    "pages": "10-11"
   },
   {
-   "id": "sec-006-431-degrees-3-and-4",
+   "id": "sec-006-43-multisoliton-configurations",
+   "title": "Multisoliton configurations",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-007-431-degrees-3-and-4",
    "title": "Degrees 3 and 4",
    "pages": "11-18"
   },
   {
-   "id": "sec-007-432-degrees-56-and-7",
+   "id": "sec-008-432-degrees-56-and-7",
    "title": "Degrees 5,6 and 7",
    "pages": "18-19"
   },
   {
-   "id": "sec-008-5-compact-solutions",
+   "id": "sec-009-5-compact-solutions",
    "title": "Compact solutions",
    "pages": "19-20"
   },
   {
-   "id": "sec-009-6-summary",
+   "id": "sec-010-6-summary",
    "title": "Summary",
    "pages": "20-22"
   }

@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1211.1812v5
-doc_title: "Presheaves of superselection structures in curved spaceti mes Ezio Vasselli ezio.vasselli@gmail.com"
+doc_title: "Presheaves of superselection structures in curved spacetimes"
 section_id: sec-003-22-nets-of-c-algebras
 section_title: "Nets of C*-algebras."
 section_number: 2.2
 pages: 7-9
 source_pdf: 1211.1812v5.pdf
 source_sha256: 211667ea1312d47f
-doc_brief: "Presheaves of superselection structures in curved spaceti mes Ezio Vasselli ezio.vasselli@gmail.com — We show that superselection structures on curved spacetime s, that are expected to describe"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.985
-latex_coverage_ratio: 0.975
+latex_coverage_ratio: 0.979
+doc_brief: "Presheaves of superselection structures in curved spacetimes — We show that superselection structures on curved spacetimes, that are expected to describe quantum charges aﬀected by the underlying"
 ---
 []{#sec.back.nets label="sec.back.nets"}
 

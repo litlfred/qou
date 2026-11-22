@@ -7,10 +7,11 @@
   "bytes": 459178,
   "pages": 27,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,17 +22,25 @@
   },
   "doi": null,
   "title": "ASYMPTOTICS OF q-PLANCHEREL MEASURES",
-  "authors_raw": "V ALENTIN F\u00c9RAY AND PIERRE-LO\u00cfC M\u00c9LIOT",
+  "authors_raw": "VALENTIN FÉRAY AND PIERRE-LOÏC MÉLIOT",
   "title_lines": [
    "ASYMPTOTICS OF q-PLANCHEREL MEASURES"
   ],
-  "abstract": "In this paper, we are interested in the asymptotic size of the rows and columns of a random Young diagram under a natural deformation of the Plancherel measure coming from Hecke algebras. The \ufb01rst lines of such diagrams are typically of order n, so it does not \ufb01t in the context of the work of P. Biane and P. \u015aniady. Using the theory of polynomial func tions on Young diagrams of Kerov and Olshanski, we are able to compute explicitly the \ufb01rst- and se cond-order asymptotics of the length of the \ufb01rst rows. Our method also works for other measures, for e xample those coming from Schur-W eyl representations.",
+  "abstract": "In this paper, we are interested in the asymptotic size of the rows and columns of a random Young diagram under a natural deformation of the Plancherel measure coming from Hecke algebras. The ﬁrst lines of such diagrams are typically of order n, so it does not ﬁt in the context of the work of P. Biane and P. Śniady. Using the theory of polynomial functions on Young diagrams of Kerov and Olshanski, we are able to compute explicitly the ﬁrst- and second-order asymptotics of the length of the ﬁrst rows. Our method also works for other measures, for example those coming from Schur-Weyl representations.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181024195003-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20181024195003-04'00'"
+  },
+  "title_raw": "ASYMPTOTICS OF q-PLANCHEREL MEASURES",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "ASYMPTOTICS OF q -PLANCHEREL MEASURES 1. Introduction 1.1. Background. Given a combinatorial family of planar objects, it is natural to ask if, with a good rescaling, there is a limiting continuous object when the size tends to inﬁnity. In the case of Young diagrams endowed with Plancherel measure",
+   "outline": "1. Introduction",
+   "text": "ASYMPTOTICS OF q-PLANCHEREL MEASURES",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [
@@ -40,214 +49,626 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Background",
    "page": 1,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Results",
    "page": 2,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Tools",
    "page": 4,
    "source": "outline",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Some open questions",
    "page": 4,
    "source": "outline",
-   "number": "1.4"
+   "number": "1.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Outline of the paper",
    "page": 5,
    "source": "outline",
-   "number": "1.5"
+   "number": "1.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 1,
    "title": "The q-Plancherel measure",
    "page": 5,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Definition",
    "page": 5,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Link with representation of the Hecke algebras",
    "page": 7,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Interpretation in the representation theory of GLn(Fq)",
    "page": 7,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "Observables of diagrams",
    "page": 8,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Power sums of Frobenius coordinates",
    "page": 8,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Normalized characters",
    "page": 9,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Normalized conjugacy classes in symmetric group algebras",
    "page": 10,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Products of normalized characters",
    "page": 10,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Another product",
    "page": 11,
    "source": "outline",
-   "number": "3.5"
+   "number": "3.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "q-characters",
    "page": 12,
    "source": "outline",
-   "number": "3.6"
+   "number": "3.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 1,
    "title": "First order asymptotics",
    "page": 13,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "Convergence of power sums",
    "page": 14,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 2,
    "title": "Convergence of row lengths",
    "page": 15,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "Link with the representation theory of the infinite symmetric group",
    "page": 16,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 1,
    "title": "Second order asymptotics",
    "page": 17,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "Bound for cumulants",
    "page": 18,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 2,
    "title": "Computation of covariances",
    "page": 21,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 2,
    "title": "Fluctuations of rows",
    "page": 22,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 1,
    "title": "Schur-Weyl representations",
    "page": 23,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 2,
    "title": "Decomposition of tensor representations",
    "page": 23,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 2,
    "title": "Asymptotic shape of the diagrams",
    "page": 24,
    "source": "outline",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
   },
   {
    "level": 1,
    "title": "Acknowledgements",
    "page": 26,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   },
   {
    "level": 1,
    "title": "References",
    "page": 26,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "A random Young diagram λ = (101, 51, 28, 8, 7, 3, 1, 1) of size 200 under the 1/2-Plancherel measure",
+   "page": 2,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "2"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Limit shape of a rescaled random diagram under the Schur-Weyl measure of parameters c > 0 and α < 1/2",
+   "page": 3,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Generic degrees, q-Plancherel measures and q-transition probabilities on diagrams of size n ≤4",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Modiﬁed Frobenius coordinates of a Young diagram drawn in Russian style. For instance, a∗",
+   "page": 9,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "9"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Graphical representation of the test function fi",
+   "page": 22,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "22"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 732,
+   "n_words": 120,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -256,7 +677,9 @@
    "page_start": 1,
    "page_end": 1,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
    "id": "sec-001-11-background",
@@ -264,272 +687,368 @@
    "title": "Background",
    "level": 2,
    "page_start": 1,
-   "page_end": 1,
-   "n_chars": 1134,
-   "n_words": 203
+   "page_end": 2,
+   "n_chars": 2972,
+   "n_words": 505,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
    "id": "sec-002-12-results",
    "number": "1.2",
    "title": "Results",
    "level": 2,
-   "page_start": 1,
+   "page_start": 2,
    "page_end": 4,
-   "n_chars": 9006,
-   "n_words": 1688
+   "n_chars": 6088,
+   "n_words": 1104,
+   "label_start": "2",
+   "label_end": "4"
   },
   {
-   "id": "sec-003-14-some-open-questions",
+   "id": "sec-003-13-tools",
+   "number": "1.3",
+   "title": "Tools",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 827,
+   "n_words": 138,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-004-14-some-open-questions",
    "number": "1.4",
    "title": "Some open questions",
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 2222,
-   "n_words": 392
+   "n_chars": 2206,
+   "n_words": 378,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
-   "id": "sec-004-2-the-q-plancherel-measure",
+   "id": "sec-005-2-the-q-plancherel-measure",
    "number": "2",
    "title": "The q-Plancherel measure",
    "level": 1,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 82,
-   "n_words": 18
+   "n_chars": 81,
+   "n_words": 17,
+   "label_start": "5",
+   "label_end": "5"
   },
   {
-   "id": "sec-005-15-outline-of-the-paper",
+   "id": "sec-006-15-outline-of-the-paper",
    "number": "1.5",
    "title": "Outline of the paper",
    "level": 2,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 209,
-   "n_words": 38
+   "n_chars": 903,
+   "n_words": 160,
+   "label_start": "5",
+   "label_end": "5"
   },
   {
-   "id": "sec-006-13-tools",
-   "number": "1.3",
-   "title": "Tools",
+   "id": "sec-007-21-definition",
+   "number": "2.1",
+   "title": "Definition",
    "level": 2,
    "page_start": 5,
    "page_end": 7,
-   "n_chars": 4022,
-   "n_words": 803
+   "n_chars": 3124,
+   "n_words": 630,
+   "label_start": "5",
+   "label_end": "7"
   },
   {
-   "id": "sec-007-22-link-with-representation-of-the-hecke-algebra",
+   "id": "sec-008-22-link-with-representation-of-the-hecke-algebra",
    "number": "2.2",
    "title": "Link with representation of the Hecke algebras",
    "level": 2,
    "page_start": 7,
    "page_end": 7,
-   "n_chars": 2209,
-   "n_words": 413
+   "n_chars": 2275,
+   "n_words": 402,
+   "label_start": "7",
+   "label_end": "7"
   },
   {
-   "id": "sec-008-23-interpretation-in-the-representation-theory-o",
+   "id": "sec-009-23-interpretation-in-the-representation-theory-o",
    "number": "2.3",
    "title": "Interpretation in the representation theory of GLn(Fq)",
    "level": 2,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 3442,
-   "n_words": 647
+   "n_chars": 2659,
+   "n_words": 458,
+   "label_start": "7",
+   "label_end": "8"
   },
   {
-   "id": "sec-009-32-normalized-characters",
+   "id": "sec-010-3-observables-of-diagrams",
+   "number": "3",
+   "title": "Observables of diagrams",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 742,
+   "n_words": 122,
+   "label_start": "8",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-011-31-power-sums-of-frobenius-coordinates",
+   "number": "3.1",
+   "title": "Power sums of Frobenius coordinates",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 1276,
+   "n_words": 259,
+   "label_start": "8",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-012-32-normalized-characters",
    "number": "3.2",
    "title": "Normalized characters",
    "level": 2,
-   "page_start": 8,
+   "page_start": 9,
    "page_end": 10,
-   "n_chars": 2895,
-   "n_words": 603
+   "n_chars": 1252,
+   "n_words": 262,
+   "label_start": "9",
+   "label_end": "10"
   },
   {
-   "id": "sec-010-33-normalized-conjugacy-classes-in-symmetric-gro",
+   "id": "sec-013-33-normalized-conjugacy-classes-in-symmetric-gro",
    "number": "3.3",
    "title": "Normalized conjugacy classes in symmetric group algebras",
    "level": 2,
    "page_start": 10,
    "page_end": 10,
-   "n_chars": 1464,
-   "n_words": 289
+   "n_chars": 1427,
+   "n_words": 262,
+   "label_start": "10",
+   "label_end": "10"
   },
   {
-   "id": "sec-011-34-products-of-normalized-characters",
+   "id": "sec-014-34-products-of-normalized-characters",
    "number": "3.4",
    "title": "Products of normalized characters",
    "level": 2,
    "page_start": 10,
    "page_end": 11,
-   "n_chars": 2895,
-   "n_words": 616
+   "n_chars": 2869,
+   "n_words": 592,
+   "label_start": "10",
+   "label_end": "11"
   },
   {
-   "id": "sec-012-35-another-product",
+   "id": "sec-015-35-another-product",
    "number": "3.5",
    "title": "Another product",
    "level": 2,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 1412,
-   "n_words": 283
+   "n_chars": 1381,
+   "n_words": 252,
+   "label_start": "11",
+   "label_end": "12"
   },
   {
-   "id": "sec-013-36-q-characters",
+   "id": "sec-016-36-q-characters",
    "number": "3.6",
    "title": "q-characters",
    "level": 2,
    "page_start": 12,
    "page_end": 13,
-   "n_chars": 4855,
-   "n_words": 985
+   "n_chars": 4732,
+   "n_words": 879,
+   "label_start": "12",
+   "label_end": "13"
   },
   {
-   "id": "sec-014-4-first-order-asymptotics",
+   "id": "sec-017-4-first-order-asymptotics",
    "number": "4",
    "title": "First order asymptotics",
    "level": 1,
    "page_start": 13,
-   "page_end": 13,
-   "n_chars": 100,
-   "n_words": 24
+   "page_end": 14,
+   "n_chars": 205,
+   "n_words": 39,
+   "label_start": "13",
+   "label_end": "14"
   },
   {
-   "id": "sec-015-41-convergence-of-power-sums",
+   "id": "sec-018-41-convergence-of-power-sums",
    "number": "4.1",
    "title": "Convergence of power sums",
    "level": 2,
-   "page_start": 13,
+   "page_start": 14,
    "page_end": 15,
-   "n_chars": 2621,
-   "n_words": 549
+   "n_chars": 2384,
+   "n_words": 454,
+   "label_start": "14",
+   "label_end": "15"
   },
   {
-   "id": "sec-016-42-convergence-of-row-lengths",
+   "id": "sec-019-42-convergence-of-row-lengths",
    "number": "4.2",
    "title": "Convergence of row lengths",
    "level": 2,
    "page_start": 15,
    "page_end": 16,
-   "n_chars": 4256,
-   "n_words": 856
+   "n_chars": 4181,
+   "n_words": 793,
+   "label_start": "15",
+   "label_end": "16"
   },
   {
-   "id": "sec-017-43-link-with-the-representation-theory-of-the-in",
+   "id": "sec-020-43-link-with-the-representation-theory-of-the-in",
    "number": "4.3",
    "title": "Link with the representation theory of the infinite symmetric group",
    "level": 2,
    "page_start": 16,
    "page_end": 17,
-   "n_chars": 2696,
-   "n_words": 556
+   "n_chars": 2643,
+   "n_words": 510,
+   "label_start": "16",
+   "label_end": "17"
   },
   {
-   "id": "sec-018-5-second-order-asymptotics",
+   "id": "sec-021-5-second-order-asymptotics",
    "number": "5",
    "title": "Second order asymptotics",
    "level": 1,
    "page_start": 17,
    "page_end": 18,
-   "n_chars": 1152,
-   "n_words": 211
+   "n_chars": 1133,
+   "n_words": 198,
+   "label_start": "17",
+   "label_end": "18"
   },
   {
-   "id": "sec-019-51-bound-for-cumulants",
+   "id": "sec-022-51-bound-for-cumulants",
    "number": "5.1",
    "title": "Bound for cumulants",
    "level": 2,
    "page_start": 18,
    "page_end": 21,
-   "n_chars": 7872,
-   "n_words": 1604
+   "n_chars": 7335,
+   "n_words": 1480,
+   "label_start": "18",
+   "label_end": "21"
   },
   {
-   "id": "sec-020-52-computation-of-covariances",
+   "id": "sec-023-52-computation-of-covariances",
    "number": "5.2",
    "title": "Computation of covariances",
    "level": 2,
    "page_start": 21,
    "page_end": 22,
-   "n_chars": 2960,
-   "n_words": 576
+   "n_chars": 2891,
+   "n_words": 523,
+   "label_start": "21",
+   "label_end": "22"
   },
   {
-   "id": "sec-021-53-fluctuations-of-rows",
+   "id": "sec-024-53-fluctuations-of-rows",
    "number": "5.3",
    "title": "Fluctuations of rows",
    "level": 2,
    "page_start": 22,
    "page_end": 23,
-   "n_chars": 2690,
-   "n_words": 533
+   "n_chars": 2641,
+   "n_words": 486,
+   "label_start": "22",
+   "label_end": "23"
   },
   {
-   "id": "sec-022-6-schur-weyl-representations",
+   "id": "sec-025-6-schur-weyl-representations",
    "number": "6",
    "title": "Schur-Weyl representations",
    "level": 1,
    "page_start": 23,
    "page_end": 23,
-   "n_chars": 313,
-   "n_words": 65
+   "n_chars": 312,
+   "n_words": 64,
+   "label_start": "23",
+   "label_end": "23"
   },
   {
-   "id": "sec-023-61-decomposition-of-tensor-representations",
+   "id": "sec-026-61-decomposition-of-tensor-representations",
    "number": "6.1",
    "title": "Decomposition of tensor representations",
    "level": 2,
    "page_start": 23,
    "page_end": 24,
-   "n_chars": 1936,
-   "n_words": 378
+   "n_chars": 1861,
+   "n_words": 334,
+   "label_start": "23",
+   "label_end": "24"
   },
   {
-   "id": "sec-024-62-asymptotic-shape-of-the-diagrams",
+   "id": "sec-027-62-asymptotic-shape-of-the-diagrams",
    "number": "6.2",
    "title": "Asymptotic shape of the diagrams",
    "level": 2,
    "page_start": 24,
    "page_end": 26,
-   "n_chars": 5861,
-   "n_words": 1163
+   "n_chars": 5764,
+   "n_words": 1087,
+   "label_start": "24",
+   "label_end": "26"
   },
   {
-   "id": "sec-025-acknowledgements",
+   "id": "sec-028-acknowledgements",
    "number": null,
    "title": "Acknowledgements",
    "level": 1,
    "page_start": 26,
    "page_end": 26,
-   "n_chars": 565,
-   "n_words": 91
+   "n_chars": 561,
+   "n_words": 87,
+   "label_start": "26",
+   "label_end": "26"
   },
   {
-   "id": "sec-026-references",
+   "id": "sec-029-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 26,
    "page_end": 27,
-   "n_chars": 6095,
-   "n_words": 927
+   "n_chars": 6027,
+   "n_words": 859,
+   "label_start": "26",
+   "label_end": "27"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 30,
-  "sections": 27,
-  "chars_total": 74964,
+  "toc_inferred_entries": 0,
+  "figure_entries": 5,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 31,
+  "chars_total": 73484,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "qplancherel.tex",
    "tex_sections": 40,
-   "overlaid": 20,
+   "overlaid": 26,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -537,27 +1056,42 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-001-11-background",
      "title": "Background",
-     "prose_ratio": 0.434,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-002-12-results",
-     "title": "Results",
-     "prose_ratio": 0.941,
-     "coverage_ratio": 0.707,
+     "prose_ratio": 0.82,
+     "coverage_ratio": 0.949,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-14-some-open-questions",
+     "id": "sec-002-12-results",
+     "title": "Results",
+     "prose_ratio": 0.936,
+     "coverage_ratio": 0.895,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-13-tools",
+     "title": "Tools",
+     "prose_ratio": 0.915,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-14-some-open-questions",
      "title": "Some open questions",
      "prose_ratio": 0.902,
      "coverage_ratio": 0.986,
@@ -565,49 +1099,68 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-2-the-q-plancherel-measure",
+     "id": "sec-005-2-the-q-plancherel-measure",
      "title": "The q-Plancherel measure",
-     "prose_ratio": 0.014,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.021,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-005-15-outline-of-the-paper",
+     "id": "sec-006-15-outline-of-the-paper",
      "title": "Outline of the paper",
-     "prose_ratio": 0.5,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.806,
+     "coverage_ratio": 0.45,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
-     "id": "sec-006-13-tools",
-     "title": "Tools",
-     "prose_ratio": 0.31,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-007-21-definition",
+     "title": "Definition",
+     "prose_ratio": 0.924,
+     "coverage_ratio": 0.952,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-007-22-link-with-representation-of-the-hecke-algebra",
+     "id": "sec-008-22-link-with-representation-of-the-hecke-algebra",
      "title": "Link with representation of the Hecke algebras",
-     "prose_ratio": 0.958,
-     "coverage_ratio": 0.992,
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.976,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-23-interpretation-in-the-representation-theory-o",
+     "id": "sec-009-23-interpretation-in-the-representation-theory-o",
      "title": "Interpretation in the representation theory of GLn(Fq)",
-     "prose_ratio": 0.713,
-     "coverage_ratio": 0.973,
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.966,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-32-normalized-characters",
+     "id": "sec-010-3-observables-of-diagrams",
+     "title": "Observables of diagrams",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-31-power-sums-of-frobenius-coordinates",
+     "title": "Power sums of Frobenius coordinates",
+     "prose_ratio": 0.87,
+     "coverage_ratio": 0.934,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-32-normalized-characters",
      "title": "Normalized characters",
-     "prose_ratio": 0.983,
-     "coverage_ratio": 0.545,
+     "prose_ratio": 0.933,
+     "coverage_ratio": 0.948,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-010-33-normalized-conjugacy-classes-in-symmetric-gro",
+     "id": "sec-013-33-normalized-conjugacy-classes-in-symmetric-gro",
      "title": "Normalized conjugacy classes in symmetric group algebras",
      "prose_ratio": 0.972,
      "coverage_ratio": 1.0,
@@ -615,7 +1168,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-34-products-of-normalized-characters",
+     "id": "sec-014-34-products-of-normalized-characters",
      "title": "Products of normalized characters",
      "prose_ratio": 0.936,
      "coverage_ratio": 0.972,
@@ -623,7 +1176,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-012-35-another-product",
+     "id": "sec-015-35-another-product",
      "title": "Another product",
      "prose_ratio": 0.884,
      "coverage_ratio": 0.952,
@@ -631,7 +1184,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-013-36-q-characters",
+     "id": "sec-016-36-q-characters",
      "title": "q-characters",
      "prose_ratio": 0.972,
      "coverage_ratio": 0.994,
@@ -639,29 +1192,31 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-014-4-first-order-asymptotics",
+     "id": "sec-017-4-first-order-asymptotics",
      "title": "First order asymptotics",
-     "prose_ratio": 0.562,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.875,
+     "coverage_ratio": 0.812,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-015-41-convergence-of-power-sums",
+     "id": "sec-018-41-convergence-of-power-sums",
      "title": "Convergence of power sums",
      "prose_ratio": 0.947,
-     "coverage_ratio": 0.954,
+     "coverage_ratio": 0.981,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-016-42-convergence-of-row-lengths",
+     "id": "sec-019-42-convergence-of-row-lengths",
      "title": "Convergence of row lengths",
      "prose_ratio": 0.981,
-     "coverage_ratio": 0.982,
+     "coverage_ratio": 0.981,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-017-43-link-with-the-representation-theory-of-the-in",
+     "id": "sec-020-43-link-with-the-representation-theory-of-the-in",
      "title": "Link with the representation theory of the infinite symmetric group",
      "prose_ratio": 0.984,
      "coverage_ratio": 1.0,
@@ -669,23 +1224,23 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-018-5-second-order-asymptotics",
+     "id": "sec-021-5-second-order-asymptotics",
      "title": "Second order asymptotics",
      "prose_ratio": 0.969,
-     "coverage_ratio": 0.954,
+     "coverage_ratio": 0.953,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-019-51-bound-for-cumulants",
+     "id": "sec-022-51-bound-for-cumulants",
      "title": "Bound for cumulants",
      "prose_ratio": 0.967,
-     "coverage_ratio": 0.96,
+     "coverage_ratio": 0.975,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-020-52-computation-of-covariances",
+     "id": "sec-023-52-computation-of-covariances",
      "title": "Computation of covariances",
      "prose_ratio": 0.95,
      "coverage_ratio": 0.974,
@@ -693,7 +1248,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-021-53-fluctuations-of-rows",
+     "id": "sec-024-53-fluctuations-of-rows",
      "title": "Fluctuations of rows",
      "prose_ratio": 0.894,
      "coverage_ratio": 0.979,
@@ -701,7 +1256,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-022-6-schur-weyl-representations",
+     "id": "sec-025-6-schur-weyl-representations",
      "title": "Schur-Weyl representations",
      "prose_ratio": 0.931,
      "coverage_ratio": 1.0,
@@ -709,31 +1264,31 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-023-61-decomposition-of-tensor-representations",
+     "id": "sec-026-61-decomposition-of-tensor-representations",
      "title": "Decomposition of tensor representations",
      "prose_ratio": 0.952,
-     "coverage_ratio": 0.973,
+     "coverage_ratio": 0.972,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-024-62-asymptotic-shape-of-the-diagrams",
+     "id": "sec-027-62-asymptotic-shape-of-the-diagrams",
      "title": "Asymptotic shape of the diagrams",
      "prose_ratio": 0.954,
-     "coverage_ratio": 0.979,
+     "coverage_ratio": 0.978,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-025-acknowledgements",
+     "id": "sec-028-acknowledgements",
      "title": "Acknowledgements",
-     "prose_ratio": 0.966,
-     "coverage_ratio": 0.967,
+     "prose_ratio": 0.881,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-026-references",
+     "id": "sec-029-references",
      "title": "References",
      "result": "no matching \\section"
     }

@@ -1,0 +1,1025 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-2605.09605v2",
+ "status": "determined",
+ "body_size": 12.0,
+ "footnotes": [],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "cohomology2-cocycle[ω] ∈H"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "chain,wherethehiddenlayercarriesanontrivialclass[ω]∈H"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "andcohomologyclassessuchas[ω] ∈H"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "representationπ:G→U(H)withassociated2-cocycleω∈H"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "irreducibleprojectivespin-1/2representationπwithcocycle[ω]∈H"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "na2-cocycle,whichdefinesanelementofthesecondcohomologygroupH"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "[ω] ∈H"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "ofGonthehiddenspacewithassociated2-cocycleωπ∈H"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "(X) := π(g)Xπ(g)"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "βg(Y ) := ρ(g)Y ρ(g)"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "π(g)Xkπ(g)"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "ρ(g)Ykρ(g)"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "π(g)Zπ(g)"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "π(g)Z1π(g)"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "π(g)Z1π(g)†⊗π(g)Z2π(g)"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "= π(g) EH(Z1 ⊗Z2) π(g)"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "π(g)Xπ(g)"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "π(g)Xπ(g)†⊗ρ(g)Y ρ(g)"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "= π(g) EH,O(X⊗Y ) π(g)"
+  },
+  {
+   "page": 4,
+   "mark": "e",
+   "context": "where"
+  },
+  {
+   "page": 4,
+   "mark": "e",
+   "context": "linearrepresentationeπof"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "eπ((g, λ))X eπ((g, λ))"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "eπ((g, λ))X eπ((g, λ))†⊗ρ(g)Y ρ(g)"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "=eπ((g, λ)) EH,O(X⊗Y ) eπ((g, λ))"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "eexistenceofsuchanintertwinerimpliesthattheobstruction[ω] ∈H"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "(cocycle ω"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": " a single copy π (cocycle ω).Equivariance (7) then forces [ω"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "y π (cocycle ω).Equivariance (7) then forces [ω2] = [ω] in H"
+  },
+  {
+   "page": 5,
+   "mark": "†",
+   "context": "π(g)Zπ(g)"
+  },
+  {
+   "page": 5,
+   "mark": "†",
+   "context": "(Z) π(g)"
+  },
+  {
+   "page": 5,
+   "mark": "†",
+   "context": "π(g)Xπ(g)"
+  },
+  {
+   "page": 5,
+   "mark": "†",
+   "context": "π(g)Xπ(g)†, ρ(g)Y ρ(g)"
+  },
+  {
+   "page": 6,
+   "mark": "†",
+   "context": "π(g)Zπ(g)"
+  },
+  {
+   "page": 6,
+   "mark": "†",
+   "context": "π(g)Xπ(g)"
+  },
+  {
+   "page": 6,
+   "mark": "†",
+   "context": "π(g)Xπ(g)†, ρ(g)Y ρ(g)"
+  },
+  {
+   "page": 6,
+   "mark": "†",
+   "context": "π(g)Xπ(g)"
+  },
+  {
+   "page": 6,
+   "mark": "†",
+   "context": "π(g)Xπ(g)†⊗ρ(g)Y ρ(g)"
+  },
+  {
+   "page": 6,
+   "mark": "†",
+   "context": "⊗π(g)Zπ(g)"
+  },
+  {
+   "page": 6,
+   "mark": "†",
+   "context": "π(g)EH,O(X⊗Y )π(g)"
+  },
+  {
+   "page": 6,
+   "mark": "†",
+   "context": "π(g)EH,O(X⊗Y )π(g)†⊗π(g)Zπ(g)"
+  },
+  {
+   "page": 6,
+   "mark": "†",
+   "context": "π(g)"
+  },
+  {
+   "page": 6,
+   "mark": "†",
+   "context": "(Z) π(g)"
+  },
+  {
+   "page": 6,
+   "mark": "†",
+   "context": "π(g)Zπ(g)"
+  },
+  {
+   "page": 6,
+   "mark": "†",
+   "context": "(Z) π(g)"
+  },
+  {
+   "page": 6,
+   "mark": "†",
+   "context": "π(g)Xπ(g)"
+  },
+  {
+   "page": 6,
+   "mark": "†",
+   "context": "π(g)Xπ(g)†, ρ(g)Y ρ(g)"
+  },
+  {
+   "page": 6,
+   "mark": "†",
+   "context": "π(g)Zπ(g)"
+  },
+  {
+   "page": 6,
+   "mark": "†",
+   "context": "π(g)Xπ(g)"
+  },
+  {
+   "page": 6,
+   "mark": "†",
+   "context": "π(g)Xπ(g)†, ρ(g)Y ρ(g)"
+  },
+  {
+   "page": 6,
+   "mark": "†",
+   "context": "π(g)Xπ(g)"
+  },
+  {
+   "page": 6,
+   "mark": "†",
+   "context": "π(g)Xπ(g)†⊗π(g)Zπ(g)"
+  },
+  {
+   "page": 6,
+   "mark": "†",
+   "context": "⊗ρ(g)Y ρ(g)"
+  },
+  {
+   "page": 6,
+   "mark": "†",
+   "context": "π(g)EH(X⊗Z)π(g)"
+  },
+  {
+   "page": 6,
+   "mark": "†",
+   "context": "π(g)EH(X⊗Z)π(g)†⊗ρ(g)Y ρ(g)"
+  },
+  {
+   "page": 6,
+   "mark": "†",
+   "context": "π(g)"
+  },
+  {
+   "page": 6,
+   "mark": "†",
+   "context": "(Z) π(g)"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "Let A =N"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "k=0X"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "k=0Xk∈AH,N"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "k=0Xk∈AH,N0and B=N"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "k=0Y"
+  },
+  {
+   "page": 7,
+   "mark": "†",
+   "context": "π(g)Xkπ(g)"
+  },
+  {
+   "page": 7,
+   "mark": "†",
+   "context": "π(g)Xkπ(g)†, ρ(g)Ykρ(g)"
+  },
+  {
+   "page": 7,
+   "mark": "†",
+   "context": "π(g)"
+  },
+  {
+   "page": 7,
+   "mark": "†",
+   "context": ".1 with Z= IAHtogether with the observation that π(g)IAHπ(g)"
+  },
+  {
+   "page": 7,
+   "mark": "†",
+   "context": "π(g)X0π(g)"
+  },
+  {
+   "page": 7,
+   "mark": "†",
+   "context": "π(g)X0π(g)†, ρ(g)Y0ρ(g)"
+  },
+  {
+   "page": 7,
+   "mark": "†",
+   "context": "X0,Y0(IAH) π(g)"
+  },
+  {
+   "page": 7,
+   "mark": "†",
+   "context": "π(g)Xkπ(g)"
+  },
+  {
+   "page": 7,
+   "mark": "†",
+   "context": "π(g)Xkπ(g)†, ρ(g)Ykρ(g)"
+  },
+  {
+   "page": 7,
+   "mark": "†",
+   "context": "Dn(IAH) = π(g) Cn(IAH) π(g)"
+  },
+  {
+   "page": 7,
+   "mark": "†",
+   "context": "π(g)Xkπ(g)"
+  },
+  {
+   "page": 7,
+   "mark": "†",
+   "context": "π(g)Xkπ(g)†, ρ(g)Ykρ(g)"
+  },
+  {
+   "page": 7,
+   "mark": "†",
+   "context": "π(g)X0π(g)"
+  },
+  {
+   "page": 7,
+   "mark": "†",
+   "context": "π(g)X0π(g)†, ρ(g)Y0ρ(g)"
+  },
+  {
+   "page": 7,
+   "mark": "†",
+   "context": "π(g) Cn(IAH) π(g)"
+  },
+  {
+   "page": 7,
+   "mark": "†",
+   "context": "π(g)X0π(g)"
+  },
+  {
+   "page": 7,
+   "mark": "†",
+   "context": "π(g)X0π(g)†, ρ(g)Y0ρ(g)"
+  },
+  {
+   "page": 7,
+   "mark": "†",
+   "context": "π(g)"
+  },
+  {
+   "page": 7,
+   "mark": "†",
+   "context": "π(g)"
+  },
+  {
+   "page": 7,
+   "mark": "†",
+   "context": "π(g)Xkπ(g)"
+  },
+  {
+   "page": 7,
+   "mark": "†",
+   "context": "π(g)Xkπ(g)†, ρ(g)Ykρ(g)"
+  },
+  {
+   "page": 7,
+   "mark": "†",
+   "context": "π(g)"
+  },
+  {
+   "page": 7,
+   "mark": "g",
+   "context": "⊗β"
+  },
+  {
+   "page": 7,
+   "mark": "†",
+   "context": "π(g)Xkπ(g)"
+  },
+  {
+   "page": 7,
+   "mark": "†",
+   "context": "π(g)Xkπ(g)†, ρ(g)Ykρ(g)"
+  },
+  {
+   "page": 7,
+   "mark": "†",
+   "context": "π(g)"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "The cohomology class [ω] ∈H"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "[ω]∈H"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Thecohomologyclass[ω]∈H"
+  },
+  {
+   "page": 8,
+   "mark": "z",
+   "context": "ofS"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "expressed in the standard basis of H1/2∼= C"
+  },
+  {
+   "page": 8,
+   "mark": "†",
+   "context": "ρ(g)kk′Ak′= π(g)Akπ(g)"
+  },
+  {
+   "page": 8,
+   "mark": "†",
+   "context": "⟨k′|Y |k⟩AkXA"
+  },
+  {
+   "page": 8,
+   "mark": "†",
+   "context": "k,k′⟨k′|Y |k⟩AkXA"
+  },
+  {
+   "page": 8,
+   "mark": "†",
+   "context": "kAkXA"
+  },
+  {
+   "page": 9,
+   "mark": "†",
+   "context": "ϕ0(π(g)Zπ(g)"
+  },
+  {
+   "page": 9,
+   "mark": "†",
+   "context": "π(g)Xπ(g)"
+  },
+  {
+   "page": 9,
+   "mark": "†",
+   "context": "π(g)Xπ(g)†⊗ρ(g)Y ρ(g)"
+  },
+  {
+   "page": 9,
+   "mark": "†",
+   "context": "= π(g) EH,O(X⊗Y ) π(g)"
+  },
+  {
+   "page": 9,
+   "mark": "†",
+   "context": "π(g)Xπ(g)"
+  },
+  {
+   "page": 9,
+   "mark": "†",
+   "context": "π(g)Xπ(g)†⊗ρ(g)Y ρ(g)"
+  },
+  {
+   "page": 9,
+   "mark": "†",
+   "context": "π(g)Xπ(g)"
+  },
+  {
+   "page": 9,
+   "mark": "†",
+   "context": "A"
+  },
+  {
+   "page": 9,
+   "mark": "†",
+   "context": "⟨m|ρ(g)Y ρ(g)"
+  },
+  {
+   "page": 9,
+   "mark": "†",
+   "context": "⟨m|ρ(g)Y ρ(g)"
+  },
+  {
+   "page": 9,
+   "mark": "†",
+   "context": "⟨m|ρ(g)|k⟩⟨k|Y |k′⟩⟨k′|ρ(g)"
+  },
+  {
+   "page": 9,
+   "mark": "†",
+   "context": "π(g)Xπ(g)"
+  },
+  {
+   "page": 9,
+   "mark": "†",
+   "context": "A"
+  },
+  {
+   "page": 9,
+   "mark": "†",
+   "context": "π(g)Xπ(g)"
+  },
+  {
+   "page": 9,
+   "mark": "†",
+   "context": "ρ(g)m′k′A"
+  },
+  {
+   "page": 9,
+   "mark": "†",
+   "context": "ρ(g)mkAm= π(g)Akπ(g)"
+  },
+  {
+   "page": 9,
+   "mark": "†",
+   "context": "π(g)Ak′π(g)"
+  },
+  {
+   "page": 9,
+   "mark": "†",
+   "context": "π(g)Ak′π(g)†\u0011†= π(g)A"
+  },
+  {
+   "page": 9,
+   "mark": "†",
+   "context": "ρ(g)m′k′A"
+  },
+  {
+   "page": 9,
+   "mark": "†",
+   "context": "k′π(g)"
+  },
+  {
+   "page": 10,
+   "mark": "†",
+   "context": "SubstitutingtheseexpressionsintoSk,k′andusingπ(g)"
+  },
+  {
+   "page": 10,
+   "mark": "†",
+   "context": "π(g)Akπ(g)"
+  },
+  {
+   "page": 10,
+   "mark": "†",
+   "context": "π(g)Xπ(g)"
+  },
+  {
+   "page": 10,
+   "mark": "†",
+   "context": "π(g)A"
+  },
+  {
+   "page": 10,
+   "mark": "†",
+   "context": "k′π(g)"
+  },
+  {
+   "page": 10,
+   "mark": "†",
+   "context": "= π(g)AkXA"
+  },
+  {
+   "page": 10,
+   "mark": "†",
+   "context": "k′π(g)"
+  },
+  {
+   "page": 10,
+   "mark": "†",
+   "context": "k′π(g)"
+  },
+  {
+   "page": 10,
+   "mark": "†",
+   "context": "π(g)"
+  },
+  {
+   "page": 10,
+   "mark": "†",
+   "context": "π(g)†= π(g) EH,O(X⊗Y ) π(g)"
+  },
+  {
+   "page": 10,
+   "mark": "†",
+   "context": "⟨k|Y |k′⟩π(g)AkXA"
+  },
+  {
+   "page": 10,
+   "mark": "†",
+   "context": "⟨k|Y |k′⟩AkXA"
+  },
+  {
+   "page": 10,
+   "mark": "†",
+   "context": "π(g)Z1π(g)"
+  },
+  {
+   "page": 10,
+   "mark": "†",
+   "context": "π(g)Z1π(g)†⊗π(g)Z2π(g)"
+  },
+  {
+   "page": 10,
+   "mark": "†",
+   "context": "= π(g) EH(Z1 ⊗Z2) π(g)"
+  },
+  {
+   "page": 10,
+   "mark": "†",
+   "context": "π(g)Z1π(g)"
+  },
+  {
+   "page": 10,
+   "mark": "†",
+   "context": "π(g)Z1π(g)†⊗π(g)Z2π(g)"
+  },
+  {
+   "page": 10,
+   "mark": "†",
+   "context": "π(g)Z1π(g)"
+  },
+  {
+   "page": 10,
+   "mark": "†",
+   "context": "π(g)Z2π(g)"
+  },
+  {
+   "page": 10,
+   "mark": "†",
+   "context": "= π(g)Z1π(g)"
+  },
+  {
+   "page": 10,
+   "mark": "†",
+   "context": "= π(g)Z1π(g)†π(g)Z2π(g)"
+  },
+  {
+   "page": 10,
+   "mark": "†",
+   "context": "Sinceπ(g)"
+  },
+  {
+   "page": 10,
+   "mark": "†",
+   "context": "π(g)Z1π(g)"
+  },
+  {
+   "page": 10,
+   "mark": "†",
+   "context": "π(g)Z1π(g)†π(g)Z2π(g)"
+  },
+  {
+   "page": 10,
+   "mark": "†",
+   "context": "π(g)Z1π(g)†π(g)Z2π(g)†= π(g)Z1Z2π(g)"
+  },
+  {
+   "page": 10,
+   "mark": "†",
+   "context": "π(g)Z1π(g)†π(g)Z2π(g)†= π(g)Z1Z2π(g)†= π(g) EH(Z1 ⊗Z2) π(g)"
+  },
+  {
+   "page": 10,
+   "mark": "†",
+   "context": "π(g)Zπ(g)"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "dim(H1/2) TrH"
+  },
+  {
+   "page": 10,
+   "mark": "†",
+   "context": "π(g)Zπ(g)"
+  },
+  {
+   "page": 10,
+   "mark": "†",
+   "context": "π(g)Zπ(g)"
+  },
+  {
+   "page": 10,
+   "mark": "†",
+   "context": "By the cyclicity of the trace, Tr(π(g)Zπ(g)"
+  },
+  {
+   "page": 10,
+   "mark": "†",
+   "context": "By the cyclicity of the trace, Tr(π(g)Zπ(g)†) = Tr(Zπ(g)"
+  },
+  {
+   "page": 10,
+   "mark": "†",
+   "context": " Tr(π(g)Zπ(g)†) = Tr(Zπ(g)†π(g)).Since π(g) is unitary, π(g)"
+  },
+  {
+   "page": 10,
+   "mark": "†",
+   "context": "Tr(Zπ(g)"
+  },
+  {
+   "page": 10,
+   "mark": "†",
+   "context": "Thereforeϕ0(π(g)Zπ(g)"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "2Tr(Z) = ϕ"
+  },
+  {
+   "page": 10,
+   "mark": "†",
+   "context": "ρ π(g)Zπ(g)"
+  },
+  {
+   "page": 11,
+   "mark": "†",
+   "context": "π(g)"
+  },
+  {
+   "page": 11,
+   "mark": "†",
+   "context": "π(g)"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "2 Tr(Z) = ϕ"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "SPTordercharacterizedbytheprojectivecocycle[ω] ∈H"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "theobstruction[ω]∈H"
+  },
+  {
+   "page": 12,
+   "mark": "d",
+   "context": "Second,extendingtheframeworktohiddenquantumMarkovfieldsonZ"
+  },
+  {
+   "page": 12,
+   "mark": "d",
+   "context": "homologygroupsH"
+  },
+  {
+   "page": 13,
+   "mark": "j",
+   "context": "O, satisfying"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "Itsatisfiesσ◦j(n)=j(n+1)foralln∈Z,and{σ"
+  },
+  {
+   "page": 13,
+   "mark": "j",
+   "context": "O,"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "O,j(n)restrictedto"
+  },
+  {
+   "page": 13,
+   "mark": "j",
+   "context": "H,"
+  },
+  {
+   "page": 13,
+   "mark": "0",
+   "context": "For each n ∈N"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "For each n ∈N0, define the finite-volume algebra A[0,n]:=N"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "k=0(AH⊗AO)"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "Let{φ"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "Let{φn}n∈N0beasequencewhereeachφ"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "LemmaA.1(ProjectiveLimitState).If{φ"
+  },
+  {
+   "page": 13,
+   "mark": "0",
+   "context": "tion,thenthereexistsauniquestateφonAN"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "tion,thenthereexistsauniquestateφonAN0suchthatφ|A[0,n]=φ"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": ":= ϕ"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "onA[0,n].Thesequence{φ"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "existsauniquestateφonAN"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "existsauniquestateφonAN0suchthatφ|A[0,n]= φ"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "ϕ"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "0◦· · · ◦TXn,Yn(·)isapositivelinearfunctionalonAH.Moreover,φ"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "φ"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "φn+1(ιn,n+1(A)) = ϕ"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "φn+1(ιn,n+1(A)) = ϕ0 ◦TX"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "φn+1(ιn,n+1(A)) = ϕ0 ◦TX0,Y"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "φn+1(ιn,n+1(A)) = ϕ0 ◦TX0,Y0◦· · · ◦TX"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "φn+1(ιn,n+1(A)) = ϕ0 ◦TX0,Y0◦· · · ◦TXn,Y"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "UnitalityofTgivesTIAH ,IAO= IAH,sotheright-handsideequalsϕ"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "talityofTgivesTIAH ,IAO= IAH,sotheright-handsideequalsϕ0 ◦TX"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "ityofTgivesTIAH ,IAO= IAH,sotheright-handsideequalsϕ0 ◦TX0,Y"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "IAH ,IAO= IAH,sotheright-handsideequalsϕ0 ◦TX0,Y0 ◦· · · ◦TX"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": " ,IAO= IAH,sotheright-handsideequalsϕ0 ◦TX0,Y0 ◦· · · ◦TXn,Y"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "φ(A ⊗IAO,N"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "φ(A ⊗IAO,N0).ForalocalobservableN"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "k=0X"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "= ϕ"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "= ϕ0 ◦TX"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "= ϕ0 ◦TX0,IAO◦· · · ◦TX"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "analogously:forB∈AO,N"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "analogously:forB∈AO,N0,φO(B) := φ(IAH,N"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "ogously:forB∈AO,N0,φO(B) := φ(IAH,N0⊗B).ForalocalobservableN"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "k=0Y"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "= ϕ"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "= ϕ0 ◦TIAH ,Y"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "= ϕ0 ◦TIAH ,Y0◦· · · ◦TIAH ,Y"
+  }
+ ]
+}

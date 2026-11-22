@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-2012.00062v3/blocks/prose-sec-017",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "One-dimensional state-integrals and their descendants",
-  "pageStart": 62,
-  "pageEnd": 65,
-  "text": "../sections/sec-017-7-one-dimensional-state-integrals-and-their-desc.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2012.00062v3",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2012.00062v3",
+  "title": "Taylor series expansion at u=0",
+  "pageStart": 32,
+  "pageEnd": 36,
+  "text": "../sections/sec-017-53-taylor-series-expansion-at-u0.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2012.00062v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2012.00062v3/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -18,8 +18,8 @@
   Keeping them separate is deliberate: they are optimised by opposite choices
   of `W`, and a single lumped constant would hide that.
 
-  -- Ref: [manuscript] QOU/MathlibExt/GaussianTiltedSum.lean
-  -- Ref: [manuscript] QOU/MathlibExt/GaussianTailBound.lean
+  -- Ref: [leitner2026] QOU/MathlibExt/GaussianTiltedSum.lean
+  -- Ref: [leitner2026] QOU/MathlibExt/GaussianTailBound.lean
 -/
 import QOU.MathlibExt.GaussianTiltedSum
 import QOU.MathlibExt.GaussianTailBound

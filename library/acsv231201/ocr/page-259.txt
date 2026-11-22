@@ -1,0 +1,48 @@
+8.4 Further computations for asymptotics 241
+
+compute with diagonals. Given a multivariate rational function with a con-
+vergent power series near the origin, an annihilating D-finite equation for the
+diagonal in any fixed integer direction r €¢ Z@ can be computed using the
+methods of creative telescoping. Briefly, one represents the diagonal D(z) as
+a parameterized complex integral D(z) = f I(z,x)dx over a closed contour
+y, with the integrand J constructed from the rational function F and direc-
+tion r. If £ is a linear differential operator in z with polynomial coefficients
+such that LU) = 0,,Ai(z,@) +--+ + Ox,Aq(z, ©) for suitable rational functions
+A,,...,Aq then, under mild conditions, the fact that y is closed implies that
+D(z) satisfies the D-finite equation £(D) = 0. Methods to compute such dif-
+ferential operators have been the source of immense study in the computer
+algebra community, with currently optimal techniques relying on a reduction
+framework known as the Griffiths-Dwork method [BLS 13; Lail6]. An imple-
+mentation of this method in the MAGMA computer algebra system was cre-
+ated by Lairez [Lail6].
+Consider a D-finite equation
+
+er) fr(g) +++ + 1S’ + CoWf( = 0, (8.9)
+
+which admits a generating function F of interest as a solution f(z) = F(z), and
+assume that F is analytic at the origin. The points p € C where the leading co-
+efficient c,(z) vanishes are called singular points of the ODE (8.9), and nonsin-
+gular points are called ordinary points of the ODE. Because D-finite equations
+are linear, the solutions to (8.9) form an r-dimensional complex vector space,
+and the Cauchy existence theorem for ordinary differential equations [Poo60,
+Chapter 1.2] implies that in any sufficiently small neighborhood of an ordinary
+point there exists a basis of analytic solutions to (8.9).
+
+A collection of deep results due to André, the Chudnovsky brothers, and
+Katz jointly imply that for a D-finite function with integer coefficients and
+at most exponential growth (i.e., the types of generating functions we con-
+sider), a minimal order defining equation admits only regular singular points;
+see [And89, Section VI]. Skipping over the definition of a regular singular
+point, this is important because if p is a regular singular point then in any suf-
+ficiently small slit disk centered at p (a disk with a ray from its center to its
+boundary removed to account for branch cuts) there is a basis of solutions of
+the form
+
+=)
+1-</p}’
+
+where y is algebraic and each ¢, is analytic at p; see [Poo60, Chapter 5] for
+details.
+
+(<—p)" )) di(2) log
+k=0

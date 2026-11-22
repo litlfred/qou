@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2408.04921v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "dcfe112640a8adda54dcd50a68fd16956766b45749fb254c2c8a157fe05b7ae4",
+  "file": "2408.04921v2.pdf"
+ },
+ "provenance": {
+  "title": "IRREDUCIBLE CHARACTERS OF THE GENERALIZED SYMMETRIC GROUP",
+  "authors": "HUIMIN GAO AND NAIHUAN JING",
+  "arxiv": {
+   "id": "2408.04921",
+   "version": "2",
+   "primary_class": "math.RT",
+   "stamp_date": "25 Sep 2024"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

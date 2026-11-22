@@ -9,13 +9,19 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Deﬁnite integrals",
-  "pageStart": 40,
-  "pageEnd": 45,
+  "title": "Complex hyperbolic geometry",
+  "pageStart": 45,
+  "pageEnd": 50,
   "contains": [
-    "library/bn/blocks/prose-sec-009"
+    "library/bn/blocks/prose-sec-009",
+    "library/bn/blocks/thm-sec-009-01",
+    "library/bn/blocks/cor-sec-009-02",
+    "library/bn/blocks/thm-sec-009-03",
+    "library/bn/blocks/thm-sec-009-04",
+    "library/bn/blocks/thm-sec-009-05",
+    "library/bn/blocks/prop-sec-009-06"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/bn",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/bn",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/bn/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/bn/manifest.jsonld",
   "provenance": "ingested"
 }

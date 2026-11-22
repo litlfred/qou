@@ -1,0 +1,44 @@
+7.1 Some illustrative examples 179
+
+Points with smaller height h make the integrand of (7.6) exponentially smaller,
+so up to an exponentially negligible error we can ignore points with height
+bounded below h(1/2) = log 4. Since h(—1/3) = log(9/4) we could proceed
+by expanding the circle |x| = 1/10 to the circle |x| = 1/2 while stopping in
+a tubular shape around x = —1/3 (see Figure 7.4 right). The integral over
+the resulting curve can be truncated to a neighborhood of x = 1/2 in |x| =
+1/2 while introducing an exponentially negligible error. The integral over this
+neighborhood of x = 1/2 is again a saddle point integral.
+
+Method Three: Although Method Two is more general than Method One,
+it still requires that we know how to explicitly deform around ‘V, which is
+not always possible. We thus move to an even more general argument, which
+will be fully described below. The key is to use the local geometry of V to
+describe how to move the domain of integration |x| = 1/10 to heights below
+h(1/2) = log 4, except in a neighborhood of x = 1/2, while avoiding V. This
+is accomplished using a gradient flow. Writing x = a + ib for real variables a
+and b, so that |x| = Va? + b?, we see that
+
+h(a, b) = h(a + ib) = - log (a? +b”) /2 — log (1 - a)? +b”) /2.
+
+We want to move an arbitrary point ag + iby = e/10 on our starting circle |x| =
+1/10 down to points on V of lower height with respect to h. Since (Vh)(a, b)
+gives the direction of greatest increase of h, we want to locally move a point
+(ag, bg) along the direction —(V/h)(ag, bg). In other words, we want to solve the
+first-order differential system of equations
+
+(i) = -Vh(a(t), bo(t)), ag(0) = cos(6)/10, bo(0) = sin(@)/10
+for a(t) and bg(t). Figure 7.5 shows the trajectories of points under this (neg-
+ative) gradient flow. Here it can be verified in a computer algebra system that
+under the flow all points will go below height h(1/2) = log4, except in a
+neighborhood of x = 1/2. Near x = 1/2 the flow approaches a vertical line, ul-
+timately resulting in a saddle point integral. The key reason this method can be
+generalized is that techniques from Morse theory allow us to know when such
+a flow exists, and characterize the resulting domains of integration, without
+having to actually compute them.
+
+4
+
+In our last example the non-smooth point did not affect dominant asymp-
+totics, but this will not always be the case.
+
+Example 7.4 (Dealing with Multiple Points). Consider now asymptotics in the

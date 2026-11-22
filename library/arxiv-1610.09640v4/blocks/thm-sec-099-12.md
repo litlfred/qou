@@ -1,0 +1,1 @@
+Let A and B be K-ﬂat DG central K-rings. Assume that there exists a K-linear equivalence of triangulated categories F : D(A) →D(B), and that Hi(A) = 0 for all i̸ = 0. Then there exists a tilting DG B-A-bimodule T. This theorem is very similar to J. Rickard’s [127, Theorem 6.4] and to B. Keller’s [79, Corollary 9.2]. See Remark 14.4.35 for a brief discussion.

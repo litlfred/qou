@@ -8,6 +8,7 @@ pages: 1-8
 source_pdf: ant-v14-n7-s-p08.pdf
 source_sha256: 81b8f00fe5fbd0f6
 toc_source: inferred
+doc_brief: "Burgess bounds for short character sums evaluated at forms — 11 sections: Front matter; Introduction; Method of proof: an overview"
 ---
 The celebrated Burgess bound [1957] proves that for χ a nonprincipal multiplicative Dirichlet character
 modulo a prime q, the character sum
@@ -37,7 +38,6 @@ Given H, we will deﬁne ∥H∥= H1 · · · Hn, so that in particular, ∥H∥
 Previous to the work of this paper, when the lengths Hi are short, that is ≪q1/2+ε, nontrivial bounds for
 MSC2010: 11L40.
 Keywords: character sums.
-1911
 1912
 Lillian B. Pierce and Junyan Xu
 S(F; N, H) of the form o(∥H∥) were known only in special cases, such as when F is a product of n

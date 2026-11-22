@@ -1,0 +1,1 @@
+(1) The elements Ti, 1 ⩽i ⩽n−1, satisfy the following relations:      (a) (Ti −v)(Ti + v−1) = 0; (b) TiTj = TjTi, |i −j| > 1; (c) TiTi+1Ti = Ti+1TiTi+1, 1 ⩽i ⩽n −2. In particular, Ti is invertible and T −1 i = Ci −v.

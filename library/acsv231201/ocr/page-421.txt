@@ -1,0 +1,57 @@
+12.6 Algebraic generating functions 403
+
+behaved. For instance, the lifted functions usually have negative power series
+coefficients, making the determination of minimal points harder to verify, and
+may have critical points at infinity. Finally, there is no guarantee that the ratio-
+nal generating function will have a contributing singularity of a type that we
+can deal with using current technology.
+
+Despite these qualifications, the rational embedding approach does work in
+many situations.
+
+Example 12.18. Consider the shifted Catalan number GF f(x) = )), anx" =
+(1 — V1 —4x)/2 with minimal polynomial P(x,y) = y? — y + x. Proposi-
+tion 2.34 implies that f(x) is the main diagonal of the bivariate rational function
+F(y,z) = yl — 2y)/(1 — x— y). The singular variety V of F is globally smooth
+and the critical point equations yield the single solution (1/2, 1/2) which is
+strictly minimal. The first term in the expansion (9.4) vanishes, as expected,
+while the second term does not vanish and implies a, ~ 4! / Vani. 4
+
+Remark 12.19. For bivariate algebraic singularities it is also possible to de-
+termine asymptotics through a transfer theorem [Gre 18].
+
+Example 12.20. As shown in Example 2.37, the generating function for the
+
+Narayana numbers a,-; is the subseries of
+1 - 2w-wx(1 -
+
+F(w, x,y) = MO a)
+
+1-w-xy-wx(1-y)
+
+consisting of terms whose powers of w and x are equal. Since F can be written
+
+(d-wy!
+l-x-7 ,
+
+F(w, x,y) =
+
+its power series expansion is combinatorial. To determine asymptotics of dann
+asn — oo with a > B > 0, we compute asymptotics of the power series
+coefficients of F in the direction (a, a, 8). The critical point equations yield the
+unique solution
+
+B (@-by  £#
+Qn) =F, ; 5).
+
+a of (a)
+which can be shown to be minimal as F is combinatorial. An asymptotic ex-
+pansion can thus be computed using Theorem 9.5 in Chapter 9. In particular,
+
+2 \2
+
+the exponential growth of dann is ( amr) , with the maximum exponential
+growth of 4 achieved when @/B = 2. S
+
+One positive feature of the embedding approach is that there are many possi-
+ble embeddings of a given algebraic generating function, so if a rational func-

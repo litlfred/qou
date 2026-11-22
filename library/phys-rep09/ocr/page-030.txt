@@ -1,0 +1,66 @@
+180 S. Blanes et al. / Physics Reports 470 (2009) 151-238
+
+Substituting the expansions of Eq. (131) into (130) and equating terms of the same order, one can write
+
+n-1
+A= 2 (WPO+AKDTTPO) Me). (133)
+
+j=0 *°
+
+The terms wY (t) may be obtained by a similar recurrence to that given in Eq. (49)
+
+n-j
+wo = [Am. Wien] (1<j<n-1),
+P= Di [Aw Wren] sts (134)
+w=a, W=0 Mm),
+whereas the terms T(t) obey the recurrence relation
+n-j
+TY =o [Am Ton] A sisn—2,
+: » mms Tom <is (135)
+
+1 =F, (n> 0).
+Every F, is fixed by the condition A,(t + T) = A,(t). An outstanding feature is that F, can be determined independently
+of An(t) as the solution Y(t) = P(t) exp(tF) shrinks to Y(T) = exp(TF). Consequently, the conventional Magnus expansion
+Y(t) = exp(2(t)) computed at t = T must furnish
+
+F, = ont) for all n. (136)
+
+The first contributions to the Floquet-Magnus expansion read, explicitly,
+
+ao = f A(x)dx — tF;,
+tat
+Fi = al A(x)dx,
+1 t
+Az(t) = al [A(x) + Fi, Ai(x)] dx — tf, (137)
+0
+
+1 yt
+R= xf [A(x) + Fi, A1(x)] dx.
+
+Moreover, from the recurrence relations (134) and (135) it is possible to obtain a sufficient condition such that convergence
+of the series }* A, is guaranteed in the whole interval t € [0, T] [34]. In fact, one can show that absolute convergence of
+the Floquet-Magnus series is ensured at least if
+
+T
+| |A(t)I|dt < & = 0.20925. (138)
+0
+
+Notice that convergence of the series )~ F, is already guaranteed by (136) and the discussion concerning the conventional
+Magnus expansion in Sections 2.7.2 and 2.7.3. The bound é; in the periodic Floquet case turns out to be smaller than
+the corresponding bound r, = z in the conventional Magnus expansion. At first sight this could be understood as an
+impoverishment of the result. However, it has to be recalled that, due precisely to Floquet theorem, once the condition
+is fulfilled in one period, convergence is assured for any value of time. On the contrary, in the general Magnus case, the
+bound always gives a running condition.
+
+3.3. Magnus expansions for nonlinear matrix equations
+
+It is possible to extend the procedure leading to the Magnus expansion for the linear equation (30), and obtain
+approximate solutions for the nonlinear matrix equation
+
+Y'=A(t,Y)Y, YO)=Y% 4%, (139)
+
+where ¢ is a matrix Lie group, A : R, x % —~> g and g denotes the corresponding Lie algebra. Eq. (139) appears in
+relevant physical fields such as rigid body mechanics, in the calculation of Lyapunov exponents (¢ = SO(n)) and other
+problems arising in Hamiltonian dynamics (9 = Sp(n)). In fact, it can be shown that every differential equation evolving on
+a matrix Lie group 9, can be written in the form (139) [59]. Moreover, the analysis of generic differential equations defined
+in homogeneous spaces can be reduced to the Lie-group Eq. (139) [98].

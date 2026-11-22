@@ -1,0 +1,48 @@
+12 Introduction
+
+the elements of contrib(r) C V vary smoothly with 7 and there exist asymp-
+totic series {®,,,(r) : w € contrib(r)} whose terms can be computed explic-
+itly such that
+
+1 f rl
+a, = —— Zz" F(z)dz
+" Qni)@ IT]
+Ny
+(2ni)4 Jew)
+
+2’ F(z) dz (1.6)
+
+wecritical(r)
+
+NwPw(P).
+
+wecontrib(r)
+
+The first line in this chain of equalities reflects steps (i) and (ii) of our program
+above, while the second is the result of steps (iii)-(v), and the final line comes
+from steps (vi) and (vii). The set critical(r) is algorithmically computable
+in reasonable time, while determining membership in the subset contrib(r)
+can be extremely challenging. The explicit formulae ®,,(r) in the last line are
+sometimes relatively easily to compute (see Chapter 9) and sometimes more
+difficult (see Chapter 10 and especially Chapter 11).
+
+1.3 Outline of the remaining chapters
+
+This book is divided into three parts, of which the third part is the heart of the
+subject: deriving asymptotics in the multivariate setting once a meromorphic
+generating function is known. Nevertheless, some discussion is required on
+how generating functions are obtained, how to interpret them, what the chief
+motivating examples and applications are, and what we knew how to do be-
+fore the line of research described in Part III. These topics also make the book
+into a self-contained reference, and allow one to obtain asymptotics by deriv-
+ing new forms of a generating function, turning an intractable analysis into
+a tractable one by changing variables, re-indexing, aggregating, and so forth.
+Consequently, the first three chapters comprising Part I form a crash course
+in univariate analytic combinatorics. Chapter 2 explains generating functions
+and their uses, introducing formal power series, their relation to combinatorial
+enumeration, and the combinatorial interpretation of rational, algebraic, and
+transcendental operations on power series. Chapter 3 is a review of univariate
+asymptotics, much of which serves as mathematical background for the multi-
+variate case. While some excellent sources are available in the univariate case,
+for example [dBru81; Wil06; FS09], none of these is concerned with provid-
+ing the brief yet reasonably complete summary of analytic techniques that we

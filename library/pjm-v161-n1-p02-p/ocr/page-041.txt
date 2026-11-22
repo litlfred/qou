@@ -1,0 +1,46 @@
+64 JOAN S. BIRMAN AND WILLIAM W. MENASCO
+
+PRoposITION 5.1. The non-standard axis A’ is inside the T com-
+ponent in the decomposition of S? split open along FUQ.
+
+The proof will occupy most of the section. After it is completed we
+will establish a significant corollary.
+
+Proof of Proposition 5.1. We begin by describing a set of partial “co-
+ordinates” for the non-standard and standard axes. By Corollary 2.3
+we know that A and A’ each pierce F three times, and so each is
+divided into 3 segments by its intersections with F. The segments
+on A (respectively A’) have a natural cyclic order on A (resp. A’),
+determined by the orientations on A and A’. By construction we
+know that A is disjoint from the union Q of the digons. By Propo-
+sition 3.4 we know that A’ is too. Thus each segment of A and
+each segment of A’ is in one of the four components B,, B), B3,
+T of the torus-3-ball decomposition of S3. We assign labels to the
+segments of A and A’ to obtain a cycle of labels, a cyclic word of
+length three in the symbols B;, B,, B;, T. The cycle of labels for
+A is, of course, B,;B.B3. Clearly A’ is isotopic to A if its cycle of
+labels is also B,B,B3. Our goal is to show that with our definition of
+complexity the cycle of labels for A’ is TTT.
+
+We can make the information in the cycle of labels more precise by
+placing restrictions on the points at which A’ pierces F. Recall that
+we gave a decomposition of F into subsets #1, #2, #3 in §3. See
+Figure 3.3. There are three components of set #3, one in each disc.
+The manner in which set #2 meets a band can be seen from Figure
+3.1(b). There are two components, one of which connects to D; and
+the other to D;,,;. Recall that the digons which join the discs D,
+and Dj, (respectively D,;_,) are attached to D; along arcs parallel
+to 0D;. We now make the convention that when there are digons
+attached to both D;_; and Dj,,; the attaching arcs for the digons
+going to D;,, are closer to OD; than those going to D,;_;. Thus set
+#2 separates sets #1 and #3 on the disc parts of F. Set #1 will be
+discussed in more detail shortly.
+
+Clearly F is the disjoint union of #1, #2, and #3. Therefore we
+have a second cyclic word, now in the symbols 1, 2, 3, which describes
+where A’ pierces F. The possible cycles of pierce points are: 111, 222,
+333, 122, 133, 211, 233, 311, 322, 123, 132.
+
+The cycle of pierce points and the cycle of labels are, of course,
+related. If A’ pierces F in set #1 its label will not change; if it pierces
+F in set #2 its label will change from T to B; or B, to T; if it

@@ -3,259 +3,103 @@
  "doc_id": "reshetikhin-turaev",
  "source_sha256": "7ead97555a25d357",
  "brief": "Ribbon graphs and their invariants derived from quantum groups — The generalization of Jones polynomial of links to the case of graphs in R 3 is presented.",
- "extended": "**Ribbon graphs and their invariants derived from quantum groups**\n\n*Ribbon Graphs and Their Invariants Derived*\n\n26 pp, 48 sections.\n\n**Abstract.** The generalization of Jones polynomial of links to the case of graphs in R 3 is presented. It is constructed as the functor from the category of graphs to the category of representations of the quantum group.\n\n**Outline.** 2 N. Yu. Reshetikhin and V. G. Turaev; 1 Introduction; 2 Compact Braided Categories; 2.1 Monoidal Categories (see [Ma, JS]). A mono; 4 N. Yu. Reshetikhin and V. G. Turaev; 2.2 Functors of Monoidal Categories. Let C, C'; 2.3 Strict Extension of Monoidal Categories. E; 3 Quasitriangular and Ribbon Hopf Algebras; 3.1 Quasitriangular HopfAlgebras (see [Dr]). L; 6 N. Yu. Reshetikhin and V. G. Turaev; 3.2 Category RepA. With each algebra A one ass; 3.3 Ribbon Hopf Algebras. Let (A, R) be a quas; 8 N. Yu. Reshetikhin and V. G. Turaev; 3.5 Remark. If(A, R, w) is a ribbon Hopf algeb; 4 Coloured Ribbon Graphs; 4.1 Bands and Annuli. A band is the image of t; 4.2 Ribbon Graphs. Let k, ~ be non-negative in; 10 N. Yu. Reshetikhin and V. G. Turaev\n\n**Extracted claims (proposals, not verified).**\n- Theorem 4.6: may be easily extended to the case of CDR(A).\n- Definition: s of Jones-type polynomials for embedded graphs in R 3 have been",
+ "extended": "**Ribbon graphs and their invariants derived from quantum groups**\n\n*Ribbon Graphs and Their Invariants Derived*\n\n26 pp, 17 sections.\n\n**Abstract.** The generalization of Jones polynomial of links to the case of graphs in R 3 is presented. It is constructed as the functor from the category of graphs to the category of representations of the quantum group.\n\n**Outline.** Front matter; 1 Introduction; 2 Compact Braided Categories; 3 Quasitriangular and Ribbon Hopf Algebras; 4 Coloured Ribbon Graphs; I vl vl vl; 5 The Main Theorem; 5.3 Lemma. Figure 8 presents a generating set ; 6 Applications and Generalizations of Theorem ; 7 Examples; f V~ ~Va|; R=exp(~H|; Jm~,,~; In]q!; 24 N. Yu. Reshetikhin and V. G. Turaev sional ; 2 [j+m]![j_m]l[jl_ml]l[jz_m2]lUl +j2_j]![2j+ l; References",
  "tokens": {
   "brief": 38,
-  "extended": 325
+  "extended": 196
  },
  "sections": [
   {
-   "id": "sec-000-2-n-yu-reshetikhin-and-v-g-turaev",
-   "title": "N. Yu. Reshetikhin and V. G. Turaev",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-1"
   },
   {
-   "id": "sec-001-1-introduction",
+   "id": "sec-000-1-introduction",
    "title": "Introduction",
    "pages": "1-2"
   },
   {
-   "id": "sec-002-2-compact-braided-categories",
+   "id": "sec-001-2-compact-braided-categories",
    "title": "Compact Braided Categories",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-003-21-monoidal-categories-see-ma-js-a-monoidal-cate",
-   "title": "Monoidal Categories (see [Ma, JS]). A monoidal category C = (C o, | I, a, r, )",
    "pages": "2-4"
   },
   {
-   "id": "sec-004-4-n-yu-reshetikhin-and-v-g-turaev",
-   "title": "N. Yu. Reshetikhin and V. G. Turaev",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-005-22-functors-of-monoidal-categories-let-c-c-be-tw",
-   "title": "Functors of Monoidal Categories. Let C, C' be two compact braided strict",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-006-23-strict-extension-of-monoidal-categories-each",
-   "title": "Strict Extension of Monoidal Categories. Each monoidal category C is",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-007-3-quasitriangular-and-ribbon-hopf-algebras",
+   "id": "sec-002-3-quasitriangular-and-ribbon-hopf-algebras",
    "title": "Quasitriangular and Ribbon Hopf Algebras",
-   "pages": "4-4"
+   "pages": "4-8"
   },
   {
-   "id": "sec-008-31-quasitriangular-hopfalgebras-see-dr-let-a-be",
-   "title": "Quasitriangular HopfAlgebras (see [Dr]). Let A be a Hopf algebra with the",
-   "pages": "4-6"
-  },
-  {
-   "id": "sec-009-6-n-yu-reshetikhin-and-v-g-turaev",
-   "title": "N. Yu. Reshetikhin and V. G. Turaev",
-   "pages": "6-6"
-  },
-  {
-   "id": "sec-010-32-category-repa-with-each-algebra-a-one-associa",
-   "title": "Category RepA. With each algebra A one associates the category RepA of its",
-   "pages": "6-7"
-  },
-  {
-   "id": "sec-011-33-ribbon-hopf-algebras-let-a-r-be-a-quasitriang",
-   "title": "Ribbon Hopf Algebras. Let (A, R) be a quasitriangular Hopf algebra with the",
-   "pages": "7-8"
-  },
-  {
-   "id": "sec-012-8-n-yu-reshetikhin-and-v-g-turaev",
-   "title": "N. Yu. Reshetikhin and V. G. Turaev",
-   "pages": "8-8"
-  },
-  {
-   "id": "sec-013-35-remark-ifa-r-w-is-a-ribbon-hopf-algebra-then",
-   "title": "Remark. If(A, R, w) is a ribbon Hopf algebra then w e A C A, so that v = Ew for",
-   "pages": "8-8"
-  },
-  {
-   "id": "sec-014-4-coloured-ribbon-graphs",
+   "id": "sec-003-4-coloured-ribbon-graphs",
    "title": "Coloured Ribbon Graphs",
-   "pages": "8-8"
+   "pages": "8-9"
   },
   {
-   "id": "sec-015-41-bands-and-annuli-a-band-is-the-image-of-the-s",
-   "title": "Bands and Annuli. A band is the image of the square [0, 1] x [0, 1] under its",
-   "pages": "8-8"
+   "id": "sec-004-i-vl-vl-vl",
+   "title": "I vl vl vl",
+   "pages": "9-12"
   },
   {
-   "id": "sec-016-42-ribbon-graphs-let-k-be-non-negative-integers",
-   "title": "Ribbon Graphs. Let k, ~ be non-negative integers. A ribbon (k, ~)-graph is an",
-   "pages": "8-10"
-  },
-  {
-   "id": "sec-017-10-n-yu-reshetikhin-and-v-g-turaev",
-   "title": "N. Yu. Reshetikhin and V. G. Turaev",
-   "pages": "10-10"
-  },
-  {
-   "id": "sec-018-43-directed-graphs-a-ribbon-graph-is-called-dire",
-   "title": "Directed Graphs. A ribbon graph is called directed if the cores of its bands and",
-   "pages": "10-10"
-  },
-  {
-   "id": "sec-019-44-colourings-of-ribbon-graphs-fix-a-hopf-algebr",
-   "title": "Colourings of Ribbon Graphs. Fix a Hopf algebra A. Denote by A = A(A) the",
-   "pages": "10-11"
-  },
-  {
-   "id": "sec-020-45-category-hcdra-let-a-be-a-hopf-algebra-we-def",
-   "title": "Category HCDR(A). Let A be a Hopf algebra. We define the category of",
-   "pages": "11-12"
-  },
-  {
-   "id": "sec-021-5-the-main-theorem",
+   "id": "sec-005-5-the-main-theorem",
    "title": "The Main Theorem",
-   "pages": "12-12"
-  },
-  {
-   "id": "sec-022-51-theorem-let-a-r-v-be-a-ribbon-hopf-algebra-ov",
-   "title": "Theorem. Let (A, R, v) be a ribbon Hopf algebra over the field I. There exists a",
    "pages": "12-13"
   },
   {
-   "id": "sec-023-52-lemma-the-graphs-r-v--v-r-v-xv-w-xvwiv-waa-an",
-   "title": "Lemma. The graphs {r-~v, ~-~v, r '~v, Xv, w, Xv.wIV, W~A(A)} and",
-   "pages": "13-13"
-  },
-  {
-   "id": "sec-024-53-lemma-figure-8-presents-a-generating-set-of-r",
+   "id": "sec-006-53-lemma-figure-8-presents-a-generating-set-of-r",
    "title": "Lemma. Figure 8 presents a generating set of relations for the generators of",
-   "pages": "13-15"
+   "pages": "13-17"
   },
   {
-   "id": "sec-025-54-proof-of-theorem-51-uniqueness-off-follows-fr",
-   "title": "Proof of Theorem 5.1. Uniqueness ofF follows from Lemma 5.2. Indeed, the",
-   "pages": "15-16"
-  },
-  {
-   "id": "sec-026-16-n-yu-reshetikhin-and-v-g-turaev",
-   "title": "N. Yu. Reshetikhin and V. G. Turaev",
-   "pages": "16-17"
-  },
-  {
-   "id": "sec-027-6-applications-and-generalizations-of-theorem-51",
+   "id": "sec-007-6-applications-and-generalizations-of-theorem-51",
    "title": "Applications and Generalizations of Theorem 5.1",
-   "pages": "17-17"
+   "pages": "17-20"
   },
   {
-   "id": "sec-028-61-isotopy-lnvariants-of-coloured-links-a-link-i",
-   "title": "Isotopy lnvariants of Coloured Links. A link in R 3 is a finite set of disjoint",
-   "pages": "17-18"
-  },
-  {
-   "id": "sec-029-18-n-yu-reshetikhin-and-v-g-turaev",
-   "title": "N. Yu. Reshetikhin and V. G. Turaev",
-   "pages": "18-18"
-  },
-  {
-   "id": "sec-030-63-theorem-an-extension-of-theorem-51-let-arv-be",
-   "title": "Theorem. (An extension of Theorem 5.1). Let (A,R,v) be a ribbon I-Iopf",
-   "pages": "18-18"
-  },
-  {
-   "id": "sec-031-64-remarks-1-it-is-obvious-that-the-operator-inv",
-   "title": "Remarks. 1. It is obvious that the operator invariant F(F, 2) of a directed",
-   "pages": "18-19"
-  },
-  {
-   "id": "sec-032-2-let-f-be-a-hcdr-graph-and-let-the-colour-of-a",
-   "title": "Let F be a HCDR-graph and let the colour of a ribbon B of F is the tensor",
-   "pages": "19-19"
-  },
-  {
-   "id": "sec-033-3-the-functor-fhcdrarepca-is-surjective-since-ea",
-   "title": "The functor F:HCDR(A)~Repc~A is surjective since each morphism",
-   "pages": "19-20"
-  },
-  {
-   "id": "sec-034-20-n-yu-reshetikhin-and-v-g-turaev",
-   "title": "N. Yu. Reshetikhin and V. G. Turaev",
-   "pages": "20-20"
-  },
-  {
-   "id": "sec-035-4-to-colour-a-directed-ribbon-graph-is-a-problem",
-   "title": "To colour a directed ribbon graph is a problem in itself. It is natural to",
-   "pages": "20-20"
-  },
-  {
-   "id": "sec-036-7-examples",
+   "id": "sec-008-7-examples",
    "title": "Examples",
-   "pages": "20-20"
+   "pages": "20-22"
   },
   {
-   "id": "sec-037-71-algebra-uh15-the-theory-of-quantum-groups-dev",
-   "title": "Algebra Uh15. The theory of quantum groups developed in [Dr1, J] gives",
-   "pages": "20-21"
-  },
-  {
-   "id": "sec-038-72-representations-of-u-and-u-colourings-of-grap",
-   "title": "Representations of U and U-Colourings of Graphs. There exists an isomor,",
-   "pages": "21-22"
-  },
-  {
-   "id": "sec-039-22-n-yu-reshetikhin-and-v-g-turaev",
-   "title": "N. Yu. Reshetikhin and V. G. Turaev",
-   "pages": "22-22"
-  },
-  {
-   "id": "sec-040-73-homomorphism-w-a-let-v-a-be-the-finite-dimens",
-   "title": "Homomorphism w a. Let V a be the finite dimensional i.h.w, representation of",
+   "id": "sec-009-f-v-va",
+   "title": "V~ ~Va|",
    "pages": "22-23"
   },
   {
-   "id": "sec-041-74-the-case-5--sl-2-the-hopf-algebra-u-uhsl-2-is",
-   "title": "The Case {5 ~-sl 2. The Hopf algebra U= UhSl 2 is the simplest among the",
+   "id": "sec-010-rexph",
+   "title": "R=exp(~H|",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-011-jm",
+   "title": "Jm~,,~",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-012-inq",
+   "title": "In]q!",
    "pages": "23-24"
   },
   {
-   "id": "sec-042-24-n-yu-reshetikhin-and-v-g-turaev",
-   "title": "N. Yu. Reshetikhin and V. G. Turaev",
+   "id": "sec-013-24-n-yu-reshetikhin-and-v-g-turaev-sional-for-jl",
+   "title": "N. Yu. Reshetikhin and V. G. Turaev sional for [Jl-Jfl <-_J<Ja +J2 and are equal to zero for other j. In other words vJ~@vJ2=",
    "pages": "24-24"
   },
   {
-   "id": "sec-043-9-v-jlj2j-j-j2",
-   "title": "V JlJ2J ] j~ J2",
+   "id": "sec-014-2-jmj-mljl-mlljz-m2lul-j2-j2j-l-12",
+   "title": "[j+m]![j_m]l[jl_ml]l[jz_m2]lUl +j2_j]![2j+ l ] ~1/2",
    "pages": "24-25"
   },
   {
-   "id": "sec-044-references",
+   "id": "sec-015-references",
    "title": "References",
-   "pages": "25-25"
-  },
-  {
-   "id": "sec-045-2-fd-deling-p-milne-js-tannakian-categories-in-h",
-   "title": "FD] Deling, P., Milne, J.S.: Tannakian Categories in Hodge cicles, motives and simura",
-   "pages": "25-25"
-  },
-  {
-   "id": "sec-046-16-ire1-reshetikhin-nyu-quantized-universal-enve",
-   "title": "IRe1] Reshetikhin, N.Yu.: Quantized universal enveloping algebras, the Yang-Baxter",
    "pages": "25-26"
-  },
-  {
-   "id": "sec-047-26-n-yu-reshetikhin-and-v-g-turaev",
-   "title": "N. Yu. Reshetikhin and V. G. Turaev",
-   "pages": "26-26"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

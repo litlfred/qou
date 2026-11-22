@@ -3,13 +3,14 @@
  "doc_id": "arxiv-hep-th-9506138v1",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "bb85afba0530402c2759a2bcfbc86fae96a3976253ca8df58fc199040f76c32f",
   "file": "9506138v1.pdf"
  },
  "provenance": {
   "title": "Black Hole Complementarity vs. Locality",
-  "authors": "David A. Lowe, a Joseph Polchinski, b Leonard Susskind, c",
+  "authors": "L\u00e1rus Thorlacius,b and John Uglumc",
   "arxiv": {
    "id": "hep-th/9506138",
    "version": "1",
@@ -20,9 +21,43 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
-  "formalization_candidates": 0
+  "candidates": 1,
+  "by_kind": {
+   "proposition": 1
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 1
+  },
+  "by_evidence_kind": {
+   "computational-simulation": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  }
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "In Appendix A we calculate the matrix element M(1, 2; 3) = \u27e80|[\u03a6(1), \u03a6(2)]|3\u27e9, (3.6) to leading order in the string coupling g.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-002-3-the-nice-slice-and-string-field-theory.md (p. 8-13)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-002-3-the-nice-slice-and-string-field-theory.md",
+   "section_title": "The Nice Slice and String Field Theory",
+   "pages": "8-13",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-002-3-the-nice-slice-and-string-field-theory.md (p. 8-13)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-002-01",
+   "block_iri": "library/arxiv-hep-th-9506138v1/blocks/prop-sec-002-01",
+   "claim_id": "arxiv-hep-th-9506138v1#prop-sec-002-01"
+  }
+ ]
 }

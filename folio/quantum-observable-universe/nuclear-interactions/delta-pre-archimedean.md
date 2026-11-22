@@ -21,7 +21,7 @@ This establishes two theorems:
 
 The choice of which order to use is an expository convention dictated by physics:
 
-- **Difference observables** are computed via **delta-then-archimedean**. We form $\Delta(\mathrm{net})$ in the fibre, then apply $\tau$.
+- **Difference observables** are computed via **delta-then-archimedean**. Form $\Delta(\mathrm{net})$ in the fibre, then apply $\tau$.
 - **Absolute observables** are computed via **archimedean-then-(no delta)**. Each is a full $\tau$-image of its own braid tower.
 
 ## Necessity of the ordering for binding

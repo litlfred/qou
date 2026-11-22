@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-math-0510265v3/blocks/ex-sec-front-matter-01",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "kind": "example",
+  "pageStart": 1,
+  "pageEnd": 17,
+  "text": "ex-sec-front-matter-01.md",
+  "derivedFrom": "library/arxiv-math-0510265v3/sections/sec-front-matter",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0510265v3/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_kind": "example",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-front-matter.md (p. 1-17)",
+    "claim_id": "arxiv-math-0510265v3#ex-sec-front-matter-01"
+  }
+}

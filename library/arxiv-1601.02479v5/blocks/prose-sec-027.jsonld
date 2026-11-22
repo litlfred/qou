@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1601.02479v5/blocks/prose-sec-027",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Proof of Theorem D",
-  "pageStart": 60,
-  "pageEnd": 63,
-  "text": "../sections/sec-027-64-proof-of-theorem-d.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1601.02479v5",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1601.02479v5",
+  "title": "The perverse associated graded Hopf algebra",
+  "pageStart": 53,
+  "pageEnd": 56,
+  "text": "../sections/sec-027-62-the-perverse-associated-graded-hopf-algebra.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1601.02479v5/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1601.02479v5/manifest.jsonld",
   "provenance": "ingested"
 }

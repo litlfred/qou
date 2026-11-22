@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-hep-ph-0702263v1
-doc_title: "Chiral Low-Energy Constants ∗ Gerhard Ecker Faculty of Physics, Univ. of Vienna"
+doc_title: "Chiral Low-Energy Constants ∗"
 section_id: sec-004-dynamical-photons-and-leptons
 section_title: "Dynamical photons and leptons"
 section_number: null
 pages: 9-9
 source_pdf: 0702263v1.pdf
 source_sha256: 8ae381b4eba60286
-doc_brief: "Chiral Low-Energy Constants ∗ Gerhard Ecker Faculty of Physics, Univ. of Vienna — The progress in determining the coupling constants of meson ic chi- ral Lagrangians is reviewed, with emphasis on the"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.959
+latex_coverage_ratio: 0.973
+doc_brief: "Chiral Low-Energy Constants ∗ — The progress in determining the coupling constants of mesonic chi- ral Lagrangians is reviewed, with emphasis on the work performed in three successive European"
 ---
 Radiative corrections for semileptonic weak decays require the
 incorporation of leptons as dynamical degrees of freedom. The

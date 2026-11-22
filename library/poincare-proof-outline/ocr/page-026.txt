@@ -1,0 +1,71 @@
+have v1 * cnj v2 = ?k * ?d
+using <?d # 0)
+by simp
+
+moreover
+
+hence cnj vl * v2 = cnj ?k * cnj ?d
+
+by (metis complex-cnj-cnj complex-cnj-mult)
+hence cnj vl * v2 = ?k * ?cd
+
+using ‘cnj ?k = ?k» <cnj ?d = ?cd>
+
+by metis
+
+ultimately
+
+show ?thesis
+using <«~ ?den £ 0» «v1 * cnj v2 # 0» (u2 FO» «v2 F 0» «Re ?k # O» ¢is-real ?ky «?d A O»
+using complez-mult-cnj-cmod|symmetric, of u1]
+using complez-mult-cnj-cmod|symmetric, of v1]
+using complez-mult-cnj-cmod|symmetric, of u2]
+using complez-mult-cnj-cmod|symmetric, of v2]
+apply (simp add: power-divide norm-mult norm-divide)
+apply (rule-tac z=Re ?k in ex!)
+apply simp
+apply (simp add: field-simps)
+done
+qed
+
+moreover
+
+have poincare-line-cvec-cmat (ul, u2) (v1, v2) = ?H’
+using (7 ?den 4 0) (7 ul * cnj u2 FO» (v1 * cnj v2 4 O>
+unfolding poincare-line-cvec-cmat-def
+by (simp add: Let-def)
+
+moreover
+
+hence hermitean ?H' A ?H' # mat-zero
+by (metis mk-poincare-line-cmat-hermitean poincare-line-cvec-cmat-nonzero uv(1) uv(2))
+
+hence hermitean ?H A ?H 4 mat-zero
+using <circline-eq-cmat ?H ?H')
+using circline-eq-cmat-hermitean-nonzero|of ?H' ?H] symp-circline-eq-cmat
+unfolding symp-def
+by metis
+
+hence mk-circline-cmat ?A ?B ?C ?D = ?H
+by simp
+
+ultimately
+
+have circline-eq-cmat (mk-circline-cmat ?A ?B ?C ?D)
+(poincare-line-cvec-cmat (ul, u2) (v1, v2))
+by simp
+thus ?thesis
+using symp-circline-eq-cmat
+unfolding symp-def
+by blast
+next
+case False
+hence False
+using (7 ?den £ 0» «7 ul * cnj u2 # 0» w
+by (simp add: «u2 #4 0» (v2 4 0»)
+thus ?thesis
+by simp
+qed
+qed
+
+26

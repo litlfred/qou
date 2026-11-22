@@ -1,0 +1,1 @@
+Let K be a field. (1) An element  2 ƒ is an apex if and only if  is e-restricted. (2) The simple Hn;g-modules of apex  2 ƒ are parameterized by simple modules of Lg;nH. (3) The simple Hn;g-modules of apex  2 ƒ can be constructed as the simple heads of Ind Hn;g Lg;nH.K/, where K runs over (equivalence classes of ) simple Lg;nH-modules.

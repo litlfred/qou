@@ -8,6 +8,7 @@ pages: 36-50
 source_pdf: ant-v14-n7-s-p05.pdf
 source_sha256: 1c8e94ff62a8d920
 toc_source: inferred
+doc_brief: "Motivic Gauss–Bonnet formulas — 12 sections: Front matter; Introduction; X+ ∈SH(k) is dualizable. In partic"
 ---
 In this section, we apply the motivic Gauss–Bonnet formula of Section 5 and the comparison results of
 Section 7 to various speciﬁc SL-oriented cohomology theories, and thereby make computations of the

@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/black-samson-phd2010sp/sections/sec-013",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "V.l. Braid Group Invariance",
+  "pageStart": 49,
+  "pageEnd": 51,
+  "contains": [
+    "library/black-samson-phd2010sp/blocks/prose-sec-013",
+    "library/black-samson-phd2010sp/blocks/lem-sec-013-01",
+    "library/black-samson-phd2010sp/blocks/prop-sec-013-02",
+    "library/black-samson-phd2010sp/blocks/figure-img-p051-1"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/black-samson-phd2010sp/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/black-samson-phd2010sp/manifest.jsonld",
+  "provenance": "ingested"
+}

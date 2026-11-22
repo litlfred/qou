@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.965
 latex_coverage_ratio: 0.909
+doc_brief: "A FORMULA OF ARTHUR AND AFFINE HECKE ALGEBRAS — Let π, π′ be tempered representations of an aﬃne Hecke algebra with positive parameters."
 ---
 Let $\pi, \pi' \in \mr{Mod}_f (\mc H)$. Their Euler-Poincar\'e pairing is defined as
 \begin{equation}\label{eq:4}

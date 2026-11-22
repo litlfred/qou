@@ -1,0 +1,209 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-q-alg-9608020v2",
+ "status": "determined",
+ "body_size": 12.0,
+ "footnotes": [
+  {
+   "id": "fn-p001-1",
+   "page": 1,
+   "mark": "1",
+   "text": "InstituteforAdvancedStudy,Princeton,NJ08540.Currentaddress:Dept.ofMathematics, University of Chicago, 5734 South University Ave., Chicago, IL 60637-1546. E-mail address: okounkov@math.uchicago.edu",
+   "marks": [
+    {
+     "page": 1,
+     "context": "A.Okounkov"
+    },
+    {
+     "page": 1,
+     "context": "Pλ(x1, . . ., xn; θ) = xλ"
+    }
+   ],
+   "block": "library/arxiv-q-alg-9608020v2/blocks/prose-page-001"
+  },
+  {
+   "id": "fn-p001-2",
+   "page": 1,
+   "mark": "2",
+   "text": "InstituteforProblemsofInformationTransmission,BolshoyKaretny19,101447Moscow GSP–4, Russia. E-mail address: olsh@ippi.ac.msk.su AMS T X T t b",
+   "marks": [
+    {
+     "page": 1,
+     "context": "A.Okounkov1andG.Olshanski"
+    }
+   ],
+   "block": "library/arxiv-q-alg-9608020v2/blocks/prose-page-001"
+  },
+  {
+   "id": "fn-p008-2",
+   "page": 8,
+   "mark": "1",
+   "text": "(1996), no. 1, 99-126. [Ok2] , Young basis, Wick formula, and higher Capelli identities, Internat. Math. Res. Notices (1996), no. 17, 817–839. [Ok3] , (Shifted) Macdonald polynomials: q-integral representation and combinatorial for- mula, to appear, q-alg/9605013. [Ok4] , Binomial formula for Macdonald polynomials, to appear, q-alg/9608021. [Ok5] , Shifted Macdonald polynomials with 3 parameters and binomial formula for Koorn- winder polynomials, to appear, q-alg/9611011. [OO] A. Okounkov and G. Olshanski, Shifted Schur functions, to appear in St. Petersburg Math. J., q-alg/9605042. [OO2] , Shifted Schur functions II, in A. A. Kirillov Seminar on Representation Theory, t i A M th S T l l /9612025",
+   "marks": [
+    {
+     "page": 8,
+     "context": "Zλ"
+    }
+   ],
+   "block": "library/arxiv-q-alg-9608020v2/blocks/prose-page-008"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p005-1",
+   "page": 5,
+   "mark": "3",
+   "text": "RecentlytheﬁrstauthorfoundabinomialformulaforMacdonaldpolynomials(bothshifted d di ) d l f K i d l i l [Ok4 5]",
+   "block": "library/arxiv-q-alg-9608020v2/blocks/prose-page-005"
+  },
+  {
+   "id": "fn-p008-1",
+   "page": 8,
+   "mark": "286",
+   "text": "A (1978), 385–387. [La] M. Lassalle, Une formule de binˆome g´en´eralis´ee pour les polynˆomes de Jack, Comptes Rendus Acad. Sci. Paris, S´er. I 310 (1990), 253–256. [M] I. G. Macdonald, Symmetric functions and Hall polynomials, second edition, Oxford Uni- versity Press, 1995. [N] M. Nazarov, Yangians and Capelli identities, A. A. Kirillov Seminar on Representation Theory, to appear in Amer. Math. Soc. Transl., q-alg/9601027. [Ok1] A. Okounkov, Quantum immanants and higher Capelli identities, Transformation Groups",
+   "block": "library/arxiv-q-alg-9608020v2/blocks/prose-page-008"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "x"
+  },
+  {
+   "page": 1,
+   "mark": "i",
+   "context": "i<j(x"
+  },
+  {
+   "page": 1,
+   "mark": "j",
+   "context": "i<j(xi −x"
+  },
+  {
+   "page": 1,
+   "mark": "u",
+   "context": "i<j(xi −xj)istheVandermondedeterminantand"
+  },
+  {
+   "page": 1,
+   "mark": "a",
+   "context": "i<j(xi −xj)istheVandermondedeterminantanduis"
+  },
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "1. . . xλ"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "µ(x"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "µ(x1, . . ., x"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "µ(x"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "µ(x1, . . ., x"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "µ(λ"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "µ(λ1, . . ., λ"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "µ(λ1, . . ., λn; θ) Qµ(x"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "µ(λ1, . . ., λn; θ) Qµ(x1, . . ., x"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "O1/m"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "µ([κl"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "µ([κl1], . . ., [κl"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "µ([κl1], . . ., [κln]; θ) Qµ(x"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "µ([κl1], . . ., [κln]; θ) Qµ(x1/κ, . . ., x"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "µ([κl"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "µ([κl1], . . ., [κl"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "µ([κl1], . . ., [κln]; θ) Qµ(x"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "µ([κl1], . . ., [κln]; θ) Qµ(x1, . . ., x"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "xi)"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "(λ"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "(λi −ν"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Zλ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "V (λ)"
+  }
+ ]
+}

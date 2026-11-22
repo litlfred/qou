@@ -26,6 +26,12 @@ export default proposition({
   ],
   authorNotes: [
     {
+      kind: "note",
+      date: "2026-11-21",
+      body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner: fix issues): Mechanism 1 opened \"Per the [exponential decay of the archimedean brane-tower truncation remainder](#conj:archimedean-remainder-exponential-decay), the truncation residual at depth $N$ satisfies:\"; the dependence is now stated as the conditional banner at the start of the block.",
+    },
+    { kind: "note", date: "2026-11-21", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: break each loop): from [$\\mathfrak{Q}_\\beta$ categorical-derivation precision ladder](#prop:q-beta-categorical-precision-ladder)" },
+    {
       kind: "status",
       body: "**Verified.** The two convergence mechanisms have distinct empirical signatures that guarantee finite-precision predictions from the formal infinite sum:\n\n1. **c(K) bound (Mechanism 1):** validated by `c_k_beta_decay_witness.py` — each rung's residual sits well within the ceiling.\n2. **Linking-number locality (Mechanism 2):** factorisation for two unlinked braids in a higher-rank Hecke algebra is directly confirmed by the empirical test in [`probe_inter_knot_decoupling.py`](../../../computations/probe_inter_knot_decoupling.py), yielding `inter-knot-decoupling.witness.json`.",
     },

@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2404.03933v2",
  "source_sha256": "48aff6e97e1f1267",
- "brief": "TENSOR POWERS OF VECTOR REPRESENTATION OF Uq(sl2) AT EVEN ROOTS OF UNITY — We study the decomposition of tensor powers of two dimensional irreducible rep- resentations of quantum sl2 at even roots of",
- "extended": "**TENSOR POWERS OF VECTOR REPRESENTATION OF Uq(sl2) AT EVEN ROOTS OF UNITY**\n\n*ANNA LACHOWSKA, OLGA POSTNOVA, NICOLAI RESHETIKHIN, AND DMITRY SOLOVYEV*\n\n44 pp, 15 sections.\n\n**Abstract.** We study the decomposition of tensor powers of two dimensional irreducible rep- resentations of quantum sl2 at even roots of unity into direct sums of tilting modules. We derive a combinatorial formula for multiplicity of tilting modules in the N-th tensor power of two dimensional irreducible representations, interpret it in terms of lattice paths and find its asymptotic behavior when N → ∞ . We also describe the limit of character and Plancherel measures when N → ∞. We consider both Uq(sl2) with divided powers and the small quantum sl2.\n\n**Outline.** 1 Introduction; 2 Algebra Uq(sl2) and its representations; 4 Restriction from Uq(sl2) to uq(sl2); 5 Recursive formulae for Uq(sl2) and uq(sl2) t; 6 Multiplicities and lattice paths; 7 Integral formula for multiplicities; 8 Probabilistic measures on the tensor product; 9 The asymptotic of the character and Plancher; 10 The asymptotic of probability measures for ; Appendix A. Gaussian binomial coefficients; Appendix B. Proof of Theorem 6.3; Appendix C. Proof of Theorems 9.1, 9.2, 9.3; Appendix D. Proof of Theorem 9.4; Appendix E. Proof of Theorems 9.5 and 9.6; References",
+ "brief": "TENSOR POWERS OF VECTOR REPRESENTATION OF Uq(sl2) — We study the decomposition of tensor powers of two dimensional irreducible rep- resentations of quantum sl2 at even roots of unity into direct sums",
+ "extended": "**TENSOR POWERS OF VECTOR REPRESENTATION OF Uq(sl2)**\n\n*ANNA LACHOWSKA, OLGA POSTNOVA, NICOLAI RESHETIKHIN, AND DMITRY SOLOVYEV*\n\n44 pp, 17 sections.\n\n**Abstract.** We study the decomposition of tensor powers of two dimensional irreducible rep- resentations of quantum sl2 at even roots of unity into direct sums of tilting modules. We derive a combinatorial formula for multiplicity of tilting modules in the N-th tensor power of two dimensional irreducible representations, interpret it in terms of lattice paths and find its asymptotic behavior when N →∞. We also describe the limit of character and Plancherel measures when N →∞. We consider both Uq(sl2) with divided powers and the small quantum sl2.\n\n**Outline.** Front matter; 1 Introduction; 2 Algebra Uq(sl2) and its representations; 3 Decomposition of tensor powers of T(1) over ; 4 Restriction from Uq(sl2) to uq(sl2); 5 Recursive formulae for Uq(sl2) and uq(sl2) t; 6 Multiplicities and lattice paths; 7 Integral formula for multiplicities; 8 Probabilistic measures on the tensor product; 9 The asymptotic of the character and Plancher; 10 The asymptotic of probability measures for ; Appendix A. Gaussian binomial coefficients; Appendix B. Proof of Theorem 6.3; Appendix C. Proof of Theorems 9.1, 9.2, 9.3; Appendix D. Proof of Theorem 9.4; Appendix E. Proof of Theorems 9.5 and 9.6; References",
  "tokens": {
   "brief": 49,
-  "extended": 330
+  "extended": 339
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -17,70 +22,75 @@
   {
    "id": "sec-001-2-algebra-uqsl2-and-its-representations",
    "title": "Algebra Uq(sl2) and its representations",
-   "pages": "4-11"
+   "pages": "4-9"
   },
   {
-   "id": "sec-002-4-restriction-from-uqsl2-to-uqsl2",
+   "id": "sec-002-3-decomposition-of-tensor-powers-of-t1-over-uqsl",
+   "title": "Decomposition of tensor powers of T(1) over Uq(sl2)",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-003-4-restriction-from-uqsl2-to-uqsl2",
    "title": "Restriction from Uq(sl2) to uq(sl2)",
    "pages": "11-13"
   },
   {
-   "id": "sec-003-5-recursive-formulae-for-uqsl2-and-uqsl2-tensor",
+   "id": "sec-004-5-recursive-formulae-for-uqsl2-and-uqsl2-tensor",
    "title": "Recursive formulae for Uq(sl2) and uq(sl2) tensor products.",
    "pages": "13-14"
   },
   {
-   "id": "sec-004-6-multiplicities-and-lattice-paths",
+   "id": "sec-005-6-multiplicities-and-lattice-paths",
    "title": "Multiplicities and lattice paths",
    "pages": "14-18"
   },
   {
-   "id": "sec-005-7-integral-formula-for-multiplicities",
+   "id": "sec-006-7-integral-formula-for-multiplicities",
    "title": "Integral formula for multiplicities",
    "pages": "18-21"
   },
   {
-   "id": "sec-006-8-probabilistic-measures-on-the-tensor-product-d",
+   "id": "sec-007-8-probabilistic-measures-on-the-tensor-product-d",
    "title": "Probabilistic measures on the tensor product decomposition",
    "pages": "21-23"
   },
   {
-   "id": "sec-007-9-the-asymptotic-of-the-character-and-plancherel",
+   "id": "sec-008-9-the-asymptotic-of-the-character-and-plancherel",
    "title": "The asymptotic of the character and Plancherel measures for Uq(sl2)",
    "pages": "23-28"
   },
   {
-   "id": "sec-008-10-the-asymptotic-of-probability-measures-for-uq",
+   "id": "sec-009-10-the-asymptotic-of-probability-measures-for-uq",
    "title": "The asymptotic of probability measures for uq(sl2)",
    "pages": "28-30"
   },
   {
-   "id": "sec-009-appendix-a-gaussian-binomial-coefficients",
+   "id": "sec-010-appendix-a-gaussian-binomial-coefficients",
    "title": "Appendix A. Gaussian binomial coefficients",
    "pages": "30-31"
   },
   {
-   "id": "sec-010-appendix-b-proof-of-theorem-63",
+   "id": "sec-011-appendix-b-proof-of-theorem-63",
    "title": "Appendix B. Proof of Theorem 6.3",
    "pages": "31-38"
   },
   {
-   "id": "sec-011-appendix-c-proof-of-theorems-91-92-93",
+   "id": "sec-012-appendix-c-proof-of-theorems-91-92-93",
    "title": "Appendix C. Proof of Theorems 9.1, 9.2, 9.3",
    "pages": "38-41"
   },
   {
-   "id": "sec-012-appendix-d-proof-of-theorem-94",
+   "id": "sec-013-appendix-d-proof-of-theorem-94",
    "title": "Appendix D. Proof of Theorem 9.4",
    "pages": "41-42"
   },
   {
-   "id": "sec-013-appendix-e-proof-of-theorems-95-and-96",
+   "id": "sec-014-appendix-e-proof-of-theorems-95-and-96",
    "title": "Appendix E. Proof of Theorems 9.5 and 9.6",
    "pages": "42-43"
   },
   {
-   "id": "sec-014-references",
+   "id": "sec-015-references",
    "title": "References",
    "pages": "43-44"
   }

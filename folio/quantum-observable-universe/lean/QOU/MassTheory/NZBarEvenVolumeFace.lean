@@ -25,7 +25,7 @@ here.
 §7c: archimedean (`Real.sin`, ordering) ⇒ base ring `ℝ`.
 
 -- Ref: [neumann-zagier1985] https://doi.org/10.1016/0040-9383(85)90004-7
--- Ref: [manuscript] docs/audits/2026-07-27-nzImVolume-sincos-convention-bug.md
+-- Ref: [leitner2026] docs/audits/2026-07-27-nzImVolume-sincos-convention-bug.md
 -/
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Tactic.Positivity

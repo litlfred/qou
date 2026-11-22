@@ -6,10 +6,12 @@
   "sha256": "ac4127cf4994b2ba5ef279a9c54ef591c91f1ff089a0c90bc560f1f6912234c2",
   "bytes": 454470,
   "pages": 28,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -19,21 +21,31 @@
    "stamp_date": "3 Dec 2024"
   },
   "doi": null,
-  "title": "Explicit evaluation of the q-Stokes matrices for certain confluent hypergeometric q-difference equations",
+  "title": "Explicit evaluation of the q -Stokes matrices for certain conﬂuent hypergeometric q -diﬀerence equations",
   "authors_raw": "Jinghong Lin, Yiming Ma and Xiaomeng Xu",
-  "abstract": "We prove a connection formula for the basic hypergeomtric fu nction n\u03d5n\u22121 (a1,...,a n\u22121, 0;b1,...,b n\u22121;q,z ) by using the q-Borel resummation. As an application, we compute q-Stokes matrices of a special con\ufb02uent hypergeometricq-di\ufb00erence system with an irregular singularity. We show th at by letting q \u2192 1, the q-Stokes matrices recover the known expressions of the Stokes matric es of the corresponding con\ufb02uent hypergeometric di\ufb00erential system.",
-  "docinfo": {
-   "Producer": "GPL Ghostscript 10.01.2",
-   "CreationDate": "D:20241203203654-05'00'",
-   "Creator": "LaTeX with hyperref",
-   "Title": "",
-   "Author": ""
-  },
   "title_lines": [
    "Explicit evaluation of the q-Stokes matrices for certain confluent",
    "hypergeometric q-difference equations"
   ],
-  "title_prev": "u + A"
+  "abstract": "We prove a connection formula for the basic hypergeomtric function nϕn−1 (a1, ..., an−1, 0; b1, ..., bn−1; q, z) by using the q-Borel resummation. As an application, we compute q-Stokes matrices of a special conﬂuent hypergeometric q-diﬀerence system with an irregular singularity. We show that by letting q →1, the q-Stokes matrices recover the known expressions of the Stokes matrices of the corresponding conﬂuent hypergeometric diﬀerential system.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript 10.01.2",
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20241203203654-05'00'"
+  },
+  "title_raw": "Explicit evaluation of the q-Stokes matrices for certain confluent hypergeometric q-difference equations",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Explicit evaluation of the q -Stokes matrices for certain conﬂuent hypergeometric q -diﬀerence equations",
+   "outline": "Introduction",
+   "text": "Explicit evaluation of the q-Stokes matrices for certain confluent hypergeometric q-difference equations",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Explicit evaluation of the q-Stokes matrices for certain confluent hypergeometric q-difference equations"
  },
  "toc": [
   {
@@ -41,116 +53,432 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Connection Formula of the Equation (5)",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Basic Notations",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Basic Hypergeometric Series",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "q-Borel Resummation",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Explicit Expression of Connection Formula of the Equation (5)",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "Connection Matrix, q-Stokes Matrix of the System (2)",
    "page": 10,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Fundamental Solution, Connection Matrix and q-Stokes Matrix",
    "page": 10,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Diagonalization of the Upper Left Submatrix of A",
    "page": 11,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "Fundamental Solutions of the System (33)",
    "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Relationship between the System (33) and the Equation (5)",
    "page": 14,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 2,
    "title": "Explicit Evaluation of Connection Matrix and q-Stokes Matrix of (33)",
    "page": 14,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 2,
    "title": "Explicit Evaluation of Connection Matrix and q-Stokes Matrix of (2)",
    "page": 17,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 1,
    "title": "Behavior of the Equation (5) and the System (2) as q1",
    "page": 18,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 2,
    "title": "Behavior of the Connection Formula as q1",
    "page": 18,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 2,
    "title": "Behavior of Connection Matrix and q-Stokes Matrix of the System (2) as q1",
    "page": 22,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 645,
+   "n_words": 93,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
@@ -158,38 +486,46 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 5307,
-   "n_words": 1145
+   "n_chars": 7287,
+   "n_words": 1465,
+   "label_start": "1",
+   "label_end": "3"
   },
   {
-   "id": "sec-001-basic-hypergeometric-series",
-   "number": null,
-   "title": "Basic Hypergeometric Series",
-   "level": 2,
-   "page_start": 3,
-   "page_end": 3,
-   "n_chars": 1942,
-   "n_words": 376
-  },
-  {
-   "id": "sec-002-connection-formula-of-the-equation-5",
+   "id": "sec-001-connection-formula-of-the-equation-5",
    "number": null,
    "title": "Connection Formula of the Equation (5)",
    "level": 1,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 678,
-   "n_words": 112
+   "n_chars": 671,
+   "n_words": 105,
+   "label_start": "3",
+   "label_end": "3"
   },
   {
-   "id": "sec-003-basic-notations",
+   "id": "sec-002-basic-notations",
    "number": null,
    "title": "Basic Notations",
    "level": 2,
    "page_start": 3,
+   "page_end": 4,
+   "n_chars": 909,
+   "n_words": 189,
+   "label_start": "3",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-003-basic-hypergeometric-series",
+   "number": null,
+   "title": "Basic Hypergeometric Series",
+   "level": 2,
+   "page_start": 4,
    "page_end": 5,
-   "n_chars": 3951,
-   "n_words": 818
+   "n_chars": 3067,
+   "n_words": 659,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
    "id": "sec-004-q-borel-resummation",
@@ -198,8 +534,10 @@
    "level": 2,
    "page_start": 5,
    "page_end": 7,
-   "n_chars": 5388,
-   "n_words": 1132
+   "n_chars": 5309,
+   "n_words": 1044,
+   "label_start": "5",
+   "label_end": "7"
   },
   {
    "id": "sec-005-explicit-expression-of-connection-formula-of-the",
@@ -208,8 +546,10 @@
    "level": 2,
    "page_start": 7,
    "page_end": 10,
-   "n_chars": 9511,
-   "n_words": 1976
+   "n_chars": 9510,
+   "n_words": 1929,
+   "label_start": "7",
+   "label_end": "10"
   },
   {
    "id": "sec-006-connection-matrix-q-stokes-matrix-of-the-system",
@@ -218,8 +558,10 @@
    "level": 1,
    "page_start": 10,
    "page_end": 10,
-   "n_chars": 520,
-   "n_words": 81
+   "n_chars": 571,
+   "n_words": 87,
+   "label_start": "10",
+   "label_end": "10"
   },
   {
    "id": "sec-007-fundamental-solution-connection-matrix-and-q-sto",
@@ -228,8 +570,10 @@
    "level": 2,
    "page_start": 10,
    "page_end": 11,
-   "n_chars": 2225,
-   "n_words": 482
+   "n_chars": 2264,
+   "n_words": 470,
+   "label_start": "10",
+   "label_end": "11"
   },
   {
    "id": "sec-008-diagonalization-of-the-upper-left-submatrix-of-a",
@@ -238,8 +582,10 @@
    "level": 2,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 1981,
-   "n_words": 496
+   "n_chars": 1954,
+   "n_words": 430,
+   "label_start": "11",
+   "label_end": "12"
   },
   {
    "id": "sec-009-fundamental-solutions-of-the-system-33",
@@ -248,8 +594,10 @@
    "level": 2,
    "page_start": 12,
    "page_end": 14,
-   "n_chars": 3544,
-   "n_words": 771
+   "n_chars": 3557,
+   "n_words": 751,
+   "label_start": "12",
+   "label_end": "14"
   },
   {
    "id": "sec-010-relationship-between-the-system-33-and-the-equat",
@@ -258,8 +606,10 @@
    "level": 2,
    "page_start": 14,
    "page_end": 14,
-   "n_chars": 2163,
-   "n_words": 436
+   "n_chars": 2206,
+   "n_words": 430,
+   "label_start": "14",
+   "label_end": "14"
   },
   {
    "id": "sec-011-explicit-evaluation-of-connection-matrix-and-q-s",
@@ -268,8 +618,10 @@
    "level": 2,
    "page_start": 14,
    "page_end": 17,
-   "n_chars": 7021,
-   "n_words": 1709
+   "n_chars": 6726,
+   "n_words": 1361,
+   "label_start": "14",
+   "label_end": "17"
   },
   {
    "id": "sec-012-explicit-evaluation-of-connection-matrix-and-q-s",
@@ -278,8 +630,10 @@
    "level": 2,
    "page_start": 17,
    "page_end": 18,
-   "n_chars": 2461,
-   "n_words": 561
+   "n_chars": 2435,
+   "n_words": 479,
+   "label_start": "17",
+   "label_end": "18"
   },
   {
    "id": "sec-013-behavior-of-the-equation-5-and-the-system-2-as-q",
@@ -287,32 +641,56 @@
    "title": "Behavior of the Equation (5) and the System (2) as q1",
    "level": 1,
    "page_start": 18,
-   "page_end": 22,
-   "n_chars": 9698,
-   "n_words": 2150
+   "page_end": 18,
+   "n_chars": 348,
+   "n_words": 66,
+   "label_start": "18",
+   "label_end": "18"
   },
   {
-   "id": "sec-014-behavior-of-connection-matrix-and-q-stokes-matri",
+   "id": "sec-014-behavior-of-the-connection-formula-as-q1",
+   "number": null,
+   "title": "Behavior of the Connection Formula as q1",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 22,
+   "n_chars": 9185,
+   "n_words": 1917,
+   "label_start": "18",
+   "label_end": "22"
+  },
+  {
+   "id": "sec-015-behavior-of-connection-matrix-and-q-stokes-matri",
    "number": null,
    "title": "Behavior of Connection Matrix and q-Stokes Matrix of the System (2) as q1",
    "level": 2,
    "page_start": 22,
    "page_end": 28,
-   "n_chars": 17947,
-   "n_words": 3563
+   "n_chars": 17664,
+   "n_words": 3232,
+   "label_start": "22",
+   "label_end": "28"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 16,
-  "sections": 15,
-  "chars_total": 74337,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 17,
+  "chars_total": 74308,
+  "furniture_lines_stripped": 28,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "main.tex",
    "tex_sections": 17,
-   "overlaid": 4,
+   "overlaid": 8,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -320,36 +698,44 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.975,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.808,
+     "coverage_ratio": 0.979,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-001-basic-hypergeometric-series",
-     "title": "Basic Hypergeometric Series",
-     "prose_ratio": 0.231,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-002-connection-formula-of-the-equation-5",
+     "id": "sec-001-connection-formula-of-the-equation-5",
      "title": "Connection Formula of the Equation (5)",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-003-basic-notations",
+     "id": "sec-002-basic-notations",
      "title": "Basic Notations",
      "prose_ratio": 0.933,
-     "coverage_ratio": 0.33,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.737,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-basic-hypergeometric-series",
+     "title": "Basic Hypergeometric Series",
+     "prose_ratio": 0.862,
+     "coverage_ratio": 0.948,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-q-borel-resummation",
      "title": "q-Borel Resummation",
      "prose_ratio": 0.508,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-005-explicit-expression-of-connection-formula-of-the",
@@ -368,7 +754,7 @@
      "id": "sec-007-fundamental-solution-connection-matrix-and-q-sto",
      "title": "Fundamental Solution, Connection Matrix and q-Stokes Matrix",
      "prose_ratio": 0.825,
-     "coverage_ratio": 0.915,
+     "coverage_ratio": 0.914,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -376,15 +762,15 @@
      "id": "sec-008-diagonalization-of-the-upper-left-submatrix-of-a",
      "title": "Diagonalization of the Upper Left Submatrix of A",
      "prose_ratio": 0.947,
-     "coverage_ratio": 0.921,
+     "coverage_ratio": 0.919,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-009-fundamental-solutions-of-the-system-33",
      "title": "Fundamental Solutions of the System (33)",
-     "prose_ratio": 0.429,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.442,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-010-relationship-between-the-system-33-and-the-equat",
@@ -394,14 +780,16 @@
     {
      "id": "sec-011-explicit-evaluation-of-connection-matrix-and-q-s",
      "title": "Explicit Evaluation of Connection Matrix and q-Stokes Matrix of (33)",
-     "prose_ratio": 0.253,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.442,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-012-explicit-evaluation-of-connection-matrix-and-q-s",
      "title": "Explicit Evaluation of Connection Matrix and q-Stokes Matrix of (2)",
-     "prose_ratio": 0.258,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.61,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-013-behavior-of-the-equation-5-and-the-system-2-as-q",
@@ -409,11 +797,19 @@
      "result": "no matching \\section"
     },
     {
-     "id": "sec-014-behavior-of-connection-matrix-and-q-stokes-matri",
+     "id": "sec-014-behavior-of-the-connection-formula-as-q1",
+     "title": "Behavior of the Connection Formula as q1",
+     "prose_ratio": 0.8,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-015-behavior-of-connection-matrix-and-q-stokes-matri",
      "title": "Behavior of Connection Matrix and q-Stokes Matrix of the System (2) as q1",
      "prose_ratio": 0.863,
-     "coverage_ratio": 0.373,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.37,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

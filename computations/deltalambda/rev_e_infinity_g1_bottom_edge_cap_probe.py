@@ -189,6 +189,7 @@ RECORDED_S = 13
 # see a precision raise that happens inside an `exec`, so the audit reported the only LOSSY
 # constant in the corpus here and was right to, whatever the runtime value turned out to be.
 mp.dps = 60
+# witness-copy-intentional: the recorded value this probe re-checks; its own witness echoes it.
 RECORDED_DIFF = mp.mpf("0.0198162676389039602300948111946348416306")
 
 # cap settings to sweep.  (BMAX, BUMAX); the second row is the committed one.

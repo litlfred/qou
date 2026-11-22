@@ -3,12 +3,17 @@
  "doc_id": "arxiv-0805.1447v2",
  "source_sha256": "b7ee20b0a7f5f3da",
  "brief": "Braid ordering and the geometry of closed braid — The relationships between braid ordering and the ge- ometry of its closure is studied.",
- "extended": "**Braid ordering and the geometry of closed braid**\n\n21 pp, 8 sections.\n\n**Abstract.** The relationships between braid ordering and the ge- ometry of its closure is studied. We prove that if an essential closed surface F in the complements of closed braid has relatively small genus with respect to the Dehornoy ﬂoor of the braid, F is circular-foliated in a sense of Birman-Menasco’s Braid foliation theory. As an application of the result, we prove that if Dehornoy ﬂoor of braids are larger than three, Nielsen-Thurston classiﬁcat ion of braids and the geometry of their closure’s complements are in one-to-one correspondence. Using this result, we construct inﬁ n- itely many hyperbolic knots explicitly from pseudo-Anosov element of mapping class groups.\n\n**Outline.** 1 Introduction; 2 Braid ordering and Dehornoy floor; 2.2 The geometric meaning of Dehornoy ordering; 3 Braid Foliation; 4.1 Tiled essential surface; 4.2 Mixed foliated surface; 5 Nielsen-Thurston classification and the geom; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: Let β ∈ Bn be a braid and F be an essential, genus g\n- Theorem 1: means braid ordering gives some information about the\n- Theorem 2: partially answers the question.\n- Theorem 2: Let β ∈ Bn be a braid whose closure is a knot. If [β ]D ≥ 3,\n- Theorem 3: ). Torus knots are exchange-reducible.\n- Corollary 1: Suppose [f ] ∈ M CG(Dn) be a pseudo-Anosov element",
+ "extended": "**Braid ordering and the geometry of closed braid**\n\n*TETSUYA ITO*\n\n21 pp, 12 sections.\n\n**Abstract.** The relationships between braid ordering and the ge- ometry of its closure is studied. We prove that if an essential closed surface F in the complements of closed braid has relatively small genus with respect to the Dehornoy ﬂoor of the braid, F is circular-foliated in a sense of Birman-Menasco’s Braid foliation theory. As an application of the result, we prove that if Dehornoy ﬂoor of braids are larger than three, Nielsen-Thurston classiﬁcation of braids and the geometry of their closure’s complements are in one-to-one correspondence. Using this result, we construct inﬁn- itely many hyperbolic knots explicitly from pseudo-Anosov element of mapping class groups.\n\n**Outline.** Front matter; 1 Introduction; 2 Braid ordering and Dehornoy floor; 2.1 Dehornoy ordering, Dehornoy floor; 2.2 The geometric meaning of Dehornoy ordering; 2.3 More precious estimation of Dehornoy floor; 3 Braid Foliation; 4 Proof of theorem ??; 4.1 Tiled essential surface; 4.2 Mixed foliated surface; 5 Nielsen-Thurston classification and the geom; References",
  "tokens": {
   "brief": 34,
-  "extended": 357
+  "extended": 286
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -17,35 +22,50 @@
   {
    "id": "sec-001-2-braid-ordering-and-dehornoy-floor",
    "title": "Braid ordering and Dehornoy floor",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-002-21-dehornoy-ordering-dehornoy-floor",
+   "title": "Dehornoy ordering, Dehornoy floor",
    "pages": "4-6"
   },
   {
-   "id": "sec-002-22-the-geometric-meaning-of-dehornoy-ordering-an",
+   "id": "sec-003-22-the-geometric-meaning-of-dehornoy-ordering-an",
    "title": "The geometric meaning of Dehornoy ordering and Dehornoy floor",
-   "pages": "6-8"
+   "pages": "6-7"
   },
   {
-   "id": "sec-003-3-braid-foliation",
+   "id": "sec-004-23-more-precious-estimation-of-dehornoy-floor",
+   "title": "More precious estimation of Dehornoy floor",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-005-3-braid-foliation",
    "title": "Braid Foliation",
-   "pages": "8-10"
+   "pages": "8-9"
   },
   {
-   "id": "sec-004-41-tiled-essential-surface",
+   "id": "sec-006-4-proof-of-theorem",
+   "title": "Proof of theorem ??",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-007-41-tiled-essential-surface",
    "title": "Tiled essential surface",
    "pages": "10-12"
   },
   {
-   "id": "sec-005-42-mixed-foliated-surface",
+   "id": "sec-008-42-mixed-foliated-surface",
    "title": "Mixed foliated surface",
    "pages": "12-16"
   },
   {
-   "id": "sec-006-5-nielsen-thurston-classification-and-the-geomet",
+   "id": "sec-009-5-nielsen-thurston-classification-and-the-geomet",
    "title": "Nielsen-Thurston classification and the geometry of closed braid complements",
    "pages": "16-20"
   },
   {
-   "id": "sec-007-references",
+   "id": "sec-010-references",
    "title": "References",
    "pages": "20-21"
   }
@@ -54,8 +74,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

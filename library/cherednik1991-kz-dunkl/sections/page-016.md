@@ -1,0 +1,61 @@
+---
+doc_id: cherednik1991-kz-dunkl
+doc_title: "A unification of Knizhnik-Zamolodchikov and Dunkl operators via affine Hecke algebras"
+section_id: page-016
+section_title: "Page 16"
+pages: 16-16
+pdf_page: 16
+source_pdf: cherednik1991-kz-dunkl.pdf
+source_sha256: cae9cf747bb98a46
+text_source: ocr
+granularity: page
+doc_brief: "A unification of Knizhnik-Zamolodchikov and Dunkl operators via affine Hecke algebras — 21 sections: Page 1; Page 2; Page 3"
+---
+426 I. Cherednik
+
+which gives (see (3.5)) the well-known classical “abstract” Yang-Baxter relation
+
+[ras Tate] + [re tp] + [rete tp] =0. (3.6)
+For B, we obtain the relation
+
+R,Ry+pRa+2pRp = RgRa+2pRa+pRa >
+which results in
+
+[ras tp + e+e] = [re+2pstare — 1p] (3.7)
+
+because of the orthogonality conditions [r,, ra +28] = 0 = [ra+g, 1], which follow
+from the corresponding conditions for R. For G2 one has (see [Bo])
+
+R,R3a+pRr0+pR2p+30RarpRp = ReRarpRrp+3aRr20+6R3a+pRa
+and the relations
+[rp, ta + ta+p] + (roetp P3atp — 130+26) = [re Taare] + [rsa+2p> arp] (3.8)
+together with (3.6) for rg, T3a+g5 T3a+26 and
+[rp, Tra+p] eA [rate, T3a+8) =([n, T3a+26] =0.
+
+Relations (3.6-8) modulo the orthogonality conditions ((«, $)=0=>
+[r,s] = 0) are equivalent to Definition 3.1. Owing to (3.3) we have only one
+unknown element r, in the case of Az and two of them (r, and rg) for B,, G.. 0
+
+Let us consider A = EndgC( Y)@cA or A= EndcC(y) @cA instead of A,
+where C( Y) and C(y) are from Sect. 1. We have the homomorphism Wx W— A
+taking 1 x w to vo(w)e 1@A and w x | to the corresponding automorphism of C( Y)
+or C(y). By definition
+
+%o(w) = wvo(w), weW, (3.9)
+where w, vo(w) are identified respectively with wx1 and 1xvo(w). One has:
+Wvo(W’) = vo(w’)w for any w, w’e W.
+
+Let {p,, «€2} be a classical A-valued (i.e. “constant”) r-matrix with the
+following “quasi-unitary” condition
+Pa + Vo(Sa) PaVo(Sz) = 1+ vols.) or =0 (3.10)
+
+respectively in the case of Yor y. We fix x’, x”, 6’, 6” eC and denote by x, either x’ or
+k” for short or long roots, x; = x,, (the same notations hold for 6).
+
+Theorem 3.4 The set
+Te = Ka(Pa + (Ya — 1)7* volsz)(1 — 5a82)), #EZ , (3.11)
+Tz = Kal Pa + Ya *Vo(Sz)(1 — 5,82) for y (3.12)
+is a classical A-valued r-matrix with respect to %.
+
+The proof is based on the following lemma directly resulting from formulas (2.1),
+(2.3).

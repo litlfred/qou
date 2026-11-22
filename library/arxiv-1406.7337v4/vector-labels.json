@@ -1,0 +1,5096 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-1406.7337v4",
+  "pages": [
+    {
+      "page": 2,
+      "rotation": 0,
+      "drawings": 16,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1: A crossing neighborhood of a link diagram, along with its A-resolution and B-resolution."
+      ],
+      "labels": [
+        {
+          "text": "A",
+          "bbox": [
+            372.87,
+            79.78,
+            380.34,
+            89.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "B",
+          "bbox": [
+            224.99,
+            87.56,
+            232.04,
+            97.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 1: A crossing neighborhood of a link diagram, along with its A-resolution and B-resolution.",
+          "bbox": [
+            103.67,
+            122.64,
+            508.41,
+            131.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX9",
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "By restricting to a family of A-adequate closed 3-braids, we show that the volumes can also be bounded",
+          "bbox": [
+            86.94,
+            155.03,
+            540.02,
+            165.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "in terms of the parameter s from the Schreier normal form of the 3-braid. It should be noted that the lower",
+          "bbox": [
+            72.0,
+            166.99,
+            540.06,
+            176.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "bound provided in this paper, which relies on the more recent machinery of [8], is often an improvement over",
+          "bbox": [
+            72.0,
+            178.94,
+            540.07,
+            188.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the one given in [11].",
+          "bbox": [
+            72.0,
+            190.9,
+            163.34,
+            200.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Theorem 1.2. For D(K) a certain A-adequate closed 3-braid diagram, the complement of K satisﬁes the",
+          "bbox": [
+            72.0,
+            210.82,
+            539.99,
+            220.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "volume bounds",
+          "bbox": [
+            72.0,
+            222.78,
+            135.15,
+            232.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "v8 · (s −1) ≤vol(S3\\K) < 4v8 · s.",
+          "bbox": [
+            232.33,
+            232.96,
+            379.67,
+            246.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "In addition to providing diagrammatic volume bounds, we also show that, for the same family of A-",
+          "bbox": [
+            86.94,
+            254.66,
+            540.06,
+            264.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "adequate closed 3-braids, the parameters k and s from the Schreier normal form can actually be read oﬀof",
+          "bbox": [
+            72.0,
+            266.61,
+            540.03,
+            276.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the original 3-braid diagram.",
+          "bbox": [
+            72.0,
+            278.57,
+            197.76,
+            288.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The volumes for many families of link complements have also been expressed in terms of coeﬃcients of",
+          "bbox": [
+            86.94,
+            290.53,
+            539.99,
+            300.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the colored Jones polynomial ([3], [4], [8], [9], [10], [11], [16]). Denote the jth colored Jones polynomial of a",
+          "bbox": [
+            72.0,
+            298.87,
+            540.0,
+            312.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "link K by",
+          "bbox": [
+            72.0,
+            314.44,
+            114.66,
+            324.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "K(t) = αjtmj + βjtmj−1 + · · · + β′",
+          "bbox": [
+            204.11,
+            322.28,
+            353.4,
+            338.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "jtrj+1 + α′",
+          "bbox": [
+            350.58,
+            322.28,
+            397.27,
+            338.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Jj",
+          "bbox": [
+            198.58,
+            323.94,
+            208.36,
+            336.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "jtrj,",
+          "bbox": [
+            394.93,
+            324.61,
+            413.42,
+            338.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "where j ∈N and where the degree of each monomial summand decreases from left to right. We will show",
+          "bbox": [
+            72.0,
+            342.15,
+            540.0,
+            354.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "that, for ﬁxed n, the volumes for many of the closed n-braids considered in this paper can be bounded in",
+          "bbox": [
+            72.0,
+            356.28,
+            540.04,
+            366.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "terms of the stable penultimate coeﬃcient β′",
+          "bbox": [
+            72.0,
+            366.86,
+            265.29,
+            378.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "K := β′",
+          "bbox": [
+            262.48,
+            366.86,
+            294.66,
+            380.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "j (where j ≥2) of the colored Jones polynomial. A result",
+          "bbox": [
+            291.84,
+            368.1,
+            540.02,
+            380.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "of this nature shows that the given collection of closed n-braids satisﬁes a Coarse Volume Conjecture ([8],",
+          "bbox": [
+            72.0,
+            380.19,
+            540.0,
+            390.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Section 10.4). This result, which is stated below, can be viewed as a corollary of Theorem 1.1.",
+          "bbox": [
+            72.0,
+            392.14,
+            483.64,
+            402.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Corollary 1.1. For D(K) a certain A-adequate closed n-braid diagram, the complement of K satisﬁes the",
+          "bbox": [
+            72.0,
+            412.07,
+            539.99,
+            422.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "volume bounds",
+          "bbox": [
+            72.0,
+            424.02,
+            135.15,
+            433.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0012",
+          "bbox": [
+            337.24,
+            432.58,
+            344.58,
+            442.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0013",
+          "bbox": [
+            422.06,
+            432.58,
+            429.39,
+            442.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "K| + n + m −7",
+          "bbox": [
+            352.98,
+            432.73,
+            420.86,
+            451.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "v8 · (|β′",
+          "bbox": [
+            178.18,
+            437.6,
+            209.77,
+            450.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "|β′",
+          "bbox": [
+            344.58,
+            437.6,
+            355.8,
+            449.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "K| −1) ≤vol(S3\\K) < 20v3 ·",
+          "bbox": [
+            206.95,
+            437.69,
+            335.03,
+            451.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            431.05,
+            439.47,
+            433.82,
+            449.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            415.88,
+            446.3,
+            420.86,
+            456.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Acknowledgments",
+          "bbox": [
+            72.0,
+            471.48,
+            198.58,
+            485.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "I would like to thank Efstratia Kalfagianni for helpful conversations that led to this project. I would also like",
+          "bbox": [
+            72.0,
+            496.72,
+            540.1,
+            506.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "to thank the anonymous referee for helpful comments that led to an improvement in the quality of exposition",
+          "bbox": [
+            72.0,
+            508.68,
+            540.07,
+            518.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "in this paper.",
+          "bbox": [
+            72.0,
+            520.63,
+            130.49,
+            530.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            72.0,
+            550.15,
+            80.08,
+            564.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "Volume bounds for A-adequate closed braids",
+          "bbox": [
+            96.22,
+            550.15,
+            413.1,
+            564.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "2.1",
+          "bbox": [
+            72.0,
+            575.84,
+            89.2,
+            587.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Preliminaries",
+          "bbox": [
+            102.65,
+            575.84,
+            180.61,
+            587.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Let D(K) ⊆S2 denote a diagram of a link K ⊆S3. To smooth a crossing of the link diagram D(K), we",
+          "bbox": [
+            72.0,
+            592.17,
+            540.0,
+            605.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "may either A-resolve or B-resolve this crossing according to Figure 1. By A-resolving each crossing of D(K)",
+          "bbox": [
+            72.0,
+            607.74,
+            540.0,
+            617.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "we form the all-A state of D(K), which is denoted by HA and consists of a disjoint collection of all-A circles",
+          "bbox": [
+            72.0,
+            619.69,
+            540.02,
+            631.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "and a disjoint collection of dotted line segments, called A-segments, that are used record the locations of",
+          "bbox": [
+            72.0,
+            631.65,
+            540.02,
+            641.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "crossing resolutions. We will adopt the convention throughout this paper that any unlabeled segments are",
+          "bbox": [
+            72.0,
+            643.6,
+            540.06,
+            653.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "assumed to be A-segments. We call a link diagram D(K) A-adequate if HA does not contain any A-segments",
+          "bbox": [
+            72.0,
+            655.56,
+            540.0,
+            667.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "that join an all-A circle to itself, and we call a link K A-adequate if it has a diagram that is A-adequate.",
+          "bbox": [
+            72.0,
+            667.51,
+            540.02,
+            677.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            303.51,
+            712.21,
+            308.49,
+            722.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "rotation": 0,
+      "drawings": 83,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2: A link diagram D(K), its all-A resolution HA, its all-A graph GA, and its reduced all-A graph G′",
+        "Figure 3: The long and short resolutions of a twist region of D(K)."
+      ],
+      "labels": [
+        {
+          "text": "GA",
+          "bbox": [
+            334.07,
+            136.08,
+            347.81,
+            149.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "G′",
+          "bbox": [
+            390.68,
+            136.08,
+            400.73,
+            146.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "HA",
+          "bbox": [
+            274.84,
+            137.15,
+            289.11,
+            147.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "D(K)",
+          "bbox": [
+            199.29,
+            137.46,
+            224.74,
+            147.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            398.43,
+            143.33,
+            404.42,
+            150.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Figure 2: A link diagram D(K), its all-A resolution HA, its all-A graph GA, and its reduced all-A graph G′",
+          "bbox": [
+            82.45,
+            157.09,
+            523.16,
+            168.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX9",
+            "CMMI6",
+            "CMMI9",
+            "CMR9",
+            "CMSY6",
+            "MSBM10"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "A.",
+          "bbox": [
+            520.97,
+            159.05,
+            529.56,
+            169.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMR9"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            236.33,
+            206.19,
+            243.8,
+            216.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            325.76,
+            206.19,
+            333.23,
+            216.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "long resolution",
+          "bbox": [
+            206.71,
+            245.28,
+            271.14,
+            255.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "short resolution",
+          "bbox": [
+            293.66,
+            245.28,
+            361.91,
+            255.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 3: The long and short resolutions of a twist region of D(K).",
+          "bbox": [
+            166.79,
+            265.58,
+            445.22,
+            274.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX9",
+            "CMMI9",
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "While we will focus exclusively on A-adequate links, our results can easily be extended to semi-adequate",
+          "bbox": [
+            72.0,
+            297.08,
+            540.01,
+            307.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "links by reﬂecting the link diagram D(K) and obtaining the corresponding results for B-adequate links.",
+          "bbox": [
+            72.0,
+            309.04,
+            524.53,
+            319.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "From HA we may form the all-A graph, denoted GA, by contracting the all-A circles to vertices and",
+          "bbox": [
+            86.94,
+            318.82,
+            540.01,
+            332.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMTI10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "reinterpreting the A-segments as edges. From this graph we can form the reduced all-A graph, denoted G′",
+          "bbox": [
+            72.0,
+            330.77,
+            533.04,
+            342.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY7",
+            "CMTI10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "A,",
+          "bbox": [
+            530.74,
+            332.95,
+            540.0,
+            345.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "by replacing parallel edges with a single edge. For an example of a diagram D(K), its all-A resolution HA,",
+          "bbox": [
+            72.0,
+            344.91,
+            540.0,
+            355.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "its all-A graph GA, and its reduced all-A graph G′",
+          "bbox": [
+            72.0,
+            354.68,
+            296.93,
+            367.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "CMSY7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "A, see Figure 2. Let v(G) and e(G) denote the number",
+          "bbox": [
+            294.64,
+            356.86,
+            540.01,
+            368.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "of vertices and edges, respectively, in a graph G. Let −χ(G) = e(G) −v(G) denote the negative Euler",
+          "bbox": [
+            72.0,
+            368.69,
+            540.02,
+            378.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "characteristic of G.",
+          "bbox": [
+            72.0,
+            380.77,
+            155.22,
+            390.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Deﬁnition 2.1. Deﬁne a twist region of D(K) to be a longest possible string of bigons in the projection",
+          "bbox": [
+            72.0,
+            399.81,
+            540.03,
+            409.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "graph of D(K). Denote the number of twist regions in D(K) by t(D) and call t(D) the twist number of",
+          "bbox": [
+            72.0,
+            411.76,
+            540.0,
+            421.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "D(K). Note that it is possible for a twist region to consist of a single crossing of D(K). If a given twist",
+          "bbox": [
+            72.0,
+            423.72,
+            540.01,
+            433.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "region contains two or more crossings, then the A-resolution of a left-handed twist region will be called a",
+          "bbox": [
+            72.0,
+            435.67,
+            540.03,
+            445.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "long resolution and the A-resolution of a right-handed twist region will be called a short resolution. See",
+          "bbox": [
+            72.0,
+            447.63,
+            540.0,
+            457.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 3 for depictions of these resolutions. We will call a twist region long if its A-resolution is long and",
+          "bbox": [
+            72.0,
+            459.58,
+            540.02,
+            469.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "short if its A-resolution is short.",
+          "bbox": [
+            72.0,
+            471.54,
+            212.89,
+            481.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Deﬁnition 2.2. A link diagram D(K) satisﬁes the two-edge loop condition (TELC) if, whenever two all-A",
+          "bbox": [
+            72.0,
+            490.57,
+            540.01,
+            500.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "circles share a pair of A-segments, these segments correspond to crossings from the same short twist region",
+          "bbox": [
+            72.0,
+            502.53,
+            539.96,
+            512.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of D(K). (See the right side of Figure 3.)",
+          "bbox": [
+            72.0,
+            514.48,
+            253.24,
+            524.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Recall that v8 = 3.6638 . . . denotes the volume of a regular ideal octahedron and v3 = 1.0149 . . . denotes",
+          "bbox": [
+            86.94,
+            533.52,
+            540.0,
+            544.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the volume of a regular ideal tetrahedron. By combining results from [6], [8], and [13], we get the following",
+          "bbox": [
+            72.0,
+            545.47,
+            540.07,
+            555.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "key result.",
+          "bbox": [
+            72.0,
+            557.43,
+            117.2,
+            567.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Theorem 2.1 (Corollary 1.4 of [6], Theorem from Appendix of [13]). Let D(K) be a connected, prime,",
+          "bbox": [
+            72.0,
+            576.46,
+            540.01,
+            586.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A-adequate link diagram that satisﬁes the TELC and contains t(D) ≥2 twist regions. Then K is hyperbolic",
+          "bbox": [
+            72.0,
+            588.29,
+            540.02,
+            598.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "and",
+          "bbox": [
+            72.0,
+            600.37,
+            87.78,
+            610.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "−v8 · χ(G′",
+          "bbox": [
+            206.59,
+            610.15,
+            250.98,
+            623.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "A) ≤vol(S3\\K) < 10v3 · (t(D) −1).",
+          "bbox": [
+            248.69,
+            610.55,
+            405.41,
+            624.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2.2",
+          "bbox": [
+            72.0,
+            638.47,
+            89.2,
+            650.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Braids and A-adequacy",
+          "bbox": [
+            102.65,
+            638.47,
+            240.21,
+            650.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Recall that the n-braid group has Artin presentation",
+          "bbox": [
+            72.0,
+            658.42,
+            300.92,
+            668.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Bn = ⟨σ1, · · · , σn−1 | σiσj = σjσi and σiσi+1σi = σi+1σiσi+1⟩,",
+          "bbox": [
+            168.75,
+            682.2,
+            443.25,
+            693.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            303.51,
+            712.21,
+            308.49,
+            722.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 4,
+      "rotation": 0,
+      "drawings": 24,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 4: The braid group generators σi and σ−1"
+      ],
+      "labels": [
+        {
+          "text": "n",
+          "bbox": [
+            403.61,
+            69.22,
+            409.59,
+            79.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "n",
+          "bbox": [
+            277.59,
+            69.69,
+            283.57,
+            79.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "i",
+          "bbox": [
+            353.7,
+            69.81,
+            357.13,
+            79.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            322.95,
+            69.82,
+            327.93,
+            79.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "i + 1",
+          "bbox": [
+            372.04,
+            69.82,
+            392.63,
+            79.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "i",
+          "bbox": [
+            227.68,
+            70.29,
+            231.11,
+            80.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            197.77,
+            70.3,
+            202.75,
+            80.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "i + 1",
+          "bbox": [
+            246.02,
+            70.3,
+            266.61,
+            80.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "σ−1",
+          "bbox": [
+            364.82,
+            107.14,
+            381.07,
+            119.12
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "σi",
+          "bbox": [
+            238.65,
+            109.15,
+            247.17,
+            119.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "i",
+          "bbox": [
+            370.51,
+            114.27,
+            373.33,
+            121.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Figure 4: The braid group generators σi and σ−1",
+          "bbox": [
+            146.23,
+            127.39,
+            351.02,
+            139.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX9",
+            "CMMI6",
+            "CMMI9",
+            "CMR6",
+            "CMR9",
+            "CMSY6"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "of Bn, where 1 ≤i ≤n −1.",
+          "bbox": [
+            354.59,
+            128.93,
+            465.77,
+            138.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI9",
+            "CMR9",
+            "CMSY9"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "i",
+          "bbox": [
+            341.29,
+            133.77,
+            343.96,
+            139.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "where the generators σi are depicted in Figure 4, where |i −j| ≥2 and 1 ≤i < j ≤n −1 in the ﬁrst relation",
+          "bbox": [
+            72.0,
+            161.31,
+            540.02,
+            172.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(sometimes called far commutativity), and where 1 ≤i ≤n −2 in the second relation. As a special case, the",
+          "bbox": [
+            72.0,
+            173.27,
+            540.0,
+            183.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "3-braid group has Artin presentation",
+          "bbox": [
+            72.0,
+            185.35,
+            231.64,
+            195.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "B3 = ⟨σ1, σ2 | σ1σ2σ1 = σ2σ1σ2⟩.",
+          "bbox": [
+            233.05,
+            209.13,
+            378.95,
+            220.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Deﬁnition 2.3. Call a subword γ of a braid word β ∈Bn (cyclically) induced if the letters of γ are all",
+          "bbox": [
+            72.0,
+            235.04,
+            540.0,
+            246.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(cyclically) adjacent and appear in the same order as in the full braid word β. As an example, given the",
+          "bbox": [
+            72.0,
+            247.12,
+            540.0,
+            257.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "braid word",
+          "bbox": [
+            72.0,
+            259.08,
+            119.39,
+            269.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1σ−3",
+          "bbox": [
+            217.91,
+            280.97,
+            238.99,
+            294.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1σ−2",
+          "bbox": [
+            245.18,
+            280.97,
+            266.26,
+            294.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1σ−1",
+          "bbox": [
+            306.05,
+            280.97,
+            327.13,
+            294.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2 (σ−2",
+          "bbox": [
+            316.57,
+            280.97,
+            347.75,
+            295.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1σ−1",
+          "bbox": [
+            353.94,
+            280.97,
+            375.02,
+            294.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "3 )σ−1",
+          "bbox": [
+            364.46,
+            280.97,
+            395.64,
+            295.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "β = σ3",
+          "bbox": [
+            192.78,
+            281.21,
+            222.25,
+            292.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2 σ2",
+          "bbox": [
+            228.43,
+            281.21,
+            249.51,
+            295.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "3 σ2σ3 = σ3",
+          "bbox": [
+            255.7,
+            281.21,
+            310.38,
+            295.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2 σ2",
+          "bbox": [
+            337.19,
+            281.21,
+            358.27,
+            295.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "3 σ2σ3,",
+          "bbox": [
+            385.08,
+            282.99,
+            419.23,
+            295.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the subword γ = σ−2",
+          "bbox": [
+            72.0,
+            298.9,
+            163.78,
+            310.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1σ−1",
+          "bbox": [
+            169.97,
+            298.9,
+            191.05,
+            312.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2 σ2",
+          "bbox": [
+            153.23,
+            299.64,
+            174.3,
+            313.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "is an induced subword of β.",
+          "bbox": [
+            194.87,
+            300.92,
+            315.46,
+            310.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            180.49,
+            305.91,
+            184.47,
+            312.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Because conjugate braids have isotopic braid closures, we will usually work within conjugacy classes of",
+          "bbox": [
+            86.94,
+            320.85,
+            540.02,
+            330.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "braids. Furthermore, note that cyclic permutation is a special case of conjugation.",
+          "bbox": [
+            72.0,
+            332.8,
+            431.19,
+            342.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Deﬁnition 2.4. A braid β = σr1",
+          "bbox": [
+            72.0,
+            351.45,
+            215.55,
+            362.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR5"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "m1 · · · σrl",
+          "bbox": [
+            208.1,
+            351.45,
+            246.64,
+            366.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR5",
+            "CMSY10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ml ∈Bn is called cyclically reduced into syllables if the following hold:",
+          "bbox": [
+            240.19,
+            352.6,
+            540.03,
+            366.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(1) ri̸ = 0 for all i.",
+          "bbox": [
+            79.19,
+            374.64,
+            161.59,
+            386.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(2) there are no occurrences of induced subwords of the form σiσ−1",
+          "bbox": [
+            79.19,
+            392.55,
+            369.79,
+            405.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "or σ−1",
+          "bbox": [
+            373.04,
+            392.55,
+            400.93,
+            404.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "σi for any i (looking up to cyclic",
+          "bbox": [
+            401.42,
+            394.57,
+            540.01,
+            406.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "i",
+          "bbox": [
+            359.23,
+            399.68,
+            362.04,
+            406.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "i",
+          "bbox": [
+            390.37,
+            399.68,
+            393.18,
+            406.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "permutation).",
+          "bbox": [
+            96.91,
+            406.52,
+            157.28,
+            416.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(3) mi̸ = mi+1 for all i (modulo l).",
+          "bbox": [
+            79.19,
+            426.45,
+            232.95,
+            437.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Recall that a braid β = σr1",
+          "bbox": [
+            86.94,
+            447.09,
+            211.09,
+            458.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR5"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "m1 · · · σrl",
+          "bbox": [
+            203.64,
+            447.09,
+            242.18,
+            461.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR5",
+            "CMSY10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ml ∈Bn is called positive if all of the exponents ri are positive and",
+          "bbox": [
+            235.73,
+            448.24,
+            540.01,
+            461.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "negative if all of the exponents ri are negative. We deﬁne a syllable σri",
+          "bbox": [
+            72.0,
+            459.04,
+            384.5,
+            471.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "mi of the braid word to be positive if",
+          "bbox": [
+            377.78,
+            460.32,
+            540.01,
+            473.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ri > 0 and negative if ri < 0. We now present Stoimenow’s ([16]) classiﬁcation of A-adequate closed 3-braid",
+          "bbox": [
+            72.0,
+            472.28,
+            540.02,
+            483.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "diagrams.",
+          "bbox": [
+            72.0,
+            484.23,
+            114.15,
+            494.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Proposition 2.1 ([16], Lemma 6.1). Let D(K) = bβ denote the closure of a 3-braid",
+          "bbox": [
+            72.0,
+            504.16,
+            436.25,
+            521.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMEX10",
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "j · · · σr2l−1",
+          "bbox": [
+            279.54,
+            525.09,
+            327.24,
+            540.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR5",
+            "CMSY10",
+            "CMSY5"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "σr2l",
+          "bbox": [
+            328.24,
+            525.92,
+            343.77,
+            538.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR5"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "β = σr1",
+          "bbox": [
+            240.26,
+            525.98,
+            272.85,
+            538.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR5"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "i σr2",
+          "bbox": [
+            265.4,
+            525.98,
+            286.98,
+            540.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR5"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "∈B3,",
+          "bbox": [
+            347.53,
+            527.94,
+            371.74,
+            538.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "i",
+          "bbox": [
+            308.62,
+            533.18,
+            311.43,
+            540.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "j",
+          "bbox": [
+            333.93,
+            533.18,
+            337.23,
+            540.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "where {i, j} = {1, 2}, where l ≥2, and where β has been cyclically reduced into syllables. Then D(K) is",
+          "bbox": [
+            72.0,
+            545.87,
+            540.0,
+            555.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A-adequate if and only if either",
+          "bbox": [
+            72.0,
+            557.96,
+            208.89,
+            567.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(1) β is positive, or",
+          "bbox": [
+            78.69,
+            577.88,
+            165.58,
+            587.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(2) β does not contain σ−1",
+          "bbox": [
+            78.69,
+            595.79,
+            202.92,
+            607.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "CMSY7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1 σ−1",
+          "bbox": [
+            192.36,
+            595.79,
+            219.66,
+            610.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2 σ−1",
+          "bbox": [
+            209.1,
+            595.79,
+            236.41,
+            610.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "= σ−1",
+          "bbox": [
+            242.02,
+            595.79,
+            271.13,
+            607.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2 σ−1",
+          "bbox": [
+            260.57,
+            595.79,
+            287.88,
+            610.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "1 σ−1",
+          "bbox": [
+            277.32,
+            595.79,
+            304.62,
+            610.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "as a cyclically induced subword and β also has the",
+          "bbox": [
+            309.98,
+            597.81,
+            539.99,
+            607.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            225.85,
+            602.8,
+            229.82,
+            609.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            294.06,
+            602.8,
+            298.04,
+            609.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "property that all positive syllables in the braid word are cyclically neighbored on both sides by negative",
+          "bbox": [
+            96.91,
+            609.76,
+            540.05,
+            619.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "syllables.",
+          "bbox": [
+            96.91,
+            621.72,
+            135.37,
+            631.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            303.51,
+            712.21,
+            308.49,
+            722.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 6,
+      "rotation": 0,
+      "drawings": 77,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 5: An example of an isolated positive syllable σri"
+      ],
+      "labels": [
+        {
+          "text": "Figure 5: An example of an isolated positive syllable σri",
+          "bbox": [
+            72.0,
+            187.88,
+            309.9,
+            198.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX9",
+            "CMMI5",
+            "CMMI6",
+            "CMMI9",
+            "CMR9"
+          ],
+          "sizes": [
+            4.98,
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "corresponding to a single medium inner circle (left), an",
+          "bbox": [
+            314.36,
+            189.89,
+            540.06,
+            198.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            303.46,
+            194.51,
+            307.11,
+            200.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "example of an isolated positive syllable σri",
+          "bbox": [
+            72.0,
+            199.38,
+            238.88,
+            209.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI6",
+            "CMMI9",
+            "CMR9"
+          ],
+          "sizes": [
+            4.98,
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "mi, where 2 ≤mi ≤n−2, corresponding to two medium inner circles (center),",
+          "bbox": [
+            232.43,
+            200.74,
+            540.05,
+            211.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI6",
+            "CMMI9",
+            "CMR9",
+            "CMSY9"
+          ],
+          "sizes": [
+            4.98,
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "ri+1",
+          "bbox": [
+            410.28,
+            210.88,
+            424.91,
+            217.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI6",
+            "CMR5"
+          ],
+          "sizes": [
+            4.98,
+            5.98
+          ]
+        },
+        {
+          "text": "ri+1+1",
+          "bbox": [
+            515.13,
+            210.88,
+            539.5,
+            217.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI6",
+            "CMR5",
+            "CMR6"
+          ],
+          "sizes": [
+            4.98,
+            5.98
+          ]
+        },
+        {
+          "text": "(σ−1",
+          "bbox": [
+            462.9,
+            212.17,
+            481.48,
+            222.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI9",
+            "CMR6",
+            "CMR9",
+            "CMSY6"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "miσ−1",
+          "bbox": [
+            471.75,
+            212.17,
+            496.98,
+            224.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI6",
+            "CMMI9",
+            "CMR6",
+            "CMSY6"
+          ],
+          "sizes": [
+            4.98,
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "and an example of a wandering circle portion coming from a negative subword σri",
+          "bbox": [
+            72.0,
+            212.25,
+            400.94,
+            222.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI6",
+            "CMMI9",
+            "CMR9"
+          ],
+          "sizes": [
+            4.98,
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "mi+1 = σri+1",
+          "bbox": [
+            409.95,
+            212.25,
+            462.4,
+            224.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI6",
+            "CMMI9",
+            "CMR5",
+            "CMR6",
+            "CMR9"
+          ],
+          "sizes": [
+            4.98,
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "miσ",
+          "bbox": [
+            394.49,
+            213.72,
+            409.96,
+            224.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI6",
+            "CMMI9"
+          ],
+          "sizes": [
+            4.98,
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "mi+1)σ",
+          "bbox": [
+            487.25,
+            213.72,
+            514.81,
+            224.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI6",
+            "CMMI9",
+            "CMR5",
+            "CMR9"
+          ],
+          "sizes": [
+            4.98,
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "mi+1",
+          "bbox": [
+            514.81,
+            217.06,
+            532.51,
+            224.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI6",
+            "CMR5"
+          ],
+          "sizes": [
+            4.98,
+            5.98
+          ]
+        },
+        {
+          "text": "mi",
+          "bbox": [
+            446.21,
+            217.63,
+            455.41,
+            224.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI6"
+          ],
+          "sizes": [
+            4.98,
+            5.98
+          ]
+        },
+        {
+          "text": "(right).",
+          "bbox": [
+            72.0,
+            224.68,
+            100.96,
+            233.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "Remark 2.1. Condition (2a) of the above theorem requires that positive syllables in the generator σ1 are",
+          "bbox": [
+            72.0,
+            256.43,
+            540.0,
+            267.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "cyclically neighbored on both sides by negative syllables in the generator σ2. Similarly, Condition (2c) of",
+          "bbox": [
+            72.0,
+            268.39,
+            540.03,
+            279.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the above theorem requires that positive syllables in the generator σn−1 are cyclically neighbored on both",
+          "bbox": [
+            72.0,
+            280.34,
+            540.03,
+            291.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "sides by negative syllables in the generator σn−2. Condition (2b) of the above theorem requires that positive",
+          "bbox": [
+            72.0,
+            292.3,
+            540.04,
+            303.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "syllables in the generator σi, where 2 ≤i ≤n −2, are cyclically neighbored on both sides by a pair of",
+          "bbox": [
+            72.0,
+            304.13,
+            540.05,
+            315.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "negative syllables in the far commuting generators σi−1 and σi+1.",
+          "bbox": [
+            72.0,
+            316.21,
+            358.79,
+            327.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Note that Condition (2a), Condition (2b), and Condition (2c) are in a spirit similar to the condition that",
+          "bbox": [
+            86.94,
+            335.49,
+            540.1,
+            345.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "positive syllables are cyclically neighbored on both sides by negative syllables in Stoimenow’s classiﬁcation",
+          "bbox": [
+            72.0,
+            347.45,
+            540.03,
+            357.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of A-adequate closed 3-braid diagrams (Proposition 2.1).",
+          "bbox": [
+            72.0,
+            359.4,
+            319.83,
+            369.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We will prove Lemma 2.1 through a series of sublemmas.",
+          "bbox": [
+            86.94,
+            371.36,
+            335.9,
+            381.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Sublemma 2.1. Let D(K) = bβ satisfy the assumptions of Lemma 2.1. Then, as described in the statement",
+          "bbox": [
+            72.0,
+            390.64,
+            540.01,
+            407.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMEX10",
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of Lemma 2.1, we may categorize the all-A circles of HA into small inner circles, medium inner circles,",
+          "bbox": [
+            72.0,
+            402.6,
+            540.05,
+            414.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "essential wandering circles, non-essential wandering circles, and nonwandering circles.",
+          "bbox": [
+            72.0,
+            414.55,
+            450.11,
+            424.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Proof. First, note that Condition (2a), Condition (2b), and Condition (2c) of Lemma 2.1 imply that β",
+          "bbox": [
+            72.0,
+            433.84,
+            539.48,
+            443.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "cannot be positive. Because positive syllables of β are cyclically neighbored by negative syllables, we may",
+          "bbox": [
+            72.0,
+            445.79,
+            540.02,
+            455.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "decompose β as β = N1 (in the case that β is a negative braid) or as β = P1N1 · · · PtNt, where Pi denotes",
+          "bbox": [
+            72.0,
+            457.62,
+            540.0,
+            469.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "a positive syllable of β and Ni denotes a maximal length negative induced subword of β.",
+          "bbox": [
+            72.0,
+            469.7,
+            459.25,
+            481.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Small Inner Circles: Let σri",
+          "bbox": [
+            72.0,
+            491.69,
+            194.78,
+            502.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "mi, where ri ≤−3, denote a negative syllable. Then, except for the additional",
+          "bbox": [
+            188.06,
+            492.84,
+            540.04,
+            505.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n−2 surrounding vertical line segments, the A-resolution of this syllable will look like the left side of Figure 3.",
+          "bbox": [
+            72.0,
+            504.8,
+            540.06,
+            514.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In particular, having ri ≤−3 implies the existence of at least two small inner circles.",
+          "bbox": [
+            72.0,
+            516.75,
+            442.44,
+            528.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "miσri+1",
+          "bbox": [
+            183.22,
+            537.23,
+            214.87,
+            552.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR5"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "mi+1)σri+1+1",
+          "bbox": [
+            282.71,
+            537.23,
+            337.32,
+            552.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMR7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(σ−1",
+          "bbox": [
+            256.4,
+            538.78,
+            276.52,
+            550.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "miσ−1",
+          "bbox": [
+            265.96,
+            538.78,
+            293.27,
+            552.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Wandering Circles: Let σri",
+          "bbox": [
+            72.0,
+            538.87,
+            189.94,
+            550.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "mi+1 = σri+1",
+          "bbox": [
+            199.64,
+            538.87,
+            255.9,
+            552.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMR7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": ", where ri ≤−3 and ri+1 ≤−3, denote a pair",
+          "bbox": [
+            337.82,
+            540.02,
+            540.01,
+            551.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "mi+1",
+          "bbox": [
+            311.51,
+            543.65,
+            329.75,
+            551.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI7",
+            "CMR5"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "mi",
+          "bbox": [
+            238.6,
+            544.95,
+            248.33,
+            552.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI7"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "of adjacent negative syllables.",
+          "bbox": [
+            72.0,
+            552.1,
+            201.63,
+            562.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Case 1: Suppose mi+1 = mi −1 or mi+1 = mi + 1. Then the pair of adjacent negative syllables involve",
+          "bbox": [
+            86.94,
+            575.24,
+            540.03,
+            586.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "adjacent generators of Bn. Consequently, the corresponding portion of HA will resemble (up to reﬂection and",
+          "bbox": [
+            72.0,
+            587.33,
+            540.02,
+            598.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "except for the additional surrounding vertical line segments) the right side of Figure 5. The key feature of",
+          "bbox": [
+            72.0,
+            599.28,
+            540.06,
+            609.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "this ﬁgure is the fact that we see a portion of a wandering circle, where the wandering behavior corresponds",
+          "bbox": [
+            72.0,
+            611.24,
+            540.04,
+            621.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "to the existence of the σ−1",
+          "bbox": [
+            72.0,
+            621.82,
+            188.49,
+            633.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "miσ−1",
+          "bbox": [
+            177.93,
+            621.82,
+            205.23,
+            635.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "mi+1 induced subword.",
+          "bbox": [
+            194.67,
+            623.19,
+            293.16,
+            636.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR5"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Case 2: Suppose |mi+1 −mi| ≥2.",
+          "bbox": [
+            86.94,
+            646.33,
+            245.22,
+            657.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "In this case, the pair of adjacent negative syllables involve far",
+          "bbox": [
+            254.49,
+            646.46,
+            540.04,
+            656.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "commuting generators of Bn. Then, except for the additional n −4 surrounding vertical line segments, we",
+          "bbox": [
+            72.0,
+            658.29,
+            540.02,
+            669.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "get that the A-resolution will look like two copies of the left side of Figure 3. Thus, we return to the case of",
+          "bbox": [
+            72.0,
+            670.37,
+            540.03,
+            680.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "small inner circles.",
+          "bbox": [
+            72.0,
+            682.33,
+            152.98,
+            692.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "6",
+          "bbox": [
+            303.51,
+            712.21,
+            308.49,
+            722.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 8,
+      "rotation": 0,
+      "drawings": 46,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 6: A simple closed curve C intersecting D(K) twice and containing a point p between braid string positions i and i + 1. Each box in the ﬁgure represents the eventual occurrence of the generator σi, the generator σi−1 (if it exists), and the generator σi+1 (if it exists)."
+      ],
+      "labels": [
+        {
+          "text": "σi−1, σi, σi+1",
+          "bbox": [
+            277.49,
+            77.91,
+            333.16,
+            88.72
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "i",
+          "bbox": [
+            288.22,
+            128.02,
+            291.65,
+            137.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "i + 1",
+          "bbox": [
+            304.89,
+            128.06,
+            325.48,
+            138.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "C",
+          "bbox": [
+            318.5,
+            146.08,
+            325.63,
+            156.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "p",
+          "bbox": [
+            303.84,
+            149.45,
+            308.85,
+            159.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "σi−1, σi, σi+1",
+          "bbox": [
+            277.49,
+            219.13,
+            333.16,
+            229.93
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 6: A simple closed curve C intersecting D(K) twice and containing a point p between braid string positions",
+          "bbox": [
+            72.0,
+            248.74,
+            540.01,
+            257.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX9",
+            "CMMI9",
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "i and i + 1. Each box in the ﬁgure represents the eventual occurrence of the generator σi, the generator σi−1 (if it",
+          "bbox": [
+            72.0,
+            259.7,
+            540.02,
+            269.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI9",
+            "CMR6",
+            "CMR9",
+            "CMSY6"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "exists), and the generator σi+1 (if it exists).",
+          "bbox": [
+            72.0,
+            270.66,
+            248.92,
+            280.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI9",
+            "CMR6",
+            "CMR9"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "Case 1: Suppose the A-segment is a vertical segment. Condition (1) (that negative exponents are at least",
+          "bbox": [
+            72.0,
+            303.05,
+            540.02,
+            313.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "three in absolute value) implies that it is impossible for a vertical A-segment to join an all-A circle to itself.",
+          "bbox": [
+            72.0,
+            315.01,
+            540.03,
+            324.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "This is because all vertical A-segments either join distinct small inner circles or join a small inner circle to",
+          "bbox": [
+            72.0,
+            326.96,
+            540.01,
+            336.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "a medium inner circle or a wandering circle. (See the left side of Figure 3.)",
+          "bbox": [
+            72.0,
+            338.92,
+            398.94,
+            348.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Case 2: Suppose the A-segment is a horizontal segment. By Remark 2.1 and Figure 5, it can be seen that",
+          "bbox": [
+            72.0,
+            362.83,
+            540.02,
+            372.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "it is impossible for a horizontal A-segment to join an all-A circle to itself. This is because all horizontal",
+          "bbox": [
+            72.0,
+            374.79,
+            540.02,
+            384.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A-segments join a medium inner circle either to another medium inner circle, to a wandering circle, or to a",
+          "bbox": [
+            72.0,
+            386.74,
+            540.02,
+            396.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "nonwandering circle.",
+          "bbox": [
+            72.0,
+            398.7,
+            161.19,
+            408.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Sublemma 2.4. Let D(K) = bβ satisfy the assumptions of Lemma 2.1. Then D(K) satisﬁes the TELC.",
+          "bbox": [
+            72.0,
+            418.62,
+            527.75,
+            435.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMEX10",
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Proof. Let C1 and C2 be two distinct all-A circles that share a pair of distinct A-segments, call them s1 and",
+          "bbox": [
+            72.0,
+            438.55,
+            540.01,
+            450.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "s2. To prove that D(K) satisﬁes the TELC, we need to show that these A-segments correspond to crossings",
+          "bbox": [
+            72.0,
+            450.5,
+            539.96,
+            461.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "from the same short twist region of D(K).",
+          "bbox": [
+            72.0,
+            462.46,
+            257.38,
+            472.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Case 1: Suppose one of s1 and s2 is a horizontal segment (that must come from a cyclically isolated positive",
+          "bbox": [
+            72.0,
+            486.37,
+            540.0,
+            497.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "syllable of β). Then it is impossible for the other segment to be a vertical segment. This is because one of",
+          "bbox": [
+            72.0,
+            498.32,
+            540.0,
+            508.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "C1 and C2, say C1, must be a medium inner circle. This circle is adjacent, via horizontal A-segments, to the",
+          "bbox": [
+            72.0,
+            510.28,
+            540.01,
+            521.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "second circle C2, which will either be another medium inner circle, a wandering circle, or a nonwandering",
+          "bbox": [
+            72.0,
+            522.23,
+            540.06,
+            533.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "circle. By Condition (1), the circle C1 is also adjacent to small inner circles above and below. Consequently,",
+          "bbox": [
+            72.0,
+            534.19,
+            540.01,
+            545.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the second segment cannot be vertical. Thus, if one of the segments s1 and s2 is horizontal, then the other",
+          "bbox": [
+            72.0,
+            546.14,
+            540.02,
+            557.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "segment must also be horizontal. Since the horizontal segments incident to the medium inner circle C1",
+          "bbox": [
+            72.0,
+            558.1,
+            539.51,
+            568.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "necessarily belong to the same resolution of a short twist region of D(K), then the TELC is satisﬁed. (See",
+          "bbox": [
+            72.0,
+            570.05,
+            540.01,
+            580.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the left side and center of of Figure 5.)",
+          "bbox": [
+            72.0,
+            582.01,
+            241.36,
+            591.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Case 2: Suppose both s1 and s2 are vertical segments. Since all vertical A-segments either join distinct small",
+          "bbox": [
+            72.0,
+            605.92,
+            540.0,
+            617.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "inner circles or join a small inner circle to a medium inner circle or a wandering circle, then one of C1 and",
+          "bbox": [
+            72.0,
+            617.87,
+            540.01,
+            629.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "C2 must be a small inner circle. By Condition (1), it is impossible for a small inner circle to share more",
+          "bbox": [
+            72.0,
+            629.83,
+            540.03,
+            641.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "than one A-segment with another all-A circle. (See the left side of Figure 3.) Therefore, this case cannot",
+          "bbox": [
+            72.0,
+            641.78,
+            540.01,
+            651.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "occur.",
+          "bbox": [
+            72.0,
+            653.74,
+            98.32,
+            663.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We now combine all of the necessary ingredients in order to prove the Main Lemma.",
+          "bbox": [
+            86.94,
+            673.66,
+            455.75,
+            683.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "8",
+          "bbox": [
+            303.51,
+            712.21,
+            308.49,
+            722.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    }
+  ]
+}

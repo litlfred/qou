@@ -7,10 +7,11 @@ section_number: 3
 pages: 4-14
 source_pdf: 0401084v3.pdf
 source_sha256: f56bbd4cee4f3418
-doc_brief: "Some limits of the colored Jones polynomials of the figure-eight knot — W e calculate limits of the colored Jones polynomials of the ﬁ gure- eight knot and conclude that in most cases they determine"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.928
-latex_coverage_ratio: 0.974
+latex_prose_ratio: 0.907
+latex_coverage_ratio: 0.972
+doc_brief: "Some limits of the colored Jones polynomials of the figure-eight knot — We calculate limits of the colored Jones polynomials of the ﬁgure- eight knot and conclude that in most cases they determine"
 ---
 K. Habiro [@Habiro:SURIK00] and T. Le showed that the colored Jones polynomial $J_N(E;t)$ of the figure-eight knot $E$ is given as follows (see also [@Masbaum:AGT03]). $$\label{eq:Jones}
   J_N(E;t)=\sum_{n=0}^{N-1}\prod_{k=1}^{n}

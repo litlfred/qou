@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.984
 latex_coverage_ratio: 0.972
+doc_brief: "FACTORIZATION HOMOLOGY OF TOPOLOGICAL MANIFOLDS — Factorization homology theories of topological manifolds, after Beilinson, Drinfeld and Lurie, are homology-type theories for topological n-manifolds"
 ---
 We consider a topological category of $n$-manifolds and embeddings among them. We use this to consider the tangent classifier, which thereafter offers the notion of a $B$-framing on an $n$-manifold, as well as an $\infty$-category of such.
 

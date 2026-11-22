@@ -1,4 +1,4 @@
--- Ref: [manuscript] docs/audits/2026-06-20-hoefsmit-b-bar-parity-correction.md
+-- Ref: [leitner2026] docs/audits/2026-06-20-hoefsmit-b-bar-parity-correction.md
 --
 -- Bar-parity of the Hoefsmit ladder base `b` and the Q_β expansion
 -- variable `u = b·ℏ_q²`.

@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-0306165v1
-doc_title: "arXiv:hep-th/0306165v1 17 Jun 2003"
+doc_title: "Three-Dimensional Quantum Gravity, Chern-Simons Theory, and the A-Polynomial"
 section_id: sec-005-14-quantum-geometry-of-hyperbolic-three-manifold
 section_title: "Quantum Geometry of Hyperbolic Three-Manifolds"
 section_number: 1.4
@@ -8,6 +8,7 @@ pages: 8-11
 source_pdf: 0306165v1.pdf
 source_sha256: 4f187debec912a24
 toc_source: inferred
+doc_brief: "Three-Dimensional Quantum Gravity, Chern-Simons Theory, and the A-Polynomial — We study three-dimensional Chern-Simons theory with complex gauge group SL(2,C), which has many interesting connections"
 ---
 Note, that the deﬁnition of the path integral (1.4) does not involve a choice of metric on
 M. Therefore, Z(M; γi, Ri) is expected to be a topological invariant of the three-manifold

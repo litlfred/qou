@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2507.12454v1
-doc_title: "COHOMOLOGY RINGS OF CHARACTER VARIETIES ANTON MELLIT"
+doc_title: "Cohomology rings of character varieties"
 section_id: sec-003-4-what-is-known
 section_title: "What is known?"
 section_number: 4
 pages: 9-15
 source_pdf: 2507.12454v1.pdf
 source_sha256: 156fd9080847b4e7
-doc_brief: "COHOMOLOGY RINGS OF CHARACTER VARIETIES ANTON MELLIT — In this talk I give an introduction and present some recent progress towards understanding the cohomology rings of character varieties of"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.976
-latex_coverage_ratio: 0.976
+latex_prose_ratio: 0.926
+latex_coverage_ratio: 0.975
+doc_brief: "Cohomology rings of character varieties — In this talk I give an introduction and present some recent progress towards understanding the cohomology rings of character varieties of Riemann surfaces"
 ---
 Having defined our basic object of study, we explain some important structural results.
 

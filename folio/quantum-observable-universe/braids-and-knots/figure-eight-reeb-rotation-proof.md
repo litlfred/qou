@@ -33,7 +33,7 @@ $$
 
 so that $\det \sigma_2 = ac - b^2 = -\bigl(1 + [3]_q\bigr)/[2]_q^2 = -[2]_q^2/[2]_q^2 = -1$ and $\mathrm{tr}\,\sigma_2 = h$: both generators have the Hecke eigenvalues $q$ and $-q^{-1}$. These are Hoefsmit's seminormal matrices for the standard representation, with diagonal entries indexed by the axial distances $\pm 2$ of the two standard tableaux of shape $(2,1)$; they satisfy the braid relation $\sigma_1\sigma_2\sigma_1 = \sigma_2\sigma_1\sigma_2$ by the seminormal construction \cite{hoefsmit1974,wenzl1988c}.
 
-**Step 2: Determinant of the knot operator.** Since each generator has eigenvalue product $q \cdot (-q^{-1}) = -1$, we get $\det \sigma_1 = \det \sigma_2 = -1$ and $\det \sigma_2^{-1} = -1$. Hence for $A = \sigma_1 \sigma_2^{-1}$ and $M_{4_1} = A^2$,
+**Step 2: Determinant of the knot operator.** Since each generator has eigenvalue product $q \cdot (-q^{-1}) = -1$, it follows that $\det \sigma_1 = \det \sigma_2 = -1$ and $\det \sigma_2^{-1} = -1$. Hence for $A = \sigma_1 \sigma_2^{-1}$ and $M_{4_1} = A^2$,
 
 $$
 \det A = (-1)(-1) = 1,
@@ -99,4 +99,4 @@ $$
 2\cos\theta = \mathrm{tr}(M_{4_1}).
 $$
 
-This proves the unit-modulus claim, with the rotation angle determined by the closed-form trace of Step 3. At $q = 1$ the trace is $-1$, so $\theta = 2\pi/3$ exactly (the eigenvalues are the primitive cube roots of unity); at the substrate value of $q$ the angle evaluates to $\theta \approx 117.09^{\circ}$. The eigenvalue degenerates to $\lambda = 1$ ($\theta = 0$) exactly at the golden endpoints $q \in \{\varphi^{-1}, \varphi\}$, where $\mathrm{tr}(M_{4_1}) = 2$, and the boundary value $\theta = \pi$ is never attained on the real axis since $\mathrm{tr}(M_{4_1}) + 2$ is a nonzero square. $\square$
+This proves the unit-modulus claim, with the rotation angle determined by the closed-form trace of Step 3. At $q = 1$ the trace is $-1$, so $\theta = 2\pi/3$ exactly (the eigenvalues are the primitive cube roots of unity); at the substrate value of $q$ the angle evaluates to $\theta \approx 117.09^{\circ}$. The eigenvalue degenerates to $\lambda = 1$ ($\theta = 0$) exactly at the golden endpoints $q \in \{\varphi^{-1}, \varphi\}$, where $\mathrm{tr}(M_{4_1}) = 2$, and the boundary value $\theta = \pi$ is never attained on the real axis since $\mathrm{tr}(M_{4_1}) + 2$ is a nonzero square. Outside the golden interval, for $q > \varphi$ or $0 < q < \varphi^{-1}$, the two golden factors in Step 4 have the same sign, so $t - 2 > 0$; the discriminant $t^2 - 4$ is then positive, the roots of $\lambda^2 - t\lambda + 1$ are real, distinct and positive with product $1$, and neither has modulus $1$. $\square$

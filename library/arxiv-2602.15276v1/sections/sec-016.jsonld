@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2602.15276v1/sections/sec-016",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "CP3 Q-balls",
+  "pageStart": 22,
+  "pageEnd": 24,
+  "contains": [
+    "library/arxiv-2602.15276v1/blocks/prose-sec-016",
+    "library/arxiv-2602.15276v1/blocks/figure-img-p023-1",
+    "library/arxiv-2602.15276v1/blocks/figure-img-p023-2",
+    "library/arxiv-2602.15276v1/blocks/figure-img-p023-3",
+    "library/arxiv-2602.15276v1/blocks/figure-img-p023-4",
+    "library/arxiv-2602.15276v1/blocks/figure-img-p023-5",
+    "library/arxiv-2602.15276v1/blocks/figure-img-p023-6",
+    "library/arxiv-2602.15276v1/blocks/figure-img-p024-1",
+    "library/arxiv-2602.15276v1/blocks/figure-img-p024-2",
+    "library/arxiv-2602.15276v1/blocks/figure-img-p024-3"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2602.15276v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2602.15276v1/manifest.jsonld",
+  "provenance": "ingested"
+}

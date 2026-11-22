@@ -1,0 +1,1310 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1203.6041v2",
+ "source": {
+  "file": "1203.6041v2.pdf",
+  "sha256": "1113e87534ffd6e0c2c36d1f2a01ca1eef8ba6c0ad199c199394d2c1eb3fa7d0",
+  "bytes": 6303692,
+  "pages": 33,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-18T18:19:49Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1203.6041",
+   "version": "2",
+   "primary_class": "hep-ph",
+   "stamp_date": "19 Sep 2012"
+  },
+  "doi": null,
+  "title": "S and D-wave phase shifts in isospin-2 ππ scattering from lattice QCD",
+  "authors_raw": "S and D-wave phase shifts in isospin-2 ππ scattering from lattice QCD",
+  "title_lines": [
+   "TCDMATH 12-03"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.12",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20241127055034Z"
+  },
+  "title_raw": "TCDMATH 12-03",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "S and D -wave phase shifts in isospin-2 ππ scattering from lattice QCD",
+   "outline": "S and D-wave phase shifts in isospin-2 scattering from lattice QCD",
+   "text": "TCDMATH 12-03",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_correction": {
+   "title": "S and D-wave phase shifts in isospin-2 ππ scattering from lattice QCD",
+   "basis": "Printed title on page 1 (Dudek, Edwards and Thomas); the extracted title was the preprint report code",
+   "extracted_title": "TCDMATH 12-03",
+   "corrected_on": "2026-11-18"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "S and D-wave phase shifts in isospin-2 scattering from lattice QCD",
+   "page": 1,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
+  },
+  {
+   "level": 2,
+   "title": "Abstract",
+   "page": 1,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
+  },
+  {
+   "level": 2,
+   "title": "I Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
+  },
+  {
+   "level": 2,
+   "title": "II Operator construction",
+   "page": 3,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
+  },
+  {
+   "level": 3,
+   "title": "A Single-hadron operators",
+   "page": 4,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
+  },
+  {
+   "level": 3,
+   "title": "B Multi-hadron operators",
+   "page": 5,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
+  },
+  {
+   "level": 2,
+   "title": "III Distillation and correlator construction",
+   "page": 6,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
+  },
+  {
+   "level": 2,
+   "title": "IV Optimised pion operators",
+   "page": 6,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
+  },
+  {
+   "level": 2,
+   "title": "V Pion mass and dispersion relation",
+   "page": 7,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
+  },
+  {
+   "level": 2,
+   "title": "VI Effects of finite temporal extent",
+   "page": 8,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
+  },
+  {
+   "level": 3,
+   "title": "A Finite-T effects for correlators at rest",
+   "page": 9,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
+  },
+  {
+   "level": 3,
+   "title": "B Finite-T effects for correlators in-flight",
+   "page": 10,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
+  },
+  {
+   "level": 2,
+   "title": "VII Finite-volume spectrum",
+   "page": 12,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
+  },
+  {
+   "level": 3,
+   "title": "A Example of =[0,0,1], = A1",
+   "page": 12,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
+  },
+  {
+   "level": 3,
+   "title": "B Volume dependence of spectra",
+   "page": 15,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
+  },
+  {
+   "level": 2,
+   "title": "VIII Phase-shifts from finite-volume spectra",
+   "page": 18,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
+  },
+  {
+   "level": 3,
+   "title": "A A toy model of scattering",
+   "page": 19,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
+  },
+  {
+   "level": 3,
+   "title": "B Lattice QCD data",
+   "page": 22,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
+  },
+  {
+   "level": 2,
+   "title": "IX Results",
+   "page": 24,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
+  },
+  {
+   "level": 2,
+   "title": "X Summary",
+   "page": 24,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgments",
+   "page": 27,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
+  },
+  {
+   "level": 2,
+   "title": "References",
+   "page": 27,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
+  },
+  {
+   "level": 2,
+   "title": "A Multi-particle operators",
+   "page": 29,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "29"
+  },
+  {
+   "level": 3,
+   "title": "Operator construction",
+   "page": 29,
+   "source": "outline",
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "29"
+  },
+  {
+   "level": 3,
+   "title": "Induced representation method for calculating Clebsch-Gordan coefficients",
+   "page": 30,
+   "source": "outline",
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "30"
+  },
+  {
+   "level": 3,
+   "title": "Lattice and little group conventions and rotations",
+   "page": 31,
+   "source": "outline",
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "31"
+  },
+  {
+   "level": 3,
+   "title": "Clebsch-Gordan coefficients",
+   "page": 31,
+   "source": "outline",
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "31"
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Contributions of ground state (n = 0) pion (red) and excited pion states (other colors) to the single pion correlator at zero momentum, C(t) =",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Eﬀective massesa of single-pion correlators computed",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Pion mass as a function of lattice spatial volume",
+   "page": 8,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Pion dispersion relation. Fit as described in the text. Lower plot shows ˆξ(n2, L) ≡",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Eﬀective masses of a “ππ” correlator as described in the text. Raw correlator (red squares) and shifted correlator (green diamonds)",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "9"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Fits to diagonal ππ correlators with⃗P = [0, 0, 0]",
+   "page": 10,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "10"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Simulated contributions to a correlator (⃗k1",
+   "page": 11,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Fits to diagonal ππ correlators with⃗P = [0, 0, 1] using the lowest allowed |⃗k1|, |⃗k2| that gives rise to irrep Λ",
+   "page": 11,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "Principal correlators from solution of equation 9 applied to the weighted-shifted correlator matrix beC(t) for⃗P = [0, 0, 1],",
+   "page": 13,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "13"
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "Diagonal elements of the weighted-shifted correlation matrix for⃗P = [0, 0, 1], Λ = A1:",
+   "page": 14,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "14"
+  },
+  {
+   "kind": "figure",
+   "number": "11",
+   "title": "“Matrix” plot of values of Z(n)",
+   "page": 15,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "15"
+  },
+  {
+   "kind": "figure",
+   "number": "12",
+   "title": "Extracted center-of-momentum frame energy",
+   "page": 16,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "16"
+  },
+  {
+   "kind": "figure",
+   "number": "13",
+   "title": "As Figure 12 for⃗P = [0, 0, 1]",
+   "page": 16,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "16"
+  },
+  {
+   "kind": "figure",
+   "number": "14",
+   "title": "As Figure 12 for⃗P = [0, 1, 1]",
+   "page": 17,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "17"
+  },
+  {
+   "kind": "figure",
+   "number": "15",
+   "title": "As Figure 12 for⃗P = [1, 1, 1]",
+   "page": 17,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "17"
+  },
+  {
+   "kind": "figure",
+   "number": "16",
+   "title": "Finite-volume spectrum for the toy model of eﬀective-range parameterisations in the irrep⃗P = [0, 0, 1], A1",
+   "page": 20,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "20"
+  },
+  {
+   "kind": "figure",
+   "number": "17",
+   "title": "Lowest four energy levels (n = 0, 1, 2, 3) in toy model with volume L = 3.5 fm in irrep⃗P = [0, 0, 1], A1",
+   "page": 20,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "20"
+  },
+  {
+   "kind": "figure",
+   "number": "18",
+   "title": "Simultaneous solution of two equations 27 for δ2,4. Open black square shows exact values with uncertainty indicating",
+   "page": 21,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "21"
+  },
+  {
+   "kind": "figure",
+   "number": "19",
+   "title": "Phase shifts, δ0,2,4(pcm) extracted from L = 3.5 fm spectrum using the method described in the text. Uncertainty in δ0 indicates the eﬀect of a conservative assumed uncertainty on δ2,4. Some points with very large uncertainty not shown. Toy model input phase shifts shown by the curves",
+   "page": 21,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "21"
+  },
+  {
+   "kind": "figure",
+   "number": "20",
+   "title": "δ2 values in elastic scattering region determined from ﬁnite-volume spectra. Filled points determined by simultaneous solution of equations 27 (innermost errorbar statistical uncertainty, outermost errorbar reﬂects combined statistical uncertainty and uncertainty in atmπ, ξ with all errors added in",
+   "page": 22,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "22"
+  },
+  {
+   "kind": "figure",
+   "number": "21",
+   "title": "δ4 values in elastic scattering region determined from ﬁnite-volume spectra. Filled points determined by simultaneous solution of equations 27 (innermost errorbar statistical uncertainty, outermost errorbar reﬂects combined statistical uncertainty and uncertainty in atmπ, ξ with errors added in quad",
+   "page": 22,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "22"
+  },
+  {
+   "kind": "figure",
+   "number": "22",
+   "title": "δ0 values in elastic scattering region determined from ﬁnite-volume spectra. Innermost errorbar is the statistical uncertainty, middle errorbar combined statistical uncertainty and uncertainty in (atmπ, ξ), outermost errorbar reﬂects total uncertainty including imperfect knowledge of δ2,4",
+   "page": 22,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "22"
+  },
+  {
+   "kind": "figure",
+   "number": "23",
+   "title": "Upper:",
+   "page": 24,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "24"
+  },
+  {
+   "kind": "figure",
+   "number": "24",
+   "title": "Extracted I = 2 ππ elastic scattering phase-shift in S-wave, δ0(pcm), as obtained from analysis of ﬁnite-volume spectra with mπ = 396 MeV. Center-of-momentum frame scattering momentum expressed in units of the temporal lattice spacing. The",
+   "page": 25,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "25"
+  },
+  {
+   "kind": "figure",
+   "number": "25",
+   "title": "Extracted I = 2 ππ elastic scattering phase-shift in D-wave, δ2(pcm), as obtained from analysis of ﬁnite-volume spectra with mπ = 396 MeV. Center-of-momentum frame scattering momentum expressed in units of the temporal lattice",
+   "page": 26,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "26"
+  },
+  {
+   "kind": "figure",
+   "number": "26",
+   "title": "Our δ0 extraction (colored points) compared with those of NPLQCD (grey points) over the elastic region (left) and zoomed in to small scattering momentum (right)",
+   "page": 26,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "26"
+  },
+  {
+   "kind": "figure",
+   "number": "27",
+   "title": "Extracted I = 2 ππ elastic S-wave(red), D-wave(blue) scattering phase shift (for mπ = 396 MeV, all errors combined). Shown in grey the experimental data from [3–6] and the constrained analysis using Roy equations [34, 35] (black line, grey band). For the heavy pion mass the entire region plotted is",
+   "page": 27,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "27"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 30,
+   "n_words": 3,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "sec-000-s-and-d-wave-phase-shifts-in-isospin-2-scatterin",
+   "number": null,
+   "title": "S and D-wave phase shifts in isospin-2 scattering from lattice QCD",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1196,
+   "n_words": 182,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "sec-001-i-introduction",
+   "number": null,
+   "title": "I Introduction",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 13032,
+   "n_words": 2142,
+   "label_start": "1",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-002-ii-operator-construction",
+   "number": null,
+   "title": "II Operator construction",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 3101,
+   "n_words": 505,
+   "label_start": "3",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-003-a-single-hadron-operators",
+   "number": null,
+   "title": "A Single-hadron operators",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 3437,
+   "n_words": 684,
+   "label_start": "4",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-004-b-multi-hadron-operators",
+   "number": null,
+   "title": "B Multi-hadron operators",
+   "level": 3,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 4307,
+   "n_words": 865,
+   "label_start": "5",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-005-iii-distillation-and-correlator-construction",
+   "number": null,
+   "title": "III Distillation and correlator construction",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 3194,
+   "n_words": 531,
+   "label_start": "6",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-006-iv-optimised-pion-operators",
+   "number": null,
+   "title": "IV Optimised pion operators",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 3288,
+   "n_words": 547,
+   "label_start": "6",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-007-v-pion-mass-and-dispersion-relation",
+   "number": null,
+   "title": "V Pion mass and dispersion relation",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 2970,
+   "n_words": 531,
+   "label_start": "7",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-008-vi-effects-of-finite-temporal-extent",
+   "number": null,
+   "title": "VI Effects of finite temporal extent",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 3002,
+   "n_words": 544,
+   "label_start": "8",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-009-a-finite-t-effects-for-correlators-at-rest",
+   "number": null,
+   "title": "A Finite-T effects for correlators at rest",
+   "level": 3,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 5500,
+   "n_words": 1004,
+   "label_start": "9",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-010-b-finite-t-effects-for-correlators-in-flight",
+   "number": null,
+   "title": "B Finite-T effects for correlators in-flight",
+   "level": 3,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 4753,
+   "n_words": 834,
+   "label_start": "10",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-011-vii-finite-volume-spectrum",
+   "number": null,
+   "title": "VII Finite-volume spectrum",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 664,
+   "n_words": 117,
+   "label_start": "12",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-012-a-example-of-001-a1",
+   "number": null,
+   "title": "A Example of =[0,0,1], = A1",
+   "level": 3,
+   "page_start": 12,
+   "page_end": 15,
+   "n_chars": 7039,
+   "n_words": 1401,
+   "label_start": "12",
+   "label_end": "15"
+  },
+  {
+   "id": "sec-013-b-volume-dependence-of-spectra",
+   "number": null,
+   "title": "B Volume dependence of spectra",
+   "level": 3,
+   "page_start": 15,
+   "page_end": 18,
+   "n_chars": 1910,
+   "n_words": 365,
+   "label_start": "15",
+   "label_end": "18"
+  },
+  {
+   "id": "sec-014-viii-phase-shifts-from-finite-volume-spectra",
+   "number": null,
+   "title": "VIII Phase-shifts from finite-volume spectra",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 4085,
+   "n_words": 774,
+   "label_start": "18",
+   "label_end": "19"
+  },
+  {
+   "id": "sec-015-a-a-toy-model-of-scattering",
+   "number": null,
+   "title": "A A toy model of scattering",
+   "level": 3,
+   "page_start": 19,
+   "page_end": 22,
+   "n_chars": 8403,
+   "n_words": 1534,
+   "label_start": "19",
+   "label_end": "22"
+  },
+  {
+   "id": "sec-016-b-lattice-qcd-data",
+   "number": null,
+   "title": "B Lattice QCD data",
+   "level": 3,
+   "page_start": 22,
+   "page_end": 27,
+   "n_chars": 18148,
+   "n_words": 2998,
+   "label_start": "22",
+   "label_end": "27"
+  },
+  {
+   "id": "sec-017-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 29,
+   "n_chars": 5288,
+   "n_words": 815,
+   "label_start": "27",
+   "label_end": "29"
+  },
+  {
+   "id": "sec-018-a-multi-particle-operators",
+   "number": null,
+   "title": "A Multi-particle operators",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 29,
+   "n_chars": 53,
+   "n_words": 10,
+   "label_start": "29",
+   "label_end": "29"
+  },
+  {
+   "id": "sec-019-1-operator-construction",
+   "number": "1",
+   "title": "Operator construction",
+   "level": 3,
+   "page_start": 29,
+   "page_end": 30,
+   "n_chars": 4104,
+   "n_words": 780,
+   "label_start": "29",
+   "label_end": "30"
+  },
+  {
+   "id": "sec-020-2-induced-representation-method-for-calculating",
+   "number": "2",
+   "title": "Induced representation method for calculating Clebsch-Gordan coefficients",
+   "level": 3,
+   "page_start": 30,
+   "page_end": 31,
+   "n_chars": 3844,
+   "n_words": 729,
+   "label_start": "30",
+   "label_end": "31"
+  },
+  {
+   "id": "sec-021-3-lattice-and-little-group-conventions-and-rotat",
+   "number": "3",
+   "title": "Lattice and little group conventions and rotations",
+   "level": 3,
+   "page_start": 31,
+   "page_end": 31,
+   "n_chars": 1471,
+   "n_words": 284,
+   "label_start": "31",
+   "label_end": "31"
+  },
+  {
+   "id": "sec-022-4-clebsch-gordan-coefficients",
+   "number": "4",
+   "title": "Clebsch-Gordan coefficients",
+   "level": 3,
+   "page_start": 31,
+   "page_end": 33,
+   "n_chars": 6158,
+   "n_words": 1910,
+   "label_start": "31",
+   "label_end": "33"
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 27,
+  "toc_inferred_entries": 0,
+  "figure_entries": 27,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 24,
+  "chars_total": 108977,
+  "furniture_lines_stripped": 31
+ }
+}

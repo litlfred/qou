@@ -1,0 +1,53 @@
+Burgess bounds for short character sums evaluated at forms 1939
+
+For the remaining cases of j > 1, it is helpful to invert, and take the logarithm, and prove for fixed 6 and
+fixed j a lower bound for the quantity
+
+log (2221)? Bur Gs 27).
+
+First we consider the case of 1 < j <n —1; for each of these j (using the fact that }7; 5¢(1) = )-; 51),
+n
+logs (221°? By is 2°) = ar — »( Lo) +6) (to(1) — Se)
+i=l
+
+n
+= O jlo) + (2r — 1—8))8 oy + r=) ba = Ojtow-
+i=2
+
+Here we used that for | < j <n —1 we have 6; <r — 1, and moreover 6,(;) = 0 for all 1 <i <n. Thus
+~Qr— «. 5ty—8o\— - ~0; -6;
+[2° OOP Bur Gs Bet <2 < 2-8 = KY,
+upon recalling that tf) <t2 <---<t,.
+Now we turn to the more complicated case of j =n. First we assume that n is even. Now we have
+
+n n/2
+logy (221°)? Bn, is 2°) = (2r = 1) Yb 51) + 27 Yori) = Soi)-
+i=l i=l
+It is convenient to set temporarily for each i = 1,...,” the parameter ©, ; = 2r if 1 <i <n/2 and
+©,,; = 0 ifn/2 <i <n. Then upon recalling that each 4; < t;, we have
+
+logs (221)? By, i; 2-*))
+
+n n n n
+= (2r—1) > Soi) + > @n,i (to — Soi) = > On,ito iy + Yr — 1- ©n,1)50
+i=l i=l
+
+i=l i=l
+
+n n n
+> Onitoot YO Or-1-Onitem~+ YI @r—1-On,)-0
+i=1 i=1 i=l
+‘ or-1 Oy; <0 2r-1 0,420
+n
+
+n
+Ar Vtow+ DY Onitow- (6-7)
+i=1 i=l
+or-1-0, ; <0 or-1-, ;20
+
+(Here in the inequality, equality can occur for those 6 such that 6; = ¢; for all | <i <n/2 and 6; =0
+for n/2 <i <n. The inequality is where we see that if ©, ; = 2r, we must replace 6,(;) by t,() rather
+than by 0; this is why in the final statement of the inequality we lose slightly in the maximal moment,
+compared to the nonmaximal moment. This effect is not possible in dimension n = 1.) Now by the
+definition of ©,,;, the first sum is over | <i <n/2; the second sum is over n/2 <i <n, in which range
+©,,,; = 0 so that the second sum is vacuous. Now we use the following simple observation.

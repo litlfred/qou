@@ -2,112 +2,47 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-0008027v1",
  "source_sha256": "8bce0b8a1bca372e",
- "brief": "KASHAEV’S INVARIANT AND THE VOLUME OF A — I follow Y.",
- "extended": "**KASHAEV’S INVARIANT AND THE VOLUME OF A**\n\n*HYPERBOLIC KNOT AFTER Y. YOKOTA*\n\n21 pp, 20 sections.\n\n**Abstract.** I follow Y. Yokota to explain how to obtain a tetrahedron de- composition of the complement of a hyperbolic knot and compa re it with the asymptotic behavior of Kashaev’s link invariant using the ﬁ gure-eight knot as an example.\n\n**Outline.** 2 HITOSHI MURAKAMI; 1 Introduction; 2 Algebra; 4 HITOSHI MURAKAMI; 3 Geometry; 3.1 Ideal tetrahedron decomposition of S3 \\ (K; 6 HITOSHI MURAKAMI; 3.2 Ideal tetrahedron decomposition of S3 \\ K.; 8 HITOSHI MURAKAMI; 3.3 Hyperbolicity condition. Now we have a top; 1 Consistency condition: at each vertex in the; 2 Cusp condition: the products of the paramete; 4 Analysis, and Harmony; References; 10 HITOSHI MURAKAMI; 12 HITOSHI MURAKAMI; 14 HITOSHI MURAKAMI; 16 HITOSHI MURAKAMI",
+ "brief": "arXiv:math/0008027v1 [math.GT] 3 Aug 2000 — I follow Y.",
+ "extended": "**arXiv:math/0008027v1 [math.GT] 3 Aug 2000**\n\n*HYPERBOLIC KNOT AFTER Y. YOKOTA*\n\n21 pp, 7 sections.\n\n**Abstract.** I follow Y. Yokota to explain how to obtain a tetrahedron de- composition of the complement of a hyperbolic knot and compare it with the asymptotic behavior of Kashaev’s link invariant using the ﬁgure-eight knot as an example.\n\n**Outline.** Front matter; 1 Introduction; 2 Algebra; 3 Geometry; 3.1 Ideal tetrahedron decomposition of $S^3\\se; 3.3 Hyperbolicity condition; 4 Analysis, and Harmony",
  "tokens": {
   "brief": 13,
-  "extended": 209
+  "extended": 127
  },
  "sections": [
   {
-   "id": "sec-000-2-hitoshi-murakami",
-   "title": "HITOSHI MURAKAMI",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-1"
   },
   {
-   "id": "sec-001-1-introduction",
+   "id": "sec-000-1-introduction",
    "title": "Introduction",
    "pages": "1-2"
   },
   {
-   "id": "sec-002-2-algebra",
+   "id": "sec-001-2-algebra",
    "title": "Algebra",
    "pages": "2-4"
   },
   {
-   "id": "sec-003-4-hitoshi-murakami",
-   "title": "HITOSHI MURAKAMI",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-004-3-geometry",
+   "id": "sec-002-3-geometry",
    "title": "Geometry",
    "pages": "4-4"
   },
   {
-   "id": "sec-005-31-ideal-tetrahedron-decomposition-of-s3-k-two-p",
-   "title": "Ideal tetrahedron decomposition of S3 \\ (K ∪ two points ). We will de-",
-   "pages": "4-6"
+   "id": "sec-003-31-ideal-tetrahedron-decomposition-of-s3setminus",
+   "title": "Ideal tetrahedron decomposition of $S^3\\setminus({K\\cup\\text{two points}})$",
+   "pages": "4-8"
   },
   {
-   "id": "sec-006-6-hitoshi-murakami",
-   "title": "HITOSHI MURAKAMI",
-   "pages": "6-6"
-  },
-  {
-   "id": "sec-007-32-ideal-tetrahedron-decomposition-of-s3-k-we-wi",
-   "title": "Ideal tetrahedron decomposition of S3 \\ K. We will deform the ideal",
-   "pages": "6-8"
-  },
-  {
-   "id": "sec-008-8-hitoshi-murakami",
-   "title": "HITOSHI MURAKAMI",
-   "pages": "8-8"
-  },
-  {
-   "id": "sec-009-33-hyperbolicity-condition-now-we-have-a-topolog",
-   "title": "Hyperbolicity condition. Now we have a topological ideal tetrahedron de-",
-   "pages": "8-8"
-  },
-  {
-   "id": "sec-010-1-consistency-condition-at-each-vertex-in-the-cu",
-   "title": "Consistency condition: at each vertex in the cusp torus, the pr oduct of the",
-   "pages": "8-8"
-  },
-  {
-   "id": "sec-011-2-cusp-condition-the-products-of-the-parameters",
-   "title": "Cusp condition: the products of the parameters along the latitu de and the",
+   "id": "sec-004-33-hyperbolicity-condition",
+   "title": "Hyperbolicity condition",
    "pages": "8-9"
   },
   {
-   "id": "sec-012-4-analysis-and-harmony",
+   "id": "sec-005-4-analysis-and-harmony",
    "title": "Analysis, and Harmony",
-   "pages": "9-9"
-  },
-  {
-   "id": "sec-013-references",
-   "title": "References",
-   "pages": "9-10"
-  },
-  {
-   "id": "sec-014-10-hitoshi-murakami",
-   "title": "HITOSHI MURAKAMI",
-   "pages": "10-12"
-  },
-  {
-   "id": "sec-015-12-hitoshi-murakami",
-   "title": "HITOSHI MURAKAMI",
-   "pages": "12-14"
-  },
-  {
-   "id": "sec-016-14-hitoshi-murakami",
-   "title": "HITOSHI MURAKAMI",
-   "pages": "14-16"
-  },
-  {
-   "id": "sec-017-16-hitoshi-murakami",
-   "title": "HITOSHI MURAKAMI",
-   "pages": "16-18"
-  },
-  {
-   "id": "sec-018-18-hitoshi-murakami",
-   "title": "HITOSHI MURAKAMI",
-   "pages": "18-20"
-  },
-  {
-   "id": "sec-019-20-hitoshi-murakami",
-   "title": "HITOSHI MURAKAMI",
-   "pages": "20-21"
+   "pages": "9-21"
   }
  ],
  "provenance": {

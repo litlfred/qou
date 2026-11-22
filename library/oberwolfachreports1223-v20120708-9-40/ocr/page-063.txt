@@ -1,0 +1,53 @@
+Invariants in Low-Dimensional Topology and Knot Theory 63
+
+It turns out that some information about the knot can be obtained from a more
+combinatorial data: the intersection graph of a Gauss diagram. The intersection
+graph is a simple graph, i.e. a graph without loops and multiple edges, whose ver-
+tices are in one-to-one correspondence with chords of the Gauss diagram of the
+knot (the latter are, in turn, in one-to-one correspondence with classical crossings
+of the knot). Two vertices of the intersection graph are adjacent whenever the
+corresponding arrows of the Gauss diagram are linked, see Fig. 1. Each vertex of
+the intersection graph is endowed with the local writhe number of the correspond-
+ing crossing. Even more, if we forget about the writhe number information and
+only have the structure of opposite edges, we shall get non-trivial objects (modulo
+Reidemeister’s moves).
+
+However, sometimes the Gauss diagram can be obtained from the intersection
+graph in a non-unique way, and some graphs (shown in Fig. 2) cannot be repre-
+sented by chord diagrams at all.
+
+Probably, the simplest evidence that one can get some information out of the
+intersection graph is the number of circles one gets in a certain state after a
+smoothing, see Fig. 3. The circuit-nullity formula allows one to count the number
+of circles in Kauffman’s states out of the intersection graph. In particular, this
+means that graphs not necessarily corresponding to any knot admit a way of gen-
+eralising the Kauffman bracket, which coincides with the usual Kauffman bracket
+when the graph is realizable by a knot.
+
+Likewise virtual knots appear out of non-realizable Gauss code and thus gener-
+alize classical knots (which have realizable Gauss codes), graphs-links come out of
+intersection graphs: We may consider graphs which realize chord diagrams, and,
+in turn, virtual links, and pass to arbitrary simple graphs which correspond to
+some mysterious objects generalizing links and virtual links.
+
+Traldi and Zulli [7] constructed a self-contained theory of “non-realizable knots”
+(the theory of looped interlacement graphs) possessing lots of interesting knot the-
+oretic properties by using Gauss diagrams. These objects are equivalence classes
+of (decorated) graphs modulo “Reidemeister moves” .
+
+The author and V.O. Manturov suggested another way of looking at knots and
+links and generalizing them (the theory of graph-links): whence a Gauss diagram
+corresponds to a transverse passage along a knot, one may consider a rotating cir-
+cuit which never goes straight and always turns right or left at a classical crossing.
+One can also encode the type of smoothing (Kauffman’s A-smoothing or Kauff-
+man’s B-smoothing) corresponding to the crossing where the circuit turns right
+or left and never goes straight, see Fig. 4. We note that chords of the diagrams
+are naturally split into two sets: those corresponding to crossings where two oppo-
+site directions correspond to emanating edges with respect to the circuit and the
+other two correspond to incoming edges, and those where we have two consecutive
+(opposite) edges one of which is incoming and the other one is emanating.
+
+After the two theories were constructed, some questions arose. The first ques-
+tion is whether or not every graph is Reidemeister equivalent (each theory has
+own Reidemeister moves) to the intersection graph of a virtual knot diagram. The
+

@@ -2,22 +2,27 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1011.0679v2",
  "source_sha256": "6fa4bbcf4e908373",
- "brief": "A FORMULA OF ARTHUR AND AFFINE HECKE ALGEBRAS — Let π, π ′ be tempered representations of an aﬃne Hecke algebra with positive parameters.",
- "extended": "**A FORMULA OF ARTHUR AND AFFINE HECKE ALGEBRAS**\n\n*ERIC OPDAM AND MAARTEN SOLLEVELD*\n\n22 pp, 10 sections.\n\n**Abstract.** Let π, π ′ be tempered representations of an aﬃne Hecke algebra with positive parameters. We study their Euler–Poincar´ e pairing EP (π, π ′), the alter- nating sum of the dimensions of the Ext-groups. We show that EP (π, π ′) can be expressed in a simple formula involving an analytic R-group , analogous to a for- mula of Arthur in the setting of reductive p-adic groups. Our proof applies equally well to aﬃne Hecke algebras and to reductive groups over nona rchimedean local ﬁelds of arbitrary characteristic.\n\n**Outline.** Introduction; 1.1 Affine Hecke algebras; 1 Preliminaries; 1.2 Parabolic induction; 1.3 The Schwartz algebra; 1.4 Analytic R-groups for tempered representat; 3 The Arthur formula; 4 Algebras of invariants; 5 Analytic R-groups for non-tempered represent; References",
+ "brief": "A FORMULA OF ARTHUR AND AFFINE HECKE ALGEBRAS — Let π, π′ be tempered representations of an aﬃne Hecke algebra with positive parameters.",
+ "extended": "**A FORMULA OF ARTHUR AND AFFINE HECKE ALGEBRAS**\n\n*ERIC OPDAM AND MAARTEN SOLLEVELD*\n\n22 pp, 12 sections.\n\n**Abstract.** Let π, π′ be tempered representations of an aﬃne Hecke algebra with positive parameters. We study their Euler–Poincar´e pairing EP(π, π′), the alter- nating sum of the dimensions of the Ext-groups. We show that EP(π, π′) can be expressed in a simple formula involving an analytic R-group, analogous to a for- mula of Arthur in the setting of reductive p-adic groups. Our proof applies equally well to aﬃne Hecke algebras and to reductive groups over nonarchimedean local ﬁelds of arbitrary characteristic.\n\n**Outline.** Front matter; Introduction; 1.1 Affine Hecke algebras; 1 Preliminaries; 1.2 Parabolic induction; 1.3 The Schwartz algebra; 1.4 Analytic R-groups for tempered representat; 2 The Euler-Poincaré pairing; 3 The Arthur formula; 4 Algebras of invariants; 5 Analytic R-groups for non-tempered represent; References",
  "tokens": {
   "brief": 34,
-  "extended": 228
+  "extended": 237
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
    "id": "sec-000-introduction",
    "title": "Introduction",
-   "pages": "1-3"
+   "pages": "1-4"
   },
   {
    "id": "sec-001-11-affine-hecke-algebras",
    "title": "Affine Hecke algebras",
-   "pages": "3-4"
+   "pages": "4-4"
   },
   {
    "id": "sec-002-1-preliminaries",
@@ -37,25 +42,30 @@
   {
    "id": "sec-005-14-analytic-r-groups-for-tempered-representation",
    "title": "Analytic R-groups for tempered representations",
-   "pages": "11-14"
+   "pages": "11-12"
   },
   {
-   "id": "sec-006-3-the-arthur-formula",
+   "id": "sec-006-2-the-euler-poincaré-pairing",
+   "title": "The Euler-Poincaré pairing",
+   "pages": "12-14"
+  },
+  {
+   "id": "sec-007-3-the-arthur-formula",
    "title": "The Arthur formula",
    "pages": "14-17"
   },
   {
-   "id": "sec-007-4-algebras-of-invariants",
+   "id": "sec-008-4-algebras-of-invariants",
    "title": "Algebras of invariants",
    "pages": "17-20"
   },
   {
-   "id": "sec-008-5-analytic-r-groups-for-non-tempered-representat",
+   "id": "sec-009-5-analytic-r-groups-for-non-tempered-representat",
    "title": "Analytic R-groups for non-tempered representations",
    "pages": "20-21"
   },
   {
-   "id": "sec-009-references",
+   "id": "sec-010-references",
    "title": "References",
    "pages": "21-22"
   }

@@ -55,7 +55,8 @@ def main() -> int:
 
     # Substrate closed forms (m_e cancels in the ratio, so drop it).
     Q_beta_over_me = (2 * q + 1 - q ** 2) * (q + 1) / (2 * q ** 3)
-    E0_over_me = 1 / (q * (q - 1))
+    import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+    E0_over_me = _qbeta_e0.order_zero_scaled(1, q)  # order-zero E_0, routed (owner ruling 2026-11-20, #8590)
     S = sp.simplify(Q_beta_over_me / E0_over_me)
 
     S_claimed = (2 * q + 1 - q ** 2) * (q ** 2 - 1) / (2 * q ** 2)

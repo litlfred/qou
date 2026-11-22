@@ -1,0 +1,1 @@
+The generators of the Bolza surface satisfy the following relations: R8 = S2 = T 2 = U 3 = RSRS = STST = RTR3T = e, UR = R7U 2, U 2R = STU, US = SU 2, UT = RSU, where e is the trivial (identity) action.

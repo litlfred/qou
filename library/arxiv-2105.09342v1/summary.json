@@ -3,16 +3,21 @@
  "doc_id": "arxiv-2105.09342v1",
  "source_sha256": "57ae12327da7b9a1",
  "brief": "A Unitary Matrix Model for q-deformed Plancherel Growth — In this paper we construct a unitary matrix model that captures the asymptotic growth of Young diagrams under q-deformed Plancherel measure.",
- "extended": "**A Unitary Matrix Model for q-deformed Plancherel Growth**\n\n*Suvankar Duttaa, Debangshu Mukherjeeb, Neetua, Sanhita Parihara*\n\n31 pp, 10 sections.\n\n**Abstract.** In this paper we construct a unitary matrix model that captures the asymptotic growth of Young diagrams under q-deformed Plancherel measure. The matrix model is a q analog of Gross-Witten-Wadia (GWW) matrix model. In the large N limit the model exhibits a third order phase transition between no-gap and gapped phases, which is a q-deformed version of the GWW phase transition. We show that the no-gap phase of this matrix model captures the asymptotic growth of Young diagrams equipped with q-deformed Plancherel measure. The no-gap solutions also satisﬁes a diﬀerential equation which is theq-analogue of the automodel equation. We further provide a droplet description for these growing Young diagrams. Quantising these droplets we identify the Young diagrams with coherent states in the Hilbert space.\n\n**Outline.** 1 Introduction; 2 q-deformed Plancherel growth; 3 A unitary matrix model for q-deformed Planch; 3.1 Solution class 1: No-gap solution; 3.2 q-deformed automodel class; 3.3 The unitary matrix model from the droplet ; 4 Asymptotic analysis of q-deformed Plancherel; 5 The Hilbert space; 5.1 Moments of Young diagrams and conserved ch; 6 Conclusion",
+ "extended": "**A Unitary Matrix Model for q-deformed Plancherel Growth**\n\n*Suvankar Duttaa, Debangshu Mukherjeeb, Neetua, Sanhita Parihara*\n\n31 pp, 16 sections.\n\n**Abstract.** In this paper we construct a unitary matrix model that captures the asymptotic growth of Young diagrams under q-deformed Plancherel measure. The matrix model is a q analog of Gross-Witten-Wadia (GWW) matrix model. In the large N limit the model exhibits a third order phase transition between no-gap and gapped phases, which is a q-deformed version of the GWW phase transition. We show that the no-gap phase of this matrix model captures the asymptotic growth of Young diagrams equipped with q-deformed Plancherel measure. The no-gap solutions also satisﬁes a diﬀerential equation which is the q-analogue of the automodel equation. We further provide a droplet description for these growing Young diagrams. Quantising these droplets we identify the Young diagrams with coherent states in the Hilbert space.\n\n**Outline.** Front matter; 1 Introduction; 2 q-deformed Plancherel growth; 3 A unitary matrix model for q-deformed Planch; 3.1 Solution class 1: No-gap solution; 3.2 q-deformed automodel class; 3.3 The unitary matrix model from the droplet ; 4 Asymptotic analysis of q-deformed Plancherel; 5 The Hilbert space; 5.1 Moments of Young diagrams and conserved ch; 6 Conclusion; Appendix A q analog of GWW phase transition; Appendix B Explicit computation of the partiti; Appendix C Calculation of automodel density fo; Appendix C.1 Computing Hconst(h), H(h) and Hse; Appendix D Droplet quantisation",
  "tokens": {
   "brief": 49,
-  "extended": 331
+  "extended": 391
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-4"
+   "pages": "2-4"
   },
   {
    "id": "sec-001-2-q-deformed-plancherel-growth",
@@ -57,7 +62,32 @@
   {
    "id": "sec-009-6-conclusion",
    "title": "Conclusion",
-   "pages": "19-31"
+   "pages": "19-20"
+  },
+  {
+   "id": "sec-010-appendix-a-q-analog-of-gww-phase-transition",
+   "title": "Appendix A q analog of GWW phase transition",
+   "pages": "20-22"
+  },
+  {
+   "id": "sec-011-appendix-b-explicit-computation-of-the-partition",
+   "title": "Appendix B Explicit computation of the partition function",
+   "pages": "22-23"
+  },
+  {
+   "id": "sec-012-appendix-c-calculation-of-automodel-density-for",
+   "title": "Appendix C Calculation of automodel density for the second class à la Strahov",
+   "pages": "23-25"
+  },
+  {
+   "id": "sec-013-appendix-c1-computing-hconsth-hh-and-hseriesh",
+   "title": "Appendix C.1 Computing Hconst(h), H(h) and Hseries(h)",
+   "pages": "25-26"
+  },
+  {
+   "id": "sec-014-appendix-d-droplet-quantisation",
+   "title": "Appendix D Droplet quantisation",
+   "pages": "26-31"
   }
  ],
  "provenance": {

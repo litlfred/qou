@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/erlijman-wenzl-pjm-231-2/sections/sec-001",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Categories",
+  "pageStart": 9,
+  "pageEnd": 13,
+  "contains": [
+    "library/erlijman-wenzl-pjm-231-2/blocks/prose-sec-001",
+    "library/erlijman-wenzl-pjm-231-2/blocks/thm-sec-001-01",
+    "library/erlijman-wenzl-pjm-231-2/blocks/def-sec-001-02",
+    "library/erlijman-wenzl-pjm-231-2/blocks/prop-sec-001-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/erlijman-wenzl-pjm-231-2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/erlijman-wenzl-pjm-231-2/manifest.jsonld",
+  "provenance": "ingested"
+}

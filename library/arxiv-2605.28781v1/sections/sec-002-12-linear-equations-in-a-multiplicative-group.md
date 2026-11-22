@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2605.28781v1
-doc_title: "THE SUM-PRODUCT CONJECTURE IS FALSE FOR REAL NUMBERS"
+doc_title: "The sum-product conjecture is false for real numbers"
 section_id: sec-002-12-linear-equations-in-a-multiplicative-group
 section_title: "Linear equations in a multiplicative group"
 section_number: 1.2
 pages: 3-3
 source_pdf: 2605.28781v1.pdf
 source_sha256: eee6d535af1996ca
-doc_brief: "THE SUM-PRODUCT CONJECTURE IS FALSE FOR REAL NUMBERS — We disprove the sum-product conjecture for real numbers by con- structing arbitrarily largeA⊂R(whose elements are algebraic integers in a number"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.939
-latex_coverage_ratio: 0.803
+latex_coverage_ratio: 1.0
+doc_brief: "The sum-product conjecture is false for real numbers — We disprove the sum-product conjecture for real numbers by con- structing arbitrarily large A ⊂R (whose elements are algebraic integers in a"
 ---
 Another application of our construction is to provide new lower bounds for the number of solutions to linear equations in a multiplicative group.
 

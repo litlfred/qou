@@ -1,0 +1,43 @@
+5.4 General nondegenerate phase with finite critical set 125
+
+necessary technical result in Lemma 5.10 below, which completes our proof of
+this theorem. im
+
+Lemma 5.10. Let W = {z € C4 : Re{S(z)} > 0} and suppose that a € GL4(C)
+maps R¢ into W. If M = a7 a is the matrix representing the quadratic form
+S oq@and x is the projection map from C4 onto R4 then x 0 a is orientation
+preserving on R¢ if and only if det a is the product of the principal square roots
+of the eigenvalues of M (rather than the negative of this).
+
+Proof First suppose a € GL,(R). Then M has positive eigenvalues, and the
+product of their principal square roots is positive. The map 7 is the identity on
+R4, so the claimed statement boils down to saying that a preserves orientation
+if and only if it has positive determinant, which is true by definition. In the
+general case, let a, = a, 0 a, where m,(z) = Re{z} + (1 — 4) Im{z}. Since
+m(R¢) ¢ W for all 0 < t < 1, the matrix M, = aq; always has eigenvalues
+with nonnegative real parts. The product of the principal square roots of the
+eigenvalues is a continuous function on the set of nonsingular matrices with
+no negative real eigenvalues. The determinant of a, is a continuous function
+of t, and we have seen it agrees with the product of principal square roots of
+eigenvalues of M, when t = | (the real case), so by continuity this is the correct
+sign choice for all 0 < t < 1. Taking t = 0 proves the lemma. ia)
+
+Exercise 5.8. Suppose ¢ is the logarithm of an analytic function, defined only
+up to the addition of (277)n for n € Z. How does this affect the conclusion of
+Theorem 5.2?
+
+5.4 General nondegenerate phase with finite critical set
+
+In this section we prove Theorem 5.3 by moving the chain of integration of I
+so that Re ¢ is minimized only at the finite set of critical points, then applying
+Theorem 5.2. We first remark on some differences from our previous argu-
+ments. While the chain of integration may be defined on a subspace X C R¢,
+the form in the integrand will be extended to a neighborhood of X in C“ and the
+deformation in general will not be confined to X. To accomplish this, we define
+a complexification of X with analytic structure. Our deformation is defined by
+a smooth vector field v which, although not analytic, lies in the complex tan-
+gent bundle to the complexification of each stratum. The proof is broken into
+the following steps.
+
+(1) Define the complexification X @ C.
+(2) Extend ¢ and 7 to a neighborhood U of X in C’.

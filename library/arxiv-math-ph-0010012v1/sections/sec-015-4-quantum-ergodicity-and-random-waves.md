@@ -8,6 +8,7 @@ pages: 6-7
 source_pdf: 0010012v1.pdf
 source_sha256: cd6eca5ccb81ff90
 toc_source: inferred
+doc_brief: "arXiv:math-ph/0010012v1 10 Oct 2000 — We review some recent results on random polynomials and their generalizations in complex and symplectic geometry."
 ---
 We end with a brief discussion of the connection between random polynomials and quantum chaos.
 The intutitive idea that quantum chaotic eigenfunctions should resemble ‘Gaussian random waves’ seems to

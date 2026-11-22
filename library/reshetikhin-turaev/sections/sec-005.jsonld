@@ -9,13 +9,15 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Functors of Monoidal Categories. Let C, C' be two compact braided strict",
-  "pageStart": 4,
-  "pageEnd": 4,
+  "title": "The Main Theorem",
+  "pageStart": 12,
+  "pageEnd": 13,
   "contains": [
-    "library/reshetikhin-turaev/blocks/prose-sec-005"
+    "library/reshetikhin-turaev/blocks/prose-sec-005",
+    "library/reshetikhin-turaev/blocks/thm-sec-005-01",
+    "library/reshetikhin-turaev/blocks/lem-sec-005-02"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/reshetikhin-turaev",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/reshetikhin-turaev",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/reshetikhin-turaev/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/reshetikhin-turaev/manifest.jsonld",
   "provenance": "ingested"
 }

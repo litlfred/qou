@@ -9,13 +9,15 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Bending energy with tangent-point energy",
-  "pageStart": 39,
-  "pageEnd": 41,
+  "title": "Bending energy",
+  "pageStart": 38,
+  "pageEnd": 39,
   "contains": [
-    "library/arxiv-2505.02719v2/blocks/prose-sec-016"
+    "library/arxiv-2505.02719v2/blocks/prose-sec-016",
+    "library/arxiv-2505.02719v2/blocks/thm-sec-016-01",
+    "library/arxiv-2505.02719v2/blocks/cor-sec-016-02"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2505.02719v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2505.02719v2",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2505.02719v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2505.02719v2/manifest.jsonld",
   "provenance": "ingested"
 }

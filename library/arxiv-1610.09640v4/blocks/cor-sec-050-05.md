@@ -1,0 +1,1 @@
+Let S be a multiplicatively closed set of morphisms in a category A. Assume that these two assertions hold: • The pair (B, Q) is either a right or a left Ore localization of A with respect to S. Derived Categories | Amnon Yekutieli |

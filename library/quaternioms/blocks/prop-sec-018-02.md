@@ -1,1 +1,1 @@
-Encoding into subspaces stabilized by Aut(O) ∼= G2
++ entangler). Let G1 be any dense family of single-quaternionic qubit gates (identiﬁed with SU(2) via the embedding ι in Appendix A), and let G2 contain one ﬁxed entangling two-quaternionic qubit gate (e.g., CNOT/CZ). Then G = G1 ∪G2 is universal over H. Proof: Appendix A. Signiﬁcance: The standard “single-qubit + entangler” paradigm lifts intact to H. Having established universality, we next compare computational power by explicit simulations between the quaternionic and complex models.

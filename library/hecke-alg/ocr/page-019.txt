@@ -1,0 +1,59 @@
+14 2, CELLULAR ALGEBRAS
+
+Consequently, P @4 A(T U {ut})/P @4 A(T) = P 4 (C™* ORC).
+
+Now suppose that @ =T,y CT, C--- C Ty =T is a maximal chain of ideals
+in A. Then, fori = 1,2,...,&, we have T; = T;_,U fy; } for some yt; € T. Therefore,
+0= A(To) OG A(T1) G--- G A(T) = Ais a filtration of A. Tensoring with P
+gives a filtration of P with composition factors, by the last paragraph, precisely the
+non-zero modules P @4 (C* @p C*) for we A. a
+
+Noting that P @4 (C!* @p C") = (P @4 Ch*) @p C# = (dimP @4 CJC",
+we see that every projective A-module P has a cell module filtration; that is a
+filtration in which every composition factor is isomorphic to a cell module.
+
+In the next result, D’ denotes the transpose of D.
+
+2.17 Theorem (Graham—Lehrer) Suppose that R is a field and that A is finite.
+Then C = D'D. In particular, the Cartan matrix of A is symmetric.
+
+Proof. Let \ and yt be elements of A+ and take P = P*. By Lemma 2.16, P*
+has a filtration with composition factors the non-zero modules PO, (C’* @rC”),
+and where each yv € A occurs at most once. Therefore, by Lemma 2.15,
+
+cay = [P*: D"] = So [(P* @a C"*) Op CY : D*
+VENA
+=O dima(P? @4 CC” : D"]
+ved
+
+= dadyy.
+
+ved
+
+Hence, C = D'D as claimed. Oo
+
+2.18 Corollary Suppose that R is a field. Then the following are equivalent.
+
+(i) A is (split) semisimple.
+
+(ii) C? = D* for allX EA.
+(iii) rad C* = 0 for all NE A.
+(iv) dyy = 4yy for all X and yin A.
+Proof. First we note that if A is semisimple then R is a splitting field for A
+since each D? is absolutely irreducible by Proposition 2.9. Thus, the algebra A is
+semisimple if and only if it is split semisimple.
+
+Now suppose that A is semisimple. Then P* = D* for all \ € At; consequently,
+
+©? = D* by Theorem 2.17. Furthermore, because A is semisimple,
+
+dimg A= > dima(0*)? = SO |TA)P.
+EAT AEAt
+However, dimp A = 3>\¢4 |7(A)|’, so we must have A = At. Hence, (i) implies (ii).
+Certainly (ii) and (iii) are both equivalent and they both imply (iv), so assume
+that (iv) holds. In particular, (iv) implies that A = A+ and, using Theorem 2.17
+again, that P* = C* = D*. Therefore, A is a direct sum of simple (projective)
+modules; that is to say it is semisimple. oO
+
+The next result connects the theory of quasi-hereditary algebras and cellular
+algebras. Quasi—hereditary algebras are very a important class of algebras; however,

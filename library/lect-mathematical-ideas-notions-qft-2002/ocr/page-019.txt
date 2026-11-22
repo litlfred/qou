@@ -1,0 +1,43 @@
+MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 19
+
+(i.e. the classical answer for the effective action is the quantum answer for the
+original one), then we can regard the quantum theory for the action S as solved. In
+other words, the problem of solving the quantum theory attached to S (i.e. finding
+the corresponding integrals) essentially reduces to the problem of computing the
+effective action Seg.
+
+We will now give a recipe of computing the effective action in terms of amplitudes
+of Feynman diagrams.
+
+Definition 3.9. An edge e of a connected graph T is said to be a bridge, if the
+graph TI \ e is disconnected. A connected graph without bridges is called 1-particle
+irreducible (1PI).
+
+Remark. This is the physical terminology. The mathematical terminology is
+“2-connected” .
+
+To compute the effective action, we will need to consider graphs with external
+edges (but having at least one internal vertex). Such a graph T (with N external
+edges) will be called 1-particle irreducible if so is the corresponding “amputated”
+graph (ie. the graph obtained from I by removal of the external edges). In partic-
+ular, a graph with one internal vertex is always 1-particle irreducible (see Fig. 8),
+while a single edge graph without internal vertices is defined not to be 1-particle
+
+irreducible.
+/ not a bridge
+
+OO
+
+a bridge
+
+1PI graph with
+two external edges
+
+non-1PI graph with
+four external edges
+
+FIGURE 8
+
+Let us denote by Gy_irnr(n, N) the set of isomorphism classes of 1-particle irre-
+ducible graphs which N external edges and n; i-valent internal vertices for each i
+(where isomorphisms are not allowed to move external edges).

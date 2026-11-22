@@ -8,7 +8,9 @@ pages: 33-34
 source_pdf: 2018SORUS020.pdf
 source_sha256: c3f929e5195983ce
 toc_source: inferred
+doc_brief: "Reidemeister torsion on character varieties — 52 sections: Front matter; Introduction; Character varieties and Reidemeist"
 ---
+Curves and valuations
 Examples of ﬁeld extensions of k together with k-valuations are given by algebraic
 varieties deﬁned over k. In particular, pick X ⊂X(Γ) an irreducible component of
 the character variety, its function ring k[X] is a domain, and we denote by k(X) =
@@ -37,4 +39,3 @@ Hence the smooth projective model of X is isomorphic to CP1 (remark that the
 singular point (0, 0) is "smoothed" through ν), and the ideal point is ∞. As a map
 CP1 →CP2, ν sends ∞to [1 : 0 : 0], the curve X ∪{∞} ⊂CP2 is a (non smooth)
 compactiﬁcation of X.
-1.3.5

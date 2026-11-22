@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0503213v2.pdf
 source_sha256: 637a9e53b9b30776
 toc_source: inferred
+doc_brief: "A topological model of composite preons — 7 sections: Front matter; Introduction; The Helon model"
 ---
 arXiv:hep-ph/0503213v2  27 Oct 2006
 ADP-05-05/T615
@@ -27,4 +28,3 @@ the role of preons in this model may occur as topological structures in a more c
 and may themselves be viewed as composite, being formed of truly fundamental sub-components,
 representing exactly two levels of substructure within quarks and leptons.
 PACS numbers: 12.60.Rc, 12.10.Dm
-I.

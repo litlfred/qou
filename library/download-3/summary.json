@@ -2,11 +2,11 @@
  "_schema": "library-summary/v1",
  "doc_id": "download-3",
  "source_sha256": "7c2b83ba9f9baad7",
- "brief": "Co_ Math. Phys. 172, 223-262 (1995) Communications IΠ Mathematical Physics© Springer-Verlag 1995 Algebraic Index Theorem — We prove the Atiyah-Singer index theorem where the algebra of pseudo",
- "extended": "**Co_ Math. Phys. 172, 223-262 (1995) Communications IΠ Mathematical Physics© Springer-Verlag 1995 Algebraic Index Theorem**\n\n*Ryszard Nest1, Boris Tsygan2'**\n\n40 pp, 20 sections.\n\n**Abstract.** We prove the Atiyah-Singer index theorem where the algebra of pseudo- differential operators is replaced by an arbitrary deformation quantization of the algebra of functions on a symplectic manifold.\n\n**Outline.** Front matter; 1 University of Copenhagen; Introduction; 2.7 Cyclic (Co)homology and Lie Algebra (Co)ho; 2.2 The Characteristic Map. Suppose that A is ; 2.3 Poincare Duality. Suppose now that A is a ; 2.4 Examples. Let A—A§+A\\ be a Z^ -graded alge; 3.1 The Cech-cyclic Complexes and the Characte; 3.2 Local Computation of^2n~\\-; 3.3 Computation of Jf 2/7-1 ^^^ ^^ Fundamental; 4.1 Boundary Operator at the Fundamental Class; 4.2 Proof of the Main Theorem. First of all no; 5.1 The Space of \"Nonlinear Frames.\" In this s; 5.2 Lie Algebra Cohomology, Cohomology of M/Sp; 5.5 Fundamental Class in Lie Algebra Cohomolog; 6.1 Reduction to Lie Algebra Cohomology. Our a; 6.2 Computation of dΩ^ Reduction to One- Dimen; 6.3 Proof for n = 1. First, compute ΰΩi restri",
+ "brief": "Algebraic index theorem — We prove the Atiyah-Singer index theorem where the algebra of pseudo- differential operators is replaced by an arbitrary deformation quantization of the algebra of functions",
+ "extended": "**Algebraic index theorem**\n\n*Ryszard Nest*\n\n40 pp, 21 sections.\n\n**Abstract.** We prove the Atiyah-Singer index theorem where the algebra of pseudo- differential operators is replaced by an arbitrary deformation quantization of the algebra of functions on a symplectic manifold.\n\n**Outline.** Front matter; Introduction; &(A)-^ CCf; 1 The Algebraic Index Theorem; Tr(/*0)=; 2 Characteristic Map Associated to a Trace; CCm(A)=; CC*(A\\; ΛA,;); C.(gχ4) \"; 11 x[F,a2]...[F,an]e-; 1 In the same fashion we get the morphism 2τ '; C^MCC^A^ft-; 3.2 Local Computation of^2n~\\-; 4 Algebraic Index Theorem for Formal Deformati; 7 An Application; 1 G C°(M, CC0(^A/)); Σ(-\\γtdfr",
  "tokens": {
-  "brief": 47,
-  "extended": 291
+  "brief": 49,
+  "extended": 166
  },
  "sections": [
   {
@@ -15,97 +15,102 @@
    "pages": "1-1"
   },
   {
-   "id": "sec-000-1-university-of-copenhagen",
-   "title": "University of Copenhagen",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-001-introduction",
+   "id": "sec-000-introduction",
    "title": "Introduction",
-   "pages": "1-8"
+   "pages": "1-6"
   },
   {
-   "id": "sec-002-27-cyclic-cohomology-and-lie-algebra-cohomology",
-   "title": "Cyclic (Co)homology and Lie Algebra (Co)homology in the Differential",
-   "pages": "8-12"
+   "id": "sec-001-a--ccf",
+   "title": "&(A)-^ CCf",
+   "pages": "6-7"
   },
   {
-   "id": "sec-003-22-the-characteristic-map-suppose-that-a-is-a-un",
-   "title": "The Characteristic Map. Suppose that A is a unital associative algebra (TL-",
-   "pages": "12-14"
+   "id": "sec-002-1-the-algebraic-index-theorem",
+   "title": "The Algebraic Index Theorem",
+   "pages": "7-7"
   },
   {
-   "id": "sec-004-23-poincare-duality-suppose-now-that-a-is-a-unit",
-   "title": "Poincare Duality. Suppose now that A is a unital algebra over k, AQ is an ideal",
-   "pages": "14-16"
+   "id": "sec-003-tr0",
+   "title": "Tr(/*0)=",
+   "pages": "7-8"
   },
   {
-   "id": "sec-005-24-examples-let-aaa-be-a-z--graded-algebra-let-f",
-   "title": "Examples. Let A—A§+A\\ be a Z^ -graded algebra. Let F G A\\ such that",
-   "pages": "16-17"
+   "id": "sec-004-2-characteristic-map-associated-to-a-trace",
+   "title": "Characteristic Map Associated to a Trace",
+   "pages": "8-9"
   },
   {
-   "id": "sec-006-31-the-cech-cyclic-complexes-and-the-characteris",
-   "title": "The Cech-cyclic Complexes and the Characteristic Maps. Let, as in",
-   "pages": "17-19"
+   "id": "sec-005-ccma",
+   "title": "CCm(A)=",
+   "pages": "9-10"
   },
   {
-   "id": "sec-007-32-local-computation-of2n",
-   "title": "Local Computation of^2n~\\-",
+   "id": "sec-006-cca",
+   "title": "CC*(A\\",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-007-λa",
+   "title": "ΛA,;)",
+   "pages": "11-13"
+  },
+  {
+   "id": "sec-008-cgχ4",
+   "title": "C.(gχ4) \"",
+   "pages": "13-17"
+  },
+  {
+   "id": "sec-009-11-xfa2fane",
+   "title": "x[F,a2]...[F,an]e-",
+   "pages": "17-18"
+  },
+  {
+   "id": "sec-010-1-in-the-same-fashion-we-get-the-morphism-2τ-cm",
+   "title": "In the same fashion we get the morphism 2τ ' C*(M, CC*_2(A:)) -^ CC^*( given by {ct/o...^}",
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-011-cmccaft",
+   "title": "C^MCC^A^ft-",
    "pages": "19-19"
   },
   {
-   "id": "sec-008-33-computation-of-jf-27-1-fundamental-class-cons",
-   "title": "Computation of Jf 2/7-1 ^^^ ^^ Fundamental Class. Consider the spectral",
+   "id": "sec-012-32-local-computation-of2n",
+   "title": "Local Computation of^2n~\\-",
    "pages": "19-20"
   },
   {
-   "id": "sec-009-41-boundary-operator-at-the-fundamental-class-re",
-   "title": "Boundary Operator at the Fundamental Class. Recalls that we had defined",
-   "pages": "20-20"
+   "id": "sec-013-4-algebraic-index-theorem-for-formal-deformation",
+   "title": "Algebraic Index Theorem for Formal Deformations",
+   "pages": "20-33"
   },
   {
-   "id": "sec-010-42-proof-of-the-main-theorem-first-of-all-note-t",
-   "title": "Proof of the Main Theorem. First of all note the following fact which follows",
-   "pages": "20-23"
+   "id": "sec-014-7-an-application",
+   "title": "An Application",
+   "pages": "33-33"
   },
   {
-   "id": "sec-011-51-the-space-of-nonlinear-frames-in-this-subsect",
-   "title": "The Space of \"Nonlinear Frames.\" In this subsection, we will replace the",
-   "pages": "23-24"
+   "id": "sec-015-1-g-cm-cc0a",
+   "title": "G C°(M, CC0(^A/))",
+   "pages": "33-33"
   },
   {
-   "id": "sec-012-52-lie-algebra-cohomology-cohomology-of-msp2n-an",
-   "title": "Lie Algebra Cohomology, Cohomology of M/Sp(2n) and Characteristic",
-   "pages": "24-25"
+   "id": "sec-016-σ-γtdfr",
+   "title": "Σ(-\\γtdfr",
+   "pages": "33-34"
   },
   {
-   "id": "sec-013-55-fundamental-class-in-lie-algebra-cohomology-c",
-   "title": "Fundamental Class in Lie Algebra Cohomology. Consider the double com-",
-   "pages": "25-26"
+   "id": "sec-017-appendix-1-operations-on-the-cyclic-complex",
+   "title": "Operations on the Cyclic Complex",
+   "pages": "34-37"
   },
   {
-   "id": "sec-014-61-reduction-to-lie-algebra-cohomology-our-aim-i",
-   "title": "Reduction to Lie Algebra Cohomology. Our aim is to reduce the computation",
-   "pages": "26-27"
+   "id": "sec-018-appendix-2-cyclic-homology-of-deformations",
+   "title": "Cyclic Homology of Deformations",
+   "pages": "37-39"
   },
   {
-   "id": "sec-015-62-computation-of-dω-reduction-to-one--dimension",
-   "title": "Computation of dΩ^ Reduction to One- Dimensional Case. First of all,",
-   "pages": "27-29"
-  },
-  {
-   "id": "sec-016-63-proof-for-n-1-first-compute-ΰωi-restricted-to",
-   "title": "Proof for n = 1. First, compute ΰΩi restricted to the subalgebra C (xξ — ^) =",
-   "pages": "29-31"
-  },
-  {
-   "id": "sec-017-65-one-dimensional-families-let-ir-g-ir-λ-0-let",
-   "title": "One-Dimensional Families. Let IR+ = {/ G IR λ > 0}. Let Afα(M x IR+) be",
-   "pages": "31-39"
-  },
-  {
-   "id": "sec-018-references",
+   "id": "sec-019-references",
    "title": "References",
    "pages": "39-40"
   }

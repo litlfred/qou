@@ -1,0 +1,1 @@
+(12) The crude estimate mQCD ≈−2 MeV and the known quark mass ratios imply that C is tiny: with the lattice result ms/mud = 27.23(10) [25] and the value of the ratio Q ≡ q (m2s −m2 ud)/(m2 d −m2u) = 22.1(7) extracted from η-decay [26], we obtain C ≈6 · 10−4 GeV2.

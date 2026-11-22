@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/rosso-1988-cmp-117-581/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Let V be a C-vector space with basis (v0,..., ι;OT), on which fc, e, / act by the same formulas i), ii), iii) with λ = ωt m. Then p(k\\p(e\\p(f)",
+  "pageStart": 8,
+  "pageEnd": 10,
+  "contains": [
+    "library/rosso-1988-cmp-117-581/blocks/prose-sec-002",
+    "library/rosso-1988-cmp-117-581/blocks/lem-sec-002-01",
+    "library/rosso-1988-cmp-117-581/blocks/cor-sec-002-02",
+    "library/rosso-1988-cmp-117-581/blocks/thm-sec-002-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/rosso-1988-cmp-117-581/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/rosso-1988-cmp-117-581/manifest.jsonld",
+  "provenance": "ingested"
+}

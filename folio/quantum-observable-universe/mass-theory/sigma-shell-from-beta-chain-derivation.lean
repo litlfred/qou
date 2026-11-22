@@ -1,4 +1,5 @@
 import QOU.Basic
+import QOU.SchurWeyl.OcneanuWeight
 
 
 /-!
@@ -26,6 +27,11 @@ deuteron word.
 The former theorem `sigma_shell_from_beta_chain := inst.identity data`
 was a self-assuming projection of the class field and is removed. The
 class below is the conjecture carrier and has no instance.
+
+The exclusion itself is the theorem `sigma_shell_staircase_vanishes_conventionD`
+at the end of this file: over any field, for any Young diagram with a
+non-empty third row, the closed-form expression with y_λ at convention D is
+zero whatever the other three factors are.
 
 LaTeX: `\label{conj:sigma-shell-from-beta-chain-derivation}`
 -/
@@ -70,5 +76,20 @@ class SigmaShellFromBetaChainDerivation : Prop where
   identity : ∀ (data : SigmaShellAtMagic),
     data.y_target =
       data.C_lambda * data.y_lambda * data.abs_chi / data.abs_tr_M
+
+open QOU.SchurWeyl in
+/-- **The staircase σ_shell expression vanishes under convention D.**
+
+    Over any field `R`, for `q` with `q² + 1 ≠ 0`, any Young diagram `μ`
+    with a non-empty third row, and any `C`, `χ`, `t`:
+    `C · y_μ(q, z_D) · χ / t = 0`, where `z_D = q³/(q²+1)` and `y_μ` is the
+    Ocneanu weight. Every staircase partition of `3·A_magic` with
+    `A_magic ≥ 2` has a third row, so this is the scope-(b) exclusion of the
+    closed form recorded in `conj:sigma-shell-from-beta-chain-derivation`. -/
+theorem sigma_shell_staircase_vanishes_conventionD {R : Type*} [Field R] (q : R)
+    (hq : q ^ 2 + 1 ≠ 0) (mu : YoungDiagram) (h3 : 0 < mu.rowLen 2) (C chi t : R) :
+    C * ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) mu * chi / t = 0 := by
+  rw [ocneanuWeight_conventionD_eq_zero_of_three_rows q hq mu h3]
+  simp
 
 end QOU.BraidKnot

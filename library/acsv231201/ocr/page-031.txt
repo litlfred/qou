@@ -1,0 +1,45 @@
+1.3 Outline of the remaining chapters 13
+
+provide here. It seems almost certain that someone trying to understand the
+main subject of this text will profit from a review of the essentials of univariate
+asymptotics.
+
+Carrying out the multivariate analyses described in Part III requires a fair
+amount of mathematical background. Most of this is at the level of graduate
+coursework, ideally already known by practicing mathematicians but in reality
+often forgotten, never learned, or not learned in sufficient depth. The required
+background is composed of small to medium-sized chunks taken from many
+areas: undergraduate complex analysis, calculus on manifolds, saddle point in-
+tegration (both univariate and multivariate), algebraic topology, computational
+algebra, and Morse theory. Many of these background topics would require a
+full semester’s course to learn from scratch. That is too much material to in-
+clude here, but we also want to avoid the scenario where a reference library is
+required each time a reader picks up this book. Accordingly, we have included
+substantial background material.
+
+This background material is separated into two pieces. The first piece is
+the three chapters that comprise Part II, which contains material that we feel
+should be read or skimmed before the central topics are tackled. The topics in
+Part II have been sufficiently pared down that it is possible to learn them from
+scratch if necessary. Chapters 4 and 5 describe how to asymptotically evalu-
+ate saddle point integrals in one and several variables, respectively. Familiar-
+ity with these results is needed for the final steps in the analyses in Part III
+to make sense. Most of the results in these chapters can be found in a refer-
+ence such as [BH86]; the treatment here differs from the usual sources in that
+Fourier and Laplace type integrals are treated as instances of a single complex-
+phase case. Working in the holomorphic setting, analytic techniques (contour
+deformation) are used whenever possible, after which comparisons are given
+to the corresponding C® approach (which uses integration by parts in place
+of contour deformation). Chapter 6 covers domains of convergence of mul-
+tivariate power series and Laurent series, the notion of polynomial amoebas,
+and results relating amoebas to domains of convergence of Laurent series. We
+also note that much of Chapter 8, which recalls several tools from polynomial
+system solving such as Grébner bases, morally belongs with the background
+material in Part I]; we have placed it in Part II] so that we can compute quan-
+tities appearing in our multivariate analyses that are introduced in Chapter 7.
+It is possible to skip Chapter 8, if one wants to understand the theory and does
+not care about computation; however, few users of analytic combinatorics live
+in a world where computation does not matter.
+
+The remaining background material is relegated to the four appendices, each
+of which contains a reduction of a semester’s worth of material. It is not ex-

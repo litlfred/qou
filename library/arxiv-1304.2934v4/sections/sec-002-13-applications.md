@@ -9,8 +9,9 @@ source_pdf: 1304.2934v4.pdf
 source_sha256: b7ed2a9e85264568
 toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.927
-latex_coverage_ratio: 0.982
+latex_prose_ratio: 0.944
+latex_coverage_ratio: 0.983
+doc_brief: "MOD-φ CONVERGENCE, I: NORMALITY ZONES AND PRECISE DEVIATIONS — In this paper, we use the framework of mod-φ convergence to prove pre- cise large or moderate deviations for quite general sequences of"
 ---
 \label{subsec:applications}
 After proving our abstract results, we provide a large set of (new) examples where these results can be applied. 

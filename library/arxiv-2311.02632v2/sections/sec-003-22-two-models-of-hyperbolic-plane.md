@@ -7,10 +7,11 @@ section_number: 2.2
 pages: 5-6
 source_pdf: 2311.02632v2.pdf
 source_sha256: 0da5ba097b79340d
-doc_brief: "SPECTRUM OF THE LAPLACIAN ON THE FRICKE-MACBEATH SURFACE — The Fricke-Macbeath surface is the unique Hurwitz surface of genus 7 with 504 conformal automorphisms."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.963
-latex_coverage_ratio: 0.951
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.988
+doc_brief: "SPECTRUM OF THE LAPLACIAN ON THE FRICKE-MACBEATH SURFACE — The Fricke-Macbeath surface is the unique Hurwitz surface of genus 7 with 504 conformal automorphisms."
 ---
 In this subsection, we review the two models of the hyperbolic plane. One such model is the upper half-plane, denoted by $\uhp$. This consists of complex numbers $z$ where the imaginary part is positive: $\uhp = \{ z \in \C : \Im(z) > 0 \}$. This model of the hyperbolic plane carries a metric: $$ds^2 = \frac{dx^2 + dy^2}{y^2},$$ which yields a constant Gaussian curvature $-1$. The distance $\distH(z,z')$ between two points $z$ and $z'$ is given by $$\cosh \distH(z,z') = 1 + \frac{|z-z'|^2}{2\Im z \Im z'}.$$ Geodesics in $\uhp$ are represented as either vertical half-lines or semicircles that intersect the $x$-axis perpendicularly. For any two distinct points in $\uhp$, there is a unique geodesic connecting them. The Laplacian is given by $$-\Delta = y^2 \left( \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} \right).$$
 

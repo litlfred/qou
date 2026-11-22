@@ -8,7 +8,9 @@ pages: 27-28
 source_pdf: 2604.05244v1.pdf
 source_sha256: a5097e763dd89d06
 toc_source: outline
+doc_brief: "Edge universality in Floquet sideband spectra — We show that, for non-interacting fermions under a monochromatic phase drive (Tien– Gordon regime), the outgoing sideband occupations at a sharp Fermi"
 ---
+Proof of the soft-edge Airy limit (Theorem 6.1)
 The proof combines the turning-point estimate (6.5) with a Riemann-sum argument.
 Step 1: Pointwise approximation.
 The Debye–Olver uniform asymptotic [21] for integer order
@@ -52,4 +54,3 @@ U Ai(s + u) Ai(t + u) du.
 Conclusion.
 Combining Steps 2 and 3 gives supQ | bKA(s, t) −KAi(s, t)| →0. Since Q was arbi-
 trary, the convergence is locally uniform on R2.
-A.3

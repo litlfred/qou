@@ -25,7 +25,7 @@ The vanishing itself, and in a **stronger** form than stated there. If the weigh
 is transpose-invariant (`W_{λ'} = W_λ`, proved from hook-multiset invariance) and
 the operator is bar-odd (`χ^{λ'}(𝒪) = −χ^λ(𝒪)`), then `Σ_λ W_λ χ^λ(𝒪) = 0` —
 `QOU.QBeta.decay_combination_zero`, which needs no `H₃`-inducedness. What that
-kills is the tower's *Plancherel trace* of a bar-odd operator. It never touched
+kills is the tower's *`W`-weighted trace* `Σ_λ W_λ χ^λ` of a bar-odd operator. It never touched
 the operator's spectrum.
 
 ## The positive finding

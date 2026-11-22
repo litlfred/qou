@@ -1,0 +1,38 @@
+The argument is elementary, so we just outline it and leave the details to the reader.
+
+Let K bea simple closed curve in an oriented Riemannian 3-manifold M , which
+in the present case is either R’, S* or H’. Let ro > 0 bea small real number,
+and let Nr, be the ro-neighborhood of K in M,, that is, the set of all points in M
+whose distance from K is less than ro. We choose rp small enough so that Nr,
+is a traditional embedded tubular neighborhood of K .
+
+Let K = {X(s), 0 < s < L} bea parametrization of K by arc length, and let
+T(s) = dX/ds = X'(s) be the resulting unit tangent vector field along K . Extend
+this vector field to an orthonormal frame field T(s), N(s), B(s) along K. This is
+possible because the normal bundle of a smooth curve in an oriented manifold is
+always trivial. The notation is chosen to remind us of the Frenet frame, consisting
+of the tangent, principal normal and binormal vectors along a smooth curve of
+nowhere vanishing curvature in Euclidean 3-space R°.
+
+Given this orthonormal frame field along K , we can use the exponential map of
+the Riemannian manifold M to parametrize the tubular neighborhood Nr, by the
+product of K anda Euclidean disk of radius ro as follows:
+
+(s,u,v) > X(s, u,v) = expxi) (u N(s) + v B(s)),
+where 0 < s < L and 0 < uw + v’ <1. In R’, this would simplify to
+
+X(s, u,v) = X(s) + uN(s) + v Bis).
+
+Now let V(s, u, v) = OX(s, u, v)/Os be the tangent vector field to the s-coordinate
+curves, each of which is a simple closed curve having constant u and v coordinates.
+Since the exponential map takes rays in the normal plane to K at X(s) to geodesics
+orthogonal to K , each of the s-coordinate curves remains at the constant geodesic
+
+distance (u’ + v’)'” from K.
+
+LEMMA. The vector field V(s, u, v) = OX(s, u, v)/Os can be rescaled to make
+it divergence-free.
+
+The proof is elementary and we leave it to the reader.
+
+102

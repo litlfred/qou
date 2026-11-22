@@ -1,0 +1,44 @@
+B.3 Cohomology 475
+Finally, we define a product on pairs by
+(XY) X (XY) = (XX XX KY" UY KX").
+
+One nice property of this definition is that the singular chain complex C(X, Y)
+for a pair (X,Y) = (X’, Y’) x (X”, Y”) turns out to be isomorphic to a tensor
+product of the singular chain complexes for the pairs (X’, Y’) and (X”, Y’’). The
+Kiinneth product formula for chain complexes results in a homology formula
+for products of pairs.
+
+Corollary B.17 (Kiinneth formula for pairs). For pairs (X’, X"’) and (Y’, Y”’),
+Hy(X! XX", XX YY" UY! XX") = Hy ((X’, Y’) x (X", ¥”))
+= DAY) @ HX Y”).
+
+ptq=n
+
+B.3 Cohomology
+
+Given a chain complex
+
+3 Cpt MS Cy Ce a
+
+we may replace each vector space C, by its dual C” consisting of linear maps
+from C, to C. As for homology, we consider cohomology with complex co-
+efficients. The elements of C” are called n-cochains and the boundary map
+On: Cy 3 Cy—1 on n-chains induces a dual map 6” : c’-! — C" onn-cochains:
+if f € C""! is a linear map from C,-; to C then 6"(f) € C” is the linear map
+f° 0, from C,, to C. It can be verified that 6” o 6"-! = 0 for all n, so we have a
+cochain complex
+
+n=
+
+” 8 _
+ee Cece& Cc Teo,
+
+The quotient of the kernel of 5” (the n-cocycles) by the image of 6"~! (the n-
+coboundaries) is called the nth cohomology group of C and is denoted H"(C).
+The value of an n-cocycle v evaluated at an n-cycle 0 depends only on the
+cohomology class [v] of v and the homology class [a] of o, so this evaluation
+defines a product (w,7) for w € H"(C) and 7 € H,(C). If C = C(X) is the
+singular chain complex (or smooth chain complex) of a topological space X,
+then we use the notation C’(X) = C” for the singular n-cochains of X and
+H"(X) = H"(C) for the nth singular cohomology group of X. If X is a cell
+complex then H"(X) is the dual space of H,,(X).

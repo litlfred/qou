@@ -2,11 +2,11 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2207.07246v2",
  "source_sha256": "91e70e5fe39e07a5",
- "brief": "Path Integral Quantum Monte Carlo Method for Light Nuclei — 58 sections: Front matter; ABSTRACT; LIST OF TABLES",
- "extended": "**Path Integral Quantum Monte Carlo Method for Light Nuclei**\n\n*Rong Chen*\n\n165 pp, 58 sections.\n\n**Outline.** Front matter; ABSTRACT; LIST OF TABLES; LIST OF FIGURES; CHAPTER; 1 INTRODUCTION; 1.1 Background; 1.1.1 Evolution of the Nucleon-Nucleon Interac; Meson exchange theory; 1.1.2 Methods of Solving the Many-Body Problem; Phenomenological approaches; First principle approaches; 1.2 Motivation; 1.3 Outline; 2 PATH INTEGRAL QUANTUM MONTE CARLO; 2.1 Theoretical Framework; 2.2 Hamiltonian; 2.3 Model Space",
+ "brief": "Path Integral Quantum Monte Carlo Method for Light Nuclei — 73 sections: Front matter; ABSTRACT; ACKNOWLEDGEMENTS",
+ "extended": "**Path Integral Quantum Monte Carlo Method for Light Nuclei**\n\n*Rong Chen*\n\n165 pp, 73 sections.\n\n**Outline.** Front matter; ABSTRACT; ACKNOWLEDGEMENTS; LIST OF TABLES; LIST OF FIGURES; CHAPTER; 1 INTRODUCTION; 1.1 Background; 1.1.1 Evolution of the Nucleon-Nucleon Interac; Meson exchange theory; Chiral effective field theory; 1.1.2 Methods of Solving the Many-Body Problem; Phenomenological approaches; First principle approaches; 1.2 Motivation; 1.3 Outline; 2 PATH INTEGRAL QUANTUM MONTE CARLO; 2.1 Theoretical Framework",
  "tokens": {
-  "brief": 27,
-  "extended": 127
+  "brief": 28,
+  "extended": 131
  },
  "sections": [
   {
@@ -17,285 +17,360 @@
   {
    "id": "sec-000-abstract",
    "title": "ABSTRACT",
-   "pages": "2-8"
+   "pages": "2-4"
   },
   {
-   "id": "sec-001-list-of-tables",
+   "id": "sec-001-acknowledgements",
+   "title": "ACKNOWLEDGEMENTS",
+   "pages": "4-8"
+  },
+  {
+   "id": "sec-002-list-of-tables",
    "title": "LIST OF TABLES",
    "pages": "8-9"
   },
   {
-   "id": "sec-002-list-of-figures",
+   "id": "sec-003-list-of-figures",
    "title": "LIST OF FIGURES",
    "pages": "9-11"
   },
   {
-   "id": "sec-003-chapter",
+   "id": "sec-004-chapter",
    "title": "CHAPTER",
    "pages": "11-11"
   },
   {
-   "id": "sec-004-1-introduction",
+   "id": "sec-005-1-introduction",
    "title": "INTRODUCTION",
    "pages": "11-11"
   },
   {
-   "id": "sec-005-11-background",
+   "id": "sec-006-11-background",
    "title": "Background",
    "pages": "11-11"
   },
   {
-   "id": "sec-006-111-evolution-of-the-nucleon-nucleon-interaction",
+   "id": "sec-007-111-evolution-of-the-nucleon-nucleon-interaction",
    "title": "Evolution of the Nucleon-Nucleon Interaction",
    "pages": "11-12"
   },
   {
-   "id": "sec-007-meson-exchange-theory",
+   "id": "sec-008-meson-exchange-theory",
    "title": "Meson exchange theory",
-   "pages": "12-15"
+   "pages": "12-14"
   },
   {
-   "id": "sec-008-112-methods-of-solving-the-many-body-problem",
+   "id": "sec-009-chiral-effective-field-theory",
+   "title": "Chiral effective field theory",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-010-112-methods-of-solving-the-many-body-problem",
    "title": "Methods of Solving the Many-Body Problem",
    "pages": "15-15"
   },
   {
-   "id": "sec-009-phenomenological-approaches",
+   "id": "sec-011-phenomenological-approaches",
    "title": "Phenomenological approaches",
    "pages": "15-16"
   },
   {
-   "id": "sec-010-first-principle-approaches",
+   "id": "sec-012-first-principle-approaches",
    "title": "First principle approaches",
    "pages": "16-20"
   },
   {
-   "id": "sec-011-12-motivation",
+   "id": "sec-013-12-motivation",
    "title": "Motivation",
    "pages": "20-23"
   },
   {
-   "id": "sec-012-13-outline",
+   "id": "sec-014-13-outline",
    "title": "Outline",
    "pages": "23-24"
   },
   {
-   "id": "sec-013-2-path-integral-quantum-monte-carlo",
+   "id": "sec-015-2-path-integral-quantum-monte-carlo",
    "title": "PATH INTEGRAL QUANTUM MONTE CARLO",
    "pages": "24-24"
   },
   {
-   "id": "sec-014-21-theoretical-framework",
+   "id": "sec-016-21-theoretical-framework",
    "title": "Theoretical Framework",
    "pages": "24-29"
   },
   {
-   "id": "sec-015-22-hamiltonian",
+   "id": "sec-017-22-hamiltonian",
    "title": "Hamiltonian",
    "pages": "29-33"
   },
   {
-   "id": "sec-016-23-model-space",
+   "id": "sec-018-23-model-space",
    "title": "Model Space",
    "pages": "33-35"
   },
   {
-   "id": "sec-017-24-wave-function",
+   "id": "sec-019-24-wave-function",
    "title": "Wave Function",
    "pages": "35-42"
   },
   {
-   "id": "sec-018-25-propagator",
+   "id": "sec-020-25-propagator",
    "title": "Propagator",
    "pages": "42-45"
   },
   {
-   "id": "sec-019-26-time-step-error-structure",
+   "id": "sec-021-26-time-step-error-structure",
    "title": "Time Step Error Structure",
    "pages": "45-47"
   },
   {
-   "id": "sec-020-27-computational-details",
+   "id": "sec-022-27-computational-details",
    "title": "Computational Details",
    "pages": "47-47"
   },
   {
-   "id": "sec-021-271-recast",
+   "id": "sec-023-271-recast",
    "title": "Recast",
    "pages": "47-50"
   },
   {
-   "id": "sec-022-272-path-diagrams",
+   "id": "sec-024-272-path-diagrams",
    "title": "Path Diagrams",
    "pages": "50-53"
   },
   {
-   "id": "sec-023-273-calculating-the-path",
+   "id": "sec-025-273-calculating-the-path",
    "title": "Calculating the Path",
    "pages": "53-57"
   },
   {
-   "id": "sec-024-274-calculating-the-samples",
+   "id": "sec-026-274-calculating-the-samples",
    "title": "Calculating the Samples",
    "pages": "57-59"
   },
   {
-   "id": "sec-025-28-sign-problem",
+   "id": "sec-027-28-sign-problem",
    "title": "Sign Problem",
    "pages": "59-61"
   },
   {
-   "id": "sec-026-3-monte-carlo-algorithms",
+   "id": "sec-028-3-monte-carlo-algorithms",
    "title": "MONTE CARLO ALGORITHMS",
    "pages": "61-61"
   },
   {
-   "id": "sec-027-31-metropolis-algorithm",
+   "id": "sec-029-31-metropolis-algorithm",
    "title": "Metropolis Algorithm",
    "pages": "61-64"
   },
   {
-   "id": "sec-028-32-methods-of-sampling",
+   "id": "sec-030-32-methods-of-sampling",
    "title": "Methods of Sampling",
    "pages": "64-66"
   },
   {
-   "id": "sec-029-321-single-bead-sampling",
+   "id": "sec-031-321-single-bead-sampling",
    "title": "Single-Bead Sampling",
    "pages": "66-69"
   },
   {
-   "id": "sec-030-322-multi-level-sampling",
+   "id": "sec-032-322-multi-level-sampling",
    "title": "Multi-level Sampling",
    "pages": "69-77"
   },
   {
-   "id": "sec-031-323-regular-sampling",
+   "id": "sec-033-323-regular-sampling",
    "title": "Regular Sampling",
    "pages": "77-80"
   },
   {
-   "id": "sec-032-324-directional-importance-sampling",
+   "id": "sec-034-324-directional-importance-sampling",
    "title": "Directional Importance Sampling",
    "pages": "80-87"
   },
   {
-   "id": "sec-033-33-path-updating-strategy",
+   "id": "sec-035-33-path-updating-strategy",
    "title": "Path Updating Strategy",
    "pages": "87-88"
   },
   {
-   "id": "sec-034-34-sampling-strategies",
+   "id": "sec-036-34-sampling-strategies",
    "title": "Sampling Strategies",
    "pages": "88-90"
   },
   {
-   "id": "sec-035-4-ground-state-calculations-of-light-nuclei",
+   "id": "sec-037-4-ground-state-calculations-of-light-nuclei",
    "title": "GROUND STATE CALCULATIONS OF LIGHT NUCLEI",
    "pages": "90-90"
   },
   {
-   "id": "sec-036-41-ground-state-energies",
+   "id": "sec-038-41-ground-state-energies",
    "title": "Ground State Energies",
    "pages": "90-90"
   },
   {
-   "id": "sec-037-411-preparations",
+   "id": "sec-039-411-preparations",
    "title": "Preparations",
-   "pages": "90-103"
+   "pages": "90-91"
   },
   {
-   "id": "sec-038-42-radii",
+   "id": "sec-040-412-calculations",
+   "title": "Calculations",
+   "pages": "91-98"
+  },
+  {
+   "id": "sec-041-413-verifications",
+   "title": "Verifications",
+   "pages": "98-103"
+  },
+  {
+   "id": "sec-042-42-radii",
    "title": "Radii",
    "pages": "103-105"
   },
   {
-   "id": "sec-039-43-density-distributions",
+   "id": "sec-043-43-density-distributions",
    "title": "Density Distributions",
    "pages": "105-110"
   },
   {
-   "id": "sec-040-44-euclidean-response-functions",
+   "id": "sec-044-44-euclidean-response-functions",
    "title": "Euclidean Response Functions",
    "pages": "110-116"
   },
   {
-   "id": "sec-041-45-parallel-scalability-of-the-code",
+   "id": "sec-045-45-parallel-scalability-of-the-code",
    "title": "Parallel Scalability of the Code",
    "pages": "116-118"
   },
   {
-   "id": "sec-042-5-conclusion",
+   "id": "sec-046-5-conclusion",
    "title": "CONCLUSION",
    "pages": "118-118"
   },
   {
-   "id": "sec-043-51-summary",
+   "id": "sec-047-51-summary",
    "title": "Summary",
    "pages": "118-119"
   },
   {
-   "id": "sec-044-52-outlook",
+   "id": "sec-048-52-outlook",
    "title": "Outlook",
    "pages": "119-121"
   },
   {
-   "id": "sec-045-references",
+   "id": "sec-049-references",
    "title": "REFERENCES",
    "pages": "121-130"
   },
   {
-   "id": "sec-046-appendix",
+   "id": "sec-050-appendix",
    "title": "APPENDIX",
-   "pages": "130-135"
+   "pages": "130-132"
   },
   {
-   "id": "sec-047-theoretical-foundation",
+   "id": "sec-051-b-diffusion-monte-carlo-brief",
+   "title": "B DIFFUSION MONTE CARLO BRIEF",
+   "pages": "132-133"
+  },
+  {
+   "id": "sec-052-b1-time-dependent-greens-function",
+   "title": "B.1 Time-Dependent Green's Function",
+   "pages": "133-134"
+  },
+  {
+   "id": "sec-053-b2-diffusion-monte-carlo",
+   "title": "B.2 Diffusion Monte Carlo",
+   "pages": "134-135"
+  },
+  {
+   "id": "sec-054-theoretical-foundation",
    "title": "Theoretical foundation",
    "pages": "135-136"
   },
   {
-   "id": "sec-048-interpretation",
+   "id": "sec-055-interpretation",
    "title": "Interpretation",
    "pages": "136-137"
   },
   {
-   "id": "sec-049-theoretical-foundation",
+   "id": "sec-056-b3-diffusion-monte-carlo-with-importance-samplin",
+   "title": "B.3 Diffusion Monte Carlo with Importance Sampling",
+   "pages": "137-137"
+  },
+  {
+   "id": "sec-057-theoretical-foundation",
    "title": "Theoretical foundation",
    "pages": "137-139"
   },
   {
-   "id": "sec-050-time-step-error-estimating",
+   "id": "sec-058-time-step-error-estimating",
    "title": "Time step error estimating",
-   "pages": "139-144"
+   "pages": "139-140"
   },
   {
-   "id": "sec-051-c1-formalism",
+   "id": "sec-059-approximated-pure-estimator-p",
+   "title": "Approximated pure estimator p",
+   "pages": "140-141"
+  },
+  {
+   "id": "sec-060-b4-diffusion-monte-carlo-algorithm",
+   "title": "B.4 Diffusion Monte Carlo Algorithm",
+   "pages": "141-143"
+  },
+  {
+   "id": "sec-061-c-auxiliary-field-diffusion-monte-carlo-brief",
+   "title": "C AUXILIARY FIELD DIFFUSION MONTE CARLO BRIEF",
+   "pages": "143-144"
+  },
+  {
+   "id": "sec-062-c1-formalism",
    "title": "C.1 Formalism",
    "pages": "144-145"
   },
   {
-   "id": "sec-052-c2-hubbard-stratonovich-transformation",
+   "id": "sec-063-c2-hubbard-stratonovich-transformation",
    "title": "C.2 Hubbard-Stratonovich Transformation",
    "pages": "145-147"
   },
   {
-   "id": "sec-053-c3-afdmc-and-the-standard-dmc-with-importance-sa",
+   "id": "sec-064-c3-afdmc-and-the-standard-dmc-with-importance-sa",
    "title": "C.3 AFDMC and the Standard DMC with Importance Sampling",
-   "pages": "147-149"
+   "pages": "147-148"
   },
   {
-   "id": "sec-054-c5-trial-wave-function",
+   "id": "sec-065-c4-quadratic-form-of-the-av6-interaction",
+   "title": "C.4 Quadratic Form of the AV6' Interaction",
+   "pages": "148-149"
+  },
+  {
+   "id": "sec-066-c5-trial-wave-function",
    "title": "C.5 Trial Wave Function",
-   "pages": "149-154"
+   "pages": "149-150"
   },
   {
-   "id": "sec-055-e1-angle-averaged-euclidean-response-functions",
+   "id": "sec-067-d-av6-linearizing-trick",
+   "title": "D AV6' LINEARIZING TRICK",
+   "pages": "150-153"
+  },
+  {
+   "id": "sec-068-e-additional-calculations-of-the-response-functi",
+   "title": "E ADDITIONAL CALCULATIONS OF THE RESPONSE FUNCTIONS",
+   "pages": "153-154"
+  },
+  {
+   "id": "sec-069-e1-angle-averaged-euclidean-response-functions",
    "title": "E.1 Angle Averaged Euclidean Response Functions",
-   "pages": "154-165"
+   "pages": "154-163"
   },
   {
-   "id": "sec-056-biographical-sketch",
+   "id": "sec-070-e2-euclidean-response-functions-in-different-coo",
+   "title": "E.2 Euclidean Response Functions in Different Coordinates",
+   "pages": "163-165"
+  },
+  {
+   "id": "sec-071-biographical-sketch",
    "title": "BIOGRAPHICAL SKETCH",
    "pages": "165-165"
   }

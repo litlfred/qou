@@ -1,0 +1,58 @@
+12 2, CELLULAR ALGEBRAS
+
+Now suppose that ys = A. Then by Proposition 2.7(iii) we find that
+
+(et) =M +aey= M+ > reagce, = M + ch (ae,y).
+s€T()
+
+Hence, @ is just the natural projection C*® > C*/M composed with multiplication
+by (ae, y)- o
+
+2.11 Corollary Suppose that R is a field and let X and yt be elements of A such
+that DX #0 and DX =D". Then = ps.
+
+Proof. By assumption there exists a non-zero homomorphism 6:C* —+ D#;
+whence \ > yp by (i). By symmetry, p > \. Thus A = pz as required. oO
+
+2. Simple modules in a cellular algebra
+
+In this section we show that every irreducible A-module is isomorphic to some
+D#", for some yt € A, and we describe the decomposition matrix of A. Throughout,
+we assume that the poset A is finite; thus A is a finite dimensional algebra.
+
+2.12 Lemma Suppose that \ is a minimal element of A. Then rad CG? = 0; con-
+sequently, C* = D>,
+
+Proof. By way of contradiction, suppose that rad C* # 0; then there exists some
+x € C such that (x,y) = 0 for all y € C*. Write « = Y7, red and consider
+# = rick. By Proposition 2.7(iii), if u,v € T(A) then #ed, € A*. Therefore, by
+the minimality of A and Corollary 2.3(ili), ta € A for all a in A. In particular,
+# = #-1 belongs to A», yielding the promised contradiction. oO
+
+2.13 Theorem (Graham-—Lehrer) Suppose that R is a field and that A is fi-
+nite. Then {D*|\ EA and D* #0} is a complete set of pairwise inequivalent
+irreducible A-modules.
+
+Proof. By Proposition 2.9 if D" 4 0 then D# is irreducible and by Corollary 2.11
+D# &% D* whenever \ € A and \ F yp. It remains to show that every irreducible
+A-module is isomorphic to one of the non-zero modules D¥ with p € A.
+
+By the definition, any total ordering of A gives rise to a filtration of A in which
+each composition factor is isomorphic to a cell module of A. Consequently, to prove
+Theorem it suffices to show that if A € A then every irreducible composition factor
+of C? is isomorphic to D# for some yt € A. To prove this we argue by induction on
+X.
+
+If \ is a minimal element of A then C*% = D* by Lemma 2.12 and there is
+nothing to prove.
+
+Now suppose that A is not minimal and let D be an irreducible composition
+factor of C*. Then either D = D* or D is a composition factor of rad C%. Let x
+be an element of rad C? and let Ay be the R-module spanned by
+
+{c, |v Ee AAP v and u,v € T(v)}.
+
+Then A) is a two-sided ideal of A, by (2.1)(i) and Corollary 2.3(i), and xA, = 0
+by Corollary 2.3(iii). Therefore, any composition factor of rad C? is a composition
+factor of A/A,. However, by construction, A/A, has a composition series with
+composition factors isomorphic to cell modules C” with y € A and \ > v. By

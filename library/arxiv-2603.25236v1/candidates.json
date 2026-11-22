@@ -1,0 +1,72 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2603.25236v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "fba6853d6e544e19d5dc4cade32ee0be0dc5ac6b7b70f23e937909b85e96159c",
+  "file": "2603.25236v1.pdf"
+ },
+ "provenance": {
+  "title": "A Concentration of Measure Phenomenon in Lattice Yang-Mills",
+  "authors": "Lattice Yang-Mills",
+  "arxiv": {
+   "id": "2603.25236",
+   "version": "1",
+   "primary_class": "math-ph",
+   "stamp_date": "26 Mar 2026"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "theorem": 1
+  },
+  "formalization_candidates": 1,
+  "by_domain": {
+   "math": 1
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 1
+  },
+  "by_evidence_location": {
+   "both": 1
+  },
+  "by_lean_status": {
+   "unformalized": 1
+  },
+  "needs_lean_proof": 1
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "As N \u2192\u221ethe rescaled measures \u03c1N(Nt) converge weakly to the measure q 2K \u03c0D(D\u22121)e\u2212 2K D(D\u22121) t2dt.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "both",
+   "evidence_locator": "In-paper proof in sections/sec-front-matter.md (p. 1-8) citing [4]",
+   "external_refs": [
+    "[4]"
+   ],
+   "proof_excerpt": "Let ml stand for the l-th moment of Gaussian above. In other words, let ml = \uf8f1 \uf8f2 \uf8f3 0 if l is odd (l\u22121)!! \u00004K D(D\u22121) \u0001 l 2 if l is even. It will be shown below that the l-th moment of \u03c1N(t) is equal to ml Nl + O( 1 Nl+1 ), which of course implies that the l-th moment of \u03c1N(Nt) is ",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-8",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: both, In-paper proof in sections/sec-front-matter.md (p. 1-8) citing [4]). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-front-matter-01",
+   "block_iri": "library/arxiv-2603.25236v1/blocks/thm-sec-front-matter-01",
+   "claim_id": "arxiv-2603.25236v1#thm-sec-front-matter-01",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  }
+ ]
+}

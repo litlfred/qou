@@ -1,0 +1,189 @@
+{
+  "$schema": "folio-vector-figures/v1",
+  "doc_id": "arxiv-2109.04664v4",
+  "figures": [
+    {
+      "id": "vfig-p012",
+      "file": "figures/vfig-p012.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 12
+      },
+      "page": 12,
+      "rotation": 0,
+      "captionLabels": [
+        "1"
+      ],
+      "region": [
+        143.02,
+        131.79,
+        440.5,
+        349.9
+      ],
+      "assembly": {
+        "drawings": 15,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              143.02,
+              131.79,
+              440.5,
+              349.9
+            ],
+            "drawings": 15,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "1 −ϕ(ξ)/ξ",
+              "−ϕ(ξ)/ξ",
+              "(1 −ϕ(ξ)/ξ) tan θ√",
+              "−1",
+              "−(1 + ϕ(ξ)/ξ) tan θ√",
+              "−1",
+              "O",
+              "b−",
+              "b+",
+              "tan θ√",
+              "−1",
+              "−tan θ√",
+              "−1",
+              "−2 tan θ√",
+              "−1"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              182.71,
+              171.31,
+              262.08,
+              250.68
+            ],
+            "parent": "b2",
+            "labels": [
+              "b−"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              262.08,
+              196.12,
+              381.14,
+              290.37
+            ],
+            "parent": "b2",
+            "labels": [
+              "b+",
+              "−tan θ√",
+              "−1"
+            ]
+          },
+          {
+            "id": "b2",
+            "bbox": [
+              182.71,
+              151.47,
+              381.14,
+              330.06
+            ],
+            "parent": null,
+            "labels": [
+              "(1 −ϕ(ξ)/ξ) tan θ√",
+              "−1",
+              "−(1 + ϕ(ξ)/ξ) tan θ√",
+              "−1",
+              "−1"
+            ]
+          },
+          {
+            "id": "b3",
+            "bbox": [
+              222.4,
+              197.11,
+              321.61,
+              224.89
+            ],
+            "parent": "b2",
+            "labels": [
+              "O"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 2,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              143.02,
+              211.0,
+              440.21,
+              211.0
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              439.01,
+              209.41,
+              440.5,
+              212.59
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              262.08,
+              132.09,
+              262.08,
+              349.9
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              260.49,
+              131.79,
+              263.67,
+              133.28
+            ]
+          },
+          {
+            "from": "b0",
+            "to": "b1",
+            "bbox": [
+              182.71,
+              177.35,
+              381.14,
+              290.37
+            ]
+          },
+          {
+            "from": "b2",
+            "to": "b1",
+            "bbox": [
+              182.71,
+              270.53,
+              262.08,
+              270.53
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 52
+      }
+    }
+  ]
+}

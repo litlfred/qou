@@ -1,0 +1,32 @@
+514 Stratification and stratified Morse theory
+
+the former case « is called a manifold point or interior point of M, while in
+the latter case x is called a boundary point of M.
+
+Example D.1. A closed ball in any dimension d is a manifold with boundary,
+while a cube [0, 1]“ and a simplex {a € R¢ : x; > 0 for all j and Lie xj = 1}
+are not. 4
+
+Example D.2. If H = {(x,y) € R® : y > 0} is the upper half-plane then H is
+a manifold with boundary, the boundary points being the x-axis. Now let K =
+{(x,y) € R? : x,y = 0} denote the positive quarter plane. The map 4(x, y) =
+(x? — y*, 2xy) from K to H, constructed by taking the real and imaginary parts
+of (x + iy)’, is analytic and one to one, so it may seem that K is diffeomorphic
+to H and thus a manifold with boundary. However, ¢~! is not differentiable at
+the origin, and in fact no neighborhood of the origin in K is diffeomorphic to
+a neighborhood of the origin in a half-plane. Thus, K is not a manifold with
+boundary. 4
+
+Exercise D.1. Give an example of a manifold M ¢ Ré with closure M whose
+boundary M\ M is also a manifold, such that M is not a manifold with bound-
+ary.
+
+A generalization of manifolds with boundary is the notion of a d-manifold
+with corners, where every point has a neighborhood diffeomorphic to some or-
+thant R?*xR&, for some k < d; see Figure D.1. Cubes and simplices are mani-
+folds with corners, however complex algebraic varieties that are not smooth are
+also typically not manifolds with corners. This difficulty is why we introduce
+the generality of stratified spaces.
+
+Figure D.1 The closed quadrant M is a manifold with corners, but not a manifold
+with boundary.

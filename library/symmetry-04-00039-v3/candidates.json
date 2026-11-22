@@ -3,21 +3,56 @@
  "doc_id": "symmetry-04-00039-v3",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "1aa8a81916887f8e2a6b8932843c497f6113993a49ac6e96ca02ce55db738114",
   "file": "symmetry-04-00039-v3.pdf"
  },
  "provenance": {
-  "title": "Symmetry 2012, 4, 39-115; doi:10.3390/sym4010039 symmetry ISSN 2073-8994 www.mdpi.com/journal/symmetry Article Knots on a Torus: A Model of the Elementary Particles Jack S. Avrin 28715 Leacrest Drive, Rancho Palos Verdes, CA 90275, USA; E-Mail: javrin@aol.com",
-  "authors": null,
+  "title": "Knots on a Torus: A Model of the Elementary Particles",
+  "authors": "Jack S. Avrin",
   "arxiv": null,
   "doi": "10.3390/sym4010039"
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
-  "formalization_candidates": 0
+  "candidates": 1,
+  "by_kind": {
+   "proposition": 1
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 1
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  }
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "As to the pentaquark, the report (http://www.phy.ohiou.edu/~hicks/thplus/thplus3.html) of the experimental result states that \u201cThe valence quark configuration of the exotic state contains two up quarks, two down quarks, and an anti strange quark\u201d8 (See Figure 57 below) which was found to decay into a neutron and a K \uf02b meson.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-029-113-new-particles.md (p. 56-57)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-029-113-new-particles.md",
+   "section_title": "New Particles",
+   "pages": "56-57",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-029-113-new-particles.md (p. 56-57)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-029-01",
+   "block_iri": "library/symmetry-04-00039-v3/blocks/prop-sec-029-01",
+   "claim_id": "symmetry-04-00039-v3#prop-sec-029-01"
+  }
+ ]
 }

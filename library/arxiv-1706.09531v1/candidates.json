@@ -1,0 +1,85 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1706.09531v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "63e34483b4c3fc3672456d444302299baf166792c359af5f9a3c27674fd2a692",
+  "file": "1706.09531v1.pdf"
+ },
+ "provenance": {
+  "title": "Advantages of Unity With SU(4)-Color",
+  "authors": "Baryogenesis and Proton Decay1",
+  "arxiv": {
+   "id": "1706.09531",
+   "version": "1",
+   "primary_class": "hep-ph",
+   "stamp_date": "29 Jun 2017"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 2,
+  "by_kind": {
+   "proposition": 2
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 2
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 2
+  },
+  "by_evidence_location": {
+   "in-paper": 2
+  }
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "Speci\ufb01cally, one would expect: [\u0393(p \u2192\u00b5+K\u25e6)/\u0393(p \u2192\u03bdK+)]new d=5 \u2248(5 \u221250)% (31) This is to be compared with an expected branching ratio of about (5\u201310)% for the case of standard d = 5 operators for SUSY SO(10), and about 10\u22123 for SUSY SU(5) (see Eq.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-019-71-preliminaries.md (p. 43-50)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-019-71-preliminaries.md",
+   "section_title": "Preliminaries",
+   "pages": "43-50",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-019-71-preliminaries.md (p. 43-50)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-019-01",
+   "block_iri": "library/arxiv-1706.09531v1/blocks/prop-sec-019-01",
+   "claim_id": "arxiv-1706.09531v1#prop-sec-019-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "Observation of a large branching ratio of the (\u00b5+K\u25e6)-mode (compared to the (\u03bdK+)-mode) of (30\u201350)% (say) would be a clear signal for the relevance of the neutrino-mass related new d = 5 operators for proton decay, in the context of a SUSY SO(10) or string-G(2, 2, 4) model in 4D.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-019-71-preliminaries.md (p. 43-50)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-019-71-preliminaries.md",
+   "section_title": "Preliminaries",
+   "pages": "43-50",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-019-71-preliminaries.md (p. 43-50)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-019-02",
+   "block_iri": "library/arxiv-1706.09531v1/blocks/prop-sec-019-02",
+   "claim_id": "arxiv-1706.09531v1#prop-sec-019-02"
+  }
+ ]
+}

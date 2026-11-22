@@ -1,0 +1,33 @@
+CHAPTER 1. INTRODUCTION
+
+of weak n-categories for higher n, although there have been many efforts in this direction
+[9] [10]. In the following, by n-categories we mean weak n-categories. Special n-
+categories can be constructed from k-categories with certain extra structures for k <n.
+For instance, a monoidal 1-category is a 2-category and a braided monoidal 1-category
+is a 3-category. When constructing TQFTs, especially (2 + 1)- and (3 + 1)-TQFTs, one
+usually utilize these special n-categories to bypass the barrier of the poor definition of
+general n-categories. We give a brief overview of some categorical constructions of (2+1)-
+and (3 + 1)-TQFTs below.
+
+There has been a significant amount of achievements in (2+1)-TQFTs. N. Reshetikhin
+and V. Turaev constructed an invariant of 3-manifolds (Reshetikhin-Turaev invariant)
+using modular tensor categories, which is believed to be the mathematical realization of
+Witten’s TQFT from non-abelian Chern-Simon theories [I]. V. Turaev and O. Viro gave
+a state-sum invariant of 3-manifolds (Turaev-Viro invariant) with the data from a ribbon
+fusion category [12]. Later this invariant was generalized by J. Barrett and B. Westbury
+so that it takes a spherical fusion category as input [13]. The Reshetikhin-Turaev in-
+variant with the center of a spherical fusion category C as input is shown to equal the
+Turaev-Viro invariant with C as input [14] [15] [16]. Apart from these categorical con-
+structions of TQFTs, another approach is by using certain Hopf algebras, among which
+the Kuperberg invariant [17] and the Hennings invariant [18] [19] are non-semisimple
+generalizations of the Turaev-Viro invariant and the Reshetikhin-Turaev invariant, re-
+spectively. A special case of the Kuperberg invariant reduces to the Dijkgraaf-Witten
+theory 20]. The study of (2 + 1)-TQFTs has had great effects on quantum groups,
+3d topology and knot theories. For example, the Turaev-Viro invariant can distinguish
+certain manifolds which are homotopy equivalent.
+
+Going one dimensional higher. The theory of (3 + 1)-TQFTs, however, is not under-
+
+stood as well as its counter-part in (2+ 1) dimension. The Dijkgraaf-Witten invariant
+
+2

@@ -1,0 +1,3774 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1001.2180v2",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p005-1",
+   "page": 5,
+   "mark": "1",
+   "text": "|λ|=n",
+   "marks": [
+    {
+     "page": 4,
+     "context": "ℓ= o(n"
+    }
+   ],
+   "block": "library/arxiv-1001.2180v2/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p015-1",
+   "page": 15,
+   "mark": "1",
+   "text": "ItisaparticularcaseoftheProhorovtheorem:ifEisaseparableandcompletemetricspace(inotherwords,apolish space), then the same holds for the set of probability measures M (E), see [Bil69, Chapter 1]. As a consequence, convergence in probability makes sense for random probability measures on a closed subset of the real line.",
+   "marks": [
+    {
+     "page": 14,
+     "context": "n↓|ρ|⟨m"
+    },
+    {
+     "page": 15,
+     "context": "the∗-weaktopology"
+    },
+    {
+     "page": 15,
+     "context": "2nmax(1, |m"
+    }
+   ],
+   "block": "library/arxiv-1001.2180v2/blocks/prose-sec-018"
+  },
+  {
+   "id": "fn-p018-1",
+   "page": 18,
+   "mark": "2",
+   "text": "Itcanalsobedeﬁnedviageneratingfunctions.",
+   "marks": [
+    {
+     "page": 17,
+     "context": "(1 −q), (1 −q)q, (1 −q)q"
+    },
+    {
+     "page": 17,
+     "context": "convergetowardsthevector(1 −q, (1 −q)q, (1 −q)q"
+    },
+    {
+     "page": 17,
+     "context": "then,foranyk≥1,theﬁniterandomvector(Wn,q,1, Wn,q,"
+    },
+    {
+     "page": 18,
+     "context": "deﬁnedbyinduction"
+    },
+    {
+     "page": 18,
+     "context": "E[X1 X"
+    },
+    {
+     "page": 18,
+     "context": "Lemma17(Orderofmagnitudeofcumulants).Foranyx1, x"
+    },
+    {
+     "page": 18,
+     "context": "E[X1 • X"
+    },
+    {
+     "page": 18,
+     "context": "Lemma18(Orderofmagnitudeofdisjointcumulants).Foranyx1, x"
+    }
+   ],
+   "block": "library/arxiv-1001.2180v2/blocks/prose-sec-021"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p026-1",
+   "page": 26,
+   "mark": "219",
+   "text": "of Trans. Math. Monographs. AMS, 2003. [KOO98] S. V. Kerov, A. Okounkov, and G. Olshanski. The boundary of the Young graph with Jack edge multiplicities. International Mathematics Research Notices, 1998(4):173, 1998. [KO94] S. V. Kerov and G. Olshanski. Polynomial functions on the set of Young diagrams. Comptes Rendus Acad. Sci. Paris Série I, 319:121–126, 1994. [KOV04] S. V. Kerov, G. Olshanski, and A. M. Vershik. Harmonic analysis on the inﬁnite symmetric group. Invent. Math., 158:551–642, 2004.",
+   "block": "library/arxiv-1001.2180v2/blocks/prose-sec-027"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "Theorem1impliesthattheﬁrstkrowscontainasymptotically(1 −q"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "Theorem1(Firstorder asymptotics).Supposeq< 1.Ifλ = (λ"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "Theorem1(Firstorder asymptotics).Supposeq< 1.Ifλ = (λ1≥λ"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "∀i ≥1,λ"
+  },
+  {
+   "page": 2,
+   "mark": "q",
+   "context": "n−→Mn,q(1 −q)"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "n−→Mn,q(1 −q) q"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "\u0012λ"
+  },
+  {
+   "page": 2,
+   "mark": "q",
+   "context": "n−(1 −q)"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "n−(1 −q) q"
+  },
+  {
+   "page": 2,
+   "mark": "q",
+   "context": "q,i] = (1 −q)"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "q,i] = (1 −q) q"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "q,i] = (1 −q) qi−1 −(1 −q)"
+  },
+  {
+   "page": 2,
+   "mark": "q",
+   "context": "q,i] = (1 −q) qi−1 −(1 −q)2"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "cov(Yq,i, Yq,j) = −(1 −q)"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "cov(Yq,i, Yq,j) = −(1 −q)2q"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "E[Y"
+  },
+  {
+   "page": 2,
+   "mark": "x",
+   "context": "Z"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "Zx"
+  },
+  {
+   "page": 2,
+   "mark": "x",
+   "context": "Z"
+  },
+  {
+   "page": 2,
+   "mark": "r",
+   "context": "Zx"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "∀i ∈[[1, r]] ,|λ"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "∀i ∈[[1, r]] ,|λi −(1 −q) q"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "∀i ∈[[1, r]] ,|λi −(1 −q) qi−1n| ≤x"
+  },
+  {
+   "page": 2,
+   "mark": "r",
+   "context": "(2π)"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "whereQisthesymmetricmatrixwithcoeﬃcientsQij= δij (1 −q) q"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "sthesymmetricmatrixwithcoeﬃcientsQij= δij (1 −q) qi−1−(1 −q)"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "hesymmetricmatrixwithcoeﬃcientsQij= δij (1 −q) qi−1−(1 −q)2q"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "Then,foreachε, η> 0,thereexistsanintegern"
+  },
+  {
+   "page": 3,
+   "mark": "0",
+   "context": "en,foreachε, η> 0,thereexistsanintegern0suchthat,foreachn ≥n"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "λ"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "×n"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "thatN∼c nαwithα < 1/2.Foranyε > 0,onehasλ"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "thatN∼c nαwithα < 1/2.Foranyε > 0,onehasλ1= o(n"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "S"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "n∈NY"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "λ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "(dim λ)"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "M3,q=1/(q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "M3,q=1/(q3+ 2q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "D= q"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "D= q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "M3,q= (2q)/(q"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "q"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "M3,q= q"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "M3,q= q3/(q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "M3,q= q3/(q3+ 2q"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "q3+q"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "q3+q"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "q"
+  },
+  {
+   "page": 6,
+   "mark": "4",
+   "context": "q"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "q4+2q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "q4+2q3+2q"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "q3+q"
+  },
+  {
+   "page": 6,
+   "mark": "4",
+   "context": "q"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "q4+q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "q4+q3+q"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "q3+q"
+  },
+  {
+   "page": 6,
+   "mark": "4",
+   "context": "q"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "q4+2q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "q4+2q3+2q"
+  },
+  {
+   "page": 6,
+   "mark": "6",
+   "context": "M4,q= 1/(q"
+  },
+  {
+   "page": 6,
+   "mark": "5",
+   "context": "M4,q= 1/(q6+ 3q"
+  },
+  {
+   "page": 6,
+   "mark": "4",
+   "context": "M4,q= 1/(q6+ 3q5+ 5q"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "+6q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "+6q3+ 5q"
+  },
+  {
+   "page": 6,
+   "mark": "4",
+   "context": "D=q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "D=q4+ q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "M4,q= (2q"
+  },
+  {
+   "page": 6,
+   "mark": "4",
+   "context": "M4,q= (2q2)/(q"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "M4,q= (2q2)/(q4+ 3q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "M4,q= (2q2)/(q4+ 3q3+ 4q"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "q3+q"
+  },
+  {
+   "page": 6,
+   "mark": "6",
+   "context": "D= q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 6,
+   "mark": "6",
+   "context": "M4,q= q"
+  },
+  {
+   "page": 6,
+   "mark": "6",
+   "context": "M4,q= q6/(q"
+  },
+  {
+   "page": 6,
+   "mark": "5",
+   "context": "M4,q= q6/(q6+ 3q"
+  },
+  {
+   "page": 6,
+   "mark": "4",
+   "context": "M4,q= q6/(q6+ 3q5+ 5q"
+  },
+  {
+   "page": 6,
+   "mark": "4",
+   "context": "q"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "q4+2q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "q4+2q3+2q"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "+6q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "+6q3+ 5q"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "D=q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "D=q3+ q"
+  },
+  {
+   "page": 6,
+   "mark": "4",
+   "context": "M4,q= (3q)/(q"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "M4,q= (3q)/(q4+ 2q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "M4,q= (3q)/(q4+ 2q3+ 2q"
+  },
+  {
+   "page": 6,
+   "mark": "5",
+   "context": "D=q"
+  },
+  {
+   "page": 6,
+   "mark": "4",
+   "context": "D=q5+ q"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "D=q5+ q4+ q"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "M4,q= (3q"
+  },
+  {
+   "page": 6,
+   "mark": "4",
+   "context": "M4,q= (3q3)/(q"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "M4,q= (3q3)/(q4+ 2q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "M4,q= (3q3)/(q4+ 2q3+ 2q"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "q"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "λ"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "Dλ(q) = q"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "∀i,T"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "∀i,TiT"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "∀i,TiTi+1T"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "∀i,TiTi+1Ti= T"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "∀i,TiTi+1Ti= Ti+1T"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "∀i,TiTi+1Ti= Ti+1TiT"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "∀|j −i| ≥2,T"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "∀|j −i| ≥2,TiT"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "∀|j −i| ≥2,TiTj= T"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "∀|j −i| ≥2,TiTj= TjT"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "∀i,(T"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "∀i,(Ti −q)(T"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "correspondingtoapermutationσ∈S"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "Tσ= T"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "Tσ= Ti"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "Tσ= Ti1T"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "Tσ= Ti1Ti"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "Tσ= Ti1Ti2 · · · T"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "Tσ= Ti1Ti2 · · · Ti"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "whereσ=s"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "whereσ=si"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "whereσ=si1s"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "whereσ=si1si"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "whereσ=si1si2 · · · s"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "whereσ=si1si2 · · · si"
+  },
+  {
+   "page": 7,
+   "mark": "e",
+   "context": "2.3.InterpretationintherepresentationtheoryofGLn(Fq).Ifq=p"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "F"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "F"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "F"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "F"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "Moreover,theconditionu ∈EndGL(n, F"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "F"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "≃EndGL(n,F"
+  },
+  {
+   "page": 8,
+   "mark": "b",
+   "context": "dim Uλ(q) = Dλ(q) = q"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Fq),LF=(Fq)"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "n∈NY"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "O:thepowersums(p"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "O:thepowersums(pk)"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "thepowersums(pk)k≥1intheFrobeniuscoordinates,thepowersums(ep"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "epowersums(pk)k≥1intheFrobeniuscoordinates,thepowersums(epk)"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "coordinates(a"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "coordinates(ai, b"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "coordinates(ai, bi)"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "coordinates(ai, bi)1≤i≤daredeﬁnedbya"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "coordinates(ai, bi)1≤i≤daredeﬁnedbyai=λ"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "coordinates(ai, bi)1≤i≤daredeﬁnedbyai=λi−iandb"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "coordinates(ai, bi)1≤i≤daredeﬁnedbyai=λi−iandbi=λ"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "i)"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "i)"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "i= a"
+  },
+  {
+   "page": 8,
+   "mark": "b",
+   "context": "i= ai + 1/2and"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "i= b"
+  },
+  {
+   "page": 8,
+   "mark": "4",
+   "context": "i= bi + 1/2,seeﬁgure"
+  },
+  {
+   "page": 8,
+   "mark": "p",
+   "context": "i= bi + 1/2,seeﬁgure4onthenextpage.Letusdeﬁnethefunction"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "i= bi + 1/2,seeﬁgure4onthenextpage.Letusdeﬁnethefunctionp"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "setYofallYoungdiagrams:p"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "i)"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "i)"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "Notethatp"
+  },
+  {
+   "page": 9,
+   "mark": "31",
+   "context": "1ishereequalto"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "pρ= pρ"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "pρ= pρ1pρ"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "pρ= pρ1pρ2 · · · pρ"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "deg pρ= |ρ| = ρ"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "deg pρ= |ρ| = ρ1 + ρ"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "deg pρ= |ρ| = ρ1 + ρ2 + · · · + ρ"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "n↓kχλ(σρ 1"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "ormalized character of thesymmetricgroup,thepartitionρ′= ρ 1"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "95,§1.7],andinparticularthecorollary1.7.7),itcanbeshownthatΣ"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "Proposition7.Ifk≥1,theobservableΣ"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "pj t"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "Σk= [t"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Examples1.Σ"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Examples1.Σ1= p"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "Examples1.Σ1= p1,Σ"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "Examples1.Σ1= p1,Σ2= p"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "Examples1.Σ1= p1,Σ2= p2,Σ"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "Examples1.Σ1= p1,Σ2= p2,Σ3= p"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "2"
+  },
+  {
+   "page": 9,
+   "mark": "11",
+   "context": "2p"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "4"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "4p"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "4p1,Σ"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "4p1,Σ4= p"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "4p1,Σ4= p4 −4"
+  },
+  {
+   "page": 9,
+   "mark": "21",
+   "context": "4p1,Σ4= p4 −4p"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "2"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "2p"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "assequencesofelements(f"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "assequencesofelements(fn)"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "assequencesofelements(fn)n≥1withf"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "assequencesofelements(fn)n≥1withfn∈Z(CS"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "(Σρ"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(Σρ1,ρ"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "(Σρ1,ρ2,...,ρ"
+  },
+  {
+   "page": 10,
+   "mark": "11",
+   "context": "(a"
+  },
+  {
+   "page": 10,
+   "mark": "12",
+   "context": "(a11, a"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "(a11, a12, . . . , a"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "(a11, a12, . . . , a1ρ"
+  },
+  {
+   "page": 10,
+   "mark": "21",
+   "context": "(a11, a12, . . . , a1ρ1) (a"
+  },
+  {
+   "page": 10,
+   "mark": "22",
+   "context": "(a11, a12, . . . , a1ρ1) (a21, a"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(a11, a12, . . . , a1ρ1) (a21, a22, . . . , a"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(a11, a12, . . . , a1ρ1) (a21, a22, . . . , a2ρ"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "(a11, a12, . . . , a1ρ1) (a21, a22, . . . , a2ρ2)· · ·(a"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "(a11, a12, . . . , a1ρ1) (a21, a22, . . . , a2ρ2)· · ·(ar"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "a11, a12, . . . , a1ρ1) (a21, a22, . . . , a2ρ2)· · ·(ar1, a"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "11, a12, . . . , a1ρ1) (a21, a22, . . . , a2ρ2)· · ·(ar1, ar"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": " , a1ρ1) (a21, a22, . . . , a2ρ2)· · ·(ar1, ar2, . . . , arρ"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "C(A"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "C(A1) C(A"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "C(A1) C(A2)· · ·C(A"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "C(A"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "C(A1) C(A"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "C(A1) C(A2)· · ·C(A"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "C(A1) C(A2)· · ·C(Ar) C(B"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "C(A1) C(A2)· · ·C(Ar) C(B1) C(B"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "C(A1) C(A2)· · ·C(Ar) C(B1) C(B2)· · ·C(B"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "partial matching between thesets IA= (i, j)"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "n thesets IA= (i, j)1≤j≤µi(indicesof the a’s) and IB= (k, l)"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "C(A"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "C(A1) C(A"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "C(A1) C(A2)· · ·C(A"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "C(A1) C(A2)· · ·C(Ar) C(B"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "C(A1) C(A2)· · ·C(Ar) C(B1) C(B"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "C(A1) C(A2)· · ·C(Ar) C(B1) C(B2)· · ·C(B"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "Example2.LetuscomputeΣ"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "Example2.LetuscomputeΣ2 · Σ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "•Ifa"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "•Ifa1=b"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "•Ifa1=b1,butallotherelementsarediﬀerent,then(a"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "•Ifa1=b1,butallotherelementsarediﬀerent,then(a1a"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "•Ifa1=b1,butallotherelementsarediﬀerent,then(a1a2a"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "•Ifa1=b1,butallotherelementsarediﬀerent,then(a1a2a3) · (a"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "•Ifa1=b1,butallotherelementsarediﬀerent,then(a1a2a3) · (a1b"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "1=b1,butallotherelementsarediﬀerent,then(a1a2a3) · (a1b2)=(a"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "b1,butallotherelementsarediﬀerent,then(a1a2a3) · (a1b2)=(a1b"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": ",butallotherelementsarediﬀerent,then(a1a2a3) · (a1b2)=(a1b2a"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "utallotherelementsarediﬀerent,then(a1a2a3) · (a1b2)=(a1b2a2a"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "•Ifa"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "•Ifa1=b"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "•Ifa1=b1anda"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "•Ifa1=b1anda2=b"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "•Ifa1=b1anda2=b2,then(a"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "•Ifa1=b1anda2=b2,then(a1, a"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "•Ifa1=b1anda2=b2,then(a1, a2, a"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "•Ifa1=b1anda2=b2,then(a1, a2, a3) · (a"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "•Ifa1=b1anda2=b2,then(a1, a2, a3) · (a1, a"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "•Ifa1=b1anda2=b2,then(a1, a2, a3) · (a1, a2)=(a"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "•Ifa1=b1anda2=b2,then(a1, a2, a3) · (a1, a2)=(a1, a"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "•Ifa1=b1anda2=b2,then(a1, a2, a3) · (a1, a2)=(a1, a3)(a"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "Thus,Σ"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "Thus,Σ2 · Σ"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "Thus,Σ2 · Σ3= Σ"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "Thus,Σ2 · Σ3= Σ2,"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "Thus,Σ2 · Σ3= Σ2,3 + 6Σ"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "Thus,Σ2 · Σ3= Σ2,3 + 6Σ4 + 6Σ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "Thus,Σ2 · Σ3= Σ2,3 + 6Σ4 + 6Σ2,"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "Byinduction,oneobtainsthat,ifk"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "Byinduction,oneobtainsthat,ifk1≥k"
+  },
+  {
+   "page": 11,
+   "mark": "r",
+   "context": "Byinduction,oneobtainsthat,ifk1≥k2≥. . . ≥k"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "Σ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "Σk"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "Σk1· Σ"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "Σk1· Σk"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "Σk1· Σk2 · · · Σ"
+  },
+  {
+   "page": 11,
+   "mark": "r",
+   "context": "Σk1· Σk2 · · · Σk"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "Σk1· Σk2 · · · Σkr= Σ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "Σk1· Σk2 · · · Σkr= Σk"
+  },
+  {
+   "page": 11,
+   "mark": "r",
+   "context": "Σk1· Σk2 · · · Σkr= Σk1,...,k"
+  },
+  {
+   "page": 11,
+   "mark": "l",
+   "context": "Σ"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "Σl Σ"
+  },
+  {
+   "page": 11,
+   "mark": "l",
+   "context": "Σl Σm= Σl,m + ml Σ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "C(A"
+  },
+  {
+   "page": 11,
+   "mark": "r",
+   "context": "C(A1) · · · C(A"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "i"
+  },
+  {
+   "page": 11,
+   "mark": "r",
+   "context": "i1,...,i"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "i"
+  },
+  {
+   "page": 12,
+   "mark": "r",
+   "context": "i1,...,i"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "(1, 2)and(1, 3)areconjugateinS3,butχ(T(1,2))=qandχ(T(1,3))=q"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "σρ= (1, 2, . . . , ρ"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "σρ= (1, 2, . . . , ρ1) (ρ"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "σρ= (1, 2, . . . , ρ1) (ρ1 + 1, ρ"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "σρ= (1, 2, . . . , ρ1) (ρ1 + 1, ρ1 + 2, . . . , ρ"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "σρ= (1, 2, . . . , ρ1) (ρ1 + 1, ρ1 + 2, . . . , ρ1 + ρ"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": " (1, 2, . . . , ρ1) (ρ1 + 1, ρ1 + 2, . . . , ρ1 + ρ2)· · ·(ρ"
+  },
+  {
+   "page": 12,
+   "mark": "r",
+   "context": " , ρ1) (ρ1 + 1, ρ1 + 2, . . . , ρ1 + ρ2)· · ·(ρ1 + · · · + ρ"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": " + 2, . . . , ρ1 + ρ2)· · ·(ρ1 + · · · + ρr−1 + 1, . . . , ρ"
+  },
+  {
+   "page": 12,
+   "mark": "r",
+   "context": " ρ1 + ρ2)· · ·(ρ1 + · · · + ρr−1 + 1, . . . , ρ1 + · · · + ρ"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "In [Ram91], A. Ram uses the Schur-Weyl decomposition of (C"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "Furthermore, let us deﬁne a q-analog of the power sump"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "hermore, let us deﬁne a q-analog of the power sumpk(X).Leteq"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "q"
+  },
+  {
+   "page": 12,
+   "mark": "h",
+   "context": "q −1"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "q −1h"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "eq"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "q"
+  },
+  {
+   "page": 12,
+   "mark": "r",
+   "context": "whereqµ−1meansQ"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "i=1(qµ"
+  },
+  {
+   "page": 12,
+   "mark": "z",
+   "context": "i=1(qµi−1),andwhere"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "i≥1"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "i≥1i"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "i≥1im"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "i≥1imi"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "i≥1imi m"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "1"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "1m"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "1m12"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "1m12m"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "1m12m2. . . s"
+  },
+  {
+   "page": 12,
+   "mark": "s",
+   "context": "1m12m2. . . sm"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "∀ρ ∈Y"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "Proposition9(q-Frobenius-Schur formula).Ifeqρ=eqρ"
+  },
+  {
+   "page": 12,
+   "mark": "r",
+   "context": "Proposition9(q-Frobenius-Schur formula).Ifeqρ=eqρ1 · · · eqρ"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "∀ρ ∈Y"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "thescalarproduct⟨hρ"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "thescalarproduct⟨hρ 1"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "hρ(p"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "hρ(p1)"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "(zπ"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "(zπ1 · · · zπ"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "pπ(p"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "pπ(p1)"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "⟨hρ"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "⟨hρ 1"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "π"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "π1∈Yρ1,...,π"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "zπ"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "zπ1"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "zπ1n−k (zπ"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "zπ1n−k (zπ1 · · · zπ"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "(zπ"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "(zπ1 · · · zπ"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "1(ν=π1"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "1(ν=νk1"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "(zπ"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "(zπ1 · · · zπ"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "(zπ1 · · · zπm)−1⟨pπ | pν"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "(zπ1 · · · zπm)−1⟨pπ | pνk⟩= (zν/zν"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "1(ν=ν"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "1(ν=νk"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "1(ν=νk1"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "1(ν=νk1n−k)⟨hρ | pν"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "1(ν=νk1"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "ifρ = 1"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "(1 −q)"
+  },
+  {
+   "page": 14,
+   "mark": "p",
+   "context": "∀k≥1,"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "∀k≥1,p"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "1 −q"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "\"\u0012 p"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "n"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "nk−(1 −q)"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "n"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "nk−(1 −q)"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "1 −q"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "ε"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "1 −q"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "(1 −q)"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "+(1 −q)"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "+(1 −q)2"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "ε"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "n"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "n2"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "n"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "1 −q"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "ofthesequence((1 −q), (1 −q)q, (1 −q)q"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "(1 −q)"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "(1 −q)kq(i−1)"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "(1 −q)kq(i−1)k=(1 −q)"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "1 −q"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "The k-th moment of Xλis exactly pk+1(λ)/n"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "(1 −q)q"
+  },
+  {
+   "page": 15,
+   "mark": "q",
+   "context": "(1 −q)qi−1δ(1−q)"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "(1 −q)qi−1δ(1−q)q"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "Lemma14.Asusual,weconsiderasequenceofrandomdiagramsλ"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "Lemma14.Asusual,weconsiderasequenceofrandomdiagramsλn∈Y"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "measure.Atanypointx̸=(1 −q) q"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "(1 −q)q"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "(1−q)q"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "the∗-weaktopology1.Indeed,if(f"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "the∗-weaktopology1.Indeed,if(fn)"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "2nmax(1, |m1(f"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "2nmax(1, |m1(fn) −m"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "2nmax(1, |m1(fn) −m2(f"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "isadistancecompatiblewiththetopologyofM ([−1, 1]).Wechoose{f"
+  },
+  {
+   "page": 15,
+   "mark": "q",
+   "context": "(M ([−1, 1]), d)towardsX∞;"
+  },
+  {
+   "page": 15,
+   "mark": "q",
+   "context": "convergence of repartition functions FXn,q(x) →FX∞;"
+  },
+  {
+   "page": 15,
+   "mark": "q",
+   "context": "functions FXn,q(x) →FX∞;q(x) at points x ∈[−1, 1] where FX∞;"
+  },
+  {
+   "page": 16,
+   "mark": "q",
+   "context": "1 −q>ε>0.NotethatFX∞;"
+  },
+  {
+   "page": 16,
+   "mark": "q",
+   "context": "|y|≥FX∞;"
+  },
+  {
+   "page": 16,
+   "mark": "x",
+   "context": "1(λ)/nissmallerthan"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "1(λ)/nissmallerthanxoutside"
+  },
+  {
+   "page": 16,
+   "mark": "q",
+   "context": "x′= 1 −q −η,thenFX∞;"
+  },
+  {
+   "page": 16,
+   "mark": "q",
+   "context": "FXλ(1) = FXλ(x′) ≤FX∞;"
+  },
+  {
+   "page": 16,
+   "mark": "x",
+   "context": "1(λ)/nisbetween"
+  },
+  {
+   "page": 16,
+   "mark": "x",
+   "context": "1(λ)/nisbetweenx′and"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "1(λ)/nisbetweenx′andx.Consequently,"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "1(λ)/nconverges inprobabilitytowards"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "i(λ)/n −λ"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "i(λ)/n −λi/n = O(1/n),sowehaveprovedTheorem"
+  },
+  {
+   "page": 16,
+   "mark": "d",
+   "context": "inLemma14,thenweseethatP"
+  },
+  {
+   "page": 16,
+   "mark": "b",
+   "context": "i=1"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "i(λ)/ngoesto"
+  },
+  {
+   "page": 16,
+   "mark": "o",
+   "context": "i(λ)/ngoesto0inprobability:so,thecolumnlengthsare"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "E[Σk]2+ o(n"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "E[Σk]2+ o(n2"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "\u0001α"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "\u0001α1≥α"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "\u0001α1≥α2≥· · · ≥0,β"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "\u0001α1≥α2≥· · · ≥0,β1≥β"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "(α"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "(αi + β"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "n)"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "n)n∈NofprobabilitymeasuresonthesetsY"
+  },
+  {
+   "page": 16,
+   "mark": "s",
+   "context": "n(λ) = (dim λ)"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "(α"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "(αi)"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "(αi)k+ (−1)"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "(βi)"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "p"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "pk≥2(ω) = p"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "∀n,∀λ ∈Y"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "n)"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "n)n∈Nofprobabilitymeasures onthesetsY"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "Moreover, onecandescribeallcoherent systems(M"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "M"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "(wereferalsoto[KV81]).ToeachYoungdiagramλ∈Y"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "referalsoto[KV81]).ToeachYoungdiagramλ∈Yn,weassociateapointω"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": ", . . . ,"
+  },
+  {
+   "page": 17,
+   "mark": "b",
+   "context": ", 0, . . . ;"
+  },
+  {
+   "page": 17,
+   "mark": "b",
+   "context": ", . . . ,"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "Theorem15.LetmbeaprobabilitymeasureonΩ;wedenoteby(M"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "n)"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "nconvergesinlawtowards"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "systemofmeasures.Thepush-forward(ωn)⋆M"
+  },
+  {
+   "page": 17,
+   "mark": "q",
+   "context": "he generic degree Dλ(q) can be written as Dλ(q) = {n!}q sλ(ω"
+  },
+  {
+   "page": 17,
+   "mark": "l",
+   "context": "\u0012p"
+  },
+  {
+   "page": 17,
+   "mark": "l",
+   "context": "n"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "then,foranyk≥1,theﬁniterandomvector(Wn,q,"
+  },
+  {
+   "page": 17,
+   "mark": "l",
+   "context": "cov(Wq,l, Wq,m) = lm (1 −q)"
+  },
+  {
+   "page": 17,
+   "mark": "l",
+   "context": "1 −q"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "1 −ql+m−1,"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "E[X"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "E[X1 X2 · · · X"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "Lemma17(Orderofmagnitudeofcumulants).Foranyx"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "Lemma17(Orderofmagnitudeofcumulants).Foranyx1, x2, . . . , x"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "ndeg(x"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "ndeg(x1)+···+deg(x"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "E[Σ"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "E[Σi"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "E[Σi1 · · · Σ"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "E[Σi1 · · · Σi"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "This diﬃculty disappears if we use the algebra O•, because Σ"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "his diﬃculty disappears if we use the algebra O•, because Σi"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "ty disappears if we use the algebra O•, because Σi1 •· · ·•Σ"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "y disappears if we use the algebra O•, because Σi1 •· · ·•Σi"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "sappears if we use the algebra O•, because Σi1 •· · ·•Σir= Σ"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "appears if we use the algebra O•, because Σi1 •· · ·•Σir= Σi"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": " if we use the algebra O•, because Σi1 •· · ·•Σir= Σi1,...,i"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "E[X"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "E[X1 • X2 • · · · • X"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "Lemma18(Orderofmagnitudeofdisjointcumulants).Foranyx"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "Orderofmagnitudeofdisjointcumulants).Foranyx1, x2, . . . , x"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "ndeg(x"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "ndeg(x1)+···+deg(x"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "E[Σi1,...,ir] =(q −1)"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "E[Σi1,...,ir] =(q −1)i"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "E[Σi1,...,ir] =(q −1)i1+···+i"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "n↓(i"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "n↓(i1+···+i"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "Q(q"
+  },
+  {
+   "page": 18,
+   "mark": "j",
+   "context": "Q(qi"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "Exceptforthefactorn↓(i"
+  },
+  {
+   "page": 19,
+   "mark": "r",
+   "context": "Exceptforthefactorn↓(i1+...+i"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "n↓(i"
+  },
+  {
+   "page": 19,
+   "mark": "r",
+   "context": "n↓(i1+···+i"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "Butχλ(Σ1"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": ") = O(n"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": ") = O(ni"
+  },
+  {
+   "page": 19,
+   "mark": "r",
+   "context": ") = O(ni1+···+i"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "X"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "X1X"
+  },
+  {
+   "page": 19,
+   "mark": "r",
+   "context": "X1X2 · · · X"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "≤i"
+  },
+  {
+   "page": 19,
+   "mark": "r",
+   "context": "≤i1 + · · · + i"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "kid(Σ"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "kid(Σi"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "kid(Σi1, Σ"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "kid(Σi1, Σi"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "kid(Σi1, Σi2) = Σ"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "kid(Σi1, Σi2) = Σi"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "kid(Σi1, Σi2) = Σi1· Σ"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "kid(Σi1, Σi2) = Σi1· Σi"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "kid(Σi1, Σi2) = Σi1· Σi2−Σ"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "kid(Σi1, Σi2) = Σi1· Σi2−Σi"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "kid(Σi1, Σi2) = Σi1· Σi2−Σi1,i"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "Σ"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "Σi"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "Σi1· Σ"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "Σi1· Σi"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "Σ"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "Σ"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "Σi"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "Σi1 · · · Σ"
+  },
+  {
+   "page": 20,
+   "mark": "r",
+   "context": "Σi1 · · · Σi"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "C(A"
+  },
+  {
+   "page": 20,
+   "mark": "r",
+   "context": "C(A1) · · · C(A"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "Given a family A"
+  },
+  {
+   "page": 20,
+   "mark": "r",
+   "context": "Given a family A1, . . . , A"
+  },
+  {
+   "page": 20,
+   "mark": "k",
+   "context": "f arrangements, we consider the relation ∼1deﬁned by k∼1l ⇔A"
+  },
+  {
+   "page": 20,
+   "mark": "l",
+   "context": "rangements, we consider the relation ∼1deﬁned by k∼1l ⇔Ak ∩A"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "take,sothesumofC(A"
+  },
+  {
+   "page": 20,
+   "mark": "r",
+   "context": "take,sothesumofC(A1) · · · C(A"
+  },
+  {
+   "page": 20,
+   "mark": "8",
+   "context": "i1,...,ir(notationofparagraph 3.5)andwecanuseLemma"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "C(A"
+  },
+  {
+   "page": 20,
+   "mark": "r",
+   "context": "C(A1) · · · C(A"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "C(A"
+  },
+  {
+   "page": 20,
+   "mark": "r",
+   "context": "C(A1) · · · C(A"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "Σ"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "Σi"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "Σi1 · · · Σ"
+  },
+  {
+   "page": 20,
+   "mark": "r",
+   "context": "Σi1 · · · Σi"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "C(A"
+  },
+  {
+   "page": 20,
+   "mark": "r",
+   "context": "C(A1) · · · C(A"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "C(A"
+  },
+  {
+   "page": 20,
+   "mark": "r",
+   "context": "C(A1) · · · C(A"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "C(A"
+  },
+  {
+   "page": 20,
+   "mark": "r",
+   "context": "C(A1) · · · C(A"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "{[[1, r]]},thecardinalityof|A"
+  },
+  {
+   "page": 21,
+   "mark": "r",
+   "context": "{[[1, r]]},thecardinalityof|A1 ∪· · · ∪A"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "{[[1, r]]},thecardinalityof|A1 ∪· · · ∪Ar|issmallerthani"
+  },
+  {
+   "page": 21,
+   "mark": "r",
+   "context": "},thecardinalityof|A1 ∪· · · ∪Ar|issmallerthani1 + · · · + i"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "ities between diﬀerent elementsof thesearrangements.So,kid(Σ"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "ties between diﬀerent elementsof thesearrangements.So,kid(Σi"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": " diﬀerent elementsof thesearrangements.So,kid(Σi1, . . . , Σ"
+  },
+  {
+   "page": 21,
+   "mark": "r",
+   "context": "diﬀerent elementsof thesearrangements.So,kid(Σi1, . . . , Σi"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "alinearcombinationofΣλwith|λ| ≤i"
+  },
+  {
+   "page": 21,
+   "mark": "r",
+   "context": "alinearcombinationofΣλwith|λ| ≤i1 + · · · + i"
+  },
+  {
+   "page": 21,
+   "mark": "l",
+   "context": "E[Σ"
+  },
+  {
+   "page": 21,
+   "mark": "m",
+   "context": "E[Σl • Σ"
+  },
+  {
+   "page": 21,
+   "mark": "l",
+   "context": "=(1 −q)"
+  },
+  {
+   "page": 21,
+   "mark": "l",
+   "context": "= −lm(1 −q)"
+  },
+  {
+   "page": 21,
+   "mark": "l",
+   "context": "n"
+  },
+  {
+   "page": 21,
+   "mark": "l",
+   "context": "nl+m−1+ O(n"
+  },
+  {
+   "page": 21,
+   "mark": "k",
+   "context": "n↓k= n"
+  },
+  {
+   "page": 21,
+   "mark": "k",
+   "context": "n"
+  },
+  {
+   "page": 21,
+   "mark": "k",
+   "context": "nk−1+ O(n"
+  },
+  {
+   "page": 21,
+   "mark": "l",
+   "context": "mentofΣ"
+  },
+  {
+   "page": 21,
+   "mark": "m",
+   "context": "mentofΣl Σ"
+  },
+  {
+   "page": 21,
+   "mark": "l",
+   "context": "E[Σ"
+  },
+  {
+   "page": 21,
+   "mark": "m",
+   "context": "E[Σl Σ"
+  },
+  {
+   "page": 21,
+   "mark": "l",
+   "context": "E[Σl Σm −Σl,m] + k•(Σ"
+  },
+  {
+   "page": 21,
+   "mark": "m",
+   "context": "E[Σl Σm −Σl,m] + k•(Σl, Σ"
+  },
+  {
+   "page": 21,
+   "mark": "l",
+   "context": "E[lm Σ"
+  },
+  {
+   "page": 21,
+   "mark": "l",
+   "context": "E[lm Σl+m−1] −lm(1 −q)"
+  },
+  {
+   "page": 21,
+   "mark": "l",
+   "context": "n"
+  },
+  {
+   "page": 21,
+   "mark": "l",
+   "context": "nl+m−1+ O(n"
+  },
+  {
+   "page": 21,
+   "mark": "l",
+   "context": "n"
+  },
+  {
+   "page": 21,
+   "mark": "l",
+   "context": "nl+m−1+ O(n"
+  },
+  {
+   "page": 21,
+   "mark": "l",
+   "context": "= lm (1 −q)"
+  },
+  {
+   "page": 21,
+   "mark": "l",
+   "context": "1 −q"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "1 −ql+m−1,"
+  },
+  {
+   "page": 21,
+   "mark": "k",
+   "context": "Proposition20(FluctuationsofΣ"
+  },
+  {
+   "page": 21,
+   "mark": "k",
+   "context": "n (Σ"
+  },
+  {
+   "page": 21,
+   "mark": "k",
+   "context": "n (Σk/n"
+  },
+  {
+   "page": 21,
+   "mark": "k",
+   "context": "n (Σk/nk−(1−q)"
+  },
+  {
+   "page": 21,
+   "mark": "k",
+   "context": "n (Σk/nk−(1−q)k/(1 −q"
+  },
+  {
+   "page": 21,
+   "mark": "l",
+   "context": "k(Zq,l, Zq,m) = lm (1 −q)"
+  },
+  {
+   "page": 21,
+   "mark": "l",
+   "context": "1 −q"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "1 −ql+m−1,"
+  },
+  {
+   "page": 21,
+   "mark": "l",
+   "context": "Asaconsequence,theremainingtermsareallO(n"
+  },
+  {
+   "page": 21,
+   "mark": "k",
+   "context": "n (Σk,q/n"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "n χλ(k1"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "k(Sq,l, Sq,m) = (q −q"
+  },
+  {
+   "page": 21,
+   "mark": "l",
+   "context": "k(Sq,l, Sq,m) = (q −q2)"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "k(Sq,l, Sq,m) = (q −q2)l+m−3(1 −q"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "me O(n−1/2), in contrast to the case of the characters χλ(k1"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "measures.Iff∈C"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "n(Xλ(f) −X∞;"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "R"
+  },
+  {
+   "page": 22,
+   "mark": "l",
+   "context": "Dn,q(x"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "1≤l≤ktowards"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "1≤l≤ktowardsagaussianvector(Z"
+  },
+  {
+   "page": 22,
+   "mark": "l",
+   "context": "1≤l≤ktowardsagaussianvector(Zq;"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "k(Z"
+  },
+  {
+   "page": 22,
+   "mark": "l",
+   "context": "k(Zq;"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "k(Zq;l, Z"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "k(Zq;l, Zq;"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "k(Zq;l, Zq;m) = X∞;"
+  },
+  {
+   "page": 22,
+   "mark": "l",
+   "context": "k(Zq;l, Zq;m) = X∞;q((l + 1)(m + 1) x"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "k(Zq;l, Zq;m) = X∞;q((l + 1)(m + 1) xlx"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "(Zq;l, Zq;m) = X∞;q((l + 1)(m + 1) xlxm) −(l + 1)(m + 1) X∞;"
+  },
+  {
+   "page": 22,
+   "mark": "l",
+   "context": ";l, Zq;m) = X∞;q((l + 1)(m + 1) xlxm) −(l + 1)(m + 1) X∞;q(x"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": ";m) = X∞;q((l + 1)(m + 1) xlxm) −(l + 1)(m + 1) X∞;q(xl) X∞;"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": " = X∞;q((l + 1)(m + 1) xlxm) −(l + 1)(m + 1) X∞;q(xl) X∞;q(x"
+  },
+  {
+   "page": 22,
+   "mark": "l",
+   "context": "(x"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "(xl+1)′(x"
+  },
+  {
+   "page": 22,
+   "mark": "l",
+   "context": "(x"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "(x"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "−X∞;"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "RecallthatwithrespecttotheC"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "functionsC"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "concludethatforanyfunctionsf"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "concludethatforanyfunctionsf1, f"
+  },
+  {
+   "page": 22,
+   "mark": "r",
+   "context": "concludethatforanyfunctionsf1, f2, . . . , f"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "concludethatforanyfunctionsf1, f2, . . . , fr∈C"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": ", . . . , fr∈C1([−1, 1]),thevectorofrescaleddeviationsDn,q(f"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "k(Z"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "k(Zq;"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "k(Zq;f"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "k(Zq;fi, Z"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "k(Zq;fi, Zq;"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "k(Zq;fi, Zq;f"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "k(Zq;fi, Zq;fj) = X∞;"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "k(Zq;fi, Zq;fj) = X∞;q ((xf"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "k(Zq;fi, Zq;fj) = X∞;q ((xfi)′(xf"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "k(Zq;fi, Zq;fj) = X∞;q ((xfi)′(xfj)′) −X∞;"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "k(Zq;fi, Zq;fj) = X∞;q ((xfi)′(xfj)′) −X∞;q ((xf"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "k(Zq;fi, Zq;fj) = X∞;q ((xfi)′(xfj)′) −X∞;q ((xfi)′)X∞;"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "(Zq;fi, Zq;fj) = X∞;q ((xfi)′(xfj)′) −X∞;q ((xfi)′)X∞;q ((xf"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "ProofofTheorem2.If i ≥1, we denote by f"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "ProofofTheorem2.If i ≥1, we denote by fi a class C"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "denote by fi a class C1and non-negative function such that f"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "avicinityV"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "avicinityViofq"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "avicinityViofqi−1(1 −q)andf"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "avicinityViofqi−1(1 −q)andfi(x) = 0outsideavicinityW"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "avicinityViofqi−1(1 −q)andfi(x) = 0outsideavicinityWi⊃V"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "thattheW"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "thattheWiaredisjointopensets;inparticular,X∞;"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "thattheWiaredisjointopensets;inparticular,X∞;q(f"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "thattheWiaredisjointopensets;inparticular,X∞;q(fi)=q"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "i(q"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "(xf"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "(xfi)′(q"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "(xfi)′(qi−1(1 −q)) = f"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "(xfi)′(qi−1(1 −q)) = fi(q"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "X∞;"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "X∞;q((x f"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "X∞;q((x fi(x))′2) −X∞;"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "X∞;q((x fi(x))′2) −X∞;q((x f"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "X∞;q((x fi(x))′2) −X∞;q((x fi(x))′)"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "X∞;q((x fi(x))′2) −X∞;q((x fi(x))′)2= q"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "q((x fi(x))′2) −X∞;q((x fi(x))′)2= qi−1(1 −q) −q2(i−1)(1 −q)"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "q"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "Moreover, f"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "Moreover, fi f"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "Moreover, fi fj= 0foralli̸ = j,andthesameholdsforf"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "j,"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "i"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "if"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "ifjor"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "i"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "X∞;"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "X∞;q ((x f"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "X∞;q ((x fi(x))′(x f"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "X∞;q ((x fi(x))′(x fj(x))′) −X∞;"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "X∞;q ((x fi(x))′(x fj(x))′) −X∞;q ((x f"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "X∞;q ((x fi(x))′(x fj(x))′) −X∞;q ((x fi(x))′)X∞;"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "X∞;q ((x fi(x))′(x fj(x))′) −X∞;q ((x fi(x))′)X∞;q ((x f"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "i(x))′(x fj(x))′) −X∞;q ((x fi(x))′)X∞;q ((x fj(x))′) = −X∞;"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "x fj(x))′) −X∞;q ((x fi(x))′)X∞;q ((x fj(x))′) = −X∞;q ((x f"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": " −X∞;q ((x fi(x))′)X∞;q ((x fj(x))′) = −X∞;q ((x fi(x))′)X∞;"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "((x fi(x))′)X∞;q ((x fj(x))′) = −X∞;q ((x fi(x))′)X∞;q ((x f"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "= −(1 −q)"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "= −(1 −q)2q"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "i(λ)/nisinV"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "i(λ)/nisinVi,"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "i+1(λ)/nisinV"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "i+1(λ)/nisinVi+1.Thus,with"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "i+1(λ)/nisinVi+1.Thus,withaprobability closeto"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "off"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "i(λ)/n,andXλ(f"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "i(λ)/n.As"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "−q"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "n(Xλ(f"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "n(Xλ(fi) −X∞;"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "n(Xλ(fi) −X∞;q(f"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i(λ) = λ"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "N"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "E[Σρ] = n↓|ρ|·χ(ρ"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "E[Σρ] = n↓|ρ|·χ(ρ1"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "N"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "phismofS"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "N"
+  },
+  {
+   "page": 24,
+   "mark": "k",
+   "context": "withanon-zerocoeﬃcientinΣ"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "(2)Thesecondtermisanon-negativemultipleof2 deg"
+  },
+  {
+   "page": 24,
+   "mark": "k",
+   "context": "Proposition7isthatallpλappearinginΣ"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "Proposition23.Let(N"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "Proposition23.Let(Nn)"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "oposition23.Let(Nn)n≥1beasequenceofpositiveintegerssuchthatN"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "ureassociatedwiththeactionofthesymmetricgroupsonthespaces(CN"
+  },
+  {
+   "page": 24,
+   "mark": "k",
+   "context": "n"
+  },
+  {
+   "page": 24,
+   "mark": "k",
+   "context": "nk+α−αk→c"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "theconvergenceofthequantitiespk/(n"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "i(λ)/n"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "i(λ)/n"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "i(λ)/n"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "i(λ)/n"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "thisrandom-valuedmeasuretowardsthesequence(1, c, c"
+  },
+  {
+   "page": 25,
+   "mark": "c",
+   "context": "itsmoments,thisimpliestheconvergenceinlawXλ,α→δ"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "i(λ)/n"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "i(λ)/n"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "n=N"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "n≃c−2"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "n≃c−2 n"
+  },
+  {
+   "page": 25,
+   "mark": "d",
+   "context": "Asaconsequence,onecan replaceXλ,αbyitspositivepartP"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "i(λ)/n"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "i(λ)/n"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "(λi/n"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "(λi/n1−α)δλ"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "(λi/n1−α)δλi/n"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "n δλ"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "n δλi/n"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "\u0012λ"
+  },
+  {
+   "page": 25,
+   "mark": "f",
+   "context": "n"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "n"
+  },
+  {
+   "page": 25,
+   "mark": "c",
+   "context": "becauseoftheconvergenceinlawYλ,α→δ"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "{i|λi/n"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "n"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "Asaconsequence,thenumberofrowsλ"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "Asaconsequence,thenumberofrowsλisuchthatc(1 −η/2) ≤λ"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "Asaconsequence,thenumberofrowsλisuchthatc(1 −η/2) ≤λi/n"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "c(1 + η/2)"
+  }
+ ]
+}

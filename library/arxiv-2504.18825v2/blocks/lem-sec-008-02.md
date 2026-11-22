@@ -1,1 +1,1 @@
-A.2. ([JL22, Theorem 3.1],[Zha19, Theorem B]) The Regev formula for the Hecke
+2. ([JL22, Theorem 3.1],[Zha19, Theorem B]) The Regev formula for the Hecke algebra in type A states that X λ⊢|µ| λ hook ψλ µ = 2l(µ)−1 l(µ) Y i=1 [µi]−q−2. (A.2) Now we are ready to provide an alternative proof of Corollary 6.3.

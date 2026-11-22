@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1910.09966v1/blocks/prose-sec-008",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Torus Bundle as Gauge Fields",
-  "pageStart": 18,
-  "pageEnd": 22,
-  "text": "../sections/sec-008-44-torus-bundle-as-gauge-fields.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1910.09966v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1910.09966v1",
+  "title": "K3 Surfaces and Octonions",
+  "pageStart": 13,
+  "pageEnd": 15,
+  "text": "../sections/sec-008-41-k3-surfaces-and-octonions.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1910.09966v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1910.09966v1/manifest.jsonld",
   "provenance": "ingested"
 }

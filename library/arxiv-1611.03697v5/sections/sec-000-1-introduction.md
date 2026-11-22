@@ -7,10 +7,11 @@ section_number: 1
 pages: 1-2
 source_pdf: 1611.03697v5.pdf
 source_sha256: 3d7e5a14a079c8c5
-doc_brief: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY — We study a class of Riemann-Hilbert problems arising naturally in Donald son-Thomas theory."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.804
+latex_prose_ratio: 0.992
+latex_coverage_ratio: 0.996
+doc_brief: "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY — We study a class of Riemann-Hilbert problems arising naturally in Donaldson-Thomas theory."
 ---
 In this paper we study a class of Riemann-Hilbert problems  arising naturally in Donaldson-Thomas theory. They involve maps from the complex plane to an algebraic torus, with prescribed discontinuities along a  collection of rays, and are closely related to the Riemann-Hilbert problems considered by Gaiotto, Moore and Neitzke \cite{GMN1}; in physical terms we are considering the conformal limit of their story. The same problems have also been considered by Stoppa and his collaborators \cite{BSt,FGS}.
 One of our main results is  that in the `uncoupled' case the Riemann-Hilbert problem has a unique solution which can be written explicitly using products of  gamma functions (Theorem \ref{one}). The inspiration for this  comes from a calculation of Gaiotto \cite{G}.

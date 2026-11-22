@@ -1,0 +1,1 @@
+If P is a general planar algebra and S is a set of invertible elements of P1, set P S k = {x ∈Pk | u⊗kx = xu⊗k ∀u ∈S} . Then P S is a general planar subalgebra of P (planar if P is) and a ∗-planar algebra if P is, and S = S∗.

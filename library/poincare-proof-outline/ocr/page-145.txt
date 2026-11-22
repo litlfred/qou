@@ -1,0 +1,73 @@
+thus ?thesis
+by simp
+qed
+
+have 7a # 7b
+by (metis divide-eq-0-iff of-complex-zero-iff zero-neq-numeral zero-neq-one)
+
+have 7a # ?c
+by (metis complex-i-not-zero divide-eq-0-iff of-complex-zero-iff zero-neq-numeral)
+
+show ?thesis
+proof (rule-tac x= ?a in exl, rule-tac =?b in erl, rule-tac c=?c in exl, rule-tac c=?d in exl, rule-tac c= ?t in eal,
+
+safe)
+
+show 7a € unit-disc ?b € unit-disc ?c € unit-disc ?t € unit-disc
+by (auto simp add: cmod-def power2-eq-square)
+
+have cmod-d: cmod (?dl + ix?dl) = ?dl * sqrt 2
+using <?dl > 0)
+unfolding cmod-def
+by (simp add: real-sqrt-mult)
+
+show ?d € unit-disc
+proof —
+have ?dl < 1 / sqrt 2
+proof—
+have 172° < (5 « sqrt 172)?
+by (simp add: field-simps)
+hence 17 < 5 * sqrt 17
+by (rule power2-less-imp-less, simp)
+hence ?dl? < (1 / sqrt 2)?
+by (simp add: power2-eq-square field-simps)
+thus ?dl < 1 / sqrt 2
+by (rule power2-less-imp-less, simp)
+qed
+thus ?thesis
+using cmod-d
+by (simp add: field-simps)
+qed
+
+have cmod-d: 1 — (cmod (to-complex ?d))? = (—17 + Sxsqrt 17) / 4 (is - = ?emod-d)
+apply (simp only: to-complex-of-complex)
+apply (subst cmod-d)
+apply (simp add: power-mult-distrib)
+apply (simp add: power2-eq-square field-simps)
+done
+
+have cmod-d-c: (cmod (to-complex ?d — to-complex ?c))? = (17 — 4xsqrt 17) / 4 (is - = ?cmod-de)
+unfolding cmod-square
+by (simp add: field-simps)
+
+have cmod-c: 1 — (cmod (to-complex ?c))? = 3/4 (is - = ?cmod-c)
+by (simp add: power2-eq-square)
+
+have rz: A v:real. c+ x = 2xa
+by simp
+
+have cmod ((to-complez ?b) — (to-complex ?d)) = cmod ((to-complex ?d) — (to-complez ?c))
+by (simp add: cmod-def power2-eq-square field-simps)
+
+moreover
+
+have cmod (to-complex ?b) = cmod (to-complex ?c)
+by simp
+
+ultimately
+
+have *: poincare-distance-formula’ (to-complex ?b) (to-complex ?d) =
+
+poincare-distance-formula' (to-complex ?d) (to-complex ?c)
+
+145

@@ -57,7 +57,7 @@
 
   -- Ref: [milnor1982] Appendix (the normalization and the base-integral route)
   -- Ref: [thurston1978] Ch. 7
-  -- Ref: [manuscript] beans qou-5gai (H4-2), qou-w3eg (H4-2), qou-idvt (T2)
+  -- Ref: [leitner2026] beans qou-5gai (H4-2), qou-w3eg (H4-2), qou-idvt (T2)
 -/
 
 import QOU.Archimedean.IdealTetrahedronRegion

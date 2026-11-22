@@ -1,0 +1,49 @@
+3.3. Upper bounds on eigenvalues of the Bolza surface
+
+We use the Resseiell quotient (Theorem 1.20) to give upper bounds on the first two
+distinct positive eigenvalues of A(B). We have calculated these numerically and listed
+them in Table C.1; in particular, the first and second positive eigenvalues are roughly
+equal to 3.84 and 5.35 respectively. Since the Rayleigh quotient is an equality for the
+first eigenflinction, the] closer the test function is to the first eigenfunction, Ihe better the
+bound will be. Rather than simply trying to guess a function, we can use the calculation
+for yg in Section 3.4 to tell us where the function should be zero (see Figure 3.13).
+
+We know that the first eigenfunction satisfies mixed boundary conditions on a (4, 4, 4)
+equilateral triangle; Dirichlet on one side and Neumann on the other two. We also know
+that the eigenfunction should be radially symmetric with respect to the origin of the unit
+disk, since the (4, 4, 4) triangle is rotated about the centre of the Poincare disk by R. We
+will work in the upper half plane model when performing calculations, since the metric is
+slightly easier to work with. Transformations between the Poincaré disk and the upper
+half plane are given by the Cayley transform:
+
+zZtt
+
+f(e)= 25.
+
+where the inverse function naturally maps H to D. Under this transformation, a (4, 4, 4)
+triangle that is symmetric with respect to the real line is now symmetric with respect to
+(vocan simalify
+
+our calculations further by integrating over the (2, 4, 8) triangle in Figure 3.4, denoted
+
+the S$ axis, including our manufactured boundary conditions. This means
+
+Qr, where the equations of the boundary curves are given by
+
+a(z) = Vg — 2?
+
+alo) = yo (§) - (e+e (5)
+
+where q = \/3 +2V3—2 44372.
+
+After some experimentation with various test functions, we settled on the function
+gi(z,y) = (y — V1 — 222? — 1) (y -VP- 2?) ;
+which is equal to zero on c; due to the y — ,/q? — x? factor. Note that we only enforce
+a (Dirichlet) boundary cqndition_along c;; the i Ta ae the other two
+sides of the domain in Figure-3-+-frecall from Th : test functions for a
+Neumann boundary condition in the variational characterization used for the min-max
+principle only have to be in W1? and not identically 0). The factor of y— V1 — 22x? —1
+
+and
+
+56

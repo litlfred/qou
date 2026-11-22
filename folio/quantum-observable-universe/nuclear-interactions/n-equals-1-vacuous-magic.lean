@@ -17,7 +17,7 @@ namespace QOU.ParticleInteractions
     set of valid decompositions. See
     `QOU.Interactions.AlgebraicPrimality.one_isAlgebraicallyPrime`
     for the proof. -/
--- Ref: [manuscript] prop:n-equals-1-vacuous-magic
+-- Ref: [leitner2026] prop:n-equals-1-vacuous-magic
 theorem one_isAlgebraicallyPrime (q : ℝ) :
     QOU.Interactions.AlgebraicPrimality.IsAlgebraicallyPrime 1 q :=
   QOU.Interactions.AlgebraicPrimality.one_isAlgebraicallyPrime q

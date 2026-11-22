@@ -1,0 +1,30 @@
+Canonical triangulations 1259
+
+Lemma 8.2 Suppose wo = 0, so that Q contains a subword LIR‘L with k > 2, or
+L|R'L with k > 3 (in the latter case, the second bar indicates that wz vanishes as well as
+wo). The corresponding fan admits a complete Euclidean structure with boundary (with
+angles prescribed by the w;’s). Moreover, let Q, P,T be the lengths of the segments of
+the broken line corresponding to the first R, in the order indicated in Figure 9 (P,T
+are the sides adjacent to the apex in a flat upward-pointing grey [hinge] triangle, in the
+sense of Figure 3). ThenQ < P+T.
+
+Uk r
+
+Figure 9: The situation where Q > P + T cannot hold
+
+Proof We first restrict our attention to the case LIR‘L, k > 2. The interior vertices of
+the topological fan correspond to the indices i living between two R’s, ie 1 <i<k—1,
+in the sense that holonomy around the i-th vertex u; (Figure 9) is controlled by OV /Ow;
+(Sublemma 6.4). When 2 < i < k— 1, none of the triangles adjacent to u; are flat,
+so w; can vary in a small interval without making the m-tuple w exit the domain
+P; consequently, the value of w; in that interval is critical, which by the first case
+(nonhinge) of Sublemma 6.4 implies that the holonomy around the associated vertex uw;
+is trivial. As for i = 1, the corresponding vertex uw, is adjacent to a flat angle zo = 7
+(Figure 9) so its holonomy is not imposed by the w;’s (when a triangle has an angle 7,
+the other two angles are always 0 while the adjacent sides may have arbitrary lengths).
+The case of LIRE|L is similar: for indices 2 < i < k — 2, Sublemma 6.4 applies, while
+for i= 1 or k— 1 holonomy is not imposed by the w;’s.
+
+Therefore we can embed the fan as an infinite necklace of triangulated polygons into
+
+Geometry & Topology 10 (2006)

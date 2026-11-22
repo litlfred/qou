@@ -3,13 +3,14 @@
  "doc_id": "arxiv-0805.1447v2",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "b7ee20b0a7f5f3da02f7c5c82a1b49f8036b4a9abe215c8c7597e3d16c97f4f6",
   "file": "0805.1447v2.pdf"
  },
  "provenance": {
-  "title": "BRAID ORDERING AND THE GEOMETRY OF CLOSED BRAID TETSUYA ITO",
-  "authors": null,
+  "title": "Braid ordering and the geometry of closed braid",
+  "authors": "TETSUYA ITO",
   "arxiv": {
    "id": "0805.1447",
    "version": "2",
@@ -20,210 +21,9 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 15,
-  "by_kind": {
-   "theorem": 5,
-   "remark": 5,
-   "lemma": 3,
-   "corollary": 2
-  },
-  "formalization_candidates": 10
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "1",
-   "name": null,
-   "statement": "Let \u03b2 \u2208 Bn be a braid and F be an essential, genus g",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-4",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "1",
-   "name": null,
-   "statement": "means braid ordering gives some information about the",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-4",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "2",
-   "name": null,
-   "statement": "partially answers the question.",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-4",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "2",
-   "name": null,
-   "statement": "Let \u03b2 \u2208 Bn be a braid whose closure is a knot. If [\u03b2 ]D \u2265 3,",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-4",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "1",
-   "name": null,
-   "statement": "Our de\ufb01nition of Dehornoy \ufb02oor is slightly di\ufb00erent from",
-   "section_file": "sections/sec-001-2-braid-ordering-and-dehornoy-floor.md",
-   "section_title": "Braid ordering and Dehornoy floor",
-   "pages": "4-6",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "2",
-   "name": null,
-   "statement": "There exist an in\ufb01nite family of left-invariant total order-",
-   "section_file": "sections/sec-001-2-braid-ordering-and-dehornoy-floor.md",
-   "section_title": "Braid ordering and Dehornoy floor",
-   "pages": "4-6",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "3",
-   "name": null,
-   "statement": "Proposition 3 makes results in [MN] a bit stronger form",
-   "section_file": "sections/sec-002-22-the-geometric-meaning-of-dehornoy-ordering-an.md",
-   "section_title": "The geometric meaning of Dehornoy ordering and Dehornoy floor",
-   "pages": "6-8",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "2",
-   "name": null,
-   "statement": "Let F be a tiled essential genus g closed surface in the",
-   "section_file": "sections/sec-004-41-tiled-essential-surface.md",
-   "section_title": "Tiled essential surface",
-   "pages": "10-12",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "3",
-   "name": null,
-   "statement": "Let F be a mixed foliated essential genus g(\u2044= 0) closed",
-   "section_file": "sections/sec-005-42-mixed-foliated-surface.md",
-   "section_title": "Mixed foliated surface",
-   "pages": "12-16",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "4",
-   "name": null,
-   "statement": "Let F be a normal mixed foliated surface with genus g \u2044= 0",
-   "section_file": "sections/sec-005-42-mixed-foliated-surface.md",
-   "section_title": "Mixed foliated surface",
-   "pages": "12-16",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "4",
-   "name": null,
-   "statement": "In [MN], it is proved that if a closure of \u03b2 is a composite",
-   "section_file": "sections/sec-006-5-nielsen-thurston-classification-and-the-geomet.md",
-   "section_title": "Nielsen-Thurston classification and the geometry of closed braid complements",
-   "pages": "16-20",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "3",
-   "name": "Menasco([Me1],[Me2]",
-   "statement": "). Torus knots are exchange-reducible.",
-   "section_file": "sections/sec-006-5-nielsen-thurston-classification-and-the-geomet.md",
-   "section_title": "Nielsen-Thurston classification and the geometry of closed braid complements",
-   "pages": "16-20",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "corollary",
-   "source_kind": "corollary",
-   "number": "1",
-   "name": null,
-   "statement": "Suppose [f ] \u2208 M CG(Dn) be a pseudo-Anosov element",
-   "section_file": "sections/sec-006-5-nielsen-thurston-classification-and-the-geomet.md",
-   "section_title": "Nielsen-Thurston classification and the geometry of closed braid complements",
-   "pages": "16-20",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": "5",
-   "name": null,
-   "statement": "Since every hyperbolic knots are represented as a clo-",
-   "section_file": "sections/sec-006-5-nielsen-thurston-classification-and-the-geomet.md",
-   "section_title": "Nielsen-Thurston classification and the geometry of closed braid complements",
-   "pages": "16-20",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "corollary",
-   "source_kind": "corollary",
-   "number": "2",
-   "name": null,
-   "statement": "Let p be a prime and \u03b2 \u2208 Bp be a braid whose closure",
-   "section_file": "sections/sec-006-5-nielsen-thurston-classification-and-the-geomet.md",
-   "section_title": "Nielsen-Thurston classification and the geometry of closed braid complements",
-   "pages": "16-20",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  }
- ]
+ "candidates": []
 }

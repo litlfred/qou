@@ -1,0 +1,85 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1207.4990v3",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "02aa065f4f65b8579392ae32b61e27d93ee2501be3b13b0f4e7bc99aa1ba0fbb",
+  "file": "1207.4990v3.pdf"
+ },
+ "provenance": {
+  "title": "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results",
+  "authors": "Percy Deift",
+  "arxiv": {
+   "id": "1207.4990",
+   "version": "3",
+   "primary_class": "math.FA",
+   "stamp_date": "1 Dec 2012"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 2,
+  "by_kind": {
+   "proposition": 2
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 2
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 2
+  },
+  "by_evidence_location": {
+   "in-paper": 2
+  }
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "On the other hand, it was observed in 1941 by van der Waerden [@vanderW] that the calculation of the Ising partition function is equivalent to the problem of counting closed polygons on the square lattice.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-000-1-setting-the-problem.md (p. 3-9)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-000-1-setting-the-problem.md",
+   "section_title": "Setting the problem",
+   "pages": "3-9",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-000-1-setting-the-problem.md (p. 3-9)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-000-01",
+   "block_iri": "library/arxiv-1207.4990v3/blocks/prop-sec-000-01",
+   "claim_id": "arxiv-1207.4990v3#prop-sec-000-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "However, as was observed in [@IJK], in the case of algebraic matrix functions $\\varphi(z)$ one can take advantage of the algebro-geometric method that had been developed in the late 70s to the early 90s in soliton theory (see e.g. [@BBEIM]).",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-009-10-block-toeplitz-matrices.md (p. 45-49)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-009-10-block-toeplitz-matrices.md",
+   "section_title": "Block Toeplitz matrices",
+   "pages": "45-49",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-009-10-block-toeplitz-matrices.md (p. 45-49)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-009-01",
+   "block_iri": "library/arxiv-1207.4990v3/blocks/prop-sec-009-01",
+   "claim_id": "arxiv-1207.4990v3#prop-sec-009-01"
+  }
+ ]
+}

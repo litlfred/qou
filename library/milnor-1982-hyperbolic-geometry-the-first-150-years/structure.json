@@ -6,7 +6,9 @@
   "sha256": "d444d7a61af54c7c3be374149917560103b614bd2afa02c6d0cb54fb06c4063f",
   "bytes": 1483380,
   "pages": 16,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:55Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -14,185 +16,352 @@
   "arxiv": null,
   "doi": null,
   "title": "Hyperbolic geometry: The first 150 years",
-  "authors_raw": "Volume 6, Number 1, January 1982",
+  "authors_raw": "AMERICAN MATHEMATICAL SOCIETY",
+  "title_lines": [
+   "BULLETIN (New Series) OF THE"
+  ],
   "abstract": null,
   "docinfo": {
    "Producer": "ABBYY FineReader 8.0 Professional Edition",
    "CreationDate": "D:20070206100025"
   },
-  "title_lines": [
-   "BULLETIN (New Series) OF THE",
-   "AMERICAN MATHEMATICAL SOCIETY",
-   "HYPERBOLIC GEOMETRY: THE FIRST 150 YEARS",
-   "BY JOHN MILNOR",
-   "This will be a description of a few highlights in the early history of"
-  ],
-  "title_prev": "BULLETIN (New Series) OF THE AMERICAN MATHEMATICAL SOCIETY HYPERBOLIC GEOMETRY: THE FIRST 150 YEARS BY JOHN MILNOR This will be a description of a few highlights in the early history of"
+  "title_raw": "BULLETIN (New Series) OF THE",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "HYPERBOLIC GEOMETRY: THE FIRST 150 YEARS This will be a description of a few highlights in the early history of non-euclidean geometry, and a few miscellaneous recent developments. An Appendix describes some explicit formulas concerning volume in hyperbolic 3-space. The mathematical literature on no",
+   "text": "BULLETIN (New Series) OF THE",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "BULLETIN (New Series) OF THE"
  },
  "toc": [
   {
    "level": 1,
-   "title": "JOHN MILNOR",
-   "page": 2,
-   "source": "inferred",
-   "number": "10"
-  },
-  {
-   "level": 1,
-   "title": "JOHN MILNOR",
-   "page": 4,
-   "source": "inferred",
-   "number": "12"
-  },
-  {
-   "level": 1,
-   "title": "JOHN MILNOR",
+   "title": "U~>PSL2C which is uniquely determined, up to inner automorphism and complex conjugation.",
    "page": 6,
    "source": "inferred",
-   "number": "14"
+   "number": "h",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "14"
   },
   {
    "level": 1,
-   "title": "JOHN MILNOR",
-   "page": 8,
+   "title": "of Humbert. Here (-D/ri) is a generalized quadratic residue symbol, with values ± 1 or 0. In order to express this infinite series in terms of the function JI(0), note first that the real-valued function n \\-^ (-D/ri) on Z/D is equal to its own Fourier transform, up to a factor of V-D = iVD . More precisely k£àD\\ k I",
+   "page": 13,
    "source": "inferred",
-   "number": "16"
-  },
-  {
-   "level": 1,
-   "title": "JOHN MILNOR",
-   "page": 10,
-   "source": "inferred",
-   "number": "18"
-  },
-  {
-   "level": 1,
-   "title": "JOHN MILNOR",
-   "page": 12,
-   "source": "inferred",
-   "number": "20"
-  },
-  {
-   "level": 1,
-   "title": "JOHN MILNOR",
-   "page": 14,
-   "source": "inferred",
-   "number": "22"
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 14,
-   "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "JOHN MILNOR",
-   "page": 16,
-   "source": "inferred",
-   "number": "24"
+   "number": "21",
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "21"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "A right triangle in hyperbolic space By early 1830, Lobachevsky was testing his \"imaginary geometry\" as a",
+   "page": 1,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "9"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "(The factor 1/2 is inserted so that curvature will be -1.) Here",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The figure eight knot The possible choices for A and B can be drastically narrowed as follows",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "14"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "The Whitehead Link and a twisted version of it",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "16"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Graph of JI(0)",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "17"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "A triangle inscribed in the unit disk If all three angles are acute, then barycentrically subdividing from the",
+   "page": 11,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "19"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-10-john-milnor",
-   "number": "10",
-   "title": "JOHN MILNOR",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 4,
-   "n_chars": 7375,
-   "n_words": 1209
-  },
-  {
-   "id": "sec-001-12-john-milnor",
-   "number": "12",
-   "title": "JOHN MILNOR",
-   "level": 1,
-   "page_start": 4,
    "page_end": 6,
-   "n_chars": 5483,
-   "n_words": 843
+   "n_chars": 14414,
+   "n_words": 2364,
+   "label_start": "9",
+   "label_end": "14"
   },
   {
-   "id": "sec-002-14-john-milnor",
-   "number": "14",
-   "title": "JOHN MILNOR",
+   "id": "sec-000-h-upsl2c-which-is-uniquely-determined-up-to-inne",
+   "number": "h",
+   "title": "U~>PSL2C which is uniquely determined, up to inner automorphism and complex conjugation.",
    "level": 1,
    "page_start": 6,
-   "page_end": 8,
-   "n_chars": 4775,
-   "n_words": 787
+   "page_end": 13,
+   "n_chars": 12841,
+   "n_words": 2271,
+   "label_start": "14",
+   "label_end": "21"
   },
   {
-   "id": "sec-003-16-john-milnor",
-   "number": "16",
-   "title": "JOHN MILNOR",
+   "id": "sec-001-21-of-humbert-here--dri-is-a-generalized-quadrat",
+   "number": "21",
+   "title": "of Humbert. Here (-D/ri) is a generalized quadratic residue symbol, with values ± 1 or 0. In order to express this infinite series in terms of the function JI(0), note first that the real-valued function n \\-^ (-D/ri) on Z/D is equal to its own Fourier transform, up to a factor of V-D = iVD . More precisely k£àD\\ k I",
    "level": 1,
-   "page_start": 8,
-   "page_end": 10,
-   "n_chars": 3665,
-   "n_words": 647
-  },
-  {
-   "id": "sec-004-18-john-milnor",
-   "number": "18",
-   "title": "JOHN MILNOR",
-   "level": 1,
-   "page_start": 10,
-   "page_end": 12,
-   "n_chars": 3683,
-   "n_words": 685
-  },
-  {
-   "id": "sec-005-20-john-milnor",
-   "number": "20",
-   "title": "JOHN MILNOR",
-   "level": 1,
-   "page_start": 12,
-   "page_end": 14,
-   "n_chars": 3670,
-   "n_words": 652
-  },
-  {
-   "id": "sec-006-22-john-milnor",
-   "number": "22",
-   "title": "JOHN MILNOR",
-   "level": 1,
-   "page_start": 14,
-   "page_end": 14,
-   "n_chars": 664,
-   "n_words": 111
-  },
-  {
-   "id": "sec-007-references",
-   "number": null,
-   "title": "References",
-   "level": 1,
-   "page_start": 14,
+   "page_start": 13,
    "page_end": 16,
-   "n_chars": 6433,
-   "n_words": 935
-  },
-  {
-   "id": "sec-008-24-john-milnor",
-   "number": "24",
-   "title": "JOHN MILNOR",
-   "level": 1,
-   "page_start": 16,
-   "page_end": 16,
-   "n_chars": 757,
-   "n_words": 108
+   "n_chars": 9700,
+   "n_words": 1482,
+   "label_start": "21",
+   "label_end": "24"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 9,
-  "sections": 9,
-  "chars_total": 36505
+  "toc_entries": 2,
+  "toc_inferred_entries": 3,
+  "toc_inferred_mean_confidence": 0.7,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 6,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 3,
+  "chars_total": 36955,
+  "furniture_lines_stripped": 0,
+  "headings_tidied": [
+   {
+    "title": "k£àD\\ k I",
+    "page": 13,
+    "action": "rejoined",
+    "as": "of Humbert. Here (-D/ri) is a generalized quadratic residue symbol, with values ± 1 or 0. In order to express this infinite series in terms of the function JI(0), note first that the real-valued function n \\-^ (-D/ri) on Z/D is equal to its own Fourier transform, up to a factor of V-D = iVD . More precisely k£àD\\ k I",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "volume = 4",
+    "page": 13,
+    "action": "dropped",
+    "why": "opens in lower case"
+   }
+  ]
  },
  "duplicate_copies": [
   "milnor-hyperbolic"

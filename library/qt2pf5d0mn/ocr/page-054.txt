@@ -1,0 +1,38 @@
+Section 3.3 Examples
+
+3.3. Examples
+
+In this section, we give several examples of the partition function defined in Section
+
+Some of the known invariants in literature emerge as special cases of our construction.
+
+3.3.1 Crane-Yetter invariant
+
+The Crane-Yetter invariant was introduced in [22], where the authors gave a state
+sum construction of 4-manifold invariants with the modular tensor category Rep(U,(sl2))
+as input, where Rep(U,(sl2)) is the category of representations of U,(sl2) with q some
+principal 4r-th root of unity. Later on the construction was generalized so that it takes
+any semi-simple ribbon category as input [23] al This generalized state sum invariant is
+still called the Crane-Yetter invariant denoted by CYc(M).
+
+For a G-BSFC D = CG = @C,, if G = {e} is the trivial group, then D has only
+one sector C = C, and it is a ‘ibbon fusion category. In this case, the only color on a
+l-simplex is the unit e, so we can just assume there is no color at all on 1-simplices.
+The colors on each 2-, 3-simplex run through a complete set of representatives in C. For
+each colored 4-simplex, the partition function is given by Figure[3.3]where all the relevant
+group elements are trivial, and this is equal to that defined in [23]. It is then trivial to see
+
+that the resulting partition function Zoe (M ) is the exactly the Crane-Yetter invariant
+
+CYe(M).
+
+3.3.2 Yetter’s invariant from homotopy 2-types
+
+A (strict) categorical group is a rigid tensor category G such that (@, 1, (-)*) satisfies
+the axioms of groups strictly and that every morphism is invertible. Note that here
+
+the morphism spaces are not required to be a vector space. Namely, in a categorical
+
+In the paper, such a category was called semi-simple tortile category.
+
+45

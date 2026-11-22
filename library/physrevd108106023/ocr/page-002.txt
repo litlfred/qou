@@ -1,0 +1,116 @@
+VIVEK KUMAR SINGH et ai.
+
+PHYS. REV. D 108, 106023 (2023)
+
+(——™
+
+m
+
+5
+front
+
+p
+
+FIG. 1. Double twist knots (m, p denote number of full twists).
+
+shown as vertices on a permutohedra graph, giving a
+systematic enumeration of such equivalent quivers.
+There are also quivers with a different number of nodes
+that describe the same physics, i.e., a pool of dualities in 3d
+N =2 theory [7].
+
+The physical and the geometrical interpretations of the
+conjectural KQC were addressed [8] within the framework
+of Ooguri-Vafa large N duality. From the physics perspec-
+tive, the motivic generating series of Qx matches the vortex
+partition function of 3d NM =2 theory 7[Qx]. On the
+geometrical side [8], the spectrum of holomorphic curves
+with a boundary on the conormal Lagrangian Lx of the
+knot in the resolved conifold encodes the quiver data. That
+is, the basic holomorphic disks correspond to the nodes of
+the quiver Qx and the linking of their boundaries to the
+quiver arrows.
+
+With a double fat diagram description for arborescent
+knots, the r-colored HOMFLY-PT invariant, PX(A = q", q)
+
+[r refers to symmetric color LLI LL) € SU(N))), for a
+
+r
+universal arborescent knot family K involving seven param-
+eters was proposed in [9,10]. Such a family includes most of
+the arborescent knots up to 10 crossings. Also, the colored
+HOMELY-PT polynomials (up to four symmetric colors
+for knots up to 10 crossings) have been updated in the
+website [11]. Recent papers on the existence of quivers for
+all rational knots, tangles, and arborescent knots [5,12]
+motivated us to deduce a universal quiver for our arborescent
+knot family. Even though the problem is concrete, finding
+explicit quivers for this universal arborescent family appears
+to be a hard problem.
+
+As a first step, we wanted to investigate some arbores-
+cent knots whose Alexander polynomial has a structure
+similar to that of the twist knots K,. That is,
+A(X) = 1—- pX. In fact, there is a systematic reverse
+engineering approach of the Melvin-Morton-Rozansky
+(MMR) formalism to obtain the quiver representation for
+such twist knots [13]. We observed A(X) = 1-4X for knot
+8 is part of the family of double twist knots characterized
+by two variables, denoted as K(p, —m), illustrated in Fig. 1.
+Note p,m€Z, denote the number of full twists, and the
+Alexander polynomial is A(X) = 1 — pmX. Such a form
+motivated us to attempt quiver representation for double
+twist knots.
+
+Even though the r-colored HOMFLY-PT for any double
+twist knot in the cyclotomic form are known [14,15],
+rewriting them in the form of motivic series is still a
+challenging problem. We tried to determine the quiver
+representation of pk(pem) (A = q™,q) following the meth-
+odology in Ref. [13]. However, we faced computational
+difficulty in deducing the A dependence in the quiver
+representation. Also, we know that the quiver matrix C'*)
+does not depend on the variable A = q’. As our aim is to
+conjecture the quiver matrix form for the double twist knots
+K(p,—m), we focus on rewriting the r-colored Jones
+polynomial (A = q‘=?),
+
+J,(K(p.—m),q) = PR?" (A = 9).
+
+as a motivic series. Particularly, we obtain quiver matrix
+
+cK? associated with the K(p,—m) for m <3. We
+
+ij
+conjecture that the quiver matrix cree)
+
+recursively generate the quiver matrix for all the double
+twist knots K(p # m, —m).
+
+We follow the route of reverse engineering of MMR
+expansion [13] to derive the motivic series form for
+
+is sufficient to
+
+pk(p—m) (A = q™,q)|y-2. We now briefly review the
+reverse engineering formalism, which sets the notation
+and procedure we follow for K(p, —m) in the next section.
+
+A. Reverse engineering of Melvin-Morton-Rozansky
+(MMR) expansion
+Melvin-Morton-Rozansky (MMR) expansion states that
+the symmetric r-colored HOMFLY-PT for knot K has the
+following semiclassical expansion:
+
+1
+z 1a — ph) ~
+win Pla =a
+i} RK (x,N) N+2k-1 k
+pa eee hX, (2
++> AK(x) » 2
+
+with the leading term being the Alexander polynomial
+AX(x), and the variable x in terms of color r is
+
+106023-2

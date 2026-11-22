@@ -6,10 +6,12 @@
   "sha256": "b2d7514c5382ceaaa1824e32bc21518f43155a83644c9967642788a5cf0c79a9",
   "bytes": 151848,
   "pages": 9,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,20 +22,28 @@
   },
   "doi": null,
   "title": "Multiple polylogarithm values at roots of unity",
-  "authors_raw": "Department of Mathematics, Eckerd College, St. Petersburg, FL 33711, USA",
-  "abstract": "For any positive integer N let \u00b5 N be the group of the N th roots of unity. In this note we shall study the Q-linear relations among values of multiple polylogarithms evaluated at \u00b5 N . We show that the standard relations considered by Racinet do not provide all the pos sible relations in the following cases: (i) level N = 4, weight w = 3 or 4, and (ii) w = 2, 7 < N < 50, and N is a power of 2 or 3, or N has at least two prime factors. We further \ufb01nd some (presumably all) of th e missing relations in (i) by using the octahedral symmetry of P1 \u2212 ({0, \u221e} \u222a \u00b5 4). We also prove some other results when N = p or N = p2 (p prime \u2265 5) by using the motivic fundamental group of P1 \u2212 ({0, \u221e} \u222a \u00b5 N ).",
+  "authors_raw": "Jianqiang Zhao",
+  "title_lines": [
+   "Multiple polylogarithm values at roots of unity"
+  ],
+  "abstract": "For any positive integer N let µN be the group of the Nth roots of unity. In this note we shall study the Q-linear relations among values of multiple polylogarithms evaluated at µN. We show that the standard relations considered by Racinet do not provide all the possible relations in the following cases: (i) level N = 4, weight w = 3 or 4, and (ii) w = 2, 7 < N < 50, and N is a power of 2 or 3, or N has at least two prime factors. We further ﬁnd some (presumably all) of the missing relations in (i) by using the octahedral symmetry of P1 −({0, ∞} ∪µ4). We also prove some other results when N = p or N = p2 (p prime ≥5) by using the motivic fundamental group of P1 −({0, ∞} ∪µN).",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181117222526-05'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20181117222526-05'00'"
   },
-  "title_lines": [
-   "Multiple polylogarithm values at roots of unity",
-   "Jianqiang Zhao"
-  ],
-  "title_prev": "Multiple polylogarithm values at roots of unity Jianqiang Zhao"
+  "title_raw": "Multiple polylogarithm values at roots of unity",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Multiple polylogarithm values at roots of unity",
+   "outline": "Introduction",
+   "text": "Multiple polylogarithm values at roots of unity",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -41,39 +51,151 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "The motivic setup",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Standard relations in MPV(w,4)",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
-   "title": "Octahedral symmetry of \u00b61-({0,}bold0mu mumu 4)",
+   "title": "Octahedral symmetry of ¶1-({0,}bold0mu mumu 4)",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "Level p and p2 cases (p5 a prime)",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 871,
+   "n_words": 166,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
@@ -81,8 +203,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 3391,
-   "n_words": 693
+   "n_chars": 3336,
+   "n_words": 639,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
    "id": "sec-001-the-motivic-setup",
@@ -90,17 +214,51 @@
    "title": "The motivic setup",
    "level": 1,
    "page_start": 2,
+   "page_end": 3,
+   "n_chars": 2029,
+   "n_words": 390,
+   "label_start": "2",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-002-standard-relations-in-mpvw4",
+   "number": null,
+   "title": "Standard relations in MPV(w,4)",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 5316,
+   "n_words": 1022,
+   "label_start": "3",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-003-level-p-and-p2-cases-p5-a-prime",
+   "number": null,
+   "title": "Level p and p2 cases (p5 a prime)",
+   "level": 1,
+   "page_start": 4,
    "page_end": 9,
-   "n_chars": 17593,
-   "n_words": 3875
+   "n_chars": 9983,
+   "n_words": 2246,
+   "label_start": "4",
+   "label_end": "9"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 5,
-  "sections": 2,
-  "chars_total": 20984,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 5,
+  "chars_total": 21535,
+  "furniture_lines_stripped": 9,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
@@ -113,18 +271,34 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.984,
+     "prose_ratio": 0.994,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-the-motivic-setup",
      "title": "The motivic setup",
-     "prose_ratio": 0.953,
-     "coverage_ratio": 0.89,
+     "prose_ratio": 0.382,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-standard-relations-in-mpvw4",
+     "title": "Standard relations in MPV(w,4)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-level-p-and-p2-cases-p5-a-prime",
+     "title": "Level p and p2 cases (p5 a prime)",
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.786,
      "result": "overlaid",
      "converter": "pandoc"
     }

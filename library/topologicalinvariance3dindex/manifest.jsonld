@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/topologicalinvariance3dindex",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/topologicalinvariance3dindex/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "topologicalinvariance3dindex",
   "contains": [
+    "library/topologicalinvariance3dindex/sections/sec-front-matter",
     "library/topologicalinvariance3dindex/sections/sec-000",
     "library/topologicalinvariance3dindex/sections/sec-001",
     "library/topologicalinvariance3dindex/sections/sec-002",
@@ -32,10 +33,21 @@
     "library/topologicalinvariance3dindex/sections/sec-018",
     "library/topologicalinvariance3dindex/sections/sec-019",
     "library/topologicalinvariance3dindex/sections/sec-020",
-    "library/topologicalinvariance3dindex/sections/sec-021"
+    "library/topologicalinvariance3dindex/sections/sec-021",
+    "library/topologicalinvariance3dindex/sections/sec-022",
+    "library/topologicalinvariance3dindex/sections/sec-023",
+    "library/topologicalinvariance3dindex/sections/sec-024",
+    "library/topologicalinvariance3dindex/sections/sec-025",
+    "library/topologicalinvariance3dindex/sections/sec-026",
+    "library/topologicalinvariance3dindex/sections/sec-027",
+    "library/topologicalinvariance3dindex/sections/sec-028",
+    "library/topologicalinvariance3dindex/sections/sec-029",
+    "library/topologicalinvariance3dindex/sections/sec-030",
+    "library/topologicalinvariance3dindex/sections/sec-031",
+    "library/topologicalinvariance3dindex/sections/sec-032"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "topologicalinvariance3dindex",
     "title_source": "slug",

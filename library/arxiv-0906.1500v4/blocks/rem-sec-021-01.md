@@ -1,0 +1,1 @@
+In what follows the sign in the Reidemeister torsion will be not relevant; so, we will work up to sign. We let Tor(W, c∗ W , ∅) denote the (acyclic) Reidemeister torsion of the manifold W with coeﬃcients in sl2(C(t)) and computed in the appropriate geometric basis c∗ W .

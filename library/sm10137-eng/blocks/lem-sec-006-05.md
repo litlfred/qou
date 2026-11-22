@@ -1,0 +1,1 @@
+There exists a constant C such that for any a ∈L1(R+) ∩L∞(R+) satisfying ∥a∥˙B < ∞we have (1) ∥a′′∥L1 ⩽C(∥a∥˙H1 + ∥a∥˙H2 + ∥ta(t)∥˙H2); (2) ∥ta′′′(t)∥L1 ⩽C(∥a∥˙H3 + ∥a∥˙H1 + ∥ta(t)∥˙H2 + ∥t2a(t)∥˙H3); (3) limt→+∞a(t) = 0, limt→+∞a′(t) = 0 and limt→+∞ta′′(t) = 0; (4) |a′(0)| ⩽∥a∥˙H1 + ∥a∥˙H2 . In particular, the above estimates are bounded by C∥a∥˙B.

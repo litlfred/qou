@@ -1,12 +1,12 @@
-| Combination | Result | Lean theorem |
-|---|---|---|
-| sym + sym | sym | `IsBarSymmetric.add` |
-| sym $\times$ sym | sym | `IsBarSymmetric.mul` |
-| anti + anti | anti | `IsBarAntiSymmetric.add` |
-| **anti $\times$ anti** | **sym** | `IsBarSymmetric.of_mul_antisym` |
-| sym $\times$ anti | anti | `IsBarAntiSymmetric.of_sym_mul` |
-| $-$sym | sym | `IsBarSymmetric.neg` |
-| $-$anti | anti | `IsBarAntiSymmetric.neg` |
-| $h^{2n}$ (h anti) | sym | `IsBarAntiSymmetric.pow_two_mul` |
-| $h^{2n+1}$ (h anti) | anti | `IsBarAntiSymmetric.pow_two_mul_add_one` |
-| $\mathrm{bar}(-x) = -\mathrm{bar}(x)$ | identity | `bar_neg` |
+| Combination | Result |
+|---|---|
+| sym + sym | sym |
+| sym $\times$ sym | sym |
+| anti + anti | anti |
+| **anti $\times$ anti** | **sym** |
+| sym $\times$ anti | anti |
+| $-$sym | sym |
+| $-$anti | anti |
+| $h^{2n}$ (h anti) | sym |
+| $h^{2n+1}$ (h anti) | anti |
+| $\mathrm{bar}(-x) = -\mathrm{bar}(x)$ | identity |

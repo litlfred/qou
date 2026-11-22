@@ -114,7 +114,7 @@ lemma gauss_sum_5_abs : norm gauss_sum_5 = Real.sqrt 5 := by
 singular fibre $\zeta_5$ on the homology of the hyperelliptic quintic $\mathcal{X}_5$
 evaluates to the $1/\sqrt{5}$ chiral residue and the $+2.1^\circ$ H₂S angle.
 -/
--- Ref: [manuscript] conj:h2s-angle-s3-braid-holonomy
+-- Ref: [leitner2026] conj:h2s-angle-s3-braid-holonomy
 theorem zeta5_residue_monodromy_phase [ctx : Zeta5MonodromyContext] :
   ctx.residue_eval = ctx.Phi * ctx.tr_M_beta ∧
   norm gauss_sum_5 = Real.sqrt 5 ∧

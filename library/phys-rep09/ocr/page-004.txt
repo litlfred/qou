@@ -1,0 +1,75 @@
+154 S. Blanes et al. / Physics Reports 470 (2009) 151-238
+
+(c) Y: R—> M,(C),A : R — M,(C). Now both Y and A are complex matrix valued functions. A particular case, but still
+general enough to encompass the most interesting physical and mathematical applications, corresponds to Y(t) € ,
+A(t) € g, where 9, and g are, respectively, a matrix Lie group and its corresponding Lie algebra. Why this is of interest,
+is easy to grasp: the key reason for the failure of (2) is the non-commutativity of matrices in general. So one can expect
+that the (in general non-vanishing) commutators play an important role. But when commutators enter the play, one
+immediately thinks in Lie structures. Furthermore, plainly speaking, the way from a Lie algebra to its Lie group is covered
+by the exponential operation — a fact that will be of no surprise in this context. The same comments of the previous case
+are valid here. In this report, we shall mostly deal with this matrix case.
+
+(d) The most general situation one can think of corresponds to Y(t) and A(t) being operators in some space, e.g., Hilbert space
+in Quantum Mechanics. Perhaps the most paradigmatic example of (1) in this setting is the time-dependent Schrodinger
+equation.
+
+Observe that case (b) above can be reduced to case (c). This is easily seen if one introduces what, in mathematical
+literature, is called the matrizant, a concept dating back at least to the beginning of the 20th century in the work of Baker
+[7]. It is the n x n matrix U(t, to) defined through
+
+Y(t) = U(t, to) Yo. (3)
+
+Without loss of generality, we will take t) = O unless otherwise explicitly stated, for the sake of simplicity. When no
+confusion may arise, we write only one argument in U and denote U(t, 0) = U(t), which then satisfies the differential
+equation and initial condition
+
+U(t)=A(U(t), U0) = 1, (4)
+
+where | stands for the n-dimensional identity matrix. The reader will have recognized U(t) as what, in physical terms, is
+known as the time evolution operator.
+We are now ready to state Magnus’ proposal: a solution to (4) which is a true matrix exponential
+
+U(t) =expQ(t), 2(0)=0, (5)
+
+and a series expansion for the matrix in the exponent
+
+Q(t) = > A(t), (6)
+
+k=1
+
+which is what we call the Magnus expansion. The mathematical elaborations explained in the next section determine 92;(t).
+Here we just write down the three first terms of that series:
+
+t
+a= | A(ty)dty,
+0
+ire t
+Q2(t) = al an [ dty [A(t1), A(ta)] (7)
+0 0
+
+ire t to
+23(t) = al at, [ ar | dts ([A(ti), [A(t2), A(ts)]] + [A(ts), [A(t2), A(t) I)
+0 0 0
+
+where [A, B] = AB — BA is the matrix commutator of A and B.
+
+The interpretation of these equations seems clear: (2;(t) coincides exactly with the exponent in (2). But this equation
+cannot give the whole solution, as has already been said. So, if one insists on having an exponential solution, the exponent
+has to be corrected. The rest of the ME in (6) gives that correction, necessary to keep the exponential form of the solution.
+
+The terms appearing in (7) already suggest the most appealing characteristic of ME. Remember that a matrix Lie algebra
+is a linear space in which one has defined the commutator as the second internal composition law. If, as we suppose, A(t)
+belongs to a Lie algebra g for all t, so does any sum of multiple integrals of nested commutators. Then, if all terms in ME have
+a structure similar to that of the ones shown before, the whole §2(t) and any approximation to it obtained by truncation of
+ME, will also belong to the same Lie algebra. In the next section, it will be shown that this turns out to be the case and, a
+fortiori, its exponential will be in the corresponding Lie group.
+
+Why is this so important for physical applications? Just because many of the properties of evolution operators derived
+from first principles are linked to the fact that they belong to a certain Lie group: e.g. unitary group in Quantum Mechanics,
+symplectic group in Classical Mechanics. In that way, use of (truncated) ME leads to approximations which share, with the
+exact solution of Eq. (4), important qualitative (very often, geometric) properties. For instance, in Quantum Mechanics every
+approximant preserves probability conservation.
+
+From the present point of view, we could say that the last paragraphs summarize, in a nut shell, the main contents of the
+famous paper of Magnus of 1954. With no exaggeration, its appearance can be considered a turning point in the treatment
+of the initial value problem defined by (4).

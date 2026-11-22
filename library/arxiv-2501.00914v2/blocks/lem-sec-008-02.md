@@ -1,1 +1,1 @@
-Any nontrivial L-space knot, or almost L-space knot of genusg≥3, is ffpf.
+Any nontrivial L-space knot, or almost L-space knot of genus g ≥3, is ffpf.

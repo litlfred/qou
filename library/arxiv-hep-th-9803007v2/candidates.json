@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-hep-th-9803007v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "75f6484941ecbca0b8a455cbc48410ccd290d7be3cc5d27c67ccd13e69f92de9",
+  "file": "9803007v2.pdf"
+ },
+ "provenance": {
+  "title": "arXiv:hep-th/9803007v2 17 Jun 1998",
+  "authors": "Shinsuke M. Nishigaki1,\u2217, Poul H. Damgaard2,\u2020, and Tilo Wettig3,\u2021",
+  "arxiv": {
+   "id": "hep-th/9803007",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "17 Jun 1998"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

@@ -1,0 +1,49 @@
+2.3 Algebraic generating functions 37
+
+coordinates of the valley p satisfy p\,...,Pa-1 = 0 > pq and the boundary
+generating function K(z) is algebraic then F is algebraic.
+
+Proof Suppose r ¢ Z and r—s € Z with s € E. If s’ is the vector whose first
+d— 1 coordinates match s but 8) = O then r ¢ Z implies r — s’ ¢ Z because
+the complement of Z is closed under coordinatewise < and the hypothesis on
+p implies the first d — 1 coordinates of any point in E are nonnegative. Thus,
+Sd— Pa <a < Sq and it follows that U is a polynomial of degree at most pa —- 1
+in Zz.
+
+The polynomial Q is equal to ze — Yisce Cath’ z8. It is convenient to regard
+this as a polynomial in zy of degree at least pa, over the field of algebraic func-
+tions in z),...,Za-1. We denote the roots of this polynomial by &;(z),..., Za-1)
+and note that pg of the roots, counted with multiplicities, vanish at the origin
+since (0,...,0, j) ¢ E for any j < 0 implies Q(0,...,0, za) has multiplicity pa
+at Zq = 0.
+
+If the py roots of Q vanishing at the origin are distinct then the equation
+QFz = K — U evaluated at each &; leads to pa equations U(é;) = K(&;). The
+Lagrange interpolation formula [PS98, Section V1.9] produces a polynomial
+
+P given its values y),..., yz at any k points x1,..., Xx,
+n
+XX;
+pa) =>) vi[ |. (2.7)
+j=l iaj “Jt
+
+Over any field of characteristic zero, and in particular over the field of algebraic
+functions in x,,...,xg, this is the unique polynomial of degree at most k —
+1 passing through the k points. Applying (2.7) to the py equations U(é) =
+K(&;,) thus uniquely determines the polynomial U. In particular, U is a rational
+function of algebraic quantities, and is thus also algebraic.
+
+If the &; are not distinct, one has instead the py equations
+
+U(é) = K(&), UG) = K'&), --. UE) = KE),
+
+where m; is the multiplicity of the root €;. One may replace the Lagrange in-
+terpolation formula by the Hermite interpolation formula [IK94, Section 6.1,
+Problem 10], which again gives U as a rational function of each K(é;) and its
+derivatives. im
+
+Restricting to d = 2 and B = {0} gives a more explicit formula for F.
+
+Corollary 2.18. Further specialize the hypotheses of Theorem 2.17 to assume
+that d = 2, the point p = (0,-p) for some p > 0, and B = {0} with boundary
+value by = 1. Then there are exactly p formal power series &\(x),...,&p(x)

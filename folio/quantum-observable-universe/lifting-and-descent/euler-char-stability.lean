@@ -9,7 +9,7 @@ under jet prolongation: χ(A_{n+1}) = χ(Aₙ) for all n.
 
 ## References
 
-- [manuscript] §3 Lifting and Descent
+- [leitner2026] §3 Lifting and Descent
 -/
 
 namespace QOU.Torsion
@@ -34,13 +34,13 @@ structure JetProlongationSystem (R : Type*) [CommRing R] where
   trace_stable : ∀ n, trace (n + 1) = trace n
 
 /-- **Stability of the Euler characteristic**: χ(A_{n+1}) = χ(Aₙ). -/
--- Ref: [manuscript] §3, Proposition: Euler characteristic stability
+-- Ref: [leitner2026] §3, Proposition: Euler characteristic stability
 theorem euler_char_stable (jp : JetProlongationSystem R) (n : ℕ) :
     jp.trace (n + 1) = jp.trace n :=
   jp.trace_stable n
 
 /-- By induction: χ(Aₙ) = χ(A₀) for all n. -/
--- Ref: [manuscript] §3, Proposition: Euler characteristic stability
+-- Ref: [leitner2026] §3, Proposition: Euler characteristic stability
 theorem euler_char_constant (jp : JetProlongationSystem R) (n : ℕ) :
     jp.trace n = jp.trace 0 := by
   induction n with
@@ -49,7 +49,7 @@ theorem euler_char_constant (jp : JetProlongationSystem R) (n : ℕ) :
 
 /-- Jet prolongation preserves the rigidity trace when the Frobenius
     unit and counit are preserved. -/
--- Ref: [manuscript] §3
+-- Ref: [leitner2026] §3
 theorem jet_prolongation_preserves_trace
     (R : Type*) [CommRing R]
     (ev coev : R)

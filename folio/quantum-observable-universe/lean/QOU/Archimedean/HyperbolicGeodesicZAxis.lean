@@ -20,7 +20,7 @@ Archimedean (ℝ): `exp`, `log`, `‖·‖`, ordering `0 < z` — §7c.
 
   -- Ref: [thurston1978] Ch. 2 §2.3 p. 12 (the metric, vertical geodesics)
   -- Ref: [ratcliffe] §4.6 (geodesics of `H³`; the z-axis is a geodesic)
-  -- Ref: [manuscript] beans qou-6eco (T2 WALL-3), qou-473l (T2), qou-idvt (T2)
+  -- Ref: [leitner2026] beans qou-6eco (T2 WALL-3), qou-473l (T2), qou-idvt (T2)
 -/
 
 import QOU.Archimedean.HyperbolicMetric

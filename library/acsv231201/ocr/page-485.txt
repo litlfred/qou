@@ -1,0 +1,40 @@
+B.1 Chain complexes and homology theory 467
+
+» .@ Ao
+
+— + O [ATO
+
+Figure B.1 Top left: The sphere S* can be represented as a cell complex with one
+0-cell and one 2-cell whose boundary is mapped to the 0-cell, but this is not a
+A-complex. Top right: A representation of S? as a A-complex containing three 0-
+cells, three 1-cells, and two 2-cells. Bottom left: The circle S ! can be represented
+as a A-complex with one 0-cell and one 1-cell whose boundary is identified with
+the 0-cell, but this is not a triangulation. Bottom right: A triangulation of S! with
+three 0-cells and three 1-cells.
+
+The difficulties with singular homology for general topological spaces still
+arise for A and simplicial complexes. However, the additional structure present
+allows us to define a more rigid notion of homology. If X is a simplicial com-
+plex then the simplicial homology of X is the homology defined by the chain
+complex C whose n-chains are complex linear combinations of the n-simplices
+in X, with the boundary map again defined by (A.3.1). Simplicial homology is
+crucial for calculation, due to the following result.
+
+Proposition B.5. [f X is a simplicial complex then the nth singular homol-
+ogy group of X is isomorphic to the nth simplicial homology group of X. The
+simplicial homology groups of X are algorithmically computable.
+
+Proof See [Hat02, Theorem 2.27] for the statement on the equivalence of
+the homologies, and [Mun84, Theorem 11.5] for an algorithm to determine
+simplicial homology by representing the linear boundary maps of X as matrices
+and computing their Smith normal forms. ia)
+
+Among other corollaries, Proposition B.5 implies that a space which can
+be represented by a A-complex with a finite number of simplices has finitely
+generated homology groups. Although simplicial complexes have more struc-
+ture than A-complexes, it can often be more efficient to represent a space as a
+A-complex compared to representing it as a simplicial complex.
+
+Example B.6. We compute the homology of the circle $! by representing it
+as the A-complex X with one point X° = {p} and one line segment X! = {¢}
+with both endpoints of € glued at p. The 0-chains in this representation are

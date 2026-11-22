@@ -1,0 +1,61 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/du-fu-quantum-gln-qschur-survey/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Quantum gl_n, q-Schur algebras and their infinite/infinitesimal counterparts",
+  "contains": [
+    "library/du-fu-quantum-gln-qschur-survey/sections/page-001",
+    "library/du-fu-quantum-gln-qschur-survey/sections/page-002",
+    "library/du-fu-quantum-gln-qschur-survey/sections/page-003",
+    "library/du-fu-quantum-gln-qschur-survey/sections/page-004",
+    "library/du-fu-quantum-gln-qschur-survey/sections/page-005",
+    "library/du-fu-quantum-gln-qschur-survey/sections/page-006",
+    "library/du-fu-quantum-gln-qschur-survey/sections/page-007",
+    "library/du-fu-quantum-gln-qschur-survey/sections/page-008",
+    "library/du-fu-quantum-gln-qschur-survey/sections/page-009",
+    "library/du-fu-quantum-gln-qschur-survey/sections/page-010",
+    "library/du-fu-quantum-gln-qschur-survey/sections/page-011",
+    "library/du-fu-quantum-gln-qschur-survey/sections/page-012",
+    "library/du-fu-quantum-gln-qschur-survey/sections/page-013",
+    "library/du-fu-quantum-gln-qschur-survey/sections/page-014",
+    "library/du-fu-quantum-gln-qschur-survey/sections/page-015",
+    "library/du-fu-quantum-gln-qschur-survey/sections/page-016",
+    "library/du-fu-quantum-gln-qschur-survey/sections/page-017",
+    "library/du-fu-quantum-gln-qschur-survey/sections/page-018",
+    "library/du-fu-quantum-gln-qschur-survey/sections/page-019",
+    "library/du-fu-quantum-gln-qschur-survey/sections/page-020",
+    "library/du-fu-quantum-gln-qschur-survey/sections/page-021",
+    "library/du-fu-quantum-gln-qschur-survey/sections/page-022",
+    "library/du-fu-quantum-gln-qschur-survey/sections/page-023"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "du-fu-quantum-gln-qschur-survey",
+    "title_source": "editorial",
+    "title_from": "structure.json metadata.title_correction.title",
+    "title_verified": true,
+    "title_correction": {
+      "title": "Quantum gl_n, q-Schur algebras and their infinite/infinitesimal counterparts",
+      "basis": "Printed title on page 1 (J. Du and Q. Fu); the extracted title was cut at a line break",
+      "extracted_title": "QUANTUM gln, q-SCHUR ALGEBRAS AND THEIR",
+      "corrected_on": "2026-11-15",
+      "extracted": "Quantum gl_n, q-Schur algebras and their infinite/infinitesimal counterparts"
+    },
+    "source_file": "du-fu-quantum-gln-qschur-survey.pdf",
+    "source_sha256": "6852134eaffb31376226d2f7c6d0c1b1f43fb44d37c1ccb95cb55875ae064cb6",
+    "pages": 23,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

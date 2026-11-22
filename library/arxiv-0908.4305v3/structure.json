@@ -7,10 +7,11 @@
   "bytes": 550007,
   "pages": 67,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,20 +21,31 @@
    "stamp_date": "21 Oct 2010"
   },
   "doi": null,
-  "title": "Higher Dimensional Algebra VII: Groupoidification",
+  "title": "Higher Dimensional Algebra VII: Groupoidiﬁcation",
   "authors_raw": "John C. Baez, Alexander E. Hoffnung, and Christopher D. Walker",
   "title_lines": [
    "Higher Dimensional Algebra VII:",
    "Groupoidification"
   ],
-  "abstract": "Groupoidi\ufb01cation is a form of categori\ufb01cation in which vect or spaces are replaced by groupoids and linear operators are replaced by spans of groupoids. We introduce this idea with a detailed exposit ion of \u2018de- groupoidi\ufb01cation\u2019: a systematic process that turns groupo ids and spans into vector spaces and linear operators. Then we present thr ee appli- cations of groupoidi\ufb01cation. The \ufb01rst is to Feynman diagram s. The Hilbert space for the quantum harmonic oscillator arises na turally from degroupoidifying the groupoid of \ufb01nite sets and bijections . This allows for a purely combinatorial interpretation of creation and anni hilation oper- ators, their commutation relations, \ufb01eld operators, their normal-ordered powers, and \ufb01nally Feynman diagrams. The second applicatio n is to Hecke algebras. We explain how to groupoidify the Hecke algebra as sociated to a Dynkin diagram whenever the deformation parameter q is a prime power. We illustrate this with the simplest nontrivial example, co ming from the A2 Dynkin diagram. In this example we show that the solution of t he Yang\u2013Baxter equation built into the A2 Hecke algebra arises naturally from the axioms of projective geometry applied to the projec tive plane over the \ufb01nite \ufb01eld Fq. The third application is to Hall algebras. We ex- plain how the standard construction of the Hall algebra from the category of Fq representations of a simply-laced quiver can be seen as an ex ample of degroupoidi\ufb01cation. This in turn provides a new way to cat egorify\u2014 or more precisely, groupoidify\u2014the positive part of the qua ntum group associated to the quiver.",
+  "abstract": "Groupoidiﬁcation is a form of categoriﬁcation in which vector spaces are replaced by groupoids and linear operators are replaced by spans of groupoids. We introduce this idea with a detailed exposition of ‘de- groupoidiﬁcation’: a systematic process that turns groupoids and spans into vector spaces and linear operators. Then we present three appli- cations of groupoidiﬁcation. The ﬁrst is to Feynman diagrams. The Hilbert space for the quantum harmonic oscillator arises naturally from degroupoidifying the groupoid of ﬁnite sets and bijections. This allows for a purely combinatorial interpretation of creation and annihilation oper- ators, their commutation relations, ﬁeld operators, their normal-ordered powers, and ﬁnally Feynman diagrams. The second application is to Hecke algebras. We explain how to groupoidify the Hecke algebra associated to a Dynkin diagram whenever the deformation parameter q is a prime power. We illustrate this with the simplest nontrivial example, coming from the A2 Dynkin diagram. In this example we show that the solution of the Yang–Baxter equation built into the A2 Hecke algebra arises naturally from the axioms of projective geometry applied to the projective plane over the ﬁnite ﬁeld Fq. The third application is to Hall algebras. We ex- plain how the standard construction of the Hall algebra from the category of Fq representations of a simply-laced quiver can be seen as an example of degroupoidiﬁcation. This in turn provides a new way to categorify— or more precisely, groupoidify—the positive part of the quantum group associated to the quiver.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181024230523-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  }
+   "CreationDate": "D:20181024230523-04'00'"
+  },
+  "title_raw": "Higher Dimensional Algebra VII: Groupoidification",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Higher Dimensional Algebra VII: Groupoidiﬁcation",
+   "outline": "1 Introduction",
+   "text": "Higher Dimensional Algebra VII: Groupoidification",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Higher Dimensional Algebra VII: Groupoidification"
  },
  "toc": [
   {
@@ -41,231 +53,839 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Degroupoidification",
    "page": 8,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Homology versus Cohomology",
    "page": 25,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Groupoidification",
    "page": 29,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Feynman Diagrams",
    "page": 29,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Hecke Algebras",
    "page": 36,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Hall Algebras",
    "page": 41,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Degroupoidifying a Tame Span",
    "page": 45,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Tame Spans Give Operators",
    "page": 45,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "An Explicit Formula",
    "page": 50,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Properties of Degroupoidification",
    "page": 52,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Scalar Multiplication",
    "page": 52,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Functoriality of Degroupoidification",
    "page": 53,
    "source": "outline",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Inner Products and Adjoints",
    "page": 56,
    "source": "outline",
-   "number": "6.3"
+   "number": "6.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "A Review of Groupoids",
    "page": 58,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 39,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 40,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 41,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 42,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 43,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 44,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 45,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 46,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 47,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 48,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 49,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 50,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 51,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 52,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 53,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 54,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 55,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 56,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 57,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 58,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 59,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 60,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 61,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 62,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 63,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 64,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 65,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 66,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 67,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1849,
+   "n_words": 278,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 25,
-   "n_chars": 43045,
-   "n_words": 7609
+   "page_end": 8,
+   "n_chars": 15553,
+   "n_words": 2780,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-3-homology-versus-cohomology",
+   "id": "sec-001-2-degroupoidification",
+   "number": "2",
+   "title": "Degroupoidification",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 25,
+   "n_chars": 23780,
+   "n_words": 4904,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-3-homology-versus-cohomology",
    "number": "3",
    "title": "Homology versus Cohomology",
    "level": 1,
    "page_start": 25,
    "page_end": 29,
-   "n_chars": 8825,
-   "n_words": 1551
+   "n_chars": 7521,
+   "n_words": 1455,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-41-feynman-diagrams",
+   "id": "sec-003-4-groupoidification",
+   "number": "4",
+   "title": "Groupoidification",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 29,
+   "n_chars": 666,
+   "n_words": 101,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-41-feynman-diagrams",
    "number": "4.1",
    "title": "Feynman Diagrams",
    "level": 2,
    "page_start": 29,
    "page_end": 36,
-   "n_chars": 12142,
-   "n_words": 2300
+   "n_chars": 11490,
+   "n_words": 2250,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-42-hecke-algebras",
+   "id": "sec-005-42-hecke-algebras",
    "number": "4.2",
    "title": "Hecke Algebras",
    "level": 2,
    "page_start": 36,
    "page_end": 41,
-   "n_chars": 10954,
-   "n_words": 2077
+   "n_chars": 10631,
+   "n_words": 2058,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-004-43-hall-algebras",
+   "id": "sec-006-43-hall-algebras",
    "number": "4.3",
    "title": "Hall Algebras",
    "level": 2,
    "page_start": 41,
    "page_end": 45,
-   "n_chars": 6979,
-   "n_words": 1318
+   "n_chars": 6493,
+   "n_words": 1247,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-005-5-degroupoidifying-a-tame-span",
+   "id": "sec-007-5-degroupoidifying-a-tame-span",
    "number": "5",
    "title": "Degroupoidifying a Tame Span",
    "level": 1,
    "page_start": 45,
    "page_end": 45,
-   "n_chars": 398,
-   "n_words": 77
+   "n_chars": 422,
+   "n_words": 76,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-006-51-tame-spans-give-operators",
+   "id": "sec-008-51-tame-spans-give-operators",
    "number": "5.1",
    "title": "Tame Spans Give Operators",
    "level": 2,
    "page_start": 45,
    "page_end": 50,
-   "n_chars": 9116,
-   "n_words": 1726
+   "n_chars": 8211,
+   "n_words": 1719,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-007-52-an-explicit-formula",
+   "id": "sec-009-52-an-explicit-formula",
    "number": "5.2",
    "title": "An Explicit Formula",
    "level": 2,
    "page_start": 50,
    "page_end": 52,
-   "n_chars": 2807,
-   "n_words": 548
+   "n_chars": 2655,
+   "n_words": 542,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-008-61-scalar-multiplication",
+   "id": "sec-010-6-properties-of-degroupoidification",
+   "number": "6",
+   "title": "Properties of Degroupoidification",
+   "level": 1,
+   "page_start": 52,
+   "page_end": 52,
+   "n_chars": 113,
+   "n_words": 18,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-011-61-scalar-multiplication",
    "number": "6.1",
    "title": "Scalar Multiplication",
    "level": 2,
    "page_start": 52,
-   "page_end": 56,
-   "n_chars": 7750,
-   "n_words": 1423
+   "page_end": 53,
+   "n_chars": 1071,
+   "n_words": 229,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-009-63-inner-products-and-adjoints",
+   "id": "sec-012-62-functoriality-of-degroupoidification",
+   "number": "6.2",
+   "title": "Functoriality of Degroupoidification",
+   "level": 2,
+   "page_start": 53,
+   "page_end": 56,
+   "n_chars": 5927,
+   "n_words": 1214,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-013-63-inner-products-and-adjoints",
    "number": "6.3",
    "title": "Inner Products and Adjoints",
    "level": 2,
    "page_start": 56,
    "page_end": 58,
-   "n_chars": 3599,
-   "n_words": 683
+   "n_chars": 3266,
+   "n_words": 655,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-010-a-review-of-groupoids",
+   "id": "sec-014-a-review-of-groupoids",
    "number": null,
    "title": "A Review of Groupoids",
    "level": 1,
    "page_start": 58,
    "page_end": 67,
-   "n_chars": 17603,
-   "n_words": 3079
+   "n_chars": 16459,
+   "n_words": 2968,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 15,
-  "sections": 11,
-  "chars_total": 123218,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 16,
+  "chars_total": 116107,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "hda7_arxiv_4.tex",
    "tex_sections": 15,
-   "overlaid": 10,
+   "overlaid": 12,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -273,79 +893,113 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.715,
-     "coverage_ratio": 0.997,
+     "prose_ratio": 0.94,
+     "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-001-3-homology-versus-cohomology",
+     "id": "sec-001-2-degroupoidification",
+     "title": "Degroupoidification",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-3-homology-versus-cohomology",
      "title": "Homology versus Cohomology",
-     "prose_ratio": 0.958,
-     "coverage_ratio": 0.979,
+     "prose_ratio": 0.929,
+     "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-41-feynman-diagrams",
+     "id": "sec-003-4-groupoidification",
+     "title": "Groupoidification",
+     "prose_ratio": 0.696,
+     "coverage_ratio": 0.348,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-004-41-feynman-diagrams",
      "title": "Feynman Diagrams",
      "prose_ratio": 0.987,
-     "coverage_ratio": 0.986,
+     "coverage_ratio": 0.98,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-42-hecke-algebras",
+     "id": "sec-005-42-hecke-algebras",
      "title": "Hecke Algebras",
      "prose_ratio": 0.969,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-43-hall-algebras",
+     "title": "Hall Algebras",
+     "prose_ratio": 0.985,
      "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-43-hall-algebras",
-     "title": "Hall Algebras",
-     "prose_ratio": 0.985,
-     "coverage_ratio": 0.985,
+     "id": "sec-007-5-degroupoidifying-a-tame-span",
+     "title": "Degroupoidifying a Tame Span",
+     "prose_ratio": 0.941,
+     "coverage_ratio": 0.97,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-5-degroupoidifying-a-tame-span",
-     "title": "Degroupoidifying a Tame Span",
-     "prose_ratio": 0.941,
+     "id": "sec-008-51-tame-spans-give-operators",
+     "title": "Tame Spans Give Operators",
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-52-an-explicit-formula",
+     "title": "An Explicit Formula",
+     "prose_ratio": 0.968,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-51-tame-spans-give-operators",
-     "title": "Tame Spans Give Operators",
-     "prose_ratio": 0.961,
-     "coverage_ratio": 0.972,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "id": "sec-010-6-properties-of-degroupoidification",
+     "title": "Properties of Degroupoidification",
+     "prose_ratio": 0.429,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-007-52-an-explicit-formula",
-     "title": "An Explicit Formula",
-     "prose_ratio": 0.9,
-     "coverage_ratio": 0.99,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-008-61-scalar-multiplication",
+     "id": "sec-011-61-scalar-multiplication",
      "title": "Scalar Multiplication",
      "prose_ratio": 0.977,
-     "coverage_ratio": 0.938,
+     "coverage_ratio": 0.896,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-63-inner-products-and-adjoints",
+     "id": "sec-012-62-functoriality-of-degroupoidification",
+     "title": "Functoriality of Degroupoidification",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-63-inner-products-and-adjoints",
      "title": "Inner Products and Adjoints",
      "prose_ratio": 0.956,
      "coverage_ratio": 0.985,
@@ -353,7 +1007,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-010-a-review-of-groupoids",
+     "id": "sec-014-a-review-of-groupoids",
      "title": "A Review of Groupoids",
      "result": "no matching \\section"
     }

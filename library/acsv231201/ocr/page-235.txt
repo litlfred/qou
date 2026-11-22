@@ -1,0 +1,47 @@
+7.5. Deformations 217
+
+at most the projection onto S. By compactness, {a;,} must have a limit point a €
+CP“. It follows from ruling out noncritical points, and affine stationary points
+with heights inside or outside of [a,b], that x lies at infinity. The sequence
+therefore defines a CPAI of height c, contradicting the hypothesis and proving
+the lemma. im
+
+With Lemma 7.46 in hand, we outline the proof of Lemma 7.45 before re-
+turning to Theorem 7.44.
+
+Sketch of proof of Lemma 7.45 This lemma for proper height functions is the
+usual Morse theoretic construction of stratified gradient-like vector fields, as
+found in standard references [GM88; ABG70]. It is proved by using a partition
+of unity to piece together the unit-speed downward gradient of hp restricted
+to each stratum and then extended to a neighborhood of the stratum in C4 via
+the local product structure. Property (v), unit downward speed, then follows
+from Lemma 7.46. In the nonproper case, the biggest headache is extending to
+the product; this was the motivation for the notion of control data, developed
+in [Mat70]. When hg is not proper, there is no a priori guarantee that the de-
+scent rate divided by the magnitude of the vector remains bounded away from
+zero, even locally. This is because the Whitney condition fits these C® strata
+in a way that is in principle only C°. In fact, Mather’s argument contains the
+seeds of a proof for this fact, which is accomplished via some linear algebra
+and further explicit use of the Whitney conditions. See [BMP22, Lemma 2] for
+full details. im
+
+Proof of Theorem 7.44 Let v be the vector field constructed in Lemma 7.45,
+altered so as to be zero on Me,. This vector field defines a flow ®(x, 1) such
+that
+
+d
+
+° Gee t) = v(x) when hp(x) € (a, b];
+
+e (x, f) is defined for 0 < t < hp(x) — a and, for f in this range, hp(@(x, f)) =
+hp(x) — 6
+
+e the map ¥(x) = O(x,b - a) is a continuous map on Mz, with range Mc,
+and fixing M<,q.
+
+It follows from these properties that the inclusion 1: Mzcqg ~ Mey is a ho-
+motopy equivalence: you is the identity map on Mz, while co w is homotopic
+to the identity map on Mz, via the homotopy ® on Mz, x [0,b — a]. This is
+sufficient to imply conclusion (i) of Theorem 7.44, and also proves the weaker
+version of (ii) found in [BMP22], namely that any cycle in Mz, may be de-
+formed to lie in the union of Mz-_, with arbitrarily small neighborhoods of

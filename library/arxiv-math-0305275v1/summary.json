@@ -2,40 +2,50 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-0305275v1",
  "source_sha256": "9b356a9d716a0d3e",
- "brief": "Hyperbolic volume of representations of fundamental groups of cusped 3-manifolds — Let W be a compact manifold and let ρ be a representation of its fundamental group into PSL(2 , C).",
- "extended": "**Hyperbolic volume of representations of fundamental groups of cusped 3-manifolds**\n\n*September 14, 2021*\n\n38 pp, 6 sections.\n\n**Abstract.** Let W be a compact manifold and let ρ be a representation of its fundamental group into PSL(2 , C). Then the volume of ρ is deﬁned by taking any ρ-equivariant map from the universal cover ~W to H3 and then by integrating the pull-back of the hyperbolic volu me form on a fundamental domain. It turns out that such a volume does n ot depend on the choice of the equivariant map. Dunﬁeld extende d this construction to the case of a non-compact (cusped) manifold M , but he did not prove the volume is well-deﬁned in all cases. We prove here that the volume of a representation is always we ll- deﬁned and depends only on the representation. Moreover, we show that this volume can be easily computed by straightening any ideal triangulation of M . We show that the volume of a representation is bounded from above by the relative simplicial volume of M .\n\n**Outline.** Introduction; The straightening; Volume of representations; Comparison with simplicial volume; Rigidity of representations; Corollaries\n\n**Extracted claims (proposals, not verified).**\n- Theorem 4.9: Let Dρ and Fρ be two pseudo-developing maps for ρ. Then\n- Theorem 4.10: For any pseudo-developing map Dρ forρ we have vol(Dρ) =\n- Theorem 5.1: For all representations ρ : π1(M) → Isom+(H3) we have\n- Theorem 6.1: Let M be a non-compact, complete, orientable hyperbolic 3-\n- Theorem 6.1: one can get a proof of Mostow’s rigidity for non-compac t mani-\n- Theorem 4.9: Let Dρ and Fρ be two pseudo-developing maps for ρ. Then",
+ "brief": "Hyperbolic volume of representations of fundamental groups of cusped 3-manifolds — Let W be a compact manifold and let ρ be a representation of its fundamental group into PSL(2, C).",
+ "extended": "**Hyperbolic volume of representations of fundamental groups of cusped 3-manifolds**\n\n*Stefano Francaviglia12*\n\n38 pp, 8 sections.\n\n**Abstract.** Let W be a compact manifold and let ρ be a representation of its fundamental group into PSL(2, C). Then the volume of ρ is deﬁned by taking any ρ-equivariant map from the universal cover f W to H3 and then by integrating the pull-back of the hyperbolic volume form on a fundamental domain. It turns out that such a volume does not depend on the choice of the equivariant map. Dunﬁeld extended this construction to the case of a non-compact (cusped) manifold M, but he did not prove the volume is well-deﬁned in all cases. We prove here that the volume of a representation is always well- deﬁned and depends only on the representation. Moreover, we show that this volume can be easily computed by straightening any ideal triangulation of M. We show that the volume of a representation is bounded from above by the relative simplicial volume of M.\n\n**Outline.** Front matter; Introduction; General definitions; The straightening; Volume of representations; Comparison with simplicial volume; Rigidity of representations; Corollaries",
  "tokens": {
   "brief": 45,
-  "extended": 407
+  "extended": 294
  },
  "sections": [
   {
-   "id": "sec-000-introduction",
-   "title": "Introduction",
-   "pages": "1-6"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
   },
   {
-   "id": "sec-001-the-straightening",
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-general-definitions",
+   "title": "General definitions",
+   "pages": "3-6"
+  },
+  {
+   "id": "sec-002-the-straightening",
    "title": "The straightening",
    "pages": "6-9"
   },
   {
-   "id": "sec-002-volume-of-representations",
+   "id": "sec-003-volume-of-representations",
    "title": "Volume of representations",
    "pages": "9-15"
   },
   {
-   "id": "sec-003-comparison-with-simplicial-volume",
+   "id": "sec-004-comparison-with-simplicial-volume",
    "title": "Comparison with simplicial volume",
    "pages": "15-21"
   },
   {
-   "id": "sec-004-rigidity-of-representations",
+   "id": "sec-005-rigidity-of-representations",
    "title": "Rigidity of representations",
    "pages": "21-34"
   },
   {
-   "id": "sec-005-corollaries",
+   "id": "sec-006-corollaries",
    "title": "Corollaries",
    "pages": "34-38"
   }
@@ -44,8 +54,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

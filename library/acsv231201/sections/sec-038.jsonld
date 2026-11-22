@@ -9,13 +9,27 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Further computations for asymptotics",
-  "pageStart": 256,
-  "pageEnd": 263,
+  "title": "The general case via stratified Morse theory",
+  "pageStart": 214,
+  "pageEnd": 224,
   "contains": [
-    "library/acsv231201/blocks/prose-sec-038"
+    "library/acsv231201/blocks/prose-sec-038",
+    "library/acsv231201/blocks/ex-sec-038-01",
+    "library/acsv231201/blocks/ex-sec-038-02",
+    "library/acsv231201/blocks/lem-sec-038-03",
+    "library/acsv231201/blocks/lem-sec-038-04",
+    "library/acsv231201/blocks/thm-sec-038-05",
+    "library/acsv231201/blocks/ex-sec-038-06",
+    "library/acsv231201/blocks/thm-sec-038-07",
+    "library/acsv231201/blocks/cor-sec-038-08",
+    "library/acsv231201/blocks/figure-img-p216-1",
+    "library/acsv231201/blocks/figure-img-p217-1",
+    "library/acsv231201/blocks/figure-img-p219-1",
+    "library/acsv231201/blocks/figure-img-p221-1",
+    "library/acsv231201/blocks/figure-img-p224-1",
+    "library/acsv231201/blocks/figure-img-p224-2"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/acsv231201",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/acsv231201",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/acsv231201/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/acsv231201/manifest.jsonld",
   "provenance": "ingested"
 }

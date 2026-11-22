@@ -63,7 +63,7 @@ the kill-test *laws* over the corrected harmonic form; the measured numbers
 stay in
 `computations/qbeta/qbeta-udeform-map-constraint.witness.json`.
 
--- Ref: [manuscript] conj:binding-qbeta-complex-volume;
+-- Ref: [leitner2026] conj:binding-qbeta-complex-volume;
      computations/qbeta/qbeta_udeform_map_constraint_probe.py;
      docs/audits/2026-07-26-sdeformed-channel-signflip.md
 -- Ref: [neumann-zagier1985] Neumann & Zagier, "Volumes of hyperbolic three-manifolds," Topology 24 (1985). https://doi.org/10.1016/0040-9383(85)90004-7
@@ -196,5 +196,33 @@ theorem signflip_requires_diagonal_cross {x₁ y₁ x₂ y₂ : ℝ}
     (h₁ : 0 < familyIm x₁ y₁) (h₂ : familyIm x₂ y₂ < 0) :
     y₁ ^ 2 < x₁ ^ 2 ∧ x₂ ^ 2 < y₂ ^ 2 :=
   signflip_forces_diagonal_cross (u₁ := ⟨x₁, y₁⟩) (u₂ := ⟨x₂, y₂⟩) h₁ h₂
+
+/-- `familyIm` is even under simultaneous negation `(x, y) ↦ (-x, -y)`. -/
+theorem familyIm_neg_both (x y : ℝ) :
+    familyIm (-x) (-y) = familyIm x y := by
+  rw [familyIm_eq, familyIm_eq]
+  ring
+
+/-- `familyIm` is antisymmetric under exchanging the real and imaginary parts
+`(x, y) ↦ (y, x)`. -/
+theorem familyIm_swap_antisymm (x y : ℝ) :
+    familyIm y x = -familyIm x y := by
+  rw [familyIm_eq, familyIm_eq]
+  ring
+
+/-- **Biconditional diagonal-crossing criterion.** A pair of deformation points
+`(x₁, y₁)` and `(x₂, y₂)` has `familyIm x₁ y₁ > 0` and `familyIm x₂ y₂ < 0`
+if and only if `(x₁, y₁)` lies in the real-dominant cone `y₁² < x₁²` and
+`(x₂, y₂)` lies in the imaginary-dominant cone `x₂² < y₂²`. -/
+theorem signflip_iff_diagonal_cross {x₁ y₁ x₂ y₂ : ℝ} :
+    (0 < familyIm x₁ y₁ ∧ familyIm x₂ y₂ < 0) ↔
+      (y₁ ^ 2 < x₁ ^ 2 ∧ x₂ ^ 2 < y₂ ^ 2) := by
+  constructor
+  · rintro ⟨h₁, h₂⟩
+    exact signflip_requires_diagonal_cross h₁ h₂
+  · rintro ⟨h₁, h₂⟩
+    rw [familyIm_eq, familyIm_eq]
+    have hc : 0 < cuspModulus := cuspModulus_pos
+    exact ⟨by nlinarith, by nlinarith⟩
 
 end QOU.QBeta.UDeformFamilyPruning

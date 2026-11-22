@@ -1,0 +1,51 @@
+Table 3.1: Actions of isometries on equilateral triangles
+
+Triangle | R S T U
+
+PiQ4Q1 | PiQiQ2  PiQiQi  Pe2QaQi PiQuQu
+PiQi1Q2 | PiQ2Q3) PiQ3Qs PoQiQ2 PiQ3Q1
+PiQ2Q3 | PiQsQ1  PiQ2Q3  P2Q2Q3  P2Q3Qa
+PiQ3Q4 | PiQsQi PiQiQ2 PeQsQa PeQuQi
+PiQaQi | PiQiQ2 PiQuQi PeQuQi PiQuQi
+PiQ1Q2 P,Q2Q3 PiQ3Q4 P2Q1Q2 P1Q3Qa
+P1Q2Q3 | PiQsQa PiQ2Q3  P2Q2Q3  P2Q3Qu
+PiQsQa | PiQaQi  PiQiQ2 P2Q3Qa P2QuQu
+P2Q4Q1 | P2QiQ2  PoQiQ1  PiQsQi PQ Qe
+P2QiQ2 | P2Q2Q3 PoQ3Q4 PiQiQ2 Pi Q2Q3
+P2Q2Q3 | P2Q3Qs  P2Q2Q3  PiQ2Q3  P2Q2Qs
+P2Q3Qa | PoQsQi  P2QiQ2 PiQsQa  P2QiQe
+PoQsQi | PoQiQ2  P2QuQi PiQsQi PiQiQz
+P2QiQ2 P2Q2Q3 P2Q3Q4 PiQiQ2 P,Q2Q3
+P2Q2Q3 | P2Q3sQa  P2Q2Q3  PiQ2Q3  P2Q2Qs
+P2Q3Qa | P2QaQi1  P2Q1Q2 PiQsQa  P2QiQz
+
+RU = R8U?R’
+= UR°R’
+=UR'.
+
+Obviously R* commutes with R. Since it commutes with each of the basic actions it
+will commute with every isometry of the form R‘S7T*U'. Now we just need to show that
+there are no more elements in the centre. We know from analysis in GAP [26] that the
+centre is isomorphic to Zy, and must contain the identity element. Hence R?‘ is the only
+non-trivial element that can appear. (R*)? = R® = e, so when we create the isomorphism,
+we map R‘ to the non-identity element in Zp.
+
+Oo
+
+The Bolza surface can also be tessellated by 96 (2, 3, 8) triangles, each with area 7/24.
+
+A ai is fundamental domain for Isom(B). The domains that we consider
+in Section 3.4 will be constructed using these triangles; for example, the equilateral
+ically subdivided into 6 (2, 3, 8) triangles.
+
+an be described as a combination of R,
+
+(4, 4, 4) triangles of Figure 3-T can be
+
+Reflections in the geodesic lines in
+S, T, and U. In the figures of Se a old and a dashed line will respectively
+denote Dirichlet and Neumann boundary conditions. The subscripts on R, ST, and U
+
+make it clear which irreducible representation we are using, and distinguishes the group
+
+53

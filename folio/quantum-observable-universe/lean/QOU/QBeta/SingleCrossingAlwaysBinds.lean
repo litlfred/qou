@@ -77,8 +77,8 @@ invariant, which is what tells a later agent not to look for a better `d`.
 `ℝ` throughout: the content is an ordering statement (`0 < μ`, `μ < 1`) plus
 `Real.log`, i.e. archimedean by nature.
 
--- Ref: [manuscript] computations/probes/two_nucleon_sector_sign_probe.py
--- Ref: [manuscript] docs/audits/2026-08-09-two-nucleon-channels-isospin-not-crossing-count.md
+-- Ref: [leitner2026] computations/probes/two_nucleon_sector_sign_probe.py
+-- Ref: [leitner2026] docs/audits/2026-08-09-two-nucleon-channels-isospin-not-crossing-count.md
 -/
 
 namespace QOU.QBeta

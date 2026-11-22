@@ -1,0 +1,926 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "helicity03mmj",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p021-1",
+   "page": 21,
+   "mark": "y",
+   "text": "×S4 z",
+   "marks": [
+    {
+     "page": 21,
+     "context": "yδ(x,"
+    }
+   ],
+   "block": "library/helicity03mmj/blocks/prose-sec-012"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p020-1",
+   "page": 20,
+   "mark": "y",
+   "text": "×S4 z",
+   "block": "library/helicity03mmj/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p022-1",
+   "page": 22,
+   "mark": "147",
+   "text": "(1984), 133–148. MR 87a:76118 [5] J. Cantarella, D. DeTurck, and H. Gluck, The Biot–Savart operator for application to knot theory, ﬂuid dynamics, and plasma physics, J. Math. Phys. 42 (2001), no. 2, 876–905. MR 2002e:78002 [6] G. Falkovich, K. Gaw¸edzki, and M. Vergassola, Particles and ﬁelds in ﬂuid turbulence, Rev. Modern Phys. 73 (2001), no. 4, 913–975. MR 2003f:76066 [7] V. V. Fock, N. A. Nekrasov, A. A. Rosly, and K. G. Selivanov, What we think about the higher-dimensional Chern–Simons theories, Sakharov Memorial Lectures in Physics, Vol. 1,",
+   "block": "library/helicity03mmj/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p022-2",
+   "page": 22,
+   "mark": "2",
+   "text": "(Moscow, 1991), Nova Sci. Publ., Commack, NY, 1992, pp. 465–471. MR 1 199 342 [8] M. H. Freedman, Zeldovich’s neutron star and the prediction of magnetic froth, The Arnold- fest (Toronto, ON, 1997), Fields Inst. Commun., vol. 24, Amer. Math. Soc., Providence, RI, 1999, pp. 165–172. MR 2000m:76116 [9] M. H. Freedman and Z.-X. He, Divergence-free ﬁelds: energy and asymptotic crossing num- ber, Ann. of Math. (2) 134 (1991), no. 1, 189–229. MR 93a:58040",
+   "block": "library/helicity03mmj/blocks/prose-sec-012"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "S3→S"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "Topologically, the Hopf invariant of a map S"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "Topologically, the Hopf invariant of a map S3→S"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "inS"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "S3ofthecurveswhicharepreimagesoftwoarbitrarygenericpointsinS"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "wherea2-formωisthepullbacktoS"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "wherea2-formωisthepullbacktoS3ofanyareaformonS"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "conditionthattheareaofS"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "ωonS"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "ofS"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "from a map of S"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "from a map of S3to S"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "formonS"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "Example2.3.In a simply connected domain M⊂R"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "(ξ,curl−1ξ) d"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "C1,C2inR"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "trary(oriented)surfacespanningtheothercurve.IfthecurvesCi :S"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "ry(oriented)surfacespanningtheothercurve.IfthecurvesCi :S1→R"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "Z"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "Z"
+  },
+  {
+   "page": 3,
+   "mark": "t",
+   "context": "Letξbeadivergence-freeﬁeldonMand{g"
+  },
+  {
+   "page": 4,
+   "mark": "t",
+   "context": "linking”ofthetrajectoriesoftheﬂow{g"
+  },
+  {
+   "page": 4,
+   "mark": "t",
+   "context": "segments”g"
+  },
+  {
+   "page": 4,
+   "mark": "t",
+   "context": "segments”gtx1(0≤t≤T1)andg"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "se up these long pieces by the shortest geodesics between gT"
+  },
+  {
+   "page": 4,
+   "mark": "t",
+   "context": "4.The asymptotic linking numberof the pair of trajectories g"
+  },
+  {
+   "page": 4,
+   "mark": "t",
+   "context": "g"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "Itturnsoutthatthislimitexists(asanelementofthespaceL"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "suggestedtousetheL"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "that in the L"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "Hopfinvariantformapsπ:S"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "Hopfinvariantformapsπ:S3→S"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "m below ﬁeld’s (magnetic) energy, i. e., the square of its L"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "(ξ,ξ) dx"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "theconstantc(M)fordomainsinR"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "Theorem3.6[9].SupposeavectorﬁeldξinR"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "(ξ,ξ) dx"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "(ξ,ξ) dx"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "LetD"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "h(φ):D"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "D"
+  },
+  {
+   "page": 9,
+   "mark": "h",
+   "context": "D2"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "functionHt :D"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": " volume under the graph of the Hamiltonian function Htover D"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "D"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "D2 H"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "Angφ :(D"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "Angφ :(D2× D"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "Angφ :(D2× D2) \\ ∆→R"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "which associates to any pair of points x̸ = y in D"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "D"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "D2×D"
+  },
+  {
+   "page": 9,
+   "mark": "y",
+   "context": "D2×D2 Angφ(x,"
+  },
+  {
+   "page": 9,
+   "mark": "x",
+   "context": "D2×D2 Angφ(x,y) ω"
+  },
+  {
+   "page": 9,
+   "mark": "y",
+   "context": "D2×D2 Angφ(x,y) ωxω"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "Consideradivergence-freevectorﬁeldξinasolidtorusinR"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "Forinstance,theGausslinkingforminR"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "atapoint(x,y) ∈R"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "atapoint(x,y) ∈R3× R"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "bechosentohaveasingularity1/r"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "LF∈L"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "γ2inR"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "Each curve ΓTj(xj) = g[0,T"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "∪∆xjconsists of a long piece of a trajectory g[0,T"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "lk(ΓT1(x1),ΓT2(x2)) = lk(g[0,T"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "∪∆x1,g[0,T"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "= lk(g[0,T"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": ",g[0,T"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": ") + lk(g[0,T"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": ",∆x2) + lk(∆x1,g[0,T"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "exponentiallyfastonashortpathforx2.Then,ofcourse,lk(g[0,T"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "gested to replace the convergence almost everywhere by the L"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "pair of points x"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "pair of points x1,x"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "forg[0,T"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "× ∆x2,aswellasthosefor∆x1 × g[0,T"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "and∆x1 × ∆x2,vanishintheL"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "ure β.To such a foliation one can associate a current C(F):Ω"
+  },
+  {
+   "page": 12,
+   "mark": "d",
+   "context": "Γ"
+  },
+  {
+   "page": 13,
+   "mark": "t",
+   "context": "g"
+  },
+  {
+   "page": 13,
+   "mark": "x",
+   "context": "ξ"
+  },
+  {
+   "page": 13,
+   "mark": "x",
+   "context": "ξxstartingat"
+  },
+  {
+   "page": 13,
+   "mark": "a",
+   "context": "ξxstartingatx ∈Mandof"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "theintegralofanL"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "dimensionalmanifoldM"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "dimensionalmanifoldM2"
+  },
+  {
+   "page": 14,
+   "mark": "d",
+   "context": "M"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "Md−1β"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "Md−1β1 ∧β"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "Md−1β1 ∧β2 ∧· · · ∧β"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "tion4.7.Let P1,. . . ,Pkbe oriented closed submanifolds in R"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": ".7.Let P1,. . . ,Pkbe oriented closed submanifolds in Rnor S"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": "M"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "Md−1β"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "β2 ∧· · · ∧βkforkclosed2-formsβionanodd-dimensionalmanifoldM"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "2 ∧· · · ∧βkforkclosed2-formsβionanodd-dimensionalmanifoldM2"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "mapρ:S"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "mapρ:S2"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "mapρ:S2k−1→S"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "mapρ:S2k−1→Sk.JustlikeintheS"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "mapρ:S2k−1→Sk.JustlikeintheS3→S"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "numberofthepreimagesinS"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "numberofthepreimagesinS2"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "berofthepreimagesinS2k−1oftwogenericpointsinthetargetsphereS"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "S"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "S2"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "where a k-form βis the pullback to S"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "where a k-form βis the pullback to S2"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "re a k-form βis the pullback to S2k−1of any volume form on S"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "theconditionthatthetotalvolumeofS"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "neralizedhelicity)extendseasilytothecaseofanyexactk-formβonS"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "eralizedhelicity)extendseasilytothecaseofanyexactk-formβonS2"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "form:it deﬁnes an operator"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "Mβ"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "Mβ1∧d−1β"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "Mβ1∧d−1β2forsmoothmeasuresβ"
+  },
+  {
+   "page": 18,
+   "mark": "4",
+   "context": "mapsS"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "mapsS4→R"
+  },
+  {
+   "page": 18,
+   "mark": "4",
+   "context": "sS4→R3\\ {a,b}.TheirgeometricrealizationindiﬀerentialformsonS"
+  },
+  {
+   "page": 18,
+   "mark": "4",
+   "context": "asfollows.Considerapairofclosed2-formsαandβonS"
+  },
+  {
+   "page": 18,
+   "mark": "4",
+   "context": "S"
+  },
+  {
+   "page": 18,
+   "mark": "4",
+   "context": "S"
+  },
+  {
+   "page": 19,
+   "mark": "4",
+   "context": "Remark 6.2.Consider the foliations A and B in S"
+  },
+  {
+   "page": 19,
+   "mark": "4",
+   "context": "foliationsofdimension2inS"
+  },
+  {
+   "page": 19,
+   "mark": "4",
+   "context": "S"
+  },
+  {
+   "page": 19,
+   "mark": "4",
+   "context": "for a triple of exact 2-forms α,βand γin S"
+  },
+  {
+   "page": 19,
+   "mark": "4",
+   "context": "Deﬁnition6.3.LetA,B,andCbetwo-dimensionalsurfacesinS"
+  },
+  {
+   "page": 19,
+   "mark": "4",
+   "context": "Thisdeﬁnitionmakessenseforanyhomological4-sphereM"
+  },
+  {
+   "page": 19,
+   "mark": "4",
+   "context": "H2(M) = 0.InR"
+  },
+  {
+   "page": 19,
+   "mark": "6",
+   "context": "Deﬁnition6.4[22].Consider a 6-dimensional manifold Σ"
+  },
+  {
+   "page": 19,
+   "mark": "4",
+   "context": "tion6.4[22].Consider a 6-dimensional manifold Σ6:= A×B ×C⊂(R"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "on6.4[22].Consider a 6-dimensional manifold Σ6:= A×B ×C⊂(R4)"
+  },
+  {
+   "page": 20,
+   "mark": "4",
+   "context": "inR"
+  },
+  {
+   "page": 20,
+   "mark": "6",
+   "context": "inR4.ThenweobtainaGausstypemapof6-dimensionalmanifolds,fromΣ"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "S3× S"
+  },
+  {
+   "page": 20,
+   "mark": "4",
+   "context": "S3× S3⊂R"
+  },
+  {
+   "page": 20,
+   "mark": "4",
+   "context": "S3× S3⊂R4× R"
+  },
+  {
+   "page": 20,
+   "mark": "x",
+   "context": "|x −y|,"
+  },
+  {
+   "page": 20,
+   "mark": "k",
+   "context": "|xj−zj|4dx"
+  },
+  {
+   "page": 20,
+   "mark": "l",
+   "context": "|xj−zj|4dxk ∧dx"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "|xj−zj|4dxk ∧dxl ⊗dy"
+  },
+  {
+   "page": 20,
+   "mark": "k",
+   "context": "|xj−zj|4dxk ∧dxl ⊗dyi ∧dy"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "|xj−zj|4dxk ∧dxl ⊗dyi ∧dyk ⊗dz"
+  },
+  {
+   "page": 20,
+   "mark": "l",
+   "context": "|xj−zj|4dxk ∧dxl ⊗dyi ∧dyk ⊗dzj∧dz"
+  },
+  {
+   "page": 20,
+   "mark": "4",
+   "context": "4π"
+  },
+  {
+   "page": 20,
+   "mark": "4",
+   "context": "(ii)InR"
+  },
+  {
+   "page": 20,
+   "mark": "4",
+   "context": "Proof.(i)LetA,BandCbethethreesurfacesinS"
+  },
+  {
+   "page": 20,
+   "mark": "4",
+   "context": "(ii)NowsupposethatthethreeinitialsurfacesareinR"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "numberofpreimagesofthepoint(−v,−w) ∈S"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "numberofpreimagesofthepoint(−v,−w) ∈S3× S"
+  },
+  {
+   "page": 20,
+   "mark": "4",
+   "context": "linkingformMLFasa(2,2,2)-formonS"
+  },
+  {
+   "page": 20,
+   "mark": "4",
+   "context": "linkingformMLFasa(2,2,2)-formonS4× S"
+  },
+  {
+   "page": 20,
+   "mark": "4",
+   "context": "linkingformMLFasa(2,2,2)-formonS4× S4× S"
+  },
+  {
+   "page": 20,
+   "mark": "4",
+   "context": "A×B×C⊂S"
+  },
+  {
+   "page": 20,
+   "mark": "4",
+   "context": "A×B×C⊂S4×S"
+  },
+  {
+   "page": 20,
+   "mark": "4",
+   "context": "A×B×C⊂S4×S4×S"
+  },
+  {
+   "page": 20,
+   "mark": "4",
+   "context": "Ω∗(S"
+  },
+  {
+   "page": 20,
+   "mark": "4",
+   "context": "Ω∗(S4) × Ω∗(S"
+  },
+  {
+   "page": 20,
+   "mark": "4",
+   "context": "Ω∗(S4) × Ω∗(S4) →Ω∗(S"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "(ii)Themulti-linkingformMLF(x,y,z)canbechosentobeL"
+  },
+  {
+   "page": 21,
+   "mark": "4",
+   "context": "(S"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "(S4)"
+  },
+  {
+   "page": 21,
+   "mark": "4",
+   "context": "S"
+  },
+  {
+   "page": 21,
+   "mark": "4",
+   "context": "y×S"
+  },
+  {
+   "page": 21,
+   "mark": "4",
+   "context": "S"
+  },
+  {
+   "page": 21,
+   "mark": "4",
+   "context": "y×S"
+  },
+  {
+   "page": 22,
+   "mark": "4",
+   "context": "(S"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "(S4)"
+  },
+  {
+   "page": 22,
+   "mark": "4",
+   "context": "S"
+  },
+  {
+   "page": 22,
+   "mark": "4",
+   "context": "x×S"
+  },
+  {
+   "page": 22,
+   "mark": "4",
+   "context": "y×S"
+  },
+  {
+   "page": 22,
+   "mark": "4",
+   "context": "S"
+  }
+ ]
+}

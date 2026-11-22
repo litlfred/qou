@@ -3,7 +3,7 @@ import Mathlib.Analysis.SpecialFunctions.Pow.Real
 /-!
 # QOU.HadronicMass.pair_skein_mass_formula
 
-**Lemma** ([`lem:pair-skein-mass-formula`](../../../observations/pair-skein-mass-formula.md)).
+**Lemma** ([`lem:pair-skein-mass-formula`](../../../mass-theory/pair-skein-mass-formula.md)).
 
 *The Borromean braid of a nucleon with quarks `(q₁, q₂, q₃)` contributes
 a pair Skein mass at each of its three color-exchange crossing pairs:*
@@ -93,7 +93,7 @@ open Real
 **Convention C.**  Its reciprocal is `√q/(q+1) = z_C`, not the canonical
 `z_D = q³/(q²+1)` — see the module docstring.  Named so the convention is
 visible at the use site rather than buried in a division. -/
--- Ref: [manuscript] quantum-observable-universe/observations/pair-skein-mass-formula.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/pair-skein-mass-formula.md
 noncomputable def skeinNormaliserC (q : ℝ) : ℝ := Real.sqrt q + 1 / Real.sqrt q
 
 /-- **The normaliser never vanishes**: for `q > 0` it is at least `2`, with
@@ -121,7 +121,7 @@ proposition over caller-supplied data:
 scoping and for what the identity would need in order to be about the
 categorical pair Skein mass rather than about reals. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
--- Ref: [manuscript] quantum-observable-universe/observations/pair-skein-mass-formula.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/pair-skein-mass-formula.md
 def pair_skein_mass_formula (q : ℝ) (μ : ℕ → ℝ) (S_ab : ℕ → ℕ → ℝ) : Prop :=
   ∀ a b : ℕ, S_ab a b = (q * μ a + q⁻¹ * μ b) / skeinNormaliserC q
 
@@ -134,7 +134,7 @@ The factor `q − q⁻¹` is the Skein-relation coefficient
 (`σ − σ⁻¹ = q − q⁻¹`, AGENTS.md §7a), which is precisely what the
 manuscript's description of the crossing weights asserts. Obtaining it as a
 theorem is the reason the formula is worth naming. -/
--- Ref: [manuscript] quantum-observable-universe/observations/pair-skein-mass-formula.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/pair-skein-mass-formula.md
 theorem pair_skein_difference {q : ℝ} {μ : ℕ → ℝ} {S_ab : ℕ → ℕ → ℝ}
     (h : pair_skein_mass_formula q μ S_ab) (a b : ℕ) :
     S_ab a b - S_ab b a

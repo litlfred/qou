@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1604.01247v2/sections/sec-016",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Charge conjugation",
+  "pageStart": 23,
+  "pageEnd": 24,
+  "contains": [
+    "library/arxiv-1604.01247v2/blocks/prose-sec-016"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1604.01247v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1604.01247v2/manifest.jsonld",
+  "provenance": "ingested"
+}

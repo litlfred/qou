@@ -4,6 +4,7 @@ export default example({
   label: "ex:hadron-proton",
   title: "The proton as a Borromean hadron",
   interprets: "def:hadron",
+  cites: ["dgkmsv2013"],
   uses: ["ex:crossing-energy-trefoil"],
   tags: ["hadron", "proton", "borromean", "example"],
   computation: {

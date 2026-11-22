@@ -1,0 +1,70 @@
+where the sub-indices on the a;’s are regarded modulo d and xo := 1. Note that
+
+d-1
+
+1
+
+FL tatans =tra(e;) for alli=1,....n—1.
+s=0
+
+It has been shown by Gérardin Appendix] that the solutions of the E-system are parametrised
+by the non-empty subsets of Z/dZ. More specifically, if D is a non-empty subset of Z/dZ, then the
+
+corresponding solution of the E-system is Xp := (x1,...,Xa—1), where
+1 .
+Xk = pp Se (l<k<d-1). (6.23)
+jeD
+
+Let now D be a non-empty subset of Z/dZ and let Xp = (xi,...,Xa—1) be the corresponding solution
+of the E-system. We shall call specialised trace and denote by trg,p, the trace trg where the parameter
+x; is specialised to x, for all j =1,...,d—1 Definition 3]. We then have
+
+1
+Ep := tra,p(ei) = Di for alli=1,...,n-1,
+
+D|
+and (cf. Theorem 7 & Lemma 8]):
+tra,p(aen) = Eptrap(a) and trg,p(aengn) = ztta,p(a) for all a € Yan(q). (6.24)
+
+Note that, for d = 1, the specialised trace tr;,49} coincides with tr1, which in turn coincides with the
+Ocneanu trace on Hn(q) = Yin(q)-
+
+Remark 6.22 Following ( ), we have
+
+Ep =16|D)=1lext=landx, =x? (l<k<d-1)
+
+and
+
+1
+Ep = 5 D=Z/dZ & xp =0 (1<k<d~1).
+
+The latter is the “trivial” solution of the E-system.
+
+We now set 1 E 1
+Ap — 7+0-gEp and Ap :=——.
+qz zV AD
+
+We also set Rp := R[zt!, V Xp", Va"). Normalising and re-scaling the specialised trace tra,p (which
+is possible due to the E-condition) yields the following Theorem 3.1]:
+
+(6.25)
+
+Theorem 6.23 For any framed braid a € Fy, we define
+u,p(@) = Ap (VAD) tra,v(a) ;
+
+where €(a) is the sum of the exponents of the braiding generators 0; in the word a. Then the map
+®ap(q,2): Lp 9 Ro, LH ®ap(L)
+
+is a 2-variable isotopy invariant of oriented framed links.
+
+Remark 6.24 Note that, for every d € N*, we have 2¢ — 1 distinct solutions of the E-system, so the
+above construction yields 27 — 1 seemingly distinct isotopy invariants for framed links.
+
+Remark 6.25 Using (6.25), we can obtain defining equations for z and Ap with respect to Ap, namely,
+
+(1-4) Ep 1
+= and Ap:= .
+* q\p - 1 am P 2zVApD
+
+Accordingly, we can use the notation @g,p(q, Ap) instead of ®q,p(q, z) -
+

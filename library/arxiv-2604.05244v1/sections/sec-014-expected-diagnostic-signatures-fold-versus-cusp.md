@@ -10,7 +10,8 @@ source_sha256: a5097e763dd89d06
 toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.977
-latex_coverage_ratio: 1.0
+latex_coverage_ratio: 0.967
+doc_brief: "Edge universality in Floquet sideband spectra — We show that, for non-interacting fermions under a monochromatic phase drive (Tien– Gordon regime), the outgoing sideband occupations at a sharp Fermi"
 ---
 If the Pearcey kernel indeed governs the cusp edge, the fold and cusp classes would be distinguished by their tail exponents. At a fold, the rescaled edge density converges to the Airy diagonal $K_{\mathop{\mathrm{Ai}}}(s,s)$ with scale $\kappa_A=(A/2)^{1/3}$ (Sec. [\[sec:airy\]](#sec:airy){reference-type="ref" reference="sec:airy"}). At a cusp, the natural edge scale is different---it is set by the quartic normal form [\[eq:cusp-phase\]](#eq:cusp-phase){reference-type="eqref" reference="eq:cusp-phase"} and generically involves a power of the drive amplitude distinct from $A^{1/3}$. The precise cusp scale depends on the stationary-phase geometry of the two-tone Fourier integral [\[eq:two-tone-Fk\]](#eq:two-tone-Fk){reference-type="eqref" reference="eq:two-tone-Fk"} and has not been derived here.
 

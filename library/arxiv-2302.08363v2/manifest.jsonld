@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2302.08363v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2302.08363v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-2302.08363v2",
+  "title": "On the structure of trans-series in quantum field theory",
   "contains": [
+    "library/arxiv-2302.08363v2/sections/sec-front-matter",
     "library/arxiv-2302.08363v2/sections/sec-000",
     "library/arxiv-2302.08363v2/sections/sec-001",
     "library/arxiv-2302.08363v2/sections/sec-002",
@@ -23,10 +24,12 @@
     "library/arxiv-2302.08363v2/sections/sec-009",
     "library/arxiv-2302.08363v2/sections/sec-010",
     "library/arxiv-2302.08363v2/sections/sec-011",
-    "library/arxiv-2302.08363v2/sections/sec-012"
+    "library/arxiv-2302.08363v2/sections/sec-012",
+    "library/arxiv-2302.08363v2/sections/sec-013",
+    "library/arxiv-2302.08363v2/sections/sec-014"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://creativecommons.org/licenses/by-sa/4.0/",
   "licenceRecord": {
     "status": "stated",
@@ -36,7 +39,9 @@
   },
   "meta": {
     "doc_id": "arxiv-2302.08363v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "2302.08363v2.pdf",
     "source_sha256": "c2244e03b17048fb95c7aebc7d093ef2c83b41e07ca0db4ec8ec11f0162d7655",
     "pages": 35,

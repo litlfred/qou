@@ -10,7 +10,8 @@ source_sha256: df1eb953bc2c6c63
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.781
+latex_coverage_ratio: 0.821
+doc_brief: "CATEGORICAL CENTERS AND RESHETIKHIN-TURAEV INVARIANTS — A theorem of M¨uger asserts that the center Z(C) of a spherical k-linear category C is a modular category if k is an algebraically closed ﬁeld"
 ---
 A *sovereign category* is a left autonomous category endowed with a strong monoidal natural transformation $\phi_X\colon X
 \to \leftidx{^{\vee\vee}}{\!X}{}$. Such a transformation is then an isomorphism. A sovereign category is actually autonomous. Furthermore, in a sovereign category $\mathcal{C}$, one can define the *left and right traces* of an endomorphism $f\colon X \to X$ as: $$\begin{aligned}

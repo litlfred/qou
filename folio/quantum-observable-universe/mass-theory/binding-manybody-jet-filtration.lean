@@ -18,7 +18,7 @@ LaTeX label: `conj:binding-manybody-eq-jet-filtration`.
 
 ## References
 
-- [manuscript] §mass-theory/binding-manybody-jet-filtration
+- [leitner2026] §mass-theory/binding-manybody-jet-filtration
 - [seiberg1994] https://doi.org/10.1016/0550-3213(94)90124-4
 
 **Ground ring**: generic `[CommRing R]` for the algebraic identity; the

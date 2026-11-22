@@ -1,0 +1,59 @@
+The Dilogarithm Function
+
+on
+a
+
+Qniz
+
+where g = e(z) := e?"*, = e(u). Hence we find, for any uo € C,
+
+uotl
+Fap(q) = | O4,n(2,u) (e(u); q) du
+
+fi (u — Bz)? oye
+Az Dose 2Az (e(u): a). du
+
+1 eC
+_ ~ | + Lin(gBett: dt.
+V2rAe J3(t)=const exo( 2Ae * ia(gre 0)
+
+where in the last line we have substituted u = Bz+t/27. The derivative with
+respect to t of the argument of exp equals [A log(1 — e“’) — it]/iAe + O(1),
+which vanishes at it = log(1 — Q) + O(e), where Q is the solution between 0
+and 1 (or, of course, any other solution) of Nahm’s equation 1—Q = Q4. Now
+moving the path of integration to a neighbourhood of this point and applying
+the method of stationary phase (saddle point method), we obtain the desired
+asymptotic expansion for Fy. B(e-*). This method has the further advantage,
+as explained in Nahm’s paper, that the contributions from the further saddle
+points could in principle be used to describe all the terms of the g-expansion
+of fa,B,c(—1/z) in the cases when f4,2,c is a modular function.
+
+As already mentioned, one can also do an almost exactly similar calculation
+using the power series expansion (7) rather than (8), at least if A > 1: we now
+write
+
+Fan(q) = Crs (2 gee wedingn) (>: core ))
+= i — =e(“ - Gabe + 1) (e(u):a),. du
+
+1 e
+a exp ({ — ———__—
+V2r(A = le [oncom »( 2(A— Le
+
+and again an asymptotic expansion could now be obtained by the saddle point
+method. I have not carried out the details.
+
+— Lip(—g? +e"; ‘) dt,
+
+This completes our discussion and proof of Proposition 5. We remark that
+each of the methods described applies also to r > 1, and we again find an
+expansion of log F'4,3(q) of the form (35), with leading coefficient given by
+
+r
+
+c(A,B) = S>(L() - L(Q:)) = rLQ) - L(€a) = e(A)L().
+
+i=l
+
+In particular, the modularity of f4,8,c(z) for any B € Q’ and C € Q requires
+that L(€4) be a rational multiple of 7? and hence suggests very strongly that
+€4 has to be a torsion element of B(Q(4)), as required by Nahm’s conjecture.

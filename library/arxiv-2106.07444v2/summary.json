@@ -2,22 +2,22 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2106.07444v2",
  "source_sha256": "5acca39c07bcdddd",
- "brief": "FROM THE HECKE CATEGORY TO THE UNIPOTENT LOCUS — Let W be the W eyl group of a split semisimple group G. Its Hecke category HW can be built from pure perverse sheaves on the double ﬂag variety of G.",
- "extended": "**FROM THE HECKE CATEGORY TO THE UNIPOTENT LOCUS**\n\n*MINH-TÂM QUANG TRINH*\n\n88 pp, 15 sections.\n\n**Abstract.** Let W be the W eyl group of a split semisimple group G. Its Hecke category HW can be built from pure perverse sheaves on the double ﬂag variety of G. By developing a formalism of generalized realization func tors, we construct a monoidal trace from HW to a category of bigraded modules over a certain graded ring: namely, the endomorphisms of the equi variant Springer sheaf over the unipotent locus of G. W e prove that: (1) On objects attached to positive braids β , the output is the weight-graded, equivariant Borel–Moore homology of a generalized Steinberg scheme Z(β ). (2) Our functor contains, as a summand, one used by W ebster–Williamson to construct th e Khovanov– Rozansky link invariant. In particular, the Khovanov–Roza nsky homology of the link closure of β is fully encoded in the Springer theory of Z(β ).\n\n**Outline.** Front matter; Introduction; 1 Purity, Mixedness, and Realization; 2 Mixed Categories in Representation Theory; 3 The AW Trace; 4 Steinberg Schemes; 5 Steinberg Schemes of Braids; 6 Khovanov–Rozansky Homology; 7 The Decategorified Trace; 8 Deligne–Lusztig Theory; 9 Periodic Braids; 10 The Rational DAHA; Appendix A. Coxeter Groups and Their Character; Appendix C. Examples of the Decategorified Tra; References",
+ "brief": "FROM THE HECKE CATEGORY TO THE UNIPOTENT LOCUS — Let W be the Weyl group of a split semisimple group G. Its Hecke category HW can be built from pure perverse sheaves on the double ﬂag variety of G.",
+ "extended": "**FROM THE HECKE CATEGORY TO THE UNIPOTENT LOCUS**\n\n*MINH-TÂM QUANG TRINH*\n\n88 pp, 16 sections.\n\n**Abstract.** Let W be the Weyl group of a split semisimple group G. Its Hecke category HW can be built from pure perverse sheaves on the double ﬂag variety of G. By developing a formalism of generalized realization functors, we construct a monoidal trace from HW to a category of bigraded modules over a certain graded ring: namely, the endomorphisms of the equivariant Springer sheaf over the unipotent locus of G. We prove that: (1) On objects attached to positive braids β, the output is the weight-graded, equivariant Borel–Moore homology of a generalized Steinberg scheme Z(β). (2) Our functor contains, as a summand, one used by Webster–Williamson to construct the Khovanov– Rozansky link invariant. In particular, the Khovanov–Rozansky homology of the link closure of β is fully encoded in the Springer theory of Z(β).\n\n**Outline.** Front matter; Introduction; 1 Purity, Mixedness, and Realization; 2 Mixed Categories in Representation Theory; 3 The AW Trace; 4 Steinberg Schemes; 5 Steinberg Schemes of Braids; 6 Khovanov–Rozansky Homology; 7 The Decategorified Trace; 8 Deligne–Lusztig Theory; 9 Periodic Braids; 10 The Rational DAHA; Appendix A. Coxeter Groups and Their Character; Appendix B. Braid Varieties in the Literature; Appendix C. Examples of the Decategorified Tra; References",
  "tokens": {
   "brief": 49,
-  "extended": 339
+  "extended": 348
  },
  "sections": [
   {
    "id": "sec-front-matter",
    "title": "Front matter",
-   "pages": "1-1"
+   "pages": "1-2"
   },
   {
    "id": "sec-000-introduction",
    "title": "Introduction",
-   "pages": "1-15"
+   "pages": "2-15"
   },
   {
    "id": "sec-001-1-purity-mixedness-and-realization",
@@ -72,15 +72,20 @@
   {
    "id": "sec-011-appendix-a-coxeter-groups-and-their-characters",
    "title": "Appendix A. Coxeter Groups and Their Characters",
-   "pages": "71-82"
+   "pages": "71-78"
   },
   {
-   "id": "sec-012-appendix-c-examples-of-the-decategorified-trace",
+   "id": "sec-012-appendix-b-braid-varieties-in-the-literature",
+   "title": "Appendix B. Braid Varieties in the Literature",
+   "pages": "78-82"
+  },
+  {
+   "id": "sec-013-appendix-c-examples-of-the-decategorified-trace",
    "title": "Appendix C. Examples of the Decategorified Trace",
    "pages": "82-84"
   },
   {
-   "id": "sec-013-references",
+   "id": "sec-014-references",
    "title": "References",
    "pages": "84-88"
   }

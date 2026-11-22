@@ -1,0 +1,1 @@
+— Let dq = σq−1 x(q−1) and consider a q-diﬀerence operator ∆∈C{x}[σq]. Then ∆can be written as (4.1) if and only if it can be rewritten in the following form: (4.2) ∆:= b0(x)(x2dq)n+b1(x)(x2dq)n−1+...+bn(x), bj ∈C{x}, b0(0)bn(0)̸ = 0.

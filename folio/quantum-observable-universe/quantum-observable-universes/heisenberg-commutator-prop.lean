@@ -11,7 +11,7 @@ Classical limit q → 1 gives commutativity; q → ∞ gives maximal uncertainty
 LaTeX label: `prop:heisenberg-commutator`
 
 ## References
-- [manuscript] Ch. 6, §archimedean-models
+- [leitner2026] Ch. 6, §archimedean-models
 - [heisenberg1958]
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
@@ -82,7 +82,7 @@ theorem hbarQ_classical_limit : hbarQ (1 : Rˣ) = (0 : R) := by
     the q-deformed operator algebra on the state bundle, via the
     categorical connection and the Levi distribution structure —
     requires machinery beyond this scalar fibre statement. -/
--- Ref: [manuscript] Ch. 6, §archimedean-models
+-- Ref: [leitner2026] Ch. 6, §archimedean-models
 -- Ref: [heisenberg1958]
 theorem heisenberg_commutator (J : R) (q : Rˣ) :
     J * hbarQ q = J * (1 - ((q⁻¹ : Rˣ) : R)) := by

@@ -8,7 +8,7 @@
   "pages": 26,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:21Z",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -26,7 +26,7 @@
   "title_lines": [
    "CATEGORICAL BRAID GROUP ACTIONS"
   ],
-  "abstract": "Let g be a semisimple simply-laced Lie algebra of \ufb01nite type. Let C be an abelian categorical representation of the quantum group Uq(g) categorifying an integrable representation V . The Artin braid group B of g acts on Db(C) by Rickard complexes, providing a triangulated equivalence \u0398w0 : Db(C\u00b5) \u2192Db(Cw0(\u00b5)) where \u00b5 is a weight of V , and \u0398w0 is a positive lift of the longest element of the Weyl group. We prove that this equivalence is t-exact up to shift when V is isotypic, generalising a funda- mental result of Chuang and Rouquier in the case g = sl2. For general V , we prove that \u0398w0 is a perverse equivalence with respect to a Jordan-H\u00a8older \ufb01ltration of C. Using these results we construct, from the action of B on V , an action of the cactus group on the crystal of V . This recovers the cactus group action on V de\ufb01ned via generalised Sch\u00a8utzenberger involutions, and provides a new connection between categorical representation theory and crystal bases. We also use these results to give new proofs of theorems of Berenstein-Zelevinsky, Rhoades, and Stembridge regarding the action of symmetric group on the Kazhdan-Lusztig basis of its Specht modules.",
+  "abstract": "Let g be a semisimple simply-laced Lie algebra of ﬁnite type. Let C be an abelian categorical representation of the quantum group Uq(g) categorifying an integrable representation V . The Artin braid group B of g acts on Db(C) by Rickard complexes, providing a triangulated equivalence Θw0 : Db(Cµ) →Db(Cw0(µ)) where µ is a weight of V , and Θw0 is a positive lift of the longest element of the Weyl group. We prove that this equivalence is t-exact up to shift when V is isotypic, generalising a funda- mental result of Chuang and Rouquier in the case g = sl2. For general V , we prove that Θw0 is a perverse equivalence with respect to a Jordan-H¨older ﬁltration of C. Using these results we construct, from the action of B on V , an action of the cactus group on the crystal of V . This recovers the cactus group action on V deﬁned via generalised Sch¨utzenberger involutions, and provides a new connection between categorical representation theory and crystal bases. We also use these results to give new proofs of theorems of Berenstein-Zelevinsky, Rhoades, and Stembridge regarding the action of symmetric group on the Kazhdan-Lusztig basis of its Specht modules.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "LaTeX with hyperref",
@@ -36,7 +36,7 @@
   "title_source": "text",
   "title_verified": false,
   "title_evidence": {
-   "heading": "CATEGORICAL BRAID GROUP ACTIONS AND CACTUS GROUPS 1. Introduction In their seminal work, Chuang and Rouquier introduced sl 2 categori\ufb01cations on abelian categories [16]. Their de\ufb01nition mirrors the notion of an sl 2 representation on a vector space: weight spaces are replaced by weight categories, C",
+   "heading": "CATEGORICAL BRAID GROUP ACTIONS AND CACTUS GROUPS 1. Introduction In their seminal work, Chuang and Rouquier introduced sl 2 categoriﬁcations on abelian categories [16]. Their deﬁnition mirrors the notion of an sl 2 representation on a vector space: weight spaces are replaced by weight categories, C",
    "outline": "1. Introduction",
    "text": "CATEGORICAL BRAID GROUP ACTIONS",
    "corroborated_by": [],
@@ -136,7 +136,7 @@
   },
   {
    "level": 2,
-   "title": "Jordan-H\u00f6lder series",
+   "title": "Jordan-Hölder series",
    "page": 7,
    "source": "outline",
    "number": "3.4",
@@ -593,26 +593,14 @@
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 3,
-   "n_chars": 7386,
-   "n_words": 1208,
-   "label_start": "1",
-   "label_end": "3"
-  },
-  {
-   "id": "sec-001-21-the-quantum-group",
-   "number": "2.1",
-   "title": "The quantum group",
-   "level": 2,
-   "page_start": 3,
    "page_end": 4,
-   "n_chars": 2761,
-   "n_words": 483,
-   "label_start": "3",
+   "n_chars": 10242,
+   "n_words": 1707,
+   "label_start": "1",
    "label_end": "4"
   },
   {
-   "id": "sec-002-acknowledgement",
+   "id": "sec-001-acknowledgement",
    "number": null,
    "title": "Acknowledgement",
    "level": 1,
@@ -624,14 +612,26 @@
    "label_end": "4"
   },
   {
-   "id": "sec-003-2-background-on-quantum-groups",
+   "id": "sec-002-2-background-on-quantum-groups",
    "number": "2",
    "title": "Background on quantum groups",
    "level": 1,
    "page_start": 4,
+   "page_end": 4,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-003-21-the-quantum-group",
+   "number": "2.1",
+   "title": "The quantum group",
+   "level": 2,
+   "page_start": 4,
    "page_end": 5,
-   "n_chars": 1633,
-   "n_words": 353,
+   "n_chars": 1540,
+   "n_words": 336,
    "label_start": "4",
    "label_end": "5"
   },
@@ -642,8 +642,8 @@
    "level": 2,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 1605,
-   "n_words": 336,
+   "n_chars": 1693,
+   "n_words": 349,
    "label_start": "5",
    "label_end": "5"
   },
@@ -654,25 +654,37 @@
    "level": 2,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 546,
-   "n_words": 99,
+   "n_chars": 311,
+   "n_words": 59,
    "label_start": "5",
    "label_end": "5"
   },
   {
-   "id": "sec-006-32-definition",
+   "id": "sec-006-3-categorical-representations-of-u-qg",
+   "number": "3",
+   "title": "Categorical representations of U_q(g)",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 1179,
+   "n_words": 206,
+   "label_start": "5",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-007-32-definition",
    "number": "3.2",
    "title": "Definition",
    "level": 2,
-   "page_start": 5,
+   "page_start": 6,
    "page_end": 7,
-   "n_chars": 5629,
-   "n_words": 954,
-   "label_start": "5",
+   "n_chars": 4581,
+   "n_words": 772,
+   "label_start": "6",
    "label_end": "7"
   },
   {
-   "id": "sec-007-33-crystals",
+   "id": "sec-008-33-crystals",
    "number": "3.3",
    "title": "Crystals",
    "level": 2,
@@ -684,9 +696,9 @@
    "label_end": "7"
   },
   {
-   "id": "sec-008-34-jordan-h\u00f6lder-series",
+   "id": "sec-009-34-jordan-hölder-series",
    "number": "3.4",
-   "title": "Jordan-H\u00f6lder series",
+   "title": "Jordan-Hölder series",
    "level": 2,
    "page_start": 7,
    "page_end": 9,
@@ -696,7 +708,7 @@
    "label_end": "9"
   },
   {
-   "id": "sec-009-35-the-categorical-braid-group-action",
+   "id": "sec-010-35-the-categorical-braid-group-action",
    "number": "3.5",
    "title": "The categorical braid group action",
    "level": 2,
@@ -708,7 +720,7 @@
    "label_end": "10"
   },
   {
-   "id": "sec-010-4-perverse-equivalences",
+   "id": "sec-011-4-perverse-equivalences",
    "number": "4",
    "title": "Perverse equivalences",
    "level": 1,
@@ -720,7 +732,7 @@
    "label_end": "10"
   },
   {
-   "id": "sec-011-41-general-definition",
+   "id": "sec-012-41-general-definition",
    "number": "4.1",
    "title": "General definition",
    "level": 2,
@@ -732,7 +744,7 @@
    "label_end": "11"
   },
   {
-   "id": "sec-012-42-derived-categories-of-graded-abelian-categori",
+   "id": "sec-013-42-derived-categories-of-graded-abelian-categori",
    "number": "4.2",
    "title": "Derived categories of graded abelian categories",
    "level": 2,
@@ -744,7 +756,7 @@
    "label_end": "12"
   },
   {
-   "id": "sec-013-5-some-commutation-relations",
+   "id": "sec-014-5-some-commutation-relations",
    "number": "5",
    "title": "Some commutation relations",
    "level": 1,
@@ -756,31 +768,67 @@
    "label_end": "13"
   },
   {
-   "id": "sec-014-52-marked-words",
+   "id": "sec-015-52-marked-words",
    "number": "5.2",
    "title": "Marked words",
    "level": 2,
    "page_start": 13,
-   "page_end": 17,
-   "n_chars": 10099,
-   "n_words": 2023,
+   "page_end": 14,
+   "n_chars": 3532,
+   "n_words": 765,
    "label_start": "13",
+   "label_end": "14"
+  },
+  {
+   "id": "sec-016-53-the-relation-between-w-0-and-chevalley-functo",
+   "number": "5.3",
+   "title": "The relation between _w_0 and Chevalley functors",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 1809,
+   "n_words": 374,
+   "label_start": "14",
+   "label_end": "15"
+  },
+  {
+   "id": "sec-017-6-on-t-exactness-and-perversity-of-w-0",
+   "number": "6",
+   "title": "On t-exactness and perversity of _w_0",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 17,
+   "n_chars": 4627,
+   "n_words": 862,
+   "label_start": "15",
    "label_end": "17"
   },
   {
-   "id": "sec-015-71-cactus-groups",
+   "id": "sec-018-71-cactus-groups",
    "number": "7.1",
    "title": "Cactus groups",
    "level": 2,
    "page_start": 17,
    "page_end": 17,
-   "n_chars": 1639,
-   "n_words": 301,
+   "n_chars": 2,
+   "n_words": 1,
    "label_start": "17",
    "label_end": "17"
   },
   {
-   "id": "sec-016-7-crystalising-the-braid-group-action",
+   "id": "sec-019-62-w-0-on-general-categorical-representations",
+   "number": "6.2",
+   "title": "_w_0 on general categorical representations",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 1543,
+   "n_words": 284,
+   "label_start": "17",
+   "label_end": "17"
+  },
+  {
+   "id": "sec-020-7-crystalising-the-braid-group-action",
    "number": "7",
    "title": "Crystalising the braid group action",
    "level": 1,
@@ -792,7 +840,7 @@
    "label_end": "18"
   },
   {
-   "id": "sec-017-72-the-cactus-group-action-arising-from-rickard",
+   "id": "sec-021-72-the-cactus-group-action-arising-from-rickard",
    "number": "7.2",
    "title": "The cactus group action arising from Rickard complexes",
    "level": 2,
@@ -804,7 +852,7 @@
    "label_end": "20"
   },
   {
-   "id": "sec-018-73-reconciling-the-two-cactus-group-actions",
+   "id": "sec-022-73-reconciling-the-two-cactus-group-actions",
    "number": "7.3",
    "title": "Reconciling the two cactus group actions",
    "level": 2,
@@ -816,7 +864,7 @@
    "label_end": "21"
   },
   {
-   "id": "sec-019-8-examples-and-applications",
+   "id": "sec-023-8-examples-and-applications",
    "number": "8",
    "title": "Examples and Applications",
    "level": 1,
@@ -828,7 +876,7 @@
    "label_end": "23"
   },
   {
-   "id": "sec-020-82-type-a-combinatorics",
+   "id": "sec-024-82-type-a-combinatorics",
    "number": "8.2",
    "title": "Type A combinatorics",
    "level": 2,
@@ -840,7 +888,7 @@
    "label_end": "24"
   },
   {
-   "id": "sec-021-references",
+   "id": "sec-025-references",
    "number": null,
    "title": "References",
    "level": 1,
@@ -863,13 +911,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 23,
-  "chars_total": 80109,
+  "sections": 27,
+  "chars_total": 79870,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "HLLY-June-2023.tex",
    "tex_sections": 28,
-   "overlaid": 15,
+   "overlaid": 19,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -884,19 +933,13 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.776,
-     "coverage_ratio": 0.981,
+     "prose_ratio": 0.959,
+     "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-001-21-the-quantum-group",
-     "title": "The quantum group",
-     "prose_ratio": 0.277,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-002-acknowledgement",
+     "id": "sec-001-acknowledgement",
      "title": "Acknowledgement",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
@@ -904,35 +947,49 @@
      "converter": "latex"
     },
     {
-     "id": "sec-003-2-background-on-quantum-groups",
+     "id": "sec-002-2-background-on-quantum-groups",
      "title": "Background on quantum groups",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-21-the-quantum-group",
+     "title": "The quantum group",
+     "prose_ratio": 0.877,
+     "coverage_ratio": 0.826,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-004-22-braid-group-actions-on-integrable-representat",
      "title": "Braid group actions on integrable representations of U_q(g).",
-     "prose_ratio": 0.747,
-     "coverage_ratio": 0.985,
+     "prose_ratio": 0.776,
+     "coverage_ratio": 0.971,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-005-31-notation",
      "title": "Notation",
-     "prose_ratio": 0.36,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.06,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-006-32-definition",
+     "id": "sec-006-3-categorical-representations-of-u-qg",
+     "title": "Categorical representations of U_q(g)",
+     "prose_ratio": null,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-007-32-definition",
      "title": "Definition",
-     "prose_ratio": 0.967,
-     "coverage_ratio": 0.878,
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.971,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-007-33-crystals",
+     "id": "sec-008-33-crystals",
      "title": "Crystals",
      "prose_ratio": 0.937,
      "coverage_ratio": 1.0,
@@ -940,15 +997,15 @@
      "converter": "latex"
     },
     {
-     "id": "sec-008-34-jordan-h\u00f6lder-series",
-     "title": "Jordan-H\u00f6lder series",
+     "id": "sec-009-34-jordan-hölder-series",
+     "title": "Jordan-Hölder series",
      "prose_ratio": 0.97,
      "coverage_ratio": 0.905,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-009-35-the-categorical-braid-group-action",
+     "id": "sec-010-35-the-categorical-braid-group-action",
      "title": "The categorical braid group action",
      "prose_ratio": 0.965,
      "coverage_ratio": 0.923,
@@ -956,13 +1013,13 @@
      "converter": "latex"
     },
     {
-     "id": "sec-010-4-perverse-equivalences",
+     "id": "sec-011-4-perverse-equivalences",
      "title": "Perverse equivalences",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-011-41-general-definition",
+     "id": "sec-012-41-general-definition",
      "title": "General definition",
      "prose_ratio": 0.93,
      "coverage_ratio": 0.93,
@@ -970,7 +1027,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-012-42-derived-categories-of-graded-abelian-categori",
+     "id": "sec-013-42-derived-categories-of-graded-abelian-categori",
      "title": "Derived categories of graded abelian categories",
      "prose_ratio": 0.959,
      "coverage_ratio": 0.909,
@@ -978,7 +1035,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-013-5-some-commutation-relations",
+     "id": "sec-014-5-some-commutation-relations",
      "title": "Some commutation relations",
      "prose_ratio": 0.974,
      "coverage_ratio": 0.91,
@@ -986,28 +1043,52 @@
      "converter": "latex"
     },
     {
-     "id": "sec-014-52-marked-words",
+     "id": "sec-015-52-marked-words",
      "title": "Marked words",
-     "prose_ratio": 0.87,
-     "coverage_ratio": 0.95,
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.936,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-015-71-cactus-groups",
-     "title": "Cactus groups",
-     "prose_ratio": 0.102,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-016-53-the-relation-between-w-0-and-chevalley-functo",
+     "title": "The relation between _w_0 and Chevalley functors",
+     "prose_ratio": 0.956,
+     "coverage_ratio": 0.941,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-016-7-crystalising-the-braid-group-action",
+     "id": "sec-017-6-on-t-exactness-and-perversity-of-w-0",
+     "title": "On t-exactness and perversity of _w_0",
+     "prose_ratio": 0.956,
+     "coverage_ratio": 0.932,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-018-71-cactus-groups",
+     "title": "Cactus groups",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-019-62-w-0-on-general-categorical-representations",
+     "title": "_w_0 on general categorical representations",
+     "prose_ratio": 0.881,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-020-7-crystalising-the-braid-group-action",
      "title": "Crystalising the braid group action",
      "prose_ratio": 0.957,
      "coverage_ratio": 0.272,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
-     "id": "sec-017-72-the-cactus-group-action-arising-from-rickard",
+     "id": "sec-021-72-the-cactus-group-action-arising-from-rickard",
      "title": "The cactus group action arising from Rickard complexes",
      "prose_ratio": 0.944,
      "coverage_ratio": 0.938,
@@ -1015,7 +1096,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-018-73-reconciling-the-two-cactus-group-actions",
+     "id": "sec-022-73-reconciling-the-two-cactus-group-actions",
      "title": "Reconciling the two cactus group actions",
      "prose_ratio": 0.932,
      "coverage_ratio": 0.964,
@@ -1023,7 +1104,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-019-8-examples-and-applications",
+     "id": "sec-023-8-examples-and-applications",
      "title": "Examples and Applications",
      "prose_ratio": 0.955,
      "coverage_ratio": 0.957,
@@ -1031,7 +1112,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-020-82-type-a-combinatorics",
+     "id": "sec-024-82-type-a-combinatorics",
      "title": "Type A combinatorics",
      "prose_ratio": 0.935,
      "coverage_ratio": 0.967,
@@ -1039,7 +1120,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-021-references",
+     "id": "sec-025-references",
      "title": "References",
      "result": "no matching \\section"
     }

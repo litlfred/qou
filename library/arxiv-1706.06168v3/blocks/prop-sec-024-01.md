@@ -1,1 +1,1 @@
-B.1 also leads to one of the crucial results used in the proof of the Borcea-Br¨and´en char-
+1. For all n ∈N0, we have that V (n) is an irreducible representation of SL2(C) of dimension n + 1.

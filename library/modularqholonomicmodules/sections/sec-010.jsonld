@@ -9,15 +9,13 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Duality",
-  "pageStart": 20,
-  "pageEnd": 23,
+  "title": "The slash operator and proof of Theorem 1.2",
+  "pageStart": 17,
+  "pageEnd": 20,
   "contains": [
-    "library/modularqholonomicmodules/blocks/prose-sec-010",
-    "library/modularqholonomicmodules/blocks/prop-sec-010-01",
-    "library/modularqholonomicmodules/blocks/prop-sec-010-02"
+    "library/modularqholonomicmodules/blocks/prose-sec-010"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/modularqholonomicmodules",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/modularqholonomicmodules",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/modularqholonomicmodules/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/modularqholonomicmodules/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -369,6 +369,9 @@ print(f"    unconditional cut, B_rig:   Xrun(ell) > {mp.nstr(_thresh_rig, 12):16
       f"=>  s_t + s_b <= {_L_RIG}")
 print(f"    unconditional cut, B_sharp: Xrun(ell) > {mp.nstr(_thresh_sharp, 12):16s} "
       f"=>  s_t + s_b <= {_L_SHARP}", flush=True)
+# witness-copy-intentional: the measured maximum this probe computes later (_B_meas,
+# stage G2); the S3 message quotes it before it is computed.
+_G2_MEASURED_MAX = mp.mpf('2.1598023761182859616')
 check(
     "S3 the maximisation is coercive: only finitely many (s_t, s_b) can win",
     mp.isfinite(B_SHARP) and _L_SHARP < _L_RIG,
@@ -381,7 +384,7 @@ check(
     f"{_L_RIG} -> {_L_SHARP}) and it is the more legible of the two: row i counted from the "
     f"free top edge only sees distances >= i+1 on its way to the bulk, so `Ghat(i+1)` is the "
     f"most it can gain per unit.  It is STILL NOT ENUMERABLE — {_L_SHARP} is far past any "
-    f"feasible search, and {mp.nstr(B_SHARP / mp.mpf('2.1598023761182859616'), 4)}x the "
+    f"feasible search, and {mp.nstr(B_SHARP / _G2_MEASURED_MAX, 4)}x the "
     f"measured maximum — so this settles finiteness and not the value",
 )
 print(flush=True)

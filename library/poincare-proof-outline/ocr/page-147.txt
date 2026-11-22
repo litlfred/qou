@@ -1,0 +1,76 @@
+by (rule power2-le-imp-le, simp)
+hence cmod (to-complex ?d) < cmod (to-complex ?t)
+
+by (simp add: Let-def cmod-def power2-eq-square field-simps)
+moreover
+have Arg (to-complex ?d) = Arg (to-complex ?t)
+proof—
+
+have 1: to-complex ?d = ((5 — sqrt 17) / 4) * (1 +i)
+
+by (simp add: field-simps)
+
+have 2: to-complex ?t = (cor (1/2)) * (1 + i)
+by (simp add: field-simps)
+
+have (sqrt 172)? < 5?
+
+by simp
+hence sqrt 17 < 5
+
+by (rule power2-less-imp-less, simp)
+hence 3: (5 — sqrt 17) /4>0
+
+by simp
+
+have 4: (L::real) / 2 > 0
+by simp
+
+show ?thesis
+apply (subst 1, subst 2)
+apply (subst arg-mult-real-positive|OF 3])
+apply (subst arg-mult-real-positive|OF 4])
+by simp
+qed
+ultimately
+show let d' = to-complex ?d; t' = to-complex ?t in Arg d’ = Arg t' \ cmod d’ < cmod t’
+by simp
+qed
+
+show ?a = ?d => False
+using <(?d # ?a>
+by simp
+
+fix ry
+assume z € unit-disc y € unit-disc
+
+assume abz: poincare-between ?a ?b x
+
+hence z € circline-set r-axis
+using poincare-between-poincare-line-uvz[of 2a ?b x] «x € unit-discr «?a # 2b»
+using poincare-line-0-real-is-z-axis|of ?b|
+by (auto simp add: circline-set-x-axis)
+
+have « # On,
+using abzx poincare-between-sandwich|of ?a ?b] «?a # ?b»
+by auto
+
+have x € positive-x-axis
+using <x € circline-set r-avis) (x # On) <x € unit-discy
+using abz poincare-between-x-axis-Ouvlof 1/2 Re (to-complex x)|
+unfolding circline-set-x-axis positive-x-axis-def
+by (auto simp add: cmod-eq-Re abs-less-iff complex-eq-if-Re-eq)
+
+assume acy: poincare-between ?a ?c y
+
+hence y € circline-set y-axis
+using poincare-between-poincare-line-uvz[of 2a ?c y| ‘y € unit-discr «?a # ?e>
+using poincare-line-0-imag-is-y-axis|of ?c]
+by (auto simp add: circline-set-y-azis)
+
+have y 4 0n
+
+using acy poincare-between-sandwich|of ?a ?c] «?a # ?cr
+by auto
+
+147

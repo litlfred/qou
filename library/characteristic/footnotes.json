@@ -1,0 +1,717 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "characteristic",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p005-1",
+   "page": 5,
+   "mark": "1",
+   "text": "AJaretheinitialsoftheA-polynomialandthecoloredJonespolynomial",
+   "marks": [
+    {
+     "page": 4,
+     "context": "\u0002[E, Q]byL = EandM= Q"
+    },
+    {
+     "page": 5,
+     "context": "Conjecture2.(TheAJConjecture)"
+    },
+    {
+     "page": 5,
+     "context": "\u0000(q)[qn, qk"
+    }
+   ],
+   "block": "library/characteristic/blocks/prose-sec-007"
+  },
+  {
+   "id": "fn-p007-1",
+   "page": 7,
+   "mark": "2",
+   "text": "- n n q (-1 + q ) SUM[n] > ----------------------- == 0",
+   "marks": [
+    {
+     "page": 6,
+     "context": "((qn/2−q−n/2)"
+    },
+    {
+     "page": 6,
+     "context": "((qn/2−q−n/2)2−(qj/2−q−j/2)"
+    },
+    {
+     "page": 6,
+     "context": "(L −1)(−L + LM"
+    },
+    {
+     "page": 6,
+     "context": "(L −1)(−L + LM2+ M4+ 2LM4+ L"
+    },
+    {
+     "page": 7,
+     "context": "J(n) = q−2+n −q + q"
+    }
+   ],
+   "block": "library/characteristic/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p007-3",
+   "page": 7,
+   "mark": "3",
+   "text": "+ 2 n",
+   "marks": [
+    {
+     "page": 6,
+     "context": "LetustypethecoloredJonesfunctionJ"
+    }
+   ],
+   "block": "library/characteristic/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p007-5",
+   "page": 7,
+   "mark": "4",
+   "text": "+ 2 n q - q -2 - n",
+   "marks": [
+    {
+     "page": 6,
+     "context": "(L −1)(−L + LM2+ M"
+    },
+    {
+     "page": 6,
+     "context": "(L −1)(−L + LM2+ M4+ 2LM"
+    },
+    {
+     "page": 6,
+     "context": "(L −1)(−L + LM2+ M4+ 2LM4+ L2M"
+    }
+   ],
+   "block": "library/characteristic/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p007-9",
+   "page": 7,
+   "mark": "6",
+   "text": "+ 2 n",
+   "marks": [
+    {
+     "page": 6,
+     "context": "(L −1)(L + M"
+    },
+    {
+     "page": 6,
+     "context": "(L −1)(−L + LM2+ M4+ 2LM4+ L2M4+ LM"
+    }
+   ],
+   "block": "library/characteristic/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p007-12",
+   "page": 7,
+   "mark": "8",
+   "text": "+ 4 n > (q - q + q - q - q + q ) SUM[1 + n])",
+   "marks": [
+    {
+     "page": 6,
+     "context": "(L −1)(−L + LM2+ M4+ 2LM4+ L2M4+ LM6−LM"
+    }
+   ],
+   "block": "library/characteristic/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p008-1",
+   "page": 8,
+   "mark": "1",
+   "text": "- n Out[9]= q qPochhammer[q , -, k] qPochhammer[q , q, k] q In[10]:= qZeil[summandfigure8, {k, 0, Infinity}, n, 2] qZeil::natbounds: Assuming appropriate convergence. -1 - n n",
+   "marks": [
+    {
+     "page": 7,
+     "context": "−1 + qn−q−1+3n"
+    },
+    {
+     "page": 8,
+     "context": "operatorE.ThusordE(Aq(3"
+    },
+    {
+     "page": 8,
+     "context": "operatorE.ThusordE(Aq(31))is1or2.IfordE(Aq(3"
+    },
+    {
+     "page": 8,
+     "context": "operatorE.ThusordE(Aq(31))is1or2.IfordE(Aq(31))=1,thenJ3"
+    },
+    {
+     "page": 8,
+     "context": "idedbycomputerusingqHyper(see[PWZ]),whichindeedconﬁrmsthatJ3"
+    }
+   ],
+   "block": "library/characteristic/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p008-2",
+   "page": 8,
+   "mark": "2",
+   "text": "n q (q + q ) (-q + q ) Out[10]= SUM[n] == ---------------------------- - n",
+   "marks": [
+    {
+     "page": 8,
+     "context": "earing denominators.Settingq= 1,and replacing XbyL and Qby M"
+    }
+   ],
+   "block": "library/characteristic/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p009-2",
+   "page": 9,
+   "mark": "3",
+   "text": "+ 2 n",
+   "marks": [
+    {
+     "page": 8,
+     "context": "operatorE.ThusordE(Aq(31))is1or2.IfordE(Aq(31))=1,thenJ"
+    },
+    {
+     "page": 8,
+     "context": "cidedbycomputerusingqHyper(see[PWZ]),whichindeedconﬁrmsthatJ"
+    }
+   ],
+   "block": "library/characteristic/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p010-1",
+   "page": 10,
+   "mark": "2",
+   "text": "2 L M (1 + M )",
+   "marks": [
+    {
+     "page": 10,
+     "context": "andreplacingXbyLandQbyM"
+    }
+   ],
+   "block": "library/characteristic/blocks/prose-sec-011"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p007-2",
+   "page": 7,
+   "mark": "2",
+   "text": "n q - q",
+   "block": "library/characteristic/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p007-4",
+   "page": 7,
+   "mark": "2",
+   "text": "+ n q (q - q ) SUM[n] Out[6]= ----------------------------- +",
+   "block": "library/characteristic/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p007-6",
+   "page": 7,
+   "mark": "2",
+   "text": "+ n",
+   "block": "library/characteristic/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p007-7",
+   "page": 7,
+   "mark": "2",
+   "text": "+ n > (q (q - q ) (q + q )",
+   "block": "library/characteristic/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p007-8",
+   "page": 7,
+   "mark": "5",
+   "text": "+ n",
+   "block": "library/characteristic/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p007-10",
+   "page": 7,
+   "mark": "7",
+   "text": "+ 2 n",
+   "block": "library/characteristic/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p007-11",
+   "page": 7,
+   "mark": "7",
+   "text": "+ 3 n",
+   "block": "library/characteristic/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p009-1",
+   "page": 9,
+   "mark": "2",
+   "text": "+ 2 n",
+   "block": "library/characteristic/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p009-3",
+   "page": 9,
+   "mark": "1",
+   "text": "+ 3 n",
+   "block": "library/characteristic/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p009-4",
+   "page": 9,
+   "mark": "2",
+   "text": "+ 3 n > q - q - 2 q + q ) SUM[-1 + n]) /",
+   "block": "library/characteristic/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p009-5",
+   "page": 9,
+   "mark": "1",
+   "text": "+ n n",
+   "block": "library/characteristic/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p009-6",
+   "page": 9,
+   "mark": "2",
+   "text": "n q (-1 + q ) SUM[n] > ((q + q ) (-q + q )) + ----------------------- == 0 n",
+   "block": "library/characteristic/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p009-7",
+   "page": 9,
+   "mark": "2",
+   "text": "n (q + q ) (q - q )",
+   "block": "library/characteristic/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p009-8",
+   "page": 9,
+   "mark": "5",
+   "text": "+ n",
+   "block": "library/characteristic/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p009-9",
+   "page": 9,
+   "mark": "3",
+   "text": "+ n q (-q + q ) SUM[n] Out[12]= ------------------------------ -",
+   "block": "library/characteristic/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p009-10",
+   "page": 9,
+   "mark": "3",
+   "text": "+ n",
+   "block": "library/characteristic/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p009-11",
+   "page": 9,
+   "mark": "6",
+   "text": "+ 2 n (q + q ) (-q + q ) -5 - n",
+   "block": "library/characteristic/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p009-12",
+   "page": 9,
+   "mark": "3",
+   "text": "+ n",
+   "block": "library/characteristic/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p009-13",
+   "page": 9,
+   "mark": "9",
+   "text": "+ n",
+   "block": "library/characteristic/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p009-14",
+   "page": 9,
+   "mark": "10",
+   "text": "+ n",
+   "block": "library/characteristic/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p009-15",
+   "page": 9,
+   "mark": "9",
+   "text": "+ 2 n > (q (q - q ) (q - 2 q + q - q +",
+   "block": "library/characteristic/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p012-1",
+   "page": 12,
+   "mark": "14",
+   "text": "(1997) 179–210.",
+   "block": "library/characteristic/blocks/prose-sec-012"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "(Qf)(n) = q"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "⋆)"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "⋆)"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "⋆)"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "GivenaknotKinS"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "GivenaknotKinS3,considerthecomplementM=S"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "∂M∼= T"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "⋆)"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "acteristicequalsDeformationVarietyConjecture)ForeveryknotinS"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "\u0002[L, M"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "akE"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "\u0000,a"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "wherethemultiplicationofmonomialsgivenbyaE"
+  },
+  {
+   "page": 4,
+   "mark": "l",
+   "context": "wherethemultiplicationofmonomialsgivenbyaEk· bE"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "wherethemultiplicationofmonomialsgivenbyaEk· bEl= aσ"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "wherethemultiplicationofmonomialsgivenbyaEk· bEl= aσk(b)E"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "k"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "ka"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "kakE"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "kakEkwhere"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "kakEkwherea"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "sepropertiesuniquelydetermineAq(I)uptoleftmultiplicationby±q"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "propertiesuniquelydetermineAq(I)uptoleftmultiplicationby±qaQ"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "KinS"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "\u0002[L, M"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "Deﬁnition2.2.Weidentifythegeometricpair(L, M"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "Q,themultiplicationbyq"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "termsofpowersofq"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "ansionaroundaU(1)-connectionintheknotcomplementwithholonomyq"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "Thus,itisnotsurprisingthatM"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "Conjecture2.(TheAJConjecture)1ForeveryknotinS"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": ".(TheAJConjecture)1ForeveryknotinS3,A(K)(L, M) = ϵAq(K)(L, M"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "\u0000(q)[q"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "\u0000(q)[qn, q"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "\u0000(q)[qn, qk1, . . . , q"
+  },
+  {
+   "page": 5,
+   "mark": "r",
+   "context": "\u0000(q)[qn, qk1, . . . , qk"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Replacingq"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "ReplacingqnbyQandq"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "ReplacingqnbyQandqk"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "(−1)"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "(−1)kq"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "(a; q)k= (1 −a)(1 −aq) . . . (1 −aq"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "LetustypethecoloredJonesfunctionJ3"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "−1 + q"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "−1 + qn−q−1+3"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "J(n) = q−2+n −q + q2"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "1 −q"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "operatorE.ThusordE(A"
+  },
+  {
+   "page": 8,
+   "mark": "q",
+   "context": "operatorE.ThusordE(Aq(31))is1or2.IfordE(A"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "\u0002[q±]⟨Q"
+  },
+  {
+   "page": 11,
+   "mark": "r",
+   "context": "\u0002[q±]⟨Q1, . . . , Q"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "\u0002[q±]⟨Q1, . . . , Qr, E"
+  },
+  {
+   "page": 11,
+   "mark": "r",
+   "context": "\u0002[q±]⟨Q1, . . . , Qr, E1, . . . , E"
+  },
+  {
+   "page": 11,
+   "mark": "f",
+   "context": "\u0000(q),we deﬁnetherecursionidealI"
+  },
+  {
+   "page": 11,
+   "mark": "f",
+   "context": "\u0000(q),we deﬁnetherecursionidealIfandtheq-WeylmoduleM"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "\u0002[Q"
+  },
+  {
+   "page": 11,
+   "mark": "r",
+   "context": "\u0002[Q1, . . . , Q"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "\u0002[Q1, . . . , Qr, E"
+  },
+  {
+   "page": 11,
+   "mark": "r",
+   "context": "\u0002[Q1, . . . , Qr, E1, . . . , E"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "⋆)"
+  },
+  {
+   "page": 12,
+   "mark": "r",
+   "context": "⋆)2"
+  },
+  {
+   "page": 12,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "Deﬁnition4.4.IfKisaknotinS"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "\u0001),givenaknotKinS"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "\u0001),givenaknotKinS3,considerthecomplementM=S"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "\u0000(M)ofrepresentationsofπ"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "\u0000(∂M).Noticethatπ"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "\u0000(∂M)withT"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "\u0000(∂M)inT"
+  },
+  {
+   "page": 12,
+   "mark": "r",
+   "context": "⋆)"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "s us to identify the values of meridian and longitude with T"
+  },
+  {
+   "page": 12,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "K.Habiro,Onthequantumsl"
+  }
+ ]
+}

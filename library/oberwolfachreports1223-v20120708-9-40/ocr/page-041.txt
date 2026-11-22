@@ -1,0 +1,50 @@
+Invariants in Low-Dimensional Topology and Knot Theory Al
+
+cardinality of these sets are integers that are denoted as |A;(G)| and as |V;(G)|
+respectively.
+
+|A(G)|= > sgn(c) and |Vj(@)| = So sgn(c).
+
+ce Ai(G) c€V;(G)
+
+We prove that for any non-zero integer i and any positive integer j, |A;(G)| and
+|V;(G)| are invariant under the Gauss diagram moves. The proof can be briefly
+sketched as follows. Chords involved in a single chord move have weight zero.
+Chords involved in a two chord move have the same weight, but have opposite
+signs. Their net contribution to the signed cardinality of a set is zero. The weight
+of chords is not changed by the triangle moves.
+
+Virtual knots are equivalence classes of virtual knot diagrams that are in one
+to one correspondence with equivalence classes of Gauss diagrams [6]. Let K be a
+virtual knot diagram and let Gx be the corresponding Gauss diagram. We define
+V;(K) (A; (Iv)) to be the set of crossings that correspond to chords in V;(Gx) that
+have parity j7 or —j (respectively i). We define the gluing invariant G;(K) to be
+a formal sum of flat virtual knot diagrams with one singular crossing. However,
+instead of gluing all crossings, we restrict our attention to crossings with particular
+weights.
+
+G(K)= So sgn(o)[F(K.) — F(K.0)].
+c€Vi(K)
+
+This formal sum of flat diagrams with one singular crossing G;(A’) (modulo the
+slightly expanded Reidmeister move set) is a degree one Vassiliev invariant.
+
+We can obtain a numerical invariant equivalent to |Vj(A)| by mapping the
+formal sum to the integers and each non-empty diagram class, [F (K.) — F(K-O)],
+is mapped to 1. (The value |A;(Gx)| is an invariant of virtual knots, but it is not
+a finite type invariant.) We remark that
+
+Taking products of the G;(A<) produces finite type invariants of higher degree.
+(The weights can also be extracted from the polynomial invariant introduced by
+Henrich in [5].)
+
+Finite type invariants can be obtained from the Jones polynomial (Fx (A)) of
+the virtual knot K [6]. We expand Fx (e*) as a Taylor series centered at 0. The
+coefficient of «* is a finite type invariant of degree k. We illustrate this with
+the following calculation. Let A+ (Jf—) denote a knot diagram with a positive
+(respectively negative) crossing. Let Ky and Ky denote a knot diagram with a
+vertical and horizontal smoothing respectively. Now (K+) = A(Ky) + A7! (Ky).
+After normalization:
+
+F(A) = -A? Fx, — AW F Ky
+F(A) = -A? Fy — At Frey.

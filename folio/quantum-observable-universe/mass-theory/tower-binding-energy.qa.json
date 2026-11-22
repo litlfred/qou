@@ -1124,6 +1124,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "529870024f57",
+          "ts": "2fdec2951869",
+          "lean": "c36f074dbde4",
+          "lean_statement": "cc8e7580b365"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:28.089Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "S↔L: the ref `towerBinding` (sibling only) is a `noncomputable def` of the md's formula (lean:64-67): the claimed value is taken as a definition and nothing is asserted about it. The only theorem is that the three weights sum to 1 (lean:34-38); `wedderburnSymEqAlt` is `x = x := rfl` (lean:41-42). The md's \"analytical continuation of Φ_q bypasses the boundary |V| = q\" (md:17) is not implemented. `quantumDilog` is the raw `∏' k, |1 - q^(-k-1) x|⁻¹` (lean:48-49), which Mathlib evaluates to the junk value 1 whenever the product is not multipliable; the docstring's functional-equation continuation (lean:46-47) is absent. The weights are hard-coded H_3 forms in ℝ with `q > 1`. \"No fitted parameters: … m_e from CODATA\" (lean:52) is a data input. The md statement also carries an empirical claim: \"The derived values track observed Z=1 to 20 data tightly\" (md:17). No proof block.",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: binding"
       }
     ],
     "milnor-amalgamated-flow": [
@@ -2123,6 +2141,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-22T05:07:58.387Z",
+  "updated_at": "2026-11-15T21:57:28.089Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

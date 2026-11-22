@@ -1,0 +1,1 @@
+— Let c(q) ∈C∗be a function of q ∈(0, 1) such that limq→1 log c ln q = γ, ϵ ∈(0, π) and consider the sector Vϵ := {ζ ∈C∗: | arg ζ| ⩽ π −ϵ}. As q →1−, the following uniform estimate holds uniformly over Vϵ: θ(q, ζ) θ(q, cζ) = ζγ(1 + o(1 −q)).

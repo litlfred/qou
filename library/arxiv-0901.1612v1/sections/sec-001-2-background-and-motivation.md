@@ -1,17 +1,18 @@
 ---
 doc_id: arxiv-0901.1612v1
-doc_title: "TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INV ARIANTS"
+doc_title: "Triple linking numbers, ambiguous Hopf invariants and integral formulas for three-component links"
 section_id: sec-001-2-background-and-motivation
 section_title: "Background and motivation"
 section_number: 2
 pages: 4-5
 source_pdf: 0901.1612v1.pdf
 source_sha256: b4f3efcadd1e5caf
+toc_source: outline
+text_source: latex
+latex_prose_ratio: 0.973
+latex_coverage_ratio: 0.984
 doc_brief: "Triple linking numbers, ambiguous Hopf invariants and integral formulas for three-component links — Three-component links in the 3-dimensional sphere were classi- fied up to link homotopy by John"
 duplicate_of: "deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin"
-text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.815
 ---
 []{#sec:background label="sec:background"}
 

@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0006051v1
-doc_title: "arXiv:math/0006051v1 [math.NT] 7 Jun 2000"
+doc_title: "Finite and p-adic polylogarithms"
 section_id: sec-001-2-the-proof
 section_title: "The proof"
 section_number: 2
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.986
 latex_coverage_ratio: 0.935
+doc_brief: "Finite and p-adic polylogarithms — 4 sections: Front matter; Introduction; The proof"
 ---
 []{#sec:proof label="sec:proof"}
 

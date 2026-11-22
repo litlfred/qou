@@ -7,10 +7,11 @@ section_number: 6.4
 pages: 39-42
 source_pdf: 1512.04993v2.pdf
 source_sha256: b8047bc3d3815406
-doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.976
-latex_coverage_ratio: 0.882
+latex_coverage_ratio: 0.894
+doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
 ---
 Another generalization is to localize the precursor operators in the transverse space. In the context of scrambling these geometries were introduced in \cite{shock} and studied extensively in \cite{localshocks}. The $D=2+1$ case for a single localized precursor was also studied in purely two-dimensional CFT terms in \cite{Roberts:2014ifa}. Such a state is given by
 \be

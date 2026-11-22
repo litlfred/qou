@@ -1,0 +1,1 @@
+D−1(O) = O. Our ﬁrst result is that the doubling operator has inﬁnite rank. What makes this result interesting is that the doubling operator has rank zero in the topological category. This follows from a fundamental result of Freedman that implies the Whitehead double of any knot is topologically slice, hence Im D ⊂CT S. Let T2,2n+1 denote the (2, 2n + 1) torus knot. We have

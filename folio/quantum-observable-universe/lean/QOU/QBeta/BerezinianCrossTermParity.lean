@@ -41,7 +41,7 @@ disjoin. No `c_k` value; nothing wired; no dependency on PR #4140's unmerged
 `SuperDMBerezinian.lean` (uses only on-`main` `BerezinianSelfAdjointCrossTerm`).
 §7c: generic `{R : Type*} [CommRing R]`, abstract `σ : R →+* R`, no `ℝ`. Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-07-31-berezinian-selfadjoint-crossterm-bar-even.md
+-- Ref: [leitner2026] docs/audits/2026-07-31-berezinian-selfadjoint-crossterm-bar-even.md
 -/
 import QOU.QBeta.BerezinianSelfAdjointCrossTerm
 

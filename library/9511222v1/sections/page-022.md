@@ -1,0 +1,70 @@
+---
+doc_id: 9511222v1
+doc_title: "Murnaghan–Nakayama rules for characters of Iwahori–Hecke algebras of classical type"
+section_id: page-022
+section_title: "Page 22"
+pages: 22-22
+pdf_page: 22
+source_pdf: 9511222v1.pdf
+source_sha256: 2870b5b709d1f358
+text_source: ocr
+granularity: page
+doc_brief: "Murnaghan–Nakayama rules for characters of Iwahori–Hecke algebras of classical type — 26 sections: Page 1; Page 2; Page 3"
+---
+1. HALVERSON AND AL MANE
+
+Using the fact that [SC] — [DC] = ce (the number of connected components of
+p), we cancel factors of g— q7' and factor out 2, and vy! as follows
+
+OE A) k q-q' L-ase!
+Sampson roe TE SE) ( 1 F)
+
+LEL(P) s€sc s' ESC\{s} deDC
+Il (2a — as)
+
+: 7 )(I)ee Se
+
+ses deDC sESC
+s'ESC\ {3}
+
+NS
+
+For notational convenience, let
+
+F= any Il ») ( Il a —g iy"
+
+s€SC de€DC
+Order the sharp corners s1,52,... ,8|sc| from left to right as the boundary of P is
+traversed, and let |s;| = 7 (its position in the ordering). Then
+
+(ta — 2s)
+S- AWE) = FY at -1 i "
+ll (25 — 2s)
+
+LeL(P) s€SC lese\ta}
+TI @a-2.) TL (@p- 20)
+deDC p<qeSC\{s}
+—F Soak y8el- Is|
+s€SC I[@: — 2.) [] (2. - 2) Il (Lp — &q)
+si<s s'>s p<qesc\{s}
+ll (fa — 2s) ll (tp — %q)
+_F a jsC|—|s| 4€DC p<qeSC\{s}
+EF ~1) V(2sc)
+
+s€SC
+
+where V(#gc ) is the Vandermonde determinant in the variables {«,,5 € SC}. More-
+
+over,
+
+[IDC|
+I] (a= 25) = Meedapey(-yireaP I,
+dE€DC t=0
+
+where ¢€;(apc) is the elementary symmetric function in the variables {rg,d € DC}.
+
+Again for notational convenience, let
+
+G= J] (%-2,).
+
+p<qeSC\{s}

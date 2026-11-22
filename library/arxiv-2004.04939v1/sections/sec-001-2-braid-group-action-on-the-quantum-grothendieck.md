@@ -7,10 +7,11 @@ section_number: 2
 pages: 3-5
 source_pdf: 2004.04939v1.pdf
 source_sha256: 59a06f9f7d97cad2
-doc_brief: "BRAID GROUP ACTION ON THE MODULE CATEGORY OF — Let g0 be a simple Lie algebra of type ADE and let U ′ q(g) be the corre- sponding untwisted quantum aﬃne algebra."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.97
+latex_coverage_ratio: 0.956
+doc_brief: "BRAID GROUP ACTION ON THE MODULE CATEGORY OF — Let g0 be a simple Lie algebra of type ADE and let U ′ q(g) be the corre- sponding untwisted quantum aﬃne algebra."
 ---
 \newcommand{\modt}{ \; \mathrm{mod}\; 2  }
 Let $\g_0$ be a finite-dimensional simple Lie algebra of simply-laced type with a Cartan matrix $\A=(a_{ij})_{i,j\in I_0}$, 

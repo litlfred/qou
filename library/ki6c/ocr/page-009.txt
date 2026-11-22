@@ -1,0 +1,66 @@
+1 ; ; ;
+Ne > eX obs) = | eN Ms) dt dsdu + O(e-%*),
+(t,s,u) EA D
+
+for some e > 0.
+
+Proof. We briefly review the proof; for details, see [20].
+The sum of the left-hand side of the required formula is rewritten,
+
+So exp (v- v(— ita Len, * +0)). (21)
+
+ijk
+
+In order to apply the Poisson summation formula, we put
+
++ ¢3) exp (NV- We +a, — +c, ~ +0)),
+
+; t Ss
+f(t,s,u) = (yp te —+a,— N WN
+
+N N
+
+where g is a differentiable function on R"+ ¢ satisfying that
+
+_ jl if (yz) €D,
+g(yr2) = {! if (x,y,z) ¢ N(D),
+
+0<g(z,y,z) <1. if (a,y,z) € N(D)-D.
+Here, N(D) is a neighborhood of D in R*+ (ci, ¢2,¢3) such that N(D) — D is included
+
+in the domain {(t,s,u) € C? | Rew(t,s,u) < —e9/2}. Then, the Fourier transform of f
+is given by
+
+* t Ss U
+f(m,m2,m3) = [aw +1, N + C2, vra)
+
+x exp (v- Wx +41, <= = +02, x + cs) e 2tv—Timittmastmse) dt dg du
+= N g(x,y, np eteens —2nV=T (m1 (x@—c1)+m2(y—c2)+ms3(z—c3) ) de dy dz,
+R3+(c1,c2,¢3)
+where we put «= t/N +a, y=s/N +c. and z=u/N +c. Further,
+(GP +2 +3)? FG 2, 3)
+—1
+
+—- f 2) eX Yeu)
+(Gan) fo. gee
+
+(4 + Pe + Pe 2 2nv=1! n (ai (a—c1)+Ca(y—c2) +63 (2—c3 )) ae dy dz
+om 8
+
+3, —l \2 2 ,
+— ((<G oe ; oN wears)
+(Fan) bon + op Oy? + 5a) It, y, 2) €
+
+x en 2A VIN (a (e-c1) +02 yea) +65 (2-08)) dx dy dz
+
+—
+
+=|
+
+g|
+iy
+
+cly h(a,y,2)e™ (2.4.2) e—2eV-1N (a (e—e1)+62(y-e2)+63(2~¢s) ) dx dy dz,
+
+3
+(GaN R8+(c1,c2,¢3)

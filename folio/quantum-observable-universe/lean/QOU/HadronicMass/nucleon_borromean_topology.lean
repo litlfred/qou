@@ -4,7 +4,7 @@ import Mathlib.Data.Real.Basic
 # QOU.HadronicMass.nucleon_borromean_topology
 
 Canonical Lean for content block
-[`lem:nucleon-borromean-topology`](../../../quantum-observable-universe/observations/nucleon-borromean-topology.md):
+[`lem:nucleon-borromean-topology`](../../../quantum-observable-universe/mass-theory/nucleon-borromean-topology.md):
 *Nucleon Borromean topology and Hopf-link binding*.
 
 The `lean.ref` URI `qou:QOU.HadronicMass.nucleon_borromean_topology`
@@ -42,7 +42,7 @@ volume mass term `mass_volume = Vol_Hopf · c` then vanishes, and the
 total mass `mass_total = mass_volume + mass_skein` collapses to the
 Skein mass.  Both numerical clauses are *derived* from the geometric
 hypotheses, not projected. -/
--- Ref: [manuscript] quantum-observable-universe/observations/nucleon-borromean-topology.ts
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/nucleon-borromean-topology.ts
 theorem nucleon_borromean_topology
     {Vol_Hopf c mass_volume mass_skein mass_total : ℝ}
     (h_vol_hopf : Vol_Hopf = 0)

@@ -17,7 +17,7 @@ satisfied without duplicating definitions.
 LaTeX: `\label{conj:magic-numbers-from-q}`
 -/
 
--- Ref: [manuscript] observations/magic-numbers-from-q
+-- Ref: [leitner2026] observations/magic-numbers-from-q
 -- Ref: [chenier2026] manuscript
 -- The canonical declaration `QOU.AtomicMass.magic_numbers_from_q` is
 -- re-exported via the import above; this sibling file deliberately adds

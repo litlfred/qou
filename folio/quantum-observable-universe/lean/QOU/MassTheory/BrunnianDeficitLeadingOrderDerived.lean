@@ -65,7 +65,7 @@ the pipeline is sound.
   third data point); `MilnorParitySignLaw.MilnorParitySignConjecture` still
   carries it, and no instance is provided here.
 
--- Ref: [manuscript] docs/audits/2026-08-01-a4-brunnian-deficit-closed-form.md
+-- Ref: [leitner2026] docs/audits/2026-08-01-a4-brunnian-deficit-closed-form.md
 -/
 
 namespace QOU.MassTheory.BrunnianDeficitLeadingOrderDerived

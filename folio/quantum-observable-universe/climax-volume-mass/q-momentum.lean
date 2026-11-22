@@ -19,7 +19,7 @@ LaTeX label: `def:q-momentum`
 
 ## References
 - [jones1987] https://doi.org/10.2307/1971403
-- [manuscript] §6/q-momentum
+- [leitner2026] §6/q-momentum
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
 Part of the formal proof chain. The parameter `q` is the canonical
@@ -40,7 +40,7 @@ noncomputable def q_inv_param : R_q := LaurentPolynomial.T (-1)
 /-- The q-momentum of a braid, computed from its crossing signs.
     Each positive crossing contributes +1, each negative contributes -1,
     weighted by q-deformation. -/
--- Ref: [manuscript] §6/q-momentum
+-- Ref: [leitner2026] §6/q-momentum
 noncomputable def qMomentum (q : ℝ) (crossingSigns : List ℤ) : ℝ :=
   crossingSigns.foldl (fun acc ε =>
     acc + (q ^ (2 * ε) - 1) / (q ^ 2 - 1)) 0
@@ -82,7 +82,7 @@ private lemma foldl_intSum_acc (acc : ℝ) (signs : List ℤ) :
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
--- Ref: [manuscript] Ch. 6, §q-momentum
+-- Ref: [leitner2026] Ch. 6, §q-momentum
 private lemma single_term_limit_pos_one :
     ∀ ε > 0, ∃ δ > 0, ∀ q : ℝ, 0 < |q - 1| → |q - 1| < δ →
       |(q ^ (2 * (1 : ℤ)) - 1) / (q ^ 2 - 1) - ↑(1 : ℤ)| < ε := by
@@ -128,13 +128,13 @@ private lemma single_term_limit_pos_one :
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the
 --      published version.
--- Ref: [manuscript] Ch. 6, §q-momentum
+-- Ref: [leitner2026] Ch. 6, §q-momentum
 private axiom single_term_limit (s : ℤ) :
     ∀ ε > 0, ∃ δ > 0, ∀ q : ℝ, 0 < |q - 1| → |q - 1| < δ →
       |(q ^ (2 * s) - 1) / (q ^ 2 - 1) - ↑s| < ε
 
 /-- At q = 1, q-momentum equals the writhe (sum of signs). -/
--- Ref: [manuscript] §6/q-momentum
+-- Ref: [leitner2026] §6/q-momentum
 -- The limit q → 1 of (q^{2ε} - 1)/(q² - 1) = ε by L'Hôpital.
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
@@ -147,7 +147,7 @@ theorem qMomentum_classical_limit (signs : List ℤ) :
       |qMomentum q signs - (signs.foldl (fun (acc : ℝ) (s : ℤ) => acc + (s : ℝ)) (0 : ℝ))| < ε := by
   -- Ref: [jones1987] https://doi.org/10.2307/1971403
   -- Each term (q^{2ε} - 1)/(q² - 1) → ε by L'Hôpital as q → 1
-  -- Ref: [manuscript] Ch. 6, §q-momentum
+  -- Ref: [leitner2026] Ch. 6, §q-momentum
   induction signs with
   | nil =>
     -- Base case: qMomentum q [] = 0 and foldl ... [] = 0
@@ -204,20 +204,20 @@ theorem qMomentum_classical_limit (signs : List ℤ) :
 end  -- noncomputable section
 
 /-- The writhe of a braid word (sum of crossing signs). -/
--- Ref: [manuscript] §6/q-momentum
+-- Ref: [leitner2026] §6/q-momentum
 def writhe (crossingSigns : List ℤ) : ℤ :=
   crossingSigns.foldl (· + ·) 0
 
 /-- Trefoil writhe = +3. -/
--- Ref: [manuscript] §6/q-momentum
+-- Ref: [leitner2026] §6/q-momentum
 example : writhe [1, 1, 1] = 3 := by decide
 
 /-- Figure-eight writhe = 0 (amphichiral). -/
--- Ref: [manuscript] §6/q-momentum
+-- Ref: [leitner2026] §6/q-momentum
 example : writhe [1, -1, 1, -1] = 0 := by decide
 
 /-- Mirror reversal negates the writhe. -/
--- Ref: [manuscript] §6/q-momentum
+-- Ref: [leitner2026] §6/q-momentum
 theorem writhe_mirror (signs : List ℤ) :
     writhe (signs.map (· * (-1))) = -writhe signs := by
   unfold writhe

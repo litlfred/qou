@@ -79,6 +79,42 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "cd6a268ec2d8",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af",
+          "lean_statement": "3254732dad7b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:27:33.734Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "pion-half-figure-eight.lean:29 pion_eq_half_figure_eight_phase takes tr = -(h^2+1) and det = 1 as hypotheses and concludes lam^2 + (h^2+1) lam + 1 = 0, which is a substitution. The two traces (the actual content, verified by sympy as -(q^4-q^2+1)/q^2 for both braids) are not computed in Lean."
+      },
+      {
+        "field_hash": {
+          "md": "b3df81ba8d0f",
+          "ts": "18e0d12369c3",
+          "lean": "f16a34e3d5af",
+          "lean_statement": "3254732dad7b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T22:57:01.195Z",
+        "reviewed_sha": "f84776ece33e7b2ccfa5cfa386fc4c0238ec4a2d",
+        "severity": "major",
+        "evidence": "Re-review after 13f8f3506. pion-half-figure-eight.lean (unchanged) still takes the trace and determinant of both operators as hypotheses and proves equality of characteristic data (tautology); the seminormal matrices and the products are never computed."
       }
     ],
     "proof-statement-integrity": [
@@ -2112,6 +2148,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-11-15T22:57:01.195Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

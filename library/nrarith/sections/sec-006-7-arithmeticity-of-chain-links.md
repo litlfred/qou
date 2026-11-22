@@ -8,6 +8,7 @@ pages: 29-30
 source_pdf: nrarith.pdf
 source_sha256: 085ec9541ddc6cd4
 toc_source: inferred
+doc_brief: "Arithmetic of hyperbolic manifolds (Neumann–Reid) — survey of arithmetic Kleinian groups: an arithmetic M = H³/Γ is determined up to commensurability by its invariant trace field and quaternion…"
 ---
 Proof of part (iii) of Theorem 5.1. Recall that C(p, s) is a cover of W ′(p, s) and if
 W ′(p, s) is hyperbolic, then it is double branched covered by W(p, q) with s = 2q. We
@@ -51,8 +52,6 @@ trace ﬁeld k(π1W ′(p, s)) is Q(
 and that W ′(p, s) has integral traces. By Theorem 6.2 and the proof of Theorem 6.3
 we must check that z and 4/z lie in the appropriate Od. This is evident from Table 2,
 which includes also the non-arithmetic case (6, 6).
-302
-Walter D. Neumann and Alan W. Reid
 Table 2. z and 4/z
 {|p + s|, |s|}
 z

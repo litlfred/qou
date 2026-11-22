@@ -1,0 +1,39 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2003.13612v3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "On the mass difference between proton and neutron",
+  "contains": [
+    "library/arxiv-2003.13612v3/sections/sec-front-matter",
+    "library/arxiv-2003.13612v3/sections/sec-000",
+    "library/arxiv-2003.13612v3/sections/sec-001",
+    "library/arxiv-2003.13612v3/sections/sec-002"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "arxiv-2003.13612v3",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "2003.13612v3.pdf",
+    "source_sha256": "98a3287428a46e57411409818c073cc0e103e57767062116e81edfb4f9aaec83",
+    "pages": 11,
+    "arxiv": {
+      "id": "2003.13612",
+      "version": "3",
+      "primary_class": "hep-ph",
+      "stamp_date": "22 Jan 2021"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

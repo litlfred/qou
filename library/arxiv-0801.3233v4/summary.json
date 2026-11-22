@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-0801.3233v4",
  "source_sha256": "d98f9d4a9ecb4c5e",
- "brief": "Contemporary Mathematics Twisted Deformation Quantization of Algebraic Varieties (Survey) Amnon Yekutieli — Let X be a smooth algebraic variety over a ﬁeld of characteristic 0.",
- "extended": "**Contemporary Mathematics Twisted Deformation Quantization of Algebraic Varieties (Survey) Amnon Yekutieli**\n\n19 pp, 11 sections.\n\n**Abstract.** Let X be a smooth algebraic variety over a ﬁeld of characteristic 0. We introduce the notion of twisted associative (resp. Poisson) deformation of the structure sheafOX. These are stack-like versions of usual deformations. We prove that there is a twisted quantization map from twisted Poisson defor- mations to twisted associative deformations, which is canonical and bijective on equivalence classes. 0. Introduction Let K be a ﬁeld of characteristic0, and letX be a smooth algebraic variety over K, with structure sheafOX. An associative deformation ofOX is a sheafA of ﬂat complete associative K[[ℏ]]-algebras onX, with an isomorphismK⊗K[[ℏ]]A∼=OX, called an augmentation. Similarly, aPoisson deformation ofOX is a sheafA of ﬂat complete commutative PoissonK[[ℏ]]-algebras onX, with an augmentation to OX. In this paper we introduce the notion oftwisted associative (resp.\n\n**Outline.** 0 Introduction; 1 Some background on Deformation Quantization; 2 Poisson Deformations of Algebraic Varieties; 3 Associative Deformations of Algebraic Variet; 4 Deformation Quantization; 5 Twisted Deformations of Algebraic Varieties; 6 Twisted Deformation Quantization; Appendix A. DG Lie Algebras and Deformations; Appendix B. The Universal Quantization Map; Appendix D. Twisted Deformations and their Gau; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 4.2: Let K be a ﬁeld containingR, and letX be a smooth aﬃne\n- Theorem 4.2: is correct as stated. In the context of complex manifolds this issue is\n- Theorem 4.2: is a consequence of the following more general result.\n- Theorem 4.3: Let K be a ﬁeld containingR, and let X be a smooth\n- Theorem 6.1: Let K be a ﬁeld containingR, and let X be a smooth\n- Theorem: A.5([Ye5]). LetC be a smoothK-algebra.",
+ "brief": "Twisted Deformation Quantization of Algebraic Varieties (Survey) — Let X be a smooth algebraic variety over a ﬁeld of characteristic 0. We introduce the notion of twisted associative (resp.",
+ "extended": "**Twisted Deformation Quantization of Algebraic Varieties (Survey)**\n\n*Amnon Yekutieli*\n\n19 pp, 13 sections.\n\n**Abstract.** Let X be a smooth algebraic variety over a ﬁeld of characteristic 0. We introduce the notion of twisted associative (resp. Poisson) deformation of the structure sheaf OX. These are stack-like versions of usual deformations. We prove that there is a twisted quantization map from twisted Poisson defor- mations to twisted associative deformations, which is canonical and bijective on equivalence classes. 0. Introduction Let K be a ﬁeld of characteristic 0, and let X be a smooth algebraic variety over K, with structure sheaf OX. An associative deformation of OX is a sheaf A of ﬂat complete associative K[[ℏ]]-algebras on X, with an isomorphism K ⊗K[[ℏ]] A ∼= OX, called an augmentation. Similarly, a Poisson deformation of OX is a sheaf A of ﬂat complete commutative Poisson K[[ℏ]]-algebras on X, with an augmentation to OX. In this paper we introduce the notion of twisted associative (resp.\n\n**Outline.** Front matter; 0 Introduction; 1 Some background on Deformation Quantization; 2 Poisson Deformations of Algebraic Varieties; 3 Associative Deformations of Algebraic Variet; 4 Deformation Quantization; 5 Twisted Deformations of Algebraic Varieties; 6 Twisted Deformation Quantization; Appendix A. DG Lie Algebras and Deformations; Appendix B. The Universal Quantization Map; Appendix C. The L quasi-isomorphism of the Lev; Appendix D. Twisted Deformations and their Gau; References",
  "tokens": {
-  "brief": 44,
-  "extended": 478
+  "brief": 47,
+  "extended": 378
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-0-introduction",
    "title": "Introduction",
@@ -37,12 +42,12 @@
   {
    "id": "sec-005-5-twisted-deformations-of-algebraic-varieties",
    "title": "Twisted Deformations of Algebraic Varieties",
-   "pages": "6-7"
+   "pages": "6-8"
   },
   {
    "id": "sec-006-6-twisted-deformation-quantization",
    "title": "Twisted Deformation Quantization",
-   "pages": "7-9"
+   "pages": "8-9"
   },
   {
    "id": "sec-007-appendix-a-dg-lie-algebras-and-deformations",
@@ -52,15 +57,20 @@
   {
    "id": "sec-008-appendix-b-the-universal-quantization-map",
    "title": "Appendix B. The Universal Quantization Map",
-   "pages": "12-15"
+   "pages": "12-13"
   },
   {
-   "id": "sec-009-appendix-d-twisted-deformations-and-their-gauge",
+   "id": "sec-009-appendix-c-the-l-quasi-isomorphism-of-the-level",
+   "title": "Appendix C. The L quasi-isomorphism of the Level of Sheaves",
+   "pages": "13-15"
+  },
+  {
+   "id": "sec-010-appendix-d-twisted-deformations-and-their-gauge",
    "title": "Appendix D. Twisted Deformations and their Gauge Gerbes",
    "pages": "15-18"
   },
   {
-   "id": "sec-010-references",
+   "id": "sec-011-references",
    "title": "References",
    "pages": "18-19"
   }
@@ -69,8 +79,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

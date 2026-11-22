@@ -3,29 +3,29 @@
  "doc_id": "0110001v3",
  "source_sha256": "f30f603ac1c555e0",
  "brief": "A geometric interpretation of Milnor's triple linking numbers — Milnor’s triple linking numbers of a link in the 3-sphere are interpreted geometrically in terms of the pattern of intersections of the",
- "extended": "**A geometric interpretation of Milnor's triple linking numbers**\n\n*Algebraic & Geometric Topology*\n\n12 pp, 4 sections.\n\n**Abstract.** Milnor’s triple linking numbers of a link in the 3-sphere are interpreted geometrically in terms of the pattern of intersections of the Seifert surfaces of the components of the link. This generalizes th e well known formula as an algebraic count of triple points when the pairwise linking numbers vanish.\n\n**Outline.** 1 Introduction; 2 The formula for ¯µ ijk; 3 Proof of the theorem; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem: (1) For any choice of Seifert surfaces F ,\n- Lemma 1: If F is of type 1, then mijk (F ) ≡ ¯µijk .\n- Lemma 2: The diﬀerence mijk − tijk is invariant under all three ﬁnger moves.",
+ "extended": "**A geometric interpretation of Milnor's triple linking numbers**\n\n*Blake Mellor*\n\n12 pp, 4 sections.\n\n**Abstract.** Milnor’s triple linking numbers of a link in the 3-sphere are interpreted geometrically in terms of the pattern of intersections of the Seifert surfaces of the components of the link. This generalizes the well known formula as an algebraic count of triple points when the pairwise linking numbers vanish.\n\n**Outline.** Front matter; 1 Introduction; 3 Proof of the theorem; References",
  "tokens": {
   "brief": 49,
-  "extended": 192
+  "extended": 125
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-3"
+   "pages": "1-6"
   },
   {
-   "id": "sec-001-2-the-formula-for-µ-ijk",
-   "title": "The formula for ¯µ ijk",
-   "pages": "3-6"
-  },
-  {
-   "id": "sec-002-3-proof-of-the-theorem",
+   "id": "sec-001-3-proof-of-the-theorem",
    "title": "Proof of the theorem",
    "pages": "6-12"
   },
   {
-   "id": "sec-003-references",
+   "id": "sec-002-references",
    "title": "References",
    "pages": "12-12"
   }
@@ -34,8 +34,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

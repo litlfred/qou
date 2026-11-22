@@ -1,0 +1,1 @@
+(Borel) Let k be a number field of degree d, with r real embeddings and 2r2 complex embeddings, and let n > 2. Then the rank mp, of Kon—1(k) equals ro if n is even andr, +r2 if n is odd. Moreover, the map

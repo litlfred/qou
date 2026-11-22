@@ -13,7 +13,7 @@ self-duality via an antisymmetric form is exactly what cuts `SL₂/SU(2)` out of
 
 ## References
 - [deligne1990] Deligne, "Catégories tannakiennes"
-- [manuscript] §"The fundamental object and the emergent gauge group"
+- [leitner2026] §"The fundamental object and the emergent gauge group"
 -/
 
 namespace QOU

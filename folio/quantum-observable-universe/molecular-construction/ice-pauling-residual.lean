@@ -20,7 +20,7 @@ multiplicity `3/2` is the exact, axiom-free content; `S = R ln W₁` is the
 archimedean evaluation.
 
 ## References
-- [manuscript] Ch. 12, Proposition: Pauling residual entropy of ice
+- [leitner2026] Ch. 12, Proposition: Pauling residual entropy of ice
 -/
 
 namespace QOU.Molecular

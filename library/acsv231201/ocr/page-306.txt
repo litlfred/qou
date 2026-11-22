@@ -1,0 +1,30 @@
+288 Smooth point asymptotics
+
+Figure 9.9 Left: The log-Gauss map on an embedded grid. Right: Probability am-
+plitudes of a QRW.
+
+the P/|| Viog alls term varies a little, the dominant factor is the curvature term
+K~'!?, This explains why the density of the Gauss-mapped grid is a good sur-
+rogate for the probability amplitudes. 4
+
+Changing the matrix U or the vectors v‘ changes the walk, hence there are
+many quantum walks, most of which don’t have the symmetries of the S (1/8)
+walk. Figure 9.10 shows the feasibility region for a more-or-less generic quan-
+tum walk. Again, one sees an image of the logarithmic Gauss map. It is notable
+that, as for many quantum random walks, the feasible region is nonconvex, in-
+dicating that parts of the cone normalg(B) do not correspond to any minimal
+points, but are instead in the region of exponential decay (the infeasible re-
+gion).
+
+Notes
+
+Precursors to the derivations of the saddle point residue integrals in this chap-
+ter were the multivariate asymptotic results [BR83]. Breaking the symmetry
+among the coordinates, they wrote
+
+F2) = D7 ful2 V2
+n=0
+for (d—1)-dimensional series f,,(z°) and then used the fact that f,, is sometimes
+
+asymptotic to an n' power f, ~ C- g-h" to obtain Gaussian asymptotics when
+certain minimality conditions are satisfied near a smooth critical point. Their

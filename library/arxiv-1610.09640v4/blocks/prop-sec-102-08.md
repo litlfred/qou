@@ -1,0 +1,1 @@
+Let A be a graded ring and M a graded A-module. The following two conditions are equivalent. (i) M is a graded-ﬁnite A-module, in the sense of Deﬁnition 15.1.23(1). (ii) Ungr(M) is a ﬁnitely generated Ungr(A)-module. Derived Categories | Amnon Yekutieli |

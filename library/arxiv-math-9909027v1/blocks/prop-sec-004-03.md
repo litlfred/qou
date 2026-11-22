@@ -1,0 +1,1 @@
+An x in Pk is in P u k iﬀthere is a y in P u k with = q points q points p points p points x y where p + q = 2k, where the pictures may be isotoped in any way so that the annular region becomes the standard annular region (with ∗anywhere allowed by the orientations).

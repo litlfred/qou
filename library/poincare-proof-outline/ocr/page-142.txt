@@ -1,0 +1,74 @@
+of On ul poincare-distance-ge0|of On ul
+of On v) poincare-distance-ge0 [of 0), v|
+of of-complex x u] poincare-distance-ge0[of of-complex x u]
+of of-complex x v| poincare-distance-ge0 [of of-complex x v|
+
+using poincare-distance-eq-0-iff
+using poincare-distance-eq-0-iff
+using poincare-distance-eq-0-iff
+using poincare-distance-eq-0-iff
+using x
+
+by (auto simp add: cmod-eq-Re)
+
+let ?pc0 = poincare-circle 0; ?r0 and
+?pcx = poincare-circle (of-complex x) ?rx
+have u € ?pc0 M ?pcxv € ?pcO ON ?pcx
+using in-disc cong
+by (auto simp add: poincare-circle-def )
+hence u = conjugate v
+using intersect-poincare-circles-x-axis|of 0 x ?r0 ?rx u v|
+using xz «x # 0) (u # vy (?r0 > Oy «?rx > 0»
+by simp
+
+let ?ru = poincare-distance u z
+have ?ru > 0
+using poincare-distance-ge0[of u z] in-disc
+using cong
+using poincare-distance-eq-0-iff [of z u| poincare-distance-eq-0-iff lof z v]
+using poincare-distance-eq-0-iff
+by force
+
+have z € poincare-circle u ?ru M poincare-circle v ?ru
+using cong in-disc
+unfolding poincare-circle-def
+by (simp add: poincare-distance-sym)
+
+hence is-real z’
+using intersect-poincare-circles-conjugate-centers[of uv ?ru z] <u = conjugate v» zuv
+using in-disc «u # v> «?ru > 0»
+by simp
+
+thus poincare-collinear {0n, of-complex x, z}
+using poincare-line-0-real-is-z-azis[of of-complex x] x (x # 0» zuv ‘On € circline-set x-axis»
+unfolding poincare-collinear-def
+by (rule-tac x=x-azis in exl, auto simp add: circline-set-x-azis)
+qed
+next
+fix Mry
+assume 1: unit-disc-fiz M x € unit-disc y € unit-disc x # y
+assume 2: ?P (moebius-pt M x) (moebius-pt M y)
+show ?P ry
+proof safe
+fix zuv
+assume z € unit-disc u € unit-disc v € unit-disc
+’congxruxy ?congyuyv ?congzuzvuxzyu
+hence poincare-collinear {moebius-pt M x, moebius-pt M y, moebius-pt M z}
+using 1 2[rule-format, of moebius-pt M z moebius-pt M u moebius-pt M v|
+by simp
+then obtain p where is-poincare-line p {moebius-pt M x, moebius-pt M y, moebius-pt M z} C circline-set p
+unfolding poincare-collinear-def
+by auto
+thus poincare-collinear {x, y, z}
+using (unit-disc-fir My
+unfolding poincare-collinear-def
+by (rule-tac x=moebius-circline (—M) p in eal, auto)
+qed
+qed fact+
+
+thus ?thesis
+using assms
+using poincare-collinear3-between|of x y 2]
+using poincare-between-rev
+
+142

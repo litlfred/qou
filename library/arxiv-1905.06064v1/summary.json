@@ -3,10 +3,10 @@
  "doc_id": "arxiv-1905.06064v1",
  "source_sha256": "3ffe25c8ee62779d",
  "brief": "ON O’HARA KNOT ENERGIES I: REGULARITY FOR CRITICAL KNOTS — We develop a regularity theory for extremal knots of scale invariant knot ener- gies deﬁned by J. O’hara in 1991.",
- "extended": "**ON O’HARA KNOT ENERGIES I: REGULARITY FOR CRITICAL KNOTS**\n\n*SIMON BLATT, PHILIPP REITER, AND ARMIN SCHIKORRA*\n\n28 pp, 4 sections.\n\n**Abstract.** We develop a regularity theory for extremal knots of scale invariant knot ener- gies deﬁned by J. O’hara in 1991. This class contains as a special case the M¨obius energy. For the M ¨obius energy, due to the celebrated work of Freedman, He, and Wang, we have a relatively good understanding. Their approch is crucially based on the invariance of the M¨obius energy under M¨obius transforms, which fails for all the other O’hara energies. We overcome this diﬃculty by re-interpreting the scale invariant O’hara knot energies as a nonlinear, nonlocal Lp-energy acting on the unit tangent of the knot parametriza- tion. This allows us to draw a connection to the theory of (fractional) harmonic maps into spheres.\n\n**Outline.** Front matter; 1 Introduction; 2 A new energy E; References",
+ "extended": "**ON O’HARA KNOT ENERGIES I: REGULARITY FOR CRITICAL KNOTS**\n\n*SIMON BLATT, PHILIPP REITER, AND ARMIN SCHIKORRA*\n\n28 pp, 8 sections.\n\n**Abstract.** We develop a regularity theory for extremal knots of scale invariant knot ener- gies deﬁned by J. O’hara in 1991. This class contains as a special case the M¨obius energy. For the M¨obius energy, due to the celebrated work of Freedman, He, and Wang, we have a relatively good understanding. Their approch is crucially based on the invariance of the M¨obius energy under M¨obius transforms, which fails for all the other O’hara energies. We overcome this diﬃculty by re-interpreting the scale invariant O’hara knot energies as a nonlinear, nonlocal Lp-energy acting on the unit tangent of the knot parametriza- tion. This allows us to draw a connection to the theory of (fractional) harmonic maps into spheres.\n\n**Outline.** Front matter; 1 Introduction; 2 A new energy E; 3 Regularity theory for E-critical maps: Proof; 4 Extremal cases p=1 and p=infty, and no Möbiu; Appendix A. A new norm for W(s,p); Appendix B. Computations; References",
  "tokens": {
   "brief": 43,
-  "extended": 232
+  "extended": 271
  },
  "sections": [
   {
@@ -22,10 +22,30 @@
   {
    "id": "sec-001-2-a-new-energy-e",
    "title": "A new energy E",
-   "pages": "4-26"
+   "pages": "4-10"
   },
   {
-   "id": "sec-002-references",
+   "id": "sec-002-3-regularity-theory-for-e-critical-maps-proof-of",
+   "title": "Regularity theory for E-critical maps: Proof of Theorem I",
+   "pages": "10-17"
+  },
+  {
+   "id": "sec-003-4-extremal-cases-p1-and-pinfty-and-no-möbius-inv",
+   "title": "Extremal cases p=1 and p=infty, and no Möbius invariance for p=2",
+   "pages": "17-22"
+  },
+  {
+   "id": "sec-004-appendix-a-a-new-norm-for-wsp",
+   "title": "Appendix A. A new norm for W(s,p)",
+   "pages": "22-26"
+  },
+  {
+   "id": "sec-005-appendix-b-computations",
+   "title": "Appendix B. Computations",
+   "pages": "26-26"
+  },
+  {
+   "id": "sec-006-references",
    "title": "References",
    "pages": "26-28"
   }

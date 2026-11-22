@@ -1,0 +1,46 @@
+There is no way to create a region with closed Dirichlet boundary as we have done
+with the triangles corresponding to lower dimensional irreducible representations. We
+therefore cannot use the Faber-Krahn inequality to create a lower bound on the first
+eigenvalue of the pentagon.
+
+On the other hand, we can feflect the pdntagon along the vertical side, which has a
+Neumann boundary condition, using R*S, to create a right-angled hyperbolic hexagon
+of area 7. This is shown in Figure 3.17, along with its boundary conditions. Observe
+that the hexagon now has two Neumann boundaries of the same length, a and a’. In
+
+particular, the side lengths of the hexagon are as follows:
+
+us
+
+Ua) = Ia’) = l(a) = 2arccosh (2) = 1.52857,
+
+ese (8)
+
+1(b) = 1(b') = arccosh ( = 0.764285,
+
+2cos (Z AG
+I(c) = 2 arccosh Ca) + 2arccosh (* ») = 2.44845,
+
+w
+
+V3
+
+2cos (4) cot ()
+1(d) = arccosh { ——=® } + arccosh | ——% ] & 1.22423.
+
+An eigenfunction on the hexagon is even with respect to the vertical side d; it will take
+the same values on a as it does on a’. Therefore we can “glue” a to a’ to create an annulus
+Q that lies within a hyperbolic cylinder. It has one geodesic boundary and one piecewise
+geodesic boundary composed of three geodesics. Eigenfunctions on this surface will be
+
+periodic and will satisfy Dirichlet conditions on the boundary.
+
+Figure 3.17: Hexagon from reflection along the vertical
+
+v
+
+We have already seen that the circumference of a disk of area 7 is
+
+27 sinh (2 arcsinh (5)) & 7.02481.
+
+75

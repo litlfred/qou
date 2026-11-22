@@ -1,0 +1,49 @@
+112 Chapter 5 — A family of surfaces
+
+can apply lemma 5.13. Indeed, the condition of the lemma holds for Ly
+because
+
+ci(Y) = 2a fortheclass a@ = —[O]ly € H?(Y,Z)
+
+by lemma 5.5. Furthermore, by proposition 5.11 we can find at € Ly+
+such that g*(a@*) = a where q : Y —> Y* is the quotient morphism. It then
+follows that
+
+dG (ei(¥*)-2a*) = g*(ci(¥*)) —2q* (at) = c1(Y)-20 = 0
+
+so that by proposition 5.11 the class cy(Y*) — 2a@7 is a torsion class. Hence
+by lemma 5.13 also Ly+ is an even lattice. oO
+
+Now that we have found the abstract isomorphism type of the lattices Ly
+and Ly+, the next thing to be done is to determine the relationship between
+these two lattices. For this we denote by
+
+Ly = H?(Y,Z)* C Ly = H°(Y,Z)
+
+the invariants of Ly under the action of the involution o, i.e. the lattice
+which occurs in the middle part of the diagram in proposition 5.12. The
+relationship we are looking for is then given by
+
+LEMMA 5.15. The pull-back under the quotient morphism q: ¥Y —+ Y*+
+gives rise to a lattice isomorphism
+
+qi: Ly+(2) —> Lf C Ly.
+
+Proof. By proposition 5.11 the pull-back g* induces an isomorphism
+of the underlying abelian groups. Via this isomorphism, the intersection
+form on Ly induces twice the intersection form on Ly+ since q: Y > Y*
+is an étale double cover: The degree maps for the top cohomology of our
+surfaces satisfy
+
+degy(q"(a)Ugq"(b)) = degy(q"(aUb)) = 2degy+(aUd)
+for all cohomology classes a,b in H?(Y*,Z). Oo
+
+From the above two lemmas we obtain the middle and the right vertical
+isomorphism in the diagram of proposition 5.12. These isomorphisms can
+be chosen in such a way that the square on the right hand side of the diagram
+commutes, indeed we have the following
+
+LEMMA 5.16. Let L;,L2 C Ly be sublattices of rank r < 34 which are
+primitive in the sense that the quotients Ly /L, and Ly /Ly are torsion-free
+groups. Then any isomorphism Qo : L} —> Lz of lattices extends to a lattice
+automorphism @ : Ly — Ly.

@@ -1,0 +1,46 @@
+414 Combinatorial applications
+
+(a) How would you expect (12.22) to be altered?
+(b) How would you expect this to be reflected in the generating function?
+
+Weak laws
+
+Unless otherwise specified, our results in this section apply to the power series
+expansion of a generating function F(z) = P(z)/Q(z) with nonnegative coef-
+ficients, where Q is a polynomial containing all variables z),..., zg. Confining
+our statements to power series rather than Laurent series simplifies matters by
+ensuring finite support of the cross-sectional measures juz.
+
+Theorem 12.31 (weak law for diagonal slices). Let g(z) = Q(z,...,z) and let
+p > 0 be the smallest value such that q(p) = 0. If z = p is a strictly minimal
+simple zero of q(z) and P(p,...,p) # 0 then the sequence {1} of probability
+measures defined above satisfies a weak law (12.20) with limit m, where
+
+m =—Viog O(p,.- +; P)-
+
+Proof The domain of convergence of the power series defined by F cor-
+responds to the component B of the complement of amoeba(Q)° that con-
+tains all points of the form —(N,...,N) for all sufficiently large N > 0. In
+fact, because B is convex the set of points (x,...,x) for x € R must inter-
+sect OB (or else B would be all of R“). Proposition 6.38 then implies that
+q(e*) = Oe*,...,e*) = 0 has a real solution, so the polynomial q has posi-
+tive roots and p > 0 is well defined.
+
+Due to nonnegativity of the coefficients, every point of 0B is a zero of Qo
+exp. Write p = (p,..., p) and define log p coordinate-wise. If V Q(p) = 0 then
+q(z) would have a zero of order at least two at z = p, so our assumptions imply
+V O(p) # 0, hence V(Q o exp)(log p) # 0 and the zero set of Q o exp ina real
+neighborhood of log p is a smooth hypersurface normal to m.
+
+Letting Z denote the real points of V, we claim that the logarithm maps
+a neighborhood of p in Z into 0B. Denoting the homeomorphism type of a
+(d — 1)-ball with a distinguished interior point (N, x), the intersection J of B
+with a closed ball around log p is compact and, via projection from the center
+of a sphere in the interior, has homeomorphism type (N, x). By the implicit
+function theorem, a neighborhood of p in Z also has type (N, x). Any homeo-
+morphism from one pair of type (N, x) to another covers a neighborhood of the
+distinguished point. Therefore, the logarithm maps some neighborhood of p in
+Z into a neighborhood of log p in OB, and we see that Z coincides locally with
+OB.
+
+Thus, for any r not parallel to m the maximum value of r - x over x € B

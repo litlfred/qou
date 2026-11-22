@@ -9,13 +9,16 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Stuff Types",
-  "pageStart": 14,
+  "title": "Structure Types and the Weyl Algebra",
+  "pageStart": 11,
   "pageEnd": 14,
   "contains": [
-    "library/arxiv-math-0601458v1/blocks/prose-sec-005"
+    "library/arxiv-math-0601458v1/blocks/prose-sec-005",
+    "library/arxiv-math-0601458v1/blocks/thm-sec-005-01",
+    "library/arxiv-math-0601458v1/blocks/ex-sec-005-02",
+    "library/arxiv-math-0601458v1/blocks/ex-sec-005-03"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0601458v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0601458v1",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0601458v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0601458v1/manifest.jsonld",
   "provenance": "ingested"
 }

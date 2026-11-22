@@ -1,0 +1,52 @@
+458 BAO (X.) & BONAHON (F.)
+
+Along each (n—2)-face e, we can measure the internal dihedral angle ae € ]0, 7[
+between the two (n — 1)-faces meeting along e. A natural question then arises:
+If we are given an (n — 1)-dimensional cell complex X with a weight a € ]0, 7[
+attached to each (n — 2)-dimensional cell e, is there a convex polyhedron P
+in E”, S” or H” whose boundary has the combinatorial structure of this cell
+complex X, and such that a, is the dihedral angle of P along the face e?
+
+An explicit computation provides a full answer in the simplest case where X
+is the boundary of the n-simplex. The solution involves the signatures of var-
+ious minors of the symmetric n x n-matrix whose ij-entry is +1 if i = 7 and
+is —cosae,,, where ej; is the edge joining the i-th vertex to the j-th vertex,
+if i #J; see [6], [17]. In particular, the answer is expressed in terms of the signs
+of polynomials in cosae,;. Since this condition on the angles a, is not that
+easy to handle, one can expect the general case to be quite intractable, and
+this indeed seems to be the case.
+
+In general, the main technical difficulty is to control the combinatorics as
+one deforms the polyhedron P. A typical problem occurs when a p-dimensional
+face becomes (p— 1)-dimensional, for instance when two vertices collide so that
+a 1-dimensional face shrinks to one point.
+
+One way to bypass this technical difficulty is to impose additional restric-
+tions which will prevent such vertex collisions and face collapses. For instance,
+one can require that all dihedral angles a, are acute, namely lie in the inter-
+val ]0, $7]. In this context, Coxeter [6] proved that every acute angled compact
+convex polyhedron in the euclidean space E” is an orthogonal product of eu-
+clidean simplices, possibly lower dimensional; this reduces the problem to the
+case of euclidean simplices, which we already discussed. Similarly, Coxeter also
+proved that every acute angled convex polyhedron in the sphere S” is a simplex.
+The situation is more complex in the hyperbolic space H” but, when n = 3,
+Andreev was able to classify all acute angled compact convex polyhedra in H?
+in terms of their combinatorics and their dihedral angles [2].
+
+In hyperbolic space, another approach to prevent vertex collisions is to put
+these vertices infinitely apart, by considering (non-compact finite volume) ideal
+polyhedra, where all vertices sit on the sphere at infinity 0..H” of H”. In [11],
+Rivin classifies all ideal polyhedra in Hi in terms of their combinatorics and of
+their dihedral angles. The case of acute angled polyhedra with some vertices
+at infinity had been earlier considered by Andreev [3].
+
+In this paper, we propose to go one step further by considering polyhedra in
+H® whose vertices are ‘beyond infinity’, and which we call hyperideal polyhedra.
+
+These are best described in Klein’s projective model for H®. Recall that, in
+this model, H® is identified to the open unit ball in R? C RP*, that geodesics
+of H3 then correspond to the intersection of straight lines of R? with H®, and
+that totally geodesic planes in H® are the intersection of linear planes with H°.
+In this projective model H® C RP?, a hyperideal polyhedron is defined as the
+
+TOME 130 ~ 2002 — N° 3

@@ -140,7 +140,7 @@ that section — is over `ℝ`, because the sign statements use the ordering `1 
 that is the archimedean side of the wall and is where it belongs.  Sorry-free
 throughout.
 
--- Ref: [manuscript] conj:flavor-split-habiro-derivation
+-- Ref: [leitner2026] conj:flavor-split-habiro-derivation
 -/
 import Mathlib.Algebra.Ring.Basic
 import Mathlib.Tactic.NoncommRing

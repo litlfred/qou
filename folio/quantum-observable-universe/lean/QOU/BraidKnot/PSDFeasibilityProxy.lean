@@ -14,11 +14,11 @@ algebra Wedderburn decomposition.
 
 ## What this module provides
 
-- `evenPower_necessary_for_blockPosSemidef` — the proxy
-  `BraidWord.evenPower` is a NECESSARY condition for every
-  Wedderburn block of the corresponding Hecke element to be
-  PSD.  Axiomatised at the categorical-content level pending
-  the algebra-evaluation map `BraidWord → HeckeElement n`.
+- A note recording that the former axiom
+  `evenPower_necessary_for_blockPosSemidef` was false (the full
+  twist in `H_3` is block-PSD with odd generator counts) and was
+  removed 2026-11-15; the even-power test is right only for
+  single-generator words.
 
 - `withinLengthBound` — the enumerator's search-space bound as a
   named decidable predicate.
@@ -74,24 +74,22 @@ open QOU.HeckeAlgebra QOU.HeckeAlgebra.Wedderburn
 opaque braidWordEval :
     ∀ (n : ℕ) (_w : List Int), WedderburnDecomposition n
 
-/-- **Even-power proxy is necessary for block PSD.**
+/-! **The former axiom `evenPower_necessary_for_blockPosSemidef` was false
+    under its intended reading** (removed 2026-11-15). It claimed that a word
+    whose Hecke evaluation is PSD on every Wedderburn block uses each
+    generator an even number of times (counting inverses). The full twist
+    `Δ² = (σ₁σ₂)³` in `H_3(q)`, `q > 0`, refutes it: `Δ²` is central and acts
+    by `q⁶` on `(3)`, `q⁻⁶` on `(1³)` and `1` on `(2,1)`, so it is PSD on every
+    block, yet `σ₁` and `σ₂` each occur three times. (The `(2,1)` value was
+    checked on the seminormal 2×2 representation.) Lean cannot see the
+    counterexample because `braidWordEval` is `opaque`, so this is a
+    removal of a wrong claim, not a kernel refutation. Nothing in Lean used
+    the axiom; `HopfBindingK` only cited it in prose.
 
-    If `braidWordEval n w` has every Wedderburn block PSD, then
-    `w.evenPower` (the decidable proxy on `BraidWord`) holds.
-
-    Contrapositive: a word violating `evenPower` cannot evaluate
-    to a PSD-everywhere element.  This is the half of
-    "evenPower-iff-PSD" that's actually true at the σ_k^{2m}
-    eigenvalue level.
-
-    Axiomatised at the categorical-content level; concrete proof
-    requires the Hoefsmit-eigenvalue computation per block. -/
--- Ref: [manuscript] Ch. braid-knot, prop:operator-selection-lp (evenPower necessary for block PSD; binding-k-solver.witness.json)
-axiom evenPower_necessary_for_blockPosSemidef :
-    ∀ (n : ℕ) (w : List Int),
-    (braidWordEval n w).PosSemidef →
-    -- The decidable proxy:
-    (∀ g ∈ w.eraseDups, (w.count g + w.count (-g)) % 2 = 0)
+    What is true is narrower: for a word in a single generator `σ_g`
+    (with `g` a valid index), the element is `σ_g^k`, whose eigenvalues are
+    `q^k` and `(−q⁻¹)^k`, so it is block-PSD iff `k` is even. A repaired
+    statement needs a concrete `braidWordEval`; recorded in bean `qou-n2un`. -/
 
 /-- The **length-bound proxy** for the canonical-T_w search: a candidate
     word is within the enumerator's search space only if `w.length ≤ L_max`
@@ -140,8 +138,8 @@ The necessity direction this file's header describes — structural validity
 being necessary for the Hecke element to be a candidate canonical `T_w` — is
 **not stated anywhere**, and writing it is authorial: it needs the
 algebra-evaluation map the header lists as an open Lean port. Its sibling
-`evenPower_necessary_for_blockPosSemidef` is an honest `axiom` for exactly
-that reason. Bean `qou-z9ws`.
+`evenPower_necessary_for_blockPosSemidef` was an `axiom` for that reason,
+and turned out false (see above). Bean `qou-z9ws`.
 -/
 
 end QOU.BraidKnot.PSDFeasibilityProxy

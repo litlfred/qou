@@ -41,7 +41,7 @@ identification is purely algebraic (equalities in a module of scalar
 
 ## References
 
-- [manuscript] quantum-observable-universe/brings-surface/mi-sw-abelianisation-cartan.md.
+- [leitner2026] quantum-observable-universe/brings-surface/mi-sw-abelianisation-cartan.md.
 -/
 
 namespace QOU.ArchimedeanUniverse
@@ -99,7 +99,7 @@ theorem eq_cartanEmbed_of_offdiag_zero {Ω : Type*} [Zero Ω]
     `mi_sw_cartan_reduction` below.  No instance is declared —
     fabricating one would be the §3b-tax violation; the open content
     is the existence of an instance for the Bring-surface geometry. -/
--- Ref: [manuscript] quantum-observable-universe/brings-surface/mi-sw-abelianisation-cartan.md
+-- Ref: [leitner2026] quantum-observable-universe/brings-surface/mi-sw-abelianisation-cartan.md
 class MiSwCartanReductionHypotheses (R Ω : Type*) [CommRing R]
     [AddCommGroup Ω] [Module R Ω] where
   /-- The restriction `A|_{𝒮_c}` of the reduced connection, in the
@@ -138,7 +138,7 @@ class MiSwCartanReductionHypotheses (R Ω : Type*) [CommRing R]
     helper `eq_cartanEmbed_of_offdiag_zero` with the local form; the
     second composes the two local identifications by transitivity.
     Neither conjunct is a class field (§3b-cond item 5). -/
--- Ref: [manuscript] quantum-observable-universe/brings-surface/mi-sw-abelianisation-cartan.md
+-- Ref: [leitner2026] quantum-observable-universe/brings-surface/mi-sw-abelianisation-cartan.md
 theorem mi_sw_cartan_reduction {R Ω : Type*} [CommRing R]
     [AddCommGroup Ω] [Module R Ω]
     [ctx : MiSwCartanReductionHypotheses R Ω] :

@@ -1,0 +1,33 @@
+34. Isometries of H’.
+
+A linear transformation A: R'* > R'® is called an isometry if
+< A(x), A(y)> = <x,y>
+
+for all x and y € R'®.
+
+An isometry of R'* takes the two-sheeted hyperboloid <x ,x > = 1 to itself,
+but may interchange the two sheets. If it does not interchange these sheets, then in
+particular it takes the "upper" sheet H’ to itself. In that case, it also preserves the
+Riemannian metric on H’, so is an isometry of H? in the sense of Riemannian
+geometry.
+
+One example of an isometry of R'* which preserves H?® is given by the linear
+transformation A with matrix
+
+cosht sinht 0 0
+sinht cosht 0 0
+0 0 1 0
+0 0 0 1
+
+A family of examples of isometries of R'’ which preserve H’ consists of those
+linear transformations A which fix identically the xo-axis, and act as Euclidean
+rigid motions on the x;x2x3-space.
+
+Compositions of these examples provide all possible isometries of R'* which
+take H’® to itself, and in particular provide all possible isometries of H? in the
+
+sense of Riemannian geometry.
+
+Half of these are orientation preserving, and constitute the group SO(1,3).
+
+74

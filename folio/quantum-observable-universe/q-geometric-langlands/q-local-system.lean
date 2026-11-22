@@ -17,7 +17,7 @@ namespace QOU
 
 /-- $q$-Local system -/
 def QLocalSystem   :=
-  -- Ref: [manuscript] def:q-local-system
+  -- Ref: [leitner2026] def:q-local-system
   trivial
 
 end QOU

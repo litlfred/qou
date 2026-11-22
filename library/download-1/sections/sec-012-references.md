@@ -8,6 +8,7 @@ pages: 23-24
 source_pdf: Download (1).pdf
 source_sha256: bbb001c909958e8a
 toc_source: inferred
+doc_brief: "Central and L p -concentration of 1-Lipschitz maps into R -trees — In this paper, we study the Le´vy-Milman concentration phenomenon of 1-Lipschitz maps from mm-spaces to R-trees."
 ---
 [ 1 ]
 L. Ambrosio and P. Tilli, Topics on analysis in metric spaces, Oxford Lecture Series in

@@ -6,4 +6,4 @@ The braiding and Hopf link structure of $\mathbf{C}$ induce natural operations o
 
 **Skein action.** The $q$-deformed Skein relations act on $\mathrm{Sym}^n(K) \otimes \mathcal{L}_{\mathrm{Hopf}}$ by resolving link crossings. Iterating across all crossings resolves the composite into unlinked constituents scaled by a polynomial in $q$.
 
-**Fusion.** We fuse two hadrons by constructing the Hopf link between their binding structures. This provides a categorical model for hadron scattering.
+**Fusion.** One fuses two hadrons by constructing the Hopf link between their binding structures. This provides a categorical model for hadron scattering.

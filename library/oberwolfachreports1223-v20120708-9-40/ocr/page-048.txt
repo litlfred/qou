@@ -1,0 +1,54 @@
+48 Oberwolfach Report 28/2012
+
+Theorem 6 (Classification Theorem). Define the Ideal Class Monoid of G as
+follows:
+CuG) = {S-fractional submodules of S"|G, Gy
+Aut(G)
+Isomorphism classes of groups para-equivalent to G lie in one-to-one correspon-
+dence to elements of C&(G).
+
+Here Aut(G) acts on the module S~"[G, G] by conjugation, and thus on the set
+of S-fractional sub-modules.
+
+We apply this result in the talk to compute para-equivalence classes of torus
+bundles over St. Homeomorphism classes of such bundles correspond to a special
+class of real quadratic extensions of the field of rational numbers. We proved:
+
+Theorem 7. For any 3-dimensional torus bundle M such that ™(M) is residually
+nilpotent, there are at most finitely many torus bundles with groups para-equivalent
+to m(M).
+
+Numerous examples were given. For instance, for the torus bundle with group
+the semi-direct product Z[,/82] » Z, there are precisely four para-equivalent torus
+bundles. Here the quotient group Z acts on Z[y82] by multiplication by 9 + 82.
+
+Curves on class VII surfaces. A gauge theoretical approach for
+proving existence of a cycle
+ANDREI TELEMAN
+
+Let M be a 4-manifold with b; = 1 and b; = 0 (negative definite intersection
+form). Suppose for simplicity 7(M,29) = Z, and put b := b2(M). Donaldson’s
+first theorem: qj is standard, so H? has a basis (ei)i<icp with eye; = —dij. We
+put Io := {1,...,}, for I C Ip put I := Ip \ I, er == Yoye, er. The characteristic
+elements with vanishing SW expected dimension have the form cy;
+
+The Seiberg-Witten invariants are not well defined [1]: A generic SW moduli
+space contains a circle of reductions and finitely many regular irreducible points.
+What can try to define an invariant by counting only the irreducible points (by
+taking into account the signs defined by the fixed orientation data). But one
+can see that, deforming the parameters, some irreducible points might become re-
+ducible and then disappear, so the algebraic cardinality of the irreducible part of
+the moduli space will jump. One has a countable chamber structure in the param-
+eter space, and the SW “invariant” obtained by counting algebraically irreducible
+points can take infinitely many values [1].
+
+Idea: forget about SW and use ideas from original GW theory: count only ratio-
+nal curves in the given class. The corresponding Gromov-Witten moduli space of
+rational curves will be: MSW (EH ) = {Ej} , so this approach produces apparently
+a well defined “invariant” of the complex structure (which takes the values 1), but
+this invariant is not constant in deformations:
+
+Example: ¥ — D with X; = blown up Hopf surface for t # 0 and Xo a so
+
+er — e7-
+

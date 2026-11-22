@@ -1,1 +1,1 @@
-If R is a rigid dualizing complex over A then for any q the coho-
+Let A →B and B → C be ﬁnite k-algebra homomorphisms. As- sume the rigid dualizing complexes (RA,φA), (RB,φB) and (RC,φC ) and the trace morphisms TrB/A and TrC/B exist. Then TrC/A exists too, and TrC/A = TrB/A TrC/B. The existence of the trace morphism allows to transfer good prope rties of RA to RB.

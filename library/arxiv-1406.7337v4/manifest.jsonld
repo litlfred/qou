@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1406.7337v4",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1406.7337v4/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1406.7337v4",
+  "title": "Semi-Adequate Closed Braids and Volume",
   "contains": [
+    "library/arxiv-1406.7337v4/sections/sec-front-matter",
     "library/arxiv-1406.7337v4/sections/sec-000",
     "library/arxiv-1406.7337v4/sections/sec-001",
     "library/arxiv-1406.7337v4/sections/sec-002",
@@ -24,7 +25,7 @@
     "library/arxiv-1406.7337v4/sections/sec-010"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -34,7 +35,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1406.7337v4",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1406.7337v4.pdf",
     "source_sha256": "5bae8237742733b902201d9414628b8801476f06357bc09479080ef90a5c8a92",
     "pages": 20,

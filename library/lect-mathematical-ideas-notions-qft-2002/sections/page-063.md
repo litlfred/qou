@@ -1,0 +1,73 @@
+---
+doc_id: lect-mathematical-ideas-notions-qft-2002
+doc_title: "Mathematical ideas and notions of quantum field theory"
+section_id: page-063
+section_title: "Page 63"
+pages: 63-63
+pdf_page: 63
+source_pdf: lect-mathematical-ideas-notions-qft-2002.pdf
+source_sha256: 95cac1ccd6c80226
+text_source: ocr
+granularity: page
+doc_brief: "Mathematical ideas and notions of quantum field theory — 78 sections: Page 1; Page 2; Page 3"
+---
+MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 63
+
+9.4. Supermanifolds and vector bundles. Let Mo be a manifold, and E be a
+vector bundle on My. Then we can define the supermanifold M := Tot(ILE), the
+total space of EF with changed parity. Namely, the reduced manifold of M is Mo,
+and the structure sheaf Cf? is the sheaf of sections of AE*. This defines a functor
+S: BUN + SMAN, from the category of manifolds with vector bundles to the
+category of supermanifolds. We also have a functor S$, in the opposite direction:
+namely, 9,(/) is the manifold Mo with the vector bundle (R/R?)*, where R is the
+nilpotent radical of C97.
+
+The following proposition (whose proof we leave as an exercise) gives a classifi-
+cation of supermanifolds.
+
+Proposition 9.2. S,S = Id, and SS, = Id on isomorphism classes of objects.
+
+The usefulness of this proposition is limited by the fact that, as one can see from
+the above description of maps between supermanifolds, S'S, is not the identity on
+morphisms (e.g. it maps the automorphism x > a + &€5 of R'I? to Id), and hence,
+S is not an equivalence of categories. In fact, the category of supermanifolds is not
+equivalent to the category of manifolds with vector bundles (namely, the category
+of supermanifolds “has more morphisms” ).
+
+Remark. The relationship between these two categories is quite similar to the
+relationship between the categories of (finite dimensional) filtered and graded vector
+spaces, respectively (namely, for them we also have functors S, S, with the same
+properties — check it!). Therefore in supergeometry, it is better to avoid using
+realizations of supermanifolds as S(Mo, E), similarly to how in linear algebra it is
+better to avoid choosing a grading on a filtered space.
+
+9.5. Integration on superdomains. We would now like to develop integration
+theory on supermanifolds. Before doing so, let us recall how it is done for usual
+manifolds. In this case, one proceeds as follows.
+
+1. Define integration of compactly supported (say, smooth) functions on a do-
+main in R”.
+
+2. Find the transformation formula for the integral under change of coordinates
+(ie. discover the factor |J|, where J is the Jacobian).
+
+3. Define a density on a manifold to be a quantity which is locally the same as
+a function, but multiplies by |J| under coordinate change (unlike true functions,
+which don’t multiply by anything). Then define integral of compactly supported
+functions on the manifold using partitions of unity. The independence of the integral
+on the choices is guaranteed by the change of variable formula and the definition
+of a density.
+
+We will now realize this program for supermanifolds. We start with defining
+integration over superdomains.
+
+Let V = % © V be a supervector space. The Berezinian of V is the line
+AtPY) @ A®PYV;*. Suppose that V is equipped with a nonzero element dv of the
+Berezinian (called a supervolume element).
+
+Let Up be an open set in Vo, and f € C°(U) @ AV;* be a compactly supported
+smooth function on the superdomain U := Up x Vj (i.e. f = > fi@ui, fi € CU),
+w;, € AV;*, and f; are compactly supported). Let duo, dv; be volume forms on Vo, Vi
+such that dv = dup/dv,.
+
+Definition 9.3. The integral f,, f(v)dv is fr, (f(), (de1)~")deo.

@@ -1,0 +1,53 @@
+We show that, for such an arbitrarily fixed s, the first summand is negative,
+
+2A(t) + A(s — 1) — As) ~5s <0 for 0<t<s. (99)
+
+(Then, it is shown similarly that the second summand of (98) is also negative, and this
+
+contradicts the defining inequality of A, which implies the assumption of the lemma.)
+Hence, it is sufficient to show (99) for s < 0.5.
+We show (99), as follows. For a fixed s < 0.5, we put
+
+f(t) = 2A(t) + A(s—t) — A(s) — xs
+
+for 0 <t<s. Then,
+f(t) = 2A'(t)-A'(s—t).
+
+Since A(t) and A(s — t) are concave functions in 0 < t < s whose second derivatives are
+negative, f(t) has a unique maximal point in 0 < t < s, noting that lim;.,9 f’(t) = 00
+and lim;-,s—o f(t) = —oo. We put such a unique maximal point to be t, that is, f is a
+unique solution of f/(t)=0in0<t<s. Since f’(f) =0,
+
+2A(f) = M(s—f).
+
+Further, since A’(t) = — log 2 sin zt,
+
+sina(s—?) = 2sin? rt.
+
+Since 2sin? af < 1 and 0 < f < 0.5, we have that 0 < ¢ < 0.25. Hence,
+
+~ 1 rn
+s = t+ —arcsin (2sin’ rt ).
+7
+
+We put the right-hand side of this formula to be g(t), that is, s = g(t). Since sin? rf is
+monotonically increasing in 0 < ¢ < 0.25, g(#) is also monotonically increasing. We note
+that g(0) = 0 and g(0.25) = 0.75. So, in fact, we can define g(t) for 0 < t < 0.25, but we
+substantially consider the case where
+
+0<t < g'(05) = 0.2148... < 0.22.
+In order to show (99), it is sufficient to show that
+2A(t) + A(g(t) — t) — A(g(t)) —=6 < 0
+for 0 < ¢ < g~'(0.5). We put the left-hand side of the above formula to be P(t). We
+have that
+P(t) = 2A'(t) + A'(g(t) -#)
+= A(s—t)+A(s— t)(
+= (A(s— ft) —A(s)) g'(
+
+(1)
+g'(
+t
+
+),
+
+63

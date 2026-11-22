@@ -1,0 +1,55 @@
+4.2 Complex phase 103
+proving the proposition. ia)
+
+Exercise 4.7. Let y be the positive real root of x — 3xy — y? = 0 satisfying
+y ~ x'/3 as x | 0. Find the first two terms of the Puiseux series for y and use
+Watson’s Lemma to compute the corresponding first two asymptotic terms of
+the Laplace transform L(A) = k y(xe~™* dx.
+
+As discussed in Section 3.5 of Chapter 3, Theorem 4.1 is a crucial compo-
+nent of the saddle point method, which is also called the method of steepest
+descent. If we consider an integral
+
+Tay = [ao exp(—A¢d(z)) dz
+Y
+
+where ¢’ does not vanish on y then the idea is to deform y to pass through
+a point x where ¢’ vanishes while introducing a negligible error. The phrase
+steepest descent comes from the fact that the real part of @ must have a local
+maximum on the contour at x, rather than a minimum or inflection point. Hav-
+ing deformed the contour to pass through x, Theorem 4.1 is then applied to
+determine asymptotics.
+
+Example 4.8. Consider the univariate power series f(z) = (1 — z)~!/*, whose
+
+power series coefficients at the origin form the sequence a, = p(y”).
+Instead of using a transfer theorem from Chapter 3 to obtain the asymptotic
+behavior a, ~ 1/-zn, let us apply a saddle point approach to the Cauchy
+
+integral representation
+
+1
+a, = | zo" -2)'? dz,
+2ni Jc
+where C is any sufficiently small positively oriented circle around the origin.
+Since we understand meromorphic integrands the best, we make the change of
+variables z = 1 — y to obtain
+
+1 ee i _
+fa-ernyteanay=* [ayer ay
+E T JE
+
+© Oni
+where, as shown in Figure 4.5, E is a positively-oriented small circle in the y-
+plane around either the point +1 or the point —1 (since both of these contours
+map to a small contour around 0 in the z-plane). For concreteness, let us take
+E to be a small circle around +1. In the y-plane, there is a critical point for
+@(y) = —log(1 — y’) at the origin. Without crossing any singularities of our
+integrand, we can deform the contour E to a contour E passing through the
+origin in the downward direction. Changing variables with y = —it gives
+
+_! 2)-n-1 ¢_> _ 1 1
+a= fase) . Cod=* [ra exp(-nlog(1 +) dt,
+
+Qn
+

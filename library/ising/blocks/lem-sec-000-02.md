@@ -1,0 +1,1 @@
+There exists a constant βht ce(d, h1) such that the following holds for |h| ≤h1 and β < βht ce(d, h1). For each ﬁxed pair (E⋆, B⋆) where E⋆and B⋆are ﬁnite subsets of EZd and Zd respectively, one has S(E⋆,B⋆) := X E⊆EZd ,B⊆Zd: (E,B) connected W(E, B) e|V (E,B)|

@@ -1,0 +1,45 @@
+11.2 Proof of Theorem 11.1 355
+
+notation)
+f(tv + su) = A(t) [|e + (0).
+k=1
+
+We claim that the ju;,(t) are real analytic functions of ¢ in a neighborhood
+of 0. To see this, write uz, as a Puiseux series Y),c4, Crxt’, where Ax is an
+arithmetic progression of rational numbers, containing positive entries because
+lim,o 44x(t) = 0. Suppose some exponent r € A, is not an integer, and let b be
+the denominator of the least non-integral r ¢ Ay. Then either for ¢ small and
+positive, or t small and negative, there will be b roots with arguments asymp-
+totically distributed as {2/b + 22j/b : 0 < j < b— 1}, one of which is non-real,
+contradicting the real-rootedness of g(i(y + zu)). We have thus established our
+claim that the 44 are real functions of t.
+
+It follows that j,(t) ~ ta,(t), where 2, are the slopes of the lines into which
+the bivariate function g(tv + sw) factors,
+
+G(tv + su) = G(u) [|e + ta(t)).
+k=1
+
+When v is chosen in the same cone of hyperbolicity as u, this further implies
+that all A, are positive and that j are increasing functions of f in a neigh-
+borhood of 0. This is sufficient to derive, in the same manner as [ABG70,
+Lemma 5.1, 5.9], that the local branches ju; are still increasing after perturba-
+tion, which implies semi-continuity of the cones. ia)
+
+Example 11.29. Suppose that exp(z) is a multiple point of Q, so that the
+leading homogeneous part g of q at exp(z) is the product of linear factors. The
+cones of hyperbolicity of g at z are projective cones that are the components
+of R¢ when the hyperplanes on which the linear factors vanish are removed.
+If ¢g = Qo exp, where @Q has only multiple point singularities and {z,} is a
+sequence with exp(z,) > exp(z) in Vg while remaining in a single stratum
+S, then exp(z) is in either S or OS. In the latter case, the partition near exp(z)
+of R¢ into projective cones is finer at exp(z) than at the points exp(z’), and the
+semi-continuity described in Lemma 11.27 is strict. 4
+
+Exercise 11.6. Let X be a Whitney stratified space and let m : X — Zyo be
+the dimension function m(a) = dim(S(a)). Is m lower semi-continuous, upper
+semi-continuous, or neither?
+
+11.2.5 Proof of Theorem 11.1
+
+We now complete the proof of Theorem 11.1.

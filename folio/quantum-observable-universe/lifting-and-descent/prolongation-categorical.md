@@ -3,4 +3,4 @@ Jet prolongation emerges as an intrinsic consequence of the Frobenius–Hopf str
 2. The Frobenius relation enforces compatibility between comultiplication and multiplication, ensuring the prolonged object inherits the full Hopf algebra structure.
 3. Non-degeneracy and vanishing conditions propagate from $A$ to $J^1(A)$ through functoriality.
 
-Iterating this categorical jet construction generates the recursive brane tower. The tower and its associated descent ([Subsection](#ssec:descent)) follow from the QOU axioms without case-by-case verification.
+Iterating this categorical jet construction generates the recursive brane tower. The tower and its associated descent follow from the QOU axioms without case-by-case verification.

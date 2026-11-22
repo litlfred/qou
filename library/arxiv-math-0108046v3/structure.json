@@ -1,0 +1,804 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0108046v3",
+ "source": {
+  "file": "0108046v3.pdf",
+  "sha256": "f47c1bd39c671cf3bb7171ecca838bce93e09ce3d462c3f8589d4fb2327e6218",
+  "bytes": 360307,
+  "pages": 38,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:22:14Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0108046",
+   "version": "3",
+   "primary_class": null,
+   "stamp_date": "3 May 2002"
+  },
+  "doi": null,
+  "title": "Presenting Schur algebras",
+  "authors_raw": "STEPHEN DOTY AND ANTHONY GIAQUINTO",
+  "title_lines": [
+   "PRESENTING SCHUR ALGEBRAS"
+  ],
+  "abstract": "Motivated by work of R.M. Green, we obtain a pre- sentation of Schur algebras (both the classical and quantized ver- sions) in terms of generators and relations. The presentation is compatible with the usual presentation of the (quantized or classi- cal) enveloping algebra of gln. As a result, we obtain a new “inte- gral” basis for Schur algebras which is a subset of Kostant’s basis of the integral form of the enveloping algebra (or its q-analogue). Projection onto an appropriate component gives a new “integral” basis and a presentation for the Hecke algebra, compatible with the basis and presentation for the Schur algebra. Finally, we ﬁnd a second presentation of Schur algebras which is similar to Luzstig’s modiﬁed form of the quantized enveloping algebra.",
+  "docinfo": {
+   "Title": "arXiv:math/0108046v3  [math.RT]  3 May 2002",
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "CreationDate": "D:20181029192822-04'00'"
+  },
+  "title_raw": "PRESENTING SCHUR ALGEBRAS",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:math/0108046v3 [math.RT] 3 May 2002",
+   "heading": "PRESENTING SCHUR ALGEBRAS Introduction Let R be a commutative ring. The (classical) Schur algebra S R ( n, d ) may be deﬁned as the algebra End Σ d ( V ⊗ d R ) of linear endomorphisms on the d th tensor power of an n -dimensional free R -module V R commuting with the action of the symmetric group Σ",
+   "text": "PRESENTING SCHUR ALGEBRAS",
+   "corroborated_by": [
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_correction": {
+   "title": "Presenting Schur algebras",
+   "basis": "Printed title on page 1 (Doty and Giaquinto); the extracted title was the arXiv stamp",
+   "extracted_title": "arXiv:math/0108046v3 [math.RT] 3 May 2002",
+   "corrected_on": "2026-11-15"
+  }
+ },
+ "toc": [],
+ "toc_source": "undetermined",
+ "toc_undetermined_reason": "11 inferred entries with mean confidence 0.00, below the 0.6 floor — too little evidence agreed",
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted (11 inferred entries with mean confidence 0.00, below the 0.6 floor — too little evidence agreed): one section per page.",
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
+ "sections": [
+  {
+   "id": "page-001",
+   "number": null,
+   "title": "Page 1",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 2197,
+   "n_words": 366,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 2544,
+   "n_words": 440,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 2295,
+   "n_words": 420,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1752,
+   "n_words": 384,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 1712,
+   "n_words": 351,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-006",
+   "number": null,
+   "title": "Page 6",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 1153,
+   "n_words": 239,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-007",
+   "number": null,
+   "title": "Page 7",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1822,
+   "n_words": 383,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-008",
+   "number": null,
+   "title": "Page 8",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 1604,
+   "n_words": 350,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-009",
+   "number": null,
+   "title": "Page 9",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 1502,
+   "n_words": 296,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-010",
+   "number": null,
+   "title": "Page 10",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 2253,
+   "n_words": 477,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-011",
+   "number": null,
+   "title": "Page 11",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 1724,
+   "n_words": 367,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-012",
+   "number": null,
+   "title": "Page 12",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 1676,
+   "n_words": 369,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-013",
+   "number": null,
+   "title": "Page 13",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 2052,
+   "n_words": 439,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-014",
+   "number": null,
+   "title": "Page 14",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 1224,
+   "n_words": 281,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-015",
+   "number": null,
+   "title": "Page 15",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 1284,
+   "n_words": 275,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-016",
+   "number": null,
+   "title": "Page 16",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 1707,
+   "n_words": 342,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-017",
+   "number": null,
+   "title": "Page 17",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 1745,
+   "n_words": 376,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-018",
+   "number": null,
+   "title": "Page 18",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 2411,
+   "n_words": 498,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-019",
+   "number": null,
+   "title": "Page 19",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 2206,
+   "n_words": 433,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-020",
+   "number": null,
+   "title": "Page 20",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 1903,
+   "n_words": 372,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-021",
+   "number": null,
+   "title": "Page 21",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 1468,
+   "n_words": 358,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-022",
+   "number": null,
+   "title": "Page 22",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 2193,
+   "n_words": 415,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-023",
+   "number": null,
+   "title": "Page 23",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 2042,
+   "n_words": 432,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-024",
+   "number": null,
+   "title": "Page 24",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 1827,
+   "n_words": 382,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-025",
+   "number": null,
+   "title": "Page 25",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 25,
+   "n_chars": 1148,
+   "n_words": 262,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-026",
+   "number": null,
+   "title": "Page 26",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 1520,
+   "n_words": 369,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-027",
+   "number": null,
+   "title": "Page 27",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 1827,
+   "n_words": 410,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-028",
+   "number": null,
+   "title": "Page 28",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 28,
+   "n_chars": 1976,
+   "n_words": 357,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-029",
+   "number": null,
+   "title": "Page 29",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 29,
+   "n_chars": 1671,
+   "n_words": 370,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-030",
+   "number": null,
+   "title": "Page 30",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 30,
+   "n_chars": 2146,
+   "n_words": 428,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-031",
+   "number": null,
+   "title": "Page 31",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 31,
+   "n_chars": 2128,
+   "n_words": 436,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-032",
+   "number": null,
+   "title": "Page 32",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 32,
+   "n_chars": 2518,
+   "n_words": 495,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-033",
+   "number": null,
+   "title": "Page 33",
+   "level": 1,
+   "page_start": 33,
+   "page_end": 33,
+   "n_chars": 2148,
+   "n_words": 413,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-034",
+   "number": null,
+   "title": "Page 34",
+   "level": 1,
+   "page_start": 34,
+   "page_end": 34,
+   "n_chars": 2116,
+   "n_words": 448,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-035",
+   "number": null,
+   "title": "Page 35",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 35,
+   "n_chars": 1795,
+   "n_words": 361,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-036",
+   "number": null,
+   "title": "Page 36",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 36,
+   "n_chars": 2153,
+   "n_words": 400,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-037",
+   "number": null,
+   "title": "Page 37",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 37,
+   "n_chars": 2054,
+   "n_words": 375,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-038",
+   "number": null,
+   "title": "Page 38",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 38,
+   "n_chars": 2060,
+   "n_words": 306,
+   "label_start": null,
+   "label_end": null
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 0,
+  "toc_inferred_entries": 11,
+  "toc_inferred_mean_confidence": 0.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "regex",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 38,
+  "chars_total": 71556,
+  "furniture_lines_stripped": 0
+ }
+}

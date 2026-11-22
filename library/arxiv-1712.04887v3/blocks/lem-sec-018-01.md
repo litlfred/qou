@@ -1,0 +1,1 @@
+Let p > 2 and n = pm. Suppose that q ≡−1 mod n and q̸ ≡−1 mod pn. The prime q splits completely in Q(ζ + ζ−1). Let Fq denote the residue ﬁeld at one of the primes above q. Then the map K3(Q(ζ + ζ−1)) ⊗Zp →B(Fq) ⊗Zp is an isomorphism.

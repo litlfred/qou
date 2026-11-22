@@ -1,0 +1,1529 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "ising",
+  "pages": [
+    {
+      "page": 7,
+      "rotation": 0,
+      "drawings": 49,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1. The two notions of tree-length on an example"
+      ],
+      "labels": [
+        {
+          "text": "WEIGHTED DEPENDENCY GRAPHS AND THE ISING MODEL",
+          "bbox": [
+            184.53,
+            65.86,
+            427.47,
+            72.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "7",
+          "bbox": [
+            522.99,
+            65.86,
+            526.96,
+            72.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "The most classical boundary conditions are the + boundary condition, where ηi = +1 for all i ∈Zd,",
+          "bbox": [
+            96.99,
+            85.04,
+            526.96,
+            104.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "and the −boundary condition, where ηi = −1 for all i ∈Zd. When considering quantities with +",
+          "bbox": [
+            85.04,
+            96.99,
+            526.99,
+            116.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(resp. −) boundary condition, we write them with superscript + (resp. −), e.g. µ+",
+          "bbox": [
+            85.04,
+            109.42,
+            449.01,
+            128.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Λ;β,h(ω).",
+          "bbox": [
+            442.89,
+            111.44,
+            480.08,
+            123.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "We now take an increasing sequence Λn of ﬁnite subsets of Zd with S",
+          "bbox": [
+            96.99,
+            121.64,
+            410.34,
+            142.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI7",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n≥1 Λn = Zd. It is a well-",
+          "bbox": [
+            410.34,
+            122.77,
+            526.96,
+            138.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "known fact (see, e.g., [13, Chapter 3]) that the sequence of measures µ+",
+          "bbox": [
+            85.04,
+            137.09,
+            407.22,
+            149.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Λn;β,h converges in the weak",
+          "bbox": [
+            401.1,
+            139.11,
+            526.96,
+            152.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "sense towards a measure denoted µ+",
+          "bbox": [
+            85.04,
+            151.03,
+            247.12,
+            163.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "β,h as n →∞. In the high temperature case (β < βc(d), h = 0)",
+          "bbox": [
+            241.0,
+            152.8,
+            526.96,
+            170.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "or in the presence of a magnetic ﬁeld (h̸ = 0), the limiting measure is independent of the choice of",
+          "bbox": [
+            85.04,
+            165.63,
+            526.98,
+            182.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "boundary conditions. At low temperature (β > βc(d), h = 0), the limiting measure depends on the",
+          "bbox": [
+            85.04,
+            177.84,
+            526.97,
+            188.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "boundary conditions; in this article, we restrict ourselves to + boundary conditions to have a well-",
+          "bbox": [
+            85.04,
+            189.79,
+            527.02,
+            199.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "deﬁned limiting measure in all cases. Also, we drop the superscript + and denote the limiting measure",
+          "bbox": [
+            85.04,
+            201.75,
+            526.99,
+            211.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "by µβ,h.",
+          "bbox": [
+            85.04,
+            213.7,
+            120.05,
+            224.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "In this article, we work with this limiting measure µβ,h and prove our central limit theorem under",
+          "bbox": [
+            96.99,
+            225.66,
+            527.0,
+            237.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "this measure. In comparison with the measure µ+",
+          "bbox": [
+            85.04,
+            236.06,
+            298.39,
+            248.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Λn;β,h, it has the advantage to be translation invariant,",
+          "bbox": [
+            292.27,
+            238.08,
+            527.01,
+            250.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "which simpliﬁes in particular the variance estimates.",
+          "bbox": [
+            85.04,
+            250.36,
+            313.95,
+            260.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2.2. Spanning trees of maximal weight and tree lengths. We recall from the introduction that,",
+          "bbox": [
+            85.04,
+            270.28,
+            526.99,
+            280.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            296.98,
+            281.33,
+            301.54,
+            291.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            309.38,
+            281.33,
+            313.94,
+            291.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "if G is an edge-weighted graph, we denote by M",
+          "bbox": [
+            85.04,
+            282.3,
+            296.98,
+            299.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "G",
+          "bbox": [
+            301.54,
+            282.55,
+            309.37,
+            292.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the maximum weight of a spanning tree of G.",
+          "bbox": [
+            317.26,
+            282.55,
+            516.13,
+            292.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We will be mainly interested in the case where V is a ﬁnite subset A of Zd, E consists of all pairs",
+          "bbox": [
+            96.99,
+            293.0,
+            526.96,
+            305.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "of vertices of A (i.e. we have a complete graph), and the weights are of the form w(i, j) = ε∥i−j∥1 for",
+          "bbox": [
+            85.04,
+            304.83,
+            526.97,
+            317.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "some positive constant ε < 1. We denote this weighted graph by G[A]. Then, for a spanning tree T of",
+          "bbox": [
+            85.04,
+            319.4,
+            526.96,
+            329.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "G[A],",
+          "bbox": [
+            85.04,
+            331.36,
+            108.65,
+            341.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "P",
+          "bbox": [
+            295.36,
+            342.94,
+            303.73,
+            349.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "(i,j)∈T ∥i−j∥1,",
+          "bbox": [
+            303.73,
+            343.16,
+            356.93,
+            355.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR5",
+            "CMSY5",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "w(T) = ε",
+          "bbox": [
+            255.07,
+            345.79,
+            295.35,
+            355.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            234.05,
+            359.76,
+            238.61,
+            369.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            259.45,
+            359.76,
+            264.02,
+            369.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "is obtained by minimizing the quantity P",
+          "bbox": [
+            268.5,
+            360.36,
+            459.52,
+            377.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "and the maximal such weight M",
+          "bbox": [
+            85.04,
+            360.74,
+            234.05,
+            378.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(i,j)∈T ∥i −j∥1.",
+          "bbox": [
+            459.51,
+            360.74,
+            526.96,
+            381.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "G[A]",
+          "bbox": [
+            238.61,
+            360.98,
+            259.46,
+            370.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Therefore we deﬁne",
+          "bbox": [
+            85.04,
+            373.63,
+            170.33,
+            383.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            307.83,
+            384.12,
+            322.23,
+            394.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ℓ′",
+          "bbox": [
+            244.7,
+            384.56,
+            251.15,
+            396.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "∥i −j∥1,",
+          "bbox": [
+            329.82,
+            386.49,
+            367.3,
+            403.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "T (A) = min",
+          "bbox": [
+            248.85,
+            386.74,
+            300.25,
+            399.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "T",
+          "bbox": [
+            289.05,
+            395.19,
+            293.75,
+            402.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "(i,j)∈T",
+          "bbox": [
+            301.9,
+            401.04,
+            327.09,
+            408.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "where the minimum is taken over all spanning trees T of G[A], i.e. of the complete graph on A. Then",
+          "bbox": [
+            85.04,
+            413.25,
+            526.97,
+            423.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "= εℓ′",
+          "bbox": [
+            167.38,
+            423.33,
+            188.07,
+            436.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY5"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "T (A).",
+          "bbox": [
+            185.88,
+            424.84,
+            206.87,
+            436.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            134.64,
+            425.22,
+            139.2,
+            435.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            160.05,
+            425.22,
+            164.61,
+            435.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "we have M",
+          "bbox": [
+            85.04,
+            426.19,
+            134.64,
+            443.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "G[A]",
+          "bbox": [
+            139.21,
+            426.44,
+            160.05,
+            436.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The quantity ℓ′",
+          "bbox": [
+            96.99,
+            436.73,
+            162.79,
+            448.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "T (A) is sometimes referred to as the tree-length of A. There is another closely related",
+          "bbox": [
+            160.49,
+            438.1,
+            526.96,
+            451.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "notion of tree-length, used in the introduction, which is deﬁned as ℓT (A) = minB ℓ′",
+          "bbox": [
+            85.04,
+            448.68,
+            455.88,
+            461.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "T (A ∪B), where",
+          "bbox": [
+            453.58,
+            450.12,
+            526.96,
+            467.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the minimum is taken over all ﬁnite subsets B of Zd. In other words, this is the minimum length of a",
+          "bbox": [
+            85.04,
+            460.07,
+            526.98,
+            472.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "tree connecting vertices of A and possibly other vertices of Zd. Equivalently, this is the minimal size",
+          "bbox": [
+            85.04,
+            472.03,
+            526.98,
+            484.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "of a connected set of edges of the lattice Zd such that each vertex of A is incident to at least one edge",
+          "bbox": [
+            85.04,
+            482.86,
+            526.96,
+            496.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "in the set. These two notions of tree-length are illustrated on Fig. 1.",
+          "bbox": [
+            85.04,
+            498.43,
+            383.83,
+            508.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "x1 = (0, 1)",
+          "bbox": [
+            234.06,
+            521.44,
+            267.25,
+            529.78
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            5.08,
+            7.25
+          ]
+        },
+        {
+          "text": "x1 = (0, 1)",
+          "bbox": [
+            402.99,
+            522.39,
+            436.18,
+            530.73
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            5.08,
+            7.25
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            370.51,
+            543.31,
+            374.14,
+            550.57
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            7.25
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            422.71,
+            543.79,
+            426.33,
+            551.04
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            7.25
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            224.83,
+            544.74,
+            228.46,
+            551.99
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            7.25
+          ]
+        },
+        {
+          "text": "x2 = (1, 0)",
+          "bbox": [
+            272.59,
+            563.29,
+            305.78,
+            571.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            5.08,
+            7.25
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            201.32,
+            566.45,
+            204.95,
+            573.7
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            7.25
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            245.45,
+            566.92,
+            249.08,
+            574.18
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            7.25
+          ]
+        },
+        {
+          "text": "x4 = (−1, 0)",
+          "bbox": [
+            129.23,
+            567.85,
+            168.06,
+            580.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.08,
+            7.25
+          ]
+        },
+        {
+          "text": "x2 = (1, 0)",
+          "bbox": [
+            449.58,
+            569.93,
+            482.77,
+            578.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            5.08,
+            7.25
+          ]
+        },
+        {
+          "text": "x4 = (−1, 0)",
+          "bbox": [
+            318.09,
+            579.71,
+            356.92,
+            592.3
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.08,
+            7.25
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            225.52,
+            593.5,
+            229.15,
+            600.75
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            7.25
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            421.28,
+            597.41,
+            424.91,
+            604.66
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            7.25
+          ]
+        },
+        {
+          "text": "x3 = (0, −1)",
+          "bbox": [
+            404.89,
+            613.97,
+            443.72,
+            626.55
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.08,
+            7.25
+          ]
+        },
+        {
+          "text": "x3 = (0, −1)",
+          "bbox": [
+            234.06,
+            614.44,
+            272.89,
+            627.03
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.08,
+            7.25
+          ]
+        },
+        {
+          "text": "ℓ′",
+          "bbox": [
+            385.49,
+            635.68,
+            390.74,
+            645.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.8,
+            8.7
+          ]
+        },
+        {
+          "text": "ℓT(A) = 4",
+          "bbox": [
+            210.77,
+            636.84,
+            247.91,
+            646.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            5.8,
+            8.7
+          ]
+        },
+        {
+          "text": "T(A) = 6",
+          "bbox": [
+            389.07,
+            636.84,
+            422.63,
+            646.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            5.8,
+            8.7
+          ]
+        },
+        {
+          "text": "Figure 1. The two notions of tree-length on an example",
+          "bbox": [
+            180.53,
+            659.49,
+            431.48,
+            671.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In [5, page 197], Duneau, Iagolnitzer and Souillard proved the following bound, which will be useful",
+          "bbox": [
+            97.0,
+            687.53,
+            527.07,
+            697.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "later in our computations.",
+          "bbox": [
+            85.04,
+            699.49,
+            199.19,
+            709.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    }
+  ]
+}

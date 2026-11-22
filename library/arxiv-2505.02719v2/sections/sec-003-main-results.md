@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2505.02719v2
-doc_title: "On the Palais–Smale condition in geometric knot theory"
+doc_title: "On the Palais-Smale condition in geometric knot theory"
 section_id: sec-003-main-results
 section_title: "Main results"
 section_number: null
 pages: 4-7
 source_pdf: 2505.02719v2.pdf
 source_sha256: 1803d10aa55c18cf
-doc_brief: "On the Palais–Smale condition in geometric knot theory — We prove that various families of energies relevant in geometric knot theory satisfy"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.929
-latex_coverage_ratio: 0.881
+latex_coverage_ratio: 0.993
+doc_brief: "On the Palais-Smale condition in geometric knot theory — We prove that various families of energies relevant in geometric knot theory satisfy the Palais–Smale condition (PS) on submanifolds of"
 ---
 We start with the Palais--Smale condition for linear combinations of the
 bending energy \cref{eq:bending-energy} with any energy contained in

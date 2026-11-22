@@ -1,0 +1,102 @@
+real x03=s*cos(pi/4+theta);
+real y03=s*sin(pi/4+theta );
+real x08=s*cos(pi—theta);
+
+real y08=s*sin(pi—theta);
+
+real x05=s*cos(pi/2+theta);
+real y05=s*sin(pi/2+theta);
+real xl0=s*cos(5*pi/4—theta
+
+real yl0=s*sin(5*pi/4—theta);
+real x07=sxcos(3*pi/4+theta);
+
+i/4—theta
+real yl2=s*sin(6*pi/4—theta
+
+real x12=s*cos(6*p
+
+)
+( )
+( )
+real y07=s*sin(3*pi/4+theta )
+( )
+( )
+
+real x09=s*cos(pi+theta);
+real y09=s*sin(pi+theta);
+real xl4=s*cos(7*pi/4—theta);
+real yl4=s*sin(7*pi/4—theta);
+)
+)
+
+(
+
+real xll=s*cos(5«pi/4+theta
+real yll=s*sin(5*pi/4+theta);
+real xl6=s*cos(theta);
+
+real yl6=s*sin(—theta);
+
+real x13=s*cos(6*pi/4+theta);
+real yl3=s*sin(6«pi/4}theta);
+real x02=s*cos(pi/4—theta);
+real y02=s*sin(pi/4—theta);
+real x15=s*cos(7*pi/4+theta);
+real yl5=s*sin(7*pi/4+theta);
+real x04=s*cos(pi/2—theta);
+real y04=s*sin(pi/2—theta);
+
+border Gl (t=1l«xpi/8,7*pi/8) { x=cxtr*cos(t); y=cyt+r*sin(t);};
+
+border G2 (t=7*pi/8,ll*pi/8) { x=cos(pi/4)*(cx+r*cos(t))—sin(pi/4)*(—cy—r*sin(t));
+y=sin(pi/4)*(cx+r*cos(t))+cos(pi/4)*(—cy—r«*sin(t));};
+
+border G3 (t=1ll*pi/8,7*pi/8) { x=cos(pi/4)*(cx+r*cos(t))—sin(pi/4)*(cy+r*sin(t));
+y=sin(pi/4)*(cx+r*cos(t))+cos(pi/4)*(cy+r*sin(t));};
+
+border G4 (t=7*pi/8,ll*pi/8) { x=cos(pi/2)*(cx+r*cos(t))—sin(pi/2)*(—cy—r*sin(t));
+y=sin (pi/2)*(cx+r*cos(t))+cos(pi/2)*(—cy—r«*sin(t));};
+
+border G5 (t=11l*pi/8,7*pi/8) { x=cos(pi/2)*(cx+r*cos(t))—sin(pi/2)*(cy+r*sin(t));
+y=sin(pi/2)*(cx+r*cos(t))+cos(pi/2)*(cy+r*sin(t));};
+
+border G6 (t=7*pi/8,l1l*pi/8) { x=cos(3* pi/4)*(cx}r*cos(t))—sin(3*pi/4)*(—cy—r«*sin(t));
+y=sin (3% pi /4)*(cx+r*cos(t))+cos(3* pi/4)*(—cy—r«*sin(t));};
+
+border G7 (t=ll*pi/8,7*pi/8) { x=cos(3*pi/4)*(cx+r*cos(t))—sin(3*pi/4)*(cyt+r*sin(t));
+y=sin (3* pi /4)*(cx+r*cos(t))+cos(3* pi/4)*(cy+r*sin(t));};
+
+border G8 (t=7*pi/8,ll*pi/8) { x=cos(pi)*(cx}+r*cos(t))—sin(pi)*(—cy—r*sin(t));
+y=sin (pi) *(cx+r*cos(t))+cos(pi)*(—cy—r«*sin(t));};
+
+border G9 (t=1l*xpi/8,7*pi/8) { x=cos(pi)*(cx}+r*cos(t))—sin(pi)*(cy+r*sin(t));
+y=sin (pi) *(cx+r*cos(t))+cos(pi)*(cy+resin(t));};
+
+border G10 (t=7*pi/8,11*pi/8) { x=cos(5*pi/4)*(cx+r*cos(t))—sin(5* pi/4)*(—cy—re*sin(t));
+y=sin (5% pi /4)*(cx+r*cos(t))+cos(5* pi/4)*(—cy—r*sin(t));};
+
+border G11 (t=1l*pi/8,7*pi/8) { x=cos(5*pi/4)*(cx+r*cos(t))—sin(5*pi/4)*(cyt+r*sin(t));
+y=sin (5* pi /4)*(cx+r*cos(t))+cos(5* pi/4)*(cy+r*sin(t));};
+
+border G12 (t=7*«pi/8,11*pi/8) { x=cos(6*pi/4)*(cx}r*cos(t))—sin (6* pi/4)*(—cy—re*sin(t));
+y=sin (6* pi /4)*(cx+r*cos(t))+cos(6* pi/4)*(—cy—r«*sin(t));};
+
+border G13 (t=1l*pi/8,7*pi/8) { x=cos(6*pi/4)*(cx+r*cos(t))—sin(6*pi/4)*(cy+r*sin(t));
+y=sin (6 pi /4)*(cx+r*cos(t))+cos(6* pi /4)*(cy+r*sin(t));}3
+
+border G14 (t=7«pi/8,11*pi/8) { x=cos(7*pi/4)*(cx}r*cos(t))—sin(7* pi/4)*(—cy—re*sin(t));
+y=sin (7* pi /4)*(cx+r*cos(t))+cos(7* pi/4)*(—cy—r*sin(t));};
+
+border G15 (t=1l*pi/8,7*pi/8) { x=cos(7*pi/4)*(cx+r*cos(t))—sin(7*pi/4)*(cyt+r*sin(t));
+y=sin (7* pi /4)*(cx+r*cos(t))+cos(7*pi/4)*(cy+r*sin(t));};
+
+border G16 (t=7*pi/8,11*pi/8) { x=cxjr*cos(t); y=-cy—r*sin(t);};
+
+plot (G1(n)+G2(n)+G3(n)+G4(n)+G5(n)+G6(n)+G7(n)+G8(n)+G9(n)+G10(n)+G11(n)+G12(n)+G13(n)
++G14(n)+G15(n)+G16(n));
+
+mesh Th=buildmesh (G1(n)+G2(n)+G3(n)+G4(n)+G5(n)+G6(n)+G7(n)+G8(n)+G9(n)+G10(n)+G11(n)
++G12(n)+G13(n)+G14(n)+G15(n)+G16(n) , fixeborder=true );
+
+126

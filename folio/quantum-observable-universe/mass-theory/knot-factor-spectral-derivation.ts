@@ -3,12 +3,15 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:knot-factor-spectral-form",
   title:
-    "Knot factor $a_K$ as a chirality-block Plancherel pairing",
+    "Knot factor $a_K$ as a central Gram pairing",
   lean: {
     ref: "qou:QOU.BraidKnot.knot_factor_spectral_form",
     validation: "not_checked",
   },
-  uses: ["rem:gram-matrix-spectral-connection"],
+  // rem:gram-matrix-spectral-connection dropped from uses[] 2026-11-20 (owner choice, bean qou-tm3c):
+  // not cited in the statement or proof. A remark carries no premise; the edge only put this block
+  // downstream of a conjecture.
+  uses: [],
   tags: [
     "knot-factor",
     "chirality",
@@ -21,6 +24,19 @@ export default proposition({
     "no-ad-hoc-fits",
   ],
   authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-11-16",
+      body:
+        "**Restated 2026-11-16 (QA finding: da-non-sequitur, critical).** The block " +
+        "previously set $a_K = G_{\\beta,\\beta^*}/G_{\\mathbf{1},\\mathbf{1}}$ with weights " +
+        "$\\dim_q^2 V_\\lambda/[n]_q!$. At $\\beta = \\mathbf{1}$ that gave " +
+        "$1 = \\sum_\\lambda \\dim_q^2 V_\\lambda/[n]_q!$, which the block itself said is false " +
+        "for $q \\neq 1$, and the proof treated a braid as central. The knot factor is now " +
+        "defined through the central projection $\\pi$, with weights $w_\\lambda = \\tau(e_\\lambda)$, " +
+        "which sum to $1$. No compute consumes this formula: the $a_K$ scripts " +
+        "(`chirality_avg_content_atomic.py`, `a_K_via_lp_dual`) use their own definitions.",
+    },
     {
       kind: "refined-framing",
       date: "2026-08-09",

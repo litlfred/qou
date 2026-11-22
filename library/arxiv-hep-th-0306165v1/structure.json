@@ -8,7 +8,7 @@
   "pages": 67,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -20,12 +20,12 @@
    "stamp_date": "17 Jun 2003"
   },
   "doi": null,
-  "title": "arXiv:hep-th/0306165v1 17 Jun 2003",
+  "title": "Three-Dimensional Quantum Gravity, Chern-Simons Theory, and the A-Polynomial",
   "authors_raw": "Chern-Simons Theory, And",
   "title_lines": [
    "Three-Dimensional Quantum Gravity"
   ],
-  "abstract": "We study three-dimensional Chern-Simons theory with complex gauge group SL(2,C), which has many interesting connections with three-dimensional quantum gravity and ge- ometry of hyperbolic 3-manifolds. We show that, in the presence of a single knotted Wilson loop in an in\ufb01nite-dimensional representation of the gauge group, the classical and quan- tum properties of such theory are described by an algebraic curve called the A-polynomial of a knot. Using this approach, we \ufb01nd some new and rather surprising relations be- tween the A-polynomial, the colored Jones polynomial, and other invariants of hyperbolic 3-manifolds. These relations generalize the volume conjecture and the Melvin-Morton- Rozansky conjecture, and suggest an intriguing connection between the SL(2,C) partition function and the colored Jones polynomial. June 2003",
+  "abstract": "We study three-dimensional Chern-Simons theory with complex gauge group SL(2,C), which has many interesting connections with three-dimensional quantum gravity and ge- ometry of hyperbolic 3-manifolds. We show that, in the presence of a single knotted Wilson loop in an inﬁnite-dimensional representation of the gauge group, the classical and quan- tum properties of such theory are described by an algebraic curve called the A-polynomial of a knot. Using this approach, we ﬁnd some new and rather surprising relations be- tween the A-polynomial, the colored Jones polynomial, and other invariants of hyperbolic 3-manifolds. These relations generalize the volume conjecture and the Melvin-Morton- Rozansky conjecture, and suggest an intriguing connection between the SL(2,C) partition function and the colored Jones polynomial. June 2003",
   "docinfo": {
    "Title": "arXiv:hep-th/0306165v1  17 Jun 2003",
    "Producer": "GPL Ghostscript 10.01.2",
@@ -43,7 +43,8 @@
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:hep-th/0306165v1 17 Jun 2003"
  },
  "toc": [
   {
@@ -398,7 +399,7 @@
   },
   {
    "level": 2,
-   "title": "A Contribution of the \u201cHyperbolic\u201d Flat Connection",
+   "title": "A Contribution of the “Hyperbolic” Flat Connection",
    "page": 50,
    "source": "inferred",
    "number": "6.4",
@@ -429,7 +430,7 @@
    "title": "The BTZ Black Hole",
    "page": 53,
    "source": "inferred",
-   "number": "A",
+   "number": "Appendix A",
    "confidence": 0.75,
    "evidence": [
     "style",
@@ -443,7 +444,7 @@
    "title": "Quantization for Torus Knots",
    "page": 59,
    "source": "inferred",
-   "number": "B",
+   "number": "Appendix B",
    "confidence": 0.75,
    "evidence": [
     "style",
@@ -485,7 +486,7 @@
   {
    "kind": "figure",
    "number": "2",
-   "title": "In the Hartle-Hawking no-boundary proposal, the \u201canalytic continuation\u201d across a surface \u03a3 describes a real tunneling from \u201cnothing\u201d to a universe with \u201cspace\u201d \u03a3",
+   "title": "In the Hartle-Hawking no-boundary proposal, the “analytic continuation” across a surface Σ describes a real tunneling from “nothing” to a universe with “space” Σ",
    "page": 7,
    "confidence": 0.7,
    "evidence": [
@@ -533,7 +534,7 @@
   {
    "kind": "figure",
    "number": "5",
-   "title": "The longitude \u03b3l and the meridian \u03b3m furnish a basis of the peripheral",
+   "title": "The longitude γl and the meridian γm furnish a basis of the peripheral",
    "page": 15,
    "confidence": 0.7,
    "evidence": [
@@ -557,7 +558,7 @@
   {
    "kind": "figure",
    "number": "6",
-   "title": "The volumes of the hyperbolic 3-manifolds M(p, q) obtained by Dehn surgery on the \ufb01gure-eight knot converge to the volume of the cusped manifold",
+   "title": "The volumes of the hyperbolic 3-manifolds M(p, q) obtained by Dehn surgery on the ﬁgure-eight knot converge to the volume of the cusped manifold",
    "page": 18,
    "confidence": 0.7,
    "evidence": [
@@ -581,7 +582,7 @@
   {
    "kind": "figure",
    "number": "8",
-   "title": "The manifold M is a connected sum of the 3-manifolds M+ and M\u2212, joined",
+   "title": "The manifold M is a connected sum of the 3-manifolds M+ and M−, joined",
    "page": 31,
    "confidence": 0.7,
    "evidence": [
@@ -629,7 +630,7 @@
   {
    "kind": "figure",
    "number": "12",
-   "title": "The Euclidean BTZ black hole has a geometry of the solid torus, M \u223c=",
+   "title": "The Euclidean BTZ black hole has a geometry of the solid torus, M ∼=",
    "page": 54,
    "confidence": 0.7,
    "evidence": [
@@ -1262,25 +1263,13 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 112,
-   "n_words": 10,
+   "n_chars": 242,
+   "n_words": 26,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-000-11-chern-simons-theory",
-   "number": "1.1",
-   "title": "Chern-Simons Theory",
-   "level": 2,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 104,
-   "n_words": 13,
-   "label_start": null,
-   "label_end": null
-  },
-  {
-   "id": "sec-001-abstract",
+   "id": "sec-000-abstract",
    "number": null,
    "title": "Abstract",
    "level": 1,
@@ -1292,14 +1281,26 @@
    "label_end": "1"
   },
   {
-   "id": "sec-002-1-introduction-and-motivation",
+   "id": "sec-001-1-introduction-and-motivation",
    "number": "1",
    "title": "Introduction and Motivation",
    "level": 1,
    "page_start": 2,
+   "page_end": 2,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "sec-002-11-chern-simons-theory",
+   "number": "1.1",
+   "title": "Chern-Simons Theory",
+   "level": 2,
+   "page_start": 2,
    "page_end": 4,
-   "n_chars": 4105,
-   "n_words": 727,
+   "n_chars": 4025,
+   "n_words": 716,
    "label_start": "1",
    "label_end": "3"
   },
@@ -1570,7 +1571,7 @@
   {
    "id": "sec-025-64-a-contribution-of-the-hyperbolic-flat-connect",
    "number": "6.4",
-   "title": "A Contribution of the \u201cHyperbolic\u201d Flat Connection",
+   "title": "A Contribution of the “Hyperbolic” Flat Connection",
    "level": 2,
    "page_start": 50,
    "page_end": 53,
@@ -1592,8 +1593,8 @@
    "label_end": "52"
   },
   {
-   "id": "sec-027-a-the-btz-black-hole",
-   "number": "A",
+   "id": "sec-027-appendix-a-the-btz-black-hole",
+   "number": "Appendix A",
    "title": "The BTZ Black Hole",
    "level": 1,
    "page_start": 53,
@@ -1604,8 +1605,8 @@
    "label_end": "58"
   },
   {
-   "id": "sec-028-b-quantization-for-torus-knots",
-   "number": "B",
+   "id": "sec-028-appendix-b-quantization-for-torus-knots",
+   "number": "Appendix B",
    "title": "Quantization for Torus Knots",
    "level": 1,
    "page_start": 59,
@@ -1634,7 +1635,7 @@
   "toc_entries": 30,
   "toc_inferred_entries": 30,
   "toc_inferred_mean_confidence": 0.74,
-  "toc_inferred_empty_share": 0.033,
+  "toc_inferred_empty_share": 0.067,
   "toc_inferred_method": "font",
   "figure_entries": 15,
   "figure_sequence_gaps": [],
@@ -1643,6 +1644,7 @@
    "items": []
   },
   "sections": 31,
-  "chars_total": 125445
+  "chars_total": 125391,
+  "furniture_lines_stripped": 0
  }
 }

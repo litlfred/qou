@@ -8,6 +8,7 @@ pages: 47-49
 source_pdf: symmetry-04-00039-v3.pdf
 source_sha256: 1aa8a81916887f8e
 toc_source: inferred
+doc_brief: "Knots on a Torus: A Model of the Elementary Particles — Two knots; just two rudimentary knots, the unknot and the trefoil."
 ---
 We now return to the detailed particle occupancy of the icoshedral surface. In particular, to round 
 out this section, we need to illustrate what it is that is emplaced upon loci in the triangular faces of the 

@@ -1,0 +1,55 @@
+406 Combinatorial applications
+
+methods may then be used to determine x,y, and C as explicit functions of
+A = s/r, giving asymptotics for the number of HCPs that are uniform as long
+as s/r remains in a compact subinterval of (0, 1). For instance, when A = 1/2
+the smooth critical points (x, y) satisfy 3x? + 18x — 5 and 75y? — 288y + 256,
+with the contributing singularity occurring at
+
+(X0,¥0) = | 2 3, aoe) = (0.265986, 1.397442),
+
+3 25
+
+and a floating point computation gives dyn/2 ~ (0.2373 ...)(3.1803...)"n7"/?.
+Note that the exponential growth of 3.1803... in this case is only slightly less
+than the exponential growth 3.2055... for all HCPs — a reflection of the fact
+that the exponential growth varies quadratically around its maximum.
+
+We can also derive limit laws. For instance, let g(x) = Q(x, 1) = 1-5x+7x?-
+433 and let a ~ 0.3120 be the root of q with minimum modulus. Theorem 12.33
+below, with the roles of x and y switched, proves that the number of rows k of
+a uniformly chosen HCP of total size n satisfies k/n — m in probability, where
+
+_ yOlay) _ 5-9a+ 11a? 1
+
+~ aQa,y) 4(5— 14a+ 12a) 2.207..."
+
+In other words, the average row size converges to a little over 2.2.
+
+4
+
+Example 12.24 (Symmetric Eulerian numbers). The symmetric Eulerian num-
+bers A(r, s) count the number of permutations of the set [r+s+1] = {1,2,...,7r+
+s+ 1} with precisely r descents, and admit the exponential generating function
+
+x
+
+e*-—e A(r, 5)
+POY) = Ser = » . (12.17)
+
+1s!
+150 rls:
+
+see [Com74, page 246] and [GJ04, p. 2.4.21]. To represent the numerator and
+denominator of F as analytic functions with no common divisor we factor out
+aterm x—y from each, writing F(x, y) = P(x, y)/Q(x, y) for P = (e*-e”)/(x-y)
+and Q = (xe’ — ye*)/(x — y). We know by its combinatorial definition that the
+power series coefficients of F are nonnegative, and the power series expansion
+of Q is aperiodic, so the results of Section 6.4 imply that the minimal points of
+F have positive coordinates. The graph of Q in this quadrant of R? is monotone
+decreasing with x and asymptotic to both axes; see Figure 12.5.
+
+It can be verified by a direct computation that the singular variety of F is
+smooth, and the quantity Q in the asymptotic expansion (9.7) does not vanish
+at positive real points — in fact, Q(x, y) reaches its minimum value of e/12 at
+the point (1,1). The logarithmic gradient of Q at any point (x,y) in the first

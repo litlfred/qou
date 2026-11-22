@@ -1,0 +1,1 @@
+LetA be an Auslander-Gorenstein noetherian k-algebra of injec- tive dimension n. Assume A has a ﬁltration such that grA is an AS-Gorenstein noetherian connected graded k-algebra. Then 1. The prime radical n is weakly invariant. 2. If p is a minimal prime then CdimA/p =n. 3. A has a quasi-Frobenius ring of fractions.

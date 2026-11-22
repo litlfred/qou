@@ -1,0 +1,59 @@
+6.4 Results
+
+with coefficients
+49 3 3 1
+
+W=s W= 5 2 = 20 3 = 90° (6.14)
+
+36° 2’
+The lattice artifacts due to the free Hamiltonian start at O(a’). At LO, we have a contact interaction in
+the two-boson sector,
+
+Cc
+VWo=z DP m:. (6.15)
+
+where p(n) = a'(n)a(n) and the :: symbols indicate normal ordering where the annihilation operators
+stand to the right and the creation operators stand to the left. The lattice contact interaction is tuned to the
+same value as the continuum-limit interaction, Cp. At NLO we have a finite renormalization of the LO
+interaction,
+
+AC,
+VnLo = > >: pn):, (6.16)
+n
+
+which is sufficient to cancel the function A,(a) in Eq. (6.10).
+At N2LO, two additional operators are required in the two-boson sector. The first is proportional to
+the square of the transferred momentum between particles,
+
+Ce
+Vestoge = 75 Dy PLM) [al + 1) + pla ~ 1) ~ 2p(n)] (6.17)
+
+and it removes the residual energy dependence C,(a) in Eq. (6.10) for on-shell two-boson scattering. The
+second N2LO operator is a Galilean-invariance-restoring (GIR) term that is proportional to the square of
+the total momentum,
+
+Vyoto.oir = ~ “air [at Dan + Datnatn) + al (n= Ya" (n = Danan) a8)
+
+~2a" (na (n)a(n)a(n)| :
+
+We use this operator to correct the two-boson dispersion relation on the lattice, thereby removing the
+B,(a) term in Eq. (6.10). One three-boson interaction is also needed at order N2LO,
+
+Cc
+VyoLo,3b = ~ »: p(n):, (6.19)
+n
+
+which cancels the contribution the function A3(a) in Eq. (6.11). In all of our lattice calculations, we must
+also careful that finite volume errors are not being confused with lattice discretization errors. To this end,
+we always take the volume to be sufficiently large so that the finite volume errors are negligible.
+
+6.4 Results
+
+We now present lattice results at LO, NLO and N2LO and the discrepancies that remain when compared
+with the zero-range continuum limit. All continuum observables are calculated with Cy = —0.1 and
+m = 938.92 MeV, which give binding energies roughly comparable to that of the deuteron, triton and
+helium-4. Of course, in the real world there is no five-body nucleonic state analogous to the five-boson
+bound state we consider here. Nevertheless, our analysis of residual lattice errors for this bosonic system
+will demonstrate the steps needed for systematic lattice improvement in nuclear lattice simulations.
+
+73

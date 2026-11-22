@@ -9,15 +9,17 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Complexity Landscape and Feasibility",
-  "pageStart": 19,
-  "pageEnd": 20,
+  "title": "Octonionic Model: Formal Obstructions and Limits",
+  "pageStart": 17,
+  "pageEnd": 18,
   "contains": [
     "library/quaternioms/blocks/prose-sec-019",
-    "library/quaternioms/blocks/prop-sec-019-01",
-    "library/quaternioms/blocks/remark-sec-019-02"
+    "library/quaternioms/blocks/lem-sec-019-01",
+    "library/quaternioms/blocks/prop-sec-019-02",
+    "library/quaternioms/blocks/thm-sec-019-03",
+    "library/quaternioms/blocks/cor-sec-019-04"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/quaternioms",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/quaternioms",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/quaternioms/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/quaternioms/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,6 +1,6 @@
 ---
 doc_id: agt-v3-n1-p17-p
-doc_title: "Skein-theoretical derivation of some formulas of Habiro Introduction"
+doc_title: "Skein-theoretical derivation of some formulas of Habiro"
 section_id: sec-006-references
 section_title: "References"
 section_number: null
@@ -8,6 +8,7 @@ pages: 20-20
 source_pdf: agt-v3-n1-p17-p.pdf
 source_sha256: df196f0a732ad6b9
 toc_source: inferred
+doc_brief: "Skein-theoretical derivation of some formulas of Habiro — We use skein theory to compute the coeﬃcients of certain power series considered by Habiro in his theory of sl2 invariants of integral homol"
 ---
 [A]
 H. Abchir. TQFT invariants at inﬁnity for the Whitehead manifold. In: Knots

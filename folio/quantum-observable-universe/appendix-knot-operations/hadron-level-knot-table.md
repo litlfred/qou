@@ -15,5 +15,5 @@ See [Table: Hadron-level knot decomposition for nucleons + 14 atoms](#tbl:hadron
 All 19 atoms pass the Frobenius positivity check ($G \cdot \vec{c} \geq 0$),
 confirming that the hadron-level NF lies in the physical cone of $H_3(q)$.
 
-The NF coefficients for each atom (6 values) are in the computation
-witness `hadron-knot-table.witness.json`.
+The NF coefficients for each atom (6 values) are recorded in the
+accompanying computation.

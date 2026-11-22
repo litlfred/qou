@@ -1,0 +1,1 @@
+There exists a bijective correspondence ω ↔µ between D and M, which is also a bijection D0 ↔M0. It is characterized by the relation exp Z R σ′(x)dx x −z = Z R µ(dx) 1 −x z , (8.1) where z ∈C \ I, where I ⊂R stands for a suﬃciently large interval, and, as usual, σ(x) = 1 2(ω(x) −|x|).

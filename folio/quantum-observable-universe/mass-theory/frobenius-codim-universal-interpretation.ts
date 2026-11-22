@@ -10,7 +10,7 @@ export default remark({
   // axiom rather than in the identity, and cites it directly.
   uses: [
     "thm:frobenius-codim-universal",
-    "prop:partition-sum-proton-residual",
+    "conj:partition-sum-proton-residual",
     "def:quantum-universe",
   ],
 });

@@ -36,7 +36,7 @@ prove the extremal statement, and nothing here is wired.
 Base ring (§7c): the transport core is a rational identity — generic
 `[Field K]`. Only the limit statement is archimedean and lives over `ℝ`.
 
--- Ref: [manuscript] docs/audits/2026-08-01-ksel2id-tropical-transport.md;
+-- Ref: [leitner2026] docs/audits/2026-08-01-ksel2id-tropical-transport.md;
 --      docs/audits/2026-08-01-ksel2id-u1-promotion.md §4 gap 1;
 --      predicted-spectra, conj:schwinger-measure-computational-time.
 -/

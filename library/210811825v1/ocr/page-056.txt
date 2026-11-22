@@ -1,0 +1,54 @@
+O
+
+and the decomposition of our point pair invariant (see [56, Proposition 9])
+
+kp(z, w) = SO A(t) e;(2)e;(w)-
+
+j=0
+Definition 2.46 (Trace class) Let Fp be a fundamental domain for T \ H as above.
+
+The integral operator with K with kp(z, w) as its kernel are of trace class if kp(z, w) is
+
+absolutely integrable for z = w. The trace of K is
+
+TrK = kp(z, z)dps.
+J Fp
+
+Selberg’s trace formula allows us to compute TrK in two different ways; one using the
+spectral decomposition of kp, and the other using the geometry of I’. First, we integrate
+
+over the spectral decomposition of kp, that is
+
+= LMG Yes (z
+
+to get
+
+TrK = S~ A(t;)
+
+since the y; are orthonormal. This gives us the spectral side of the formula. Now recall
+
+= > k(y2, 2).
+
+yer
+
+Taking the trace of K, we get
+
+TrK = > [ kr (yz, z)dp.
+
+yer *
+
+Let [7] denote the conjugacy class of an element of I’, that is
+bn) = {7 €T|4 =77771 for some 7 ET}.
+
+We define the partial kernel over a conjugacy class to be
+
+Note that
+
+kp(z, 2) = > kiy(z, 2) and Trk = So TrKy,
+b] bl
+
+where K{,) is the integral operator that has kernel kj). The centralizer of ¥ is
+
+Z,={r ET |ty= 77}.
+
+46

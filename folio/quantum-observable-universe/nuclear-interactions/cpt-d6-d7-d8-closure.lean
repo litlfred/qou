@@ -78,7 +78,7 @@ preserves the Markov trace.
 
 Named over caller-supplied data, **not asserted** — this is the conjecture.
 The class below is its hypothesis-carrying form. -/
--- Ref: [manuscript] conj:cpt-d6-d7-d8-closure
+-- Ref: [leitner2026] conj:cpt-d6-d7-d8-closure
 -- Ref: [wigner1937], [jones1987], [kassel1995]
 def cpt_closure {B R : Type*} (markovTrace : B → R) (cptComposite : B → B) :
     Prop :=
@@ -94,8 +94,8 @@ action.  All three are **parameters**, so a `[CPTClosure R B tr cpt]` binder
 is a hypothesis about the caller's trace and action.
 
 No instance is supplied; the class *is* the conjecture. -/
--- Ref: [manuscript] prop:cpt-orbit-closure-density (substrate-side density)
--- Ref: [manuscript] def:bar-involution (categorical CPT building block)
+-- Ref: [leitner2026] prop:cpt-orbit-closure-density (substrate-side density)
+-- Ref: [leitner2026] def:bar-involution (categorical CPT building block)
 -- Ref: [wigner1937], [jones1987], [kassel1995]
 class CPTClosure (R : Type*) [CommRing R] (B : Type*)
     (markovTrace : B → R) (cptComposite : B → B) : Prop where
@@ -113,9 +113,9 @@ conjecture"*, and it is derived rather than assumed.
 What remains open is each component hypothesis — that the colour-sheet
 flavour swap, the braid-diagram mirror and Markov-trace word reversal are the
 right realisations and are individually trace-preserving. -/
--- Ref: [manuscript] conj:c-from-color-flavor-swap
--- Ref: [manuscript] conj:p-from-braid-mirror
--- Ref: [manuscript] conj:t-from-trace-cyclicity
+-- Ref: [leitner2026] conj:c-from-color-flavor-swap
+-- Ref: [leitner2026] conj:p-from-braid-mirror
+-- Ref: [leitner2026] conj:t-from-trace-cyclicity
 theorem cptClosure_of_components {B R : Type*} (tr : B → R) (C P T : B → B)
     (hC : PreservesMarkovTrace tr C)
     (hP : PreservesMarkovTrace tr P)

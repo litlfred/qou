@@ -7,10 +7,11 @@
   "bytes": 1798241,
   "pages": 23,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,21 +21,29 @@
    "stamp_date": "21 Sep 2010"
   },
   "doi": null,
-  "title": "KEROV\u2019S CENTRAL LIMIT THEOREM FOR SCHUR-WEYL MEASURES OF PARAMETER \u03b1 = 1/2 PIERRE-LO\u00cfC M\u00c9LIOT",
-  "authors_raw": null,
+  "title": "KEROV’S CENTRAL LIMIT THEOREM FOR SCHUR-WEYL MEASURES OF PARAMETER α = 1/2",
+  "authors_raw": "PIERRE-LOÏC MÉLIOT",
   "title_lines": [
-   "KEROV\u2019S CENTRAL LIMIT THEOREM FOR SCHUR-WEYL",
-   "MEASURES OF PARAMETER \u03b1 = 1/2",
-   "PIERRE-LO\u00cfC M\u00c9LIOT"
+   "KEROV’S CENTRAL LIMIT THEOREM FOR SCHUR-WEYL",
+   "MEASURES OF PARAMETER α = 1/2"
   ],
-  "abstract": "In this article, we show that Kerov\u2019s central limit theorem related to the \ufb02uctuations of Young diagrams under the Plancherel measure extends to the case of Schur-Weyl measures, which are the probability measures on partitions associated to the representations of the symmetric groupsSn on tensor products of vector spacesV \u2297n (see [Bia01]). The proof is inspired by the one given in [IO02] for the Plancherel measure, and it relies on the combinatorics of the algebra of observables of diagrams; we shall also use \u015aniady\u2019s theory of cumulants of observables (cf. [\u015a06]). Givena\ufb01nitegroup Ganda\ufb01nite-dimensionalcomplexlinearrepresentation V ofG, thedecomposition in irreducible componentsV =\u2a01 \u03bb\u2208 \u02c6Gm\u03bbV\u03bb yields a probability measure on the set\u02c6G of isomorphism classes of irreducible representations ofG: P V [ \u03bb\u2208 \u02c6G ] = m\u03bb dimV\u03bb dimV In particular, whenG = Sn is the symmetric group of permutations of[ [1,n ] ], a reducible representation of Sn yields a probability measure on the setPn = \u02c6Sn of integer partitions of sizen. WhenV = C Sn is the (left) regular representation, one obtains the so-called Plancherel measure, which has been extensively studied in the n \u2192 \u221easymptotic; see for instance [IO02]. In this paper, we focus on the Schur- W eyl measures that correspond to the representations(C N)n \u21b6 Sn, where Sn acts on the right by permutation of the letters of the simple tensors: (v1\u2297v2\u2297\u00b7\u00b7\u00b7\u2297 vn)\u00b7\u03c3 =v\u03c3(1)\u2297v\u03c3(2)\u2297\u00b7\u00b7\u00b7\u2297 v\u03c3(n) By Schur-Weyl reciprocity, the probability measure on partitions associated to this representation is also a probability measure on irreducible representations ofGL(N, C ). The \ufb01rst order asymptotic of these measures whenn1/2\u2243 cN and n goes to in\ufb01nity has been determined by P. Biane in [Bia01]; we shall recall this in \u00a71, and by using the Robinson-Schensted-Knuth correspondence, we will also give a \u201ccombinatorial model\u201d for these probability measures. The asymptotics of the Plancherel measures on partitions correspond to the casec = 0, and for Plancherel measur",
+  "abstract": "In this article, we show that Kerov’s central limit theorem related to the ﬂuctuations of Young diagrams under the Plancherel measure extends to the case of Schur-Weyl measures, which are the probability measures on partitions associated to the representations of the symmetric groups Sn on tensor products of vector spaces V ⊗n (see [Bia01]). The proof is inspired by the one given in [IO02] for the Plancherel measure, and it relies on the combinatorics of the algebra of observables of diagrams; we shall also use Śniady’s theory of cumulants of observables (cf. [Ś06]). Given a ﬁnite group G and a ﬁnite-dimensional complex linear representation V of G, the decomposition in irreducible components V = L λ∈b G mλ Vλ yields a probability measure on the set bG of isomorphism classes of irreducible representations of G: PV h λ ∈bG i = mλ dim Vλ dim V In particular, when G = Sn is the symmetric group of permutations of [[1, n]], a reducible representation of Sn yields a probability measure on the set Pn = bSn of integer partitions of size n. When V = CSn is the (left) regular representation, one obtains the so-called Plancherel measure, which has been extensively studied in the n →∞asymptotic; see for instance [IO02]. In this paper, we focus on the Schur- Weyl measures that correspond to the representations (CN)n ↶Sn, where Sn acts on the right by permutation of the letters of the simple tensors: (v1 ⊗v2 ⊗· · · ⊗vn) · σ = vσ(1) ⊗vσ(2) ⊗· · · ⊗vσ(n) By Schur-Weyl reciprocity, the probability measure on partitions associated to this representation is also a probability measure on irreducible representations of GL(N, C). The ﬁrst order asymptotic of these measures when n1/2 ≃cN and n goes to inﬁnity has been determined by P. Biane in [Bia01]; we shall recall this in §1, and by using the Robinson-Schensted-Knuth correspondence, we will also give a “combinatorial model” for these probability measures. The asymptotics of the Plancherel measures on partitions correspond to the case ",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20211025211130Z",
-   "Creator": "LaTeX with hyperref package",
    "Producer": "pdfTeX-1.40.10",
-   "Title": ""
-  }
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20211025211130Z"
+  },
+  "title_raw": "KEROV’S CENTRAL LIMIT THEOREM FOR SCHUR-WEYL MEASURES OF PARAMETER α = 1/2",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "KEROV’S CENTRAL LIMIT THEOREM FOR SCHUR-WEYL MEASURES OF PARAMETER α = 1 / 2 Given a ﬁnite group G and a ﬁnite-dimensional complex linear representation V of G , the decomposition in irreducible components V = L G m λ V λ yields a probability measure on the set b G of isomorphism classes of irreduci",
+   "outline": "1. Schur-Weyl measures of parameter =1/2",
+   "text": "KEROV’S CENTRAL LIMIT THEOREM FOR SCHUR-WEYL MEASURES OF PARAMETER α = 1/2",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "KEROV’S CENTRAL LIMIT THEOREM FOR SCHUR-WEYL MEASURES OF PARAMETER α = 1/2 PIERRE-LOÏC MÉLIOT"
  },
  "toc": [
   {
@@ -42,105 +51,498 @@
    "title": "Schur-Weyl measures of parameter =1/2",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Observables of diagrams",
    "page": 5,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 1,
    "title": "Some computations around the limit shapes c",
    "page": 8,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 1,
    "title": "Gaussian concentration of measures on partitions",
    "page": 12,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 1,
    "title": "Moments of the deviations and Chebyshev polynomials of the second kind",
    "page": 13,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 1,
    "title": "An extension of Kerov's central limit theorem",
    "page": 21,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 1,
    "title": "References",
    "page": 23,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The Young diagram of the partition λ = (7, 5, 2, 2, 1)",
+   "page": 2,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "2"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "The standard tableaux of shape (3, 2)",
+   "page": 2,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "2"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The semistandard tableaux of shape (3, 2) and entries in [[1, 2]]",
+   "page": 3,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Function s 7→λ(s) associated to the Young diagram λ = (5, 4, 4, 1). This interpretation permits to rescale the Young diagrams, and in particular, we shall denote by λ∗",
+   "page": 4,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Limit shapes of the rescaled Young diagrams under Schur-Weyl measures of",
+   "page": 4,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "A continuous Young diagram ω and a rescaled version ωt",
+   "page": 6,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Deformations of the Wigner semicircle law corresponding to Schur-Weyl mea-",
+   "page": 8,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Partial sum of the 5000 ﬁrst terms of the random serie that deﬁnes the",
+   "page": 22,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "22"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-2-observables-of-diagrams",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 4846,
+   "n_words": 810,
+   "label_start": "1",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-000-1-schur-weyl-measures-of-parameter-12",
+   "number": "1",
+   "title": "Schur-Weyl measures of parameter =1/2",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 5,
+   "n_chars": 6752,
+   "n_words": 1346,
+   "label_start": "2",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-001-2-observables-of-diagrams",
    "number": "2",
    "title": "Observables of diagrams",
    "level": 1,
-   "page_start": 6,
-   "page_end": 12,
-   "n_chars": 16938,
-   "n_words": 3412
+   "page_start": 5,
+   "page_end": 8,
+   "n_chars": 5667,
+   "n_words": 1072,
+   "label_start": "5",
+   "label_end": "8"
   },
   {
-   "id": "sec-001-4-gaussian-concentration-of-measures-on-partitio",
+   "id": "sec-002-3-some-computations-around-the-limit-shapes-c",
+   "number": "3",
+   "title": "Some computations around the limit shapes c",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 12,
+   "n_chars": 8930,
+   "n_words": 1958,
+   "label_start": "8",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-003-4-gaussian-concentration-of-measures-on-partitio",
    "number": "4",
    "title": "Gaussian concentration of measures on partitions",
    "level": 1,
    "page_start": 12,
    "page_end": 13,
-   "n_chars": 3935,
-   "n_words": 634
+   "n_chars": 4052,
+   "n_words": 754,
+   "label_start": "12",
+   "label_end": "13"
   },
   {
-   "id": "sec-002-5-moments-of-the-deviations-and-chebyshev-polyno",
+   "id": "sec-004-5-moments-of-the-deviations-and-chebyshev-polyno",
    "number": "5",
    "title": "Moments of the deviations and Chebyshev polynomials of the second kind",
    "level": 1,
    "page_start": 13,
-   "page_end": 23,
-   "n_chars": 19124,
-   "n_words": 3665
+   "page_end": 21,
+   "n_chars": 17284,
+   "n_words": 3780,
+   "label_start": "13",
+   "label_end": "21"
   },
   {
-   "id": "sec-003-references",
+   "id": "sec-005-6-an-extension-of-kerovs-central-limit-theorem",
+   "number": "6",
+   "title": "An extension of Kerov's central limit theorem",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 23,
+   "n_chars": 2315,
+   "n_words": 398,
+   "label_start": "21",
+   "label_end": "23"
+  },
+  {
+   "id": "sec-006-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 23,
    "page_end": 23,
-   "n_chars": 3765,
-   "n_words": 496
+   "n_chars": 3794,
+   "n_words": 525,
+   "label_start": "23",
+   "label_end": "23"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 7,
-  "sections": 4,
-  "chars_total": 43762,
+  "toc_inferred_entries": 0,
+  "figure_entries": 8,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 8,
+  "chars_total": 53640,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "kerovschurweyl.tex",
    "tex_sections": 6,
-   "overlaid": 2,
+   "overlaid": 6,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -148,29 +550,60 @@
    },
    "sections": [
     {
-     "id": "sec-000-2-observables-of-diagrams",
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-schur-weyl-measures-of-parameter-12",
+     "title": "Schur-Weyl measures of parameter =1/2",
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-observables-of-diagrams",
      "title": "Observables of diagrams",
-     "prose_ratio": 0.558,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.97,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-001-4-gaussian-concentration-of-measures-on-partitio",
+     "id": "sec-002-3-some-computations-around-the-limit-shapes-c",
+     "title": "Some computations around the limit shapes c",
+     "prose_ratio": 0.94,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-4-gaussian-concentration-of-measures-on-partitio",
      "title": "Gaussian concentration of measures on partitions",
-     "prose_ratio": 0.994,
-     "coverage_ratio": 0.995,
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-5-moments-of-the-deviations-and-chebyshev-polyno",
+     "id": "sec-004-5-moments-of-the-deviations-and-chebyshev-polyno",
      "title": "Moments of the deviations and Chebyshev polynomials of the second kind",
-     "prose_ratio": 0.872,
-     "coverage_ratio": 0.997,
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-references",
+     "id": "sec-005-6-an-extension-of-kerovs-central-limit-theorem",
+     "title": "An extension of Kerov's central limit theorem",
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-references",
      "title": "References",
      "result": "no matching \\section"
     }

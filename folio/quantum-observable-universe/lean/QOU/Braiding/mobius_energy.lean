@@ -51,7 +51,7 @@ categorical action $\mathfrak{S}_q$
 $\star_q$ ([Definition](#def:q-hodge-star)).
 
     The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/mobius-energy.ts
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/mobius-energy.ts
 def mobius_energy [ctx : MobiusEnergyContext] :
     haveI := ctx.ringR; ctx.q = 1 → ctx.E_cat = ctx.c_topo * ctx.E_class :=
   ctx.claim_mobius_energy

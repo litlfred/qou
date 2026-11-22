@@ -7,7 +7,7 @@ import Mathlib.Tactic.Linarith
 # QOU.BaryonWeight.beta4_hook
 
 Canonical Lean declaration for content block
-[`prop:hook-weight-derivation`](../../../quantum-observable-universe/braids-and-knots/hook-weight-derivation.md): *QOU.BaryonWeight.beta4_hook*.
+[`conj:hook-weight-derivation`](../../../quantum-observable-universe/braids-and-knots/hook-weight-derivation.md): *QOU.BaryonWeight.beta4_hook*.
 
 The hook coefficient identity `β₄ = −½·w_{[2,2]}(4)` is a genuine
 algebraic relation: `β₄` is *defined* as `−½·w_{[2,2]}` (pattern A of
@@ -56,7 +56,7 @@ The identity `β₄ = −½·w_{[2,2]}` is **derived** by `ring` from the
 definition of `β₄`; the numerical bound `|β₄ + 0.083| < 0.005` is
 **derived** from the empirical weight bound `|w_{[2,2]} − 0.166| < 0.01`
 carried by `[Hook22Weight]` — the lone open input. -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hook-weight-derivation.ts
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/hook-weight-derivation.ts
 theorem beta4_hook [w : Hook22Weight] :
     beta4 = - (1 / 2) * w.w_22 ∧ |beta4 + 0.083| < 0.005 := by
   have hbeta : beta4 = - (1 / 2) * w.w_22 := rfl

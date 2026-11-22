@@ -1,0 +1,27 @@
+44, Maxwell's equation in H?.
+We now apply the Key Lemma to the proof of Maxwell's equation
+V XB = V + OE/at
+in H’. Inthe Key Lemma, we use the kernel function
+(a) = (—1/4) cscha ,
+which, as we noted earlier, is a fundamental solution of the shifted Laplacian on H ;
+Ao +o = 6.
+With this choice of kernel function, we have that
+(cosh a) o(a) = (—1/4n) cotha ,
+which differs from the fundamental solution of the Laplacian on H’ ,
+doa) = (—1/4x) (cotha — 1),
+
+only by a constant. Since we take the gradient of this function below, the
+difference is irrelevant.
+
+Hence with these choices, the Key Lemma reads
+Vy X {PxV(x) XVyp} — Vy {V(X) # Vs do}
+= &(x, y) (V(x) — < V(x), y>y).
+
+Keeping these choices of kernel functions, we now define the Biot-Savart operator
+by formula (3) of Theorem 2,
+
+BS(V)(y) = Jus Py V(x) XVyo(x, y) dx,
+
+for smooth, compactly supported vector fields V .
+
+87

@@ -47,8 +47,8 @@ Self-contained (imports `Mathlib.Tactic` only); the two source objects are resta
 as local `def`s and cited by PR number rather than imported (matches #4378 style,
 avoids building sibling oleans).
 
--- Ref: [manuscript] folio/quantum-observable-universe/lean/QOU/MassTheory/BorromeanThreeBodyCluster.lean (#4360; A=3 proved)
--- Ref: [manuscript] computations/deltalambda/a4-h12-brunnian-deficit-measure.witness.json (#4378; A=4 measured τ_L₄>1)
+-- Ref: [leitner2026] folio/quantum-observable-universe/lean/QOU/MassTheory/BorromeanThreeBodyCluster.lean (#4360; A=3 proved)
+-- Ref: [leitner2026] computations/deltalambda/a4-h12-brunnian-deficit-measure.witness.json (#4378; A=4 measured τ_L₄>1)
 -/
 import Mathlib.Tactic
 

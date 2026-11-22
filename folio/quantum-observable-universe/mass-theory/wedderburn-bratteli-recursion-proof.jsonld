@@ -2,20 +2,22 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prf-wedderburn-bratteli-recursion",
+  "@id": "papers/quantum-observable-universe/blocks/rem-wedderburn-bratteli-recursion-proof-sketch",
   "@type": [
-    "folio-assistant-core:Proof",
+    "folio-assistant-core:Remark",
     "doco:Section"
   ],
-  "label": "prf:wedderburn-bratteli-recursion",
-  "kind": "proof",
-  "title": "Proof of wedderburn bratteli recursion",
+  "label": "rem:wedderburn-bratteli-recursion-proof-sketch",
+  "kind": "remark",
+  "title": "Proof sketch: wedderburn bratteli recursion",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-wedderburn-bratteli-recursion"
+    "papers/quantum-observable-universe/blocks/conj-wedderburn-bratteli-recursion"
   ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-wedderburn-bratteli-recursion",
   "text": "wedderburn-bratteli-recursion-proof.md",
   "provenance": "authored"
 }

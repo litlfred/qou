@@ -1,0 +1,68 @@
+have ((Re D)? — (Re B)”) * ((Re B)? + (Im B)?) / cmod B~4 < 0
+using Im-product opposite il i2
+by simp
+hence ((Re D)? — (Re B)”) * ((Re B)? + (Im B)?) < 0
+by (simp add: divide-less-0-iff)
+hence (Re D)? < (Re B)?
+by (simp add: mult-less-0-iff not-sum-power2-lt-zero)
+thus ?thesis
+using H (A = D) <is-real Dy
+by auto
+qed
+next
+have «: (Vk. k * ImB=1—+k=0) — ImB=0
+apply (safe, erule-tac z=1 / Im B in allE)
+using divide-cancel-left by fastforce
+assume intersects-x-axis-cmat H
+hence Re D = 0 V (Re D)? < (Re B)?
+using H <A = D>
+by auto
+hence (Re D)? < (Re B)?
+using <is-real Dy line H «C = cnj By
+using not-z-azis *
+by (auto simp add: complex-eq-iff )
+hence ((Re D)? — (Re B)*) * ((Re B)? + (Im B)?) < 0
+by (metis add-cancel-left-left diff-less-eq mult-eq-0-iff mult-less-0-iff power2-eq-square power2-less-0 sum-squares-gt-zero-iff )
+thus Im (to-complex-cvec i1) * Im (to-complez-cvec i2) < 0
+using Im-product il i2
+using divide-eq-0-iff divide-less-0-iff prod.simps(2) to-complez-cvec-def zero-complez.simps(1) zero-less-norm-iff
+by fastforce
+qed
+qed
+thus ?thesis
+using assms <calc-ideal-points H = {i1, i2}» «il # i2>
+by auto
+qed
+
+end
+theory Poincare-Perpendicular
+
+imports Poincare-Lines-Azxis-Intersections
+begin
+
+9 H-perpendicular h-lines in the Poincaré model
+
+definition perpendicular-to-a-axis-cmat :: complea-mat = bool where
+[simp]: perpendicular-to-z-axis-cmat H +—+ (let (A, B, C, D) = H in is-real B)
+
+lift-definition perpendicular-to-x-axis-clmat :: circline-mat = bool is perpendicular-to-a-axis-cmat
+done
+
+lift-definition perpendicular-to-z-axis :: circline = bool is perpendicular-to-x-axis-clmat
+by transfer auto
+
+lemma perpendicular-to-x-axis:
+assumes is-poincare-line H
+shows perpendicular-to-z-axis H <—> perpendicular x-axis H
+using assms
+unfolding perpendicular-def
+proof (transfer, transfer)
+fix H
+assume hh: hermitean H \ H # mat-zero is-poincare-line-cmat H
+obtain A B C D where «: H = (A, B, C, D)
+by (cases H, auto)
+hence is-real A (cmod B)? > (cmod A)? H = (A, B, cnj B, A)
+using hermitean-elems|of A B C D] hh
+by auto
+
+114

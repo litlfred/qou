@@ -8,7 +8,9 @@ pages: 11-14
 source_pdf: 9609174v2.pdf
 source_sha256: 87885f4d03661f26
 toc_source: inferred
+doc_brief: "arXiv:hep-th/9609174v2 23 Sep 1996 — We prove the universality of correlation functions of chiral unitary and unitary ensembles of ran- dom matrices in the microscopic limit."
 ---
+Asymptotics of orthogonal polynomials
 We shall prove the following theorem‡ on the asymptotic behavior of these orthogonal polynomi-
 als:
 Theorem 2: Let {P (α)
@@ -359,4 +361,3 @@ r(t).
 (3.28b)
 Thus eqs. (3.4) hold also for α+1 after normalizing according to (3.26). Together with the results
 (3.19) and (3.24) for α = 0, this completes the proof of Theorem 2.
-3.2

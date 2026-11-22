@@ -1,0 +1,113 @@
+---
+doc_id: arxiv-1111.2828v2
+doc_title: "THE COMPLEX VOLUME OF SL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS"
+section_id: sec-016-51-the-geometry-of-the-ptolemy-coordinates
+section_title: "The geometry of the Ptolemy coordinates"
+section_number: 5.1
+pages: 16-17
+source_pdf: 1111.2828v2.pdf
+source_sha256: 90e2f5a9b978d403
+toc_source: outline
+text_source: latex
+latex_prose_ratio: 0.916
+latex_coverage_ratio: 0.979
+doc_brief: "THE COMPLEX VOLUME OF SL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — For a compact 3-manifold M with arbitrary (possibly empty) boundary, we give a parametrization of the set of conjugacy classes of"
+---
+\lbl{sub.geometry}
+We canonically identify each ordered $k$-simplex with a standard simplex
+\begin{equation}
+\Delta^k_n=\big\{(x_0,\dots,x_k)\in\R^{k+1}\bigm\vert 0\leq x_i\leq n,\,\sum_{i=0}^k x_i=n\big\}.
+\end{equation}
+
+Recall that a tuple $(g_0N,\dots,g_kN)$ has a Ptolemy coordinate for each tuple of $k+1$ non-negative integers summing to $n$. In other words, there is a Ptolemy coordinate for each integral point of $\Delta^k_n$. We denote the set of integral points in $\Delta^k_n$ by $\Delta^k_n(\Z)$.
+
+\begin{definition}
+\lbl{Ptolemyassignmentdefn}
+A \emph{Ptolemy assignment} on $\Delta^k_n$ is an assignment of a non-zero complex number $c_t$ to each integral point $t$ of $\Delta^k_n$ such that the $c_t$'s are the Ptolemy coordinates of some tuple $(g_0N,\dots,g_kN)\in C_k^{\gen}(G/N)$. 
+A Ptolemy assignment on $K$ is a Ptolemy assignment on each simplex $\Delta_i$ of $K$ such that the Ptolemy coordinates agree on identified faces.
+\end{definition}
+
+Note that a generically decorated boundary-unipotent representation
+determines a Ptolemy assignment on $K$. In Section~\ref{proofsection}, we
+show that every Ptolemy assignment is induced by a unique decorated
+representation. 
+
+\begin{lemma}
+\lbl{numberofsubsimplices}
+The number of elements in $\Delta^k_l(\Z)$ is $\binom{l+k}{k}$.
+\end{lemma}
+\begin{proof}
+The map $(a_0,\dots,a_k)\mapsto\{a_0+1,a_0+a_1+2,\dots,a_0+\dots+a_{k-1}+k\}$ gives a bijection between $T^k(l)$ and subsets of $\{1,\dots,l+k\}$ with $k$ elements.
+\end{proof}
+
+Let $e_i$, $0\leq i\leq k$, be the $i$th standard basis vector of $\Z^{k+1}$. For each $\alpha\in \Delta^k_{n-2}(\Z)$, the points $\alpha+2e_i$ in $\Delta^k_n$ span a simplex $\Delta^k(\alpha)$, whose integral points are the points $\alpha_{ij}:=\alpha+e_i+e_j$, see Figure~\ref{PtolemyFigure}. We refer to $\Delta^k(\alpha)$ as a \emph{subsimplex} of $\Delta^k_n$. 
+By Lemma~\ref{numberofsubsimplices}, $\Delta^3_n$ has $\binom{n+3}{3}$ integral points and $\binom{n+1}{3}$ subsimplices.
+\begin{figure}[htpb]
+$$
+\psdraw{SLrepFigures.1}{1.8in} \qquad
+\psdraw{SLrepFigures.2}{1.8in} \qquad
+\psdraw{SLrepFigures.3}{1.8in}
+$$
+\caption{The integral points on $\Delta^3_n$ for $n=2$, $3$ and $4$. The indicated subsimplices correspond to $\alpha=(0,1,0,0)$ and $\alpha=(0,1,1,0)$.}\lbl{PtolemyFigure}
+\end{figure}
+
+
+
+\begin{proposition}[{Fock-Goncharov~\cite[Lemma~10.3]{FockGoncharov}}]\label{PtolemyProposition}
+The Ptolemy coordinates of a generic tuple $(g_0N\comma g_1N\comma g_2N\comma g_3N)$ satisfy the \emph{Ptolemy relations}
+\begin{equation}\lbl{Ptolemyrelation}
+c_{\alpha_{03}}c_{\alpha_{12}}+c_{\alpha_{01}}c_{\alpha_{23}}=c_{\alpha_{02}}c_{\alpha_{13}},\quad \alpha\in \Delta^3_{n-2}(\Z).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Let $\alpha=(a_0,a_1,a_2,a_3)\in \Delta^3_{n-2}(\Z)$.
+By performing row operations, we may assume that the first $n-2$ rows of the $n\times (n-2)$ matrix 
+\begin{equation}\big(\{g_0\}_{a_0},\{g_1\}_{a_1},\{g_2\}_{a_2},\{g_3\}_{a_3}\big)\end{equation} 
+are the standard basis vectors. Letting $x_i$ and $y_i$ denote the last two entries of $(g_i)_{a_i+1}$, the Ptolemy relation for $\alpha$ is then equivalent to the (Pl\"{u}cker) relation
+\begin{equation}
+\det\begin{pmatrix}x_0&x_3\\y_0&y_3\end{pmatrix}\det\begin{pmatrix}x_1&x_2\\y_1&y_2\end{pmatrix}+
+\det\begin{pmatrix}x_0&x_1\\y_0&y_1\end{pmatrix}\det\begin{pmatrix}x_2&x_3\\y_2&y_3\end{pmatrix}=
+\det\begin{pmatrix}x_0&x_2\\y_0&y_2\end{pmatrix}\det\begin{pmatrix}x_1&x_3\\y_1&y_3\end{pmatrix},
+\end{equation}
+which is easily verified.
+\end{proof}
+
+Note that the Ptolemy coordinate assigned to the $i$th vertex of $\Delta^k_n$ is $\det(\{g_i\}_n)=\det(g_i)=1$. We shall thus often ignore the vertex points. Let $\dot\Delta^k_n(\Z)$ denote the non-vertex integral points of $\Delta^k_n$.
+The following is proved in Section~\ref{proofsection}.
+
+\begin{proposition}
+\lbl{uniquePtolemyassignment}
+For every assignment $c\colon\dot\Delta^3_n(\Z)\to\C^*$, $t\mapsto c_t$ satisfying the Ptolemy relations~\eqref{Ptolemyrelation}, there is a unique Ptolemy assignment on $\Delta_n^3$ whose Ptolemy coordinates are $c_t$.\qed
+\end{proposition}
+
+\begin{corollary} 
+The set of Ptolemy assignments on $K$ is an algebraic set $P_n(K)$ called the \emph{Ptolemy variety}. Its ideal is generated by the Ptolemy relations~\eqref{Ptolemyrelation} (together with an extra equation making sure that all Ptolemy coordinates are non-zero).\qed
+\end{corollary}
+
+\begin{remark} 
+It thus follows that Definition~\ref{Ptolemyassignmentdefn} agrees with Definition~\ref{Ptolemyassignmentdefnintro} when $k=3$. When $k>3$ and $n>2$ there are further relations among the Ptolemy coordinates. We shall not need these here.
+\end{remark}
+
+
+
+
+
+
+\subsection{$p\SL(n,\C)$-Ptolemy coordinates}
+\lbl{sub.pSL}
+
+When $n$ is even, a $p\SL(n,\C)$-Ptolemy assignment on $\Delta^k_n$ may be defined as in Definition~\ref{Ptolemyassignmentdefn}. Note, however, that the Ptolemy coordinates are now only defined up to a sign. Since we are mostly interested in $3$-cycles, the following definition is more useful.
+
+\begin{definition}
+\lbl{pSLPtolemydefn}
+Let $\Delta=\Delta^3_n$, and let $\sigma\in Z^2(\Delta;\Z/2\Z)$ be a cellular $2$-cocycle.
+A $p\SL(n,\C)$-\emph{Ptolemy assignment} on $\Delta$ with \emph{obstruction cocycle} $\sigma$ is an assignment $c\colon\dot\Delta^3_n(\Z)\to\C^*$ satisfying the $p\SL(n,\C)$-\emph{Ptolemy relations}
+\begin{equation}\lbl{pSLPtolemyrelation}
+\sigma_2\sigma_3c_{\alpha_{03}}c_{\alpha_{12}}+\sigma_0\sigma_3c_{\alpha_{01}}c_{\alpha_{23}}=c_{\alpha_{02}}c_{\alpha_{13}}.
+\end{equation}
+Here $\sigma_{i}\in\Z/2\Z=\langle\pm 1\rangle$ is the value of $\sigma$ on the face opposite the $i$th vertex of $\Delta$. 
+A $p\SL(n,\C)$-Ptolemy assignment on $K$ with obstruction cocycle $\sigma\in Z^2(K;\Z/2\Z)$ is a $p\SL(n,\C)$-Ptolemy-assignment $c^i$ on each simplex $\Delta_i$ of $K$ such that the Ptolemy coordinates agree on identified faces, and such that the obstruction cocycle of $c^i$ is $\sigma_{\Delta_i}$.  
+\end{definition}
+
+Note that for each $\sigma\in Z^2(K;\Z/2\Z)$, the set of $p\SL(n,\C)$-Ptolemy-assignments on $K$ form a variety $P_n^\sigma(K)$. We show in Section~\ref{proofsection} that this variety only depends on the cohomology class of $\sigma$ in $H^2(K;\Z/2\Z)=H^2(M,\partial M;\Z/2\Z)$ and that the Ptolemy variety parametrizes generically decorated boundary-unipotent $p\SL(n,\C)$-representations whose obstruction class to lifting to a boundary-unipotent $\SL(n,\C)$-representation is $\sigma$. Note that when $\sigma$ is the trivial cocycle taking all $2$-cells to $1$, $P^\sigma(K)=P(K)$.

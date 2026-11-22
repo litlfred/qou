@@ -4,13 +4,14 @@ doc_title: "BPS spectra and 3-manifold invariants"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
-pages: 2-6
+pages: 3-6
 source_pdf: 1701.06567v2.pdf
 source_sha256: c1610b50f5a7e22c
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.948
-latex_coverage_ratio: 0.937
+latex_coverage_ratio: 0.995
+doc_brief: "BPS spectra and 3-manifold invariants — We provide a physical deﬁnition of new homological invariants Ha(M3) of 3- manifolds (possibly, with knots) labeled by abelian ﬂat connections."
 ---
 Can we hear the shape of a drum? Much like harmonics of a musical instrument, spectra of quantum systems contain wealth of useful information. Of particular interest are supersymmetric or the so-called BPS states which, depending on the problem at hand, can manifest themselves either as minimal surfaces, or solutions to partial differential equations, or other "extremal" objects. Thus, a spectrum of BPS states in Calabi-Yau compactifications can be used to reconstruct the geometry of the Calabi-Yau space itself and, as we explain in this paper, spectra of BPS states play a similar role in low-dimensional topology.
 
@@ -41,7 +42,7 @@ The set of boundary conditions that one can put at $\partial D^2\cong S^1$ in th
 
 -   resurgent analysis of complex Chern-Simons theory [@Gukov:2016njj];
 
--   similar analysis of 3d ${\mathcal N}=2$ theories (section [1](#sec:summary){reference-type="ref" reference="sec:summary"} below);
+-   similar analysis of 3d ${\mathcal N}=2$ theories (section [\[sec:summary\]](#sec:summary){reference-type="ref" reference="sec:summary"} below);
 
 -   Langlands duality for flat connections on 3-manifolds (section [\[sec:Langlands\]](#sec:Langlands){reference-type="ref" reference="sec:Langlands"}).
 
@@ -52,10 +53,6 @@ In this paper we study the relation between such homological invariants and thei
 The organization of the paper is as follows. In Section 2 we review some results of [@Gukov:2016gkn] and summarize general conjectures about homological invariants of closed 3-manifolds mentioned here and their decategorified versions. In Section 3 we consider various examples for which we explicitly verify these conjectures. In Section 4 we extend it to the case of 3-manifolds with knots. Note, the main part of Section 4 is written in jargonish shorthand, using the concepts and notations introduced earlier. Various details and generalizations of this work can be found in the appendices. Thus, Appendix [\[app:Zq-from-WRT\]](#app:Zq-from-WRT){reference-type="ref" reference="app:Zq-from-WRT"} explains how the WRT invariants of general negative definite plumbed 3-manifolds can be analytically continued away from roots of unity to produce power series in $q$ with integer powers and integer coefficients, required for categorification. In Appendix [\[app:cabling\]](#app:cabling){reference-type="ref" reference="app:cabling"}, we compare the ordinary Khovanov homology of the $n$-th cabling of the unknot in a 3-sphere to the refined partition function of 3d ${\mathcal N}=2$ theory $T[S^3]$ in the presence of line operators, *cf.* Figure [1](#fig:impurity){reference-type="ref" reference="fig:impurity"}. Finally, in Appendix [\[sec:TV\]](#sec:TV){reference-type="ref" reference="sec:TV"} we explain how categorification of the index of $T[M_3]$ relates to categorification of the Turaev-Viro invariants.
 
 ![The space of BPS states in 3d ${\mathcal N}=2$ theory on ${\mathbb R}\times D^2$ with an impurity, relevant to the physical realization of Heegaard Floer homology $HF(M_3)$, monopole Floer homology $HM(M_3)$, as well as categorification of WRT invariants of 3-manifolds with knots.](impurity){#fig:impurity width="4.0in"}
-
-# Fivebranes on 3-manifolds and categorification of WRT invariant {#sec:summary}
-
-The goal of this section is to introduce the key players and their interrelation. To keep the discussion simple and concrete, we choose the gauge group to be $G=SU(2)$ for most of it, and then in section [\[sec:higherrk\]](#sec:higherrk){reference-type="ref" reference="sec:higherrk"} briefly comment how everything can be generalized to higher ranks.
 
 [^1]: Roughly speaking, the effective 4d theory is an infinite KK-like tower on 4d gauge theories. However one needs to appropriately sum it up. The decategorified counterpart of such summation was studied in [@Gukov:2016njj].
 

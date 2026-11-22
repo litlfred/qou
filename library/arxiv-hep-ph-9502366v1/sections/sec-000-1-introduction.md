@@ -1,24 +1,15 @@
 ---
 doc_id: arxiv-hep-ph-9502366v1
-doc_title: "arXiv:hep-ph/9502366v1 22 Feb 1995"
+doc_title: "Chiral Perturbation Theory"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
-pages: 1-3
+pages: 2-4
 source_pdf: 9502366v1.pdf
 source_sha256: 56df064956ca03f8
 toc_source: inferred
+doc_brief: "Chiral Perturbation Theory — An introduction to the basic ideas and methods of Chiral Perturbation Theory is presented."
 ---
-Perturbation Theory is presented.
-Several phenomenological applica-
-tions of the eﬀective Lagrangian technique to strong, electromagnetic
-and weak interactions are discussed.
-To be published in Reports on Progress in Physics
-February 1995
-1
-2
-A Pich
-1. Introduction
 Quantum Chromodynamics (QCD) is nowadays the established theory of the strong
 interactions. Owing to its asymptotic-free nature (Gross and Wilczek 1973, Politzer
 1973), perturbation theory can be applied at short distances; the resulting predictions
@@ -63,8 +54,6 @@ on the heavier degrees of freedom is then contained in the couplings of the resu
 low-energy Lagrangian. Although eﬀective ﬁeld theories contain an inﬁnite number of
 terms, renormalizability is not an issue since, at a given order in the energy expansion,
 the low-energy theory is speciﬁed by a ﬁnite number of couplings; this allows for an
-Chiral Perturbation Theory
-3
 order-by-order renormalization.
 A simple example of eﬀective ﬁeld theory is provided by QED at very low energies,
 Eγ << me.
@@ -115,3 +104,30 @@ Leutwyler 1994a) as a theorem: for a given set of asymptotic states, perturbatio
 theory with the most general Lagrangian containing all terms allowed by the assumed
 symmetries will yield the most general S-matrix elements consistent with analyticity,
 perturbative unitarity, cluster decomposition and the assumed symmetries.
+In the following, I will present an overview of ChPT. The chiral symmetry of
+the QCD Lagrangian is discussed in section 2.
+The ChPT formalism is presented
+in sections 3 and 4, where the lowest-order and next-to-leading-order terms in the
+chiral expansion are analyzed. Section 5 contains a few selected phenomenological
+applications. The role of the lowest-mass resonances on the Goldstone interactions
+is studied in section 6 and the relation between the eﬀective Lagrangian and the
+underlying fundamental QCD theory is discussed in section 7, which summarizes recent
+attempts to calculate the chiral couplings. The eﬀective realization of the non-leptonic
+∆S = 1 interactions and a brief overview of the application of the chiral techniques
+to non-leptonic K decays is given in section 8.
+Section 9 presents the ChPT formalism in the baryon sector.
+Some issues
+concerning the U(1)A anomaly and the strong-CP problem are analyzed in section 10.
+The broad range of application of the ChPT techniques is ﬁnally illustrated in
+sections 11 and 12, which brieﬂy discuss the low-energy interactions of an hypothetical
+light Higgs boson and the Goldstone dynamics associated with the Standard Model
+electroweak symmetry breaking.
+A few summarizing comments are collected in
+section 13.
+This report has grown out of a previous set of lectures (Pich 1994); therefore, rather
+than giving an exhaustive and updated summary of the ﬁeld, it attempts to provide a
+more pedagogical introduction. I have made extensive use of excellent reviews (Bijnens
+1993a, Ecker 1993, 1995, Gasser 1990, Leutwyler 1991, 1994c, Meißner 1993, de Rafael
+1995) and books (Donoghue, Golowich and Holstein 1992, Georgi 1984, Meißner 1992)
+already existing in the literature. Further details on particular subjects can be found
+in those references.

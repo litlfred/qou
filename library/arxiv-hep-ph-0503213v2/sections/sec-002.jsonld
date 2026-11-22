@@ -9,13 +9,17 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Unresolved issues",
-  "pageStart": 5,
-  "pageEnd": 6,
+  "title": "Phenomenology of the helon model",
+  "pageStart": 2,
+  "pageEnd": 5,
   "contains": [
-    "library/arxiv-hep-ph-0503213v2/blocks/prose-sec-002"
+    "library/arxiv-hep-ph-0503213v2/blocks/prose-sec-002",
+    "library/arxiv-hep-ph-0503213v2/blocks/figure-img-p003-1",
+    "library/arxiv-hep-ph-0503213v2/blocks/figure-img-p003-2",
+    "library/arxiv-hep-ph-0503213v2/blocks/figure-img-p004-1",
+    "library/arxiv-hep-ph-0503213v2/blocks/figure-img-p004-2"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-0503213v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-0503213v2",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-0503213v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-0503213v2/manifest.jsonld",
   "provenance": "ingested"
 }

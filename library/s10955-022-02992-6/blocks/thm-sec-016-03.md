@@ -1,0 +1,1 @@
+Let d = 1 and let (zℓ)ℓ∈N be a sequence of non-negative activities. (a) Suppose there exists α > 0 such that ∞  ℓ=1 eαℓzℓ≤eα −1. (4.19) Then T (D; z) is absolutely convergent for all ﬁnite subsets D ⊂Z. (b) Conversely, if T (D; z) is absolutely convergent for all ﬁnite subsets D ⊂Z, then there exists α > 0 such that (4.19) holds true.

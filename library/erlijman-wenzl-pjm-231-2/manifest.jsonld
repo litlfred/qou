@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/erlijman-wenzl-pjm-231-2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Subfactors from braided C* tensor categories",
+  "contains": [
+    "library/erlijman-wenzl-pjm-231-2/sections/sec-front-matter",
+    "library/erlijman-wenzl-pjm-231-2/sections/sec-000",
+    "library/erlijman-wenzl-pjm-231-2/sections/sec-001",
+    "library/erlijman-wenzl-pjm-231-2/sections/sec-002",
+    "library/erlijman-wenzl-pjm-231-2/sections/sec-003",
+    "library/erlijman-wenzl-pjm-231-2/sections/sec-004",
+    "library/erlijman-wenzl-pjm-231-2/sections/sec-005",
+    "library/erlijman-wenzl-pjm-231-2/sections/sec-006",
+    "library/erlijman-wenzl-pjm-231-2/sections/sec-007",
+    "library/erlijman-wenzl-pjm-231-2/sections/sec-008"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "erlijman-wenzl-pjm-231-2",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "erlijman-wenzl-pjm-231-2.pdf",
+    "source_sha256": "1ee590e6f087b6818082811e182d1bbfa83090eb30486ad9eef704f03864b641",
+    "pages": 44,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

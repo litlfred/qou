@@ -1,0 +1,1 @@
+Fix t ∈F, a positive integer r, and a Young diagram λ. Suppose that L(λ) = ([n], e) in Rep(St, F). If k is a positive integer such that λk+1 = 0, then (ωr n(t) −ξλ(t) r,k )me = 0 for some positive integer m.

@@ -1,0 +1,1 @@
+The signs of the determinant of ΓΨ and of the orientation of T depend on the order in which the factors Q j are listed. This is addressed further in the proof of Theorem 10.25 below. Proof The claimed result follows from the deﬁnition of iterated residues,

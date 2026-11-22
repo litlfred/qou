@@ -60,7 +60,7 @@ class JointGaloisBraidAction (n : ℕ) where
 -- axiomatisation, and downstream results must take it as an explicit
 -- `[JointGaloisBraidAction n]` hypothesis.  A global instance would discharge
 -- the conjecture for free.
--- Ref: [manuscript] quantum-observable-universe/mass-theory/joint-galois-braid-action.ts
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/joint-galois-braid-action.ts
 -- noncomputable instance (n : ℕ) : JointGaloisBraidAction n := sorry
 
 end QOU.BraidKnot

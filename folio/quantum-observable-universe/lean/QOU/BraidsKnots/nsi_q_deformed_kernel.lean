@@ -101,7 +101,7 @@ theorem qInt2_ne_zero {q : ℝ} (hq0 : q ≠ 0) : qInt2 q ≠ 0 := by
     nonzero constant, denominator tends to `0` and is eventually
     nonzero on the punctured neighbourhood since its only roots are
     `±ℏ_q` and `ℏ_q ≠ 0`), not a projected field. -/
--- Ref: [manuscript] lem:nsi-q-deformed-kernel, quantum-observable-universe/climax-volume-mass/nsi-q-deformed-kernel.md
+-- Ref: [leitner2026] lem:nsi-q-deformed-kernel, quantum-observable-universe/climax-volume-mass/nsi-q-deformed-kernel.md
 theorem nsi_q_kernel_hard_singularity {q : ℝ} (hq0 : q ≠ 0) (hq1 : q ≠ 1) :
     Filter.Tendsto (fun r => |qDeformedKernel q r|)
       (nhdsWithin (hbarQ q) {r : ℝ | r ≠ hbarQ q}) Filter.atTop := by
@@ -170,7 +170,7 @@ class NsiQDeformedKernelContext (E : Type*) [NormedAddCommGroup E] where
     hypothesis fields `K_cat_eq` and `qDeformedCommutator_eq`, from which
     the identification is derived.  The premise is assumed, not
     established — see AGENTS.md §"Conditional-proved ≠ premise-established". -/
--- Ref: [manuscript] lem:nsi-q-deformed-kernel, quantum-observable-universe/climax-volume-mass/nsi-q-deformed-kernel.md
+-- Ref: [leitner2026] lem:nsi-q-deformed-kernel, quantum-observable-universe/climax-volume-mass/nsi-q-deformed-kernel.md
 theorem nsi_q_kernel_identification {E : Type*} [NormedAddCommGroup E]
     [ctx : NsiQDeformedKernelContext E] (s t : ℝ) (hq1 : ctx.q ≠ 1) :
     ctx.K_cat s t = qDeformedKernel ctx.q ‖ctx.ϱ s - ctx.ϱ t‖ := by
@@ -190,7 +190,7 @@ theorem nsi_q_kernel_identification {E : Type*} [NormedAddCommGroup E]
     hard singularity at `r = ℏ_q` (**derived sorry-free** in
     `nsi_q_kernel_hard_singularity` from the concrete kernel).
     Neither conjunct projects a conclusion field. -/
--- Ref: [manuscript] lem:nsi-q-deformed-kernel, quantum-observable-universe/climax-volume-mass/nsi-q-deformed-kernel.md
+-- Ref: [leitner2026] lem:nsi-q-deformed-kernel, quantum-observable-universe/climax-volume-mass/nsi-q-deformed-kernel.md
 theorem nsi_q_deformed_kernel {E : Type*} [NormedAddCommGroup E]
     [ctx : NsiQDeformedKernelContext E] (s t : ℝ)
     (hq0 : ctx.q ≠ 0) (hq1 : ctx.q ≠ 1) :

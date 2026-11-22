@@ -74,7 +74,7 @@ symbol `[i]` of the fourth root of unity.
 The single field is classical: `r₂([i]) = D(i) = Cl₂(π/2) = G`. Everything the
 block asserts about `𝓑₃` is derived from it below. -/
 -- Ref: [neumann-zagier1985] Neumann, Zagier, "Volumes of hyperbolic three-manifolds"
--- Ref: [manuscript] conj:borromean-bloch-group-element
+-- Ref: [leitner2026] conj:borromean-bloch-group-element
 class BorromeanBlochGroupElement {B : Type*} [AddCommGroup B]
     (r2 : B →+ ℝ) (blochI : B) : Prop where
   /-- `r₂([i]) = G`, Catalan's constant. -/

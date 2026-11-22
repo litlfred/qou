@@ -4,4 +4,4 @@ $$
   S_{\mathrm{crystal}}(\beta_A) \;=\; S_{\mathrm{crystal}}(\beta_A').
 $$
 
-The crystal limit $q \to 0$ completely masks generator inversions. It cannot distinguish between proton and neutron structures inside the bare Hecke algebra. Any non-zero mass splitting between isospin mirrors, such as $^3\mathrm{H}$ and $^3\mathrm{He}$, must originate strictly outside the crystal limit or via an asymmetric interface protocol.
+The crystal limit $q \to 0$ completely masks generator inversions. It cannot distinguish between proton and neutron structures inside the crystal model. This is a property of the model, which sets the $q = 0$ actions of $\sigma_i$ and $\sigma_i^{-1}$ equal by definition; it is not a property of the Hecke algebra $H_n(q)$, where $\sigma_i$ and $\sigma_i^{-1}$ have different eigenvalues. Any non-zero mass splitting between isospin mirrors, such as $^3\mathrm{H}$ and $^3\mathrm{He}$, must originate strictly outside the crystal limit or via an asymmetric interface protocol.

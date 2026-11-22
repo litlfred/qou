@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-0808.2716v4",
  "source_sha256": "ea66f7ddcf9e9fe6",
- "brief": "CUSP AREAS OF F AREY MANIFOLDS — This paper gives the ﬁrst explicit, two–sided estimates on t he cusp area of once– punctured torus bundles, 4–punctured sphere bundles, and 2 –bridge link",
- "extended": "**CUSP AREAS OF F AREY MANIFOLDS**\n\n*AND APPLICA TIONS TO KNOT THEOR Y*\n\n44 pp, 23 sections.\n\n**Abstract.** This paper gives the ﬁrst explicit, two–sided estimates on t he cusp area of once– punctured torus bundles, 4–punctured sphere bundles, and 2 –bridge link complements. The input for these estimates is purely combinatorial data comi ng from the Farey tesselation of the hyperbolic plane. The bounds on cusp area lead to expli cit bounds on the volume of Dehn ﬁllings of these manifolds, for example sharp bounds on volumes of hyperbolic closed 3–braids in terms of the Schreier normal form of the as sociated braid word. Finally, these results are applied to derive relations between the Jo nes polynomial and the volume of hyperbolic knots, and to disprove a related conjecture. Dedicated to the memory of Xiao-Song Lin\n\n**Outline.** 1 Introduction; 1.1 Cusp shapes and areas; 1.2 Cusp area and link diagrams; 1.5 Organization; 1.6 Acknowledgements; 2.2 Once–punctured torus bundles; 2.3 4–punctured sphere bundles; 2.4 Two-bridge links; 3 Geometric estimates for Ford domains; 3.1 Estimates for triangulated hyperbolic 3–ma; 3.3 Horosphere estimate; 3.4 The length of a meridian; 4 Cusp area estimates; 4.1 Punctured–torus bundles; 4.2 4–punctured sphere bundles; 4.3 2–bridge links; 5 Volume estimates for closed 3–braids; 5.1 A normal form for 3–braids\n\n**Extracted claims (proposals, not verified).**\n- Theorem 4.1: LetM be a punctured–torus bundle with monodromy of length s. Let C be a\n- Theorem 4.8: LetK be a 2–bridge link in S3, whose reduced alternating diagram has twist\n- Theorem 5.6: Let K = ˆw be the closure of a generic 3–braid w = C kσp1\n- Theorem 6.6: LetK be a hyperbolic closed 3–braid. From the Jones polynomial JK (t), we\n- Theorem 6.8: There does not exist a function f (·, ·) of two variables, together with constants\n- Theorem 6.8: relies on two families of examples: adequate Mon tesinos knots and closed",
+ "brief": "CUSP AREAS OF FAREY MANIFOLDS — This paper gives the ﬁrst explicit, two–sided estimates on the cusp area of once– punctured torus bundles, 4–punctured sphere bundles, and 2–bridge link complements.",
+ "extended": "**CUSP AREAS OF FAREY MANIFOLDS**\n\n*AND APPLICATIONS TO KNOT THEORY*\n\n44 pp, 30 sections.\n\n**Abstract.** This paper gives the ﬁrst explicit, two–sided estimates on the cusp area of once– punctured torus bundles, 4–punctured sphere bundles, and 2–bridge link complements. The input for these estimates is purely combinatorial data coming from the Farey tesselation of the hyperbolic plane. The bounds on cusp area lead to explicit bounds on the volume of Dehn ﬁllings of these manifolds, for example sharp bounds on volumes of hyperbolic closed 3–braids in terms of the Schreier normal form of the associated braid word. Finally, these results are applied to derive relations between the Jones polynomial and the volume of hyperbolic knots, and to disprove a related conjecture. Dedicated to the memory of Xiao-Song Lin\n\n**Outline.** Front matter; 1 Introduction; 1.1 Cusp shapes and areas; 1.2 Cusp area and link diagrams; 1.3 Applications to hyperbolic Dehn filling; 1.4 Volume and Jones polynomial invariants; 1.5 Organization; 1.6 Acknowledgements; 2 The canonical triangulation of a Farey manif; 2.1 The Ford domain and its dual; 2.2 Once–punctured torus bundles; 2.3 4–punctured sphere bundles; 2.4 Two-bridge links; 3 Geometric estimates for Ford domains; 3.1 Estimates for triangulated hyperbolic 3–ma; 3.2 Parameterization by radii of Ford domain f; 3.3 Horosphere estimate; 3.4 The length of a meridian",
  "tokens": {
-  "brief": 46,
-  "extended": 484
+  "brief": 49,
+  "extended": 352
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -22,105 +27,135 @@
   {
    "id": "sec-002-12-cusp-area-and-link-diagrams",
    "title": "Cusp area and link diagrams",
-   "pages": "3-6"
+   "pages": "3-4"
   },
   {
-   "id": "sec-003-15-organization",
+   "id": "sec-003-13-applications-to-hyperbolic-dehn-filling",
+   "title": "Applications to hyperbolic Dehn filling",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-004-14-volume-and-jones-polynomial-invariants",
+   "title": "Volume and Jones polynomial invariants",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-005-15-organization",
    "title": "Organization",
    "pages": "6-6"
   },
   {
-   "id": "sec-004-16-acknowledgements",
+   "id": "sec-006-16-acknowledgements",
    "title": "Acknowledgements",
    "pages": "6-7"
   },
   {
-   "id": "sec-005-22-oncepunctured-torus-bundles",
+   "id": "sec-007-2-the-canonical-triangulation-of-a-farey-manifol",
+   "title": "The canonical triangulation of a Farey manifold",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-008-21-the-ford-domain-and-its-dual",
+   "title": "The Ford domain and its dual",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-009-22-oncepunctured-torus-bundles",
    "title": "Once–punctured torus bundles",
    "pages": "7-10"
   },
   {
-   "id": "sec-006-23-4punctured-sphere-bundles",
+   "id": "sec-010-23-4punctured-sphere-bundles",
    "title": "4–punctured sphere bundles",
    "pages": "10-11"
   },
   {
-   "id": "sec-007-24-two-bridge-links",
+   "id": "sec-011-24-two-bridge-links",
    "title": "Two-bridge links",
    "pages": "11-12"
   },
   {
-   "id": "sec-008-3-geometric-estimates-for-ford-domains",
+   "id": "sec-012-3-geometric-estimates-for-ford-domains",
    "title": "Geometric estimates for Ford domains",
    "pages": "12-12"
   },
   {
-   "id": "sec-009-31-estimates-for-triangulated-hyperbolic-3manifo",
+   "id": "sec-013-31-estimates-for-triangulated-hyperbolic-3manifo",
    "title": "Estimates for triangulated hyperbolic 3–manifolds",
-   "pages": "12-17"
+   "pages": "12-14"
   },
   {
-   "id": "sec-010-33-horosphere-estimate",
+   "id": "sec-014-32-parameterization-by-radii-of-ford-domain-face",
+   "title": "Parameterization by radii of Ford domain faces",
+   "pages": "14-17"
+  },
+  {
+   "id": "sec-015-33-horosphere-estimate",
    "title": "Horosphere estimate",
    "pages": "17-20"
   },
   {
-   "id": "sec-011-34-the-length-of-a-meridian",
+   "id": "sec-016-34-the-length-of-a-meridian",
    "title": "The length of a meridian",
    "pages": "20-20"
   },
   {
-   "id": "sec-012-4-cusp-area-estimates",
+   "id": "sec-017-4-cusp-area-estimates",
    "title": "Cusp area estimates",
    "pages": "20-21"
   },
   {
-   "id": "sec-013-41-puncturedtorus-bundles",
+   "id": "sec-018-41-puncturedtorus-bundles",
    "title": "Punctured–torus bundles",
    "pages": "21-25"
   },
   {
-   "id": "sec-014-42-4punctured-sphere-bundles",
+   "id": "sec-019-42-4punctured-sphere-bundles",
    "title": "4–punctured sphere bundles",
    "pages": "25-26"
   },
   {
-   "id": "sec-015-43-2bridge-links",
+   "id": "sec-020-43-2bridge-links",
    "title": "2–bridge links",
    "pages": "26-27"
   },
   {
-   "id": "sec-016-5-volume-estimates-for-closed-3braids",
+   "id": "sec-021-5-volume-estimates-for-closed-3braids",
    "title": "Volume estimates for closed 3–braids",
    "pages": "27-27"
   },
   {
-   "id": "sec-017-51-a-normal-form-for-3braids",
+   "id": "sec-022-51-a-normal-form-for-3braids",
    "title": "A normal form for 3–braids",
    "pages": "27-28"
   },
   {
-   "id": "sec-018-52-hyperbolic-3braids",
+   "id": "sec-023-52-hyperbolic-3braids",
    "title": "Hyperbolic 3–braids",
-   "pages": "28-34"
+   "pages": "28-32"
   },
   {
-   "id": "sec-019-6-the-jones-polynomial-and-volume-of-closed-3bra",
+   "id": "sec-024-53-volume-estimates",
+   "title": "Volume estimates",
+   "pages": "32-34"
+  },
+  {
+   "id": "sec-025-6-the-jones-polynomial-and-volume-of-closed-3bra",
    "title": "The Jones polynomial and volume of closed 3–braids",
    "pages": "34-34"
   },
   {
-   "id": "sec-020-61-the-jones-polynomials-of-generic-3braids",
+   "id": "sec-026-61-the-jones-polynomials-of-generic-3braids",
    "title": "The Jones polynomials of generic 3–braids",
    "pages": "34-40"
   },
   {
-   "id": "sec-021-62-connections-to-volume",
+   "id": "sec-027-62-connections-to-volume",
    "title": "Connections to volume",
    "pages": "40-42"
   },
   {
-   "id": "sec-022-references",
+   "id": "sec-028-references",
    "title": "References",
    "pages": "42-44"
   }
@@ -129,8 +164,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

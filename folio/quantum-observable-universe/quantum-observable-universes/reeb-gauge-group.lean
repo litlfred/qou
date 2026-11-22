@@ -11,7 +11,7 @@ viewed as a group scheme over R.  Over ℂ this recovers U(1).
 LaTeX label: `def:reeb-gauge-group`
 
 ## References
-- [manuscript] §2/reeb-gauge-group
+- [leitner2026] §2/reeb-gauge-group
 -/
 
 
@@ -24,7 +24,7 @@ universe u
 
     Abstractly, it is the group of norm-one elements in the rank-one
     weight lattice, equivalently `Aut⊗(τ|_⟨V⟩)`. -/
--- Ref: [manuscript] §2/reeb-gauge-group
+-- Ref: [leitner2026] §2/reeb-gauge-group
 structure ReebGaugeGroup (R : Type u) [CommRing R] where
   /-- The underlying group of norm-one elements. -/
   carrier : Type u

@@ -1,0 +1,44 @@
+. d d dy ;
+tion in the case of an acyclic complex C* = C®  C! 4... “4 OC". In this case
+
+the Reidemeister torsion is defined from a choice of bases c* of the C’’s that allows
+us to write each C* as a direct sum C’ = kerd; ® K;. Then we consider the restric-
+tion maps d; : K; > im(d;) = ker(di;1) and we compute the Reidemeister torsion
+tor(C*,c*) = [] det(d,;)(-)". An other way to do so is the following : consider the
+adjoint maps d*_, : C' + C*-!, namely they are obtained by taking the transpose
+of the matrices of each d; in the basis c’,c’+!. We define on C* the natural scalar
+product that turns the base c’ into an orthogonal base, hence the orthogonal split-
+ting C’ = ker(d;) @+ im(d?). Now we can define the combinatorial Laplacians to be
+the operators A; : C' > C’ given by the formula A; = d*d; + d;_d?_,, and a careful
+examination shows that can express the torsion as tor(C*,c*) = [[ det(A;)2}-0"™".
+
+Without more informations, it may seem to be just a more complicated way to
+compute this invariant, but the striking point is that we can now define such an
+invariant in terms of the metric Laplacian acting on the De Rham complex of a
+closed manifold M : there is still a natural hermitian product and the formula
+above makes sense. The Laplacian turns into an infinite dimensional self-adjojnt
+operator, and we can define its determinant as the (infinite) product of its non-zero
+eigenvalues. This product can be shown to be well-defined with the use of some zeta
+functions, and this invariant Ty = [] det(A;)2—)"™ has been conjectured in
+to be equal to the Reidemeister torsion. This has been proved independently by Jeff
+Cheeger ({Che77]) in 1977 and Werner Miiller ({Mul78]) in 1978, then generalized
+by Muller ({Mul93]) and Bismut-Zhang ({[BZ92}).
+
+Assume that C* is a complex of modules over a PID R, such that this complex is
+acyclic as a complex of vector spaces over the fraction field K = Frac(R). In other
+words all the cohomology groups are torsion modules. Then the torsion tor(C* ®z
+K) carries many informations about those cohomology modules. In particular, in
+the case of Alexander modules of a 3-manifold M@, Thang Le ({Le14]) has proved
+from this observation that the torsion of the homological complex of the maximal
+abelian covering M (namely the Alexander polynomial) was somehow related with
+the growth of the torsion part of the first homology groups of finite abelian covers
+M,, of M. We should mention the work of Nicolas Bergeron and Akshay Venkatesh
+({BV13]) where those relations are discussed in a much more general setting, and
+
+explicitely expressed in terms of the Ray-Singer analytic torsion.
+
+Notation. In this dissertation we are interested in the following situation : M is a 3-
+
+manifold, compact, connected and orientable, with boundary 0M = S! x S! a torus.
+
+7

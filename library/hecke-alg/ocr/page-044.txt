@@ -1,0 +1,61 @@
+2. A SPECHT SERIES FOR M” 39
+
+Proof. Every homomorphism yg in Homy (M/”, M“) is determined by g(m,) and,
+moreover, y(m,) € M" 7 M”* by Theorem 4.8. Conversely, very element of M"
+M’* determines a homomorphism in Hom j(M”,M"). Consequently, the map
+Hom (M”’,M") + M# 9 M”’* given by y +> y(m,) is an isomorphism of R-
+modules. Oo
+
+There are two points worth noting from Theorem 4.8. First, by Proposition 4.5
+we could haye indexed the basis { gi, | d € Fy } of Homa (M”, M") by row semi-
+standard p-tableau of type y (or by row semistandard v—tableaux of type js). Thus,
+this basis is the analogue of the row standard basis of M" given by Corollary 3.4.
+
+Secondly, by extending the maps et, to elements of -(d,n) we obtain a basis
+of the g-Schur algebra which is independent of R and q.
+
+2. A Specht series for @”
+
+In Theorem 4.8 we saw that Homy(M",M*) has a basis indexed by row
+semistandard tableaux. As in Chapter 3, we want to replace this basis with a
+cellular basis which is indexed by pairs of semistandard tableaux. Rather than
+proving this directly, we first give another basis of MM" which is compatible with
+the Murphy basis of #7.
+
+Let A be a partition of n and yt a composition of n. Let S be a semistandard
+A-tableaux of type yt and let t be a standard \-tableau. We define
+
+Mst == y Mst
+
+sEStd(A)
+B(s)=s
+
+and let mg = mé%,.
+4.10 Theorem (Murphy) Let p be a composition of n. Then M" is free as an
+R-module with basis
+
+{ mst | $8 € To(A, ps), t € Std(A) for some partition X of n }.
+
+Proof. Suppose that $ € 7o(A, 1), t € Std(A) and let d~! = first(S). By (4.7)
+
+ms = > Tiy™Tag = YD Tea:
+sEStd(A) weGypdGy
+B(s)=S
+
+In particular, ms, € M*".
+
+Now suppose that A is an arbitrary non-zero element of M@". By Theorem 3.18
+there exist rs, € R such that h = So rsems, where my, € M. Suppose that mg,
+is involved in h. By definition, § = y(s) is always row standard; therefore, $ is
+semistandard by Proposition 3.16. If s # first(S) then there exists s; € G, such
+that if 5’ = ss; then p(s’) = S and sp s. Then Tim. = (¢ — 1m + amy
+by Corollary 3.4 and T;h = gh by Lemma 3.2; hence, mg; is also involved in h.
+Consequently, we may as well assume that s = first(.S). Now let
+
+h=h-S> > S PsiMse-
+
+AEM SETo(A,u) 2. 4eSta(a)
+s=first ($)
+
+Then h’ is an element of 1"; however, h involves no term mg, with s = first (j(s)).
+Therefore, h’ = 0 and we have written h as a linear combination of the required

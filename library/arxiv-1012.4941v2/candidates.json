@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1012.4941v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "1932a359f3bafb8329e43e040873de5caab69ce3439df7a539ae9392ea5da59b",
+  "file": "1012.4941v2.pdf"
+ },
+ "provenance": {
+  "title": "ALGORITHMS FOR HIGHLY SYMMETRIC LINEAR AND INTEGER PROGRAMS",
+  "authors": "RICHARD B\u00d6DI, KATRIN HERR, AND MICHAEL JOSWIG",
+  "arxiv": {
+   "id": "1012.4941",
+   "version": "2",
+   "primary_class": "math.OC",
+   "stamp_date": "13 Jan 2011"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

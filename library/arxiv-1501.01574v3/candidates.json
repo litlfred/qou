@@ -1,0 +1,68 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1501.01574v3",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "8af5d6264a0ad5e0fce33b41d7502ba25ad1969ad56e661044f387bdfe537ac3",
+  "file": "1501.01574v3.pdf"
+ },
+ "provenance": {
+  "title": "KNOT CABLING AND THE DEGREE OF THE COLORED JONES POLYNOMIAL",
+  "authors": "EFSTRATIA KALFAGIANNI AND ANH T. TRAN",
+  "arxiv": {
+   "id": "1501.01574",
+   "version": "3",
+   "primary_class": "math.GT",
+   "stamp_date": "5 Sep 2015"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "conjecture": 1
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "math": 1
+  },
+  "by_evidence_kind": {
+   "conjectural": 1
+  },
+  "by_evidence_location": {
+   "none": 1
+  }
+ },
+ "candidates": [
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": "1.1",
+   "name": "Slope Conjecture",
+   "statement": "For every knot K \u2282S3 we have (jsK \u222ajs\u2217 K) \u2282bsK. Futer, Kalfagianni and Purcell [4] veri\ufb01ed the conjecture for adequate knots (see De\ufb01- nition 3.5 for terminology). The works of Garoufalidis and Dun\ufb01eld [3] and Garoufalidis and van der Veen [11] veri\ufb01ed the conjecture for a certain 2-parameter family of closed 3-braids, called 2-fusion knots. More recently, Lee and van der Veen [23] have proved the conjecture for several more 3-string pretzel knots. In this paper we study the behavior of the boundary slopes and the Jones slopes of knots under the operation of cabling and prove the Slope Conjecture for cables of several classes of knots. We als",
+   "claim_domain": "math",
+   "evidence_kind": "conjectural",
+   "evidence_location": "none",
+   "evidence_locator": "Open conjecture stated in sections/sec-001-1-introduction.md",
+   "external_refs": [
+    "[4]",
+    "[3]",
+    "[11]",
+    "[23]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-001-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-2",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null,
+   "block_id": "conj-sec-001-01",
+   "block_iri": "library/arxiv-1501.01574v3/blocks/conj-sec-001-01",
+   "claim_id": "arxiv-1501.01574v3#conjecture:1.1"
+  }
+ ]
+}

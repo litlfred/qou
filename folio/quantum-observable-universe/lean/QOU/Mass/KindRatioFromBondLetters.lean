@@ -73,7 +73,7 @@ Probe: `computations/qbeta/kind_dependent_rho_pp_derived_check.py` (5/5).
 divides by `3` and `tPN` by `2` and `4`, so every statement below is false in
 characteristic 2 or 3.  Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-09-05-binding-gap-groupoids-derived-categories-full-tower.md
+-- Ref: [leitner2026] docs/audits/2026-09-05-binding-gap-groupoids-derived-categories-full-tower.md
 -/
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring

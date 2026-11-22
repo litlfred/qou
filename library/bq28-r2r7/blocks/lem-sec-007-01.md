@@ -1,0 +1,1 @@
+There exists a classical algorithm that takes as input an irrep λ of the symmetric group Sn, a permuta- tion g ∈Sn, and outputs an integer k(g) such that k(g) = χλ(g) for at least a 1 −1/n100 fraction of permutations g ∈Sn. The algorithm has runtime nO(log n).

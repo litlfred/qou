@@ -7,10 +7,11 @@
   "bytes": 855805,
   "pages": 68,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,20 +21,28 @@
    "stamp_date": "12 May 2023"
   },
   "doi": null,
-  "title": "QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY DYSON BROWNIAN MOTION",
-  "authors_raw": "J\u00c9R\u00c9MIE GUILHOT, C \u00c9DRIC LECOUVEY, AND PIERRE TARRAGO",
+  "title": "QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY",
+  "authors_raw": "DYSON BROWNIAN MOTION",
   "title_lines": [
-   "QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY",
-   "DYSON BROWNIAN MOTION"
+   "QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY"
   ],
-  "abstract": "We study a class of commuting Markov kernels whose simplest element describes the movement ofk particles on a discrete circle of size n conditioned to not intersect each other. Such Markov kernels are related to the quantum cohomology ring of the Grassmannian, which is an algebraic object counting analytic maps from P1(C) to the Grassmannian space of k-dimensional vector subspaces of Cn with prescribed constraints at some points of P1(C). We obtain a Berry- Esseen theorem and a local limit theorem for an arbitrary product of approximately n2 Markov kernels belonging to the above class, when k is \ufb01xed. As a byproduct of those results, we derive asymptotic formulas for the quantum cohomology ring of the Grassmannian in terms of the heat kernel on SU (k). To Philippe Biane, for his 60th birthday.",
+  "abstract": "We study a class of commuting Markov kernels whose simplest element describes the movement of k particles on a discrete circle of size n conditioned to not intersect each other. Such Markov kernels are related to the quantum cohomology ring of the Grassmannian, which is an algebraic object counting analytic maps from P1(C) to the Grassmannian space of k-dimensional vector subspaces of Cn with prescribed constraints at some points of P1(C). We obtain a Berry- Esseen theorem and a local limit theorem for an arbitrary product of approximately n2 Markov kernels belonging to the above class, when k is ﬁxed. As a byproduct of those results, we derive asymptotic formulas for the quantum cohomology ring of the Grassmannian in terms of the heat kernel on SU(k). To Philippe Biane, for his 60th birthday.",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20230515011009Z",
-   "Creator": "LaTeX with hyperref",
    "Producer": "pdfTeX-1.40.21",
-   "Title": ""
-  }
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20230515011009Z"
+  },
+  "title_raw": "QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY DYSON BROWNIAN MOTION To Philippe Biane, for his 60th birthday. 1. Introduction The present paper gives a probabilistic study of an integrable class of rooted graphs which describe movements of particles on a discrete circle conditioned to not inter",
+   "outline": "1. Introduction",
+   "text": "QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY DYSON BROWNIAN MOTION"
  },
  "toc": [
   {
@@ -41,207 +50,961 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Presentation of the model and main results",
    "page": 3,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "k-configuration on a circle and continuous counterpart",
    "page": 3,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "A complete family of commuting Markov kernels associated to Bk,n",
    "page": 4,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Relation between Bk,n and the unitary group",
    "page": 6,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Main probabilistic theorems",
    "page": 7,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "A geometric corollary on quantum cohomology of the Grassmannian",
    "page": 11,
    "source": "outline",
-   "number": "2.5"
+   "number": "2.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "Related results and perspectives",
    "page": 13,
    "source": "outline",
-   "number": "2.6"
+   "number": "2.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 1,
    "title": "Positively multiplicative graphs, random walks and Fourier transform",
    "page": 14,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 2,
    "title": "Family of random walks and h-transform",
    "page": 15,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "Convolution product on L2h(V)",
    "page": 17,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "Integrable PM-graph, Fourier transform and Verlinde formula",
    "page": 18,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 1,
    "title": "Noncolliding particles on a circle and eigenvalues of unitary matrices",
    "page": 21,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 2,
    "title": "The graph Bk,n as an integrable PM-graph",
    "page": 22,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 2,
    "title": "h-transform, convolution and Fourier transform on Bk,n",
    "page": 25,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
   },
   {
    "level": 2,
-   "title": "Fourier transform on  Tk",
+   "title": "Fourier transform on Tk",
    "page": 28,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "28"
   },
   {
    "level": 2,
    "title": "Invariant Brownian motion on Uk and unitary Dyson Brownian motion",
    "page": 30,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "30"
   },
   {
    "level": 1,
    "title": "The Fourier transform of a large sequence of convolution",
    "page": 32,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "32"
   },
   {
    "level": 1,
    "title": "Berry-Esseen theorem on Bk,n",
    "page": 46,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "46"
   },
   {
    "level": 2,
    "title": "Wasserstein distance on Tk",
    "page": 47,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "47"
   },
   {
    "level": 2,
    "title": "Proof of Theorem 6.1",
    "page": 50,
    "source": "outline",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "50"
   },
   {
    "level": 1,
    "title": "Local limit theorem and its geometric consequences",
    "page": 56,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "56"
   },
   {
    "level": 1,
    "title": "Appendices",
    "page": 57,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "57"
   },
   {
    "level": 1,
    "title": "Appendix A. Small quantum cohomology of the Grassmannian",
    "page": 60,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "60"
   },
   {
    "level": 2,
    "title": "A.1. Partitions and symmetric functions",
    "page": 60,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "60"
   },
   {
    "level": 2,
    "title": "A.2. the Grassmannian, Schubert variety and intersection",
    "page": 61,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "61"
   },
   {
    "level": 2,
    "title": "A.3. Quantum cohomology ring of the Grassmannian",
    "page": 62,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "62"
   },
   {
    "level": 1,
    "title": "References",
    "page": 64,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "64"
   },
   {
    "level": 1,
    "title": "Nomenclature",
    "page": 67,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "67"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Graph B2,4 encoding the movement of 2 nonintersecting particles on a discrete circle of size 4. The dashed line marks the origin of the circle",
+   "page": 2,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "2"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Graph B2,4 from a combinatorial perspective. For ﬁxed k ≥1, the family of graphs {Bk,n, n ≥1} has a continuous counterpart embodied by the set Tk of positions of k indistinguishable particles on a continuous circle of radius 1. Identifying the positions of the particles by their distance from a dist",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Particles hopping to the left with probability t and to the right with probability s, conditioned to not intersect",
+   "page": 10,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "10"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "52",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "53",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "54",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "55",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "56",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "57",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "58",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "59",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "60",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "61",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "62",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": "63",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 64,
+   "label": "64",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 65,
+   "label": "65",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 66,
+   "label": "66",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 67,
+   "label": "67",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 68,
+   "label": "68",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 943,
+   "n_words": 151,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -249,8 +1012,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 8720,
-   "n_words": 1405
+   "n_chars": 8732,
+   "n_words": 1417,
+   "label_start": "1",
+   "label_end": "3"
   },
   {
    "id": "sec-001-2-presentation-of-the-model-and-main-results",
@@ -258,242 +1023,344 @@
    "title": "Presentation of the model and main results",
    "level": 1,
    "page_start": 3,
-   "page_end": 4,
-   "n_chars": 2461,
-   "n_words": 451
+   "page_end": 3,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "3",
+   "label_end": "3"
   },
   {
-   "id": "sec-002-22-a-complete-family-of-commuting-markov-kernels",
+   "id": "sec-002-21-k-configuration-on-a-circle-and-continuous-co",
+   "number": "2.1",
+   "title": "k-configuration on a circle and continuous counterpart",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2415,
+   "n_words": 477,
+   "label_start": "3",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-003-22-a-complete-family-of-commuting-markov-kernels",
    "number": "2.2",
    "title": "A complete family of commuting Markov kernels associated to Bk,n",
    "level": 2,
    "page_start": 4,
    "page_end": 6,
-   "n_chars": 4080,
-   "n_words": 705
+   "n_chars": 4124,
+   "n_words": 754,
+   "label_start": "4",
+   "label_end": "6"
   },
   {
-   "id": "sec-003-23-relation-between-bkn-and-the-unitary-group",
+   "id": "sec-004-23-relation-between-bkn-and-the-unitary-group",
    "number": "2.3",
    "title": "Relation between Bk,n and the unitary group",
    "level": 2,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 3530,
-   "n_words": 620
+   "n_chars": 3551,
+   "n_words": 641,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
-   "id": "sec-004-24-main-probabilistic-theorems",
+   "id": "sec-005-24-main-probabilistic-theorems",
    "number": "2.4",
    "title": "Main probabilistic theorems",
    "level": 2,
    "page_start": 7,
    "page_end": 11,
-   "n_chars": 11863,
-   "n_words": 2121
+   "n_chars": 11953,
+   "n_words": 2222,
+   "label_start": "7",
+   "label_end": "11"
   },
   {
-   "id": "sec-005-25-a-geometric-corollary-on-quantum-cohomology-o",
+   "id": "sec-006-25-a-geometric-corollary-on-quantum-cohomology-o",
    "number": "2.5",
    "title": "A geometric corollary on quantum cohomology of the Grassmannian",
    "level": 2,
    "page_start": 11,
    "page_end": 13,
-   "n_chars": 4593,
-   "n_words": 830
+   "n_chars": 4685,
+   "n_words": 921,
+   "label_start": "11",
+   "label_end": "13"
   },
   {
-   "id": "sec-006-26-related-results-and-perspectives",
+   "id": "sec-007-26-related-results-and-perspectives",
    "number": "2.6",
    "title": "Related results and perspectives",
    "level": 2,
    "page_start": 13,
    "page_end": 14,
-   "n_chars": 6624,
-   "n_words": 1106
+   "n_chars": 6652,
+   "n_words": 1134,
+   "label_start": "13",
+   "label_end": "14"
   },
   {
-   "id": "sec-007-3-positively-multiplicative-graphs-random-walks",
+   "id": "sec-008-3-positively-multiplicative-graphs-random-walks",
    "number": "3",
    "title": "Positively multiplicative graphs, random walks and Fourier transform",
    "level": 1,
    "page_start": 14,
    "page_end": 15,
-   "n_chars": 1783,
-   "n_words": 330
+   "n_chars": 1802,
+   "n_words": 349,
+   "label_start": "14",
+   "label_end": "15"
   },
   {
-   "id": "sec-008-31-family-of-random-walks-and-h-transform",
+   "id": "sec-009-31-family-of-random-walks-and-h-transform",
    "number": "3.1",
    "title": "Family of random walks and h-transform",
    "level": 2,
    "page_start": 15,
-   "page_end": 18,
-   "n_chars": 5329,
-   "n_words": 1025
+   "page_end": 17,
+   "n_chars": 3481,
+   "n_words": 735,
+   "label_start": "15",
+   "label_end": "17"
   },
   {
-   "id": "sec-009-33-integrable-pm-graph-fourier-transform-and-ver",
+   "id": "sec-010-32-convolution-product-on-l2hv",
+   "number": "3.2",
+   "title": "Convolution product on L2h(V)",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 1969,
+   "n_words": 438,
+   "label_start": "17",
+   "label_end": "18"
+  },
+  {
+   "id": "sec-011-33-integrable-pm-graph-fourier-transform-and-ver",
    "number": "3.3",
    "title": "Integrable PM-graph, Fourier transform and Verlinde formula",
    "level": 2,
    "page_start": 18,
    "page_end": 21,
-   "n_chars": 5104,
-   "n_words": 932
+   "n_chars": 5273,
+   "n_words": 1101,
+   "label_start": "18",
+   "label_end": "21"
   },
   {
-   "id": "sec-010-4-noncolliding-particles-on-a-circle-and-eigenva",
+   "id": "sec-012-4-noncolliding-particles-on-a-circle-and-eigenva",
    "number": "4",
    "title": "Noncolliding particles on a circle and eigenvalues of unitary matrices",
    "level": 1,
    "page_start": 21,
    "page_end": 22,
-   "n_chars": 1835,
-   "n_words": 364
+   "n_chars": 1862,
+   "n_words": 391,
+   "label_start": "21",
+   "label_end": "22"
   },
   {
-   "id": "sec-011-41-the-graph-bkn-as-an-integrable-pm-graph",
+   "id": "sec-013-41-the-graph-bkn-as-an-integrable-pm-graph",
    "number": "4.1",
    "title": "The graph Bk,n as an integrable PM-graph",
    "level": 2,
    "page_start": 22,
    "page_end": 25,
-   "n_chars": 5987,
-   "n_words": 1022
+   "n_chars": 6078,
+   "n_words": 1114,
+   "label_start": "22",
+   "label_end": "25"
   },
   {
-   "id": "sec-012-42-h-transform-convolution-and-fourier-transform",
+   "id": "sec-014-42-h-transform-convolution-and-fourier-transform",
    "number": "4.2",
    "title": "h-transform, convolution and Fourier transform on Bk,n",
    "level": 2,
    "page_start": 25,
-   "page_end": 30,
-   "n_chars": 10404,
-   "n_words": 1825
+   "page_end": 28,
+   "n_chars": 6243,
+   "n_words": 1146,
+   "label_start": "25",
+   "label_end": "28"
   },
   {
-   "id": "sec-013-44-invariant-brownian-motion-on-uk-and-unitary-d",
+   "id": "sec-015-43-fourier-transform-on-tk",
+   "number": "4.3",
+   "title": "Fourier transform on Tk",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 30,
+   "n_chars": 4288,
+   "n_words": 808,
+   "label_start": "28",
+   "label_end": "30"
+  },
+  {
+   "id": "sec-016-44-invariant-brownian-motion-on-uk-and-unitary-d",
    "number": "4.4",
    "title": "Invariant Brownian motion on Uk and unitary Dyson Brownian motion",
    "level": 2,
    "page_start": 30,
    "page_end": 32,
-   "n_chars": 5272,
-   "n_words": 1002
+   "n_chars": 5307,
+   "n_words": 1037,
+   "label_start": "30",
+   "label_end": "32"
   },
   {
-   "id": "sec-014-5-the-fourier-transform-of-a-large-sequence-of-c",
+   "id": "sec-017-5-the-fourier-transform-of-a-large-sequence-of-c",
    "number": "5",
    "title": "The Fourier transform of a large sequence of convolution",
    "level": 1,
    "page_start": 32,
    "page_end": 46,
-   "n_chars": 25119,
-   "n_words": 4978
+   "n_chars": 25442,
+   "n_words": 5413,
+   "label_start": "32",
+   "label_end": "46"
   },
   {
-   "id": "sec-015-6-berry-esseen-theorem-on-bkn",
+   "id": "sec-018-6-berry-esseen-theorem-on-bkn",
    "number": "6",
    "title": "Berry-Esseen theorem on Bk,n",
    "level": 1,
    "page_start": 46,
-   "page_end": 50,
-   "n_chars": 8359,
-   "n_words": 1485
+   "page_end": 47,
+   "n_chars": 2551,
+   "n_words": 493,
+   "label_start": "46",
+   "label_end": "47"
   },
   {
-   "id": "sec-016-62-proof-of-theorem-61",
+   "id": "sec-019-61-wasserstein-distance-on-tk",
+   "number": "6.1",
+   "title": "Wasserstein distance on Tk",
+   "level": 2,
+   "page_start": 47,
+   "page_end": 50,
+   "n_chars": 5734,
+   "n_words": 1101,
+   "label_start": "47",
+   "label_end": "50"
+  },
+  {
+   "id": "sec-020-62-proof-of-theorem-61",
    "number": "6.2",
    "title": "Proof of Theorem 6.1",
    "level": 2,
    "page_start": 50,
    "page_end": 56,
-   "n_chars": 7937,
-   "n_words": 1578
+   "n_chars": 8099,
+   "n_words": 1735,
+   "label_start": "50",
+   "label_end": "56"
   },
   {
-   "id": "sec-017-7-local-limit-theorem-and-its-geometric-conseque",
+   "id": "sec-021-7-local-limit-theorem-and-its-geometric-conseque",
    "number": "7",
    "title": "Local limit theorem and its geometric consequences",
    "level": 1,
    "page_start": 56,
    "page_end": 60,
-   "n_chars": 6935,
-   "n_words": 1257
+   "n_chars": 7014,
+   "n_words": 1352,
+   "label_start": "56",
+   "label_end": "60"
   },
   {
-   "id": "sec-018-appendix-a-small-quantum-cohomology-of-the-grass",
+   "id": "sec-022-appendix-a-small-quantum-cohomology-of-the-grass",
    "number": null,
    "title": "Appendix A. Small quantum cohomology of the Grassmannian",
    "level": 1,
    "page_start": 60,
    "page_end": 60,
    "n_chars": 87,
-   "n_words": 14
+   "n_words": 14,
+   "label_start": "60",
+   "label_end": "60"
   },
   {
-   "id": "sec-019-a1-partitions-and-symmetric-functions",
+   "id": "sec-023-a1-partitions-and-symmetric-functions",
    "number": null,
    "title": "A.1. Partitions and symmetric functions",
    "level": 2,
    "page_start": 60,
    "page_end": 61,
-   "n_chars": 1764,
-   "n_words": 323
+   "n_chars": 1797,
+   "n_words": 356,
+   "label_start": "60",
+   "label_end": "61"
   },
   {
-   "id": "sec-020-a2-the-grassmannian-schubert-variety-and-interse",
+   "id": "sec-024-a2-the-grassmannian-schubert-variety-and-interse",
    "number": null,
    "title": "A.2. the Grassmannian, Schubert variety and intersection",
    "level": 2,
    "page_start": 61,
    "page_end": 62,
-   "n_chars": 3292,
-   "n_words": 619
+   "n_chars": 3398,
+   "n_words": 725,
+   "label_start": "61",
+   "label_end": "62"
   },
   {
-   "id": "sec-021-a3-quantum-cohomology-ring-of-the-grassmannian",
+   "id": "sec-025-a3-quantum-cohomology-ring-of-the-grassmannian",
    "number": null,
    "title": "A.3. Quantum cohomology ring of the Grassmannian",
    "level": 2,
    "page_start": 62,
    "page_end": 64,
-   "n_chars": 5368,
-   "n_words": 952
+   "n_chars": 5528,
+   "n_words": 1111,
+   "label_start": "62",
+   "label_end": "64"
   },
   {
-   "id": "sec-022-references",
+   "id": "sec-026-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 64,
    "page_end": 67,
-   "n_chars": 6956,
-   "n_words": 1033
+   "n_chars": 6940,
+   "n_words": 1019,
+   "label_start": "64",
+   "label_end": "67"
   },
   {
-   "id": "sec-023-nomenclature",
+   "id": "sec-027-nomenclature",
    "number": null,
    "title": "Nomenclature",
    "level": 1,
    "page_start": 67,
    "page_end": 68,
-   "n_chars": 2439,
-   "n_words": 419
+   "n_chars": 2478,
+   "n_words": 449,
+   "label_start": "67",
+   "label_end": "68"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 29,
-  "sections": 24,
-  "chars_total": 145841,
+  "toc_inferred_entries": 0,
+  "figure_entries": 3,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 29,
+  "chars_total": 148426,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "probability_aspect.tex",
    "tex_sections": 26,
-   "overlaid": 17,
+   "overlaid": 20,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -501,9 +1368,14 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.997,
+     "prose_ratio": 0.987,
      "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "pandoc"
@@ -511,163 +1383,193 @@
     {
      "id": "sec-001-2-presentation-of-the-model-and-main-results",
      "title": "Presentation of the model and main results",
-     "prose_ratio": 0.942,
-     "coverage_ratio": 0.91,
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-21-k-configuration-on-a-circle-and-continuous-co",
+     "title": "k-configuration on a circle and continuous counterpart",
+     "prose_ratio": 0.941,
+     "coverage_ratio": 0.974,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-22-a-complete-family-of-commuting-markov-kernels",
+     "id": "sec-003-22-a-complete-family-of-commuting-markov-kernels",
      "title": "A complete family of commuting Markov kernels associated to Bk,n",
      "prose_ratio": 0.96,
-     "coverage_ratio": 0.928,
+     "coverage_ratio": 0.955,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-23-relation-between-bkn-and-the-unitary-group",
+     "id": "sec-004-23-relation-between-bkn-and-the-unitary-group",
      "title": "Relation between Bk,n and the unitary group",
      "prose_ratio": 0.971,
-     "coverage_ratio": 0.865,
+     "coverage_ratio": 0.95,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-24-main-probabilistic-theorems",
+     "id": "sec-005-24-main-probabilistic-theorems",
      "title": "Main probabilistic theorems",
      "prose_ratio": 0.973,
-     "coverage_ratio": 0.956,
+     "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-25-a-geometric-corollary-on-quantum-cohomology-o",
+     "id": "sec-006-25-a-geometric-corollary-on-quantum-cohomology-o",
      "title": "A geometric corollary on quantum cohomology of the Grassmannian",
      "prose_ratio": 0.982,
-     "coverage_ratio": 0.922,
+     "coverage_ratio": 0.948,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-26-related-results-and-perspectives",
+     "id": "sec-007-26-related-results-and-perspectives",
      "title": "Related results and perspectives",
      "prose_ratio": 0.99,
-     "coverage_ratio": 0.977,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-3-positively-multiplicative-graphs-random-walks",
+     "id": "sec-008-3-positively-multiplicative-graphs-random-walks",
      "title": "Positively multiplicative graphs, random walks and Fourier transform",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.843,
+     "coverage_ratio": 0.908,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-31-family-of-random-walks-and-h-transform",
+     "id": "sec-009-31-family-of-random-walks-and-h-transform",
      "title": "Family of random walks and h-transform",
-     "prose_ratio": 0.98,
-     "coverage_ratio": 0.892,
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.902,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-33-integrable-pm-graph-fourier-transform-and-ver",
+     "id": "sec-010-32-convolution-product-on-l2hv",
+     "title": "Convolution product on L2h(V)",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.939,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-33-integrable-pm-graph-fourier-transform-and-ver",
      "title": "Integrable PM-graph, Fourier transform and Verlinde formula",
      "prose_ratio": 0.953,
-     "coverage_ratio": 0.886,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-010-4-noncolliding-particles-on-a-circle-and-eigenva",
-     "title": "Noncolliding particles on a circle and eigenvalues of unitary matrices",
-     "prose_ratio": 0.917,
-     "coverage_ratio": 0.938,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-011-41-the-graph-bkn-as-an-integrable-pm-graph",
-     "title": "The graph Bk,n as an integrable PM-graph",
-     "prose_ratio": 0.955,
-     "coverage_ratio": 0.899,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-012-42-h-transform-convolution-and-fourier-transform",
-     "title": "h-transform, convolution and Fourier transform on Bk,n",
-     "prose_ratio": 0.95,
-     "coverage_ratio": 0.892,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-013-44-invariant-brownian-motion-on-uk-and-unitary-d",
-     "title": "Invariant Brownian motion on Uk and unitary Dyson Brownian motion",
-     "prose_ratio": 1.0,
      "coverage_ratio": 0.921,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-014-5-the-fourier-transform-of-a-large-sequence-of-c",
+     "id": "sec-012-4-noncolliding-particles-on-a-circle-and-eigenva",
+     "title": "Noncolliding particles on a circle and eigenvalues of unitary matrices",
+     "prose_ratio": 0.917,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-41-the-graph-bkn-as-an-integrable-pm-graph",
+     "title": "The graph Bk,n as an integrable PM-graph",
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.932,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-42-h-transform-convolution-and-fourier-transform",
+     "title": "h-transform, convolution and Fourier transform on Bk,n",
+     "prose_ratio": 0.924,
+     "coverage_ratio": 0.908,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-43-fourier-transform-on-tk",
+     "title": "Fourier transform on Tk",
+     "prose_ratio": 0.925,
+     "coverage_ratio": 0.918,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-44-invariant-brownian-motion-on-uk-and-unitary-d",
+     "title": "Invariant Brownian motion on Uk and unitary Dyson Brownian motion",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.956,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-017-5-the-fourier-transform-of-a-large-sequence-of-c",
      "title": "The Fourier transform of a large sequence of convolution",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.994,
+     "prose_ratio": 0.941,
+     "coverage_ratio": 0.961,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-015-6-berry-esseen-theorem-on-bkn",
+     "id": "sec-018-6-berry-esseen-theorem-on-bkn",
      "title": "Berry-Esseen theorem on Bk,n",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.997,
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.97,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-016-62-proof-of-theorem-61",
+     "id": "sec-019-61-wasserstein-distance-on-tk",
+     "title": "Wasserstein distance on Tk",
+     "prose_ratio": 0.661,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-020-62-proof-of-theorem-61",
      "title": "Proof of Theorem 6.1",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-017-7-local-limit-theorem-and-its-geometric-conseque",
+     "id": "sec-021-7-local-limit-theorem-and-its-geometric-conseque",
      "title": "Local limit theorem and its geometric consequences",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.987,
+     "prose_ratio": 0.88,
+     "coverage_ratio": 0.91,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-018-appendix-a-small-quantum-cohomology-of-the-grass",
+     "id": "sec-022-appendix-a-small-quantum-cohomology-of-the-grass",
      "title": "Appendix A. Small quantum cohomology of the Grassmannian",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-019-a1-partitions-and-symmetric-functions",
+     "id": "sec-023-a1-partitions-and-symmetric-functions",
      "title": "A.1. Partitions and symmetric functions",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-020-a2-the-grassmannian-schubert-variety-and-interse",
+     "id": "sec-024-a2-the-grassmannian-schubert-variety-and-interse",
      "title": "A.2. the Grassmannian, Schubert variety and intersection",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-021-a3-quantum-cohomology-ring-of-the-grassmannian",
+     "id": "sec-025-a3-quantum-cohomology-ring-of-the-grassmannian",
      "title": "A.3. Quantum cohomology ring of the Grassmannian",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-022-references",
+     "id": "sec-026-references",
      "title": "References",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-023-nomenclature",
+     "id": "sec-027-nomenclature",
      "title": "Nomenclature",
      "result": "no matching \\section"
     }

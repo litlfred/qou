@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-14T17:43:47.518128+00:00",
-  "commitSha": "de500afd7404550c7db431c7e42bfcfc85c62b30",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-11-17T07:11:17.005502+00:00",
+  "commitSha": "d3dcd4c4757a988299ad0246ed502bd2358a90e4",
   "assertions": [
     {
       "name": "bar_sends_the_generator_to_its_inverse",
@@ -118,11 +118,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5655,
+  "durationMs": 2391,
   "computation": "qbeta-delta-bar-parity",
   "scriptFile": "qbeta_delta_bar_parity_probe.py",
-  "scriptHash": "e4e68844b9ec",
-  "scriptCommitSha": "46ba3c0243f537f046dfd6ffa8e995ace65802f5",
+  "scriptHash": "712a07f3a67a",
+  "scriptCommitSha": "d3dcd4c4757a988299ad0246ed502bd2358a90e4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -176,8 +176,8 @@
     "scope": "a",
     "adjudicates_the_fork": false,
     "wires_anything": false,
-    "checks_passed": 15,
-    "checks_total": 15
+    "checks_passed": 16,
+    "checks_total": 16
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

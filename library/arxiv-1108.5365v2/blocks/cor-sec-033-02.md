@@ -1,0 +1,1 @@
+The pairing between E, F, K, K0 and the D(A) generators is given by ⟨K, A⟩= q−1 2 , ⟨K, ˆA⟩= q 2 , ⟨K0, A⟩= q−1 2 , ⟨K0, ˆA⟩= q−1 2 , ⟨E, B⟩= c, ⟨F, ˆB⟩= c−1, and zero otherwise, where c ∈C is any constant. The pairing is then extended to any monomial by the coproduct and induction. By induction, we obtain

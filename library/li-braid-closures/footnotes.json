@@ -1,0 +1,1432 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "li-braid-closures",
+ "status": "determined",
+ "body_size": 12.0,
+ "footnotes": [
+  {
+   "id": "fn-p012-1",
+   "page": 12,
+   "mark": "2",
+   "text": "+1",
+   "marks": [
+    {
+     "page": 11,
+     "context": "(b)For m1, m"
+    },
+    {
+     "page": 11,
+     "context": "(b)For m1, m2, k1, k"
+    },
+    {
+     "page": 11,
+     "context": ", the linksˆγm1,k1andˆγm2,k2are equivalent iff (m1, k1) = (m"
+    },
+    {
+     "page": 11,
+     "context": "e linksˆγm1,k1andˆγm2,k2are equivalent iff (m1, k1) = (m2, k"
+    },
+    {
+     "page": 11,
+     "context": "2e"
+    },
+    {
+     "page": 11,
+     "context": "2e2) · e"
+    },
+    {
+     "page": 12,
+     "context": "2e"
+    },
+    {
+     "page": 12,
+     "context": "2e2)·e"
+    },
+    {
+     "page": 12,
+     "context": "2(L1L"
+    },
+    {
+     "page": 12,
+     "context": "t)12m+k−2(t"
+    },
+    {
+     "page": 12,
+     "context": "t)e(γm,k)−2((t"
+    },
+    {
+     "page": 12,
+     "context": "t)e(γm,k)−2(t"
+    },
+    {
+     "page": 12,
+     "context": "t)12m+k−2(t"
+    }
+   ],
+   "block": "library/li-braid-closures/blocks/prose-sec-007"
+  }
+ ],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "A knot is an embedding of the circle S"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "A knot is an embedding of the circle S1in S"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "inS"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "Definition 1.1.A splittingof a link L is a manifold B⊂S"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "toS"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "toS2andLintersectsbothconnectedcomponentsofS"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "t"
+  },
+  {
+   "page": 2,
+   "mark": "q",
+   "context": "XL(q, Λ) = −(1 −Λ"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "XL(q, Λ) = −(1 −Λq)XL"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "XL(q, Λ) = −(1 −Λq)XL1(q, Λ)XL"
+  },
+  {
+   "page": 2,
+   "mark": "t",
+   "context": "t),itfollowsthat∆L(t) = 0forall"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "∆L(t) = XL(t,"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "Example2.3.Thebraidclosureofσ"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "1∈B"
+  },
+  {
+   "page": 4,
+   "mark": "z",
+   "context": "qistheideal"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "qH"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "qHn(q),whereH"
+  },
+  {
+   "page": 4,
+   "mark": "h",
+   "context": "b∈λ"
+  },
+  {
+   "page": 5,
+   "mark": "g",
+   "context": "q"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "qg"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "1 −g"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "g2g1=−q"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "g"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "−q"
+  },
+  {
+   "page": 6,
+   "mark": "q",
+   "context": "ThisisvalidasGi= CHiC−1foreachi,whereC= [0"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "1 −g"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "1 −g"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "g2gi=−q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "g"
+  },
+  {
+   "page": 6,
+   "mark": "r",
+   "context": "q"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "qr(b)w −q"
+  },
+  {
+   "page": 6,
+   "mark": "h",
+   "context": "1 −q"
+  },
+  {
+   "page": 6,
+   "mark": "w",
+   "context": "1−Λqand"
+  },
+  {
+   "page": 6,
+   "mark": "e",
+   "context": "Λ)"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "z),relatedtotheJonesnormalizationbyXL(q, Λ) = PL((Λq)−1/2, q"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "Vˆα(t) =(−1)"
+  },
+  {
+   "page": 7,
+   "mark": "e",
+   "context": "t)"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "t"
+  },
+  {
+   "page": 7,
+   "mark": "e",
+   "context": "t)"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "t)e(α)−2((t"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "1−Λqwillexhibit"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "soutthatsuchsingularitiesareremovableduetothefactorof(1 −Λq)"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "(−1)"
+  },
+  {
+   "page": 7,
+   "mark": "e",
+   "context": "t)"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "t)e(α)−n+1(t"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "∆ˆα(t) =χ(1,"
+  },
+  {
+   "page": 7,
+   "mark": "e",
+   "context": "t)"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "t)e(α)−2(t"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "Remark.If we substitute t = ζn= e"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "(−1)"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "RecallfromExamples2.12and2.13thatS(1,"
+  },
+  {
+   "page": 8,
+   "mark": "e",
+   "context": "−1)"
+  },
+  {
+   "page": 8,
+   "mark": "e",
+   "context": "erwise,theusualconventionwherei =√−1yieldsthatVˆα(−1) = (−1)"
+  },
+  {
+   "page": 8,
+   "mark": "e",
+   "context": "Fromnowon,wewilladoptthelatterconventionwhereVˆα(−1) = (−1)"
+  },
+  {
+   "page": 8,
+   "mark": "e",
+   "context": "Vˆα(−1) = (−i)"
+  },
+  {
+   "page": 8,
+   "mark": "e",
+   "context": "Vˆα(−1) = (−i)e(α)(tr(ϕ(α)) −2)and∆ˆα(−1) = i"
+  },
+  {
+   "page": 8,
+   "mark": "g",
+   "context": "(2,1),while"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "(2,1),whileg"
+  },
+  {
+   "page": 8,
+   "mark": "e",
+   "context": "Vˆα(−1) = i"
+  },
+  {
+   "page": 8,
+   "mark": "e",
+   "context": "= i"
+  },
+  {
+   "page": 8,
+   "mark": "e",
+   "context": "= ie(α)(−1)(2(−1)"
+  },
+  {
+   "page": 8,
+   "mark": "e",
+   "context": "= ie(α)(−1)(2(−1)e(α)−(−1)"
+  },
+  {
+   "page": 8,
+   "mark": "e",
+   "context": "= (−i)"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "SL2(Z)∼= ⟨s, t | s"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "SL2(Z)∼= ⟨s, t | s4= 1, (st)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "SL2(Z)∼= ⟨s, t | s4= 1, (st)3= s"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "SL2(Z)∼= ⟨m1, m2| (m1m2m1)"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "2"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "1"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "1, m"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "SL2(Z)∼= ⟨s, t | s"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "SL2(Z)∼= ⟨s, t | s4= 1, (st)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "SL2(Z)∼= ⟨s, t | s4= 1, (st)3= s"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "∼= ⟨m1, m2| (m1m2m1)"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "∼= ⟨m1, m2| (m1m2m1)4= 1, (m1m2)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "∼= ⟨m1, m2| (m1m2m1)4= 1, (m1m2)3= (m1m2m1)"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "∼= ⟨m1, m2| (m1m2m1)"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "2"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "1"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "3⟩∼= ⟨m"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "3⟩∼= ⟨m1, m"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "3⟩∼= ⟨m1, m2| (m"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "3⟩∼= ⟨m1, m2| (m1"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "3⟩∼= ⟨m1, m2| (m1m"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "3⟩∼= ⟨m1, m2| (m1m2"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "3⟩∼= ⟨m1, m2| (m1m2m"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "3⟩∼= ⟨m1, m2| (m1m2m1)"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "3⟩∼= ⟨m1, m2| (m1m2m1)4= m"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "3⟩∼= ⟨m1, m2| (m1m2m1)4= m1"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "3⟩∼= ⟨m1, m2| (m1m2m1)4= m1m"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "3⟩∼= ⟨m1, m2| (m1m2m1)4= m1m2"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "3⟩∼= ⟨m1, m2| (m1m2m1)4= m1m2m"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "3⟩∼= ⟨m1, m2| (m1m2m1)4= m1m2m1"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "2"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "1"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "suchthatϕ(α0) = M"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "2andˆα =ˆα"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "existssomeB∈SL2(Z)suchthatBAB−1=M"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "2forsome"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "Defineα0∈B3tobeα0=βαβ−1.Thenϕ(α0)=BAB−1=M"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "2andˆα"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "some(x, y, z, w) ∈Z"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "Z"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "= M"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "kforwhichˆαisequivalenttothebraidclosureofσ"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "2∆4"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "2andˆα=ˆα"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "fyingϕ(α0)=M"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "2α"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "2α"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "3⟩.Then α"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "3⟩.Then α0is of the form σ"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "2∆4"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "Theorem3.9.Form, k∈Z,letγm,kdenotethebraidσ"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "2∆4"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "(b)For m"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "(b)For m1, m2, k"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "(b)For m1, m2, k1, k2∈Z, the linksˆγ"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "(b)For m1, m2, k1, k2∈Z, the linksˆγm1,k1andˆγ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "2, k1, k2∈Z, the linksˆγm1,k1andˆγm2,k2are equivalent iff (m"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "1, k2∈Z, the linksˆγm1,k1andˆγm2,k2are equivalent iff (m1, k"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "(ii+1).Thenˆγm,khasthreecirclesasψ(γm,k)=(23)"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "(ii+1).Thenˆγm,khasthreecirclesasψ(γm,k)=(23)k((12)(23)(12))"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "ii+1).Thenˆγm,khasthreecirclesasψ(γm,k)=(23)k((12)(23)(12))4"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "the braid σ"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "the braid σ4"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "ile if any other strand is removed, the resulting braid is σ"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "le if any other strand is removed, the resulting braid is σ4"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "{4m, 4m, 4m + k}areequaltozero,forcingm=0.Forpart(b),ifˆγ"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": ", 4m + k}areequaltozero,forcingm=0.Forpart(b),ifˆγm1,k1andˆγ"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": " 2 ∤k, then ˆγm,kis a link of two circles as ψ(γm,k) = (2 3)"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "boundingtorusatall,againforcingm = 0.Forpart(b),ifˆγ"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "undingtorusatall,againforcingm = 0.Forpart(b),ifˆγm1,k1andˆγ"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "One can check that (L1L2L1)"
+  },
+  {
+   "page": 11,
+   "mark": "6",
+   "context": "e can check that (L1L2L1)4acts as scalar multiplication by q"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "L1L2L1)4acts as scalar multiplication by q6.Also note that L"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "2"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "2e"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "2"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "2e2) · e2= −q(L"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "(e1 + e2)) · e2= −q(e1 + L"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "e1ase1isaneigenvectorand(L"
+  },
+  {
+   "page": 12,
+   "mark": "e",
+   "context": "2"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "2e2)·e2= (−q)"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "2e2)·e2= (−q)kby induction, so it follows that tr(L"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "−q(L"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "e2)·e2. Thus (L"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "2) = 1+(−q)"
+  },
+  {
+   "page": 12,
+   "mark": "e",
+   "context": "χ(2,1)(γm,k) = (−1)"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "χ(2,1)(γm,k) = (−1)e(γm,k)tr(L"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "2(L"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "2(L1L2L"
+  },
+  {
+   "page": 12,
+   "mark": "4",
+   "context": "2(L1L2L1)"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "2(L1L2L1)4"
+  },
+  {
+   "page": 12,
+   "mark": "e",
+   "context": "2(L1L2L1)4m) = (−1)"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "2(L1L2L1)4m) = (−1)e(γm,k)"
+  },
+  {
+   "page": 12,
+   "mark": "6",
+   "context": "2(L1L2L1)4m) = (−1)e(γm,k)q"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "2(L1L2L1)4m) = (−1)e(γm,k)q6"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "2(L1L2L1)4m) = (−1)e(γm,k)q6m(1 + (−q)"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "6,−k) = 12"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "6,−k) = 12m + k,onechecksthatχ(2,1)(γm,k) = χ(2,1)(γ"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "6,−k) and χ(3)(γm,k) = χ(3)(γ"
+  },
+  {
+   "page": 12,
+   "mark": "6",
+   "context": "t"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "t6"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "t6m((−t)"
+  },
+  {
+   "page": 12,
+   "mark": "12",
+   "context": "t)"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "t)12"
+  },
+  {
+   "page": 12,
+   "mark": "12",
+   "context": "∆ˆγm,k(t) =(−t)"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "∆ˆγm,k(t) =(−t)12"
+  },
+  {
+   "page": 12,
+   "mark": "6",
+   "context": "∆ˆγm,k(t) =(−t)12m+k −t"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "∆ˆγm,k(t) =(−t)12m+k −t6"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "∆ˆγm,k(t) =(−t)12m+k −t6m((−t)"
+  },
+  {
+   "page": 12,
+   "mark": "12",
+   "context": "t)"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "t)12"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "Proof.FromTheorem3.10,wehavethatχ(2,1)(γm,k) = (−1)"
+  },
+  {
+   "page": 12,
+   "mark": "6",
+   "context": "Proof.FromTheorem3.10,wehavethatχ(2,1)(γm,k) = (−1)kq"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "Proof.FromTheorem3.10,wehavethatχ(2,1)(γm,k) = (−1)kq6"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "f.FromTheorem3.10,wehavethatχ(2,1)(γm,k) = (−1)kq6m(1 + (−q)"
+  },
+  {
+   "page": 12,
+   "mark": "e",
+   "context": "t)"
+  },
+  {
+   "page": 12,
+   "mark": "6",
+   "context": "t"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "t6"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "t6m((−t)"
+  },
+  {
+   "page": 12,
+   "mark": "12",
+   "context": "t)"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "t)12"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "∆ˆγm,k(t) =χ(1,"
+  },
+  {
+   "page": 12,
+   "mark": "e",
+   "context": "t)"
+  },
+  {
+   "page": 12,
+   "mark": "12",
+   "context": "=(−t)"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "=(−t)12"
+  },
+  {
+   "page": 12,
+   "mark": "6",
+   "context": "=(−t)12m+k −t"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "=(−t)12m+k −t6"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "=(−t)12m+k −t6m((−t)"
+  },
+  {
+   "page": 12,
+   "mark": "12",
+   "context": "t)"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "t)12"
+  },
+  {
+   "page": 12,
+   "mark": "6",
+   "context": "2−1+ t"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "2−1+ t6"
+  },
+  {
+   "page": 12,
+   "mark": "12",
+   "context": "2+1+ t"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "2+1+ t12"
+  },
+  {
+   "page": 12,
+   "mark": "6",
+   "context": "Vˆγm,k(t) = t"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "Vˆγm,k(t) = t6"
+  },
+  {
+   "page": 12,
+   "mark": "12",
+   "context": "2+ t"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "2+ t12"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "2+ t12m+ 3"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "2+1+ t−6"
+  },
+  {
+   "page": 12,
+   "mark": "6",
+   "context": "∆ˆγm,k(t) =t"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "∆ˆγm,k(t) =t6"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "S3∼= ⟨s1, s2| s"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "1= s"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "2= s"
+  },
+  {
+   "page": 13,
+   "mark": "s",
+   "context": "2= s1"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "2= s1s"
+  },
+  {
+   "page": 13,
+   "mark": "s",
+   "context": "2= s1s2"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "2= s1s2s"
+  },
+  {
+   "page": 13,
+   "mark": "s",
+   "context": "2= s1s2s1"
+  },
+  {
+   "page": 13,
+   "mark": "s",
+   "context": "2"
+  },
+  {
+   "page": 13,
+   "mark": "s",
+   "context": "1"
+  },
+  {
+   "page": 13,
+   "mark": "s",
+   "context": "2"
+  },
+  {
+   "page": 13,
+   "mark": "s",
+   "context": "1"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "= e⟩/⟨s"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "1, s"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "α) = eiffwecanreduceαtothetrivialbraidbydeletinginstancesofσ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "Next,M"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "1≡M"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "SL2(Z/2Z)∼= ⟨m1, m2| m"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "1= m"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "2= m"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "2= m1"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "2= m1m"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "2= m1m2"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "2= m1m2m"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "2= m1m2m1"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "2"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "1"
+  },
+  {
+   "page": 13,
+   "mark": "4",
+   "context": "whereagainmiisrepresentedbythematrixMi.Therelation(m1m2m1)"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "droppedasitisimpliedbysettingm"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "1= m"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "wecanreduceαtothetrivialbraidbydeletinginstancesofσ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "} ⊂F"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "2.Letπ"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "2.Letπ2:SL"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "2.Letπ2:SL2(Z) →SL"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "Corollary3.13.Ifˆαisaknotforα ∈B3,thenϕ(α) ∈{(0"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "11), ( 1"
+  },
+  {
+   "page": 14,
+   "mark": "e",
+   "context": "Vˆα(−1) = (−i)"
+  },
+  {
+   "page": 14,
+   "mark": "e",
+   "context": "and∆ˆα(−1)=(−1)"
+  },
+  {
+   "page": 14,
+   "mark": "e",
+   "context": "2.The signed length of this word is exactly"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "= (M2M"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "1)"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "1)3M"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "1)3M2M"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "=(M1M"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "2)"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "2)3M"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "2)3M1M"
+  },
+  {
+   "page": 14,
+   "mark": "a",
+   "context": "2)3M1M2.Thisgivesus"
+  },
+  {
+   "page": 14,
+   "mark": "e",
+   "context": "2)3M1M2.Thisgivesusanewwordwhoselengthiscongruentto"
+  },
+  {
+   "page": 14,
+   "mark": "e",
+   "context": "VL(−1) = (−i)"
+  },
+  {
+   "page": 14,
+   "mark": "b",
+   "context": "VL(−1) = (−i)e(α)(tr(ϕ(α)) −2) ≡(−1)"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "and∆L(−1) ≡(−1)"
+  },
+  {
+   "page": 14,
+   "mark": "b",
+   "context": "and∆L(−1) ≡(−1)2"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "t)"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "t)e(α)((1 + t + t"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "t)e(α)((1 + t + t2+ t"
+  },
+  {
+   "page": 15,
+   "mark": "4",
+   "context": "t)e(α)((1 + t + t2+ t3+ t"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "t)e(α)((1 + t + t2+ t3+ t4)χ(1,1,1,1)(α) + (t + t"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "t)e(α)((1 + t + t2+ t3+ t4)χ(1,1,1,1)(α) + (t + t2+ t"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "+ t + t2+ t3+ t4)χ(1,1,1,1)(α) + (t + t2+ t3)χ(2,1,1)(α) + t"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "t"
+  },
+  {
+   "page": 15,
+   "mark": "5",
+   "context": "t3/2+ t"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "0 −→S(1,"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "0 −→S(1,1,"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "−→S(2,"
+  }
+ ]
+}

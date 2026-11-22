@@ -7,10 +7,11 @@ section_number: 3.1
 pages: 5-6
 source_pdf: 1604.02688v1.pdf
 source_sha256: bdcafe379519287c
-doc_brief: "THE 3D-INDEX AND NORMAL SURFACES — Dimofte, Gaiotto and Gukov introduced a powerful invariant, the 3D-index, associated to a suitable ideal triangulation of a 3-manifold with torus boundary"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.918
-latex_coverage_ratio: 0.737
+latex_coverage_ratio: 0.934
+doc_brief: "THE 3D-INDEX AND NORMAL SURFACES — Dimofte, Gaiotto and Gukov introduced a powerful invariant, the 3D-index, associated to a suitable ideal triangulation of a 3-manifold with torus boundary"
 ---
 \label{gluing_eqn_sect}
 

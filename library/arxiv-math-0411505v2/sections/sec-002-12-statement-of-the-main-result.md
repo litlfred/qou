@@ -4,13 +4,14 @@ doc_title: "A NON-COMMUTATIVE FORMULA FOR THE COLORED JONES FUNCTION"
 section_id: sec-002-12-statement-of-the-main-result
 section_title: "Statement of the main result"
 section_number: 1.2
-pages: 1-4
+pages: 2-4
 source_pdf: 0411505v2.pdf
 source_sha256: a38cec365e0a227e
 toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.989
-latex_coverage_ratio: 0.511
+latex_coverage_ratio: 0.978
+doc_brief: "A NON-COMMUTATIVE FORMULA FOR THE COLORED JONES FUNCTION — The colored Jones function of a knot is a sequence of Laurent polynomials that encodes the Jones polynomial of a knot and its parallels."
 ---
 \lbl{sub.sta}
 

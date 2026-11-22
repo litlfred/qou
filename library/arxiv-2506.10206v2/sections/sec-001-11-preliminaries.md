@@ -10,7 +10,8 @@ source_sha256: d0631a9abd9b1da3
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.921
-latex_coverage_ratio: 1.0
+latex_coverage_ratio: 0.992
+doc_brief: "Analytic Dilogarithm Identities — We introduce dilogarithm identities through a beta integral-based technique that we apply to provide analytic proofs of previously conjectured dilogarithm relations"
 ---
 The *$\Gamma$-function* is among the most fundamental and ubiquitous special functions and may be defined via the Euler integral $\Gamma(x) := \int_{0}^{\infty} u^{x-1} e^{-u} \, du$ for $\Re(x) > 0$ [@Rainville1960 §2]. The *beta integral* is of basic importance as a special function, in much the same way as the $\Gamma$-function, and may be defined so that $$\label{betadefinition}
  B(p, q) := \int_{0}^{1} t^{p-1} (1-t)^{q-1} \, dt$$ for $\Re(p) > 0$ and $\Re(q) > 0$ [@Rainville1960 §2.16], so that $$\label{betaevaluate}

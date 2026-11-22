@@ -3,204 +3,229 @@
  "doc_id": "arxiv-1207.6711v1",
  "source_sha256": "320c4301ac66fff1",
  "brief": "GLUING EQUATIONS FOR PGL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — In [11] we parametrized boundary-unipotent representations of a 3-manifold group into SL(n, C) using Ptolemy coordinates, which were",
- "extended": "**GLUING EQUATIONS FOR PGL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS**\n\n*STAVROS GAROUFALIDIS, MATTHIAS GOERNER, AND CHRISTIAN K. ZICKERT*\n\n47 pp, 39 sections.\n\n**Abstract.** In [11] we parametrized boundary-unipotent representations of a 3-manifold group into SL(n, C) using Ptolemy coordinates, which were inspired by A-coordinates on higher Teichm¨ uller space due to Fock and Goncharov. In this paper, we parametrize rep- resentations into PGL(n, C) using shape coordinates which are a 3-dimensional analogue of Fock and Goncharov’s X -coordinates. These coordinates satisfy equations generalizing Thurston’s gluing equations. These equations are of Neumann-Zagier type and satisfy sym- plectic relations with applications in quantum topology. We also explore a duality between the Ptolemy coordinates and the shape coordinates.\n\n**Outline.** 1 Introduction; 1.2 Our main results; 1.3 Computations and applications; 1.4 Overview of the Paper; 2 Concrete triangulations; 1.5 Acknowledgement; 2.1 Face pairing permutations; 3.1 Symplectic properties of the gluing equati; 4 Generalized gluing equations; 4.1 Simplex coordinates; 4.2 Symmetries of a simplex; 4.3 Shape assignments; 4.4 Gluing equations for oriented triangulatio; 4.5 The pullback of a shape assignment under a; 4.6 Gluing equations for general concrete tria; 5 Review of Ptolemy coordinates; 5.1 Ptolemy assignments for ordered triangulat; 5.2 The pullback of a Ptolemy assignment under\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: LetP = (A|B) be the concatenation of the matrices A and B in (1.3).\n- Theorem 1.2: There is a monomial map µ: Pn(T )→ Vn(T ) which ﬁts in a commutative\n- Theorem 1.2: is an immediate consequence of Theorem 1.3 below which displays some\n- Theorem 1.3: There is a commutative diagram\n- Theorem 1.1: and discuss some applications in quantum topology. Sections 8-11 are devoted\n- Theorem 3.1: A solution to the edge equations with all shape coordinates in C\\{ 0, 1}",
+ "extended": "**GLUING EQUATIONS FOR PGL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS**\n\n*STAVROS GAROUFALIDIS, MATTHIAS GOERNER, AND CHRISTIAN K. ZICKERT*\n\n47 pp, 44 sections.\n\n**Abstract.** In [11] we parametrized boundary-unipotent representations of a 3-manifold group into SL(n, C) using Ptolemy coordinates, which were inspired by A-coordinates on higher Teichm¨uller space due to Fock and Goncharov. In this paper, we parametrize rep- resentations into PGL(n, C) using shape coordinates which are a 3-dimensional analogue of Fock and Goncharov’s X-coordinates. These coordinates satisfy equations generalizing Thurston’s gluing equations. These equations are of Neumann-Zagier type and satisfy sym- plectic relations with applications in quantum topology. We also explore a duality between the Ptolemy coordinates and the shape coordinates.\n\n**Outline.** Front matter; 1.1 Thurston's gluing equations; 1 Introduction; 1.2 Our main results; 1.3 Computations and applications; 1.4 Overview of the Paper; 1.5 Acknowledgement; 2 Concrete triangulations; 2.1 Face pairing permutations; 3 Thurston's gluing equations; 3.1 Symplectic properties of the gluing equati; 4 Generalized gluing equations; 4.1 Simplex coordinates; 4.2 Symmetries of a simplex; 4.3 Shape assignments; 4.4 Gluing equations for oriented triangulatio; 4.5 The pullback of a shape assignment under a; 4.6 Gluing equations for general concrete tria",
  "tokens": {
   "brief": 49,
-  "extended": 493
+  "extended": 349
  },
  "sections": [
   {
-   "id": "sec-000-1-introduction",
-   "title": "Introduction",
-   "pages": "1-3"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
   },
   {
-   "id": "sec-001-12-our-main-results",
+   "id": "sec-000-11-thurstons-gluing-equations",
+   "title": "Thurston's gluing equations",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "title": "Introduction",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-002-12-our-main-results",
    "title": "Our main results",
    "pages": "3-5"
   },
   {
-   "id": "sec-002-13-computations-and-applications",
+   "id": "sec-003-13-computations-and-applications",
    "title": "Computations and applications",
    "pages": "5-5"
   },
   {
-   "id": "sec-003-14-overview-of-the-paper",
+   "id": "sec-004-14-overview-of-the-paper",
    "title": "Overview of the Paper",
-   "pages": "5-5"
-  },
-  {
-   "id": "sec-004-2-concrete-triangulations",
-   "title": "Concrete triangulations",
    "pages": "5-6"
   },
   {
    "id": "sec-005-15-acknowledgement",
    "title": "Acknowledgement",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-006-2-concrete-triangulations",
+   "title": "Concrete triangulations",
    "pages": "6-7"
   },
   {
-   "id": "sec-006-21-face-pairing-permutations",
+   "id": "sec-007-21-face-pairing-permutations",
    "title": "Face pairing permutations",
    "pages": "7-8"
   },
   {
-   "id": "sec-007-31-symplectic-properties-of-the-gluing-equations",
+   "id": "sec-008-3-thurstons-gluing-equations",
+   "title": "Thurston's gluing equations",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-009-31-symplectic-properties-of-the-gluing-equations",
    "title": "Symplectic properties of the gluing equations",
    "pages": "8-9"
   },
   {
-   "id": "sec-008-4-generalized-gluing-equations",
+   "id": "sec-010-4-generalized-gluing-equations",
    "title": "Generalized gluing equations",
    "pages": "9-9"
   },
   {
-   "id": "sec-009-41-simplex-coordinates",
+   "id": "sec-011-41-simplex-coordinates",
    "title": "Simplex coordinates",
    "pages": "9-9"
   },
   {
-   "id": "sec-010-42-symmetries-of-a-simplex",
+   "id": "sec-012-42-symmetries-of-a-simplex",
    "title": "Symmetries of a simplex",
    "pages": "9-9"
   },
   {
-   "id": "sec-011-43-shape-assignments",
+   "id": "sec-013-43-shape-assignments",
    "title": "Shape assignments",
    "pages": "9-10"
   },
   {
-   "id": "sec-012-44-gluing-equations-for-oriented-triangulations",
+   "id": "sec-014-44-gluing-equations-for-oriented-triangulations",
    "title": "Gluing equations for oriented triangulations",
    "pages": "10-13"
   },
   {
-   "id": "sec-013-45-the-pullback-of-a-shape-assignment-under-a-sy",
+   "id": "sec-015-45-the-pullback-of-a-shape-assignment-under-a-sy",
    "title": "The pullback of a shape assignment under a symmetry",
    "pages": "13-14"
   },
   {
-   "id": "sec-014-46-gluing-equations-for-general-concrete-triangu",
+   "id": "sec-016-46-gluing-equations-for-general-concrete-triangu",
    "title": "Gluing equations for general concrete triangulations",
    "pages": "14-14"
   },
   {
-   "id": "sec-015-5-review-of-ptolemy-coordinates",
+   "id": "sec-017-5-review-of-ptolemy-coordinates",
    "title": "Review of Ptolemy coordinates",
    "pages": "14-14"
   },
   {
-   "id": "sec-016-51-ptolemy-assignments-for-ordered-triangulation",
+   "id": "sec-018-51-ptolemy-assignments-for-ordered-triangulation",
    "title": "Ptolemy assignments for ordered triangulations",
    "pages": "14-15"
   },
   {
-   "id": "sec-017-52-the-pullback-of-a-ptolemy-assignment-under-a",
+   "id": "sec-019-52-the-pullback-of-a-ptolemy-assignment-under-a",
    "title": "The pullback of a Ptolemy assignment under a symmetry",
    "pages": "15-16"
   },
   {
-   "id": "sec-018-53-ptolemy-assignments-for-general-concrete-tria",
+   "id": "sec-020-53-ptolemy-assignments-for-general-concrete-tria",
    "title": "Ptolemy assignments for general concrete triangulations",
    "pages": "16-17"
   },
   {
-   "id": "sec-019-6-from-ptolemy-coordinates-to-shapes",
+   "id": "sec-021-6-from-ptolemy-coordinates-to-shapes",
    "title": "From Ptolemy coordinates to shapes",
    "pages": "17-18"
   },
   {
-   "id": "sec-020-61-proof-for-edge-equations",
+   "id": "sec-022-61-proof-for-edge-equations",
    "title": "Proof for edge equations",
    "pages": "18-19"
   },
   {
-   "id": "sec-021-62-proof-for-face-equations",
+   "id": "sec-023-62-proof-for-face-equations",
    "title": "Proof for face equations",
    "pages": "19-19"
   },
   {
-   "id": "sec-022-63-proof-for-internal-equations",
+   "id": "sec-024-63-proof-for-internal-equations",
    "title": "Proof for internal equations",
    "pages": "19-20"
   },
   {
-   "id": "sec-023-7-symplectic-properties-and-quantum-topology",
+   "id": "sec-025-7-symplectic-properties-and-quantum-topology",
    "title": "Symplectic properties and quantum topology",
    "pages": "20-23"
   },
   {
-   "id": "sec-024-71-applications-in-quantum-topology",
+   "id": "sec-026-71-applications-in-quantum-topology",
    "title": "Applications in quantum topology",
    "pages": "23-25"
   },
   {
-   "id": "sec-025-8-decorations",
+   "id": "sec-027-8-decorations",
    "title": "Decorations",
    "pages": "25-26"
   },
   {
-   "id": "sec-026-81-generic-decorations-ptolemy-coordinates-and-s",
+   "id": "sec-028-81-generic-decorations-ptolemy-coordinates-and-s",
    "title": "Generic decorations, Ptolemy coordinates and shapes",
    "pages": "26-28"
   },
   {
-   "id": "sec-027-9-the-natural-cocycle-of-a-generic-decoration",
+   "id": "sec-029-9-the-natural-cocycle-of-a-generic-decoration",
    "title": "The natural cocycle of a generic decoration",
    "pages": "28-28"
   },
   {
-   "id": "sec-028-92-cocycles",
-   "title": "Cocycles",
-   "pages": "28-28"
-  },
-  {
-   "id": "sec-029-91-truncated-and-doubly-truncated-simplices",
+   "id": "sec-030-91-truncated-and-doubly-truncated-simplices",
    "title": "Truncated and doubly truncated simplices",
-   "pages": "28-31"
+   "pages": "28-29"
   },
   {
-   "id": "sec-030-10-explicit-formulas-for-the-natural-cocycles",
+   "id": "sec-031-92-cocycles",
+   "title": "Cocycles",
+   "pages": "29-29"
+  },
+  {
+   "id": "sec-032-93-the-natural-cocycle-of-a-generic-decoration",
+   "title": "The natural cocycle of a generic decoration",
+   "pages": "29-31"
+  },
+  {
+   "id": "sec-033-10-explicit-formulas-for-the-natural-cocycles",
    "title": "Explicit formulas for the natural cocycles",
    "pages": "31-31"
   },
   {
-   "id": "sec-031-101-diamond-and-ratio-coordinates",
+   "id": "sec-034-101-diamond-and-ratio-coordinates",
    "title": "Diamond and ratio coordinates",
    "pages": "31-33"
   },
   {
-   "id": "sec-032-102-x-coordinates",
+   "id": "sec-035-102-x-coordinates",
    "title": "X-coordinates",
-   "pages": "33-39"
+   "pages": "33-36"
   },
   {
-   "id": "sec-033-11-from-shape-assignments-to-cocycles",
+   "id": "sec-036-103-from-natural-slncn-cocycles-to-natural-pglnc",
+   "title": "From natural (SL(n,C),N)-cocycles to natural (PGL(n,C),B,H)-cocycles.",
+   "pages": "36-39"
+  },
+  {
+   "id": "sec-037-11-from-shape-assignments-to-cocycles",
    "title": "From shape assignments to cocycles",
    "pages": "39-41"
   },
   {
-   "id": "sec-034-12-duality",
+   "id": "sec-038-12-duality",
    "title": "Duality",
    "pages": "41-41"
   },
   {
-   "id": "sec-035-13-the-cusp-equations",
+   "id": "sec-039-13-the-cusp-equations",
    "title": "The cusp equations",
    "pages": "41-42"
   },
   {
-   "id": "sec-036-131-simplifying-the-cusp-equations",
+   "id": "sec-040-131-simplifying-the-cusp-equations",
    "title": "Simplifying the cusp equations",
    "pages": "42-43"
   },
   {
-   "id": "sec-037-14-example-the-figure-eight-knot",
+   "id": "sec-041-14-example-the-figure-eight-knot",
    "title": "Example: the figure-eight knot",
    "pages": "43-45"
   },
   {
-   "id": "sec-038-references",
+   "id": "sec-042-references",
    "title": "References",
    "pages": "45-47"
   }
@@ -209,8 +234,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

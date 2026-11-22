@@ -1,0 +1,48 @@
+1962 Noelia Rizo, A. A. Schaeffer Fry and Carolina Vallejo
+
+2B. The reduction. Here we reduce Theorem A to a problem on simple groups, which is done in
+Theorem 2.6 below. Theorem C collects the properties of simple groups that will be key for performing
+such reduction. We would like to remark that the conditions in Theorem C related to the conjugation by
+group automorphisms are not needed in this context, but may be of independent interest.
+
+Theorem 2.6. Let G be a finite group of order divisible by p where p € {2, 3}. Let P € Syl,(G). Then
+Irrp(Bo(G))"'|= pif, and only if, P is cyclic.
+
+Proof. If P is cyclic, then |Irr,(Bo(G))*'| = p by Lemma 1.3.
+
+We assume now that |Irr,(Bo(G))°'| = p and we work to prove that P is cyclic by induction on the
+order of G.
+
+First, notice that we may assume that G is not simple, by Theorem C(a), and Ng(P) < G by
+Theorem 1.5.
+
+Step 1. We may assume O,(G) = 1. This follows by Lemma 2.1(a) and induction.
+
+Step 2. We may assume that O”'(G) =G. Otherwise, let M <G with |G/M| not divisible by p and
+G/M > | simple. Then P C M and by the Frattini argument MNg(P) = G. Hence MCg(P)<G and
+therefore G = Cg(P)M or Cg(P) C M. Suppose G = MCG(P), then restriction defines a bijection
+Irry (Bo(G))*! > Irrpy:(Bo(M))*! by Theorem 2.3. In this case we are done by induction. Therefore we
+may assume that Cg(P) C M. We claim that Bo(G) is the only block of G covering Bo(M). Indeed, let
+B be a block of G covering Bo(M). By [Navarro 1998, Theorem 9.26], we have that P is a defect group
+of B. By [loc. cit., Lemma 9.20], B is regular with respect to M and hence by [loc. cit., Theorem 9.19],
+Bo(M) = B. By Brauer’s third main theorem we have that Bo(M)° = Bo(G) and hence B = Bo(G)
+and the claim is proven. In particular, Irr(G/M) C Irr,(Bo(G))”! as every character in Irr(G/M) has
+
+p’-degree and is oj-invariant (for G/M is a p’-group). By hypothesis |Irr(G/M)| < p. As G/M isa
+nontrivial p’-group, we immediately get a contradiction if p = 2. If p = 3, then |Irr(G/M)| < 3 forces
+G/M = Cy. Write Irr,(Bo(G))"! = {1, 4, 0} with M C ker A, for instance. Let t € Irr,/(Bo(M))"! be
+nontrivial by Lemma 1.4. Let x € Irr(Bo(G)) be over t. Since |G/M| is not divisible by p, we have that
+X €Irr,y(Bo(G))”! by [Navarro and Tiep 2019, Lemma 5.1]. Thus necessarily x = 6. Since 0 has at
+most two irreducible constituents, we have that |Irr,(Bo(M))°'| = 3 and we are done by induction in
+this case.
+
+Step 3. Jf 14 M<G, then every x € Itrp(Bo(G))”! satisfies M C ker x and PM/M > 1is cyclic. By
+Step 2, we have that p divides |G/M| and hence |Irr,(Bo(G/M))*'| = p follows from Lemma 1.4. The
+claim of the step now follows from Lemma 2.1(a) and by induction.
+
+Step 4. If 14 M<G and y €Itr,(Bo(M P))", then there is some x € Itty (Bo(G))”! lying over y. Write
+H = MPC<(P), so that MP <H. By Theorem 2.3, restriction defines a bijection Irr,(Bo(H))"! >
+
+Irr,(Bo(M P))*', and hence some 6 € Irr,(Bo(H))*! extends y. By Lemma 2.4, the claim of the step
+follows.
+

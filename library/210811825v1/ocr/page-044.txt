@@ -1,0 +1,55 @@
+where y > 1 and 0 < 6 < 5. These three cases respectively describe hyperbolic, elliptic,
+and parabolic transformations.
+Where we have an orientation reversing isometry ¢ € Isom” (H) = Isom(H) \Isom* (H),
+az+b
+a+d
+
+such that ad — be = —1, t will be conjugate to a matrix of the form
+
+(i) «(0 )
+
+where y < —1. The first case describes a glide reflection, and the second, a reflection.
+
+tizhe
+
+Definition 2.25 (Fuchsian group) A subgroup TC PSLo(R) is called Fuchsian if it
+acts on H discontinuously. A Fuchsian group T is said to be of the first kind if its limit
+set, that is, the limit points of orbits of T is OH
+
+Definition 2.26 (Fundamental domain) A set F C H is a fundamental domain for
+
+T if F is a closed domain in H, and the translations of F under [ tessellate H.
+
+Every finite area hyperbolic surface S can be represented as the quotient of the H by
+the action of a Fuchsian group [ of the first kind, that is
+
+S&T\H
+
+If [ contains only hyperbolic elements, then the surface will be smooth and compact,
+with genus g > 2. This neat isomorphism cdmds from the uniformization theorem, which
+
+we state in two parts (see, for example, [24]).
+
+Theorem 2.27 (Koebe, Poincaré) For any smooth Riemannian metric on a surface,
+
+there exists a conformally equivalent metric of constant curvature.
+
+We can use a global rescaling to restrict ourselves to curvatures of +1, 0, and —1.
+
+Then we have the following
+
+Theorem 2.28 (Hopf) Up to isometry, the only smooth, complete, simply connected
+
+surfaces of constant curvature are S*, R?, and H?.
+
+The complex analogue of this is that every simply connected Riemann surface is holo-
+morphically equivalent to C U oo, C or H.
+
+Since Fuchsian groups act discontinuously, a fundamental domain F’ will share a border
+with a finite number of translates of itself in the associated tessellation. If T is a Fuchsian
+group of the first kind, its fundamental domain can be chosen to be a convex polygon
+given by
+
+D(w) = {z € H| p(z,w) < p(z, ww) Vy ET, y 4 TH,
+
+34

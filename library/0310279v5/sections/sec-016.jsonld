@@ -9,13 +9,15 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Using braid foliations to detect stabilizations",
-  "pageStart": 37,
-  "pageEnd": 38,
+  "title": "Control over the foliations",
+  "pageStart": 30,
+  "pageEnd": 34,
   "contains": [
-    "library/0310279v5/blocks/prose-sec-016"
+    "library/0310279v5/blocks/prose-sec-016",
+    "library/0310279v5/blocks/lem-sec-016-01",
+    "library/0310279v5/blocks/lem-sec-016-02"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/0310279v5",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/0310279v5",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0310279v5/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0310279v5/manifest.jsonld",
   "provenance": "ingested"
 }

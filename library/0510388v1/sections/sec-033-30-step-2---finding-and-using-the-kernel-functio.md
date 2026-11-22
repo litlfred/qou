@@ -1,6 +1,6 @@
 ---
 doc_id: 0510388v1
-doc_title: "ELECTRODYNAMICS and the GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE Dennis DeTurck and Herman Gluck"
+doc_title: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space"
 section_id: sec-033-30-step-2---finding-and-using-the-kernel-functio
 section_title: "Step 2 - Finding and using the kernel function ϕ3 ."
 section_number: 30
@@ -8,6 +8,7 @@ pages: 65-69
 source_pdf: 0510388v1.pdf
 source_sha256: c83c0f6a2eaa74f3
 toc_source: inferred
+doc_brief: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space — 64 sections: Front matter; ORGANIZATION; STATEMENTS OF RESULTS"
 ---
 Continuing our calculation of the Laplacian of  A(V, ϕ2)(y) ,  we have 
        
@@ -38,7 +39,6 @@ over  S3 ,  and where the function  ϕ3(α)  has a singularity at  α = 0  but n
  
  
  
-66 
  
  
  
@@ -78,7 +78,6 @@ We break the calculation of  ϕ3  into three pieces.
  
  
  
-67 
  
  
  
@@ -118,7 +117,6 @@ then we have
 ∆Φ1  =  ϕ1  —  [ϕ1] . 
  
  
-68 
  
  
  
@@ -149,9 +147,4 @@ satisfies
  
 ∆ϕ3  =  (ϕ0  —  [ϕ0])  —  (ϕ1  —  [ϕ1])  +  (ψ  —  [ψ]) , 
  
-and is the kernel function we are seeking. 
- 
- 
- 
- 
-69
+and is the kernel function we are seeking.

@@ -1,0 +1,1683 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-0911.3569v1",
+ "status": "determined",
+ "pages_unread": [
+  8,
+  9
+ ],
+ "body_size": 10.0,
+ "footnotes": [],
+ "uncalled_notes": [
+  {
+   "id": "fn-p001-1",
+   "page": 1,
+   "mark": "15",
+   "text": "A48, 60G55, 60K35. Research supported by NSERC Discovery Grant OGP0105392.",
+   "block": "library/arxiv-0911.3569v1/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p029-1",
+   "page": 29,
+   "mark": "1",
+   "text": "J. Borcea and P. Br¨and´en, Applications of stable polynomials to mixed determinants: John- son’s conjectures, unimodality, and symmetrized Fischer products, Duke Math. J. 143 (2008), 205–223.",
+   "block": "library/arxiv-0911.3569v1/blocks/prose-sec-025"
+  },
+  {
+   "id": "fn-p029-2",
+   "page": 29,
+   "mark": "2",
+   "text": "J. Borcea and P. Br¨and´en, Lee–Yang problems and the geometry of multivariate polynomi- als, Lett. Math. Phys. 86 (2008), 53–61.",
+   "block": "library/arxiv-0911.3569v1/blocks/prose-sec-025"
+  },
+  {
+   "id": "fn-p029-3",
+   "page": 29,
+   "mark": "3",
+   "text": "J. Borcea and P. Br¨and´en, P´olya–Schur master theorems for circular domains and their boundaries, Ann. of Math. 170 (2009), 465–492.",
+   "block": "library/arxiv-0911.3569v1/blocks/prose-sec-025"
+  },
+  {
+   "id": "fn-p029-4",
+   "page": 29,
+   "mark": "4",
+   "text": "J. Borcea and P. Br¨and´en, Multivariate P´olya-Schur classiﬁcation problems in the Weyl algebra, to appear in Proc. London Math. Soc.",
+   "block": "library/arxiv-0911.3569v1/blocks/prose-sec-025"
+  },
+  {
+   "id": "fn-p029-5",
+   "page": 29,
+   "mark": "5",
+   "text": "J. Borcea and P. Br¨and´en, The Lee–Yang and P´olya–Schur programs I: linear operators preserving stability, Invent. Math. 177 (2009), 541–569.",
+   "block": "library/arxiv-0911.3569v1/blocks/prose-sec-025"
+  },
+  {
+   "id": "fn-p029-6",
+   "page": 29,
+   "mark": "6",
+   "text": "J. Borcea and P. Br¨and´en, The Lee–Yang and P´olya–Schur programs II: theory of stable polynomials and applications Comm. Pure Appl. Math. 62 (2009), 1595–1631.",
+   "block": "library/arxiv-0911.3569v1/blocks/prose-sec-025"
+  },
+  {
+   "id": "fn-p029-7",
+   "page": 29,
+   "mark": "7",
+   "text": "J. Borcea, P. Br¨and´en, and T.M. Liggett, Negative dependence and the geometry of poly- nomials, J. Amer. Math. Soc. 22 (2009), 521–567.",
+   "block": "library/arxiv-0911.3569v1/blocks/prose-sec-025"
+  },
+  {
+   "id": "fn-p029-8",
+   "page": 29,
+   "mark": "8",
+   "text": "P. Br¨and´en, Polynomials with the half-plane property and matroid theory, Adv. Math. 216 (2007), 302–320.",
+   "block": "library/arxiv-0911.3569v1/blocks/prose-sec-025"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "x",
+   "context": "i∈S"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "i∈Sx"
+  },
+  {
+   "page": 2,
+   "mark": "m",
+   "context": "f≡0identically,orwheneverz=(z1, ..., zm)∈H"
+  },
+  {
+   "page": 2,
+   "mark": "m",
+   "context": "Hurwitz’sTheorem(Theorem1.3.8of[14]).LetΩ⊆C"
+  },
+  {
+   "page": 3,
+   "mark": "m",
+   "context": "wheneachAiispositivedeﬁnite.Consideranyz=a + ib∈H"
+  },
+  {
+   "page": 3,
+   "mark": "m",
+   "context": "heneachAiispositivedeﬁnite.Consideranyz=a + ib∈Hm,witha, b∈R"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "andb"
+  },
+  {
+   "page": 3,
+   "mark": "m",
+   "context": "andbi>0foralli∈[m](abbreviatedtob>0).NowQ=P"
+  },
+  {
+   "page": 3,
+   "mark": "b",
+   "context": "i=1"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "i=1b"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "i=1biA"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "deﬁnite,andhencehasapositivedeﬁnitesquare-rootQ"
+  },
+  {
+   "page": 3,
+   "mark": "m",
+   "context": "P"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "i=1"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "i=1a"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "i=1aiA"
+  },
+  {
+   "page": 3,
+   "mark": "m",
+   "context": "ingthefactthatthismatrixisHermitian.Thus,f(z)̸ = 0forallz ∈H"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "beadiagonalmatrixofindeterminates.Thenf(x) = det(QXQ"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "entryqhjqij.Thatis,Aj= QjQ"
+  },
+  {
+   "page": 3,
+   "mark": "j",
+   "context": "jinwhichQ"
+  },
+  {
+   "page": 3,
+   "mark": "j",
+   "context": "jinwhichQjdenotesthe"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "eachAjispositivesemideﬁniteandQXQ"
+  },
+  {
+   "page": 3,
+   "mark": "m",
+   "context": "Lemma2.3.Apolynomialf∈C[x]isstableifandonlyifforalla, b ∈R"
+  },
+  {
+   "page": 3,
+   "mark": "m",
+   "context": "Proof.Since H"
+  },
+  {
+   "page": 3,
+   "mark": "m",
+   "context": "Proof.Since Hm= {a+bt :a, b ∈R"
+  },
+  {
+   "page": 3,
+   "mark": "m",
+   "context": "(b)Scaling:forc ∈Canda ∈R"
+  },
+  {
+   "page": 3,
+   "mark": "f",
+   "context": "1"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "(e)Inversion:ifdeg1(f) = d,f7→x"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "1, x"
+  },
+  {
+   "page": 3,
+   "mark": "m",
+   "context": "1, x2, . . . , x"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "ξ"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "ξ1, ..., ξ"
+  },
+  {
+   "page": 3,
+   "mark": "d",
+   "context": "ξ1, ..., ξdbetherootsofg(x),sothatg(x) = cQ"
+  },
+  {
+   "page": 3,
+   "mark": "h",
+   "context": "h=1(x −ξ"
+  },
+  {
+   "page": 3,
+   "mark": "c",
+   "context": "h=1(x −ξh)forsome"
+  },
+  {
+   "page": 3,
+   "mark": "g",
+   "context": "dxlog"
+  },
+  {
+   "page": 4,
+   "mark": "m",
+   "context": "z ∈H"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "θ"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "θ1≤ξ"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "θ1≤ξ1≤θ"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "θ1≤ξ1≤θ2≤ξ"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "θ1≤ξ1≤θ2≤ξ2≤· · · .Foreachi ∈[ℓ],letbg"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "θ1≤ξ1≤θ2≤ξ2≤· · · .Foreachi ∈[ℓ],letbgi= g/(x −θ"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "f= ag + b"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "f= ag + b1bg"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "i=1"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "i=1b"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "i=1bi"
+  },
+  {
+   "page": 4,
+   "mark": "g",
+   "context": "i=1bib"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "i=1bibg"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "i=1bibgi,allof"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "i=1bibgi,allofb"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "i=1"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "i=1b"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "i=1bi"
+  },
+  {
+   "page": 4,
+   "mark": "g",
+   "context": "i=1bib"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "i=1bibg"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "(x −θi)"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "g"
+  },
+  {
+   "page": 5,
+   "mark": "d",
+   "context": "forallz∈H,sothatg + ifisstable.Fortheconverse,letp(x) = cQ"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "i=1(x −ξ"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Tλ(x"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Tλ(xn)=λ(n)x"
+  },
+  {
+   "page": 5,
+   "mark": "x",
+   "context": "n=0λ(n)"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "n=0λ(n)x"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Cx"
+  },
+  {
+   "page": 5,
+   "mark": "j",
+   "context": "inwhichC∈R,n ∈N,a ≥0,allα"
+  },
+  {
+   "page": 5,
+   "mark": "j",
+   "context": "j=1α"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "(d)Foralln∈N,thepolynomialTλ((1 + x)"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "(b)If0̸ ≡f∈S[x]theng + yf∈S[x, y]ifandonlyifforallz ∈H"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "andb > 0.ByLemma2.3,foralla, b ∈R"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "ByHB,"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "ByHB,bf(t)=f(a + bt)andbg(t)=g(a + bt)aresuchthat"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "c"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "cbf+ dbg∈SR[t]forallc, d∈R.ByHKOagain,therootsofb"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "f+ dbg∈SR[t]forallc, d∈R.ByHKOagain,therootsofbbfandofbg + a"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "interlaced.SinceW[b"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "interlaced.SinceW[bbf, bg + a"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "erlaced.SinceW[bbf, bg + abf]=bW[bf, bg]≤0onR,itfollowsthatb"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "inceW[bbf, bg + abf]=bW[bf, bg]≤0onR,itfollowsthatbbf≪bg + a"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "Finally,byHBagain,bg + (a + ib)"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "y,byHBagain,bg + (a + ib)bf∈S[t].Sincethisholdsforalla, b ∈R"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "thenthereisnothingtoprove.Otherwise,consideranyz ∈H"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "Conversely,assumethataf+ bg∈SR[x]foralla, b∈R.Leta, b∈R"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "b > 0, and let"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": ", and letbf(t) = f(a+bt) and bg(t) = g(a+bt).By Lemma 2.3, a"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "foralla, b ∈R.ByHKO,foreacha, b ∈R"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "foralla, b ∈R.ByHKO,foreacha, b ∈Rmwithb > 0,either"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "If"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "Ifbf≪bgfor all a, b ∈R"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "Ifbf≪bgfor all a, b ∈Rmwith b > 0, then by HB, bg+i"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": " a, b ∈Rmwith b > 0, then by HB, bg+ibf∈S[t] for all a, b ∈R"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "deﬁnition).Similarly,ifbg≪bfforalla, b ∈R"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "R"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "Rmwithb0>0,andg(a1+ b1t)≪f(a1+ b1t)foranothera1, b1∈R"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": " +bg∈SR[x]foralla, b ∈R,andWi[f, g](a) ≤0foralli ∈[m]anda ∈R"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": "provetherestof(c),leti∈[m]anda∈R"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": "provetherestof(c),leti∈[m]anda∈Rm,andletδi∈R"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": "withaoneinthei-thposition.Sincef≪g,foranyb∈R"
+  },
+  {
+   "page": 7,
+   "mark": "m",
+   "context": "Toprovethat(c)implies(b),leta, b∈R"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "isstable.Proposition2.7(b)impliesthatforallz ∈H"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "Exercise3.3(Lemma 3.1 of [5]).Let f∈C[x]MAand w ∈H"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "suﬃcientlysmall,(x + w)[m]+ ϵf(x)isstable.(Here(x + w)[m]=Q"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "i=1(x"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "i=1(xi + w"
+  },
+  {
+   "page": 10,
+   "mark": "f",
+   "context": "∂wS"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "Conversely,assumethatTmapsS[x]MAintoS[x].Thenforanyw∈H"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "First,assumethatthereisaw∈H"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "Secondly,ifT((x + w)[m])̸ ≡0forallw ∈H"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "mialsisinS[x],wehaveT((x + w)[m])|x=z̸= 0forallz ∈H"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "mialsisinS[x],wehaveT((x + w)[m])|x=z̸= 0forallz ∈Hmandw ∈H"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "x"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "xi1 · · · x"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "lineartransformationPolmdeﬁnedbyx"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "convex,thenforeveryz ∈A"
+  },
+  {
+   "page": 11,
+   "mark": "5",
+   "context": "f(x)=x"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "f(x)=x5+10x"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "foranyg∈C[x]ofdegreeatmostm,ifdeg(g) = morAisconvex,andz ∈A"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "then Polmf(z)̸ = 0 for all z ∈A"
+  },
+  {
+   "page": 11,
+   "mark": "b",
+   "context": "isagroupofconformaltransformationsoftheRiemannsphere"
+  },
+  {
+   "page": 12,
+   "mark": "b",
+   "context": "of"
+  },
+  {
+   "page": 12,
+   "mark": "e",
+   "context": "Given0̸≡f∈C[x]ofdegreeatmostm,considerthepolynomial"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "(cx + d)"
+  },
+  {
+   "page": 12,
+   "mark": "e",
+   "context": "nonvanishingonAifandonlyif"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "Pol"
+  },
+  {
+   "page": 12,
+   "mark": "e",
+   "context": "Polm"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "Polmef(x) = Pol"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "Polmef(x) = Polmf(φ(x"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "Polmef(x) = Polmf(φ(x1), ..., φ(x"
+  },
+  {
+   "page": 13,
+   "mark": "f",
+   "context": "ij"
+  },
+  {
+   "page": 13,
+   "mark": "x",
+   "context": "S⊆[m]c(S)"
+  },
+  {
+   "page": 14,
+   "mark": "m",
+   "context": "Forκ∈N"
+  },
+  {
+   "page": 14,
+   "mark": "f",
+   "context": "κ(i)"
+  },
+  {
+   "page": 14,
+   "mark": "x",
+   "context": "κ(i)deﬁnedby"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "κ(i)deﬁnedbyx"
+  },
+  {
+   "page": 14,
+   "mark": "m",
+   "context": "Proposition5.1.Letκ∈N"
+  },
+  {
+   "page": 14,
+   "mark": "m",
+   "context": "arez = (z1, . . . , zm) ∈H"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "Theorem5.2(Theorem1.1of[5]).Letκ∈N"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "(i, j)∈I(κ)},anddeﬁnealineartransformation"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "A⊆I(κ)deﬁne"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "NoticethatT=eT◦Polκ,andthat"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "2.4),itfollowsthatTpreservesstabilityifandonlyif"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "Incase(a),if"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "sameistrueof"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "variables.ThesymbolsofTand"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "andProposition5.1showsthatTisincase(b)ifandonlyif"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "(a)ThenT: S[x] →S[x]ifandonlyifT: S[x]≤κ→S[x]forallκ ∈N"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "T((x + u)κ)isstableforallκ∈N"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "κ, β∈N"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "α ∈N"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "α ∈Nm,letα! =Q"
+  },
+  {
+   "page": 15,
+   "mark": "y",
+   "context": "(−1)αT(xα)"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "Forα ≤βinN"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "α∈N"
+  },
+  {
+   "page": 16,
+   "mark": "y",
+   "context": "α∈Nm Pα(x)"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "α∈Nm Pα(x)yαbe"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "ifforallβ∈N"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "Lemma5.7(Lemma 5.2 of [5]).Fixβ∈N"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "f.ByTheorem5.2andExercise5.3(a),itsuﬃcestoshowthatforallκ ∈N"
+  },
+  {
+   "page": 16,
+   "mark": "j",
+   "context": "y"
+  },
+  {
+   "page": 16,
+   "mark": "u",
+   "context": "i"
+  },
+  {
+   "page": 16,
+   "mark": "j",
+   "context": "t"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "soitsuﬃcestoshowthatforallk, b ∈N,thepolynomialf(t) =P"
+  },
+  {
+   "page": 16,
+   "mark": "j",
+   "context": "j=0"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "realstable.Letg(t)=(1 + d/dt)"
+  },
+  {
+   "page": 16,
+   "mark": "b",
+   "context": "realstable.Letg(t)=(1 + d/dt)kt"
+  },
+  {
+   "page": 16,
+   "mark": "b",
+   "context": "realstable.Letg(t)=(1 + d/dt)ktb.Onecancheckthatf(t)=t"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": " that 1+d/dt preserves stability.For any a ∈N, (1+d/dt)(t+u)"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "(t + u + a)(t + u)"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "α∈N"
+  },
+  {
+   "page": 16,
+   "mark": "y",
+   "context": "α∈Nm Pn,α(x)"
+  },
+  {
+   "page": 16,
+   "mark": "y",
+   "context": "α∈Nm Pn,α(x)yαinS[x,"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "beasequenceofstablepolynomialsF"
+  },
+  {
+   "page": 16,
+   "mark": "y",
+   "context": "(n1)αPα(x)"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "Thesequence(Fn:n ≥1)convergestoF,sinceforeachα ∈N"
+  },
+  {
+   "page": 18,
+   "mark": "h",
+   "context": "h=1det(I −Y L"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "Det(L) = (−1)"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "0},itfollowsthatν0≥ι0.Theconstanttermoff(x)is(−1)"
+  },
+  {
+   "page": 18,
+   "mark": "j",
+   "context": "andthej-thaveragedFisherproductisbσ"
+  },
+  {
+   "page": 18,
+   "mark": "j",
+   "context": "(a)Thenbσ"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "(a)Thenbσj(A)"
+  },
+  {
+   "page": 18,
+   "mark": "j",
+   "context": "(a)Thenbσj(A)2≥bσ"
+  },
+  {
+   "page": 18,
+   "mark": "j",
+   "context": "(a)Thenbσj(A)2≥bσj−1(A)bσ"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "(b)Also,bσ"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "(b)Also,bσ0(A) ≤bσ"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "bσ"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "\u0012bσ"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "\u0012bσ"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "\u0012bσ"
+  },
+  {
+   "page": 19,
+   "mark": "j",
+   "context": "j=0(−1)"
+  },
+  {
+   "page": 19,
+   "mark": "j",
+   "context": "j=0(−1)jσ"
+  },
+  {
+   "page": 19,
+   "mark": "x",
+   "context": "j=0(−1)jσj(A)"
+  },
+  {
+   "page": 19,
+   "mark": "j",
+   "context": "j=0(−1)jσj(A)x"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "Det(xA, −A)=P"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "ﬁnesaprobabilitydistributionϕ"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "ﬁnesaprobabilitydistributionϕa:Ω→[0, 1]bysettingϕ"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "(iv)Foreachϕ ∈Sanda ∈RΛ(ϕ)witha > 0,ϕ"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "Thenforeveryϕ ∈Sanda ∈RΛ(ϕ)witha > 0,ϕ"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "that if ϕ is in S then ϕ"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "{i, j}⊆Λ,andconsidertheprobabilitydistributionϕ"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "Z(ϕ; a)= a"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "Z(ϕ; a)"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "Z(ϕ; a)2· ∆ijZ(ϕ;"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "byTheorem3.1.Thusϕ"
+  },
+  {
+   "page": 21,
+   "mark": "f",
+   "context": "aleftactionofAonC[x]asusual:forf∈EandS∈Ω,f(xS)=x"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "i=1λ"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "i=1λi(f"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "i=1λi(fi −1)withallλ"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "λ"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "i=1λ"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "t"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "n→∞[T"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "n→∞[T1(t/n)T"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "sinceτ"
+  },
+  {
+   "page": 21,
+   "mark": "t",
+   "context": "\u00121 + e−2λij"
+  },
+  {
+   "page": 21,
+   "mark": "t",
+   "context": "\u00121 −e−2λij"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "∆ijf(a)≥0forall{i, j}⊆Eanda∈R"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "neededtheweakerhypothesisthat∆ijf(a)≥0forall{i, j}⊆Eanda∈R"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "S⊆[m]c(S)"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "S⊆[m]c(S)xS,thesymmetrichomogenizationof"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "nonzero,multiaﬃne,andrealstable.Thenforalla ∈R"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "nonzero,multiaﬃne,andrealstable.Thenforalla ∈Rmwitha > 0,ϕ"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "Thisisthepartitionfunctionforψ:{0, 1}[2"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "\u0001−1ϕ(S ∩[m]).Byclaim(2)above,ψ"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "\u0001−1ϕ(S ∩[m]).Byclaim(2)above,ψaisNAforalla∈R"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "\u0001−1ϕ(S ∩[m]).Byclaim(2)above,ψaisNAforalla∈R2"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "a>0.Byconsideringthosea∈R"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "a>0.Byconsideringthosea∈R2"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "followsthatϕ"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "followsthatϕaisNAforalla ∈R"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "For(i, j)∈Λ"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "tositej,ifpossible.LetEbeasetoforderedpairsinΛ"
+  },
+  {
+   "page": 23,
+   "mark": "j",
+   "context": "i∈E as follows: for S∈Ωand"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i∈E as follows: for S∈Ωand j∈Λ,let (a"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "i(S))(i) = 1.Thatis,"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "i(S))(i) = 1.Thatis,a"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "i(S))(i) = 1.Thatis,aiannihilates"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "icreates"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "icreatesaparticleatsite"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "1(t) = e−θt + (1 −e−θt)"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "realsa1, a2> 0onehas(√a1 −√a2)"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "I⊆R,leta"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "I⊆R,letai∈Ifori ∈[n],andletb"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "I⊆R,letai∈Ifori ∈[n],andletbi> 0fori ∈[n]besuchthatP"
+  },
+  {
+   "page": 24,
+   "mark": "b",
+   "context": "i=1"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "i=1b"
+  },
+  {
+   "page": 24,
+   "mark": "d",
+   "context": "Forintegerd≥1,letG(d)=(1−1/d)"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "G(1)=0"
+  },
+  {
+   "page": 24,
+   "mark": "m",
+   "context": "withtheinﬁmumoverthesetofallc ∈R"
+  },
+  {
+   "page": 24,
+   "mark": "d",
+   "context": "Lemma8.1(Lemma 3.2 of [11]).Letf=P"
+  },
+  {
+   "page": 24,
+   "mark": "b",
+   "context": "i=0"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "i=0b"
+  },
+  {
+   "page": 24,
+   "mark": "x",
+   "context": "i=0bi"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "i=0bix ∈R[x]be"
+  },
+  {
+   "page": 24,
+   "mark": "d",
+   "context": "f(x) = bd(x + ξ)"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "1 +b"
+  },
+  {
+   "page": 24,
+   "mark": "c",
+   "context": "1 +b1"
+  },
+  {
+   "page": 24,
+   "mark": "d",
+   "context": "byJensen’sInequality.Itfollowsthatcap(f)c≤(1 + b1c/d)"
+  },
+  {
+   "page": 24,
+   "mark": "d",
+   "context": "g(x) = (1 + b1x/d)"
+  },
+  {
+   "page": 24,
+   "mark": "c",
+   "context": "c(0) ≥G(d)cap(p"
+  },
+  {
+   "page": 25,
+   "mark": "m",
+   "context": "forallc∈R"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "cap(g"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "cap(g0).ByLemma8.2.cap(g"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "cap(g0).ByLemma8.2.cap(gi−1)≥cap(g"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "cap(g0).ByLemma8.2.cap(gi−1)≥cap(gi) · G(degi g"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "degi g"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "degi gi≤degi f= d"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "degi gi≤degi f= di, and degi g"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "i gi≤degi f= di, and degi giis at most the total degree of g"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "degi g"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "degi gi≤e"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "degi gi≤ei, and thus G(degi g"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "degi gi≤ei, and thus G(degi gi) ≥G(e"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "degi gi≤ei, and thus G(degi gi) ≥G(ei).Thus cap(g"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "degi gi≤ei, and thus G(degi gi) ≥G(ei).Thus cap(gi−1) ≥cap(g"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "i≤ei, and thus G(degi gi) ≥G(ei).Thus cap(gi−1) ≥cap(gi)·G(e"
+  },
+  {
+   "page": 25,
+   "mark": "m",
+   "context": "m"
+  },
+  {
+   "page": 25,
+   "mark": "m",
+   "context": "m"
+  },
+  {
+   "page": 25,
+   "mark": "m",
+   "context": "f(x) = (a1x1 + · · · + amxm)"
+  },
+  {
+   "page": 25,
+   "mark": "b",
+   "context": "α"
+  },
+  {
+   "page": 25,
+   "mark": "x",
+   "context": "αb(α)"
+  },
+  {
+   "page": 25,
+   "mark": "b",
+   "context": "αb(α)xα,sothatif"
+  },
+  {
+   "page": 25,
+   "mark": "m",
+   "context": "αb(α)xα,sothatifb(α)̸=0then|α|=P"
+  },
+  {
+   "page": 25,
+   "mark": "b",
+   "context": "α"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "αb(α)α(i) = 1.Averaging these over all"
+  },
+  {
+   "page": 25,
+   "mark": "b",
+   "context": "α"
+  },
+  {
+   "page": 25,
+   "mark": "c",
+   "context": "αb(α)=1,sothatcap(f)≤1.Conversely,let"
+  },
+  {
+   "page": 25,
+   "mark": "m",
+   "context": "αb(α)=1,sothatcap(f)≤1.Conversely,letc∈R"
+  },
+  {
+   "page": 25,
+   "mark": "c",
+   "context": "αb(α)=1,sothatcap(f)≤1.Conversely,letc∈Rmwith"
+  },
+  {
+   "page": 26,
+   "mark": "m",
+   "context": "stochasticmatrixthenper(A) ≥m!/m"
+  },
+  {
+   "page": 26,
+   "mark": "m",
+   "context": "andP"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "i=1A"
+  },
+  {
+   "page": 26,
+   "mark": "m",
+   "context": "naturalconjectureisthatforallA∈Ω(m),Disc(A)≥m!/m"
+  },
+  {
+   "page": 27,
+   "mark": "m",
+   "context": "9.1.Othercircularregions.LetΩ⊆C"
+  },
+  {
+   "page": 27,
+   "mark": "f",
+   "context": "ef= (cz + d)deg"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "ef= (cz + d)deg f· f(φ"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "ef= (cz + d)deg f· f(φ1(z"
+  },
+  {
+   "page": 27,
+   "mark": "m",
+   "context": "ef= (cz + d)deg f· f(φ1(z1), ..., φ"
+  },
+  {
+   "page": 27,
+   "mark": "m",
+   "context": "ef= (cz + d)deg f· f(φ1(z1), ..., φm(z"
+  },
+  {
+   "page": 27,
+   "mark": "m",
+   "context": "righthalf-plane.AD"
+  },
+  {
+   "page": 27,
+   "mark": "m",
+   "context": "ighthalf-plane.ADm-stablepolynomialiscalledSchurstable,andaH"
+  },
+  {
+   "page": 27,
+   "mark": "m",
+   "context": "Proposition9.1(Remark6.1of[5].).Fixκ ∈N"
+  },
+  {
+   "page": 27,
+   "mark": "m",
+   "context": "Proposition9.2(Remark6.1of[5].).Fixκ ∈N"
+  },
+  {
+   "page": 27,
+   "mark": "m",
+   "context": "ogueofthemultipliersequencesstudiedbyP´olyaandSchur.Letλ : N"
+  },
+  {
+   "page": 27,
+   "mark": "m",
+   "context": "α∈N"
+  },
+  {
+   "page": 27,
+   "mark": "m",
+   "context": "Theorem9.3(Theorem1.8of[4].).Letλ:N"
+  },
+  {
+   "page": 27,
+   "mark": "m",
+   "context": "forallα∈N"
+  },
+  {
+   "page": 27,
+   "mark": "m",
+   "context": "forallα∈Nm,andeitherϵ|α|λ(α)≥0forallα∈N"
+  },
+  {
+   "page": 27,
+   "mark": "m",
+   "context": "α ∈N"
+  },
+  {
+   "page": 28,
+   "mark": "x",
+   "context": "S⊆[m]a(S)"
+  },
+  {
+   "page": 28,
+   "mark": "g",
+   "context": "S⊆[m]a(S)xSand"
+  },
+  {
+   "page": 28,
+   "mark": "x",
+   "context": "S⊆[m]b(S)"
+  },
+  {
+   "page": 28,
+   "mark": "m",
+   "context": "isSchurstable.Thediagonalizationg(x)=f(x, ..., x)issuchthatx"
+  },
+  {
+   "page": 29,
+   "mark": "c",
+   "context": "α"
+  },
+  {
+   "page": 29,
+   "mark": "x",
+   "context": "αc(α)"
+  },
+  {
+   "page": 29,
+   "mark": "m",
+   "context": "αc(α)xαissupp(f)={α∈N"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "δidenotetheunitvectorwithaoneinthei-thcoordinate,andforα∈Z"
+  },
+  {
+   "page": 29,
+   "mark": "a",
+   "context": "i=1|α(i)|.Ajumpsystemis"
+  },
+  {
+   "page": 29,
+   "mark": "m",
+   "context": "i=1|α(i)|.AjumpsystemisasubsetJ ⊆Z"
+  },
+  {
+   "page": 29,
+   "mark": "m",
+   "context": "|α| =P"
+  },
+  {
+   "page": 29,
+   "mark": "x",
+   "context": "S⊆[m]c(S)"
+  }
+ ]
+}

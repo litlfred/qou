@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 0010012v1.pdf
 source_sha256: cd6eca5ccb81ff90
 toc_source: inferred
+doc_brief: "arXiv:math-ph/0010012v1 10 Oct 2000 — We review some recent results on random polynomials and their generalizations in complex and symplectic geometry."
 ---
 arXiv:math-ph/0010012v1  10 Oct 2000
 From random polynomials to symplectic geometry

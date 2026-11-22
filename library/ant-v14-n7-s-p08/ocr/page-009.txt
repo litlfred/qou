@@ -1,0 +1,49 @@
+Burgess bounds for short character sums evaluated at forms 1919
+
+This will ultimately reduce the problem of bounding |S(F; N, H)| to bounding
+
+| |
+Dd ISCFim P< YT) DT xFeym))), (2-5)
+m (mod q) x@,_.x@) m (mod q)
+xE(0,k]
+where we define for each collection {x} = {x ...,x°} with x € Z” the polynomial
+2r
+Fie\(X) = Fury (X1, Xn) = [P(X $x), (2-6)
+
+i=l
+where 6(i) = +1 if i is odd and A — 1 if i is even. One would hope that if the x are appropriately
+
+independent (that is, the “good” case), a generalization of the Weil bound would yield square-root
+cancellation, that is an O(g"/*) bound for
+
+| xa). 2-7)
+m (mod q)
+But achieving such a bound has been a critical barrier to generalizing the Burgess method to this
+n-dimensional setting. One difficulty is that the leading form of F{,;(X) (the homogeneous part of highest
+degree) defines a highly singular projective variety, whereas previous literature on Weil bounds required
+this either to be a nonsingular projective variety [Katz 2002], or could only allow certain singular varieties
+that are not general enough for our application; see, e.g., [Rojas-Leén 2005; 2006].
+
+Moreover, in dimensions n > 2, as well as the two extremal cases in which the sum (2-7) is O(q"/)
+or O(q"), there may be intermediate cases O(q"*s-Y/?) for j =1,...,n+ 1. Indeed, suppose we
+partition the {x ..., x°"} € (0, k}’" into the following types: those belonging to a good set denoted
+by Good(k), are such that
+
+| dO x(Fintm)| = cq"?
+
+m (mod q)
+for a certain constant C, and those belonging to the j-th bad set, denoted by Bad; (x), are such that
+| | j— | | 7
+| DE x(a) > cg but | DT xCFeym))] < eg.
+m (mod q) m (mod q)
+
+Then according to this dissection,
+
+n
+Y= (SCF: m, b)” < C\Good(k)|q"”? + C S* [Bad (k)g°*?”. (2-8)
+m (mod q) j=l
+Certainly |Good(k)| < ||k||?”. The real question is how to bound |Bad;(k)| for each j = 1,...,7.
+The recent work of the second author [Xu 2018] proves a set of bounds that are perfectly suited for our
+
+purposes. This takes the form of a “stratification,” in the spirit of [Fouvry 2000, Proposition 1.0; Laumon
+2000, Proposition 3.2, Theorem 3.3; Fouvry and Katz 2001, Theorems 1.1 and 1.2].

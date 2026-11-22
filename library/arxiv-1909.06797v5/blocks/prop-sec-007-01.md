@@ -1,0 +1,1 @@
+Gross and Witten \cite{gross-witten} (and independently, Wadia \cite{wadia}) studied this matrix model in the context of lattice QCD and observed that the system undergoes a third order phase transition at $\lambda=2$.

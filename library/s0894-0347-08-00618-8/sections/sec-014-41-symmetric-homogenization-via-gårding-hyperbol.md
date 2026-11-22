@@ -8,6 +8,7 @@ pages: 21-24
 source_pdf: S0894-0347-08-00618-8.pdf
 source_sha256: 7c0b2ca41992b21c
 toc_source: outline
+doc_brief: "AMERICAN MATHEMATICAL SOCIETY S 0894-0347(08)00618-8 — 24 sections: Front matter; Introduction; A plethora of negative dependence"
 ---
 following theorem shows that the symmetric homogenization (cf. §2.3) of any
 strongly Rayleigh measure is again strongly Rayleigh, so that strongly Rayleigh

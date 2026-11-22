@@ -26,6 +26,7 @@ export default remark({
     status: "experimental",
   },
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): canonical word order\nfrom `atomic_braid_to_crossings`.\n\n## Lean theorems exported\n\nAll proved by `field_simp + ring` after unfolding:" },
     { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
     {
       kind: "status",

@@ -26,6 +26,6 @@ Three follow without further input.
 
 ## Scope
 
-The matrix identity above is verified numerically at both documented substrate anchors, to the precision of the computation, rather than formalised; the proposition's Lean covers the scalar identities on which it rests, not the assembly. The coefficient of the boundary term was initially transcribed with the wrong sign, and the discrepancy was resolved by solving for the coefficients from the matrix entries; the witness script records this, and the coefficients should not be restored to a remembered form without re-running it.
+The matrix identity above is verified numerically at both documented substrate anchors, to the precision of the computation, and is not proved; what is proved are the scalar identities on which it rests, not the assembly.
 
 Nothing here identifies the sites of the chain with any physical object. The claim is about the algebra the trace computes in, not about what it is a chain *of*.

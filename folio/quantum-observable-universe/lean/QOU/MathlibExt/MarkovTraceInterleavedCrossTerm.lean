@@ -45,8 +45,8 @@ The abstract identity is over a generic `CommRing R` acting on a generic `Ring A
 used. The convention-D closed form is over a generic `Field`; only the sign statement is over
 `ℝ` (an ordering claim, archimedean by nature).
 
--- Ref: [manuscript] computations/probes/markov_multiplicativity_interleaved_probe.py
--- Ref: [manuscript] computations/probes/markov_trace_n4_interleaved_cross_term_probe.py
+-- Ref: [leitner2026] computations/probes/markov_multiplicativity_interleaved_probe.py
+-- Ref: [leitner2026] computations/probes/markov_trace_n4_interleaved_cross_term_probe.py
 -- Ref: [jones1987] https://doi.org/10.2307/1971403 — the Markov trace on the Hecke tower.
 -/
 

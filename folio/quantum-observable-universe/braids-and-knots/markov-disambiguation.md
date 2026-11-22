@@ -1,8 +1,8 @@
-We distinguish three constructs bearing the name "Markov":
+Three constructs bear the name "Markov":
 1. **Markov trace:** The algebraic functional $\mathrm{tr}_M$ on the Hecke algebra that feeds the mass formula.
 2. **Markov chain:** The stochastic random walk on braid words induced by Hecke transition probabilities, which provides error bounds.
 3. **Markov moves:** The topological operations of conjugation and stabilisation that generate link equivalence.
-Context clarifies usage, but when precision is needed, we write $\mathrm{tr}_M$ for the algebraic functional, "Markov chain" for the stochastic process, and "Markov move" for the topological equivalence.
+Context clarifies usage, but when precision is needed, $\mathrm{tr}_M$ denotes the algebraic functional, "Markov chain" the stochastic process, and "Markov move" the topological equivalence.
 
 ## The trace does not require a closure; the topological reading does
 
@@ -14,4 +14,4 @@ What the closure supplies is the **interpretation**. By Markov's theorem two bra
 
 **Consequently, for $W \in H_n(q)$ that is not in the image of $\rho : B_n \to H_n(q)$, $\mathrm{tr}_M(W)$ is a well-defined number with no link behind it.** Such a $W$ decomposes as a weighted sum of braid images, so $\mathrm{tr}_M(W)$ is a weighted sum of link invariants — not the invariant of any one link. Any construction that reads a *topological* quantity off $\mathrm{tr}_M(W)$ (a volume, a crossing number, a genus) must first establish that $W$ **is** a braid image; linearity of $\mathrm{tr}_M$ does not transport such quantities, because they are not linear.
 
-*Added 2026-08-25 (PR #5765). The corpus separated the three "Markov" senses above but never stated this consequence, and a production pipeline relied on the missing statement: the binding forms take $\mathrm{tr}_M$ of `atom_braid_word_3A`, whose letters are $c\,\sigma_g + d\,\mathbf{1}$ rather than braid generators, and then read a hyperbolic volume off it.*
+The consequence matters in practice: an element whose letters are of the form $c\,\sigma_g + d\,\mathbf{1}$ rather than braid generators has a well-defined Markov trace, but no hyperbolic volume can be read off it.

@@ -1,1 +1,0 @@
-As in the previous example, we can consider the multiplicative convolution ∗n

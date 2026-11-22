@@ -1,0 +1,45 @@
+10.5 Surgery, non-generic directions, and non-arrangement points 337
+
+be integrated over [0, 1]. Using the change of variables y = x, leads to
+
+dis ~ Pd, me at
+
+a _ fr 2a
+kik — k2
+_ Pd, me 2
+V2n VkI+ Vo
+The substitution y = x,,dy = (k; — kz) df is valid only when x; # x» but the
+
+1/2
+
+. : 1-12. . .
+resulting expression for h x, ‘~ is valid for all k},k2 > Owithk;+x,>0. O
+
+Example 10.69 (partial sums of normalized binomials, continued). Recall
+the generating function F = anion from Example 10.11, whose (s, s)-
+coefficient is the normalized binomial sum ))7_o 4-i("/) computing the expected
+number of returns of a simple random walk to zero by time 2s. Expanding
+functions gi(@) = —log(2 — e’) and g2(@) = i@ around @ = 0 gives quadratic
+coefficients x; = 2 and kz = 0, so the identity P(1, 1) = 2 implies
+
+ass ~2 i.
+
+This result can be verified by univariate methods, as the main diagonal has the
+algebraic generating function f(z) = (1 — z)~*/”. Note that even though (1, 1)
+is a complete intersection, there is no longer an exponentially decreasing error
+term. Instead the relative error is O(1/s). 4
+
+Notes
+
+Computations for multiple points based on the theory of iterated residues first
+appeared in the work of [BM93] on queueing models. More information on
+iterated residues can be found in [AY83; Phal1]. As noted above, the coeffi-
+cient asymptotics in this chapter were first computed via the surgery method
+in [PW02; PW04]. The surgery method is only valid in its original form for
+finitely minimal points, which is why more advanced methods using hyper-
+bolic polynomials and Morse theoretic arguments were introduced. The spe-
+cial case where all divisors are linear, and the pole variety is a hyperplane
+arrangement, is worked out at length in [BMP23].
+
+The computation of the residue from an explicit factorization via Algo-
+rithm 4 is effective, assuming the factors Q; are in a nice class of functions

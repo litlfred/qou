@@ -1,6 +1,6 @@
 ---
 doc_id: kondev-2021-chinese-phys-c-45-030001
-doc_title: "The NUBASE2020 evaluation of nuclear physics properties *"
+doc_title: "The NUBASE2020 evaluation of nuclear physics properties"
 section_id: sec-front-matter
 section_title: "Front matter"
 section_number: null
@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: Kondev_2021_Chinese_Phys._C_45_030001.pdf
 source_sha256: 29b14ce8a7c0ecac
 toc_source: inferred
+doc_brief: "The NUBASE2020 evaluation of nuclear physics properties — 119 sections: Front matter; Introduction; Isomers"
 ---
 Chinese Physics C
 PAPER • OPEN ACCESS
@@ -48,3 +49,6 @@ in neighboring nuclei were examined and estimated values are proposed. Evaluatio
 the development of this evaluated nuclear data library are presented, together with a detailed table of recommended values and their
 uncertainties.
 Keywords:
+NUBASE2020 evaluation, nuclear properties, atomic masses, isomers, excitation energy of isomers, spin and parity,
+half-life, year of discovery, decay modes
+DOI: 10.1088/1674-1137/abddae

@@ -316,5 +316,22 @@ def main() -> int:
     return 0
 
 
+def _selftest() -> int:
+    """Fast self-test (bean qou-7zff): verify REPO_ROOT points to the repo root
+    (where tools/hecke-engine/Cargo.toml lives) and canonical_word_for encodes
+    all crossing types without KeyError."""
+    assert REPO_ROOT == HERE.parent, (REPO_ROOT, HERE)
+    cargo_toml = REPO_ROOT / "tools" / "hecke-engine" / "Cargo.toml"
+    assert cargo_toml.is_file(), f"missing {cargo_toml}"
+    n_p, w_p = canonical_word_for(1, 0)
+    assert n_p == 3 and len(w_p) == 11, (n_p, len(w_p))
+    n_d, w_d = canonical_word_for(1, 1)
+    assert n_d == 6 and len(w_d) == 23, (n_d, len(w_d))
+    print("self-test: ok (REPO_ROOT=HERE.parent, Cargo.toml present, canonical_word_for p/D)")
+    return 0
+
+
 if __name__ == "__main__":
+    if "--self-test" in sys.argv or "--selftest" in sys.argv:
+        raise SystemExit(_selftest())
     sys.exit(main())

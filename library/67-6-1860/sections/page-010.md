@@ -1,13 +1,15 @@
 ---
 doc_id: 67-6-1860
-doc_title: "Progress of Theoretical Physics, Vol. 67, No. 6, June 1982"
+doc_title: "Quaternionic Weinberg-Salam Theory"
 section_id: page-010
 section_title: "Page 10"
-section_number: null
 pages: 10-10
+pdf_page: 10
 source_pdf: 67-6-1860.pdf
 source_sha256: e2e5d45edd369762
-toc_source: undetermined
+text_source: ocr
+granularity: page
+doc_brief: "Quaternionic Weinberg-Salam Theory — 17 sections: Page 1; Page 2; Page 3"
 ---
 Quaternionic Weinberg-Salam Theory 1869
 
@@ -57,4 +59,4 @@ to U(lem via Qirx-Higgs, ¢12(a@=1):
 
 <> =e1vL, (33a)
 
-9z0z Ainr 90 uo ysanB Aq 79Z2881/0981/9/29/A10111e/d\d/Wi0s'dno-o1wapese//:sd}}y Wo. pepeojuMoq
+9z0z Ainr 06 uo ysanB Aq 79Z2881/0981/9/29/A10111e/d\d/Wi0s'dno-o1wapese//:sd}}y Wo. pepeojuMoq

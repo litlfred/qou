@@ -1,0 +1,46 @@
+9.3 Smooth bivariate functions 273
+
+to the height restrictions. Hence the intersection number is +1. When i > j the
+height restrictions prevent y; and y/ from intersecting at all, whence M; i = 9,
+so M is an upper triangular matrix with +1 diagonal entries, and thus nonsin-
+gular. ia)
+
+Remark 9.36. If h(a ;) = h(xj,,) for r > 1 then again the height restrictions
+prevent y; from intersecting y’ when i and @ are distinct elements of {j,..., j +
+r}, hence the only non-zero entries in the submatrix M{j,j+,),;,j+r) are those on
+the diagonal.
+
+Algorithm 3 may be understood in terms of this pairing, as we now sketch.
+
+Sketched alternative proof of correctness for Algorithm 3 Suppose that some
+component B’ of the complement of the amoeba of Q(x, y) contains a ray with
+small x coordinate that points up in the y direction, let T be the torus of in-
+tegration for the bivariate Cauchy integral, with both x- and y-radii arbitrarily
+small, and let y be the intersection cycle INT(T, 7’), where the basepoint of
+T’ still has small x-coordinate but has sufficiently large y-coordinate to be in
+B’. Then y consists of small cycles around the points (0, s), as s ranges over
+the roots of Q(0, y). Assuming these to be simple roots, the circles wind once
+about the origin.
+
+The key is to interpret Steps 4(b-c) in Algorithm 3 using intersection num-
+bers. Suppose p; is a nondegenerate critical point reached by the algorithm,
+with corresponding ascent path y/. Steps 4(b-c) compute the intersection num-
+ber of y with y/. If, among the two branches of y, one goes to the x-axis and
+one goes to the y-axis, then y will intersect precisely one of the circles around
+a point (0, s) and the intersection number will be +1. If both branches go to
+the x-axis then the intersection number is zero because they cannot intersect
+any of the small circles around the points (0, s). Furthermore, the intersection
+number depends only on the homology class of the intersection cycle y and, as
+shown in Corollary C.5 of Appendix C, the homology class of the intersection
+cycle obtained by keeping |x| small and taking |y| to infinity is the same as the
+intersection cycle obtained by keeping |y| small and expanding |x| to infinity.
+Interpreting the intersection cycle using this second construction shows that if
+both branches go to the y-axis then the intersection number is also zero.
+
+The upshot is that in Step 4(c), the point p; is added to W if and only if
+#(y,y/) = +1 is non-zero. If any point at a given height is added, then all
+points at that height are added for which the intersection number of the ascent
+path with y is +1 and no lower points are added. Inverting the dual basis shows
+that y — Disp.ew £7: is zero in Hy\(V., Vcc,,). ao
+
+We now return to the case of more general Laurent series. The difference

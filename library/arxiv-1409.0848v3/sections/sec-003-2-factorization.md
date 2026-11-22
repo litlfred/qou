@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.96
 latex_coverage_ratio: 1.0
+doc_brief: "FACTORIZATION HOMOLOGY OF STRATIFIED SPACES — This work forms a foundational study of factorization homology, or topological chiral homology, at the generality of stratiﬁed spaces with tangential"
 ---
 In this section, we define the factorization homology of $\cB$-manifolds with coefficients in $\disk(\cB)$-algebras, and we verify some of the essential properties of this construction. It is a symmetric monoidal functor from $\cB$-manifolds and embeddings.
 

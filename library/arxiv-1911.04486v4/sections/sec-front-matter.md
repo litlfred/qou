@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 1911.04486v4.pdf
 source_sha256: 53a34938c0e63bad
 toc_source: outline
+doc_brief: "Knots and the Maxwell Equations — In this chapter, we review the Ra˜nada ﬁeld line solutions of Maxwell’s equations in the vacuum, which describe a topologically non-trivial electro- magnetic ﬁeld"
 ---
 Knots and the Maxwell Equations
 Ion V. Vancea
@@ -29,4 +30,3 @@ Non-linear electrodynamics.
 Ra˜nada
 solutions. Knot solutions.
 arXiv:1911.04486v4  [physics.class-ph]  14 Apr 2020
-1

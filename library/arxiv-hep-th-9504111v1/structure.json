@@ -8,7 +8,7 @@
   "pages": 7,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -20,13 +20,13 @@
    "stamp_date": "21 Apr 1995"
   },
   "doi": null,
-  "title": "arXiv:hep-th/9504111v1 21 Apr 1995",
+  "title": "Discrete Heisenberg–Weyl group and modular group",
   "authors_raw": "L. D. Faddeev",
   "title_lines": [
    "PDMI PREPRINT - 1/1995",
    "Discrete Heisenberg-Weyl Group and Modular Group"
   ],
-  "abstract": "It is shown that the generators of two discrete Heisenberg-Weyl groups with irra- tional rotation numbers \u03b8 and \u22121/\u03b8 generate the whole algebra B of bounded operators on L2(R). The natural action of the modular group in B is implied. Applications to dynamical algebras appearing in lattice regularization and some duality principles are discussed.",
+  "abstract": "It is shown that the generators of two discrete Heisenberg-Weyl groups with irra- tional rotation numbers θ and −1/θ generate the whole algebra B of bounded operators on L2(R). The natural action of the modular group in B is implied. Applications to dynamical algebras appearing in lattice regularization and some duality principles are discussed.",
   "docinfo": {
    "Title": "arXiv:hep-th/9504111v1  21 Apr 1995",
    "Producer": "GPL Ghostscript 10.01.2",
@@ -44,7 +44,8 @@
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:hep-th/9504111v1 21 Apr 1995"
  },
  "toc": [
   {
@@ -135,8 +136,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 7,
-   "n_chars": 10202,
-   "n_words": 1948,
+   "n_chars": 10192,
+   "n_words": 1943,
    "label_start": null,
    "label_end": "7"
   },
@@ -147,8 +148,8 @@
    "level": 1,
    "page_start": 7,
    "page_end": 7,
-   "n_chars": 639,
-   "n_words": 91,
+   "n_chars": 637,
+   "n_words": 90,
    "label_start": "7",
    "label_end": "7"
   }
@@ -168,6 +169,7 @@
    "items": []
   },
   "sections": 2,
-  "chars_total": 10841
+  "chars_total": 10829,
+  "furniture_lines_stripped": 6
  }
 }

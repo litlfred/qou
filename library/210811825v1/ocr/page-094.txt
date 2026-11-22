@@ -1,0 +1,49 @@
+3 jyAats + > : + pAats = 1/4 +2, 3. -st?) ;
+
+3. .VA-1/4 , 2mi 3) WVA-1/4 271 3g
+nn any a + T°? sinh“(p) } ,
+
+_ _ csc (4)
+| = l(a) = 2arccosh (— .
+
+The combination that we take is
+
+Qat 7 t
+
+w(p, t) = ¢0(p) — 0.038 sin (= _ 5) $1(p) — 0.0002 cos (=) bo.
+
+This function is sub-harmonic over 9; in particular
+(-—A + A)w(p, t) = 0
+
+over 2, since ¢9, $1, and $2 have been constructed as saan of the Laplacian
+
+(with respect to the cylinder metric described in Section 2.3.2). It is not immediately
+obvious that w is strictly positive over | oe the nodal line of w as a function
+of t to see at which values of p the functiorris >and then compare it to the boundary
+
+of 2. This comparison is shown in Figure 3.19. The blue curve shows the values of p
+
+where w changes sign as ¢ runs over the length of the core geodesic. The green, red and
+lilac curves show the boundary of 2 in Fermi coordinates. Close inspection shows that
+the nodallline is always outside the boundary of 2. The code that produced this plot is
+
+given in Appendix F. Co]
+
+Remark 3.19 The proof of Conjecture 3.12 now amounts to showing that the test func-
+tion w(p, t) is positive inQ. One could perhaps do this by approximating the hyperge-
+ometric functions by polynomials in p, which are easier to analyze. Here, care must be
+taken to ensure that the first and second derivatives are approximated well enough such |
+(hat the qpproximating function is still sub-harmonic over Q. One can see from Fig-
+ure 3.19 that the test function w is only just positive inside Q, so finding a sufficiently
+
+accurate polynomial approximant could prove difficult. On the other hand, we have room
+to manoeuver with r; the current value of 5 is sti 4 the value of 4.15 that
+would be the lowest sufficient value to prove oe ing X to a slightly
+smaller value may give more a polynomial approximant and show that it
+satisfies the hypothesis of da
+
+Remark 3.20 At one point, we thought it would be possible to prove Confeeture3-42—l
+
+using a Faber-Krahn style inequality for half cylinders. This would amount to proving
+
+84

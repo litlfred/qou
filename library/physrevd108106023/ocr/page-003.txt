@@ -1,0 +1,127 @@
+KNOT-QUIVER CORRESPONDENCE FOR DOUBLE TWIST KNOTS
+
+PHYS. REV. D 108, 106023 (2023)
+
+x = q’ =const. The symbol RK (x, N) represents polyno-
+mials in the variable x. The reverse approach is to obtain
+P(A, q) using the Alexander polynomial A“ (x) [13]. This
+approach also has obstacles to lift the A — 0 expansion to
+g-dependent P(A, q) but can be fixed for some situations
+by comparing with the data of symmetric r-colored
+HOMELY-PT polynomials known for r= 1, 2, 3. We
+briefly highlight the steps involved in the reverse engineer-
+ing formalism of MMR expansion [13]:
+(i) We rewrite the Alexander polynomial in new var-
+iable X = (ex? Thus, the Alexander polynomial
+takes the following form:
+
+Ss — x)
+A(x) = Soa, to = 1-9(X),
+i=I
+
+x!
+
+where the coefficients a; are integers, and s is a
+positive integer.
+
+(ii) Now, we use the following inverse binomial theo-
+rem:
+
+cm (ne
+
+m=0
+
+to write the first term of MMR expansion (2)
+as follows:
+
+N+m-2
+
+ax = Yoaaxt
+k=0
+
+= Syke *,. 3)
+
+(iii) We make the following quantum deformation to get
+the quantum-deformed polynomial:
+
+Xk (1 —x)?* r k
+a TA -rk(_ Ag": q),.
+kak Lk] 4 (~Aq'?s a)
+
+Here, the variable ¢ is known as the refined param-
+eter. In this article, we take t=—1 to obtain
+unrefined polynomial invariants for double twist
+knots. The term within parentheses represents the
+gq-Pochhammer, while square brackets correspond to
+the q-binomials, which are defined as
+
+Dr Og) Tl nag
+Alcrcees (wa =T[a ”.
+
+(iv) Further, the coefficient kc, SS ok
+depends on the knot K and must be written in
+terms of g-Pochhammers, g-binomials, and (q, A)-
+dependent powers so that
+
+TABLE I. Examples of double twist knots K(p,—m).
+K(p,—m) Knots
+K(p,-1) Twist knots
+K(2, —2) 83
+K(3, —2) 103
+
+r
+
+,
+PKA.) = >> i a" (Aq’s gee
+k=0
+
+can be transformed into the following form to
+deduce the corresponding quiver Qx:
+
+PK(A,q) = So(-pdt gras 48s (G2; g?)
+
+7 ™1(q734°)a,
+
+x gle aD bil, (4)
+
+Here, CK is the quiver matrix, and the variables a;,
+f; and y; are integer parameters. The set {d;} =d
+must obey r= d)+ d>...+d, with d; > 0. Even
+though such a transformation is motivated by
+comparing Ooguri-Vafa partition function [16] with
+the motivic generating series [17-19], it is still a
+hard problem to obtain ck for any knot.
+Note that the quadratic power of q depends on CK,
+independent of A = q’. Hence, we work with the colored
+Jones polynomials J,,(KC, q) of a knot K to extract its quiver
+matrix using the reverse engineering techniques of MMR
+formalism replacing A > q? in Eq. (4)2
+The plan of the paper is as follows: In Sec. Il A, we
+briefly discuss the colored Jones polynomials of double
+twist knot K(p, —m) obtained from the reverse engineering
+techniques of MMR expansion. In Sec. III, we conjecture
+CK for K = K(p, —m) and validate it for some double twist
+
+and it is
+
+knots. We conclude in Sec. IV summarizing our results,
+enumerating some open questions and future directions.
+
+IL. DOUBLE TWIST KNOTS
+
+We have listed some of the double twist knots K(p, —m)
+in Table I.
+
+As these double twist knots belong to arborescent family,
+the symmetric r-colored HOMFLY-PT polynomials can be
+obtained for every r from Chern-Simons theory [20,21]. In
+fact, colored HOMFLY-PT for arbitrary r in closed form is
+given in Ref. [14]. Hence, our aim is not to reconstruct
+r-colored HOMFLY-PT for double twist knots. We now
+present the reverse engineering of MMR formalism (2) to
+
+Theorem 1.1, in Ref. [5] indicates the colored Jones
+polynomials of rational links also admit generating functions
+in quiver form.
+
+106023-3

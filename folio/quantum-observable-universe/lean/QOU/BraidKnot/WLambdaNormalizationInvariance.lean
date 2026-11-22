@@ -37,8 +37,8 @@ LaTeX label: `prop:wlambda-normalization-invariance`
 
 ## References
 
-- [manuscript] docs/audits/2026-06-20-keystone-wlambda-beasley-witten-localization.md (PR #2524, the C1 finding)
-- [manuscript] docs/audits/scripts/keystone_wlambda_Z_defect_n_scaling.py (the `Z(n)` defect)
+- [leitner2026] docs/audits/2026-06-20-keystone-wlambda-beasley-witten-localization.md (PR #2524, the C1 finding)
+- [leitner2026] docs/audits/scripts/keystone_wlambda_Z_defect_n_scaling.py (the `Z(n)` defect)
 -/
 
 namespace QOU.BraidKnot.WLambdaNorm

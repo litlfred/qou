@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2505.02719v2
-doc_title: "On the Palais–Smale condition in geometric knot theory"
+doc_title: "On the Palais-Smale condition in geometric knot theory"
 section_id: sec-007-gradient-flows-on-riemannian-manifolds
 section_title: "Gradient flows on Riemannian manifolds"
 section_number: null
 pages: 12-16
 source_pdf: 2505.02719v2.pdf
 source_sha256: 1803d10aa55c18cf
-doc_brief: "On the Palais–Smale condition in geometric knot theory — We prove that various families of energies relevant in geometric knot theory satisfy"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.957
-latex_coverage_ratio: 0.81
+latex_coverage_ratio: 0.996
+doc_brief: "On the Palais-Smale condition in geometric knot theory — We prove that various families of energies relevant in geometric knot theory satisfy the Palais–Smale condition (PS) on submanifolds of"
 ---
 \label{sec:grad_flows}
 Let $(\ML,g)$ be a Riemannian manifold without boundary 

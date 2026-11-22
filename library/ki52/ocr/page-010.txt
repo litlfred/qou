@@ -1,0 +1,51 @@
+for 0 <i <0.04-N and 0 < j < 0.05-N, the value of (13) is monotonically increasing
+with respect to 7 and j. Further, we can similarly show that, for 0.9-N <i< N and
+0.9-N <j <_N, the value of (13) is monotonically decreasing with respect to i and j.
+Furthermore, since V(t, s) uniformly converges to V(t, s) as N + oo on A” by Lemma
+B.1, ReV(t,s) is bounded by e%a-™) for some ¢, > 0 on OA” by Lemma 2.1. Hence,
+(13) is bounded by the order e%(Sk-©2) for some ¢2 > 0. Therefore, by (7),
+
+N*q vic
+(52), = 4. O(N2eN6n-22)),
+° sy (Qi+j(Q)n—i—j-1(9) 5 D5 (D:
+(i/N,j/N)EA”
+
+Hence, similarly as (9), we have that
+
+2+1 2j+1 N(¢e—€
+_ 1/2 . 2 N(sp—€2)
+(52), = N?q mu exp (N v( SN ONT )) + O(N?eN Ga?)
+(i/Nj/N)eA”
+2+1 2j+1 Nic
+— 2Nsnyl/2 . _ 2 N( )
+= eNsNU%g ys exp (NV v( SN ONT ) Ns) + O(N?eNGa-®)),
+(i/Nj/N)eA"
+
+By Lemma 2.1, we can restrict A” to A’, where the error term of the sum is estimated
+by the order N2e~**. Hence,
+
++1 2441 7
+5) = Nel ; _ 2—Nesy |
+(52)y eNSN i( sy exp (v v( SN ON ) Ns) +O(e )) (14)
+
+(i/N,j/N)EA’
+
+for some €3 > 0. Further, by the Poisson summation formula, we will see that the above
+sum is expressed by an integral,
+
+(5o)y = eNSNP?2 (/ exp (v -Vit,s) — Ns) dt ds + oe")
+
+for some €4 > 0.
+
+We will analyse this integral in Section 5 using the saddle point method and give the
+proof our main Theorem 1.1 there. We will therefore devote the following two sections to
+recalling the saddle point method and the Poisson summation formula.
+
+3 Calculation by the saddle point method
+
+In this section, we calculate Gaussian integrals by the saddle point method. We calculate
+a Gaussian integral in Proposition 3.1, a Gaussian integral with perturbative terms in
+Proposition 3.2, and multi-variable cases in Propositions 3.4 and 3.5. We use Proposition
+3.5 in the proof of Theorem 1.1 in Section 5. For the saddle point method, see e.g. [39].
+
+10

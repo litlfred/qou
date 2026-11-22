@@ -4,13 +4,14 @@ doc_title: "NONSTANDARD ANALYSIS, DEFORMATION QUANTIZATION AND SOME LOGICAL ASPE
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
-pages: 1-5
+pages: 2-5
 source_pdf: 2008.09788v2.pdf
 source_sha256: 460f4f5432cb1f0c
 toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.984
-latex_coverage_ratio: 0.932
+latex_coverage_ratio: 0.975
+doc_brief: "NONSTANDARD ANALYSIS, DEFORMATION QUANTIZATION AND SOME LOGICAL ASPECTS OF (NON)COMMUTATIVE ALGEBRAIC GEOMETRY — This paper surveys results related to well-known works of B. Plotkin and V."
 ---
 \label{intro}
 The connections between algebraic geometry and mathematical logic are extremely important.

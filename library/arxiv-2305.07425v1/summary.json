@@ -2,31 +2,36 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2305.07425v1",
  "source_sha256": "2f7d2ac5818b6af4",
- "brief": "LARGEST HYPERBOLIC ACTIONS OF 3–MANIFOLD GROUPS — The set of equivalence classes of cobounded actions of a grou p G on diﬀerent hyperbolic metric spaces carries a natural partial order.",
- "extended": "**LARGEST HYPERBOLIC ACTIONS OF 3–MANIFOLD GROUPS**\n\n*CAROLYNABBOTT, HOANG THANH NGUYEN, AND ALEXANDER J. RASMUSSEN*\n\n20 pp, 12 sections.\n\n**Abstract.** The set of equivalence classes of cobounded actions of a grou p G on diﬀerent hyperbolic metric spaces carries a natural partial order. F ollowing Abbott–Balasubramanya– Osin, the group G is H–accessible if the resulting poset has a largest element. In this paper, w e prove that every non-geometric 3-manifold has a ﬁnite cover with H–inaccessible fundamental group and give conditions under which the fundamental group of the original manifold is H– inaccessible. We also prove that every Croke-Kleiner admis sible group (a class of graphs of groups that generalizes fundamental groups of 3–dimension al graph manifolds) has a ﬁnite index subgroup that is H–inaccessible.\n\n**Outline.** 1 Introduction; 2.1 H–accessibility; 1.1 Acknowledgments; 2 Preliminaries; 2.2 Projection axioms; 2.3 Croke-Kleiner admissible groups; 3 Croke-Kleiner admissible groups and H–inacce; 3.1 Construction of group actions; 4 H–accessibility of 3-manifold groups; 4.2 H–accessibility of non-elementary graph ma; 4.3 Theorem 1.1; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: LetM be a non-geometric 3-manifold with empty or toroidal bounda ry. If the\n- Theorem 1.3: If M is a non-elementary graph manifold or a non-elementary Seif ert ﬁbered\n- Theorem 1.3: generalizes [AR19, Theorem 1.1], in which the ﬁr st and third authors show\n- Theorem 1.4: Every Croke-Kleiner admissible group has a subgroup of index at most 2 which\n- Theorem 4.22: ] implies that these actions must be equivalent . Thus there is a coarsely G–\n- Theorem 1.3: now follows immediately from Corollary 4.6 and P roposition 4.8.",
+ "brief": "LARGEST HYPERBOLIC ACTIONS OF 3–MANIFOLD GROUPS — The set of equivalence classes of cobounded actions of a group G on diﬀerent hyperbolic metric spaces carries a natural partial order.",
+ "extended": "**LARGEST HYPERBOLIC ACTIONS OF 3–MANIFOLD GROUPS**\n\n*CAROLYNABBOTT, HOANG THANH NGUYEN, AND ALEXANDER J. RASMUSSEN*\n\n20 pp, 15 sections.\n\n**Abstract.** The set of equivalence classes of cobounded actions of a group G on diﬀerent hyperbolic metric spaces carries a natural partial order. Following Abbott–Balasubramanya– Osin, the group G is H–accessible if the resulting poset has a largest element. In this paper, we prove that every non-geometric 3-manifold has a ﬁnite cover with H–inaccessible fundamental group and give conditions under which the fundamental group of the original manifold is H– inaccessible. We also prove that every Croke-Kleiner admissible group (a class of graphs of groups that generalizes fundamental groups of 3–dimensional graph manifolds) has a ﬁnite index subgroup that is H–inaccessible.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Acknowledgments; 2 Preliminaries; 2.1 H–accessibility; 2.2 Projection axioms; 2.3 Croke-Kleiner admissible groups; 3 Croke-Kleiner admissible groups and H–inacce; 3.1 Construction of group actions; 4 H–accessibility of 3-manifold groups; 4.1 Seifert fibered manifolds; 4.2 H–accessibility of non-elementary graph ma; 4.3 Theorem 1.1; 4.4 H–accessibility of finitely generated 3-ma; References",
  "tokens": {
   "brief": 46,
-  "extended": 440
+  "extended": 315
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
    "pages": "1-3"
   },
   {
-   "id": "sec-001-21-haccessibility",
-   "title": "H–accessibility",
-   "pages": "3-3"
-  },
-  {
-   "id": "sec-002-11-acknowledgments",
+   "id": "sec-001-11-acknowledgments",
    "title": "Acknowledgments",
    "pages": "3-4"
   },
   {
-   "id": "sec-003-2-preliminaries",
+   "id": "sec-002-2-preliminaries",
    "title": "Preliminaries",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-003-21-haccessibility",
+   "title": "H–accessibility",
    "pages": "4-5"
   },
   {
@@ -55,17 +60,27 @@
    "pages": "10-12"
   },
   {
-   "id": "sec-009-42-haccessibility-of-non-elementary-graph-manifo",
+   "id": "sec-009-41-seifert-fibered-manifolds",
+   "title": "Seifert fibered manifolds",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-010-42-haccessibility-of-non-elementary-graph-manifo",
    "title": "H–accessibility of non-elementary graph manifolds",
    "pages": "12-16"
   },
   {
-   "id": "sec-010-43-theorem-11",
+   "id": "sec-011-43-theorem-11",
    "title": "Theorem 1.1",
-   "pages": "16-18"
+   "pages": "16-17"
   },
   {
-   "id": "sec-011-references",
+   "id": "sec-012-44-haccessibility-of-finitely-generated-3-manifo",
+   "title": "H–accessibility of finitely generated 3-manifold groups",
+   "pages": "17-18"
+  },
+  {
+   "id": "sec-013-references",
    "title": "References",
    "pages": "18-20"
   }
@@ -74,8 +89,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

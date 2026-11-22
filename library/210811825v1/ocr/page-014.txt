@@ -1,0 +1,50 @@
+where dA is the area measure of S, and x(S) is its Euler characteristic. x(S) is another
+
+topological invariant, and can be calculated from the genus g using the formula
+
+Remark 1.4 For compact Riemann surfaces of constant curvature, the uniformization
+theorem (introduced in Section 2.2.1) enables us to normalize the Gaussian curvature
+to K = +1 or K = 0, depending respectively on whether the surface is positively or
+negatively curved, or flat. On surfaces of constant negative curvature, the Gauss-Bonnet
+theorem then implies
+
+Area(S) = 4(g — 1),
+
+where g is the genus of the surface.
+
+Napoleon showed great foresight in his comment regarding the study of curved surfaces.
+He was (inadvertently, one supposes) predicting an arena for the study of: the Helmholtz
+
+wave equation
+V?A-k?A=0,
+
+where V? is the Laplacian, A is the amplitude and k is the wave number; the stationary
+
+1&
+(v - saz) u(x, t) = 0;
+
+HY = BY, (1.1)
+
+wave equation
+
+and the Schrodinger equation
+
+where H is the Hamiltonian and E is the energy of the state UV. We will examine this
+third equation shortly in the context of the Bolza surface.
+
+Although spectral theory in a Euclidean setting was commonplace in physics prior to
+the 1950s, during this decade the geometry and spectra of hyperbolic surfaces became an
+avenue of interest for quantum physicists. These surfaces provide a model for studying
+quantum chaos; Selberg’s trace formula helped to bridge the gap between classical and
+quantum mechanics.
+
+We will study the Laplace-Beltrami operator acting on functions on compact Riemann
+
+surfaces of constant negative curvature, in particular, those ¢; that solve the equation
+Adi — Aidi = 0~ (1.2)
+where the eigenvalues \; form a discrete spectrum
+0=2A <A S<AQ<....
+
+This is a heuristic overview of the problem. In the following section, we give details
+
+of the different boundary value problems on the surfaces that we consider. We go into

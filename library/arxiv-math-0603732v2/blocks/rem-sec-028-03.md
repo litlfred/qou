@@ -1,0 +1,1 @@
+The case of the above proposition where A has ﬁnite k-dimension (or, equivalently, d = 0), is [Sc, Proposition 3.6]. Note also the earlier result of Oberst and Schneider [OS]: a ﬁnite dimensional Hopf algebra is symmetric - that is, its Nakayama automorphism is the identity - if and only if S2 = ξ = idA .

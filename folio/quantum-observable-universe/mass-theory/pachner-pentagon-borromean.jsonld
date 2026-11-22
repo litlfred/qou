@@ -2,12 +2,13 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/conj-pachner-pentagon-borromean",
   "@type": [
-    "folio-assistant-core:Conjecture",
+    "folio-assistant-sci:Conjecture",
     "doco:Section"
   ],
   "label": "conj:pachner-pentagon-borromean",
@@ -16,7 +17,7 @@
   "uses": [
     "papers/quantum-observable-universe/blocks/prop-pentagon-uv-commutation",
     "papers/quantum-observable-universe/blocks/prop-q-rogers-pentagon-archimedean",
-    "papers/quantum-observable-universe/blocks/prop-quantum-dilogarithm-stratified",
+    "papers/quantum-observable-universe/blocks/conj-quantum-dilogarithm-stratified",
     "papers/quantum-observable-universe/blocks/def-quantum-dilogarithm-disambiguation",
     "papers/quantum-observable-universe/blocks/def-borromean-baryon",
     "papers/quantum-observable-universe/blocks/prop-atom-knot-exists",
@@ -24,7 +25,8 @@
   ],
   "cites": [
     "references/pachner1991",
-    "references/faddeev1996",
+    "references/adams1985hyperbolic",
+    "references/faddeev_kashaev1994",
     "references/kashaev1997",
     "references/turaev-viro1992",
     "references/neumann-zagier1985"

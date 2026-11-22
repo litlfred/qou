@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0903.0853v3/sections/sec-107",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Structure of the fibers",
+  "pageStart": 159,
+  "pageEnd": 160,
+  "contains": [
+    "library/arxiv-0903.0853v3/blocks/prose-sec-107",
+    "library/arxiv-0903.0853v3/blocks/prop-sec-107-01",
+    "library/arxiv-0903.0853v3/blocks/cor-sec-107-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0903.0853v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0903.0853v3/manifest.jsonld",
+  "provenance": "ingested"
+}

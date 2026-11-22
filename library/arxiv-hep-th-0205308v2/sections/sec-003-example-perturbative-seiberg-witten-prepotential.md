@@ -7,10 +7,11 @@ section_number: null
 pages: 7-8
 source_pdf: 0205308v2.pdf
 source_sha256: 2de5a4f40d80174c
-doc_brief: "WDVV Equations as Functional Relations — 5 sections: Introduction; WDVV and dispersionless Hirota equ; The associativity equations as coc"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.968
+latex_prose_ratio: 0.932
+latex_coverage_ratio: 0.987
+doc_brief: "WDVV Equations as Functional Relations — 6 sections: Front matter; Introduction; WDVV and dispersionless Hirota equ"
 ---
 Here we shall consider one of the simplest examples of solutions to the WDVV equations coming from Seiberg-Witten theory. These are related to $SU(N+1)$ perturbative prepotentials [@MMM] and the corresponding Riemann surface is degenerate. With $a_{ij}\equiv a_i-a_j$ the perturbative prepotential is given by $$\label{pertpre}
 {\cal F}= {1\over 2}\sum_{i<j}^N a_{ij}^2\log {a_{ij}\over\Lambda} +

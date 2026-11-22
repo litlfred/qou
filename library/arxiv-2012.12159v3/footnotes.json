@@ -1,0 +1,4783 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-2012.12159v3",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p028-1",
+   "page": 28,
+   "mark": "2",
+   "text": "ρ2−|ξ|2",
+   "marks": [
+    {
+     "page": 28,
+     "context": "Rn×Rn e−φ(x)−ψ(ξ)+ρ⟨x,ξ⟩dxdξ≤(2π)n(1 −ρ"
+    }
+   ],
+   "block": "library/arxiv-2012.12159v3/blocks/prose-sec-016"
+  },
+  {
+   "id": "fn-p031-1",
+   "page": 31,
+   "mark": "2",
+   "text": "(1−(−1)n)",
+   "marks": [
+    {
+     "page": 30,
+     "context": "e−φ(x)x"
+    },
+    {
+     "page": 30,
+     "context": "e−ψ(ξ)ξ"
+    },
+    {
+     "page": 30,
+     "context": "i=1e"
+    },
+    {
+     "page": 30,
+     "context": "e−t"
+    },
+    {
+     "page": 30,
+     "context": "2p"
+    },
+    {
+     "page": 30,
+     "context": "2t"
+    },
+    {
+     "page": 30,
+     "context": "((2iν−1)!!)"
+    },
+    {
+     "page": 30,
+     "context": "((2iν−1)!!)"
+    },
+    {
+     "page": 30,
+     "context": "ρ"
+    },
+    {
+     "page": 30,
+     "context": "((2iν−1)!!)"
+    },
+    {
+     "page": 30,
+     "context": "((2iν−1)!!)2= (1 −ρ"
+    },
+    {
+     "page": 30,
+     "context": "ρ"
+    },
+    {
+     "page": 30,
+     "context": "= (1 −ρ"
+    },
+    {
+     "page": 30,
+     "context": "(−1)iρ"
+    },
+    {
+     "page": 30,
+     "context": "ρ"
+    },
+    {
+     "page": 30,
+     "context": "(1 −ρ"
+    },
+    {
+     "page": 30,
+     "context": "ρ"
+    },
+    {
+     "page": 30,
+     "context": "n!(2π)nρn(1 −ρ"
+    },
+    {
+     "page": 31,
+     "context": "ρ"
+    },
+    {
+     "page": 31,
+     "context": "(2j)!I"
+    },
+    {
+     "page": 31,
+     "context": "(2j)!I2j(G) = (2π)n(1 −ρ"
+    },
+    {
+     "page": 31,
+     "context": "(−1)jρ"
+    },
+    {
+     "page": 31,
+     "context": "(1 −ρ"
+    },
+    {
+     "page": 31,
+     "context": "(n −2)!!(2j)!!ρ"
+    }
+   ],
+   "block": "library/arxiv-2012.12159v3/blocks/prose-sec-016"
+  },
+  {
+   "id": "fn-p035-1",
+   "page": 35,
+   "mark": "1",
+   "text": "+···+y2",
+   "marks": [
+    {
+     "page": 34,
+     "context": "Z"
+    },
+    {
+     "page": 35,
+     "context": "Z"
+    }
+   ],
+   "block": "library/arxiv-2012.12159v3/blocks/prose-sec-017"
+  },
+  {
+   "id": "fn-p035-2",
+   "page": 35,
+   "mark": "n",
+   "text": "−1<1 xn,ξn=0",
+   "marks": [
+    {
+     "page": 34,
+     "context": "Deﬁnition8.18.Let f: R"
+    },
+    {
+     "page": 34,
+     "context": "R"
+    },
+    {
+     "page": 34,
+     "context": "Rn×R"
+    },
+    {
+     "page": 34,
+     "context": "structureonV=R"
+    },
+    {
+     "page": 34,
+     "context": "Dens(Tx,ξ(P × P∨)) = Dens∗(x)"
+    },
+    {
+     "page": 34,
+     "context": "Dens(Tx,ξ(P × P∨)) = Dens∗(x)n+1⊗Dens∗(ξ)"
+    },
+    {
+     "page": 34,
+     "context": "Dens(Tx,ξ(P × P∨)) = Dens∗(x)n+1⊗Dens∗(ξ)n+1= x"
+    },
+    {
+     "page": 34,
+     "context": "Dens(Tx,ξ(P × P∨)) = Dens∗(x)n+1⊗Dens∗(ξ)n+1= xn+1⊗ξ"
+    },
+    {
+     "page": 34,
+     "context": "g∗(σxσξ)(gx, g−∗ξ) = (|gx0||g−∗ξ0|)"
+    },
+    {
+     "page": 34,
+     "context": "g∗(σxσξ)(gx, g−∗ξ) = (|gx0||g−∗ξ0|)n+1σxξ= χg(x, ξ)"
+    },
+    {
+     "page": 34,
+     "context": "g∗(σxσξ)(x, ξ) = χg(g−1x, g∗ξ)"
+    },
+    {
+     "page": 35,
+     "context": "HenceforthweusethesamenotationforapointonS"
+    },
+    {
+     "page": 35,
+     "context": "lineinRP"
+    },
+    {
+     "page": 35,
+     "context": "lineinRPn.TheactionofGL(V )onS"
+    },
+    {
+     "page": 35,
+     "context": "LetK⊂S"
+    },
+    {
+     "page": 35,
+     "context": "LetK⊂Sn⊂V=R"
+    },
+    {
+     "page": 35,
+     "context": "LetK⊂Sn⊂V=Rn+1beaproperconvexcompactset,andK∨⊂S"
+    },
+    {
+     "page": 35,
+     "context": "polarbody,namelyK∨={ξ∈S"
+    },
+    {
+     "page": 35,
+     "context": "DeﬁnetheBetafunctionofK⊂S"
+    },
+    {
+     "page": 35,
+     "context": "restricted to {xn= ξn= 0}, f0((x"
+    },
+    {
+     "page": 35,
+     "context": "restricted to {xn= ξn= 0}, f0((xn−1, 0), (ξ"
+    },
+    {
+     "page": 35,
+     "context": "restricted to {xn= ξn= 0}, f0((xn−1, 0), (ξn−1, 0)) = ⟨Axy"
+    },
+    {
+     "page": 35,
+     "context": "ricted to {xn= ξn= 0}, f0((xn−1, 0), (ξn−1, 0)) = ⟨Axyn−1, y"
+    },
+    {
+     "page": 35,
+     "context": " {xn= ξn= 0}, f0((xn−1, 0), (ξn−1, 0)) = ⟨Axyn−1, yn−1⟩+O(|y"
+    },
+    {
+     "page": 35,
+     "context": "f0(x, ξ) = ⟨Axy"
+    },
+    {
+     "page": 35,
+     "context": "f0(x, ξ) = ⟨Axyn−1, y"
+    },
+    {
+     "page": 35,
+     "context": "f0(x, ξ) = ⟨Axyn−1, yn−1⟩+ bxxn + cxξn + O(|y"
+    },
+    {
+     "page": 35,
+     "context": "f0(x, ξ) = ⟨Axyn−1, yn−1⟩+ bxxn + cxξn + O(|yn−1|3+ |y"
+    },
+    {
+     "page": 35,
+     "context": "n−1+ x"
+    },
+    {
+     "page": 35,
+     "context": "n−1+ xn+ ξ"
+    }
+   ],
+   "block": "library/arxiv-2012.12159v3/blocks/prose-sec-017"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p031-2",
+   "page": 31,
+   "mark": "2",
+   "text": "∥x∥2",
+   "block": "library/arxiv-2012.12159v3/blocks/prose-sec-016"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "setK⊂R"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "LetK⊂R"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "aﬃnespaceR"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "metricwhosetangentunitballatx∈int(K)isBxK=K⊂TxR"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "metricwhosetangentunitballatx∈int(K)isBxK=K⊂TxRn=R"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "1.2.Summaryofresults.If K⊂RP"
+  },
+  {
+   "page": 2,
+   "mark": "a",
+   "context": "K.Changingηresultsin"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "TheoremA.AssumeK⊂R"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "TheoremA.AssumeK⊂RnisC"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "never we discuss any of those invariants, we may assume K⊂RP"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "duality.RecallthatthepolarconvexbodyK∨⊂P∨=(RP"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "TheoremB.AssumeK⊂int(L)areC"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "TheoremB.AssumeK⊂int(L)areC2-smooth,strictlyconvexbodiesinRP"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "LetK, L⊂V=R"
+  },
+  {
+   "page": 3,
+   "mark": "o",
+   "context": "K⊂(V, ∥•∥L) and L"
+  },
+  {
+   "page": 3,
+   "mark": "o",
+   "context": "K⊂(V, ∥•∥L) and Lo⊂(V∗, ∥•∥K"
+  },
+  {
+   "page": 3,
+   "mark": "o",
+   "context": "hen properly rescaled, approach the symplectic volume of K×L"
+  },
+  {
+   "page": 3,
+   "mark": "o",
+   "context": "(L"
+  },
+  {
+   "page": 3,
+   "mark": "o",
+   "context": "(Lo, −K"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "Corollary1.GivenK⊂int(L)inRP"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "\u00002"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "Corollary2.LetK⊂int(L)betwoconvexsetsinRP"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "ItisnothardtoverifythatforanellipsoidB⊂RP"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "RP"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "TheoremC.LetK⊂int(B)benestedellipsesinRP"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "∂K, ∂B.Furthermore,if Q is a caustic for FunkB(K),and"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "thedualorbitinRFunkK∨(B∨),then"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "ballsintheFunkmetric.AssumeK⊂R"
+  },
+  {
+   "page": 4,
+   "mark": "z",
+   "context": "r-ballintheFunkmetriconKcenteredatq.DenotingbyK"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "r-ballintheFunkmetriconKcenteredatq.DenotingbyKz⊂(R"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "ect to z,and by ωnthe volume of the Euclidean unit ball in R"
+  },
+  {
+   "page": 4,
+   "mark": "z",
+   "context": "(1−e−r)K|K"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "TheoremD.ForanunconditionalconvexbodyK⊂R"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "t"
+  },
+  {
+   "page": 4,
+   "mark": "z",
+   "context": "|K"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "|Kz|dz≤nω"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "(1 −t"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "\u00131−(−1)"
+  },
+  {
+   "page": 4,
+   "mark": "o",
+   "context": "K×K"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "K×Ko⟨x, ξ⟩2"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "K×Ko⟨x, ξ⟩2jdxdξ≤(2π)"
+  },
+  {
+   "page": 4,
+   "mark": "o",
+   "context": "|K × K"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "|K × Ko| ≤|B"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "|K × Ko| ≤|Bn× (B"
+  },
+  {
+   "page": 4,
+   "mark": "o",
+   "context": "|K × Ko| ≤|Bn× (Bn)"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "|K × Ko| ≤|Bn× (Bn)o| = ω"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Proposition 1.Assume K⊂R"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "Proposition 1.Assume K⊂Rnis C"
+  },
+  {
+   "page": 5,
+   "mark": "z",
+   "context": "|K"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "2Ω"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Ωn(K) ≤Ωn(B"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Corollary3.ForK⊂R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "TheoremE.ForanunconditionalBorelfunctionf= e−φ: R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Rn×R"
+  },
+  {
+   "page": 5,
+   "mark": "j",
+   "context": "Rn×Rn⟨x, ξ⟩2"
+  },
+  {
+   "page": 5,
+   "mark": "e",
+   "context": "Rn×Rn⟨x, ξ⟩2j"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Rn×Rn⟨x, ξ⟩2je−φ(x)−Lφ(ξ)dxdξ≤(2π)"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "(2π)"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Rn×R"
+  },
+  {
+   "page": 5,
+   "mark": "e",
+   "context": "Rn×Rn"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "(1 −ρ"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "precisely,weusethestandardEuclideanstructureonR"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": ",weusethestandardEuclideanstructureonR3,andlocallyidentifyRP"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "withS"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "withS2.GivenΩ⊂int(K)inS"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "whereK∨⊂S"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "whereK∨⊂S2isthepolarsetgivenbyK∨= {ξ∈S"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "For a convex set K⊂S"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "TheoremF.LetK⊂S"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "TheoremF.LetK⊂S2beC"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "Moreover,thevalueBK(−3)isaprojectiveinvariantofK⊂RP"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "2.1.Convexity.AconvexbodyK⊂V= R"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "volumeofK,andH"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "TheEuclideanunitballisB"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "TheEuclideanunitballisBn,andωn:= |B"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "saythatKissmoothandstrictlyconvexif∂KisC"
+  },
+  {
+   "page": 7,
+   "mark": "x",
+   "context": "theMinkowskifunctionalofKis∥x∥K=inf{t>0:"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "t∈K}.IfK=−K,itis"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "KdµK= n|K|.If ∂Kis C"
+  },
+  {
+   "page": 7,
+   "mark": "x",
+   "context": "KdµK= n|K|.If ∂Kis C1smooth,it is given by dµK(x) = ⟨x, ν"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "dµK= n|K|.If ∂Kis C1smooth,it is given by dµK(x) = ⟨x, νx⟩dH"
+  },
+  {
+   "page": 7,
+   "mark": "o",
+   "context": "Thepolar(ordual)convexbodyisK"
+  },
+  {
+   "page": 7,
+   "mark": "o",
+   "context": "holdsthat∥ξ∥K"
+  },
+  {
+   "page": 7,
+   "mark": "z",
+   "context": "holdsthat∥ξ∥Ko= hK(ξ).Forz∈int(K),wewriteK"
+  },
+  {
+   "page": 7,
+   "mark": "o",
+   "context": "holdsthat∥ξ∥Ko= hK(ξ).Forz∈int(K),wewriteKz= (K −z)"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "x∈R"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "ThefunctionLφisalwaysconvex,andifφisconvexthenL"
+  },
+  {
+   "page": 7,
+   "mark": "o",
+   "context": "K"
+  },
+  {
+   "page": 7,
+   "mark": "p",
+   "context": "Kofor"
+  },
+  {
+   "page": 7,
+   "mark": "o",
+   "context": "casep = ∞, q= 1whichreadsL(−log 1K)(ξ) = ∥ξ∥K"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "2.2.Projectivegeometry.DenoteV= R"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "2.2.Projectivegeometry.DenoteV= Rn+1.WeoftenwriteP = RP"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "vex bodyK⊂P is the image of a closed proper convex cone in R"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "K⊂P \\ H=R"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Giventwonon-degeneratequadricsE1, E2∈RP"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "1E"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "1E2∈PGL(n + 1)isdeﬁnedasfollows.LetQ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "1E2∈PGL(n + 1)isdeﬁnedasfollows.LetQ1, Q"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "E2∈PGL(n + 1)isdeﬁnedasfollows.LetQ1, Q2bequadraticformson R"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "allx, y∈R"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "2Q"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "4Q"
+  },
+  {
+   "page": 8,
+   "mark": "x",
+   "context": "xM= (B"
+  },
+  {
+   "page": 8,
+   "mark": "o",
+   "context": "xM= (BxM)"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "ωnπ∗(vol"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "ωnπ∗(vol2"
+  },
+  {
+   "page": 8,
+   "mark": "x",
+   "context": "ωn|B"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "The Funk metric of K⊂R"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "outwardballintheFunkgeometryofK⊂R"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "r(q, K) = {x ∈int(K) :"
+  },
+  {
+   "page": 9,
+   "mark": "x",
+   "context": "xP = T"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "xK:= K∨∩(x⊥+η"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "xK:= K∨∩(x⊥+η0)−η"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "xK:= K∨∩(x⊥+η0)−η0for any η"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "assumesV=R"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "Lemma3.3.IdentifyaconvexbodyK⊂RP"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "Lemma3.3.IdentifyaconvexbodyK⊂RPnwiththecone˜K⊂V= R"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "withKt=˜K∩{xn+1=t}.Forx∈V\\ {0},write[x]=Rx∈RP"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "ˆp=(p, 1)∈int(K1)⊂R"
+  },
+  {
+   "page": 9,
+   "mark": "o",
+   "context": "ˆp=(p, 1)∈int(K1)⊂Rn,theset−(K1 −ˆp)"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "ˆp=(p, 1)∈int(K1)⊂Rn,theset−(K1 −ˆp)o⊂R"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "πn(K∨∩([ˆp]⊥+ en+1)),whereπnprojectsorthogonallytoR"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "Proof.Consider(−y, z)∈R"
+  },
+  {
+   "page": 10,
+   "mark": "o",
+   "context": "([ˆp]⊥+ en+1))⊂{(−y, 1):y∈(K1 −ˆp)"
+  },
+  {
+   "page": 10,
+   "mark": "o",
+   "context": "(y, 1) ∈(K1 −ˆp)"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "InparticularifK⊂RP"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "InparticularifK⊂RPnisgivenintheaﬃnechart{xn+1= 1} = R"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "K1⊂R"
+  },
+  {
+   "page": 10,
+   "mark": "o",
+   "context": "K1⊂Rn,thenK∨∩{xn+1= 1} = −K"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "1+ e"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "Proposition3.4.LetK⊂RP"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "lloftheEuclidean-anchoredFinslermetricisK∨∩(x⊥+ x),wherex ∈S"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "xn+1=:A(x)is(K"
+  },
+  {
+   "page": 10,
+   "mark": "o",
+   "context": "xn+1=:A(x)is(K1−p)"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "pK"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "A:S"
+  },
+  {
+   "page": 10,
+   "mark": "v",
+   "context": "n+1"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "n+1v"
+  },
+  {
+   "page": 10,
+   "mark": "x",
+   "context": "n+1vn+1:"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "x"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "x"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "xRP"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "(x⊥+ x) ∩K∨−e"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "= (x⊥+e"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": ") ∩K∨−e"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "xn+1πn((x⊥+e"
+  },
+  {
+   "page": 10,
+   "mark": "o",
+   "context": ") ∩K∨) = πn((x⊥+ en+1) ∩K∨) = −(K1 −ˆp)"
+  },
+  {
+   "page": 11,
+   "mark": "x",
+   "context": "xKwith"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "⟨x,θ⟩−e"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "θ= (α, β) ∈R"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "s(y) := (dxA∗)−1w=x"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "⟨x, θ⟩π"
+  },
+  {
+   "page": 11,
+   "mark": "x",
+   "context": "mooth measureeµ on int(K).Given x ∈int(K),choose a density d"
+  },
+  {
+   "page": 11,
+   "mark": "x",
+   "context": "h measureeµ on int(K).Given x ∈int(K),choose a density dx= α"
+  },
+  {
+   "page": 11,
+   "mark": "x",
+   "context": "asureeµ on int(K).Given x ∈int(K),choose a density dx= αx ⊗ν"
+  },
+  {
+   "page": 11,
+   "mark": "x",
+   "context": "x⊗ν"
+  },
+  {
+   "page": 11,
+   "mark": "x",
+   "context": "x⊗νxthe symplectic (Liouville) volume on"
+  },
+  {
+   "page": 11,
+   "mark": "x",
+   "context": "eµ"
+  },
+  {
+   "page": 11,
+   "mark": "x",
+   "context": "eµx:=c(x)d"
+  },
+  {
+   "page": 11,
+   "mark": "x",
+   "context": "eµx:=c(x)dx∈Dens(T"
+  },
+  {
+   "page": 11,
+   "mark": "x",
+   "context": "eµx:=c(x)dx∈Dens(TxP).Itiseasilyveriﬁedthatthechoiceofα"
+  },
+  {
+   "page": 11,
+   "mark": "x",
+   "context": "eµx:=c(x)dx∈Dens(TxP).Itiseasilyveriﬁedthatthechoiceofαx, ν"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "ω"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "ωn"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "= Dens∗(x)"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "= Dens∗(x)n+1⊗Dens∗(ξ)"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "= Dens∗(x)"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "= Dens∗(x)n+1⊗Dens∗(ξ)"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "= Dens∗(x)n+1⊗Dens∗(ξ)n+1= Dens∗(x ⊕ξ)"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "structureonR"
+  },
+  {
+   "page": 12,
+   "mark": "d",
+   "context": "n+1.Choose"
+  },
+  {
+   "page": 12,
+   "mark": "x",
+   "context": "n+1.Choosed"
+  },
+  {
+   "page": 12,
+   "mark": "x",
+   "context": "n+1.Choosedx=dx,α"
+  },
+  {
+   "page": 12,
+   "mark": "x",
+   "context": "n+1.Choosedx=dx,αx=x,sothatξ=x,andν"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "|ξn+1|n+1= |K∨∩(e"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "K∨∩S"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "S"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "L,is"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "L,isaprojectiveinvariantofL,thatisindependentof"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "Corollary3.12.GivenK⊂int(L)inRP"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "\u00002"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 12,
+   "mark": "z",
+   "context": "|L"
+  },
+  {
+   "page": 12,
+   "mark": "z",
+   "context": "2(L"
+  },
+  {
+   "page": 12,
+   "mark": "z",
+   "context": "2(Lz−L"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 12,
+   "mark": "o",
+   "context": "K"
+  },
+  {
+   "page": 12,
+   "mark": "o",
+   "context": "Ko(L"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 12,
+   "mark": "o",
+   "context": "K"
+  },
+  {
+   "page": 12,
+   "mark": "o",
+   "context": "Ko(L"
+  },
+  {
+   "page": 12,
+   "mark": "o",
+   "context": "L"
+  },
+  {
+   "page": 12,
+   "mark": "o",
+   "context": "Lo |(K"
+  },
+  {
+   "page": 12,
+   "mark": "z",
+   "context": "Lo |(Ko)"
+  },
+  {
+   "page": 12,
+   "mark": "o",
+   "context": "L"
+  },
+  {
+   "page": 12,
+   "mark": "o",
+   "context": "2((K"
+  },
+  {
+   "page": 12,
+   "mark": "z",
+   "context": "2((Ko)"
+  },
+  {
+   "page": 12,
+   "mark": "o",
+   "context": "2((Ko)z−(K"
+  },
+  {
+   "page": 12,
+   "mark": "z",
+   "context": "2((Ko)z−(Ko)"
+  },
+  {
+   "page": 12,
+   "mark": "o",
+   "context": "K"
+  },
+  {
+   "page": 12,
+   "mark": "o",
+   "context": "Ko(L"
+  },
+  {
+   "page": 12,
+   "mark": "o",
+   "context": "(K"
+  },
+  {
+   "page": 12,
+   "mark": "z",
+   "context": "(Ko)"
+  },
+  {
+   "page": 12,
+   "mark": "o",
+   "context": "ntipodal symmetry (with respect to some point) for every z∈L"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "AprojectivecenterofaconvexbodyinRP"
+  },
+  {
+   "page": 12,
+   "mark": "o",
+   "context": "forthebodyinsomeaﬃnechartcontainingK.Thesets(K"
+  },
+  {
+   "page": 12,
+   "mark": "z",
+   "context": "forthebodyinsomeaﬃnechartcontainingK.Thesets(Ko)"
+  },
+  {
+   "page": 12,
+   "mark": "o",
+   "context": "equivalenttoK,andweﬁndthatthesetL"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "choicesofhyperplanesη⊥atinﬁnity,forwhichK⊂RP"
+  },
+  {
+   "page": 12,
+   "mark": "o",
+   "context": "metrywithsomecenterpoint.Butthatimpliesthateveryη∈L"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "LetK⊂int(L)inP"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "hyperplanetangenttoLatp0.Letz1=RP"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "notethatz1⊂RP"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "spacethenconsistsofall(n −2)-dimensionalplanesz⊂P"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "Example4.1.AssumeK⊂B⊂R"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "Example4.2.ConsidertheEuclideanballB"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "Example4.2.ConsidertheEuclideanballBn⊂R"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "int(B"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "P"
+  },
+  {
+   "page": 14,
+   "mark": "x",
+   "context": "j=1"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "j=1x"
+  },
+  {
+   "page": 14,
+   "mark": "j",
+   "context": "j=1xjdx"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "domainK⊂int(B"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "domainK⊂int(Bn),theB"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "scale.Moreprecisely,takeK⊂L⊂R"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "L(γ) = log|p"
+  },
+  {
+   "page": 16,
+   "mark": "q",
+   "context": "L(γ) = log|p1"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "L(γ) = log|p1q"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "|p1q0|+ log|q"
+  },
+  {
+   "page": 16,
+   "mark": "p",
+   "context": "|p1q0|+ log|q0"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "|p1q0|+ log|q0p"
+  },
+  {
+   "page": 16,
+   "mark": "d",
+   "context": "|q1p0|= 2"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "L(q"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "L(q0, q"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "L(q"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "L(q0, q"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "2 log[p"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "2 log[p1, q"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "2 log[p1, q0, q"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "2 log[p1, q0, q1, p"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "2 log[P"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "2 log[P1, Q"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "2 log[P1, Q0, Q"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "2 log[P1, Q0, Q1, P"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "K∨(P"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "K∨(P0, P"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "WenowassumeK⊂int(L)aresmooth,strictlyconvexbodiesinRP"
+  },
+  {
+   "page": 17,
+   "mark": "x",
+   "context": "x,ξ(P×P∨) = ∧2(x⊗x⊥⊕ξ ⊗ξ⊥) = x⊗2 ⊗∧2"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "y, let us verify that ω is symplectic, that is dω= 0.As dω∈Ω"
+  },
+  {
+   "page": 17,
+   "mark": "x",
+   "context": "x,ξ(P × P∨) = x⊗3 ⊗∧3"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "whereβη,η′∈Ω"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "ηω"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "η′ω"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "where β(x, ξ) = (x, β(x)), and β∈Ω"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "U⊂P.Wemaychoosecoordinateslocallysuchthatω"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "U⊂P.Wemaychoosecoordinateslocallysuchthatω0=Pdx"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "U⊂P.Wemaychoosecoordinateslocallysuchthatω0=Pdxi∧dξ"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "∂xidx"
+  },
+  {
+   "page": 17,
+   "mark": "x",
+   "context": "∂xidxi,anddenoteB:= D"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "ηω"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "ηω0patchto"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "Ω"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "ηω"
+  },
+  {
+   "page": 18,
+   "mark": "g",
+   "context": "g∗η"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "g∗ηg∗ω"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "g∗ηω"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "wenotethatω"
+  },
+  {
+   "page": 18,
+   "mark": "c",
+   "context": "0,andso"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "0,andsoc"
+  },
+  {
+   "page": 18,
+   "mark": "c",
+   "context": "0,andsocn=1.Itisalsoclearthat"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "bydeﬁnitioncorrespondstoω"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "ηα"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "RecallthatbyExample4.2,thereﬂectionlawsoftheB"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "M⊂int(B"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "Inparticular,ifKisanellipsoidnestedinB"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "nestedconicsinP"
+  },
+  {
+   "page": 19,
+   "mark": "c",
+   "context": "centeredellipse,thatisQK= {q: ⟨Aq, q⟩= 1}.Considerapointz0∈B"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "=⟨Az"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "=⟨Az1, z"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "|z1|2−1=|z"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "|z1|2−1=|z0 −p"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "|z1 −p|2=∥z"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "|z1 −p|2=∥z0 −p"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "⟨Az1, z1⟩−1=∥z"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "⟨Az1, z1⟩−1=∥z0 −q"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "⇐⇒sin ∡A"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "⇐⇒sin ∡Az"
+  },
+  {
+   "page": 19,
+   "mark": "q",
+   "context": "⇐⇒sin ∡Az0"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "⇐⇒sin ∡Az0q"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "⇐⇒sin ∡Az0q0"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "⇐⇒sin ∡Az0q0p"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "=sin ∡A"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "=sin ∡Az"
+  },
+  {
+   "page": 19,
+   "mark": "q",
+   "context": "=sin ∡Az1"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "=sin ∡Az1q"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "=sin ∡Az1q1"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "=sin ∡Az1q1p"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "=∥z"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "=∥z1 −q"
+  },
+  {
+   "page": 19,
+   "mark": "q",
+   "context": "2∡A"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "2∡Aq"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "2∡Aq0oq"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "2∡Aq0oq1= ∡A"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "2∡Aq0oq1= ∡Az"
+  },
+  {
+   "page": 19,
+   "mark": "q",
+   "context": "2∡Aq0oq1= ∡Az1"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "2∡Aq0oq1= ∡Az1q"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "2∡Aq0oq1= ∡Az1q1"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "2∡Aq0oq1= ∡Az1q1p"
+  },
+  {
+   "page": 20,
+   "mark": "o",
+   "context": "BQ"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "K.ToshowthatQ"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "vethatp −qistangenttoQ.Nowthelinethroughp, qisrepresentedinR"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "−1w, w⟩= 0⇐⇒⟨(I+ tA−1)J(p −q), J(p −q)⟩−(1 + t) det(p, p −q)"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "|z|2−1 = s"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "⟨Az, z⟩= 1 + r"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "Sincedet(p, p −q)"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "s"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "s2⟨p, p −q⟩2= r"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "A−1−det(p, p −q)"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "⟨z −q, J(p −q)⟩2= r"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "⟨z −q, J(p −q)⟩2= r2⟨JAq, J(p −q)⟩2= r"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "A−1−det(q, p −q)"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "A−1−det(q, p −q)"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "Theorem6.1.LetLbeasmooth,strictlyconvexbodyinP"
+  },
+  {
+   "page": 21,
+   "mark": "x",
+   "context": "x∂Kisdiﬀeomorphictoitspreimageunderπ"
+  },
+  {
+   "page": 21,
+   "mark": "x",
+   "context": "xK.Denoteτ"
+  },
+  {
+   "page": 21,
+   "mark": "x",
+   "context": "x∂K→Z"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "η)∗α"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "η)∗α1∈Ω"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "θ)∗α"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "θ)∗α1∈Ω"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "(dα1)"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "dα"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "dα"
+  },
+  {
+   "page": 22,
+   "mark": "r",
+   "context": "q∈int(K)M"
+  },
+  {
+   "page": 22,
+   "mark": "z",
+   "context": "|K"
+  },
+  {
+   "page": 22,
+   "mark": "z",
+   "context": "where K"
+  },
+  {
+   "page": 22,
+   "mark": "z",
+   "context": "Proof.Thefunctionz7→|K"
+  },
+  {
+   "page": 22,
+   "mark": "z",
+   "context": "|K"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "S"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "whereσistherotation-invariantprobabilitymeasureonS"
+  },
+  {
+   "page": 22,
+   "mark": "e",
+   "context": "|K"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "|Ke−r"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "Proposition7.2.ItholdsforallK⊂R"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "Proposition7.2.ItholdsforallK⊂RnthatMr(K, q) = Mr(K"
+  },
+  {
+   "page": 22,
+   "mark": "o",
+   "context": "ular,ifK= −KthenMr(K) = Mr(K"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "Mr(K, 0) =ω"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "K(ρK) =ω"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "r"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "r"
+  },
+  {
+   "page": 23,
+   "mark": "o",
+   "context": "ρ−1K"
+  },
+  {
+   "page": 23,
+   "mark": "o",
+   "context": "ρ−1Ko(K"
+  },
+  {
+   "page": 23,
+   "mark": "r",
+   "context": "ρ−1Ko(Ko) = M"
+  },
+  {
+   "page": 23,
+   "mark": "o",
+   "context": "ρ−1Ko(Ko) = Mr(ρ−1K"
+  },
+  {
+   "page": 23,
+   "mark": "r",
+   "context": "ρ−1Ko(Ko) = Mr(ρ−1Ko, 0) = M"
+  },
+  {
+   "page": 23,
+   "mark": "o",
+   "context": "ρ−1Ko(Ko) = Mr(ρ−1Ko, 0) = Mr(K"
+  },
+  {
+   "page": 23,
+   "mark": "o",
+   "context": "sinceK"
+  },
+  {
+   "page": 23,
+   "mark": "o",
+   "context": "ceKoistheballofradiusraroundtheoriginintheFunkgeometryofρ−1K"
+  },
+  {
+   "page": 23,
+   "mark": "q",
+   "context": "r(K∨, η) ⊂Funk"
+  },
+  {
+   "page": 23,
+   "mark": "q",
+   "context": "B"
+  },
+  {
+   "page": 23,
+   "mark": "q",
+   "context": "As r→0, Mr(K, q) →M0(K, q) := |K||K"
+  },
+  {
+   "page": 23,
+   "mark": "d",
+   "context": "2"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "2dH"
+  },
+  {
+   "page": 23,
+   "mark": "q",
+   "context": "2dµK(p;"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "Lemma7.4.LetAbeapositive-deﬁniten×nmatrix,andQA={x∈R"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "k"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "(det A)"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "A| = ω"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "(1 −ρ"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "(1 −ρ"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "where,denotingB0= A−1−ρ"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "1 + ρ"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "ρ"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "1 −ρ"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "1 −ρ"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "det B0= (1 −ρ"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "1 −ρ"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "1 −ρ2 (1 −ρ"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "A| = ω"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "(1 −ρ"
+  },
+  {
+   "page": 24,
+   "mark": "v",
+   "context": "|Ax|.Itfollowsthatfor"
+  },
+  {
+   "page": 24,
+   "mark": "p",
+   "context": "|Ax|.Itfollowsthatforv∈T"
+  },
+  {
+   "page": 24,
+   "mark": "p",
+   "context": "|Ap|, ν"
+  },
+  {
+   "page": 24,
+   "mark": "p",
+   "context": "|Ap|, νp⟩ν"
+  },
+  {
+   "page": 24,
+   "mark": "p",
+   "context": "|Ap|πT"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "|A(v"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "|A(v1 ∧· · · ∧v"
+  },
+  {
+   "page": 24,
+   "mark": "p",
+   "context": "|A(v1 ∧· · · ∧vn−1 ∧p)| = det A · ⟨p, ν"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "Lemma7.5.ForK∈K0(R"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "k"
+  },
+  {
+   "page": 24,
+   "mark": "p",
+   "context": "We may further assume that yn= −1+a"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "rewewritey′= (y1, . . . , yn−1).LetQbetheellipsoidap|y′|2+ y"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "osculating∂Katp.Write1 −ρ = ϵ"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "⟨x −ρp, νx⟩≥⟨x −p, νx⟩−(1 −ρ)|⟨p, νx⟩| ≥⟨x −p, νx⟩−ϵ"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "2"
+  },
+  {
+   "page": 24,
+   "mark": "p",
+   "context": "2a"
+  },
+  {
+   "page": 24,
+   "mark": "x",
+   "context": "2ap"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "2apx"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "ϵB"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "Deﬁne zK(y′), zQ(y′) : R"
+  },
+  {
+   "page": 25,
+   "mark": "p",
+   "context": "normals.ThenzK(y′) = zQ(y′) + O(|y′|3) = −1 +a"
+  },
+  {
+   "page": 25,
+   "mark": "p",
+   "context": "2(a"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "2(ap±2ϵ"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "2(ap±2ϵ1/3)|y′|2+y"
+  },
+  {
+   "page": 25,
+   "mark": "p",
+   "context": "2(a"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "2(ap ± 2ϵ"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "Moreover,as|νK(y′) −νQ(y′)| = O(|y′|)and|y′| ≤cϵ"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "Moreover,as|νK(y′) −νQ(y′)| = O(|y′|)and|y′| ≤cϵ1/2≪ϵ"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "k"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "n −1"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "|Kφ(p,r)|Jac(φ(p, r))dH"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "NowJac(φ(p, r)) = (1 −e−r)"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "k"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "(1 −e−r)"
+  },
+  {
+   "page": 26,
+   "mark": "p",
+   "context": "∂K|Kφ(p,r)|⟨p, ν"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "∂K|Kφ(p,r)|⟨p, νp⟩dH"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "k"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "n −1"
+  },
+  {
+   "page": 26,
+   "mark": "d",
+   "context": "2"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "2dH"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "Mρ(K, q) := r"
+  },
+  {
+   "page": 26,
+   "mark": "z",
+   "context": "|K"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "Lemma8.1.LetB⊂R"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "t"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "Mρ(B) = nω"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "(1 −t"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "t"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "Mρ(B"
+  },
+  {
+   "page": 26,
+   "mark": "z",
+   "context": "|B"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "= nω"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "(1 −t"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "Conjecture8.2.Fixany0 ≤ρ < 1,andletK∈K(R"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "Mρ(B"
+  },
+  {
+   "page": 26,
+   "mark": "f",
+   "context": "i)"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "Mρ(B"
+  },
+  {
+   "page": 26,
+   "mark": "f",
+   "context": "ii)If"
+  },
+  {
+   "page": 26,
+   "mark": "f",
+   "context": "Thisisnottosaythat"
+  },
+  {
+   "page": 26,
+   "mark": "f",
+   "context": "Mρ(K, 0):asρ→0,"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "Deﬁnition8.3.Forf: R"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "ﬁnition8.3.Forf: Rn→R+aBorelfunction,putφ(x) = −log f(x) : R"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "z∈R"
+  },
+  {
+   "page": 27,
+   "mark": "e",
+   "context": "z∈Rn"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "ξ∈R"
+  },
+  {
+   "page": 27,
+   "mark": "e",
+   "context": "ξ∈Rn"
+  },
+  {
+   "page": 27,
+   "mark": "z",
+   "context": "ξ∈Rn e−Lφ"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "n!ρ"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "Rn×R"
+  },
+  {
+   "page": 27,
+   "mark": "e",
+   "context": "Rn×Rn"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "q∈R"
+  },
+  {
+   "page": 27,
+   "mark": "f",
+   "context": "q∈Rn"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "n!ρ"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "Rn×R"
+  },
+  {
+   "page": 27,
+   "mark": "e",
+   "context": "Rn×Rn"
+  },
+  {
+   "page": 27,
+   "mark": "f",
+   "context": "Lemma 8.4.It holds that"
+  },
+  {
+   "page": 27,
+   "mark": "f",
+   "context": "Furthermore,"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "Rn×R"
+  },
+  {
+   "page": 27,
+   "mark": "e",
+   "context": "Rn×Rn"
+  },
+  {
+   "page": 27,
+   "mark": "t",
+   "context": "andnotethatt 7→e(1−ρ)"
+  },
+  {
+   "page": 27,
+   "mark": "f",
+   "context": "Lemma8.5."
+  },
+  {
+   "page": 27,
+   "mark": "o",
+   "context": "Proof.RecallthatL(−log 1K)(ξ) = hK(ξ) = ∥ξ∥K"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "ρK×R"
+  },
+  {
+   "page": 27,
+   "mark": "e",
+   "context": "ρK×Rn"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "r"
+  },
+  {
+   "page": 27,
+   "mark": "z",
+   "context": "∂K"
+  },
+  {
+   "page": 27,
+   "mark": "z",
+   "context": "∂Kz dµK"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "wheredξ= r"
+  },
+  {
+   "page": 27,
+   "mark": "z",
+   "context": "wheredξ= rn−1drdµK"
+  },
+  {
+   "page": 27,
+   "mark": "z",
+   "context": "|K"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "Mit(K, 0) = i"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "Mit(K, 0) = in (2π)"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "Mρ(1K, 0) =(s + it)"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "K×R"
+  },
+  {
+   "page": 27,
+   "mark": "e",
+   "context": "K×Rn"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "K×R"
+  },
+  {
+   "page": 28,
+   "mark": "e",
+   "context": "K×Rn"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "s"
+  },
+  {
+   "page": 28,
+   "mark": "f",
+   "context": "sn"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 28,
+   "mark": "f",
+   "context": "Rn"
+  },
+  {
+   "page": 28,
+   "mark": "e",
+   "context": "Rn f(x)"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "Mit(K, 0) =i"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "n!t"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "Rn×R"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "Rn×Rn"
+  },
+  {
+   "page": 28,
+   "mark": "e",
+   "context": "Rn×Rn 1K(x)"
+  },
+  {
+   "page": 28,
+   "mark": "e",
+   "context": "Rn×Rn 1K(x)e−hK(ξ)"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "=i"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "Rn"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "=i"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 28,
+   "mark": "e",
+   "context": "Rn"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "andnotethatF(e−hK) ∈L"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "andnotethatF(e−hK) ∈L1(R"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "Mit(K, 0) →i"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "Rn F(e−hK) =i"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "n!(2π)"
+  },
+  {
+   "page": 28,
+   "mark": "e",
+   "context": "n!(2π)n"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "n!(2π)ne−hK(0)= i"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "n!(2π)ne−hK(0)= in (2π)"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "Conjecture8.7.ConsidertwoBorelfunctionsφ, ψ:R"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "forallx, ξ∈R"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "Rn×R"
+  },
+  {
+   "page": 28,
+   "mark": "e",
+   "context": "Rn×Rn"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "Rn×Rn e−φ(x)−ψ(ξ)+ρ⟨x,ξ⟩dxdξ≤(2π)"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "Conjecture8.9.Letf:R"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "n!(2π)"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "n!(2π)nρ"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "n!(2π)nρn(1 −ρ"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "orem 8.11.Consider two unconditional Borel functions φ, ψ: R"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "suchthatforallx, ξ∈R"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "Rn×R"
+  },
+  {
+   "page": 29,
+   "mark": "e",
+   "context": "Rn×Rn"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "Rn×Rn e−φ(x)−ψ(ξ)+ρ⟨x,ξ⟩dxdξ≤(2π)"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "Rn×Rn e−φ(x)−ψ(ξ)+ρ⟨x,ξ⟩dxdξ≤(2π)n(1 −ρ"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "Rn×R"
+  },
+  {
+   "page": 29,
+   "mark": "e",
+   "context": "Rn×Rn"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "Rn×Rn e−φ(x)−ψ(ξ) cosh(ρ⟨x, ξ⟩)dξdx ≤(2π)"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "Rn×Rn e−φ(x)−ψ(ξ) cosh(ρ⟨x, ξ⟩)dξdx ≤(2π)n(1 −ρ"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "ρ"
+  },
+  {
+   "page": 29,
+   "mark": "j",
+   "context": "ρ2"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "Rn×R"
+  },
+  {
+   "page": 29,
+   "mark": "e",
+   "context": "Rn×Rn"
+  },
+  {
+   "page": 29,
+   "mark": "j",
+   "context": "Rn×Rn e−φ(x)−ψ(ξ)⟨x, ξ⟩2"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "ρ"
+  },
+  {
+   "page": 29,
+   "mark": "j",
+   "context": "ρ2"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 29,
+   "mark": "x",
+   "context": "Rn"
+  },
+  {
+   "page": 29,
+   "mark": "e",
+   "context": "Rn xI"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 29,
+   "mark": "e",
+   "context": "Rn ξI"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "ν=1"
+  },
+  {
+   "page": 29,
+   "mark": "j",
+   "context": "ν=1iν= 2"
+  },
+  {
+   "page": 29,
+   "mark": "x",
+   "context": "ν=1iν= 2j,andweusethenotation"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "ν=1iν= 2j,andweusethenotationxI:= Q"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "that|I| :=P"
+  },
+  {
+   "page": 29,
+   "mark": "x",
+   "context": "ν=1"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "ν=1x"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "ρ"
+  },
+  {
+   "page": 29,
+   "mark": "j",
+   "context": "ρ2"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 29,
+   "mark": "x",
+   "context": "Rn"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "Rn x"
+  },
+  {
+   "page": 29,
+   "mark": "e",
+   "context": "Rn x2I"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "Rn ξ"
+  },
+  {
+   "page": 29,
+   "mark": "e",
+   "context": "Rn ξ2I"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "ρ"
+  },
+  {
+   "page": 29,
+   "mark": "j",
+   "context": "ρ2"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "= 4"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "x"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "ξ"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 30,
+   "mark": "u",
+   "context": "Makingthechangeofcoordinatesx=e"
+  },
+  {
+   "page": 30,
+   "mark": "u",
+   "context": "Makingthechangeofcoordinatesx=eu:=(e"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "Makingthechangeofcoordinatesx=eu:=(eu"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "Makingthechangeofcoordinatesx=eu:=(eui)"
+  },
+  {
+   "page": 30,
+   "mark": "v",
+   "context": "i=1,ξ=e"
+  },
+  {
+   "page": 30,
+   "mark": "v",
+   "context": "i=1,ξ=ev=(e"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "i=1,ξ=ev=(ev"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 30,
+   "mark": "f",
+   "context": "Rn"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 30,
+   "mark": "g",
+   "context": "Rn"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 30,
+   "mark": "u",
+   "context": "wheref(u) = e−φ(e"
+  },
+  {
+   "page": 30,
+   "mark": "v",
+   "context": "wheref(u) = e−φ(eu)e⟨2I+1,u⟩,g(v) = e−ψ(e"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": " e−φ(eu)e⟨2I+1,u⟩,g(v) = e−ψ(ev)e⟨2I+1,v⟩,andI+ c := (iν+ c)"
+  },
+  {
+   "page": 30,
+   "mark": "w",
+   "context": "2|e"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "w∈R"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "pP"
+  },
+  {
+   "page": 30,
+   "mark": "w",
+   "context": "where|e"
+  },
+  {
+   "page": 30,
+   "mark": "e",
+   "context": "i=1"
+  },
+  {
+   "page": 30,
+   "mark": "w",
+   "context": "i=1e2"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "i=1e2w"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "2t2"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 30,
+   "mark": "f",
+   "context": "Rn"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 30,
+   "mark": "g",
+   "context": "Rn"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 30,
+   "mark": "h",
+   "context": "Rn"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "!2"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "((2iν−1)!!)2=(2π)"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "4"
+  },
+  {
+   "page": 30,
+   "mark": "j",
+   "context": "ρ2"
+  },
+  {
+   "page": 30,
+   "mark": "j",
+   "context": "ρ2"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "(−1)"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "(−1)iρ2"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "ρ2"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "ρ2"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "2"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "Corollary8.12.ForallunconditionalBorelfunctionsf: R"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "n!(2π)"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "n!(2π)nρ"
+  },
+  {
+   "page": 31,
+   "mark": "f",
+   "context": "Proof.FollowsdirectlyfromTheorem8.11,since"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "Corollary8.13.ConsideranunconditionalBorelfunctionf=e−φ:R"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "Rn×R"
+  },
+  {
+   "page": 31,
+   "mark": "j",
+   "context": "Rn×Rn⟨x, ξ⟩2"
+  },
+  {
+   "page": 31,
+   "mark": "e",
+   "context": "Rn×Rn⟨x, ξ⟩2j"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "Rn×Rn⟨x, ξ⟩2je−φ(x)−Lφ(ξ)dxdξ≤(2π)"
+  },
+  {
+   "page": 31,
+   "mark": "j",
+   "context": "ρ2"
+  },
+  {
+   "page": 31,
+   "mark": "j",
+   "context": "(2j)!I2"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "(2j)!I2j(G) = (2π)"
+  },
+  {
+   "page": 31,
+   "mark": "j",
+   "context": "(−1)"
+  },
+  {
+   "page": 31,
+   "mark": "j",
+   "context": "(−1)jρ2"
+  },
+  {
+   "page": 31,
+   "mark": "j",
+   "context": "(n −2)!!(2j)!!ρ2"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "I2j(G) = (2π)"
+  },
+  {
+   "page": 31,
+   "mark": "j",
+   "context": "I2j(G) = (2π)n(2j)! (n + 2"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "(n −2)!!(2j)!!= (2π)"
+  },
+  {
+   "page": 31,
+   "mark": "o",
+   "context": "K×K"
+  },
+  {
+   "page": 31,
+   "mark": "j",
+   "context": "K×Ko⟨x, ξ⟩2"
+  },
+  {
+   "page": 31,
+   "mark": "n",
+   "context": "Lemma8.14.ForanyconvexbodyK∈K0(R"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "K"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "Rn×R"
+  },
+  {
+   "page": 32,
+   "mark": "j",
+   "context": "Rn×Rn⟨x, ξ⟩2"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "Rn×Rn⟨x, ξ⟩2j"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "[0,∞)"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "[0,∞)2"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "[0,∞)2 e−r"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "2−s"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "2r"
+  },
+  {
+   "page": 32,
+   "mark": "j",
+   "context": "2rn+2"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "2rn+2j−1s"
+  },
+  {
+   "page": 32,
+   "mark": "j",
+   "context": "2rn+2j−1sn+2"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "∂K×∂K"
+  },
+  {
+   "page": 32,
+   "mark": "j",
+   "context": "∂K×∂Ko⟨p, η⟩2"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "∂K×∂Ko⟨p, η⟩2jdµK(p)dµK"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "r"
+  },
+  {
+   "page": 32,
+   "mark": "j",
+   "context": "rn+2"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "rn+2j−1e−r"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "∂K×∂K"
+  },
+  {
+   "page": 32,
+   "mark": "j",
+   "context": "∂K×∂Ko⟨p, η⟩2"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "∂K×∂Ko⟨p, η⟩2jdµK(p)dµK"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "= 2"
+  },
+  {
+   "page": 32,
+   "mark": "j",
+   "context": "= 2n+2"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "2+ j)"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "∂K×∂K"
+  },
+  {
+   "page": 32,
+   "mark": "j",
+   "context": "∂K×∂Ko⟨p, η⟩2"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "∂K×∂Ko⟨p, η⟩2jdµK(p)dµK"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "K×K"
+  },
+  {
+   "page": 32,
+   "mark": "j",
+   "context": "K×Ko⟨x, ξ⟩2"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "∂K×∂K"
+  },
+  {
+   "page": 32,
+   "mark": "j",
+   "context": "∂K×∂Ko⟨p, η⟩2"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "∂K×∂Ko⟨p, η⟩2jdµK(p)dµK"
+  },
+  {
+   "page": 32,
+   "mark": "r",
+   "context": "[0,1]2"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "[0,1]2 r"
+  },
+  {
+   "page": 32,
+   "mark": "j",
+   "context": "[0,1]2 rn+2"
+  },
+  {
+   "page": 32,
+   "mark": "s",
+   "context": "[0,1]2 rn+2j−1"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "[0,1]2 rn+2j−1s"
+  },
+  {
+   "page": 32,
+   "mark": "j",
+   "context": "[0,1]2 rn+2j−1sn+2"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "∂K×∂K"
+  },
+  {
+   "page": 32,
+   "mark": "j",
+   "context": "∂K×∂Ko⟨p, η⟩2"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "∂K×∂Ko⟨p, η⟩2jdµK(p)dµK"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "(n + 2j)"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "2+ j)"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "2+ j)2 I"
+  },
+  {
+   "page": 32,
+   "mark": "j",
+   "context": "2+ j)2 I2"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 32,
+   "mark": "j",
+   "context": "2n+2"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "2n+2j−2(n + 2j)"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "2(1−(−1)"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "((n + 2j)!!)"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "Mρ(1K, 0) =ρ"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "K×R"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "K×Rn"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "=ρ"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "K×R"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "K×Rn"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "n!(2j)!ρ"
+  },
+  {
+   "page": 32,
+   "mark": "j",
+   "context": "n!(2j)!ρn+2"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "K×R"
+  },
+  {
+   "page": 32,
+   "mark": "j",
+   "context": "K×Rn⟨x, ξ⟩2"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "K×Rn⟨x, ξ⟩2j"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "s"
+  },
+  {
+   "page": 32,
+   "mark": "j",
+   "context": "s2"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "K×K"
+  },
+  {
+   "page": 32,
+   "mark": "j",
+   "context": "K×Ko⟨x, ξ⟩2"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "K×∂K"
+  },
+  {
+   "page": 32,
+   "mark": "j",
+   "context": "K×∂Ko⟨x, η⟩2"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "K×∂Ko⟨x, η⟩2jdxdµK"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "K×∂K"
+  },
+  {
+   "page": 32,
+   "mark": "j",
+   "context": "K×∂Ko⟨x, η⟩2"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "K×∂Ko⟨x, η⟩2jdxdµK"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "K×R"
+  },
+  {
+   "page": 32,
+   "mark": "j",
+   "context": "K×Rn⟨x, ξ⟩2"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "K×Rn⟨x, ξ⟩2j"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "K×[0,∞)×∂K"
+  },
+  {
+   "page": 32,
+   "mark": "s",
+   "context": "K×[0,∞)×∂Ko"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "K×[0,∞)×∂Ko s"
+  },
+  {
+   "page": 32,
+   "mark": "j",
+   "context": "K×[0,∞)×∂Ko s2"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "K×[0,∞)×∂Ko s2j+n−1"
+  },
+  {
+   "page": 32,
+   "mark": "j",
+   "context": "K×[0,∞)×∂Ko s2j+n−1e−s⟨x, η⟩2"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "K×[0,∞)×∂Ko s2j+n−1e−s⟨x, η⟩2jdxdsdµK"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "K×∂K"
+  },
+  {
+   "page": 32,
+   "mark": "j",
+   "context": "K×∂Ko⟨x, η⟩2"
+  },
+  {
+   "page": 32,
+   "mark": "o",
+   "context": "K×∂Ko⟨x, η⟩2jdxdµK"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "n!(2j)!ρ"
+  },
+  {
+   "page": 33,
+   "mark": "j",
+   "context": "n!(2j)!ρn+2"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "n!(2j)!ρn+2jI"
+  },
+  {
+   "page": 33,
+   "mark": "j",
+   "context": "n!(2j)!ρn+2jI2"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "Corollary8.15.ForK⊂R"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "\u00131−(−1)"
+  },
+  {
+   "page": 33,
+   "mark": "o",
+   "context": "K×K"
+  },
+  {
+   "page": 33,
+   "mark": "j",
+   "context": "K×Ko⟨x, ξ⟩2"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "K×Ko⟨x, ξ⟩2jdxdξ≤(2π)"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "Corollary8.16.Forany0≤r<∞,andK⊂R"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "Mr(K) ≤Mr(B"
+  },
+  {
+   "page": 33,
+   "mark": "d",
+   "context": "2"
+  },
+  {
+   "page": 33,
+   "mark": "c",
+   "context": "2r(q, K).Write"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "2r(q, K).Write c"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "2r(q, K).Write cnfor a constant depending only on"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "R(q, B"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "R(q, Bn))≤c"
+  },
+  {
+   "page": 33,
+   "mark": "e",
+   "context": "R(q, Bn))≤cn"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "r(q, K)) ≤c"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "r(q, K)) ≤c"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "2r(q, K)) ≤c"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "2r(q, B"
+  },
+  {
+   "page": 33,
+   "mark": "r",
+   "context": "2"
+  },
+  {
+   "page": 33,
+   "mark": "r",
+   "context": "2r= cne(n−1)"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "Theorem8.17.Letf= e−φ: R"
+  },
+  {
+   "page": 33,
+   "mark": "a",
+   "context": "+→R+be"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "+×R"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "x"
+  },
+  {
+   "page": 33,
+   "mark": "j",
+   "context": "x2"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "ξ"
+  },
+  {
+   "page": 33,
+   "mark": "j",
+   "context": "ξ2"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "1 −ρ"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "1 −ρ"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "(2j + 1)!ρ"
+  },
+  {
+   "page": 33,
+   "mark": "j",
+   "context": "(2j + 1)!ρ2"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "(2j + 1)!!ρ"
+  },
+  {
+   "page": 33,
+   "mark": "j",
+   "context": "(2j + 1)!!ρ2"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "1 −ρ"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "1 −ρ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "sin"
+  },
+  {
+   "page": 34,
+   "mark": "j",
+   "context": "sin2"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "(2j + 1)!!ρ"
+  },
+  {
+   "page": 34,
+   "mark": "j",
+   "context": "(2j + 1)!!ρ2"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "(ρ sin t)"
+  },
+  {
+   "page": 34,
+   "mark": "j",
+   "context": "(ρ sin t)2"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "1 −ρ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "1 −ρ2sin"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "s"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "s2+ 2(1 −2ρ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "1 −2ρ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "1 −ρ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "1 −ρ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "1 −ρ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "1 −ρ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "1 −ρ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "ρ→1−(1 −ρ"
+  },
+  {
+   "page": 34,
+   "mark": "e",
+   "context": "Rn×Rn"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "thestandardEuclideanmeasureonthecorrespondingcopyofS"
+  },
+  {
+   "page": 35,
+   "mark": "f",
+   "context": "g"
+  },
+  {
+   "page": 35,
+   "mark": "0",
+   "context": "gf"
+  },
+  {
+   "page": 35,
+   "mark": "z",
+   "context": "Deﬁneµz(x, ξ) = f0(x, ξ)"
+  },
+  {
+   "page": 35,
+   "mark": "z",
+   "context": "Proof.Itiseasytocheckthatg∗µz=(g−1)∗f"
+  },
+  {
+   "page": 35,
+   "mark": "x",
+   "context": "0· g∗(σ"
+  },
+  {
+   "page": 35,
+   "mark": "x",
+   "context": "K×K∨⟨x, ξ⟩zσ"
+  },
+  {
+   "page": 35,
+   "mark": "z",
+   "context": "K×K∨⟨x, ξ⟩zσxσξ= ⟨1K×K∨, µ"
+  },
+  {
+   "page": 35,
+   "mark": "j",
+   "context": "andK∨={ξn≥0}.Weputξ=x + y,andusethenotationv"
+  },
+  {
+   "page": 35,
+   "mark": "j",
+   "context": "andK∨={ξn≥0}.Weputξ=x + y,andusethenotationvj=(vi)"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "⟨Axyn−1, yn−1⟩+ bxxn + cxξn + O(|yn−1|3+ |yn−1|(xn + ξn) + x"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "n+ ξ"
+  },
+  {
+   "page": 35,
+   "mark": "0",
+   "context": "K×K∨f"
+  },
+  {
+   "page": 35,
+   "mark": "z",
+   "context": "K×K∨f0(x, ξ)"
+  },
+  {
+   "page": 35,
+   "mark": "z",
+   "context": "n−1+ xn+ ξn)"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "(y"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "1+ · · · + y"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "Proposition9.4.Forz∈C,z̸= −1,deﬁneωz∈Ω"
+  },
+  {
+   "page": 36,
+   "mark": "1",
+   "context": "Proposition9.4.Forz∈C,z̸= −1,deﬁneωz∈Ω1,"
+  },
+  {
+   "page": 36,
+   "mark": "z",
+   "context": "z + 1R"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "form ωzwith the required derivative.We write S"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "x,S"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "x∈S"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "sin"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "Theformsdθ,⟨x × dx, ξ⟩=sin"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "Theformsdθ,⟨x × dx, ξ⟩=sin2θdφarelinearlyindependentinS"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "vanishat±ξ.Assumea1-formζzonS"
+  },
+  {
+   "page": 36,
+   "mark": "z",
+   "context": "xoftheformζ"
+  },
+  {
+   "page": 36,
+   "mark": "z",
+   "context": "xoftheformζz=b"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "z(θ)dθdφ + c"
+  },
+  {
+   "page": 36,
+   "mark": "b",
+   "context": "z(θ)dθdφ + c0"
+  },
+  {
+   "page": 36,
+   "mark": "z",
+   "context": "z(θ)dθdφ + c0b"
+  },
+  {
+   "page": 36,
+   "mark": "z",
+   "context": "sin θ cos"
+  },
+  {
+   "page": 36,
+   "mark": "z",
+   "context": "bz(θ) =1 −cos"
+  },
+  {
+   "page": 36,
+   "mark": "3",
+   "context": "Nowﬁxx.WeshouldﬁndanR"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "onS"
+  },
+  {
+   "page": 36,
+   "mark": "z",
+   "context": "z+1⟨x × dx, η"
+  },
+  {
+   "page": 36,
+   "mark": "z",
+   "context": "where cz(θ) =1−cos"
+  },
+  {
+   "page": 36,
+   "mark": "c",
+   "context": "0"
+  },
+  {
+   "page": 36,
+   "mark": "z",
+   "context": "0c"
+  },
+  {
+   "page": 36,
+   "mark": "z",
+   "context": "1 −cos"
+  },
+  {
+   "page": 36,
+   "mark": "z",
+   "context": "cos θdθdφ · x −1 −cos"
+  },
+  {
+   "page": 36,
+   "mark": "z",
+   "context": "dθ · x × dξ=1 −cos"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "whichinturnfollowsfrom(14)appliedtoS"
+  },
+  {
+   "page": 36,
+   "mark": "z",
+   "context": "z + 1⟨x × dx, η"
+  },
+  {
+   "page": 36,
+   "mark": "z",
+   "context": "∂K×∂K∨ω"
+  },
+  {
+   "page": 37,
+   "mark": "o",
+   "context": "2(cos α, sin α, 1),and∂K"
+  },
+  {
+   "page": 37,
+   "mark": "0",
+   "context": "2(−cos β, −sin β, 1),"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "2(1 −cos(α −β)) = sin"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "Z"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "Z"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "1 −(sin"
+  },
+  {
+   "page": 37,
+   "mark": "z",
+   "context": "2)"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "sin"
+  },
+  {
+   "page": 37,
+   "mark": "4",
+   "context": "1 −sin"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "(2π −2|γ|)"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "(2π −2|γ|)1 −(sin"
+  },
+  {
+   "page": 37,
+   "mark": "z",
+   "context": "(2π −2|γ|)1 −(sin2 γ)"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "sin"
+  },
+  {
+   "page": 37,
+   "mark": "4",
+   "context": "1 −sin"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "(π −γ)"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "(π −γ)1 −(sin"
+  },
+  {
+   "page": 37,
+   "mark": "z",
+   "context": "(π −γ)1 −(sin2 γ)"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "sin"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "1 + sin"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "1 −(sin"
+  },
+  {
+   "page": 37,
+   "mark": "z",
+   "context": "1 −(sin2γ)"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "sin"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "1 + sin"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "1 −(sin"
+  },
+  {
+   "page": 37,
+   "mark": "z",
+   "context": "1 −(sin2γ)"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "sin"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "1 + sin"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "Puttingt = sin"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 37,
+   "mark": "z",
+   "context": "t"
+  },
+  {
+   "page": 37,
+   "mark": "z",
+   "context": "1 −t"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "Γ(z + 3)"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "Γ(z + 3)2F"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "Inparticular,BK(−3) = 2π"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "Proposition9.5.ForK⊂S"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "⟨x(α), ξ(β)⟩= (β −α)"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "Z"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "Z"
+  },
+  {
+   "page": 38,
+   "mark": "z",
+   "context": "|φ|2"
+  },
+  {
+   "page": 38,
+   "mark": "z",
+   "context": "u(α, α + φ)"
+  },
+  {
+   "page": 38,
+   "mark": "z",
+   "context": "−ϵ|φ|2"
+  },
+  {
+   "page": 38,
+   "mark": "f",
+   "context": "−ϵ|φ|2z+4"
+  },
+  {
+   "page": 38,
+   "mark": "z",
+   "context": "−ϵ|φ|2z+4f"
+  },
+  {
+   "page": 38,
+   "mark": "z",
+   "context": "polesofthemeromorphicfamily{|φ|2"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "Proposition9.6.ThevalueBK(−3)isaprojectiveinvariantofK⊂RP"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": "K×K∨ψ(x, ξ)−z−3"
+  },
+  {
+   "page": 38,
+   "mark": "x",
+   "context": "K×K∨ψ(x, ξ)−z−3d"
+  },
+  {
+   "page": 38,
+   "mark": "d",
+   "context": "K×K∨ψ(x, ξ)−z−3dx"
+  },
+  {
+   "page": 38,
+   "mark": "z",
+   "context": "K×K∨ψ(x, ξ)−z−3dxdξω"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "secondsummand;byLemma9.3,theformωzisL"
+  },
+  {
+   "page": 39,
+   "mark": "d",
+   "context": "1 −⟨x, ξ⟩2⟨dx, ξ⟩∧⟨x, dξ⟩∧ψ−z−4"
+  },
+  {
+   "page": 39,
+   "mark": "d",
+   "context": "∂K×K∨⟨x, ξ⟩z+1⟨x, dξ⟩∧⟨dx, ξ⟩∧ψ−z−4"
+  },
+  {
+   "page": 39,
+   "mark": "d",
+   "context": "z + 2"
+  },
+  {
+   "page": 39,
+   "mark": "d",
+   "context": "z + 2d(⟨x, ξ⟩z+2) ∧⟨dx, ξ⟩∧ψ−z−4"
+  },
+  {
+   "page": 39,
+   "mark": "d",
+   "context": "⟨x, ξ⟩z+2) ∧⟨dx, ξ⟩∧ψ−z−4dξψ= ⟨x, ξ⟩z+1⟨x, dξ⟩∧⟨dx, ξ⟩∧ψ−z−4"
+  },
+  {
+   "page": 39,
+   "mark": "d",
+   "context": "∂K×K∨⟨x, ξ⟩z+2"
+  },
+  {
+   "page": 39,
+   "mark": "d",
+   "context": "∂K×K∨⟨x, ξ⟩z+2d(⟨dx, ξ⟩∧ψ−z−4"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "z→−3I"
+  },
+  {
+   "page": 39,
+   "mark": "x",
+   "context": "∂K×∂K∨d"
+  },
+  {
+   "page": 39,
+   "mark": "d",
+   "context": "∂K×∂K∨dx(ψ−1"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "LetP:S"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "s≤ϵ}.There⟨x(α), ξ(β, s)⟩≥C max((β −α)"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "s≤ϵ}.There⟨x(α), ξ(β, s)⟩≥C max((β −α)2, s)≥C((β −α)"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "(s + φ"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "∂K×∂K∨⟨x, ξ⟩z+1"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "x∈∂K,ξ∈∂K∨,⟨x,ξ⟩≥ϵ"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "⟨x,ξ⟩=t"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "⟨x,ξ⟩=t"
+  },
+  {
+   "page": 40,
+   "mark": "2",
+   "context": "ativeforx ≥L(ξ),andnon-positiveforx ≤L(ξ).Putt = S(x, ξ),sot"
+  },
+  {
+   "page": 41,
+   "mark": "t",
+   "context": "K(0)"
+  },
+  {
+   "page": 41,
+   "mark": "g",
+   "context": "ϵ"
+  },
+  {
+   "page": 41,
+   "mark": "3",
+   "context": "t"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "⟨x,ξ⟩≥ϵ"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "t"
+  },
+  {
+   "page": 41,
+   "mark": "s",
+   "context": "2"
+  },
+  {
+   "page": 41,
+   "mark": "t",
+   "context": "2s"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "2st(β)"
+  },
+  {
+   "page": 41,
+   "mark": "3",
+   "context": "2st(β)2κ(β) + O(s"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "t + O(t"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "2κ(β)t + O(t"
+  }
+ ]
+}

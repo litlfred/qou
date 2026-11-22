@@ -32,7 +32,7 @@ This file provides, per the **formalize-first** discipline:
    `ser_sqrt`/`ser_div` construction formalized, which is not yet in Lean. Per the
    anti-laundering rule, axiomatizing the class is **not** a proof of the law.
 
--- Ref: [manuscript] docs/audits/2026-07-13-dladder-coupled-recurrence-and-2adic-parity-grading.md
+-- Ref: [leitner2026] docs/audits/2026-07-13-dladder-coupled-recurrence-and-2adic-parity-grading.md
 -/
 
 namespace QOU.QBeta.DLadderTwoAdicGrading

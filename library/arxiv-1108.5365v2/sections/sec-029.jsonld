@@ -9,13 +9,18 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Left regular representation",
-  "pageStart": 82,
-  "pageEnd": 85,
+  "title": "The multiplicative unitary",
+  "pageStart": 61,
+  "pageEnd": 66,
   "contains": [
-    "library/arxiv-1108.5365v2/blocks/prose-sec-029"
+    "library/arxiv-1108.5365v2/blocks/prose-sec-029",
+    "library/arxiv-1108.5365v2/blocks/prop-sec-029-01",
+    "library/arxiv-1108.5365v2/blocks/prop-sec-029-02",
+    "library/arxiv-1108.5365v2/blocks/thm-sec-029-03",
+    "library/arxiv-1108.5365v2/blocks/prop-sec-029-04",
+    "library/arxiv-1108.5365v2/blocks/prop-sec-029-05"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1108.5365v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1108.5365v2",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1108.5365v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1108.5365v2/manifest.jsonld",
   "provenance": "ingested"
 }

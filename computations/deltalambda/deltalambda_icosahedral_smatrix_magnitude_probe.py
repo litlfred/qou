@@ -81,13 +81,14 @@ for _p in (str(_COMP), str(_COMP / "substrate")):
         sys.path.insert(0, _p)
 from substrate.witness_base import WitnessBuilder  # noqa: E402
 from codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION
+from codata_constants import AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402  (AME registry)
 
 COMP = str(_COMP)
 
 # AME2020 binding energies (MeV) — the same values used by b4_value_cumulant_target_probe.py.
 B_AME = {
     "D": mp.mpf("2.22452"),
-    "3H": mp.mpf("8.48180"),
+    "3H": AME_B_TRITIUM_MEV_VALIDATION,
     "3He": AME_B_HE3_MEV_VALIDATION,
     "4He": AME_B_HE4_MEV_VALIDATION,
 }

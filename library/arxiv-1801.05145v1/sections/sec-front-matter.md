@@ -8,6 +8,7 @@ pages: 1-3
 source_pdf: 1801.05145v1.pdf
 source_sha256: 808da260edd433f7
 toc_source: inferred
+doc_brief: "MONOIDAL CATEGORIFICATION OF CLUSTER ALGEBRAS — We prove that the quantum cluster algebra structure of a unipotent quantum coordinate ring Aq(n(w)), associated with a symmetric Kac-Moody algebra and"
 ---
 arXiv:1801.05145v1  [math.RT]  16 Jan 2018
 MONOIDAL CATEGORIFICATION OF CLUSTER ALGEBRAS
@@ -167,4 +168,3 @@ Admissible seeds in the monoidal category Cw
 References
 89
 MONOIDAL CATEGORIFICATION OF CLUSTER ALGEBRAS
-3

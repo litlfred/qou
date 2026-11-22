@@ -1,0 +1,1 @@
+Let A be a ring, and assume it has at least one NC dualizing complex. Then the left action of the group DPicK(A) on the set of isomorphism classes of NC dualizing complexes, induced by the bifunctor (T, R) 7→T ⊗L A R, is simply transitive. Derived Categories | Amnon Yekutieli |

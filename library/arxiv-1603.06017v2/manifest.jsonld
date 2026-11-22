@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1603.06017v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1603.06017v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1603.06017v2",
+  "title": "Automatic Theorem Proving in Walnut",
   "contains": [
+    "library/arxiv-1603.06017v2/sections/sec-front-matter",
     "library/arxiv-1603.06017v2/sections/sec-000",
     "library/arxiv-1603.06017v2/sections/sec-001",
     "library/arxiv-1603.06017v2/sections/sec-002",
@@ -44,10 +45,17 @@
     "library/arxiv-1603.06017v2/sections/sec-030",
     "library/arxiv-1603.06017v2/sections/sec-031",
     "library/arxiv-1603.06017v2/sections/sec-032",
-    "library/arxiv-1603.06017v2/sections/sec-033"
+    "library/arxiv-1603.06017v2/sections/sec-033",
+    "library/arxiv-1603.06017v2/sections/sec-034",
+    "library/arxiv-1603.06017v2/sections/sec-035",
+    "library/arxiv-1603.06017v2/sections/sec-036",
+    "library/arxiv-1603.06017v2/sections/sec-037",
+    "library/arxiv-1603.06017v2/sections/sec-038",
+    "library/arxiv-1603.06017v2/sections/sec-039",
+    "library/arxiv-1603.06017v2/sections/sec-040"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -57,7 +65,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1603.06017v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1603.06017v2.pdf",
     "source_sha256": "3ff091e40573a5ddcf40a03f0d756f17574d719bf2526437c8873953d6da8b24",
     "pages": 34,
@@ -68,8 +78,8 @@
       "stamp_date": "25 May 2021"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

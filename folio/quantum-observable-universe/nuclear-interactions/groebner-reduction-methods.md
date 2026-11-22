@@ -1,4 +1,4 @@
-We compute the Hecke algebra normal form by iterative Gröbner–Shirshov reduction with three rewriting rules:
+Compute the Hecke algebra normal form by iterative Gröbner–Shirshov reduction with three rewriting rules:
 
 1. **Hecke relation** (Rule 0): $\sigma_i^2 \to (q - q^{-1})\sigma_i + \mathbf{1}$.
 2. **Far commutativity** (Rule 1): $\sigma_i \sigma_j \to \sigma_j \sigma_i$ for $|i - j| \geq 2$.

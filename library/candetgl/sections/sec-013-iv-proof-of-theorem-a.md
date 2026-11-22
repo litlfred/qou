@@ -8,6 +8,7 @@ pages: 13-15
 source_pdf: candetgl.pdf
 source_sha256: d788af715428b8b2
 toc_source: inferred
+doc_brief: "The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics — 27 sections: Front matter; INTRODUCTION; PRELIMINARIES"
 ---
 Recall the statement:
 Theorem A: The equation ¹3BS(V)5V holds in V if and only if V is divergence-free and
@@ -45,8 +46,6 @@ Es8~y!52¹yc~y!,
 887
 J. Math. Phys., Vol. 42, No. 2, February 2001
 The Biot–Savart operator
- This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to  IP:
-129.215.149.98 On: Sat, 10 May 2014 06:24:42
 where
 c~y!5~1/4p!E
 xe]VV~x!•n~x!/ux2yu d~areax!.
@@ -115,8 +114,6 @@ s~x! d~areax!50,
 888
 J. Math. Phys., Vol. 42, No. 2, February 2001
 Cantarella, DeTurck, and Gluck
- This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to  IP:
-129.215.149.98 On: Sat, 10 May 2014 06:24:42
 because the total charge on each component ]V j of ]V is zero ~see Fig. 1!.
 Thus, *V8uEs8u2d~vol!50, and hence Es8[0 in V8.
 Now we have Es8[0 in V and also in V8. Then Gauss’s Law, applied to the typical ‘‘pill

@@ -8,6 +8,7 @@ pages: 2-4
 source_pdf: 0406276v1.pdf
 source_sha256: 8fdf4b5950e8b5f5
 toc_source: inferred
+doc_brief: "The GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE — 16 sections: Front matter; Linking integrals in S3 and H3 .; Historical background."
 ---
 Let  K1  =  {x(s)}  and  K2  =  {y(t)}  be disjoint oriented smooth closed curves in 
 either the unit 3-sphere  S3  or hyperbolic 3-space  H3 ,  and let  α(x, y)  denote the 
@@ -45,7 +46,6 @@ where     ϕ(α)  =  csch α .
 For each of the kernel functions  ϕ(α)  above, we have written  ϕ(x, y)  in place of 
 ϕ(α(x, y)) . 
  
-3
  
 ∙  The kernel functions appearing in these integrals have the following significance. 
  
@@ -97,6 +97,4 @@ of the group  SO(3, 1)  of orientation-preserving isometries of  H3 .
 us, "As it happens, I thought about this question a few years ago and I obtained one 
 of your formulas, I think, but I never wrote it up."  Subsequent correspondence shows 
 that he did indeed obtain, by a beautiful geometric argument totally different from 
-ours, an expression equivalent to formula (2). 
- 
-4
+ours, an expression equivalent to formula (2).

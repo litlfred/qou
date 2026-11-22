@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: Zhao_standard_2010.pdf
 source_sha256: 94a70847c2937ba7
 toc_source: inferred
+doc_brief: "Standard Relations of Multiple Polylogarithm Values at Roots of Unity — Let N be a positive integer."
 ---
 Documenta Math.
 1
@@ -53,4 +54,3 @@ Secondary 33B30.
 Keywords and Phrases: Multiple polylogarithms, double shuﬄe rela-
 tions, distribution relations, regularization, standard relations.
 Contents
-1

@@ -12,14 +12,14 @@ numbers, shell closure, and drip lines.
 
 Per `AGENTS.md §3b-cond`, the main claim and each sub-claim are
 encoded as opaque Props and bundled into a class; the canonical
--- Ref: [manuscript]
+-- Ref: [leitner2026]
 instance carries `sorry` per claim.
 
 ## References
 
-- `[manuscript]` `conj:periodic-table-demand`
-- `[manuscript]` `prop:demand-stability`
-- `[manuscript]` `def:derived-atom`
+- `[leitner2026]` `conj:periodic-table-demand`
+- `[leitner2026]` `prop:demand-stability`
+- `[leitner2026]` `def:derived-atom`
 -/
 
 namespace QOU.PeriodicTableDemand
@@ -62,15 +62,15 @@ class PeriodicTableDemand : Prop where
 
 /-- **Canonical instance** — the conjecture proper. Each `sorry`
     is the unproved content of the corresponding claim. -/
--- Ref: [manuscript] conj:periodic-table-demand
+-- Ref: [leitner2026] conj:periodic-table-demand
 instance periodic_table_demand_conjecture : PeriodicTableDemand where
   -- Witness: computations/none
   valley_of_stability_matches := fun _ _ => sorry
-  -- Ref: [manuscript]
+  -- Ref: [leitner2026]
   magic_numbers_from_demand_closure := sorry
-  -- Ref: [manuscript]
+  -- Ref: [leitner2026]
   noble_gas_shell_closure := sorry
-  -- Ref: [manuscript]
+  -- Ref: [leitner2026]
   drip_lines_from_demand_divergence := sorry
 
 

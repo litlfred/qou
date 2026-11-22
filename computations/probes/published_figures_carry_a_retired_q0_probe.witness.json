@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T13:57:18.624104+00:00",
-  "commitSha": "7904384c458862b68e121661401f8d001c5cf04f",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-15T20:21:08.274314+00:00",
+  "commitSha": "f1be230920b1bdc1f6a9070fd8fc7d187c5c2345",
   "assertions": [
     {
       "name": "the retired value is distinct from both live anchors",
@@ -36,11 +36,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 2,
   "computation": "published_figures_carry_a_retired_q0_probe",
   "scriptFile": "published_figures_carry_a_retired_q0_probe.py",
-  "scriptHash": "89718c6ee993",
-  "scriptCommitSha": "1282aafd7220e2d51b35852728eb1cf029fe943e",
+  "scriptHash": "ab74123114e8",
+  "scriptCommitSha": "660d4c3c55f096e925c57ca18d1fd68545d820d5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -48,11 +48,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "24ca776b0ad05497"
   },
   "invocation": {
     "argv": [
@@ -60,7 +64,7 @@
     ],
     "reproduce": "python3 -u computations/probes/published_figures_carry_a_retired_q0_probe.py"
   },
-  "description": "Four published figures in hecke-log-decomposition-table-data and em-coupling-bring-zero-mode are computed from q0 = 1.1099785955541805752815940796095093779932822799587, which appears in eight computations/_deprecated/ witnesses and one deprecated script and nowhere live. It is neither live anchor (proton 1.10997858275..., muon 1.10997859564...) and lies between them. The sharpest discriminator is q [9]_q [10]_q, published 136.823219654: the retired q0 gives 136.823219654561, matching all 12 published digits, while muon gives 136.823219729273 (9 sig figs) and proton 136.823208853583 (8). The other three figures agree with the retired value to 10-11 digits and with neither live anchor. NOT recomputed: the proton/muon choice is owner-gated. This also corrects the sweep's own Q1 -- 'no deprecated-only provenance' tested literal decimal strings, and a figure derived from a retired constant inherits provenance without carrying its digits.",
+  "description": "Four published figures in hecke-log-decomposition-table-data and em-coupling-bring-zero-mode are computed from q0 = 1.1099785955541805752815940796095093779932822799587, which appears in eight fsh-guts/deprecated/computations/ witnesses and one deprecated script and nowhere live. It is neither live anchor (proton 1.10997858275..., muon 1.10997859564...) and lies between them. The sharpest discriminator is q [9]_q [10]_q, published 136.823219654: the retired q0 gives 136.823219654561, matching all 12 published digits, while muon gives 136.823219729273 (9 sig figs) and proton 136.823208853583 (8). The other three figures agree with the retired value to 10-11 digits and with neither live anchor. NOT recomputed: the proton/muon choice is owner-gated. This also corrects the sweep's own Q1 -- 'no deprecated-only provenance' tested literal decimal strings, and a figure derived from a retired constant inherits provenance without carrying its digits.",
   "data": {
     "q0_retired": "1.1099785955541805752815940796095093779932822799587",
     "q0_proton_live": "1.1099785827513808075916690956107688798744991218736",
@@ -100,5 +104,7 @@
     "The figures are NOT recomputed and no anchor is chosen for these blocks. q_parameter.py: the corpus is genuinely mixed, a blanket flip is wrong, and the default is owner-gated.",
     "No claim about the other 28 unsourced figures in qou-i229 — the same derived-provenance test should be run on them and has not been.",
     "No claim that the retired q0 was wrong when these tables were written."
-  ]
+  ],
+  "q0Anchor": "ambiguous",
+  "q0AnchorReason": "compares three pins on purpose: the live proton pin, the live muon pin, and the retired CODATA-2018 muon pin 1.10997859555418...; the published figures are recomputed at each to attribute them, so no single pin applies"
 }

@@ -1,0 +1,2360 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "gn2",
+  "pages": [
+    {
+      "page": 2,
+      "rotation": 0,
+      "drawings": 37,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1. The m-twist knot Km: the twists are ordered from the right to the left",
+        "Figure 2. Skeins x, y and z in Kt(EKm)"
+      ],
+      "labels": [
+        {
+          "text": "R˘AZVAN GELCA AND FUMIKAZU NAGASATO",
+          "bbox": [
+            194.23,
+            21.61,
+            403.26,
+            32.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            86.17,
+            23.85,
+            90.79,
+            32.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "as in Figure 1 (which some authors call half-twists). We will also be concerned",
+          "bbox": [
+            86.17,
+            45.02,
+            510.92,
+            56.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "only with the case of positive twists. The Kauﬀman bracket skein module of the",
+          "bbox": [
+            86.17,
+            58.97,
+            510.88,
+            70.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "complement of a twist knot was determined in [BL]. Let us mention that recently",
+          "bbox": [
+            86.17,
+            72.92,
+            510.95,
+            84.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "T. Le extended this result to all 2-bridge knots [L]. However, none of the above",
+          "bbox": [
+            86.17,
+            86.86,
+            510.88,
+            98.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "mentioned works gives an explicit description of the factoring relations in terms of",
+          "bbox": [
+            86.17,
+            100.81,
+            510.8,
+            112.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the basis of the skein module. This is the purpose of the present paper.",
+          "bbox": [
+            86.17,
+            114.76,
+            452.29,
+            126.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Km =",
+          "bbox": [
+            198.54,
+            177.88,
+            228.92,
+            191.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "· · ·",
+          "bbox": [
+            296.58,
+            195.81,
+            310.49,
+            216.55
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMSY10~38"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "m",
+          "bbox": [
+            271.86,
+            214.25,
+            282.08,
+            226.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            350.13,
+            215.3,
+            355.97,
+            227.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            328.33,
+            215.96,
+            334.17,
+            227.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 1. The m-twist knot Km: the twists are ordered from the",
+          "bbox": [
+            122.03,
+            240.95,
+            475.31,
+            253.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10~1e",
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "right to the left",
+          "bbox": [
+            122.03,
+            254.9,
+            201.29,
+            266.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1.2. The Kauﬀman bracket skein module of the m-twist knot exterior.",
+          "bbox": [
+            86.17,
+            290.62,
+            510.9,
+            302.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12",
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Denote by Km the m-twist knot (m ≥0) in S3, by EKm its exterior (i.e.",
+          "bbox": [
+            86.17,
+            303.22,
+            484.64,
+            325.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10~38"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "the",
+          "bbox": [
+            494.98,
+            304.56,
+            511.23,
+            316.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "complement in S3 of a regular neighborhood). Bullock and Lofaro have proved the",
+          "bbox": [
+            86.17,
+            314.17,
+            510.95,
+            330.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "following result.",
+          "bbox": [
+            86.17,
+            332.46,
+            167.46,
+            344.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Theorem 1 (Bullock, Lofaro [BL]). The Kauﬀman bracket skein module of the",
+          "bbox": [
+            86.17,
+            353.89,
+            510.99,
+            365.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12",
+            "CMR12",
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "complement of a regular neighborhood of the m-twist knot is the free C[t, t−1]-module",
+          "bbox": [
+            86.17,
+            365.8,
+            511.33,
+            381.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY8",
+            "CMTI12",
+            "MSBM10~24"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "with basis xiyj, i ≥0, 0 ≤j ≤m, where x and y are the curves described in Figure",
+          "bbox": [
+            86.17,
+            380.43,
+            511.11,
+            402.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10~38",
+            "CMTI12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "2.",
+          "bbox": [
+            86.17,
+            395.73,
+            95.61,
+            407.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "x",
+          "bbox": [
+            262.02,
+            426.05,
+            268.68,
+            438.01
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "y",
+          "bbox": [
+            342.28,
+            426.54,
+            347.97,
+            438.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "z = x",
+          "bbox": [
+            263.36,
+            469.8,
+            291.73,
+            481.77
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "· · ·",
+          "bbox": [
+            278.66,
+            505.15,
+            292.56,
+            525.89
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMSY10~38"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "m",
+          "bbox": [
+            250.78,
+            528.0,
+            261.0,
+            539.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            339.45,
+            529.19,
+            345.29,
+            541.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            314.76,
+            529.94,
+            320.59,
+            541.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 2. Skeins x, y and z in Kt(EKm)",
+          "bbox": [
+            192.33,
+            555.78,
+            405.2,
+            576.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10~1e",
+            "CMMI12",
+            "CMMI6",
+            "CMMI8",
+            "CMR12",
+            "CMSY10~38"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Let us recall brieﬂy the idea of the proof. Because the tunnel number of Km is",
+          "bbox": [
+            98.14,
+            586.07,
+            511.36,
+            599.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "1, the knot exterior EKm can be obtained by attaching a 2-handle to the genus 2",
+          "bbox": [
+            86.17,
+            600.02,
+            511.03,
+            614.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "handlebody H2.",
+          "bbox": [
+            86.17,
+            613.97,
+            167.26,
+            626.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "The proof relies on the following theorems.",
+          "bbox": [
+            98.14,
+            627.91,
+            317.83,
+            639.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Theorem 2 (Przytycki [P2]). The KBSM of the genus 2 handlebody is the free",
+          "bbox": [
+            86.17,
+            649.31,
+            511.04,
+            661.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12",
+            "CMR12",
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "C[t, t−1]-module with basis xiyjzk, i, j, k ∈Z≥0, where x, y and z are the curves",
+          "bbox": [
+            86.17,
+            661.23,
+            511.28,
+            683.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10~38",
+            "CMSY8",
+            "CMTI12",
+            "MSBM10~24"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "from Figure 3.",
+          "bbox": [
+            86.17,
+            677.23,
+            159.99,
+            689.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "rotation": 0,
+      "drawings": 6,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 3. Skeins x, y and z in Kt(H2)",
+        "Figure 4 describes the attaching curve. In this ﬁgure the handlebody is obtained by drilling through a ball two “tunnels” that twist around each other. A handle slide consists of a band sum with the attaching curve."
+      ],
+      "labels": [
+        {
+          "text": "SKEIN MODULE OF THE TWIST KNOT EXTERIOR",
+          "bbox": [
+            180.45,
+            23.34,
+            416.9,
+            32.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            506.56,
+            23.34,
+            511.18,
+            32.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "y",
+          "bbox": [
+            294.51,
+            61.83,
+            300.2,
+            73.79
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            353.85,
+            76.8,
+            357.1,
+            88.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "z",
+          "bbox": [
+            300.75,
+            87.64,
+            306.19,
+            99.59
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "x",
+          "bbox": [
+            287.4,
+            87.97,
+            294.06,
+            99.92
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 3. Skeins x, y and z in Kt(H2)",
+          "bbox": [
+            196.78,
+            133.17,
+            400.75,
+            153.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10~1e",
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10~38"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Theorem 3 (Przytycki [P1]).",
+          "bbox": [
+            86.17,
+            162.04,
+            239.91,
+            174.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Kt(EK) = Kt(H2)/J,",
+          "bbox": [
+            245.79,
+            180.99,
+            351.72,
+            201.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10~38"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "where J is the submodule of Kt(H2) generated by",
+          "bbox": [
+            86.17,
+            200.23,
+            336.12,
+            220.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10~38",
+            "CMTI12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "{L −sl(L)|L : any framed link in H2}.",
+          "bbox": [
+            199.67,
+            219.48,
+            397.89,
+            240.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10~38"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Here sl(L) means the link obtained from L by an (arbitrary) handle slide through",
+          "bbox": [
+            86.17,
+            239.03,
+            511.03,
+            250.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the attached 2-handle.",
+          "bbox": [
+            86.17,
+            252.97,
+            198.62,
+            264.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "We see immediately that in K(EKm) the skein z is identiﬁed with the skein x as",
+          "bbox": [
+            98.13,
+            273.82,
+            511.09,
+            294.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMMI8",
+            "CMR12",
+            "CMSY10~38"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "seen in Figure 2 (via a handle slide relation).",
+          "bbox": [
+            86.17,
+            288.07,
+            316.42,
+            300.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The work of Bullock and Lofaro is concentrated on the elimination of the higher",
+          "bbox": [
+            98.13,
+            302.01,
+            510.87,
+            313.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "powers of y using handle-slides. In our paper we will give explicit formulas for these",
+          "bbox": [
+            86.17,
+            315.96,
+            510.87,
+            327.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "relations. These formulas are necessary for computing the action of the Kauﬀman",
+          "bbox": [
+            86.17,
+            329.91,
+            510.82,
+            341.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "bracket skein algebra of the boundary torus, and ultimately they should lead to",
+          "bbox": [
+            86.17,
+            343.85,
+            510.83,
+            355.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "computation of the noncommutative A-ideal of a twist knot.",
+          "bbox": [
+            86.17,
+            357.8,
+            395.42,
+            369.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2. The explicit form of the factoring relations",
+          "bbox": [
+            150.72,
+            382.69,
+            446.64,
+            394.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10~1e",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "It is important to observe that, as it was the case with previously studied knots",
+          "bbox": [
+            98.13,
+            403.63,
+            510.85,
+            415.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "[G1] [GS1], the characters of irreducible SL(2, C)-representations play a special role.",
+          "bbox": [
+            86.17,
+            415.55,
+            510.87,
+            431.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "MSBM10~24"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "For this reason we will change the basis of the skein module of the knot exterior.",
+          "bbox": [
+            86.17,
+            431.53,
+            510.92,
+            443.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Recall that Sn(x), n ≥0 are the polynomials deﬁned recursively by S0(x) = 1,",
+          "bbox": [
+            86.17,
+            445.18,
+            511.34,
+            465.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10~38"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "S1(x) = x, and Sn+1(x) = xSn(x) −Sn−1(x), deﬁnition extended for all integers n.",
+          "bbox": [
+            86.17,
+            459.12,
+            511.11,
+            479.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10~38",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "These are the Chebyshev polynomials of second type.",
+          "bbox": [
+            86.17,
+            473.37,
+            360.23,
+            485.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The basis of the Kauﬀman bracket skein module of the twist knot exterior that",
+          "bbox": [
+            98.13,
+            487.31,
+            510.88,
+            499.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "we prefer is",
+          "bbox": [
+            86.17,
+            501.26,
+            144.7,
+            513.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "{Si(x)Sj(y),",
+          "bbox": [
+            203.9,
+            520.21,
+            266.25,
+            540.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10~38"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "0 ≤i, 0 ≤j ≤m}.",
+          "bbox": [
+            279.94,
+            520.21,
+            373.61,
+            540.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10~38"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Let us remark that for a curve c, Sn(c) is the curve colored by the nth Jones-Wenzl",
+          "bbox": [
+            86.17,
+            539.75,
+            511.12,
+            552.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "idempotent.",
+          "bbox": [
+            86.17,
+            553.7,
+            147.23,
+            565.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2.1. The “minimal relation” in the KBSM of the twist knot exterior. There",
+          "bbox": [
+            86.17,
+            575.44,
+            510.88,
+            587.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "is a special curve in the handlebody which can be used to obtain all the necessary",
+          "bbox": [
+            86.17,
+            589.39,
+            510.88,
+            601.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "factorization relations.",
+          "bbox": [
+            86.17,
+            603.34,
+            202.43,
+            615.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Sliding this curve through the 2-handle yields a relation",
+          "bbox": [
+            212.23,
+            603.34,
+            510.81,
+            615.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "which we call the minimal relation.",
+          "bbox": [
+            86.17,
+            617.28,
+            265.64,
+            629.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMTI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 4 describes the attaching curve. In this ﬁgure the handlebody is obtained",
+          "bbox": [
+            98.13,
+            631.23,
+            510.8,
+            643.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "by drilling through a ball two “tunnels” that twist around each other. A handle",
+          "bbox": [
+            86.17,
+            645.18,
+            510.81,
+            657.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "slide consists of a band sum with the attaching curve.",
+          "bbox": [
+            86.17,
+            659.12,
+            361.94,
+            671.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "We now make an important convention. There is a handle-slide that identiﬁes the",
+          "bbox": [
+            98.13,
+            673.07,
+            510.86,
+            685.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "curves x and z. We impose this condition in the skein module of the handlebody,",
+          "bbox": [
+            86.17,
+            687.01,
+            510.77,
+            698.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 4,
+      "rotation": 0,
+      "drawings": 82,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 4. Attaching slope of H2 ∪(2-handle): Thick lines represent holes through a ball. The thin curve is the attaching slope; it lies on the boundary of H2."
+      ],
+      "labels": [
+        {
+          "text": "R˘AZVAN GELCA AND FUMIKAZU NAGASATO",
+          "bbox": [
+            194.23,
+            21.61,
+            403.26,
+            32.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            86.17,
+            23.85,
+            90.79,
+            32.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "i.e. we factor the skein module by the relation x = z. Everything below is done in",
+          "bbox": [
+            86.17,
+            45.02,
+            510.88,
+            56.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "this hypothesis.",
+          "bbox": [
+            86.17,
+            58.97,
+            165.9,
+            70.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": ".....",
+          "bbox": [
+            282.57,
+            126.36,
+            290.78,
+            135.1
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            5.9
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            341.88,
+            140.86,
+            347.71,
+            152.83
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "m",
+          "bbox": [
+            257.57,
+            140.98,
+            267.79,
+            152.94
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            311.06,
+            141.33,
+            316.9,
+            153.29
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 4. Attaching slope of H2 ∪(2-handle): Thick lines represent",
+          "bbox": [
+            122.03,
+            195.05,
+            475.34,
+            217.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10~1e",
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10~38"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "holes through a ball. The thin curve is the attaching slope; it lies on",
+          "bbox": [
+            122.03,
+            209.29,
+            475.03,
+            221.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the boundary of H2.",
+          "bbox": [
+            122.03,
+            223.24,
+            225.89,
+            235.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Consider the skeins Xi in Kt(H2) deﬁned as follows:",
+          "bbox": [
+            98.14,
+            254.03,
+            364.18,
+            274.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10~38"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": ".....",
+          "bbox": [
+            366.83,
+            276.97,
+            378.78,
+            289.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            8.6
+          ]
+        },
+        {
+          "text": ".....",
+          "bbox": [
+            366.86,
+            302.26,
+            378.81,
+            315.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            8.6
+          ]
+        },
+        {
+          "text": ".....",
+          "bbox": [
+            246.25,
+            303.91,
+            258.2,
+            316.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            8.6
+          ]
+        },
+        {
+          "text": "Xi :=",
+          "bbox": [
+            153.55,
+            307.68,
+            182.31,
+            321.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            440.76,
+            307.68,
+            444.01,
+            319.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "i −1",
+          "bbox": [
+            326.62,
+            329.79,
+            351.04,
+            350.54
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10~38"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "i",
+          "bbox": [
+            289.29,
+            329.81,
+            293.28,
+            341.76
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            409.52,
+            329.81,
+            415.36,
+            341.77
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "m",
+          "bbox": [
+            212.03,
+            329.84,
+            222.25,
+            341.8
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": ".....",
+          "bbox": [
+            367.94,
+            335.33,
+            379.89,
+            348.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            8.6
+          ]
+        },
+        {
+          "text": "X0 := (−t2 −t−2)φ,",
+          "bbox": [
+            248.2,
+            361.16,
+            349.32,
+            386.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10~38",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "where φ denote the empty link. The skein Xm+1 is the one that gives the minimal",
+          "bbox": [
+            86.17,
+            387.02,
+            511.16,
+            400.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "relation.",
+          "bbox": [
+            86.17,
+            400.97,
+            128.4,
+            412.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Lemma 1 (Recursive relation of Xi). The skein Xi, (m+1 ≥i ≥0), as an element",
+          "bbox": [
+            86.17,
+            424.0,
+            511.25,
+            444.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12",
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10~38",
+            "CMTI12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "in Kt(EKm) satisﬁes the following recursive relation:",
+          "bbox": [
+            86.17,
+            437.95,
+            353.92,
+            458.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMMI8",
+            "CMR12",
+            "CMSY10~38",
+            "CMTI12"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Xi+2 −t2yXi+1 + t4Xi + 2t2x2 = 0, X1 = −t2x2 −t4y, X0 = −t2 −t−2.",
+          "bbox": [
+            115.51,
+            456.2,
+            482.02,
+            483.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10~38",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Proof. All of the operations below are done in the handlebody H2. First, transform",
+          "bbox": [
+            86.17,
+            484.76,
+            511.24,
+            497.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMTI12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Xi+1 as follows:",
+          "bbox": [
+            86.17,
+            498.71,
+            166.07,
+            512.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": ".....",
+          "bbox": [
+            367.76,
+            521.0,
+            379.71,
+            533.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            8.6
+          ]
+        },
+        {
+          "text": ".....",
+          "bbox": [
+            367.8,
+            546.3,
+            379.75,
+            559.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            8.6
+          ]
+        },
+        {
+          "text": ".....",
+          "bbox": [
+            247.18,
+            547.94,
+            259.14,
+            560.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            8.6
+          ]
+        },
+        {
+          "text": "(−t−3)",
+          "bbox": [
+            152.62,
+            549.51,
+            186.57,
+            572.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10~38",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            441.67,
+            551.72,
+            444.92,
+            563.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "i −1",
+          "bbox": [
+            327.02,
+            571.07,
+            351.44,
+            591.81
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10~38"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "i",
+          "bbox": [
+            286.35,
+            571.66,
+            290.35,
+            583.61
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            410.46,
+            571.66,
+            416.29,
+            583.62
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "m",
+          "bbox": [
+            212.41,
+            572.23,
+            222.63,
+            584.18
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": ".....",
+          "bbox": [
+            368.87,
+            579.37,
+            380.83,
+            592.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            8.6
+          ]
+        },
+        {
+          "text": "Then slide the kink to the right side as below:",
+          "bbox": [
+            86.17,
+            604.38,
+            322.45,
+            616.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": ".....",
+          "bbox": [
+            368.05,
+            626.38,
+            380.0,
+            639.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            8.6
+          ]
+        },
+        {
+          "text": ".....",
+          "bbox": [
+            367.8,
+            652.75,
+            379.75,
+            665.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            8.6
+          ]
+        },
+        {
+          "text": ".....",
+          "bbox": [
+            247.18,
+            654.4,
+            259.14,
+            667.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            8.6
+          ]
+        },
+        {
+          "text": "(−t−3)",
+          "bbox": [
+            152.62,
+            654.73,
+            186.57,
+            677.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10~38",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            441.67,
+            656.91,
+            444.92,
+            668.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            407.23,
+            680.01,
+            413.07,
+            691.98
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "i −1",
+          "bbox": [
+            327.56,
+            680.29,
+            351.97,
+            701.03
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10~38"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "i",
+          "bbox": [
+            290.22,
+            680.3,
+            294.22,
+            692.25
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "m",
+          "bbox": [
+            212.96,
+            680.33,
+            223.19,
+            692.29
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": ".....",
+          "bbox": [
+            368.87,
+            684.46,
+            380.83,
+            697.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            8.6
+          ]
+        }
+      ]
+    }
+  ]
+}

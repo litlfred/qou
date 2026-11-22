@@ -6,7 +6,9 @@
   "sha256": "fcc45aebd34e25dca6e89084c6609f3715e13ab3dc689eb942bddd8595a352e6",
   "bytes": 158091,
   "pages": 5,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:55Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -15,145 +17,196 @@
   "doi": null,
   "title": "COLORED JONES POLYNOMIALS WITHOUT TAILS",
   "authors_raw": "CHRISTINE RUEY SHAN LEE AND ROLAND VAN DER VEEN",
-  "abstract": "We exhibit an in nite family of knots with the property that the rst coe\u000ecient of the n-colored Jones polynomial grows linearly with n. This shows that the concept of stability and tail seen in the colored Jones polynomials of alternating knots does not generalize naively.",
-  "docinfo": {
-   "CreationDate": "D:20180612163436+02'00'",
-   "Creator": "TeX",
-   "Producer": "pdfTeX-1.40.16"
-  },
   "title_lines": [
    "COLORED JONES POLYNOMIALS WITHOUT TAILS"
-  ]
+  ],
+  "abstract": "We exhibit an inﬁnite family of knots with the property that the ﬁrst coeﬃcient of the n-colored Jones polynomial grows linearly with n. This shows that the concept of stability and tail seen in the colored Jones polynomials of alternating knots does not generalize naively.",
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.16",
+   "Creator": "TeX",
+   "CreationDate": "D:20180612163436+02'00'"
+  },
+  "title_raw": "COLORED JONES POLYNOMIALS WITHOUT TAILS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "COLORED JONES POLYNOMIALS WITHOUT TAILS 1. Introduction The colored Jones polynomials are a well known knot invariant with many connections to other parts of mathematics [11, 16]. It is the Reshetikhin-Turaev knot invariant corresponding to the n -dimensional representation of quantum sl 2 . Given a",
+   "text": "COLORED JONES POLYNOMIALS WITHOUT TAILS",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
- "toc": [
+ "toc": [],
+ "toc_source": "undetermined",
+ "toc_undetermined_reason": "5 inferred entries, 80% of them starting on page(s) 2, 4 of 5 — a list found ON a page, not the document's structure",
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted (5 inferred entries, 80% of them starting on page(s) 2, 4 of 5 — a list found ON a page, not the document's structure): one section per page.",
+ "figures": [
   {
-   "level": 1,
-   "title": "Introduction",
+   "kind": "figure",
+   "number": "1",
+   "title": "The family of knots C(r, s, t, u) where r, s, t, u denote the number of crossings in each twist region. We have drawn the Manx knot C(5, −3, 5, −3). To make the diagram zero framed we drew 16 = r −s + t −u additional negative curls",
    "page": 1,
-   "source": "inferred",
-   "number": "1"
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "1"
   },
   {
-   "level": 1,
-   "title": "C. LEE AND R. V AN DER VEEN",
+   "kind": "figure",
+   "number": "2",
+   "title": "Operations on Knotted Trivalent Graphs: framing change F e",
    "page": 2,
-   "source": "inferred",
-   "number": "2"
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "2"
   },
   {
-   "level": 1,
-   "title": "Colored Jones polynomial",
-   "page": 2,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Ok = (−1)k[k + 1] = (−1)kv2k +lot",
-   "page": 2,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "C. LEE AND R. V AN DER VEEN",
-   "page": 4,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "The lack of tail",
-   "page": 4,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 4,
-   "source": "inferred",
-   "number": null
+   "kind": "figure",
+   "number": "3",
+   "title": "Starting from a theta graph (left), we ﬁrst apply the A-move to both vertices, and again on one of the newly created vertices. Next change the framing on many edges. The numbers on each edge indicate the number of half twists present",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
   }
  ],
- "toc_source": "inferred",
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-2-colored-jones-polynomial",
-   "number": "2",
-   "title": "Colored Jones polynomial",
+   "id": "page-001",
+   "number": null,
+   "title": "Page 1",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 332,
-   "n_words": 56
+   "n_chars": 2629,
+   "n_words": 461,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
-   "id": "sec-001-1-introduction",
-   "number": "1",
-   "title": "Introduction",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 2,
-   "n_chars": 2226,
-   "n_words": 386
-  },
-  {
-   "id": "sec-002-2-c-lee-and-r-v-an-der-veen",
-   "number": "2",
-   "title": "C. LEE AND R. V AN DER VEEN",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 2038,
-   "n_words": 367
-  },
-  {
-   "id": "sec-003-2-ok-1kk-1-1kv2k-lot",
-   "number": "2",
-   "title": "Ok = (−1)k[k + 1] = (−1)kv2k +lot",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 4,
-   "n_chars": 3525,
-   "n_words": 661
-  },
-  {
-   "id": "sec-004-4-c-lee-and-r-v-an-der-veen",
-   "number": "4",
-   "title": "C. LEE AND R. V AN DER VEEN",
-   "level": 1,
-   "page_start": 4,
-   "page_end": 4,
-   "n_chars": 93,
-   "n_words": 17
-  },
-  {
-   "id": "sec-005-3-the-lack-of-tail",
-   "number": "3",
-   "title": "The lack of tail",
-   "level": 1,
-   "page_start": 4,
-   "page_end": 4,
-   "n_chars": 2280,
-   "n_words": 391
-  },
-  {
-   "id": "sec-006-references",
+   "id": "page-002",
    "number": null,
-   "title": "References",
+   "title": "Page 2",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 2783,
+   "n_words": 572,
+   "label_start": "2",
+   "label_end": "2"
+  },
+  {
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 2963,
+   "n_words": 569,
+   "label_start": "3",
+   "label_end": "3"
+  },
+  {
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
    "level": 1,
    "page_start": 4,
+   "page_end": 4,
+   "n_chars": 3930,
+   "n_words": 703,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
+   "level": 1,
+   "page_start": 5,
    "page_end": 5,
-   "n_chars": 2699,
-   "n_words": 397
+   "n_chars": 1265,
+   "n_words": 177,
+   "label_start": "5",
+   "label_end": "5"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 7,
-  "sections": 7,
-  "chars_total": 13193
+  "toc_entries": 0,
+  "toc_inferred_entries": 5,
+  "toc_inferred_mean_confidence": 0.0,
+  "toc_inferred_empty_share": 0.2,
+  "toc_inferred_method": "regex",
+  "figure_entries": 3,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 5,
+  "chars_total": 13570,
+  "furniture_lines_stripped": 4
  }
 }

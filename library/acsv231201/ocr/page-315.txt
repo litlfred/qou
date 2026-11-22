@@ -1,0 +1,35 @@
+10.1 A taxonomy of multiple points 297
+
+axiomatic system discussed further below, whose elements index sets of hy-
+perplanes W,,,..., W,, with linearly independent normal vectors. The set of
+all intersections Lr = (\jer Wj for T C [n] is called the lattice of flats of A
+as it possesses a natural lattice structure [OT92, Lemma 2.3], and we let
+
+T ={je[n]): Lp CW; (10.2)
+encode the maximal set of hyperplanes having intersection Ly. If T = T when-
+ever Lr is nonempty then we call the arrangement transverse.
+
+Definition 10.6 (arrangement points). The point p € V is an arrangement
+point of order n if there exist complex manifolds Vj,...,V,, such that
+
+UNV=(UNYV{)U---UCUNY,)
+
+and the intersection lattice of the surfaces {Vj} within U coincides with the
+intersection lattice of their tangent planes, for every sufficiently small neigh-
+borhood U of p in C4.
+
+Example 10.7. If Q is a product of linear factors then every point p € V is
+an arrangement point because the collection of surfaces {Vj} is a translation of
+the collection of tangent planes. 4
+
+Example 10.8. Let F(x, y) = 1/(1—x)(1—y)(1—.y) be the generating function
+with coefficients a,; = 1 + min{r, s}. The three divisors are pairwise transverse,
+intersecting at the single point p = (1, 1) which is not transverse (as we are in
+two dimensions). The point p is an arrangement point because the intersection
+lattice (each pair of divisors intersects at p, hence all three do) is the same as
+one would get by replacing the curve V(1— xy) by its tangent line V(2—x—y)
+at p. This is illustrated in Figure 10.7. 4
+
+05 15 3 35 3
+
+Figure 10.7 An arrangement point in dimension two where three curves intersect.

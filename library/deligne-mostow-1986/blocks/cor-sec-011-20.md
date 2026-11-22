@@ -1,0 +1,1 @@
+— C[ is the normal covering of Q universal with respect to the pro- perty [R]: for each stable partition T of S with card T = card S — i, z/ ^ z'j defined as m (9-9)9 ^ ramification index along Q^ divides ky.

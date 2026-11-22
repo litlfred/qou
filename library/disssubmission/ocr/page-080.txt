@@ -1,0 +1,47 @@
+72 Chapter 4 — The Tannaka group of the theta divisor
+
+The proof of this will be given along with our proof of theorem 4.2,
+based on the observation that every divisor on .% intersects the locus of
+Jacobian varieties — on the Tannakian side this information is encoded in
+part (3) of proposition 4.12 below. Assuming the theorem, we recover the
+following result of [67].
+
+COROLLARY 4.4. For g = 4 the invariant G = G(dg) determines both
+the Jacobian locus and the theta null locus
+
+fA C hy and null A CH,
+
+Proof. Theorem 4.3 says that the closure of the locus of all ppav’s in .&%4
+with G F Spy4(C) is a proper Zariski-closed subset, with 74 and O,u11,4 as
+its only divisorial components. By the result quoted at the beginning of this
+chapter, the group G is equal to Sig(C)/13 for a general ppav in the Jacobian
+locus ,%4. By way of contrast, for a general ppav in @,,,;,4 the degeneration
+argument in part (2) of proposition 4.12 below shows that the irreducible
+representation W € Repc¢(G) corresponding to the simple perverse sheaf 59
+has dimension dim(W) = g! — 2 = 22. In particular, for such a ppav the
+group G is different from S/6(C)/3 since by [3] the latter does not admit
+an irreducible representation of dimension 22. Oo
+
+In this context, we remark that the possible singularities of theta divisors
+in dimension g = 4 can be described explicitly as follows. Let %4 hyp be
+the closure of the locus of Jacobian varieties of hyperelliptic curves, and
+denote by A dec C Outta £4 the locus of decomposable ppav’s. Then
+the following types of singularities occur.
+
+LEMMA 4.5. a) For ppav’s in $4\ (Ou4 44) the theta divisors
+have precisely two singularities, both ordinary double points. b) For ppav’s
+in Onutt,a \ (Onutt,4 L4) they have only one singularity, again an ordinary
+double point. c) On (®nuaO 44) \ (L4,nyp U La,dec) they have only one
+singular point, and there the Hesse matrix of the Riemann theta function
+has rank three. d) On L4,nyp \(44,hyp  La.dec) the singular locus of each
+theta divisor has dimension one. e) On 24 gec it has dimension two.
+
+Proof. It has been shown in [54, thm. 10 and cor. 15] that for a), b)
+and c) the rank of the Hesse matrix at any singular point of the theta divisor
+is the given one. In particular, in cases a) and b) only isolated singularities
+occur. This also holds for c) since by Riemann’s singularity theorem the
+singular locus of the theta divisor on a Jacobian variety is the Brill-Noether
+subvariety Wii which in the non-hyperelliptic case has dimension g — 4 by
+Martens’ theorem [6, th. 4.5.1]. The number of singularities can be obtained
+from [20, sect. 10] and from [8] and [81, case b2, p. 55f]. Part d) follows
+again from Martens’ theorem, and e) is trivial. O

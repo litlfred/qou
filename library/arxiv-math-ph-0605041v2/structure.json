@@ -7,11 +7,11 @@
   "bytes": 239573,
   "pages": 16,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -22,18 +22,28 @@
   },
   "doi": null,
   "title": "Cluster expansion for abstract polymer models. New bounds from an old approach",
-  "authors_raw": "Roberto Fern\u00e1ndez1 and Aldo Procacci 1,2",
+  "authors_raw": "Roberto Fernández1 and Aldo Procacci1,2",
   "title_lines": [
    "Cluster expansion for abstract polymer models",
    "New bounds from an old approach"
   ],
-  "abstract": "polymer models. New bounds from an old approach Roberto Fern\u00b4 andez1 and Aldo Procacci 1,2 1Labo. de Maths Raphael SALEM, UMR 6085 CNRS-Univ. de Rouen, A venue de l\u2019Universit\u00b4 e, BP.12, 76801 Saint Etienne du Rouvray, France 2 Dep. Matem\u00b4 atica-ICEx, Universidade Federal de Minas Gera is, CP 702, Belo Horizonte MG 30.161-970, Brazil email: 1Roberto.Fernandez@univ-rouen.fr; 2aldo@mat.ufmg.br We revisit the classical approach to cluster expansions, based on t ree graphs, and estab- lish a new convergence condition that improves those by Koteck\u00b4 y-Preiss and Dobrushin, as we show in some examples. The two ingredients of our approach ar e: (i) a careful consideration of the Penrose identity for truncated functions, a nd (ii) the use of iterated transformations to bound tree-graph expansions.",
+  "abstract": "polymer models. New bounds from an old approach Roberto Fern´andez1 and Aldo Procacci1,2 1Labo. de Maths Raphael SALEM, UMR 6085 CNRS-Univ. de Rouen, Avenue de l’Universit´e, BP.12, 76801 Saint Etienne du Rouvray, France 2 Dep. Matem´atica-ICEx, Universidade Federal de Minas Gerais, CP 702, Belo Horizonte MG 30.161-970, Brazil email: 1Roberto.Fernandez@univ-rouen.fr; 2aldo@mat.ufmg.br We revisit the classical approach to cluster expansions, based on tree graphs, and estab- lish a new convergence condition that improves those by Koteck´y-Preiss and Dobrushin, as we show in some examples. The two ingredients of our approach are: (i) a careful consideration of the Penrose identity for truncated functions, and (ii) the use of iterated transformations to bound tree-graph expansions.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20180902122341-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20180902122341-04'00'"
+  },
+  "title_raw": "Cluster expansion for abstract polymer models. New bounds from an old approach",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Cluster expansion for abstract polymer models. New bounds from an old approach",
+   "outline": "Acknowledgements",
+   "text": "Cluster expansion for abstract polymer models. New bounds from an old approach",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -42,17 +52,218 @@
    "title": "Acknowledgements",
    "page": 15,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 1,
    "title": "References",
    "page": 16,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Convergence criteria and lower bounds (R∆) on the radius of convergence when G is a graph with maximal degree ∆. A star indicates that the value is exact for the (∆−1)-regular tree",
+   "page": 8,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "table",
+   "number": "2",
+   "title": "Convergence criteria and lower bounds (R) on the radius of convergence obtained with condition (3.2) for some graphs G of ﬁnite degree. A star indicates an exact value",
+   "page": 8,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "table",
+   "number": "3",
+   "title": "Convergence conditions for general polymer models. Our condition (3.16) with a(γ) = a |γ| coincides with that by Gruber and Kunz",
+   "page": 9,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "9"
+  },
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Planar rooted trees deﬁned by (a) s0 = s(0,1) = 2 and s(0,2) =",
+   "page": 13,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "13"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
    "id": "sec-front-matter",
@@ -61,8 +272,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 15,
-   "n_chars": 38669,
-   "n_words": 7727
+   "n_chars": 37853,
+   "n_words": 6951,
+   "label_start": null,
+   "label_end": "15"
   },
   {
    "id": "sec-000-acknowledgements",
@@ -71,8 +284,10 @@
    "level": 1,
    "page_start": 15,
    "page_end": 16,
-   "n_chars": 1236,
-   "n_words": 207
+   "n_chars": 1216,
+   "n_words": 189,
+   "label_start": "15",
+   "label_end": "16"
   },
   {
    "id": "sec-001-references",
@@ -81,16 +296,26 @@
    "level": 1,
    "page_start": 16,
    "page_end": 16,
-   "n_chars": 3008,
-   "n_words": 467
+   "n_chars": 2979,
+   "n_words": 438,
+   "label_start": "16",
+   "label_end": "16"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 2,
+  "toc_inferred_entries": 0,
+  "figure_entries": 4,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
   "sections": 3,
-  "chars_total": 42913,
+  "chars_total": 42048,
+  "furniture_lines_stripped": 15,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
@@ -111,7 +336,7 @@
      "id": "sec-000-acknowledgements",
      "title": "Acknowledgements",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "pandoc"
     },

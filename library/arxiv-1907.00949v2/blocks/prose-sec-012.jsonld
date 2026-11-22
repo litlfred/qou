@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1907.00949v2/blocks/prose-sec-012",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Riemannian Gradient and Hessian over the flag manifold",
-  "pageStart": 19,
-  "pageEnd": 21,
-  "text": "../sections/sec-012-6-riemannian-gradient-and-hessian-over-the-flag.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1907.00949v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1907.00949v2",
+  "title": "Orthogonal coordinates for the flag manifold",
+  "pageStart": 10,
+  "pageEnd": 14,
+  "text": "../sections/sec-012-41-orthogonal-coordinates-for-the-flag-manifold.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1907.00949v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1907.00949v2/manifest.jsonld",
   "provenance": "ingested"
 }

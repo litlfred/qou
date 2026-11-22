@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0409565v2
-doc_title: "Unital Gröbner Bases over Aribtrary Commutative Ground Rings"
+doc_title: "Unital Gröbner Bases over Arbitrary Commutative Ground Rings"
 section_id: sec-001-unital-gröbner-bases
 section_title: "Unital Gröbner Bases."
 section_number: null
@@ -8,7 +8,9 @@ pages: 2-10
 source_pdf: 0409565v2.pdf
 source_sha256: 236704063f12c05e
 toc_source: outline
+doc_brief: "Unital Gröbner Bases over Arbitrary Commutative Ground Rings — Let R be a commutative ring with unity and a let A be a not necessarily commutative R-algebra which is free as an R-module."
 ---
+Unital Gr¨obner Bases.
 Throughout this section R is a commutative ring with unity and A an R-algebra
 with no quasi-zeros, i.e. elements a ∈A such that for all b, c ∈A not both 1
 one has bac = 0. For brevity, we only state and prove the results in the case of

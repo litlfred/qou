@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2404.02087v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2404.02087v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-2404.02087v1",
+  "title": "Extreme plasmons",
   "contains": [
     "library/arxiv-2404.02087v1/sections/sec-000",
     "library/arxiv-2404.02087v1/sections/sec-001",
@@ -24,10 +24,11 @@
     "library/arxiv-2404.02087v1/sections/sec-010",
     "library/arxiv-2404.02087v1/sections/sec-011",
     "library/arxiv-2404.02087v1/sections/sec-012",
-    "library/arxiv-2404.02087v1/sections/sec-013"
+    "library/arxiv-2404.02087v1/sections/sec-013",
+    "library/arxiv-2404.02087v1/sections/sec-014"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://creativecommons.org/licenses/by-nc-nd/4.0/",
   "licenceRecord": {
     "status": "stated",
@@ -37,7 +38,9 @@
   },
   "meta": {
     "doc_id": "arxiv-2404.02087v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "2404.02087v1.pdf",
     "source_sha256": "ac92bd0dff8ad907400f479a73c1bb7df72085fd5f2b9d53feccb3752b85954a",
     "pages": 10,
@@ -48,8 +51,8 @@
       "stamp_date": "2 Apr 2024"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

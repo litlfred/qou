@@ -158,6 +158,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "055f25468176",
+          "ts": "9d3fe2b2ee5c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T22:00:13.348Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "[sidecar review 2026-11-15, issue #8030] ref `degLex_wellFounded` is a genuine sorry-free proof that deg-lex on words over a finite alphabet {0,…,n−1} is well-founded: that covers item 3 for a list model, not for the Hecke basis of A_n. Item 2 is an `axiom ordering_compatible` (true for word concatenation, I checked it by hand, so provable and should be a theorem); item 4 is `axiom direct_limit_terminates : ∃ w', ¬ degLex w' w`, which is trivially true (w' = w) and says nothing about termination; item 1's former axiom was `P → P` (file says so). S↔P: item 2 as stated, \"a ≺ b ⇒ c·a ≺ c·b for all c ∈ A_{n+1}\", is **false**: take c = 0, then 0 ≺ 0 contradicts irreflexivity. The compatibility holds for monomials under concatenation, not for algebra elements. The proof's \"deg-lex is compatible with any associative multiplication whose relations have bounded-degree leading terms\" is not a theorem. Item 1 sets dim Ω¹ = 3 (the …"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -970,7 +986,7 @@
           "in_degree": 0,
           "cone_size": 22,
           "depth": 15,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1258,8 +1274,8 @@
         },
         "reviewed_at": "2026-08-15T21:42:39.070Z",
         "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
-        "evidence": "One load-bearing spaced dash in the closing sentence (arrow-of-time afterthought); fixed inline. The remaining spaced dash ('bounded degree \u2014 the Hecke relation is quadratic, so this holds') is a justificatory parenthetical and acceptable.",
-        "notes": "fix applied: 'inherited from the initial ordering \u2014 it does not need to be re-imposed' -> 'inherited from the initial ordering; it does not need to be re-imposed'"
+        "evidence": "One load-bearing spaced dash in the closing sentence (arrow-of-time afterthought); fixed inline. The remaining spaced dash ('bounded degree — the Hecke relation is quadratic, so this holds') is a justificatory parenthetical and acceptable.",
+        "notes": "fix applied: 'inherited from the initial ordering — it does not need to be re-imposed' -> 'inherited from the initial ordering; it does not need to be re-imposed'"
       }
     ],
     "trap-triples": [
@@ -1538,6 +1554,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-19T12:58:14.425Z",
+  "updated_at": "2026-11-15T22:00:13.348Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

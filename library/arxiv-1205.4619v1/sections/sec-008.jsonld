@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1205.4619v1/sections/sec-008",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Casimir Operators for split Octonion SU(3) group",
+  "pageStart": 15,
+  "pageEnd": 16,
+  "contains": [
+    "library/arxiv-1205.4619v1/blocks/prose-sec-008"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1205.4619v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1205.4619v1/manifest.jsonld",
+  "provenance": "ingested"
+}

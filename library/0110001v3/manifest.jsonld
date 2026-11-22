@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/0110001v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0110001v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -17,7 +17,7 @@
     "library/0110001v3/sections/sec-002"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "0110001v3",
     "title_source": "pdf-info",

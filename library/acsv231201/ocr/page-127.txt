@@ -1,0 +1,43 @@
+4.3 Analytic versus smooth functions 109
+
+Now we fix an N large enough so that - kN + 1 < 0, and perform inte-
+gration by parts on the second integral of (4.17) N times, each time integrating
+~ikAx*! ei and differentiating the rest, ending with
+
+f ef (ikay DY [x'q()(1 — a(x/e))| dx.
+By (4.18) the modulus of this integrand is at most C21 pjselxl"" (kA) so the
+integral is bounded by C3A~Ne“*"*!, where C3 = 2C2/(1 — € + kN). Setting
+e = A“'/* and adding the bounds on the two integrals yields an upper bound of
+(C1 +C3)A~"*/ on the modulus of the integral in (4.16). We have also shown
+that C; and C3 depend only on k, ¢, the first £ derivatives of 7, and the first €
+derivatives of a. Fixing any valid choice of the function a thus completes our
+proof. ia)
+
+Exercise 4.9. For a smooth function a taking value zero on negative arguments
+and value one on arguments € or greater, what is the least possible value of
+sup, |@’”’(x)|? This question is motivated by the reliance on smooth partitions
+of unity and the derivatives of a appearing in (4.18).
+
+Lemma 4.11 immediately implies the following result.
+
+Corollary 4.12. If a smooth function g vanishes in a neighborhood of the
+origin and decreases rapidly at infinity (or is compactly supported) then I(A) =
+f _ g(xje™ dx is rapidly decreasing. ia)
+
+A and ¢ are monomials and A is damped
+
+In this section we prove the C® version of Lemma 4.4. Since a monomial
+amplitude function does not have compact support, we introduce a damping
+function which will later need to be removed. For parameters 2,k,€,6 € R
+with k > 2 define
+
+T(A,k, €,6) = f elt oOlal xf dy, (4.19)
+
+co
+
+Lemma 4.13. An asymptotic expansion
+TALK, 6,5) = OS” CC CAF
+j=0
+
+holds as A > ©, where the constants C(j,k,€,6) with j > 0 go to zero as
+630.

@@ -77,7 +77,7 @@ class SeparateLambdaScale_Antipattern : Prop where
     of `False`.  Use it (`#check no_separate_lambda_scale`) as the
     type-level record that no separate `λ_scale` object exists; the
     mass formula is `m(K) = m_e × VolDensity(K, q₀)`. -/
--- Ref: [manuscript] docs/lambda-scale-absorbed-into-vol-density.md
+-- Ref: [leitner2026] docs/lambda-scale-absorbed-into-vol-density.md
 theorem no_separate_lambda_scale : IsEmpty SeparateLambdaScale_Antipattern :=
   ⟨fun h => h.is_antipattern⟩
 

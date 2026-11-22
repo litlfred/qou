@@ -1,0 +1,36 @@
+Section 2.3 Monoidal 2-categories with Duals
+
+section, we will use the convention that composition of morphisms are to be read from
+
+left to right. Explicitly,
+
+e Composition of 1-morphisms:
+
+o :Hom!(A, B) x Hom'(B,C) —> Hom!(A, C)
+
+(f,9) > fog
+
+e ‘Vertical’ composition of 2-morphisms: for f,g,h € Hom!'(A, B),
+
+* :Hom?(f,g) x Hom?(g, h) —+ Hom?(f, h)
+
+(a, 3) > ax PB
+
+¢ ‘Horizontal’ composition of 2-morphisms: for f,g € Hom!(A, B), f’,g € Hom!(B,C),
+
+o : Hom?(f,g) x Hom?(f, g') —+ Hom?(f o f’,g og’)
+
+(a, a’) > aoa’
+
+These compositions satisfy various associativity axioms. (In the non-strict case, the
+associativity axioms need to be replaced by certain Pentagon Identity similar to that
+in the definition of monoidal categories.) In fact, monoidal categories are in one-to-one
+correspondence with 2-categories with only one object. Explicitly, if C is a monoidal
+category, define a 2-category C with a single object. as follows:
+
+Denote the object by * (or anything else). Then 1-morphisms between * and * are
+objects of C and 2-morphisms of C are 1-morphisms of C. Composition of 1-morphisms
+
+and horizontal composition of 2-morphisms in C are given by tensor product of objects
+
+28

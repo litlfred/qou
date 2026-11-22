@@ -3,13 +3,14 @@
  "doc_id": "arxiv-1204.4824v2",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "bf01cbaa5a8712c82f1f20fb5c85ce796468cf5e67b2968e1fca5ab18bb77d3d",
   "file": "1204.4824v2.pdf"
  },
  "provenance": {
-  "title": "Prepared for submission to JHEP Spectral networks",
-  "authors": "Davide Gaiotto, 1 Gregory W. Moore 2 and Andrew Neitzke 3",
+  "title": "Spectral networks",
+  "authors": "Davide Gaiotto,1 Gregory W. Moore2 and Andrew Neitzke3",
   "arxiv": {
    "id": "1204.4824",
    "version": "2",
@@ -24,7 +25,20 @@
   "by_kind": {
    "theorem": 1
   },
-  "formalization_candidates": 1
+  "formalization_candidates": 1,
+  "by_domain": {
+   "math": 1
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  },
+  "by_lean_status": {
+   "unformalized": 1
+  },
+  "needs_lean_proof": 1
  },
  "candidates": [
   {
@@ -32,13 +46,25 @@
    "source_kind": "theorem",
    "number": null,
    "name": null,
-   "statement": "F(\u00b7,W) descends to a homomorphism",
-   "section_file": "sections/sec-048-b4-formal-parallel-transport-for-the-path-groupo.md",
+   "statement": "F(\u00b7, W) descends to a homomorphism R(\u03c0\u22641( \u02dcC)o\ufb00) \u2192R(\u03c0\u22641(\u02dc\u03a3))/I. (B.8) Moreover, the homomorphism (B.8) actually factors through a homomorphism R(\u03c0\u22641( \u02dcC)o\ufb00)/I \u2192R(\u03c0\u22641(\u02dc\u03a3))/I. (B.9) Passing from homotopy to homology in the codomain we obtain a map: F(\u00b7, W) : R(\u03c0\u22641( \u02dcC)o\ufb00)/I \u2192R(H\u22641(\u02dc\u03a3))/I. (B.10) Expanding F([\u2118], W) on a Z-basis Xa for R(H\u22641(\u02dc\u03a3))/I, where a runs over \u02dc\u0393(\u02dcz1, \u02dcz2), the coe\ufb03cients are the degeneracies \u2126 \u2032(L\u2118, a).",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-058-b4-formal-parallel-transport-for-the-path-groupo.md (p. 80-80)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-058-b4-formal-parallel-transport-for-the-path-groupo.md",
    "section_title": "B.4 Formal parallel transport for the path groupoid",
    "pages": "80-80",
    "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-058-b4-formal-parallel-transport-for-the-path-groupo.md (p. 80-80)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-058-01",
+   "block_iri": "library/arxiv-1204.4824v2/blocks/thm-sec-058-01",
+   "claim_id": "arxiv-1204.4824v2#thm-sec-058-01",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   }
  ]
 }

@@ -2,75 +2,155 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1604.01247v2",
  "source_sha256": "5a402405aadf5d54",
- "brief": "Exceptional quantum geometry and particle physics — Based on an interpretation of the quark-lepton symmetry in t erms of the unimodularity of the color group SU (3) and on the existence of 3",
- "extended": "**Exceptional quantum geometry and particle physics**\n\n*AND PARTICLE PHYSICS*\n\n37 pp, 13 sections.\n\n**Abstract.** Based on an interpretation of the quark-lepton symmetry in t erms of the unimodularity of the color group SU (3) and on the existence of 3 generations, we develop an argumentation suggesting th at the “ﬁnite quantum space” corresponding to the exceptional rea l Jordan algebra of dimension 27 (the Euclidean Albert algebra) is re levant for the description of internal spaces in the theory of particle s. In par- ticular, the triality which corresponds to the 3 oﬀ-diagonal octonionic elements of the exceptional algebra is associated to the 3 ge nerations of the Standard Model while the representation of the octoni ons as a complex 4-dimensional space C ⊕ C3 is associated to the quark-lepton symmetry, (one complex for the lepton and 3 for the correspon ding quark).\n\n**Outline.** 1 Introduction; 2.3 The quark-lepton symmetry; 2.4 Gauge theoretical aspect; 3.1 the 3-generations; 3.2 Finite quantum spaces; 3.4 Exceptional almost classical quantum space; 4 Modules and fundamental fermions; 4.1 Modules over Jordan algebras; 4.3 Modules for the two families by generation; 4.5 Charge conjugation; 6 Connections on Jordan modules; 6.3 General connections; 7 Tentative conclusion\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: Let J be as above and deﬁne xn ∈ J for x ∈ J and n ∈ N+ by\n- Theorem 2: Any ﬁnite-dimensional Euclidean Jordan algebra is a direct sum\n- Proposition 3: For any ﬁrst order calculus (Ω 1, d ) over J 8\n- Proposition 4: Any homomorphism ϕ of unital Jordan algebra of J 8",
+ "brief": "Exceptional quantum geometry and particle physics — Based on an interpretation of the quark-lepton symmetry in terms of the unimodularity of the color group SU(3) and on the existence of 3",
+ "extended": "**Exceptional quantum geometry and particle physics**\n\n*AND PARTICLE PHYSICS*\n\n37 pp, 29 sections.\n\n**Abstract.** Based on an interpretation of the quark-lepton symmetry in terms of the unimodularity of the color group SU(3) and on the existence of 3 generations, we develop an argumentation suggesting that the “ﬁnite quantum space” corresponding to the exceptional real Jordan algebra of dimension 27 (the Euclidean Albert algebra) is relevant for the description of internal spaces in the theory of particles. In par- ticular, the triality which corresponds to the 3 oﬀ-diagonal octonionic elements of the exceptional algebra is associated to the 3 generations of the Standard Model while the representation of the octonions as a complex 4-dimensional space C ⊕C3 is associated to the quark-lepton symmetry, (one complex for the lepton and 3 for the corresponding quark).\n\n**Outline.** Front matter; 1 Introduction; 2 Unimodularity of SU(3) and the quark-lepton ; 2.1 SU(3)-spaces; 2.2 SU(3)-algebra version of octonion algebra; 2.3 The quark-lepton symmetry; 2.4 Gauge theoretical aspect; 3.1 the 3-generations; 3 The 3-generations, triality and the exceptio; 3.2 Finite quantum spaces; 3.3 The exceptional finite quantum space; 3.4 Exceptional almost classical quantum space; 4 Modules and fundamental fermions; 4.1 Modules over Jordan algebras; 4.2 J83-modules and SU(3)SU(3)-action; 4.3 Modules for the two families by generation; 4.4 Problem of the U(1)SU(2)-symmetry; 4.5 Charge conjugation",
  "tokens": {
   "brief": 47,
-  "extended": 406
+  "extended": 374
  },
  "sections": [
   {
-   "id": "sec-000-1-introduction",
-   "title": "Introduction",
-   "pages": "2-9"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-3"
   },
   {
-   "id": "sec-001-23-the-quark-lepton-symmetry",
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "3-6"
+  },
+  {
+   "id": "sec-001-2-unimodularity-of-su3-and-the-quark-lepton-symm",
+   "title": "Unimodularity of SU(3) and the quark-lepton symmetry",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-002-21-su3-spaces",
+   "title": "SU(3)-spaces",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-003-22-su3-algebra-version-of-octonion-algebra",
+   "title": "SU(3)-algebra version of octonion algebra",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-004-23-the-quark-lepton-symmetry",
    "title": "The quark-lepton symmetry",
    "pages": "9-9"
   },
   {
-   "id": "sec-002-24-gauge-theoretical-aspect",
+   "id": "sec-005-24-gauge-theoretical-aspect",
    "title": "Gauge theoretical aspect",
    "pages": "9-11"
   },
   {
-   "id": "sec-003-31-the-3-generations",
+   "id": "sec-006-31-the-3-generations",
    "title": "the 3-generations",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-007-3-the-3-generations-triality-and-the-exceptional",
+   "title": "The 3-generations, triality and the exceptional finite quantum space",
    "pages": "11-12"
   },
   {
-   "id": "sec-004-32-finite-quantum-spaces",
+   "id": "sec-008-32-finite-quantum-spaces",
    "title": "Finite quantum spaces",
-   "pages": "12-16"
+   "pages": "12-15"
   },
   {
-   "id": "sec-005-34-exceptional-almost-classical-quantum-spacetim",
+   "id": "sec-009-33-the-exceptional-finite-quantum-space",
+   "title": "The exceptional finite quantum space",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-010-34-exceptional-almost-classical-quantum-spacetim",
    "title": "Exceptional almost classical quantum spacetime",
    "pages": "16-18"
   },
   {
-   "id": "sec-006-4-modules-and-fundamental-fermions",
+   "id": "sec-011-4-modules-and-fundamental-fermions",
    "title": "Modules and fundamental fermions",
    "pages": "18-18"
   },
   {
-   "id": "sec-007-41-modules-over-jordan-algebras",
+   "id": "sec-012-41-modules-over-jordan-algebras",
    "title": "Modules over Jordan algebras",
-   "pages": "18-21"
+   "pages": "18-20"
   },
   {
-   "id": "sec-008-43-modules-for-the-two-families-by-generation",
+   "id": "sec-013-42-j83-modules-and-su3su3-action",
+   "title": "J83-modules and SU(3)SU(3)-action",
+   "pages": "20-21"
+  },
+  {
+   "id": "sec-014-43-modules-for-the-two-families-by-generation",
    "title": "Modules for the two families by generation",
-   "pages": "21-23"
+   "pages": "21-22"
   },
   {
-   "id": "sec-009-45-charge-conjugation",
+   "id": "sec-015-44-problem-of-the-u1su2-symmetry",
+   "title": "Problem of the U(1)SU(2)-symmetry",
+   "pages": "22-23"
+  },
+  {
+   "id": "sec-016-45-charge-conjugation",
    "title": "Charge conjugation",
-   "pages": "23-30"
+   "pages": "23-24"
   },
   {
-   "id": "sec-010-6-connections-on-jordan-modules",
+   "id": "sec-017-5-differential-calculus-over-jordan-algebras",
+   "title": "Differential calculus over Jordan algebras",
+   "pages": "24-24"
+  },
+  {
+   "id": "sec-018-51-first-order-differential-calculi",
+   "title": "First order differential calculi",
+   "pages": "24-25"
+  },
+  {
+   "id": "sec-019-52-first-order-differential-calculi-over-j83",
+   "title": "First order differential calculi over J83",
+   "pages": "25-26"
+  },
+  {
+   "id": "sec-020-53-differential-graded-jordan-algebras",
+   "title": "Differential graded Jordan algebras",
+   "pages": "26-27"
+  },
+  {
+   "id": "sec-021-54-higher-order-derivation-based-differential-ca",
+   "title": "Higher order derivation-based differential calculi",
+   "pages": "27-28"
+  },
+  {
+   "id": "sec-022-55-differential-calculi-as-a-algebras",
+   "title": "Differential calculi as A-algebras",
+   "pages": "28-30"
+  },
+  {
+   "id": "sec-023-6-connections-on-jordan-modules",
    "title": "Connections on Jordan modules",
+   "pages": "30-30"
+  },
+  {
+   "id": "sec-024-61-derivation-based-connections-first-definition",
+   "title": "Derivation-based connections. First definition",
+   "pages": "30-30"
+  },
+  {
+   "id": "sec-025-62-derivation-based-connections-second-definitio",
+   "title": "Derivation-based connections. Second definition",
    "pages": "30-32"
   },
   {
-   "id": "sec-011-63-general-connections",
+   "id": "sec-026-63-general-connections",
    "title": "General connections",
    "pages": "32-32"
   },
   {
-   "id": "sec-012-7-tentative-conclusion",
+   "id": "sec-027-7-tentative-conclusion",
    "title": "Tentative conclusion",
    "pages": "32-37"
   }
@@ -79,8 +159,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

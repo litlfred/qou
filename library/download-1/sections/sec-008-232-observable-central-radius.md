@@ -8,7 +8,9 @@ pages: 9-11
 source_pdf: Download (1).pdf
 source_sha256: bbb001c909958e8a
 toc_source: inferred
+doc_brief: "Central and L p -concentration of 1-Lipschitz maps into R -trees — In this paper, we study the Le´vy-Milman concentration phenomenon of 1-Lipschitz maps from mm-spaces to R-trees."
 ---
+Observable central radius.
 Let Y be a metric space and assume that  2 B1ðY Þ has the center of mass.
 We denote by BY ðy; rÞ the closed ball in Y centered at y 2 Y and with radius
 r > 0.
@@ -128,4 +130,3 @@ SepðX; ; Þ 
 for any  > 0 > 0. Letting 0 ! , we have (2.5). Replacing (2.3) with (2.4) in the
 above argument, we also obtain (2.6).
 
-3.

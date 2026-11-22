@@ -1,0 +1,68 @@
+ultimately
+have ?P ?Mx ?Mu
+using *{rule-format, of to-complex ?Mz| «?Mz # con?
+by simp
+then obtain Mz where
+?R Mz ?Max ?Mu
+by blast
+have of-compler Mz € unit-disc of-complex Mz € circline-set x-axis
+using <?R Mz ?Mx ?Mu)
+using cmod-eq-Re
+by auto
+
+let ?Minv = — (blaschke a)
+let ?z = moebius-pt ?Minv (of-complex Mz)
+have ?z € unit-disc
+using <of-compler Mz € unit-discy «cmod a < 1»
+by auto
+moreover
+have ?z € circline-set x-axis
+using <of-compler Mz € circline-set x-axis»
+using blaschke-real-preserve-x-axis <is-real ay «cmod a < 1»
+by fastforce
+ultimately
+have z1: —1 < Re (to-complex ?z) Re (to-complex ?z) < 1 is-real (to-complex ?z)
+using inf-or-of-complez|of ?z]
+unfolding circline-set-x-azxis
+by (auto simp add: cmod-eq-Re)
+
+have 22: poincare-distance ?z (of-compler x) = poincare-distance ?z u
+using «?R Mz ?Max ?Mu» «cmod a < 1) <?z € unit-disc> <of-complex x € unit-disc» <u € unit-discy
+by (metis blaschke-preserve-distance-formula blaschke-unit-disc-fiz moebius-pt-comp-inv-right poincare-distance-formula
+uminus-moebius-def unit-disc-fix-discI unit-disc-iff-cmod-lt-1)
+show ?P (of-complez x) u
+proof
+show ?R (to-complex ?z) (of-complex x) u
+using 21 22 (?z € unit-discy inf-or-of-complez[of ?z]
+by auto
+next
+fix z’
+assume ?R z’ (of-complex x) u
+hence of-complex z' € unit-disc of-complex z' € circline-set x-axis
+by (auto simp add: cmod-eq-Re)
+let ?Mz' = ?M (of-complex z')
+have ?Mz' € unit-disc ?Mz' € circline-set r-axis
+using <of-complex z' € unit-discy <of-complex z' € circline-set x-axis) «cmod a < 1» <is-real ay
+using blaschke-unit-disc-fix unit-disc-fix-discI
+using blaschke-real-preserve-x-axis circline-set-x-axis
+by blast+
+hence —1 < Re (to-complex ?Mz') Re (to-complex ?Mz') < 1 is-real (to-complex ?Mz')
+unfolding circline-set-x-axis
+by (auto simp add: cmod-eq-Re)
+moreover
+have poincare-distance ?Mz' ?Mzx = poincare-distance ?Mz' ?Mu
+using <?R z’ (of-complex x) w
+using <cmod a < 1» <of-complex x € unit-disc <of-complex z' € unit-disc> «u € unit-discy
+by auto
+ultimately
+have ?R (to-complex ?Mz') ?Mx ?Mu
+using <?Mz!' € unit-discy inf-or-of-complex|of ?Mz'|
+by auto
+hence ?Mz’ = of-complex Mz
+using <?P ?Mzx ?Mu) <?R Mz ?Max ?Muy
+by (metis «moebius-pt (blaschke a) (of-complez z’) € unit-disc> «of-compler Mz € unit-disc» to-complex-of-complex
+unit-disc-to-complez-inj)
+thus z' = to-complex ?z
+by (simp add: moebius-pt-invert)
+
+64

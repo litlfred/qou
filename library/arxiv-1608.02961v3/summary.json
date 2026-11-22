@@ -2,60 +2,70 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1608.02961v3",
  "source_sha256": "ef3805c23133b8f2",
- "brief": "Perturbative and nonperturbative aspects of complex Chern-Simons Theory Tudor Dimofte — We present an elementary review of some aspects of Chern-Simons theory with complex gauge group SL(N, C).",
- "extended": "**Perturbative and nonperturbative aspects of complex Chern-Simons Theory Tudor Dimofte**\n\n*Perimeter Institute for Theoretical Physics, 31 Caroline St. N, Waterloo, ON N2J 2Y5, Canada*\n\n33 pp, 10 sections.\n\n**Abstract.** We present an elementary review of some aspects of Chern-Simons theory with complex gauge group SL(N, C). We discuss some of the challenges in deﬁning the theory as a full- ﬂedged TQFT, as well as some successes inspired by the 3d-3d correspondence. The 3d-3d correspondence relates partition functions (and other aspects) of complex Chern-Simons the- ory on a 3-manifold M to supersymmetric partition functions (and other observables) in an associated 3d theory T [M]. Many of these observables may be computed by supersymmetric localization. We present several prominent applications to 3-manifold topology and number theory in light of the 3d-3d correspondence. This is a contribution to the review volume “Localization techniques in quantum ﬁeld theories” (eds. V. Pestun and M. Zabzine) which contains 17 Chapters available at [1]\n\n**Outline.** 1 Introduction; 2.1 Equivariant quantization; 2.2 Holomorphic polarizations and CFT; 3 Complex Chern-Simons theory as a TQFT?; 3.1 Symmetries, regularizations, and the 3d-3d; 4 Three connections to three-manifold topology; 4.1 Hyperbolic volumes, twisted torsion, and l; 4.2 State-integral models and angle structures; 4.3 Embedded surfaces and M2 branes in the 3d ; 5 The Quantum Modularity Conjecture",
+ "brief": "Perturbative and nonperturbative aspects of complex Chern-Simons Theory Contents — We present an elementary review of some aspects of Chern-Simons theory with complex gauge group SL(N, C).",
+ "extended": "**Perturbative and nonperturbative aspects of complex Chern-Simons Theory Contents**\n\n*Chern-Simons Theory*\n\n33 pp, 12 sections.\n\n**Abstract.** We present an elementary review of some aspects of Chern-Simons theory with complex gauge group SL(N, C). We discuss some of the challenges in deﬁning the theory as a full- ﬂedged TQFT, as well as some successes inspired by the 3d-3d correspondence. The 3d-3d correspondence relates partition functions (and other aspects) of complex Chern-Simons the- ory on a 3-manifold M to supersymmetric partition functions (and other observables) in an associated 3d theory T[M]. Many of these observables may be computed by supersymmetric localization. We present several prominent applications to 3-manifold topology and number theory in light of the 3d-3d correspondence. This is a contribution to the review volume “Localization techniques in quantum ﬁeld theories” (eds. V. Pestun and M. Zabzine) which contains 17 Chapters available at [1]\n\n**Outline.** Front matter; 1 Introduction; 2 Warmup: quantization of H(T2); 2.1 Equivariant quantization; 2.2 Holomorphic polarizations and CFT; 3 Complex Chern-Simons theory as a TQFT?; 3.1 Symmetries, regularizations, and the 3d-3d; 4 Three connections to three-manifold topology; 4.1 Hyperbolic volumes, twisted torsion, and l; 4.2 State-integral models and angle structures; 4.3 Embedded surfaces and M2 branes in the 3d ; 5 The Quantum Modularity Conjecture",
  "tokens": {
-  "brief": 48,
-  "extended": 368
+  "brief": 47,
+  "extended": 360
  },
  "sections": [
   {
-   "id": "sec-000-1-introduction",
-   "title": "Introduction",
-   "pages": "1-8"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
   },
   {
-   "id": "sec-001-21-equivariant-quantization",
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-001-2-warmup-quantization-of-ht2",
+   "title": "Warmup: quantization of H(T2)",
+   "pages": "4-8"
+  },
+  {
+   "id": "sec-002-21-equivariant-quantization",
    "title": "Equivariant quantization",
    "pages": "8-9"
   },
   {
-   "id": "sec-002-22-holomorphic-polarizations-and-cft",
+   "id": "sec-003-22-holomorphic-polarizations-and-cft",
    "title": "Holomorphic polarizations and CFT",
    "pages": "9-10"
   },
   {
-   "id": "sec-003-3-complex-chern-simons-theory-as-a-tqft",
+   "id": "sec-004-3-complex-chern-simons-theory-as-a-tqft",
    "title": "Complex Chern-Simons theory as a TQFT?",
    "pages": "10-12"
   },
   {
-   "id": "sec-004-31-symmetries-regularizations-and-the-3d-3d-corr",
+   "id": "sec-005-31-symmetries-regularizations-and-the-3d-3d-corr",
    "title": "Symmetries, regularizations, and the 3d-3d correspondence",
    "pages": "12-13"
   },
   {
-   "id": "sec-005-4-three-connections-to-three-manifold-topology",
+   "id": "sec-006-4-three-connections-to-three-manifold-topology",
    "title": "Three connections to three-manifold topology",
    "pages": "13-13"
   },
   {
-   "id": "sec-006-41-hyperbolic-volumes-twisted-torsion-and-large",
+   "id": "sec-007-41-hyperbolic-volumes-twisted-torsion-and-large",
    "title": "Hyperbolic volumes, twisted torsion, and large N",
    "pages": "13-15"
   },
   {
-   "id": "sec-007-42-state-integral-models-and-angle-structures",
+   "id": "sec-008-42-state-integral-models-and-angle-structures",
    "title": "State-integral models and angle structures",
    "pages": "15-20"
   },
   {
-   "id": "sec-008-43-embedded-surfaces-and-m2-branes-in-the-3d-ind",
+   "id": "sec-009-43-embedded-surfaces-and-m2-branes-in-the-3d-ind",
    "title": "Embedded surfaces and M2 branes in the 3d index (k=0)",
    "pages": "20-22"
   },
   {
-   "id": "sec-009-5-the-quantum-modularity-conjecture",
+   "id": "sec-010-5-the-quantum-modularity-conjecture",
    "title": "The Quantum Modularity Conjecture",
    "pages": "22-33"
   }

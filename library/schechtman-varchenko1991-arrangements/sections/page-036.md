@@ -1,0 +1,68 @@
+---
+doc_id: schechtman-varchenko1991-arrangements
+doc_title: "Arrangements of hyperplanes and Lie algebra homology"
+section_id: page-036
+section_title: "Page 36"
+pages: 36-36
+pdf_page: 36
+source_pdf: schechtman-varchenko1991-arrangements.pdf
+source_sha256: 0100fd32438740f0
+text_source: ocr
+granularity: page
+doc_brief: "Arrangements of hyperplanes and Lie algebra homology — 56 sections: Page 1; Page 2; Page 3"
+---
+174 V.V. Schechtman and A.N. Varchenko
+Denote by 6,¢M# the functional equal to 1 on fo(1) foy2y---Souv and 0 on
+
+other monomials. (NB! Pay attention to the inverse order!).
+
+6.8.1 Lemma. 4: M¥ > 27" (@,,y) maps 5, to
+
+(1) 0 1 2g eg NE! N
+
+o(1) (2) o3) o(N—1) o(N) 1
+
+Proof. Since n is Zy-equivariant, it suffices to prove it for c=1. This case is
+easily deduced from the definitions. 0
+
+For any subset Ic [N], put 4,={k,, ..., ky}, where k;=1 if ie/, and 0 other-
+wise. Set M;:=M,,. For example, M,y,=
+
+Let ¢,C@,,y be the subarrangement, consisting of all hyperplanes H;; and
+H} with i, jel. Put F,=F(@), J,=A(), where p= +I. We have F,
+=F" (6,,n); 0)= A" (G,,y). Define maps
+
+(6.8.2) var MF,
+
+by the following rule. Let I= {i,, ..., ip}, ip < ... <i,.
+
+Let J=[N]\I; J= {i, «in v=o ii<j2< -.. <jy-p- Denote by o, the permu-
+tation (ij, ---,i,, Ji, jase dn— ely. For oe, put f,=f;,.,,
+Sieg 1 Fig) VEM1- Set
+
+(6.8.3) (fo) =(— DIF ys Hines «9 Hie)
+In other words,
+(6.8.4) Yi (fo) =a Sin p Fin pa ® > AS, OF)
+(cf. 5.8.10). From 5.9 follows that ¥% are isomorphisms.
+
+Let
+(6.8.5) n=n: Mf> st,
+
+vr!
+
+be the composition M: raw 1- Denote by 6,eMf the 6-functional
+equal to 1 on fi... fig) ---Sig¢¥ and to 0 on other monomials.
+
+From 6.8.1 ‘foliows that
+
+-1
+(6.8.6) 1; (5.)=(—1)*t4| oo 9 + oP Do?”
+
+jgay Foy iop—1) top)
+Let jeJ. Put I'=I U {j}. Define the operator
+(6.8.7) 0: > by,
+by the formula
+
+(6.8.8) o,(x)=x-[)) a(H,)) Hijt+a(H}) Hj].
+
+ier

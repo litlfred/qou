@@ -1,7 +1,7 @@
 import { remark } from "../../schema/builders";
 
 export default remark({
-  interprets: "prop:ring-closure-barrier",
+  interprets: "conj:ring-closure-barrier",
   label: "rem:chain-ring-energy",
   title: "Hexagonalisation resistance of the C$_6$ chain",
   tags: [

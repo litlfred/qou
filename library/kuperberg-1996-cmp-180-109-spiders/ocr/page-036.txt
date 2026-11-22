@@ -1,0 +1,48 @@
+144 G Kuperberg
+
+All other G2; webs in B([2]cd) are flat. An exhaustive enumeration of such webs in
+both spiders verifies Eq. (7). The details are left to the reader.
+
+Finally, in the Gz spider, unlike in the Az and B> spiders, web with a partly con-
+vex clasp does not necessarily vanish in the clasped web space W([s,][s2]---[5n]).
+Recall that the clasped web space is defined as the subspace of the unclasped web
+space W(s\5s2---S,) spanned by non-elliptic webs with non-convex clasps and no
+internal type 2 edges, and that there is also a kernel J([s;][s2]---[s,]) spanned by
+webs w such that there is a cut path transverse to all edges of w which cuts off a
+clasp of lower weight. In order to show that the G2 spider is well-defined, we need
+the following lemma:
+
+Lemma 6.11. The spaces I((s1][s2]--+[sn]) and W([s][s2]---[sn]) are transverse
+in W(s\s2-+-Sp).
+
+Proof. Rank the webs in W(s,s2---s,) first by the number of vertices, and second
+by the sum of the weights of minimal cut paths cutting off each string s;. We
+consider a change of basis which is lower-triangular with respect to this ranking:
+For each web w € W(s)52---S,), choose a minimal cut path p; cutting off each s; as
+close as possible to the boundary. The cut paths are unique by the G2 analogue of
+Lemma 6.6, and they cannot cross, although they could in principle share segments.
+Recall the equation for a double edge from Eqs. (4), rearranged slightly:
+
+_ > < — 1 ) ( 1 ) ‘(
+=- a + enema + ——_——_ .
+-— q?-lt+q? qtitq-!
+
+Applying this equation, we can convert every single edge contained in a path p; to
+a transverse double edge; the other terms are all lower with respect to the ranking
+of webs. This produces a new basis for W(s)s2---s,) in which J([s;][s2]---[sn])
+and W([s:][s2]---[s,]) are manifestly complements. O
+
+7. Explicit Formulas for 42 Clasps
+
+Although internal clasps must exist by Sect.5, the argument given there is too
+indirect for practical computations. In this section, we give explicit formulas for Az
+clasps. Note first that clasps are sent to each other by composition with H webs:
+
+t+- + - +- +-
+
+Dal
+mA
+
+Se ods = =e
+
+Thus, it suffices to derive a formula for segregated clasps.

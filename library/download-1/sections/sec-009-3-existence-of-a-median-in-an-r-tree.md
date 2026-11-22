@@ -8,7 +8,9 @@ pages: 11-13
 source_pdf: Download (1).pdf
 source_sha256: bbb001c909958e8a
 toc_source: inferred
+doc_brief: "Central and L p -concentration of 1-Lipschitz maps into R -trees — In this paper, we study the Le´vy-Milman concentration phenomenon of 1-Lipschitz maps from mm-spaces to R-trees."
 ---
+Existence of a median in an R-tree.
 Let T be an R-tree and  a ﬁnite Borel measure on T with m :¼ ðTÞ < þ1.
 A median of  is a point z 2 T such that there exist two subtrees T 0, T 00  T such
 that T ¼ T 0 [ T 00, T 0 \ T 00 ¼ fzg, ðT 0Þ  m=3, and ðT 00Þ  m=3.
@@ -170,4 +172,3 @@ n!1 ðTðnðLðnÞÞÞÞ  m
 3 ;
 which is a contradiction. This completes the proof of the proposition.
 
-4.

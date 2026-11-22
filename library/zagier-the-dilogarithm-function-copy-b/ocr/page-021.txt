@@ -1,0 +1,50 @@
+The Dilogarithm Function 23
+
+C rather than for individual complex arguments; the double logarithm Li, 1,
+the simplest of the multiple polylogarithms, which has two arguments but
+can be expressed in terms of ordinary dilogarithms; the quantum dilogarithm
+of Faddeev and Kashaev, which will play a role in the discussion of Nahm’s
+conjecture in §3; and, very briefly, the p-adic and the modulo p analogues of
+the dilogarithm.
+
+A. The Rogers dilogarithm. This function is defined in the interval (0, 1)
+by
+
+1
+L(x) = Lig(x) + 3 log(x) log(1 — x) if0<a<1
+
+and then extended to the rest of R by setting L(0) = 0, L(1) = 77/6, and
+
+— j2Ld0)-L0/2) ife>1,
+Ua) = an ifr <0.
+
+The resulting function is then a monotone increasing continuous real-valued
+function on R and is (real-)analytic except at 0 and 1, where its derivative
+becomes infinite. At infinity it is not continuous, since one has
+
+lm 2) = 260) = tim) = na) = -",
+but it is continuous if we consider it modulo 7?/2. Moreover, the new function
+L(x) := L(x) (mod 7?/2) from P!(R) to R/2,Z, just like its complex ana-
+logue D(z), satisfies “clean” functional equations with no logarithm terms, in
+particular the reflection properties
+
+L(x)+L(1-2) = L(1), L(x) + L(1/xz) = —L(1)
+and the 5-term functional equation
+
+Ta) + Ea) +E) +E — 2) +B)
+
+If we replace LE by L in the left-hand sides of these three equations, then
+their right-hand sides must be replaced by piecewise continuous functions
+whose values depend on the positions of the arguments: L(1) in the first
+equation, 2L(1) for x > 0 or —L(1) for  < 0 in the second, and —3L(1) for
+x,y <0, zy > 1 and +3LZ(1) otherwise in the third. The proofs of these and
+all other functional equations result from the elementary formula
+
+a log(1 — x)
+
+Un) = 5, ~ 1-2)
+
+log(x) .
+
+The special values of the dilogarithm function listed in §1 of Chapter I
+become simpler when expressed in terms of the Rogers dilogarithm (e.g. one

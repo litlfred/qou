@@ -703,7 +703,8 @@ CONSEQUENCE
     ], 1):
         wb.add_assertion(f"{i}. {nm}",
                          "FAIL" if nm in failures else "PASS", "PASS")
-    out = wb.save()
+    out = wb.save(extra={"q0Anchor": "ambiguous", "q0AnchorReason": (
+        "the ladder window, required phase and convention-C distance are evaluated at BOTH the proton pin (q_at) and the live CODATA-2022 muon pin (q_muon_at) and both are recorded; Part 3's headline is at proton, the muon arm is a cross-pin robustness check")})
     print(f"Witness: {out}")
     return 1 if failures else 0
 

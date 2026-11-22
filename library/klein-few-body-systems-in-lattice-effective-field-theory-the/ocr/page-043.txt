@@ -1,0 +1,24 @@
+3.8 The sign problem
+
+with Sign() = +1 depending on the configuration n of the system. S(n) is an action of a bosonic system.
+Any fermionic observable is calculated as
+
+1
+(0); = Z, ys O(n) Sign (n) exp[-S ()], (3.80)
+which directly gives the expectation value of the Sign operator itself,
+
+Z
+(Sign) = Zz, x exp|-BV (Ff, — fy) (3.81)
+
+where the last equation is valid for large BV with the inverse temperature 6 = 1/(kgT) and f;, f, the
+free energy of the fermionic and bosonic system, respectively. Due to the Pauli principle the free energy
+density for fermions must be larger than the one for bosons and as such the average sign tends towards
+zero exponentially for larger volumes.
+
+Generally, the sign problem becomes severe when very sharp potentials are employed or when including
+many fermions. In the framework of NLEFT, we can use a relatively low cutoff and trigonometric
+discretization schemes are used to reduce the sign problem. Concerning this thesis we restrict the Monte
+Carlo calculation to *He, which is almost a SU(4) eigenstate. SU(4) symmetric problems do not suffer
+from the sign problem and consequently, we do not expect too severe problems for the ‘He calculation.
+
+37

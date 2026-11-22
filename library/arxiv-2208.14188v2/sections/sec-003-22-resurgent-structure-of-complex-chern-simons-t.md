@@ -7,10 +7,11 @@ section_number: 2.2
 pages: 10-15
 source_pdf: 2208.14188v2.pdf
 source_sha256: 92a7651c81b799b3
-doc_brief: "Resurgence in complex Chern-Simons theory at generic levels — In this note we study the resurgent structure of sl(2, C) Chern-Simons state integral model on knot complements S3\41,S 3\52 with generic"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.959
-latex_coverage_ratio: 0.974
+latex_coverage_ratio: 0.992
+doc_brief: "Resurgence in complex Chern-Simons theory at generic levels — In this note we study the resurgent structure of sl(2, C) Chern-Simons state integral model on knot complements S3\41, S3\52 with generic"
 ---
 The power series $\varphi_{\gamma}^{(k,\s_*)}(u,n;\tau)$ are
 asymptotic.  To make sense of them, we need to apply the resurgence

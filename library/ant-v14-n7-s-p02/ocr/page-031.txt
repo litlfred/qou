@@ -1,0 +1,63 @@
+Pro-unipotent harmonic actions and dynamical properties of p-adic cyclotomic multiple zeta values 1741
+
+1-
+
+Proof. Let a word w = Cp, Ch! Cbg ey tee. For n > weight(w), let us consider the coefficient
+
+of (q4)" in comp? -#*(f)[w]. It is equal to f[en eg, thee, --- eft! 1ee,] + terms of lower
+
+depth, where the depth is the one of coefficients of f. This gives the result by an induction on the
+depth. oO
+
+5. Iteration of the Frobenius on P! \ U; Bé, 1)
+
+In the previous sections, we considered the Frobenius of 7
+
+mes (DD! \ {0, ey, Co}) at base-points (1, 0)
+and the harmonic Frobenius. We now consider the Frobenius of my (Pl \ {0, 4n, Co}) on the affinoid
+subspace U*" = Phan y Uewat B¢é, 1) of P!™" over K, where B(é, 1) is the open ball of center € and
+of radius 1. As in Section 2, we will have a fixed-point equation (Section 5A) and an iteration equation
+(Section 5B). Additionally, we will have a third equation coming from the study of regularized iterated
+
+integrals in [Jarossay 2019, Section 5.3].
+
+5A. Fixed point equation. The fixed point equation of the Frobenius is known thanks to the theory of
+Coleman integration. It amounts to the definition of p-adic multiple polylogarithms Lig? as Coleman
+integrals, in [Furusho 2004; 2007] for N = | and in [Yamashita 2010] for any NV; we have
+
+Piog(q) /log(p) Lin”) = Lif” . (5-1)
+
+Restricted to U*", the fixed point equation amounts to the following equations [Jarossay 2019, Propo-
+sition 2.1.3], they involve the overconvergent p-adic multiple polylogarithms Li), ,[w] [Jarossay 2019,
+Definition 1.2.5], which are overconvergent analytic functions on U*":
+
+Lif, 4 (2) = Lik“ @) (peo, (pee )e LRM” (cP (eo, (Ad gi (€6)6)) | (5-2)
+
++ =KZ(P") ,_ p% : _
+Lip, a2) = Lig?” '(2”")(e0, (egw Je) Lig” (@)(Pe0, P*(AG ev (Cgc0"0)8)) | (5-3)
+
+where Lik2” is the analogue of Lif? on XP") equal to the pull-back of X = (P! \ {0, wy, co})/K by
+
+o” where o is the Frobenius automorphism of K. When a is a multiple of log(q)/log(p), XY") = X
+and Lik2? = Lit’, and when @ = log(q)/log(p), (5-2), (5-3) are directly equivalent to (5-1).
+
+Notation 5A.1. For any & € ZU {+00} \ {0}, let Li), =Li},,, and Li), =Lij,_,, with p® = q*.
+
+pia a
+par
+description of ®, . as a function of a. If we combine it with (5-2), (5-3), we deduce a description of
+
++
+Lina
+
+number of iterations. We leave the details to the reader. One can also write an analogue for U*" of the
+
+The Frobenius on U" is characterized by the couple (Li), ,, ®p.«). We already know by Section 2 a
+
+as a function of a. This gives a description of the iterated Frobenius on U*" as a function of its
+
+notion of contraction mapping at base-points (1, 0) of Definition 1B.2 and of the fact that the Frobenius
+at (1, 0) is a contraction of Lemma 1B.7.
+
+Let us just consider the convergence of the iterated Frobenius towards the fixed point when the number
+of iterations tends to ov, in the unit ball B(0, 1).

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 0.953
+doc_brief: "STATIONARY CURVES UNDER THE MÖBIUS-PLATEAU ENERGY — Plateau problems with elastic boundary energies have been of recent theoretical and applied interest."
 ---
 The authors would like to thank Xin Zhou for his numerous helpful discussions about this work, in particular making the initial suggestion to investigate the M\"obius-Plateau energy. The authors would also like to thank Steven Strogatz and Tobias Colding for their continued support.
 \\

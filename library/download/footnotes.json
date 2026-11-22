@@ -1,0 +1,1873 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "download",
+ "status": "determined",
+ "pages_unread": [
+  15
+ ],
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p024-1",
+   "page": 24,
+   "mark": "2",
+   "text": "σ 2n t",
+   "marks": [
+    {
+     "page": 23,
+     "context": "ar(Xi) = 1. The question is the following: under, say, LSI(σ"
+    },
+    {
+     "page": 23,
+     "context": "dimensional Poincaré-type inequality with common constant σ"
+    },
+    {
+     "page": 23,
+     "context": "n=2σ"
+    },
+    {
+     "page": 23,
+     "context": "inequality with an asymptotically much better constant σ"
+    },
+    {
+     "page": 24,
+     "context": "n"
+    },
+    {
+     "page": 24,
+     "context": "alogarithmicSobolevinequalitywithacommonconstantσ"
+    },
+    {
+     "page": 24,
+     "context": "4 −x"
+    },
+    {
+     "page": 24,
+     "context": "βn =(Mσn)"
+    },
+    {
+     "page": 24,
+     "context": "x∈Rn |Fn(x) −G(x)| ≤Cσ"
+    },
+    {
+     "page": 24,
+     "context": "n"
+    }
+   ],
+   "block": "library/download/blocks/prose-sec-007"
+  }
+ ],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "S.G.BOBKOV"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "S.G.BOBKOV1and F.GÖTZE"
+  },
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "Let (X1,...,Xn) be a random vector in R"
+  },
+  {
+   "page": 1,
+   "mark": "i",
+   "context": "ncard{i ≤n:X"
+  },
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "∥Fn −F∥= supx |Fn(x) −F(x)|, as well as by means of the L"
+  },
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "(i.i.d.), that is, when μ represents a product measure on R"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "garithmic Sobolev inequalities. A probability measure μ on R"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "type or spectral gap inequality with constantσ"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "on R"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "Varμ(g) ≤σ"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "Inthiscase,wewritePI(σ"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "with constant σ"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "with constant σ2and we write LSI(σ"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "Entμ(g"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "Entμ(g2) ≤2σ"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "g"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "g dμ)"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "known that LSI(σ"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "known that LSI(σ2) implies PI(σ"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "Theorem 1.1.Under PI(σ"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "Theorem 1.1.Under PI(σ2) on R"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "σmaxi,j |EX"
+  },
+  {
+   "page": 2,
+   "mark": "j",
+   "context": "σmaxi,j |EXi −EX"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "nof the random vector (X"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "nof the random vector (X1,...,X"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "i| ≤EW"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "i| ≤EW1(F"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "more than Cσ(A+log"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": ")"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "β =(Mσ)"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "n"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "sume that Fhas a density, bounded by a number M. Under LSI(σ"
+  },
+  {
+   "page": 3,
+   "mark": "e",
+   "context": "r"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "re−c(r/β)"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "E∥Fn −F∥≤Cβ log"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "nand βis of order"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "n, that is, the bound (1.6) is sharp up to a log"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "n, that is, the bound (1.6) is sharp up to a log1/3"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "As is easy to see, E∥Fn −F∥is also of order"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "tions of the ξjk’s satisfy the Poincaré-type inequality PI(σ"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "n"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "where Cis an absolute constant. Moreover, under LSI(σ"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "log"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "component (see [22]). Hence, if, additionally, LSI(σ"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "E∥Fn −G∥≤Clog"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "E∥Fn −G∥≤Clog1/3"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "n"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "we have ∥F−G∥≤Cσn−2/3in the presence of the PI(σ"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "always holds under LSI(σ"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "ItseemsnaturaltotrytorelaxtheLSI(σ"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "aturaltotrytorelaxtheLSI(σ2)-hypothesisin(1.8)and(1.9)toPI(σ"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "derive from PI(σ"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "E∥Fn −G∥≤Cσ"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "n"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "i= X"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "Gaussian case. In particular, if iis ﬁxed, while n grows, n"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "bedifferent.ItwasshownbyGustavsson[25]fortheGUEmodelthatif"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "n→t∈(0,"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "XiisasymptoticallynormalwithvarianceoforderC(t)log"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "n"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "EW1(Fn,F) ≤C(logn)"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "umethattherandomvariablesX1,...,XnhaveajointdistributionμonR"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "g(x1,...,xn) =f (x"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "g(x1,...,xn) =f (x1) + ··· + f (x"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "|∇g(x1,...,xn)|2=f ′(x"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "|∇g(x1,...,xn)|2=f ′(x1)"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "|∇g(x1,...,xn)|2=f ′(x1)2 + ··· + f ′(x"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "|∇g(x1,...,xn)|2=f ′(x1)2 + ··· + f ′(xn)"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "n"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "Proposition2.1.UnderPI(σ"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "belongs to L"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "≤σ"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "f"
+  },
+  {
+   "page": 6,
+   "mark": "p",
+   "context": "The latter may be extended to all L"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "Lemma 2.2.Under PI(σ"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "Lemma 2.2.Under PI(σ2), any Lipschitz function gon R"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "Moreover, for any locally Lipschitz g on R"
+  },
+  {
+   "page": 6,
+   "mark": "p",
+   "context": "More precisely, if |∇g| is in L"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "|g|pdμ)"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "|∇g|pdμ)"
+  },
+  {
+   "page": 6,
+   "mark": "p",
+   "context": "|∇g|pdμ)1/pfor L"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "subset of R"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "Proposition2.3.UnderPI(σ"
+  },
+  {
+   "page": 6,
+   "mark": "p",
+   "context": "L"
+  },
+  {
+   "page": 6,
+   "mark": "p",
+   "context": "≤(σp)"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "≤σ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "f"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "−∞K(x,y)f (y)"
+  },
+  {
+   "page": 7,
+   "mark": "y",
+   "context": "−∞K(x,y)f (y)d"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "iscontinuousanddeﬁnedonadensesubsetofL"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "ntinuousanddeﬁnedonadensesubsetofL2(R,dF(x)),takingvaluesinL"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "√n,soitmaybecontinuouslyextendedtothespaceL"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "Corollary 2.4.Under PI(σ"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "where ak = a + (b −a)"
+  },
+  {
+   "page": 8,
+   "mark": "x",
+   "context": "\u0006k|F(x) −G(x)|d"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "1≤k≤N(a"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "1≤k≤N(ak −a"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Let us now apply the lemma to the space (R"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "k=1F(\u0006k))"
+  },
+  {
+   "page": 8,
+   "mark": "c",
+   "context": "N)withparameter"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "x"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "x2 , therefore ψis decreasing on (0,x"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": ", therefore ψis decreasing on (0,x0] and is increasing on [x"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "where x0 = (2c)"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Nψ(N) = ψ(1) = 1 + c ≤1 + c"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "2, then the argmin lies in[1,+∞). ChooseN= [x"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "2, then the argmin lies in[1,+∞). ChooseN= [x0] + 1 = [(2c)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "2"
+  },
+  {
+   "page": 9,
+   "mark": "c",
+   "context": "22/3"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "22/3 c"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "2"
+  },
+  {
+   "page": 9,
+   "mark": "c",
+   "context": "22/3"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "22/3 c"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "σ/√n)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "Corollary 3.2.Under PI(σ"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "meters: the constant σ"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "n) in R"
+  },
+  {
+   "page": 10,
+   "mark": "x",
+   "context": "1+···+δ"
+  },
+  {
+   "page": 10,
+   "mark": "x",
+   "context": "δ"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "In other words, the canonical map Tfrom R"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "orovich–Rubinstein distance. As usual, the Euclidean space R"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "1|2 + ··· + |x"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "x,x′∈R"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "i),"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "i),1 ≤i ≤n, with point masses"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "Thus,themapT:R"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "given a probability measureμonR"
+  },
+  {
+   "page": 11,
+   "mark": "h",
+   "context": "1 −μ(A"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "in the class of all Borel sets A in R"
+  },
+  {
+   "page": 11,
+   "mark": "h",
+   "context": "2(where A"
+  },
+  {
+   "page": 11,
+   "mark": "h",
+   "context": "1 −\u000b(B"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "wherethesupistakenoverallLipschitzfunctionsgonR"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "aythereforebecontrolledbyPoincaré-typeinequalitiesintermsofσ"
+  },
+  {
+   "page": 11,
+   "mark": "h",
+   "context": "αμ(σh) ≤Ce−2"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": " combining (4.2) with (4.3), we may conclude that under PI(σ"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "a = Cσ(A+log"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": ")"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "Proposition4.2.Ifarandomvector(X1,...,Xn)inR"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "Poincaré-type inequality with constant σ"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "σmaxi,j |EX"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "σmaxi,j |EXi −EX"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "on R"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "on Rnsatisfying PI(σ"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": " 4.3.If maxi,j≤n |EXi −EXj| = O(logn), then W1(Fn,F) = O(log"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "n)"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "If ϕ(u,u′) = |u −u′|, then we also have the L"
+  },
+  {
+   "page": 13,
+   "mark": "x",
+   "context": "(δ"
+  },
+  {
+   "page": 13,
+   "mark": "x",
+   "context": "(δx1 + ··· + δ"
+  },
+  {
+   "page": 13,
+   "mark": "x",
+   "context": "1+ ··· + δ"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "Now, for an arbitrary random vector X = (X1,...,Xn) in R"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "nare independent copies of the (random) empirical measures F"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "n) ≤EW"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "n) ≤EW1(F"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "n) ≤EW1(Fn,F) + EW"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "n) = 2EW"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "n) = 2EW1(F"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "n) = EW"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "n) = EW1(F"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "n) ≤2EW"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "n) ≤2EW1(F"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "i| ≤EW"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "i| ≤EW1(F"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "Asbefore,let(X1,...,Xn)bearandomvectorinR"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "Proposition 5.1.Under LSI(σ"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "≤2σ"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "Proposition5.2.UnderLSI(σ"
+  },
+  {
+   "page": 14,
+   "mark": "p",
+   "context": "L"
+  },
+  {
+   "page": 14,
+   "mark": "p",
+   "context": "≤(σ√p)"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "≤2e−nh"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "≤2e−nh2/2σ"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "2t/n|x"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "2t/n|xi −y"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "Proposition 5.4.Under LSI(σ"
+  },
+  {
+   "page": 16,
+   "mark": "d",
+   "context": "f"
+  },
+  {
+   "page": 16,
+   "mark": "d",
+   "context": "f"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "fdF"
+  },
+  {
+   "page": 16,
+   "mark": "t",
+   "context": "2t]≤Q"
+  },
+  {
+   "page": 16,
+   "mark": "f",
+   "context": "2t]≤Qt"
+  },
+  {
+   "page": 16,
+   "mark": "t",
+   "context": "2t]≤Qtf≤P"
+  },
+  {
+   "page": 16,
+   "mark": "f",
+   "context": "2t]≤Qtf≤Pt"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "2σ"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "Proposition 6.1.Under LSI(σ"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "logEet(F"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "logEet(F(x)−F"
+  },
+  {
+   "page": 17,
+   "mark": "t",
+   "context": "Ee"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "Eet|F"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "Eet|Fn(x)−F(x)|≤Eet(F"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "Eet|Fn(x)−F(x)|≤Eet(Fn(x)−F(x))+ Ee−t(F(x)−F"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "−∞(F(x + h) −F(x −h))"
+  },
+  {
+   "page": 17,
+   "mark": "x",
+   "context": "−∞(F(x + h) −F(x −h))d"
+  },
+  {
+   "page": 17,
+   "mark": "h",
+   "context": "−∞(F(x + h) −F(x −h))dx ≤2"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "2σ"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "Corollary 6.2.Under LSI(σ"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "logEet(F"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "2σ"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "bounded by M. It follows from (6.1), with t = (αn"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "bounded by M. It follows from (6.1), with t = (αn1/3)λ and α"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "9M"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "9M2σ"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "where ξ= αn"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "μ{ξ≥r} ≤e(2/3)λ"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "μ{ξ≥r} ≤e(2/3)λ3/2−λr= e−r"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "where λ = r"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "Similarly,μ{ξ≤−r} ≤e−r"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "Similarly,μ{ξ≤−r} ≤e−r3/3.Therefore,μ{αn"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "rly,μ{ξ≤−r} ≤e−r3/3.Therefore,μ{αn1/3|Fn(x) −F(x)| ≥r} ≤2e−r"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "β =(Mσ)"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "n"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "ition6.3.AssumethatFhasadensity,boundedbyanumberM.UnderLSI(σ"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "P{|Fn(x) −F(x)| ≥βr} ≤2e−2"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "P{|Fn(x) −F(x)| ≥βr} ≤2e−2r"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "P{Fn(x) −F(x) ≥βr} ≤e−2"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "P{Fn(x) −F(x) ≥βr} ≤e−2r"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "P{F(x) −Fn(x) ≥βr} ≤e−2"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "P{F(x) −Fn(x) ≥βr} ≤e−2r"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "logEet(F"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "logEet(G(x)−F"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "ξ= αn"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "Proposition 6.4.Under LSI(σ"
+  },
+  {
+   "page": 18,
+   "mark": "r",
+   "context": "P{|Fn(x) −G(x)| ≥βr + ∥F−G∥} ≤2e−2"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "P{|Fn(x) −G(x)| ≥βr + ∥F−G∥} ≤2e−2r"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "where β = (Mσ)"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "logEet(F"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "2σ"
+  },
+  {
+   "page": 19,
+   "mark": "h",
+   "context": "n.Here,when"
+  },
+  {
+   "page": 19,
+   "mark": "r",
+   "context": "P{|Fn(I) −F(I)| ≥2βr} ≤4e−2"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "P{|Fn(I) −F(I)| ≥2βr} ≤4e−2r"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "Under LSI(σ"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "where β = (Mσ)"
+  },
+  {
+   "page": 20,
+   "mark": "d",
+   "context": "Ig(x)"
+  },
+  {
+   "page": 20,
+   "mark": "x",
+   "context": "Ig(x)d"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "heir mean with respect to a given probability measure μ on R"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "iables X1,...,Xn have joint distribution μ, satisfying LSI(σ"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "β =(Mσ)"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "n"
+  },
+  {
+   "page": 20,
+   "mark": "r",
+   "context": "≤(N −1)e−2"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "≤(N −1)e−2r"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "1≤i≤N[F"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "1≤i≤N[Fn(x"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "1≤i≤N[Fn(xi−) −F(x"
+  },
+  {
+   "page": 20,
+   "mark": "r",
+   "context": "≤(N −1)e−2"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "≤(N −1)e−2r"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "1≤i≤N[F(x"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "1≤i≤N[F(xi−1) −F"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "1≤i≤N[F(xi−1) −Fn(x"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "1≤i≤N[F"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "1≤i≤N[Fn(x"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "1≤i≤N[Fn(xi−) −F(x"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "1≤i≤N[F(x"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "1≤i≤N[F(xi−1) −F"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "1≤i≤N[F(xi−1) −Fn(x"
+  },
+  {
+   "page": 21,
+   "mark": "r",
+   "context": "P{ξN≥βr} ≤2(N −1)e−2"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "P{ξN≥βr} ≤2(N −1)e−2r"
+  },
+  {
+   "page": 21,
+   "mark": "r",
+   "context": "≤2(N −1)e−2"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "≤2(N −1)e−2r"
+  },
+  {
+   "page": 21,
+   "mark": "e",
+   "context": "βr"
+  },
+  {
+   "page": 21,
+   "mark": "r",
+   "context": "βre−2"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "βre−2r"
+  },
+  {
+   "page": 22,
+   "mark": "e",
+   "context": "3β log(1 + 1/β)"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "(1 + β)"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "(1 + β)2log"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "≤Bβ log"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "with some constant Bsatisfying (1+β)"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "3B)"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "E∥Fn −F∥≤5β log"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "(log"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "n)"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "n)1/3.Note,however,thatunderPI(σ"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "n)1/3.Note,however,thatunderPI(σ 2),andifallEX"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "x"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "x2p(x)dx)"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "lowsfromthePoincaré-typeinequalitythatσ"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "lowsfromthePoincaré-typeinequalitythatσ2≥Var(Xi) = EX"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "i.Averagingoverall"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "get σ"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "x"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "x"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "x2p(x)dx)"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "Theorem 7.1.Assume that X1,...,Xnhave a distribution on R"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "sume that X1,...,Xnhave a distribution on Rnsatisfying LSI(σ"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "where β = (Mσ)"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "E∥Fn −G∥≤5β log"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "probabilitymeasureonR"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "j≤kwith eigenvalues (X"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "j≤kwith eigenvalues (X1,...,X"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "σnmaxi,j |EX"
+  },
+  {
+   "page": 24,
+   "mark": "j",
+   "context": "σnmaxi,j |EXi −EX"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "σnmaxi,j |EXi −EXj|. Since max"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "σnmaxi,j |EXi −EXj|. Since maxi |EX"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "βn =(Mσ"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "n"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "x∈R"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "x∈Rn |F"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "x∈Rn |Fn(x) −G(x)| ≤Cσ 2/3 log"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "x∈Rn |Fn(x) −G(x)| ≤Cσ 2/3 log1/3"
+  },
+  {
+   "page": 24,
+   "mark": "t",
+   "context": "Ee"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "Eet|F"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "Eet|Fn(x)−G(x)|≤Eet(F"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "Eet|Fn(x)−G(x)|≤Eet(Fn(x)−G(x))+ Ee−t(F"
+  },
+  {
+   "page": 25,
+   "mark": "h",
+   "context": "3π"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "3πh"
+  },
+  {
+   "page": 25,
+   "mark": "x",
+   "context": "3πh3/2for all"
+  },
+  {
+   "page": 25,
+   "mark": "h",
+   "context": "3π"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "3πh"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "equality with constant σ"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "+ g(x)"
+  },
+  {
+   "page": 25,
+   "mark": "4",
+   "context": "n)"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "write E|Fn(x) −G(x)| ≤∥F−G∥+ 3ϕ(h), where ϕ(h) = g(x)h + h"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "h"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "n)"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "1+α)"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "ϕ(h) ≤(1 + α)h"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "h"
+  },
+  {
+   "page": 25,
+   "mark": "4",
+   "context": "h2= 2(1 + α)"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "h2= 2(1 + α)4/7ε"
+  },
+  {
+   "page": 25,
+   "mark": "7",
+   "context": "Notethattherequirementong(x)isequivalenttog(x)"
+  },
+  {
+   "page": 25,
+   "mark": "7",
+   "context": "1+α.Thus,wesetA =g(x)"
+  },
+  {
+   "page": 25,
+   "mark": "7",
+   "context": "α"
+  },
+  {
+   "page": 25,
+   "mark": "6",
+   "context": "1+α≥α"
+  },
+  {
+   "page": 25,
+   "mark": "7",
+   "context": "α"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "takeα= 1 + 2A"
+  },
+  {
+   "page": 25,
+   "mark": "4",
+   "context": "(1 + α)"
+  },
+  {
+   "page": 25,
+   "mark": "4",
+   "context": "(1 + α)4/7≤(2α)"
+  },
+  {
+   "page": 25,
+   "mark": "4",
+   "context": "(1 + α)4/7≤(2α)4/7and α"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "(1 + α)4/7≤(2α)4/7and α4/7≤1 + ((2A)"
+  },
+  {
+   "page": 25,
+   "mark": "4",
+   "context": "(1 + α)4/7≤(2α)4/7and α4/7≤1 + ((2A)1/6)"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "(1 + α)4/7≤(2α)4/7and α4/7≤1 + ((2A)1/6)4/7= 1 + (2A)"
+  },
+  {
+   "page": 25,
+   "mark": "4",
+   "context": "ϕ(h) ≤2 · 2"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "1 + (2A)"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "ε"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "ε3/7≤4(ε"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "ε3/7≤4(ε3/7+ A"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "ε3/7≤4(ε3/7+ A2/21ε"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "n)"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "n)2/3. This gives that, under LSI(σ"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "withprobabilityatleast1 −4exp{−cn"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "withprobabilityatleast1 −4exp{−cn2δ"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "σ"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "σ2|I|3}.Aswehavealreadymentioned,underPI(σ"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "ositionA1.Letμ1,...,μNbeprobabilitymeasuresonRsatisfyingPI(σ"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "LSI(σ"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "2)).Theimageμoftheproductmeasureμ1 ⊗··· ⊗μNunderanymapT:RN→R"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "with ﬁnite Lipschitz seminorm satisﬁes PI(σ"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "Lip) (resp., LSI(σ"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "PropositionA2.ThemeasureμonRsatisﬁesPI(σ"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": " A0(μ) and A1(μ) are ﬁnite. Moreover, the optimal value of σ"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "≤σ"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "Forexample,thetwo-sidedexponentialmeasureμ0,withdensity"
+  },
+  {
+   "page": 27,
+   "mark": "e",
+   "context": "2"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "2e−|x|,satisﬁesPI(σ"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "withσ"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "hσ2=4.Therefore,anyLipschitztransformμ=μ0T−1ofμ0satisﬁesPI(σ"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "σ"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "that PI(σ"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "that PI(σ2) is valid with σ"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "that PI(σ2) is valid with σ2= 4/H(μ)"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "measure with a logarithmically concave density satisﬁes PI(σ"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "Proposition A3.The measure μ on R satisﬁes LSI(σ"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "B0(μ) and B1(μ) are ﬁnite. Moreover, the optimal value of σ"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "≤σ"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "In particular, if μ has a log-concave density, then LSI(σ"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "rithmicallyconcave functions and sections of convex sets inR"
+  }
+ ]
+}

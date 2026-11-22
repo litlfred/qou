@@ -1,0 +1,42 @@
+C.4 Description at the level of homology 507
+
+where t is the map induced by the inclusion of pairs (Xj,Xj-1) > (Xn, Xj-1)
+and nis the map induced by the projection of pairs (Xn,Xo) > (Xn, Xj-1). [ft
+is an injection then C,, is unique.
+
+Proof To prove uniqueness of j, suppose that (C.4.2) is satisfied for some
+minimal j with a chain C,, and let j < r < n. The composition of the two maps
+
+(Xj, Xj-1) > (Xn, Xj-1) > (Xn, Xr-1)
+
+induces the zero mapping on homology because any class in the image of
+the first map has a cycle representative in X;. Letting 7’ denote projection of
+(Xn, Xo) to (Xn, X;-1), we have 2’(C) = x’(n(C)) = a’(U(C,)) = 0 and there-
+fore (C.4.2) cannot hold for r > j.
+
+For existence we argue by induction on n. The case n = | is trivial because
+then j = 1 andC, = C. Assume the result for n—1 and let C be a non-zero class
+in H,(X,,, Xo). If the image of C under the projection of (X;,, Xo) to (Xn, Xn—1) is
+non-zero then we may take C, to be this image and j to be n. Assume therefore
+that C projects to zero. The short exact sequence of chain complexes for the
+pairs
+
+0 > (Xn-1, Xo) > (Xn, X0) 9 (Xn, Xn-1) 7 0
+induces the exact sequence
+Ay(Xn-1, Xo) > Ak(Xn, Xo) > Hi(Xn, Xn-1)-
+
+By assumption C is in the kernel of the second map, hence is the image under
+the first map of some non-zero class C’. Applying the inductive hypothesis to
+C’ yields some j < n— 1 and acycleC, € Ay(X;, X;-1) satisfying (C.4.2) with
+C’ in place of C. The commuting diagram
+
+a 43
+C’ € (Xn-1, Xo) os CE (Xn, Xo)
+
+Ty | Tw
+ty 2
+
+C, € (Xj, Xj-1) (Xn-1, Xj-1) — (Xn, Xj-1)
+
+allows us to conclude a(C) = 7(3(C’)) = w(m(C’)) = w(u(C.)) = UC),
+verifying (C.4.2). ia)

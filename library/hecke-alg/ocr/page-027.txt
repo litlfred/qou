@@ -1,0 +1,58 @@
+22 3. THE MODULAR REPRESENTATION THEORY OF #
+
+3.12 Lemma Let \ be a partition of n and suppose that g is a Garnir tableau.
+Then there exists a partition pt of n such that ft > and
+
+Mpag=h — y Mp,
+
+resta(r)
+7Dg
+
+where h is a linear combination of terms My, such that u and o are row standard
+p-tableaur.
+
+Proof. Write A = (Aj,..., Ax) and suppose that g = gj; is the (7,j)th Garnir
+tableau. Set v= (Ay,... ,Ai-1, 9 — 1, Ae + 1 Aiga — J, Aiea, --. , Ak), a composition
+of n, and let X = {uw |v € Gy and w € G, }. Then, by Proposition 3.3,
+
+SS om™m=S>% = SS Tm,
+
+we Syn eX vEGNDy,
+
+(cf. Example 3.11). Now {Pw|weG,n&} = {g}U {7 € Std(d) | 7 > g}, so
+rearranging this equation we obtain
+
+Morg = > Moe — > Marz.
+d(v)EG\NA resa()
+TD ag
+In order to complete the proof we need to show that h = )>, mpe has the required
+form. Let ye be the partition obtained from v by reordering its parts. Then pp > A
+so the result follows from Lemma 3.9. Oo
+
+3.13 Lemma Suppose that t 1s a row standard \-tableau which is not standard.
+Then there exists a Garnir tableau g and w € Gy such that t = gw and (d(t)) =
+£(d(g)) + E(w).
+
+Proof. Because t is not standard there exists a node (7, 7) in [A] such that (7, 7) >
+t(i+1,j). If tis the (7, j)th Garnir tableau we may take w = | and there is nothing
+to prove; otherwise, there exists an s € S such that t/ = ts is row standard,
+t(i,7) > U(i+ 1,7) and t’ p t. Let g be the (i, j)th Garnir tableau; by induction
+we may assume that there exists a permutation w’ € Gy such that t! = gw’ and
+&(d(t’)) = ¢(d(g)) + &(w’). Therefore, if we set w = w’s then t = gw and
+
+Md) = Md(t)) + 1 = Hd(g)) + ew") + 1 = da) + Cw)
+
+as required. Oo
+
+3.14 Lemma Let X be a partition of n and suppose that s and t are row standard
+A-tableauz, Then ms, can be written as a linear combination of elements My, where
+uand 0 are standard j-tableau for some partition js of n such that either (i) p>,
+or (ii) ph=A andubs andve t.
+
+Proof. First suppose that ¢ is row standard but not standard. By Lemma 3.13,
+Mgt = MsgTw for some Garnir tableau g and some w € Gy. Consequently, by
+Lemma 3.12 there exists an element h = S7 rupMyy, where u and b are row standard
+petableaux with ye > A, such that
+
+mse = Tis) MO gTw = Tia) (« -» mor) Ta = TigyhTw — S_ rose,
+Dg opt

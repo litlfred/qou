@@ -8,7 +8,7 @@
   "pages": 12,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -38,7 +38,7 @@
   "title_verified": true,
   "title_evidence": {
    "metadata": "arXiv:hep-th/9711057v2 30 Apr 1998",
-   "heading": "The microscopic spectrum of the QCD Dirac operator with \ufb01nite quark masses neous breaking of chiral symmetry in QCD. In Euclidean space, the Dirac operator reads i / D = i / \u2202 + g ( \u03bb a / 2) / A a , where eigenvalue equation is i / D\u03c8 i = \u03bb i \u03c8 i with real eigenvalues \u03bb i . Because the Dirac operato",
+   "heading": "The microscopic spectrum of the QCD Dirac operator with ﬁnite quark masses neous breaking of chiral symmetry in QCD. In Euclidean space, the Dirac operator reads i / D = i / ∂ + g ( λ a / 2) / A a , where eigenvalue equation is i / Dψ i = λ i ψ i with real eigenvalues λ i . Because the Dirac operato",
    "text": "The microscopic spectrum of the QCD Dirac operator with finite quark masses",
    "corroborated_by": [
     "page"
@@ -184,7 +184,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "Microscopic spectral density for two degenerate \ufb02avors of rescaled mass m = 5 (solid line), in the chiral limit (short dashes), and in the quenched approximation (long dashes)",
+   "title": "Microscopic spectral density for two degenerate ﬂavors of rescaled mass m = 5 (solid line), in the chiral limit (short dashes), and in the quenched approximation (long dashes)",
    "page": 11,
    "confidence": 0.9,
    "evidence": [
@@ -197,7 +197,7 @@
   {
    "kind": "figure",
    "number": "2",
-   "title": "Distribution of the smallest eigenvalue for two degenerate \ufb02avors of rescaled mass m = 5 (solid line), in the chiral limit (short dashes), and in the quenched approximation (long dashes)",
+   "title": "Distribution of the smallest eigenvalue for two degenerate ﬂavors of rescaled mass m = 5 (solid line), in the chiral limit (short dashes), and in the quenched approximation (long dashes)",
    "page": 12,
    "confidence": 0.9,
    "evidence": [
@@ -468,6 +468,7 @@
   },
   "sections": 11,
   "chars_total": 35949,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "wgw.tex",

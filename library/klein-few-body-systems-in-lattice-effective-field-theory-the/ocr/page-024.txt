@@ -1,0 +1,57 @@
+Chapter 2 Theory
+
+Stapp parametrization [60]. Using the Stapp parametrization, the S-matrix is given by
+S= exp (i5;1) 0 | cos (2) isin | "" (i5;1) 0 | (2.53)
+0 exp (i5j41) -isin (2e)) cos (2e)) 0 exp (i541)
+
+where e; is the mixing angle between both channels. Again, the S-matrix can be used to propagate the
+incoming wave function ¥;,,
+
+_ exp [-i(ar - i3)| exp (-i3) 0 (a
+Min = ~~ igr 0 exp 13) A es)
+via Eq. (2.31) to the outgoing function P,,,,,
+exp|-i(gr - i3)|
+Pout = S¥in =~ ~~ igr (255)
+
+Cexp (i + 2i5;_,) cos(2e,) + iD exp (iF + 5;_1 + 6),1) sin (2¢,)
+
+Dexp(-i3 + 2i6 ;_) cos (2¢;) + iC exp (-i5 +6j4+ 541) se :
+
+A more detailed derivation can be found in [61]. After having defined the incoming and outgoing wave
+functions, one should follow the procedure in the uncoupled case, where one redefines the full wave in
+terms of a standing wave. Further details for the concrete calculation of phase shifts and mixing angles
+are given in Subsec. 3.4.2.
+
+2.2.3 Scattering theory for Coulomb forces
+
+Beside the strong interaction between particles, we also have the electromagnetic interaction, which must
+be treated separately. The beforementioned considerations concerning the solution of the free system
+only hold for an effective potential « 1/ r? due to angular momentum and all other interactions must fall
+off with 1/r“ with a > 2. Including the Coulomb force results in a different effective potential and leads
+to a new radial Schrédinger equation,
+
++ + u - 0 + 21 u,(p) = uj(p). (2.56)
+p Pp
+
+with p = qr and 7 = apy, /q. For such a system, we have again two solutions, a regular one,
+
+= Td+1 +i
+ud ) d+ 1+ al exp (—ip) p!*!F(+ 1 — in, 21 + 2:2ip), (2.57)
+
+F((7, p) = 2! exp(n Ql+D!
+
+and an irregular one,
+
+[Td + 1+ in)|
+
+T
+oUF xp l-i - 15) 2ipy UL + 1 — in, 21 + 2:2ip). (2.58
+reTip xp |-i(o-15)] ip" UU + 1 = in, 214+ 2:2ip). (2.58)
+
+. Tv
+GQ, p) = iF (7, p) + exp(5n]
+
+F and U are hypergeometric functions and explicit forms are given in App. A. These solutions are more
+general than the Bessel functions, and it can be shown that their asymptotic behavior is the same as the
+
+18

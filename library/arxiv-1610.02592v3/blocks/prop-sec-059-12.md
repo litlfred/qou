@@ -1,1 +1,0 @@
-Letf :M→N beasmoothhomotopicequivalencebe-

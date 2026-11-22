@@ -2,85 +2,115 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1409.0848v3",
  "source_sha256": "5af73ef812ccee40",
- "brief": "FACTORIZATION HOMOLOGY OF STRATIFIED SPACES — This work forms a foundational study of factorization homol ogy, or topological chiral homology, at the generality of stratiﬁed spaces with tangen tial",
- "extended": "**FACTORIZATION HOMOLOGY OF STRATIFIED SPACES**\n\n*DAVID AYALA, JOHN FRANCIS, AND HIRO LEE TANAKA*\n\n52 pp, 15 sections.\n\n**Abstract.** This work forms a foundational study of factorization homol ogy, or topological chiral homology, at the generality of stratiﬁed spaces with tangen tial structures. Examples of such factorization homology theories include intersection hom ology, compactly supported stratiﬁed mapping spaces, and Hochschild homology with coeﬃcients. O ur main theorem characterizes factorization homology theories by a generalization of the Eilenberg–Steenrod axioms; it can also be viewed as an analogue of the Baez–Dolan cobordism hypothe sis formulated for the observables, rather than state spaces, of a topological quantum ﬁeld theo ry. Using these axioms, we extend the nonabelian Poincar´ e duality of Salvatore and Lurie to t he setting of stratiﬁed spaces – this is a nonabelian version of the Poincar´ e duality given by int ersection homology.\n\n**Outline.** Introduction; 1 Recollections; 2 Factorization; 2.1 Disk algebras; 2.2 Factorization homology; 2.4 Localizing with respect to isotopy equival; 2.5 Pushforward; 2.6 Algebras over a closed interval; 2.7 Homology theories; 3 Homotopy invariant homology theories; 3.1 Classical homology theories; 3.3 Compactly supported cohomology; 4 Examples of factorization homology theories; 4.2 Intersection homology; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 0.2: There is an equivalence between Disk(B)-algebras in V and V-valued\n- Theorem 2.43: , to give a proof of non-abelian Poincar´ e duality, afte r [Sa], [Se2], and Section 5.5.6\n- Theorem 2.15: Let V be a symmetric monoidal ∞-category which is ⊗-sifted cocomplete, and let\n- Theorem 2.25: Let V be a symmetric monoidal ∞-category which is ⊗-sifted co-\n- Theorem 2.43: LetX be a B-manifold. The factor-\n- Theorem 3.18: (Non-abelian Poincar´ e duality) Let B be an ∞-category of basics each of pure",
+ "brief": "FACTORIZATION HOMOLOGY OF STRATIFIED SPACES — This work forms a foundational study of factorization homology, or topological chiral homology, at the generality of stratiﬁed spaces with tangential",
+ "extended": "**FACTORIZATION HOMOLOGY OF STRATIFIED SPACES**\n\n*DAVID AYALA, JOHN FRANCIS, AND HIRO LEE TANAKA*\n\n52 pp, 21 sections.\n\n**Abstract.** This work forms a foundational study of factorization homology, or topological chiral homology, at the generality of stratiﬁed spaces with tangential structures. Examples of such factorization homology theories include intersection homology, compactly supported stratiﬁed mapping spaces, and Hochschild homology with coeﬃcients. Our main theorem characterizes factorization homology theories by a generalization of the Eilenberg–Steenrod axioms; it can also be viewed as an analogue of the Baez–Dolan cobordism hypothesis formulated for the observables, rather than state spaces, of a topological quantum ﬁeld theory. Using these axioms, we extend the nonabelian Poincar´e duality of Salvatore and Lurie to the setting of stratiﬁed spaces – this is a nonabelian version of the Poincar´e duality given by intersection homology.\n\n**Outline.** Front matter; Introduction; 1 Recollections; 1.1 Stratified spaces; 2 Factorization; 2.1 Disk algebras; 2.2 Factorization homology; 2.3 Disks and finite subsets; 2.4 Localizing with respect to isotopy equival; 2.5 Pushforward; 2.6 Algebras over a closed interval; 2.7 Homology theories; 3 Homotopy invariant homology theories; 3.1 Classical homology theories; 3.2 1-point compactifications; 3.3 Compactly supported cohomology; 3.4 Non-abelian Poincaré duality; 4 Examples of factorization homology theories",
  "tokens": {
-  "brief": 49,
-  "extended": 488
+  "brief": 48,
+  "extended": 370
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
    "id": "sec-000-introduction",
    "title": "Introduction",
-   "pages": "1-6"
+   "pages": "2-6"
   },
   {
    "id": "sec-001-1-recollections",
    "title": "Recollections",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-002-11-stratified-spaces",
+   "title": "Stratified spaces",
    "pages": "6-14"
   },
   {
-   "id": "sec-002-2-factorization",
+   "id": "sec-003-2-factorization",
    "title": "Factorization",
    "pages": "14-14"
   },
   {
-   "id": "sec-003-21-disk-algebras",
+   "id": "sec-004-21-disk-algebras",
    "title": "Disk algebras",
    "pages": "14-17"
   },
   {
-   "id": "sec-004-22-factorization-homology",
+   "id": "sec-005-22-factorization-homology",
    "title": "Factorization homology",
-   "pages": "17-23"
+   "pages": "17-20"
   },
   {
-   "id": "sec-005-24-localizing-with-respect-to-isotopy-equivalenc",
+   "id": "sec-006-23-disks-and-finite-subsets",
+   "title": "Disks and finite subsets",
+   "pages": "20-23"
+  },
+  {
+   "id": "sec-007-24-localizing-with-respect-to-isotopy-equivalenc",
    "title": "Localizing with respect to isotopy equivalences",
    "pages": "23-26"
   },
   {
-   "id": "sec-006-25-pushforward",
+   "id": "sec-008-25-pushforward",
    "title": "Pushforward",
    "pages": "26-30"
   },
   {
-   "id": "sec-007-26-algebras-over-a-closed-interval",
+   "id": "sec-009-26-algebras-over-a-closed-interval",
    "title": "Algebras over a closed interval",
    "pages": "30-32"
   },
   {
-   "id": "sec-008-27-homology-theories",
+   "id": "sec-010-27-homology-theories",
    "title": "Homology theories",
    "pages": "32-35"
   },
   {
-   "id": "sec-009-3-homotopy-invariant-homology-theories",
+   "id": "sec-011-3-homotopy-invariant-homology-theories",
    "title": "Homotopy invariant homology theories",
    "pages": "35-35"
   },
   {
-   "id": "sec-010-31-classical-homology-theories",
+   "id": "sec-012-31-classical-homology-theories",
    "title": "Classical homology theories",
-   "pages": "35-38"
+   "pages": "35-36"
   },
   {
-   "id": "sec-011-33-compactly-supported-cohomology",
+   "id": "sec-013-32-1-point-compactifications",
+   "title": "1-point compactifications",
+   "pages": "36-38"
+  },
+  {
+   "id": "sec-014-33-compactly-supported-cohomology",
    "title": "Compactly supported cohomology",
-   "pages": "38-42"
+   "pages": "38-40"
   },
   {
-   "id": "sec-012-4-examples-of-factorization-homology-theories",
+   "id": "sec-015-34-non-abelian-poincaré-duality",
+   "title": "Non-abelian Poincaré duality",
+   "pages": "40-42"
+  },
+  {
+   "id": "sec-016-4-examples-of-factorization-homology-theories",
    "title": "Examples of factorization homology theories",
+   "pages": "42-42"
+  },
+  {
+   "id": "sec-017-41-factorization-homology-of-stratified-1-manifo",
+   "title": "Factorization homology of stratified 1-manifolds",
    "pages": "42-43"
   },
   {
-   "id": "sec-013-42-intersection-homology",
+   "id": "sec-018-42-intersection-homology",
    "title": "Intersection homology",
    "pages": "43-51"
   },
   {
-   "id": "sec-014-references",
+   "id": "sec-019-references",
    "title": "References",
    "pages": "51-52"
   }
@@ -89,8 +119,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

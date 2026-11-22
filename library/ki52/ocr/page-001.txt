@@ -1,0 +1,49 @@
+On the asymptotic expansion of
+the Kashaev invariant of the 52 knot
+
+Tomotada Ohtsuki
+
+Abstract
+
+We give a presentation of the asymptotic expansion of the Kashaev invariant of the 52 knot.
+As the volume conjecture states, the leading term of the expansion presents the hyperbolic volume
+and the Chern-Simons invariant of the complement of the 52 knot. Further, we obtain a method to
+compute the full Poincare asymptotics to all orders of the Kashaev invariant of the 52 knot.
+
+1 Introduction
+
+In [16, 17] Kashaev defined the Kashaev invariant (L), € C of a link L for N = 2,3,---
+by using the quantum dilogarithm. In [18] he conjectured that, for any hyperbolic link L,
+
+log ( L)y
+
+Qn + lim = vol(S*® — L),
+
+N-+00
+
+where “vol” denotes the hyperbolic volume, and gave evidence for the conjecture for
+the figure-eight knot, the 52 knot and the 6; knot, by formal calculations. In 1999, H.
+Murakami and J. Murakami [24] proved that the Kashaev invariant (ZL), of any link L
+is equal to the N-colored Jones polynomial Jy(L;e2"¥—'/") of L evaluated at e"V—V/%,
+where Jy(L; q) denotes the invariant obtained as the quantum invariant of links associated
+with the N-dimensional irreducible representation of the quantum group U,(sl2). Further,
+as an extension of Kashaev’s conjecture, they conjectured that, for any knot K,
+
+log | In (Kk; exv-1/N)|
+
+ii _ 3
+Qn Jim, N vol(S° — Ix),
+
+where “vol” in this formula denotes the simplicial volume (normalized by multiplying
+by the hyperbolic volume of the regular ideal tetrahedron). This is called the volume
+conjecture. As a complexification of the volume conjecture, it is conjectured in [25] that,
+for a hyperbolic link L,
+
+log Jn (L: ,2n/—1/N
+QnV—-1- lim og In (Lie )
+
+vo N = cs($° — L) + V1 vol(S? = L) (1)
+
+for an appropriate choice of a branch of the logarithm, where “cs” denotes the Chern-
+Simons invariant. Furthermore, it is conjectured [11] (see also [3, 12, 46]) from the view-
+point of the SL(2, C) Chern-Simons theory that the asymptotic expansion of Jy (K; eenv-1/ a)

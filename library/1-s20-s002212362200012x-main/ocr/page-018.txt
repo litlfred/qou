@@ -1,0 +1,52 @@
+18 R. Eldan, O. Shamir / Journal of Functional Analysis 282 (2022) 109392
+
+Lemma 16. Let ¢ > 0. Let W; be a standard Brownian motion and let X;,Q; be adapted
+to W;, which satisfy
+
+t
+
+Kiser mit [Quads
+
+0
+
+and such that Q, < 0, almost surely for allt. Let r = inf{t; X, = 0}. One has
+
+P(r>s)< <, Vs >0.
+
+Proof. By the reflection principle (see [12, Theorem 2.19]), we have
+
+P ( sin X,<-2) >P (nin, I, +el=0)
+tE[0,s] te (0,s]
+
+= 2P(W, < -e)
+
+= 1-2(P(W, € (0, <])
+2e
+
+>1- ». Oo
+
+~ V21s
+
+Let t + T(t) be the unique increasing function satisfying
+
+T(t) °°
+4 / eds =t, VO<t< ife oP S dg,
+0 0
+According to (27),
+T(s)
+[e"'Yilr(s) =4 | etdt = s
+0
+
+Since, as seen above, the process e~°'Y; is a super-martingale, by applying a change of
+time we have that the process t > e PTOY 1) is also a super-martingale (with respect
+to the filtration F7(,)). We may invoke the above lemma on this process and use the fact
+that 4f} e~8sds > 4, to obtain
+
+P (E°) = P(r >1) <eVB.
+Finally, that by Equation (18) we have for all v € R” that
+
+=(t-1)/16-
+
+B [| VaTr(A,(wi)) nTr(A,(wr))
+
+w= 0| < ne

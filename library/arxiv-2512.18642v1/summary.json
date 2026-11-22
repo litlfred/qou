@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2512.18642v1",
  "source_sha256": "c4c7f8b0a719aa2d",
- "brief": "A Hidden Quantum Markov model framework for — This paper introduces a hidden quantum Markov models (HQMMs) framework to the Af- fleck–Kennedy–Lieb–Tasaki (AKLT) state—a cornerstone example of a",
- "extended": "**A Hidden Quantum Markov model framework for**\n\n*Entanglement and Topological Order in the AKLT Chain*\n\n20 pp, 8 sections.\n\n**Abstract.** This paper introduces a hidden quantum Markov models (HQMMs) framework to the Af- fleck–Kennedy–Lieb–Tasaki (AKLT) state—a cornerstone example of a symmetry-protected topological (SPT) phase. The model’s observation system is the physical spin-1 chain, which emerges from a hidden spin-½layer through well-defined quantum emission operation. We show that the underlying Markov dynamics caputure maximal entanglement through the use of significant channels relevant to the AKLT state. We also show that SPT order induces a covariance on the observation decoding channels. This establishes an additional bridge between the quantum Machine learning and many-body physics, with promising implication in topological order and quantum information. KeywordsAKLT, Hidden Markov Model, SPT Order, Quantum Theory, Entanglement\n\n**Outline.** Introduction; Preliminaries; Hidden Quantum Markov Models; The AKLT State and its SPT Order; HQMM Structure of the AKLT State; Entanglement Dynamics in Hidden Markov Channel; SPT order on the AKLT,s HQMMs; Conclusion",
+ "brief": "A Hidden Quantum Markov model framework for Entanglement and Topological Order in the AKLT Chain — This paper introduces a hidden quantum Markov models (HQMMs) framework to the Af",
+ "extended": "**A Hidden Quantum Markov model framework for Entanglement and Topological Order in the AKLT Chain**\n\n*Abdessatar Souissi*\n\n20 pp, 9 sections.\n\n**Abstract.** This paper introduces a hidden quantum Markov models (HQMMs) framework to the Af- fleck–Kennedy–Lieb–Tasaki (AKLT) state—a cornerstone example of a symmetry-protected topological (SPT) phase. The model’s observation system is the physical spin-1 chain, which emerges from a hidden spin-½ layer through well-defined quantum emission operation. We show that the underlying Markov dynamics caputure maximal entanglement through the use of significant channels relevant to the AKLT state. We also show that SPT order induces a covariance on the observation decoding channels. This establishes an additional bridge between the quantum Machine learning and many-body physics, with promising implication in topological order and quantum information.\n\n**Outline.** Front matter; Introduction; Preliminaries; Hidden Quantum Markov Models; The AKLT State and its SPT Order; HQMM Structure of the AKLT State; Entanglement Dynamics in Hidden Markov Channel; SPT order on the AKLT,s HQMMs; Conclusion",
  "tokens": {
-  "brief": 48,
-  "extended": 296
+  "brief": 44,
+  "extended": 286
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-introduction",
    "title": "Introduction",

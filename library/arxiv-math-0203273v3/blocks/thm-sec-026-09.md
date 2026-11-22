@@ -1,0 +1,1 @@
+2. Let H be an afﬁne k-group and let k′ be an extension of k. Then every representation of H over k′ is a direct summand of a representation deﬁned over k if and only if either k′ is algebraic over k or the prounipotent radical of H has dimension ≤1.

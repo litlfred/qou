@@ -1,0 +1,67 @@
+using mult-strict-left-mono|OF 2, of 2]
+by (simp add: field-simps)
+
+have (sgn (Re B))? = 1
+using ‘(Re B # 0
+by (simp add: sgn-if)
+
+hence (—Re B + sgn (Re B) * sqrt((Re B)? — (Re A)))? < (Re A)?
+using «(Re B)? > (Re A)*) 3
+by (simp add: power2-diff field-simps)
+
+thus in-ocircline-cmat-cvec unit-circle-cmat (calc-z-axis-intersection-cmat-cvec H)
+using « <(Re B)? > (Re A)»
+by (auto simp add: vec-cnj-def power2-eq-square split: if-split-asm)
+qed
+qed
+
+lemma calc-2-azis-intersection:
+assumes is-poincare-line H and intersects-x-axis H
+shows calc-a-axis-intersection H € circline-set H \ circline-set x-axis
+proof (cases is-line H)
+case True
+thus ?thesis
+using assms
+unfolding circline-set-def
+by simp (transfer, transfer, auto simp add: vec-cnj-def)
+next
+case False
+thus ?thesis
+using assms
+unfolding circline-set-def
+proof (simp, transfer, transfer)
+fix H
+assume hh: hermitean H \ H # mat-zero
+then obtain A B D where *: H = (A, B, cnj B, D) is-real A is-real D
+using hermitean-elems
+by (cases H) blast
+assume is-poincare-line-cmat H
+hence *: H = (A, B, cnj B, A) is-real A
+using *
+by auto
+assume 7— circline-A0-cmat H
+hence A 4 0
+using *
+by auto
+
+assume intersects-1-axis-cmat H
+hence (Re B)? > (Re A)?
+using * (A #4 0»
+by (auto simp add: power2-eq-square complex.expand)
+
+hence Re B 4 0
+by auto
+
+show on-circline-cmat-cvec H (calc-a-axis-intersection-cmat-cvec H) A
+on-circline-cmat-cvec x-axis-cmat (calc-1-axis-intersection-cmat-cvec H) (is ?P1 A ?P2)
+proof
+show on-circline-cmat-cvec H (calc-x-axis-intersection-cmat-cvec H)
+proof (cases circline-A0-cmat H)
+case True
+thus ?thesis
+using * <is-poincare-line-cmat H) <intersects-x-axis-cmat H»
+by (simp add: vec-cnj-def)
+next
+case False
+
+103

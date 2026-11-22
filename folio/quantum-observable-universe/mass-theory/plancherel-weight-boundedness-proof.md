@@ -41,5 +41,5 @@ See [Table](#tbl:plancherel-weight-boundedness-table-data).
 
 Full tables for $n \in \{3, 4, 5, 6, 9, 12\}$ — including q-deformed
 dimensions, signed content (chirality marker $= 0$), and
-depth-stratified groupings used by mass-tower computations — are in
-`computations/wedderburn-strata-witness.json`.
+depth-stratified groupings used by mass-tower computations — are
+produced by the formal derivation.

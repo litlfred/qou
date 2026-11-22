@@ -7,10 +7,11 @@ section_number: 2.4
 pages: 15-16
 source_pdf: 1611.09182v1.pdf
 source_sha256: 6b40549b96d40ac7
-doc_brief: "Standard model physics from an algebra? — 57 sections: Abstract; Acknowledgements; Introduction"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.978
-latex_coverage_ratio: 1.0
+latex_coverage_ratio: 0.978
+doc_brief: "Standard model physics from an algebra? — 77 sections: Front matter; Abstract; Acknowledgements"
 ---
 We come from sketching a model,  whose only fundamental input is an algebra, $A$.  
 From the  algebraic expressions of $A$, we argue that multiple physical concepts can materialize.  

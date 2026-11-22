@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2401.04019v1
-doc_title: "TRUNCA TED THET A SERIES RELA TED TO THE JACOBI TRIPLE PRODUCT IDENTITY"
+doc_title: "TRUNCATED THETA SERIES RELATED TO THE JACOBI TRIPLE PRODUCT IDENTITY"
 section_id: sec-007-5-combinatorial-proof-of-an-identity-related-to
 section_title: "Combinatorial proof of an identity related to the Jacobi Triple Product"
 section_number: 5
 pages: 13-16
 source_pdf: 2401.04019v1.pdf
 source_sha256: 1a29e52a81639640
-doc_brief: "TRUNCATED THETA SERIES RELATED TO THE JACOBI TRIPLE PRODUCT IDENTITY — The work of Andrews and Merca on the truncated Euler’s pen- tagonal number theorem led to a resurgence in research on tru ncated"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.993
-latex_coverage_ratio: 0.988
+latex_prose_ratio: 0.872
+latex_coverage_ratio: 0.939
+doc_brief: "TRUNCATED THETA SERIES RELATED TO THE JACOBI TRIPLE PRODUCT IDENTITY — The work of Andrews and Merca on the truncated Euler’s pen- tagonal number theorem led to a resurgence in research on truncated"
 ---
 []{#sec-JTP label="sec-JTP"}
 

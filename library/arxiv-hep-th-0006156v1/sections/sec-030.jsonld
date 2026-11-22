@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-hep-th-0006156v1/sections/sec-030",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Proof of the Pentagon identity",
+  "pageStart": 17,
+  "pageEnd": 20,
+  "contains": [
+    "library/arxiv-hep-th-0006156v1/blocks/prose-sec-030"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0006156v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0006156v1/manifest.jsonld",
+  "provenance": "ingested"
+}

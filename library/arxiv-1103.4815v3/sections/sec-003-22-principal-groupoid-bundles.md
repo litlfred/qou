@@ -7,10 +7,11 @@ section_number: 2.2
 pages: 6-9
 source_pdf: 1103.4815v3.pdf
 source_sha256: 28647b02ea1441e3
-doc_brief: "Four Equivalent Versions of Non-Abelian Gerbes — We recall and partially improve four versions of smooth, non -abelian gerbes: ˇCech cocycles, classifying maps, bundle gerbes, and principal"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.902
-latex_coverage_ratio: 0.931
+latex_coverage_ratio: 0.975
+doc_brief: "Four Equivalent Versions of Non-Abelian Gerbes — We recall and partially improve four versions of smooth, non-abelian gerbes: ˇCech cocycles, classifying maps, bundle gerbes, and principal 2-bundles."
 ---
 We give the definition of a principal  bundle in exactly the same way as we are going to define principal \emph{2-}bundles in Section \ref{sec:2bundle}.
 

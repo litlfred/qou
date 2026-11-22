@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2304.04367v1/sections/sec-006",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "A Analytical calculation of pair polarization from angle-dependent cross section",
+  "pageStart": 4,
+  "pageEnd": 6,
+  "contains": [
+    "library/arxiv-2304.04367v1/blocks/prose-sec-006",
+    "library/arxiv-2304.04367v1/blocks/figure-img-p005-1",
+    "library/arxiv-2304.04367v1/blocks/figure-img-p005-2",
+    "library/arxiv-2304.04367v1/blocks/figure-img-p006-1",
+    "library/arxiv-2304.04367v1/blocks/figure-img-p006-2",
+    "library/arxiv-2304.04367v1/blocks/figure-img-p006-3"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2304.04367v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2304.04367v1/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,14 +1,56 @@
 ---
 doc_id: fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma
-doc_title: "M. FUJJI"
+doc_title: "On totally geodesic boundaries of hyperbolic 3-manifolds"
 section_id: sec-001-f-udc
 section_title: "UdC"
 section_number: F
-pages: 10-13
+pages: 10-14
 source_pdf: fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-manifolds.pdf
 source_sha256: d3d3bf68955ad775
 toc_source: inferred
+doc_brief: "On totally geodesic boundaries of hyperbolic 3-manifolds — 3 sections: Front matter; An ideal tetrahedral decomposition; UdC"
 ---
+2 — 1)ZS4Z86 = 0 ,
+TOTALLY GEODESIC BOUNDARIES OF HYPERBOLIC 3-MANIFOLDS
+fιι>:=Zt(zi,—ΐ){zu—ί)—(zl,— 
+ΐ){zSi—l)zt,zti=O,
+fii
+/i.
+fu
+fu
+fu
+/l.
+Λ.
+Λ.
+fvL
+J23
+fu
+/.,
+/,.
+/.T
+/28
+/2ί
+/ . .
+253
+a — 1 > 3 3 = 0 ,
+1)—Ui-
+3i —1)=0,
+— 1)220*24 =
+M 
+1 = 0 ,
+= 2 β(2 2 β—l)2 2i(2 β
+= 24(25—1
+= (Z26 — l)(2sβ—
+6—1)284
+2 —1)(2 8 6 — l ) 2 s β = 0 .
+From the definitions of //s, for any z in a certain open neighborhood (7 of
+the original solution z° in C
+36, z satisfies both the equations (*) and uχ—1 if and
+only if it satisfies the equations (***). In this paper we are concerning only
+the case where z is near z°, so it suffices to consider the reduced deformation
+space WΓ\U=F'\Qf 
+- , 0), where
+F: UdC
 36—> 
 C
 3δ
@@ -156,3 +198,40 @@ The author would like to express his sincere gratitude
 to Professor Shigeyuki Morita and Professor Sadayoshi Kojima for their constant
 encouragement and many useful suggestions. 
 He acknowledges useful com-
+munications and correspondence with Professors Michael Kapovich, Walter
+Neumann, Alan Reid and Teruhiko Soma. He also wish to thank Mr. Yasushi
+Yamashita for his supporting of the numerical calculations in §3.
+REFERENCES
+[ 1 ] R. BROOKS, Circle packings and co-compact extensions of Klemian groups. Invent.
+Math. 86 (1986), 461-469.
+[ 2 ] 
+D.B.A. EPSTEIN AND R.C. PENNER, 
+Euclidean decompositions of noncompact
+hyperbolic manifolds. J. Differ. Geom. 27 (1988), 67-80.
+[ 3 ] M. Fujπ, 
+Hyperbolic 3-manifolds with totally geodesic boundary. Osaka J. Math.
+27 (1990), 539-553.
+[ 4 ] M. KAPOVICH, 
+On faithful representations of fundamental groups of 3-manifolds
+with toroidal boundary. (Preprint 1990).
+[ 5 ] 
+M. KAPOVICH, 
+Eisenstein series and Dehn surgery. (Preprint 1991).
+[ 6 ] 
+W.D. NEUMANN AND A.W. REID, Arithmetic of hyperbolic manifolds. (Preprint
+1990).
+[ 7 ] 
+W.D. NEUMANN AND A.W. REID, Rigidity of cusps in deformations of hyper-
+bolic 3-orbifolds. (Preprint 1991).
+TOTALLY GEODESIC BOUNDARIES OF HYPERBOLIC 3-MANIFOLDS 
+257
+[ 8 ] W. D. NEUMANN AND D. ZAGIER, Volumes of hyperbolic three-manifolds. Topology
+24 (1985), 307-332.
+[ 9 ] W. P. THURSTON, 
+The Geometry and Topology of 3-Manifolds. 
+Lecture Notes,
+Princeton: Princeton University Press 1978/79.
+DEPARTMENT OF MATHEMATICS
+TOKYO INSTITUTE OF TECHNOLOGY
+OH-OKAYAMA, MEGURO-KU, TOKYO, 152
+JAPAN

@@ -1,21 +1,25 @@
-Write $G(x;q)=\sum_{n\geq 0}B_n x^n$ and $R(q,x)=\sum_{j} r_j(q)\,x^{j}$ with
-$j$ ranging over a window of width $d$. Comparing the coefficient of $x^{n+d}$
-on both sides of $G(qx;q)=R(q,x)G(x;q)$, the left side contributes
-$q^{n+d}B_{n+d}$ and the right side a finite $\mathbb{Q}(q)$-linear combination
-of $B_{n},\dots,B_{n+d}$. Solving for $B_{n+d}$ (the coefficient $r$ of the top
-power is a unit in $\mathbb{Q}(q)$) yields the depth-$d$ recurrence
-$B_{n+d}=\sum_{j=0}^{d-1}a_j(q)\,B_{n+j}$ with $a_j$ rational in $q$ and the
-$r_j$. This is the standard fact that a $q$-holonomic series has $P$-recursive
-coefficients; it fixes every term — and hence the growth law $\rho\cdot A$ —
-from the first $d$ terms and $R$.
+Write $G(x;q)=\sum_{n\geq 0}B_n x^n$ and, for polynomial $R$,
+$R(q,x)=\sum_{j=0}^{d} r_j(q)\,x^{j}$. The coefficient of $x^{n}$ in $G(qx;q)$ is
+$q^{n}B_{n}$, and in $R(q,x)G(x;q)$ it is $\sum_{j=0}^{d} r_j B_{n-j}$. Hence
+
+$$
+  (q^{n} - r_0)\,B_{n} \;=\; \sum_{j=1}^{d} r_j\,B_{n-j},
+$$
+
+and for $q^n \neq r_0$ this solves for $B_n$ in terms of $B_{n-1},\dots,B_{n-d}$
+with coefficients $r_j/(q^n - r_0)$, rational in $q$ and $q^n$. A Laurent $R$
+shifts the indices but leaves the factor $q^n$ on the $B_n$ coefficient. This is
+the standard fact that a $q$-holonomic series has $q$-recursive coefficients; it
+fixes every term from $R$ and the first $d$ terms. (An earlier version of this
+proof wrote the recurrence with coefficients independent of $n$; the factor
+$q^n$ makes them depend on $n$.)
 
 For the Archimedean image, apply $\tau$ at $q=q_0$ and let $q\to q_0$ act on the
 shift operator $x\mapsto qx$: the multiplicative $q$-shift degenerates to the
 infinitesimal generator $x\,\partial_x$ (the confluent limit of a $q$-difference
 operator), so $G(qx;q)=R(q,x)G(x;q)$ passes to a linear differential equation
 $x\,\partial_x \widehat{G} = \rho(x)\,\widehat{G}$ on the realised
-$\widehat{G}=\tau G$ — the Dirac-type equation. The Lean witness
-[`QOU.Mass.binding_qdifference_recurrence`](#prop:binding-genfun-qdifference)
-packages the depth-$d$ recurrence as a structure and extracts the term
-identity; the existence of $R$ for the binding $G$ is the conjectural input
-(carried as the structure hypothesis). $\qquad\blacksquare$
+$\widehat{G}=\tau G$ — the Dirac-type equation. Given the depth-$d$
+recurrence, with position-dependent coefficients, the term identity follows;
+the existence of $R$ for the binding $G$ is the conjectural input
+(carried as a hypothesis). $\qquad\blacksquare$

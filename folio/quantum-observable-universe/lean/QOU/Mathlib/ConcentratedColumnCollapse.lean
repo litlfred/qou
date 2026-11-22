@@ -14,7 +14,7 @@ witness is `PUnit`.
 This module supplies the missing side: the page family the corpus's own mass-formula
 proof describes, and the discharge that follows from it.
 
-## What `prop:phi-q-categorical-truncation` asks for
+## What `conj:phi-q-categorical-truncation` asks for
 
 Step 1 of that proof (`mass-theory/phi-q-categorical-truncation-proof.md`) reads
 
@@ -59,7 +59,7 @@ content of `S-GB-spectral-collapse` and it remains an assertion.  What is no lon
 assumed is the step *from* concentration *to* collapse, and the discharge below
 takes the real page family rather than `PUnit`.
 
--- Ref: [manuscript] quantum-observable-universe/mass-theory
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory
 -/
 
 namespace QOU.Mathlib.ConcentratedColumnCollapse
@@ -119,7 +119,7 @@ For *every* differential this page family admits — the statement quantifies ov
 unconstrained; collapse asks only about `r ≥ 2`, and there the shift `p ↦ p + r`
 already leaves the window.
 
-This is Step 1 of `prop:phi-q-categorical-truncation` turned from an assertion into
+This is Step 1 of `conj:phi-q-categorical-truncation` turned from an assertion into
 a consequence of the concentration that step states. -/
 theorem concentrated_collapses (S : PagedSS R (ConcentratedPage R M)) :
     Collapses S 2 := by

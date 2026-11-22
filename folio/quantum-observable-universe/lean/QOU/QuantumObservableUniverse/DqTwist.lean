@@ -91,7 +91,7 @@ Gröbner degree — which is precisely the filtration
 So the two threads are one problem seen twice: the curvature `d_q² ≠ 0` is the
 obstruction to a naive spectral sequence, and the filtration is what tames it.
 
--- Ref: [manuscript] §1-quantum-observable-universe
+-- Ref: [leitner2026] §1-quantum-observable-universe
 -/
 
 open scoped CategoryTheory CategoryTheory.MonoidalCategory

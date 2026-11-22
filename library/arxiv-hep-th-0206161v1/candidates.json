@@ -3,13 +3,14 @@
  "doc_id": "arxiv-hep-th-0206161v1",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "9530c40215baa02defa98405a7655179d0ceac797ffaf78521b3b6513d554b6d",
   "file": "0206161v1.pdf"
  },
  "provenance": {
-  "title": "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING Nikita A. Nekrasov 1",
-  "authors": "Institut des Hautes Etudes Scienti\ufb01ques, Le Bois-Marie, Bu res-sur-Yvette, F-91440 France",
+  "title": "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING",
+  "authors": "Institut des Hautes Etudes Scientifiques, Le Bois-Marie, Bures-sur-Yvette, F-91440 France",
   "arxiv": {
    "id": "hep-th/0206161",
    "version": "1",
@@ -24,7 +25,16 @@
   "by_kind": {
    "remark": 1
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 0,
+  "by_domain": {
+   "math": 1
+  },
+  "by_evidence_kind": {
+   "explanatory": 1
+  },
+  "by_evidence_location": {
+   "elsewhere": 1
+  }
  },
  "candidates": [
   {
@@ -32,13 +42,26 @@
    "source_kind": "remark",
    "number": null,
    "name": null,
-   "statement": "The expressions (3.20)(1.6)(1.8) are the typical localiza tion formulae for the",
-   "section_file": "sections/sec-012-36-residues-and-\ufb01xed-points.md",
+   "statement": "The expressions (3.20)(1.6)(1.8) are the typical localization formulae for the instanton integrals. They commonly appear in the two dimensional sigma model instanton calculations, on the so-called A side. The Seiberg-Witten prepotential [3] is the typical type B expression. In is not easy to recognize in the type A expression the mirror manifold, and its periods. To illustrate this point, we suggest to look at the generating function of the number of holomorphic curves of genus zero in the Calabi-Yau quintic, computed using localization [17]. It requires some extra work to map it to the mirror calculation, yet it can be done [18]. In this pap",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "Cites external source [3], [17], [18] in sections/sec-013-36-residues-and-\ufb01xed-points.md",
+   "external_refs": [
+    "[3]",
+    "[17]",
+    "[18]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-013-36-residues-and-\ufb01xed-points.md",
    "section_title": "Residues and \ufb01xed points",
    "pages": "19-21",
    "formalization_candidate": false,
    "formalization_note": null,
-   "route_to": null
+   "route_to": null,
+   "block_id": "rem-sec-013-01",
+   "block_iri": "library/arxiv-hep-th-0206161v1/blocks/rem-sec-013-01",
+   "claim_id": "arxiv-hep-th-0206161v1#rem-sec-013-01"
   }
  ]
 }

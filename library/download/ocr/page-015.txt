@@ -1,0 +1,53 @@
+Concentration of empirical distribution functions 1399
+
+concentration results concerning product measures. Given a parameter t > 0 and a real-valued
+function g on R” (possibly taking the values +00), put
+
+. 1
+Qrg(x) = inf [eo + xe - iP],
+
+1
+P.g(x) = sup [eo ~ le- viP.
+yeR" t
+
+Q;g and P;g then represent, respectively, the infimum- and supremum-convolution of g with
+cost function being the normalized square of the Euclidean norm in R”. By definition, one puts
+Qog = Pog =8.
+
+For basic definitions and basic properties of the infimum- and supremum-convolution opera-
+tors, we refer the reader to [19] and [5], mentioning just some of them here. These operators are
+dually related by the property that for any functions f and g on R", g> Pf => f < Org.
+Clearly, P;(—g) = —Q;g. Thus, in many statements, it is sufficient to consider only one of these
+operators. The basic semigroup property of both operators is that for any g on R” and t, s > 0,
+
+O1458 = Q:Os8, Pr4s8 = PrPsg.
+
+For any function g and ¢ > 0, the function P;g is always lower semicontinuous, while Q;g is
+upper semicontinuous. If g is bounded, then P;g and Q;g are bounded and have finite Lipschitz
+seminorms. In particular, both are differentiable almost everywhere.
+
+Given a bounded function g and ¢ > 0, for almost all x € R”, the functions t > P;g(x) and
+t > Q;g(x) are differentiable at ¢ and
+
+aPig(x) 1
+arti
+
+9O,g8(x) _
+
+1
+IVPg@Il’, aT —5IIV Org? ae.
+
+In other words, the operator Tg = 31VgP appears as the generator for the semigroup P,,
+while —I° appears as the generator for Q;. As a result, u(x,t) = Q;g(x) represents the solu-
+tion to the Hamilton-Jacobi equation au =— 5 || Vu]? with initial condition u(x, 0) = g(x).
+
+Below, we separately formulate a principal result of [5] which relates logarithmic Sobolev
+inequalities to supremum- and infimum-convolution operators.
+
+Lemma 5.3. Let jz be a probability measure on R" satisfying LS\(o7). For any 1-integrable
+Borel-measurable function g on R", we have
+
+| Poogdu> tog [ edu (5.3)
+and, equivalently,
+
+[sue tog f e228 ay. (5.4)

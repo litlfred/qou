@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2605.09605v2
-doc_title: "Cocycle Actions on Hidden Quantum Markov Models:"
+doc_title: "Cocycle Actions on Hidden Quantum Markov Models: Symmetry Protection and Topological Order"
 section_id: sec-000-introduction
 section_title: "Introduction"
 section_number: null
 pages: 1-3
 source_pdf: 2605.09605v2.pdf
 source_sha256: 24496fb444a2b558
-doc_brief: "Cocycle Actions on Hidden Quantum Markov Models: — We develop a symmetry action framework for hidden quantum Markov models (HQMMs) tailored to one-dimensional quantum spin systems and"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
+latex_prose_ratio: 0.961
 latex_coverage_ratio: 0.997
+doc_brief: "Cocycle Actions on Hidden Quantum Markov Models: Symmetry Protection and Topological Order — We develop a symmetry action framework for hidden quantum Markov models (HQMMs) tailored to"
 ---
 Symmetry-protected topological (SPT) phases provide a unifying framework for a broad class of quantum spin systems in which global symmetries protect robust edge modes, quantized topological invariants, and nontrivial entanglement structures, even in one-dimensional settings [@H83; @Pollmann2010; @Pollmann2012]. Within this picture, the Haldane phase of spin‑1 chains and its paradigmatic representative, the AKLT model, furnish canonical examples of bosonic SPT phases protected by spin-rotation and related symmetries [@H83; @AKLT1987; @Affleck1988]. Building on the index-theoretic and group‑cohomological classification of 1D SPT phases, these systems are now understood in terms of projective edge representations and cohomology classes such as $[ \omega ] \in H^{2}(G,\mathrm{U}(1))$, and they are increasingly viewed as resources for quantum information processing and computational power [@O21; @O23; @Tas23; @Chen2011a; @Chen2011b; @D17]. Recent developments have extended this perspective to open and driven quantum systems, where SPT order persists under symmetry-preserving noisy dynamics and gives rise to refined notions of order and protected structure in non‑equilibrium settings [@GTS22; @D20; @Sati26].
 

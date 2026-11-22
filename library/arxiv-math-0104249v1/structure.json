@@ -8,7 +8,7 @@
   "pages": 16,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -20,7 +20,7 @@
    "stamp_date": "26 Apr 2001"
   },
   "doi": null,
-  "title": "arXiv:math/0104249v1 [math.NT] 26 Apr 2001",
+  "title": "Irrationality of values of the zeta-function",
   "authors_raw": "W. Zudilin",
   "title_lines": [
    "IRRATIONALITY OF VALUES OF ZETA-FUNCTION"
@@ -37,18 +37,19 @@
   "title_verified": true,
   "title_evidence": {
    "metadata": "arXiv:math/0104249v1 [math.NT] 26 Apr 2001",
-   "heading": "IRRATIONALITY OF VALUES OF ZETA-FUNCTION W. Zudilin Introduction. The irrationality of values of the zeta-function \u03b6 ( s ) at odd integers s \u2265 3 is one of the most attractive problems in number theory. Inspite of a deceptive simplicity and more than two-hundred-year history of the problem, all done",
+   "heading": "IRRATIONALITY OF VALUES OF ZETA-FUNCTION W. Zudilin Introduction. The irrationality of values of the zeta-function ζ ( s ) at odd integers s ≥ 3 is one of the most attractive problems in number theory. Inspite of a deceptive simplicity and more than two-hundred-year history of the problem, all done",
    "text": "IRRATIONALITY OF VALUES OF ZETA-FUNCTION",
    "corroborated_by": [
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:math/0104249v1 [math.NT] 26 Apr 2001"
  },
  "toc": [
   {
    "level": 1,
-   "title": "Ob irracional\u044cnosti znaqeni\u001a dzeta-funkcii",
+   "title": "Ob irracionalьnosti znaqeni\u001a dzeta-funkcii",
    "page": 9,
    "source": "inferred",
    "number": null,
@@ -216,20 +217,20 @@
    "level": 1,
    "page_start": 1,
    "page_end": 9,
-   "n_chars": 17685,
-   "n_words": 3630,
+   "n_chars": 17540,
+   "n_words": 3606,
    "label_start": "1",
    "label_end": "9"
   },
   {
-   "id": "sec-000-ob-irracional\u044cnosti-znaqeni-dzeta-funkcii",
+   "id": "sec-000-ob-irracionalьnosti-znaqeni-dzeta-funkcii",
    "number": null,
-   "title": "Ob irracional\u044cnosti znaqeni\u001a dzeta-funkcii",
+   "title": "Ob irracionalьnosti znaqeni\u001a dzeta-funkcii",
    "level": 1,
    "page_start": 9,
    "page_end": 16,
-   "n_chars": 16852,
-   "n_words": 3264,
+   "n_chars": 16655,
+   "n_words": 3236,
    "label_start": "9",
    "label_end": "16"
   }
@@ -249,6 +250,7 @@
    "items": []
   },
   "sections": 2,
-  "chars_total": 34537
+  "chars_total": 34195,
+  "furniture_lines_stripped": 28
  }
 }

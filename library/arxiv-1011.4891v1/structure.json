@@ -8,7 +8,7 @@
   "pages": 18,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:19Z",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -29,7 +29,7 @@
    "Institute for Problems in Mechanics RAS",
    "Dedicated to the memory of V.I.Arnold"
   ],
-  "abstract": "A new type of knot energy is presented via real life experiments involving a thin resilient metallic tube. Knotted in di\ufb00erent ways, the device me- chanically acquires a uniquely determined (up to isometry) normal form at least when the original knot diagram has a small number of crossings, thus outper- forming the famous M\u00a8obius energy due to Jun O\u2019Hara and studied by Michael Freedman et al. Various properties of the device are described (under certain conditions it does the Reidemeister and Markov moves, it beautifully performs the Whitney trick by uniformizing its own local curvature). If the device is constrained between two parallel planes (e.g. glass panes), it yields a real life model of a \ufb02at knot (class of knot diagrams equivalent under Reidemeister \u21262 and \u21263 moves) also leading to uniquely determined \u201d\ufb02at normal forms\u201d (for a small number of crossing points of the given \ufb02at knot diagram). The paper concludes with two mathematical theorems, one reducing the knot recognition problem to the \ufb02at knot recognition problem, the other (due to S.V.Matveev) giving an easily computable complete system of invariants for the \ufb02at unknot knot equivalence problem. In one of his lectures, Vladimir Arnold declared that \u201cmathematics is that part of physics where experiments are cheap\u201d. The present paper is an illustration of this thesis. Accordingly, the paper begins (Sec.1) with a description of our \u201ccheap experiments\u201d, which are performed with a thin \ufb02exible but resilient wire. This wire can be knotted and placed on a horizontal table, and in all the experiments it moves in a very speci\ufb01c way, sometimes sliding along the table top, sometimes jumping up in the air, and reaches an equilibrium position, which we call the mechanical normal form of the knot. Surprisingly, the experiments show that, for a small number of crossings of the initial knot diagram, the normal form is always unique up to isometry. In this situation, it turns out that our simple device performs much bet",
+  "abstract": "A new type of knot energy is presented via real life experiments involving a thin resilient metallic tube. Knotted in diﬀerent ways, the device me- chanically acquires a uniquely determined (up to isometry) normal form at least when the original knot diagram has a small number of crossings, thus outper- forming the famous M¨obius energy due to Jun O’Hara and studied by Michael Freedman et al. Various properties of the device are described (under certain conditions it does the Reidemeister and Markov moves, it beautifully performs the Whitney trick by uniformizing its own local curvature). If the device is constrained between two parallel planes (e.g. glass panes), it yields a real life model of a ﬂat knot (class of knot diagrams equivalent under Reidemeister Ω2 and Ω3 moves) also leading to uniquely determined ”ﬂat normal forms” (for a small number of crossing points of the given ﬂat knot diagram). The paper concludes with two mathematical theorems, one reducing the knot recognition problem to the ﬂat knot recognition problem, the other (due to S.V.Matveev) giving an easily computable complete system of invariants for the ﬂat unknot knot equivalence problem. In one of his lectures, Vladimir Arnold declared that “mathematics is that part of physics where experiments are cheap”. The present paper is an illustration of this thesis. Accordingly, the paper begins (Sec.1) with a description of our “cheap experiments”, which are performed with a thin ﬂexible but resilient wire. This wire can be knotted and placed on a horizontal table, and in all the experiments it moves in a very speciﬁc way, sometimes sliding along the table top, sometimes jumping up in the air, and reaches an equilibrium position, which we call the mechanical normal form of the knot. Surprisingly, the experiments show that, for a small number of crossings of the initial knot diagram, the normal form is always unique up to isometry. In this situation, it turns out that our simple device performs much bet",
   "docinfo": {
    "Producer": "pdfTeX-1.40.10",
    "Creator": "LaTeX with hyperref package",
@@ -118,7 +118,7 @@
   },
   {
    "level": 1,
-   "title": "\u00a76. Flat knots",
+   "title": "§6. Flat knots",
    "page": 13,
    "source": "inferred",
    "number": null,
@@ -131,7 +131,7 @@
   },
   {
    "level": 1,
-   "title": "\u00a77. Perspectives: new knot energies for computer simulations",
+   "title": "§7. Perspectives: new knot energies for computer simulations",
    "page": 16,
    "source": "inferred",
    "number": null,
@@ -162,7 +162,7 @@
   {
    "kind": "figure",
    "number": "2",
-   "title": "M\u00a8obius energy normal forms of the eight knot The reasons for which our mechanical knot sometimes jumps and sometimes only slides are related to Whitney\u2019s winding number of plane curves",
+   "title": "M¨obius energy normal forms of the eight knot The reasons for which our mechanical knot sometimes jumps and sometimes only slides are related to Whitney’s winding number of plane curves",
    "page": 5,
    "confidence": 0.9,
    "evidence": [
@@ -175,7 +175,7 @@
   {
    "kind": "figure",
    "number": "3",
-   "title": "\u201cReidemeister move\u201d forming a little loop",
+   "title": "“Reidemeister move” forming a little loop",
    "page": 7,
    "confidence": 0.9,
    "evidence": [
@@ -188,7 +188,7 @@
   {
    "kind": "figure",
    "number": "4",
-   "title": "The second Reidemeister move destroying crossing points \u2022 perform the second Reidemeister move \u21262 (Figure 5); here the \u201cboundary points\u201d must be allowed to slide in the directions indicated",
+   "title": "The second Reidemeister move destroying crossing points • perform the second Reidemeister move Ω2 (Figure 5); here the “boundary points” must be allowed to slide in the directions indicated",
    "page": 8,
    "confidence": 0.7,
    "evidence": [
@@ -200,7 +200,7 @@
   {
    "kind": "figure",
    "number": "5",
-   "title": "The second Reidemeister move creating crossing points \u2022 perform the third Reidemeister move \u21263 (Figure 6); here the \u201cboundary points\u201d must be allowed to slide in the directions indicated",
+   "title": "The second Reidemeister move creating crossing points • perform the third Reidemeister move Ω3 (Figure 6); here the “boundary points” must be allowed to slide in the directions indicated",
    "page": 8,
    "confidence": 0.9,
    "evidence": [
@@ -213,7 +213,7 @@
   {
    "kind": "figure",
    "number": "6",
-   "title": "The third Reidemeister move conditions for these moves occur \u201cmuch more often\u201d than those creating new crossing points",
+   "title": "The third Reidemeister move conditions for these moves occur “much more often” than those creating new crossing points",
    "page": 9,
    "confidence": 0.9,
    "evidence": [
@@ -226,7 +226,7 @@
   {
    "kind": "figure",
    "number": "7",
-   "title": "First Markov move (destabilization) \u2022 perform the second Markov move from right to left, i.e., a\u22121ba \u2212\u2192b; this move is quite spectacular: the braids a\u22121, a, b begin stretching along",
+   "title": "First Markov move (destabilization) • perform the second Markov move from right to left, i.e., a−1ba −→b; this move is quite spectacular: the braids a−1, a, b begin stretching along",
    "page": 10,
    "confidence": 0.9,
    "evidence": [
@@ -239,7 +239,7 @@
   {
    "kind": "figure",
    "number": "8",
-   "title": "Second Markov move (deconjugation) Note that in the example shown in the \ufb01gure, the evolution of the knot",
+   "title": "Second Markov move (deconjugation) Note that in the example shown in the ﬁgure, the evolution of the knot",
    "page": 10,
    "confidence": 0.9,
    "evidence": [
@@ -252,7 +252,7 @@
   {
    "kind": "figure",
    "number": "9",
-   "title": "Some \ufb02at normal forms Note that if the initial position of the \ufb02at knot has little loops, then these",
+   "title": "Some ﬂat normal forms Note that if the initial position of the ﬂat knot has little loops, then these",
    "page": 13,
    "confidence": 0.9,
    "evidence": [
@@ -265,7 +265,7 @@
   {
    "kind": "figure",
    "number": "10",
-   "title": "De\ufb01nition of the twisting number Theorem 2. Flat knots possess the following three invariants: the Kau\ufb00man bracket \u27e8K\u27e9, the Whitney index w(K), and the twisting number \u03c4(K)",
+   "title": "Deﬁnition of the twisting number Theorem 2. Flat knots possess the following three invariants: the Kauﬀman bracket ⟨K⟩, the Whitney index w(K), and the twisting number τ(K)",
    "page": 15,
    "confidence": 0.9,
    "evidence": [
@@ -472,27 +472,27 @@
    "level": 1,
    "page_start": 12,
    "page_end": 13,
-   "n_chars": 1594,
-   "n_words": 277,
+   "n_chars": 1591,
+   "n_words": 276,
    "label_start": null,
    "label_end": null
   },
   {
    "id": "sec-005-6-flat-knots",
    "number": null,
-   "title": "\u00a76. Flat knots",
+   "title": "§6. Flat knots",
    "level": 1,
    "page_start": 13,
    "page_end": 16,
-   "n_chars": 5598,
-   "n_words": 997,
+   "n_chars": 5613,
+   "n_words": 1000,
    "label_start": null,
    "label_end": null
   },
   {
    "id": "sec-006-7-perspectives-new-knot-energies-for-computer-si",
    "number": null,
-   "title": "\u00a77. Perspectives: new knot energies for computer simulations",
+   "title": "§7. Perspectives: new knot energies for computer simulations",
    "level": 1,
    "page_start": 16,
    "page_end": 18,
@@ -517,6 +517,7 @@
    "items": []
   },
   "sections": 8,
-  "chars_total": 29495
+  "chars_total": 29507,
+  "furniture_lines_stripped": 0
  }
 }

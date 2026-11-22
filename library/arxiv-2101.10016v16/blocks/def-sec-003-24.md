@@ -1,0 +1,1 @@
+Let (F, F, G) : C → C ′ be a weak quasi-tensor ∗ -functor between tensor C ∗ -categories satisfying the left inverse property (4.8). Then the same functor F together with the new unitary weak quasi-tensor structure (F ′ , G′) defined in part a) of Prop. 4.22 will be called the unitarization of (F, F, G).

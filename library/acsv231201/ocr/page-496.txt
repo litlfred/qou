@@ -1,0 +1,45 @@
+478 Algebraic topology
+
+n, and define w = w, = exp(A¢(z))n for some holomorphic n-form n and
+holomorphic function ¢ on X. When C = C’ in H,(X, Y) with Re{¢} < B on Y
+
+then, as A > ©,
+fers [ore o(er).
+Cc Cc
+
+Proof This follows immediately from Proposition B.10, because dw = 0 for
+a holomorphic n-form on a complex n-manifold. ia)
+
+Notes
+
+From their origins near the end of the nineteenth century, homology and co-
+homology have become crucial tools in many areas of mathematics. Much of
+our presentation of the material in this appendix follows Hatcher [Hat02] and
+Munkres [Mun84], and further details can be found in those sources.
+
+The Andreotti-Frankel Theorem is true in much greater generality than
+Proposition B.20: for instance, it holds for all algebraic varieties in complex
+affine space, regardless of whether they are smooth or singular. This was first
+proved in [Kar79] via stratified Morse theory. The complement of a variety Vg
+is biholomorphically equivalent to the variety V;--,,,g in one greater dimen-
+sion, hence complements of d-dimensional affine algebraic varieties are also
+homotopy equivalent to d-dimensional cell complexes.
+
+Voisin [Voi02] proves Proposition B.22 by showing that holomorphic de
+Rham hypercohomology (cohomology with coefficients in a sheaf resolution)
+is the same as the ordinary de Rham cohomology, hence the same as smooth
+cohomology and singular cohomology. For Stein spaces, such as embedded
+complex manifolds, this resolution is flat and holomorphic de Rham hyperco-
+homology boils down to the cohomology of the holomorphic de Rham com-
+plex itself. Special cases were known earlier; for example, if A is a complex
+hyperplane arrangement then Brieskorn [Bri73] showed that the forms df/f as
+f varies over annihilators of hyperplanes in A generate the cohomology ring
+of the complement M of A.
+
+Additional exercises
+
+Exercise B.9. Define the Mébius strip as the quotient of the cell complex
+representing the unit square as A; x A, via the three identifications (0,0) ~
+(1, 1), (0, 1) ~ (1, 0) and (0) x Ay ~ -(1) x Ai.
+
+(1) What is the dimension of this cell complex?

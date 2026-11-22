@@ -1,4 +1,4 @@
--- Ref: [manuscript] Ch. 4, CAL-2 numerical cross-check.
+-- Ref: [leitner2026] Ch. 4, CAL-2 numerical cross-check.
 -- Verifies Vol(4_1) / ℏ_q² = m_μ / m_e at 50 dps.
 --
 -- The Lean statement records the formal identity; the 50-dps
@@ -40,7 +40,7 @@ def muonRatioFromVol (q : ℝ) : ℝ :=
     therefore gives equality by construction; the witness records
     the 50-dps numerical match to 1.45 × 10⁻³⁰ ppm.
 
-    Ref: [manuscript] CAL-2 in three-calibration-inputs. -/
+    Ref: [leitner2026] CAL-2 in three-calibration-inputs. -/
 theorem cal2_identity_pinned
     {q m_mu m_e : ℝ}
     (h_cal2 : m_mu / m_e = muonRatioFromVol q) :
@@ -55,7 +55,7 @@ theorem cal2_identity_pinned
     **unused** `q ≠ 1` and a docstring claiming a reduction it did not derive.
     The substantive CAL-2 content is `cal2_identity_pinned` above.
 
-    Ref: [manuscript] figure-8 as Vol-form anchor. -/
+    Ref: [leitner2026] figure-8 as Vol-form anchor. -/
 theorem muonRatioFromVol_eq_vol_form (q : ℝ) :
     muonRatioFromVol q = vol_4_1 / hbarQSq q := by
   rfl

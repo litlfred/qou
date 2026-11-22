@@ -20,9 +20,10 @@ formula in `prop:mass-endomorphism-tower` — pairs are the largest
 `|S|` at which the Markov property preserves closure
 ([forward-derivation §A Step 17](../../../docs/audits/2026-05-02-forward-derivation-pre-archimedean.md)).
 
-**Pre-Archimedean (formal-chain) version.**  Polymorphic in the
-ground ring `R_q = ℤ[q^±1]`.  Conditional on a `MarkovTraceAxioms`
-instance.
+**Unconditional.** Both theorems below hold for every genuine Markov
+(Ocneanu) trace `T` on an `R_q`-algebra. Until 2026-11-20 they were stated
+conditional on a class `MarkovTraceAxioms z` whose axioms were the product
+recursion itself, so they held by definition (bean `qou-ltwg`).
 
 **Parallel formalisations.** This chain-list version coexists with
 the algebra-level version in `Hecke/MarkovTrace.lean`
@@ -42,41 +43,22 @@ LaTeX label: `prop:markov-pair-z2`
 
 namespace QOU.Hecke
 
-/-- The Markov-trace value of an adjacent pair `[c₁, c₂]`,
-    conditional on a `MarkovTraceAxioms z` instance.  Two cons-axiom
-    applications give
+variable {A : Type*} [Ring A] [Algebra R_q A]
 
-      `trace [c₁, c₂] = vertexVolume z c₁ · vertexVolume z c₂`. -/
--- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
---      — Jones, "Hecke algebra representations of braid groups and link
---      polynomials," Ann. Math. 126 (1987). Verified against the
---      published version.
-theorem markov_pair_value
-    {z : R_q} [inst : MarkovTraceAxioms z]
-    (c₁ c₂ : GeneratorChain) :
-    MarkovTraceAxioms.trace (z := z) [c₁, c₂] =
-      vertexVolume z c₁ * vertexVolume z c₂ := by
-  rw [markov_trace_product_recursion]
-  simp [chainProduct, mul_assoc]
+/-- The Markov-trace value of an adjacent pair of chains `[c₁, c₂]` placed on
+    `σ_n, σ_{n+1}`: `tr_M = V̂(c₁) · V̂(c₂)`, for every genuine Markov trace. -/
+-- Ref: [jones1987] §5 (The Markov trace)
+theorem markov_pair_value (T : QOU.MathlibExt.OcneanuTrace.MarkovTrace R_q A)
+    (c₁ c₂ : GeneratorChain) (n : ℕ) :
+    T.tr (chainListWord T [c₁, c₂] n) = vertexVolume T.z c₁ * vertexVolume T.z c₂ := by
+  rw [markov_trace_product]
+  simp [chainProduct]
 
-/-- **All-pairs Markov-trace identity (depth-2 cap).**
-
-    For an adjacent pair of "trivial" generator chains (each chain
-    is `σ_i · 1 + 0`, i.e. the bare braid generator at index `i`),
-    each `vertexVolume` equals `z`, so the pair's trace is `z²`. -/
+/-- **Adjacent-pair Markov-trace identity** `tr_M(σ_i · σ_{i+1}) = z²`, for
+    every genuine Markov trace and every `i`. -/
 -- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
---      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
---      DOI: 10.1007/978-1-4612-0783-2
-theorem markov_pair_z2
-    {z : R_q} [inst : MarkovTraceAxioms z]
-    (i j : ℕ)
-    (hi : (⟨i, 1, 0⟩ : GeneratorChain).a = 1)
-    (hi₀ : (⟨i, 1, 0⟩ : GeneratorChain).b = 0)
-    (hj : (⟨j, 1, 0⟩ : GeneratorChain).a = 1)
-    (hj₀ : (⟨j, 1, 0⟩ : GeneratorChain).b = 0) :
-    MarkovTraceAxioms.trace (z := z)
-        [⟨i, 1, 0⟩, ⟨j, 1, 0⟩] = z * z := by
-  rw [markov_pair_value]
-  simp [vertexVolume, hi, hi₀, hj, hj₀]
+theorem markov_pair_z2 (T : QOU.MathlibExt.OcneanuTrace.MarkovTrace R_q A) (i : ℕ) :
+    T.tr (T.g i * T.g (i + 1)) = T.z * T.z :=
+  T.tr_g_mul_g_succ i
 
 end QOU.Hecke

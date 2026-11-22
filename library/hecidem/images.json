@@ -1,0 +1,113 @@
+{
+  "$schema": "folio-document-images/v1",
+  "doc_id": "hecidem",
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 0.000163,
+        "imagesOnPage": 1,
+        "page": 1
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      },
+      "placements": [
+        {
+          "page": 1,
+          "coverage": 0.000163,
+          "imagesOnPage": 1
+        },
+        {
+          "page": 3,
+          "coverage": 3.8e-05,
+          "imagesOnPage": 1
+        },
+        {
+          "page": 4,
+          "coverage": 3.8e-05,
+          "imagesOnPage": 3
+        },
+        {
+          "page": 4,
+          "coverage": 8e-06,
+          "imagesOnPage": 3
+        },
+        {
+          "page": 4,
+          "coverage": 8e-06,
+          "imagesOnPage": 3
+        },
+        {
+          "page": 8,
+          "coverage": 7e-06,
+          "imagesOnPage": 6
+        },
+        {
+          "page": 8,
+          "coverage": 6e-06,
+          "imagesOnPage": 6
+        },
+        {
+          "page": 8,
+          "coverage": 7e-06,
+          "imagesOnPage": 6
+        },
+        {
+          "page": 8,
+          "coverage": 7e-06,
+          "imagesOnPage": 6
+        },
+        {
+          "page": 8,
+          "coverage": 6e-06,
+          "imagesOnPage": 6
+        },
+        {
+          "page": 8,
+          "coverage": 8e-06,
+          "imagesOnPage": 6
+        },
+        {
+          "page": 12,
+          "coverage": 8e-06,
+          "imagesOnPage": 2
+        },
+        {
+          "page": 12,
+          "coverage": 8e-06,
+          "imagesOnPage": 2
+        },
+        {
+          "page": 13,
+          "coverage": 4.2e-05,
+          "imagesOnPage": 1
+        },
+        {
+          "page": 23,
+          "coverage": 6e-05,
+          "imagesOnPage": 2
+        },
+        {
+          "page": 23,
+          "coverage": 5.1e-05,
+          "imagesOnPage": 2
+        },
+        {
+          "page": 25,
+          "coverage": 8.5e-05,
+          "imagesOnPage": 2
+        },
+        {
+          "page": 25,
+          "coverage": 0.000102,
+          "imagesOnPage": 2
+        }
+      ]
+    }
+  ]
+}

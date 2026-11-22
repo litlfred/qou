@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0502543v2/sections/page-006",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Page 6",
+  "pageStart": 6,
+  "pageEnd": 6,
+  "contains": [
+    "library/arxiv-math-0502543v2/blocks/prose-page-006",
+    "library/arxiv-math-0502543v2/blocks/cor-page-006-01",
+    "library/arxiv-math-0502543v2/blocks/thm-page-006-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0502543v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0502543v2/manifest.jsonld",
+  "provenance": "ingested"
+}

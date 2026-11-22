@@ -1,0 +1,68 @@
+---
+doc_id: cherednik1991-kz-dunkl
+doc_title: "A unification of Knizhnik-Zamolodchikov and Dunkl operators via affine Hecke algebras"
+section_id: page-015
+section_title: "Page 15"
+pages: 15-15
+pdf_page: 15
+source_pdf: cherednik1991-kz-dunkl.pdf
+source_sha256: cae9cf747bb98a46
+text_source: ocr
+granularity: page
+doc_brief: "A unification of Knizhnik-Zamolodchikov and Dunkl operators via affine Hecke algebras — 21 sections: Page 1; Page 2; Page 3"
+---
+Affine Hecke algebras 425
+
+where {ait} are dual weights ((a;, «}) = 5,; for the Kronecker symbol 6;,), yi, is the
+multiplicity of «; in a. We put D} = )°,(u, «)r,, where w€4. E4,/ is a subset in R”.
+
+Definition 3.1 The set {r,} is a classical A-valued r-matrix of type A,,..., G2, if
+Twa) = Vo(W)raVo(w)"* for ae, wewW, (3.3)
+[D}, D4] =0, 2 = Ra, + Ro,. (3.4)
+
+Here {a;, a;} runs over all classes of pairs of simple roots modulo the action of
+W on the latter (one pair for A>, Bz, C2, G2, two for A, D,, Egg, three for B3, C3,
+four for B,, C,, F4,n > 2).
+
+Proposition 3.2 (see [Ch 1, Ch2]) Elements {D,, ueC"} are pairwise commutative
+for {r,} from Definition 3.1.
+
+Proof. It is sufficient to consider the elements D,, ..., D,. One has:
+[D;, D;) J Yd, d,= YX Heuplres rg] >
+ry a, Beds
+
+where A, = AM2Z,, A runs over all two-dimensional subspaces in R". Indeed, only
+trivial pairs {a = B} can belong to some A 7’ for A + 2’. Let y, 6 be the pair of
+simple roots in 1, =AN2, (if the latter is two-dimensional) and y,, 6, be the
+multiplicities of y, 5 in w€A, respectively. Then pi, = y,u', + 5, u5. Hence,
+
+di= Yo (vat + bath) (yet, + 5 pu5) [res te]
+
+a, peas
+= 153 1D,, Dy] + usub (D2, Do] + (44 od — wus) (D1, Bd,
+where Dy, Dz are from (3.2) but for A, and {y, 5} in place of 4 and {a,..., op}.
+
+Therefore the identity [D,, D,] = 0 is sufficient to prove the proposition.
+
+The roots y, 5 can be included into the system of simple roots corresponding to
+a certain Weyl chamber (see [Bo]). Hence, y = w(«,), 6 = w(a,,) for a suitable
+we W and appropriate simple o, «,. We arrive at (3.4). O
+
+Proposition 3.3 [Ch 1] Let {R,,«e2} < A* be a quantum W-invariant R-matrix in
+
+def
+the sense of [Ch 5], ie. the set {R,} satisfies conditions (3.3) and t; = R;vo(s;)€A*
+for R; = R,, satisfy the braid relations (1.1). Assume that R depend on some parameter
+heC and
+
+R,=1+hr,+o0(), 1SiSn, ned, (3.5)
+
+in a neighbourhood of h = 0. Let [Ra, Rp] = 0 if (a, B) = 0. In the case of G2 we
+suppose additionally that RyRa+pRg = RgRa+pR. for long positive roots a, B,« + B.
+Then {r;, 1 Si Sn} can be uniquely extended to a classical r-matrix {r,,«€Z} by
+means of (3.3).
+
+Proof. The cases Az, Bz, Gz are enough to consider. Let «= a,, B =a. For Az
+one has the following (quantum Yang-Baxter) identity
+
+RiRa+pRp = RpRe+pRa >

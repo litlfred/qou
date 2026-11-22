@@ -1,0 +1,48 @@
+138 Laurent series, amoebas, and convex geometry
+
+where the interchange of limit and integral is permissible because the fact that
+; ; 7 Sil) S()
+
+Si) — f(z) uniformly for zeéeT implies awa) > amare)
+
+uniformly for z € T. Expanding the final integrand as a series in z gives
+
+f@) fz) (wi) (wa)
+(Z1 — W1)+++ Za — Wa) == 2 (m ) (“).
+
+ieN¢
+
+which converges absolutely and uniformly for z € T since |wz| < rg = |zx| for
+each k. Thus, for all w € D we obtain the convergent series expansion
+
+ror-( i) SEE) El
+= =») (4) [rex i ‘ash!
+
+ieN¢
+
+ao
+
+Remark 6.6. If f(z) is analytic at w and T is a sufficiently small torus around
+w then induction from the univariate setting implies
+
+d
+bal igen
+i ip (Zp — Wythe ++ (zg — wa)ietl
+
+~1fi\"' { NW)
+i! \2ni Tr (Zo — W2)P #1 (Za = wayietl
+
+where T’ is the projection of T onto its last d— 1 coordinates and (as usual) 0-,
+denotes the partial derivative 0/dz,.
+
+Proposition 6.7 (identity theorem). [f f and g are analytic functions on a
+connected domain D c C4 which agree on an open subset of D then they agree
+on all of D.
+
+Proof Let K c D be the interior of the set where f and g agree. It is sufficient
+to show J = KN D equals K, since then K is open and closed in the connected
+set D, meaning K = D. To that end, pick 2) € J and > 0 sufficiently small
+so that the polydisk of radius (¢,..., €) is contained in D. Since zp € K there
+exists a point z € K contained in the polydisk of radius (¢/2,..., ¢/2) centered
+at 2. Then f and g are analytic and agree in a neighborhood of z, so partial
+derivatives of all orders exist for each function at zp and each function is equal

@@ -12,7 +12,7 @@ Sequential flows compose additively in the flow parameter `t`.
 Algebraic content only (a real-angle specialisation lives downstream); the
 construction holds over any commutative ring.
 
--- Ref: [manuscript] mass-theory/q-reeb-flow-on-color-coords
+-- Ref: [leitner2026] mass-theory/q-reeb-flow-on-color-coords
 -/
 
 namespace QOU.CategoricalReeb

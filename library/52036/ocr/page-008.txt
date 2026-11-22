@@ -1,0 +1,101 @@
+8 Experimental Mathematics, Vol. 2 (1993), No. 1
+
+These two programs are publicly available, to-
+gether with their link counterparts, called tle.m
+and toruslinkenergy.f. For details, see “Soft-
+ware Availability” at the end of the article.
+
+As a further check, we compared the computed
+values of E and r,,, under an interchange of p and
+q. As expected, E remains the same, while r,q is
+replaced by its reciprocal, to within the chosen ac-
+curacy. (In the case of tke.m, the default accuracy
+of the minimum search is six significant digits for r,
+but any desired accuracy can be specified, subject
+only to memory constraints.)
+
+6. FURTHER EXPERIMENTS
+
+Very recently, the second author and John Sullivan
+computed the gradient de of the discretized energy
+e(y), and Ken Brakke was kind enough to incor-
+porate it into Version 1.89 of his Surface Evolver
+program [Brakke 1992]. Because e and de are each
+quadratic in n, convergence of the negative gradi-
+ent flow to a critical knot or link is considerably
+slower than in the program torusknotenergy.f,
+which searches only among orbits; the practical
+size of n in the Evolver is limited accordingly. Nev-
+ertheless, we were able to test the stability of [,
+for q small. Moreover, use of the Evolver allows
+us to search among all knots, not only those that
+are invariant under the S$! action. We thus found
+a non-orbital (3, 4)-torus knot with energy approx-
+imately 201, less than the energy of T'3,4, which is
+204.2167; see also the end of Section 1.
+
+We hope to report further on this in future joint
+work with Brakke, Sullivan, and a group of stu-
+dents at the Five Colleges Geometry Institute.
+
+ACKNOWLEDGEMENTS
+
+We thank the School of Mathematics at the Insti-
+tute for Advanced Study, the Center for Geome-
+try, Analysis, Numerics and Graphics (G.A.N.G.)
+of the University of Massachusetts at Amherst, and
+the Geometry Center of the University of Min-
+nesota, for the use of their computer facilities; and
+
+Ken Brakke, Bruce Kleiner and John Sullivan, for
+their helpful comments. Thanks also to Charlie
+Gunn and Peter Norman for their interest in this
+project. We are grateful to Dick Palais and the
+referee for suggesting a number of improvements
+to the text, and to Mike Davis for pointing out the
+reference [Schubert 1953].
+
+Finally, we would like to express our appreci-
+ation for Silvio Levy’s superlative editing, which
+clarified the exposition, and for his contribution of
+the program tle.m, which completed the circle of
+ideas.
+
+REFERENCES
+
+[Brakke 1992] K. A. Brakke, “The Surface Evolver”,
+Experimental Math. 1 (1992), 141-165.
+
+[Bryson et al. 1993] S. Bryson, M. H. Freedman, Z.
+X. He and Z. Wang, “Mobius Invariance of Knot
+Energy”, Bull. Amer. Math. Soc. 28 (1993), 99-103.
+
+[Freedman et al.] M. H. Freedman, Z. X. He and Z.
+Wang, “Mobius energy of knots and unknots”, to
+appear in Annals of Math. Also available as “On the
+energy of knots and unknots”, Research Report GCG
+40, The Geometry Center, University of Minnesota.
+
+[Kusner and Sullivan] R. Kusner and J. Sullivan,
+“A Mobius invariant, nonlocal energy for embedded
+submanifolds”, in preparation.
+
+[O’Hara 1991] J. O’Hara, “Energy of a knot”, Topology
+30 (1991), 241-247.
+
+[Palais 1979] R. Palais, “The principle of symmetric
+criticality”, Comm. Math. Physics 69 (1979), 19-30.
+
+[Schubert 1953] H. Schubert, “Knoten und Vollringe”,
+Acta Math. 90 (1953), 131-286.
+
+[Wolfram 1991] S. Wolfram, Mathematica: A Sys-
+tem for Doing Mathematics by Computer, 2nd ed.,
+Addison-Wesley, Reading, MA, 1991.
+
+SOFTWARE AVAILABILITY
+
+The Mathematica programs tke.m and tle.m, as well as
+the Fortran programs torusknotenergy.f and torus-
+linkenergy.f, can be found in the directory pub/knot
+on the server polyphemus. gang .umass.edu.

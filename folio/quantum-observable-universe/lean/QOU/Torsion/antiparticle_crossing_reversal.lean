@@ -66,7 +66,7 @@ Let $T_{2,3}$ be the left trefoil (the electron generator) and
 $T_{2,3}^{\sigma}$ its mirror image (all crossings reversed).
 
     The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/antiparticle-crossing-reversal.ts
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/antiparticle-crossing-reversal.ts
 theorem antiparticle_crossing_reversal [ctx : AntiparticleCrossingReversalContext] :
     (ctx.β_anti = ctx.mirror ctx.β_hadron ∧
      ∀ b : ctx.Braid, ctx.mirror (ctx.mirror b) = b) ∧

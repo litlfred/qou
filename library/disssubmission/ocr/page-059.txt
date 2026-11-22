@@ -1,0 +1,55 @@
+3.4. Tannakian categories 51
+
+the diagram is commutative because by adjunction there exists only one
+morphism j;(K)® j:(L) —> R(j,j)«(K XL) which restricts over U to the
+identity. By the same argument, the diagram
+
+ad,
+
+Rjx(K) RRj,.(L)
+
+D(ii(D(K)) Bj (D(L)))
+
+R(J, j)«(K BL)
+
+D((i,j)\(D(K) RD(Z)))
+
+D(ad:)
+
+commutes. Since the lower row is an isomorphism (being the Verdier dual
+of an isomorphism), it follows that ad,, is an isomorphism as well, and this
+finishes the proof of part (a) of the lemma.
+
+(b) Suppose that K € T, and take a generic character y € II(X). We
+know from lemma 3.5 that H?(X,Ky) = 0, and the Kiinneth formula in
+lemma 3.4 then implies that
+
+A(X, (K*1M)q) = H2(X, Ky) @aH2(X,My) = 0
+
+as well. So K *, M lies in T as required. The statement for K «,M follows
+in the same way or can be deduced via Verdier duality.
+
+(c) For generic x € II(X) theorem 3.1 says that H?(X, Ky) = H*(X, Ky)
+and that this hypercohomology is concentrated in degree zero. The same
+also holds with M in place of K. So lemma 3.4 shows that H?(X,K *;M)
+and H*(X,K *,M) are concentrated in degree zero for generic 7, and our
+claim follows from corollary 3.3. Oo
+
+3.4. Tannakian categories
+
+In this section we assume as before that for the semiabelian variety X
+and its quotient A = X/T the axiom GV(A) and hence also GV(X) from
+section 3.1 holds. The results of the previous section then imply
+
+THEOREM 3.8. The two convolution products *, and * descend to the
+same well-defined bifunctor
+
+*«:DxD— D
+which satisfies P * P C P and with respect to which both D and P become
+symmetric monoidal A-linear triangulated categories.
+
+Proof. By lemma 3.7 (b) both *; and *, descend to a bifunctor on D, and
+part (a) of the lemma shows that these two bifunctors coincide. It follows
+as in [106, sect. 2.1] that (D,«) is a symmetric monoidal category. Part (c)
+of lemma 3.7 furthermore shows that P « P C P so that (P,«) inherits the
+structure of a symmetric monoidal category as well. Oo

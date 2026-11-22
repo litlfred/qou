@@ -45,7 +45,7 @@ is physically correct; see the probe and
 Base ring is a generic `Field` per the §7c convention — nothing here needs an
 ordering, a square root, or any archimedean construct.
 
--- Ref: [manuscript] mass-theory/interface-knot-markov-z-proof.md,
+-- Ref: [leitner2026] mass-theory/interface-knot-markov-z-proof.md,
 --      §"The three factors are one bar-orbit"
 -/
 import Mathlib.Algebra.Field.Basic

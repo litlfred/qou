@@ -1,0 +1,48 @@
+Nonvanishing of hyperelliptic zeta functions over finite fields 1901
+
+Proof. A point of X7(F,) is a point of Xn(Fa) such that Frob, -x = (a) - x. In other words, it is a triple
+(g,@, h)/Fg such that Frob, -(g, ¢, 1) is isomorphic to (g, ag, h). The fact that the isomorphism class
+of h is fixed by Frobenius implies that the branch locus of h is an F,-rational divisor. Let f(x) € Fg[x]
+be the unique monic squarefree polynomial which vanishes precisely at the branch locus of h. Then C is
+isomorphic (over F,) to the smooth completion of the hyperelliptic curve defined by y? = f(x).
+
+Fixing such an h, and thus such a C, we now consider the set of points of X4(F,) lying over this h.
+First of all, the choices of (g, @) such that (g, @,h) € X4(Fy) = Xn(Fq) for a specified h are in bijection
+with the £78 —] surjections from J(C)LEM(Eq) to Z/€Z. Two such surjections s, s’ are isomorphic (that
+is, are parametrized by the same point of X4(F,)) if and only if s = +s’. The action of Frobenius on the
+set of surjections sends s to a~! Frob, s; so s descends to a point of Xf(F,) if and only if Frob, -s = Eas.
+We conclude that the number of points of Xf (F,) lying over h is (4) (ma(f) +m_a(f)).
+
+Now if f in Q,,q is not monic then f = €F for some € € FF and some monic F. The curve Cy
+is isomorphic to Cy if € is a quadratic residue and to the nontrivial quadratic twist of Cr otherwise.
+In the former case, mg(f) = ma(F), and in the latter, mg(f) = m_,(F). In particular, the quantity
+(3) Gna(f) +m_,(f)) is the same for all g — 1 nonzero multiples of F. We conclude that
+
+S> (3) Oma f) +m-al f)) = GQ — DING (Fg).
+SEQng
+
+Moreover, taking € to be a nonresidue in F*,
+
+Yo maf) = YS malef)= YO mah)
+
+fEQng fEQng SEQng
+from which we obtain
+Yo maf) = GQ = DIX (Fa)
+LEQng
+
+as desired. Oo
+
+We now argue exactly as in the proof of [Ellenberg et al. 2016, Theorem 8.8].
+Since |Qnq| = (q — 1)(q"” — q'—!), it suffices to prove that
+
+lq7"|X4(Fq)| — 1] < Coq? (2.4)
+
+for some C; depending only on £ and for all n > Ne, g > Qe.
+Via the Grothendieck—Lefschetz trace formula, we have
+|X4(Fy)| = yeni Tr(Frob, | Hig ((XDs, Q,). (2.5)
+
+U
+where A is a prime greater than max{2¢, qg, n}.
+Note that the étale cohomology is that of the base change of X4 to F,, where it becomes isomorphic
+to the untwisted space X,,; in particular, the choice of a affects the action of Frobenius on the étale
+cohomology, but not the étale Betti numbers, bounds on which are the main engine of the argument.

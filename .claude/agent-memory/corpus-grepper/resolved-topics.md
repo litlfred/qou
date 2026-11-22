@@ -277,7 +277,7 @@ Audit: `docs/audits/2026-09-04-how-the-hyperbolic-volume-could-arise-from-qou.md
   defect, (B2) the 240, (B3) `B ≅ ℍ²/Γ` — **B3 absent from the whole corpus.**
   Mathlib's `UpperHalfPlane` is **never imported** by QOU.
 - **The source for B1–B3 IS HELD and is cited for a DIFFERENT section:**
-  `library/pjm-v154-n1-p09-s/sections/sec-001-2-the-universal-cover-of-brings-curve-if-b-b-is.md`
+  `library/pjm-v154-n1-p09-s/sections/page-004.md`
   (Riera–Rodríguez 1992 §2, pp. 2–8) gives `Γ*` = (2,4,5) triangle group,
   `φ: Γ*→S₅`, `Γ = ker φ` torsion-free, **`B = Δ/Γ` genus 4** — and `[Γ*:Γ]=120`
   × 2 triangles = the corpus's unsourced `240`. `references.ts:9012` cites this

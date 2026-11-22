@@ -1,0 +1,1 @@
+17 (tangential Morse data). The tangential Morse data at p is the homotopy type of the pair (B*, 0B“), where J is the Morse index of hls at p and B* denotes the ball of dimension 2. By Theorem C.28, this is the Morse data at p for the height function hls on the smooth manifold S.

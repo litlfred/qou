@@ -1,1 +1,1 @@
-The dimension of the vector space MW1,W2
+The dimension of the vector space MW1,W2 W3 of intertwining operators of a given type W3 W1 W2  is called the fusion rule. For a V -module W, let W denote the algebraic completion of W, W = Πr∈RWr, P W r : W → Wr, (37.3) the natural projection maps for r ∈ R. We recall the definition of P(z)-intertwining map from [84], [85], [86], [87].

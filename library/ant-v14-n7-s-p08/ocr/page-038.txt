@@ -1,0 +1,57 @@
+1948 Lillian B. Pierce and Junyan Xu
+
+Recall that we assume H; < Hy <--- < H,. We choose (cf. (7-2) and (7-4)) P to be an integer such that
+
+A, A,
+
+1/@r—1) SPs qi/@r-)
+
+24
+which balances the j = 0 and j = 2 contributions. Under this choice, a simple computation shows that
+for each j =0,...,m we can verify that
+
+q!? Bi (js H/P) | <1,
+upon using the fact that H; < Hy <...< H, and the definition of the function Bi .( , +) given above.
+Applying this in (A-4) would give
+ISPS N, HD Knap A PP yg) dog gy"
+
+with the definition
+2r—1 _ 1
+
+OF=
+
+a’
+
+We can compute that this is nontrivial for H satisfying the analogues of (1-6) or (1-8) with © in place
+of ©; in the limit as n + oo we quantify the strength of the bound near the threshold 6, = 21 1/(2(n+]1)).
+Letting 6 = B, +x, then our bound is of the form || H||q~°, where
+
+_ atl 1 _ ati 1
+
+6 - x -—:
+ar ~ 4r@F Qr 4p?
+The maximum
+1)2
+bx (n+1) Pe
+4
+is achieved when r is the nearest integer to
+1
+rx ———.
+K(n+ 1)
+
+Thus this conjectural improvement to the stratification would yield a stronger savings near the threshold £,,,
+but would not alter the fundamental threshold £,. Similar computations to those above show that even if
+we could conjecturally improve the 6; values to the strongest possible values 6; =nr for 1 <j <n, this
+bound will not be improved substantially, and the threshold 6, will not change.
+
+A.3. Fourier methods for incomplete sums that are not short. Roughly speaking, the threshold H; <q!/*
+
+appears as a natural constraint of the ranges for which our main results hold. This is not a deficit, for
+recall that on the other side of this threshold, different methods, which also rely on Weil bounds, become
+feasible, for appropriate F. To bound S(F; N, H) in cases where H; >> q'/?, an advantageous strategy is
+to “complete the sum,” writing
+
+SOF3N,I= So xX(F@) YS Aaa moda):
+
+a=(d),...,dn) xeZ"
+a; (mod q) xi€(Ni, Ni +Hi]

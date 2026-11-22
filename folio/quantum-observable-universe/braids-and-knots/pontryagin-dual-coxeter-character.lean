@@ -42,7 +42,7 @@ sorry-free.
 Refs:
 - [pontryagin1934] Pontryagin, "The theory of topological commutative groups"
 - [hewitt-ross1979] Hewitt–Ross, "Abstract Harmonic Analysis" Vol. I
-- [manuscript] braids-and-knots/pontryagin-dual-coxeter-character.md
+- [leitner2026] braids-and-knots/pontryagin-dual-coxeter-character.md
 -/
 
 

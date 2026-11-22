@@ -1,0 +1,1 @@
+Letq∈F\{0}. Then there is a faithful functor F : grRep(St)q→ Rep(St). This functor is induced by the functor F0 : grRep0(St)q→ Rep0(St) given by setting F0([a,b ]) = [a +b] for all a,b∈ Z≥0. On morphisms, F0 is the identity; that is, for f∈ HomgrRep0(St)([a,b ], [c,d ])⊆FPa+b,c+d, we set F0(f) =f : [a +b]→ [c +d].

@@ -1,0 +1,64 @@
+---
+doc_id: schechtman-varchenko1991-arrangements
+doc_title: "Arrangements of hyperplanes and Lie algebra homology"
+section_id: page-035
+section_title: "Page 35"
+pages: 35-35
+pdf_page: 35
+source_pdf: schechtman-varchenko1991-arrangements.pdf
+source_sha256: 0100fd32438740f0
+text_source: ocr
+granularity: page
+doc_brief: "Arrangements of hyperplanes and Lie algebra homology — 56 sections: Page 1; Page 2; Page 3"
+---
+Arrangements of hyperplanes and Lie algebra homology 173
+
+6.5 Fix a non-zero complex parameter x. For A=(k,, ..., k,)EIN’, |A|=N, and
+A,,..., An€b*, define the set of exponents a=a(B, A,, ..., A,): @n,n > C:
+
+(6.5.1) a(H; )=(— a, Og p)/
+a(H?) =(— ani, Am)/K-
+i-1 i
+Here x: [N] > [r] is defined by the rule x(/)=iif Y k,<js ¥. ky.
+p=i p=
+Note that a is 2,-invariant, i.e. a(oH)=a(H) for all HeE@,,y, cE 2). It follows
+that S: F"(@,,y) + L"(@,;n) is Z,-equivariant.
+Put for brevity M=M(A,)@...® M(A,).
+Let us denote by
+
+(6.5.2) N=MNa.pny? Cp(t, M)F > AN P(E yx?
+
+the isomorphism, which is the composition of the inverse to the conjugate to
+Ya p.n) (5.5.2), and p~* (2.3.3).
+Consider the square
+
+C.(n,M), ——> Cn, Mt
+(6.5.3) . [ iH
+
+FN~“(b y,y)?——. BG ygu)™*
+
+where the upper S is (6.4.5), and the lower S is (3.2.1).
+The main result of this section is
+
+6.6 Theorem. One has for all p
+npS=(—1)*K*Sy,.
+This Theorem will be proven below in several steps.
+
+6.7 First, let us introduce certain diagram notation for elements of groups
+A” (6 q,n), Similar to that of § 5.
+
+Namely, we'll draw a monomial H,-...-H,¢./?(@,,y) as the following non-
+oriented graph. It has n+WN vertices: N circles enumerated from 1 to N and
+n crosses enumerated from 1 to n. It has p edges enumerated from 1 to p:
+the i-th edge connects circles « and f if H;=H,,, and the o-th circle with
+the B-th cross if H,;=H§. So, if we forget the numbers of edges, we obtain
+the picture of an edge H,1...1H,€@!,y, cf. 5.6.
+
+Example. N=4; n=2.
+
+ototo x ox =H34H? Hy;
+4 3 1 1 2 2
+
+6.8 Suppose that A=(1, 1,..., 1), N=|A|=r, and n=1. The aim of this n° is
+to prove 6.6 for this case and for p=0. Put 4=A,, M=M(A). The space M,
+has as a base the set of monomials f, =f, fow—1)---foay'¥s TEZN-

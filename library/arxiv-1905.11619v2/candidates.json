@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1905.11619v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "f634f9ec4357d5f34d5a161a0fea1e598715b059592cfd5813b0a85d3764cd83",
+  "file": "1905.11619v2.pdf"
+ },
+ "provenance": {
+  "title": "L2-COHOMOLOGY, DERIVATIONS AND QUANTUM MARKOV SEMI-GROUPS ON q-GAUSSIAN ALGEBRAS",
+  "authors": "MARTIJN CASPERS, YUSUKE ISONO, AND MATEUSZ WASILEWSKI",
+  "arxiv": {
+   "id": "1905.11619",
+   "version": "2",
+   "primary_class": "math.OA",
+   "stamp_date": "13 Feb 2020"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-alg-geom-9705010v1/blocks/prose-sec-010",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Linearity: complexiﬁed Duistermaat-Heckman",
-  "pageStart": 19,
-  "pageEnd": 21,
-  "text": "../sections/sec-010-linearity-complexiﬁed-duistermaat-heckman.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-alg-geom-9705010v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-alg-geom-9705010v1",
+  "title": "§2. Why integrable systems Algebraically integrable systems",
+  "pageStart": 16,
+  "pageEnd": 18,
+  "text": "../sections/sec-010-2-why-integrable-systems-algebraically-integrabl.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-alg-geom-9705010v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-alg-geom-9705010v1/manifest.jsonld",
   "provenance": "ingested"
 }

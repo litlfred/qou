@@ -1,0 +1,52 @@
+ON q-SUMMATION AND CONFLUENCE 381
+
+4. Generic qg-Gevrey series
+
+We call generic q-Gevrey series a power series f € C[[z]] satisfying a
+q-difference equation Af € C{x} for some analytic g-difference operator A
+of the form:
+
+A := ao(x)(a04)” + a; (x)(aoq)""! +... + an (2),
+
+(4.1)
+with aj € C{x}, ao(0)a,(0) 4 0,
+
+and oq(f(x)) = f(qx). This means that the associated Newton polygon has
+only one finite slope equal to one (cf. [13] and [20]).
+
+An explicit calculation (cf. also [6, Lemma 1.1.10]) shows that
+
+LEMMA 4.1. — Let dy = on and consider a q-difference operator
+A € C{x}[o,]. Then A can be written as (4.1) if and only if it can be
+rewritten in the following form:
+(4.2)
+A:= bo (x) (a?dq)" +01 (2) (dq)! +...40n(x), 6; € C{x}, bo(0)bn(0) 4 0.
+
+Notice that the g-Euler series € (x) considered in previous section is a
+generic q-Gevrey series.
+
+4.1. Two formal g-Borel transforms
+
+The classical Borel transform associates to each power series
+
+> anatth
+
+n>0
+
+the more convergent (or less divergent) power series Vnzo &-€". For the
+solutions of a q-difference equations, the Gevrey “scaling factor” (n!)* is
+replaced by the q-Gevrey one: (q""/?) (cf. [4], [13], [20],[21]). Indeed, in the
+literature there are (at least) two g-analogs of the factorial n!, namely In},
+n(n—1)/2
+
+and q' The reason for this dichotomy is the identity
+
+Gd P3P. - _
+by = ea = ean = nate
+which implies that
+
+gnr-D/2
+
+(4.3) [n]g ~ C-p"’ when n — +00.
+
+TOME 59 (2009), FASCICULB 1

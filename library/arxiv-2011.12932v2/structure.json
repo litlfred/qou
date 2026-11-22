@@ -7,10 +7,11 @@
   "bytes": 799718,
   "pages": 26,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -26,13 +27,21 @@
    "MODULAR CATEGORIES AND TQFTS BEYOND",
    "SEMISIMPLICITY"
   ],
-  "abstract": "Vladimir Turaev discovered in the early years of quantum topol- ogythatthenotionofmodularcategorywasanappropriatestructureforbuild- ing 3-dimensional Topological Quantum Field Theories (TQFTs for short) con- taining invariants of links in 3-manifolds such as Witten\u2013Reshetikhin\u2013Turaev ones. In recent years, generalized notions of modular categories, which relax the semisimplicity requirement, have been successfully used to extend Turaev\u2019s construction to various non-semisimple settings. We report on these recent de- velopments in the domain, showing the richness of Vladimir\u2019s lineage.",
+  "abstract": "Vladimir Turaev discovered in the early years of quantum topol- ogy that the notion of modular category was an appropriate structure for build- ing 3-dimensional Topological Quantum Field Theories (TQFTs for short) con- taining invariants of links in 3-manifolds such as Witten–Reshetikhin–Turaev ones. In recent years, generalized notions of modular categories, which relax the semisimplicity requirement, have been successfully used to extend Turaev’s construction to various non-semisimple settings. We report on these recent de- velopments in the domain, showing the richness of Vladimir’s lineage.",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20210525013034Z",
-   "Creator": "LaTeX with hyperref",
    "Producer": "pdfTeX-1.40.21",
-   "Title": ""
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20210525013034Z"
+  },
+  "title_raw": "MODULAR CATEGORIES AND TQFTS BEYOND SEMISIMPLICITY",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "MODULAR CATEGORIES AND TQFTS BEYOND SEMISIMPLICITY 1. Introduction After the work of Vaughan Jones [ 30 ] and Edward Witten [ 61 , 62 ], Vladimir Turaev played a key role in the foundation of quantum topology. Together with Nikolai Reshetikhin [ 54 ], they were the ﬁrst to obtain a mathematically ri",
+   "outline": "1. Introduction",
+   "text": "MODULAR CATEGORIES AND TQFTS BEYOND SEMISIMPLICITY",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [
@@ -41,102 +50,342 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Historical overview",
    "page": 2,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Definition of TQFT",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Semisimple constructions",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Early non-semisimple constructions",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Renormalized non-semisimple constructions",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Turaev's notion of modular category",
    "page": 5,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Semisimple quantum invariants and TQFTs",
    "page": 7,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "T-modular categories from small quantum sl(2)",
    "page": 9,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Lyubashenko's notion of modular category",
    "page": 12,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Non-semisimple quantum invariants and TQFTs",
    "page": 16,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "L-modular categories from small quantum sl(2)",
    "page": 18,
    "source": "outline",
-   "number": "8"
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Appendix A. Ends",
    "page": 20,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 24,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 701,
+   "n_words": 97,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -144,61 +393,187 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 3823,
-   "n_words": 599
+   "n_chars": 2519,
+   "n_words": 386,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-semisimple-constructions",
+   "id": "sec-001-2-historical-overview",
+   "number": "2",
+   "title": "Historical overview",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-definition-of-tqft",
+   "number": null,
+   "title": "Definition of TQFT",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 1214,
+   "n_words": 206,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-003-semisimple-constructions",
    "number": null,
    "title": "Semisimple constructions",
    "level": 2,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 3022,
-   "n_words": 435
+   "n_chars": 3029,
+   "n_words": 442,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-early-non-semisimple-constructions",
+   "id": "sec-004-early-non-semisimple-constructions",
    "number": null,
    "title": "Early non-semisimple constructions",
    "level": 2,
    "page_start": 3,
-   "page_end": 20,
-   "n_chars": 45785,
-   "n_words": 7568
+   "page_end": 4,
+   "n_chars": 4359,
+   "n_words": 675,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-appendix-a-ends",
+   "id": "sec-005-renormalized-non-semisimple-constructions",
+   "number": null,
+   "title": "Renormalized non-semisimple constructions",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 6026,
+   "n_words": 914,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-006-3-turaevs-notion-of-modular-category",
+   "number": "3",
+   "title": "Turaev's notion of modular category",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 3860,
+   "n_words": 688,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-007-4-semisimple-quantum-invariants-and-tqfts",
+   "number": "4",
+   "title": "Semisimple quantum invariants and TQFTs",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 5359,
+   "n_words": 946,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-008-5-t-modular-categories-from-small-quantum-sl2",
+   "number": "5",
+   "title": "T-modular categories from small quantum sl(2)",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 12,
+   "n_chars": 8106,
+   "n_words": 1630,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-009-6-lyubashenkos-notion-of-modular-category",
+   "number": "6",
+   "title": "Lyubashenko's notion of modular category",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 16,
+   "n_chars": 7780,
+   "n_words": 1450,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-010-7-non-semisimple-quantum-invariants-and-tqfts",
+   "number": "7",
+   "title": "Non-semisimple quantum invariants and TQFTs",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 6258,
+   "n_words": 1072,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-011-8-l-modular-categories-from-small-quantum-sl2",
+   "number": "8",
+   "title": "L-modular categories from small quantum sl(2)",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 4373,
+   "n_words": 867,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-012-appendix-a-ends",
    "number": null,
    "title": "Appendix A. Ends",
    "level": 1,
    "page_start": 20,
    "page_end": 24,
-   "n_chars": 6624,
-   "n_words": 1135
+   "n_chars": 6991,
+   "n_words": 1502,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-004-references",
+   "id": "sec-013-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 24,
    "page_end": 26,
-   "n_chars": 9609,
-   "n_words": 1281
+   "n_chars": 9713,
+   "n_words": 1385,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 14,
-  "sections": 5,
-  "chars_total": 68863,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 15,
+  "chars_total": 70288,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "2021-04-19_survey.tex",
    "tex_sections": 12,
-   "overlaid": 3,
+   "overlaid": 11,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -206,36 +581,111 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.702,
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-2-historical-overview",
+     "title": "Historical overview",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-definition-of-tqft",
+     "title": "Definition of TQFT",
+     "prose_ratio": 0.966,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-001-semisimple-constructions",
+     "id": "sec-003-semisimple-constructions",
      "title": "Semisimple constructions",
      "prose_ratio": 0.985,
-     "coverage_ratio": 0.966,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-002-early-non-semisimple-constructions",
+     "id": "sec-004-early-non-semisimple-constructions",
      "title": "Early non-semisimple constructions",
-     "prose_ratio": 0.992,
-     "coverage_ratio": 0.875,
+     "prose_ratio": 0.922,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-003-appendix-a-ends",
+     "id": "sec-005-renormalized-non-semisimple-constructions",
+     "title": "Renormalized non-semisimple constructions",
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-3-turaevs-notion-of-modular-category",
+     "title": "Turaev's notion of modular category",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-4-semisimple-quantum-invariants-and-tqfts",
+     "title": "Semisimple quantum invariants and TQFTs",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-5-t-modular-categories-from-small-quantum-sl2",
+     "title": "T-modular categories from small quantum sl(2)",
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.958,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-6-lyubashenkos-notion-of-modular-category",
+     "title": "Lyubashenko's notion of modular category",
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.948,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-7-non-semisimple-quantum-invariants-and-tqfts",
+     "title": "Non-semisimple quantum invariants and TQFTs",
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-011-8-l-modular-categories-from-small-quantum-sl2",
+     "title": "L-modular categories from small quantum sl(2)",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.922,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-012-appendix-a-ends",
      "title": "Appendix A. Ends",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-004-references",
+     "id": "sec-013-references",
      "title": "References",
      "result": "no matching \\section"
     }

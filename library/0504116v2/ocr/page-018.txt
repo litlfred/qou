@@ -1,0 +1,44 @@
+452 Roberto Frigerio
+
+Let 7 € 7(N’) be such that po(y) 4 1 and suppose r,: (—e,€) > OH is a smooth
+path such that r,(f) is a fixed point for p,(y) for any t € (—e, €). We want to study
+how the derivative of r(t) is related to the derivative of p;(7). We identify OH? with
+
+CU {oo} and we set
+(7) = a(t) b(t)
+PLY = IV cay ay) |
+
+Without loss of generality we can suppose that p(y) does not fix oo and that r,(0) =
+0€CC AH’, so b(0) = 0, c(0) 40. An easy computation now shows that
+
+ro(t) = (alt) = dls) + (OO +E —D) / cl).
+
+From this formula we can readily deduce the following lemmas.
+
+Lemma 2.12 If po(7) is non-trivial loxodromic and p(y) = 0, then 7,(0) = 0. On
+the other hand, let po(y) be non-trivial parabolic. Also assume that p(y) = 0 and
+tr,(0) = 0. Then 7-(0) = 0.
+
+We can now conclude the proof of Proposition 2.6. Choose D; and p; as in the statement
+of Proposition 2.11. Let S be a boundary component of the universal covering of N’
+which belongs to Spar, denote by Ps the stabilizer of S in 7 (N’) and choose an element
+7 € Ps with po(y) 4 1. By construction the projection of bs(t) to OH? is fixed by
+p(y), So Lemma 2.12 applies ensuring bs(0) = 0.
+
+Suppose now that S belongs to Sgq, and let Ps be the stabilizer of S in 7 (N’).
+For y € Ps with po(y) # | let py(t),q,(t) be the fixed points of p,(7) on OH.
+Note that since po(y) is loxodromic we can choose p,q, to vary smoothly with
+respect to ¢, at least in a small neighbourhood of 0. This gives p, = q, = 0 by
+Lemma 2.12. Now a standard result in Kleinian group theory ensures that the set
+{p(0), q(0) : y € Ps, po(7) # 1} is dense in the closure at infinity of Do(S) C HP,
+and this easily implies bs(0) = 0.
+
+3 Dehn filling
+
+Once the smoothness of (7) at xo is established, one can prove Thurston’s hyperbolic
+Dehn filling Theorem just by following the strategy described in [12]. At this stage, this
+argument applies only to those hyperbolic manifolds with geodesic boundary which
+admit a good geodesic triangulation (but see Conjecture 1.2). The following result is
+taken from [12].
+
+Algebraic & Geometric Topology 6 (2006)

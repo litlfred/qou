@@ -1,6 +1,6 @@
 ---
 doc_id: 0510388v1
-doc_title: "ELECTRODYNAMICS and the GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE Dennis DeTurck and Herman Gluck"
+doc_title: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space"
 section_id: sec-056-52-non-uniqueness-of-the-greens-operator-in-h3
 section_title: "Non-uniqueness of the Green's operator in H3 ."
 section_number: 52
@@ -8,6 +8,7 @@ pages: 98-100
 source_pdf: 0510388v1.pdf
 source_sha256: c83c0f6a2eaa74f3
 toc_source: inferred
+doc_brief: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space — 64 sections: Front matter; ORGANIZATION; STATEMENTS OF RESULTS"
 ---
 We have been seeking a formula for the vector-valued Green's operator in  H3  of 
 the type 
@@ -48,7 +49,6 @@ and then
  — 1)   +   2 ln(eα / (eα + 1)) . 
  
  
-99 
  
  
  
@@ -77,7 +77,4 @@ Further computation reveals that this harmonic function on  H3  is in general no
 constant, and hence the arbitrary choice of the constant  C  in the definition of  ϕ2  
 in section 49 does have an effect on  Gr(V) .  As a consequence, the vector-valued 
 Green's operator in  H3 ,  even restricted to the form that we are seeking, is not 
-unique. 
- 
- 
-100
+unique.

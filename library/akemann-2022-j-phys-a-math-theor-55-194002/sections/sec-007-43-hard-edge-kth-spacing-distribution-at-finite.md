@@ -8,6 +8,7 @@ pages: 20-21
 source_pdf: Akemann_2022_J._Phys._A__Math._Theor._55_194002.pdf
 source_sha256: 3753499c4b23f189
 toc_source: outline
+doc_brief: "Consecutive level spacings in the chiral Gaussian unitary ensemble: from the hard and soft edge to the bulk — 20 sections: Front matter; Consecutive level spacings in the ; Introduction"
 ---
 Inserting the expression (72) as well as (57) into (42), we obtain the following relatively com-
 pact expression for the spacing distribution at the hard edge between the kth and (k + 1)st

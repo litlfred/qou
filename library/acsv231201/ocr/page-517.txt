@@ -1,0 +1,46 @@
+C.3 Classical Morse theory 499
+
+Functoriality of the residue, combined with (C.2.19), now implies
+
+Res Jen GornteiSs|
+1 a\n su ew)
+= ——_ |— “as dim. (C.2.20
+anailss} TEM) MNoaneney ( )
+
+Applying Corollary C.23 to the right-hand side of (C.2.20) and noting that
+
+Ou; . : Olog z(u) “1
+Ty =(—““i — lies COSY _ (p
+¥ (siocva) apes Bu; (Ty),
+
+we obtain an expression
+
+(2) [ z(u)* PCH (uw) > P@) Pr,z)
+du Tar ()JoCP"(0) }I 9 a2) det D(z) [jew Z)
+whose leading term is as stated. ia)
+
+Remarks. The leading term (C.2.15) depends on the divisors Q; only through
+their gradients. When the stratum S is a single point (k = d), the residue at p
+is a 0-form — i.e., a polynomial P(r) in r.
+
+C.3 Classical Morse theory
+
+After using residues to replace our starting Cauchy integral with a residue in-
+tegral over an intersection class o in ‘V, we need to understand how to deform
+o in V. The possible deformations we can make, and which deformations will
+allow us to compute asymptotic behavior, depend on the topological properties
+of V. Morse theory attempts to describe the topology of a space X by means of
+the geometry of X near critical points of a smooth, proper function h : X > R.
+
+Our destination in this appendix is Theorems C.38 and C.39, which state that
+we may find a basis for each homology group H;(X) consisting of quasi-local
+cycles at the critical points of /: for each critical point p there will be a cycle
+with height bounded by h(p) — ¢ except in an arbitrarily small neighborhood of
+p. We establish this result by studying the sublevel sets X<q := {x € X : h(x) <
+a} as a increases and showing that the homotopy type of X does not change
+(the Morse Lemma C.27) except at critical points, where a cell is attached
+(Theorem C.28). Along the way, a description of X as a cell complex is given in
+Theorem C.32. A description of the attachments in terms of relative homology
+is also given in the last section.
+
+Our material here covers classical (smooth) Morse theory, which assumes

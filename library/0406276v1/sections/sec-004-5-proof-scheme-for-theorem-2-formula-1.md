@@ -8,6 +8,7 @@ pages: 12-15
 source_pdf: 0406276v1.pdf
 source_sha256: 8fdf4b5950e8b5f5
 toc_source: inferred
+doc_brief: "The GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE — 16 sections: Front matter; Linking integrals in S3 and H3 .; Historical background."
 ---
 Let  VF(S3)  denote the set of all smooth (C∞) vector fields on  S3 ,  regarded as an 
 infinite-dimensional vector space with the L2 inner product   
@@ -50,7 +51,6 @@ route) to an explicit formula for the linking integral was known to de Rham (196
 section 33).  The issue is to find the formula for the Green's operator, and we turn 
 now to showing how to do this on  S3 . 
  
-13
  
 Working in left-translation format, it is natural to hope, by analogy with  R3 ,  that 
  
@@ -105,7 +105,6 @@ In particular, in  R3  we have  ∆A(V, ϕ)  =  A(V, ∆ϕ) .  So naturally, whe
 choose  ϕ  to be a fundamental solution of the scalar Laplacian in  R3 ,  we get 
 ∆A(V, ϕ)  =  A(V, δ)  =  V ,  which tells us that  A(V, ϕ)  =  Gr(V)  there. 
  
-14
  
  
 On the 3-sphere  S3 ,  we get the Green's operator by adding one copy of line A 
@@ -151,7 +150,4 @@ The negative curl of the above formula for the Green's operator,
  
 BS(V)  =  — ∇ × Gr(V) , 
  
-leads to formula (1) of Theorem 2 for the Biot-Savart operator on  S3 . 
- 
- 
-15
+leads to formula (1) of Theorem 2 for the Biot-Savart operator on  S3 .

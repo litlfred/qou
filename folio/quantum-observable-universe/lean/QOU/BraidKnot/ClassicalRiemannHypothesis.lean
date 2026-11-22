@@ -22,7 +22,7 @@ against `opaque riemannZeta : ℂ → ℂ`; full compile is CI-gated (the
 `Mathlib.NumberTheory.LSeries.RiemannZeta` olean is absent from the partial
 sandbox cache, and Mathlib search was network-blocked).
 
-Ref: [manuscript] quantum-observable-universe/stochastic-mechanics/classical-riemann-hypothesis.md
+Ref: [leitner2026] quantum-observable-universe/stochastic-mechanics/classical-riemann-hypothesis.md
 -/
 
 namespace QOU.BraidKnot
@@ -39,7 +39,7 @@ class ClassicalRiemannHypothesis : Prop where
 
 -- The conjecture itself.  The `sorry` represents the **open conjecture**
 -- per §3b — not a missing proof.
--- Ref: [manuscript] quantum-observable-universe/stochastic-mechanics/classical-riemann-hypothesis.ts
+-- Ref: [leitner2026] quantum-observable-universe/stochastic-mechanics/classical-riemann-hypothesis.ts
 
 -- **No instance is provided — that is the honest open state** (AGENTS.md §3b-tax).
 -- History: this file previously carried

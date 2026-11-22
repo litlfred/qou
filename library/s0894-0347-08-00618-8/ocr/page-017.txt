@@ -1,0 +1,58 @@
+NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS 537
+
+indexed by T. It was proved by Gantmacher-Krein and Carlson that a
+necessary and sufficient condition for a P-matrix to be GKK is that
+
+A(S,T)A(T, S) > 0 for any $,T C [n] with |S| = |T| = |SUT|-1.
+
+Since
+
+(B + 1)(12, 23) = (1 — 2s)/4 and (B + I)(23, 12) = (1 — 2t)/4
+we may choose s,t € (0,1) so that (B+ I) (12, 23)(B + J) (23, 12) < 0. We conclude
+that for such values of s,t the matrix B+ I fails to be GKK.
+
+It is easy to see that the measures associated with positive definite and totally
+positive matrices have ULC rank sequences. This follows from Newton’s inequalities
+and the fact that Hermitian matrices and totally positive matrices have real-rooted
+characteristic polynomials (in the case of totally positive matrices this goes back to
+Gantmacher and Krein ). For M-matrices it is not as obvious but nonetheless
+true. In Holtz and Schneider conjectured that M-matrices satisfy the conclusion
+of Conjecture22.4] This was subsequently confirmed by Holtz in [39] using a certain
+monotonicity property for so-called symmetrized Fischer products of M-matrices
+due to James-Johnson-Pierce [44] (see [8] for further results on Fischer products).
+
+We end this section with some open questions.
+
+Question 3.1. Is j14 an ULC measure whenever A is a Rayleigh matrix?
+Question 3.2. For which GKK-matrices A is j14 negatively associated?
+
+Again, negative association fails for measures associated with totally positive
+matrices. Indeed, let B be the totally positive 3 x 3 matrix defined in (9) and fix
+s,t € (0,1) such that A := B+ is not GKK (see the above discussion). It is
+known that an n x n P-matrix C is GKK if and only if
+(10) C(S U {i}) -C(SU {9}) = O(SU {é, J}) - C(S)
+for all S C [n] and i,j € [n] \ S with i 4 j. Hence, since A fails to be GKK it
+follows that fails for A and some S,i,7. Unraveling the definitions, this means
+that for some principal submatrix B’ of B the corresponding measure jg, will fail
+to have pairwise negatively correlated variables (cf. Definition . In particular,
+since NA => p-NC, the measure jug, cannot be negatively associated.
+
+Question 3.3. Describe all n x n Rayleigh matrices.
+
+Question 3.4. Characterize the class of all real stable n x n matrices, that is, n xn
+matrices A such that det(A + Z) is real stable.
+
+3.3. Determinantal probability measures. In [57] Lyons defined a determinan-
+tal probability measure on 2!" to be a measure js € Bp such that there is an n x n
+matrix A so that for any subset S of [n] one has
+
+(11) w({T : SC T}) = det(A[S}),
+
+where as before A[S] denotes the principal submatrix of A whose rows and columns
+are indexed by S. As discussed in e.g. [5] [57], such measures have important appli-
+cations ranging from fermionic processes/continuous scaling limits of discrete point
+processes [23] to the distribution of eigenvalues of random matrices and zeros
+of the Riemann zeta function ij, transfer current matrices [16], non-intersecting
+random walks [47], Poissonized versions of the Plancherel measure on partitions
+and Young diagrams 64], discrete orthogonal polynomial ensembles [46], etc.
+

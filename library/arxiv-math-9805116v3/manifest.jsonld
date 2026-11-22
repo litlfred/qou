@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9805116v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9805116v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-math-9805116v3",
+  "title": "Weak Hopf Algebras I: Integral Theory and C*-structure",
   "contains": [
     "library/arxiv-math-9805116v3/sections/sec-front-matter",
     "library/arxiv-math-9805116v3/sections/sec-000",
@@ -22,10 +22,12 @@
     "library/arxiv-math-9805116v3/sections/sec-007",
     "library/arxiv-math-9805116v3/sections/sec-008",
     "library/arxiv-math-9805116v3/sections/sec-009",
-    "library/arxiv-math-9805116v3/sections/sec-010"
+    "library/arxiv-math-9805116v3/sections/sec-010",
+    "library/arxiv-math-9805116v3/sections/sec-011",
+    "library/arxiv-math-9805116v3/sections/sec-012"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
     "status": "stated",
@@ -35,7 +37,9 @@
   },
   "meta": {
     "doc_id": "arxiv-math-9805116v3",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "9805116v3.pdf",
     "source_sha256": "65ce47d232d61de4f4f1f64b202d5b0299e66d7e2cc7aa0218b5c8e4f8ee169c",
     "pages": 40,

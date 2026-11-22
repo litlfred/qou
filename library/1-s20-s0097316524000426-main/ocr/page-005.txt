@@ -1,0 +1,55 @@
+O.X.M. Yao / Journal of Combinatorial Theory, Series A 206 (2024) 105903
+
+a
+
+12 3
+
+4 (W= 67? = 6hj = 11j ~ 5k 2)? ;)
+
+mo—1
+P 17 lon
+_ | rs ie ke +6) 5 2
+y ( +5 5 3+ 6 +0) +62")
+
+j=0
+
+5 1
+=-— _ zmo + mok? — grok + 3mzk + 2m,
+
+as desired. This completes the proof of this lemma.
+Thoughout this paper, we alway set G(n, k,0) = 0 which satisfies (2.4).
+
+Lemma 2.2. Let k > 1 and n> 0 be integers and define
+
+oC
+
+F(n,k) = )~(ps(n — 6j? — 6kj — j) — ps(n — 6)? — 6hj — 5j — 2k — 1)
+
+j=0
+
+— p3(n — 6j? — 6kj — 7j — 3k — 2) + p3(n — 6j? — 6kj — 11j —5k—5)). (2.6)
+If (n,k) A (11,1), then
+F(n,k) > 1. (2.7)
+In addition, F(11,1) =0.
+Proof. Note that
+N = ({nl6j? + 6kj + 7 <n < Oj + 1)? + Gj +1) + J}.
+j20
+
+Thus, for any nonnegative integer n, there exists a unique nonnegative integer mo such
+that 6m + 6mok + mo <n < 6(mo + 1)? + 6(mp + 1)k + mo. We break our proof into
+four cases.
+Case 1: 6m2 + 6mok + mo <n < 6m2 + 6mok + 5mo + 2k.
+
+If mo = 0, then
+
+F(n,k) = p3(n) > 1.
+
+If k = 1 and 1 < mp < 3, then 13 < n < 89, we can check that F(n,1) > 1 with
+Maple.
+If k =1 with mp > 4 or k > 2 with mp > 1, then
+
+F(n,k) =G(n,k, mo) + p3(n — 6m§ — 6mok — mo) (by (2.5) and (2.6))
+
+— 6m2 — 6mok — 37? 1
+>G(n,k, mp) + Simo — Sino mo +3)" _ (by (2.3))
+

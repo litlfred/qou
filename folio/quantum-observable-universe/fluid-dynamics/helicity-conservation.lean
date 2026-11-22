@@ -1,6 +1,7 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.BigOperators.Group.List.Basic
 import Mathlib.Analysis.SpecialFunctions.Sqrt
+import QOU.BraidsAndKnots.ClosureUnseen
 
 /-!
 # QOU.FluidDynamics.helicity_conservation — categorical helicity conservation
@@ -51,11 +52,15 @@ neither is a field of anything.
   every `t` — is where the quantum Euler equation would enter.  That the
   flow preserves the linking numbers and quantised circulations is the
   physical content of md part (1) and is **not** established here.
-- md parts (3) (Jones-polynomial refinement) and (4) (the `q → 1` classical
-  Moffatt limit) have **no encoding at all** in this file.
+- md part (3) (Jones-polynomial refinement) is encoded in the section `Closure` below
+  (2026-11-16, issue #8133): `jones_normalised_conserved` (general isotopy, via Markov moves),
+  `annular_class_conserved` / `closure_invariants_conserved` (fixed-axis case, conjugation only),
+  and `reconnection_jump` (exact jump across a reconnection). The physical input — frozen-in
+  vortex lines give an isotopy, and isotopy gives a Markov path — is cited, **not** proved here.
+- md part (4) (the `q → 1` classical Moffatt limit) has **no encoding** in this file.
 
 ## References
-- [manuscript] §Fluid dynamics / Categorical helicity conservation,
+- [leitner2026] §Fluid dynamics / Categorical helicity conservation,
   prop:helicity-conservation
 -/
 
@@ -80,12 +85,12 @@ structure FilamentHelicity where
 proposition about one caller-supplied filament.  Classical for the
 undeformed invariants; its `q`-deformation is asserted by the manuscript and
 is **not** proved here. -/
--- Ref: [manuscript] prop:helicity-conservation
+-- Ref: [leitner2026] prop:helicity-conservation
 def CWFHolds (f : FilamentHelicity) : Prop := f.Wr + f.Tw = f.Lk
 
 /-- **Moffatt–Ricca self-helicity identity** `∮_ϱ v·ω ds = Lk_q(ϱ)·(Γ^{(q)})²`,
 as a proposition about one caller-supplied filament.  Not proved here. -/
--- Ref: [manuscript] prop:helicity-conservation
+-- Ref: [leitner2026] prop:helicity-conservation
 def SelfHelicityIsLinking (f : FilamentHelicity) : Prop :=
   f.selfHelicity = f.Lk * f.Gamma ^ 2
 
@@ -113,7 +118,7 @@ Derived, not assumed: summing `∮ = Lk·Γ²` and `Wr + Tw = Lk` over the
 filaments gives `Σ ∮ = Σ Wr·Γ² + Σ Tw·Γ²`.  Both inputs are hypotheses on
 caller-supplied filaments; neither is a field of anything, and the
 conclusion is neither. -/
--- Ref: [manuscript] prop:helicity-conservation
+-- Ref: [leitner2026] prop:helicity-conservation
 theorem selfSum_eq_writhe_add_twist (fs : List FilamentHelicity)
     (hCWF : ∀ f ∈ fs, CWFHolds f)
     (hSelf : ∀ f ∈ fs, SelfHelicityIsLinking f) :
@@ -147,7 +152,7 @@ expression.  The decomposition is `selfSum_eq_writhe_add_twist`.
 What the hypotheses cost is stated in the module docstring: `hdef` is where
 the quantum Euler equation would enter and is not established here, and the
 two per-filament identities are cited rather than proved. -/
--- Ref: [manuscript] prop:helicity-conservation
+-- Ref: [leitner2026] prop:helicity-conservation
 theorem helicity_conservation
     (Hq : ℝ → ℝ) (fs : List FilamentHelicity) (mutualLk : ℝ)
     (hdef : ∀ t, Hq t = selfHelicitySum fs + mutualLk)
@@ -167,7 +172,7 @@ The sub-ceiling magnitude `g` extracted via the Reeb-flow helicity for a
 
 The `[HelicityContext]` binder this carried until 2026-08-31 was decorative —
 the proof never used it, and the class it named is gone. -/
--- Ref: [manuscript] docs/audits/2026-07-05-reeb-linking-operation-attack.md
+-- Ref: [leitner2026] docs/audits/2026-07-05-reeb-linking-operation-attack.md
 theorem reeb_linking_magnitude_bound (q : ℝ) (hq : q > 1) :
     let g := 1 / Real.sqrt (5 + (q - 1) ^ 2 / q)
     g < 1 / Real.sqrt 5 := by
@@ -180,5 +185,89 @@ theorem reeb_linking_magnitude_bound (q : ℝ) (hq : q > 1) :
     apply Real.sqrt_lt_sqrt (by norm_num)
     linarith
   exact one_div_lt_one_div_of_lt (Real.sqrt_pos.mpr (by norm_num)) h_denom
+
+section Closure
+
+open QOU.BraidsAndKnots.ClosureUnseen
+
+/-! ### md part (3): what is conserved, and under which hypothesis
+
+The physical input, in its correct form (corrected 2026-11-16; the previous version assumed the
+flow acts on the braid word by conjugation, which is too narrow):
+
+1. A smooth ideal flow carries vortex lines with it (Helmholtz–Kelvin, `[moffatt1969]`), so the
+   closed vortex link at time `t` is the image of the link at time `0` under the flow map: the two
+   are **isotopic**.
+2. By the Alexander and Markov theorems (`[alexander1923]`, `[markov1936]`, `[birman1974]`), two
+   closed braids give isotopic links iff their words are joined by a path of **Markov moves**:
+   conjugation, stabilisation `x ↦ x σₙ^{±1}`, and the inverses.
+
+Step 1 is analytic and is not proved here; step 2 is classical topology and is not proved here
+either. Given them, the algebra below is proved:
+
+* `jones_normalised_conserved`: along any Markov path a Markov trace changes only by the recorded
+  stabilisation factors, so the normalised trace (the Jones value) is conserved.
+* `annular_class_conserved`: the finer annular class in `HH₀` (every sector separately) is
+  conserved only when the path uses **conjugation alone**, i.e. when the tangle stays a closed
+  braid on a fixed number of strands around a fixed axis.
+* `reconnection_jump`: a reconnection flips one crossing, which breaks isotopy; the Jones value
+  then jumps by exactly `h` times its value on the smoothed word. -/
+
+section Generic
+
+variable {R : Type*} [CommRing R] {A : Type*} [Ring A] [Algebra R A]
+
+/-- **Fixed-axis case.** If the flow acts on the tangle's word by conjugation,
+`β (s+1) = g s * β s * (g s)⁻¹` — the tangle stays a closed braid on the same strands around a
+fixed axis — then the class of `β s` in `HH₀(A) = A ⧸ [A, A]`, which keeps every sector character
+separately, is the same at every time. -/
+-- Ref: [leitner2026] prop:helicity-conservation; prop:closure-unseen-subword
+theorem annular_class_conserved (β : ℕ → A) (g : ℕ → Aˣ)
+    (hstep : ∀ s, β (s + 1) = (g s : A) * β s * (↑(g s)⁻¹ : A)) :
+    ∀ s, univTrace (R := R) (β s) = univTrace (R := R) (β 0) :=
+  trace_conserved_of_conj univTrace_isTrace β g hstep
+
+/-- **Fixed-axis case: every closure invariant is conserved**, read off the conserved annular
+class through `t = f ∘ univTrace` (`trace_factors`). -/
+-- Ref: [leitner2026] prop:helicity-conservation; prop:closure-unseen-subword
+theorem closure_invariants_conserved {M : Type*} [AddCommGroup M] [Module R M]
+    {t : A →ₗ[R] M} (ht : IsTrace t) (β : ℕ → A) (g : ℕ → Aˣ)
+    (hstep : ∀ s, β (s + 1) = (g s : A) * β s * (↑(g s)⁻¹ : A)) :
+    ∀ s, t (β s) = t (β 0) := by
+  intro s
+  rw [trace_factors ht, LinearMap.comp_apply, LinearMap.comp_apply,
+    annular_class_conserved (R := R) β g hstep s]
+
+/-- **Reconnection jump.** A reconnection replaces one crossing `σ` by `σ⁻¹` inside the word
+`u σ v`. With the skein relation `σ - σ⁻¹ = h` (`h = q - q⁻¹`), any closure invariant `t` jumps by
+exactly `h` times its value on the smoothed word `u v`. -/
+-- Ref: [leitner2026] prop:helicity-conservation; prop:closure-unseen-subword
+theorem reconnection_jump {M : Type*} [AddCommGroup M] [Module R M] (t : A →ₗ[R] M)
+    (σ : Aˣ) (h : R) (hskein : (σ : A) - (↑σ⁻¹ : A) = algebraMap R A h) (u v : A) :
+    t (u * (↑σ⁻¹ : A) * v) = t (u * σ * v) - h • t (u * v) := by
+  rw [← crossing_change_jump t σ h hskein u v, sub_sub_cancel]
+
+end Generic
+
+section Isotopy
+
+variable {R : Type*} [Field R] {A : ℕ → Type*} [∀ n, Ring (A n)] [∀ n, Algebra R (A n)]
+  {T : BraidTower (R := R) A} (M : MarkovTraceOn T)
+
+/-- **General case: the normalised Jones value is conserved under isotopy.** Let the tangle's
+braid words `p 0, p 1, …` be joined by Markov moves and their inverses (what isotopy of the closed
+vortex link gives, by Markov's theorem), with recorded factors `e k`, none zero. Then the Markov
+trace divided by the accumulated factor is the same at every time. -/
+-- Ref: [leitner2026] prop:helicity-conservation; [markov1936]; [birman1974]
+theorem jones_normalised_conserved (p : ℕ → Σ n, A n) (e : ℕ → R)
+    (hstep : ∀ k, PathStep M (p k) (p (k + 1)) (e k)) (he : ∀ k, e k ≠ 0) :
+    ∀ k, (∏ i ∈ Finset.range k, e i)⁻¹ * M.val (p k) = M.val (p 0) := by
+  intro k
+  rw [val_along_path M p e hstep k, ← mul_assoc,
+    inv_mul_cancel₀ (Finset.prod_ne_zero_iff.2 (fun i _ => he i)), one_mul]
+
+end Isotopy
+
+end Closure
 
 end QOU.FluidDynamics

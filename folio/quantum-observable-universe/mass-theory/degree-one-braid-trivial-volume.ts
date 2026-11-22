@@ -3,18 +3,31 @@ import { lemma } from "../../schema/builders";
 export default lemma({
   label: "lem:degree-one-braid-trivial-volume",
   title:
-    "Degree-one Hecke elements have vanishing archimedean volume: $\\mathrm{Vol}\\bigl(\\overline{1 + \\sum_i \\phi_i \\sigma_i}\\bigr) = 0$",
+    "Braid words of a degree-one element have non-hyperbolic closures",
   lean: {
-    ref: "qou:QOU.Photon.geom_degree_one_zero",
+    ref: "qou:QOU.Photon.linearVol_eq_zero_of_mem_span",
     validation: "not_checked",
   },
-  cites: ["jones1987", "kashaev1997"],
+  cites: ["kashaev1997"],
   tags: [
     "photon",
     "masslessness",
     "degree-one",
     "archimedean",
-    "linearity",
     "unknot",
+  ],
+  authorNotes: [
+    {
+      kind: "caveat",
+      date: "2026-11-16",
+      body:
+        "**Restated 2026-11-16 (QA finding: da-non-sequitur, critical).** The block " +
+        "claimed $\\tau_{\\mathrm{arch}}(\\mathrm{tr}_M(\\gamma)) = 0$ by linearity of a volume " +
+        "map on the Hecke algebra. No such map exists: positive permutation braids span " +
+        "$H_3(q)$ and close to non-hyperbolic links, so a linear volume would vanish on " +
+        "$4_1$, whose volume is $2.0299$. The claim is now word-level. The Lean sibling, " +
+        "which assumed an additive volume vanishing on each summand, now proves the " +
+        "span obstruction instead. No compute impact.",
+    },
   ],
 });

@@ -8,30 +8,29 @@ pages: 12-15
 source_pdf: 0110009v3.pdf
 source_sha256: bb0c97f2de33b0dd
 toc_source: inferred
+doc_brief: "arXiv:math/0110009v3 [math.MG] 3 Sep 2003 — We develop an analogue for sphere packing of the linear programming bounds for error-correcting codes, and use it to prove upper bounds for the density of"
 ---
 We do not know how to use Theorem 3.1 to match the best density bound
 known in high dimensions, that of Kabatiansky and Levenshtein [KL]. How-
 ever, it provides a new proof of the second-best bound known, due to Leven-
 shtein [Lev]:
-∆≤
-jn
-n/2
-(n/2)!24n ,
-where jt is the smallest positive zero of the Bessel function Jt.
-(For more
+
+A< Ina
+~ (n/2)!24""
+where j; is the smallest positive zero of the Bessel function Jj. (For more
 information about the asymptotics of this bound and how it compares with
 other bounds, see page 19 of [CS], but note that equation (42) is missing the
-exponent in jn
-n/2.) We will show how to use a calculus of variations argument
-to ﬁnd functions that prove that bound. This approach is analogous to that
+exponent in 7’ /2°) We will show how to use a calculus of variations argument
+to find functions that prove that bound. This approach is analogous to that
 used by Levenshtein. Yudin [Y] has also given a proof of Levenshtein’s bound
 that seems reminiscent of our general approach, but not identical.
+
 To construct a function f for use in Theorem 3.1, we begin by supposing
-that there is a function g such that f(x) = (1 −|x|2)bg(x)2, so that f auto-
-matically satisﬁes the inequality f(x) ≤0 for |x| ≥1. (We write bg instead of
+that there is a function g such that f(x) = (1— |2|?)g(x)?, so that f auto-
+matically satisfies the inequality f(x) < 0 for |x| > 1. (We write g instead of
 g for convenience later.) Assume that g is radial, and has support in the ball
 of radius R about the origin; we discuss these assumptions later. Notice that
-nothing in our setup requires bf to be nonnegative, so we must check for this
+nothing in our setup requires f to be nonnegative, so we must check for this
 property later.
 NEW UPPER BOUNDS ON SPHERE PACKINGS I
 701

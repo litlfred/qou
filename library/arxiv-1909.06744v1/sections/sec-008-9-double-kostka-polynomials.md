@@ -8,6 +8,7 @@ pages: 10-11
 source_pdf: 1909.06744v1.pdf
 source_sha256: 82e3980da78c07da
 toc_source: inferred
+doc_brief: "Springer correspondence for symmetric spaces — This is a survey on the Springer correspondence for symmetric spaces."
 ---
 Kostka polynomials Kλ,µ(t) (λ, µ ∈Pn) was generalized to double Kostka poly-
 nomials Kλ,µ(t) (λ, µ ∈Pn,2). (See [S1, S2], where they are deﬁned for any r-

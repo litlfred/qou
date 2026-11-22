@@ -1,0 +1,49 @@
+Concentration of empirical distribution functions 1401
+
+Proposition 6.1. Under LSI(o7), for any x €Randt > 0, withh= 207
+log Ee! (nF) <t(F(x+h)— F(x)), (6.1)
+logEe! POO) < t(F(x) — F(x h)). (6.2)
+
+These estimates may be used to sharpen Corollary 3.2 and therefore to recover Theorem 1.1
+(under the stronger hypothesis on the joint distribution jz, however). Indeed, for any t > 0,
+
+Bel @-FO < Fe! Fa@)-FO) 4 eH) FnO) < 29h FO+W-F EM),
+
+Taking the logarithm and applying Jensen’s inequality, we arrive at
+
+EF) — FOO] S(O +h) — Fh) + 8.
+
+Now, just integrate this inequality over an arbitrary interval (a,b), a < b, and use the general
+relation ietaes +h) — F(x —h)) dx < 2h to obtain that
+
+log2 202t log2
+E [Fn (x) — F(@x)| dx < 2h + ~~(b— a) =2 = te:
+n
+
+a
+
+Optimization over ¢ leads to an improved version of Corollary 3.2.
+
+Corollary 6.2. Under LSI(o7), for all a <b,
+
+b o7(b—a) 13
+E [rn(s) — Folds <4(7S= 9) .
+
+a
+
+Note that in both cases of Proposition 6.1, for any t € R,
+
+logEe!"O-FO) <|r\(FQth)—Fx—h)), hh = 4/202 It|/n.
+
+Hence, the local behavior of the distribution function F near a given point x turns out to be
+responsible for the large deviation behavior at this point of the empirical distribution function F;,
+around its mean.
+
+For a quantitative statement, assume that F has a finite Lipschitz constant M = || F'||Lip, so
+it is absolutely continuous with respect to Lebesgue measure on the real line and has a density,
+bounded by M. It follows from (6.1), with tf = (an!/3), and a3 = We that
+
+Ee! < 2/9? AER,
+where € = an! (F(x) — F(x)). By Chebyshev’s inequality, for any r > 0,
+
+wer} < (2/37 ar ens, where 2 =r.

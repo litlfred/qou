@@ -1,0 +1,63 @@
+Theorem 4.3 Let X= (A, AM, ..., MY) be an l-partition of n. Then
+
+sy(q) = (-1)-Dg-NO 1" Il Ul Ul ee Q.97 -4).
+
+0<s<I-1 (i,j)E[AC)] O<tKI-1
+
+Since the total number of nodes in X is equal to n, the above formula can be rewritten as follows:
+
+Mx (s) y(s) als) (4) _
+s(y=Cpr a” TT JT frye JL @~ @.er'-1)
+
+0<s<l-1 (i,j)E[A®)] O<t<l-1, ts
+where [m]q:= (¢™ —1)/(q-1) =m + qr? +--+ ¢q4+1, for all m € Zso.
+
+Jean Michel and the author programmed the cancellation-free formula for the Schur elements of
+Ariki-Koike algebras into the GAP3 package CHEVIE. This made the algorithm for the computation of
+the Schur elements faster than the pre-existing one.
+
+Now, applying Theorem|[I.7]with the formulas for the Schur elements given in Theorem/|4.3]yields easily
+Ariki’s semisimplicity criterion (ee Further, if we take q = u" and Q; = Gju" for alli = 0,...,1—1,
+where wu is an indeterminate, r € Zyo and ro,...,7/-1 € Z, then the algebra H4 is a cyclotomic Ariki-
+Koike algebra (since it can be obtained via the cyclotomic specialisation y : q H u", Qi 4 CG/u™ from
+the generic Ariki-Koike algebra). Set m; := r;/r for alli =0,...,1—1 and m := (mo,...,7m_-1) € Q..
+Let A € P(d,n). Then the a-value of the irreducible representation E> of G(I,1,n) corresponding to X
+
+that is, the negative of the valuation of s,(q)) is equal to al™r) Proposition 5.5.11]. Theorem
+frafanows us to give an alternative description of the a-value of E* Proposition 4.5]:
+
+Proposition 4.4 Let H™" be the cyclotomic Ariki—Koike algebra defined above, and let X € P(d,n).
+The a-value of E® is
+
+al™(X) =r | N(A)— > > > min(nn +ms —m,0)
+
+0<s<I-1 (i,j)E[AC)] O<tKI-1,t#s
+
+4.3. Families of characters and Rouquier families
+
+The Rouquier families for cyclotomic Hecke algebras associated with the complex reflection group
+G(1,1,n), that is, cyclotomic Ariki-Koike algebras, have been first determined by Broué and Kim [BrKi],
+but it turned out that their results were only true in the case where / is a power of a prime number.
+
+In [Ch3], we gave the correct families for any 1, using the property of semicontinuity explained in the
+previous chapter. In fact, we discovered that the Rouquier families for G(I,1,n) are determined by the
+families of characters of Weyl groups of type B.
+
+Let r,ro,71,-..,71 € Z. If r £0, set m; :=1r;/r for alli =0,...,!—1 and m := (mo,...,mj-1) € Q.
+Let u be an indeterminate. Let
+
+p: Zig, Q2,...,QF1] > Z[u*]
+
+be the cyclotomic specialisation defined by
+y(q) =u" and 9(Qi) = Gu".
+Then we have the following result due to Broué and Kim [Brkij.
+
+Proposition 4.5 Let A, € P(l,n) and assume that r #0. If E* and E¥ are in the same Rouquier
+family, then Contc, = Contec, with respect to the weight system m. The converse is true when | is a
+power of a prime number.
+
+Now, using the form of the Schur elements, we obtain that the essential hyperplanes for G(J, 1, n) are:
+
+ekr+r,—7, =0 for all -n<k < nif GF — ¢ is not a unit in Z(G].
+
+32

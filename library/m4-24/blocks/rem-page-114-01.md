@@ -1,0 +1,1 @@
+basic ingredient of the B-QHI is the relationship between the cyclic representation theory of a quantum Borel subalgebra of U.,(sl(2,C)), and flat B-bundles encoded by simplicial full 1-cocycles. This relationship relies on the theory of quantum coadjoint action of [105], which holds for other Lie groups such as G = SL(2,C).

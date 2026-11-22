@@ -1,0 +1,51 @@
+One interesting application of this theorem is to prove Weyl’s law, the famous formula
+that describes the asymptotic properties of Laplace eigenvalues. We define the set of
+
+eigenvalues below a certain value as
+
+be = #I{A) SA}.
+
+Theorem 2.48 (Weyl’s law, [82]) Let S be a compact Riemann surface. Then
+
+Area(S)
+
+NQ) ~ 4n
+
+A, AO.
+This can be proved by using the heat kernel
+h(t) =e 8"
+
+with Fourier transform ;
+78/28
+
+g(s) = J4nB
+
+in Selberg’s trace formula, where 6 > 0. In particular, with A; = t + i we take the limit
+
+co
+
+lim eW PAI
+
+B04
+j=0
+
+and leh result follows from a Tauberian theorem of Wiener-Ikehara (see Theorem 9.4.7
+in [13}).
+
+If one has information about the irreducible representations of the automorphism
+group of ddurface, one can consider a more general version of Selberg’s trace formula,
+given in [9]. The advantage of this is that one can restrict the formula to a single unitary
+character y on T, that is, consider the space L?([ \ H, y) rather than simply L?(I \ H).
+L?(T \ H, x) is the Hilbert space of functions f : H + C such that
+
+f(P2) = x(P)F(@)
+for all T€T and f € L°(C \ H).
+
+Theorem 2.49 ( [9]) Let M be the setT €T such that T does not have a cusp of [[*] as
+a fixed point. Let I denote the identity action, and My = MU{I]. Let F be a fundamental
+domain for 0\H. For each non-elliptic T € M, there exists a hyperbolic element or glide
+reflection Ty € Z(L) such that the infinite cyclic group
+
+[To] = {To' |n € Z}
+
+48

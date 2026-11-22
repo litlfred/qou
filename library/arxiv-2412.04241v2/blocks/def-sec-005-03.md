@@ -1,1 +1,1 @@
-Fix ξ∈K3(K). TheHR-moduleHR,ξ consists of collections
+Fix ξ ∈K3(K). The HR-module HR,ξ consists of collections f(q) = (fm(x))m≥1, fm(x) ∈εm(ξ)1/m K[ζm][[x]] (23) such that under the canonical map K →Kp we have (fm(x))m≥1,(m,p)=1 ∈HR∧ p ,ξ, and the following gluing condition for γ ∈Z>0 is satisfied: f(qγ)γf(q−1) ∈HR[1/γ]|γ , (24) where HR[1/γ]|γ denotes the restriction of HR[1/γ] to collections of power series at roots of unity ζm with m prime to γ, as introduced after Definition 1.1.

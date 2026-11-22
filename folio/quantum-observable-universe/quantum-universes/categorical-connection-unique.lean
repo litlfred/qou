@@ -29,7 +29,7 @@ imported here from the `QOU` library.
 
 ## References
 
-- [manuscript] §1-quantum-universes/categorical-connection-unique
+- [leitner2026] §1-quantum-universes/categorical-connection-unique
 - [kock2004] Frobenius Algebras and 2D TQFT, Ch 2
 -/
 

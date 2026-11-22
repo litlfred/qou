@@ -25,6 +25,12 @@ has at most two simple summands, and $e_\pm$ realise them.  The
 singlet identification $V_- \cong \mathbf{1}$ is the standard
 Schur-functor decomposition $A \otimes A = S^2 A \oplus \Lambda^2 A$
 with $\Lambda^2 A \cong \mathbf{1}$ when $A$ is the fundamental of
-$\mathrm{SU}_q(2)$.  Statement (4) is the Wedderburn trace identity
-([Wedderburn trace](#prop:wedderburn-trace-identity)) at $n = 2$.
+$\mathrm{SU}_q(2)$.  Statement (4) follows from (1) and (2): the categorical trace is
+additive, so $\mathrm{tr}_q(e_+) + \mathrm{tr}_q(e_-) =
+\mathrm{tr}_q(\mathrm{id}_{A \otimes A}) = (\dim_q A)^2 = [2]_q^{\,2}$,
+and $\mathrm{tr}_q(e_\pm) = \dim_q V_\pm$ with $\dim_q V_+ = [3]_q$,
+$\dim_q V_- = 1$.  This is the $n = 2$ case of the
+[Wedderburn trace identity](#prop:wedderburn-trace-identity) with
+multiplicities $1$.  The squared form $(\dim_q V_\pm)^2/[2]_q!$ does not
+sum to $1$: it gives $([3]_q^2 + 1)/[2]_q$, which is $5$ at $q = 1$.
 $\square$

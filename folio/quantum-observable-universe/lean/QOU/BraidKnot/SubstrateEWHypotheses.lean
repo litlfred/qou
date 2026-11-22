@@ -97,7 +97,7 @@ noncomputable def h_substrate_value : ℝ := 1.1097 - 1 / 1.1097
     `sorry` — the identities are conditional on the class instance, not
     unconditional theorems.  **No global instance is provided** — the
     conjectural content lives entirely in these class fields. -/
--- Ref: [manuscript] docs/audits/2026-05-24-ew-couplings-substrate-empirical-matches.md
+-- Ref: [leitner2026] docs/audits/2026-05-24-ew-couplings-substrate-empirical-matches.md
 class SubstrateEWDerivations where
   /-- Hyp 1 (+0.26%): `g = π·h_0`.  Open: Yekutieli MI connection-1-form
       integration around a closed loop. -/

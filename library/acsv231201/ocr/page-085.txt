@@ -1,0 +1,50 @@
+3.3 Darboux’s method 67
+3.3, Darboux’s method
+
+The fact that the asymptotic contribution of a pole singularity w is easy to
+compute using the theory of residues is partially a reflection of the fact that
+F(Z is analytic in a punctured disk around w, which is a disk centered at w
+with the center removed. Unfortunately, this property no longer holds near
+singularities where f(z) locally behaves like a complex logarithm or a non-
+integral power, due to the branch cuts required to define such functions. A
+singularity where branch cuts are required to discuss local behavior of f(z)
+is called a branch point, and in this section we illustrate a classical method
+for computing asymptotics in the presence of a branch point coming from a
+non-integral power.
+
+Our first general asymptotic result (3.5), which bounded the exponential
+growth of a, was achieved by pushing the domain of integration in the Cauchy
+integral to the boundary of the domain of convergence of f(z). Crucially, even
+if f(z) admits a branch point on the boundary of its domain of convergence,
+such a deformation can be performed without needing to cross a branch cut.
+Integrating a slight modification of f(z) on the boundary of the domain of con-
+vergence leads to Darboux’s method and Darboux’s Theorem. Before describ-
+ing Darboux’s method we require two preliminary results, the first of which
+asymptotically bounds integrals of smooth functions.
+
+Lemma 3.9. Suppose a complex-valued function f is k times continuously
+differentiable on the circle y of radius R for some integer k > 0. Then
+
+ferye dz= O(n*R™")
+Y
+
+as n — ©,
+
+Proof Replacing f(z) by f(z/R) we may assume without loss of generality
+that R = 1. Integrating by parts shows
+
+femred= fo roa:,
+y yn
+
+where the term involving + f(z) vanishes because y has no boundary, and
+induction on k implies
+
+-n-1 —_ 1
+fi: [Oa = 1 (")
+
+Since f“ is continuous, it is bounded on the unit circle. Thus, the last integral
+above is bounded independently of n and our result follows from the behavior
+k(7) ~ n when k is fixed and n > ov. a
+
+ferro dz.
+y

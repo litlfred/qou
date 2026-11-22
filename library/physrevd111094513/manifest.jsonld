@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/physrevd111094513/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Lattice QCD calculation of the Compton amplitude subtraction function",
+  "contains": [
+    "library/physrevd111094513/sections/sec-000",
+    "library/physrevd111094513/sections/sec-001",
+    "library/physrevd111094513/sections/sec-002",
+    "library/physrevd111094513/sections/sec-003",
+    "library/physrevd111094513/sections/sec-004",
+    "library/physrevd111094513/sections/sec-005",
+    "library/physrevd111094513/sections/sec-006",
+    "library/physrevd111094513/sections/sec-007",
+    "library/physrevd111094513/sections/sec-008",
+    "library/physrevd111094513/sections/sec-009",
+    "library/physrevd111094513/sections/sec-010",
+    "library/physrevd111094513/sections/sec-011",
+    "library/physrevd111094513/sections/sec-012",
+    "library/physrevd111094513/sections/sec-013",
+    "library/physrevd111094513/sections/sec-014",
+    "library/physrevd111094513/sections/sec-015"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "physrevd111094513",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "PhysRevD.111.094513.pdf",
+    "source_sha256": "c05dfaef1f1c2f98a6d74fc8ee2df7d24b02d5cdc26e81180b0f34a49f05745c",
+    "pages": 14,
+    "arxiv": null,
+    "doi": "10.1103/PhysRevD.111.094513",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

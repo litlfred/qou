@@ -1,0 +1,74 @@
+{
+  "probe": "round74_devacuify_6qbv_b9cj_probe",
+  "scriptPath": "computations/probes/round74_devacuify_6qbv_b9cj_probe.py",
+  "scriptCommitSha": "ffa6f4009ea1d8bfb9fcdb4c0721e486e42a5dca",
+  "scriptHash": "4a196a58dd1bece97127dcab1ea6d1b24742af09b0bfe92ff6aa73c2120b7023",
+  "scriptSha256": "4a196a58dd1bece97127dcab1ea6d1b24742af09b0bfe92ff6aa73c2120b7023",
+  "dps": 80,
+  "mpmathDps": 80,
+  "generatedAt": "2026-11-18T18:32:10.594928+00:00",
+  "allPassed": true,
+  "checks": [
+    {
+      "bean": "qou-0jcd",
+      "file": "folio/quantum-observable-universe/lean/QOU/Brings/HeckeMapFaceSize.lean",
+      "theorems": [
+        "bring_euler_characteristic_from_VEF",
+        "diagonalRefinements_card_succ"
+      ],
+      "chiVEF": -6,
+      "chiGenus": -6,
+      "refinementsF30": 1073741824,
+      "refinementsF31": 2147483648,
+      "passed": true
+    },
+    {
+      "bean": "qou-9f4h",
+      "file": "folio/quantum-observable-universe/lean/QOU/AppendixQValues/ProtonBorromeanAssembly.lean",
+      "theorems": [
+        "proton_mass_binding_deficit"
+      ],
+      "protonMassModel": "938.2980163753300218",
+      "bindingDeficitLhs": "6.1319874000000000000000000000000000000000000000000000000000000000000000000000003",
+      "bindingDeficitRhs": "6.1319874",
+      "residual": "3.120490591196234874407178e-79",
+      "passed": true
+    },
+    {
+      "bean": "qou-f1wk",
+      "file": "folio/quantum-observable-universe/lean/QOU/MassTheory/BorromeanMomentScalingExclusion.lean",
+      "theorems": [
+        "clusterOrd_pos",
+        "clusterOrd_lt_of_lt"
+      ],
+      "rVal": "0.0437047985323887146100093385998864",
+      "clusterOrdK2": "0.00143258206106751505684346796550593513928046644743754187870256967872",
+      "clusterOrdK3": "0.000062610710360069931986394528902295600967743847258079493422752569282031883557861017",
+      "passed": true
+    },
+    {
+      "bean": "qou-joia",
+      "file": "folio/quantum-observable-universe/lean/QOU/FluidDynamics/qou_ns_surreal_bridge.lean",
+      "theorems": [
+        "internalBlowup_iff_not_classicalRegular"
+      ],
+      "omegaProbe": "10000000000000000000000000000000000000000.0",
+      "internalBlowup": true,
+      "classicalRegular": false,
+      "passed": true
+    },
+    {
+      "bean": "qou-151z",
+      "file": "folio/quantum-observable-universe/lean/QOU/Information/PolyGrowthAlgebra.lean",
+      "theorems": [
+        "polyGrowth_pow",
+        "not_superPolynomial_of_polyBounded"
+      ],
+      "n": 17,
+      "d": 5,
+      "nPowD": "1419857.0",
+      "nPlusOnePowD": "1889568.0",
+      "passed": true
+    }
+  ]
+}

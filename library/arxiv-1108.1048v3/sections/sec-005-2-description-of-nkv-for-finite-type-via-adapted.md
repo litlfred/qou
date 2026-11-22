@@ -7,10 +7,11 @@ section_number: 2
 pages: 14-17
 source_pdf: 1108.1048v3.pdf
 source_sha256: 6f2b83450ba923d0
-doc_brief: "CONSTRUCTION OF IRREDUCIBLE REPRESENTATIONS OVER KHOVANOV-LAUDA-ROUQUIER ALGEBRAS — We give an explicit construction of irreducible modules ove r Khovanov-Lauda- Rouquier algebras R and their"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.989
-latex_coverage_ratio: 0.977
+latex_coverage_ratio: 0.913
+doc_brief: "CONSTRUCTION OF IRREDUCIBLE REPRESENTATIONS OVER KHOVANOV-LAUDA-ROUQUIER ALGEBRAS — We give an explicit construction of irreducible modules over Khovanov-Lauda- Rouquier algebras R and their"
 ---
 []{#Sec: Description Nk label="Sec: Description Nk"}
 

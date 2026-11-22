@@ -1,0 +1,56 @@
+Canonical triangulations 1253
+
+At a critical point, the partial derivatives of V with respect to any of the w; must vanish.
+Between and near two identical letters, say R and R, according to Figure 5, the angles
+are given by the table
+
+Q R R
+
+i 0 1 2
+Wi a b Cc
+xi | €-b —a+2b—c —b+é
+y, | n+b ate b+1
+zi | w—2a am — 2b nm — 2c
+
+(the exact expression of , €’,1,7' depends on the letters before and after RR, but only
+the b-contribution matters here). Using Proposition 6.1, criticality of V implies
+
+1 —OV © sinyg sin? x; sin y2
+= exp — =
+Ob
+
+sin xo sin? z, sinx2
+
+Using the fact that edge lengths in a triangle are proportional to angle sines, it follows
+that the edge lengths in Figure 7 (left) around the central vertex fit nicely together. So
+|~(a)| = 1. The case of a subword LL is treated similarly, which takes care of all
+4—valent vertices of the tessellation A’.
+
+Near a hinge between two different letters, say L followed by R, the angles are
+
+Q L R
+
+i 0 1 2
+Wi a b c
+xi | E+b a+tb-—c —b+é
+yi | n—b -a+b+e b+n
+zi | 7 —2a nm — 2b mT —2c
+
+This time, criticality implies
+
+—OV — sinxg sin y; sin x, sin yz
+
+1=ex = 7 . 5
+Pap sin yo sin? z, sin x2
+
+As shown in Figure 7 (right) and by the same trigonometric argument, this means that
+the first and last edges crossed by ( have the same length. So ~(@) = 1. (If is
+reduced to LR, the computation is formally the same, identifying indices 0 and 2.) The
+case of a subword RL is similar. Sublemma 6.4 is proved. oO
+
+Now let a be an element of 7|(B’, xo) that is conjugated to a simple loop around a
+4-valent vertex of A’. By Sublemma 6.4 (and an easy conjugation argument), p(a) is
+a translation. Moreover, p(a) fixes the vertex around which a revolves, so p(a) = 1,
+the identity of the Euclidean plane.
+
+Geometry & Topology 10 (2006)

@@ -1,0 +1,105 @@
+{
+  "engine": "exact-integer",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-16T09:06:52.824629+00:00",
+  "commitSha": "fef1f2036974b0c672c69ff0897b0b24bab3098c",
+  "assertions": [
+    {
+      "name": "alt_coefficient_is_1_minus_A^-4",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "sigma^2 = A^2 + (1 - A^-4) e"
+    },
+    {
+      "name": "chain_is_pure_convolution",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "all 32 chain states are forest-valued"
+    },
+    {
+      "name": "ring_one_nonconvolution_state_front",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "only the all-Alt state deviates"
+    },
+    {
+      "name": "ring_one_nonconvolution_state_back",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "same for the back closing band"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "carbon-ring-channel",
+  "scriptFile": "carbon_ring_channel_probe.py",
+  "scriptHash": "b9df003e6e19",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "cvxpy": "absent"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/gg_twist_reading3/carbon_ring_channel_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/gg_twist_reading3/carbon_ring_channel_probe.py"
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "exact polynomial identity in A; no evaluation at q0",
+  "description": "PROBE stage 5b (bean qou-a1hh): convolution-flow channel expansion of the 6-carbon chain and ring. Nothing fitted or selected.",
+  "sym_coefficient": "A^2",
+  "alt_coefficient": "1 - A^-4",
+  "chain_nonconvolution_states": [],
+  "ring_nonconvolution_states_front": [
+    {
+      "alt_bonds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "components": 2,
+      "jones_t_exponent_over_4": {
+        "-18/4": -1,
+        "-10/4": -1,
+        "-6/4": 1,
+        "-2/4": -1
+      }
+    }
+  ],
+  "ring_nonconvolution_states_back": [
+    {
+      "alt_bonds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "components": 2,
+      "jones_t_exponent_over_4": {
+        "2/4": -1,
+        "6/4": 1,
+        "10/4": -1,
+        "18/4": -1
+      }
+    }
+  ]
+}

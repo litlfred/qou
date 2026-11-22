@@ -9,13 +9,18 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "The homotopy",
-  "pageStart": 64,
-  "pageEnd": 71,
+  "title": "The first map",
+  "pageStart": 55,
+  "pageEnd": 60,
   "contains": [
-    "library/arxiv-math-0105186v2/blocks/prose-sec-013"
+    "library/arxiv-math-0105186v2/blocks/prose-sec-013",
+    "library/arxiv-math-0105186v2/blocks/lem-sec-013-01",
+    "library/arxiv-math-0105186v2/blocks/prop-sec-013-02",
+    "library/arxiv-math-0105186v2/blocks/prop-sec-013-03",
+    "library/arxiv-math-0105186v2/blocks/lem-sec-013-04",
+    "library/arxiv-math-0105186v2/blocks/rem-sec-013-05"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0105186v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0105186v2",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0105186v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0105186v2/manifest.jsonld",
   "provenance": "ingested"
 }

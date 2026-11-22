@@ -624,7 +624,7 @@
           "in_degree": 0,
           "cone_size": 54,
           "depth": 19,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -926,6 +926,22 @@
         "notes": "The steps follow logically from the premises.",
         "evidence": "folio/quantum-observable-universe/brings-surface/descartes-braid-structure-proof.ts:1",
         "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "9383c59a83b5",
+          "ts": "a32cb0cfaa30"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T22:00:10.739Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "[sidecar review 2026-11-15, issue #8030] **Statement is internally inconsistent.** Item 1 says ρ₃: B₃ → Aut(V^⊗3) is faithful; item 2 says its image is Dic₃, order 12. B₃ is infinite, so a faithful image cannot be finite. Counterexample to item 2 in a Descartes universe (real q > 1): ρ₃(σ₁) has eigenvalue q with \\ | q\\ | ≠1, so it has infinite order and the image is infinite. \"Image in SU(2)\" of an 8-dim rep is not defined. Lean (`QOU/Archimedean/archimedean_braid_structure.lean:49`) takes `himg : G ≃* Dic3` as a hypothesis and concludes `card G = 12`: a transport of cardinality, with the braid group, ρ₃, faithfulness and item 3 absent. prf: \"faithfulness follows from distinct eigenvalues q, −q⁻¹\" is a non-sequitur (distinct eigenvalues of one generator say nothing about the kernel). Item 3: the setwise stabiliser in S₅ of a pair of coordinates is S₂×S₃ (order 12), not S₃."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1049,7 +1065,7 @@
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Referee verdict: clean.",
         "verdict": "clean",
-        "referee_argument": "none \u2014 expository prose contains no surviving objections.",
+        "referee_argument": "none — expository prose contains no surviving objections.",
         "severity": "minor"
       }
     ],
@@ -1530,6 +1546,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-11-15T22:00:10.739Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

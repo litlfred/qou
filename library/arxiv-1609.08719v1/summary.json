@@ -3,104 +3,124 @@
  "doc_id": "arxiv-1609.08719v1",
  "source_sha256": "f61ff2111e9a97f9",
  "brief": "AN EXPERIMENTAL INVESTIGATION OF NEUMANN’S CONJECTURE — We use a large census of hyperbolic 3-manifolds to experimentally investigate a conjecture of Neumann regarding the Bloch Group.",
- "extended": "**AN EXPERIMENTAL INVESTIGATION OF NEUMANN’S CONJECTURE**\n\n*STEPHEN GILLES AND PETER HUSTON*\n\n17 pp, 19 sections.\n\n**Abstract.** We use a large census of hyperbolic 3-manifolds to experimentally investigate a conjecture of Neumann regarding the Bloch Group. We present an augmented census including, for feasible invariant trace ﬁelds, explicit man- ifolds (associated to that ﬁeld) that appear to generate the Bloch group of that ﬁeld. We also make use of Ptolemy coordinates to compute “exotic volumes” of representations, and attempt to realize these volumes as linear combinations of generator volumes. We thus present a large body of empirical support for Neumann’s conjecture.\n\n**Outline.** 1.4 Exotic volumes; 1 Introduction; 1.3 A stronger, false conjecture; Acknowledgments; 2 Background; 2.1 Cross-ratios; 2.4 Gluing Equations; 2.3 The Bloch group; 2.5 Ptolemy coordinates; 2.6 Lattice matching; 3 Experimentation; 3.2 Lattice matching; 3.1 Manifold generation; 3.3 Linear combinations for exotic volumes; 4 A counter-example to conjecture 1.3; 5 Evidence for conjecture 1.2; 5.2 Data analysis; 6 Selected examples",
+ "extended": "**AN EXPERIMENTAL INVESTIGATION OF NEUMANN’S CONJECTURE**\n\n*STEPHEN GILLES AND PETER HUSTON*\n\n17 pp, 23 sections.\n\n**Abstract.** We use a large census of hyperbolic 3-manifolds to experimentally investigate a conjecture of Neumann regarding the Bloch Group. We present an augmented census including, for feasible invariant trace ﬁelds, explicit man- ifolds (associated to that ﬁeld) that appear to generate the Bloch group of that ﬁeld. We also make use of Ptolemy coordinates to compute “exotic volumes” of representations, and attempt to realize these volumes as linear combinations of generator volumes. We thus present a large body of empirical support for Neumann’s conjecture.\n\n**Outline.** Front matter; 1.1 Neumann's conjecture; 1 Introduction; 1.3 A stronger, false conjecture; 1.4 Exotic volumes; Acknowledgments; 2 Background; 2.1 Cross-ratios; 2.2 The invariant trace field; 2.3 The Bloch group; 2.4 Gluing Equations; 2.5 Ptolemy coordinates; 2.6 Lattice matching; 3 Experimentation; 3.1 Manifold generation; 3.2 Lattice matching; 3.3 Linear combinations for exotic volumes; 4 A counter-example to conjecture 1.3",
  "tokens": {
   "brief": 46,
   "extended": 281
  },
  "sections": [
   {
-   "id": "sec-000-14-exotic-volumes",
-   "title": "Exotic volumes",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-1"
+  },
+  {
+   "id": "sec-000-11-neumanns-conjecture",
+   "title": "Neumann's conjecture",
+   "pages": "1-2"
   },
   {
    "id": "sec-001-1-introduction",
    "title": "Introduction",
-   "pages": "1-1"
+   "pages": "2-2"
   },
   {
    "id": "sec-002-13-a-stronger-false-conjecture",
    "title": "A stronger, false conjecture",
-   "pages": "1-3"
+   "pages": "2-2"
   },
   {
-   "id": "sec-003-acknowledgments",
+   "id": "sec-003-14-exotic-volumes",
+   "title": "Exotic volumes",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-004-acknowledgments",
    "title": "Acknowledgments",
    "pages": "3-3"
   },
   {
-   "id": "sec-004-2-background",
+   "id": "sec-005-2-background",
    "title": "Background",
    "pages": "3-3"
   },
   {
-   "id": "sec-005-21-cross-ratios",
+   "id": "sec-006-21-cross-ratios",
    "title": "Cross-ratios",
    "pages": "3-3"
   },
   {
-   "id": "sec-006-24-gluing-equations",
-   "title": "Gluing Equations",
+   "id": "sec-007-22-the-invariant-trace-field",
+   "title": "The invariant trace field",
    "pages": "3-4"
   },
   {
-   "id": "sec-007-23-the-bloch-group",
+   "id": "sec-008-23-the-bloch-group",
    "title": "The Bloch group",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-009-24-gluing-equations",
+   "title": "Gluing Equations",
    "pages": "4-7"
   },
   {
-   "id": "sec-008-25-ptolemy-coordinates",
+   "id": "sec-010-25-ptolemy-coordinates",
    "title": "Ptolemy coordinates",
    "pages": "7-8"
   },
   {
-   "id": "sec-009-26-lattice-matching",
+   "id": "sec-011-26-lattice-matching",
    "title": "Lattice matching",
-   "pages": "8-9"
+   "pages": "8-10"
   },
   {
-   "id": "sec-010-3-experimentation",
+   "id": "sec-012-3-experimentation",
    "title": "Experimentation",
-   "pages": "9-10"
-  },
-  {
-   "id": "sec-011-32-lattice-matching",
-   "title": "Lattice matching",
    "pages": "10-10"
   },
   {
-   "id": "sec-012-31-manifold-generation",
+   "id": "sec-013-31-manifold-generation",
    "title": "Manifold generation",
    "pages": "10-11"
   },
   {
-   "id": "sec-013-33-linear-combinations-for-exotic-volumes",
+   "id": "sec-014-32-lattice-matching",
+   "title": "Lattice matching",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-015-33-linear-combinations-for-exotic-volumes",
    "title": "Linear combinations for exotic volumes",
    "pages": "11-11"
   },
   {
-   "id": "sec-014-4-a-counter-example-to-conjecture-13",
+   "id": "sec-016-4-a-counter-example-to-conjecture-13",
    "title": "A counter-example to conjecture 1.3",
    "pages": "11-12"
   },
   {
-   "id": "sec-015-5-evidence-for-conjecture-12",
+   "id": "sec-017-5-evidence-for-conjecture-12",
    "title": "Evidence for conjecture 1.2",
    "pages": "12-12"
   },
   {
-   "id": "sec-016-52-data-analysis",
+   "id": "sec-018-51-examples-of-missing-fields",
+   "title": "Examples of missing fields",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-019-52-data-analysis",
    "title": "Data analysis",
    "pages": "12-14"
   },
   {
-   "id": "sec-017-6-selected-examples",
+   "id": "sec-020-6-selected-examples",
    "title": "Selected examples",
    "pages": "14-17"
   },
   {
-   "id": "sec-018-references",
+   "id": "sec-021-references",
    "title": "References",
    "pages": "17-17"
   }

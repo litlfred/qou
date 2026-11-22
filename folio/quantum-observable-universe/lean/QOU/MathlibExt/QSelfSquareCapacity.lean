@@ -22,7 +22,7 @@ Sorry-free; unconditional over `ℝ` with `q ≠ 0` and `q − q⁻¹ ≠ 0`.
 
 Refs:
 - [macdonald1995] Symmetric Functions and Hall Polynomials, I.3
-- [manuscript] predicted-spectra/shell-eigenvalue-properties (the 2n² capacity)
+- [leitner2026] predicted-spectra/shell-eigenvalue-properties (the 2n² capacity)
 -/
 
 namespace QOU.MathlibExt.QPartitionCombinatorics

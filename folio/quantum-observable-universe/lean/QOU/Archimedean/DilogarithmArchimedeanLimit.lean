@@ -31,8 +31,8 @@ class `ArchimedeanLimit` and its boundary instance were promoted here too
 `WKBGreensFunction` class `extends ArchimedeanLimit`, can import the class
 rather than depend on a non-importable content sibling.
 
--- Ref: [manuscript] conj:dilogarithm-archimedean-limit
--- Ref: [manuscript] def:q-pochhammer-partial-product
+-- Ref: [leitner2026] conj:dilogarithm-archimedean-limit
+-- Ref: [leitner2026] def:q-pochhammer-partial-product
 -- Ref: [faddeev1994] Faddeev, "Current-like variables in massive and massless integrable models," Lectures 1994
 -- Ref: [kashaev1997] Kashaev, "The hyperbolic volume of knots from the quantum dilogarithm," Lett. Math. Phys. 39 (1997)
 -/
@@ -43,13 +43,13 @@ namespace QOU.QPochhammer
     contained so this Lean file does not depend on its sibling
     `q-pochhammer-partial-product.lean`. The two definitions agree
     by inspection. -/
--- Ref: [manuscript] def:q-pochhammer-partial-product
+-- Ref: [leitner2026] def:q-pochhammer-partial-product
 def denomPolyLocal (q x : ℝ) : ℕ → ℝ
   | 0 => 1
   | n + 1 => (1 - x * q ^ n) * denomPolyLocal q x n
 
 /-- Local restatement of the partial product. -/
--- Ref: [manuscript] def:q-pochhammer-partial-product
+-- Ref: [leitner2026] def:q-pochhammer-partial-product
 noncomputable def partialProductLocal (q x : ℝ) (n : ℕ) : ℝ :=
   (denomPolyLocal q x n)⁻¹
 
@@ -59,20 +59,20 @@ noncomputable def partialProductLocal (q x : ℝ) (n : ℕ) : ℝ :=
     `Real.dilog` (when Mathlib provides it). The `tsum` is `0`
     outside the radius of convergence by Mathlib's convention,
     which suffices for the boundary lemmas below. -/
--- Ref: [manuscript] conj:dilogarithm-archimedean-limit
+-- Ref: [leitner2026] conj:dilogarithm-archimedean-limit
 noncomputable def LiTwo (x : ℝ) : ℝ :=
   ∑' k : ℕ, x ^ (k + 1) / ((k : ℝ) + 1) ^ 2
 
 /-- Boundary lemma: `LiTwo 0 = 0`. Each term in the series has
     `0 ^ (k+1) = 0`. -/
--- Ref: [manuscript] conj:dilogarithm-archimedean-limit
+-- Ref: [leitner2026] conj:dilogarithm-archimedean-limit
 @[simp] theorem LiTwo_zero : LiTwo 0 = 0 := by
   unfold LiTwo
   simp
 
 /-- Boundary lemma: at `x = 0` every factor `(1 - x q^k) = 1`, so
     `denomPolyLocal q 0 n = 1`. -/
--- Ref: [manuscript] def:q-pochhammer-partial-product
+-- Ref: [leitner2026] def:q-pochhammer-partial-product
 theorem denomPoly_zero (q : ℝ) (n : ℕ) :
     denomPolyLocal q 0 n = 1 := by
   induction n with
@@ -82,7 +82,7 @@ theorem denomPoly_zero (q : ℝ) (n : ℕ) :
 
 /-- Boundary lemma: at `x = 0` the partial product is identically
     `1`. -/
--- Ref: [manuscript] def:q-pochhammer-partial-product
+-- Ref: [leitner2026] def:q-pochhammer-partial-product
 @[simp] theorem partialProduct_zero (q : ℝ) (n : ℕ) :
     partialProductLocal q 0 n = 1 := by
   unfold partialProductLocal
@@ -94,7 +94,7 @@ theorem denomPoly_zero (q : ℝ) (n : ℕ) :
     matching `LiTwo 0 = 0`. This is the only point at which the
     Faddeev limit is unconditional in Lean (no Tauberian input
     required). -/
--- Ref: [manuscript] conj:dilogarithm-archimedean-limit
+-- Ref: [leitner2026] conj:dilogarithm-archimedean-limit
 theorem faddeev_limit_at_zero
     (q : ℝ) (n : ℕ) :
     (1 - q) * Real.log (partialProductLocal q 0 n) - LiTwo 0 = 0 := by
@@ -104,7 +104,7 @@ theorem faddeev_limit_at_zero
 /-- The Archimedean-limit conjecture, packaged as a typeclass.
     A concrete instance asserts the convergence
     `(1 - q) · log Φ_n(x; q) → Li₂(x)` along Faddeev's scaling. -/
--- Ref: [manuscript] conj:dilogarithm-archimedean-limit
+-- Ref: [leitner2026] conj:dilogarithm-archimedean-limit
 class ArchimedeanLimit (x : ℝ) : Prop where
   /-- The Faddeev limit of the rescaled log partial product equals
       the classical dilogarithm. The hypotheses on `(q, n)` capture
@@ -118,7 +118,7 @@ class ArchimedeanLimit (x : ℝ) : Prop where
 
 /-- Stated form of the conjecture (sorry-free at the level of Lean,
     inhabited only via a `[ArchimedeanLimit x]` typeclass instance). -/
--- Ref: [manuscript] conj:dilogarithm-archimedean-limit
+-- Ref: [leitner2026] conj:dilogarithm-archimedean-limit
 theorem partialProduct_to_LiTwo (x : ℝ) [h : ArchimedeanLimit x]
     (ε : ℝ) (hε : 0 < ε) :
     ∃ δ > (0 : ℝ), ∀ (q : ℝ) (n : ℕ),
@@ -188,7 +188,7 @@ theorem LiTwo_one_eq_tsum : LiTwo 1 = ∑' k : ℕ, (1 : ℝ) / ((k : ℝ) + 1) 
     off the vanishing `n = 0` term.  This is the extended-Bloch / Rogers regulator
     constant `ζ(2) = Li₂(1)` that Part B identifies as the (quantum-)dilogarithm
     inversion constant. -/
--- Ref: [manuscript] conj:dilogarithm-archimedean-limit
+-- Ref: [leitner2026] conj:dilogarithm-archimedean-limit
 theorem LiTwo_one : LiTwo 1 = Real.pi ^ 2 / 6 := by
   rw [LiTwo_one_eq_tsum, ← hasSum_zeta_two.tsum_eq,
       hasSum_zeta_two.summable.tsum_eq_zero_add]
@@ -413,7 +413,7 @@ lives downstream because it needs the heavy analytic imports
 `Pow.Asymptotics`, `Log.NegMulLog`); folding them into this base file — imported
 by six modules — would bloat every consumer's dependency cone.  The formerly
 `sorry`-carrying stub here was removed 2026-07-19; use `LiTwo_reflection'`.
--- Ref: [manuscript] Euler reflection formula; Lewin, "Polylogarithms and Associated Functions" (1981)
+-- Ref: [leitner2026] Euler reflection formula; Lewin, "Polylogarithms and Associated Functions" (1981)
 -/
 
 end QOU.QPochhammer

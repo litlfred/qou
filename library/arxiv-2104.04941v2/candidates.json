@@ -1,0 +1,94 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2104.04941v2",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "84426ed37754aa7887343b5506acf1f63f15468ac5c96155e62f81b461dc307f",
+  "file": "2104.04941v2.pdf"
+ },
+ "provenance": {
+  "title": "Fock\u2013Goncharov Coordinates for Semisimple Lie Groups",
+  "authors": "S. GILLES",
+  "arxiv": {
+   "id": "2104.04941",
+   "version": "2",
+   "primary_class": "math.GT",
+   "stamp_date": "21 Jan 2022"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 2,
+  "by_kind": {
+   "remark": 1,
+   "proposition": 1
+  },
+  "formalization_candidates": 1,
+  "by_domain": {
+   "math": 2
+  },
+  "by_evidence_kind": {
+   "explanatory": 1,
+   "deductive-proof": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 2
+  },
+  "by_lean_status": {
+   "unformalized": 1
+  },
+  "needs_lean_proof": 1
+ },
+ "candidates": [
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "6.1",
+   "name": null,
+   "statement": "That the algorithm of Section 5 does not work for A2n can be seen in a few di\ufb00erent ways, which are interconnected. \u2022 There is no general formula for a Coxeter element c that yields a longest-word presentation w0 = cc \u00b7 \u00b7 \u00b7 c. \u2022 The Coxeter number for A2n is odd. \u2022 The action of \u03c3G for A2n preserves no simple roots, therefore there can be no tree partitioning with a unique root node.",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-027-6-construction-for-a-n.md (p. 32-33)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-027-6-construction-for-a-n.md",
+   "section_title": "Construction for A_n",
+   "pages": "32-33",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null,
+   "block_id": "rem-sec-027-01",
+   "block_iri": "library/arxiv-2104.04941v2/blocks/rem-sec-027-01",
+   "claim_id": "arxiv-2104.04941v2#remark:6.1"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "6.2",
+   "name": null,
+   "statement": "For G of type An, Theorem 4.19 holds.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-027-6-construction-for-a-n.md (p. 32-33)",
+   "external_refs": [],
+   "proof_excerpt": "For the construction of Q, take the quiver consisting of mutable vertices { vij : 1 \u2264j \u2264n, 1 \u2264i \u2264n \u2212j } and frozen vertices { Ai, Bi, Ci : 1 \u2264i \u2264n }, all of weight 1. We consider Ai = v0,i, Bi = vi,n+1\u2212j, Ci = vi,0. The edges are given by \u03c3(a, b) = \uf8f1 \uf8f4 \uf8f2 \uf8f4 \uf8f3 c(a, b) a = vi,j, b =",
+   "section_file": "sections/sec-027-6-construction-for-a-n.md",
+   "section_title": "Construction for A_n",
+   "pages": "32-33",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-027-6-construction-for-a-n.md (p. 32-33)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "prop-sec-027-02",
+   "block_iri": "library/arxiv-2104.04941v2/blocks/prop-sec-027-02",
+   "claim_id": "arxiv-2104.04941v2#proposition:6.2",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  }
+ ]
+}

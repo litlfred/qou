@@ -1,0 +1,36 @@
+Spiders for Rank 2 Lie Algebras 137
+
+the weight of B. If B is also minimal, the two parts of w cut by B are the same
+as those of w cut by « up to H-moves.
+
+Proof. The proof is by induction on the complexity of w; assume that w is a
+minimal counterexample. Assume also that, having chosen w, a and f are transverse
+and intersect minimally. First, we can discard any structure of w not bounded by
+a U B; the new web has no clasps and is non-elliptic since w is non-elliptic. Second,
+we claim that « and B do not intersect except at their endpoints. Otherwise, let «’
+be a segment of « between two consecutive intersections x; and x2, and let p’ be
+the arc of 8 from x; to x2 (which are not necessarily consecutive along £). Then the
+region between «’ and f’ is either empty, in which case «’ and f’ do not intersect
+minimally; or it constitutes a smaller counterexample than w for some choice of a’;
+or B’; or « and B have comparable weight:
+
+A
+
+x,=p
+a,
+
+wart BB
+Mx, .
+
+Third, w must be connected, for if one of its connected components meets « but
+not £, « is not a minimal cut path; if one of its components meets f but not «, it
+may be discarded to produce a smaller counterexample; and if all components meet
+both « and f£, one of them is a smaller counterexample:
+
+Finally, if e; and e2 are adjacent endpoints of w, define the exterior curvature of
+the arc @]@2 to be 180° — n60°, where n is the number of vertices of w connecting
+e; to e:
+
+The total exterior curvature of w is at least 360° since w is non-elliptic. Moreover,
+the curvature at the arcs containing p and q is at most 120°, for if it were 180°,
+either w would be disconnected or it would be a single strand. Therefore there must

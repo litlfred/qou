@@ -1,4 +1,4 @@
-We express the blowup mechanism as a strict surreal inequality. 
+The blowup mechanism is expressed as a strict surreal inequality. 
 
 Let $\varepsilon \in \mathrm{Der}(A)$ be the Reeb infinitesimal and $q = 1 + \varepsilon$. In the $q > 1$ regime, the mass gap $\Delta_q \asymp \varepsilon^3$ serves as a quantum viscosity $\nu_q$, and the fluid is globally regular.
 
@@ -12,6 +12,6 @@ $$
   \mathcal{Z}_q \;>\; \Delta_q
 $$
 
-is automatic: the cascade sits at higher $\omega$-order than the dissipation. This formalises "faster-than-viscous growth".
+is automatic: the cascade sits at higher $\omega$-order than the dissipation. This makes "faster-than-viscous growth" precise.
 
 **Conclusion.** As $\varepsilon \to 0$, the enstrophy transfinite strictly outruns the mass-gap infinitesimal in the surreal ordering. No cancellation is available in $\mathbb{R}(\varepsilon)$. The classical-limit Navier--Stokes flow cannot absorb the vorticity cascade, producing a finite-time blow-up.

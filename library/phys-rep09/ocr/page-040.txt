@@ -1,0 +1,81 @@
+190 S. Blanes et al. / Physics Reports 470 (2009) 151-238
+
+|+) = (1, 0)", |—) = (0, 1)" of Ho, the unperturbed system. In terms of Pauli matrices the Hamiltonian in this case may be
+expressed as
+
+1
+H(t) = ghoos +f(t)or +g (to, (192)
+
+where f = Re(C) and g = —Im(C).
+Since Hp is diagonal, the transition probability between eigenstates |+), |—) of Ho is simply
+P(t) = (H1U(0)|-)’. (193)
+
+As the evaluation of (193) requires the computation and manipulation of exponential matrices involving Pauli matrices,
+formulas (18) and (19) in Section 1.2 come in handy here.
+
+Next, we study two particular cases of interaction for which the exact solution of the time evolution operator admits an
+analytic expression.
+
+1- Rectangular step. Suppose that in (192) g = 0, namely,
+
+H(t) = shes +f(t)or (194)
+
+with f = 0 fort < Oandf = Vo fort > 0. Alternatively, if we restrict ourselves to compute an observable such as the
+transition probability, this example is equivalent to a rectangular mound (or rectangular barrier) of width T = t above. The
+exact solution for this problem reads
+
+vi
+U(t, 0) = exp (- (Sa + pa) ‘) . (195)
+
+which yields the exact transition probability
+ay
+
+ae ae (196)
+
+between eigenstates |+), |—) of Ho. Here we have denoted y = Vot/h and é = at.
+The Interaction Picture is defined here by the explicit integration of the diagonal piece in the Hamiltonian, so that
+U = exp(—iéo3/2)U), where U; stands for the time evolution operator in the Interaction Picture and obeys
+
+2
+
+Pex
+
+Ul) =HA,(t)U;, U0) =1 (197)
+with
+H(t) =f (t)(o1 cosé — 02 sin€). (198)
+A computation with the usual time-dependent perturbation theory gives for the first orders (formula (52))
+
+2
+
+4y* |
+Py = Py) = ro sin?(é/2) (199)
+2 2 2
+Y _€§ Y _€§ 3g g 3 §
+P® — p® — —_ | asin — — (9sin= +sin = — 6£ cos= + 4sin?=)] .
+pt pt f2 2 362 2 2 & 2 2
+
+Notice that pe > 1 may happen in the equations above because the unitary character of the operator U(t) is not preserved
+by the usual time-dependent perturbation formalism.
+
+In this example it is not difficult to compute the first four terms in the Magnus series corresponding to U;(t) = exp 92(t)
+in (197). To facilitate the notation, we define s = sin€ and c = cosé. The Magnus approximants in the Interaction Picture
+may be written down in terms of Pauli matrices and read explicitly
+
+2 =-iXos+n(1—ol
+
+2
+%=~i( ) o3(s — &)
+
+3
+2 =-i( ) Floil3EC1 +0) — G + 0)s] + oxlGE —3)s— 40-1
+
+24 =~i(
+
+wr |S
+
+wr |S
+
+4
+) foal(de + 5) ~ (C+ 8)s). (200)
+
+wr

@@ -1,0 +1,40 @@
+normalization v : C + C, and denote its discrete valuation ring by O. Denote by
+
+n= ged(p,q),p' = ®,q' = £. The normalization v : Aj, > C is given by
+
+kX, Y]/(X? — Y*%) > k[S]
+
+XH ST YH
+
+We compute Q0,/, = OrdX © O,dY/(pX?-'dX — q¥*'dY), thus Qo,/;, @O =
+OdX & OdY /(pS7?-YVdX — gS"-YdY). The morphism Qo, /, ®@ O + Qo/x sends
+dX to q'8%—-'dS and dY to p'S”—dS. The kernel of this morphism is generated
+by p'dX — q'S7-"'dY € Qo, /, ® O, and its annihilator is (nS“@-)). Hence T ~
+O/(S%-Y) and length(T) = q/(p — 1).
+
+Singularities at reducible characters
+
+In this section we focus on v € Y that corresponds to a reducible character. It is
+precisely the case when it corresponds to an intersection point of the component
+of irreducible type corresponding to Y with the reducible component. By Section
+we can pick the tautological representation p : T —+ SL2(O,) to be not
+residually abelian.
+
+We need to study the O,-module H,(M, Adop),, but here we do not dispose of
+an interpretation in terms of the cotangent space. The strategy is the following :
+recall that we can write H,(M,Adop), =O, ® @ O,,/(t"), so we need to compute
+do; m:- First we consider H,(M, Adop), @ O,/(t) = A,(M, Ad of), it is a k-vector
+space whose dimension will be the integer | + 1. Then we prove that under some
+hypothesis, all of the n;’s are equal to 1.
+
+Up to conjugacy, we know that we can fix the tautological representation p : Tl >
+SL2(O,) such that Vy € T, p(y) = (on een) for some A € k* such that
+
+Aw (A?) = 0, see Section [1.4.2] oo
+Lemma 2.3.12. The O,-module Ho(M, Adop), is trivial.
+Proof. Using twice the Universal Coefficient Theorem, we have
+Ho(M, Ad op) ®o, O,/(t) & Ho(M, Ad op) ~ H°(M, Ad op)*
+and the last term is trivial since p is not abelian. Oo
+This section aims to relate the order of the torsion at such a finite point v where
+
+58

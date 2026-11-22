@@ -7,11 +7,11 @@
   "bytes": 748126,
   "pages": 52,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,18 +21,34 @@
    "stamp_date": "2 Mar 2026"
   },
   "doi": null,
-  "title": "On the Palais\u2013Smale condition in geometric knot theory",
-  "authors_raw": "Nicolas Freches, Henrik Schumacher, Daniel Steenebr\u00fcgge, and Heiko von der Mosel",
+  "title": "On the Palais-Smale condition in geometric knot theory",
+  "authors_raw": "Nicolas Freches, Henrik Schumacher, Daniel Steenebrügge, and Heiko von der Mosel",
   "title_lines": [
-   "On the Palais\u2013Smale condition in geometric knot theory"
+   "On the Palais–Smale condition in geometric knot theory"
   ],
-  "abstract": "We prove that various families of energies relevant in geometric knot theory satisfy thePalais\u2013Smalecondition(PS)onsubmanifoldsofarclengthparametrizedknots. These energies include linear combinations of the Euler-Bernoulli bending energy with a wide variety of non-local knot energies, such as O\u2019Hara\u2019s self-repulsive potentials\ud835\udc38\ud835\udefc,\ud835\udc5d, gen- eralized tangent-point energiesTP(\ud835\udc5d,\ud835\udc5e) , and generalized integral Menger curvature func- tionalsintM(\ud835\udc5d,\ud835\udc5e) . Even the tangent-point energiesTP(\ud835\udc5d,2) for\ud835\udc5d\u2208(4,5)alone are shown to fulfill the (PS)-condition. For all energies mentioned we can therefore prove existence of minimizing knots in any prescribed ambient isotopy class, and we provide long-time existence of their Hilbert-gradient flows, and subconvergence to critical knots as time goestoinfinity. Inaddition,weprove\ud835\udc36 \u221e-smoothnessofallarclength-constrainedcritical knots, which shows in particular that these critical knots are also critical for the energies on the larger open set of regular knots under a fixed-length constraint.",
+  "abstract": "We prove that various families of energies relevant in geometric knot theory satisfy the Palais–Smale condition (PS) on submanifolds of arclength parametrized knots. These energies include linear combinations of the Euler-Bernoulli bending energy with a wide variety of non-local knot energies, such as O’Hara’s self-repulsive potentials 𝐸𝛼,𝑝, gen- eralized tangent-point energies TP( 𝑝,𝑞), and generalized integral Menger curvature func- tionals intM( 𝑝,𝑞). Even the tangent-point energies TP( 𝑝,2) for 𝑝∈(4, 5) alone are shown to fulfill the (PS)-condition. For all energies mentioned we can therefore prove existence of minimizing knots in any prescribed ambient isotopy class, and we provide long-time existence of their Hilbert-gradient flows, and subconvergence to critical knots as time goes to infinity. In addition, we prove 𝐶∞-smoothness of all arclength-constrained critical knots, which shows in particular that these critical knots are also critical for the energies on the larger open set of regular knots under a fixed-length constraint.",
   "docinfo": {
-   "Author": "Nicolas Freches; Henrik Schumacher; Daniel Steenebr\u00fcgge; Heiko von der Mosel",
-   "Creator": "arXiv GenPDF (tex2pdf:57610bf)",
+   "Title": "On the Palais-Smale condition in geometric knot theory",
+   "Author": "Nicolas Freches; Henrik Schumacher; Daniel Steenebrügge; Heiko von der Mosel",
    "Producer": "pikepdf 8.15.1",
-   "Title": "On the Palais-Smale condition in geometric knot theory"
-  }
+   "Creator": "arXiv GenPDF (tex2pdf:57610bf)"
+  },
+  "title_raw": "On the Palais–Smale condition in geometric knot theory",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "On the Palais-Smale condition in geometric knot theory",
+   "heading": "On the Palais–Smale condition in geometric knot theory",
+   "outline": "Introduction",
+   "text": "On the Palais–Smale condition in geometric knot theory",
+   "corroborated_by": [
+    "heading",
+    "text",
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "On the Palais–Smale condition in geometric knot theory"
  },
  "toc": [
   {
@@ -40,174 +56,717 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
-   "title": "The Palais\u2013Smale condition",
+   "title": "The Palais–Smale condition",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Three families of knot energies on curves",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Main results",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Outline of the paper",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
-   "title": "The Palais\u2013Smale condition in an abstract setting",
+   "title": "The Palais–Smale condition in an abstract setting",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Energies on submanifolds of Hilbert spaces",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Gradient flows on Riemannian manifolds",
    "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 1,
    "title": "The submanifolds of arclength parametrized curves and knots",
    "page": 16,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "The arclength manifolds N1+s and A1+s",
    "page": 17,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "The topology of arclength manifolds",
    "page": 20,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 2,
    "title": "Critical knots in arclength submanifolds",
    "page": 23,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 1,
-   "title": "The Palais\u2013Smale condition for bending energy and knot energies",
+   "title": "The Palais–Smale condition for bending energy and knot energies",
    "page": 26,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   },
   {
    "level": 2,
    "title": "Bending energy",
    "page": 26,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   },
   {
    "level": 2,
    "title": "Bending energy with self-avoidance term",
    "page": 29,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "29"
   },
   {
    "level": 2,
    "title": "Tangent-point energy",
    "page": 31,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "31"
   },
   {
    "level": 1,
    "title": "Regularity of critical points",
    "page": 37,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "37"
   },
   {
    "level": 2,
    "title": "Bending energy",
    "page": 38,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "38"
   },
   {
    "level": 2,
    "title": "Bending energy with tangent-point energy",
    "page": 39,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "39"
   },
   {
    "level": 2,
    "title": "Tangent-point energy",
    "page": 40,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "40"
   },
   {
    "level": 1,
    "title": "Reparametrization to arclength",
    "page": 41,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "41"
   },
   {
    "level": 1,
    "title": "Product rules",
    "page": 45,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "45"
   },
   {
    "level": 1,
    "title": "References",
    "page": 48,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "48"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "52",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
    "id": "sec-000-the-palaissmale-condition",
    "number": null,
-   "title": "The Palais\u2013Smale condition",
+   "title": "The Palais–Smale condition",
    "level": 2,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1180,
-   "n_words": 146
+   "n_chars": 1206,
+   "n_words": 172,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
    "id": "sec-001-introduction",
@@ -216,8 +775,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 2549,
-   "n_words": 316
+   "n_chars": 2652,
+   "n_words": 419,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
    "id": "sec-002-three-families-of-knot-energies-on-curves",
@@ -226,8 +787,10 @@
    "level": 2,
    "page_start": 2,
    "page_end": 4,
-   "n_chars": 4147,
-   "n_words": 557
+   "n_chars": 4354,
+   "n_words": 764,
+   "label_start": "2",
+   "label_end": "4"
   },
   {
    "id": "sec-003-main-results",
@@ -236,8 +799,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 7,
-   "n_chars": 9370,
-   "n_words": 1233
+   "n_chars": 9844,
+   "n_words": 1707,
+   "label_start": "4",
+   "label_end": "7"
   },
   {
    "id": "sec-004-outline-of-the-paper",
@@ -246,18 +811,22 @@
    "level": 2,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 2876,
-   "n_words": 347
+   "n_chars": 3013,
+   "n_words": 484,
+   "label_start": "7",
+   "label_end": "8"
   },
   {
    "id": "sec-005-the-palaissmale-condition-in-an-abstract-setting",
    "number": null,
-   "title": "The Palais\u2013Smale condition in an abstract setting",
+   "title": "The Palais–Smale condition in an abstract setting",
    "level": 1,
    "page_start": 8,
    "page_end": 8,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "8",
+   "label_end": "8"
   },
   {
    "id": "sec-006-energies-on-submanifolds-of-hilbert-spaces",
@@ -266,8 +835,10 @@
    "level": 2,
    "page_start": 8,
    "page_end": 12,
-   "n_chars": 8117,
-   "n_words": 1159
+   "n_chars": 8554,
+   "n_words": 1596,
+   "label_start": "8",
+   "label_end": "12"
   },
   {
    "id": "sec-007-gradient-flows-on-riemannian-manifolds",
@@ -276,8 +847,10 @@
    "level": 2,
    "page_start": 12,
    "page_end": 16,
-   "n_chars": 11270,
-   "n_words": 1451
+   "n_chars": 11915,
+   "n_words": 2096,
+   "label_start": "12",
+   "label_end": "16"
   },
   {
    "id": "sec-008-the-submanifolds-of-arclength-parametrized-curve",
@@ -285,127 +858,183 @@
    "title": "The submanifolds of arclength parametrized curves and knots",
    "level": 1,
    "page_start": 16,
-   "page_end": 20,
-   "n_chars": 8355,
-   "n_words": 1170
+   "page_end": 17,
+   "n_chars": 572,
+   "n_words": 97,
+   "label_start": "16",
+   "label_end": "17"
   },
   {
-   "id": "sec-009-the-topology-of-arclength-manifolds",
+   "id": "sec-009-the-arclength-manifolds-n1s-and-a1s",
+   "number": null,
+   "title": "The arclength manifolds N1+s and A1+s",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 20,
+   "n_chars": 8155,
+   "n_words": 1482,
+   "label_start": "17",
+   "label_end": "20"
+  },
+  {
+   "id": "sec-010-the-topology-of-arclength-manifolds",
    "number": null,
    "title": "The topology of arclength manifolds",
    "level": 2,
    "page_start": 20,
    "page_end": 23,
-   "n_chars": 7462,
-   "n_words": 990
+   "n_chars": 7986,
+   "n_words": 1514,
+   "label_start": "20",
+   "label_end": "23"
   },
   {
-   "id": "sec-010-critical-knots-in-arclength-submanifolds",
+   "id": "sec-011-critical-knots-in-arclength-submanifolds",
    "number": null,
    "title": "Critical knots in arclength submanifolds",
    "level": 2,
    "page_start": 23,
    "page_end": 26,
-   "n_chars": 6353,
-   "n_words": 851
+   "n_chars": 6694,
+   "n_words": 1192,
+   "label_start": "23",
+   "label_end": "26"
   },
   {
-   "id": "sec-011-the-palaissmale-condition-for-bending-energy-and",
+   "id": "sec-012-the-palaissmale-condition-for-bending-energy-and",
    "number": null,
-   "title": "The Palais\u2013Smale condition for bending energy and knot energies",
+   "title": "The Palais–Smale condition for bending energy and knot energies",
    "level": 1,
    "page_start": 26,
    "page_end": 29,
-   "n_chars": 6196,
-   "n_words": 923
+   "n_chars": 6457,
+   "n_words": 1180,
+   "label_start": "26",
+   "label_end": "29"
   },
   {
-   "id": "sec-012-bending-energy-with-self-avoidance-term",
+   "id": "sec-013-bending-energy-with-self-avoidance-term",
    "number": null,
    "title": "Bending energy with self-avoidance term",
    "level": 2,
    "page_start": 29,
    "page_end": 31,
-   "n_chars": 6178,
-   "n_words": 817
+   "n_chars": 6483,
+   "n_words": 1122,
+   "label_start": "29",
+   "label_end": "31"
   },
   {
-   "id": "sec-013-tangent-point-energy",
+   "id": "sec-014-tangent-point-energy",
    "number": null,
    "title": "Tangent-point energy",
    "level": 2,
    "page_start": 31,
    "page_end": 37,
-   "n_chars": 13081,
-   "n_words": 1863
+   "n_chars": 13723,
+   "n_words": 2492,
+   "label_start": "31",
+   "label_end": "37"
   },
   {
-   "id": "sec-014-regularity-of-critical-points",
+   "id": "sec-015-regularity-of-critical-points",
    "number": null,
    "title": "Regularity of critical points",
    "level": 1,
    "page_start": 37,
    "page_end": 38,
-   "n_chars": 1478,
-   "n_words": 189
+   "n_chars": 1555,
+   "n_words": 266,
+   "label_start": "37",
+   "label_end": "38"
   },
   {
-   "id": "sec-015-bending-energy",
+   "id": "sec-016-bending-energy",
    "number": null,
    "title": "Bending energy",
    "level": 2,
    "page_start": 38,
    "page_end": 39,
-   "n_chars": 1709,
-   "n_words": 199
+   "n_chars": 1841,
+   "n_words": 331,
+   "label_start": "38",
+   "label_end": "39"
   },
   {
-   "id": "sec-016-bending-energy-with-tangent-point-energy",
+   "id": "sec-017-bending-energy-with-tangent-point-energy",
    "number": null,
    "title": "Bending energy with tangent-point energy",
    "level": 2,
    "page_start": 39,
-   "page_end": 41,
-   "n_chars": 4180,
-   "n_words": 554
+   "page_end": 40,
+   "n_chars": 2107,
+   "n_words": 376,
+   "label_start": "39",
+   "label_end": "40"
   },
   {
-   "id": "sec-017-reparametrization-to-arclength",
+   "id": "sec-018-tangent-point-energy",
+   "number": null,
+   "title": "Tangent-point energy",
+   "level": 2,
+   "page_start": 40,
+   "page_end": 41,
+   "n_chars": 2265,
+   "n_words": 394,
+   "label_start": "40",
+   "label_end": "41"
+  },
+  {
+   "id": "sec-019-reparametrization-to-arclength",
    "number": null,
    "title": "Reparametrization to arclength",
    "level": 1,
    "page_start": 41,
    "page_end": 45,
-   "n_chars": 9658,
-   "n_words": 1456
+   "n_chars": 9958,
+   "n_words": 1758,
+   "label_start": "41",
+   "label_end": "45"
   },
   {
-   "id": "sec-018-product-rules",
+   "id": "sec-020-product-rules",
    "number": null,
    "title": "Product rules",
    "level": 1,
    "page_start": 45,
    "page_end": 48,
-   "n_chars": 5641,
-   "n_words": 753
+   "n_chars": 5989,
+   "n_words": 1096,
+   "label_start": "45",
+   "label_end": "48"
   },
   {
-   "id": "sec-019-references",
+   "id": "sec-021-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 48,
    "page_end": 52,
-   "n_chars": 13262,
-   "n_words": 1420
+   "n_chars": 13730,
+   "n_words": 1888,
+   "label_start": "48",
+   "label_end": "52"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 23,
-  "sections": 20,
-  "chars_total": 123062,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 22,
+  "chars_total": 129053,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Main.tex",
@@ -419,21 +1048,21 @@
    "sections": [
     {
      "id": "sec-000-the-palaissmale-condition",
-     "title": "The Palais\u2013Smale condition",
+     "title": "The Palais–Smale condition",
      "prose_ratio": 0.286,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-001-introduction",
      "title": "Introduction",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-002-three-families-of-knot-energies-on-curves",
      "title": "Three families of knot energies on curves",
      "prose_ratio": 0.944,
-     "coverage_ratio": 0.902,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -441,7 +1070,7 @@
      "id": "sec-003-main-results",
      "title": "Main results",
      "prose_ratio": 0.929,
-     "coverage_ratio": 0.881,
+     "coverage_ratio": 0.993,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -449,21 +1078,21 @@
      "id": "sec-004-outline-of-the-paper",
      "title": "Outline of the paper",
      "prose_ratio": 0.94,
-     "coverage_ratio": 0.887,
+     "coverage_ratio": 0.962,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-005-the-palaissmale-condition-in-an-abstract-setting",
-     "title": "The Palais\u2013Smale condition in an abstract setting",
+     "title": "The Palais–Smale condition in an abstract setting",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-006-energies-on-submanifolds-of-hilbert-spaces",
      "title": "Energies on submanifolds of Hilbert spaces",
      "prose_ratio": 0.949,
-     "coverage_ratio": 0.79,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -471,91 +1100,103 @@
      "id": "sec-007-gradient-flows-on-riemannian-manifolds",
      "title": "Gradient flows on Riemannian manifolds",
      "prose_ratio": 0.957,
-     "coverage_ratio": 0.81,
+     "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-008-the-submanifolds-of-arclength-parametrized-curve",
      "title": "The submanifolds of arclength parametrized curves and knots",
-     "prose_ratio": 0.943,
-     "coverage_ratio": 0.823,
+     "prose_ratio": 0.892,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-009-the-topology-of-arclength-manifolds",
+     "id": "sec-009-the-arclength-manifolds-n1s-and-a1s",
+     "title": "The arclength manifolds N1+s and A1+s",
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-the-topology-of-arclength-manifolds",
      "title": "The topology of arclength manifolds",
      "prose_ratio": 0.953,
-     "coverage_ratio": 0.822,
+     "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-010-critical-knots-in-arclength-submanifolds",
+     "id": "sec-011-critical-knots-in-arclength-submanifolds",
      "title": "Critical knots in arclength submanifolds",
      "prose_ratio": 0.968,
-     "coverage_ratio": 0.863,
+     "coverage_ratio": 0.995,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-011-the-palaissmale-condition-for-bending-energy-and",
-     "title": "The Palais\u2013Smale condition for bending energy and knot energies",
+     "id": "sec-012-the-palaissmale-condition-for-bending-energy-and",
+     "title": "The Palais–Smale condition for bending energy and knot energies",
      "prose_ratio": 0.667,
-     "coverage_ratio": 0.01,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.011,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
-     "id": "sec-012-bending-energy-with-self-avoidance-term",
+     "id": "sec-013-bending-energy-with-self-avoidance-term",
      "title": "Bending energy with self-avoidance term",
      "prose_ratio": 0.868,
-     "coverage_ratio": 0.88,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-013-tangent-point-energy",
+     "id": "sec-014-tangent-point-energy",
      "title": "Tangent-point energy",
      "prose_ratio": 0.895,
-     "coverage_ratio": 0.895,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-014-regularity-of-critical-points",
+     "id": "sec-015-regularity-of-critical-points",
      "title": "Regularity of critical points",
      "prose_ratio": 0.659,
-     "coverage_ratio": 0.886,
+     "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-015-bending-energy",
+     "id": "sec-016-bending-energy",
      "title": "Bending energy",
      "prose_ratio": 0.218,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-016-bending-energy-with-tangent-point-energy",
+     "id": "sec-017-bending-energy-with-tangent-point-energy",
      "title": "Bending energy with tangent-point energy",
-     "prose_ratio": 0.883,
-     "coverage_ratio": 0.838,
-     "result": "overlaid",
-     "converter": "latex"
+     "prose_ratio": 0.543,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-017-reparametrization-to-arclength",
+     "id": "sec-018-tangent-point-energy",
+     "title": "Tangent-point energy",
+     "prose_ratio": 0.194,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-019-reparametrization-to-arclength",
      "title": "Reparametrization to arclength",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-018-product-rules",
+     "id": "sec-020-product-rules",
      "title": "Product rules",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-019-references",
+     "id": "sec-021-references",
      "title": "References",
      "result": "no matching \\section"
     }

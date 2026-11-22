@@ -1,0 +1,57 @@
+1364 J. Leake
+
+In Sect. 6, we finally state and prove our improved characterizations of stability-preserving
+operators. We also demonstrate how the Borcea—Brandén characterizations can be seen (with
+a bit of work) to be corollaries of our characterizations. We then provide examples of the
+use of our results. In particular, we show how stability results related to classical polynomial
+convolutions can be immediately recovered.
+
+In Sect. 7, we state and prove the analogous characterization of strong real stability-
+preserving operators. As with complex operators, we show how the Borcea—Brandén
+characterization can be obtained as a corollary. In this section, we also state and prove our
+characterization of operators which preserve both weak real-rootedness as well as interval-
+(or ray-) rootedness.
+
+In Appendix A, we explicate more of the representation theory of SL2(C) ina polynomial-
+minded way. Specifically, we prove a few standard tensor product decomposition results
+which more clearly demonstrate how this theory connects to the notion of apolarity.
+
+In Appendix B, we discuss how polarization and the Grace—Walsh—Szeg6 coincidence
+theorem fit in to the framework presented in this paper. We also demonstrate that the classical
+isomorphism V(n) = Sym"(V(1)) (for representations of SL2(C)) can be realized as the
+polarization map and therefore has a stability-theoretic interpretation. While important to the
+conceptual thesis stated above, we place this discussion in an appendix as it is not utilized
+elsewhere.
+
+2 Preliminaries
+
+Here, we discuss basic notation and results related to polynomials and stability. In particular,
+we discuss in more detail the notation and consequences related to the use of homogeneous
+polynomials in place of usual univariate and mutlivariate polynomials. Then, we state a
+number of basic stability results in the language of homogeneous polynomials.
+
+2.1 Notation
+
+Let [n] := {1,2,..., nj and (1"") := (1,..., 1) € Ng. For A = (A1,...,Am) € Ng’, we
+define:
+
+CLx,..., Xm] = {f €C[x,..., Xm]: deg, (f) < dr}
+
+That is, elements of C*[x1, ..., xm] are of degree at most A, in the variable x,. In particular,
+we call polynomials in CO Lx, Xm] multi-affine. We will also use the shorthand C” [x]
+to refer to univariate polynomials of degree at most n.
+
+Now we define similar spaces of polynomials which are homogeneous in pairs of variables.
+These polynomials should be seen as per-variable homogenizations of polynomials of the
+
+spaces defined above. For A = (Aj,..., Am) € Ng and K = C or K= R, we define:
+Vic (A) = Viki, . ++, Am)
+:= {p € K[x1, y1.--, Xm, Ym] : p is homogeneous of degree Ax in xx, yx}
+
+We also use the shorthand V(A) = Vc(A). As above, we call polynomials in V(1"") multi-
+affine. The notation used here is generalized from what is typically used to denote the
+irreducible representations of SL2(C). As it turns out, spaces of homogeneous polynomials
+in two variables can be used to define these representations. This will be made more precise
+in Sect. 3.
+
+D Springer

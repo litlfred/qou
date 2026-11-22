@@ -1,0 +1,1620 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "0310280v4",
+ "status": "determined",
+ "body_size": 11.0,
+ "footnotes": [],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "R"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "A knot in oriented R"
+  },
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "A knot in oriented R3is the image Xof an oriented circle S"
+  },
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "e:S"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "e:S1→R"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "e:S1→R3.ViewingS"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "e:S1→R3.ViewingS3asR"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "R3.ViewingS3asR3∪∞, we also can think ofXas being a knot inS"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "thepair(X, S"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "unknotted curveA ⊂(S"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "torusS"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "R"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "R3.If we regardAas thez–axis inR"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "re are natural cylindrical coordinates(ρ, θ, z),θ∈[0, 2π)inR"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "Figure 1:(a)Braid structure onR"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "cture onR3;(b)2–planes in the standard contact structure onR"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "R"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "R3is the kernel of the 1–formα = ρ"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "toeachpointinR"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "An oriented knotXin contactR"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "braidXis transverse if and only ifdθ/dt> −z′(t)/(ρ(t))"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "knots to be transversally isotopic if there is an isotopyh:R"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "to be transversally isotopic if there is an isotopyh:R3× I→R"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "such thaths(X)=h(X, s)⊂R"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "of contact structures onS"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "of contact structures onS3orR"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "owed that open book decompositions of arbitrary 3–manifoldsM"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "ructure on a 3–manifold generalizes our braid structures onR"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "oriented knot types in orientedR"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "A blockBinR"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "bottomofB.Astrandlishomeomorphictoaninterval[0, 1]oracircleS"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "strand diagramDis a collection of pairwise disjoint blocks{B"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "ramDis a collection of pairwise disjoint blocks{B1, · · ·, B"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "pairwise disjoint strands{l"
+  },
+  {
+   "page": 6,
+   "mark": "l",
+   "context": "pairwise disjoint strands{l1, · · ·, l"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "(i)Ifl"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "(i)Ifli∩B"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "(i)Ifli∩Bj̸= ∅thenl"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "(i)Ifli∩Bj̸= ∅thenli∩B"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "(i)Ifli∩Bj̸= ∅thenli∩Bj= (l"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "0∩B"
+  },
+  {
+   "page": 6,
+   "mark": "t",
+   "context": "0∩Bj)where"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "0∩Bj)wheret"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "0∩Bj)wheretjis the top ofB"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "0∩Bj)wheretjis the top ofBjandB"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "1∩t"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "1∩tj) ∪(l"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "is the bottom ofB"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": " the bottom ofBj.(We allow for the possibility that either(l"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "1∩t"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "1∩tj)or(l"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "0∩B"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "1) there is someB"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "1) there is someBj⊂B"
+  },
+  {
+   "page": 6,
+   "mark": "t",
+   "context": "1) there is someBj⊂Bj(resp."
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "1) there is someBj⊂Bj(resp.t"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "1) there is someBj⊂Bj(resp.tj⊂B"
+  },
+  {
+   "page": 6,
+   "mark": "l",
+   "context": "1) there is someBj⊂Bj(resp.tj⊂Bj) such that"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "1) there is someBj⊂Bj(resp.tj⊂Bj) such thatl"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "(ii)For eachl"
+  },
+  {
+   "page": 6,
+   "mark": "l",
+   "context": "0(resp."
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "0(resp.l"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "0⊂B"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "(resp.l"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "1⊂t"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "(iii)For each blockB"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "(iii)For each blockBjwe have|t"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "(iii)For each blockBjwe have|tj∩(∪1≤i≤ll"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "1)| = |B"
+  },
+  {
+   "page": 6,
+   "mark": "l",
+   "context": "1)| = |Bj ∩(∪1≤i≤l"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "1)| = |Bj ∩(∪1≤i≤ll"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "Thefactthatforeachj=1, . . . , kthereisaﬁberwhichmissesB"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "for eachB"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "for eachBj∈D.That is,we replaceB"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "eachBj∈D.That is,we replaceBjwith the chosen braid, so thatB"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "B"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "B1, . . . , B"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "for every ﬁxed choice of braiding assignments to the blocksB"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "ed choice of braiding assignments to the blocksB1, . . . , B"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "a clasp annulus, that is a topological annulusPA ∼= S"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "PA −→CA ⊂R"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "unionofclasparcs{γ"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "unionofclasparcs{γ1, · · ·, γ"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "CAsuchthat,foreachγ"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "e−1(γ"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "e−1(γj)=γ"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "+∪γ"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "−⊂PA.Also,γ"
+  },
+  {
+   "page": 8,
+   "mark": "e",
+   "context": "ϵhas an endpoint on"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "X+acrossCAtoX−corresponds to an isotopy inR"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "structure and transversal isotopies inR"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "in the standard contact structure ofR"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "Lemma 1(The Bennequin Trick)Let Γ ⊂R"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "is transversal to the standard contact structureξofR"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "a local parameterization functionf(t):[0, 1] →R"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "dtisnotpositiveforall"
+  },
+  {
+   "page": 9,
+   "mark": "a",
+   "context": "dtisnotpositiveforalltthenthereexists"
+  },
+  {
+   "page": 9,
+   "mark": "b",
+   "context": "parameterization"
+  },
+  {
+   "page": 9,
+   "mark": "b",
+   "context": "parameterizationbf(t) = (bρ(t),"
+  },
+  {
+   "page": 9,
+   "mark": "d",
+   "context": "parameterizationbf(t) = (bρ(t),bθ(t),bz(t))we have"
+  },
+  {
+   "page": 9,
+   "mark": "b",
+   "context": "parameterizationbf(t) = (bρ(t),bθ(t),bz(t))we haved"
+  },
+  {
+   "page": 9,
+   "mark": "d",
+   "context": "Γ ∩A=∅and"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "of links to an isotopy of the ambient spaceR"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "Lemma 2(Eliashberg’s isotopy extension lemma [8])Letϕt :X→R"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "there exists a contact isotopyαt :(R"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "there exists a contact isotopyαt :(R3, ξ) →(R"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "TAis an associated transversal clasp annulus if forPA∼=S"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "TA⊂R"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "{γ"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "{γ1, · · ·, γ"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "{γ1, · · ·, γk} ⊂TAsuch that, for eachγ"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "{γ1, · · ·, γk} ⊂TAsuch that, for eachγj, we havee−1(γ"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "{γ1, · · ·, γk} ⊂TAsuch that, for eachγj, we havee−1(γj) = γ"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "+∪γ"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "γ"
+  },
+  {
+   "page": 9,
+   "mark": "e",
+   "context": "ϵhas an endpoint on"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "(c)Theclasparcs{γ"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "(c)Theclasparcs{γ1, · · ·, γ"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "particular, the arcsγ"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "+, γ"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "ion, ie, transverse to each ﬁberHθof the braid structureHonR"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "{g"
+  },
+  {
+   "page": 10,
+   "mark": "g",
+   "context": "ϵ, · · ·,"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "ϵ, · · ·, g"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "ϵ,ϵ = ±} ⊂PA, such that for each"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "ϵ,ϵ = ±} ⊂PA, such that for eachi = 1, . . . ,"
+  },
+  {
+   "page": 10,
+   "mark": "g",
+   "context": "ϵ,ϵ = ±} ⊂PA, such that for eachi = 1, . . . , kthe union"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "ϵ,ϵ = ±} ⊂PA, such that for eachi = 1, . . . , kthe uniong"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "(e)There exists a braidTX0⊂{TA \\ (∪1≤i≤kγ"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "(e)There exists a braidTX0⊂{TA \\ (∪1≤i≤kγi∪∪1≤i≤k(g"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "+∪g"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "TX+ ∪TX−∪TX0 ∪(∪1≤i≤kγ"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "TX+ ∪TX−∪TX0 ∪(∪1≤i≤kγi) ∪(∪1≤i≤ke(g"
+  },
+  {
+   "page": 10,
+   "mark": "e",
+   "context": "+)) ∪(∪1≤i≤k"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "+)) ∪(∪1≤i≤ke(g"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "(g)Thecollectionofedgepaths{(g"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "+∪γ"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "+), (g"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "−∪γ"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "−),"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "−),i=1, . . . ,"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "staggered.That is,there exists a set of leaves{s"
+  },
+  {
+   "page": 10,
+   "mark": "l",
+   "context": "staggered.That is,there exists a set of leaves{s1, · · ·, s"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": " of the characteristic foliation that are disjoint from theg"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "±∪γ"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "1 ≤i ≤k, such that each component ofPA \\ (∪1≤j≤ls"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "most a single edgepath from the set{(g"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "+∪γ"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "+), (g"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "−∪γ"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "−),"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "−),i = 1, . . . ,"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "ProofWe start by partitioningR"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "space by R"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "+and the lower-half space by R"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "braid inR"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "ofTX−.We can visualizeTX′being inR"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": " boundary of an embedded annulus A′in the lower half-space R"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "Viewing this projection from theR"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "γ"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "γ"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "g"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "s"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "s"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "s"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "s"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "γ"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "g"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "LetCρbe a cylinder of radiusρinR"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "foliated by parallel Legendrian arcs of slope−ρ"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "So, letp = pi∈R"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "pi∈R2be a double point in the projected image ofTX−∪TX′ontoR"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "ibe its preimage onTX′and letα"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "ibe its preimage onTX′and letαibe a neighborhood of"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "ionTX′.For each"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "ishare the same ρcoordinate ρ"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "af of the characteristic foliation ofCρithat passes throughp"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "i"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "contained inR"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "ByLemma1weknowthatclosedorientedbraidsinR"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "enerality, we can assume that this isotopy is restricted toR"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "the identity onR"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "to a contact isotopyΨ0 :(R"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "to a contact isotopyΨ0 :(R3, ξ)→(R"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "to a contact isotopyΨ0 :(R3, ξ)→(R3, ξ), which ﬁxesR"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "clasparcs{γ"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "clasparcs{γ1, · · ·, γ"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "{e(g"
+  },
+  {
+   "page": 12,
+   "mark": "e",
+   "context": "+),"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "+), e(g"
+  },
+  {
+   "page": 12,
+   "mark": "e",
+   "context": "−), · · ·,"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "−), · · ·, e(g"
+  },
+  {
+   "page": 12,
+   "mark": "e",
+   "context": "+),"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "+), e(g"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "TX+ ∪TX−∪TX0 ∪(∪1≤i≤kγ"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "TX+ ∪TX−∪TX0 ∪(∪1≤i≤kγi) ∪(∪1≤i≤ke(g"
+  },
+  {
+   "page": 12,
+   "mark": "e",
+   "context": "+)) ∪(∪1≤i≤k"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "+)) ∪(∪1≤i≤ke(g"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "transversal isotopy to a contact isotopyΨ1 :(R"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "transversal isotopy to a contact isotopyΨ1 :(R3, ξ) →(R"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "decomposition ofS"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "be the number of vertices, edges and faces, the fact thatχ(S"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "the loop as well.Therefore the inequalitydz/dθ>−ρ"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "θ= 0, but if we continue to keepdz ≥0then in the limit, as−ρ"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "dz/dθ̸= −ρ"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "e a braid in braid structure(H, A)such thatX∈Bmin(X).LetT∆⊂R"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "(c)Foreachclasparcγ"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "(c)Foreachclasparcγi⊂TAatleastoneofitsassociatedpre-imagesγ"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "γ"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "arcs {γ"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "+, γ"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "−, · · ·, γ"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "+, γ"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "−} and their extension arcs {g"
+  },
+  {
+   "page": 18,
+   "mark": "g",
+   "context": "+,"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "+, g"
+  },
+  {
+   "page": 18,
+   "mark": "g",
+   "context": "−, · · ·,"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "−, · · ·, g"
+  },
+  {
+   "page": 18,
+   "mark": "g",
+   "context": "+,"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "+, g"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "G= TX+ ∪TX−∪(∪1≤i≤kγ"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "G= TX+ ∪TX−∪(∪1≤i≤kγi) ∪(∪1≤i≤ke(g"
+  },
+  {
+   "page": 18,
+   "mark": "e",
+   "context": "+)) ∪(∪1≤i≤k"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "+)) ∪(∪1≤i≤ke(g"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "Thus, inPAeach edgepathg"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "±∪γ"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "γ"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "g"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "γ"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "g"
+  },
+  {
+   "page": 18,
+   "mark": "5",
+   "context": "s"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "s"
+  },
+  {
+   "page": 18,
+   "mark": "4",
+   "context": "s"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "s"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "s"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "g"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "γ"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "We now use the fact that the edgepaths{(g"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "+∪γ"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "+), (g"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "−∪γ"
+  },
+  {
+   "page": 19,
+   "mark": "k",
+   "context": "−), · · ·, (g"
+  },
+  {
+   "page": 19,
+   "mark": "k",
+   "context": "+∪γ"
+  },
+  {
+   "page": 19,
+   "mark": "k",
+   "context": "+), (g"
+  },
+  {
+   "page": 19,
+   "mark": "k",
+   "context": "γ"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "−)}⊂PAarestaggered.LetΛ={s"
+  },
+  {
+   "page": 19,
+   "mark": "s",
+   "context": "−)}⊂PAarestaggered.LetΛ={s1, · · ·,"
+  },
+  {
+   "page": 19,
+   "mark": "l",
+   "context": "−)}⊂PAarestaggered.LetΛ={s1, · · ·, s"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "−)}⊂PAarestaggered.LetΛ={s1, · · ·, sl}⊂PAbe"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "(i)EachcomponentofPA \\ Λisasubdiscthatcontainsatmostoneg"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "±∪γ"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "existsarcs{x"
+  },
+  {
+   "page": 19,
+   "mark": "x",
+   "context": "+, · · ·,"
+  },
+  {
+   "page": 19,
+   "mark": "l",
+   "context": "+, · · ·, x"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "+}⊂TX+and{x"
+  },
+  {
+   "page": 19,
+   "mark": "x",
+   "context": "−, · · ·,"
+  },
+  {
+   "page": 19,
+   "mark": "l",
+   "context": "−, · · ·, x"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "+∪s"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "+∪s1 ∪x"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "−∪s"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "−∪s2 ∪x"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "+∪s"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "+∪s3 ∪x"
+  },
+  {
+   "page": 19,
+   "mark": "l",
+   "context": "−∪· · · ∪s"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "x"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "Γ = TX+ ∪TX−∪TXos ∪(∪1≤i≤kγ"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "Γ = TX+ ∪TX−∪TXos ∪(∪1≤i≤kγi) ∪(∪1≤i≤ke(g"
+  },
+  {
+   "page": 19,
+   "mark": "e",
+   "context": "+)) ∪(∪1≤i≤k"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "+)) ∪(∪1≤i≤ke(g"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "isotopy ofΓto all of(R"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "characteristic foliation will be radial in∆θ(⊂∆c ∪c ∆θ∼= S"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "Next we establish that each clasp arcγ"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "clasp arc or a parallel clasp arc inPA.So letE"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "−=γ"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "−∪g"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "and its extension.Notice thate(E"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "e(E"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "−istrivial,thenγ"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "−isnon-trivial.ThenweapplyLemma"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "oneendpointone(E"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "TX−.We can assume that the endpoints ofG−,−one(E"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "e(γ"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "−∩g"
+  },
+  {
+   "page": 20,
+   "mark": "e",
+   "context": "−) ⊂TX+which cannot be moved.Now, by stabilizing positively"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": " ⊂TX+which cannot be moved.Now, by stabilizing positivelye(E"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "contain the pointe(γ"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "−∩g"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "−containing only a linear component ofG+,+andγ"
+  },
+  {
+   "page": 20,
+   "mark": "a",
+   "context": "−was"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "ofTAwith the half-planes of the standard braid ﬁbrationHofR"
+  },
+  {
+   "page": 21,
+   "mark": "m",
+   "context": "−∈Bmin(X), and a transversal template(D+, D−) ∈T (m,"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "−iscarriedbyD−,via"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "G−,−are homotopic toS"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "TX+= σ"
+  },
+  {
+   "page": 24,
+   "mark": "p",
+   "context": "TX+= σ2"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "2σ"
+  },
+  {
+   "page": 24,
+   "mark": "q",
+   "context": "2σ2"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "TX−= σ"
+  },
+  {
+   "page": 24,
+   "mark": "p",
+   "context": "TX−= σ2"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "2σ"
+  },
+  {
+   "page": 24,
+   "mark": "q",
+   "context": "2σ2"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "σ"
+  },
+  {
+   "page": 24,
+   "mark": "r",
+   "context": "σ2"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "1σ"
+  },
+  {
+   "page": 24,
+   "mark": "r",
+   "context": "1σ2"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "assignments to the blocks areσ"
+  },
+  {
+   "page": 25,
+   "mark": "p",
+   "context": "assignments to the blocks areσ2"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "2andσ"
+  },
+  {
+   "page": 25,
+   "mark": "q",
+   "context": "2andσ2"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": ",σ"
+  },
+  {
+   "page": 25,
+   "mark": "r",
+   "context": ",σ2"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "–braid representatives, namely the conjugacy classes inB3ofσ"
+  },
+  {
+   "page": 26,
+   "mark": "u",
+   "context": "t, we turn to [12], where it is shown that the closed braidσ"
+  },
+  {
+   "page": 26,
+   "mark": "v",
+   "context": "1σ"
+  },
+  {
+   "page": 26,
+   "mark": "w",
+   "context": "2σ"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "braiding assignmentsσ"
+  },
+  {
+   "page": 26,
+   "mark": "4",
+   "context": "1, σ"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "will beσ"
+  },
+  {
+   "page": 26,
+   "mark": "4",
+   "context": "1σ"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "2, withβ(L"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "2, withβ(L1) = −3andβ(L"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "covering space of S"
+  }
+ ]
+}

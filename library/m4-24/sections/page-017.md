@@ -1,0 +1,79 @@
+---
+doc_id: m4-24
+doc_title: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface"
+section_id: page-017
+section_title: "Page 17"
+section_number: null
+pages: 17-17
+source_pdf: m4-24.pdf
+source_sha256: cf7c5e29b818e647
+toc_source: undetermined
+doc_brief: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3"
+---
+Problems on invariants of knots and 3-manifolds 389
+
+Alternating knots through 16 crossings
+
+9 r r r r r 1
+"12 altdata” + ow
+"13-alt.data”
+
+Bb |
+ety 7
+rd
+3
+&
+rd
+g
+Zot 4
+2
+s
+rd
+8
+5b 4
+
+ap . 4
+
+¢
+
+3 * L L L L L L
+
+0 5 10 15 20 25 30 35
+Volume of complement
+All knots through 13 crossings
+
+8 r
+
+7h 7
+
+6b J
+5
+Zst J
+3
+&
+od
+8
+zap ~ 4
+a
+5 fon
+5 «
+rn :
+
+Bah a Seo J
+a . eas hoc RE mo xx
+50 NR Ha Bog xx 20% oe
+Foxx m8 Kp
+2b BO SABE ei x 4
+BO Rh A eR ee 5 BX
+at J
+0 f f f fi f
+0 5 10 15 20 25 30
+
+Volume of complement
+
+Figure 5: The distributions of pairs of the hyperbolic volume of knot complements
+and 7 log Vx (—1)/ log degVx (t). The upper picture is for all alternating knots with 12
+and 13 crossings and samples of alternating knots with 14, 15, and 16 crossings, and
+the lower picture is for all knots with 13 or fewer crossings [112].
+
+Geometry & Topology Monographs, Volume 4 (2002)

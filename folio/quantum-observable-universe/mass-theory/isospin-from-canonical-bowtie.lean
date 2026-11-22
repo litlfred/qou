@@ -96,7 +96,7 @@ derivation (AGENTS.md §"Axiomatization is NOT a Proof").
 substrate wall, and the CODATA comparison is a real-number comparison, so §7c's generic-`R`
 default does not apply here.
 
--- Ref: [manuscript] quantum-observable-universe/mass-theory/isospin-from-canonical-bowtie.ts
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/isospin-from-canonical-bowtie.ts
 -/
 
 namespace QOU.BraidsAndKnots
@@ -112,7 +112,7 @@ the point (see the header). Factor conventions are the producer's, not the glyph
 **No instance is provided.** Downstream results consume this as `[IsospinFromCanonicalBowtie q ratio]`
 and are genuinely conditional on it.
 
--- Ref: [manuscript] conj:isospin-from-canonical-bowtie -/
+-- Ref: [leitner2026] conj:isospin-from-canonical-bowtie -/
 class IsospinFromCanonicalBowtie (q ratio : ℝ) : Prop where
   /-- The substrate modulus is a genuine deformation parameter: positive and not the
   classical point. Both are needed for `q⁻¹` to behave and for `h = q - q⁻¹` to be nonzero. -/

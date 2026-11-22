@@ -20,8 +20,8 @@ LaTeX label: `def:ccg-cosimplicial-identities`
 
 ## References
 
-- [yekutieli2010] Central Extensions of Gerbes, §4
-- [manuscript] §3 Lifting and Descent
+- [yekutieli2014-descent] Combinatorial Descent Data for Gerbes, §1
+- [leitner2026] §3 Lifting and Descent
 -/
 
 namespace QOU.LiftingDescent
@@ -38,8 +38,8 @@ namespace QOU.LiftingDescent
     δʲ⁻¹` for `i < j` etc.) would require richer types for the face
     maps; this lemma packages the level-based fragment that is
     immediately discharged from the structure. -/
--- Ref: [yekutieli2010] §4, Theorem 4.2
--- Ref: [manuscript] §3, Lemma: CCG cosimplicial identities
+-- Ref: [yekutieli2014-descent] §1, text after Def 1.4 (cosimplicial crossed groupoid = object of Δ(CrGrpd)); existence on the brane tower is ours, not Yekutieli's
+-- Ref: [leitner2026] §3, Lemma: CCG cosimplicial identities
 def ccg_cosimplicial_identities
     {M : Type*} (ccg : CosimplicialCrossedGroupoid M) :
     (∀ (n : ℕ) (t : YekutieliTriple M),

@@ -13,7 +13,7 @@ LaTeX label: `def:coulomb-charge`
 
 ## References
 
-- [manuscript] Ch. 4, §10
+- [leitner2026] Ch. 4, §10
 
 **Ground ring**: this Lean sibling is the archimedean specialisation
 over `ℝ` (AGENTS.md §7c): the Coulomb correction uses `q⁻¹` and the
@@ -36,7 +36,7 @@ namespace QOU.Braiding
     - Q(H) > 0: net positive crossings, repulsive Coulomb contribution.
     - Q(H) = 0: electromagnetically neutral.
     - Q(H) < 0: net negative crossings, attractive Coulomb contribution. -/
--- Ref: [manuscript] Ch. 4, §10
+-- Ref: [leitner2026] Ch. 4, §10
 structure CoulombCharge where
   /-- Number of positive crossings n₊. -/
   numPositive : ℕ
@@ -53,7 +53,7 @@ def CoulombCharge.isNeutral (C : CoulombCharge) : Prop :=
   C.numPositive = C.numNegative
 
 /-- Neutral composites have zero Coulomb charge. -/
--- Ref: [manuscript] Ch. 4, §10
+-- Ref: [leitner2026] Ch. 4, §10
 theorem CoulombCharge.neutral_iff_zero (C : CoulombCharge) :
     C.isNeutral ↔ C.value = 0 := by
   constructor
@@ -85,24 +85,24 @@ noncomputable def CoulombCharge.antisymCoefficient (C : CoulombCharge) : ℝ :=
   ((C.numPositive : ℝ) + C.numNegative) / 2
 
 /-- The Coulomb (antisymmetric) contribution: ½(n₊ + n₋)(q − q⁻¹). -/
--- Ref: [manuscript] Ch. 4, §10
+-- Ref: [leitner2026] Ch. 4, §10
 noncomputable def CoulombCharge.coulombContribution (C : CoulombCharge) (q : ℝ) : ℝ :=
   C.antisymCoefficient * (q - q⁻¹)
 
 /-- The symmetric (strong) contribution: Q(H) · (q + q⁻¹).
     `Q` — the halved writhe — is the coefficient of THIS channel. -/
--- Ref: [manuscript] Ch. 4, §10
+-- Ref: [leitner2026] Ch. 4, §10
 noncomputable def CoulombCharge.strongContribution (C : CoulombCharge) (q : ℝ) : ℝ :=
   C.value * (q + q⁻¹)
 
 /-- The Coulomb contribution vanishes at q = 1 (undeformed limit). -/
--- Ref: [manuscript] Ch. 4, §10
+-- Ref: [leitner2026] Ch. 4, §10
 theorem CoulombCharge.coulombContribution_at_one (C : CoulombCharge) :
     C.coulombContribution 1 = 0 := by
   simp [coulombContribution, inv_one, sub_self, mul_zero]
 
 /-- The Coulomb contribution is antisymmetric under q ↔ q⁻¹. -/
--- Ref: [manuscript] Ch. 4, §10
+-- Ref: [leitner2026] Ch. 4, §10
 theorem CoulombCharge.coulombContribution_antisymmetric
     (C : CoulombCharge) (q : ℝ) (_hq : q ≠ 0) :
     C.coulombContribution q⁻¹ = -C.coulombContribution q := by

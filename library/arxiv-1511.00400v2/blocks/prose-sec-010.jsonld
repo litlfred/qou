@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1511.00400v2/blocks/prose-sec-010",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Torsions from lifts of the holonomy representation",
-  "pageStart": 16,
-  "pageEnd": 18,
-  "text": "../sections/sec-010-31-torsions-from-lifts-of-the-holonomy-represent.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1511.00400v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1511.00400v2",
+  "title": "Torsion of hyperbolic three-manifold with representations in SL2(C)",
+  "pageStart": 15,
+  "pageEnd": 16,
+  "text": "../sections/sec-010-3-torsion-of-hyperbolic-three-manifold-with-repr.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1511.00400v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1511.00400v2/manifest.jsonld",
   "provenance": "ingested"
 }

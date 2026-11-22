@@ -3,7 +3,7 @@
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
       "@base": "https://litlfred.github.io/folio/",
-      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant/folio-assistant-sci/ns#"
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "library/arxiv-0808.1923v3/blocks/lem-sec-008-03",
@@ -16,6 +16,16 @@
   "pageEnd": 18,
   "text": "lem-sec-008-03.md",
   "derivedFrom": "library/arxiv-0808.1923v3/sections/sec-008",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0808.1923v3",
-  "provenance": "ingested"
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0808.1923v3/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "3.2.4",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-008-32-transport-2-functors.md (p. 15-18)",
+    "claim_id": "arxiv-0808.1923v3#lemma:3.2.4",
+    "lean_status": "unformalized"
+  }
 }

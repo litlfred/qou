@@ -73,7 +73,7 @@ Probe: computations/probes/rep_tightness_probe.py (exact second-moment
 identity `N^bal(3) = 2 + (√q−1)²/√q`, monotone uniform bound, Markov
 tails of both explicit kernels, uniform tightness certificate; 60 dps).
 
--- Ref: [manuscript] predicted-spectra, conj:schwinger-measure-computational-time;
+-- Ref: [leitner2026] predicted-spectra, conj:schwinger-measure-computational-time;
 --      docs/audits/2026-08-01-rep-tightness-archimedean.md;
 --      docs/audits/2026-07-25-qborel-confluence-pos-attack.md §3-§4;
 --      Prokhorov: Yu. V. Prokhorov, Theory Probab. Appl. 1 (1956) 157-214,

@@ -1,0 +1,59 @@
+62 Oberwolfach Report 28/2012
+
+invariant under all Z-moves is more complicated because we have two sorts of
+“stabilization moves” corresponding to the first classical Reidemeister move and
+the first virtual Reidemeister move. Here, we restrict ourselves to an example.
+
+Example 1 ({6]). Let V be a 2-dimensional vector space/module over a field/ring
+K, with a basis {eo,e1}. We solve R satisfying (1), (3) and (4). We restrict to
+
+a0 0 b
+. . 0c dO .
+the case of the eight-vertex model, that is, R = 0decoO and obtain the
+b 00a
+
+following result:
+
+e IfK is commutative with no zero divisors, we obtain the complete set of so-
+lutions of (a,b,c, d) by solving the set of equations: (1,0,0,+1), (1,0, 1,0),
+(—1,0,0, +1), (—1,0, -1,0), (0,1,1,0) and (0, -1,-1,0).
+
+e IfK is a ring with zero divisors, then there are more interesting solutions.
+For example, when K = Zy2, a solution to (a,b,c, d) is (4,3,3, 4).
+
+Remark 3. It is interesting to study the representations of free braid groups when
+K as a ring has zero divisors or is noncommutative, and then use it to study
+quantum invariants for free knots and links. Other possible ways of constructing
+free knot invariants may consist of constructing biquandles similar to [1, 4].
+
+REFERENCES
+
+(1) A. Bartholomew and R. Fenn, Quaternionic invariants of virtual knots and links, arXiv:
+math/0610484.
+
+(2) L. H. Kauffman, S. Lambropoulou, Virtual braids, Fundamenta Mathematicae 184 (2004),
+159-186.
+
+(3] L. H. Kauffman, $. Lambropoulou, Virtual braids and the L-Move, Knot Theory and Its
+Ramifications J. 15 (2006), no. 6, 773-811.
+
+(4] L. H. Kauffman and V. O. Manturov, Virtual biquandles, Fundamenta Mathematicae 188
+(2005), 103-146.
+
+(5] V. O. Manturov, Parity in knot theory, Math. sb. 201 (2010) 5, 693-733, Original Russian
+Text in Mathematical sbornik 201 (2010) 5, 65-110.
+
+(6] V. O. Manturov, H. Wang, Markov Theorem For Free Links, arXiv:1112.4061.
+
+(7] T. Ohtsuki, Quantum invariants: A Study of Knots, 3-Manifolds, and their Sets, Series on
+Knots and Everything 29, World Scientific Publishing, Singapore 2002.
+
+Graph-links and Bouchet graphs
+DENIS ILYUTKO
+
+It is well known that classical and virtual knots can be represented by Gauss
+diagrams, and the whole information about the knot and its invariants can be
+read out of any Gauss diagram encoding it. Whenever a Gauss diagram does
+not describe any embedded 4-valent graph in R? (just because the corresponding
+Gauss code is not planar), one gets a virtual knot, where generic immersion points
+of intersections of edges are encircled.

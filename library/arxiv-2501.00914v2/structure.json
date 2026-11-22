@@ -7,10 +7,11 @@
   "bytes": 625115,
   "pages": 37,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,18 +21,33 @@
    "stamp_date": "13 Mar 2026"
   },
   "doi": null,
-  "title": "L-SPACES AND KNOT TRACES",
+  "title": "L-spaces and knot traces",
   "authors_raw": "JOHN A. BALDWIN AND STEVEN SIVEK",
   "title_lines": [
    "L-SPACES AND KNOT TRACES"
   ],
-  "abstract": "There has been a great deal of interest in understanding which knots are characterized by which of their Dehn surgeries. We study a 4-dimensional version of this question: which knots are determined by which of their traces? We prove several results that are in stark contrast with what is known about characterizing surgeries, most notably that the 0-trace detects every L-space knot. Our proof combines tools in Heegaard Floer homology with results about surface homeomorphisms and their dynamics. We also consider nonzero traces, proving for instance that each positive torus knot is determined by itsn-trace for anyn\u22640, whereas no non-positive integer is known to be a characterizing slope for any positive torus knot besides the right-handed trefoil. 1.Introduction Given a knotK\u2282S 3 and an integern, then-traceX n(K) is the smooth, oriented 4-manifold with boundary obtained fromB 4 by attaching ann-framed 2-handle alongK\u2282\u2202B 4. We say that Xn(K)detectsKif its oriented diffeomorphism type determinesK\u2014 that is, if Xn(J)\u223c=Xn(K) implies thatJ=K. In this paper, we propose and study the following question: Question 1.1.For which knotsK\u2282S 3 and integersndoesX n(K)detectK? Then-traceX n(K) is far from detectingKin general [Akb77, Lic79, AJOT13]. This is promi- nently illustrated in Piccirillo\u2019s proof that the Conway knot is not slice, a key part of which involves finding a different knot with the same 0-trace [Pic20]. One way to prove thatX n(K) detectsKis to show that its boundaryS 3 n(K), which is the result ofn-framed Dehn surgery onK, does \u2014 in other words, thatnis acharacterizing slopeforK. A lot of effort has gone into understanding characterizing slopes for knots. Building on work by Lackenby [Lac19] and McCoy [McC20], Sorya recently proved that for any knotKall rational numbers with sufficiently large denominator are characterizing slopes, and ifKis composite then all non-integers are characterizing [Sor24]; see also [SW24]. Deciding whether a givenintegercharacterizes a c",
+  "abstract": "There has been a great deal of interest in understanding which knots are characterized by which of their Dehn surgeries. We study a 4-dimensional version of this question: which knots are determined by which of their traces? We prove several results that are in stark contrast with what is known about characterizing surgeries, most notably that the 0-trace detects every L-space knot. Our proof combines tools in Heegaard Floer homology with results about surface homeomorphisms and their dynamics. We also consider nonzero traces, proving for instance that each positive torus knot is determined by its n-trace for any n ≤0, whereas no non-positive integer is known to be a characterizing slope for any positive torus knot besides the right-handed trefoil.",
   "docinfo": {
+   "Title": "L-spaces and knot traces",
    "Author": "John A. Baldwin; Steven Sivek",
-   "Creator": "arXiv GenPDF (tex2pdf:8e18bb9)",
    "Producer": "pikepdf 8.15.1",
-   "Title": "L-spaces and knot traces"
-  }
+   "Creator": "arXiv GenPDF (tex2pdf:8e18bb9)"
+  },
+  "title_raw": "L-SPACES AND KNOT TRACES",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "L-spaces and knot traces",
+   "heading": "L-SPACES AND KNOT TRACES 1. Introduction Given a knot K ⊂ S 3 and an integer n , the n -trace X n ( K ) is the smooth, oriented 4-manifold with boundary obtained from B 4 by attaching an n -framed 2-handle along K ⊂ ∂B 4 . We say that X n ( K ) detects K if its oriented diffeomorphism type determine",
+   "outline": "1. Introduction",
+   "text": "L-SPACES AND KNOT TRACES",
+   "corroborated_by": [
+    "text",
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "L-SPACES AND KNOT TRACES"
  },
  "toc": [
   {
@@ -39,186 +55,627 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Nonzero traces",
    "page": 3,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Questions",
    "page": 3,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Conventions",
    "page": 4,
    "source": "outline",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Organization",
    "page": 4,
    "source": "outline",
-   "number": "1.4"
+   "number": "1.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Acknowledgements",
    "page": 4,
    "source": "outline",
-   "number": "1.5"
+   "number": "1.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "Zero-surgeries on ffpf knots",
    "page": 4,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Surface homeomorphisms and fibered knots",
    "page": 5,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Fixed points and ffpf knots",
    "page": 8,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Zero-surgeries on ffpf knots",
    "page": 10,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 1,
    "title": "Traces and large surgeries",
    "page": 13,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "Topological preliminaries",
    "page": 14,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 2,
    "title": "The span of the relative invariants of the n-trace",
    "page": 14,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 2,
    "title": "The mod 2 grading",
    "page": 17,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "Zero-traces of L-space knots",
    "page": 19,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 1,
    "title": "Traces and rational surgeries",
    "page": 19,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 1,
    "title": "Negative traces and positive torus knots",
    "page": 23,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 2,
    "title": "Torus knots",
    "page": 23,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 2,
    "title": "Satellite knots",
    "page": 24,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
   },
   {
    "level": 2,
    "title": "Hyperbolic knots",
    "page": 27,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
   },
   {
    "level": 1,
    "title": "Positive traces and T2,2g+1 torus knots",
    "page": 28,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "28"
   },
   {
    "level": 2,
    "title": "Alexander polynomials of L-space knots",
    "page": 28,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "28"
   },
   {
    "level": 2,
    "title": "Knots with the same knot Floer homology as T2,2g+1",
    "page": 30,
    "source": "outline",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "30"
   },
   {
    "level": 2,
    "title": "Traces that detect knot Floer homology",
    "page": 31,
    "source": "outline",
-   "number": "6.3"
+   "number": "6.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "31"
   },
   {
    "level": 1,
    "title": "Appendix A. Non-characterizing slopes for torus knots",
    "page": 32,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "32"
   },
   {
    "level": 1,
    "title": "References",
    "page": 34,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "34"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The transverse foliations ˆFs and ˆFu on D, in the cases where Fs and Fu each have n = 2, 3, 4 boundary prongs. When n = 2 the point p at the center is a smooth point of each foliation, while for n ≥3 it is an n-pronged singular point",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "7"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 826,
+   "n_words": 131,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -226,8 +683,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 5422,
-   "n_words": 864
+   "n_chars": 5555,
+   "n_words": 998,
+   "label_start": "1",
+   "label_end": "3"
   },
   {
    "id": "sec-001-11-nonzero-traces",
@@ -236,8 +695,10 @@
    "level": 2,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 1669,
-   "n_words": 252
+   "n_chars": 1817,
+   "n_words": 319,
+   "label_start": "3",
+   "label_end": "3"
   },
   {
    "id": "sec-002-12-questions",
@@ -246,8 +707,10 @@
    "level": 2,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 2355,
-   "n_words": 381
+   "n_chars": 2382,
+   "n_words": 408,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
    "id": "sec-003-13-conventions",
@@ -256,8 +719,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 4,
-   "n_chars": 75,
-   "n_words": 8
+   "n_chars": 76,
+   "n_words": 9,
+   "label_start": "4",
+   "label_end": "4"
   },
   {
    "id": "sec-004-14-organization",
@@ -266,8 +731,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 4,
-   "n_chars": 1127,
-   "n_words": 174
+   "n_chars": 1138,
+   "n_words": 185,
+   "label_start": "4",
+   "label_end": "4"
   },
   {
    "id": "sec-005-15-acknowledgements",
@@ -277,7 +744,9 @@
    "page_start": 4,
    "page_end": 4,
    "n_chars": 107,
-   "n_words": 19
+   "n_words": 19,
+   "label_start": "4",
+   "label_end": "4"
   },
   {
    "id": "sec-006-2-zero-surgeries-on-ffpf-knots",
@@ -286,8 +755,10 @@
    "level": 1,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 284,
-   "n_words": 48
+   "n_chars": 283,
+   "n_words": 48,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
    "id": "sec-007-21-surface-homeomorphisms-and-fibered-knots",
@@ -296,8 +767,10 @@
    "level": 2,
    "page_start": 5,
    "page_end": 8,
-   "n_chars": 11152,
-   "n_words": 1900
+   "n_chars": 11532,
+   "n_words": 2212,
+   "label_start": "5",
+   "label_end": "8"
   },
   {
    "id": "sec-008-22-fixed-points-and-ffpf-knots",
@@ -306,8 +779,10 @@
    "level": 2,
    "page_start": 8,
    "page_end": 10,
-   "n_chars": 3428,
-   "n_words": 530
+   "n_chars": 3588,
+   "n_words": 690,
+   "label_start": "8",
+   "label_end": "10"
   },
   {
    "id": "sec-009-23-zero-surgeries-on-ffpf-knots",
@@ -316,8 +791,10 @@
    "level": 2,
    "page_start": 10,
    "page_end": 13,
-   "n_chars": 10036,
-   "n_words": 1765
+   "n_chars": 10339,
+   "n_words": 2068,
+   "label_start": "10",
+   "label_end": "13"
   },
   {
    "id": "sec-010-3-traces-and-large-surgeries",
@@ -326,8 +803,10 @@
    "level": 1,
    "page_start": 13,
    "page_end": 14,
-   "n_chars": 1282,
-   "n_words": 217
+   "n_chars": 1326,
+   "n_words": 261,
+   "label_start": "13",
+   "label_end": "14"
   },
   {
    "id": "sec-011-31-topological-preliminaries",
@@ -335,112 +814,188 @@
    "title": "Topological preliminaries",
    "level": 2,
    "page_start": 14,
-   "page_end": 17,
-   "n_chars": 6980,
-   "n_words": 1138
+   "page_end": 14,
+   "n_chars": 1623,
+   "n_words": 321,
+   "label_start": "14",
+   "label_end": "14"
   },
   {
-   "id": "sec-012-33-the-mod-2-grading",
+   "id": "sec-012-32-the-span-of-the-relative-invariants-of-the-n",
+   "number": "3.2",
+   "title": "The span of the relative invariants of the n-trace",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 17,
+   "n_chars": 5509,
+   "n_words": 1042,
+   "label_start": "14",
+   "label_end": "17"
+  },
+  {
+   "id": "sec-013-33-the-mod-2-grading",
    "number": "3.3",
    "title": "The mod 2 grading",
    "level": 2,
    "page_start": 17,
    "page_end": 19,
-   "n_chars": 4656,
-   "n_words": 769
+   "n_chars": 4811,
+   "n_words": 924,
+   "label_start": "17",
+   "label_end": "19"
   },
   {
-   "id": "sec-013-34-zero-traces-of-l-space-knots",
+   "id": "sec-014-34-zero-traces-of-l-space-knots",
    "number": "3.4",
    "title": "Zero-traces of L-space knots",
    "level": 2,
    "page_start": 19,
    "page_end": 19,
-   "n_chars": 625,
-   "n_words": 105
+   "n_chars": 648,
+   "n_words": 128,
+   "label_start": "19",
+   "label_end": "19"
   },
   {
-   "id": "sec-014-4-traces-and-rational-surgeries",
+   "id": "sec-015-4-traces-and-rational-surgeries",
    "number": "4",
    "title": "Traces and rational surgeries",
    "level": 1,
    "page_start": 19,
    "page_end": 23,
-   "n_chars": 8314,
-   "n_words": 1362
+   "n_chars": 8660,
+   "n_words": 1710,
+   "label_start": "19",
+   "label_end": "23"
   },
   {
-   "id": "sec-015-5-negative-traces-and-positive-torus-knots",
+   "id": "sec-016-5-negative-traces-and-positive-torus-knots",
    "number": "5",
    "title": "Negative traces and positive torus knots",
    "level": 1,
    "page_start": 23,
    "page_end": 24,
-   "n_chars": 3921,
-   "n_words": 660
+   "n_chars": 4124,
+   "n_words": 826,
+   "label_start": "23",
+   "label_end": "24"
   },
   {
-   "id": "sec-016-52-satellite-knots",
+   "id": "sec-017-52-satellite-knots",
    "number": "5.2",
    "title": "Satellite knots",
    "level": 2,
    "page_start": 24,
    "page_end": 27,
-   "n_chars": 6327,
-   "n_words": 1079
+   "n_chars": 6609,
+   "n_words": 1363,
+   "label_start": "24",
+   "label_end": "27"
   },
   {
-   "id": "sec-017-53-hyperbolic-knots",
+   "id": "sec-018-53-hyperbolic-knots",
    "number": "5.3",
    "title": "Hyperbolic knots",
    "level": 2,
    "page_start": 27,
    "page_end": 28,
-   "n_chars": 4296,
-   "n_words": 702
+   "n_chars": 3753,
+   "n_words": 700,
+   "label_start": "27",
+   "label_end": "28"
   },
   {
-   "id": "sec-018-61-alexander-polynomials-of-l-space-knots",
+   "id": "sec-019-6-positive-traces-and-t22g1-torus-knots",
+   "number": "6",
+   "title": "Positive traces and T2,2g+1 torus knots",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 28,
+   "n_chars": 714,
+   "n_words": 130,
+   "label_start": "28",
+   "label_end": "28"
+  },
+  {
+   "id": "sec-020-61-alexander-polynomials-of-l-space-knots",
    "number": "6.1",
    "title": "Alexander polynomials of L-space knots",
    "level": 2,
    "page_start": 28,
-   "page_end": 31,
-   "n_chars": 6269,
-   "n_words": 1090
+   "page_end": 30,
+   "n_chars": 4397,
+   "n_words": 946,
+   "label_start": "28",
+   "label_end": "30"
   },
   {
-   "id": "sec-019-63-traces-that-detect-knot-floer-homology",
+   "id": "sec-021-62-knots-with-the-same-knot-floer-homology-as-t2",
+   "number": "6.2",
+   "title": "Knots with the same knot Floer homology as T2,2g+1",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 31,
+   "n_chars": 2116,
+   "n_words": 447,
+   "label_start": "30",
+   "label_end": "31"
+  },
+  {
+   "id": "sec-022-63-traces-that-detect-knot-floer-homology",
    "number": "6.3",
    "title": "Traces that detect knot Floer homology",
    "level": 2,
    "page_start": 31,
-   "page_end": 34,
-   "n_chars": 6936,
-   "n_words": 1272
+   "page_end": 32,
+   "n_chars": 2210,
+   "n_words": 407,
+   "label_start": "31",
+   "label_end": "32"
   },
   {
-   "id": "sec-020-references",
+   "id": "sec-023-appendix-a-non-characterizing-slopes-for-torus-k",
+   "number": null,
+   "title": "Appendix A. Non-characterizing slopes for torus knots",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 34,
+   "n_chars": 4917,
+   "n_words": 1104,
+   "label_start": "32",
+   "label_end": "34"
+  },
+  {
+   "id": "sec-024-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 34,
    "page_end": 37,
-   "n_chars": 9793,
-   "n_words": 1444
+   "n_chars": 9846,
+   "n_words": 1497,
+   "label_start": "34",
+   "label_end": "37"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 26,
-  "sections": 21,
-  "chars_total": 95054,
+  "toc_inferred_entries": 0,
+  "figure_entries": 1,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 26,
+  "chars_total": 98906,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "0-traces-v4.tex",
    "tex_sections": 24,
-   "overlaid": 16,
+   "overlaid": 20,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -448,18 +1003,23 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.68,
+     "prose_ratio": 0.945,
+     "coverage_ratio": 0.976,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-11-nonzero-traces",
      "title": "Nonzero traces",
-     "prose_ratio": 0.87,
-     "coverage_ratio": 0.838,
+     "prose_ratio": 0.93,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -467,7 +1027,7 @@
      "id": "sec-002-12-questions",
      "title": "Questions",
      "prose_ratio": 0.949,
-     "coverage_ratio": 0.949,
+     "coverage_ratio": 0.977,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -475,13 +1035,13 @@
      "id": "sec-003-13-conventions",
      "title": "Conventions",
      "prose_ratio": 0.462,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-004-14-organization",
      "title": "Organization",
      "prose_ratio": 0.807,
-     "coverage_ratio": 0.929,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -497,7 +1057,7 @@
      "id": "sec-006-2-zero-surgeries-on-ffpf-knots",
      "title": "Zero-surgeries on ffpf knots",
      "prose_ratio": 0.788,
-     "coverage_ratio": 0.893,
+     "coverage_ratio": 0.931,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -505,7 +1065,7 @@
      "id": "sec-007-21-surface-homeomorphisms-and-fibered-knots",
      "title": "Surface homeomorphisms and fibered knots",
      "prose_ratio": 0.945,
-     "coverage_ratio": 0.841,
+     "coverage_ratio": 0.979,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -513,96 +1073,126 @@
      "id": "sec-008-22-fixed-points-and-ffpf-knots",
      "title": "Fixed points and ffpf knots",
      "prose_ratio": 0.407,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-009-23-zero-surgeries-on-ffpf-knots",
      "title": "Zero-surgeries on ffpf knots",
      "prose_ratio": 0.727,
-     "coverage_ratio": 0.083,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.102,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-010-3-traces-and-large-surgeries",
      "title": "Traces and large surgeries",
      "prose_ratio": 0.939,
-     "coverage_ratio": 0.808,
+     "coverage_ratio": 0.926,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-011-31-topological-preliminaries",
      "title": "Topological preliminaries",
-     "prose_ratio": 0.953,
-     "coverage_ratio": 0.755,
+     "prose_ratio": 0.893,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-012-33-the-mod-2-grading",
+     "id": "sec-012-32-the-span-of-the-relative-invariants-of-the-n",
+     "title": "The span of the relative invariants of the n-trace",
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.959,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-013-33-the-mod-2-grading",
      "title": "The mod 2 grading",
      "prose_ratio": 0.988,
-     "coverage_ratio": 0.77,
+     "coverage_ratio": 0.972,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-013-34-zero-traces-of-l-space-knots",
+     "id": "sec-014-34-zero-traces-of-l-space-knots",
      "title": "Zero-traces of L-space knots",
      "prose_ratio": 0.812,
-     "coverage_ratio": 0.8,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-014-4-traces-and-rational-surgeries",
-     "title": "Traces and rational surgeries",
-     "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-015-5-negative-traces-and-positive-torus-knots",
+     "id": "sec-015-4-traces-and-rational-surgeries",
+     "title": "Traces and rational surgeries",
+     "prose_ratio": 0.94,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-016-5-negative-traces-and-positive-torus-knots",
      "title": "Negative traces and positive torus knots",
      "prose_ratio": 0.883,
-     "coverage_ratio": 0.751,
+     "coverage_ratio": 0.965,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-016-52-satellite-knots",
+     "id": "sec-017-52-satellite-knots",
      "title": "Satellite knots",
      "prose_ratio": 0.946,
-     "coverage_ratio": 0.719,
+     "coverage_ratio": 0.975,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-017-53-hyperbolic-knots",
+     "id": "sec-018-53-hyperbolic-knots",
      "title": "Hyperbolic knots",
-     "prose_ratio": 0.897,
-     "coverage_ratio": 0.761,
+     "prose_ratio": 0.892,
+     "coverage_ratio": 0.969,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-018-61-alexander-polynomials-of-l-space-knots",
+     "id": "sec-019-6-positive-traces-and-t22g1-torus-knots",
+     "title": "Positive traces and T2,2g+1 torus knots",
+     "prose_ratio": 0.959,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-020-61-alexander-polynomials-of-l-space-knots",
      "title": "Alexander polynomials of L-space knots",
-     "prose_ratio": 0.96,
-     "coverage_ratio": 0.809,
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.955,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-019-63-traces-that-detect-knot-floer-homology",
-     "title": "Traces that detect knot Floer homology",
-     "prose_ratio": 0.899,
-     "coverage_ratio": 0.402,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "id": "sec-021-62-knots-with-the-same-knot-floer-homology-as-t2",
+     "title": "Knots with the same knot Floer homology as T2,2g+1",
+     "prose_ratio": 0.953,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
-     "id": "sec-020-references",
+     "id": "sec-022-63-traces-that-detect-knot-floer-homology",
+     "title": "Traces that detect knot Floer homology",
+     "prose_ratio": 0.869,
+     "coverage_ratio": 0.956,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-023-appendix-a-non-characterizing-slopes-for-torus-k",
+     "title": "Appendix A. Non-characterizing slopes for torus knots",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-references",
      "title": "References",
      "result": "no matching \\section"
     }

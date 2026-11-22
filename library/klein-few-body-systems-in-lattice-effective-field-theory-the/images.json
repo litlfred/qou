@@ -1,0 +1,51 @@
+{
+  "$schema": "folio-document-images/v1",
+  "doc_id": "klein-few-body-systems-in-lattice-effective-field-theory-the",
+  "images": [
+    {
+      "id": "img-p018-1",
+      "file": "images/img-p018-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 0.123361,
+        "imagesOnPage": 2,
+        "page": 18
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      }
+    },
+    {
+      "id": "img-p018-2",
+      "file": "images/img-p018-2.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 0.065576,
+        "imagesOnPage": 2,
+        "page": 18
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      }
+    },
+    {
+      "id": "img-p026-1",
+      "file": "images/img-p026-1.png",
+      "role": "figure",
+      "basis": {
+        "method": "geometry",
+        "coverage": 0.112819,
+        "imagesOnPage": 1,
+        "page": 26
+      },
+      "narrative": {
+        "text": null,
+        "state": "not-authored"
+      }
+    }
+  ]
+}

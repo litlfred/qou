@@ -37,7 +37,7 @@ at every section.*
   the conclusion is derived from them, not projected from a field
   carrying the conclusion (§3b-cond item 5).
 
--- Ref: [manuscript] Ch 5 §8 Observability is q-independent
+-- Ref: [leitner2026] Ch 5 §8 Observability is q-independent
 -/
 
 namespace QOU.FluidDynamics
@@ -73,7 +73,7 @@ def ObservabilityData.homRankAt {C R : Type*}
     `q₁ q₂` the Hom-rank agrees — *derived* by `rfl`, formalising the
     md's proof that `q` does not appear in the construction — and the
     observability axiom holds at every section. -/
--- Ref: [manuscript] Ch 5 §8 Observability is q-independent
+-- Ref: [leitner2026] Ch 5 §8 Observability is q-independent
 theorem observability_q_independent (C : Type*) {R : Type*}
     (obs : ObservabilityData C) (q₁ q₂ : R) :
     obs.homRankAt q₁ = obs.homRankAt q₂ ∧ obs.homRankAt q₁ = 0 :=

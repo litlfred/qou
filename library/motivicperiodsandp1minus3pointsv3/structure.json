@@ -8,37 +8,38 @@
   "pages": 25,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:25Z",
+  "mtime": "2026-11-15T11:07:55Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "Motivic periods and P 1 \\{ 0 , 1 , \u221e}",
-  "authors_raw": "Francis Brown\u2217",
+  "title": "Motivic periods and P^1 minus 3 points",
+  "authors_raw": "Francis Brown∗",
   "title_lines": [
-   "Motivic periods and P1\\{0, 1, \u221e}"
+   "Motivic periods and P1\\{0, 1, ∞}"
   ],
-  "abstract": "This is a review of the theory of the motivic fundamental group of the projective line minus three points, and its relation to multiple zeta values. Mathematics Subject Classi\ufb01cation (2010). Primary 11M32; Secondary 14C15.",
+  "abstract": "This is a review of the theory of the motivic fundamental group of the projective line minus three points, and its relation to multiple zeta values. Mathematics Subject Classiﬁcation (2010). Primary 11M32; Secondary 14C15.",
   "docinfo": {
    "Title": "MotivicPeriodsandP1minus3pointsv3.dvi",
    "Producer": "GPL Ghostscript 8.57",
    "Creator": "dvips(k) 5.96 Copyright 2005 Radical Eye Software",
    "CreationDate": "D:20140719090749Z"
   },
-  "title_raw": "Motivic periods and P1\\{0, 1, \u221e}",
+  "title_raw": "Motivic periods and P1\\{0, 1, ∞}",
   "title_source": "heading",
   "title_verified": true,
   "title_evidence": {
    "metadata": "MotivicPeriodsandP1minus3pointsv3.dvi",
-   "heading": "Motivic periods and P 1 \\{ 0 , 1 , \u221e}",
-   "text": "Motivic periods and P1\\{0, 1, \u221e}",
+   "heading": "Motivic periods and P 1 \\{ 0 , 1 , ∞}",
+   "text": "Motivic periods and P1\\{0, 1, ∞}",
    "corroborated_by": [
     "text"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "Motivic periods and P 1 \\{ 0 , 1 , ∞}"
  },
  "toc": [
   {
@@ -128,7 +129,7 @@
   },
   {
    "level": 1,
-   "title": "\u2212\u2192U\u0393 \u2212\u2192G\u0393 \u2212\u2192S \u2212\u21921",
+   "title": "−→UΓ −→GΓ −→S −→1",
    "page": 22,
    "source": "inferred",
    "number": "1",
@@ -176,7 +177,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "The groupoid x\u03a0y for x, y \u2208{0, 1}. The diagram only represents the groupoid structure; the paths shown do not accurately depict the tangential base points",
+   "title": "The groupoid xΠy for x, y ∈{0, 1}. The diagram only represents the groupoid structure; the paths shown do not accurately depict the tangential base points",
    "page": 11,
    "confidence": 0.7,
    "evidence": [
@@ -418,9 +419,9 @@
    "title": "Roots of unity",
    "level": 1,
    "page_start": 16,
-   "page_end": 17,
-   "n_chars": 1546,
-   "n_words": 308,
+   "page_end": 18,
+   "n_chars": 3440,
+   "n_words": 690,
    "label_start": null,
    "label_end": null
   },
@@ -429,10 +430,10 @@
    "number": "5",
    "title": "Depth",
    "level": 1,
-   "page_start": 17,
+   "page_start": 18,
    "page_end": 19,
-   "n_chars": 6135,
-   "n_words": 1148,
+   "n_chars": 4245,
+   "n_words": 772,
    "label_start": null,
    "label_end": null
   },
@@ -449,9 +450,9 @@
    "label_end": null
   },
   {
-   "id": "sec-006-1-u\u03b3-g\u03b3-s-1",
+   "id": "sec-006-1-uγ-gγ-s-1",
    "number": "1",
-   "title": "\u2212\u2192U\u0393 \u2212\u2192G\u0393 \u2212\u2192S \u2212\u21921",
+   "title": "−→UΓ −→GΓ −→S −→1",
    "level": 1,
    "page_start": 22,
    "page_end": 23,
@@ -488,6 +489,7 @@
    "items": []
   },
   "sections": 9,
-  "chars_total": 57995
+  "chars_total": 57999,
+  "furniture_lines_stripped": 0
  }
 }

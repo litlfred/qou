@@ -57,7 +57,7 @@ the target while the balanced one lands within ppb.  The number was used
 only as a **fingerprint** to recover which function the author meant — the
 legitimate use of a known value; it appears in no statement below.
 
--- Ref: [manuscript] bean `qou-pjfu`
+-- Ref: [leitner2026] bean `qou-pjfu`
 -/
 
 /-- Chern–Simons invariant of the torus knot `T_{m,n}`:
@@ -188,7 +188,7 @@ theorem csTower_partialSum_two (δ κ : ℝ) :
     (History: this class previously wrapped an `opaque` Prop, and before
     that was discharged by an `axiom` installed as a global instance —
     both removed, not completed.) -/
--- Ref: [manuscript] conj:em-coupling-chern-simons
+-- Ref: [leitner2026] conj:em-coupling-chern-simons
 -- Ref: [witten1989] https://doi.org/10.1007/BF01217730
 class ChernSimonsCorrectionConjecture (q : ℝ) (hq : 1 < q)
     (Gq : Matrix (Fin 2) (Fin 2) ℝ) (alphaInv : ℝ) : Prop where

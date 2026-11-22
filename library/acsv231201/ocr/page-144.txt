@@ -1,0 +1,45 @@
+126 Multivariate Fourier—Laplace integrals
+
+(3) Construct a vector flow v on U, tangent to the strata of X@C and vanishing
+precisely on G, such that (Red¢, v) > 0 on U\ G.
+
+(4) Show that hevtn = i e~**n, where C’ is obtained from C by flowing
+along v for a short time.
+
+(5) Use Theorem 5.2 on the deformed chain C’.
+
+Step (2) follows in a straightforward manner from Step (1). Step (3) is where
+the special assumptions on X are used. This allows us to follow the methodol-
+ogy of locally constant vector fields and partitions of unity in [ABG70], rather
+than the more difficult methodology of controlled vector fields in [Mat70].
+Step (4) is an application of Stokes’s Theorem together with the crucial obser-
+vation that part of the boundary of the chain representing the deformation lies
+in a complex manifold of dimension less than d. Step (5), once we reach it, is
+immediate.
+
+Step 1: Complexification
+Lemma 5.11. Under the hypotheses of Theorem 5.3, there is a complex strat-
+ified space X ® C with strata S @ C as S ranges over the strata of X, such that
+X ®@C is a neighborhood of X in C4 and such that the chart maps w®C : Ck >
+S®C restricted to R* are chart maps for S.
+
+Proof We complexify A? in C? and M¢* in C4 separately and take the prod-
+uct. First, we note that the set A? is defined by p + 1 linear inequalities. Re-
+laxing these by ¢ > 0 produces a neighborhood D of A? in R“. Taking the
+product with a sufficiently small imaginary interval [—<i, ei] in each of the p
+coordinates produces a complex stratified space that is a neighborhood of A?”
+in C“. Because of our assumptions, we can complexify M** to V. Taking the
+product of F ® C and M¢* @ C as stratified spaces, where F is a face of A’,
+produces (F x M) ® C; these are the strata S @ C and fit together to form the
+stratified space X ® C satisfying the conclusion of the theorem. ia)
+
+Remark 5.12. In Chapter 9, we always have k = 1 and M¢~ is a smooth
+open (d — 1)-patch in Vg. In Chapter 10, we have k = 0 and M7“ is a patch
+of a middle-dimensional torus in C“ \ ‘V. In general, under the condition that
+the real tangent space spans a complex space of dimension d — k, one may
+define M‘~‘ @ C to be the intrinsic complexification of M, namely the smallest
+complex manifold containing M. This is known to exist [BER99], following a
+construction of [BW59], and will be a complex (d — k)-manifold.
+
+Exercise 5.9. Suppose X is the circle in R* defined by the real solutions to
+x’ +y’—1=z=0. Find the complexification X @ C.

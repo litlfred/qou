@@ -266,7 +266,7 @@ theorem pentagon_inter_level_on_transient
           ((IL.liftOperator n i x) * (IL.liftOperator n j x))) := by
   -- Ref: [prop:pentagon-uv-commutation], §"Step 4 — Quantum-torus
   --   relation on the transient block".
-  -- Ref: [manuscript] docs/audits/2026-05-02-r7-pentagon-trace-vs-operator.md
+  -- Ref: [leitner2026] docs/audits/2026-05-02-r7-pentagon-trace-vs-operator.md
   obtain ⟨R_q, h_desc, h_eq⟩ := IL.q_graded_commutation n i j k x
   have hR : R_q = 0 := h_transient R_q h_desc
   rw [h_eq, hR, add_zero]
@@ -291,7 +291,7 @@ theorem pentagon_inter_level_placeholder
       (IL.liftOperator n k x) =
     q • ((IL.liftOperator n k x) *
           ((IL.liftOperator n i x) * (IL.liftOperator n j x))) := by
-  -- Ref: [manuscript] superseded by InterLevelLift.pentagon_inter_level_on_transient.
+  -- Ref: [leitner2026] superseded by InterLevelLift.pentagon_inter_level_on_transient.
   exact InterLevelLift.pentagon_inter_level_on_transient n i j k x h_transient
 
 end JetChain

@@ -147,7 +147,7 @@ The categorical formula is invariant under the bar involution
 The full product is even in `(q - q⁻¹)`, consistent with the
 classical-limit decategorification principle. -/
 
--- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
+-- Ref: [leitner2026] prop:q-beta-categorical-precision-ladder
 -- Ref: [jones1985] doi:10.2307/1971403
 -- Ref: [wenzl1988] doi:10.1007/BF01239526
 /-- **b is bar-symmetric**: `hoefsmitB q⁻¹ = hoefsmitB q` for `q > 0`.
@@ -159,7 +159,7 @@ classical-limit decategorification principle. -/
     `√(q²)² = q²`).  Previously an `axiom` "pending a `sqrt_div_eq`
     lemma in Mathlib"; the existing `Real.sqrt_div` + `Real.sqrt_sq`
     API discharges it directly. -/
--- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
+-- Ref: [leitner2026] prop:q-beta-categorical-precision-ladder
 theorem hoefsmitB_bar_invariant (q : ℝ) (_hq : 0 < q) :
     hoefsmitB q⁻¹ = hoefsmitB q := by
   have _hq' : q ≠ 0 := ne_of_gt _hq
@@ -191,7 +191,7 @@ theorem hoefsmitB_bar_invariant (q : ℝ) (_hq : 0 < q) :
 
     Source for the c_4, c_5 structural forms (near-matches, not
     derivations): `docs/audits/2026-05-19-qbeta-all-ck-categorical-extension.md`. -/
--- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
+-- Ref: [leitner2026] prop:q-beta-categorical-precision-ladder
 -- Ref: [jones1985] doi:10.2307/1971403 (Hopf Jones polynomial)
 theorem q_beta_categorical_precision_ladder (q m_e : ℝ) (_hq : 0 < q) :
     -- The categorical formula equals the iterated product
@@ -376,7 +376,7 @@ residual -0.57 ppb but lacks a derived categorical source.
     class — it is **not** asserted (no instance proof is produced; the open
     state is the absence of a proof term).  This replaces the previous
     `(inst : …) → True := trivial`, which captured no categorical content. -/
--- Ref: [manuscript] prop:q-beta-categorical-precision-ladder §"Open conjecture (N≥4)"
+-- Ref: [leitner2026] prop:q-beta-categorical-precision-ladder §"Open conjecture (N≥4)"
 def qbeta_inductive_categorical_closure_conjecture
     (inst : QBetaPrecisionLadderCoefficients) : Prop :=
   ∀ k : ℕ, 4 ≤ k → ∀ q : ℝ, 0 < q →
@@ -422,7 +422,7 @@ without claiming it is derived. -/
     `em-coupling-bring-zero-mode.lean`. Its closed form — the
     multi-Wedderburn-block Habiro derivation — is the open research
     target (`docs/audits/2026-05-30-qbeta-habiro-derivation-gap-plan.md`). -/
--- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
+-- Ref: [leitner2026] prop:q-beta-categorical-precision-ladder
 def qBetaC3Categorical (q : ℝ) : ℝ := jonesHopfClassicalLimit
 
 /-- **N=3 structural-form class for Q_β** (§3b-cond, mirrors
@@ -435,7 +435,7 @@ def qBetaC3Categorical (q : ℝ) : ℝ := jonesHopfClassicalLimit
     NEAR-MATCH (3.35% at canonical q₀), not a Taylor-exact derivation;
     the class is purely conditional (no instance), and production wires
     only the Taylor-exact c_2 = -1 rung. -/
--- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
+-- Ref: [leitner2026] prop:q-beta-categorical-precision-ladder
 -- Ref: [jones1985] doi:10.2307/1971403 (Hopf Jones polynomial)
 -- Ref: PR #1508 (α_EM §3b-cond conditional-class pattern)
 class QbetaC3StructuralFormClass : Prop where
@@ -452,7 +452,7 @@ class QbetaC3StructuralFormClass : Prop where
     coefficient. Absent the structural-form class, `qBetaC3Categorical`
     is an open quantity; the conditional theorem below collapses it to
     the explicit Jones form. -/
--- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
+-- Ref: [leitner2026] prop:q-beta-categorical-precision-ladder
 noncomputable def Q_beta_n3_categorical (q m_e : ℝ) : ℝ :=
   Q_beta_form_A q m_e * N1_factor q * N2_factor q
     * (1 + qBetaC3Categorical q * (hoefsmitB q)^3 * (hbarQ' q)^6)
@@ -469,7 +469,7 @@ noncomputable def Q_beta_n3_categorical (q m_e : ℝ) : ℝ :=
     it is Taylor-exact — the conditional hypothesis IS the open
     structural content. Production (`per_observable_100x_status.py`)
     does not consume this theorem; it wires only c_2 = -1. -/
--- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
+-- Ref: [leitner2026] prop:q-beta-categorical-precision-ladder
 -- Ref: [jones1985] doi:10.2307/1971403 (Hopf Jones polynomial)
 -- Ref: PR #1508 (§3b-cond conditional-class pattern)
 theorem q_beta_n3_structural_form
@@ -509,7 +509,7 @@ overall coordination context.
 -/
 
 /-- Abstract true categorical N=4 coefficient `c_4(q)`. -/
--- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
+-- Ref: [leitner2026] prop:q-beta-categorical-precision-ladder
 noncomputable def qBetaC4Categorical (q : ℝ) : ℝ := jonesHopfClassicalLimit * (hoefsmitB q)^4
 
 /-- **N=4 structural-form class for Q_β** (§3b-cond).
@@ -519,7 +519,7 @@ noncomputable def qBetaC4Categorical (q : ℝ) : ℝ := jonesHopfClassicalLimit 
     (0.91% empirical residual per audit), not Taylor-exact.
 
     See `docs/audits/2026-05-30-qbeta-recursive-pair-rules-and-habiro-pde.md`. -/
--- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
+-- Ref: [leitner2026] prop:q-beta-categorical-precision-ladder
 -- Ref: [jones1985] doi:10.2307/1971403 (Hopf Jones polynomial)
 -- Ref: PR #1580 (1ppQ-Q_β coord infra + c_3 verdict)
 class QbetaC4StructuralFormClass : Prop where
@@ -534,14 +534,14 @@ class QbetaC4StructuralFormClass : Prop where
 /-- N=4 ladder rung built with the TRUE (abstract) categorical `c_4`
     coefficient. The N=3 factor remains the concrete Jones form (as
     in `N3_factor`); only the N=4 rung is abstract here. -/
--- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
+-- Ref: [leitner2026] prop:q-beta-categorical-precision-ladder
 noncomputable def Q_beta_n4_categorical (q m_e : ℝ) : ℝ :=
   Q_beta_form_A q m_e * N1_factor q * N2_factor q * N3_factor q
     * (1 + qBetaC4Categorical q * (hoefsmitB q)^4 * (hbarQ' q)^8)
 
 /-- **Conditional N=4 ladder form** (§3b-cond, proved sorry-free from
     `QbetaC4StructuralFormClass`). Locks the c_4 = J·b⁴ form. -/
--- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
+-- Ref: [leitner2026] prop:q-beta-categorical-precision-ladder
 theorem q_beta_n4_structural_form
     [hC4 : QbetaC4StructuralFormClass]
     (q m_e : ℝ) (_hq : 0 < q) :
@@ -553,14 +553,14 @@ theorem q_beta_n4_structural_form
   rw [hC4.c4_is_jones_kashiwara q _hq]
 
 /-- Abstract true categorical N=5 coefficient `c_5(q)`. -/
--- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
+-- Ref: [leitner2026] prop:q-beta-categorical-precision-ladder
 noncomputable def qBetaC5Categorical (q : ℝ) : ℝ := -(hoefsmitB q)^2 - 1/2
 
 /-- **N=5 structural-form class for Q_β** (§3b-cond).
 
     Axiomatises `c_5 = -(b² + 1/2)` (Kashiwara b² + Hopf-half offset);
     sub-ppt residual at canonical q₀. Same near-match status as c_3/c_4. -/
--- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
+-- Ref: [leitner2026] prop:q-beta-categorical-precision-ladder
 -- Ref: PR #1580 (1ppQ-Q_β coord infra + c_3 verdict)
 class QbetaC5StructuralFormClass : Prop where
   /-- Structural identity: the true categorical `c_5(q)` equals
@@ -573,13 +573,13 @@ class QbetaC5StructuralFormClass : Prop where
 
 /-- N=5 ladder rung built with the TRUE (abstract) categorical `c_5`
     coefficient. -/
--- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
+-- Ref: [leitner2026] prop:q-beta-categorical-precision-ladder
 noncomputable def Q_beta_n5_categorical (q m_e : ℝ) : ℝ :=
   Q_beta_form_A q m_e * N1_factor q * N2_factor q * N3_factor q * N4_factor q
     * (1 + qBetaC5Categorical q * (hoefsmitB q)^5 * (hbarQ' q)^10)
 
 /-- **Conditional N=5 ladder form** (§3b-cond). Locks the c_5 form. -/
--- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
+-- Ref: [leitner2026] prop:q-beta-categorical-precision-ladder
 theorem q_beta_n5_structural_form
     [hC5 : QbetaC5StructuralFormClass]
     (q m_e : ℝ) (_hq : 0 < q) :
@@ -591,7 +591,7 @@ theorem q_beta_n5_structural_form
   rw [hC5.c5_is_kashiwara_offset q _hq]
 
 /-- Abstract true categorical N=6 coefficient `c_6(q)`. -/
--- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
+-- Ref: [leitner2026] prop:q-beta-categorical-precision-ladder
 noncomputable def qBetaC6Categorical (q : ℝ) : ℝ := jonesHopfClassicalLimit^2 * (hoefsmitB q)^2
 
 /-- **N=6 structural-form class for Q_β** (§3b-cond).
@@ -600,7 +600,7 @@ noncomputable def qBetaC6Categorical (q : ℝ) : ℝ := jonesHopfClassicalLimit^
     **EMPIRICAL FIT** per the canonical instance docstring — NOT a
     derivation. The class merely LOCKS the form so downstream Lean
     can carry it as a hypothesis. -/
--- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
+-- Ref: [leitner2026] prop:q-beta-categorical-precision-ladder
 -- Ref: PR #1580 (1ppQ-Q_β coord infra + c_3 verdict)
 class QbetaC6StructuralFormClass : Prop where
   /-- Structural identity: the true categorical `c_6(q)` equals
@@ -613,14 +613,14 @@ class QbetaC6StructuralFormClass : Prop where
 
 /-- N=6 ladder rung built with the TRUE (abstract) categorical `c_6`
     coefficient. -/
--- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
+-- Ref: [leitner2026] prop:q-beta-categorical-precision-ladder
 noncomputable def Q_beta_n6_categorical (q m_e : ℝ) : ℝ :=
   Q_beta_form_A q m_e * N1_factor q * N2_factor q * N3_factor q
     * N4_factor q * N5_factor q
     * (1 + qBetaC6Categorical q * (hoefsmitB q)^6 * (hbarQ' q)^12)
 
 /-- **Conditional N=6 ladder form** (§3b-cond). Locks the c_6 form. -/
--- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
+-- Ref: [leitner2026] prop:q-beta-categorical-precision-ladder
 theorem q_beta_n6_structural_form
     [hC6 : QbetaC6StructuralFormClass]
     (q m_e : ℝ) (_hq : 0 < q) :
@@ -633,7 +633,7 @@ theorem q_beta_n6_structural_form
   rw [hC6.c6_is_jones_sq_kashiwara q _hq]
 
 /-- Abstract true categorical N=7 coefficient `c_7(q)`. -/
--- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
+-- Ref: [leitner2026] prop:q-beta-categorical-precision-ladder
 def qBetaC7Categorical (q : ℝ) : ℝ := jonesHopfClassicalLimit^3
 
 /-- **N=7 structural-form class for Q_β** (§3b-cond).
@@ -643,7 +643,7 @@ def qBetaC7Categorical (q : ℝ) : ℝ := jonesHopfClassicalLimit^3
     derivation** — at N=7 the residual leverage is 10⁻¹⁵ scale, so
     many c_7 values give acceptable closure. The class locks the
     aesthetic pattern; no claim of derivation. -/
--- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
+-- Ref: [leitner2026] prop:q-beta-categorical-precision-ladder
 -- Ref: PR #1580 (1ppQ-Q_β coord infra + c_3 verdict)
 class QbetaC7StructuralFormClass : Prop where
   /-- Structural identity: the true categorical `c_7(q)` equals
@@ -656,14 +656,14 @@ class QbetaC7StructuralFormClass : Prop where
 
 /-- N=7 ladder rung built with the TRUE (abstract) categorical `c_7`
     coefficient. -/
--- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
+-- Ref: [leitner2026] prop:q-beta-categorical-precision-ladder
 noncomputable def Q_beta_n7_categorical (q m_e : ℝ) : ℝ :=
   Q_beta_form_A q m_e * N1_factor q * N2_factor q * N3_factor q
     * N4_factor q * N5_factor q
     * (1 + qBetaC7Categorical q * (hoefsmitB q)^7 * (hbarQ' q)^14)
 
 /-- **Conditional N=7 ladder form** (§3b-cond). Locks the c_7 form. -/
--- Ref: [manuscript] prop:q-beta-categorical-precision-ladder
+-- Ref: [leitner2026] prop:q-beta-categorical-precision-ladder
 theorem q_beta_n7_structural_form
     [hC7 : QbetaC7StructuralFormClass]
     (q m_e : ℝ) (_hq : 0 < q) :

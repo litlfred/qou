@@ -16,7 +16,7 @@ This file defines the algebraic skeleton; the conjecture that the
 mass element lifts to this bicompletion is stated separately in
 conj:mass-endomorphism.
 
--- Ref: [manuscript] def:qz-bicompletion
+-- Ref: [leitner2026] def:qz-bicompletion
 -- Ref: [habiro2004cyclotomic] Habiro, "Cyclotomic completions of polynomial rings," arXiv:math/0209324
 -/
 
@@ -55,7 +55,7 @@ def QZBicompletionEquiv (m n : ℕ) (f g : ℝ → Polynomial ℝ) : Prop :=
 /-- The (q, z)-bicompletion as a doubly-indexed compatible family of
     polynomial representatives. Mirrors `ZHabiroElement` but with two
     cyclotomic levels (m for q, n for z) instead of one. -/
--- Ref: [manuscript] def:qz-bicompletion
+-- Ref: [leitner2026] def:qz-bicompletion
 structure QZBicompletionElement where
   /-- Polynomial representative at each (m, n) level. -/
   family : ℕ → ℕ → (ℝ → Polynomial ℝ)
@@ -69,7 +69,7 @@ structure QZBicompletionElement where
 /-- Projection to the q-only Habiro ring by setting z ↦ 0 and
     forgetting the n-grading. The resulting element is determined by
     its m-family of constant polynomials in z. -/
--- Ref: [manuscript] def:qz-bicompletion §"sits at the apex"
+-- Ref: [leitner2026] def:qz-bicompletion §"sits at the apex"
 noncomputable def projectToQHabiro (M : QZBicompletionElement) :
     ℕ → (ℝ → ℝ) :=
   fun m q => (M.family m 0 q).eval 0
@@ -77,7 +77,7 @@ noncomputable def projectToQHabiro (M : QZBicompletionElement) :
 /-- Projection to the z-only Habiro ring by specialising q ↦ q_0 and
     forgetting the m-grading. The resulting element is determined by
     its n-family of polynomials evaluated at q = q_0. -/
--- Ref: [manuscript] def:qz-bicompletion §"sits at the apex"
+-- Ref: [leitner2026] def:qz-bicompletion §"sits at the apex"
 noncomputable def projectToZHabiro (q_0 : ℝ) (M : QZBicompletionElement) :
     ℕ → (ℝ → Polynomial ℝ) :=
   fun n _ => M.family 0 n q_0

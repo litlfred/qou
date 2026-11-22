@@ -7,10 +7,11 @@ section_number: 2.1
 pages: 6-7
 source_pdf: 2311.14221v2.pdf
 source_sha256: 5aa4126bbb6df6eb
-doc_brief: "FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF ALGEBRAS — The main objective of the present paper is to present a ver- sion of the Tannaka-Krein type reconstruction Theorems: If F : B → C is an exact"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.985
-latex_coverage_ratio: 0.883
+latex_coverage_ratio: 0.892
+doc_brief: "FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF ALGEBRAS — The main objective of the present paper is to present a ver- sion of the Tannaka-Krein type reconstruction Theorems: If F : B →C is an exact"
 ---
 A  finite tensor category $\ca$ is a monoidal rigid category, with simple unit object $\uno\in \ca$. We refer to \cite{EO} for more details on finite tensor categories. Without loss of generality, we shall assume that tensor categories in this work are strict. 
 

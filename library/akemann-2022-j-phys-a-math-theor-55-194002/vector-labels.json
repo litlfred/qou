@@ -1,0 +1,5711 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "akemann-2022-j-phys-a-math-theor-55-194002",
+  "pages": [
+    {
+      "page": 10,
+      "rotation": 0,
+      "drawings": 217,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 1. The properly unfolded microscopic level densities of the Bessel-kernel result (32) for ν = 0 (blue solid curve), ν = 1 (red finely dashed curve), ν = 20 (green coarsely dashed curve), and ν = ∞(black solid curve). The latter agrees with the unfolded Airy-kernel result (25) reflected at the origin. As a guideline we have added the asymptotic unfolded level density, which is equal to the constant 1 (solid black horizon- tal line) and the half-sided picket fence spectrum (spectrum of the harmonic oscillator), with eigenvalues at n + 1/2 (dashed horizontal lines). These auxiliary lines indicate the proper unfolding of the spectra. The singularity at the origin is a relic of the unfolding, as it is not smooth at the macroscopic (as well as mesoscopic) spectral edge, cf [38]."
+      ],
+      "labels": [
+        {
+          "text": "G Akemann et al",
+          "bbox": [
+            416.1,
+            72.16,
+            467.82,
+            79.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Obl",
+            "HelveticaLTStd-Roman"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "J. Phys. A: Math. Theor. 55 (2022) 194002",
+          "bbox": [
+            96.06,
+            72.19,
+            224.98,
+            79.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Bold",
+            "HelveticaLTStd-Roman"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Figure 1. The properly unfolded microscopic level densities of the Bessel-kernel result",
+          "bbox": [
+            155.82,
+            266.95,
+            468.05,
+            275.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Bold",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            7.97,
+            8.97
+          ]
+        },
+        {
+          "text": "(32) for ν = 0 (blue solid curve), ν = 1 (red finely dashed curve), ν = 20 (green",
+          "bbox": [
+            155.82,
+            276.79,
+            467.99,
+            285.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR9",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "coarsely dashed curve), and ν = ∞(black solid curve). The latter agrees with the",
+          "bbox": [
+            155.82,
+            286.5,
+            467.97,
+            295.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR9",
+            "CMSY10",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "unfolded Airy-kernel result (25) reflected at the origin. As a guideline we have added the",
+          "bbox": [
+            155.82,
+            296.83,
+            467.98,
+            305.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "asymptotic unfolded level density, which is equal to the constant 1 (solid black horizon-",
+          "bbox": [
+            155.82,
+            306.79,
+            467.76,
+            315.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "tal line) and the half-sided picket fence spectrum (spectrum of the harmonic oscillator),",
+          "bbox": [
+            155.82,
+            316.75,
+            468.05,
+            325.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "with eigenvalues at n + 1/2 (dashed horizontal lines). These auxiliary lines indicate the",
+          "bbox": [
+            155.82,
+            326.59,
+            467.97,
+            335.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR9",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "proper unfolding of the spectra. The singularity at the origin is a relic of the unfolding,",
+          "bbox": [
+            155.82,
+            336.67,
+            467.8,
+            345.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "as it is not smooth at the macroscopic (as well as mesoscopic) spectral edge, cf [38].",
+          "bbox": [
+            155.82,
+            346.63,
+            457.94,
+            355.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "when x ⩾ν, hinting at the creation of a soft edge. In the regime x ⩾ν, via standard stationary",
+          "bbox": [
+            96.06,
+            379.78,
+            468.13,
+            390.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "MSAM10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "phase approximation the Bessel function becomes as follows",
+          "bbox": [
+            96.06,
+            392.2,
+            338.65,
+            402.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u000f",
+          "bbox": [
+            433.02,
+            405.7,
+            438.83,
+            415.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0005",
+          "bbox": [
+            305.34,
+            406.66,
+            315.3,
+            416.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0005",
+          "bbox": [
+            198.06,
+            407.02,
+            208.02,
+            416.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0007ν",
+          "bbox": [
+            392.58,
+            411.7,
+            404.69,
+            426.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\b",
+          "bbox": [
+            406.5,
+            411.7,
+            412.45,
+            421.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1 −ν2",
+          "bbox": [
+            315.3,
+            415.9,
+            342.62,
+            433.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87,
+            9.96
+          ]
+        },
+        {
+          "text": "−π",
+          "bbox": [
+            414.66,
+            416.3,
+            431.5,
+            432.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Jν(x) ≈1",
+          "bbox": [
+            155.82,
+            416.44,
+            196.32,
+            433.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87,
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            209.34,
+            416.44,
+            214.32,
+            426.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            243.42,
+            416.44,
+            248.4,
+            426.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "x2 −ν arccos",
+          "bbox": [
+            334.26,
+            422.74,
+            391.06,
+            439.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87,
+            9.96
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            440.46,
+            423.02,
+            443.22,
+            432.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "x",
+          "bbox": [
+            300.54,
+            423.05,
+            304.96,
+            433.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(1 −ν2/x2)1/4 cos",
+          "bbox": [
+            216.78,
+            423.16,
+            292.9,
+            439.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87,
+            9.96
+          ]
+        },
+        {
+          "text": "(27)",
+          "bbox": [
+            451.38,
+            423.16,
+            468.14,
+            433.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "π",
+          "bbox": [
+            190.86,
+            429.86,
+            196.54,
+            439.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "x",
+          "bbox": [
+            209.58,
+            429.89,
+            214.0,
+            439.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "x",
+          "bbox": [
+            400.38,
+            429.89,
+            404.8,
+            439.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            426.3,
+            430.0,
+            431.28,
+            439.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In particular limits, this agrees with the asymptotic in [39, theorem 1.3]. A simple comparison",
+          "bbox": [
+            96.06,
+            453.76,
+            468.24,
+            463.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "with (10) shows that the proper unfolding is equal to",
+          "bbox": [
+            96.06,
+            465.76,
+            305.29,
+            475.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\b\u000f",
+          "bbox": [
+            327.06,
+            479.38,
+            338.87,
+            495.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0005",
+          "bbox": [
+            226.02,
+            480.22,
+            235.98,
+            490.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0007ν",
+          "bbox": [
+            313.26,
+            485.38,
+            325.25,
+            499.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1 −ν2",
+          "bbox": [
+            235.98,
+            489.58,
+            263.3,
+            506.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87,
+            9.96
+          ]
+        },
+        {
+          "text": "λ = g(x) = 1",
+          "bbox": [
+            155.82,
+            490.12,
+            211.68,
+            506.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "x2 −ν arccos",
+          "bbox": [
+            254.94,
+            496.42,
+            311.74,
+            513.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87,
+            9.96
+          ]
+        },
+        {
+          "text": "for x ⩾ν.",
+          "bbox": [
+            354.66,
+            496.42,
+            395.82,
+            506.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "MSAM10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "x",
+          "bbox": [
+            221.22,
+            496.73,
+            225.64,
+            506.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            340.5,
+            496.84,
+            342.99,
+            506.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(28)",
+          "bbox": [
+            451.38,
+            496.84,
+            468.14,
+            506.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "π",
+          "bbox": [
+            206.22,
+            503.54,
+            211.9,
+            513.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "x",
+          "bbox": [
+            320.94,
+            503.57,
+            325.36,
+            513.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "As a check, the Taylor expansion gives the behaviour λ ∝(x/ν −1)3/2 in the limit ν/x ≈1,",
+          "bbox": [
+            96.06,
+            525.88,
+            468.03,
+            539.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87,
+            9.96
+          ]
+        },
+        {
+          "text": "which is the unfolding of the Airy-kernel. To mimic the sign sgn(λ) that has appeared for the",
+          "bbox": [
+            96.06,
+            541.34,
+            468.03,
+            551.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "unfolding of the soft edge statistics, we choose",
+          "bbox": [
+            96.06,
+            553.36,
+            282.8,
+            563.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\b\u000f",
+          "bbox": [
+            330.42,
+            566.98,
+            342.23,
+            582.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0005",
+          "bbox": [
+            226.02,
+            567.94,
+            235.98,
+            577.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0007ν",
+          "bbox": [
+            316.5,
+            572.98,
+            328.61,
+            587.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ν2",
+          "bbox": [
+            237.18,
+            577.18,
+            246.14,
+            587.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87,
+            9.96
+          ]
+        },
+        {
+          "text": "λ = g(x) = 1",
+          "bbox": [
+            155.82,
+            577.72,
+            211.68,
+            594.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "x2 −1 −ν arccosh",
+          "bbox": [
+            237.78,
+            584.02,
+            314.87,
+            601.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87,
+            9.96
+          ]
+        },
+        {
+          "text": "when x < ν.",
+          "bbox": [
+            358.02,
+            584.3,
+            409.14,
+            594.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "x",
+          "bbox": [
+            221.22,
+            584.33,
+            225.64,
+            594.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            343.86,
+            584.44,
+            346.35,
+            594.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(29)",
+          "bbox": [
+            451.38,
+            584.44,
+            468.14,
+            594.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "π",
+          "bbox": [
+            206.22,
+            591.14,
+            211.9,
+            601.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "x",
+          "bbox": [
+            324.3,
+            591.17,
+            328.72,
+            601.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Italic"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "One can check that g(x) is monotonously increasing on R+. Indeed again a Taylor expansion",
+          "bbox": [
+            96.06,
+            614.74,
+            468.25,
+            625.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7",
+            "MSBM10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "about ν/x ≈1 gives the proper unfolding of the soft edge statistics. To invert the relation",
+          "bbox": [
+            96.06,
+            626.74,
+            468.14,
+            637.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "between x and λ we have exploited the integral formula",
+          "bbox": [
+            96.06,
+            639.02,
+            318.28,
+            649.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0002 ∞",
+          "bbox": [
+            186.66,
+            652.66,
+            203.49,
+            664.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.87,
+            9.96
+          ]
+        },
+        {
+          "text": "Θ[λ −g(˜x)]d˜x,",
+          "bbox": [
+            204.06,
+            666.22,
+            265.83,
+            676.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "x(λ) =",
+          "bbox": [
+            156.18,
+            666.5,
+            183.96,
+            676.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(30)",
+          "bbox": [
+            451.38,
+            666.64,
+            468.14,
+            676.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            192.3,
+            677.86,
+            195.74,
+            684.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87
+          ]
+        },
+        {
+          "text": "9",
+          "bbox": [
+            280.14,
+            696.21,
+            284.02,
+            703.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Roman"
+          ],
+          "sizes": [
+            6.97
+          ]
+        }
+      ]
+    },
+    {
+      "page": 21,
+      "rotation": 0,
+      "drawings": 438,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 2. Top left: the spacing distribution ¯p(0,0)"
+      ],
+      "labels": [
+        {
+          "text": "G Akemann et al",
+          "bbox": [
+            416.1,
+            72.16,
+            467.82,
+            79.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Obl",
+            "HelveticaLTStd-Roman"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "J. Phys. A: Math. Theor. 55 (2022) 194002",
+          "bbox": [
+            96.06,
+            72.19,
+            224.98,
+            79.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Bold",
+            "HelveticaLTStd-Roman"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Figure 2. Top left: the spacing distribution ¯p(0,0)",
+          "bbox": [
+            155.82,
+            357.31,
+            334.67,
+            368.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9",
+            "HelveticaLTStd-Bold",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.28,
+            7.97,
+            8.97
+          ]
+        },
+        {
+          "text": "1,n (σ) between 1st and 2nd eigenvalue",
+          "bbox": [
+            322.74,
+            359.35,
+            467.84,
+            371.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.28,
+            8.97
+          ]
+        },
+        {
+          "text": "(k = 1) at the hard edge, rescaled to first moment of unity, for different values of",
+          "bbox": [
+            155.82,
+            369.31,
+            467.92,
+            378.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "n = 2 (blue), n = 6 (orange), n = 10 (green), and n = 20 (red). The dashed curve is the",
+          "bbox": [
+            155.82,
+            379.27,
+            467.96,
+            388.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "bulk spacing distribution (A.1) for comparison. Top right: because the curves are almost",
+          "bbox": [
+            155.82,
+            389.35,
+            467.95,
+            398.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "indistinguishable we also compare the difference Δ¯pk(s) between the asymptotic spacing",
+          "bbox": [
+            155.82,
+            399.19,
+            467.86,
+            408.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.28,
+            8.97
+          ]
+        },
+        {
+          "text": "(90) to be derived in the next section, and our expression at finite-n (53), for n = 2 (blue),",
+          "bbox": [
+            155.82,
+            409.15,
+            467.9,
+            418.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "n = 4 (orange), n = 6 (green), n = 8 (red), n = 10 (purple), and n = 20 (dashed black).",
+          "bbox": [
+            155.82,
+            419.11,
+            467.92,
+            428.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "Bottom row: differences of the finite n spacing (73) to their asymptotic counterpart",
+          "bbox": [
+            155.82,
+            429.1,
+            467.79,
+            438.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "(86) for k = 2, n = 4, 6, 8, 10, 20 (left), and k = 3, n = 4, 8, 20 (right). In both plots the",
+          "bbox": [
+            155.82,
+            439.03,
+            467.97,
+            448.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "dashed line denotes the difference for n = 20, both with their first moment set to unity.",
+          "bbox": [
+            155.82,
+            448.99,
+            467.92,
+            458.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "These plots illustrate the rapid convergence already at relatively small values of n. Please",
+          "bbox": [
+            155.82,
+            458.98,
+            468.09,
+            468.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "note the different scales of the y-axis.",
+          "bbox": [
+            155.82,
+            468.94,
+            289.82,
+            478.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "reason why the optimal rate of convergence applies here is that we unfold via the formula (44),",
+          "bbox": [
+            96.06,
+            498.76,
+            468.03,
+            508.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "since in [46] it was shown that already a scaling is sufficient to reach this rate.",
+          "bbox": [
+            96.06,
+            510.76,
+            406.49,
+            520.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Since the deviations of the finite n-results and the asymptotic ones lie in the per mill regime,",
+          "bbox": [
+            108.06,
+            522.53,
+            468.15,
+            532.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "we have plotted the difference Δ¯pk(s) = ¯p(0,0)",
+          "bbox": [
+            96.06,
+            532.3,
+            279.67,
+            545.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87,
+            9.96
+          ]
+        },
+        {
+          "text": "k,n (s) −¯p(0,0)",
+          "bbox": [
+            266.46,
+            532.3,
+            321.31,
+            547.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87,
+            9.96
+          ]
+        },
+        {
+          "text": "(s). The bar highlights the unfolding",
+          "bbox": [
+            321.78,
+            534.53,
+            468.35,
+            544.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "k",
+          "bbox": [
+            308.1,
+            539.67,
+            311.15,
+            546.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Italic"
+          ],
+          "sizes": [
+            6.87
+          ]
+        },
+        {
+          "text": "(44), and p(0,0)",
+          "bbox": [
+            96.06,
+            546.34,
+            152.83,
+            558.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87,
+            9.96
+          ]
+        },
+        {
+          "text": "(s) is the asymptotic result (86).",
+          "bbox": [
+            153.3,
+            548.57,
+            280.11,
+            558.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "k",
+          "bbox": [
+            139.62,
+            553.83,
+            142.67,
+            560.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Italic"
+          ],
+          "sizes": [
+            6.87
+          ]
+        },
+        {
+          "text": "5. Asymptotic analysis at the hard edge",
+          "bbox": [
+            96.06,
+            571.14,
+            283.99,
+            581.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Bold"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "5.1. The large-n limit at fixed k, Nf and ν",
+          "bbox": [
+            96.06,
+            593.82,
+            254.44,
+            604.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "HelveticaLTStd-Obl",
+            "HelveticaLTStd-Roman"
+          ],
+          "sizes": [
+            6.28,
+            8.97
+          ]
+        },
+        {
+          "text": "In the asymptotic large-n limit of the χGUE at the hard edge, with our convention of an n-",
+          "bbox": [
+            96.06,
+            611.9,
+            468.02,
+            622.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "independent weight function, it is well known that the eigenvalues, and therefore also the",
+          "bbox": [
+            96.06,
+            624.04,
+            468.04,
+            634.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "spacings and masses scale with √",
+          "bbox": [
+            96.06,
+            628.42,
+            231.32,
+            646.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "n, see [18]. We therefore define the following variables",
+          "bbox": [
+            231.3,
+            635.93,
+            450.47,
+            646.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "σ ≡√",
+          "bbox": [
+            155.82,
+            648.46,
+            183.44,
+            666.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "μ f ≡√",
+          "bbox": [
+            223.02,
+            648.46,
+            254.96,
+            667.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "TimesLTStd-Italic"
+          ],
+          "sizes": [
+            6.87,
+            9.96
+          ]
+        },
+        {
+          "text": "f = 1, . . . , Nf,",
+          "bbox": [
+            288.66,
+            656.42,
+            344.91,
+            667.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87,
+            9.96
+          ]
+        },
+        {
+          "text": "n s,",
+          "bbox": [
+            183.42,
+            656.45,
+            196.47,
+            666.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "n m f,",
+          "bbox": [
+            254.94,
+            656.45,
+            275.67,
+            667.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87,
+            9.96
+          ]
+        },
+        {
+          "text": "(76)",
+          "bbox": [
+            451.38,
+            656.56,
+            468.14,
+            666.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "20",
+          "bbox": [
+            278.1,
+            696.21,
+            285.82,
+            703.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Roman"
+          ],
+          "sizes": [
+            6.97
+          ]
+        }
+      ]
+    },
+    {
+      "page": 25,
+      "rotation": 0,
+      "drawings": 197,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 3. Left: comparison between the bulk spacing distributions pbulk(s) (see (A.1)) (dashed black, lower curve), and the spacing distribution between 1st and 2nd eigenvalue at the hard edge ¯p1(s) with k = 1 and Nf = ν = 0 quenched (red, higher curve), see (88) and (90). Right: their difference Δ¯p(0,0)",
+        "Figure 4 highlights that for k ⩾3 the deviation between the level spacing distributions at the hard edge (equation (86)) and those in the bulk (equation (A.1)) is comparable to the deviation between the latter and the Wigner surmise (1). We have further quantified this result via a χ2- test in table 1, where we have computed the L2-distance between level spacing distributions (86) and (A.1) for various k with Monte Carlo simulations."
+      ],
+      "labels": [
+        {
+          "text": "G Akemann et al",
+          "bbox": [
+            416.1,
+            72.16,
+            467.82,
+            79.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Obl",
+            "HelveticaLTStd-Roman"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "J. Phys. A: Math. Theor. 55 (2022) 194002",
+          "bbox": [
+            96.06,
+            72.19,
+            224.98,
+            79.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Bold",
+            "HelveticaLTStd-Roman"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Figure 3. Left: comparison between the bulk spacing distributions pbulk(s) (see (A.1))",
+          "bbox": [
+            155.82,
+            234.82,
+            468.05,
+            245.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Bold",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.28,
+            7.97,
+            8.97
+          ]
+        },
+        {
+          "text": "(dashed black, lower curve), and the spacing distribution between 1st and 2nd eigenvalue",
+          "bbox": [
+            155.82,
+            244.87,
+            467.87,
+            253.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "at the hard edge ¯p1(s) with k = 1 and Nf = ν = 0 quenched (red, higher curve), see (88)",
+          "bbox": [
+            155.82,
+            254.71,
+            468.05,
+            265.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR9",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.28,
+            8.97
+          ]
+        },
+        {
+          "text": "and (90). Right: their difference Δ¯p(0,0)",
+          "bbox": [
+            155.82,
+            263.11,
+            294.11,
+            274.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.28,
+            8.97
+          ]
+        },
+        {
+          "text": "(s) = ¯p(0,0)",
+          "bbox": [
+            294.66,
+            263.11,
+            332.87,
+            274.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.28,
+            8.97
+          ]
+        },
+        {
+          "text": "(s) −pbulk(s) (red higher curve) is still",
+          "bbox": [
+            333.54,
+            264.9,
+            468.03,
+            274.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.28,
+            8.97
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            282.18,
+            269.95,
+            285.32,
+            276.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.28
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            320.94,
+            269.95,
+            324.08,
+            276.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.28
+          ]
+        },
+        {
+          "text": "considerably larger than the difference between the exact bulk spacing and the Wigner",
+          "bbox": [
+            155.82,
+            275.23,
+            467.91,
+            284.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "surmise (black, dashed curve).",
+          "bbox": [
+            155.82,
+            285.19,
+            264.84,
+            294.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "(1). This agrees with our observation for the microscopic level density at the end of section 2.",
+          "bbox": [
+            96.06,
+            316.36,
+            468.03,
+            326.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Introducing flavours only suppresses this difference even more.",
+          "bbox": [
+            96.06,
+            328.36,
+            347.83,
+            338.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A warning is in order. The numerical evaluation of the multiple k-fold integral representa-",
+          "bbox": [
+            108.06,
+            340.13,
+            468.27,
+            350.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "tion (87) becomes rapidly unstable when going to higher values of k, ν and Nf. One reason is",
+          "bbox": [
+            96.06,
+            352.1,
+            467.99,
+            362.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87,
+            9.96
+          ]
+        },
+        {
+          "text": "the increasing number of integrals to be carried out. Another reason is the ratio of the determi-",
+          "bbox": [
+            96.06,
+            364.24,
+            468.27,
+            374.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "nants in the integrand, which can become numerically unstable as the size of the determinant",
+          "bbox": [
+            96.06,
+            376.12,
+            468.36,
+            386.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "increases. It may happen that big as well as tiny numbers have to cancel. Metropolis-algorithms",
+          "bbox": [
+            96.06,
+            388.12,
+            468.45,
+            398.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "are also hard to implement, though they are in principle possible, because the functions in the",
+          "bbox": [
+            96.06,
+            400.12,
+            467.99,
+            410.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "integrand are quite involved.",
+          "bbox": [
+            96.06,
+            412.0,
+            209.68,
+            421.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "To overcome this problem we have employed Monte-Carlo simulations of the random",
+          "bbox": [
+            108.06,
+            424.0,
+            468.29,
+            433.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "matrix ensemble to study the change of the level spacing distribution when increasing k, in",
+          "bbox": [
+            96.06,
+            435.78,
+            468.01,
+            445.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "particular for k ⩾4. For this purpose, we only consider parameter sets with Nf = 0, since oth-",
+          "bbox": [
+            96.06,
+            447.46,
+            468.15,
+            459.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "MSAM10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87,
+            9.96
+          ]
+        },
+        {
+          "text": "erwise we would need to rely on the Metropolis–Hastings algorithm. This again would exceed",
+          "bbox": [
+            96.06,
+            459.88,
+            468.13,
+            469.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "feasible computation time for a sufficiently large matrix dimension and number of configura-",
+          "bbox": [
+            96.06,
+            471.76,
+            468.25,
+            481.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "tions. Furthermore, due to the duality between Nf and ν, it is equivalent to only consider ν̸ = 0",
+          "bbox": [
+            96.06,
+            483.34,
+            468.0,
+            495.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87,
+            9.96
+          ]
+        },
+        {
+          "text": "or Nf̸ = 0 with masses very close to zero, as discussed in section 4.",
+          "bbox": [
+            96.06,
+            495.63,
+            364.11,
+            507.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87,
+            9.96
+          ]
+        },
+        {
+          "text": "As the eigenvalue statistics at the hard and the soft edge are fairly different, as can be seen",
+          "bbox": [
+            108.06,
+            507.64,
+            468.02,
+            517.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "in figure 1, where the microscopic spectral densities of those two regions of the spectrum are",
+          "bbox": [
+            96.06,
+            519.64,
+            468.04,
+            529.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "displayed, we further want to study the level spacings obtained from numerical simulations,",
+          "bbox": [
+            96.06,
+            531.64,
+            468.12,
+            541.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "first for relatively small k, and secondly for the transition from the bulk to the soft edge. To",
+          "bbox": [
+            96.06,
+            543.41,
+            468.01,
+            553.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "get the clearest signal, we have first considered ν = 0, as for larger ν we are closer to the soft",
+          "bbox": [
+            96.06,
+            555.38,
+            468.07,
+            565.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "edge, cf, figure 1.",
+          "bbox": [
+            96.06,
+            567.52,
+            165.75,
+            577.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 4 highlights that for k ⩾3 the deviation between the level spacing distributions at the",
+          "bbox": [
+            108.06,
+            578.98,
+            468.06,
+            589.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSAM10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "hard edge (equation (86)) and those in the bulk (equation (A.1)) is comparable to the deviation",
+          "bbox": [
+            96.06,
+            591.4,
+            468.24,
+            601.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "between the latter and the Wigner surmise (1). We have further quantified this result via a χ2-",
+          "bbox": [
+            96.06,
+            602.02,
+            468.02,
+            613.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87,
+            9.96
+          ]
+        },
+        {
+          "text": "test in table 1, where we have computed the L2-distance between level spacing distributions",
+          "bbox": [
+            96.06,
+            613.9,
+            468.22,
+            625.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87,
+            9.96
+          ]
+        },
+        {
+          "text": "(86) and (A.1) for various k with Monte Carlo simulations.",
+          "bbox": [
+            96.06,
+            627.17,
+            330.4,
+            637.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "It can be seen, that for the transition fromthe hard edgeto the bulk region of the spectrum,the",
+          "bbox": [
+            108.06,
+            639.28,
+            468.1,
+            649.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "deviation between the level spacing and the bulk spacing decreases, as it should, and increases",
+          "bbox": [
+            96.06,
+            651.16,
+            468.1,
+            661.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "again when reaching the upper edge at k = n −1 = 49 which is a soft edge and, thence, has",
+          "bbox": [
+            96.06,
+            662.74,
+            468.13,
+            673.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "to follow the Airy statistics.",
+          "bbox": [
+            96.06,
+            675.16,
+            206.79,
+            685.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "24",
+          "bbox": [
+            278.1,
+            696.21,
+            285.82,
+            703.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Roman"
+          ],
+          "sizes": [
+            6.97
+          ]
+        }
+      ]
+    },
+    {
+      "page": 27,
+      "rotation": 0,
+      "drawings": 400,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 4. Left: comparison between hard edge level spacings for increasing k = 1 (blue), k = 2 (orange), and k = 3 (green), and the bulk spacing distribution for Nf = 0 (upper plots), and Nf = 1 (lower plots) with mass m = 0.1. Right: their dif- ferences Δ¯p(0,Nf)"
+      ],
+      "labels": [
+        {
+          "text": "G Akemann et al",
+          "bbox": [
+            416.1,
+            72.16,
+            467.82,
+            79.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Obl",
+            "HelveticaLTStd-Roman"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "J. Phys. A: Math. Theor. 55 (2022) 194002",
+          "bbox": [
+            96.06,
+            72.19,
+            224.98,
+            79.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Bold",
+            "HelveticaLTStd-Roman"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "4. Left: comparison between hard edge level spacings for increasing",
+          "bbox": [
+            186.42,
+            364.99,
+            467.88,
+            373.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Bold",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            7.97,
+            8.97
+          ]
+        },
+        {
+          "text": "Figure",
+          "bbox": [
+            155.82,
+            365.67,
+            179.93,
+            373.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Bold"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "k = 1 (blue), k = 2 (orange), and k = 3 (green), and the bulk spacing distribution for",
+          "bbox": [
+            155.82,
+            374.83,
+            467.92,
+            383.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "Nf = 0 (upper plots), and Nf = 1 (lower plots) with mass m = 0.1. Right: their dif-",
+          "bbox": [
+            155.82,
+            384.79,
+            468.05,
+            395.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR9",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.28,
+            8.97
+          ]
+        },
+        {
+          "text": "ferences Δ¯p(0,Nf)",
+          "bbox": [
+            155.82,
+            393.01,
+            217.79,
+            404.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            5.73,
+            6.28,
+            8.97
+          ]
+        },
+        {
+          "text": "(s) = ¯p(0,Nf)",
+          "bbox": [
+            218.22,
+            393.01,
+            260.03,
+            404.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            5.73,
+            6.28,
+            8.97
+          ]
+        },
+        {
+          "text": "(s) −pbulk(s) to the bulk spacing distribution (A.1) for",
+          "bbox": [
+            260.46,
+            395.46,
+            467.93,
+            405.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.28,
+            8.97
+          ]
+        },
+        {
+          "text": "k",
+          "bbox": [
+            202.26,
+            400.45,
+            205.05,
+            406.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Italic"
+          ],
+          "sizes": [
+            6.28
+          ]
+        },
+        {
+          "text": "k",
+          "bbox": [
+            244.5,
+            400.45,
+            247.29,
+            406.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Italic"
+          ],
+          "sizes": [
+            6.28
+          ]
+        },
+        {
+          "text": "k = 1 (blue) and k = 2 (orange) decrease rapidly for increasing k, where for compari-",
+          "bbox": [
+            155.82,
+            405.67,
+            467.93,
+            414.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "son we also show the difference between the exact bulk spacing and the Wigner surmise",
+          "bbox": [
+            155.82,
+            415.75,
+            467.98,
+            424.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "(black, dashed curve).",
+          "bbox": [
+            155.82,
+            425.71,
+            234.77,
+            434.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "If we now look at the level spacing distribution at the soft edge (see figure 5) and the tran-",
+          "bbox": [
+            108.06,
+            445.0,
+            468.15,
+            454.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "sition from the bulk to the latter, we find this transition to be equally fast. The differences",
+          "bbox": [
+            96.06,
+            457.0,
+            468.36,
+            466.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "obtained from the χ2-test between the numerical data and the bulk spacing are of the same",
+          "bbox": [
+            96.06,
+            467.62,
+            468.07,
+            478.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87,
+            9.96
+          ]
+        },
+        {
+          "text": "order as for a spacing in the middle of the bulk, from the third spacing k = 3 upwards and",
+          "bbox": [
+            96.06,
+            480.75,
+            468.15,
+            490.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "from k = 47 downwards, as can also be seen in table 1.",
+          "bbox": [
+            96.06,
+            492.63,
+            316.11,
+            502.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "5.3. Asymptotics to the Airy statistics (ν ≫1)",
+          "bbox": [
+            96.06,
+            516.06,
+            275.81,
+            525.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "HelveticaLTStd-Obl",
+            "HelveticaLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "Another limit is the large-ν limit which should approach the level spacing distributions at the",
+          "bbox": [
+            96.06,
+            534.5,
+            468.02,
+            544.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "soft edge. Actually this also holds when the number of flavours Nf is sent to infinity, while",
+          "bbox": [
+            96.06,
+            546.53,
+            468.04,
+            558.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87,
+            9.96
+          ]
+        },
+        {
+          "text": "the corresponding masses are of the order of 1/√",
+          "bbox": [
+            96.06,
+            551.02,
+            297.68,
+            568.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "n, as we have exploited this scaling in our",
+          "bbox": [
+            297.66,
+            558.41,
+            468.16,
+            568.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "computations. In general, we can understand the effect of non-vanishing flavours and topology",
+          "bbox": [
+            96.06,
+            570.52,
+            468.25,
+            580.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "as follows. Both push the eigenvalues further away from the origin, making the effect of the",
+          "bbox": [
+            96.06,
+            582.52,
+            468.02,
+            592.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "hard wall less relevant.",
+          "bbox": [
+            96.06,
+            594.4,
+            187.34,
+            604.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In the top plots of figure 6 we have numerically evaluated (86) for k = 1, Nf = 0 and",
+          "bbox": [
+            108.06,
+            606.27,
+            468.12,
+            617.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87,
+            9.96
+          ]
+        },
+        {
+          "text": "ν = 0, 1, 2. Hence, it is the level spacing between the two smallest eigenvalues for a differ-",
+          "bbox": [
+            96.06,
+            618.26,
+            468.17,
+            628.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ent number of zero eigenvalues. As mentioned before, we are unable to go much beyond this",
+          "bbox": [
+            96.06,
+            630.28,
+            468.06,
+            640.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "setting. Thence, we have generated Monte Carlo simulations with matrix size n = 100 for",
+          "bbox": [
+            96.06,
+            642.15,
+            468.15,
+            652.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "larger values of ν. Those are fairly good approximations of the asymptotic result, as the rate",
+          "bbox": [
+            96.06,
+            654.02,
+            468.05,
+            664.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of convergence for the unfolded spacing distribution is 1/n2 at the hard edge, cf [46]. As all",
+          "bbox": [
+            96.06,
+            662.56,
+            468.07,
+            676.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87,
+            9.96
+          ]
+        },
+        {
+          "text": "26",
+          "bbox": [
+            278.1,
+            696.21,
+            285.82,
+            703.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Roman"
+          ],
+          "sizes": [
+            6.97
+          ]
+        }
+      ]
+    },
+    {
+      "page": 28,
+      "rotation": 0,
+      "drawings": 221,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 5. The level spacing distribution (left) and the cumulative density function (right), respectively, of the largest two eigenvalues of large random matrices generated via Monte Carlo simulations with n = 50, ν = 0, k = 49, with nconf. = 106 configura- tions and bin size of about 0.2. Because we compare to the spacing of a specific level k, here and in the following the number of level spacings is always equal to the num- ber of configurations. The dashed curves are the bulk spacing distribution (A.1) and its cumulative density F(x)."
+      ],
+      "labels": [
+        {
+          "text": "G Akemann et al",
+          "bbox": [
+            416.1,
+            72.16,
+            467.82,
+            79.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Obl",
+            "HelveticaLTStd-Roman"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "J. Phys. A: Math. Theor. 55 (2022) 194002",
+          "bbox": [
+            96.06,
+            72.19,
+            224.98,
+            79.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Bold",
+            "HelveticaLTStd-Roman"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Figure 5. The level spacing distribution (left) and the cumulative density function",
+          "bbox": [
+            155.82,
+            233.95,
+            467.99,
+            242.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Bold",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            7.97,
+            8.97
+          ]
+        },
+        {
+          "text": "(right), respectively, of the largest two eigenvalues of large random matrices generated",
+          "bbox": [
+            155.82,
+            243.91,
+            467.88,
+            252.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "via Monte Carlo simulations with n = 50, ν = 0, k = 49, with nconf. = 106 configura-",
+          "bbox": [
+            155.82,
+            250.63,
+            467.81,
+            264.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR9",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.28,
+            8.97
+          ]
+        },
+        {
+          "text": "tions and bin size of about 0.2. Because we compare to the spacing of a specific level",
+          "bbox": [
+            155.82,
+            263.83,
+            467.93,
+            272.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "k, here and in the following the number of level spacings is always equal to the num-",
+          "bbox": [
+            155.82,
+            273.7,
+            467.93,
+            282.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "ber of configurations. The dashed curves are the bulk spacing distribution (A.1) and its",
+          "bbox": [
+            155.82,
+            283.75,
+            468.07,
+            292.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "cumulative density F(x).",
+          "bbox": [
+            155.82,
+            293.62,
+            244.34,
+            302.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "unfolded level spacing distributions are very close together, compare the upper left plot in",
+          "bbox": [
+            96.06,
+            338.92,
+            468.01,
+            348.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "figure 6, we have studied the differences to the bulk spacing distribution pbulk(s), see (A.1), as",
+          "bbox": [
+            96.06,
+            350.81,
+            467.98,
+            362.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87,
+            9.96
+          ]
+        },
+        {
+          "text": "a function of ν. For the histograms from the Monte Carlo simulations one needs to integrate",
+          "bbox": [
+            96.06,
+            362.78,
+            468.23,
+            372.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "pbulk(s) over the length of the bins, so that one can take such a difference. Thus, the general pro-",
+          "bbox": [
+            96.78,
+            374.81,
+            468.18,
+            386.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87,
+            9.96
+          ]
+        },
+        {
+          "text": "cedure has been as follows: (1) creating the histogram of the level spacing distribution ¯p(ν,0)",
+          "bbox": [
+            96.06,
+            384.6,
+            457.03,
+            396.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87,
+            9.96
+          ]
+        },
+        {
+          "text": "(s)",
+          "bbox": [
+            457.5,
+            386.81,
+            468.02,
+            396.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            443.46,
+            392.14,
+            446.9,
+            399.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87
+          ]
+        },
+        {
+          "text": "of the simulation; (2) unfold it via the formula (44); (3) use the unfolded bins to create a similar",
+          "bbox": [
+            96.06,
+            398.92,
+            467.98,
+            408.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "histogram of (A.1); (4) finally take the difference Δ¯p(ν,0)",
+          "bbox": [
+            96.06,
+            408.6,
+            321.19,
+            420.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87,
+            9.96
+          ]
+        },
+        {
+          "text": "(s) = ¯p(ν,0)",
+          "bbox": [
+            321.66,
+            408.6,
+            364.15,
+            420.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87,
+            9.96
+          ]
+        },
+        {
+          "text": "(s) −pbulk(s).",
+          "bbox": [
+            364.62,
+            410.5,
+            418.11,
+            421.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87,
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            307.62,
+            416.14,
+            311.06,
+            423.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            350.58,
+            416.14,
+            354.02,
+            423.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87
+          ]
+        },
+        {
+          "text": "One can readily see in figure 6 (bottom plots), that the distance between the level spac-",
+          "bbox": [
+            108.06,
+            422.92,
+            468.02,
+            432.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ing distribution of the two smallest eigenvalues and the one in the bulk first decreases with",
+          "bbox": [
+            96.06,
+            435.04,
+            467.99,
+            445.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "increasing ν (left plot). However, at about ν = 15 it again increases as the distribution slowly",
+          "bbox": [
+            96.06,
+            446.9,
+            468.01,
+            457.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "approaches the level spacing distribution of the soft edge, which we have added for compar-",
+          "bbox": [
+            96.06,
+            459.03,
+            468.26,
+            469.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ison, see lower right plot in figure 6. The spacing distribution of the two largest eigenval-",
+          "bbox": [
+            96.06,
+            471.03,
+            468.27,
+            481.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ues is also Monte Carlo simulated for the matrix dimension n = 100. However, one needs",
+          "bbox": [
+            96.06,
+            482.91,
+            468.23,
+            493.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "to be careful with this result, as the finite size error is quite big at the soft-edge. In [47] it",
+          "bbox": [
+            96.06,
+            495.03,
+            467.95,
+            505.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "was found that the optimal rate of convergence is n−2/3. Thus, in the present case the sys-",
+          "bbox": [
+            96.06,
+            505.49,
+            468.01,
+            517.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87,
+            9.96
+          ]
+        },
+        {
+          "text": "tematic error is about 20% and, therefore, much larger than the deviations to the bulk level",
+          "bbox": [
+            96.06,
+            518.91,
+            468.09,
+            529.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "spacing distribution (A.1) we are comparing with. To have it of the same order one needs",
+          "bbox": [
+            96.06,
+            531.04,
+            468.25,
+            541.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "to generate matrices of the size n = 105 which is out of reach for our modest computing",
+          "bbox": [
+            96.06,
+            539.44,
+            468.27,
+            553.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87,
+            9.96
+          ]
+        },
+        {
+          "text": "power.",
+          "bbox": [
+            96.06,
+            555.04,
+            123.15,
+            565.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "As already discussed in section 1, it is well known [39], that for large ν the Bessel-kernel",
+          "bbox": [
+            108.06,
+            566.9,
+            468.09,
+            577.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "converges to the Airy-kernel, as the hard edge of the Marchenko–Pastur law deforms into a",
+          "bbox": [
+            96.06,
+            579.04,
+            468.06,
+            589.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "second soft edge. To get a statistical quantification of this effect, we have performed another",
+          "bbox": [
+            96.06,
+            591.04,
+            468.25,
+            601.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Monte Carlo simulation of the random matrix ensemble with ν ∼n for increasing ν, and cal-",
+          "bbox": [
+            96.06,
+            602.62,
+            468.05,
+            613.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "culated their spacings, differences to the bulk and empirical densities to observe this effect (see",
+          "bbox": [
+            96.06,
+            615.04,
+            468.05,
+            625.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "figure 7). We further quantify this transformation again in terms of the χ2-test comparing the",
+          "bbox": [
+            96.06,
+            625.78,
+            468.03,
+            637.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87,
+            9.96
+          ]
+        },
+        {
+          "text": "statistics to the bulk spacing in table 2. In the latter, it becomes apparent, that the deviation",
+          "bbox": [
+            96.06,
+            639.04,
+            468.31,
+            649.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "to the bulk spacing increases rapidly for decreasing values of q = n/(n + ν), which shows a",
+          "bbox": [
+            96.06,
+            650.9,
+            468.06,
+            661.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "rapid deformation of the hard edge into a soft edge. This has been already seen in figure 1 for",
+          "bbox": [
+            96.06,
+            663.04,
+            468.14,
+            673.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the microscopic level density, when ν = 20.",
+          "bbox": [
+            96.06,
+            675.02,
+            271.95,
+            685.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "27",
+          "bbox": [
+            278.1,
+            696.21,
+            285.82,
+            703.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Roman"
+          ],
+          "sizes": [
+            6.97
+          ]
+        }
+      ]
+    },
+    {
+      "page": 29,
+      "rotation": 0,
+      "drawings": 802,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 6. Top: level spacing distribution (86) (left plot) and its difference to the bulk spacing distribution (A.1) (right plot) for Nf = 0, k = 1 and ν = 0 (green solid curves), ν = 1 (red finely dashed curves), and ν = 2 (blue coarsely dashed curves). The black curve in the left plot is the bulk spacing distribution (A.1) and the one in the right plot is the difference of the Wigner surmise (1) to the bulk spacing distribution as refer- ences. Bottom: difference Δ¯p(ν,0)"
+      ],
+      "labels": [
+        {
+          "text": "G Akemann et al",
+          "bbox": [
+            416.1,
+            72.16,
+            467.82,
+            79.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Obl",
+            "HelveticaLTStd-Roman"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "J. Phys. A: Math. Theor. 55 (2022) 194002",
+          "bbox": [
+            96.06,
+            72.19,
+            224.98,
+            79.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Bold",
+            "HelveticaLTStd-Roman"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Figure 6. Top: level spacing distribution (86) (left plot) and its difference to the bulk",
+          "bbox": [
+            155.82,
+            329.95,
+            467.99,
+            338.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Bold",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            7.97,
+            8.97
+          ]
+        },
+        {
+          "text": "spacing distribution (A.1) (right plot) for Nf = 0, k = 1 and ν = 0 (green solid curves),",
+          "bbox": [
+            155.82,
+            339.79,
+            467.95,
+            350.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR9",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.28,
+            8.97
+          ]
+        },
+        {
+          "text": "ν = 1 (red finely dashed curves), and ν = 2 (blue coarsely dashed curves). The black",
+          "bbox": [
+            155.82,
+            349.75,
+            468.01,
+            358.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR9",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "curve in the left plot is the bulk spacing distribution (A.1) and the one in the right plot",
+          "bbox": [
+            155.82,
+            359.83,
+            467.92,
+            368.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "is the difference of the Wigner surmise (1) to the bulk spacing distribution as refer-",
+          "bbox": [
+            155.82,
+            369.79,
+            468.04,
+            378.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "ences. Bottom: difference Δ¯p(ν,0)",
+          "bbox": [
+            155.82,
+            377.98,
+            277.31,
+            389.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR9",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.28,
+            8.97
+          ]
+        },
+        {
+          "text": "(s) = ¯p(ν,0)",
+          "bbox": [
+            277.86,
+            377.98,
+            316.43,
+            389.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR9",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.28,
+            8.97
+          ]
+        },
+        {
+          "text": "(s) −pbulk(s) of the unfolding (44) of the",
+          "bbox": [
+            316.98,
+            379.86,
+            467.96,
+            389.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.28,
+            8.97
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            265.02,
+            384.91,
+            268.16,
+            391.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.28
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            304.14,
+            384.91,
+            307.28,
+            391.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.28
+          ]
+        },
+        {
+          "text": "level spacing distribution p(ν,0)",
+          "bbox": [
+            155.82,
+            389.02,
+            269.51,
+            400.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.28,
+            8.97
+          ]
+        },
+        {
+          "text": "(see (86)), and the bulk spacing distribution pbulk(s)",
+          "bbox": [
+            273.78,
+            391.18,
+            468.05,
+            401.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.28,
+            8.97
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            257.22,
+            395.95,
+            260.36,
+            402.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.28
+          ]
+        },
+        {
+          "text": "(see (A.1)) for the two smallest eigenvalues at Nf = 0 and various ν. All histograms",
+          "bbox": [
+            155.82,
+            401.11,
+            467.95,
+            411.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR9",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.28,
+            8.97
+          ]
+        },
+        {
+          "text": "are generated by Monte Carlo simulations with 107 configurations, a matrix dimen-",
+          "bbox": [
+            155.82,
+            407.95,
+            467.9,
+            420.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.28,
+            8.97
+          ]
+        },
+        {
+          "text": "sion n = 100 and a bin size of roughly 0.15. The values of ν are as follows: Left:",
+          "bbox": [
+            155.82,
+            421.03,
+            468.06,
+            430.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR9",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "ν = 0 (black solid histogram, solid curve is the analytical result (86)), ν = 5 (roughly",
+          "bbox": [
+            155.82,
+            430.99,
+            467.87,
+            440.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR9",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "dashed red), ν = 10 (dashed blue), ν = 15 (finely dashed green); Right: ν = 15 (finely",
+          "bbox": [
+            155.82,
+            440.95,
+            467.99,
+            450.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR9",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "dashed green), ν = 20 (dashed blue), ν = 25 (roughly dashed red). For comparison, the",
+          "bbox": [
+            155.82,
+            450.91,
+            467.95,
+            460.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR9",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "unfolded level spacing distribution between the largest two eigenvalues Δp(0,0)",
+          "bbox": [
+            155.82,
+            459.19,
+            435.47,
+            470.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.28,
+            8.97
+          ]
+        },
+        {
+          "text": "49 (s) (solid",
+          "bbox": [
+            423.54,
+            461.26,
+            467.98,
+            473.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.28,
+            8.97
+          ]
+        },
+        {
+          "text": "black) is added, corresponding to limν→∞Δp(ν,0)",
+          "bbox": [
+            155.82,
+            470.38,
+            335.15,
+            482.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR9",
+            "CMSY10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.28,
+            8.97
+          ]
+        },
+        {
+          "text": "(s). We have plotted ν = 15 in both",
+          "bbox": [
+            335.7,
+            472.51,
+            467.99,
+            481.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR9",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            322.86,
+            477.31,
+            326.0,
+            483.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.28
+          ]
+        },
+        {
+          "text": "plots as a reference value for the transition.",
+          "bbox": [
+            155.82,
+            482.59,
+            310.45,
+            491.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "If we compare this to spacings at the soft edge for ν = 0 (table 1), we find distances of the",
+          "bbox": [
+            108.06,
+            515.18,
+            468.05,
+            525.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "same order from the χ2-test, which shows that for larger ν the hard edge transforms into a soft",
+          "bbox": [
+            96.06,
+            526.06,
+            468.07,
+            537.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87,
+            9.96
+          ]
+        },
+        {
+          "text": "edge.",
+          "bbox": [
+            96.06,
+            539.32,
+            117.4,
+            549.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In figure 7 as well as figure 6, it becomes apparent, that when moving from the hard to the",
+          "bbox": [
+            108.06,
+            551.2,
+            468.08,
+            561.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "soft edge the peak of the spacing shifts from the right to the left of the maximum of the bulk",
+          "bbox": [
+            96.06,
+            563.2,
+            468.17,
+            573.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "spacing distribution. This is expected as a stiffer level spacing, as it is the case for the hard",
+          "bbox": [
+            96.06,
+            575.2,
+            468.11,
+            585.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "edge, should have a maximum closer to 1. In contrast, for a softer level spacing, like for the",
+          "bbox": [
+            96.06,
+            587.08,
+            468.07,
+            597.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Airy statistics, the eigenvalueshave more freedom to move,which shows in a maximum further",
+          "bbox": [
+            96.06,
+            599.08,
+            468.25,
+            609.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "away from 1. Since this effect is barely noticeable, the value of the χ2-test is additionally given",
+          "bbox": [
+            96.06,
+            609.82,
+            468.11,
+            621.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87,
+            9.96
+          ]
+        },
+        {
+          "text": "in figure 7. We omitted to show the difference to the bulk spacing distribution as the number of",
+          "bbox": [
+            96.06,
+            622.96,
+            468.04,
+            632.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "generated configurations is smaller here. This is because the matrix size in the second setting",
+          "bbox": [
+            96.06,
+            634.96,
+            467.95,
+            644.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of Monte Carlo simulations has been increased already. This results in a statistical error of one",
+          "bbox": [
+            96.06,
+            646.96,
+            468.2,
+            656.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "percent, which strongly overshadows the deviation from the bulk statistics.",
+          "bbox": [
+            96.06,
+            658.84,
+            393.69,
+            668.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "28",
+          "bbox": [
+            278.1,
+            696.21,
+            285.82,
+            703.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Roman"
+          ],
+          "sizes": [
+            6.97
+          ]
+        }
+      ]
+    },
+    {
+      "page": 30,
+      "rotation": 0,
+      "drawings": 624,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 7. The level spacing distributions (left column) and cumulative densities (right column) of the smallest two eigenvalues (k = 1) generated via Monte Carlo simulations for N = 200, ν = 4 (top), N = 600, ν = 12 (middle) and N = 1000, ν = 20 (bottom). The number of configurations is nconf. = 105, as the matrix size is already very big, and the bin size varies about 0.15–0.2 due to different rescaling from the unfolding for each parameter set. In the insets we have given the L2 distance to the bulk spacing distribution (A.1) and also its cumulative density, which are drawn as dashed curves."
+      ],
+      "labels": [
+        {
+          "text": "G Akemann et al",
+          "bbox": [
+            416.1,
+            72.16,
+            467.82,
+            79.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Obl",
+            "HelveticaLTStd-Roman"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "J. Phys. A: Math. Theor. 55 (2022) 194002",
+          "bbox": [
+            96.06,
+            72.19,
+            224.98,
+            79.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Bold",
+            "HelveticaLTStd-Roman"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Figure 7. The level spacing distributions (left column) and cumulative densities (right",
+          "bbox": [
+            155.82,
+            503.95,
+            468.06,
+            512.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Bold",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            7.97,
+            8.97
+          ]
+        },
+        {
+          "text": "column) of the smallest two eigenvalues (k = 1) generated via Monte Carlo simulations",
+          "bbox": [
+            155.82,
+            513.79,
+            467.98,
+            522.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR9",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "for N = 200, ν = 4 (top), N = 600, ν = 12 (middle) and N = 1000, ν = 20 (bottom).",
+          "bbox": [
+            155.82,
+            523.75,
+            467.92,
+            532.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR9",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "The number of configurations is nconf. = 105, as the matrix size is already very big, and",
+          "bbox": [
+            155.82,
+            532.63,
+            467.96,
+            544.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR9",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.28,
+            8.97
+          ]
+        },
+        {
+          "text": "the bin size varies about 0.15–0.2 due to different rescaling from the unfolding for each",
+          "bbox": [
+            155.82,
+            543.67,
+            467.92,
+            552.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "parameter set. In the insets we have given the L2 distance to the bulk spacing distribution",
+          "bbox": [
+            155.82,
+            550.39,
+            467.99,
+            562.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.28,
+            8.97
+          ]
+        },
+        {
+          "text": "(A.1) and also its cumulative density, which are drawn as dashed curves.",
+          "bbox": [
+            155.82,
+            563.71,
+            415.52,
+            572.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "6. Comparison to data from lattice QCD",
+          "bbox": [
+            96.06,
+            604.14,
+            283.12,
+            614.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Bold"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Finally, we would like to compare with edge statistics from data, notably at the hard edge where",
+          "bbox": [
+            96.06,
+            627.16,
+            468.21,
+            637.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "we have derived analytical predictions. For that reason we consider empirical data from lattice",
+          "bbox": [
+            96.06,
+            639.16,
+            468.07,
+            649.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "QCD Dirac operators.",
+          "bbox": [
+            96.06,
+            651.16,
+            183.76,
+            661.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "It is known [17] that strongly interacting quantum field theories in the deepest infrared",
+          "bbox": [
+            108.06,
+            663.16,
+            468.28,
+            673.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "limit, the ε-regime, agree with the statistics obtained from random matrix theory. In QCD,",
+          "bbox": [
+            96.06,
+            675.02,
+            468.04,
+            685.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "29",
+          "bbox": [
+            278.1,
+            696.21,
+            285.82,
+            703.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Roman"
+          ],
+          "sizes": [
+            6.97
+          ]
+        }
+      ]
+    },
+    {
+      "page": 32,
+      "rotation": 0,
+      "drawings": 178,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 8. Left: the level spacing distribution of the smallest two eigenvalues of the overlap Dirac operator k = 1 (blue histogram) with Nf = 2 and ν = 0 averaged over six different degenerate masses, with a total number of configurations of nconf. = 6046. It compared to the spacing distribution between the two smallest eigenvalues of the χGUE in the large-n limit for Nf = 0 quenched with ν = 0 (dashed curve). Right: the cumulative densities of the two distributions, respectively."
+      ],
+      "labels": [
+        {
+          "text": "G Akemann et al",
+          "bbox": [
+            416.1,
+            72.16,
+            467.82,
+            79.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Obl",
+            "HelveticaLTStd-Roman"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "J. Phys. A: Math. Theor. 55 (2022) 194002",
+          "bbox": [
+            96.06,
+            72.19,
+            224.98,
+            79.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Bold",
+            "HelveticaLTStd-Roman"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Figure 8. Left: the level spacing distribution of the smallest two eigenvalues of the",
+          "bbox": [
+            155.82,
+            238.99,
+            468.02,
+            247.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Bold",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            7.97,
+            8.97
+          ]
+        },
+        {
+          "text": "overlap Dirac operator k = 1 (blue histogram) with Nf = 2 and ν = 0 averaged over",
+          "bbox": [
+            155.82,
+            248.83,
+            467.93,
+            259.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR9",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.28,
+            8.97
+          ]
+        },
+        {
+          "text": "six different degenerate masses, with a total number of configurations of nconf. = 6046.",
+          "bbox": [
+            155.82,
+            258.79,
+            467.78,
+            269.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR9",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.28,
+            8.97
+          ]
+        },
+        {
+          "text": "It compared to the spacing distribution between the two smallest eigenvalues of the",
+          "bbox": [
+            155.82,
+            268.87,
+            468.0,
+            277.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "χGUE in the large-n limit for Nf = 0 quenched with ν = 0 (dashed curve). Right: the",
+          "bbox": [
+            155.82,
+            278.71,
+            467.97,
+            289.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR9",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.28,
+            8.97
+          ]
+        },
+        {
+          "text": "cumulative densities of the two distributions, respectively.",
+          "bbox": [
+            155.82,
+            288.79,
+            363.27,
+            297.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "diminishes the level repulsion drastically and yields deviations from the bulk level spacing",
+          "bbox": [
+            96.06,
+            312.04,
+            468.12,
+            322.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "above the percent threshold, that can be easily discerned by the bare eye.",
+          "bbox": [
+            96.06,
+            324.04,
+            385.59,
+            334.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "7. Conclusion",
+          "bbox": [
+            96.06,
+            353.22,
+            161.2,
+            363.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Bold"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In the application of random matrices we have learned to appreciate the predictive power for",
+          "bbox": [
+            96.06,
+            376.24,
+            468.16,
+            386.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "spectral correlations, depending on the location within the spectrum. One example is the micro-",
+          "bbox": [
+            96.06,
+            388.12,
+            468.07,
+            398.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "scopic Bessel-density close to the origin, that is relevant when chiral symmetry is important,",
+          "bbox": [
+            96.06,
+            400.12,
+            468.3,
+            410.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "e.g. in comparison to data from lattice QCD. It depends heavily on the number of zero-modes",
+          "bbox": [
+            96.06,
+            412.12,
+            468.35,
+            422.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ν, that characterise different topological sectors of the theory with broken chiral symmetry,",
+          "bbox": [
+            96.06,
+            423.86,
+            468.26,
+            433.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "and on the number of light flavours Nf when the quark masses are sufficiently small. A sec-",
+          "bbox": [
+            96.06,
+            435.89,
+            467.99,
+            447.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87,
+            9.96
+          ]
+        },
+        {
+          "text": "ond example is the Tracy–Widom distribution for the largest eigenvalue, that is relevant in the",
+          "bbox": [
+            96.06,
+            447.88,
+            468.05,
+            457.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "vicinity of a soft spectral edge. It describes successfully the fluctuations of growth processes",
+          "bbox": [
+            96.06,
+            459.88,
+            468.11,
+            469.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "for example.",
+          "bbox": [
+            96.06,
+            471.88,
+            146.31,
+            481.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In this work we have learned, that in contrast to that, the spacing distribution between con-",
+          "bbox": [
+            108.06,
+            483.76,
+            468.18,
+            493.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "secutive smallest or largest eigenvalues is a rather inefficient measure to quantify the specific",
+          "bbox": [
+            96.06,
+            495.76,
+            468.01,
+            505.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "properties of these spectral regions. We could provide compact expressions for the spacing",
+          "bbox": [
+            96.06,
+            507.76,
+            468.14,
+            517.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "to the kth smallest eigenvalue, that explicitly depend on k, the number of zero-modes ν and",
+          "bbox": [
+            96.06,
+            519.5,
+            468.12,
+            529.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the number of flavours Nf. However, once evaluated these turned out to be very close to the",
+          "bbox": [
+            96.06,
+            531.54,
+            468.01,
+            542.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87,
+            9.96
+          ]
+        },
+        {
+          "text": "bulk spacing for k = 1 and ν = 0 = Nf already, converging very rapidly as close to the exact",
+          "bbox": [
+            96.06,
+            543.5,
+            468.2,
+            555.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87,
+            9.96
+          ]
+        },
+        {
+          "text": "spacing as the Wigner surmise, almost independently of ν and Nf. We have demonstrated this",
+          "bbox": [
+            96.06,
+            555.38,
+            468.09,
+            566.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "TimesLTStd-Italic",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            6.87,
+            9.96
+          ]
+        },
+        {
+          "text": "lack of distinction directly upon comparing with QCD lattice data, that are known to follow the",
+          "bbox": [
+            96.06,
+            567.52,
+            468.01,
+            577.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "predictions of the χGUE for the microscopic density and individual eigenvalues distributions",
+          "bbox": [
+            96.06,
+            579.26,
+            468.26,
+            589.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "in the ε-regime.",
+          "bbox": [
+            96.06,
+            591.26,
+            159.17,
+            601.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We expect that the very same feature persists when considering chiral ensembles of ran-",
+          "bbox": [
+            108.06,
+            603.4,
+            468.2,
+            613.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "dom matrices with orthogonal or symplectic symmetry. The spacing distribution in these two",
+          "bbox": [
+            96.06,
+            615.28,
+            468.0,
+            625.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ensembles is different from the GUE in all parts of the spectrum. When comparing the respec-",
+          "bbox": [
+            96.06,
+            627.28,
+            468.18,
+            637.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "tive spacing distributions at the hard and soft edge to the bulk, the result is probably equally",
+          "bbox": [
+            96.06,
+            639.28,
+            468.14,
+            649.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "close as found here in the unitary symmetry class. Substantial deviations from the bulk spac-",
+          "bbox": [
+            96.06,
+            651.16,
+            468.01,
+            661.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ing at the spectral edges can only be expected when considering ensembles with heavy tails or",
+          "bbox": [
+            96.06,
+            663.16,
+            468.06,
+            673.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "other substantial deformations.",
+          "bbox": [
+            96.06,
+            675.16,
+            219.18,
+            685.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TimesLTStd-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "31",
+          "bbox": [
+            278.1,
+            696.21,
+            285.82,
+            703.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "HelveticaLTStd-Roman"
+          ],
+          "sizes": [
+            6.97
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+have exp d > 1
+using assms
+using one-le-exp-iff [of d, symmetric]
+by blast
+
+hence / + erp d 4 0
+by linarith
+
+let ?z = (1 — exp d) / (1 + exp d)
+
+have ?z < 0
+using ‘erp d > 1»
+by (simp add: divide-nonpos-nonneg)
+
+moreover
+
+have ?z > -1
+using exp-gt-zero[of d]
+by (smt divide-less-eq-1-neg nonzero-minus-divide-right)
+
+moreover
+
+hence abs ?z < 1
+using <?z < 0»
+by simp
+hence cmod ?z < 1
+by (metis norm-of-real)
+hence of-complex ?z € unit-disc
+by simp
+
+moreover
+have of-complex ?z € circline-set z-axis
+unfolding circline-set--axis
+by simp
+
+moreover
+have (1 — ?z) / (1 + ?z) = expd
+proof —
+have 1 + ?z = 2 / (1 + eap d)
+using </ + exp d # 0»
+by (subst add-divide-eq-iff, auto)
+moreover
+have 1 — ?z = 2 « exp d/ (1 + exp d)
+using </ + exp d # 0»
+by (subst diff-divide-eq-iff, auto)
+ultimately
+show ?thesis
+using </ + exp d # 0»
+by simp
+qed
+
+ultimately
+show ?thesis
+using poincare-distance-zero-x-axis[of of-complex ?z]
+using (d > 0) ‘erp d > 1»
+by simp (simp add: cmod-eq-Re)
+qed
+
+lemma ex-x-axis-poincare-distance-negative:
+
+assumes d > 0
+
+shows 4 z. is-realz \ Rez < 0A Rez>-1A
+of-complex z € unit-disc \ of-complex z € circline-set x-axis A
+poincare-distance On (of-compler z) = d (is 3 z. ?P z)
+
+using ex-z-axis-poincare-distance-negative’'|OF assms]
+
+unfolding Let-def
+
+by blast
+
+on
+an

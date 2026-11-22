@@ -2,257 +2,127 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-0111205v1",
  "source_sha256": "66325a21651aff89",
- "brief": "From Subfactors to Categories and Topology II — For every tensor category C there is a braided tensor category Z(C), the ‘center’ of C.",
- "extended": "**From Subfactors to Categories and Topology II**\n\n*The Quantum Double of Tensor Categories and Subfactors*\n\n62 pp, 49 sections.\n\n**Abstract.** For every tensor category C there is a braided tensor category Z(C), the ‘center’ of C. It is well known to be related to Drinfel’d’s notion of the qu antum double of a ﬁnite dimensional Hopf algebra H by an equivalence Z(H − mod) ⊗ ≃br D(H) − mod of braided tensor categories. In the Hopf algebra situation, whenever D(H) − mod is semisimple (which is the case iﬀ D(H) is semisimple iﬀ H is semisimple and cosemisimple iﬀ S2 = id and char F ∤ dim H) it is modular in the sense of Turaev, i.e. its S-matrix is invertible. (This was proven by Etingof and Gelaki in characteristic zer o. We give a fairly general proof in the appendix.) The present paper is concerned with a generalization of this and other results to the quantum double (center) of more general tensor categories. We consider F-linear tensor categories C with simple unit and ﬁnitely many isomor- phism classes of simple objects.\n\n**Outline.** Abstract; C It is well known to be related to Drinfel’d’; 1 Introduction; 2 Preliminaries; 2.1 Some deﬁnitions and notations; 2.2 Frobenius algebras and 2-categories; 1 The sets of 2-morphisms in E are ﬁnite dimen; 4 There is an equivalence HOME (A, A); 6 J and J are mutual two-sided duals, i.e. the; 7 We have; 8 E is uniquely determined up to equivalence b; 2 Unfortunately, the above statement of the th; 3 The Quantum Double of a Tensor Category; 3.1 On half braidings; 3.2 Elementary properties of the quantum doubl; 3.3 Semisimplicity of Z1(C); 2 The rˆ ole of the assumption on the dimensio; 2 Note that we do net yet know that Z1(C) has ",
+ "brief": "arXiv:math/0111205v1 [math.CT] 19 Nov 2001 — For every tensor category C there is a braided tensor category Z(C), the ‘center’ of C.",
+ "extended": "**arXiv:math/0111205v1 [math.CT] 19 Nov 2001**\n\n*Michael Müger∗*\n\n62 pp, 23 sections.\n\n**Abstract.** For every tensor category C there is a braided tensor category Z(C), the ‘center’ of C. It is well known to be related to Drinfel’d’s notion of the quantum double of a ﬁnite dimensional Hopf algebra H by an equivalence Z(H −mod) ⊗≃br D(H) −mod of braided tensor categories. In the Hopf algebra situation, whenever D(H) −mod is semisimple (which is the case iﬀD(H) is semisimple iﬀH is semisimple and cosemisimple iﬀS2 = id and charF ∤dim H) it is modular in the sense of Turaev, i.e. its S-matrix is invertible. (This was proven by Etingof and Gelaki in characteristic zero. We give a fairly general proof in the appendix.) The present paper is concerned with a generalization of this and other results to the quantum double (center) of more general tensor categories. We consider F-linear tensor categories C with simple unit and ﬁnitely many isomor- phism classes of simple objects.\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries; 2.1 Some definitions and notations; 2.2 Frobenius algebras and 2-categories; 3 The Quantum Double of a Tensor Category; 3.1 On half braidings; 3.2 Elementary properties of the quantum doubl; 3.3 Semisimplicity of $\\2Z_1(\\2C)$; 4 Weak Morita equivalence of $\\2Z_1(\\2C)$ and ; 4.2 A fully faithful tensor functor $F: \\2Z_1(; 4.3 $F$ is essentially surjective; 5 Modularity of the Quantum Double; 5.1 The `Tube algebra'; 5.2 Invertibility of the $S$-matrix; 5.3 Computation of the Gauss sums; 6 The quantum double of a $*$-category; 7 The quantum double of a braided category",
  "tokens": {
   "brief": 33,
-  "extended": 425
+  "extended": 404
  },
  "sections": [
   {
-   "id": "sec-000-abstract",
-   "title": "Abstract",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-001-c-it-is-well-known-to-be-related-to-drinfelds-no",
-   "title": "It is well known to be related to Drinfel’d’s notion of the qu antum double of a ﬁnite",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-2"
   },
   {
-   "id": "sec-002-1-introduction",
+   "id": "sec-000-1-introduction",
    "title": "Introduction",
    "pages": "2-5"
   },
   {
-   "id": "sec-003-2-preliminaries",
+   "id": "sec-001-2-preliminaries",
    "title": "Preliminaries",
    "pages": "5-5"
   },
   {
-   "id": "sec-004-21-some-deﬁnitions-and-notations",
-   "title": "Some deﬁnitions and notations",
+   "id": "sec-002-21-some-definitions-and-notations",
+   "title": "Some definitions and notations",
    "pages": "5-6"
   },
   {
-   "id": "sec-005-22-frobenius-algebras-and-2-categories",
+   "id": "sec-003-22-frobenius-algebras-and-2-categories",
    "title": "Frobenius algebras and 2-categories",
-   "pages": "6-7"
+   "pages": "6-8"
   },
   {
-   "id": "sec-006-1-the-sets-of-2-morphisms-in-e-are-ﬁnite-dimensi",
-   "title": "The sets of 2-morphisms in E are ﬁnite dimensional F-vector spaces and the",
-   "pages": "7-7"
-  },
-  {
-   "id": "sec-007-4-there-is-an-equivalence-home-a-a",
-   "title": "There is an equivalence HOME (A, A)",
-   "pages": "7-7"
-  },
-  {
-   "id": "sec-008-6-j-and-j-are-mutual-two-sided-duals-ie-there-ar",
-   "title": "J and J are mutual two-sided duals, i.e. there are 2-morphisms",
-   "pages": "7-7"
-  },
-  {
-   "id": "sec-009-7-we-have",
-   "title": "We have",
-   "pages": "7-7"
-  },
-  {
-   "id": "sec-010-8-e-is-uniquely-determined-up-to-equivalence-by",
-   "title": "E is uniquely determined up to equivalence by the above proper ties. Isomorphic",
-   "pages": "7-7"
-  },
-  {
-   "id": "sec-011-2-unfortunately-the-above-statement-of-the-theor",
-   "title": "Unfortunately, the above statement of the theorem will no t be suﬃcient for our",
-   "pages": "7-8"
-  },
-  {
-   "id": "sec-012-3-the-quantum-double-of-a-tensor-category",
+   "id": "sec-004-3-the-quantum-double-of-a-tensor-category",
    "title": "The Quantum Double of a Tensor Category",
    "pages": "8-8"
   },
   {
-   "id": "sec-013-31-on-half-braidings",
+   "id": "sec-005-31-on-half-braidings",
    "title": "On half braidings",
    "pages": "8-9"
   },
   {
-   "id": "sec-014-32-elementary-properties-of-the-quantum-double",
+   "id": "sec-006-32-elementary-properties-of-the-quantum-double",
    "title": "Elementary properties of the quantum double",
    "pages": "9-13"
   },
   {
-   "id": "sec-015-33-semisimplicity-of-z1c",
-   "title": "Semisimplicity of Z1(C)",
-   "pages": "13-14"
+   "id": "sec-007-33-semisimplicity-of-2z-12c",
+   "title": "Semisimplicity of $\\2Z_1(\\2C)$",
+   "pages": "13-16"
   },
   {
-   "id": "sec-016-2-the-rˆ-ole-of-the-assumption-on-the-dimension",
-   "title": "The rˆ ole of the assumption on the dimension is obvious: If dim C = 0 then the",
-   "pages": "14-16"
+   "id": "sec-008-4-weak-morita-equivalence-of-2z-12c-and-2cboxtim",
+   "title": "Weak Morita equivalence of $\\2Z_1(\\2C)$ and $\\2C\\boxtimes\\2C^{\\mbox{\\scriptsize op}}$",
+   "pages": "16-18"
   },
   {
-   "id": "sec-017-2-note-that-we-do-net-yet-know-that-z1c-has-ﬁnit",
-   "title": "Note that we do net yet know that Z1(C) has ﬁnitely many isomorphism classes of",
-   "pages": "16-16"
-  },
-  {
-   "id": "sec-018-4-weak-morita-equivalence-of-z1c-and-c-c-op",
-   "title": "Weak Morita equivalence of Z1(C) and C ⊠ C op",
-   "pages": "16-17"
-  },
-  {
-   "id": "sec-019-41-a-frobenius-algebra-in-c-c-op",
-   "title": "A Frobenius Algebra in C ⊠ C op",
-   "pages": "17-18"
-  },
-  {
-   "id": "sec-020-42-a-fully-faithful-tensor-functor-f-z1c-b",
-   "title": "A fully faithful tensor functor F : Z1(C) → B",
+   "id": "sec-009-42-a-fully-faithful-tensor-functor-f-2z-12cright",
+   "title": "A fully faithful tensor functor $F: \\2Z_1(\\2C)\\rightarrow\\2B$",
    "pages": "18-25"
   },
   {
-   "id": "sec-021-43-f-is-essentially-surjective",
-   "title": "F is essentially surjective",
+   "id": "sec-010-43-f-is-essentially-surjective",
+   "title": "$F$ is essentially surjective",
    "pages": "25-29"
   },
   {
-   "id": "sec-022-2-it-seems-likely-that-a-simpler-proof-of-the-th",
-   "title": "It seems likely that a simpler proof of the theorem can be gi ven using the interpre-",
-   "pages": "29-29"
-  },
-  {
-   "id": "sec-023-5-modularity-of-the-quantum-double",
+   "id": "sec-011-5-modularity-of-the-quantum-double",
    "title": "Modularity of the Quantum Double",
    "pages": "29-30"
   },
   {
-   "id": "sec-024-51-the-tube-algebra",
-   "title": "The ‘Tube algebra’",
-   "pages": "30-31"
+   "id": "sec-012-51-the-tube-algebra",
+   "title": "The `Tube algebra'",
+   "pages": "30-34"
   },
   {
-   "id": "sec-025-2-note-that-in-the-deﬁnition-of-ξ-l-we-could-rep",
-   "title": "Note that in the deﬁnition of Ξ L we could replace ˆYL by",
-   "pages": "31-34"
+   "id": "sec-013-52-invertibility-of-the-s-matrix",
+   "title": "Invertibility of the $S$-matrix",
+   "pages": "34-39"
   },
   {
-   "id": "sec-026-52-invertibility-of-the-s-matrix",
-   "title": "Invertibility of the S-matrix",
-   "pages": "34-38"
-  },
-  {
-   "id": "sec-027-2-an-alternative-proof-of-the-modularity-of-z1c",
-   "title": "An alternative proof of the modularity of Z1(C) and of dim Z1(C) = (dim C)2 could",
-   "pages": "38-38"
-  },
-  {
-   "id": "sec-028-3-the-tensor-category-b-en-de-b-deﬁned-in-38-is",
-   "title": "The tensor category B = EN DE (B) deﬁned in [38] is known to be equivalent to",
-   "pages": "38-38"
-  },
-  {
-   "id": "sec-029-2-c",
-   "title": "(C))",
-   "pages": "38-39"
-  },
-  {
-   "id": "sec-030-3-z-2",
-   "title": "(Z (2)",
-   "pages": "39-39"
-  },
-  {
-   "id": "sec-031-2-c-is-trivial-here-c-z-2",
-   "title": "(C)) is trivial? Here C, Z (2)",
-   "pages": "39-39"
-  },
-  {
-   "id": "sec-032-2-c-z-2",
-   "title": "(C), Z (2)",
-   "pages": "39-39"
-  },
-  {
-   "id": "sec-033-53-computation-of-the-gauss-sums",
+   "id": "sec-014-53-computation-of-the-gauss-sums",
    "title": "Computation of the Gauss sums",
    "pages": "39-41"
   },
   {
-   "id": "sec-034-2-the-representation-category-of-a-rational-conf",
-   "title": "The representation category of a rational conformal quan tum ﬁeld theory is a",
-   "pages": "41-41"
+   "id": "sec-015-6-the-quantum-double-of-a--category",
+   "title": "The quantum double of a $*$-category",
+   "pages": "41-44"
   },
   {
-   "id": "sec-035-6-the-quantum-double-of-a--category",
-   "title": "The quantum double of a ∗-category",
-   "pages": "41-42"
-  },
-  {
-   "id": "sec-036-1-c-is",
-   "title": "(C) is",
-   "pages": "42-42"
-  },
-  {
-   "id": "sec-037-1-c-z-1c-one",
-   "title": "(C) ⊂ Z 1(C) one",
-   "pages": "42-42"
-  },
-  {
-   "id": "sec-038-1-c-that-is-equivalent-to-z1c-as-a-tensor-catego",
-   "title": "(C) that is equivalent to Z1(C) as a tensor category. Given an isomorphism",
-   "pages": "42-44"
-  },
-  {
-   "id": "sec-039-1-c-is-monoidally-equivalent-to-z1c",
-   "title": "(C) is monoidally equivalent to Z1(C),",
-   "pages": "44-44"
-  },
-  {
-   "id": "sec-040-7-the-quantum-double-of-a-braided-category",
+   "id": "sec-016-7-the-quantum-double-of-a-braided-category",
    "title": "The quantum double of a braided category",
-   "pages": "44-48"
+   "pages": "44-49"
   },
   {
-   "id": "sec-041-1-c-z-1c-is-by-the-above-we-have",
-   "title": "(C) ≃ Z 1(C) is. By the above, we have",
-   "pages": "48-49"
-  },
-  {
-   "id": "sec-042-8-applications",
+   "id": "sec-017-8-applications",
    "title": "Applications",
    "pages": "49-49"
   },
   {
-   "id": "sec-043-81-an-adjoint-for-the-forgetful-functor-z1c-c",
-   "title": "An adjoint for the forgetful functor Z1(C) → C",
+   "id": "sec-018-81-an-adjoint-for-the-forgetful-functor-2z-12cri",
+   "title": "An adjoint for the forgetful functor $\\2Z_1(\\2C)\\rightarrow\\2C$",
    "pages": "49-50"
   },
   {
-   "id": "sec-044-82-invariants-of-3-manifolds",
+   "id": "sec-019-82-invariants-of-3-manifolds",
    "title": "Invariants of 3-manifolds",
    "pages": "50-52"
   },
   {
-   "id": "sec-045-83-subfactor-theory-the-longo-rehren-subfactor",
+   "id": "sec-020-83-subfactor-theory-the-longo-rehren-subfactor",
    "title": "Subfactor theory: The Longo-Rehren subfactor",
-   "pages": "52-56"
+   "pages": "52-54"
   },
   {
-   "id": "sec-046-12-1-br1",
-   "title": "(1 ⊗ b)R−1",
-   "pages": "56-57"
-  },
-  {
-   "id": "sec-047-2-for-a-ribbon-algebra-h-it-is-trivial-that-t-ma",
-   "title": "For a ribbon algebra H it is trivial that T maps Z(H) into itself, since θ ∈ Z(H). ✷",
-   "pages": "57-59"
-  },
-  {
-   "id": "sec-048-references",
-   "title": "References",
-   "pages": "59-62"
+   "id": "sec-021-a-on-quantum-doubles-of-finite-dimensional-hopf",
+   "title": "On Quantum Doubles of Finite Dimensional Hopf Algebras",
+   "pages": "54-62"
   }
  ],
  "provenance": {

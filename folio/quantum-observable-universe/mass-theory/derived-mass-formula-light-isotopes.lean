@@ -21,7 +21,7 @@ Empirical scorecard (light isotopes through ⁷Li):
   Atomic masses: sub-percent (-0.049% to +0.576% across A = 2..7)
   Bindings:     under-predicted by 30-76% (structural gap)
 
--- Ref: [manuscript] prop:derived-mass-formula-light-isotopes
+-- Ref: [leitner2026] prop:derived-mass-formula-light-isotopes
 -- Triggering hash update for AI sweep
 -/
 

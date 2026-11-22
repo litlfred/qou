@@ -1,0 +1,285 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1907.05459v1",
+ "source": {
+  "file": "1907.05459v1.pdf",
+  "sha256": "824ee0fcf834eda33533b1a984fae8361e7a753186cd10942916c790c7c75735",
+  "bytes": 184757,
+  "pages": 10,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-18T18:23:09Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1907.05459",
+   "version": "1",
+   "primary_class": "nucl-th",
+   "stamp_date": "11 Jul 2019"
+  },
+  "doi": null,
+  "title": "On the Cottingham formula and the electromagnetic contribution to the proton-neutron mass splitting",
+  "authors_raw": "Andr\u00e9 Walker-Loud\u2217\u2020",
+  "title_lines": [
+   "On the Cottingham formula and the electromagnetic",
+   "contribution to the proton-neutron mass splitting"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Title": "arXiv:1907.05459v1  [nucl-th]  11 Jul 2019",
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "dvips(k) 5.996 Copyright 2016 Radical Eye Software",
+   "CreationDate": "D:20190714202450-04'00'"
+  },
+  "title_raw": "On the Cottingham formula and the electromagnetic contribution to the proton-neutron mass splitting",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "arXiv:1907.05459v1 [nucl-th] 11 Jul 2019",
+   "heading": "On the Cottingham formula and the electromagnetic contribution to the proton-neutron mass splitting",
+   "text": "On the Cottingham formula and the electromagnetic contribution to the proton-neutron mass splitting",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
+ },
+ "toc": [],
+ "toc_source": "undetermined",
+ "toc_undetermined_reason": "8 inferred entries, 62% of them starting on page(s) 6, 8 of 10 \u2014 a list found ON a page, not the document's structure",
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted (8 inferred entries, 62% of them starting on page(s) 6, 8 of 10 \u2014 a list found ON a page, not the document's structure): one section per page.",
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "page-001",
+   "number": null,
+   "title": "Page 1",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1715,
+   "n_words": 254,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 3176,
+   "n_words": 537,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 3824,
+   "n_words": 606,
+   "label_start": "2",
+   "label_end": "2"
+  },
+  {
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 2338,
+   "n_words": 394,
+   "label_start": "3",
+   "label_end": "3"
+  },
+  {
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 3009,
+   "n_words": 494,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "page-006",
+   "number": null,
+   "title": "Page 6",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 2983,
+   "n_words": 481,
+   "label_start": "5",
+   "label_end": "5"
+  },
+  {
+   "id": "page-007",
+   "number": null,
+   "title": "Page 7",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 2972,
+   "n_words": 506,
+   "label_start": "6",
+   "label_end": "6"
+  },
+  {
+   "id": "page-008",
+   "number": null,
+   "title": "Page 8",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 2907,
+   "n_words": 454,
+   "label_start": "7",
+   "label_end": "7"
+  },
+  {
+   "id": "page-009",
+   "number": null,
+   "title": "Page 9",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 2812,
+   "n_words": 426,
+   "label_start": "8",
+   "label_end": "8"
+  },
+  {
+   "id": "page-010",
+   "number": null,
+   "title": "Page 10",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 3061,
+   "n_words": 470,
+   "label_start": "9",
+   "label_end": "9"
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 0,
+  "toc_inferred_entries": 8,
+  "toc_inferred_mean_confidence": 0.75,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 10,
+  "chars_total": 28797,
+  "furniture_lines_stripped": 0
+ }
+}

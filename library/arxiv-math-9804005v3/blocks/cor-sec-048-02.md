@@ -1,1 +1,1 @@
-Let A be a connected graded k-algebra with a balanced dualizing
+Let A be a connected graded k-algebra with a balanced dualizing complex. Suppose that every graded prime quotient A/p satisﬁes one of the following conditions: (i) A/p is graded Auslander (resp. and graded Kdim-(or GKdim)-Macaulay); or (ii) A/p has a normal element of positive degree. Then A is graded Auslander (resp. and graded Kdim-(or GKdim-)Macaulay)

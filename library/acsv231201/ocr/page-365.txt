@@ -1,0 +1,41 @@
+11.2 Proof of Theorem 11.1 347
+
+one can simply take v3 = v2, but we mirror the general construction described
+above). Hence,
+
+(12, 2) = W1(O1, O2)v1 + W2(A1, A2)v2 + W3(A1, O)v3
+= ( — Wi = We + 3/2, -W + 2ya + Ws/2).
+
+where 1, Yo, and w3 form a partition of unity subordinate to Ni, No, and N3,
+and
+
+®,(41, 42) = exp [i(01, 02) — (log 2, log 2) — 6(1 — t, 1 — 1) + 6tm(1, @2)]
+
+for some 6 > 0. When t = 1 and (6), 62) € Ni, then W2(61, 02) = 0 since N; and
+Nz are disjoint. Thus, the cycle C in Corollary 11.10 is the image of Nj under
+the map
+
+®, (61,02) = ! ia, OW F053 /2 1 io, OW 53/2)
+> 2 2
+When (6, 02) is sufficiently close to the origin then it lies in N; \ N3 and
+(6), 02) = 1 io, e? | oie, e?
+, 2 2
+is contained in D. As (6,62) leaves the origin and approaches the boundary,
+however, the coordinate-wise moduli of (6), #2) increase, eventually leaving
+
+D without intersecting V. Ultimately, we can apply the asymptotic arguments
+for smooth points to analyze the integral near o and obtain an expansion
+
+fee 4L(t-4, 2,5 819 (4
+Nan \2 8n ~ 256n? ° 256n3 ~—65536n4 nw )}
+
+11.2 Proof of Theorem 11.1
+
+In this section we prove Theorem 11.1. Our proof is split into the following
+steps.
+
+e In Section 11.2.1 we introduce the hyperbolicity of a homogeneous polyno-
+mial and cones of hyperbolicity for a homogeneous polynomial. We show
+how a family of cones of hyperbolicity for a homogeneous polynomial can
+be defined so as to vary semi-continuously. The definition of hyperbolicity
+at this stage is valid only for homogeneous polynomials.

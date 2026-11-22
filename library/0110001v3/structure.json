@@ -8,38 +8,39 @@
   "pages": 12,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:17Z",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "A geometric interpretation of Milnor\u2019s triple linking numbers Introduction",
+  "title": "A geometric interpretation of Milnor's triple linking numbers",
   "authors_raw": "Blake Mellor",
   "title_lines": [
    "A geometric interpretation of",
-   "Milnor\u2019s triple linking numbers"
+   "Milnor’s triple linking numbers"
   ],
-  "abstract": "Milnor\u2019s triple linking numbers of a link in the 3-sphere are interpreted geometrically in terms of the pattern of intersections of the Seifert surfaces of the components of the link. This generalizes the well known formula as an algebraic count of triple points when the pairwise linking numbers vanish.",
+  "abstract": "Milnor’s triple linking numbers of a link in the 3-sphere are interpreted geometrically in terms of the pattern of intersections of the Seifert surfaces of the components of the link. This generalizes the well known formula as an algebraic count of triple points when the pairwise linking numbers vanish.",
   "docinfo": {
    "Title": "agt-3-18.dvi",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
    "CreationDate": "D:20180803212400-04'00'"
   },
-  "title_raw": "A geometric interpretation of Milnor\u2019s triple linking numbers",
+  "title_raw": "A geometric interpretation of Milnor’s triple linking numbers",
   "title_source": "heading",
   "title_verified": true,
   "title_evidence": {
    "metadata": "agt-3-18.dvi",
-   "heading": "A geometric interpretation of Milnor\u2019s triple linking numbers Introduction",
-   "text": "A geometric interpretation of Milnor\u2019s triple linking numbers",
+   "heading": "A geometric interpretation of Milnor’s triple linking numbers Introduction",
+   "text": "A geometric interpretation of Milnor’s triple linking numbers",
    "corroborated_by": [
     "text"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "A geometric interpretation of Milnor’s triple linking numbers Introduction"
  },
  "toc": [
   {
@@ -131,7 +132,7 @@
   {
    "kind": "figure",
    "number": "4",
-   "title": "First \ufb01nger move",
+   "title": "First ﬁnger move",
    "page": 9,
    "confidence": 0.9,
    "evidence": [
@@ -144,7 +145,7 @@
   {
    "kind": "figure",
    "number": "5",
-   "title": "Second \ufb01nger move",
+   "title": "Second ﬁnger move",
    "page": 9,
    "confidence": 0.9,
    "evidence": [
@@ -157,7 +158,7 @@
   {
    "kind": "figure",
    "number": "6",
-   "title": "Third \ufb01nger move",
+   "title": "Third ﬁnger move",
    "page": 9,
    "confidence": 0.9,
    "evidence": [
@@ -262,8 +263,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 621,
-   "n_words": 92,
+   "n_chars": 619,
+   "n_words": 91,
    "label_start": null,
    "label_end": null
   },
@@ -274,7 +275,7 @@
    "level": 1,
    "page_start": 1,
    "page_end": 6,
-   "n_chars": 9434,
+   "n_chars": 9445,
    "n_words": 1775,
    "label_start": null,
    "label_end": null
@@ -286,8 +287,8 @@
    "level": 1,
    "page_start": 6,
    "page_end": 12,
-   "n_chars": 10689,
-   "n_words": 1944,
+   "n_chars": 10710,
+   "n_words": 1948,
    "label_start": null,
    "label_end": null
   },
@@ -319,6 +320,7 @@
    "items": []
   },
   "sections": 4,
-  "chars_total": 21589
+  "chars_total": 21619,
+  "furniture_lines_stripped": 0
  }
 }

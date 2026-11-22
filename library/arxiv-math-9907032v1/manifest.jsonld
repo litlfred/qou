@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-9907032v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9907032v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-math-9907032v1",
+  "title": "Combinatorial optimization in geometry",
   "contains": [
     "library/arxiv-math-9907032v1/sections/sec-front-matter",
     "library/arxiv-math-9907032v1/sections/sec-000",
@@ -23,10 +23,12 @@
     "library/arxiv-math-9907032v1/sections/sec-008",
     "library/arxiv-math-9907032v1/sections/sec-009",
     "library/arxiv-math-9907032v1/sections/sec-010",
-    "library/arxiv-math-9907032v1/sections/sec-011"
+    "library/arxiv-math-9907032v1/sections/sec-011",
+    "library/arxiv-math-9907032v1/sections/sec-012",
+    "library/arxiv-math-9907032v1/sections/sec-013"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
     "status": "stated",
@@ -36,7 +38,9 @@
   },
   "meta": {
     "doc_id": "arxiv-math-9907032v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "9907032v1.pdf",
     "source_sha256": "1850f32a2375c8ce79d0d0e501d9be3969799ca3e836937f4661d4cd8e028ee8",
     "pages": 27,

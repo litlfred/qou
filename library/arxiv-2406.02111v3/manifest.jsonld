@@ -5,11 +5,11 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2406.02111v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2406.02111v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-2406.02111v3",
+  "title": "Categorical Quantum Volume Operator",
   "contains": [
     "library/arxiv-2406.02111v3/sections/sec-000",
     "library/arxiv-2406.02111v3/sections/sec-001",
@@ -20,10 +20,17 @@
     "library/arxiv-2406.02111v3/sections/sec-006",
     "library/arxiv-2406.02111v3/sections/sec-007",
     "library/arxiv-2406.02111v3/sections/sec-008",
-    "library/arxiv-2406.02111v3/sections/sec-009"
+    "library/arxiv-2406.02111v3/sections/sec-009",
+    "library/arxiv-2406.02111v3/sections/sec-010",
+    "library/arxiv-2406.02111v3/sections/sec-011",
+    "library/arxiv-2406.02111v3/sections/sec-012",
+    "library/arxiv-2406.02111v3/sections/sec-013",
+    "library/arxiv-2406.02111v3/sections/sec-014",
+    "library/arxiv-2406.02111v3/sections/sec-015",
+    "library/arxiv-2406.02111v3/sections/sec-016"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://creativecommons.org/licenses/by/4.0/",
   "licenceRecord": {
     "status": "stated",
@@ -33,7 +40,9 @@
   },
   "meta": {
     "doc_id": "arxiv-2406.02111v3",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "2406.02111v3.pdf",
     "source_sha256": "d7be0c3f08b4d42a20fe9ae75651bec95417263c9e92d1796bb3d2cb3ea2f8e7",
     "pages": 19,
@@ -44,8 +53,8 @@
       "stamp_date": "29 Aug 2024"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

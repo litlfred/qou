@@ -92,4 +92,9 @@ theorem dimHLF_conj (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
     dimHLF (conj l) = dimHLF l := by
   rw [dimHLF, dimHLF, sz_conj l hl, prodHooks_conj l hl]
 
+/-- Subtracting the hook-length product of a sorted partition from that of its conjugate yields zero. -/
+theorem prodHooks_conj_sub_eq_zero (l : List ℕ) (hl : l.Sorted (· ≥ ·)) :
+    prodHooks (conj l) - prodHooks l = 0 := by
+  rw [prodHooks_conj l hl, Nat.sub_self]
+
 end QOU.BraidKnot.IdentityI

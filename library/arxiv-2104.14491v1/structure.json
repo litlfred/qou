@@ -7,10 +7,11 @@
   "bytes": 584429,
   "pages": 20,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,21 +21,30 @@
    "stamp_date": "29 Apr 2021"
   },
   "doi": null,
-  "title": "Khovanov polynomials for satellites and asymptotic adjoint polynomials A. Anokhinaa,\u2217 A. Morozova,b,c,\u2020 A. Popolitova,b,c,\u2021 a Institute for Theoretical and Experimental Physics, Moscow 117218, Russia",
+  "title": "Khovanov polynomials for satellites and asymptotic adjoint polynomials A. Anokhinaa,∗A. Morozova,b,c,† A. Popolitova,b,c,‡ a Institute for Theoretical and Experimental Physics, Moscow 117218, Russia",
   "authors_raw": null,
   "title_lines": [
    "Khovanov polynomials for satellites and asymptotic adjoint polynomials",
-   "A. Anokhinaa,\u2217 A. Morozova,b,c,\u2020 A. Popolitova,b,c,\u2021",
+   "A. Anokhinaa,∗A. Morozova,b,c,† A. Popolitova,b,c,‡",
    "a Institute for Theoretical and Experimental Physics, Moscow 117218, Russia"
   ],
-  "abstract": "We compute explicitly the Khovanov polynomials (using the computer program from katlas.org) for the two simplest families of the satellite knots, which are the twisted Whitehead doubles and the two- strand cables. We \ufb01nd that a quantum group decomposition for the HOMFLY polynomial of a satellite knot can be extended to the Khovanov polynomial, whose quantum group properties are not manifest. Namely, the Khovanov polynomial of a twisted Whitehead double or two-strand cable (the two simplest satellite families) can be presented as a naively deformed linear combination of the pattern and companion invariants. For a given companion, the satellite polynomial \u201csmoothly\u201d depends on the pattern but for the \u201cjump\u201d at one critical point de\ufb01ned by the s-invariant of the companion knot. A similar phenomenon is known for the knot Floer homology and \u03c4-invariant for the same kind of satellites",
+  "abstract": "We compute explicitly the Khovanov polynomials (using the computer program from katlas.org) for the two simplest families of the satellite knots, which are the twisted Whitehead doubles and the two- strand cables. We ﬁnd that a quantum group decomposition for the HOMFLY polynomial of a satellite knot can be extended to the Khovanov polynomial, whose quantum group properties are not manifest. Namely, the Khovanov polynomial of a twisted Whitehead double or two-strand cable (the two simplest satellite families) can be presented as a naively deformed linear combination of the pattern and companion invariants. For a given companion, the satellite polynomial “smoothly” depends on the pattern but for the “jump” at one critical point deﬁned by the s-invariant of the companion knot. A similar phenomenon is known for the knot Floer homology and τ-invariant for the same kind of satellites",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20210430003604Z",
-   "Creator": "LaTeX with hyperref",
    "Producer": "pdfTeX-1.40.21",
-   "Title": ""
-  }
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20210430003604Z"
+  },
+  "title_raw": "Khovanov polynomials for satellites and asymptotic adjoint polynomials A. Anokhinaa,∗A. Morozova,b,c,† A. Popolitova,b,c,‡ a Institute for Theoretical and Experimental Physics, Moscow 117218, Russia",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "Khovanov polynomials for satellites and asymptotic adjoint polynomials Contents",
+   "outline": "1 Introduction",
+   "text": "Khovanov polynomials for satellites and asymptotic adjoint polynomials A. Anokhinaa,∗A. Morozova,b,c,† A. Popolitova,b,c,‡ a Institute for Theoretical and Experimental Physics, Moscow 117218, Russia",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "Khovanov polynomials for satellites and asymptotic adjoint polynomials A. Anokhinaa,∗ A. Morozova,b,c,† A. Popolitova,b,c,‡ a Institute for Theoretical and Experimental Physics, Moscow 117218, Russia"
  },
  "toc": [
   {
@@ -42,230 +52,579 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "The knots we study and the questions we ask",
    "page": 3,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Coloured decompositions for the simplest satellites",
    "page": 4,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "The pattern decomposition",
    "page": 5,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "How to get the satellite class from a knot diagram",
    "page": 5,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Summary of Jones formulae",
    "page": 6,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 1,
    "title": "Khovanov-evolution formulae for satellite families",
    "page": 6,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Preliminaries",
    "page": 6,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Positive pattern-companion decompositions",
    "page": 7,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "False adjoint Khovanov polynomials",
    "page": 7,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "Explicit form of the pattern and companion invariants",
    "page": 8,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "The pattern-defining polynomial",
    "page": 8,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "AAK for the simplest prime knots",
    "page": 9,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "AAK for the two-strand torus knots",
    "page": 9,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 3,
    "title": "General formulae",
    "page": 10,
    "source": "outline",
-   "number": "4.3.1"
+   "number": "4.3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 3,
    "title": "Reduced vs unreduced polynomials",
    "page": 10,
    "source": "outline",
-   "number": "4.3.2"
+   "number": "4.3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 3,
    "title": "Mirror symmetry",
    "page": 10,
    "source": "outline",
-   "number": "4.3.3"
+   "number": "4.3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "AAK for the twist knots",
    "page": 10,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 3,
    "title": "General formulae",
    "page": 11,
    "source": "outline",
-   "number": "4.4.1"
+   "number": "4.4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 3,
    "title": "Why there is no mirror symmetry?",
    "page": 11,
    "source": "outline",
-   "number": "4.4.2"
+   "number": "4.4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "Double-evolution phase diagrams",
    "page": 11,
    "source": "outline",
-   "number": "4.5"
+   "number": "4.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 1,
    "title": "Eigenvalue expressions, polynomiality and positivity",
    "page": 11,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 1,
    "title": "Possible applications and further development",
    "page": 12,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 1,
    "title": "A Cabling and an invariant definition of the m-strand satellite",
    "page": 16,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 1,
    "title": "B First symmetric polynomials for the simplest knot families",
    "page": 17,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "B.1 Two-strand torus knots",
    "page": 18,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 2,
    "title": "B.2 Twist knots",
    "page": 18,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 1,
    "title": "C Technical guidance to the experimental data",
    "page": 19,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 2,
    "title": "C.1 Simplest knots",
    "page": 19,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 2,
    "title": "C.2 Simplest knot families",
    "page": 19,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 2,
    "title": "C.3 Precaution",
    "page": 20,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Torus and twist satellites of the ﬁgure-eight knot",
+   "page": 3,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Two-stand torus and twist knots",
+   "page": 3,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Double-evolution domains for torus and twist companions",
+   "page": 11,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Basic properties of the knot polynomials we study. Torn",
+   "page": 17,
+   "confidence": 0.6,
+   "evidence": [
+    "in-sequence"
+   ],
+   "page_label": "17"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 4200,
+   "n_words": 1185,
+   "label_start": "1",
+   "label_end": "2"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
-   "page_start": 1,
+   "page_start": 2,
    "page_end": 3,
-   "n_chars": 8122,
-   "n_words": 1839
+   "n_chars": 5286,
+   "n_words": 841,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
    "id": "sec-001-2-the-knots-we-study-and-the-questions-we-ask",
@@ -274,8 +633,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 2227,
-   "n_words": 381
+   "n_chars": 2273,
+   "n_words": 393,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
    "id": "sec-002-21-coloured-decompositions-for-the-simplest-sate",
@@ -284,8 +645,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 1776,
-   "n_words": 300
+   "n_chars": 1839,
+   "n_words": 318,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
    "id": "sec-003-22-the-pattern-decomposition",
@@ -294,8 +657,10 @@
    "level": 2,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 1079,
-   "n_words": 200
+   "n_chars": 1110,
+   "n_words": 208,
+   "label_start": "5",
+   "label_end": "5"
   },
   {
    "id": "sec-004-23-how-to-get-the-satellite-class-from-a-knot-di",
@@ -304,8 +669,10 @@
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 2913,
-   "n_words": 513
+   "n_chars": 2972,
+   "n_words": 532,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
    "id": "sec-005-24-summary-of-jones-formulae",
@@ -314,8 +681,10 @@
    "level": 2,
    "page_start": 6,
    "page_end": 6,
-   "n_chars": 1911,
-   "n_words": 360
+   "n_chars": 1941,
+   "n_words": 368,
+   "label_start": "6",
+   "label_end": "6"
   },
   {
    "id": "sec-006-3-khovanov-evolution-formulae-for-satellite-fami",
@@ -324,8 +693,10 @@
    "level": 1,
    "page_start": 6,
    "page_end": 6,
-   "n_chars": 110,
-   "n_words": 18
+   "n_chars": 161,
+   "n_words": 23,
+   "label_start": "6",
+   "label_end": "6"
   },
   {
    "id": "sec-007-31-preliminaries",
@@ -334,8 +705,10 @@
    "level": 2,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 404,
-   "n_words": 82
+   "n_chars": 415,
+   "n_words": 85,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
    "id": "sec-008-32-positive-pattern-companion-decompositions",
@@ -344,8 +717,10 @@
    "level": 2,
    "page_start": 7,
    "page_end": 7,
-   "n_chars": 1618,
-   "n_words": 335
+   "n_chars": 1661,
+   "n_words": 339,
+   "label_start": "7",
+   "label_end": "7"
   },
   {
    "id": "sec-009-33-false-adjoint-khovanov-polynomials",
@@ -354,8 +729,10 @@
    "level": 2,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 1036,
-   "n_words": 176
+   "n_chars": 1084,
+   "n_words": 194,
+   "label_start": "7",
+   "label_end": "8"
   },
   {
    "id": "sec-010-4-explicit-form-of-the-pattern-and-companion-inv",
@@ -363,177 +740,284 @@
    "title": "Explicit form of the pattern and companion invariants",
    "level": 1,
    "page_start": 8,
-   "page_end": 9,
-   "n_chars": 2102,
-   "n_words": 390
+   "page_end": 8,
+   "n_chars": 818,
+   "n_words": 128,
+   "label_start": "8",
+   "label_end": "8"
   },
   {
-   "id": "sec-011-42-aak-for-the-simplest-prime-knots",
+   "id": "sec-011-41-the-pattern-defining-polynomial",
+   "number": "4.1",
+   "title": "The pattern-defining polynomial",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 1335,
+   "n_words": 264,
+   "label_start": "8",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-012-42-aak-for-the-simplest-prime-knots",
    "number": "4.2",
    "title": "AAK for the simplest prime knots",
    "level": 2,
    "page_start": 9,
    "page_end": 9,
-   "n_chars": 1585,
-   "n_words": 279
+   "n_chars": 1645,
+   "n_words": 312,
+   "label_start": "9",
+   "label_end": "9"
   },
   {
-   "id": "sec-012-43-aak-for-the-two-strand-torus-knots",
+   "id": "sec-013-43-aak-for-the-two-strand-torus-knots",
    "number": "4.3",
    "title": "AAK for the two-strand torus knots",
    "level": 2,
    "page_start": 9,
    "page_end": 10,
-   "n_chars": 726,
-   "n_words": 132
+   "n_chars": 758,
+   "n_words": 136,
+   "label_start": "9",
+   "label_end": "10"
   },
   {
-   "id": "sec-013-431-general-formulae",
+   "id": "sec-014-431-general-formulae",
    "number": "4.3.1",
    "title": "General formulae",
    "level": 3,
    "page_start": 10,
    "page_end": 10,
-   "n_chars": 794,
-   "n_words": 140
+   "n_chars": 833,
+   "n_words": 164,
+   "label_start": "10",
+   "label_end": "10"
   },
   {
-   "id": "sec-014-432-reduced-vs-unreduced-polynomials",
+   "id": "sec-015-432-reduced-vs-unreduced-polynomials",
    "number": "4.3.2",
    "title": "Reduced vs unreduced polynomials",
    "level": 3,
    "page_start": 10,
    "page_end": 10,
-   "n_chars": 366,
-   "n_words": 67
+   "n_chars": 410,
+   "n_words": 82,
+   "label_start": "10",
+   "label_end": "10"
   },
   {
-   "id": "sec-015-433-mirror-symmetry",
+   "id": "sec-016-433-mirror-symmetry",
    "number": "4.3.3",
    "title": "Mirror symmetry",
    "level": 3,
    "page_start": 10,
    "page_end": 10,
-   "n_chars": 419,
-   "n_words": 67
+   "n_chars": 440,
+   "n_words": 74,
+   "label_start": "10",
+   "label_end": "10"
   },
   {
-   "id": "sec-016-44-aak-for-the-twist-knots",
+   "id": "sec-017-44-aak-for-the-twist-knots",
    "number": "4.4",
    "title": "AAK for the twist knots",
    "level": 2,
    "page_start": 10,
    "page_end": 11,
-   "n_chars": 1035,
-   "n_words": 183
+   "n_chars": 612,
+   "n_words": 113,
+   "label_start": "10",
+   "label_end": "11"
   },
   {
-   "id": "sec-017-442-why-there-is-no-mirror-symmetry",
+   "id": "sec-018-441-general-formulae",
+   "number": "4.4.1",
+   "title": "General formulae",
+   "level": 3,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 433,
+   "n_words": 69,
+   "label_start": "11",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-019-442-why-there-is-no-mirror-symmetry",
    "number": "4.4.2",
    "title": "Why there is no mirror symmetry?",
    "level": 3,
    "page_start": 11,
    "page_end": 11,
-   "n_chars": 215,
-   "n_words": 37
+   "n_chars": 249,
+   "n_words": 44,
+   "label_start": "11",
+   "label_end": "11"
   },
   {
-   "id": "sec-018-45-double-evolution-phase-diagrams",
+   "id": "sec-020-45-double-evolution-phase-diagrams",
    "number": "4.5",
    "title": "Double-evolution phase diagrams",
    "level": 2,
    "page_start": 11,
-   "page_end": 12,
-   "n_chars": 2473,
-   "n_words": 417
+   "page_end": 11,
+   "n_chars": 806,
+   "n_words": 125,
+   "label_start": "11",
+   "label_end": "11"
   },
   {
-   "id": "sec-019-6-possible-applications-and-further-development",
+   "id": "sec-021-5-eigenvalue-expressions-polynomiality-and-posit",
+   "number": "5",
+   "title": "Eigenvalue expressions, polynomiality and positivity",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 1705,
+   "n_words": 342,
+   "label_start": "11",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-022-6-possible-applications-and-further-development",
    "number": "6",
    "title": "Possible applications and further development",
    "level": 1,
    "page_start": 12,
-   "page_end": 17,
-   "n_chars": 15423,
-   "n_words": 2508
+   "page_end": 16,
+   "n_chars": 11726,
+   "n_words": 1710,
+   "label_start": "12",
+   "label_end": "16"
   },
   {
-   "id": "sec-020-b-first-symmetric-polynomials-for-the-simplest-k",
+   "id": "sec-023-a-cabling-and-an-invariant-definition-of-the-m-s",
+   "number": null,
+   "title": "A Cabling and an invariant definition of the m-strand satellite",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 3703,
+   "n_words": 775,
+   "label_start": "16",
+   "label_end": "17"
+  },
+  {
+   "id": "sec-024-b-first-symmetric-polynomials-for-the-simplest-k",
    "number": null,
    "title": "B First symmetric polynomials for the simplest knot families",
    "level": 1,
    "page_start": 17,
    "page_end": 18,
-   "n_chars": 185,
-   "n_words": 31
+   "n_chars": 241,
+   "n_words": 38,
+   "label_start": "17",
+   "label_end": "18"
   },
   {
-   "id": "sec-021-b1-two-strand-torus-knots",
+   "id": "sec-025-b1-two-strand-torus-knots",
    "number": null,
    "title": "B.1 Two-strand torus knots",
    "level": 2,
    "page_start": 18,
    "page_end": 18,
-   "n_chars": 752,
-   "n_words": 119
+   "n_chars": 782,
+   "n_words": 129,
+   "label_start": "18",
+   "label_end": "18"
   },
   {
-   "id": "sec-022-b2-twist-knots",
+   "id": "sec-026-b2-twist-knots",
    "number": null,
    "title": "B.2 Twist knots",
    "level": 2,
    "page_start": 18,
    "page_end": 19,
-   "n_chars": 1796,
-   "n_words": 307
+   "n_chars": 1810,
+   "n_words": 313,
+   "label_start": "18",
+   "label_end": "19"
   },
   {
-   "id": "sec-023-c-technical-guidance-to-the-experimental-data",
+   "id": "sec-027-c-technical-guidance-to-the-experimental-data",
    "number": null,
    "title": "C Technical guidance to the experimental data",
    "level": 1,
    "page_start": 19,
    "page_end": 19,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 43,
+   "n_words": 6,
+   "label_start": "19",
+   "label_end": "19"
   },
   {
-   "id": "sec-024-c1-simplest-knots",
+   "id": "sec-028-c1-simplest-knots",
    "number": null,
    "title": "C.1 Simplest knots",
    "level": 2,
    "page_start": 19,
    "page_end": 19,
-   "n_chars": 873,
-   "n_words": 178
+   "n_chars": 893,
+   "n_words": 185,
+   "label_start": "19",
+   "label_end": "19"
   },
   {
-   "id": "sec-025-c2-simplest-knot-families",
+   "id": "sec-029-c2-simplest-knot-families",
    "number": null,
    "title": "C.2 Simplest knot families",
    "level": 2,
    "page_start": 19,
    "page_end": 20,
-   "n_chars": 765,
-   "n_words": 105
+   "n_chars": 786,
+   "n_words": 108,
+   "label_start": "19",
+   "label_end": "20"
   },
   {
-   "id": "sec-026-c3-precaution",
+   "id": "sec-030-c3-precaution",
    "number": null,
    "title": "C.3 Precaution",
    "level": 2,
    "page_start": 20,
    "page_end": 20,
-   "n_chars": 305,
-   "n_words": 53
+   "n_chars": 317,
+   "n_words": 57,
+   "label_start": "20",
+   "label_end": "20"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 31,
-  "sections": 27,
-  "chars_total": 51010,
+  "toc_inferred_entries": 0,
+  "figure_entries": 4,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 0,
+    "items": []
+   },
+   "found_not_listed": {
+    "count": 2,
+    "items": [
+     "6 Possible applications and further development",
+     "6 Possible applications and further development"
+    ]
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 32,
+  "chars_total": 53287,
+  "furniture_lines_stripped": 21,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "KhCab_Text.tex",
@@ -546,6 +1030,11 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "result": "no matching \\section"
@@ -554,7 +1043,7 @@
      "id": "sec-001-2-the-knots-we-study-and-the-questions-we-ask",
      "title": "The knots we study and the questions we ask",
      "prose_ratio": 0.984,
-     "coverage_ratio": 0.934,
+     "coverage_ratio": 0.933,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -562,7 +1051,7 @@
      "id": "sec-002-21-coloured-decompositions-for-the-simplest-sate",
      "title": "Coloured decompositions for the simplest satellites",
      "prose_ratio": 0.632,
-     "coverage_ratio": 0.943,
+     "coverage_ratio": 0.976,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -588,7 +1077,7 @@
      "id": "sec-006-3-khovanov-evolution-formulae-for-satellite-fami",
      "title": "Khovanov-evolution formulae for satellite families",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.692,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -596,7 +1085,7 @@
      "id": "sec-007-31-preliminaries",
      "title": "Preliminaries",
      "prose_ratio": 0.926,
-     "coverage_ratio": 0.962,
+     "coverage_ratio": 0.926,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -604,7 +1093,7 @@
      "id": "sec-008-32-positive-pattern-companion-decompositions",
      "title": "Positive pattern-companion decompositions",
      "prose_ratio": 0.883,
-     "coverage_ratio": 0.828,
+     "coverage_ratio": 0.841,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -612,25 +1101,28 @@
      "id": "sec-009-33-false-adjoint-khovanov-polynomials",
      "title": "False adjoint Khovanov polynomials",
      "prose_ratio": 0.964,
-     "coverage_ratio": 0.982,
+     "coverage_ratio": 0.964,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-010-4-explicit-form-of-the-pattern-and-companion-inv",
      "title": "Explicit form of the pattern and companion invariants",
-     "prose_ratio": 0.788,
-     "coverage_ratio": 0.931,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.548,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-011-42-aak-for-the-simplest-prime-knots",
+     "id": "sec-011-41-the-pattern-defining-polynomial",
+     "title": "The pattern-defining polynomial",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-42-aak-for-the-simplest-prime-knots",
      "title": "AAK for the simplest prime knots",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-012-43-aak-for-the-two-strand-torus-knots",
+     "id": "sec-013-43-aak-for-the-two-strand-torus-knots",
      "title": "AAK for the two-strand torus knots",
      "prose_ratio": 0.961,
      "coverage_ratio": 1.0,
@@ -638,15 +1130,15 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-013-431-general-formulae",
+     "id": "sec-014-431-general-formulae",
      "title": "General formulae",
      "prose_ratio": 0.941,
-     "coverage_ratio": 0.696,
+     "coverage_ratio": 0.64,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-014-432-reduced-vs-unreduced-polynomials",
+     "id": "sec-015-432-reduced-vs-unreduced-polynomials",
      "title": "Reduced vs unreduced polynomials",
      "prose_ratio": 0.958,
      "coverage_ratio": 1.0,
@@ -654,71 +1146,90 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-015-433-mirror-symmetry",
+     "id": "sec-016-433-mirror-symmetry",
      "title": "Mirror symmetry",
      "prose_ratio": 0.373,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-016-44-aak-for-the-twist-knots",
+     "id": "sec-017-44-aak-for-the-twist-knots",
      "title": "AAK for the twist knots",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-017-442-why-there-is-no-mirror-symmetry",
+     "id": "sec-018-441-general-formulae",
+     "title": "General formulae",
+     "prose_ratio": 0.235,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-019-442-why-there-is-no-mirror-symmetry",
      "title": "Why there is no mirror symmetry?",
      "prose_ratio": 0.812,
-     "coverage_ratio": 0.933,
+     "coverage_ratio": 0.778,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-018-45-double-evolution-phase-diagrams",
+     "id": "sec-020-45-double-evolution-phase-diagrams",
      "title": "Double-evolution phase diagrams",
-     "prose_ratio": 0.923,
-     "coverage_ratio": 0.947,
+     "prose_ratio": 0.906,
+     "coverage_ratio": 0.98,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-019-6-possible-applications-and-further-development",
+     "id": "sec-021-5-eigenvalue-expressions-polynomiality-and-posit",
+     "title": "Eigenvalue expressions, polynomiality and positivity",
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.918,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-022-6-possible-applications-and-further-development",
      "title": "Possible applications and further development",
      "prose_ratio": 0.865,
-     "coverage_ratio": 0.349,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.409,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
-     "id": "sec-020-b-first-symmetric-polynomials-for-the-simplest-k",
+     "id": "sec-023-a-cabling-and-an-invariant-definition-of-the-m-s",
+     "title": "A Cabling and an invariant definition of the m-strand satellite",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-b-first-symmetric-polynomials-for-the-simplest-k",
      "title": "B First symmetric polynomials for the simplest knot families",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-021-b1-two-strand-torus-knots",
+     "id": "sec-025-b1-two-strand-torus-knots",
      "title": "B.1 Two-strand torus knots",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-022-b2-twist-knots",
+     "id": "sec-026-b2-twist-knots",
      "title": "B.2 Twist knots",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-023-c-technical-guidance-to-the-experimental-data",
+     "id": "sec-027-c-technical-guidance-to-the-experimental-data",
      "title": "C Technical guidance to the experimental data",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-024-c1-simplest-knots",
+     "id": "sec-028-c1-simplest-knots",
      "title": "C.1 Simplest knots",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-025-c2-simplest-knot-families",
+     "id": "sec-029-c2-simplest-knot-families",
      "title": "C.2 Simplest knot families",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-026-c3-precaution",
+     "id": "sec-030-c3-precaution",
      "title": "C.3 Precaution",
      "result": "no matching \\section"
     }

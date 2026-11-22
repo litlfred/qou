@@ -1,0 +1,102 @@
+PHYSICAL REVIEW D 108, 106023 (2023)
+
+Knot-quiver correspondence for double twist knots
+
+Vivek Kumar Singh®”
+Center for Quantum and Topological Systems (CQTS), NYUAD Research Institute,
+New York University Abu Dhabi, P.O. Box 129188, Abu Dhabi, United Arab Emirates
+
+Sachin Chauhan® and P. Ramadevi
+Department of Physics, Indian Institute of Technology Bombay, Powai, Mumbai 400076, India
+
+Aditya Dwivedi® and B. P. Mandal®
+Department of Physics, Institute of Science, Banaras Hindu University, Varanasi 221005, India
+
+Siddharth Dwivedi®
+Department of Physics, School of Physical Sciences, Central University of Rajasthan, Ajmer, India
+
+® (Received 18 March 2023; accepted 10 October 2023; published 30 November 2023)
+
+We obtain a quiver representation for a family of knots called double twist knots K(p,—m). Mainly, we
+exploit the reverse engineering of Melvin-Morton-Rozansky formalism to deduce the pattern of the matrix
+
+for these quivers.
+
+DOI: 10.1103/PhysRevD.108.106023
+
+I. INTRODUCTION
+
+Knot-quiver correspondence (KQC) conjectured by
+Kucharski-Reineke-Stosic-Sulkowski [1] provides a new
+encoding of HOMFLY-PT invariants of knots in terms of the
+representation theory of quivers. Such a correspondence
+was motivated by studying the supersymmetric quiver
+quantum mechanics description of BPS states in brane
+systems describing knots [2].
+
+Quivers are denoted as directed graphs with finite number
+of vertices connected by oriented edges. For a quiver with n
+number of vertices, the directed graph is encoded inan x n
+quiver matrix C. The diagonal elements C;; refer to the
+number of loops at the ith vertex, and the off-diagonal
+elements C;; give the number of oriented edges from the
+vertex i to the vertex j. Hence, the elements in the matrix C
+are non-negative integers.
+
+According to the conjecture, at least one quiver graph
+Qx is associated with the knot K satisfying the exponential
+growth property of the symmetric r-colored HOMFLY-PT
+polynomials PX(A,q) (normalized appropriately)! as
+
+“vks2024@nyu.edu
+
+'This normalization includes dividing the reduced r-colored
+HOMELY-PT polynomial [P*(A,q) in variables A and gq] by q-
+Pochhammer (q?; q”), (also known as intermediate normalization).
+
+Published by the American Physical Society under the terms of
+the Creative Commons Attribution 4.0 International license.
+Further distribution of this work must maintain attribution to
+the author(s) and the published article’s title, journal citation,
+and DOI. Funded by SCOAP”.
+
+2470-0010/2023/108(10)/106023(11)
+
+106023-1
+
+elaborated in Refs. [1,3,4]. In the context of KQC, the
+ci) = cw),
+Further, these quiver matrix elements can be negative
+integers and be made non-negative by change of framing.
+Particularly, for the knot K which obey exponential growth
+property, we can write the generating series for P(A, q) in
+two equivalent forms,
+
+quivers are symmetric quivers. That is,
+
+Po, (x) = OPK (A.g)a"
+
+d;
+
+7 d-4) DEC IU] I a
+
+i=! j=l
+
+= [TILL G- Ciixtarr yee, (1)
+
+to extract the quiver matrix C\) as well as the mo-
+tivic Donaldson-Thomas invariants Qqj. Here, d=
+(dy,dy,...d,)>0 and x@=JJ" x with x; =
+xA%ig%"!(—1)"%, Note that sets {d;} satisfy the condition
+r=d,+d,+---:+d,. The procedure to obtain such a
+motivic series for any knot is still an open question.
+
+For a class of torus knots (2,2p + 1), the twist knots
+K,,(p €Z) and other knots up to seven crossings the quiver
+presentation were obtained [1,5]. Except for unknot and
+trefoil, knots have more than one quiver presentation with
+the same number of nodes, indicating that the correspon-
+dence of knots to quivers is not unique. In Ref. [6],
+equivalent quivers with the same number of nodes were
+
+Published by the American Physical Society

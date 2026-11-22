@@ -1,0 +1,1 @@
+K = L (1 + L)−1. We shall need three following identities for Bessel functions which are degeneration of the identities (3.13–15) in [6] for the hypergeometric function. The ﬁrst identity is due to Lommel (see [39], Section 3.2 or [12], 7.2.(60)) Jν(2z) J1−ν(2z) + J−ν(2z) Jν−1(2z) = sin πν π z . (2.4) The other two identities are the following.

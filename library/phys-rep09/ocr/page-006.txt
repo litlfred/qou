@@ -1,0 +1,71 @@
+156 S. Blanes et al. / Physics Reports 470 (2009) 151-238
+
+35
+
+Source: ISI Web of Science (2007)
+
+20
+
+15
+
+Number of citations
+
+va
+
+od
+1
+
+0 fe, 1 1 1 1
+1960 1970 1980 1990 2000
+
+Year
+
+Fig. 1. Persistency of Magnus’ original paper: number of citations per year.
+
+800
+
+»
+700 + | Source: ISI Web of Science (2007) ”
+
+600 F
+
+500 -
+
+400 F
+
+300 F
+
+Cumulative no. citations
+
+200
+
+100
+
+1960 1970 1980 1990 2000
+Year
+
+Fig. 2. Persistency of Magnus’ original paper: cumulative number of citations.
+
+required are relatively straightforward. Section 5 is devoted to an aspect that has been most recently studied in this setting:
+the design of new algorithms for the numerical integration of differential equations based on the Magnus expansion. There,
+after a brief characterization of numerical integrators, we present several methods that are particularly efficient, as shown
+by the examples considered. Given the relevance of the new numerical schemes, we briefly review in Section 6 some of its
+applications in different contexts, ranging from boundary-value problems to stochastic differential equations. In Section 7,
+on the other hand, applications of the ME to significant physical problems are considered. Finally, the paper ends with some
+concluding remarks.
+
+1.2. Mathematical preliminaries and notations
+
+Here we collect, for the reader’s convenience, some mathematical expressions, terminology and notations which appear
+most frequently in the text. Needless to say, we have made no attempt at being completely rigorous. We just try to facilitate
+the casual reading of isolated sections.
+
+As already mentioned, the natural mathematical habitat for most of the objects we will deal with in this report is a Lie
+group, or its associated Lie algebra. Although most of the results discussed in these pages are valid in a more general setting,
+we will essentially consider only matrix Lie groups and algebras.
+
+By a Lie group § we understand a set which combines an algebraic structure with a topological one. At the algebraic level,
+every two elements of § can be combined by an internal composition law to produce a third element, also in ¢. The law is
+required to be associative, to have an identity element, and every element must have an inverse. The ordinary product and
+the inverse of the invertible matrix, play that role in the cases we are more interested in. The topological exigence forces the
+composition law and the association of an inverse to be sufficiently smooth functions.

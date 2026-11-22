@@ -6,7 +6,9 @@
   "sha256": "cdeab7717dcb9567a3b7ee10a7afe9dc583fabb9fdfa8cbd2639a493242162e8",
   "bytes": 113993,
   "pages": 12,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -20,214 +22,325 @@
   "doi": null,
   "title": "Nuclear beta- and gamma- collective bands in the SU_q(2) rotator model",
   "authors_raw": "N. MINKOV, S. B. DRENSKA, P. P. RAYCHEV, R. P. ROUSSEV",
-  "abstract": "The SU q (2) rotator model is used for describing the β1- and γ1-bands of even- even rare earth and actinide collective nuclei. Good results are o btained in nuclei with valence pair number N > 10. It is shown that in the excited bands the violation of the exact SU(2) symmetry is generally stronger tha n in the ground state bands, indicating the presence of a nonadiabatic perturb ation caused by the excited vibrational degrees of freedom. The physical content o f the parameter q is discussed. Predictions of the SU q(2) model for B(E2) intraband transitions in excited bands are presented and the need for speciﬁc experiment al data is pointed out.",
+  "title_lines": [
+   "NUCLEAR β- AND γ- COLLECTIVE BANDS IN THE SUq(2)",
+   "ROTATOR MODEL"
+  ],
+  "abstract": "The SUq(2) rotator model is used for describing the β1- and γ1-bands of even- even rare earth and actinide collective nuclei. Good results are obtained in nuclei with valence pair number N > 10. It is shown that in the excited bands the violation of the exact SU(2) symmetry is generally stronger than in the ground state bands, indicating the presence of a nonadiabatic perturbation caused by the excited vibrational degrees of freedom. The physical content of the parameter q is discussed. Predictions of the SUq(2) model for B(E2) intraband transitions in excited bands are presented and the need for speciﬁc experimental data is pointed out.",
   "docinfo": {
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20211123220057-05'00'"
   },
-  "title_prev": "NUCLEAR β - AND γ- COLLECTIVE BANDS IN THE SU q(2) ROTATOR MODEL",
-  "title_lines": [
-   "NUCLEAR β - AND γ- COLLECTIVE BANDS IN THE SU q(2)",
-   "ROTATOR MODEL"
-  ]
+  "title_raw": "NUCLEAR β- AND γ- COLLECTIVE BANDS IN THE SUq(2) ROTATOR MODEL",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "NUCLEAR β - AND γ - COLLECTIVE BANDS IN THE SU q (2) ROTATOR MODEL N. MINKOV, S. B. DRENSKA, P. P. RAYCHEV, R. P. ROUSSEV D. BONATSOS ABSTRACT The SU q (2) rotator model is used for describing the β 1 - and γ 1 -bands of evenwith valence pair number N > 10 . It is shown that in the excited bands the",
+   "text": "NUCLEAR β- AND γ- COLLECTIVE BANDS IN THE SUq(2) ROTATOR MODEL",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "NUCLEAR β- AND γ- COLLECTIVE BANDS IN THE SUq(2) ROTATOR MODEL"
  },
- "toc": [
+ "toc": [],
+ "toc_source": "undetermined",
+ "toc_undetermined_reason": "5 inferred entries, 60% of them starting on page(s) 1, 9 of 12 — a list found ON a page, not the document's structure",
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted (5 inferred entries, 60% of them starting on page(s) 1, 9 of 12 — a list found ON a page, not the document's structure): one section per page.",
+ "figures": [
   {
-   "level": 1,
-   "title": "Abstract",
-   "page": 1,
-   "source": "inferred",
-   "number": null
+   "kind": "table",
+   "number": "1",
+   "title": "Parameters of the ﬁts of β1and γ1-bands in the rare earth and actinide regions using eq. (5). The deformation parameters τβ and τγ, the quality factors σβ and σγ (in keV) (eq",
+   "page": 4,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "4"
   },
   {
-   "level": 1,
-   "title": "Introduction",
-   "page": 1,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "SU q(2) symmetry in exited collective bands",
-   "page": 2,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "B q(E2) transitions in the exited bands",
-   "page": 6,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "Conclusion",
-   "page": 9,
-   "source": "inferred",
-   "number": "5"
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 9,
-   "source": "inferred",
-   "number": "6"
-  },
-  {
-   "level": 1,
-   "title": "V. G. Drinfeld, in Proceedings of the International Congress of Mathematicia ns,",
-   "page": 9,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "D. Bonatsos, E. N. Argyres, S. B. Drenska, P. P. Raychev, R. P. Roussev and",
-   "page": 9,
-   "source": "inferred",
-   "number": "5"
-  },
-  {
-   "level": 1,
-   "title": "A. Bohr and B. R. Mottelson, Nuclear Structure Vol. II (Benjamin, New York,",
-   "page": 10,
-   "source": "inferred",
-   "number": "15"
-  },
-  {
-   "level": 1,
-   "title": "J. Eisenberg and W. Greiner, Nuclear Theory Vol. I (North-Holland, Amster-",
-   "page": 10,
-   "source": "inferred",
-   "number": "16"
-  },
-  {
-   "level": 1,
-   "title": "V. M. Belenki and E. P. Grigoriev, Structure of Even Nuclei (Energoatomizdat,",
-   "page": 10,
-   "source": "inferred",
-   "number": "19"
+   "kind": "figure",
+   "number": "1",
+   "title": "Deformation parameters τg (circles, connected by solid lines) and τγ (triangles, connected by dashed lines) for ground state bands and γ1-bands respectively of Er isotopes (taken from Table 1) are plotted versus the valence pair number N",
+   "page": 5,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "5"
   }
  ],
- "toc_source": "inferred",
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-abstract",
+   "id": "page-001",
    "number": null,
-   "title": "Abstract",
+   "title": "Page 1",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 653,
-   "n_words": 114
+   "n_chars": 2537,
+   "n_words": 405,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
-   "id": "sec-001-1-introduction",
-   "number": "1",
-   "title": "Introduction",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 2,
-   "n_chars": 3060,
-   "n_words": 545
-  },
-  {
-   "id": "sec-002-3-su-q2-symmetry-in-exited-collective-bands",
-   "number": "3",
-   "title": "SU q(2) symmetry in exited collective bands",
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
    "level": 1,
    "page_start": 2,
-   "page_end": 6,
-   "n_chars": 7148,
-   "n_words": 1281
+   "page_end": 2,
+   "n_chars": 1958,
+   "n_words": 340,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
-   "id": "sec-003-4-b-qe2-transitions-in-the-exited-bands",
-   "number": "4",
-   "title": "B q(E2) transitions in the exited bands",
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 2652,
+   "n_words": 456,
+   "label_start": "3",
+   "label_end": "3"
+  },
+  {
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1926,
+   "n_words": 319,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 1441,
+   "n_words": 251,
+   "label_start": "5",
+   "label_end": "5"
+  },
+  {
+   "id": "page-006",
+   "number": null,
+   "title": "Page 6",
    "level": 1,
    "page_start": 6,
-   "page_end": 9,
-   "n_chars": 5402,
-   "n_words": 1064
+   "page_end": 6,
+   "n_chars": 2023,
+   "n_words": 380,
+   "label_start": "6",
+   "label_end": "6"
   },
   {
-   "id": "sec-004-5-conclusion",
-   "number": "5",
-   "title": "Conclusion",
+   "id": "page-007",
+   "number": null,
+   "title": "Page 7",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1314,
+   "n_words": 250,
+   "label_start": "7",
+   "label_end": "7"
+  },
+  {
+   "id": "page-008",
+   "number": null,
+   "title": "Page 8",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 1843,
+   "n_words": 320,
+   "label_start": "8",
+   "label_end": "8"
+  },
+  {
+   "id": "page-009",
+   "number": null,
+   "title": "Page 9",
    "level": 1,
    "page_start": 9,
    "page_end": 9,
-   "n_chars": 1353,
-   "n_words": 233
+   "n_chars": 2792,
+   "n_words": 461,
+   "label_start": "9",
+   "label_end": "9"
   },
   {
-   "id": "sec-005-6-references",
-   "number": "6",
-   "title": "References",
-   "level": 1,
-   "page_start": 9,
-   "page_end": 9,
-   "n_chars": 95,
-   "n_words": 20
-  },
-  {
-   "id": "sec-006-3-v-g-drinfeld-in-proceedings-of-the-internation",
-   "number": "3",
-   "title": "V. G. Drinfeld, in Proceedings of the International Congress of Mathematicia ns,",
-   "level": 1,
-   "page_start": 9,
-   "page_end": 9,
-   "n_chars": 165,
-   "n_words": 31
-  },
-  {
-   "id": "sec-007-5-d-bonatsos-e-n-argyres-s-b-drenska-p-p-raychev",
-   "number": "5",
-   "title": "D. Bonatsos, E. N. Argyres, S. B. Drenska, P. P. Raychev, R. P. Roussev and",
-   "level": 1,
-   "page_start": 9,
-   "page_end": 10,
-   "n_chars": 729,
-   "n_words": 144
-  },
-  {
-   "id": "sec-008-15-a-bohr-and-b-r-mottelson-nuclear-structure-vo",
-   "number": "15",
-   "title": "A. Bohr and B. R. Mottelson, Nuclear Structure Vol. II (Benjamin, New York,",
+   "id": "page-010",
+   "number": null,
+   "title": "Page 10",
    "level": 1,
    "page_start": 10,
    "page_end": 10,
-   "n_chars": 6,
-   "n_words": 1
+   "n_chars": 1527,
+   "n_words": 295,
+   "label_start": "10",
+   "label_end": "10"
   },
   {
-   "id": "sec-009-16-j-eisenberg-and-w-greiner-nuclear-theory-vol",
-   "number": "16",
-   "title": "J. Eisenberg and W. Greiner, Nuclear Theory Vol. I (North-Holland, Amster-",
+   "id": "page-011",
+   "number": null,
+   "title": "Page 11",
    "level": 1,
-   "page_start": 10,
-   "page_end": 10,
-   "n_chars": 127,
-   "n_words": 23
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 98,
+   "n_words": 10,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-010-19-v-m-belenki-and-e-p-grigoriev-structure-of-ev",
-   "number": "19",
-   "title": "V. M. Belenki and E. P. Grigoriev, Structure of Even Nuclei (Energoatomizdat,",
+   "id": "page-012",
+   "number": null,
+   "title": "Page 12",
    "level": 1,
-   "page_start": 10,
+   "page_start": 12,
    "page_end": 12,
-   "n_chars": 801,
-   "n_words": 144
+   "n_chars": 98,
+   "n_words": 10,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 11,
-  "sections": 11,
-  "chars_total": 19539
+  "toc_entries": 0,
+  "toc_inferred_entries": 5,
+  "toc_inferred_mean_confidence": 0.81,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 2,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 12,
+  "chars_total": 20209,
+  "furniture_lines_stripped": 0
  }
 }

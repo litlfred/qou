@@ -15,21 +15,21 @@ Stage S2 of bean `qou-zoyv`.
 
 Sorry-free.
 
--- Ref: [manuscript] beans/defs/qou-zoyv (stage S2)
+-- Ref: [leitner2026] beans/defs/qou-zoyv (stage S2)
 -/
 
 noncomputable section
 
 namespace QOU.KZ.Drinfeld
 
-open Finset QOU.KZ.FuchsianFormal QOU.KZ.BlockResidues QOU.KZ.KZPentagon
+open Finset QOU.KZ.FuchsianFormal QOU.KZ.BlockResidues QOU.KZ.DrinfeldAssociator
 
 attribute [local instance] Matrix.linftyOpNormedRing Matrix.linftyOpNormedAlgebra
 
-variable {c : ℂ} (hc : Transcendental ℚ c)
-include hc
+variable (Ψ : Associator.{0}) {c : ℂ} (hc : Transcendental ℚ c)
+include Ψ hc
 
-variable {L L' : Type*} [Fintype L] [DecidableEq L] [Fintype L'] [DecidableEq L']
+variable {L L' : Type} [Fintype L] [DecidableEq L] [Fintype L'] [DecidableEq L']
 
 theorem nonResonant_fromBlocks_tB (S T : Finset L) (S' T' : Finset L') :
     NonResonant (Matrix.fromBlocks (c • tB ℂ 2 S T) 0 0 (c • tB ℂ 2 S' T')) := by
@@ -41,38 +41,38 @@ theorem nonResonant_fromBlocks_tB (S T : Finset L) (S' T' : Finset L') :
   exact NonResonantInt.nonResonant_smul_intMatrix _ c hc
 
 theorem reidx_ΦB (e : L ≃ L') (S T U : Finset L) :
-    reidx e * ΦB hc S T U =
-      ΦB hc (S.map e.toEmbedding) (T.map e.toEmbedding) (U.map e.toEmbedding) * reidx e :=
-  KZIntertwine.Φ_intertwine _ _ _ _ (reidx e)
+    reidx e * ΦB Ψ hc S T U =
+      ΦB Ψ hc (S.map e.toEmbedding) (T.map e.toEmbedding) (U.map e.toEmbedding) * reidx e :=
+  Ψ.ΦN_intertwine _ _ _ _ (reidx e)
     (by rw [Matrix.mul_smul, Matrix.smul_mul, reidx_tB])
     (by rw [Matrix.mul_smul, Matrix.smul_mul, reidx_tB])
-    _ _ _ _ (nonResonant_fromBlocks_tB hc _ _ _ _) (nonResonant_fromBlocks_tB hc _ _ _ _)
+    _ _ _ _ (nonResonant_fromBlocks_tB Ψ hc _ _ _ _) (nonResonant_fromBlocks_tB Ψ hc _ _ _ _)
 
 theorem ΦB_congr {S T U S' T' U' : Finset L} (h1 : S = S') (h2 : T = T') (h3 : U = U') :
-    ΦB hc S T U = ΦB hc S' T' U' := by
+    ΦB Ψ hc S T U = ΦB Ψ hc S' T' U' := by
   subst h1 h2 h3; rfl
 
 theorem kron_ΦB_one (S T U : Finset L) :
-    kron (ΦB hc S T U) (1 : EndL L') =
-      ΦB hc (S.map Function.Embedding.inl) (T.map Function.Embedding.inl)
+    kron (ΦB Ψ hc S T U) (1 : EndL L') =
+      ΦB Ψ hc (S.map Function.Embedding.inl) (T.map Function.Embedding.inl)
         (U.map Function.Embedding.inl) := by
   unfold ΦB
-  rw [kron_Φ_one _ _ _ _ (by rw [kron_smul_left, kron_tB_one]; exact nonResonant_tB hc _ _)
-    (by rw [kron_smul_left, kron_tB_one]; exact nonResonant_tB hc _ _)]
-  exact KZShiftPhi.Φ_congr (by rw [kron_smul_left, kron_tB_one])
+  rw [kron_Φ_one Ψ _ _ _ _ (by rw [kron_smul_left, kron_tB_one]; exact nonResonant_tB Ψ hc _ _)
+    (by rw [kron_smul_left, kron_tB_one]; exact nonResonant_tB Ψ hc _ _)]
+  exact Ψ.ΦN_congr (by rw [kron_smul_left, kron_tB_one])
     (by rw [kron_smul_left, kron_tB_one]) _ _ _ _
 
 theorem one_kron_ΦB (S T U : Finset L') :
-    kron (1 : EndL L) (ΦB hc S T U) =
-      ΦB hc (S.map Function.Embedding.inr) (T.map Function.Embedding.inr)
+    kron (1 : EndL L) (ΦB Ψ hc S T U) =
+      ΦB Ψ hc (S.map Function.Embedding.inr) (T.map Function.Embedding.inr)
         (U.map Function.Embedding.inr) := by
   unfold ΦB
-  rw [one_kron_Φ _ _ _ _ (by rw [kron_smul_right, one_kron_tB]; exact nonResonant_tB hc _ _)
-    (by rw [kron_smul_right, one_kron_tB]; exact nonResonant_tB hc _ _)]
-  exact KZShiftPhi.Φ_congr (by rw [kron_smul_right, one_kron_tB])
+  rw [one_kron_Φ Ψ _ _ _ _ (by rw [kron_smul_right, one_kron_tB]; exact nonResonant_tB Ψ hc _ _)
+    (by rw [kron_smul_right, one_kron_tB]; exact nonResonant_tB Ψ hc _ _)]
+  exact Ψ.ΦN_congr (by rw [kron_smul_right, one_kron_tB])
     (by rw [kron_smul_right, one_kron_tB]) _ _ _ _
 
-omit hc in
+omit Ψ hc in
 theorem kron_reidx_one {M : Type*} [Fintype M] [DecidableEq M] (e : L ≃ L') :
     kron (reidx e) (1 : EndL M) = reidx (Equiv.sumCongr e (Equiv.refl M)) := by
   ext y x
@@ -88,7 +88,7 @@ theorem kron_reidx_one {M : Type*} [Fintype M] [DecidableEq M] (e : L ≃ L') :
   · rw [if_neg h1, zero_mul, if_neg]
     intro h; apply h1; funext k; exact congrFun h (Sum.inl k)
 
-omit hc in
+omit Ψ hc in
 theorem one_kron_reidx {M : Type*} [Fintype M] [DecidableEq M] (e : L ≃ L') :
     kron (1 : EndL M) (reidx e) = reidx (Equiv.sumCongr (Equiv.refl M) e) := by
   ext y x

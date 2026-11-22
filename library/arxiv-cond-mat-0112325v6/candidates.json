@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-cond-mat-0112325v6",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "f09f5047bd12651cac56b9ba5f6e60ff729d66daf6e081b138a9dcf8278c22d8",
+  "file": "0112325v6.pdf"
+ },
+ "provenance": {
+  "title": "Knots in Condensed Matters",
+  "authors": "Y. M. Cho\u2217",
+  "arxiv": {
+   "id": "cond-mat/0112325",
+   "version": "6",
+   "primary_class": null,
+   "stamp_date": "19 Jul 2006"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

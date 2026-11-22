@@ -21,7 +21,7 @@ q₀ − iε`) gives `Im T(q₀ − iε) = − Im T(q₀ + iε)` — the bar-odd
 Base ring is `ℂ` by necessity (§7c archimedean side): complex conjugation and the
 `Im` projection are the content. No `sorry`.
 
--- Ref: [manuscript] conj:im-q-physical-role
+-- Ref: [leitner2026] conj:im-q-physical-role
 -- Ref: [murakami-murakami2001] complex volume 𝔙 = Vol + i·CS
 -/
 
@@ -34,7 +34,7 @@ noncomputable def fig8TraceC (z : ℂ) : ℂ :=
 
 /-- **Real coefficients ⇒ conjugation commutes with evaluation.**
     `T(\overline z) = \overline{T(z)}`. -/
--- Ref: [manuscript] conj:im-q-physical-role
+-- Ref: [leitner2026] conj:im-q-physical-role
 theorem fig8TraceC_conj (z : ℂ) :
     fig8TraceC (starRingEnd ℂ z) = starRingEnd ℂ (fig8TraceC z) := by
   simp only [fig8TraceC, map_add, map_sub, map_mul, map_pow, map_zpow₀,
@@ -45,7 +45,7 @@ theorem fig8TraceC_conj (z : ℂ) :
     This is the structural root of the c₃ `S` sign-flip (`sign S = sign ε`), so
     `S(muon) > 0 > S(proton)` forces `ε(muon) > 0 > ε(proton)` by parity — not by
     a fit. At `ε = 0` (real `q₀`) both sides vanish: `Im S = 0` for real substrate. -/
--- Ref: [manuscript] conj:im-q-physical-role
+-- Ref: [leitner2026] conj:im-q-physical-role
 theorem fig8Trace_im_odd (q0 eps : ℝ) :
     (fig8TraceC ⟨q0, -eps⟩).im = -(fig8TraceC ⟨q0, eps⟩).im := by
   have hconj : (⟨q0, -eps⟩ : ℂ) = starRingEnd ℂ ⟨q0, eps⟩ := by
@@ -55,7 +55,7 @@ theorem fig8Trace_im_odd (q0 eps : ℝ) :
 /-- **Real substrate ⇒ no bar-odd signal.** At `ε = 0` the imaginary part
     vanishes: `Im T(q₀) = 0` for real `q₀` (the `Im q₀ = 0` mass fact — a real
     substrate carries no decay projection at this order). -/
--- Ref: [manuscript] conj:im-q-physical-role
+-- Ref: [leitner2026] conj:im-q-physical-role
 theorem fig8Trace_im_real_zero (q0 : ℝ) :
     (fig8TraceC ⟨q0, 0⟩).im = 0 := by
   have h := fig8Trace_im_odd q0 0

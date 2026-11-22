@@ -8,7 +8,7 @@
   "pages": 23,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T18:16:17Z",
+  "mtime": "2026-11-15T11:07:55Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -18,7 +18,7 @@
   "title": "Monodromy representations of braid groups and Yang-Baxter equations",
   "authors_raw": "TOSHITAKE KOHNO",
   "title_lines": [
-   "ANNALES DE L\u2019INSTITUT FOURIER"
+   "ANNALES DE L’INSTITUT FOURIER"
   ],
   "abstract": null,
   "docinfo": {
@@ -28,13 +28,13 @@
    "Creator": "NUMDAM",
    "CreationDate": "D:20260116154822+01'00'"
   },
-  "title_raw": "ANNALES DE L\u2019INSTITUT FOURIER",
+  "title_raw": "ANNALES DE L’INSTITUT FOURIER",
   "title_source": "metadata",
   "title_verified": true,
   "title_evidence": {
    "metadata": "Monodromy representations of braid groups and Yang-Baxter equations",
-   "heading": "A NNALES DE L \u2019 INSTITUT F OURIER",
-   "text": "ANNALES DE L\u2019INSTITUT FOURIER",
+   "heading": "A NNALES DE L ’ INSTITUT F OURIER",
+   "text": "ANNALES DE L’INSTITUT FOURIER",
    "corroborated_by": [
     "page"
    ],
@@ -44,56 +44,305 @@
  "toc": [
   {
    "level": 1,
-   "title": "Introduction",
+   "title": "MONODROMY REPRESENTATIONS OF BRAID GROUPS AND YANG-BAXTER EQUATIONS",
    "page": 2,
    "source": "inferred",
-   "number": null
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "MONODROMY OF INTEGRABLE CONNECTIONS ARISING",
+   "title": "INTRODUCTION",
+   "page": 2,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.8,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "MONODROMY OF INTEGRABLE CONNECTIONS ARISING FROM CLASSICAL YANG-BAXTER EQUATIONS",
    "page": 4,
    "source": "inferred",
-   "number": "1"
+   "number": "1",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "141"
   },
   {
    "level": 2,
-   "title": "Description of the monodromy by means",
-   "page": 6,
+   "title": "Construction of connections.",
+   "page": 4,
    "source": "inferred",
-   "number": "1.2"
+   "number": "1.1",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "141"
   },
   {
    "level": 1,
-   "title": "(y) = 1 +",
-   "page": 10,
-   "source": "inferred",
-   "number": "9"
-  },
-  {
-   "level": 1,
-   "title": "MONODROMY OF /i-POINT FUNCTIONS",
+   "title": "MONODROMY OF /i-POINT FUNCTIONS IN TWO DIMENSIONAL CONFORMAL FIELD THEORY",
    "page": 13,
    "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 2,
-   "title": "Monodromy associated with higher representations",
-   "page": 18,
-   "source": "inferred",
-   "number": "2.2"
-  },
-  {
-   "level": 1,
-   "title": "Bibliography",
-   "page": 22,
-   "source": "inferred",
-   "number": null
+   "number": "2",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "150"
   }
  ],
  "toc_source": "inferred",
  "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "",
+   "page": 19,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": "156"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "",
+   "page": 21,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "158"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": "140",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "141",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "142",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "143",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "144",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "145",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "146",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "147",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "148",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "149",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "150",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "151",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "152",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "153",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "154",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "155",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "156",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "157",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "158",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "159",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "160",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
    "id": "sec-front-matter",
@@ -102,86 +351,104 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 938,
-   "n_words": 117
+   "n_chars": 851,
+   "n_words": 106,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-000-introduction",
+   "id": "sec-000-monodromy-representations-of-braid-groups-and-ya",
    "number": null,
-   "title": "Introduction",
+   "title": "MONODROMY REPRESENTATIONS OF BRAID GROUPS AND YANG-BAXTER EQUATIONS",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 60,
+   "n_words": 9,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-001-introduction",
+   "number": null,
+   "title": "INTRODUCTION",
    "level": 1,
    "page_start": 2,
    "page_end": 4,
    "n_chars": 3849,
-   "n_words": 647
+   "n_words": 647,
+   "label_start": null,
+   "label_end": "141"
   },
   {
-   "id": "sec-001-1-monodromy-of-integrable-connections-arising",
+   "id": "sec-002-1-monodromy-of-integrable-connections-arising-fr",
    "number": "1",
-   "title": "MONODROMY OF INTEGRABLE CONNECTIONS ARISING",
+   "title": "MONODROMY OF INTEGRABLE CONNECTIONS ARISING FROM CLASSICAL YANG-BAXTER EQUATIONS",
    "level": 1,
    "page_start": 4,
-   "page_end": 6,
-   "n_chars": 3314,
-   "n_words": 581
+   "page_end": 4,
+   "n_chars": 36,
+   "n_words": 4,
+   "label_start": "141",
+   "label_end": "141"
   },
   {
-   "id": "sec-002-12-description-of-the-monodromy-by-means",
-   "number": "1.2",
-   "title": "Description of the monodromy by means",
+   "id": "sec-003-11-construction-of-connections",
+   "number": "1.1",
+   "title": "Construction of connections.",
    "level": 2,
-   "page_start": 6,
-   "page_end": 10,
-   "n_chars": 5969,
-   "n_words": 1098
-  },
-  {
-   "id": "sec-003-9-y-1",
-   "number": "9",
-   "title": "(y) = 1 +",
-   "level": 1,
-   "page_start": 10,
+   "page_start": 4,
    "page_end": 13,
-   "n_chars": 5935,
-   "n_words": 1097
+   "n_chars": 15205,
+   "n_words": 2780,
+   "label_start": "141",
+   "label_end": "150"
   },
   {
-   "id": "sec-004-2-monodromy-of-i-point-functions",
+   "id": "sec-004-2-monodromy-of-i-point-functions-in-two-dimensio",
    "number": "2",
-   "title": "MONODROMY OF /i-POINT FUNCTIONS",
+   "title": "MONODROMY OF /i-POINT FUNCTIONS IN TWO DIMENSIONAL CONFORMAL FIELD THEORY",
    "level": 1,
    "page_start": 13,
-   "page_end": 18,
-   "n_chars": 6363,
-   "n_words": 1159
-  },
-  {
-   "id": "sec-005-22-monodromy-associated-with-higher-representati",
-   "number": "2.2",
-   "title": "Monodromy associated with higher representations",
-   "level": 2,
-   "page_start": 18,
-   "page_end": 22,
-   "n_chars": 6595,
-   "n_words": 1239
-  },
-  {
-   "id": "sec-006-bibliography",
-   "number": null,
-   "title": "Bibliography",
-   "level": 1,
-   "page_start": 22,
    "page_end": 23,
-   "n_chars": 2822,
-   "n_words": 440
+   "n_chars": 15849,
+   "n_words": 2845,
+   "label_start": "150",
+   "label_end": "160"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 7,
+  "toc_entries": 5,
   "toc_inferred_entries": 7,
-  "sections": 8,
-  "chars_total": 35785
+  "toc_inferred_mean_confidence": 0.757,
+  "toc_inferred_empty_share": 0.143,
+  "toc_inferred_method": "font",
+  "figure_entries": 2,
+  "figure_sequence_gaps": [
+   "figure 1"
+  ],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 6,
+  "chars_total": 35850,
+  "furniture_lines_stripped": 0,
+  "headings_tidied": [
+   {
+    "title": "^eC",
+    "page": 5,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "as Qo^i^p^^OQo-",
+    "page": 12,
+    "action": "dropped",
+    "why": "opens in lower case"
+   }
+  ]
  }
 }

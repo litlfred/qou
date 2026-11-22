@@ -1,0 +1,50 @@
+4.2. Nondegenerate bilinear forms 73
+
+4.2. Nondegenerate bilinear forms
+
+In the introduction to this chapter we have remarked that conjecture 4.1
+essentially says that for a smooth theta divisor the associated Tannaka group
+is as large as possible. To justify this interpretation, let X be a complex ppav
+of dimension g > 2 and © C X a symmetric theta divisor. For simplicity we
+assume that the ppav X is indecomposable, in which case © is irreducible
+and hence in particular normal by [36].
+
+Then dg is a simple perverse sheaf, and by symmetry of the theta divisor
+it is isomorphic to its adjoint dual (69)” = (—id)*D(d@). On the Tannakian
+side, if we denote by
+
+@: (59) —> Repc(G(d))
+
+the tensor functor in corollary 3.10, then it follows that V = @(dg) is an
+irreducible self-dual representation of G(dg). Any representation with these
+properties is either orthogonal or symplectic, depending on whether the unit
+object 1 = 89 of our Tannakian category lies in the alternating square A?(V)
+or in the symmetric square S*(V). To decide which of the two possibilities
+occurs, consider the commutativity constraint
+
+S = S5o,59 ° 59 *59 —> de * de
+
+as defined in section 2.1. We claim that this constraint S acts by (—1)8~!
+on the stalk cohomology group #°(dg * de)o at the origin. Indeed we
+have dg = ICe/g— 1], so our claim amounts to the statement that S acts
+trivially on the stalk cohomology group #78~?(IC@ *IC@)o. For this latter
+statement one can use that since by assumption the theta divisor is normal,
+we have a natural identification
+
+H® (ICo*ICo)o = 78 *(Co*Co)o
+which allows to replace the intersection cohomology sheaf with the constant
+
+sheaf. Then our claim easily follows via base change.
+
+For the representation V = @(dg) it follows from the above that the
+unit object 1 lies in the alternating square A?(V) if g is even, resp. in the
+symmetric square $?(V) if g is odd. This implies
+
+LEMMA 4.6. [f the theta divisor © C X is smooth, then there exists an
+embedding
+
+Spe(C) for even g
+
+G(de) > G(g) = {erg for odd g
+
+such that @(6@) is the restriction of the standard representation of G(g).

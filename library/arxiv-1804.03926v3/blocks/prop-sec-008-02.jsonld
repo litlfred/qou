@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-1804.03926v3/blocks/prop-sec-008-02",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 28,
+  "pageEnd": 34,
+  "text": "prop-sec-008-02.md",
+  "derivedFrom": "library/arxiv-1804.03926v3/sections/sec-008",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1804.03926v3/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "21",
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-008-5-tail-bounds.md (p. 28-34)",
+    "claim_id": "arxiv-1804.03926v3#proposition:21",
+    "lean_status": "unformalized"
+  }
+}

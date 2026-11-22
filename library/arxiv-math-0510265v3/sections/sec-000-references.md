@@ -8,6 +8,7 @@ pages: 17-19
 source_pdf: 0510265v3.pdf
 source_sha256: 548a0eece08bd967
 toc_source: inferred
+doc_brief: "Triply-graded link homology and Hochschild homology of Soergel bimodules — We trade matrix factorizations and Koszul complexes for Hochschild homology of Soergel bimodules to modify the construction"
 ---
 [BN1] D. Bar-Natan, Khovanov’s homology for tangles and cobordisms, Geom.
 Topol. 9 (2005) 1443-1499, arxiv math.GT/0410495.

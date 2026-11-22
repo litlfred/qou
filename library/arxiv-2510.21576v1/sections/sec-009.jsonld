@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2510.21576v1/sections/sec-009",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Results",
+  "pageStart": 8,
+  "pageEnd": 10,
+  "contains": [
+    "library/arxiv-2510.21576v1/blocks/prose-sec-009",
+    "library/arxiv-2510.21576v1/blocks/figure-img-p009-1",
+    "library/arxiv-2510.21576v1/blocks/figure-img-p009-2"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2510.21576v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2510.21576v1/manifest.jsonld",
+  "provenance": "ingested"
+}

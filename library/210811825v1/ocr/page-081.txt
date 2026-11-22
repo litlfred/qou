@@ -1,0 +1,40 @@
+nxn identity matrix. Now see that R5S; = —Iy and R? = Iy. We represent the function
+1
+
+au =e, — eg aS a vector u = ( , we see that S;u = —u. Therefore
+. RsSsu, ifie€ {1, 3, 5, 7},
+RiSsu= SUSU, { ) }
+
+Ssu, if i € {0, 2, 4, 6},
+
+and
+R:S5u = —u i€ {0,..., 8}.
+
+We see that the Dirichlet boundary problem is half of a (4, 4, 4) triangle, with area §.
+
+The Faber-Krahn inequality gives us
+Mi(x5) = ve >V, > 6.
+
+This rules out x5.
+
+Figure 3.9: Boundary conditions for x5
+
+For xg, note that Tg = RgSg = Ig. We only need to consider the eigenvectors of S¢.
+
+1
+Again, let &@ = e, — eg, then u = , and
+
+Seu = Ri Sou = —u, i € {0, 2, 4, 6}.
+
+Here we have a larger Dirichlet boundary problem; we use the side associations to see
+
+that it has area 7. The Faber-Krahn inequality gives us
+AMi(x6) > Va > 6.
+
+This rules out x6.
+Things are slightly trickier in 3 dimensions; we must consider more than one boundary
+value problem for each representation. We consider one of the 16 (4,4,4) triangles that
+
+tessellates the Bolza surface, as well as its line of symmetry with respect to the real line.
+
+71

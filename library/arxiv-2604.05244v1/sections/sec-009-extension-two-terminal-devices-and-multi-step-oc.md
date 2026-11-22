@@ -9,8 +9,9 @@ source_pdf: 2604.05244v1.pdf
 source_sha256: a5097e763dd89d06
 toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.96
-latex_coverage_ratio: 0.992
+latex_prose_ratio: 0.968
+latex_coverage_ratio: 0.976
+doc_brief: "Edge universality in Floquet sideband spectra — We show that, for non-interacting fermions under a monochromatic phase drive (Tien– Gordon regime), the outgoing sideband occupations at a sharp Fermi"
 ---
 []{#sec:multi-step label="sec:multi-step"} A standard two-terminal conductor (QPC or tunnel junction) biased at DC voltage $V_{\rm dc}$ has two reservoirs at chemical potentials $\mu_L$ and $\mu_R=\mu_L-eV_{\rm dc}$ [@MoskBuett2002; @PedersenBuett1998]. For a single-channel device with transmission $\mathcal T=|\mathcal U^{\alpha L}|^2$ and reflection $\mathcal R=1-\mathcal T$, the effective occupation is $$\bar f(E_m) = \mathcal T\,\Theta(m_F^L-m) + \mathcal R\,\Theta(m_F^R-m),
   \label{eq:double-step}$$ where $m_F^{L,R}(E)=\lfloor(\mu_{L,R}-E)/\hbar\Omega\rfloor$. This is a double step, not a single step: $\bar f=1$ for $m\le m_F^R$, $\bar f=\mathcal T$ for $m_F^R<m\le m_F^L$, and $\bar f=0$ for $m>m_F^L$. Inserting [\[eq:double-step\]](#eq:double-step){reference-type="eqref" reference="eq:double-step"} into [\[eq:Cgeneral\]](#eq:Cgeneral){reference-type="eqref" reference="eq:Cgeneral"} gives $$C_{np}(E) = \mathcal T\,K_A^{\rm (disc)}(n-m_F^L,\,p-m_F^L) + \mathcal R\,K_A^{\rm (disc)}(n-m_F^R,\,p-m_F^R).

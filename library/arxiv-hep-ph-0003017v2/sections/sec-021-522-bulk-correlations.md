@@ -8,7 +8,9 @@ pages: 33-34
 source_pdf: 0003017v2.pdf
 source_sha256: 1660907865346bdf
 toc_source: inferred
+doc_brief: "arXiv:hep-ph/0003017v2 26 Jun 2000 — Random matrix theory is a powerful way to describe universal correlations of eigenvalues of complex systems."
 ---
+BULK CORRELATIONS
 To measure the bulk spectral correlations, one needs all eigenvalues of the Dirac
 operator, which is represented on the lattice by a ﬁnite sparse matrix whose
 dimension is proportional to the lattice volume and to Nc. The eigenvalues of
@@ -46,4 +48,3 @@ Spectral ergodicity was investigated in Ref. [135], and the equivalent of a Thou
 less energy was found for ensemble averaging, whereas spectral averaging resulted
 in complete agreement with RMT correlations over distances as long as several
 hundred average level spacings.
-5.2.3

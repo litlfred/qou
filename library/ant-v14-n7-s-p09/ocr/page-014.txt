@@ -1,0 +1,45 @@
+1966 Noelia Rizo, A. A. Schaeffer Fry and Carolina Vallejo
+
+restriction to G of a semisimple character of G trivial on Z(G). Since semisimple elements have odd
+order and o; fixes odd roots of unity, Lemma 3.1 shows that this character is also fixed by 0. If m = 1, we
+may similarly obtain an X-invariant member of Irry(S) fixed by o; by arguing as in [loc. cit., Lemma 6.4]
+and the remark after [loc. cit., Proposition 6.5] but using an element of Ff of order 3 rather than an
+element of F*of order 5.
+
+For S = G(q), F4(q), 7Da(q), E7(q), or Eg(q), the list of character degrees at [Liibeck 2007] yields
+at least one more distinct nontrivial odd character degree, completing the proof in these cases, since by
+[Malle 2007, Theorem 6.8], odd-degree characters are semisimple (recall that we may assume q #4 2
+when S = G2(q) or F4(q)), and hence fixed by o; using Lemma 3.1.
+
+Now, in the remaining cases, S is a classical group or E¢(q). Here G* =G. In the case S= PSL2(q)
+or PSL$(q), we see that there is at least one more odd-degree character with a different degree that is
+fixed by 01, using the generic character tables available in [Geck et al. 1996]. If G= GL (q). Sp, (q),
+or Q5(q) with n > 4 and n even in the latter two cases, let s; and s2 be elements of G with eigenvalues
+{6, oo. 1} and {6, 5, bs, 1}, respectively, where 1 Ad € FF.
+
+Then s; and s2 are not Aut(S)-conjugate, and hence the corresponding semisimple characters of G
+have odd degree, are not Aut(S)-conjugate, and are fixed by 0; by Lemma 3.1. Further, if G= GL; (q),
+semisimple classes are determined by the eigenvalues, and Z(G) is comprised of scalar matrices, so we
+see for i = 1, 2, s; is not conjugate to s;z for any z € Z(G) unless possibly if n = 6. In this case, we may
+assume g # 2 using Lemma 3.3 and instead take 6 € Fee to have order at least 5, again yielding s; is not
+conjugate to s;z for any z € Z(G). In any case, the corresponding semisimple characters therefore restrict
+irreducibly to G and are trivial on Z(G) since s; €[G, GJ =G. Finally, let S be E¢(q) with q > 2. Then
+we may argue analogously to [Giannelli et al. 2020, Proposition 4.3] to find elements s; and sy in G with
+ICg(spl2 4 |Cg(s2)|2 such that the corresponding semisimple characters (which again must be fixed by
+01) are irreducible on G and trivial on Z(G). (Indeed, we may replace the 5 used there with a 5 € F*
+such that 3|5|). In all cases, this yields at least one more nontrivial member of Irra(Bo(S))*! that is not
+Aut(S)-conjugate to the X-invariant one from above. oO
+
+Theorem C for p = 2 now follows by combining Propositions 3.4 and 3.5 with Lemma 3.3.
+
+3C. The case p =3. Here we prove Theorem C in the case p = 3. We begin by stating the following
+classification of simple groups with cyclic Sylow 3-subgroups.
+
+Proposition 3.6. Let S be a finite nonabelian simple group with order divisible by 3. Then S has a cyclic
+Sylow 3-subgroup if and only if S is one of: the alternating group 2X5; the sporadic simple group J\;
+PSL2(q) for 3{q; or PSLS(q) for 3| (¢ +€).
+
+Proof. The main result of [Shen and Zhou 2016] yields a classification of simple groups S and primes p
+such that S has an abelian Sylow p-subgroup. In particular, if p = 3, then such a simple group must be of
+the form 2,, with n < 9, one of a short list of sporadic simple groups, PSL2(q¢), PSL; (q) for 3| (¢ +€)
+and n = 3, 4, 5, or PSp,(q) with 3{q.

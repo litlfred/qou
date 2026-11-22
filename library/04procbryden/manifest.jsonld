@@ -5,30 +5,23 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/04procbryden",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/04procbryden/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "cofor.dvi",
   "contains": [
+    "library/04procbryden/sections/sec-front-matter",
     "library/04procbryden/sections/sec-000",
     "library/04procbryden/sections/sec-001",
     "library/04procbryden/sections/sec-002",
     "library/04procbryden/sections/sec-003",
     "library/04procbryden/sections/sec-004",
     "library/04procbryden/sections/sec-005",
-    "library/04procbryden/sections/sec-006",
-    "library/04procbryden/sections/sec-007",
-    "library/04procbryden/sections/sec-008",
-    "library/04procbryden/sections/sec-009",
-    "library/04procbryden/sections/sec-010",
-    "library/04procbryden/sections/sec-011",
-    "library/04procbryden/sections/sec-012",
-    "library/04procbryden/sections/sec-013",
-    "library/04procbryden/sections/sec-014"
+    "library/04procbryden/sections/sec-006"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "04procbryden",
     "title_source": "pdf-info",

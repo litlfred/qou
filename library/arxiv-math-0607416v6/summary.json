@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-0607416v6",
  "source_sha256": "0705075947ce4a3d",
- "brief": "PÓLYA-SCHUR MASTER THEOREMS FOR CIRCULAR DOMAINS AND THEIR BOUNDARIES — W e characterize all linear operators on ﬁnite or inﬁnite-di mensio- nal polynomial spaces that preserve the property of having",
- "extended": "**PÓLYA-SCHUR MASTER THEOREMS FOR CIRCULAR DOMAINS AND THEIR BOUNDARIES**\n\n*JULIUS BORCEA AND PETTER BRÄNDÉN*\n\n23 pp, 10 sections.\n\n**Abstract.** W e characterize all linear operators on ﬁnite or inﬁnite-di mensio- nal polynomial spaces that preserve the property of having t he zero set inside a prescribed region Ω ⊆ C for arbitrary closed circular domains Ω (i.e., images of the closed unit disk under a M¨ obius transformation) and t heir boundaries. This provides a natural framework for dealing with several l ong-standing fun- damental problems, which we solve in a uniﬁed way. In particu lar, for Ω = R our results settle open questions that go back to Laguerre an d P´ olya-Schur.\n\n**Outline.** 1 Introduction; 2 Main Results; 2.1 Hyperbolicity and Stability Preservers; 2.2 Preservers of Polynomials with Zeros in a ; 3 Proofs of the Main Results; 3.1 Hyperbolic and Stable Polynomials; 3.2 The Transcendental Characterization; 3.3 Closed Circular Domains and Their Boundari; 4 Open Problems; References",
+ "brief": "PÓLYA-SCHUR MASTER THEOREMS FOR CIRCULAR DOMAINS AND THEIR BOUNDARIES — We characterize all linear operators on ﬁnite or inﬁnite-dimensio- nal polynomial spaces that preserve the property of having",
+ "extended": "**PÓLYA-SCHUR MASTER THEOREMS FOR CIRCULAR DOMAINS AND THEIR BOUNDARIES**\n\n*JULIUS BORCEA AND PETTER BRÄNDÉN*\n\n23 pp, 11 sections.\n\n**Abstract.** We characterize all linear operators on ﬁnite or inﬁnite-dimensio- nal polynomial spaces that preserve the property of having the zero set inside a prescribed region Ω⊆C for arbitrary closed circular domains Ω(i.e., images of the closed unit disk under a M¨obius transformation) and their boundaries. This provides a natural framework for dealing with several long-standing fun- damental problems, which we solve in a uniﬁed way. In particular, for Ω= R our results settle open questions that go back to Laguerre and P´olya-Schur.\n\n**Outline.** Front matter; 1 Introduction; 2 Main Results; 2.1 Hyperbolicity and Stability Preservers; 2.2 Preservers of Polynomials with Zeros in a ; 3 Proofs of the Main Results; 3.1 Hyperbolic and Stable Polynomials; 3.2 The Transcendental Characterization; 3.3 Closed Circular Domains and Their Boundari; 4 Open Problems; References",
  "tokens": {
   "brief": 49,
   "extended": 253
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -37,12 +42,12 @@
   {
    "id": "sec-005-31-hyperbolic-and-stable-polynomials",
    "title": "Hyperbolic and Stable Polynomials",
-   "pages": "9-16"
+   "pages": "9-14"
   },
   {
    "id": "sec-006-32-the-transcendental-characterization",
    "title": "The Transcendental Characterization",
-   "pages": "16-17"
+   "pages": "14-17"
   },
   {
    "id": "sec-007-33-closed-circular-domains-and-their-boundaries",

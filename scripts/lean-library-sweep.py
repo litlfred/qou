@@ -30,9 +30,22 @@ imports one that did.
    only over-sweep.
 2. Rebuilds the closure from source, in topological order, into a shadow tree
    placed first on `LEAN_PATH`.
-3. **Continues past a failure**, marking that module's dependents `skipped`
-   rather than aborting — one break must not mask the rest, which is the whole
-   point of a sweep.
+3. **Continues past a failure**, marking that module's dependents rather than
+   aborting — one break must not mask the rest, which is the whole point of a
+   sweep.  A dependent is `SKIPPED` (behind a RED) or `BLOCKED` (behind only
+   TIMEOUT / UNVERIFIED roots, so NOT judged); roots are traced transitively.
+
+## Exit status (bean `qou-tpdg`)
+
+    0  GREEN       every module in the closure compiled
+    1  RED         at least one module failed on a real error
+    8  INCOMPLETE  no RED, but some module was TIMEOUT / UNVERIFIED / BLOCKED
+
+Exit 8 closes a false-green: before 2026-11-21 a run whose only problems were
+unjudged modules exited 0 and printed `0 RED`, even when the module named by
+`--only-exact` was itself skipped.  8 is chosen so it ORs cleanly with the
+1 / 2 / 4 codes `lean-progressive-reseed.py` already uses.  The last line of
+every run is `VERDICT: ...` with the code, so quote that line as gate evidence.
 
 `lake` is never invoked, so the restored cache cannot be evicted.  Mathlib is
 never rebuilt.
@@ -97,18 +110,52 @@ def packages() -> list[tuple[pathlib.Path, str]]:
     return out
 
 
+MATHLIB_DEPS = (
+    "Qq", "Batteries", "LeanSearchClient", "Aesop",
+    "Plausible", "ImportGraph", "ProofWidgets",
+)
+
+
+def _nonempty_olean_count(d: pathlib.Path) -> int:
+    """Count non-empty `.olean` files under `d` (0-byte files count as 0)."""
+    if not d.is_dir():
+        return -1
+    n = 0
+    for root, _dirs, files in os.walk(d):
+        for f in files:
+            if f.endswith(".olean"):
+                try:
+                    if (pathlib.Path(root) / f).stat().st_size > 0:
+                        n += 1
+                except OSError:
+                    pass
+    return n
+
+
 def find_oleans() -> pathlib.Path:
     """The restore seeds the ROOT workspace; a per-paper `lake build` seeds $PKG.
 
-    Both are real, so probe rather than assume — hardcoding either one makes the
-    script fail on exactly the tree it exists to verify against.
+    Both are real, so pick by COMPLETENESS (largest count of non-empty `.olean`
+    files under `<cand>/<LIB>`), matching `scripts/lean-shadow-verify.sh`,
+    rather than taking the first candidate with a `<LIB>/` directory (which may
+    be an incomplete mid-build stub).  Bean `qou-fo7l`.
     """
     env = os.environ.get("OLEANS")
-    cands = [pathlib.Path(env)] if env else [
-        PKG / ".lake/build/lib/lean", ROOT / ".lake/build/lib/lean"]
-    for c in cands:
+    if env:
+        c = pathlib.Path(env)
         if (c / LIB).is_dir():
             return c
+        sys.exit(f"no olean tree with a {LIB}/ dir; looked in: {c}")
+    cands = [PKG / ".lake/build/lib/lean", ROOT / ".lake/build/lib/lean"]
+    best_c, best_n = None, -1
+    for c in cands:
+        if not (c / LIB).is_dir():
+            continue
+        n = _nonempty_olean_count(c / LIB)
+        if n > best_n:
+            best_c, best_n = c, n
+    if best_c is not None:
+        return best_c
     sys.exit(f"no olean tree with a {LIB}/ dir; looked in: "
              f"{', '.join(str(c) for c in cands)}")
 
@@ -357,6 +404,19 @@ def main() -> int:
                          "default all discovered")
     args = ap.parse_args()
 
+    # Make the root and paper olean trees hold the same union before anything
+    # resolves against them (bean qou-4h26, wired 2026-11-21).  Lean answers a
+    # whole package from the FIRST LEAN_PATH root holding its directory, so an
+    # incomplete tree first on the path produced phantom MISSING-OLEAN reds
+    # (qou-tpdg).  Hardlinks only, idempotent, ~0.2 s when already in sync.
+    if os.environ.get("LEAN_NO_TREE_SYNC") != "1":
+        r = subprocess.run([str(ROOT / "scripts/lean-sync-olean-trees.sh")],
+                           capture_output=True, text=True)
+        if r.returncode != 0:
+            print("WARNING: lean-sync-olean-trees.sh failed; a MISSING-OLEAN "
+                  "red may be an environment artifact.\n" + r.stderr[-800:],
+                  file=sys.stderr)
+
     global PKG, LIB
     todo_pkgs = packages()
     if args.package:
@@ -557,27 +617,43 @@ def sweep_one(args) -> int:
                 print(f"refreshing reused shadow: linked {added} file(s) "
                       f"the real tree gained since it was built")
 
-        siblings = [str(p) for p in ROOT.glob("folio/*/lean/.lake/build/lib/lean")
+        siblings = [str(p) for p in sorted(ROOT.glob("folio/*/lean/.lake/build/lib/lean"))
                     if p != oleans]
         # Dependency olean roots, in the order Lean should search them.
         #
-        # BOTH package locations are included deliberately, PAPER FIRST.  The
-        # root Lake workspace has `.lake/packages/` and each paper package has
-        # its own `<paper>/lean/.lake/packages/`; the documented sandbox restore
-        # (AGENTS.md §"Mathlib cache 403 fallback") fills the PAPER one, so that
-        # is the tree it GUARANTEES.
-        #
-        # The root tree is not reliably broken -- it is not reliably POPULATED,
-        # which is worse for a gate.  Measured on two containers: on one, root
-        # held a 0-byte `Mathlib/Tactic.olean`, no `Mathlib/Data/Real/Basic.olean`
-        # and 1212 oleans, so every Mathlib-importing module failed with
-        # "invalid header" / "does not exist" and this sweep reported 22 REDs
-        # that were entirely about its own environment.  On another, root was a
-        # 6990-olean SUPERSET of the paper tree with both files byte-identical,
-        # and the same code was fine.  Globbing the root alone therefore makes
-        # this gate correct by luck of environment.  Bean `qou-tpdg`.
-        pkg_roots = ([str(p) for p in ROOT.glob("folio/*/lean/.lake/packages/*/.lake/build/lib/lean")]
-                     + [str(p) for p in ROOT.glob(".lake/packages/*/.lake/build/lib/lean")])
+        # 1. Deterministically sort all glob results (`Path.glob` returns raw
+        #    filesystem `scandir` order).
+        # 2. Order the current package's `PKG/.lake/packages/*` and
+        #    `ROOT/.lake/packages/*` ahead of other `folio/*/lean/.lake/packages/*`
+        #    roots.
+        # 3. Filter out incomplete package roots that hold fewer non-empty
+        #    `.olean` files than the most complete root for that package name,
+        #    so a partial package directory earlier on `LEAN_PATH` can never
+        #    shadow a complete one (`qou-fo7l`, `qou-4h26`, `qou-tpdg`).
+        raw_pkg_cands = (
+            sorted(PKG.glob(".lake/packages/*/.lake/build/lib/lean"))
+            + sorted(ROOT.glob(".lake/packages/*/.lake/build/lib/lean"))
+            + [p for p in sorted(ROOT.glob("folio/*/lean/.lake/packages/*/.lake/build/lib/lean"))
+               if not p.is_relative_to(PKG)]
+        )
+        seen_cands: list[pathlib.Path] = []
+        seen_set: set[pathlib.Path] = set()
+        for p in raw_pkg_cands:
+            if p not in seen_set and p.is_dir():
+                seen_set.add(p)
+                seen_cands.append(p)
+        pkg_counts: dict[pathlib.Path, int] = {}
+        best_pkg_count: dict[str, int] = {}
+        for p in seen_cands:
+            pkg_name = p.parents[3].name
+            cnt = _nonempty_olean_count(p)
+            pkg_counts[p] = cnt
+            if cnt > best_pkg_count.get(pkg_name, -1):
+                best_pkg_count[pkg_name] = cnt
+        pkg_roots = [
+            str(p) for p in seen_cands
+            if pkg_counts[p] > 0 and pkg_counts[p] >= best_pkg_count.get(p.parents[3].name, 0)
+        ]
         lean_path = ":".join([str(shadow)] + pkg_roots + siblings + [str(oleans)])
 
         # BOUND TOTAL PARALLELISM, not process count.  `--jobs N` spawns N `lean`
@@ -632,6 +708,14 @@ def sweep_one(args) -> int:
 
         red, skipped, timed_out, unverified, ok = {}, {}, {}, {}, 0
         broken = set()
+        # roots[m]: the modules that were themselves judged not-ok (RED,
+        # TIMEOUT or UNVERIFIED) and that m sits behind, transitively.  A
+        # skipped module is only "behind a RED" if one of its roots is RED;
+        # behind a TIMEOUT/UNVERIFIED root it was never judged, and the old
+        # single "skipped (dependency red)" label called that red AND let the
+        # run exit 0 (bean qou-tpdg, 2026-09-13: `--only-exact X` printed
+        # `0 RED` and exited 0 with X itself skipped).
+        roots: dict[str, set[str]] = {}
         t0 = time.time()
         n = sum(len(l) for l in order)
         done_ct = 0
@@ -697,6 +781,7 @@ def sweep_one(args) -> int:
             for m in layer:
                 if m not in runnable:
                     skipped[m] = sorted(d for d in imports[m] if d in broken)
+                    roots[m] = set().union(*(roots.get(d, {d}) for d in skipped[m]))
                     broken.add(m)
             if not runnable:
                 continue
@@ -711,7 +796,8 @@ def sweep_one(args) -> int:
                         broken.add(m)   # dependents cannot be judged either
                         print(f"  [{done_ct}/{n}] TIMEOUT  {m}  ({log})", flush=True)
                     else:
-                        errs = [l for l in log.splitlines() if ": error:" in l]
+                        errs = [l for l in log.splitlines()
+                                if re.search(r": error(?:\([^)]*\))?:", l)]
                         # THREE ways a non-zero exit is NOT a failing module, and
                         # reporting any of them as RED sends the next reader
                         # hunting a defect that has not been shown to exist --
@@ -737,15 +823,22 @@ def sweep_one(args) -> int:
                             if rc < 0:
                                 why = f"killed by signal {-rc}"
                             elif missing:
-                                # Name the MISSING MODULE, not the first 120
-                                # characters of its absolute path -- the path is
-                                # the same prefix for every hit and the module is
-                                # the only part that tells you what to fix.
-                                mo = re.search(r"of module ([\w.]+) does not exist",
-                                               missing[0])
-                                mm = mo.group(1) if mo else "?"
-                                where = "mathlib cache" if mm.startswith("Mathlib") \
-                                        else "build order"
+                                # Sort `missing` deterministically by module
+                                # name before picking the diagnostic to report:
+                                # Lean elaborates imports across threads, so
+                                # stderr lines arrive in thread-completion race
+                                # order (`qou-fo7l`).
+                                def _missing_mod(line: str) -> str:
+                                    m_ = re.search(r"of module ([\w.]+) does not exist", line)
+                                    return m_.group(1) if m_ else "?"
+                                missing_sorted = sorted(missing, key=lambda l: (_missing_mod(l), l))
+                                mm = _missing_mod(missing_sorted[0])
+                                if mm == "Mathlib" or mm.startswith("Mathlib."):
+                                    where = "mathlib cache"
+                                elif any(mm == d or mm.startswith(f"{d}.") for d in MATHLIB_DEPS):
+                                    where = "mathlib dep cache"
+                                else:
+                                    where = "build order"
                                 why = f"missing olean {mm} ({where})"
                             else:
                                 why = f"exit {rc}, no diagnostic"
@@ -760,9 +853,18 @@ def sweep_one(args) -> int:
                             for e in errs[:3]:
                                 print(f"        {e}", flush=True)
 
+        # Split the cascade by what it sits behind.  Behind any RED root: the
+        # module is "skipped behind RED" (fixing the RED is the next step).
+        # Behind only TIMEOUT/UNVERIFIED roots: it is BLOCKED -- not judged,
+        # not failing, and NOT green either.
+        behind_red = {m: deps for m, deps in skipped.items()
+                      if roots.get(m, set()) & red.keys()}
+        blocked = {m: deps for m, deps in skipped.items() if m not in behind_red}
+        unjudged = len(timed_out) + len(unverified) + len(blocked)
         print(f"\n=== library sweep: {ok} ok, {len(red)} RED, "
-              f"{len(timed_out)} TIMEOUT + {len(unverified)} UNVERIFIED (NOT failing), "
-              f"{len(skipped)} skipped (dependency red), "
+              f"{len(timed_out)} TIMEOUT + {len(unverified)} UNVERIFIED + "
+              f"{len(blocked)} BLOCKED (NOT judged), "
+              f"{len(behind_red)} skipped behind RED, "
               f"{time.time() - t0:.0f}s ===")
         for m in sorted(timed_out):
             print(f"TIMEOUT {m} -- unverified; re-run with a larger --timeout to judge it")
@@ -772,11 +874,33 @@ def sweep_one(args) -> int:
             print(f"\nRED {m}")
             for e in errs:
                 print(f"    {e}")
-        for m, deps in sorted(skipped.items()):
-            print(f"SKIPPED {m}  (red dependency: {', '.join(deps)})")
+        for m, deps in sorted(behind_red.items()):
+            print(f"SKIPPED {m}  (behind RED: "
+                  f"{', '.join(sorted(roots[m] & red.keys()))}; via {', '.join(deps)})")
+        for m, deps in sorted(blocked.items()):
+            print(f"BLOCKED {m}  (NOT judged; behind unverified: "
+                  f"{', '.join(sorted(roots[m]))}; via {', '.join(deps)})")
+        # A request for named modules that were not all compiled is not a
+        # green, whatever the RED count says.  Name them.
+        asked = ([args.only_exact] if args.only_exact else [])
+        for m in asked:
+            if m in red or m in timed_out or m in unverified or m in skipped:
+                print(f"TARGET {m} was NOT verified ok "
+                      f"({'RED' if m in red else 'skipped behind RED' if m in behind_red else 'not judged'})")
+        if red:
+            verdict, code = "RED", 1
+        elif unjudged:
+            # Exit 8, not 0: "no RED" with modules left unjudged is the
+            # false-green this bean is about.  8 so it ORs cleanly with the
+            # 1 / 2 / 4 that lean-progressive-reseed.py already uses.
+            verdict, code = (f"INCOMPLETE -- {unjudged} of {n} module(s) not judged; "
+                             f"this is NOT a green"), 8
+        else:
+            verdict, code = f"GREEN -- all {ok} module(s) compiled", 0
+        print(f"VERDICT: {verdict}  (exit {code})")
         if keep:
             print(f"\nshadow kept at {shadow}")
-        return 1 if red else 0
+        return code
     finally:
         if not keep:
             shutil.rmtree(shadow, ignore_errors=True)

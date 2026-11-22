@@ -1,1 +1,1 @@
-The G-intertwiner Tϕ is called the initial term of ϕ. We denote by
+The G-intertwiner Tϕ is called the initial term of ϕ. We denote by IG(Vh⊗Hi[0], Hj[0]) the subspace of HomG(Vh⊗Hi[0], Hj[0]) of initial terms Tϕ of primary fields with charge the irreducible G-representation Vh, source Hi and target Hj.

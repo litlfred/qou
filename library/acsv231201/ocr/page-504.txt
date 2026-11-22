@@ -1,0 +1,53 @@
+486 Residue forms and classical Morse theory
+
+C.2.1 Residue forms for smooth simple poles
+
+Fix a smooth analytic hypersurface V defined locally by analytic functions Op
+as above, and recall our notation M = C4\V and dz = dz, A-++Adzy. We say
+that a d-form w € E“(M) has smooth poles of order k on V if for any a € V
+there is a sufficiently small neighborhood D of a in C4 such that Qp(z)*w
+extends to a holomorphic form on D but Qp(z)/w does not extend to such a
+holomorphic form for any 0 < j < k. A form with smooth poles of order one
+is said to have simple poles.
+
+Proposition C.6. Let w be a holomorphic d-form with smooth simple poles
+on YV, represented as a quotient w = P(z)/Q(z)dz of analytic functions on
+MN D for some domain D c C4 on which the gradient of Q does not vanish.
+IfW =VODandt:W & Dis the inclusion of W into C4 then there is a
+(d — 1)-form 6 on D solving dQ A @ = Pdz and any such solution restricts to
+a unique (d — 1)-form Res(w) = v6 on W called the residue of w on W.
+
+Remark C.7. Our definition of the residue is both natural, meaning it does
+not depend on the particular polynomials P and Q used to represent w =
+P(z)/Q(z) dz on D, and functorial, meaning Res(f*w) = f* Res(w) for smooth
+functions f. Because the residue is natural, we can define Res(w) on all of V
+by defining it locally over the elements of a cover of V by sufficiently small
+domains using Proposition C.6.
+
+Proof We must show both that dQ A @ = P dz always has a holomorphic so-
+lution, and that the restriction of any such solution to V is unique. Uniqueness
+follows from Exercise A.18 at the end of Appendix A: if 6, and 6) are two
+solutions then dQ A (6; — 62) = 0, hence Exercise A.18 implies ¢*@; = *@). The
+existence of a solution follows from the following proposition, which expresses
+the residue explicitly in local coordinates in sufficiently small neighborhoods,
+by combining residues in local neighborhoods as discussed in Remark C.7.. O
+
+Proposition C.8. Under the hypotheses of Proposition C.6, if the partial deriva-
+
+tive 0Q/0z, is nonvanishing on D for some fixed k < d and r € Z4 then
+
+z°P(z)
+Q:,(2)
+
+where dz = dz A+++ \ dzp, \ dZp41 A+++ A dZa.
+
+Res(z7"w) = (-1)*"! dx, (C.2.1)
+
+Proof (fk = 1 and 6 is the right-hand side of (C.2.1), then
+
+—r
+
+d
+dQA0= bs o.tex) A (4 i dz \-++N\dzq| =z "Pdz,
+= <1
+

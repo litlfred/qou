@@ -1,0 +1,74 @@
+case False
+hence m € circline-set x-axis
+using poincare-between-poincare-line-uzvlof On of-complex x m]
+using poincare-line-0-real-is-x-axis|of of-complex x]
+using <of-complex x € unit-disc) <of-complex x # con? <of-compler x # On>
+using <of-complex x € circline-set z-axis» «m € unit-discy **(1)
+by simp
+then obtain m’ where m = of-complex m’ is-real m’
+using inf-or-of-complez[of m] «m € unit-disc»
+unfolding circline-set-x-axis
+by auto
+hence Re m’ < Re x
+using <poincare-between 0, m (of-complex x)» xx <of-complex x # On>
+using False *« <of-complex x € unit-disc»
+using cmod-Re-le-iff poincare-between-Ouv by auto
+
+have n # 0n
+using **(2, 4) <of-compler « # 0,» <of-complez x € unit-disc»
+using poincare-between-sandwich by fastforce
+have n € circline-set x-axis
+using poincare-between-poincare-line-uvz|of On of-complex x n]
+using poincare-line-0-real-is-x-axis|of of-complex x]
+using <of-complex x € unit-disc) <of-complex x # con? <of-compler x # On>
+using <of-complex x € circline-set z-axis» «n € unit-disc) **(2)
+by simp
+then obtain n’ where n = of-complez n’ is-real n’
+using inf-or-of-complez{of n] «n € unit-disc»
+unfolding circline-set-x-axis
+by auto
+hence Re x < Ren’
+using <poincare-between 0), (of-compler x) n> xx <of-compler x # 01,»
+using False ** <of-complex x € unit-discy «n # On?
+using cmod-Re-le-iff poincare-between-Ouv
+by (metis Re-complez-of-real arg-0-iff rcis-cmod-Arg rcis-zero-arg to-complex-of-complex)
+
+have poincare-between (of-complex m'‘) (of-complex x) (of-complex n’)
+using (Re x < Ren’ «Re m' < Re x
+using poincare-between-z-azis-uvwlof Re m' Re x Re n’|
+using <is-real n’) <is-real m') «n € unit-discy «n = of-complex n'y
+using xz <m = of-complez m'> «m € unit-disc»
+by (smt complex-of-real-Re norm-of-real poincare-between-def unit-disc-
+
+thus ?thesis
+using <n = of-complex n’> «m = of-complex m'y
+by auto
+qed
+qed
+qed
+thus ?thesis
+using assms
+by blast
+qed
+
+7.3 Poincare between - sum distances
+
+Another possible definition of the h-betweenness relation is given in terms of h-distances between pairs of points.
+We prove it as a characterization equivalent to our cross-ratio based definition.
+
+lemma poincare-between-sum-distances-x-axis-u0v:
+
+assumes of-complez u' € unit-disc of-complex v' € unit-disc
+
+assumes is-real u’ u’ 4 0 v' 4 0
+
+shows poincare-distance (of-complex u') 0; + poincare-distance 0; (of-complex v') = poincare-distance (of-complex
+u’) (of-complex v') —+
+
+is-real v' \ Re u’ * Re v' < 0 (is ?P wu’ v' <> ?Qu' v’)
+
+proof—
+
+have Re u' 4 0
+
+89

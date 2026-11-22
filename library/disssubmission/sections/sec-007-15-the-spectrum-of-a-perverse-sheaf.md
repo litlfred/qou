@@ -1,6 +1,6 @@
 ---
 doc_id: disssubmission
-doc_title: "I NAUGURAL -D ISSERTATION T ANNAKIAN C ATEGORIES OF P ERVERSE S HEAVES ON A BELIAN V ARIETIES"
+doc_title: "Tannakian categories of perverse sheaves on abelian varieties"
 section_id: sec-007-15-the-spectrum-of-a-perverse-sheaf
 section_title: "The spectrum of a perverse sheaf"
 section_number: 1.5
@@ -8,6 +8,7 @@ pages: 25-31
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
 toc_source: inferred
+doc_brief: "Tannakian categories of perverse sheaves on abelian varieties — 52 sections: Front matter; Introduction; Some commonly used notations"
 ---
 17
 LEMMA 1.8. With notations as above, dZ ≥0 for all Z. One has dZ = 1

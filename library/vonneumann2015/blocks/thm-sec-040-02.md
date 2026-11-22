@@ -1,0 +1,1 @@
+Let M be a von Neumann algebra on H and Ωa cyclic and separating vector for M. Suppose S is the closure of xΩ7→x∗Ωon MΩ. Let ∆= S∗S, and J be the antiunitary of the polar decomposition S = J∆1/2. Then (i) JMJ = M ′ (ii) ∆itM∆−it = M ∀t ∈R

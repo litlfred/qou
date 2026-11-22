@@ -1,0 +1,54 @@
+3.2 Meromorphic asymptotics 63
+
+at the origin. To that end, we now assume that the sequence {a,,} behaves ex-
+ponentially, meaning there exist C,C, > 0 such that C} < |a,| < Cj for all
+sufficiently large n. Under this assumption, the open domain of convergence of
+J (2) is a finite open disk around the origin, and the Cauchy Integral Formula
+implies
+
+1 dz
+n= — 3.4
+On Oi [re gnel G4
+
+whenever C is a simple closed contour enclosing the origin in this disk. The
+domain of integration in a complex integral can be deformed without changing
+the value of the integral, as long as the deformation stays where the integrand
+is analytic. It is therefore crucial to understand where f(z) is not analytic.
+
+Definition 3.3 (singularities). If D; and Dz are domains (connected open sub-
+sets) of C and gi(z) and g(z) are analytic functions that agree on Dj ND2 # ©
+then we say g> is a direct analytic continuation of g, to Dz. More generally,
+we say that g2(z) is an analytic continuation of g\(z) if there exists a sequence
+of direct analytic continuations on consecutively overlapping domains that be-
+gins with g; and end with go. If f(z) can be analytically continued to the interior
+of a simple closed curve y but cannot be analytically continued to a neighbor-
+hood of a point w € y then we call w a singularity of f.
+
+Example 3.4. If f(z) is a rational function with coprime numerator and de-
+nominator then f has singularities at the roots of its denominator. Aside from
+division by zero, the most common types of singularities encountered in com-
+binatorial applications include substitution of zero into an algebraic root or
+logarithm (see Section 3.4 below). 4
+
+One implication of the Cauchy Integral Formula is that the radius of conver-
+gence 0 < R < o of f equals the minimum modulus of a singularity of f, and
+this correspondence allows us to obtain a rough estimate of the growth of a,.
+Since
+
+<(R-e)" sup |f(l,
+
+kk|=R-e
+
+lanl =
+
+1 -n-1
+Oni f cree f@dz
+
+we see that limsup,_,.,|anl!/"_ < (R—- ¢)7! for all 0 < & < R. Conversely,
+because there is a singularity of modulus R the power series for f does not
+converge for |z| > R, so for any 0 < € < R we have |a,|'/" > (R—«)~! infinitely
+
+often. Thus, the exponential growth rate lim sup)... |@n|'!" of an satisfies
+
+1 1
+lim sup |a,|'/" = Row (3.5)

@@ -15,7 +15,7 @@ inhabitable by some toy ring; it is satisfied at the value the framework actuall
 evaluates at (`q₀ ≈ 1.10998 > 1`), so a definition stated over `IsQGeneric`
 reaches the substrate.
 
--- Ref: [manuscript] AGENTS.md §7c
+-- Ref: [leitner2026] AGENTS.md §7c
 -/
 import QOU.AlgebraicSubstrate.QGenericBase
 import Mathlib.Analysis.SpecialFunctions.Pow.Real

@@ -8,22 +8,22 @@
   "pages": 10,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:17Z",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "OPTIMISTIC CALCULATIONS ABOUT $\\mathrm{W}\\mathrm{I}\\mathrm{T}\\mathrm{T}\\mathrm{E}\\mathrm{N}-\\mathrm{R}\\mathrm{E}\\mathrm{s}\\mathrm{H}\\mathrm{E}\\mathrm{T}\\mathrm{I}\\mathrm{K}\\mathrm{H}\\mathrm{I}\\mathrm{N}$-TURAEV INVARIANTS OF",
+  "title": "Optimistic calculations about the Witten-Reshetikhin-Turaev invariants of closed three-manifolds obtained from the figure-eight knot by integral Dehn surgeries",
   "authors_raw": null,
   "title_lines": [
    "OPTIMISTIC CALCULATIONS ABOUT",
    "$\\mathrm{W}\\mathrm{I}\\mathrm{T}\\mathrm{T}\\mathrm{E}\\mathrm{N}-\\mathrm{R}\\mathrm{E}\\mathrm{s}\\mathrm{H}\\mathrm{E}\\mathrm{T}\\mathrm{I}\\mathrm{K}\\mathrm{H}\\mathrm{I}\\mathrm{N}$-TURAEV INVARIANTS OF"
   ],
-  "abstract": "I calculate optimistically asymptotic behaviors of the WRT $SU(2)$ invariants for the three-manifolds obtained from the \ufb01gure-eight knot by p- surgeries with $p=0,1,2,$ $\\ldots,$ $10$ , from which one can extract volumes and the Chern-Simons invariants of these closed manifolds. I conjecture that this also holds for general closed three-manifolds.",
+  "abstract": "I calculate optimistically asymptotic behaviors of the WRT $SU(2)$ invariants for the three-manifolds obtained from the ﬁgure-eight knot by p- surgeries with $p=0,1,2,$ $\\ldots,$ $10$ , from which one can extract volumes and the Chern-Simons invariants of these closed manifolds. I conjecture that this also holds for general closed three-manifolds.",
   "docinfo": {
-   "Producer": "dvipdfm 0.13.2c-j-p1d, Copyright \u00a9 1998, by Mark A. Wicks",
+   "Producer": "dvipdfm 0.13.2c-j-p1d, Copyright © 1998, by Mark A. Wicks",
    "Creator": "LaTeX with hyperref package",
    "CreationDate": "D:20080313235957+09'00'"
   },
@@ -35,7 +35,8 @@
    "text": "OPTIMISTIC CALCULATIONS ABOUT $\\mathrm{W}\\mathrm{I}\\mathrm{T}\\mathrm{T}\\mathrm{E}\\mathrm{N}-\\mathrm{R}\\mathrm{E}\\mathrm{s}\\mathrm{H}\\mathrm{E}\\mathrm{T}\\mathrm{I}\\mathrm{K}\\mathrm{H}\\mathrm{I}\\mathrm{N}$-TURAEV INVARIANTS OF",
    "corroborated_by": [],
    "browser_print": false
-  }
+  },
+  "title_prev": "OPTIMISTIC CALCULATIONS ABOUT $\\mathrm{W}\\mathrm{I}\\mathrm{T}\\mathrm{T}\\mathrm{E}\\mathrm{N}-\\mathrm{R}\\mathrm{E}\\mathrm{s}\\mathrm{H}\\mathrm{E}\\mathrm{T}\\mathrm{I}\\mathrm{K}\\mathrm{H}\\mathrm{I}\\mathrm{N}$-TURAEV INVARIANTS OF"
  },
  "toc": [
   {
@@ -197,22 +198,22 @@
    "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 1,
-   "n_chars": 29,
-   "n_words": 3,
+   "page_end": 2,
+   "n_chars": 2752,
+   "n_words": 342,
    "label_start": "70",
-   "label_end": "70"
+   "label_end": "71"
   },
   {
    "id": "sec-000-2-the",
    "number": "2",
    "title": "THE",
    "level": 1,
-   "page_start": 1,
+   "page_start": 2,
    "page_end": 3,
-   "n_chars": 6710,
-   "n_words": 756,
-   "label_start": "70",
+   "n_chars": 3901,
+   "n_words": 400,
+   "label_start": "71",
    "label_end": "72"
   },
   {
@@ -222,8 +223,8 @@
    "level": 1,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 4088,
-   "n_words": 484,
+   "n_chars": 4085,
+   "n_words": 483,
    "label_start": "72",
    "label_end": "73"
   },
@@ -234,8 +235,8 @@
    "level": 1,
    "page_start": 4,
    "page_end": 8,
-   "n_chars": 10345,
-   "n_words": 938,
+   "n_chars": 10333,
+   "n_words": 934,
    "label_start": "73",
    "label_end": "77"
   },
@@ -246,8 +247,8 @@
    "level": 1,
    "page_start": 8,
    "page_end": 10,
-   "n_chars": 4690,
-   "n_words": 552,
+   "n_chars": 4681,
+   "n_words": 549,
    "label_start": "77",
    "label_end": "79"
   }
@@ -267,6 +268,7 @@
    "items": []
   },
   "sections": 5,
-  "chars_total": 25862
+  "chars_total": 25752,
+  "furniture_lines_stripped": 10
  }
 }

@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-hep-th-0610241v1/sections/sec-012",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The real part of the product geometry",
+  "pageStart": 20,
+  "pageEnd": 21,
+  "contains": [
+    "library/arxiv-hep-th-0610241v1/blocks/prose-sec-012",
+    "library/arxiv-hep-th-0610241v1/blocks/prop-sec-012-01",
+    "library/arxiv-hep-th-0610241v1/blocks/lem-sec-012-02",
+    "library/arxiv-hep-th-0610241v1/blocks/rem-sec-012-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0610241v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0610241v1/manifest.jsonld",
+  "provenance": "ingested"
+}

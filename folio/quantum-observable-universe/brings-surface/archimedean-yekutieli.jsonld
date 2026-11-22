@@ -2,7 +2,8 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/ex-archimedean-yekutieli",
@@ -16,7 +17,8 @@
   "uses": [
     "papers/quantum-observable-universe/blocks/rem-mass-geometric-drag",
     "papers/quantum-observable-universe/blocks/rem-chirality-trefoil",
-    "papers/quantum-observable-universe/blocks/rem-kummer-tower"
+    "papers/quantum-observable-universe/blocks/rem-kummer-tower",
+    "papers/quantum-observable-universe/blocks/prop-ns-kummer-specialisation"
   ],
   "interprets": "papers/quantum-observable-universe/blocks/thm-qu-to-qou",
   "tags": [

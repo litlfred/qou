@@ -56,11 +56,11 @@ theorem dic3_order : 4 * 3 = (12 : ℕ) := by norm_num
 /-- S₃ has order 6, and three disjoint copies inside S₅ account for
     3 × 6 = 18 elements (as subgroups, they are not disjoint as sets,
     but the corollary states they correspond to the three colour sectors). -/
--- Ref: [manuscript] Chapter 6, §Braid structure
+-- Ref: [leitner2026] Chapter 6, §Braid structure
 theorem s3_order : Nat.factorial 3 = 6 := by decide
 
 /-- S₅ has order 120. -/
--- Ref: [manuscript] Chapter 6, §Braid structure
+-- Ref: [leitner2026] Chapter 6, §Braid structure
 theorem s5_order : Nat.factorial 5 = 120 := by decide
 
 /-- The number of colour sectors — copies of S₃ inside S₅, one per colour
@@ -73,14 +73,14 @@ theorem s5_order : Nat.factorial 5 = 120 := by decide
     the `3` to the corpus.  Per Strict Lean Discipline §8 a claim with no
     falsifiable content is notation, so it is a `def`; the one falsifiable
     thing its docstring asserted is stated below. -/
--- Ref: [manuscript] Chapter 6, §Braid structure
+-- Ref: [leitner2026] Chapter 6, §Braid structure
 def colourSectorCount : ℕ := 3
 
 /-- The colour sectors account for 18 elements of S₅: `colourSectorCount`
     copies of S₃, each of order `3! = 6`.  (This is the count the section
     docstring above records; the copies are subgroups, so they are not
     disjoint as sets.) -/
--- Ref: [manuscript] Chapter 6, §Braid structure
+-- Ref: [leitner2026] Chapter 6, §Braid structure
 theorem colour_sectors_account_for_eighteen :
     colourSectorCount * Nat.factorial 3 = 18 := by
   decide
@@ -88,7 +88,7 @@ theorem colour_sectors_account_for_eighteen :
 /-- The invertibility requirement: 30 must be invertible in the base ring.
     30 = 2 · 3 · 5, which is |S₅| / |Dic₃| · (correction factors).
     This ensures the representation theory works integrally. -/
--- Ref: [manuscript] Chapter 6, §Braid structure
+-- Ref: [leitner2026] Chapter 6, §Braid structure
 theorem thirty_factorization : (30 : ℕ) = 2 * 3 * 5 := by norm_num
 
 /-- Dic₃ order divides S₅ order: 12 | 120. -/

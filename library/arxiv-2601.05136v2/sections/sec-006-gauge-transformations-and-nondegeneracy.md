@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2601.05136v2
-doc_title: "State integrals for the quantized SL₂(ℂ) Chern–Simons invariant"
+doc_title: "State integrals for the quantized SL 2 ( C ) Chern-Simons invariant"
 section_id: sec-006-gauge-transformations-and-nondegeneracy
 section_title: "Gauge transformations and nondegeneracy"
 section_number: null
 pages: 6-8
 source_pdf: 2601.05136v2.pdf
 source_sha256: cee15456257d3028
-doc_brief: "State integrals for the quantized SL₂(ℂ) Chern–Simons invariant — Previous work of the author and N."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.973
-latex_coverage_ratio: 0.856
+latex_coverage_ratio: 0.979
+doc_brief: "State integrals for the quantized SL 2 ( C ) Chern-Simons invariant — Previous work of the author and N."
 ---
 []{#sec:Gauge transformations and admissibility label="sec:Gauge transformations and admissibility"}
 

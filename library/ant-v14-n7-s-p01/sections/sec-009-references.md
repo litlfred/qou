@@ -8,6 +8,7 @@ pages: 41-42
 source_pdf: ant-v14-n7-s-p01.pdf
 source_sha256: 976199bfca4ac086
 toc_source: inferred
+doc_brief: "p-adic Asai L-functions of Bianchi modular forms — 11 sections: Front matter; Introduction; Preliminaries and notation"
 ---
 [Ash and Stevens 1986] A. Ash and G. Stevens, “Modular forms in characteristic l and special values of their L-functions”,
 Duke Math. J. 53:3 (1986), 849–868. MR Zbl

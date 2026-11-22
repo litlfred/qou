@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2207.07246v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2207.07246v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -68,10 +68,25 @@
     "library/arxiv-2207.07246v2/sections/sec-053",
     "library/arxiv-2207.07246v2/sections/sec-054",
     "library/arxiv-2207.07246v2/sections/sec-055",
-    "library/arxiv-2207.07246v2/sections/sec-056"
+    "library/arxiv-2207.07246v2/sections/sec-056",
+    "library/arxiv-2207.07246v2/sections/sec-057",
+    "library/arxiv-2207.07246v2/sections/sec-058",
+    "library/arxiv-2207.07246v2/sections/sec-059",
+    "library/arxiv-2207.07246v2/sections/sec-060",
+    "library/arxiv-2207.07246v2/sections/sec-061",
+    "library/arxiv-2207.07246v2/sections/sec-062",
+    "library/arxiv-2207.07246v2/sections/sec-063",
+    "library/arxiv-2207.07246v2/sections/sec-064",
+    "library/arxiv-2207.07246v2/sections/sec-065",
+    "library/arxiv-2207.07246v2/sections/sec-066",
+    "library/arxiv-2207.07246v2/sections/sec-067",
+    "library/arxiv-2207.07246v2/sections/sec-068",
+    "library/arxiv-2207.07246v2/sections/sec-069",
+    "library/arxiv-2207.07246v2/sections/sec-070",
+    "library/arxiv-2207.07246v2/sections/sec-071"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",

@@ -2,18 +2,22 @@
 
 **Step 1: Frobenius pairing.** The Markov trace
 $\tau : H_n(R,q) \to R$ satisfies
-$\tau(ab) = \tau(ba)$ for all $a,b \in H_n$, and is
-non-degenerate: if $\tau(ab) = 0$ for all $b$, then $a = 0$.
-Non-degeneracy is the content of the
-[Markov-trace normalization](#prop:wedderburn-trace-identity)
-$\sum_{\lambda \vdash n} d_\lambda\, y_\lambda(q) = 1$ with every
-$y_\lambda(q) \neq 0$, which expresses $\tau$ as a strictly positive
-linear combination of characters $\chi_\lambda$ on each Wedderburn block.
-
-The pairing $\langle a, b \rangle_\tau := \tau(ab)$ is
-therefore a non-degenerate symmetric bilinear form, making
-$(H_n(R,q), \tau)$ a **Frobenius algebra** in the sense of
-Frobenius (1903) and Nakayama (1939).
+$\tau(ab) = \tau(ba)$ for all $a,b \in H_n$, and
+$\tau = \sum_\lambda y_\lambda \chi_\lambda$ by the
+[Wedderburn trace identity](#prop:wedderburn-trace-identity).
+On a block with $y_\lambda \neq 0$ the pairing $(a,b) \mapsto
+y_\lambda \operatorname{tr}(a_\lambda b_\lambda)$ is the
+non-degenerate matrix-trace pairing; on a block with $y_\lambda = 0$
+it vanishes identically. So the radical of $\langle a,b\rangle_\tau
+:= \tau(ab)$ is $I_n = \bigoplus_{y_\lambda = 0} \mathrm{End}(V_\lambda)$.
+Under convention D, $z = q^3/(q^2+1)$, the weights are
+$y_{(3)} = (q^4+1)/(q^2+1)^2$, $y_{(2,1)} = q^2/(q^2+1)^2$ and
+$y_{(1^3)} = 0$ at $n = 3$, and in general every shape with three or
+more rows has $y_\lambda = 0$; so $\tau$ is degenerate on $H_n$ for
+$n \ge 3$. It descends to a non-degenerate symmetric pairing on
+$TL_n(q) = H_n/I_n$, making $(TL_n(q), \tau)$ a **Frobenius algebra**
+in the sense of Frobenius (1903) and Nakayama (1939). Steps 2–5 are
+carried out on $TL_n(q)$; read $H_n$ there as $TL_n$.
 
 **Step 2: Self-duality isomorphism.** The map
 
@@ -64,11 +68,11 @@ identified with the dual objective $u \mapsto \langle u, \Theta
 dimensional LP regularity conditions are met** — primal
 feasibility and primal boundedness (or, equivalently for the
 canonical operator-selection LP of
-[`prop:operator-selection-lp`](#prop:operator-selection-lp),
+[Knot operator selection as linear program with LP duality](#prop:operator-selection-lp),
 existence of a strictly feasible point, i.e. Slater's
 condition). For the per-atom operator-selection LP these
 hypotheses are verified by direct construction in
-[`prop:operator-selection-lp`](#prop:operator-selection-lp);
+[Knot operator selection as linear program with LP duality](#prop:operator-selection-lp);
 the proposition above adds *structurally* that the primal-
 dual identification itself does not require additional
 analytic argument because the Frobenius pairing is non-

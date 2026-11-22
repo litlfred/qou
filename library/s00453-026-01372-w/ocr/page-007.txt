@@ -1,0 +1,51 @@
+Algorithmica (2026) 88:21 Page7of19 21
+
+for x € [0, 1]”. If we view x as a probability vector, the multilinear extension F is
+simply the expected value of f when each coordinate is rounded independently in
+{0, 1}.
+
+3 Submodular Chernoff Bounds
+3.1 1-Negative Association and Weak Negative Regression
+
+We first define the weaker notion of negative dependence which we work with, called
+1-negative association, and prove some simple properties about it. We also define a
+related notion of weak negative regression, which is the analogue of 1-negative asso-
+ciation for the notion of negative regression, and we show the equivalence between
+the two for binary random variables and show that weak negative regression is strictly
+stronger in general. After an initial draft, we discovered that [1] had already intro-
+duced the notion of weak negative regression for binary random variables in a context
+complementary to ours. Using their work, we can immediately show nice properties
+about 1-negative association.
+
+Definition 2 A collection of random variables Xj, ..., Xn is said to satisfy 1-negative
+association if for any two monotone functions f and g, where g depends on a single
+random variable X; and f depends on the remaining random variables {X j} jetnj\{i};
+we have E[ fg] < E[fJE[g].
+
+Definition 3 A collection of random variables X1,..., Xn is said to satisfy weak
+negative regression if for any index 7 and any monotone function f depending on the
+remaining random variables {X ;} j¢{n]\{ij, we have E[ f|X; = b] < E[ f|X; = a] for
+alla <b.
+
+The remainder of the discussion, including proofs and examples illustrating the rela-
+tionship between these definitions, is deferred to Appendix A.
+
+3.2 Proof of Submodular Concentration
+
+We will now prove our main result. As mentioned in the introduction, our proof is
+based on the standard technique of bounding the exponential moments, which can be
+enhanced using the p-th moment method. The following lemma contains our main
+technical contribution, which implies that the exponential moments of f(X1,..., Xn)
+under 1-negative association are dominated by that under independence. Our results
+will follow easily afterwards.
+
+Lemma 3.1 Let X1,..., Xn be 1-negatively associated random variables and let
+
+X},..., Xj be independent random variables with the same marginal distributions.
+Also let g be a supermodular function. Then
+
+Elg(X1,..., Xn)] < Elg(Xj,..., X})].
+
+n
+
+cay Springer

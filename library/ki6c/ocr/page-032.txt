@@ -1,0 +1,50 @@
+Since the curvature of the boundary curve of the domain (57) is non-zero everywhere (see
+Lemma B.1), there are exactly two such tangent points, and the above system of equations
+has exactly two solutions thin and tmax. By calculating a solution by Newton’s method
+from (t,s) = (0.6,0.25), we obtain tmin = 0.619717... , and from (t, s) = (0.85, 0.25), we
+obtain tmax = 0.857766... . Therefore, we obtain an estimate of ¢ in A’ as
+
+0.6 < t < 0.86.
+
+To be precise (see Remark 3.2), we can rigorously verify the above estimate of the solutions
+of the above system of equations in a similar way as in Section A.2.
+
+We obtain an estimate of s in A’ from the above formula by using the symmetry
+exchanging (t,s) and (1—s,1—t), and hence, we obtain that
+
+0.14 < s < 04.
+
+We calculate the minimal value umin and the maximal value Umax of u. The maximal
+point of —2 A(t) + A(t — s) + 2.A(s) is given by a solution of the following equations,
+
+o (—2A(t) + At 5) +2.4(9)) = 0,
+2 (-2.A(f) + A(t) +265) = 0.
+
+Their solution is (t,s) = (7, 3). Hence,
+
+1
+A(u) > Sa- 4\(5) = 0.117292... .
+By calculating solutions of the equality of the above formula by Newton’s method, we
+obtain Umin = 0.0586318... and max = 0.315289... . Therefore, we obtain an estimate of
+u in A’ as
+0.05 < u < 04.
+
+To be precise (see Remark 3.1), we can rigorously verify the above estimate in a similar
+way as in Section A.1.
+
+We calculate the minimal value (¢ — $)min and the maximal value (t — 5)max of t — s.
+Putting w =t — s, they satisfy the following equations,
+
+—2 A(t) + A(w) + 2A(t—w) = 6, — A(Z),
+(a)
+ai! —2A(t) + A(w)+2A(E—w)) = 0.
+We note that this system of equations has exactly two solutions. By calculating a solution
+of them by Newton’s method from (t, w) = (0.65, 0.3), we obtain (¢ — $) min = 0.334132...,
+and from (t, w) = (0.85, 0.7), we obtain (¢ — 5) max = 0.665868... . Therefore, we obtain an
+estimate of t— s in A’ as
+0.3 < t-—s < 0.67.
+
+To be precise (see Remark 3.2), we can rigorously verify the above estimate of the solutions
+of the above system of equations in a similar way as in Section A.2.
+
+32

@@ -64,10 +64,10 @@
 
   Sorry-free. No `axiom`, no conditional class, no `native_decide`.
 
-  -- Ref: [manuscript] computations/qbeta/qbeta_ecat_pair_kernel_probe.py
-  -- Ref: [manuscript] computations/qbeta/qbeta_ecat_block_cost_vector_probe.py
-  -- Ref: [manuscript] QOU/QBeta/ECatBlockDecomposition.lean
-  -- Ref: [manuscript] QOU/QBeta/LetterSumBlindness.lean
+  -- Ref: [leitner2026] computations/qbeta/qbeta_ecat_pair_kernel_probe.py
+  -- Ref: [leitner2026] computations/qbeta/qbeta_ecat_block_cost_vector_probe.py
+  -- Ref: [leitner2026] QOU/QBeta/ECatBlockDecomposition.lean
+  -- Ref: [leitner2026] QOU/QBeta/LetterSumBlindness.lean
 -/
 import Mathlib.Algebra.Algebra.Basic
 import Mathlib.Algebra.BigOperators.Ring.Finset

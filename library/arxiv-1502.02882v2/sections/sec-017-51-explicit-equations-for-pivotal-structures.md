@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1502.02882v2
-doc_title: "Fusion categories via string diagrams Bruce Bartlett"
+doc_title: "Fusion categories via string diagrams"
 section_id: sec-017-51-explicit-equations-for-pivotal-structures
 section_title: "Explicit equations for pivotal structures"
 section_number: 5.1
 pages: 26-27
 source_pdf: 1502.02882v2.pdf
 source_sha256: 43641c6f3aed63dd
-doc_brief: "Fusion categories via string diagrams Bruce Bartlett — We use the string diagram calculus to give graphical proofs of the basic results of Etingof, Nikshych and Ostrik [9] on fusion categories."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.935
-latex_coverage_ratio: 0.95
+latex_prose_ratio: 0.949
+latex_coverage_ratio: 0.978
+doc_brief: "Fusion categories via string diagrams — We use the string diagram calculus to give graphical proofs of the basic results of Etingof, Nikshych and Ostrik [9] on fusion categories."
 ---
 \label{Explicit_equations} 
 

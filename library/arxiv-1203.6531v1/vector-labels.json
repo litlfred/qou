@@ -1,0 +1,636 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-1203.6531v1",
+  "pages": [
+    {
+      "page": 7,
+      "rotation": 0,
+      "drawings": 5,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 1. 1"
+      ],
+      "labels": [
+        {
+          "text": "GR ¨OBNER-SHIRSHOV BASIS FOR AFFINE WEYL GROUP f",
+          "bbox": [
+            186.17,
+            94.89,
+            424.36,
+            108.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX7",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "An",
+          "bbox": [
+            414.95,
+            96.65,
+            425.33,
+            104.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI5",
+            "CMMI7"
+          ],
+          "sizes": [
+            4.98,
+            6.97
+          ]
+        },
+        {
+          "text": "7",
+          "bbox": [
+            481.36,
+            96.65,
+            485.33,
+            103.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Figure 1. 1",
+          "bbox": [
+            277.71,
+            322.03,
+            334.29,
+            334.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Then w is called an arranged word and the components ai where mi ≥1 are called",
+          "bbox": [
+            126.67,
+            350.19,
+            485.32,
+            361.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "a marked component of w.",
+          "bbox": [
+            126.67,
+            362.28,
+            242.86,
+            372.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Theorem 13. If all reduced words w = uv(bt) are arranged, then each subword is",
+          "bbox": [
+            126.67,
+            376.96,
+            485.33,
+            390.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMTI10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "written uniquely.",
+          "bbox": [
+            126.67,
+            392.53,
+            199.89,
+            402.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Proof. Let w1 = u1v(bt) and w2 = u2v(bt) be two arranged word. Since the only",
+          "bbox": [
+            126.67,
+            407.21,
+            485.35,
+            422.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMTI10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "possibility for an = r0rn2r1n, the ﬁrst components of them are the same. Let us",
+          "bbox": [
+            126.67,
+            422.78,
+            485.33,
+            434.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "assume that an, an−1, . . . , aj are common in w1 and w2. If the exponents of ai",
+          "bbox": [
+            126.67,
+            434.73,
+            484.83,
+            446.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "for i = j, . . . , n were 1 and the others were 0 in both w1 and w2, then the word",
+          "bbox": [
+            126.67,
+            446.69,
+            485.34,
+            458.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "anan−1 · · · aj would be written twice.",
+          "bbox": [
+            126.67,
+            458.51,
+            288.68,
+            470.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Let us assume aj = r0rnkr1l.",
+          "bbox": [
+            138.63,
+            470.6,
+            274.56,
+            482.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Moreover, let aj−1 = r0rn,k+1r1l in w1 and",
+          "bbox": [
+            283.98,
+            470.6,
+            485.34,
+            482.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "aj−1 = r0rnkr1,l−1 in w2. Then there exits s ≥l −1 the components of w2 between",
+          "bbox": [
+            126.67,
+            482.43,
+            485.32,
+            494.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "j −1 and s + 1 are",
+          "bbox": [
+            126.67,
+            494.38,
+            209.66,
+            504.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(r0rnkr1,l−1)(r0rnkr1,l−2) · · · (r0rnkr1s)(r0rn,k+1r1s)",
+          "bbox": [
+            193.42,
+            511.15,
+            418.58,
+            522.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "when s −k > −1. If s −k = −1, we have",
+          "bbox": [
+            126.67,
+            527.93,
+            306.96,
+            538.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(r0rnkr1,l−1)(r0rnkr1,l−2) · · · (r0rnkr1s)(r0rnpr1q)",
+          "bbox": [
+            199.72,
+            544.7,
+            412.28,
+            555.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Therefore r0rnkr1s is a marked component in the ﬁrst case. By Deﬁnition 9,",
+          "bbox": [
+            138.63,
+            561.6,
+            485.35,
+            573.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "r0rnkr1l can not be a component of w1. The component of w1 in the same position",
+          "bbox": [
+            126.67,
+            573.56,
+            485.34,
+            585.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "can be r0rnkr1s where k > k and s < s.",
+          "bbox": [
+            126.67,
+            585.51,
+            317.56,
+            597.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Since bt is common in both words,",
+          "bbox": [
+            326.37,
+            585.51,
+            485.33,
+            596.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "p ≥k > k. Therefore r0rnkr1s is also a marked component in the second case.Hence",
+          "bbox": [
+            126.67,
+            598.39,
+            485.32,
+            609.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the word (an)an−1 · · · (aj) can be written only in w1 not in w2.",
+          "bbox": [
+            126.67,
+            610.35,
+            402.13,
+            621.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "□",
+          "bbox": [
+            477.58,
+            620.26,
+            485.33,
+            630.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSAM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "3. Counting Reduced Words",
+          "bbox": [
+            233.3,
+            642.39,
+            378.69,
+            654.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Theorem 14. Let bw = aisais−1 . . . ai1v(bt) where aij = r0rnkjrnlj.Then aij’s are",
+          "bbox": [
+            126.67,
+            658.89,
+            485.34,
+            679.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMEX10",
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMR7",
+            "CMSY5",
+            "CMTI10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "marked components of an arranged word w = uv(bt) where bt = r0rnpr1q if and only",
+          "bbox": [
+            126.67,
+            672.19,
+            485.33,
+            687.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMTI10"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "if ks < ks−1 < . . . < k1 < p and q < l1 < l2 < . . . < ls < n",
+          "bbox": [
+            126.67,
+            687.76,
+            378.72,
+            699.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "CMSY7",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -46,7 +46,7 @@ $v^*$ be the weak limit as $q \to 1$
 filament cores.
 
     The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
--- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.ts
+-- Ref: [leitner2026] quantum-observable-universe/fluid-dynamics/vorticity-lower-bound.ts
 theorem vorticity_lower_bound [ctx : VorticityLowerBoundContext] :
     ∀ (t x : ℝ), |ctx.ω_star t x| ≥ ctx.C / ctx.d t :=
   ctx.impl_lower_bound ctx.bound_active

@@ -1,0 +1,41 @@
+3.3. The thick subcategory of negligible objects 47
+
+LEMMA 3.4. For all K,M € D and xy € MI(X) one has the following
+natural isomorphisms.
+(a) Adjoint duality:
+Homp(1,KY *.M) © Homp(K,M) = Homp(K *;MY,1).
+(b) Character twists: (KY = (%)y,
+(K*\M)y & Ky%:!My and (Kx.M)y © Ky «My.
+(c) Verdier duality:
+D(K*M) © D(K)*,D(M), D(K*,M) © D(K)*,D(M).
+(d) Kiinneth formulae:
+A(X, K)@aH3(X,M) + H3(X,K*M),
+H°(X,K*,M) > H*(X,K)@,H*(X,M).
+Proof. Part (a) follows from adjunction as in [41, p. 533]. In (b) the
+first identity comes from RHom(Ly,Ax) = Ly-1 and (—id)*(Ly-1) = Ly,
+and the other two follow as in proposition 2.1. Part (c) follows from the
+
+compatibility of Verdier duality with exterior tensor products. Part (d) is
+the Kiinneth isomorphism [7, exp. XVII.5.4] resp. its Verdier dual. Oo
+
+3.3. The thick subcategory of negligible objects
+
+In this and in the next section we always assume that for the abelian
+variety A = X/T the vanishing assumption GV (A) of section 3.1 holds. We
+have seen in theorem 3.1 that GV(X) then holds as well. Let S(X) c P(X)
+be the full subcategory of all perverse sheaves of Euler characteristic zero,
+and T(X) C D(X) the full subcategory of all sheaf complexes K whose
+perverse cohomology sheaves ’H”(K) lie in S(X) for all degrees n € Z. For
+brevity we put
+
+P= P(X), D= D(X), S = S(X) and T = T(X).
+The following explains why we only use characters of the tame fundamental
+
+group — we want the Euler characteristic ¥(K) = Yjez dim, (H'(X,K)) of
+any complex K € D to be invariant under character twists.
+
+LEMMA 3.5. Let K € D. Then x(K) = X(Kg) for all 9 € TI(X), hence
+the following three conditions are equivalent:
+(a) The complex K lies in the full subcategory T.
+(b) We have H*(X ,Kg) = 0 for generic p € II(X).
+(c) We have H?(X,Kg) = 0 for generic @ € II(X).

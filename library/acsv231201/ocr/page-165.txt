@@ -1,0 +1,49 @@
+6.3 Convex cones and exponential bounds 147
+
+bounded component has the (convergent) infinite series representation
+
+Ly FQ,y) = 4
+
+k20
+
+onaak+3 (2N + 3k + 2)!
+K(N+k+ 1!"
+
+Give as simple a formula as you can for the coefficient of xy” in this Laurent
+expansion when N < 0.
+
+6.3, Convex cones and exponential bounds
+
+Let f(Z) = Dipezd pz” be any convergent Laurent series with domain of con-
+vergence D = Relog™!(B). The coarsest asymptotic information about the co-
+efficients {a,} is their exponential rate of growth (or decay) when r — oo in
+different directions. Recall the notation |r| = |r;| +--+ + |ral-
+
+Definition 6.19. A sequence {r,} = 71,72,... in zd goes to infinity in the
+direction f if |r,| — oo and r,/|r,| — #. We often drop the subscript n,
+writing 7 — co to denote a sequence going to infinity and using shorthand like
+lim,,.. p() for an expression lim,_,.. p(7,) involving a function p : R¢ > R.
+
+In the univariate case one can only move forwards or backwards on the real
+line, however in multivariate cases there are many directions to study. Typi-
+cally the asymptotic behavior of a, changes in a predictable manner with the
+direction of a limit r — oo, however this is not always the case. It can there-
+fore be useful to consider both the exponential growth in a fixed direction, and
+a smoothed version that can be easier to compute.
+
+Definition 6.20. The (limsup logarithmic) growth rate of a sequence qj; in the
+direction # is the quantity
+
+1
+A(?) := lim sup — log |agl,
+soo |s|
+s/is|=?
+while the (limsup logarithmic) neighborhood growth rate of a; in the direction
+f is
+aa . 1
+A?) := lim sup — log |ag|.
+
+soc |s|
+
+The (neighborhood) growth rate of a generating function is the (neighborhood)
+growth rate of its coefficient sequence.

@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0805.1447v2/sections/sec-008",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Mixed foliated surface",
+  "pageStart": 12,
+  "pageEnd": 16,
+  "contains": [
+    "library/arxiv-0805.1447v2/blocks/prose-sec-008"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0805.1447v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0805.1447v2/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -2,11 +2,11 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1908.11677v1",
  "source_sha256": "c53663eeb457daf9",
- "brief": "Variational formulae and estimates of O’Hara’s knot energies — O’Hara’s energies, introduced by Jun O’Hara, were proposedto answer the question of what is the canonical shape in a given knot typ e",
- "extended": "**Variational formulae and estimates of O’Hara’s knot energies**\n\n*Shoya Kawakami*\n\n19 pp, 5 sections.\n\n**Abstract.** O’Hara’s energies, introduced by Jun O’Hara, were proposedto answer the question of what is the canonical shape in a given knot typ e, and were conﬁgured so that the less the energy value of a knot is, the “b etter” its shape is. The existence and regularity of minimizers has bee n well studied. In this article, we calculate the ﬁrst and second variationa l formulae of the (α, p )-O’Hara energies and show absolute integrability, unifor m bounded- ness, and continuity properties. Although several authors have already considered the variational formulae of the ( α, 1)-O’Hara energies, their techniques do not seem to be applicable to the case p > 1. We obtain the variational formulae in a novel manner by extracting a certa in function from the energy density.\n\n**Outline.** Front matter; 1 Introduction; 2 Variational formulae; 3.1 Strategy; 3.2 Estimates and continuity of the quantities",
+ "brief": "Variational formulae and estimates of O’Hara’s knot energies — O’Hara’s energies, introduced by Jun O’Hara, were proposed to answer the question of what is the canonical shape in a given knot type",
+ "extended": "**Variational formulae and estimates of O’Hara’s knot energies**\n\n*Shoya Kawakami*\n\n19 pp, 7 sections.\n\n**Abstract.** O’Hara’s energies, introduced by Jun O’Hara, were proposed to answer the question of what is the canonical shape in a given knot type, and were conﬁgured so that the less the energy value of a knot is, the “better” its shape is. The existence and regularity of minimizers has been well studied. In this article, we calculate the ﬁrst and second variational formulae of the (α, p)-O’Hara energies and show absolute integrability, uniform bounded- ness, and continuity properties. Although several authors have already considered the variational formulae of the (α, 1)-O’Hara energies, their techniques do not seem to be applicable to the case p > 1. We obtain the variational formulae in a novel manner by extracting a certain function from the energy density.\n\n**Outline.** Front matter; 1 Introduction; 2 Variational formulae; 3 Estimates of the first and second variationa; 3.1 Strategy; 3.2 Estimates and continuity of the quantities; 3.3 Proof of Theorem ??",
  "tokens": {
   "brief": 49,
-  "extended": 253
+  "extended": 269
  },
  "sections": [
   {
@@ -25,14 +25,24 @@
    "pages": "5-11"
   },
   {
-   "id": "sec-002-31-strategy",
+   "id": "sec-002-3-estimates-of-the-first-and-second-variational",
+   "title": "Estimates of the first and second variational formulae",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-003-31-strategy",
    "title": "Strategy",
    "pages": "11-12"
   },
   {
-   "id": "sec-003-32-estimates-and-continuity-of-the-quantities-in",
+   "id": "sec-004-32-estimates-and-continuity-of-the-quantities-in",
    "title": "Estimates and continuity of the quantities in (??)",
-   "pages": "12-19"
+   "pages": "12-15"
+  },
+  {
+   "id": "sec-005-33-proof-of-theorem",
+   "title": "Proof of Theorem ??",
+   "pages": "15-19"
   }
  ],
  "provenance": {

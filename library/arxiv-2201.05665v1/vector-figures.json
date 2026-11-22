@@ -1,0 +1,260 @@
+{
+  "$schema": "folio-vector-figures/v1",
+  "doc_id": "arxiv-2201.05665v1",
+  "figures": [
+    {
+      "id": "vfig-p002",
+      "file": null,
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 2
+      },
+      "page": 2,
+      "rotation": 0,
+      "captionLabels": [
+        "1"
+      ],
+      "region": null,
+      "assembly": {
+        "drawings": 6,
+        "background": 0,
+        "groups": [],
+        "boxes": [],
+        "unlabelledClosedShapes": 0,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              308.75,
+              212.36,
+              365.92,
+              212.36
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              355.62,
+              257.66,
+              365.76,
+              257.66
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              417.67,
+              257.66,
+              431.51,
+              257.66
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              438.75,
+              257.66,
+              451.71,
+              257.66
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              275.27,
+              713.78,
+              286.24,
+              713.78
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              301.96,
+              713.78,
+              307.42,
+              713.78
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 0
+      },
+      "unrendered_reason": "no drawing component on this page contains a text line, so there is no labelled region to render -- the caption candidates are recorded and nothing is claimed about what the page draws"
+    },
+    {
+      "id": "vfig-p007",
+      "file": null,
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 7
+      },
+      "page": 7,
+      "rotation": 0,
+      "captionLabels": [
+        "2"
+      ],
+      "region": null,
+      "assembly": {
+        "drawings": 1,
+        "background": 0,
+        "groups": [],
+        "boxes": [],
+        "unlabelledClosedShapes": 0,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              276.04,
+              625.44,
+              329.79,
+              625.44
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 0
+      },
+      "unrendered_reason": "no drawing component on this page contains a text line, so there is no labelled region to render -- the caption candidates are recorded and nothing is claimed about what the page draws"
+    },
+    {
+      "id": "vfig-p011",
+      "file": null,
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 11
+      },
+      "page": 11,
+      "rotation": 0,
+      "captionLabels": [
+        "3"
+      ],
+      "region": null,
+      "assembly": {
+        "drawings": 3,
+        "background": 0,
+        "groups": [],
+        "boxes": [],
+        "unlabelledClosedShapes": 0,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              197.9,
+              450.75,
+              207.52,
+              450.75
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              220.74,
+              507.39,
+              236.56,
+              507.39
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              86.4,
+              696.93,
+              146.18,
+              696.93
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 0
+      },
+      "unrendered_reason": "no drawing component on this page contains a text line, so there is no labelled region to render -- the caption candidates are recorded and nothing is claimed about what the page draws"
+    },
+    {
+      "id": "vfig-p012",
+      "file": null,
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 12
+      },
+      "page": 12,
+      "rotation": 0,
+      "captionLabels": [
+        "4"
+      ],
+      "region": null,
+      "assembly": {
+        "drawings": 3,
+        "background": 0,
+        "groups": [],
+        "boxes": [],
+        "unlabelledClosedShapes": 0,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              243.01,
+              494.92,
+              275.39,
+              494.92
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              407.54,
+              587.66,
+              476.81,
+              587.66
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              255.39,
+              691.23,
+              271.21,
+              691.23
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 0
+      },
+      "unrendered_reason": "no drawing component on this page contains a text line, so there is no labelled region to render -- the caption candidates are recorded and nothing is claimed about what the page draws"
+    }
+  ]
+}

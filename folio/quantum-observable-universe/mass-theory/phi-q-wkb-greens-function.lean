@@ -35,7 +35,7 @@ A complete sorry-free proof requires heat-kernel determinant theory
 and stationary-phase asymptotics — neither in Mathlib today. The
 typeclass formulation isolates that gap (§3b-cond conditional-class).
 
--- Ref: [manuscript] conj:phi-q-wkb-greens-function
+-- Ref: [leitner2026] conj:phi-q-wkb-greens-function
 -- Ref: [faddeev1994] Faddeev, "Current-like variables in massive and massless integrable models," Lectures 1994
 -- Ref: [kashaev1997] Kashaev, "The hyperbolic volume of knots from the quantum dilogarithm," Lett. Math. Phys. 39 (1997)
 -/
@@ -48,7 +48,7 @@ namespace QOU.QPochhammer
     requires heat-kernel / zeta-function determinant theory (not yet
     in Mathlib); this opaque stub lets the conjecture statement
     compile. -/
--- Ref: [manuscript] def:categorical-dirac-operator
+-- Ref: [leitner2026] def:categorical-dirac-operator
 --
 -- **Carried WITH its boundary condition (2026-09-04).** This was
 -- `opaque diracLogDet : ℝ → ℝ` plus `axiom diracLogDet_zero`. Pinning the
@@ -68,7 +68,7 @@ noncomputable def diracLogDet : ℝ → ℝ := diracLogDetAux.1
     `q → 1`, `n → ∞`, `n(1-q) → ∞`. Concrete formulation requires
     a stationary-phase development with uniform error bounds; this
     opaque stub lets the conjecture statement compile. -/
--- Ref: [manuscript] conj:phi-q-wkb-greens-function
+-- Ref: [leitner2026] conj:phi-q-wkb-greens-function
 opaque nextOrderCorrectionAux :
     {f : ℝ → ℝ → ℕ → ℝ // ∀ q n, f q 0 n = 0} := ⟨fun _ _ _ => 0, fun _ _ => rfl⟩
 
@@ -79,13 +79,13 @@ noncomputable def nextOrderCorrection : ℝ → ℝ → ℕ → ℝ := nextOrder
     **Was an axiom; now a projection (2026-09-04)** — see the note on
     `diracLogDetAux`. Built into the opaque interface exactly as before, but
     by construction rather than by assumption. -/
--- Ref: [manuscript] conj:phi-q-wkb-greens-function
+-- Ref: [leitner2026] conj:phi-q-wkb-greens-function
 theorem diracLogDet_zero : diracLogDet 0 = 0 := diracLogDetAux.2
 
 /-- Boundary lemma: at `x = 0` the next-order correction is zero.
     **Was an axiom; now a projection (2026-09-04)** — see the note on
     `diracLogDetAux`. -/
--- Ref: [manuscript] conj:phi-q-wkb-greens-function
+-- Ref: [leitner2026] conj:phi-q-wkb-greens-function
 theorem nextOrderCorrection_zero (q : ℝ) (n : ℕ) :
     nextOrderCorrection q 0 n = 0 := nextOrderCorrectionAux.2 q n
 
@@ -94,7 +94,7 @@ theorem nextOrderCorrection_zero (q : ℝ) (n : ℕ) :
     order Li₂ convergence (encoded by the parent class
     `ArchimedeanLimit x`), the `ℏ_q⁰` correction converges to
     `diracLogDet x` along Faddeev's joint scaling. -/
--- Ref: [manuscript] conj:phi-q-wkb-greens-function
+-- Ref: [leitner2026] conj:phi-q-wkb-greens-function
 class WKBGreensFunction (x : ℝ) extends ArchimedeanLimit x : Prop where
   /-- The Faddeev `ℏ_q⁰` correction equals the half-log-determinant
       of the categorical Dirac operator at the dominant saddle. -/
@@ -107,7 +107,7 @@ class WKBGreensFunction (x : ℝ) extends ArchimedeanLimit x : Prop where
 
 /-- Stated form of the conjecture (sorry-free at the level of Lean,
     inhabited only via a `[WKBGreensFunction x]` typeclass instance). -/
--- Ref: [manuscript] conj:phi-q-wkb-greens-function
+-- Ref: [leitner2026] conj:phi-q-wkb-greens-function
 theorem nextOrderCorrection_to_diracLogDet (x : ℝ)
     [h : WKBGreensFunction x] (ε : ℝ) (hε : 0 < ε) :
     ∃ δ > (0 : ℝ), ∀ (q : ℝ) (n : ℕ),
@@ -122,7 +122,7 @@ theorem nextOrderCorrection_to_diracLogDet (x : ℝ)
     inhabited without further Mathlib infrastructure; for every
     `x ∈ (0, 1)` the instance requires stationary-phase asymptotics
     and heat-kernel determinant theory. -/
--- Ref: [manuscript] conj:phi-q-wkb-greens-function
+-- Ref: [leitner2026] conj:phi-q-wkb-greens-function
 instance wkbGreensFunction_zero : WKBGreensFunction 0 where
   toArchimedeanLimit := archimedeanLimit_zero
   one_loop_determinant := by

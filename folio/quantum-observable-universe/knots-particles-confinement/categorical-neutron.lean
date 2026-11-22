@@ -11,7 +11,7 @@ The categorical neutron is 𝔫 = [u, d, d]_c ⋈ L_H.
 LaTeX label: `def:categorical-neutron`
 
 ## References
-- [manuscript] §3/categorical-neutron
+- [leitner2026] §3/categorical-neutron
 
 **Ground ring**: `ℝ` (archimedean realisation).
 Evaluates formal results at q₀ ≈ 1.1098 for comparison with
@@ -23,7 +23,7 @@ namespace QOU.Torsion
 
 /-- The categorical neutron: color-linked triple [u, d, d]_c ⋈ L_H.
     Mass = 2·S_ud + S_dd ≈ 939.565 MeV. -/
--- Ref: [manuscript] §3/categorical-neutron
+-- Ref: [leitner2026] §3/categorical-neutron
 structure CategoricalNeutron where
   /-- Pair Skein mass S_ud. -/
   skein_ud : ℝ
@@ -60,7 +60,7 @@ noncomputable def neutron_mass (q : ℝ) : ℝ :=
 /- The neutron mass derived from the substrate parameter q₀.
     At the CODATA value q₀, the Borromean volume formula plus
     the Skein asymmetry correction yields m_𝔫(q₀) ≈ 939.565 MeV.
-    Ref: [manuscript] Ch. 5, §Categorical neutron -/
+    Ref: [leitner2026] Ch. 5, §Categorical neutron -/
 /-- **External axiom (§3b-cond pattern): neutron_mass_from_substrate.**
 
     Auto-extracted from the single-sorry theorem body in this file.
@@ -77,12 +77,12 @@ theorem neutron_mass_from_substrate :
 
 /-- The proton-neutron mass splitting is a pure function of q.
     Δm = S_dd(q) - S_uu(q) ≈ 1.293 MeV at q₀. -/
--- Ref: [manuscript] Ch. 5, §Categorical neutron
+-- Ref: [leitner2026] Ch. 5, §Categorical neutron
 theorem neutron_proton_splitting :
     ∀ q : ℝ, 1 < q →
     neutron_mass q - (7.32772475341775 / (1 - q⁻¹) ^ 2) =
     (1 / 2) * (q - q⁻¹) := by
-  -- Ref: [manuscript] Ch. 5, §Categorical neutron
+  -- Ref: [leitner2026] Ch. 5, §Categorical neutron
   intro q hq
   unfold neutron_mass
   -- After unfolding, the let-bindings expand and the difference

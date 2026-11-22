@@ -1,0 +1,52 @@
+144 Laurent series, amoebas, and convex geometry
+
+Proof The argument principle implies that the number of zeros of a,(w) in-
+side the unit circle minus the order of the pole of a,(w) at the origin equals
+d ,
+ti ate) dw.
+2m Jiwj=1 As(w)
+
+By Exercise 6.16 below, the image of |w| = 1 under the change of variables
+
+Z =(p\w"',..., paw*) is homotopic to the chain of integration s)y|+---+Saya,
+where y; = {(pi,...,W,---, Pa) : |wl = |pxl}. Thus, the difference of zeros and
+poles is
+
+ye ian = 5) vl SPs +s Zhe PA ge
+£4 2ni Jy, as(w) Da ari leelslpel SCP 1s ++ +5 Zhe ++ +> Pa)
+Style"! pevenZey eM)
+Dan FC os Zep eX) ae
+= Ilse ees eee
+= Ysa,
+=
+
+as claimed, where the first equality follows from the chain rule, and the second
+follows from the expression for the order map in Exercise 6.5. ia)
+
+y
+
+Lemma 6.14 is powerful as it allows us to characterize the order map using
+the roots of a univariate polynomial; it forms the basis for all of the results
+about the order map that we require.
+
+Corollary 6.15. The image of amoeba(f)° under the order map lies in the
+Newton polytope of f.
+
+Exercise 6.6. Prove Corollary 6.15 by showing that s - v(a) < max (s -n) for
+neN
+all s € Z4 \ {0}.
+
+Corollary 6.16. [f x and x’ lie in distinct components of amoeba(f)° then
+v(x) # v(x’).
+
+Proof Writing x’ = x + ts for some s € Z# \ {0} and t > 0, we have
+
+s- v(x’)
+
+= # zeros of f(e"*'w",...,e%*w") inside |w| = 1 minus pole order at 0
+= # zeros of f(e"'w",..., ew) inside |w| = e' minus pole order at 0
+
+> # zeros of f(e“'w"!,...,e*4w*) inside |w| = 1 minus pole order at 0
+=s-v(x’),
+
+where the inequality follows from the fact that there is at least one root of

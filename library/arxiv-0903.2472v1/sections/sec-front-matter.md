@@ -8,6 +8,7 @@ pages: 1-10
 source_pdf: 0903.2472v1.pdf
 source_sha256: 637cfd1d4d833c02
 toc_source: inferred
+doc_brief: "Exact Results for Perturbative Chern-Simons Theory with Complex Gauge Group — We develop several methods that allow us to compute all-loop partition functions in perturbative Chern-Simons theory with"
 ---
 arXiv:0903.2472v1  [hep-th]  13 Mar 2009
 Preprint typeset in JHEP style - HYPER VERSION
@@ -101,7 +102,6 @@ gauge theory with compact gauge group. For example, one important diﬀerence is
 a compact Riemann surface Σ Chern-Simons theory with compact gauge group associates
 a ﬁnite-dimensional Hilbert space HΣ, whereas in a theory with non-compact (and, in
 particular, complex) gauge group the Hilbert space is inﬁnite-dimensional. Due to this and
-– 1 –
 other important diﬀerences that will be explained in further detail below, Chern-Simons
 gauge theory with complex gauge group remains a rather mysterious subject. First steps
 toward understanding this theory were made in [53] and, more recently, in [22].
@@ -171,7 +171,6 @@ which appear in gluing rules for Chern-Simons theory with compact group G turn i
 integrals over continuous parameters in a theory with non-compact gauge group. This is
 one of the diﬃculties one needs to face in computing Z(M) non-perturbatively, i.e. as a
 closed-form function of complex parameters t and ¯t.
-– 2 –
 A somewhat more modest goal is to compute Z(M) perturbatively, by expanding the
 integral (1.2) in inverse powers of t and ¯t around a saddle point (a classical solution). In
 Chern-Simons theory, classical solutions are ﬂat gauge connections, that is gauge connec-
@@ -233,7 +232,6 @@ n+1ℏn
 (1.8)
 This is the general form of the perturbative partition function in Chern-Simons gauge
 theory with any gauge group, compact or otherwise. It follows simply by applying the
-– 3 –
 stationary phase approximation to the integral (1.2), which basically gives the standard
 rules of perturbative gauge theory [52, 3, 4, 5] that will be discussed in more detail below.
 For now, we note that the leading term S(ρ)
@@ -293,7 +291,6 @@ to a trivial ﬂat connection A(0) = 0), the perturbative invariants S(0)
 n (M) are actually
 identical to those in Chern-Simons theory with compact gauge group G. Then Z(0)(M; ℏ)
 can be obtained from the perturbative partition function of Chern-Simons theory with
-– 4 –
 gauge group G simply by allowing ℏto be complex,1
 Z(0)
 GC(M; ℏ) = Z(0)
@@ -346,7 +343,6 @@ ance, they lead to multiple methods for computing the perturbative invariant Z(�
 Mathematically, each of these methods can be taken as a deﬁnition of Z(ρ)(M; ℏ); however,
 1In a theory with compact gauge group, one frequently uses the “level” k as the coupling constant. It is
 related to ℏvia ℏ= iπ/(k + h∨), where h∨is the dual Coxeter number of G, e.g. h∨= N for G = SU(N).
-– 5 –
 it is important to realize that they all have a common origin and are completely equivalent.
 In the mathematical literature, this is usually stated in the form of a conjecture. To wit,
 the following are equivalent:
@@ -394,7 +390,6 @@ one considers a double-scaling limit such that
 λ∗→∞,
 u := ℏλ∗= ﬁxed .
 (1.14)
-– 6 –
 Taking this limit and analytically continuing to complex values of u, one has [22]
 Z(ρ)(M; ℏ)
 Z(S3; ℏ)
@@ -441,7 +436,6 @@ bAi PG,R(K; q) = 0 .
 for ﬁnding the bAi’s — see sections 2.2 and 4.2.1 for further details and a concrete example.
 In turn, combining approaches 2 and 3 with the ﬁrst approach implies that, in the
 limit (1.14), the asymptotic expansion of the polynomial invariant PG,R(K; q) has the form
-– 7 –
 (1.8). For G = SU(2) (whose complexiﬁcation is GC = SL(2, C)) this statement is already
 known as a generalization of the Volume Conjecture, ﬁrst proposed in [22] and further
 reﬁned in [38, 23]. In particular, if G = SU(2) and R is its n-dimensional representation,
@@ -512,15 +506,5 @@ invariants S(ρ)
 n
 computed by Chern-Simons gauge theory with complex gauge group GC in
 the background of a non-abelian irreducible ﬂat connection A(ρ) contain much interesting
-– 8 –
 information about the geometry of M. We believe that studying these invariants further,
 both physically and mathematically, can lead to exciting developments in both subjects.
-2. Perturbation theory around a non-trivial ﬂat connection
-In this section we pursue traditional approaches to Chern-Simons gauge theory based on the
-evaluation of Feynman diagrams and the quantization of moduli spaces of ﬂat connections.
-In particular, we explain how one can systematically compute the perturbative GC invariant
-Z(ρ)(M; ℏ) to arbitrary order in the ℏ-expansion for non-trivial ﬂat connections. Through
-the analysis of Feynman diagrams, we will ﬁnd that the coeﬃcients S(ρ)
-n
-have a very special
-structure, motivating us to deﬁne the notion of “arithmetic QFT.”

@@ -50,8 +50,8 @@ identification held.
 
 ## References
 
-- [manuscript] mass-theory/qdifference-kernel-prolongation-symbol
-- [manuscript] docs/audits/2026-09-04-derivative-only-dq-vs-c1-kernel.md
+- [leitner2026] mass-theory/qdifference-kernel-prolongation-symbol
+- [leitner2026] docs/audits/2026-09-04-derivative-only-dq-vs-c1-kernel.md
 
 LaTeX label: (library module — no content block)
 -/

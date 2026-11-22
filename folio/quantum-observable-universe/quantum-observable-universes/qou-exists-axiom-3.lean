@@ -18,7 +18,7 @@ LaTeX label: `lem:qou-exists-axiom-3`
 
 ## References
 
-- [manuscript] §1 Quantum Observable Universe, Axiom 3
+- [leitner2026] §1 Quantum Observable Universe, Axiom 3
 -/
 
 -- `QuantumObservableUniverse` is universe-carrying (AGENTS.md §7d U2);
@@ -36,7 +36,7 @@ namespace QOU.QuantumObservableUniverse
     the `Subsingleton` form of "no non-trivial invariant adjoint
     morphisms".  This is the categorical analogue of vanishing
     Chern classes for the adjoint bundle. -/
--- Ref: [manuscript] §1 Quantum Observable Universe, Axiom 3
+-- Ref: [leitner2026] §1 Quantum Observable Universe, Axiom 3
 theorem exists_axiom_3_chern
     {R : Type*} [CommRing R] (Q : QOU.QuantumObservableUniverse.{u, v} R) :
     letI := Q.catInst

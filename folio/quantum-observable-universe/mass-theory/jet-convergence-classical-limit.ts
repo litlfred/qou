@@ -16,8 +16,10 @@ export default conjecture({
     "jet-filtration",
   ],
   cites: [
-    "feray2010",
+    "ivanov-olshanski2003",
+    "feray-meliot2012",
     "kerov1996",
+    "fulman2003",
   ],
   authorNotes: [
     {

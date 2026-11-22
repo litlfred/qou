@@ -32,7 +32,7 @@ LaTeX labels: `def:computational-horizon`, `prop:p-bandwidth-bound`,
 
 - [cook1971] https://doi.org/10.1145/800157.805047
 - [freedman2003] https://doi.org/10.1090/S0273-0979-02-00964-3
-- [manuscript] §9/computational-horizon
+- [leitner2026] §9/computational-horizon
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
 Part of the formal proof chain. The parameter `q` is the canonical
@@ -175,7 +175,7 @@ def polynomialObservable (T : ResolutionTree) (pb : PolyBound) : Prop :=
 
     This mirrors the jet horizon: H = V(h) where h is the ideal
     of degree-0 sections that vanish. -/
--- Ref: [manuscript] §9/computational-horizon
+-- Ref: [leitner2026] §9/computational-horizon
 -- Ref: [cook1971]     title: — see folio/schema/references.ts
 def hasComputationalHorizon (T : ResolutionTree) (pb : PolyBound) : Prop :=
   ¬ polynomialObservable T pb

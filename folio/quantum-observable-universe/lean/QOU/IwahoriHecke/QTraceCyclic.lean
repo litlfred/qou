@@ -42,7 +42,7 @@ See `QOU.IwahoriHecke.MarkovPeel` for that half. Normalisation (`tr_M(1) = 1`) i
 absent — `qTrace_one` gives `(∑ₖ w k)^{m+1}`, which is not `1`.
 
 -- Ref: [jones1987] Hecke algebra representations of braid groups and link polynomials
--- Ref: [manuscript] bean qou-k4oq
+-- Ref: [leitner2026] bean qou-k4oq
 -/
 
 namespace QOU.IwahoriHecke.QuantumTrace

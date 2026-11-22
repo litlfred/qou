@@ -1,6 +1,6 @@
 ---
 doc_id: fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh
-doc_title: "Degeneration of hyperbolic structures on the ﬁgure-eight knot complement and points of ﬁnite order on an elliptic curve"
+doc_title: "Degeneration of hyperbolic structures on the figure-eight knot complement and points of finite order on an elliptic curve"
 section_id: sec-004-41-rational-points-on-e-and-haken-manifolds
 section_title: "Rational points on E and Haken manifolds"
 section_number: 4.1
@@ -8,7 +8,9 @@ pages: 7-8
 source_pdf: fujii-2005-degeneration-of-hyperbolic-structures-figure-eight.pdf
 source_sha256: bca3996c7a667b18
 toc_source: inferred
+doc_brief: "Degeneration of hyperbolic structures on the figure-eight knot complement and points of finite order on an elliptic curve — 12 sections: Front matter; Introduction; Deformation of hyperbolic structur"
 ---
+Rational points on E and Haken manifolds
 Culler and Shalen [3] investigated the character varieties of representations
 of fundamental groups of hyperbolic 3-manifolds. One of the assertions that
 they proved is that in a hyperbolic 3-manifold there corresponds an incom-
@@ -37,4 +39,3 @@ rational points of its deformation curve correspond exactly to the closed Haken
 non-trivial splittings of π1(S3 −K).
 350
 Michihiko Fujii
-4.2.

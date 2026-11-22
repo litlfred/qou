@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-022",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Comportement des solutions canoniques",
-  "pageStart": 28,
-  "pageEnd": 29,
-  "text": "../sections/sec-022-32-comportement-des-solutions-canoniques.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/aif-2000-50-4-1021-0",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/aif-2000-50-4-1021-0",
+  "title": "Estimation asymptotique de eq^c et de iq",
+  "pageStart": 25,
+  "pageEnd": 28,
+  "text": "../sections/sec-022-31-estimation-asymptotique-de-eqc-et-de-iq.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/aif-2000-50-4-1021-0/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/aif-2000-50-4-1021-0/manifest.jsonld",
   "provenance": "ingested"
 }

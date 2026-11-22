@@ -1,6 +1,15 @@
 import Mathlib.Algebra.Star.Basic
+import Mathlib.Algebra.Field.ZMod
+import Mathlib.Data.Matrix.Mul
+import Mathlib.LinearAlgebra.Matrix.ConjTranspose
 import Mathlib.Algebra.Module.Basic
 import Mathlib.LinearAlgebra.Matrix.ToLin
+import Mathlib.LinearAlgebra.Basis.VectorSpace
+import Mathlib.LinearAlgebra.Projection
+import Mathlib.Analysis.InnerProductSpace.Projection.Basic
+import Mathlib.Analysis.InnerProductSpace.Projection.FiniteDimensional
+import Mathlib.Analysis.InnerProductSpace.PiL2
+import Mathlib.LinearAlgebra.Matrix.Hermitian
 
 
 /-!
@@ -50,27 +59,164 @@ variable {K : Type*} [Field K]
     rows or columns) has a complementary projection `p` such that
     annihilator pattern matches.
     -/
-/-- **External axiom (Kassel 1995 §I): right annihilators in
-    `M_n(K)` are principal idempotent-generated ideals.**
+open Matrix in
+/-- **Right annihilators in `M_n(K)` are idempotent-generated.** Was the axiom
+    `matrix_algebra_baer_right_axiom`; proved 2026-11-15 (bean `qou-n2un`).
 
-    Standard linear algebra (complementary projection to column-span
-    of S); axiomatised pending the Mathlib matrix-algebra Baer-*
-    formalisation. -/
+    Let `W ⊆ Kⁿ` be the span of the columns of the matrices in `S`, pick a
+    complement `U`, and let `p` be the matrix of the projection onto `U`
+    along `W`. Then `x` kills every `s ∈ S` iff `x` kills `W` iff `x = x p`. -/
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2 §I
-axiom matrix_algebra_baer_right_axiom :
-    ∀ {K : Type*} [Field K] (n : ℕ) (S : Set (Matrix (Fin n) (Fin n) K)),
-      ∃ p : Matrix (Fin n) (Fin n) K,
-        IsIdempotentElem p ∧
-          (∀ x : Matrix (Fin n) (Fin n) K,
-            (∀ s ∈ S, x * s = 0) ↔ ∃ y : Matrix (Fin n) (Fin n) K, x = y * p)
-
 theorem matrix_algebra_baer_right
     (n : ℕ) (S : Set (Matrix (Fin n) (Fin n) K)) :
     ∃ p : Matrix (Fin n) (Fin n) K,
       IsIdempotentElem p ∧
         (∀ x : Matrix (Fin n) (Fin n) K,
-          (∀ s ∈ S, x * s = 0) ↔ ∃ y : Matrix (Fin n) (Fin n) K, x = y * p) :=
-  matrix_algebra_baer_right_axiom n S
+          (∀ s ∈ S, x * s = 0) ↔ ∃ y : Matrix (Fin n) (Fin n) K, x = y * p) := by
+  classical
+  -- W = span of the columns of the matrices in S
+  let W : Submodule K (Fin n → K) :=
+    Submodule.span K {v | ∃ s ∈ S, ∃ j, v = fun i => s i j}
+  obtain ⟨U, hc⟩ := Submodule.exists_isCompl W
+  let P : (Fin n → K) →ₗ[K] (Fin n → K) :=
+    U.subtype ∘ₗ Submodule.linearProjOfIsCompl U W hc.symm
+  have hPU : ∀ v, P (P v) = P v := fun v => by
+    simp only [P, LinearMap.comp_apply, Submodule.coe_subtype]
+    rw [Submodule.linearProjOfIsCompl_apply_left]
+  have hPW : ∀ w ∈ W, P w = 0 := fun w hw => by
+    simp only [P, LinearMap.comp_apply, Submodule.coe_subtype]
+    have := Submodule.linearProjOfIsCompl_apply_right (p := U) hc.symm ⟨w, hw⟩
+    rw [show w = ((⟨w, hw⟩ : W) : Fin n → K) from rfl, this]; rfl
+  have hsubW : ∀ v, v - P v ∈ W := fun v => by
+    have := Submodule.linearProjOfIsCompl_add_linearProjOfIsCompl_eq_self hc.symm v
+    rw [show v - P v = _ from (eq_sub_of_add_eq' this).symm]
+    exact Submodule.coe_mem _
+  refine ⟨LinearMap.toMatrix' P, ?_, ?_⟩
+  · rw [IsIdempotentElem, ← LinearMap.toMatrix'_comp]
+    congr 1
+    exact LinearMap.ext hPU
+  · -- x kills W iff x kills S
+    have kill : ∀ x : Matrix (Fin n) (Fin n) K, (∀ s ∈ S, x * s = 0) →
+        ∀ w ∈ W, x *ᵥ w = 0 := by
+      intro x hx w hw
+      induction hw using Submodule.span_induction with
+      | mem v hv =>
+        obtain ⟨s, hs, j, rfl⟩ := hv
+        funext i
+        have := congrFun (congrFun (hx s hs) i) j
+        simpa [Matrix.mul_apply, Matrix.mulVec, dotProduct] using this
+      | zero => simp
+      | add a b _ _ ha hb => rw [Matrix.mulVec_add, ha, hb, add_zero]
+      | smul c a _ ha => rw [Matrix.mulVec_smul, ha, smul_zero]
+    intro x
+    constructor
+    · intro hx
+      refine ⟨x, ?_⟩
+      ext i k
+      have h := congrFun (kill x hx _ (hsubW (Pi.single k 1))) i
+      rw [Matrix.mulVec_sub, ← LinearMap.toMatrix'_mulVec P, Matrix.mulVec_mulVec,
+        Matrix.mulVec_single_one, Matrix.mulVec_single_one] at h
+      simpa [sub_eq_zero] using h
+    · rintro ⟨y, rfl⟩ s hs
+      have hps : LinearMap.toMatrix' P * s = 0 := by
+        ext i j
+        have := congrFun (LinearMap.toMatrix'_mulVec P (fun i => s i j)) i
+        rw [hPW _ (Submodule.subset_span ⟨s, hs, j, rfl⟩)] at this
+        simpa [Matrix.mul_apply, Matrix.mulVec, dotProduct] using this
+      rw [Matrix.mul_assoc, hps, Matrix.mul_zero]
+
+/-! ## Step 1′: with a positive star, matrix algebras ARE Baer-*
+
+The refutation above is about the star. Over `𝕜 = ℝ` or `ℂ` (any `RCLike`
+field) with the conjugate transpose, the projection in
+`matrix_algebra_baer_right` can be chosen self-adjoint: take the orthogonal
+projection onto the orthogonal complement of the column span `W` of `S`,
+instead of a projection along an arbitrary complement. Proved 2026-11-20
+(bean `qou-n2un`, carrier M3 `qou-jgp2` of epic `qou-d8c7`).
+
+This is the matrix-block half of the prose proof only. The Hecke statement
+still needs a `*`-isomorphism `H_n(q) ≅ ⊕_λ M_{d_λ}(𝕜)` carrying the bar
+involution to the conjugate transpose on every block, which is not
+formalised here; the proposition stays open. -/
+
+open Matrix in
+/-- **`M_n(𝕜)` with the conjugate transpose is a Baer-*-ring** for every
+    `RCLike` field `𝕜`. -/
+theorem baerStarRing_matrix_rclike {𝕜 : Type*} [RCLike 𝕜] (n : ℕ) :
+    BaerStarRing (Matrix (Fin n) (Fin n) 𝕜) := by
+  classical
+  refine ⟨fun S => ?_⟩
+  let e : EuclideanSpace 𝕜 (Fin n) ≃ₗ[𝕜] (Fin n → 𝕜) := WithLp.linearEquiv 2 𝕜 (Fin n → 𝕜)
+  let W : Submodule 𝕜 (Fin n → 𝕜) :=
+    Submodule.span 𝕜 {v | ∃ s ∈ S, ∃ j, v = fun i => s i j}
+  let W' : Submodule 𝕜 (EuclideanSpace 𝕜 (Fin n)) := W.map e.symm.toLinearMap
+  let K : Submodule 𝕜 (EuclideanSpace 𝕜 (Fin n)) := W'ᗮ
+  let Pr := K.starProjection
+  let P : (Fin n → 𝕜) →ₗ[𝕜] (Fin n → 𝕜) :=
+    e.toLinearMap ∘ₗ (Pr : EuclideanSpace 𝕜 (Fin n) →ₗ[𝕜] EuclideanSpace 𝕜 (Fin n)) ∘ₗ
+      e.symm.toLinearMap
+  have hPr_idem : ∀ v, Pr (Pr v) = Pr v := fun v =>
+    Submodule.starProjection_eq_self_iff.mpr (Submodule.starProjection_apply_mem K v)
+  have hPU : ∀ v, P (P v) = P v := fun v => by
+    simp only [P, LinearMap.comp_apply, LinearEquiv.coe_coe, LinearEquiv.symm_apply_apply,
+      ContinuousLinearMap.coe_coe, hPr_idem]
+  have hmemW' : ∀ w ∈ W, e.symm w ∈ W' := fun w hw => Submodule.mem_map_of_mem hw
+  have hPW : ∀ w ∈ W, P w = 0 := fun w hw => by
+    have h1 : e.symm w ∈ Kᗮ := Submodule.le_orthogonal_orthogonal W' (hmemW' w hw)
+    have h2 : Pr (e.symm w) = 0 := (Submodule.starProjection_apply_eq_zero_iff K).mpr h1
+    simp only [P, LinearMap.comp_apply, LinearEquiv.coe_coe, ContinuousLinearMap.coe_coe, h2,
+      map_zero]
+  have hsubW : ∀ v, v - P v ∈ W := fun v => by
+    have h1 : e.symm v - Pr (e.symm v) ∈ Kᗮ := Submodule.sub_starProjection_mem_orthogonal _
+    have hKK : Kᗮ = W' := Submodule.orthogonal_orthogonal W'
+    rw [hKK] at h1
+    obtain ⟨u, hu, hu'⟩ := Submodule.mem_map.mp h1
+    have : u = v - P v := by
+      have := congrArg e hu'
+      simpa [P] using this
+    rw [← this]; exact hu
+  have hPsym : (Matrix.toEuclideanLin (LinearMap.toMatrix' P)) =
+      (Pr : EuclideanSpace 𝕜 (Fin n) →ₗ[𝕜] EuclideanSpace 𝕜 (Fin n)) := by
+    ext1 x
+    have hx : x = WithLp.toLp 2 (WithLp.ofLp x) := rfl
+    rw [hx, Matrix.toEuclideanLin_toLp, Matrix.toLin'_toMatrix']
+    rfl
+  refine ⟨LinearMap.toMatrix' P, ?_, ?_, ?_⟩
+  · rw [IsIdempotentElem, ← LinearMap.toMatrix'_comp]
+    congr 1
+    exact LinearMap.ext hPU
+  · have hH : (LinearMap.toMatrix' P).IsHermitian := by
+      rw [Matrix.isHermitian_iff_isSymmetric, hPsym]
+      exact Submodule.starProjection_isSymmetric K
+    exact hH
+  · have kill : ∀ x : Matrix (Fin n) (Fin n) 𝕜, (∀ s ∈ S, x * s = 0) →
+        ∀ w ∈ W, x *ᵥ w = 0 := by
+      intro x hx w hw
+      induction hw using Submodule.span_induction with
+      | mem v hv =>
+        obtain ⟨s, hs, j, rfl⟩ := hv
+        funext i
+        have := congrFun (congrFun (hx s hs) i) j
+        simpa [Matrix.mul_apply, Matrix.mulVec, dotProduct] using this
+      | zero => simp
+      | add a b _ _ ha hb => rw [Matrix.mulVec_add, ha, hb, add_zero]
+      | smul c a _ ha => rw [Matrix.mulVec_smul, ha, smul_zero]
+    intro x
+    constructor
+    · intro hx
+      refine ⟨x, ?_⟩
+      ext i k
+      have h := congrFun (kill x hx _ (hsubW (Pi.single k 1))) i
+      rw [Matrix.mulVec_sub, ← LinearMap.toMatrix'_mulVec P, Matrix.mulVec_mulVec,
+        Matrix.mulVec_single_one, Matrix.mulVec_single_one] at h
+      simpa [sub_eq_zero] using h
+    · rintro ⟨y, rfl⟩ s hs
+      have hps : LinearMap.toMatrix' P * s = 0 := by
+        ext i j
+        have := congrFun (LinearMap.toMatrix'_mulVec P (fun i => s i j)) i
+        rw [hPW _ (Submodule.subset_span ⟨s, hs, j, rfl⟩)] at this
+        simpa [Matrix.mul_apply, Matrix.mulVec, dotProduct] using this
+      rw [Matrix.mul_assoc, hps, Matrix.mul_zero]
 
 /-! ## Step 2: Bar involution acts on idempotents by partition transpose -/
 
@@ -96,9 +242,9 @@ theorem matrix_algebra_baer_right
     the Hoefsmit seminormal construction and discharging it is the open
     Mathlib-formalisation step.
 
-    Ref: [manuscript] §prop:explicit-central-idempotent "Cross-checks" §3-4;
+    Ref: [leitner2026] §prop:explicit-central-idempotent "Cross-checks" §3-4;
     [murphy1981] Murphy elements and centre structure of symmetric-group /
-    Hecke algebras; [manuscript] §rem:chirality-period-pairing. -/
+    Hecke algebras; [leitner2026] §rem:chirality-period-pairing. -/
 def bar_idempotent_transposition_partition
     {A : Type*} [Ring A] [StarRing A]
     (e : List ℕ → A) (transpose : List ℕ → List ℕ) : Prop :=
@@ -135,24 +281,59 @@ def failure_locus (n : ℕ) (R : Type*) [Monoid R] : Set R :=
     (Narrative note only; a former vacuous `example : True := trivial`
     that carried this comment was removed per AGENTS.md §1a.) -/
 
-/-! ## Main theorem (sketch) -/
+/-! ## Main theorem: the former axiom was false
 
-/-- **External axiom (Kassel 1995 §V.5; Hoefsmit; manuscript
-    §prop:hecke-baer-star-generic): Wedderburn blocks `M_d(R)` are
-    Baer-* rings at generic q.** -/
--- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2 §V.5
-axiom hecke_baer_star_generic_sketch_axiom :
-    ∀ {R : Type*} [Field R] [StarRing R] (n : ℕ) (q : R) (d : ℕ),
-      Nonempty (BaerStarRing (Matrix (Fin d) (Fin d) R))
+**Removed 2026-11-15.** The axiom `hecke_baer_star_generic_sketch_axiom`
+claimed that `M_d(R)` is a Baer-*-ring for *every* field `R` with *every*
+`StarRing` structure, and the theorem `hecke_baer_star_generic_sketch`
+only added a hypothesis on `q`, which the conclusion never mentions. That
+is false. Over `𝔽₂` with the trivial star, `M_2(𝔽₂)` with the transpose is
+not Baer-*: the left annihilator of `s = !![1,0;1,0]` is the set of
+matrices whose rows lie in `span (1,1)`, and the only symmetric matrix
+with that row space, `!![1,1;1,1]`, squares to `0`. So no self-adjoint
+idempotent generates it. `not_hecke_baer_star_generic_sketch` below proves
+this.
 
-/-- **Theorem (`prop:hecke-baer-star-generic`).** At generic `q`
-    (outside the failure locus), each Wedderburn block `M_d(R)` of
-    `H_n(q)` is a Baer-*-ring. -/
-theorem hecke_baer_star_generic_sketch
-    {R : Type*} [Field R] [StarRing R]
-    (n : ℕ) (q : R) (_h_gen : q ∉ failure_locus n R)
-    (d : ℕ) :
-    Nonempty (BaerStarRing (Matrix (Fin d) (Fin d) R)) :=
-  hecke_baer_star_generic_sketch_axiom n q d
+The manuscript claim needs a star that is positive (e.g. complex
+conjugation, where `M_d(ℂ)` is a C*-algebra and is Baer-*). A repaired
+statement with that hypothesis is recorded as open in bean `qou-n2un`. -/
+
+instance fact_prime_two_baer : Fact (Nat.Prime 2) := ⟨Nat.prime_two⟩
+
+/-- Over `𝔽₂`, a symmetric idempotent `2 × 2` matrix that kills
+    `!![1,0;1,0]` on the right is zero. -/
+theorem symm_idem_annihilator_eq_zero :
+    ∀ p : Matrix (Fin 2) (Fin 2) (ZMod 2),
+      p * p = p → p.transpose = p → p * !![1, 0; 1, 0] = 0 → p = 0 := by
+  decide
+
+/-- `M_2(𝔽₂)` with the transpose (trivial star on `𝔽₂`) is not Baer-*. -/
+theorem not_baerStarRing_matrix_zmod_two :
+    letI : StarRing (ZMod 2) := starRingOfComm
+    ¬ BaerStarRing (Matrix (Fin 2) (Fin 2) (ZMod 2)) := by
+  letI : StarRing (ZMod 2) := starRingOfComm
+  intro h
+  obtain ⟨p, hid, hstar, hiff⟩ := h.baer_right {!![1, 0; 1, 0]}
+  have hp : p * !![1, 0; 1, 0] = 0 := (hiff p).2 ⟨1, (one_mul p).symm⟩ _ rfl
+  have hT : p.transpose = p := by
+    have : star p = p.transpose := by
+      ext i j; simp [Matrix.star_apply]; rfl
+    rw [← this, hstar]
+  have h0 := symm_idem_annihilator_eq_zero p hid hT hp
+  have hJ : ∀ s ∈ ({!![1, 0; 1, 0]} : Set (Matrix (Fin 2) (Fin 2) (ZMod 2))),
+      !![(1 : ZMod 2), 1; 1, 1] * s = 0 := by
+    intro s hs; rw [Set.mem_singleton_iff.mp hs]; decide
+  obtain ⟨y, hy⟩ := (hiff _).1 hJ
+  rw [h0, mul_zero] at hy
+  exact absurd hy (by decide)
+
+/-- **The former axiom is false.** -/
+theorem not_hecke_baer_star_generic_sketch :
+    ¬ ∀ {R : Type} [Field R] [StarRing R] (_n : ℕ) (_q : R) (d : ℕ),
+      Nonempty (BaerStarRing (Matrix (Fin d) (Fin d) R)) := by
+  intro h
+  letI : StarRing (ZMod 2) := starRingOfComm
+  obtain ⟨hb⟩ := h (R := ZMod 2) 0 0 2
+  exact not_baerStarRing_matrix_zmod_two hb
 
 end QOU.BraidKnot.HeckeBaerStarGeneric

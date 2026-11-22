@@ -13,9 +13,16 @@
   "pageStart": 1,
   "pageEnd": 17,
   "contains": [
-    "library/arxiv-math-0510265v3/blocks/prose-sec-front-matter"
+    "library/arxiv-math-0510265v3/blocks/prose-sec-front-matter",
+    "library/arxiv-math-0510265v3/blocks/ex-sec-front-matter-01",
+    "library/arxiv-math-0510265v3/blocks/prop-sec-front-matter-02",
+    "library/arxiv-math-0510265v3/blocks/thm-sec-front-matter-03",
+    "library/arxiv-math-0510265v3/blocks/prop-sec-front-matter-04",
+    "library/arxiv-math-0510265v3/blocks/prop-sec-front-matter-05",
+    "library/arxiv-math-0510265v3/blocks/prop-sec-front-matter-06",
+    "library/arxiv-math-0510265v3/blocks/ex-sec-front-matter-07"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0510265v3",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0510265v3",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0510265v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0510265v3/manifest.jsonld",
   "provenance": "ingested"
 }

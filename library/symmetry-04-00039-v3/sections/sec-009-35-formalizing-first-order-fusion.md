@@ -8,6 +8,7 @@ pages: 22-25
 source_pdf: symmetry-04-00039-v3.pdf
 source_sha256: 1aa8a81916887f8e
 toc_source: inferred
+doc_brief: "Knots on a Torus: A Model of the Elementary Particles — Two knots; just two rudimentary knots, the unknot and the trefoil."
 ---
 We are now in a position to discuss the fusion of the complete set of basic spin 1/2 fermions with 
 the associated conjugate set. At this level of taxonomical organization, it is expedient to consider an 

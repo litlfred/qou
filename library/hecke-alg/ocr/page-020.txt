@@ -1,0 +1,63 @@
+2. SIMPLE MODULES IN A CELLULAR ALGEBRA 15
+
+as we do not need any results from their theory, we refer the interested reader to [8]
+for the definition.
+
+2.19 Corollary Suppose that R is a field. Then the following are equivalent.
+(i) A= At.
+
+(ii) The decomposition matriz D is a square unitriangular matrix.
+
+Moreover, if either of these conditions is satisfied then A is quasi-hereditary.
+
+Proof. That (i) and (ii) are equivalent is clear from Corollary 2.14. If (i) holds
+then it follows directly from the definitions in [8] that A is quasi-hereditary. oO
+
+Implicitly, part (ii) plays a role in the proof of the Jantzen sum formula in
+Chapter 5; this criterion indicates that being quasi—hereditary is a non—degeneracy
+property.
+
+Finally, we consider blocks of a cellular algebra. Suppose that R is a field (and
+that A is finite). Then A can be decomposed as a direct sum of indecomposable two-
+sided ideals; say A = B, &---@ B,. The ideals By,... , By are uniquely determined
+and are called the block ideals of A. Furthermore, for each 7, there exists a (unique)
+primitive central idempotent e; such that B; = e;A = e;Ae; = Ae;. It follows that
+l=e,+---+e, and that ese; = dj;e;; thus, B; is an R-algebra with identity e;.
+Proofs of these general facts can be found in [10, Chapter VII].
+
+Two A-modules are said to belong to the same block if all of their irreducible
+composition factors lie in the same block. In particular, because eje; = 4); for
+1 <i,j <k, a right A-module N belongs to the same block as B; if and only if
+Ne; = N and Ne; =O0ifi Fj.
+
+2.20 Lemma Suppose that e and f are idempotents in A. Then Homa(eA, fA)
+and fAe are canonically isomorphic as R-modules. Moreover, if e = f then
+End4(eA) and eAe are isomorphic as algebras.
+
+Proof. If g € Homy(eA, fA) then ¢ is completely determined by ¢(e). Certainly,
+v(e) € fA and, because e¢ is idempotent, g(e) = y(e?) = ¢(eje € fAe. Hence, the
+map g+— ¢(e) is an isomorphism.
+
+Finally, suppose that e = f. For homomorphisms ¢ and y in Endy(eA),
+write g(e) = eaze and y(e) = eaye for some ay,ay € A. Then ¢g(e)v(e) =
+(caze)(eaye) = (eage)aye = (yy)(e). Hence, End4(eA) and eAe are isomorphic
+algebras. Oo
+
+In particular, if 1 < i,j < k then Hom,(B;, B;) = e; Ae; = eje;A = 4; Bi.
+
+Say that A and y in A are linked if there exist A = Ao, Ai,..-,Ax = fein A
+such that @'-* and C*' have a common irreducible composition factor for i =
+1,2,...,k. This defines an equivalence relation on A; importantly, if  € At then
+
+dy, # 9 only if \ and y are linked.
+
+2.21 Theorem Suppose that R is a field and that A is finite. Let X and yt be
+elements of A. Then \ and yt are linked if and only if C> and C# are in the same
+block.
+
+Proof. Asa right A-module each block B; decomposes into a direct sum of prin-
+cipal indecomposable modules. This gives a partition At = ATU.. UAT of At such
+that B; = Bueat D* @p P* for i = 1,2,...,k. Furthermore, by Lemma 2.16,
+
+each indecomposable P* has a cell module filtration; thus, to prove the Theorem
+it suffices to show that A, zp € At are linked if and only if A, pe € At for some 7.

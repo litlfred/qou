@@ -66,6 +66,7 @@ Nothing here is wired and no c_k value is proposed.
 
 from __future__ import annotations
 
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590) order-zero E_0 routed + labelled, owner ruling 2026-11-20
 import sys
 from pathlib import Path
 
@@ -107,7 +108,7 @@ def pieces(q, z):
     hb = (q - 1) / q
     b = mp.sqrt(q**4 + q**2 + 1) / (q**2 + 1)
     eps = (h / 2) * h - h                       # colour-blind mixed crossing
-    QA = abs(eps * ME / (q * (q - 1)))
+    QA = abs(_qbeta_e0.order_zero_scaled(eps * ME, q))
     al = (z - 1) * h / 2
     Q_N2 = QA * mp.cos(al - b * hb**2 / 2) * (1 - b**2 * hb**4)
     return Q_N2, b**3 * hb**6
@@ -214,7 +215,7 @@ def main() -> int:
     mn_ame = mp.mpf(str(M_N_MEV))
     check("choice_of_neutron_mass_dwarfs_the_near_match_gap",
           sens > 3 * mp.mpf("3.4671"),
-          f"CODATA-2022 direct m_n = 939.56542194 vs AME-derived 939.56542179 -- "
+          f"CODATA-2022 direct m_n = 939.56542194 vs AME-derived 939.56542179 -- "  # noqa: P31 — compares the two on purpose
           f"both documented, neither wrong. Choosing between them moves Q_beta by "
           f"{mp.nstr(dQ_ppb, 6)} ppb and, through the {mp.nstr(1/rung, 6)}x "
           f"extraction amplification, the extracted c_3 by {mp.nstr(sens, 5)} % -- "

@@ -8,6 +8,7 @@ pages: 4-4
 source_pdf: 0806.4741v1.pdf
 source_sha256: 5e7ad85a99fb3552
 toc_source: outline
+doc_brief: "The deformation quantizations of the hyperbolic plane — We describe the space of (all) invariant deformation quantizations on the hyperbolic plane D as solutions of the evolution of a second order"
 ---
 expressed as an oscillatory integral, analogous to the oscillatory integral formulation (8) of Weyl’s composi-
 tion. In [33], A. Weinstein suggested a beautiful geometrical interpretation of the asymptotics of the phase
@@ -17,4 +18,3 @@ formula for the kernel in terms of a speciﬁc geometrical quantity of three poi
 in accord with Weinstein’s asymptotics.
 2
 Symplectic symmetric spaces
-2.1

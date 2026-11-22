@@ -1,0 +1,52 @@
+394 T. Ohtsuki (Editor)
+
+and Jy(K) and ||S* — K|| do not change under a mutation of K. For details
+see [296] and references therein.
+
+Remark The statement of the volume conjecture for a link L should probably
+be the same statement as (2) replacing K with L. It is necessary to assume
+that L is not a split link, since Jy(L) = 0 for a split link L (then, the left
+hand side of (2) does not make sense).
+
+Example It is shown [200] that for a torus link L
+
+log(L) ;
+lim log(L) x bw
+
+Noo N 0,
+
+which implies that (2) is true for torus links.
+
+Remark Conjecture 1.19 has been proved for the figure eight knot K4, (see
+[295] for an exposition). However, we do not have a rigorous proof of this
+conjecture for other hyperbolic knots so far. We explain its difficulty below,
+after a review of a proof for K4,.
+
+We sketch a proof of Conjecture 1.19 for the figure eight knot K’4, ; for a detailed
+proof see [295]. It is known that
+
+In (K4,) = (Qn (")ns (3)
+
+where we put g = e?7V “TN and
+
+(an =(1-g)(1-4")-(L-4"), oo = 1.
+
+As N tends to infinity fixing n/N in finite, the asymptotic behaviour of the
+absolute value of (q)n is described by
+
+n _ otk N n/N :
+log |(q)n| = dbs (2 sin ~) = = | log(2 sin t)dt + O(log N)
+
+= —Sim(Lig(e")) + O(log NV),
+TT
+
+where Lig denotes the dilogarithm function defined on C — {x € R| x > 1} by
+
+CO on
+
+. z * log(1—s
+Lie) = 5 =- f at Sas
+
+n=1
+
+Geometry & Topology Monographs, Volume 4 (2002)

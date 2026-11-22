@@ -7,10 +7,11 @@ section_number: 1.3
 pages: 4-4
 source_pdf: 1907.00949v2.pdf
 source_sha256: 865defaa34bf42be
-doc_brief: "OPTIMIZATION ON FLAG MANIFOLDS — A ﬂag is a sequence of nested subspaces."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.915
 latex_coverage_ratio: 1.0
+doc_brief: "OPTIMIZATION ON FLAG MANIFOLDS — A ﬂag is a sequence of nested subspaces."
 ---
 Some elements of optimization theory on flag manifolds have been considered in [@NSP2006], although optimization is not its main focus and only analytic expressions for tangent spaces and gradients have been obtained. In particular, no actual algorithm appears in [@NSP2006] --- note that a Riemannian steepest descent algorithm in the spirit of [@EAS] would at least require analytic expressions for geodesics and, to the best of our knowledge, they have never been derived; in fact prior to this article it is not even known if such expressions exist.
 

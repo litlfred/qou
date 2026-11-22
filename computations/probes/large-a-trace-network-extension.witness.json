@@ -1,0 +1,142 @@
+{
+ "description": "Convention-D Markov trace of the v9 nuclear element (same element and normalisation as markov-trace-two-row-tower), by planar tensor-network contraction of Tr(K^{(x)A} rho(E))/[2]^A in a greedy low-cut order, mpmath; validated 63/63 against the two-row tower witness for A <= 16.",
+ "producer": "computations/probes/large_a_trace_structure_probe.py",
+ "q0": "1.1099785827513808075916690956107688798744991218736",
+ "q0_anchor": "proton",
+ "q0Anchor": "proton",
+ "q0Value": "1.1099785827513808075916690956107688798744991218736",
+ "z": "q^3/(q^2+1)",
+ "dps": 70,
+ "rows": [
+  {
+   "isotope": "17o",
+   "z": 8,
+   "n": 9,
+   "a": 17,
+   "pn": 72,
+   "max_cut_legs": 18,
+   "tr_markov_d": "0.000200074504498657748732798191847174741652084368766049614479205",
+   "elapsed_sec": 23.8
+  },
+  {
+   "isotope": "18o",
+   "z": 8,
+   "n": 10,
+   "a": 18,
+   "pn": 80,
+   "max_cut_legs": 18,
+   "tr_markov_d": "-0.0000119590055030993566672806798719115136889610356528332930202049",
+   "elapsed_sec": 36.4
+  },
+  {
+   "isotope": "19o",
+   "z": 8,
+   "n": 11,
+   "a": 19,
+   "pn": 88,
+   "max_cut_legs": 20,
+   "tr_markov_d": "0.00000340611267564686820482903653224795201811660725926758898824791",
+   "elapsed_sec": 126.1
+  },
+  {
+   "isotope": "20o",
+   "z": 8,
+   "n": 12,
+   "a": 20,
+   "pn": 96,
+   "max_cut_legs": 20,
+   "tr_markov_d": "-0.00000046404113297844828585493379198662040645098861902352161225255",
+   "elapsed_sec": 229.6
+  },
+  {
+   "isotope": "17f",
+   "z": 9,
+   "n": 8,
+   "a": 17,
+   "pn": 72,
+   "max_cut_legs": 18,
+   "tr_markov_d": "0.0007057528462659637398280947425152468357116275882133088259512",
+   "elapsed_sec": 27.7
+  },
+  {
+   "isotope": "18f",
+   "z": 9,
+   "n": 9,
+   "a": 18,
+   "pn": 81,
+   "max_cut_legs": 18,
+   "tr_markov_d": "-0.00000838339050971060125873300434438127364492550143199707852688413",
+   "elapsed_sec": 42.2
+  },
+  {
+   "isotope": "19f",
+   "z": 9,
+   "n": 10,
+   "a": 19,
+   "pn": 90,
+   "max_cut_legs": 20,
+   "tr_markov_d": "0.0000445571132742366303398408904292610857578602489531211737921857",
+   "elapsed_sec": 130.3
+  },
+  {
+   "isotope": "20f",
+   "z": 9,
+   "n": 11,
+   "a": 20,
+   "pn": 99,
+   "max_cut_legs": 20,
+   "tr_markov_d": "-0.00000231971119312230690847396776964833757716515621176644993161957",
+   "elapsed_sec": 180.1
+  },
+  {
+   "isotope": "17ne",
+   "z": 10,
+   "n": 7,
+   "a": 17,
+   "pn": 70,
+   "max_cut_legs": 18,
+   "tr_markov_d": "0.00337354152761259730589981643401597037869351030642070744132756",
+   "elapsed_sec": 20.4
+  },
+  {
+   "isotope": "18ne",
+   "z": 10,
+   "n": 8,
+   "a": 18,
+   "pn": 80,
+   "max_cut_legs": 18,
+   "tr_markov_d": "0.0000671526814849918437999420835315221727933518710103129660971972",
+   "elapsed_sec": 34.9
+  },
+  {
+   "isotope": "19ne",
+   "z": 10,
+   "n": 9,
+   "a": 19,
+   "pn": 90,
+   "max_cut_legs": 20,
+   "tr_markov_d": "0.000148746379488971517025899906709594433874517048612230079245926",
+   "elapsed_sec": 98.6
+  },
+  {
+   "isotope": "20ne",
+   "z": 10,
+   "n": 10,
+   "a": 20,
+   "pn": 100,
+   "max_cut_legs": 20,
+   "tr_markov_d": "-0.000011219721096034424946933842473114592150773236230395731838316",
+   "elapsed_sec": 181.8
+  },
+  {
+   "isotope": "21ne",
+   "z": 10,
+   "n": 11,
+   "a": 21,
+   "pn": 110,
+   "max_cut_legs": 22,
+   "tr_markov_d": "-0.00000111369018222330944886508394912425428840338079162183931220578",
+   "elapsed_sec": 451.9
+  }
+ ]
+}

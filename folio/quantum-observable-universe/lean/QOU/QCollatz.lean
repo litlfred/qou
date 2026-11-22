@@ -90,7 +90,7 @@ theorem qInt_three_pos (q : ℝ) (hq : q > 0) (hq1 : q ≠ 1) :
     this identity ensures the odd branch is well-defined:
     for q-odd P (meaning [2]_q ∣ P+1), the numerator
     [3]_q·P + 1 = q·[2]_q·P + (P+1) is divisible by [2]_q. -/
--- Ref: [manuscript] Ch 8 §5
+-- Ref: [leitner2026] Ch 8 §5
 theorem skein_divisibility (q : ℝ) (hq : q ≠ 1) :
     qInt q 3 = q * qInt q 2 + 1 := by
   rw [qInt_two q hq, qInt_three q hq]; ring
@@ -204,7 +204,7 @@ theorem qInt_coprime (q : ℝ) (hq : q ≠ 1) :
 
 /-- The (3,4) gap: `[3]² - [4] > 0` for all `q > 0`.
     (Trivial case: 9 ≫ 4 classically.) -/
--- Ref: [manuscript] Ch 8 §5
+-- Ref: [leitner2026] Ch 8 §5
 theorem qInt_gap_3_4 (q : ℝ) (hq : q > 0) (hq1 : q ≠ 1) :
     qInt q 3 ^ 2 - qInt q 4 > 0 := by
   have hq1' : q - 1 ≠ 0 := sub_ne_zero.mpr hq1
@@ -220,7 +220,7 @@ theorem qInt_gap_3_4 (q : ℝ) (hq : q > 0) (hq1 : q ≠ 1) :
 
     This means the (3,8) generalized Collatz does NOT have a
     contraction gap for all q > 0 — unlike Collatz (2,3). -/
--- Ref: [manuscript] Ch 8 §5
+-- Ref: [leitner2026] Ch 8 §5
 theorem qInt_gap_3_8_fails (q : ℝ) (hq : q > 2) (hq1 : q ≠ 1) :
     qInt q 3 ^ 2 < qInt q 8 := by
   have hq1' : q - 1 ≠ 0 := sub_ne_zero.mpr hq1

@@ -14,8 +14,12 @@ export default proof({
   label: "prf:knot-volumes-verification",
   title: "Knot volume verification (SnapPy)",
   tags: ["computation", "snappea", "hyperbolic", "verification"],
+  // The derived quantities (Table 2) solve the CAL-2 calibration equation
+  // m_mu/m_e = Vol(4_1)/hbar_q^2 for q. That equation defines q_0 (CAL-2);
+  // it does not assume conj:topological-mass-formula. Retargeted 2026-11-20
+  // (owner, option 2 on the q_0 pair; bean qou-tm3c).
   uses: [
-    "prop:topological-mass-formula",
+    "def:three-calibration-discipline",
     "sec:hyperbolic-volumes-prose",
   ],
   computation: {

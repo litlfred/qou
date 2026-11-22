@@ -3,16 +3,21 @@
  "doc_id": "arxiv-2403.00360v2",
  "source_sha256": "b0764ca18a83a84f",
  "brief": "CAUSAL FERMION SYSTEMS AND OCTONIONS — We compare the structures and methods in the theory of causal fermion systems with approaches to fundamental physics based on division algebras, in par- ticular",
- "extended": "**CAUSAL FERMION SYSTEMS AND OCTONIONS**\n\n*FELIX FINSTER, NIELS G. GRESNIGT, JOS É M. ISIDRO, ANTONINO MARCIANÒ*\n\n36 pp, 23 sections.\n\n**Abstract.** We compare the structures and methods in the theory of causal fermion systems with approaches to fundamental physics based on division algebras, in par- ticular the octonions. We find that octonions and, more generally, tensor products of division algebras come up naturally to describe the symmetries of the vacuum configuration of a causal fermion system. This is achieved by associating the real and imaginary octonion basis elements with the neutrino and charged sectors of the vacuum fermionic projector, respectively. Conversely, causal fermion systems pro- vide octonionic theories with spacetime structures and dynamical equations via the causal action principle. In this way, octonionic theories and causal fermion systems complement each other.\n\n**Outline.** 1 Introduction; 2 Division Algebras and the Standard Model; 2.1 Motivation; 2.2 Historical Overview; 2.3 The Normed Division Algebras; 2.4 The Associative Multiplication Algebras of; 2.5 Connection to the Standard Model; 3 Causal Fermion Systems; 3.1 Causal Fermion Systems and the Reduced Cau; 3.2 Spacetime Structures; 3.3 Dynamical Equations in Spacetime; 3.4 Connection to the Standard Model; 3.5 Connection to Quantum Field Theory; 3.6 Connection to Quantum Geometry and Quantum; 4 Comparison; 4.1 Foundations of the Approaches; 4.2 Connection to the Gauge Group of the Stand; 4.3 Describing the Three Generations in the St\n\n**Extracted claims (proposals, not verified).**\n- Definition 3.1: (causal fermion systems) Given a separable complex Hilbert space H\n- Definition 3.2: (causal structure) For any x,y ∈ F, we again denote the non-",
+ "extended": "**CAUSAL FERMION SYSTEMS AND OCTONIONS**\n\n*FELIX FINSTER, NIELS G. GRESNIGT, JOSÉ M. ISIDRO, ANTONINO MARCIANÒ*\n\n36 pp, 24 sections.\n\n**Abstract.** We compare the structures and methods in the theory of causal fermion systems with approaches to fundamental physics based on division algebras, in par- ticular the octonions. We find that octonions and, more generally, tensor products of division algebras come up naturally to describe the symmetries of the vacuum configuration of a causal fermion system. This is achieved by associating the real and imaginary octonion basis elements with the neutrino and charged sectors of the vacuum fermionic projector, respectively. Conversely, causal fermion systems pro- vide octonionic theories with spacetime structures and dynamical equations via the causal action principle. In this way, octonionic theories and causal fermion systems complement each other.\n\n**Outline.** Front matter; 1 Introduction; 2 Division Algebras and the Standard Model; 2.1 Motivation; 2.2 Historical Overview; 2.3 The Normed Division Algebras; 2.4 The Associative Multiplication Algebras of; 2.5 Connection to the Standard Model; 3 Causal Fermion Systems; 3.1 Causal Fermion Systems and the Reduced Cau; 3.2 Spacetime Structures; 3.3 Dynamical Equations in Spacetime; 3.4 Connection to the Standard Model; 3.5 Connection to Quantum Field Theory; 3.6 Connection to Quantum Geometry and Quantum; 4 Comparison; 4.1 Foundations of the Approaches; 4.2 Connection to the Gauge Group of the Stand",
  "tokens": {
   "brief": 49,
-  "extended": 439
+  "extended": 377
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-3"
+   "pages": "2-3"
   },
   {
    "id": "sec-001-2-division-algebras-and-the-standard-model",
@@ -42,12 +47,12 @@
   {
    "id": "sec-006-25-connection-to-the-standard-model",
    "title": "Connection to the Standard Model",
-   "pages": "8-9"
+   "pages": "8-10"
   },
   {
    "id": "sec-007-3-causal-fermion-systems",
    "title": "Causal Fermion Systems",
-   "pages": "9-10"
+   "pages": "10-10"
   },
   {
    "id": "sec-008-31-causal-fermion-systems-and-the-reduced-causal",
@@ -129,8 +134,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

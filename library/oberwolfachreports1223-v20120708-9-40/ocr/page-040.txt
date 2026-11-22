@@ -1,0 +1,51 @@
+40 Oberwolfach Report 28/2012
+
+knot diagram identical to K+, except that the crossing c is singular. A finite type
+invariant V [4] [2] has the property that
+
+V(Ke) = V(K4) — V(K_).
+
+More generally, let X be a tuple of k singular crossings in the knot diagram K.
+Let o(X) denote a resolution of each crossing as a positively or negatively signed
+crossing and let |o| denote the sum of negative crossings in o(X). Summing over
+all possible resolutions:
+
+V(Kx) = YO(-DIV(Kayx))-
+o
+The invariant V is said to have finite type < n if V(x) = 0 for all tuples of length
+n+ 1 or greater.
+
+Henrich introduced a degree one, finite type invariant called the gluing invariant
+in [5]. Let K be a virtual knot diagram. Let K, denote the virtual knot diagram
+obtained from K by gluing the crossing c (making the crossing a singularity) and
+let K-O denote the diagram obtained by attaching a small unknot near c with
+a singularity. Let F(i¢) denote the flat projection of the knot K. The gluing
+invariant is a formal sum of equivalence classes of flat virtual knots with one
+singular crossing.
+
+G(K) = SO[F(Ke) — F(K.0)]
+cék
+(Note that if the crossing c is involved in a Reidemeister I move, then [F(K,) —
+F(K,O)| is the empty diagram.) By extending the flat classical and virtual Rei-
+demeister moves to include one singular crossing, the formal sum G(/) becomes
+an invariant of virtual knots and a universal, degree one, finite type invariant.
+
+We compute the weight of a chord in a Gauss diagram. The weights partition
+the chords into sets which can be used to define finite type invariants of the Gauss
+diagrams. A Gauss diagram G is a clockwise oriented circle with a collection, C,
+of oriented, signed chords. Equivalence classes of Gauss diagrams are determined
+by three types of moves: 1) the introduction or deletion of a single isolated chord,
+2) the introduction of two adjacent (feet and head), oppositely signed chords, and
+3) the (2,1) and (3,0) triangle moves with appropriately selected signs. (Although
+my orientation conventions are slightly different, the set of chord diagram moves
+is introduced in [8]. In this paper, Turaev determines the minimum set of moves
+required to generate the equivalence classes of Gauss diagrams.) We construct a
+map P: C — Z. Let c denote a chord and let N, be the set of chords that intersect
+c. The oriented intersection number of the chord ¢ with the chord x is denoted
+int-(x). Then
+
+p(c) = > int.(x)sgn(a).
+reNe
+The value of p(c) is the weight of the chord. For each integer i, we define A;(G) =
+{c|p(c) = i}, the set of chords with weight i. For a positive integer, we define
+V)(G) = {e| |p()| = J}, the set of chords with weight j or —j. The signed

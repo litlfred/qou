@@ -1,0 +1,32 @@
+36. The vector triple product in R',
+
+Let Xo = (1,0,0,0), X: = (0,1,0,0), X. = (0,0,1,0) and X3; = (0, 0, 0, 1)
+be the standard orthonormal basis for R'*. Then for x, v,w € R'", we define
+the vector triple product
+
+Xo Xp X2 X
+Vo Vi V2 V3
+
+Wo Wi W2 W3
+Xo -X -X2 -X3
+
+[x, v, w] = det eR?.
+
+Note that [x, v, w] is an alternating multilinear function of its three arguments.
+For y € R', we have
+
+Xo Xr X2 X3
+Vo Vi V2 V3
+Wo Wi W2 W3
+Yo Yi Y2 Y3
+
+<[x,v, w],y> = det
+
+Thus [x, v, w] is a vector in R!'? whose inner product with each of x, v and w
+is zero.
+
+If A € SO(,3), we have
+
+[Ax, Av, Aw] = A[x, v, w].
+
+76

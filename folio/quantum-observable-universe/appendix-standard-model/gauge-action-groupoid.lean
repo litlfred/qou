@@ -29,7 +29,7 @@ them.
 
 ## References
 
-- [manuscript] Appendix: Toward the Standard Model
+- [leitner2026] Appendix: Toward the Standard Model
 - [baez2004] Baez–Lauda, Higher-dimensional algebra V: 2-groups
 -/
 

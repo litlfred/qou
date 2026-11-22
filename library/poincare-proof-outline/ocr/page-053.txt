@@ -1,0 +1,67 @@
+using «1 — (cmod x)? > 0»
+apply (subst arcosh-real-def|OF arcosh-real-gt])
+apply (subst 2)
+apply (subst 1)
+apply (subst real-sqrt-divide)
+apply (subst real-sqrt-mult)
+apply simp
+done
+qed
+also have ... = In (((1 + (emod x))*) / (1 — (emod x)?))
+apply (subst add-divide-distrib|symmetric])
+apply (simp add: field-simps power2-eq-square)
+done
+also have ... = In ((1 + cmod x) / (1 — (cmod z)))
+using (cmod « < 1»
+using square-diff-square-factored|of 1 cmod a]
+by (simp add: power2-eq-square)
+also have ... = |In (Re ((1 — z) / (1 + 2)))|
+proof—
+have «: Re ((1 — x) / (1 +2)) <1 Re ((1 — 2) / (1+ 2))>0
+using <is-real z» «(Re x > 0) (Rea < 1»
+using complex-is-Real-iff
+by auto
+hence |In (Re ((1 — x) / (1 + 2)))| = — In (Re ((1 — z) / (1 + 2)))
+by auto
+hence |In (Re ((1 — x) / (1 + 2)))| = In (Re ((1 +. z) / (1 — 2)))
+using In-divlof 1 Re ((1 — x)/(1 + 2))] * <és-real x»
+by (fastforce simp: complex-is-Real-iff)
+moreover
+have In ((1 + cmod x) / (1 — cmod x)) = In ((1 + Rez) / (1 — Re z))
+using (Re x > 0)» <is-real x»
+using cmod-eq-Re by auto
+moreover
+have (1 + Re x) / (1 — Re x) = Re ((1 +z) / (1 - 2))
+using <is-real z» «Re x < 1>
+by (smt Re-divide-real eq-iff-diff-eq-0 minus-complex.simps one-complez.simps plus-complex.simps)
+ultimately
+show ?thesis
+by simp
+qed
+finally
+show ?thesis
+
+qed
+ultimately
+show ?thesis
+by simp
+qed
+next
+fix Muv
+assume *: unit-disc-fir M wu € unit-disc v € unit-disc
+assume ?P (mocbius-pt M u) (moebius-pt M v)
+thus ?Puv
+using *(1—3)
+by (simp del: poincare-distance-formula-def )
+next
+show wu € unit-disc v € unit-disc
+by fact+
+qed
+
+Some additional properties proved easily using the distance formula.
+
+poincare-distance is symmetric.
+
+lemma poincare-distance-sym:
+assumes u € unit-disc and v € unit-disc
+shows poincare-distance u v = poincare-distance v u

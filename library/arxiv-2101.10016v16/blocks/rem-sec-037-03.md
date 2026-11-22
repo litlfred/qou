@@ -1,0 +1,1 @@
+Combining with Remark 38.2, it follows that if W1 is irreducible then an intertwining operator Y(w (1), x) of type W3 W1 W2  is determined by the restriction to a nonzero vector of the top space of W1. Yr : (W1)(0) → Hom(W2, W3){x}.

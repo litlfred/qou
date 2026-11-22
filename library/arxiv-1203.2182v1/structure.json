@@ -8,7 +8,7 @@
   "pages": 92,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:19Z",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -21,12 +21,12 @@
    "stamp_date": "9 Mar 2012"
   },
   "doi": null,
-  "title": "Volume Conjecture: Re\ufb01ned and Categori\ufb01ed",
+  "title": "Volume Conjecture: Reﬁned and Categoriﬁed",
   "authors_raw": "Hiroyuki Fuji1,2, Sergei Gukov1,3 and Piotr Su lkowski1,4,5",
   "title_lines": [
    "Volume Conjecture: Refined and Categorified"
   ],
-  "abstract": "The generalized volume conjecture relates asymptotic behavior of the colored Jones polynomials to objects naturally de\ufb01ned on an algebraic curve, the zero locus of the A-polynomial A(x, y). Another \u201cfamily version\u201d of the volume conjecture depends on a quantization parameter, usually denoted q or \u210f; this quantum volume conjecture (also known as the AJ-conjecture) can be stated in a form of a q-di\ufb00erence equation that annihilates the colored Jones polynomials and SL(2, C) Chern-Simons partition functions. We propose re\ufb01nements / categori\ufb01cations of both conjectures that include an extra deformation parameter t and describe similar properties of homological knot invariants and re\ufb01ned BPS invariants. Much like their unre\ufb01ned / decategori\ufb01ed predecessors, that correspond to t = \u22121, the new volume conjectures involve objects naturally de\ufb01ned on an algebraic curve Aref(x, y; t) obtained by a particular deformation of the A-polynomial, and its quantization bAref(bx, by; q, t). We compute both classical and quantum t-deformed curves in a number of examples coming from colored knot homologies and re\ufb01ned BPS invariants. CALT-68-2866",
+  "abstract": "The generalized volume conjecture relates asymptotic behavior of the colored Jones polynomials to objects naturally deﬁned on an algebraic curve, the zero locus of the A-polynomial A(x, y). Another “family version” of the volume conjecture depends on a quantization parameter, usually denoted q or ℏ; this quantum volume conjecture (also known as the AJ-conjecture) can be stated in a form of a q-diﬀerence equation that annihilates the colored Jones polynomials and SL(2, C) Chern-Simons partition functions. We propose reﬁnements / categoriﬁcations of both conjectures that include an extra deformation parameter t and describe similar properties of homological knot invariants and reﬁned BPS invariants. Much like their unreﬁned / decategoriﬁed predecessors, that correspond to t = −1, the new volume conjectures involve objects naturally deﬁned on an algebraic curve Aref(x, y; t) obtained by a particular deformation of the A-polynomial, and its quantization bAref(bx, by; q, t). We compute both classical and quantum t-deformed curves in a number of examples coming from colored knot homologies and reﬁned BPS invariants. CALT-68-2866",
   "docinfo": {
    "Title": "arXiv:1203.2182v1  [hep-th]  9 Mar 2012",
    "Producer": "GPL Ghostscript 10.01.2",
@@ -38,7 +38,7 @@
   "title_verified": true,
   "title_evidence": {
    "metadata": "arXiv:1203.2182v1 [hep-th] 9 Mar 2012",
-   "heading": "Volume Conjecture: Re\ufb01ned and Categori\ufb01ed",
+   "heading": "Volume Conjecture: Reﬁned and Categoriﬁed",
    "text": "Volume Conjecture: Refined and Categorified",
    "corroborated_by": [
     "text"
@@ -387,19 +387,6 @@
   },
   {
    "level": 3,
-   "title": "${\\mathbb C}^3$ or tetrahedron",
-   "page": 58,
-   "source": "inferred",
-   "number": null,
-   "confidence": 1.0,
-   "evidence": [
-    "latex",
-    "body"
-   ],
-   "page_label": "57"
-  },
-  {
-   "level": 3,
    "title": "Conifold",
    "page": 59,
    "source": "inferred",
@@ -586,7 +573,7 @@
   {
    "kind": "table",
    "number": "1",
-   "title": "Classical curves in prominent examples, in unre\ufb01ned limit (which are well known, left column) and for general t (derived in this paper, right column). In this paper we also derive re\ufb01ned",
+   "title": "Classical curves in prominent examples, in unreﬁned limit (which are well known, left column) and for general t (derived in this paper, right column). In this paper we also derive reﬁned",
    "page": 6,
    "confidence": 0.8,
    "evidence": [
@@ -598,7 +585,7 @@
   {
    "kind": "table",
    "number": "2",
-   "title": "Re\ufb01ned quantum curves derived in this paper",
+   "title": "Reﬁned quantum curves derived in this paper",
    "page": 8,
    "confidence": 0.8,
    "evidence": [
@@ -610,7 +597,7 @@
   {
    "kind": "figure",
    "number": "2",
-   "title": "Categori\ufb01cation of quantum knot invariants. To help the reader navigate through this picture we suggest to keep track of the variables a, q, t, as well as the rank of sl(N). Note, the polynomial (resp. homological) knot invariants which have a-dependence (resp. a-grading) are not labeled by sl(N)",
+   "title": "Categoriﬁcation of quantum knot invariants. To help the reader navigate through this picture we suggest to keep track of the variables a, q, t, as well as the rank of sl(N). Note, the polynomial (resp. homological) knot invariants which have a-dependence (resp. a-grading) are not labeled by sl(N)",
    "page": 9,
    "confidence": 0.9,
    "evidence": [
@@ -636,7 +623,7 @@
   {
    "kind": "figure",
    "number": "4",
-   "title": "Conformal block \u03c6Q\u2032(R1, R2,",
+   "title": "Conformal block φQ′(R1, R2,",
    "page": 13,
    "confidence": 0.7,
    "evidence": [
@@ -648,7 +635,7 @@
   {
    "kind": "figure",
    "number": "5",
-   "title": "Slicing along \u03a32 \u2243S2",
+   "title": "Slicing along Σ2 ≃S2",
    "page": 14,
    "confidence": 0.9,
    "evidence": [
@@ -673,7 +660,7 @@
   {
    "kind": "table",
    "number": "3",
-   "title": "There is one fundamental di\ufb00erence between the specialization Pn(K; q, t) of the colored superpolynomial for torus knots found in (3.97) and that of the unknot (3.99). Namely, the latter is given by an in\ufb01nite product, whose asymptotic expansion is obtained simply from the expansion of the quantum d",
+   "title": "There is one fundamental diﬀerence between the specialization Pn(K; q, t) of the colored superpolynomial for torus knots found in (3.97) and that of the unknot (3.99). Namely, the latter is given by an inﬁnite product, whose asymptotic expansion is obtained simply from the expansion of the quantum d",
    "page": 42,
    "confidence": 0.8,
    "evidence": [
@@ -685,7 +672,7 @@
   {
    "kind": "figure",
    "number": "7",
-   "title": "Newton polygon for the unknot (left). Red circles denote monomials of the re\ufb01ned polynomial, and smaller yellow crosses denote monomials of the unre\ufb01ned polynomial. In this example both Newton polygons look the same, so that positions of all circles and crosses overlap. More detailed structure of th",
+   "title": "Newton polygon for the unknot (left). Red circles denote monomials of the reﬁned polynomial, and smaller yellow crosses denote monomials of the unreﬁned polynomial. In this example both Newton polygons look the same, so that positions of all circles and crosses overlap. More detailed structure of th",
    "page": 52,
    "confidence": 0.9,
    "evidence": [
@@ -710,7 +697,7 @@
   {
    "kind": "figure",
    "number": "8",
-   "title": "Newton polygons for the trefoil (left). Bigger red circles denote monomials of the re\ufb01ned polynomial, and smaller yellow crosses denote monomials of the unre\ufb01ned polynomial. More detailed structure of the re\ufb01ned A-polynomial is also shown in matrix representation (right). All conventions are the sam",
+   "title": "Newton polygons for the trefoil (left). Bigger red circles denote monomials of the reﬁned polynomial, and smaller yellow crosses denote monomials of the unreﬁned polynomial. More detailed structure of the reﬁned A-polynomial is also shown in matrix representation (right). All conventions are the sam",
    "page": 54,
    "confidence": 0.9,
    "evidence": [
@@ -747,7 +734,7 @@
   {
    "kind": "figure",
    "number": "9",
-   "title": "With our choice of conventions, the parameter q2 = q = e\u210fis responsible for quantization,",
+   "title": "With our choice of conventions, the parameter q2 = q = eℏis responsible for quantization,",
    "page": 57,
    "confidence": 0.9,
    "evidence": [
@@ -760,7 +747,7 @@
   {
    "kind": "figure",
    "number": "10",
-   "title": "Newton polygons for re\ufb01ned (black dots) and unre\ufb01ned (white dots) A-polynomials, for",
+   "title": "Newton polygons for reﬁned (black dots) and unreﬁned (white dots) A-polynomials, for",
    "page": 63,
    "confidence": 0.7,
    "evidence": [
@@ -784,7 +771,7 @@
   {
    "kind": "figure",
    "number": "C1",
-   "title": "Newton polygons for the unknot: re\ufb01ned (red circles) and unre\ufb01ned (yellow crosses)",
+   "title": "Newton polygons for the unknot: reﬁned (red circles) and unreﬁned (yellow crosses)",
    "page": 79,
    "confidence": 0.6,
    "evidence": [
@@ -795,7 +782,7 @@
   {
    "kind": "figure",
    "number": "C2",
-   "title": "Newton polygons for trefoil, i.e. T 2,3 torus knot: re\ufb01ned (red circles) and unre\ufb01ned (yellow crosses)",
+   "title": "Newton polygons for trefoil, i.e. T 2,3 torus knot: reﬁned (red circles) and unreﬁned (yellow crosses)",
    "page": 79,
    "confidence": 0.6,
    "evidence": [
@@ -806,7 +793,7 @@
   {
    "kind": "figure",
    "number": "C3",
-   "title": "Newton polygons for T 2,5 torus knot: re\ufb01ned (red circles) and unre\ufb01ned (yellow crosses)",
+   "title": "Newton polygons for T 2,5 torus knot: reﬁned (red circles) and unreﬁned (yellow crosses)",
    "page": 80,
    "confidence": 0.6,
    "evidence": [
@@ -817,7 +804,7 @@
   {
    "kind": "figure",
    "number": "C4",
-   "title": "Newton polygons for T 2,7 torus knot: re\ufb01ned (red circles) and unre\ufb01ned (yellow crosses)",
+   "title": "Newton polygons for T 2,7 torus knot: reﬁned (red circles) and unreﬁned (yellow crosses)",
    "page": 80,
    "confidence": 0.6,
    "evidence": [
@@ -828,7 +815,7 @@
   {
    "kind": "figure",
    "number": "C5",
-   "title": "Newton polygons for T 2,9 torus knot: re\ufb01ned (red circles) and unre\ufb01ned (yellow crosses)",
+   "title": "Newton polygons for T 2,9 torus knot: reﬁned (red circles) and unreﬁned (yellow crosses)",
    "page": 81,
    "confidence": 0.6,
    "evidence": [
@@ -839,7 +826,7 @@
   {
    "kind": "figure",
    "number": "C6",
-   "title": "Newton polygons for T 2,11 torus knot: re\ufb01ned (red circles) and unre\ufb01ned (yellow crosses)",
+   "title": "Newton polygons for T 2,11 torus knot: reﬁned (red circles) and unreﬁned (yellow crosses)",
    "page": 81,
    "confidence": 0.6,
    "evidence": [
@@ -850,7 +837,7 @@
   {
    "kind": "figure",
    "number": "C7",
-   "title": "Newton polygons for trefoil knot in DGR (see section 3.3.4) and DGR\u2019 (see section A3.2) gradings: re\ufb01ned (red circles) and unre\ufb01ned (yellow crosses)",
+   "title": "Newton polygons for trefoil knot in DGR (see section 3.3.4) and DGR’ (see section A3.2) gradings: reﬁned (red circles) and unreﬁned (yellow crosses)",
    "page": 82,
    "confidence": 0.8,
    "evidence": [
@@ -928,7 +915,7 @@
   {
    "kind": "figure",
    "number": "C14",
-   "title": "Matrix form of A-polynomial for trefoil knot in DGR (see section 3.3.4) and DGR\u2019 (see section A3.2) gradings",
+   "title": "Matrix form of A-polynomial for trefoil knot in DGR (see section 3.3.4) and DGR’ (see section A3.2) gradings",
    "page": 86,
    "confidence": 0.8,
    "evidence": [
@@ -1799,34 +1786,34 @@
    "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 2,
-   "n_chars": 1910,
-   "n_words": 276,
+   "page_end": 3,
+   "n_chars": 3573,
+   "n_words": 548,
    "label_start": null,
-   "label_end": "1"
+   "label_end": "2"
   },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 5,
-   "n_words": 2,
-   "label_start": "1",
-   "label_end": "1"
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 1029,
+   "n_words": 179,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
    "id": "sec-001-11-generalized-volume-conjecture",
    "number": "1.1",
    "title": "Generalized volume conjecture",
    "level": 2,
-   "page_start": 2,
+   "page_start": 3,
    "page_end": 4,
-   "n_chars": 3708,
-   "n_words": 629,
-   "label_start": "1",
+   "n_chars": 1027,
+   "n_words": 179,
+   "label_start": "2",
    "label_end": "3"
   },
   {
@@ -1847,26 +1834,86 @@
    "title": "Quantization and deformation of algebraic curves",
    "level": 2,
    "page_start": 4,
-   "page_end": 8,
-   "n_chars": 7394,
-   "n_words": 1291,
+   "page_end": 6,
+   "n_chars": 4113,
+   "n_words": 709,
    "label_start": "3",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-004-2-the-new-conjectures-incorporating-t",
+   "number": "2",
+   "title": "The new conjectures: incorporating $t$",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 474,
+   "n_words": 78,
+   "label_start": "5",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-005-21-quantum-volume-conjecture-refined",
+   "number": "2.1",
+   "title": "Quantum volume conjecture: refined",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1341,
+   "n_words": 234,
+   "label_start": "6",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-006-22-generalized-volume-conjecture-refined",
+   "number": "2.2",
+   "title": "Generalized volume conjecture: refined",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1343,
+   "n_words": 254,
+   "label_start": "6",
    "label_end": "7"
   },
   {
-   "id": "sec-004-3-examples-coming-from-knots",
+   "id": "sec-007-3-examples-coming-from-knots",
    "number": "3",
    "title": "Examples coming from knots",
    "level": 1,
    "page_start": 8,
-   "page_end": 19,
-   "n_chars": 24898,
-   "n_words": 4542,
+   "page_end": 12,
+   "n_chars": 9613,
+   "n_words": 1681,
    "label_start": "7",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-008-31-sr-homological-invariants-of-22p1-torus-knots",
+   "number": "3.1",
+   "title": "$S^r$ homological invariants of $(2,2p+1)$ torus knots",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 15,
+   "n_chars": 5563,
+   "n_words": 1038,
+   "label_start": "11",
+   "label_end": "14"
+  },
+  {
+   "id": "sec-009-311-refined-braid-operators-and-gamma-factors",
+   "number": "3.1.1",
+   "title": "Refined braid operators and gamma factors",
+   "level": 3,
+   "page_start": 15,
+   "page_end": 19,
+   "n_chars": 9616,
+   "n_words": 1805,
+   "label_start": "14",
    "label_end": "18"
   },
   {
-   "id": "sec-005-the-gamma-factors-for-symmetric-and-anti-symmetr",
+   "id": "sec-010-the-gamma-factors-for-symmetric-and-anti-symmetr",
    "number": null,
    "title": "The gamma factors for symmetric and anti-symmetric representations",
    "level": 3,
@@ -1878,7 +1925,7 @@
    "label_end": "20"
   },
   {
-   "id": "sec-006-312-from-partition-functions-to-superpolynomials",
+   "id": "sec-011-312-from-partition-functions-to-superpolynomials",
    "number": "3.1.2",
    "title": "From partition functions to superpolynomials",
    "level": 3,
@@ -1890,7 +1937,7 @@
    "label_end": "25"
   },
   {
-   "id": "sec-007-313-homological-algebra-of-colored-knot-invarian",
+   "id": "sec-012-313-homological-algebra-of-colored-knot-invarian",
    "number": "3.1.3",
    "title": "Homological algebra of colored knot invariants",
    "level": 3,
@@ -1902,7 +1949,7 @@
    "label_end": "31"
   },
   {
-   "id": "sec-008-32-recursion-relations-for-homological-knot-inva",
+   "id": "sec-013-32-recursion-relations-for-homological-knot-inva",
    "number": "3.2",
    "title": "Recursion relations for homological knot invariants",
    "level": 2,
@@ -1914,7 +1961,7 @@
    "label_end": "31"
   },
   {
-   "id": "sec-009-321-unknot",
+   "id": "sec-014-321-unknot",
    "number": "3.2.1",
    "title": "Unknot",
    "level": 3,
@@ -1926,7 +1973,7 @@
    "label_end": "33"
   },
   {
-   "id": "sec-010-322-trefoil",
+   "id": "sec-015-322-trefoil",
    "number": "3.2.2",
    "title": "Trefoil",
    "level": 3,
@@ -1938,55 +1985,163 @@
    "label_end": "35"
   },
   {
-   "id": "sec-011-323-recursion-in-various-limits",
+   "id": "sec-016-323-recursion-in-various-limits",
    "number": "3.2.3",
    "title": "Recursion in various limits",
    "level": 3,
    "page_start": 36,
-   "page_end": 42,
-   "n_chars": 11696,
-   "n_words": 2197,
+   "page_end": 38,
+   "n_chars": 3471,
+   "n_words": 655,
    "label_start": "35",
+   "label_end": "37"
+  },
+  {
+   "id": "sec-017-33-refined-a-polynomials-and-the-refined-volume",
+   "number": "3.3",
+   "title": "Refined $A$-polynomials and the refined ``volume'' $S_0 (u,t)$",
+   "level": 2,
+   "page_start": 38,
+   "page_end": 39,
+   "n_chars": 2504,
+   "n_words": 432,
+   "label_start": "37",
+   "label_end": "38"
+  },
+  {
+   "id": "sec-018-331-refined-a-polynomial-and-s-0-ut-for-the-unkn",
+   "number": "3.3.1",
+   "title": "Refined $A$-polynomial and $S_0 (u,t)$ for the unknot",
+   "level": 3,
+   "page_start": 39,
+   "page_end": 40,
+   "n_chars": 2184,
+   "n_words": 395,
+   "label_start": "38",
+   "label_end": "39"
+  },
+  {
+   "id": "sec-019-332-refined-a-polynomial-and-s-0-ut-for-the-tref",
+   "number": "3.3.2",
+   "title": "Refined $A$-polynomial and $S_0 (u,t)$ for the trefoil",
+   "level": 3,
+   "page_start": 40,
+   "page_end": 42,
+   "n_chars": 3367,
+   "n_words": 688,
+   "label_start": "39",
    "label_end": "41"
   },
   {
-   "id": "sec-012-333-saddle-point-analysis-of-the-homological-tor",
+   "id": "sec-020-333-saddle-point-analysis-of-the-homological-tor",
    "number": "3.3.3",
    "title": "Saddle point analysis of the homological torus knot invariants",
    "level": 3,
    "page_start": 42,
-   "page_end": 50,
-   "n_chars": 16429,
-   "n_words": 3145,
+   "page_end": 46,
+   "n_chars": 9802,
+   "n_words": 1871,
    "label_start": "41",
+   "label_end": "45"
+  },
+  {
+   "id": "sec-021-334-asymptotic-behavior-in-different-grading-con",
+   "number": "3.3.4",
+   "title": "Asymptotic behavior in different grading conventions",
+   "level": 3,
+   "page_start": 46,
+   "page_end": 50,
+   "n_chars": 6568,
+   "n_words": 1267,
+   "label_start": "45",
    "label_end": "49"
   },
   {
-   "id": "sec-013-34-relation-to-algebraic-k-theory",
+   "id": "sec-022-34-relation-to-algebraic-k-theory",
    "number": "3.4",
    "title": "Relation to algebraic K-theory",
    "level": 2,
    "page_start": 50,
-   "page_end": 58,
-   "n_chars": 19742,
-   "n_words": 3486,
+   "page_end": 52,
+   "n_chars": 5871,
+   "n_words": 1033,
    "label_start": "49",
+   "label_end": "51"
+  },
+  {
+   "id": "sec-023-341-quantizability-of-refined-a-polynomials",
+   "number": "3.4.1",
+   "title": "Quantizability of refined $A$-polynomials",
+   "level": 3,
+   "page_start": 52,
+   "page_end": 54,
+   "n_chars": 5759,
+   "n_words": 1055,
+   "label_start": "51",
+   "label_end": "53"
+  },
+  {
+   "id": "sec-024-4-examples-coming-from-refined-bps-invariants",
+   "number": "4",
+   "title": "Examples coming from refined BPS invariants",
+   "level": 1,
+   "page_start": 54,
+   "page_end": 58,
+   "n_chars": 7623,
+   "n_words": 1322,
+   "label_start": "53",
    "label_end": "57"
   },
   {
-   "id": "sec-014-conifold",
+   "id": "sec-025-41-refined-quantum-mirror-curves",
+   "number": "4.1",
+   "title": "Refined quantum mirror curves",
+   "level": 2,
+   "page_start": 58,
+   "page_end": 59,
+   "n_chars": 2998,
+   "n_words": 543,
+   "label_start": "57",
+   "label_end": "58"
+  },
+  {
+   "id": "sec-026-conifold",
    "number": null,
    "title": "Conifold",
    "level": 3,
-   "page_start": 58,
+   "page_start": 59,
+   "page_end": 60,
+   "n_chars": 1996,
+   "n_words": 416,
+   "label_start": "58",
+   "label_end": "59"
+  },
+  {
+   "id": "sec-027-42-refined-mirror-curves-s-0ut-and-quantizabilit",
+   "number": "4.2",
+   "title": "Refined mirror curves, $S_0(u,t)$ and quantizability",
+   "level": 2,
+   "page_start": 60,
+   "page_end": 63,
+   "n_chars": 7088,
+   "n_words": 1314,
+   "label_start": "59",
+   "label_end": "62"
+  },
+  {
+   "id": "sec-028-43-refinement-as-a-twisted-mass-parameter",
+   "number": "4.3",
+   "title": "Refinement as a twisted mass parameter",
+   "level": 2,
+   "page_start": 63,
    "page_end": 68,
-   "n_chars": 22238,
-   "n_words": 4069,
-   "label_start": "57",
+   "n_chars": 10506,
+   "n_words": 1853,
+   "label_start": "62",
    "label_end": "67"
   },
   {
-   "id": "sec-015-a-miscellaneous-results-on-knot-invariants",
+   "id": "sec-029-a-miscellaneous-results-on-knot-invariants",
    "number": "A",
    "title": "Miscellaneous results on knot invariants",
    "level": 1,
@@ -1998,31 +2153,91 @@
    "label_end": "67"
   },
   {
-   "id": "sec-016-a1-macdonald-polynomials",
+   "id": "sec-030-a1-macdonald-polynomials",
    "number": "A.1",
    "title": "Macdonald polynomials",
    "level": 2,
    "page_start": 68,
-   "page_end": 71,
-   "n_chars": 5110,
-   "n_words": 1201,
+   "page_end": 70,
+   "n_chars": 3370,
+   "n_words": 868,
    "label_start": "67",
+   "label_end": "69"
+  },
+  {
+   "id": "sec-031-a2-consistency-check-of-the-gamma-factor-and",
+   "number": "A.2",
+   "title": "Consistency check of the gamma factor () and ()",
+   "level": 2,
+   "page_start": 70,
+   "page_end": 71,
+   "n_chars": 1680,
+   "n_words": 323,
+   "label_start": "69",
    "label_end": "70"
   },
   {
-   "id": "sec-017-a3-wkb-analysis",
+   "id": "sec-032-a3-wkb-analysis",
    "number": "A.3",
    "title": "WKB analysis",
    "level": 2,
    "page_start": 71,
-   "page_end": 79,
-   "n_chars": 10045,
-   "n_words": 2222,
+   "page_end": 71,
+   "n_chars": 0,
+   "n_words": 0,
    "label_start": "70",
+   "label_end": "70"
+  },
+  {
+   "id": "sec-033-a31-another-expression-for-p-nt22p1qt",
+   "number": "A.3.1",
+   "title": "Another expression for $P_n(T^{2,2p+1};q,t)$",
+   "level": 3,
+   "page_start": 71,
+   "page_end": 72,
+   "n_chars": 2603,
+   "n_words": 516,
+   "label_start": "70",
+   "label_end": "71"
+  },
+  {
+   "id": "sec-034-a32-asymptotic-limit-of-cal-psn-1-rmdgrt22p1aqt",
+   "number": "A.3.2",
+   "title": "Asymptotic limit of ${\\cal P}^{S^{n-1}}_{\\rm{DGR}}(T^{2,2p+1};a,q,t)$ with $a=q^2 t^2$",
+   "level": 3,
+   "page_start": 72,
+   "page_end": 75,
+   "n_chars": 2683,
+   "n_words": 548,
+   "label_start": "71",
+   "label_end": "74"
+  },
+  {
+   "id": "sec-035-b-proof-of-the-gamma-factor-and-by-hidetoshi-awa",
+   "number": "B",
+   "title": "Proof of the gamma factor () and (), by Hidetoshi Awata",
+   "level": 1,
+   "page_start": 75,
+   "page_end": 79,
+   "n_chars": 4384,
+   "n_words": 1094,
+   "label_start": "74",
    "label_end": "78"
   },
   {
-   "id": "sec-018-c1-newton-polygons",
+   "id": "sec-036-c-refined-a-polynomials",
+   "number": "C",
+   "title": "Refined A-polynomials",
+   "level": 1,
+   "page_start": 79,
+   "page_end": 79,
+   "n_chars": 203,
+   "n_words": 36,
+   "label_start": "78",
+   "label_end": "78"
+  },
+  {
+   "id": "sec-037-c1-newton-polygons",
    "number": "C.1",
    "title": "Newton polygons",
    "level": 2,
@@ -2034,14 +2249,14 @@
    "label_end": "81"
   },
   {
-   "id": "sec-019-c2-matrix-forms-of-a-polynomials",
+   "id": "sec-038-c2-matrix-forms-of-a-polynomials",
    "number": "C.2",
    "title": "Matrix forms of A-polynomials",
    "level": 2,
    "page_start": 82,
    "page_end": 92,
-   "n_chars": 31314,
-   "n_words": 8433,
+   "n_chars": 31286,
+   "n_words": 8421,
    "label_start": "81",
    "label_end": "91"
   }
@@ -2049,10 +2264,10 @@
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 40,
+  "toc_entries": 39,
   "toc_inferred_entries": 40,
   "toc_inferred_mean_confidence": 0.988,
-  "toc_inferred_empty_share": 0.1,
+  "toc_inferred_empty_share": 0.051,
   "toc_inferred_method": "latex",
   "figure_entries": 31,
   "figure_sequence_gaps": [],
@@ -2074,13 +2289,22 @@
     "items": []
    }
   },
-  "sections": 21,
-  "chars_total": 195216,
+  "sections": 40,
+  "chars_total": 194365,
+  "furniture_lines_stripped": 4,
+  "headings_tidied": [
+   {
+    "title": "${\\mathbb C}^3$ or tetrahedron",
+    "page": 58,
+    "action": "dropped",
+    "why": "opens in lower case"
+   }
+  ],
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "refined.tex",
    "tex_sections": 30,
-   "overlaid": 12,
+   "overlaid": 28,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -2095,15 +2319,18 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.942,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-001-11-generalized-volume-conjecture",
      "title": "Generalized volume conjecture",
      "prose_ratio": 0.945,
-     "coverage_ratio": 0.402,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-002-12-quantum-volume-conjecture",
@@ -2116,21 +2343,61 @@
     {
      "id": "sec-003-13-quantization-and-deformation-of-algebraic-cur",
      "title": "Quantization and deformation of algebraic curves",
-     "prose_ratio": 0.898,
+     "prose_ratio": 0.891,
      "coverage_ratio": 0.929,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-3-examples-coming-from-knots",
-     "title": "Examples coming from knots",
-     "prose_ratio": 0.924,
-     "coverage_ratio": 0.987,
+     "id": "sec-004-2-the-new-conjectures-incorporating-t",
+     "title": "The new conjectures: incorporating $t$",
+     "prose_ratio": 0.947,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-the-gamma-factors-for-symmetric-and-anti-symmetr",
+     "id": "sec-005-21-quantum-volume-conjecture-refined",
+     "title": "Quantum volume conjecture: refined",
+     "prose_ratio": 0.771,
+     "coverage_ratio": 0.929,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-22-generalized-volume-conjecture-refined",
+     "title": "Generalized volume conjecture: refined",
+     "prose_ratio": 0.875,
+     "coverage_ratio": 0.641,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-3-examples-coming-from-knots",
+     "title": "Examples coming from knots",
+     "prose_ratio": 0.948,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-31-sr-homological-invariants-of-22p1-torus-knots",
+     "title": "$S^r$ homological invariants of $(2,2p+1)$ torus knots",
+     "prose_ratio": 0.917,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-311-refined-braid-operators-and-gamma-factors",
+     "title": "Refined braid operators and gamma factors",
+     "prose_ratio": 0.917,
+     "coverage_ratio": 0.997,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-the-gamma-factors-for-symmetric-and-anti-symmetr",
      "title": "The gamma factors for symmetric and anti-symmetric representations",
      "prose_ratio": 0.875,
      "coverage_ratio": 0.987,
@@ -2138,7 +2405,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-312-from-partition-functions-to-superpolynomials",
+     "id": "sec-011-312-from-partition-functions-to-superpolynomials",
      "title": "From partition functions to superpolynomials",
      "prose_ratio": 0.924,
      "coverage_ratio": 0.986,
@@ -2146,7 +2413,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-313-homological-algebra-of-colored-knot-invarian",
+     "id": "sec-012-313-homological-algebra-of-colored-knot-invarian",
      "title": "Homological algebra of colored knot invariants",
      "prose_ratio": 0.946,
      "coverage_ratio": 0.981,
@@ -2154,13 +2421,13 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-32-recursion-relations-for-homological-knot-inva",
+     "id": "sec-013-32-recursion-relations-for-homological-knot-inva",
      "title": "Recursion relations for homological knot invariants",
      "prose_ratio": 0.3,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-009-321-unknot",
+     "id": "sec-014-321-unknot",
      "title": "Unknot",
      "prose_ratio": 0.905,
      "coverage_ratio": 0.709,
@@ -2168,7 +2435,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-010-322-trefoil",
+     "id": "sec-015-322-trefoil",
      "title": "Trefoil",
      "prose_ratio": 0.927,
      "coverage_ratio": 0.976,
@@ -2176,59 +2443,156 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-323-recursion-in-various-limits",
+     "id": "sec-016-323-recursion-in-various-limits",
      "title": "Recursion in various limits",
-     "prose_ratio": 0.939,
-     "coverage_ratio": 0.992,
+     "prose_ratio": 0.926,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-012-333-saddle-point-analysis-of-the-homological-tor",
+     "id": "sec-017-33-refined-a-polynomials-and-the-refined-volume",
+     "title": "Refined $A$-polynomials and the refined ``volume'' $S_0 (u,t)$",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-018-331-refined-a-polynomial-and-s-0-ut-for-the-unkn",
+     "title": "Refined $A$-polynomial and $S_0 (u,t)$ for the unknot",
+     "prose_ratio": 0.933,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-019-332-refined-a-polynomial-and-s-0-ut-for-the-tref",
+     "title": "Refined $A$-polynomial and $S_0 (u,t)$ for the trefoil",
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-020-333-saddle-point-analysis-of-the-homological-tor",
      "title": "Saddle point analysis of the homological torus knot invariants",
-     "prose_ratio": 0.945,
-     "coverage_ratio": 0.987,
+     "prose_ratio": 0.953,
+     "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-013-34-relation-to-algebraic-k-theory",
-     "title": "Relation to algebraic K-theory",
-     "prose_ratio": 0.892,
+     "id": "sec-021-334-asymptotic-behavior-in-different-grading-con",
+     "title": "Asymptotic behavior in different grading conventions",
+     "prose_ratio": 0.938,
      "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-014-conifold",
-     "title": "Conifold",
-     "prose_ratio": 0.94,
-     "coverage_ratio": 0.935,
+     "id": "sec-022-34-relation-to-algebraic-k-theory",
+     "title": "Relation to algebraic K-theory",
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-015-a-miscellaneous-results-on-knot-invariants",
+     "id": "sec-023-341-quantizability-of-refined-a-polynomials",
+     "title": "Quantizability of refined $A$-polynomials",
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-024-4-examples-coming-from-refined-bps-invariants",
+     "title": "Examples coming from refined BPS invariants",
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-025-41-refined-quantum-mirror-curves",
+     "title": "Refined quantum mirror curves",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-026-conifold",
+     "title": "Conifold",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-027-42-refined-mirror-curves-s-0ut-and-quantizabilit",
+     "title": "Refined mirror curves, $S_0(u,t)$ and quantizability",
+     "prose_ratio": 0.954,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-028-43-refinement-as-a-twisted-mass-parameter",
+     "title": "Refinement as a twisted mass parameter",
+     "prose_ratio": 0.932,
+     "coverage_ratio": 0.997,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-029-a-miscellaneous-results-on-knot-invariants",
      "title": "Miscellaneous results on knot invariants",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-016-a1-macdonald-polynomials",
+     "id": "sec-030-a1-macdonald-polynomials",
      "title": "Macdonald polynomials",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-017-a3-wkb-analysis",
+     "id": "sec-031-a2-consistency-check-of-the-gamma-factor-and",
+     "title": "Consistency check of the gamma factor () and ()",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-032-a3-wkb-analysis",
      "title": "WKB analysis",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-018-c1-newton-polygons",
+     "id": "sec-033-a31-another-expression-for-p-nt22p1qt",
+     "title": "Another expression for $P_n(T^{2,2p+1};q,t)$",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-034-a32-asymptotic-limit-of-cal-psn-1-rmdgrt22p1aqt",
+     "title": "Asymptotic limit of ${\\cal P}^{S^{n-1}}_{\\rm{DGR}}(T^{2,2p+1};a,q,t)$ with $a=q^2 t^2$",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-035-b-proof-of-the-gamma-factor-and-by-hidetoshi-awa",
+     "title": "Proof of the gamma factor () and (), by Hidetoshi Awata",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-036-c-refined-a-polynomials",
+     "title": "Refined A-polynomials",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-037-c1-newton-polygons",
      "title": "Newton polygons",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-019-c2-matrix-forms-of-a-polynomials",
+     "id": "sec-038-c2-matrix-forms-of-a-polynomials",
      "title": "Matrix forms of A-polynomials",
      "result": "no matching \\section"
     }

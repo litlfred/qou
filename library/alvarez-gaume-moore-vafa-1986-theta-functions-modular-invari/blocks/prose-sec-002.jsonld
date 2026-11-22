@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/blocks/prose-sec-002",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Fermions on a Torus",
-  "pageStart": 2,
-  "pageEnd": 4,
-  "text": "../sections/sec-002-2-fermions-on-a-torus.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari",
+  "title": "L. Alvarez-Gaume, G. Moore, and C. Vafa Using (3.4) with θ = ωb η = cθp it follows that Ω^—Ω^, and if one uses again (3.4) with θ = ή, and η holomorphic, then ^$θΛθ",
+  "pageStart": 10,
+  "pageEnd": 14,
+  "text": "../sections/sec-002-10-l-alvarez-gaume-g-moore-and-c-vafa-using-34-w.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/manifest.jsonld",
   "provenance": "ingested"
 }

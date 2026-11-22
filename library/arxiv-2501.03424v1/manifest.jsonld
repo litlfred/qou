@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2501.03424v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2501.03424v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-2501.03424v1",
+  "title": "Soergel bimodules and Kazhdan-Lusztig polynomials",
   "contains": [
+    "library/arxiv-2501.03424v1/sections/sec-front-matter",
     "library/arxiv-2501.03424v1/sections/sec-000",
     "library/arxiv-2501.03424v1/sections/sec-001",
     "library/arxiv-2501.03424v1/sections/sec-002",
@@ -47,10 +48,27 @@
     "library/arxiv-2501.03424v1/sections/sec-033",
     "library/arxiv-2501.03424v1/sections/sec-034",
     "library/arxiv-2501.03424v1/sections/sec-035",
-    "library/arxiv-2501.03424v1/sections/sec-036"
+    "library/arxiv-2501.03424v1/sections/sec-036",
+    "library/arxiv-2501.03424v1/sections/sec-037",
+    "library/arxiv-2501.03424v1/sections/sec-038",
+    "library/arxiv-2501.03424v1/sections/sec-039",
+    "library/arxiv-2501.03424v1/sections/sec-040",
+    "library/arxiv-2501.03424v1/sections/sec-041",
+    "library/arxiv-2501.03424v1/sections/sec-042",
+    "library/arxiv-2501.03424v1/sections/sec-043",
+    "library/arxiv-2501.03424v1/sections/sec-044",
+    "library/arxiv-2501.03424v1/sections/sec-045",
+    "library/arxiv-2501.03424v1/sections/sec-046",
+    "library/arxiv-2501.03424v1/sections/sec-047",
+    "library/arxiv-2501.03424v1/sections/sec-048",
+    "library/arxiv-2501.03424v1/sections/sec-049",
+    "library/arxiv-2501.03424v1/sections/sec-050",
+    "library/arxiv-2501.03424v1/sections/sec-051",
+    "library/arxiv-2501.03424v1/sections/sec-052",
+    "library/arxiv-2501.03424v1/sections/sec-053"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://creativecommons.org/licenses/by/4.0/",
   "licenceRecord": {
     "status": "stated",
@@ -60,7 +78,9 @@
   },
   "meta": {
     "doc_id": "arxiv-2501.03424v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "2501.03424v1.pdf",
     "source_sha256": "53e00a30fd850a5b978c0bc2fb204d7e987c23b469a6321cc6cbe9834f0566b6",
     "pages": 23,
@@ -71,8 +91,8 @@
       "stamp_date": "6 Jan 2025"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

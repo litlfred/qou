@@ -1,0 +1,61 @@
+We find that we need to take n = 194 for the required degree of accuracy, and the
+following code generates our approximation. As before, the symbolic output is yet longer
+
+and so we do not display it.
+
+c[x_] = Integrate [(v[x, y] v[x, y])/y72, {y, Sart[a72 — x72],
+Sqrt [Csc[Pi/8]*2 — (x + Cot[Pi/8])*2]}];
+v2[x_] = c[x] + 2 (9660/28091) p[x] + (9660/28091)-2 h[x];
+
+V = ((2*(1/4) — 1)/(3 194)) Total[{v2[0], v2[27(1/4) - 1],
+Total [Table [
+2 v2[i], {i, 2 (2°(1/4) — 1)/194,
+192 (27(1/4) — 1)/194, (27(1/4) — 1)/97}]],
+Total [Table [
+4 v2[i], {i, (27(1/4) — 1)/194,
+193 (2°(1/4) — 1)/194, (2°(1/4) — 1)/97}]]}]s
+
+From this, we achieve the following lower bound:
+al? > LC
+1000000
+Remark 3.8 Whilst this is an accurate bound for the integral in Equation (3.1), we have
+lost some overall accuracy through the propagation of error through division and squaring
+
+in our bounds for the projection coefficient.
+
+All that remains is to bound ||V¢al|?. This time we want an upper bound, so we use
+
+the alternative bounds on our projection coefficient to get the following inequality:
+
+el? “( een Vendy +2 (9662) [os Voi
+Pe <| / pe, Vyo)dy + (298606829) / pe, Vei)dy
+Jo \Jeva) 28089 Jes (c)
+
+n 93354244 [ (2)
+788991921
+
+Jci(«)
+
+(V¢, vet) dx
+
+Note that here, the angular brackets are for the scalar product of vector fields rather
+than the L? inner product. The integrals with respect to y can all be evaluated using
+Mathematica; indeed we have already analyzed the third. At this stage we are doing
+nothing new, so can speed up the process to define our function of «:
+gradv2[x_] =
+Integrate [
+Grad[v[x, y], {x, y}].Grad[v[x, y], {x, y}], fy, Sart[q°2 — x2],
+Sart [Csc[Pi/8]~2 — (x + Cot[Pi/8])~2]}] +
+2 (9662/28089) Integrate|[
+Grad[u[x, y], {x, y}].Grad[v[x, y], {x, y}], fy, Sart[aq*2 — x2],
+Sqrt[Csc[Pi/8]~2 — (x + Cot[Pi/8])~2]}] + (9662/
+28089)*2 Integrate[
+
+Grad[ulx, y], {x, y}]-Grad[ulx, y], {x, y}], {y, Sart[q°2 — x72],
+Sqrt [Csc[Pi/8]*2 — (x + Cot[Pi/8])~2]}]
+
+We need to set n = 192 to reach our desired degree of accuracy, and Sj92 is calculated
+
+with the following, where “gradv2zero” is the value of the function at zero..
+
+63

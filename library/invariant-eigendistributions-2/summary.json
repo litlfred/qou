@@ -2,144 +2,108 @@
  "_schema": "library-summary/v1",
  "doc_id": "invariant-eigendistributions-2",
  "source_sha256": "ee43c3ebeff95265",
- "brief": "Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups — 25 sections: Introduction; Construction of Weyl group represe",
- "extended": "**Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups**\n\n33 pp, 25 sections.\n\n**Outline.** 1 Introduction; 2 Construction of Weyl group representations; 3 Specialization; 4 Springer theory; 5 Coherent families of eigendistributions; 6 Character contours and characteristic cycles; 7 Asymptotics at zero; 8 Harmonic polynomials; 9 Univalence; 10 Nilpotent orbital integrals; 11 A conjecture of Joseph; 12 Appendix: comparison with the Kazhdan-Luszt; 1 Supported bya grant from NSERC Canada; 3.1 Lemma. The inclusion Bν →B induces a W-map; 3.2 Corollary . In top dimension the W -map; 5.1 Theorem. The map; 6.1 Theorem. The character contour C(M) of a (; 7.1 Theorem. For any nilpotent Go-orbit O in i\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.3: of [Barbasch-Vogan 1980].\n- Theorem 5.1: we know that the relation\n- Lemma 9.1: says that under the identiﬁcationh =ho ×ho such a form is given by",
+ "brief": "Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups — 18 sections: Front matter; Contents; Introduction.",
+ "extended": "**Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups**\n\n*W. ROSSMANN1*\n\n33 pp, 18 sections.\n\n**Outline.** Front matter; Contents; 1 Introduction.; 2 Construction of Weyl group representations; 3 Specialization; 3.1 Lemma.; 4 Springer Theory; 5 Coherent families of eigendistributions.; 5.2 Corollary.; 6 Characters and characteristic cycles.; 7 Asymptotics at zero; 8 Harmonic polynomials; 9 Univalence; 9.2 Lemma.; 10 Nilpotent orbital integrals; 11 A conjecture of Joseph; 12 Appendix. Comparison with the Kazhdan-Luszt; REFERENCES",
  "tokens": {
-  "brief": 50,
-  "extended": 248
+  "brief": 47,
+  "extended": 154
  },
  "sections": [
   {
-   "id": "sec-000-1-introduction",
-   "title": "Introduction",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-1"
   },
   {
-   "id": "sec-001-2-construction-of-weyl-group-representations",
+   "id": "sec-000-contents",
+   "title": "Contents",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "title": "Introduction.",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-002-2-construction-of-weyl-group-representations",
    "title": "Construction of Weyl group representations",
-   "pages": "1-1"
+   "pages": "2-4"
   },
   {
-   "id": "sec-002-3-specialization",
+   "id": "sec-003-3-specialization",
    "title": "Specialization",
-   "pages": "1-1"
+   "pages": "4-4"
   },
   {
-   "id": "sec-003-4-springer-theory",
-   "title": "Springer theory",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-004-5-coherent-families-of-eigendistributions",
-   "title": "Coherent families of eigendistributions",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-005-6-character-contours-and-characteristic-cycles",
-   "title": "Character contours and characteristic cycles",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-006-7-asymptotics-at-zero",
-   "title": "Asymptotics at zero",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-007-8-harmonic-polynomials",
-   "title": "Harmonic polynomials",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-008-9-univalence",
-   "title": "Univalence",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-009-10-nilpotent-orbital-integrals",
-   "title": "Nilpotent orbital integrals",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-010-11-a-conjecture-of-joseph",
-   "title": "A conjecture of Joseph",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-011-12-appendix-comparison-with-the-kazhdan-lusztig",
-   "title": "Appendix: comparison with the Kazhdan-Lusztig construction",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-012-1-supported-bya-grant-from-nserc-canada",
-   "title": "Supported bya grant from NSERC Canada",
-   "pages": "1-4"
-  },
-  {
-   "id": "sec-013-31-lemma-the-inclusion-bν-b-induces-a-w-map-hbν",
-   "title": "Lemma. The inclusion Bν →B induces a W-map H∗(Bν) → H∗(B). This map factors",
+   "id": "sec-004-31-lemma",
+   "title": "Lemma.",
    "pages": "4-6"
   },
   {
-   "id": "sec-014-32-corollary-in-top-dimension-the-w--map",
-   "title": "Corollary . In top dimension the W -map",
-   "pages": "6-9"
+   "id": "sec-005-4-springer-theory",
+   "title": "Springer Theory",
+   "pages": "6-7"
   },
   {
-   "id": "sec-015-51-theorem-the-map",
-   "title": "Theorem. The map",
-   "pages": "9-11"
+   "id": "sec-006-5-coherent-families-of-eigendistributions",
+   "title": "Coherent families of eigendistributions.",
+   "pages": "7-10"
   },
   {
-   "id": "sec-016-61-theorem-the-character-contour-cm-of-a-gk--mod",
-   "title": "Theorem. The character contour C(M) of a (g,K )-moduleM and the characteristic variety",
-   "pages": "11-13"
+   "id": "sec-007-52-corollary",
+   "title": "Corollary.",
+   "pages": "10-10"
   },
   {
-   "id": "sec-017-71-theorem-for-any-nilpotent-go-orbit-o-in-igo-a",
-   "title": "Theorem. For any nilpotent Go-orbit O in igo∗ and any 2n-cycle Γ∈H2n(S( ¯O)) over ¯O,",
-   "pages": "13-20"
+   "id": "sec-008-6-characters-and-characteristic-cycles",
+   "title": "Characters and characteristic cycles.",
+   "pages": "10-12"
   },
   {
-   "id": "sec-018-81-lemma-thewo-representation-of-type-χo-occurs",
-   "title": "Lemma. TheWo-representation of type χO occurs with multiplicity one in degree eo =eo(O)",
-   "pages": "20-21"
+   "id": "sec-009-7-asymptotics-at-zero",
+   "title": "Asymptotics at zero",
+   "pages": "12-16"
   },
   {
-   "id": "sec-019-82-theorem-let-γ-h2ns-o-be-a-2ncycle-γ-over-o-on",
-   "title": "Theorem. Let Γ ∈ H2n(S( ¯O)) be a 2n−cycle Γ over ¯O on the conormal variety S of the",
-   "pages": "21-21"
+   "id": "sec-010-8-harmonic-polynomials",
+   "title": "Harmonic polynomials",
+   "pages": "16-21"
   },
   {
-   "id": "sec-020-91-lemma-the-map",
-   "title": "Lemma. The map",
-   "pages": "21-23"
+   "id": "sec-011-9-univalence",
+   "title": "Univalence",
+   "pages": "21-22"
   },
   {
-   "id": "sec-021-93-addendum-to-theorem-82-the-polynomials-cγ-and",
-   "title": "Addendum to theorem 8.2. The polynomials cΓ and pO are given by",
-   "pages": "23-26"
+   "id": "sec-012-92-lemma",
+   "title": "Lemma.",
+   "pages": "22-24"
   },
   {
-   "id": "sec-022-101-theorem-leto-be-a-nilpotent-go-orbit-in-igo",
-   "title": "Theorem. LetO be a nilpotent Go-orbit in igo∗. Then",
+   "id": "sec-013-10-nilpotent-orbital-integrals",
+   "title": "Nilpotent orbital integrals",
+   "pages": "24-26"
+  },
+  {
+   "id": "sec-014-11-a-conjecture-of-joseph",
+   "title": "A conjecture of Joseph",
    "pages": "26-28"
   },
   {
-   "id": "sec-023-12-appendix-comparison-with-the-kazhdan-lusztig",
+   "id": "sec-015-12-appendix-comparison-with-the-kazhdan-lusztig",
    "title": "Appendix. Comparison with the Kazhdan-Lusztig construction",
    "pages": "28-31"
   },
   {
-   "id": "sec-024-references",
-   "title": "References",
+   "id": "sec-016-references",
+   "title": "REFERENCES",
    "pages": "31-33"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

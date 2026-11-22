@@ -39,6 +39,7 @@ derivation of the right one, and nothing here is wired.
 
 from __future__ import annotations
 
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590) order-zero E_0 routed + labelled, owner ruling 2026-11-20
 import sys
 from pathlib import Path
 
@@ -90,7 +91,7 @@ def ladder_ppb(q, n_rungs):
     # h and was caught by this probe's own sign assertion on the first run.
     w_mixed = h / 2
     eps = w_mixed * h - h
-    out = abs(eps * ME / (q * (q - 1)))
+    out = abs(_qbeta_e0.order_zero_scaled(eps * ME, q))
     al = (z - 1) * h / 2
     fs = [mp.cos(al - b * hb**2 / 2),
           1 - b**2 * hb**4,

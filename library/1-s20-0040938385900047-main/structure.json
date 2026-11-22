@@ -7,162 +7,866 @@
   "bytes": 1764459,
   "pages": 26,
   "text_source": "embedded",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "ToporoPy Vol. 24, No. 3, pp. 307-332. 1985. 0040-9383185 s3.00+ .OO Printed III Great Britain. C 1985. Pcrgamon Press Ltd. VOLUMES OF HYPERBOLIC THREE-MANIFOLDS",
-  "authors_raw": "WALTER D. NEUMANNt and DON ZAGIER",
+  "title": "Volumes of hyperbolic three-manifolds",
+  "authors_raw": "Printed III Great Britain",
   "title_lines": [
-   "ToporoPy Vol. 24, No. 3, pp. 307-332. 1985. 0040-9383185 s3.00+ .OO",
-   "Printed III Great Britain. C 1985. Pcrgamon Press Ltd",
-   "VOLUMES OF HYPERBOLIC THREE-MANIFOLDS"
+   "ToporoPy Vol. 24, No. 3, pp. 307-332",
+   "1985",
+   "0040-9383185",
+   "s3.00+"
   ],
   "abstract": null,
   "docinfo": {
-   "CreationDate": "D:20011031120931",
-   "Producer": "Acrobat 3.0 Import Plug-in\u0000",
-   "Creator": "\u6341\u6f72\u6162\u2074\u2e33\u2030\u6143\u7470\u7275\u2065\u6c50\u6775\u692dn",
-   "Title": "PII: 0040-9383(85)90004-7"
-  }
+   "Title": "PII: 0040-9383(85)90004-7",
+   "Producer": "Acrobat 3.0 Import Plug-in",
+   "Creator": "Acrobat 3.0 Capture Plug-in",
+   "CreationDate": "D:20011031120931"
+  },
+  "title_raw": "ToporoPy Vol. 24, No. 3, pp. 307-332. 1985. 0040-9383185 s3.00+",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "metadata": "PII: 0040-9383(85)90004-7",
+   "heading": "VOLUMES OF HYPERBOLIC THREE-MANIFOLDS",
+   "text": "ToporoPy Vol. 24, No. 3, pp. 307-332. 1985. 0040-9383185 s3.00+",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "ToporoPy Vol. 24, No. 3, pp. 307-332. 1985. 0040-9383185 s3.00+"
  },
- "toc": [
+ "toc": [],
+ "toc_source": "undetermined",
+ "toc_undetermined_reason": "5 inferred entries, 80% of them starting on page(s) 8, 10 of 26 — a list found ON a page, not the document's structure",
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted (5 inferred entries, 80% of them starting on page(s) 8, 10 of 26 — a list found ON a page, not the document's structure): one section per page.",
+ "figures": [
   {
-   "level": 1,
-   "title": "Introduction",
-   "page": 1,
-   "source": "inferred",
-   "number": "1"
+   "kind": "figure",
+   "number": "1",
+   "title": "",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "311"
   },
   {
-   "level": 1,
-   "title": "Combinatorics of ideal triangulations",
-   "page": 4,
-   "source": "inferred",
-   "number": "2"
+   "kind": "figure",
+   "number": "2",
+   "title": "product is to be taken in the universal covering c* of C*, that is, the sum of the arguments",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "312"
   },
   {
-   "level": 1,
-   "title": "Proof of Theorem 2.2",
+   "kind": "figure",
+   "number": "3",
+   "title": "",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "312"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "313"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "",
    "page": 10,
-   "source": "inferred",
-   "number": "3"
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "316"
   },
   {
-   "level": 1,
-   "title": "Good parameters for deformation",
+   "kind": "figure",
+   "number": "6",
+   "title": "",
+   "page": 11,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "317"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "318"
+  },
+  {
+   "kind": "figure",
+   "number": "8a",
+   "title": "",
+   "page": 12,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "318"
+  },
+  {
+   "kind": "figure",
+   "number": "8b",
+   "title": "",
+   "page": 12,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "318"
+  },
+  {
+   "kind": "figure",
+   "number": "9a",
+   "title": "",
+   "page": 13,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "319"
+  },
+  {
+   "kind": "figure",
+   "number": "9b",
+   "title": "",
+   "page": 13,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": "319"
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "",
+   "page": 13,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": "319"
+  },
+  {
+   "kind": "figure",
+   "number": "11",
+   "title": "",
+   "page": 13,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "319"
+  },
+  {
+   "kind": "figure",
+   "number": "12",
+   "title": "",
    "page": 14,
-   "source": "inferred",
-   "number": "4"
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "320"
   },
   {
-   "level": 1,
-   "title": "Volume computations",
-   "page": 18,
-   "source": "inferred",
-   "number": "5"
+   "kind": "figure",
+   "number": "13",
+   "title": "",
+   "page": 16,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "322"
   },
   {
-   "level": 1,
-   "title": "Examples",
-   "page": 21,
-   "source": "inferred",
-   "number": "6"
+   "kind": "figure",
+   "number": "14",
+   "title": "",
+   "page": 19,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "325"
   },
   {
-   "level": 1,
-   "title": "References",
-   "page": 25,
-   "source": "inferred",
-   "number": null
+   "kind": "figure",
+   "number": "15",
+   "title": "",
+   "page": 22,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "328"
+  },
+  {
+   "kind": "figure",
+   "number": "16",
+   "title": "",
+   "page": 22,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "328"
+  },
+  {
+   "kind": "figure",
+   "number": "17",
+   "title": "",
+   "page": 23,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "329"
+  },
+  {
+   "kind": "figure",
+   "number": "18",
+   "title": "",
+   "page": 23,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "329"
   }
  ],
- "toc_source": "inferred",
+ "pages": [
+  {
+   "physical": 1,
+   "label": "307",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "308",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "309",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "310",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "311",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "312",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "313",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "314",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "315",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "316",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "317",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "318",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "319",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "320",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "321",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "322",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "323",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "324",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "325",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "326",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "327",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "328",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "329",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "330",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "331",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "332",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-1-introduction",
-   "number": "1",
-   "title": "Introduction",
+   "id": "page-001",
+   "number": null,
+   "title": "Page 1",
    "level": 1,
    "page_start": 1,
-   "page_end": 4,
-   "n_chars": 11384,
-   "n_words": 2138
+   "page_end": 1,
+   "n_chars": 3148,
+   "n_words": 568,
+   "label_start": "307",
+   "label_end": "307"
   },
   {
-   "id": "sec-001-2-combinatorics-of-ideal-triangulations",
-   "number": "2",
-   "title": "Combinatorics of ideal triangulations",
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 3437,
+   "n_words": 635,
+   "label_start": "308",
+   "label_end": "308"
+  },
+  {
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 3854,
+   "n_words": 713,
+   "label_start": "309",
+   "label_end": "309"
+  },
+  {
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
    "level": 1,
    "page_start": 4,
-   "page_end": 10,
-   "n_chars": 13828,
-   "n_words": 2656
+   "page_end": 4,
+   "n_chars": 2317,
+   "n_words": 436,
+   "label_start": "310",
+   "label_end": "310"
   },
   {
-   "id": "sec-002-3-proof-of-theorem-22",
-   "number": "3",
-   "title": "Proof of Theorem 2.2",
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 2368,
+   "n_words": 419,
+   "label_start": "311",
+   "label_end": "311"
+  },
+  {
+   "id": "page-006",
+   "number": null,
+   "title": "Page 6",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 2220,
+   "n_words": 407,
+   "label_start": "312",
+   "label_end": "312"
+  },
+  {
+   "id": "page-007",
+   "number": null,
+   "title": "Page 7",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 2683,
+   "n_words": 510,
+   "label_start": "313",
+   "label_end": "313"
+  },
+  {
+   "id": "page-008",
+   "number": null,
+   "title": "Page 8",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 2817,
+   "n_words": 574,
+   "label_start": "314",
+   "label_end": "314"
+  },
+  {
+   "id": "page-009",
+   "number": null,
+   "title": "Page 9",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 2271,
+   "n_words": 445,
+   "label_start": "315",
+   "label_end": "315"
+  },
+  {
+   "id": "page-010",
+   "number": null,
+   "title": "Page 10",
    "level": 1,
    "page_start": 10,
-   "page_end": 14,
-   "n_chars": 7340,
-   "n_words": 1498
+   "page_end": 10,
+   "n_chars": 1777,
+   "n_words": 382,
+   "label_start": "316",
+   "label_end": "316"
   },
   {
-   "id": "sec-003-4-good-parameters-for-deformation",
-   "number": "4",
-   "title": "Good parameters for deformation",
+   "id": "page-011",
+   "number": null,
+   "title": "Page 11",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 4038,
+   "n_words": 781,
+   "label_start": "317",
+   "label_end": "317"
+  },
+  {
+   "id": "page-012",
+   "number": null,
+   "title": "Page 12",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 610,
+   "n_words": 143,
+   "label_start": "318",
+   "label_end": "318"
+  },
+  {
+   "id": "page-013",
+   "number": null,
+   "title": "Page 13",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 718,
+   "n_words": 146,
+   "label_start": "319",
+   "label_end": "319"
+  },
+  {
+   "id": "page-014",
+   "number": null,
+   "title": "Page 14",
    "level": 1,
    "page_start": 14,
-   "page_end": 18,
-   "n_chars": 10846,
-   "n_words": 2053
+   "page_end": 14,
+   "n_chars": 2377,
+   "n_words": 434,
+   "label_start": "320",
+   "label_end": "320"
   },
   {
-   "id": "sec-004-5-volume-computations",
-   "number": "5",
-   "title": "Volume computations",
+   "id": "page-015",
+   "number": null,
+   "title": "Page 15",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 2841,
+   "n_words": 542,
+   "label_start": "321",
+   "label_end": "321"
+  },
+  {
+   "id": "page-016",
+   "number": null,
+   "title": "Page 16",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 2871,
+   "n_words": 572,
+   "label_start": "322",
+   "label_end": "322"
+  },
+  {
+   "id": "page-017",
+   "number": null,
+   "title": "Page 17",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 3395,
+   "n_words": 607,
+   "label_start": "323",
+   "label_end": "323"
+  },
+  {
+   "id": "page-018",
+   "number": null,
+   "title": "Page 18",
    "level": 1,
    "page_start": 18,
-   "page_end": 21,
-   "n_chars": 4309,
-   "n_words": 793
+   "page_end": 18,
+   "n_chars": 1818,
+   "n_words": 333,
+   "label_start": "324",
+   "label_end": "324"
   },
   {
-   "id": "sec-005-6-examples",
-   "number": "6",
-   "title": "Examples",
+   "id": "page-019",
+   "number": null,
+   "title": "Page 19",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 1322,
+   "n_words": 237,
+   "label_start": "325",
+   "label_end": "325"
+  },
+  {
+   "id": "page-020",
+   "number": null,
+   "title": "Page 20",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 1481,
+   "n_words": 275,
+   "label_start": "326",
+   "label_end": "326"
+  },
+  {
+   "id": "page-021",
+   "number": null,
+   "title": "Page 21",
    "level": 1,
    "page_start": 21,
-   "page_end": 25,
-   "n_chars": 5343,
-   "n_words": 1063
+   "page_end": 21,
+   "n_chars": 1255,
+   "n_words": 259,
+   "label_start": "327",
+   "label_end": "327"
   },
   {
-   "id": "sec-006-references",
+   "id": "page-022",
    "number": null,
-   "title": "References",
+   "title": "Page 22",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 1051,
+   "n_words": 186,
+   "label_start": "328",
+   "label_end": "328"
+  },
+  {
+   "id": "page-023",
+   "number": null,
+   "title": "Page 23",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 1039,
+   "n_words": 203,
+   "label_start": "329",
+   "label_end": "329"
+  },
+  {
+   "id": "page-024",
+   "number": null,
+   "title": "Page 24",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 1108,
+   "n_words": 224,
+   "label_start": "330",
+   "label_end": "330"
+  },
+  {
+   "id": "page-025",
+   "number": null,
+   "title": "Page 25",
    "level": 1,
    "page_start": 25,
+   "page_end": 25,
+   "n_chars": 2450,
+   "n_words": 393,
+   "label_start": "331",
+   "label_end": "331"
+  },
+  {
+   "id": "page-026",
+   "number": null,
+   "title": "Page 26",
+   "level": 1,
+   "page_start": 26,
    "page_end": 26,
-   "n_chars": 1529,
-   "n_words": 216
+   "n_chars": 401,
+   "n_words": 60,
+   "label_start": "332",
+   "label_end": "332"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 7,
-  "sections": 7,
-  "chars_total": 54579
+  "toc_entries": 0,
+  "toc_inferred_entries": 5,
+  "toc_inferred_mean_confidence": 0.71,
+  "toc_inferred_empty_share": 0.2,
+  "toc_inferred_method": "font",
+  "figure_entries": 20,
+  "figure_sequence_gaps": [
+   "figure 8",
+   "figure 9"
+  ],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 26,
+  "chars_total": 55667,
+  "furniture_lines_stripped": 0
  },
  "duplicate_copies": [
   "neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds",
   "neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-co"
- ],
- "toc_note": "Headings supplied by a reader from the printed section titles (the automatic inference matched only one pseudo-heading on p. 328 and dropped pp. 307-327); split and written by pdf-structure.py."
+ ]
 }

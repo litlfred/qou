@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/agt-v7-n2-p13-s/sections/sec-019",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Partition functions",
+  "pageStart": 50,
+  "pageEnd": 51,
+  "contains": [
+    "library/agt-v7-n2-p13-s/blocks/prose-sec-019"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/agt-v7-n2-p13-s/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/agt-v7-n2-p13-s/manifest.jsonld",
+  "provenance": "ingested"
+}

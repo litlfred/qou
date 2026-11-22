@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0409565v2
-doc_title: "Unital Gröbner Bases over Aribtrary Commutative Ground Rings"
+doc_title: "Unital Gröbner Bases over Arbitrary Commutative Ground Rings"
 section_id: sec-000-introduction
 section_title: "Introduction."
 section_number: null
@@ -8,7 +8,9 @@ pages: 1-2
 source_pdf: 0409565v2.pdf
 source_sha256: 236704063f12c05e
 toc_source: outline
+doc_brief: "Unital Gröbner Bases over Arbitrary Commutative Ground Rings — Let R be a commutative ring with unity and a let A be a not necessarily commutative R-algebra which is free as an R-module."
 ---
+Introduction.
 There have been several generalizations of Gr¨obner basis theory, coming in one
 of two ﬂavors: noncommutative theory and theories for working over special
 ground rings, e.g. Euclidean domains, PID’s or UFD’s. For an overview of the
@@ -62,4 +64,3 @@ PBW theorem over an arbitrary commutative ring with unity. In particular, if R
 is a Q-algebra we have a Gr¨obner basis proof of the equivalence of the category of
 (ﬁnite dimensional) lie algebras over R and (ﬁnite dimensional) smooth formal
 groups over R.
-2

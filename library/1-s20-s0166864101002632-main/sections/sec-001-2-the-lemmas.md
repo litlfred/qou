@@ -8,6 +8,7 @@ pages: 3-7
 source_pdf: 1-s2.0-S0166864101002632-main.pdf
 source_sha256: bc5aa8a7663b2a9f
 toc_source: inferred
+doc_brief: "PII: S0166-8641(01)00263-2 — The Möbius energy of a knot is an energy functional for smooth curves based on an idea of self- repelling."
 ---
 The ﬁrst lemma is a version of a theorem of Schur. This is taken from [10], with the slight
 adjustment that we do not need to consider general planar convex curves as the reference

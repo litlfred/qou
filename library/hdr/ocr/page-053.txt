@@ -1,0 +1,66 @@
+WO Wwe Ww Te {0,...,k—1}, ay € Z and by € {0,...,d—1}.
+
+In sAnsbn J2,02,b2 °° Jy,a1,b1
+We a WR Wea Te © (0,...,k- 1}, an € Z and by € {0,...,d—1}.
+Wee a WR Wn a Te €{0,...,k 1}, ax © Z and by € {0,...,d— 1}.
+
+We then have the following [ChPdA2| Theorem 4.4]:
+
+Theorem 6.7 Each set Bak Bes, Br Bird and Bren is an R1-basis of Y(d,l,n). In particular,
+Y(d,1,n) is a free Ri-module and, if | < oo, its rank is equal to (dl)"n!.
+
+Remark 6.8 The set BAS, is the analogue of the Ariki—Koike basis of the Ariki-Koike algebra
+H(I,n) for | < oo, and the standard Bernstein basis of the affine Hecke algebra of type A for | = oo. The
+four other sets are inductive sets with respect to n, which are analogous to the inductive bases of H(I,n)
+
+studied in (OgPo}.
+
+Furthermore, in we have studied the representation theory of the cyclotomic Yokonuma—
+Hecke algebra Y(d,1,n), which is quite similar to the representation theory of the Yokonuma—Hecke
+algebra Yun(q). From now on, we only consider the case | < 00.
+
+Let K, denote the field of fractions of R;. We will see that the irreducible representations of the
+algebra K,Y(d,1,n) are parametrised by the dl-partitions of n. Instead of looking though at dl-partitions
+as dl-tuples of partitions, we look at them as d-tuples of I-partitions, and we call them (d,1)-partitions
+when seen as such. We denote by P(d,l,n) the set of (d,l)-partitions of n. If A € P(d,l,n), then
+
+A= (AM, AM,..., MEY), where AM is an L-partition for all i = 0,1,...,d —1, and an JAM] =n.
+We thus have A“ = (AGO, AGED MHD), where \%4) is a partition for all i = 0,1,...,d—1 and
+j= 0,1,...,0-1, and YY TG [AGP] = 0.
+
+A node @ of A is a 4-tuple («, y,i,7), where0 <i <d—-1,0< 7 <1—1 and (2, y) is a node of the
+partition A“). We define p(@) := i to be the d-position of @ and c(@) := Q;q"* to be the I-quantum
+content of @.
+
+Following the definitions in a (d,1)-tableau is simply a dl-tableau and a standard (d,1)-tableau
+is simply a standard dl-tableau. For a (d,1)-tableau T and for i = 1,...,n, we denote respectively by
+p(7 |i) and c(T|i) the d-position and the J-quantum content of the node with the number # in it.
+
+Now, let A € P(d,1,n), and let V, be a C(q)-vector space with a basis {v., } indexed by the standard
+(d, 1)-tableaux of shape A. We set v, := 0 for any non-standard (d,1)-tableau T of shape A. By
+Propositions 3.2 & 3.4], the vector space Vy is a representation of K,Y(d,1,n), with the action of the
+generators 91,...,9n—1,t1,-..,tn on the basis element v, defined exactly as in Theorem and the
+action of the generator Xj given by:
+
+Xi(v,) =c(T|1) v,. (6.19)
+Further, the set {V, | A € P(d,1,n)} is a complete set of pairwise non-isomorphic irreducible representa-
+tions of K;Y(d,1,n).
+Remark 6.9 We can easily show, by induction on i, that [ChPdA2] Lemma 3.3]:
+Xi(v,) =c(Tli)v, for alli=1,...,n. (6.20)
+
+We also have a semisimplicity criterion for cyclotomic Yokonuma-Hecke algebras, which is exactly
+the same as Ariki’s semisimplicity criterion (4.2) for Ariki-Koike algebras [ChPdA2] Proposition 4.7]:
+
+Proposition 6.10 Let 6: R; > C be a ring homomorphism such that 6(q) Tjnz0 0(Q;) #4 0. The
+specialised cyclotomic Yokonuma-Hecke algebra CY(d,1,n)9, defined via 0, is (split) semisimple if and
+only if 0(P) #0, where
+
+P= [[ Qtat+--+a7) JT [I Ge.-@y.
+
+1<i<n 0<s<t<l-1—n<k<n
+
+We deduce that the algebra CY(d, 1, n)g is semisimple if and only if the specialised Ariki-Koike algebra
+CH(I,n)g is semisimple.
+Finally, we have proved the existence of a “canonical” symmetrising form on K;Y(d,1,n) and calcu-
+
+lated the Schur elements with respect to it [(ChPdA2\ §7]:

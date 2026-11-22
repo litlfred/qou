@@ -9,8 +9,8 @@ degree of freedom) and P_skew (bar-anti-symmetric content, EM channel)
 are DIFFERENT mechanisms. Promotes the chat correction (PR #1127) to
 a paper-side audit-visibility stub.
 
-Ref: [manuscript] rem:im-q-vs-p-skew
-Ref: [manuscript] prop:lusztig-vs-hermitian-bar
+Ref: [leitner2026] rem:im-q-vs-p-skew
+Ref: [leitner2026] prop:lusztig-vs-hermitian-bar
 -/
 
 namespace QOU.BraidKnot.ImQVsPSkew

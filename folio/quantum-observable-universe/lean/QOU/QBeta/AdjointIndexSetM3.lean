@@ -81,7 +81,7 @@ hyperbolic knot carries, i.e. `R1`'s own universal floor — reproduces every
 `H_Ad` prediction, including a palindromic 3-element grading. Both are proved
 below. `H_Ad` stays a hypothesis, and it is not the only one standing.
 
--- Ref: [manuscript] docs/audits/2026-08-11-route-c-bps-cohomology-scoping.md (Route C, M3)
+-- Ref: [leitner2026] docs/audits/2026-08-11-route-c-bps-cohomology-scoping.md (Route C, M3)
 -/
 
 namespace QOU.QBeta.AdjointIndexSetM3

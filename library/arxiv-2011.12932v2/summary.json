@@ -2,35 +2,85 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2011.12932v2",
  "source_sha256": "23709542c5652a29",
- "brief": "MODULAR CATEGORIES AND TQFTS BEYOND SEMISIMPLICITY — Vladimir Turaev discovered in the early years of quantum topol- ogythatthenotionofmodularcategorywasanappropriatestructureforbuild- ing",
- "extended": "**MODULAR CATEGORIES AND TQFTS BEYOND SEMISIMPLICITY**\n\n*CHRISTIAN BLANCHET AND MARCO DERENZI*\n\n26 pp, 5 sections.\n\n**Abstract.** Vladimir Turaev discovered in the early years of quantum topol- ogythatthenotionofmodularcategorywasanappropriatestructureforbuild- ing 3-dimensional Topological Quantum Field Theories (TQFTs for short) con- taining invariants of links in 3-manifolds such as Witten–Reshetikhin–Turaev ones. In recent years, generalized notions of modular categories, which relax the semisimplicity requirement, have been successfully used to extend Turaev’s construction to various non-semisimple settings. We report on these recent de- velopments in the domain, showing the richness of Vladimir’s lineage.\n\n**Outline.** 1 Introduction; Semisimple constructions; Early non-semisimple constructions; Appendix A. Ends; References",
+ "brief": "MODULAR CATEGORIES AND TQFTS BEYOND SEMISIMPLICITY — Vladimir Turaev discovered in the early years of quantum topol- ogy that the notion of modular category was an appropriate structure for build",
+ "extended": "**MODULAR CATEGORIES AND TQFTS BEYOND SEMISIMPLICITY**\n\n*CHRISTIAN BLANCHET AND MARCO DERENZI*\n\n26 pp, 15 sections.\n\n**Abstract.** Vladimir Turaev discovered in the early years of quantum topol- ogy that the notion of modular category was an appropriate structure for build- ing 3-dimensional Topological Quantum Field Theories (TQFTs for short) con- taining invariants of links in 3-manifolds such as Witten–Reshetikhin–Turaev ones. In recent years, generalized notions of modular categories, which relax the semisimplicity requirement, have been successfully used to extend Turaev’s construction to various non-semisimple settings. We report on these recent de- velopments in the domain, showing the richness of Vladimir’s lineage.\n\n**Outline.** Front matter; 1 Introduction; 2 Historical overview; Definition of TQFT; Semisimple constructions; Early non-semisimple constructions; Renormalized non-semisimple constructions; 3 Turaev's notion of modular category; 4 Semisimple quantum invariants and TQFTs; 5 T-modular categories from small quantum sl(2; 6 Lyubashenko's notion of modular category; 7 Non-semisimple quantum invariants and TQFTs; 8 L-modular categories from small quantum sl(2; Appendix A. Ends; References",
  "tokens": {
-  "brief": 47,
-  "extended": 210
+  "brief": 48,
+  "extended": 305
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
    "pages": "1-2"
   },
   {
-   "id": "sec-001-semisimple-constructions",
+   "id": "sec-001-2-historical-overview",
+   "title": "Historical overview",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-002-definition-of-tqft",
+   "title": "Definition of TQFT",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-003-semisimple-constructions",
    "title": "Semisimple constructions",
    "pages": "2-3"
   },
   {
-   "id": "sec-002-early-non-semisimple-constructions",
+   "id": "sec-004-early-non-semisimple-constructions",
    "title": "Early non-semisimple constructions",
-   "pages": "3-20"
+   "pages": "3-4"
   },
   {
-   "id": "sec-003-appendix-a-ends",
+   "id": "sec-005-renormalized-non-semisimple-constructions",
+   "title": "Renormalized non-semisimple constructions",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-006-3-turaevs-notion-of-modular-category",
+   "title": "Turaev's notion of modular category",
+   "pages": "5-7"
+  },
+  {
+   "id": "sec-007-4-semisimple-quantum-invariants-and-tqfts",
+   "title": "Semisimple quantum invariants and TQFTs",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-008-5-t-modular-categories-from-small-quantum-sl2",
+   "title": "T-modular categories from small quantum sl(2)",
+   "pages": "9-12"
+  },
+  {
+   "id": "sec-009-6-lyubashenkos-notion-of-modular-category",
+   "title": "Lyubashenko's notion of modular category",
+   "pages": "12-16"
+  },
+  {
+   "id": "sec-010-7-non-semisimple-quantum-invariants-and-tqfts",
+   "title": "Non-semisimple quantum invariants and TQFTs",
+   "pages": "16-18"
+  },
+  {
+   "id": "sec-011-8-l-modular-categories-from-small-quantum-sl2",
+   "title": "L-modular categories from small quantum sl(2)",
+   "pages": "18-20"
+  },
+  {
+   "id": "sec-012-appendix-a-ends",
    "title": "Appendix A. Ends",
    "pages": "20-24"
   },
   {
-   "id": "sec-004-references",
+   "id": "sec-013-references",
    "title": "References",
    "pages": "24-26"
   }

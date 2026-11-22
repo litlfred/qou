@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2105.07724v2/sections/sec-006",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Appendix C. Some additional comments and details",
+  "pageStart": 42,
+  "pageEnd": 51,
+  "contains": [
+    "library/arxiv-2105.07724v2/blocks/prose-sec-006",
+    "library/arxiv-2105.07724v2/blocks/def-sec-006-01",
+    "library/arxiv-2105.07724v2/blocks/figure-img-p043-1",
+    "library/arxiv-2105.07724v2/blocks/figure-img-p043-2",
+    "library/arxiv-2105.07724v2/blocks/figure-img-p043-3",
+    "library/arxiv-2105.07724v2/blocks/figure-img-p043-4",
+    "library/arxiv-2105.07724v2/blocks/figure-img-p051-1",
+    "library/arxiv-2105.07724v2/blocks/figure-img-p051-2"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2105.07724v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2105.07724v2/manifest.jsonld",
+  "provenance": "ingested"
+}

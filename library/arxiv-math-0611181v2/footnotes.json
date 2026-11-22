@@ -1,0 +1,770 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-math-0611181v2",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p003-1",
+   "page": 3,
+   "mark": "2",
+   "text": "πi",
+   "marks": [
+    {
+     "page": 3,
+     "context": "of CS is equal to 2π"
+    }
+   ],
+   "block": "library/arxiv-math-0611181v2/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p004-1",
+   "page": 4,
+   "mark": "2",
+   "text": "πi",
+   "marks": [
+    {
+     "page": 4,
+     "context": "representationofsl"
+    },
+    {
+     "page": 4,
+     "context": "n=0V"
+    },
+    {
+     "page": 4,
+     "context": "Tangle(n, t) · idV"
+    },
+    {
+     "page": 4,
+     "context": "C(n, t) = t(N"
+    },
+    {
+     "page": 4,
+     "context": "Thefactort(N"
+    }
+   ],
+   "block": "library/arxiv-math-0611181v2/blocks/prose-sec-001"
+  },
+  {
+   "id": "fn-p007-1",
+   "page": 7,
+   "mark": "4",
+   "text": "a+7c−7d",
+   "marks": [
+    {
+     "page": 7,
+     "context": "(2n + 1)χ"
+    }
+   ],
+   "block": "library/arxiv-math-0611181v2/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p008-1",
+   "page": 8,
+   "mark": "4",
+   "text": "a+7c−7d",
+   "marks": [
+    {
+     "page": 8,
+     "context": "(2n + 1)χ"
+    },
+    {
+     "page": 8,
+     "context": "χ"
+    }
+   ],
+   "block": "library/arxiv-math-0611181v2/blocks/prose-sec-002"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p001-1",
+   "page": 1,
+   "mark": "2",
+   "text": "πi",
+   "block": "library/arxiv-math-0611181v2/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p002-1",
+   "page": 2,
+   "mark": "2",
+   "text": "πi",
+   "block": "library/arxiv-math-0611181v2/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p002-2",
+   "page": 2,
+   "mark": "2",
+   "text": "πi",
+   "block": "library/arxiv-math-0611181v2/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p003-2",
+   "page": 3,
+   "mark": "2",
+   "text": "πi",
+   "block": "library/arxiv-math-0611181v2/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p003-3",
+   "page": 3,
+   "mark": "2",
+   "text": "πi",
+   "block": "library/arxiv-math-0611181v2/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p007-2",
+   "page": 7,
+   "mark": "4",
+   "text": "a+7c−7d",
+   "block": "library/arxiv-math-0611181v2/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p007-3",
+   "page": 7,
+   "mark": "4",
+   "text": "a+7c−7d",
+   "block": "library/arxiv-math-0611181v2/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p011-1",
+   "page": 11,
+   "mark": "115",
+   "text": "(2003) 2033-2036. [5] R. Meyerhoﬀ, Density of the Chern-Simons invariant for hyperbolic 3-manifolds, Low dimensional topology and Kleinian groups, 217-239, Cambridge university press, Cam- bridge, 1986. [6] H. Murakami, A quantum introduction to knot theory, Primes and Knots: JAMI con- ference, Contemp. Math., 2006. [7] H. Murakami, J. Murakami, The colored Jones Polynomials and the simplicial Volume of a Knot, Acta Math. 186 (2001) 85-104. [8] H. Murakami, J. Murakami, M. Okamoto, T. Takata, Y. Yokota, Kashaev’s Conjecture and the Chern-Simons Invariant of Knots and Links, Exp. Math. 11, 3 (2002) 427-435. [9] M. Ouyang, A note on the Chern-Simons invariant of hyperbolic 3-manifolds, Proc. A.M.S. 125, 6 (1997) 1845-1851.",
+   "block": "library/arxiv-math-0611181v2/blocks/prose-sec-002"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "timesthesimplicialvolume(Gromovnorm)ofS"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "timesthesimplicialvolume(Gromovnorm)ofS3−K,wherev"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "n=0V2"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "Tangle(n, t) · idV2"
+  },
+  {
+   "page": 4,
+   "mark": "h",
+   "context": "werethefunctionTangle(n, t)dependsonthetangleandt=e"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "2thenthefunctionsforthetanglesinﬁgure"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "B(n, t) =[N(2"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "T(n, t) = t"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "(1 −tN−j−k)(1 −t"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "1 −t"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "T(n, t)"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "T(n, t)aB(n, t)"
+  },
+  {
+   "page": 4,
+   "mark": "c",
+   "context": "T(n, t)aB(n, t)bC(n, t)"
+  },
+  {
+   "page": 4,
+   "mark": "d",
+   "context": "T(n, t)aB(n, t)bC(n, t)cC(n, t−1)"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "Thefactor[2"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "N(n′2 + 2"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "N(n′2 + 2n′k′ + 2"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "N(n′2 + 2n′k′ + 2k′2)) + O(N"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "N< C exp(−ǫN"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "JN,a,"
+  },
+  {
+   "page": 5,
+   "mark": "c",
+   "context": "JN,a,1,c,d ∼CN(c+d+3)/2 ˜S"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "N(c+d+2"
+  },
+  {
+   "page": 5,
+   "mark": "c",
+   "context": "N(c+d+2b)/2 ˜S"
+  },
+  {
+   "page": 5,
+   "mark": "c",
+   "context": "log( ˜S"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "JN,a,"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "∼exp"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "2π((Vol(Wa,"
+  },
+  {
+   "page": 6,
+   "mark": "f",
+   "context": "π"
+  },
+  {
+   "page": 6,
+   "mark": "f",
+   "context": "4).MoreovertheTaylorexpansionof"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "4 ) −(x"
+  },
+  {
+   "page": 6,
+   "mark": "y",
+   "context": "4 ) −(x2 + 2xy + 2"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "4 ) −(x2 + 2xy + 2y"
+  },
+  {
+   "page": 6,
+   "mark": "f",
+   "context": "4⌋andtheactualcriticalvalue"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "ulus to diﬀerentiate Λ and ﬁnd the system of equations:2 sin"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "Proof.(oflemma3)Ifwedeﬁnes"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "Proof.(oflemma3)Ifwedeﬁnesn=−P"
+  },
+  {
+   "page": 6,
+   "mark": "s",
+   "context": "6Nwehave"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "6Nwehaves"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "2log"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "2 log"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "Toprovetheexpansionfors"
+  },
+  {
+   "page": 6,
+   "mark": "5",
+   "context": "Toprovetheexpansionforsnwereasonasfollows:forx∈[0,"
+  },
+  {
+   "page": 6,
+   "mark": "x",
+   "context": "sin x= 1 +−x cos"
+  },
+  {
+   "page": 6,
+   "mark": "x",
+   "context": "sin x= 1 +−x cos x + sin"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "u + O(u"
+  },
+  {
+   "page": 7,
+   "mark": "x",
+   "context": "| +−x cos"
+  },
+  {
+   "page": 7,
+   "mark": "x",
+   "context": "| +−x cos x + sin"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "u + O(u"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "s"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "2 log"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "2π"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "(2n + 1)χ4"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "DeﬁnethequotientQN=JN,a,"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "N= O(exp(−ǫN"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "N= O(exp(−ǫN 2δ−1)).We can estimate all other factors Sn,k"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "Sn,k"
+  },
+  {
+   "page": 8,
+   "mark": "c",
+   "context": "Sn,k1 · · · Sn,k"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "(2n + 1)χ4"
+  },
+  {
+   "page": 8,
+   "mark": "e",
+   "context": "N→∞φN"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "|2n + 1 −N|Sn,k"
+  },
+  {
+   "page": 8,
+   "mark": "c",
+   "context": "|2n + 1 −N|Sn,k1 · · · Sn,k"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "Sn,k"
+  },
+  {
+   "page": 8,
+   "mark": "c",
+   "context": "Sn,k1 · · · Sn,k"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "χ4"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "Sn,k"
+  },
+  {
+   "page": 8,
+   "mark": "c",
+   "context": "Sn,k1 · · · Sn,k"
+  },
+  {
+   "page": 8,
+   "mark": "e",
+   "context": "N→∞φN"
+  },
+  {
+   "page": 8,
+   "mark": "x",
+   "context": "(c + d −(4a + c −d)i)"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "(c + d −(4a + c −d)i)x"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "2 )"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "andletψ= exp(4"
+  },
+  {
+   "page": 8,
+   "mark": "c",
+   "context": "andletψ= exp(4a+3"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "andletψ= exp(4a+3c−3"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "|x|+max|y"
+  },
+  {
+   "page": 9,
+   "mark": "c",
+   "context": "2) × Q"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "j=1[k"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "2, k"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "|x|+max|y"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "entire integration domain |x|+max|y"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "(|y"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "2)"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "2)"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "n′2= (|x|+n′)(|x|−n′) and (|y"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "2)"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "2)2= (|y"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "2)"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "2)(|y"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "2).Weintegrate over B(n,"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "j−|y"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "j+ |y"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "w+max|z"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "(|z"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "2)"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "(|z"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "2)"
+  },
+  {
+   "page": 10,
+   "mark": "c",
+   "context": "R"
+  },
+  {
+   "page": 10,
+   "mark": "c",
+   "context": "ral and get rid of the absolute value signs by integrating 2"
+  },
+  {
+   "page": 10,
+   "mark": "w",
+   "context": "exp(−π(c + d −(4a + c −d)i)"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "exp(−π(c + d −(4a + c −d)i)w"
+  },
+  {
+   "page": 10,
+   "mark": "c",
+   "context": "Q∞= ψ2"
+  },
+  {
+   "page": 10,
+   "mark": "w",
+   "context": "2)d"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "exp(−2π(z"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "2 )"
+  },
+  {
+   "page": 10,
+   "mark": "z",
+   "context": "2 )2))d"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "2 )2))dz"
+  },
+  {
+   "page": 10,
+   "mark": "d",
+   "context": "2 )2))dzj"
+  },
+  {
+   "page": 10,
+   "mark": "w",
+   "context": "2 )2))dzjd"
+  },
+  {
+   "page": 10,
+   "mark": "w",
+   "context": "exp(−π(c + d −(4a + c −d)i)"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "exp(−π(c + d −(4a + c −d)i)w"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "exp(−y"
+  },
+  {
+   "page": 10,
+   "mark": "y",
+   "context": "j)d"
+  },
+  {
+   "page": 10,
+   "mark": "j",
+   "context": "j)dy"
+  },
+  {
+   "page": 10,
+   "mark": "d",
+   "context": "j)dyj"
+  },
+  {
+   "page": 10,
+   "mark": "w",
+   "context": "j)dyjd"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "xexp(−y"
+  },
+  {
+   "page": 11,
+   "mark": "y",
+   "context": "xexp(−y2)d"
+  },
+  {
+   "page": 11,
+   "mark": "w",
+   "context": "exp(−π(c + d −(4a + c −d)i)"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "exp(−π(c + d −(4a + c −d)i)w"
+  },
+  {
+   "page": 11,
+   "mark": "c",
+   "context": "2)erfc"
+  },
+  {
+   "page": 11,
+   "mark": "w",
+   "context": "exp(−π(c + d)"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "exp(−π(c + d)w"
+  },
+  {
+   "page": 11,
+   "mark": "c",
+   "context": "2)erfc"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "cos(4"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "πw"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "πw2) + i sin(4"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "πw"
+  }
+ ]
+}

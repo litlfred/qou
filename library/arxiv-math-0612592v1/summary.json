@@ -2,17 +2,47 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-0612592v1",
  "source_sha256": "a5d29fa15a0b74ff",
- "brief": "Analytic q-difference equations Marius van der Put — 1 sections: Document",
- "extended": "**Analytic q-difference equations Marius van der Put**\n\n*Department of Mathematics, University of Groningen, P.O.Box 800*\n\n16 pp, 1 sections.\n\n**Outline.** Document",
+ "brief": "Analytic q -diﬀerence equations — 7 sections: Front matter; Difference equations in general; First examples of q-difference equ",
+ "extended": "**Analytic q -diﬀerence equations**\n\n*Marius van der Put*\n\n16 pp, 7 sections.\n\n**Outline.** Front matter; Difference equations in general; First examples of q-difference equations; Towards a classification of modules; Moduli spaces for difference modules; Difference Galois groups; Universal Picard-Vessiot rings and universal d",
  "tokens": {
-  "brief": 18,
-  "extended": 41
+  "brief": 31,
+  "extended": 82
  },
  "sections": [
   {
-   "id": "sec-000-document",
-   "title": "Document",
-   "pages": "1-16"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-000-difference-equations-in-general",
+   "title": "Difference equations in general",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-001-first-examples-of-q-difference-equations",
+   "title": "First examples of q-difference equations",
+   "pages": "3-5"
+  },
+  {
+   "id": "sec-002-towards-a-classification-of-modules",
+   "title": "Towards a classification of modules",
+   "pages": "5-9"
+  },
+  {
+   "id": "sec-003-moduli-spaces-for-difference-modules",
+   "title": "Moduli spaces for difference modules",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-004-difference-galois-groups",
+   "title": "Difference Galois groups",
+   "pages": "10-12"
+  },
+  {
+   "id": "sec-005-universal-picard-vessiot-rings-and-universal-dif",
+   "title": "Universal Picard-Vessiot rings and universal difference Galois groups",
+   "pages": "12-16"
   }
  ],
  "provenance": {

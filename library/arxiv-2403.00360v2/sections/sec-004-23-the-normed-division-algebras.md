@@ -7,10 +7,11 @@ section_number: 2.3
 pages: 6-7
 source_pdf: 2403.00360v2.pdf
 source_sha256: b0764ca18a83a84f
-doc_brief: "CAUSAL FERMION SYSTEMS AND OCTONIONS — We compare the structures and methods in the theory of causal fermion systems with approaches to fundamental physics based on division algebras, in par- ticular"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.925
-latex_coverage_ratio: 0.964
+latex_coverage_ratio: 0.974
+doc_brief: "CAUSAL FERMION SYSTEMS AND OCTONIONS — We compare the structures and methods in the theory of causal fermion systems with approaches to fundamental physics based on division algebras, in par- ticular"
 ---
 A division algebra is an algebra over a field where division is always well-defined, except by zero. A normed division algebra has the additional property that it is also a normed vector space, with the norm defined in terms of a conjugate. A well-known result by Hurwitz [@hurwitz1898ueber] states that there exist only four normed division algebras (over the field of real numbers): $\mathbb{R}$, $\mathbb{C}$, $\mathbb{H}$, $\mathbb{O}$, being of dimensions one, two, four and eight, respectively. In going to higher-dimensional algebras, successive algebraic properties are lost: $\mathbb{R}$ is self-conjugate, commutative and associative, $\mathbb{C}$ is commutative and associative (but no longer self-conjugate), $\mathbb{H}$ is associative but no longer commutative, and finally $\mathbb{O}$ is neither commutative nor associative (but alternative).
 

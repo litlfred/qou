@@ -9,13 +9,16 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Conditions on the eigenvalues",
-  "pageStart": 53,
-  "pageEnd": 55,
+  "title": "Unitarity of the Burau representation",
+  "pageStart": 48,
+  "pageEnd": 50,
   "contains": [
-    "library/arxiv-math-0606435v2/blocks/prose-sec-028"
+    "library/arxiv-math-0606435v2/blocks/prose-sec-028",
+    "library/arxiv-math-0606435v2/blocks/rem-sec-028-01",
+    "library/arxiv-math-0606435v2/blocks/thm-sec-028-02",
+    "library/arxiv-math-0606435v2/blocks/prop-sec-028-03"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0606435v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0606435v2",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0606435v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0606435v2/manifest.jsonld",
   "provenance": "ingested"
 }

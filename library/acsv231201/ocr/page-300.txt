@@ -1,0 +1,47 @@
+282 Smooth point asymptotics
+
+and n, is the restriction of n to the hyperplane orthogonal to V Q(p) then the
+curvature of V at p is given by
+
+_ tal
+ICV Op)!
+
+where ||(V Q)(p)|l2 denotes the Euclidean norm of the gradient of Q at p.
+
+(9.22)
+
+Proof Replacing Q by ||(V OQ)(P)Iz! Q leaves V unchanged and reduces to the
+case ||(V Q)(p)|lz = 1, so we assume without loss of generality that ||(V Q)(p)]l2 =
+1. Given an arbitrary vector u we write wu = u, + A(u)(V Q)(p) to denote the
+decomposition of u into its components orthogonal to, and contained in, the
+span of (V Q)(p). The Taylor expansion of Q near p is
+
+Op +u)=(VOVp)-u+m(wtR,
+where R = O(|w,|? + |A(z)||u,|). Near the origin, we can solve for A to obtain
+A(u) = 1.(u) + Odul?),
+
+and the result follows from Proposition 9.42. Qo
+
+Gaussian curvature at minimal points of complex hypersurfaces
+Suppose now that Q is a real polynomial in d variables and that p is a minimal
+smooth point of the corresponding complex algebraic hypersurface. We are
+interested in the curvature at log p of the logarithmic image log V = {z € C4:
+(Q 0 exp)(z) = 0} of V (this image is similar to the amoeba of Q except we
+do not take moduli). When p is a point with positive real coordinates then the
+curvature at log p can be defined (up to a factor of +1) directly using (9.22)
+from Corollary 9.43. In fact, we use this formula to define curvature in the
+general complex case as it is invariant under scalar multiplications of Q and
+Theorem 6.44 from Chapter 6 implies that the normal (Viog Q)(p) to Q 0 exp at
+a minimal point p is a scalar multiple of a real vector.
+
+It is useful to observe that the curvature K is a reparametrization of the
+Hessian determinant in our asymptotic theorems, in the sense that they vanish
+together.
+
+Proposition 9.44. The quantity K defined by (9.22) vanishes if and only if the
+determinant of the Hessian matrix H in Theorem 9.5 vanishes.
+
+Proof Going back to its original definition in Lemma 8.22, the matrix H in
+Theorem 9.5 is the Hessian matrix for the function g expressing logV as a
+graph over the first (d — 1) coordinates. At such a point, the tangent plane to
+log ‘V is not perpendicular to the dth coordinate plane, and reparametrizing the

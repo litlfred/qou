@@ -1,0 +1,55 @@
+540 J. BORCEA, P. BRANDEN, AND T. M. LIGGETT
+
+so the RC model is strongly Rayleigh. We conclude that on a general graph G, the
+RC model is strongly Rayleigh if and only if G is acyclic.
+
+With the help of Mathematica©, the third author has verified that the RC model
+is Rayleigh for all simple graphs with at most five vertices.
+
+3.5. Interacting particle systems and exclusion evolutions. The exclusion
+process is one of the main models considered in the area of Probability Theory
+known as Interacting Particle Systems. The idea is that particles move in continuous
+time on a countable set S, in such a way that there is always at most one particle
+per site. The motion of each particle would be a continuous time Markov chain on
+S, except that transitions to occupied sites are forbidden. This process has been
+used to model many situations, including biopolymers and traffic flow. We refer to
+Chap. VIII] and Part 3] for detailed treatments of this process.
+
+The (finite) symmetric exclusion process generates a continuous time evolution
+on the set %,,. The limiting measure under the symmetric exclusion evolution with
+initial measure js is the symmetrization j1, of 4 as defined in A problem that
+has attracted some attention is the following (see, e.g., ).
+
+Problem 3.5. Find a natural negative dependence property that is preserved by
+symmetric exclusion evolutions.
+
+Since the limiting distribution of the evolution as t — oo is the symmetrization
+of the initial distribution defined in (2), any such property would have to be pre-
+served by this symmetrization procedure. In order for a solution to Problem[3.5] to
+be useful in settling Conjecture 2.2] the negative dependence property should be
+satisfied by non-random/deterministic distributions and should imply NA. Prob-
+; also motivated by a theorem of Harris [52] Theorem 2.14] that provides a
+general criterion for the preservation of positive dependence for Markov processes.
+Theorems 3.1 and 3.3 of [55] give negative dependence properties that are preserved
+by the symmetric exclusion evolution. However, one can make an argument that
+neither of these is ideal — the first is too weak, while the second is too strong. In
+Theorem 3.2] it was proved that NA is not preserved by the symmetric exclu-
+sion process. The examples that we construct in {7|further show that in fact none
+of the properties NLC, h-NLC, Rayleigh/h-NLC+, CNA, CNA+ defined in {2.]]
+is preserved by such evolutions. This is a consequence of the following criterion
+established by Pemantle in Theorem 2.7] (see also Proposition 3.6]) for the
+ultra log-concavity of rank sequences of symmetric polynomials in P,:
+
+Theorem 3.7 ((65]). For 0 < k < n let ex(z1,...,2n) be the k-th elementary
+symmetric function on {z1,...,%n} and consider the polynomial
+
+f(21,-++;2n) = Seve yess Zn)s
+
+where a, >0,0<k <n. The following are equivalent:
+(1) f satisfies the conclusion of Conjecture [2.4 that is, it has an ULC rank
+sequence (cf. Definition 2.8);
+(2) f has either (and then all) of the following five properties: NLC, h-NLC,
+Rayleigh/h-NLC+, CNA, and CNA+.
+
+In 5] we show that the strongly Rayleigh property is preserved by (finite) sym-
+metric exclusion evolutions and thus provide an answer to Problem B.5} We then

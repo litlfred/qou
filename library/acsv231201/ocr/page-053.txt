@@ -1,0 +1,58 @@
+2.3 Algebraic generating functions 35
+coefficient
+
+[2" P]O(z)F(z) - lz" P]O(@)F (2) = Csbr-s s
+
+0 —Cabr—s
+
+where the first extraction is zero because r € Z implies the recurrence (2.4)
+holds, and the second extraction is computed directly. Let
+
+K(z) = » Cebp_gz” P
+
+reZ,scE
+r-seB
+
+enumerate such terms. The K stands for known, because the coefficients of
+K are determined by the known boundary conditions, which are specified in
+the problem. The example in Figure 2.1 marks the terms of K in the first two
+rows and columns of Z.
+
+Second, for every pair (r,s) with r ¢ Z,s € E, andr -—s € Z, direct
+expansion shows that
+
+[2"-P]O(2)F2(z) = —Csdr-s,
+reflecting the fact that the recursion does not hold at r. Let
+
+U(z) = » CsAp_gz"
+
+TEZ,SeE
+r-seZ
+
+enumerate such terms. The U stands for unknown, because these coefficients
+are not explicitly determined from the boundary conditions. In the example
+from Figure 2.1, U has one row and one column of terms. The value of r
+leading to the xy>-term of U is pictured.
+
+We now give a sufficient condition for the recurrence (2.4) to be well founded,
+
+and prove that the series Fz and U are unique.
+
+Lemma 2.16 ({[BP00, Theorem 5]). Let E be a finite subset of N¢ whose convex
+
+hull does not intersect the non-positive orthant, let {c, : s € E} be constants,
+
+let p be the valley of E, let B < N“ be closed under the coordinatewise partial
+order < with complement Z = N? \ B, let {bg : s € B} be constants, and let
+
+K(z) = » Cebp_gz”?.
+
+reZ,scE
+r-seB
+
+Then there is a unique set of values {ay : r € Z} such that (2.4) holds for all
+r € Zanda, = b, forall r € B. Consequently, there is a unique pair of formal
+
+power series Fz and U such that
+
+O(2)F2(z) = K(z) - U(z).

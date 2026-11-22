@@ -44,9 +44,9 @@
 
   Base ring: genuinely archimedean (`Real.sqrt`, `Complex`) — §7c-correct `ℝ`/`ℂ`.
 
-  -- Ref: [manuscript] docs/audits/2026-08-02-nz-half-observable-normalization-structural-resolution.md
-  -- Ref: [manuscript] docs/audits/2026-07-27-nzImVolume-sincos-convention-bug.md
-  -- Ref: [manuscript] conj:binding-qbeta-complex-volume; bean qou-yh67; PR #4541 (qou-iyj5)
+  -- Ref: [leitner2026] docs/audits/2026-08-02-nz-half-observable-normalization-structural-resolution.md
+  -- Ref: [leitner2026] docs/audits/2026-07-27-nzImVolume-sincos-convention-bug.md
+  -- Ref: [leitner2026] conj:binding-qbeta-complex-volume; bean qou-yh67; PR #4541 (qou-iyj5)
   -- Ref: [neumann-zagier1985] https://doi.org/10.1016/0040-9383(85)90004-7
 -/
 import Mathlib.Analysis.SpecialFunctions.Sqrt

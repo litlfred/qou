@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1006.1099v3/sections/sec-035",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Finite determinacy",
+  "pageStart": 62,
+  "pageEnd": 67,
+  "contains": [
+    "library/arxiv-1006.1099v3/blocks/prose-sec-035",
+    "library/arxiv-1006.1099v3/blocks/lem-sec-035-01",
+    "library/arxiv-1006.1099v3/blocks/lem-sec-035-02",
+    "library/arxiv-1006.1099v3/blocks/lem-sec-035-03",
+    "library/arxiv-1006.1099v3/blocks/lem-sec-035-04",
+    "library/arxiv-1006.1099v3/blocks/lem-sec-035-05",
+    "library/arxiv-1006.1099v3/blocks/cor-sec-035-06",
+    "library/arxiv-1006.1099v3/blocks/rem-sec-035-07"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1006.1099v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1006.1099v3/manifest.jsonld",
+  "provenance": "ingested"
+}

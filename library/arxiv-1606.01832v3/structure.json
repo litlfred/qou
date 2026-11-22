@@ -7,10 +7,11 @@
   "bytes": 560483,
   "pages": 21,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,20 +21,28 @@
    "stamp_date": "6 Sep 2017"
   },
   "doi": null,
-  "title": "FLATNESS AND COMPLETION REVISITED AMNON YEKUTIELI",
-  "authors_raw": null,
+  "title": "FLATNESS AND COMPLETION REVISITED",
+  "authors_raw": "AMNON YEKUTIELI",
   "title_lines": [
-   "FLATNESS AND COMPLETION REVISITED",
-   "AMNON YEKUTIELI"
+   "FLATNESS AND COMPLETION REVISITED"
   ],
-  "abstract": "We continue investigating the interaction between \ufb02atness and a- adic completion for in\ufb01nitely generated A-modules. Here A is a commutative ring and a is a \ufb01nitely generated ideal in it. We introduce the concept of a-adic \ufb02atness , which is weaker than \ufb02atness. We prove that a-adic \ufb02atness is preserved under completion when the ideal a is weakly proregular. We also prove that when A is noetherian, a-adic \ufb02atness coincides with \ufb02atness (for complete modules). An example is worked out of a non-noetherian ring A, with a weakly proregular ideal a, for which the completion \u02c6A is not \ufb02at. We also study a-adic systems , and prove that if the ideal a is \ufb01nitely generated, then the limit of every a-adic system is a complete module.",
+  "abstract": "We continue investigating the interaction between ﬂatness and a- adic completion for inﬁnitely generated A-modules. Here A is a commutative ring and a is a ﬁnitely generated ideal in it. We introduce the concept of a-adic ﬂatness, which is weaker than ﬂatness. We prove that a-adic ﬂatness is preserved under completion when the ideal a is weakly proregular. We also prove that when A is noetherian, a-adic ﬂatness coincides with ﬂatness (for complete modules). An example is worked out of a non-noetherian ring A, with a weakly proregular ideal a, for which the completion b A is not ﬂat. We also study a-adic systems, and prove that if the ideal a is ﬁnitely generated, then the limit of every a-adic system is a complete module.",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20181105131031Z",
-   "Creator": "LaTeX with hyperref package",
    "Producer": "pdfTeX-1.40.17",
-   "Title": ""
-  }
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20181105131031Z"
+  },
+  "title_raw": "FLATNESS AND COMPLETION REVISITED",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "FLATNESS AND COMPLETION REVISITED with a weakly proregular ideal a , for which the completion b Contents Introduction a -Adic Systems Free Resolutions of a -Adic Systems a -Adic Flatness Weakly Proregular Ideals Modules of Decaying Functions The Non-Noetherian Example References 0. Introduction In t",
+   "outline": "0. Introduction",
+   "text": "FLATNESS AND COMPLETION REVISITED",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "FLATNESS AND COMPLETION REVISITED AMNON YEKUTIELI"
  },
  "toc": [
   {
@@ -41,60 +50,247 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "0"
+   "number": "0",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "a-Adic Systems",
    "page": 4,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Free Resolutions of a-Adic Systems",
    "page": 7,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "a-Adic Flatness",
    "page": 9,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Weakly Proregular Ideals",
    "page": 12,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Modules of Decaying Functions",
    "page": 14,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The Non-Noetherian Example",
    "page": 18,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 20,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 800,
+   "n_words": 133,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-0-introduction",
    "number": "0",
@@ -102,8 +298,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 4,
-   "n_chars": 7390,
-   "n_words": 1313
+   "n_chars": 7453,
+   "n_words": 1363,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-1-a-adic-systems",
@@ -112,8 +310,10 @@
    "level": 1,
    "page_start": 4,
    "page_end": 7,
-   "n_chars": 6922,
-   "n_words": 1201
+   "n_chars": 7047,
+   "n_words": 1332,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-2-free-resolutions-of-a-adic-systems",
@@ -122,8 +322,10 @@
    "level": 1,
    "page_start": 7,
    "page_end": 9,
-   "n_chars": 5146,
-   "n_words": 982
+   "n_chars": 5314,
+   "n_words": 1166,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-3-a-adic-flatness",
@@ -132,8 +334,10 @@
    "level": 1,
    "page_start": 9,
    "page_end": 12,
-   "n_chars": 7157,
-   "n_words": 1329
+   "n_chars": 7344,
+   "n_words": 1516,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-004-4-weakly-proregular-ideals",
@@ -142,8 +346,10 @@
    "level": 1,
    "page_start": 12,
    "page_end": 14,
-   "n_chars": 5153,
-   "n_words": 939
+   "n_chars": 5265,
+   "n_words": 1049,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-005-5-modules-of-decaying-functions",
@@ -152,8 +358,10 @@
    "level": 1,
    "page_start": 14,
    "page_end": 18,
-   "n_chars": 8352,
-   "n_words": 1520
+   "n_chars": 8621,
+   "n_words": 1789,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-006-6-the-non-noetherian-example",
@@ -162,8 +370,10 @@
    "level": 1,
    "page_start": 18,
    "page_end": 20,
-   "n_chars": 3863,
-   "n_words": 735
+   "n_chars": 3895,
+   "n_words": 767,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-007-references",
@@ -172,16 +382,26 @@
    "level": 1,
    "page_start": 20,
    "page_end": 21,
-   "n_chars": 2724,
-   "n_words": 361
+   "n_chars": 2723,
+   "n_words": 360,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 8,
-  "sections": 8,
-  "chars_total": 46707,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 9,
+  "chars_total": 48462,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
@@ -194,34 +414,39 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-0-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.755,
+     "coverage_ratio": 0.946,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-1-a-adic-systems",
      "title": "a-Adic Systems",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.562,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-002-2-free-resolutions-of-a-adic-systems",
      "title": "Free Resolutions of a-Adic Systems",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.94,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-003-3-a-adic-flatness",
      "title": "a-Adic Flatness",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.956,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -229,23 +454,23 @@
      "id": "sec-004-4-weakly-proregular-ideals",
      "title": "Weakly Proregular Ideals",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.961,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-005-5-modules-of-decaying-functions",
      "title": "Modules of Decaying Functions",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.947,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-006-6-the-non-noetherian-example",
      "title": "The Non-Noetherian Example",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.961,
      "result": "overlaid",
      "converter": "latex"
     },

@@ -2,35 +2,80 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2203.06568v4",
  "source_sha256": "256fcfb588dac554",
- "brief": "Semidefinite programming bounds for binary codes from a split Terwilliger algebra — We study the upper bounds for A(n, d), the maximum size of codewords with length n and Hamming distance at least d.",
- "extended": "**Semidefinite programming bounds for binary codes from a split Terwilliger algebra**\n\n*Pin-Chieh Tseng, Ching-Yi Lai, and Wei-Hsuan Y u*\n\n15 pp, 5 sections.\n\n**Abstract.** We study the upper bounds for A(n, d), the maximum size of codewords with length n and Hamming distance at least d. Schrijver studied the Terwilliger algebra of the Hamming sc heme and proposed a semideﬁnite program to bound A(n, d). We derive more sophisticated matrix inequalities based on a sp lit Terwilliger algebra to improve Schrijver’s semideﬁnit e programming bounds on A(n, d). In particular, we improve the semideﬁnite programming bou nds on A(18,4) to 6551. I. I NTRODUCTION In coding theory, one of the classical problems is to determi ne A(n, d), the maximum size of a binary (n, d) code with length n and minimum distance at least d. The (Hamming) distance distribution of a code is considere d since the MacWilliams identities provide a linear relation between the distance d istribution and its transform [MS77].\n\n**Outline.** Split Terwilliger algebra of the Hamming schem; linear constraints; The correctness of computer computational resu; Underlying structure; References",
+ "brief": "Semideﬁnite programming bounds for binary codes from a split Terwilliger algebra — We study the upper bounds for A(n, d), the maximum size of codewords with length n and Hamming distance at least d.",
+ "extended": "**Semideﬁnite programming bounds for binary codes from a split Terwilliger algebra**\n\n*Pin-Chieh Tseng, Ching-Yi Lai, and Wei-Hsuan Yu*\n\n15 pp, 14 sections.\n\n**Abstract.** We study the upper bounds for A(n, d), the maximum size of codewords with length n and Hamming distance at least d. Schrijver studied the Terwilliger algebra of the Hamming scheme and proposed a semideﬁnite program to bound A(n, d). We derive more sophisticated matrix inequalities based on a split Terwilliger algebra to improve Schrijver’s semideﬁnite programming bounds on A(n, d). In particular, we improve the semideﬁnite programming bounds on A(18, 4) to 6551. I. INTRODUCTION In coding theory, one of the classical problems is to determine A(n, d), the maximum size of a binary (n, d) code with length n and minimum distance at least d. The (Hamming) distance distribution of a code is considered since the MacWilliams identities provide a linear relation between the distance distribution and its transform [MS77].\n\n**Outline.** Front matter; Introduction; Terwilliger algebra and Schrijver's SDP; Split Terwilliger algebra of the Hamming schem; Semidefinite program; linear constraints; Semidefinite program for binary codes; The correctness of computer computational resu; computational results; Generalization; Semidefinite constraints from –split Terwillig; Underlying structure; Conclusion; References",
  "tokens": {
   "brief": 49,
-  "extended": 291
+  "extended": 346
  },
  "sections": [
   {
-   "id": "sec-000-split-terwilliger-algebra-of-the-hamming-scheme",
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-terwilliger-algebra-and-schrijvers-sdp",
+   "title": "Terwilliger algebra and Schrijver's SDP",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-002-split-terwilliger-algebra-of-the-hamming-scheme",
    "title": "Split Terwilliger algebra of the Hamming scheme",
-   "pages": "5-8"
+   "pages": "4-9"
   },
   {
-   "id": "sec-001-linear-constraints",
+   "id": "sec-003-semidefinite-program",
+   "title": "Semidefinite program",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-004-linear-constraints",
    "title": "linear constraints",
-   "pages": "8-10"
+   "pages": "9-10"
   },
   {
-   "id": "sec-002-the-correctness-of-computer-computational-result",
+   "id": "sec-005-semidefinite-program-for-binary-codes",
+   "title": "Semidefinite program for binary codes",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-006-the-correctness-of-computer-computational-result",
    "title": "The correctness of computer computational results",
-   "pages": "10-14"
+   "pages": "10-11"
   },
   {
-   "id": "sec-003-underlying-structure",
+   "id": "sec-007-computational-results",
+   "title": "computational results",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-008-generalization",
+   "title": "Generalization",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-009-semidefinite-constraints-from-split-terwilliger",
+   "title": "Semidefinite constraints from –split Terwilliger algebras",
+   "pages": "12-14"
+  },
+  {
+   "id": "sec-010-underlying-structure",
    "title": "Underlying structure",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-011-conclusion",
+   "title": "Conclusion",
    "pages": "14-15"
   },
   {
-   "id": "sec-004-references",
+   "id": "sec-012-references",
    "title": "References",
    "pages": "15-15"
   }

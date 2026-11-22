@@ -38,7 +38,7 @@ theorem *derives* the vacuum-row identity from them. No fit; nothing wired; L2 u
 Base ring (§7c): the scalar side is generic `{R : Type*} [Field R]`; the categorical side is any
 Mathlib braided right-rigid category `C`.
 
--- Ref: [manuscript] docs/coordination/s5-so3-keystone.md
+-- Ref: [leitner2026] docs/coordination/s5-so3-keystone.md
 -/
 import QOU.BraidKnot.BWVacuumRowIsHecke
 import Mathlib.CategoryTheory.Monoidal.Rigid.Basic

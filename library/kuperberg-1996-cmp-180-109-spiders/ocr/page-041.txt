@@ -1,0 +1,43 @@
+Spiders for Rank 2 Lie Algebras 149
+
+Given a knot K and a clasp c in one of the combinatorial spiders presented here,
+consider the clasped cabling of K. Le., replace the strand of K by several strands
+tied together with c, for example:
+
+(9)
+
+The value of a web such as the one in Fig.(9) is also a regular isotopy invari-
+ant of K; it is the Reshetikhin-Turaev ribbon graph invariant of K colored by an
+irreducible representation whose weight is the highest weight of c [17]. By the iso-
+morphism between combinatorial and algebraic spiders, clasps are a complete set
+in the sense that these clasped invariants yield all of the information about K that
+can be obtained from applying the unclasped link invariants to all cablings of K
+and all other satellites of K. Moreover, the value of a clasped cabling of K can be
+computed more easily than an unclasped cabling, because clasped web spaces are
+much smaller vector spaces than their unclasped counterparts.
+
+8.4. Combinatorial consequences. Although Theorems 6.1, 6.9, and 6.10 are prop-
+erly results in representation theory, they are also interesting as results in enumera-
+tive combinatorics. John Stembridge and Richard Stanley [20] noted that a B> basis
+web w € B(11...1) is equivalent to a matching of 2n cyclically ordered points with
+no 6-point star, meaning that among the 2n points, there are no six in cyclic order
+no six points pi, p2, P3,91,92,93 with each p; matched to q;. On other hand, the
+number of such matchings with no 2k-point star is known to be dim Inv(V®2"),
+where V is the defining representation of sp(2k — 2) [21]. Thus, this special case
+of Theorem 6.9 was known previously.
+
+It is interesting that ordinary trivalent graphs are related to the exceptional Lie
+algebra G2. One corollary of this surprising connection is the following enumerative
+result:
+
+Theorem 8.1. For n = 3, let a, be the number of triangulations of a fixed convex
+n-gon such that at least six triangles meet at each internal vertex, and let
+
+A(x) = 142? + Yia,x"
+n
+
+be a generating function. For n = 0, let
+b, = dim Inve, (V (A )®")
+
+for n = 0, and let
+B(x) = So By x"

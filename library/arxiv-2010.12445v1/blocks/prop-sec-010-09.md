@@ -1,0 +1,1 @@
+Claims in Theorem 5.1, 4) hold. It remains to show Theorem 5.1, 5). So we assume its hypothesis. We have already shown that U = Fr(G∗: C →Vect(FibX ,C)) is quasi-aﬃne in 5.9. For T ⊆C set GT = Q E∈T GL(Q(E)) → D(C). In particular G = GC = GJ × GC−J and B G = B GJ × B GC−J. Consider the Cartesian diagram U D(C) U ′ B GC−J D(C) FibX ,C B G B GJ α

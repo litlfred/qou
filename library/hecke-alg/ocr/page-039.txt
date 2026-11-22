@@ -1,0 +1,60 @@
+34 3. THE MODULAR REPRESENTATION THEORY OF #
+
+and r, 4 0 only if the tableaux » and t® agree on the first 7 rows. Taking i = k
+proves the Lemma. oO
+
+Let dyy = [S? : D#] be the composition multiplicity of D4 in S*. We can now
+prove the following key result of Dipper and James.
+3.39 Theorem (Dipper—James) Suppose that R is a field.
+(i) { D |X an e-restricted partition of n} is a complete set of non-isomorphic
+irreducible  —modules.
+
+(ii) Suppose that ye is an e-restricted partition of n and that X is a partition of n.
+Then dy, = 1 and dy, #0 only if AD pe.
+
+Proof. Everything will follow from Theorem 2.13 and Corollary 2.14 once we show
+that D* 4 0 if and only if \ is e-restricted. That D* # 0 when 2 is e-restricted is
+immediate from Lemmas 3.37 and 3.35.
+
+Conversely, if X is not e-restricted then A; — A441 > € for some integer i > 1;
+consequently, lel is a factor of gy since lel, divides g;. However, lel = 0 s0 gy
+must also be 0. Therefore, (m,,m,) = 0 for any 5, ¢ € Std(A) by Lemma 3.38; thus,
+rad S* = S* and D* = 0. Oo
+
+In particular, we see that S* = D> for all \ if and only if e > n. Hence, by
+Corollary 2.18 we have an easy way of determining whether or not # is semisimple.
+More precisely, we have the following.
+
+3.40 Corollary Suppose that R is a field. Then the following are equivalent.
+(i) 3 is a split semisimple algebra;
+
+(ii) S* = D» for all partitions \ of n; and,
+
+(ili) 6 >n.
+
+Note that ¢ is equal to the characteristic of R in the case where q = 1. Conse-
+quently, as they must, these results agree with the corresponding results from the
+representation theory of the symmetric group (see [36] and Note 3 below).
+
+Theorem 3.39 combined with Lemma 3.35 also gives us the following combina-
+torial result (a more direct proof can be extracted from [35, Theorem AJ).
+
+3.41 Corollary Let \ be a partition of n. Then X is e-restricted if and only if
+there exists an e-restricted X-tableau.
+
+Notes on Chapter 3
+
+1. The proof of Proposition 3.7 comes from [13]. Although this result must have
+been known for some time, this is the only place where I have seen it in the
+literature.
+
+2. In his thesis [32], Hoefsmit classified the irreducible #c—modules by using
+Young’s seminormal form (Theorem 3.34) as the definition of the Specht modules.
+Later Dipper and James [13] constructed the Specht modules as submodules of
+J€ and hence classified the irreducible #—modules over an arbitrary field. The
+approach that we have taken here is based upon work of Murphy [55,56].
+
+3. Let # be the R-linear automorphism of # determined by T# = (—g) OT,
+for all w € G,,. Then S*# is isomorphic to the dual of Dipper and James’ Specht
+module which is indexed by the partition conjugate to A (see [56, Theorem
+5.2] and the warning on page 25). This is also why the simple #-modules

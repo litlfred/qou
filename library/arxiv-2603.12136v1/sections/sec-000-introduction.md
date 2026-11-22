@@ -7,10 +7,11 @@ section_number: null
 pages: 2-5
 source_pdf: 2603.12136v1.pdf
 source_sha256: e9c50616344b24e0
-doc_brief: "Folding Mixed-Integer Linear Programs and Reflection Symmetries — For mixed-integer linear programming and linear programming it is well known that symmetries can have a negative impact on the"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.994
+latex_prose_ratio: 0.813
+latex_coverage_ratio: 1.0
+doc_brief: "Folding Mixed-Integer Linear Programs and Reflection Symmetries — For mixed-integer linear programming and linear programming it is well known that symmetries can have a negative impact on the"
 ---
 In many problems in mathematical optimization, symmetries arise naturally. For the representative MIPLIB 2017 collection [@Gleixner2021], at least 47% of the instances in the collection contains some permutation or reflection symmetry [@Hojny2025-si]. Symmetry can pose a serious challenge for (spatial) branch-and-cut algorithms in mixed-integer linear programming (MILP) and mixed-integer nonlinear programming (MINLP). If symmetries are not handled adequately, they may cause a branch-and-cut algorithm to repeatedly explore symmetric parts of the search space [@Margot2010]. In the worst case, all symmetric solutions to a problem are enumerated, which can cause a major performance degradation in the branch-and-cut algorithm, and make it difficult to solve the given optimization problem efficiently.\
 Previous works that develop symmetry handling methods for mathematical optimization can loosely be categorized into two categories. The first category consists of symmetry handling methods that remove symmetries from the problem formulation by *projection*, which remove symmetric parts of the feasible region by projecting onto the fixed space of the symmetry group. By doing so, one obtains a symmetry-free formulation with fewer variables and constraints, which is attractive from a computational perspective. This method is used primarily for convex optimization problems such as linear programming [@Bodi2013] and semidefinite programs [@Gatermann2004].\

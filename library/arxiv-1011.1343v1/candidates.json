@@ -3,13 +3,14 @@
  "doc_id": "arxiv-1011.1343v1",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "7d50e5e28e695191d428fcf590d6efd7a20aca17255c1eac85ea41aacd4fe8b9",
   "file": "1011.1343v1.pdf"
  },
  "provenance": {
-  "title": "Institut f\u00fcr Kernphysik, Institute for Advanced Simulatio n and JCHP",
-  "authors": "Forschungszentrum J\u00fclich, D-52425 J\u00fclich, Germany",
+  "title": "Chiral symmetry, nuclear forces and all that",
+  "authors": "Ulf-G. Mei\u00dfner",
   "arxiv": {
    "id": "1011.1343",
    "version": "1",
@@ -20,9 +21,87 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
-  "formalization_candidates": 0
+  "candidates": 3,
+  "by_kind": {
+   "proposition": 3
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 3
+  },
+  "by_evidence_kind": {
+   "computational-simulation": 3
+  },
+  "by_evidence_location": {
+   "in-paper": 3
+  }
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "Right panel: Nuclear phase diagram as accessible by lattice QCD and by nuclear lattice EFT.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-008-5-flash-forward-combining-nuclear-eft-with-latti.md (p. 13-15)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-008-5-flash-forward-combining-nuclear-eft-with-latti.md",
+   "section_title": "Flash forward: Combining nuclear EFT with lattice simulations",
+   "pages": "13-15",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-008-5-flash-forward-combining-nuclear-eft-with-latti.md (p. 13-15)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-008-01",
+   "block_iri": "library/arxiv-1011.1343v1/blocks/prop-sec-008-01",
+   "claim_id": "arxiv-1011.1343v1#prop-sec-008-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "It is important to stress that the approximate Wigner SU(4) symmetry of the nuclear interactions strongly suppresses the sign oscillations and thus makes such nuclear lattice simulations easier to handle than lattice QCD calculations.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-008-5-flash-forward-combining-nuclear-eft-with-latti.md (p. 13-15)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-008-5-flash-forward-combining-nuclear-eft-with-latti.md",
+   "section_title": "Flash forward: Combining nuclear EFT with lattice simulations",
+   "pages": "13-15",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-008-5-flash-forward-combining-nuclear-eft-with-latti.md (p. 13-15)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-008-02",
+   "block_iri": "library/arxiv-1011.1343v1/blocks/prop-sec-008-02",
+   "claim_id": "arxiv-1011.1343v1#prop-sec-008-02"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "Eventually, lattice QCD might also contribute significantly - but there are still quite a few obstacles to be overcome, see e.g [@Beane:2009mb].",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-009-6-some-final-words.md (p. 15-19)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-009-6-some-final-words.md",
+   "section_title": "Some final words",
+   "pages": "15-19",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-009-6-some-final-words.md (p. 15-19)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-009-01",
+   "block_iri": "library/arxiv-1011.1343v1/blocks/prop-sec-009-01",
+   "claim_id": "arxiv-1011.1343v1#prop-sec-009-01"
+  }
+ ]
 }

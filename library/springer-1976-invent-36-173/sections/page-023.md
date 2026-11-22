@@ -1,0 +1,69 @@
+---
+doc_id: springer-1976-invent-36-173
+doc_title: "springer-1976-invent-36-173"
+section_id: page-023
+section_title: "Page 23"
+pages: 23-23
+pdf_page: 23
+source_pdf: springer-1976-invent-36-173.pdf
+source_sha256: dc3217946960a8e0
+text_source: ocr
+granularity: page
+doc_brief: "Trigonometric Sums, Green Functions of Finite Groups and Representations of Weyl Groups — 35 sections: Page 1; Page 2; Page 3"
+---
+Trigonometric Sums 195
+
+If B is a Borel subgroup of G containing T, then B, =ad(a)B is one containing
+T, and, f, being as in 3.4, we have fg=/5,6. Moreover FB, =ad(a)(w, w)- B,.
+The next proposition then follows from 4.4.
+
+5.10. Proposition.
+Or, 6(A)=(— IO-"™ FY (— 1) Tr(F* rp(w, w)!, H'( BG, B)).
+
+izo
+Finally, another property of the Green functions, Let P be an F-stable parabolic
+subgroup of G, with unipotent radical U. Put N(T, P)={ge G|ad(g) T <P}.
+
+5.11. Proposition. Assume that (t’)' +. Then
+Y Or g(X)=(— 1-1 q-4 [UF T |“! |N(T, PFI.
+
+XeuF
+In particular, this sum is 0 if T is not G*-conjugate to a maximal torus of P.
+
+5.11 follows in a straightforward manner from the definition of Q;. g, using 2.12.
+
+6. A Realization of the Irreducible Representations of Weyl Groups
+
+The realization of the title will be derived from the results of no. 4 and the ortho-
+gonality relations of 5.6. We begin with some preliminaries.
+
+6.1. Let Y=, be as in 3.1, with A nilpotent. We use the notation of that
+section. The centralizer Z=Z,(A) of A in G operates on Y as follows
+
+z-(x,g T, A’)=(x, zg T, A).
+
+Z then also operates on all fibers Yf 4. The action of Z on Y commutes with
+that of W. It follows that Z operates on the sheaf (R*7,E), of 4.2 (i) and that
+the representation of Z thus obtained commutes with the representation of W
+of 4.2. Since the identity component Z° of Z acts trivially on the stalks H¥(Y£ 4, E)y
+of (R*7,E), (by [10, 6.4]), it follows that Z° acts trivially on (R*72,E),. So the
+representation of Z comes in fact from a representation of the finite group
+C(A)=Z/Z°.
+
+If we let Z act on @x ty via the obvious action on &, the morphism fy, of
+3.4 commutes with Z. Via the isomorphism «% of 4.2 (ii) we then obtain a represen-
+tation s¥ of C(A) in H*(@G, E), commuting with rf.
+
+6.2. Next some remarks involving the “fusion” in g of nilpotent G*-orbits of
+g’. If M is an algebraic group over k, recall that the 1-cohomology set H'(k, M)
+is M modulo the equivalence relation: m~m' if there exists neM with
+m'=(Fn)mn-'. Let A,eg’ be such that A,=Ad(x)A, with xeG. Then
+z=(Fx)~!xeZ. The image h(A,) of z in H'(k, C(A)) depends only on the
+G¥-conjugacy class of A,, and h defines a bijection of the set of G-conjugacy
+classes of elements of g* which are G-conjugate to A, onto H'(k, C(A)). We have
+
+IZ (Ay)l=a1ZG(AdI,
+
+where, putting c=zZ,, a is the number of c’e C(A) with Fc’ =cc’ c~'. In particular,
+if F acts trivially on C(A), we have 2=|Z,,4)(c)|- All this is readily derived from
+the results of [4, part E, Ch. I].

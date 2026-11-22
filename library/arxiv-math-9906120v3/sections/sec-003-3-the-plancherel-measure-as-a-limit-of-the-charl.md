@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-9906120v3
-doc_title: "arXiv:math/9906120v3 [math.CO] 24 Feb 2004"
+doc_title: "Discrete orthogonal polynomial ensembles and the Plancherel measure"
 section_id: sec-003-3-the-plancherel-measure-as-a-limit-of-the-charl
 section_title: "The Plancherel measure as a limit of the Charlier ensemble"
 section_number: 3
@@ -8,6 +8,7 @@ pages: 12-27
 source_pdf: 9906120v3.pdf
 source_sha256: 436982ef45e940bd
 toc_source: inferred
+doc_brief: "Discrete orthogonal polynomial ensembles and the Plancherel measure — We consider discrete orthogonal polynomial ensembles which are discrete analogues of the orthogonal polynomial ensembles in"
 ---
 3.1. The limit of the Charlier ensemble. The Charlier ensemble is deﬁned
 by (1.16). It can be obtained as a limit of the Meixner ensemble (1.14) by

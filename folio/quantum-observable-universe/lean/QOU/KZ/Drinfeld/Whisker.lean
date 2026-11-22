@@ -1,5 +1,5 @@
 import QOU.KZ.Drinfeld.Reindex
-import QOU.KZ.KZFunctorial
+import QOU.KZ.DrinfeldAssociator
 import Mathlib.Analysis.Matrix
 
 /-!
@@ -14,16 +14,18 @@ Stage S2 of bean `qou-zoyv`.
 
 Sorry-free.
 
--- Ref: [manuscript] beans/defs/qou-zoyv (stage S2)
+-- Ref: [leitner2026] beans/defs/qou-zoyv (stage S2)
 -/
 
 noncomputable section
 
 namespace QOU.KZ.Drinfeld
 
-open Finset QOU.KZ.FuchsianFormal QOU.KZ.BlockResidues QOU.KZ.KZPentagon
+open Finset QOU.KZ.FuchsianFormal QOU.KZ.BlockResidues QOU.KZ.DrinfeldAssociator
 
-variable {L L' : Type*} [Fintype L] [DecidableEq L] [Fintype L'] [DecidableEq L']
+universe u
+
+variable {L L' : Type u} [Fintype L] [DecidableEq L] [Fintype L'] [DecidableEq L']
 
 theorem swap_inl_apply (i j : L) (k : L ⊕ L') :
     Equiv.swap (Sum.inl i : L ⊕ L') (Sum.inl j) k = Sum.map (Equiv.swap i j) id k := by
@@ -142,20 +144,20 @@ def whR : @AlgHom ℂ (EndL L') (EndL (L ⊕ L')) _
     show kron 1 (algebraMap ℂ (EndL L') r) = algebraMap ℂ (EndL (L ⊕ L')) r
     rw [Algebra.algebraMap_eq_smul_one, Algebra.algebraMap_eq_smul_one, kron_smul_right, kron_one]
 
-variable {L L'}
+variable {L L'} (Ψ : Associator.{u})
 
 /-- `Φ(A, B) ⊗ 1 = Φ(A ⊗ 1, B ⊗ 1)`. -/
 theorem kron_Φ_one (A B : EndL L) (hA : NonResonant A) (hB : NonResonant B)
     (hA' : NonResonant (kron A (1 : EndL L'))) (hB' : NonResonant (kron B (1 : EndL L'))) :
-    kron (Φ A B hA hB) (1 : EndL L') = Φ (kron A 1) (kron B 1) hA' hB' :=
-  KZFunctorial.map_Φ (whL L L') (LinearMap.continuous_of_finiteDimensional (whL L L').toLinearMap)
+    kron (Ψ.ΦN A B hA hB) (1 : EndL L') = Ψ.ΦN (kron A 1) (kron B 1) hA' hB' :=
+  Ψ.map_ΦN (whL L L') (LinearMap.continuous_of_finiteDimensional (whL L L').toLinearMap)
     A B hA hB hA' hB'
 
 /-- `1 ⊗ Φ(A, B) = Φ(1 ⊗ A, 1 ⊗ B)`. -/
 theorem one_kron_Φ (A B : EndL L') (hA : NonResonant A) (hB : NonResonant B)
     (hA' : NonResonant (kron (1 : EndL L) A)) (hB' : NonResonant (kron (1 : EndL L) B)) :
-    kron (1 : EndL L) (Φ A B hA hB) = Φ (kron 1 A) (kron 1 B) hA' hB' :=
-  KZFunctorial.map_Φ (whR L L') (LinearMap.continuous_of_finiteDimensional (whR L L').toLinearMap)
+    kron (1 : EndL L) (Ψ.ΦN A B hA hB) = Ψ.ΦN (kron 1 A) (kron 1 B) hA' hB' :=
+  Ψ.map_ΦN (whR L L') (LinearMap.continuous_of_finiteDimensional (whR L L').toLinearMap)
     A B hA hB hA' hB'
 
 end Normed

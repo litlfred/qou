@@ -14,8 +14,8 @@ switched:
     BW+χ    if 3 ≤ A ≤ 4,
     BW+shell if A ≥ 5.
 
-Ref: [manuscript] Chapter 6, §Nuclear Binding and Beta Stability
-LaTeX label: `prop:mass-formula-regime-switching`
+Ref: [leitner2026] Chapter 6, §Nuclear Binding and Beta Stability
+LaTeX label: `conj:mass-formula-regime-switching`
 -/
 
 namespace QOU.BraidKnot
@@ -71,7 +71,7 @@ def bindingBWShell (Z N : ℕ) : ℝ :=
     overlapping content (same Wedderburn partition sum at the
     Hecke algebra level) — simply adding them double-counts.
 
-    Ref: [manuscript] `rem:deuteron-first-principles`,
+    Ref: [leitner2026] `rem:deuteron-first-principles`,
     `rem:np-discrepancy-resolution`. -/
 def regimeSwitchedBinding (Z N : ℕ) : ℝ :=
   let A := Z + N

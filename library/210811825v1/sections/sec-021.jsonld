@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/210811825v1/sections/sec-021",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "FreeFEM++ Code for Genus 3",
+  "pageStart": 130,
+  "pageEnd": 144,
+  "contains": [
+    "library/210811825v1/blocks/prose-sec-021",
+    "library/210811825v1/blocks/rem-sec-021-01",
+    "library/210811825v1/blocks/figure-img-p144-1"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/210811825v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/210811825v1/manifest.jsonld",
+  "provenance": "ingested"
+}

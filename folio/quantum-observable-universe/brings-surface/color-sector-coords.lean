@@ -33,7 +33,7 @@ namespace QOU
       𝔟(φ, ψ) = 𝔯(φ, ψ + 4π/3)
 
     LaTeX: `\label{def:color-sector-coords}`
-    Ref: [manuscript] Chapter 6, §Color-sector coordinates -/
+    Ref: [leitner2026] Chapter 6, §Color-sector coordinates -/
 structure ColorSectorCoords where
   /-- The radius of the ℙ¹(ℂ) fibre. -/
   R : ℝ
@@ -55,7 +55,7 @@ inductive ColourSector
   | red | green | blue
 
 /-- The azimuthal offset for each colour sector: R → 0, G → 2π/3, B → 4π/3. -/
--- Ref: [manuscript] Chapter 6, §Color-sector coordinates
+-- Ref: [leitner2026] Chapter 6, §Color-sector coordinates
 noncomputable def ColourSector.offset : ColourSector → ℝ
   | .red   => 0
   | .green => 2 * Real.pi / 3
@@ -64,7 +64,7 @@ noncomputable def ColourSector.offset : ColourSector → ℝ
 /-- The sector embedding: given color sector coordinates, a colour sector,
     and spherical parameters (φ, ψ), return the i-th coordinate of the
     fibre point with color twist. -/
--- Ref: [manuscript] Chapter 6, §Color-sector coordinates
+-- Ref: [leitner2026] Chapter 6, §Color-sector coordinates
 noncomputable def ColorSectorCoords.sectorPoint
     (C : ColorSectorCoords) (s : ColourSector) (φ ψ : ℝ) (i : Fin 3) : ℝ :=
   let ψ' := ψ + s.offset + C.q * φ
@@ -72,7 +72,7 @@ noncomputable def ColorSectorCoords.sectorPoint
     Real.sin ψ' * C.tangent2 i) - Real.cos φ * C.normal i)
 
 /-- Green is the red sector shifted by 2π/3 in the azimuthal coordinate. -/
--- Ref: [manuscript] Chapter 6, §Color-sector coordinates
+-- Ref: [leitner2026] Chapter 6, §Color-sector coordinates
 theorem ColorSectorCoords.green_eq_red_shifted
     (C : ColorSectorCoords) (φ ψ : ℝ) (i : Fin 3) :
     C.sectorPoint .green φ ψ i =
@@ -80,7 +80,7 @@ theorem ColorSectorCoords.green_eq_red_shifted
   simp [ColorSectorCoords.sectorPoint, ColourSector.offset]
 
 /-- Blue is the red sector shifted by 4π/3 in the azimuthal coordinate. -/
--- Ref: [manuscript] Chapter 6, §Color-sector coordinates
+-- Ref: [leitner2026] Chapter 6, §Color-sector coordinates
 theorem ColorSectorCoords.blue_eq_red_shifted
     (C : ColorSectorCoords) (φ ψ : ℝ) (i : Fin 3) :
     C.sectorPoint .blue φ ψ i =
@@ -89,7 +89,7 @@ theorem ColorSectorCoords.blue_eq_red_shifted
 
 /-- The three sectors tile the circle: their angular offsets sum to 2π.
     Each sector covers a 2π/3-wide strip, and 0 + 2π/3 + 4π/3 = 2π. -/
--- Ref: [manuscript] Chapter 6, §Color-sector coordinates
+-- Ref: [leitner2026] Chapter 6, §Color-sector coordinates
 theorem sector_offsets_sum_to_two_pi :
     (0 : ℝ) + 2 * Real.pi / 3 + 4 * Real.pi / 3 = 2 * Real.pi := by
   ring

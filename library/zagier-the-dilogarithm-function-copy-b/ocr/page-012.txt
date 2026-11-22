@@ -1,0 +1,37 @@
+14 Don Zagier
+
+In fact, equations (7) and (8) are equivalent, since any 4-tuple of points
+Z0,+++,%3 can be brought into the form {o0,0,1,z} by the action of some
+element of $L2(C) on P!(C), and the group $L2(C) acts on $3 by isometries.
+
+The (anti-)symmetry properties of D under permutations of the z; are
+obvious from the geometric interpretation (7), since renumbering the vertices
+leaves A unchanged but may reverse its orientation. Formula (6) is also an
+immediate consequence of (7), since the five tetrahedra spanned by four at a
+time of z,..., 24 € P1(C), counted positively or negatively as in (6), add up
+algebraically to the zero 3-cycle.
+
+The reason that we are interested in hyperbolic tetrahedra is that these
+are the building blocks of hyperbolic 3-manifolds, which in turn (according to
+Thurston) are the key objects for understanding three-dimensional geometry
+and topology. A hyperbolic 3-manifold is a 3-dimensional riemannian mani-
+fold M which is locally modelled on (i.e., isometric to portions of) hyperbolic
+3-space $3; equivalently, it has constant negative curvature —1. We are in-
+terested in complete oriented hyperbolic 3-manifolds that have finite volume
+(they are then either compact or have finitely many “cusps” diffeomorphic
+to $1 x $+ x R;). Such a manifold can obviously be triangulated into small
+geodesic simplices which will be hyperbolic tetrahedra. Less obvious is that
+(possibly after removing from M a finite number of closed geodesics) there is
+always a triangulation into ideal tetrahedra (the part of such a tetrahedron
+going out towards a vertex at infinity will then either tend to a cusp of M
+or else spiral in around one of the deleted curves). Let these tetrahedra be
+numbered Aj,...,A,, and assume (after an isometry of $3 if necessary) that
+the vertices of A, are at oo, 0, 1 and z,. Then
+
+Vol(M) = S>Vol(A,) = > D(z). (9)
+v=1
+
+v=1
+
+Of course, the numbers z, are not uniquely determined by A, since they
+depend on the order in which the vertices were sent to {00,0,1,z,}, but the

@@ -4,13 +4,14 @@ doc_title: "FROM THE HECKE CATEGORY TO THE UNIPOTENT LOCUS"
 section_id: sec-000-introduction
 section_title: "Introduction"
 section_number: null
-pages: 1-15
+pages: 2-15
 source_pdf: 2106.07444v2.pdf
 source_sha256: 5acca39c07bcdddd
-doc_brief: "FROM THE HECKE CATEGORY TO THE UNIPOTENT LOCUS — Let W be the W eyl group of a split semisimple group G. Its Hecke category HW can be built from pure perverse sheaves on the double ﬂag variety of G."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.989
-latex_coverage_ratio: 0.994
+latex_prose_ratio: 0.978
+latex_coverage_ratio: 0.983
+doc_brief: "FROM THE HECKE CATEGORY TO THE UNIPOTENT LOCUS — Let W be the Weyl group of a split semisimple group G. Its Hecke category HW can be built from pure perverse sheaves on the double ﬂag variety of G."
 ---
 ## Summary
 

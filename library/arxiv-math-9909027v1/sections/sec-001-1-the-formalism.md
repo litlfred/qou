@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-9909027v1
-doc_title: "arXiv:math/9909027v1 [math.QA] 4 Sep 1999"
+doc_title: "Planar Algebras, I"
 section_id: sec-001-1-the-formalism
 section_title: "The Formalism"
 section_number: 1
@@ -8,6 +8,7 @@ pages: 13-25
 source_pdf: 9909027v1.pdf
 source_sha256: e6cd544cdc141d3b
 toc_source: inferred
+doc_brief: "Planar Algebras, I — We introduce a notion of planar algebra, the simplest example of which is a vector space of tensors, closed under planar contractions."
 ---
 Deﬁnition 1.1. If k is a non-negative integer, the standard k-box, Bk,
 is {(x, y) ∈R2 | 0 ≤x ≤k+1, 0 ≤y ≤1}, together with the 2k marked

@@ -1,0 +1,59 @@
+Chapter 5 The Tjon band in Nuclear Lattice Effective Field Theory
+
+corresponding energy is given by
+
+dlog Za, (0)
+
+E,o (t) = -————_.. 5.62
+Lo (f) at (5.62)
+
+The correlation function for any perturbative operator O is defined by
+
+-tH -tH
+Zo (t) = (Wie exp(=) Oexp(=) Vine) : (5.63)
+and their expectation value is given by the ratio
+Zo (t)
+
+O) (t) = : 5.64
+OW= 2G (5.64)
+
+The ground state energy is calculated by performing the Euclidean time extrapolation to the infinity. Note
+that for the calculation of the ground state energy and the perturbative insertions, it is necessary to use the
+wave function of neighboring and next-to-neighboring time-slices. While the neighboring time slices do
+not suffer from correlations, the next-to-neighboring time-slices may do. Therefore we fit LO, additional
+2N N2LO, additional 2N electromagnetic and additional 2N N2LO contribution separately with one or
+two exponential functions depending on the contribution and sum them up finally,
+
+Eo(t) = Eyo +c, exp(-AE, of) [+c exp(-AEpo9)]. (5.65)
+
+The necessity of two or even more exponentials for the extrapolation of perturbative operators was already
+shown in [108], where an analysis with particular emphasis on the infinite time extrapolation was done.
+In the following we do a benchmark calculation for L = 4 and a = 1.97 fm which we can compare
+with an exact Lanczos calculation. Then we do the calculation for L = 6 and a = 1.97 fm, L = 7 and
+a = 1.64 fm and L = 9 and a = 1.32 fm. The physical box length is between 11 fm and 12 fm, and it
+is large enough that finite volume errors will be within truncation errors due to chiral expansion and
+uncertainties in the respective low-energy coupling constants (LECs).
+
+5.4.2 Results
+
+First of all, we start with the benchmark calculation. The results are shown in Tab. 5.3. One can see very
+good agreement particularly for the LO result which is around one per mille relative error. The difference
+for the perturbative corrections is larger but still below 10 % which is finally within the error bars of the
+infinite time LO extrapolation. Even though the accuracy will go down with larger volumes due to the
+sign problem, we do expect trustable results within our estimated errors. The infinite time extrapolation
+order by order for the three lattice spacings are shown in Figs. 5.6, 5.7 and 5.8 while the summed binding
+energy predictions are shown in Tab. 5.4. First, one can see very good time extrapolation order by order
+for all three lattice spacings. While the statistical errors at LO are below 1%, the perturbative relative
+errors are around 3% except for the N2LO contribution for a = 1.32 fm where the error is much larger.
+This is caused by relatively bad statistics of the data points due to the very difficult calculations of large
+lattices. As the higher-order contributions are quite small, their error due to statistical uncertainties as
+well as uncertainties in the LECs are dominated by the LO statistical uncertainties as shown in Tab. 5.4.
+As mentioned in Sec. 5.3, there is some ambiguity in the determination of cp and cg where Cp is of O(1).
+
+Therefore, we fit c, for different values of cp, namely —2 < cp < 2. The difference in the “He binding
+4
+energy comes out very small, AE oe cp © 0.2 MeV. This systematic error is compatible with the errors
+
+caused by statistics as well as the uncertainties of the NLO and N2LO LECs.
+
+64

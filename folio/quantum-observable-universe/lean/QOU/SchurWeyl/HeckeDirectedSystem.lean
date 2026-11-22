@@ -25,7 +25,7 @@ No colimit, no trace, no `MarkovTrace`. In particular **nothing in this file
 needs `heckeIncl` to be injective** — that is `qou-ejde`, and it gates strict
 growth of the filtration (`qou-p8yg`), not the existence of the limit.
 
--- Ref: [manuscript] beans qou-0fmb / qou-ejde / qou-301d.
+-- Ref: [leitner2026] beans qou-0fmb / qou-ejde / qou-301d.
 -/
 
 namespace QOU.SchurWeyl.HeckeDirectedSystem

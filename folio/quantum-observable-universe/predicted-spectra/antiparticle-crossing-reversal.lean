@@ -14,7 +14,7 @@ preserved.
 LaTeX label: `prop:antiparticle-crossing-reversal`
 
 ## References
-- [manuscript] Ch. 6, §chirality-trefoil-electron-positron
+- [leitner2026] Ch. 6, §chirality-trefoil-electron-positron
 
 **Ground ring (§7c)**: a bare `CommRing R`.  The Coulomb channel and the
 bar-involution both use `q⁻¹`, but only ever of the substrate parameter itself,
@@ -61,7 +61,7 @@ omit [Invertible (2 : R)] in
 /-- **Crossing-energy bar-reversal** (narrative claim 2):
     `𝔈(𝔥^σ) = −𝔈(𝔥)|_{q ↦ q⁻¹}` — positive crossings `+q` become negative
     `−q⁻¹` and vice versa under the mirror. -/
--- Ref: [manuscript] Ch. 6, §chirality-trefoil-electron-positron
+-- Ref: [leitner2026] Ch. 6, §chirality-trefoil-electron-positron
 theorem crossing_energy_bar_reversal (H : KnotComposite R) :
     H.mirror.crossingEnergy = - H.barCrossingEnergy := by
   simp only [KnotComposite.crossingEnergy, KnotComposite.barCrossingEnergy,
@@ -70,7 +70,7 @@ theorem crossing_energy_bar_reversal (H : KnotComposite R) :
 
 /-- **Coulomb-charge reversal** (narrative claim 3):
     `Q(𝔥^σ) = −Q(𝔥)`; in particular `Q(𝔭^σ) = −1` for the antiproton. -/
--- Ref: [manuscript] Ch. 6, §chirality-trefoil-electron-positron
+-- Ref: [leitner2026] Ch. 6, §chirality-trefoil-electron-positron
 theorem coulomb_reversal (H : KnotComposite R) :
     H.mirror.coulombCharge = - H.coulombCharge := by
   simp only [KnotComposite.coulombCharge, KnotComposite.mirror]
@@ -90,7 +90,7 @@ theorem bare_mass_invariance {S : Type*} [CommRing S] (H : KnotComposite S) :
     the bar-involution `q ↦ q⁻¹`, reverses the Coulomb charge, and preserves the
     bare mass.  (Claim 1 — that σ *defines* the antiparticle — is the definition
     of `KnotComposite.mirror` itself.) -/
--- Ref: [manuscript] Ch. 6, §chirality-trefoil-electron-positron
+-- Ref: [leitner2026] Ch. 6, §chirality-trefoil-electron-positron
 theorem antiparticle_crossing_reversal (H : KnotComposite R) :
     H.mirror.crossingEnergy = - H.barCrossingEnergy
     ∧ H.mirror.coulombCharge = - H.coulombCharge

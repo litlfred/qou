@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2605.22763v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2605.22763v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "Advancing Mathematics Research with AI-Driven Formal Proof Search",
   "contains": [
+    "library/arxiv-2605.22763v1/sections/sec-front-matter",
     "library/arxiv-2605.22763v1/sections/sec-000",
     "library/arxiv-2605.22763v1/sections/sec-001",
     "library/arxiv-2605.22763v1/sections/sec-002",
@@ -24,10 +25,24 @@
     "library/arxiv-2605.22763v1/sections/sec-010",
     "library/arxiv-2605.22763v1/sections/sec-011",
     "library/arxiv-2605.22763v1/sections/sec-012",
-    "library/arxiv-2605.22763v1/sections/sec-013"
+    "library/arxiv-2605.22763v1/sections/sec-013",
+    "library/arxiv-2605.22763v1/sections/sec-014",
+    "library/arxiv-2605.22763v1/sections/sec-015",
+    "library/arxiv-2605.22763v1/sections/sec-016",
+    "library/arxiv-2605.22763v1/sections/sec-017",
+    "library/arxiv-2605.22763v1/sections/sec-018",
+    "library/arxiv-2605.22763v1/sections/sec-019",
+    "library/arxiv-2605.22763v1/sections/sec-020",
+    "library/arxiv-2605.22763v1/sections/sec-021",
+    "library/arxiv-2605.22763v1/sections/sec-022",
+    "library/arxiv-2605.22763v1/sections/sec-023",
+    "library/arxiv-2605.22763v1/sections/sec-024",
+    "library/arxiv-2605.22763v1/sections/sec-025",
+    "library/arxiv-2605.22763v1/sections/sec-026",
+    "library/arxiv-2605.22763v1/sections/sec-027"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://creativecommons.org/licenses/by-nc-nd/4.0/",
   "licenceRecord": {
     "status": "stated",

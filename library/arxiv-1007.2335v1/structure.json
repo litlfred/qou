@@ -7,10 +7,11 @@
   "bytes": 157209,
   "pages": 11,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -25,13 +26,26 @@
   "title_lines": [
    "Hopf solitons in the Nicole model"
   ],
-  "abstract": "The Nicole model is a conformal \ufb01eld theory in three-dimensi onal space. It has topo- logical soliton solutions classi\ufb01ed by the integer-valued Hopf charge, and all currently known solitons are axially symmetric. A volume-preserving \ufb02ow is used to numerically construct soliton solutions for all Hopf charges from one to eight. It is found that the known axially symmetric solutions are unstable for Hopf cha rges greater than two and new lower energy solutions are obtained that include knots a nd links. A comparison with the Skyrme-Faddeev model suggests many universal feat ures, though there are some di\ufb00erences in the link types obtained in the two theories . 1",
+  "abstract": "The Nicole model is a conformal ﬁeld theory in three-dimensional space. It has topo- logical soliton solutions classiﬁed by the integer-valued Hopf charge, and all currently known solitons are axially symmetric. A volume-preserving ﬂow is used to numerically construct soliton solutions for all Hopf charges from one to eight. It is found that the known axially symmetric solutions are unstable for Hopf charges greater than two and new lower energy solutions are obtained that include knots and links. A comparison with the Skyrme-Faddeev model suggests many universal features, though there are some diﬀerences in the link types obtained in the two theories. 1",
   "docinfo": {
-   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "Tue Apr 21 11:05:09 2009",
-   "Creator": "gnuplot 4.2 patchlevel 3 ",
    "Title": "t1.ps",
-   "Author": "paul,U-SPONGEBOB\\paul,S-1-5-21-633390969-3829690191-1315090866-1005"
+   "Author": "paul,U-SPONGEBOB\\paul,S-1-5-21-633390969-3829690191-1315090866-1005",
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "gnuplot 4.2 patchlevel 3 ",
+   "CreationDate": "Tue Apr 21 11:05:09 2009"
+  },
+  "title_raw": "Hopf solitons in the Nicole model",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "t1.ps",
+   "heading": "Hopf solitons in the Nicole model",
+   "outline": "1 Introduction",
+   "text": "Hopf solitons in the Nicole model",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -40,91 +54,288 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "The Nicole model and volume-preserving flow",
    "page": 3,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "Initial conditions",
    "page": 6,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 1,
    "title": "Numerical results",
    "page": 7,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "Conclusion",
    "page": 10,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Position curves for the known lowest energy solitons with Hopf charges 1 ≤Q ≤8",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "The ratio of the energy E to the conjectured bound Q3/4 for the known minimal energy solitons with 1 ≤Q ≤8",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "9"
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Energies and types of the known minimal energy solitons with 1 ≤Q ≤8",
+   "page": 9,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "9"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 924,
+   "n_words": 135,
+   "label_start": "1",
+   "label_end": "2"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 2,
-   "page_end": 6,
-   "n_chars": 12243,
-   "n_words": 2197
+   "page_end": 3,
+   "n_chars": 3452,
+   "n_words": 577,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
-   "id": "sec-001-3-initial-conditions",
+   "id": "sec-001-2-the-nicole-model-and-volume-preserving-flow",
+   "number": "2",
+   "title": "The Nicole model and volume-preserving flow",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 6,
+   "n_chars": 8688,
+   "n_words": 1507,
+   "label_start": "3",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-002-3-initial-conditions",
    "number": "3",
    "title": "Initial conditions",
    "level": 1,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 3371,
-   "n_words": 703
+   "n_chars": 3322,
+   "n_words": 637,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
-   "id": "sec-002-4-numerical-results",
+   "id": "sec-003-4-numerical-results",
    "number": "4",
    "title": "Numerical results",
    "level": 1,
    "page_start": 7,
    "page_end": 10,
-   "n_chars": 6977,
-   "n_words": 1339
+   "n_chars": 6896,
+   "n_words": 1242,
+   "label_start": "7",
+   "label_end": "10"
   },
   {
-   "id": "sec-003-5-conclusion",
+   "id": "sec-004-5-conclusion",
    "number": "5",
    "title": "Conclusion",
    "level": 1,
    "page_start": 10,
    "page_end": 11,
-   "n_chars": 3634,
-   "n_words": 619
+   "n_chars": 3629,
+   "n_words": 604,
+   "label_start": "10",
+   "label_end": "11"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 5,
-  "sections": 4,
-  "chars_total": 26225,
+  "toc_inferred_entries": 0,
+  "figure_entries": 3,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 6,
+  "chars_total": 26911,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "nicole.tex",
    "tex_sections": 6,
-   "overlaid": 4,
+   "overlaid": 5,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -132,34 +343,47 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.993,
-     "coverage_ratio": 0.998,
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.995,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-001-3-initial-conditions",
+     "id": "sec-001-2-the-nicole-model-and-volume-preserving-flow",
+     "title": "The Nicole model and volume-preserving flow",
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.997,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-3-initial-conditions",
      "title": "Initial conditions",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.959,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-002-4-numerical-results",
-     "title": "Numerical results",
-     "prose_ratio": 0.996,
-     "coverage_ratio": 0.97,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-003-5-conclusion",
-     "title": "Conclusion",
-     "prose_ratio": 0.904,
+     "prose_ratio": 0.987,
      "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-4-numerical-results",
+     "title": "Numerical results",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-5-conclusion",
+     "title": "Conclusion",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.76,
      "result": "overlaid",
      "converter": "pandoc"
     }

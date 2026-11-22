@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-0709.3157v1
-doc_title: "V . Mateu"
+doc_title: "Chiral Lagrangians with tensor sources"
 section_id: sec-003-the-chiral-lagrangian
 section_title: "The chiral Lagrangian"
 section_number: null
 pages: 3-5
 source_pdf: 0709.3157v1.pdf
 source_sha256: 22a0d9a93c9dcb8d
-doc_brief: "V . Mateu — The implementation of tensor sources in Chiral Lagrangians allows the computation of Green functions and form factors involving tensor currents , that is, quark bilinears of the form ¯qi"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.99
+latex_prose_ratio: 0.989
+latex_coverage_ratio: 1.0
+doc_brief: "Chiral Lagrangians with tensor sources — The implementation of tensor sources in Chiral Lagrangians allows the computation of Green functions and form factors involving tensor currents, that is"
 ---
 The number of operators entering in the chiral Lagrangian is of course not restricted by symmetry. So in principle there are an infinite number of them, each one multiplied by an unknown coefficient (this is in agreement with the fact that $\chi$PT is not normalizable *stricto sensu*). So if one has to take them all into account in any calculation, loses all predictive power. At low energies (compared with the chiral scale $\Lambda_\chi\sim4\pi F\sim 1\, \mathrm{GeV}$) pieces with lower powers of momentum and quark masses dominate, and this allows to truncate the number of operators. This idea is systematized by the Weinberg power counting scheme [@Wei].
 

@@ -4,7 +4,7 @@ $$
   F(X,z)= X^3+(z+1)X^2+(z^2+z+1)X+(z^3+z^2+z+1),
 $$
 
-we verify $F(X,z)=F(z,X)$ term by term. This involution $\iota\colon(X,z)\mapsto(z,X)$ is a *T-duality*. It identifies every color fibre $\mathcal{E}_z$ with its dual spacetime wrapping $\mathcal{E}_X$. The internal and external degrees of freedom of Bring's surface are thus algebraically indistinguishable.
+$F(X,z)=F(z,X)$ is checked term by term. This involution $\iota\colon(X,z)\mapsto(z,X)$ is a *T-duality*. It identifies every color fibre $\mathcal{E}_z$ with its dual spacetime wrapping $\mathcal{E}_X$. The internal and external degrees of freedom of Bring's surface are thus algebraically indistinguishable.
 
 **Quotient space.**
 Passing to the symmetric coordinates $u=X+z$, $v=Xz$, the curve becomes

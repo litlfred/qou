@@ -72,4 +72,13 @@ bridge `I_ν(x) = i^{−ν} J_ν(i x)`, whose q-deformation is the Layer-2 q-Bes
 theorem binding_on_growth_hyperbola (θ : ℝ) : cosh θ ^ 2 - sinh θ ^ 2 = 1 :=
   reeb_growth_hyperbola θ
 
+/-- **Binding trace square decomposition (`qou-kyik`).**
+For any binding angle `θ : ℝ`, the squared depth-2 trace `(2 * cosh θ)^2`
+equals `4 + 4 * sinh θ ^ 2`, separating the critical parabolic threshold `4`
+from the non-negative hyperbolic excess `4 * sinh θ ^ 2`. -/
+theorem binding_trace_sq_eq_four_add_four_sinh_sq (θ : ℝ) :
+    (2 * cosh θ) ^ 2 = 4 + 4 * sinh θ ^ 2 := by
+  have h := binding_discriminant_eq_four_sinh_sq θ
+  linarith
+
 end QOU.Mass.BindingJacobiAngerBridge

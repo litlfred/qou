@@ -7,10 +7,11 @@ section_number: 6.1
 pages: 32-36
 source_pdf: 1512.04993v2.pdf
 source_sha256: b8047bc3d3815406
-doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.967
-latex_coverage_ratio: 0.965
+latex_coverage_ratio: 0.982
+doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
 ---
 \label{sec:one-shock}
 First, we will consider the time evolved thermofield double state perturbed by a single precursor smeared over the entire boundary sphere

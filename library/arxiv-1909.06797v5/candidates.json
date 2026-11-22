@@ -1,0 +1,130 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1909.06797v5",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "87095d7e46ebe286a2d65cc1c9dc6ddf386c8bfb65e20dc34c0fe23ce14e5e64",
+  "file": "1909.06797v5.pdf"
+ },
+ "provenance": {
+  "title": "Quantum Mechanics of Plancherel Growth",
+  "authors": "Arghya Chattopadhyaya,b, Suvankar Duttac, Debangshu Mukherjeec,d, Neetuc",
+  "arxiv": {
+   "id": "1909.06797",
+   "version": "5",
+   "primary_class": "hep-th",
+   "stamp_date": "14 Apr 2021"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 4,
+  "by_kind": {
+   "proposition": 4
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 4
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 3,
+   "computational-simulation": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 4
+  }
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "It was observed in \\cite{LogShe,VerKer77} that a Young lattice equipped with Plancherel measure terminates to a universal class of diagram in the limit $k\\ra \\infty$ when the diagrams are scaled properly.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-003-3-review-2-plancherel-growth-of-young-diagrams.md (p. 9-10)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-003-3-review-2-plancherel-growth-of-young-diagrams.md",
+   "section_title": "Review 2 : Plancherel Growth of Young diagrams",
+   "pages": "9-10",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-003-3-review-2-plancherel-growth-of-young-diagrams.md (p. 9-10)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-003-01",
+   "block_iri": "library/arxiv-1909.06797v5/blocks/prop-sec-003-01",
+   "claim_id": "arxiv-1909.06797v5#prop-sec-003-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "It was observed by \\cite{LogShe,VerKer77} that when the growth process follows Plancherel transition probability (\\ref{eq:transmeasure}) the asymptotic shape of rescaled Young diagrams converges uniformly to a unique curve given by \\begin{equation} \\label{eq:kerovfunction} \\lim_{k \\ra \\infty}\\hat v_k(u)\\equiv\\Omega(u)= \\begin{cases} \\frac{2}{\\pi}(u \\sin^{-1} \\frac{u}{2}+\\sqrt{4-u^2}) &\\mbox{if} \\quad |u| \\leq 2\\\\ |u|& \\mbox{if} \\quad |u|>2. \\end{cases} \\end{equation}",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-004-31-the-universal-diagram-and-automodel.md (p. 10-12)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-004-31-the-universal-diagram-and-automodel.md",
+   "section_title": "The Universal Diagram and Automodel",
+   "pages": "10-12",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-004-31-the-universal-diagram-and-automodel.md (p. 10-12)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-004-01",
+   "block_iri": "library/arxiv-1909.06797v5/blocks/prop-sec-004-01",
+   "claim_id": "arxiv-1909.06797v5#prop-sec-004-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "computational-claim",
+   "number": null,
+   "name": null,
+   "statement": "Gross and Witten \\cite{gross-witten} (and independently, Wadia \\cite{wadia}) studied this matrix model in the context of lattice QCD and observed that the system undergoes a third order phase transition at $\\lambda=2$.",
+   "claim_domain": "science",
+   "evidence_kind": "computational-simulation",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper computational simulation in sections/sec-007-41-a-connection-between-young-lattice-and-gross.md (p. 13-15)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-007-41-a-connection-between-young-lattice-and-gross.md",
+   "section_title": "A connection between Young lattice and Gross-Witten-Wadia model",
+   "pages": "13-15",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (computational-simulation, evidence: in-paper \u2014 In-paper computational simulation in sections/sec-007-41-a-connection-between-young-lattice-and-gross.md (p. 13-15)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-007-01",
+   "block_iri": "library/arxiv-1909.06797v5/blocks/prop-sec-007-01",
+   "claim_id": "arxiv-1909.06797v5#prop-sec-007-01"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "All possible large $N$ solutions of (\\ref{eq:saddeq2}) were discussed in \\cite{duttagopakumar} and it was observed that (\\ref{eq:saddeq2}) admits two possible solutions.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-009-51-large-n-solutions-and-automodel-diagrams.md (p. 16-18)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-009-51-large-n-solutions-and-automodel-diagrams.md",
+   "section_title": "Large N solutions and automodel diagrams",
+   "pages": "16-18",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-009-51-large-n-solutions-and-automodel-diagrams.md (p. 16-18)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-009-01",
+   "block_iri": "library/arxiv-1909.06797v5/blocks/prop-sec-009-01",
+   "claim_id": "arxiv-1909.06797v5#prop-sec-009-01"
+  }
+ ]
+}

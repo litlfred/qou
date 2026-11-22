@@ -1,0 +1,3443 @@
+{
+  "$schema": "folio-vector-figures/v1",
+  "doc_id": "arxiv-2605.22763v1",
+  "figures": [
+    {
+      "id": "vfig-p003",
+      "file": "figures/vfig-p003.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 3
+      },
+      "page": 3,
+      "rotation": 0,
+      "captionLabels": [
+        "1"
+      ],
+      "region": [
+        88.41,
+        123.5,
+        506.87,
+        529.97
+      ],
+      "assembly": {
+        "drawings": 81,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              88.41,
+              123.5,
+              293.46,
+              281.22
+            ],
+            "drawings": 25,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "/- Erdos 125 variant from",
+              "https: / / github.com / google -deepmind / formal -conjectures /",
+              "blob / main / FormalConjectures /",
+              "ErdosProblems / 125.lean. -/",
+              "namespace Erdos125",
+              "open ...",
+              "-- EVOLVE-BLOCK-START",
+              "-- You can put your definitions and lemmas here.",
+              "-- EVOLVE-BLOCK-END",
+              "theorem target_theorem_0 :",
+              "answer(",
+              "-- EVOLVE-VALUE-START",
+              "default",
+              "-- EVOLVE-VALUE-END",
+              ") ↔0 < ({x : ℕ| (digits 3 x).toFinset ⊆{0, 1}}",
+              "+ {x : ℕ| (digits 4 x).toFinset ⊆{0, 1}}",
+              ").lowerDensity := by",
+              "-- EVOLVE-BLOCK-START",
+              "sorry",
+              "-- EVOLVE-BLOCK-END"
+            ]
+          },
+          {
+            "bbox": [
+              88.41,
+              320.86,
+              293.46,
+              529.97
+            ],
+            "drawings": 38,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "== Role and Goal == [...]",
+              "== Task == [...]",
+              "== Sketch Structure == [...]",
+              "== Prior Attempts ==",
+              "Attempt 1",
+              "8 Elo: 1505",
+              "theorem target_theorem_0 : answer(",
+              "False ) ↔0 < (...).lowerDensity ...",
+              "AlphaProof: 3/5 goals proved, 2 open",
+              "AlphaProof feeback: [...]",
+              "<natural_language_plan>",
+              "1. Define restricted-digit sets A, B.",
+              "2. Prove size bounds. [...]",
+              "</natural_language_plan>",
+              "Attempt 2",
+              "8 Elo: 1480",
+              "[...]",
+              "Attempt 3",
+              "8 Elo: 1520 [...]",
+              "== Current Plan ==",
+              "-- EVOLVE-BLOCK-START",
+              "have h_positive_density :",
+              "0 < (...).lowerDensity := by sorry",
+              "-- EVOLVE-BLOCK-END",
+              "theorem target_theorem_0 : answer(",
+              "True ) ↔0 < (...).lowerDensity ...",
+              "== Instructions == [...]"
+            ]
+          },
+          {
+            "bbox": [
+              301.82,
+              123.5,
+              506.87,
+              529.97
+            ],
+            "drawings": 16,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "j Thought (5m 3s): “Analyzing the problem structure... The answer should be False",
+              "since the lower density is 0.”",
+              "v search_replace",
+              "3s ✓",
+              "- default",
+              "+ False",
+              "- sorry",
+              "+ constructor",
+              "+ · intro h; exact False.elim h",
+              "+ · intro h",
+              "+",
+              "have : (A+B).lowerDensity = 0",
+              "+",
+              ". . .",
+              "Ô attempt_goals_with_alphaproof",
+              "10m 1s",
+              "✓A_bound",
+              "✓B_bound",
+              "✓sum_size_bound",
+              "× independent_bases_zero_density",
+              "(3/4 proved)",
+              "j Thought (1m 35s): “AlphaProof couldn’t solve independent_bases_zero_",
+              "density... This is too monolithic. I need to decompose it: first show that for any",
+              "𝜖> 0 there exist aligned scales 𝑘, 𝑚with 3𝑘≈4𝑚, then bound the sumset gaps at those",
+              "scales.”",
+              "v search_replace",
+              "4s ✓",
+              "- lemma independent_bases_zero_density",
+              "-",
+              ": (A+B).lowerDensity = 0 := by sorry",
+              "+ lemma exists_k_m_ratio_close ...",
+              "+",
+              ":= by sorry",
+              "+ lemma gap_at_aligned_scale ...",
+              "+",
+              ":= by sorry",
+              "+ lemma independent_bases_zero_density",
+              "+",
+              ": (A+B).lowerDensity = 0 := by",
+              "+ . . .",
+              "... 4 more search_replace iterations",
+              "Ô attempt_goals_with_alphaproof",
+              "2m 40s",
+              "✓exists_k_m_ratio_close",
+              "✓gap_at_aligned_scale",
+              "✓independent_bases_zero_density",
+              "(6/6 proved ¦)",
+              "j Thought (54s): “Reflections on Tool Use”",
+              "<natural_language_plan>",
+              "1. Set answer to False ...",
+              "2. Decompose density proof into sublemmas...",
+              "...",
+              "</natural_language_plan>",
+              "è Generation complete.",
+              "è Proof validated.",
+              "õ Admitted to Population Database."
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              93.86,
+              128.95,
+              288.01,
+              135.56
+            ],
+            "parent": null,
+            "labels": [
+              "/- Erdos 125 variant from"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              93.86,
+              135.11,
+              288.01,
+              141.72
+            ],
+            "parent": null,
+            "labels": [
+              "https: / / github.com / google -deepmind / formal -conjectures /"
+            ]
+          },
+          {
+            "id": "b2",
+            "bbox": [
+              93.86,
+              141.5,
+              288.01,
+              148.1
+            ],
+            "parent": null,
+            "labels": [
+              "blob / main / FormalConjectures /"
+            ]
+          },
+          {
+            "id": "b3",
+            "bbox": [
+              93.86,
+              147.88,
+              288.01,
+              154.48
+            ],
+            "parent": null,
+            "labels": [
+              "ErdosProblems / 125.lean. -/"
+            ]
+          },
+          {
+            "id": "b4",
+            "bbox": [
+              93.86,
+              160.65,
+              288.01,
+              167.25
+            ],
+            "parent": null,
+            "labels": [
+              "namespace Erdos125"
+            ]
+          },
+          {
+            "id": "b5",
+            "bbox": [
+              93.86,
+              167.03,
+              288.01,
+              173.64
+            ],
+            "parent": null,
+            "labels": [
+              "open ..."
+            ]
+          },
+          {
+            "id": "b6",
+            "bbox": [
+              93.86,
+              179.8,
+              288.01,
+              186.4
+            ],
+            "parent": null,
+            "labels": [
+              "-- EVOLVE-BLOCK-START"
+            ]
+          },
+          {
+            "id": "b7",
+            "bbox": [
+              93.86,
+              186.18,
+              288.01,
+              192.79
+            ],
+            "parent": null,
+            "labels": [
+              "-- You can put your definitions and lemmas here."
+            ]
+          },
+          {
+            "id": "b8",
+            "bbox": [
+              93.86,
+              192.56,
+              288.01,
+              199.17
+            ],
+            "parent": null,
+            "labels": [
+              "-- EVOLVE-BLOCK-END"
+            ]
+          },
+          {
+            "id": "b9",
+            "bbox": [
+              93.86,
+              205.33,
+              288.01,
+              211.94
+            ],
+            "parent": null,
+            "labels": [
+              "theorem target_theorem_0 :"
+            ]
+          },
+          {
+            "id": "b10",
+            "bbox": [
+              93.86,
+              211.71,
+              288.01,
+              218.32
+            ],
+            "parent": null,
+            "labels": [
+              "answer("
+            ]
+          },
+          {
+            "id": "b11",
+            "bbox": [
+              93.86,
+              218.1,
+              288.01,
+              224.7
+            ],
+            "parent": null,
+            "labels": [
+              "-- EVOLVE-VALUE-START"
+            ]
+          },
+          {
+            "id": "b12",
+            "bbox": [
+              93.86,
+              224.48,
+              288.01,
+              231.09
+            ],
+            "parent": null,
+            "labels": [
+              "default"
+            ]
+          },
+          {
+            "id": "b13",
+            "bbox": [
+              93.86,
+              230.87,
+              288.01,
+              237.47
+            ],
+            "parent": null,
+            "labels": [
+              "-- EVOLVE-VALUE-END"
+            ]
+          },
+          {
+            "id": "b14",
+            "bbox": [
+              93.86,
+              237.25,
+              288.01,
+              243.85
+            ],
+            "parent": null,
+            "labels": [
+              ") ↔0 < ({x : ℕ| (digits 3 x).toFinset ⊆{0, 1}}"
+            ]
+          },
+          {
+            "id": "b15",
+            "bbox": [
+              93.86,
+              243.63,
+              288.01,
+              250.24
+            ],
+            "parent": null,
+            "labels": [
+              "+ {x : ℕ| (digits 4 x).toFinset ⊆{0, 1}}"
+            ]
+          },
+          {
+            "id": "b16",
+            "bbox": [
+              93.86,
+              250.02,
+              288.01,
+              256.62
+            ],
+            "parent": null,
+            "labels": [
+              ").lowerDensity := by"
+            ]
+          },
+          {
+            "id": "b17",
+            "bbox": [
+              93.86,
+              256.4,
+              288.01,
+              263.0
+            ],
+            "parent": null,
+            "labels": [
+              "-- EVOLVE-BLOCK-START"
+            ]
+          },
+          {
+            "id": "b18",
+            "bbox": [
+              93.86,
+              262.78,
+              288.01,
+              269.39
+            ],
+            "parent": null,
+            "labels": [
+              "sorry"
+            ]
+          },
+          {
+            "id": "b19",
+            "bbox": [
+              93.86,
+              269.17,
+              288.01,
+              275.77
+            ],
+            "parent": null,
+            "labels": [
+              "-- EVOLVE-BLOCK-END"
+            ]
+          },
+          {
+            "id": "b20",
+            "bbox": [
+              93.86,
+              326.31,
+              288.01,
+              332.91
+            ],
+            "parent": null,
+            "labels": [
+              "== Role and Goal == [...]"
+            ]
+          },
+          {
+            "id": "b21",
+            "bbox": [
+              93.86,
+              332.47,
+              288.01,
+              339.07
+            ],
+            "parent": null,
+            "labels": [
+              "== Task == [...]"
+            ]
+          },
+          {
+            "id": "b22",
+            "bbox": [
+              93.86,
+              338.85,
+              288.01,
+              345.46
+            ],
+            "parent": null,
+            "labels": [
+              "== Sketch Structure == [...]"
+            ]
+          },
+          {
+            "id": "b23",
+            "bbox": [
+              93.86,
+              351.62,
+              288.01,
+              358.22
+            ],
+            "parent": null,
+            "labels": [
+              "== Prior Attempts =="
+            ]
+          },
+          {
+            "id": "b24",
+            "bbox": [
+              93.86,
+              364.39,
+              165.41,
+              370.29
+            ],
+            "parent": null,
+            "labels": [
+              "Attempt 1",
+              "8 Elo: 1505"
+            ]
+          },
+          {
+            "id": "b25",
+            "bbox": [
+              93.86,
+              370.88,
+              288.01,
+              377.49
+            ],
+            "parent": null,
+            "labels": [
+              "theorem target_theorem_0 : answer("
+            ]
+          },
+          {
+            "id": "b26",
+            "bbox": [
+              93.86,
+              377.26,
+              288.01,
+              383.87
+            ],
+            "parent": null,
+            "labels": [
+              "False ) ↔0 < (...).lowerDensity ..."
+            ]
+          },
+          {
+            "id": "b27",
+            "bbox": [
+              93.86,
+              390.55,
+              205.69,
+              395.85
+            ],
+            "parent": null,
+            "labels": [
+              "AlphaProof: 3/5 goals proved, 2 open"
+            ]
+          },
+          {
+            "id": "b28",
+            "bbox": [
+              93.86,
+              396.93,
+              171.52,
+              402.24
+            ],
+            "parent": null,
+            "labels": [
+              "AlphaProof feeback: [...]"
+            ]
+          },
+          {
+            "id": "b29",
+            "bbox": [
+              93.86,
+              409.18,
+              288.01,
+              415.79
+            ],
+            "parent": null,
+            "labels": [
+              "<natural_language_plan>"
+            ]
+          },
+          {
+            "id": "b30",
+            "bbox": [
+              93.86,
+              415.57,
+              288.01,
+              422.17
+            ],
+            "parent": null,
+            "labels": [
+              "1. Define restricted-digit sets A, B."
+            ]
+          },
+          {
+            "id": "b31",
+            "bbox": [
+              93.86,
+              421.95,
+              288.01,
+              428.55
+            ],
+            "parent": null,
+            "labels": [
+              "2. Prove size bounds. [...]"
+            ]
+          },
+          {
+            "id": "b32",
+            "bbox": [
+              93.86,
+              428.33,
+              288.01,
+              434.94
+            ],
+            "parent": null,
+            "labels": [
+              "</natural_language_plan>"
+            ]
+          },
+          {
+            "id": "b33",
+            "bbox": [
+              93.86,
+              447.48,
+              288.01,
+              454.2
+            ],
+            "parent": null,
+            "labels": [
+              "[...]"
+            ]
+          },
+          {
+            "id": "b34",
+            "bbox": [
+              93.86,
+              447.48,
+              168.51,
+              453.38
+            ],
+            "parent": "b33",
+            "labels": [
+              "Attempt 2",
+              "8 Elo: 1480"
+            ]
+          },
+          {
+            "id": "b35",
+            "bbox": [
+              93.86,
+              453.98,
+              165.41,
+              459.88
+            ],
+            "parent": null,
+            "labels": [
+              "Attempt 3",
+              "8 Elo: 1520 [...]"
+            ]
+          },
+          {
+            "id": "b36",
+            "bbox": [
+              93.86,
+              466.86,
+              288.01,
+              473.46
+            ],
+            "parent": null,
+            "labels": [
+              "== Current Plan =="
+            ]
+          },
+          {
+            "id": "b37",
+            "bbox": [
+              93.86,
+              473.24,
+              288.01,
+              479.85
+            ],
+            "parent": null,
+            "labels": [
+              "-- EVOLVE-BLOCK-START"
+            ]
+          },
+          {
+            "id": "b38",
+            "bbox": [
+              93.86,
+              479.63,
+              288.01,
+              486.23
+            ],
+            "parent": null,
+            "labels": [
+              "have h_positive_density :"
+            ]
+          },
+          {
+            "id": "b39",
+            "bbox": [
+              93.86,
+              486.01,
+              288.01,
+              492.61
+            ],
+            "parent": null,
+            "labels": [
+              "0 < (...).lowerDensity := by sorry"
+            ]
+          },
+          {
+            "id": "b40",
+            "bbox": [
+              93.86,
+              492.39,
+              288.01,
+              499.0
+            ],
+            "parent": null,
+            "labels": [
+              "-- EVOLVE-BLOCK-END"
+            ]
+          },
+          {
+            "id": "b41",
+            "bbox": [
+              93.86,
+              498.77,
+              288.01,
+              505.38
+            ],
+            "parent": null,
+            "labels": [
+              "theorem target_theorem_0 : answer("
+            ]
+          },
+          {
+            "id": "b42",
+            "bbox": [
+              93.86,
+              505.16,
+              288.01,
+              511.76
+            ],
+            "parent": null,
+            "labels": [
+              "True ) ↔0 < (...).lowerDensity ..."
+            ]
+          },
+          {
+            "id": "b43",
+            "bbox": [
+              93.86,
+              517.93,
+              288.01,
+              524.53
+            ],
+            "parent": null,
+            "labels": [
+              "== Instructions == [...]"
+            ]
+          },
+          {
+            "id": "b44",
+            "bbox": [
+              302.09,
+              123.77,
+              506.6,
+              529.71
+            ],
+            "parent": null,
+            "labels": [
+              "j Thought (5m 3s): “Analyzing the problem structure... The answer should be False",
+              "since the lower density is 0.”",
+              "j Thought (1m 35s): “AlphaProof couldn’t solve independent_bases_zero_",
+              "density... This is too monolithic. I need to decompose it: first show that for any",
+              "𝜖> 0 there exist aligned scales 𝑘, 𝑚with 3𝑘≈4𝑚, then bound the sumset gaps at those",
+              "scales.”",
+              "... 4 more search_replace iterations",
+              "j Thought (54s): “Reflections on Tool Use”",
+              "<natural_language_plan>",
+              "1. Set answer to False ...",
+              "2. Decompose density proof into sublemmas...",
+              "...",
+              "</natural_language_plan>"
+            ]
+          },
+          {
+            "id": "b45",
+            "bbox": [
+              308.59,
+              146.43,
+              501.24,
+              225.99
+            ],
+            "parent": "b44",
+            "labels": [
+              "v search_replace",
+              "3s ✓",
+              "- default",
+              "+ False",
+              "- sorry",
+              "+ constructor",
+              "+ · intro h; exact False.elim h",
+              "+ · intro h",
+              "+",
+              "have : (A+B).lowerDensity = 0",
+              "+",
+              ". . ."
+            ]
+          },
+          {
+            "id": "b46",
+            "bbox": [
+              308.59,
+              231.66,
+              501.24,
+              264.78
+            ],
+            "parent": "b44",
+            "labels": [
+              "Ô attempt_goals_with_alphaproof",
+              "10m 1s",
+              "✓A_bound",
+              "✓B_bound",
+              "✓sum_size_bound",
+              "× independent_bases_zero_density",
+              "(3/4 proved)"
+            ]
+          },
+          {
+            "id": "b47",
+            "bbox": [
+              308.59,
+              301.38,
+              501.24,
+              389.13
+            ],
+            "parent": "b44",
+            "labels": [
+              "v search_replace",
+              "4s ✓",
+              "- lemma independent_bases_zero_density",
+              "-",
+              ": (A+B).lowerDensity = 0 := by sorry",
+              "+ lemma exists_k_m_ratio_close ...",
+              "+",
+              ":= by sorry",
+              "+ lemma gap_at_aligned_scale ...",
+              "+",
+              ":= by sorry",
+              "+ lemma independent_bases_zero_density",
+              "+",
+              ": (A+B).lowerDensity = 0 := by",
+              "+ . . ."
+            ]
+          },
+          {
+            "id": "b48",
+            "bbox": [
+              308.59,
+              405.24,
+              501.24,
+              456.29
+            ],
+            "parent": "b44",
+            "labels": [
+              "Ô attempt_goals_with_alphaproof",
+              "2m 40s",
+              "✓exists_k_m_ratio_close",
+              "✓gap_at_aligned_scale",
+              "✓independent_bases_zero_density",
+              "(6/6 proved ¦)"
+            ]
+          },
+          {
+            "id": "b49",
+            "bbox": [
+              307.26,
+              509.85,
+              363.61,
+              515.67
+            ],
+            "parent": "b44",
+            "labels": [
+              "è Generation complete."
+            ]
+          },
+          {
+            "id": "b50",
+            "bbox": [
+              368.93,
+              509.85,
+              412.21,
+              515.17
+            ],
+            "parent": "b44",
+            "labels": [
+              "è Proof validated."
+            ]
+          },
+          {
+            "id": "b51",
+            "bbox": [
+              307.26,
+              518.73,
+              391.35,
+              524.53
+            ],
+            "parent": "b44",
+            "labels": [
+              "õ Admitted to Population Database."
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 27,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              62.36,
+              65.61,
+              532.91,
+              65.61
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              62.36,
+              774.93,
+              532.91,
+              774.93
+            ]
+          }
+        ],
+        "between": [
+          "(a)"
+        ],
+        "outside": 15
+      }
+    },
+    {
+      "id": "vfig-p005",
+      "file": "figures/vfig-p005.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 5
+      },
+      "page": 5,
+      "rotation": 0,
+      "captionLabels": [
+        "2"
+      ],
+      "region": [
+        109.42,
+        154.2,
+        485.87,
+        432.31
+      ],
+      "assembly": {
+        "drawings": 68,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              109.42,
+              154.2,
+              485.87,
+              432.31
+            ],
+            "drawings": 66,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "Lean Problem",
+              "Formalization",
+              "Mathematician",
+              "Natural",
+              "Language",
+              "Context",
+              "Domain",
+              "Knowledge &",
+              "Proof Libraries",
+              "Prover Subagent",
+              "LLM (+ AlphaProof)",
+              "Proof Validator",
+              "Population Database",
+              "ELO Scores",
+              "Rater Subagent",
+              "LLM Critic +",
+              "Tournaments",
+              "Sketches",
+              "Goal Proofs",
+              "Formal Proof",
+              "AlphaProof Nexus",
+              "(2)",
+              "(3)",
+              "(4)",
+              "(5)",
+              "(1)"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              267.76,
+              186.2,
+              327.52,
+              210.03
+            ],
+            "parent": null,
+            "labels": [
+              "Lean Problem",
+              "Formalization"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              254.4,
+              165.24,
+              343.99,
+              181.47
+            ],
+            "parent": null,
+            "labels": [
+              "Mathematician"
+            ]
+          },
+          {
+            "id": "b2",
+            "bbox": [
+              174.57,
+              181.01,
+              234.32,
+              215.22
+            ],
+            "parent": null,
+            "labels": [
+              "Natural",
+              "Language",
+              "Context"
+            ]
+          },
+          {
+            "id": "b3",
+            "bbox": [
+              360.96,
+              181.01,
+              420.72,
+              215.22
+            ],
+            "parent": null,
+            "labels": [
+              "Domain",
+              "Knowledge &",
+              "Proof Libraries"
+            ]
+          },
+          {
+            "id": "b4",
+            "bbox": [
+              182.83,
+              273.29,
+              262.65,
+              289.32
+            ],
+            "parent": null,
+            "labels": [
+              "Prover Subagent"
+            ]
+          },
+          {
+            "id": "b5",
+            "bbox": [
+              177.27,
+              287.98,
+              271.54,
+              300.66
+            ],
+            "parent": null,
+            "labels": [
+              "LLM (+ AlphaProof)"
+            ]
+          },
+          {
+            "id": "b6",
+            "bbox": [
+              186.17,
+              323.42,
+              265.99,
+              336.14
+            ],
+            "parent": null,
+            "labels": [
+              "Proof Validator"
+            ]
+          },
+          {
+            "id": "b7",
+            "bbox": [
+              218.48,
+              352.73,
+              376.8,
+              365.45
+            ],
+            "parent": null,
+            "labels": [
+              "Population Database"
+            ]
+          },
+          {
+            "id": "b8",
+            "bbox": [
+              326.37,
+              378.57,
+              370.28,
+              389.22
+            ],
+            "parent": null,
+            "labels": [
+              "ELO Scores"
+            ]
+          },
+          {
+            "id": "b9",
+            "bbox": [
+              351.33,
+              271.92,
+              431.15,
+              284.64
+            ],
+            "parent": null,
+            "labels": [
+              "Rater Subagent"
+            ]
+          },
+          {
+            "id": "b10",
+            "bbox": [
+              351.33,
+              284.64,
+              431.15,
+              306.94
+            ],
+            "parent": null,
+            "labels": [
+              "LLM Critic +",
+              "Tournaments"
+            ]
+          },
+          {
+            "id": "b11",
+            "bbox": [
+              225.01,
+              378.31,
+              268.92,
+              388.95
+            ],
+            "parent": null,
+            "labels": [
+              "Sketches"
+            ]
+          },
+          {
+            "id": "b12",
+            "bbox": [
+              275.69,
+              378.04,
+              319.6,
+              388.69
+            ],
+            "parent": null,
+            "labels": [
+              "Goal Proofs"
+            ]
+          },
+          {
+            "id": "b13",
+            "bbox": [
+              272.64,
+              419.64,
+              322.65,
+              432.31
+            ],
+            "parent": null,
+            "labels": [
+              "Formal Proof"
+            ]
+          },
+          {
+            "id": "b14",
+            "bbox": [
+              241.39,
+              248.38,
+              353.9,
+              264.6
+            ],
+            "parent": null,
+            "labels": [
+              "AlphaProof Nexus"
+            ]
+          },
+          {
+            "id": "b15",
+            "bbox": [
+              222.08,
+              309.04,
+              235.51,
+              321.71
+            ],
+            "parent": null,
+            "labels": [
+              "(2)"
+            ]
+          },
+          {
+            "id": "b16",
+            "bbox": [
+              222.08,
+              338.13,
+              235.51,
+              350.8
+            ],
+            "parent": null,
+            "labels": [
+              "(3)"
+            ]
+          },
+          {
+            "id": "b17",
+            "bbox": [
+              445.8,
+              319.11,
+              459.23,
+              331.78
+            ],
+            "parent": null,
+            "labels": [
+              "(4)"
+            ]
+          },
+          {
+            "id": "b18",
+            "bbox": [
+              388.01,
+              319.11,
+              401.44,
+              331.78
+            ],
+            "parent": null,
+            "labels": [
+              "(5)"
+            ]
+          },
+          {
+            "id": "b19",
+            "bbox": [
+              129.64,
+              319.11,
+              143.07,
+              331.78
+            ],
+            "parent": null,
+            "labels": [
+              "(1)"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 37,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              62.36,
+              65.61,
+              532.91,
+              65.61
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              390.84,
+              218.37,
+              390.85,
+              233.29
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              297.64,
+              218.37,
+              297.65,
+              233.29
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              204.44,
+              218.37,
+              204.45,
+              233.29
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              297.64,
+              401.29,
+              297.68,
+              412.08
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              220.97,
+              308.63,
+              221.0,
+              317.3
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              220.96,
+              338.48,
+              220.96,
+              347.25
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              384.66,
+              308.88,
+              384.95,
+              347.03
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              128.46,
+              289.39,
+              145.51,
+              289.45
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              443.93,
+              289.03,
+              460.71,
+              370.64
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              62.36,
+              774.93,
+              532.91,
+              774.93
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 19
+      }
+    },
+    {
+      "id": "vfig-p008",
+      "file": null,
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 8
+      },
+      "page": 8,
+      "rotation": 0,
+      "captionLabels": [
+        "3"
+      ],
+      "region": null,
+      "assembly": {
+        "drawings": 2,
+        "background": 0,
+        "groups": [],
+        "boxes": [],
+        "unlabelledClosedShapes": 0,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              62.36,
+              65.61,
+              532.91,
+              65.61
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              62.36,
+              774.93,
+              532.91,
+              774.93
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 0
+      },
+      "unrendered_reason": "no drawing component on this page contains a text line, so there is no labelled region to render -- the caption candidates are recorded and nothing is claimed about what the page draws"
+    },
+    {
+      "id": "vfig-p009",
+      "file": "figures/vfig-p009.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 9
+      },
+      "page": 9,
+      "rotation": 0,
+      "captionLabels": [
+        "3"
+      ],
+      "region": [
+        62.36,
+        165.04,
+        532.9,
+        464.65
+      ],
+      "assembly": {
+        "drawings": 610,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              62.36,
+              165.04,
+              532.9,
+              464.65
+            ],
+            "drawings": 608,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "100",
+              "200",
+              "300",
+              "400",
+              "500",
+              "600",
+              "Mean Cost, USD",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "Solve Rate",
+              "1",
+              "3",
+              "6",
+              "10",
+              "1",
+              "3",
+              "6",
+              "10",
+              "1",
+              "1",
+              "erdos_12(i)",
+              "50",
+              "100",
+              "150",
+              "200",
+              "250",
+              "300",
+              "350",
+              "400",
+              "Mean Cost, USD",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "1",
+              "3",
+              "6",
+              "10",
+              "1",
+              "3",
+              "6",
+              "10",
+              "1",
+              "1",
+              "erdos_12(ii)",
+              "0",
+              "200",
+              "400",
+              "600",
+              "Mean Cost, USD",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "1",
+              "3",
+              "6",
+              "10",
+              "1",
+              "3",
+              "6",
+              "10",
+              "1",
+              "1",
+              "erdos_125",
+              "50",
+              "100",
+              "150",
+              "200",
+              "250",
+              "300",
+              "350",
+              "Mean Cost, USD",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "Solve Rate",
+              "1",
+              "3",
+              "6",
+              "10",
+              "1",
+              "3",
+              "6",
+              "10",
+              "1",
+              "1",
+              "erdos_138",
+              "200",
+              "400",
+              "600",
+              "800",
+              "1000",
+              "Mean Cost, USD",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "1",
+              "3",
+              "6",
+              "10",
+              "1",
+              "3",
+              "6",
+              "10",
+              "1",
+              "1",
+              "erdos_152",
+              "50",
+              "100",
+              "150",
+              "200",
+              "250",
+              "Mean Cost, USD",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "1",
+              "3",
+              "6",
+              "10",
+              "1",
+              "3",
+              "6",
+              "10",
+              "1",
+              "1",
+              "erdos_26",
+              "(A) basic",
+              "(B) basic w/ AP",
+              "(C) basic w/ evolution",
+              "(D) full"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              62.36,
+              165.04,
+              532.9,
+              464.65
+            ],
+            "parent": null,
+            "labels": [
+              "100",
+              "200",
+              "300",
+              "400",
+              "500",
+              "600",
+              "Mean Cost, USD",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "Solve Rate",
+              "erdos_12(i)",
+              "50",
+              "100",
+              "150",
+              "200",
+              "250",
+              "300",
+              "350",
+              "400",
+              "Mean Cost, USD",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "erdos_12(ii)",
+              "0",
+              "200",
+              "400",
+              "600",
+              "Mean Cost, USD",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "erdos_125",
+              "50",
+              "100",
+              "150",
+              "200",
+              "250",
+              "300",
+              "350",
+              "Mean Cost, USD",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "Solve Rate",
+              "erdos_138",
+              "200",
+              "400",
+              "600",
+              "800",
+              "1000",
+              "Mean Cost, USD",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "erdos_152",
+              "50",
+              "100",
+              "150",
+              "200",
+              "250",
+              "Mean Cost, USD",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "erdos_26"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              84.92,
+              192.72,
+              219.87,
+              304.79
+            ],
+            "parent": "b0",
+            "labels": [
+              "1",
+              "3",
+              "6",
+              "10",
+              "1",
+              "3",
+              "6",
+              "10",
+              "1",
+              "1"
+            ]
+          },
+          {
+            "id": "b2",
+            "bbox": [
+              239.56,
+              192.72,
+              374.51,
+              304.79
+            ],
+            "parent": "b0",
+            "labels": [
+              "1",
+              "3",
+              "6",
+              "10",
+              "1",
+              "3",
+              "6",
+              "10",
+              "1",
+              "1"
+            ]
+          },
+          {
+            "id": "b3",
+            "bbox": [
+              394.19,
+              192.72,
+              529.15,
+              304.79
+            ],
+            "parent": "b0",
+            "labels": [
+              "1",
+              "3",
+              "6",
+              "10",
+              "1",
+              "3",
+              "6",
+              "10",
+              "1",
+              "1"
+            ]
+          },
+          {
+            "id": "b4",
+            "bbox": [
+              84.92,
+              333.44,
+              219.87,
+              445.51
+            ],
+            "parent": "b0",
+            "labels": [
+              "1",
+              "3",
+              "6",
+              "10",
+              "3",
+              "6",
+              "10",
+              "1",
+              "1"
+            ]
+          },
+          {
+            "id": "b5",
+            "bbox": [
+              92.48,
+              401.91,
+              95.86,
+              405.29
+            ],
+            "parent": "b4",
+            "labels": [
+              "1"
+            ]
+          },
+          {
+            "id": "b6",
+            "bbox": [
+              239.56,
+              333.44,
+              374.51,
+              445.51
+            ],
+            "parent": "b0",
+            "labels": [
+              "1",
+              "3",
+              "6",
+              "10",
+              "1",
+              "3",
+              "6",
+              "10",
+              "1",
+              "1"
+            ]
+          },
+          {
+            "id": "b7",
+            "bbox": [
+              394.19,
+              333.44,
+              529.15,
+              445.51
+            ],
+            "parent": "b0",
+            "labels": [
+              "1",
+              "3",
+              "6",
+              "10",
+              "1",
+              "3",
+              "6",
+              "10",
+              "1",
+              "1"
+            ]
+          },
+          {
+            "id": "b8",
+            "bbox": [
+              176.88,
+              168.08,
+              419.08,
+              177.79
+            ],
+            "parent": "b0",
+            "labels": [
+              "(A) basic",
+              "(B) basic w/ AP",
+              "(C) basic w/ evolution",
+              "(D) full"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 370,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              62.36,
+              65.61,
+              532.91,
+              65.61
+            ]
+          },
+          {
+            "from": "b5",
+            "to": "b4",
+            "bbox": [
+              94.17,
+              343.77,
+              199.75,
+              403.6
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              62.36,
+              774.93,
+              532.91,
+              774.93
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 16
+      }
+    },
+    {
+      "id": "vfig-p018",
+      "file": "figures/vfig-p018.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 18
+      },
+      "page": 18,
+      "rotation": 0,
+      "captionLabels": [
+        "4"
+      ],
+      "region": [
+        79.28,
+        144.38,
+        515.77,
+        423.84
+      ],
+      "assembly": {
+        "drawings": 7,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              79.28,
+              144.38,
+              515.77,
+              423.84
+            ],
+            "drawings": 1,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "1",
+              "# Main Loop",
+              "2",
+              "initial_sketch = lean_compiler.check(initial_file)",
+              "3",
+              "final_sketch = prover_subagent(initial_sketch)",
+              "4",
+              "5",
+              "# Basic prover subagent",
+              "6",
+              "def prover_step(sketch):",
+              "7",
+              "session = LlmSketcher(sketch) # Start an LLM session",
+              "8",
+              "while tool_call := session.recv():",
+              "9",
+              "if tool_call.is_search_replace():",
+              "10",
+              "sketch, feedback = search_replace_then_compile(sketch, tool_call)",
+              "11",
+              "session.send(feedback)",
+              "12",
+              "13",
+              "if lean_compiler.verify_integrity(sketch): # Check for hacks",
+              "14",
+              "return sketch",
+              "15",
+              "16",
+              "def prover_subagent(initial_sketch):",
+              "17",
+              "sketch = initial_sketch",
+              "18",
+              "while within_budget() and sketch.contains_sorry():",
+              "19",
+              "if new_sketch := prover_step(sketch):",
+              "20",
+              "sketch = new_sketch",
+              "21",
+              "return sketch"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              79.28,
+              144.38,
+              515.77,
+              423.84
+            ],
+            "parent": null,
+            "labels": [
+              "1",
+              "# Main Loop",
+              "2",
+              "initial_sketch = lean_compiler.check(initial_file)",
+              "3",
+              "final_sketch = prover_subagent(initial_sketch)",
+              "4",
+              "5",
+              "# Basic prover subagent",
+              "6",
+              "def prover_step(sketch):",
+              "7",
+              "session = LlmSketcher(sketch) # Start an LLM session",
+              "8",
+              "while tool_call := session.recv():",
+              "9",
+              "if tool_call.is_search_replace():",
+              "10",
+              "sketch, feedback = search_replace_then_compile(sketch, tool_call)",
+              "11",
+              "session.send(feedback)",
+              "12",
+              "13",
+              "if lean_compiler.verify_integrity(sketch): # Check for hacks",
+              "14",
+              "return sketch",
+              "15",
+              "16",
+              "def prover_subagent(initial_sketch):",
+              "17",
+              "sketch = initial_sketch",
+              "18",
+              "while within_budget() and sketch.contains_sorry():",
+              "19",
+              "if new_sketch := prover_step(sketch):",
+              "20",
+              "sketch = new_sketch",
+              "21",
+              "return sketch"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 0,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              62.36,
+              65.61,
+              532.91,
+              65.61
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              79.01,
+              143.84,
+              79.01,
+              423.84
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              79.28,
+              144.11,
+              515.77,
+              144.11
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              78.73,
+              424.11,
+              516.32,
+              424.11
+            ]
+          },
+          {
+            "from": "b0",
+            "to": null,
+            "bbox": [
+              516.04,
+              143.84,
+              516.04,
+              423.84
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              62.36,
+              774.93,
+              532.91,
+              774.93
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 26
+      }
+    },
+    {
+      "id": "vfig-p019",
+      "file": "figures/vfig-p019.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 19
+      },
+      "page": 19,
+      "rotation": 0,
+      "captionLabels": [
+        "5"
+      ],
+      "region": [
+        98.98,
+        143.42,
+        495.79,
+        528.98
+      ],
+      "assembly": {
+        "drawings": 9,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              98.98,
+              143.42,
+              495.79,
+              528.98
+            ],
+            "drawings": 1,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "1",
+              "# Main Loop",
+              "2",
+              "initial_sketch = lean_compiler.check(initial_file)",
+              "3",
+              "population.initialize(initial_sketch)",
+              "4",
+              "launch prover_subagents(N, population) # Create prover agents",
+              "5",
+              "launch rater_subagents(M, population) # Create rater agents",
+              "6",
+              "await population.contains_sorry_free_proof()",
+              "7",
+              "8",
+              "# Prover subagent, run asynchronously",
+              "9",
+              "def prover_step(sketch):",
+              "10",
+              "session = LlmSketcher(sketch) # Start an LLM session",
+              "11",
+              "while tool_call := session.recv():",
+              "12",
+              "if tool_call.is_alphaproof(): # Call AlphaProof",
+              "13",
+              "proofs = [alphaproof.solve(g) for g in unsolved_goals(sketch)]",
+              "14",
+              "sketch, feedback = incorporate_proofs(proofs, sketch)",
+              "15",
+              "elif tool_call.is_search_replace(): # Call search-and-replace",
+              "16",
+              "sketch, feedback = search_replace_then_compile(sketch, tool_call)",
+              "17",
+              "session.send(feedback)",
+              "18",
+              "if lean_compiler.verify_integrity(sketch): # Check for hacks",
+              "19",
+              "population.add(sketch)",
+              "20",
+              "return not sketch.contains_sorry()",
+              "21",
+              "return False",
+              "22",
+              "23",
+              "def prover_subagent():",
+              "24",
+              "while within_budget():",
+              "25",
+              "sketch = population.sample(strategy=p_ucb) # Sample a sketch",
+              "26",
+              "if prover_step(sketch):",
+              "27",
+              "break",
+              "28",
+              "29",
+              "# Rater agent, run asynchronously",
+              "30",
+              "def rater_subagent():",
+              "31",
+              "s1, ..., sP = sketch_db.get_sketches_for_ranking()",
+              "32",
+              "ranks = llm_rater.rank(s1, ..., sP)",
+              "33",
+              "sketch_db.update_elo(ranks)"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              98.98,
+              143.42,
+              495.79,
+              528.98
+            ],
+            "parent": null,
+            "labels": [
+              "1",
+              "# Main Loop",
+              "2",
+              "initial_sketch = lean_compiler.check(initial_file)",
+              "3",
+              "population.initialize(initial_sketch)",
+              "4",
+              "launch prover_subagents(N, population) # Create prover agents",
+              "5",
+              "launch rater_subagents(M, population) # Create rater agents",
+              "6",
+              "await population.contains_sorry_free_proof()",
+              "7",
+              "8",
+              "# Prover subagent, run asynchronously",
+              "9",
+              "def prover_step(sketch):",
+              "10",
+              "session = LlmSketcher(sketch) # Start an LLM session",
+              "11",
+              "while tool_call := session.recv():",
+              "12",
+              "if tool_call.is_alphaproof(): # Call AlphaProof",
+              "13",
+              "proofs = [alphaproof.solve(g) for g in unsolved_goals(sketch)]",
+              "14",
+              "sketch, feedback = incorporate_proofs(proofs, sketch)",
+              "15",
+              "elif tool_call.is_search_replace(): # Call search-and-replace",
+              "16",
+              "sketch, feedback = search_replace_then_compile(sketch, tool_call)",
+              "17",
+              "session.send(feedback)",
+              "18",
+              "if lean_compiler.verify_integrity(sketch): # Check for hacks",
+              "19",
+              "population.add(sketch)",
+              "20",
+              "return not sketch.contains_sorry()",
+              "21",
+              "return False",
+              "22",
+              "23",
+              "def prover_subagent():",
+              "24",
+              "while within_budget():",
+              "25",
+              "sketch = population.sample(strategy=p_ucb) # Sample a sketch",
+              "26",
+              "if prover_step(sketch):",
+              "27",
+              "break",
+              "28",
+              "29",
+              "# Rater agent, run asynchronously",
+              "30",
+              "def rater_subagent():",
+              "31",
+              "s1, ..., sP = sketch_db.get_sketches_for_ranking()",
+              "32",
+              "ranks = llm_rater.rank(s1, ..., sP)",
+              "33",
+              "sketch_db.update_elo(ranks)"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 0,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              62.36,
+              65.61,
+              532.91,
+              65.61
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              98.73,
+              142.93,
+              98.73,
+              528.98
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              98.98,
+              143.17,
+              495.79,
+              143.17
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              98.48,
+              529.23,
+              496.28,
+              529.23
+            ]
+          },
+          {
+            "from": "b0",
+            "to": null,
+            "bbox": [
+              496.03,
+              142.93,
+              496.03,
+              528.98
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              407.29,
+              567.08,
+              410.42,
+              567.08
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              351.76,
+              626.85,
+              354.9,
+              626.85
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              62.36,
+              774.93,
+              532.91,
+              774.93
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 13
+      }
+    },
+    {
+      "id": "vfig-p022",
+      "file": null,
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 22
+      },
+      "page": 22,
+      "rotation": 0,
+      "captionLabels": [
+        "6"
+      ],
+      "region": null,
+      "assembly": {
+        "drawings": 2,
+        "background": 0,
+        "groups": [],
+        "boxes": [],
+        "unlabelledClosedShapes": 0,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              62.36,
+              65.61,
+              532.91,
+              65.61
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              62.36,
+              774.93,
+              532.91,
+              774.93
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 0
+      },
+      "unrendered_reason": "no drawing component on this page contains a text line, so there is no labelled region to render -- the caption candidates are recorded and nothing is claimed about what the page draws"
+    },
+    {
+      "id": "vfig-p025",
+      "file": "figures/vfig-p025.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 25
+      },
+      "page": 25,
+      "rotation": 0,
+      "captionLabels": [
+        "8"
+      ],
+      "region": [
+        66.23,
+        201.81,
+        528.45,
+        601.02
+      ],
+      "assembly": {
+        "drawings": 8,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              66.23,
+              201.81,
+              528.45,
+              601.02
+            ],
+            "drawings": 1,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "# 1. Role and Goal",
+              "You are a world-class mathematician and Lean 4 expert.",
+              "Your goal is to solve hard mathematical problems by devising a proof strategy",
+              "and translating it into a Lean 4 proof.",
+              "# 2. Your Task",
+              "You will be given Lean code containing theorem statement with a partial proof. You goal is to",
+              "modify the file to continue proving the statement until there are no sorries left.",
+              "You will be getting feedback from Lean Compiler after every time you modify code.",
+              "Compilation errors will be highlighted and you need to keep iterating until the code compiles.",
+              "CRITICAL: Don’t end a session with the code which doesn’t compile. You session will be discarded if",
+              "the final proof doesn’t compile. If you can’t finish the proof in the current session at least",
+              "make sure it compiles before you wrap up the session. Put any findings, plans or solutions as",
+              "comments in the file. Only file content will be passed to the next session.",
+              "Think like a mathematician: focus on the key insights, proof structure, and",
+              "creative steps (e.g., constructing an object via ‘let‘).",
+              "If you get stuck on the main proof, try to gain insights by exploring diverse ideas:",
+              "study specific cases, or define and attempt to prove interesting generalizations,",
+              "specializations, or variants of the problem statement as new helper lemmas.",
+              "Prefer clever mathematical arguments over brute-force casework where possible.",
+              "Some of these problems are very hard, possibly even open problems in mathematics.",
+              "But don’t be discouraged|approach them with curiosity and persistence.",
+              "Like George Dantzig, who solved two famous unsolved problems in statistics thinking they were homework,",
+              "you might solve a problem you think is difficult simply by not knowing it was considered impossible!",
+              "Believe in your ability to find creative solutions where others might not.",
+              "CRITICAL: You MUST use tools available to you exhaustively to refine your proof",
+              "until you either find a proof or are certain the current direction is flawed.",
+              "Do NOT give up easily, and NEVER put off formalization work to the next session",
+              "if you have more tool calls available.",
+              "Your effort in each turn must be maximal: try to solve the problem in full, as if there is no next session.",
+              "**No Imports:** The execution environment imports ‘Mathlib‘ by default.",
+              "Do **not** add any ‘import‘ statements in your proof.",
+              "# Current proof",
+              "This is the proof to be modified in your session.",
+              "{code}",
+              "Make sure that you only propose changes inside sections enclosed by",
+              "‘-- EVOLVE-BLOCK-START‘ and ‘-- EVOLVE-BLOCK-END‘,",
+              "or ‘-- EVOLVE-VALUE-START‘ and ‘-- EVOLVE-VALUE-END‘ comments."
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              66.23,
+              201.81,
+              528.45,
+              601.02
+            ],
+            "parent": null,
+            "labels": [
+              "# 1. Role and Goal",
+              "You are a world-class mathematician and Lean 4 expert.",
+              "Your goal is to solve hard mathematical problems by devising a proof strategy",
+              "and translating it into a Lean 4 proof.",
+              "# 2. Your Task",
+              "You will be given Lean code containing theorem statement with a partial proof. You goal is to",
+              "modify the file to continue proving the statement until there are no sorries left.",
+              "You will be getting feedback from Lean Compiler after every time you modify code.",
+              "Compilation errors will be highlighted and you need to keep iterating until the code compiles.",
+              "CRITICAL: Don’t end a session with the code which doesn’t compile. You session will be discarded if",
+              "the final proof doesn’t compile. If you can’t finish the proof in the current session at least",
+              "make sure it compiles before you wrap up the session. Put any findings, plans or solutions as",
+              "comments in the file. Only file content will be passed to the next session.",
+              "Think like a mathematician: focus on the key insights, proof structure, and",
+              "creative steps (e.g., constructing an object via ‘let‘).",
+              "If you get stuck on the main proof, try to gain insights by exploring diverse ideas:",
+              "study specific cases, or define and attempt to prove interesting generalizations,",
+              "specializations, or variants of the problem statement as new helper lemmas.",
+              "Prefer clever mathematical arguments over brute-force casework where possible.",
+              "Some of these problems are very hard, possibly even open problems in mathematics.",
+              "But don’t be discouraged|approach them with curiosity and persistence.",
+              "Like George Dantzig, who solved two famous unsolved problems in statistics thinking they were homework,",
+              "you might solve a problem you think is difficult simply by not knowing it was considered impossible!",
+              "Believe in your ability to find creative solutions where others might not.",
+              "CRITICAL: You MUST use tools available to you exhaustively to refine your proof",
+              "until you either find a proof or are certain the current direction is flawed.",
+              "Do NOT give up easily, and NEVER put off formalization work to the next session",
+              "if you have more tool calls available.",
+              "Your effort in each turn must be maximal: try to solve the problem in full, as if there is no next session.",
+              "**No Imports:** The execution environment imports ‘Mathlib‘ by default.",
+              "Do **not** add any ‘import‘ statements in your proof.",
+              "# Current proof",
+              "This is the proof to be modified in your session.",
+              "{code}",
+              "Make sure that you only propose changes inside sections enclosed by",
+              "‘-- EVOLVE-BLOCK-START‘ and ‘-- EVOLVE-BLOCK-END‘,",
+              "or ‘-- EVOLVE-VALUE-START‘ and ‘-- EVOLVE-VALUE-END‘ comments."
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 0,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              62.36,
+              65.61,
+              532.91,
+              65.61
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              65.95,
+              201.26,
+              65.95,
+              601.02
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              66.23,
+              201.53,
+              528.45,
+              201.53
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              65.68,
+              601.29,
+              528.99,
+              601.29
+            ]
+          },
+          {
+            "from": "b0",
+            "to": null,
+            "bbox": [
+              528.72,
+              201.26,
+              528.72,
+              601.02
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              350.2,
+              643.54,
+              353.65,
+              643.54
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              62.36,
+              774.93,
+              532.91,
+              774.93
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 4
+      }
+    },
+    {
+      "id": "vfig-p027",
+      "file": "figures/vfig-p027.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 27
+      },
+      "page": 27,
+      "rotation": 0,
+      "captionLabels": [
+        "9",
+        "10"
+      ],
+      "region": [
+        62.36,
+        179.75,
+        532.9,
+        505.24
+      ],
+      "assembly": {
+        "drawings": 312,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              62.36,
+              179.75,
+              532.9,
+              505.24
+            ],
+            "drawings": 310,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "erdos_12(i)",
+              "erdos_12(ii)",
+              "erdos_125",
+              "erdos_138",
+              "erdos_152",
+              "erdos_26",
+              "erdos_741(i)",
+              "erdos_741(ii)",
+              "erdos_846",
+              "Problem",
+              "0",
+              "250",
+              "500",
+              "750",
+              "1000",
+              "1250",
+              "1500",
+              "1750",
+              "Cost, USD",
+              "100%",
+              "100%",
+              "70%",
+              "80%",
+              "100%",
+              "100%",
+              "90%",
+              "90%",
+              "10%",
+              "20%",
+              "0%",
+              "50%",
+              "100%",
+              "100%",
+              "50%",
+              "100%",
+              "80%",
+              "80%30%",
+              "10%",
+              "100%",
+              "100%",
+              "100%",
+              "100%",
+              "100%",
+              "100%",
+              "90%",
+              "90%",
+              "100%",
+              "100%",
+              "100%",
+              "100%",
+              "100%",
+              "100%",
+              "90%",
+              "100%",
+              "Cost per proof by method",
+              "Method",
+              "(A) basic (K=10)",
+              "(B) basic w/ AP (K=10)",
+              "(C) basic w/ evolution (K=1)",
+              "(D) full (K=1)"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              62.36,
+              179.75,
+              532.9,
+              505.24
+            ],
+            "parent": null,
+            "labels": [
+              "erdos_12(i)",
+              "erdos_12(ii)",
+              "erdos_125",
+              "erdos_138",
+              "erdos_152",
+              "erdos_26",
+              "erdos_741(i)",
+              "erdos_741(ii)",
+              "erdos_846",
+              "Problem",
+              "0",
+              "250",
+              "500",
+              "750",
+              "1000",
+              "1250",
+              "1500",
+              "1750",
+              "Cost, USD",
+              "Cost per proof by method"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              92.44,
+              190.3,
+              529.61,
+              468.55
+            ],
+            "parent": "b0",
+            "labels": [
+              "100%",
+              "100%",
+              "70%",
+              "80%",
+              "100%",
+              "100%",
+              "90%",
+              "90%",
+              "10%",
+              "20%",
+              "0%",
+              "50%",
+              "100%",
+              "100%",
+              "50%",
+              "100%",
+              "80%",
+              "80%30%",
+              "10%",
+              "100%",
+              "100%",
+              "100%",
+              "100%",
+              "100%",
+              "100%",
+              "90%",
+              "90%",
+              "100%",
+              "100%",
+              "100%",
+              "100%",
+              "100%",
+              "100%",
+              "90%",
+              "100%"
+            ]
+          },
+          {
+            "id": "b2",
+            "bbox": [
+              438.26,
+              192.82,
+              527.1,
+              230.78
+            ],
+            "parent": "b1",
+            "labels": [
+              "Method",
+              "(A) basic (K=10)",
+              "(B) basic w/ AP (K=10)",
+              "(C) basic w/ evolution (K=1)",
+              "(D) full (K=1)"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 95,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              62.36,
+              65.61,
+              532.91,
+              65.61
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              62.36,
+              774.93,
+              532.91,
+              774.93
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 23
+      }
+    },
+    {
+      "id": "vfig-p028",
+      "file": "figures/vfig-p028.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 28
+      },
+      "page": 28,
+      "rotation": 0,
+      "captionLabels": [
+        "10"
+      ],
+      "region": [
+        62.36,
+        119.04,
+        532.92,
+        568.43
+      ],
+      "assembly": {
+        "drawings": 1245,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              62.36,
+              119.04,
+              532.92,
+              568.43
+            ],
+            "drawings": 1243,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "200",
+              "400",
+              "600",
+              "800",
+              "1000 1200 1400",
+              "Mean Cost, USD",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "Solve Rate",
+              "erdos_12(i)",
+              "100",
+              "200",
+              "300",
+              "400",
+              "500",
+              "600",
+              "Mean Cost, USD",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "erdos_12(ii)",
+              "0",
+              "200",
+              "400",
+              "600",
+              "800",
+              "Mean Cost, USD",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "erdos_125",
+              "50",
+              "100",
+              "150",
+              "200",
+              "250",
+              "300",
+              "350",
+              "Mean Cost, USD",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "Solve Rate",
+              "erdos_138",
+              "0",
+              "200",
+              "400",
+              "600",
+              "800",
+              "1000",
+              "Mean Cost, USD",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "erdos_152",
+              "50",
+              "100",
+              "150",
+              "200",
+              "250",
+              "300",
+              "350",
+              "400",
+              "Mean Cost, USD",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "erdos_26",
+              "50",
+              "100",
+              "150",
+              "200",
+              "250",
+              "300",
+              "Mean Cost, USD",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "Solve Rate",
+              "erdos_741(i)",
+              "5.0",
+              "7.5",
+              "10.0",
+              "12.5",
+              "15.0",
+              "17.5",
+              "20.0",
+              "22.5",
+              "Mean Cost, USD",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "erdos_741(ii)",
+              "50",
+              "100",
+              "150",
+              "200",
+              "250",
+              "300",
+              "Mean Cost, USD",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "erdos_846",
+              "(A) basic",
+              "(B) basic w/ AP",
+              "(C) basic w/ evolution",
+              "(D) full",
+              "(D) full@1",
+              "(D) full@3",
+              "(D) full@6"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              62.36,
+              119.04,
+              532.92,
+              568.43
+            ],
+            "parent": null,
+            "labels": [
+              "200",
+              "400",
+              "600",
+              "800",
+              "1000 1200 1400",
+              "Mean Cost, USD",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "Solve Rate",
+              "erdos_12(i)",
+              "100",
+              "200",
+              "300",
+              "400",
+              "500",
+              "600",
+              "Mean Cost, USD",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "erdos_12(ii)",
+              "0",
+              "200",
+              "400",
+              "600",
+              "800",
+              "Mean Cost, USD",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "erdos_125",
+              "50",
+              "100",
+              "150",
+              "200",
+              "250",
+              "300",
+              "350",
+              "Mean Cost, USD",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "Solve Rate",
+              "erdos_138",
+              "0",
+              "200",
+              "400",
+              "600",
+              "800",
+              "1000",
+              "Mean Cost, USD",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "erdos_152",
+              "50",
+              "100",
+              "150",
+              "200",
+              "250",
+              "300",
+              "350",
+              "400",
+              "Mean Cost, USD",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "erdos_26",
+              "50",
+              "100",
+              "150",
+              "200",
+              "250",
+              "300",
+              "Mean Cost, USD",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "Solve Rate",
+              "erdos_741(i)",
+              "5.0",
+              "7.5",
+              "10.0",
+              "12.5",
+              "15.0",
+              "17.5",
+              "20.0",
+              "22.5",
+              "Mean Cost, USD",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "erdos_741(ii)",
+              "50",
+              "100",
+              "150",
+              "200",
+              "250",
+              "300",
+              "Mean Cost, USD",
+              "0.0",
+              "0.2",
+              "0.4",
+              "0.6",
+              "0.8",
+              "1.0",
+              "erdos_846"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              95.68,
+              122.08,
+              499.42,
+              131.77
+            ],
+            "parent": "b0",
+            "labels": [
+              "(A) basic",
+              "(B) basic w/ AP",
+              "(C) basic w/ evolution",
+              "(D) full",
+              "(D) full@1",
+              "(D) full@3",
+              "(D) full@6"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 788,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              62.36,
+              65.61,
+              532.91,
+              65.61
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              62.36,
+              774.93,
+              532.91,
+              774.93
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 12
+      }
+    },
+    {
+      "id": "vfig-p029",
+      "file": "figures/vfig-p029.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 29
+      },
+      "page": 29,
+      "rotation": 0,
+      "captionLabels": [
+        "11"
+      ],
+      "region": [
+        62.36,
+        85.04,
+        532.9,
+        410.54
+      ],
+      "assembly": {
+        "drawings": 245,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              62.36,
+              85.04,
+              532.9,
+              410.54
+            ],
+            "drawings": 243,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "erdos_12(i)",
+              "erdos_12(ii)",
+              "erdos_125",
+              "erdos_138",
+              "erdos_152",
+              "erdos_26",
+              "erdos_741(i)",
+              "erdos_741(ii)",
+              "erdos_846",
+              "Problem",
+              "0",
+              "10",
+              "20",
+              "30",
+              "40",
+              "Time, hours",
+              "100%",
+              "100% 80%",
+              "100%",
+              "100%",
+              "90%",
+              "10%",
+              "20%",
+              "50%",
+              "100%",
+              "100%",
+              "100%",
+              "80%",
+              "80%",
+              "10%",
+              "100%",
+              "100%",
+              "100%",
+              "100%",
+              "100%",
+              "90%",
+              "100%",
+              "100%100%",
+              "100%100%",
+              "100%",
+              "Wall-clock time per proof by method",
+              "Method",
+              "basic (K=10)",
+              "basic w/ AP (K=10)",
+              "full (K=1)"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              62.36,
+              85.04,
+              532.9,
+              410.54
+            ],
+            "parent": null,
+            "labels": [
+              "erdos_12(i)",
+              "erdos_12(ii)",
+              "erdos_125",
+              "erdos_138",
+              "erdos_152",
+              "erdos_26",
+              "erdos_741(i)",
+              "erdos_741(ii)",
+              "erdos_846",
+              "Problem",
+              "0",
+              "10",
+              "20",
+              "30",
+              "40",
+              "Time, hours",
+              "Wall-clock time per proof by method"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              84.88,
+              95.59,
+              529.61,
+              373.85
+            ],
+            "parent": "b0",
+            "labels": [
+              "100%",
+              "100% 80%",
+              "100%",
+              "100%",
+              "90%",
+              "10%",
+              "20%",
+              "50%",
+              "100%",
+              "100%",
+              "100%",
+              "80%",
+              "80%",
+              "10%",
+              "100%",
+              "100%",
+              "100%",
+              "100%",
+              "100%",
+              "90%",
+              "100%",
+              "100%100%",
+              "100%100%",
+              "100%"
+            ]
+          },
+          {
+            "id": "b2",
+            "bbox": [
+              460.99,
+              98.11,
+              527.09,
+              128.69
+            ],
+            "parent": "b1",
+            "labels": [
+              "Method",
+              "basic (K=10)",
+              "basic w/ AP (K=10)",
+              "full (K=1)"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 74,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              62.36,
+              65.61,
+              532.91,
+              65.61
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              62.36,
+              774.93,
+              532.91,
+              774.93
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 20
+      }
+    }
+  ]
+}

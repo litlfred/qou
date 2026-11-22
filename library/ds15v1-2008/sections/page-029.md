@@ -1,0 +1,47 @@
+---
+doc_id: ds15v1-2008
+doc_title: "Rogers-Ramanujan-Slater Type Identities"
+section_id: page-029
+section_title: "Page 29"
+pages: 29-29
+pdf_page: 29
+source_pdf: ds15v1-2008.pdf
+source_sha256: aef155a324c6fdf4
+text_source: ocr
+granularity: page
+doc_brief: "Rogers-Ramanujan-Slater Type Identities — In this survey article, we present an expanded version of Lucy Slater’s famous list of identities of the Rogers-Ramanujan type, including identities of"
+---
+fg ey dhea 330%) _ 7? gre ( eral a") (ML-s. (33, Eq. (1.6)])
+(3.27.4)
+
+6 ay ap ty ag _
+f(-.-4 wae gi) 3 q SL v) (S. 88c)
+(3.27.5)
+f(-a,~4 ala =") yee (S. 89c)
+(3.27.6)
+
+3.30 Mod 30 Identities
+
+fata") alana") _ » (Rogers [36, p. 333]; $.99) (3.30.1)
+a ¢°) “> - (S.98) (3.30.2)
+fer Thad) “> ae (Rogers (36, p. 334]); 8. 94) (3.30.3)
+f(a, ae hae _ » aes (S. 96) (3.30.4)
+f(a, ri) afl g) y enn (S. 100c) (3.30.5)
+fq, Pei gy _ > pas (8. 95) (3.30.6)
+_ » pee (S. 97) (3.30.7)
+
+3.32 Mod 32 Identities
+
+f(0.P)- PF _ =: Pe? (=P P)na(=@) net
+p(—4 = (q)ans2
+
+f(g.) = it °°) ) yr Pea )n(-an
+p(—49) n=0 (Q)an+1
+
+THE ELECTRONIC JOURNAL OF COMBINATORICS 15 (2008), #DS15
+
+(S. 103) (3.32.1)
+
+(S. 106) (3.32.2)
+
+29

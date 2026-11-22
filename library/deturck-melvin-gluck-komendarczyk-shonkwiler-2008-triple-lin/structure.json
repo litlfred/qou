@@ -6,7 +6,9 @@
   "sha256": "db149864ce367da232063a37eb32a3471983a25da83a5c56f7dd4d1672062acf",
   "bytes": 1088841,
   "pages": 33,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -15,21 +17,29 @@
   "doi": "10.21711/231766362008/rmc3411",
   "title": "Triple linking numbers, ambiguous Hopf invariants and integral formulas for three-component links",
   "authors_raw": "AND INTEGRAL FORMULAS FOR",
-  "abstract": "Three-component links in the 3-dimensional sphere were classi- fied up to link homotopy by John Milnor in his senior thesis, pub- lished in 1954. A complete set of invariants is given by the pairwise linking numbers p, q and r of the components, and by the residue class of one further integer µ, the “triple linking number” of the ti- tle, which is well-defined modulo the greatest common divisor of p, q and r. To each such linkL we associate a geometrically natural charac- teristic map gL from the 3-torus to the 2-sphere in such a way that link homotopies of L become homotopies of gL. Maps of the 3-torus to the 2-sphere were classified up to homotopy by Lev Pontryagin in 1941. A complete set of invariants is given by the degrees p, q and r of their restrictions to the 2-dimensional coordinate subtori, and by the residue class of one further integer ν, an “ambiguous Hopf invariant” which is well-defined modulo twice the greatest common divisor of p, q and r.",
+  "title_lines": [
+   "Matemática Contemporânea, Vol. 34, 251–283",
+   "©2008, Sociedade Brasileira de Matemática",
+   "TRIPLE LINKING NUMBERS",
+   "AMBIGUOUS HOPF INVARIANTS"
+  ],
+  "abstract": "Three-component links in the 3-dimensional sphere were classi- fied up to link homotopy by John Milnor in his senior thesis, pub- lished in 1954. A complete set of invariants is given by the pairwise linking numbers p, q and r of the components, and by the residue class of one further integer µ, the “triple linking number” of the ti- tle, which is well-defined modulo the greatest common divisor of p, q and r. To each such link L we associate a geometrically natural charac- teristic map gL from the 3-torus to the 2-sphere in such a way that link homotopies of L become homotopies of gL. Maps of the 3-torus to the 2-sphere were classified up to homotopy by Lev Pontryagin in 1941. A complete set of invariants is given by the degrees p, q and r of their restrictions to the 2-dimensional coordinate subtori, and by the residue class of one further integer ν, an “ambiguous Hopf invariant” which is well-defined modulo twice the greatest common divisor of p, q and r.",
   "docinfo": {
    "Producer": "MiKTeX pdfTeX-1.40.23",
-   "Author": "",
-   "Title": "",
    "Creator": "LaTeX with hyperref",
    "CreationDate": "D:20210808061506-03'00'"
   },
-  "title_prev": "Matemática Contemporânea, Vol. 34, 251–283 © 2008, Sociedade Brasileira de Matemática TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INVARIANTS",
-  "title_lines": [
-   "Matemática Contemporânea, Vol. 34, 251–283",
-   "© 2008, Sociedade Brasileira de Matemática",
-   "TRIPLE LINKING NUMBERS",
-   "AMBIGUOUS HOPF INVARIANTS"
-  ]
+  "title_raw": "Matemática Contemporânea, Vol. 34, 251–283 ©2008, Sociedade Brasileira de Matemática TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INVARIANTS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INVARIANTS AND INTEGRAL FORMULAS FOR THREE-COMPONENT LINKS",
+   "outline": "Statement of results",
+   "text": "Matemática Contemporânea, Vol. 34, 251–283 ©2008, Sociedade Brasileira de Matemática TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INVARIANTS",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "Matemática Contemporânea, Vol. 34, 251–283 ©2008, Sociedade Brasileira de Matemática TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INVARIANTS"
  },
  "toc": [
   {
@@ -37,67 +47,595 @@
    "title": "Statement of results",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "253"
   },
   {
    "level": 1,
    "title": "Background and motivation",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "255"
   },
   {
    "level": 1,
    "title": "Explicit formula for the characteristic map gL",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "258"
   },
   {
    "level": 2,
    "title": "An asymmetric version of the characteristic map",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "259"
   },
   {
    "level": 1,
    "title": "Sketch of the topological proof of Theorem A",
    "page": 10,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "260"
   },
   {
    "level": 1,
    "title": "Sketch of the algebraic proof of Theorem A",
    "page": 17,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "267"
   },
   {
    "level": 1,
    "title": "Sketch of the proof of Theorem B",
    "page": 23,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "273"
   },
   {
    "level": 2,
    "title": "The fundamental solution of the Laplacian on the 3-torus",
    "page": 25,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "275"
   },
   {
    "level": 2,
    "title": "Completing the proof of Theorem B",
    "page": 26,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "276"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The Grassmann map The Grassmann manifold G2R4 is isometric (up to scale) to the product S2 × S2 of two unit 2-spheres",
+   "page": 3,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "253"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Stereographic projection For any (x, y, z) ∈Conf3S3, consider the points ℘xy and ℘xz in R3",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "259"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The delta move L →L′",
+   "page": 10,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "260"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Seifert surfaces for L and L′ To see how the delta move affects the ν-invariant, we will view ν as a relative Euler class, following Gompf [1998] and Cencelj, Repovˇs and Skopenkov [2007]",
+   "page": 11,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "261"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "A different view of the delta move",
+   "page": 13,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "263"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Borromean Rings We have, as before, that X′ is the great circle through 1 and i, with image the blue vertical axis, while Y ′ and Z′ lie in a small tubular neigborhood of the great circle C through j and k, with images shown in red and green",
+   "page": 14,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "264"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "The two clasps",
+   "page": 15,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "265"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Computing e(A) = 2",
+   "page": 16,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "266"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "Generators for H(3) Following Habegger and Lin, we derive the following presentation for H(3): H(3) = ⟨P, Q, R, B | [P, Q] = [Q, R] = [R, P] = B, [P, B] = [Q, B] = [R, B] = 1⟩ The string links P, Q, R and B are those shown in Figure 9",
+   "page": 18,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "268"
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "The string link B closes up to the Borromean rings bB The closing-up operation descends to link homotopy classes and provides the upper horizontal map in (∗). That the closure of the string link P pQqRrBµ has pairwise linking numbers p, q and r is apparent for the generators P, Q and R depicted in F",
+   "page": 19,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "269"
+  },
+  {
+   "kind": "figure",
+   "number": "11",
+   "title": "Closing up the generators of H2(3)",
+   "page": 22,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "272"
+  },
+  {
+   "kind": "figure",
+   "number": "12",
+   "title": "Fundamental solution of the scalar Laplacian on S1 × S1",
+   "page": 26,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "276"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "251",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "252",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "253",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "254",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "255",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "256",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "257",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "258",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "259",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "260",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "261",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "262",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "263",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "264",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "265",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "266",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "267",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "268",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "269",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "270",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "271",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "272",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "273",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "274",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "275",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "276",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "277",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "278",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "279",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "280",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "281",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "282",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "283",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 2581,
+   "n_words": 442,
+   "label_start": "251",
+   "label_end": "253"
+  },
   {
    "id": "sec-000-statement-of-results",
    "number": null,
@@ -105,8 +643,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 5,
-   "n_chars": 4014,
-   "n_words": 722
+   "n_chars": 4082,
+   "n_words": 772,
+   "label_start": "253",
+   "label_end": "255"
   },
   {
    "id": "sec-001-background-and-motivation",
@@ -115,8 +655,10 @@
    "level": 1,
    "page_start": 5,
    "page_end": 8,
-   "n_chars": 3686,
-   "n_words": 619
+   "n_chars": 3742,
+   "n_words": 652,
+   "label_start": "255",
+   "label_end": "258"
   },
   {
    "id": "sec-002-explicit-formula-for-the-characteristic-map-gl",
@@ -125,8 +667,10 @@
    "level": 1,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 1459,
-   "n_words": 298
+   "n_chars": 1529,
+   "n_words": 328,
+   "label_start": "258",
+   "label_end": "259"
   },
   {
    "id": "sec-003-an-asymmetric-version-of-the-characteristic-map",
@@ -135,8 +679,10 @@
    "level": 2,
    "page_start": 9,
    "page_end": 10,
-   "n_chars": 1958,
-   "n_words": 363
+   "n_chars": 2032,
+   "n_words": 396,
+   "label_start": "259",
+   "label_end": "260"
   },
   {
    "id": "sec-004-sketch-of-the-topological-proof-of-theorem-a",
@@ -145,8 +691,10 @@
    "level": 1,
    "page_start": 10,
    "page_end": 17,
-   "n_chars": 10220,
-   "n_words": 1901
+   "n_chars": 10311,
+   "n_words": 1955,
+   "label_start": "260",
+   "label_end": "267"
   },
   {
    "id": "sec-005-sketch-of-the-algebraic-proof-of-theorem-a",
@@ -155,8 +703,10 @@
    "level": 1,
    "page_start": 17,
    "page_end": 23,
-   "n_chars": 9043,
-   "n_words": 1632
+   "n_chars": 9229,
+   "n_words": 1783,
+   "label_start": "267",
+   "label_end": "273"
   },
   {
    "id": "sec-006-sketch-of-the-proof-of-theorem-b",
@@ -165,8 +715,10 @@
    "level": 1,
    "page_start": 23,
    "page_end": 25,
-   "n_chars": 3665,
-   "n_words": 674
+   "n_chars": 3719,
+   "n_words": 702,
+   "label_start": "273",
+   "label_end": "275"
   },
   {
    "id": "sec-007-the-fundamental-solution-of-the-laplacian-on-the",
@@ -175,8 +727,10 @@
    "level": 2,
    "page_start": 25,
    "page_end": 26,
-   "n_chars": 1867,
-   "n_words": 320
+   "n_chars": 1940,
+   "n_words": 352,
+   "label_start": "275",
+   "label_end": "276"
   },
   {
    "id": "sec-008-completing-the-proof-of-theorem-b",
@@ -185,16 +739,26 @@
    "level": 2,
    "page_start": 26,
    "page_end": 33,
-   "n_chars": 10478,
-   "n_words": 1681
+   "n_chars": 10491,
+   "n_words": 1666,
+   "label_start": "276",
+   "label_end": "283"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 9,
-  "sections": 9,
-  "chars_total": 46390
+  "toc_inferred_entries": 0,
+  "figure_entries": 12,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 10,
+  "chars_total": 49656,
+  "furniture_lines_stripped": 0
  },
  "duplicate_copies": [
   "arxiv-0901.1612v1"

@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2404.19155v2
-doc_title: "Octahedral coordinates from the Wirtinger presentation Calvin McPhail-Snyder Duke University calvin@sl2.site"
+doc_title: "Octahedral coordinates from the Wirtinger presentation"
 section_id: sec-002-the-holonomy-of-an-octahedral-coloring
 section_title: "The holonomy of an octahedral coloring"
 section_number: null
 pages: 7-13
 source_pdf: 2404.19155v2.pdf
 source_sha256: 45b9ed90006536b3
-doc_brief: "Octahedral coordinates from the Wirtinger presentation Calvin McPhail-Snyder Duke University calvin@sl2.site — Letρ be a representation of a knot group (or more generally, the funda- mental group of"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.913
-latex_coverage_ratio: 0.984
+latex_prose_ratio: 0.973
+latex_coverage_ratio: 0.839
+doc_brief: "Octahedral coordinates from the Wirtinger presentation — Let ρ be a representation of a knot group (or more generally, the funda- mental group of a tangle complement) into SL2(C) expressed in terms"
 ---
 []{#sec:holonomy label="sec:holonomy"}
 

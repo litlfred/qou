@@ -2,97 +2,172 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-alg-geom-9705010v1",
  "source_sha256": "30ab8d0cc2d8f1ae",
- "brief": "Seiberg-Witten Integrable Systems — 17 sections: RON Y. DONAGI; Introduction; References",
- "extended": "**Seiberg-Witten Integrable Systems**\n\n*Volume 00, 1997*\n\n41 pp, 17 sections.\n\n**Outline.** 2 RON Y. DONAGI; Introduction; References; 4 RON Y. DONAGI; 6 RON Y. DONAGI; 8 RON Y. DONAGI; 10 RON Y. DONAGI; 12 RON Y. DONAGI; 14 RON Y. DONAGI; 16 RON Y. DONAGI; 18 RON Y. DONAGI; 20 RON Y. DONAGI; 22 RON Y. DONAGI; 24 RON Y. DONAGI; 26 RON Y. DONAGI; 28 RON Y. DONAGI; 30 RON Y. DONAGI",
+ "brief": "Seiberg-Witten Integrable Systems — 32 sections: Front matter; Contents; Introduction",
+ "extended": "**Seiberg-Witten Integrable Systems**\n\n*Ron Y. Donagi*\n\n41 pp, 32 sections.\n\n**Outline.** Front matter; Contents; Introduction; §1. Some Physics Background Electromagnetism; Yang-Mills theory; Quantization; Supersymmetry; N=2 Super Yang-Mills; Duality; The Seiberg-Witten solution; Adding matter; §2. Why integrable systems Algebraically integ; Seiberg-Witten Diﬀerentials; Linearity: complexiﬁed Duistermaat-Heckman; §3. Which integrable system; Meromorphic Higgs bundles; The spectral curves; Elliptic solitons",
  "tokens": {
-  "brief": 22,
-  "extended": 95
+  "brief": 21,
+  "extended": 128
  },
  "sections": [
   {
-   "id": "sec-000-2-ron-y-donagi",
-   "title": "RON Y. DONAGI",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-1"
+  },
+  {
+   "id": "sec-000-contents",
+   "title": "Contents",
+   "pages": "1-2"
   },
   {
    "id": "sec-001-introduction",
    "title": "Introduction",
-   "pages": "1-2"
+   "pages": "2-3"
   },
   {
-   "id": "sec-002-references",
-   "title": "References",
-   "pages": "2-4"
+   "id": "sec-002-1-some-physics-background-electromagnetism",
+   "title": "§1. Some Physics Background Electromagnetism",
+   "pages": "3-4"
   },
   {
-   "id": "sec-003-4-ron-y-donagi",
-   "title": "RON Y. DONAGI",
-   "pages": "4-6"
+   "id": "sec-003-yang-mills-theory",
+   "title": "Yang-Mills theory",
+   "pages": "4-5"
   },
   {
-   "id": "sec-004-6-ron-y-donagi",
-   "title": "RON Y. DONAGI",
-   "pages": "6-8"
+   "id": "sec-004-quantization",
+   "title": "Quantization",
+   "pages": "5-8"
   },
   {
-   "id": "sec-005-8-ron-y-donagi",
-   "title": "RON Y. DONAGI",
+   "id": "sec-005-supersymmetry",
+   "title": "Supersymmetry",
    "pages": "8-10"
   },
   {
-   "id": "sec-006-10-ron-y-donagi",
-   "title": "RON Y. DONAGI",
+   "id": "sec-006-n2-super-yang-mills",
+   "title": "N=2 Super Yang-Mills",
    "pages": "10-12"
   },
   {
-   "id": "sec-007-12-ron-y-donagi",
-   "title": "RON Y. DONAGI",
-   "pages": "12-14"
+   "id": "sec-007-duality",
+   "title": "Duality",
+   "pages": "12-13"
   },
   {
-   "id": "sec-008-14-ron-y-donagi",
-   "title": "RON Y. DONAGI",
+   "id": "sec-008-the-seiberg-witten-solution",
+   "title": "The Seiberg-Witten solution",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-009-adding-matter",
+   "title": "Adding matter",
    "pages": "14-16"
   },
   {
-   "id": "sec-009-16-ron-y-donagi",
-   "title": "RON Y. DONAGI",
+   "id": "sec-010-2-why-integrable-systems-algebraically-integrabl",
+   "title": "§2. Why integrable systems Algebraically integrable systems",
    "pages": "16-18"
   },
   {
-   "id": "sec-010-18-ron-y-donagi",
-   "title": "RON Y. DONAGI",
-   "pages": "18-20"
+   "id": "sec-011-seiberg-witten-diﬀerentials",
+   "title": "Seiberg-Witten Diﬀerentials",
+   "pages": "18-19"
   },
   {
-   "id": "sec-011-20-ron-y-donagi",
-   "title": "RON Y. DONAGI",
-   "pages": "20-22"
+   "id": "sec-012-linearity-complexiﬁed-duistermaat-heckman",
+   "title": "Linearity: complexiﬁed Duistermaat-Heckman",
+   "pages": "19-21"
   },
   {
-   "id": "sec-012-22-ron-y-donagi",
-   "title": "RON Y. DONAGI",
+   "id": "sec-013-3-which-integrable-system",
+   "title": "§3. Which integrable system",
+   "pages": "21-22"
+  },
+  {
+   "id": "sec-014-meromorphic-higgs-bundles",
+   "title": "Meromorphic Higgs bundles",
    "pages": "22-24"
   },
   {
-   "id": "sec-013-24-ron-y-donagi",
-   "title": "RON Y. DONAGI",
+   "id": "sec-015-the-spectral-curves",
+   "title": "The spectral curves",
    "pages": "24-26"
   },
   {
-   "id": "sec-014-26-ron-y-donagi",
-   "title": "RON Y. DONAGI",
-   "pages": "26-28"
+   "id": "sec-016-elliptic-solitons",
+   "title": "Elliptic solitons",
+   "pages": "26-27"
   },
   {
-   "id": "sec-015-28-ron-y-donagi",
-   "title": "RON Y. DONAGI",
-   "pages": "28-30"
+   "id": "sec-017-tests",
+   "title": "Tests",
+   "pages": "27-27"
   },
   {
-   "id": "sec-016-30-ron-y-donagi",
-   "title": "RON Y. DONAGI",
-   "pages": "30-41"
+   "id": "sec-018-consistency-with-seiberg-witten",
+   "title": "Consistency with Seiberg-Witten",
+   "pages": "27-27"
+  },
+  {
+   "id": "sec-019-mass-to-zero-the-n4-limit",
+   "title": "Mass to zero: the N=4 limit",
+   "pages": "27-29"
+  },
+  {
+   "id": "sec-020-higgs-to-symmetry-breaking",
+   "title": "Higgs to ∞: symmetry breaking",
+   "pages": "29-30"
+  },
+  {
+   "id": "sec-021-singularities",
+   "title": "Singularities",
+   "pages": "30-30"
+  },
+  {
+   "id": "sec-022-4-other-integrable-systems",
+   "title": "§4. Other integrable systems",
+   "pages": "30-31"
+  },
+  {
+   "id": "sec-023-pure-n2-sym",
+   "title": "Pure N=2 SYM",
+   "pages": "31-31"
+  },
+  {
+   "id": "sec-024-the-toda-system",
+   "title": "The Toda system",
+   "pages": "31-32"
+  },
+  {
+   "id": "sec-025-periodic-toda",
+   "title": "Periodic Toda",
+   "pages": "32-34"
+  },
+  {
+   "id": "sec-026-the-spectral-curves",
+   "title": "The spectral curves",
+   "pages": "34-37"
+  },
+  {
+   "id": "sec-027-fundamental-matter",
+   "title": "Fundamental matter",
+   "pages": "37-37"
+  },
+  {
+   "id": "sec-028-adjoint-matter",
+   "title": "Adjoint matter",
+   "pages": "37-38"
+  },
+  {
+   "id": "sec-029-stringy-integrable-systems",
+   "title": "Stringy integrable systems?",
+   "pages": "38-39"
+  },
+  {
+   "id": "sec-030-references",
+   "title": "References",
+   "pages": "39-41"
   }
  ],
  "provenance": {

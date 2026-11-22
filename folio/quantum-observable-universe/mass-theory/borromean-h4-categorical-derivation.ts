@@ -33,4 +33,7 @@ export default proposition({
     "h-expansion",
     "wenzl-weights",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): the companion Lean states the rational factorisation $(-3)\\cdot(1/4) = -3/4$ over $\\mathbb{R}$" },
+  ],
 });

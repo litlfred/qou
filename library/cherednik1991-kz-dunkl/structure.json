@@ -1,37 +1,24 @@
 {
- "_schema": "pdf-structure/v1",
- "doc_id": "cherednik1991-kz-dunkl",
  "source": {
   "file": "cherednik1991-kz-dunkl.pdf",
   "sha256": "cae9cf747bb98a46442420931d357237c5adfd86ac6f4073e2a417bf5d0f4e30",
   "bytes": 2093662,
+  "mtime": "2026-11-15T11:07:54Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
   "pages": 21,
   "text_source": "ocr",
-  "extractor": "pymupdf",
-  "mtime": "2026-10-10T19:16:49Z",
-  "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "runContext": {
+   "sha256": "0fc50fc958255fdc605092cb1d44db6b389ef79ae8223bbd06c40c940dac36bc"
+  }
  },
  "metadata": {
-  "arxiv": null,
-  "doi": null,
   "title": "A unification of Knizhnik-Zamolodchikov and Dunkl operators via affine Hecke algebras",
-  "authors_raw": "Ivan Cherednik",
-  "title_lines": [
-   "Invent. math. 106, 411-431 (1991)",
-   "Inventiones",
-   "mathematicae",
-   "Springer-Verlag 1991",
-   "A unification of Knizhnik-Zamolodchikov",
-   "and Dunkl operators via affine Hecke algebras"
-  ],
-  "abstract": null,
   "docinfo": {},
-  "title_raw": "Invent. math. 106, 411-431 (1991) Inventiones mathematicae Springer-Verlag 1991 A unification of Knizhnik-Zamolodchikov and Dunkl operators via affine Hecke algebras",
-  "title_source": "text",
+  "title_raw": null,
+  "title_source": "filename",
   "title_verified": false,
   "title_evidence": {
-   "text": "Invent. math. 106, 411-431 (1991) Inventiones mathematicae Springer-Verlag 1991 A unification of Knizhnik-Zamolodchikov and Dunkl operators via affine Hecke algebras",
    "corroborated_by": [],
    "browser_print": false
   },
@@ -39,115 +26,224 @@
   "rights_note": "Cut from the Göttingen State and University Library (SUB/GDZ) digitisation of Inventiones Mathematicae vol. 106 (1991), WerkId PPN356556735_0106. The GDZ Terms and Conditions on page 1 of that volume file state that access is provided 'strictly for noncommercial educational, research and private purposes', that 'each copy of any part of this document must contain these Terms and Conditions', and that 'Reproductions of material on the web site may not be made for or donated to other repositories, nor may be further reproduced without written permission from the Goettingen State- and University Library.' The volume file itself is NOT held in this repository; this per-article cut does not carry the GDZ cover page. Owner decision whether to keep this copy.",
   "journal_ref": "Invent. Math. 106 (1991) 411-431",
   "volume_pdf_pages": "418-438",
-  "journal_page_offset": 410
+  "journal_page_offset": 410,
+  "title_prev": "A unification of Knizhnik-Zamolodchikov and Dunkl operators via affine Hecke algebras"
  },
- "toc": [
-  {
-   "level": 1,
-   "title": "Introduction",
-   "page": 1,
-   "source": "inferred",
-   "number": "0"
-  },
-  {
-   "level": 1,
-   "title": "Affine Hecke algebras and the intertwiners",
-   "page": 3,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "The Lusztig-Lascoux-Schützenberger operators",
-   "page": 7,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "The unification, some examples",
-   "page": 14,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 20,
-   "source": "inferred",
-   "number": null
-  }
- ],
- "toc_source": "inferred",
+ "_schema": "pdf-structure/v1",
+ "doc_id": "cherednik1991-kz-dunkl",
+ "toc_source": "none",
+ "granularity": "page",
  "sections": [
   {
-   "id": "sec-front-matter",
+   "id": "page-001",
    "number": null,
-   "title": "Front matter",
+   "title": "Page 1",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 905,
-   "n_words": 116
+   "n_chars": 2039,
+   "n_words": 292
   },
   {
-   "id": "sec-000-0-introduction",
-   "number": "0",
-   "title": "Introduction",
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
    "level": 1,
-   "page_start": 1,
-   "page_end": 3,
-   "n_chars": 7437,
-   "n_words": 1181
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 3612,
+   "n_words": 600
   },
   {
-   "id": "sec-001-1-affine-hecke-algebras-and-the-intertwiners",
-   "number": "1",
-   "title": "Affine Hecke algebras and the intertwiners",
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
    "level": 1,
    "page_start": 3,
-   "page_end": 7,
-   "n_chars": 9110,
-   "n_words": 1836
+   "page_end": 3,
+   "n_chars": 3439,
+   "n_words": 531
   },
   {
-   "id": "sec-002-2-the-lusztig-lascoux-sch-tzenberger-operato",
-   "number": "2",
-   "title": "The Lusztig-Lascoux-Schützenberger operators",
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1982,
+   "n_words": 404
+  },
+  {
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 2389,
+   "n_words": 448
+  },
+  {
+   "id": "page-006",
+   "number": null,
+   "title": "Page 6",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 2412,
+   "n_words": 485
+  },
+  {
+   "id": "page-007",
+   "number": null,
+   "title": "Page 7",
    "level": 1,
    "page_start": 7,
-   "page_end": 14,
-   "n_chars": 17879,
-   "n_words": 3590
+   "page_end": 7,
+   "n_chars": 2383,
+   "n_words": 465
   },
   {
-   "id": "sec-003-3-the-unification-some-examples",
-   "number": "3",
-   "title": "The unification, some examples",
+   "id": "page-008",
+   "number": null,
+   "title": "Page 8",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 1775,
+   "n_words": 351
+  },
+  {
+   "id": "page-009",
+   "number": null,
+   "title": "Page 9",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 2116,
+   "n_words": 394
+  },
+  {
+   "id": "page-010",
+   "number": null,
+   "title": "Page 10",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 2605,
+   "n_words": 521
+  },
+  {
+   "id": "page-011",
+   "number": null,
+   "title": "Page 11",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 2735,
+   "n_words": 534
+  },
+  {
+   "id": "page-012",
+   "number": null,
+   "title": "Page 12",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 3153,
+   "n_words": 623
+  },
+  {
+   "id": "page-013",
+   "number": null,
+   "title": "Page 13",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 2965,
+   "n_words": 575
+  },
+  {
+   "id": "page-014",
+   "number": null,
+   "title": "Page 14",
    "level": 1,
    "page_start": 14,
-   "page_end": 20,
-   "n_chars": 12188,
-   "n_words": 2447
+   "page_end": 14,
+   "n_chars": 2594,
+   "n_words": 479
   },
   {
-   "id": "sec-004-references",
+   "id": "page-015",
    "number": null,
-   "title": "References",
+   "title": "Page 15",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 2301,
+   "n_words": 461
+  },
+  {
+   "id": "page-016",
+   "number": null,
+   "title": "Page 16",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 1844,
+   "n_words": 342
+  },
+  {
+   "id": "page-017",
+   "number": null,
+   "title": "Page 17",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 2050,
+   "n_words": 414
+  },
+  {
+   "id": "page-018",
+   "number": null,
+   "title": "Page 18",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 2371,
+   "n_words": 484
+  },
+  {
+   "id": "page-019",
+   "number": null,
+   "title": "Page 19",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 2316,
+   "n_words": 426
+  },
+  {
+   "id": "page-020",
+   "number": null,
+   "title": "Page 20",
    "level": 1,
    "page_start": 20,
+   "page_end": 20,
+   "n_chars": 2480,
+   "n_words": 409
+  },
+  {
+   "id": "page-021",
+   "number": null,
+   "title": "Page 21",
+   "level": 1,
+   "page_start": 21,
    "page_end": 21,
-   "n_chars": 3001,
-   "n_words": 436
+   "n_chars": 1978,
+   "n_words": 284
   }
  ],
- "diagnostics": {
-  "pages_without_text": 0,
-  "likely_scanned": true,
-  "toc_entries": 5,
-  "toc_inferred_entries": 5,
-  "sections": 6,
-  "chars_total": 50520
- },
- "structure_note": "Sectioning: split by hand at the OCR'd numbered section headings (journal pages from the printed contents / running heads)."
+ "structure_note": "Ingested at PAGE granularity by scripts/pdf-pages.py. This PDF carries no embedded outline and its inferred chapter structure was measurably wrong (bean 6xaz), so no chapter tree is claimed. A page is a determined division; an inferred chapter was not."
 }

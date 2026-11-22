@@ -22,8 +22,10 @@ Matured from a degenerate `residual : ℝ` / `residual = 0` placeholder to
 the faithful statement above (bean `cj118`). **This is an aspirational
 famous-open encoding**: the class *states* `q`-BSD honestly; it is **not**
 proved (per AGENTS.md §3b — famous-open encodings are aspirational, never
-to be discharged with a fabricated instance). One consequence is derived
-sorry-free (`ord_zero_iff_rank_zero`).
+to be discharged with a fabricated instance). Consequences are derived
+unconditionally from the class below (`ord_zero_iff_rank_zero`,
+`leadingValue_of_ord_zero`, `leadingValue_pos_of_ord_zero`,
+`shaOrder_eq_div_of_ord_zero`).
 
 Per AGENTS.md §3b-cond we provide **no global instance**: an instance is
 exactly the open conjecture. Honest open state (§3b-tax): a
@@ -69,12 +71,39 @@ namespace QBirchSwinnertonDyer
 
 variable [B : QBirchSwinnertonDyer]
 
-/-- **Derived, sorry-free.** Analytic-rank–zero criterion: the
+/-- **Analytic-rank–zero criterion:** the
     `L`-function is non-vanishing at the central point (`ord = 0`) iff
     the categorical rank is zero — the analytic reading of Weak `q`-BSD. -/
 theorem ord_zero_iff_rank_zero :
     B.ordVanishing = 0 ↔ B.qRank = 0 := by
   have h := B.weak_bsd; omega
+
+/-- **Analytic rank zero triggers the Full `q`-BSD rank-0 collapse.**
+    Combining Weak `q`-BSD (`ord = rank`) with `full_bsd_rank0` evaluates
+    the central `L`-value in terms of the period, Tate–Shafarevich order,
+    and Tamagawa product whenever `ordVanishing = 0`. -/
+theorem leadingValue_of_ord_zero (h0 : B.ordVanishing = 0) :
+    B.leadingValue = B.omega * B.shaOrder * B.tamagawaProd :=
+  B.full_bsd_rank0 ((ord_zero_iff_rank_zero (B := B)).mp h0)
+
+/-- **Positivity of the central `L`-value in the rank-0 regime.**
+    When `ordVanishing = 0` and the period, Tate–Shafarevich order, and
+    Tamagawa product are strictly positive, the central `L`-value is
+    strictly positive. -/
+theorem leadingValue_pos_of_ord_zero (h0 : B.ordVanishing = 0)
+    (hω : 0 < B.omega) (hsha : 0 < B.shaOrder) (htam : 0 < B.tamagawaProd) :
+    0 < B.leadingValue := by
+  rw [leadingValue_of_ord_zero h0]
+  exact mul_pos (mul_pos hω hsha) htam
+
+/-- **Solving for the `q`-Tate–Shafarevich order in the rank-0 regime.**
+    When `ordVanishing = 0` and the period and Tamagawa product are non-zero,
+    `|Ш_q|` is uniquely determined by the central `L`-value ratio. -/
+theorem shaOrder_eq_div_of_ord_zero (h0 : B.ordVanishing = 0)
+    (hω : B.omega ≠ 0) (htam : B.tamagawaProd ≠ 0) :
+    B.shaOrder = B.leadingValue / (B.omega * B.tamagawaProd) := by
+  rw [leadingValue_of_ord_zero h0]
+  field_simp
 
 end QBirchSwinnertonDyer
 
@@ -84,6 +113,6 @@ end QBirchSwinnertonDyer
 -- with the equalities between them, which is exactly the open conjecture.
 -- This is aspirational famous-open (q-BSD): stated honestly, NOT proved.
 -- Honest open state (§3b-tax): content-bearing class, no instance.
--- Ref: [manuscript] quantum-observable-universe/appendix-surreals/q-birch-swinnerton-dyer.ts
+-- Ref: [leitner2026] quantum-observable-universe/appendix-surreals/q-birch-swinnerton-dyer.ts
 
 end QOU.AppendixSurreals

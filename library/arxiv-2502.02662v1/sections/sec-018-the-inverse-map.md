@@ -7,10 +7,11 @@ section_number: null
 pages: 23-24
 source_pdf: 2502.02662v1.pdf
 source_sha256: 3f87983ce379a8d6
-doc_brief: "The String Dual to Two-dimensional Yang-Mills Theory Revisited — We propose that chiral two-dimensional Yang-Mills theory on a Riemann surface X is dual to a deformed stationary subsector of the"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.964
-latex_coverage_ratio: 0.985
+latex_coverage_ratio: 1.0
+doc_brief: "The String Dual to Two-dimensional Yang-Mills Theory Revisited — We propose that chiral two-dimensional Yang-Mills theory on a Riemann surface X is dual to a deformed stationary subsector of the"
 ---
 The duality map [\[DualityMap\]](#DualityMap){reference-type="eqref" reference="DualityMap"} we have uncovered is a rather complicated one, and it would be interesting to identify new Yang-Mills variables in terms of which which this map simplifies. To that effect, we shall invert the duality map [\[DualityMap\]](#DualityMap){reference-type="eqref" reference="DualityMap"}. We consider the correlation functions of standard vertex operators on the string theory side and derive their expression in terms of Yang-Mills observables. We start by inverting the relation ([\[SchurToPower\]](#SchurToPower){reference-type="ref" reference="SchurToPower"}). This yields an expression for the symmetric group characters in terms of the unitary group characters: $$\chi_{\lambda}(\alpha)=\int dU s_{\lambda}(U) p_{\alpha}(U^{-1})\, .$$ The observables of the deformed Hurwitz theory at fixed degree thus read:
 

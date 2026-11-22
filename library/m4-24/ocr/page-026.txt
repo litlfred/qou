@@ -1,0 +1,45 @@
+398 T. Ohtsuki (Editor)
+
+2 Finite type invariants of knots
+
+Let R be a commutative ring with 1 such as Z or Q. We denote by K the set
+of isotopy classes of oriented knots. A singular knot is an immersion of S into
+53 whose singularities are transversal double points. We regard singular knots
+as in RK by removing each singularity linearly by
+
+xx xX
+
+Let Fy(RIK) denote the submodule of RK spanned by singular knots with d
+double points, regarding them as in RK. Then, we have a descending series of
+submodules,
+
+RK = Fo(RK) > Fi(RK) > Fo(RK) D---.
+
+An R-homomorphism v : RK — R (or, a homomorphism ZK — A for an
+abelian group A) is called a Vassiliev invariant (or a finite type invariant) of
+degree d if u|z,,,(RK) = 0. See [33] for many references of Vassiliev invariants.
+
+A trivalent vertex of a graph is called vertex-oriented if a cyclic order of the three
+edges around the trivalent vertex is fixed. A Jacobi diagram®
+1-manifold X is the manifold X together with a uni-trivalent graph such that
+univalent vertices of the graph are distinct points on X and each trivalent
+vertex is vertex-oriented. The degree of a Jacobi diagram is half the number of
+univalent and trivalent vertices of the uni-trivalent graph of the Jacobi diagram.
+We denote by A(X; R) the module over R spanned by Jacobi diagrams on X
+subject to the AS, IHX, and STU relations shown in Figure 6, and denote by
+A(X; R)® the submodule of A(X; R) spanned by Jacobi diagrams of degree
+d. There is a canonical surjective homomorphism
+
+A(S*; R) /FI > Fa(RR)/Fa,1 (RR), (8)
+
+where FI is the relation shown in Figure 6. This map is known to be an
+isomorphism when R = Q (due to Kontsevich). For a Vassiliev invariant v :
+RK = R of degree d, its weight system A(S!; R) /FI — R is defined by the
+map (8).
+
+on an oriented
+
+°A Jacobi diagram is also called a web diagram or a trivalent diagram in some literatures.
+In physics this is often called a Feynman diagram.
+
+Geometry & Topology Monographs, Volume 4 (2002)

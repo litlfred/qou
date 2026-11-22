@@ -1,6 +1,6 @@
 ---
 doc_id: fujii-2005-degeneration-of-hyperbolic-structures-figure-eigh
-doc_title: "Degeneration of hyperbolic structures on the ﬁgure-eight knot complement and points of ﬁnite order on an elliptic curve"
+doc_title: "Degeneration of hyperbolic structures on the figure-eight knot complement and points of finite order on an elliptic curve"
 section_id: sec-006-43-points-of-ﬁnite-order-on-e-and-euclidean-orbi
 section_title: "Points of ﬁnite order on E and Euclidean orbifolds"
 section_number: 4.3
@@ -8,7 +8,9 @@ pages: 8-9
 source_pdf: fujii-2005-degeneration-of-hyperbolic-structures-figure-eight.pdf
 source_sha256: bca3996c7a667b18
 toc_source: inferred
+doc_brief: "Degeneration of hyperbolic structures on the figure-eight knot complement and points of finite order on an elliptic curve — 12 sections: Front matter; Introduction; Deformation of hyperbolic structur"
 ---
+Points of ﬁnite order on E and Euclidean orbifolds
 The original point (z∞, w∞) (= (−ω2, −ω2)) on the deformation curve
 C corresponds to the point R := (ω2, −1) on E under the birational map
 given in (4).
@@ -36,4 +38,3 @@ Euclidean 3-orbifold (S3, τ(3)) that results from the degeneration of the hyper
 bolic structures (see Refs. [1] and [4] for details). As in the case of 7R, we can
 regard 3R = (ω, −ω) as corresponding to the Euclidean 3-orbifold (S3, τ(−3))
 given in Section 2.
-4.4.

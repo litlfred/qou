@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-1101.1563v1
-doc_title: "Gröbner-Shirshov bases for categories∗ L. A. Bokut†"
+doc_title: "Gröbner-Shirshov bases for categories"
 section_id: sec-001-2-a-short-survey-on-gröbner-shirshov-bases
 section_title: "A short survey on Gröbner-Shirshov bases"
 section_number: 2
@@ -10,7 +10,8 @@ source_sha256: 0c45b250fc4a2a49
 toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.965
-latex_coverage_ratio: 0.993
+latex_coverage_ratio: 0.988
+doc_brief: "Gröbner-Shirshov bases for categories — In this paper we establish Composition-Diamond lemma for small categories. We give Gr¨obner-Shirshov bases for simplicial category and cyclic category."
 ---
 What is now called Gröbner and Gröbner-Shirshov bases theory was initiated by A. I. Shirshov (1921-1981) [@Sh62a; @Sh62b], 1962 for non-associative and Lie algebras, by H. Hironaka [@Hi64; @{Hi64-}], 1964 for quotients of commutative infinite series algebras (both formal and convergent), and by B. Buchberger [@bu65; @bu70], 1965, 1970 for commutative algebras.
 

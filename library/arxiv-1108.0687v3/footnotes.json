@@ -1,0 +1,1009 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1108.0687v3",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p001-1",
+   "page": 1,
+   "mark": "1",
+   "text": "DepartmentofMathematics,UniversityofPennsylvania,209South33rdStreet,Philadelphia,PA19104,USA, pemantle@math.upenn.edu",
+   "marks": [
+    {
+     "page": 1,
+     "context": "RobinPemantle"
+    }
+   ],
+   "block": "library/arxiv-1108.0687v3/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p001-2",
+   "page": 1,
+   "mark": "2",
+   "text": "ResearchsupportedinpartbyNSFgrant#DMS-0905937",
+   "marks": [
+    {
+     "page": 1,
+     "context": "RobinPemantle1,"
+    },
+    {
+     "page": 1,
+     "context": "−a"
+    }
+   ],
+   "block": "library/arxiv-1108.0687v3/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p001-3",
+   "page": 1,
+   "mark": "3",
+   "text": "MicrosoftResearch,1MicrosoftWay,Redmond,WA,98052,USA,peres@microsoft.com",
+   "marks": [
+    {
+     "page": 1,
+     "context": "RobinPemantle1,2andYuvalPeres"
+    }
+   ],
+   "block": "library/arxiv-1108.0687v3/blocks/prose-sec-front-matter"
+  }
+ ],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "−a"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "S"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "Sn:=P"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "k=1X"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "k=1Xkdenotethepartialsums,µ"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "k=1Xkdenotethepartialsums,µn:=ES"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "k=1Xkdenotethepartialsums,µn:=ESn=P"
+  },
+  {
+   "page": 2,
+   "mark": "p",
+   "context": "k=1"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "k=1p"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "k=1pkdenotethemeansandV"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "P"
+  },
+  {
+   "page": 2,
+   "mark": "p",
+   "context": "k=1"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "k=1p"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "k=1pk(1 −p"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "k=1pk(1 −pk)denotethevarianceofS"
+  },
+  {
+   "page": 2,
+   "mark": "a",
+   "context": "−2"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "−2a"
+  },
+  {
+   "page": 2,
+   "mark": "a",
+   "context": "−2"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "−2a"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "asthinasaGaussian,beingexp[−Θ(a log(a/µ))]ratherthanexp[−Θ(a"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "a"
+  },
+  {
+   "page": 2,
+   "mark": "a",
+   "context": "P(Sn≥a + µ) ≤e"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "P(f−Ef≥a) ≤e−2"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "P(f−Ef≥a) ≤e−2a"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "exp(−2a"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "exp(−2a2/n)replacedbyc0 exp(−c a"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "j=1X"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "P"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "j=n/2+1X"
+  },
+  {
+   "page": 4,
+   "mark": "e",
+   "context": "j=n/2+1Xjhas tail probabilities on the order of"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "j=n/2+1Xjhas tail probabilities on the order of e−a"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "functiondeﬁnedbyN(ω):=P"
+  },
+  {
+   "page": 5,
+   "mark": "j",
+   "context": "j=1ω"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "j=1ωj.AmeasureνonB"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "j=1ωj.AmeasureνonBnissaidtobe"
+  },
+  {
+   "page": 5,
+   "mark": "c",
+   "context": "functiongdependsonlyoncoordinates{ωj: j∈S"
+  },
+  {
+   "page": 5,
+   "mark": "j",
+   "context": "zω"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "ρ if there is a measure on B"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": " Xj= yj, j∈S)ontheremainingcoordinates,thatisaslawson{0, 1}S"
+  },
+  {
+   "page": 6,
+   "mark": "z",
+   "context": "j=1"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "j=1zX"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "F(z"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "F(z1, . . . , z"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "F(z1, . . . , zn):=EQ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "−a"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "\u0012−a"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "\u0012−a"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "a"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "a"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "ak-homogeneouspointprocessonR"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "law on (R"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "law on (Rd)"
+  },
+  {
+   "page": 7,
+   "mark": "d",
+   "context": "function on (R"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "function on (Rd)"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "spaceSandletP↑bethecorrespondingexchangeablemeasureonS"
+  },
+  {
+   "page": 8,
+   "mark": "x",
+   "context": "regularconditionaldistributionsQ"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "regularconditionaldistributionsQx1,...,xjforthelawofX"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "gularconditionaldistributionsQx1,...,xjforthelawofXj+1givenX"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "rconditionaldistributionsQx1,...,xjforthelawofXj+1givenX1= x"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "distributionsQx1,...,xjforthelawofXj+1givenX1= x1, . . . , X"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "ributionsQx1,...,xjforthelawofXj+1givenX1= x1, . . . , Xj= x"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "InthecasewhereSisﬁnite,letRdenotetherandomset{X"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "InthecasewhereSisﬁnite,letRdenotetherandomset{X1, . . . , X"
+  },
+  {
+   "page": 8,
+   "mark": "x",
+   "context": "eSisﬁnite,letRdenotetherandomset{X1, . . . , Xn}.ThenthelawQ"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "sequentialsampling.BecauseP↑isexchangeable,conditioningonX"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "uentialsampling.BecauseP↑isexchangeable,conditioningonXi1= x"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "ing.BecauseP↑isexchangeable,conditioningonXi1= x1, . . . , X"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "ecauseP↑isexchangeable,conditioningonXi1= x1, . . . , Xij= x"
+  },
+  {
+   "page": 8,
+   "mark": "x",
+   "context": "Next,givenak-homogeneouspointprocessZonaspaceS,weletZ"
+  },
+  {
+   "page": 8,
+   "mark": "x",
+   "context": "Z"
+  },
+  {
+   "page": 8,
+   "mark": "x",
+   "context": "Zx1,...,xj⊲Z"
+  },
+  {
+   "page": 9,
+   "mark": "d",
+   "context": "masskonR"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "−a"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "a"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "a"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "Toproveboundssuchas(1.1),oneobtainsanupperboundforEeλS"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "inequality,choosingλoptimally.UnderlyingtheboundsonEeλS"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "Eeλ∆≤eλ"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "Eeλ∆≤eλ"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "Eeλ∆≤eλ2(s−r)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "EeλX≤ecλ"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "P(X≥a) ≤e−a"
+  },
+  {
+   "page": 9,
+   "mark": "c",
+   "context": "P(X≥a) ≤e−a2/(2"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "a"
+  },
+  {
+   "page": 9,
+   "mark": "b",
+   "context": "EeλX≤e"
+  },
+  {
+   "page": 9,
+   "mark": "a",
+   "context": "P(X> a) ≤e"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "eλ"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "Eeλ(S"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "Eeλ(Sn−µ"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "e−a"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "e−a2/(2"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "Eeλ(S"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "Eeλ(Sn−µ"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "Eeλ(Sn−µn)≤eλ"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "Eeλ(S"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "Eeλ(Sn−µ"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "Eeλ(Sn−µn)≤e(eλ−λ−1) V"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "Eeλ(Sn−µn)≤e(eλ−λ−1) Vn≤e(eλ−λ−1) µ"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "whereV"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "whereVn:=P"
+  },
+  {
+   "page": 10,
+   "mark": "p",
+   "context": "k=1"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "k=1p"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "k=1pk(1 −p"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "k=1pk(1 −pk)isthevarianceofS"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "establishedbyexaminingthepowerseriesforeλS"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "toobtainboundsonEeλS"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "j∈Sω"
+  },
+  {
+   "page": 11,
+   "mark": "x",
+   "context": "Z"
+  },
+  {
+   "page": 11,
+   "mark": "x",
+   "context": "δ"
+  },
+  {
+   "page": 11,
+   "mark": "x",
+   "context": "BytheSCP,wehaveZ"
+  },
+  {
+   "page": 11,
+   "mark": "x",
+   "context": "BytheSCP,wehaveZx1,...,xj⊲Z"
+  },
+  {
+   "page": 11,
+   "mark": "x",
+   "context": "Z"
+  },
+  {
+   "page": 11,
+   "mark": "x",
+   "context": "δ"
+  },
+  {
+   "page": 11,
+   "mark": "x",
+   "context": "δxi,Z"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "−a"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "\u0012M"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "(a/2)"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "t"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "jY"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "jY"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "jY"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "jYj)astheﬁnaltermof"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "jY"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "jYj) | Fℓ) −EφandFℓ:=σ(Y"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "ﬁnaltermisalimitalmostsurelyandinL"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "jY"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "jYjgiventhevaluesofY"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "jY"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "jYjgiven the values of Y"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "ﬁrsttwopiecesisboundedabovebyexp[−a"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "byexp[−a"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "−(a/2)"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "a"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "a"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "theorem;weremark that thebetterupperboundof 2 exp[−a"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "k that thebetterupperboundof 2 exp[−a2/(4(a + 2µ))] + exp[−a"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "alreadyseen,leadingtoaboundofexp[−a"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "−a"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "Q"
+  },
+  {
+   "page": 15,
+   "mark": "x",
+   "context": "j=1λ"
+  },
+  {
+   "page": 15,
+   "mark": "j",
+   "context": "j=1λx"
+  },
+  {
+   "page": 15,
+   "mark": "y",
+   "context": "j=1λ"
+  },
+  {
+   "page": 15,
+   "mark": "j",
+   "context": "j=1λy"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "Q"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "P"
+  },
+  {
+   "page": 16,
+   "mark": "j",
+   "context": "j=1X"
+  },
+  {
+   "page": 16,
+   "mark": "j",
+   "context": "jX"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "P(f−Ef≥a) ≤e−a"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "P(f−Ef≥a) ≤e−a2/(8"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": ".6.Letn>0beevenandpopulatean × nsquareoftheintegerlatticeinZ"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "0andapproachesitslimitingvalueofn"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "0andapproachesitslimitingvalueofn2−O(1)ast→∞.Oncet=Θ(n"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "becomesΘ(n"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "P(f−Ef≥a) ≤e−a"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "P(f−Ef≥a) ≤e−a2/(4"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "P(f−Ef≥a) ≤e−a2/(4n"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "ichholdsforallt,becomesameaningfulGaussiantailbound(herek= n"
+  },
+  {
+   "page": 18,
+   "mark": "d",
+   "context": "mple point processes and often assume EN< ∞as well.If ρk: (R"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "le point processes and often assume EN< ∞as well.If ρk: (Rd)"
+  },
+  {
+   "page": 18,
+   "mark": "d",
+   "context": "anykandanyfamilyD1, . . . , DkofdisjointBorelsubsetsofR"
+  },
+  {
+   "page": 18,
+   "mark": "j",
+   "context": "jD"
+  },
+  {
+   "page": 18,
+   "mark": "d",
+   "context": "R"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "Rd ρ"
+  },
+  {
+   "page": 18,
+   "mark": "d",
+   "context": "rtheassumption EN< ∞,weseethat ρ1(x) dxisa ﬁnitemeasure on R"
+  },
+  {
+   "page": 18,
+   "mark": "d",
+   "context": "hasjointintensities{ρk}andthereisameasurablekernelK: (R"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "hasjointintensities{ρk}andthereisameasurablekernelK: (Rd)"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "ρ"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "ρk(x"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "ρk(x1, . . . , x"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "ρk(x1, . . . , xk) = det (K(x"
+  },
+  {
+   "page": 18,
+   "mark": "j",
+   "context": "ρk(x1, . . . , xk) = det (K(xi, x"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "ﬁrsttwopiecesisboundedabovebyexp[−a"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "Yi:= 1i∈I.The last piece is bounded above by exp[−a"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "−(a/2)"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "a"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "a"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "−|z"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "−|z1|2 + |z"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "z"
+  },
+  {
+   "page": 20,
+   "mark": "e",
+   "context": "π"
+  },
+  {
+   "page": 20,
+   "mark": "z",
+   "context": "π e"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "π ez"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "a"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "Xnz"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "andhasintensitymeasureπ−1/(1 −|z|2)"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "withconstantcr.ThemeannumberofpointsinZρisρ"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "withconstantcr.ThemeannumberofpointsinZρisρ2/(1 −ρ"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "fromaboveby1/(1 −ρ"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "a"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "16cra + 32c"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "16cra + 32c2r(1 −ρ"
+  }
+ ]
+}

@@ -69,7 +69,7 @@ class VolumePerturbationContext where
 
 /-- **Volume perturbation formula** ([`prop:volume-perturbation-formula`]).
     Proved from the upstream class field constraint. -/
--- Ref: [manuscript] quantum-observable-universe/mass-theory/volume-perturbation-formula.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/volume-perturbation-formula.md
 theorem volume_perturbation [ctx : VolumePerturbationContext] :
     ∀ k : ℕ, 4 ≤ k →
       ctx.δΦ k = ctx.z ^ 2 * ctx.Vol_41 * qIntSym ctx.q ((k : ℤ) - 3) :=

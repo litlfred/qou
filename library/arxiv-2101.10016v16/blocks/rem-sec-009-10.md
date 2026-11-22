@@ -1,0 +1,1 @@
+It follows from (10.11) and (10.15) that if v makes A balanced then ε(v) = 1. Furthermore when v is a ribbon element, applying m ◦ S ⊗ 1 to both sides of (10.11) and taking into account (10.13) also gives v 2 = uS(u), with u Drinfeld element, as in Def. 10.6.

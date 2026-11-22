@@ -3,12 +3,17 @@
  "doc_id": "arxiv-math-0611181v2",
  "source_sha256": "6931e3ebca584de9",
  "brief": "Proof of the volume conjecture for Whitehead chains — We prove the volume conjecture for an inﬁnite family of links called White- head chains that generalizes both the Whitehead link and the",
- "extended": "**Proof of the volume conjecture for Whitehead chains**\n\n*November 29, 2021*\n\n13 pp, 3 sections.\n\n**Abstract.** We prove the volume conjecture for an inﬁnite family of links called White- head chains that generalizes both the Whitehead link and the Borromean rings.\n\n**Outline.** Introduction; Proof of the main theorem; Proof of the lemmas\n\n**Extracted claims (proposals, not verified).**\n- Lemma 1: Let a,b,c,d be integers, with b ≥ 2 and c,d ≥ 0. We have the\n- Lemma 2: Using the above deﬁnitions of n′,k ′ and δ we have:\n- Lemma 4: There is a nonzero constant C ∈ C such that:\n- Lemma 5: Forb ≥ 2 and N odd we have: JN,a,b,c,d ∼\n- Lemma 2: part a) and b) are direct consequences of these facts on ce we note that",
+ "extended": "**Proof of the volume conjecture for Whitehead chains**\n\n*Roland van der Veen*\n\n13 pp, 4 sections.\n\n**Abstract.** We prove the volume conjecture for an inﬁnite family of links called White- head chains that generalizes both the Whitehead link and the Borromean rings.\n\n**Outline.** Front matter; Introduction; Proof of the main theorem; Proof of the lemmas",
  "tokens": {
   "brief": 47,
-  "extended": 179
+  "extended": 89
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-introduction",
    "title": "Introduction",
@@ -29,8 +34,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

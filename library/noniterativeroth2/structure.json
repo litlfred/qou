@@ -7,153 +7,165 @@
   "bytes": 87825,
   "pages": 5,
   "text_source": "embedded",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:55Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "A PROOF OF ROTH\u2019S THEOREM ON ARITHMETIC PROGRESSIONS",
+  "title": "A PROOF OF ROTH’S THEOREM ON ARITHMETIC PROGRESSIONS",
   "authors_raw": "ERNIE CROOT AND OLOF SISASK",
   "title_lines": [
-   "A PROOF OF ROTH\u2019S THEOREM ON ARITHMETIC",
+   "A PROOF OF ROTH’S THEOREM ON ARITHMETIC",
    "PROGRESSIONS"
   ],
-  "abstract": "We present a proof of Roth\u2019s theorem that follows a slightly di erent structure to the usual proofs, in that there is not much iteration. Although our proof works using a type of density increment argument (which is typical of most proofs of Roth\u2019s theorem), we do not pass to a progression related to the large Fourier coe\u000ecients of our set (as most other proofs of Roth do). Furthermore, in our proof, the density increment is achieved through an application of a quantitative version of Varnavides\u2019s theorem, which is perhaps unexpected.",
+  "abstract": "We present a proof of Roth’s theorem that follows a slightly diﬀerent structure to the usual proofs, in that there is not much iteration. Although our proof works using a type of density increment argument (which is typical of most proofs of Roth’s theorem), we do not pass to a progression related to the large Fourier coeﬃcients of our set (as most other proofs of Roth do). Furthermore, in our proof, the density increment is achieved through an application of a quantitative version of Varnavides’s theorem, which is perhaps unexpected.",
   "docinfo": {
    "Producer": "GNU Ghostscript 7.07"
+  },
+  "title_raw": "A PROOF OF ROTH’S THEOREM ON ARITHMETIC PROGRESSIONS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "A PROOF OF ROTH’S THEOREM ON ARITHMETIC PROGRESSIONS 1. Introduction Given an integer N ⩾ 1, let r 3 ( N ) denote the size of any largest subset S of [ N ] := { 1 , ..., N } , for which there are no solutions to in other words, S has no non-trivial three term arithmetic progressions. In the present",
+   "text": "A PROOF OF ROTH’S THEOREM ON ARITHMETIC PROGRESSIONS",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
- "toc": [
+ "toc": [],
+ "toc_source": "undetermined",
+ "toc_undetermined_reason": "5 inferred entries, 60% of them starting on page(s) 1, 2 of 5 — a list found ON a page, not the document's structure",
+ "granularity": "page",
+ "structure_note": "No outline, and no inferred contents could be trusted (5 inferred entries, 60% of them starting on page(s) 1, 2 of 5 — a list found ON a page, not the document's structure): one section per page.",
+ "figures": [],
+ "pages": [
   {
-   "level": 1,
-   "title": "Introduction",
-   "page": 1,
-   "source": "inferred",
-   "number": "1"
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "ERNIE CROOT AND OLOF SISASK",
-   "page": 2,
-   "source": "inferred",
-   "number": "2"
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "Notation",
-   "page": 2,
-   "source": "inferred",
-   "number": "2"
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "Proof of Theorem 1.1",
-   "page": 2,
-   "source": "inferred",
-   "number": "3"
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   },
   {
-   "level": 1,
-   "title": "ERNIE CROOT AND OLOF SISASK",
-   "page": 4,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "Acknowledgements",
-   "page": 4,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 5,
-   "source": "inferred",
-   "number": null
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
   }
  ],
- "toc_source": "inferred",
  "sections": [
   {
-   "id": "sec-000-2-ernie-croot-and-olof-sisask",
-   "number": "2",
-   "title": "ERNIE CROOT AND OLOF SISASK",
+   "id": "page-001",
+   "number": null,
+   "title": "Page 1",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 550,
-   "n_words": 92
+   "n_chars": 2335,
+   "n_words": 414,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
-   "id": "sec-001-1-introduction",
-   "number": "1",
-   "title": "Introduction",
-   "level": 1,
-   "page_start": 1,
-   "page_end": 2,
-   "n_chars": 2066,
-   "n_words": 371
-  },
-  {
-   "id": "sec-002-2-notation",
-   "number": "2",
-   "title": "Notation",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 2,
-   "n_chars": 789,
-   "n_words": 154
-  },
-  {
-   "id": "sec-003-3-proof-of-theorem-11",
-   "number": "3",
-   "title": "Proof of Theorem 1.1",
-   "level": 1,
-   "page_start": 2,
-   "page_end": 4,
-   "n_chars": 2204,
-   "n_words": 452
-  },
-  {
-   "id": "sec-004-4-ernie-croot-and-olof-sisask",
-   "number": "4",
-   "title": "ERNIE CROOT AND OLOF SISASK",
-   "level": 1,
-   "page_start": 4,
-   "page_end": 4,
-   "n_chars": 1004,
-   "n_words": 213
-  },
-  {
-   "id": "sec-005-4-acknowledgements",
-   "number": "4",
-   "title": "Acknowledgements",
-   "level": 1,
-   "page_start": 4,
-   "page_end": 5,
-   "n_chars": 295,
-   "n_words": 58
-  },
-  {
-   "id": "sec-006-references",
+   "id": "page-002",
    "number": null,
-   "title": "References",
+   "title": "Page 2",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 1586,
+   "n_words": 295,
+   "label_start": "2",
+   "label_end": "2"
+  },
+  {
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 1788,
+   "n_words": 353,
+   "label_start": "3",
+   "label_end": "3"
+  },
+  {
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1275,
+   "n_words": 253,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
    "level": 1,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 955,
-   "n_words": 137
+   "n_chars": 1021,
+   "n_words": 147,
+   "label_start": "5",
+   "label_end": "5"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 7,
-  "sections": 7,
-  "chars_total": 7863
+  "toc_entries": 0,
+  "toc_inferred_entries": 5,
+  "toc_inferred_mean_confidence": 0.0,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "regex",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 5,
+  "chars_total": 8005,
+  "furniture_lines_stripped": 1
  }
 }

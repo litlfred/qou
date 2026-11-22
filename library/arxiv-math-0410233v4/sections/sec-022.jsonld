@@ -9,13 +9,15 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Example: 2–bridge knots",
-  "pageStart": 41,
-  "pageEnd": 44,
+  "title": "Proof of Theorem ??",
+  "pageStart": 39,
+  "pageEnd": 41,
   "contains": [
-    "library/arxiv-math-0410233v4/blocks/prose-sec-022"
+    "library/arxiv-math-0410233v4/blocks/prose-sec-022",
+    "library/arxiv-math-0410233v4/blocks/thm-sec-022-01",
+    "library/arxiv-math-0410233v4/blocks/cor-sec-022-02"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0410233v4",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0410233v4",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0410233v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0410233v4/manifest.jsonld",
   "provenance": "ingested"
 }

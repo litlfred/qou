@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-shell-closure-stability-interprets",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:shell-closure-stability-interprets",
+  "kind": "remark",
+  "title": "Physical interpretation of shell-closure stability: periodicity, inertness, ionisation peaks",
+  "interprets": "papers/quantum-observable-universe/blocks/prop-shell-closure-stability",
+  "tags": [
+    "noble-gas",
+    "periodic-table",
+    "ionisation-energy",
+    "chemical-inertness",
+    "valence",
+    "magic-numbers"
+  ],
+  "text": "shell-closure-stability-interprets.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,24 @@
+Chapter 2
+
+Higher Categories
+
+In this chapter, we give a brief review of categories with extra structures such as tensor
+product, dual, braiding, etc. The ultimate goal of this chapter is to introduce G-crossed
+braided spherical fusion categories (G-BSFC) in Section [2.2| which are the input to the
+(3+1) topological quantum field theory to be defined in Section|3.1] All of these categories
+are special examples of higher categories, e.g., 2-, 3-, 4-categories. But we will not go
+into details on general higher categories, except in Section 2.3] the concept of monoidal 2-
+categories is sketched, and we show that with any G-BSFC one can construct a monoidal
+2-category with duals and certain addition structures, but these structures do not make
+it into a spherical 2-category under the definition in [32]. We assume the readers are
+familiar with the concepts of abelian categories, functors and natural transformations.
+There are a number of excellent references such as [40] [41] [42] [43], etc.
+
+A few notations are in order. If C is a category, denote the set of objects by C° and
+the set of morphisms by C!. Capital letters, 4,B,X,Y, are often used for objects and
+little letters, f,g,h, for morphisms. For A,B € C°, Hom(A, B) is the set of morphisms
+from A to B. Compositions of morphisms are to be read from right to left except in
+
+Section The identity functor is denoted by Ide. The identity morphism from A to
+
+6

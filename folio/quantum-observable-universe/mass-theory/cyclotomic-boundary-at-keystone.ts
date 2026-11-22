@@ -45,7 +45,7 @@ export default conjecture({
   uses: [
     "conj:binding-manybody-eq-jet-filtration",
     "prop:sw-period-residue-sum",
-    "prop:calibration-cohomology-alignment",
+    "conj:calibration-cohomology-alignment",
   ],
   computation: {
     engine: "python",
@@ -62,5 +62,8 @@ export default conjecture({
     "mckay",
     "e8",
     "open-conjecture",
+  ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): **Partial formalization.** The Lean module [`QOU.Mass.CyclotomicBoundaryKeystone`](../lean/QOU/Mass/CyclotomicBoundaryKeystone.lean) formalizes what is honestly provable. ... (with the factors verified equal to Mathlib's cyclotomic polynomials) ... (immediate from $\\mathrm{disc}(\\tilde C)=-44208<0$; Mathlib lacks the discriminant–root-product bridge). The full Tier-2 claim (non-cyclotomic for *all* $n\\geq 6$) is not formalized — it remains verified-through-$n=11$." },
   ],
 });

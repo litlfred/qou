@@ -38,7 +38,7 @@ export default proposition({
   ],
   computation: {
     engine: "python",
-    script: "computations/confinement_operator_selection.py",
+    script: "computations/confinement-operator-selection.py",
     witness: [
       "computations/confinement-operator-selection.witness.json",
     ],

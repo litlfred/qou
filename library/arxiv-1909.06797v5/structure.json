@@ -7,10 +7,11 @@
   "bytes": 452314,
   "pages": 34,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -25,13 +26,28 @@
   "title_lines": [
    "Quantum Mechanics of Plancherel Growth"
   ],
-  "abstract": "Growth of Young diagrams, equipped with Plancherel measure, follows the automodel equation of Kerov. Using the technology of unitary matrix model we show that such growth process is exactly same as the growth of gap-less phase in Gross-Witten and Wadia (GWW) model. The limit shape of asymptotic Young diagrams corresponds to GWW transition point. Our analysis also o \ufb00ers an alternate proof of limit shape theorem of Vershik-Kerov and Logan-Shepp. Using the connection between unitary matrix model and free Fermi droplet description, we map the Young diagrams in automodel class to di\ufb00erent shapes of two dimensional phase space droplets. Quantising these droplets we further set up a correspondence between automodel diagrams and coherent states in the Hilbert space. Thus growth of Young diagrams are mapped to evolution of coherent states in the Hilbert space. Gaussian \ufb02uctuations of large N Young diagrams are also mapped to quantum (large N) \ufb02uctuations of the coherent states.",
+  "abstract": "Growth of Young diagrams, equipped with Plancherel measure, follows the automodel equation of Kerov. Using the technology of unitary matrix model we show that such growth process is exactly same as the growth of gap-less phase in Gross-Witten and Wadia (GWW) model. The limit shape of asymptotic Young diagrams corresponds to GWW transition point. Our analysis also oﬀers an alternate proof of limit shape theorem of Vershik-Kerov and Logan-Shepp. Using the connection between unitary matrix model and free Fermi droplet description, we map the Young diagrams in automodel class to diﬀerent shapes of two dimensional phase space droplets. Quantising these droplets we further set up a correspondence between automodel diagrams and coherent states in the Hilbert space. Thus growth of Young diagrams are mapped to evolution of coherent states in the Hilbert space. Gaussian ﬂuctuations of large N Young diagrams are also mapped to quantum (large N) ﬂuctuations of the coherent states.",
   "docinfo": {
+   "Title": "Quantum Mechanics of Plancherel Growth",
    "Author": "Arghya Chattopadhyay; Suvankar Dutta; Debangshu Mukherjee; Neetu; ",
-   "CreationDate": "D:20210415010752Z",
-   "Creator": "LaTeX with hyperref",
    "Producer": "pdfTeX-1.40.21",
-   "Title": "Quantum Mechanics of Plancherel Growth"
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20210415010752Z"
+  },
+  "title_raw": "Quantum Mechanics of Plancherel Growth",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Quantum Mechanics of Plancherel Growth",
+   "heading": "Quantum Mechanics of Plancherel Growth",
+   "outline": "1 Introduction",
+   "text": "Quantum Mechanics of Plancherel Growth",
+   "corroborated_by": [
+    "heading",
+    "text",
+    "page"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -40,153 +56,558 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Review 1 : Droplet description of unitary matrix models",
    "page": 5,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The large N droplets",
    "page": 7,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Review 2 : Plancherel Growth of Young diagrams",
    "page": 9,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "The Universal Diagram and Automodel",
    "page": 10,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Fluctuations of automodel diagrams",
    "page": 12,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 1,
    "title": "Partition Function for Young lattice",
    "page": 13,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "A connection between Young lattice and Gross-Witten-Wadia model",
    "page": 13,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 1,
    "title": "Large N analysis of partition function : an alternate proof of the limit shape theorem",
    "page": 15,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "Large N solutions and automodel diagrams",
    "page": 16,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "A connection with automodel",
    "page": 18,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 1,
    "title": "The Hilbert space for Plancherel growth",
    "page": 19,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 2,
    "title": "Droplet quantisation",
    "page": 19,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 1,
    "title": "Conclusion",
    "page": 25,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
   },
   {
    "level": 1,
-   "title": "Appendix  A Analysing Unitary Matrix Models",
+   "title": "Appendix A Analysing Unitary Matrix Models",
    "page": 26,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   },
   {
    "level": 2,
-   "title": "Appendix  A.1 Eigenvalue analysis",
+   "title": "Appendix A.1 Eigenvalue analysis",
    "page": 26,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   },
   {
    "level": 2,
-   "title": "Appendix  A.2 Young diagram analysis",
+   "title": "Appendix A.2 Young diagram analysis",
    "page": 27,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
   },
   {
    "level": 2,
-   "title": "Appendix  A.3 Finding the connection between two pictures",
+   "title": "Appendix A.3 Finding the connection between two pictures",
    "page": 28,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "28"
   },
   {
    "level": 1,
-   "title": "Appendix  B Spectral curve",
+   "title": "Appendix B Spectral curve",
    "page": 30,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "30"
   },
   {
    "level": 1,
-   "title": "Appendix  C Asymmetric solutions",
+   "title": "Appendix C Asymmetric solutions",
    "page": 31,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "31"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Growth of Young diagrams",
+   "page": 3,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Typical structure of a Young diagram in French notation",
+   "page": 10,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "10"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Typical structure of a 45◦anti-clockwise rotated Young diagram",
+   "page": 11,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "A generic Young diagram in English notation. Here N is an arbitrary positive integer. The number of boxes in the ﬁrst column is less than or equal to N. In general, ∃a number 0 < M ≤N such that ni = 0 for i = M + 1, · · · , N",
+   "page": 15,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "15"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "A Young diagram in English notation for automodel class (0 < ξ < 1/2)",
+   "page": 18,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "18"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 3260,
+   "n_words": 633,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
-   "page_start": 1,
+   "page_start": 2,
    "page_end": 5,
-   "n_chars": 10416,
-   "n_words": 1876
+   "n_chars": 8897,
+   "n_words": 1499,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-2-review-1-droplet-description-of-unitary-matrix",
@@ -195,8 +616,10 @@
    "level": 1,
    "page_start": 5,
    "page_end": 7,
-   "n_chars": 3221,
-   "n_words": 576
+   "n_chars": 3237,
+   "n_words": 592,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-21-the-large-n-droplets",
@@ -204,112 +627,255 @@
    "title": "The large N droplets",
    "level": 2,
    "page_start": 7,
-   "page_end": 10,
-   "n_chars": 6717,
-   "n_words": 1207
+   "page_end": 9,
+   "n_chars": 4266,
+   "n_words": 779,
+   "label_start": null,
+   "label_end": "9"
   },
   {
-   "id": "sec-003-31-the-universal-diagram-and-automodel",
+   "id": "sec-003-3-review-2-plancherel-growth-of-young-diagrams",
+   "number": "3",
+   "title": "Review 2 : Plancherel Growth of Young diagrams",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 2425,
+   "n_words": 444,
+   "label_start": "9",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-004-31-the-universal-diagram-and-automodel",
    "number": "3.1",
    "title": "The Universal Diagram and Automodel",
    "level": 2,
    "page_start": 10,
    "page_end": 12,
-   "n_chars": 3409,
-   "n_words": 640
+   "n_chars": 3424,
+   "n_words": 655,
+   "label_start": "10",
+   "label_end": "12"
   },
   {
-   "id": "sec-004-32-fluctuations-of-automodel-diagrams",
+   "id": "sec-005-32-fluctuations-of-automodel-diagrams",
    "number": "3.2",
    "title": "Fluctuations of automodel diagrams",
    "level": 2,
    "page_start": 12,
    "page_end": 13,
-   "n_chars": 2981,
-   "n_words": 520
+   "n_chars": 1329,
+   "n_words": 228,
+   "label_start": "12",
+   "label_end": "13"
   },
   {
-   "id": "sec-005-41-a-connection-between-young-lattice-and-gross",
+   "id": "sec-006-4-partition-function-for-young-lattice",
+   "number": "4",
+   "title": "Partition Function for Young lattice",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 1621,
+   "n_words": 296,
+   "label_start": "13",
+   "label_end": "13"
+  },
+  {
+   "id": "sec-007-41-a-connection-between-young-lattice-and-gross",
    "number": "4.1",
    "title": "A connection between Young lattice and Gross-Witten-Wadia model",
    "level": 2,
    "page_start": 13,
    "page_end": 15,
-   "n_chars": 2346,
-   "n_words": 429
+   "n_chars": 2349,
+   "n_words": 432,
+   "label_start": "13",
+   "label_end": "15"
   },
   {
-   "id": "sec-006-5-large-n-analysis-of-partition-function-an-alte",
+   "id": "sec-008-5-large-n-analysis-of-partition-function-an-alte",
    "number": "5",
    "title": "Large N analysis of partition function : an alternate proof of the limit shape theorem",
    "level": 1,
    "page_start": 15,
    "page_end": 16,
-   "n_chars": 2472,
-   "n_words": 508
+   "n_chars": 2489,
+   "n_words": 525,
+   "label_start": "15",
+   "label_end": "16"
   },
   {
-   "id": "sec-007-51-large-n-solutions-and-automodel-diagrams",
+   "id": "sec-009-51-large-n-solutions-and-automodel-diagrams",
    "number": "5.1",
    "title": "Large N solutions and automodel diagrams",
    "level": 2,
    "page_start": 16,
    "page_end": 18,
-   "n_chars": 3558,
-   "n_words": 669
+   "n_chars": 3564,
+   "n_words": 675,
+   "label_start": "16",
+   "label_end": "18"
   },
   {
-   "id": "sec-008-52-a-connection-with-automodel",
+   "id": "sec-010-52-a-connection-with-automodel",
    "number": "5.2",
    "title": "A connection with automodel",
    "level": 2,
    "page_start": 18,
    "page_end": 19,
-   "n_chars": 1611,
-   "n_words": 312
+   "n_chars": 1614,
+   "n_words": 315,
+   "label_start": "18",
+   "label_end": "19"
   },
   {
-   "id": "sec-009-6-the-hilbert-space-for-plancherel-growth",
+   "id": "sec-011-6-the-hilbert-space-for-plancherel-growth",
    "number": "6",
    "title": "The Hilbert space for Plancherel growth",
    "level": 1,
    "page_start": 19,
    "page_end": 19,
-   "n_chars": 386,
-   "n_words": 69
+   "n_chars": 385,
+   "n_words": 68,
+   "label_start": "19",
+   "label_end": "19"
   },
   {
-   "id": "sec-010-61-droplet-quantisation",
+   "id": "sec-012-61-droplet-quantisation",
    "number": "6.1",
    "title": "Droplet quantisation",
    "level": 2,
    "page_start": 19,
    "page_end": 25,
-   "n_chars": 10006,
-   "n_words": 1861
+   "n_chars": 10070,
+   "n_words": 1926,
+   "label_start": "19",
+   "label_end": "25"
   },
   {
-   "id": "sec-011-7-conclusion",
+   "id": "sec-013-7-conclusion",
    "number": "7",
    "title": "Conclusion",
    "level": 1,
    "page_start": 25,
+   "page_end": 26,
+   "n_chars": 4676,
+   "n_words": 747,
+   "label_start": "25",
+   "label_end": "26"
+  },
+  {
+   "id": "sec-014-appendix-a-analysing-unitary-matrix-models",
+   "number": null,
+   "title": "Appendix A Analysing Unitary Matrix Models",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "26",
+   "label_end": "26"
+  },
+  {
+   "id": "sec-015-appendix-a1-eigenvalue-analysis",
+   "number": null,
+   "title": "Appendix A.1 Eigenvalue analysis",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 991,
+   "n_words": 203,
+   "label_start": "26",
+   "label_end": "27"
+  },
+  {
+   "id": "sec-016-appendix-a2-young-diagram-analysis",
+   "number": null,
+   "title": "Appendix A.2 Young diagram analysis",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 2100,
+   "n_words": 397,
+   "label_start": "27",
+   "label_end": "28"
+  },
+  {
+   "id": "sec-017-appendix-a3-finding-the-connection-between-two-p",
+   "number": null,
+   "title": "Appendix A.3 Finding the connection between two pictures",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 30,
+   "n_chars": 3385,
+   "n_words": 720,
+   "label_start": "28",
+   "label_end": "30"
+  },
+  {
+   "id": "sec-018-appendix-b-spectral-curve",
+   "number": null,
+   "title": "Appendix B Spectral curve",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 31,
+   "n_chars": 1238,
+   "n_words": 257,
+   "label_start": "30",
+   "label_end": "31"
+  },
+  {
+   "id": "sec-019-appendix-c-asymmetric-solutions",
+   "number": null,
+   "title": "Appendix C Asymmetric solutions",
+   "level": 1,
+   "page_start": 31,
    "page_end": 34,
-   "n_chars": 22095,
-   "n_words": 3818
+   "n_chars": 9490,
+   "n_words": 1493,
+   "label_start": "31",
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 20,
-  "sections": 12,
-  "chars_total": 69218,
+  "toc_inferred_entries": 0,
+  "figure_entries": 5,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 0,
+    "items": []
+   },
+   "found_not_listed": {
+    "count": 4,
+    "items": [
+     "1 Introduction",
+     "2 Review 1 : Droplet description of unitary matrix models",
+     "2 Review 1 : Droplet description of unitary matrix models",
+     "2.1 The large N droplets"
+    ]
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 21,
+  "chars_total": 70810,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Plancherel_growth_modified.tex",
    "tex_sections": 14,
-   "overlaid": 11,
+   "overlaid": 14,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -317,10 +883,15 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.948,
+     "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -335,13 +906,21 @@
     {
      "id": "sec-002-21-the-large-n-droplets",
      "title": "The large N droplets",
-     "prose_ratio": 0.902,
-     "coverage_ratio": 0.959,
+     "prose_ratio": 0.907,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-003-31-the-universal-diagram-and-automodel",
+     "id": "sec-003-3-review-2-plancherel-growth-of-young-diagrams",
+     "title": "Review 2 : Plancherel Growth of Young diagrams",
+     "prose_ratio": 0.92,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-31-the-universal-diagram-and-automodel",
      "title": "The Universal Diagram and Automodel",
      "prose_ratio": 0.921,
      "coverage_ratio": 1.0,
@@ -349,39 +928,47 @@
      "converter": "latex"
     },
     {
-     "id": "sec-004-32-fluctuations-of-automodel-diagrams",
+     "id": "sec-005-32-fluctuations-of-automodel-diagrams",
      "title": "Fluctuations of automodel diagrams",
-     "prose_ratio": 0.942,
+     "prose_ratio": 0.938,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-005-41-a-connection-between-young-lattice-and-gross",
-     "title": "A connection between Young lattice and Gross-Witten-Wadia model",
-     "prose_ratio": 0.929,
-     "coverage_ratio": 0.956,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-006-5-large-n-analysis-of-partition-function-an-alte",
-     "title": "Large N analysis of partition function : an alternate proof of the limit shape theorem",
-     "prose_ratio": 0.879,
+     "id": "sec-006-4-partition-function-for-young-lattice",
+     "title": "Partition Function for Young lattice",
+     "prose_ratio": 0.947,
      "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-007-51-large-n-solutions-and-automodel-diagrams",
-     "title": "Large N solutions and automodel diagrams",
-     "prose_ratio": 0.891,
-     "coverage_ratio": 0.987,
+     "id": "sec-007-41-a-connection-between-young-lattice-and-gross",
+     "title": "A connection between Young lattice and Gross-Witten-Wadia model",
+     "prose_ratio": 0.929,
+     "coverage_ratio": 0.947,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-008-52-a-connection-with-automodel",
+     "id": "sec-008-5-large-n-analysis-of-partition-function-an-alte",
+     "title": "Large N analysis of partition function : an alternate proof of the limit shape theorem",
+     "prose_ratio": 0.879,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-51-large-n-solutions-and-automodel-diagrams",
+     "title": "Large N solutions and automodel diagrams",
+     "prose_ratio": 0.891,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-52-a-connection-with-automodel",
      "title": "A connection with automodel",
      "prose_ratio": 0.839,
      "coverage_ratio": 1.0,
@@ -389,7 +976,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-009-6-the-hilbert-space-for-plancherel-growth",
+     "id": "sec-011-6-the-hilbert-space-for-plancherel-growth",
      "title": "The Hilbert space for Plancherel growth",
      "prose_ratio": 0.971,
      "coverage_ratio": 1.0,
@@ -397,19 +984,50 @@
      "converter": "latex"
     },
     {
-     "id": "sec-010-61-droplet-quantisation",
+     "id": "sec-012-61-droplet-quantisation",
      "title": "Droplet quantisation",
      "prose_ratio": 0.92,
-     "coverage_ratio": 0.978,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-011-7-conclusion",
+     "id": "sec-013-7-conclusion",
      "title": "Conclusion",
-     "prose_ratio": 0.89,
-     "coverage_ratio": 0.438,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.831,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-014-appendix-a-analysing-unitary-matrix-models",
+     "title": "Appendix A Analysing Unitary Matrix Models",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-appendix-a1-eigenvalue-analysis",
+     "title": "Appendix A.1 Eigenvalue analysis",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-appendix-a2-young-diagram-analysis",
+     "title": "Appendix A.2 Young diagram analysis",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-appendix-a3-finding-the-connection-between-two-p",
+     "title": "Appendix A.3 Finding the connection between two pictures",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-appendix-b-spectral-curve",
+     "title": "Appendix B Spectral curve",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-appendix-c-asymmetric-solutions",
+     "title": "Appendix C Asymmetric solutions",
+     "result": "no matching \\section"
     }
    ]
   }

@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.907
 latex_coverage_ratio: 0.996
+doc_brief: "Edge universality in Floquet sideband spectra — We show that, for non-interacting fermions under a monochromatic phase drive (Tien– Gordon regime), the outgoing sideband occupations at a sharp Fermi"
 ---
 []{#sec:airy label="sec:airy"} The Bessel functions in [\[eq:discreteBessel\]](#eq:discreteBessel){reference-type="eqref" reference="eq:discreteBessel"} have three regimes when $A\gg 1$ [@Watson1944; @Olver1974]: an oscillatory bulk for orders $|\nu|\ll A$, an exponentially decaying tail for $|\nu|\gg A$, and a turning-point region of width $\sim A^{1/3}$ near the edge $|\nu|\sim A$. Physically, this transition marks the boundary between easily accessible multi-photon processes (where many sideband channels are open) and exponentially suppressed ones (where the drive can no longer excite carriers into higher sidebands). The Airy kernel emerges precisely from that turning-point region, which is the Floquet analogue of a classical caustic: two stationary-phase points in the integral representation of $J_\nu(A)$ coalesce as $\nu\to A$.
 

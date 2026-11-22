@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1402.4615v3/sections/sec-047",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "B.2. Goulden's and Jackson's b-conjecture",
+  "pageStart": 64,
+  "pageEnd": 65,
+  "contains": [
+    "library/arxiv-1402.4615v3/blocks/prose-sec-047",
+    "library/arxiv-1402.4615v3/blocks/prop-sec-047-01",
+    "library/arxiv-1402.4615v3/blocks/prop-sec-047-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1402.4615v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1402.4615v3/manifest.jsonld",
+  "provenance": "ingested"
+}

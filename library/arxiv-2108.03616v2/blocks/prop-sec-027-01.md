@@ -1,0 +1,1 @@
+Consider the matrix A = 1  . For this matrix ˙κA = 5850 = 2 × 32 × 52 × 13 holds, and there exists no ˜A ∈Z2×4 such that ker( ˜A) = ker(A) and the inverse of every nonsingular 2 × 2 submatrix of ˜A is 1/5850-integral.

@@ -1,0 +1,1 @@
+Since 4/hA isa universal enveloping algebra, it follows from (1.4) and the invertibility of ® that ® = 1 mod/A. Similarly, R = 1mod/A, and for a twisting of quasitriangular quasi-Hopf QUE-algebras, F = 1modh.

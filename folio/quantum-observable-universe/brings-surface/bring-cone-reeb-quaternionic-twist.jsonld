@@ -2,17 +2,18 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/lem-bring-cone-reeb-quaternionic-twist",
   "@type": [
-    "folio-assistant-core:Lemma",
+    "folio-assistant-sci:Lemma",
     "doco:Section"
   ],
   "label": "lem:bring-cone-reeb-quaternionic-twist",
   "kind": "lemma",
-  "title": "Reeb quaternionic twist on the Bring-cone link: $[M_i, M_j] = 2M_k$ and cyclic",
+  "title": "Reeb quaternionic twist on the Bring-cone model: $[M_i, M_j] = 2M_k$ and cyclic",
   "uses": [
     "papers/quantum-observable-universe/blocks/def-bring-cone-tetraplectic-structure"
   ],
@@ -23,7 +24,7 @@
     "tetraplectic",
     "bring-cone",
     "reeb-triad",
-    "3-sasakian",
+    "3-sasakian-retired",
     "quaternionic-contact",
     "su2",
     "lean-formalised"

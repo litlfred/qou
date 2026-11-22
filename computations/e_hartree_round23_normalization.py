@@ -47,7 +47,7 @@ VERIFICATION (exact bookkeeping).
 
 Refs: conj:e-hartree-categorical-derivation (rounds 10/11/20/21);
 prop:em-coupling-projection (cplx = EM Bring-complex cost = 1/α_EM);
-prop:force-carrier-intertwining-correspondence ((2,2)=EM scalar block);
+conj:force-carrier-intertwining-correspondence ((2,2)=EM scalar block);
 prop:operator-selection-lp (the LP cost = inverse complexity);
 e_hartree_round20_trace_ratio.py (the ρ_(2,2)=C(q)α² ratio).
 """
@@ -158,7 +158,7 @@ def main() -> None:
         "NOT a per-crossing Markov weight, which round 10 refuted).  The "
         "normalizer is cplx·cplx = TWO such exchanges, the exponent 2 being the "
         "covalent Pauli count (2 shared electrons through the (2,2)=EM scalar "
-        "block, prop:force-carrier-intertwining-correspondence).  So ρ_(2,2) = "
+        "block, conj:force-carrier-intertwining-correspondence).  So ρ_(2,2) = "
         "χ_(2,2)·α_EM² with α² = two-electron covalent EM cost — the "
         "normalization is FORCED by (i) em-coupling-projection per-exchange cost "
         "+ (ii) Pauli-2, modulo ONE isolated natural assumption: the molecular "

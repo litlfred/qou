@@ -78,6 +78,23 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "1562d7266c5e",
+          "ts": "8a7f5b8f7c09",
+          "lean": "73bca6055a0e",
+          "lean_statement": "93be9c111db2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:27:33.714Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "notes": "QCasimirEigenvalue_classical_limit (line 122) is a genuine Tendsto proof of [j]_q[j+1]_q -> j(j+1) as q -> 1 in R. Note: j : Z, so half-integer spins are not covered."
       }
     ],
     "proof-statement-integrity": [
@@ -1290,7 +1307,7 @@
         "reviewed_at": "2026-08-09T13:00:19.171Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "folio/quantum-observable-universe/braids-and-knots/q-casimir-classical-limit.ts:1: no probe witness for this prop \u2014 every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration \u00a7B (audit: i1-no-probe-audit.witness.json)"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/q-casimir-classical-limit.ts:1: no probe witness for this prop — every prop:/theorem: needs an I1 probe witness per CLAUDE.md compute-integration §B (audit: i1-no-probe-audit.witness.json)"
       }
     ],
     "compute-prop-has-consumer": [
@@ -1312,7 +1329,7 @@
         "reviewed_at": "2026-08-09T13:00:19.171Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
         "severity": "major",
-        "evidence": "folio/quantum-observable-universe/braids-and-knots/q-casimir-classical-limit.ts:1: no `consumers:` field and no `computation:` declaration \u2014 the prop is NOT-WIRED per CLAUDE.md compute-integration \u00a7B (I2-I13)"
+        "evidence": "folio/quantum-observable-universe/braids-and-knots/q-casimir-classical-limit.ts:1: no `consumers:` field and no `computation:` declaration — the prop is NOT-WIRED per CLAUDE.md compute-integration §B (I2-I13)"
       }
     ],
     "compute-witness-exists": [
@@ -1461,7 +1478,7 @@
           "in_degree": 0,
           "cone_size": 2,
           "depth": 2,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -2122,6 +2139,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-11-15T21:27:33.714Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

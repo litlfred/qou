@@ -14,7 +14,7 @@ where `S_q` is the categorical action (rest-mass energy).
 LaTeX label: `def:q-energy`
 
 ## References
-- [manuscript] §6/q-energy
+- [leitner2026] §6/q-energy
 
 **Ground ring (AGENTS.md §7c).** Every term above is a ring operation plus
 division, so the whole construction — carrier, total, and the rest-energy
@@ -64,20 +64,20 @@ variable {R : Type*} [Field R]
 
 Distinct from the library's `QOU.Archimedean.hbarQ_q`, which is the *element*
 `1 - q_inv` of the Laurent ground ring rather than this function of `q`. -/
--- Ref: [manuscript] §6/q-energy
+-- Ref: [leitner2026] §6/q-energy
 def hbarQ (q : R) : R := 1 - q⁻¹
 
 /-- The crossing energy at a single positive crossing. -/
--- Ref: [manuscript] §6/q-energy
+-- Ref: [leitner2026] §6/q-energy
 def crossingEnergyPos (q : R) : R := q
 
 /-- The crossing energy at a single negative crossing. -/
--- Ref: [manuscript] §6/q-energy
+-- Ref: [leitner2026] §6/q-energy
 def crossingEnergyNeg (q : R) : R := 1 / q
 
 /-- The total q-energy: rotational `[j]_q [j+1]_q ℏ_q`, translational
 `p_q² ℏ_q / (2 [n]_q)`, and the action `S_q`. -/
--- Ref: [manuscript] §6/q-energy
+-- Ref: [leitner2026] §6/q-energy
 def total (E : QEnergy R) : R :=
   E.qNumber E.q E.j * E.qNumber E.q (E.j + 1) * hbarQ E.q
   + E.p_q ^ 2 * hbarQ E.q / (2 * E.qNumber E.q E.n_strands)
@@ -91,7 +91,7 @@ The only hypothesis is that the bracket kills `0`; no ordering, no
 exponentiation, no archimedean structure. Note the translational term needs
 no non-vanishing side condition on `[n]_q`, because `0 / x = 0` holds in any
 `DivisionRing` including at `x = 0`. -/
--- Ref: [manuscript] §6/q-energy
+-- Ref: [leitner2026] §6/q-energy
 theorem total_rest (qn : R → R → R) (h : ∀ q, qn q 0 = 0) (q S : R) :
     (QEnergy.mk qn q 0 0 1 S).total = S := by
   unfold total
@@ -103,18 +103,18 @@ Below the substrate→archimedean wall: a real exponent is `Real.rpow`, and an
 asymmetry is an ordering claim. -/
 
 /-- The q-number `[n]_q = (qⁿ - q⁻ⁿ)/(q - q⁻¹)` at **real** exponents. -/
--- Ref: [manuscript] §6/q-energy
+-- Ref: [leitner2026] §6/q-energy
 noncomputable def qNumberReal (q n : ℝ) : ℝ :=
   (q ^ n - q ^ (-n)) / (q - q ^ (-(1 : ℝ)))
 
 /-- `[0]_q = 0`, the hypothesis `total_rest` asks for, discharged at `ℝ`. -/
--- Ref: [manuscript] §6/q-energy
+-- Ref: [leitner2026] §6/q-energy
 theorem qNumberReal_zero (q : ℝ) : qNumberReal q 0 = 0 := by
   unfold qNumberReal
   simp
 
 /-- The real q-energy at rest is its action — `total_rest` instantiated. -/
--- Ref: [manuscript] §6/q-energy
+-- Ref: [leitner2026] §6/q-energy
 theorem total_rest_real (q S : ℝ) :
     (QEnergy.mk qNumberReal q 0 0 1 S).total = S :=
   total_rest qNumberReal qNumberReal_zero q S
@@ -123,7 +123,7 @@ theorem total_rest_real (q S : ℝ) :
 
 An ordering statement, so `ℝ`: it is false over a generic field, which has
 no order to state it in. -/
--- Ref: [manuscript] §6/q-energy
+-- Ref: [leitner2026] §6/q-energy
 theorem crossingEnergyNeg_lt_pos {q : ℝ} (hq : 1 < q) :
     crossingEnergyNeg q < crossingEnergyPos q := by
   unfold crossingEnergyPos crossingEnergyNeg
@@ -131,7 +131,7 @@ theorem crossingEnergyNeg_lt_pos {q : ℝ} (hq : 1 < q) :
   nlinarith
 
 /-- **Q-Deformed Energy**: a rest-mass-nonnegative configuration exists. -/
--- Ref: [manuscript] def:q-energy
+-- Ref: [leitner2026] def:q-energy
 theorem exists_nonneg_action : ∃ E : QEnergy ℝ, E.S_q ≥ 0 :=
   ⟨QEnergy.mk qNumberReal 1.1097 0 0 1 0, le_refl 0⟩
 

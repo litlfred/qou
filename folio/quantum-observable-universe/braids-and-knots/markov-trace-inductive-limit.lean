@@ -69,7 +69,7 @@ class MarkovTraceInductiveLimit (q : ℝ) : Type where
   /-- The residual vanishes. -/
   inclusion_residual_eq_zero : inclusion_residual = 0
 
--- Ref: [manuscript] rem:markov-trace-inductive-limit
+-- Ref: [leitner2026] rem:markov-trace-inductive-limit
 -- Ref: [jones1985] doi:10.2307/1971403
 -- Ref: [wenzl1988] doi:10.1007/BF01239526
 /-- **Canonical instance** — placeholder discharging the class
@@ -86,7 +86,7 @@ class instance is automatically derivable: the per-n trace is the
 restriction of `τ_M`, and the per-n axioms M1-M4 are the restrictions
 of the inductive-limit axioms. -/
 
--- Ref: [manuscript] rem:markov-trace-inductive-limit §"bridge"
+-- Ref: [leitner2026] rem:markov-trace-inductive-limit §"bridge"
 /-- **Inductive-limit ⇒ per-n** Markov-trace class. Under the
     inductive-limit class, every `MarkovTraceN n q` follows. Both
     `markovZax_legacy` (here) and `markovZN_legacy` (in

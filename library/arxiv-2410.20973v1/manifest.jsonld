@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2410.20973v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2410.20973v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-2410.20973v1",
+  "title": "SUMMABILITY FOR STATE INTEGRALS OF HYPERBOLIC KNOTS",
   "contains": [
+    "library/arxiv-2410.20973v1/sections/sec-front-matter",
     "library/arxiv-2410.20973v1/sections/sec-000",
     "library/arxiv-2410.20973v1/sections/sec-001",
     "library/arxiv-2410.20973v1/sections/sec-002",
@@ -26,10 +27,14 @@
     "library/arxiv-2410.20973v1/sections/sec-012",
     "library/arxiv-2410.20973v1/sections/sec-013",
     "library/arxiv-2410.20973v1/sections/sec-014",
-    "library/arxiv-2410.20973v1/sections/sec-015"
+    "library/arxiv-2410.20973v1/sections/sec-015",
+    "library/arxiv-2410.20973v1/sections/sec-016",
+    "library/arxiv-2410.20973v1/sections/sec-017",
+    "library/arxiv-2410.20973v1/sections/sec-018",
+    "library/arxiv-2410.20973v1/sections/sec-019"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -39,7 +44,9 @@
   },
   "meta": {
     "doc_id": "arxiv-2410.20973v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "2410.20973v1.pdf",
     "source_sha256": "852b7bbc81a6288324eb1f707f3e42e77ece5e23b092ea16ab5cee2337d00e61",
     "pages": 44,

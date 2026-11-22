@@ -1,0 +1,63 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2105.09342v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "57ae12327da7b9a10608fe57ddb8ac5c02bff552aee0fd71dd66b04b04a7dc7c",
+  "file": "2105.09342v1.pdf"
+ },
+ "provenance": {
+  "title": "A Unitary Matrix Model for q-deformed Plancherel Growth",
+  "authors": "Suvankar Duttaa, Debangshu Mukherjeeb, Neetua, Sanhita Parihara",
+  "arxiv": {
+   "id": "2105.09342",
+   "version": "1",
+   "primary_class": "hep-th",
+   "stamp_date": "19 May 2021"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "proposition": 1
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 1
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  }
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "It was observed in \\cite{Chattopadhyay:2019pkl} that the ordinary Plancherel growth model is equivalent to $U(N)$ GWW model after restricting the Young diagrams to have maximum $N$ number of rows.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-002-3-a-unitary-matrix-model-for-q-deformed-plancher.md (p. 7-10)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-002-3-a-unitary-matrix-model-for-q-deformed-plancher.md",
+   "section_title": "A unitary matrix model for q-deformed Plancherel growth",
+   "pages": "7-10",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-002-3-a-unitary-matrix-model-for-q-deformed-plancher.md (p. 7-10)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-002-01",
+   "block_iri": "library/arxiv-2105.09342v1/blocks/prop-sec-002-01",
+   "claim_id": "arxiv-2105.09342v1#prop-sec-002-01"
+  }
+ ]
+}

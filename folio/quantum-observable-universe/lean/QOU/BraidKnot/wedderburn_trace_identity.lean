@@ -30,7 +30,7 @@ Only the concrete `qIntGeo` / `qFactorial` definitions are retained below (the r
 which is well-defined and used directly as a Hecke-level scale, e.g. `λ_W = [5]_q!·m_e`). No theorem
 in this file asserts the old false equality.
 
--- Ref: [manuscript] quantum-observable-universe/mass-theory/wedderburn-trace-identity.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/wedderburn-trace-identity.md
 -/
 
 namespace QOU.BraidKnot

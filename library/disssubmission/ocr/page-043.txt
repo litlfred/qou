@@ -1,0 +1,48 @@
+2.5. Super Tannakian categories 35
+
+hence Endp(P) is a skew field or zero, and P is simple or zero in P. Over
+an algebraically closed field A there exist no skew fields other than A itself,
+hence in this case we have Endp(P) = A, and it follows that idp € Np(P, P)
+iff tr(idp) = 0, which is the case iff ¥(P) = 0. Oo
+
+COROLLARY 2.9. Let N CD be the full subcategory of all objects which
+become isomorphic to zero in the quotient category D. If A is algebraically
+closed, then N satisfies the stability axiom (N1), the acyclicity axiom (N3)
+and the Euler axiom (N4), and an object K € D lies in the subcategory N iff
+all simple constituents of all PH" (K) have Euler characteristic zero.
+
+Proof. Property (N1) is obvious, property (N3) follows from (N4), and
+the latter is immediate from corollary 2.8 by the perverse decomposition
+axiom (D3) and the semisimplicity axiom (D4). O
+
+2.5. Super Tannakian categories
+
+Using a criterion of Deligne, we now show that the semisimple abelian
+rigid symmetric monoidal category D from the previous section is almost
+Tannakian: It is an inductive limit of super Tannakian categories, a notion
+that we will recall below and in appendix A. In the case k = C we will
+see later (in corollary 2.14, using that in this case the Euler characteristic
+of perverse sheaves is non-negative) that D is in fact an inductive limit of
+ordinary Tannakian categories, and this is closely related to our proof of
+theorem 1.1. One may conjecture the same also for char(k) > 0.
+
+Throughout this section we will always assume that A is algebraically
+closed and that axioms (D1) — (D4) of section 2.3 hold. By semisimplicity
+the convolution functor
+
+*:DxD— D
+is exact in each variable, and Endp(1) = A (this latter property is inherited
+from D where it can be checked by applying the faithful functor rat). So D
+is a catégorie A-tensorielle in the sense of [30, sect. 0.1].
+
+Recall that a full subcategory of D is said to be finitely tensor generated
+if it is the category (K) consisting of all subquotients of convolution powers
+of K @ KY for some fixed object K € D. Our next goal is to show that any
+such subcategory is super Tannakian in the following sense.
+
+The framework of algebraic geometry is generalized to super algebraic
+geometry by replacing the category of commutative rings with the category
+of Z/2Z-graded super commutative rings. In particular one has the notion
+of an algebraic resp. reductive super group and its super representations, see
+appendix A. For an algebraic super group G over A and a point € € G(A)
+with €” = | such that int(e) is the parity automorphism of G, let us denote

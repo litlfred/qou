@@ -8,6 +8,7 @@ pages: 57-58
 source_pdf: symmetry-04-00039-v3.pdf
 source_sha256: 1aa8a81916887f8e
 toc_source: inferred
+doc_brief: "Knots on a Torus: A Model of the Elementary Particles — Two knots; just two rudimentary knots, the unknot and the trefoil."
 ---
 As is well known, there are numerous candidates for the constituents of dark matter (and dark 
 energy as well). Here is our model’s candidate: Always lurking at the perimeters of disquisition but 
@@ -29,9 +30,7 @@ One possibility is to invoke the notion, introduced in Section 8 of the triplica
 such triplication is visualized as existing at every point of space, there appears to be no a priori reason 
 for the “ordinary time of a dark particle to be the same as it is for our ordinary taxonomical world. It 
 could instead be one of the other orthogonal time coordinates in the triplication, perhaps the one 
-Symmetry 2012, 4 
- 
-96 
- 
-associated with our heaviest generation in which case finding a “dark” particle might be very difficult; 
+Symmetry 2012, 4 96
+
+associated with our heaviest generation in which case finding a “dark” particle might be very difficult;
 as appears to be the case! Again, further discussion is postponed for future publication.

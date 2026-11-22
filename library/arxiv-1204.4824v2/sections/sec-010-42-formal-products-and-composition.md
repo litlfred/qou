@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1204.4824v2
-doc_title: "Prepared for submission to JHEP Spectral networks"
+doc_title: "Spectral networks"
 section_id: sec-010-42-formal-products-and-composition
 section_title: "Formal products and composition"
 section_number: 4.2
 pages: 20-20
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
-doc_brief: "Spectral networks — We introduce new geometric objects called spectral networks. Spectral net- works are networks of trajectories on Riemann surfaces obeying certain local rules."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.98
+latex_prose_ratio: 0.99
 latex_coverage_ratio: 0.981
+doc_brief: "Spectral networks — We introduce new geometric objects called spectral networks. Spectral net- works are networks of trajectories on Riemann surfaces obeying certain local rules."
 ---
 Suppose $a$ and $b$ are the relative homology classes of
 two open paths on $\tilde\Sigma$.  If the end of $a$ coincides with the start of $b$,

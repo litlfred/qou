@@ -1,0 +1,98 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1508.05448v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "57d2c717d8ec74d053bcaf861cffbb60a826bfea80af7eb89639207e98292c7a",
+  "file": "1508.05448v1.pdf"
+ },
+ "provenance": {
+  "title": "Concentration of Measure Techniques and Applications",
+  "authors": "Meg Walters",
+  "arxiv": {
+   "id": "1508.05448",
+   "version": "1",
+   "primary_class": "math.PR",
+   "stamp_date": "22 Aug 2015"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 2,
+  "by_kind": {
+   "theorem": 2
+  },
+  "formalization_candidates": 2,
+  "by_domain": {
+   "math": 2
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 2
+  },
+  "by_evidence_location": {
+   "elsewhere": 1,
+   "in-paper": 1
+  },
+  "by_lean_status": {
+   "unformalized": 2
+  },
+  "needs_lean_proof": 2
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3.2.1",
+   "name": "[Carlen et al., 2000; Maslen, 2003]",
+   "statement": "Kac\u2019s walk on SO(n) is ergodic and its invariant distribution is the uniform distribution on SO(n). Furthermore, the spectral gap of Kac\u2019s walk on SO(n) is n+2 2(n\u22121)n. Using our Markov transition operator, we can de\ufb01ne the Dirichlet form, Q (\u00b7, \u00b7). As discussed in chapter 2, it is well known that for a Markov chain with spectral gap, \u03bb1, the Poincare inequality holds: \u03bb1Var(f) \u2264Q (f, f) . For the Kac\u2019s walk, we have Q (f, f) = \u0000n \u0001 X 1\u2264i<j\u2264n Z 2\u03c0 2\u03c0 Z SO(n) (f(G) \u2212f(Rij(\u03b8)G))2 d\u00b5n(G)d\u03b8, where \u00b5n is the Haar measure on SO(n) normalized so that the total measure is 1. Let us de\ufb01ne the triple norm: |||f|||2 \u221e= \u0000n \u0001 sup G\u2208SO(n) X 1\u2264i<j\u2264n Z 2\u03c0 2\u03c0",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "elsewhere",
+   "evidence_locator": "External attribution ([Carlen et al., 2000; Maslen, 2003])",
+   "external_refs": [
+    "[Carlen et al., 2000; Maslen, 2003]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-013-32-kacs-walk-on-son.md",
+   "section_title": "Kac's Walk on SO(n)",
+   "pages": "37-41",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: elsewhere, External attribution ([Carlen et al., 2000; Maslen, 2003])). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-013-01",
+   "block_iri": "library/arxiv-1508.05448v1/blocks/thm-sec-013-01",
+   "claim_id": "arxiv-1508.05448v1#theorem:3.2.1",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3.2.2",
+   "name": null,
+   "statement": "Consider Kac\u2019s walk on SO(n), and let F : SO(n) \u2192R be given such that |||F|||\u221e\u22641. Then, F is integrable with respect to \u00b5n, and for every r \u22650, \u00b5n \u0012 F \u2265 Z Fd\u00b5n + r \u0013 \u22643e\u2212r\u221a\u03bb1/2 where \u03bb1 = n+2 2(n\u22121)n is the spectral gap of Kac\u2019s walk on SO(n).",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-013-32-kacs-walk-on-son.md (p. 37-41)",
+   "external_refs": [],
+   "proof_excerpt": "We \ufb01rst demonstrate that Q \u0000e\u03bbF/2, e\u03bbF/2\u0001 ) \u2264\u03bb2|||F|||2 \u221e 4 R SO(n) e\u03bbF(G)d\u00b5n(G) by using symmetry (see chapter 2 for details). Q \u0000e\u03bbF/2, e\u03bbF/2\u0001 = 1 2 \u0000n 2 \u0001 X 1\u2264i<j\u2264n Z 2\u03c0 0 1 2\u03c0 Z SO(n) \u0000e\u03bbF(G) \u2212e\u03bbF(Rij(\u03b8)G)\u00012 d\u00b5n(G)d\u03b8 = 1 \u0000n 2 \u0001 X 1\u2264i<j\u2264n Z 2\u03c0 0 1 2\u03c0 Z F(G)>F(Rij(\u03b8)G) \u0000e\u03bbF(G) ",
+   "section_file": "sections/sec-013-32-kacs-walk-on-son.md",
+   "section_title": "Kac's Walk on SO(n)",
+   "pages": "37-41",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-013-32-kacs-walk-on-son.md (p. 37-41)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-013-02",
+   "block_iri": "library/arxiv-1508.05448v1/blocks/thm-sec-013-02",
+   "claim_id": "arxiv-1508.05448v1#theorem:3.2.2",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  }
+ ]
+}

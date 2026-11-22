@@ -1,0 +1,1 @@
+(i) The elements T1 , ... , Tn generate a subalge- bra H~(q) of ~(q), which has R-basis {Tw I wE wa ~ Symn ~zn- 1 }, where, if w = Sil ... Sit is a reduced expression for w E wa' T w = ~.Tit· We refer to this as the "unextended" Heeke algebra of type

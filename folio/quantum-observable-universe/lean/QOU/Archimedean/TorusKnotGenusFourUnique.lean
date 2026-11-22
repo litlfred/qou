@@ -13,7 +13,7 @@ LaTeX label: `prop:torus-knot-genus-four-unique`
 
 ## References
 
-- [manuscript] §5/torus-knot-genus-four-unique
+- [leitner2026] §5/torus-knot-genus-four-unique
 - [rolfsen] Rolfsen, *Knots and Links*
 -/
 
@@ -53,7 +53,7 @@ end TorusKnot
     (`interval_cases`) with the coprimality hypothesis leaves exactly
     `(2,9)` and `(3,5)` — the cofactor cases `(2,10)` and `(4,4)` are
     eliminated by `gcd ≠ 1`. -/
--- Ref: [manuscript] §5/torus-knot-genus-four-unique
+-- Ref: [leitner2026] §5/torus-knot-genus-four-unique
 -- Ref: [rolfsen] Rolfsen, *Knots and Links*
 theorem torus_knot_genus_four_unique (K : TorusKnot)
     (h : K.genus = 4) :
@@ -74,7 +74,7 @@ theorem torus_knot_genus_four_unique (K : TorusKnot)
   interval_cases K.m <;> interval_cases K.n <;> revert hco h <;> decide
 
 /-- The crossing numbers of the unique genus-4 pair are `9` and `10`. -/
--- Ref: [manuscript] §5/torus-knot-genus-four-unique
+-- Ref: [leitner2026] §5/torus-knot-genus-four-unique
 theorem genus_four_crossing_numbers (K : TorusKnot)
     (h : K.genus = 4) :
     K.crossingNumber = 9 ∨ K.crossingNumber = 10 := by

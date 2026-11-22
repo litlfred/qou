@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0508100v6/sections/sec-042",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "B.2. Proof of Proposition 8.9",
+  "pageStart": 28,
+  "pageEnd": 30,
+  "contains": [
+    "library/arxiv-math-0508100v6/blocks/prose-sec-042",
+    "library/arxiv-math-0508100v6/blocks/lem-sec-042-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0508100v6/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0508100v6/manifest.jsonld",
+  "provenance": "ingested"
+}

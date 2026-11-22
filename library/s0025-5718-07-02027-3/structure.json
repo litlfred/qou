@@ -6,7 +6,9 @@
   "sha256": "080b5ac8542ff19ce7e39dd1dfcd56438e63ce3c26210d2950c9fefd7353ef92",
   "bytes": 402805,
   "pages": 30,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:55Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -14,19 +16,28 @@
   "arxiv": null,
   "doi": null,
   "title": "Li(p)-service? An algorithm for computing p-adic polylogarithms",
-  "authors_raw": "Volume 77, Number 262, April 2008, Pages 1105–1134",
+  "authors_raw": "Article electronically published on November 5, 2007",
+  "title_lines": [
+   "MATHEMATICS OF COMPUTATION",
+   "S 0025-5718(07)02027-3"
+  ],
   "abstract": "We describe an algorithm for computing Coleman’s p-adic poly- logarithms up to a given precision.",
   "docinfo": {
-   "Author": "",
+   "Producer": "Acrobat Distiller Server 6.0.1 (Sparc Solaris, Built: 2003-11-03)",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "CreationDate": "D:20080115102200-05'00'",
-   "Producer": "Acrobat Distiller Server 6.0.1 (Sparc Solaris, Built: 2003-11-03)"
+   "CreationDate": "D:20080115102200-05'00'"
   },
-  "title_prev": "MATHEMATICS OF COMPUTATION",
-  "title_lines": [
-   "MATHEMATICS OF COMPUTATION"
-  ]
+  "title_raw": "MATHEMATICS OF COMPUTATIONS 0025-5718(07)02027-3",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "Li ( p ) -SERVICE? AN ALGORITHM FOR COMPUTING p -ADIC POLYLOGARITHMS 1. Introduction It is well known that, for a number ﬁeld k with ring of integers O k , there is a relation between the regulator of the group of units of O k , O ∗ k , and the residue of k ∼ = K 1 ( O k ), and Borel in [6] showed t",
+   "outline": "1. Introduction",
+   "text": "MATHEMATICS OF COMPUTATIONS 0025-5718(07)02027-3",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "MATHEMATICS OF COMPUTATIONS 0025-5718(07)02027-3"
  },
  "toc": [
   {
@@ -34,74 +45,450 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1105"
   },
   {
    "level": 2,
    "title": "Acknowledgments",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1106"
   },
   {
    "level": 1,
    "title": "The p-adic polylogarithm",
    "page": 2,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1106"
   },
   {
    "level": 1,
-   "title": "Method of computation on  U0  and  U",
+   "title": "Method of computation on U0 and U",
    "page": 5,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1109"
   },
   {
    "level": 1,
    "title": "Method of computation in the generic case",
    "page": 6,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1110"
   },
   {
    "level": 1,
-   "title": "Method of computation on  U1",
+   "title": "Method of computation on U1",
    "page": 8,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1112"
   },
   {
    "level": 1,
    "title": "Estimates",
    "page": 11,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1115"
   },
   {
    "level": 1,
    "title": "The algorithm",
    "page": 14,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1118"
   },
   {
    "level": 1,
    "title": "Concluding remarks",
    "page": 24,
    "source": "outline",
-   "number": "8"
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1128"
   },
   {
    "level": 1,
    "title": "References",
    "page": 29,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1133"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "algorithm",
+   "number": "7.10",
+   "title": "In order to compute Lin(z) for z̸ = 0, 1 in F and n ≥2 up to precision N > 0 we ﬁrst determine in which residue disc z lies and then do the following",
+   "page": 16,
+   "confidence": 0.7,
+   "evidence": [
+    "referenced"
+   ],
+   "page_label": "1120"
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Timings for Lin(π(ζ −1)). q(x)",
+   "page": 28,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "1132"
+  },
+  {
+   "kind": "table",
+   "number": "2",
+   "title": "Timings for Lin((ζ −1)/π). q(x)",
+   "page": 28,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "1132"
+  },
+  {
+   "kind": "table",
+   "number": "3",
+   "title": "Timings for Lin(ζ + (ζ −1)π). q(x)",
+   "page": 28,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "1132"
+  },
+  {
+   "kind": "table",
+   "number": "4",
+   "title": "Timings for Lin(1 + (ζ −1)π). q(x)",
+   "page": 29,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "1133"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1105",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "1106",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "1107",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "1108",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "1109",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "1110",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "1111",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "1112",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "1113",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "1114",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "1115",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "1116",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "1117",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "1118",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "1119",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "1120",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "1121",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "1122",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "1123",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "1124",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "1125",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "1126",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "1127",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "1128",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "1129",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "1130",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "1131",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "1132",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "1133",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "1134",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 353,
+   "n_words": 49,
+   "label_start": "1105",
+   "label_end": "1105"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -109,8 +496,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 2829,
-   "n_words": 499
+   "n_chars": 2823,
+   "n_words": 493,
+   "label_start": "1105",
+   "label_end": "1106"
   },
   {
    "id": "sec-001-2-the-p-adic-polylogarithm",
@@ -120,7 +509,9 @@
    "page_start": 2,
    "page_end": 2,
    "n_chars": 1105,
-   "n_words": 194
+   "n_words": 194,
+   "label_start": "1106",
+   "label_end": "1106"
   },
   {
    "id": "sec-002-acknowledgments",
@@ -128,66 +519,123 @@
    "title": "Acknowledgments",
    "level": 2,
    "page_start": 2,
-   "page_end": 6,
-   "n_chars": 9687,
-   "n_words": 1929
+   "page_end": 5,
+   "n_chars": 8851,
+   "n_words": 1702,
+   "label_start": "1106",
+   "label_end": "1109"
   },
   {
-   "id": "sec-003-4-method-of-computation-in-the-generic-case",
+   "id": "sec-003-3-method-of-computation-on-u0-and-u",
+   "number": "3",
+   "title": "Method of computation on U0 and U",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 732,
+   "n_words": 156,
+   "label_start": "1109",
+   "label_end": "1110"
+  },
+  {
+   "id": "sec-004-4-method-of-computation-in-the-generic-case",
    "number": "4",
    "title": "Method of computation in the generic case",
    "level": 1,
    "page_start": 6,
-   "page_end": 11,
-   "n_chars": 11334,
-   "n_words": 2456
+   "page_end": 8,
+   "n_chars": 4344,
+   "n_words": 910,
+   "label_start": "1110",
+   "label_end": "1112"
   },
   {
-   "id": "sec-004-6-estimates",
+   "id": "sec-005-5-method-of-computation-on-u1",
+   "number": "5",
+   "title": "Method of computation on U1",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 11,
+   "n_chars": 6807,
+   "n_words": 1390,
+   "label_start": "1112",
+   "label_end": "1115"
+  },
+  {
+   "id": "sec-006-6-estimates",
    "number": "6",
    "title": "Estimates",
    "level": 1,
    "page_start": 11,
    "page_end": 14,
-   "n_chars": 7547,
-   "n_words": 1742
+   "n_chars": 7317,
+   "n_words": 1513,
+   "label_start": "1115",
+   "label_end": "1118"
   },
   {
-   "id": "sec-005-7-the-algorithm",
+   "id": "sec-007-7-the-algorithm",
    "number": "7",
    "title": "The algorithm",
    "level": 1,
    "page_start": 14,
    "page_end": 24,
-   "n_chars": 27164,
-   "n_words": 5733
+   "n_chars": 26966,
+   "n_words": 5530,
+   "label_start": "1118",
+   "label_end": "1128"
   },
   {
-   "id": "sec-006-8-concluding-remarks",
+   "id": "sec-008-8-concluding-remarks",
    "number": "8",
    "title": "Concluding remarks",
    "level": 1,
    "page_start": 24,
    "page_end": 29,
-   "n_chars": 15902,
-   "n_words": 3319
+   "n_chars": 15654,
+   "n_words": 3071,
+   "label_start": "1128",
+   "label_end": "1133"
   },
   {
-   "id": "sec-007-references",
+   "id": "sec-009-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 29,
    "page_end": 30,
-   "n_chars": 3237,
-   "n_words": 501
+   "n_chars": 3176,
+   "n_words": 440,
+   "label_start": "1133",
+   "label_end": "1134"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 10,
-  "sections": 8,
-  "chars_total": 78805
+  "toc_inferred_entries": 0,
+  "figure_entries": 5,
+  "figure_sequence_gaps": [
+   "algorithm 7.1",
+   "algorithm 7.2",
+   "algorithm 7.3",
+   "algorithm 7.4",
+   "algorithm 7.5",
+   "algorithm 7.6",
+   "algorithm 7.7",
+   "algorithm 7.8",
+   "algorithm 7.9"
+  ],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 11,
+  "chars_total": 78128,
+  "furniture_lines_stripped": 0,
+  "pages_read_in_print_order": [
+   8
+  ]
  }
 }

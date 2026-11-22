@@ -28,7 +28,7 @@ This file carries two things:
    the analytic side — the residual assembly conjecture (that the Hecke data
    *is* such a theta) is what stays open.
 
--- Ref: [manuscript] quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.ts
+-- Ref: [leitner2026] quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.ts
 -/
 
 namespace QOU.BraidsAndKnots
@@ -99,7 +99,7 @@ theorem s_image_in_upper_half (τ : ℂ) (hτ : 0 < τ.im) : 0 < (-1 / τ).im :=
   exact div_pos hτ (Complex.normSq_pos.mpr hτ0)
 
 /-- **CONJECTURE (D14, §3b-cond axiomatisation).**  Modular $S$-transform
-$q \leftrightarrow \tilde q = \exp(2\pi i/\tau)$ for Hecke-parameter analytic
+$q \leftrightarrow \tilde q = \exp(-2\pi i/\tau)$ for Hecke-parameter analytic
 continuation.
 
 The class axiomatises the conjectural *hypotheses* of D14 (not its

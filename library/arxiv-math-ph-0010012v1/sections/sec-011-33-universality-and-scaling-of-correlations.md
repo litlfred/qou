@@ -9,8 +9,9 @@ source_pdf: 0010012v1.pdf
 source_sha256: cd6eca5ccb81ff90
 toc_source: inferred
 text_source: latex
-latex_prose_ratio: 0.945
+latex_prose_ratio: 0.989
 latex_coverage_ratio: 0.989
+doc_brief: "arXiv:math-ph/0010012v1 10 Oct 2000 — We review some recent results on random polynomials and their generalizations in complex and symplectic geometry."
 ---
 The next level of results concerns the statistics of zeros and critical points on the length scale $\frac{D}{\sqrt{N}}$ (complex case) or $\frac{D}{N}$ (real case). For brevity we only describe the results in the complex case. Upon magnifying a small ball $B_{\frac{D}{\sqrt{N}}}(z_0)$ around an arbitrary point $z_0$ of this radius, one loses track of the specifics of the geometrical setting and obtains universal limiting correlations. More precisely, such a universal limit occurs if one chooses the coordinates properly.
 

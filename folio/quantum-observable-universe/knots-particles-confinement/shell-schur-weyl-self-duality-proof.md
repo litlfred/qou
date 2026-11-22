@@ -1,21 +1,31 @@
 *Proof.*
 
-We construct the involution in five steps.
+**1. $\#$ is well defined.** Put $\tau_i = h - \sigma_i$. From $\sigma_i^2 = h\sigma_i + 1$,
 
-**1. Classical Schur–Weyl.**
-Classical Schur–Weyl duality between $\mathrm{GL}_k(\mathbb{C})$ and $S_n$ on $V^{\otimes n}$ bijects $\mathrm{GL}_k$-irreps $V_\lambda^{\mathrm{GL}}$ and $S_n$-irreps $V_\lambda^{S_n}$, both indexed by partitions $\lambda \vdash n$ with at most $k$ rows.
+$$
+  \tau_i^2 \;=\; h^2 - 2h\sigma_i + \sigma_i^2 \;=\; h(h - \sigma_i) + 1 \;=\; h\,\tau_i + 1,
+$$
 
-**2. $\mathrm{GL}_k$-duality and transpose.**
-For $\lambda \vdash n$ with conjugate $\lambda^*$, the $\mathrm{GL}_k$-module $V_{\lambda^*}^{\mathrm{GL}}$ is isomorphic to the dual of $V_\lambda^{\mathrm{GL}}$ up to a determinant twist: $V_{\lambda^*}^{\mathrm{GL}} \cong V_\lambda^{\mathrm{GL},*} \otimes \det^{?}$. The transpose $\lambda^*$ implements $\mathrm{GL}_k$-representation duality.
+so $\tau_i$ satisfies the Hecke quadratic. For adjacent $i, j$, expanding gives
 
-**3. $q$-deformation.**
-Quantum Schur–Weyl duality extends the classical statement. The Hecke algebra $H_n(R, q)$ replaces $S_n$, $\mathcal{U}_q(\mathfrak{gl}_k)$ replaces $\mathrm{GL}_k$, and the pairing $V_\lambda^{\mathcal{U}_q} \leftrightarrow V_\lambda^{H_n(R, q)}$ is preserved. Representation duality on the quantum group side still maps $V_\lambda^{\mathcal{U}_q} \mapsto V_{\lambda^*}^{\mathcal{U}_q}$ (up to $q$-determinant twist).
+$$
+  \tau_i\tau_j\tau_i - \tau_j\tau_i\tau_j
+  \;=\; h^2(\sigma_j - \sigma_i) + h(\sigma_i^2 - \sigma_j^2) - (\sigma_i\sigma_j\sigma_i - \sigma_j\sigma_i\sigma_j),
+$$
 
-**4. Hecke-side involution.**
-On the Hecke side, the corresponding involution is tensoring with the sign representation $V_{H_n(R, q)}(1^n)$, which maps $V_\lambda \to V_{\lambda^*}$. This is an automorphism of $H_n(R, q)$ fixing the Wedderburn blocks pointwise up to the $\lambda \leftrightarrow \lambda^*$ swap.
+which vanishes by the quadratic and braid relations. Far commutativity is immediate. Since $\tau_i^2 = h\tau_i + 1$ again, $\# \circ \# = \mathrm{id}$, so $\#$ is an automorphism. The identity $h - \sigma_i = -\sigma_i^{-1}$ follows from $\sigma_i(\sigma_i - h) = 1$.
 
-**5. Shell-operator self-duality.**
-The shell operator $\sigma_{\mathrm{shell}}$ is the minimal categorical ingredient realising magic-shell closure at level $4$ in the confinement filtration ([confinement level](#def:confinement-level)). By the braiding compatibility between $\mathcal{U}_q(\mathfrak{gl}_k)$ and $H_n(R, q)$ under Schur–Weyl, any $\mathrm{GL}_k$-charge-conjugate-invariant construction in the quantum-group category corresponds, under Schur-Weyl transport, to an element of $H_n(R, q)$ fixed by the sign-twist involution. Such elements satisfy $x_\lambda = x_{\lambda^*}$ in the Wedderburn decomposition. $\square$
+**2. $\#$ transposes the blocks.** In the split semisimple case, twisting the Specht module $S^\lambda$ by $\#$ gives the dual Specht module of $\lambda^*$, which is isomorphic to $S^{\lambda^*}$ (see Mathas, *Iwahori–Hecke algebras and Schur algebras*, Ch. 3, and \cite{dipper-james1986}). Hence $\#(e_\lambda) = e_{\lambda^*}$. At $q = 1$ this is the twist by the sign character, $V_\lambda \otimes \mathrm{sgn} \cong V_{\lambda^*}$.
+
+**3. Fixed points.** Applying $\#$,
+
+$$
+  \#(\sigma_{\mathrm{shell}}) \;=\; \sum_\lambda x_\lambda\, e_{\lambda^*} \;=\; \sum_\lambda x_{\lambda^*}\, e_\lambda .
+$$
+
+The $e_\lambda$ are linearly independent, so $\#(\sigma_{\mathrm{shell}}) = \sigma_{\mathrm{shell}}$ if and only if $x_\lambda = x_{\lambda^*}$ for every $\lambda$. $\square$
+
+**Scope.** Steps 1 and 3 are proved here. Step 2 is cited.
 
 **Relation to existing propositions.**
-This result refines [mass-coefficient-shadow-price](#prop:mass-coefficient-shadow-price) (which gives $y_\lambda$ per partition) by asserting the self-dual symmetry of the shell operator. It complements [skein-crossing-asymmetry](#prop:skein-crossing-asymmetry) (which encodes the parity-violation mechanism at level 3) by locating the parity-conserving regime at level 4.
+Whether $\sigma_{\mathrm{shell}}$ is in fact $\#$-invariant is not settled here.

@@ -43,7 +43,7 @@ def bringsGenus : ℕ := 4
     eigenvalues.
 
     LaTeX: `\label{def:local-q-zeta-function}`
-    Ref: [manuscript] Chapter 8, Section 4 -/
+    Ref: [leitner2026] Chapter 8, Section 4 -/
 structure LocalQZetaFunction where
   /-- The cardinality of the base field, as a real number.
 

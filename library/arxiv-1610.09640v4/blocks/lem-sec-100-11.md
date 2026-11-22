@@ -1,0 +1,1 @@
+Let T be a tilting B-A-bimodule complex, and assume that the ring A is commutative. Let Z ⊆A be a multiplicatively closed set, and deﬁne A′ := AZ and B′ := BgT (Z). Then the complex T ′ := B′⊗BT ⊗AA′ in D(B′⊗A′ op) is a tilting B′-A′-bimodule complex. Derived Categories | Amnon Yekutieli |

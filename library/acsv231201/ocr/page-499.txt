@@ -1,0 +1,29 @@
+C.1 Intersection classes 481
+C.1 Intersection classes
+
+Before describing how to generalize residues from the classical univariate set-
+ting to several variables, we first need to describe the domains of integration
+over which we can take multidimensional residues of differential forms with
+singularities on V. These domains of integration will be intersection classes.
+
+The intuition behind intersection classes is captured in Figure C.1. A torus T
+on one side of V expands to a torus T’ on the other side of V. Mathematically,
+this expansion could be obtained by expanding each coordinate at a constant
+rate, or by a more complicated deformation, or perhaps not by a deformation
+at all but through a cobordism, meaning some (d + 1)-chain whose boundary
+is T’ — T. In getting from T to T’ this expansion crosses ‘V; if the crossing is
+transverse, as it will be generically, it sweeps out a (d — 1)-chain y C V. For
+the intersection class to be well defined for our purposes, the homology class
+of y in Hy_1(V..) should depend only on the homology classes of T and T’ in
+M.
+
+me
+
+Figure C.1 The intersection class of a cobordism from a to B.
+
+The concepts involved in defining an intersection class are analytic in nature,
+so we work with analytic functions instead of restricting ourselves to polyno-
+mials. Let V = Vg be the complex manifold in C“ defined by the vanishing
+of an analytic function Q(z) on C4 whose gradient does not vanish on V. Our
+first step in constructing the intersection class is to derive a diffeomorphism be-
+tween a neighborhood of V in C4 and a product A x B, where A is a connected

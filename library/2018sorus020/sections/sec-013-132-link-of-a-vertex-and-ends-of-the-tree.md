@@ -8,7 +8,9 @@ pages: 31-31
 source_pdf: 2018SORUS020.pdf
 source_sha256: c3f929e5195983ce
 toc_source: inferred
+doc_brief: "Reidemeister torsion on character varieties — 52 sections: Front matter; Introduction; Character varieties and Reidemeist"
 ---
+Link of a vertex and ends of the tree
 Given a vertex [L] ∈T, one can describe the set of vertices at distance 1 of [L] as
 follows : for each such [L′] there is a basis of V such that O2
 v is a representative of
@@ -23,4 +25,3 @@ v) ≃P1( ˆOv) ≃KP1 (here ˆOv = lim
 ←−
 n→∞
 Ov/(tn) denotes the completion of Ov).
-1.3.3

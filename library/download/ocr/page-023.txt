@@ -1,0 +1,63 @@
+Concentration of empirical distribution functions 1407
+
+Remarks. It remains unclear whether or not one can involve the i.i.d. case in the scheme of
+Poincaré or logarithmic Sobolev inequalities to recover the rate 1/,/n for E|| F, — F||, even if
+some further natural assumptions are imposed (which are necessary, as we know from Exam-
+ples 1 and 2). In particular, one may assume that the quantities M and o are of order 1, and that
+EX; = 0, Var(X;) = 1. The question is the following: under, say, LSI(o?), is it true that
+
+Cc
+E||F, — F\| < =
+Fn Is
+
+with some absolute C? Or at least E| F, (x) — F(x)| < = for individual points?
+
+Va
+
+8. High-dimensional random matrices
+
+We shall now apply the bounds obtained in Theorems 1.1 and 7.1, to the case of the spectral
+empirical distributions. Let {&jx}1<j<k<n be a family of independent random variables on some
+probability space with mean Eé ;, = 0 and variance Var(& jx) = 1. Put &jx = &j forl<k<j<n
+and introduce a symmetric n x n random matrix,
+
+i S12 + Ein
+_ 1 | ga 22 + San
+c= — . . . .
+Oe
+Ent Ena Ean
+Arrange its (real random) eigenvalues in increasing order: X; <--- < Xy. As before, we asso-
+ciate with particular values X; = x1,..., Xn = Xp» an empirical (spectral) measure F;, with mean
+
+(expected) measure F = EF,,.
+
+An important point in this scheme is that the joint distribution jz of the spectral values, as a
+probability measure on R", represents the image of the joint distribution of &;,’s under a Lip-
+schitz map T with Lipschitz seminorm ||T||Lip = 2. More precisely, by the Hoffman—Wielandt
+theorem with respect to the Hilbert-Schmidt norm, we have
+
+n n
+1 2
+
+yy E-S'lis=— D> 8-84? <-> él
+
+DXi X;| <|5 E'llis = > le jx Fix SF le jx Fel
+
+jk=l lsjsksn
+
+for any collections {& jx} j<% and (Ej) <x with eigenvalues (X1,..., Xn), (X},..., X/,), respec-
+tively. This is a well-known fact ([2], page 165) which may be used in concentration problems;
+see, for example, [15,30].
+
+In particular (see Proposition Al in the Appendix), if the distributions of &j,’s satisfy a one-
+dimensional Poincaré-type inequality with common constant 07, then ju satisfies a Poincaré-type
+
+inequality with an asymptotically much better constant 0,2 = 2o- According to Theorem 1.1,
+
+A, +logn 3
+7 ,
+
++00
+E | [Fa(s) — Feaplas < Con(
+
+—0o

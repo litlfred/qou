@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: gn2.pdf
 source_sha256: ffe8965c496dbb2f
 toc_source: inferred
+doc_brief: "SOME RESULTS ABOUT THE KAUFFMAN BRACKET SKEIN MODULE OF THE TWIST KNOT EXTERIOR — In this paper, we list in explicit form the factoring relations of the Kauﬀman bracket skein module (KBSM for short)"
 ---
 SOME RESULTS ABOUT THE KAUFFMAN BRACKET SKEIN
 MODULE OF THE TWIST KNOT EXTERIOR
@@ -50,8 +51,6 @@ Key words and phrases. A-polynomial, colored Kauﬀman brackets, Kauﬀman brack
 module, tunnel number.
 The second author has been supported by JSPS Research Fellowships for Young Scientists.
 1
-2
-R˘AZVAN GELCA AND FUMIKAZU NAGASATO
 as in Figure 1 (which some authors call half-twists). We will also be concerned
 only with the case of positive twists. The Kauﬀman bracket skein module of the
 complement of a twist knot was determined in [BL]. Let us mention that recently

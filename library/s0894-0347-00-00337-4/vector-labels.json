@@ -1,0 +1,610 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "s0894-0347-00-00337-4",
+  "pages": [
+    {
+      "page": 2,
+      "rotation": 0,
+      "drawings": 39,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1. The limit shape of a typical diagram."
+      ],
+      "labels": [
+        {
+          "text": "482",
+          "bbox": [
+            126.72,
+            93.8,
+            138.63,
+            100.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI",
+          "bbox": [
+            206.06,
+            93.8,
+            406.07,
+            100.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Figure 1. The limit shape of a typical diagram.",
+          "bbox": [
+            198.84,
+            278.48,
+            413.44,
+            290.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The function Ωis plotted in Figure 1. As explained in detail in [22], this limit shape",
+          "bbox": [
+            126.72,
+            319.62,
+            485.49,
+            329.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Ωis closely connected to Wigner’s semicircle law for distribution of eigenvalues of",
+          "bbox": [
+            126.72,
+            331.62,
+            485.49,
+            341.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "random matrices; see also [19, 20, 21].",
+          "bbox": [
+            126.72,
+            343.5,
+            292.35,
+            353.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "From a diﬀerent point of view, the connection with random matrices was ob-",
+          "bbox": [
+            138.6,
+            355.5,
+            485.41,
+            365.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "served in [3, 4], and also in earlier papers [16, 28, 29]. In [3], Baik, Deift, and",
+          "bbox": [
+            126.72,
+            367.5,
+            485.5,
+            377.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Johansson made the following conjecture. They conjectured that in the n →∞",
+          "bbox": [
+            126.72,
+            379.09,
+            485.3,
+            389.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "limit and after proper scaling the joint distribution of λi, i = 1, 2, . . . , becomes",
+          "bbox": [
+            126.72,
+            391.37,
+            485.36,
+            402.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "identical to the joint distribution of properly scaled largest eigenvalues of a Gauss-",
+          "bbox": [
+            126.71,
+            403.38,
+            485.42,
+            413.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ian random Hermitian matrix (which form the so-called Airy ensemble; see Section",
+          "bbox": [
+            126.71,
+            415.26,
+            485.4,
+            425.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1.4). They proved this for the individual distribution of λ1 and λ2 in [3] and [4],",
+          "bbox": [
+            126.71,
+            427.25,
+            485.32,
+            438.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "respectively. A combinatorial proof of the full conjecture was given by one of us in",
+          "bbox": [
+            126.71,
+            439.14,
+            485.35,
+            449.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "[25]. It was based on an interplay between maps on surfaces and ramiﬁed coverings",
+          "bbox": [
+            126.71,
+            451.14,
+            485.69,
+            461.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of the sphere.",
+          "bbox": [
+            126.71,
+            463.14,
+            185.77,
+            473.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In this paper we study the local structure of a typical Plancherel diagram both",
+          "bbox": [
+            138.59,
+            475.02,
+            485.3,
+            484.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "in the bulk of the limit shape Ωand on its edge, where by the study of the edge we",
+          "bbox": [
+            126.71,
+            487.02,
+            485.49,
+            496.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "mean the study of the behavior of λ1, λ2, and so on.",
+          "bbox": [
+            126.71,
+            499.01,
+            356.06,
+            509.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "We employ an analytic approach based on an exact formula in terms of Bessel",
+          "bbox": [
+            138.59,
+            510.9,
+            485.47,
+            520.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "functions for the correlation functions of the so-called poissonization of the Plan-",
+          "bbox": [
+            126.71,
+            522.89,
+            485.51,
+            532.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "cherel measures Mn (see Theorem 1 in the following subsection), and the so-called",
+          "bbox": [
+            126.71,
+            534.77,
+            485.56,
+            546.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "depoissonization techniques (see Section 1.4).",
+          "bbox": [
+            126.72,
+            546.77,
+            324.36,
+            556.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The exact formula in Theorem 1 is a limit case of a formula from [8]; see also",
+          "bbox": [
+            138.6,
+            558.78,
+            485.46,
+            568.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the recent papers [26, 27] for more general results. The use of poissonization and",
+          "bbox": [
+            126.72,
+            570.66,
+            485.62,
+            580.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "depoissonization is very much in the spirit of [3, 16, 39] and represents a well–known",
+          "bbox": [
+            126.72,
+            582.66,
+            485.62,
+            592.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "statistical mechanics principle of the equivalence of canonical and grand canonical",
+          "bbox": [
+            126.72,
+            594.66,
+            485.57,
+            604.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ensembles.",
+          "bbox": [
+            126.72,
+            606.54,
+            172.57,
+            616.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Our main results are the following two. In the bulk of the limit shape Ω, we",
+          "bbox": [
+            138.6,
+            618.54,
+            485.41,
+            628.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "prove that the local structure of a Plancherel typical partition converges to a de-",
+          "bbox": [
+            126.72,
+            630.42,
+            485.41,
+            640.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "terminantal point process with the discrete sine kernel; see Theorem 3. This result",
+          "bbox": [
+            126.72,
+            642.42,
+            485.4,
+            652.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "is parallel to the corresponding result for random matrices. On the edge of the",
+          "bbox": [
+            126.72,
+            654.42,
+            485.29,
+            664.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "limit shape, we give an analytic proof of the Baik-Deift-Johansson conjecture; see",
+          "bbox": [
+            126.72,
+            666.3,
+            485.45,
+            676.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Theorem 4.",
+          "bbox": [
+            126.72,
+            678.3,
+            177.71,
+            688.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "These results will be stated in Sections 1.3 and 1.4 of the present",
+          "bbox": [
+            185.86,
+            678.3,
+            485.44,
+            688.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Introduction, respectively.",
+          "bbox": [
+            126.72,
+            690.3,
+            240.38,
+            700.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    }
+  ]
+}

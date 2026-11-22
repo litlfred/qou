@@ -1,6 +1,6 @@
 ---
 doc_id: 0510388v1
-doc_title: "ELECTRODYNAMICS and the GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE Dennis DeTurck and Herman Gluck"
+doc_title: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space"
 section_id: sec-026-23-maxwells-equation-on-s3
 section_title: "Maxwell's equation on S3 ."
 section_number: 23
@@ -8,6 +8,7 @@ pages: 53-55
 source_pdf: 0510388v1.pdf
 source_sha256: c83c0f6a2eaa74f3
 toc_source: inferred
+doc_brief: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space — 64 sections: Front matter; ORGANIZATION; STATEMENTS OF RESULTS"
 ---
 We now apply the Key Lemma to the proof of Maxwell's equation 
  
@@ -47,7 +48,6 @@ Then we integrate the Key Lemma over  S3  and get
                                                           =   ∫S3  δ(x, y) (V(x)  —  < V(x), y > y)  dx . 
  
  
-54 
  
  
  
@@ -72,8 +72,4 @@ As indicated in section 3, this is Maxwell's equation
  
 This explains our remark in section 19 that, for this special choice of kernel 
 function  ϕ ,  the Key Lemma can be viewed as a pointwise or infinitesimal  
-version of Maxwell's equation. 
- 
- 
- 
-55
+version of Maxwell's equation.

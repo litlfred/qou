@@ -1,0 +1,50 @@
+338 Multiple point asymptotics
+
+such as polynomials or algebraic functions. The efficiency of such algorithms
+is a topic of ongoing study. Some specific problems that can be studied with the
+results of this chapter can likely be improved with a more focused study. For
+instance, De Loera and Sturmfels [DS03] discuss alternate approaches to the
+enumeration of lattice points in a polytope, one involving computation of the
+Todd class of an associated toric variety and another pioneered by Barvinok et
+al. [Bar94].
+
+The decomposition of the positive orthant into regions (chambers) in which
+the counts vary polynomially are objects of classical study, as are the counts
+themselves; one example is the enumeration of lattice points in the dilated
+Birkhoff polytope, where even the leading term asymptotic was found only in
+2009 [CM09].
+
+The fact that the iterated residue of a rational function is a polynomial for
+complete intersections, and its consequences for generating function asymp-
+totics, are discussed in [Pem00].
+
+The proof of Lemma 10.45 suggested by Exercise 10.16 was supplied to us
+by Frank Sottile.
+
+Additional exercises
+
+Exercise 10.16. Assume the hypotheses of Lemma 10.45. Prove the following
+statements, then prove Lemma 10.45.
+
+(a) The gradients V Q,(p) are non-zero for all i < n.
+
+(b) For any UC T, let Vy = Micu Vi. If the set of gradients {V O,(p) : i € U}
+are linearly independent then Vy is smooth near p and equal to V7.
+
+(c) For such sets U, the ideal (fj : i € U) is reduced in Op.
+
+(d) For such sets U, the ideal (f; : i € U) is prime in Op.
+
+Exercise 10.17. Suppose that d = 2 and let p be a homogeneous point of V
+of degree k. Prove that p is a multiple point or is a cusp whose tangents are all
+equal.
+
+Exercise 10.18. Let F(x,y,z) = Ime SS be the Aztec dia-
+mond placement generating function, to be studied in Example 11.45 and The-
+orem | 1.49. For what directions 7 are there critical points on the stratum which
+is the intersection of the two divisors in the denominator of F’? Determine, up
+to a constant factor, the asymptotic contribution at such a point. (These points
+never contribute to the leading asymptotics of a,.s;, their contribution being too
+small to contribute in the cases when there is no exponential decay as in The-
+
+orem 11.49 and too large to contribute when there is, as in Example 11.45.)

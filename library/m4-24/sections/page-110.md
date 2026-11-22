@@ -1,0 +1,59 @@
+---
+doc_id: m4-24
+doc_title: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface"
+section_id: page-110
+section_title: "Page 110"
+section_number: null
+pages: 110-110
+source_pdf: m4-24.pdf
+source_sha256: cf7c5e29b818e647
+toc_source: undetermined
+doc_brief: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3"
+---
+482 T. Ohtsuki (Editor)
+
+Remark As mentioned in [294] the “definition” of the optimistic limit is not
+rigorous yet, because there is some ambiguity in the present definition, where
+formal approximation, such as (4) and (5), are used. It is a problem to find a
+rigorous formulation of the optimistic limit.
+
+Remark It is shown [294], by using formal approximations, that Conjecture
+7.12 is “true” for closed 3-manifolds obtained from S*® by surgery along the
+figure-eight knot.
+
+Remark R. Benedetti gave another formulation of the volume conjecture by
+using quantum hyperbolic invariants; see Conjecture 7.25.
+
+Remark The statement of Conjecture 7.12 should extend for knot (link) com-
+plements M, which should be related to the volume conjecture for knots (Con-
+jecture 1.21).
+
+Remark By formally applying the (infinite dimensional) saddle point method
+to the Chern-Simons path integral, the value (42) appears at a critical point
+of the Chern-Simons functional. This might give a physical explanation of
+Conjecture 7.12. Can we justify it in mathematics? There is an approach,
+by using knotted trivalent graphs (see Conjecture 12.7), to justify the Chern-
+Simons path integral mathematically, which might be helpful to apply the saddle
+point method to it rigorously.
+
+SU(2) (4,
+Problem 7.13 (H. Murakami) Calculate o-lim 2” for Seifert fibered
+3-manifolds M.
+
+Remark When M is a mapping torus of a homeomorphism of a surface, a
+quantum invariant of MM can be presented by the trace of the linear map on the
+quantum Hilbert space associated to the homeomorphism. Such a presentation
+
+might be useful to compute the asymptotic behaviour of eC ).
+
+Remark When we choose a simplicial decomposition of M, (the absolute
+value of) its quantum invariant can be expressed by using quantum 6j-symbols.
+The computation of the asymptotic behaviour of rei ) might be reduced
+to the computation of limits of quantum 6j-symbols. J. Roberts [347] showed
+that a limit of classical 6j-symbols is given by the Euclidean volume of a tetra-
+hedron. Further, J. Murakami and M. Yano [302] recently showed that a limit
+of quantum 6j-symbols is related to the hyperbolic volume of a tetrahedron via
+
+formal approximation such as (4) and (5).
+
+Geometry & Topology Monographs, Volume 4 (2002)

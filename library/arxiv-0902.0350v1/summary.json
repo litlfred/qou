@@ -2,70 +2,80 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-0902.0350v1",
  "source_sha256": "4591687132c93973",
- "brief": "A REVISION OF THE PROOFOF THE KEPLER CONJECTURE — The Kepler conjecture asserts that no packing of congruent balls in three-dimensional Euclidean space has density greater than that of the",
- "extended": "**A REVISION OF THE PROOFOF THE KEPLER CONJECTURE**\n\n*THOMAS C. HALES, JOHN HARRISON, SEAN MCLAUGHLIN, TOBIAS NIPKOW*\n\n41 pp, 12 sections.\n\n**Abstract.** The Kepler conjecture asserts that no packing of congruent balls in three-dimensional Euclidean space has density greater than that of the face-centered cubic packing. The original proof, announced in 1998 and published in 2006, is long and complex. The process of revision and review did not end with the publication of the proof. This article summarizes the current status of a long-term initiative to reorganize the original proof into a more transparent form and to provide a greater level of certification of the correctness of the computer code and other details of the proof. A final part of this article lists errata in the original proof of the Kepler conjecture.\n\n**Outline.** Introduction; 1 The Flyspeck project; 2 Blueprint edition of the Kepler conjecture; 3 Formalizing the ordinary mathematics; 4 Standard ML reimplementation of code; 5 Proving nonlinear inequalities with Bernstei; 6 Tame graph enumeration; 7 Verifying linear programs; Part 2. Addendum to and Errata in the Original; 8 Biconnected graphs; 9 Errata listing; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: Any tame plane graph is isomorphic to a graph in the Archive.\n- Theorem 2: If a tame and final graphg is reachable from Seedp via next-\n- Theorem 3: If the graph Γ = (U,E ) is not biconnected, then a nontriv-\n- Lemma 1: LetS ={0,v,,u 1,u 2} be a set of four distinct points inR3 whose\n- Lemma 2: Let S ={v,w,u 1,u 2,v 0} be a set of five distinct points inR3\n- Lemma 3: Let S ={v,w,u 1,u 2,v 0} be a set of five distinct points inR3",
+ "brief": "A REVISION OF THE PROOF OF THE KEPLER CONJECTURE — The Kepler conjecture asserts that no packing of congruent balls in three-dimensional Euclidean space has density greater than that of the",
+ "extended": "**A REVISION OF THE PROOF OF THE KEPLER CONJECTURE**\n\n*THOMAS C. HALES, JOHN HARRISON, SEAN MCLAUGHLIN, TOBIAS NIPKOW*\n\n41 pp, 14 sections.\n\n**Abstract.** The Kepler conjecture asserts that no packing of congruent balls in three-dimensional Euclidean space has density greater than that of the face-centered cubic packing. The original proof, announced in 1998 and published in 2006, is long and complex. The process of revision and review did not end with the publication of the proof. This article summarizes the current status of a long-term initiative to reorganize the original proof into a more transparent form and to provide a greater level of certification of the correctness of the computer code and other details of the proof. A final part of this article lists errata in the original proof of the Kepler conjecture.\n\n**Outline.** Front matter; Introduction; Part 1. Formal Proof Initiative; 1 The Flyspeck project; 2 Blueprint edition of the Kepler conjecture; 3 Formalizing the ordinary mathematics; 4 Standard ML reimplementation of code; 5 Proving nonlinear inequalities with Bernstei; 6 Tame graph enumeration; 7 Verifying linear programs; Part 2. Addendum to and Errata in the Original; 8 Biconnected graphs; 9 Errata listing; References",
  "tokens": {
   "brief": 47,
-  "extended": 425
+  "extended": 313
  },
  "sections": [
   {
-   "id": "sec-000-introduction",
-   "title": "Introduction",
-   "pages": "1-3"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
   },
   {
-   "id": "sec-001-1-the-flyspeck-project",
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-001-part-1-formal-proof-initiative",
+   "title": "Part 1. Formal Proof Initiative",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-002-1-the-flyspeck-project",
    "title": "The Flyspeck project",
    "pages": "3-5"
   },
   {
-   "id": "sec-002-2-blueprint-edition-of-the-kepler-conjecture",
+   "id": "sec-003-2-blueprint-edition-of-the-kepler-conjecture",
    "title": "Blueprint edition of the Kepler conjecture",
    "pages": "5-7"
   },
   {
-   "id": "sec-003-3-formalizing-the-ordinary-mathematics",
+   "id": "sec-004-3-formalizing-the-ordinary-mathematics",
    "title": "Formalizing the ordinary mathematics",
    "pages": "7-10"
   },
   {
-   "id": "sec-004-4-standard-ml-reimplementation-of-code",
+   "id": "sec-005-4-standard-ml-reimplementation-of-code",
    "title": "Standard ML reimplementation of code",
    "pages": "10-12"
   },
   {
-   "id": "sec-005-5-proving-nonlinear-inequalities-with-bernstein",
+   "id": "sec-006-5-proving-nonlinear-inequalities-with-bernstein",
    "title": "Proving nonlinear inequalities with Bernstein bases",
    "pages": "12-16"
   },
   {
-   "id": "sec-006-6-tame-graph-enumeration",
+   "id": "sec-007-6-tame-graph-enumeration",
    "title": "Tame graph enumeration",
    "pages": "16-19"
   },
   {
-   "id": "sec-007-7-verifying-linear-programs",
+   "id": "sec-008-7-verifying-linear-programs",
    "title": "Verifying linear programs",
    "pages": "19-22"
   },
   {
-   "id": "sec-008-part-2-addendum-to-and-errata-in-the-original-pr",
+   "id": "sec-009-part-2-addendum-to-and-errata-in-the-original-pr",
    "title": "Part 2. Addendum to and Errata in the Original Proof",
    "pages": "22-22"
   },
   {
-   "id": "sec-009-8-biconnected-graphs",
+   "id": "sec-010-8-biconnected-graphs",
    "title": "Biconnected graphs",
    "pages": "22-35"
   },
   {
-   "id": "sec-010-9-errata-listing",
+   "id": "sec-011-9-errata-listing",
    "title": "Errata listing",
    "pages": "35-38"
   },
   {
-   "id": "sec-011-references",
+   "id": "sec-012-references",
    "title": "References",
    "pages": "38-41"
   }
@@ -74,8 +84,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

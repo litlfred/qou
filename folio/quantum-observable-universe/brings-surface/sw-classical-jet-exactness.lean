@@ -34,7 +34,7 @@ field. Numerical companion (exact sympy verification at `z = ∞`, sheets
 
 ## References
 
-- [manuscript] §5-brings-surface/sw-classical-jet-exactness
+- [leitner2026] §5-brings-surface/sw-classical-jet-exactness
 - [seiberg1994] https://doi.org/10.1016/0550-3213(94)90124-4
 
 **Ground ring**: generic `CommRing R` for the formal-residue core (§7c); `ℂ`

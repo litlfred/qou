@@ -8,7 +8,8 @@ prediction of m_p and m_n from (m_e, m_μ, q_0) at MPFR 50 dps.
    m_p = 2 · m_μ · |tr_M(β_Bor, q_0)| · [3]_q! / q_0^3  −  12 · m_e
 
    m_n = m_p + Q_β + m_e   with Q_β the parameter-free Kashiwara b² truncation
-                           (derived_masses.q_beta_kashiwara_n2_mev; ~+1 ppb on m_n).
+                           (derived_masses.q_beta_kashiwara_n2_mev; +501 ppb on m_n under
+                           convention D, see below).
                            The flavor-split X = (q-1)²(1 - q^{-4})/3 is retained
                            as a SECONDARY diagnostic ratio (−1.76 ppm), not the route.
 
@@ -56,10 +57,11 @@ At q_0 = 1.1099785955573347... (50 dps, m_p-pinned re-pin #1422):
                                           round-trip, not a prediction)
   m_μ_pred  = 105.65840 MeV   vs CODATA 105.65838  →  +0.21 ppm   (9.5σ
                                           PREDICTION — the μ-p tension)
-  m_n_pred  = 939.56542 MeV   vs CODATA 939.56542  →  +1.0 ppb   (n→p+e+ν̄  # noqa: P31 — docstring; prediction-vs-CODATA table
+  m_n_pred  = 939.56589 MeV   vs CODATA 939.56542  →  +501 ppb   (n→p+e+ν̄  # noqa: P31 — docstring; prediction-vs-CODATA table
                                           chain; Kashiwara b² Q_β, near-match)
-  Q_β_pred  = 0.78233 MeV     vs CODATA 0.78233    →  +1.25 ppm on Q_β  # noqa: P31 — docstring; prediction-vs-CODATA table
-                                          (only ~+1 ppb on m_n; gated on s5bb)
+  Q_β_pred  = 0.78280 MeV     vs CODATA 0.78233    →  +602 ppm on Q_β  # noqa: P31 — docstring; prediction-vs-CODATA table
+                                          (convention-D α; the +1.25 ppm / ~1 ppb
+                                          figures were convention C, excised)
 
 Class-A acknowledged-anchor banner (per Workplan-0b): m_e, m_μ are
 CAL-1/CAL-2 anchors (CODATA inputs). q_0 is the substrate parameter
@@ -239,6 +241,68 @@ def flavor_split_X(q):
     return (q - 1) ** 2 * (1 - q ** (-4)) / 3
 
 
+def borromean_v3_connected_qed_traces(q: mpf) -> dict[str, mpf]:
+    """Exact 3-strand weight-space Borromean V³ = (σ₁σ₂⁻¹)³ traces and connected
+    4th-order QED self-energy / isospin-splitting traces at substrate parameter q.
+
+    Backed by sorry-free Lean 4 theorems in
+    `QOU/BraidsAndKnots/NucleonWeightSpaceTwoTerm.lean` (Sections 6 & 7):
+      - `trace_borromeanV3A` / `trace_borromeanV3B`:
+          tr(V³) = -(q¹² - 3q¹⁰ + 3q⁸ - 5q⁶ + 3q⁴ - 3q² + 1) / q⁶
+      - `trace_e3p_borromeanV3` / `trace_e3n_borromeanV3`:
+          tr(e_{(3)} V³) = 1
+      - `trace_e21p_borromeanV3` / `trace_e21n_borromeanV3`:
+          tr(e_{(2,1)} V³) = -(q⁴ - q² + 1)(q⁸ - 2q⁶ - 2q² + 1) / q⁶ = tr(V³) - 1
+      - `trace_QAdjp_borromeanV3` (per-strand connected, /3):
+          tr_bar_conn(p, V³) = -2(q² - 1)⁴(q⁴ + q² + 1) / (27 q⁶)
+      - `trace_QAdjn_borromeanV3_connected` (per-strand connected, /3):
+          tr_bar_conn(n, V³) = +(q² - 1)⁴(2q⁴ - q² + 2) / (27 q⁶)
+      - `trace_QAdj_connected_diff_borromeanV3` (per-strand connected difference, /3):
+          Δtr_bar_conn(V³) = +(q² - 1)⁴(4q⁴ + q² + 4) / (27 q⁶)
+      - `trace_e21p_QAdjp_borromeanV3`:
+          tr(e_{(2,1)}^p (Q₁₂^(p) + Q₂₃^(p)) V_p³) = -2(q² - 1)²(q¹² - q⁶ + 1) / (9 q⁶ (q⁴ + q² + 1))
+      - `trace_e21n_QAdjn_borromeanV3`:
+          tr(e_{(2,1)}^n (Q₁₂^(n) + Q₂₃^(n)) V_n³) = (4q¹⁶ - 11q¹⁴ + 13q¹² - 22q¹⁰ + 20q⁸ - 22q⁶ + 13q⁴ - 11q² + 4) / (9 q⁶ (q⁴ + q² + 1))
+      - `trace_e21_QAdj_diff_borromeanV3`:
+          Δtr_{e_{(2,1)}}(Q_adj V³) = (2q¹⁶ - 5q¹⁴ + 5q¹² - 8q¹⁰ + 8q⁸ - 8q⁶ + 5q⁴ - 5q² + 2) / (3 q⁶ (q⁴ + q² + 1))
+    """
+    q2 = q ** 2
+    q6 = q2 ** 3
+    q4_q2_1 = q2 ** 2 + q2 + 1
+
+    tr_V3 = -(q2 ** 6 - 3 * (q2 ** 5) + 3 * (q2 ** 4) - 5 * (q2 ** 3) + 3 * (q2 ** 2) - 3 * q2 + 1) / q6
+    tr_e3_V3 = mpf(1)
+    tr_e21_V3 = -(q2 ** 2 - q2 + 1) * (q2 ** 4 - 2 * (q2 ** 3) - 2 * q2 + 1) / q6
+
+    q2m1_4 = (q2 - 1) ** 4
+    tr_conn_p = -2 * q2m1_4 * q4_q2_1 / (27 * q6)
+    tr_conn_n = q2m1_4 * (2 * (q2 ** 2) - q2 + 2) / (27 * q6)
+    tr_conn_diff = q2m1_4 * (4 * (q2 ** 2) + q2 + 4) / (27 * q6)
+
+    denom_e21 = q6 * q4_q2_1
+    tr_e21_QAdjp = -2 * ((q2 - 1) ** 2) * (q2 ** 6 - q2 ** 3 + 1) / (9 * denom_e21)
+    tr_e21_QAdjn = (
+        4 * (q2 ** 8) - 11 * (q2 ** 7) + 13 * (q2 ** 6) - 22 * (q2 ** 5)
+        + 20 * (q2 ** 4) - 22 * (q2 ** 3) + 13 * (q2 ** 2) - 11 * q2 + 4
+    ) / (9 * denom_e21)
+    tr_e21_QAdj_diff = (
+        2 * (q2 ** 8) - 5 * (q2 ** 7) + 5 * (q2 ** 6) - 8 * (q2 ** 5)
+        + 8 * (q2 ** 4) - 8 * (q2 ** 3) + 5 * (q2 ** 2) - 5 * q2 + 2
+    ) / (3 * denom_e21)
+
+    return {
+        "tr_V3": tr_V3,
+        "tr_e3_V3": tr_e3_V3,
+        "tr_e21_V3": tr_e21_V3,
+        "tr_conn_p": tr_conn_p,
+        "tr_conn_n": tr_conn_n,
+        "tr_conn_diff": tr_conn_diff,
+        "tr_e21_QAdjp": tr_e21_QAdjp,
+        "tr_e21_QAdjn": tr_e21_QAdjn,
+        "tr_e21_QAdj_diff": tr_e21_QAdj_diff,
+    }
+
+
 def main():
     set_compute_dps()
 
@@ -279,7 +343,8 @@ def main():
     m_p_pred = 2 * m_mu * F - 12 * m_e
     # Canonical neutron: n → p + e⁻ + ν̄, with Q_β the parameter-free
     # Kashiwara b² truncation (q_0-only; derived_masses.q_beta_kashiwara_n2_mev).
-    # Q_β is ~0.083 % of m_n, so its +1.25 ppm lands m_n at ~+1 ppb.
+    # Q_β is ~0.083 % of m_n; under convention D its +602 ppm lands m_n at
+    # +501 ppb (the earlier +1.25 ppm / ~1 ppb were convention C).
     # TIER: near-match; exact Q_β gated on the s5bb Habiro keystone.
     Q_beta_pred = q_beta_kashiwara_n2_mev()            # absolute MeV (no E_0 scaling)
     Delta_m_pred = Q_beta_pred + m_e                   # = m_n − m_p, computed directly
@@ -325,6 +390,67 @@ def main():
     res_M_N_ppm = (M_N_pred - M_N_codata) / M_N_codata * mpf("1e6")
     res_Q_beta_ppm = (Q_beta_pred - Q_beta_codata) / Q_beta_codata * mpf("1e6")
 
+    # ── TWO-TERM BORROMEAN V³ QED DIAGNOSTICS (Tier A additive, qou-7ph7) ──
+    # Backed by QOU/BraidsAndKnots/NucleonWeightSpaceTwoTerm.lean (Sections 6 & 7).
+    from q_parameter import (  # noqa: E402
+        MASS_RATIO_MU_E_STR,
+        MASS_RATIO_MU_E_ERR,
+        q_muon_at,
+        q_two_term_borromean_at,
+    )
+    bor_traces = borromean_v3_connected_qed_traces(q)
+    tr_V3 = bor_traces["tr_V3"]
+    tr_e3_V3 = bor_traces["tr_e3_V3"]
+    tr_e21_V3 = bor_traces["tr_e21_V3"]
+    tr_conn_p = bor_traces["tr_conn_p"]
+    tr_conn_n = bor_traces["tr_conn_n"]
+    tr_conn_diff = bor_traces["tr_conn_diff"]
+    tr_e21_QAdjp = bor_traces["tr_e21_QAdjp"]
+    tr_e21_QAdjn = bor_traces["tr_e21_QAdjn"]
+    tr_e21_QAdj_diff = bor_traces["tr_e21_QAdj_diff"]
+
+    # Weighting: DERIVED quantum trace Tr(K^{⊗3}·)/[2]_q³ (bean qou-99qc). The 1/3-normalised
+    # entries below ('plain', 'Kp', 'KnKp') are kept as labelled historical comparisons.
+    from two_term_qtrace_weighting import m_p_qed_conn_mev, delta_m_qed_conn_mev
+    # Scored: covariant all-pairs (owner 2026-11-20 16:44) -> 0 on V³. Adjacent = option 1, labelled.
+    M_p_QED_conn_scored_MeV = m_p_qed_conn_mev(q, m_e)
+    Delta_m_QED_conn_scored_MeV = delta_m_qed_conn_mev(q, m_e)
+    M_p_QED_conn_derived_MeV = m_p_qed_conn_mev(q, m_e, "derived", "adjacent")
+    Delta_m_QED_conn_derived_MeV = delta_m_qed_conn_mev(q, m_e, "derived", "adjacent")
+    M_p_QED_conn_MeV = m_e * abs(tr_conn_p)
+    M_p_QED_conn_Kp_MeV = m_e * q * abs(tr_conn_p)
+    Delta_m_QED_conn_MeV = -m_e * tr_conn_diff
+    Delta_m_QED_conn_KnKp_MeV = -m_e * (tr_conn_n / q - q * tr_conn_p)
+    Q_beta_two_term_plain_MeV = Q_beta_pred + Delta_m_QED_conn_MeV
+    Q_beta_two_term_MeV = Q_beta_pred + Delta_m_QED_conn_scored_MeV
+    Q_beta_two_term_derived_adjacent_MeV = Q_beta_pred + Delta_m_QED_conn_derived_MeV
+    m_n_two_term_MeV = m_p_pred + Q_beta_two_term_MeV + m_e
+    res_Q_beta_two_term_ppm = (Q_beta_two_term_MeV - Q_beta_codata) / Q_beta_codata * mpf("1e6")
+    res_m_n_two_term_ppb = (m_n_two_term_MeV - m_n_codata) / m_n_codata * mpf("1e9")
+
+    # Two-term proton pin & μ–p tension diagnostics
+    vol50 = vol_4_1_at(50)
+    q_muon_50 = q_muon_at(50)
+    q_two_term_scored = q_two_term_borromean_at(50)
+    q_two_term_derived = q_two_term_borromean_at(50, weighting="derived", insertion="adjacent")
+    q_two_term_plain = q_two_term_borromean_at(50, weighting="plain")
+    q_two_term_kwt = q_two_term_borromean_at(50, weighting="Kp")
+    mmu_me_two_term_derived = vol_4_1_at(50) / (((q_two_term_derived - 1) / q_two_term_derived) ** 2)
+    mmu_me_codata = mpf(MASS_RATIO_MU_E_STR)
+    mmu_me_err = mpf(str(MASS_RATIO_MU_E_ERR))
+    mmu_me_two_term_plain = vol50 / (((q_two_term_plain - 1) / q_two_term_plain) ** 2)
+    mmu_me_two_term_kwt = vol50 / (((q_two_term_kwt - 1) / q_two_term_kwt) ** 2)
+    mup_tension_two_term_plain_ppb = (mmu_me_two_term_plain - mmu_me_codata) / mmu_me_codata * mpf("1e9")
+    mup_tension_two_term_plain_sigma = (mmu_me_two_term_plain - mmu_me_codata) / mmu_me_err
+    mup_tension_two_term_kwt_ppb = (mmu_me_two_term_kwt - mmu_me_codata) / mmu_me_codata * mpf("1e9")
+    mup_tension_two_term_kwt_sigma = (mmu_me_two_term_kwt - mmu_me_codata) / mmu_me_err
+    dq_two_term_plain_vs_muon_ppb = (q_two_term_plain - q_muon_50) / q_muon_50 * mpf("1e9")
+    dq_two_term_derived_vs_muon_ppb = (q_two_term_derived - q_muon_50) / q_muon_50 * mpf("1e9")
+    mup_tension_two_term_derived_ppb = (mmu_me_two_term_derived - mmu_me_codata) / mmu_me_codata * mpf("1e9")
+    mup_tension_two_term_derived_sigma = (mmu_me_two_term_derived - mmu_me_codata) / mmu_me_err
+    dq_two_term_kwt_vs_muon_ppb = (q_two_term_kwt - q_muon_50) / q_muon_50 * mpf("1e9")
+    e3_plus_e21_trace_residual = abs((tr_e3_V3 + tr_e21_V3) - tr_V3)
+
     print("=" * 78)
     print("  m_p substrate identity (production compute, 50 dps)")
     print("=" * 78)
@@ -369,12 +495,12 @@ def main():
         "(m_e, m_μ, q_0) using Lean-proved closed forms for |tr_M(β_Bor)| "
         "and [3]_q!. The neutron uses the 3-input chain m_n = m_p + Q_β + m_e "
         "with Q_β the parameter-free Kashiwara b² truncation (near-match, "
-        "~+1 ppb on m_n); the Hecke-skein flavor-split is a secondary ratio. "
+        "+501 ppb on m_n under convention D); the Hecke-skein flavor-split is a secondary ratio. "
         "CAL-3 (Q_β) is NOT used as input — Q_β becomes a DERIVED quantity. "
         "Substrate identity: m_p = 2·m_μ·|tr_M|·[3]_q!/q^3 - 12·m_e where "
         "the '12' is the Ocneanu cancellation reciprocal."
     )
-    w.set_content_block("prop:proton-mass-substrate-identity")
+    w.set_content_block("conj:proton-mass-substrate-identity")
     w.set_audit_only("docs/audits/2026-05-25-proton-mass-identity-12-me-ocneanu.md")
 
     w.add_parameter("q0", mp.nstr(q, 25))
@@ -466,6 +592,84 @@ def main():
         ),
     })
 
+    # Tier A additive block: two-term Borromean V³ = (σ₁σ₂⁻¹)³ connected QED
+    # diagnostics backed by QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm (qou-7ph7).
+    w.add_data("two_term_borromean_qed_diagnostics", {
+        "tr_V3": mp.nstr(tr_V3, 50),
+        "tr_e3_V3": mp.nstr(tr_e3_V3, 50),
+        "tr_e21_V3": mp.nstr(tr_e21_V3, 50),
+        "tr_conn_p": mp.nstr(tr_conn_p, 50),
+        "tr_conn_n": mp.nstr(tr_conn_n, 50),
+        "tr_conn_diff": mp.nstr(tr_conn_diff, 50),
+        "tr_e21_QAdjp": mp.nstr(tr_e21_QAdjp, 50),
+        "tr_e21_QAdjn": mp.nstr(tr_e21_QAdjn, 50),
+        "tr_e21_QAdj_diff": mp.nstr(tr_e21_QAdj_diff, 50),
+        "weighting_canonical": "derived: Tr(K^{⊗3}·)/[2]_q³ (qou-99qc); *_MeV without suffix, *_Kp, *_KnKp, *_plain are historical",
+        "scored_insertion": "covariant all-pairs (owner 2026-11-20 16:44): connected part 0 on V³; *_derived_* = adjacent (option 1), labelled",
+        "M_p_QED_conn_scored_MeV": mp.nstr(M_p_QED_conn_scored_MeV, 25),
+        "Delta_m_QED_conn_scored_MeV": mp.nstr(Delta_m_QED_conn_scored_MeV, 25),
+        "Q_beta_two_term_derived_adjacent_MeV": mp.nstr(Q_beta_two_term_derived_adjacent_MeV, 25),
+        "q_two_term_borromean_scored": mp.nstr(q_two_term_scored, 50),
+        "M_p_QED_conn_derived_MeV": mp.nstr(M_p_QED_conn_derived_MeV, 25),
+        "Delta_m_QED_conn_derived_MeV": mp.nstr(Delta_m_QED_conn_derived_MeV, 25),
+        "M_p_QED_conn_MeV": mp.nstr(M_p_QED_conn_MeV, 25),
+        "M_p_QED_conn_Kp_MeV": mp.nstr(M_p_QED_conn_Kp_MeV, 25),
+        "Delta_m_QED_conn_MeV": mp.nstr(Delta_m_QED_conn_MeV, 25),
+        "Delta_m_QED_conn_KnKp_MeV": mp.nstr(Delta_m_QED_conn_KnKp_MeV, 25),
+        "Q_beta_two_term_plain_MeV": mp.nstr(Q_beta_two_term_plain_MeV, 25),
+        "Q_beta_two_term_MeV": mp.nstr(Q_beta_two_term_MeV, 25),
+        "Q_beta_two_term_residual_ppm": mp.nstr(res_Q_beta_two_term_ppm, 12),
+        "m_n_two_term_MeV": mp.nstr(m_n_two_term_MeV, 25),
+        "m_n_two_term_derived_adjacent_MeV": mp.nstr(m_p_pred + Q_beta_two_term_derived_adjacent_MeV + m_e, 25),
+        "q_two_term_borromean_derived": mp.nstr(q_two_term_derived, 50),
+        "dq_two_term_derived_vs_muon_ppb": mp.nstr(dq_two_term_derived_vs_muon_ppb, 12),
+        "mup_tension_two_term_derived_ppb": mp.nstr(mup_tension_two_term_derived_ppb, 12),
+        "mup_tension_two_term_derived_sigma": mp.nstr(mup_tension_two_term_derived_sigma, 12),
+        "m_n_two_term_residual_ppb": mp.nstr(res_m_n_two_term_ppb, 12),
+        "q_two_term_borromean_plain": mp.nstr(q_two_term_plain, 50),
+        "q_two_term_borromean_k_weighted": mp.nstr(q_two_term_kwt, 50),
+        "dq_two_term_plain_vs_muon_ppb": mp.nstr(dq_two_term_plain_vs_muon_ppb, 12),
+        "dq_two_term_k_weighted_vs_muon_ppb": mp.nstr(dq_two_term_kwt_vs_muon_ppb, 12),
+        "mup_tension_one_term_ppb": mp.nstr(res_m_mu_ppm * mpf("1e3"), 12),
+        "mup_tension_two_term_plain_ppb": mp.nstr(mup_tension_two_term_plain_ppb, 12),
+        "mup_tension_two_term_plain_sigma": mp.nstr(mup_tension_two_term_plain_sigma, 12),
+        "mup_tension_two_term_k_weighted_ppb": mp.nstr(mup_tension_two_term_kwt_ppb, 12),
+        "mup_tension_two_term_k_weighted_sigma": mp.nstr(mup_tension_two_term_kwt_sigma, 12),
+        "lean_theorems": {
+            "trace_borromeanV3A": "QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_borromeanV3A",
+            "trace_e3p_borromeanV3": "QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_e3p_borromeanV3",
+            "trace_e21p_borromeanV3": "QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_e21p_borromeanV3",
+            "trace_e21_strong_cartan_diff_borromeanV3": (
+                "QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_e21_strong_cartan_diff_borromeanV3"
+            ),
+            "trace_QAdjp_borromeanV3": "QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdjp_borromeanV3",
+            "trace_QAdjn_borromeanV3_connected": (
+                "QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdjn_borromeanV3_connected"
+            ),
+            "trace_QAdj_connected_diff_borromeanV3": (
+                "QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdj_connected_diff_borromeanV3"
+            ),
+            "trace_e21_QAdj_diff_borromeanV3": (
+                "QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_e21_QAdj_diff_borromeanV3"
+            ),
+        },
+        "note": (
+            "Tier A non-breaking diagnostic block (bean qou-7ph7): evaluates the "
+            "connected 4th-order Borromean V³ = (σ₁σ₂⁻¹)³ quark charge traces proved "
+            "sorry-free in QOU/BraidsAndKnots/NucleonWeightSpaceTwoTerm.lean. "
+            "WEIGHTING DERIVED 2026-11-20 (qou-99qc): Tr(K^{⊗3}·)/[2]_q³ "
+            "(NucleonWeightSpaceQTrace). INSERTION RULED 2026-11-20 16:44: covariant all-pairs, "
+            "connected part 0 on V³, so m_n_two_term / Q_beta_two_term equal the one-term values. "
+            "Adjacent comparison (option 1): M_p^QED,conn = +0.0901243 keV, Δm = -0.1272243 keV. "
+            "Historical 1/3-normalised adjacent 'plain': +0.220077 / -0.331696 keV. NOT DERIVED "
+            "PREDICTIONS (bean qou-99qc, 2026-11-19): the word dependence comes only "
+            "from dropping quark pair 1-3 (summed over all pairs the insertion is "
+            "word-independent, trace_QPair_diff_word), and the scale/weighting were "
+            "chosen against the μ–p and Q_β targets. Records of selected combinations; "
+            "they do not close either residual."
+        ),
+    })
+
     # Assertions: tight matches
     w.add_assertion(
         name="m_p_matches_codata_within_1ppm",
@@ -486,8 +690,38 @@ def main():
         unit="ppb",
         source=(
             "m_n via the parameter-free Kashiwara b² Q_β (n→p+e+ν̄) should "
-            "match CODATA m_n within 10 ppb — observed ~1 ppb. TIER: "
-            "near-match; exact Q_β gated on the s5bb Habiro keystone."
+            "match CODATA m_n within 10 ppb. Under convention D it does not: "
+            "+501 ppb (the ~1 ppb once recorded was convention C, excised). "
+            "TIER: near-match; exact Q_β gated on the s5bb Habiro keystone."
+        ),
+    )
+    w.add_assertion(
+        name="borromean_v3_e3_plus_e21_equals_full_trace",
+        computed=e3_plus_e21_trace_residual,
+        expected=mpf("0"),
+        tolerance=mpf("1e-45"),
+        unit="dimensionless",
+        source=(
+            "Exact central idempotent trace decomposition tr(e_{(3)} V³) + tr(e_{(2,1)} V³) "
+            "= tr(V³) on the 3-strand nucleon weight spaces W_p and W_n "
+            "(QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_e3p_borromeanV3, "
+            "trace_e21p_borromeanV3)."
+        ),
+    )
+    w.add_assertion(
+        name="borromean_v3_conn_proton_closes_mup_gap_within_1sigma",
+        computed=abs(mup_tension_two_term_plain_sigma),
+        expected=mpf("0"),
+        tolerance=mpf("1"),
+        unit="sigma",
+        source=(
+            "RECORD OF A SELECTED COMBINATION, not a zero-parameter prediction "
+            "(bean qou-99qc, 2026-11-19): connected 4th-order Borromean proton QED "
+            "term M_p^QED,conn = m_e·|tr_bar_conn(p, V³)| (+0.220077 keV, "
+            "QOU.BraidsAndKnots.NucleonWeightSpaceTwoTerm.trace_QAdjp_borromeanV3), "
+            "with the m_e scale and the adjacent-pair restriction both chosen. "
+            "Checks that the recorded combination reproduces +8.06 ppb = +0.36σ; it "
+            "is not evidence that the μ–p tension (9.5σ on the ratio) is closed."
         ),
     )
 

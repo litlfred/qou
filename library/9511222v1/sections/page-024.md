@@ -1,0 +1,66 @@
+---
+doc_id: 9511222v1
+doc_title: "Murnaghan–Nakayama rules for characters of Iwahori–Hecke algebras of classical type"
+section_id: page-024
+section_title: "Page 24"
+pages: 24-24
+pdf_page: 24
+source_pdf: 9511222v1.pdf
+source_sha256: 2870b5b709d1f358
+text_source: ocr
+granularity: page
+doc_brief: "Murnaghan–Nakayama rules for characters of Iwahori–Hecke algebras of classical type — 26 sections: Page 1; Page 2; Page 3"
+---
+1. HALVERSON AND AL MANE
+
+readily computed and has been done so for g = 1 by Green [Gre] and for generic g
+in [HR]. The result uses the natural extension of the theory of shapes and tableaux
+to the theory of partially ordered sets. (For a full treatment of this subject, see
+[Sta], whose notation we use here).
+
+If \ is a shape (possibly skew), then we construct a corresponding poset P)
+whose Hasse diagram is given by placing a node in each box of A and then drawing
+edges connecting nodes in adjacent boxes. The order relation in this poset is so
+that the smallest nodes are in the upper left corners. For example,
+
+o and o
+
+Figure 4.11
+
+Note that posets corresponding to shapes are always planar and that the sharp
+and dull corners that we defined for partitions and shapes (see Figure 2.19) are
+exactly the sharp and dull corners of the corresponding poset.
+
+Theorem 4.12. ([Gre], Theorem 3.3; [HR], Theorem 5.8) Let P, be the poset of
+any shape (or skew shape) \, let {)} be a set of commutative variables indexed
+by {b € Py}, and let q be an indeterminate. Define
+
+1—2ax;'
+wt(a, b) = eth for all a,b € Py (4.13)
+q—4
+and
+A(Py) = [J wt(a,byarr(o).
+a,b€ Py
+axXb
+Then
+any (TU=@=) (=) (12
+D q-q Wy 1 tena! la aera!
+where
+
+D is the set of pairs (a,b) of boxes in X adjacent (northwest to southeast) in a
+diagonal,
+
+R is the set of pairs (a,b) of boxes in \ adjacent (west to east) in a row, and
+
+C is the set of pairs (a,b) of boxes in \ adjacent (north to south) in a column.
+
+Let \ be a shape (or a skew shape) and let L(A) be the set of standard tableaux
+of shape A. Linear extensions of the poset P, are in one-to-one correspondence with
+standard tableaux having skew shape \ as follows: Given a standard tableau T of
+shape \ let T(k) denote the box containing k in T. Then the standard tableau T
+corresponds to the linear extension LE of the poset P, which has underlying set Py
+and order relations given by T(k) <, T(1) if k < 1. We can identify the standard
+tableau T with the chain L.
+
+Let Py be the poset P, U {wu} where the adjoined element wu satisfies u < a for
+all a € Py. The linear extensions of the poset Py are in one-to-one correspondence

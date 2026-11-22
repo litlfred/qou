@@ -1,0 +1,58 @@
+A representation theoretic explanation... 1383
+
+Example 6.8 For fixedn > 1,consider the operator 0. € Hom(V (n), V(n—1)). We compute:
+Symb(3,) = dxL(zy — xw)"] = —nw(zy — xw)"! = Hmgy, »—1) [-n(@ — x)"""]
+
+For any a, b € Rsuch thata < b, it is straightforward to see that Symb(,) is (C x B)-stable
+for C := H_ U (a,b) and B := H4\(a, b), where the variables are ordered (z, w), (x, y).
+(Notice that this does not hold when oo € C, due to the w factor in the symbol.) Since (C, B)
+is a disjoint Grace pair, the Theorem 6.2 implies 0, preserves strong B-stability.
+
+With this, let f € C”[x] be a H4-stable polynomial of degree 1 < m < n, and let
+p € V(m) be its degree-m homogenization. Then p has no roots at infinity, and therefore
+there exists a < b such that p is (Hy\ (a, b))-stable. The previous discussion implies 0 p
+is (Hy\ (a, b))-stable, and in particular 0, p is H4-stable. Since 0, commutes with homog-
+enization, this also implies 0, f is H-stable.
+
+Other issues related to weak stability preservation can be dealt with in a similar way, by
+considering stability regions with small intervals in R about oo attached. More generally
+though, the Borcea—Brandén characterization ends up being a corollary of Theorem 6.2,
+which we discuss and demonstrate now.
+
+6.3 Deriving the complex Borcea—Brandén characterization
+
+As mentioned above, we hope to obtain the Borcea—Brandén characterization from our strong
+stability characterization given in Theorem 6.2. To this end, we state two corollaries to The-
+orem 6.2, which look (naively) as close to the Borcea—Brandén characterization as possible.
+Let C¢ denote the complement of C in CP!.
+
+Corollary 6.9 Fix, a € Nj, a linear operator T € Hom(V (A), V(a)), and a Grace pair of
+
+the form (Cy x +++ X Cm, Cf x +++ x Ch,). The following are equivalent.
+
+(i) T preserves strong (C, x +--+ X Cy)-stability.
+(ii) Symb(T) is (C{ x +++ x Ch) x (C1 x +++ x Cm)-stable.
+Corollary 6.10 Fix A, € Nj and a linear operator T € Hom(V(A), V(a)). T preserves
+strong stability iff Symb(T) is GH" x H'")-stable.
+
+In Theorem 1.1, the analogous “if” direction of the previous corollary is paraphrased as
+follows: T preserves weak stability if the Borcea—Briindén symbol of T is stable. To see how
+this statement relates, we restate the definition of the Borcea—Brandén symbol:
+
+Symbgg (7) := T [+x] = 0 (Jerre"
+HS
+
+Notice that by applying z +> —z and homogenizing, we obtain (up to scalar) the universal
+symbol Symb(T) defined in this paper. The crucial difference then is the fact that the Borcea—
+Briandén “if” direction deals only with open upper half-planes, whereas the previous corollary
+requires closed half-plane stability of Symb(T) in the first m pairs of variables. That is, the
+required premises of the “if” direction of the previous corollary are strictly stronger than that
+of the Borcea—Brindén result.
+
+These two results can be reconciled, however, which we now demonstrate. The following
+result provides the main link to the Borcea—Brandén characterization, and it can be intuitively
+described as follows: with the exception of having a one-dimensional range, a linear operator
+which maps (C] x -- - x C,,)-stable polynomials to weak (B, x --- x B,,)-stable polynomials
+can only have zeros on the boundary of the set of (Cy x --- x C;,)-stable polynomials.
+
+D Springer

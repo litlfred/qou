@@ -1,1 +1,1 @@
-LetA be an Auslander-Gorenstein noetherian k-algebra of injec-
+Let A be a ﬁltered k-algebra such that grA is a noetherian con- nected gradedk-algebra with graded Auslander balanced dualizing complex . Given a Cdim-pureA-moduleM , there is a good ﬁltration {FnM } on it such that grFM is Cdim-pure.

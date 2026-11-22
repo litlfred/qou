@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-2101.10016v16/blocks/thm-sec-026-20",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "kind": "theorem",
+  "pageStart": 166,
+  "pageEnd": 173,
+  "text": "thm-sec-026-20.md",
+  "derivedFrom": "library/arxiv-2101.10016v16/sections/sec-026",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2101.10016v16/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "elsewhere",
+    "evidence_locator": "Cites external source [174] in sections/sec-026-27-coboundary-categories-and-deligne-s-theorem.md",
+    "claim_id": "arxiv-2101.10016v16#thm-sec-026-20",
+    "lean_status": "unformalized"
+  }
+}

@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 1204.5807v1.pdf
 source_sha256: 4bf4f73b0c152b19
 toc_source: inferred
+doc_brief: "FROM HOPF ALGEBRAS TO TENSOR CATEGORIES — This is a survey on spherical Hopf algebras. We give criteria to decide when a Hopf algebra is spherical and collect examples."
 ---
 arXiv:1204.5807v1  [math.QA]  26 Apr 2012
 FROM HOPF ALGEBRAS TO TENSOR CATEGORIES

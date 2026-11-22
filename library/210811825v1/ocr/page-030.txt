@@ -1,0 +1,34 @@
+CL]
+
+we lift, angles are preserved, except at Weierstrass points where they are halved. On the
+picture on the left of Figure 1.7, imagine taking the following journey: start at oo, walk
+to 1, carry on to walk to 0, turn by $, walk to 7, turn right around and walk back to 0.
+Carry on moving around the cross until arriving back at 1, and then carry on to oo.
+When we lift to the surface, the angles are halved at Weierstrass points, so the same
+journey becomes: start at oo, walk to 1, turn Iby 5» walk to 0, turn by 7, walk to 7,
+carry on and walk to 0. Continuing the journey takes us around the upper half on the
+octagon on the right hand side of Figure 1.7. This is one sheet of the cover; the other is
+
+its conjugate. They are glued together along the dotted line.
+
+Figure 1.7: Creating a double cover of the Riemann sphere
+
+We will see in Section 3.4 that an eigenfunction in the first (non-trivial) eigenspace
+has as its nodal lines one line of a (4,4, 4) triangle, and its rotations around thelcentre of __|
+the fundamental polygon (the notation for such a triangle is explained in Section 2.2.3).
+When we take the quotient of the Bolza surface by the hyperelliptic involution J, the
+centre points of the 16 (4,4,4) triangles will map to 8 points on the Riemann sphere.
+These 8 points give a cubical subdivision of the quotient surface that is dual to the subdi-
+vision obtained from the 6 ramification (or Weierstrass) points that induce an octahedral
+symmetry. Using the numerical results in Appendix C, we can ploc the vattres of the three
+eigenfunctions corresponding to A, in R®; this is shown in Figure 1.8. One can clearly
+see the octahedral symmetry, as well as 5 of the 6 singular points that come from the
+ramifications (the other is at the rear). It appears that the eigenfunctions corresponding
+to A; provide an immersion into R*; for a symmetric image such as the one in vere —
+one should take the eigenfunctions to be orthonormal.
+
+The spectral theory of the Bolza surface has been studied in the physics literature
+
+as the quantum mechanical Hadamard-Gutzwiller model for quantum chaos [3, 30,63}
+
+20

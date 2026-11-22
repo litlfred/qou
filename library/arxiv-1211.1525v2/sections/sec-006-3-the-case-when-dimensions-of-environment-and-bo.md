@@ -23,4 +23,3 @@ the two corresponding edges of the support of the limiting density unless m
 and n grow too differently. Finally, large deviation property of the extreme
 eigenvalues is investigated in Theorem 3.4.
 PARTIAL TRANSPOSE OF RANDOM QUANTUM STATES
-11

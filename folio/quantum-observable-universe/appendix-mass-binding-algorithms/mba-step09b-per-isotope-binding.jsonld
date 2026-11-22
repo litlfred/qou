@@ -2,7 +2,8 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/alg-per-isotope-binding",
@@ -14,6 +15,7 @@
   "kind": "algorithm",
   "title": "Per-isotope binding $B(K) = m_e \\cdot \\sum_\\lambda y_\\lambda \\chi^\\lambda \\Delta_\\lambda$",
   "uses": [
+    "papers/quantum-observable-universe/blocks/prop-delta-lambda-dt-index-unification",
     "papers/quantum-observable-universe/blocks/rem-term6-binding-density",
     "papers/quantum-observable-universe/blocks/thm-knot-mass-formula-unified",
     "papers/quantum-observable-universe/blocks/alg-markov-trace",

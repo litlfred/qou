@@ -1,0 +1,1 @@
+In particular in \cite{ sciarappa2}, based on \cite{bgt}, it was observed that the zeros of the Painlev\'e $\rm III_3$ $\tau$ function compute the spectrum of modified Mathieu (with a suitable dictionary).

@@ -7,10 +7,11 @@
   "bytes": 476388,
   "pages": 41,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -26,13 +27,21 @@
    "QUANTUM DIMENSIONS AND THEIR NON-ARCHIMEDEAN",
    "DEGENERATIONS"
   ],
-  "abstract": "We derive explicit dimension formulas for irreducible MF-spherical KF-re- presentations where KF is the maximal compact subgroup of the general linear group GLd(F) over a local \ufb01eld F and MF is a closed subgroup of KF such that KF/MF re- alizes the Grassmannian of n-dimensional F-subspaces of Fd. We explore the fact that (KF,MF) is a Gelfand pair whose associated zonal spherical functions ident ify with vari- ous degenerations of the multivariable little q-Jacobi polynomials. As a result, we are led to consider generalized dimensions de\ufb01ned in terms of evaluations an d quadratic norms of multivariable little q-Jacobi polynomials, which interpolate between the various classi- cal dimensions. The generalized dimensions themselves are shown to have representation theoretic interpretations as the quantum dimensions of irreducible spherical quantum rep- resentations associated to quantum complex Grassmannians.",
+  "abstract": "We derive explicit dimension formulas for irreducible MF-spherical KF-re- presentations where KF is the maximal compact subgroup of the general linear group GLd(F) over a local ﬁeld F and MF is a closed subgroup of KF such that KF/MF re- alizes the Grassmannian of n-dimensional F-subspaces of Fd. We explore the fact that (KF, MF) is a Gelfand pair whose associated zonal spherical functions identify with vari- ous degenerations of the multivariable little q-Jacobi polynomials. As a result, we are led to consider generalized dimensions deﬁned in terms of evaluations and quadratic norms of multivariable little q-Jacobi polynomials, which interpolate between the various classi- cal dimensions. The generalized dimensions themselves are shown to have representation theoretic interpretations as the quantum dimensions of irreducible spherical quantum rep- resentations associated to quantum complex Grassmannians.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181029073622-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20181029073622-04'00'"
+  },
+  "title_raw": "QUANTUM DIMENSIONS AND THEIR NON-ARCHIMEDEAN DEGENERATIONS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "QUANTUM DIMENSIONS AND THEIR NON-ARCHIMEDEAN DEGENERATIONS 1. Introduction Let F be a local ﬁeld and let K F be the maximal compact subgroup of GL d ( F ). That is, if F = R , if F = C , if F non-Archimedean, GL d ( O ) where in the latter case O denotes the ring of integers of F . Let G ( n, d ; F",
+   "outline": "1. Introduction",
+   "text": "QUANTUM DIMENSIONS AND THEIR NON-ARCHIMEDEAN DEGENERATIONS",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [
@@ -41,144 +50,587 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Multivariable little q-Jacobi polynomials",
    "page": 4,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "CQG algebras and quantum dimensions",
    "page": 6,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 1,
    "title": "Grassmannians over local fields",
    "page": 10,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "The Grassmann representation over local fields",
    "page": 10,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Irreducible constituents and dimension formulas: the Archimedean case",
    "page": 11,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "Irreducible constituents and dimension formulas: the non-Archimedean case",
    "page": 14,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 1,
    "title": "The standard quantum complex Grassmannian",
    "page": 16,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "The CQG algebra of quantum representative functions on K",
    "page": 16,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "The quantum Grassmann representation",
    "page": 19,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 2,
    "title": "Quantum dimension formulas",
    "page": 20,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 1,
    "title": "Evaluation formulas",
    "page": 21,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 2,
    "title": "Macdonald-Koornwinder polynomials",
    "page": 22,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 2,
    "title": "Multivariable little q-Jacobi polynomials",
    "page": 24,
    "source": "outline",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
   },
   {
    "level": 2,
    "title": "Multivariable big q-Jacobi polynomials",
    "page": 27,
    "source": "outline",
-   "number": "6.3"
+   "number": "6.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
   },
   {
    "level": 1,
    "title": "Generalized dimension formulas",
    "page": 29,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "29"
   },
   {
    "level": 2,
    "title": "Generalized quantum dimensions",
    "page": 30,
    "source": "outline",
-   "number": "7.1"
+   "number": "7.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "30"
   },
   {
    "level": 2,
    "title": "Generalized p-adic dimensions",
    "page": 32,
    "source": "outline",
-   "number": "7.2"
+   "number": "7.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "32"
   },
   {
    "level": 1,
    "title": "The one-parameter family of quantum complex Grassmannians",
    "page": 35,
    "source": "outline",
-   "number": "8"
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "35"
   },
   {
    "level": 1,
    "title": "References",
    "page": 40,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "40"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1060,
+   "n_words": 150,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -186,8 +638,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 4,
-   "n_chars": 9969,
-   "n_words": 1694
+   "n_chars": 9919,
+   "n_words": 1644,
+   "label_start": null,
+   "label_end": "4"
   },
   {
    "id": "sec-001-2-multivariable-little-q-jacobi-polynomials",
@@ -196,8 +650,10 @@
    "level": 1,
    "page_start": 4,
    "page_end": 6,
-   "n_chars": 4439,
-   "n_words": 784
+   "n_chars": 4458,
+   "n_words": 803,
+   "label_start": "4",
+   "label_end": "6"
   },
   {
    "id": "sec-002-3-cqg-algebras-and-quantum-dimensions",
@@ -206,8 +662,10 @@
    "level": 1,
    "page_start": 6,
    "page_end": 10,
-   "n_chars": 8325,
-   "n_words": 1543
+   "n_chars": 8262,
+   "n_words": 1480,
+   "label_start": "6",
+   "label_end": "10"
   },
   {
    "id": "sec-003-4-grassmannians-over-local-fields",
@@ -215,172 +673,224 @@
    "title": "Grassmannians over local fields",
    "level": 1,
    "page_start": 10,
-   "page_end": 11,
-   "n_chars": 3998,
-   "n_words": 761
+   "page_end": 10,
+   "n_chars": 143,
+   "n_words": 22,
+   "label_start": "10",
+   "label_end": "10"
   },
   {
-   "id": "sec-004-42-irreducible-constituents-and-dimension-formul",
+   "id": "sec-004-41-the-grassmann-representation-over-local-field",
+   "number": "4.1",
+   "title": "The Grassmann representation over local fields",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 3706,
+   "n_words": 658,
+   "label_start": "10",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-005-42-irreducible-constituents-and-dimension-formul",
    "number": "4.2",
    "title": "Irreducible constituents and dimension formulas: the Archimedean case",
    "level": 2,
    "page_start": 11,
    "page_end": 14,
-   "n_chars": 5249,
-   "n_words": 995
+   "n_chars": 5158,
+   "n_words": 970,
+   "label_start": "11",
+   "label_end": "14"
   },
   {
-   "id": "sec-005-43-irreducible-constituents-and-dimension-formul",
+   "id": "sec-006-43-irreducible-constituents-and-dimension-formul",
    "number": "4.3",
    "title": "Irreducible constituents and dimension formulas: the non-Archimedean case",
    "level": 2,
    "page_start": 14,
    "page_end": 16,
-   "n_chars": 6380,
-   "n_words": 1238
+   "n_chars": 6329,
+   "n_words": 1169,
+   "label_start": "14",
+   "label_end": "16"
   },
   {
-   "id": "sec-006-5-the-standard-quantum-complex-grassmannian",
+   "id": "sec-007-5-the-standard-quantum-complex-grassmannian",
    "number": "5",
    "title": "The standard quantum complex Grassmannian",
    "level": 1,
    "page_start": 16,
    "page_end": 16,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "16",
+   "label_end": "16"
   },
   {
-   "id": "sec-007-51-the-cqg-algebra-of-quantum-representative-fun",
+   "id": "sec-008-51-the-cqg-algebra-of-quantum-representative-fun",
    "number": "5.1",
    "title": "The CQG algebra of quantum representative functions on K",
    "level": 2,
    "page_start": 16,
    "page_end": 19,
-   "n_chars": 5075,
-   "n_words": 932
+   "n_chars": 5053,
+   "n_words": 912,
+   "label_start": "16",
+   "label_end": "19"
   },
   {
-   "id": "sec-008-52-the-quantum-grassmann-representation",
+   "id": "sec-009-52-the-quantum-grassmann-representation",
    "number": "5.2",
    "title": "The quantum Grassmann representation",
    "level": 2,
    "page_start": 19,
    "page_end": 20,
-   "n_chars": 3016,
-   "n_words": 564
+   "n_chars": 3055,
+   "n_words": 532,
+   "label_start": "19",
+   "label_end": "20"
   },
   {
-   "id": "sec-009-53-quantum-dimension-formulas",
+   "id": "sec-010-53-quantum-dimension-formulas",
    "number": "5.3",
    "title": "Quantum dimension formulas",
    "level": 2,
    "page_start": 20,
    "page_end": 21,
-   "n_chars": 3056,
-   "n_words": 557
+   "n_chars": 3029,
+   "n_words": 530,
+   "label_start": "20",
+   "label_end": "21"
   },
   {
-   "id": "sec-010-6-evaluation-formulas",
+   "id": "sec-011-6-evaluation-formulas",
    "number": "6",
    "title": "Evaluation formulas",
    "level": 1,
    "page_start": 21,
-   "page_end": 21,
-   "n_chars": 179,
-   "n_words": 23
+   "page_end": 22,
+   "n_chars": 523,
+   "n_words": 73,
+   "label_start": "21",
+   "label_end": "22"
   },
   {
-   "id": "sec-011-61-macdonald-koornwinder-polynomials",
+   "id": "sec-012-61-macdonald-koornwinder-polynomials",
    "number": "6.1",
    "title": "Macdonald-Koornwinder polynomials",
    "level": 2,
-   "page_start": 21,
+   "page_start": 22,
    "page_end": 24,
-   "n_chars": 4510,
-   "n_words": 818
+   "n_chars": 4194,
+   "n_words": 790,
+   "label_start": "22",
+   "label_end": "24"
   },
   {
-   "id": "sec-012-62-multivariable-little-q-jacobi-polynomials",
+   "id": "sec-013-62-multivariable-little-q-jacobi-polynomials",
    "number": "6.2",
    "title": "Multivariable little q-Jacobi polynomials",
    "level": 2,
    "page_start": 24,
    "page_end": 27,
-   "n_chars": 5497,
-   "n_words": 1140
+   "n_chars": 5469,
+   "n_words": 1114,
+   "label_start": "24",
+   "label_end": "27"
   },
   {
-   "id": "sec-013-63-multivariable-big-q-jacobi-polynomials",
+   "id": "sec-014-63-multivariable-big-q-jacobi-polynomials",
    "number": "6.3",
    "title": "Multivariable big q-Jacobi polynomials",
    "level": 2,
    "page_start": 27,
    "page_end": 29,
-   "n_chars": 4752,
-   "n_words": 952
+   "n_chars": 4840,
+   "n_words": 971,
+   "label_start": "27",
+   "label_end": "29"
   },
   {
-   "id": "sec-014-7-generalized-dimension-formulas",
+   "id": "sec-015-7-generalized-dimension-formulas",
    "number": "7",
    "title": "Generalized dimension formulas",
    "level": 1,
    "page_start": 29,
    "page_end": 30,
-   "n_chars": 848,
-   "n_words": 138
+   "n_chars": 849,
+   "n_words": 139,
+   "label_start": "29",
+   "label_end": "30"
   },
   {
-   "id": "sec-015-71-generalized-quantum-dimensions",
+   "id": "sec-016-71-generalized-quantum-dimensions",
    "number": "7.1",
    "title": "Generalized quantum dimensions",
    "level": 2,
    "page_start": 30,
    "page_end": 32,
-   "n_chars": 2546,
-   "n_words": 441
+   "n_chars": 2595,
+   "n_words": 490,
+   "label_start": "30",
+   "label_end": "32"
   },
   {
-   "id": "sec-016-72-generalized-p-adic-dimensions",
+   "id": "sec-017-72-generalized-p-adic-dimensions",
    "number": "7.2",
    "title": "Generalized p-adic dimensions",
    "level": 2,
    "page_start": 32,
    "page_end": 35,
-   "n_chars": 5528,
-   "n_words": 1165
+   "n_chars": 5536,
+   "n_words": 1172,
+   "label_start": "32",
+   "label_end": "35"
   },
   {
-   "id": "sec-017-8-the-one-parameter-family-of-quantum-complex-gr",
+   "id": "sec-018-8-the-one-parameter-family-of-quantum-complex-gr",
    "number": "8",
    "title": "The one-parameter family of quantum complex Grassmannians",
    "level": 1,
    "page_start": 35,
    "page_end": 40,
-   "n_chars": 11163,
-   "n_words": 2041
+   "n_chars": 11048,
+   "n_words": 1925,
+   "label_start": "35",
+   "label_end": "40"
   },
   {
-   "id": "sec-018-references",
+   "id": "sec-019-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 40,
    "page_end": 41,
-   "n_chars": 4527,
-   "n_words": 658
+   "n_chars": 4497,
+   "n_words": 628,
+   "label_start": "40",
+   "label_end": "41"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 20,
-  "sections": 19,
-  "chars_total": 89057,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 21,
+  "chars_total": 89723,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 19,
-   "overlaid": 15,
+   "overlaid": 17,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -388,145 +898,160 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.988,
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.898,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-multivariable-little-q-jacobi-polynomials",
      "title": "Multivariable little q-Jacobi polynomials",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.995,
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-3-cqg-algebras-and-quantum-dimensions",
      "title": "CQG algebras and quantum dimensions",
-     "prose_ratio": 0.996,
-     "coverage_ratio": 0.986,
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.977,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-4-grassmannians-over-local-fields",
      "title": "Grassmannians over local fields",
-     "prose_ratio": 0.993,
-     "coverage_ratio": 0.98,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-42-irreducible-constituents-and-dimension-formul",
+     "id": "sec-004-41-the-grassmann-representation-over-local-field",
+     "title": "The Grassmann representation over local fields",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-42-irreducible-constituents-and-dimension-formul",
      "title": "Irreducible constituents and dimension formulas: the Archimedean case",
      "prose_ratio": 0.979,
-     "coverage_ratio": 0.947,
+     "coverage_ratio": 0.979,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-43-irreducible-constituents-and-dimension-formul",
+     "id": "sec-006-43-irreducible-constituents-and-dimension-formul",
      "title": "Irreducible constituents and dimension formulas: the non-Archimedean case",
      "prose_ratio": 0.948,
-     "coverage_ratio": 0.965,
+     "coverage_ratio": 0.972,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-5-the-standard-quantum-complex-grassmannian",
+     "id": "sec-007-5-the-standard-quantum-complex-grassmannian",
      "title": "The standard quantum complex Grassmannian",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-007-51-the-cqg-algebra-of-quantum-representative-fun",
+     "id": "sec-008-51-the-cqg-algebra-of-quantum-representative-fun",
      "title": "The CQG algebra of quantum representative functions on K",
      "prose_ratio": 0.982,
-     "coverage_ratio": 0.935,
+     "coverage_ratio": 0.945,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-52-the-quantum-grassmann-representation",
+     "id": "sec-009-52-the-quantum-grassmann-representation",
      "title": "The quantum Grassmann representation",
-     "prose_ratio": 0.973,
-     "coverage_ratio": 0.966,
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.958,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-53-quantum-dimension-formulas",
+     "id": "sec-010-53-quantum-dimension-formulas",
      "title": "Quantum dimension formulas",
      "prose_ratio": 0.93,
-     "coverage_ratio": 0.974,
+     "coverage_ratio": 0.964,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-010-6-evaluation-formulas",
+     "id": "sec-011-6-evaluation-formulas",
      "title": "Evaluation formulas",
-     "prose_ratio": 0.48,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-011-61-macdonald-koornwinder-polynomials",
-     "title": "Macdonald-Koornwinder polynomials",
-     "prose_ratio": 0.711,
-     "coverage_ratio": 0.907,
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.929,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-012-62-multivariable-little-q-jacobi-polynomials",
+     "id": "sec-012-61-macdonald-koornwinder-polynomials",
+     "title": "Macdonald-Koornwinder polynomials",
+     "prose_ratio": 0.665,
+     "coverage_ratio": 0.888,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-62-multivariable-little-q-jacobi-polynomials",
      "title": "Multivariable little q-Jacobi polynomials",
      "prose_ratio": 0.289,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-013-63-multivariable-big-q-jacobi-polynomials",
+     "id": "sec-014-63-multivariable-big-q-jacobi-polynomials",
      "title": "Multivariable big q-Jacobi polynomials",
-     "prose_ratio": 0.933,
-     "coverage_ratio": 0.887,
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.9,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-014-7-generalized-dimension-formulas",
+     "id": "sec-015-7-generalized-dimension-formulas",
      "title": "Generalized dimension formulas",
      "prose_ratio": 0.897,
-     "coverage_ratio": 0.907,
+     "coverage_ratio": 0.946,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-015-71-generalized-quantum-dimensions",
+     "id": "sec-016-71-generalized-quantum-dimensions",
      "title": "Generalized quantum dimensions",
      "prose_ratio": 0.928,
-     "coverage_ratio": 0.849,
+     "coverage_ratio": 0.875,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-016-72-generalized-p-adic-dimensions",
+     "id": "sec-017-72-generalized-p-adic-dimensions",
      "title": "Generalized p-adic dimensions",
      "prose_ratio": 0.915,
-     "coverage_ratio": 0.924,
+     "coverage_ratio": 0.929,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-017-8-the-one-parameter-family-of-quantum-complex-gr",
+     "id": "sec-018-8-the-one-parameter-family-of-quantum-complex-gr",
      "title": "The one-parameter family of quantum complex Grassmannians",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.987,
+     "prose_ratio": 0.942,
+     "coverage_ratio": 0.977,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-018-references",
+     "id": "sec-019-references",
      "title": "References",
      "result": "no matching \\section"
     }

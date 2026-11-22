@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-ph-0702263v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-0702263v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-hep-ph-0702263v1",
+  "title": "Chiral Low-Energy Constants ∗",
   "contains": [
+    "library/arxiv-hep-ph-0702263v1/sections/sec-front-matter",
     "library/arxiv-hep-ph-0702263v1/sections/sec-000",
     "library/arxiv-hep-ph-0702263v1/sections/sec-001",
     "library/arxiv-hep-ph-0702263v1/sections/sec-002",
@@ -19,7 +20,7 @@
     "library/arxiv-hep-ph-0702263v1/sections/sec-005"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",
     "searched": [
@@ -34,7 +35,9 @@
   },
   "meta": {
     "doc_id": "arxiv-hep-ph-0702263v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0702263v1.pdf",
     "source_sha256": "8ae381b4eba60286de841a313e8653030f43c6f6a0c157fcc8043b46b41eb644",
     "pages": 12,

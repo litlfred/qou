@@ -1,0 +1,4370 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-2501.00914v2",
+ "status": "determined",
+ "body_size": 10.9,
+ "footnotes": [
+  {
+   "id": "fn-p014-1",
+   "page": 14,
+   "mark": "n",
+   "text": "+1#CP",
+   "marks": [
+    {
+     "page": 13,
+     "context": "n-trace X"
+    },
+    {
+     "page": 13,
+     "context": "HF(∂X"
+    },
+    {
+     "page": 14,
+     "context": "S"
+    },
+    {
+     "page": 14,
+     "context": "nby attaching an"
+    },
+    {
+     "page": 14,
+     "context": "nby attaching an n-framed 2-handle along K, and then W"
+    },
+    {
+     "page": 14,
+     "context": "FW"
+    },
+    {
+     "page": 14,
+     "context": "enevern ≥2g −1,sincethemapFX◦nisthenzero:indeed,thesurfaceˆΣ"
+    }
+   ],
+   "block": "library/arxiv-2501.00914v2/blocks/prose-sec-010"
+  },
+  {
+   "id": "fn-p015-1",
+   "page": 15,
+   "mark": "n",
+   "text": "+1#CP k,ℓ i=k−ℓ j=k−ℓ(n+1)",
+   "marks": [
+    {
+     "page": 15,
+     "context": "n+1,j∈Spinc(W"
+    },
+    {
+     "page": 15,
+     "context": "n+1,j), [F"
+    },
+    {
+     "page": 15,
+     "context": "n+1,j(zn,i) = FW"
+    },
+    {
+     "page": 15,
+     "context": "n∪W"
+    },
+    {
+     "page": 15,
+     "context": "n+1\\ B4ast"
+    }
+   ],
+   "block": "library/arxiv-2501.00914v2/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p033-1",
+   "page": 33,
+   "mark": "k",
+   "text": "+1d2",
+   "marks": [
+    {
+     "page": 32,
+     "context": "dk−1,q"
+    },
+    {
+     "page": 32,
+     "context": ",bk−1,q"
+    },
+    {
+     "page": 33,
+     "context": "k= p"
+    },
+    {
+     "page": 33,
+     "context": "k= pkq"
+    },
+    {
+     "page": 33,
+     "context": "k−1) −(c"
+    },
+    {
+     "page": 33,
+     "context": "k−1) −(ckd"
+    },
+    {
+     "page": 33,
+     "context": "k−1) −(ckdk−1) = d"
+    },
+    {
+     "page": 33,
+     "context": "kd"
+    },
+    {
+     "page": 33,
+     "context": "kdk−c"
+    },
+    {
+     "page": 33,
+     "context": "k−1) + (a"
+    },
+    {
+     "page": 33,
+     "context": "k−1) + (akb"
+    },
+    {
+     "page": 33,
+     "context": "k−1) + (akbk+ 1) = b"
+    },
+    {
+     "page": 33,
+     "context": "k−1) + (akbk+ 1) = bk(b"
+    },
+    {
+     "page": 33,
+     "context": "k+ a"
+    },
+    {
+     "page": 33,
+     "context": "eethatdkdividesqk −1andbkdividesqk + 1.Thisimpliesthatbk+1=q"
+    },
+    {
+     "page": 33,
+     "context": "anddk+1=q"
+    }
+   ],
+   "block": "library/arxiv-2501.00914v2/blocks/prose-sec-023"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p015-2",
+   "page": 15,
+   "mark": "n",
+   "text": "+1#CP",
+   "block": "library/arxiv-2501.00914v2/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p033-2",
+   "page": 33,
+   "mark": "k",
+   "text": "+1−1",
+   "block": "library/arxiv-2501.00914v2/blocks/prose-sec-023"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "GivenaknotK⊂S"
+  },
+  {
+   "page": 1,
+   "mark": "4",
+   "context": "withboundaryobtainedfromB"
+  },
+  {
+   "page": 1,
+   "mark": "4",
+   "context": "boundaryobtainedfromB4byattachingann-framed2-handlealongK⊂∂B"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "Question1.1.ForwhichknotsK⊂S"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": " to prove that Xn(K) detects Kis to show that its boundary S"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "Here, K⊂S"
+  },
+  {
+   "page": 1,
+   "mark": "d",
+   "context": "dim"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "0(J) ∼= S"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "Theorem1.4.IfJandKareL-spaceknotssuchthatS"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "themonodromyofanynontrivialfiberedknotK⊂S"
+  },
+  {
+   "page": 2,
+   "mark": "h",
+   "context": "0(K)isthemappingtorusofˆ"
+  },
+  {
+   "page": 2,
+   "mark": "h",
+   "context": "themappingtorusofˆh.Theffpfconditionfurtherimplies[Ni20]that"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "thatS"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "fixedpointthenrecoverstheknotcomplementS"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "0(J) ∼= S"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 2,
+   "mark": "3",
+   "context": "S3\\ J∼= S"
+  },
+  {
+   "page": 3,
+   "mark": "4",
+   "context": "21(T"
+  },
+  {
+   "page": 3,
+   "mark": "5",
+   "context": "21(T4,"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "21(T4,5) ∼= S"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "21(T"
+  },
+  {
+   "page": 3,
+   "mark": "11",
+   "context": "21(T2,"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "n(K) ∼= S"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "thatS"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "n(J)forsomeintegern > 0,generalizing"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "K⊂S"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "K⊂S3whichguaranteesthatthereisapseudo-AnosovflowonS"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "atesthefirsthomologyofthissurgeryandwhosecomplementrecoversS"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "In[BVV18],Baldwin–Vela-VickprovedthatifK⊂S"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "isacomponentofΣ \\ Γandnisthesmallestpositiveintegersuchthatφ"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "thenφ"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": " Nielsen–Thurston forms of monodromies of fibered knots in S"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "LetK⊂S"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "isacollectionofincompressibletoriintheknotcomplementS"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "fficientsarehighlyconstrainedformonodromiesoffiberedknotsinS"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "Proposition2.2.IfK⊂S"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "–Kisa(p, q)-cableknotofsomeotherknotinS"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "0.But then the outermost piece of the JSJ decomposition of S"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "givenbythemappingtorusofϕ0,issimplyY0= Σ0 × S"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "nontrivialknotswhosecomplementsaretheconnectedcomponentsof(S"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "callˆhtheclosedmonodromyofK;notethatitsmappingtorusisS"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "h Sjshares some boundary component γwithˆΣ0.Some power ( ˆφ)"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "andγisacomponentofΓ,wecanalsoassumethat( ˆφ)"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "thatγishomotopicallyessentialandnotboundaryparallelinˆΣ"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "allyessentialandnotboundaryparallelinˆΣ1,whichmeansthat( ˆφ)"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": " is therefore freely isotopic to the identity.But then ( ˆφ)"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Now,therestrictionsof( ˆφ)"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "Now,therestrictionsof( ˆφ)nandφ"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "onsof( ˆφ)nandφntoSjagreesinceφ =ˆφoutsideofD.Itfollowsthatφ"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "that the restriction of ( ˆφ)"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "Corollary2.5.IfK⊂S"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "Corollary2.5.IfK⊂S3isafiberedhyperbolicknotsuchthatS"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "2.4wouldimplythatˆφ0isalsopseudo-Anosov,whichwouldimplythatS"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "2.2.Fixedpointsandffpfknots.IfK⊂S"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "Definition2.6.AknotK⊂S"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "whereK⊂S"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 8,
+   "mark": "d",
+   "context": "dim"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "∆K(t) = ∆C(t"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "withnonzerot"
+  },
+  {
+   "page": 9,
+   "mark": "g",
+   "context": "hast"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "•σ|Σ′isthemonodromyofsomefiberedcableknotL′⊂S"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "•σ|Σ′isthemonodromyofsomefiberedcableknotL′⊂S1× S"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "0(J) ∼= S"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "Theorem2.10.IfJandKareffpfknotssuchthatS"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "0(J) ∼= S"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "Lemma2.11.IfJandKaretorusknotssuchthatS"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "AlexanderpolynomialofS"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "∆J(t) = ∆S"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "0(J)(t) = ∆S"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "x"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "Now,CassonandGordon[CG78,Lemma3.1]provedthatS"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "ofK,asminustheCasson–Gordoninvariantσ1(S"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "χ : H1(S"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "Lemma2.12.LetP⊂S"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "Lemma2.12.LetP⊂S1× D"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "Inparticular,ifw̸= 1thenV0doesnotembedinS"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "Proof.LetEP= (S"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "Proof.LetEP= (S1× D"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "µC, λC⊂S"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "µC, λC⊂S1× ∂D"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "λC= S"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "µC= {pt} × ∂D"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "V0⊂S"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "asolidtorusinS"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "complement)oritisthecomplementS"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "0(J) ∼= S"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "andsupposethatS"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "onthecablepatterninthesolidtorus;thisisSeifertfiberedoverD"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "TheonlywayitcouldfailtodosoisiftheoutermostJSJpieceWofS"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "SeifertfiberedcomponentforS"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "alsohaveformedasingleSeifertfiberedcomponentoftheexteriorS"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "forcableknotsinS"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "Lemma2.12saysthatVp,qdoesnotembedinS"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "Lemma2.12saysthatVp,qdoesnotembedinS3,butsinceS"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "•Vp,qistheuniqueJSJpieceofS"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "0(J)thatdoesnotembedinS"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "•wecanuniquelyrecoverS"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "•wecanuniquelyrecoverS3\\ ν(CJ)fromS"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "espondingcablepattern;thenthesameappliestoVr,sasaJSJpieceofS"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "0(J) ∼= S"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "morphismS"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "betweentheuniquepiecesofeitherdecompositionthatdonotembedinS"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "S3\\ ν(CJ)∼= S"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "morphic, and they are Seifert fibered in a unique way over D"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "andD"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "0(J) ∼= S"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "q)-cableofthesameC.JustasintheproofofLemma2.11,weknowthatifS"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "0(J) ∼= S"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "fofTheorem2.10.Suppose that Jand Kare ffpf knots such that S"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "theclosedmonodromiesofJandK,whoserespectivemappingtoriareS"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "0(J)andS"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "0extendsto"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "0(J)∼=S"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "NowsinceS"
+  },
+  {
+   "page": 12,
+   "mark": "b",
+   "context": "0(K)has"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "0(K)hasb"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "0(K)hasb1=1,thismanifoldhas"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "0(K)hasb1=1,thismanifoldhasauniquefibrationoverS"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "knots or cabled,by Proposition 2.3.The manifold S"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "ontrivial cable [Gor83, Corollary 7.3].The same is true of S"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "0(J)∼=S"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "andK,sosinceS"
+  },
+  {
+   "page": 13,
+   "mark": "p",
+   "context": "0and in particular sends"
+  },
+  {
+   "page": 13,
+   "mark": "p",
+   "context": "0and in particular sends pJto"
+  },
+  {
+   "page": 13,
+   "mark": "p",
+   "context": "0and in particular sends pJto pK.Since"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "ˆΣ \\ pJ,whosemappingtorusistheknotcomplementS"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "ace Xn(K) determines the Z/2Z-graded Heegaard Floer homology"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "HF even(S"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "HF odd(S"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "dim"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "m(K)) = dim"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "m(K)) + dim"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "m = |H1(S"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "HF even(S"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "HF odd(S"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "m(K))| = dim"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "m(K)) −dim"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "m(K)) =dim"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "HF odd(S"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "dim"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "dim"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "m+1(K)) = dim"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 13,
+   "mark": "c",
+   "context": "togetherwiththevariousSpin"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 13,
+   "mark": "d",
+   "context": "FX◦n(K):"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "GivenanorientedknotK⊂S"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "n(K):S"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "n(K):S3→S"
+  },
+  {
+   "page": 14,
+   "mark": "c",
+   "context": "tn,i∈Spin"
+  },
+  {
+   "page": 14,
+   "mark": "c",
+   "context": "denotetheuniqueSpin"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 14,
+   "mark": "t",
+   "context": "FX◦n,"
+  },
+  {
+   "page": 14,
+   "mark": "d",
+   "context": "FX◦n,tn,i:"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 14,
+   "mark": "d",
+   "context": "ifwewrite1forthegeneratorof"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 14,
+   "mark": "t",
+   "context": "zn,i= FX◦n,"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "a(−1)-framed2-handlealongtheimage(inS"
+  },
+  {
+   "page": 14,
+   "mark": "a",
+   "context": "n(K))of"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 14,
+   "mark": "d",
+   "context": "FWn+1:"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "−−→S"
+  },
+  {
+   "page": 14,
+   "mark": "3",
+   "context": "−−−→S"
+  },
+  {
+   "page": 15,
+   "mark": "c",
+   "context": "n+1,j∈Spin"
+  },
+  {
+   "page": 15,
+   "mark": "c",
+   "context": "n+1,j∈Spinc(Wn+1)betheuniqueSpin"
+  },
+  {
+   "page": 15,
+   "mark": "t",
+   "context": "n+1,j(zn,i) = FWn+1,"
+  },
+  {
+   "page": 15,
+   "mark": "t",
+   "context": "n+1,j◦FX◦n,"
+  },
+  {
+   "page": 15,
+   "mark": "c",
+   "context": "t∈Spin"
+  },
+  {
+   "page": 15,
+   "mark": "c",
+   "context": "t∈Spin"
+  },
+  {
+   "page": 15,
+   "mark": "4",
+   "context": "n+1\\ B"
+  },
+  {
+   "page": 15,
+   "mark": "t",
+   "context": "n+1\\ B4as"
+  },
+  {
+   "page": 15,
+   "mark": "k",
+   "context": "n+1\\ B4astn+1,kforsome"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "n+1\\ B4astn+1,kforsomek,andsatisfies⟨c"
+  },
+  {
+   "page": 15,
+   "mark": "c",
+   "context": "Eacht ∈Spin"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "FW"
+  },
+  {
+   "page": 16,
+   "mark": "t",
+   "context": "n+1,"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "n+1,t"
+  },
+  {
+   "page": 16,
+   "mark": "t",
+   "context": "n+1,"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "n+1,t"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "Proposition3.2.ThesubspacesS"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "FW"
+  },
+  {
+   "page": 16,
+   "mark": "d",
+   "context": "FWn+1:"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "Inordertoshowthat(FW"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "Inordertoshowthat(FWn+1)−1(S"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "Inordertoshowthat(FWn+1)−1(Sn+1)=S"
+  },
+  {
+   "page": 16,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "FWn+1(x) ∈S"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "FWn+1(x) ∈Sn+1.SinceFWn+1sendsS"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "FWn+1(x) ∈Sn+1.SinceFWn+1sendsSnsurjectivelyontoS"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "∈Sn+1.SinceFWn+1sendsSnsurjectivelyontoSn+1,wecanfindsomez∈S"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "⟨c"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "⟨c1(t), [ˆΣ"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "+ [ˆΣ"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "+ [ˆΣn] · [ˆΣ"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "−−−→. . .W"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "Vn,m: S"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "−−−→S"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "−−→S"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "FVn,m:"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "ndsoFVn,nistheidentity,wehaveshownthatx = FVn,n(x)belongstoS"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "towhich"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "writethegradedpiecesas"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "HF even(Y )and"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "Z/2Zgradingson"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "n(K))and"
+  },
+  {
+   "page": 17,
+   "mark": "z",
+   "context": "n+1(K)).Therefore,eachoftheelements"
+  },
+  {
+   "page": 17,
+   "mark": "c",
+   "context": "Proof.ASpin"
+  },
+  {
+   "page": 17,
+   "mark": "d",
+   "context": "inducesacobordismmapon"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "2(χ(Z) + σ(Z) + b"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "2(χ(Z) + σ(Z) + b1(Y"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "2(χ(Z) + σ(Z) + b1(Y1) −b"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "2(χ(Z) + σ(Z) + b1(Y1) −b1(Y"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 18,
+   "mark": "d",
+   "context": "HMalsoappliesto"
+  },
+  {
+   "page": 18,
+   "mark": "d",
+   "context": "HF.Inparticular,since"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 18,
+   "mark": "d",
+   "context": "Lemma 3.4 tells us that the subspaces of each"
+  },
+  {
+   "page": 18,
+   "mark": "z",
+   "context": "n(K)) spanned by the relative invariants"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "HF odd(S"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "S"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "HF odd(S"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "HF odd(S"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "0 →S"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "whereVn,misthecobordismS"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "n(K) →S"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 18,
+   "mark": "d",
+   "context": "Sinceitscodomain"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "HF odd(S"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "HF odd(S"
+  },
+  {
+   "page": 18,
+   "mark": "d",
+   "context": "andhencebyexactnessthat"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "HF odd(S"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "HF odd(S"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "FW"
+  },
+  {
+   "page": 18,
+   "mark": "d",
+   "context": "FWk+1:"
+  },
+  {
+   "page": 18,
+   "mark": "d",
+   "context": "ofmapswhichareallsurjectiveon"
+  },
+  {
+   "page": 18,
+   "mark": "d",
+   "context": "HF odd,andhenceFVn,missurjectiveon"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "2g −1,weuseProposition3.3tosaythatthekernelofFVn,misequaltoS"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "Theorem3.6.FixanontrivialknotK⊂S"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "HF odd(S"
+  },
+  {
+   "page": 18,
+   "mark": "d",
+   "context": "thedimensionof"
+  },
+  {
+   "page": 18,
+   "mark": "c",
+   "context": "HF odd(∂Xn(K)) −dim span{FX◦n,t(1) | t ∈Spin"
+  },
+  {
+   "page": 18,
+   "mark": "d",
+   "context": "dim"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "HF odd(S"
+  },
+  {
+   "page": 18,
+   "mark": "t",
+   "context": "ular, Kis an L-space knot if and only if the elements {FX◦n,"
+  },
+  {
+   "page": 18,
+   "mark": "d",
+   "context": "ace knot if and only if the elements {FX◦n,t(1)} span all of"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "HF odd(S"
+  },
+  {
+   "page": 19,
+   "mark": "d",
+   "context": "dimensionof"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "HF odd(S"
+  },
+  {
+   "page": 19,
+   "mark": "d",
+   "context": "dim"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "HF odd(S"
+  },
+  {
+   "page": 19,
+   "mark": "d",
+   "context": "Butthisisexactlythequantitywewantedtoproveequaltodim"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "oddportionoftheZ/2Z-gradedframedinstantonhomologyI#(S"
+  },
+  {
+   "page": 19,
+   "mark": "m",
+   "context": "m(K))for"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "odd(S"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "m(K))=0saysthatforanyfixed"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "m(K))=0saysthatforanyfixedn≥0,the"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "m(K))=0saysthatforanyfixedn≥0,then-traceX"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 19,
+   "mark": "d",
+   "context": "andstronglyquasipositive,asfollows:weknow(atleastforg≥2)that"
+  },
+  {
+   "page": 19,
+   "mark": "s",
+   "context": "0(K),"
+  },
+  {
+   "page": 19,
+   "mark": "g",
+   "context": "0(K), s"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "HF odd(S"
+  },
+  {
+   "page": 19,
+   "mark": "d",
+   "context": "bothnonzero.Theorem3.6saysthatifKisanL-spaceknotthen"
+  },
+  {
+   "page": 19,
+   "mark": "s",
+   "context": "0(K),"
+  },
+  {
+   "page": 19,
+   "mark": "g",
+   "context": "0(K), s"
+  },
+  {
+   "page": 19,
+   "mark": "s",
+   "context": "0(K),"
+  },
+  {
+   "page": 19,
+   "mark": "g",
+   "context": "0(K), s"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "HF odd(S"
+  },
+  {
+   "page": 19,
+   "mark": "t",
+   "context": "0,"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "0,t"
+  },
+  {
+   "page": 19,
+   "mark": "d",
+   "context": "0,t0,g−1(1);butthen"
+  },
+  {
+   "page": 19,
+   "mark": "t",
+   "context": "0,"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "0,t"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "book for S"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "or S3with binding Ksupports the tight contact structure on S"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "0(J)∼=S"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "yLemma2.7,andcomparingtheboundariesofthe0-tracestellsusthatS"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "provedin[HMP21,Theorem1.4]thatforanyn≥0,then-traceofaknotK⊂S"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "Theorem4.1.SupposefortwoknotsJ, K⊂S"
+  },
+  {
+   "page": 19,
+   "mark": "d",
+   "context": "itsmirrorgoverntheranksof"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 20,
+   "mark": "d",
+   "context": "dim"
+  },
+  {
+   "page": 20,
+   "mark": "r",
+   "context": "p/q(K)) = q · ˆ"
+  },
+  {
+   "page": 20,
+   "mark": "0",
+   "context": "p/q(K)) = q · ˆr"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 20,
+   "mark": "d",
+   "context": "dim"
+  },
+  {
+   "page": 20,
+   "mark": "r",
+   "context": "m(K)) = m + (ˆ"
+  },
+  {
+   "page": 20,
+   "mark": "0",
+   "context": "m(K)) = m + (ˆr"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "HF odd(S"
+  },
+  {
+   "page": 20,
+   "mark": "0",
+   "context": "ˆr"
+  },
+  {
+   "page": 20,
+   "mark": "d",
+   "context": "ˆr0(K) −ˆν(K) = 2 dim"
+  },
+  {
+   "page": 20,
+   "mark": "d",
+   "context": "determine"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "Lemma4.4.ForanyknotK⊂S"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "Lemma4.5.ForanyknotK⊂S"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "HF odd(S"
+  },
+  {
+   "page": 20,
+   "mark": "d",
+   "context": "ν(K), dim"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 20,
+   "mark": "d",
+   "context": "forsomesufficientlylargemdeterminethevaluesofdim"
+  },
+  {
+   "page": 20,
+   "mark": "r",
+   "context": "r(K))forallpositiverational"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 21,
+   "mark": "r",
+   "context": "r(K)) = p + q(ˆ"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "r(K)) = p + q(ˆr"
+  },
+  {
+   "page": 21,
+   "mark": "d",
+   "context": "dim"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "HF odd(S"
+  },
+  {
+   "page": 21,
+   "mark": "d",
+   "context": "= p + 2q · dim"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "HF odd(S"
+  },
+  {
+   "page": 21,
+   "mark": "d",
+   "context": "dim"
+  },
+  {
+   "page": 21,
+   "mark": "m",
+   "context": "m(K))for"
+  },
+  {
+   "page": 21,
+   "mark": "r",
+   "context": "m(K))form ≫0,weuse(4.2)torecoverˆ"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "m(K))form ≫0,weuse(4.2)torecoverˆr"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 21,
+   "mark": "r",
+   "context": "r(K))forallnonzero"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "WecannowprovethatX"
+  },
+  {
+   "page": 21,
+   "mark": "d",
+   "context": "WecannowprovethatXn(K)determinesthedimensionof"
+  },
+  {
+   "page": 21,
+   "mark": "r",
+   "context": "r(K))forallrationalslopes"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "Theorem4.6.Fixanintegern ∈ZandaknotK⊂S"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 21,
+   "mark": "d",
+   "context": "dim"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "X"
+  },
+  {
+   "page": 21,
+   "mark": "d",
+   "context": "Xn(K)thendim"
+  },
+  {
+   "page": 21,
+   "mark": "d",
+   "context": "r(J)) = dim"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "HF odd(S"
+  },
+  {
+   "page": 21,
+   "mark": "m",
+   "context": "m(K))forsufficientlylarge"
+  },
+  {
+   "page": 21,
+   "mark": "d",
+   "context": "dim"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "Nowifn ≥0thenX"
+  },
+  {
+   "page": 21,
+   "mark": "d",
+   "context": "Nowifn ≥0thenXn(K)detectsdim"
+  },
+  {
+   "page": 21,
+   "mark": "m",
+   "context": "m(K))for"
+  },
+  {
+   "page": 21,
+   "mark": "r",
+   "context": "r(K))forallnonzero"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "r(K))forallnonzeror∈Q.Thisestablishescase(2),aswellasthe"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 21,
+   "mark": "d",
+   "context": "dim"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "−X"
+  },
+  {
+   "page": 21,
+   "mark": "d",
+   "context": "−Xn(K) detects dim"
+  },
+  {
+   "page": 21,
+   "mark": "m",
+   "context": "m(K)) for"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "m(K)) for m ≫0, hence so does X"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "HF(−S"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 21,
+   "mark": "d",
+   "context": "dim"
+  },
+  {
+   "page": 21,
+   "mark": "d",
+   "context": "r(K)) = dim"
+  },
+  {
+   "page": 21,
+   "mark": "d",
+   "context": "r(K)) = dim"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "Corollary4.7.GivenaknotK⊂S"
+  },
+  {
+   "page": 22,
+   "mark": "d",
+   "context": "Corollary4.7.GivenaknotK⊂S3andanynonzeror∈Q,thedimensiondim"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 22,
+   "mark": "d",
+   "context": "thenby(4.3)itisenoughtocomputedim"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "diffeomorphismtypeofX"
+  },
+  {
+   "page": 22,
+   "mark": "d",
+   "context": "diffeomorphismtypeofX0(K)determinesdim"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "ProofofTheorem1.3.SupposethatK⊂S"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "n(J)∼=S"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "wehaveS"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "n(K),henceJisalso"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 22,
+   "mark": "d",
+   "context": "2, we can apply case (3) of Theorem 4.6 to conclude that dim"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 22,
+   "mark": "r",
+   "context": "r(K)) for all rational"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "r(K)) for all rational r̸= 0.But S"
+  },
+  {
+   "page": 22,
+   "mark": "d",
+   "context": "dim"
+  },
+  {
+   "page": 22,
+   "mark": "r",
+   "context": "r(K) is an L-space if and only if"
+  },
+  {
+   "page": 22,
+   "mark": "g",
+   "context": "r(K) is an L-space if and only if r≥2"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "soS"
+  },
+  {
+   "page": 22,
+   "mark": "r",
+   "context": "r(J)isalsoanL-spaceifandonlyif"
+  },
+  {
+   "page": 22,
+   "mark": "g",
+   "context": "r(J)isalsoanL-spaceifandonlyifr≥2"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "Recallfrom§2thatK⊂S"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 22,
+   "mark": "d",
+   "context": "dim"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "HF odd(S"
+  },
+  {
+   "page": 22,
+   "mark": "d",
+   "context": "dim"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "J⊂S"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "For genus-1 almost L-space knots, we note that ∂Xn(K)∼= S"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "orem5.1.LetTp,qbeapositivetorusknot,andsupposeforsomeknotK⊂S"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "n(K)∼=S"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "ofofTheorem5.1.Comparingtheboundariesofthetraces,wemusthaveS"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "n(K) ∼= S"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "ot [Thu82, Corollary 2.5].In each case, the identification S"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "r(Ta,b) ∼= S"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 23,
+   "mark": "r",
+   "context": "r(Tc,d).Then"
+  },
+  {
+   "page": 23,
+   "mark": "g",
+   "context": "r(Tc,d).Thenr̸= 0and"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "λ(S"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "r(K)) = λ(S"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "r(Ta,b) ∼= S"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "SinceS"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "=(a"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "=(a2 −1)(b"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "x"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "x2−(A + B)x + AB= x"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "r(TA,B) ∼= S"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "r(T−A,B) ∼= −S"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 24,
+   "mark": "d",
+   "context": "Thedimensionof"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "HF(S"
+  },
+  {
+   "page": 24,
+   "mark": "d",
+   "context": "dim"
+  },
+  {
+   "page": 24,
+   "mark": "d",
+   "context": "r(TA,B)) = dim"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "r(K) ∼= S"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "genus as Tp,q, and if S"
+  },
+  {
+   "page": 24,
+   "mark": "r",
+   "context": "r(Tp,q), then"
+  },
+  {
+   "page": 24,
+   "mark": "r",
+   "context": "r(Tp,q), then r must be large enough so that their common"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "companiontorus∂ν(C)iscompressibleinS"
+  },
+  {
+   "page": 24,
+   "mark": "r",
+   "context": "r(K).Then"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "r(K).Thenr̸= 0,andifS"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "•thepatternP⊂S"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "•thepatternP⊂S1× D"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "•thepatternP⊂S1× D2hasanontrivialS"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "•thepatternP⊂S1× D2hasanontrivialS1× D"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "•r-surgeryonthepatternP⊂S"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "•r-surgeryonthepatternP⊂S1× D"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "r(K) ∼= S"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "•andS"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "r/w"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "Proof.Since the companion torus ∂ν(C) in S"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "f.Since the companion torus ∂ν(C) in S3\\ν(K) compresses in S"
+  },
+  {
+   "page": 24,
+   "mark": "r",
+   "context": "r(K), the result Zof"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "onthepatternP⊂S"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "onthepatternP⊂S1× D"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "•Z∼= S"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "•Z∼= S1× D"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "•Z∼= (S"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "•Z∼= (S1× D"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "Next,wedeterminehowtheS"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "Next,wedeterminehowtheS1× D"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "r(K).WritingV=S"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "r(K).WritingV=S1 × D"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "CtoformS"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "a[{pt} × ∂D"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "a[{pt} × ∂D2] + bw"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "a[{pt} × ∂D2] + bw2[S"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "isnullhomologous.Since{pt} × ∂D"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "isnullhomologous.Since{pt} × ∂D2andS"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "longitudeλCofC,respectively,itfollowsthattheS"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "longitudeλCofC,respectively,itfollowsthattheS1× D"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "bw"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "w"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "r(K) ∼= S"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "r/w"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "r/w2(C)orS"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "r/w"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "dependingonwhetherZisS"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "dependingonwhetherZisS1× D"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "dependingonwhetherZisS1× D2or(S"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "dependingonwhetherZisS1× D2or(S1× D"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "WenowclaimthatZ∼=S"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "WenowclaimthatZ∼=S1× D"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "WenowclaimthatZ∼=S1× D2.Indeed,ifweassumeinsteadthatZ∼=(S"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "enowclaimthatZ∼=S1× D2.Indeed,ifweassumeinsteadthatZ∼=(S1× D"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "r(K)∼=S"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "r/w"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "r/w2(C)̸∼=S"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "wehaveseenthatS"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "r/w"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "r/w2(C)#Y ;butCbeingnontrivialmeansthatS"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "soS"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "r(K)wouldthenbereducible.AssumingfromnowonthatS"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "automaticallysatisfiedifr= 0[Gab87],wethenhaveZ∼= S"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "automaticallysatisfiedifr= 0[Gab87],wethenhaveZ∼= S1× D"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "ysatisfiedifr= 0[Gab87],wethenhaveZ∼= S1× D2asclaimed,andsoS"
+  },
+  {
+   "page": 25,
+   "mark": "a",
+   "context": "r(K)is"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "r(K) ∼= S"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "r/w"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "andmoreoverthatPisa0-bridgebraidora1-bridgebraidinS"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "andmoreoverthatPisa0-bridgebraidora1-bridgebraidinS1× D"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "w≥2,becauseifwehadw= 1thenPwouldhavetobeisotopictothecoreofS"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "becauseifwehadw= 1thenPwouldhavetobeisotopictothecoreofS1× D"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "0(K) ∼= S"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "Finally,inthecaser= 0wehaveS"
+  },
+  {
+   "page": 25,
+   "mark": "g",
+   "context": "0(C),so"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "(1)TheDehnsurgeryS"
+  },
+  {
+   "page": 25,
+   "mark": "r",
+   "context": "r(Tp,q)isreducibleifandonlyif"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "(2)IfS"
+  },
+  {
+   "page": 25,
+   "mark": "r",
+   "context": "r(Tp,q)hasanincompressibletorus,then"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "r(Tp,q)hasanincompressibletorus,thenr= 0andTp,q= T±2,"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "Proof.Moser[Mos71]showedthatS"
+  },
+  {
+   "page": 25,
+   "mark": "a",
+   "context": "pq(Tp,q)is"
+  },
+  {
+   "page": 25,
+   "mark": "p",
+   "context": "pq(Tp,q)isaconnectedsumoftwolensspaces,oforders"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "q;andthatifr̸=pqthenS"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "r(Tp,q)issmallSeifertfiberedwithbaseorbifoldS"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": ",wecanassumethatr̸=pqsinceasumoflensspacesisatoroidal.SinceS"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "iberedithasnoverticalincompressibletori,soitmustbecoveredbyT"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "with cyclic first homology is S"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "0(T"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "0(T2,"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "r(Tp,q)∼=±S"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "ButifS"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "0(T"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "0(T2,"
+  },
+  {
+   "page": 25,
+   "mark": "r",
+   "context": "0(T2,3)then"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "thisidentificationarebothSeifertfiberedwithbaseorbifoldsS"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "narebothSeifertfiberedwithbaseorbifoldsS2(|p|, |q|, |pq|)∼=S"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "andsupposeforsomenontrivialsatelliteknotKandrationalr∈QthatS"
+  },
+  {
+   "page": 25,
+   "mark": "3",
+   "context": "r(K)∼=S"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "r(K)∼=S"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "Proof.WewriteK=P(C),withpatternPandcompanionC.Ifr=pqthenS"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "isaconnectedsumoftwolensspaces,oforderspandq[Mos71],soS"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "r(K)∼=S"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "r(K)∼=S"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "saysthatS"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "r(Tp,q)isirreducible,andthatitisatoroidalunlessS"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "0(T"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "0(T2,"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "r(K) ∼= S"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "WehavenowshownthatthecompaniontorusmustcompressinS"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "r(K) ∼= S"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "r/w"
+  },
+  {
+   "page": 26,
+   "mark": "g",
+   "context": "n≥2"
+  },
+  {
+   "page": 26,
+   "mark": "m",
+   "context": "infact,theinequalitymustbestrictsincen∤m,so"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "[Gor83,Corollary7.3]thatS"
+  },
+  {
+   "page": 26,
+   "mark": "r",
+   "context": "r(K)isonlyirreducibleandatoroidalif"
+  },
+  {
+   "page": 26,
+   "mark": "k",
+   "context": "kforsome"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "r(K) ∼= S"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "r/n"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "n"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "n"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "n"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "r(K) ∼= S"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "soS"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "r/n"
+  },
+  {
+   "page": 26,
+   "mark": "r",
+   "context": "r/n2(C)isanL-space,hence"
+  },
+  {
+   "page": 26,
+   "mark": "g",
+   "context": "r/n2(C)isanL-space,hencer≥2"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "K=P(C)isanL-spaceknotifandonlyifCisanL-spaceknotandb + tw≥w"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "w"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "w"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "r(K)∼=S"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "andhenceS"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "r/w"
+  },
+  {
+   "page": 26,
+   "mark": "r",
+   "context": "r/w2(C)isanL-space.Thismeansthat"
+  },
+  {
+   "page": 26,
+   "mark": "g",
+   "context": "r/w2(C)isanL-space.Thismeansthatr≥2"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "0(K) ∼= S"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "Proposition5.6.IfS"
+  },
+  {
+   "page": 27,
+   "mark": "a",
+   "context": "0(Tp,q)butKisnotisotopictoTp,q,thenKis"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "0(K)̸ ∼= S"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "IfKisatorusknototherthanTp,q,thenLemma2.11saysthatS"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "0(K) ∼= S"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "Kis a satellite knot,then we cannot have S"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "thatthecompaniontorusofK= P(C)isincompressibleinS"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "0(K),sothenS"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "0(K)∼=S"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "toroidal,whenceS"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "0(T±2,"
+  },
+  {
+   "page": 27,
+   "mark": "a",
+   "context": "0(T±2,3)byLemma5.4.ButthenKmustbe"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "0(K)∼=S"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "case,sinceS"
+  },
+  {
+   "page": 27,
+   "mark": "h",
+   "context": ",q)issmallSeifertfibered,Corollary2.5tellsusthatthemonodromy"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "fiberedhyperbolicknotK⊂S"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "fiberedhyperbolicknotK⊂S3withright-veeringmonodromysuchthatS"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "r(K)∼=S"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "Proof.Writeg=g(K)forconvenience.WeknowthatS"
+  },
+  {
+   "page": 27,
+   "mark": "a",
+   "context": "r(Tp,q)isalwayseitherreducible,"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "space, or small Seifert fibered [Mos71], so S"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "eeringmonodromy,Ni[Ni20,Theorem1.1]provedthat0≤r≤4g,andthatS"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "0(K) ∼= S"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "monodromyifS"
+  },
+  {
+   "page": 27,
+   "mark": "r",
+   "context": "0(Tp,q),sowemusthave"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "Inthecaser=4g,weobservethatS"
+  },
+  {
+   "page": 27,
+   "mark": "a",
+   "context": "4g(K)isneitherreduciblenor"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "0forsomeinteger"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "thissuspensiongivesrisetoanessentiallaminationonS"
+  },
+  {
+   "page": 27,
+   "mark": "4",
+   "context": "4g(K)aslongas∆(d,"
+  },
+  {
+   "page": 27,
+   "mark": "g",
+   "context": "4g(K)aslongas∆(d, 4"
+  },
+  {
+   "page": 27,
+   "mark": "h",
+   "context": "0.Ontheotherhand,sinceKhasright-veeringmonodromy"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "4g(K)∼=S"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "ThusS"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "4g(Tp,q)impliesthatS"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "enallsurgeriesonKofslopeatleast2g −1wouldbeL-spaces;butthenS"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "traces,but the proof makes essential use of the fact that S"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "Theorem6.2([Krc18,Theorem1.6]).IfK⊂S"
+  },
+  {
+   "page": 28,
+   "mark": "a",
+   "context": "t"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "ta"
+  },
+  {
+   "page": 28,
+   "mark": "a",
+   "context": "t"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "ta"
+  },
+  {
+   "page": 28,
+   "mark": "a",
+   "context": "t"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "ta"
+  },
+  {
+   "page": 29,
+   "mark": "g",
+   "context": "∆K(t−1) = t"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "t−a"
+  },
+  {
+   "page": 29,
+   "mark": "g",
+   "context": "(1 −t−1)(t"
+  },
+  {
+   "page": 29,
+   "mark": "g",
+   "context": "(1 −t−1)(tg+ t"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "(1 −t−1)(tg+ tg−1+ · · · + t"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "t"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "t1−a"
+  },
+  {
+   "page": 29,
+   "mark": "b",
+   "context": "t"
+  },
+  {
+   "page": 29,
+   "mark": "3",
+   "context": "Lemma6.4.IfK⊂S"
+  },
+  {
+   "page": 29,
+   "mark": "a",
+   "context": "ai(ai −1)t"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "ai(ai −1)ta"
+  },
+  {
+   "page": 29,
+   "mark": "a",
+   "context": "ait"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "aita"
+  },
+  {
+   "page": 29,
+   "mark": "a",
+   "context": "t"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "ta"
+  },
+  {
+   "page": 29,
+   "mark": "3",
+   "context": "Proposition6.5.LetK⊂S"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "g"
+  },
+  {
+   "page": 30,
+   "mark": "g",
+   "context": "∆K(t) = (1 −t−1)(t"
+  },
+  {
+   "page": 30,
+   "mark": "g",
+   "context": "∆K(t) = (1 −t−1)(tg+ t"
+  },
+  {
+   "page": 30,
+   "mark": "g",
+   "context": "∆K(t) = (1 −t−1)(tg+ tg−2+ t"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "∆K(t) = (1 −t−1)(tg+ tg−2+ tg−4+ · · · + t"
+  },
+  {
+   "page": 30,
+   "mark": "g",
+   "context": "= t"
+  },
+  {
+   "page": 30,
+   "mark": "g",
+   "context": "= tg−t"
+  },
+  {
+   "page": 30,
+   "mark": "g",
+   "context": "= tg−tg−1+ t"
+  },
+  {
+   "page": 30,
+   "mark": "g",
+   "context": "= tg−tg−1+ tg−2−t"
+  },
+  {
+   "page": 30,
+   "mark": "g",
+   "context": "= tg−tg−1+ tg−2−tg−3+ t"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "= tg−tg−1+ tg−2−tg−3+ tg−4−· · · + t"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "= tg−tg−1+ tg−2−tg−3+ tg−4−· · · + t2−g−t"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "Remark 6.6.There are other cases where knowing the value of"
+  },
+  {
+   "page": 30,
+   "mark": "a",
+   "context": "K(1),then∆J(t)=∆K(t),sinceeachpossiblechoiceof"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "K(1),then∆J(t)=∆K(t),sinceeachpossiblechoiceofa"
+  },
+  {
+   "page": 30,
+   "mark": "g",
+   "context": "K(1),then∆J(t)=∆K(t),sinceeachpossiblechoiceofa1>· · ·>a"
+  },
+  {
+   "page": 30,
+   "mark": "a",
+   "context": "hen∆J(t)=∆K(t),sinceeachpossiblechoiceofa1>· · ·>ag−2leadsto"
+  },
+  {
+   "page": 30,
+   "mark": "a",
+   "context": "i"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "ia"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "[Thu82,Corollary2.5],soitwillalsobehelpfultocompute"
+  },
+  {
+   "page": 30,
+   "mark": "3",
+   "context": "Lemma 6.7.Suppose that K⊂S"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "hat K⊂S3is a nontrivial satellite knot,and K= P(C) where P⊂S"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": " K⊂S3is a nontrivial satellite knot,and K= P(C) where P⊂S1×D"
+  },
+  {
+   "page": 30,
+   "mark": "3",
+   "context": "isthepatternandC⊂S"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "P(U)(1) + w"
+  },
+  {
+   "page": 30,
+   "mark": "w",
+   "context": "∆K(t) = ∆P(U)(t) · ∆C(t"
+  },
+  {
+   "page": 30,
+   "mark": "w",
+   "context": "P(U)(t)∆C(t"
+  },
+  {
+   "page": 30,
+   "mark": "w",
+   "context": "P(U)(t) · wt"
+  },
+  {
+   "page": 30,
+   "mark": "w",
+   "context": "C(t"
+  },
+  {
+   "page": 30,
+   "mark": "w",
+   "context": "w(w −1)t"
+  },
+  {
+   "page": 30,
+   "mark": "w",
+   "context": "C(t"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "C(tw) + w"
+  },
+  {
+   "page": 30,
+   "mark": "t",
+   "context": "C(tw) + w2"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "C(tw) + w2t"
+  },
+  {
+   "page": 30,
+   "mark": "w",
+   "context": "C(tw) + w2t2"
+  },
+  {
+   "page": 30,
+   "mark": "w",
+   "context": "C(t"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "Proof.SupposethatKisasatelliteknot,sayK=P(C)whereP⊂S"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "Proof.SupposethatKisasatelliteknot,sayK=P(C)whereP⊂S1×D"
+  },
+  {
+   "page": 31,
+   "mark": "3",
+   "context": "andC⊂S"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "P(U)(1) + w"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "≤h(h + 1) + w"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "= (h"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "= (h2+ (wk)"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "= (h2+ (wk)2) + (h + w"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "= (h + wk)"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "= (h + wk)2+ (h + wk) + (w"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "= g"
+  },
+  {
+   "page": 31,
+   "mark": "w",
+   "context": "∆K(t) = ∆P(U)(t) · ∆C(t"
+  },
+  {
+   "page": 31,
+   "mark": "h",
+   "context": "∆K(t) = ∆P(U)(t) · ∆C(tw) = (t"
+  },
+  {
+   "page": 31,
+   "mark": "w",
+   "context": "∆K(t) = ∆P(U)(t) · ∆C(tw) = (th−· · · + t−h)(twk+ O(t"
+  },
+  {
+   "page": 31,
+   "mark": "h",
+   "context": "= (t"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "t"
+  },
+  {
+   "page": 31,
+   "mark": "h",
+   "context": "w(2k −1) <2"
+  },
+  {
+   "page": 31,
+   "mark": "h",
+   "context": "(2h + 1)(2k −1) <4"
+  },
+  {
+   "page": 31,
+   "mark": "3",
+   "context": "Proposition6.9.Fixg≥1,andsupposeforsomeknotK⊂S"
+  },
+  {
+   "page": 32,
+   "mark": "3",
+   "context": "n(K)∼=S"
+  },
+  {
+   "page": 32,
+   "mark": "3",
+   "context": "Theidentificationofthen-tracesrestrictstoahomeomorphismS"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "n(T"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "n(T2,"
+  },
+  {
+   "page": 32,
+   "mark": "g",
+   "context": "n(T2,2"
+  },
+  {
+   "page": 32,
+   "mark": "3",
+   "context": "λ(S"
+  },
+  {
+   "page": 32,
+   "mark": "3",
+   "context": "n(K)) = λ(S"
+  },
+  {
+   "page": 32,
+   "mark": "3",
+   "context": "andlikewiseforλ(S"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "n(T"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "n(T2,"
+  },
+  {
+   "page": 32,
+   "mark": "g",
+   "context": "n(T2,2"
+  },
+  {
+   "page": 32,
+   "mark": "3",
+   "context": "n(K) ∼= S"
+  },
+  {
+   "page": 32,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "n(T"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "n(T2,"
+  },
+  {
+   "page": 32,
+   "mark": "g",
+   "context": "n(T2,2"
+  },
+  {
+   "page": 32,
+   "mark": "q",
+   "context": "dk−1,"
+  },
+  {
+   "page": 32,
+   "mark": "q",
+   "context": ",bk−1,"
+  },
+  {
+   "page": 32,
+   "mark": "b",
+   "context": "qk−1,"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "qk−1,b"
+  },
+  {
+   "page": 32,
+   "mark": "d",
+   "context": "k"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "kd"
+  },
+  {
+   "page": 32,
+   "mark": "a",
+   "context": "pk(n)(T"
+  },
+  {
+   "page": 32,
+   "mark": "3",
+   "context": "pk(n)(Tak(n),bk(n)) ∼= S"
+  },
+  {
+   "page": 32,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 32,
+   "mark": "c",
+   "context": "pk(n)(T"
+  },
+  {
+   "page": 33,
+   "mark": "a",
+   "context": "pk(T"
+  },
+  {
+   "page": 33,
+   "mark": "3",
+   "context": "pk(Tak,bk)∼=S"
+  },
+  {
+   "page": 33,
+   "mark": "3",
+   "context": "RemarkA.2.NotethateventhoughS"
+  },
+  {
+   "page": 33,
+   "mark": "c",
+   "context": "pk(T"
+  },
+  {
+   "page": 33,
+   "mark": "a",
+   "context": "strictionn ≥2in TheoremA.1 isonly needed toensure thateach T"
+  },
+  {
+   "page": 33,
+   "mark": "c",
+   "context": "T"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "b"
+  },
+  {
+   "page": 33,
+   "mark": "d",
+   "context": "k"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "kd"
+  },
+  {
+   "page": 33,
+   "mark": "q",
+   "context": "k= pk"
+  },
+  {
+   "page": 33,
+   "mark": "3",
+   "context": "(a0, b0, c0, d0, p0, q0) = (1,n,1,n + 2,n + 1,n"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "(a0, b0, c0, d0, p0, q0) = (1,n,1,n + 2,n + 1,n3+ 3n"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "pk(qk −1) = (b"
+  },
+  {
+   "page": 33,
+   "mark": "d",
+   "context": "k"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "kd"
+  },
+  {
+   "page": 33,
+   "mark": "d",
+   "context": "k−1) −(ck"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "k−1) −(ckdk−1) = dk(b"
+  },
+  {
+   "page": 33,
+   "mark": "d",
+   "context": "k"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "pk(qk + 1) = (b"
+  },
+  {
+   "page": 33,
+   "mark": "d",
+   "context": "k"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "kd"
+  },
+  {
+   "page": 33,
+   "mark": "b",
+   "context": "k−1) + (ak"
+  },
+  {
+   "page": 33,
+   "mark": "d",
+   "context": "k−1) + (akbk+ 1) = bk(bk"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "k−1) + (akbk+ 1) = bk(bkd"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "b"
+  },
+  {
+   "page": 33,
+   "mark": "d",
+   "context": "k+1"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "k+1d"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "≡(b"
+  },
+  {
+   "page": 33,
+   "mark": "d",
+   "context": "k"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "kd"
+  },
+  {
+   "page": 34,
+   "mark": "a",
+   "context": "pk(T"
+  },
+  {
+   "page": 34,
+   "mark": "k",
+   "context": "pk(Tak,bk) ∼= L(p"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "pk(Tak,bk) ∼= L(pk, b"
+  },
+  {
+   "page": 34,
+   "mark": "k",
+   "context": "k) ∼= L(p"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "k) ∼= L(pk, d"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "k) ∼= S"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "S"
+  },
+  {
+   "page": 34,
+   "mark": "c",
+   "context": "pk(T"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "spacesareidentifiedinthemiddlebecause(A.2)impliesthatb"
+  },
+  {
+   "page": 34,
+   "mark": "d",
+   "context": "k"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "kd"
+  },
+  {
+   "page": 34,
+   "mark": "p",
+   "context": "k≡1(mod"
+  },
+  {
+   "page": 34,
+   "mark": "k",
+   "context": "k≡1(modp"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "(a1, b1) = (n + 2,n"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "(c1, d1) = (n,n"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "p1= n"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "p1= n3+ 3n"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "(a2, b2) = (n"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "(a2, b2) = (n2+ 3n + 1,n"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "(a2, b2) = (n2+ 3n + 1,n3+ 2n"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "(c2, d2) = (n"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "(c2, d2) = (n2+ n −1,n"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "(c2, d2) = (n2+ n −1,n3+ 4n"
+  },
+  {
+   "page": 34,
+   "mark": "5",
+   "context": "p2= n"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "p2= n5+ 5n"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "p2= n5+ 5n4+ 6n"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "p2= n5+ 5n4+ 6n3−2n"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "(a3, b3) = (n"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "(a3, b3) = (n3+ 4n"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "(a3, b3) = (n3+ 4n2+ 3n −1,n"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "(a3, b3) = (n3+ 4n2+ 3n −1,n4+ 3n"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "(c3, d3) = (n"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "(c3, d3) = (n3+ 2n"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "(c3, d3) = (n3+ 2n2−n −1,n"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "(c3, d3) = (n3+ 2n2−n −1,n4+ 5n"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "(c3, d3) = (n3+ 2n2−n −1,n4+ 5n3+ 6n"
+  },
+  {
+   "page": 34,
+   "mark": "7",
+   "context": "p3= n"
+  },
+  {
+   "page": 34,
+   "mark": "6",
+   "context": "p3= n7+ 7n"
+  },
+  {
+   "page": 34,
+   "mark": "5",
+   "context": "p3= n7+ 7n6+ 15n"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "p3= n7+ 7n6+ 15n5+ 5n"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "p3= n7+ 7n6+ 15n5+ 5n4−15n"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "p3= n7+ 7n6+ 15n5+ 5n4−15n3−9n"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "(a4, b4) = (n"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "(a4, b4) = (n4+ 5n"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "(a4, b4) = (n4+ 5n3+ 6n"
+  },
+  {
+   "page": 34,
+   "mark": "5",
+   "context": "(a4, b4) = (n4+ 5n3+ 6n2−n −2,n"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "(a4, b4) = (n4+ 5n3+ 6n2−n −2,n5+ 4n"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "(a4, b4) = (n4+ 5n3+ 6n2−n −2,n5+ 4n4+ 2n"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "(a4, b4) = (n4+ 5n3+ 6n2−n −2,n5+ 4n4+ 2n3−5n"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "(c4, d4) = (n"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "(c4, d4) = (n4+ 3n"
+  },
+  {
+   "page": 34,
+   "mark": "5",
+   "context": "(c4, d4) = (n4+ 3n3−3n,n"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "(c4, d4) = (n4+ 3n3−3n,n5+ 6n"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "(c4, d4) = (n4+ 3n3−3n,n5+ 6n4+ 10n"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "(c4, d4) = (n4+ 3n3−3n,n5+ 6n4+ 10n3+ n"
+  },
+  {
+   "page": 34,
+   "mark": "9",
+   "context": "p4= n"
+  },
+  {
+   "page": 34,
+   "mark": "8",
+   "context": "p4= n9+ 9n"
+  },
+  {
+   "page": 34,
+   "mark": "7",
+   "context": "p4= n9+ 9n8+ 28n"
+  },
+  {
+   "page": 34,
+   "mark": "6",
+   "context": "p4= n9+ 9n8+ 28n7+ 28n"
+  },
+  {
+   "page": 34,
+   "mark": "5",
+   "context": "p4= n9+ 9n8+ 28n7+ 28n6−21n"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "p4= n9+ 9n8+ 28n7+ 28n6−21n5−49n"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "p4= n9+ 9n8+ 28n7+ 28n6−21n5−49n4−6n"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "p4= n9+ 9n8+ 28n7+ 28n6−21n5−49n4−6n3+ 18n"
+  },
+  {
+   "page": 34,
+   "mark": "5",
+   "context": "(a5, b5) = (n"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "(a5, b5) = (n5+ 6n"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "(a5, b5) = (n5+ 6n4+ 10n"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "(a5, b5) = (n5+ 6n4+ 10n3+ n"
+  },
+  {
+   "page": 34,
+   "mark": "6",
+   "context": "(a5, b5) = (n5+ 6n4+ 10n3+ n2−6n −1,n"
+  },
+  {
+   "page": 34,
+   "mark": "5",
+   "context": "(a5, b5) = (n5+ 6n4+ 10n3+ n2−6n −1,n6+ 5n"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "(a5, b5) = (n5+ 6n4+ 10n3+ n2−6n −1,n6+ 5n5+ 5n"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "(a5, b5) = (n5+ 6n4+ 10n3+ n2−6n −1,n6+ 5n5+ 5n4−6n"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "(a5, b5) = (n5+ 6n4+ 10n3+ n2−6n −1,n6+ 5n5+ 5n4−6n3−7n"
+  },
+  {
+   "page": 34,
+   "mark": "5",
+   "context": "(c5, d5) = (n"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "(c5, d5) = (n5+ 4n"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "(c5, d5) = (n5+ 4n4+ 2n"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "(c5, d5) = (n5+ 4n4+ 2n3−5n"
+  },
+  {
+   "page": 34,
+   "mark": "6",
+   "context": "(c5, d5) = (n5+ 4n4+ 2n3−5n2−2n + 1,n"
+  },
+  {
+   "page": 34,
+   "mark": "5",
+   "context": "(c5, d5) = (n5+ 4n4+ 2n3−5n2−2n + 1,n6+ 7n"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "(c5, d5) = (n5+ 4n4+ 2n3−5n2−2n + 1,n6+ 7n5+ 15n"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "(c5, d5) = (n5+ 4n4+ 2n3−5n2−2n + 1,n6+ 7n5+ 15n4+ 6n"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "(c5, d5) = (n5+ 4n4+ 2n3−5n2−2n + 1,n6+ 7n5+ 15n4+ 6n3−11n"
+  },
+  {
+   "page": 34,
+   "mark": "11",
+   "context": "p5= n"
+  },
+  {
+   "page": 34,
+   "mark": "10",
+   "context": "p5= n11+ 11n"
+  },
+  {
+   "page": 34,
+   "mark": "9",
+   "context": "p5= n11+ 11n10+ 45n"
+  },
+  {
+   "page": 34,
+   "mark": "8",
+   "context": "p5= n11+ 11n10+ 45n9+ 75n"
+  },
+  {
+   "page": 34,
+   "mark": "7",
+   "context": "p5= n11+ 11n10+ 45n9+ 75n8+ 6n"
+  },
+  {
+   "page": 34,
+   "mark": "6",
+   "context": "p5= n11+ 11n10+ 45n9+ 75n8+ 6n7−126n"
+  },
+  {
+   "page": 34,
+   "mark": "5",
+   "context": "p5= n11+ 11n10+ 45n9+ 75n8+ 6n7−126n6−98n"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "p5= n11+ 11n10+ 45n9+ 75n8+ 6n7−126n6−98n5+ 50n"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "p5= n11+ 11n10+ 45n9+ 75n8+ 6n7−126n6−98n5+ 50n4+ 60n"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "p5= n11+ 11n10+ 45n9+ 75n8+ 6n7−126n6−98n5+ 50n4+ 60n3−4n"
+  },
+  {
+   "page": 34,
+   "mark": "4",
+   "context": "21(T"
+  },
+  {
+   "page": 34,
+   "mark": "5",
+   "context": "21(T4,"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "21(T4,5) ∼= S"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "therelationS"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "21(T"
+  },
+  {
+   "page": 34,
+   "mark": "11",
+   "context": "21(T2,"
+  },
+  {
+   "page": 35,
+   "mark": "3",
+   "context": "Budney. JSJ-decompositions of knot and link complements in S"
+  }
+ ]
+}

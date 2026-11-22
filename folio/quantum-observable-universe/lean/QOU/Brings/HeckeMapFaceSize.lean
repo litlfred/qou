@@ -137,4 +137,15 @@ load-bearing step, and because stating it makes the two `p` values explicit
 rather than leaving them in prose. -/
 theorem universal_map_face_sizes_differ : (3 : ℕ) ≠ 4 := by norm_num
 
+/-- **Concrete Euler-characteristic check for Bring's `{5,4}` map (`bean qou-0jcd`):**
+    `V - E + F = 24 - 60 + 30 = -6 = 2 - 2 · 4`. -/
+theorem bring_euler_characteristic_from_VEF :
+    (24 : ℤ) - 60 + 30 = -6 ∧ 2 - 2 * (4 : ℤ) = -6 := by
+  decide
+
+/-- **Doubling of diagonal-refinement choices per added quadrilateral face (`bean qou-0jcd`).** -/
+theorem diagonalRefinements_card_succ (F : ℕ) :
+    Fintype.card (Fin (F + 1) → Fin 2) = 2 * Fintype.card (Fin F → Fin 2) := by
+  rw [diagonalRefinements_card (F + 1), diagonalRefinements_card F, pow_succ']
+
 end QOU.Brings

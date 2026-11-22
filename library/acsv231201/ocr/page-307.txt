@@ -1,0 +1,37 @@
+9.4 Additional formulae for asymptotics 289
+
+200
+
+180
+
+Figure 9.10 Intensity plot for a quantum walk without symmetries.
+
+language is inherently one-dimensional, so geometric concepts such as smooth
+point did not arise explicitly.
+
+The results presented in this chapter were first obtained via a direct surgery
+approach in [PW02], and are valid only for finitely minimal critical points.
+In addition, the minimality hypothesis in [PW02, Theorem 3.5] (and in many
+other results there) assumes an ordinary power series. The residue version of
+these computations appeared in print first in [Bar+10]. Extending the valid-
+ity of the coordinate version beyond the case of finite intersection of V with
+T (min) Was accomplished in [BP11].
+
+Between the first and second editions of this book, a rigorous Morse theo-
+retic foundation developed in [BMP22] streamlined some of the presentation of
+this chapter. The finite criticality hypothesis in this second edition replaces the
+strong torality hypothesis from the first edition; there, the latter is simply called
+torality. The explicit formula for higher order terms in Theorem 9.40 was first
+given by Raichev and Wilson [RW08]. Attempts to extend Algorithm 3 are
+an ongoing topic of research by an AMS Mathematics Research Community
+started in 2021.
+
+The pictures in Figure 9.9 were first produced by a Penn graduate student,
+Wil Brady, in an attempt to produce rigorous computations verifying the limit
+shapes of feasible regions that were suspected from simulations. At that time,
+Theorem 9.45 was not known. The fact that the fine structure of the two plots
+agreed was a big surprise, and led to reformulated estimates such as (9.23) in
+terms of curvature.
+
+Another rewriting of the leading term of the basic nondegenerate smooth
+point asymptotic formula is given in [Ben+12, Appendix B].

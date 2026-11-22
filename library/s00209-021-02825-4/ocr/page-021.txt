@@ -1,0 +1,58 @@
+A representation theoretic explanation... 1379
+
+Here, we will characterize all strong Q-stability preserving linear operators (for a bit more
+general 2), as well as linear operators which map between different stability regions. And,
+as it turns out, the extra premise of strong stability preservation is exactly what is needed to
+have symbol stability be an equivalent condition. In a way, this makes sense: weak {2-stability
+preservation counts the zero polynomial as (2-stable, which in turn corresponds to potential
+zeros of the symbol in the region of stability. This does not happen with strong stability
+preservation, allowing for a more straightforward characterization.
+
+First though, let’s take a closer look at the Borcea—Brindén characterization of weak
+stability-preserving linear operators.
+
+6.1 Weak stability preservation
+
+Borcea and Brandén define the following symbol:
+
+Symb ,,(T) := TI + j= > (JJerro"y
+
+Usk
+
+They then obtain the following characterization of stability-preserving linear operators.
+Theorem 1.1 (Borcea—Brandén) Fix 4 € Nj and any linear operator T : CALx,..., Xm] >
+Clix, ..., Xm]. The following are equivalent.
+
+(i) T maps H')-stable polynomials to weakly H'}-stable polynomials.
+(ii) One of the following holds:
+
+(a) Symbg,(T) is H3!"-stable.
+(b) T has image of dimension at most one, and is of the form
+
+T:pt>q-W(p)
+where q € C[x1,..., Xm] is H'}-stable, and w is some linear functional.
+
+Using our terminology, this is a characterization of weak stability-preserving linear oper-
+ators. This fantastic result perhaps has but one unfortunate piece: the degeneracy condition
+(ii)(b). Its necessity is demonstrated in the following.
+
+Example 6.1 Define T : C"[x] > C[x] via:
+
+n
+n ,
+T: » (Joust b> (dy + an—2)x"
+
+This operator obviously preserves weak 714-stability. We then have that Symbg,(T) =
+(<2 + 1)x", which is not 13 -stable.
+
+As we will see below, this condition can be removed once we only consider strong stability-
+preserving operators. So then, maybe strong stability is the more natural notion? However
+“natural” it is, unfortunately it leaves out operators one might wish to consider. The most
+fundamental of such operators is the derivative operator 0,. While 4, preserves strong H-
+stability, it only preserves weak 1-stability. Specifically, 1 € C"[x] is H,-stable (all its
+roots are at oo), but 0,1 = 0. With this, one obviously wants to be able to include weak
+stability preserving operators in any characterization of 111-stability preserving operators.
+We discuss how to use our strong stability preservation characterization to deal with operators
+like 0, in Example 6.8.
+
+D Springer

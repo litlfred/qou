@@ -1,0 +1,1 @@
+Among tori of revolution, a stereographic projection of the Cliﬀord torus gives the minimum energy. Flux in QCS IOP Publishing Journal of Physics: Conference Series 544 (2014) 012019 doi:10.1088/1742-6596/544/1/012019

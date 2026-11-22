@@ -28,6 +28,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
 from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
+from codata_constants import AME_B_LI6_MEV_VALIDATION, AME_B_LI7_MEV_VALIDATION  # noqa: E402  (AME registry)
 
 set_compute_dps()
 
@@ -125,15 +126,16 @@ def transfer_matrix_trace(Z, N):
 def main():
     t0 = time.perf_counter()
 
-    E0 = m_e / (q0 * (q0 - 1))
+    import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+    E0 = _qbeta_e0.canonical(q=q0, m_e=m_e)  # tower-summed E_0, canonical (owner ruling 2026-11-20, #8590); was order-zero m_e/(q(q-1))
 
     atoms = [
         ("D", 1, 1, float(AME_B_DEUTERON_MEV_VALIDATION)),
         ("T", 1, 2, float(AME_B_TRITIUM_MEV_VALIDATION)),
         ("³He", 2, 1, float(AME_B_HE3_MEV_VALIDATION)),
         ("⁴He", 2, 2, float(AME_B_HE4_MEV_VALIDATION)),
-        ("⁶Li", 3, 3, 31.994),
-        ("⁷Li", 3, 4, 39.245),
+        ("⁶Li", 3, 3, float(AME_B_LI6_MEV_VALIDATION)),
+        ("⁷Li", 3, 4, float(AME_B_LI7_MEV_VALIDATION)),
         ("⁹Be", 4, 5, 58.165),
         ("¹²C", 6, 6, 92.163),
         ("¹⁶O", 8, 8, 127.621),

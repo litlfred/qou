@@ -1,1 +1,1 @@
-Thefunction Λisπ-periodic. Wehave Λ(0) = Λ
+Every closed orientable 3-manifold M decomposes into two handlebodies of some genus g.

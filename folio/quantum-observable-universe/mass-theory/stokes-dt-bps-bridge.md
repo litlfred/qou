@@ -13,6 +13,8 @@ Donaldson--Thomas / Kontsevich--Soibelman invariant of the $q$-difference
 structure, and $\mathcal{H}_{\mathrm{BPS}}(T[K])$ the space of BPS states whose
 graded dimension categorifies the $3$d index.
 
+For the general setting of the middle term: a BPS structure $(Z, \Gamma, \Omega)$ carries Donaldson--Thomas invariants $\Omega(\gamma)$, and to it is attached a Riemann--Hilbert problem \cite[\S2, \S4]{bridgeland2016}. For finite, uncoupled, integral BPS structures that problem has an explicit solution in products of gamma functions \cite[\S3.2]{bridgeland2016}. The knot BPS structures in this conjecture are not shown to be uncoupled, so that result is context, not a case of the conjecture. On the state-integral side, one-dimensional state integrals of products of Faddeev quantum dilogarithms, including those of $4_1$ and $5_2$, are finite sums of products of a $q$-series and a $\tilde q$-series, and the generating $q$-series is admissible in the sense of Kontsevich--Soibelman \cite[\S1.1, \S1.3--1.4]{garoufalidis2013}. The theorem there is proved for a family of one-dimensional state integrals; the multi-dimensional statement is described as well known to experts but is not proved in that source, so any use of the factorisation beyond one-dimensional integrals rests on the unproved case \cite[\S1.1]{garoufalidis2013}. The same one-dimensional state integrals have been evaluated at rational points, that is at $q$ a root of unity, in terms of the Rogers dilogarithm, the cyclic quantum dilogarithm and truncated state sums \cite[\S1.1]{garoufalidis-kashaev2015}. The substrate value $q_0$ is real and greater than $1$, not a root of unity, so those evaluations bear on the fibre-level state integral and not directly on its archimedean evaluation at $q_0$; a numerical agreement there would be a cross-check, not an input.
+
 The first equality is
 [`garoufalidis-gu-marino2023peacock`] Conjecture 3(d) — *"the Stokes
 constants are integers corresponding to the Donaldson--Thomas invariants and the
@@ -34,8 +36,10 @@ proves that for plumbed $3$-manifolds with negative-definite linking matrix the
 Witten--Reshetikhin--Turaev invariant is the radial limit of the homological block
 $\hat{Z}$. That class consists of closed manifolds; $S^3 \setminus K$ for a
 hyperbolic knot is cusped and not plumbed, so the result does not reach the objects
-this conjecture quantifies over, and the field `dt_eq_bps` below stays an assumption
-rather than a citation.
+this conjecture quantifies over, and the identification $\Omega_{\mathrm{DT}}(K) = \dim \mathcal{H}_{\mathrm{BPS}}(T[K])$
+stays an assumption rather than a citation.
+
+The integrality of the knot invariants is not settled in the adjacent literature either. For the figure-eight and three-twist knots, Mariño and Rella study the resummed WKB wave function of complex Chern--Simons theory at rational points; conjectured integrality of its holomorphic blocks makes apparent singularities at roots of unity cancel against the anti-holomorphic blocks, and they list the interpretation of that integrality as an enumerative or BPS-counting problem in the dual supersymmetric theory as an open question \cite[\S3.2, \S6]{mario2023}. Those integers belong to a convergent $q$-series, not to the resurgent Stokes constants $\mathfrak{S}(K)$ above, so this is adjacent context and neither supports nor refutes the first equality. Whether the holomorphic-block integers and the Stokes constants of the same knot are related is not checked here.
 
 ### Which BPS sector — the non-degeneracy result
 
@@ -74,31 +78,18 @@ $K(p, -m)$ implied by the Alexander polynomial of [`singh-physrevd108106023`].
 Since $5 \neq 3$, the **open**-HOMFLY Gukov--Stošić bridge does *not* reproduce
 the $4_1$ Stokes integer $3$ of GGM eq. (60) and does *not* license
 $A_\omega = 3$. Only the **closed**-sector bridge stated above relates to that
-integer; its $q \to 0$ anchor $S^+(0)_{01} = 3$ is machine-checked
-unconditionally (`QOU.QBeta.StokesQZeroDTCount`).
+integer; its $q \to 0$ anchor $S^+(0)_{01} = 3$ is proved
+unconditionally.
 
-We therefore adopt the **closed**-sector bridge, and A_ω=3 is made
-conditional on it downstream
-([`thm:aomega-fourone-dt-count`](#thm:aomega-fourone-dt-count)) — conditional for
-every knot, $4_1$ included, since GGM's Conjecture 3(d) is not proved for $4_1$. It is *not* the open-HOMFLY bridge.
+The **closed**-sector bridge is therefore adopted. It is *not* the open-HOMFLY bridge.
 
-### Lean axiomatisation
+### The hypothesis
 
-The bridge is a Lean typeclass `QOU.QBeta.StokesDTBPSBridge` carrying the two
-identifications as fields:
-
-```lean
-class StokesDTBPSBridge (Knot : Type*) where
-  stokesConstant : Knot → ℤ
-  dtInvariant    : Knot → ℤ
-  bpsDim         : Knot → ℤ
-  stokes_eq_dt : ∀ K, stokesConstant K = dtInvariant K   -- GGM Conj 3(d)
-  dt_eq_bps    : ∀ K, dtInvariant K   = bpsDim K          -- GPPV
-```
-
-The fields are the conjecture's *inputs*; no field asserts a value of $A_\omega$.
-Any instance is the conjecture holding; none is supplied (the general statement is
-open for every knot, $4_1$ included). Downstream results take
-`[StokesDTBPSBridge Knot]` as an explicit hypothesis and are then fully verified
-by Lean modulo that class instance, following the same pattern as
-[`conj:kashaev-volume-conjecture`](kashaev-volume-conjecture.md).
+The bridge consists of two identifications between integers, for every knot $K$:
+$\mathfrak{S}(K) = \Omega_{\mathrm{DT}}(K)$ (GGM Conjecture 3(d)) and
+$\Omega_{\mathrm{DT}}(K) = \dim \mathcal{H}_{\mathrm{BPS}}(T[K])$ (GPPV).
+These are the conjecture's *inputs*; neither asserts a value of $A_\omega$.
+Neither is established (the general statement is open for every knot, $4_1$
+included). Downstream results take the bridge as an explicit hypothesis and are
+proved conditionally on it, following the same pattern as the
+[Kashaev volume conjecture](kashaev-volume-conjecture.md).

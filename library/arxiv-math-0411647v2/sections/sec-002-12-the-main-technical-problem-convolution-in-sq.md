@@ -7,10 +7,11 @@ section_number: 1.2
 pages: 2-4
 source_pdf: 0411647v2.pdf
 source_sha256: d79f96b416cb28da
-doc_brief: "Asymptotics of characters of symmetric groups, genus expansion and free probability — The convolution of indicators of two conjugacy classes on the symmetric group Sq is usually a complicated linear"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.948
-latex_coverage_ratio: 0.986
+latex_coverage_ratio: 0.99
+doc_brief: "Asymptotics of characters of symmetric groups, genus expansion and free probability — The convolution of indicators of two conjugacy classes on the symmetric group Sq is usually a complicated linear"
 ---
 []{#subsec:convolutioninSq label="subsec:convolutioninSq"}
 

@@ -1,0 +1,67 @@
+[7 ,(cos(7* pi/10))*(y—y07)—(sin (7* pi /10))*(x—x07)],
+[16 , (cos (5* pi/10)) *(y—y16)—(sin (5* pi /10))*(x—x16)],
+[9 ,(cos(9* pi /10))*(y—y09)—(sin (9% pi/10))*(x—-x09)],
+
+[2 ,(cos(11* pi /10)) *(y—y02)—(sin (11* pi/10))*(x-x02)],
+[11 (cos (11* pi /10))*(y-y11)—(sin (11* pi/10))*(x-x11)],
+[20 , (cos (9* pi /10))*(y—y20)—(sin (9* pi /10))*(x—x20)],
+[13 ,(cos (13% pi /10))*(y—y13) —(sin (13 pi /10))*(x—-x13)],
+[6 , (cos (15* pi/10)) *(y—y06)—(sin (15% pi/10))*(x-x06)],
+[15 ,(cos (15% pi /10))*(y—y15)—(sin (15* pi/10))*(x—-x15)],
+[4 (cos (13* pi/10)) *(y—y04)—(sin (13% pi/10))*(x-x04)],
+[17 (cos (17* pi /10))*(y-y17) —(sin (17* pi /10))*(x-x17)],
+[10 ,(cos(19* pi /10))*(y—y10) —(sin (19* pi /10))*(x-x10)] ,
+[19 ,(cos(19* pi /10))*(y—y19) —(sin (19% pi /10))*(x-x19)] ,
+[8 , (cos (17* pi /10)) *(y—y08)—(sin (17* pi/10)) *(x-x08 )]]);
+
+Vh ul, u2;
+real sigma = 0.00001;
+
+varf op(ul,u2)= int2d(Th)(dx(ul)*dx(u2)+ dy(ul)*dy(u2)— sigma* ulxu2);
+varf b([ul] ,[u2]) = int2d(Th)((4*ul*u2) /(1—x*2-y~2)>2);
+
+matrix OP= op(Vh,Vh, solver=Crout , factorize=1);
+matrix B=b(Vh, Vh, solver=CG, eps=le —20);
+
+real[int] ev(nev);
+Vh[int] eV(nev);
+
+int k=EigenValue (OP,B,sym=true , sigma=sigma , value=ev , vector=eV, tol=le—10,maxit=0,ncv=0);
+for (int ji<k;it+) {
+
+ul=eV [i];
+
+real gg = int2d(Th)(dx(ul)*dx(ul) + dy(ul)*dy(ul)); real mm= int2d(Th)(ul*ul) ;
+
+//cout<<"——— "<< icc <<ev[if<<"err="
+//<<int2d (Th)(4/(1—272-y*2)72) << "—— "<<endl; plot(eV[i],cmm="Eigen Vector "ti+" valeur ="
++ ev[i] ,wait=1,value=1);
+
+ofstream Eva(fnm, append);
+
+Eva << ev[i] << "\n";
+
+The following_shows the GAP analysis of the symmetry group of Bring’s surface.
+
+Please refer to Appendix A for details on how to interpret this code.
+
+gap> f:=FreeGroup (3);
+
+<free group on the generators [ fl, f2, £3 |>
+
+gap> g:=f/[f.175,f.272,f.3°2,f.1*f.34f.1*f.3,f.2*f.3%f.2*f.3,
+(f.1*£.2)°4,(£.2*£.173«f.2«f.172)>2];
+
+<fp group on the generators [| fl, f2, £3 ]>
+
+gap> Order(g);
+
+240
+gap> StructureDescription(g);
+"C2_x 85"
+
+gap> RequirePackage("repsn");;
+gap> Display (CharacterTable(g));
+cT1
+
+137

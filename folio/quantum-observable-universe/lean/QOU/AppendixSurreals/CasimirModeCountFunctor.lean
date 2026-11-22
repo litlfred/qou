@@ -39,7 +39,7 @@ corpus; see the workplan Stage C. This file is the *target type*, not the
 construction.
 
 Ref: [casimir1948] https://dwc.knaw.nl/DL/publications/PU00018547.pdf
-Ref: [manuscript] appendix-surreals/casimir-epsilon-vacuum.md
+Ref: [leitner2026] appendix-surreals/casimir-epsilon-vacuum.md
 -/
 
 namespace QOU.AppendixSurreals

@@ -1,0 +1,48 @@
+other self-adjoint extension A, of Ay. We will use this to define the Dirichlet Laplacian as
+the self-adjoint extension of a minimal operator that has the smooth, compactly supported
+
+functions as its domain.
+
+Theorem 2.13 (Friedrichs extension) Let A be a symmetric operator, bounded from
+
+below. Let qa be the sesquilinear form such that
+gal] = (, AY),
+
+and
+D(qa) := D(A)
+
+is densely defined, symmetric and bounded from below. If qa is closable, we take the
+
+iai= 1. Ld
+
+Finally, we can associate to ga the self-hdjoint linear operatpr Ag via Theorem 2.12.
+
+closure
+
+Example 2.14 Using Theorem 2.12 and Theorem 2.13, we are now ready to define A,
+on L7(Q) as a self-adjoint extension of P$ via the quadratic form QS. The definition in
+
+the Representation Theorem gives us
+
+D(AS) = {b € Wy?(Q) | dn € L7(Q) 8.4. Vo € Wy?(Q), (Vo, Ve) = (6, n)}, (2.3)
+
+ASy =n.
+
+We may abbreviate this definition slightly, using the knowledge that C§°(Q) is dense in
+we? (Q), and that the condition in 2.3 defines the distributional Laplacian, to state
+
+D(AS) = {¥ E Wo) | Ave PO},
+
+ASyy = Ay.
+
+We define the spectrum of an unbounded operator via the inverse, (A — z)~! of a
+
+self-adjoint operator in H. It exists for all values of z that are not eigenvalues of A.
+Definition 2.15 (Resolvent) The resolvent set of A,
+p(A) = {2 € C| (z— A): D(A) > H is bijective and (z — A)! is bounded}
+is an open subset of C. The resolvent operator
+plz) = (2 A)
+
+depends analytically on z inside p(A).
+
+30

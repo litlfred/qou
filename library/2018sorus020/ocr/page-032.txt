@@ -1,0 +1,50 @@
+Proof. Assume that g-L = xL, then by Lemma|1.3.2) v(det(g)) = 2u(x) = 0 hence
+x€O* andal=L. O
+
+Furthermore, as SL2(O,) is the stabilizer of the standard lattice O?, we deduce the
+
+proposition.
+
+Proposition 1.3.4. The stabilizer in SLo(K) of any vertex of the tree T is a GLg-
+conjugate of SL2(O,).
+
+Remark 1.3.5. Since for any g € SL(V), v(det(g)) = 0, we know that the distance
+d({L], g - [L]) = |n — m| is even, in particular SL(V) acts without inversion on T,
+
+that is it can not fix an edge and exchange its end points.
+
+Definition 1.3.6. Given g € SL(V), we define the translation lenght of g to be
+equal to I(g) = min d([L], g- [Z]).
+(L)eT
+
+There are two ways for g € SL(V) acting on the tree :
+
+1. Elliptic elements
+If g has some fixed points, or alternatively I(g) = 0, then it will be called
+elliptic. In this case, there is a basis of V such that O? is fixed and g is an
+element of SL2(O,). The set of fixed points T, is a subtree of T.
+
+2. Hyperbolic elements
+If I(g) > 0, then g is called hyperbolic; A, = {s € T | d(s,g-s) = I(g)}
+is an infinite, globally fixed, axis on which g acts by translation, and any
+basis of V such that the standard lattice O? € A, provides the matrix form
+
+_ f th(a)/2 0
+a= ( 0 t-/2 )>
+
+We prove the following lemma from [SB77| Corollaire 3, p.90].
+
+Lemma 1.3.7. Let G be a subgroup of SL(V) acting on the Bass-Serre tree T. If
+every element g € G fixes a vertex of T, then the whole group has a fixed vertex,
+
+that is the action is trivial.
+
+Proof. — First we prove that every two elements have a common fixed point.
+Let 91, g2 € T which have no common fixed point, take two vertices s; and s9,
+such that they realize the minimal distance | between the fixed subtrees 7)
+and T>. Then the segment [s1, 52] has no other point than s) fixed by gi, so
+it’s image by gy is [s1, 91-89]. In the same way, it’s image by gy! is [gy !+ 51, so].
+
+Consider the action of the element gig2 € I.
+
+31

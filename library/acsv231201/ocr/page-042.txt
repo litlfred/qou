@@ -1,0 +1,44 @@
+24 Generating functions
+
+Example 2.6. Let S be a finite subset of N? \ {0}, let ao = 0 and let A be
+the class of finite tuples 0 = (ao, a,...,2@¢) with elements in N“ such that
+x, — £1 € S for all 1 < k < €. The elements of A are the lattice paths
+with steps in S (starting at the origin). The name lattice path comes from
+concatenating the vectors x, of o in the plane, giving a path of steps from the
+origin to the endpoint ¢(7) = Deo Lk.
+
+The polynomial S(z) = >),.<5 2” enumerates S by the endpoint of its steps,
+so the generating function of A with respect to the endpoint is A(z) = 1/(1 -
+
+S(z)). Many other combinatorial classes can be studied in the context of lattice
+— (nit-+ra)!
+
+aa ad rlral
+counts the number of paths ending at r with the step set S = {e;,...,e,} of
+standard basis vectors, giving the generating function 1/(1 - yan zj) for the
+multinomial coefficients. 4
+
+Example 2.7 (Delannoy numbers). If A is the class of lattice paths in N? using
+the steps North (0, 1), East (1,0), and Northeast (1, 1) enumerated by endpoint
+then the counting sequence a, = |A,| defines the Delannoy numbers [Com74,
+Exercise 1.21]. The generating function x + y + xy for the set of steps leads to
+the Delannoy generating function
+
+1
+F(x,y) = [T-x-y-4y
+
+Example 2.8 (no gaps of size 2). For any n € N let 8, be the collection
+of all subsets of [nm] where no two consecutive members are absent. One can
+enumerate 8, by mapping bijectively to Example 2.1. In [CLP04] an estimate
+was required on the number of such sets that were mapped into other sets of
+the same form by a random permutation. That paper showed that in order to
+compute the second moment of this random variable it suffices to count the
+pairs (S,T) € 8% where the parameters n,|S|,|T|, and |S O T| are fixed. To
+that end, let F(x, y, z, w) be the 4-variable generating function for the class F
+of all pairs (S,7) € 82 for any n € N, using the weight function ¢(S,7) =
+(n,|S|,|T|,1S 9 TI).
+
+We may derive F by investigating what happens between consecutive ele-
+ments of S 9 T. Identify (S,7) € 82 with a sequence
+
+a € {(0,0), (0, 1), (1, 0), (1, D}"

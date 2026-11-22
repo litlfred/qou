@@ -1,0 +1,1 @@
+Let C ⊆C(A, M) be a full subcategory satisfying these three conditions: (a) Cstr is a full additive subcategory of Cstr(A, M). (b) C is translation invariant, i.e. M ∈C if and only T(M) ∈C. (c) C is closed under standard cones, i.e. for every morphism φ in Cstr the object Cone(φ) belongs to C. Then K := Ho(C) is a full triangulated subcategory of K(A, M).

@@ -8,6 +8,7 @@ pages: 3-19
 source_pdf: KMJ-48-2-255.pdf
 source_sha256: 720279042c6d762b
 toc_source: inferred
+doc_brief: "A Formula for the Colored Jones Polynomial of 2-Bridge Knots — We derive a formula for the colored Jones polynomial of 2-bridge knots."
 ---
 Firstly, we review a result in [5]. Let L be a knot in S3. We consider a 1-tangle
 L′ whose closure is L. We assume that L′ is presented as a tangle diagram D in

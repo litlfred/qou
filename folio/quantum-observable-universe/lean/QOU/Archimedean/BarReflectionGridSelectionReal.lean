@@ -20,7 +20,7 @@ the extension-circle continuum of the computational-time conjecture.
 Selecting BETWEEN the two (and proving the distinguished extension is
 atomic + bar-invariant at all) remains the conjecture's open content.
 
--- Ref: [manuscript] predicted-spectra, conj:schwinger-measure-computational-time
+-- Ref: [leitner2026] predicted-spectra, conj:schwinger-measure-computational-time
 --      (State after the representability and kernel-selection campaigns, 2026-08-01);
 --      docs/audits/2026-08-01-ksel1-singularity-selection.md (half-step discriminant);
 --      docs/audits/2026-08-01-ksel2-gns-favard-canonicity.md (extension circle).

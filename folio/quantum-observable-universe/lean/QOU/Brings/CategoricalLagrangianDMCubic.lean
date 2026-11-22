@@ -101,7 +101,7 @@ substrate→archimedean wall.
 - [braden-marshakov2006wdvv] https://arxiv.org/abs/hep-th/0205308 (CAVEAT: the
   SW base is generally **not** a Frobenius manifold — do not claim it is; the
   genuine fact used is "cubic = 3-jet of the prepotential").
-- [manuscript] `def:categorical-lagrangian`, `rem:wavefront-propagation`,
+- [leitner2026] `def:categorical-lagrangian`, `rem:wavefront-propagation`,
   `def:bring-cone-tetraplectic-structure`,
   `lem:bring-cone-reeb-quaternionic-twist`,
   `conj:categorical-lagrangian-dm-cubic`;
@@ -178,7 +178,7 @@ structure BringHKData (R : Type*) [CommRing R] where
     conjecture. -/
 -- Ref: [donagi-markman1994] https://arxiv.org/abs/alg-geom/9408004 §1
 -- Ref: [donagi1997] https://arxiv.org/abs/alg-geom/9705010
--- Ref: [manuscript] conj:categorical-lagrangian-dm-cubic
+-- Ref: [leitner2026] conj:categorical-lagrangian-dm-cubic
 class QDonagiMarkmanCubicCondition {R : Type*} [CommRing R]
     (F : QLagrangianFibration R) : Prop where
   /-- There is a totally-symmetric cubic `c` realising the period differential:
@@ -212,10 +212,10 @@ class QDonagiMarkmanCubicCondition {R : Type*} [CommRing R]
     non-degeneracy, isotropy of the wavefront, and half-dimensionality — together
     exactly "the wavefront is a Lagrangian submanifold of `(·, Ω_ℂ)`".  No
     instance is supplied — the honest open state. -/
--- Ref: [manuscript] def:categorical-lagrangian, rem:wavefront-propagation,
+-- Ref: [leitner2026] def:categorical-lagrangian, rem:wavefront-propagation,
 --      def:bring-cone-tetraplectic-structure,
 --      lem:bring-cone-reeb-quaternionic-twist
--- Ref: [manuscript] conj:categorical-lagrangian-dm-cubic
+-- Ref: [leitner2026] conj:categorical-lagrangian-dm-cubic
 class BringHolomorphicSymplectic {R : Type*} [CommRing R]
     (D : BringHKData R) : Prop where
   /-- `Ω_ℂ` is non-degenerate: every tangent direction pairs non-trivially. -/
@@ -251,7 +251,7 @@ class BringHolomorphicSymplectic {R : Type*} [CommRing R]
     identify `c` with the binding kernel — that is the separate open target
     `QCubicEqBindingKernel` below. -/
 -- Ref: [donagi-markman1994] https://arxiv.org/abs/alg-geom/9408004 §1
--- Ref: [manuscript] conj:categorical-lagrangian-dm-cubic
+-- Ref: [leitner2026] conj:categorical-lagrangian-dm-cubic
 theorem categorical_lagrangian_dm_cubic {R : Type*} [CommRing R]
     (F : QLagrangianFibration R) (D : BringHKData R)
     [QDonagiMarkmanCubicCondition F] [BringHolomorphicSymplectic D] :
@@ -298,7 +298,7 @@ theorem categorical_lagrangian_dm_cubic {R : Type*} [CommRing R]
     geometric side, and this class must NOT be discharged by a fit. -/
 -- Ref: [donagi1997] https://arxiv.org/abs/alg-geom/9705010
 -- Ref: [grassi-gu-marino2019qsw] https://doi.org/10.1007/JHEP07(2020)106
--- Ref: [manuscript] conj:categorical-lagrangian-dm-cubic;
+-- Ref: [leitner2026] conj:categorical-lagrangian-dm-cubic;
 --      QOU.Machinery.QProlongation.recurrenceKernelLead;
 --      QOU.Mass.QDifferenceConfluentObstruction;
 --      docs/audits/2026-07-20-qprolongation-definitional-sharpening.md

@@ -72,10 +72,10 @@
   collapsing it needs `√3 ≤ 1.8`, `π ≥ 3.14` and a threshold on `N`, which this
   statement deliberately avoids.
 
-  -- Ref: [manuscript] QOU/Knot/KashaevArgmax.lean
-  -- Ref: [manuscript] QOU/Knot/LobTaylorSaddle.lean
-  -- Ref: [manuscript] QOU/MathlibExt/GaussianThetaSum.lean
-  -- Ref: [manuscript] QOU/MathlibExt/GaussianSumBound.lean
+  -- Ref: [leitner2026] QOU/Knot/KashaevArgmax.lean
+  -- Ref: [leitner2026] QOU/Knot/LobTaylorSaddle.lean
+  -- Ref: [leitner2026] QOU/MathlibExt/GaussianThetaSum.lean
+  -- Ref: [leitner2026] QOU/MathlibExt/GaussianSumBound.lean
 -/
 import QOU.Knot.KashaevArgmax
 import QOU.Knot.LobTaylorSaddle

@@ -1,0 +1,1209 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-2109.04664v4",
+  "pages": [
+    {
+      "page": 12,
+      "rotation": 0,
+      "drawings": 15,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1. The parallelogram is the boundary of P, the circle is the boundary of Nδ0, the red region is D−, and the green region is D+. The cyan rectangle indicates the boundary of R+ ∪R−"
+      ],
+      "labels": [
+        {
+          "text": "12",
+          "bbox": [
+            118.32,
+            97.95,
+            126.25,
+            104.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "HITOSHI MURAKAMI AND ANH T. TRAN",
+          "bbox": [
+            217.44,
+            97.95,
+            377.76,
+            104.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Im",
+          "bbox": [
+            256.13,
+            120.64,
+            268.03,
+            130.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "tan θ√",
+          "bbox": [
+            265.6,
+            144.42,
+            294.9,
+            157.4
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            295.0,
+            147.44,
+            307.78,
+            164.48
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(1 −ϕ(ξ)/ξ) tan θ√",
+          "bbox": [
+            265.6,
+            161.91,
+            350.34,
+            181.96
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            350.44,
+            164.92,
+            363.22,
+            181.96
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Re",
+          "bbox": [
+            444.18,
+            206.93,
+            455.93,
+            216.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "O",
+          "bbox": [
+            254.78,
+            211.95,
+            261.79,
+            220.92
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI9"
+          ],
+          "sizes": [
+            8.97
+          ]
+        },
+        {
+          "text": "b−",
+          "bbox": [
+            206.97,
+            213.97,
+            217.51,
+            223.93
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "b+",
+          "bbox": [
+            326.09,
+            213.97,
+            336.52,
+            223.99
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "−ϕ(ξ)/ξ",
+          "bbox": [
+            141.72,
+            214.52,
+            177.87,
+            231.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1 −ϕ(ξ)/ξ",
+          "bbox": [
+            387.88,
+            214.52,
+            433.4,
+            231.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "−tan θ√",
+          "bbox": [
+            265.6,
+            263.48,
+            304.38,
+            283.54
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            304.36,
+            266.5,
+            317.14,
+            283.54
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "−(1 + ϕ(ξ)/ξ) tan θ√",
+          "bbox": [
+            153.32,
+            300.81,
+            245.86,
+            320.86
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            245.85,
+            303.83,
+            258.63,
+            320.86
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "−2 tan θ√",
+          "bbox": [
+            202.13,
+            323.01,
+            245.83,
+            343.07
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            245.93,
+            326.03,
+            258.71,
+            343.07
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 1. The parallelogram is the boundary of P, the circle is",
+          "bbox": [
+            154.2,
+            362.21,
+            441.08,
+            372.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the boundary of Nδ0, the red region is D−, and the green region is",
+          "bbox": [
+            154.2,
+            374.59,
+            441.08,
+            390.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR5",
+            "CMSY7"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "D+. The cyan rectangle indicates the boundary of R+ ∪R−",
+          "bbox": [
+            154.2,
+            386.47,
+            416.62,
+            404.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(see below).",
+          "bbox": [
+            269.64,
+            398.47,
+            321.24,
+            408.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(iv). Condition (3) in Proposition 4.2 is satisﬁed.",
+          "bbox": [
+            129.48,
+            429.79,
+            346.37,
+            439.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Proof.",
+          "bbox": [
+            118.32,
+            448.99,
+            144.41,
+            458.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(i). The distances to the upper side, the lower side, the left side, and the",
+          "bbox": [
+            134.64,
+            464.11,
+            476.86,
+            474.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "right side of P from the origin O is (1 −ϕ(ξ)/ξ) sin θ, (1 + ϕ(ξ)/ξ) sin θ,",
+          "bbox": [
+            153.0,
+            475.99,
+            476.88,
+            493.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ϕ(ξ)/ξ and 1 −ϕ(ξ)/ξ, respectively.",
+          "bbox": [
+            153.0,
+            487.99,
+            316.8,
+            505.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Since (1 −ϕ(ξ)/ξ) sin θ < ϕ(ξ)/ξ",
+          "bbox": [
+            325.8,
+            487.99,
+            476.43,
+            505.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ϕ",
+          "bbox": [
+            306.36,
+            497.79,
+            311.6,
+            504.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "from the assumption sin θ <",
+          "bbox": [
+            153.0,
+            499.99,
+            287.94,
+            509.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ξ−ϕ(ξ), δ0 is less than these distances.",
+          "bbox": [
+            296.28,
+            499.99,
+            477.0,
+            517.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Moreover since ψ′′(0) =",
+          "bbox": [
+            366.6,
+            512.19,
+            476.94,
+            524.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "So Nδ0 is contained in the parallelogram P.",
+          "bbox": [
+            153.0,
+            513.55,
+            356.52,
+            525.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR5"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(2 cosh(ξ) −1)2 −4 < 0, ψ(z) is of the form (4.3) with",
+          "bbox": [
+            238.68,
+            523.51,
+            476.89,
+            543.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "p",
+          "bbox": [
+            228.72,
+            524.84,
+            238.68,
+            554.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "F ′′(ϕ(ξ)/ξ) = −ξ",
+          "bbox": [
+            153.0,
+            525.03,
+            228.27,
+            543.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(2 cosh(ξ) −1)2 −4.",
+          "bbox": [
+            198.36,
+            536.83,
+            285.72,
+            556.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "a := −ξ",
+          "bbox": [
+            153.0,
+            537.51,
+            186.86,
+            556.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "p",
+          "bbox": [
+            188.4,
+            538.16,
+            198.36,
+            568.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            183.24,
+            545.43,
+            187.21,
+            552.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "(ii). We ﬁrst show that b± ∈D± ∩P. It is clear that b−< 0, b+ > 0, and",
+          "bbox": [
+            131.88,
+            551.71,
+            477.01,
+            570.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "b± ∈P. The inequality Re ψ(b±) < 0 follows from Lemma 4.1. So, we can",
+          "bbox": [
+            153.0,
+            563.71,
+            477.01,
+            582.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "choose ε0 > 0 so that Re ψ(b±) < −ε0.",
+          "bbox": [
+            153.0,
+            575.59,
+            321.0,
+            592.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Next, we will show that for each x̸ = 0 with −ϕ(ξ)/ξ < x < 1 −ϕ(ξ)/ξ,",
+          "bbox": [
+            164.88,
+            587.59,
+            476.88,
+            604.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the set {y ∈R | Re ψ(x + y√",
+          "bbox": [
+            153.0,
+            591.91,
+            277.58,
+            616.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "−1) < 0} ∩P is an open interval containing 0.",
+          "bbox": [
+            277.56,
+            599.71,
+            477.0,
+            616.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Then, we can see that D± ∩P is connected.",
+          "bbox": [
+            153.0,
+            611.59,
+            345.48,
+            630.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "If we put",
+          "bbox": [
+            164.88,
+            623.59,
+            204.51,
+            633.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "g(x, y) := eξ + e−ξ −eξ(x+y√",
+          "bbox": [
+            172.2,
+            635.79,
+            298.26,
+            660.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "−1)+ϕ(ξ) −e−ξ(x+y√",
+          "bbox": [
+            298.2,
+            635.79,
+            385.02,
+            660.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "−1)−ϕ(ξ),",
+          "bbox": [
+            384.96,
+            641.07,
+            423.0,
+            652.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "then we have",
+          "bbox": [
+            153.0,
+            661.15,
+            210.1,
+            671.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            283.68,
+            673.87,
+            291.98,
+            690.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "d",
+          "bbox": [
+            224.88,
+            675.43,
+            230.06,
+            685.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(4.6)",
+          "bbox": [
+            118.32,
+            682.15,
+            138.86,
+            692.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "d y Re ψ(x + y",
+          "bbox": [
+            221.4,
+            682.15,
+            283.28,
+            698.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "−1) = −arg g(x, y)",
+          "bbox": [
+            291.84,
+            682.15,
+            375.03,
+            699.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "from (4.2). Now we have",
+          "bbox": [
+            153.0,
+            705.67,
+            261.34,
+            715.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0012",
+          "bbox": [
+            305.52,
+            722.84,
+            312.85,
+            752.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0012",
+          "bbox": [
+            319.32,
+            722.84,
+            326.65,
+            752.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "\u0013\u0013",
+          "bbox": [
+            366.0,
+            722.84,
+            380.65,
+            752.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "x + ϕ(ξ)",
+          "bbox": [
+            326.64,
+            723.19,
+            364.71,
+            739.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Re g(x, y) = 2 cosh ξ −2 cosh",
+          "bbox": [
+            179.16,
+            729.91,
+            303.97,
+            746.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ξ",
+          "bbox": [
+            312.84,
+            729.91,
+            317.19,
+            739.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "cos(ξy),",
+          "bbox": [
+            382.32,
+            729.91,
+            416.16,
+            739.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ξ",
+          "bbox": [
+            352.8,
+            736.75,
+            357.15,
+            746.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    }
+  ]
+}

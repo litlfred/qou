@@ -7,10 +7,11 @@ section_number: 5.2
 pages: 7-8
 source_pdf: 1303.6444v3.pdf
 source_sha256: 4f12ace2197f70ca
-doc_brief: "VIRIAL EXPANSION BOUNDS — In the 1960s, the technique of using cluster expansion bounds in order to achieve bounds on the virial expansion was developed by Lebowitz and Penrose (1964) and Ruelle"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.906
-latex_coverage_ratio: 0.963
+latex_coverage_ratio: 0.975
+doc_brief: "VIRIAL EXPANSION BOUNDS — In the 1960s, the technique of using cluster expansion bounds in order to achieve bounds on the virial expansion was developed by Lebowitz and Penrose (1964) and Ruelle"
 ---
 This is an alternative derivation of the Morais-Procacci bounds using the method outlined in Section [\[sec: general\]](#sec: general){reference-type="ref" reference="sec: general"}.
 

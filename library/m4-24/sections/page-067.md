@@ -1,0 +1,64 @@
+---
+doc_id: m4-24
+doc_title: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface"
+section_id: page-067
+section_title: "Page 67"
+section_number: null
+pages: 67-67
+source_pdf: m4-24.pdf
+source_sha256: cf7c5e29b818e647
+toc_source: undetermined
+doc_brief: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3"
+---
+Problems on invariants of knots and 3-manifolds 439
+
+of “dumbbell diagram” with legs. Since this space is injectively mapped to the
+right hand side of the above formula, we omit its computation here.) For a
+knot & there exists a polynomial P2 (ty, ta, t3), called the 2-loop polynomial,
+satisfying that
+
+P2.(e*, 7, e%3)
+
+(loop 1) __
+(log, Z(K)) ~ Axle yan) Ane)
+
+(26)
+
+The 2-loop polynomial P2 (th, to, tg) in ty, te, tg satisfying tytetz = 1 is uniquely
+determined by each knot AK. It is an invariant of K satisfying that
+PRE A te) = P(t, t2,t3) for any signs and any {i,j,k} = {1,2,3}.
+
+Problem 3.17 Find a topological construction of the 2-loop polynomial Pe.
+
+Remark As in (24) the loop-degree 0 part of the Kontsevich invariant is pre-
+sented by the Alexander polynomial, which can be constructed from the ho-
+mology of the infinite cyclic cover of the knot complement. It is shown, in
+[142], that the “first derivative” of the 2-loop polynomial is given in terms of
+linking functions associated to the infinite cyclic cover of the knot complement.
+It is expected [142] that the 2-loop polynomial would be described in terms of
+invariants of the infinite cyclic cover of the knot complement.
+
+Remark A table of the 2-loop polynomial for knots with up to 7 crossings is
+given by Rozansky [358]. See also a computer program [359], which calculates
+the 2-loop polynomial of each knot. For example,
+
+1
+tito
+12P? (t1, te ) =0
+4, (E1, ‘Tb
+1
+12P2 (t1, te, im = ttt} — tht, + Bt} — tty + ti.
+142
+
+12P8 (ty, t2, —) = tite + 7,
+
+The 2-loop polynomial for the torus knots is calculated independently by Marché
+[270] and Ohtsuki [322].
+
+The following problem is a step to Problem 3.17.
+
+Problem 3.18 (A. Kricker) Let Ky be the knot obtained from a tangle T
+as shown in Figure 12. Find a presentation of the 2-loop polynomial Pi... of
+Kr by using the Kontsevich invariant Z(T) of T.
+
+Geometry & Topology Monographs, Volume 4 (2002)

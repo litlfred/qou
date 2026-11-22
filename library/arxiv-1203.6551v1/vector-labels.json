@@ -1,0 +1,4613 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-1203.6551v1",
+  "pages": [
+    {
+      "page": 2,
+      "rotation": 0,
+      "drawings": 8,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1. The ﬁgure eight knot and its sister, with complements denoted m004 and m003 respectively in SnapPea notation.",
+        "Figure 2. The Whitehead link and the (−2, 3, 8)-pretzel link, with complements m129 and m125 in SnapPea notation."
+      ],
+      "labels": [
+        {
+          "text": "2",
+          "bbox": [
+            126.72,
+            96.88,
+            130.69,
+            103.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "HODGSON AND MASAI",
+          "bbox": [
+            261.0,
+            96.88,
+            350.99,
+            103.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "(-5,1)",
+          "bbox": [
+            330.24,
+            159.06,
+            350.59,
+            167.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            8.52
+          ]
+        },
+        {
+          "text": "Figure 1. The ﬁgure eight knot and its sister, with complements",
+          "bbox": [
+            162.48,
+            226.03,
+            449.48,
+            236.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "denoted m004 and m003 respectively in SnapPea notation.",
+          "bbox": [
+            162.48,
+            238.41,
+            419.64,
+            248.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The work of Agol [4] shows that there are exactly two orientable 2-cusped",
+          "bbox": [
+            144.6,
+            263.58,
+            485.41,
+            273.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "hyperbolic 3-manifolds of lowest volume vω2 = 3.663862 . . ., namely the Whitehead",
+          "bbox": [
+            126.72,
+            275.61,
+            485.29,
+            286.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR5"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "link complement and the (−2, 3, 8)-pretzel link complement. (See Figure 2.)",
+          "bbox": [
+            126.72,
+            287.48,
+            457.58,
+            304.76
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 2. The Whitehead link and the (−2, 3, 8)-pretzel link,",
+          "bbox": [
+            162.48,
+            416.11,
+            449.4,
+            433.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "with complements m129 and m125 in SnapPea notation.",
+          "bbox": [
+            162.48,
+            428.49,
+            410.04,
+            438.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Chinburg-Friedman-Jones-Reid [12] showed that the Weeks manifold and the",
+          "bbox": [
+            144.6,
+            450.42,
+            485.26,
+            460.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Meyerhoﬀmanifold are the unique arithmetic hyperbolic 3-manifolds of lowest vol-",
+          "bbox": [
+            126.72,
+            462.69,
+            485.48,
+            472.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ume; hence NA(0.942707 . . .) = 1 and NA(0.981368 . . .) = 1.",
+          "bbox": [
+            126.72,
+            474.57,
+            387.12,
+            485.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Kojima and Miyamoto [30, 36] showed the lowest volume for a compact hy-",
+          "bbox": [
+            144.6,
+            486.3,
+            485.36,
+            496.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "perbolic 3-manifold with geodesic boundary is 6.451990 . . ., and Fujii [19] showed",
+          "bbox": [
+            126.72,
+            498.3,
+            485.53,
+            508.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "that there are exactly 8 such manifolds with this volume.",
+          "bbox": [
+            126.72,
+            510.45,
+            376.56,
+            520.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The graphs in Figures 3 and 4 below show the frequencies of volumes arising",
+          "bbox": [
+            144.6,
+            530.85,
+            485.46,
+            540.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "from the manifolds contained in the Callahan-Hildebrand-Weeks census of cusped",
+          "bbox": [
+            126.72,
+            542.73,
+            485.29,
+            552.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "hyperbolic 3-manifolds (see [8]), and the Hodgson-Weeks census of closed hyperbolic",
+          "bbox": [
+            126.72,
+            554.46,
+            485.38,
+            564.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "3-manifolds (see [29]). These give lower bounds on N(v), but note that inﬁnitely",
+          "bbox": [
+            126.72,
+            566.34,
+            485.25,
+            576.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "many manifolds are deﬁnitely missing in these pictures. Nevertheless, the results",
+          "bbox": [
+            126.72,
+            578.61,
+            485.36,
+            588.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "suggest that there are often very few manifolds with any given volume.",
+          "bbox": [
+            126.72,
+            590.61,
+            436.92,
+            600.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The ﬁrst main result of this paper (Theorem 3.1) shows that there is an inﬁnite",
+          "bbox": [
+            144.6,
+            606.69,
+            485.26,
+            616.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "sequence of closed hyperbolic 3-manifolds determined by their volumes, obtained",
+          "bbox": [
+            126.72,
+            618.69,
+            485.41,
+            628.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "by Dehn ﬁllings on the ﬁgure eight knot complement. Hence N(xi) = 1 for an",
+          "bbox": [
+            126.72,
+            630.57,
+            485.41,
+            641.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "inﬁnite sequence of volumes xi converging to vω from below.",
+          "bbox": [
+            126.72,
+            642.57,
+            390.6,
+            653.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "The proof of Theorem 3.1 uses the asymptotic formula of Neumann-Zagier [38]",
+          "bbox": [
+            144.6,
+            654.3,
+            485.28,
+            664.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "for the change in volume during hyperbolic Dehn ﬁlling and a study of the quadratic",
+          "bbox": [
+            126.72,
+            666.45,
+            485.5,
+            676.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "form giving the squares of lengths of closed geodesics on a horospherical torus cusp",
+          "bbox": [
+            126.72,
+            678.45,
+            485.41,
+            688.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "cross section, together with some elementary number theory.",
+          "bbox": [
+            126.72,
+            690.45,
+            391.44,
+            700.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "rotation": 0,
+      "drawings": 41,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 3. Frequencies of volumes of hyperbolic 3-manifolds in the closed and cusped censuses.",
+        "Figure 4. Frequencies of volumes of hyperbolic 3-manifolds in the cusped census."
+      ],
+      "labels": [
+        {
+          "text": "ON THE NUMBER OF HYPERBOLIC 3-MANIFOLDS OF A GIVEN VOLUME",
+          "bbox": [
+            159.0,
+            96.88,
+            452.95,
+            103.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            481.32,
+            96.88,
+            485.29,
+            103.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "50",
+          "bbox": [
+            143.44,
+            120.28,
+            156.77,
+            130.28
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "45",
+          "bbox": [
+            143.44,
+            137.12,
+            156.77,
+            147.12
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "40",
+          "bbox": [
+            143.44,
+            153.96,
+            156.77,
+            163.96
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "35",
+          "bbox": [
+            143.44,
+            170.8,
+            156.77,
+            180.8
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Frequency",
+          "bbox": [
+            132.34,
+            171.28,
+            142.34,
+            220.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "30",
+          "bbox": [
+            143.44,
+            187.64,
+            156.77,
+            197.64
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "25",
+          "bbox": [
+            143.44,
+            204.48,
+            156.77,
+            214.48
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "20",
+          "bbox": [
+            143.44,
+            221.32,
+            156.77,
+            231.32
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "15",
+          "bbox": [
+            143.44,
+            238.16,
+            156.77,
+            248.16
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "10",
+          "bbox": [
+            143.44,
+            255.01,
+            156.77,
+            265.01
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            146.75,
+            271.85,
+            155.08,
+            281.85
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            146.75,
+            288.69,
+            155.08,
+            298.69
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            153.3,
+            295.29,
+            161.63,
+            305.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            193.25,
+            295.29,
+            201.58,
+            305.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            233.2,
+            295.29,
+            241.53,
+            305.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            273.14,
+            295.29,
+            281.47,
+            305.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            313.09,
+            295.29,
+            321.42,
+            305.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            353.04,
+            295.29,
+            361.37,
+            305.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "6",
+          "bbox": [
+            392.99,
+            295.29,
+            401.32,
+            305.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "7",
+          "bbox": [
+            432.94,
+            295.29,
+            441.27,
+            305.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "8",
+          "bbox": [
+            472.89,
+            295.29,
+            481.22,
+            305.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Volume",
+          "bbox": [
+            306.89,
+            306.62,
+            343.81,
+            316.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Figure 3. Frequencies of volumes of hyperbolic 3-manifolds in the",
+          "bbox": [
+            162.48,
+            330.07,
+            449.38,
+            340.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "closed and cusped censuses.",
+          "bbox": [
+            162.48,
+            342.45,
+            283.32,
+            352.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "25",
+          "bbox": [
+            141.56,
+            379.61,
+            154.89,
+            389.61
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "20",
+          "bbox": [
+            141.56,
+            413.29,
+            154.89,
+            423.29
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Frequency",
+          "bbox": [
+            131.26,
+            431.1,
+            141.26,
+            479.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "15",
+          "bbox": [
+            141.56,
+            446.97,
+            154.89,
+            456.97
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "10",
+          "bbox": [
+            141.56,
+            480.65,
+            154.89,
+            490.65
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            144.86,
+            514.33,
+            153.19,
+            524.33
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            144.86,
+            548.01,
+            153.19,
+            558.01
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            151.41,
+            554.61,
+            159.74,
+            564.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            191.36,
+            554.61,
+            199.69,
+            564.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            231.31,
+            554.61,
+            239.64,
+            564.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            271.25,
+            554.61,
+            279.58,
+            564.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            311.2,
+            554.61,
+            319.53,
+            564.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            351.15,
+            554.61,
+            359.48,
+            564.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "6",
+          "bbox": [
+            391.1,
+            554.61,
+            399.43,
+            564.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "7",
+          "bbox": [
+            431.04,
+            554.61,
+            439.37,
+            564.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "8",
+          "bbox": [
+            470.99,
+            554.61,
+            479.32,
+            564.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Volume",
+          "bbox": [
+            305.0,
+            565.94,
+            341.92,
+            575.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Figure 4. Frequencies of volumes of hyperbolic 3-manifolds in the",
+          "bbox": [
+            162.48,
+            589.39,
+            449.38,
+            599.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "cusped census.",
+          "bbox": [
+            162.48,
+            601.65,
+            226.08,
+            611.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Our second major result (Theorem 4.1) shows that there is an inﬁnite sequence",
+          "bbox": [
+            144.6,
+            642.57,
+            485.38,
+            652.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of 1-cusped hyperbolic 3-manifolds determined by their volumes amongst orientable",
+          "bbox": [
+            126.72,
+            654.57,
+            485.5,
+            664.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "cusped hyperbolic 3-manifolds. These manifolds are obtained by Dehn ﬁllings on",
+          "bbox": [
+            126.72,
+            666.45,
+            485.41,
+            676.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "one cusp of the (−2, 3, 8)-pretzel link complement. Hence NC(yi) = 1 for an inﬁnite",
+          "bbox": [
+            126.72,
+            678.2,
+            485.26,
+            695.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "sequence of volumes yi converging to vω2 from below.",
+          "bbox": [
+            126.72,
+            690.21,
+            359.88,
+            701.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR5"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 16,
+      "rotation": 0,
+      "drawings": 53,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 5. Volume preserving moves on hyperbolic graphs",
+        "Figure 6. Gluing by a homeomorphism"
+      ],
+      "labels": [
+        {
+          "text": "16",
+          "bbox": [
+            126.72,
+            96.88,
+            134.65,
+            103.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "HODGSON AND MASAI",
+          "bbox": [
+            261.0,
+            96.88,
+            350.99,
+            103.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "3 2",
+          "bbox": [
+            296.99,
+            136.87,
+            311.3,
+            146.87
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "gluing",
+          "bbox": [
+            344.82,
+            142.22,
+            374.13,
+            153.22
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            11.0
+          ]
+        },
+        {
+          "text": "gluing",
+          "bbox": [
+            238.15,
+            144.55,
+            267.46,
+            155.55
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            11.0
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            308.32,
+            158.23,
+            313.32,
+            168.23
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            308.32,
+            169.87,
+            313.32,
+            179.87
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "cutting",
+          "bbox": [
+            342.32,
+            173.95,
+            376.52,
+            184.95
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            11.0
+          ]
+        },
+        {
+          "text": "cutting",
+          "bbox": [
+            235.32,
+            174.62,
+            269.52,
+            185.62
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            11.0
+          ]
+        },
+        {
+          "text": "3 2",
+          "bbox": [
+            296.99,
+            191.21,
+            311.3,
+            201.21
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Figure 5. Volume preserving moves on hyperbolic graphs",
+          "bbox": [
+            177.72,
+            231.07,
+            434.48,
+            241.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Proof. Note that each vertex in a hyperbolic graph corresponds to a totally",
+          "bbox": [
+            144.6,
+            258.66,
+            485.37,
+            268.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "geodesic thrice punctured sphere and each edge corresponds to an annulus cusp.",
+          "bbox": [
+            126.72,
+            270.93,
+            485.28,
+            280.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Moreover, the hyperbolic structure on a thrice punctured sphere is unique by [2];",
+          "bbox": [
+            126.72,
+            282.66,
+            485.28,
+            292.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "hence any orientation preserving homeomorphism between hyperbolic thrice punc-",
+          "bbox": [
+            126.72,
+            294.81,
+            485.24,
+            304.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "tured spheres is isotopic to an isometry. Since any homeomorphism between thrice",
+          "bbox": [
+            126.72,
+            306.81,
+            485.38,
+            316.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "punctured spheres is uniquely determined by its action on the cusps, we may denote",
+          "bbox": [
+            126.72,
+            318.69,
+            485.38,
+            328.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "homeomorphisms as elements of S3, the symmetry group of degree 3.",
+          "bbox": [
+            126.72,
+            330.69,
+            428.52,
+            341.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Fix labels for the cusps of the thrice punctured spheres as in Figure 5. If we glue",
+          "bbox": [
+            144.6,
+            344.85,
+            485.38,
+            354.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the boundaries via the homeomorphism corresponding to the identity permutation,",
+          "bbox": [
+            126.72,
+            356.85,
+            485.4,
+            366.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "then we get the tangle on the left of Figure 5. If we glue the boundaries via the",
+          "bbox": [
+            126.72,
+            368.85,
+            485.26,
+            378.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "homeomorphism corresponding to the permutation interchanging 2 and 3, we get",
+          "bbox": [
+            126.72,
+            380.73,
+            485.42,
+            390.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the tangle on the right of Figure 5.",
+          "bbox": [
+            126.72,
+            392.73,
+            279.36,
+            402.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 6. Gluing by a homeomorphism",
+          "bbox": [
+            217.08,
+            617.83,
+            395.18,
+            628.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "This is illustrated in Figure 6. Here we regard S3 as B3 ∪B3 where one ball",
+          "bbox": [
+            144.6,
+            638.72,
+            485.4,
+            659.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "B3 is a regular neighbourhood of a vertex of the graph shown in the middle of",
+          "bbox": [
+            126.72,
+            650.97,
+            485.44,
+            664.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 5. We then reverse the inside and the outside with respect to the boundary",
+          "bbox": [
+            126.72,
+            666.45,
+            485.37,
+            676.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "sphere S2 = ∂B3. After gluing, we get a link or graph in S2 × S1. The component",
+          "bbox": [
+            126.72,
+            674.6,
+            485.43,
+            695.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "coming from the cusp labelled by 1 is a loop which corresponds to a generator of",
+          "bbox": [
+            126.72,
+            690.45,
+            485.44,
+            700.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 17,
+      "rotation": 0,
+      "drawings": 35,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 7. Polyhedral decomposition of a graph complement"
+      ],
+      "labels": [
+        {
+          "text": "ON THE NUMBER OF HYPERBOLIC 3-MANIFOLDS OF A GIVEN VOLUME",
+          "bbox": [
+            159.0,
+            96.88,
+            452.95,
+            103.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "17",
+          "bbox": [
+            477.36,
+            96.88,
+            485.29,
+            103.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "the fundamental group of S2 × S1, and its complement is homeomorphic to a solid",
+          "bbox": [
+            126.72,
+            114.68,
+            485.41,
+            135.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "torus. Thus we get a tangle as shown on the left or right of Figure 5.",
+          "bbox": [
+            126.72,
+            130.53,
+            428.52,
+            140.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The inverse move (left or right to middle) is valid since any essential thrice",
+          "bbox": [
+            144.6,
+            144.57,
+            485.38,
+            154.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "punctured sphere (or, 2-punctured disk) in a hyperbolic 3-manifold is totally geo-",
+          "bbox": [
+            126.72,
+            156.45,
+            485.48,
+            166.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "desic ([2]). Since we are dealing with hyperbolic graphs, the 2-punctured disk on",
+          "bbox": [
+            126.72,
+            168.18,
+            485.41,
+            178.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "□",
+          "bbox": [
+            477.6,
+            177.96,
+            485.34,
+            187.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSAM10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the left or right of Figure 5 is essential (see [39] Lemma 2.1).",
+          "bbox": [
+            126.72,
+            180.18,
+            393.6,
+            190.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Deﬁnition 6.2. A fully augmented link is a link obtained by applying the",
+          "bbox": [
+            144.6,
+            198.06,
+            485.26,
+            208.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "gluing moves of Lemma 6.1 to a planar diagram of a hyperbolic graph (embedded",
+          "bbox": [
+            126.72,
+            210.33,
+            485.29,
+            220.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "in the plane) so that the resulting graph is actually a link. A crossing circle is a",
+          "bbox": [
+            126.72,
+            222.21,
+            485.34,
+            232.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "component of a fully augmented link which appears as a circle in Figure 5. A knot",
+          "bbox": [
+            126.72,
+            234.21,
+            485.35,
+            244.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "component of a fully augmented link is a component which is not a crossing circle.",
+          "bbox": [
+            126.72,
+            246.21,
+            485.4,
+            256.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Remark 6.3. These deﬁnitions of a fully augmented link, a crossing circle,",
+          "bbox": [
+            144.6,
+            262.74,
+            485.4,
+            272.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "and a knot component are equivalent to the original deﬁnitions in [20] or [39].",
+          "bbox": [
+            126.72,
+            274.74,
+            469.68,
+            284.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "6.1. Polyhedral decomposition for the complement of a hyperbolic",
+          "bbox": [
+            144.6,
+            291.66,
+            485.45,
+            301.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "graph with a planar diagram. Given a hyperbolic graph P with a planar dia-",
+          "bbox": [
+            126.72,
+            303.54,
+            485.36,
+            313.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "gram D, let V be the set of vertices of P and NP = S3\\P \\(∪v∈V N(v)) where N(v)",
+          "bbox": [
+            126.72,
+            314.44,
+            485.19,
+            334.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "is a regular neighbourhood of v. Let Π be the plane containing D. Then NP admits",
+          "bbox": [
+            126.72,
+            327.81,
+            485.24,
+            339.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "hyperbolic metric of ﬁnite volume with geodesic boundary. We can decompose NP",
+          "bbox": [
+            126.72,
+            339.69,
+            483.75,
+            350.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "into two isometric convex ideal hyperbolic polyhedra by the following procedure,",
+          "bbox": [
+            126.72,
+            351.69,
+            485.4,
+            361.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "depicted in Figure 7.",
+          "bbox": [
+            126.72,
+            363.57,
+            217.32,
+            373.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Step 1: Cut NP along Π.",
+          "bbox": [
+            155.4,
+            377.34,
+            270.12,
+            389.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Step 2: Collapse each edge of P to a point.",
+          "bbox": [
+            155.4,
+            389.34,
+            348.84,
+            399.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Let L be a fully augmented link which is obtained from D by the gluing moves",
+          "bbox": [
+            126.72,
+            403.65,
+            485.48,
+            413.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of Lemma 6.1. Then this decomposition is exactly equal to the decomposition of",
+          "bbox": [
+            126.72,
+            415.65,
+            485.44,
+            425.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "S3 \\ L found by Agol-Thurston in [32] (see also [20], [39]).",
+          "bbox": [
+            126.72,
+            423.68,
+            384.72,
+            444.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 7. Polyhedral decomposition of a graph complement",
+          "bbox": [
+            172.32,
+            560.83,
+            439.7,
+            571.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We shade the faces coming from the thrice punctured sphere boundaries of NP",
+          "bbox": [
+            144.6,
+            582.81,
+            483.75,
+            593.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "and leave the faces on Π white as in [20], [39]. Note that every shaded face is an",
+          "bbox": [
+            126.72,
+            594.54,
+            485.41,
+            604.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ideal triangle, and since reﬂection φ about Π leaves each thrice punctured sphere",
+          "bbox": [
+            126.72,
+            606.69,
+            485.38,
+            616.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "boundary invariant, the shaded faces are all orthogonal to the adjacent white faces.",
+          "bbox": [
+            126.72,
+            618.69,
+            485.4,
+            628.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Hence the dihedral angle of each edge is π/2. Since φ preserves white faces, each",
+          "bbox": [
+            126.72,
+            630.57,
+            485.41,
+            640.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "face of these polyhedra is totally geodesic. Hence each white face extends to the",
+          "bbox": [
+            126.72,
+            642.57,
+            485.27,
+            652.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "boundary at inﬁnity S2",
+          "bbox": [
+            126.72,
+            653.2,
+            231.25,
+            664.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "∞of hyperbolic space to give a Euclidean circle and such",
+          "bbox": [
+            226.68,
+            654.57,
+            485.41,
+            671.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "circles corresponding to adjacent faces are tangent to each other. Therefore the",
+          "bbox": [
+            126.72,
+            666.45,
+            485.26,
+            676.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "white faces of each polyhedron determine a circle packing of S2",
+          "bbox": [
+            126.72,
+            677.08,
+            412.57,
+            688.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "∞whose nerve is",
+          "bbox": [
+            408.0,
+            678.45,
+            485.37,
+            694.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "isomorphic to the dual of the original graph diagram D.",
+          "bbox": [
+            126.72,
+            690.45,
+            371.4,
+            700.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 18,
+      "rotation": 0,
+      "drawings": 55,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 8. Graph Wn with 2n + 2 vertices",
+        "Figure 9. A circle packing obtained from the graph Wn (left) and a (topological) polyhedral decomposition (right)"
+      ],
+      "labels": [
+        {
+          "text": "18",
+          "bbox": [
+            126.72,
+            96.88,
+            134.65,
+            103.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "HODGSON AND MASAI",
+          "bbox": [
+            261.0,
+            96.88,
+            350.99,
+            103.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "7. Associated circle packings and cusp moduli",
+          "bbox": [
+            190.08,
+            118.26,
+            422.1,
+            128.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In this section we study the circle packing corresponding to the hyperbolic",
+          "bbox": [
+            144.6,
+            136.53,
+            485.38,
+            146.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "graph Wn shown in Figure 8.",
+          "bbox": [
+            126.72,
+            148.41,
+            254.16,
+            159.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "n",
+          "bbox": [
+            301.97,
+            283.74,
+            307.59,
+            293.74
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ComputerModern-Italic"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Figure 8. Graph Wn with 2n + 2 vertices",
+          "bbox": [
+            212.16,
+            310.15,
+            399.93,
+            321.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "The two isometric polyhedra in the decomposition of the complement of Wn",
+          "bbox": [
+            144.6,
+            334.89,
+            484.8,
+            345.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "described in section 6 are obtained by gluing together n regular ideal octahedra",
+          "bbox": [
+            126.72,
+            346.77,
+            485.46,
+            356.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(see Figure 9 (right)).",
+          "bbox": [
+            126.72,
+            358.77,
+            226.2,
+            368.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Therefore the volume of its complement is 2nV8 where",
+          "bbox": [
+            235.32,
+            358.77,
+            485.38,
+            370.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "V8 = 3.663862 . . . is the volume of the regular ideal octahedron. A circle packing",
+          "bbox": [
+            126.72,
+            370.65,
+            485.46,
+            382.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "corresponding to the graph is depicted in Figure 9 (left). Each tangency point of",
+          "bbox": [
+            126.72,
+            382.65,
+            485.44,
+            392.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the circle packing corresponds to an annulus cusp of the complement of Wn.",
+          "bbox": [
+            126.72,
+            394.65,
+            459.72,
+            405.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": ". . .",
+          "bbox": [
+            382.83,
+            479.75,
+            395.37,
+            491.75
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MyriadPro-Regular"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": ". . .",
+          "bbox": [
+            220.53,
+            499.12,
+            233.07,
+            512.12
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MyriadPro-Regular"
+          ],
+          "sizes": [
+            12.0
+          ]
+        },
+        {
+          "text": "Figure 9. A circle packing obtained from the graph Wn (left) and",
+          "bbox": [
+            162.48,
+            528.91,
+            449.53,
+            540.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "a (topological) polyhedral decomposition (right)",
+          "bbox": [
+            162.48,
+            541.29,
+            372.74,
+            551.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Recall from Remark 2.1 that each torus cusp of a hyperbolic 3-manifold has a",
+          "bbox": [
+            144.6,
+            566.01,
+            485.34,
+            575.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Euclidean structure C/Γ where Γ ∼= Z2 ⊂C is a lattice, and its shape parameter",
+          "bbox": [
+            126.72,
+            574.16,
+            485.45,
+            595.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "is determined by giving two independent translations corresponding to a choice of",
+          "bbox": [
+            126.72,
+            590.01,
+            485.44,
+            599.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "basis for Γ. Since there are inﬁnitely many ways to choose such a basis, this shape",
+          "bbox": [
+            126.72,
+            601.89,
+            485.38,
+            611.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "parameter is not unique. The modulus of a torus cusp is deﬁned as the complex",
+          "bbox": [
+            126.72,
+            613.89,
+            485.37,
+            623.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ratio",
+          "bbox": [
+            126.72,
+            625.77,
+            147.3,
+            635.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "z = (second shortest translation)/(shortest translation).",
+          "bbox": [
+            184.2,
+            638.01,
+            427.8,
+            647.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(7.1)",
+          "bbox": [
+            464.88,
+            638.01,
+            485.42,
+            647.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "It is a complex number lying in the region |Re(z)| ≤1/2 and |z| ≥1. If z lies on",
+          "bbox": [
+            126.72,
+            652.04,
+            485.41,
+            669.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the boundary of this region, we choose it so that Re(z) ≥0.",
+          "bbox": [
+            126.72,
+            664.04,
+            387.84,
+            681.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "For the complement of Wn, there are three diﬀerent types of annulus cusps,",
+          "bbox": [
+            144.6,
+            678.45,
+            485.4,
+            689.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "see Figures 10, 11 and 12. The circle packing diagrams giving the cusp shapes",
+          "bbox": [
+            126.72,
+            690.45,
+            485.37,
+            700.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 19,
+      "rotation": 0,
+      "drawings": 93,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 10. Cusp modulus for ideal vertices of type 1",
+        "Figure 11. Cusp modulus for ideal vertices of type 2",
+        "Figure 12. Cusp modulus for ideal vertices of type 3"
+      ],
+      "labels": [
+        {
+          "text": "ON THE NUMBER OF HYPERBOLIC 3-MANIFOLDS OF A GIVEN VOLUME",
+          "bbox": [
+            159.0,
+            96.88,
+            452.95,
+            103.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "19",
+          "bbox": [
+            477.36,
+            96.88,
+            485.29,
+            103.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "are obtained by M¨obius transformations which map one of the marked cusps to",
+          "bbox": [
+            126.72,
+            118.53,
+            485.34,
+            128.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "inﬁnity. Since the graph complement is reconstructed by gluing the two isometric",
+          "bbox": [
+            126.72,
+            130.53,
+            485.38,
+            140.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "polyhedra along their corresponding white faces, we get the boundary of a horoball",
+          "bbox": [
+            126.72,
+            142.41,
+            485.52,
+            152.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "neighbourhood of the annulus cusp by gluing two copies of rectangles together",
+          "bbox": [
+            126.72,
+            154.41,
+            485.34,
+            164.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "along corresponding edges depicted by solid lines. Later, we glue these annuli cusps",
+          "bbox": [
+            126.72,
+            166.41,
+            485.36,
+            176.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "together along their boundaries (depicted as dotted lines) to get a torus cusp, and",
+          "bbox": [
+            126.72,
+            178.29,
+            485.41,
+            188.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "compute its modulus.",
+          "bbox": [
+            126.72,
+            190.29,
+            220.56,
+            200.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "By using Lemma 6.1, we obtain hyperbolic links from Wn. The modulus of",
+          "bbox": [
+            144.6,
+            204.33,
+            485.44,
+            214.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "each cusp can be computed by knowing how to glue the rectangles according to the",
+          "bbox": [
+            126.72,
+            216.33,
+            485.26,
+            226.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "gluing pattern of thrice punctured spheres.",
+          "bbox": [
+            126.72,
+            228.21,
+            313.8,
+            238.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ". . .",
+          "bbox": [
+            232.66,
+            336.2,
+            243.95,
+            347.9
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MyriadPro-Regular"
+          ],
+          "sizes": [
+            10.8
+          ]
+        },
+        {
+          "text": "Figure 10. Cusp modulus for ideal vertices of type 1",
+          "bbox": [
+            187.68,
+            370.27,
+            424.38,
+            380.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ". . .",
+          "bbox": [
+            228.02,
+            483.92,
+            239.31,
+            495.62
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "MyriadPro-Regular"
+          ],
+          "sizes": [
+            10.8
+          ]
+        },
+        {
+          "text": "Figure 11. Cusp modulus for ideal vertices of type 2",
+          "bbox": [
+            187.68,
+            523.03,
+            424.38,
+            533.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "n",
+          "bbox": [
+            370.61,
+            578.12,
+            375.67,
+            587.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ComputerModern-Italic"
+          ],
+          "sizes": [
+            9.0
+          ]
+        },
+        {
+          "text": ". . .",
+          "bbox": [
+            395.37,
+            608.04,
+            408.86,
+            617.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            9.0
+          ]
+        },
+        {
+          "text": ". . .",
+          "bbox": [
+            209.95,
+            645.9,
+            223.45,
+            655.8
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            9.0
+          ]
+        },
+        {
+          "text": "Figure 12. Cusp modulus for ideal vertices of type 3",
+          "bbox": [
+            187.68,
+            677.71,
+            424.38,
+            688.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 20,
+      "rotation": 0,
+      "drawings": 190,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 13. A graph Gn,k obtained from Wn (top) and vertices corresponding to the knot component cusp (bottom)",
+        "Figure 14. Shapes of the torus cusps for the graph Gn,k in Figure 13"
+      ],
+      "labels": [
+        {
+          "text": "20",
+          "bbox": [
+            126.72,
+            96.88,
+            134.65,
+            103.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "HODGSON AND MASAI",
+          "bbox": [
+            261.0,
+            96.88,
+            350.99,
+            103.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Example 7.1. The graph Gn,k in Figure 13 (top) is obtained from the graph",
+          "bbox": [
+            144.6,
+            118.26,
+            485.53,
+            129.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "in Figure 8 by k + 2 applications of Lemma 6.1, where k + 2 ≤n. The torus cusp",
+          "bbox": [
+            126.72,
+            130.28,
+            485.41,
+            147.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "corresponding to the knot component (with k crossings) comes from the 2(k + 1)",
+          "bbox": [
+            126.72,
+            142.41,
+            485.43,
+            152.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "marked vertices in Figure 13 (bottom). Note that in Figure 13 (also in Figure 15),",
+          "bbox": [
+            126.72,
+            154.41,
+            485.28,
+            164.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the choice of crossings below the crossing circles is not important, because changing",
+          "bbox": [
+            126.72,
+            166.41,
+            485.46,
+            176.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "an over crossing to an under crossing does not change the graph complement.",
+          "bbox": [
+            126.72,
+            178.29,
+            465.24,
+            188.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ". . .",
+          "bbox": [
+            285.74,
+            248.21,
+            300.74,
+            258.21
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": ". . .",
+          "bbox": [
+            408.75,
+            252.59,
+            414.98,
+            256.75
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            4.16
+          ]
+        },
+        {
+          "text": "k",
+          "bbox": [
+            282.76,
+            293.23,
+            287.36,
+            303.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ComputerModern-Italic"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": ". . .",
+          "bbox": [
+            272.11,
+            367.21,
+            287.11,
+            377.21
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "k",
+          "bbox": [
+            277.56,
+            403.02,
+            282.16,
+            413.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ComputerModern-Italic"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Figure 13. A graph Gn,k obtained from Wn (top) and vertices",
+          "bbox": [
+            162.48,
+            425.95,
+            449.6,
+            437.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "corresponding to the knot component cusp (bottom)",
+          "bbox": [
+            162.48,
+            438.33,
+            392.07,
+            448.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In Figure 14, we depict the shapes of the torus cusps. The left diagram shows",
+          "bbox": [
+            144.6,
+            462.57,
+            485.49,
+            472.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the shape of a crossing circle cusp without a half twist below, the middle shows the",
+          "bbox": [
+            126.72,
+            474.45,
+            485.26,
+            484.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "shape of a crossing circle cusp with a half twist, and the right shows the shape of",
+          "bbox": [
+            126.72,
+            486.45,
+            485.44,
+            496.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the cusp which comes from the knot component.",
+          "bbox": [
+            126.72,
+            498.33,
+            338.52,
+            508.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ". . .",
+          "bbox": [
+            354.65,
+            549.14,
+            369.65,
+            559.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "2(k+1)",
+          "bbox": [
+            352.57,
+            615.06,
+            382.73,
+            625.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ComputerModern-Italic",
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.0
+          ]
+        },
+        {
+          "text": "Figure 14. Shapes of the torus cusps for the graph Gn,k in Figure 13",
+          "bbox": [
+            151.8,
+            641.59,
+            460.26,
+            653.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "The shape of the torus cusp of the knot component in Figure 13 is obtained",
+          "bbox": [
+            144.6,
+            666.45,
+            485.41,
+            676.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "by arranging 2 × 2(k + 1) copies of the 1 × 2 rectangle in Figure 11 to form a",
+          "bbox": [
+            126.72,
+            678.2,
+            485.34,
+            695.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2 × 4(k + 1) rectangle with opposite edges identiﬁed by translations. Therefore, its",
+          "bbox": [
+            126.72,
+            690.2,
+            485.24,
+            707.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 21,
+      "rotation": 0,
+      "drawings": 38,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 15. Starting point: graph with 2n vertices (represented by circles)"
+      ],
+      "labels": [
+        {
+          "text": "ON THE NUMBER OF HYPERBOLIC 3-MANIFOLDS OF A GIVEN VOLUME",
+          "bbox": [
+            159.0,
+            96.88,
+            452.95,
+            103.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "21",
+          "bbox": [
+            477.36,
+            96.88,
+            485.29,
+            103.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "cusp modulus is 2(k + 1)√",
+          "bbox": [
+            126.72,
+            110.48,
+            245.06,
+            128.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "−1. The modulus of each crossing circle cusp depends",
+          "bbox": [
+            245.04,
+            118.28,
+            485.24,
+            135.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "on the existence of a half twist; if it has a half twist below, the modulus is √",
+          "bbox": [
+            126.72,
+            122.6,
+            472.58,
+            147.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            472.56,
+            130.4,
+            485.34,
+            147.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "and if not, it is 2√",
+          "bbox": [
+            126.72,
+            134.48,
+            207.14,
+            152.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "−1. (Note that these moduli do not depend on the total number",
+          "bbox": [
+            207.0,
+            142.4,
+            485.33,
+            159.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of vertices in the graph Gn,k.)",
+          "bbox": [
+            126.72,
+            154.53,
+            257.79,
+            165.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "8. Construction of diﬀerent manifolds sharing the same volume",
+          "bbox": [
+            146.52,
+            175.14,
+            465.57,
+            185.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "We start with the graph with 2n vertices shown in Figure 15. This graph is",
+          "bbox": [
+            144.6,
+            193.29,
+            485.36,
+            203.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "obtained by applying the gluing move in Lemma 6.1 n + 1 times to W2n.",
+          "bbox": [
+            126.72,
+            205.29,
+            444.96,
+            215.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": ". . .",
+          "bbox": [
+            340.61,
+            293.83,
+            355.67,
+            303.83
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "ComputerModern-Regular"
+          ],
+          "sizes": [
+            10.02
+          ]
+        },
+        {
+          "text": "Figure 15. Starting point: graph with 2n vertices (represented by circles)",
+          "bbox": [
+            141.84,
+            351.91,
+            470.18,
+            362.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "First, we label every remaining pair of thrice punctured spheres by an element",
+          "bbox": [
+            144.6,
+            377.01,
+            485.31,
+            386.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of {0, 1}. For each such pair we apply Lemma 6.1 as follows. We glue the pair of",
+          "bbox": [
+            126.72,
+            388.76,
+            485.44,
+            406.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "thrice punctured spheres labelled by 0 (resp. 1) without (resp. with) a half twist,",
+          "bbox": [
+            126.72,
+            400.89,
+            485.28,
+            410.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "as in Figure 5 (left) (resp.(right)). By this construction, we get a hyperbolic link",
+          "bbox": [
+            126.72,
+            412.89,
+            485.25,
+            422.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "complement Mb for each cyclic binary word b of length n and its volume is 4nV8.",
+          "bbox": [
+            126.72,
+            424.77,
+            480.6,
+            436.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Now we consider the decomposition of Mb into isometric convex hyperbolic",
+          "bbox": [
+            144.6,
+            438.93,
+            485.38,
+            450.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "polyhedra with shaded faces described in section 6.1. Note that every edge lies in",
+          "bbox": [
+            126.72,
+            450.93,
+            485.29,
+            460.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "exactly one shaded triangular face, since the faces have a checkerboard colouring.",
+          "bbox": [
+            126.72,
+            462.81,
+            481.92,
+            472.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Deﬁnition 8.1 ([20], [39]). Given an edge e in such a polyhedral decomposi-",
+          "bbox": [
+            144.6,
+            480.66,
+            485.36,
+            490.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "tion, let t be the shaded ideal triangle containing e. Then the midpoint m of e is",
+          "bbox": [
+            126.72,
+            492.81,
+            485.37,
+            502.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the foot of the perpendicular in t from the vertex of t opposite e to e.",
+          "bbox": [
+            126.72,
+            504.81,
+            430.92,
+            514.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Since isometries preserve angles, when we glue two thrice punctured sphere",
+          "bbox": [
+            144.6,
+            522.81,
+            485.38,
+            532.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "boundaries together by an isometry, it maps midpoints to midpoints. Moreover,",
+          "bbox": [
+            126.72,
+            534.81,
+            485.64,
+            544.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "for fully augmented links, we may expand horoball neighbourhoods of the cusps",
+          "bbox": [
+            126.72,
+            546.69,
+            485.36,
+            556.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "to ﬁnd a horoball packing such that the horoballs bump together precisely at the",
+          "bbox": [
+            126.72,
+            558.69,
+            485.26,
+            568.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "midpoints of edges. More precisely,",
+          "bbox": [
+            126.72,
+            570.69,
+            280.32,
+            580.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Theorem 8.2 ([20], [39]). Let L be a fully augmented link. Then there exist",
+          "bbox": [
+            144.6,
+            588.42,
+            485.35,
+            598.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "horoball neighbourhoods of the cusps of S3 \\ L such that the midpoint of every edge",
+          "bbox": [
+            126.72,
+            596.72,
+            485.3,
+            617.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "CMSY10",
+            "CMTI10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "is a point of tangency of the corresponding horospherical tori.",
+          "bbox": [
+            126.72,
+            612.57,
+            394.85,
+            622.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Remark 8.3. For each Mb, we ﬁx the horoball packing Hb given by Theorem",
+          "bbox": [
+            144.6,
+            630.3,
+            485.42,
+            647.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "8.2. In fact, this horoball packing depends only on the geometry of Mb and not on",
+          "bbox": [
+            126.72,
+            642.57,
+            485.41,
+            653.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "any choice of polyhedral decomposition for Mb. This follows since the horospherical",
+          "bbox": [
+            126.72,
+            654.57,
+            485.64,
+            665.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "tori for Hb can be deﬁned as follows: For each cusp with modulus √",
+          "bbox": [
+            126.72,
+            658.4,
+            430.34,
+            683.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "−1 or 2√",
+          "bbox": [
+            430.44,
+            658.4,
+            472.7,
+            683.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            472.56,
+            666.2,
+            485.34,
+            683.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "we choose the horospherical torus of area 2, and for each cusp with modulus m√",
+          "bbox": [
+            126.72,
+            670.4,
+            472.58,
+            688.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            472.56,
+            678.2,
+            485.34,
+            695.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "with m > 2 we choose the horospherical torus of area 4m. These areas are easily",
+          "bbox": [
+            126.72,
+            690.45,
+            485.37,
+            700.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    }
+  ]
+}

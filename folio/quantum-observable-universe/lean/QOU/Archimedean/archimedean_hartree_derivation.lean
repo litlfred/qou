@@ -68,7 +68,7 @@ the Hartree energy.*
     the realisation functor `ρ_∞` is opaque, so the identity is recorded
     as the conditional conjecture over the categorical context rather than
     discharged by a fake projection. -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/archimedean-hartree-derivation.ts
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/archimedean-hartree-derivation.ts
 def archimedean_hartree_derivation (ctx : ArchimedeanHartreeDerivationContext) :
     Prop :=
   ctx.rho_inf_Phi_M

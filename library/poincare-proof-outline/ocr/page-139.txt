@@ -1,0 +1,68 @@
+by (simp add: d poincare-distance-ge0)
+
+have 4 z. z € unit-disc \ poincare-between x y z /\ poincare-distance y z = d (is ?P x y)
+proof (cases t = y)
+case True
+have 4 z. z € unit-disc \ poincare-distance « z = d
+proof (rule wlog-zero)
+show 4 z. z € unit-disc \ poincare-distance 0, z = d
+using ex-2z-axis-poincare-distance-negative[of d| «d > 0»
+by blast
+next
+show « € unit-disc
+by fact
+next
+fix au
+assume u € unit-disc cmod a < 1
+assume Jz. z € unit-disc \ poincare-distance (moebius-pt (blaschke a) u) z = d
+then obtain z where «: z € unit-disc poincare-distance (moebius-pt (blaschke a) u) z = d
+by auto
+obtain z’ where z’: z = moebius-pt (blaschke a) z' z' € unit-disc
+using <z € unit-discy
+using unit-disc-fiz-iff [of blaschke a] «cmod a < 1>
+using blaschke-unit-disc-fiz|of a]
+by blast
+
+show Jz. z € unit-disc \ poincare-distance uz = d
+using * 2’ (uw: unit-disc»
+using blaschke-unit-disc-fiz[of a] «cmod a < 1»
+by (rule-tac =z’ in exI, simp)
+qed
+thus ?thesis
+using (x = y>
+unfolding poincare-between-def
+by auto
+next
+case False
+show ?thesis
+proof (rule wlog-positive-x-azis[where P=. y x. ?P x y])
+fix x
+assume is-real x 0 < Rex Rex < 1
+
+then obtain z where z: is-real z Re z < 0 — 1 < Re z of-complex z € unit-disc
+of-complexr z € unit-disc of-complez z € circline-set x-axis poincare-distance On (of-complez z) = d
+using ex-2z-axis-poincare-distance-negative[of d| «d > 0»
+by auto
+
+have poincare-between (of-complex x) 0; (of-complex z)
+proof (cases z = 0)
+case True
+thus ?thesis
+unfolding poincare-between-def
+by auto
+next
+case False
+have x # 0
+using <is-real z» «Re x > 0»
+by auto
+thus ?thesis
+using poincare-between-z-axis-u0v|of x 2]
+using z <is-real z) «x # 0) «Re x > 0» False
+using complex-eq-if-Re-eq mult-pos-neg
+by fastforce
+qed
+thus ?P (of-complex x) 0n
+using <poincare-distance 0», (of-complex z) = d> (of-complex z € unit-disc»
+by blast
+
+139

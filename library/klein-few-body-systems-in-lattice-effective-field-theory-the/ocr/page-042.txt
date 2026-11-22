@@ -1,0 +1,54 @@
+Chapter 3 Nuclear Lattice Effective Field Theory
+
+and add an additional half step in the end,
+
+Ds, (N,) = Pi, (N,) + EME py (W,). (3.76)
+
+2 Sy Vr.
+
+The evaluation of momenta between two full steps pushes the error to OG mc) instead of OGimc)
+in the case of evaluating the field and the conjugate momenta at the same time point. For an
+efficient algorithm, it is necessary to choose the number of time steps N, and the step length &yy4¢
+such that the final acceptance rate is large enough to get enough statistics but also that the phase
+space is explored rapidly enough.
+
+. Metropolis test - accept or reject
+
+At the end of the molecular dynamics evolution, one has a new configuration of auxiliary fields
+and their momenta, sy(N,), Ps,(N,)., The accept/ reject criterion reads
+
+u < min {1,exp {-Hyume [sx (N-) Ps, (N-)| + Humc [sx ).P., (]}}. (3.77)
+
+where u is a random number between 0 and 1. The new configuration is accepted if Eq. (3.77) is
+fulfilled. This accept/reject criterion is called Metropolis test and it fulfills the detailed balance, a
+necessary condition for the reversibility of the system in equilibrium.
+
+. Measuring observables
+
+If the system is already in equilibrium and the state is accepted, we take statistics of all observables
+according to Eqs. (3.63) and (3.65).
+
+. Continue from step 2
+
+We repeat this procedure for Nii, times, but we use the new configuration sy(N,) as a starting
+point if it has been accepted or we use the old configuration sy(0) if it has been rejected.
+
+3.8 The sign problem
+
+As long as the system scales only proportional to the number of particles and L? in the spatial size, we
+do not have any storing problems for a large number of particles or a large box size. Sure enough, in
+fermionic Monte Carlo systems one has to deal with a sign problem. While we interpret the Boltzman
+factor as a probability factor and as such allows us to calculate the average of any observable just by
+summing over its value for any configurations weighted by its probability, this is not possible anymore if
+the weight is oscillating between negative and positive, which occurs by the exchange of two fermions
+just by Fermi statistics. Such a new configuration would cancel the old one making it very hard to extract
+any valuable information from a Monte Carlo simulation. To be specific, we follow [105] and consider a
+fermionic and bosonic path integral,
+
+36
+
+Zp = » Sign (n) exp [-S (n)], (3.78)
+
+Z, = >) expl-S ()], (3.79)
+
+n

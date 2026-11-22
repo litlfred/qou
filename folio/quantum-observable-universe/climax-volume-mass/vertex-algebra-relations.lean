@@ -2,6 +2,10 @@ import UGB.GrobnerShirshov.HeckeGS
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.Linarith
+import Mathlib.Algebra.Algebra.Basic
+import Mathlib.Algebra.BigOperators.Fin
+import Mathlib.Tactic.Abel
+import Mathlib.Tactic.Ring
 
 
 /-!
@@ -75,7 +79,7 @@ open UGB.GrobnerShirshov.Hecke
 -- QU-2: Antipode = Hecke inverse (derived from heckeRelation)
 -- ═══════════════════════════════════════════════════════════════════
 
-/- QU-2d: The inverse σᵢ⁻¹ = (q⁻¹ - q)σᵢ + q⁻¹ is formalized as
+/- QU-2d: The inverse σᵢ⁻¹ = σᵢ − (q − q⁻¹) is formalized as
     `embedNegativeGen` in HeckeGS.lean — constructive from the Hecke
     relation. This IS the antipode S(σᵢ).
     Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
@@ -190,7 +194,7 @@ axiom markov_nondegenerate {n : ℕ} (hp : HeckeParams)
 
 /-- QUO-2: An element commuting with all generators under conjugation
     is a scalar. Equivalent to Hom(1, Ad(A)) = 0. -/
--- Ref: [manuscript] §4/vertex-algebra-relations
+-- Ref: [leitner2026] §4/vertex-algebra-relations
 axiom observability {n : ℕ} (hp : HeckeParams)
     (f : AlgElement (HeckeGen n) ℝ) :
     (∀ i : Fin n, AlgElement.leftMulGen ⟨i⟩
@@ -201,12 +205,58 @@ axiom observability {n : ℕ} (hp : HeckeParams)
 -- QUO-3: Anomaly freedom (Chern class vanishing)
 -- ═══════════════════════════════════════════════════════════════════
 
-/-- QUO-3a: c₁(Ad(A)) = 0. Writhe balance: for each generator,
-    tr_M(σᵢ) = tr_M(σᵢ⁻¹). -/
--- Ref: [manuscript] §4/vertex-algebra-relations
-axiom first_chern_vanishes {n : ℕ} (hp : HeckeParams) (i : Fin n) :
-    MarkovTrace hp (embedPositiveGen i)
-    = MarkovTrace hp (embedNegativeGen i hp)
+/- QUO-3a WITHDRAWN 2026-11-15 (owner decision, PR #8005, bean qou-078y).
+    It read, as an axiom over the opaque `MarkovTrace`,
+      `MarkovTrace hp (embedPositiveGen i) = MarkovTrace hp (embedNegativeGen i hp)`,
+    i.e. `tr(σᵢ) = tr(σᵢ⁻¹)`, glossed as `c₁(Ad A) = 0`. For every trace that is
+    linear and has `tr(1) ≠ 0` this is false when `q² ≠ 1`: the Hecke relation
+    gives `σᵢ⁻¹ = σᵢ − h·1` with `h = q − q⁻¹`, so `tr(σᵢ) − tr(σᵢ⁻¹) = h·tr(1)`.
+    The proof is `trace_sub_trace_inv` below; `trace_ne_trace_inv` is the
+    negation of the withdrawn statement. The axiom had no consumers. It could not
+    be refuted against the axioms in this file, because `MarkovTrace` is given
+    no linearity axiom; it is false for the trace the paper means. -/
+
+section SkeinTraceBalance
+
+variable {R A : Type*} [CommRing R] [Ring A] [Algebra R A]
+
+/-- A left inverse of a Hecke generator is `x − h·1` (so it is the inverse). -/
+theorem hecke_inv_eq_sub_smul {x y : A} {h : R}
+    (hx : x * x = h • x + 1) (hyx : y * x = 1) :
+    y = x - h • (1 : A) := by
+  have key : y * (x * x) = y * (h • x + 1) := by rw [hx]
+  rw [← mul_assoc, hyx, one_mul, mul_add, mul_one, mul_smul_comm, hyx] at key
+  rw [key]; abel
+
+/-- **Skein balance of a linear trace.** For a Hecke generator `x`
+(`x² = h·x + 1`) with left inverse `y`, every `R`-linear functional `τ`
+satisfies `τ(x) − τ(x⁻¹) = h·τ(1)`. -/
+theorem trace_sub_trace_inv (τ : A →ₗ[R] R) {x y : A} {h : R}
+    (hx : x * x = h • x + 1) (hyx : y * x = 1) :
+    τ x - τ y = h * τ 1 := by
+  rw [hecke_inv_eq_sub_smul hx hyx, map_sub, map_smul, smul_eq_mul]
+  ring
+
+/-- Summed over `k` generators: `Σᵢ τ(xᵢ − xᵢ⁻¹) = k·h·τ(1)`. With `k = n − 1`
+this is the corrected left-hand side of the withdrawn QUO-3a. -/
+theorem sum_trace_sub_trace_inv (τ : A →ₗ[R] R) {k : ℕ} {x y : Fin k → A} {h : R}
+    (hx : ∀ i, x i * x i = h • x i + 1) (hyx : ∀ i, y i * x i = 1) :
+    (∑ i, (τ (x i) - τ (y i))) = (k : R) * h * τ 1 := by
+  simp only [fun i => trace_sub_trace_inv τ (hx i) (hyx i),
+    Finset.sum_const, Finset.card_univ, Fintype.card_fin, nsmul_eq_mul]
+  ring
+
+/-- **The negation of the withdrawn QUO-3a.** Over a domain, if `h ≠ 0` and
+`τ(1) ≠ 0` then `τ(x) ≠ τ(x⁻¹)`. -/
+theorem trace_ne_trace_inv [IsDomain R] (τ : A →ₗ[R] R) {x y : A} {h : R}
+    (hx : x * x = h • x + 1) (hyx : y * x = 1)
+    (hh : h ≠ 0) (h1 : τ 1 ≠ 0) : τ x ≠ τ y := by
+  intro heq
+  have := trace_sub_trace_inv τ hx hyx
+  rw [heq, sub_self] at this
+  exact (mul_ne_zero hh h1) this.symm
+
+end SkeinTraceBalance
 
 -- ═══════════════════════════════════════════════════════════════════
 -- C-2: q-deformed obstruction d_q² ≠ 0
@@ -228,7 +278,7 @@ theorem dq_squared_nonzero (q : ℝ) (hq : q > 1) :
 -- ═══════════════════════════════════════════════════════════════════
 
 /-- C-4b: χ = 2 - 2g = -6 forces g = 4. -/
--- Ref: [manuscript] §4/vertex-algebra-relations
+-- Ref: [leitner2026] §4/vertex-algebra-relations
 theorem descartes_genus : (2 : ℤ) - 2 * 4 = -6 := by norm_num
 
 /- `descartes_trace` RETIRED 2026-09-15.  It asserted, as an `axiom` over the
@@ -245,7 +295,7 @@ theorem descartes_genus : (2 : ℤ) - 2 * 4 = -6 := by norm_num
 
 /-- C-7: The curvature [σᵢ, σⱼ] is self-adjoint under the antipode:
     S([σᵢ, σⱼ]) = [σᵢ, σⱼ] where [a, b] = ab(ba)⁻¹. -/
--- Ref: [manuscript] §4/vertex-algebra-relations
+-- Ref: [leitner2026] §4/vertex-algebra-relations
 axiom self_dual_curvature {n : ℕ} [NeZero n] (hp : HeckeParams)
     (i j : Fin n) (hij : i ≠ j) :
     -- S(ab · ba⁻¹) = ab · ba⁻¹, where ab = braidToAlg [σᵢ, σⱼ] and

@@ -1,0 +1,47 @@
+2.4 D-finite generating functions and diagonals 43
+
+smaller degree in y than P(z, y), is non-zero when y = f(z). Implicit differentia-
+tion of the equation P(z, f(z)) = 0 shows that P_(z, f(z)) + f’(2)P,(z, f(z) = 0,
+so P,(z, f(z)) # 0 implies
+
+_ Pz, f2))
+Py, f(@)*
+
+We have now shown that f’(z) lies in the field of fractions of the ring C[z][f].
+The quotient rule thus implies that the derivative of any element of the field
+extension C(z, f) is again in C(z, f), so induction implies all derivatives of f
+are in C(z, f). Because f is algebraic, C(z, f) is a finite extension of C(z). Thus,
+f and its derivatives span a finite vector space over C(z), and f is D-finite. O
+
+f@= (2.9)
+
+Recall that a series f = ))~ 9 az" is rational if and only if the sequence
+{a, : n = 0} satisfies a linear recurrence with constant coefficients. There is no
+equivalent linear characterization for the coefficients of algebraic generating
+functions, but there is for D-finite functions.
+
+Definition 2.22 (P-recursiveness). A univariate sequence {a, : n > O} is said
+to be a P-recursive sequence (or polynomially recursive) if there exist polyno-
+mials Po(n),..., P,(n) € C[n] with P,,(n) # 0 such that
+
+P(M)ansr + Pr(Mansr-1 + +++ + Pond, = 0 (2.10)
+for alln > 0.
+
+Example 2.23. Ifa, = 1/n! then {a,,} is P-recursive as (n + 1)ay41 — ad, = 0 for
+all n > 0. Furthermore, if f(z) enumerates {a,} then D1 ,s0(1 + Ldnsiz" = f’(2),
+so f’(z) — f(z) = 0 and f is D-finite. We can compute f by solving this linear
+differential equation with the initial condition ay) = 1, obtaining the expected
+solution f(z) = e* = Dips 2" /n!. 4
+
+The correspondence between P-recursive sequences and D-finite series is a
+classical result, known at least as far back as Frobenius’s work on computing
+series solutions to ordinary differential equations.
+
+Theorem 2.24 (P-recursive corresponds to D-finite). A sequence {a, : n > 0}
+is P-recursive if and only if its generating function f(z) = Yip Anz" is D-finite.
+
+Proof First, suppose f is D-finite and satisfies (2.8). Differentiating the power
+series for f shows that for any n € N and k € [n] the coefficient [21 FO)
+equals (n — k + j)j@n-x+j, where (u); := u(u— 1)---(u — j + 1) denotes the
+falling factorial. Let by,; = [z*]P;(z) and let D denote the maximum degree of
+the coefficient polynomials Po(z),..., Pmn(z). Then for any n > 0, extracting the

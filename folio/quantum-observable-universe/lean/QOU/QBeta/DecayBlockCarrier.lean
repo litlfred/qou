@@ -41,7 +41,7 @@ block — the two-row cap takes the carrier from 2 blocks to 1, not from 3 to 2.
 Base ring: generic `[Field R]` per AGENTS.md §7c. Nothing here is archimedean —
 no ordering, no `Real.sqrt`, no substrate pin.
 
--- Ref: [manuscript] bean `qou-cds1`; probe
+-- Ref: [leitner2026] bean `qou-cds1`; probe
 --      computations/qbeta/qbeta_d_frame_two_block_forced_weights_probe.py
 -- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors",
 --      Invent. Math. 92 (1988) 349-383.

@@ -3,7 +3,7 @@
 Reeb coupling* $\rho_0$ *pinned by the deuteron, and* (ii) *the
 substrate-fixed force-carrier torus knot* $T(p_A, k_A)$
 *per nucleus.  Both legs route through the proved* $\alpha_{\mathrm{shift}} = k\cdot(p-1)$
-*formula (`prop:alpha-shift-torus-knot`).*  The binding closure is
+*formula ([the $\alpha_{\mathrm{shift}}$ torus-knot formula](#prop:alpha-shift-torus-knot)).*  The binding closure is
 
 $$
   B(A) = m_e \cdot \rho_0 \cdot \alpha_{\text{shift}}(T(p_A, k_A))
@@ -15,14 +15,14 @@ identification from the substrate's
 Hecke-Wedderburn block structure on $H_{3A}(q)$ is open.
 
 The $A \ge 3$ binding gap, the per-nucleus candidate table and its
-rationale, the Lean structure, and the remaining open math
+rationale, and the remaining open math
 are collected in
 [the binding-extension derivation context](#rem:binding-alpha-shift-extension-context).
 
-> **Status (owner ruling, 2026-09-05): retired as a knot-selection route.**
+> **Status: retired as a knot-selection route.**
 > Its atom-to-knot assignments are chosen from a census so the knot's volume
 > reproduces `B_AME/m_e` — the `A ∈ {5,6,7}` gap exists precisely because no
 > census knot has the right volume — and the $^4$He "magic" rule is $4\times$
 > the $^3$He prediction using the same $\mathrm{Vol}(L6a4) = 8G$, so it is not
 > an independent confirmation. Kept for the record, not as a live binding
-> route. See `docs/audits/2026-09-05-binding-route-consolidation-no-knot-selection.md`.
+> route.

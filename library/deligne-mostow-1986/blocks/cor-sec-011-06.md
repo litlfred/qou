@@ -1,0 +1,1 @@
+— If o is not isolated in X, and if p has a fundamental system of neighborhoods V such that V — p is connected (in particular, non empty), then 9 is open at o. Ifo is not isolated, X' cannot be contained in ^~l(p); for applying (10.12) a) to x in X' near o would contradict <p(X') C {p}. It follows that y(X' — ^{p)) = Y' — {p} and hence that <p(X') = Y'. Openness follows.

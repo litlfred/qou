@@ -1,1 +1,1 @@
-Under Setup17.2.1, assumeA has a balanced dualizing
+If A is a local ring, then DPicK(A) = PicK(A) × Z.

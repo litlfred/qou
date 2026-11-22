@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0508100v6",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0508100v6/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "arxiv-math-0508100v6",
   "contains": [
+    "library/arxiv-math-0508100v6/sections/sec-front-matter",
     "library/arxiv-math-0508100v6/sections/sec-000",
     "library/arxiv-math-0508100v6/sections/sec-001",
     "library/arxiv-math-0508100v6/sections/sec-002",
@@ -48,10 +49,16 @@
     "library/arxiv-math-0508100v6/sections/sec-034",
     "library/arxiv-math-0508100v6/sections/sec-035",
     "library/arxiv-math-0508100v6/sections/sec-036",
-    "library/arxiv-math-0508100v6/sections/sec-037"
+    "library/arxiv-math-0508100v6/sections/sec-037",
+    "library/arxiv-math-0508100v6/sections/sec-038",
+    "library/arxiv-math-0508100v6/sections/sec-039",
+    "library/arxiv-math-0508100v6/sections/sec-040",
+    "library/arxiv-math-0508100v6/sections/sec-041",
+    "library/arxiv-math-0508100v6/sections/sec-042",
+    "library/arxiv-math-0508100v6/sections/sec-043"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",

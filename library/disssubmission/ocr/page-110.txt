@@ -1,0 +1,46 @@
+102 Chapter 5 — A family of surfaces
+
+Proof. The Hodge index theorem [103, th. 6.33] says that for a smooth
+compact Kihler surface S with Kahler class @ € H!!(X)MH?(X,R) the
+intersection form is
+
+© positive definite on the subspace (H*°(S) @ H°?(S)) NM H?(S,R)
+and also on the line R- @,
+e negative definite on the orthocomplement of the Kahler class @
+inside H!+! (S$) H?(S,R).
+In our case, taking S = Y and using the Hodge numbers in lemma 5.8 one
+sees that on H7(Y,Q) = H?(Y,Q)+ @V_ and H?(Y,Q)*+ = H?(X,Q) @V;
+the intersection form has the given signatures. Oo
+
+In particular, it follows that on the subspace V, the intersection form is
+negative definite. In sections 5.3 and 5.4, working on the level of integral
+cohomology we will determine the structure of the lattices whose signatures
+have been listed above. But let us first say a few words about the variations
+of Hodge structures defined by the above subspaces.
+
+5.2. Variations of Hodge structures
+
+So far we have mostly fixed a general point x € X(C). Now let us see
+what happens when this point varies. For the moment the dimension g can
+be arbitrary, but as before we always assume that the theta divisor © C X is
+smooth or has only isolated singularities. To begin with, we put the Hodge
+structures V+ from section 5.1 into a family as follows.
+
+LEMMA 5.10. Over some Zariski-open dense subset U C X there exists
+for each integer n > 0.a polarized variation of pure Hodge structures H"
+with stalks
+
+Hy = H"(¥x,Q),
+and there are subvariations
+Vi Cc H8? and V_ c He?
+whose stalks are precisely the subspaces V, and V_ defined in section 5.1.
+
+Proof. Consider the Zariski-open dense subset U C X and the smooth
+proper family fy : Yy —+ U from lemma 5.3 and corollary 5.4. We can
+then define
+
+H’ = R" fux (Qy,) for n > 0
+since for any smooth proper family of complex varieties the direct images
+
+define variations of Hodge structures whose stalks are the cohomology of
+the fibres [103, chapt. III]. It remains to construct the subvariations V+. For

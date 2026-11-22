@@ -1,0 +1,43 @@
+with boundary maps O(a ® e*) = a ® de and df(e*) = (—1)'f(de*). Finally, the
+twisted homology and cohomology of M are the Z-modules H,(M, A) and H*(M, A).
+
+This definitions extend naturally to relative homology and cohomology in the case
+
+when M has a non-empty boundary 0M.
+
+Remark 1.2.5. The generalization of Remark is that the homology (resp.
+cohomology) H,(I, A) of the group [ is the twisted homology (resp. cohomology)
+H,(BY, A) of the space BI.
+
+A classical fact, that is a consequence of this remark, is the following theorem, see
+
+for instance [Bro82].
+
+Theorem 1.2.6. /f M is contractible, then we have the natural isomorphisms
+H,(M, A) ~ H,(P,A) and H*(M, A) ~ H*(T, A)
+
+Moreover, without hypothesis on M, the following is proved in [Por97| Lemma 0.6].
+
+Proposition 1.2.7. For i= 0,1, we have the natural isomorphisms :
+H,(M, A) ~ H,(T, A) and H'(M, A) ~ H'(T, A)
+
+We will be interested in the case when A is a free module of finite type (or a vector
+space) V over a k-algebra R, together with a bilinear non-degenerate invariant form
+B:VxV — R, hence we can define the following operation in homology and
+cohomology :
+
+— The Kronecker product
+
+(,-): H*(M,V) x H,(M,V) > R
+(f,0 @ ef) > Blv, f(e?))
+
+— The Universal Coefficient Theorem
+— The Poincaré-Lefschetz duality Hj(M,0M,V) ~ H,_;(M,V)* ~ H"-"(M,V)
+where n = dim M
+
+— The cup-product :
+-U-: H(0,V) x H(T,V) > HY (TP, R)
+
+(f,9) > ((m, sey Vix Vitdy ++ Viti) md (-1)"B(f(m, see VW), 9 Jitly--- Viti)
+
+28

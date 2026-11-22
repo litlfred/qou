@@ -4,7 +4,7 @@ export default remark({
   label: "rem:p-vs-np-event-horizon",
   title:
     "P versus NP through the event horizon: information loss and computational irreversibility",
-  interprets: "prop:p-vs-np-boundary",
+  interprets: "conj:p-vs-np-boundary",
   tags: [
     "P-vs-NP",
     "event-horizon",
@@ -15,6 +15,7 @@ export default remark({
     "turing-machine",
     "information-flow",
   ],
+  cites: ["arxiv-1301.4504v4"],
   uses: [
     "rem:hawking-radiation",
     "def:big-bang-state",

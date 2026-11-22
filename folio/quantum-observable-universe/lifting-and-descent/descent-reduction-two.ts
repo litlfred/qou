@@ -10,4 +10,7 @@ export default remark({
     "prop:brings-is-qou",
     "rem:descent-reduction",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): This is the stratum Bring's surface occupies: the geometric :refterm[descent]{#descent} chain of [Bring's surface as a QOU](#prop:brings-is-qou) passes through $\\Sigma_4$ at this dimension." },
+  ],
 });

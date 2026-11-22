@@ -1,6 +1,6 @@
 ---
 doc_id: 022201-1-online
-doc_title: "Online  Export Citation RESEARCH ARTICLE | FEBRUARY 01 2021 Efficient algorithms for approximating quantum partition functions Ryan L. Mann  ; Tyler Helmuth"
+doc_title: "Efficient algorithms for approximating quantum partition functions"
 section_id: sec-003-ii-the-abstract-cluster-expansion
 section_title: "THE ABSTRACT CLUSTER EXPANSION"
 section_number: II
@@ -8,6 +8,7 @@ pages: 3-3
 source_pdf: 022201_1_online.pdf
 source_sha256: 50331bf18a2bd4d5
 toc_source: inferred
+doc_brief: "Efficient algorithms for approximating quantum partition functions — 13 sections: Front matter; AFFILIATIONS; ABSTRACT"
 ---
 The cluster expansion is a powerful tool from mathematical physics that allows one to express, via power series expansions, perturbations
 of a well-understood reference model. When the perturbations are sufficiently small, the power series expansions are convergent and allow

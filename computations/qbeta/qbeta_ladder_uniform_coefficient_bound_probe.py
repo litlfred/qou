@@ -368,7 +368,8 @@ def main() -> int:
     ], 1):
         wb.add_assertion(f"{i}. {nm}", "FAIL" if nm in failures else "PASS",
                          "PASS")
-    out = wb.save()
+    out = wb.save(extra={"q0Anchor": "ambiguous", "q0AnchorReason": (
+        "u and the geometric total G are evaluated at BOTH the proton pin (q_at) and the live CODATA-2022 muon pin (q_muon_at) and both are recorded; the bound's headline is at proton, the muon arm checks the hypothesis holds at both pins")})
     print(f"\nWitness: {out}")
     return 1 if failures else 0
 

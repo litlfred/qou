@@ -8,6 +8,7 @@ pages: 1-3
 source_pdf: ant-v14-n7-s-p09.pdf
 source_sha256: c8fe963200a79d25
 toc_source: inferred
+doc_brief: "Galois action on the principal block and cyclic Sylow subgroups — 7 sections: Front matter; Introduction; Blocks with normal defect group"
 ---
 One of the most prevalent questions in the representation theory of ﬁnite groups is to determine what
 relationships hold between the set Irr(G) of irreducible complex characters of a ﬁnite group G and its
@@ -33,7 +34,6 @@ and from the Spanish National Research Council, through the “Ayuda extraordina
 (20205CEX001). Schaeffer Fry acknowledges support from the National Science Foundation under Grant No. DMS-1801156.
 MSC2010: primary 20C15; secondary 20C20, 20C33.
 Keywords: principal p-block, Galois action on characters, cyclic Sylow p-subgroups, Alperin–McKay–Navarro Conjecture.
-1953
 1954
 Noelia Rizo, A. A. Schaeﬀer Fry and Carolina Vallejo
 Theorem A. Let G be a ﬁnite group of order divisible by p, where p ∈{2, 3}. Let P ∈Sylp(G) and let

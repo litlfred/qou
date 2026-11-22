@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1309.3313v1/sections/sec-001",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "II Pion Form Factor",
+  "pageStart": 1,
+  "pageEnd": 3,
+  "contains": [
+    "library/arxiv-1309.3313v1/blocks/prose-sec-001",
+    "library/arxiv-1309.3313v1/blocks/figure-img-p002-1",
+    "library/arxiv-1309.3313v1/blocks/figure-img-p003-1",
+    "library/arxiv-1309.3313v1/blocks/figure-img-p003-2"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1309.3313v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1309.3313v1/manifest.jsonld",
+  "provenance": "ingested"
+}

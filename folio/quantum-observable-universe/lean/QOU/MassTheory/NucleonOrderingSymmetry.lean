@@ -58,9 +58,9 @@ it); the symmetrization lemma takes a
 generic `AddCommMonoid M` target. No `ℝ`, no ordering, no `Real.*`.
 
 ## References
-- Ref: [manuscript] `docs/audits/2026-05-30-orbit-trace-identity-proof.md`
+- Ref: [leitner2026] `docs/audits/2026-05-30-orbit-trace-identity-proof.md`
   (Lemma 1 — the word is unchanged under a same-species permutation).
-- Ref: [manuscript] `docs/audits/2026-08-09-nastokes-orbit-symmetric-readout.md`
+- Ref: [leitner2026] `docs/audits/2026-08-09-nastokes-orbit-symmetric-readout.md`
 -/
 
 namespace QOU.MassTheory.NucleonOrdering

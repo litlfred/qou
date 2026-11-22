@@ -41,7 +41,7 @@ import Mathlib.Tactic
 
   Audit: docs/audits/2026-06-19-delta-lambda-exponent-keystone-formalize-first.md
 
-  -- Ref: [manuscript] appendix-mass-binding-algorithms, Step 9b (Δ_λ);
+  -- Ref: [leitner2026] appendix-mass-binding-algorithms, Step 9b (Δ_λ);
   --      docs/audits/2026-06-15-delta-lambda-q5-per-site-mechanism-start.md
 
   Imports: none — `omega` and `unfold` are core Lean 4 tactics, so this
@@ -105,7 +105,7 @@ before chasing the complex-q mechanism for "why 5". Keeping the contested
 claim as a *hypothesis* (rather than a `sorry`-conjecture asserting it) avoids
 enshrining a refuted near-match while still recording the precise statement.
 
-  -- Ref: [manuscript] docs/audits/2026-06-19-delta-lambda-exponent-keystone-formalize-first.md
+  -- Ref: [leitner2026] docs/audits/2026-06-19-delta-lambda-exponent-keystone-formalize-first.md
 -/
 theorem perSiteFive_of_exponent_eq (A bindingExponent : Nat) (h : 1 ≤ A)
     (hexp : bindingExponent = 10 * A - 5) :
@@ -196,7 +196,7 @@ is measured, never fitted into the closure). It is the honest Z-companion to
 feeds a named-but-unproved bridge to the observable. Stated over any `Preorder`
 so it makes no archimedean commitment beyond the order on the deviations.
 
-  -- Ref: [manuscript] docs/audits/2026-06-29-delta-lambda-z-correction-atomWrithe.md
+  -- Ref: [leitner2026] docs/audits/2026-06-29-delta-lambda-z-correction-atomWrithe.md
 -/
 def ProtonExcessPenaltyAsymmetry {K : Type*} [Preorder K] (δ : Int → K) : Prop :=
   ∀ k : Int, 0 < k → δ k < δ (-k)

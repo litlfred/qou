@@ -1,0 +1,1 @@
+The Alexander polynomial of C(16,3)(41) is given by ∆ C(16, 3)(41)(x) = t21− 1 t21 + t20 + 1 t20 + 2t18 + 2 t18− 2t17− 2 t17 + t15 + 1 t15− t14− 1 t14 + t12 + 1 t12− t11− 1 t11 + t9 + 1 t9− t8− 1 t8 + t6 + 1 t6− t5− 1 t5 + t3 + 1 t3− 2t2− 2 t2 + t + 1 t + 1

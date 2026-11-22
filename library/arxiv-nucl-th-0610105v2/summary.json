@@ -2,50 +2,65 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-nucl-th-0610105v2",
  "source_sha256": "5f3bd6d31a419d4d",
- "brief": "Universal Properties of the Four-Body System with Large Scattering Length — Few-body systems with large scattering length have univers al properties that do not depend on the details of their",
- "extended": "**Universal Properties of the Four-Body System with Large Scattering Length**\n\n*Universität Bonn, 53115 Bonn, Germany*\n\n14 pp, 8 sections.\n\n**Abstract.** Few-body systems with large scattering length have univers al properties that do not depend on the details of their interactions at short distances. We stu dy the universal bound state properties of the four-boson system with large scattering length in an e ﬀective quantum mechanics approach. We compute the four-body binding energies using the Yakubov sky equations for positive and negative scattering length. Moreover, we study the correla tion between three- and four-body energies and present a generalized Eﬁmov plot for the four-b ody system. These results are useful for understanding the cluster structure of nuclei and for th e creation of weakly-bound tetramers with cold atoms close to a Feshbach resonance. PACS numbers: 03.65.Ge, 36.40.-c, 21.45.+v ∗ Electronic address: hammer@itkp.uni-bonn.de †Electronic address: lplatter@phy.ohiou.edu 1\n\n**Outline.** Introduction; The Two-Body Sector; The Three-Body Sector; The Four-Body Sector; Four-Body Universality; Bound State Spectrum; Universal Correlations; Acknowledgments",
+ "brief": "Universal Properties of the Four-Body System with Large Scattering Length — Few-body systems with large scattering length have universal properties that do not depend on the details of their",
+ "extended": "**Universal Properties of the Four-Body System with Large Scattering Length**\n\n*H.-W. Hammer∗*\n\n14 pp, 11 sections.\n\n**Abstract.** Few-body systems with large scattering length have universal properties that do not depend on the details of their interactions at short distances. We study the universal bound state properties of the four-boson system with large scattering length in an eﬀective quantum mechanics approach. We compute the four-body binding energies using the Yakubovsky equations for positive and negative scattering length. Moreover, we study the correlation between three- and four-body energies and present a generalized Eﬁmov plot for the four-body system. These results are useful for understanding the cluster structure of nuclei and for the creation of weakly-bound tetramers with cold atoms close to a Feshbach resonance. PACS numbers: 03.65.Ge, 36.40.-c, 21.45.+v ∗Electronic address: hammer@itkp.uni-bonn.de †Electronic address: lplatter@phy.ohiou.edu\n\n**Outline.** Front matter; Introduction; Few-Body Bound State Equations in Effective Th; The Two-Body Sector; The Three-Body Sector; The Four-Body Sector; Four-Body Universality; Bound State Spectrum; Universal Correlations; Summary and Outlook; Acknowledgments",
  "tokens": {
   "brief": 47,
-  "extended": 297
+  "extended": 309
  },
  "sections": [
   {
-   "id": "sec-000-introduction",
-   "title": "Introduction",
-   "pages": "2-4"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
   },
   {
-   "id": "sec-001-the-two-body-sector",
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-001-few-body-bound-state-equations-in-effective-theo",
+   "title": "Few-Body Bound State Equations in Effective Theory",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-002-the-two-body-sector",
    "title": "The Two-Body Sector",
    "pages": "4-5"
   },
   {
-   "id": "sec-002-the-three-body-sector",
+   "id": "sec-003-the-three-body-sector",
    "title": "The Three-Body Sector",
    "pages": "5-6"
   },
   {
-   "id": "sec-003-the-four-body-sector",
+   "id": "sec-004-the-four-body-sector",
    "title": "The Four-Body Sector",
    "pages": "6-7"
   },
   {
-   "id": "sec-004-four-body-universality",
+   "id": "sec-005-four-body-universality",
    "title": "Four-Body Universality",
    "pages": "7-7"
   },
   {
-   "id": "sec-005-bound-state-spectrum",
+   "id": "sec-006-bound-state-spectrum",
    "title": "Bound State Spectrum",
    "pages": "7-10"
   },
   {
-   "id": "sec-006-universal-correlations",
+   "id": "sec-007-universal-correlations",
    "title": "Universal Correlations",
-   "pages": "10-13"
+   "pages": "10-12"
   },
   {
-   "id": "sec-007-acknowledgments",
+   "id": "sec-008-summary-and-outlook",
+   "title": "Summary and Outlook",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-009-acknowledgments",
    "title": "Acknowledgments",
    "pages": "13-14"
   }

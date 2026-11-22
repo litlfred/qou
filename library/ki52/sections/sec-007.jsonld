@@ -9,13 +9,17 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Verifying the assumption of the saddle point method",
-  "pageStart": 36,
-  "pageEnd": 39,
+  "title": "Calculation of the asymptotic expansion",
+  "pageStart": 30,
+  "pageEnd": 36,
   "contains": [
-    "library/ki52/blocks/prose-sec-007"
+    "library/ki52/blocks/prose-sec-007",
+    "library/ki52/blocks/lem-sec-007-01",
+    "library/ki52/blocks/lem-sec-007-02",
+    "library/ki52/blocks/lem-sec-007-03",
+    "library/ki52/blocks/lem-sec-007-04"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ki52",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ki52",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ki52/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ki52/manifest.jsonld",
   "provenance": "ingested"
 }

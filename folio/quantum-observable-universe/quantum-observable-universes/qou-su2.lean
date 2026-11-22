@@ -14,7 +14,7 @@ LaTeX label: `ex:qou-su2`
 
 ## References
 
-- [manuscript] §1 Example: SU(2) is observable
+- [leitner2026] §1 Example: SU(2) is observable
 -/
 
 namespace QOU.Examples
@@ -23,7 +23,7 @@ namespace QOU.Examples
     Rep(SU(2)) a quantum observable universe.
 
     LaTeX: `\label{ex:qou-su2}` -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 structure SU2ObservabilityData where
   /-- Dimension of the fundamental representation V = ℂ². -/
   fundamentalDim : ℕ
@@ -46,17 +46,17 @@ structure SU2ObservabilityData where
   volume_form_exists : exteriorPowerDim = 1
 
 /-- SU(2) satisfies all observability conditions. -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 def su2Observable : SU2ObservabilityData where
   fundamentalDim := 2
-  -- Ref: [manuscript] Ch. 2
+  -- Ref: [leitner2026] Ch. 2
   haar_faithful := by omega
   adjoint_dim := 3
   -- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
   adjoint_irreducible := by omega
   adj_dim_eq := rfl
   exteriorPowerDim := 1
-  -- Ref: [manuscript] Ch. 2
+  -- Ref: [leitner2026] Ch. 2
   volume_form_exists := rfl
 
 /-- The adjoint of SU(2) has dimension 3 (spin-1). -/

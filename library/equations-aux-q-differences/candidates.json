@@ -3,13 +3,14 @@
  "doc_id": "equations-aux-q-differences",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "357d4e0b546b27e6a316a7177e9240d5d8ea3b6d8a06bd57a3b2679a31eeb094",
   "file": "Equations_aux_q-differences.pdf"
  },
  "provenance": {
-  "title": "\u00b4Equations aux q-di\ufb00\u00b4erences",
-  "authors": "L. Di Vizio, J-P. Ramis, J. Sauloy \u2217,C .Z h a n g\u2020",
+  "title": "\u00c9quations aux q-diff\u00e9rences",
+  "authors": "L. Di Vizio, J-P. Ramis, J. Sauloy\u2217, C. Zhang\u2020",
   "arxiv": null,
   "doi": null
  },
@@ -19,7 +20,16 @@
   "by_kind": {
    "conjecture": 1
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 0,
+  "by_domain": {
+   "math": 1
+  },
+  "by_evidence_kind": {
+   "conjectural": 1
+  },
+  "by_evidence_location": {
+   "none": 1
+  }
  },
  "candidates": [
   {
@@ -27,13 +37,24 @@
    "source_kind": "conjecture",
    "number": "5.3",
    "name": null,
-   "statement": "(Grothendieck) L\u2019\u00b4equation di\ufb00\u00b4erentielle",
-   "section_file": "sections/sec-025-3-cela-signi\ufb01e-que-pour-tous-m1m2-z-tels-que-qm1.md",
-   "section_title": "Cela signi\ufb01e que pour tous m1,m2 \u2208 Z tels que qm1",
-   "pages": "26-27",
+   "statement": "(Grothendieck) L\u2019\u00b4equation di\ufb00\u00b4erentielle a\u00b5(x)d\u00b5y dx\u00b5 (x) + a\u00b5\u22121(x)d\u00b5\u22121y dx\u00b5\u22121 (x) + \u00b7 \u00b7 \u00b7 + a0(x)y(x) = 0, avec ai(x) \u2208Q(x), admet un syst`eme complet des solutions alg\u00b4ebriques, i.e. dans la cl\u02c6oture alg\u00b4ebrique de Q(x), si et seulement si sa r\u00b4eduction modulo p admet un syst`eme complet de solutions dans Fp(x), pour presque tout p. La conjecture peut \u02c6etre reformul\u00b4ee de plusieurs fa\u00b8cons, en apparence plus g\u00b4en\u00b4erales que l\u2019\u00b4enonc\u00b4e 5.3, mais toutes \u00b4equivalentes entre elles. En particulier elle est \u00b4equivalente `a une caract\u00b4erisation arithm\u00b4etique de l\u2019alg`ebre de Lie du groupe de Galois g\u00b4en\u00b4erique, conjectur\u00b4ee par N. Katz [Kat82]. D",
+   "claim_domain": "math",
+   "evidence_kind": "conjectural",
+   "evidence_location": "none",
+   "evidence_locator": "Open conjecture stated in sections/sec-011-5-equations-aux-q-di\ufb00erences-arithmetiques.md",
+   "external_refs": [
+    "[Kat82]"
+   ],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-011-5-equations-aux-q-di\ufb00erences-arithmetiques.md",
+   "section_title": "\u00b4Equations aux q-di\ufb00\u00b4erences arithm\u00b4etiques",
+   "pages": "25-28",
    "formalization_candidate": false,
    "formalization_note": null,
-   "route_to": null
+   "route_to": null,
+   "block_id": "conj-sec-011-01",
+   "block_iri": "library/equations-aux-q-differences/blocks/conj-sec-011-01",
+   "claim_id": "equations-aux-q-differences#conjecture:5.3"
   }
  ]
 }

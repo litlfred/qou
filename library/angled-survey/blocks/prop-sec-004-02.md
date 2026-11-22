@@ -1,0 +1,1 @@
+Let C be a cusp torus of M, with a tessellation by boundary triangles coming from τ. Let σ ⊂C be an oriented normal closed curve. Recall the holonomy H(σ) from Deﬁnition 2.3 and the tangent vector w(σ) ∈TpA(τ) from Deﬁnition 4.1. Then for every point p ∈A(τ), we have ∂V ∂w(σ) = Re(H(σ)).

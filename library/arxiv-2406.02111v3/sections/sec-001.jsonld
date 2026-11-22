@@ -9,13 +9,14 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Quantum tetrahedron",
-  "pageStart": 2,
+  "title": "Introduction",
+  "pageStart": 1,
   "pageEnd": 3,
   "contains": [
-    "library/arxiv-2406.02111v3/blocks/prose-sec-001"
+    "library/arxiv-2406.02111v3/blocks/prose-sec-001",
+    "library/arxiv-2406.02111v3/blocks/figure-img-p003-1"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2406.02111v3",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2406.02111v3",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2406.02111v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2406.02111v3/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -5,22 +5,20 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/lee-vanderveen-colored-jones-polynomials-without-tails",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/lee-vanderveen-colored-jones-polynomials-without-tails/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "lee-vanderveen-colored-jones-polynomials-without-tails",
   "contains": [
-    "library/lee-vanderveen-colored-jones-polynomials-without-tails/sections/sec-000",
-    "library/lee-vanderveen-colored-jones-polynomials-without-tails/sections/sec-001",
-    "library/lee-vanderveen-colored-jones-polynomials-without-tails/sections/sec-002",
-    "library/lee-vanderveen-colored-jones-polynomials-without-tails/sections/sec-003",
-    "library/lee-vanderveen-colored-jones-polynomials-without-tails/sections/sec-004",
-    "library/lee-vanderveen-colored-jones-polynomials-without-tails/sections/sec-005",
-    "library/lee-vanderveen-colored-jones-polynomials-without-tails/sections/sec-006"
+    "library/lee-vanderveen-colored-jones-polynomials-without-tails/sections/page-001",
+    "library/lee-vanderveen-colored-jones-polynomials-without-tails/sections/page-002",
+    "library/lee-vanderveen-colored-jones-polynomials-without-tails/sections/page-003",
+    "library/lee-vanderveen-colored-jones-polynomials-without-tails/sections/page-004",
+    "library/lee-vanderveen-colored-jones-polynomials-without-tails/sections/page-005"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "lee-vanderveen-colored-jones-polynomials-without-tails",
     "title_source": "slug",

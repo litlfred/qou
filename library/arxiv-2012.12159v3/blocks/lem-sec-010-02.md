@@ -1,0 +1,1 @@
+Identify a convex body K ⊂RPn with the cone ˜K ⊂V = Rn+1, and with Kt = ˜K ∩{xn+1 = t}. For x ∈V \ {0}, write [x] = Rx ∈RPn. Then for ˆp = (p, 1) ∈int(K1) ⊂Rn, the set −(K1 −ˆp)o ⊂Rn = {xn+1 = 0} coincides with πn(K∨∩([ˆp]⊥+ en+1)), where πn projects orthogonally to Rn. A Funk perspective on billiards, projective geometry and Mahler volume

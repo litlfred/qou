@@ -1,1 +1,1 @@
-Let C be a semisimple tensor category and d be a positive (symmetric)
+Let C be a semisimple tensor category and d be a positive (symmetric) weak dimension function on Irr(C) taking values ≥ 1. Then for any integer M ≥ 4, D(ρ) = M⌊d(ρ)⌋ ρ ∈ Irr(C), ρ ̸= ι, defines an integral (symmetric) weak dimension function.

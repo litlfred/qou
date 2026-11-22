@@ -2,131 +2,41 @@
  "_schema": "library-summary/v1",
  "doc_id": "0803219",
  "source_sha256": "8e37e11b8c8953c8",
- "brief": "ACTA MATHEMATICA VIETNAMICA 219 AN INTRODUCTION TO THE VOLUME CONJECTURE AND ITS GENERALIZATIONS — In this paper we give an introduction to the volume conjectur e and its generalizations.",
- "extended": "**ACTA MATHEMATICA VIETNAMICA 219 AN INTRODUCTION TO THE VOLUME CONJECTURE AND ITS GENERALIZATIONS**\n\n*HITOSHI MURAKAMI*\n\n35 pp, 24 sections.\n\n**Abstract.** In this paper we give an introduction to the volume conjectur e and its generalizations. Especially we discuss relations o f the asymptotic be- haviors of the colored Jones polynomials of a knot with diﬀer ent parameters to representations of the fundamental group of the knot comp lement at the special linear group over complex numbers by taking the ﬁgur e-eight knot and torus knots as examples. After V. Jones’ discovery of his celebrated polynomial inva riant V (K; t) in 1985 [22], Quantum Topology has been attracting many resear chers; not only mathematicians but also physicists. The Jones polynomial w as generalized to two kinds of two-variable polynomials, the HOMFLYpt polynomia l [10, 52] and the Kauﬀman polynomial [27] (see also [21, 3] for another one-va riable specialization). It turned out that these polynomial invariants are related t o quantum groups introduced by V.\n\n**Outline.** 1 Preliminaries; 1.1 Colored Jones polynomial. Let K be an orie; 1.2 SL(2; C)-Character variety of a knot group; 1.3 V olume and the Chern–Simons invariant of ; 3 A ∧ A ∧ A; 2 Volume conjecture and its generalizations; 4 Im(uv(u)),(1.5); 2 Im(r u + s v(u)) (mod π 2Z).(1.6); 4 Im; 2 Re(u) Im; 3 Example 1 – figure-eight knot; 3.1 Representations of the fundamental group. ; 3.2 Asymptotic behavior of the colored Jones p; 3.3 Relation of the function H to a representa; 3.4 V olume and the Chern–Simons invariant. No; 4 Example 2 – Torus knots; 4.1 Representations of the fundamental group o; 2 (m1/ 2 − m−1/ 2) 1 ±",
+ "brief": "An introduction to the volume conjecture and its generalizations — In this paper we give an introduction to the volume conjecture and its generalizations.",
+ "extended": "**An introduction to the volume conjecture and its generalizations**\n\n*HITOSHI MURAKAMI*\n\n35 pp, 6 sections.\n\n**Abstract.** In this paper we give an introduction to the volume conjecture and its generalizations. Especially we discuss relations of the asymptotic be- haviors of the colored Jones polynomials of a knot with diﬀerent parameters to representations of the fundamental group of the knot complement at the special linear group over complex numbers by taking the ﬁgure-eight knot and torus knots as examples. After V. Jones’ discovery of his celebrated polynomial invariant V (K; t) in 1985 [22], Quantum Topology has been attracting many researchers; not only mathematicians but also physicists. The Jones polynomial was generalized to two kinds of two-variable polynomials, the HOMFLYpt polynomial [10, 52] and the Kauﬀman polynomial [27] (see also [21, 3] for another one-variable specialization). It turned out that these polynomial invariants are related to quantum groups introduced by V. Drinfel′d and M.\n\n**Outline.** Front matter; 1.3 Volume and the Chern–Simons invariant of a; 4.1 Representations of the fundamental group o; 4.2 Representations of the fundamental group o; 4.5.1 Volume and the Chern–Simons invariant of; 4.5.3 Volume and the Chern–Simons invariant of",
  "tokens": {
-  "brief": 46,
-  "extended": 419
+  "brief": 38,
+  "extended": 321
  },
  "sections": [
   {
-   "id": "sec-000-1-preliminaries",
-   "title": "Preliminaries",
-   "pages": "2-2"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-6"
   },
   {
-   "id": "sec-001-11-colored-jones-polynomial-let-k-be-an-oriented",
-   "title": "Colored Jones polynomial. Let K be an oriented knot in the three-sphere",
-   "pages": "2-4"
+   "id": "sec-000-13-volume-and-the-chernsimons-invariant-of-a-rep",
+   "title": "Volume and the Chern–Simons invariant of a representation. For",
+   "pages": "6-24"
   },
   {
-   "id": "sec-002-12-sl2-c-character-variety-of-a-knot-group-for-a",
-   "title": "SL(2; C)-Character variety of a knot group. For a knot in S3, let us",
-   "pages": "4-6"
+   "id": "sec-001-41-representations-of-the-fundamental-group-of-t",
+   "title": "Representations of the fundamental group of the trefoil knot. We",
+   "pages": "24-26"
   },
   {
-   "id": "sec-003-13-v-olume-and-the-chernsimons-invariant-of-a-re",
-   "title": "V olume and the Chern–Simons invariant of a representation. For",
-   "pages": "6-6"
+   "id": "sec-002-42-representations-of-the-fundamental-group-of-t",
+   "title": "Representations of the fundamental group of the cinquefoil knot.",
+   "pages": "26-31"
   },
   {
-   "id": "sec-004-3-a-a-a",
-   "title": "A ∧ A ∧ A",
-   "pages": "6-9"
-  },
-  {
-   "id": "sec-005-2-volume-conjecture-and-its-generalizations",
-   "title": "Volume conjecture and its generalizations",
-   "pages": "9-10"
-  },
-  {
-   "id": "sec-006-4-imuvu15",
-   "title": "Im(uv(u)),(1.5)",
-   "pages": "10-10"
-  },
-  {
-   "id": "sec-007-2-imr-u-s-vu-mod-π-2z16",
-   "title": "Im(r u + s v(u)) (mod π 2Z).(1.6)",
-   "pages": "10-11"
-  },
-  {
-   "id": "sec-008-4-im",
-   "title": "Im",
-   "pages": "11-12"
-  },
-  {
-   "id": "sec-009-2-reu-im",
-   "title": "Re(u) Im",
-   "pages": "12-12"
-  },
-  {
-   "id": "sec-010-3-example-1-figure-eight-knot",
-   "title": "Example 1 – figure-eight knot",
-   "pages": "12-13"
-  },
-  {
-   "id": "sec-011-31-representations-of-the-fundamental-group-here",
-   "title": "Representations of the fundamental group. Here we follow R. Riley",
-   "pages": "13-15"
-  },
-  {
-   "id": "sec-012-32-asymptotic-behavior-of-the-colored-jones-poly",
-   "title": "Asymptotic behavior of the colored Jones polynomial. Now we con-",
-   "pages": "15-17"
-  },
-  {
-   "id": "sec-013-33-relation-of-the-function-h-to-a-representatio",
-   "title": "Relation of the function H to a representation. Now we want to relate",
-   "pages": "17-20"
-  },
-  {
-   "id": "sec-014-34-v-olume-and-the-chernsimons-invariant-now-we",
-   "title": "V olume and the Chern–Simons invariant. Now we know that u de-",
-   "pages": "20-23"
-  },
-  {
-   "id": "sec-015-4-example-2-torus-knots",
-   "title": "Example 2 – Torus knots",
-   "pages": "23-24"
-  },
-  {
-   "id": "sec-016-41-representations-of-the-fundamental-group-of-t",
-   "title": "Representations of the fundamental group of the trefoil kno t. We",
-   "pages": "24-27"
-  },
-  {
-   "id": "sec-017-2-m1-2-m1-2-1",
-   "title": "(m1/ 2 − m−1/ 2) 1 ±",
-   "pages": "27-27"
-  },
-  {
-   "id": "sec-018-2-m-1-m1-1-1",
-   "title": "(m − 1 + m−1) + 1 − 1 ±",
-   "pages": "27-28"
-  },
-  {
-   "id": "sec-019-43-asymptotic-behavior-of-the-colored-jones-poly",
-   "title": "Asymptotic behavior of the colored Jones polynomial. First of all,",
-   "pages": "28-29"
-  },
-  {
-   "id": "sec-020-44-relation-of-the-function-h-to-a-representatio",
-   "title": "Relation of the function H to a representation. If |θ |is small (Theo-",
-   "pages": "29-30"
-  },
-  {
-   "id": "sec-021-45-v-olume-and-the-chernsimons-invariant-the-che",
-   "title": "V olume and the Chern–Simons invariant. The Chern–Simons function",
-   "pages": "30-31"
-  },
-  {
-   "id": "sec-022-452-volume-and-the-chernsimons-invariant-of-a-re",
-   "title": "Volume and the Chern–Simons invariant of a representation – cinquefoil",
+   "id": "sec-003-451-volume-and-the-chernsimons-invariant-of-a-re",
+   "title": "Volume and the Chern–Simons invariant of a representation – trefoil knot.",
    "pages": "31-32"
   },
   {
-   "id": "sec-023-references",
-   "title": "References",
+   "id": "sec-004-453-volume-and-the-chernsimons-invariant-of-a-re",
+   "title": "Volume and the Chern–Simons invariant of a representation – general",
    "pages": "32-35"
   }
  ],

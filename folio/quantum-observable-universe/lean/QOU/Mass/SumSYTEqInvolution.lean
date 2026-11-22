@@ -41,7 +41,7 @@ Base ring: `ℕ` throughout — pure counting, nothing archimedean (§7c).
 ## References
 
 - [stanley1999ec2] Enumerative Combinatorics I, §3.21 (differential posets)
-- [manuscript] QOU/Mathlib/YoungLatticeUpOperator.lean
+- [leitner2026] QOU/Mathlib/YoungLatticeUpOperator.lean
 -/
 
 namespace QOU.Mathlib

@@ -9,13 +9,23 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "The torsion at an ideal point",
-  "pageStart": 65,
-  "pageEnd": 66,
+  "title": "Interpretation of the Theorem : singularities and Alexander module",
+  "pageStart": 58,
+  "pageEnd": 65,
   "contains": [
-    "library/2018sorus020/blocks/prose-sec-036"
+    "library/2018sorus020/blocks/prose-sec-036",
+    "library/2018sorus020/blocks/lem-sec-036-01",
+    "library/2018sorus020/blocks/lem-sec-036-02",
+    "library/2018sorus020/blocks/thm-sec-036-03",
+    "library/2018sorus020/blocks/rem-sec-036-04",
+    "library/2018sorus020/blocks/lem-sec-036-05",
+    "library/2018sorus020/blocks/prop-sec-036-06",
+    "library/2018sorus020/blocks/lem-sec-036-07",
+    "library/2018sorus020/blocks/lem-sec-036-08",
+    "library/2018sorus020/blocks/lem-sec-036-09",
+    "library/2018sorus020/blocks/lem-sec-036-10"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/2018sorus020",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/2018sorus020",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/2018sorus020/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/2018sorus020/manifest.jsonld",
   "provenance": "ingested"
 }

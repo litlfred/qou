@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/sm10137-eng/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "§3 Structure of the paper",
+  "pageStart": 5,
+  "pageEnd": 6,
+  "contains": [
+    "library/sm10137-eng/blocks/prose-sec-002",
+    "library/sm10137-eng/blocks/thm-sec-002-01",
+    "library/sm10137-eng/blocks/rem-sec-002-02",
+    "library/sm10137-eng/blocks/lem-sec-002-03",
+    "library/sm10137-eng/blocks/lem-sec-002-04",
+    "library/sm10137-eng/blocks/lem-sec-002-05"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/sm10137-eng/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/sm10137-eng/manifest.jsonld",
+  "provenance": "ingested"
+}

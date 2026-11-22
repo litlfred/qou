@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1712.03058v3",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1712.03058v3/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1712.03058v3",
+  "title": "Iterated ﬁltering methods for Markov process epidemic models",
   "contains": [
+    "library/arxiv-1712.03058v3/sections/sec-front-matter",
     "library/arxiv-1712.03058v3/sections/sec-000",
     "library/arxiv-1712.03058v3/sections/sec-001",
     "library/arxiv-1712.03058v3/sections/sec-002",
@@ -27,10 +28,14 @@
     "library/arxiv-1712.03058v3/sections/sec-013",
     "library/arxiv-1712.03058v3/sections/sec-014",
     "library/arxiv-1712.03058v3/sections/sec-015",
-    "library/arxiv-1712.03058v3/sections/sec-016"
+    "library/arxiv-1712.03058v3/sections/sec-016",
+    "library/arxiv-1712.03058v3/sections/sec-017",
+    "library/arxiv-1712.03058v3/sections/sec-018",
+    "library/arxiv-1712.03058v3/sections/sec-019",
+    "library/arxiv-1712.03058v3/sections/sec-020"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -40,7 +45,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1712.03058v3",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1712.03058v3.pdf",
     "source_sha256": "ba48c5bbb246737456538f59546e1946a6f6613203828797e55aa000af7900d2",
     "pages": 29,
@@ -51,8 +58,8 @@
       "stamp_date": "28 Oct 2018"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

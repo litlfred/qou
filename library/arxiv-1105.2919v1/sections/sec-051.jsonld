@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1105.2919v1/sections/sec-051",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Appendix B.1.1 The triangles in covariant perturbation theory",
+  "pageStart": 63,
+  "pageEnd": 66,
+  "contains": [
+    "library/arxiv-1105.2919v1/blocks/prose-sec-051"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1105.2919v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1105.2919v1/manifest.jsonld",
+  "provenance": "ingested"
+}

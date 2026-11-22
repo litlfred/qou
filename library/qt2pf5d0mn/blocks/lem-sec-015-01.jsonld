@@ -3,7 +3,7 @@
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
       "@base": "https://litlfred.github.io/folio/",
-      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant/folio-assistant-sci/ns#"
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "library/qt2pf5d0mn/blocks/lem-sec-015-01",
@@ -14,9 +14,19 @@
   "kind": "lemma",
   "title": "Merging Formula",
   "pageStart": 83,
-  "pageEnd": 101,
+  "pageEnd": 100,
   "text": "lem-sec-015-01.md",
   "derivedFrom": "library/qt2pf5d0mn/sections/sec-015",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/qt2pf5d0mn",
-  "provenance": "ingested"
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/qt2pf5d0mn/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "4.4.1",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-015-invariance-under-pachner-moves.md (p. 83-100)",
+    "claim_id": "qt2pf5d0mn#lemma:4.4.1",
+    "lean_status": "unformalized"
+  }
 }

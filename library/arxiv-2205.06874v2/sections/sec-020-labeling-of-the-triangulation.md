@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2205.06874v2
-doc_title: "State sum models with defectsbased on spherical fusion categories Catherine Meusburger Department Mathematik Friedrich-Alexander-Universität Erlangen-Nürnberg"
+doc_title: "State sum models with defects based on spherical fusion categories"
 section_id: sec-020-labeling-of-the-triangulation
 section_title: "Labeling of the triangulation"
 section_number: null
 pages: 29-31
 source_pdf: 2205.06874v2.pdf
 source_sha256: 9b41365160c17ab4
-doc_brief: "State sum models with defectsbased on spherical fusion categories Catherine Meusburger Department Mathematik Friedrich-Alexander-Universität Erlangen-Nürnberg — We define a"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.963
-latex_coverage_ratio: 0.872
+latex_coverage_ratio: 0.956
+doc_brief: "State sum models with defects based on spherical fusion categories — We define a Turaev-Viro-Barrett-Westbury state sum model of triangulated 3-manifolds with surface, line and point defects."
 ---
 To define the state sum of a generic  transversal    triangulated 3-manifold with defect data, we assign   objects and morphisms of the associated categories to the edges and triangles of the triangulation. For this,  we fix sets  $I$ of representatives of the isomorphism classes of simple objects and associated projection and inclusion morphisms $p^\alpha_{xi}: x\to i$ and $j^\alpha_{xi}: i\to x$ satisfying \eqref{eq:projincl} 
  for all spherical fusion categories at the regions of $M$ and for all bimodule categories at the defect areas.

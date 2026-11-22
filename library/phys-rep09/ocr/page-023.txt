@@ -1,0 +1,73 @@
+S. Blanes et al. / Physics Reports 470 (2009) 151-238 173
+
+perturbatively. However, the aim here is different because G is defined from the beginning. Two rather common choices
+are:
+
+e Interaction picture. It is well suited when Ao(t) is diagonal in some basis, or else, it is constant. In that case
+
+G(t) = exp (/ fo(rydr) (91)
+0
+
+so that
+
+t t
+He(t) = ¢ exp (-/ fin(e)tr) y(t) exp (/ fi(e)tr) . (92)
+0 0
+
+e Adiabatic picture. A time scale of the system, much smaller than that of the interaction, defines an adiabatic regime.
+For instance, suppose that the Hamiltonian operator H(t) depends smoothly on time through the variable t = t/T,
+where T determines the time scale and T > oo. Then the quantum mechanical evolution of the system is described by
+dU/dt = H(et)U, with e = 1/T < 1, or equivalently
+
+aU(z) _ 1,
+= —H(r)U(t), (93)
+
+dt eg
+with t = et. In this case the appropriate transformation is a G that renders H(t) instantaneously diagonal, i.e.,
+
+Gi(t)H()G(t) = E(t) = diag[E(t), Ep(t), ...]. (94)
+
+The term G'G’ of the new Hamiltonian in (90) is, under adiabatic conditions, very small. Its main diagonal generates the
+so-called Berry, or geometric, phase [82].
+
+Both types of G do not exclude mutually, but they may be used in succession. As a matter of fact, corrections to the
+adiabatic approximation must be followed by the former one. In turn, an adiabatic transformation may be iterated, as
+proposed by Garrido [83] and Berry [84].
+
+In Section 4 we shall extensively use these preliminary linear transformations on several standard problems of Quantum
+Mechanics to illustrate the practical features of the Magnus expansion.
+
+2.10. Exponential product representations
+
+In contrast to Magnus expansion, much less attention has been paid to solutions of (30) in the form of a product of
+exponential operators. Both approaches are by no means equivalent, since, in general, the operators 2, do not commute
+with each other. For instance, for a quantum system as in Eq. (88), the ansatz U = [| exp(®,) (where @, are skew-Hermitian
+operators to be determined) is an alternative to the Magnus expansion, also preserving the unitarity of the time-evolution
+operator. One such procedure was devised by Fer in 1958 in a paper devoted to the study of systems of linear differential
+equations [20]. Although the original result obtained by Fer was cited and explicitly stated by Bellman [85, p. 204], sometimes
+it has been misquoted as a reference for the Magnus expansion [22]. On the other hand, Wilcox associated Fer’s name with
+an interesting alternative infinite product expansion which is indeed a continuous analogue of the Zassenhaus formula [19]
+(something also attributed to the Fer factorization [2, p. 372]). This, however, also led to some confusion, since his approach
+is in the spirit of perturbation theory, whereas Fer’s original one was essentially nonperturbative. The situation was clarified
+in [86], where also some applications to Quantum Mechanics were carried out for the first time.
+
+In this section we briefly discuss the main features of the Fer and Wilcox expansions, and how the latter can be derived
+from the successive terms of the Magnus series. This will clarify the different character of the two expansions. We also
+include some details on the factorization of the solution proposed by Wei and Norman [17,87]. Finally we provide another
+interpretation of the Magnus expansion as the continuous analogue of the BCH formula in linear control theory.
+
+2.10.1. Fer method
+
+An intuitive way to introduce Fer formalism is the following [59]. Given the matrix linear system Y’ = A(t)Y, Y(O) = I,
+we know that
+
+Y(t) = exp(Fi(t)) (95)
+
+is the exact solution if A commutes with its time integral F,(t) = Io A(s)ds, and Y(t) evolves in the Lie group @ if A lies in
+its corresponding Lie algebra g. If the goal is to respect the Lie-group structure in the general case, we need to ‘correct’ (95)
+without losing this important feature.
+
+Two possible remedies arise in a quite natural way. The first is just to seek a correction A(t) evolving in the Lie algebra
+g so that
+
+Y(t) = exp (Fi(t) + A(t)).

@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/revmodphys97025002pdf",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/revmodphys97025002pdf/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -83,10 +83,22 @@
     "library/revmodphys97025002pdf/sections/sec-069",
     "library/revmodphys97025002pdf/sections/sec-070",
     "library/revmodphys97025002pdf/sections/sec-071",
-    "library/revmodphys97025002pdf/sections/sec-072"
+    "library/revmodphys97025002pdf/sections/sec-072",
+    "library/revmodphys97025002pdf/sections/sec-073",
+    "library/revmodphys97025002pdf/sections/sec-074",
+    "library/revmodphys97025002pdf/sections/sec-075",
+    "library/revmodphys97025002pdf/sections/sec-076",
+    "library/revmodphys97025002pdf/sections/sec-077",
+    "library/revmodphys97025002pdf/sections/sec-078",
+    "library/revmodphys97025002pdf/sections/sec-079",
+    "library/revmodphys97025002pdf/sections/sec-080",
+    "library/revmodphys97025002pdf/sections/sec-081",
+    "library/revmodphys97025002pdf/sections/sec-082",
+    "library/revmodphys97025002pdf/sections/sec-083",
+    "library/revmodphys97025002pdf/sections/sec-084"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "revmodphys97025002pdf",
     "title_source": "pdf-info",

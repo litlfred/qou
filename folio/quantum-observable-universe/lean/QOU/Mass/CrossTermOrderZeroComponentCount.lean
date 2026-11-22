@@ -30,8 +30,8 @@ This file carries the two elementary statements that join them:
 Base ring §7c: the component lemma is over `ℚ` (exact, no ordering); the deficit bounds are over
 `ℝ`, inherited from `tauBorromean : ℝ → ℝ`, because they are ordering facts.
 
--- Ref: [manuscript] computations/probes/component_count_decides_q_adic_order_probe.py
--- Ref: [manuscript] QOU/MassTheory/BorromeanThreeBodyCluster.lean (`one_sub_tauBorromean`)
+-- Ref: [leitner2026] computations/probes/component_count_decides_q_adic_order_probe.py
+-- Ref: [leitner2026] QOU/MassTheory/BorromeanThreeBodyCluster.lean (`one_sub_tauBorromean`)
 -/
 
 namespace QOU.Mass.CrossTermOrderZeroComponentCount

@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2207.07246v2/sections/sec-064",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "C.3 AFDMC and the Standard DMC with Importance Sampling",
+  "pageStart": 147,
+  "pageEnd": 148,
+  "contains": [
+    "library/arxiv-2207.07246v2/blocks/prose-sec-064"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2207.07246v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2207.07246v2/manifest.jsonld",
+  "provenance": "ingested"
+}

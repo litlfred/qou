@@ -1,0 +1,981 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-2503.08846v1",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p002-1",
+   "page": 2,
+   "mark": "1",
+   "text": "Thebeautyoftheconceptcontinuedtoenchantphysicistsandledtoanewreincarnationoftheideaattheendof the 20th century. In the new formulation, atomic nuclei were proposed to be viewed as knots of pion fields, extending the Skyrme model [2].",
+   "marks": [
+    {
+     "page": 2,
+     "context": "reknottedvorticesofaether[1].Althoughtheideawasdoomedtofail,"
+    }
+   ],
+   "block": "library/arxiv-2503.08846v1/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p004-1",
+   "page": 4,
+   "mark": "2",
+   "text": "The3DpicturesofknotswereobtainedfromWikimediaCommons.",
+   "marks": [
+    {
+     "page": 4,
+     "context": "example:"
+    }
+   ],
+   "block": "library/arxiv-2503.08846v1/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p021-1",
+   "page": 21,
+   "mark": "3",
+   "text": "ThisisaSU(2)result.Thesituationismorecomplicatedinmoregeneralcases.Seearecentdiscussionin[67,68].",
+   "marks": [
+    {
+     "page": 21,
+     "context": "thecoefficients,cf.[20]:"
+    },
+    {
+     "page": 21,
+     "context": "−→−A"
+    }
+   ],
+   "block": "library/arxiv-2503.08846v1/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p025-1",
+   "page": 25,
+   "mark": "4",
+   "text": "Fromnowonwewillusesimplifiednotationsforthetensorproducts,e.g.|00⟩≡|0⟩⊗|0⟩.",
+   "marks": [
+    {
+     "page": 25,
+     "context": "basis(77)totheopenendsofstate(98)."
+    }
+   ],
+   "block": "library/arxiv-2503.08846v1/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p026-1",
+   "page": 26,
+   "mark": "5",
+   "text": "Inthissectionwewillkeeptheamountofentanglement,orcorrelation,assomeabstractnotion,sinceitdepends,in general, on a specific measure used as a quantifier. In the next section we will focus on entanglement entropy as such a measure, which will make this discussion more precise.",
+   "marks": [
+    {
+     "page": 26,
+     "context": "do not change the amount of entanglement."
+    }
+   ],
+   "block": "library/arxiv-2503.08846v1/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p032-1",
+   "page": 32,
+   "mark": "6",
+   "text": "NotethattheequivalenceclassesofdiagramsalsocorrespondtotheconnectomesoftheclassicallimitofChern-Simons theory, discussed in section 3.4, modulo permutations of the points in each Hilbert space factor.",
+   "marks": [
+    {
+     "page": 32,
+     "context": "rankr= 1, 2, . . . , 2j + 1."
+    }
+   ],
+   "block": "library/arxiv-2503.08846v1/blocks/prose-sec-013"
+  },
+  {
+   "id": "fn-p039-1",
+   "page": 39,
+   "mark": "7",
+   "text": "Thiswasdonein[102],althoughwithsomeimportantdetailsmissing. First, the measurement was assumed in a nonortogonal basis (74). Second, the entangling operator was not unitary (see the discussion at the end of section 5.2).",
+   "marks": [
+    {
+     "page": 39,
+     "context": "computationalbasis."
+    }
+   ],
+   "block": "library/arxiv-2503.08846v1/blocks/prose-sec-017"
+  }
+ ],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "WeunderstandaknotKasamapofacircleS"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "daknotKasamapofacircleS1intoanambientthree-dimensionalspaceR"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "ThetrivialmaptakesS"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "ThetrivialmaptakesS1intoacircleinR"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "Similarly,wedefinealinkthroughacollectionofcircles,L :S"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "Similarly,wedefinealinkthroughacollectionofcircles,L :S1× S"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "edefinealinkthroughacollectionofcircles,L :S1× S1× · · · × S"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "finealinkthroughacollectionofcircles,L :S1× S1× · · · × S1→R"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "B(r2)=µ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "TLn:={uk,k= 1, . . . , n −1|u"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "i= d · u"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "i= d · ui,"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "i= d · ui,i = 1, . . ."
+  },
+  {
+   "page": 7,
+   "mark": "u",
+   "context": "i= d · ui,i = 1, . . .n −1;"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "i= d · ui,i = 1, . . .n −1;u"
+  },
+  {
+   "page": 7,
+   "mark": "u",
+   "context": "i= d · ui,i = 1, . . .n −1;ui"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "i= d · ui,i = 1, . . .n −1;uiu"
+  },
+  {
+   "page": 7,
+   "mark": "u",
+   "context": "i= d · ui,i = 1, . . .n −1;uiui+1"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "i= d · ui,i = 1, . . .n −1;uiui+1u"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "i= d · ui,i = 1, . . .n −1;uiui+1ui= u"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "i= d · ui,i = 1, . . .n −1;uiui+1ui= ui,"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "u"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "d=−A"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "=(A"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "(bk)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "numberd = −A"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "oanother.Inallthecomputationstheframingfactorwillappearas(−A"
+  },
+  {
+   "page": 9,
+   "mark": "w",
+   "context": "nother.Inallthecomputationstheframingfactorwillappearas(−A3)"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "=(−A"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "=(−A3)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "=(−A3)3(−A"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "A"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "A"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(2-A-2(A"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "•SubstituteA"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "=q + q"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "=q + q3−q"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "•replaceeachcirclebyfactord = −A"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "U=A R −A"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "−A"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "U"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "−A"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "=e"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "=e2σ"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "2σ"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "=Tr ρ⊗2R−3=(−A"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "=Tr ρ⊗2R−3=(−A3)−3(−A"
+  },
+  {
+   "page": 12,
+   "mark": "4",
+   "context": "=Tr ρ⊗2R−3=(−A3)−3(−A2−A−2)(A"
+  },
+  {
+   "page": 12,
+   "mark": "12",
+   "context": "=Tr ρ⊗2R−3=(−A3)−3(−A2−A−2)(A4+ A"
+  },
+  {
+   "page": 12,
+   "mark": "16",
+   "context": "=Tr ρ⊗2R−3=(−A3)−3(−A2−A−2)(A4+ A12−A"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "2)"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "2)2=(−A"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "2)2=(−A3)−4(−A"
+  },
+  {
+   "page": 12,
+   "mark": "4",
+   "context": "2)2=(−A3)−4(−A2 −A−2)(A"
+  },
+  {
+   "page": 12,
+   "mark": "12",
+   "context": "2)2=(−A3)−4(−A2 −A−2)(A4 + A"
+  },
+  {
+   "page": 12,
+   "mark": "16",
+   "context": "2)2=(−A3)−4(−A2 −A−2)(A4 + A12 −A"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "0, 0, 0, 0, 0, −A−2, 1, 0, 0, 1, −A"
+  },
+  {
+   "page": 13,
+   "mark": "†",
+   "context": "R−1=Σ⊗2R"
+  },
+  {
+   "page": 13,
+   "mark": "†",
+   "context": "R−1=Σ⊗2R†(Σ⊗2)"
+  },
+  {
+   "page": 13,
+   "mark": "0",
+   "context": "orγ"
+  },
+  {
+   "page": 13,
+   "mark": "†",
+   "context": "|Ψ⟩→(|Ψ⟩)"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "0, 0, 0, −A−2, 0, 1, 0, 0, 0, 0, 1, 0, −A"
+  },
+  {
+   "page": 13,
+   "mark": "3",
+   "context": "1|Φ⟩=(−A"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "1|Φ⟩=(−A3)−1(−A"
+  },
+  {
+   "page": 13,
+   "mark": "14",
+   "context": "A"
+  },
+  {
+   "page": 13,
+   "mark": "10",
+   "context": "A14−2A"
+  },
+  {
+   "page": 13,
+   "mark": "6",
+   "context": "A14−2A10+ A"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "A14−2A10+ A6−2A"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "3R"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "Z(M"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "Z(M2 ◦Σ2M"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "Z(M2 ◦Σ2M1)=Z(M"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "Z(M2 ◦Σ2M1)=Z(M2) · Z(M"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "anydisconnectedtrivialcirclebyfactord = −A"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "=d"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "=d"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "d"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "det⟨ei|ej⟩=d"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "det⟨ei|ej⟩=d2(d"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "d"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "2π F"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "T"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "(i)δ(2)(x −x"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "groupgeneratorsT"
+  },
+  {
+   "page": 20,
+   "mark": "e",
+   "context": "A(Σ)=AΣ"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "tionsaccordingtotheconstraint(81).LetuschooseΣtobea2-sphereS"
+  },
+  {
+   "page": 21,
+   "mark": "j",
+   "context": "Φk · Φl=⊕jN"
+  },
+  {
+   "page": 21,
+   "mark": "j",
+   "context": "klΦ"
+  },
+  {
+   "page": 21,
+   "mark": "j",
+   "context": "ntheWZWtheoryonlyrepresentationswithj≤k/2areallowed.NumbersN"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "obtainedfromapathintegralonMwithΣ = S"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "+ (q"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "A=q"
+  },
+  {
+   "page": 22,
+   "mark": "e",
+   "context": "A(Σ)=AΣ"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "A(Σ)=AΣeiSCS[M"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "A(Σ)=AΣeiSCS[M1∪M"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "definedinaclosed3-manifoldobtainedbygluingtwo3-ballsalonganS"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "3-manifoldisthesphereS"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "tisahigher-dimensionalgeneralizationofgluingtwodiscsalonganS"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "obtainS"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "AfundamentalexampleisΣ=T"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "AnothergeneralizationisthecaseofmultipleS"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "connecttothesameboundaryS"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "einteriorandtheexteriorspheresgivesa3-manifolddifferentfromS"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "seethatthismanifoldisS"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "seethatthismanifoldisS2× S"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "ofasolidtorus.UnlikethesolidtorusS"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "ofasolidtorus.UnlikethesolidtorusS2× S"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "S"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "S2×S"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "te the normal trace of an operator,while the invariants in S"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "(n/2)"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "=d"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "d"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "d"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "d"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "d"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "S2(N"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "S2(N1+N"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "S2(N1+N2+...+N"
+  },
+  {
+   "page": 27,
+   "mark": "d",
+   "context": "whereS"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "have4d"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "have4d2−4realparametersforthenecessary2d"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "=d"
+  },
+  {
+   "page": 28,
+   "mark": "4",
+   "context": "=(A"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "=(A4+ A−4)"
+  },
+  {
+   "page": 28,
+   "mark": "4",
+   "context": "=(A4+ A−4)2|00⟩+ (1 −A"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "=(A4+ A−4)2|00⟩+ (1 −A4)"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "−(A"
+  },
+  {
+   "page": 28,
+   "mark": "4",
+   "context": "+ (1 −A"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "+ (1 −A4)"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "d"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "d"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "heupperhalfintheconventionsofthispaper).Summarizing,forH = C"
+  },
+  {
+   "page": 32,
+   "mark": "n",
+   "context": "pperhalfintheconventionsofthispaper).Summarizing,forH = Cn⊗C"
+  },
+  {
+   "page": 33,
+   "mark": "†",
+   "context": "ciAiBc"
+  },
+  {
+   "page": 33,
+   "mark": "i",
+   "context": "(ρA)"
+  },
+  {
+   "page": 33,
+   "mark": "j",
+   "context": "(ρA)iA"
+  },
+  {
+   "page": 33,
+   "mark": "j",
+   "context": "iB"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "dnTr ρ"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "it is easy to concatenate spaces and compute Tr ρ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "fact,forthefollowing,oneassumesaweakerconditionthatρ"
+  },
+  {
+   "page": 34,
+   "mark": "a",
+   "context": "A(Ψ)∝ρA(Ψ)thatistheconditionof"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "¯ρ"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "¯ρ"
+  },
+  {
+   "page": 35,
+   "mark": "n",
+   "context": "Tr ¯ρ"
+  },
+  {
+   "page": 35,
+   "mark": "n",
+   "context": "Tr ¯ρ"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "¯ρ"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "D"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "thatdistinguishesρ"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "Tr ¯ρ"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "D"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "D"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "D"
+  },
+  {
+   "page": 38,
+   "mark": "b",
+   "context": "X"
+  },
+  {
+   "page": 38,
+   "mark": "a",
+   "context": "Z"
+  },
+  {
+   "page": 38,
+   "mark": "a",
+   "context": "Z"
+  },
+  {
+   "page": 38,
+   "mark": "b",
+   "context": "X"
+  },
+  {
+   "page": 38,
+   "mark": "a",
+   "context": "Z"
+  },
+  {
+   "page": 38,
+   "mark": "b",
+   "context": "ZaX"
+  },
+  {
+   "page": 38,
+   "mark": "a",
+   "context": "|ψ⟩BobneedstoapplythesequenceZ"
+  },
+  {
+   "page": 38,
+   "mark": "b",
+   "context": "|ψ⟩BobneedstoapplythesequenceZaX"
+  },
+  {
+   "page": 39,
+   "mark": "a",
+   "context": "Table1:TheexponentsoftheoperatorsinthesequenceZ"
+  },
+  {
+   "page": 39,
+   "mark": "b",
+   "context": "Table1:TheexponentsoftheoperatorsinthesequenceZaX"
+  },
+  {
+   "page": 40,
+   "mark": "a",
+   "context": "stringZ"
+  },
+  {
+   "page": 40,
+   "mark": "b",
+   "context": "stringZaX"
+  },
+  {
+   "page": 40,
+   "mark": "a",
+   "context": "applicationoftheZ"
+  },
+  {
+   "page": 40,
+   "mark": "b",
+   "context": "applicationoftheZaX"
+  },
+  {
+   "page": 40,
+   "mark": "a",
+   "context": "andBob.InthecentralsectionBobappliesB[a, b] = Z"
+  },
+  {
+   "page": 40,
+   "mark": "b",
+   "context": "andBob.InthecentralsectionBobappliesB[a, b] = ZaX"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "d"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "ThechoiceofspheresS"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "asinsection4.2anddrawallpossible“connectomediagrams”ofthreeS"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "d"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": ".K.Singh,P.Ramadevi,Y.ZhouandS.Dhara,EntanglementonmultipleS"
+  }
+ ]
+}

@@ -14,9 +14,9 @@ $$
 
 in which the **body order $n$ is the vertical (jet) degree** of the prolonged
 Seiberg--Witten differential
-([`prop:mi-sw-abelianisation`](#prop:mi-sw-abelianisation)), the $n$-body term is
+([Abelianisation of the MI integral on exceptional divisors](#prop:mi-sw-abelianisation)), the $n$-body term is
 $m_e$ times the $n$-th prolonged SW period, and that period is the algebraic
-residue sum of [`prop:sw-period-residue-sum`](#prop:sw-period-residue-sum) taken
+residue sum of [The Seiberg–Witten period is an algebraic residue sum](#prop:sw-period-residue-sum) taken
 over the **hyperbolic** components only (non-hyperbolic components contribute
 $\mathrm{Vol}=0$). Equivalently: the many-body binding series **coincides
 with the jet-order filtration** of $\mathcal{B}_K$, term by term.
@@ -59,7 +59,7 @@ inverted, an extraction; the *derived* single $p$–$n$ bond gives
 $\alpha L_{pn} \approx 2.833\ \mathrm{MeV}$, $+27.3\%$ above the measured
 $2.2246\ \mathrm{MeV}$, hence $w_2 \approx 5.544$ instead. Rigidity for $w_3$
 would have to come from the *derived* kernel $R(q,x)$, which is open. Measured in
-[`binding_n3_forcing_probe.py`](../../../computations/binding_n3_forcing_probe.py);
+[the $n=3$ forcing probe](../../../computations/binding_n3_forcing_probe.py);
 scope-(a) analysis in
 [the n=3 forcing audit](../../../docs/audits/2026-08-26-n3-body-order-forcing.md).
 
@@ -77,7 +77,7 @@ almost entirely **Coulomb** — on the Coulomb-corrected strong binding
 $B_{\mathrm{strong}}$ the mirror pair agrees to $\sim 2.7\%$ (charge-symmetry
 breaking), so a $K$-independent $w_n$ is *not* excluded. That $2.7\%$ is
 geometry-dependent: at the canonical *derived* $r_0 = \hbar c/m_\pi$ of
-`coulomb_energy.py` the correction overshoots and the residual is $\approx -1\%$
+the Coulomb-energy computation the correction overshoots and the residual is $\approx -1\%$
 with $^{3}\mathrm{He}$ the more bound partner, while the measured-charge-radius
 geometry gives $+1\%$; the spread across geometries is $0.16\ \mathrm{MeV}$,
 which does not affect the admissibility conclusion. But no parameter-free
@@ -88,8 +88,7 @@ $K$-dependent kernel is underdetermined by the anchors ($A-1$ unknowns against
 one equation per isotope) — extraction is a fit. Closure therefore requires the
 *derived* $R(q,x)$. The eigenfunction relation of the na-Stokes period
 $a_D^{(n)}=S(n)/n$ (the seed $c_3=[2]_q$ exact, and the Habiro
-$(q-1)^2\Phi_3$ deviation, formalized in
-[`QOU.Mass.BindingEigenfunctionTwoTier`](../lean/QOU/Mass/BindingEigenfunctionTwoTier.lean))
+$(q-1)^2\Phi_3$ deviation, both proved)
 supplies a *derived target* for $R(q,x)$ but does not determine it — the binding
 deviation and the $Q_\beta$ $c_k$ ladder share the Habiro *ring*, not the same
 element.
@@ -99,22 +98,11 @@ element.
 unconstrained formal power series the shift relation determines exactly one
 kernel coefficient per body order, and conversely: for any body sequence with
 $B_2 \neq 0$ the map $\{r_k\} \leftrightarrow \{B_n\}$ is a **bijection**
-([`QOU.Mass.BindingScalarKernelParityExclusion.kernel_coeff_existsUnique`](../lean/QOU/Mass/BindingScalarKernelParityExclusion.lean),
-sorry-free). So the unconstrained ansatz constrains *nothing*: it reparametrises
+(proved).
+So the unconstrained ansatz constrains *nothing*: it reparametrises
 the unknown weights, it does not remove them, and "$\rho\cdot A$ is an output of
 the recursion" is false unless $R$ is independently pinned. All of the ansatz's
 content therefore lies in the **finiteness** of the Laurent window.
-
-That finiteness is unattainable in the scalar form. The $q$-Borel-normalized
-carrier is the rank-$2$ module $\mathcal{K}$ of
-[`conj:qdifference-kernel-prolongation-symbol`](#conj:qdifference-kernel-prolongation-symbol),
-which is **irreducible** — its Newton slope $\tfrac12$ is not an integer, while
-every rank-1 $q$-difference module has integer slope — so no scalar
-$R(q,x)\in K(x)$ acts on it at all, at any depth. The kernel that closes this
-conjecture must be a $2\times2$ **matrix**, and a rank-$2$ recursion needs two
-base cases, so the $n=3$ term is required as an independent input rather than
-produced by the recursion. This is consistent with, and independent of, the
-one-free-parameter count recorded above.
 
 A multi-anchor test (D$\to{}^{12}$C, Coulomb-corrected) further shows that the
 full-tower reading — summing $B(K)=\sum_{n=2}^{A} m_e\,a_D^{(n)}\,w_n$ to the

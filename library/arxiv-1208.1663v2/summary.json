@@ -2,17 +2,22 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1208.1663v2",
  "source_sha256": "87e94e429d58386c",
- "brief": "The 3D index of an ideal triangulation and angle structures — The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of ideal triangulations of 3-manifolds with r torii boundary",
- "extended": "**The 3D index of an ideal triangulation and angle structures**\n\n29 pp, 23 sections.\n\n**Abstract.** The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of ideal triangulations of 3-manifolds with r torii boundary components. For a ﬁxed 2 r tuple of integers, the index takes values in the set of q-series with integer coeﬃcients. Our goal is to give an axiomatic deﬁnition of the tetrahedron index, and a proof that the domain of the 3D index consists precisely of the set of ideal triangulations that support an index structure. The latter is a generalization of a strict angle structure. We also prove that the 3D index is invariant under 3-2 moves, but not in general under 2-3 moves.\n\n**Outline.** 1 Introduction; 2 Index structures, angle structures and the 3; 2.2 Angle structures; 2.3 The Neumann-Zagier matrices; 2.4 On the topological invariance of the index; 3 Axioms for the tetrahedron index; 4 Properties of a tetrahedron index; 4.1 Part (d) of Theorem 3.2; 4.3 The rank of V+: part (b) of Theorem 3.2; 4.4 Proof of triality: part (c) of Theorem 3.2; 4.6 The degree of I; 4.7 Proof of Theorem 3.7; 5 Convergence of the 3D index; 5.1 Proof of Theorem 2.4; 5.2 An independent proof of convergence for st; 6.3 An ideal triangulation of m136; 6.4 An ideal triangulation of m064; 6.5 An ideal triangulation with no index struc\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.4: IM(m,e )(q)∈ Z((q1/2)) is convergent for all m,e ∈ Zs if and only if M\n- Theorem 2.12: The index IT : Zr× Zr−→ Z((q1/2)) is well-deﬁned if and only if T admits\n- Theorem 3.2: (a) V is a free q-holonomic Z((q))-module of rank 2.\n- Theorem 3.7: I∆ is uniquely characterized by the following equations:\n- Theorem 3.2: Equation (3.2) concerns the following Z/3-action on V .\n- Proposition 2.13: If ~T admits a strict angle structure structure, so does T and I ~T =IT .",
+ "brief": "THE 3D INDEX OF AN IDEAL TRIANGULATION AND ANGLE STRUCTURES — The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of ideal triangulations of 3-manifolds with r torii boundary",
+ "extended": "**THE 3D INDEX OF AN IDEAL TRIANGULATION AND ANGLE STRUCTURES**\n\n*STAVROS GAROUFALIDIS*\n\n29 pp, 27 sections.\n\n**Abstract.** The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of ideal triangulations of 3-manifolds with r torii boundary components. For a ﬁxed 2r tuple of integers, the index takes values in the set of q-series with integer coeﬃcients. Our goal is to give an axiomatic deﬁnition of the tetrahedron index, and a proof that the domain of the 3D index consists precisely of the set of ideal triangulations that support an index structure. The latter is a generalization of a strict angle structure. We also prove that the 3D index is invariant under 3-2 moves, but not in general under 2-3 moves.\n\n**Outline.** Front matter; 1 Introduction; 2 Index structures, angle structures and the 3; 2.2 Angle structures; 2.3 The Neumann-Zagier matrices; 2.4 On the topological invariance of the index; 3 Axioms for the tetrahedron index; 4 Properties of a tetrahedron index; 4.1 Part (d) of Theorem 3.2; 4.2 The rank of V: part (a) of Theorem 3.2; 4.3 The rank of V+: part (b) of Theorem 3.2; 4.4 Proof of triality: part (c) of Theorem 3.2; 4.6 The degree of I; 4.7 Proof of Theorem 3.7; 5 Convergence of the 3D index; 5.1 Proof of Theorem 2.4; 5.2 An independent proof of convergence for st; 6 Invariance of the 3D index under 23 moves an",
  "tokens": {
   "brief": 49,
-  "extended": 472
+  "extended": 342
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-3"
+   "pages": "2-3"
   },
   {
    "id": "sec-001-2-index-structures-angle-structures-and-the-3d-i",
@@ -47,80 +52,95 @@
   {
    "id": "sec-007-41-part-d-of-theorem-32",
    "title": "Part (d) of Theorem 3.2",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-008-42-the-rank-of-v-part-a-of-theorem-32",
+   "title": "The rank of V: part (a) of Theorem 3.2",
    "pages": "10-11"
   },
   {
-   "id": "sec-008-43-the-rank-of-v-part-b-of-theorem-32",
+   "id": "sec-009-43-the-rank-of-v-part-b-of-theorem-32",
    "title": "The rank of V+: part (b) of Theorem 3.2",
    "pages": "11-12"
   },
   {
-   "id": "sec-009-44-proof-of-triality-part-c-of-theorem-32",
+   "id": "sec-010-44-proof-of-triality-part-c-of-theorem-32",
    "title": "Proof of triality: part (c) of Theorem 3.2",
    "pages": "12-13"
   },
   {
-   "id": "sec-010-46-the-degree-of-i",
+   "id": "sec-011-46-the-degree-of-i",
    "title": "The degree of I",
    "pages": "13-13"
   },
   {
-   "id": "sec-011-47-proof-of-theorem-37",
+   "id": "sec-012-47-proof-of-theorem-37",
    "title": "Proof of Theorem 3.7",
    "pages": "13-14"
   },
   {
-   "id": "sec-012-5-convergence-of-the-3d-index",
+   "id": "sec-013-5-convergence-of-the-3d-index",
    "title": "Convergence of the 3D index",
    "pages": "14-14"
   },
   {
-   "id": "sec-013-51-proof-of-theorem-24",
+   "id": "sec-014-51-proof-of-theorem-24",
    "title": "Proof of Theorem 2.4",
    "pages": "14-16"
   },
   {
-   "id": "sec-014-52-an-independent-proof-of-convergence-for-stric",
+   "id": "sec-015-52-an-independent-proof-of-convergence-for-stric",
    "title": "An independent proof of convergence for strict index structures",
-   "pages": "16-21"
+   "pages": "16-18"
   },
   {
-   "id": "sec-015-63-an-ideal-triangulation-of-m136",
+   "id": "sec-016-6-invariance-of-the-3d-index-under-23-moves-and",
+   "title": "Invariance of the 3D index under 23 moves and 20 moves",
+   "pages": "18-21"
+  },
+  {
+   "id": "sec-017-63-an-ideal-triangulation-of-m136",
    "title": "An ideal triangulation of m136",
    "pages": "21-21"
   },
   {
-   "id": "sec-016-64-an-ideal-triangulation-of-m064",
+   "id": "sec-018-64-an-ideal-triangulation-of-m064",
    "title": "An ideal triangulation of m064",
    "pages": "21-22"
   },
   {
-   "id": "sec-017-65-an-ideal-triangulation-with-no-index-structur",
+   "id": "sec-019-65-an-ideal-triangulation-with-no-index-structur",
    "title": "An ideal triangulation with no index structure",
    "pages": "22-23"
   },
   {
-   "id": "sec-018-67-acknowledgment",
+   "id": "sec-020-67-acknowledgment",
    "title": "Acknowledgment",
    "pages": "23-23"
   },
   {
-   "id": "sec-019-a1-a-generating-series-proof-of-the-pentagon-ide",
+   "id": "sec-021-appendix-a-i-satisfies-the-pentagon-identity",
+   "title": "Appendix A. I satisfies the pentagon identity",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-022-a1-a-generating-series-proof-of-the-pentagon-ide",
    "title": "A.1. A generating series proof of the pentagon identity",
    "pages": "23-26"
   },
   {
-   "id": "sec-020-a2-a-second-proof-of-the-pentagon-identity",
+   "id": "sec-023-a2-a-second-proof-of-the-pentagon-identity",
    "title": "A.2. A second proof of the pentagon identity",
    "pages": "26-27"
   },
   {
-   "id": "sec-021-appendix-b-the-tetrahedron-index-and-the-quantum",
+   "id": "sec-024-appendix-b-the-tetrahedron-index-and-the-quantum",
    "title": "Appendix B. The tetrahedron index and the quantum dilogarithm",
    "pages": "27-28"
   },
   {
-   "id": "sec-022-references",
+   "id": "sec-025-references",
    "title": "References",
    "pages": "28-29"
   }
@@ -129,8 +149,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

@@ -1,1 +1,0 @@
-implies the following result.

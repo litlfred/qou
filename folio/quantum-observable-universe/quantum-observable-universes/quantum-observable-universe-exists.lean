@@ -52,7 +52,7 @@ LaTeX: `\label{prop:quantum-observable-universe-exists}`
 
 ## References
 
-- [manuscript] §2-quantum-observable-universes/quantum-observable-universe-exists
+- [leitner2026] §2-quantum-observable-universes/quantum-observable-universe-exists
 - [kassel1995] Quantum Groups (Springer GTM 155), §IX (quantum SU(2))
 - [wenzl1988] https://doi.org/10.1007/BF01404457
 -/
@@ -81,22 +81,20 @@ universe w
     Witnessed by Rep(SU_q(2)) with Haar integration, vanishing Chern classes on
     the adjoint, and the quantum determinant volume constraint. -/
 
-class QuantumObservableUniverseExistsContext (R : Type w) [CommRing R] (q qinv : R)
-    (hq : q * qinv = 1)
-    (hcasimir : IsUnit (q - qinv))
-    (hsix : IsUnit (6 : R))
-    (hgeneric : ∀ k : ℕ, 2 ≤ k → q ^ k ≠ 1) where
-  exists_instance : Nonempty (QuantumObservableUniverse.{w + 1, w, w, w, w} R)
-
 -- Ref: [kassel1995] Quantum Groups (Springer GTM 155), §IX (quantum SU(2))
+-- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457
+-- Stated, not proved (bean qou-6qbv): until 2026-11-20 this was discharged by
+-- projecting a context-class field `exists_instance : Nonempty …`, i.e. the
+-- conclusion was assumed. The honest state is a cited sorry; the obstruction
+-- `QOU.WitnessObstruction.qou_needs_nongenerating_unit` prunes where a witness
+-- can live (not in a module category) and does not discharge it.
 theorem QuantumObservableUniverse.exists_instance
     (R : Type w) [CommRing R] (q qinv : R)
     (hq : q * qinv = 1)
     (hcasimir : IsUnit (q - qinv))
     (hsix : IsUnit (6 : R))
-    (hgeneric : ∀ k : ℕ, 2 ≤ k → q ^ k ≠ 1)
-    [ctx : QuantumObservableUniverseExistsContext R q qinv hq hcasimir hsix hgeneric] :
-    Nonempty (QuantumObservableUniverse.{w + 1, w, w, w, w} R) :=
-  ctx.exists_instance
+    (hgeneric : ∀ k : ℕ, 2 ≤ k → q ^ k ≠ 1) :
+    Nonempty (QuantumObservableUniverse.{w + 1, w, w, w} R) := by
+  sorry
 
 end QOU

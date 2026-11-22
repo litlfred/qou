@@ -6,10 +6,12 @@
   "sha256": "3b9da2994233882bdb242798fd1a5f85e53f1d0fd66410809de751d056a07d3a",
   "bytes": 781463,
   "pages": 41,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,17 +23,25 @@
   "doi": null,
   "title": "QUANTUM MODULARITY AND COMPLEX CHERN-SIMONS THEORY",
   "authors_raw": "TUDOR DIMOFTE AND STAVROS GAROUFALIDIS",
-  "abstract": "The Quantum Modularity Conjecture of Zagier predicts the existence of a for- mal power series with arithmetically interesting coe\ufb03cients that appears in the asymptotics of the Kashaev invariant at each root of unity. Our goal is to construct a power series from a Neumann-Zagier datum (i.e., an ideal triangulation of the knot complement and a geo- metric solution to the gluing equations) and a complex root of unity \u03b6. We prove that the coe\ufb03cients of our series lie in the trace \ufb01eld of the knot, adjoined a complex root of unity. We conjecture that our series are those that appear in the Quantum Modularity Conjecture and con\ufb01rm that they match the numerical asymptotics of the Kashaev invariant (at various roots of unity) computed by Zagier and the \ufb01rst author. Our construction is motivated by the analysis of singular limits in Chern-Simons theory with gauge group SL(2, C) at \ufb01xed levelk, where \u03b6 k = 1.",
-  "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20151119012606Z",
-   "Creator": "LaTeX with hyperref package",
-   "Producer": "pdfTeX-1.40.12",
-   "Title": ""
-  },
   "title_lines": [
    "QUANTUM MODULARITY AND COMPLEX CHERN-SIMONS THEORY"
-  ]
+  ],
+  "abstract": "The Quantum Modularity Conjecture of Zagier predicts the existence of a for- mal power series with arithmetically interesting coeﬃcients that appears in the asymptotics of the Kashaev invariant at each root of unity. Our goal is to construct a power series from a Neumann-Zagier datum (i.e., an ideal triangulation of the knot complement and a geo- metric solution to the gluing equations) and a complex root of unity ζ. We prove that the coeﬃcients of our series lie in the trace ﬁeld of the knot, adjoined a complex root of unity. We conjecture that our series are those that appear in the Quantum Modularity Conjecture and conﬁrm that they match the numerical asymptotics of the Kashaev invariant (at various roots of unity) computed by Zagier and the ﬁrst author. Our construction is motivated by the analysis of singular limits in Chern-Simons theory with gauge group SL(2, C) at ﬁxed level k, where ζk = 1.",
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.12",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20151119012606Z"
+  },
+  "title_raw": "QUANTUM MODULARITY AND COMPLEX CHERN-SIMONS THEORY",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "QUANTUM MODULARITY AND COMPLEX CHERN-SIMONS THEORY Contents Introduction Quantum modular forms Zagier’s Quantum Modularity Conjecture The deﬁnition of φ γ,ζ Ideal triangulations and Neumann-Zagier data The 1-loop invariant at level k The n -loop invariants at level k for n ≥ 2 Feynman diagrams for t",
+   "outline": "1. Introduction",
+   "text": "QUANTUM MODULARITY AND COMPLEX CHERN-SIMONS THEORY",
+   "corroborated_by": [],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -39,527 +49,1235 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Quantum modular forms",
    "page": 2,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Zagier's Quantum Modularity Conjecture",
    "page": 3,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "The definition of ,",
    "page": 4,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Ideal triangulations and Neumann-Zagier data",
    "page": 4,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "The 1-loop invariant at level k",
    "page": 6,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "The n-loop invariants at level k for n 2",
    "page": 7,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Feynman diagrams for the n-loop invariant",
    "page": 8,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "The 2-loop invariant in detail",
    "page": 9,
    "source": "outline",
-   "number": "2.5"
+   "number": "2.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "The 3-loop invariant",
    "page": 11,
    "source": "outline",
-   "number": "2.6"
+   "number": "2.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "Matching with the numerical asymptotics of the Kashaev invariant",
    "page": 11,
    "source": "outline",
-   "number": "2.7"
+   "number": "2.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "Topological invariance",
    "page": 11,
    "source": "outline",
-   "number": "2.8"
+   "number": "2.8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 1,
    "title": "Proofs",
    "page": 12,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Proof of Theorem 2.6",
    "page": 12,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Some identities of the cyclic dilogarithm",
    "page": 14,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 2,
    "title": "Proof of Theorem 2.2",
    "page": 14,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 1,
    "title": "Complex Chern-Simons theory",
    "page": 15,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "Basic structure",
    "page": 15,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "A singular limit",
    "page": 16,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "State integrals",
    "page": 17,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "Derivation of the torsion",
    "page": 19,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 2,
    "title": "Ambiguities",
    "page": 20,
    "source": "outline",
-   "number": "4.5"
+   "number": "4.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 1,
    "title": "Computations",
    "page": 20,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 2,
    "title": "How the data was computed",
    "page": 20,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 2,
    "title": "A sample computation",
    "page": 21,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 1,
    "title": "Data",
    "page": 22,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 2,
    "title": "The 41 knot",
    "page": 22,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 2,
    "title": "The 52 knot and its partner, the (-2,3,7) pretzel knot",
    "page": 25,
    "source": "outline",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
   },
   {
    "level": 2,
    "title": "The 61 knot",
    "page": 32,
    "source": "outline",
-   "number": "6.3"
+   "number": "6.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "32"
   },
   {
    "level": 2,
    "title": "The (-2,3,-3) and the (-2,3,9) partner pretzel knots",
    "page": 35,
    "source": "outline",
-   "number": "6.4"
+   "number": "6.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "35"
   },
   {
    "level": 2,
    "title": "The 912 knot",
    "page": 38,
    "source": "outline",
-   "number": "6.5"
+   "number": "6.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "38"
   },
   {
    "level": 1,
    "title": "Acknowledgements",
    "page": 39,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "39"
   },
   {
    "level": 1,
    "title": "References",
    "page": 39,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "39"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Diagrams contributing to Sγ,2 with symmetry factors. The top row of diagrams have exactly two loops, while the bottom row have fewer loops and additional 1-vertices and 2-vertices",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "9"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Diagrams with three loops contributing to S3",
+   "page": 10,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "10"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Diagrams with 1-vertices and 2-vertices contributing to S3",
+   "page": 10,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "10"
+  },
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "The number gn of graphs that contribute to the n-loop invariant for n = 2, . . . , 6",
+   "page": 11,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "table",
+   "number": "2",
+   "title": "Numerical asymptotics of the Kashaev invariant from [GZ]",
+   "page": 11,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "11"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2663,
+   "n_words": 428,
+   "label_start": "1",
+   "label_end": "2"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 15,
+   "n_words": 2,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
    "id": "sec-001-11-quantum-modular-forms",
    "number": "1.1",
    "title": "Quantum modular forms",
    "level": 2,
-   "page_start": 1,
-   "page_end": 4,
-   "n_chars": 7668,
-   "n_words": 1290
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 1972,
+   "n_words": 329,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
-   "id": "sec-002-21-ideal-triangulations-and-neumann-zagier-data",
+   "id": "sec-002-12-zagiers-quantum-modularity-conjecture",
+   "number": "1.2",
+   "title": "Zagier's Quantum Modularity Conjecture",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 3906,
+   "n_words": 691,
+   "label_start": "3",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-003-2-the-definition-of",
+   "number": "2",
+   "title": "The definition of ,",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-004-21-ideal-triangulations-and-neumann-zagier-data",
    "number": "2.1",
    "title": "Ideal triangulations and Neumann-Zagier data",
    "level": 2,
    "page_start": 4,
    "page_end": 6,
-   "n_chars": 3074,
-   "n_words": 533
+   "n_chars": 3117,
+   "n_words": 576,
+   "label_start": "4",
+   "label_end": "6"
   },
   {
-   "id": "sec-003-22-the-1-loop-invariant-at-level-k",
+   "id": "sec-005-22-the-1-loop-invariant-at-level-k",
    "number": "2.2",
    "title": "The 1-loop invariant at level k",
    "level": 2,
    "page_start": 6,
-   "page_end": 8,
-   "n_chars": 4130,
-   "n_words": 756
+   "page_end": 7,
+   "n_chars": 1747,
+   "n_words": 356,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
-   "id": "sec-004-24-feynman-diagrams-for-the-n-loop-invariant",
+   "id": "sec-006-23-the-n-loop-invariants-at-level-k-for-n-2",
+   "number": "2.3",
+   "title": "The n-loop invariants at level k for n 2",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 2361,
+   "n_words": 445,
+   "label_start": "7",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-007-24-feynman-diagrams-for-the-n-loop-invariant",
    "number": "2.4",
    "title": "Feynman diagrams for the n-loop invariant",
    "level": 2,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 2374,
-   "n_words": 445
+   "n_chars": 2392,
+   "n_words": 463,
+   "label_start": "8",
+   "label_end": "9"
   },
   {
-   "id": "sec-005-25-the-2-loop-invariant-in-detail",
+   "id": "sec-008-25-the-2-loop-invariant-in-detail",
    "number": "2.5",
    "title": "The 2-loop invariant in detail",
    "level": 2,
    "page_start": 9,
    "page_end": 11,
-   "n_chars": 1470,
-   "n_words": 336
+   "n_chars": 1477,
+   "n_words": 345,
+   "label_start": "9",
+   "label_end": "11"
   },
   {
-   "id": "sec-006-26-the-3-loop-invariant",
+   "id": "sec-009-26-the-3-loop-invariant",
    "number": "2.6",
    "title": "The 3-loop invariant",
    "level": 2,
    "page_start": 11,
    "page_end": 11,
-   "n_chars": 781,
-   "n_words": 135
+   "n_chars": 876,
+   "n_words": 158,
+   "label_start": "11",
+   "label_end": "11"
   },
   {
-   "id": "sec-007-27-matching-with-the-numerical-asymptotics-of-th",
+   "id": "sec-010-27-matching-with-the-numerical-asymptotics-of-th",
    "number": "2.7",
    "title": "Matching with the numerical asymptotics of the Kashaev invariant",
    "level": 2,
    "page_start": 11,
    "page_end": 11,
-   "n_chars": 480,
-   "n_words": 97
+   "n_chars": 470,
+   "n_words": 87,
+   "label_start": "11",
+   "label_end": "11"
   },
   {
-   "id": "sec-008-28-topological-invariance",
+   "id": "sec-011-28-topological-invariance",
    "number": "2.8",
    "title": "Topological invariance",
    "level": 2,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 1836,
-   "n_words": 311
+   "n_chars": 1831,
+   "n_words": 306,
+   "label_start": "11",
+   "label_end": "12"
   },
   {
-   "id": "sec-009-3-proofs",
+   "id": "sec-012-3-proofs",
    "number": "3",
    "title": "Proofs",
    "level": 1,
    "page_start": 12,
    "page_end": 12,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "12",
+   "label_end": "12"
   },
   {
-   "id": "sec-010-31-proof-of-theorem-26",
+   "id": "sec-013-31-proof-of-theorem-26",
    "number": "3.1",
    "title": "Proof of Theorem 2.6",
    "level": 2,
    "page_start": 12,
    "page_end": 14,
-   "n_chars": 2705,
-   "n_words": 481
+   "n_chars": 2747,
+   "n_words": 523,
+   "label_start": "12",
+   "label_end": "14"
   },
   {
-   "id": "sec-011-32-some-identities-of-the-cyclic-dilogarithm",
+   "id": "sec-014-32-some-identities-of-the-cyclic-dilogarithm",
    "number": "3.2",
    "title": "Some identities of the cyclic dilogarithm",
    "level": 2,
    "page_start": 14,
    "page_end": 14,
-   "n_chars": 472,
-   "n_words": 84
+   "n_chars": 497,
+   "n_words": 109,
+   "label_start": "14",
+   "label_end": "14"
   },
   {
-   "id": "sec-012-33-proof-of-theorem-22",
+   "id": "sec-015-33-proof-of-theorem-22",
    "number": "3.3",
    "title": "Proof of Theorem 2.2",
    "level": 2,
    "page_start": 14,
    "page_end": 15,
-   "n_chars": 206,
-   "n_words": 39
+   "n_chars": 212,
+   "n_words": 45,
+   "label_start": "14",
+   "label_end": "15"
   },
   {
-   "id": "sec-013-4-complex-chern-simons-theory",
+   "id": "sec-016-4-complex-chern-simons-theory",
    "number": "4",
    "title": "Complex Chern-Simons theory",
    "level": 1,
    "page_start": 15,
    "page_end": 15,
-   "n_chars": 967,
-   "n_words": 184
+   "n_chars": 993,
+   "n_words": 207,
+   "label_start": "15",
+   "label_end": "15"
   },
   {
-   "id": "sec-014-41-basic-structure",
+   "id": "sec-017-41-basic-structure",
    "number": "4.1",
    "title": "Basic structure",
    "level": 2,
    "page_start": 15,
    "page_end": 16,
-   "n_chars": 1459,
-   "n_words": 255
+   "n_chars": 1481,
+   "n_words": 277,
+   "label_start": "15",
+   "label_end": "16"
   },
   {
-   "id": "sec-015-42-a-singular-limit",
+   "id": "sec-018-42-a-singular-limit",
    "number": "4.2",
    "title": "A singular limit",
    "level": 2,
    "page_start": 16,
    "page_end": 17,
-   "n_chars": 2441,
-   "n_words": 425
+   "n_chars": 2452,
+   "n_words": 436,
+   "label_start": "16",
+   "label_end": "17"
   },
   {
-   "id": "sec-016-43-state-integrals",
+   "id": "sec-019-43-state-integrals",
    "number": "4.3",
    "title": "State integrals",
    "level": 2,
    "page_start": 17,
    "page_end": 19,
-   "n_chars": 5909,
-   "n_words": 1037
+   "n_chars": 5949,
+   "n_words": 1076,
+   "label_start": "17",
+   "label_end": "19"
   },
   {
-   "id": "sec-017-44-derivation-of-the-torsion",
+   "id": "sec-020-44-derivation-of-the-torsion",
    "number": "4.4",
    "title": "Derivation of the torsion",
    "level": 2,
    "page_start": 19,
    "page_end": 20,
-   "n_chars": 1402,
-   "n_words": 285
+   "n_chars": 1439,
+   "n_words": 322,
+   "label_start": "19",
+   "label_end": "20"
   },
   {
-   "id": "sec-018-45-ambiguities",
+   "id": "sec-021-45-ambiguities",
    "number": "4.5",
    "title": "Ambiguities",
    "level": 2,
    "page_start": 20,
    "page_end": 20,
-   "n_chars": 428,
-   "n_words": 76
+   "n_chars": 423,
+   "n_words": 71,
+   "label_start": "20",
+   "label_end": "20"
   },
   {
-   "id": "sec-019-5-computations",
+   "id": "sec-022-5-computations",
    "number": "5",
    "title": "Computations",
    "level": 1,
    "page_start": 20,
    "page_end": 20,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "20",
+   "label_end": "20"
   },
   {
-   "id": "sec-020-51-how-the-data-was-computed",
+   "id": "sec-023-51-how-the-data-was-computed",
    "number": "5.1",
    "title": "How the data was computed",
    "level": 2,
    "page_start": 20,
    "page_end": 21,
-   "n_chars": 2020,
-   "n_words": 352
+   "n_chars": 2049,
+   "n_words": 381,
+   "label_start": "20",
+   "label_end": "21"
   },
   {
-   "id": "sec-021-52-a-sample-computation",
+   "id": "sec-024-52-a-sample-computation",
    "number": "5.2",
    "title": "A sample computation",
    "level": 2,
    "page_start": 21,
    "page_end": 22,
-   "n_chars": 2049,
-   "n_words": 342
+   "n_chars": 2078,
+   "n_words": 371,
+   "label_start": "21",
+   "label_end": "22"
   },
   {
-   "id": "sec-022-6-data",
+   "id": "sec-025-6-data",
    "number": "6",
    "title": "Data",
    "level": 1,
    "page_start": 22,
    "page_end": 22,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "22",
+   "label_end": "22"
   },
   {
-   "id": "sec-023-61-the-41-knot",
+   "id": "sec-026-61-the-41-knot",
    "number": "6.1",
    "title": "The 41 knot",
    "level": 2,
    "page_start": 22,
-   "page_end": 32,
-   "n_chars": 13613,
-   "n_words": 2216
+   "page_end": 25,
+   "n_chars": 3653,
+   "n_words": 796,
+   "label_start": "22",
+   "label_end": "25"
   },
   {
-   "id": "sec-024-63-the-61-knot",
+   "id": "sec-027-62-the-52-knot-and-its-partner-the--237-pretzel",
+   "number": "6.2",
+   "title": "The 52 knot and its partner, the (-2,3,7) pretzel knot",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 32,
+   "n_chars": 10216,
+   "n_words": 1745,
+   "label_start": "25",
+   "label_end": "32"
+  },
+  {
+   "id": "sec-028-63-the-61-knot",
    "number": "6.3",
    "title": "The 61 knot",
    "level": 2,
    "page_start": 32,
-   "page_end": 38,
-   "n_chars": 9868,
-   "n_words": 1521
+   "page_end": 35,
+   "n_chars": 4727,
+   "n_words": 634,
+   "label_start": "32",
+   "label_end": "35"
   },
   {
-   "id": "sec-025-65-the-912-knot",
+   "id": "sec-029-64-the--23-3-and-the--239-partner-pretzel-knots",
+   "number": "6.4",
+   "title": "The (-2,3,-3) and the (-2,3,9) partner pretzel knots",
+   "level": 2,
+   "page_start": 35,
+   "page_end": 38,
+   "n_chars": 5366,
+   "n_words": 1180,
+   "label_start": "35",
+   "label_end": "38"
+  },
+  {
+   "id": "sec-030-65-the-912-knot",
    "number": "6.5",
    "title": "The 912 knot",
    "level": 2,
    "page_start": 38,
    "page_end": 39,
-   "n_chars": 1322,
-   "n_words": 243
+   "n_chars": 1349,
+   "n_words": 270,
+   "label_start": "38",
+   "label_end": "39"
   },
   {
-   "id": "sec-026-acknowledgements",
+   "id": "sec-031-acknowledgements",
    "number": null,
    "title": "Acknowledgements",
    "level": 1,
    "page_start": 39,
    "page_end": 39,
-   "n_chars": 996,
-   "n_words": 155
+   "n_chars": 995,
+   "n_words": 154,
+   "label_start": "39",
+   "label_end": "39"
   },
   {
-   "id": "sec-027-references",
+   "id": "sec-032-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 39,
    "page_end": 41,
-   "n_chars": 6348,
-   "n_words": 935
+   "n_chars": 6314,
+   "n_words": 901,
+   "label_start": "39",
+   "label_end": "41"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 33,
-  "sections": 28,
-  "chars_total": 74018,
+  "toc_inferred_entries": 0,
+  "figure_entries": 6,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 0,
+    "items": []
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 34,
+  "chars_total": 75767,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "text13.tex",
    "tex_sections": 32,
-   "overlaid": 17,
+   "overlaid": 20,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -567,142 +1285,170 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.0,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-001-11-quantum-modular-forms",
      "title": "Quantum modular forms",
-     "prose_ratio": 0.989,
-     "coverage_ratio": 0.882,
+     "prose_ratio": 0.954,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-21-ideal-triangulations-and-neumann-zagier-data",
-     "title": "Ideal triangulations and Neumann-Zagier data",
-     "prose_ratio": 0.933,
-     "coverage_ratio": 0.908,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-003-22-the-1-loop-invariant-at-level-k",
-     "title": "The 1-loop invariant at level k",
-     "prose_ratio": 0.945,
-     "coverage_ratio": 0.884,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-004-24-feynman-diagrams-for-the-n-loop-invariant",
-     "title": "Feynman diagrams for the n-loop invariant",
-     "prose_ratio": 0.946,
-     "coverage_ratio": 0.912,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-005-25-the-2-loop-invariant-in-detail",
-     "title": "The 2-loop invariant in detail",
-     "prose_ratio": 0.836,
-     "coverage_ratio": 0.81,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-006-26-the-3-loop-invariant",
-     "title": "The 3-loop invariant",
-     "prose_ratio": 0.909,
+     "id": "sec-002-12-zagiers-quantum-modularity-conjecture",
+     "title": "Zagier's Quantum Modularity Conjecture",
+     "prose_ratio": 0.985,
      "coverage_ratio": 0.98,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-27-matching-with-the-numerical-asymptotics-of-th",
+     "id": "sec-003-2-the-definition-of",
+     "title": "The definition of ,",
+     "prose_ratio": null,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-004-21-ideal-triangulations-and-neumann-zagier-data",
+     "title": "Ideal triangulations and Neumann-Zagier data",
+     "prose_ratio": 0.933,
+     "coverage_ratio": 0.946,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-22-the-1-loop-invariant-at-level-k",
+     "title": "The 1-loop invariant at level k",
+     "prose_ratio": 0.899,
+     "coverage_ratio": 0.935,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-23-the-n-loop-invariants-at-level-k-for-n-2",
+     "title": "The n-loop invariants at level k for n 2",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-24-feynman-diagrams-for-the-n-loop-invariant",
+     "title": "Feynman diagrams for the n-loop invariant",
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.946,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-25-the-2-loop-invariant-in-detail",
+     "title": "The 2-loop invariant in detail",
+     "prose_ratio": 0.836,
+     "coverage_ratio": 0.825,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-26-the-3-loop-invariant",
+     "title": "The 3-loop invariant",
+     "prose_ratio": 0.927,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-27-matching-with-the-numerical-asymptotics-of-th",
      "title": "Matching with the numerical asymptotics of the Kashaev invariant",
      "prose_ratio": 0.882,
-     "coverage_ratio": 0.969,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-28-topological-invariance",
+     "id": "sec-011-28-topological-invariance",
      "title": "Topological invariance",
      "prose_ratio": 0.95,
-     "coverage_ratio": 0.95,
+     "coverage_ratio": 0.96,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-3-proofs",
+     "id": "sec-012-3-proofs",
      "title": "Proofs",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-010-31-proof-of-theorem-26",
+     "id": "sec-013-31-proof-of-theorem-26",
      "title": "Proof of Theorem 2.6",
      "prose_ratio": 0.943,
-     "coverage_ratio": 0.84,
+     "coverage_ratio": 0.895,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-32-some-identities-of-the-cyclic-dilogarithm",
+     "id": "sec-014-32-some-identities-of-the-cyclic-dilogarithm",
      "title": "Some identities of the cyclic dilogarithm",
      "prose_ratio": 0.149,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-012-33-proof-of-theorem-22",
+     "id": "sec-015-33-proof-of-theorem-22",
      "title": "Proof of Theorem 2.2",
      "prose_ratio": 0.102,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-013-4-complex-chern-simons-theory",
+     "id": "sec-016-4-complex-chern-simons-theory",
      "title": "Complex Chern-Simons theory",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.418,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
-     "id": "sec-014-41-basic-structure",
+     "id": "sec-017-41-basic-structure",
      "title": "Basic structure",
      "prose_ratio": 0.976,
-     "coverage_ratio": 0.844,
+     "coverage_ratio": 0.943,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-015-42-a-singular-limit",
+     "id": "sec-018-42-a-singular-limit",
      "title": "A singular limit",
      "prose_ratio": 0.925,
-     "coverage_ratio": 0.984,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-016-43-state-integrals",
+     "id": "sec-019-43-state-integrals",
      "title": "State integrals",
      "prose_ratio": 0.961,
-     "coverage_ratio": 0.961,
+     "coverage_ratio": 0.978,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-017-44-derivation-of-the-torsion",
+     "id": "sec-020-44-derivation-of-the-torsion",
      "title": "Derivation of the torsion",
      "prose_ratio": 0.925,
-     "coverage_ratio": 0.889,
+     "coverage_ratio": 0.925,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-018-45-ambiguities",
+     "id": "sec-021-45-ambiguities",
      "title": "Ambiguities",
      "prose_ratio": 0.879,
      "coverage_ratio": 1.0,
@@ -710,50 +1456,63 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-019-5-computations",
+     "id": "sec-022-5-computations",
      "title": "Computations",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-020-51-how-the-data-was-computed",
+     "id": "sec-023-51-how-the-data-was-computed",
      "title": "How the data was computed",
      "prose_ratio": 0.974,
-     "coverage_ratio": 0.904,
+     "coverage_ratio": 0.95,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-021-52-a-sample-computation",
+     "id": "sec-024-52-a-sample-computation",
      "title": "A sample computation",
      "prose_ratio": 0.923,
-     "coverage_ratio": 0.896,
+     "coverage_ratio": 0.909,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-022-6-data",
+     "id": "sec-025-6-data",
      "title": "Data",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-023-61-the-41-knot",
+     "id": "sec-026-61-the-41-knot",
      "title": "The 41 knot",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-024-63-the-61-knot",
+     "id": "sec-027-62-the-52-knot-and-its-partner-the--237-pretzel",
+     "title": "The 52 knot and its partner, the (-2,3,7) pretzel knot",
+     "prose_ratio": 0.603,
+     "coverage_ratio": 0.833,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-028-63-the-61-knot",
      "title": "The 61 knot",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-025-65-the-912-knot",
+     "id": "sec-029-64-the--23-3-and-the--239-partner-pretzel-knots",
+     "title": "The (-2,3,-3) and the (-2,3,9) partner pretzel knots",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-030-65-the-912-knot",
      "title": "The 912 knot",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-026-acknowledgements",
+     "id": "sec-031-acknowledgements",
      "title": "Acknowledgements",
      "prose_ratio": 0.986,
      "coverage_ratio": 1.0,
@@ -761,7 +1520,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-027-references",
+     "id": "sec-032-references",
      "title": "References",
      "result": "no matching \\section"
     }

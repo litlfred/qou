@@ -1,0 +1,39 @@
+Spiders for Rank 2 Lie Algebras 139
+
+represent paths p and p’ from the the upper left corner to the lower right corner of
+an a x b rectangle, where each “+” in s or s’ is a step to the right and each “—”
+is a step down:
+
++ + P
+‘Ott
+S=t+----++ p' Br
+soa +--+ -tt- | +
+ASA
+
+If an H-web is placed in each square as indicated, the two paths p and p’ delineate
+a sequence of connected webs, separated by points or segments where p and p’
+meet and may or may not cross. We attach each web bounded below by p to w,
+and we invert and reverse the arrows of each web bounded above by p and then
+attach it to w. The result is a web w’ € B(C[s’]) with core w:
+
+cad
+|
+
+If s; and s2 are arbitrary strings of the same weight, we can set s’ to either in
+the stair-step construction, which implies that any core w of a web in B(C[s;]) is
+also a core of a web in B(C[s2]). Moreover, it is easy to check that, if w is fixed,
+the collection of webs so produced is closed under H-moves. Since every basis web
+is related to its core by H-moves, the stair-step construction produces all webs in
+B(Cc) for all c with weight A. In particular, we have demonstrated the following
+lemma:
+
+Lemma 6.7. Let C be a sequence of clasps and let c be a clasp of weight 2.
+If w € B(C[c]), let f(w) be its core. Then the map f : B(C[c]) — B(C;4) is a
+bijection.
+
+Using the above lemmas, we can prove Theorem 6.2:
+
+Proof. Let w; € B(C; A) and w2 € B(D; 4*), and let c; and c2 be the clasps of w;
+and w2 of weight 2 and 4*. Then we can either extend w; to a basis web in B(Cc})
+or extend w2 to a basis web in B(Dc;) and then sew the two webs together; by the
+symmetry of the stair-step construction, the resulting web w € B(CD) is the same

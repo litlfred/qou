@@ -8,10 +8,10 @@ parameter $\tau \in \mathbb{H}$ in the upper half-plane, the modular
 $S$-transform $\tau \mapsto -1/\tau$ induces the analytic continuation*
 
 $$
-  q  \;\longmapsto\;  \tilde q \;:=\; \exp\!\bigl(2\pi i / \tau\bigr).
+  q  \;\longmapsto\;  \tilde q \;:=\; \exp\!\bigl(-2\pi i / \tau\bigr).
 $$
 
-The substrate enters this picture through its bar image $q_0^{-1}$, not through $q_0$. Modular convergence requires $\mathrm{Im}\tau > 0$. Because $q_0 \approx 1.11 > 1$, the value $q_0 = e^{2\pi i\tau_0}$ has $\mathrm{Im}\tau_0 < 0$. Only $q_0^{-1} \approx 0.901 < 1$ lands in $\mathbb{H}$. The modular sector is intrinsically bar-symmetric.
+The substrate enters this picture through its bar image $q_0^{-1}$, not through $q_0$. Modular convergence requires $\mathrm{Im}\tau > 0$. Because $q_0 \approx 1.11 > 1$, the value $q_0 = e^{2\pi i\tau_0}$ has $\mathrm{Im}\tau_0 < 0$. Only $q_0^{-1} \approx 0.901 < 1$ lands in $\mathbb{H}$. The modular sector is intrinsically bar-symmetric. A proved instance of a $q \leftrightarrow \tilde q$ pairing of this kind: the Andersen--Kashaev state integral of the figure-eight knot is a bilinear combination of two $q$-hypergeometric series, each evaluated once at $q$ and once at the modular partner $\tilde q = e^{-2\pi i/\tau}$, with $\tau = b^2$ \cite[\S1.3]{garoufalidis2013}.
 
 The $S$-transform provides a structural duality. The parameter $q$ admits a bar-symmetric real parameterisation ($q \in \mathbb{R}_{>0}$) and a modular parameterisation ($q = e^{2\pi i \tau}$). The analytic continuation of every Hecke quantity to the modular parameter is well-defined. The $S$-transform $\tau \mapsto -1/\tau$ provides a categorical duality complementing the bar involution.
 
@@ -35,8 +35,7 @@ bar.
 
 ## Connection to TQFT / Volume Conjecture
 
-The Kashaev Volume Conjecture
-([`conj:kashaev-volume-conjecture`](#conj:kashaev-volume-conjecture))
+The [Kashaev volume conjecture](#conj:kashaev-volume-conjecture)
 asymptotics are governed by the limit $q \to e^{2\pi i / k}$ as
 $k \to \infty$.  The $S$-transform realises this limit as the
 modular image of the substrate: writing the bar image
@@ -45,8 +44,7 @@ positive imaginary, near the cusp $\tau \to 0$), the $S$-transform sends
 $\tau_0 \mapsto -1/\tau_0 \approx +60.2\,i$ — large positive imaginary
 part, i.e. nome $\tilde q \to 0$, the root-of-unity / TQFT limit. (The
 choice of $q_0^{-1}$ over $q_0$ is the bar-image point of the conjecture
-statement above; witness
-[`computations/probes/d14-theta-bar-side.witness.json`](../../../computations/probes/d14-theta-bar-side.witness.json).)
+statement above.)
 
 This gives the framework an **explicit categorical handle** on the
 small-$q_0$ $\leftrightarrow$ root-of-unity duality.
@@ -54,8 +52,8 @@ small-$q_0$ $\leftrightarrow$ root-of-unity duality.
 ## Relationship to the complex-$q$ lift
 
 The complex-$q$ extension
-([`prop:q-zero-complex-extension`](#prop:q-zero-complex-extension)
-+ [`prop:lusztig-vs-hermitian-bar`](#prop:lusztig-vs-hermitian-bar))
+([The pre-Archimedean substrate is polymorphic in its base ring](#prop:q-zero-complex-extension)
++ [Lusztig bar vs Hermitian-$\ast$ on the complex Hecke algebra](#prop:lusztig-vs-hermitian-bar))
 extends the framework's substrate to complex $q$ with $|q| > 1$.
 The modular $S$-transform of this conjecture is the natural
 **continuation of bar** beyond the real axis:
@@ -99,7 +97,7 @@ parameter manifold:
    evaluation.
 3. **Do not conflate with the named elliptic curves.** The modular
    $\tau$ here is **not** the period $\tau$ of the Descartes/color curve
-   $\mathcal{E}_q$ ([`prop:descartes-elliptic-curve`](../brings-surface/descartes-elliptic-curve.md)):
+   $\mathcal{E}_q$ ([The Descartes elliptic curve $\mathcal{E}_q$](../brings-surface/descartes-elliptic-curve.md)):
    the modular nome is $q_0^{-1} \approx 0.90$ (near the cusp) while
    $\mathcal{E}_q$'s period nome is $\approx 0.0029$ (deep in the
    fundamental domain) — a $\sim\!312\times$ mismatch.
@@ -112,9 +110,9 @@ parameter manifold:
 
 ## Cross-references
 
-- The complex-$q$ lift: blocks `prop:q-zero-complex-extension` +
-  `prop:lusztig-vs-hermitian-bar`
-- Volume Conjecture: [`conj:kashaev-volume-conjecture`](#conj:kashaev-volume-conjecture)
-- The Bloch-group route: [`conj:borromean-bloch-group-element`](borromean-bloch-group-element.md)
+- The complex-$q$ lift: [The pre-Archimedean substrate is polymorphic in its base ring](#prop:q-zero-complex-extension) +
+  [Lusztig bar vs Hermitian-$\ast$ on the complex Hecke algebra](#prop:lusztig-vs-hermitian-bar)
+- Volume Conjecture: [Kashaev volume conjecture](#conj:kashaev-volume-conjecture)
+- The Bloch-group route: [Borromean rings represent a non-trivial element of $K_3(\mathbb{C})$ / Bloch group with regulator $r_2 = 8G$](../mass-theory/borromean-bloch-group-element.md)
 
 **Archimedean specialisation.** Modular convergence is an archimedean statement: the estimates use $\mathrm{Im}\,\tau$ and $\exp$ over $\mathbb{R}$, so it sits on the archimedean side of the substrate wall.

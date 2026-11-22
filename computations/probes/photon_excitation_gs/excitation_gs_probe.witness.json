@@ -1,0 +1,444 @@
+{
+ "probe": "photon_excitation_gs",
+ "exact": "sympy Q(q,phi)",
+ "convention": "D, z=q^3/(q^2+1)",
+ "photon": "1 + phi0 s_a + phi1 s_b + phi01 s_a s_b^-1",
+ "checks": [
+  {
+   "name": "quadratic sigma0^2 = h sigma0 + 1",
+   "pass": true
+  },
+  {
+   "name": "braid s0 s1 s0 = s1 s0 s1",
+   "pass": true
+  },
+  {
+   "name": "tr_D(1)=1, tr_D(s0)=z_D",
+   "pass": true
+  },
+  {
+   "name": "left and right products agree: s1*(s0 s1 s0)",
+   "pass": true
+  },
+  {
+   "name": "X1 is GS-irreducible (reduced expression of w0)",
+   "pass": true
+  },
+  {
+   "name": "X3 = s0^3 is NOT GS-irreducible already in the ground state",
+   "pass": true
+  },
+  {
+   "name": "photon cannot raise Bruhat length above l(w0)=3 in H3 (gamma*X1)",
+   "pass": true
+  },
+  {
+   "name": "chi(gamma*X1) = chi(gamma)*chi(X1)  (chi multiplicative)",
+   "pass": true
+  },
+  {
+   "name": "every non-identity photon monomial times w0 hits a quadratic branch",
+   "pass": true
+  },
+  {
+   "name": "positive stabilisations stay GS-irreducible and add 1 to Bruhat length each",
+   "pass": true
+  },
+  {
+   "name": "tr_D ratio per positive curl = z_D",
+   "pass": true
+  },
+  {
+   "name": "tr_D ratio for a negative curl = bar(z_D) = z_D(q^-1)",
+   "pass": true
+  },
+  {
+   "name": "negative curl: two NF terms (lengths 3 and 4); each term irreducible",
+   "pass": true
+  },
+  {
+   "name": "s0^m: chi = q^m (= q^writhe) for m=3,5,7,9",
+   "pass": true
+  },
+  {
+   "name": "s0^m never reduces to a single word; NF stays in span{1,s0}",
+   "pass": true
+  },
+  {
+   "name": "disjoint photon: chi factorises and tr_D factorises",
+   "pass": true
+  },
+  {
+   "name": "chi(NF(beta)) = q^writhe(beta) for all 341 signed words of length <= 4 in H3",
+   "pass": true
+  }
+ ],
+ "results": [
+  {
+   "label": "ground X1 = s0 s1 s0 (H3)",
+   "terms": 1,
+   "maxlen": 3,
+   "length_profile": [
+    3
+   ],
+   "chi": "q**3",
+   "tr_D": "q**3*(q**4 + 1)/(q**2 + 1)**2",
+   "nf": {
+    "s0s1s0": "1"
+   },
+   "quadratic_branches_left_to_right": 0,
+   "GS_irreducible_as_written": true
+  },
+  {
+   "label": "ground X3 = s0^3 (H2 in H3)",
+   "terms": 2,
+   "maxlen": 1,
+   "length_profile": [
+    0,
+    1
+   ],
+   "chi": "q**3",
+   "tr_D": "(q**6 + q**2 - 1)/(q*(q**2 + 1))",
+   "nf": {
+    "1": "(q - 1)*(q + 1)/q",
+    "s0": "(q**4 - q**2 + 1)/q**2"
+   },
+   "quadratic_branches_left_to_right": 2,
+   "GS_irreducible_as_written": false
+  },
+  {
+   "label": "gamma * X1",
+   "terms": 4,
+   "maxlen": 3,
+   "length_profile": [
+    1,
+    2,
+    3
+   ],
+   "chi": "q**3*(phi0*q + phi01 + phi1*q + 1)",
+   "tr_D": "q**2*(phi0*q**6 + phi0*q**2 - phi0 + phi01*q**5 + phi01*q + phi1*q**6 + phi1*q**2 - phi1 + q**5 + q)/(q**2 + 1)**2",
+   "nf": {
+    "s1": "phi01",
+    "s1s0": "phi0",
+    "s0s1": "(phi01*q**2 - phi01 + phi1*q)/q",
+    "s0s1s0": "(phi0*q**2 - phi0 + phi1*q**2 - phi1 + q)/q"
+   }
+  },
+  {
+   "label": "X1 * gamma",
+   "terms": 4,
+   "maxlen": 3,
+   "length_profile": [
+    1,
+    2,
+    3
+   ],
+   "chi": "q**3*(phi0*q + phi01 + phi1*q + 1)",
+   "tr_D": "q**2*(phi0*q**6 + phi0*q**2 - phi0 + phi01*q**5 + phi01*q + phi1*q**6 + phi1*q**2 - phi1 + q**5 + q)/(q**2 + 1)**2",
+   "nf": {
+    "s0": "phi01",
+    "s0s1": "phi0",
+    "s1s0": "(phi01*q**2 - phi01 + phi1*q)/q",
+    "s0s1s0": "(phi0*q**2 - phi0 + phi1*q**2 - phi1 + q)/q"
+   }
+  },
+  {
+   "label": "gamma * X3",
+   "terms": 6,
+   "maxlen": 3,
+   "length_profile": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "chi": "q**3*(phi0*q + phi01 + phi1*q + 1)",
+   "tr_D": "(phi0*q**11 + phi0*q**9 + phi0*q**7 + phi0*q + phi01*q**8 + phi01*q**4 - phi01*q**2 + phi01 + phi1*q**11 + phi1*q**7 - phi1*q**5 + q**10 + q**8 + q**6 - q**2)/(q**3*(q**2 + 1)**2)",
+   "nf": {
+    "1": "-(-phi0*q**5 + phi0*q**3 - phi0*q + phi01*q**6 - 2*phi01*q**4 + 2*phi01*q**2 - phi01 - q**4 + q**2)/q**3",
+    "s0": "-(-phi0*q**7 + phi0*q**5 - phi0*q**3 + phi0*q + phi01*q**8 - 2*phi01*q**6 + 2*phi01*q**4 - 2*phi01*q**2 + phi01 - q**6 + q**4 - q**2)/q**4",
+    "s1": "phi1*(q - 1)*(q + 1)/q",
+    "s1s0": "phi1*(q**4 - q**2 + 1)/q**2",
+    "s0s1": "phi01*(q - 1)*(q + 1)/q",
+    "s0s1s0": "phi01*(q**4 - q**2 + 1)/q**2"
+   }
+  },
+  {
+   "label": "X3 * gamma",
+   "terms": 4,
+   "maxlen": 2,
+   "length_profile": [
+    0,
+    1,
+    2
+   ],
+   "chi": "q**3*(phi0*q + phi01 + phi1*q + 1)",
+   "tr_D": "(phi0*q**11 + phi0*q**9 + phi0*q**7 + phi0*q + phi01*q**8 + phi01*q**4 - phi01*q**2 + phi01 + phi1*q**11 + phi1*q**7 - phi1*q**5 + q**10 + q**8 + q**6 - q**2)/(q**3*(q**2 + 1)**2)",
+   "nf": {
+    "1": "-(-phi0*q**5 + phi0*q**3 - phi0*q + phi01*q**6 - 2*phi01*q**4 + 2*phi01*q**2 - phi01 - q**4 + q**2)/q**3",
+    "s0": "-(-phi0*q**7 + phi0*q**5 - phi0*q**3 + phi0*q + phi01*q**8 - 2*phi01*q**6 + 2*phi01*q**4 - 2*phi01*q**2 + phi01 - q**6 + q**4 - q**2)/q**4",
+    "s1": "(phi01*q**4 - phi01*q**2 + phi01 + phi1*q**3 - phi1*q)/q**2",
+    "s0s1": "(phi01*q**6 - phi01*q**4 + phi01*q**2 - phi01 + phi1*q**5 - phi1*q**3 + phi1*q)/q**3"
+   }
+  },
+  {
+   "label": "monomial s0*X1",
+   "terms": 2,
+   "maxlen": 3,
+   "length_profile": [
+    2,
+    3
+   ],
+   "chi": "q**4",
+   "tr_D": "q**2*(q**6 + q**2 - 1)/(q**2 + 1)**2",
+   "nf": {
+    "s1s0": "1",
+    "s0s1s0": "(q - 1)*(q + 1)/q"
+   },
+   "quadratic_branches_left_to_right": 1,
+   "GS_irreducible_as_written": false
+  },
+  {
+   "label": "monomial s1*X1",
+   "terms": 2,
+   "maxlen": 3,
+   "length_profile": [
+    2,
+    3
+   ],
+   "chi": "q**4",
+   "tr_D": "q**2*(q**6 + q**2 - 1)/(q**2 + 1)**2",
+   "nf": {
+    "s0s1": "1",
+    "s0s1s0": "(q - 1)*(q + 1)/q"
+   },
+   "quadratic_branches_left_to_right": 1,
+   "GS_irreducible_as_written": false
+  },
+  {
+   "label": "monomial s0 s1^-1 * X1",
+   "terms": 2,
+   "maxlen": 2,
+   "length_profile": [
+    1,
+    2
+   ],
+   "chi": "q**3",
+   "tr_D": "q**3*(q**4 + 1)/(q**2 + 1)**2",
+   "nf": {
+    "s1": "1",
+    "s0s1": "(q - 1)*(q + 1)/q"
+   },
+   "quadratic_branches_left_to_right": 4,
+   "GS_irreducible_as_written": false
+  },
+  {
+   "label": "X1 + 0 positive curl(s) (H3)",
+   "terms": 1,
+   "maxlen": 3,
+   "length_profile": [
+    3
+   ],
+   "chi": "q**3",
+   "tr_D": "q**3*(q**4 + 1)/(q**2 + 1)**2",
+   "nf": {
+    "s0s1s0": "1"
+   },
+   "quadratic_branches_left_to_right": 0,
+   "GS_irreducible_as_written": true
+  },
+  {
+   "label": "X1 + 1 positive curl(s) (H4)",
+   "terms": 1,
+   "maxlen": 4,
+   "length_profile": [
+    4
+   ],
+   "chi": "q**4",
+   "tr_D": "q**6*(q**4 + 1)/(q**2 + 1)**3",
+   "nf": {
+    "s0s1s2s0": "1"
+   },
+   "quadratic_branches_left_to_right": 0,
+   "GS_irreducible_as_written": true
+  },
+  {
+   "label": "X1 + 2 positive curl(s) (H5)",
+   "terms": 1,
+   "maxlen": 5,
+   "length_profile": [
+    5
+   ],
+   "chi": "q**5",
+   "tr_D": "q**9*(q**4 + 1)/(q**2 + 1)**4",
+   "nf": {
+    "s0s1s2s3s0": "1"
+   },
+   "quadratic_branches_left_to_right": 0,
+   "GS_irreducible_as_written": true
+  },
+  {
+   "label": "X1 + 3 positive curl(s) (H6)",
+   "terms": 1,
+   "maxlen": 6,
+   "length_profile": [
+    6
+   ],
+   "chi": "q**6",
+   "tr_D": "q**12*(q**4 + 1)/(q**2 + 1)**5",
+   "nf": {
+    "s0s1s2s3s4s0": "1"
+   },
+   "quadratic_branches_left_to_right": 0,
+   "GS_irreducible_as_written": true
+  },
+  {
+   "label": "X1 + 1 negative curl (H4)",
+   "terms": 2,
+   "maxlen": 4,
+   "length_profile": [
+    3,
+    4
+   ],
+   "chi": "q**2",
+   "tr_D": "q**2*(q**4 + 1)/(q**2 + 1)**3",
+   "nf": {
+    "s0s1s0": "-(q - 1)*(q + 1)/q",
+    "s0s1s2s0": "1"
+   },
+   "quadratic_branches_left_to_right": 0,
+   "GS_irreducible_as_written": true
+  },
+  {
+   "label": "s0^3 (H2): writhe 3, shell n=(m-1)/2=1",
+   "terms": 2,
+   "maxlen": 1,
+   "length_profile": [
+    0,
+    1
+   ],
+   "chi": "q**3",
+   "tr_D": "(q**6 + q**2 - 1)/(q*(q**2 + 1))",
+   "nf": {
+    "1": "(q - 1)*(q + 1)/q",
+    "s0": "(q**4 - q**2 + 1)/q**2"
+   },
+   "quadratic_branches_left_to_right": 2,
+   "GS_irreducible_as_written": false,
+   "coeff_sigma": "(q**4 - q**2 + 1)/q**2",
+   "deg_q_coeff_sigma": 2
+  },
+  {
+   "label": "s0^5 (H2): writhe 5, shell n=(m-1)/2=2",
+   "terms": 2,
+   "maxlen": 1,
+   "length_profile": [
+    0,
+    1
+   ],
+   "chi": "q**5",
+   "tr_D": "(q**10 + q**6 - q**4 + q**2 - 1)/(q**3*(q**2 + 1))",
+   "nf": {
+    "1": "(q - 1)*(q + 1)*(q**4 + 1)/q**3",
+    "s0": "(q**8 - q**6 + q**4 - q**2 + 1)/q**4"
+   },
+   "quadratic_branches_left_to_right": 4,
+   "GS_irreducible_as_written": false,
+   "coeff_sigma": "(q**8 - q**6 + q**4 - q**2 + 1)/q**4",
+   "deg_q_coeff_sigma": 4
+  },
+  {
+   "label": "s0^7 (H2): writhe 7, shell n=(m-1)/2=3",
+   "terms": 2,
+   "maxlen": 1,
+   "length_profile": [
+    0,
+    1
+   ],
+   "chi": "q**7",
+   "tr_D": "(q**14 + q**10 - q**8 + q**6 - q**4 + q**2 - 1)/(q**5*(q**2 + 1))",
+   "nf": {
+    "1": "(q - 1)*(q + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - q**2 + 1)/q**5",
+    "s0": "(q**12 - q**10 + q**8 - q**6 + q**4 - q**2 + 1)/q**6"
+   },
+   "quadratic_branches_left_to_right": 6,
+   "GS_irreducible_as_written": false,
+   "coeff_sigma": "(q**12 - q**10 + q**8 - q**6 + q**4 - q**2 + 1)/q**6",
+   "deg_q_coeff_sigma": 6
+  },
+  {
+   "label": "s0^9 (H2): writhe 9, shell n=(m-1)/2=4",
+   "terms": 2,
+   "maxlen": 1,
+   "length_profile": [
+    0,
+    1
+   ],
+   "chi": "q**9",
+   "tr_D": "(q**18 + q**14 - q**12 + q**10 - q**8 + q**6 - q**4 + q**2 - 1)/(q**7*(q**2 + 1))",
+   "nf": {
+    "1": "(q - 1)*(q + 1)*(q**4 + 1)*(q**8 + 1)/q**7",
+    "s0": "(q**4 - q**2 + 1)*(q**12 - q**6 + 1)/q**8"
+   },
+   "quadratic_branches_left_to_right": 8,
+   "GS_irreducible_as_written": false,
+   "coeff_sigma": "(q**4 - q**2 + 1)*(q**12 - q**6 + 1)/q**8",
+   "deg_q_coeff_sigma": 8
+  },
+  {
+   "label": "gamma(s1,s2) * X1 (H4)",
+   "terms": 4,
+   "maxlen": 5,
+   "length_profile": [
+    2,
+    3,
+    4,
+    5
+   ],
+   "chi": "q**3*(phi0*q + phi01 + phi1*q + 1)",
+   "tr_D": "q*(phi0*q**9 + phi0*q**7 + phi0*q**5 - phi0*q + phi01*q**6 + phi01*q**2 - phi01 + phi1*q**9 + phi1*q**5 + q**8 + q**6 + q**4 + q**2)/(q**2 + 1)**3",
+   "nf": {
+    "s0s1": "-(-phi0*q + phi01*q**2 - phi01)/q",
+    "s0s1s0": "-(-phi0*q**3 + phi0*q + phi01*q**4 - 2*phi01*q**2 + phi01 - q**2)/q**2",
+    "s2s0s1s0": "phi1",
+    "s1s2s0s1s0": "phi01"
+   }
+  },
+  {
+   "label": "X1 * gamma(s1,s2) (H4)",
+   "terms": 4,
+   "maxlen": 4,
+   "length_profile": [
+    2,
+    3,
+    4
+   ],
+   "chi": "q**3*(phi0*q + phi01 + phi1*q + 1)",
+   "tr_D": "q*(phi0*q**9 + phi0*q**7 + phi0*q**5 - phi0*q + phi01*q**6 + phi01*q**2 - phi01 + phi1*q**9 + phi1*q**5 + q**8 + q**6 + q**4 + q**2)/(q**2 + 1)**3",
+   "nf": {
+    "s1s0": "-(-phi0*q + phi01*q**2 - phi01)/q",
+    "s0s1s0": "-(-phi0*q**3 + phi0*q + phi01*q**4 - 2*phi01*q**2 + phi01 - q**2)/q**2",
+    "s1s2s0": "phi01",
+    "s0s1s2s0": "(phi01*q**2 - phi01 + phi1*q)/q"
+   }
+  },
+  {
+   "label": "X1 * gamma(s3,s4) disjoint (H6)",
+   "terms": 4,
+   "maxlen": 5,
+   "length_profile": [
+    3,
+    4,
+    5
+   ],
+   "chi": "q**3*(phi0*q + phi01 + phi1*q + 1)",
+   "tr_D": "q**3*(q**4 + 1)*(phi0*q**5 + phi0*q**3 + phi01*q**2 + phi1*q**5 + phi1*q**3 + q**4 + 2*q**2 + 1)/(q**2 + 1)**4",
+   "nf": {
+    "s0s1s0": "1",
+    "s3s0s1s0": "-(-phi0*q + phi01*q**2 - phi01)/q",
+    "s4s0s1s0": "phi1",
+    "s3s4s0s1s0": "phi01"
+   }
+  }
+ ]
+}

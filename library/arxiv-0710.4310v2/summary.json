@@ -2,155 +2,200 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-0710.4310v2",
  "source_sha256": "9a7757f998b7f680",
- "brief": "On Two-Dimensional Holonomy João Faria Martins Centro de Matemática da Universidade do Porto — We deﬁne the thin fundamental categorical group P2(M, ∗) of a based smooth manifold ( M, ∗) as the",
- "extended": "**On Two-Dimensional Holonomy João Faria Martins Centro de Matemática da Universidade do Porto**\n\n*Rua do Campo Alegre, 687, 4169-007 Porto, Portugal*\n\n46 pp, 29 sections.\n\n**Abstract.** We deﬁne the thin fundamental categorical group P2(M, ∗) of a based smooth manifold ( M, ∗) as the categorical group whose objects are rank-1 homotopy classes of based loops on M , and whose morphisms are rank- 2 homotopy classes of homotopies between based loops on M . Here two maps are rank- n homotopic, when the rank of the diﬀerential of the homo- topy between them equals n. Let C(G) be a Lie categorical group coming from a Lie crossed module G = (∂ : E → G, ⊲). We construct categorical holonomies, deﬁned to be smooth morphisms P2(M, ∗) → C (G), by using a notion of categorical connections, being a pair ( ω, m), where ω is a con- nection 1-form on P , a principal G bundle over M , and m is a 2-form on P with values in the Lie algebra of E, with the pair ( ω, m) satisfying suit- able conditions. As a further result, we are able to deﬁne Wil son spheres in this context.\n\n**Outline.** Preliminaries; Curvature; Parallel transport; The dependence of the parallel transport on a ; Crossed modules; Crossed modules and categorical groups; The thin fundamental categorical group of a ma; 1-Tracks; 2-Tracks; Horizontal and vertical compositions of 2-trac; The thin fundamental crossed module of a smoot; Two exact sequences; Two-dimensional holonomies; Categorical connections; The 2-curvature 3-form of a G-categorical conn; Algebraic preliminaries; The 2-structure equation; The 2-Bianchi identity\n\n**Extracted claims (proposals, not verified).**\n- Theorem 20: Let M be a smooth manifold. The horizontal and vertical com-\n- Theorem 21: The boundary map ∂ : π2,1\n- Theorem 23: Let M be a smooth manifold with a base point ∗. The crossed\n- Theorem 35: Let M be a smooth manifold with a base point ∗. Let also G\n- Theorem 39: LetG be a Lie group. Let M be a smooth manifold. Let also P →\n- Theorem 42: Let M be a smooth manifold. Let G = (∂ : E →G,⊲ ) be a Lie",
+ "brief": "On Two-Dimensional Holonomy — We deﬁne the thin fundamental categorical group P2(M, ∗) of a based smooth manifold (M, ∗) as the categorical group whose objects are rank-1 homotopy classes of based",
+ "extended": "**On Two-Dimensional Holonomy**\n\n*João Faria Martins*\n\n46 pp, 38 sections.\n\n**Abstract.** We deﬁne the thin fundamental categorical group P2(M, ∗) of a based smooth manifold (M, ∗) as the categorical group whose objects are rank-1 homotopy classes of based loops on M, and whose morphisms are rank- 2 homotopy classes of homotopies between based loops on M. Here two maps are rank-n homotopic, when the rank of the diﬀerential of the homo- topy between them equals n. Let C(G) be a Lie categorical group coming from a Lie crossed module G = (∂: E →G, ⊲). We construct categorical holonomies, deﬁned to be smooth morphisms P2(M, ∗) →C(G), by using a notion of categorical connections, being a pair (ω, m), where ω is a con- nection 1-form on P, a principal G bundle over M, and m is a 2-form on P with values in the Lie algebra of E, with the pair (ω, m) satisfying suit- able conditions. As a further result, we are able to deﬁne Wilson spheres in this context.\n\n**Outline.** Front matter; Preliminaries; Resumé of results and notation from the theory; Connections on principal fibre bundles; Curvature; Parallel transport; The dependence of the parallel transport on a ; Crossed modules; Crossed modules and categorical groups; The thin fundamental categorical group of a ma; 1-Tracks; 2-Tracks; Horizontal and vertical compositions of 2-trac; Definition of the thin fundamental categorical; The thin fundamental crossed module of a smoot; Two exact sequences; Two-dimensional holonomies; Categorical connections",
  "tokens": {
-  "brief": 48,
-  "extended": 514
+  "brief": 49,
+  "extended": 378
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-4"
+  },
+  {
    "id": "sec-000-preliminaries",
    "title": "Preliminaries",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-001-resumé-of-results-and-notation-from-the-theory-o",
+   "title": "Resumé of results and notation from the theory of principal fibre bundles",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-002-connections-on-principal-fibre-bundles",
+   "title": "Connections on principal fibre bundles",
    "pages": "4-5"
   },
   {
-   "id": "sec-001-curvature",
+   "id": "sec-003-curvature",
    "title": "Curvature",
    "pages": "5-6"
   },
   {
-   "id": "sec-002-parallel-transport",
+   "id": "sec-004-parallel-transport",
    "title": "Parallel transport",
    "pages": "6-6"
   },
   {
-   "id": "sec-003-the-dependence-of-the-parallel-transport-on-a-sm",
+   "id": "sec-005-the-dependence-of-the-parallel-transport-on-a-sm",
    "title": "The dependence of the parallel transport on a smooth family of curves - the Ambrose-Singer theorem",
    "pages": "6-9"
   },
   {
-   "id": "sec-004-crossed-modules",
+   "id": "sec-006-crossed-modules",
    "title": "Crossed modules",
    "pages": "9-11"
   },
   {
-   "id": "sec-005-crossed-modules-and-categorical-groups",
+   "id": "sec-007-crossed-modules-and-categorical-groups",
    "title": "Crossed modules and categorical groups",
    "pages": "11-12"
   },
   {
-   "id": "sec-006-the-thin-fundamental-categorical-group-of-a-mani",
+   "id": "sec-008-the-thin-fundamental-categorical-group-of-a-mani",
    "title": "The thin fundamental categorical group of a manifold",
-   "pages": "12-13"
+   "pages": "12-12"
   },
   {
-   "id": "sec-007-1-tracks",
+   "id": "sec-009-1-tracks",
    "title": "1-Tracks",
-   "pages": "13-14"
+   "pages": "12-14"
   },
   {
-   "id": "sec-008-2-tracks",
+   "id": "sec-010-2-tracks",
    "title": "2-Tracks",
    "pages": "14-14"
   },
   {
-   "id": "sec-009-horizontal-and-vertical-compositions-of-2-tracks",
+   "id": "sec-011-horizontal-and-vertical-compositions-of-2-tracks",
    "title": "Horizontal and vertical compositions of 2-tracks",
    "pages": "14-15"
   },
   {
-   "id": "sec-010-the-thin-fundamental-crossed-module-of-a-smooth",
+   "id": "sec-012-definition-of-the-thin-fundamental-categorical-g",
+   "title": "Definition of the thin fundamental categorical group of a smooth manifold",
+   "pages": "15-15"
+  },
+  {
+   "id": "sec-013-the-thin-fundamental-crossed-module-of-a-smooth",
    "title": "The thin fundamental crossed module of a smooth manifold",
    "pages": "15-16"
   },
   {
-   "id": "sec-011-two-exact-sequences",
+   "id": "sec-014-two-exact-sequences",
    "title": "Two exact sequences",
    "pages": "16-17"
   },
   {
-   "id": "sec-012-two-dimensional-holonomies",
+   "id": "sec-015-two-dimensional-holonomies",
    "title": "Two-dimensional holonomies",
    "pages": "17-17"
   },
   {
-   "id": "sec-013-categorical-connections",
+   "id": "sec-016-categorical-connections",
    "title": "Categorical connections",
    "pages": "17-18"
   },
   {
-   "id": "sec-014-the-2-curvature-3-form-of-a-g-categorical-connec",
+   "id": "sec-017-the-2-curvature-3-form-of-a-g-categorical-connec",
    "title": "The 2-curvature 3-form of a G-categorical connection",
    "pages": "18-18"
   },
   {
-   "id": "sec-015-algebraic-preliminaries",
+   "id": "sec-018-algebraic-preliminaries",
    "title": "Algebraic preliminaries",
    "pages": "18-19"
   },
   {
-   "id": "sec-016-the-2-structure-equation",
+   "id": "sec-019-the-2-structure-equation",
    "title": "The 2-structure equation",
    "pages": "19-20"
   },
   {
-   "id": "sec-017-the-2-bianchi-identity",
+   "id": "sec-020-the-2-bianchi-identity",
    "title": "The 2-Bianchi identity",
    "pages": "20-20"
   },
   {
-   "id": "sec-018-local-form-of-a-categorical-connection",
+   "id": "sec-021-local-form-of-a-categorical-connection",
    "title": "Local form of a categorical connection",
    "pages": "20-22"
   },
   {
-   "id": "sec-019-categorical-holonomy",
+   "id": "sec-022-categorical-holonomy",
    "title": "Categorical holonomy",
-   "pages": "22-25"
+   "pages": "22-22"
   },
   {
-   "id": "sec-020-categorical-connections-and-categorical-connecti",
+   "id": "sec-023-definition-of-a-holonomy",
+   "title": "Definition of a holonomy.",
+   "pages": "22-23"
+  },
+  {
+   "id": "sec-024-definition-of-a-categorical-holonomy",
+   "title": "Definition of a categorical holonomy",
+   "pages": "23-25"
+  },
+  {
+   "id": "sec-025-categorical-connections-and-categorical-connecti",
    "title": "Categorical connections and categorical connection holonomies",
+   "pages": "25-25"
+  },
+  {
+   "id": "sec-026-defining-a-categorical-holonomy-from-a-categoric",
+   "title": "Defining a categorical holonomy from a categorical connection",
    "pages": "25-27"
   },
   {
-   "id": "sec-021-a-well-known-lemma",
+   "id": "sec-027-a-well-known-lemma",
    "title": "A well-known lemma",
    "pages": "27-27"
   },
   {
-   "id": "sec-022-the-dependence-of-the-surface-holonomy-on-a-smoo",
+   "id": "sec-028-the-dependence-of-the-surface-holonomy-on-a-smoo",
    "title": "The dependence of the surface holonomy on a smooth family of surfaces",
    "pages": "27-33"
   },
   {
-   "id": "sec-023-re-scaling",
+   "id": "sec-029-re-scaling",
    "title": "Re-scaling",
-   "pages": "33-37"
+   "pages": "33-34"
   },
   {
-   "id": "sec-024-2-bundles",
+   "id": "sec-030-verification-of-the-axioms-for-a-categorical-hol",
+   "title": "Verification of the axioms for a categorical holonomy",
+   "pages": "34-37"
+  },
+  {
+   "id": "sec-031-2-bundles",
    "title": "2-Bundles",
    "pages": "37-39"
   },
   {
-   "id": "sec-025-wilson-spheres",
+   "id": "sec-032-wilson-spheres",
    "title": "Wilson Spheres",
    "pages": "39-39"
   },
   {
-   "id": "sec-026-the-dependence-of-a-categorical-connection-holon",
+   "id": "sec-033-the-dependence-of-a-categorical-connection-holon",
    "title": "The dependence of a categorical connection holonomy on the elements of the fibre",
-   "pages": "39-41"
+   "pages": "39-40"
   },
   {
-   "id": "sec-027-associating-2-holonomies-to-embedded-spheres",
+   "id": "sec-034-the-dependence-of-a-categorical-connection-holon",
+   "title": "The dependence of a categorical connection holonomy on the point in the principal bundle",
+   "pages": "40-41"
+  },
+  {
+   "id": "sec-035-associating-2-holonomies-to-embedded-spheres",
    "title": "Associating 2-holonomies to embedded spheres",
    "pages": "41-43"
   },
   {
-   "id": "sec-028-appendix-technical-lemmas",
+   "id": "sec-036-appendix-technical-lemmas",
    "title": "Appendix: Technical Lemmas",
    "pages": "43-46"
   }
@@ -159,8 +204,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

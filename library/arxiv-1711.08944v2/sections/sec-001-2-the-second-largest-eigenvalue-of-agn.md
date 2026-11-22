@@ -4,13 +4,14 @@ doc_title: "The second largest eigenvalues of some Cayley graphs on alternating 
 section_id: sec-001-2-the-second-largest-eigenvalue-of-agn
 section_title: "The second largest eigenvalue of AGn"
 section_number: 2
-pages: 3-12
+pages: 3-7
 source_pdf: 1711.08944v2.pdf
 source_sha256: ad7a020e7e92b788
-doc_brief: "The second largest eigenvalues of some Cayley graphs on alternating groups ∗ — Let An denote the alternating group of degree n with n ≥ 3."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.514
+latex_prose_ratio: 0.622
+latex_coverage_ratio: 0.595
+doc_brief: "The second largest eigenvalues of some Cayley graphs on alternating groups ∗ — Let An denote the alternating group of degree n with n ≥3."
 ---
 []{#s-3 label="s-3"} Recall that the complete alternating group graph is defined as $CAG_n=\mathrm{Cay}(A_n,T_3)$, where $T_3=\{(i,j,k),(i,k,j)\mid 1\leq i<j<k\leq n\}$ is the set of all $3$-cycles in $S_n$. In this section, we mainly focus on determining the second largest eigenvalue of $CAG_n$. The main idea is to find some suitable equitable partition so that we can decompose the edge set of $CAG_n$ into that of $n$ copies of $CAG_{n-1}$ and that of the extended alternating group graph $EAG_{n}=\mathrm{Cay}(A_n,T_2)$, where $T_2=\{(1,i,j),(1,j,i)\mid 2\leq i<j\leq n\}$ is the set of $3$-cycles in $S_n$ moving $1$, which ensures that the way of induction could be used to find the second largest eigenvalue of $CAG_n$. For this reason, we first need to consider the same problem for the graph $EAG_n$, and again, the main method depends on finding some suitable equitable partition to decompose the edge set of $EAG_n$.
 

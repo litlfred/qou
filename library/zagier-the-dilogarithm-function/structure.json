@@ -8,9 +8,15 @@
   "pages": 63,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:27Z",
+  "mtime": "2026-11-15T11:07:55Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 47,
+    "reason": "257 letters among 582 non-space characters other than digits: mojibake"
+   }
+  ]
  },
  "metadata": {
   "arxiv": null,
@@ -45,10 +51,11 @@
    "page": 3,
    "source": "inferred",
    "number": "I",
-   "confidence": 0.8,
+   "confidence": 0.95,
    "evidence": [
     "contents",
     "body",
+    "style",
     "number"
    ],
    "page_label": "5"
@@ -112,21 +119,6 @@
     "number"
    ],
    "page_label": "13"
-  },
-  {
-   "level": 1,
-   "title": ". . . and values of Dedekind zeta functions",
-   "page": 14,
-   "source": "inferred",
-   "number": "5",
-   "confidence": 0.95,
-   "evidence": [
-    "contents",
-    "body",
-    "style",
-    "number"
-   ],
-   "page_label": "16"
   },
   {
    "level": 1,
@@ -845,86 +837,98 @@
    "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 4,
-   "n_chars": 8053,
-   "n_words": 1671,
+   "page_end": 3,
+   "n_chars": 6011,
+   "n_words": 1289,
    "label_start": null,
+   "label_end": "5"
+  },
+  {
+   "id": "sec-000-i-the-dilogarithm-function-in-geometry-and-numbe",
+   "number": "I",
+   "title": "The dilogarithm function in geometry and number theory",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2003,
+   "n_words": 376,
+   "label_start": "5",
    "label_end": "6"
   },
   {
-   "id": "sec-000-1-special-values",
+   "id": "sec-001-1-special-values",
    "number": "1",
    "title": "Special values",
    "level": 1,
    "page_start": 4,
    "page_end": 6,
-   "n_chars": 2791,
-   "n_words": 701,
+   "n_chars": 2808,
+   "n_words": 704,
    "label_start": "6",
    "label_end": "8"
   },
   {
-   "id": "sec-001-2-functional-equations",
+   "id": "sec-002-2-functional-equations",
    "number": "2",
    "title": "Functional equations",
    "level": 1,
    "page_start": 6,
-   "page_end": 11,
-   "n_chars": 7251,
-   "n_words": 1495,
+   "page_end": 8,
+   "n_chars": 1967,
+   "n_words": 396,
    "label_start": "8",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-003-3-the-bloch-wigner-function-dz-and-its-generaliz",
+   "number": "3",
+   "title": "The Bloch-Wigner function D(z) and its generalizations",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 11,
+   "n_chars": 5250,
+   "n_words": 1094,
+   "label_start": "10",
    "label_end": "13"
   },
   {
-   "id": "sec-002-4-volumes-of-hyperbolic-3-manifolds",
+   "id": "sec-004-4-volumes-of-hyperbolic-3-manifolds",
    "number": "4",
    "title": "Volumes of hyperbolic 3-manifolds",
    "level": 1,
    "page_start": 11,
-   "page_end": 14,
-   "n_chars": 5948,
-   "n_words": 1148,
-   "label_start": "13",
-   "label_end": "16"
-  },
-  {
-   "id": "sec-003-5-and-values-of-dedekind-zeta-functions",
-   "number": "5",
-   "title": ". . . and values of Dedekind zeta functions",
-   "level": 1,
-   "page_start": 14,
    "page_end": 18,
-   "n_chars": 10305,
-   "n_words": 2013,
-   "label_start": "16",
+   "n_chars": 16298,
+   "n_words": 3170,
+   "label_start": "13",
    "label_end": "20"
   },
   {
-   "id": "sec-004-references",
+   "id": "sec-005-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 18,
    "page_end": 19,
-   "n_chars": 1257,
+   "n_chars": 1265,
    "n_words": 188,
    "label_start": "20",
    "label_end": "21"
   },
   {
-   "id": "sec-005-notes-on-chapter-i",
+   "id": "sec-006-notes-on-chapter-i",
    "number": null,
    "title": "Notes on Chapter I",
    "level": 1,
    "page_start": 19,
    "page_end": 20,
-   "n_chars": 2032,
-   "n_words": 361,
+   "n_chars": 2052,
+   "n_words": 365,
    "label_start": "21",
    "label_end": "22"
   },
   {
-   "id": "sec-006-ii-further-aspects-of-the-dilogarithm",
+   "id": "sec-007-ii-further-aspects-of-the-dilogarithm",
    "number": "II",
    "title": "Further aspects of the dilogarithm",
    "level": 1,
@@ -936,7 +940,7 @@
    "label_end": "22"
   },
   {
-   "id": "sec-007-1-variants-of-the-dilogarithm-function",
+   "id": "sec-008-1-variants-of-the-dilogarithm-function",
    "number": "1",
    "title": "Variants of the dilogarithm function",
    "level": 1,
@@ -948,19 +952,31 @@
    "label_end": "33"
   },
   {
-   "id": "sec-008-2-dilogarithm-identities",
+   "id": "sec-009-2-dilogarithm-identities",
    "number": "2",
    "title": "Dilogarithm identities",
    "level": 1,
    "page_start": 31,
-   "page_end": 56,
-   "n_chars": 57938,
-   "n_words": 12019,
+   "page_end": 39,
+   "n_chars": 20271,
+   "n_words": 3956,
    "label_start": "33",
+   "label_end": "41"
+  },
+  {
+   "id": "sec-010-3-dilogarithms-and-modular-functions-the-nahm-eq",
+   "number": "3",
+   "title": "Dilogarithms and modular functions: the Nahm equation",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 56,
+   "n_chars": 36927,
+   "n_words": 7696,
+   "label_start": "41",
    "label_end": "58"
   },
   {
-   "id": "sec-009-4-higher-polylogarithms",
+   "id": "sec-011-4-higher-polylogarithms",
    "number": "4",
    "title": "Higher polylogarithms",
    "level": 1,
@@ -972,7 +988,7 @@
    "label_end": "63"
   },
   {
-   "id": "sec-010-references",
+   "id": "sec-012-references",
    "number": null,
    "title": "References",
    "level": 1,
@@ -987,9 +1003,9 @@
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 14,
+  "toc_entries": 13,
   "toc_inferred_entries": 14,
-  "toc_inferred_mean_confidence": 0.907,
+  "toc_inferred_mean_confidence": 0.918,
   "toc_inferred_empty_share": 0.0,
   "toc_inferred_method": "contents",
   "figure_entries": 1,
@@ -1012,8 +1028,17 @@
     "items": []
    }
   },
-  "sections": 12,
-  "chars_total": 143108
+  "sections": 14,
+  "chars_total": 142385,
+  "furniture_lines_stripped": 0,
+  "headings_tidied": [
+   {
+    "title": ". . . and values of Dedekind zeta functions",
+    "page": 14,
+    "action": "dropped",
+    "why": "opens in lower case"
+   }
+  ]
  },
  "duplicate_copies": [
   "zagier-the-dilogarithm-function-copy-b"

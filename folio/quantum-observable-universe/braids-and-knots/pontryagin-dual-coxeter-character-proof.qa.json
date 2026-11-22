@@ -249,6 +249,21 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "ef54b6fbd1df",
+          "ts": "14fe83ddc7a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:27:34.993Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "notes": "The two steps (self-duality of Z/2; the sign map is surjective, and the abelianisation has order 2, cited) establish the statement. The last sentence of the statement, on the bar involution, is interpretation."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1152,7 +1167,7 @@
           "in_degree": 0,
           "cone_size": 4,
           "depth": 3,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1701,6 +1716,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-11-15T21:27:34.993Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

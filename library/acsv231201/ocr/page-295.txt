@@ -1,0 +1,52 @@
+9.3 Smooth bivariate functions 277
+
+ultimately giving that
+Any ~ Cn"? cos(nd),
+
+where a = 6.03... is the absolute value of the product of the coordinates in p7
+(or equivalently the coordinates of pg) and C and @ are non-zero constants. <
+
+Exercise 9.10. Find the constants C and 6 for this example.
+
+9.3.3 Smooth Bivariate Generating Functions with Degeneracies
+
+Using the results of Chapter 4 we can give asymptotics for bivariate smooth
+point asymptotics in directions where the phase function ¢ vanishes to arbitrary
+order. For simplicity, we consider a power series expansion and assume that
+the dominant singularities are finitely minimal points where the numerator P
+is nonvanishing. It is also possible to derive (more complicated) results when
+these conditions fail: for instance, they fail in Example 9.32 above.
+
+Let (x,, y,.) be a smooth minimal critical point in the direction * and assume
+that Q,(x.,y.) # 0 so that we can parameterize y = g(x) on V near (x,, y.).
+Theorem 9.17 and (9.16) define functions A and ¢ such that
+
+X,Ye(Ars —X) = O(e™),
+where
+
+tf
+M8) = YS 5 f eA) dé. (9.19)
+T Js
+
+Let c = c, denote the leading non-zero series coefficient in the expansion
+(x) ~ Cxx* as x > 0 and define the quantity
+
+Td P(%e,Ve) tye Ak =r
+Oy.y,(r) = — = yp AO) cores, (9.20)
+2«n Vx Oyu, Ve)
+where, as in Theorem 4.1 (iii), € = —1 if x is even and ¢ = exp(cia/k) if k is
+
+odd.
+
+Theorem 9.38. /f (x.,y.) is a strictly minimal critical point in the direction *
+and satisfies the conditions above then as (r,s) — © with the distance from
+(r,s) to the ray {t? : t > 0} remaining bounded, there is an asymptotic series
+of the form
+
+0
+
+-r\-s -1-s/k
+j=0
+
+with leading term ®,, y (1). If (Xs, yx) is a finitely minimal point and all critical
+points with the same coordinate-wise modulus satisfy the same conditions as

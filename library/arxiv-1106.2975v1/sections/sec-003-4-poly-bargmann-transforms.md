@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.994
 latex_coverage_ratio: 0.969
+doc_brief: "The Polyanalytic Ginibre Ensembles — For integers n, q = 1, 2, 3, . . ., let Poln,q denote the C-linear space of polynomials in z and ¯z, of degree ≤n −1 in z and of degree ≤q −1 in ¯z."
 ---
 In this section, we discuss the poly-Bargmann transforms, a generalization of the classical Bargmann transform, which are needed later when we analyze the Berezin density at a boundary point. The poly-Bargmann transforms appeared in Vasilevski's paper [@vas], where the basic properties were presented.
 

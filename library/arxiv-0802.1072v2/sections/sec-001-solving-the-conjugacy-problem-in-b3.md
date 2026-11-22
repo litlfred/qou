@@ -5,12 +5,13 @@ section_id: sec-001-solving-the-conjugacy-problem-in-b3
 section_title: "Solving the conjugacy problem in B3"
 section_number: null
 pages: 3-4
-source_pdf: 0802.1072v2 (1).pdf
+source_pdf: 0802.1072v2.pdf
 source_sha256: 6f4d93f0b7ba5cd7
-doc_brief: "A note on closed 3-braids ∗ — This is a review article about knots and links of braid index 3."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.86
-latex_coverage_ratio: 1.0
+latex_coverage_ratio: 0.991
+doc_brief: "A note on closed 3-braids ∗ — This is a review article about knots and links of braid index 3."
 ---
 []{#S:conjugacy label="S:conjugacy"}
 

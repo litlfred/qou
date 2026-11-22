@@ -1,0 +1,1 @@
+Recently, it was observed that the solutions of some linear q-diﬀerence equations con- cerning quantum knot invariants [36, 37] or resurgence and Borel resummation of pertur- bative Chern–Simons theory [26, 27, 28], have an improved analyticity property.

@@ -8,7 +8,7 @@
   "pages": 10,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:24Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "text-layer"
@@ -21,28 +21,29 @@
    "stamp_date": "14 Oct 2004"
   },
   "doi": null,
-  "title": "Unital Gr\u00f6bner Bases over Aribtrary Commutative Ground Rings",
-  "authors_raw": "Frederick Leitner, Robert Pawloski\u2217",
+  "title": "Unital Gröbner Bases over Arbitrary Commutative Ground Rings",
+  "authors_raw": "Frederick Leitner, Robert Pawloski∗",
   "title_lines": [
-   "Unital Gr\u00f6bner Bases over Aribtrary",
+   "Unital Gröbner Bases over Aribtrary",
    "Commutative Ground Rings"
   ],
-  "abstract": "Let R be a commutative ring with unity and a let A be a not necessarily commutative R-algebra which is free as an R-module. If I is an ideal in A, one can ask when A/I is also free as an R-module. We show that if A has an admissible system and I has a unital Gr\u00a8obner basis then A/I is free as an R-module. We prove a version of Buchberger\u2019s theorem over R and, as a corollary, we obtain a Gr\u00a8obner basis proof of the Poincare-Birkho\ufb00-Witt Theorem over a commutative ground ring.",
+  "abstract": "Let R be a commutative ring with unity and a let A be a not necessarily commutative R-algebra which is free as an R-module. If I is an ideal in A, one can ask when A/I is also free as an R-module. We show that if A has an admissible system and I has a unital Gr¨obner basis then A/I is free as an R-module. We prove a version of Buchberger’s theorem over R and, as a corollary, we obtain a Gr¨obner basis proof of the Poincare-Birkhoﬀ-Witt Theorem over a commutative ground ring.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "LaTeX with hyperref package",
    "CreationDate": "D:20211109141747-05'00'"
   },
-  "title_raw": "Unital Gr\u00f6bner Bases over Aribtrary Commutative Ground Rings",
+  "title_raw": "Unital Gröbner Bases over Aribtrary Commutative Ground Rings",
   "title_source": "text",
   "title_verified": false,
   "title_evidence": {
-   "heading": "Unital Gr\u00a8obner Bases over Aribtrary Commutative Ground Rings",
+   "heading": "Unital Gr¨obner Bases over Aribtrary Commutative Ground Rings",
    "outline": "Introduction",
-   "text": "Unital Gr\u00f6bner Bases over Aribtrary Commutative Ground Rings",
+   "text": "Unital Gröbner Bases over Aribtrary Commutative Ground Rings",
    "corroborated_by": [],
    "browser_print": false
-  }
+  },
+  "title_prev": "Unital Gröbner Bases over Aribtrary Commutative Ground Rings"
  },
  "toc": [
   {
@@ -57,7 +58,7 @@
   },
   {
    "level": 1,
-   "title": "Unital Gr\u00f6bner Bases.",
+   "title": "Unital Gröbner Bases.",
    "page": 2,
    "source": "outline",
    "number": null,
@@ -149,8 +150,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 663,
-   "n_words": 117,
+   "n_chars": 661,
+   "n_words": 116,
    "label_start": null,
    "label_end": null
   },
@@ -161,20 +162,20 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 3158,
+   "n_chars": 3170,
    "n_words": 600,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-001-unital-gr\u00f6bner-bases",
+   "id": "sec-001-unital-gröbner-bases",
    "number": null,
-   "title": "Unital Gr\u00f6bner Bases.",
+   "title": "Unital Gröbner Bases.",
    "level": 1,
    "page_start": 2,
    "page_end": 10,
-   "n_chars": 12596,
-   "n_words": 2830,
+   "n_chars": 12619,
+   "n_words": 2833,
    "label_start": null,
    "label_end": null
   }
@@ -191,7 +192,8 @@
    "items": []
   },
   "sections": 3,
-  "chars_total": 16417,
+  "chars_total": 16450,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
@@ -212,11 +214,11 @@
      "id": "sec-000-introduction",
      "title": "Introduction.",
      "prose_ratio": 0.516,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-001-unital-gr\u00f6bner-bases",
-     "title": "Unital Gr\u00f6bner Bases.",
+     "id": "sec-001-unital-gröbner-bases",
+     "title": "Unital Gröbner Bases.",
      "result": "no matching \\section"
     }
    ]

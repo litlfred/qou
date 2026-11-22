@@ -5,17 +5,17 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1706.06494v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1706.06494v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1706.06494v2",
+  "title": "Sampling General N-Body Interactions with Auxiliary Fields",
   "contains": [
     "library/arxiv-1706.06494v2/sections/sec-front-matter",
     "library/arxiv-1706.06494v2/sections/sec-000"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -25,7 +25,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1706.06494v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1706.06494v2.pdf",
     "source_sha256": "3745319210df19bd640f2b2b31ba7fb48375a6d92f3af876bd2b62d40bdd4517",
     "pages": 5,

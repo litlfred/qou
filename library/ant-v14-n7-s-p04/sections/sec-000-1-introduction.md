@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: ant-v14-n7-s-p04.pdf
 source_sha256: 6abd838a4c933311
 toc_source: inferred
+doc_brief: "Elliptic curves over totally real cubic fields are modular — 7 sections: Front matter; Introduction; Images mod 3, 5, 7 and modularity"
 ---
 Let K be a totally real number ﬁeld and let E be an elliptic curve over K with conductor N. It is
 conjectured that such a curve E is modular in the following sense: there is a level N Hilbert newform
@@ -39,7 +40,6 @@ under the project no. IP-2018-01-1313.. Siksek is supported by EPSRC LMF: L-Func
 Grant EP/K034383/1.
 MSC2010: primary 11F80; secondary 11G05.
 Keywords: modularity, elliptic curves, totally real ﬁelds.
-1791
 1792
 Maarten Derickx, Filip Najman and Samir Siksek
 Recently these modularity lifting results have been substantially strengthened in the cases p = 5 and

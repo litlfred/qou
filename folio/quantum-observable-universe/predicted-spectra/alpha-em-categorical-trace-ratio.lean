@@ -57,9 +57,13 @@ q^n and (-q⁻¹)^n. For n odd this simplifies to qⁿ - q⁻ⁿ.
 -/
 def delta_q_T_2_n (q : Rˣ) (n : ℕ) : R := (q : R) ^ n - (↑q⁻¹ : R) ^ n
 
-/-- The categorical trace δ_q(T_{3,5}) in the standard H_3
-representation. By the analogue of the 2-strand computation on the
-3-strand torus knot, this evaluates to q^10 - q^-10 = h · [10]_q.
+/-- The value **assigned** to δ_q(T_{3,5}): `q^10 − q^-10 = h · [10]_q`.
+
+**This is not the trace sum (corrected 2026-11-15).** Summing the actions
+of `(σ₁σ₂)^5` over `V_(3)`, `V_(2,1)`, `V_(1,1,1)` gives
+`q^10 − 1 + q^-10`, because on the 2-dimensional `V_(2,1)` the element
+`σ₁σ₂` has eigenvalues `ω, ω²` (`ω³ = 1`) and its fifth power has trace −1.
+So the identities below hold for this assigned value, not for a derived one.
 -/
 def delta_q_T_3_5 (q : Rˣ) : R := delta_q_T_2_n q 10
 
@@ -155,9 +159,9 @@ All of that is the single division-free identity
 `delta_mul_delta_eq_h_sq_mul_q_int`; only the final division into a
 quotient needs the field.
 
--- Ref: [manuscript] §round-12, §round-14 of conj:e-hartree-categorical-derivation
--- Ref: [manuscript] prop:em-coupling-projection (the bare 1/α formula)
--- Ref: [manuscript] def:delta-q-decoration
+-- Ref: [leitner2026] §round-12, §round-14 of conj:e-hartree-categorical-derivation
+-- Ref: [leitner2026] prop:em-coupling-projection (the bare 1/α formula)
+-- Ref: [leitner2026] def:delta-q-decoration
 -/
 theorem alpha_em_categorical_trace_ratio (q : Kˣ)
     (hq9 : delta_q_T_2_n q 9 ≠ 0)

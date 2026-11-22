@@ -33,7 +33,7 @@ candidate weight but the isolated-atom symmetry selects `a=+2`. **Nothing is
 wired; Madelung stays OPEN (owner STRICT).**
 
 ## References
-- [manuscript] Ch. 12, electron-shell program synthesis (Aufbau ordering gap)
+- [leitner2026] Ch. 12, electron-shell program synthesis (Aufbau ordering gap)
 -/
 
 namespace QOU.Molecular

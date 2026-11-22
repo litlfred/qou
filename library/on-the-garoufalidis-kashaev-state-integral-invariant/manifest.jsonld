@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/on-the-garoufalidis-kashaev-state-integral-invariant",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/on-the-garoufalidis-kashaev-state-integral-invariant/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "on-the-garoufalidis-kashaev-state-integral-invariant",
   "contains": [
+    "library/on-the-garoufalidis-kashaev-state-integral-invariant/sections/sec-front-matter",
     "library/on-the-garoufalidis-kashaev-state-integral-invariant/sections/sec-000",
     "library/on-the-garoufalidis-kashaev-state-integral-invariant/sections/sec-001",
     "library/on-the-garoufalidis-kashaev-state-integral-invariant/sections/sec-002",
@@ -71,10 +72,15 @@
     "library/on-the-garoufalidis-kashaev-state-integral-invariant/sections/sec-057",
     "library/on-the-garoufalidis-kashaev-state-integral-invariant/sections/sec-058",
     "library/on-the-garoufalidis-kashaev-state-integral-invariant/sections/sec-059",
-    "library/on-the-garoufalidis-kashaev-state-integral-invariant/sections/sec-060"
+    "library/on-the-garoufalidis-kashaev-state-integral-invariant/sections/sec-060",
+    "library/on-the-garoufalidis-kashaev-state-integral-invariant/sections/sec-061",
+    "library/on-the-garoufalidis-kashaev-state-integral-invariant/sections/sec-062",
+    "library/on-the-garoufalidis-kashaev-state-integral-invariant/sections/sec-063",
+    "library/on-the-garoufalidis-kashaev-state-integral-invariant/sections/sec-064",
+    "library/on-the-garoufalidis-kashaev-state-integral-invariant/sections/sec-065"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "on-the-garoufalidis-kashaev-state-integral-invariant",
     "title_source": "slug",

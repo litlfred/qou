@@ -1,0 +1,63 @@
+24 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY
+
+Proof, Let Grat(n) = T] Sn, * ([]Z/iZ)"*. This group acts on T, so that T, =
+Tyo, for any g € Gat (since cyclic permutations of edges of a flower extend to its
+fattening). Moreover, the group acts transitively on the set of o giving a fixed fat
+graph T,, and the stabilizer of any o is Aut([,). This implies the result. Oo
+
+Now for any compact surface x with boundary, let g(2) be the genus of ©. Then
+for a connected fat graph T, b([) = 2g([)—2+v(L) (minus the Euler characteristic).
+Thus, defining Zy(h) = Zy(h/N), we find
+
+Theorem 4.3.
+N2-28(P) Abr)
+
+jAut()|
+
+InZy =S°(T] 9") Oo
+
+n TeG.(n)
+This implies the following important result, due to t’Hooft.
+
+Theorem 4.4. (1) There exists a limit Woo := limn—oo nBy This limit is given
+by the formula 7
+w= Te Se
+= gi ——,,
+“ae , FAut(D)|
+
+TeG.(n)[0
+
+where G.(n)|0] denotes the set of planar connected fat graphs, i.e. those which
+have genus zero.
+(2) Moreover, there exists an expansion In Zx/N? = Ygs9 agN~*8, where
+
+ni ne)
+ag = Sd gi") > jAuc(d|”
+” ]
+
+PeG.(n)l[g
+and G-(n)[g] denotes the set of connected fat graphs which have genus g.
+
+Remark 1. Genus zero fat graphs are said to be planar because the underlying
+usual graphs can be put on the 2-sphere (and hence on the plane) without self-
+intersections.
+
+Remark 2. t’Hooft’s theorem may be interpreted in terms of the usual Feynman
+diagram expansion. Namely, it implies that for large N, the leading contribution
+to In(Zy(h/N)) comes from the terms in the Feynman diagram expansion corre-
+sponding to planar graphs (i.e. those that admit an embedding into the 2-sphere).
+
+4.3. Integration over real symmetric matrices. One may also consider the
+matrix integral over the space sy of real symmetric matrices of size N. Namely,
+one puts
+Zn = romessnva [ eo MAB A,
+SN
+where S and dA are as above. Let us generalize Theorem 4.4 to this case.
+
+As before, consideration of the large N limit leads to consideration of fat flowers
+and gluing of them. However, the exact nature of gluing is now somewhat different.
+Namely, in the Hermitian case we had (e; ej er ® ej) = 5:6j;x, which forced us to
+glue fat flowers preserving orientation. On the other hand, in the real symmetric
+case e; = e;, and the inner product of the functionals e; ® e; on the space of
+symmetric matrices is given by (e; ® €;,en © €1) = dindjr + 5u0j4. This means
+that besides the usual (orientation preserving) gluing of fat flowers, we now must

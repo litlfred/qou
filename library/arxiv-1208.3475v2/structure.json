@@ -8,7 +8,7 @@
   "pages": 10,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:19Z",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -22,7 +22,7 @@
   },
   "doi": null,
   "title": "Poisson - Random Matrix transition in the QCD Dirac spectrum",
-  "authors_raw": "Tam\u00e1s G. Kov\u00e1cs",
+  "authors_raw": "Tamás G. Kovács",
   "title_lines": [
    "Poisson - Random Matrix transition in the QCD Dirac spectrum"
   ],
@@ -195,7 +195,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "The unfolded level spacing distribution in di\ufb00erent regions of the spectrum of ensemble C3. The \ufb01gures correspond to the spectral regions 0.15 \u2264\u03bba \u22640.19 (a), 0.29 \u2264\u03bba \u22640.32 (b), 0.34 \u2264\u03bba \u22640.35 (c) and 0.375 \u2264\u03bba \u22640.385 (d)",
+   "title": "The unfolded level spacing distribution in diﬀerent regions of the spectrum of ensemble C3. The ﬁgures correspond to the spectral regions 0.15 ≤λa ≤0.19 (a), 0.29 ≤λa ≤0.32 (b), 0.34 ≤λa ≤0.35 (c) and 0.375 ≤λa ≤0.385 (d)",
    "page": 3,
    "confidence": 0.9,
    "evidence": [
@@ -208,7 +208,7 @@
   {
    "kind": "figure",
    "number": "2",
-   "title": "Variance of the unfolded level spacing distribution across the transition in the spectrum for ensembles C1, C2 and C3 that di\ufb00er only in their spatial volume. The dashed horizontal lines at 1 and 0.178 indicate the expected limits in the localized (Poisson) and delocalized (RMT) regime",
+   "title": "Variance of the unfolded level spacing distribution across the transition in the spectrum for ensembles C1, C2 and C3 that diﬀer only in their spatial volume. The dashed horizontal lines at 1 and 0.178 indicate the expected limits in the localized (Poisson) and delocalized (RMT) regime",
    "page": 4,
    "confidence": 0.9,
    "evidence": [
@@ -221,7 +221,7 @@
   {
    "kind": "figure",
    "number": "3",
-   "title": "The same as Fig. 1 but zooming in on the transitions region. The dotted, dashed and the continuous curve indicate the \ufb01ts of the form Eq. (4) to the Ns = 16, 24 and 32 data respectively",
+   "title": "The same as Fig. 1 but zooming in on the transitions region. The dotted, dashed and the continuous curve indicate the ﬁts of the form Eq. (4) to the Ns = 16, 24 and 32 data respectively",
    "page": 5,
    "confidence": 0.9,
    "evidence": [
@@ -234,7 +234,7 @@
   {
    "kind": "figure",
    "number": "4",
-   "title": "Average PR of the eigenvectors for lattices with the same temperature and lattice spacing but with four di\ufb00erent aspect ratios.Nt = 4",
+   "title": "Average PR of the eigenvectors for lattices with the same temperature and lattice spacing but with four diﬀerent aspect ratios.Nt = 4",
    "page": 6,
    "confidence": 0.9,
    "evidence": [
@@ -247,7 +247,7 @@
   {
    "kind": "figure",
    "number": "5",
-   "title": "The localization length (Eq. 7) of eigenmodes along the spectrum for ensembles D1 and D2 di\ufb00ering only in their spatial volumes. Both l and the location in the spectrum, \u03bb are given in lattice units. Statistical errors are not shown as they are smaller than the size of the symbols",
+   "title": "The localization length (Eq. 7) of eigenmodes along the spectrum for ensembles D1 and D2 diﬀering only in their spatial volumes. Both l and the location in the spectrum, λ are given in lattice units. Statistical errors are not shown as they are smaller than the size of the symbols",
    "page": 6,
    "confidence": 0.9,
    "evidence": [
@@ -273,7 +273,7 @@
   {
    "kind": "figure",
    "number": "7",
-   "title": "The localization length in units of the inverse temperature as a function of the physical temperature. The di\ufb00erent symbols represent data obtained at di\ufb00erent values of the lattice spacing",
+   "title": "The localization length in units of the inverse temperature as a function of the physical temperature. The diﬀerent symbols represent data obtained at diﬀerent values of the lattice spacing",
    "page": 7,
    "confidence": 0.9,
    "evidence": [
@@ -299,7 +299,7 @@
   {
    "kind": "figure",
    "number": "9",
-   "title": "The number of localized (below \u03bbc) eigenmodes per cubic Fermi as a function of the temperature. Di\ufb00erent symbols refer to simulations at di\ufb00erent values of the lattice spacing",
+   "title": "The number of localized (below λc) eigenmodes per cubic Fermi as a function of the temperature. Diﬀerent symbols refer to simulations at diﬀerent values of the lattice spacing",
    "page": 8,
    "confidence": 0.9,
    "evidence": [
@@ -408,8 +408,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1208,
-   "n_words": 188,
+   "n_chars": 1205,
+   "n_words": 187,
    "label_start": null,
    "label_end": null
   },
@@ -420,8 +420,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 6903,
-   "n_words": 1091,
+   "n_chars": 6910,
+   "n_words": 1090,
    "label_start": null,
    "label_end": "2"
   },
@@ -431,69 +431,117 @@
    "title": "Simulation details",
    "level": 1,
    "page_start": 2,
+   "page_end": 2,
+   "n_chars": 2219,
+   "n_words": 378,
+   "label_start": "2",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-002-3-anderson-transition-in-the-dirac-spectrum",
+   "number": "3",
+   "title": "Anderson transition in the Dirac spectrum",
+   "level": 1,
+   "page_start": 2,
    "page_end": 4,
-   "n_chars": 6806,
-   "n_words": 1189,
+   "n_chars": 4565,
+   "n_words": 805,
    "label_start": "2",
    "label_end": "4"
   },
   {
-   "id": "sec-002-31-analogy-with-the-anderson-transition",
+   "id": "sec-003-31-analogy-with-the-anderson-transition",
    "number": "3.1",
    "title": "Analogy with the Anderson transition",
    "level": 2,
    "page_start": 4,
+   "page_end": 4,
+   "n_chars": 3318,
+   "n_words": 555,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-004-32-second-moment-of-the-unfolded-level-spacing-d",
+   "number": "3.2",
+   "title": "Second moment of the unfolded level spacing distribution",
+   "level": 2,
+   "page_start": 4,
    "page_end": 5,
-   "n_chars": 6720,
-   "n_words": 1163,
+   "n_chars": 3389,
+   "n_words": 604,
    "label_start": "4",
    "label_end": "5"
   },
   {
-   "id": "sec-003-33-eigenvector-statistics",
+   "id": "sec-005-33-eigenvector-statistics",
    "number": "3.3",
    "title": "Eigenvector statistics",
    "level": 2,
    "page_start": 5,
+   "page_end": 5,
+   "n_chars": 1974,
+   "n_words": 335,
+   "label_start": "5",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-006-4-continuum-limit-and-renormalization",
+   "number": "4",
+   "title": "Continuum limit and renormalization",
+   "level": 1,
+   "page_start": 5,
    "page_end": 6,
-   "n_chars": 3270,
-   "n_words": 559,
+   "n_chars": 1293,
+   "n_words": 221,
    "label_start": "5",
    "label_end": "6"
   },
   {
-   "id": "sec-004-41-localization-length",
+   "id": "sec-007-41-localization-length",
    "number": "4.1",
    "title": "Localization length",
    "level": 2,
    "page_start": 6,
-   "page_end": 8,
-   "n_chars": 10630,
-   "n_words": 1867,
+   "page_end": 7,
+   "n_chars": 4109,
+   "n_words": 755,
    "label_start": "6",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-008-42-renormalization-and-temperature-dependence-of",
+   "number": "4.2",
+   "title": "Renormalization and temperature dependence of $\\lambda_c$",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 6490,
+   "n_words": 1107,
+   "label_start": "7",
    "label_end": "8"
   },
   {
-   "id": "sec-005-5-conclusions",
+   "id": "sec-009-5-conclusions",
    "number": "5",
    "title": "Conclusions",
    "level": 1,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 3327,
+   "n_chars": 3337,
    "n_words": 538,
    "label_start": "8",
    "label_end": "9"
   },
   {
-   "id": "sec-006-acknowledgments",
+   "id": "sec-010-acknowledgments",
    "number": null,
    "title": "Acknowledgments",
    "level": 1,
    "page_start": 9,
    "page_end": 10,
-   "n_chars": 4532,
-   "n_words": 730,
+   "n_chars": 4529,
+   "n_words": 729,
    "label_start": "9",
    "label_end": "10"
   }
@@ -512,13 +560,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 8,
-  "chars_total": 43396,
+  "sections": 12,
+  "chars_total": 43338,
+  "furniture_lines_stripped": 9,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "article.tex",
    "tex_sections": 11,
-   "overlaid": 6,
+   "overlaid": 10,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -534,56 +583,88 @@
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": 0.963,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.997,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-simulation-details",
      "title": "Simulation details",
-     "prose_ratio": 0.955,
-     "coverage_ratio": 0.989,
+     "prose_ratio": 0.905,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-31-analogy-with-the-anderson-transition",
+     "id": "sec-002-3-anderson-transition-in-the-dirac-spectrum",
+     "title": "Anderson transition in the Dirac spectrum",
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.926,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-31-analogy-with-the-anderson-transition",
      "title": "Analogy with the Anderson transition",
-     "prose_ratio": 0.963,
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.893,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-32-second-moment-of-the-unfolded-level-spacing-d",
+     "title": "Second moment of the unfolded level spacing distribution",
+     "prose_ratio": 0.928,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-33-eigenvector-statistics",
+     "id": "sec-005-33-eigenvector-statistics",
      "title": "Eigenvector statistics",
-     "prose_ratio": 0.958,
+     "prose_ratio": 0.886,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-4-continuum-limit-and-renormalization",
+     "title": "Continuum limit and renormalization",
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.894,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-41-localization-length",
+     "title": "Localization length",
+     "prose_ratio": 0.98,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-41-localization-length",
-     "title": "Localization length",
-     "prose_ratio": 0.967,
-     "coverage_ratio": 0.993,
+     "id": "sec-008-42-renormalization-and-temperature-dependence-of",
+     "title": "Renormalization and temperature dependence of $\\lambda_c$",
+     "prose_ratio": 0.959,
+     "coverage_ratio": 0.991,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-5-conclusions",
+     "id": "sec-009-5-conclusions",
      "title": "Conclusions",
      "prose_ratio": 0.962,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.995,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-006-acknowledgments",
+     "id": "sec-010-acknowledgments",
      "title": "Acknowledgments",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.231,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

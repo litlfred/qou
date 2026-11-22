@@ -1,0 +1,46 @@
+430 Challenges and extensions
+
+that this conjecture is true when the polytope is schén, a property defined in
+terms of compactifications via toric varieties [Huh13, Definition 3.6]. The set
+of directions parallel to a face of the Newton polytope is a small set (it has
+positive codimension) so it is useful to know when CPAL are restricted to these
+directions. Generally, we would like to find computable restrictions on the pos-
+sible directions of CPAI.
+
+13.5 Algebraic GFs
+
+Section 12.6 showed how to study algebraic generating functions by embed-
+ding them as diagonals of higher-dimensional rational functions. The simplest
+embedding method, due to Furstenberg, is easy to apply when it works, but
+does not apply to any algebraic generating function intersected by one of its
+algebraic conjugates at the origin. There are several known methods for resolv-
+ing singularities in such cases, for instance the algorithm of Safonov [Saf00]
+mentioned in Theorem 2.41 and the less constructive procedure of Denef and
+Lipshitz [DL87].
+
+Example 13.6. Let f(x) = x/ V1 —- <x be an algebraic function with minimal
+polynomial P(x, y) = (1 — xy? — x. Because f(x) = x+O(x?) and its algebraic
+conjugate — f(x) = —x+ O(x’) intersect at the origin, the embedding method of
+Furstenberg does not apply. Safonov’s procedure subtracts some initial terms
+via the substitution y = xz+.x, yielding a minimal polynomial (1—x)(z+1)°—1 to
+which Proposition 2.34 now applies. Converting back to the original variables
+then gives f as the main diagonal of
+
+(2y8x43y2x-2y? + 2yx-3y + x-2)yx
+
+F(x,y) =
+y) yxt2yx-ytx-2
+
+We remark that F has no affine critical points in the main diagonal direction,
+so it admits critical points at infinity which determine asymptotic behavior,
+making the analysis difficult. An alternative embedding, following the method
+of [DL87], is obtained through the much less obvious substitution y = x/(1—z),
+expressing f(x) as the main diagonal of
+2x
+Gy) =
+
+—x-y
+
+In contrast to the difficult behavior of F, the function G is combinatorial and
+has a smooth contributing critical point at (1/2,1/2), allowing for an easy
+asymptotic analysis. 4

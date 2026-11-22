@@ -61,7 +61,7 @@ explicit hypotheses rather than re-derived. No fit; nothing wired; L2 unchanged.
 Mathlib-free (`Init` only) — so it is machine-verified independently of the
 Mathlib olean cache.
 
--- Ref: [manuscript] docs/audits/2026-08-02-stokes-dt-bridge-moduli-gap-unification.md
+-- Ref: [leitner2026] docs/audits/2026-08-02-stokes-dt-bridge-moduli-gap-unification.md
 -/
 import Init.Data.Int.Basic
 import Init.Data.List.Basic

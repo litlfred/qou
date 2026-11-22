@@ -1,0 +1,51 @@
+44 Oberwolfach Report 28/2012
+
+2. COLORED TANGLE-COHOMOLOGY
+
+We restrict our attention to oriented framed tangles T without closed compo-
+nents, whose strands are colored by the same natural number n, or equivalently,
+by the (n + 1)-dimensional irreducible representation of quantum sl(2). Let D be
+a diagram of T whose blackboard framing agrees with the given framing of T. The
+
+k
+neighbors from n dots placed on a line, such that each dot appears in at most one
+pair. A dot-row s is a set of n dots on a line in which some adjacent dots are
+paired. Denote by p(s) the number of pairs in s.
+
+Let [, be the oriented graph whose vertices are all possible dot-rows s corre-
+sponding to n. Two vertices s and s’ of [, are connected by an edge e: s > 8’
+if and only if all pairs in s are pairs in s’, and p(s’) = p(s) +1. The height of a
+vertex s is equal to p(s), and the edges are oriented towards increasing heights.
+In Figure 1 we show such a graph for n = 5. To a dot-row s attach the cable dia-
+gram D, := D"~?P(), formed by taking the (n — 2p(s))-parallel cable of D. When
+forming an m-parallel cable of D we enumerate the strands in a cross-section of
+D™ from left to right by 1 to m, and orient the parallel cable-strands such that
+adjacent strands receive opposite orientations, where we give strand 1 the original
+orientation of D. To an edge e: s > s’ we attach the cobordism S, : D, > Dy
+given by contracting the neighboring strands in D, corresponding to the pair in
+s’ but not in s. That is, S, is the cobordism with two inputs and no output for
+these two strands, and the identity otherwise (see Figure 1).
+
+binomial coefficient ( n ) equals the number of ways of selecting k pairs of
+
+wee ee eeeee eoecve eeeee
+
+ae ee
+
+FicurE 1. Graph I's and cobordism S,
+
+We sprinkle the edges of the resulting graph of tangle diagrams and tangle
+cobordisms with some minus signs. Let o(s, s’) represent the number of pairs in s
+to the right of the only pair in s’\s, and multiply each cobordism S, by (—1) ),
+
+To the latter graph we apply now the morphism [-] constructed in the sl(2)
+foam cohomology, and form the complex C;,,(D) for the colored tangle theory. The
+cochain objects are given by
+
+(s,s
+
+Ci,(D) = @IP.I,
+
+where the sum is over all dot-rows s such that p(s) = i. The i-th differential
+d' : Ci + Ct+1 is a formal sum of all morphisms [S,] corresponding to edges e at
+height i, where [Se]: [Ds] + [Ds].

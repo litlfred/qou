@@ -3,7 +3,7 @@
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
       "@base": "https://litlfred.github.io/folio/",
-      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant/folio-assistant-sci/ns#"
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "library/arxiv-math-0404010v1/blocks/thm-sec-001-02",
@@ -12,11 +12,21 @@
     "doco:Section"
   ],
   "kind": "theorem",
-  "title": "Murakami [8]",
-  "pageStart": 3,
-  "pageEnd": 6,
+  "title": "D˘asc˘alescu–Nichita [1]",
+  "pageStart": 2,
+  "pageEnd": 3,
   "text": "thm-sec-001-02.md",
   "derivedFrom": "library/arxiv-math-0404010v1/sections/sec-001",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0404010v1",
-  "provenance": "ingested"
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0404010v1/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "2.3",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "elsewhere",
+    "evidence_locator": "External attribution (D˘asc˘alescu–Nichita [1]) [[1]]",
+    "claim_id": "arxiv-math-0404010v1#theorem:2.3",
+    "lean_status": "unformalized"
+  }
 }

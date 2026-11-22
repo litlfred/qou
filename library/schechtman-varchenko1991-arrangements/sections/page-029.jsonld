@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/schechtman-varchenko1991-arrangements/sections/page-029",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Page 29",
+  "pageStart": 29,
+  "pageEnd": 29,
+  "contains": [
+    "library/schechtman-varchenko1991-arrangements/blocks/prose-page-029",
+    "library/schechtman-varchenko1991-arrangements/blocks/lem-page-029-01",
+    "library/schechtman-varchenko1991-arrangements/blocks/ex-page-029-02",
+    "library/schechtman-varchenko1991-arrangements/blocks/ex-page-029-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/schechtman-varchenko1991-arrangements/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/schechtman-varchenko1991-arrangements/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 9609174v2.pdf
 source_sha256: 87885f4d03661f26
 toc_source: inferred
+doc_brief: "arXiv:hep-th/9609174v2 23 Sep 1996 — We prove the universality of correlation functions of chiral unitary and unitary ensembles of ran- dom matrices in the microscopic limit."
 ---
 arXiv:hep-th/9609174v2  23 Sep 1996
 ITP-UH-16/96
@@ -29,4 +30,3 @@ local asymptotics around the origin. The possible physical interpretation as the
 soft spectrum of the Dirac operator is brieﬂy discussed.
 PACS: 05.45.+b, 11.15.Pg, 11.30.Rd
 e-mail addresses: ∗akemann@itp.uni-hannover.de, † phdamg, ‡ umagnea, § shinsuke@alf.nbi.dk
-1

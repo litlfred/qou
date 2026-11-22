@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.97
 latex_coverage_ratio: 0.955
+doc_brief: "arXiv:math-ph/0010012v1 10 Oct 2000 — We review some recent results on random polynomials and their generalizations in complex and symplectic geometry."
 ---
 The JPD is a (generalized) Gaussian measure on the complex vector space of 1-jets: $\widetilde{\mathbf D}_{z}^N=\gamma_{\Delta^N(z)}\,,$ where the covariance matrix $\Delta^N(z) = \left(
 \begin{array}{cc}

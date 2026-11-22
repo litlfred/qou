@@ -1,0 +1,50 @@
+422 Combinatorial applications
+
+our presentation comes from [BP07], and our second QRW example comes
+from [Bar+10, Section 4.1].
+
+It is an interesting question to pick how many terms to compute in an asymp-
+totic expansion when the goal is to numerically approximate a fixed coefficient.
+The books [PKO1; Parl1] give a good introduction, and applications to inte-
+grals arising from coefficient extraction are treated in [DH02].
+
+Additional exercises
+
+Exercise 12.5. (general Lagrange inversion) Use the change of variables de-
+) fv) \?
+scribed in the proof of Proposition 12.7 and the exact differential d | “0 (2) |
+
+to prove the more general Lagrange inversion formula (12.13).
+
+Exercise 12.6. Compute dominant asymptotics for j(n,n), where «(m,n) =
+Dhol D(A). Hint: Replace —1 by z, multiply by x”y" and sum over k, m,n
+to obtain a trivariate generating function.
+
+Exercise 12.7. Using the results in Section 12.2, compute asymptotics for the
+generalized Dyck paths described in Section 2.3.
+
+Exercise 12.8. Let F(x,y) = 1/(3 — 3x + x* — y) be the generating function
+of a generalized Riordan array {a,,}. Compute asymptotics for directions (7, s)
+when r/s > 1, then do the same thing when 0 < r/s < 1. What happens when
+r=s?
+
+Exercise 12.9. Let a, count the number of ways in which a chess rook can
+move from the origin to r by moves that increase one coordinate and do not
+decrease any other. The methods of Chapter 2 yield the generating function
+
+1
+F(z)= » Apz” = — =
+ren! 1- Yi ey
+M4.d - 2)
+
+Yh o(- DiGi + Dez)"
+where e; is the jth elementary symmetric polynomial.
+
+a) Use Theorem 2.32 in Chapter 2 to find the generating function of the main
+diagonal of F when d = 2. What happens when you try this for d = 3?
+
+b) Compute the first-order asymptotic approximation to a, for d = 3.
+
+c) Use a computer algebra system, or write your own program, to compute a,
+exactly, for values of d up to 10. Compare with the first-order asymptotic
+when r = (100,..., 100).

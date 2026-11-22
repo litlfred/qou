@@ -1,0 +1,43 @@
+118 Chapter 5 — A family of surfaces
+
+curves precisely 27 are contained in the surface Y = Y, = O©,. This
+number suggests a relationship with the E¢-lattice in the cohomology of this
+surface. Recall from [22] that the dual lattice Eg has precisely 27 pairs of
+minimal vectors, with norm 4/3. It turns out that the fundamental classes of
+Prym-embedded curves define such minimal vectors and are related to the
+glue vector A =k+e € L with components k € K* and e € Eg(—1)* that we
+studied in the proof of proposition 5.18.
+
+LEMMA 5.19. The above glue vector A = k +e can be taken to be the
+fundamental class
+[C] € H°(Y,Z)* & L(2)
+of any Prym-embedded curve C C Y, and in this case the vector e € Es(—1)*
+
+is a minimal vector with the norm b(e,e) = —4/3.
+
+Proof. Any cohomology class A € H?(Y,Z)+ can be written uniquely
+in the form
+
+A=a+8 with a€H?(X,Q), Be H?(X,Q)1 Cc A’7(Y,Q)t
+and such a class defines a glue vector iff a ¢ H*(X,Z). The integrality
+of @ can be checked via the Gysin morphism for the embedding i: Y  X
+
+since i\(A) = aU [@]* € H®(X,Q) is the image of @ under the Lefschetz
+isomorphism in the following commutative diagram.
+
+HP(Y,Q)*
+
+H?(X,Q) H®(X,Q)
+
+H?(X,Z) H°(X,Z)
+
+H?(Y,Z)*
+Now by [13, sect. 12.2] the fundamental class A = a + B € H?(Y,Q)* ofa
+Prym-embedded curve satisfies
+aU[OP = (A) = [O)7/3 ¢ H°(X,Z)
+and hence indeed provides a glue vector for our lattices. It also follows from
+the above that
+degy(a”) = degy(a*U[@}*) = degy([@]*/9) = 8/3
+
+where the last equality is due to the Poincaré formula. Furthermore, by
+definition A ¢ H?(Y,Q) is the class of a Prym-embedded curve € Cc Y and

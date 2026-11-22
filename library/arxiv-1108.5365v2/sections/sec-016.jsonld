@@ -9,13 +9,18 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "The multiplicative unitary and modular maps",
-  "pageStart": 46,
-  "pageEnd": 47,
+  "title": "The multiplicative unitary",
+  "pageStart": 34,
+  "pageEnd": 39,
   "contains": [
-    "library/arxiv-1108.5365v2/blocks/prose-sec-016"
+    "library/arxiv-1108.5365v2/blocks/prose-sec-016",
+    "library/arxiv-1108.5365v2/blocks/cor-sec-016-01",
+    "library/arxiv-1108.5365v2/blocks/prop-sec-016-02",
+    "library/arxiv-1108.5365v2/blocks/rem-sec-016-03",
+    "library/arxiv-1108.5365v2/blocks/thm-sec-016-04",
+    "library/arxiv-1108.5365v2/blocks/rem-sec-016-05"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1108.5365v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1108.5365v2",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1108.5365v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1108.5365v2/manifest.jsonld",
   "provenance": "ingested"
 }

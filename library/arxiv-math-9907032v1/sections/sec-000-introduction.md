@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-9907032v1
-doc_title: "arXiv:math/9907032v1 [math.GT] 6 Jul 1999"
+doc_title: "Combinatorial optimization in geometry"
 section_id: sec-000-introduction
 section_title: "Introduction"
 section_number: null
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.957
 latex_coverage_ratio: 0.977
+doc_brief: "Combinatorial optimization in geometry (Rivin) — extends and unifies results on ideal polyhedra in H³ to singular Euclidean structures on surfaces, possibly with infinitely many singularities."
 ---
 In the paper [@steiner] we gave the following description of the angles of ideal polyhedra in $\mathbf{H}^3$: let $P$ be a combinatorial polyhedron, and let $A: E(P) \rightarrow [0, \pi)$ be a function. Then, there exists an ideal polyhedron combinatorially equivalent to $P$, such that the exterior angle at every edge $e$ is given by $A(e)$ if and only if the sum of $A(e)$ over all edges adjacent to a vertex of $P$ is equal to $2\pi,$ while the sum of $A(e)$ over any *nontrivial cutset* of edges of $P$ (that is, a collection of edges which separates the $1$-skeleton of $P$, but which are not all adjacent to the same vertex) is strictly greater than $2\pi.$ Furthermore, it was shown in [@rvol] that the dihedral angles determine the ideal polyhedron up to congruence.
 

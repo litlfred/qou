@@ -1,0 +1,6497 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-2507.13873v1",
+  "pages": [
+    {
+      "page": 3,
+      "rotation": 0,
+      "drawings": 47,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1: Left: Visualization of quantum gravitational fluctuations being suppressed close to the holographic boundary in an AdS box. Right: Fluctuations are not obviously suppressed for the case where the near-boundary region contains a classical curvature divergence."
+      ],
+      "labels": [
+        {
+          "text": "model [30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51,",
+          "bbox": [
+            72.0,
+            77.47,
+            537.19,
+            89.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "52, 53, 54, 55, 56, 57, 58], the sine dilaton gravity model has been proposed to describe a",
+          "bbox": [
+            72.0,
+            94.81,
+            537.09,
+            106.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "holographic dual in [59, 60, 61].1 Both of these models have in common that the holographic",
+          "bbox": [
+            72.0,
+            107.8,
+            537.0,
+            124.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM0800",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "boundary is not of the conventional asymptotic AdS type. In fact, for sinh dilaton gravity,",
+          "bbox": [
+            72.0,
+            129.48,
+            537.08,
+            141.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "one readily shows (as we will review later on), that the Ricci scalar of the bulk geometry",
+          "bbox": [
+            72.0,
+            146.81,
+            537.02,
+            158.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "actually blows up at the holographic screen!",
+          "bbox": [
+            72.0,
+            164.15,
+            297.83,
+            176.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The fact that this model has a curvature singularity exactly where one wants to position",
+          "bbox": [
+            89.56,
+            181.48,
+            537.05,
+            193.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the holographic screen presents us simultaneously with a puzzle and an opportunity. The",
+          "bbox": [
+            72.0,
+            198.82,
+            537.03,
+            210.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "puzzle here is that the holographic boundary is usually at a location in spacetime where",
+          "bbox": [
+            72.0,
+            216.15,
+            537.05,
+            228.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "gravitational fluctuations are negligible. However, a classical curvature singularity does not",
+          "bbox": [
+            72.0,
+            233.49,
+            537.09,
+            245.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "seem like a stable anchoring region where one can trust classical gravity. From this, one can",
+          "bbox": [
+            72.0,
+            250.82,
+            537.06,
+            262.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "expect that there can be a difference between on the one hand the near-boundary limit of",
+          "bbox": [
+            72.0,
+            268.16,
+            537.02,
+            280.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the model, and on the other hand the semi-classical ℏ→0 limit where we turn off gravity",
+          "bbox": [
+            72.0,
+            282.87,
+            536.95,
+            297.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMSY10",
+            "MSBM10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "quantum fluctuations. In ordinary AdS/CFT, these two regimes give the same answer close",
+          "bbox": [
+            72.0,
+            302.83,
+            537.03,
+            314.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "to the boundary. But here we will have to be more careful, see Fig. 1 for a visualization of",
+          "bbox": [
+            72.0,
+            320.16,
+            537.05,
+            332.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the general puzzle studied in this work.",
+          "bbox": [
+            72.0,
+            337.5,
+            273.74,
+            349.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "?",
+          "bbox": [
+            387.75,
+            383.36,
+            394.73,
+            398.69
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "DejaVuSans"
+          ],
+          "sizes": [
+            13.18
+          ]
+        },
+        {
+          "text": "Figure 1: Left: Visualization of quantum gravitational fluctuations being suppressed close to the",
+          "bbox": [
+            72.0,
+            484.68,
+            536.73,
+            495.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFBX1095",
+            "SFRM1095"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "holographic boundary in an AdS box. Right: Fluctuations are not obviously suppressed for the",
+          "bbox": [
+            72.0,
+            500.94,
+            536.72,
+            511.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1095"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "case where the near-boundary region contains a classical curvature divergence.",
+          "bbox": [
+            72.0,
+            517.2,
+            444.6,
+            528.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1095"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "It is of considerable interest currently to have a better understanding of quantum gravity",
+          "bbox": [
+            89.56,
+            550.22,
+            537.07,
+            562.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "in the case where we do not have a boundary where gravitational fluctuations are suppressed,",
+          "bbox": [
+            72.0,
+            567.56,
+            537.02,
+            579.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200",
+            "SFTI1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "such as happens in cosmological models along the lines of [64, 65, 66] and [67, 68, 69, 70].",
+          "bbox": [
+            72.0,
+            584.89,
+            537.08,
+            596.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Hence, one can view our current investigation as following a similar goal.",
+          "bbox": [
+            72.0,
+            602.23,
+            446.2,
+            614.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Generically, studying singularities in quantum gravity is hard, since the cosmic cen-",
+          "bbox": [
+            89.56,
+            619.56,
+            537.02,
+            631.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "sorship hypothesis teaches us that they are classically hidden behind black hole horizons.",
+          "bbox": [
+            72.0,
+            636.9,
+            537.03,
+            648.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1Sine dilaton gravity has been defined and studied in [62] in a different quantization scheme, leading to",
+          "bbox": [
+            88.6,
+            658.62,
+            536.82,
+            669.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM0700",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "a continuum model instead which was utilized as a toy model for cosmology in [63].",
+          "bbox": [
+            72.0,
+            674.25,
+            436.89,
+            684.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            301.52,
+            719.03,
+            307.37,
+            730.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 11,
+      "rotation": 0,
+      "drawings": 24,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2: Quantum hyperbolic disk with fuzzy cells of size 2|log q| in (r, φ) coordinates where r ∈[0, +∞[ and φ ∈[0, 2π[ where the cell sizes are uniform."
+      ],
+      "labels": [
+        {
+          "text": "These two coordinates can be conveniently written by introducing a radial coordinate",
+          "bbox": [
+            89.56,
+            77.47,
+            537.05,
+            89.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "y = 1 −zz∗[49], with non-commutativity:",
+          "bbox": [
+            72.0,
+            93.47,
+            287.78,
+            106.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10",
+            "CMSY8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "zy = q−2yz,",
+          "bbox": [
+            230.15,
+            119.25,
+            290.29,
+            133.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "z∗y = q2yz∗.",
+          "bbox": [
+            315.7,
+            119.25,
+            378.73,
+            133.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(2.38)",
+          "bbox": [
+            506.97,
+            121.19,
+            536.91,
+            133.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The y-coordinate classically ranges between 1 (the origin), and 0 (the boundary). Finally",
+          "bbox": [
+            72.0,
+            147.56,
+            537.07,
+            159.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "introducing new coordinates as y = e−r (where r classically ranges from 0 (the origin) and",
+          "bbox": [
+            72.0,
+            160.57,
+            536.97,
+            176.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "+∞(the boundary), and z∗−1z = e2iφ, we obtain",
+          "bbox": [
+            72.0,
+            179.67,
+            322.68,
+            194.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR6",
+            "CMR8",
+            "CMSY10",
+            "CMSY6",
+            "CMSY8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "[φ, r] = −2i log q.",
+          "bbox": [
+            260.5,
+            208.46,
+            348.38,
+            220.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(2.39)",
+          "bbox": [
+            506.97,
+            208.63,
+            536.91,
+            220.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "If we would have taken 0 < q < 1, this would be a standard noncommutativity relation,",
+          "bbox": [
+            72.0,
+            235.0,
+            537.0,
+            246.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "telling us that spacetime is fundamentally fuzzy with elementary (Planckian) cell size of",
+          "bbox": [
+            72.0,
+            252.35,
+            537.01,
+            264.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2|log q| (see Fig. 2).4 In the following, we will instead have q on the unit circle, and the",
+          "bbox": [
+            72.0,
+            265.35,
+            536.92,
+            281.64
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10",
+            "SFRM0800",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 2: Quantum hyperbolic disk with fuzzy cells of size 2|log q| in (r, φ) coordinates where",
+          "bbox": [
+            72.0,
+            412.66,
+            536.86,
+            423.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "SFBX1095",
+            "SFRM1095"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "r ∈[0, +∞[ and φ ∈[0, 2π[ where the cell sizes are uniform.",
+          "bbox": [
+            72.0,
+            428.92,
+            355.8,
+            439.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "SFRM1095"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "above fuzzyness is still there, but furthermore complexified.",
+          "bbox": [
+            72.0,
+            459.77,
+            377.28,
+            471.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Just as JT gravity provides an explicit realization of AdS2 spacetime within a quantum",
+          "bbox": [
+            89.56,
+            477.09,
+            536.93,
+            490.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMR8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "gravity model, can we similarly embed the quantum hyperbolic disk into a fully dynamical",
+          "bbox": [
+            72.0,
+            494.44,
+            537.06,
+            506.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "bulk gravitational system?",
+          "bbox": [
+            72.0,
+            511.78,
+            207.75,
+            523.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "A candidate bulk description for q-holography",
+          "bbox": [
+            99.87,
+            551.53,
+            475.13,
+            568.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "SFBX1728"
+          ],
+          "sizes": [
+            17.22
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            72.0,
+            551.55,
+            81.3,
+            568.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFBX1728"
+          ],
+          "sizes": [
+            17.22
+          ]
+        },
+        {
+          "text": "In the previous section, we derived the q-conformal two-point function by constraining its",
+          "bbox": [
+            72.0,
+            584.82,
+            536.98,
+            596.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "form (2.21) through the requirement of invariance under the global part of the q-conformal",
+          "bbox": [
+            72.0,
+            602.15,
+            536.9,
+            614.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "group. Furthermore, we interpreted its Fourier transform as encoding information about",
+          "bbox": [
+            72.0,
+            619.5,
+            537.07,
+            631.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the quasi-normal modes (2.27) of a dual bulk system. This observation hints at the presence",
+          "bbox": [
+            72.0,
+            636.84,
+            537.05,
+            648.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "of a black hole in the bulk, whose properties we now seek to identify.",
+          "bbox": [
+            72.0,
+            654.17,
+            425.35,
+            666.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "4The coordinate φ is periodic with period 2π, which implies the conjugate variable r/2|log q| is discretized",
+          "bbox": [
+            88.6,
+            675.07,
+            536.87,
+            686.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "SFRM0700",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "∈N. This is identical to the DSSYK discrete chord number.",
+          "bbox": [
+            72.0,
+            690.55,
+            334.93,
+            700.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "BBOLD10",
+            "CMSY10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "10",
+          "bbox": [
+            298.59,
+            719.03,
+            310.31,
+            730.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 14,
+      "rotation": 0,
+      "drawings": 61,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 3: Geometry of the classical sinh dilaton gravity solution, with a JT region deep in the interior, and a UV region close to the holographic screen where the Ricci scalar blows up R →+∞. The classical solution has an emergent SL(2, R) isometry."
+      ],
+      "labels": [
+        {
+          "text": "which is a good semi-classical approximation in the b →0 regime,6 where b4E = cosh(2πbs)/4π2",
+          "bbox": [
+            72.0,
+            73.13,
+            550.47,
+            89.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "SFRM0800",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "and β/b2 are kept fixed. The saddle-point relation (3.8) can be interpreted as the connec-",
+          "bbox": [
+            72.0,
+            90.47,
+            537.01,
+            106.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "tion between the microcanonical and canonical ensembles in sinh dilaton gravity. Indeed it",
+          "bbox": [
+            72.0,
+            112.14,
+            537.05,
+            124.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "matches the first law of black hole thermodynamics for the sinh dilaton gravity black hole,",
+          "bbox": [
+            72.0,
+            129.48,
+            537.06,
+            141.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "with energy (3.3) and inverse temperature (3.4).",
+          "bbox": [
+            72.0,
+            146.81,
+            319.72,
+            158.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            278.7,
+            162.54,
+            282.93,
+            170.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            357.33,
+            162.54,
+            361.56,
+            170.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "4π2b4, i.e. E ≈",
+          "bbox": [
+            270.17,
+            163.98,
+            343.76,
+            179.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR6",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "4π2b4 + EJT, we recover the JT black",
+          "bbox": [
+            348.79,
+            164.13,
+            536.91,
+            179.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR6",
+            "CMR8",
+            "SFRM0800",
+            "SFRM1200"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "For IR energies close to the cutoff",
+          "bbox": [
+            89.56,
+            164.15,
+            268.39,
+            176.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0000 1",
+          "bbox": [
+            416.74,
+            174.9,
+            429.42,
+            192.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "hole first law EJT = 2π2β−2 and the JT density of states: sinh",
+          "bbox": [
+            72.0,
+            177.14,
+            414.75,
+            195.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY8",
+            "SFRM0800",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "b2arccosh(4π2b4E)",
+          "bbox": [
+            423.42,
+            180.24,
+            516.0,
+            196.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR6",
+            "CMR8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            516.0,
+            180.38,
+            521.47,
+            192.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "∼",
+          "bbox": [
+            527.58,
+            181.31,
+            536.88,
+            193.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2π√2EJT",
+          "bbox": [
+            98.35,
+            189.42,
+            146.21,
+            211.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10",
+            "SFRM0800"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": ". However, for high energies, the behavior is very different E ∼β−1. Physi-",
+          "bbox": [
+            152.2,
+            197.48,
+            536.88,
+            210.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            92.88,
+            197.71,
+            98.35,
+            209.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            146.72,
+            197.71,
+            152.19,
+            209.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "sinh",
+          "bbox": [
+            72.0,
+            198.8,
+            92.87,
+            210.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "cally, the model has a slower power-law ∼E1/b2 high energy increase of the density of states",
+          "bbox": [
+            72.0,
+            209.0,
+            536.95,
+            228.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR6",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            243.21,
+            225.39,
+            250.27,
+            233.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "than the JT Cardy growth ∼e2π",
+          "bbox": [
+            72.0,
+            232.25,
+            242.93,
+            245.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR8",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "2E. These observations illustrate that the usual UV/IR",
+          "bbox": [
+            250.27,
+            232.25,
+            536.97,
+            245.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "link in holography [83] is still present in the sinh dilaton gravity model, but also that the",
+          "bbox": [
+            72.0,
+            250.82,
+            537.08,
+            262.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "UV regime is quite distinct from asymptotically AdS holography. A sketch of the situation",
+          "bbox": [
+            72.0,
+            268.16,
+            537.06,
+            280.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "is given below in Fig. 3. Based on the above considerations, taking the high-energy limit,",
+          "bbox": [
+            72.0,
+            285.49,
+            537.05,
+            297.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 3: Geometry of the classical sinh dilaton gravity solution, with a JT region deep in the",
+          "bbox": [
+            72.0,
+            433.15,
+            536.76,
+            444.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFBX1095",
+            "SFRM1095"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "interior, and a UV region close to the holographic screen where the Ricci scalar blows up R →+∞.",
+          "bbox": [
+            72.0,
+            449.26,
+            536.88,
+            460.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "SFRM1095"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The classical solution has an emergent SL(2, R) isometry.",
+          "bbox": [
+            72.0,
+            465.66,
+            343.19,
+            476.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "BBOLD10",
+            "CMMI10",
+            "CMR10",
+            "SFRM1095"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "or high-temperature limit because of (3.8), corresponds to getting closer and closer to the",
+          "bbox": [
+            72.0,
+            498.69,
+            537.06,
+            510.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "holographic boundary, where it is reasonable to expect that quantum geometry features",
+          "bbox": [
+            72.0,
+            516.03,
+            537.07,
+            527.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "may resolve the classical curvature singularity (3.5) of the sinh dilaton gravity black hole.",
+          "bbox": [
+            72.0,
+            533.36,
+            537.08,
+            545.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Therefore our aim is to probe this UV near boundary regime by injecting a small mass",
+          "bbox": [
+            72.0,
+            550.7,
+            537.03,
+            562.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "probe into the bulk, and identifying the geometrical features it observes. To that effect, in",
+          "bbox": [
+            72.0,
+            568.03,
+            537.05,
+            579.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the next section, we will analyze the sinh dilaton gravity boundary two-point function to",
+          "bbox": [
+            72.0,
+            585.37,
+            537.06,
+            597.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "investigate whether the structure observed in (2.26) emerges in the probe regime.",
+          "bbox": [
+            72.0,
+            602.7,
+            489.16,
+            614.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "To set the stage, we begin with the exact expression for the boundary two-point function",
+          "bbox": [
+            89.56,
+            620.04,
+            537.03,
+            631.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "6One should make a distinction between physical quantization and q-deformed “quantization”.",
+          "bbox": [
+            88.6,
+            641.76,
+            512.93,
+            653.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "SFRM0700",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Re-",
+          "bbox": [
+            521.79,
+            643.04,
+            536.87,
+            653.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "instating the quantum mechanical ℏparameter, relating the classical Poisson brackets and the quantum",
+          "bbox": [
+            72.0,
+            655.2,
+            536.86,
+            667.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSBM10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "commutation relations, is equivalent to setting b2 →ℏb2. Taking the semiclassical limit ℏ→0 in units",
+          "bbox": [
+            72.0,
+            667.98,
+            536.87,
+            681.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "MSBM10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "where ℏ= 1 is equivalent to taking b →0 in rescaled coordinates of the dilaton, see appendix B.2.",
+          "bbox": [
+            72.0,
+            683.89,
+            500.14,
+            696.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "MSBM10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "13",
+          "bbox": [
+            298.59,
+            719.03,
+            310.31,
+            730.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 16,
+      "rotation": 0,
+      "drawings": 180,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 4: Numerical evaluation of the sinh dilaton gravity two-point function ⟨OβM (τ)OβM (0)⟩β (3.9) as a function of τ, for β = 2π and ∆= 1. The green, red, and blue dots correspond to b = 0.9, b = 0.8, and b = 0.6 respectively. The numerical evaluation was obtained using expression (C.5) following the manipulations described in Appendix C. The blue line corresponds to the semiclassical (ℏ→0) limit (3.10)."
+      ],
+      "labels": [
+        {
+          "text": "140",
+          "bbox": [
+            188.22,
+            80.82,
+            198.99,
+            88.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            6.46
+          ]
+        },
+        {
+          "text": "120",
+          "bbox": [
+            188.22,
+            98.85,
+            198.99,
+            106.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            6.46
+          ]
+        },
+        {
+          "text": "100",
+          "bbox": [
+            188.22,
+            116.88,
+            198.99,
+            124.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            6.46
+          ]
+        },
+        {
+          "text": "80",
+          "bbox": [
+            192.19,
+            134.9,
+            199.37,
+            142.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            6.46
+          ]
+        },
+        {
+          "text": "60",
+          "bbox": [
+            192.19,
+            152.93,
+            199.37,
+            160.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            6.46
+          ]
+        },
+        {
+          "text": "40",
+          "bbox": [
+            192.19,
+            170.96,
+            199.37,
+            178.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            6.46
+          ]
+        },
+        {
+          "text": "20",
+          "bbox": [
+            192.19,
+            188.98,
+            199.37,
+            196.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            6.46
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            195.67,
+            207.01,
+            199.26,
+            214.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            6.46
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            199.35,
+            212.92,
+            202.94,
+            220.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            6.46
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            235.21,
+            212.92,
+            238.8,
+            220.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            6.46
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            271.07,
+            212.92,
+            274.66,
+            220.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            6.46
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            306.93,
+            212.92,
+            310.52,
+            220.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            6.46
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            342.79,
+            212.92,
+            346.38,
+            220.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            6.46
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            378.66,
+            212.92,
+            382.25,
+            220.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            6.46
+          ]
+        },
+        {
+          "text": "6",
+          "bbox": [
+            414.52,
+            212.92,
+            418.11,
+            220.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            6.46
+          ]
+        },
+        {
+          "text": "τ",
+          "bbox": [
+            393.72,
+            220.26,
+            399.82,
+            234.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "Figure 4: Numerical evaluation of the sinh dilaton gravity two-point function ⟨OβM (τ)OβM (0)⟩β",
+          "bbox": [
+            72.0,
+            248.05,
+            535.97,
+            262.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI6",
+            "CMMI8",
+            "CMR10",
+            "CMSY10",
+            "SFBX1095",
+            "SFRM1095"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(3.9) as a function of τ, for β = 2π and ∆= 1. The green, red, and blue dots correspond to b = 0.9,",
+          "bbox": [
+            72.0,
+            264.46,
+            536.88,
+            275.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "SFRM1095"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "b = 0.8, and b = 0.6 respectively. The numerical evaluation was obtained using expression (C.5)",
+          "bbox": [
+            72.0,
+            280.71,
+            536.76,
+            291.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "SFRM1095"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "following the manipulations described in Appendix C. The blue line corresponds to the semiclassical",
+          "bbox": [
+            72.0,
+            296.99,
+            536.67,
+            307.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1095"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(ℏ→0) limit (3.10).",
+          "bbox": [
+            72.0,
+            310.85,
+            169.01,
+            324.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "MSBM10",
+            "SFRM1095"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "and the energy of the probe ω in terms of",
+          "bbox": [
+            72.0,
+            349.06,
+            285.91,
+            361.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            190.42,
+            371.83,
+            196.28,
+            383.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            373.25,
+            371.83,
+            379.11,
+            383.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "E + ω/b2 ≡",
+          "bbox": [
+            298.3,
+            374.83,
+            357.98,
+            391.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "E ≡",
+          "bbox": [
+            153.16,
+            379.76,
+            175.15,
+            391.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "4π2b4 cosh(2πbs2),",
+          "bbox": [
+            179.66,
+            379.92,
+            272.89,
+            400.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "4π2b4 cosh(2πbs1).",
+          "bbox": [
+            362.49,
+            379.92,
+            455.72,
+            400.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(3.12)",
+          "bbox": [
+            506.97,
+            379.93,
+            536.91,
+            391.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Such types of approximations were extensively studied in JT gravity in [17]. The Jacobian",
+          "bbox": [
+            72.0,
+            409.02,
+            537.05,
+            420.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "of this transformation is given by",
+          "bbox": [
+            72.0,
+            426.35,
+            242.61,
+            438.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "dMdω ≃sinh(2πbs1) sinh(2πbs2)ds1ds2,",
+          "bbox": [
+            202.32,
+            455.27,
+            406.56,
+            468.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(3.13)",
+          "bbox": [
+            506.97,
+            455.44,
+            536.91,
+            467.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "such that the boundary two-point function is equivalent to",
+          "bbox": [
+            72.0,
+            484.53,
+            372.96,
+            496.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "β −τ",
+          "bbox": [
+            211.15,
+            511.73,
+            236.0,
+            522.79
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Z ∞",
+          "bbox": [
+            291.7,
+            521.9,
+            312.13,
+            539.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Z ∞",
+          "bbox": [
+            332.48,
+            521.9,
+            352.91,
+            539.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(κ−E)b2 dω A(E, ω),",
+          "bbox": [
+            339.12,
+            535.01,
+            436.45,
+            557.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR6",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            279.28,
+            535.17,
+            288.39,
+            547.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "dE",
+          "bbox": [
+            314.62,
+            535.17,
+            329.79,
+            547.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(3.14)",
+          "bbox": [
+            506.97,
+            535.18,
+            536.91,
+            547.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "OβM",
+          "bbox": [
+            176.34,
+            536.58,
+            196.72,
+            549.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "OβM",
+          "bbox": [
+            250.04,
+            536.58,
+            270.42,
+            549.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "κ",
+          "bbox": [
+            298.35,
+            549.07,
+            303.22,
+            557.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "τ",
+          "bbox": [
+            221.2,
+            562.52,
+            225.96,
+            573.43
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "where the spectral decomposition of the amplitude A(E, ω) is given by",
+          "bbox": [
+            72.0,
+            587.16,
+            435.35,
+            599.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u00122π",
+          "bbox": [
+            151.59,
+            612.13,
+            174.08,
+            624.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0013",
+          "bbox": [
+            217.39,
+            612.13,
+            226.19,
+            624.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u00122π",
+          "bbox": [
+            251.05,
+            612.13,
+            273.53,
+            624.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0013",
+          "bbox": [
+            316.84,
+            612.13,
+            325.64,
+            624.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "b2 ω Sb (βM ± is1(E, ω) ± is2(E, ω))",
+          "bbox": [
+            359.24,
+            612.15,
+            534.19,
+            629.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMMI8",
+            "CMR12",
+            "CMR6",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "e−βE−τ",
+          "bbox": [
+            327.63,
+            616.4,
+            364.35,
+            632.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMMI8",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "A(E, ω) = sinh",
+          "bbox": [
+            72.0,
+            620.23,
+            149.6,
+            632.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "b s1(E, ω)",
+          "bbox": [
+            165.56,
+            620.39,
+            217.39,
+            640.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "sinh",
+          "bbox": [
+            228.18,
+            620.39,
+            249.05,
+            632.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "b s2(E, ω)",
+          "bbox": [
+            265.02,
+            620.39,
+            316.84,
+            640.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            535.38,
+            620.39,
+            538.63,
+            632.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Sb(2βM)",
+          "bbox": [
+            433.46,
+            628.59,
+            475.83,
+            641.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(3.15)",
+          "bbox": [
+            506.97,
+            644.89,
+            536.91,
+            656.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "with the variables s1(E, ω) and s2(E, ω) given by the inverses of (3.12). The energy cutoff",
+          "bbox": [
+            72.0,
+            671.79,
+            540.54,
+            684.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            170.86,
+            687.53,
+            175.09,
+            695.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "is defined as κ ≡",
+          "bbox": [
+            72.0,
+            688.97,
+            157.81,
+            701.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "4π2b4.",
+          "bbox": [
+            162.32,
+            689.14,
+            188.08,
+            704.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR6",
+            "CMR8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "15",
+          "bbox": [
+            298.59,
+            719.03,
+            310.31,
+            730.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 18,
+      "rotation": 0,
+      "drawings": 37,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 5: Kinematic regime in frequency space where the probe approximation holds, and where the quantum disk geometry and its isometries govern the correlation functions."
+      ],
+      "labels": [
+        {
+          "text": "and the first law of thermodynamics of the sinh dilaton gravity black hole is preserved. It",
+          "bbox": [
+            72.0,
+            77.47,
+            537.05,
+            89.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "is important to note that although the probe approximation does not alter the saddle, the",
+          "bbox": [
+            72.0,
+            94.81,
+            537.09,
+            106.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "saddle is not necessarily dominating the correlator. In other words, we do not consider",
+          "bbox": [
+            72.0,
+            112.14,
+            537.05,
+            124.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "a semiclassical b →0 regime for which the integrand peaks sharply around the saddle",
+          "bbox": [
+            72.0,
+            129.31,
+            537.0,
+            141.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "point value. Instead, we are probing a quantum mechanical regime with finite b in which",
+          "bbox": [
+            72.0,
+            146.8,
+            536.89,
+            158.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the saddle point experiences large quantum fluctuations. We can then transition to the",
+          "bbox": [
+            72.0,
+            164.15,
+            537.05,
+            176.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "microcanonical two-point function of the full quantum correlation function by an inverse",
+          "bbox": [
+            72.0,
+            181.48,
+            537.06,
+            193.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Laplace transform to remove the integral over background energies and finally set the energy",
+          "bbox": [
+            72.0,
+            198.82,
+            537.07,
+            210.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "of the microcanonical correlator to be equal to the large saddle point value E(β) given by",
+          "bbox": [
+            72.0,
+            216.14,
+            536.9,
+            228.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(3.22).",
+          "bbox": [
+            72.0,
+            233.49,
+            105.19,
+            245.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Within the probe regime, the two darkblue terms in (3.20) are also subdominant. We",
+          "bbox": [
+            89.56,
+            250.82,
+            537.05,
+            262.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "end up with the final microcanonical answer (for which we strip off the contributions on the",
+          "bbox": [
+            72.0,
+            268.16,
+            537.05,
+            280.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "first line (3.19))",
+          "bbox": [
+            72.0,
+            285.49,
+            152.73,
+            297.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0010",
+          "bbox": [
+            323.85,
+            313.54,
+            330.98,
+            325.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0011",
+          "bbox": [
+            392.02,
+            313.54,
+            399.16,
+            325.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "βM ± i ωβ(E)",
+          "bbox": [
+            330.99,
+            315.63,
+            390.83,
+            331.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "b2 Sb",
+          "bbox": [
+            299.41,
+            318.22,
+            321.36,
+            340.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMMI8",
+            "CMR6"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "2πb",
+          "bbox": [
+            372.35,
+            325.46,
+            385.36,
+            333.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "ωβ(E)",
+          "bbox": [
+            268.81,
+            325.9,
+            289.62,
+            331.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMR6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "−τω",
+          "bbox": [
+            290.82,
+            326.66,
+            307.43,
+            336.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "A(E, ω) ≈e",
+          "bbox": [
+            205.27,
+            330.5,
+            267.62,
+            342.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            403.75,
+            330.65,
+            407.0,
+            342.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(3.23)",
+          "bbox": [
+            506.97,
+            330.67,
+            536.91,
+            342.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2b2",
+          "bbox": [
+            273.68,
+            332.32,
+            284.26,
+            340.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMR6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "Sb(2βM)",
+          "bbox": [
+            333.67,
+            338.85,
+            376.03,
+            351.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "where we encoded the energy dependence within the saddle temperature equation.",
+          "bbox": [
+            72.0,
+            366.09,
+            494.8,
+            378.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The main result of this paper is that this is just the spectral decomposition of the",
+          "bbox": [
+            89.56,
+            383.43,
+            537.01,
+            395.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "two-point correlator (2.26) we derived by studying q-Ward identities, but now emerging",
+          "bbox": [
+            72.0,
+            400.75,
+            536.94,
+            412.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "within this specific kinematic regime of the sinh dilaton gravity two-point function. Hence",
+          "bbox": [
+            72.0,
+            418.1,
+            537.03,
+            430.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "we explicitly find the quantum hyperbolic disk in the probe region of frequency space (see",
+          "bbox": [
+            72.0,
+            435.43,
+            537.02,
+            447.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Fig. 5).",
+          "bbox": [
+            72.0,
+            452.77,
+            109.56,
+            464.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 5: Kinematic regime in frequency space where the probe approximation holds, and where",
+          "bbox": [
+            72.0,
+            588.71,
+            536.75,
+            599.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFBX1095",
+            "SFRM1095"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the quantum disk geometry and its isometries govern the correlation functions.",
+          "bbox": [
+            72.0,
+            604.97,
+            447.05,
+            615.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1095"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "While the probe integral transform (2.26) runs over energies ω from −∞to +∞, for",
+          "bbox": [
+            89.56,
+            636.97,
+            536.9,
+            649.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the probe approximation to be valid on the bulk side, we require ω ≪E. Even when E is",
+          "bbox": [
+            72.0,
+            654.3,
+            536.88,
+            666.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "taken to be very large, as in our case, for any fixed E there will inevitably be a region in",
+          "bbox": [
+            72.0,
+            671.79,
+            536.94,
+            683.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the Hilbert space where ω ∼O(E), at which point the probe approximation breaks down.",
+          "bbox": [
+            72.0,
+            688.97,
+            537.0,
+            701.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "17",
+          "bbox": [
+            298.59,
+            719.03,
+            310.31,
+            730.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 19,
+      "rotation": 0,
+      "drawings": 40,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 6: The KMS condition requires that there is no defect in the geometrical bulk. The blue endpoint is moved around the boundary to a distance β −τ, but it would pick up any defect in the interior, as illustrated by the dashed line now encircling the red defect (if it would be there)."
+      ],
+      "labels": [
+        {
+          "text": "We may thus conclude that the quantum disk accurately captures the sector of the sinh",
+          "bbox": [
+            72.0,
+            77.47,
+            537.02,
+            89.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "dilaton gravity Hilbert space corresponding to the probe regime at large energies. However,",
+          "bbox": [
+            72.0,
+            94.81,
+            537.07,
+            106.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "a complete identification in coordinate space would require extrapolating the probe regime",
+          "bbox": [
+            72.0,
+            112.14,
+            537.07,
+            124.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "beyond its domain of validity. Under this extrapolation, we would obtain7",
+          "bbox": [
+            72.0,
+            128.25,
+            451.19,
+            141.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM0800",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Sb(−βM + b",
+          "bbox": [
+            314.65,
+            151.44,
+            375.46,
+            166.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "τ",
+          "bbox": [
+            401.24,
+            151.44,
+            405.0,
+            159.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "2 +",
+          "bbox": [
+            371.53,
+            153.04,
+            388.72,
+            169.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "bβ(E))",
+          "bbox": [
+            392.57,
+            153.04,
+            420.34,
+            168.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "probe",
+          "bbox": [
+            277.5,
+            159.67,
+            298.43,
+            167.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM0800"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "⟨O(τ)O(0)⟩β(E)",
+          "bbox": [
+            184.09,
+            163.66,
+            261.97,
+            178.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "→",
+          "bbox": [
+            281.99,
+            163.66,
+            293.94,
+            175.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "bβ(E)) .",
+          "bbox": [
+            387.92,
+            163.81,
+            428.17,
+            187.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "(3.24)",
+          "bbox": [
+            506.97,
+            163.83,
+            536.91,
+            175.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Sb(βM + b",
+          "bbox": [
+            319.3,
+            171.15,
+            370.81,
+            186.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "τ",
+          "bbox": [
+            396.59,
+            171.15,
+            400.35,
+            179.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "2 +",
+          "bbox": [
+            366.88,
+            172.74,
+            384.07,
+            188.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "We have considered very large background energies with light probes that do not influence",
+          "bbox": [
+            72.0,
+            198.11,
+            537.05,
+            210.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the thermodynamical saddle. Due to the UV-IR relation in this model (as discussed above",
+          "bbox": [
+            72.0,
+            215.45,
+            537.02,
+            227.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "in subsection 3.1), this kinematic regime probes the geometric region close to the boundary",
+          "bbox": [
+            72.0,
+            232.78,
+            537.06,
+            244.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "of the dilaton gravity model.",
+          "bbox": [
+            72.0,
+            250.12,
+            219.01,
+            262.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "If we interpret this result as a saddle evaluation of a canonical correlation function",
+          "bbox": [
+            89.56,
+            267.45,
+            537.04,
+            279.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Tr(O(τ)O(0)e−βH), using Sb(Q −x) = 1/Sb(x), then our expression (3.24) manifestly pre-",
+          "bbox": [
+            72.0,
+            283.44,
+            536.96,
+            297.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10",
+            "CMSY8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "serves the KMS condition τ →β −τ of the original Liouville correlator, as required for any",
+          "bbox": [
+            72.0,
+            301.95,
+            537.01,
+            314.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "thermal correlation function. This means physically that there is no defect in the interior",
+          "bbox": [
+            72.0,
+            319.46,
+            537.03,
+            331.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "of the thermal disk (see Fig. 6).",
+          "bbox": [
+            72.0,
+            336.79,
+            234.57,
+            348.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 6: The KMS condition requires that there is no defect in the geometrical bulk. The blue",
+          "bbox": [
+            72.0,
+            466.26,
+            536.77,
+            477.17
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "SFBX1095",
+            "SFRM1095"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "endpoint is moved around the boundary to a distance β −τ, but it would pick up any defect in the",
+          "bbox": [
+            72.0,
+            482.37,
+            536.82,
+            493.43
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMSY10",
+            "SFRM1095"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "interior, as illustrated by the dashed line now encircling the red defect (if it would be there).",
+          "bbox": [
+            72.0,
+            498.78,
+            512.02,
+            509.69
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "SFRM1095"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Assuming βM ≡b∆with ∆integer, we can use the recursive property of the Sb(.) func-",
+          "bbox": [
+            89.56,
+            527.92,
+            536.88,
+            541.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "tions Sb(x + b) = 2 sin(πbx)Sb(x) to rewrite the correlation function in terms of elementary",
+          "bbox": [
+            72.0,
+            545.41,
+            536.99,
+            558.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "functions as (βM = b∆):",
+          "bbox": [
+            72.0,
+            562.75,
+            195.75,
+            576.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Sb(−βM + b",
+          "bbox": [
+            168.64,
+            582.0,
+            229.44,
+            597.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "2 + τ",
+          "bbox": [
+            225.51,
+            582.0,
+            252.37,
+            599.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "bβ)",
+          "bbox": [
+            246.55,
+            583.6,
+            261.09,
+            598.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            355.18,
+            585.84,
+            361.04,
+            597.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "bβ) =",
+          "bbox": [
+            241.9,
+            593.93,
+            274.71,
+            618.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "\u0011,",
+          "bbox": [
+            429.85,
+            593.93,
+            441.44,
+            613.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(3.25)",
+          "bbox": [
+            506.97,
+            593.95,
+            536.91,
+            605.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Sb(βM + b",
+          "bbox": [
+            173.29,
+            601.27,
+            224.79,
+            616.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "2 + τ",
+          "bbox": [
+            220.86,
+            601.27,
+            247.72,
+            618.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "\u0010",
+          "bbox": [
+            342.58,
+            601.69,
+            349.72,
+            613.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Q∆−1",
+          "bbox": [
+            279.22,
+            603.56,
+            308.39,
+            617.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "β + πb2",
+          "bbox": [
+            353.25,
+            604.06,
+            389.98,
+            622.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR12",
+            "CMR6"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "πτ",
+          "bbox": [
+            350.92,
+            604.77,
+            359.83,
+            612.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "2 + πb2n",
+          "bbox": [
+            381.9,
+            606.03,
+            429.86,
+            622.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "n=−∆2 sin",
+          "bbox": [
+            290.51,
+            606.36,
+            340.59,
+            620.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "7As a technical aside, the particular ratio of Sb-functions in (3.24) has appeared before in the literature",
+          "bbox": [
+            88.6,
+            632.03,
+            536.87,
+            644.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "SFRM0700",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "and has nice structural properties. In [84], it would be denoted as D−iβM (i τ",
+          "bbox": [
+            72.0,
+            646.06,
+            406.67,
+            660.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI5",
+            "CMMI7",
+            "CMR10",
+            "CMSY7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "bβ + i 1",
+          "bbox": [
+            401.04,
+            646.06,
+            433.13,
+            661.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2b), and was identified as",
+          "bbox": [
+            427.41,
+            647.64,
+            536.86,
+            660.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the kernel of the intertwiner Rα : Pα →PQ−α, mapping Virasoro representations α into their conjugate",
+          "bbox": [
+            72.0,
+            661.86,
+            536.88,
+            673.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10",
+            "CMSY7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Q−α. This same function was then identified as the building block of the 3j-symbols of the modular double",
+          "bbox": [
+            72.0,
+            676.21,
+            536.87,
+            686.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "[84].",
+          "bbox": [
+            72.0,
+            690.69,
+            90.27,
+            700.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "18",
+          "bbox": [
+            298.59,
+            719.03,
+            310.31,
+            730.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 21,
+      "rotation": 0,
+      "drawings": 64,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 7: Geometry of the quantum sinh dilaton gravity bulk, with a full quantum gravity region deep in the interior, and a UV region closer to the holographic screen where we have an emergent quantum hyperbolic disk and SLq(2, R) symmetry. One way to phrase this is that close to the boundary the gravitational quantum fluctuations are reduced from full quantum gravity to just those describing the non-commutativity of the quantum hyperbolic disk spacetime."
+      ],
+      "labels": [
+        {
+          "text": "Figure 7: Geometry of the quantum sinh dilaton gravity bulk, with a full quantum gravity region",
+          "bbox": [
+            72.0,
+            197.54,
+            536.77,
+            208.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFBX1095",
+            "SFRM1095"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "deep in the interior, and a UV region closer to the holographic screen where we have an emergent",
+          "bbox": [
+            72.0,
+            213.81,
+            536.76,
+            224.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1095"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "quantum hyperbolic disk and SLq(2, R) symmetry. One way to phrase this is that close to the",
+          "bbox": [
+            72.0,
+            230.05,
+            536.82,
+            241.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "BBOLD10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "SFRM1095"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "boundary the gravitational quantum fluctuations are reduced from full quantum gravity to just",
+          "bbox": [
+            72.0,
+            246.32,
+            536.76,
+            257.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1095"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "those describing the non-commutativity of the quantum hyperbolic disk spacetime.",
+          "bbox": [
+            72.0,
+            262.58,
+            466.25,
+            273.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1095"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            72.0,
+            294.42,
+            81.3,
+            311.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFBX1728"
+          ],
+          "sizes": [
+            17.22
+          ]
+        },
+        {
+          "text": "Concluding remarks",
+          "bbox": [
+            99.87,
+            294.42,
+            263.23,
+            311.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFBX1728"
+          ],
+          "sizes": [
+            17.22
+          ]
+        },
+        {
+          "text": "In this work, we have investigated the probe regime in a q-deformed setting of holography.",
+          "bbox": [
+            72.0,
+            327.68,
+            536.95,
+            339.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "We then illustrated that sinh (or sine) dilaton gravity exhibits this structure explicitly close",
+          "bbox": [
+            72.0,
+            345.03,
+            537.06,
+            356.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "to its holographic screen. There is an priori puzzling discrepancy between the semi-classical",
+          "bbox": [
+            72.0,
+            362.37,
+            537.01,
+            374.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "regime and the probe regime, which we interpret as due to there being a curvature singu-",
+          "bbox": [
+            72.0,
+            379.7,
+            537.02,
+            391.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "larity at the boundary. This singularity gets resolved by the non-commutative geometry of",
+          "bbox": [
+            72.0,
+            397.04,
+            537.07,
+            408.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the quantum hyperbolic disk. We end by listing some possible directions for the future.",
+          "bbox": [
+            72.0,
+            414.37,
+            520.5,
+            426.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Other boundary correlation functions in the probe regime",
+          "bbox": [
+            89.56,
+            449.04,
+            380.02,
+            461.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFTI1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "It should in principle be possible to apply our probe calculational method to other sinh",
+          "bbox": [
+            72.0,
+            466.38,
+            537.05,
+            478.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "dilaton gravity boundary correlation functions.",
+          "bbox": [
+            72.0,
+            483.71,
+            318.89,
+            495.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "In particular, the boundary three-point",
+          "bbox": [
+            328.93,
+            483.71,
+            537.09,
+            495.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "function and bulk-boundary two-point function have been explicitly computed in [25]. It",
+          "bbox": [
+            72.0,
+            501.05,
+            537.05,
+            513.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "would be interesting to explicitly take the probe limit in those cases and match it in the case",
+          "bbox": [
+            72.0,
+            518.38,
+            537.03,
+            530.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "of the boundary three-point function with known expressions for the q-holography boundary",
+          "bbox": [
+            72.0,
+            535.7,
+            536.94,
+            547.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "correlator. The bulk-boundary correlator would be an interesting new addition.",
+          "bbox": [
+            72.0,
+            553.05,
+            479.9,
+            565.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Supersymmetric generalization",
+          "bbox": [
+            89.56,
+            587.72,
+            245.41,
+            599.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFTI1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Another immediate possibility would be to consider the analogous dilaton supergravity mod-",
+          "bbox": [
+            72.0,
+            605.06,
+            537.08,
+            617.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "els. The key player in our analysis was Ramanujan’s formula (2.25). For the N = 1 sinh",
+          "bbox": [
+            72.0,
+            622.22,
+            536.88,
+            634.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "dilaton supergravity model for example, the relevant boundary two-point function correla-",
+          "bbox": [
+            72.0,
+            639.73,
+            537.07,
+            651.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "tors were determined in [27], and the relevant Ramanujan formula can be found in eq. (B.3)",
+          "bbox": [
+            72.0,
+            657.06,
+            537.05,
+            669.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "in [85]. So it appear all of the ingredients are known to immediately pursue this generaliza-",
+          "bbox": [
+            72.0,
+            674.4,
+            537.06,
+            686.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "20",
+          "bbox": [
+            298.59,
+            719.03,
+            310.31,
+            730.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 22,
+      "rotation": 0,
+      "drawings": 26,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 8: Complexified metric / dilaton contour for sine dilaton gravity, with the boundary at Φ∂= π"
+      ],
+      "labels": [
+        {
+          "text": "tion.",
+          "bbox": [
+            72.0,
+            77.47,
+            95.42,
+            89.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "DSSYK and sine dilaton gravity",
+          "bbox": [
+            89.56,
+            112.14,
+            253.98,
+            124.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFTI1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "It is important to try to adapt our techniques to the case of sine dilaton gravity, since",
+          "bbox": [
+            72.0,
+            129.48,
+            537.06,
+            141.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the holographic boundary has been proposed to be of the same nature as the current sinh",
+          "bbox": [
+            72.0,
+            146.81,
+            537.05,
+            158.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "dilaton gravity case, but in a complexified direction of the geometry (Fig. 8). Close to this",
+          "bbox": [
+            72.0,
+            164.15,
+            537.07,
+            176.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 8: Complexified metric / dilaton contour for sine dilaton gravity, with the boundary at",
+          "bbox": [
+            72.0,
+            288.73,
+            536.76,
+            299.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFBX1095",
+            "SFRM1095"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Φ∂= π",
+          "bbox": [
+            72.0,
+            302.98,
+            105.91,
+            317.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2 + i∞.",
+          "bbox": [
+            101.51,
+            304.83,
+            138.4,
+            319.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "SFRM1095"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "complexified Φ∂along this contour, the geometry looks the same as the near-boundary sinh",
+          "bbox": [
+            72.0,
+            337.33,
+            537.03,
+            350.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "dilaton geometry we discussed in this work, and this is hence where we would expect the",
+          "bbox": [
+            72.0,
+            354.68,
+            537.0,
+            366.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "quantum hyperbolic disk to live. To implement our strategy concretely, first of all we need",
+          "bbox": [
+            72.0,
+            372.02,
+            537.05,
+            383.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the technical Ramanujan identity. Additionally we need to properly define the probe regime",
+          "bbox": [
+            72.0,
+            389.35,
+            537.03,
+            401.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "in that setting since the energy spectrum is bounded from above, so defining the UV-regime",
+          "bbox": [
+            72.0,
+            406.68,
+            537.02,
+            418.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "is more subtle.",
+          "bbox": [
+            72.0,
+            424.02,
+            146.92,
+            435.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Towards q-Virasoro as the asymptotic symmetry group",
+          "bbox": [
+            89.56,
+            458.67,
+            368.48,
+            470.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "SFTI1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Our holographic screen exhibits the SLq(2, R) isometry. However, just as the global sl(2, R)",
+          "bbox": [
+            72.0,
+            475.97,
+            536.88,
+            488.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "BBOLD10",
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "EUFM10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "algebra in CFT1 is part of the much larger Virasoro algebra, also here the quantum algebra",
+          "bbox": [
+            72.0,
+            493.36,
+            537.05,
+            507.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Uq(sl(2, R) is to be embedded in a q-deformation of the Virasoro algebra, playing the role",
+          "bbox": [
+            72.0,
+            510.64,
+            537.01,
+            523.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "BBOLD10",
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "EUFM10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "of the full asymptotic symmetry group. This structure has been defined and studied in",
+          "bbox": [
+            72.0,
+            528.03,
+            537.02,
+            539.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the past in e.g. [86, 87, 88, 89, 90]. It would be interesting to understand this aspect of",
+          "bbox": [
+            72.0,
+            545.36,
+            537.06,
+            557.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "q-holography more explicitly within the context of our work.",
+          "bbox": [
+            72.0,
+            562.68,
+            382.36,
+            574.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Modular double and dual boundaries",
+          "bbox": [
+            89.56,
+            597.37,
+            274.27,
+            609.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFTI1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Our q-Ward identities isolated only half of the full symmetry algebra that governs sinh",
+          "bbox": [
+            72.0,
+            614.69,
+            537.04,
+            626.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "dilaton gravity. Indeed, its quantization is governed by the modular double Uq(sl(2, R)) ⊗",
+          "bbox": [
+            72.0,
+            631.87,
+            536.88,
+            644.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "BBOLD10",
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMSY10",
+            "EUFM10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "U˜q(sl(2, R)), which is a Hopf algebra generated by six (or five) elementary generators [91, 92,",
+          "bbox": [
+            72.0,
+            649.32,
+            537.06,
+            662.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "BBOLD10",
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "EUFM10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "93], instead of the three that we exhibited in our construction in Section 2. Here q = eπib2",
+          "bbox": [
+            72.0,
+            664.21,
+            535.89,
+            678.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR6",
+            "SFRM1200"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "and ˜q = eπi/b2. One way of seeing the other three generators is as follows. It is known",
+          "bbox": [
+            72.0,
+            681.55,
+            536.99,
+            696.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR6",
+            "SFRM1200"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "21",
+          "bbox": [
+            298.59,
+            719.03,
+            310.31,
+            730.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 23,
+      "rotation": 0,
+      "drawings": 32,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 9: Example of a two-boundary amplitude, where the two boundaries “geometrize” distinct quantum hyperbolic disk isometries: SLq(2, R) versus SL˜q(2, R)."
+      ],
+      "labels": [
+        {
+          "text": "in Liouville CFT that there are actually two dual types of FZZT branes [94, 95], related",
+          "bbox": [
+            72.0,
+            77.47,
+            537.05,
+            89.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "by the quantum duality b →1/b. Practically, this corresponds to changing b →1/b di-",
+          "bbox": [
+            72.0,
+            94.64,
+            536.88,
+            106.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "rectly in the energy expression in e.g. (3.6). Close to such a boundary circle, one hence",
+          "bbox": [
+            72.0,
+            112.14,
+            537.02,
+            124.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "finds the dual quantum disk to appear as the isometry group. This means that the near-",
+          "bbox": [
+            72.0,
+            129.48,
+            537.05,
+            141.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "boundary isometry group for every single boundary is only half of the full modular quantum",
+          "bbox": [
+            72.0,
+            146.81,
+            537.08,
+            158.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "group symmetry governing the full model. An intriguing example would then be to con-",
+          "bbox": [
+            72.0,
+            164.15,
+            537.05,
+            176.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "sider a multiboundary amplitude with different (dual) types of boundaries, exhibiting and",
+          "bbox": [
+            72.0,
+            181.48,
+            537.06,
+            193.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "“geometrizing” the different SLq(2, R)’s in the modular double (see Fig. 9 for an illustration).",
+          "bbox": [
+            72.0,
+            198.8,
+            532.18,
+            211.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "BBOLD10",
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "Figure 9: Example of a two-boundary amplitude, where the two boundaries “geometrize” distinct",
+          "bbox": [
+            72.0,
+            302.42,
+            536.76,
+            313.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFBX1095",
+            "SFRM1095"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "quantum hyperbolic disk isometries: SLq(2, R) versus SL˜q(2, R).",
+          "bbox": [
+            72.0,
+            318.67,
+            374.0,
+            330.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "BBOLD10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "SFRM1095"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Fake disk versus the Drinfeld element in quantum groups?",
+          "bbox": [
+            89.56,
+            368.02,
+            386.78,
+            379.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFTI1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The boundary correlator can be written as",
+          "bbox": [
+            72.0,
+            385.36,
+            290.94,
+            397.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0014",
+          "bbox": [
+            206.53,
+            409.69,
+            212.84,
+            421.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0012",
+          "bbox": [
+            224.68,
+            409.69,
+            233.48,
+            421.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0013",
+          "bbox": [
+            285.51,
+            409.69,
+            294.31,
+            421.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0012",
+          "bbox": [
+            308.15,
+            409.69,
+            316.95,
+            421.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0013",
+          "bbox": [
+            368.79,
+            409.69,
+            377.58,
+            421.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "\u0015",
+          "bbox": [
+            404.82,
+            409.69,
+            411.13,
+            421.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "τ1 −i",
+          "bbox": [
+            233.48,
+            409.86,
+            264.03,
+            431.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "τ2 + i",
+          "bbox": [
+            316.95,
+            409.86,
+            347.3,
+            431.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "e−βH",
+          "bbox": [
+            379.58,
+            416.03,
+            403.7,
+            429.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "O",
+          "bbox": [
+            212.84,
+            417.8,
+            222.36,
+            429.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "O",
+          "bbox": [
+            296.3,
+            417.8,
+            305.82,
+            429.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2 ln q",
+          "bbox": [
+            259.11,
+            417.95,
+            285.08,
+            438.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2 ln q",
+          "bbox": [
+            342.38,
+            417.95,
+            368.35,
+            438.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            413.12,
+            417.95,
+            416.37,
+            429.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Tr",
+          "bbox": [
+            192.51,
+            417.97,
+            204.53,
+            429.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(4.1)",
+          "bbox": [
+            512.83,
+            417.97,
+            536.9,
+            429.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "where we wrote the sinh dilaton gravity boundary operators in terms of new operators",
+          "bbox": [
+            72.0,
+            450.51,
+            537.06,
+            462.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "O(τ) whose correlators directly solve the q-Ward identities. Since time translation in τ is",
+          "bbox": [
+            72.0,
+            467.67,
+            536.88,
+            479.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMR12",
+            "CMSY10",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "generated by the generator K in the quantum algebra, we can rewrite (4.1) as",
+          "bbox": [
+            72.0,
+            485.16,
+            472.76,
+            497.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "h",
+          "bbox": [
+            119.93,
+            509.78,
+            125.57,
+            521.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2 ln qHe−βHi",
+          "bbox": [
+            266.72,
+            509.78,
+            324.47,
+            526.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI12",
+            "CMMI8",
+            "CMR6",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "h",
+          "bbox": [
+            354.24,
+            509.78,
+            359.88,
+            521.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "O(τ1)K−1/2O(τ2)e−˜βHi",
+          "bbox": [
+            359.88,
+            509.78,
+            478.91,
+            527.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "e−i",
+          "bbox": [
+            125.58,
+            510.93,
+            141.95,
+            526.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "2 ln qHO(τ1)ei ln qHO(τ2)e−i",
+          "bbox": [
+            138.78,
+            510.93,
+            269.88,
+            527.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI6",
+            "CMMI8",
+            "CMR12",
+            "CMR6",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "= Tr",
+          "bbox": [
+            327.79,
+            514.45,
+            352.24,
+            526.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Tr",
+          "bbox": [
+            105.91,
+            514.47,
+            117.94,
+            526.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(4.2)",
+          "bbox": [
+            512.83,
+            514.47,
+            536.9,
+            526.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "h",
+          "bbox": [
+            358.8,
+            535.28,
+            364.44,
+            547.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "i",
+          "bbox": [
+            447.23,
+            535.28,
+            452.87,
+            547.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "O(τ2)e−˜βHO(τ1)",
+          "bbox": [
+            364.45,
+            536.03,
+            447.23,
+            552.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "= Trq",
+          "bbox": [
+            327.79,
+            539.96,
+            356.02,
+            552.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR12",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            454.87,
+            539.96,
+            458.12,
+            551.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(4.3)",
+          "bbox": [
+            512.83,
+            539.97,
+            536.9,
+            551.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "where ˜β ≡β −i ln q = β + πb2, a slightly longer thermal circle. The K−1/2 element in",
+          "bbox": [
+            72.0,
+            567.45,
+            536.9,
+            583.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "the middle is interpretable as a defect insertion here. In the last line, we have defined a",
+          "bbox": [
+            72.0,
+            589.12,
+            537.0,
+            601.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "quantum trace by Trq(.) ≡Tr(K−1/2.). The non-trivial observation here is that a Drinfeld-",
+          "bbox": [
+            72.0,
+            605.11,
+            536.98,
+            619.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI12",
+            "CMMI8",
+            "CMR12",
+            "CMR8",
+            "CMSY10",
+            "CMSY8",
+            "SFRM1200"
+          ],
+          "sizes": [
+            7.97,
+            11.96
+          ]
+        },
+        {
+          "text": "like element in the quantum trace appears naturally here from the fake disk extra length",
+          "bbox": [
+            72.0,
+            623.79,
+            537.05,
+            635.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "segment. We leave a more detailed investigation to future work.",
+          "bbox": [
+            72.0,
+            641.13,
+            399.94,
+            653.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "22",
+          "bbox": [
+            298.59,
+            719.03,
+            310.31,
+            730.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "SFRM1200"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    }
+  ]
+}

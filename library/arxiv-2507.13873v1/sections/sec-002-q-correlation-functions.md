@@ -7,10 +7,11 @@ section_number: null
 pages: 5-9
 source_pdf: 2507.13873v1.pdf
 source_sha256: fa1d38d08dc4976a
-doc_brief: "Probing the singularity at the holographic screen via q-holography — We study the emergence ofq-deformed spacetime in a lower-dimensional gravitational system whose asymptotic region geometrizes the"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.949
-latex_coverage_ratio: 0.936
+latex_coverage_ratio: 0.996
+doc_brief: "Probing the singularity at the holographic screen via q-holography — We study the emergence of q-deformed spacetime in a lower-dimensional gravitational system whose asymptotic region geometrizes the"
 ---
 To construct a $q$-deformed version of holography, we analogously imagine the correlators of the bulk gravitational theory to be invariant under the SL$_q(2)$ global subgroup of the dual $q$-deformed conformal boundary theory. To set up the $q$-deformed SL$_q(2)$ conformal subgroup, we claim that the natural generalization of the quasi-primary transformation law [\[eq:quasiprimarytransf\]](#eq:quasiprimarytransf){reference-type="eqref" reference="eq:quasiprimarytransf"} acts as a *corepresentation* in a tensor product structure $$\begin{aligned}
 \label{eq:corep}

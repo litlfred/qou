@@ -32,7 +32,7 @@ Archimedean (ℝ): `arccos`, `cos`, ordering — §7c.
 -- Ref: [thurston1978] Ch. 7 (dihedral angles of ideal polyhedra; the conformal
 --   model measures them as Euclidean angles between face tangents)
 -- Ref: [milnor1982] Appendix
--- Ref: [manuscript] beans qou-473l (T2 File 3), qou-idvt (T2)
+-- Ref: [leitner2026] beans qou-473l (T2 File 3), qou-idvt (T2)
 -/
 
 import QOU.Archimedean.GeodesicFaceH3

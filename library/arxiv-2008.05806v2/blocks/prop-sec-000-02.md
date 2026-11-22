@@ -1,0 +1,1 @@
+Early calculations were consistent with the result obtained from the Cottingham formula, but more recent evaluations indicate higher values for mQED – we will compare the available results with the outcome of our calculation in section 23.

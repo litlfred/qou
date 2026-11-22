@@ -21,9 +21,9 @@ says why. Recording the near-miss is the point: the two gradings agree on `4₁`
 *total* only by coincidence, and conflating them would have retired a hypothesis
 on the strength of a different object.
 
--- Ref: [manuscript] library/arxiv-2111.06645/2304.09377v2.pdf §3.4, §3.5 (Garoufalidis–Zagier)
--- Ref: [manuscript] library/arxiv-2111.06645v3/2111.06645v3.pdf §2.1 (Garoufalidis–Zagier)
--- Ref: [manuscript] docs/audits/2026-08-11-route-c-bps-cohomology-scoping.md §6
+-- Ref: [leitner2026] library/arxiv-2111.06645/2304.09377v2.pdf §3.4, §3.5 (Garoufalidis–Zagier)
+-- Ref: [leitner2026] library/arxiv-2111.06645v3/2111.06645v3.pdf §2.1 (Garoufalidis–Zagier)
+-- Ref: [leitner2026] docs/audits/2026-08-11-route-c-bps-cohomology-scoping.md §6
 -/
 
 namespace QOU.QBeta.GZThirdKnotRankGrading
@@ -571,7 +571,7 @@ representations, `6₁`'s reduced Stokes matrix is **4×4**, against `5₂`'s 3�
 Arithmetic below is exact in `ℤ[α]/(α⁴ − 2α³ + α² + 3α + 1)`, elements carried as
 integer 4-tuples, so the certificate is machine-checked rather than asserted.
 
--- Ref: [manuscript] library/ki6c/ki6c.pdf (Ohtsuki–Yokota), saddle data via bean qou-6ort
+-- Ref: [leitner2026] library/ki6c/ki6c.pdf (Ohtsuki–Yokota), saddle data via bean qou-6ort
 -/
 
 /-- An element of `ℤ[α]/(dg)` as `(c₀, c₁, c₂, c₃)` ↦ `c₀ + c₁α + c₂α² + c₃α³`. -/
@@ -709,7 +709,7 @@ remains **unconfirmed**. Census identification needs SnapPy (absent in this
 sandbox) and no saddle data for it is in the corpus, so neither the Part-G nor
 the Part-H route is available. Recording 9₁₂ here does not substitute for it.
 
--- Ref: [manuscript] library/arxiv-1511.05628v1/1511.05628v1.pdf §6.3, §6.5 (Dimofte–Garoufalidis)
+-- Ref: [leitner2026] library/arxiv-1511.05628v1/1511.05628v1.pdf §6.3, §6.5 (Dimofte–Garoufalidis)
 -/
 
 /-- Ideal-tetrahedron counts, DG §6. -/

@@ -33,7 +33,7 @@ the integrated bound holds*, which is the honest content.
 
 ## References
 
-- [manuscript] quantum-observable-universe/fluid-dynamics/q-ns-wellposedness.md
+- [leitner2026] quantum-observable-universe/fluid-dynamics/q-ns-wellposedness.md
   (`thm:q-ns-wellposedness`), properties (ii) and (iii)
 -/
 

@@ -1,0 +1,44 @@
+10.5 Surgery, non-generic directions, and non-arrangement points 327
+
+Algorithms to compute global monodromy - typically using numerical al-
+gebraic geometry to approximate continuations along paths with rigorous er-
+ror bounds — are known [HRS 18, Section 3]. Unfortunately, modified methods
+working to compute local monodromy are currently only conjectured, the dif-
+ficulty being a way to certify that one has sampled enough curves to have a set
+of generators for the local monodromy group (so that if all generators are the
+identity then p is a multiple point).
+
+Example 10.55. Let Q)(x,y) = xy — 2 and Qo(x,y) = xy. Both varieties
+contain the origin, where they have leading homogeneous term xy. However,
+the origin is a multiple point of Vg, but not a multiple point of Vog,. This
+can be established, for instance, by varying a line parallel to the z-axis through
+x = y = was @ traces out a small circle around the origin. The three roots are
+the three values of @7/3, and permute cyclically when a makes one loop around
+the origin. Hence the local monodromy group is not the trivial group. This
+example illustrates the value of the monodromy characterization, as showing
+local monodromy to be non-trivial may be easier than showing irreducibility
+in the local ring. 4
+
+10.5 Surgery, non-generic directions, and non-arrangement
+points
+
+Instead of the iterated residue approach described above, multiple points were
+originally studied using a surgery method involving only univariate residues.
+While iterated residues provide a more direct path to coefficient asymptotics
+for multiple points, and work under weaker assumptions, the surgery method
+does have some advantages. For instance, in addition to more elementary com-
+putations, the explicitness of intermediate steps allows one to analyze certain
+non-generic and degenerate cases.
+
+In this final section we follow the surgery approach, computing an explicit
+univariate residue and employing an analytic trick to asymptotically evaluate
+the resulting integrals. To simplify our discussion, we consider only power
+series expansions and assume that each smooth divisor meeting at a multiple
+point is locally parametrized by the same coordinates z),...,Zy_1. Recall from
+previous chapters that for any d-vector v we write v° = (v1,...,Va-1)-
+
+Consider a multivariate generating function F(z) = >) ,eyad,z” with do-
+main of convergence D. For the remainder of this section, we make the fol-
+lowing assumptions.
+
+(1) F is meromorphic on some open set D’ containing D.

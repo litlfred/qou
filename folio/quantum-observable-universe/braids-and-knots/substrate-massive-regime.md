@@ -14,9 +14,9 @@ First, the hypothesis is *only* $q \neq 1$. No calibration input enters, and no 
 
 Second, the value $\Delta = 1$ is a phase boundary rather than an arbitrary threshold. The regime $\Delta > 1$ is the massive, Ising-like phase of the chain; the regime $|\Delta| < 1$ is the massless phase, reached only on $|q| = 1$. The contrapositive is recorded alongside the proposition: an anisotropy at or below unity forces $q = 1$, so the massless phase is unreachable from a real substrate parameter.
 
-## Lean structure
+## Algebraic structure
 
-The algebraic content is stated over a generic field, with no ordering and no archimedean construct, and the inequality is separated into its own section over $\mathbb{R}$. The module also records the two scalar identities
+The algebraic content is stated over a generic field, with no ordering and no archimedean construct, and the inequality is separated into its own section over $\mathbb{R}$. Two scalar identities are recorded as well:
 
 $$
   2\Delta(q) + h(q) = 2q, \qquad 2\Delta(q) - h(q) = 2q^{-1},

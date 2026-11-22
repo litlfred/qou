@@ -8,7 +8,7 @@
   "pages": 22,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:18Z",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -26,7 +26,7 @@
   "title_lines": [
    "A FORMULA OF ARTHUR AND AFFINE HECKE ALGEBRAS"
   ],
-  "abstract": "Let \u03c0, \u03c0\u2032 be tempered representations of an a\ufb03ne Hecke algebra with positive parameters. We study their Euler\u2013Poincar\u00b4e pairing EP(\u03c0, \u03c0\u2032), the alter- nating sum of the dimensions of the Ext-groups. We show that EP(\u03c0, \u03c0\u2032) can be expressed in a simple formula involving an analytic R-group, analogous to a for- mula of Arthur in the setting of reductive p-adic groups. Our proof applies equally well to a\ufb03ne Hecke algebras and to reductive groups over nonarchimedean local \ufb01elds of arbitrary characteristic.",
+  "abstract": "Let π, π′ be tempered representations of an aﬃne Hecke algebra with positive parameters. We study their Euler–Poincar´e pairing EP(π, π′), the alter- nating sum of the dimensions of the Ext-groups. We show that EP(π, π′) can be expressed in a simple formula involving an analytic R-group, analogous to a for- mula of Arthur in the setting of reductive p-adic groups. Our proof applies equally well to aﬃne Hecke algebras and to reductive groups over nonarchimedean local ﬁelds of arbitrary characteristic.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "LaTeX with hyperref package",
@@ -36,7 +36,7 @@
   "title_source": "text",
   "title_verified": false,
   "title_evidence": {
-   "heading": "A FORMULA OF ARTHUR AND AFFINE HECKE ALGEBRAS Contents Introduction Preliminaries A\ufb03ne Hecke algebras Parabolic induction The Schwartz algebra Analytic R-groups for tempered representations The Euler-Poincar\u00b4e pairing The Arthur formula Algebras of invariants Analytic R-groups for non-tempered repre",
+   "heading": "A FORMULA OF ARTHUR AND AFFINE HECKE ALGEBRAS Contents Introduction Preliminaries Aﬃne Hecke algebras Parabolic induction The Schwartz algebra Analytic R-groups for tempered representations The Euler-Poincar´e pairing The Arthur formula Algebras of invariants Analytic R-groups for non-tempered repre",
    "outline": "Introduction",
    "text": "A FORMULA OF ARTHUR AND AFFINE HECKE ALGEBRAS",
    "corroborated_by": [],
@@ -106,7 +106,7 @@
   },
   {
    "level": 1,
-   "title": "The Euler-Poincar\u00e9 pairing",
+   "title": "The Euler-Poincaré pairing",
    "page": 12,
    "source": "outline",
    "number": "2",
@@ -384,22 +384,22 @@
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 3,
-   "n_chars": 4797,
-   "n_words": 793,
+   "page_end": 4,
+   "n_chars": 8220,
+   "n_words": 1386,
    "label_start": null,
-   "label_end": "3"
+   "label_end": "4"
   },
   {
    "id": "sec-001-11-affine-hecke-algebras",
    "number": "1.1",
    "title": "Affine Hecke algebras",
    "level": 2,
-   "page_start": 3,
+   "page_start": 4,
    "page_end": 4,
-   "n_chars": 4951,
-   "n_words": 841,
-   "label_start": "3",
+   "n_chars": 1491,
+   "n_words": 243,
+   "label_start": "4",
    "label_end": "4"
   },
   {
@@ -421,8 +421,8 @@
    "level": 2,
    "page_start": 6,
    "page_end": 9,
-   "n_chars": 7052,
-   "n_words": 1458,
+   "n_chars": 7050,
+   "n_words": 1457,
    "label_start": "6",
    "label_end": "9"
   },
@@ -433,8 +433,8 @@
    "level": 2,
    "page_start": 9,
    "page_end": 11,
-   "n_chars": 5273,
-   "n_words": 992,
+   "n_chars": 5351,
+   "n_words": 1006,
    "label_start": "9",
    "label_end": "11"
   },
@@ -451,9 +451,9 @@
    "label_end": "12"
   },
   {
-   "id": "sec-006-2-the-euler-poincar\u00e9-pairing",
+   "id": "sec-006-2-the-euler-poincaré-pairing",
    "number": "2",
-   "title": "The Euler-Poincar\u00e9 pairing",
+   "title": "The Euler-Poincaré pairing",
    "level": 1,
    "page_start": 12,
    "page_end": 14,
@@ -539,12 +539,13 @@
    }
   },
   "sections": 12,
-  "chars_total": 54956,
+  "chars_total": 54995,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 10,
-   "overlaid": 7,
+   "overlaid": 8,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -559,21 +560,23 @@
     {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.586,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.88,
+     "coverage_ratio": 0.942,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-001-11-affine-hecke-algebras",
      "title": "Affine Hecke algebras",
-     "prose_ratio": 0.417,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.227,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-002-1-preliminaries",
      "title": "Preliminaries",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.137,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-003-12-parabolic-induction",
@@ -586,7 +589,7 @@
     {
      "id": "sec-004-13-the-schwartz-algebra",
      "title": "The Schwartz algebra",
-     "prose_ratio": 0.965,
+     "prose_ratio": 0.974,
      "coverage_ratio": 0.957,
      "result": "overlaid",
      "converter": "latex"
@@ -600,8 +603,8 @@
      "converter": "latex"
     },
     {
-     "id": "sec-006-2-the-euler-poincar\u00e9-pairing",
-     "title": "The Euler-Poincar\u00e9 pairing",
+     "id": "sec-006-2-the-euler-poincaré-pairing",
+     "title": "The Euler-Poincaré pairing",
      "prose_ratio": 0.965,
      "coverage_ratio": 0.909,
      "result": "overlaid",

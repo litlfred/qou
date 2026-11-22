@@ -1,9 +1,7 @@
-The algebraic sector forms a non-commutative probability space [`biane1998`]. The inductive-limit Hecke algebra $H_\infty(q)$ under the Markov trace $\mathrm{tr}_M$ yields a type II$_1$ factor. Braid transfer matrices $\sigma_i$ operate as non-commuting random variables. Their joint moments $\mathrm{tr}_M(\sigma_{i_1} \cdots \sigma_{i_k})$ evaluate the Jones polynomial. The hyperbolic volume $\mathrm{Vol}(S^3 \setminus K)$ defines free entropy.
+In the sense of Voiculescu and Biane \cite{biane1998}, the inductive-limit Iwahori–Hecke algebra $H_\infty(q)$ equipped with the canonical Convention-D Markov trace $\mathrm{tr}_M$ ($z_D = q^3/(q^2+1)$) forms a non-commutative probability space. Because $\mathrm{tr}_M$ vanishes on the three-row antisymmetriser ideal and factors through the positive-definite Temperley–Lieb quotient $\mathrm{TL}_\infty(q)$, the Gelfand–Naimark–Segal (GNS) completion yields a finite von Neumann algebra in which the braid generators $\sigma_i$ act as non-commuting random variables and their joint moments evaluate link invariants.
 
-We develop three framework-internal results:
+This section establishes three foundational theorems of the non-commutative probability sector:
 
-- A **$q$-deformed Central Limit Theorem**. We explain how continuous $q$-Gaussian distributions emerge macroscopically.
-- A **locality / non-locality reconciliation**. We resolve the tension between Markov-property single-generator locality and Gröbner--Shirshov composite non-locality.
-- An explicit **brane-tower convergence bound**. We control the $\hbar_q^{2n}$ brane tower sum via $q$-Laplacian exponential decay.
-
-These proofs combine Hecke-algebra inputs with non-commutative probability literature. We subsequently compare this framework with causal fermion systems.
+1. **The algebraic GNS embedding and non-commutative probability dictionary:** Proving positivity of the Convention-D centered Hecke variance on $\mathrm{TL}_n(q)$ without threshold restrictions on $q > 1$, and translating operator-algebraic invariants into physical observables.
+2. **The $q$-deformed Central Limit Theorem and macroscopic washout:** Demonstrating how non-commuting microscopic braid generators converge in the macroscopic $A \to \infty$ limit to continuous $q$-Gaussian distributions over the Plancherel measure $\mathbb{M}_{n,q}$.
+3. **Exponential brane-tower decay and Causal Fermion Systems (CFS) comparison:** Bounding the $\hbar_q^{2n}$ brane-tower tail via $q$-Laplacian spectral decay and comparing the categorical state space with Finster's Causal Fermion Systems framework.

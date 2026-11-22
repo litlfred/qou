@@ -16,7 +16,7 @@ LaTeX label: `prop:skein-polynomial-transfer-matrix`
 
 ## References
 - [jones1987] https://doi.org/10.2307/1971403
-- [manuscript] §6/skein-polynomial-transfer-matrix
+- [leitner2026] §6/skein-polynomial-transfer-matrix
 -/
 
 namespace QOU.Archimedean
@@ -26,7 +26,7 @@ namespace QOU.Archimedean
 -- ═══════════════════════════════════════════════════════════════════
 
 /-- A 2×2 transfer matrix with entries in ℝ (specialized from ℤ[q^±½]). -/
--- Ref: [manuscript] §6/skein-polynomial-transfer-matrix
+-- Ref: [leitner2026] §6/skein-polynomial-transfer-matrix
 structure TransferMatrix where
   a₁₁ : ℝ
   a₁₂ : ℝ
@@ -34,7 +34,7 @@ structure TransferMatrix where
   a₂₂ : ℝ
 
 /-- Transfer matrix multiplication. -/
--- Ref: [manuscript] §6/skein-polynomial-transfer-matrix
+-- Ref: [leitner2026] §6/skein-polynomial-transfer-matrix
 def TransferMatrix.mul (M N : TransferMatrix) : TransferMatrix where
   a₁₁ := M.a₁₁ * N.a₁₁ + M.a₁₂ * N.a₂₁
   a₁₂ := M.a₁₁ * N.a₁₂ + M.a₁₂ * N.a₂₂
@@ -42,12 +42,12 @@ def TransferMatrix.mul (M N : TransferMatrix) : TransferMatrix where
   a₂₂ := M.a₂₁ * N.a₁₂ + M.a₂₂ * N.a₂₂
 
 /-- The identity transfer matrix. -/
--- Ref: [manuscript] §6/skein-polynomial-transfer-matrix
+-- Ref: [leitner2026] §6/skein-polynomial-transfer-matrix
 def TransferMatrix.id : TransferMatrix where
   a₁₁ := 1; a₁₂ := 0; a₂₁ := 0; a₂₂ := 1
 
 /-- Transfer matrix for a single crossing with coefficients (c, d). -/
--- Ref: [manuscript] §6/skein-polynomial-transfer-matrix
+-- Ref: [leitner2026] §6/skein-polynomial-transfer-matrix
 noncomputable def crossingMatrix (q c d : ℝ) : TransferMatrix where
   a₁₁ := c * (q - 1/q) + d
   a₁₂ := c
@@ -79,14 +79,14 @@ noncomputable def crossingMatrix (q c d : ℝ) : TransferMatrix where
 
     No longer a polynomial in `q^½`: convention D is rational in `q` itself,
     which is the point of the convention. -/
--- Ref: [manuscript] §6/skein-polynomial-transfer-matrix
+-- Ref: [leitner2026] §6/skein-polynomial-transfer-matrix
 noncomputable def tracedVolumeFromMatrix (q : ℝ) (M : TransferMatrix) : ℝ :=
   let z := q ^ 3 / (q ^ 2 + 1)   -- convention D
   z * M.a₁₁ + M.a₂₁
 
 /-- The nuclear Skein polynomial: product of traced volumes.
     P_N(q) = Π_i V̂_i(q). -/
--- Ref: [manuscript] §6/skein-polynomial-transfer-matrix
+-- Ref: [leitner2026] §6/skein-polynomial-transfer-matrix
 noncomputable def skeinPolynomial (q : ℝ) (tracedVolumes : List ℝ) : ℝ :=
   tracedVolumes.foldl (· * ·) 1
 
@@ -99,7 +99,7 @@ noncomputable def skeinPolynomial (q : ℝ) (tracedVolumes : List ℝ) : ℝ :=
     Each generator σ_i has k_i = A-i-1 crossings, contributing
     degree ≤ 2k_i + 1 to the polynomial. Summing:
     Σ(2k_i + 1) = 2·C(A,2) + (A-1) = A(A-1) + (A-1) = A² - 1. -/
--- Ref: [manuscript] §6/skein-polynomial-transfer-matrix
+-- Ref: [leitner2026] §6/skein-polynomial-transfer-matrix
 theorem skein_polynomial_degree_bound (A : ℕ) (hA : 2 ≤ A) :
     2 * Nat.choose A 2 + (A - 1) = A ^ 2 - 1 := by
   have h2 : 2 * Nat.choose A 2 = A * (A - 1) := by
@@ -116,7 +116,7 @@ theorem skein_polynomial_degree_bound (A : ℕ) (hA : 2 ≤ A) :
 
 /-- The total number of transfer matrix multiplications is C(A,2).
     This is exact — not an asymptotic bound. -/
--- Ref: [manuscript] §6/skein-polynomial-transfer-matrix
+-- Ref: [leitner2026] §6/skein-polynomial-transfer-matrix
 theorem transfer_matrix_steps (A : ℕ) :
     (Finset.range (A - 1)).sum (fun i => A - i - 1) = Nat.choose A 2 := by
   -- ∑_{i=0}^{A-2} (A - 1 - i) = 1 + 2 + ... + (A-1) = A(A-1)/2 = C(A,2)
@@ -153,7 +153,7 @@ theorem transfer_matrix_steps (A : ℕ) :
     3. Physical: q = 1.1097 (Descartes condition χ = -6)
 
     This structure bundles all three roles. -/
--- Ref: [manuscript] §6/skein-polynomial-transfer-matrix
+-- Ref: [leitner2026] §6/skein-polynomial-transfer-matrix
 structure SubstrateTripleIdentity where
   /-- The single parameter q. -/
   q : ℝ
@@ -168,7 +168,7 @@ structure SubstrateTripleIdentity where
 
 /-- The canonical triple-identity bundle built from a single `q > 1`,
     taking every role from its structural default. -/
--- Ref: [manuscript] §6/skein-polynomial-transfer-matrix
+-- Ref: [leitner2026] §6/skein-polynomial-transfer-matrix
 noncomputable def SubstrateTripleIdentity.ofQ (q : ℝ) (hq : 1 < q) : SubstrateTripleIdentity where
   q := q
   q_gt_one := hq
@@ -176,7 +176,7 @@ noncomputable def SubstrateTripleIdentity.ofQ (q : ℝ) (hq : 1 < q) : Substrate
 /-- All three roles of the canonical bundle use the same numerical
     value: the Descartes substrate parameter equals `q` and the Hecke
     deformation coefficient equals `q − 1/q`. -/
--- Ref: [manuscript] §6/skein-polynomial-transfer-matrix
+-- Ref: [leitner2026] §6/skein-polynomial-transfer-matrix
 theorem triple_identity (q : ℝ) (hq : 1 < q) :
     (SubstrateTripleIdentity.ofQ q hq).descartes_q = (SubstrateTripleIdentity.ofQ q hq).q ∧
     (SubstrateTripleIdentity.ofQ q hq).hecke_coeff
@@ -192,7 +192,7 @@ theorem triple_identity (q : ℝ) (hq : 1 < q) :
     Q_q = P_par(q) - P_dau(q) - P_e(q)
 
     This is a polynomial in q evaluated at the physical point. -/
--- Ref: [manuscript] §6/skein-polynomial-transfer-matrix
+-- Ref: [leitner2026] §6/skein-polynomial-transfer-matrix
 noncomputable def Q_q_from_polynomials
     (P_par P_dau P_e : ℝ) : ℝ :=
   P_par - P_dau - P_e
@@ -200,7 +200,7 @@ noncomputable def Q_q_from_polynomials
 /-- Double beta decay: the 2-jet cross-term is nonzero.
     P^(2β) - P^(par) ≠ (P^(β₁) - P^(par)) + (P^(β₂) - P^(par))
     The difference is the nuclear matrix element polynomial. -/
--- Ref: [manuscript] §6/skein-polynomial-transfer-matrix
+-- Ref: [leitner2026] §6/skein-polynomial-transfer-matrix
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
 --      polynomials," Ann. Math. 126 (1987). Verified against the

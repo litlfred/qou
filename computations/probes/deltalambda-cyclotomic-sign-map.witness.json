@@ -3,12 +3,12 @@
   "description": "Tests whether the Masbaum cyclotomic coefficient mixed-sign supplies the \u0394_\u03bb row-grading sign (-1)^{n(\u03bb)}. Identity sgn(w_0^{S_{\u03bb'}})=(-1)^{n(\u03bb)} confirmed; cyclotomic sign is per-integer-n while \u0394_\u03bb sign is per-partition \u2014 index-matching wall. scope-(a): needs GS-filtration refinement (qou-my68). No fit; no c_k.",
   "audit_only": true,
   "tier": "symbolic-exact (partition combinatorics)",
-  "computedAt": "2026-09-03T23:06:42.599849+00:00",
-  "commitSha": "f06c8703148486e0376a6bc22cca223e497b74a0",
+  "computedAt": "2026-11-21T18:36:06.841148+00:00",
+  "commitSha": "cf9c86db5f7c58395baefaeb58e40f7ccaf8641e",
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
   "scriptFile": "deltalambda_cyclotomic_sign_map_probe.py",
-  "scriptHash": "aef5afb430fa",
+  "scriptHash": "4fd9e19bf89f",
   "assertions": [
     {
       "name": "chirality_sign_eq_row_grading",
@@ -86,9 +86,9 @@
       "qou-do3a",
       "qou-my68"
     ],
-    "relatedPrune": "Option-E PROBE-4 KL-positivity (PartitionOf5.deltaSign_mixed); Nakayama refutation (deltalambda-grho-nakayama-morphism)"
+    "relatedPrune": "Option-E PROBE-4 KL-positivity (QOU.BraidsAndKnots.deltaSign_mixed); Nakayama refutation (deltalambda-grho-nakayama-morphism)"
   },
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "scriptCommitSha": "b21207b146d997ef0d46e0d10f21b038afcaa775",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"

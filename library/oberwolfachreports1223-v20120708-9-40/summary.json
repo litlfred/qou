@@ -2,67 +2,157 @@
  "_schema": "library-summary/v1",
  "doc_id": "oberwolfachreports1223-v20120708-9-40",
  "source_sha256": "94f82cfc185955ba",
- "brief": "Mathematisches Forschungsinstitut Ober wolf ach Report No. 28/2012 Invariants in Low-Dimensional Topology and Knot Theory Organised by — This meeting concentrated on topological invariants in low di",
- "extended": "**Mathematisches Forschungsinstitut Ober wolf ach Report No. 28/2012 Invariants in Low-Dimensional Topology and Knot Theory Organised by**\n\n*Selman Akbulut, East Lansing*\n\n67 pp, 11 sections.\n\n**Abstract.** This meeting concentrated on topological invariants in low di- mensional topology and knot theory . W e include both three an df o u rd i - mensional manifolds in our phrase low dimensional topology .T h e i n t e n t o f the conference was to understand the reach of knot theoretic invariants into four dimensions, including results in Khovanov homology , variants of Floer homology and quandle cohomology and to understand relation ships among categoriﬁcation, topological quantum ﬁeld theories and four dimensional man- ifold invariants as in particular Seiberg-Witten invariants. Mathematics Subject Classiﬁcation (2000):55-xx, 57-xx.\n\n**Outline.** Front matter; References; 1 A new description of the biquandle; 2 The idea of a “partial” biquandle; 3 Applications to classical knots—in particula; 1 The deﬁnition of the biquandle can be simpli; 2 Partial biquandles are now deﬁned onallpairs; 3 In the classifying space of the double of th; 2 Using this criterion, for many (sub)families; 0 Any Kato is a deformation of blown up Hopf s; 2 Class VII surfaces (not classiﬁed yet) VI I⊃",
+ "brief": "Mathematisches Forschungsinstitut Oberwolfach Report No. 28/2012 Invariants in Low-Dimensional Topology and Knot Theory Organised by — This meeting concentrated on topological invariants in low di",
+ "extended": "**Mathematisches Forschungsinstitut Oberwolfach Report No. 28/2012 Invariants in Low-Dimensional Topology and Knot Theory Organised by**\n\n*Selman Akbulut, East Lansing*\n\n67 pp, 29 sections.\n\n**Abstract.** This meeting concentrated on topological invariants in low di- mensional topology and knot theory. We include both three and four di- mensional manifolds in our phrase low dimensional topology. The intent of the conference was to understand the reach of knot theoretic invariants into four dimensions, including results in Khovanov homology, variants of Floer homology and quandle cohomology and to understand relationships among categoriﬁcation, topological quantum ﬁeld theories and four dimensional man- ifold invariants as in particular Seiberg-Witten invariants. Mathematics Subject Classiﬁcation (2000): 55-xx, 57-xx.\n\n**Outline.** Front matter; Invariants in Low-Dimensional Topology and Kno; Virtual Knot Theory - Problems and Ideas; Invariants and homology of biquandle classifyi; Injectivity of satellite operators in knot con; A new construction of the Fukaya–Seidel catego; Naturality of Heegaard Floer homology; Free Knots and Parity in Low-Dimensional Topol; Hugh R Morton Mutant knots with symmetry; Cork twisting exotic Stein 4-manifolds; Towards a categoriﬁcation of the universal sl(; Corks and Exotic Smooth Structures of 4-Manifo; Unlinking numbers of links and their families; Detecting tightness through open book decompos; Yokonuma–Hecke algebras; Seiberg-Witten maps and stable homotopy; Recognizing trivial links in polynomial time; Gluck twisting 4-manifolds with odd intersecti",
  "tokens": {
   "brief": 49,
-  "extended": 323
+  "extended": 402
  },
  "sections": [
   {
    "id": "sec-front-matter",
    "title": "Front matter",
-   "pages": "1-11"
+   "pages": "1-5"
   },
   {
-   "id": "sec-000-references",
-   "title": "References",
-   "pages": "11-12"
+   "id": "sec-000-invariants-in-low-dimensional-topology-and-knot",
+   "title": "Invariants in Low-Dimensional Topology and Knot Theory",
+   "pages": "5-9"
   },
   {
-   "id": "sec-001-1-a-new-description-of-the-biquandle",
-   "title": "A new description of the biquandle",
+   "id": "sec-001-virtual-knot-theory---problems-and-ideas",
+   "title": "Virtual Knot Theory - Problems and Ideas",
+   "pages": "9-12"
+  },
+  {
+   "id": "sec-002-invariants-and-homology-of-biquandle-classifying",
+   "title": "Invariants and homology of biquandle classifying space",
    "pages": "12-12"
   },
   {
-   "id": "sec-002-2-the-idea-of-a-partial-biquandle",
-   "title": "The idea of a “partial” biquandle",
-   "pages": "12-12"
+   "id": "sec-003-injectivity-of-satellite-operators-in-knot-conco",
+   "title": "Injectivity of satellite operators in knot concordance",
+   "pages": "12-15"
   },
   {
-   "id": "sec-003-3-applications-to-classical-knotsin-particular-d",
-   "title": "Applications to classical knots—in particular discriminating the left and",
-   "pages": "12-12"
+   "id": "sec-004-a-new-construction-of-the-fukayaseidel-category",
+   "title": "A new construction of the Fukaya–Seidel category",
+   "pages": "15-16"
   },
   {
-   "id": "sec-004-1-the-deﬁnition-of-the-biquandle-can-be-simpliﬁe",
-   "title": "The deﬁnition of the biquandle can be simpliﬁed by the application of",
-   "pages": "12-12"
+   "id": "sec-005-naturality-of-heegaard-floer-homology",
+   "title": "Naturality of Heegaard Floer homology",
+   "pages": "16-19"
   },
   {
-   "id": "sec-005-2-partial-biquandles-are-now-deﬁned-onallpairsin",
-   "title": "Partial biquandles are now deﬁned onallpairs—in particular taking thedouble",
-   "pages": "12-12"
+   "id": "sec-006-free-knots-and-parity-in-low-dimensional-topolog",
+   "title": "Free Knots and Parity in Low-Dimensional Topology",
+   "pages": "19-23"
   },
   {
-   "id": "sec-006-3-in-the-classifying-space-of-the-double-of-the",
-   "title": "In the classifying space of the double of the 3-colour quandle, th e left and right",
-   "pages": "12-26"
+   "id": "sec-007-hugh-r-morton-mutant-knots-with-symmetry",
+   "title": "Hugh R Morton Mutant knots with symmetry",
+   "pages": "23-23"
   },
   {
-   "id": "sec-007-2-using-this-criterion-for-many-subfamilies-of-k",
-   "title": "Using this criterion, for many (sub)families of knots we can conﬁrm",
-   "pages": "26-49"
+   "id": "sec-008-cork-twisting-exotic-stein-4-manifolds",
+   "title": "Cork twisting exotic Stein 4-manifolds",
+   "pages": "23-23"
   },
   {
-   "id": "sec-008-0-any-kato-is-a-deformation-of-blown-up-hopf-sur",
-   "title": "Any Kato is a deformation of blown up Hopf surfaces and has ( intriguing)b2",
-   "pages": "49-49"
+   "id": "sec-009-towards-a-categoriﬁcation-of-the-universal-sl2-l",
+   "title": "Towards a categoriﬁcation of the universal sl(2) link invariant",
+   "pages": "23-24"
   },
   {
-   "id": "sec-009-2-class-vii-surfaces-not-classiﬁed-yet-vi-ivi-ib",
-   "title": "Class VII surfaces (not classiﬁed yet) VI I⊃VI Ib2>0",
-   "pages": "49-67"
+   "id": "sec-010-corks-and-exotic-smooth-structures-of-4-manifold",
+   "title": "Corks and Exotic Smooth Structures of 4-Manifolds",
+   "pages": "24-24"
+  },
+  {
+   "id": "sec-011-unlinking-numbers-of-links-and-their-families",
+   "title": "Unlinking numbers of links and their families",
+   "pages": "24-27"
+  },
+  {
+   "id": "sec-012-detecting-tightness-through-open-book-decomposit",
+   "title": "Detecting tightness through open book decompositions",
+   "pages": "27-28"
+  },
+  {
+   "id": "sec-013-yokonumahecke-algebras",
+   "title": "Yokonuma–Hecke algebras",
+   "pages": "28-31"
+  },
+  {
+   "id": "sec-014-seiberg-witten-maps-and-stable-homotopy",
+   "title": "Seiberg-Witten maps and stable homotopy",
+   "pages": "31-31"
+  },
+  {
+   "id": "sec-015-recognizing-trivial-links-in-polynomial-time",
+   "title": "Recognizing trivial links in polynomial time",
+   "pages": "31-33"
+  },
+  {
+   "id": "sec-016-gluck-twisting-4-manifolds-with-odd-intersection",
+   "title": "Gluck twisting 4-manifolds with odd intersection form",
+   "pages": "33-33"
+  },
+  {
+   "id": "sec-017-distributivity-versus-associativity-in-the-homol",
+   "title": "Distributivity versus associativity in the homology theory of algebraic structures",
+   "pages": "33-36"
+  },
+  {
+   "id": "sec-018-spinal-open-books-and-algebraic-torsion-in-conta",
+   "title": "Spinal open books and algebraic torsion in contact 3-manifolds",
+   "pages": "36-39"
+  },
+  {
+   "id": "sec-019-vassiliev-invariants-for-virtual-knots",
+   "title": "Vassiliev invariants for virtual knots",
+   "pages": "39-42"
+  },
+  {
+   "id": "sec-020-surface-bundles-lefschetz-ﬁbrations-and-their-mu",
+   "title": "Surface bundles, Lefschetz ﬁbrations, and their (multi)sections",
+   "pages": "42-43"
+  },
+  {
+   "id": "sec-021-on-a-cohomology-theory-for-colored-tangles",
+   "title": "On a cohomology theory for colored tangles",
+   "pages": "43-46"
+  },
+  {
+   "id": "sec-022-seiberg-witten-theory-and-four-dimensional-homol",
+   "title": "Seiberg-Witten theory and four-dimensional homology cobordisms",
+   "pages": "46-46"
+  },
+  {
+   "id": "sec-023-torus-bundles-and-the-lower-central-series-of-me",
+   "title": "Torus bundles, and the lower central series of metabelian groups",
+   "pages": "46-48"
+  },
+  {
+   "id": "sec-024-82-curves-on-class-vii-surfaces-a-gauge-theoreti",
+   "title": "Curves on class VII surfaces. A gauge theoretical approach for proving existence of a cycle",
+   "pages": "48-52"
+  },
+  {
+   "id": "sec-025-recent-progress-on-topologically-slice-knots",
+   "title": "Recent progress on topologically slice knots",
+   "pages": "52-54"
+  },
+  {
+   "id": "sec-026-combinatorial-spatial-graph-floer-homology",
+   "title": "Combinatorial Spatial Graph Floer Homology",
+   "pages": "54-58"
+  },
+  {
+   "id": "sec-027-floer-theoretically-essential-tori-in-rational-b",
+   "title": "Floer theoretically essential tori in rational blowdowns",
+   "pages": "58-67"
   }
  ],
  "provenance": {

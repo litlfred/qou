@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/oberwolfachreports1223-v20120708-9-40/sections/sec-021",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "On a cohomology theory for colored tangles",
+  "pageStart": 43,
+  "pageEnd": 46,
+  "contains": [
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/prose-sec-021",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/thm-sec-021-01",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/thm-sec-021-02",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/figure-img-p044-1",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/figure-img-p045-1",
+    "library/oberwolfachreports1223-v20120708-9-40/blocks/figure-img-p046-1"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/oberwolfachreports1223-v20120708-9-40/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/oberwolfachreports1223-v20120708-9-40/manifest.jsonld",
+  "provenance": "ingested"
+}

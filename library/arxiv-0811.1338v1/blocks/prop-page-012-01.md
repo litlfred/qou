@@ -1,0 +1,1 @@
+The ﬁrst (0+; 0) excited state in 4He is calculated within 10% of the experimental value, while the 6Li ground state comes out at about 70% of the experimental value in agreement with the 30 % error expected for the leading order approximation.

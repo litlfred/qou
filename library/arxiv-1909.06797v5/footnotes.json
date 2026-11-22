@@ -1,0 +1,1269 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1909.06797v5",
+ "status": "determined",
+ "body_size": 12.0,
+ "footnotes": [
+  {
+   "id": "fn-p004-1",
+   "page": 4,
+   "mark": "1",
+   "text": "A matrix model analysis of such growth process has been discussed in [8] - an asymptotic shape of large diagram has been computed which matches with the limit shape of [3–5, 9].",
+   "marks": [
+    {
+     "page": 4,
+     "context": "lackingeitherinmathematicsorphysicsliterature"
+    }
+   ],
+   "block": "library/arxiv-1909.06797v5/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p008-1",
+   "page": 8,
+   "mark": "2",
+   "text": "Onecanalsoconstructsimilardropletdescriptionfortimedependentunitarymatrixmodel.Inthatcasetime evolution of these droplets are inherent [22]",
+   "marks": [
+    {
+     "page": 7,
+     "context": "h"
+    },
+    {
+     "page": 7,
+     "context": "h2−2S (θ)h + S"
+    },
+    {
+     "page": 7,
+     "context": "h2−2S (θ)h + S2(θ) −π"
+    },
+    {
+     "page": 7,
+     "context": "h2−2S (θ)h + S2(θ) −π2ρ"
+    },
+    {
+     "page": 8,
+     "context": "ptures the information about large N representations.Since ω"
+    },
+    {
+     "page": 8,
+     "context": " obtain the single particle Hamiltonian by comparing the two"
+    },
+    {
+     "page": 8,
+     "context": "h(h, θ) =h"
+    }
+   ],
+   "block": "library/arxiv-1909.06797v5/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p008-2",
+   "page": 8,
+   "mark": "3",
+   "text": "One can show that [18] integrating over h, the total Hamiltonian (without the ℏfactor) is same as the collective ﬁeld theory Hamiltonian of Jevicki and Sakita [23] Z S 2ρ + π2ρ3 ! Hh = − dθ + Ve f f (θ)ρ + µ (2.17)",
+   "marks": [
+    {
+     "page": 8,
+     "context": "Total Hamiltonian"
+    }
+   ],
+   "block": "library/arxiv-1909.06797v5/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p010-1",
+   "page": 10,
+   "mark": "4",
+   "text": "There is another advantage to draw the Young diagrams in rotated French notation.A transition from λkto λk+1 occurs when one keeps a box at any of the minima of rotated diagram. Putting a box at diﬀerent minima corresponds to diﬀerent diagrams at k + 1 level. Therefore the transition probabilities are denoted by µa where a is the position of a minimum. To ﬁnd µa we deﬁne two polynomials P(x) = Qn",
+   "marks": [
+    {
+     "page": 10,
+     "context": "AYoungdiagraminthisnotation"
+    }
+   ],
+   "block": "library/arxiv-1909.06797v5/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p019-1",
+   "page": 19,
+   "mark": "5",
+   "text": "Please note the diﬀerence in notation.Here u is Young diagram density and h is hook number.",
+   "marks": [
+    {
+     "page": 19,
+     "context": "at the Young diagram density satisﬁes the automodel equation"
+    }
+   ],
+   "block": "library/arxiv-1909.06797v5/blocks/prose-sec-010"
+  },
+  {
+   "id": "fn-p020-1",
+   "page": 20,
+   "mark": "6",
+   "text": "Equations of motion from (6.2) are given by ˙¯h(t) = −∂h ˙θ(t) = ∂h ∂θ = π2ρ(θ)ρ′(θ), ∂¯h = ¯h(t) (6.6) Substituting the boundary relations (6.3) in these equations, one ﬁnds (6.7).",
+   "marks": [
+    {
+     "page": 20,
+     "context": "droplet boundaries are given by"
+    }
+   ],
+   "block": "library/arxiv-1909.06797v5/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p020-2",
+   "page": 20,
+   "mark": "7",
+   "text": "At this point one should note that (6.7) is in the standard from of an inviscid Burger’s equation, which is a KdV type equation. The appearance of KdV type equations is quite common in random matrix theories which indicates that the problem is exactly solvable. For the Fermi ﬂuid picture that appears in the context of unitary matrix model one can actually construct an inﬁnite set of commuting Hamiltonians/conserved charges [46, 47], signifying the integrability of the system. In fact, in [47] the authors have used analogous variables of (2.9) to deduce the Lax pairs with the same Hamiltonian as (6.5). Further, the commuting Hamiltonians described in [47, 48] can be shown to be similar to diﬀerent moments of the diagram (3.15) and the resolvent (5.13) or similarly the moment generating function (3.16) includes information about the full spectrum of the Hamiltonians. Therefore from the integrability structure emergent from the matrix model side one can show that all the moments of the diagram as described by [5] is conserved. In the current context we are interested in canonically quantising the droplets, rather than looking at the underlying integrability structure of (6.5).",
+   "marks": [
+    {
+     "page": 20,
+     "context": "prime denote derivative with respect to t and θ respectively"
+    }
+   ],
+   "block": "library/arxiv-1909.06797v5/blocks/prose-sec-012"
+  },
+  {
+   "id": "fn-p023-1",
+   "page": 23,
+   "mark": "8",
+   "text": "A rather interesting feature of coherent states written in this form is pointed out by [50–52].One can show that the inner product between the coherent state (6.28) and a state lying in the Grassmannian is tau function of the KP hiererchy.",
+   "marks": [
+    {
+     "page": 23,
+     "context": "A generic coherent state in H+ can be deﬁned as"
+    }
+   ],
+   "block": "library/arxiv-1909.06797v5/blocks/prose-sec-012"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p010-2",
+   "page": 10,
+   "mark": "a",
+   "text": "=1(x −xa) and Q(x)=Qn−1",
+   "block": "library/arxiv-1909.06797v5/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p010-3",
+   "page": 10,
+   "mark": "a",
+   "text": "=1(x −ya), wherex1, · · ·, xn are positions of consecutive minima and y1, · · · , yn−1 are consecutive maxima. The transition probability from λk to λk+1 by adding a box at ath minima is given by decomposing the quotient into partial fraction n µa = Q(x) X P(x) . (3.10) x −xa a=1",
+   "block": "library/arxiv-1909.06797v5/blocks/prose-sec-003"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "c",
+   "context": "Arghya Chattopadhyaya,b, Suvankar Dutta"
+  },
+  {
+   "page": 1,
+   "mark": "c",
+   "context": "topadhyaya,b, Suvankar Duttac, Debangshu Mukherjeec,d, Neetu"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "TrU"
+  },
+  {
+   "page": 5,
+   "mark": "†",
+   "context": "TrUn+ TrU"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "U→{e"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "U→{eiθ"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "U→{eiθ1, · · · e"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "U→{eiθ1, · · · eiθ"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "U→{eiθ1, · · · eiθi, · · ·, e"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "(Nβ"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "(Nβn)"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "(Nβn)k"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "kn!n"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "kn!nk"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "Here,{h"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "character of the permutation group S"
+  },
+  {
+   "page": 8,
+   "mark": "h",
+   "context": "2−S (θ)"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "z"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "calledfugacity(z>0)andZYkisthecanonicalpartitionfunctionforY"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "( fλk)"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "f"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "We use P(λ"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "P(λk) =(dim λ"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "P(λk) =(dim λk)"
+  },
+  {
+   "page": 11,
+   "mark": "u",
+   "context": "π(u sin−1"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "4 −u"
+  },
+  {
+   "page": 11,
+   "mark": "v",
+   "context": "k→∞ˆ"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "k→∞ˆv"
+  },
+  {
+   "page": 11,
+   "mark": "v",
+   "context": "2 (ˆ"
+  },
+  {
+   "page": 11,
+   "mark": "v",
+   "context": "2+ˆ"
+  },
+  {
+   "page": 11,
+   "mark": "v",
+   "context": "2+ˆ"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "u"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "ram (area covered under the curveˆv(h)) is given by A=(p2 −p"
+  },
+  {
+   "page": 11,
+   "mark": "x",
+   "context": "n"
+  },
+  {
+   "page": 12,
+   "mark": "v",
+   "context": "2t(ˆ"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "2t(ˆv(u,"
+  },
+  {
+   "page": 12,
+   "mark": "v",
+   "context": "2t(ˆv(u, t) −u∂uˆ"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "2t(ˆv(u, t) −u∂uˆv(u,"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "k→∞ˆν"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "(dimλk)"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "z"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "(dimλk)"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "z"
+  },
+  {
+   "page": 13,
+   "mark": "†",
+   "context": "TrU + TrU"
+  },
+  {
+   "page": 13,
+   "mark": "†",
+   "context": "λ(TrU+TrU"
+  },
+  {
+   "page": 14,
+   "mark": "a",
+   "context": "[dU] e"
+  },
+  {
+   "page": 14,
+   "mark": "†",
+   "context": "[dU] eaTrUTrU"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "a"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "k!(TrU)"
+  },
+  {
+   "page": 14,
+   "mark": "†",
+   "context": "k!(TrU)k(TrU"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "k!(TrU)k(TrU†)"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "(TrU)"
+  },
+  {
+   "page": 14,
+   "mark": "†",
+   "context": "(TrU"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "(TrU†)"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "χR(1"
+  },
+  {
+   "page": 14,
+   "mark": "†",
+   "context": "χR(1k)TrRU"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "χR(1"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "the sum is over representations of U(N) (or S U(N)) and χR(1"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "class(1"
+  },
+  {
+   "page": 14,
+   "mark": "†",
+   "context": "[dU]TrRUTrR′U"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "(χR(1"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "(χR(1k))"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "a"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "t is well known that the character of the conjugacy class (1"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "χR(1"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": " U(N) can be expressed in terms of Young diagrams.Since χR(1"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "(dimλk)"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "a"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "i=1where"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "i=1where n"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "n(x) =n"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "h(x) =h"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "\"Z"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "\"Z"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "=N"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "ni−→N"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "=N"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "Young diagram in the large N limit goes as ∼O(N"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "[Dh(x)]e−N"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "[Dh(x)]e−N2S"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "ξ"
+  },
+  {
+   "page": 17,
+   "mark": "h",
+   "context": "Z"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "(h −1)"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "(h −1)2−4ξ"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "2ξ"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "k′= ξ"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "is solution is valid for 0 ≤ξ≤1/2.From the deﬁnition of ξ (ξ"
+  },
+  {
+   "page": 18,
+   "mark": "q",
+   "context": "Z"
+  },
+  {
+   "page": 18,
+   "mark": "q",
+   "context": "Z"
+  },
+  {
+   "page": 18,
+   "mark": "q",
+   "context": "Z"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "N"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "N2ln Pλ"
+  },
+  {
+   "page": 19,
+   "mark": "v",
+   "context": "2"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "Since for this branch we have ξ"
+  },
+  {
+   "page": 19,
+   "mark": "u",
+   "context": "2k′∂h"
+  },
+  {
+   "page": 19,
+   "mark": "k",
+   "context": "2k′∂hu(h,"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "¯h"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "2−π"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "2ρ(θ)"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "dθ π"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "dθ π3ρ(θ)"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "dθ¯h"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "dθ¯h"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "dθ +ℏ"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "\u0010˜h"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "+(t, θ) + ˜h"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "\u0010˜h"
+  },
+  {
+   "page": 21,
+   "mark": "3",
+   "context": "+(t, θ) −˜h"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "2"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "2mδ"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "2"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "2mδ"
+  },
+  {
+   "page": 22,
+   "mark": "†",
+   "context": "Since˜h±(t, θ) are real we have a−n=a"
+  },
+  {
+   "page": 22,
+   "mark": "b",
+   "context": "nand"
+  },
+  {
+   "page": 22,
+   "mark": "†",
+   "context": "nand b−n=b"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "0+ℏ"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "0−ℏ"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "24"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "24a"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "24a0 + ℏ(1 + 2ℏ"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "24a0 + ℏ(1 + 2ℏa"
+  },
+  {
+   "page": 22,
+   "mark": "†",
+   "context": "a"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "2"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "2a"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "3"
+  },
+  {
+   "page": 22,
+   "mark": "3",
+   "context": "3a"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "n"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "na"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "+ ℏ"
+  },
+  {
+   "page": 22,
+   "mark": "†",
+   "context": "a"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "m+n"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "m+nam"
+  },
+  {
+   "page": 22,
+   "mark": "c",
+   "context": "m+naman+ h."
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "\u0011l"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "\u0011k"
+  },
+  {
+   "page": 22,
+   "mark": "†",
+   "context": "a"
+  },
+  {
+   "page": 22,
+   "mark": "†",
+   "context": "b"
+  },
+  {
+   "page": 22,
+   "mark": "j",
+   "context": "\u0013k"
+  },
+  {
+   "page": 23,
+   "mark": "s",
+   "context": "free|⃗k = ℏ(1 ± 2"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "nnk"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "n"
+  },
+  {
+   "page": 23,
+   "mark": "†",
+   "context": "na"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "4τ"
+  },
+  {
+   "page": 23,
+   "mark": "b",
+   "context": "n+τ"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "τ"
+  },
+  {
+   "page": 23,
+   "mark": "b",
+   "context": "+|τ"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "nℏ"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "!k"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "z"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "z"
+  },
+  {
+   "page": 23,
+   "mark": "i",
+   "context": "ωτ+(θ) ≡ωτ+(z = e"
+  },
+  {
+   "page": 23,
+   "mark": "n",
+   "context": "ncos"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "ground state is given by"
+  },
+  {
+   "page": 24,
+   "mark": "†",
+   "context": "a"
+  },
+  {
+   "page": 24,
+   "mark": "†",
+   "context": "= exp 2a"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "Such state corresponds to a droplet with"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "eiTℏC"
+  },
+  {
+   "page": 25,
+   "mark": "†",
+   "context": "a"
+  },
+  {
+   "page": 25,
+   "mark": "†",
+   "context": "2αna"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "sin"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "N"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "Nk"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "Nknβ"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "Nknβk"
+  },
+  {
+   "page": 27,
+   "mark": "k",
+   "context": "kn!n"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "kn!nk"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "kn=N"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "−N"
+  },
+  {
+   "page": 28,
+   "mark": "h",
+   "context": "−N2S"
+  },
+  {
+   "page": 28,
+   "mark": "h",
+   "context": "whereS"
+  },
+  {
+   "page": 28,
+   "mark": "e",
+   "context": "e f fisthe"
+  },
+  {
+   "page": 28,
+   "mark": "h",
+   "context": "m those representations which minimise the eﬀective action S"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "(Pn(x))"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "(Pn(x))k"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "x"
+  },
+  {
+   "page": 28,
+   "mark": "x",
+   "context": "(h1,··· ,hN)= coeﬃcient of"
+  },
+  {
+   "page": 28,
+   "mark": "h",
+   "context": "(h1,··· ,hN)= coeﬃcient ofx"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "(h1,··· ,hN)= coeﬃcient ofxh"
+  },
+  {
+   "page": 28,
+   "mark": "h",
+   "context": "1· · · x"
+  },
+  {
+   "page": 28,
+   "mark": "f",
+   "context": "Nin"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "exp[−N"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "−N"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 29,
+   "mark": "l",
+   "context": "nand"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "z"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "Z"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "dxz"
+  },
+  {
+   "page": 29,
+   "mark": "l",
+   "context": "nand"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "z(x) = e"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "n=β"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "n=βnρ"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "z"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "z"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "z"
+  },
+  {
+   "page": 30,
+   "mark": "z",
+   "context": "z −z′± iπ"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "eiθ−e"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "N"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "4 sin"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "2β"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "nρ"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "nρn + N"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "nρn + N2"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "h"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "h2−2S (θ)h + S (θ) −π"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "h2−2S (θ)h + S (θ) −π2ρ"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "nβncos"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "h(z)"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "h(z)2−2S (z)h(z) + S"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "h(z)2−2S (z)h(z) + S2(z) −π"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "h(z)2−2S (z)h(z) + S2(z) −π2ρ"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "hese two Riemann sheets.The resulting geometry is given by S"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "e two Riemann sheets.The resulting geometry is given by S2∪S"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "4ξ"
+  }
+ ]
+}

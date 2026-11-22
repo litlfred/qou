@@ -1,0 +1,45 @@
+B.4 Topology of complex manifolds 477
+B.4 Topology of complex manifolds
+
+For us, complex manifolds usually arise as (subsets of) varieties or the comple-
+ments of varieties in C/, with ACSV requiring the integration of holomorphic
+forms over chains of real dimension p contained in complex p-manifolds. This
+final section shows how the complex structure of a complex p-manifold makes
+it behave in several ways like a real p-manifold, even though it actually has
+real dimension 2p.
+
+Proposition B.20 (Andreotti-Frankel Theorem). [f X is a complex p-manifold
+embedded in C" for some n > p then X is homotopy equivalent to a CW
+complex of dimension at most p. It follows that the singular homology groups
+H,(X) and singular cohomology groups H*(X) vanish for all k > p.
+
+Proof Andreotti and Frankel [AF59] proved this for smooth algebraic (and
+analytic) varieties using Morse theory. A sketch is given at the end of Ap-
+pendix C. ia)
+
+Remark B.21. The complex projective space CP" is a complex manifold hav-
+ing nonvanishing homology in all even dimensions up to 2k. Therefore it vi-
+olates the conclusions of the Andreotti-Frankel Theorem, and cannot be em-
+bedded in C” for any n. This contrasts to the real case, where the Whitney
+embedding theorem states that any real k-manifold can be embedded into R**.
+
+In fact, we can compute homology by considering only holomorphic forms.
+If M is a complex p-manifold then the operator w +» dw preserves holo-
+morphicity, so the holomorphic forms on M define a sub-cochain complex
+Chole of the de Rham complex C”, called the holomorphic de Rham com-
+plex. The inclusion C”"°!° <> C” does not, in general, induce an isomorphism
+on cohomology, but once again this difficulty can be overcome by restricting
+to manifolds embedded in complex space.
+
+Proposition B.22 (holomorphic de Rham cohomology). Let M be a complex
+p-manifold embedded in C". Then the inclusions C"""(M) — C"(M) induce
+an isomorphism of cohomology rings. In particular, H"!*(M) = H*(M) for
+allk > 0. ia]
+
+Proof See Voisin [Voi02] and the notes at the end of this appendix. ia)
+
+We finish this appendix by observing a corollary of Proposition B.10 in the
+complex setting.
+
+Corollary B.23 (asymptotics depend only on relative homology class). Let X
+be a complex manifold of dimension n with submanifold Y also of dimension

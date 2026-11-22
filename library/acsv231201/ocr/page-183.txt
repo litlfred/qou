@@ -1,0 +1,45 @@
+6.5 Additional constructions 165
+
+Chapter 6 to amoebas and Newton polytopes. The development of basic re-
+sults on amoebas [GKZ08, Section 6.1] begins by quoting without proof some
+basic facts about Laurent series akin to Theorem 6.4. The reference they give,
+namely [Kra01], proves these only for ordinary power series, and the result-
+ing wild-goose chase led us to write down a more complete development
+(the first author learned much of the material used in our proofs while sit-
+ting in on a graduate course at the University of Pennsylvania given by L.
+Matusevich in Fall 2004). Additional background material on amoebas can be
+found in [FPT00; Mik00; The02; Mik04; dWol13; dWol17; Tim18; For+19].
+As noted above, our treatment of the order map and connections between the
+Newton polytope and amoeba complement components is heavily based on
+Forsberg et al. [FPTOO]. Exercise 6.16 is taken from Rudin [Rud69, Theo-
+rem 4.6.2]. Our proof of Theorem 6.44(b) is inspired by Mikhalkin [Mik00;
+Mik04].
+
+A good part of the theory of amoebas of algebraic hypersurfaces goes through
+for analytic hypersurfaces. This and its applications to statistical physics, for
+example, make up the content of [PPT13]. Because the theory of amoebas of
+analytic hypersurfaces is still being formed, we mostly avoid its use.
+
+The Legendre transform (or convex dual) of a convex function f : R‘ > R
+is the function f* : (R“)* > R defined by
+
+f°) = sup (v, x) - f(a),
+weR?!
+
+which satisfies the duality relation f** = f —see, e.g., [Roc66], where f* is also
+called the convex conjugate of f. Legendre transforms are intimately connected
+with exponential rates of growth and decay. For example, in probability theory
+the large deviation rate function f(A), defined as the Legendre transform of
+the logarithm of the moment generating function, gives the rate of exponential
+decay of the probability of the mean of n IID variables to exceed 2. In our
+setting, the dual rate B*(r) = inf,z<g—r - x from (6.5) is the negative of the
+Legendre transform of the convex function that is 1 on B and oo on B°.
+
+Additional exercises
+
+Exercise 6.15. Give a simple necessary condition on f for amoeba(/) to fail
+to be strictly convex (in other words, for amoeba(f) to be flat by containing a
+line segment in its boundary).
+
+Exercise 6.16. If a8 : [0,1] > C? are curves with a(0) = a(1) = B(O) = BC)
+then the product loop a#f : [0,1] — C2 obtained by following a and then P is

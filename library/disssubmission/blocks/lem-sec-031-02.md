@@ -1,0 +1,1 @@
+If the theta divisor Θ is smooth or has at most isolated singularities, then over some Zariski-open dense subset U ⊂X there exists a smooth proper family fU : YU −→U whose ﬁbre over any point x ∈U(C) is isomorphic to Yx = Θ∩Θx.

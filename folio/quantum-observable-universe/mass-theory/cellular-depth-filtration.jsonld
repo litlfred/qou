@@ -1,0 +1,38 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-cellular-depth-filtration",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:cellular-depth-filtration",
+  "kind": "proposition",
+  "title": "Cell-depth filtration of $Z(H_n(q))$: GB-depth as Lusztig's $a$-function, a filtration by ideals that the Goldman involution carries to the $n(\\lambda)$-filtration; conditional parity transfer",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-shell-schur-weyl-self-duality"
+  ],
+  "cites": [
+    "references/kazhdan-lusztig1979",
+    "references/mathas1999",
+    "references/dipper-james1986",
+    "references/macdonald1995"
+  ],
+  "tags": [
+    "two-filtration",
+    "gb-depth",
+    "a-function",
+    "kazhdan-lusztig",
+    "centre",
+    "goldman-involution"
+  ],
+  "leanRef": "qou:QOU.MassCore.CellularDepth.map_mem_F_comp",
+  "text": "cellular-depth-filtration.md",
+  "leanSource": "cellular-depth-filtration.lean",
+  "provenance": "authored"
+}

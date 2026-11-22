@@ -34,7 +34,7 @@ The grading group `G` and phase group `k` are written **additively** (cohomology
 is naturally additive; the octonion signs live in `k = ℤ/2`). Generic
 (`[AddCommGroup G]`, `[AddCommGroup k]`; §7c), sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-07-12-octonion-recovery-from-genus4-analysis.md
+-- Ref: [leitner2026] docs/audits/2026-07-12-octonion-recovery-from-genus4-analysis.md
 -/
 
 namespace QOU.BringsSurface.PentagonTwist

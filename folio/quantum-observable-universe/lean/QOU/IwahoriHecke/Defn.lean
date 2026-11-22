@@ -79,7 +79,7 @@ Refs:
 - [humphreys1990] Humphreys, "Reflection Groups and Coxeter Groups"
 - [geckpfeiffer2000] Geck–Pfeiffer, "Characters of finite Coxeter
   groups and Iwahori–Hecke algebras"
-- [manuscript] docs/workplans/2026-05-30-iwahori-hecke-mathlib-infra-plan.md
+- [leitner2026] docs/workplans/2026-05-30-iwahori-hecke-mathlib-infra-plan.md
 -/
 
 namespace QOU.IwahoriHecke

@@ -51,7 +51,7 @@ Archimedean (ℝ): `dH`, `‖·‖`, ordering `0 < z` — §7c.
   -- Ref: [thurston1978] Ch. 2 §2.4 (isometry group acts transitively; reduction
   --   of geodesic uniqueness to the vertical geodesic)
   -- Ref: [ratcliffe] §4.6 (geodesics of `H³`; uniqueness of the minimiser)
-  -- Ref: [manuscript] beans qou-r111 (the full geodesic-uniqueness wall),
+  -- Ref: [leitner2026] beans qou-r111 (the full geodesic-uniqueness wall),
   --   qou-0a0z (WALL-2), qou-xidi (WALL-4), qou-473l (T2), qou-idvt (T2)
 -/
 

@@ -32,7 +32,7 @@ Reuses (compose-don't-restate): `qint`/`qfact`
 the bar transform `pow_mul_qint_inv`
 (`QOU.Archimedean.BalancedMomentConfluence`), `geom_sum_mul` (Mathlib).
 
--- Ref: [manuscript] docs/audits/2026-08-01-ksel2id-friedrichs-sw-identification.md §1;
+-- Ref: [leitner2026] docs/audits/2026-08-01-ksel2id-friedrichs-sw-identification.md §1;
 --      predicted-spectra, conj:schwinger-measure-computational-time;
 --      [moak1981] q-Laguerre polynomials; [christiansen2003sw] SW moment
 --      problem; [berg1995] indeterminate moment problems.

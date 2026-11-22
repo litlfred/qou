@@ -7,11 +7,21 @@
   "bytes": 283710,
   "pages": 33,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 9,
+    "reason": "10 of 360 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 23,
+    "reason": "10 of 396 words are a stray single letter: the text layer splits words"
+   }
+  ],
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,20 +31,30 @@
    "stamp_date": "13 Jun 2008"
   },
   "doi": null,
-  "title": "Bounds for codes and designs in complex subspaces Aidan Roy \u2217",
-  "authors_raw": "Institute for Quantum Information Science, University of C algary",
+  "title": "Bounds for codes and designs in complex subspaces",
+  "authors_raw": "Aidan Roy∗",
   "title_lines": [
-   "Bounds for codes and designs in complex subspaces",
-   "Aidan Roy \u2217"
+   "Bounds for codes and designs in complex subspaces"
   ],
-  "abstract": "We introduce the concepts of complex Grassmannian codes and designs. Let Gm,n denote the set of m-dimensional subspaces of Cn: then a code is a \ufb01nite subset of Gm,n in which few distances occur, while a design is a \ufb01nite subset of Gm,n that polynomially approximates the entire set. Using Delsa rte\u2019s linear programming techniques, we \ufb01nd upper bounds for the size of a code and lower bounds for the size of a design, and we show that association s chemes can occur when the bounds are tight. These results are motivated by the bounds for real subspaces recently found by Bachoc, Coulangeon and Nebe, an d the bounds generalize those of Delsarte, Goethals and Seidel for codes and designs on the complex unit sphere.",
+  "abstract": "We introduce the concepts of complex Grassmannian codes and designs. Let Gm,n denote the set of m-dimensional subspaces of Cn: then a code is a ﬁnite subset of Gm,n in which few distances occur, while a design is a ﬁnite subset of Gm,n that polynomially approximates the entire set. Using Delsarte’s linear programming techniques, we ﬁnd upper bounds for the size of a code and lower bounds for the size of a design, and we show that association schemes can occur when the bounds are tight. These results are motivated by the bounds for real subspaces recently found by Bachoc, Coulangeon and Nebe, and the bounds generalize those of Delsarte, Goethals and Seidel for codes and designs on the complex unit sphere.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20210726124322-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  }
+   "CreationDate": "D:20210726124322-04'00'"
+  },
+  "title_raw": "Bounds for codes and designs in complex subspaces",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Bounds for codes and designs in complex subspaces",
+   "outline": "Introduction",
+   "text": "Bounds for codes and designs in complex subspaces",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Bounds for codes and designs in complex subspaces Aidan Roy ∗"
  },
  "toc": [
   {
@@ -42,81 +62,374 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Orbitals",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Representations",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Symmetric spaces",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Zonal polynomials",
    "page": 10,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Bounds",
    "page": 14,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Other bounds",
    "page": 18,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Examples",
    "page": 19,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Designs",
    "page": 23,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Association schemes",
    "page": 27,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Acknowledgements",
    "page": 32,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Upper bounds on |S|, when S ⊆Gm,n is an A-code",
+   "page": 14,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 940,
+   "n_words": 154,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
@@ -124,8 +437,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 4688,
-   "n_words": 815
+   "n_chars": 4655,
+   "n_words": 770,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-orbitals",
@@ -134,8 +449,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 5,
-   "n_chars": 4339,
-   "n_words": 957
+   "n_chars": 4281,
+   "n_words": 891,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-representations",
@@ -144,8 +461,10 @@
    "level": 1,
    "page_start": 5,
    "page_end": 7,
-   "n_chars": 2184,
-   "n_words": 448
+   "n_chars": 2142,
+   "n_words": 391,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-symmetric-spaces",
@@ -154,8 +473,10 @@
    "level": 1,
    "page_start": 7,
    "page_end": 10,
-   "n_chars": 6499,
-   "n_words": 1462
+   "n_chars": 6167,
+   "n_words": 1238,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-004-zonal-polynomials",
@@ -164,8 +485,10 @@
    "level": 1,
    "page_start": 10,
    "page_end": 14,
-   "n_chars": 4975,
-   "n_words": 1172
+   "n_chars": 4808,
+   "n_words": 1005,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-005-bounds",
@@ -174,8 +497,10 @@
    "level": 1,
    "page_start": 14,
    "page_end": 18,
-   "n_chars": 4997,
-   "n_words": 1179
+   "n_chars": 4869,
+   "n_words": 1051,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-006-other-bounds",
@@ -184,8 +509,10 @@
    "level": 1,
    "page_start": 18,
    "page_end": 19,
-   "n_chars": 2574,
-   "n_words": 542
+   "n_chars": 2534,
+   "n_words": 491,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-007-examples",
@@ -194,8 +521,10 @@
    "level": 1,
    "page_start": 19,
    "page_end": 23,
-   "n_chars": 7096,
-   "n_words": 1525
+   "n_chars": 6931,
+   "n_words": 1367,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-008-designs",
@@ -204,8 +533,10 @@
    "level": 1,
    "page_start": 23,
    "page_end": 27,
-   "n_chars": 6689,
-   "n_words": 1542
+   "n_chars": 6502,
+   "n_words": 1366,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-009-association-schemes",
@@ -214,8 +545,10 @@
    "level": 1,
    "page_start": 27,
    "page_end": 32,
-   "n_chars": 8215,
-   "n_words": 1806
+   "n_chars": 7887,
+   "n_words": 1591,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-010-acknowledgements",
@@ -224,16 +557,26 @@
    "level": 1,
    "page_start": 32,
    "page_end": 33,
-   "n_chars": 3675,
-   "n_words": 599
+   "n_chars": 3639,
+   "n_words": 547,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 11,
-  "sections": 11,
-  "chars_total": 55931,
+  "toc_inferred_entries": 0,
+  "figure_entries": 1,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 12,
+  "chars_total": 55355,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "subspacepaper.tex",
@@ -246,25 +589,30 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.979,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-orbitals",
      "title": "Orbitals",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.955,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-002-representations",
      "title": "Representations",
-     "prose_ratio": 1.0,
+     "prose_ratio": 0.99,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
@@ -272,39 +620,39 @@
     {
      "id": "sec-003-symmetric-spaces",
      "title": "Symmetric spaces",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.943,
+     "coverage_ratio": 0.958,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-004-zonal-polynomials",
      "title": "Zonal polynomials",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.94,
+     "coverage_ratio": 0.929,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-005-bounds",
      "title": "Bounds",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.935,
+     "coverage_ratio": 0.909,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-006-other-bounds",
      "title": "Other bounds",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.937,
+     "coverage_ratio": 0.989,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-007-examples",
      "title": "Examples",
-     "prose_ratio": 1.0,
+     "prose_ratio": 0.936,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
@@ -312,16 +660,16 @@
     {
      "id": "sec-008-designs",
      "title": "Designs",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.897,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-009-association-schemes",
      "title": "Association schemes",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.973,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -329,8 +677,8 @@
      "id": "sec-010-acknowledgements",
      "title": "Acknowledgements",
      "prose_ratio": 0.95,
-     "coverage_ratio": 0.106,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.108,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "on-the-garoufalidis-kashaev-state-integral-invariant",
  "source_sha256": "eda230da2a596783",
- "brief": "On the Garoufalidis-Kashaev state-integral invariant — 61 sections: ACKNOWLEDGMENTS; ABSTRACT; LIST OF TABLES",
- "extended": "**On the Garoufalidis-Kashaev state-integral invariant**\n\n61 pp, 61 sections.\n\n**Outline.** ACKNOWLEDGMENTS; ABSTRACT; LIST OF TABLES; Introduction; Motivation and Background; Overview of the Construction; Main Results; Structure of the Thesis; Connections and Outlook; Connections to Representation Theory; Locally Compact Abelian Groups; Pontryagin Duality; Foundational Definitions; Examples; Structure Theorem (Informal); Character Groups and Duality; Pontryagin Duality Theorem; Examples of Dual Pairs\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: ). Any LCA group L admits an isomor-\n- Theorem 2: For any LCA group L, the canonical evaluation\n- Theorem 3: The function φ(α,x) = α(1 +x) satisfies the distributional pentagon\n- Theorem 6: LetX∼X′ via Pachner moves. Then\n- Theorem 7: Let θ be a balanced angle structure satisfying\n- Theorem 8: The state-integral FF,X,θ is invariant under",
+ "brief": "ON THE GAROUFALIDIS-KASHAEV STATE-INTEGRAL INVARIANT — 67 sections: Front matter; ACKNOWLEDGMENTS; ABSTRACT",
+ "extended": "**ON THE GAROUFALIDIS-KASHAEV STATE-INTEGRAL INVARIANT**\n\n*Amelia Palmer Dusenbury*\n\n61 pp, 67 sections.\n\n**Outline.** Front matter; ACKNOWLEDGMENTS; ABSTRACT; LIST OF TABLES; Introduction; Motivation and Background; Overview of the Construction; Main Results; Structure of the Thesis; Connections and Outlook; Connections to Representation Theory; Locally Compact Abelian Groups, Pontryagin Dua; Foundational Definitions; Examples; Structure Theorem (Informal); Pontryagin Duality; Character Groups and Duality; Pontryagin Duality Theorem",
  "tokens": {
-  "brief": 27,
-  "extended": 227
+  "brief": 26,
+  "extended": 134
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-4"
+  },
   {
    "id": "sec-000-acknowledgments",
    "title": "ACKNOWLEDGMENTS",
@@ -60,28 +65,28 @@
    "pages": "15-16"
   },
   {
-   "id": "sec-010-locally-compact-abelian-groups",
-   "title": "Locally Compact Abelian Groups",
+   "id": "sec-010-locally-compact-abelian-groups-pontryagin-dualit",
+   "title": "Locally Compact Abelian Groups, Pontryagin Duality, and Gaussian Structures HR",
    "pages": "16-16"
   },
   {
-   "id": "sec-011-pontryagin-duality",
-   "title": "Pontryagin Duality",
-   "pages": "16-16"
-  },
-  {
-   "id": "sec-012-foundational-definitions",
+   "id": "sec-011-foundational-definitions",
    "title": "Foundational Definitions",
    "pages": "16-16"
   },
   {
-   "id": "sec-013-examples",
+   "id": "sec-012-examples",
    "title": "Examples",
    "pages": "16-17"
   },
   {
-   "id": "sec-014-structure-theorem-informal",
+   "id": "sec-013-structure-theorem-informal",
    "title": "Structure Theorem (Informal)",
+   "pages": "17-17"
+  },
+  {
+   "id": "sec-014-pontryagin-duality",
+   "title": "Pontryagin Duality",
    "pages": "17-17"
   },
   {
@@ -207,110 +212,135 @@
   {
    "id": "sec-039-the-state-integral-definition",
    "title": "The State-Integral Definition",
+   "pages": "44-44"
+  },
+  {
+   "id": "sec-040-summary-of-the-construction",
+   "title": "Summary of the Construction",
    "pages": "44-46"
   },
   {
-   "id": "sec-040-target-of-the-state-integral",
+   "id": "sec-041-target-of-the-state-integral",
    "title": "Target of the State-Integral",
    "pages": "46-46"
   },
   {
-   "id": "sec-041-target-statement-for-the-archimedean-state-integ",
+   "id": "sec-042-target-statement-for-the-archimedean-state-integ",
    "title": "Target Statement for the Archimedean State-Integral",
-   "pages": "46-48"
+   "pages": "46-46"
   },
   {
-   "id": "sec-042-angle-structures-and-parameter-dependence",
+   "id": "sec-043-manifolds-with-boundary-m",
+   "title": "Manifolds with Boundary (M =)",
+   "pages": "46-47"
+  },
+  {
+   "id": "sec-044-manifolds-with-torus-boundary-m-5-55-55-55-5t2",
+   "title": "Manifolds with Torus Boundary (M .5-.5.5-.5.5-.5.5-.5T2)",
+   "pages": "47-48"
+  },
+  {
+   "id": "sec-045-closed-manifolds-m",
+   "title": "Closed Manifolds (M = )",
+   "pages": "48-48"
+  },
+  {
+   "id": "sec-046-angle-structures-and-parameter-dependence",
    "title": "Angle Structures and Parameter Dependence",
    "pages": "48-49"
   },
   {
-   "id": "sec-043-algebraic-background",
+   "id": "sec-047-algebraic-background",
    "title": "Algebraic Background",
    "pages": "49-51"
   },
   {
-   "id": "sec-044-summary-table",
+   "id": "sec-048-summary-table",
    "title": "Summary Table",
    "pages": "51-51"
   },
   {
-   "id": "sec-045-remark",
+   "id": "sec-049-remark",
    "title": "Remark",
-   "pages": "51-53"
+   "pages": "51-52"
   },
   {
-   "id": "sec-046-the-pentagon-identity-and-pachner-moves",
+   "id": "sec-050-topological-invariance-of-the-state-integral",
+   "title": "Topological Invariance of the State-Integral",
+   "pages": "52-53"
+  },
+  {
+   "id": "sec-051-the-pentagon-identity-and-pachner-moves",
    "title": "The Pentagon Identity and Pachner Moves",
    "pages": "53-53"
   },
   {
-   "id": "sec-047-combinatorics-of-the-pachner-move",
+   "id": "sec-052-combinatorics-of-the-pachner-move",
    "title": "Combinatorics of the Pachner Move",
    "pages": "53-53"
   },
   {
-   "id": "sec-048-analytic-expression-via-pentagon-identity",
+   "id": "sec-053-analytic-expression-via-pentagon-identity",
    "title": "Analytic Expression via Pentagon Identity",
    "pages": "53-54"
   },
   {
-   "id": "sec-049-p1-pachner-invariance",
+   "id": "sec-054-p1-pachner-invariance",
    "title": "(P1) Pachner Invariance",
    "pages": "54-54"
   },
   {
-   "id": "sec-050-triangulation-equivalence",
+   "id": "sec-055-triangulation-equivalence",
    "title": "Triangulation Equivalence",
    "pages": "54-54"
   },
   {
-   "id": "sec-051-invariance-theorem",
+   "id": "sec-056-invariance-theorem",
    "title": "Invariance Theorem",
    "pages": "54-54"
   },
   {
-   "id": "sec-052-p2-analytic-control-and-temperedness",
+   "id": "sec-057-p2-analytic-control-and-temperedness",
    "title": "(P2) Analytic Control and Temperedness",
    "pages": "54-54"
   },
   {
-   "id": "sec-053-tempered-distribution-framework",
+   "id": "sec-058-tempered-distribution-framework",
    "title": "Tempered Distribution Framework",
    "pages": "54-55"
   },
   {
-   "id": "sec-054-conditions-ensuring-convergence",
+   "id": "sec-059-conditions-ensuring-convergence",
    "title": "Conditions Ensuring Convergence",
    "pages": "55-55"
   },
   {
-   "id": "sec-055-p3-angle-gauge-invariance",
+   "id": "sec-060-p3-angle-gauge-invariance",
    "title": "(P3) Angle Gauge Invariance",
    "pages": "55-55"
   },
   {
-   "id": "sec-056-internal-angle-shifts",
+   "id": "sec-061-internal-angle-shifts",
    "title": "Internal Angle Shifts",
    "pages": "55-56"
   },
   {
-   "id": "sec-057-cancellation-in-the-integral",
+   "id": "sec-062-cancellation-in-the-integral",
    "title": "Cancellation in the Integral",
    "pages": "56-56"
   },
   {
-   "id": "sec-058-topological-invariance-theorem",
+   "id": "sec-063-topological-invariance-theorem",
    "title": "Topological Invariance Theorem",
    "pages": "56-58"
   },
   {
-   "id": "sec-059-conceptual-summary",
+   "id": "sec-064-conceptual-summary",
    "title": "Conceptual Summary",
    "pages": "58-59"
   },
   {
-   "id": "sec-060-references",
+   "id": "sec-065-references",
    "title": "REFERENCES",
    "pages": "59-61"
   }
@@ -318,8 +348,7 @@
  "provenance": {
   "kind": "extractive",
   "from": [
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

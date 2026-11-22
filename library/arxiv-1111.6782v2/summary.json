@@ -2,11 +2,11 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1111.6782v2",
  "source_sha256": "5acfde49432e59e3",
- "brief": "Stationary Points of O’Hara’s Knot Energies — In this article we study the regularity of stationary points of the knot ener- gies E(α) introduced by O’Hara in [ 14, 15, 16] in the range α∈ (2, 3).",
- "extended": "**Stationary Points of O’Hara’s Knot Energies**\n\n*Simon Blatt∗ Philipp Reiter∗∗*\n\n19 pp, 4 sections.\n\n**Abstract.** In this article we study the regularity of stationary points of the knot ener- gies E(α) introduced by O’Hara in [ 14, 15, 16] in the range α∈ (2, 3). In a ﬁrst step we prove that E(α) is C1 on the set of all regular embedded curves belonging to H(α+1)/2,2(R/Z, Rn) and calculate its derivative. After that we use the structure of the Euler-Lagrange equation to study the regularity of stationary points of E(α) plus a positive multiple of the length. We show that stationary po ints of ﬁnite energy are of class C∞ — so especially all local minimizers of E(α) among curves with ﬁxed length are smooth.\n\n**Outline.** Front matter; 1 Introduction; 3 Regularity of stationary points; A Results on fractional Sobolev spaces",
+ "brief": "Stationary Points of O’Hara’s Knot Energies — In this article we study the regularity of stationary points of the knot ener- gies E(α) introduced by O’Hara in [14, 15, 16] in the range α ∈(2, 3).",
+ "extended": "**Stationary Points of O’Hara’s Knot Energies**\n\n*Simon Blatt∗*\n\n19 pp, 5 sections.\n\n**Abstract.** In this article we study the regularity of stationary points of the knot ener- gies E(α) introduced by O’Hara in [14, 15, 16] in the range α ∈(2, 3). In a ﬁrst step we prove that E(α) is C1 on the set of all regular embedded curves belonging to H(α+1)/2,2(R/Z, Rn) and calculate its derivative. After that we use the structure of the Euler-Lagrange equation to study the regularity of stationary points of E(α) plus a positive multiple of the length. We show that stationary points of ﬁnite energy are of class C∞— so especially all local minimizers of E(α) among curves with ﬁxed length are smooth.\n\n**Outline.** Front matter; 1 Introduction; 2 Continuous differentiability; 3 Regularity of stationary points; A Results on fractional Sobolev spaces",
  "tokens": {
-  "brief": 49,
-  "extended": 209
+  "brief": 48,
+  "extended": 212
  },
  "sections": [
   {
@@ -17,15 +17,20 @@
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-13"
+   "pages": "1-4"
   },
   {
-   "id": "sec-001-3-regularity-of-stationary-points",
+   "id": "sec-001-2-continuous-differentiability",
+   "title": "Continuous differentiability",
+   "pages": "4-13"
+  },
+  {
+   "id": "sec-002-3-regularity-of-stationary-points",
    "title": "Regularity of stationary points",
    "pages": "13-17"
   },
   {
-   "id": "sec-002-a-results-on-fractional-sobolev-spaces",
+   "id": "sec-003-a-results-on-fractional-sobolev-spaces",
    "title": "A Results on fractional Sobolev spaces",
    "pages": "17-19"
   }

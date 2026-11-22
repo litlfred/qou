@@ -1,0 +1,1 @@
+For ﬁnite groups the crossed product is universal for covariant unitary representations. In fact any covariant representation of (M, α) extends to an isomorphism from M ⋊G onto {M, {vg}}′′ by sending ug to vg.

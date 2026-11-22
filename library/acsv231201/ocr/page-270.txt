@@ -1,0 +1,48 @@
+252 Smooth point asymptotics
+
+when r + s is even, while a,, = 0 when r + s is odd. These asymptotics are
+uniform as r/s varies over any compact subset of (0, 1). 4
+
+Exercise 9.4. Redo Examples 9.13 and 9.14 using Theorem 9.5 instead of
+Theorem 9.12. What extra conditions do you need to check?
+
+In the presence of minimal critical points we do not need to rule out the
+critical points at infinity (CPAI) discussed in previous chapters. However, if
+we do rule out CPAI then Theorem 7.20 applies and we get the following.
+
+Theorem 9.15 (Main Theorem of Smooth ACSV (No CPAI Version)). Sup-
+pose that, as # varies over a compact set R © R¢ of non-zero directions, the
+function F has no CPAI with height at least M € R, and that the set W = W(?)
+of critical points with height larger than M is finite and consists of smooth non-
+degenerate points. Then there exist Ky € Z for w € W with
+
+dp © » Kw Dy(r) + O(eMl") , (9.9)
+
+wew
+
+where each ®,, is the asymptotic series defined by (9.4).
+
+To determine dominant asymptotic behavior, it is necessary to identify the
+highest critical points w with non-zero coefficients k,. This seems to be a
+very difficult task in general, but we can say more in some circumstances.
+For instance, kK,» = 1 for any smooth minimal contributing points, and if a,
+is not eventually zero and M = —co then at least one xy is non-zero. If the
+exponential growth of a sequence can be determined or bounded using other
+means, this can also be used to identify the highest coefficients which are non-
+zero, and thus pin down asymptotics up to these unknown integers.
+
+Although Theorem 9.15 is the most abstract of our main theorems, it follows
+directly from the large amount of technical background in Chapter 7 and the
+appendices, and some computations from the proof of Theorem 9.12 below.
+
+Proof of Theorem 9.15 Fix a direction #. In the absence of CPAI at height M
+or above, Theorem 7.20 in Chapter 7 shows that, for some € > 0, the homology
+group Ha(M, Mzy-_z-) has a basis indexed by the critical points o),..., 0m for
+Q whose elements are smooth cycles y; such that h» attains its maximum on
+yj at oj and
+
+mg . .
+dy = » Oat f Res(F(z)2-""! dz) + O(e™",
+
+We will determine this residue integral and its uniform error term with 7 in our
+proof of Theorem 9.12 below, giving the stated expansion. ia)

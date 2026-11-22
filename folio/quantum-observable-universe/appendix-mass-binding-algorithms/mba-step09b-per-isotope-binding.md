@@ -32,7 +32,7 @@ These are **fit residuals of the experimental model**, not derived error bounds:
 
 **Scope (value proved; magnitude open, not a closure).** The per-partition
 $\Delta_\lambda$ **value** is proved ($\Delta_\lambda = (-1)^{n(\lambda)}\dim V_\lambda$,
-sorry-free general-$n$, `dtEuler_eq_deltaLambda_unconditional`); what remains **open** is
+general-$n$, [`prop:delta-lambda-dt-index-unification`](#prop:delta-lambda-dt-index-unification) / `dtEuler_eq_deltaLambda_unconditional`); what remains **open** is
 the many-body binding **magnitude**: six ansätze have failed on the deuteron
 *magnitude* $r^\ast \approx 1.585$, which no per-block $\Delta_\lambda$ can supply. This module is an **experimental / phenomenological** generating-function model for that magnitude: the depth-2 `CKRecursion` reproduces the multi-body binding hierarchy from a small set of seed constants ($r_{\mathrm{res}} \approx 2.596$, $a_0 = 1/2$, the isospin anomaly shift $\approx +1.4947\,m_e$) that are **calibrated, not derived** from the 13 categorical drivers. It is a structural fit, **not** a parameter-free derivation.
 
@@ -52,21 +52,7 @@ from qou_mass.api import predict          # the .ts manifest's declared entry po
 
 *Witness: [`computations/canonical-mass-table-242ppb.witness.json`](../../../computations/canonical-mass-table-242ppb.witness.json), as declared by `computation.witness` in this block's `.ts` manifest.*
 
-> **Corrected 2026-08-25 (PR #5765).** This contract previously named
-> `dashboard_and_sweep_results.md`, which **does not exist anywhere in the repo**
-> (`find` → 0 hits) and disagreed with the `.ts` manifest. Two things a consumer should
-> know about the witness that *is* declared:
->
-> - It carries **no provenance**: `computedAt`, `commitSha`, `witness.scriptHash`,
->   `witness.scriptFile` and `witness.scriptCommitSha` are **all `null`**, so no
->   staleness check can key on it and no producer can be resolved from it. It is marked
->   `auditOnly`.
-> - Its numbers are **not** the live pipeline's. It records D +23 %, T +6 %, ³He +13 %,
->   ⁴He +3.6 % — i.e. *over*-binding — computed at the 242-ppb nucleon level that the
->   [2026-07-04 audit](../../../docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md)
->   identified as a fitted-Habiro regression and removed. The live `mass_binding_dashboard`
->   *under*-binds: ²H −27.5 %, ³H +38 %, ³He +44 %, ⁴He +69 % (`err sym` 0.79 / 1.38 /
->   1.44 / 3.26). **Do not cite the witness figures as this step's current accuracy.**
+*The declared witness carries no provenance fields and records binding at the 242-ppb nucleon level (D $+23\,\%$, T $+6\,\%$, ³He $+13\,\%$, ⁴He $+3.6\,\%$, over-binding), which predates the removal of a fitted Habiro dressing. The live pipeline under-binds (²H $-27.5\,\%$, ³H $+38\,\%$, ³He $+44\,\%$, ⁴He $+69\,\%$); the witness figures are not this step's current accuracy.*
 
 ### Notes
 
@@ -76,4 +62,4 @@ from qou_mass.api import predict          # the .ts manifest's declared entry po
 
 ### Tier note: experimental generating-function model
 
-*The $w_n$ values and the $\sim 3$ keV $^4$He fit residual come from the discrete $q$-difference recurrence with calibrated seeds — a phenomenological reproduction, not a structural bound. A kernel-constraints Lean file for the $q$-difference recurrence exists on the $Q_\beta$ side (`QBetaCKRecursionKernelConstraints.lean`); a binding-sector analogue that would formalize any derived (non-calibrated) constant is not yet written.*
+*The $w_n$ values and the $\sim 3$ keV $^4$He fit residual come from the discrete $q$-difference recurrence with calibrated seeds — a phenomenological reproduction, not a structural bound. A kernel-constraints Lean file for the $q$-difference recurrence exists on the $Q_\beta$ side; a binding-sector analogue that would formalize any derived (non-calibrated) constant is not yet written.*

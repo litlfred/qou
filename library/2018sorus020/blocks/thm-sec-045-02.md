@@ -1,0 +1,1 @@
+[GKZ94, Theorem 30] Let χ ∈X a character, and v a valuation on k(X) associated to χ. If C∗is a rationally exact based complex of Ov-modules with basis {ci}, then v(tor(C∗⊗k(X), {ci})) = X k (−1)k length(Hk(C∗))

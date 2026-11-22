@@ -2,17 +2,22 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1211.1812v5",
  "source_sha256": "211667ea1312d47f",
- "brief": "Presheaves of superselection structures in curved spaceti mes Ezio Vasselli ezio.vasselli@gmail.com — We show that superselection structures on curved spacetime s, that are expected to describe",
- "extended": "**Presheaves of superselection structures in curved spaceti mes Ezio Vasselli ezio.vasselli@gmail.com**\n\n*October 17, 2018*\n\n37 pp, 11 sections.\n\n**Abstract.** We show that superselection structures on curved spacetime s, that are expected to describe quantum charges aﬀected by the underlying geometry, are cat egories of sections of presheaves of symmetric tensor categories. When an embedding functor is g iven, the superselection structure is a Tannaka-type dual of a locally constant group bundle, wh ich hence becomes a natural candidate for the role of gauge group. Indeed, we show that an y locally constant group bundle (with suitable structure group) acts on a net of C*-algebras fulﬁlling normal commutation relations on an arbitrary spacetime. We also give examples o f gerbes of C*-algebras, deﬁned by Wightman ﬁelds and constructed using projective represent ations of the fundamental group of the spacetime, that we propose as solutions for the problem t hat existence and uniqueness of the embedding functor are not guaranteed.\n\n**Outline.** 1 Introduction.; 2 Mathematical background.; 2.1 Geometry of posets.; 2.2 Nets of C*-algebras.; 2.3 Nets and presheaves of tensor categories.; 3.1 Charge structure.; 3.2 Symmetry.; 3.3 The main result.; 4 Group bundles as global gauge symmetries.; 4.2 Twisted nets and background potentials.; 5 Conclusions and the gerbe perspective.\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.2: Let T⊗,ξ = (T,r )∆ be a simple, symmetric tensor presheaf\n- Theorem 2.3: Let T⊗,ξ = (T,r )∆ be a DR-presheaf. Then for any section\n- Theorem 2.4: Any section ̺ of a DR-presheaf deﬁnes the cochain\n- Theorem 3.5: Let R = (R,j )∆ ⊆BH be a Haag-Kastler net where ∆ is the base of diamonds of\n- Theorem 4.5: Let M denote a globally hyperbolic (spin) manifold and (G0,γ ) a Z2 -graded group.\n- Theorem 5.1: Let M denote a globally hyperbolic (spin) manifold and (G0,γ ) a Z2 -graded group.",
+ "brief": "Presheaves of superselection structures in curved spacetimes — We show that superselection structures on curved spacetimes, that are expected to describe quantum charges aﬀected by the underlying",
+ "extended": "**Presheaves of superselection structures in curved spacetimes**\n\n*Ezio Vasselli*\n\n37 pp, 17 sections.\n\n**Abstract.** We show that superselection structures on curved spacetimes, that are expected to describe quantum charges aﬀected by the underlying geometry, are categories of sections of presheaves of symmetric tensor categories. When an embedding functor is given, the superselection structure is a Tannaka-type dual of a locally constant group bundle, which hence becomes a natural candidate for the role of gauge group. Indeed, we show that any locally constant group bundle (with suitable structure group) acts on a net of C*-algebras fulﬁlling normal commutation relations on an arbitrary spacetime. We also give examples of gerbes of C*-algebras, deﬁned by Wightman ﬁelds and constructed using projective representations of the fundamental group of the spacetime, that we propose as solutions for the problem that existence and uniqueness of the embedding functor are not guaranteed.\n\n**Outline.** Front matter; 1 Introduction.; 2 Mathematical background.; 2.1 Geometry of posets.; 2.2 Nets of C*-algebras.; 2.3 Nets and presheaves of tensor categories.; 3 Presheaves in quantum field theory.; 3.1 Charge structure.; 3.2 Symmetry.; 3.3 The main result.; 4 Group bundles as global gauge symmetries.; 4.1 Twisted field nets.; 4.2 Twisted nets and background potentials.; 4.3 Current algebras on S1.; 4.4 Existence of field nets with a given gauge; 5 Conclusions and the gerbe perspective.; A Symmetry and fields in globally hyperbolic m",
  "tokens": {
   "brief": 48,
-  "extended": 484
+  "extended": 386
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction.",
-   "pages": "1-5"
+   "pages": "2-5"
   },
   {
    "id": "sec-001-2-mathematical-background",
@@ -32,45 +37,69 @@
   {
    "id": "sec-004-23-nets-and-presheaves-of-tensor-categories",
    "title": "Nets and presheaves of tensor categories.",
-   "pages": "9-14"
+   "pages": "9-13"
   },
   {
-   "id": "sec-005-31-charge-structure",
+   "id": "sec-005-3-presheaves-in-quantum-field-theory",
+   "title": "Presheaves in quantum field theory.",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-006-31-charge-structure",
    "title": "Charge structure.",
    "pages": "14-16"
   },
   {
-   "id": "sec-006-32-symmetry",
+   "id": "sec-007-32-symmetry",
    "title": "Symmetry.",
    "pages": "16-17"
   },
   {
-   "id": "sec-007-33-the-main-result",
+   "id": "sec-008-33-the-main-result",
    "title": "The main result.",
    "pages": "17-20"
   },
   {
-   "id": "sec-008-4-group-bundles-as-global-gauge-symmetries",
+   "id": "sec-009-4-group-bundles-as-global-gauge-symmetries",
    "title": "Group bundles as global gauge symmetries.",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-010-41-twisted-field-nets",
+   "title": "Twisted field nets.",
    "pages": "20-23"
   },
   {
-   "id": "sec-009-42-twisted-nets-and-background-potentials",
+   "id": "sec-011-42-twisted-nets-and-background-potentials",
    "title": "Twisted nets and background potentials.",
-   "pages": "23-28"
+   "pages": "23-25"
   },
   {
-   "id": "sec-010-5-conclusions-and-the-gerbe-perspective",
+   "id": "sec-012-43-current-algebras-on-s1",
+   "title": "Current algebras on S1.",
+   "pages": "25-26"
+  },
+  {
+   "id": "sec-013-44-existence-of-field-nets-with-a-given-gauge-sy",
+   "title": "Existence of field nets with a given gauge symmetry.",
+   "pages": "26-28"
+  },
+  {
+   "id": "sec-014-5-conclusions-and-the-gerbe-perspective",
    "title": "Conclusions and the gerbe perspective.",
-   "pages": "28-37"
+   "pages": "28-30"
+  },
+  {
+   "id": "sec-015-a-symmetry-and-fields-in-globally-hyperbolic-man",
+   "title": "A Symmetry and fields in globally hyperbolic manifolds.",
+   "pages": "30-37"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

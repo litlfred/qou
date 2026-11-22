@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-math-0605242v1
-doc_title: "N-Fold Integer Programming Jesús A. De Loera∗ Raymond Hemmecke † Shmuel Onn ‡ Robert Weismantel §"
+doc_title: "N-Fold Integer Programming"
 section_id: sec-003-some-packing-problems
 section_title: "Some packing problems"
 section_number: null
 pages: 6-8
 source_pdf: 0605242v1.pdf
 source_sha256: 65fac7285e4a77f4
-doc_brief: "N-Fold Integer Programming Jesús A. De Loera∗ Raymond Hemmecke † Shmuel Onn ‡ Robert Weismantel § — In this article we study a broad class of integer programming problem s in variable dimension."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.995
-latex_coverage_ratio: 0.99
+latex_coverage_ratio: 0.984
+doc_brief: "N-Fold Integer Programming — In this article we study a broad class of integer programming problems in variable dimension."
 ---
 \label{Applications2}
 

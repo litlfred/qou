@@ -22,7 +22,7 @@ throughout; no archimedean substrate value is hardcoded (the caller supplies
 `Im(b²) ≠ 0`). §7c: `ℂ` is intrinsic to the Faddeev quantum dilogarithm — not a
 gratuitous `ℝ`.
 
--- Ref: [manuscript] docs/workplans/2026-07-13-phib-combinatorial-fibre-lean-workplan.md (L4, period-independence leg)
+-- Ref: [leitner2026] docs/workplans/2026-07-13-phib-combinatorial-fibre-lean-workplan.md (L4, period-independence leg)
 -/
 import Mathlib.LinearAlgebra.LinearIndependent.Defs
 import Mathlib.LinearAlgebra.LinearIndependent.Lemmas

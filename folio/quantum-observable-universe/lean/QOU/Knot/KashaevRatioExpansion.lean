@@ -33,9 +33,9 @@
   summation centre, and `hasSum_gaussian_theta_tilt` is the reason it costs
   nothing in the end.
 
-  -- Ref: [manuscript] QOU/Knot/KashaevPeakValue.lean
-  -- Ref: [manuscript] QOU/Knot/LobTaylorSaddle.lean
-  -- Ref: [manuscript] QOU/MathlibExt/GaussianThetaBound.lean
+  -- Ref: [leitner2026] QOU/Knot/KashaevPeakValue.lean
+  -- Ref: [leitner2026] QOU/Knot/LobTaylorSaddle.lean
+  -- Ref: [leitner2026] QOU/MathlibExt/GaussianThetaBound.lean
 -/
 import QOU.Knot.KashaevPeakValue
 

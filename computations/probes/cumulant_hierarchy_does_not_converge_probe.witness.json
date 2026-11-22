@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
-  "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-09-06T15:54:56.570160+00:00",
-  "commitSha": "30177dd40b850048ad0d947761314b154aa1985c",
+  "engineVersion": "numpy 2.5.3",
+  "computedAt": "2026-11-20T17:09:21.260643+00:00",
+  "commitSha": "56d67348ae080d7a84919285f95f39c2788ea17d",
   "assertions": [
     {
       "name": "A1_L_is_additive_on_disjoint_blocks",
@@ -18,7 +18,7 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "recursive vs direct Mobius agree to 1.78e-15"
+      "source": "recursive vs direct Mobius agree to 1.11e-15"
     },
     {
       "name": "A3_hierarchy_does_not_converge",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 8,
   "computation": "cumulant_hierarchy_does_not_converge_probe",
   "scriptFile": "cumulant_hierarchy_does_not_converge_probe.py",
-  "scriptHash": "9787c173b874",
-  "scriptCommitSha": "0d5c3f9972a8829b6fb762a157f33d27802a970c",
+  "scriptHash": "5cd1ee599588",
+  "scriptCommitSha": "e81e6204c34f35c49818a444ba147161b6444687",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -66,14 +66,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "8094096a28948d48"
   },
   "invocation": {
     "argv": [
@@ -124,7 +125,7 @@
       "converges": false,
       "L_full": "3.860272620367",
       "reconstruction_residual": "0.00e+00",
-      "moebius_cross_check": "1.78e-15"
+      "moebius_cross_check": "1.11e-15"
     },
     "c5_noise_audit": {
       "c5": "1.604498983118",
@@ -139,5 +140,8 @@
     "MEASURED AT ONE NUCLEON ORDERING AND ONE BOND ORDER. This is 5He at production ordering 'pnpnn' with the interleaved bond order, and subsets inherit the induced order. qou-38i9 measured bond order to be worth 38-40% at A=4, so the MAGNITUDES here are convention-dependent at that level. The sign of c_5 and the non-convergence are not re-tested across orderings and should be, before either is quoted as ordering-independent.",
     "A=5 IS THE FIRST AND ONLY ORDER TESTED BEYOND c_4. One non-convergent step is not an asymptotic statement: c_6 would need A=6, which is n=18 and ~172 s per trace over 64 subsets, roughly three hours. 'Does not converge' here means the ratio exceeds one at the first opportunity to test it, not that the series has been shown to diverge.",
     "Everything remains an evaluation at q = q0, i.e. the order-zero observable. The cumulants are correlations BETWEEN order-zero observables — which is precisely the indirect route the corpus intends, and is why they carry higher-order information — but no graded piece is computed here and none is claimed."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744953038773",
+  "q0AnchorReason": "q is q_parameter.q_at(), the proton pin"
 }

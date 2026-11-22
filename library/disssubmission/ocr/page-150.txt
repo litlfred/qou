@@ -1,0 +1,55 @@
+142 Chapter 6 — The generic rank of Brill-Noether sheaves
+
+6.4. The fibres of multiple Abel-Jacobi maps
+
+For a partition @ = (d\,...,d,) of degree d consider now the partially
+symmetrized product Cg = Cy, x ++: x Cy,, and denote by ga : Ca — Cy
+the quotient morphism. We have a commutative diagram
+
+fa
+Ca
+
+given by the Abel-Jacobi morphism, and our goal is to compute the Euler
+characteristic of the fibre F = fy!(x) for general x € X(C). Fork=1,...,n
+let pg: Ca = Cg, X +++ X Cg, —> Cg, denote the projection onto the k-th
+factor. By the Kiinneth theorem we have an isomorphism
+
+Ca
+
+x
+
+H*(Cq,) ®Q°+ @QH*(Ca,) —> H*(Ca)
+
+sending an element @ ®---® , to the cup product p{(0)-+-p;(Qn). In
+degree one this gives a commutative diagram
+
+H'(X)
+
+. | oe
+diag
+
+Bret H! (Ca,)
+
+where the vertical arrow corresponds to the diagonal embedding diag under
+
+the natural identifications H!(X) ~ H'(Cg,) which as before we suppress
+in the notation. In this sense we write
+
+H' (Ca)
+
+fala) = y pi(A) for cohomology classes 4 € H!(X).
+k=1
+
+The Kiinneth isomorphism is also compatible with the degree maps on top
+cohomology, i.e. the diagram
+
+H4\(Cy,) @q-+ @Q H4"(Cq,) —> H*4(Ca)
+
+ae
+deg @--@deg
+
+Q
+
+commutes. Thus degree computations in the cohomology ring H*(Cq) can
+be done in terms of the individual factors H*(Cy,) to which we can apply
+the results of the previous section. This being said, we proceed as follows.

@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Infinitely divisible distributions and distances between probability measures",
+  "pageStart": 5,
+  "pageEnd": 8,
+  "contains": [
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prose-sec-002",
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/rem-sec-002-01",
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/ex-sec-002-02",
+    "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/ex-sec-002-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/mod-phi-convergence-approximation-of-discrete-measures-and-2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/mod-phi-convergence-approximation-of-discrete-measures-and-2/manifest.jsonld",
+  "provenance": "ingested"
+}

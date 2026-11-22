@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1205.4619v1",
  "source_sha256": "8c76e30a52dca571",
- "brief": "Quaternion-Octonion Unitary Symmetries and Analogous Casimir Operators — An attempt has been made to investigate the global SU (2) and SU (3) unitary ﬂavor symmetries systematically in terms of",
- "extended": "**Quaternion-Octonion Unitary Symmetries and Analogous Casimir Operators**\n\n*Pushpa(1), P. S. Bisht (1), Tianjun Li (2) and O. P. S. Negi (1.2)∗*\n\n17 pp, 6 sections.\n\n**Abstract.** An attempt has been made to investigate the global SU (2) and SU (3) unitary ﬂavor symmetries systematically in terms of quaternion and octonion respect ively. It is shown that these symmetries are suitably handled with quaternions and octonions in orde r to obtain their generators, commu- tation rules and symmetry properties. Accordingly, Casimi r operators for SU (2) and SU (3) ﬂavor symmetries are also constructed for the proper testing of th ese symmetries in terms of quaternions and octonions.\n\n**Outline.** 1 Introduction; 2 Quaternion Gauge Theory and Isospin; 3 Quaternions and Dirac spinors; 5 Generators and Casimir Invariants; 7 Split Octonions; 10 Conclusion",
+ "brief": "Quaternion-Octonion Unitary Symmetries and Analogous Casimir Operators — An attempt has been made to investigate the global SU(2) and SU(3) unitary ﬂavor symmetries systematically in terms of",
+ "extended": "**Quaternion-Octonion Unitary Symmetries and Analogous Casimir Operators**\n\n*Pushpa(1), P. S. Bisht(1), Tianjun Li(2) and O. P. S. Negi(1.2)∗*\n\n17 pp, 11 sections.\n\n**Abstract.** An attempt has been made to investigate the global SU(2) and SU(3) unitary ﬂavor symmetries systematically in terms of quaternion and octonion respectively. It is shown that these symmetries are suitably handled with quaternions and octonions in order to obtain their generators, commu- tation rules and symmetry properties. Accordingly, Casimir operators for SU(2) and SU(3) ﬂavor symmetries are also constructed for the proper testing of these symmetries in terms of quaternions and octonions.\n\n**Outline.** Front matter; 1 Introduction; 2 Quaternion Gauge Theory and Isospin; 3 Quaternions and Dirac spinors; 4 Flavor SU(3)f and Octonions; 5 Generators and Casimir Invariants; 6 Casimir Operator for Quaternion SU(2) group; 7 Split Octonions; 8 Split Octonions and SU(3)f Symmetry; 9 Casimir Operators for split Octonion SU(3) g; 10 Conclusion",
  "tokens": {
-  "brief": 48,
-  "extended": 214
+  "brief": 47,
+  "extended": 256
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -22,20 +27,40 @@
   {
    "id": "sec-002-3-quaternions-and-dirac-spinors",
    "title": "Quaternions and Dirac spinors",
-   "pages": "6-9"
+   "pages": "6-7"
   },
   {
-   "id": "sec-003-5-generators-and-casimir-invariants",
+   "id": "sec-003-4-flavor-su3f-and-octonions",
+   "title": "Flavor SU(3)f and Octonions",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-004-5-generators-and-casimir-invariants",
    "title": "Generators and Casimir Invariants",
-   "pages": "9-12"
+   "pages": "9-11"
   },
   {
-   "id": "sec-004-7-split-octonions",
+   "id": "sec-005-6-casimir-operator-for-quaternion-su2-group",
+   "title": "Casimir Operator for Quaternion SU(2) group",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-006-7-split-octonions",
    "title": "Split Octonions",
-   "pages": "12-16"
+   "pages": "12-13"
   },
   {
-   "id": "sec-005-10-conclusion",
+   "id": "sec-007-8-split-octonions-and-su3f-symmetry",
+   "title": "Split Octonions and SU(3)f Symmetry",
+   "pages": "13-15"
+  },
+  {
+   "id": "sec-008-9-casimir-operators-for-split-octonion-su3-group",
+   "title": "Casimir Operators for split Octonion SU(3) group",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-009-10-conclusion",
    "title": "Conclusion",
    "pages": "16-17"
   }

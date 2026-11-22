@@ -1,0 +1,52 @@
+230 Effective computations and ACSV
+
+Example 8.13 (binomial coefficients). Recall the binomial coefficient gener-
+
+ating function
+1 rts)...
+l-x-y dS
+
+a)
+Since Q(x, y) = 1-x-y we find V Q = (—1,-1) never vanishes, so the variety
+Y is a smooth manifold. The smooth critical point equations (7.8) form the
+polynomial system
+
+l-x-y=0
+—sx = —-ry,
+which we solve to obtain the unique critical point (x,y) = ( r ; 5 ) =f.
+r+s rt+s
+
+4
+
+Example 8.14 (Delannoy numbers). Recall from Example 2.7 that the denom-
+inator for the Delannoy generating function is given by Q(x, y) = 1—x-y-xy.
+To check whether V is a manifold, we form the ideal J = (Q,Q,,Q,) and
+compute the reduced Grébner basis [1], meaning V(/) = 0 and V is a smooth
+manifold.
+
+To characterize the critical points in a direction #, where r = (7,5), we
+form the ideal J = (Q, sxQ, — ryQy) and compute the reduced Grobner basis
+G = {p(x, y), ))} of J, where p(x, y) = rx—sy—r+sand g(y) = sy? +2ry-s.
+Solving the quadratic g(y) for y gives
+—r+ Vr? + s%
+y= Ss
+
+and back substitution into p(x, y) implies that critical(r, s) consists of the
+two points
+
+Vre+s2- 5 meen g [WE ee
+, an ,
+r S
+
+r Ss S
+(8.4)
+We will see later that the first point is the one that determines the asymptotics
+of d,s; aS Tr, § > oo. 4
+
+Example 8.15 (two intersecting planes). Let Q(x,y,z) = A(x, y, JB(x, y, Z)
+with A(x, y,z) = 4-— x - 2y—z and B(x,y,z) = 4 — 2x — y — z. The zero set
+YV = V(Q) is the union of two hyperplanes V; = V(A) and V, = V(B)
+that intersect transversely in the line £ = V(A, B). The canonical Whitney
+stratification of V is given by the algebraic sets
+
+V=ForIFi DF2 =0

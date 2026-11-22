@@ -10,6 +10,7 @@ source_sha256: 18321b615ffc968b
 toc_source: outline
 doc_brief: "A Tutorial on Knots and Quantum Mechanics — These notes review a description of quantum mechanics in terms of the topology of spaces, basing on the axioms of Topological Quantum Field Theory and path"
 ---
+Chern-Simons theory
 In this section we will briefly review how the model described in the previous section emerges from a
 three-dimensional quantum gauge theory. The review will be rather imprecise and its understanding is
 not necessary for discussion of the applications in the next section, but it might provide some additional
@@ -281,4 +282,3 @@ see that this manifold is S2 × S1. It is not possible to draw the latter, so we
 of a solid torus. Unlike the solid torus S2 × S1 does not have a boundary. It is topological invariants in
 S2 ×S1 that compute the normal trace of an operator, while the invariants in S3 (and the naive tracelike
 closures) compute the Markov traces.
-3.4

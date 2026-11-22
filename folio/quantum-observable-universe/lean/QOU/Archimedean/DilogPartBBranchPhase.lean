@@ -29,7 +29,7 @@ cancellation of the `iπ` tower and the linear pole across the cusp, yielding
 `reg(x) = Li₂(x) − π²/3` — remains open (numerics:
 `docs/audits/2026-07-17-dilog-archimedean-limit-partB-pole-cancellation.md`).
 
--- Ref: [manuscript] conj:dilogarithm-archimedean-limit
+-- Ref: [leitner2026] conj:dilogarithm-archimedean-limit
 -- Ref: [faddeev1994] https://doi.org/10.1142/S0217732394002793
 -/
 

@@ -9,13 +9,17 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "References",
-  "pageStart": 14,
-  "pageEnd": 15,
+  "title": "Exceptional fillings",
+  "pageStart": 12,
+  "pageEnd": 14,
   "contains": [
-    "library/cuspshapes/blocks/prose-sec-007"
+    "library/cuspshapes/blocks/prose-sec-007",
+    "library/cuspshapes/blocks/prop-sec-007-01",
+    "library/cuspshapes/blocks/rem-sec-007-02",
+    "library/cuspshapes/blocks/figure-img-p013-1",
+    "library/cuspshapes/blocks/figure-img-p013-2"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/cuspshapes",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/cuspshapes",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/cuspshapes/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/cuspshapes/manifest.jsonld",
   "provenance": "ingested"
 }

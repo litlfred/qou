@@ -2,7 +2,8 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/alg-delta-lambda-closure",
@@ -17,6 +18,10 @@
     "papers/quantum-observable-universe/blocks/prop-delta-lambda-dt-index-unification",
     "papers/quantum-observable-universe/blocks/rem-term6-binding-density",
     "papers/quantum-observable-universe/blocks/prop-wedderburn-trace-identity"
+  ],
+  "cites": [
+    "references/shoji2019",
+    "references/springer1976"
   ],
   "tags": [
     "mba",

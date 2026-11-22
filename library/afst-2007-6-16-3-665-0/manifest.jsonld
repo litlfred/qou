@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/afst-2007-6-16-3-665-0",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/afst-2007-6-16-3-665-0/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -34,7 +34,7 @@
     "library/afst-2007-6-16-3-665-0/sections/sec-019"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "afst-2007-6-16-3-665-0",
     "title_source": "pdf-info",

@@ -1,0 +1,8624 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "phys-rep09",
+  "pages": [
+    {
+      "page": 41,
+      "rotation": 0,
+      "drawings": 4,
+      "rasterImagesOnPage": 2,
+      "captionCandidates": [
+        "Fig. 3. Rectangular step: Transition probabilities as a function of ξ, with γ = 1.5. The solid line corresponds to the exact result (196). Broken lines stand for approximations obtained via ME, and lines with symbols correspond to perturbation theory, according to the legend. Computations up to fourth order, in the Interaction Picture.",
+        "Fig. 4. Rectangular step: Transition probabilities as a function of ξ, with γ = 2. Lines are coded as in Fig. 3. Computations up to fourth order, in the Interaction Picture."
+      ],
+      "labels": [
+        {
+          "text": "S. Blanes et al. / Physics Reports 470 (2009) 151–238",
+          "bbox": [
+            193.96,
+            34.97,
+            346.56,
+            41.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            6.63
+          ]
+        },
+        {
+          "text": "191",
+          "bbox": [
+            491.87,
+            34.97,
+            503.39,
+            41.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            6.63
+          ]
+        },
+        {
+          "text": "Fig. 3. Rectangular step: Transition probabilities as a function of ξ, with γ = 1.5. The solid line corresponds to the exact result (196). Broken lines stand",
+          "bbox": [
+            37.13,
+            250.88,
+            503.38,
+            259.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-bold",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            6.63,
+            7.65
+          ]
+        },
+        {
+          "text": "for approximations obtained via ME, and lines with symbols correspond to perturbation theory, according to the legend. Computations up to fourth order,",
+          "bbox": [
+            37.13,
+            260.99,
+            503.39,
+            267.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            6.63
+          ]
+        },
+        {
+          "text": "in the Interaction Picture.",
+          "bbox": [
+            37.13,
+            269.56,
+            114.83,
+            276.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            6.63
+          ]
+        },
+        {
+          "text": "Rectangular step: Transition probabilities as a function of ξ, with γ = 2. Lines are coded as in Fig. 3. Computations up to fourth order, in the",
+          "bbox": [
+            61.71,
+            493.76,
+            503.38,
+            502.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            6.63,
+            7.65
+          ]
+        },
+        {
+          "text": "Fig. 4.",
+          "bbox": [
+            37.13,
+            495.28,
+            56.18,
+            501.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-bold"
+          ],
+          "sizes": [
+            6.63
+          ]
+        },
+        {
+          "text": "Interaction Picture.",
+          "bbox": [
+            37.13,
+            503.87,
+            95.53,
+            510.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            6.63
+          ]
+        },
+        {
+          "text": "The first two formulae for the approximate transition probabilities are, respectively",
+          "bbox": [
+            37.13,
+            527.02,
+            354.53,
+            535.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "2γ",
+          "bbox": [
+            112.22,
+            544.29,
+            121.82,
+            553.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "\u0012",
+          "bbox": [
+            104.57,
+            544.54,
+            111.03,
+            554.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "\u0013",
+          "bbox": [
+            158.9,
+            544.54,
+            165.36,
+            554.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "P(1)",
+          "bbox": [
+            61.04,
+            548.61,
+            74.64,
+            560.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            6.69,
+            8.29
+          ]
+        },
+        {
+          "text": "M = sin2",
+          "bbox": [
+            65.51,
+            550.14,
+            102.48,
+            562.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "sin(ξ/2)",
+          "bbox": [
+            126.14,
+            550.99,
+            158.9,
+            560.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "ξ",
+          "bbox": [
+            115.22,
+            557.78,
+            119.3,
+            567.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "sin2 λ",
+          "bbox": [
+            106.49,
+            570.51,
+            128.38,
+            583.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "4γ 2",
+          "bbox": [
+            89.11,
+            573.92,
+            103.6,
+            583.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "λ = [4 sin2(ξ/2) + γ 2",
+          "bbox": [
+            180.83,
+            573.92,
+            267.63,
+            590.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "P(2)",
+          "bbox": [
+            61.04,
+            578.6,
+            74.64,
+            590.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            6.69,
+            8.29
+          ]
+        },
+        {
+          "text": "ξ 2 (sin ξ −ξ)2]1/2.",
+          "bbox": [
+            258.55,
+            579.34,
+            331.26,
+            597.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8,
+            6.69,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "sin2(ξ/2),",
+          "bbox": [
+            131.17,
+            580.14,
+            170.95,
+            590.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "M =",
+          "bbox": [
+            65.51,
+            580.22,
+            85.26,
+            592.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            9.56
+          ]
+        },
+        {
+          "text": "(201)",
+          "bbox": [
+            482.86,
+            582.14,
+            503.39,
+            590.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "ξ 2",
+          "bbox": [
+            92.11,
+            587.78,
+            100.6,
+            597.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8,
+            9.56
+          ]
+        },
+        {
+          "text": "λ2",
+          "bbox": [
+            112.89,
+            587.78,
+            121.48,
+            597.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8,
+            9.56
+          ]
+        },
+        {
+          "text": "We omit explicit expressions for P(3)",
+          "bbox": [
+            37.13,
+            605.99,
+            176.07,
+            617.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            6.69,
+            8.29
+          ]
+        },
+        {
+          "text": "M and P(4)",
+          "bbox": [
+            166.94,
+            605.99,
+            208.46,
+            620.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            6.69,
+            8.29
+          ]
+        },
+        {
+          "text": "M since they are quite involved. However, we include their outputs in Figs. 3–5,",
+          "bbox": [
+            199.34,
+            609.53,
+            503.39,
+            620.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29
+          ]
+        },
+        {
+          "text": "where we plot the first to fourth order approximate transition probabilities with ME in the Interaction Picture and compare",
+          "bbox": [
+            37.13,
+            619.99,
+            503.38,
+            628.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "them to the exact case, and also with perturbation theory outputs. In Figs. 3 and 4 we set γ = 1.5 and γ = 2 respectively,",
+          "bbox": [
+            37.13,
+            628.53,
+            503.38,
+            638.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "whereas in Fig. 5 we fix ξ = 1.",
+          "bbox": [
+            37.13,
+            638.99,
+            153.25,
+            649.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "We observe that for the Magnus expansion in the Interaction Picture, the smaller the value of the parameter ξ, the better",
+          "bbox": [
+            49.09,
+            651.2,
+            503.39,
+            660.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "the approximate solution works. As a matter of fact, in the sudden limit, ξ ≪1, ME furnishes the exact result; unlike",
+          "bbox": [
+            37.13,
+            660.89,
+            503.39,
+            671.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "perturbation theory. As far as the intensity of the perturbation γ increases, the quality of the approximations spoils. This",
+          "bbox": [
+            37.13,
+            672.12,
+            503.38,
+            681.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "effect is much more dramatic for the standard perturbation theory.",
+          "bbox": [
+            37.13,
+            683.74,
+            291.86,
+            692.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        }
+      ]
+    },
+    {
+      "page": 42,
+      "rotation": 0,
+      "drawings": 9,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Fig. 5. Rectangular step: Transition probabilities as a function of γ , with ξ = 1. Lines are coded as in Fig. 3. Computations up to fourth order, in the Interaction Picture."
+      ],
+      "labels": [
+        {
+          "text": "192",
+          "bbox": [
+            40.87,
+            34.97,
+            52.39,
+            41.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            6.63
+          ]
+        },
+        {
+          "text": "S. Blanes et al. / Physics Reports 470 (2009) 151–238",
+          "bbox": [
+            197.7,
+            34.97,
+            350.29,
+            41.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            6.63
+          ]
+        },
+        {
+          "text": "Rectangular step: Transition probabilities as a function of γ , with ξ = 1. Lines are coded as in Fig. 3. Computations up to fourth order, in the",
+          "bbox": [
+            65.45,
+            249.8,
+            507.12,
+            258.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            6.63,
+            7.65
+          ]
+        },
+        {
+          "text": "Fig. 5.",
+          "bbox": [
+            40.87,
+            251.32,
+            59.9,
+            257.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-bold"
+          ],
+          "sizes": [
+            6.63
+          ]
+        },
+        {
+          "text": "Interaction Picture.",
+          "bbox": [
+            40.87,
+            259.91,
+            99.26,
+            266.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            6.63
+          ]
+        },
+        {
+          "text": "On the other hand, it is clear from (198) that",
+          "bbox": [
+            52.82,
+            278.11,
+            221.52,
+            286.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "Z t",
+          "bbox": [
+            64.78,
+            288.1,
+            76.26,
+            301.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            9.56
+          ]
+        },
+        {
+          "text": "Z t",
+          "bbox": [
+            146.02,
+            288.1,
+            157.51,
+            301.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            9.56
+          ]
+        },
+        {
+          "text": "∥HI(t1)∥2 dt1 =",
+          "bbox": [
+            83.98,
+            297.23,
+            143.37,
+            308.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "|f (t1)| dt1 = V0 t,",
+          "bbox": [
+            160.09,
+            297.24,
+            227.05,
+            308.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "−∞",
+          "bbox": [
+            69.83,
+            308.33,
+            81.88,
+            315.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN"
+          ],
+          "sizes": [
+            6.69
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            151.07,
+            309.68,
+            154.43,
+            315.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8
+          ]
+        },
+        {
+          "text": "R t",
+          "bbox": [
+            73.39,
+            316.52,
+            81.68,
+            329.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            9.56
+          ]
+        },
+        {
+          "text": "−∞∥˜HI(t1)∥2 dt1 = γ , and thus Theorem 9 guarantees that the Magnus expansion in the Interaction Picture is",
+          "bbox": [
+            77.77,
+            318.39,
+            507.12,
+            332.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            6.69,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "whence",
+          "bbox": [
+            40.87,
+            322.28,
+            70.72,
+            330.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "convergent if γ < π. Notice that this is always the case for the parameters considered in Figs. 3–5. The estimate γ < π",
+          "bbox": [
+            40.87,
+            331.59,
+            506.16,
+            341.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "for the convergence domain in the Interaction Picture should be compared with the corresponding one in the Schrödinger",
+          "bbox": [
+            40.87,
+            343.2,
+            507.12,
+            351.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "picture:",
+          "bbox": [
+            40.87,
+            353.66,
+            71.03,
+            361.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "Z t",
+          "bbox": [
+            64.78,
+            365.83,
+            76.26,
+            379.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            9.56
+          ]
+        },
+        {
+          "text": "r",
+          "bbox": [
+            143.98,
+            367.12,
+            151.91,
+            376.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "γ 2 + ξ 2",
+          "bbox": [
+            151.91,
+            369.04,
+            183.49,
+            385.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8,
+            9.56
+          ]
+        },
+        {
+          "text": "∥˜H(t1)∥2 dt1 =",
+          "bbox": [
+            83.98,
+            373.01,
+            141.32,
+            386.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "4 < π.",
+          "bbox": [
+            177.1,
+            375.74,
+            207.28,
+            392.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "−∞",
+          "bbox": [
+            69.83,
+            386.07,
+            81.88,
+            392.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN"
+          ],
+          "sizes": [
+            6.69
+          ]
+        },
+        {
+          "text": "Notice then that, as pointed out in Section 2.9, a change of picture allows us to improve the convergence of the Magnus",
+          "bbox": [
+            40.87,
+            397.4,
+            507.12,
+            405.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "expansion.",
+          "bbox": [
+            40.87,
+            407.86,
+            81.96,
+            416.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "2- Hyperbolic secant step: Rosen–Zener model. In the Rosen–Zener Hamiltonian [121] the interaction C(t) in (189) is given",
+          "bbox": [
+            40.87,
+            419.51,
+            507.12,
+            429.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-bold",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "by the real function V(t) = V0 sech(t/T), where T determines the time-scale. We will use the notation γ = πV0T/¯h and",
+          "bbox": [
+            40.87,
+            429.19,
+            507.12,
+            440.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "ξ = ωT = 2ET/¯h.",
+          "bbox": [
+            40.87,
+            439.65,
+            109.16,
+            450.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "The corresponding Hamiltonian in terms of Pauli matrices is",
+          "bbox": [
+            52.82,
+            451.91,
+            281.57,
+            460.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "H(t) = Eσ3 + V(t)σ1 ≡a(t) · σ,",
+          "bbox": [
+            64.78,
+            464.46,
+            190.46,
+            475.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "RMTMIB",
+            "t1-gul-bold",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "V(t) = V0/ cosh(t/T),",
+          "bbox": [
+            200.35,
+            464.46,
+            286.33,
+            475.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "(202)",
+          "bbox": [
+            486.6,
+            466.39,
+            507.12,
+            474.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "with a ≡(V(t), 0, E). In the Interaction Picture one has",
+          "bbox": [
+            40.87,
+            478.94,
+            251.99,
+            489.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-bold",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "HI(s) = V(s)(σ1 cos(ξs) −σ2 sin(ξs))",
+          "bbox": [
+            64.78,
+            493.43,
+            208.27,
+            505.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "(203)",
+          "bbox": [
+            486.6,
+            495.35,
+            507.12,
+            503.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "in terms of the dimensionless time-variable s = t/T. Notice that ξ measures the ratio between the interaction time T and",
+          "bbox": [
+            40.87,
+            507.91,
+            507.12,
+            518.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "the internal time of the system ¯h/2E. From (203), and after straightforward calculation, the first and second ME operators",
+          "bbox": [
+            40.87,
+            518.37,
+            507.12,
+            528.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "are readily obtained.",
+          "bbox": [
+            40.87,
+            530.75,
+            119.19,
+            539.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "The exact result for the transition probability (provided the time interval extends from −∞to +∞), as well as",
+          "bbox": [
+            52.82,
+            539.16,
+            507.12,
+            549.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "perturbation theory and Magnus expansion up to second order read [15]",
+          "bbox": [
+            40.87,
+            551.55,
+            316.67,
+            559.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "sin2 γ",
+          "bbox": [
+            102.6,
+            561.61,
+            124.06,
+            574.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "Pex =",
+          "bbox": [
+            64.78,
+            571.32,
+            85.49,
+            582.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "cosh2(πξ/2)",
+          "bbox": [
+            89.35,
+            578.8,
+            138.84,
+            589.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "γ 2",
+          "bbox": [
+            139.36,
+            592.94,
+            149.05,
+            602.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8,
+            9.56
+          ]
+        },
+        {
+          "text": "P(1)",
+          "bbox": [
+            64.78,
+            597.63,
+            78.37,
+            609.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            6.69,
+            8.29
+          ]
+        },
+        {
+          "text": "pt = P(2)",
+          "bbox": [
+            69.25,
+            597.63,
+            105.24,
+            611.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            6.69,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "pt =",
+          "bbox": [
+            96.11,
+            599.24,
+            115.86,
+            611.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            9.56
+          ]
+        },
+        {
+          "text": "cosh2(πξ/2)",
+          "bbox": [
+            119.71,
+            606.72,
+            169.21,
+            616.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "P(1)",
+          "bbox": [
+            64.78,
+            620.21,
+            78.37,
+            632.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            6.69,
+            8.29
+          ]
+        },
+        {
+          "text": "M = sin2[γ / cosh(πξ/2)]",
+          "bbox": [
+            69.25,
+            621.75,
+            171.14,
+            634.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "sin2 λ",
+          "bbox": [
+            92.84,
+            635.72,
+            114.73,
+            649.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "γ 2",
+          "bbox": [
+            136.78,
+            639.13,
+            146.47,
+            649.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8,
+            9.56
+          ]
+        },
+        {
+          "text": "P(2)",
+          "bbox": [
+            64.78,
+            643.81,
+            78.37,
+            655.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            6.69,
+            8.29
+          ]
+        },
+        {
+          "text": "M =",
+          "bbox": [
+            69.25,
+            645.43,
+            88.99,
+            657.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            9.56
+          ]
+        },
+        {
+          "text": "(204)",
+          "bbox": [
+            486.6,
+            647.35,
+            507.12,
+            655.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "cosh2(πξ/2)",
+          "bbox": [
+            117.12,
+            652.9,
+            166.62,
+            663.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "λ2",
+          "bbox": [
+            99.24,
+            652.99,
+            107.83,
+            662.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8,
+            9.56
+          ]
+        },
+        {
+          "text": "\u00151/2",
+          "bbox": [
+            193.22,
+            666.25,
+            208.3,
+            679.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX",
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8,
+            6.69,
+            9.56
+          ]
+        },
+        {
+          "text": "∞",
+          "bbox": [
+            268.34,
+            666.64,
+            275.18,
+            673.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN"
+          ],
+          "sizes": [
+            6.69
+          ]
+        },
+        {
+          "text": "2k + 1",
+          "bbox": [
+            302.27,
+            668.51,
+            327.89,
+            678.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "cosh2(πξ/2) + γ 2g2(ξ)",
+          "bbox": [
+            97.12,
+            668.92,
+            192.03,
+            692.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "\u0014",
+          "bbox": [
+            90.71,
+            669.54,
+            95.92,
+            679.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            119.46,
+            670.44,
+            124.26,
+            678.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            265.0,
+            673.88,
+            278.53,
+            683.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "λ = γ",
+          "bbox": [
+            64.78,
+            675.22,
+            87.58,
+            685.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "g(ξ) = 8ξ",
+          "bbox": [
+            223.44,
+            675.22,
+            262.35,
+            685.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            210.39,
+            675.99,
+            213.56,
+            685.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "[(2k + 1)2 + ξ 2]2 .",
+          "bbox": [
+            281.32,
+            675.99,
+            352.68,
+            692.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "π 4",
+          "bbox": [
+            171.09,
+            682.78,
+            181.15,
+            692.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8,
+            9.56
+          ]
+        },
+        {
+          "text": "k=0",
+          "bbox": [
+            265.96,
+            688.2,
+            277.56,
+            695.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            6.69
+          ]
+        }
+      ]
+    },
+    {
+      "page": 45,
+      "rotation": 0,
+      "drawings": 4,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Fig. 8. Rosen–Zener model: Transition probability as a function of ξ, with γ = 1. The solid line stands for the exact result in (204). The remaining lines stand for first order computations with ME (circles) and perturbation theory (triangles). Open symbols are for the Adiabatic Picture and solid symbols for the Interaction Picture."
+      ],
+      "labels": [
+        {
+          "text": "S. Blanes et al. / Physics Reports 470 (2009) 151–238",
+          "bbox": [
+            193.96,
+            34.97,
+            346.56,
+            41.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            6.63
+          ]
+        },
+        {
+          "text": "195",
+          "bbox": [
+            491.87,
+            34.97,
+            503.39,
+            41.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            6.63
+          ]
+        },
+        {
+          "text": "Fig. 8. Rosen–Zener model: Transition probability as a function of ξ, with γ = 1. The solid line stands for the exact result in (204). The remaining lines",
+          "bbox": [
+            37.13,
+            255.2,
+            503.39,
+            263.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-bold",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            6.63,
+            7.65
+          ]
+        },
+        {
+          "text": "stand for first order computations with ME (circles) and perturbation theory (triangles). Open symbols are for the Adiabatic Picture and solid symbols for",
+          "bbox": [
+            37.13,
+            265.31,
+            503.39,
+            271.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            6.63
+          ]
+        },
+        {
+          "text": "the Interaction Picture.",
+          "bbox": [
+            37.13,
+            273.88,
+            107.17,
+            280.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            6.63
+          ]
+        },
+        {
+          "text": "4.3. Fer and Wilcox infinite-product expansions",
+          "bbox": [
+            37.13,
+            291.45,
+            210.7,
+            299.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "Next we illustrate the use of Fer and Wilcox infinite-product expansions by using the same time-dependent systems as",
+          "bbox": [
+            49.09,
+            311.33,
+            503.39,
+            319.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "before.",
+          "bbox": [
+            37.13,
+            321.79,
+            63.46,
+            330.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "4.3.1. Linearly forced harmonic oscillator",
+          "bbox": [
+            37.13,
+            340.83,
+            187.2,
+            349.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "Since the commutator [a−, a+] is a c-number, Fer iterated Hamiltonians H(n) with n > 1 eventually vanish so that Fn = 0",
+          "bbox": [
+            49.09,
+            348.61,
+            503.39,
+            361.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            6.69,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "for n > 2. The Wilcox operators Wn with n > 2 in eq. (106) vanish for the same reason. Thus, in this particular case, the",
+          "bbox": [
+            37.13,
+            361.39,
+            503.38,
+            372.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "second-order approximation in either method leads to the exact solution of the Schrödinger equation, just as ME did. To",
+          "bbox": [
+            37.13,
+            373.0,
+            503.38,
+            381.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "sum up, the final result reads",
+          "bbox": [
+            37.13,
+            383.46,
+            147.94,
+            391.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "UI = eΩ1+Ω2 = eW1eW2 = eF1eF2 = e−iβe−i(αa++α∗a−),",
+          "bbox": [
+            61.04,
+            395.4,
+            267.08,
+            409.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            4.97,
+            5.74,
+            5.8,
+            6.44,
+            6.69,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "(214)",
+          "bbox": [
+            482.86,
+            400.33,
+            503.39,
+            408.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "where α(t) and β(t) are given in (185) and (186), respectively.",
+          "bbox": [
+            37.13,
+            412.72,
+            275.62,
+            422.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "4.3.2. Two-level quantum system: Rectangular step",
+          "bbox": [
+            37.13,
+            435.31,
+            224.36,
+            443.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "For the Hamiltonian (194), the first-order Fer and Wilcox operators in the Interaction Picture verify",
+          "bbox": [
+            49.09,
+            446.56,
+            425.89,
+            454.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "Z t",
+          "bbox": [
+            130.71,
+            457.59,
+            142.19,
+            471.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            9.56
+          ]
+        },
+        {
+          "text": "dt1 ˜HI(t1),",
+          "bbox": [
+            144.78,
+            464.77,
+            182.24,
+            477.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "F1 = W1 = Ω1 =",
+          "bbox": [
+            61.04,
+            466.73,
+            128.05,
+            477.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.21,
+            9.56
+          ]
+        },
+        {
+          "text": "(215)",
+          "bbox": [
+            482.86,
+            468.66,
+            503.39,
+            476.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            135.76,
+            479.18,
+            139.12,
+            484.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8
+          ]
+        },
+        {
+          "text": "where ˜HI(t) is given by (198). The explicit expression is collected in (200) (first equation). Analogously, the second equation",
+          "bbox": [
+            37.13,
+            486.34,
+            503.39,
+            499.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "there also corresponds to the second-order Wilcox operator W2 = Ω2.",
+          "bbox": [
+            37.13,
+            498.76,
+            305.04,
+            509.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.21,
+            9.56
+          ]
+        },
+        {
+          "text": "To proceed further with Fer’s method, we must calculate the modified Hamiltonian ˜H(1) in (96). After straightforward",
+          "bbox": [
+            49.09,
+            508.21,
+            503.38,
+            520.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            6.69,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "algebra, one eventually obtains",
+          "bbox": [
+            37.13,
+            522.56,
+            155.68,
+            530.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "sin2 θ",
+          "bbox": [
+            110.87,
+            533.67,
+            131.74,
+            547.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "sin 2θ",
+          "bbox": [
+            196.88,
+            537.45,
+            218.68,
+            547.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "\u0012",
+          "bbox": [
+            103.22,
+            537.7,
+            109.68,
+            547.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "\u0012",
+          "bbox": [
+            189.22,
+            537.7,
+            195.68,
+            547.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "\u0013",
+          "bbox": [
+            256.47,
+            537.7,
+            262.93,
+            547.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "\u0013",
+          "bbox": [
+            272.41,
+            537.7,
+            278.86,
+            547.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            93.05,
+            538.6,
+            97.85,
+            546.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            181.45,
+            538.6,
+            186.25,
+            546.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "˜H(1) =",
+          "bbox": [
+            61.04,
+            539.43,
+            86.61,
+            553.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            6.69,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "[F1, ˜HI],",
+          "bbox": [
+            280.46,
+            541.42,
+            311.28,
+            554.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "−sin 2θ +",
+          "bbox": [
+            136.01,
+            543.38,
+            177.95,
+            553.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "−cos 2θ",
+          "bbox": [
+            222.96,
+            543.38,
+            255.52,
+            553.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "F1",
+          "bbox": [
+            264.52,
+            545.3,
+            271.91,
+            554.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29
+          ]
+        },
+        {
+          "text": "(216)",
+          "bbox": [
+            482.86,
+            545.3,
+            503.39,
+            553.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "2θ",
+          "bbox": [
+            90.47,
+            550.94,
+            99.47,
+            560.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "θ",
+          "bbox": [
+            119.2,
+            550.94,
+            123.41,
+            560.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "θ",
+          "bbox": [
+            181.27,
+            550.94,
+            185.48,
+            560.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "2θ",
+          "bbox": [
+            203.28,
+            550.94,
+            212.28,
+            560.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "where θ = (2γ /ξ) sin(ξ/2) (notice that ˜H(1) and therefore F2 depend on σ1 and σ2, while W2 is proportional to σ3). Since",
+          "bbox": [
+            37.13,
+            563.45,
+            503.38,
+            577.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            6.69,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "it does not seem possible to derive an analytical expression for F2, the corresponding matrix elements have been computed",
+          "bbox": [
+            37.13,
+            577.8,
+            503.38,
+            586.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29
+          ]
+        },
+        {
+          "text": "by replacing the integral by a conveniently chosen quadrature.",
+          "bbox": [
+            37.13,
+            588.26,
+            275.11,
+            596.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "The transition probability P(t) from an initial state with spin up to a state with spin down (or vice versa) is given by",
+          "bbox": [
+            49.09,
+            597.36,
+            503.38,
+            606.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "(193). This expression has been computed assuming UI ≃eF1 = eW1, UI ≃eF1eF2, UI ≃eW1eW2, UI ≃eF1eF2eF3 and",
+          "bbox": [
+            37.13,
+            604.92,
+            503.39,
+            618.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            4.97,
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "UI ≃eW1eW2eW3, and the results have been compared with the exact analytical solution (196).",
+          "bbox": [
+            37.13,
+            617.51,
+            395.43,
+            628.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            4.97,
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "In Figs. 9 and 10 we show the transition probability P as a function of ξ for two different values of γ (γ = 1.5 and γ = 2,",
+          "bbox": [
+            49.09,
+            627.76,
+            503.39,
+            638.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "respectively), while in Fig. 11 we have plotted P versus γ for ξ fixed. Notice that the second order in the Wilcox expansion",
+          "bbox": [
+            37.13,
+            638.99,
+            503.38,
+            648.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "does not contribute to the transition probability (this is similar to what happens in perturbation theory). On the other hand,",
+          "bbox": [
+            37.13,
+            650.6,
+            503.38,
+            658.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "Fer’s second-order approximation is already in remarkable agreement with the exact result, whereas the third order cannot",
+          "bbox": [
+            37.13,
+            661.07,
+            503.38,
+            669.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "even be distinguished from the exact result in Fig. 10 at the cost of a much larger computational effort. Wilcox approximants",
+          "bbox": [
+            37.13,
+            671.53,
+            503.39,
+            679.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "preserve unitarity but do not give acceptable approximations.",
+          "bbox": [
+            37.13,
+            681.99,
+            272.1,
+            690.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        }
+      ]
+    },
+    {
+      "page": 46,
+      "rotation": 0,
+      "drawings": 2,
+      "rasterImagesOnPage": 2,
+      "captionCandidates": [
+        "Fig. 9. Rectangular step: Transition probability as a function of ξ, with γ = 1.5. The solid line corresponds to the exact result (196). Broken lines stand for Fer and Wilcox approximations up to third order. Computations up to third order, in the Interaction Picture.",
+        "Fig. 10. Rectangular step: Transition probability as a function of ξ, with γ = 2. Lines are coded as in Fig. 9. Computations up to third order, in the Interaction Picture."
+      ],
+      "labels": [
+        {
+          "text": "196",
+          "bbox": [
+            40.87,
+            34.97,
+            52.39,
+            41.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            6.63
+          ]
+        },
+        {
+          "text": "S. Blanes et al. / Physics Reports 470 (2009) 151–238",
+          "bbox": [
+            197.7,
+            34.97,
+            350.29,
+            41.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            6.63
+          ]
+        },
+        {
+          "text": "Fig. 9. Rectangular step: Transition probability as a function of ξ, with γ = 1.5. The solid line corresponds to the exact result (196). Broken lines stand for",
+          "bbox": [
+            40.87,
+            254.84,
+            507.12,
+            263.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-bold",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            6.63,
+            7.65
+          ]
+        },
+        {
+          "text": "Fer and Wilcox approximations up to third order. Computations up to third order, in the Interaction Picture.",
+          "bbox": [
+            40.87,
+            264.95,
+            368.87,
+            271.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            6.63
+          ]
+        },
+        {
+          "text": "Fig. 10. Rectangular step: Transition probability as a function of ξ, with γ = 2. Lines are coded as in Fig. 9. Computations up to third order, in the Interaction",
+          "bbox": [
+            40.87,
+            485.78,
+            507.12,
+            494.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-bold",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            6.63,
+            7.65
+          ]
+        },
+        {
+          "text": "Picture.",
+          "bbox": [
+            40.87,
+            495.89,
+            64.0,
+            502.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            6.63
+          ]
+        },
+        {
+          "text": "4.4. Voslamber iterative method",
+          "bbox": [
+            40.87,
+            516.55,
+            158.93,
+            524.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "Just to keep the same structure as in preceding subsections, we mention that the Voslamber iterative method of",
+          "bbox": [
+            52.82,
+            538.88,
+            507.12,
+            547.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "Section 3.1 also yields the exact solution for the linearly driven harmonic oscillator after computing the second iteration.",
+          "bbox": [
+            40.87,
+            549.35,
+            499.53,
+            557.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "Next, for the two-level system with a rectangular step, described by the Hamiltonian (194), we compute the second iterate",
+          "bbox": [
+            52.82,
+            560.16,
+            507.12,
+            568.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "Ω(2) and compare with second order ME approximation for UI. As a test, we shall again obtain the transition probability P(t)",
+          "bbox": [
+            40.87,
+            567.15,
+            507.12,
+            579.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            6.69,
+            8.29,
+            9.21,
+            9.56
+          ]
+        },
+        {
+          "text": "given by (196). The expression (193) will be calculated here, assuming: UI ≃exp Ω(1) = exp Ω1, UI ≃exp(Ω1 + Ω2) and",
+          "bbox": [
+            40.87,
+            575.68,
+            507.12,
+            590.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            6.69,
+            8.29,
+            9.21,
+            9.56
+          ]
+        },
+        {
+          "text": "UI ≃exp Ω(2).",
+          "bbox": [
+            40.87,
+            589.22,
+            96.71,
+            600.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            6.69,
+            8.29,
+            9.21,
+            9.56
+          ]
+        },
+        {
+          "text": "The second order Magnus approximation to the transition probability is given by (201), whereas the second iterate is",
+          "bbox": [
+            52.82,
+            602.36,
+            507.12,
+            610.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "obtained from (124),",
+          "bbox": [
+            40.87,
+            612.82,
+            119.7,
+            621.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "Z ωt",
+          "bbox": [
+            125.92,
+            626.61,
+            141.92,
+            640.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX",
+            "RMTMI",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            6.69,
+            9.56
+          ]
+        },
+        {
+          "text": "Ω(2)(t) = −iγ",
+          "bbox": [
+            64.78,
+            630.63,
+            121.54,
+            646.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            6.69,
+            8.29,
+            9.21,
+            9.56
+          ]
+        },
+        {
+          "text": "{[sin2(∆) + cos2(∆) cos ξ] σ1 + cos2(∆) sin ξ σ2 −sin(2∆) sin(ξ/2) σ3}dξ,",
+          "bbox": [
+            142.91,
+            636.48,
+            432.17,
+            647.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.21,
+            9.56
+          ]
+        },
+        {
+          "text": "(217)",
+          "bbox": [
+            486.59,
+            638.48,
+            507.12,
+            646.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "ω",
+          "bbox": [
+            116.67,
+            644.12,
+            122.94,
+            653.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            130.97,
+            649.0,
+            134.33,
+            654.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8
+          ]
+        },
+        {
+          "text": "where ∆≡γ",
+          "bbox": [
+            40.87,
+            659.53,
+            93.91,
+            671.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            6.69,
+            8.29,
+            9.21,
+            9.56
+          ]
+        },
+        {
+          "text": "ω| sin(ξ/2)|, γ = V0t/¯h, ξ = ωt. Since it does not seem possible to derive an analytical expression for Ω(2),",
+          "bbox": [
+            90.5,
+            660.49,
+            507.12,
+            674.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            6.69,
+            8.29,
+            9.21,
+            9.56
+          ]
+        },
+        {
+          "text": "the corresponding matrix elements have been computed by approximating the integral in (217) with a sufficiently accurate",
+          "bbox": [
+            40.87,
+            673.27,
+            507.12,
+            681.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "quadrature.",
+          "bbox": [
+            40.87,
+            683.74,
+            85.4,
+            692.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        }
+      ]
+    },
+    {
+      "page": 47,
+      "rotation": 0,
+      "drawings": 2,
+      "rasterImagesOnPage": 2,
+      "captionCandidates": [
+        "Fig. 11. Rectangular step: Transition probability as a function of γ , with ξ = 1. Lines are coded as in Fig. 9. Computations up to third order, in the Interaction Picture.",
+        "Fig. 12. Rectangular step: Transition probability in the two level system as a function of ξ, for γ = 1.3: Exact result (204) (solid line), second iterate of Voslamber method (dashed line), second order ME (dotted line) and first Voslamber iterate (or order in ME) (dash-dotted line). Computations are done in the Interaction Picture."
+      ],
+      "labels": [
+        {
+          "text": "S. Blanes et al. / Physics Reports 470 (2009) 151–238",
+          "bbox": [
+            193.96,
+            34.97,
+            346.56,
+            41.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            6.63
+          ]
+        },
+        {
+          "text": "197",
+          "bbox": [
+            491.87,
+            34.97,
+            503.39,
+            41.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            6.63
+          ]
+        },
+        {
+          "text": "Fig. 11. Rectangular step: Transition probability as a function of γ , with ξ = 1. Lines are coded as in Fig. 9. Computations up to third order, in the Interaction",
+          "bbox": [
+            37.13,
+            249.97,
+            503.39,
+            258.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-bold",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            6.63,
+            7.65
+          ]
+        },
+        {
+          "text": "Picture.",
+          "bbox": [
+            37.13,
+            260.08,
+            60.26,
+            266.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            6.63
+          ]
+        },
+        {
+          "text": "Fig. 12. Rectangular step: Transition probability in the two level system as a function of ξ, for γ = 1.3: Exact result (204) (solid line), second iterate of",
+          "bbox": [
+            37.13,
+            475.69,
+            503.38,
+            483.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-bold",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            6.63,
+            7.65
+          ]
+        },
+        {
+          "text": "Voslamber method (dashed line), second order ME (dotted line) and first Voslamber iterate (or order in ME) (dash-dotted line). Computations are done in",
+          "bbox": [
+            37.13,
+            485.8,
+            503.39,
+            492.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            6.63
+          ]
+        },
+        {
+          "text": "the Interaction Picture.",
+          "bbox": [
+            37.13,
+            494.37,
+            107.17,
+            501.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            6.63
+          ]
+        },
+        {
+          "text": "In Fig. 12, the various approximated transition probabilities, as well as the exact result (196), have been plotted as a",
+          "bbox": [
+            49.09,
+            512.73,
+            503.38,
+            521.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "function of ξ for a fixed value γ = 1.5. We observe that the approximation from the second iterate keeps the trend of the",
+          "bbox": [
+            37.13,
+            521.27,
+            503.38,
+            531.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "exact solution in a better way than the second order Magnus approximation does.",
+          "bbox": [
+            37.13,
+            533.65,
+            348.25,
+            541.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "In Fig. 13 we have plotted the corresponding transition probabilities versus γ for fixed value ξ = 1. Although locally, the",
+          "bbox": [
+            49.09,
+            542.08,
+            503.38,
+            552.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "second order Magnus approximation may be more accurate, it seems that the trend of the exact solution is mimicked for a",
+          "bbox": [
+            37.13,
+            554.46,
+            503.38,
+            562.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "longer interval of γ .",
+          "bbox": [
+            37.13,
+            563.77,
+            113.17,
+            573.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "As it has already been pointed out above, the Magnus expansion works better the more sudden the perturbation. Thus,",
+          "bbox": [
+            49.09,
+            575.27,
+            503.39,
+            583.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "the re-summation involved in the iterative method slightly improves that issue. Further results on the present example may",
+          "bbox": [
+            37.13,
+            585.74,
+            503.38,
+            594.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "be found in [93].",
+          "bbox": [
+            37.13,
+            596.2,
+            99.95,
+            604.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "4.5. Linear periodic systems: Floquet–Magnus formalism",
+          "bbox": [
+            37.13,
+            618.37,
+            243.52,
+            626.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "Next we deal with a periodically driven harmonic oscillator, where the infinite expansions obtained from",
+          "bbox": [
+            49.09,
+            638.74,
+            503.39,
+            647.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "Floquet–Magnus recurrences (see Section 3.2), are utterly summed. Comparison with the exact solution illustrates the",
+          "bbox": [
+            37.13,
+            649.2,
+            503.39,
+            657.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "feasibility of the method.",
+          "bbox": [
+            37.13,
+            659.66,
+            132.51,
+            667.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "β",
+          "bbox": [
+            382.34,
+            667.86,
+            386.11,
+            674.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI"
+          ],
+          "sizes": [
+            6.69
+          ]
+        },
+        {
+          "text": "The particular system we consider is described by the Hamiltonian (179) with f (t) =",
+          "bbox": [
+            49.09,
+            669.17,
+            375.55,
+            679.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "2 cos ωt and ω0 < ω. Once the",
+          "bbox": [
+            385.61,
+            669.95,
+            503.39,
+            683.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            379.95,
+            670.6,
+            385.61,
+            677.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN"
+          ],
+          "sizes": [
+            6.69
+          ]
+        },
+        {
+          "text": "recurrences of the Floquet–Magnus expansion (see Section 3.2) are explicitly computed for several orders, their general term",
+          "bbox": [
+            37.13,
+            683.74,
+            503.39,
+            692.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        }
+      ]
+    },
+    {
+      "page": 48,
+      "rotation": 0,
+      "drawings": 19,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Fig. 13. Rectangular step: Transition probability in the two level system as a function of γ , for ξ = 1. Lines are coded as in Fig. 12. Computations are done in the Interaction Picture."
+      ],
+      "labels": [
+        {
+          "text": "198",
+          "bbox": [
+            40.87,
+            34.97,
+            52.39,
+            41.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            6.63
+          ]
+        },
+        {
+          "text": "S. Blanes et al. / Physics Reports 470 (2009) 151–238",
+          "bbox": [
+            197.7,
+            34.97,
+            350.29,
+            41.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            6.63
+          ]
+        },
+        {
+          "text": "Fig. 13. Rectangular step: Transition probability in the two level system as a function of γ , for ξ = 1. Lines are coded as in Fig. 12. Computations are done",
+          "bbox": [
+            40.87,
+            251.96,
+            507.12,
+            260.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-bold",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            6.63,
+            7.65
+          ]
+        },
+        {
+          "text": "in the Interaction Picture.",
+          "bbox": [
+            40.87,
+            262.07,
+            118.56,
+            268.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            6.63
+          ]
+        },
+        {
+          "text": "may be guessed by inspection. For the Floquet operator we get",
+          "bbox": [
+            40.87,
+            281.3,
+            278.68,
+            289.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "∞",
+          "bbox": [
+            185.6,
+            297.83,
+            192.44,
+            304.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN"
+          ],
+          "sizes": [
+            6.69
+          ]
+        },
+        {
+          "text": "∞",
+          "bbox": [
+            273.96,
+            297.83,
+            280.8,
+            304.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN"
+          ],
+          "sizes": [
+            6.69
+          ]
+        },
+        {
+          "text": "\"",
+          "bbox": [
+            94.14,
+            297.85,
+            100.07,
+            307.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "#",
+          "bbox": [
+            346.54,
+            297.85,
+            352.48,
+            307.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "ω0",
+          "bbox": [
+            101.27,
+            300.47,
+            110.89,
+            310.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8,
+            9.56
+          ]
+        },
+        {
+          "text": "−β ω0",
+          "bbox": [
+            152.5,
+            300.47,
+            178.97,
+            316.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8,
+            9.56
+          ]
+        },
+        {
+          "text": "\u0010ω0",
+          "bbox": [
+            197.38,
+            300.47,
+            213.42,
+            313.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX",
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8,
+            9.56
+          ]
+        },
+        {
+          "text": "q + β2 ω0",
+          "bbox": [
+            225.43,
+            300.47,
+            264.83,
+            316.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "\u0010ω0",
+          "bbox": [
+            320.09,
+            300.47,
+            336.12,
+            313.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX",
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8,
+            9.56
+          ]
+        },
+        {
+          "text": "\u0011k",
+          "bbox": [
+            215.11,
+            301.87,
+            223.34,
+            313.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            9.56
+          ]
+        },
+        {
+          "text": "\u0011k",
+          "bbox": [
+            337.81,
+            301.87,
+            346.04,
+            313.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            9.56
+          ]
+        },
+        {
+          "text": "p2 + q2\u0001",
+          "bbox": [
+            118.04,
+            302.45,
+            150.38,
+            316.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX",
+            "MTSYN",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            182.26,
+            305.06,
+            195.79,
+            314.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            270.61,
+            305.06,
+            284.15,
+            314.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "F = −i",
+          "bbox": [
+            64.78,
+            306.4,
+            92.54,
+            316.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "(2k + 1)",
+          "bbox": [
+            285.74,
+            306.4,
+            318.49,
+            316.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            114.18,
+            306.46,
+            118.04,
+            316.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            354.07,
+            307.18,
+            357.24,
+            316.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "(218)",
+          "bbox": [
+            486.6,
+            308.33,
+            507.12,
+            316.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "ω",
+          "bbox": [
+            171.18,
+            313.97,
+            177.44,
+            323.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "ω",
+          "bbox": [
+            205.62,
+            313.97,
+            211.89,
+            323.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "4ω2",
+          "bbox": [
+            252.71,
+            313.97,
+            267.32,
+            323.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "ω",
+          "bbox": [
+            328.33,
+            313.97,
+            334.59,
+            323.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            103.93,
+            315.12,
+            108.73,
+            323.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "k=0",
+          "bbox": [
+            183.22,
+            319.39,
+            194.82,
+            326.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            6.69
+          ]
+        },
+        {
+          "text": "k=0",
+          "bbox": [
+            271.58,
+            319.39,
+            283.18,
+            326.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            6.69
+          ]
+        },
+        {
+          "text": "and the associated transformation results from",
+          "bbox": [
+            40.87,
+            333.2,
+            219.36,
+            341.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "∞",
+          "bbox": [
+            164.94,
+            346.06,
+            171.77,
+            352.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN"
+          ],
+          "sizes": [
+            6.69
+          ]
+        },
+        {
+          "text": "∞",
+          "bbox": [
+            261.86,
+            346.06,
+            268.7,
+            352.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN"
+          ],
+          "sizes": [
+            6.69
+          ]
+        },
+        {
+          "text": "\"",
+          "bbox": [
+            124.02,
+            346.09,
+            129.96,
+            355.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "#",
+          "bbox": [
+            300.09,
+            346.09,
+            306.03,
+            355.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "Λ(t) = iβ2 ω0",
+          "bbox": [
+            64.78,
+            348.71,
+            120.64,
+            364.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.21,
+            9.56
+          ]
+        },
+        {
+          "text": "\u0010ω0",
+          "bbox": [
+            206.27,
+            348.71,
+            222.3,
+            361.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX",
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8,
+            9.56
+          ]
+        },
+        {
+          "text": "−ωt",
+          "bbox": [
+            234.84,
+            348.71,
+            255.02,
+            364.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "\u0010ω0",
+          "bbox": [
+            273.64,
+            348.71,
+            289.67,
+            361.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX",
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8,
+            9.56
+          ]
+        },
+        {
+          "text": "\u0011k",
+          "bbox": [
+            223.99,
+            350.1,
+            232.22,
+            361.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            9.56
+          ]
+        },
+        {
+          "text": "\u0011k",
+          "bbox": [
+            291.37,
+            350.1,
+            299.6,
+            361.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            9.56
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            161.59,
+            353.3,
+            175.12,
+            362.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            258.51,
+            353.3,
+            272.05,
+            362.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "(k + 1)",
+          "bbox": [
+            176.72,
+            354.64,
+            204.67,
+            365.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "sin (ωt)",
+          "bbox": [
+            129.96,
+            355.42,
+            160.0,
+            365.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "ω3",
+          "bbox": [
+            110.92,
+            362.21,
+            120.73,
+            371.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8,
+            9.56
+          ]
+        },
+        {
+          "text": "ω",
+          "bbox": [
+            214.51,
+            362.21,
+            220.77,
+            371.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "ω",
+          "bbox": [
+            281.88,
+            362.21,
+            288.15,
+            371.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            248.27,
+            363.36,
+            253.07,
+            371.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "k=0",
+          "bbox": [
+            162.56,
+            367.63,
+            174.16,
+            374.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            6.69
+          ]
+        },
+        {
+          "text": "k=0",
+          "bbox": [
+            259.48,
+            367.63,
+            271.08,
+            374.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            6.69
+          ]
+        },
+        {
+          "text": "∞",
+          "bbox": [
+            252.37,
+            379.29,
+            259.2,
+            385.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN"
+          ],
+          "sizes": [
+            6.69
+          ]
+        },
+        {
+          "text": "−i [sin (ωt) q + ω0 (cos (ωt) −1) p] β",
+          "bbox": [
+            97.32,
+            381.94,
+            245.36,
+            399.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "\u0010ω0",
+          "bbox": [
+            264.14,
+            381.94,
+            280.18,
+            394.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX",
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8,
+            9.56
+          ]
+        },
+        {
+          "text": "\u0011k",
+          "bbox": [
+            281.87,
+            383.33,
+            290.1,
+            394.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            9.56
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            249.02,
+            386.53,
+            262.55,
+            396.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            292.19,
+            388.64,
+            294.82,
+            398.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "(219)",
+          "bbox": [
+            486.6,
+            389.79,
+            507.12,
+            398.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "ω",
+          "bbox": [
+            239.77,
+            395.43,
+            246.04,
+            405.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "ω",
+          "bbox": [
+            272.39,
+            395.43,
+            278.65,
+            405.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "k=0",
+          "bbox": [
+            249.98,
+            400.85,
+            261.58,
+            408.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            6.69
+          ]
+        },
+        {
+          "text": "The resulting series may be summed in closed form, thus yielding the Floquet operator",
+          "bbox": [
+            40.87,
+            414.28,
+            370.62,
+            422.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "\"\u0012",
+          "bbox": [
+            106.65,
+            430.84,
+            119.04,
+            443.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "#",
+          "bbox": [
+            211.5,
+            430.84,
+            217.44,
+            440.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "\u00132",
+          "bbox": [
+            181.01,
+            431.98,
+            190.82,
+            443.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8,
+            9.56
+          ]
+        },
+        {
+          "text": "β2",
+          "bbox": [
+            253.06,
+            433.09,
+            262.48,
+            443.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8,
+            9.56
+          ]
+        },
+        {
+          "text": "F = −iω0",
+          "bbox": [
+            64.78,
+            433.46,
+            103.36,
+            449.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "β",
+          "bbox": [
+            155.07,
+            433.46,
+            160.47,
+            443.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "+ p2",
+          "bbox": [
+            193.44,
+            439.32,
+            211.0,
+            449.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "q −",
+          "bbox": [
+            119.04,
+            439.39,
+            133.08,
+            449.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "−i",
+          "bbox": [
+            219.56,
+            439.39,
+            231.63,
+            449.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "\u0001,",
+          "bbox": [
+            279.35,
+            440.16,
+            287.57,
+            456.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX",
+            "RMTMI"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "(220)",
+          "bbox": [
+            486.6,
+            441.31,
+            507.12,
+            449.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "ω0(ρ2 −1)",
+          "bbox": [
+            136.4,
+            443.41,
+            179.81,
+            457.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "ρ2 −1",
+          "bbox": [
+            253.2,
+            443.9,
+            279.35,
+            457.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            249.34,
+            446.72,
+            253.2,
+            456.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "4ω0",
+          "bbox": [
+            232.83,
+            447.44,
+            247.25,
+            457.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            96.4,
+            448.11,
+            101.2,
+            456.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "with ρ ≡ω/ω0. Its eigenvalues are the so-called Floquet eigenenergies [124]",
+          "bbox": [
+            40.87,
+            464.26,
+            328.71,
+            475.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "β2",
+          "bbox": [
+            167.32,
+            483.07,
+            176.75,
+            493.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8,
+            9.56
+          ]
+        },
+        {
+          "text": "\u0012",
+          "bbox": [
+            97.59,
+            483.69,
+            104.04,
+            493.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "\u0013",
+          "bbox": [
+            127.73,
+            483.69,
+            134.19,
+            493.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            121.74,
+            484.59,
+            126.54,
+            492.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "En = ω0",
+          "bbox": [
+            64.78,
+            489.37,
+            95.49,
+            500.48
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "n +",
+          "bbox": [
+            104.04,
+            489.37,
+            118.42,
+            499.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            136.31,
+            489.37,
+            143.77,
+            498.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "\u0001.",
+          "bbox": [
+            193.62,
+            490.14,
+            201.3,
+            506.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX",
+            "RMTMI"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "(221)",
+          "bbox": [
+            486.6,
+            491.29,
+            507.12,
+            499.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "ρ2 −1",
+          "bbox": [
+            167.46,
+            493.88,
+            193.62,
+            506.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            163.61,
+            496.7,
+            167.47,
+            506.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "4ω0",
+          "bbox": [
+            147.1,
+            497.42,
+            161.52,
+            507.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            121.74,
+            498.08,
+            126.54,
+            506.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "The corresponding Λ transformation after summation of the series in (219) is",
+          "bbox": [
+            40.87,
+            513.97,
+            335.47,
+            523.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29,
+            9.21
+          ]
+        },
+        {
+          "text": "\u0013 β sin ωt",
+          "bbox": [
+            323.46,
+            525.18,
+            362.55,
+            541.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "2ρ2",
+          "bbox": [
+            266.19,
+            531.53,
+            280.14,
+            541.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "Λ(t) = i β/ω0",
+          "bbox": [
+            64.78,
+            531.9,
+            122.26,
+            548.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.21,
+            9.56
+          ]
+        },
+        {
+          "text": "\u0014",
+          "bbox": [
+            128.28,
+            532.15,
+            133.49,
+            541.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "\u0012",
+          "bbox": [
+            252.69,
+            532.15,
+            259.14,
+            541.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "\u0015",
+          "bbox": [
+            364.46,
+            532.15,
+            369.67,
+            541.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "(ρ sin ωt) q + (cos ωt −1)p +",
+          "bbox": [
+            133.49,
+            537.83,
+            250.56,
+            548.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "1 −ρ2 + cos ωt",
+          "bbox": [
+            260.34,
+            537.83,
+            322.75,
+            554.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            371.26,
+            538.61,
+            373.89,
+            548.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "(222)",
+          "bbox": [
+            486.6,
+            539.76,
+            507.12,
+            548.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "1 −ρ2",
+          "bbox": [
+            99.34,
+            544.62,
+            124.99,
+            554.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "4ω",
+          "bbox": [
+            342.35,
+            545.4,
+            353.42,
+            554.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "Notice that, as they should, both operators are skew-Hermitian and reproduce the exact solution of the problem.",
+          "bbox": [
+            40.87,
+            561.76,
+            468.91,
+            570.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "5. Numerical integration methods based on the Magnus expansion",
+          "bbox": [
+            40.87,
+            584.89,
+            308.23,
+            593.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-bold"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "5.1. Introduction",
+          "bbox": [
+            40.87,
+            608.06,
+            103.55,
+            616.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "The Magnus expansion, as formulated in Section 2, has found extensive use in mathematical physics, quantum chemistry,",
+          "bbox": [
+            52.82,
+            628.97,
+            507.12,
+            637.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "control theory etc, essentially as a perturbative tool in the treatment of the linear equation",
+          "bbox": [
+            40.87,
+            639.44,
+            385.34,
+            647.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "Y ′ = A(t)Y,",
+          "bbox": [
+            64.78,
+            651.38,
+            110.56,
+            665.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            6.69,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "Y(t0) = Y0.",
+          "bbox": [
+            128.73,
+            655.33,
+            172.5,
+            666.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "(223)",
+          "bbox": [
+            486.59,
+            657.26,
+            507.12,
+            665.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "When the recurrence (49)–(50) is applied, one is able to explicitly get the successive terms Ωk in the series, defining Ωas",
+          "bbox": [
+            40.87,
+            672.41,
+            507.12,
+            683.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.21
+          ]
+        },
+        {
+          "text": "linear combinations of multivariate integrals containing commutators acting iteratively on the coefficient matrix A, as in",
+          "bbox": [
+            40.87,
+            683.74,
+            507.12,
+            692.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29
+          ]
+        }
+      ]
+    },
+    {
+      "page": 61,
+      "rotation": 0,
+      "drawings": 1,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Fig. 17. Rosen–Zener model: Same as Fig. 16 where we compare the performance of the 6th-order Magnus, symmetric-Fer, Cayley and RK6."
+      ],
+      "labels": [
+        {
+          "text": "S. Blanes et al. / Physics Reports 470 (2009) 151–238",
+          "bbox": [
+            193.96,
+            34.97,
+            346.56,
+            41.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            6.63
+          ]
+        },
+        {
+          "text": "211",
+          "bbox": [
+            491.87,
+            34.97,
+            503.39,
+            41.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            6.63
+          ]
+        },
+        {
+          "text": "Fig. 17. Rosen–Zener model: Same as Fig. 16 where we compare the performance of the 6th-order Magnus, symmetric-Fer, Cayley and RK6.",
+          "bbox": [
+            56.62,
+            267.16,
+            483.9,
+            273.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-bold",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            6.63
+          ]
+        },
+        {
+          "text": "(as often happens with matrices arising from the spatial discretization of partial differential equations). (ii) Second, for",
+          "bbox": [
+            37.13,
+            289.43,
+            503.38,
+            297.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "the numerical integration methods based on ME, one has to compute exp(C(h)), where C(h) = O(hp), h is a (not too large)",
+          "bbox": [
+            37.13,
+            297.96,
+            503.39,
+            308.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTMS",
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            8.93,
+            9.56
+          ]
+        },
+        {
+          "text": "step size and p ≥1. In other words, the matrices to be exponentiated typically have a small norm (usually restricted by the",
+          "bbox": [
+            37.13,
+            308.42,
+            503.38,
+            318.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "convergence bounds of the expansion).",
+          "bbox": [
+            37.13,
+            320.81,
+            185.79,
+            329.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "In any case, prior to the computation of exp(C), it is important to have as much information about the exponent C as",
+          "bbox": [
+            49.09,
+            330.55,
+            503.39,
+            340.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "possible. Thus, for instance, if the matrix C resides in a Lie algebra, then exp(C) belongs to the corresponding Lie group",
+          "bbox": [
+            37.13,
+            341.01,
+            503.39,
+            350.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "and one has to decide whether this qualitative property has to be exactly preserved, or if constructing a sufficiently accurate",
+          "bbox": [
+            37.13,
+            352.62,
+            503.38,
+            360.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "approximation (e.g., at a higher order than the order of the integrator itself) is enough. Also, when C can be split into different",
+          "bbox": [
+            37.13,
+            363.08,
+            503.38,
+            371.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "parts, one may consider a factorization of the form exp(C) ≈exp(C1) exp(C2) · · · exp(Cm) if each individual exponential is",
+          "bbox": [
+            37.13,
+            371.62,
+            503.38,
+            382.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "easy to evaluate exactly.",
+          "bbox": [
+            37.13,
+            384.0,
+            129.67,
+            392.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "An important reference in this context is [138] and its updated version [139], where up to nineteen (or twenty",
+          "bbox": [
+            49.09,
+            394.89,
+            503.38,
+            403.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "in [139]) different numerical algorithms for computing the exponential of a matrix are carefully reviewed. An extensive",
+          "bbox": [
+            37.13,
+            405.36,
+            503.38,
+            413.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "software package for computing the matrix exponential is Expokit, developed by R. Sidje, with Fortran and Matlab versions",
+          "bbox": [
+            37.13,
+            415.82,
+            503.38,
+            424.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "available [140,141]. In addition to computing the matrix-valued function exp(C) for small, dense matrices C, Expokit has",
+          "bbox": [
+            37.13,
+            425.13,
+            503.39,
+            434.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "functions for computing the vector-valued function exp(C)v for both small, dense matrices and large, sparse matrices.",
+          "bbox": [
+            37.13,
+            435.59,
+            486.33,
+            445.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "5.6.1. Scaling and squaring with Padé approximation",
+          "bbox": [
+            37.13,
+            462.92,
+            230.56,
+            471.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "Among one of the least dubious ways of computing exp(C) is by scaling and squaring in combination with a diagonal",
+          "bbox": [
+            49.09,
+            473.66,
+            503.38,
+            483.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "Padé approximation [139]. The procedure is based on a fundamental property of the exponential function, namely",
+          "bbox": [
+            37.13,
+            485.27,
+            470.82,
+            493.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "eC = (eC/j)j",
+          "bbox": [
+            61.04,
+            496.72,
+            105.05,
+            511.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            6.69,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "for any integer j. The idea, then, is to choose j to be a power of two for which exp(C/j) can be reliably and efficiently computed,",
+          "bbox": [
+            37.13,
+            518.78,
+            503.39,
+            528.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "and then to form the matrix (exp(C/j))j by repeated squaring. If the integer j is chosen as the smallest power of two for which",
+          "bbox": [
+            37.13,
+            526.92,
+            503.38,
+            538.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "∥C∥/j < 1, then exp(C/j) can be satisfactorily computed by diagonal Padé approximants of order, say, m. This is roughly the",
+          "bbox": [
+            37.13,
+            538.92,
+            503.39,
+            549.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "method used by the built-in function expm in Matlab.",
+          "bbox": [
+            37.13,
+            550.51,
+            241.16,
+            560.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "TeX-ectt1000",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29,
+            9.96
+          ]
+        },
+        {
+          "text": "For the integrators based on the Magnus expansion, as C = O(hp) with p ≥1, one usually gets good approximations",
+          "bbox": [
+            49.09,
+            560.28,
+            503.39,
+            570.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTMS",
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            8.93,
+            9.56
+          ]
+        },
+        {
+          "text": "with relatively small values of j and m.",
+          "bbox": [
+            37.13,
+            572.66,
+            183.49,
+            580.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "As is well known, diagonal Padé approximants map the Lie algebra oJ(n) to the J-orthogonal Lie group OJ(n) and thus",
+          "bbox": [
+            49.09,
+            582.4,
+            503.39,
+            592.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "also constitute a valid alternative to the evaluation of the exponential matrix in Magnus-based methods for this particular",
+          "bbox": [
+            37.13,
+            594.02,
+            503.38,
+            602.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "Lie group. More specifically, if B ∈oJ(n), then ψ2m(tB) ∈OJ(n) for sufficiently small t ∈R, with",
+          "bbox": [
+            37.13,
+            602.37,
+            399.58,
+            613.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSBM10",
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            8.61,
+            9.56
+          ]
+        },
+        {
+          "text": "Pm(λ)",
+          "bbox": [
+            106.71,
+            622.42,
+            129.06,
+            632.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "ψ2m(λ) =",
+          "bbox": [
+            61.04,
+            628.35,
+            99.13,
+            639.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            9.56
+          ]
+        },
+        {
+          "text": "Pm(−λ),",
+          "bbox": [
+            102.98,
+            629.12,
+            137.15,
+            646.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "(276)",
+          "bbox": [
+            482.86,
+            630.27,
+            503.39,
+            638.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "provided the polynomials Pm are generated according to the recurrence",
+          "bbox": [
+            37.13,
+            652.95,
+            308.65,
+            662.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29
+          ]
+        },
+        {
+          "text": "P0(λ) = 1,",
+          "bbox": [
+            61.04,
+            668.36,
+            102.47,
+            679.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "P1(λ) = 2 + λ",
+          "bbox": [
+            120.65,
+            668.36,
+            175.85,
+            679.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "Pm(λ) = 2(2m −1)Pm−1(λ) + λ2Pm−2(λ).",
+          "bbox": [
+            61.04,
+            681.74,
+            221.85,
+            692.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            6.69,
+            8.29,
+            9.56
+          ]
+        }
+      ]
+    },
+    {
+      "page": 65,
+      "rotation": 0,
+      "drawings": 1,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Fig. 18. Efficiency diagram corresponding to the optimized 4-th (circles) and 6-th (squares) order Lie-group solvers based on Magnus (solid lines) and Cayley (broken lines), and the standard Runge–Kutta methods (dashed lines)."
+      ],
+      "labels": [
+        {
+          "text": "S. Blanes et al. / Physics Reports 470 (2009) 151–238",
+          "bbox": [
+            193.96,
+            34.97,
+            346.56,
+            41.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            6.63
+          ]
+        },
+        {
+          "text": "215",
+          "bbox": [
+            491.87,
+            34.97,
+            503.39,
+            41.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            6.63
+          ]
+        },
+        {
+          "text": "Fig. 18.",
+          "bbox": [
+            37.13,
+            268.24,
+            59.87,
+            274.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-bold"
+          ],
+          "sizes": [
+            6.63
+          ]
+        },
+        {
+          "text": "Efficiency diagram corresponding to the optimized 4-th (circles) and 6-th (squares) order Lie-group solvers based on Magnus (solid lines) and",
+          "bbox": [
+            65.24,
+            268.26,
+            503.38,
+            274.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            6.63
+          ]
+        },
+        {
+          "text": "Cayley (broken lines), and the standard Runge–Kutta methods (dashed lines).",
+          "bbox": [
+            37.13,
+            276.83,
+            272.09,
+            283.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            6.63
+          ]
+        },
+        {
+          "text": "As an illustration of this situation, we next consider two skew-symmetric matrices, A(t) and Y(0) = I, so that the solution",
+          "bbox": [
+            49.09,
+            294.65,
+            503.38,
+            304.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "Y(t) of Y ′ = A(t)Y is orthogonal for all t. In particular, the upper triangular elements of the matrices A(t) are as follows:",
+          "bbox": [
+            37.13,
+            301.64,
+            493.7,
+            315.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            6.69,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "t(j2 −i2)",
+          "bbox": [
+            118.05,
+            318.71,
+            153.02,
+            333.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "Aij = sin",
+          "bbox": [
+            79.75,
+            322.66,
+            112.6,
+            333.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "1 ≤i < j ≤N",
+          "bbox": [
+            166.75,
+            322.66,
+            219.94,
+            333.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "\u0000",
+          "bbox": [
+            114.19,
+            322.72,
+            118.05,
+            332.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "\u0001",
+          "bbox": [
+            153.02,
+            322.72,
+            156.87,
+            332.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "(a)",
+          "bbox": [
+            61.04,
+            324.59,
+            71.46,
+            332.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "(283)",
+          "bbox": [
+            482.86,
+            324.59,
+            503.39,
+            332.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "j −i",
+          "bbox": [
+            144.56,
+            339.15,
+            161.04,
+            349.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "\u0012",
+          "bbox": [
+            115.16,
+            340.17,
+            121.62,
+            349.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "\u0013",
+          "bbox": [
+            162.23,
+            340.17,
+            168.69,
+            349.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "Aij = log",
+          "bbox": [
+            80.26,
+            345.85,
+            113.57,
+            356.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "1 + t",
+          "bbox": [
+            121.62,
+            345.85,
+            141.06,
+            356.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "(b)",
+          "bbox": [
+            61.04,
+            347.78,
+            71.97,
+            356.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "(284)",
+          "bbox": [
+            482.86,
+            347.78,
+            503.39,
+            356.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "j + i",
+          "bbox": [
+            144.56,
+            352.64,
+            161.04,
+            362.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "with N = 10. In both cases Y(t) oscillates with time, mainly due to the time-dependence of A(t) (in (283)) or the norm of",
+          "bbox": [
+            37.13,
+            366.92,
+            503.39,
+            377.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "the eigenvalues (in (284)).",
+          "bbox": [
+            37.13,
+            379.31,
+            136.96,
+            387.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "The integration is carried out in the interval t ∈[0, 10] and the approximate solutions are compared with the exact",
+          "bbox": [
+            49.09,
+            387.74,
+            503.39,
+            398.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "one at the final time tf = 10 (obtained with very high accuracy by using a sufficiently small time step). The corresponding",
+          "bbox": [
+            37.13,
+            398.2,
+            503.39,
+            409.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "error at tf is computed for different values of the time step h. The Lie-group solvers are implemented with Gauss–Legendre",
+          "bbox": [
+            37.13,
+            410.59,
+            503.39,
+            420.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29
+          ]
+        },
+        {
+          "text": "quadratures and constant step size.",
+          "bbox": [
+            37.13,
+            421.05,
+            171.58,
+            429.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "First, we plot the accuracy of the different 4-th and 6-th order methods as a function of the number of A(t) evaluations.",
+          "bbox": [
+            49.09,
+            430.26,
+            503.39,
+            439.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "In contrast to the previous examples, now there is no closed formula for the matrix exponentials appearing in the Magnus",
+          "bbox": [
+            37.13,
+            441.88,
+            503.38,
+            450.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "based integrators, so that some alternative procedure must be applied. In particular, the computation of eC to machine",
+          "bbox": [
+            37.13,
+            448.86,
+            503.38,
+            460.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29
+          ]
+        },
+        {
+          "text": "accuracy is done by scaling–(diagonal Padé)–squaring, so that the result is correct up to round-off. Fig. 18 shows the results",
+          "bbox": [
+            37.13,
+            462.8,
+            503.38,
+            471.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "obtained for the problems (283) and (284) with fourth- and sixth-order numerical schemes based on Magnus and Cayley,",
+          "bbox": [
+            37.13,
+            473.26,
+            503.38,
+            481.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "and also explicit Runge–Kutta methods. In the first problem, Magnus and Cayley show a very similar performance, which",
+          "bbox": [
+            37.13,
+            483.72,
+            503.38,
+            492.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "happens to be only slightly better than that of RK methods.",
+          "bbox": [
+            37.13,
+            494.18,
+            261.57,
+            502.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "The situation changes drastically, however, for the second problem. Here the behavior of Cayley and RK methods is",
+          "bbox": [
+            49.09,
+            504.54,
+            503.39,
+            512.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "essentially similar, whereas schemes based on Magnus are clearly more efficient. The reason seems to be that Cayley and RK",
+          "bbox": [
+            37.13,
+            515.0,
+            503.38,
+            523.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "methods give poor approximations to the exponential, which, on the other hand, has to be accurately approximated, since",
+          "bbox": [
+            37.13,
+            525.46,
+            503.38,
+            533.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "the eigenvalues of A(t) may take large values.",
+          "bbox": [
+            37.13,
+            534.77,
+            210.56,
+            544.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "With respect to symmetric Fer methods, their efficiency is quite similar to that of Magnus if the matrix exponentials are",
+          "bbox": [
+            49.09,
+            546.29,
+            503.39,
+            554.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "evaluated accurately up to machine precision. This is so for the matrix (283) even if Padé approximants of relatively low",
+          "bbox": [
+            37.13,
+            556.75,
+            503.39,
+            565.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "order are used to replace the exponentials.",
+          "bbox": [
+            37.13,
+            567.21,
+            199.48,
+            575.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "On the other hand, the efficiency of ‘‘Magnus–Padé’’ methods (we denote by MPnm a Magnus method of order n where",
+          "bbox": [
+            49.09,
+            577.57,
+            503.39,
+            585.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "the exponential is approximated by a diagonal Padé of order m, and MPn if n = m) is highly deteriorated for the problem",
+          "bbox": [
+            37.13,
+            586.11,
+            503.39,
+            596.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "(284), although it is always better than that corresponding to Cayley schemes.",
+          "bbox": [
+            37.13,
+            598.5,
+            333.57,
+            606.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "To better illustrate all these comments, in Fig. 19 we display the error in the solution corresponding to (283) and (284)",
+          "bbox": [
+            49.09,
+            608.86,
+            503.39,
+            617.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "as a function of time in the interval t ∈[0, 100] for h = 1/20, as is obtained by the previous methods. We should stress that",
+          "bbox": [
+            37.13,
+            617.39,
+            503.39,
+            627.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "all schemes require the same number of A evaluations.",
+          "bbox": [
+            37.13,
+            629.78,
+            244.69,
+            638.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "In the right picture, the exponentials appearing in the Magnus method are computed using a Padé approximant of order",
+          "bbox": [
+            49.09,
+            640.14,
+            503.39,
+            648.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "six (MP6), of order eight (MP68) and to machine accuracy (M6). Observe the great importance of evaluating the exponential",
+          "bbox": [
+            37.13,
+            650.6,
+            503.38,
+            658.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "as accurately as possible for the matrix (284): by slightly increasing the computational cost per step in the computation of",
+          "bbox": [
+            37.13,
+            661.07,
+            503.38,
+            669.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "the matrix exponential, it is possible to dramatically improve the accuracy of the methods. On the contrary, for problem",
+          "bbox": [
+            37.13,
+            671.53,
+            503.38,
+            679.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "(283) the meaningful fact seems to be that the integration scheme provides a solution in the corresponding Lie group.",
+          "bbox": [
+            37.13,
+            681.99,
+            484.45,
+            690.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        }
+      ]
+    },
+    {
+      "page": 72,
+      "rotation": 0,
+      "drawings": 4,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Fig. 20. Average error versus number of force evaluations in the numerical integration of (308) using second and fourth order symplectic integrators for general separable systems (S2 corresponds to the second order leapfrog method with coefficients (309) and SU54 to the fourth order method with coefficients (310)) and the fourth order symplectic Runge–Kutta–Nyström method MN6-4 with initial conditions q(0) = 1.75, p(0) = 0 and ϵ = 1/20, δ = 1/4, ω = 1."
+      ],
+      "labels": [
+        {
+          "text": "222",
+          "bbox": [
+            40.87,
+            34.97,
+            52.39,
+            41.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            6.63
+          ]
+        },
+        {
+          "text": "S. Blanes et al. / Physics Reports 470 (2009) 151–238",
+          "bbox": [
+            197.7,
+            34.97,
+            350.29,
+            41.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            6.63
+          ]
+        },
+        {
+          "text": "Fig. 20.",
+          "bbox": [
+            40.87,
+            258.52,
+            63.78,
+            265.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-bold"
+          ],
+          "sizes": [
+            6.63
+          ]
+        },
+        {
+          "text": "Average error versus number of force evaluations in the numerical integration of (308) using second and fourth order symplectic integrators",
+          "bbox": [
+            69.33,
+            258.54,
+            507.12,
+            265.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            6.63
+          ]
+        },
+        {
+          "text": "for general separable systems (S2 corresponds to the second order leapfrog method with coefficients (309) and SU54 to the fourth order method with",
+          "bbox": [
+            40.87,
+            267.11,
+            507.12,
+            274.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            4.64,
+            6.63
+          ]
+        },
+        {
+          "text": "coefficients (310)) and the fourth order symplectic Runge–Kutta–Nyström method MN6-4 with initial conditions q(0) = 1.75, p(0) = 0 and ϵ = 1/20,",
+          "bbox": [
+            40.87,
+            274.14,
+            507.12,
+            283.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            4.64,
+            6.63,
+            7.65
+          ]
+        },
+        {
+          "text": "δ = 1/4, ω = 1.",
+          "bbox": [
+            40.87,
+            282.7,
+            89.95,
+            290.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            6.63,
+            7.65
+          ]
+        },
+        {
+          "text": "6.1. Case study: Numerical treatment of the Schrödinger equation",
+          "bbox": [
+            40.87,
+            304.1,
+            280.08,
+            312.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "Before embarking on the use of numerical methods based on the Magnus expansion in the integration of the Schrödinger",
+          "bbox": [
+            52.82,
+            324.51,
+            507.12,
+            332.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "equation, let us establish first the theoretical framework which allows one to use numerical integrators in this setting for",
+          "bbox": [
+            40.87,
+            334.97,
+            507.12,
+            343.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "obtaining approximate solutions in time and space.",
+          "bbox": [
+            40.87,
+            345.43,
+            235.98,
+            353.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "6.1.1. Time-dependent Schrödinger equation",
+          "bbox": [
+            40.87,
+            367.69,
+            203.69,
+            375.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "To keep the treatment as simple as possible, we commence by considering the one-dimensional time-dependent",
+          "bbox": [
+            52.82,
+            379.04,
+            507.12,
+            387.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "Schrödinger equation (¯h = 1)",
+          "bbox": [
+            40.87,
+            387.58,
+            153.32,
+            398.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "∂2",
+          "bbox": [
+            182.88,
+            405.0,
+            191.38,
+            414.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8,
+            9.56
+          ]
+        },
+        {
+          "text": "i ∂",
+          "bbox": [
+            64.78,
+            405.37,
+            74.66,
+            421.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            173.65,
+            406.52,
+            178.45,
+            414.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "∂t ψ(t, x) = Hψ(t, x) ≡−",
+          "bbox": [
+            68.46,
+            411.3,
+            172.46,
+            428.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "∂x2 ψ(t, x) + V(x)ψ(t, x),",
+          "bbox": [
+            180.84,
+            411.3,
+            281.81,
+            428.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "(311)",
+          "bbox": [
+            486.6,
+            413.23,
+            507.12,
+            421.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            173.65,
+            420.02,
+            178.45,
+            428.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "with initial condition ψ(0, x) = ψ0(x). If we look for a solution of the form ψ(t, x) = φ(t)ϕ(x), it is clear that, by substituting",
+          "bbox": [
+            40.87,
+            430.11,
+            507.12,
+            441.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "into (311), one gets φ(t) = e−itE, where E is a constant and ϕ(x) is the solution of the second order differential equation",
+          "bbox": [
+            40.87,
+            439.63,
+            496.12,
+            450.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            6.69,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "d2ϕ",
+          "bbox": [
+            77.68,
+            458.1,
+            91.85,
+            468.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "−",
+          "bbox": [
+            66.9,
+            464.4,
+            74.36,
+            473.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "dx2 + V(x)ϕ = Eϕ.",
+          "bbox": [
+            78.57,
+            464.4,
+            154.81,
+            481.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "(312)",
+          "bbox": [
+            486.6,
+            466.32,
+            507.12,
+            474.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "If E > V the solution is oscillatory, whereas if E < V the solution is a linear combination of exponentially increasing and",
+          "bbox": [
+            40.87,
+            483.76,
+            507.12,
+            493.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "decreasing functions. For bounded problems, this last condition always takes place at the boundaries. Since",
+          "bbox": [
+            40.87,
+            495.37,
+            448.12,
+            503.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "Z",
+          "bbox": [
+            66.37,
+            510.28,
+            71.42,
+            519.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "Z",
+          "bbox": [
+            135.7,
+            510.28,
+            140.75,
+            519.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "|ψ(x, t)|2dx =",
+          "bbox": [
+            77.4,
+            515.48,
+            133.04,
+            525.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "|ϕ(x)|2dx < ∞,",
+          "bbox": [
+            146.72,
+            515.48,
+            207.82,
+            525.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "(313)",
+          "bbox": [
+            486.6,
+            517.48,
+            507.12,
+            525.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "it is clear that the exponentially increasing solutions have to be canceled, and this can only occur for certain values of the",
+          "bbox": [
+            40.87,
+            537.43,
+            507.12,
+            545.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "constant E, which are precisely the eigenvalues of the problem.",
+          "bbox": [
+            40.87,
+            547.89,
+            281.07,
+            556.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "Let us assume that the system has only a discrete spectrum, and denote by {En, ϕn}∞",
+          "bbox": [
+            52.82,
+            555.33,
+            373.52,
+            567.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            6.69,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "n=0, with Ei < Ej, i < j, the complete",
+          "bbox": [
+            366.68,
+            557.1,
+            507.12,
+            568.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            6.69,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "set of eigenvalues and associated eigenvectors. It is well known that we can take {ϕn}∞",
+          "bbox": [
+            40.87,
+            565.79,
+            369.67,
+            577.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            6.69,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "n=0 as an orthonormal basis and, since",
+          "bbox": [
+            362.83,
+            568.71,
+            507.12,
+            579.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            6.69,
+            8.29
+          ]
+        },
+        {
+          "text": "(311) is linear, any solution can be written as",
+          "bbox": [
+            40.87,
+            579.17,
+            212.16,
+            587.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "∞",
+          "bbox": [
+            108.1,
+            593.06,
+            114.94,
+            599.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN"
+          ],
+          "sizes": [
+            6.69
+          ]
+        },
+        {
+          "text": "cn e−itEnϕn(x).",
+          "bbox": [
+            119.88,
+            600.22,
+            172.49,
+            613.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            4.97,
+            5.8,
+            6.69,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            104.75,
+            600.3,
+            118.28,
+            609.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "ψ(t, x) =",
+          "bbox": [
+            64.78,
+            601.64,
+            102.1,
+            611.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "(314)",
+          "bbox": [
+            486.6,
+            603.56,
+            507.12,
+            611.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "n=0",
+          "bbox": [
+            105.55,
+            614.62,
+            117.49,
+            621.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            6.69
+          ]
+        },
+        {
+          "text": "Using the standard notation for the inner product, one has",
+          "bbox": [
+            40.87,
+            626.85,
+            262.39,
+            635.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "Z",
+          "bbox": [
+            134.94,
+            641.77,
+            139.99,
+            651.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTEX"
+          ],
+          "sizes": [
+            9.56
+          ]
+        },
+        {
+          "text": "ϕ∗",
+          "bbox": [
+            145.96,
+            645.62,
+            155.3,
+            657.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI"
+          ],
+          "sizes": [
+            6.69,
+            9.56
+          ]
+        },
+        {
+          "text": "n(x) ψ(t, x)dx = cn e−itEn",
+          "bbox": [
+            151.34,
+            645.62,
+            246.13,
+            659.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            4.97,
+            5.8,
+            6.69,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "⟨ϕn(x)|ψ(t, x)⟩=",
+          "bbox": [
+            64.78,
+            647.04,
+            132.28,
+            658.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        },
+        {
+          "text": "(315)",
+          "bbox": [
+            486.6,
+            648.96,
+            507.12,
+            657.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "and",
+          "bbox": [
+            40.87,
+            668.92,
+            55.12,
+            677.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "t1-gul-regular"
+          ],
+          "sizes": [
+            8.29
+          ]
+        },
+        {
+          "text": "|⟨ϕn(x)|ψ(t, x)⟩|2 = |cn|2",
+          "bbox": [
+            64.78,
+            677.86,
+            160.68,
+            692.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MTSYN",
+            "RMTMI",
+            "t1-gul-regular",
+            "t1-gul-regular-italic"
+          ],
+          "sizes": [
+            5.8,
+            8.29,
+            9.56
+          ]
+        }
+      ]
+    }
+  ]
+}

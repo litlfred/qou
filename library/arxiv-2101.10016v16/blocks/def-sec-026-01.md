@@ -1,1 +1,1 @@
-A generalised coboundary is a natural isomorphism c(ρ, σ) ∈ (ρ⊗σ, σ⊗ρ)
+A generalised coboundary is a natural isomorphism c(ρ, σ) ∈ (ρ⊗σ, σ⊗ρ) satisfying (5.7) and such that the following diagram commutes. (ρ ⊗ σ) ⊗ τ α −−−→ ρ ⊗ (σ ⊗ τ )1⊗c −−−→ ρ ⊗ (τ ⊗ σ) c⊗1   y   yc (σ ⊗ ρ) ⊗ τ c −−−→ τ ⊗ (σ ⊗ ρ)α ←−−− (τ ⊗ σ) ⊗ ρ (27.6) If c(ρ, σ) is a generalised coboundary then c ′ (ρ, σ) := c(σ, ρ) −1 is too.

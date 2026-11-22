@@ -25,7 +25,7 @@ $$
 where $\chi_4$ is the non-trivial Dirichlet character mod 4 ($\chi_4(1) = 1, \chi_4(3) = -1$) and $\beta$ is the Dirichlet beta function. The $N=5$ cyclotomic depth-3 content yields a single generator $\mathrm{Cl}_3(2\pi/5) - \mathrm{Cl}_3(4\pi/5) \approx 0.95572$, corresponding to the two odd Dirichlet characters $\chi_5$, $\chi_5^3$ mod 5.
 
 **Constructive proof from Theorem A.**  By
-[`prop:jonquiere-cyclotomic-tate-rationality`](#prop:jonquiere-cyclotomic-tate-rationality)
+[General Jonquière Tate-rationality](#prop:jonquiere-cyclotomic-tate-rationality)
 at $(n, K) = (3, 4)$:
 
 $$

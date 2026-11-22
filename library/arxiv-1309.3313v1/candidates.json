@@ -3,12 +3,13 @@
  "doc_id": "arxiv-1309.3313v1",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "11614aa35b1ffa50445679d8ac8beb3fce19d3b6e25ffdecac7393b04ec1f0b8",
   "file": "1309.3313v1.pdf"
  },
  "provenance": {
-  "title": "Hadron Structure in Chiral Perturbation Theory A. Aleksejevs\u2217",
+  "title": "Hadron Structure in Chiral Perturbation Theory",
   "authors": "Grenfell campus of Memorial University, Newfoundland, Canada",
   "arxiv": {
    "id": "1309.3313",
@@ -20,9 +21,43 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
-  "formalization_candidates": 0
+  "candidates": 1,
+  "by_kind": {
+   "proposition": 1
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 1
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  }
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "A Lagrangian which describes nucleon-to-resonance radiative transition is given in the form of a contact term: $$\\begin{aligned} & \\displaystyle{\\mathcal{L}^{\\Delta N\\gamma}=i\\Theta\\frac{e}{\\Lambda}\\bar{N}\\gamma^{\\mu}\\gamma_{5}Q\\Delta^{\\nu}F_{\\mu\\nu},}\\nonumber \\\\ \\label{eq:9-1}\\\\ & F_{\\mu\\nu}=\\partial_{\\mu}\\mathcal{A}_{\\nu}-\\partial_{\\nu}\\mathcal{A}_{\\mu}.\\nonumber \\end{aligned}$$ Here, $\\Lambda\\sim1\\, GeV$ is the scale of chiral symmetry breaking and $\\Theta$ is the coupling strength, determined from the branching ratio of the radiative decay, $\\Delta\\rightarrow N\\gamma$.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-003-iv-dynamical-polarizabilities-of-baryons.md (p. 5-9)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-003-iv-dynamical-polarizabilities-of-baryons.md",
+   "section_title": "IV Dynamical Polarizabilities of Baryons",
+   "pages": "5-9",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-003-iv-dynamical-polarizabilities-of-baryons.md (p. 5-9)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-003-01",
+   "block_iri": "library/arxiv-1309.3313v1/blocks/prop-sec-003-01",
+   "claim_id": "arxiv-1309.3313v1#prop-sec-003-01"
+  }
+ ]
 }

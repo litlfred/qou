@@ -76,7 +76,7 @@ theorem qGameOfLife_unitary {L : Type*} (T : L → L)
     ring hom `Polynomial.toLaurent`: `q − 1 = toLaurent (X − 1)` and `X − 1 ≠ 0`
     in `ℤ[X]`, so injectivity gives `q − 1 ≠ 0`. -/
 theorem qGameOfLife_stable : qAnd_amplitude ≠ 0 := by
-  -- Ref: [manuscript] Ch.8 prop:toffoli-lp-stability — q-AND amplitude nonzero
+  -- Ref: [leitner2026] Ch.8 prop:toffoli-lp-stability — q-AND amplitude nonzero
   -- `q_param - 1 = toLaurent (X - 1)`; toLaurent is injective and `X - 1 ≠ 0`.
   unfold qAnd_amplitude q_param
   have hX : (Polynomial.X - 1 : Polynomial ℤ) ≠ 0 := by

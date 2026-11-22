@@ -11,7 +11,7 @@
   with S_proton = {11, 9, 7, 3}, S_neutron = {9, 7, 5, 1}, both
   sharing the ladder shape {m, m-2, m-4, m-8} (m_p = 11, m_n = 9).
 
-  Ref: [manuscript] docs/chi-std-pernucleon-theorem.md.
+  Ref: [leitner2026] docs/chi-std-pernucleon-theorem.md.
 -/
 
 import Mathlib.Algebra.Group.Defs
@@ -240,15 +240,15 @@ noncomputable def neutronBraid (H_A : ℝ) : NucBraidWord :=
     discharged in Lean as a single `simp`/`ring_nf`/`field_simp`/`ring`
     computation, so the sympy run is a cross-check rather than the
     citation standing in for a proof.
-    -- Ref: [manuscript] docs/chi-std-pernucleon-theorem.md §Proof.
+    -- Ref: [leitner2026] docs/chi-std-pernucleon-theorem.md §Proof.
 
-    Ref: [manuscript] docs/chi-std-pernucleon-theorem.md §Proof,
+    Ref: [leitner2026] docs/chi-std-pernucleon-theorem.md §Proof,
          computations/chi-std-pernucleon.witness.json.
 -/
 /-- **Theorem (manuscript chi-std-pernucleon-theorem §Proof):
     closed-form χ_std for proton braid.**  Verified externally via
     sympy (chi_std_pernucleon_derivation.py). -/
--- Ref: [manuscript] docs/chi-std-pernucleon-theorem.md §Proof
+-- Ref: [leitner2026] docs/chi-std-pernucleon-theorem.md §Proof
 theorem chi_std_proton_closed_form (q : ℝ) (hq : 1 < q) :
     chiStdEval q (protonBraid (q - q⁻¹)) =
       chiStdClosedForm q protonIndices := by
@@ -267,7 +267,7 @@ theorem chi_std_proton_closed_form (q : ℝ) (hq : 1 < q) :
   ring
 
 /-- **Theorem (manuscript): closed-form χ_std for neutron.** -/
--- Ref: [manuscript] docs/chi-std-pernucleon-theorem.md §Proof
+-- Ref: [leitner2026] docs/chi-std-pernucleon-theorem.md §Proof
 theorem chi_std_neutron_closed_form (q : ℝ) (hq : 1 < q) :
     chiStdEval q (neutronBraid (q - q⁻¹)) =
       chiStdClosedForm q neutronIndices := by

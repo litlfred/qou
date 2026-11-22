@@ -61,7 +61,7 @@ supplying that for the Gröbner filtration is the same missing work
 `BarGradedCollapse` leaves open. One step is proved here, and one step is what
 the asymmetry above needs.
 
--- Ref: [manuscript] quantum-observable-universe/eightfold-way
+-- Ref: [leitner2026] quantum-observable-universe/eightfold-way
 -/
 
 namespace QOU.Mathlib.EulerCharacteristic

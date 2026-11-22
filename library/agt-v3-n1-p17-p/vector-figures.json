@@ -1,0 +1,538 @@
+{
+  "$schema": "folio-vector-figures/v1",
+  "doc_id": "agt-v3-n1-p17-p",
+  "figures": [
+    {
+      "id": "vfig-p003",
+      "file": null,
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 3
+      },
+      "page": 3,
+      "rotation": 0,
+      "captionLabels": [
+        "1"
+      ],
+      "region": null,
+      "assembly": {
+        "drawings": 4,
+        "background": 0,
+        "groups": [],
+        "boxes": [],
+        "unlabelledClosedShapes": 0,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              154.2,
+              333.03,
+              182.55,
+              361.38
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              219.84,
+              333.04,
+              249.07,
+              361.38
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              299.28,
+              333.04,
+              327.68,
+              361.39
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              361.06,
+              336.28,
+              382.94,
+              358.16
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 0
+      },
+      "unrendered_reason": "no drawing component on this page contains a text line, so there is no labelled region to render -- the caption candidates are recorded and nothing is claimed about what the page draws"
+    },
+    {
+      "id": "vfig-p010",
+      "file": "figures/vfig-p010.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 10
+      },
+      "page": 10,
+      "rotation": 0,
+      "captionLabels": [
+        "2"
+      ],
+      "region": [
+        208.08,
+        161.34,
+        435.39,
+        706.86
+      ],
+      "assembly": {
+        "drawings": 14,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              216.04,
+              161.34,
+              259.89,
+              210.94
+            ],
+            "drawings": 1,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "· · ·",
+              "· · ·"
+            ]
+          },
+          {
+            "bbox": [
+              290.13,
+              162.74,
+              346.83,
+              210.93
+            ],
+            "drawings": 1,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "a",
+              "b",
+              "c"
+            ]
+          },
+          {
+            "bbox": [
+              378.69,
+              162.74,
+              435.39,
+              210.93
+            ],
+            "drawings": 4,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "a",
+              "c",
+              "k",
+              "i",
+              "j"
+            ]
+          },
+          {
+            "bbox": [
+              213.6,
+              321.57,
+              256.12,
+              349.11
+            ],
+            "drawings": 1,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "a",
+              "b"
+            ]
+          },
+          {
+            "bbox": [
+              208.08,
+              402.53,
+              250.6,
+              416.7
+            ],
+            "drawings": 1,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "n"
+            ]
+          },
+          {
+            "bbox": [
+              290.64,
+              409.61,
+              347.33,
+              416.7
+            ],
+            "drawings": 1,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "2n"
+            ]
+          },
+          {
+            "bbox": [
+              243.59,
+              487.19,
+              271.93,
+              558.06
+            ],
+            "drawings": 1,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "2n",
+              "2n",
+              "n",
+              "n",
+              "n",
+              "n 2k"
+            ]
+          },
+          {
+            "bbox": [
+              239.51,
+              635.99,
+              267.85,
+              706.86
+            ],
+            "drawings": 2,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "2n",
+              "2n",
+              "Rk"
+            ]
+          }
+        ],
+        "boxes": [],
+        "unlabelledClosedShapes": 0,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              170.88,
+              161.34,
+              170.88,
+              210.94
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              216.04,
+              161.34,
+              259.89,
+              210.94
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              290.13,
+              162.74,
+              346.83,
+              210.93
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              378.69,
+              162.74,
+              435.39,
+              210.93
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              415.13,
+              165.38,
+              427.27,
+              180.1
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              386.81,
+              165.38,
+              398.95,
+              180.1
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              394.28,
+              172.38,
+              419.8,
+              189.67
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              213.6,
+              321.57,
+              256.12,
+              349.11
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              208.08,
+              402.53,
+              250.6,
+              416.7
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              290.64,
+              409.61,
+              347.33,
+              416.7
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              243.59,
+              487.19,
+              271.93,
+              558.06
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              345.6,
+              487.19,
+              345.6,
+              558.06
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              253.68,
+              635.99,
+              253.68,
+              706.86
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              239.51,
+              650.17,
+              267.85,
+              692.69
+            ]
+          }
+        ],
+        "between": [
+          ",",
+          "=",
+          "Figure 2: How to expand colored edges and vertices. The boxes stand for appropriate",
+          "Here the sum is over those colors c so that the triple (a, b, c) is admissible, we",
+          "have ⟨c⟩= ⟨ec⟩= (−1)c[c + 1], and the trihedron coeﬃcient ⟨a, b, c⟩is (see",
+          "c",
+          "= (−1)i+j+k [i + j + k + 1]! [i]! [j]! [k]!",
+          "[a]! [b]! [c]!",
+          "(here i, j, k are the internal colors as deﬁned in (25)). Note that ⟨n, n, 2n⟩=",
+          "n",
+          "=",
+          "n",
+          "n",
+          "n",
+          "n",
+          "+",
+          ". . .",
+          "= ([k]!)2",
+          "[2k]!",
+          "2n",
+          "Proof This follows from the formula for the tetrahedron coeﬃcient given in",
+          "[MV, Thm. 2]. (The sum over ζ in that formula reduces to just one term.)",
+          "n",
+          "n",
+          "= 0",
+          "for k̸ = n ."
+        ],
+        "outside": 16
+      }
+    },
+    {
+      "id": "vfig-p017",
+      "file": "figures/vfig-p017.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 17
+      },
+      "page": 17,
+      "rotation": 0,
+      "captionLabels": [
+        "3"
+      ],
+      "region": [
+        266.23,
+        362.35,
+        337.11,
+        435.94
+      ],
+      "assembly": {
+        "drawings": 3,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              266.23,
+              362.35,
+              337.11,
+              435.94
+            ],
+            "drawings": 3,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "···"
+            ]
+          }
+        ],
+        "boxes": [],
+        "unlabelledClosedShapes": 0,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              308.75,
+              377.9,
+              337.09,
+              392.07
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              266.24,
+              377.93,
+              280.41,
+              406.27
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              266.23,
+              362.35,
+              337.11,
+              435.94
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 60
+      }
+    },
+    {
+      "id": "vfig-p019",
+      "file": null,
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 19
+      },
+      "page": 19,
+      "rotation": 0,
+      "captionLabels": [
+        "4"
+      ],
+      "region": null,
+      "assembly": {
+        "drawings": 2,
+        "background": 0,
+        "groups": [],
+        "boxes": [],
+        "unlabelledClosedShapes": 0,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              264.55,
+              171.91,
+              345.33,
+              245.5
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              254.62,
+              200.21,
+              288.64,
+              217.22
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 0
+      },
+      "unrendered_reason": "no drawing component on this page contains a text line, so there is no labelled region to render -- the caption candidates are recorded and nothing is claimed about what the page draws"
+    }
+  ]
+}

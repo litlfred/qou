@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/hdr",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hdr/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "Hecke algebras, generalisations and representation theory",
   "contains": [
+    "library/hdr/sections/sec-front-matter",
     "library/hdr/sections/sec-000",
     "library/hdr/sections/sec-001",
     "library/hdr/sections/sec-002",
@@ -37,10 +38,13 @@
     "library/hdr/sections/sec-023",
     "library/hdr/sections/sec-024",
     "library/hdr/sections/sec-025",
-    "library/hdr/sections/sec-026"
+    "library/hdr/sections/sec-026",
+    "library/hdr/sections/sec-027",
+    "library/hdr/sections/sec-028",
+    "library/hdr/sections/sec-029"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "hdr",
     "title_source": "pdf-info",

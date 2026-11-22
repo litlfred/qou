@@ -1,0 +1,22 @@
+Appendix E
+
+FreeFEM+-+ Code for Genus 4
+
+16
+
+Side associations:
+1-14,3-12,5-18,7-16,9 -2, 11 -20,
+13-6,15-4,17-10, 19-8
+
+Figure E.1: Fundamental polygon for Bring’s surface
+The symmetric surface of genus 4 is Bring’s surface (also referred to as Bring’s
+curve) om It can be i associating the sides of a hyperbolic icosagon of
+area 127, as shown in nits to the Bolza surface and Klein quartic, we
+conjecture that because it has maximal symmetry among hyperbolic surfaces of genus 4,
+it also maximizes the first positive eigenvalue of the Laplace-Beltrami operator among
+
+surfaces of this class. In this appendix, we provide a finite element code for ero the
+
+first 100 eigenvalues of Bring’s surface, along with the output, shown in Tablé-E-t; a
+
+134

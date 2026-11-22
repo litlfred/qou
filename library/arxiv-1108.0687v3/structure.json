@@ -7,10 +7,11 @@
   "bytes": 271299,
   "pages": 23,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,20 +21,31 @@
    "stamp_date": "28 Jul 2013"
   },
   "doi": null,
-  "title": "Concentration of Lipschitz functionals of determinantal a nd other strong Rayleigh measures",
-  "authors_raw": "Robin Pemantle 1, 2 and Yuval Peres 3",
+  "title": "Concentration of Lipschitz functionals of determinantal and other strong Rayleigh measures",
+  "authors_raw": "Robin Pemantle1, 2 and Yuval Peres3",
   "title_lines": [
-   "Concentration of Lipschitz functionals of determinantal a nd other strong",
+   "Concentration of Lipschitz functionals of determinantal and other strong",
    "Rayleigh measures"
   ],
-  "abstract": "Let {X1,...,X n} be a collection of binary valued random variables and let f : {0, 1}n \u2192 R be a Lipschitz function. Under a negative dependence hypothesis k nown as the strong Rayleigh con- dition, we show thatf \u2212Ef satis\ufb01es a concentration inequality. The class of strong Rayleigh me asures includes determinantal measures, weighted uniform matroids and e xclusion measures; some familiar examples from these classes are generalized negative binomials and s panning tree measures. For instance, any Lipschitz-1 function of the edges of a uniform spann ing tree on vertex set V (e.g., the number of leaves) satis\ufb01es the Gaussian concentration inequality P(f \u2212 Ef \u2265a) \u2264 exp ( \u2212 a2 8 |V | ) . We also prove a continuous version for concentration of Lipschitz f unctionals of a determinantal point process.",
+  "abstract": "Let {X1, . . . , Xn} be a collection of binary valued random variables and let f : {0, 1}n → R be a Lipschitz function. Under a negative dependence hypothesis known as the strong Rayleigh con- dition, we show that f−Ef satisﬁes a concentration inequality. The class of strong Rayleigh measures includes determinantal measures, weighted uniform matroids and exclusion measures; some familiar examples from these classes are generalized negative binomials and spanning tree measures. For instance, any Lipschitz-1 function of the edges of a uniform spanning tree on vertex set V (e.g., the number of leaves) satisﬁes the Gaussian concentration inequality P(f −Ef ≥a) ≤exp \u0012 −a2 8 |V | \u0013 . We also prove a continuous version for concentration of Lipschitz functionals of a determinantal point process.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20180521154253-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  }
+   "CreationDate": "D:20180521154253-04'00'"
+  },
+  "title_raw": "Concentration of Lipschitz functionals of determinantal and other strong Rayleigh measures",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Concentration of Lipschitz functionals of determinantal and other strong Rayleigh measures",
+   "outline": "1 Introduction",
+   "text": "Concentration of Lipschitz functionals of determinantal and other strong Rayleigh measures",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Concentration of Lipschitz functionals of determinantal a nd other strong Rayleigh measures"
  },
  "toc": [
   {
@@ -41,102 +53,415 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Classical concentration inequalities",
    "page": 2,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Generalizations",
    "page": 3,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Strong Rayleigh property, stochastic covering property, and other negative dependence conditions",
    "page": 4,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "Results",
    "page": 6,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 1,
    "title": "Proofs",
    "page": 9,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "The classical proofs",
    "page": 9,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Proof of Theorems ?? and ??",
    "page": 10,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Proof of Theorem ??",
    "page": 11,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 1,
    "title": "Applications",
    "page": 14,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "Matroids",
    "page": 14,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 2,
    "title": "Exclusion measures",
    "page": 16,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "Determinantal measures on a finite Boolean lattice",
    "page": 17,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 1,
    "title": "Determinantal point processes",
    "page": 18,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "relations among negative dependence properties We say that the probability measure ν on Bn stochastically covers another probability measure ρ if there is a measure on B2",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "some classes of strong Rayleigh measures",
+   "page": 14,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "13"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1446,
+   "n_words": 210,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -144,8 +469,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 2,
-   "n_chars": 830,
-   "n_words": 165
+   "n_chars": 834,
+   "n_words": 157,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
    "id": "sec-001-11-classical-concentration-inequalities",
@@ -154,8 +481,10 @@
    "level": 2,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 1276,
-   "n_words": 259
+   "n_chars": 1304,
+   "n_words": 253,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
    "id": "sec-002-12-generalizations",
@@ -164,8 +493,10 @@
    "level": 2,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 4616,
-   "n_words": 804
+   "n_chars": 4628,
+   "n_words": 801,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
    "id": "sec-003-2-strong-rayleigh-property-stochastic-covering-p",
@@ -174,8 +505,10 @@
    "level": 1,
    "page_start": 4,
    "page_end": 6,
-   "n_chars": 4963,
-   "n_words": 918
+   "n_chars": 5030,
+   "n_words": 940,
+   "label_start": "3",
+   "label_end": "5"
   },
   {
    "id": "sec-004-3-results",
@@ -184,8 +517,10 @@
    "level": 1,
    "page_start": 6,
    "page_end": 9,
-   "n_chars": 6066,
-   "n_words": 1133
+   "n_chars": 6109,
+   "n_words": 1169,
+   "label_start": "5",
+   "label_end": "8"
   },
   {
    "id": "sec-005-4-proofs",
@@ -194,8 +529,10 @@
    "level": 1,
    "page_start": 9,
    "page_end": 9,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 6,
+   "n_words": 1,
+   "label_start": "8",
+   "label_end": "8"
   },
   {
    "id": "sec-006-41-the-classical-proofs",
@@ -203,62 +540,116 @@
    "title": "The classical proofs",
    "level": 2,
    "page_start": 9,
-   "page_end": 14,
-   "n_chars": 8525,
-   "n_words": 1644
+   "page_end": 10,
+   "n_chars": 2958,
+   "n_words": 515,
+   "label_start": "8",
+   "label_end": "9"
   },
   {
-   "id": "sec-007-5-applications",
+   "id": "sec-007-42-proof-of-theorems-and",
+   "number": "4.2",
+   "title": "Proof of Theorems ?? and ??",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 1338,
+   "n_words": 267,
+   "label_start": "9",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-008-43-proof-of-theorem",
+   "number": "4.3",
+   "title": "Proof of Theorem ??",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 14,
+   "n_chars": 4194,
+   "n_words": 851,
+   "label_start": "10",
+   "label_end": "13"
+  },
+  {
+   "id": "sec-009-5-applications",
    "number": "5",
    "title": "Applications",
    "level": 1,
    "page_start": 14,
    "page_end": 14,
-   "n_chars": 267,
-   "n_words": 43
+   "n_chars": 278,
+   "n_words": 42,
+   "label_start": "13",
+   "label_end": "13"
   },
   {
-   "id": "sec-008-51-matroids",
+   "id": "sec-010-51-matroids",
    "number": "5.1",
    "title": "Matroids",
    "level": 2,
    "page_start": 14,
    "page_end": 16,
-   "n_chars": 4753,
-   "n_words": 868
+   "n_chars": 4758,
+   "n_words": 860,
+   "label_start": "13",
+   "label_end": "15"
   },
   {
-   "id": "sec-009-52-exclusion-measures",
+   "id": "sec-011-52-exclusion-measures",
    "number": "5.2",
    "title": "Exclusion measures",
    "level": 2,
    "page_start": 16,
-   "page_end": 18,
-   "n_chars": 4462,
-   "n_words": 799
+   "page_end": 17,
+   "n_chars": 2299,
+   "n_words": 402,
+   "label_start": "15",
+   "label_end": "16"
   },
   {
-   "id": "sec-010-6-determinantal-point-processes",
+   "id": "sec-012-53-determinantal-measures-on-a-finite-boolean-la",
+   "number": "5.3",
+   "title": "Determinantal measures on a finite Boolean lattice",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 2158,
+   "n_words": 379,
+   "label_start": "16",
+   "label_end": "17"
+  },
+  {
+   "id": "sec-013-6-determinantal-point-processes",
    "number": "6",
    "title": "Determinantal point processes",
    "level": 1,
    "page_start": 18,
    "page_end": 23,
-   "n_chars": 12441,
-   "n_words": 2221
+   "n_chars": 12417,
+   "n_words": 2170,
+   "label_start": "17",
+   "label_end": "22"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 14,
-  "sections": 11,
-  "chars_total": 48199,
+  "toc_inferred_entries": 0,
+  "figure_entries": 2,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 15,
+  "chars_total": 49757,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "concentration130701.tex",
    "tex_sections": 16,
-   "overlaid": 10,
+   "overlaid": 11,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -266,10 +657,15 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.967,
-     "coverage_ratio": 0.984,
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.967,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -277,7 +673,7 @@
      "id": "sec-001-11-classical-concentration-inequalities",
      "title": "Classical concentration inequalities",
      "prose_ratio": 0.959,
-     "coverage_ratio": 0.986,
+     "coverage_ratio": 0.959,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -292,62 +688,80 @@
     {
      "id": "sec-003-2-strong-rayleigh-property-stochastic-covering-p",
      "title": "Strong Rayleigh property, stochastic covering property, and other negative dependence conditions",
-     "prose_ratio": 0.988,
-     "coverage_ratio": 0.939,
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.977,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-3-results",
      "title": "Results",
-     "prose_ratio": 0.969,
-     "coverage_ratio": 0.966,
+     "prose_ratio": 0.982,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-005-4-proofs",
      "title": "Proofs",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-006-41-the-classical-proofs",
      "title": "The classical proofs",
-     "prose_ratio": 0.957,
-     "coverage_ratio": 0.993,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "prose_ratio": 0.485,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-007-5-applications",
+     "id": "sec-007-42-proof-of-theorems-and",
+     "title": "Proof of Theorems ?? and ??",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-43-proof-of-theorem",
+     "title": "Proof of Theorem ??",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-5-applications",
      "title": "Applications",
      "prose_ratio": 0.769,
-     "coverage_ratio": 0.808,
+     "coverage_ratio": 0.778,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-51-matroids",
+     "id": "sec-010-51-matroids",
      "title": "Matroids",
      "prose_ratio": 0.961,
-     "coverage_ratio": 0.95,
+     "coverage_ratio": 0.961,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-52-exclusion-measures",
+     "id": "sec-011-52-exclusion-measures",
      "title": "Exclusion measures",
-     "prose_ratio": 0.965,
-     "coverage_ratio": 0.987,
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-010-6-determinantal-point-processes",
+     "id": "sec-012-53-determinantal-measures-on-a-finite-boolean-la",
+     "title": "Determinantal measures on a finite Boolean lattice",
+     "prose_ratio": 0.929,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-6-determinantal-point-processes",
      "title": "Determinantal point processes",
-     "prose_ratio": 0.951,
-     "coverage_ratio": 0.982,
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.685,
      "result": "overlaid",
      "converter": "pandoc"
     }

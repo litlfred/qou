@@ -1,1 +1,1 @@
-In the situation of Lemma 4.40, let {V1,...,V n} be Lagrangian spheres in M
+Let n = dimC(Q) and let τL denote the Dehn twist in the Lagrangian sphere L of

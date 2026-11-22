@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1912.13486v2/sections/sec-004",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Supersymmetric index of a 3d N=2 theory on S2 q S1 for plumbed 3-manifolds",
+  "pageStart": 10,
+  "pageEnd": 11,
+  "contains": [
+    "library/arxiv-1912.13486v2/blocks/prose-sec-004"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1912.13486v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1912.13486v2/manifest.jsonld",
+  "provenance": "ingested"
+}

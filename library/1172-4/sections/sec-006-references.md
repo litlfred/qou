@@ -1,6 +1,6 @@
 ---
 doc_id: 1172-4
-doc_title: "Notes on Construction of the Knot Invariant from $\mathrm{O}\mathrm{u}\mathrm{a}\mathrm{n}\mathrm{t}\mathrm{u}\sim \mathrm{m}$ Dilogarithm Function 東京大学大学院裡掌野研究科物裡学專攻"
+doc_title: "Notes on Construction of the Knot Invariant from Quantum Dilogarithm Function"
 section_id: sec-006-references
 section_title: "References"
 section_number: null
@@ -8,6 +8,7 @@ pages: 22-26
 source_pdf: 1172-4.pdf
 source_sha256: ffc47732ce0138e9
 toc_source: inferred
+doc_brief: "Hikami, Notes on construction of the knot invariant from the quantum dilogarithm function (RIMS Kôkyûroku) — knot invariants built from Faddeev's quantum dilogarithm."
 ---
 [1] A. Antonov: Universal
 $R$-matrix and quantum Volterra model, Theor. Math. Phys.
@@ -17,7 +18,6 @@ A: Math. Gen. 28, 2217-2226 (1995).
 . [3] L. Chekhov and V V Fock:
 $\mathrm{O}\mathrm{u}\mathrm{a}\mathrm{n}\mathrm{t}\mathrm{u}\sim \mathrm{m}$ Teichm\"uller space, Theor. Math. Phys. 120,
 1245-1259 (1999).
-65
 [4]
 $\mathrm{T}$ Deguchi and
 $\mathrm{Y}$ Akutsu: Graded solutions of the Yang-Baxter relation and link
@@ -61,7 +61,6 @@ $\int \mathrm{p}\mathrm{n}$. $68$ , 1843-1846 (1999).
 $\mathrm{p}o$lynomial invariant for knots via
 $\mathrm{v}o\mathrm{n}$ Neumann algebras, Bull.
 Amer. Math. Soc. 12, 103-111 (1985).
-66
 [16] R. M. Kashaev:
 $\mathrm{O}\mathrm{u}\mathrm{a}\mathrm{n}\mathrm{t}\mathrm{u}\sim \mathrm{m}$ dilogarithm as a $6j$-symbol, Mod. Phys. Lett. A 9, 3757-
 3768 (1994).
@@ -101,7 +100,6 @@ $q$-commuting variableS, in M. E. H. Ismail,
 D. R. Masson, and M. Rahman,
 $\mathrm{e}\mathrm{d}\mathrm{s}.$ , Special Functions, q-Series, and Related Top-
 ics, Fields Institute CommunincationS 14, pp. 131-166 (AMS, Providense, 1997).
-67
 [27] J. Milnor: Hyperbolic geometry: the ﬁrst 150 years, Bull. Amer. Math. Soc. 6, 9-24
 (1982).
 [28] H. Murakami and J. Murakami: The colored Jones polynomials and the simplicial
@@ -136,7 +134,6 @@ $\mathrm{W}\mathrm{P}$ Thurston: Three-dimensional Geometry and Topology (Prince
 Princeton, 1997).
 [37] V Turaev: The Yang-Baxter equation and invariants of links, Invent. Math. 92,
 527-553 (1988).
-68
 [38] A. Yu. Volkov:
 OQuantum lattice
 $\mathrm{K}\mathrm{d}\mathrm{V}$ equation, Lett. Math. Phys. 39, 313-329
@@ -145,4 +142,3 @@ $\mathrm{K}\mathrm{d}\mathrm{V}$ equation, Lett. Math. Phys. 39, 313-329
 $\mathrm{S}\mathrm{n}\mathrm{a}_{\mathrm{P}^{\mathrm{p}\mathrm{e}\mathrm{a}}}$, http:
 $//\mathrm{t}\mathrm{h}\mathrm{a}\mathrm{m}\mathrm{e}\mathrm{s}$ . northnet.
 $\mathrm{o}\mathrm{r}\mathrm{g}/\mathrm{W}\mathrm{e}\mathrm{e}\mathrm{k}\mathrm{s}/$.
-69

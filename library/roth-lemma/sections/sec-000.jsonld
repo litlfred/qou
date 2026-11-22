@@ -9,14 +9,17 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Introduction",
-  "pageStart": 1,
-  "pageEnd": 5,
+  "title": "JL^..+JaL",
+  "pageStart": 11,
+  "pageEnd": 21,
   "contains": [
     "library/roth-lemma/blocks/prose-sec-000",
-    "library/roth-lemma/blocks/lem-sec-000-01"
+    "library/roth-lemma/blocks/def-sec-000-01",
+    "library/roth-lemma/blocks/lem-sec-000-02",
+    "library/roth-lemma/blocks/lem-sec-000-03",
+    "library/roth-lemma/blocks/thm-sec-000-04"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/roth-lemma",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/roth-lemma",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/roth-lemma/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/roth-lemma/manifest.jsonld",
   "provenance": "ingested"
 }

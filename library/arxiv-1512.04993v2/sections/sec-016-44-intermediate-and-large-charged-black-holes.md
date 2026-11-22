@@ -7,10 +7,11 @@ section_number: 4.4
 pages: 24-28
 source_pdf: 1512.04993v2.pdf
 source_sha256: b8047bc3d3815406
-doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.962
-latex_coverage_ratio: 0.989
+latex_coverage_ratio: 1.0
+doc_brief: "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a"
 ---
 The situation for intermediate-sized  ($r_+ \sim \lads $) and large charged black holes ($r_+ \gg \lads $) is more complicated and leads to an apparent  violation of  the complexification bound Eq.~\ref{C-bound}. Let us consider the phase diagram in Fig.~\ref{fig-largechargedblackholes}. There are a number of important curves in the $(M,Q)$ diagram. The first  represents black holes at extremality. The extremality curve can be described by the parametric equations,
 \bea

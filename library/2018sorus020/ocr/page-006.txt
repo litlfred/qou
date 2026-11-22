@@ -1,0 +1,33 @@
+Chapitre 0
+Introduction
+
+The Reidemeister torsion has been introduced as a topological invariant of homo-
+logical complexes in 1935 by both Reidemeister (in [Rei35]) and Franz (in [Fra35])
+independently. It also appears in a more algebraic context in the seminal work of
+Cayley (see Appendix B]) in 1848.
+
+The Reidemeister torsion is a generalization of the notion of determinant : consider
+an endomorphism d of a finite dimensional vector space V over a field k. Any choice
+of bases e = {€1,¢€2,...,@n} and f = {fi, fo,..., fn} allows us to compute the
+determinant of the linear map d in those bases, namely, this determinant det(d, e, f)
+is the volume of the polytope d(e) with the normalization that turns the volume of
+the polytope f equal to 1. Equivalently it is the determinant of the matrix whose
+columns are the vectors of d(e) in the basis f. While det(d, e, f) depends on the map
+din a crucial way, it also depends on the bases e and f. Yet it would not be affected if
+one would modify the basis e, for instance into the basis e’ = {Ae1, A71e2, €3,---, en}
+for some A € k*.
+
+One could generalize this definition when the map d is no longer injective, it gives
+
+rise to an exact sequence of k-vector spaces
+1 di 0 do 1
+0+ C—O SC 40
+
+with dim C7! = n_1,dimC® = no, dim Ct = ny = np — n_1.
+
+To do so, one has to fix some bases c’ of the vector spaces C*, for i = —1,0,1.
+We define the torsion of this based exact sequence tor(C*,c*) to be the volume of
+the polytope d_(c~'),@ in C®, with c! any lift to C® of the basis c!, and with
+the normalization that turns the volume of the polytope given by c® equal to 1.
+
+Equivalently, it is the determinant of the matrix d_,(c~'),c! in the basis c°. One

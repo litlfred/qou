@@ -23,8 +23,8 @@
   (`abs_tsum_gaussian_sub_sqrt_le` and the tilted form), and it needs the
   window extended to all of `ℤ` plus a tail bound — which is step 5's job.
 
-  -- Ref: [manuscript] QOU/Knot/KashaevRatioExpansion.lean
-  -- Ref: [manuscript] QOU/MathlibExt/GaussianThetaBound.lean
+  -- Ref: [leitner2026] QOU/Knot/KashaevRatioExpansion.lean
+  -- Ref: [leitner2026] QOU/MathlibExt/GaussianThetaBound.lean
 -/
 import QOU.Knot.KashaevRatioExpansion
 import QOU.Knot.FigureEightVolumeSqueeze

@@ -3,13 +3,14 @@
  "doc_id": "arxiv-math-0005296v1",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "1714653ecfdf01bccb517050f0b4d41a1b56d2462c1d74cd86e2530ede75f004",
   "file": "0005296v1.pdf"
  },
  "provenance": {
-  "title": "\u03bbn(M )(t \u2212 1)n \u2208 Q[[t \u2212 1]] for rational homology 3-sphere M . R.Lawrence [La] conjectured that \u03bbn(M ) \u2208",
-  "authors": "Z, if |H1(M, Z)| = 1",
+  "title": "An example concerning Ohtsuki\u2019s invariant and the full SO(3) quautum invariant",
+  "authors": "Bang-He Li & Tian-Jun Li",
   "arxiv": {
    "id": "math/0005296",
    "version": "1",
@@ -24,7 +25,20 @@
   "by_kind": {
    "theorem": 1
   },
-  "formalization_candidates": 1
+  "formalization_candidates": 1,
+  "by_domain": {
+   "math": 1
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  },
+  "by_lean_status": {
+   "unformalized": 1
+  },
+  "needs_lean_proof": 1
  },
  "candidates": [
   {
@@ -32,13 +46,25 @@
    "source_kind": "theorem",
    "number": null,
    "name": null,
-   "statement": "s(6, 25) = s(11, 25), while \u03ber(L(25, 11)) = \u03ber(L(25, 6)) if and only if",
-   "section_file": "sections/sec-000-abstract.md",
-   "section_title": "Abstract",
+   "statement": "s(6, 25) = s(11, 25), while \u03ber(L(25, 11)) = \u03ber(L(25, 6)) if and only if (r, 25)\u0338 = 5.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-front-matter.md (p. 1-3)",
+   "external_refs": [],
+   "proof_excerpt": "We calculate s(q, p) by the formula in [H]: 12s(q, p) = n X i=1 mi + q + q\u2217 p \u22123n if p q = mn \u2212 1 mn\u22121 \u2212\u00b7 \u00b7 \u00b7 \u2212 1 m2 \u22121 m1 with mi \u22652. Now 25 6 = 5 \u2212 1 2 \u2212 1 2 \u2212 1 2 \u2212 1 2 \u22121 2 , 25 11 = 3 \u2212 1 2 \u2212 1 2 \u2212 1 3 \u22121 2 11\u2217= 16, 6\u2217= 21, so 12s(6, 25) = 12s(11, 25) = \u22123 + 27 25 2 c = (r, ",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
    "pages": "1-3",
    "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-front-matter.md (p. 1-3)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-front-matter-01",
+   "block_iri": "library/arxiv-math-0005296v1/blocks/thm-sec-front-matter-01",
+   "claim_id": "arxiv-math-0005296v1#thm-sec-front-matter-01",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   }
  ]
 }

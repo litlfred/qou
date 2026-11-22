@@ -25,7 +25,7 @@ boundary cases:
 This shrinks the sorry-surface for items (2) and (3) without
 requiring upstream Mathlib contributions.
 
--- Ref: [manuscript] rem:three-substantive-mathlib-fillers
+-- Ref: [leitner2026] rem:three-substantive-mathlib-fillers
 -- Ref: [zagier1986]
 -- Ref: [faddeev1994]
 -/

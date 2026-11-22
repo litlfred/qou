@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/04010141/blocks/prose-sec-001",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Some generalised Artin braid groups",
-  "pageStart": 13,
-  "pageEnd": 14,
-  "text": "../sections/sec-001-41-some-generalised-artin-braid-groups.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/04010141",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/04010141",
+  "title": "Cellular algebras and Temperley-Lieb algebras",
+  "pageStart": 3,
+  "pageEnd": 11,
+  "text": "../sections/sec-001-cellular-algebras-and-temperley-lieb-algebras.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/04010141/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/04010141/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,0 +1,157 @@
+{
+  "$schema": "folio-vector-figures/v1",
+  "doc_id": "motivicperiodsandp1minus3pointsv3",
+  "figures": [
+    {
+      "id": "vfig-p011",
+      "file": null,
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 11
+      },
+      "page": 11,
+      "rotation": 0,
+      "captionLabels": [
+        "1"
+      ],
+      "region": null,
+      "assembly": {
+        "drawings": 18,
+        "background": 0,
+        "groups": [],
+        "boxes": [],
+        "unlabelledClosedShapes": 6,
+        "connectors": [
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              165.67,
+              442.81,
+              169.93,
+              444.94
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              337.39,
+              492.71,
+              340.59,
+              495.91
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              249.49,
+              487.92,
+              319.81,
+              494.31
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              230.31,
+              484.72,
+              249.49,
+              503.9
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              319.81,
+              484.72,
+              338.99,
+              503.9
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              165.67,
+              442.81,
+              169.93,
+              444.94
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              283.05,
+              486.32,
+              286.25,
+              489.51
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              165.67,
+              442.81,
+              169.93,
+              444.94
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              283.05,
+              499.1,
+              286.25,
+              502.3
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              165.67,
+              442.81,
+              169.93,
+              444.94
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              228.71,
+              492.71,
+              231.91,
+              495.91
+            ]
+          },
+          {
+            "from": null,
+            "to": null,
+            "bbox": [
+              249.49,
+              494.31,
+              319.81,
+              500.7
+            ]
+          }
+        ],
+        "between": [],
+        "outside": 0
+      },
+      "unrendered_reason": "no drawing component on this page contains a text line, so there is no labelled region to render -- the caption candidates are recorded and nothing is claimed about what the page draws"
+    }
+  ]
+}

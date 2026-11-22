@@ -70,8 +70,8 @@ it takes the weakest generic form (`[CommRing R] [LinearOrder R]
 [IsStrictOrderedRing R]`) rather than specialising to `ℝ`.
 
 ## References
-- Ref: [manuscript] `docs/audits/2026-08-09-canonical-ordering-dof-production-impact.md`
-- Ref: [manuscript] `docs/audits/2026-08-09-nastokes-orbit-symmetric-readout.md` §7
+- Ref: [leitner2026] `docs/audits/2026-08-09-canonical-ordering-dof-production-impact.md`
+- Ref: [leitner2026] `docs/audits/2026-08-09-nastokes-orbit-symmetric-readout.md` §7
 -/
 
 namespace QOU.MassTheory.NucleonOrdering

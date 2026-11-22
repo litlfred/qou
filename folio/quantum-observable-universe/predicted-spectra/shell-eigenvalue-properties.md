@@ -38,7 +38,7 @@ The capacity per sub-shell is $2(2\ell + 1)$. The capacity per shell is $\sum_{\
 
 ## Determining shells from an arbitrary Skein polynomial
 
-Given a Skein polynomial $P(q) = \prod_i \hat{V}_i(q)$ ([Skein polynomial](#prop:skein-polynomial-transfer-matrix)), we extract the orbital shell structure via:
+Given a Skein polynomial $P(q) = \prod_i \hat{V}_i(q)$ ([Skein polynomial](#prop:skein-polynomial-transfer-matrix)), extract the orbital shell structure via:
 
 1. **Identify the electron-nucleus generators.** These are the generators $\sigma_i$ where electron strands cross nuclear strands.
 2. **Extract the transfer matrix** $M_i(q)$ at each such generator from the chain reduction.

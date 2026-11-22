@@ -1,36 +1,3 @@
-**Generators.** A knot type $K$ is *fundamental* if its hyperbolic
-volume vanishes: $\mathrm{Vol}(K) = 0$.  By the geometrization of knot
-complements, these are precisely the torus knots (and the unknot).  In
-the particle dictionary, the fundamental knots are the fermions:
-the unknot (neutrino), trefoil $3_1$ (electron), cinquefoil $5_1$
-(tau), and the torus$(p,2)$ family.
+**Proof.** *Spanning.* Fix a diagram of $L$ with base points on each component and order the crossings. Changing a crossing replaces $L_\pm$ by $L_\mp$ at the cost of a multiple of $L_0$, which has one fewer crossing; after finitely many changes the diagram is a stack of unknotted, unlinked components (a descending diagram), which is an unlink. Induction on the number of crossings, then on the number of crossings that must be changed, writes $[L]$ as an $R$-combination of unlinks. For the unlink of $c$ components, apply the relation to a one-crossing kink of one component: $L_+ = L_- = $ the unlink of $c$ components and $L_0$ is the unlink of $c + 1$ components, so $(a - a^{-1})\,[U^{\sqcup c}] = (q - q^{-1})\,[U^{\sqcup (c+1)}]$, hence $[U^{\sqcup (c+1)}] = \tfrac{a - a^{-1}}{q - q^{-1}}\,[U^{\sqcup c}]$ in $R$. So $[U]$ spans.
 
-**Generation.** The Skein module $\mathrm{Sk}_q$ is generated as an
-algebra by the fundamental knot types $\{K_i\}_{i \in \mathcal{F}}$
-and the Hopf link $\mathcal{L}_{\mathrm{Hopf}}$.  Every hadron
-$H \in \mathrm{Sym}^n(K) \otimes \mathcal{L}_{\mathrm{Hopf}}$
-admits a **terminal Skein resolution**: iterating the Skein relation
-
-$$
-  q \cdot L_+ -  q^{-1} \cdot L_-
-  =  (q - q^{-1}) \cdot L_0
-$$
-
-at every crossing terminates in a finite polynomial
-
-$$
-  [H] =  \sum_{\alpha} c_\alpha(q) \cdot
-  [K_{i_1}] \cdots [K_{i_k}]
-$$
-
-where each $[K_{i_j}]$ is the class of a fundamental knot and
-$c_\alpha(q) \in \mathbb{Z}[q^{\pm 1}]$.
-
-**Mass from linking.**  By
-([Skein-resolution mass formula](#lem:skein-mass-from-linking)),
-$\mathfrak{m}(H) = Q(q) \cdot \mathfrak{m}(\mathcal{L}_{\mathrm{Hopf}}) +
-\sum_i \mathrm{Vol}(K_i)/\hbar_q^2$.  For hadrons composed entirely
-of fundamental (torus-knot) constituents, $\mathrm{Vol}(K_i) = 0$
-for all $i$, so the entire inertial mass arises from the linking
-topology, $\mathfrak{m}(H) = Q(q) \cdot \mathfrak{m}(\mathcal{L}_{\mathrm{Hopf}})$.
-$\square$
+*Freeness.* The HOMFLYPT polynomial exists as an isotopy invariant satisfying the relation with $P_U = 1$ \cite{lickorish1997}, so $[L] \mapsto P_L$ is a well-defined $R$-linear map $\mathrm{Sk}(S^3) \to R$ sending $[U]$ to $1$. Hence $[U]$ is not torsion and $\mathrm{Sk}(S^3) = R\,[U]$ is free of rank one, with $[L] = P_L [U]$. $\square$

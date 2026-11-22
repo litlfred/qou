@@ -54,7 +54,7 @@ flavours `f` supplied as input, the nucleon NF of the chain
 `γγ → q q̄ → B₃ · crossings` does not depend on the photon coefficients
 `(φ₀, φ₁, φ₀₁)`, because the confinement word contains none of them. It depends only on
 `q` and `f`. -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/confinement-universality.ts
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/confinement-universality.ts
 theorem confinementUniversality {K M : Type*} [Zero K]
     (ctx : ConfinementUniversalityContext K M)
     [hc : ConfinementUniversalityConjecture ctx] :
@@ -74,7 +74,7 @@ quantity `U` of the photon (for instance the chirality unit `u` read off the pho
 polarisation, bean `qou-qs2u`) can be read off the nucleon NF by some `g`, then `U` is
 constant. So under the conjecture a photon-inherited chirality unit is hidden at
 nucleon level; it does not contradict the conjecture. -/
--- Ref: [manuscript] quantum-observable-universe/knots-particles-confinement/confinement-universality.md
+-- Ref: [leitner2026] quantum-observable-universe/knots-particles-confinement/confinement-universality.md
 theorem inherited_unit_invisible_of_confinement {K M : Type*} [Zero K]
     (ctx : ConfinementUniversalityContext K M)
     [h : ConfinementUniversalityConjecture ctx] {X : Type*}

@@ -1,0 +1,696 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "czechmathj-60-2010-1-4",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p018-1",
+   "page": 18,
+   "mark": "n",
+   "text": ". Commun. Algebra. 30 (2002), 2617–2637. [23] E. N. Poroshenko: Gröbner-Shirshov bases for the Kac-Moody algebras of the type C(1) n and D(1)",
+   "marks": [
+    {
+     "page": 17,
+     "context": "x = ai1 . . . ai"
+    },
+    {
+     "page": 17,
+     "context": "orderedbasisofV .Then{ai1 . . . ain| i1⩽i2⩽. . . ⩽i"
+    }
+   ],
+   "block": "library/czechmathj-60-2010-1-4/blocks/prose-page-018"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p018-2",
+   "page": 18,
+   "mark": "n",
+   "text": ".Vestn.Novosib.Gos.Univ.Ser.Mat.Mekh.Inform.2(2002),58–70.",
+   "block": "library/czechmathj-60-2010-1-4/blocks/prose-page-018"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "a",
+   "context": "AM=modA⟨e|T ⟩.ThenKang-Lee’slemmasaysthat(S, T )is"
+  },
+  {
+   "page": 4,
+   "mark": "f",
+   "context": "f=f−ag.Thetransformation"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "f= P α"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "f= P αi"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "f= P αia"
+  },
+  {
+   "page": 4,
+   "mark": "s",
+   "context": "f= P αiai"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "f= P αiais"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "0̸=f∈k⟨X⟩S,thenf=Pα"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "0̸=f∈k⟨X⟩S,thenf=Pαia"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "0̸=f∈k⟨X⟩S,thenf=Pαiais"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "0̸=f∈k⟨X⟩S,thenf=Pαiaisiwitha"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "0̸=f∈k⟨X⟩S,thenf=Pαiaisiwitha1¯s"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "0̸=f∈k⟨X⟩S,thenf=Pαiaisiwitha1¯s1>a"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "0̸=f∈k⟨X⟩S,thenf=Pαiaisiwitha1¯s1>a2¯s"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "Iff −g=Pα"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "Iff −g=Pαia"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "Iff −g=Pαiais"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "Iff −g=Pαiaisib"
+  },
+  {
+   "page": 5,
+   "mark": "j",
+   "context": "Iff −g=Pαiaisibi +Pβ"
+  },
+  {
+   "page": 5,
+   "mark": "j",
+   "context": "Iff −g=Pαiaisibi +Pβjc"
+  },
+  {
+   "page": 5,
+   "mark": "j",
+   "context": "Iff −g=Pαiaisibi +Pβjcjt"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "Iff −g=Pαiaisibi +Pβjcjtj,whereα"
+  },
+  {
+   "page": 5,
+   "mark": "j",
+   "context": "Iff −g=Pαiaisibi +Pβjcjtj,whereαi,β"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "Iff −g=Pαiaisibi +Pβjcjtj,whereαi,βj∈k,a"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "Iff −g=Pαiaisibi +Pβjcjtj,whereαi,βj∈k,ai,b"
+  },
+  {
+   "page": 5,
+   "mark": "j",
+   "context": "Iff −g=Pαiaisibi +Pβjcjtj,whereαi,βj∈k,ai,bi,c"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "Iff −g=Pαiaisibi +Pβjcjtj,whereαi,βj∈k,ai,bi,cj∈X∗,s"
+  },
+  {
+   "page": 5,
+   "mark": "j",
+   "context": "Iff −g=Pαiaisibi +Pβjcjtj,whereαi,βj∈k,ai,bi,cj∈X∗,si∈S,t"
+  },
+  {
+   "page": 5,
+   "mark": "c",
+   "context": "basis S"
+  },
+  {
+   "page": 5,
+   "mark": "c",
+   "context": "process is called the Shirshov algorithm.If we delete from S"
+  },
+  {
+   "page": 5,
+   "mark": "c",
+   "context": "alsinS"
+  },
+  {
+   "page": 5,
+   "mark": "c",
+   "context": "toS"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "Thenmod"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "f= f −ag= P α"
+  },
+  {
+   "page": 6,
+   "mark": "a",
+   "context": "f= f −ag= P αi"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "f= f −ag= P αia"
+  },
+  {
+   "page": 6,
+   "mark": "s",
+   "context": "f= f −ag= P αiai"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "f= f −ag= P αiais"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "f= f −ag= P αiaisi, where α"
+  },
+  {
+   "page": 6,
+   "mark": "a",
+   "context": "f= f −ag= P αiaisi, where αi∈k,"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "f= f −ag= P αiaisi, where αi∈k,a"
+  },
+  {
+   "page": 6,
+   "mark": "s",
+   "context": "f= f −ag= P αiaisi, where αi∈k,ai∈X∗,"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "f= f −ag= P αiaisi, where αi∈k,ai∈X∗,s"
+  },
+  {
+   "page": 6,
+   "mark": "a",
+   "context": "f= f −ag= P αiaisi, where αi∈k,ai∈X∗,si∈Sand"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "f= f −ag= P αiaisi, where αi∈k,ai∈X∗,si∈Sand a"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "f= f −ag= P αiaisi, where αi∈k,ai∈X∗,si∈Sand ai¯s"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "0̸=f∈k⟨X⟩S,thenf=Pα"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "0̸=f∈k⟨X⟩S,thenf=Pαia"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "0̸=f∈k⟨X⟩S,thenf=Pαiais"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "0̸=f∈k⟨X⟩S,thenf=Pαiaisiwitha"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "0̸=f∈k⟨X⟩S,thenf=Pαiaisiwitha1¯s"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "0̸=f∈k⟨X⟩S,thenf=Pαiaisiwitha1¯s1≻a"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "0̸=f∈k⟨X⟩S,thenf=Pαiaisiwitha1¯s1≻a2¯s"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "(1) ⇒(2).Supposethat0̸ = f∈k⟨X⟩S.Thenf=Pα"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "(1) ⇒(2).Supposethat0̸ = f∈k⟨X⟩S.Thenf=Pαia"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "(1) ⇒(2).Supposethat0̸ = f∈k⟨X⟩S.Thenf=Pαiais"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "Moreover,if0̸=Pα"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "Moreover,if0̸=Pαia"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "Moreover,if0̸=Pαiais"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "Moreover,if0̸=Pαiaisi=Pβ"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "Moreover,if0̸=Pαiaisi=Pβju"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "Moreover,if0̸=Pαiaisi=Pβjuj,wherea"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "Moreover,if0̸=Pαiaisi=Pβjuj,whereai∈X∗,s"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "f= f−ag= P α"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "f= f−ag= P αi"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "f= f−ag= P αia"
+  },
+  {
+   "page": 7,
+   "mark": "s",
+   "context": "f= f−ag= P αiai"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "f= f−ag= P αiais"
+  },
+  {
+   "page": 7,
+   "mark": "s",
+   "context": "f= f−ag= P αiaisi,where"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "f= f−ag= P αiaisi,wheres"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "f= f−ag= P αiaisi,wheresi∈S,"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "f= f−ag= P αiaisi,wheresi∈S,a"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "f= f−ag= P αiaisi,wheresi∈S,ai∈X∗and"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "f= f−ag= P αiaisi,wheresi∈S,ai∈X∗anda"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "f= f−ag= P αiaisi,wheresi∈S,ai∈X∗andai ¯s"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "afreeleftA-modulewiththebasisY .LetT"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "afreeleftA-modulewiththebasisY .LetT1={Pf"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "afreeleftA-modulewiththebasisY .LetT1={Pfiy"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "afreeleftA-modulewiththebasisY .LetT1={Pfiyi∈mod"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "afreeleftA-modulewiththebasisY .LetT1={Pfiyi∈modk⟨X⟩⟨Y ⟩|P(f"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "For anyP(f"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "For anyP(fi +Id(S))(y"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "For anyP(fi +Id(S))(yi +AT ),P(g"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "For anyP(fi +Id(S))(yi +AT ),P(gi +Id(S))(y"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "Shirshovbasisforthemodulemod"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "Shirshovbasisforthemodulemodk⟨X⟩⟨Y |SX∗Y∪T"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "Shirshovbasisforthemodulemodk⟨X⟩⟨Y |SX∗Y∪T1⟩,whereT"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "Shirshovbasisforthemodulemodk⟨X⟩⟨Y |SX∗Y∪T1⟩,whereT1={Pf"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "Shirshovbasisforthemodulemodk⟨X⟩⟨Y |SX∗Y∪T1⟩,whereT1={Pfiy"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "mod"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "modk⟨X⟩⟨Y ⟩|P(f"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "modk⟨X⟩⟨Y ⟩|P(fi + Id(S))y"
+  },
+  {
+   "page": 9,
+   "mark": "w",
+   "context": "(fay, bgy)"
+  },
+  {
+   "page": 10,
+   "mark": "y",
+   "context": "sl2V (λ) = modsl2⟨v0| xv0= 0,hv0= λv0,"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "sl2V (λ) = modsl2⟨v0| xv0= 0,hv0= λv0,y"
+  },
+  {
+   "page": 10,
+   "mark": "v",
+   "context": "sl2V (λ) = modsl2⟨v0| xv0= 0,hv0= λv0,ym+1"
+  },
+  {
+   "page": 10,
+   "mark": "y",
+   "context": "sl2V (λ) = modU(sl2)⟨v0| xv0= 0,hv0= λv0,"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "sl2V (λ) = modU(sl2)⟨v0| xv0= 0,hv0= λv0,y"
+  },
+  {
+   "page": 10,
+   "mark": "v",
+   "context": "sl2V (λ) = modU(sl2)⟨v0| xv0= 0,hv0= λv0,ym+1"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "= modk⟨X⟩⟨v0| xv0= 0,hv0= λv0,y"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "Let S1= {xv0, hv0 −λv0, y"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "eordering (∗) as in Section 3,and by Lemma 3.2, Irr(S1) = {y"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "Lety(i)=i!−1y"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "Lety(i)=i!−1yi,vi=i!−1y"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "v0∈Vandvi=i!−1y"
+  },
+  {
+   "page": 10,
+   "mark": "y",
+   "context": "sl2V= modsl2⟨v0|xv0= 0,hv0= λv0,"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "sl2V= modsl2⟨v0|xv0= 0,hv0= λv0,y"
+  },
+  {
+   "page": 10,
+   "mark": "v",
+   "context": "sl2V= modsl2⟨v0|xv0= 0,hv0= λv0,ym+1"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "(adxi)"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "(adxi)1−aijxj= 0,(adyi)"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "i, α"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "x"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "y"
+  },
+  {
+   "page": 12,
+   "mark": "c",
+   "context": "whereS"
+  },
+  {
+   "page": 12,
+   "mark": "h",
+   "context": "G(A)M(Λ) = modU(G(A))⟨v|N+(v) = 0,"
+  },
+  {
+   "page": 12,
+   "mark": "h",
+   "context": "G(A)M(Λ) = modU(G(A))⟨v|N+(v) = 0,h(v) = Λ(h)v,"
+  },
+  {
+   "page": 12,
+   "mark": "s",
+   "context": "(−1)"
+  },
+  {
+   "page": 14,
+   "mark": "v",
+   "context": "L+ke"
+  },
+  {
+   "page": 14,
+   "mark": "v",
+   "context": "L+kev= U(L) ⊗U(L+)ke"
+  },
+  {
+   "page": 14,
+   "mark": "a",
+   "context": "UV=U(U(L)/U(L)L+) = modk⟨X⟩⟨e|S(−)X∗e,"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "UV=U(U(L)/U(L)L+) = modk⟨X⟩⟨e|S(−)X∗e,a(n)e,"
+  },
+  {
+   "page": 14,
+   "mark": "s",
+   "context": "(−1)"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "(f"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "(f1, f"
+  },
+  {
+   "page": 16,
+   "mark": "w",
+   "context": "(f1, f2)"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "x = a"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "x = ai"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "x = ai1 . . . a"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "orderedbasisofV .Then{a"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "orderedbasisofV .Then{ai1 . . . a"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "orderedbasisofV .Then{ai1 . . . ain| i"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "orderedbasisofV .Then{ai1 . . . ain| i1⩽i"
+  }
+ ]
+}

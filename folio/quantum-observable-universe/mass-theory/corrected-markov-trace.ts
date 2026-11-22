@@ -3,17 +3,16 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:corrected-markov-trace",
   title:
-    "Corrected Markov trace of the trefoil braid",
+    "Markov trace of $\\sigma_0\\sigma_1\\sigma_0$",
   tags: [
     "markov-trace",
     "correction",
-    "trefoil",
+    "hopf-link",
     "yang-baxter",
     "adjacent-generators",
   ],
-  lean: { ref: "qou:QOU.ParticleInteractions.corrected_markov_trace",
-    validation: "not_checked",
-  },
+  lean: { ref: "qou:QOU.ParticleInteractions.corrected_markov_trace" },
+  cites: ["jones1987"],
   uses: [
     "thm:jones-markov-trace",
   ],

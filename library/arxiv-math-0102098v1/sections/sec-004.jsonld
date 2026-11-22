@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0102098v1/sections/sec-004",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Symmetric functions and the skein of the annulus.",
+  "pageStart": 10,
+  "pageEnd": 13,
+  "contains": [
+    "library/arxiv-math-0102098v1/blocks/prose-sec-004",
+    "library/arxiv-math-0102098v1/blocks/lem-sec-004-01",
+    "library/arxiv-math-0102098v1/blocks/lem-sec-004-02",
+    "library/arxiv-math-0102098v1/blocks/cor-sec-004-03",
+    "library/arxiv-math-0102098v1/blocks/rem-sec-004-04",
+    "library/arxiv-math-0102098v1/blocks/thm-sec-004-05",
+    "library/arxiv-math-0102098v1/blocks/lem-sec-004-06",
+    "library/arxiv-math-0102098v1/blocks/cor-sec-004-07"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0102098v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0102098v1/manifest.jsonld",
+  "provenance": "ingested"
+}

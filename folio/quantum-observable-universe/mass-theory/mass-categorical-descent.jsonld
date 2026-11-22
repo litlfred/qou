@@ -2,19 +2,22 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prop-mass-categorical-descent",
+  "@id": "papers/quantum-observable-universe/blocks/conj-mass-categorical-descent",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Conjecture",
     "doco:Section"
   ],
-  "label": "prop:mass-categorical-descent",
-  "kind": "proposition",
+  "label": "conj:mass-categorical-descent",
+  "kind": "conjecture",
   "title": "QOU mass formula as descent decomposition of the mass endomorphism",
   "uses": [
-    "papers/quantum-observable-universe/blocks/thm-wedderburn-mass-formula"
+    "papers/quantum-observable-universe/blocks/thm-wedderburn-mass-formula",
+    "papers/quantum-observable-universe/blocks/thm-centre-cocentre-descent",
+    "papers/quantum-observable-universe/blocks/def-descent-involution"
   ],
   "tags": [
     "mass",

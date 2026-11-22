@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-9909027v1
-doc_title: "arXiv:math/9909027v1 [math.QA] 4 Sep 1999"
+doc_title: "Planar Algebras, I"
 section_id: sec-003-2-examples
 section_title: "Examples"
 section_number: 2
@@ -8,6 +8,7 @@ pages: 27-54
 source_pdf: 9909027v1.pdf
 source_sha256: e6cd544cdc141d3b
 toc_source: inferred
+doc_brief: "Planar Algebras, I — We introduce a notion of planar algebra, the simplest example of which is a vector space of tensors, closed under planar contractions."
 ---
 Example 2.1: Temperley-Lieb algebra. If δ1 and δ2 are two non-zero
 scalars, one deﬁnes TL(n, δ1, δ2) as being the subspace of Pn(∅) spanned by
@@ -145,57 +146,42 @@ double all the strings and replace all the 2-boxes according to the diagram.
 Thus for instance the tangle N below (with boxes shrunk to points, there
 being only one 2-box),
 30
-is sent to Φ(N ) below
-b
-b
-b
-a
-a
-a
-b
-b
-b
-a
-a a
-a b b
-b
-a
-b
-= a2b2
-b
-a
-a
-b
-a b
-It is clear that Φ deﬁnes an algebra homomorphism and surjectivity follows
-from [BJ2]. That ker Φ is annular invariant is straightforward. The general
-case of FC(n, a1, . . . , ak) is similar. One considers the k −1 2-boxes drawn
+is sent to ®(N) below
+ab ba _ab ab bbab
+
+ab ba ab ab baab
+
+It is clear that ® defines an algebra homomorphism and surjectivity follows
+from [BJ2]. That ker ® is annular invariant is straightforward. The general
+case of FC(n,a1,...,a,) is similar. One considers the k — 1 2-boxes drawn
 symbolically as
+
+WW AMA MAN
+
+\ [\
+
+FPIP\W\\ TIPE AMA TPTP AM
+
 One proceeds as above, replacing the single strings in an N by k coloured
 strings. Surjectivity follows from [La].
+
 Note that these planar algebras give invariants of systems of immersed
 curves with generic singularities, and/or planar graphs. The most general
 such invariant may be obtained by introducing a single 2-box which is a linear
-combination of the k −1
-2-boxes described above. This will generalize the
+combination of the k —1  2-boxes described above. This will generalize the
 dichromatic polynomial.
-Example 2.4: The BMW algebra. Let L = L2 = {R, Q} and deﬁne
+
+Example 2.4: The BMW algebra. Let L = Lz = {R,Q} and define
 the planar algebra BMW on L by the relations
-=
-=
-(i)
-,
-,
-=
-=
-R
-R
+
+xy
 Q
-Q
-R
-Q
-Q
-R
+
+y &¥y¥ ey Ky IR
+() |Fl=[4], [@]=[°], N= N- iy
+YX 4X XX FX [Q} Tl [R
+4 X
+
 31
 (ii)
 =

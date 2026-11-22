@@ -1,0 +1,56 @@
+Smooth point asymptotics 249
+
+Remark 9.6. An explicit (but unwieldy) formula for all coefficients in (9.4)
+is given in Section 9.4 below. If Q = H? for some square-free H with V H
+nonvanishing at w then
+
+(-DPP(w)
+
+Co = ————-———..
+°* = DiwadaH wy?
+
+Remark 9.7. Our surgery approach below singles out the coordinate zy for a
+residue computation, leading to an asymptotic expansion in powers of the non-
+zero coordinate ry. With some extra work, the Fourier—Laplace integral used to
+deduce asymptotics can be modified to provide an asymptotic series in powers
+of |r|, giving an expansion of the form
+
+Oy(r) = oP)! (9.5)
+
+"aetna H ae
+for a new Hessian matrix H’. We leave details of such symmetric formulae to
+Chapter 10, where asymptotics are computed using multivariate residue forms
+that do not privilege individual coordinates.
+
+Remark 9.8. If R = {s} contains a single point with sy > 0 then r = ns and
+
+=d)/2
+pen tH ldy/2 Qn or DY
+
+vdet(H) 4 aaa uP"
+
+Ow(ns)
+
+for constants De with Do = (sa)’~¢Co.
+
+Example 9.9. The hypotheses of Theorem 9.5 can be simplified for bivariate
+power series. In particular, suppose that F(x, y) = ae y
+astrictly minimal critical point w = w(r) € C? that varies smoothly as # varies
+
+in a compact neighborhood & of directions. If both P(x, y) and the expression
+
+Dijeo 4ijx'y/ admits
+
+Q(x, y) = —xy" OF Ox — x yQyOx — x°y’(QFOxx + QQsy — 20+O,Q.y) (9.6)
+
+are non-zero when (x, y) = w(?) for each 7 € R then
+
+g ~ Poe)! ty (-yQ,)
+" =yOy Vin” sQ
+
+(9.7)
+= POY) Tanne [ExO0?
+-xO, Vin rQ
+as |r| > co after setting (x,y) = w(?), uniformly over 7 € R. 4
+
+Exercise 9.3. Prove (9.7) by simplifying (9.2) in the bivariate case.

@@ -2,160 +2,230 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1511.00400v2",
  "source_sha256": "6cb493049394ce3a",
- "brief": "Reidemeister torsion, hyperbolic three-manifolds, and character varieties — This is a survey on Reidemeister torsion for hyperbolic thre e-manifolds of ﬁnite volume.",
- "extended": "**Reidemeister torsion, hyperbolic three-manifolds, and character varieties**\n\n*November 6, 2018*\n\n55 pp, 30 sections.\n\n**Abstract.** This is a survey on Reidemeister torsion for hyperbolic thre e-manifolds of ﬁnite volume. Torsions are viewed as topological invaria nts and also as functions on the variety of representations in SL 2(C). In both cases, the torsions may also be computed after composing with ﬁnite dim ensional representations of SL 2(C). In addition the paper deals with the torsion of the adjoint representation as a function on the variety of PSLn+ 1(C)- characters, using that the ﬁrst cohomology group with coeﬃc ients twisted by the adjoint is the tangent space to the variety of characte rs.\n\n**Outline.** 1 Introduction; 2.1 Combinatorial torsion; 2 Combinatorial and analytic torsions; 2.1.2 Twisted chain complexes; 2.2 Geometric properties of combinatorial tors; 2.2.1 Mayer-Vietoris; 2.2.2 Polynomials; 2.2.3 Examples; 2.3 Analytic torsion; 3 Torsion of hyperbolic three-manifold with re; 3.1 Torsions from lifts of the holonomy repres; 3.1.3 Cusped hyperbolic 3-manifolds; 3.1.4 The twisted polynomial; 3.2 Torsion on the variety of characters; 3.2.1 The distinguished curve of characters; 4.1 Representations of SL2(C); 4.2 Higher torsions for closed manifolds; 4.3 Functions on the variety of characters\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.13: For a knot exterior S3 − K, we have:\n- Theorem 2.24: For a compact Lie group G\n- Theorem 2.27: Let M be a closed hyperbolic manifold of odd dimen-\n- Theorem 2.28: Let M be a closed hyperbolic manifold of odd dimension\n- Theorem 3.3: Let M 3 be a closed, orientable, hyperbolic 3-manifold. Then\n- Theorem 3.7: Let M 3 be a compact oriented",
+ "brief": "Reidemeister torsion, hyperbolic three-manifolds, and character varieties — This is a survey on Reidemeister torsion for hyperbolic three-manifolds of ﬁnite volume.",
+ "extended": "**Reidemeister torsion, hyperbolic three-manifolds, and character varieties**\n\n*Joan Porti∗*\n\n55 pp, 44 sections.\n\n**Abstract.** This is a survey on Reidemeister torsion for hyperbolic three-manifolds of ﬁnite volume. Torsions are viewed as topological invariants and also as functions on the variety of representations in SL2(C). In both cases, the torsions may also be computed after composing with ﬁnite dimensional representations of SL2(C). In addition the paper deals with the torsion of the adjoint representation as a function on the variety of PSLn+1(C)- characters, using that the ﬁrst cohomology group with coeﬃcients twisted by the adjoint is the tangent space to the variety of characters.\n\n**Outline.** Front matter; 1 Introduction; 2 Combinatorial and analytic torsions; 2.1 Combinatorial torsion; 2.1.1 Torsion of a chain complex; 2.1.2 Twisted chain complexes; 2.2 Geometric properties of combinatorial tors; 2.2.1 Mayer-Vietoris; 2.2.2 Polynomials; 2.2.3 Examples; 2.3 Analytic torsion; 3 Torsion of hyperbolic three-manifold with re; 3.1 Torsions from lifts of the holonomy repres; 3.1.2 Torsions for closed 3-manifolds; 3.1.3 Cusped hyperbolic 3-manifolds; 3.1.4 The twisted polynomial; 3.2 Torsion on the variety of characters; 3.2.1 The distinguished curve of characters",
  "tokens": {
   "brief": 41,
-  "extended": 434
+  "extended": 323
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-3"
+   "pages": "2-4"
   },
   {
-   "id": "sec-001-21-combinatorial-torsion",
-   "title": "Combinatorial torsion",
-   "pages": "3-4"
-  },
-  {
-   "id": "sec-002-2-combinatorial-and-analytic-torsions",
+   "id": "sec-001-2-combinatorial-and-analytic-torsions",
    "title": "Combinatorial and analytic torsions",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-002-21-combinatorial-torsion",
+   "title": "Combinatorial torsion",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-003-211-torsion-of-a-chain-complex",
+   "title": "Torsion of a chain complex",
    "pages": "4-6"
   },
   {
-   "id": "sec-003-212-twisted-chain-complexes",
+   "id": "sec-004-212-twisted-chain-complexes",
    "title": "Twisted chain complexes",
    "pages": "6-7"
   },
   {
-   "id": "sec-004-22-geometric-properties-of-combinatorial-torsion",
+   "id": "sec-005-22-geometric-properties-of-combinatorial-torsion",
    "title": "Geometric properties of combinatorial torsion",
-   "pages": "7-7"
-  },
-  {
-   "id": "sec-005-221-mayer-vietoris",
-   "title": "Mayer-Vietoris",
    "pages": "7-8"
   },
   {
-   "id": "sec-006-222-polynomials",
+   "id": "sec-006-221-mayer-vietoris",
+   "title": "Mayer-Vietoris",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-007-222-polynomials",
    "title": "Polynomials",
    "pages": "8-10"
   },
   {
-   "id": "sec-007-223-examples",
+   "id": "sec-008-223-examples",
    "title": "Examples",
    "pages": "10-14"
   },
   {
-   "id": "sec-008-23-analytic-torsion",
+   "id": "sec-009-23-analytic-torsion",
    "title": "Analytic torsion",
    "pages": "14-15"
   },
   {
-   "id": "sec-009-3-torsion-of-hyperbolic-three-manifold-with-repr",
+   "id": "sec-010-3-torsion-of-hyperbolic-three-manifold-with-repr",
    "title": "Torsion of hyperbolic three-manifold with representations in SL2(C)",
    "pages": "15-16"
   },
   {
-   "id": "sec-010-31-torsions-from-lifts-of-the-holonomy-represent",
+   "id": "sec-011-31-torsions-from-lifts-of-the-holonomy-represent",
    "title": "Torsions from lifts of the holonomy representation",
-   "pages": "16-18"
+   "pages": "16-17"
   },
   {
-   "id": "sec-011-313-cusped-hyperbolic-3-manifolds",
+   "id": "sec-012-312-torsions-for-closed-3-manifolds",
+   "title": "Torsions for closed 3-manifolds",
+   "pages": "17-18"
+  },
+  {
+   "id": "sec-013-313-cusped-hyperbolic-3-manifolds",
    "title": "Cusped hyperbolic 3-manifolds",
    "pages": "18-19"
   },
   {
-   "id": "sec-012-314-the-twisted-polynomial",
+   "id": "sec-014-314-the-twisted-polynomial",
    "title": "The twisted polynomial",
    "pages": "19-19"
   },
   {
-   "id": "sec-013-32-torsion-on-the-variety-of-characters",
+   "id": "sec-015-32-torsion-on-the-variety-of-characters",
    "title": "Torsion on the variety of characters",
    "pages": "19-19"
   },
   {
-   "id": "sec-014-321-the-distinguished-curve-of-characters",
+   "id": "sec-016-321-the-distinguished-curve-of-characters",
    "title": "The distinguished curve of characters",
-   "pages": "19-26"
+   "pages": "19-20"
   },
   {
-   "id": "sec-015-41-representations-of-sl2c",
+   "id": "sec-017-322-torsion-on-the-distinguished-curve-of-charac",
+   "title": "Torsion on the distinguished curve of characters",
+   "pages": "20-22"
+  },
+  {
+   "id": "sec-018-323-dehn-filling-space",
+   "title": "Dehn filling space",
+   "pages": "22-23"
+  },
+  {
+   "id": "sec-019-324-torsion-for-dehn-fillings",
+   "title": "Torsion for Dehn fillings",
+   "pages": "23-25"
+  },
+  {
+   "id": "sec-020-325-branched-coverings-on-the-figure-eight",
+   "title": "Branched coverings on the figure eight",
+   "pages": "25-26"
+  },
+  {
+   "id": "sec-021-4-torsions-for-higher-dimensional-representation",
+   "title": "Torsions for higher dimensional representations of hyperbolic three-manifolds",
+   "pages": "26-26"
+  },
+  {
+   "id": "sec-022-41-representations-of-sl2c",
    "title": "Representations of SL2(C)",
    "pages": "26-27"
   },
   {
-   "id": "sec-016-42-higher-torsions-for-closed-manifolds",
+   "id": "sec-023-42-higher-torsions-for-closed-manifolds",
    "title": "Higher torsions for closed manifolds",
    "pages": "27-29"
   },
   {
-   "id": "sec-017-43-functions-on-the-variety-of-characters",
+   "id": "sec-024-43-functions-on-the-variety-of-characters",
    "title": "Functions on the variety of characters",
    "pages": "29-29"
   },
   {
-   "id": "sec-018-431-generic-cohomology-on-the-distinguished-comp",
+   "id": "sec-025-431-generic-cohomology-on-the-distinguished-comp",
    "title": "Generic cohomology on the distinguished component",
    "pages": "29-30"
   },
   {
-   "id": "sec-019-432-higher-torsions-on-the-variety-of-characters",
+   "id": "sec-026-432-higher-torsions-on-the-variety-of-characters",
    "title": "Higher torsions on the variety of characters",
    "pages": "30-32"
   },
   {
-   "id": "sec-020-44-evaluation-at-the-holonomy",
+   "id": "sec-027-44-evaluation-at-the-holonomy",
    "title": "Evaluation at the holonomy",
    "pages": "32-32"
   },
   {
-   "id": "sec-021-441-cohomolgy-at-the-character-of-the-holonomy",
+   "id": "sec-028-441-cohomolgy-at-the-character-of-the-holonomy",
    "title": "Cohomolgy at the character of the holonomy",
-   "pages": "32-35"
+   "pages": "32-33"
   },
   {
-   "id": "sec-022-45-quantum-invariants",
+   "id": "sec-029-442-torsion-at-the-characters-of-the-holonomy",
+   "title": "Torsion at the characters of the holonomy",
+   "pages": "33-34"
+  },
+  {
+   "id": "sec-030-443-dehn-filling",
+   "title": "Dehn filling",
+   "pages": "34-35"
+  },
+  {
+   "id": "sec-031-45-quantum-invariants",
    "title": "Quantum invariants",
-   "pages": "35-39"
+   "pages": "35-36"
   },
   {
-   "id": "sec-023-51-local-parameters-and-change-of-curve",
+   "id": "sec-032-5-representations-in-psln1c-and-the-adjoint",
+   "title": "Representations in PSLn+1(C) and the adjoint",
+   "pages": "36-39"
+  },
+  {
+   "id": "sec-033-51-local-parameters-and-change-of-curve",
    "title": "Local parameters and change of curve",
    "pages": "39-41"
   },
   {
-   "id": "sec-024-52-an-example",
+   "id": "sec-034-52-an-example",
    "title": "An example",
-   "pages": "41-44"
+   "pages": "41-42"
   },
   {
-   "id": "sec-025-appendix-a-not-approximating-the-trivial-represe",
+   "id": "sec-035-521-computations-for-xm3psl2c",
+   "title": "Computations for X(M3,PSL2(C))",
+   "pages": "42-43"
+  },
+  {
+   "id": "sec-036-522-computations-for-xm3psl3c",
+   "title": "Computations for X(M3,PSL3(C))",
+   "pages": "43-44"
+  },
+  {
+   "id": "sec-037-appendix-a-not-approximating-the-trivial-represe",
    "title": "Appendix A Not approximating the trivial representation",
    "pages": "44-45"
   },
   {
-   "id": "sec-026-appendix-b-cohomology-on-the-variety-or-characte",
+   "id": "sec-038-appendix-b-cohomology-on-the-variety-or-characte",
    "title": "Appendix B Cohomology on the variety or characters",
    "pages": "45-46"
   },
   {
-   "id": "sec-027-b1-the-complete-structure",
+   "id": "sec-039-b1-the-complete-structure",
    "title": "B.1 The complete structure",
+   "pages": "46-46"
+  },
+  {
+   "id": "sec-040-b11-the-finite-volume-case",
+   "title": "B.1.1 The finite volume case",
    "pages": "46-48"
   },
   {
-   "id": "sec-028-b12-a-basis-in-cohomology",
+   "id": "sec-041-b12-a-basis-in-cohomology",
    "title": "B.1.2 A basis in cohomology",
    "pages": "48-49"
   },
   {
-   "id": "sec-029-b2-generic-representations-in-the-distinguished",
+   "id": "sec-042-b2-generic-representations-in-the-distinguished",
    "title": "B.2 Generic representations in the distinguished component.",
    "pages": "49-55"
   }
@@ -164,8 +234,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

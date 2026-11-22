@@ -1,0 +1,52 @@
+transformation as a quadratic form. Therefore, a3 — a3/a, > 0. In the same way, we
+obtain that 6, > 0 and 63 — 63/8, > 0. Further, the required matrix is related to the
+following matrix by elementary transformations,
+
+ay 0 0
+0 a3— 3B 2 + Bs — a 0
+0 “0 Bs
+Since the diagonal entries are positive, the required matrix is positive definite. O
+
+Lemma C.7. Let a, b and c be positive real numbers. Then, the following matrices are
+
+positive definite,
+ab—-1 wo bc-1 bc-1
+2a a+b ati b bte bt+e
+ab-1 b— abt J » be=1 2¢— be=l |} -
+a+b a+b bte b+e
+
+Proof. We show the lemma for the first matrix, as follows. Its trace is given by
+
+_ _ 24 p2
+2a+h—2. 2 1 (2a + b)(a + b) — 2ab + 2 _ 2at+bi+ab+2 > 0.
+a+b a+b a+b
+
+Further, its determinant is given by
+
+ab—1 2ab(a + b) — (2a + b)(ab— 1) ab? +2a+b
+2ab — (2a +b) > = aad = 7ab > 0.
+
+Hence, the two eigenvalues of this matrix are positive, and the first matrix of the lemma
+is positive definite.
+
+It is shown that the second matrix is also positive definite from the above argument
+replacing a with c. oO
+
+D_ Estimate of |(q),| and restriction of A to A’
+
+In this section, we give an estimate of 4 log |(q)p| in Lemma D.2. By using this estimate,
+we explain why we can restrict A to A’ in Sections 3.1, 4.1 and 5.1.
+
+We explain the motivation to show Lemma D.2. By (6) and (11), we have that
+
+1 2n+1 1 2n+1
+log |(q)n| = Rev(5a) — Re vl oN )= 5 loa N — Reg( oN ).
+We arbitrarily fix a sufficiently small 6 > 0. Then, we can show by Proposition 2.1 that
+1 ,2n+1 1 ‘ 1 2n+1 1
+— =R Lig (e2"+D/2N) —) =A —;).
+Ret o(PSE4) = Resta (eP/e) +0(g3) = ACEH) +0(G),
+
+for sufficiently large N and any integer n such that 6 < and < 1-6, where On >) means
+that the absolute value of the error term is bounded by C/N? with some constant Ci,
+
+66

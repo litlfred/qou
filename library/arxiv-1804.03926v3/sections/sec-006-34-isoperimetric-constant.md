@@ -8,7 +8,9 @@ pages: 20-21
 source_pdf: 1804.03926v3.pdf
 source_sha256: 8ad8e2d5a8881a5b
 toc_source: outline
+doc_brief: "Weighted Poincaré inequalities, concentration inequalities and tail bounds related to Stein kernels in dimension one — We investigate links between the so-called Stein’s density approach in dimension"
 ---
+Isoperimetric constant
 Let us complete this section about some functional inequalities linked to the Stein kernel by studying
 the isoperimetric constant. Recall that for a measure ν on Rd, an isoperimetric inequality is an
 inequality of the form
@@ -117,4 +119,3 @@ inf|x−µ|≤ε/2 p (x)
 min {F (µ −ε/2) , 1 −F (µ + ε/2)} > 0 .
 (43)
 The conclusion now follows from combining (42) and (43).
-4

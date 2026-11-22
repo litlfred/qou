@@ -8,6 +8,7 @@ pages: 27-27
 source_pdf: klein-few-body-systems-in-lattice-effective-field-theory-thesis.pdf
 source_sha256: 7ecafdd08255d5c6
 toc_source: outline
+doc_brief: "Few-Body Systems in Lattice Effective Field Theory — 62 sections: Front matter; Introduction and Motivation; The standard model of particle phy"
 ---
 In NLEFT, the degrees of freedom are nucleons and pions rather than quarks and gluons as in lattice
 QCD. Hence, we have to discretize the previous Hamiltonians in all spatial dimensions. If one uses

@@ -301,7 +301,8 @@ def main() -> int:
             "Says nothing about whether the bare form models alpha_EM at all. "
             "rem:em-coupling-chern-simons is explicitly open. No published figure is "
             "changed.")
-        print(f"\nWitness: {wb.save()}")
+        print(f"\nWitness: {wb.save(extra={"q0Anchor": "ambiguous", "q0AnchorReason": (
+            "comparison by design: rounding test of both blocks' figures against every registered pin (proton, live CODATA-2022 muon, retired CODATA-2018 muon, frozen pin A 1.1099785955573347)")})}")
     except Exception as e:  # pragma: no cover
         print(f"\n(witness emit skipped: {e})")
 

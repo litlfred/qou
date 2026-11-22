@@ -1,0 +1,64 @@
+---
+doc_id: 9710022v2
+doc_title: "Harmonic Analysis on the quantum Lorentz group"
+section_id: page-052
+section_title: "Page 52"
+pages: 52-52
+pdf_page: 52
+source_pdf: 9710022v2.pdf
+source_sha256: e5ff373a1ec6884a
+text_source: ocr
+granularity: page
+doc_brief: "Harmonic Analysis on the quantum Lorentz group — This w ork b egins with a review of complexi cation and reali cation of Hopf algebras."
+---
+7.2 Clebsch-Gordan coefficients, and Vertex pictures
+
+Definitions
+
+In the sequel we shall frequently use the following notations:
+
+k
+[Plk = [iP +i - 1]
+
+The R matrix elements and the Clebsh-Gordan coefficients can be computed and are given by
+(see [22] for a precise derivation)
+
+AB ni na _(q-¢")" gomne—n(na—m say, [A= rid + ra + nltlB + nal ~ no + nl!
+misnnasn [n]! [A= n, — n]![A + ni ]![B + ng — n]![B - no]!
+mn) = Om gM@t tg (st) 1040) KK+1) pit m) [24+ 1[1+J—K] {-m] [J—n] {K—p][K+p]!
+I J |p men [K+J—I{I+K—J {+ I+K +1 (T+m] [J+n]!
+x wo Qh EI V(L I,K) L4-m+V ],I+K—m-V]!
+4, [VII[K-p-V]![F-m—V]![J-K+m+V]!
+
+Pictorial representation
+
+i -A fi jie A~ i _[{k|AB
+Daan “\A BIE ae “Voli j
+j 4B v r j v
+i-A Bom AB... i-A B-m AB. BA..
+SK Sn
+5B Nw dy L | AK [dv
+m ~ _ 5bim,-ne i ™q™ = vam a i _ in neg = vt dann
+A A
+
+n a v a NS nov
+
+Relations
+
+Unitarity:
+. “A A- a
+= bcp Y(A,B,C) 3 =
+-C D- —c- 7a Cc BN
+v v Bi v v
+~A A- ~A A-
+So< teed [ox
+3” — vy 7 PNY Lig — v
+Twist:
+
+-A vavpy1 | ~A B- VAUB\2 B-
+
+a = (444) ; / | =)
+SL C- vo C- —C S vo —C
+Bi A Vv Bi Vv Atv A Vv
+
+52

@@ -8,6 +8,7 @@ pages: 15-18
 source_pdf: 0110009v3.pdf
 source_sha256: bb0c97f2de33b0dd
 toc_source: inferred
+doc_brief: "arXiv:math/0110009v3 [math.MG] 3 Sep 2003 — We develop an analogue for sphere packing of the linear programming bounds for error-correcting codes, and use it to prove upper bounds for the density of"
 ---
 It is possible to get numerical results by using linear programming to
 ﬁnd functions for use in Theorem 3.1, as was done for the kissing problem by

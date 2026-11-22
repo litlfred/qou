@@ -17,15 +17,16 @@ integral** is the beyond-pairwise (Ursell) content of that pairwise product.
 any pairwise interface product with factors `fᵢ ∈ [0,1]` the beyond-pairwise
 content is `≤ 0` (a Weierstrass union bound), yet `μ₃ = +0.4708 > 0`.  So no
 pairwise ρ_F cluster equals `μ₃` — a scope-(b) **proved sign exclusion** of the
-multiplicative route (the standing `z ≤ 1/2 < 1` bound, `markovParam_le_half`,
-forecloses the only pairwise escape `fᵢ > 1`).  The 4-body residual `μ₄ < 0` is
+multiplicative route (the convention-D bound `z = q³/(q²+1) < 1` for
+`q³ < q² + 1`, which holds at `q₀ ≈ 1.110` (`markovZD_lt_one_iff`), forecloses the
+only pairwise escape `fᵢ > 1` at the substrate value).  The 4-body residual `μ₄ < 0` is
 sign-*consistent* with the (also non-positive) 4-body cluster content, but that is
 **not** a derivation: `μ₄`'s magnitude is dominated by the *derived graded*
 reference's own 4-body simplex coefficient `g₄ = +8.37` being subtracted, not by an
 `ρ_F` cluster.
 
 Canonical companions (re-derived self-contained here, import-light):
-`QOU.BraidKnot.Cluster.productModel_3body_nonpos` and `markovParam_le_half`
+`QOU.BraidKnot.Cluster.productModel_3body_nonpos` and `markovZD_lt_one_iff`
 (`folio/quantum-observable-universe/mass-theory/interface-knot-markov-z.lean`).
 
 Probe: `computations/deltalambda/mu4_rhoF_cluster_derivation_probe.py`.
@@ -109,8 +110,8 @@ theorem pairwise_3body_content_nonpos {f_a f_b f_c : ℝ}
     simplex coefficient `μ₃` is *positive* (`+0.4708`), but the beyond-pairwise
     3-body content of any pairwise interface product `∏ fᵢ`, `fᵢ ∈ [0,1]`, is
     `≤ 0`.  Hence `μ₃ ≠` that cluster content — the multiplicative ρ_F cluster
-    route cannot supply `μ₃`.  (The only pairwise escape `fᵢ > 1` is foreclosed by
-    `markovParam_le_half`: `z ≤ 1/2 < 1` for every `q > 0`.) -/
+    route cannot supply `μ₃`.  (The only pairwise escape `fᵢ > 1` is foreclosed at
+    `q₀ ≈ 1.110` by `markovZD_lt_one_iff`: `z = q³/(q²+1) < 1` iff `q³ < q² + 1`.) -/
 theorem mu3_ne_pairwise_3body_cluster {μ₃ f_a f_b f_c : ℝ} (hμ : 0 < μ₃)
     (ha0 : 0 ≤ f_a) (ha1 : f_a ≤ 1) (hb0 : 0 ≤ f_b) (hb1 : f_b ≤ 1)
     (hc0 : 0 ≤ f_c) (hc1 : f_c ≤ 1) :

@@ -1,0 +1,33 @@
+Figure 3.1: Symmetries of the Bolza surface
+
+XO
+
+Calculations in GAP [26] show that the relations given in Satz 32 of Jenni’s thesis give
+a finitely presented group of order 12. This implies that there is a problem with at least
+one of his relations. After scrutinizing the actions of R, S, T, and U on the tessellation
+
+regular octagons, we offer the following corrected theorem:
+
+Theorem 3.3 (Correction to Satz 3, in [41]) The generators of the Bolza surface
+
+satisfy the following relations:
+R= 5? =T? =U* = RSRS = STST = RTR*T =e,
+
+UR= RU’, U?R=STU, US = SU*, UT = RSU,
+
+where e is the trivial (identity) action.
+
+Remark 3.4 UR = R'U? replaces the erroneous UR = RU?.
+
+We check that these relations are satisfied idering the actions of R, S, T, and
+U on the 16 equilateral triangles shown in iy i the vertices P;, i € {1, 2},
+and Q;, j € {1,..., 4}, represent the Weierstrass points of the surfages the bar otation
+denotes that a point is in the other sh cover (compare hekere
+
+We tabulate this information in tober from this point it is straightforward to
+verify that the relations hold by “chasing” the triangle around the table. For example, if
+
+we want to know where RS' sends P;}Q:Qz2, we observe
+RS(P1Q1Q2) = R(S(P1Q1Q2))
+
+51

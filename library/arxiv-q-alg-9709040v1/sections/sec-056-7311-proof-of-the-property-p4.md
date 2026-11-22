@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-q-alg-9709040v1
-doc_title: "arXiv:q-alg/9709040v1 29 Sep 1997"
+doc_title: "Deformation quantization of Poisson manifolds"
 section_id: sec-056-7311-proof-of-the-property-p4
 section_title: "Proof of the property P4"
 section_number: 7.3.1.1
@@ -8,7 +8,9 @@ pages: 32-34
 source_pdf: 9709040v1.pdf
 source_sha256: 8baf650d86c5b8ab
 toc_source: inferred
+doc_brief: "Deformation quantization of Poisson manifolds — 75 sections: Front matter; Plans; Star-products"
 ---
+7.3.1.1. Proof of the property P4
 Graphs appearing in the calculation of Uk(ξ1, . . . , ξk) have k edges, k vertices of the ﬁrst type, and m
 vertices of the second type, where
 2k + m −2 = k .

@@ -12,7 +12,7 @@ decomposition into descended (im τₙ) and transient (ker τₙ) subalgebras.
 
 ## References
 
-- [manuscript] §3 Lifting and Descent
+- [leitner2026] §3 Lifting and Descent
 -/
 
 namespace QOU.Torsion
@@ -38,7 +38,7 @@ def IdempotentEndomorphism.transient (τ : IdempotentEndomorphism (R := R) M) :
   LinearMap.ker τ.toFun
 
 /-- Every element decomposes uniquely as descended + transient. -/
--- Ref: [manuscript] §3, Proposition: Eigenspaces of the descent involution
+-- Ref: [leitner2026] §3, Proposition: Eigenspaces of the descent involution
 theorem idempotent_direct_sum_decomposition
     (τ : IdempotentEndomorphism (R := R) M) :
     τ.descended ⊔ τ.transient = ⊤ := by
@@ -52,7 +52,7 @@ theorem idempotent_direct_sum_decomposition
     congr_fun (congr_arg DFunLike.coe τ.idem) x, sub_self]
 
 /-- The descended and transient submodules intersect trivially. -/
--- Ref: [manuscript] §3, Proposition: Eigenspaces of the descent involution
+-- Ref: [leitner2026] §3, Proposition: Eigenspaces of the descent involution
 theorem idempotent_direct_sum_disjoint
     (τ : IdempotentEndomorphism (R := R) M) :
     Disjoint τ.descended τ.transient := by
@@ -65,7 +65,7 @@ theorem idempotent_direct_sum_disjoint
     congr_fun (congr_arg DFunLike.coe τ.idem) y] at hx_trans
 
 /-- An element in the image of the ascent ℓₙ is fixed by τₙ (descended). -/
--- Ref: [manuscript] §3, Proposition: Eigenspaces of the descent involution
+-- Ref: [leitner2026] §3, Proposition: Eigenspaces of the descent involution
 theorem ascent_image_is_descended
     {N : Type*} [AddCommGroup N] [Module R N]
     (ℓ : N →ₗ[R] M) (𝔡 : M →ₗ[R] N)
@@ -79,7 +79,7 @@ theorem ascent_image_is_descended
   simpa [LinearMap.comp_apply] using congr_fun (congr_arg DFunLike.coe retraction) y
 
 /-- An element with no pre-image under descent is transient. -/
--- Ref: [manuscript] §3, Proposition: Eigenspaces of the descent involution
+-- Ref: [leitner2026] §3, Proposition: Eigenspaces of the descent involution
 theorem no_preimage_is_transient
     {N : Type*} [AddCommGroup N] [Module R N]
     (ℓ : N →ₗ[R] M) (𝔡 : M →ₗ[R] N)

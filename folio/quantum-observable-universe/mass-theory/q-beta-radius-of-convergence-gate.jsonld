@@ -2,21 +2,23 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prop-q-beta-radius-of-convergence-gate",
+  "@id": "papers/quantum-observable-universe/blocks/conj-q-beta-radius-of-convergence-gate",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Conjecture",
     "doco:Section"
   ],
-  "label": "prop:q-beta-radius-of-convergence-gate",
-  "kind": "proposition",
-  "title": "$\\mathfrak{Q}_\\beta$ precision-ladder $\\S 4(a)$ formalize-first gate — the log-correction generating function $g(u) = \\sum_{k \\ge 2} c_k u^k$ must have a simple pole at $u_{\\text{substrate}}$, and any candidate $F(q)$ whose nearest singularity lies elsewhere is structurally REFUTED",
+  "label": "conj:q-beta-radius-of-convergence-gate",
+  "kind": "conjecture",
+  "title": "$\\mathfrak{Q}_\\beta$ precision-ladder $\\S 4(a)$ gate — the log-correction generating function $g(u) = \\sum_{k \\ge 2} c_k u^k$ has a unique dominant simple pole at $u_{\\text{substrate}}$ (convention-C frame)",
   "uses": [
     "papers/quantum-observable-universe/blocks/prop-q-beta-bar-even-kernel-invariant",
     "papers/quantum-observable-universe/blocks/prop-q-beta-c-k-recursion-from-habiro-q-difference",
-    "papers/quantum-observable-universe/blocks/prop-q-beta-c-2-eq-neg-one-structural"
+    "papers/quantum-observable-universe/blocks/prop-q-beta-c-2-eq-neg-one-structural",
+    "papers/quantum-observable-universe/blocks/conj-qbeta-c-k-closed-forms"
   ],
   "cites": [
     "references/jones1987",
@@ -26,12 +28,12 @@
   "tags": [
     "q-beta",
     "precision-ladder",
-    "structural",
     "formalize-first",
     "radius-of-convergence",
     "simple-pole",
     "kernel-invariant",
-    "no-fit"
+    "convention-c-frame",
+    "open-rd"
   ],
   "leanRef": "qou:QOU.QBeta.RadiusOfConvergenceGate.qbeta_g_simple_pole_at_u_substrate",
   "text": "q-beta-radius-of-convergence-gate.md",

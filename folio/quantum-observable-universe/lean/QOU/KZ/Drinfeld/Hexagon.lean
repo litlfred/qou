@@ -13,7 +13,7 @@ Stage S3 of bean `qou-zoyv`. The block hexagon
 `sl₂` residues are central and cancel. Pulled back along the leg bijections this gives
 Mathlib's two hexagon axioms in matrix form. Sorry-free.
 
--- Ref: [manuscript] beans/defs/qou-zoyv (stage S3)
+-- Ref: [leitner2026] beans/defs/qou-zoyv (stage S3)
 -/
 
 noncomputable section
@@ -21,23 +21,24 @@ noncomputable section
 namespace QOU.KZ.Drinfeld
 
 open CategoryTheory MonoidalCategory Finset QOU.KZ.FuchsianFormal QOU.KZ.BlockResidues
-  QOU.KZ.KZPentagon Obj
+  QOU.KZ.DrinfeldAssociator Obj
 
 attribute [local instance] Matrix.linftyOpNormedRing Matrix.linftyOpNormedAlgebra
 
 section Block
 
-variable {L : Type*} [Fintype L] [DecidableEq L] {c : ℂ} (hc : Transcendental ℚ c)
+variable {L : Type} [Fintype L] [DecidableEq L] (Ψ : Associator.{0}) {c : ℂ}
+  (hc : Transcendental ℚ c)
 
 /-- `Φ(ℏ t_{S,T}, ℏ t_{U,V})` on `V^{⊗L}`. -/
 def Φt (S T U V : Finset L) : EndL L :=
-  Φ (c • tB ℂ 2 S T) (c • tB ℂ 2 U V) (nonResonant_tB hc S T) (nonResonant_tB hc U V)
+  Ψ.ΦN (c • tB ℂ 2 S T) (c • tB ℂ 2 U V) (nonResonant_tB Ψ hc S T) (nonResonant_tB Ψ hc U V)
 
-theorem ΦB_eq_Φt (S T U : Finset L) : ΦB hc S T U = Φt hc S T T U := rfl
+theorem ΦB_eq_Φt (S T U : Finset L) : ΦB Ψ hc S T U = Φt Ψ hc S T T U := rfl
 
 theorem Φt_congr {S T U V S' T' U' V' : Finset L} (h1 : tB ℂ 2 S T = tB ℂ 2 S' T')
-    (h2 : tB ℂ 2 U V = tB ℂ 2 U' V') : Φt hc S T U V = Φt hc S' T' U' V' :=
-  KZShiftPhi.Φ_congr (by rw [h1]) (by rw [h2]) _ _ _ _
+    (h2 : tB ℂ 2 U V = tB ℂ 2 U' V') : Φt Ψ hc S T U V = Φt Ψ hc S' T' U' V' :=
+  Ψ.ΦN_congr (by rw [h1]) (by rw [h2]) _ _ _ _
 
 omit [Fintype L] [DecidableEq L] in
 theorem expi_eq_eπ {L : Type*} [Fintype L] [DecidableEq L] (M : EndL L) :
@@ -47,8 +48,8 @@ theorem expi_eq_eπ {L : Type*} [Fintype L] [DecidableEq L] (M : EndL L) :
 /-- The block hexagon with the `𝔤𝔩₂` residues. -/
 theorem hexagon_gl {X1 X2 X3 : Finset L} (d12 : Disjoint X1 X2) (d13 : Disjoint X1 X3)
     (d23 : Disjoint X2 X3) :
-    Φt hc X2 X3 X1 X3 * expi (c • tB ℂ 2 X1 X2 + c • tB ℂ 2 X1 X3) * Φt hc X1 X2 X2 X3 =
-      expi (c • tB ℂ 2 X1 X3) * Φt hc X1 X2 X1 X3 * expi (c • tB ℂ 2 X1 X2) := by
+    Φt Ψ hc X2 X3 X1 X3 * expi (c • tB ℂ 2 X1 X2 + c • tB ℂ 2 X1 X3) * Φt Ψ hc X1 X2 X2 X3 =
+      expi (c • tB ℂ 2 X1 X3) * Φt Ψ hc X1 X2 X1 X3 * expi (c • tB ℂ 2 X1 X2) := by
   have nm := @not_mem_of_disjoint L
   have smc : ∀ {x y : Matrix (L → Fin 2) (L → Fin 2) ℂ}, Commute x y →
       Commute (c • x) (c • y) := fun h => (h.smul_left c).smul_right c
@@ -65,24 +66,24 @@ theorem hexagon_gl {X1 X2 X3 : Finset L} (d12 : Disjoint X1 X2) (d13 : Disjoint 
     exact smc (commute_tB_tB (fun a ha b hb => by simp [nm d12 ha, nm d23.symm hb])
       (fun a ha b hb => by simp [ha, hb]))
   rw [expi_eq_eπ, expi_eq_eπ, expi_eq_eπ]
-  exact KZHexagonCentral.hexagon_rearranged (c • tB ℂ 2 X1 X2) (c • tB ℂ 2 X2 X3)
+  exact Ψ.hexagon_rearrangedN (c • tB ℂ 2 X1 X2) (c • tB ℂ 2 X2 X3)
     (c • tB ℂ 2 X1 X3) _ _ _
     (by rw [add_assoc]; exact ((Commute.refl _).add_right cA).symm)
     (by rw [add_comm (c • tB ℂ 2 X1 X2), add_assoc]; exact ((Commute.refl _).add_right cB).symm)
     (by rw [add_comm _ (c • tB ℂ 2 X1 X3)]; exact ((Commute.refl _).add_right cC).symm)
-    (hexagon_blocks hc d12 d13 d23)
+    (Ψ.hexagon_blocksN hc d12 d13 d23)
 
-omit hc in
+omit Ψ hc in
 /-- `e^{iπ r}` as a scalar matrix. -/
 theorem commute_expi_scalar (r : ℂ) (M : EndL L) : Commute (expi (r • (1 : EndL L))) M :=
   (commute_expi (commute_scalar r M).symm).symm
 
-omit hc in
+omit Ψ hc in
 theorem expi_scalar_mul (r s : ℂ) :
     expi (r • (1 : EndL L)) * expi (s • (1 : EndL L)) = expi ((r + s) • (1 : EndL L)) := by
   rw [← expi_add ((commute_scalar r _)), add_smul]
 
-omit hc in
+omit Ψ hc in
 /-- `e^{iπℏ t^{sl}} = e^{iπℏ t} · e^{−iπℏ|S||T|/2}`. -/
 theorem expi_tsl {S T : Finset L} (h : Disjoint S T) :
     expi (c • tsl S T) = expi (c • tB ℂ 2 S T) *
@@ -93,8 +94,8 @@ theorem expi_tsl {S T : Finset L} (h : Disjoint S T) :
 /-- **The block hexagon** with the `sl₂` braiding residues. -/
 theorem hexagon_sl {X1 X2 X3 : Finset L} (d12 : Disjoint X1 X2) (d13 : Disjoint X1 X3)
     (d23 : Disjoint X2 X3) :
-    Φt hc X2 X3 X1 X3 * expi (c • tsl X1 (X2 ∪ X3)) * Φt hc X1 X2 X2 X3 =
-      expi (c • tsl X1 X3) * Φt hc X1 X2 X1 X3 * expi (c • tsl X1 X2) := by
+    Φt Ψ hc X2 X3 X1 X3 * expi (c • tsl X1 (X2 ∪ X3)) * Φt Ψ hc X1 X2 X2 X3 =
+      expi (c • tsl X1 X3) * Φt Ψ hc X1 X2 X1 X3 * expi (c • tsl X1 X2) := by
   have d : Disjoint X1 (X2 ∪ X3) := Finset.disjoint_union_right.2 ⟨d12, d13⟩
   set z₂ := expi ((-(c * ((1 / 2 : ℂ) * (X1.card * X2.card : ℕ)))) • (1 : EndL L))
   set z₃ := expi ((-(c * ((1 / 2 : ℂ) * (X1.card * X3.card : ℕ)))) • (1 : EndL L))
@@ -103,26 +104,26 @@ theorem hexagon_sl {X1 X2 X3 : Finset L} (d12 : Disjoint X1 X2) (d13 : Disjoint 
     rw [expi_scalar_mul, Finset.card_union_of_disjoint d23]
     congr 2; push_cast; ring
   rw [expi_tsl d, expi_tsl d13, expi_tsl d12, tB_union_right d23, smul_add, hz]
-  have H := hexagon_gl hc d12 d13 d23
+  have H := hexagon_gl Ψ hc d12 d13 d23
   have c2 : ∀ M, Commute z₂ M := commute_expi_scalar _
   have c3 : ∀ M, Commute z₃ M := commute_expi_scalar _
-  calc Φt hc X2 X3 X1 X3 * (expi (c • tB ℂ 2 X1 X2 + c • tB ℂ 2 X1 X3) * (z₂ * z₃)) *
-        Φt hc X1 X2 X2 X3
-      = Φt hc X2 X3 X1 X3 * expi (c • tB ℂ 2 X1 X2 + c • tB ℂ 2 X1 X3) * Φt hc X1 X2 X2 X3 *
+  calc Φt Ψ hc X2 X3 X1 X3 * (expi (c • tB ℂ 2 X1 X2 + c • tB ℂ 2 X1 X3) * (z₂ * z₃)) *
+        Φt Ψ hc X1 X2 X2 X3
+      = Φt Ψ hc X2 X3 X1 X3 * expi (c • tB ℂ 2 X1 X2 + c • tB ℂ 2 X1 X3) * Φt Ψ hc X1 X2 X2 X3 *
           (z₂ * z₃) := by
         simp only [Matrix.mul_assoc]
         rw [← Matrix.mul_assoc z₂ z₃, ← ((c2 _).mul_left (c3 _)).eq]
-    _ = expi (c • tB ℂ 2 X1 X3) * Φt hc X1 X2 X1 X3 * expi (c • tB ℂ 2 X1 X2) * (z₂ * z₃) := by
+    _ = expi (c • tB ℂ 2 X1 X3) * Φt Ψ hc X1 X2 X1 X3 * expi (c • tB ℂ 2 X1 X2) * (z₂ * z₃) := by
         rw [H]
-    _ = expi (c • tB ℂ 2 X1 X3) * z₃ * Φt hc X1 X2 X1 X3 * (expi (c • tB ℂ 2 X1 X2) * z₂) := by
+    _ = expi (c • tB ℂ 2 X1 X3) * z₃ * Φt Ψ hc X1 X2 X1 X3 * (expi (c • tB ℂ 2 X1 X2) * z₂) := by
         simp only [Matrix.mul_assoc]
         rw [(c2 z₃).eq, ← Matrix.mul_assoc (expi (c • tB ℂ 2 X1 X2)) z₃ z₂,
           ← (c3 (expi (c • tB ℂ 2 X1 X2))).eq, Matrix.mul_assoc z₃,
-          ← Matrix.mul_assoc (Φt hc X1 X2 X1 X3) z₃, ← (c3 (Φt hc X1 X2 X1 X3)).eq,
+          ← Matrix.mul_assoc (Φt Ψ hc X1 X2 X1 X3) z₃, ← (c3 (Φt Ψ hc X1 X2 X1 X3)).eq,
           Matrix.mul_assoc z₃]
 
-omit hc in
-theorem tsl_comm {S T : Finset L} (h : Disjoint S T) : tsl S T = tsl T S := by
+omit [Fintype L] [DecidableEq L] in
+theorem tsl_comm {L : Type*} [Fintype L] [DecidableEq L] {S T : Finset L} (h : Disjoint S T) : tsl S T = tsl T S := by
   have e1 := tB_eq_tsl h
   have e2 := tB_eq_tsl h.symm
   rw [tB_comm, e2, mul_comm T.card] at e1
@@ -132,8 +133,8 @@ end Block
 
 section Transport
 
-variable {L L' : Type*} [Fintype L] [DecidableEq L] [Fintype L'] [DecidableEq L']
-  {c : ℂ} (hc : Transcendental ℚ c)
+variable {L L' : Type} [Fintype L] [DecidableEq L] [Fintype L'] [DecidableEq L']
+  (Ψ : Associator.{0}) {c : ℂ} (hc : Transcendental ℚ c)
 
 theorem reidx_blk (e : L ≃ L') (S : Finset L) (a : Matrix (Fin 2) (Fin 2) ℂ) :
     reidx e * blk S a = blk (S.map e.toEmbedding) a * reidx e := by
@@ -161,23 +162,23 @@ theorem expi_tsl_mul_reidx (e : L ≃ L') (S T : Finset L') :
         rw [h, Matrix.mul_assoc, Matrix.mul_assoc, reidx_mul, Equiv.self_trans_symm, reidx_refl,
           Matrix.mul_one]
 
-include hc in
+include Ψ hc in
 theorem reidx_Φt (e : L ≃ L') (S T U V : Finset L) :
-    reidx e * Φt hc S T U V =
-      Φt hc (S.map e.toEmbedding) (T.map e.toEmbedding) (U.map e.toEmbedding)
+    reidx e * Φt Ψ hc S T U V =
+      Φt Ψ hc (S.map e.toEmbedding) (T.map e.toEmbedding) (U.map e.toEmbedding)
         (V.map e.toEmbedding) * reidx e :=
-  KZIntertwine.Φ_intertwine _ _ _ _ (reidx e)
+  Ψ.ΦN_intertwine _ _ _ _ (reidx e)
     (by rw [Matrix.mul_smul, Matrix.smul_mul, reidx_tB])
     (by rw [Matrix.mul_smul, Matrix.smul_mul, reidx_tB])
-    _ _ _ _ (nonResonant_fromBlocks_tB hc _ _ _ _) (nonResonant_fromBlocks_tB hc _ _ _ _)
+    _ _ _ _ (nonResonant_fromBlocks_tB Ψ hc _ _ _ _) (nonResonant_fromBlocks_tB Ψ hc _ _ _ _)
 
-include hc in
+include Ψ hc in
 theorem Φt_mul_reidx (e : L ≃ L') (S T U V : Finset L') :
-    Φt hc S T U V * reidx e =
-      reidx e * Φt hc (S.map e.symm.toEmbedding) (T.map e.symm.toEmbedding)
+    Φt Ψ hc S T U V * reidx e =
+      reidx e * Φt Ψ hc (S.map e.symm.toEmbedding) (T.map e.symm.toEmbedding)
         (U.map e.symm.toEmbedding) (V.map e.symm.toEmbedding) := by
-  have h := reidx_Φt hc e.symm S T U V
-  calc Φt hc S T U V * reidx e = reidx e * (reidx e.symm * Φt hc S T U V) * reidx e := by
+  have h := reidx_Φt Ψ hc e.symm S T U V
+  calc Φt Ψ hc S T U V * reidx e = reidx e * (reidx e.symm * Φt Ψ hc S T U V) * reidx e := by
         rw [← Matrix.mul_assoc, reidx_mul, Equiv.symm_trans_self, reidx_refl, Matrix.one_mul]
     _ = _ := by
         rw [h, Matrix.mul_assoc, Matrix.mul_assoc, reidx_mul, Equiv.self_trans_symm, reidx_refl,
@@ -215,13 +216,13 @@ section Whiskered
 
 variable (c : ℂ)
 
-theorem kron_βmat_one (X Y : Obj) (M : Type*) [Fintype M] [DecidableEq M] :
+theorem kron_βmat_one (X Y : Obj) (M : Type) [Fintype M] [DecidableEq M] :
     kron (βmat c X Y) (1 : EndL M) =
       reidx (Equiv.sumCongr (swapLegs X Y) (Equiv.refl M)) *
         expi (c • tsl ((bL X Y).map Function.Embedding.inl) ((bR X Y).map Function.Embedding.inl)) := by
   rw [βmat, kron_mul_one, kron_reidx_one, kron_expi_one, kron_smul_left, kron_tsl_one]
 
-theorem one_kron_βmat (X Y : Obj) (M : Type*) [Fintype M] [DecidableEq M] :
+theorem one_kron_βmat (X Y : Obj) (M : Type) [Fintype M] [DecidableEq M] :
     kron (1 : EndL M) (βmat c X Y) =
       reidx (Equiv.sumCongr (Equiv.refl M) (swapLegs X Y)) *
         expi (c • tsl ((bL X Y).map Function.Embedding.inr) ((bR X Y).map Function.Embedding.inr)) := by
@@ -292,50 +293,50 @@ theorem legs_hexagon_fwd : (eTop X Y Z).trans (assocLegs Y Z X) =
 theorem disj_blkXZ : Disjoint (blkX X Y Z) (blkZ X Y Z) := by
   rw [Finset.disjoint_left]; intro k; rcases k with (k | k) | k <;> simp [blkX, blkZ]
 
-variable {c : ℂ} (hc : Transcendental ℚ c)
+variable (Ψ : Associator.{0}) {c : ℂ} (hc : Transcendental ℚ c)
 
 /-- **The forward hexagon for `D_ℏ`** (matrix form). -/
 theorem hexagon_fwd_mat :
-    αmat hc Y Z X * (βmat c X (tensor Y Z) * αmat hc X Y Z) =
+    αmat Ψ hc Y Z X * (βmat c X (tensor Y Z) * αmat Ψ hc X Y Z) =
       kron (1 : EndL (Leaves Y)) (βmat c X Z) *
-        (αmat hc Y X Z * kron (βmat c X Y) (1 : EndL (Leaves Z))) := by
-  have hL : αmat hc Y Z X * (βmat c X (tensor Y Z) * αmat hc X Y Z) =
+        (αmat Ψ hc Y X Z * kron (βmat c X Y) (1 : EndL (Leaves Z))) := by
+  have hL : αmat Ψ hc Y Z X * (βmat c X (tensor Y Z) * αmat Ψ hc X Y Z) =
       reidx ((eTop X Y Z).trans (assocLegs Y Z X)) *
-        (Φt hc (blkY X Y Z) (blkZ X Y Z) (blkX X Y Z) (blkZ X Y Z) *
+        (Φt Ψ hc (blkY X Y Z) (blkZ X Y Z) (blkX X Y Z) (blkZ X Y Z) *
           expi (c • tsl (blkX X Y Z) (blkY X Y Z ∪ blkZ X Y Z)) *
-          Φt hc (blkX X Y Z) (blkY X Y Z) (blkY X Y Z) (blkZ X Y Z)) := by
+          Φt Ψ hc (blkX X Y Z) (blkY X Y Z) (blkY X Y Z) (blkZ X Y Z)) := by
     rw [βmat, αmat, αmat]
     simp only [Matrix.mul_assoc]
     rw [← Matrix.mul_assoc (expi _) (reidx (assocLegs X Y Z)), expi_tsl_mul_reidx, fwd1, fwd2]
     simp only [Matrix.mul_assoc]
     rw [← Matrix.mul_assoc (reidx (swapLegs _ _)) (reidx (assocLegs X Y Z)), reidx_mul,
       show (assocLegs X Y Z).trans (swapLegs X (tensor Y Z)) = eTop X Y Z from rfl,
-      ΦB_eq_Φt, ΦB_eq_Φt, ← Matrix.mul_assoc (Φt hc _ _ _ _) (reidx (eTop X Y Z)), Φt_mul_reidx,
+      ΦB_eq_Φt, ΦB_eq_Φt, ← Matrix.mul_assoc (Φt Ψ hc _ _ _ _) (reidx (eTop X Y Z)), Φt_mul_reidx,
       fwd3X, fwd3Y, fwd3Z]
     simp only [Matrix.mul_assoc]
     rw [← Matrix.mul_assoc (reidx (assocLegs Y Z X)) (reidx (eTop X Y Z)), reidx_mul,
-      Φt_congr hc rfl (tB_comm (blkZ X Y Z) (blkX X Y Z))]
+      Φt_congr Ψ hc rfl (tB_comm (blkZ X Y Z) (blkX X Y Z))]
   have hR : kron (1 : EndL (Leaves Y)) (βmat c X Z) *
-        (αmat hc Y X Z * kron (βmat c X Y) (1 : EndL (Leaves Z))) =
+        (αmat Ψ hc Y X Z * kron (βmat c X Y) (1 : EndL (Leaves Z))) =
       reidx (((eA X Y Z).trans (assocLegs Y X Z)).trans
         (Equiv.sumCongr (Equiv.refl _) (swapLegs X Z))) *
         (expi (c • tsl (blkX X Y Z) (blkZ X Y Z)) *
-          Φt hc (blkX X Y Z) (blkY X Y Z) (blkX X Y Z) (blkZ X Y Z) *
+          Φt Ψ hc (blkX X Y Z) (blkY X Y Z) (blkX X Y Z) (blkZ X Y Z) *
           expi (c • tsl (blkX X Y Z) (blkY X Y Z))) := by
     rw [kron_βmat_one, one_kron_βmat, fwd4L, fwd4R,
       show Equiv.sumCongr (swapLegs X Y) (Equiv.refl (Leaves Z)) = eA X Y Z from rfl, αmat,
       ΦB_eq_Φt]
     simp only [Matrix.mul_assoc]
-    rw [← Matrix.mul_assoc (Φt hc _ _ _ _) (reidx (eA X Y Z)), Φt_mul_reidx, fwd5X, fwd5Y, fwd5Z]
+    rw [← Matrix.mul_assoc (Φt Ψ hc _ _ _ _) (reidx (eA X Y Z)), Φt_mul_reidx, fwd5X, fwd5Y, fwd5Z]
     simp only [Matrix.mul_assoc]
     rw [← Matrix.mul_assoc (reidx (assocLegs Y X Z)) (reidx (eA X Y Z)), reidx_mul]
     rw [← Matrix.mul_assoc (expi _) (reidx ((eA X Y Z).trans (assocLegs Y X Z))),
       expi_tsl_mul_reidx, fwd6L, fwd6R]
     simp only [Matrix.mul_assoc]
     rw [← Matrix.mul_assoc (reidx (Equiv.sumCongr _ _)) (reidx ((eA X Y Z).trans _)), reidx_mul,
-      Φt_congr hc (tB_comm (blkY X Y Z) (blkX X Y Z)) rfl]
+      Φt_congr Ψ hc (tB_comm (blkY X Y Z) (blkX X Y Z)) rfl]
   rw [hL, hR, legs_hexagon_fwd,
-    hexagon_sl hc (disj_blkXY X Y Z) (disj_blkXZ X Y Z) (disj_blkYZ X Y Z)]
+    hexagon_sl Ψ hc (disj_blkXY X Y Z) (disj_blkXZ X Y Z) (disj_blkYZ X Y Z)]
 
 end Forward
 
@@ -404,22 +405,22 @@ theorem legs_hexagon_rev : fRev X Y Z =
     (gRev X Y Z).trans (Equiv.sumCongr (swapLegs X Z) (Equiv.refl _)) := by
   ext k; rcases k with k | (k | k) <;> rfl
 
-variable {c : ℂ} (hc : Transcendental ℚ c)
+variable (Ψ : Associator.{0}) {c : ℂ} (hc : Transcendental ℚ c)
 
-theorem αinv_eq (X Y Z : Obj) : αinv hc X Y Z =
-    Φt hc (blkY X Y Z) (blkZ X Y Z) (blkX X Y Z) (blkY X Y Z) * reidx (assocLegs X Y Z).symm :=
+theorem αinv_eq (X Y Z : Obj) : αinv Ψ hc X Y Z =
+    Φt Ψ hc (blkY X Y Z) (blkZ X Y Z) (blkX X Y Z) (blkY X Y Z) * reidx (assocLegs X Y Z).symm :=
   rfl
 
 /-- **The reverse hexagon for `D_ℏ`** (matrix form). -/
 theorem hexagon_rev_mat :
-    αinv hc Z X Y * (βmat c (tensor X Y) Z * αinv hc X Y Z) =
+    αinv Ψ hc Z X Y * (βmat c (tensor X Y) Z * αinv Ψ hc X Y Z) =
       kron (βmat c X Z) (1 : EndL (Leaves Y)) *
-        (αinv hc X Z Y * kron (1 : EndL (Leaves X)) (βmat c Y Z)) := by
-  have hL : αinv hc Z X Y * (βmat c (tensor X Y) Z * αinv hc X Y Z) =
+        (αinv Ψ hc X Z Y * kron (1 : EndL (Leaves X)) (βmat c Y Z)) := by
+  have hL : αinv Ψ hc Z X Y * (βmat c (tensor X Y) Z * αinv Ψ hc X Y Z) =
       reidx (fRev X Y Z) *
-        (Φt hc (R1 X Y Z) (R2 X Y Z) (R3 X Y Z) (R1 X Y Z) *
+        (Φt Ψ hc (R1 X Y Z) (R2 X Y Z) (R3 X Y Z) (R1 X Y Z) *
           expi (c • tsl (R1 X Y Z ∪ R2 X Y Z) (R3 X Y Z)) *
-          Φt hc (R2 X Y Z) (R3 X Y Z) (R1 X Y Z) (R2 X Y Z)) := by
+          Φt Ψ hc (R2 X Y Z) (R3 X Y Z) (R1 X Y Z) (R2 X Y Z)) := by
     rw [αinv_eq, αinv_eq, βmat]
     simp only [Matrix.mul_assoc]
     rw [Φt_mul_reidx, Equiv.symm_symm, rv1X, rv1Y, rv1Z]
@@ -430,35 +431,35 @@ theorem hexagon_rev_mat :
     rw [← Matrix.mul_assoc (reidx (assocLegs Z X Y).symm) (reidx _), reidx_mul,
       show ((assocLegs X Y Z).symm.trans (swapLegs (tensor X Y) Z)).trans
         (assocLegs Z X Y).symm = fRev X Y Z from rfl]
-    rw [← Matrix.mul_assoc (Φt hc _ _ _ _) (reidx (fRev X Y Z)), Φt_mul_reidx, rv3X, rv3Y, rv3Z]
+    rw [← Matrix.mul_assoc (Φt Ψ hc _ _ _ _) (reidx (fRev X Y Z)), Φt_mul_reidx, rv3X, rv3Y, rv3Z]
     simp only [Matrix.mul_assoc]
   have hR : kron (βmat c X Z) (1 : EndL (Leaves Y)) *
-        (αinv hc X Z Y * kron (1 : EndL (Leaves X)) (βmat c Y Z)) =
+        (αinv Ψ hc X Z Y * kron (1 : EndL (Leaves X)) (βmat c Y Z)) =
       reidx ((gRev X Y Z).trans (Equiv.sumCongr (swapLegs X Z) (Equiv.refl _))) *
         (expi (c • tsl (R1 X Y Z) (R3 X Y Z)) *
-          Φt hc (R3 X Y Z) (R2 X Y Z) (R1 X Y Z) (R3 X Y Z) *
+          Φt Ψ hc (R3 X Y Z) (R2 X Y Z) (R1 X Y Z) (R3 X Y Z) *
           expi (c • tsl (R2 X Y Z) (R3 X Y Z))) := by
     rw [kron_βmat_one, one_kron_βmat, αinv_eq]
     simp only [Matrix.mul_assoc]
     rw [← Matrix.mul_assoc (reidx (assocLegs X Z Y).symm) (reidx _), reidx_mul,
       show (Equiv.sumCongr (Equiv.refl (Leaves X)) (swapLegs Y Z)).trans (assocLegs X Z Y).symm =
         gRev X Y Z from rfl]
-    rw [← Matrix.mul_assoc (Φt hc _ _ _ _) (reidx (gRev X Y Z)), Φt_mul_reidx, rv4X, rv4Y, rv4Z]
+    rw [← Matrix.mul_assoc (Φt Ψ hc _ _ _ _) (reidx (gRev X Y Z)), Φt_mul_reidx, rv4X, rv4Y, rv4Z]
     simp only [Matrix.mul_assoc]
     rw [← Matrix.mul_assoc (expi _) (reidx (gRev X Y Z)), expi_tsl_mul_reidx, rv5L, rv5R]
     simp only [Matrix.mul_assoc]
     rw [← Matrix.mul_assoc (reidx (Equiv.sumCongr _ _)) (reidx (gRev X Y Z)), reidx_mul]
     rfl
-  have H := hexagon_sl hc (dR23 X Y Z).symm (dR13 X Y Z).symm (dR12 X Y Z).symm
+  have H := hexagon_sl Ψ hc (dR23 X Y Z).symm (dR13 X Y Z).symm (dR12 X Y Z).symm
   have d : Disjoint (R3 X Y Z) (R2 X Y Z ∪ R1 X Y Z) :=
     Finset.disjoint_union_right.2 ⟨(dR23 X Y Z).symm, (dR13 X Y Z).symm⟩
-  have h1 : Φt hc (R2 X Y Z) (R1 X Y Z) (R3 X Y Z) (R1 X Y Z) =
-      Φt hc (R1 X Y Z) (R2 X Y Z) (R3 X Y Z) (R1 X Y Z) := Φt_congr hc (tB_comm _ _) rfl
-  have h2 : Φt hc (R3 X Y Z) (R2 X Y Z) (R2 X Y Z) (R1 X Y Z) =
-      Φt hc (R2 X Y Z) (R3 X Y Z) (R1 X Y Z) (R2 X Y Z) :=
-    Φt_congr hc (tB_comm _ _) (tB_comm _ _)
-  have h3 : Φt hc (R3 X Y Z) (R2 X Y Z) (R3 X Y Z) (R1 X Y Z) =
-      Φt hc (R3 X Y Z) (R2 X Y Z) (R1 X Y Z) (R3 X Y Z) := Φt_congr hc rfl (tB_comm _ _)
+  have h1 : Φt Ψ hc (R2 X Y Z) (R1 X Y Z) (R3 X Y Z) (R1 X Y Z) =
+      Φt Ψ hc (R1 X Y Z) (R2 X Y Z) (R3 X Y Z) (R1 X Y Z) := Φt_congr Ψ hc (tB_comm _ _) rfl
+  have h2 : Φt Ψ hc (R3 X Y Z) (R2 X Y Z) (R2 X Y Z) (R1 X Y Z) =
+      Φt Ψ hc (R2 X Y Z) (R3 X Y Z) (R1 X Y Z) (R2 X Y Z) :=
+    Φt_congr Ψ hc (tB_comm _ _) (tB_comm _ _)
+  have h3 : Φt Ψ hc (R3 X Y Z) (R2 X Y Z) (R3 X Y Z) (R1 X Y Z) =
+      Φt Ψ hc (R3 X Y Z) (R2 X Y Z) (R1 X Y Z) (R3 X Y Z) := Φt_congr Ψ hc rfl (tB_comm _ _)
   rw [h1, h2, h3, tsl_comm d, Finset.union_comm, tsl_comm (dR13 X Y Z).symm,
     tsl_comm (dR23 X Y Z).symm] at H
   rw [hL, hR, legs_hexagon_rev, H]

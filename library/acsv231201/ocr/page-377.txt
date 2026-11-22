@@ -1,0 +1,45 @@
+11.2 Proof of Theorem 11.1 359
+
+normal cone — K*, and let n be the projective vector field from Lemma 11.31.
+For € > 0 and fixed u € K, let ®, be the homotopy from R¢ x [0,1] into C4
+defined by
+
+O(y) = OF" = iy + e[(1— Nu + my)] - (11.10)
+
+Then there exists c > 0 such that 7 - \(y) = cly| for all y as # varies over
+some neighborhood of f,. Furthermore, A(®,(y)) # 0 for all0 < t < 1 except
+when t = | and y = 0. Consequently, the chain u + iR¢ is homotopic in the
+complement of V4 to the projective chain C = ©,[R“] on which # - y grows
+linearly in \y|, uniformly when f varies over some neighborhood N of ..
+
+Remark. The parameter ¢ that shrinks the deformation toward a + iy has
+no consequence in Lemma 11.32, but will be useful later when we want the
+homotopy to avoid a function f whose homogenization is A.
+
+Proof By definition of cones of hyperbolicity for homogeneous functions,
+G(®,(y)) cannot vanish except if y = 0 and t = 1. The rest is Lemma 11.31
+and the definition of ®, in (11.10). Oo
+
+The next step is to glue together constructions in a neighborhood of log
+space L£ near each point of localarg(7,). We solve several problems at the
+same time. First, in order to remain in M we stop the homotopy slightly before
+t = 1 when y is near the set localarg(?,). Second, we do this construction
+simultaneously for all w € localarg(7,), gluing together the constructions in
+these neighborhoods with a standard construction outside of these neighbor-
+hoods. Third, we do this in small neighborhoods of R¢ that can be identified
+with neighborhoods in £ so as to cover the space, thus ensuring that mapping
+forward by the exponential map produces a homotopy of the torus to a contour
+that is loglinear, with height —7, - 2 decreasing linearly on the contour with
+distance from the nearest point in local(?,) and has height bounded above by
+—a-f,—c outside of these neighborhoods for some positive constant c. Fourth,
+we ensure that the homotopy remains in M. Finally, we take the opportunity
+to correct the double duty played by the parameter 6 in [BP11, Section 5]: we
+will use the subscript p when restricting a chain to a neighborhood of radius p
+and keep a superscript 6 for how early to stop the homotopy and how near to
+localarg to stop it. We always choose 6 < p, ensuring the contour looks like
+Figure 11.3.
+
+Theorem 11.33 (local projective deformation). Let B be a component of the
+complement of anoeba(Q). Suppose Q satisfies conclusion (iti) of Lemma 11.27
+and that —?,,- x is minimized on B uniquely at some point x € OB. Assume fur-
+ther that local(f..) is finite and that f, is a non-obstructed direction in the

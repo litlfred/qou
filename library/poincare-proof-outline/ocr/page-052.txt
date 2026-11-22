@@ -1,0 +1,77 @@
+shows poincare-distance-formula (to-complez (moebius-pt M u)) (to-complex (moebius-pt M v)) =
+poincare-distance-formula (to-complez u) (to-complez v) (is ?P’ uv M)
+proof—
+have V u € unit-disc. V v € unit-disc. ?P' uv M (is ?P M)
+proof (rule wlog-unit-disc-fix|OF assms(1)])
+fix k
+assume cmod k < 1
+hence of-complez k € wnit-disc
+by simp
+thus ?P (blaschke k)
+using blaschke-preserve-distance-formula
+by simp
+next
+fix y
+show ?P (moebius-rotation »)
+using rotation-preserve-distance-formula
+by simp
+next
+fix M1 M2
+assume *: ?P M1 and *«*: ?P M2 and w11: unit-disc-fix M1 unit-disc-fix M2
+thus ?P (M1 + M2)
+by (auto simp del: poincare-distance-formula-def )
+qed
+thus ?thesis
+using assms
+by simp
+qed
+
+The equivalence between the two h-distance representations.
+
+lemma poincare-distance-formula:
+assumes u € unit-disc and v € unit-disc
+shows poincare-distance u v = poincare-distance-formula (to-complex u) (to-complex v) (is ?P uv)
+proof (rule wlog-x-azis)
+fix x
+assume *: is-real zr 0 < Rex Rex < 1
+show ?P 0» (of-complex x) (is ?lhs = ?rhs)
+proof—
+have of-complex x € unit-disc of-complex x € circline-set x-axis cmod x < 1
+using * cmod-eq-Re
+by (auto simp add: circline-set-x-azis)
+hence ?lhs = |In (Re ((1 — x) / (1 + 2)))|
+using poincare-distance-zero-x-axis[of of-complex |
+by simp
+moreover
+have ?rhs = |In (Re ((1 — 2) / (1 + 2)))|
+proof —
+let 2x = 1 + 2 * (emod x)? / (1 — (emod 2)?)
+have 0 < 2 * (cmod x)? / (1 — (emod x)?)
+by (smt <cmod x < 1) divide-nonneg-nonneg norm-ge-zero power-le-one zero-le-power2)
+hence arcosh-real-gt: 1 < ?x
+
+by auto
+have ?rhs = arcosh ?x
+
+by simp
+also have ... = In ((1 + (cmod x)”) / (1 — (emod x)?) + 2 * (emod x) / (1 — (cmod x)?))
+proof—
+
+have 1 — (cmod x)? > 0
+
+using (cmod x < 1»
+
+by (smt norm-not-less-zero one-power2 power2-eq-imp-eq power-mono)
+hence 1: 2x = (1 + (cmod x)”) / (1 — (emod x)?)
+
+by (simp add: field-simps)
+have 2: ?1? — 1 = (4 * (cmod x)”) / (1 — (emod x)*)?
+
+using «1 — (cmod x)? > 0»
+
+apply (subst 1)
+
+unfolding power-divide
+
+by (subst divide-diff-eq-iff, simp, simp add: power2-eq-square field-simps)
+show ?thesis

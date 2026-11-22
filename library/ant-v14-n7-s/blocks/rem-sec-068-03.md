@@ -1,0 +1,1 @@
+A.4. One can deduce a result similar to Proposition 5A.2 on the ball B(∞, 1) by applying the automorphism z 7→1/z of P1 \ {0, µN, ∞} and the functoriality of πun,crys . Pro-unipotent harmonic actions and dynamical properties of p-adic cyclotomic multiple zeta values 1743

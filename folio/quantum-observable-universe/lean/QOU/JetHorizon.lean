@@ -26,7 +26,7 @@ LaTeX labels: `def:jet-horizon`, `def:big-bang-state`, `def:aeon`,
 - [hawking1975] https://doi.org/10.1007/BF02345020
 - [bekenstein1973] https://doi.org/10.1103/PhysRevD.7.2333
 - [penrose2010] R. Penrose, "Cycles of Time", Bodley Head 2010.
-- [manuscript] §9
+- [leitner2026] §9
 -/
 
 namespace QOU
@@ -53,7 +53,7 @@ structure GradedJetAlgebra where
     all zeroth-order sections; higher-degree jet data (A_k/A_0 for
     k ≥ 1) can carry non-trivial sections across the horizon. -/
 -- Ref: [hawking1975] Particle creation by black holes — see folio/schema/references.ts
--- Ref: [manuscript] §9/jet-horizon
+-- Ref: [leitner2026] §9/jet-horizon
 structure JetHorizon where
   /-- The graded jet algebra over the chart. -/
   algebra : GradedJetAlgebra
@@ -70,7 +70,7 @@ structure JetHorizon where
 
     Existence is not assumed: whether any affine chart admits
     a big bang state is a dynamical question. -/
--- Ref: [manuscript] §9/big-bang-state
+-- Ref: [leitner2026] §9/big-bang-state
 structure BigBangState extends JetHorizon where
   /-- Number of base points in the initial configuration. -/
   numBasePoints : ℕ
@@ -79,7 +79,7 @@ structure BigBangState extends JetHorizon where
 
 /-- The CMB (cosmic microwave background) of a big bang state:
     the degree ≥ 1 jet data that survives the degree-0 vanishing. -/
--- Ref: [manuscript] §9/cmb-boundary-datum
+-- Ref: [leitner2026] §9/cmb-boundary-datum
 structure CMBBoundaryDatum where
   /-- The big bang state whose CMB this is. -/
   source : BigBangState
@@ -97,7 +97,7 @@ structure CMBBoundaryDatum where
 /-- The observable subcategory Bun°(P(V)): configurations where
     the degree-0 algebra is non-trivial (Frobenius pairing
     non-degenerate on A_0). -/
--- Ref: [manuscript] §9/observable-subcategory
+-- Ref: [leitner2026] §9/observable-subcategory
 structure ObservableConfig where
   /-- The graded jet algebra. -/
   algebra : GradedJetAlgebra
@@ -107,7 +107,7 @@ structure ObservableConfig where
 /-- An aeon: a connected component of the observable subcategory
     Bun°(P(V)).  Maximal collection of observable configurations
     connected by flow maps without crossing a jet horizon. -/
--- Ref: [manuscript] §9/aeon
+-- Ref: [leitner2026] §9/aeon
 -- Ref: [penrose2010] R. Penrose, "Cycles of Time", Bodley Head 2010.
 structure Aeon where
   /-- The observable configurations in this aeon. -/
@@ -138,13 +138,13 @@ def adjacent (a₁ a₂ : Aeon) : Prop :=
 /-! ## Horizon functor and CMB functor -/
 
 /-- The horizon functor: sends an aeon to its boundary. -/
--- Ref: [manuscript] §9/horizon-functor
+-- Ref: [leitner2026] §9/horizon-functor
 def horizonFunctor (a : Aeon) : List JetHorizon := a.boundary
 
 /-- The CMB functor value: the degree ≥ 1 data surviving a
     boundary horizon. Composition of ∂ with the colimit of
     (A_1/A_0 ⊕ A_2/A_0) over the boundary. -/
--- Ref: [manuscript] §9/cmb-functor
+-- Ref: [leitner2026] §9/cmb-functor
 structure CMBFunctorValue where
   /-- The source aeon. -/
   source : Aeon
@@ -211,7 +211,7 @@ structure PlanckStepResult where
     the Lean did not match it.  A correct `-- Ref:` says nothing about whether
     the statement has content.
 
-    Ref: [manuscript] §9/aeon-boundary-generates-chart
+    Ref: [leitner2026] §9/aeon-boundary-generates-chart
     Ref: [penrose2010] R. Penrose, "Cycles of Time", Bodley Head 2010. -/
 
 /-- A toy graded jet algebra — `ULift Bool` at every degree, zero is `false`.
@@ -263,7 +263,7 @@ theorem planckStepResult_cmb_independent :
     `JetHorizon` interface does not (yet) carry; see the .md
     narrative for the categorical proof sketch. -/
 -- Ref: [penrose2010] R. Penrose, "Cycles of Time", Bodley Head 2010.
--- Ref: [manuscript] §9/horizon-conformal-invariance
+-- Ref: [leitner2026] §9/horizon-conformal-invariance
 theorem horizon_conformal_invariance
     (H : JetHorizon)
     (s : H.algebra.sections 0)
@@ -302,7 +302,7 @@ theorem ccc_boundary_data_exists (H : JetHorizon) :
     formulation were unused (Copilot, PR #776).  Tracking the
     CCC-2 piece as conditional-class follow-up work. -/
 -- Ref: [penrose2010] R. Penrose, "Cycles of Time", Bodley Head 2010.
--- Ref: [manuscript] §9/qou-is-ccc
+-- Ref: [leitner2026] §9/qou-is-ccc
 theorem qou_is_ccc (H : JetHorizon) :
     -- CCC-1: degree-0 vanishes
     (∀ s, s = H.algebra.zero 0) ∧

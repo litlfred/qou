@@ -4,7 +4,7 @@ import QOU.BraidKnot.ClassicalRiemannHypothesis
 # QOU.BraidKnot.AdelicCriticalLinePersistence — conjectural class (§3b)
 
 **§3b class axiomatisation** for content block
-[`conj:adelic-critical-line-persistence`](../../../quantum-observable-universe/stochastic-mechanics/adelic-critical-line-persistence.md).
+[`conj:adelic-critical-line-persistence`](../../../quantum-observable-universe/q-geometric-langlands/adelic-critical-line-persistence.md).
 
 This is the **keystone step of the q-Riemann-hypothesis arc**, and until now it
 had no carrier of any kind. The arc runs
@@ -45,7 +45,7 @@ family satisfying the antecedent. **No instance is provided here; that is the
 honest open state** (§3b-tax: this is a *primary* conjecture, taking no other
 conjecture class as a hypothesis).
 
-Ref: [manuscript] quantum-observable-universe/stochastic-mechanics/adelic-critical-line-persistence.md
+Ref: [leitner2026] quantum-observable-universe/q-geometric-langlands/adelic-critical-line-persistence.md
 -/
 
 namespace QOU.BraidKnot
@@ -62,7 +62,7 @@ is exactly this class's antecedent, and is well-posed because
 `spectral_coord_re_unique` makes that real part branch-independent.
 
 Conjectural class — see
-[`conj:adelic-critical-line-persistence`](../../../quantum-observable-universe/stochastic-mechanics/adelic-critical-line-persistence.md). -/
+[`conj:adelic-critical-line-persistence`](../../../quantum-observable-universe/q-geometric-langlands/adelic-critical-line-persistence.md). -/
 class AdelicCriticalLinePersistence {P : Type*} (localSpectrum : P → Fin 8 → ℂ) :
     Prop where
   /-- Local alignment at every place implies the global critical-line property.

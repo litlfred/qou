@@ -1,4 +1,4 @@
-We compute the nuclear normal form inductively by reducing intermediate words after each multiplication.
+Compute the nuclear normal form inductively by reducing intermediate words after each multiplication.
 
 **Proposition.**
 *The inductive step yields a normal form containing at most $\binom{A-1}{\lfloor(A-1)/2\rfloor}$ terms.*

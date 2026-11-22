@@ -34,7 +34,7 @@
   §7c: the estimate is archimedean (a genuine `ℝ`-valued growth bound), so
   `Real.exp` / `‖·‖` are the honest carriers.
 
-  -- Ref: [manuscript] Ahlfors, "Complex Analysis" §5.3 Lemma; Conway,
+  -- Ref: [leitner2026] Ahlfors, "Complex Analysis" §5.3 Lemma; Conway,
   --      "Functions of One Complex Variable" XI.§2 Lemma 2.6.
 -/
 

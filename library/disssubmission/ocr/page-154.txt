@@ -1,0 +1,49 @@
+146 Chapter 6 — The generic rank of Brill-Noether sheaves
+
+Since the Betti polynomial of the constant perverse sheaf is p(5y,&) = E78
+it follows that
+
+p(“6",E) = € 4/6),
+
+where g € C[é] is determined by
+g(t!/? 4171/2) _ y (—1)"*8 dime (7 (66%) ) fm.
+
+meZ
+In particular, the Euler characteristic we are interested in is (—1)8 times the
+coefficient of E78 in p(°S%,E). To compute this coefficient, recall that by
+definition we have a direct sum decomposition 6% = ?5% @°5* where 75%
+is a perverse sheaf without constituents dy. The latter property implies that
+the coefficient of r° in h(?5%,t) vanishes for all |e| > g, hence p(?5%,&) is
+a polynomial of degree less than 2g in &. In other words,
+
+p(6%,&) = p(6%,€) + terms of degree < 2g,
+
+and it remains to note that in view of lemma 6.7 the coefficient of €78 in the
+polynomial h(5%,) = h(dy,,€)---A(dz,,6) is given by the sum displayed
+on the right hand side of the corollary. Oo
+
+6.6. Some numerical values
+
+The recursion formula in theorem 6.1 determines the generic rank rg for
+any partition a. For future reference we include below a list of these generic
+ranks for all partitions with 3 < deg(a) < 9. For each degree d = deg(a) the
+values of rq are listed in a table whose rows are labeled by the partition
+and whose columns are labeled by the genus g. For the sake of brevity we
+denote multiplicities in a partition by exponents, so the notation [3*2, 1]
+refers to the partition (3,3, 1). Of course it suffices to deal with genera g < d
+since otherwise ra = 0 by example 6.2.
+
+In the same example we have seen that in degree d = deg(a) = g the
+generic rank rg is the dimension of Specht module og. This allows to check
+the last column in our tables by hand via the hook formula for the dimension
+of Specht modules [88, sect. 3.10]. It seems reasonable to expect a similar,
+though more complicated, combinatorial rule for the computation of the
+generic ranks rg in general. For example, the tables suggest that
+
+ra = Cer) for the partition a = (d)' = (1,1,...,1).
+d parts
+
+However, unfortunately such a formula cannot be proved directly from the
+recursion in theorem 6.1 without a guess about the ranks rq also for all
+other partitions, indeed the partition (1,1,...,1) is minimal with respect to
+the lexicographic ordering.

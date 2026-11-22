@@ -2,92 +2,57 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-0611521v1",
  "source_sha256": "65fcd77b7b0a208e",
- "brief": "THE q-ANALOGUE OF THE WILD FUNDAMENTAL GROUP — We describe an explicit construction of galoisian Stokes op erators for irregular linear q-difference equations.",
- "extended": "**THE q-ANALOGUE OF THE WILD FUNDAMENTAL GROUP**\n\n*J.-P. Ramis∗, J. Sauloy †*\n\n22 pp, 16 sections.\n\n**Abstract.** We describe an explicit construction of galoisian Stokes op erators for irregular linear q-difference equations. These operators are parameterized by the points of an elliptic curve minus a ﬁnite set of singularities. Taking residues at these singularities, one gets q-analogues of alien derivations which freely generate the Lie algebra of the Stokes subgroup of the Galois group.\n\n**Outline.** Abstract; 1 Introduction; 1 (D∗,d) of π1(D∗,d): a D-module “is” a repres; 1 (D∗,d). The “small fundamental group” is the; 1 (D∗,d). The small group is Zariski-dense in ; 2 Prerequisites (mostly from [26], [27], [21] ; 2.1 General facts; 2.2 Filtration by the slopes; 0 Is; 2.3 Stokes operators; 3 Stokes operators and alien derivations; 3.1 Stokes operators are galois; 3.2 Alien derivations and q-Borel transform; 4 Conclusion; Acknowledgements; References",
+ "brief": "The q-analogue of the wild fundamental group — We describe an explicit construction of galoisian Stokes operators for irregular linear q-difference equations.",
+ "extended": "**The q-analogue of the wild fundamental group**\n\n*J.-P. Ramis∗, J. Sauloy †*\n\n22 pp, 9 sections.\n\n**Abstract.** We describe an explicit construction of galoisian Stokes operators for irregular linear q-difference equations. These operators are parameterized by the points of an elliptic curve minus a ﬁnite set of singularities. Taking residues at these singularities, one gets q-analogues of alien derivations which freely generate the Lie algebra of the Stokes subgroup of the Galois group.\n\n**Outline.** Front matter; 1 Introduction; 2.1 General facts; 2.2 Filtration by the slopes; 2.3 Stokes operators; 3 Stokes operators and alien derivations; 3.1 Stokes operators are galois; 3.2 Alien derivations and $q$-Borel transform; 4 Conclusion",
  "tokens": {
   "brief": 39,
-  "extended": 241
+  "extended": 185
  },
  "sections": [
   {
-   "id": "sec-000-abstract",
-   "title": "Abstract",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-1"
   },
   {
-   "id": "sec-001-1-introduction",
+   "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-2"
+   "pages": "1-8"
   },
   {
-   "id": "sec-002-1-dd-of-π1dd-a-d-module-is-a-representation-ρ",
-   "title": "(D∗,d) of π1(D∗,d): a D-module “is” a representation ρ⊗",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-003-1-dd-the-small-fundamental-group-is-the-topologi",
-   "title": "(D∗,d). The “small fundamental group” is the topological group π1(D∗,d),",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-004-1-dd-the-small-group-is-zariski-dense-in-the",
-   "title": "(D∗,d). The small group is Zariski-dense in the",
-   "pages": "2-8"
-  },
-  {
-   "id": "sec-005-2-prerequisites-mostly-from-26-27-21-and-28",
-   "title": "Prerequisites (mostly from [26], [27], [21] and [28])",
-   "pages": "8-8"
-  },
-  {
-   "id": "sec-006-21-general-facts",
+   "id": "sec-001-21-general-facts",
    "title": "General facts",
    "pages": "8-10"
   },
   {
-   "id": "sec-007-22-filtration-by-the-slopes",
+   "id": "sec-002-22-filtration-by-the-slopes",
    "title": "Filtration by the slopes",
    "pages": "10-12"
   },
   {
-   "id": "sec-008-0-is",
-   "title": "Is",
-   "pages": "12-12"
-  },
-  {
-   "id": "sec-009-23-stokes-operators",
+   "id": "sec-003-23-stokes-operators",
    "title": "Stokes operators",
    "pages": "12-14"
   },
   {
-   "id": "sec-010-3-stokes-operators-and-alien-derivations",
+   "id": "sec-004-3-stokes-operators-and-alien-derivations",
    "title": "Stokes operators and alien derivations",
    "pages": "14-14"
   },
   {
-   "id": "sec-011-31-stokes-operators-are-galois",
+   "id": "sec-005-31-stokes-operators-are-galois",
    "title": "Stokes operators are galois",
    "pages": "14-16"
   },
   {
-   "id": "sec-012-32-alien-derivations-and-q-borel-transform",
-   "title": "Alien derivations and q-Borel transform",
+   "id": "sec-006-32-alien-derivations-and-q-borel-transform",
+   "title": "Alien derivations and $q$-Borel transform",
    "pages": "16-19"
   },
   {
-   "id": "sec-013-4-conclusion",
+   "id": "sec-007-4-conclusion",
    "title": "Conclusion",
-   "pages": "19-20"
-  },
-  {
-   "id": "sec-014-acknowledgements",
-   "title": "Acknowledgements",
-   "pages": "20-20"
-  },
-  {
-   "id": "sec-015-references",
-   "title": "References",
-   "pages": "20-22"
+   "pages": "19-22"
   }
  ],
  "provenance": {

@@ -60,7 +60,7 @@ Consequently the exactness theorem downstream takes
 vacuous: `Prod.hasHomotopyLiftingPropertyRel_fst` proves it, for every `Y` and
 every `A`, for the projection of a trivial bundle `B × F → B`.
 
--- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes
+-- Ref: [leitner2026] quantum-observable-universe/quantum-observable-universes
 -/
 
 namespace QOU.Mathlib.HomotopyLifting

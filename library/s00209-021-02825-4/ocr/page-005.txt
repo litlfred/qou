@@ -1,0 +1,60 @@
+A representation theoretic explanation... 1363
+
+Note that this result can be seen as an extension of the generalized Grace’s theorem given in
+Corollary 4.4 of [17].
+
+Theorem 5.1 Fix A € Nj and f, g € C*Lx1,..., Xm] such that f and g both have a nonzero
+term of degree i. Also, denote C := H4 UR and €:=H_UR_. If f is C"-stable and g
+is C”-stable, then (f, g)* #0.
+
+This result can, for instance, give stability information about positive- and negative-rooted
+polynomials. Since the apolarity form is invariant under the action of MGbius transformations,
+we immediately obtain similar statements regarding the union of any open circular region and
+a portion of its boundary. Notice also that, unlike the classical Grace’s theorem, the stability
+regions C and C have non-empty intersection.
+
+In the vein of this extension, we provide a new characterization of a certain class of linear
+
+operators which preserve ray- and interval-rootedness. The problem of classifying all such
+operators is still open in general (see e.g., the end of [3]). Here, we solve this problem for
+a restricted class of operators: namely, operators which both preserve weak real-rootedness
+and also preserve ray- or interval-rootedness. Our main result in this direction is stated as
+follows, where a polynomial is called J-rooted when all of its roots are in J:
+Theorem 7.8 Fix a linear operator T : R"[x] > R[x] which has image of dimension
+greater than two. Further, let 1, J © R be intervals or rays. Up to certain degree restric-
+tions, T preserves weak real-rootedness and maps I-rooted polynomials to nonzero J -rooted
+polynomials ifand only ifSymb(T) is either (H_-U1) x (H4.\ J)-stable or (HUI) x (H_\J)-
+stable.
+
+In Sect. 7.4, this result is stated in a more restricted manner as the degeneracy condition
+(image dimension) and degree restrictions end up being more tedious than in the other results.
+Corollary 7.9 and further explication then give the result as stated here.
+
+As a final note, all of the results given here in the introduction are stated slightly differently
+in Sects. 5, 6, 7. In particular, the notation V(A) is used in place of C*[x1,..., Xm], and
+reference is made to CP! (i.e., the Riemann sphere). This notation has to do with consideration
+of “roots at infinity”, which allows us to remove degree restrictions and avoid reference to
+convex circular regions. We discuss this rigorously in Sect. 2.2.
+
+Aroadmap
+
+We now describe the content of the remainder of this paper. In Sect. 2, we discuss the use of
+homogeneous polynomials via the notation V(n) and V (A), and we describe the relation of
+these spaces to the notion of roots at infinity.
+
+In Sect. 3, we explicate some very basic representation theory of SL2(C). We then demon-
+strate how the apolarity form and the symbol arise as natural constructs in this context. Results
+like the symbol lemma (Lemma 3.7) and the SL2(C)-invariance of the apolarity form are
+stated here.
+
+In Sect. 4, we discuss some classical and some new polynomial stability theory results,
+and their multivariate analogues, in the homogeneous context. We also extend Laguerre’s
+theorem to projectively convex regions (generalized circular regions), which later allows us
+to prove results regarding polynomials which have all their roots in a given interval.
+
+In Sect. 5, we state and prove our generalized Grace’s theorem. We also discuss other
+stability regions to which the theorem applies, and consider symbols of linear operators
+given by evaluation at a particular point. We call these polynomials evaluation symbols, as
+they turn out to play a crucial role in the proofs of the operator characterizations.
+
+D Springer

@@ -1,0 +1,55 @@
+4.4 The pionful theory
+
+N = Ocase reflecting the improved dispersion relation approximation which is necessary as we receive
+data points in different regimes for different lattice spacings. Therefore, we use N = 3.5 for the following
+calculations.
+
+Comparing the theoretical predictions with the experimental values gives the impression of a large
+deviation particularly for r3 Sy° As we only work at lowest order, we cannot expect to get the physical
+value already. But we can perform a consistency check for our predictions as there exists a relation
+between the binding energy, the scattering length and the effective range, see e.g. Ref. [23]
+
+1 r, 5r2
+bp - [ire Se.) (4.20)
+
+Qua? a; 4a
+
+Ss
+
+This equation is valid for positive scattering length a, and the expansion in r,/a,, with r, the effective
+range, is useful provided |r,|« a,. As we do not include any partial wave mixing, we can use the expansion
+up to O(r2 /az) and compare the physical binding energy in this scheme with our lattice predictions.
+Then the binding energy is Ez = —2.052(1) MeV for the physical values of the scattering length and the
+effective range and our lattice predictions give a binding energy of Eg, = —2.009(1)...— 1.999(1) MeV
+showing that the relation in Eq. (4.20) is approximately fulfilled.
+
+The constant value of b can be explained by the smearing function itself and the Fourier transformation
+of the contact interaction given in Eq. (4.13) in dependence of the cutoff/ lattice spacing. While we work
+on the lattice, the Fourier transformation is limited by the maximum momentum z/a. As we consider
+the continuum limit, new contributions to the summation are added in Eq. (4.13) as /a — oo and the
+value of the normalization constant changes. The normalization constant fy approaches a finite limit
+and the new contributions are exponentially suppressed. Hence, the lattice spacing dependence of the
+smearing constant should approach a constant value as long as other discretization errors are negligible.
+This is also a good check for other regularizations procedures. We will use this condition to find the best
+regularization scheme in the upcoming section. It is quite remarkable that the pionless theory can be
+regularized by such a constant Gaussian smearing leading to a-independent results for 0.5 < a $ 2.0 fm.
+Given that the typical extension of a nucleon is given by a scale of r ~ 0.85 fm, this means that the EFT
+can be used for all momenta that do not lead to a resolution of the internal nucleon structure, at least in
+the pionless theory. A direct comparison with the results of a continuum calculation is difficult because
+the occuring divergences are usually treated in a different way. As done in Ref. [112], one can calculate
+the scattering matrix using the bubble chain summation with a regularization f(f) = exp(—bp” /2) similar
+to the smeared contact interaction on the lattice instead of dimensional regularization or a finite cut-off.
+Then the T-matrix is expanded up to and including O( PB’) and matched to the effective range expansion
+parameters. The values one obtains are of the same order as the lattice values but do not match them
+exactly. Note further that the extension to the three-particle system is not straightforward because of
+the Efimov effect that requires the inclusion of a three-body contact interaction already at leading order
+[113].
+
+4.4 The pionful theory
+
+Including pions is necessary for an effective field theory at higher energies. Therefore pions are included
+according to Eq. (4.3) and the full Hamiltonian is
+
+H= Aree + Aeon + Hope . (4.21)
+
+45

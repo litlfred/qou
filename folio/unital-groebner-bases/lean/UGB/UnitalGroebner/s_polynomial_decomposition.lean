@@ -54,7 +54,7 @@ def sPolynomial (a₁ a₂ : k) (f₁ f₂ : AlgElement G k) : AlgElement G k :=
     `AlgElement` (which is a raw data structure, not a quotient — see the
     `AlgOps.lean` §6 design note); supplying that ext principle is the
     remaining manuscript step. -/
--- Ref: [manuscript] unital-groebner-bases/unital-groebner-bases-chapter/s-polynomial-decomposition.ts
+-- Ref: [leitner2026] unital-groebner-bases/unital-groebner-bases-chapter/s-polynomial-decomposition.ts
 theorem s_polynomial_decomposition
     (a₁ a₂ c₁ c₂ : k) (f₁ f₂ : AlgElement G k)
     (ha₁ : a₁ ≠ 0) (ha₂ : a₂ ≠ 0)
@@ -66,7 +66,7 @@ theorem s_polynomial_decomposition
   -- c₂ = −c₁a₁a₂⁻¹), so the two sides agree coefficient-wise. The
   -- coefficient-wise equality ⇒ AlgElement equality step is the pending
   -- manuscript ext argument (AlgElement is not a quotient type).
-  -- Ref: [manuscript] unital-groebner-bases — s-polynomial-decomposition
+  -- Ref: [leitner2026] unital-groebner-bases — s-polynomial-decomposition
   refine ⟨c₁ * a₁, ?_⟩
   rcases f₁ with ⟨coeff₁, supp₁, spec₁⟩
   rcases f₂ with ⟨coeff₂, supp₂, spec₂⟩

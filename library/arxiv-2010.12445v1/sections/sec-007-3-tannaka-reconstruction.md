@@ -1,0 +1,92 @@
+---
+doc_id: arxiv-2010.12445v1
+doc_title: "STACKS OF FIBER FUNCTORS AND TANNAKA’S RECONSTRUCTION"
+section_id: sec-007-3-tannaka-reconstruction
+section_title: "Tannaka Reconstruction"
+section_number: 3
+pages: 14-17
+source_pdf: 2010.12445v1.pdf
+source_sha256: 16e9ca22ecc1f296
+toc_source: outline
+text_source: latex
+latex_prose_ratio: 0.922
+latex_coverage_ratio: 0.94
+doc_brief: "STACKS OF FIBER FUNCTORS AND TANNAKA’S RECONSTRUCTION — Given a quasi-compact category ﬁbered in groupoids X and a monoidal subcat- egory C of its category of locally free sheaves Vect(X), we are"
+---
+The goal of this section is to introduce the stack of fiber functors and prove Theorem [\[thma\]](#thma){reference-type="ref" reference="thma"}. We will work over a base ring $R$ and denote by $A$ a general $R$-algebra.
+
+::: defn
+[]{#def:definition of Fib stacks label="def:definition of Fib stacks"} Let $\stX$ be a quasi-compact fiber category over $R$, $\shC\subseteq\mathop{\mathrm{\textup{Loc}}}\stX$ a monoidal subcategory and $A$ an $R$-algebra. We define $\mathop{\mathrm{\textup{SMex}}}_{R}(\shC,A)$ as the category of contravariant, $R$-linear and *strong* monoidal functors $\Gamma\colon\shC\to\mathop{\mathrm{\textup{Mod}}}A$ such that, for all geometric points $\mathop{\mathrm{\textup{Spec}}}k\arr\mathop{\mathrm{\textup{Spec}}}A$, $\Gamma\otimes_{A}k$ are left exact in the sense of [\[def:basic categories\]](#def:basic categories){reference-type="ref" reference="def:basic categories"}.
+
+Let $\stY$ be another fibered category over $R$. A functor $\shC\arr\mathop{\mathrm{\textup{Loc}}}\stY$ is said a *fiber* functor if it is a *covariant*, $R$-linear and strong monoidal functor which is right exact in the sense of [\[def:exactness\]](#def:exactness){reference-type="ref" reference="def:exactness"}. We denote by $\Fib_{\stX,\shC}(\stY)$ the category of fiber functors $\shC\to\mathop{\mathrm{\textup{Vect}}}(\stY)$.
+
+We define $\Fib_{\stX,\shC}$ as the fiber category (not necessarily in groupoids) over $R$ whose fiber over an $R$-algebra $A$ is $\Fib_{\stX,\shC}(\mathop{\mathrm{\textup{Spec}}}A)$ and we call $\shP_{\shC}$ the functor $$\shP_{\shC}\colon\stX\arr\Fib_{\stX,\shC}\comma(\mathop{\mathrm{\textup{Spec}}}A\arrdi s\stX)\longmapsto(s^{*}\colon\shC\arr\mathop{\mathrm{\textup{Loc}}}A)\label{eq:tannaka reconstruction functor}$$ The fibered category $\Fib_{\stX,\shC}$ is called the *stack of fiber functors.*
+:::
+
+We will prove the following result and, in particular, Theorem [\[thma\]](#thma){reference-type="ref" reference="thma"}.
+
+::: thm
+[]{#thm: Tannaka reconstrion for Loc X label="thm: Tannaka reconstrion for Loc X"} Let $\stX$ be a quasi-compact fpqc stack over $R$ with quasi-affine diagonal, $A$ be an $R$-algebra and $\shC\subseteq\mathop{\mathrm{\textup{Loc}}}\stX$ be a monoidal subcategory with duals that generates $\mathop{\mathrm{\textup{QCoh}}}\stX$. Then the functors $$\begin{tikzpicture}[xscale=4.2,yscale=-0.6]     \node (A0_0) at (0, 0) {$(\mathop{\mathrm{\textup{Spec}}}\alA_{\Gamma,\shC }\arr \stX)$};     \node (A0_1) at (1, 0) {$(\Gamma \colon \shC\arr\mathop{\mathrm{\textup{Mod}}}A)$};     \node (A1_0) at (0, 1) {$\stX(A)$};     \node (A1_1) at (1, 1) {$\mathop{\mathrm{\textup{SMex}}}_R(\shC,A)$};     \node (A2_0) at (0, 2) {$(s\colon \mathop{\mathrm{\textup{Spec}}}A\arr\stX)$};     \node (A2_1) at (1, 2) {$(\duale {(s^*_{|\shC})}\colon \shC\arr\mathop{\mathrm{\textup{Loc}}}A)$};     \path (A1_0) edge [->]node [auto] {$\scriptstyle{}$} (A1_1);     \path (A2_0) edge [|->,gray]node [auto] {$\scriptstyle{}$} (A2_1);     \path (A0_1) edge [|->,gray]node [auto] {$\scriptstyle{}$} (A0_0);   \end{tikzpicture}$$ are well defined and quasi-inverses of each other. In particular the functor $\shP_{\shC}\colon\stX\arr\Fib_{\stX,\shC}$ is an equivalence of stacks.
+:::
+
+An immediate corollary and generalization of Theorem [\[thm: Tannaka reconstrion for Loc X\]](#thm: Tannaka reconstrion for Loc X){reference-type="ref" reference="thm: Tannaka reconstrion for Loc X"} is the following.
+
+::: cor
+[]{#cor:Lurie s point of view label="cor:Lurie s point of view"} Let $\stX$ be a quasi-compact fpqc stack over $R$ with quasi-affine diagonal, $\shC\subseteq\mathop{\mathrm{\textup{Loc}}}\stX$ be a monoidal subcategory with duals that generates $\mathop{\mathrm{\textup{QCoh}}}\stX$ and $\stY$ be a fibered category over $R$. Then the functor $$\mathop{\mathrm{\textup{Hom}}}(\stY,\stX)\arr\Fib_{\stX,\shC}(\stY)\comma(\stY\arrdi f\stX)\longmapsto f_{|\shC}^{*}\colon\shC\arr\mathop{\mathrm{\textup{Loc}}}(\stY)$$ is an equivalence of categories.
+:::
+
+::: proof
+*Proof.* The map in the statement is obtained applying $\mathop{\mathrm{\textup{Hom}}}(\stY,-)$ to the functor $\shP_{\shC}\colon\stX\arr\Fib_{\stX,\shC}$, which is an equivalence by [\[thm: Tannaka reconstrion for Loc X\]](#thm: Tannaka reconstrion for Loc X){reference-type="ref" reference="thm: Tannaka reconstrion for Loc X"}. ◻
+:::
+
+::: rem
+[]{#rem:comparison with classical tannakas reconstruction label="rem:comparison with classical tannakas reconstruction"} Let $R=k$ be a field, $\stX=\Delta$ be an affine gerbe over $k$ and $\shC=\mathop{\mathrm{\textup{Vect}}}(\Delta)$, which is a $k$-Tannakian category. The stack of fiber functor $\Pi_{\shC}\to\mathop{\mathrm{\textup{Aff}}}/k$ usually associated with $\shC$ is defined as $$\Pi_{\shC}(A)=\{k\text{-linear, exact and strong monoidal functors }\shC\to\mathop{\mathrm{\textup{Vect}}}(A)\}$$ Sometimes it is also required that those functors are faithful. In any case, by [@CT90 Cor 2.10] all those notions coincide and $\Pi_{\shC}=\Fib_{\Delta,\shC}$. Classical Tannaka's reconstruction states that the functor $\shP_{\shC}\colon\Delta\to\Pi_{\shC}=\Fib_{\Delta,\shC}$ is an equivalence. On the other hand $\shC=\mathop{\mathrm{\textup{Vect}}}(\Delta)$ generates $\mathop{\mathrm{\textup{QCoh}}}(\Delta)$ (see [@CT90 Corollary 3.9]), so that Theorem [\[thm: Tannaka reconstrion for Loc X\]](#thm: Tannaka reconstrion for Loc X){reference-type="ref" reference="thm: Tannaka reconstrion for Loc X"} can be seen of a generalization of classical Tannaka's reconstruction.
+:::
+
+::: rem
+Even though we keep choosing a base ring $R$, the fibered category $\Fib_{\stX,\shC}\to\mathop{\mathrm{\textup{Aff}}}/R\to\mathop{\mathrm{\textup{Aff}}}$ does not depend on this choice: we may have chosen $R=\Z$ or $R=\mathop{\mathrm{\textup{H}}}^{0}(\odi{\stX})$. Indeed if $A$ is an $R$-algebra and $\Gamma\colon\shC\to\mathop{\mathrm{\textup{Mod}}}(A)$ is an $R$-linear functor, then $\mathop{\mathrm{\textup{H}}}^{0}(\odi{\stX})=\mathop{\mathrm{\textup{End}}}(\odi{\stX})\to\mathop{\mathrm{\textup{End}}}(A)=A$ makes $A$ into a $\mathop{\mathrm{\textup{H}}}^{0}(\odi{\stX})$-algebra and $\Gamma$ into an $\mathop{\mathrm{\textup{H}}}^{0}(\odi{\stX})$ linear functor.
+:::
+
+::: lem
+[]{#lem:strong monoidal implies surjective label="lem:strong monoidal implies surjective"} Let $\stX$ be a quasi-compact fibered category over $R$, $\shC\subseteq\mathop{\mathrm{\textup{Loc}}}\stX$ be a monoidal subcategory with duals, $\Gamma\colon\shC\to\mathop{\mathrm{\textup{Vect}}}(A)$ be a contravariant, $R$-linear and strong monoidal functor and set $\alA=\alA_{\Gamma,\shC}$, $f\colon\stY=\mathop{\mathrm{\textup{Spec}}}\alA\to\stX$. Then $$\Omega_{\E}^{\alA}\simeq\mathop{\mathrm{\textup{H}}}^{0}((f^{*}\E)^{\vee})$$ and the map $$\Gamma_{\E}\otimes_{A}\odi{\stY}\to(f^{*}\E)^{\vee}$$ induced by $\Gamma\to\Omega^{\alA}$ is surjective.
+:::
+
+::: proof
+*Proof.* Set $\pi\colon\stX_{A}\to\stX$ for the projection. We have monoidal isomorphisms $$\Omega_{\E}^{\alA}=\mathop{\mathrm{\textup{Hom}}}(\pi^{*}\E,\alA)\simeq\mathop{\mathrm{\textup{Hom}}}(\E,f_{*}\odi{\stY})\simeq\mathop{\mathrm{\textup{Hom}}}(f^{*}\E,\odi{\stY})=\mathop{\mathrm{\textup{H}}}^{0}(\duale{(f^{*}\E)})$$ In particular we obtain a monoidal natural transformation $\Gamma\to\Omega^{\alA}=\mathop{\mathrm{\textup{H}}}^{0}((f^{*}-)^{\vee})$ and therefore a commutative diagram $$\begin{tikzpicture}[xscale=3.0,yscale=-1.2]     \node (A0_0) at (0, 0) {$\Gamma_\E \otimes \Gamma_{\E^\vee}$};     \node (A0_1) at (1, 0) {$\mathop{\mathrm{\textup{H}}}^0(f^*\E^\vee) \otimes \mathop{\mathrm{\textup{H}}}^0(f^*\E) $};     \node (A1_0) at (0, 1) {$\Gamma_{\E\otimes \E^\vee}$};     \node (A1_1) at (1, 1) {$\mathop{\mathrm{\textup{H}}}^0(f^*(\E\otimes \E^\vee)^\vee)$};     \path (A0_0) edge [->]node [auto] {$\scriptstyle{}$} (A0_1);     \path (A0_0) edge [->]node [auto] {$\scriptstyle{}$} (A1_0);     \path (A0_1) edge [->]node [auto] {$\scriptstyle{\omega}$} (A1_1);     \path (A1_0) edge [->]node [auto] {$\scriptstyle{}$} (A1_1);   \end{tikzpicture}$$ Consider the evaluation $e\colon\E\otimes\E^{\vee}\to\odi{\stX}$, which is a map in $\shC$ because $\shC$ has duals. The morphism $\mathop{\mathrm{\textup{H}}}^{0}(f^{*}\odi{\stX}^{\vee})\to\mathop{\mathrm{\textup{H}}}^{0}(f^{*}(\E\otimes\E^{\vee})^{\vee})$ maps $1$ to an element that we denote by $\psi$. After the usual identifications $\E\otimes\E^{\vee}\simeq\mathop{\mathrm{\underline{\textup{End}}}}(\E)$, the map $\omega$ become the evaluation $$\omega\colon\mathop{\mathrm{\textup{H}}}^{0}(f^{*}\E)\otimes\mathop{\mathrm{\textup{Hom}}}_{\stY}(f^{*}\E,\odi{\stY})\arr\mathop{\mathrm{\textup{End}}}_{\stY}(f^{*}\E)\comma\omega(x\otimes\phi)(y)=x\phi(y)$$ while $\psi$ become $\id_{f^{*}\E}$.
+
+By hypothesis the vertical map on the left in the above diagram is an isomorphism. By functoriality, there exist $x_{1},\dots,x_{n}\in\mathop{\mathrm{\textup{H}}}^{0}(f^{*}\E)$, $\phi_{1},\dots,\phi_{n}\in\mathop{\mathrm{\textup{Hom}}}(f^{*}\E,\odi{\stX})$, coming respectively from $\Gamma_{\E^{\vee}}$ and $\Gamma_{\E}$, such that $\id_{f^{*}\E}=\omega(\sum_{i}x_{i}\otimes\phi_{i})$. This implies that the map $\odi{\stY}^{n}\arr f^{*}\E$ given by the global sections $x_{1},\dots,x_{n}$ is surjective. Since this map factors through $\Gamma_{\E^{\vee}}\otimes_{A}\odi{\stY}\to f^{*}\E$ by construction, this ends the proof. ◻
+:::
+
+::: lem
+[]{#lem:Fib and smex the same label="lem:Fib and smex the same"} Let $\stX$ be a quasi-compact fibered category over $R$ and $\shC\subseteq\mathop{\mathrm{\textup{Loc}}}\stX$ be a monoidal subcategory. If $\Gamma\in\mathop{\mathrm{\textup{SMex}}}_{R}(\shC,A)$ and $\E'\xrightarrow{\beta}\E\to0$ or $\E''\arrdi{\alpha}\E'\arrdi{\beta}\E\to0$ is a finite test sequence in $\shC$ then $$0\to\Gamma_{\E}\to\Gamma_{\E'}\to\mathop{\mathrm{\textup{Coker}}}(\Gamma_{\beta})\to0\text{ and }0\to\mathop{\mathrm{\textup{Coker}}}(\Gamma_{\beta})\to\Gamma_{\E''}\to\mathop{\mathrm{\textup{Coker}}}(\Gamma_{\alpha})\to0$$ are short exact sequences of vector bundles over $A$.
+
+In particular $\Gamma$, as well as any base change $\Gamma\otimes_{A}B$ for an $A$-algebra $B$, are left exact. Moreover $\Gamma\otimes_{A}B\in\mathop{\mathrm{\textup{SMex}}}_{R}(\shC,B)$.
+:::
+
+::: proof
+*Proof.* By [@SP014 Tag 046Y] if $M\to N$ is a map of vector bundles over $A$ and, for all $p\in\mathop{\mathrm{\textup{Spec}}}A$, the map $M\otimes_{A}k(p)\to N\otimes_{A}k(p)$ is injective then $M\to N$ is injective and $N/M$ is flat. As $N/M$ is finitely presented we can moreover conclude that $N/M$ is a vector bundle. Applying this on the map $\Gamma_{\E}\to\Gamma_{\E'}$ we obtain the first exact sequence and that $\mathop{\mathrm{\textup{Coker}}}(\Gamma_{\beta})$ is locally free. Here we use the definition of $\mathop{\mathrm{\textup{SMex}}}$, which also tell us that $\gamma\colon\mathop{\mathrm{\textup{Coker}}}(\Gamma_{\beta})\to\Gamma_{\E''}$ is injective on the geometric point. Again we can conclude that this map is injective and that $\mathop{\mathrm{\textup{Coker}}}(\gamma)$ is a vector bundle. As $\mathop{\mathrm{\textup{Coker}}}(\gamma)=\mathop{\mathrm{\textup{Coker}}}(\Gamma_{\alpha})$ this concludes the proof. ◻
+:::
+
+By definition $\mathop{\mathrm{\textup{SMex}}}_{R}(\shC,-)$ is a stack (not necessarily in groupoids) over $\mathop{\mathrm{\textup{Aff}}}/R$. The next result tells us that this stack is just $\Fib_{\stX,\shC}$.
+
+::: prop
+[]{#lem:fib and smex then same stack label="lem:fib and smex then same stack"} Let $\stX$ be a quasi-compact fibered category over $R$ and $\shC\subseteq\mathop{\mathrm{\textup{Loc}}}\stX$ be a monoidal subcategory. Then $$\Fib_{\stX,\shC}\to\mathop{\mathrm{\textup{SMex}}}_{R}(\shC,-)\comma\Gamma\longmapsto\Gamma^{\vee}$$ is an equivalence of stacks over $\mathop{\mathrm{\textup{Aff}}}/R$.
+:::
+
+::: proof
+*Proof.* If $\Gamma\colon\shC\to\mathop{\mathrm{\textup{Vect}}}(A)$ is a covariant (resp. contravariant), $R$-linear and strong monoidal functor then $\Gamma^{\vee}\colon\shC\to\mathop{\mathrm{\textup{Vect}}}(A)$ is a contraviariant (resp. covariant) $R$-linear functor which moreover has a strong monoidal structure. Moreover if $B$ is an $A$-algebra we have $$\mathop{\mathrm{\textup{Hom}}}_{A}(\Gamma_{\E},A)\otimes_{A}B\simeq\mathop{\mathrm{\textup{Hom}}}_{B}(\Gamma_{\E}\otimes_{A}B,B)$$ because $\Gamma_{\E}\in\mathop{\mathrm{\textup{Vect}}}(A)$.
+
+If $\Gamma\in\mathop{\mathrm{\textup{SMex}}}_{R}(\shC,A)$ then $\Gamma^{\vee}\in\Fib_{\stX,\shC}(A)$ thanks to [\[lem:Fib and smex the same\]](#lem:Fib and smex the same){reference-type="ref" reference="lem:Fib and smex the same"}. Conversely assume $\Gamma\in\Fib_{\stX,\shC}(A)$. We must show that $(\Gamma\otimes_{A}k)^{\vee}\simeq\Gamma^{\vee}\otimes_{A}k$ is left exact for all geometric points $\mathop{\mathrm{\textup{Spec}}}k\to\mathop{\mathrm{\textup{Spec}}}A$. As $\Gamma\otimes_{A}k\in\Fib_{\stX,\shC}(k)$ we can assume that $A$ is a field. The functor $\Gamma^{\vee}\colon\shC\to\mathop{\mathrm{\textup{Vect}}}(A)$ is left exact because $\Gamma$ is exact on all finite test sequences and the dual of a right exact sequence is again exact. ◻
+:::
+
+::: proof
+*Proof.* (of Theorem [\[thm: Tannaka reconstrion for Loc X\]](#thm: Tannaka reconstrion for Loc X){reference-type="ref" reference="thm: Tannaka reconstrion for Loc X"}). The last claim follows from [\[lem:fib and smex then same stack\]](#lem:fib and smex then same stack){reference-type="ref" reference="lem:fib and smex then same stack"}. Set $\pi\colon\stX_{A}\to\stX$ for the projection. Composing by $\pi$ we obtain an equivalence $\stX_{A}(A)\to\stX(A)$. Since $\stX$ and therefore $\stX_{A}$ have affine diagonal by [\[cor:quasi-affine and resolution implies affine\]](#cor:quasi-affine and resolution implies affine){reference-type="ref" reference="cor:quasi-affine and resolution implies affine"}, all morphisms $\mathop{\mathrm{\textup{Spec}}}A\arr\stX,\stX_{A}$ are affine. Therefore the functor $\stX_{A}(A)\arr\mathop{\mathrm{\textup{QAlg}}}(\stX_{A})$ which maps $t\colon\mathop{\mathrm{\textup{Spec}}}A\arr\stX_{A}$ to $t_{*}\odi A$ is fully faithful. By [\[thm:main thm main paper\]](#thm:main thm main paper){reference-type="ref" reference="thm:main thm main paper"} and the fact that $$\Omega_{\E}^{t_{*}\odi A}=\mathop{\mathrm{\textup{Hom}}}_{\stX_{A}}(\pi^{*}\E,t_{*}\odi A)\simeq\mathop{\mathrm{\textup{Hom}}}_{\stX}(\E,s_{*}\odi A)\simeq\duale{(s^{*}\E)}\text{ for }t\in\stX_{A}(A)\comma\E\in\shC$$ where $s=\pi t\colon\mathop{\mathrm{\textup{Spec}}}A\to\stX$ we can conclude that the functor $\stX(A)\arr\mathop{\mathrm{\textup{SMex}}}_{R}(\shC,A)$, $s\longmapsto\duale{(s_{|\shC}^{*})}$ is well defined and fully faithful.
+
+Set $\alA=\alA_{\Gamma,\shC}\in\mathop{\mathrm{\textup{QAlg}}}(\stX_{A})$. We must show that, given $\Gamma\in\mathop{\mathrm{\textup{SMex}}}_{R}(\shC,A)$, the composition $p\colon\mathop{\mathrm{\textup{Spec}}}\alA\arr\stX_{A}\arr\mathop{\mathrm{\textup{Spec}}}A$ is an isomorphism. Set $\stY=\mathop{\mathrm{\textup{Spec}}}\alA$ and $f\colon\stY\arr\stX$ for the structure morphism. We want to apply [\[lem:recognizing affine rings from global sections\]](#lem:recognizing affine rings from global sections){reference-type="ref" reference="lem:recognizing affine rings from global sections"} on $p\colon\stY\arr\mathop{\mathrm{\textup{Spec}}}A$.
+
+Notice that, since $f\colon\stY\to\stX$ is affine, $\stY$ is quasi-compact and has affine diagonal. Moreover by [\[thm:main thm main paper\]](#thm:main thm main paper){reference-type="ref" reference="thm:main thm main paper"} and [\[lem:strong monoidal implies surjective\]](#lem:strong monoidal implies surjective){reference-type="ref" reference="lem:strong monoidal implies surjective"} we have monoidal isomorphisms $$\Gamma_{\E}\simeq\Omega_{\E}^{\alA}\simeq\mathop{\mathrm{\textup{H}}}^{0}(\duale{(f^{*}\E)})$$ In particular, since $\Gamma$ is a strong monoidal functor, the isomorphism $A\to\Gamma_{\odi{\stX}}$ yields the isomorphism $A\arr\mathop{\mathrm{\textup{H}}}^{0}(\alA)$.
+
+Let $\mathop{\mathrm{\textup{Spec}}}k\arr\mathop{\mathrm{\textup{Spec}}}A$ be a geometric point and set $g\colon\stX_{k}\arr\stX_{A}$ for the base change map. We have $\stY\times_{A}k\simeq\mathop{\mathrm{\textup{Spec}}}(g^{*}\alA)$, while by [@Tonini2014 Prop 2.14] we have $g^{*}\alA\simeq\alA_{\Gamma\otimes_{A}k,\shC}$. Since $\Gamma\otimes_{A}k$ is also left exact by hypothesis, by [\[thm:main thm main paper\]](#thm:main thm main paper){reference-type="ref" reference="thm:main thm main paper"} we get $\Gamma\otimes_{A}k\simeq\Omega^{\alA_{\Gamma\otimes_{A}k,\shC}}$. Thus $\Gamma_{\odi{\stX}}\otimes_{A}k=A\otimes_{A}k\simeq k$ implies that $\Omega_{\odi{\stX}}^{\alA_{\Gamma\otimes_{A}k,\shC}}\simeq k$ and therefore $\alA_{\Gamma\otimes_{A}k,\shC}\neq0$, that is $\stY\times_{A}k\neq\emptyset$.
+
+It remains to show that $\{\odi{\stY}\}$ generates $\mathop{\mathrm{\textup{QCoh}}}\stY$. Since $\stY\arrdi f\stX$ is affine, $f^{*}\shC$ generates $\mathop{\mathrm{\textup{QCoh}}}\stY$ by [\[rem: generating subcategory under pseudo-affine maps\]](#rem: generating subcategory under pseudo-affine maps){reference-type="ref" reference="rem: generating subcategory under pseudo-affine maps"}. On the other hand every sheaf $f^{*}\E$ is generated by global sections thanks to [\[lem:strong monoidal implies surjective\]](#lem:strong monoidal implies surjective){reference-type="ref" reference="lem:strong monoidal implies surjective"}. In conclusion $\stY$ is pseudo-affine and, by [\[lem:recognizing affine rings from global sections\]](#lem:recognizing affine rings from global sections){reference-type="ref" reference="lem:recognizing affine rings from global sections"}, the map $p\colon\stY\to\mathop{\mathrm{\textup{Spec}}}A$ is an isomorphism. ◻
+:::

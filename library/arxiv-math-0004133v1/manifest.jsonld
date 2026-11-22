@@ -5,21 +5,22 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0004133v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0004133v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-math-0004133v1",
+  "title": "From Finite Sets to Feynman Diagrams",
   "contains": [
     "library/arxiv-math-0004133v1/sections/sec-front-matter",
     "library/arxiv-math-0004133v1/sections/sec-000",
     "library/arxiv-math-0004133v1/sections/sec-001",
     "library/arxiv-math-0004133v1/sections/sec-002",
     "library/arxiv-math-0004133v1/sections/sec-003",
-    "library/arxiv-math-0004133v1/sections/sec-004"
+    "library/arxiv-math-0004133v1/sections/sec-004",
+    "library/arxiv-math-0004133v1/sections/sec-005"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
     "status": "stated",
@@ -29,7 +30,9 @@
   },
   "meta": {
     "doc_id": "arxiv-math-0004133v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0004133v1.pdf",
     "source_sha256": "687de8249639c7f27fe1413b26034340e4b37b155afcce2af9256b56183ccc5d",
     "pages": 30,

@@ -8,6 +8,7 @@ pages: 3-4
 source_pdf: AFST_2007_6_16_3_665_0.pdf
 source_sha256: 402b61574e561f86
 toc_source: inferred
+doc_brief: "Galois theory of q-difference equations (van der Put–Reversat, Ann. Fac. Sci. Toulouse XVI:3, 2007, 665–718) — Galois-theoretic framework for q-difference equations."
 ---
 Choose q ∈C with 0 < |q| < 1. The main theme of this paper is the study
 of linear q-diﬀerence equations over the ﬁeld K of germs of meromorphic

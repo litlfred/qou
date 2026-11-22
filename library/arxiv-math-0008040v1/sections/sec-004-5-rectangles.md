@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0008040v1
-doc_title: "arXiv:math/0008040v1 [math.QA] 4 Aug 2000"
+doc_title: "Rectangle diagrams for the Lusztig cones of quantized enveloping algebras of type A"
 section_id: sec-004-5-rectangles
 section_title: "Rectangles"
 section_number: 5
@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.974
 latex_coverage_ratio: 0.966
+doc_brief: "Rectangle diagrams for the Lusztig cones of quantized enveloping algebras of type A — Let U be the quantum group associated to a Lie algebra g of type An."
 ---
 []{#rectangles label="rectangles"} The above provides us with a description of the spanning vectors of a Lusztig cone as multisets of positive roots. We would also like a description of the monomial of Kashiwara operators corresponding to such a vector. We will use this in the next section to calculate Lusztig parametrizations $c_j(\mathbf{j})$, $c_P(\mathbf{j})$ of the canonical basis elements arising in Theorem [\[natural\]](#natural){reference-type="ref" reference="natural"}. We shall show that these monomials can be described by a remarkable 'rectangle combinatorics' (invented by R. W. Carter) which we shall now describe.
 

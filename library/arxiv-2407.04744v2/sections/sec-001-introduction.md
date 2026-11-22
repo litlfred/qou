@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2407.04744v2
-doc_title: "Magnetic structure of A≤ 10 nuclei using the Norfolk nuclear models with quantum Monte Carlo methods G. Chambers-Wall 1,∗ A. Gnech 2,3,† G. B. King 1,‡ S"
+doc_title: "Magnetic structure of A ≤ 10 nuclei using the Norfolk nuclear models with quantum Monte Carlo methods"
 section_id: sec-001-introduction
 section_title: "Introduction"
 section_number: null
 pages: 1-2
 source_pdf: 2407.04744v2.pdf
 source_sha256: fc6fda3138296fb1
-doc_brief: "Magnetic structure of A≤ 10 nuclei using the Norfolk nuclear models with quantum Monte Carlo methods G. Chambers-Wall 1,∗ A. Gnech 2,3,† G. B. King 1,‡ S — 21 sections: Front matter; Theory; Introduct"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.994
+latex_prose_ratio: 0.924
+latex_coverage_ratio: 0.974
+doc_brief: "Magnetic structure of A ≤ 10 nuclei using the Norfolk nuclear models with quantum Monte Carlo methods — 26 sections: Magnetic structure of A 10 nuclei ; Introduction; Theory"
 ---
 []{#sec:intro label="sec:intro"}
 

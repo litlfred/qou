@@ -7,154 +7,484 @@
   "bytes": 603606,
   "pages": 28,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:55Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
  "metadata": {
   "arxiv": null,
   "doi": "10.1007/s00526-018-1443-6",
-  "title": "Calc. Var. (2019) 58:16 Calculus of Variations On the analyticity of critical points of the M\u00f6bius energy Simon Blatt 1 \u00b7 Nicole Vorderobermeier 1 \u00a9 The Author(s) 2018",
+  "title": "On the analyticity of critical points of the Möbius energy",
   "authors_raw": null,
   "title_lines": [
    "Calc. Var. (2019) 58:16",
    "Calculus of Variations",
-   "On the analyticity of critical points of the M\u00f6bius energy",
-   "Simon Blatt 1 \u00b7 Nicole Vorderobermeier 1",
-   "\u00a9 The Author(s) 2018"
+   "On the analyticity of critical points of the Möbius energy",
+   "Simon Blatt1 · Nicole Vorderobermeier1",
+   "© The Author(s) 2018"
   ],
-  "abstract": "We prove that smooth critical points of the M\u00f6bius energy E parametrized by arc-length are analytic. Together with the main result in Blatt et al. (Trans Am Math Soc 368(9):6391\u20136438, 2016) this implies that critical points of the M\u00f6bius energy with merely bounded energy are not only C\u221e but also analytic. Our proof is based on Cauchy\u2019s method of majorants and a decomposition of the gradient which has already proved useful in the proof of the regularity results in Blatt and Reiter (Manuscr Math 140(1\u20132):29\u201350, 2013) and Blatt et al. (Trans Am Math Soc 368(9):6391\u20136438, 2016). To the best of the authors knowledge, this is the \ufb01rst analyticity result in the context of non-local differential equations. Mathematics Subject Classi\ufb01cation 35B65 \u00b7 57M25",
+  "abstract": "We prove that smooth critical points of the Möbius energy E parametrized by arc-length are analytic. Together with the main result in Blatt et al. (Trans Am Math Soc 368(9):6391–6438, 2016) this implies that critical points of the Möbius energy with merely bounded energy are not only C∞but also analytic. Our proof is based on Cauchy’s method of majorants and a decomposition of the gradient which has already proved useful in the proof of the regularity results in Blatt and Reiter (Manuscr Math 140(1–2):29–50, 2013) and Blatt et al. (Trans Am Math Soc 368(9):6391–6438, 2016). To the best of the authors knowledge, this is the ﬁrst analyticity result in the context of non-local differential equations. Mathematics Subject Classiﬁcation 35B65 · 57M25",
   "docinfo": {
+   "Title": "On the analyticity of critical points of the Möbius energy",
    "Author": "Simon Blatt ",
-   "CreationDate": "D:20181207120615+05'30'",
-   "Creator": "Springer",
    "Producer": "Acrobat Distiller 10.1.8 (Windows)",
-   "Title": "On the analyticity of critical points of the M\u00f6bius energy"
-  }
+   "Creator": "Springer",
+   "CreationDate": "D:20181207120615+05'30'"
+  },
+  "title_raw": "Calc. Var. (2019) 58:16 Calculus of Variations On the analyticity of critical points of the Möbius energy Simon Blatt1 · Nicole Vorderobermeier1 © The Author(s) 2018",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "On the analyticity of critical points of the Möbius energy",
+   "heading": "Calculus of Variations On the analyticity of critical points of the Möbius energy",
+   "outline": "On the analyticity of critical points of the Möbius energy",
+   "text": "Calc. Var. (2019) 58:16 Calculus of Variations On the analyticity of critical points of the Möbius energy Simon Blatt1 · Nicole Vorderobermeier1 © The Author(s) 2018",
+   "corroborated_by": [
+    "heading",
+    "outline",
+    "text",
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Calc. Var. (2019) 58:16 Calculus of Variations On the analyticity of critical points of the Möbius energy Simon Blatt 1 · Nicole Vorderobermeier 1 © The Author(s) 2018"
  },
  "toc": [
   {
    "level": 1,
-   "title": "On the analyticity of critical points of the M\u00f6bius energy",
+   "title": "On the analyticity of critical points of the Möbius energy",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Abstract",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 3,
-   "title": "Expos\u00e9 of the present work",
+   "title": "Exposé of the present work",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Preliminaries",
    "page": 4,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 3,
    "title": "Fractional Sobolev spaces",
    "page": 4,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 3,
    "title": "Properties of analytic functions",
    "page": 5,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 3,
-   "title": "Fa\u00e0 di Bruno's formula",
+   "title": "Faà di Bruno's formula",
    "page": 6,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Decomposition of the first variation of mathcalE",
    "page": 7,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Estimate of the main term Q",
    "page": 8,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
-   "title": "Form of PT Q\u03b3 and the bilinear Hilbert transform",
+   "title": "Form of PT Qγ and the bilinear Hilbert transform",
    "page": 10,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Form of the remaining parts",
    "page": 16,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 3,
-   "title": "Form of Pperp R2\u03b5\u03b3",
+   "title": "Form of Pperp R2εγ",
    "page": 17,
    "source": "outline",
-   "number": "6.1"
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 3,
-   "title": "Form of Pperp R1\u03b5\u03b3",
+   "title": "Form of Pperp R1εγ",
    "page": 18,
    "source": "outline",
-   "number": "6.2"
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 2,
    "title": "Proof of the main theorem by Cauchy's method of majorants",
    "page": 20,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 2,
    "title": "Acknowledgements",
    "page": 27,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
   },
   {
    "level": 2,
    "title": "References",
    "page": 27,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "contents",
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "contents",
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "contents",
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "contents",
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "contents",
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "contents",
+   "confidence": 0.75,
+   "evidence": [
+    "contents",
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
    "id": "sec-front-matter",
@@ -163,18 +493,22 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 89,
-   "n_words": 8
+   "n_chars": 88,
+   "n_words": 8,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-000-on-the-analyticity-of-critical-points-of-the-m\u00f6b",
+   "id": "sec-000-on-the-analyticity-of-critical-points-of-the-möb",
    "number": null,
-   "title": "On the analyticity of critical points of the M\u00f6bius energy",
+   "title": "On the analyticity of critical points of the Möbius energy",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 147,
-   "n_words": 26
+   "n_chars": 145,
+   "n_words": 24,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-abstract",
@@ -182,49 +516,59 @@
    "title": "Abstract",
    "level": 2,
    "page_start": 1,
-   "page_end": 1,
-   "n_chars": 764,
-   "n_words": 123
+   "page_end": 2,
+   "n_chars": 2580,
+   "n_words": 786,
+   "label_start": null,
+   "label_end": "2"
   },
   {
    "id": "sec-002-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 2,
-   "page_start": 1,
+   "page_start": 2,
    "page_end": 3,
-   "n_chars": 7361,
-   "n_words": 1267
+   "n_chars": 6042,
+   "n_words": 1059,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
-   "id": "sec-003-expos\u00e9-of-the-present-work",
+   "id": "sec-003-exposé-of-the-present-work",
    "number": null,
-   "title": "Expos\u00e9 of the present work",
+   "title": "Exposé of the present work",
    "level": 3,
    "page_start": 3,
-   "page_end": 3,
-   "n_chars": 181,
-   "n_words": 37
+   "page_end": 4,
+   "n_chars": 1483,
+   "n_words": 258,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
-   "id": "sec-004-21-fractional-sobolev-spaces",
-   "number": "2.1",
-   "title": "Fractional Sobolev spaces",
-   "level": 3,
-   "page_start": 3,
-   "page_end": 3,
-   "n_chars": 91,
-   "n_words": 12
-  },
-  {
-   "id": "sec-005-2-preliminaries",
+   "id": "sec-004-2-preliminaries",
    "number": "2",
    "title": "Preliminaries",
    "level": 2,
-   "page_start": 3,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-005-21-fractional-sobolev-spaces",
+   "number": "2.1",
+   "title": "Fractional Sobolev spaces",
+   "level": 3,
+   "page_start": 4,
    "page_end": 5,
-   "n_chars": 3346,
-   "n_words": 711
+   "n_chars": 2203,
+   "n_words": 456,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
    "id": "sec-006-22-properties-of-analytic-functions",
@@ -232,56 +576,142 @@
    "title": "Properties of analytic functions",
    "level": 3,
    "page_start": 5,
-   "page_end": 8,
-   "n_chars": 5968,
-   "n_words": 1340
+   "page_end": 6,
+   "n_chars": 1868,
+   "n_words": 377,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
-   "id": "sec-007-4-estimate-of-the-main-term-q",
+   "id": "sec-007-23-faà-di-brunos-formula",
+   "number": "2.3",
+   "title": "Faà di Bruno's formula",
+   "level": 3,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 1347,
+   "n_words": 309,
+   "label_start": "6",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-008-3-decomposition-of-the-first-variation-of-mathca",
+   "number": "3",
+   "title": "Decomposition of the first variation of mathcalE",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 2588,
+   "n_words": 593,
+   "label_start": "7",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-009-4-estimate-of-the-main-term-q",
    "number": "4",
    "title": "Estimate of the main term Q",
    "level": 2,
    "page_start": 8,
-   "page_end": 16,
-   "n_chars": 13494,
-   "n_words": 3152
+   "page_end": 10,
+   "n_chars": 2514,
+   "n_words": 584,
+   "label_start": "8",
+   "label_end": "10"
   },
   {
-   "id": "sec-008-6-form-of-the-remaining-parts",
+   "id": "sec-010-5-form-of-pt-qγ-and-the-bilinear-hilbert-transfo",
+   "number": "5",
+   "title": "Form of PT Qγ and the bilinear Hilbert transform",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 16,
+   "n_chars": 10509,
+   "n_words": 2267,
+   "label_start": "10",
+   "label_end": "16"
+  },
+  {
+   "id": "sec-011-6-form-of-the-remaining-parts",
    "number": "6",
    "title": "Form of the remaining parts",
    "level": 2,
    "page_start": 16,
-   "page_end": 27,
-   "n_chars": 18624,
-   "n_words": 4345
+   "page_end": 20,
+   "n_chars": 5734,
+   "n_words": 1372,
+   "label_start": "16",
+   "label_end": "20"
   },
   {
-   "id": "sec-009-acknowledgements",
+   "id": "sec-012-7-proof-of-the-main-theorem-by-cauchys-method-of",
+   "number": "7",
+   "title": "Proof of the main theorem by Cauchy's method of majorants",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 27,
+   "n_chars": 12450,
+   "n_words": 2654,
+   "label_start": "20",
+   "label_end": "27"
+  },
+  {
+   "id": "sec-013-acknowledgements",
    "number": null,
    "title": "Acknowledgements",
    "level": 2,
    "page_start": 27,
    "page_end": 27,
-   "n_chars": 407,
-   "n_words": 56
+   "n_chars": 398,
+   "n_words": 47,
+   "label_start": "27",
+   "label_end": "27"
   },
   {
-   "id": "sec-010-references",
+   "id": "sec-014-references",
    "number": null,
    "title": "References",
    "level": 2,
    "page_start": 27,
    "page_end": 28,
-   "n_chars": 6319,
-   "n_words": 941
+   "n_chars": 6284,
+   "n_words": 912,
+   "label_start": "27",
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 17,
-  "sections": 12,
-  "chars_total": 56791
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 3,
+    "items": [
+     "Received: 16 May 2018 / Accepted: 26 October 2018 / Published online: 7 December 2018 © The Author(s)",
+     "Form of P⊥ ˙γ Rε 2γ",
+     "Form of P⊥ ˙γ Rε 1γ"
+    ]
+   },
+   "found_not_listed": {
+    "count": 1,
+    "items": [
+     "2 (R/Z, Rn). If γ is a critical point of the Möbius energy E, then γ is analytic."
+    ]
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 16,
+  "chars_total": 56233,
+  "furniture_lines_stripped": 28
  }
 }

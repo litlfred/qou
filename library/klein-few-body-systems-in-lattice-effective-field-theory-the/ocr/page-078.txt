@@ -1,0 +1,45 @@
+Chapter 6 Lattice Improvement in Lattice Effective Field Theory
+
+2 2
+3 3
+
+Figure 6.2: One-loop diagram J; involving three bosons in the initial and the final state.
+
+1 V
+
+3
+
+Figure 6.3: One-loop form factor diagram I} involving two bosons in the initial and the final state and one external
+insertion.
+
+errors start at O(a°). However, we should note that there are two-loop diagrams involving three bosons
+that give a cutoff dependence that is O(a’). Furthermore, there will be O(a’) errors in the two-boson
+system when we iterate the improved energy-independent interactions that we use to cancel the O(a')
+and O(a’) errors. We give further details for the expressions appearing in Eq. (6.10) and Eq. (6.11) in the
+Appendix D.
+
+Since we are computing the root-mean-square radius, we also need to consider form factor diagrams
+associated with the boson density. The form factor diagram with the highest degree of divergence is the
+one-loop diagram J, shown in Fig. 6.3. Structurally this diagram is the same as 73, and so the residual
+amplitude will have a similar form,
+
+Aly, = AS(a) + O(p”). (6.12)
+
+From dimensional analysis A4(a) will be O(a’). In this case, however, the momentum-independent part
+of the form factor just counts the number of bosons. So A5(a) will vanish if number conservation is
+properly implemented on the lattice, and we assume this is the case. The root-mean-square radius is
+proportional to the derivative of the form factor with respect to the squared momentum transfer, and so
+the correction to the root-mean-square radius from this diagram will be O(a’).
+
+6.3 Lattice implementation
+
+We now implement our one-dimensional theory of bosons on the lattice. We use lattice units where all
+quantities are multiplied by powers of the lattice spacing to form dimensionless combinations. Since
+we are interested in methods that can be readily applied to many-body calculations, we work with
+energy-independent interactions only. We use an O(a*)-improved free Hamiltonian lattice action,
+
+3
+Heo = = » Qua! (n)a(n) + = ME ew, [a(n + Da(n) + a" (natn + D}, (6.13)
+n l=1
+
+72

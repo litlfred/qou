@@ -3,6 +3,7 @@
  "doc_id": "arxiv-1508.01627v4",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "778e60219862e371fbb004d915345bdfff963fd1f8a0746784e1493af4efd48d",
   "file": "1508.01627v4.pdf"
@@ -20,105 +21,109 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 7,
+  "candidates": 3,
   "by_kind": {
-   "theorem": 4,
-   "lemma": 2,
+   "theorem": 1,
+   "lemma": 1,
    "proposition": 1
   },
-  "formalization_candidates": 7
+  "formalization_candidates": 3,
+  "by_domain": {
+   "math": 3
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 3
+  },
+  "by_evidence_location": {
+   "both": 2,
+   "in-paper": 1
+  },
+  "by_lean_status": {
+   "unformalized": 3
+  },
+  "needs_lean_proof": 3
  },
  "candidates": [
   {
    "kind": "theorem",
    "source_kind": "theorem",
-   "number": "1",
-   "name": null,
-   "statement": "Let \u2113> 2 be a prime and G a \ufb01nite quasi-simple group of \u2113-rank at least 3. Then for any",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-2",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "2.1",
-   "name": null,
-   "statement": ") which may be of independent interest.",
-   "section_file": "sections/sec-001-22-regular-semisimple-elements.md",
-   "section_title": "Regular semisimple elements",
-   "pages": "2-2",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "2",
-   "name": null,
-   "statement": "Let G be a \ufb01nite quasi-simple group of classical Lie type Bn, Cn, Dn or 2Dn with non-",
-   "section_file": "sections/sec-001-22-regular-semisimple-elements.md",
-   "section_title": "Regular semisimple elements",
-   "pages": "2-2",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "3",
-   "name": null,
-   "statement": "Let G be a \ufb01nite simple group of classical Lie type Bn, Cn, Dn or 2Dn. Let \u2113> 2 be a",
-   "section_file": "sections/sec-001-22-regular-semisimple-elements.md",
-   "section_title": "Regular semisimple elements",
-   "pages": "2-2",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
    "number": "7.1",
    "name": null,
-   "statement": "Let G be a \ufb01nite simple group of classical Lie type Bn, Cn, Dn or 2Dn. Let \u2113> 2 be a",
+   "statement": "Let G be a \ufb01nite simple group of classical Lie type Bn, Cn, Dn or 2Dn. Let \u2113> 2 be a prime for which Sylow \u2113-subgroups of G are non-cyclic. Then the \u2113-modular projective cover of the trivial character of G has at least three ordinary constituents. In particular c11 \u22653.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "both",
+   "evidence_locator": "In-paper proof in sections/sec-017-7-an-application-to-small-1-pims.md (p. 18-22) citing [9]",
+   "external_refs": [
+    "[9]"
+   ],
+   "proof_excerpt": "For \u2113the de\ufb01ning characteristic of G, this was already shown in [9]. Now assume that \u2113\u0338 = 2 is di\ufb00erent from the de\ufb01ning characteristic of G. Assume that the character of the \u2113-modular projective cover of the trivial G module has the form 1G + \u03c7, with \u03c7 \u2208Irr(G). Since projective ",
    "section_file": "sections/sec-017-7-an-application-to-small-1-pims.md",
    "section_title": "An application to small 1-PIMs",
    "pages": "18-22",
    "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "formalization_note": "Deductive math claim (evidence: both, In-paper proof in sections/sec-017-7-an-application-to-small-1-pims.md (p. 18-22) citing [9]). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-017-01",
+   "block_iri": "library/arxiv-1508.01627v4/blocks/thm-sec-017-01",
+   "claim_id": "arxiv-1508.01627v4#theorem:7.1",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   },
   {
    "kind": "lemma",
    "source_kind": "lemma",
    "number": "1",
    "name": null,
-   "statement": "Let G be a \ufb01nite group and p a prime.",
+   "statement": "Let G be a \ufb01nite group and p a prime. Assume that H \u2264G is a subgroup such that |G : H| is divisible by p, but |G : H| < |G|p. Then c(p) 11 > 2.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper proof in sections/sec-017-7-an-application-to-small-1-pims.md (p. 18-22)",
+   "external_refs": [],
+   "proof_excerpt": "The permutation character \u03c0 of G on the cosets of H has exactly one triv- ial constituent 1G. On the other hand, as |G : H| is divisible by p, the modular reduction of the permutation representation has (at least) two trivial modular con- stituents, one in the socle, one in the h",
    "section_file": "sections/sec-017-7-an-application-to-small-1-pims.md",
    "section_title": "An application to small 1-PIMs",
    "pages": "18-22",
    "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "formalization_note": "Deductive math claim (evidence: in-paper, In-paper proof in sections/sec-017-7-an-application-to-small-1-pims.md (p. 18-22)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-017-02",
+   "block_iri": "library/arxiv-1508.01627v4/blocks/lem-sec-017-02",
+   "claim_id": "arxiv-1508.01627v4#lemma:1",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   },
   {
    "kind": "proposition",
    "source_kind": "proposition",
    "number": "2",
    "name": null,
-   "statement": "Let G be a \ufb01nite simple group of Lie type in characteristic p. Then",
+   "statement": "Let G be a \ufb01nite simple group of Lie type in characteristic p. Then c(p) 11 > 2 unless G = L2(p).",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "both",
+   "evidence_locator": "In-paper proof in sections/sec-017-7-an-application-to-small-1-pims.md (p. 18-22) citing [5, \u00a713], [5, Tab. 24.1], [1]",
+   "external_refs": [
+    "[5, \u00a713]",
+    "[5, Tab. 24.1]",
+    "[1]"
+   ],
+   "proof_excerpt": "If the Lie-rank of G is not very small, then we can \ufb01nd a subgroup of G which ful\ufb01lls the condition of Lemma 1. In Table 1 we give a subgroup \u02c6H (see e.g. [5, \u00a713] for the existence) of a suitable central extension \u02c6G of G. From the order formulae for these groups (see for exampl",
    "section_file": "sections/sec-017-7-an-application-to-small-1-pims.md",
    "section_title": "An application to small 1-PIMs",
    "pages": "18-22",
    "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "formalization_note": "Deductive math claim (evidence: both, In-paper proof in sections/sec-017-7-an-application-to-small-1-pims.md (p. 18-22) citing [5, \u00a713], [5, Tab. 24.1], [1]). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "prop-sec-017-03",
+   "block_iri": "library/arxiv-1508.01627v4/blocks/prop-sec-017-03",
+   "claim_id": "arxiv-1508.01627v4#proposition:2",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   }
  ]
 }

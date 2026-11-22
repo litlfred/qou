@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1202.4698v3/sections/sec-032",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "B.3 Derivation of the indentity (??)",
+  "pageStart": 28,
+  "pageEnd": 32,
+  "contains": [
+    "library/arxiv-1202.4698v3/blocks/prose-sec-032"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1202.4698v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1202.4698v3/manifest.jsonld",
+  "provenance": "ingested"
+}

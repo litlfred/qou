@@ -1,0 +1,3613 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-2104.14491v1",
+ "status": "determined",
+ "body_size": 10.9,
+ "footnotes": [
+  {
+   "id": "fn-p003-1",
+   "page": 3,
+   "mark": "1",
+   "text": "Thetwoinvariantsarerelatedast = s/2forallknotswetakeascompanions,butnotingeneral.Counterexamplesarethe Whitehead doubles of the two-strand torus knots [36].",
+   "marks": [
+    {
+     "page": 3,
+     "context": "nisknownfortheknotFloerhomologyandOzsv´ath-Szab´oτ-invariant"
+    }
+   ],
+   "block": "library/arxiv-2104.14491v1/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p005-1",
+   "page": 5,
+   "mark": "2",
+   "text": "Them-strandcaseisdiscussedinApp.A",
+   "marks": [
+    {
+     "page": 4,
+     "context": "q"
+    },
+    {
+     "page": 4,
+     "context": "{q"
+    },
+    {
+     "page": 4,
+     "context": "{q"
+    },
+    {
+     "page": 5,
+     "context": "sym−q"
+    },
+    {
+     "page": 5,
+     "context": "{q"
+    },
+    {
+     "page": 5,
+     "context": "{q"
+    },
+    {
+     "page": 5,
+     "context": "ntsarenaturally“deformed”,andHsymandHadj(whichcoincideforA=q"
+    },
+    {
+     "page": 5,
+     "context": "withpositivepolynomialsK(whileHasmvanishesforA = q"
+    },
+    {
+     "page": 5,
+     "context": "companionknotandequalstothepowerofq"
+    },
+    {
+     "page": 5,
+     "context": "entwomorehalf-twistsofthesameorientatingasthedeletedcrossing"
+    },
+    {
+     "page": 5,
+     "context": "−qwA−2νq"
+    },
+    {
+     "page": 5,
+     "context": "−(Aq)"
+    },
+    {
+     "page": 5,
+     "context": "asm+ (A/q)"
+    }
+   ],
+   "block": "library/arxiv-2104.14491v1/blocks/prose-sec-002"
+  },
+  {
+   "id": "fn-p005-2",
+   "page": 5,
+   "mark": "3",
+   "text": "Theratioofthetopologicalandtheverticalframings[5],sec.5.",
+   "marks": [
+    {
+     "page": 5,
+     "context": "whosepowerdependsontheknotdiagram"
+    }
+   ],
+   "block": "library/arxiv-2104.14491v1/blocks/prose-sec-002"
+  }
+ ],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "†",
+   "context": "A.Anokhinaa,∗A.Morozova,b,c,"
+  },
+  {
+   "page": 1,
+   "mark": "‡",
+   "context": "A.Anokhinaa,∗A.Morozova,b,c,†A.Popolitova,b,c,"
+  },
+  {
+   "page": 4,
+   "mark": "e",
+   "context": "1.A knot"
+  },
+  {
+   "page": 4,
+   "mark": "e",
+   "context": "on-trivially embedded into an unknottedsolid torus;i.e., the"
+  },
+  {
+   "page": 4,
+   "mark": "e",
+   "context": "2.Thesolidtorustogetherwiththeknot"
+  },
+  {
+   "page": 4,
+   "mark": "e",
+   "context": "TheknotKiscalledacompanion,andthepair(K,"
+  },
+  {
+   "page": 4,
+   "mark": "e",
+   "context": "considernaturallyincludethedegeneratecaseswiththeunknotasKor"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "Tor"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "Tw"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "asm+ q"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "Tor"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "Tw"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "Tw"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "Twk= HTw"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "Tor"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "Tork= (Aq)δHTor"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "Tork= (Aq)δHTork+δ−(Aq)"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "asm+ (A/q)"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "Tor"
+  },
+  {
+   "page": 5,
+   "mark": "w",
+   "context": "Tork= −q"
+  },
+  {
+   "page": 5,
+   "mark": "w",
+   "context": "−q"
+  },
+  {
+   "page": 5,
+   "mark": "q",
+   "context": "asm+ q−wA−2ν"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "cases.ThisisthecaseofJonespolynomial,whichisobtainedforA=q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "1 + q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "1 + q2+q"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "1 + q2+q2"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "1 + q2+q2k−2"
+  },
+  {
+   "page": 6,
+   "mark": "6",
+   "context": "1 + q2+q2k−2 1 −q"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "Tor"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "Tork(q) = q−3"
+  },
+  {
+   "page": 6,
+   "mark": "4",
+   "context": "1 −q"
+  },
+  {
+   "page": 6,
+   "mark": "4",
+   "context": "1 + q"
+  },
+  {
+   "page": 6,
+   "mark": "6",
+   "context": "1 −q"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "−q−2"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "1 + q"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "Tw"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "1 + q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "\u0012q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "\u0012q2(q"
+  },
+  {
+   "page": 6,
+   "mark": "10",
+   "context": "q"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "JTor"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "adj(q)=q−8"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "q2"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 6,
+   "mark": "6",
+   "context": "q2(q"
+  },
+  {
+   "page": 6,
+   "mark": "q",
+   "context": "q2(q6−1)"
+  },
+  {
+   "page": 6,
+   "mark": "6",
+   "context": "q2(q6−1)q"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "q2(q6−1)q6"
+  },
+  {
+   "page": 6,
+   "mark": "6",
+   "context": "q"
+  },
+  {
+   "page": 6,
+   "mark": "18",
+   "context": "(q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "(q18−1)(q"
+  },
+  {
+   "page": 6,
+   "mark": "6",
+   "context": "+q−12(1 + q"
+  },
+  {
+   "page": 6,
+   "mark": "4",
+   "context": "+q−12(1 + q6)(1 −q"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "+q−12(1 + q6)(1 −q4)q−2"
+  },
+  {
+   "page": 6,
+   "mark": "10",
+   "context": "+q−12(1 + q6)(1 −q4)q−2n+(q"
+  },
+  {
+   "page": 6,
+   "mark": "4",
+   "context": "+q−12(1 + q6)(1 −q4)q−2n+(q10 −1)(q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "+q−12(1 + q6)(1 −q4)q−2n+(q10 −1)(q4 −1)(q"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "JTw"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "q−6"
+  },
+  {
+   "page": 6,
+   "mark": "12",
+   "context": "q"
+  },
+  {
+   "page": 6,
+   "mark": "6",
+   "context": "q12(q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "q12(q6−1)"
+  },
+  {
+   "page": 6,
+   "mark": "10",
+   "context": "q"
+  },
+  {
+   "page": 6,
+   "mark": "6",
+   "context": "q10(q"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "Ifonesubstitutes−q−2"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "Ifonesubstitutes−q−2nwith(−q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "usknotswithoddnandtoruslinkswithevenn.Thetwistformulawith(−q"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "q−2"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "−2nalsogivesapolynomialforanyn,andthesepolynomialssatisfyJTw"
+  },
+  {
+   "page": 6,
+   "mark": "16",
+   "context": "adj(q)=q"
+  },
+  {
+   "page": 6,
+   "mark": "16",
+   "context": "nnowgivesthepolynomialsofthemirrorknotsuptotheextrafactorofq"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "Tw"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "Twk= KhTw"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 7,
+   "mark": "6",
+   "context": "1 + q"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "1 + q6t"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "1 + q"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "q"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "KhTor"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "KhTork(q, t) + t−1q"
+  },
+  {
+   "page": 7,
+   "mark": "6",
+   "context": "1 + q"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "1 + q6t"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "Tor"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "1 + q−2sgn"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "1 + q−2sgnn(−t)Θ"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "1 + q−2sgnn(−t)Θk−Θ"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "uKhTor"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "uKhTork(q, t) + q"
+  },
+  {
+   "page": 7,
+   "mark": "u",
+   "context": "uKhTork(q, t) + qk"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "uKhTork(q, t) + qkuˆKK(q, t) −q"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "q"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "Tor"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "Thek-satellitesoftheunknotareS"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "Thek-satellitesoftheunknotareS0"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "Twk= Tw"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "Twk= TwkandS"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "Twk= TwkandS0"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "Tork= Tor"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "Thereducedinvariantvanishesfortheunknot,i.e.,K"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "Thereducedinvariantvanishesfortheunknot,i.e.,K0"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "(−t)Θ"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 7,
+   "mark": "4",
+   "context": "1 −q"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "1 −q4t"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "k(q, t = −1) = J"
+  },
+  {
+   "page": 8,
+   "mark": "4",
+   "context": "k/(1 −q"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "k/(1 −q4"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "k/(1 −q4t"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "k/(1 −q4t2)isexpandedinto"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "k/(1 −q4t2)isexpandedintoapositiveLaurentseriesin"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "k/(1 −q4t2)isexpandedintoapositiveLaurentseriesintsgn"
+  },
+  {
+   "page": 8,
+   "mark": "c",
+   "context": "The"
+  },
+  {
+   "page": 8,
+   "mark": "a",
+   "context": "kisnot"
+  },
+  {
+   "page": 8,
+   "mark": "c",
+   "context": "kisnotapositivepolynomial,but"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "q−2(−t)Θ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 8,
+   "mark": "c",
+   "context": "u"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "k(q, t = −1) =1+q"
+  },
+  {
+   "page": 8,
+   "mark": "4",
+   "context": "k(q, t = −1) =1+q2+q"
+  },
+  {
+   "page": 8,
+   "mark": "c",
+   "context": "u"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 8,
+   "mark": "4",
+   "context": "1 + q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "1 + q4t"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "1 −(q"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "1 −(q2t)"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "KhTw"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "−(−t)Θ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "1 + q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "1 −q"
+  },
+  {
+   "page": 8,
+   "mark": "4",
+   "context": "1 + q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "1 + q4t"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "1 −(q"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "(−t)Θ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "1 −q"
+  },
+  {
+   "page": 8,
+   "mark": "4",
+   "context": "1 + q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "1 + q4t"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "1 −q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "1 −q2t−(q"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "1 −q2t−(q2"
+  },
+  {
+   "page": 8,
+   "mark": "6",
+   "context": "1 −q2t−(q2t)−k 1 + q"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "1 −q2t−(q2t)−k 1 + q6"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "1 −q2t−(q2t)−k 1 + q6t"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "(−t)Θ"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "(−t)Θk(q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "1 −q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "\u00012· 1 −(q"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "\u00012· 1 −(q2t)"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "KhTor"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "−(−t)Θ"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "−(−t)Θkt−1q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "1 −q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "\u0001k · 1 −(q"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "(−t)Θ"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "(−t)Θkq"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "1 −q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "1 −q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "1 −q2t−(q"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "1 −q2t−(q2"
+  },
+  {
+   "page": 8,
+   "mark": "6",
+   "context": "1 −q2t−(q2t)−k−1 1 + q"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "1 −q2t−(q2t)−k−1 1 + q6"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "1 −q2t−(q2t)−k−1 1 + q6t"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "(−t)Θ"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "(−t)Θkq(q"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "(−t)Θkq(q3t)"
+  },
+  {
+   "page": 8,
+   "mark": "4",
+   "context": "1 −q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "1 −q4t"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "1 + q"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "1 −(q"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "1 −(q2t)"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "q"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "1 −(−t)Θ"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "q2t+ q"
+  },
+  {
+   "page": 9,
+   "mark": "t",
+   "context": "q2t+ q2"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "uKhTor"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "1 −q"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "1 −q4t"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "1 + q"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "1 −(q"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "q"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "1 + (−t)Θ"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "1 −q"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "1 −q4t"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "1/q"
+  },
+  {
+   "page": 9,
+   "mark": "10",
+   "context": "1/q2+ 1/(q"
+  },
+  {
+   "page": 9,
+   "mark": "5",
+   "context": "1/q2+ 1/(q10t"
+  },
+  {
+   "page": 9,
+   "mark": "8",
+   "context": "1/q2+ 1/(q10t5) + 1/(q"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "1/q2+ 1/(q10t5) + 1/(q8t"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "1/q2+ 1/(q10t5) + 1/(q8t4) + t"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "1/q2+ 1/(q10t5) + 1/(q8t4) + t2+ q"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "1/q2+ 1/(q10t5) + 1/(q8t4) + t2+ q4t"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "1 + 1/q"
+  },
+  {
+   "page": 9,
+   "mark": "12",
+   "context": "1 + 1/q2+ 1/(q"
+  },
+  {
+   "page": 9,
+   "mark": "7",
+   "context": "1 + 1/q2+ 1/(q12t"
+  },
+  {
+   "page": 9,
+   "mark": "10",
+   "context": "1 + 1/q2+ 1/(q12t7) + 1/(q"
+  },
+  {
+   "page": 9,
+   "mark": "6",
+   "context": "1 + 1/q2+ 1/(q12t7) + 1/(q10t"
+  },
+  {
+   "page": 9,
+   "mark": "6",
+   "context": "1 + 1/q2+ 1/(q12t7) + 1/(q10t6) + 1/(q"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "1 + 1/q2+ 1/(q12t7) + 1/(q10t6) + 1/(q6t"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "1 + 1/q2+ 1/(q12t7) + 1/(q10t6) + 1/(q6t3) + 2/(q"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "1 + 1/q2+ 1/(q12t7) + 1/(q10t6) + 1/(q6t3) + 2/(q4t"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "1 + 1/q2+ 1/(q12t7) + 1/(q10t6) + 1/(q6t3) + 2/(q4t2) + 1/(q"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "1/(q12t7) + 1/(q10t6) + 1/(q6t3) + 2/(q4t2) + 1/(q2t) + 1/(q"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "1/(q10t6) + 1/(q6t3) + 2/(q4t2) + 1/(q2t) + 1/(q4t) + 2t + q"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "(q10t6) + 1/(q6t3) + 2/(q4t2) + 1/(q2t) + 1/(q4t) + 2t + q2t"
+  },
+  {
+   "page": 9,
+   "mark": "6",
+   "context": "t6) + 1/(q6t3) + 2/(q4t2) + 1/(q2t) + 1/(q4t) + 2t + q2t2+ q"
+  },
+  {
+   "page": 9,
+   "mark": "5",
+   "context": ") + 1/(q6t3) + 2/(q4t2) + 1/(q2t) + 1/(q4t) + 2t + q2t2+ q6t"
+  },
+  {
+   "page": 9,
+   "mark": "8",
+   "context": "1/(q6t3) + 2/(q4t2) + 1/(q2t) + 1/(q4t) + 2t + q2t2+ q6t5+ q"
+  },
+  {
+   "page": 9,
+   "mark": "6",
+   "context": "(q6t3) + 2/(q4t2) + 1/(q2t) + 1/(q4t) + 2t + q2t2+ q6t5+ q8t"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "1/q"
+  },
+  {
+   "page": 9,
+   "mark": "14",
+   "context": "1/q2+ 1/(q"
+  },
+  {
+   "page": 9,
+   "mark": "7",
+   "context": "1/q2+ 1/(q14t"
+  },
+  {
+   "page": 9,
+   "mark": "12",
+   "context": "1/q2+ 1/(q14t7) + 1/(q"
+  },
+  {
+   "page": 9,
+   "mark": "6",
+   "context": "1/q2+ 1/(q14t7) + 1/(q12t"
+  },
+  {
+   "page": 9,
+   "mark": "10",
+   "context": "1/q2+ 1/(q14t7) + 1/(q12t6) + 1/(q"
+  },
+  {
+   "page": 9,
+   "mark": "5",
+   "context": "1/q2+ 1/(q14t7) + 1/(q12t6) + 1/(q10t"
+  },
+  {
+   "page": 9,
+   "mark": "8",
+   "context": "1/q2+ 1/(q14t7) + 1/(q12t6) + 1/(q10t5) + 1/(q"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "1/q2+ 1/(q14t7) + 1/(q12t6) + 1/(q10t5) + 1/(q8t"
+  },
+  {
+   "page": 9,
+   "mark": "8",
+   "context": "1/q2+ 1/(q14t7) + 1/(q12t6) + 1/(q10t5) + 1/(q8t4) + 1/(q"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "1/q2+ 1/(q14t7) + 1/(q12t6) + 1/(q10t5) + 1/(q8t4) + 1/(q8t"
+  },
+  {
+   "page": 9,
+   "mark": "6",
+   "context": "(q14t7) + 1/(q12t6) + 1/(q10t5) + 1/(q8t4) + 1/(q8t3) + 1/(q"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "14t7) + 1/(q12t6) + 1/(q10t5) + 1/(q8t4) + 1/(q8t3) + 1/(q6t"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "1/(q12t6) + 1/(q10t5) + 1/(q8t4) + 1/(q8t3) + 1/(q6t2) + t/q"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "2t6) + 1/(q10t5) + 1/(q8t4) + 1/(q8t3) + 1/(q6t2) + t/q2+ 2t"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": " + 1/(q10t5) + 1/(q8t4) + 1/(q8t3) + 1/(q6t2) + t/q2+ 2t2+ q"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": " 1/(q10t5) + 1/(q8t4) + 1/(q8t3) + 1/(q6t2) + t/q2+ 2t2+ q4t"
+  },
+  {
+   "page": 9,
+   "mark": "6",
+   "context": "q"
+  },
+  {
+   "page": 9,
+   "mark": "6",
+   "context": "q6t"
+  },
+  {
+   "page": 9,
+   "mark": "8",
+   "context": "q6t6+ q"
+  },
+  {
+   "page": 9,
+   "mark": "8",
+   "context": "q6t6+ q8t"
+  },
+  {
+   "page": 9,
+   "mark": "12",
+   "context": "q6t6+ q8t8+ q"
+  },
+  {
+   "page": 9,
+   "mark": "10",
+   "context": "q6t6+ q8t8+ q12t"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "2/q"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "2/q2+ 1/q"
+  },
+  {
+   "page": 9,
+   "mark": "22",
+   "context": "2/q2+ 1/q4+ 1/(q"
+  },
+  {
+   "page": 9,
+   "mark": "13",
+   "context": "2/q2+ 1/q4+ 1/(q22t"
+  },
+  {
+   "page": 9,
+   "mark": "20",
+   "context": "2/q2+ 1/q4+ 1/(q22t13) + 1/(q"
+  },
+  {
+   "page": 9,
+   "mark": "12",
+   "context": "2/q2+ 1/q4+ 1/(q22t13) + 1/(q20t"
+  },
+  {
+   "page": 9,
+   "mark": "16",
+   "context": "2/q2+ 1/q4+ 1/(q22t13) + 1/(q20t12) + 1/(q"
+  },
+  {
+   "page": 9,
+   "mark": "9",
+   "context": "2/q2+ 1/q4+ 1/(q22t13) + 1/(q20t12) + 1/(q16t"
+  },
+  {
+   "page": 9,
+   "mark": "14",
+   "context": "2/q2+ 1/q4+ 1/(q22t13) + 1/(q20t12) + 1/(q16t9) + 2/(q"
+  },
+  {
+   "page": 9,
+   "mark": "8",
+   "context": "2/q2+ 1/q4+ 1/(q22t13) + 1/(q20t12) + 1/(q16t9) + 2/(q14t"
+  },
+  {
+   "page": 9,
+   "mark": "12",
+   "context": "1/q4+ 1/(q22t13) + 1/(q20t12) + 1/(q16t9) + 2/(q14t8) + 1/(q"
+  },
+  {
+   "page": 9,
+   "mark": "7",
+   "context": "4+ 1/(q22t13) + 1/(q20t12) + 1/(q16t9) + 2/(q14t8) + 1/(q12t"
+  },
+  {
+   "page": 9,
+   "mark": "14",
+   "context": "t13) + 1/(q20t12) + 1/(q16t9) + 2/(q14t8) + 1/(q12t7) + 1/(q"
+  },
+  {
+   "page": 9,
+   "mark": "7",
+   "context": ") + 1/(q20t12) + 1/(q16t9) + 2/(q14t8) + 1/(q12t7) + 1/(q14t"
+  },
+  {
+   "page": 9,
+   "mark": "12",
+   "context": "0t12) + 1/(q16t9) + 2/(q14t8) + 1/(q12t7) + 1/(q14t7) + 2/(q"
+  },
+  {
+   "page": 9,
+   "mark": "6",
+   "context": "2) + 1/(q16t9) + 2/(q14t8) + 1/(q12t7) + 1/(q14t7) + 2/(q12t"
+  },
+  {
+   "page": 9,
+   "mark": "10",
+   "context": "2/(q"
+  },
+  {
+   "page": 9,
+   "mark": "5",
+   "context": "2/(q10t"
+  },
+  {
+   "page": 9,
+   "mark": "8",
+   "context": "2/(q10t5) + 2/(q"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "2/(q10t5) + 2/(q8t"
+  },
+  {
+   "page": 9,
+   "mark": "6",
+   "context": "2/(q10t5) + 2/(q8t4) + 1/(q"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "2/(q10t5) + 2/(q8t4) + 1/(q6t"
+  },
+  {
+   "page": 9,
+   "mark": "6",
+   "context": "2/(q10t5) + 2/(q8t4) + 1/(q6t3) + 2/(q"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "2/(q10t5) + 2/(q8t4) + 1/(q6t3) + 2/(q6t"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "2/(q10t5) + 2/(q8t4) + 1/(q6t3) + 2/(q6t2) + 3/(q"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "/(q10t5) + 2/(q8t4) + 1/(q6t3) + 2/(q6t2) + 3/(q4t) + t + 2t"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "0t5) + 2/(q8t4) + 1/(q6t3) + 2/(q6t2) + 3/(q4t) + t + 2t2+ q"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "5) + 2/(q8t4) + 1/(q6t3) + 2/(q6t2) + 3/(q4t) + t + 2t2+ q2t"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": " 2/(q8t4) + 1/(q6t3) + 2/(q6t2) + 3/(q4t) + t + 2t2+ q2t3+ q"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "/(q8t4) + 1/(q6t3) + 2/(q6t2) + 3/(q4t) + t + 2t2+ q2t3+ q4t"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "1+2/q"
+  },
+  {
+   "page": 9,
+   "mark": "8",
+   "context": "1+2/q2+1/(q"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "1+2/q2+1/(q8t"
+  },
+  {
+   "page": 9,
+   "mark": "6",
+   "context": "1+2/q2+1/(q8t3)+q"
+  },
+  {
+   "page": 9,
+   "mark": "5",
+   "context": "1+2/q2+1/(q8t3)+q6t"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "1+2/q2+1/(q8t3)+q6t5+q"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "1+2/q2+1/(q8t3)+q6t5+q2t"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "1+2/q2+1/(q8t3)+q6t5+q2t3+q"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "1+2/q2+1/(q8t3)+q6t5+q2t3+q4t"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "1+2/q2+1/(q8t3)+q6t5+q2t3+q4t4+2q"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "1+2/q2+1/(q8t3)+q6t5+q2t3+q4t4+2q2t"
+  },
+  {
+   "page": 9,
+   "mark": "24",
+   "context": "1+2/q2+1/(q8t3)+q6t5+q2t3+q4t4+2q2t2+1/(q"
+  },
+  {
+   "page": 9,
+   "mark": "15",
+   "context": "1+2/q2+1/(q8t3)+q6t5+q2t3+q4t4+2q2t2+1/(q24t"
+  },
+  {
+   "page": 9,
+   "mark": "22",
+   "context": "1+2/q2+1/(q8t3)+q6t5+q2t3+q4t4+2q2t2+1/(q24t15)+1/(q"
+  },
+  {
+   "page": 9,
+   "mark": "14",
+   "context": "1+2/q2+1/(q8t3)+q6t5+q2t3+q4t4+2q2t2+1/(q24t15)+1/(q22t"
+  },
+  {
+   "page": 9,
+   "mark": "18",
+   "context": "/q2+1/(q8t3)+q6t5+q2t3+q4t4+2q2t2+1/(q24t15)+1/(q22t14)+1/(q"
+  },
+  {
+   "page": 9,
+   "mark": "11",
+   "context": "+1/(q8t3)+q6t5+q2t3+q4t4+2q2t2+1/(q24t15)+1/(q22t14)+1/(q18t"
+  },
+  {
+   "page": 9,
+   "mark": "16",
+   "context": ")+q6t5+q2t3+q4t4+2q2t2+1/(q24t15)+1/(q22t14)+1/(q18t11)+2/(q"
+  },
+  {
+   "page": 9,
+   "mark": "10",
+   "context": "6t5+q2t3+q4t4+2q2t2+1/(q24t15)+1/(q22t14)+1/(q18t11)+2/(q16t"
+  },
+  {
+   "page": 9,
+   "mark": "14",
+   "context": "1/(q"
+  },
+  {
+   "page": 9,
+   "mark": "9",
+   "context": "1/(q14t"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "1/(q14t9) + 3/(q"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "1/(q14t9) + 3/(q4t) + 1/(q"
+  },
+  {
+   "page": 9,
+   "mark": "6",
+   "context": "1/(q14t9) + 3/(q4t) + 1/(q2t) + 4/(q"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "1/(q14t9) + 3/(q4t) + 1/(q2t) + 4/(q6t"
+  },
+  {
+   "page": 9,
+   "mark": "6",
+   "context": "1/(q14t9) + 3/(q4t) + 1/(q2t) + 4/(q6t3) + 1/(q"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "1/(q14t9) + 3/(q4t) + 1/(q2t) + 4/(q6t3) + 1/(q6t"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "1/(q14t9) + 3/(q4t) + 1/(q2t) + 4/(q6t3) + 1/(q6t2) + 4/(q"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "1/(q14t9) + 3/(q4t) + 1/(q2t) + 4/(q6t3) + 1/(q6t2) + 4/(q4t"
+  },
+  {
+   "page": 9,
+   "mark": "8",
+   "context": "t9) + 3/(q4t) + 1/(q2t) + 4/(q6t3) + 1/(q6t2) + 4/(q4t2) + q"
+  },
+  {
+   "page": 9,
+   "mark": "6",
+   "context": ") + 3/(q4t) + 1/(q2t) + 4/(q6t3) + 1/(q6t2) + 4/(q4t2) + q8t"
+  },
+  {
+   "page": 9,
+   "mark": "10",
+   "context": "q4t) + 1/(q2t) + 4/(q6t3) + 1/(q6t2) + 4/(q4t2) + q8t6+ 2/(q"
+  },
+  {
+   "page": 9,
+   "mark": "6",
+   "context": ") + 1/(q2t) + 4/(q6t3) + 1/(q6t2) + 4/(q4t2) + q8t6+ 2/(q10t"
+  },
+  {
+   "page": 9,
+   "mark": "8",
+   "context": "t) + 4/(q6t3) + 1/(q6t2) + 4/(q4t2) + q8t6+ 2/(q10t6) + 1/(q"
+  },
+  {
+   "page": 9,
+   "mark": "5",
+   "context": " + 4/(q6t3) + 1/(q6t2) + 4/(q4t2) + q8t6+ 2/(q10t6) + 1/(q8t"
+  },
+  {
+   "page": 9,
+   "mark": "16",
+   "context": "1/(q"
+  },
+  {
+   "page": 9,
+   "mark": "9",
+   "context": "1/(q16t"
+  },
+  {
+   "page": 9,
+   "mark": "14",
+   "context": "1/(q16t9) + 2/(q"
+  },
+  {
+   "page": 9,
+   "mark": "8",
+   "context": "1/(q16t9) + 2/(q14t"
+  },
+  {
+   "page": 9,
+   "mark": "12",
+   "context": "1/(q16t9) + 2/(q14t8) + 2/(q"
+  },
+  {
+   "page": 9,
+   "mark": "7",
+   "context": "1/(q16t9) + 2/(q14t8) + 2/(q12t"
+  },
+  {
+   "page": 9,
+   "mark": "10",
+   "context": "1/(q16t9) + 2/(q14t8) + 2/(q12t7) + 1/(q"
+  },
+  {
+   "page": 9,
+   "mark": "5",
+   "context": "1/(q16t9) + 2/(q14t8) + 2/(q12t7) + 1/(q10t"
+  },
+  {
+   "page": 9,
+   "mark": "8",
+   "context": "1/(q16t9) + 2/(q14t8) + 2/(q12t7) + 1/(q10t5) + 3/(q"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "1/(q16t9) + 2/(q14t8) + 2/(q12t7) + 1/(q10t5) + 3/(q8t"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "1 + 5/q"
+  },
+  {
+   "page": 9,
+   "mark": "10",
+   "context": "1 + 5/q2+ 2q"
+  },
+  {
+   "page": 9,
+   "mark": "8",
+   "context": "1 + 5/q2+ 2q10t"
+  },
+  {
+   "page": 9,
+   "mark": "8",
+   "context": "1 + 5/q2+ 2q10t8+ 3q"
+  },
+  {
+   "page": 9,
+   "mark": "7",
+   "context": "1 + 5/q2+ 2q10t8+ 3q8t"
+  },
+  {
+   "page": 9,
+   "mark": "6",
+   "context": "1 + 5/q2+ 2q10t8+ 3q8t7+ 2q"
+  },
+  {
+   "page": 9,
+   "mark": "5",
+   "context": "1 + 5/q2+ 2q10t8+ 3q8t7+ 2q6t"
+  },
+  {
+   "page": 9,
+   "mark": "6",
+   "context": "1 + 5/q2+ 2q10t8+ 3q8t7+ 2q6t5+ q"
+  },
+  {
+   "page": 9,
+   "mark": "6",
+   "context": "1 + 5/q2+ 2q10t8+ 3q8t7+ 2q6t5+ q6t"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "1 + 5/q2+ 2q10t8+ 3q8t7+ 2q6t5+ q6t6+ q"
+  },
+  {
+   "page": 9,
+   "mark": "5",
+   "context": "1 + 5/q2+ 2q10t8+ 3q8t7+ 2q6t5+ q6t6+ q4t"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "1 + 5/q2+ 2q10t8+ 3q8t7+ 2q6t5+ q6t6+ q4t5+ 4q"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "1 + 5/q2+ 2q10t8+ 3q8t7+ 2q6t5+ q6t6+ q4t5+ 4q2t"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "1 + 5/q2+ 2q10t8+ 3q8t7+ 2q6t5+ q6t6+ q4t5+ 4q2t3+ 5q"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "1 + 5/q2+ 2q10t8+ 3q8t7+ 2q6t5+ q6t6+ q4t5+ 4q2t3+ 5q4t"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "1 + 5/q2+ 2q10t8+ 3q8t7+ 2q6t5+ q6t6+ q4t5+ 4q2t3+ 5q4t4+ 2q"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "+ 5/q2+ 2q10t8+ 3q8t7+ 2q6t5+ q6t6+ q4t5+ 4q2t3+ 5q4t4+ 2q2t"
+  },
+  {
+   "page": 9,
+   "mark": "16",
+   "context": "q2+ 2q10t8+ 3q8t7+ 2q6t5+ q6t6+ q4t5+ 4q2t3+ 5q4t4+ 2q2t2+ q"
+  },
+  {
+   "page": 9,
+   "mark": "12",
+   "context": " 2q10t8+ 3q8t7+ 2q6t5+ q6t6+ q4t5+ 4q2t3+ 5q4t4+ 2q2t2+ q16t"
+  },
+  {
+   "page": 9,
+   "mark": "14",
+   "context": "t8+ 3q8t7+ 2q6t5+ q6t6+ q4t5+ 4q2t3+ 5q4t4+ 2q2t2+ q16t12+ q"
+  },
+  {
+   "page": 9,
+   "mark": "11",
+   "context": " 3q8t7+ 2q6t5+ q6t6+ q4t5+ 4q2t3+ 5q4t4+ 2q2t2+ q16t12+ q14t"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "2q6t5+ q6t6+ q4t5+ 4q2t3+ 5q4t4+ 2q2t2+ q16t12+ q14t11+ 5/(q"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "1/(q"
+  },
+  {
+   "page": 9,
+   "mark": "6",
+   "context": "1/(q2t) + 4/(q"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "1/(q2t) + 4/(q6t"
+  },
+  {
+   "page": 9,
+   "mark": "6",
+   "context": "1/(q2t) + 4/(q6t3) + 2/(q"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "1/(q2t) + 4/(q6t3) + 2/(q6t"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "1/(q2t) + 4/(q6t3) + 2/(q6t2) + 3/(q"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "1/(q2t) + 4/(q6t3) + 2/(q6t2) + 3/(q4t"
+  },
+  {
+   "page": 9,
+   "mark": "8",
+   "context": "1/(q2t) + 4/(q6t3) + 2/(q6t2) + 3/(q4t2) + 2q"
+  },
+  {
+   "page": 9,
+   "mark": "6",
+   "context": "1/(q2t) + 4/(q6t3) + 2/(q6t2) + 3/(q4t2) + 2q8t"
+  },
+  {
+   "page": 9,
+   "mark": "10",
+   "context": "1/(q2t) + 4/(q6t3) + 2/(q6t2) + 3/(q4t2) + 2q8t6+ 1/(q"
+  },
+  {
+   "page": 9,
+   "mark": "6",
+   "context": "1/(q2t) + 4/(q6t3) + 2/(q6t2) + 3/(q4t2) + 2q8t6+ 1/(q10t"
+  },
+  {
+   "page": 9,
+   "mark": "12",
+   "context": ") + 4/(q6t3) + 2/(q6t2) + 3/(q4t2) + 2q8t6+ 1/(q10t6) + 1/(q"
+  },
+  {
+   "page": 9,
+   "mark": "6",
+   "context": " 4/(q6t3) + 2/(q6t2) + 3/(q4t2) + 2q8t6+ 1/(q10t6) + 1/(q12t"
+  },
+  {
+   "page": 9,
+   "mark": "16",
+   "context": " + 2/(q6t2) + 3/(q4t2) + 2q8t6+ 1/(q10t6) + 1/(q12t6) + 1/(q"
+  },
+  {
+   "page": 9,
+   "mark": "9",
+   "context": "2/(q6t2) + 3/(q4t2) + 2q8t6+ 1/(q10t6) + 1/(q12t6) + 1/(q16t"
+  },
+  {
+   "page": 9,
+   "mark": "14",
+   "context": "+ 3/(q4t2) + 2q8t6+ 1/(q10t6) + 1/(q12t6) + 1/(q16t9) + 2/(q"
+  },
+  {
+   "page": 9,
+   "mark": "8",
+   "context": "/(q4t2) + 2q8t6+ 1/(q10t6) + 1/(q12t6) + 1/(q16t9) + 2/(q14t"
+  },
+  {
+   "page": 9,
+   "mark": "12",
+   "context": "2/(q"
+  },
+  {
+   "page": 9,
+   "mark": "7",
+   "context": "2/(q12t"
+  },
+  {
+   "page": 9,
+   "mark": "10",
+   "context": "2/(q12t7) + 3/(q"
+  },
+  {
+   "page": 9,
+   "mark": "5",
+   "context": "2/(q12t7) + 3/(q10t"
+  },
+  {
+   "page": 9,
+   "mark": "8",
+   "context": "2/(q12t7) + 3/(q10t5) + 4/(q"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "2/(q12t7) + 3/(q10t5) + 4/(q8t"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "2/(q12t7) + 3/(q10t5) + 4/(q8t4) + 2t"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "2 + t"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "2 + t2+ 6q"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "2 + t2+ 6q2t"
+  },
+  {
+   "page": 9,
+   "mark": "6",
+   "context": "2 + t2+ 6q2t2+ 5q"
+  },
+  {
+   "page": 9,
+   "mark": "5",
+   "context": "2 + t2+ 6q2t2+ 5q6t"
+  },
+  {
+   "page": 9,
+   "mark": "8",
+   "context": "2 + t2+ 6q2t2+ 5q6t5+ 3q"
+  },
+  {
+   "page": 9,
+   "mark": "6",
+   "context": "2 + t2+ 6q2t2+ 5q6t5+ 3q8t"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "2 + t2+ 6q2t2+ 5q6t5+ 3q8t6+ 8/(q"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "2 + t2+ 6q2t2+ 5q6t5+ 3q8t6+ 8/(q4t"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "2 + t2+ 6q2t2+ 5q6t5+ 3q8t6+ 8/(q4t2) + q"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "2 + t2+ 6q2t2+ 5q6t5+ 3q8t6+ 8/(q4t2) + q2t"
+  },
+  {
+   "page": 9,
+   "mark": "14",
+   "context": "2 + t2+ 6q2t2+ 5q6t5+ 3q8t6+ 8/(q4t2) + q2t3+ 1/(q"
+  },
+  {
+   "page": 9,
+   "mark": "8",
+   "context": "2 + t2+ 6q2t2+ 5q6t5+ 3q8t6+ 8/(q4t2) + q2t3+ 1/(q14t"
+  },
+  {
+   "page": 9,
+   "mark": "16",
+   "context": "+ t2+ 6q2t2+ 5q6t5+ 3q8t6+ 8/(q4t2) + q2t3+ 1/(q14t8) + 2/(q"
+  },
+  {
+   "page": 9,
+   "mark": "10",
+   "context": "2+ 6q2t2+ 5q6t5+ 3q8t6+ 8/(q4t2) + q2t3+ 1/(q14t8) + 2/(q16t"
+  },
+  {
+   "page": 9,
+   "mark": "10",
+   "context": "2+ 5q6t5+ 3q8t6+ 8/(q4t2) + q2t3+ 1/(q14t8) + 2/(q16t10) + q"
+  },
+  {
+   "page": 9,
+   "mark": "8",
+   "context": "5q6t5+ 3q8t6+ 8/(q4t2) + q2t3+ 1/(q14t8) + 2/(q16t10) + q10t"
+  },
+  {
+   "page": 9,
+   "mark": "14",
+   "context": "5+ 3q8t6+ 8/(q4t2) + q2t3+ 1/(q14t8) + 2/(q16t10) + q10t8+ q"
+  },
+  {
+   "page": 9,
+   "mark": "10",
+   "context": "3q8t6+ 8/(q4t2) + q2t3+ 1/(q14t8) + 2/(q16t10) + q10t8+ q14t"
+  },
+  {
+   "page": 9,
+   "mark": "10",
+   "context": "+ 8/(q4t2) + q2t3+ 1/(q14t8) + 2/(q16t10) + q10t8+ q14t10+ q"
+  },
+  {
+   "page": 9,
+   "mark": "7",
+   "context": "/(q4t2) + q2t3+ 1/(q14t8) + 2/(q16t10) + q10t8+ q14t10+ q10t"
+  },
+  {
+   "page": 9,
+   "mark": "6",
+   "context": "q"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "q6t"
+  },
+  {
+   "page": 9,
+   "mark": "6",
+   "context": "q6t4+1/(q"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "q6t4+1/(q6t"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "q6t4+1/(q6t4)+4q"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "q6t4+1/(q6t4)+4q4t"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "q6t4+1/(q6t4)+4q4t3+1/(q"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "q6t4+1/(q6t4)+4q4t3+1/(q4t"
+  },
+  {
+   "page": 9,
+   "mark": "12",
+   "context": "q6t4+1/(q6t4)+4q4t3+1/(q4t3)+2q"
+  },
+  {
+   "page": 9,
+   "mark": "9",
+   "context": "q6t4+1/(q6t4)+4q4t3+1/(q4t3)+2q12t"
+  },
+  {
+   "page": 9,
+   "mark": "10",
+   "context": "q6t4+1/(q6t4)+4q4t3+1/(q4t3)+2q12t9+5/(q"
+  },
+  {
+   "page": 9,
+   "mark": "6",
+   "context": "q6t4+1/(q6t4)+4q4t3+1/(q4t3)+2q12t9+5/(q10t"
+  },
+  {
+   "page": 9,
+   "mark": "8",
+   "context": "q6t4+1/(q6t4)+4q4t3+1/(q4t3)+2q12t9+5/(q10t6)+4/(q"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "q6t4+1/(q6t4)+4q4t3+1/(q4t3)+2q12t9+5/(q10t6)+4/(q8t"
+  },
+  {
+   "page": 9,
+   "mark": "12",
+   "context": "q6t4+1/(q6t4)+4q4t3+1/(q4t3)+2q12t9+5/(q10t6)+4/(q8t4)+3/(q"
+  },
+  {
+   "page": 9,
+   "mark": "7",
+   "context": "t4+1/(q6t4)+4q4t3+1/(q4t3)+2q12t9+5/(q10t6)+4/(q8t4)+3/(q12t"
+  },
+  {
+   "page": 9,
+   "mark": "10",
+   "context": "6t4)+4q4t3+1/(q4t3)+2q12t9+5/(q10t6)+4/(q8t4)+3/(q12t7)+1/(q"
+  },
+  {
+   "page": 9,
+   "mark": "5",
+   "context": ")+4q4t3+1/(q4t3)+2q12t9+5/(q10t6)+4/(q8t4)+3/(q12t7)+1/(q10t"
+  },
+  {
+   "page": 9,
+   "mark": "6",
+   "context": "+1/(q4t3)+2q12t9+5/(q10t6)+4/(q8t4)+3/(q12t7)+1/(q10t5)+6/(q"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "/(q4t3)+2q12t9+5/(q10t6)+4/(q8t4)+3/(q12t7)+1/(q10t5)+6/(q6t"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "5/(q"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "5/(q2t) + 2/(q"
+  },
+  {
+   "page": 9,
+   "mark": "18",
+   "context": "5/(q2t) + 2/(q4t) + 1/(q"
+  },
+  {
+   "page": 9,
+   "mark": "11",
+   "context": "5/(q2t) + 2/(q4t) + 1/(q18t"
+  },
+  {
+   "page": 9,
+   "mark": "14",
+   "context": "5/(q2t) + 2/(q4t) + 1/(q18t11) + 1/(q"
+  },
+  {
+   "page": 9,
+   "mark": "9",
+   "context": "5/(q2t) + 2/(q4t) + 1/(q18t11) + 1/(q14t"
+  },
+  {
+   "page": 9,
+   "mark": "8",
+   "context": "5/(q2t) + 2/(q4t) + 1/(q18t11) + 1/(q14t9) + 4/(q"
+  },
+  {
+   "page": 9,
+   "mark": "5",
+   "context": "5/(q2t) + 2/(q4t) + 1/(q18t11) + 1/(q14t9) + 4/(q8t"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "2t) + 2/(q4t) + 1/(q18t11) + 1/(q14t9) + 4/(q8t5) + 8t + 5/q"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": " 2/(q4t) + 1/(q18t11) + 1/(q14t9) + 4/(q8t5) + 8t + 5/q2+ 4q"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "/(q4t) + 1/(q18t11) + 1/(q14t9) + 4/(q8t5) + 8t + 5/q2+ 4q4t"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "−q"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "1 −q"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "\u0001ShTor"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "\u0001ShTorn−4"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "KTor"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "λ"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "λn−sgn"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "λ=1,q"
+  },
+  {
+   "page": 10,
+   "mark": "6",
+   "context": "λ=1,q2t,q"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "λ=1,q2t,q6t"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "\u0001ShTor"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "\u0001−4"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "uKTor"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "qn−ShTor"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "+ q−2t−Θ"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "1 + q"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "λ"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "λn−sgn"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "λ=1,q"
+  },
+  {
+   "page": 10,
+   "mark": "6",
+   "context": "λ=1,q2t,q"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "λ=1,q2t,q6t"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "= −(q"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "= −(q2t)−4sgn"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "λ=1,q"
+  },
+  {
+   "page": 10,
+   "mark": "6",
+   "context": "λ=1,q2t,q"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "λ=1,q2t,q6t"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "λ=1,q"
+  },
+  {
+   "page": 10,
+   "mark": "6",
+   "context": "λ=1,q2t,q"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "λ=1,q2t,q6t"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 10,
+   "mark": "6",
+   "context": "q"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "q6t"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 10,
+   "mark": "12",
+   "context": "1 + q"
+  },
+  {
+   "page": 10,
+   "mark": "8",
+   "context": "1 + q12t"
+  },
+  {
+   "page": 10,
+   "mark": "14",
+   "context": "1 + q"
+  },
+  {
+   "page": 10,
+   "mark": "9",
+   "context": "1 + q14t"
+  },
+  {
+   "page": 10,
+   "mark": "6",
+   "context": "−(q"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "−(q6t"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "−(q6t4)−Θ"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(1 −q"
+  },
+  {
+   "page": 10,
+   "mark": "6",
+   "context": "(1 −q2t)(1 −q"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "(1 −q2t)(1 −q6t"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(1 −q"
+  },
+  {
+   "page": 10,
+   "mark": "8",
+   "context": "(1 −q2t)(1 −q"
+  },
+  {
+   "page": 10,
+   "mark": "6",
+   "context": "(1 −q2t)(1 −q8t"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 10,
+   "mark": "6",
+   "context": "q2t(1 −q"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "q2t(1 −q6t"
+  },
+  {
+   "page": 10,
+   "mark": "8",
+   "context": "q2t(1 −q6t4)(1 −q"
+  },
+  {
+   "page": 10,
+   "mark": "6",
+   "context": "q2t(1 −q6t4)(1 −q8t"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "q2t"
+  },
+  {
+   "page": 10,
+   "mark": "6",
+   "context": "q2t2(1 + q"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "q2t2(1 + q6t"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "q2t"
+  },
+  {
+   "page": 10,
+   "mark": "6",
+   "context": "−(q"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "−(q6t"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "−(q6t4)−Θ"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "(1 −q"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(1 −q4t"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "(1 −q4t2)(1 + q"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "(1 −q4t2)(1 + q4t"
+  },
+  {
+   "page": 10,
+   "mark": "8",
+   "context": "1 −q"
+  },
+  {
+   "page": 10,
+   "mark": "6",
+   "context": "1 −q8t"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 10,
+   "mark": "6",
+   "context": "q"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "q6t"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "q"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "q4t"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "1 + q"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "1 + q2t"
+  },
+  {
+   "page": 10,
+   "mark": "6",
+   "context": "1 + q"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "1 + q6t"
+  },
+  {
+   "page": 10,
+   "mark": "6",
+   "context": "q"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "q6t"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "q6t4(1 + q"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "q6t4(1 + q4t"
+  },
+  {
+   "page": 10,
+   "mark": "6",
+   "context": "1 −q"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "1 −q6t"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "1 + q"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "1 + q4t"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 10,
+   "mark": "6",
+   "context": "q2t(1 −q"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "q2t(1 −q6t"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "=q"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "=q4 + q"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "KhSTor"
+  },
+  {
+   "page": 10,
+   "mark": "k",
+   "context": "Tor"
+  },
+  {
+   "page": 10,
+   "mark": "4",
+   "context": "(q−1, t−1)/(q"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "(q−1, t−1)/(q4t"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "λ+ (−t)−Θ"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "\u0001ShTw"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "= (λ/t)−2Θ"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "KTw"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "λ2Θ"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "λ=1,q"
+  },
+  {
+   "page": 11,
+   "mark": "6",
+   "context": "λ=1,q2t,q"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "λ=1,q2t,q6t"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 11,
+   "mark": "6",
+   "context": "q"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "q6t"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "\u0013(1+q"
+  },
+  {
+   "page": 11,
+   "mark": "8",
+   "context": "\u0013(1+q2t)(1+q"
+  },
+  {
+   "page": 11,
+   "mark": "5",
+   "context": "\u0013(1+q2t)(1+q8t"
+  },
+  {
+   "page": 11,
+   "mark": "10",
+   "context": "\u0013(1+q2t)(1+q8t5)(1+q"
+  },
+  {
+   "page": 11,
+   "mark": "7",
+   "context": "\u0013(1+q2t)(1+q8t5)(1+q10t"
+  },
+  {
+   "page": 11,
+   "mark": "6",
+   "context": "1+q"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "1+q6t"
+  },
+  {
+   "page": 11,
+   "mark": "8",
+   "context": "1+q6t4+q"
+  },
+  {
+   "page": 11,
+   "mark": "5",
+   "context": "1+q6t4+q8t"
+  },
+  {
+   "page": 11,
+   "mark": "10",
+   "context": "1+q6t4+q8t5+q"
+  },
+  {
+   "page": 11,
+   "mark": "7",
+   "context": "1+q6t4+q8t5+q10t"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "\u0012(1+q"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "\u0012(1+q2t"
+  },
+  {
+   "page": 11,
+   "mark": "6",
+   "context": "\u0012(1+q2t2)(1+q"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "\u0012(1+q2t2)(1+q6t"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "(t+1)"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "1−q"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "1−q4t"
+  },
+  {
+   "page": 11,
+   "mark": "12",
+   "context": "q"
+  },
+  {
+   "page": 11,
+   "mark": "8",
+   "context": "q12t"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "q12t8(1−q"
+  },
+  {
+   "page": 11,
+   "mark": "6",
+   "context": "q12t8(1−q2t)(1−q"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "q12t8(1−q2t)(1−q6t"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "1−q"
+  },
+  {
+   "page": 11,
+   "mark": "12",
+   "context": "q"
+  },
+  {
+   "page": 11,
+   "mark": "8",
+   "context": "q12t"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "q2t"
+  },
+  {
+   "page": 11,
+   "mark": "6",
+   "context": "q2t2(1−q"
+  },
+  {
+   "page": 11,
+   "mark": "8",
+   "context": "q2t2(1−q6t"
+  },
+  {
+   "page": 11,
+   "mark": "10",
+   "context": "q"
+  },
+  {
+   "page": 11,
+   "mark": "6",
+   "context": "q10t"
+  },
+  {
+   "page": 11,
+   "mark": "6",
+   "context": "q10t6(1−q"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "q10t6(1−q6t"
+  },
+  {
+   "page": 11,
+   "mark": "8",
+   "context": "q10t6(1−q6t4)(1−q"
+  },
+  {
+   "page": 11,
+   "mark": "6",
+   "context": "q10t6(1−q6t4)(1−q8t"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "1+q"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "1+q4t(q"
+  },
+  {
+   "page": 11,
+   "mark": "n",
+   "context": "1+q4t(q2t)−6Θ"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "q"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "q4t"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "q4t2(1−q"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "q4t2(1−q4t"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "q"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "q4t"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "q4t3(1−q"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "q4t3(1−q4t"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "x = q"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "y= q"
+  },
+  {
+   "page": 11,
+   "mark": "6",
+   "context": "y= q4t"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 11,
+   "mark": "4",
+   "context": "q2=x"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "x"
+  },
+  {
+   "page": 12,
+   "mark": "x",
+   "context": "S2(ν; y, x) = sgn(ν)"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "x"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "xiy"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "x"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "xiy"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "xiyjz"
+  },
+  {
+   "page": 12,
+   "mark": "4",
+   "context": "KTorn>0= x"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "KTorn>0= x4"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "x"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "x2+ u"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "x2+ u2+ uy + y"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "2 −n; u"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "2 −n; u2, x"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "2 −n; u2, x2, y"
+  },
+  {
+   "page": 12,
+   "mark": "y",
+   "context": "2(n −1);"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "2(n −1); y"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "2(n −1); y2, x"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "KTor"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "KTw"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "KTwn= p2x"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "KTwn= p2x2ν+ P1S2(ν; u"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "KTwn= p2x2ν+ P1S2(ν; u2, x"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "KTwn= p2x2ν+ P1S2(ν; u2, x2) + P3S2(ν; y"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "KTwn= p2x2ν+ P1S2(ν; u2, x2) + P3S2(ν; y2, x"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "KTwn= p2x2ν+ P1S2(ν; u2, x2) + P3S2(ν; y2, x2) + P13S3(ν; u"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "n= p2x2ν+ P1S2(ν; u2, x2) + P3S2(ν; y2, x2) + P13S3(ν; u2, x"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "2x2ν+ P1S2(ν; u2, x2) + P3S2(ν; y2, x2) + P13S3(ν; u2, x2, y"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "u"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "u2x"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "u2x2+ u"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "u2x2+ u2y"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "u2x2+ u2y2+ x"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "u2x2+ u2y2+ x2y"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "u2x2+ u2y2+ x2y2+ ux(u"
+  },
+  {
+   "page": 12,
+   "mark": "4",
+   "context": "u"
+  },
+  {
+   "page": 12,
+   "mark": "6",
+   "context": "u4y−2(u + x)(u + y) + u"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "u4y−2(u + x)(u + y) + u6x−2+ u"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "u4y−2(u + x)(u + y) + u6x−2+ u2x"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "u"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "x−6y−1(u + x)(u"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "x−1y−1(x + u)(ux"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "x−1y−1(x + u)(ux2+ yu"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "x−1y−1(x + u)(ux2+ yu2+ xy"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "x−7(u + x)(u + y)(x + y)(u"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "u"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "u2x−1y−1(u + x)"
+  },
+  {
+   "page": 16,
+   "mark": "q",
+   "context": "Q= A−mν"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "A"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "Am"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "Amνq"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "A"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "Am(m−1)q"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "wherewesubstitutedthewrithenumberW=m"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "A=q"
+  },
+  {
+   "page": 17,
+   "mark": "t",
+   "context": "q)"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "q,"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "A,"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "A=q"
+  },
+  {
+   "page": 17,
+   "mark": "t",
+   "context": "q)"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "A,"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "A,"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "q)A=q"
+  },
+  {
+   "page": 17,
+   "mark": "c",
+   "context": "Q.Precisely,ˇ"
+  },
+  {
+   "page": 17,
+   "mark": "q",
+   "context": "Q=A−m(m−1)"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "Tor"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "Tor"
+  },
+  {
+   "page": 17,
+   "mark": "w",
+   "context": "m♯K"
+  },
+  {
+   "page": 17,
+   "mark": "w",
+   "context": "m♯Kwimpliesthatweinsert"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "m♯Kwimpliesthatweinsertw′>0or(−w′)>0copiesoftheFT"
+  },
+  {
+   "page": 17,
+   "mark": "w",
+   "context": "andthenotationFT"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "κis"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "Tor"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "Tor"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "HTor"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "λCλλ"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "{Aq"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "{Aq2}{Aq"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "{A}2{Aq"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "{q"
+  },
+  {
+   "page": 18,
+   "mark": "4",
+   "context": "{q3}{q"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "{q"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "{Aq"
+  },
+  {
+   "page": 18,
+   "mark": "4",
+   "context": "{q}{q"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "{q"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "−(Aq"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "{q"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "{q2}{q"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "{Aq"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "{q"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "HTw"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "λCλλ"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "1+{Aq−1}{Aq"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "1+{Aq−1}{Aq2}(1−(1−q"
+  },
+  {
+   "page": 19,
+   "mark": "4",
+   "context": "1+{Aq−1}{Aq2}(1−(1−q2)(1−q"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "1+{Aq−1}{Aq2}(1−(1−q2)(1−q4)A"
+  },
+  {
+   "page": 19,
+   "mark": "4",
+   "context": "1+{Aq−1}{Aq2}(1−(1−q2)(1−q4)A2−A"
+  },
+  {
+   "page": 19,
+   "mark": "q",
+   "context": "1+{Aq−1}{Aq2}(1−(1−q2)(1−q4)A2−A4"
+  },
+  {
+   "page": 19,
+   "mark": "4",
+   "context": "1+{Aq−1}{Aq2}(1−(1−q2)(1−q4)A2−A4q"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "q"
+  },
+  {
+   "page": 19,
+   "mark": "5",
+   "context": "A−6−q"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "q+q−1A−4−q"
+  },
+  {
+   "page": 19,
+   "mark": "4",
+   "context": "A"
+  },
+  {
+   "page": 19,
+   "mark": "4",
+   "context": "A4q"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "(1+q"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "(1+q2)(1−A"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "(1+q2)(1−A2+A"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "(1+q2)(1−A2+A2q"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "(1+q2)(1−A2+A2q2−A"
+  },
+  {
+   "page": 19,
+   "mark": "6",
+   "context": "(1+q2)(1−A2+A2q2−A2q"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "{A}(q"
+  },
+  {
+   "page": 19,
+   "mark": "4",
+   "context": "A"
+  },
+  {
+   "page": 19,
+   "mark": "5",
+   "context": "A4q"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "A"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "{A}{Aq"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "{A}2{Aq"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "{A}2{Aq3}{A"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "qA"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "(q+q−1)"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "{A}2{Aq−3}{A"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "{A}2{Aq−3}{A2q"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "A"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "A3q(q+q−1)"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "{A}{Aq"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "A"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "A3(q+q−1)"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "(q"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "q"
+  }
+ ]
+}

@@ -50,7 +50,7 @@ It is **not** the Markov trace, and it does not connect the braiding to
 
 So: the `q = 1` corner is joined; the `q ≠ 1` bridge between braiding and character is open.
 
--- Ref: [jimbo1986]; [manuscript] bean qou-k4oq
+-- Ref: [jimbo1986]; [leitner2026] bean qou-k4oq
 -/
 
 namespace QOU.IwahoriHecke.BraidingTrace

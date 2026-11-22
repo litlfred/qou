@@ -1,0 +1,73 @@
+tL]
+
+in Figure 4.5. The boundary curves are given by
+
+y(2) = Vr? — 2?
+
+42(x) = se (4) - (« + cot ()).
+where
+
+— (cos (4%) = 1) exp (4 (cost (237) + cosh! (“4 1) + cosh? (4 ese (7)))) +14 cos (#;)
+(1 + cos (4) exp (4 (cosh CS) + cosh7} (=) + cosh! (2 ese (#))) +1 -cos (#) ,
+
+The test function we use is
+
+and
+
+als
+
+g
+
+r=
+
+g
+
+dle, y) =y— Vr? — 2.
+
+Note that ¢i(z, y) = 0 on yi(x). Our aim is to bound its L? norm on Qx from below.
+
+We start by integrating it explicitly with respect to y, to define a function u(x) as
+
+2(2) 2
+u(x) = [ (A ) dy
+Jy (x) y
+
+pz ge
+= 2Vr? — x? log ;
+ese? (4) _ (x + cot (4))
+
+2 2
+
+; Vos? aan cot (2)) * ys (7) ~ (« + cot ei
+
+We now use Simpson’s rule in exactly the same way as with the Bolza surface, with a
+
+maximum error of 106~®. To approximate
+
+[woae,
+
+sin (4) (ex (4 (cosh C32) +cosh* (2) +cosh~* (3 csc (7)))) - 1)
+(1 + cos (4)) exp (4 (cost C2) + cosh * (37) + cosh+ iG csc (#)))) +1-—cos (4)
+with wae of accuracy, we need to take n = 1648. The following input in Mathe-
+
+matica [37
+
+where
+
+p=
+
+generates Sigag.
+
+\[Phi][x_, y_] = y — Sart[r°2 — x°2];
+u[x_] = (Sart[Cse[Pi/14]->2 — (x + Cot[Pi/14])>2] —
+2 Sqrt[r*2 — x*2] Log[
+Sart [Csc[Pi/14]*2 — (x + Cot[Pi/14])~2]] — (72 — x72)/
+Sqrt [Csc[Pi/14]~2 — (x + Cot[Pi/14])>2]) — (Sart[r72 — x>2] —
+2 Sqrt[r72 — x~2] Log[Sart[r72 — x>2]] — (172 — x72)/
+
+Sqrt [r°2 — x*2]);
+U=((p)/(3 1648)) Total[{{u[0], u[p],
+Total[Table[2 u[i], {i, 2 (p)/1648, 1646 (p)/1648, (p)/824}]],
+Total[Table[4 u[i], {i, (p)/1648, 1647 (p)/1648, (p)/824}]]}]
+
+94

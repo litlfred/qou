@@ -1,0 +1,1 @@
+Assume that V is smooth, hp is a Morse height function, and there are no critical values at infinity (according to Definition 7.43 below). Assume further that the critical values cj = hp(z;) are distinct and listed in descending order.

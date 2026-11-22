@@ -1,0 +1,49 @@
+6.1 Laurent series 139
+
+to its power series expansion at z. Because the domains of convergence for
+these power series contain 2, the functions f and g agree at Zp so z € K.
+Since 2 € J was arbitrary, J equals K as desired. ia)
+
+Proposition 6.8 (logarithmic convexity of domains of convergence). Let F(z) =
+Drezt drz” be a Laurent series with domain of convergence D. Then D =
+Relog™!(B) for some open convex set Bc R¢.
+
+Proof Convergence depends on z only through the moduli of the compo-
+nents, hence D is invariant under any rotation map z; > ez j- The domain of
+convergence is thus the union of tori T(w) = T,(Relog w) and therefore equal
+to Relog™!(B) for some B Cc R“. We claim that the open set B is the interior of
+
+S= {# € R: sup |a,|e"® is ine}
+rez
+
+First, if 2 € Relog (a) and Yipezs |ap2"| = Ynez ldrle”™ converges then
+
+SUP,.<zd |dre”| is finite, so 2 € B implies a € S and (since it is open) B is
+
+contained in the interior of S.
+
+Now, suppose that « lies in the interior of S. Because we are considering ab-
+solute convergence, we may split our series into 2“ subseries depending on the
+signs of its indices. In particular, using the notation v © w = (vj w1,...,VaWa)
+for coordinatewise vector product, we have
+
+Di larle"® < DY lagosl e*,
+
+rezt oe{+1}4 sent
+
+where the inequality reflects the fact that we have duplicated terms with indices
+equal to zero (this simplifies notation and does not affect our argument as we
+only need an upper bound). Because = lies in the interior of S, for fixed a €
+{+1} and € = (e,...,¢€) for sufficiently small e > 0 there exists some C > 0
+such that
+
+» lagosl 7°" = » lagogle Oo @ 7) ese
+
+seN¢ seN¢
+< sup lapler @*208) . » ese
+rezt send
+< Cc
+(l-e-#)4"
+
+In particular, if x lies in the interior of S then >),.czu |ap|e”™ is finite, sox € B
+and we have proven that B equals the interior of S. Furthermore, if x,y € S

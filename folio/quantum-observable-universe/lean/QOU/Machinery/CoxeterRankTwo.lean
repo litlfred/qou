@@ -31,7 +31,7 @@ assumed — it is discharged for `M i j ≤ 3` in `CoxeterDihedralDescent`, whic
 
 -- Ref: [bjornerbrenti2005] Combinatorics of Coxeter Groups, §1.4, §3.3
 -- Ref: [humphreys1990] Reflection Groups and Coxeter Groups, §1.6, §5.
--- Ref: [manuscript] bean qou-06h7
+-- Ref: [leitner2026] bean qou-06h7
 -/
 
 namespace QOU.Machinery.CoxeterRankTwo

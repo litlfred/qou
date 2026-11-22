@@ -1,0 +1,34 @@
+13
+
+Challenges and extensions
+
+In this final chapter we look to the future of ACSV, discussing the most im-
+portant challenges and extensions of current results. Work attacking several of
+these problems is ongoing. The breadth of behavior exhibited by multivariate
+generating functions is vast, and new applications arise constantly that require
+additional techniques.
+
+13.1 Contributing singularities and diagonals
+
+Let F(z) be the generating function of a sequence (a,.). Theorems 7.20 and 7.35
+represent a, as an integer sum of saddle point integrals near critical points of
+F, which can be analyzed to determine asymptotics of a,. Unfortunately, iden-
+tifying the integer coefficients in this sum seems to be extremely difficult, if
+not undecidable. Even identifying the contributing singularities of F, which
+are the critical points of highest height with non-zero coefficients, is currently
+only possible in general for minimal critical points, in two dimensions, or when
+F is the product of linear factors.
+
+Being able to identify the contributing singularities of a general rational
+function would be an important theoretical breakthrough for ACSV. One (topo-
+logical) approach is to generalize the two-dimensional algorithm discussed in
+Section 9.3 to higher dimensions. Another (computational) approach is to use
+software for D-finite functions. Recall from Section 8.4.2 that for any fixed
+r € Z# the r-diagonal of a multivariate rational function is D-finite, and the
+methods of creative telescoping produce a D-finite equation satisfied by the
+diagonal. Thus, it is possible to study rational diagonals using both ACSV and
+techniques for D-finite functions. In fact, these methods are complementary:
+ACSV often determines asymptotics up to unknown integers that are diffi-
+cult to determine, while D-finite techniques often determine asymptotics up
+
+424

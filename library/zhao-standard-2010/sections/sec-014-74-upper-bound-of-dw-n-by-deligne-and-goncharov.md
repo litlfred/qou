@@ -8,7 +8,9 @@ pages: 21-21
 source_pdf: Zhao_standard_2010.pdf
 source_sha256: 94a70847c2937ba7
 toc_source: inferred
+doc_brief: "Standard Relations of Multiple Polylogarithm Values at Roots of Unity — Let N be a positive integer."
 ---
+Upper bound of d(w, N) by Deligne and Goncharov
 By using the theory of motivic fundamental groups of P1 −({0, ∞} ∪µN)
 Deligne and Goncharov [17, 5.25] show that d(w, N) ≤D(w, N) where D(w, N)
 are deﬁned by the formal power series
@@ -44,4 +46,3 @@ D(w, pn) = a(pn)w =
 (37)
 We will compare the bound obtained by the standard relations to the bound
 D(w, N) in the next two sections.
-8

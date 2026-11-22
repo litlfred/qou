@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2412.04241v2
-doc_title: "THE HABIRO RING OF A NUMBER FIELD"
+doc_title: "The Habiro ring of a number field"
 section_id: sec-016-26-algebraicity-via-wkb
 section_title: "Algebraicity via WKB"
 section_number: 2.6
 pages: 33-35
 source_pdf: 2412.04241v2.pdf
 source_sha256: 308d1dd1c42bd979
-doc_brief: "THE HABIRO RING OF A NUMBER FIELD — We introduce the Habiro ring of a number field K and modules over it graded by K3(K)."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.875
-latex_coverage_ratio: 0.869
+latex_prose_ratio: 0.892
+latex_coverage_ratio: 0.885
+doc_brief: "The Habiro ring of a number field — We introduce the Habiro ring of a number field K and modules over it graded by K3(K)."
 ---
 \label{sub.WKB}
 

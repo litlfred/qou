@@ -9,13 +9,20 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Quantum Groups",
-  "pageStart": 7,
-  "pageEnd": 9,
+  "title": "Formal Functions",
+  "pageStart": 21,
+  "pageEnd": 25,
   "contains": [
-    "library/1104248094/blocks/prose-sec-006"
+    "library/1104248094/blocks/prose-sec-006",
+    "library/1104248094/blocks/lem-sec-006-01",
+    "library/1104248094/blocks/lem-sec-006-02",
+    "library/1104248094/blocks/lem-sec-006-03",
+    "library/1104248094/blocks/def-sec-006-04",
+    "library/1104248094/blocks/lem-sec-006-05",
+    "library/1104248094/blocks/lem-sec-006-06",
+    "library/1104248094/blocks/lem-sec-006-07"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/1104248094",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/1104248094",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1104248094/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1104248094/manifest.jsonld",
   "provenance": "ingested"
 }

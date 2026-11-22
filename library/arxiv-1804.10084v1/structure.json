@@ -7,10 +7,11 @@
   "bytes": 158571,
   "pages": 10,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,18 +22,28 @@
   },
   "doi": null,
   "title": "Concentration of Lipschitz Functions of Negatively Dependent Variables",
-  "authors_raw": "Kevin Garbe Jan Vondr\u00e1k",
+  "authors_raw": "Kevin Garbe",
   "title_lines": [
    "Concentration of Lipschitz Functions",
    "of Negatively Dependent Variables"
   ],
-  "abstract": "We explore the question whether Lipschitz functions of random var iables under various forms of negative correlation satisfy concentration bounds similar to McD iarmid\u2019s inequality for indepen- dent random variables. We prove such a concentration bound for r andom variables satisfying the condition of negative regression, correcting an earlier proof [5].",
+  "abstract": "We explore the question whether Lipschitz functions of random variables under various forms of negative correlation satisfy concentration bounds similar to McDiarmid’s inequality for indepen- dent random variables. We prove such a concentration bound for random variables satisfying the condition of negative regression, correcting an earlier proof [5].",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20180426203310-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20180426203310-04'00'"
+  },
+  "title_raw": "Concentration of Lipschitz Functions of Negatively Dependent Variables",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Concentration of Lipschitz Functions of Negatively Dependent Variables",
+   "outline": "1 Introduction",
+   "text": "Concentration of Lipschitz Functions of Negatively Dependent Variables",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -41,53 +52,180 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Prior work",
    "page": 1,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Notions of negative dependence",
    "page": 2,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Concentration under negative regression",
    "page": 3,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Adaptive martingale analysis",
    "page": 4,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "Discussion and conclusion",
    "page": 8,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 1,
    "title": "A The failure of a fixed ordering",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 516,
+   "n_words": 69,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -95,8 +233,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 867,
-   "n_words": 125
+   "n_chars": 873,
+   "n_words": 119,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
    "id": "sec-001-11-prior-work",
@@ -104,19 +244,23 @@
    "title": "Prior work",
    "level": 2,
    "page_start": 1,
-   "page_end": 1,
-   "n_chars": 984,
-   "n_words": 149
+   "page_end": 2,
+   "n_chars": 3073,
+   "n_words": 461,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
    "id": "sec-002-2-notions-of-negative-dependence",
    "number": "2",
    "title": "Notions of negative dependence",
    "level": 1,
-   "page_start": 1,
+   "page_start": 2,
    "page_end": 3,
-   "n_chars": 6944,
-   "n_words": 1228
+   "n_chars": 4775,
+   "n_words": 810,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
    "id": "sec-003-3-concentration-under-negative-regression",
@@ -125,8 +269,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 1934,
-   "n_words": 369
+   "n_chars": 1947,
+   "n_words": 346,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
    "id": "sec-004-31-adaptive-martingale-analysis",
@@ -135,8 +281,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 8,
-   "n_chars": 9312,
-   "n_words": 2186
+   "n_chars": 9038,
+   "n_words": 1893,
+   "label_start": "4",
+   "label_end": "8"
   },
   {
    "id": "sec-005-4-discussion-and-conclusion",
@@ -144,22 +292,44 @@
    "title": "Discussion and conclusion",
    "level": 1,
    "page_start": 8,
+   "page_end": 9,
+   "n_chars": 4537,
+   "n_words": 684,
+   "label_start": "8",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-006-a-the-failure-of-a-fixed-ordering",
+   "number": null,
+   "title": "A The failure of a fixed ordering",
+   "level": 1,
+   "page_start": 9,
    "page_end": 10,
-   "n_chars": 6871,
-   "n_words": 1250
+   "n_chars": 2272,
+   "n_words": 483,
+   "label_start": "9",
+   "label_end": "10"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 7,
-  "sections": 6,
-  "chars_total": 26912,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 8,
+  "chars_total": 27031,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 6,
-   "overlaid": 4,
+   "overlaid": 6,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -167,24 +337,31 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": 0.912,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.982,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-11-prior-work",
      "title": "Prior work",
-     "prose_ratio": 0.435,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.91,
+     "coverage_ratio": 0.965,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-002-2-notions-of-negative-dependence",
      "title": "Notions of negative dependence",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.989,
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.932,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -208,8 +385,14 @@
      "id": "sec-005-4-discussion-and-conclusion",
      "title": "Discussion and conclusion",
      "prose_ratio": 0.984,
-     "coverage_ratio": 0.445,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.525,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-a-the-failure-of-a-fixed-ordering",
+     "title": "A The failure of a fixed ordering",
+     "result": "no matching \\section"
     }
    ]
   }

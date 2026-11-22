@@ -1,0 +1,47 @@
+Proof. The sum of the left-hand side of the required formula is rewritten,
+
+S> exp (v-w(qk +9), (43)
+
+In order to apply the Poisson summation formula (30), we put
+
+f(z) = a(<2+0) exp (N- w+).
+
+where g is a differentiable function on R"+ ¢ satisfying that
+(w) = 1 ifweD,
+IN) Jo iftwd N(D),
+0<g(w)<1 ifwe N(D)-D.
+
+Here, N(D) is a neighborhood of D in R"+ ce such that N(D) — D is included in the
+domain {z € C" | Rew(z) < —e9/ 2}. Then, the Fourier transform of f is given by
+
+fQ = [ a(<2+0) exp (v . W(q2+9) enV ade
+= xn [ g(w) oN (wlw)-22 V=1¢T (w—e)) dw.
+R™ +e
+
+where we put w = z/N +c. Further, for an integer | > n/2,
+
+IPAQ) = (Qe) £0)
+
+— nn -ly Nv(w) - Pt on VAIN (we)
+= Gan f° ((L gra Jaw
+
+-l iv ” Oo? 1 ) NC?
+= N” ( oN vw) 52m V/—I NC (wc) 9
+(Gan), (CZ gual oe) w
+
+"(cow)' | h(w) oN v(w) en 2tV-INCT (we) egy
+is R+e
+
+where h(w) is some polynomial in derivatives of g(w) and u(w). Since the above integral is
+bounded independently of ¢, f (¢) satisfies the assumption (31) of the Poisson summation
+formula. Further, f(z) also satisfies (31). Therefore, by the Poisson summation formula
+(30),
+(43) = D7 f(m).
+meZ”
+When m # 0, we have that
+
+, -l\y 1 N (w(w)—2n/=T m? (w—e))
+= N” _—— h 2 ad
+fm) = NEN) ape foe w
+
+26

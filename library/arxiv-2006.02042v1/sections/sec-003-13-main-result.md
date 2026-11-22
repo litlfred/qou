@@ -4,13 +4,14 @@ doc_title: "The Strong AJ Conjecture for the Figure 8 Knot"
 section_id: sec-003-13-main-result
 section_title: "Main result"
 section_number: 1.3
-pages: 2-4
+pages: 2-3
 source_pdf: 2006.02042v1.pdf
 source_sha256: 9de75ced3a3360bb
-doc_brief: "The Strong AJ Conjecture for the Figure 8 Knot — Motivated by the theory of quantum A-ideals of Frohman-Gelca-Lo Faro, the theory of q-holonomicity of quantum invariants of Garoufalidis-Le and the AJ"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.98
-latex_coverage_ratio: 0.975
+latex_prose_ratio: 0.776
+latex_coverage_ratio: 0.991
+doc_brief: "The Strong AJ Conjecture for the Figure 8 Knot — Motivated by the theory of quantum A-ideals of Frohman-Gelca-LoFaro, the theory of q-holonomicity of quantum invariants of Garoufalidis-Le and the AJ"
 ---
 For a finitely generated group $G$, let $\chi(G)$ denote the $SL_2(\BC)$-character variety of $G$, see \cite{CS}. Suppose  $G=\BZ^2$.
 Every pair of generators $\mu, \lambda$ defines an isomorphism

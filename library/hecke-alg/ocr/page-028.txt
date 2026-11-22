@@ -1,0 +1,57 @@
+2. THE MURPHY BASIS 23
+
+for some ry € R and where the last equality uses Corollary 3.8. By Corollary 3.4
+and induction on A, Tis)? Tw can be written in the required form. Furthermore, by
+induction on t, the terms mys, can be written as a linear combination of terms Muy:
+where u and pb’ are y-tableaux such that yp & » and u is row standard and pv! is
+standard. Since my = mi, we can repeat the argument to replace the left hand
+tableaux with standard tableaux of the required form, and so deduce the result.
+
+Oo
+
+We will often need an important special case of Lemma 3.14 which can be
+gleaned from a careful scrutiny of its proof.
+
+3.15 Corollary Suppose that t is a standard -tableau such that i andi+1 are
+in the same column of t for some i. Then, for any standard \-tableau s,
+
+maT = —Ms + y Tur™Mup
+
+where Tuy € R and the sum is over pairs (u,v) of row standard p.-tableau such that
+either (i) p> A, or (ii) #=A, u=s andopt.
+
+Proof. By assumption, ts; is not standard so we may write ts; = gw for some
+Garnir tableau g and w € 6, by Lemma 3.13. Now, there is a unique standard
+tableau 7 such that g = 7s for some s € S; moreover, &(d(g)) = (d(r)) + 1 and
+if b is any (standard) tableau with b & g then b & 7. Consequently, in this case
+Lemma 3.12 says that
+
+Msg = —Ms7 + So ruwmus
+where ry, € Rand the sum is over pairs (u, 0) of standard p-tableau such that either
+(i) w > A, or (ii) w= A, u=s and op 7. Finally, because f(d(t)) = (d(r)) + E(w)
+and t = rw, by multiplying the equation we have obtained for ms, on the right by
+Ty and using Corollary 3.8 we obtain the result. Oo
+
+Let M = {mg |5,t € Std(\) for some partition A of n}. Then Lemma 3.9
+and Lemma 3.14 show that M spans #. By Theorem 1.11 we know that # isa
+free R-module of rank n!. However, |M| = 57, | Std(A)|? and it is well-known that
+this sum is equal to n! (for example, use the Robinson-Schensted correspondence;
+sce [47]). Thus, M is a basis of #. We call M the Murphy basis of #.
+
+If we let A'* be the set of partitions of n ordered lexicographically we have
+shown that (M, A‘@) is a cellular basis of #. In order to prove the stronger
+result that the set of partitions can be ordered by dominance we need the following
+important Proposition.
+
+If h € # we may write h = Do rgmg_ where rs, € R and my € M. We say
+
+that mag, is involved in h if rs, # 0. Recall that #2 = #2 4 where Z = Z[q,q7'].
+3.16 Proposition Let i be an integer with 1 <i <n and suppose that h € M#
+where jt is the composition of n such that m, = (1+T;). Suppose that h = Yo rsemst,
+where rs, € Rand ms, € M. Then rs, = 0 whenever i and i+1 belong to the same
+column of 8.
+Proof. First suppose that # = #2 and write Mf = m, #2. Let be minimal
+in the lexicographic order such that my, is involved in h for some A-tableaux u
+and o. Choose a pair (u,») of standard \-tableaux such that (i) muy is involved
+in h, and (ii) whenever (s, t) is another pair of standard \-tableaux such that ub 5
+and vp > t then mg, is not involved in h.

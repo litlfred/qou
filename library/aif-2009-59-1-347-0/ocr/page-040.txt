@@ -1,0 +1,54 @@
+ON q-SUMMATION AND CONFLUENCE 385
+
+Remark 4.13. —
+e The summation procedures f > Sisal f and f => Sef are introduced in
+[23] and [21]: they have many good asymptotic properties.
+e Suppose that f is g-summable and that d is not a singular direction. Then
+we have the following formal equality (meaning that we exchange carelessly
+the infinite sum and the integral):
+
+sid
+
+* 1 qe adr
+
+dp [A] po"
+
+(4.9) Sif nal. shfS
+and
+
+1 ft ad
+
+dp 7 [A] #20
+
+(4.10) si! nal SAS.
+
+To prove that this identity is not only formal, but analytic, one would like
+to apply the dominated convergence theorem: unfortunately the dominated
+convergence is a little bit delicate for a general f. since we don’t really
+control the spirals of poles of the discrete g-Borel sums. Anyway, we will
+prove (4.9) and (4.10) for a generic g-Gevrey series (cf. Theorem 4.14).
+
+At this stage a natural question arises:
+Do we have sisal f = sia f and Sef = Sf?
+The answer is clear, and trivially positive, if f(a) is a germ of analytic
+function at zero: in this case all the sums of f(x) coincide with f.
+The rest of the paper is devoted to the proof of the following theorem:
+
+THroreM 4.14. — Let f be a generic q-Gevrey series and let \ € C*,
+d€[-7,7). Assume that \ ¢ DS(f) and (0, e400) NDS(f) = 0. Then
+(1) oh f = Sf, on a convenient domain Q.
+(2) Sif = Sif on a convenient sector containing the direction d.
+Moreover we have: 1
+7 1 re aX
+dp [A] fSA
+Sof nal Spe dr?
+Remark 4.15. — Theorems 3.3 and 3.10 are a special case of Theo-
+rem 4.14.
+
+Before giving a proof of Theorem 4.14 in §4.5, we make a digression
+about two essential ingredients of the proof: first we prove the theorem in
+the special case of the Tschakaloff series; then we introduce a functional
+space that allows to read, in certain sense, any q-Gevrey series as a finite
+linear combination of some modified Tschakaloff series.
+
+TOME 59 (2009), FASCICULB 1

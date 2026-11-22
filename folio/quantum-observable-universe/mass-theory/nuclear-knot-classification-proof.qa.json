@@ -237,6 +237,39 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "6d4417fa2707",
+          "ts": "03b5f30cd055"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:25.193Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "critical",
+        "evidence": "CRITICAL false statement: md:33-35 'In the large-A limit, (1 − h²)^n → 1 since h² ≈ 0.044 ≪ 1' — (1−h²)^n → 0 for fixed h²>0. Proof (proof:1-26) never derives a(𝒩) or ε_i; proof:10 '4_1 = σ₀σ₁⁻¹σ₀⁻¹σ₁' (closure is the unknot: Markov trace = tr(σ₀σ₁⁻¹)); proof:24-25 'ħ_q² = Vol(4_1)/(m_μ/m_e)' empirical calibration",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: binding"
+      },
+      {
+        "field_hash": {
+          "md": "5b9b702ef33f",
+          "ts": "03b5f30cd055"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-16T07:13:24.269Z",
+        "reviewed_sha": "5f209b510c5b50294fd755d263c17c75d49be3ed",
+        "severity": "major",
+        "evidence": "Not a proof. The A=3 identification with 4_1 is 'verified by comparing eigenvalue structure', and A>=4 'identity-dominated NF with small Hopf corrections' is called the Borromean signature; neither is an argument. It also uses the empirical ratio m_mu/m_e to fix q0 inside the proof."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1140,7 +1173,7 @@
           "in_degree": 0,
           "cone_size": 3,
           "depth": 3,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1440,7 +1473,7 @@
         },
         "reviewed_at": "2026-08-21T21:41:26.346Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
-        "evidence": "One em-dash, appositive ('small Hopf corrections \u2014 the signature of the Borromean link'). Density 1 across five paragraphs."
+        "evidence": "One em-dash, appositive ('small Hopf corrections — the signature of the Borromean link'). Density 1 across five paragraphs."
       }
     ],
     "trap-triples": [
@@ -1509,7 +1542,7 @@
         "reviewed_at": "2026-08-21T21:41:26.478Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
         "severity": "minor",
-        "evidence": "Final line before the QED box \u2014 'So A = 3 nuclei bind at the scale set by the substrate itself.' \u2014 has the cadence of a composed closer ('the substrate itself'), but it states the proof's actual conclusion about the A = 3 scale, so it is not placed merely to end well.",
+        "evidence": "Final line before the QED box — 'So A = 3 nuclei bind at the scale set by the substrate itself.' — has the cadence of a composed closer ('the substrate itself'), but it states the proof's actual conclusion about the A = 3 scale, so it is not placed merely to end well.",
         "notes": "No fix applied. If tightened: 'So A = 3 nuclei bind at the substrate scale.' removes the flourish without touching content."
       }
     ],
@@ -1646,7 +1679,7 @@
         },
         "reviewed_at": "2026-08-21T21:41:26.712Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
-        "evidence": "'verified by comparing eigenvalue structure' and 'confirmed by the Frobenius positivity' are appeals to specific checks, not inflation \u2014 though see the note: the first of those verifications is against the wrong braid."
+        "evidence": "'verified by comparing eigenvalue structure' and 'confirmed by the Frobenius positivity' are appeals to specific checks, not inflation — though see the note: the first of those verifications is against the wrong braid."
       }
     ],
     "trap-nonspeakable": [
@@ -1696,7 +1729,7 @@
         "reviewed_at": "2026-08-21T21:41:51.499Z",
         "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
         "evidence": "Short sentences; speakable throughout. (Re-recorded to carry the rigor note found on the same read.)",
-        "notes": "RIGOR (reported, not fixed \u2014 MAJOR, mathematical). THE BRAID WORD GIVEN FOR THE FIGURE-EIGHT CLOSES TO THE UNKNOT. The proof writes 'the figure-eight knot 4_1 = sigma_0 sigma_1^{-1} sigma_0^{-1} sigma_1, verified by comparing eigenvalue structure'. That word is the commutator [sigma_0, sigma_1^{-1}]. Settled exactly with content/pipeline/braid-alexander.ts on 3 strands: Alexander(sigma_0 sigma_1^{-1} sigma_0^{-1} sigma_1) = 1, i.e. 'matches: unknot'; whereas Alexander(sigma_0 sigma_1^{-1} sigma_0 sigma_1^{-1}) = t^2 - 3t + 1, i.e. 'matches: 4_1'. The closure has one component either way, so a component-count check passes it \u2014 only the Alexander polynomial separates them. Correct word (0-indexed, as this block indexes): sigma_0 sigma_1^{-1} sigma_0 sigma_1^{-1} = (sigma_0 sigma_1^{-1})^2; 1-indexed: (sigma_1 sigma_2^{-1})^2. This is a SECOND LIVE SITE of a defect already adjudicated on the sibling block figure-eight-branching-rule.md (see its .qa.json, which additionally shows the tabulated chi_{[2,1]} there matches the commutator, not 4_1) and which is the case named in braid-alexander.ts's own module docstring; the sibling was flagged, this block was not. Everything downstream in this proof that reads 'A = 3 nuclei are figure-eight' inherits it, including the closing identification of Vol(4_1) = 2.030 with the binding scale. VERIFIED CORRECT in the same block: Vol(4_1) = 2*Cl_2(pi/3) = 2.02988321 -> '2.030'; and hbar_q^2 = Vol(4_1)/(m_mu/m_e) is the CAL-2 identity \u2014 2.02988321/206.7682827 = 0.0098171885, against hbar_mu^2 = (1 - 1/1.10997859555733471)^2 = 0.0098171885 (exact to 9 digits at the muon pin; 2.1e-7 relative off the proton pin, i.e. the mu-p tension, so the identity is stated on the ideal CAL-2 layer, correctly)."
+        "notes": "RIGOR (reported, not fixed — MAJOR, mathematical). THE BRAID WORD GIVEN FOR THE FIGURE-EIGHT CLOSES TO THE UNKNOT. The proof writes 'the figure-eight knot 4_1 = sigma_0 sigma_1^{-1} sigma_0^{-1} sigma_1, verified by comparing eigenvalue structure'. That word is the commutator [sigma_0, sigma_1^{-1}]. Settled exactly with content/pipeline/braid-alexander.ts on 3 strands: Alexander(sigma_0 sigma_1^{-1} sigma_0^{-1} sigma_1) = 1, i.e. 'matches: unknot'; whereas Alexander(sigma_0 sigma_1^{-1} sigma_0 sigma_1^{-1}) = t^2 - 3t + 1, i.e. 'matches: 4_1'. The closure has one component either way, so a component-count check passes it — only the Alexander polynomial separates them. Correct word (0-indexed, as this block indexes): sigma_0 sigma_1^{-1} sigma_0 sigma_1^{-1} = (sigma_0 sigma_1^{-1})^2; 1-indexed: (sigma_1 sigma_2^{-1})^2. This is a SECOND LIVE SITE of a defect already adjudicated on the sibling block figure-eight-branching-rule.md (see its .qa.json, which additionally shows the tabulated chi_{[2,1]} there matches the commutator, not 4_1) and which is the case named in braid-alexander.ts's own module docstring; the sibling was flagged, this block was not. Everything downstream in this proof that reads 'A = 3 nuclei are figure-eight' inherits it, including the closing identification of Vol(4_1) = 2.030 with the binding scale. VERIFIED CORRECT in the same block: Vol(4_1) = 2*Cl_2(pi/3) = 2.02988321 -> '2.030'; and hbar_q^2 = Vol(4_1)/(m_mu/m_e) is the CAL-2 identity — 2.02988321/206.7682827 = 0.0098171885, against hbar_mu^2 = (1 - 1/1.10997859555733471)^2 = 0.0098171885 (exact to 9 digits at the muon pin; 2.1e-7 relative off the proton pin, i.e. the mu-p tension, so the identity is stated on the ideal CAL-2 layer, correctly)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1719,6 +1752,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T21:41:51.499Z",
+  "updated_at": "2026-11-16T07:13:24.269Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

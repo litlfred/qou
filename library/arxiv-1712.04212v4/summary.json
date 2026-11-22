@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1712.04212v4",
  "source_sha256": "521911fc8724f3c2",
- "brief": "CONCENTRATION OF 1-LIPSCHITZ FUNCTIONS ON MANIFOLDS WITH BOUNDARY WITH DIRICHLET BOUNDARY CONDITION — In this paper, we consider a concentration of measure problem on Riemannian manifolds with",
- "extended": "**CONCENTRATION OF 1-LIPSCHITZ FUNCTIONS ON MANIFOLDS WITH BOUNDARY WITH DIRICHLET BOUNDARY CONDITION**\n\n*YOHEI SAKURAI*\n\n37 pp, 8 sections.\n\n**Abstract.** In this paper, we consider a concentration of measure problem on Riemannian manifolds with boundary. We study con- centration phenomena of non-negative 1-Lipschitz functions with Dirichlet boundary condition around zero, which is called bound- ary concentration phenomena. We ﬁrst examine relation between boundary concentration phenomena and large spectral gap phe- nomena of Dirichlet eigenvalues of Laplacian. We will obtain ana- logue of the Gromov-V. D. Milman theorem and the Funano-Shioya theorem for closed manifolds. Furthermore, to capture boundary concentration phenomena, we introduce a new invariant called the observable inscribed radius. We will formulate comparison theo- rems for such invariant under a lower Ricci curvature bound, and a lower mean curvature bound for the boundary.\n\n**Outline.** 1 Introduction; 2 Preliminaries; 3 Invariants; 4 Dirichlet eigenvalues; 5 Finite dimensional comparisons; 6 Infinite dimensional comparisons; 7 Boundary concentration phenomena; References",
+ "brief": "1. Introduction — In this paper, we consider a concentration of measure problem on Riemannian manifolds with boundary.",
+ "extended": "**1. Introduction**\n\n*YOHEI SAKURAI*\n\n37 pp, 9 sections.\n\n**Abstract.** In this paper, we consider a concentration of measure problem on Riemannian manifolds with boundary. We study con- centration phenomena of non-negative 1-Lipschitz functions with Dirichlet boundary condition around zero, which is called bound- ary concentration phenomena. We ﬁrst examine relation between boundary concentration phenomena and large spectral gap phe- nomena of Dirichlet eigenvalues of Laplacian. We will obtain ana- logue of the Gromov-V. D. Milman theorem and the Funano-Shioya theorem for closed manifolds. Furthermore, to capture boundary concentration phenomena, we introduce a new invariant called the observable inscribed radius. We will formulate comparison theo- rems for such invariant under a lower Ricci curvature bound, and a lower mean curvature bound for the boundary.\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries; 3 Invariants; 4 Dirichlet eigenvalues; 5 Finite dimensional comparisons; 6 Infinite dimensional comparisons; 7 Boundary concentration phenomena; References",
  "tokens": {
-  "brief": 48,
-  "extended": 289
+  "brief": 29,
+  "extended": 272
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",

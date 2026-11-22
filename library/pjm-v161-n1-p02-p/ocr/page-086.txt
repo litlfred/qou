@@ -1,0 +1,45 @@
+STUDYING LINKS VIA CLOSED BRAIDS III 109
+
+results in [X], this letter length may be computed. This yields an algo-
+rithm to compute the genus. We refer the reader to [X] for the algo-
+rithm. Qo
+
+The Classification Theorem gives an affirmative answer to an inter-
+esting question of Murasugi (see the remark at the bottom of page 75
+of [Mu]):
+
+Corotiary 7.5. Let & be represented by the conjugacy class of
+CT and let % be represented by the conjugacy class of T. Then the
+integer k and the link type of % are invariants (even more, they are
+complete invariants) of the link type of & , except in the special case
+where & is one of the links covered by case (iii) of the algorithm of
+§7.2. In the latter case L is invertible, but % need not be, so one
+might have two distinct link types #~ and #%* which correspond to
+the single link type >.
+
+REMARK. The assumption that has braid index 3 is essential
+here, as may be seen by inspecting the exceptional cases (i) and (ii) in
+§7.2 above.
+
+Coro.iary 7.6. The stabilization index of a link of braid index 3
+is one.
+
+Proof. By the Classification Theorem, a link of braid index 3 is
+either represented by a unique conjugacy class (in which case the sta-
+bilization index is zero) or else it is represented by two conjugacy
+classes which are related to one-another by flypes. Therefore it is only
+necessary to show that two classes which are related by flypes become
+conjugate after a single stabilization. For a proof, see page 100, equa-
+tions (2-27) of [Bi, 1]. a
+
+Our next application concerns the Jones polynomial [J] and its var-
+ious generalizations, i.e. link type invariants which are constructed
+from traces on finite-dimensional matrix representations of the braid
+groups. A central question about such invariants is whether a finite
+collection of them can be a complete type invariant. For links which
+have braid index < 3. A complete answer is beyond the scope of this
+paper, however we have a small contribution.
+
+In the manuscript [Bi, 2] the first author initiated a study of the
+question of when distinct links of braid index 3 have the same 2-
+variable Jones polynomial. She encountered a fundamental difficulty

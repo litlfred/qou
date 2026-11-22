@@ -1,0 +1,47 @@
+528 Stratification and stratified Morse theory
+
+that the complex structure prevents the dimensions of contributions at strata
+of dimensions j < d from exceeding the dimension of the contributions from
+d-dimensional strata.
+
+Proof sketch (i) Assume that the variety is embedded in C” and that the height
+function h has been chosen to be the square of the distance from a generic
+point. We examine the homotopy type of the attachment at a point p in a stra-
+tum of dimension k. It suffices, as in the proof of Theorem C.39, to show that
+each attachment has the homotopy type of a cell complex of dimension at most
+d.
+
+First, if k = d (p is a smooth point) then, as was observed prior to stating
+Theorem C.39, the Morse index of h is at most d. The attachment is (B’, 0B’)
+where i is the Morse index of h, so in this case the homotopy type of the
+attachment is at most d.
+
+When k < d, we proceed by induction on d. The tangential Morse data has
+the homotopy type of a cell complex of dimension at most k. The space L(S ) is
+acomplex analytic space, with complex dimension one less than the dimension
+of the normal slice, meaning it has dimension d—k—1. The induction hypothesis
+shows that the homotopy dimension of £(S) is at most d— k — 1. Taking the
+cone brings the dimension to at most d — k and adding the dimension of the
+tangential data brings this up to at most d, completing the induction.
+
+(ii) When X is the complement of a variety ‘V, still assuming h to be the
+square of the distance to a generic point, all critical points with respect to
+the pair (X,V) are contained in V, not in X. Again it suffices to show that
+the attachments all have homotopy dimension at most 2n — d — 1, and again
+we start with the case k = d. Here p is a smooth point of ‘V, so the normal
+data is the same as for the complement of a point in C"~, which is $2¢-®-1,
+The tangential data has homotopy dimension at most d, so the attachment has
+dimension at most 2n — d—- 1.
+
+When k < d, we again proceed by induction on d. The link L£(S) is the
+complement of V/A in a generic hyperplane A. We have directly dimc N(p) =
+n—kand dimc(A) = n-k —- 1, and dimc(V N A) = d- k — 1 because V has
+codimension n — d, intersects A generically, and k < d— 1. The induction
+hypothesis applied to the complement of V 4 A in A shows that £(S) has the
+homotopy type of a cell complex of dimension at most 2(n — k — 1) — (d-k-
+1) - 1 = 2n- d-k-—2. The normal Morse data is the product of this with a
+1-complex, hence it has homotopy dimension at most 2n—d-—k-—1, and taking
+the product with the tangential Morse data brings the dimension up to at most
+2n — d— 1, completing the induction. ia)
+
+It is useful for the main part of this book to summarize the results from this

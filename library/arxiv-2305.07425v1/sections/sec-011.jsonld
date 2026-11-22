@@ -9,13 +9,14 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "References",
-  "pageStart": 18,
-  "pageEnd": 20,
+  "title": "Theorem 1.1",
+  "pageStart": 16,
+  "pageEnd": 17,
   "contains": [
-    "library/arxiv-2305.07425v1/blocks/prose-sec-011"
+    "library/arxiv-2305.07425v1/blocks/prose-sec-011",
+    "library/arxiv-2305.07425v1/blocks/thm-sec-011-01"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2305.07425v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2305.07425v1",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2305.07425v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2305.07425v1/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -21,7 +21,7 @@ LaTeX label: `thm:em-spectral-completeness`
 
 ## References
 
-- [manuscript] §5/em-spectral-completeness
+- [leitner2026] §5/em-spectral-completeness
 - [jones1987] https://doi.org/10.2307/1971403
 -/
 
@@ -83,7 +83,7 @@ theorem eigenvalues_distinct :
 
 /-- The minimal polynomial of the categorical braiding factors
     over `R` into linear factors with distinct unit roots. -/
--- Ref: [manuscript] §5/em-spectral-completeness
+-- Ref: [leitner2026] §5/em-spectral-completeness
 theorem hecke_minimal_polynomial_splits :
     ∃ (lp lm : S.R) (_ : lp = lambdaPlus S) (_ : lm = lambdaMinus S),
       IsUnit (lp - lm) := by
@@ -116,7 +116,7 @@ end SpectralRing
     zero ring `p₊ = 0`). -/
 -- Ref: [jones1987] §3–§4 (Hecke representations of braid groups; the
 --      two braiding eigenvalues on the standard rank-2 block)
--- Ref: [manuscript] §5/em-spectral-completeness
+-- Ref: [leitner2026] §5/em-spectral-completeness
 theorem em_spectral_completeness (S : SpectralRing) [Nontrivial S.R] :
     ∃ (p_plus p_minus : Matrix (Fin 2) (Fin 2) S.R),
       p_plus + p_minus = 1 ∧

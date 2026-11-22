@@ -12,14 +12,14 @@ the body-order series equals the jet-graded total.
 
 The grading match (Steps 1–2 of the proof) and exhaustiveness are
 packaged as the structure hypothesis (`prop:gb-spectral-sequence`,
-`prop:jet-prefix-gb-filtration`), so the series identity is extracted
+`conj:jet-prefix-gb-filtration`), so the series identity is extracted
 sorry-free.
 
-LaTeX label: `lem:bond-order-eq-jet-degree`.
+LaTeX label: `conj:bond-order-eq-jet-degree`.
 
 ## References
 
-- [manuscript] §mass-theory/bond-order-eq-jet-degree
+- [leitner2026] §mass-theory/bond-order-eq-jet-degree
 
 **Ground ring**: `ℝ` (binding energies). See `GroundRingAnnotations.lean`.
 -/
@@ -48,7 +48,7 @@ structure BodyOrderJetGrading where
 
 /-- **(C).** The total binding is the body-order series — the cluster
     filtration coincides with the jet-graded filtration. -/
--- Ref: [manuscript] §mass-theory/bond-order-eq-jet-degree
+-- Ref: [leitner2026] §mass-theory/bond-order-eq-jet-degree
 theorem bodyorder_eq_jet_total (S : BodyOrderJetGrading) :
     S.total = ∑ n ∈ Finset.range S.maxOrder, S.bodyTerm n := by
   rw [S.total_eq]

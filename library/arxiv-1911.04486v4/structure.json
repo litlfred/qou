@@ -8,7 +8,7 @@
   "pages": 26,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:21Z",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -26,7 +26,7 @@
   "title_lines": [
    "Knots and the Maxwell Equations"
   ],
-  "abstract": "In this chapter, we review the Ra\u02dcnada \ufb01eld line solutions of Maxwell\u2019s equations in the vacuum, which describe a topologically non-trivial electro- magnetic \ufb01eld, as well as their relation with the knot theory. Also, we present a generalization of these solutions to the non-linear electrodynamics recently published in the literature.",
+  "abstract": "In this chapter, we review the Ra˜nada ﬁeld line solutions of Maxwell’s equations in the vacuum, which describe a topologically non-trivial electro- magnetic ﬁeld, as well as their relation with the knot theory. Also, we present a generalization of these solutions to the non-linear electrodynamics recently published in the literature.",
   "docinfo": {
    "Producer": "pdfTeX-1.40.17",
    "Creator": "LaTeX with hyperref package",
@@ -98,7 +98,7 @@
   },
   {
    "level": 2,
-   "title": "Ran\u00e3da solutions",
+   "title": "Ranãda solutions",
    "page": 10,
    "source": "outline",
    "number": "3.1",
@@ -143,7 +143,7 @@
   {
    "kind": "table",
    "number": "1",
-   "title": "Field content of Maxwell\u2019s equations Vector",
+   "title": "Field content of Maxwell’s equations Vector",
    "page": 4,
    "confidence": 0.8,
    "evidence": [
@@ -397,8 +397,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 726,
-   "n_words": 101,
+   "n_chars": 724,
+   "n_words": 100,
    "label_start": "1",
    "label_end": "1"
   },
@@ -408,57 +408,105 @@
    "title": "Introduction",
    "level": 1,
    "page_start": 2,
-   "page_end": 7,
-   "n_chars": 10569,
-   "n_words": 1872,
+   "page_end": 3,
+   "n_chars": 3590,
+   "n_words": 560,
    "label_start": "1",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-001-2-maxwells-equations",
+   "number": "2",
+   "title": "Maxwell's equations",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 345,
+   "n_words": 51,
+   "label_start": "2",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-002-21-maxwells-equations-in-the-three-dimensional-f",
+   "number": "2.1",
+   "title": "Maxwell's equations in the three-dimensional formulation",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 7,
+   "n_chars": 6571,
+   "n_words": 1253,
+   "label_start": "2",
    "label_end": "6"
   },
   {
-   "id": "sec-001-22-maxwell-equations-in-covariant-formulation",
+   "id": "sec-003-22-maxwell-equations-in-covariant-formulation",
    "number": "2.2",
    "title": "Maxwell equations in covariant formulation",
    "level": 2,
    "page_start": 7,
-   "page_end": 10,
-   "n_chars": 5299,
-   "n_words": 911,
+   "page_end": 9,
+   "n_chars": 4815,
+   "n_words": 830,
    "label_start": "6",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-004-3-knots-in-maxwells-electrodynamics",
+   "number": "3",
+   "title": "Knots in Maxwell's electrodynamics",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 487,
+   "n_words": 81,
+   "label_start": "8",
    "label_end": "9"
   },
   {
-   "id": "sec-002-31-ran\u00e3da-solutions",
+   "id": "sec-005-31-ranãda-solutions",
    "number": "3.1",
-   "title": "Ran\u00e3da solutions",
+   "title": "Ranãda solutions",
    "level": 2,
    "page_start": 10,
    "page_end": 12,
-   "n_chars": 5223,
-   "n_words": 974,
+   "n_chars": 5237,
+   "n_words": 975,
    "label_start": "9",
    "label_end": "11"
   },
   {
-   "id": "sec-003-32-electromagnetic-knot-fields",
+   "id": "sec-006-32-electromagnetic-knot-fields",
    "number": "3.2",
    "title": "Electromagnetic knot fields",
    "level": 2,
    "page_start": 12,
-   "page_end": 19,
-   "n_chars": 11003,
-   "n_words": 2143,
+   "page_end": 16,
+   "n_chars": 4730,
+   "n_words": 975,
    "label_start": "11",
+   "label_end": "15"
+  },
+  {
+   "id": "sec-007-4-electric-and-magnetic-knots-in-bateman-paramet",
+   "number": "4",
+   "title": "Electric and magnetic knots in Bateman parametrization",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 19,
+   "n_chars": 6258,
+   "n_words": 1164,
+   "label_start": "15",
    "label_end": "18"
   },
   {
-   "id": "sec-004-5-knots-in-nonlinear-electrodynamics",
+   "id": "sec-008-5-knots-in-nonlinear-electrodynamics",
    "number": "5",
    "title": "Knots in nonlinear electrodynamics",
    "level": 1,
    "page_start": 19,
    "page_end": 26,
-   "n_chars": 11896,
-   "n_words": 2091,
+   "n_chars": 11931,
+   "n_words": 2095,
    "label_start": "18",
    "label_end": "25"
   }
@@ -474,13 +522,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 6,
-  "chars_total": 44716,
+  "sections": 10,
+  "chars_total": 44688,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 10,
-   "overlaid": 5,
+   "overlaid": 9,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -495,37 +544,69 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.946,
-     "coverage_ratio": 0.95,
+     "prose_ratio": 0.932,
+     "coverage_ratio": 0.995,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-001-22-maxwell-equations-in-covariant-formulation",
-     "title": "Maxwell equations in covariant formulation",
-     "prose_ratio": 0.991,
+     "id": "sec-001-2-maxwells-equations",
+     "title": "Maxwell's equations",
+     "prose_ratio": 0.933,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-002-31-ran\u00e3da-solutions",
-     "title": "Ran\u00e3da solutions",
+     "id": "sec-002-21-maxwells-equations-in-the-three-dimensional-f",
+     "title": "Maxwell's equations in the three-dimensional formulation",
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.919,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-22-maxwell-equations-in-covariant-formulation",
+     "title": "Maxwell equations in covariant formulation",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-3-knots-in-maxwells-electrodynamics",
+     "title": "Knots in Maxwell's electrodynamics",
+     "prose_ratio": 0.949,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-31-ranãda-solutions",
+     "title": "Ranãda solutions",
      "prose_ratio": 0.968,
      "coverage_ratio": 0.964,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-003-32-electromagnetic-knot-fields",
+     "id": "sec-006-32-electromagnetic-knot-fields",
      "title": "Electromagnetic knot fields",
-     "prose_ratio": 0.949,
-     "coverage_ratio": 0.943,
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.92,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-004-5-knots-in-nonlinear-electrodynamics",
+     "id": "sec-007-4-electric-and-magnetic-knots-in-bateman-paramet",
+     "title": "Electric and magnetic knots in Bateman parametrization",
+     "prose_ratio": 0.941,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-5-knots-in-nonlinear-electrodynamics",
      "title": "Knots in nonlinear electrodynamics",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.578,

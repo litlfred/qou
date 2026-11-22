@@ -1,0 +1,46 @@
+2.5 Labeled classes 53
+
+exponential generating function of C = A x 8 is
+
+co=y > (() isa
+
+nz=0 k=0
+
+Py Ade, Bowl ne
+=e abl
+
+n>0 k=0
+= A(z)B(z),
+
+where A and B are the exponential generating functions of A and 8. This
+nice behavior is one reason why exponential generating functions are used for
+labeled classes.
+
+A labeled sequence construction is defined analogously to the unlabeled
+case. Because sequences can be represented in terms of disjoint union and
+product, and the exponential generating functions of labeled classes behave the
+same under these operations as ordinary generating functions do in the unla-
+beled case, the exponential generating function of the sequence class SEQ(A)
+for any labeled class A with no objects of size zero is still 1/(1 — A(z)).
+
+Example 2.46 (permutations as labeled sequences). As discussed in Exam-
+ple 2.44, the class of permutations has the labeled construction P = SEQ(Z),
+so that P(z) = 1/(1—z). As a sanity check, we note that there are m![z"]P(z) = n!
+permutations of size n. 4
+
+Finally, we introduce two new constructions, which can be used in the unla-
+beled case but are much easier when dealing with labeled objects. Let A be a
+labeled class with no objects of size zero and exponential generating function
+A(z). The set class SET(A) is the labeled class containing all sets of objects in
+A, which can be viewed as SEQ(A) after identifying tuples whose elements
+differ only by a permutation. Because there are k! ways to permute the elements
+in a tuple of length k, the exponential generating function of B = SET(A) is
+
+k
+Be) = YAR = ev,
+K30
+where e* = exp(z) denotes the formal power series >),,>1 =. Similarly, the cycle
+class CYC(A) is the labeled class containing the elements of SEQ(A) after
+identifying tuples whose elements differ only by a cyclic shift. By convention,
+we do not add an element of size zero to the cycle class. Because there are
+k ways to cyclically shift the elements in a tuple of length k, the exponential

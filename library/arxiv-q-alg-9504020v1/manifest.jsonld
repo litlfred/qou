@@ -5,20 +5,21 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-q-alg-9504020v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-q-alg-9504020v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-q-alg-9504020v1",
+  "title": "A link invariant from quantum dilogarithm",
   "contains": [
     "library/arxiv-q-alg-9504020v1/sections/sec-front-matter",
     "library/arxiv-q-alg-9504020v1/sections/sec-000",
     "library/arxiv-q-alg-9504020v1/sections/sec-001",
     "library/arxiv-q-alg-9504020v1/sections/sec-002",
-    "library/arxiv-q-alg-9504020v1/sections/sec-003"
+    "library/arxiv-q-alg-9504020v1/sections/sec-003",
+    "library/arxiv-q-alg-9504020v1/sections/sec-004"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/assumed-1991-2003/",
   "licenceRecord": {
     "status": "stated",
@@ -28,7 +29,9 @@
   },
   "meta": {
     "doc_id": "arxiv-q-alg-9504020v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "9504020v1.pdf",
     "source_sha256": "0baef40fa9934c9119af2c67252f8032e288c884da72eeaecf405bf91569cda9",
     "pages": 10,

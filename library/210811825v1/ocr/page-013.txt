@@ -1,0 +1,40 @@
+normal vector around the closed loop. When it returns to its original position, it will be
+inward pointing, so the Mébius strip is not orientable. If we fix a an orientation (normal
+vector) on a surface, we say that it is oriented. Where a surface S' has boundary, we define
+an orientation on its interior, and this in turn induces an orientation on the boundary
+os.
+
+These additional conditions on a smooth manifold of two real dimensions allow us
+to give the manifold a complex structure. This leads us to an alternative definition of
+a Riemann surface as a connected, one (complex) dimensional complex manifold. The
+complex structure allows us to define holomorphic functions between Riemann surfaces;
+
+in particular, the transition maps are holomorphic.
+
+Figure 1.2: The Mébius strip is not orientable
+
+The Bolza surface and Klein quartic are interesting because they have maximal sym-
+metry among hyperbolic surfaces in their respective topological classes. The topological
+
+invariant that we use to classify such surfaces is the genus.
+
+Definition 1.2 (Genus) The genus of a connected, orientable surface is the maximum
+number of simple, closed, non-intersecting curves that one can cut along such that the
+
+resulting surface remains connected.
+
+For example, the genus of the torus is 1, because one can cut along a simple, closed
+curve to obtain a cylinder, but another such cut would result in two cylinders. The
+genus may also be thought of as the number of handles glued onto a sphere; one sees
+straightaway that the sphere has genus 0. The Bolza surface has genus 2, and the Klein
+quartic has genus 3.
+
+The following theorem prowides a link between the geometry of a surface and its
+topology (see, for example, nyt
+
+Theorem 1.3 (Gauss-Bonnet) Let S be a compact Riemann surface without boundary,
+
+with Gaussian curvature K. Then
+
+[Kaa = 2rx(S),
+s

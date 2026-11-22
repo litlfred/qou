@@ -1,0 +1,1 @@
+Suppose that µ1, · · · , µm, ν ∈OP(n). Then the coeﬃcient of ˜Kν in ˜Kµ1 · · · ˜Kµm is equal to 2l(µ1)−n · · · 2l(µm)−n zν X ρ∈DP (n) 2n−l(ρ)g2 ρ Xρ ν gρ Xρ µ1 gρ · · · Xρ µm gρ . In particular, the coeﬃcient of ˜ Kν in ( ˜Kµ)m is n!(2l(µ)−n)m zν E Xρ ν gρ Xρ µ gρ m , where ρ is random from shifted Plancherel measure on partitions of size n.

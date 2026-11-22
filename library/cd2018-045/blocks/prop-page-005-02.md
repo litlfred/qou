@@ -1,0 +1,1 @@
+It is instructive to recall that the divergence that appears in the Cottingham Formula and the renormalization must behave just like the QED self-energy correction to the the electron mass, as ultimately, at asymptotically high Q2, the divergence will arise from the QED self-energy shift of the individual quarks.

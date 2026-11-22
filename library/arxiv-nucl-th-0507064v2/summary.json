@@ -2,11 +2,11 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-nucl-th-0507064v2",
  "source_sha256": "dcfad7240ba81bf5",
- "brief": "The Virial Equation of State of Low-Density Neutron Matter — 9 sections: Front matter; VIRIAL EQUATION OF STATE; INTRODUCTION",
- "extended": "**The Virial Equation of State of Low-Density Neutron Matter**\n\n*C.J. Horowitz ∗ and A. Schwenk †*\n\n8 pp, 9 sections.\n\n**Outline.** Front matter; II VIRIAL EQUATION OF STATE; I INTRODUCTION; III RESULTS; 2 P − 2T 2; C Scaling and Energy; 2 T (1 − bnλ3n/2) . (12); IV CONCLUSIONS; Acknowledgments",
+ "brief": "The Virial Equation of State of Low-Density Neutron Matter — 10 sections: Front matter; Introduction; Virial Equation of State",
+ "extended": "**The Virial Equation of State of Low-Density Neutron Matter**\n\n*C.J. Horowitz∗and A. Schwenk†*\n\n8 pp, 10 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 Virial Equation of State; 3 Results; 3.1 Virial Coefficients; 3.2 Pressure; 3.3 Scaling and Energy; 3.4 Entropy and Free Energy; 4 Conclusions; Acknowledgments",
  "tokens": {
   "brief": 31,
-  "extended": 73
+  "extended": 80
  },
  "sections": [
   {
@@ -15,42 +15,47 @@
    "pages": "1-1"
   },
   {
-   "id": "sec-000-ii-virial-equation-of-state",
-   "title": "VIRIAL EQUATION OF STATE",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-001-i-introduction",
-   "title": "INTRODUCTION",
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
    "pages": "1-2"
   },
   {
-   "id": "sec-002-iii-results",
-   "title": "RESULTS",
+   "id": "sec-001-2-virial-equation-of-state",
+   "title": "Virial Equation of State",
    "pages": "2-3"
   },
   {
-   "id": "sec-003-2-p-2t-2",
-   "title": "P − 2T 2",
-   "pages": "3-5"
+   "id": "sec-002-3-results",
+   "title": "Results",
+   "pages": "3-3"
   },
   {
-   "id": "sec-004-c-scaling-and-energy",
+   "id": "sec-003-31-virial-coefficients",
+   "title": "Virial Coefficients",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-004-32-pressure",
+   "title": "Pressure",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-005-33-scaling-and-energy",
    "title": "Scaling and Energy",
    "pages": "5-6"
   },
   {
-   "id": "sec-005-2-t-1-bnλ3n2-12",
-   "title": "T (1 − bnλ3n/2) . (12)",
+   "id": "sec-006-34-entropy-and-free-energy",
+   "title": "Entropy and Free Energy",
    "pages": "6-6"
   },
   {
-   "id": "sec-006-iv-conclusions",
-   "title": "CONCLUSIONS",
+   "id": "sec-007-4-conclusions",
+   "title": "Conclusions",
    "pages": "6-7"
   },
   {
-   "id": "sec-007-acknowledgments",
+   "id": "sec-008-acknowledgments",
    "title": "Acknowledgments",
    "pages": "7-8"
   }

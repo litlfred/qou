@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari",
   "contains": [
+    "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-front-matter",
     "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-000",
     "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-001",
     "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-002",
@@ -27,29 +28,10 @@
     "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-013",
     "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-014",
     "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-015",
-    "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-016",
-    "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-017",
-    "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-018",
-    "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-019",
-    "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-020",
-    "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-021",
-    "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-022",
-    "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-023",
-    "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-024",
-    "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-025",
-    "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-026",
-    "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-027",
-    "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-028",
-    "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-029",
-    "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-030",
-    "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-031",
-    "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-032",
-    "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-033",
-    "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-034",
-    "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-035"
+    "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-016"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari",
     "title_source": "slug",

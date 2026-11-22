@@ -1,1 +1,1 @@
-Let F be an Archimedean local field (R or C), and set A := cF××F×.
+Let F be an Archimedean local field (R or C), and set A := c F × × F ×. For φ(α, x) := α(1 + x), (α, x) ∈A, x̸ = −1, the inverse Fourier transform (with respect to the kernel recalled in 2.4) ˜φ(β, y) := Z A φ(α, x) ⟨(α, x); (β, y)⟩d(α, x) is, for y̸ = 1, ˜φ(β, y) = β(y −1) ∥1 −y−1∥.

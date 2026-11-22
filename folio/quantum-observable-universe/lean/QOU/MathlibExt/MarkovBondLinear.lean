@@ -43,7 +43,7 @@ Generic `[CommRing R]` and a generic `R`-algebra `A`. No `ℝ`, no `q`-specifics
 no archimedean content — the statement is about linearity and nothing else.
 
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
--- Ref: [manuscript] docs/audits/2026-08-19-bar-involution-is-isospin-conjugation.md
+-- Ref: [leitner2026] docs/audits/2026-08-19-bar-involution-is-isospin-conjugation.md
 -/
 
 namespace QOU.MathlibExt.MarkovBondLinear

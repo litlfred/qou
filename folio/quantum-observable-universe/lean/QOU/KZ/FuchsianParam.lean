@@ -35,7 +35,7 @@ The normalised gauge transformation `H(s, ε) = ∑ ε^k H_k(s)`, `H_0 = 1`, of
 Base: complete normed `ℂ`-algebra (archimedean by necessity: this is an analytic step).
 Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-10-11-drinfeld-kohno-sl2-via-emvz.md §2 Step 1
+-- Ref: [leitner2026] docs/audits/2026-10-11-drinfeld-kohno-sl2-via-emvz.md §2 Step 1
 -/
 
 namespace QOU.KZ.FuchsianParam

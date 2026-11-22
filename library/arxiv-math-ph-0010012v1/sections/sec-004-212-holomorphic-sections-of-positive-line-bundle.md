@@ -11,6 +11,7 @@ toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.977
 latex_coverage_ratio: 0.956
+doc_brief: "arXiv:math-ph/0010012v1 10 Oct 2000 — We review some recent results on random polynomials and their generalizations in complex and symplectic geometry."
 ---
 For any Kähler manifold $(M,\omega)$ of complex dimension $m$ there exists a holomorphic hermitian line bundle $(L, h) \to (M, \omega)$ whose Ricci curvature $Ric(h) = \omega$. $L$ is called *positive* since it posseses a metric of positive curvature, i.e. $\omega(X, JY)$ defines a Riemannian metric. We denote by $L^N$ the $N$th power of $L$ and by $H^0(M, L^N)$ the space of holomorphic sections. Its dimension $d_N = dim H^0(M, L^N)$ is given by the Hilbert polynomial $d_N = \frac{c_1(L)^m}{m!}
 N^m + \cdots$ for sufficiently large $N$, where $\cdots$ represent the lower order terms. We equip $M$ with the volume form $dV_{\omega} = \frac{\omega^m}{m!}$ and $H^0(M, L^N)$ with the inner product $||s||^2 = \int_M h(s(z), s(z)) dV.$ For background we refer to [@GH].

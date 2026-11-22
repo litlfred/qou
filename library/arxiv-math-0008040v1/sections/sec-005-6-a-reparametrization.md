@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0008040v1
-doc_title: "arXiv:math/0008040v1 [math.QA] 4 Aug 2000"
+doc_title: "Rectangle diagrams for the Lusztig cones of quantized enveloping algebras of type A"
 section_id: sec-005-6-a-reparametrization
 section_title: "A Reparametrization"
 section_number: 6
@@ -10,7 +10,8 @@ source_sha256: a72319b55dbaf20b
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.982
-latex_coverage_ratio: 0.866
+latex_coverage_ratio: 0.864
+doc_brief: "Rectangle diagrams for the Lusztig cones of quantized enveloping algebras of type A — Let U be the quantum group associated to a Lie algebra g of type An."
 ---
 We will now use the rectangle combinatorics from the previous section to calculate the Lusztig parametrizations $c_j(\mathbf{j})$, $c_P(\mathbf{j})$ of the canonical basis elements arising in Theorem [\[natural\]](#natural){reference-type="ref" reference="natural"}; here $\mathbf{j}$ is fixed as the reduced expression $(n,n-1,n,n-2,n-1,n,\ldots ,1,2,\ldots ,n)$ for $w_0$.
 

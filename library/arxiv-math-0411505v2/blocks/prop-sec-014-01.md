@@ -1,0 +1,1 @@
+Let P = (C, v) be an n-sorting of f. Then exc(P) = X e∈Fr δ1(e) + δ2(e), where δ1(e) = ( |P(f, e)| −def1(C, v, e) if e starts in a + vertex −def1(C, v, e) if e starts in a −vertex, δ2(e) = ( |Cd(e)| −def2(C, v, e) if sign(d(e)) = + −def2(C, v, e) if sign(d(e)) = −.

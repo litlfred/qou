@@ -1,0 +1,70 @@
+by simp
+qed
+have ?Ayz > 0
+using (Re ?Byz / ?Ayz < —1> «Re ?Byz = ?ReByz> «?ReByz < 0>
+by (smt divide-less-0-iff)
+hence sin (y — J) > 0
+using (ry > 0> «rz > 0»
+by (smt mult-pos-pos zero-less-mult-pos)
+
+have 1 /ru+ru>1/rz+rz
+using Pasch-fun-monolof ru rz] «0 < rur (ru < rz «rz < 1>
+by simp
+hence sin 3 « (1 / ru+ ru) < sind * (1 / rz + rz)
+using <sin 3 < 0»
+by auto
+thus ?thesis
+using (ru > 0) (rz > 0» «ru < rz) (rz < 1) (?Ayz > 0» «sin (p — ¥) > O>
+using divide-right-mono[of sin 0 * (1 / ru + ru) sin 0 x (1 / rz + rz) 2 * sin (yp — ¥)]
+by (subst Kz, subst Ku) simp
+next
+assume — sin yp > 0
+hence sin y < 0
+using ‘sin y * sin 0 < 0)
+by (cases sin p = 0, simp-all)
+hence sin ) > 0
+using ‘sin y * sin 0 < 0)
+by (smt mult-nonpos-nonpos)
+have ?ReByz > 0
+proof—
+have ry * (1 + 127) * sind > 0
+using (ry > 0» (rz > 0»
+using <sin 0 > 0»
+by (smt mult-pos-neg mult-pos-pos zero-less-power)
+moreover
+have rz « (1 + ry’) * sing <0
+using (ry > 0» (rz > 0»
+using (sin p < 0>
+by (smt mult-pos-neg mult-pos-pos zero-less-power)
+ultimately
+show ?thesis
+by simp
+qed
+have ?Ayz < 0
+using ‘Re ?Byz / ?Ayz < —1> «?Ayz # 0» (Re ?Byz = ?ReByz) (?ReByz > 0»
+by (smt divide-less-0-iff)
+hence sin (y — 3) < 0
+using (ry > 0> «rz > 0»
+by (smt mult-nonneg-nonneg)
+
+have 1 /ru+ru>1/rz+rz
+using Pasch-fun-monolof ru rz] «0 < rur (ru < rz «rz < 1>
+by simp
+hence sin 3 « (1 / ru+ ru) > sind * (1 / rz + rz)
+using <sin 3 > 0»
+by auto
+thus ?thesis
+using (ru > 0) (rz > 0» «ru < rz) (rz < 1) (?Ayz < 0» «sin (p — ¥) < O>
+using divide-right-mono-neg|of sin 0 * (1 / rz + rz) sin 0 * (1 / rut ru) 2 * sin (p — ¥)]
+by (subst Kz, subst Ku) simp
+
+qed
+
+have intersects-x-axis-positive ?yu
+using * <y’ = cor ry * cis 0» (z' = cor rz * cis yy <u! = cor ru * cis y>
+apply simp
+
+apply (transfer fixing: ry rz ru 0 ~)
+apply (transfer fixing: ry rz ru 0 ~)
+
+134

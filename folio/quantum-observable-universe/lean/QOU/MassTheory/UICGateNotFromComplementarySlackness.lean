@@ -74,7 +74,7 @@ Bean `qou-8urh`; appends to `qou-t6be`, `qou-zlra`, `qou-brng`.
 -/
 
 -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP duality, complementary slackness)
--- Ref: [manuscript] quantum-observable-universe/mass-theory/operator-selection-lp.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/operator-selection-lp.md
 
 namespace QOU.MassTheory.UICGateLP
 
@@ -186,13 +186,31 @@ theorem exists_lpData_activeSet_gateSet_disjoint :
   refine ⟨2, 1, -1, t2, G2, x2, s2, ?_, ?_, ?_, ?_, ?_, ⟨1, ?_⟩, ⟨0, ?_⟩, ?_⟩ <;> decide
 
 /-- `ctxW` carries exactly the witness cost vector. -/
-theorem ctxW_t : @OperatorSelectionLpContext.t ℤ _ _ _ ctxW = t2 := rfl
+theorem ctxW_t : @OperatorSelectionLpContext.t ℤ _ _ _ ctxW = t2 := by
+  dsimp [ctxW, OperatorSelectionLpContext.ofCertificate]
 
 /-- `ctxW` carries exactly the witness multipliers. -/
-theorem ctxW_s : @OperatorSelectionLpContext.s ℤ _ _ _ ctxW = s2 := rfl
+theorem ctxW_s : @OperatorSelectionLpContext.s ℤ _ _ _ ctxW = s2 := by
+  dsimp [ctxW, OperatorSelectionLpContext.ofCertificate]
 
 /-- `ctxW` carries exactly the witness Gram matrix. -/
-theorem ctxW_G : @OperatorSelectionLpContext.G ℤ _ _ _ ctxW = G2 := rfl
+theorem ctxW_G : @OperatorSelectionLpContext.G ℤ _ _ _ ctxW = G2 := by
+  dsimp [ctxW, OperatorSelectionLpContext.ofCertificate]
+
+/-- Under a diagonal Gram over a domain without zero divisors, any active dual
+index (`s i ≠ 0`) with non-vanishing diagonal entry (`G i i ≠ 0`) forces the
+selected primal coordinate `x i = 0`, independent of any cost vector. -/
+theorem complementarySlackness_diagonal_active_forces_zero
+    {R : Type*} [CommRing R] [NoZeroDivisors R]
+    {d : ℕ} {G : Fin d → Fin d → R} {x s : Fin d → R}
+    (hdiag : ∀ a b : Fin d, a ≠ b → G a b = 0)
+    (hcs : ∀ i, s i * Finset.univ.sum (fun j => G i j * x j) = 0)
+    {i : Fin d} (hsi : s i ≠ 0) (hgii : G i i ≠ 0) :
+    x i = 0 := by
+  have hdiag_cs : s i * (G i i * x i) = 0 :=
+    (complementarySlackness_diagonal_iff hdiag).mp hcs i
+  have hgx : G i i * x i = 0 := (mul_eq_zero.mp hdiag_cs).resolve_left hsi
+  exact (mul_eq_zero.mp hgx).resolve_left hgii
 
 #print axioms frobeniusValue_nonpos_iff_eq_zero
 #print axioms gateSet_eq_tightSet
@@ -202,5 +220,6 @@ theorem ctxW_G : @OperatorSelectionLpContext.G ℤ _ _ _ ctxW = G2 := rfl
 #print axioms ctxW_t
 #print axioms ctxW_s
 #print axioms ctxW_G
+#print axioms complementarySlackness_diagonal_active_forces_zero
 
 end QOU.MassTheory.UICGateLP

@@ -7,7 +7,8 @@
   "bytes": 447928,
   "pages": 13,
   "text_source": "embedded",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:55Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -15,21 +16,35 @@
   "arxiv": null,
   "doi": "10.1140/epjc/s10052-023-11923-y",
   "title": "Three generations of colored fermions with S3 family symmetry from Cayley-Dickson sedenions",
-  "authors_raw": "Niels Gresnigta , Liam Gourlay, Abhinav Varma",
+  "authors_raw": "Niels Gresnigta",
   "title_lines": [
    "Eur. Phys. J. C (2023) 83:747",
    "Regular Article - Theoretical Physics",
    "Three generations of colored fermions with S3 family symmetry",
    "from Cayley–Dickson sedenions"
   ],
-  "abstract": "An algebraic representation of three genera- tions of fermions with SU(3)C color symmetry based on the Cayley–Dickson algebra of sedenions S is constructed. Recent constructions based on division algebras convinc- ingly describe a single generation of leptons and quarks with Standard Model gauge symmetries. Nonetheless, an alge- braic origin for the existence of exactly three generations has proven difﬁcult to substantiate. We motivate S as a nat- ural algebraic candidate to describe three generations with SU(3)C gauge symmetry. We initially represent one genera- tion of leptons and quarks in terms of two minimal left ideals of C𝓁(6), generated from a subset of all left actions of the complex sedenions on themselves. Subsequently we employ the S3 automorphism of order three, which is an automor- phism of S but not of O, to generate two additional genera- tions. Given the relative obscurity of sedenions, efforts have been made to present the material in a self-contained manner.",
+  "abstract": "An algebraic representation of three genera- tions of fermions with SU(3)C color symmetry based on the Cayley–Dickson algebra of sedenions S is constructed. Recent constructions based on division algebras convinc- ingly describe a single generation of leptons and quarks with Standard Model gauge symmetries. Nonetheless, an alge- braic origin for the existence of exactly three generations has proven difﬁcult to substantiate. We motivate S as a nat- ural algebraic candidate to describe three generations with SU(3)C gauge symmetry. We initially represent one genera- tion of leptons and quarks in terms of two minimal left ideals of Cℓ(6), generated from a subset of all left actions of the complex sedenions on themselves. Subsequently we employ the S3 automorphism of order three, which is an automor- phism of S but not of O, to generate two additional genera- tions. Given the relative obscurity of sedenions, efforts have been made to present the material in a self-contained manner.",
   "docinfo": {
+   "Title": "Three generations of colored fermions with family symmetry from Cayley–Dickson sedenions",
    "Author": "Niels Gresnigt ",
-   "CreationDate": "D:20230823234451+05'30'",
    "Creator": "Springer",
-   "Title": "Three generations of colored fermions with family symmetry from Cayley–Dickson sedenions"
+   "CreationDate": "D:20230823234451+05'30'"
   },
-  "title_prev": "Eur. Phys. J. C (2023) 83:747 Regular Article - Theoretical Physics Three generations of colored fermions with S3 family symmetry from Cayley–Dickson sedenions"
+  "title_raw": "Eur. Phys. J. C (2023) 83:747 Regular Article - Theoretical Physics Three generations of colored fermions with S3 family symmetry from Cayley–Dickson sedenions",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Three generations of colored fermions with family symmetry from Cayley–Dickson sedenions",
+   "heading": "Three generations of colored fermions with S 3 family symmetry from Cayley–Dickson sedenions",
+   "outline": "Three generations of colored fermions with S3 family symmetry from Cayley–Dickson sedenions",
+   "text": "Eur. Phys. J. C (2023) 83:747 Regular Article - Theoretical Physics Three generations of colored fermions with S3 family symmetry from Cayley–Dickson sedenions",
+   "corroborated_by": [
+    "outline",
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Three generations of colored fermions with S 3 family symmetry from Cayley–Dickson sedenions"
  },
  "toc": [
   {
@@ -37,144 +52,335 @@
    "title": "Three generations of colored fermions with S3 family symmetry from Cayley–Dickson sedenions",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Abstract",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Normed division algebras",
    "page": 3,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "One generation of electrocolor states from mathbbCotimesmathbbO",
    "page": 4,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "The Cayley–Dickson construction and the algebra of sedenions",
    "page": 5,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 3,
    "title": "Octonion subalgebras inside the sedenions",
    "page": 5,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 3,
    "title": "The left multiplication algebra of mathbbCotimesmathbbS",
    "page": 6,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 3,
    "title": "Automorphisms of sedenions",
    "page": 7,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Three generations of color states from mathbbCotimesmathbbS",
    "page": 7,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 3,
    "title": "Why not sedenions?",
    "page": 7,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 3,
    "title": "One generation of electrocolor states from mathbbCotimesmathbbS",
    "page": 8,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 3,
    "title": "Two additional generations from an S3 automorphism",
    "page": 9,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 3,
    "title": "SU(3)C color symmetries of three generations",
    "page": 10,
    "source": "outline",
-   "number": "5.4"
+   "number": "5.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 3,
    "title": "Linear dependence of minimal ideal states",
    "page": 10,
    "source": "outline",
-   "number": "5.5"
+   "number": "5.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Outlook",
    "page": 11,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "Discussion",
    "page": 11,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "Acknowledgements",
    "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Appendix A: Sedenion multiplication table",
    "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "References",
    "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 115,
+   "n_words": 12,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-three-generations-of-colored-fermions-with-s3-fa",
    "number": null,
@@ -183,7 +389,9 @@
    "page_start": 1,
    "page_end": 1,
    "n_chars": 376,
-   "n_words": 54
+   "n_words": 54,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-abstract",
@@ -192,8 +400,10 @@
    "level": 2,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 946,
-   "n_words": 149
+   "n_chars": 991,
+   "n_words": 155,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-1-introduction",
@@ -201,147 +411,231 @@
    "title": "Introduction",
    "level": 2,
    "page_start": 1,
-   "page_end": 2,
-   "n_chars": 8018,
-   "n_words": 1315
+   "page_end": 3,
+   "n_chars": 8415,
+   "n_words": 1353,
+   "label_start": null,
+   "label_end": "3"
   },
   {
    "id": "sec-003-2-normed-division-algebras",
    "number": "2",
    "title": "Normed division algebras",
    "level": 2,
-   "page_start": 2,
-   "page_end": 5,
-   "n_chars": 10029,
-   "n_words": 1903
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 6550,
+   "n_words": 1205,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
-   "id": "sec-004-4-the-cayleydickson-construction-and-the-algebra",
+   "id": "sec-004-3-one-generation-of-electrocolor-states-from-mat",
+   "number": "3",
+   "title": "One generation of electrocolor states from mathbbCotimesmathbbO",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 2802,
+   "n_words": 539,
+   "label_start": "4",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-005-4-the-cayleydickson-construction-and-the-algebra",
    "number": "4",
    "title": "The Cayley–Dickson construction and the algebra of sedenions",
    "level": 2,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 1983,
-   "n_words": 362
+   "n_chars": 1997,
+   "n_words": 376,
+   "label_start": "5",
+   "label_end": "5"
   },
   {
-   "id": "sec-005-41-octonion-subalgebras-inside-the-sedenions",
+   "id": "sec-006-41-octonion-subalgebras-inside-the-sedenions",
    "number": "4.1",
    "title": "Octonion subalgebras inside the sedenions",
    "level": 3,
    "page_start": 5,
-   "page_end": 7,
-   "n_chars": 6250,
-   "n_words": 1207
+   "page_end": 6,
+   "n_chars": 2785,
+   "n_words": 562,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
-   "id": "sec-006-43-automorphisms-of-sedenions",
+   "id": "sec-007-42-the-left-multiplication-algebra-of-mathbbcoti",
+   "number": "4.2",
+   "title": "The left multiplication algebra of mathbbCotimesmathbbS",
+   "level": 3,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 3332,
+   "n_words": 621,
+   "label_start": "6",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-008-43-automorphisms-of-sedenions",
    "number": "4.3",
    "title": "Automorphisms of sedenions",
    "level": 3,
    "page_start": 7,
    "page_end": 7,
-   "n_chars": 2765,
-   "n_words": 590
+   "n_chars": 2703,
+   "n_words": 565,
+   "label_start": "7",
+   "label_end": "7"
   },
   {
-   "id": "sec-007-51-why-not-sedenions",
+   "id": "sec-009-5-three-generations-of-color-states-from-mathbbc",
+   "number": "5",
+   "title": "Three generations of color states from mathbbCotimesmathbbS",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "7",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-010-51-why-not-sedenions",
    "number": "5.1",
    "title": "Why not sedenions?",
    "level": 3,
    "page_start": 7,
-   "page_end": 9,
-   "n_chars": 5519,
-   "n_words": 1110
+   "page_end": 8,
+   "n_chars": 3076,
+   "n_words": 495,
+   "label_start": "7",
+   "label_end": "8"
   },
   {
-   "id": "sec-008-53-two-additional-generations-from-an-s3-automor",
+   "id": "sec-011-52-one-generation-of-electrocolor-states-from-ma",
+   "number": "5.2",
+   "title": "One generation of electrocolor states from mathbbCotimesmathbbS",
+   "level": 3,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 2236,
+   "n_words": 524,
+   "label_start": "8",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-012-53-two-additional-generations-from-an-s3-automor",
    "number": "5.3",
    "title": "Two additional generations from an S3 automorphism",
    "level": 3,
    "page_start": 9,
    "page_end": 10,
-   "n_chars": 3895,
-   "n_words": 817
+   "n_chars": 3815,
+   "n_words": 774,
+   "label_start": "9",
+   "label_end": "10"
   },
   {
-   "id": "sec-009-54-su3c-color-symmetries-of-three-generations",
+   "id": "sec-013-54-su3c-color-symmetries-of-three-generations",
    "number": "5.4",
    "title": "SU(3)C color symmetries of three generations",
    "level": 3,
    "page_start": 10,
    "page_end": 10,
-   "n_chars": 3225,
-   "n_words": 562
+   "n_chars": 3218,
+   "n_words": 555,
+   "label_start": "10",
+   "label_end": "10"
   },
   {
-   "id": "sec-010-55-linear-dependence-of-minimal-ideal-states",
+   "id": "sec-014-55-linear-dependence-of-minimal-ideal-states",
    "number": "5.5",
    "title": "Linear dependence of minimal ideal states",
    "level": 3,
    "page_start": 10,
    "page_end": 11,
-   "n_chars": 1400,
-   "n_words": 246
+   "n_chars": 1341,
+   "n_words": 224,
+   "label_start": "10",
+   "label_end": "11"
   },
   {
-   "id": "sec-011-6-outlook",
+   "id": "sec-015-6-outlook",
    "number": "6",
    "title": "Outlook",
    "level": 2,
    "page_start": 11,
    "page_end": 11,
-   "n_chars": 3501,
-   "n_words": 597
+   "n_chars": 3490,
+   "n_words": 586,
+   "label_start": "11",
+   "label_end": "11"
   },
   {
-   "id": "sec-012-7-discussion",
+   "id": "sec-016-7-discussion",
    "number": "7",
    "title": "Discussion",
    "level": 2,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 2276,
-   "n_words": 376
+   "n_chars": 2210,
+   "n_words": 347,
+   "label_start": "11",
+   "label_end": "12"
   },
   {
-   "id": "sec-013-acknowledgements",
+   "id": "sec-017-acknowledgements",
    "number": null,
    "title": "Acknowledgements",
    "level": 2,
    "page_start": 12,
    "page_end": 12,
-   "n_chars": 1259,
-   "n_words": 199
+   "n_chars": 1256,
+   "n_words": 196,
+   "label_start": "12",
+   "label_end": "12"
   },
   {
-   "id": "sec-014-appendix-a-sedenion-multiplication-table",
+   "id": "sec-018-appendix-a-sedenion-multiplication-table",
    "number": null,
    "title": "Appendix A: Sedenion multiplication table",
    "level": 2,
    "page_start": 12,
    "page_end": 12,
-   "n_chars": 101,
-   "n_words": 17
+   "n_chars": 100,
+   "n_words": 16,
+   "label_start": "12",
+   "label_end": "12"
   },
   {
-   "id": "sec-015-references",
+   "id": "sec-019-references",
    "number": null,
    "title": "References",
    "level": 2,
    "page_start": 12,
    "page_end": 13,
-   "n_chars": 8480,
-   "n_words": 1514
+   "n_chars": 8318,
+   "n_words": 1389,
+   "label_start": "12",
+   "label_end": "13"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 20,
-  "sections": 16,
-  "chars_total": 60023
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 21,
+  "chars_total": 59126,
+  "furniture_lines_stripped": 36
  },
  "duplicate_of": "arxiv-2306.13098v2",
  "duplicate_note": "Same work as library/arxiv-2306.13098v2/, which was chosen as canonical because it carries an arXiv id. Kept on disk rather than deleted — existing citations may point here — but skipped by the ranking and the summary index so one work is not counted twice."

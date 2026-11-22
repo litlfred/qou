@@ -1,0 +1,38 @@
+contains an area of 27, that is, half of the surface. Courant’s nodal domain theorem tells
+us that the first eigenfunction has exactly 2 nodal domains, so we now have a candidate
+for the first eigenspace. We would expect the Faber-Krahn inequality to produce a bound
+
+that does not rule out xg. Indeed, it tells us that
+Ai(Xs) 2 Von © 3.66204.
+
+This means that yg could appear in the first eigenspace.
+
+Figure 3.13: Boundary conditions for xg
+
+For x9, we have: RgSge; = Syey = Tye, = —e, and Ri Se, = e1; RiSoe2 = Sgeg =
+Tey = —ey and RgSygeq = €2; and RoSye3 = Sye3 = R§Sge3 = —e3 and Tye3 = e3. The
+x
+
+Dirichlet boundary problems corresponding to e; and eg involve a triangle with area §,
+
+and e3 corresponds to a triangle of area =. The Faber-Krahn inequality gives us
+
+a1
+
+AMi(x9) = Vz >V_ > 6.
+
+This rules out x9.
+
+Figure 3.14: Boundary conditions for x9
+
+Finally, for x19 we have: RioSioer = Tipe: = —e, and RipSioer = Sioe: = e1;
+7 _ _ _ — eo: _— pT _
+Rio Si0e2 = Ties = —e2 and Rip Soe. = Sipe2 = €2; and Ryo Sioe3 = RiySioes = —e3
+and Tipe3 = Si9e3 = €3. In each case, the Dirichlet boundary problem corresponds to a
+
+quadrilateral with area 5. The Faber-Krahn inequality yields
+Ai(x10) 2 Vz > Ve > 6.
+
+This rules out x10.
+
+73

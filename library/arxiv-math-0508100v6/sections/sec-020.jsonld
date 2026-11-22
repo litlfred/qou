@@ -9,13 +9,14 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "The bound for degrees of HK,n",
-  "pageStart": 16,
-  "pageEnd": 17,
+  "title": "Theorem 4.2 implies Theorem 1.6",
+  "pageStart": 13,
+  "pageEnd": 14,
   "contains": [
-    "library/arxiv-math-0508100v6/blocks/prose-sec-020"
+    "library/arxiv-math-0508100v6/blocks/prose-sec-020",
+    "library/arxiv-math-0508100v6/blocks/thm-sec-020-01"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0508100v6",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0508100v6",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0508100v6/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0508100v6/manifest.jsonld",
   "provenance": "ingested"
 }

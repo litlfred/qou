@@ -39,7 +39,7 @@
 
   Archimedean (ℂ/ℝ): genuinely archimedean (`Real.sqrt`, `Complex`).
 
-  -- Ref: [manuscript] docs/coordination/delta-lambda-magnitude-derivation.md
+  -- Ref: [leitner2026] docs/coordination/delta-lambda-magnitude-derivation.md
   -- Ref: [garoufalidis-gu-marino2021] (GGM) 2012.00062, Theorem 9
 -/
 
@@ -104,5 +104,14 @@ of the surviving open input. -/
 theorem real_substrate_phase_frozen {q₀ : ℝ} (hq : 1 ≤ q₀) :
     Complex.arg ((2 * Real.log q₀ : ℝ) : ℂ) = 0 :=
   substrate_meridian_arg_zero hq
+
+/-- **Mirror-pair binding difference (`r18k`).** For two complex deformations `𝔲₁`
+and `𝔲₂` sharing the same real boost `𝔲₁.re = 𝔲₂.re`, the difference of their
+scaled figure-eight binding imaginary parts is `A * cuspModulus * (𝔲₂.im ^ 2 - 𝔲₁.im ^ 2)`. -/
+theorem binding_formula_sub_of_same_re (A : ℝ) (𝔲₁ 𝔲₂ : ℂ) (hre : 𝔲₁.re = 𝔲₂.re) :
+    A * (V₄₁ 𝔲₁).im - A * (V₄₁ 𝔲₂).im =
+      A * cuspModulus * (𝔲₂.im ^ 2 - 𝔲₁.im ^ 2) := by
+  rw [binding_formula_of_imV₄₁ A 𝔲₁, binding_formula_of_imV₄₁ A 𝔲₂, hre]
+  ring
 
 end QOU.QBeta.DeltaLambdaBindingAssembly

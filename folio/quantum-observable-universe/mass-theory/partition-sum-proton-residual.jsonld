@@ -2,19 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prop-partition-sum-proton-residual",
+  "@id": "papers/quantum-observable-universe/blocks/conj-partition-sum-proton-residual",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Conjecture",
     "doco:Section"
   ],
-  "label": "prop:partition-sum-proton-residual",
-  "kind": "proposition",
-  "title": "Proton tower residual = $m_e \\cdot \\mathrm{tr}_M(C_{\\mathrm{Frob}}) = m_e(2 + 1/[2]_q)$",
+  "label": "conj:partition-sum-proton-residual",
+  "kind": "conjecture",
+  "title": "Proton tower residual compared with $m_e\\sum_{\\lambda\\vdash3}1/\\dim_q\\lambda = m_e(2 + 1/[2]_q)$",
   "uses": [
-    "papers/quantum-observable-universe/blocks/prop-schur-weyl-mass-decomposition"
+    "papers/quantum-observable-universe/blocks/prop-schur-weyl-mass-decomposition",
+    "papers/quantum-observable-universe/blocks/prop-h3-frobenius-casimir-markov-trace"
   ],
   "tags": [
     "proton",

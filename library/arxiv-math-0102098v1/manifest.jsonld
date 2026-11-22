@@ -1,0 +1,54 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0102098v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Skein theory and the Murphy operators",
+  "contains": [
+    "library/arxiv-math-0102098v1/sections/sec-front-matter",
+    "library/arxiv-math-0102098v1/sections/sec-000",
+    "library/arxiv-math-0102098v1/sections/sec-001",
+    "library/arxiv-math-0102098v1/sections/sec-002",
+    "library/arxiv-math-0102098v1/sections/sec-003",
+    "library/arxiv-math-0102098v1/sections/sec-004",
+    "library/arxiv-math-0102098v1/sections/sec-005",
+    "library/arxiv-math-0102098v1/sections/sec-006",
+    "library/arxiv-math-0102098v1/sections/sec-007",
+    "library/arxiv-math-0102098v1/sections/sec-008",
+    "library/arxiv-math-0102098v1/sections/sec-009"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "arxiv-math-0102098v1",
+    "title_source": "editorial",
+    "title_from": "structure.json metadata.title_correction.title",
+    "title_verified": true,
+    "title_correction": {
+      "title": "Skein theory and the Murphy operators",
+      "basis": "Printed title on page 1 (H. R. Morton); the extracted title was the arXiv stamp",
+      "extracted_title": "arXiv:math/0102098v1 [math.GT] 13 Feb 2001",
+      "corrected_on": "2026-11-18",
+      "extracted": "Skein theory and the Murphy operators"
+    },
+    "source_file": "0102098v1.pdf",
+    "source_sha256": "f4bc5ca0ba1e47aae91c518726360de2d461cb594e6355e6dad5429d6659505b",
+    "pages": 22,
+    "arxiv": {
+      "id": "math/0102098",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "13 Feb 2001"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

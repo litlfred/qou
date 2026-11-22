@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-0001202v2
-doc_title: "arXiv:hep-th/0001202v2 29 Jan 2000"
+doc_title: "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees"
 section_id: sec-009-55-comments-on-the-main-theorem
 section_title: "Comments on the main theorem"
 section_number: 5.5
@@ -10,7 +10,8 @@ source_sha256: b2e3e22ea3d51c0b
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.994
-latex_coverage_ratio: 0.99
+latex_coverage_ratio: 0.987
+doc_brief: "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees — The renormalization of quantum ﬁeld theory twists the antipode of a non- cocommutative Hopf algebra"
 ---
 Four comments are in order. The first concerns the enumeration of the filtration. This follows from taking logs in ([\[filter\]](#filter){reference-type="ref" reference="filter"}), which gives $$\log H(x,y)=-\log(1-H_1(x)y)=-\sum_{n,k} P_{n,k}\log(1-x^n y^k)\,.
 \label{logs}$$ Equating coefficients of $y^j$, and setting $x=z^{1/j}$, we obtain $$^j=\sum_{k|j} k P_k(z^{1/k})

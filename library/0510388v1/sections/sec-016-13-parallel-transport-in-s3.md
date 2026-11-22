@@ -1,6 +1,6 @@
 ---
 doc_id: 0510388v1
-doc_title: "ELECTRODYNAMICS and the GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE Dennis DeTurck and Herman Gluck"
+doc_title: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space"
 section_id: sec-016-13-parallel-transport-in-s3
 section_title: "Parallel transport in S3 ."
 section_number: 13
@@ -8,6 +8,7 @@ pages: 34-36
 source_pdf: 0510388v1.pdf
 source_sha256: c83c0f6a2eaa74f3
 toc_source: inferred
+doc_brief: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space — 64 sections: Front matter; ORGANIZATION; STATEMENTS OF RESULTS"
 ---
 We want to switch formats now, from left-translation to parallel transport.   
 First we explain how to conduct vector calculus in this mode.  Then we derive 
@@ -40,7 +41,6 @@ connections between distant points.
  
  
  
-35 
  
  
  
@@ -59,10 +59,4 @@ which is defined for all  y ∊ S3  except for the point  y  =  — x  antipodal
  
  
 ∙ The vector field  Pyx V  is neither divergence-free nor a curl eigenfield.   
-We will obtain and use explicit formulas for its divergence and curl. 
- 
- 
- 
- 
- 
-36
+We will obtain and use explicit formulas for its divergence and curl.

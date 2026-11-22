@@ -27,7 +27,7 @@
 
   Archimedean (ℂ): complex holomorphy, `cpow`, inversion.
 
-  -- Ref: [manuscript] bean el8w tranche 5 — Watson uniqueness brick 4b-ii
+  -- Ref: [leitner2026] bean el8w tranche 5 — Watson uniqueness brick 4b-ii
 -/
 
 import QOU.Mathlib.BorelWatsonTransport

@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1406.7337v4",
  "source_sha256": "5bae8237742733b9",
- "brief": "Semi-Adequate Closed Braids and Volume Adam Giambrone Alma College giambroneaj@alma.edu — In this paper, we show that the volumes for a family of A-adequate closed braids can be bounded above and",
- "extended": "**Semi-Adequate Closed Braids and Volume Adam Giambrone Alma College giambroneaj@alma.edu**\n\n20 pp, 11 sections.\n\n**Abstract.** In this paper, we show that the volumes for a family of A-adequate closed braids can be bounded above and below in terms of the twist number, the number of braid strings, and a quantity that can be read from the combinatorics of a given closed braid diagram. We also show that the volumes for many of these closed braids can be bounded in terms of a single stable coeﬃcient of the colored Jones polynomial, thus showing that this collection of closed braids satisﬁes a Coarse Volume Conjecture. By expanding to a wider family of closed braids, we also obtain volume bounds in terms of the number of positive and negative twist regions in a given closed braid diagram. Furthermore, for a family of A-adequate closed 3-braids, we show that the volumes can be bounded in terms of the parameter s from the Schreier normal form of the 3-braid.\n\n**Outline.** 1 Introduction; 2 Volume bounds for A-adequate closed braids; 2.1 Preliminaries; 2.2 Braids and A-adequacy; 2.3 A lemma for closed braids; 2.4 Diagrammatic volume bounds; 2.5 Volume bounds in terms of the colored Jone; 3 Volume bounds for A-adequate closed 3-braids; 3.1 The Schreier normal form for 3-braids and ; 3.2 Volume bounds in terms of the Schreier nor; 3.3 The proof of Theorem 3.1\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: ForD(K) a certain A-adequate closed n-braid diagram, the complement of K satisﬁes the\n- Theorem 1.2: ForD(K) a certain A-adequate closed 3-braid diagram, the complement of K satisﬁes the\n- Theorem 2.1: Let D(K) be a connected, prime,\n- Theorem 2.1: We will work within this family of braids throughout the rest of this paper. We begin with\n- Theorem 2.2: Let D(K) = ˆβ, where β∈ Bn satisﬁes the assumptions of Lemma 2.1. Let m denote the\n- Theorem 3.1: Let D(K) = ˆβ denote the closure of a nice 3-braid β∈ B3 that satisﬁes the assumptions",
+ "brief": "Semi-Adequate Closed Braids and Volume — In this paper, we show that the volumes for a family of A-adequate closed braids can be bounded above and below in terms of the twist number, the number of",
+ "extended": "**Semi-Adequate Closed Braids and Volume**\n\n*Adam Giambrone*\n\n20 pp, 12 sections.\n\n**Abstract.** In this paper, we show that the volumes for a family of A-adequate closed braids can be bounded above and below in terms of the twist number, the number of braid strings, and a quantity that can be read from the combinatorics of a given closed braid diagram. We also show that the volumes for many of these closed braids can be bounded in terms of a single stable coeﬃcient of the colored Jones polynomial, thus showing that this collection of closed braids satisﬁes a Coarse Volume Conjecture. By expanding to a wider family of closed braids, we also obtain volume bounds in terms of the number of positive and negative twist regions in a given closed braid diagram. Furthermore, for a family of A-adequate closed 3-braids, we show that the volumes can be bounded in terms of the parameter s from the Schreier normal form of the 3-braid.\n\n**Outline.** Front matter; 1 Introduction; 2 Volume bounds for A-adequate closed braids; 2.1 Preliminaries; 2.2 Braids and A-adequacy; 2.3 A lemma for closed braids; 2.4 Diagrammatic volume bounds; 2.5 Volume bounds in terms of the colored Jone; 3 Volume bounds for A-adequate closed 3-braids; 3.1 The Schreier normal form for 3-braids and ; 3.2 Volume bounds in terms of the Schreier nor; 3.3 The proof of Theorem 3.1",
  "tokens": {
-  "brief": 48,
-  "extended": 494
+  "brief": 49,
+  "extended": 338
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -57,20 +62,19 @@
   {
    "id": "sec-009-32-volume-bounds-in-terms-of-the-schreier-normal",
    "title": "Volume bounds in terms of the Schreier normal form",
-   "pages": "13-13"
+   "pages": "13-14"
   },
   {
    "id": "sec-010-33-the-proof-of-theorem-31",
    "title": "The proof of Theorem 3.1",
-   "pages": "13-20"
+   "pages": "14-20"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

@@ -1,4 +1,4 @@
-*The categorical mass of the particle $\varrho$ breaks cleanly into six derived terms:*
+*The categorical mass of the particle $\varrho$ decomposes into six derived terms:*
 
 $$
 \begin{aligned}

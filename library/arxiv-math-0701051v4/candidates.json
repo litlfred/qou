@@ -1,0 +1,70 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0701051v4",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "4592a048c3b84a8d33c983bc76e0a447e5834c24747e8f556986212551cc7c66",
+  "file": "0701051v4.pdf"
+ },
+ "provenance": {
+  "title": "VALENTIN F\u00c9RAY AND PIOTR \u015aNIADY Tr \u03c1\u03bb(\u03c0) a max Tr \u03c1\u03bb(e)",
+  "authors": null,
+  "arxiv": {
+   "id": "math/0701051",
+   "version": "4",
+   "primary_class": null,
+   "stamp_date": "21 Mar 2011"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "theorem": 1
+  },
+  "formalization_candidates": 1,
+  "by_domain": {
+   "math": 1
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  },
+  "by_lean_status": {
+   "unformalized": 1
+  },
+  "needs_lean_proof": 1
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1",
+   "name": null,
+   "statement": "There exists a constant a > 0 with a property that for every Young diagram \u03bb \u0013\u0015|\u03c0| \u0012r(\u03bb) n , |\u03c0| n , c(\u03bb) , n ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS It is easy to check that (3) is a consequence of this theorem and that it gives better estimates than (2) if r(\u03bb) n , c(\u03bb) n , |\u03c0| n are smaller than some positive constant. It is natural to ask what is the optimal value of the constant a. Asymptotics of characters of symmetric groups related to Thoma characters shows that a \u22651.",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-003-13-the-main-result.md (p. 2-3)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-003-13-the-main-result.md",
+   "section_title": "The main result",
+   "pages": "2-3",
+   "formalization_candidate": true,
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-003-13-the-main-result.md (p. 2-3)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "thm-sec-003-01",
+   "block_iri": "library/arxiv-math-0701051v4/blocks/thm-sec-003-01",
+   "claim_id": "arxiv-math-0701051v4#theorem:1",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
+  }
+ ]
+}

@@ -1,0 +1,1 @@
+Under Setup 16.5.1, assume A satisﬁes the χ condition and has ﬁnite local cohomological dimension. Then there is a unique isomorphism ϵ : RΓm ≃ −→RΓmop of triangulated functors Db (f,f)(Aen, gr) →D(Aen, gr), such that the diagram RΓm ϵ ∼ = / σR m % RΓmop σR mop  Id is commutative.

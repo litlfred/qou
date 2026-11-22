@@ -8,7 +8,7 @@
   "pages": 35,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:18Z",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -20,7 +20,7 @@
   "title_lines": [
    "Mathematical and",
    "Theoretical",
-   "PAPER \u2022 OPEN ACCESS",
+   "PAPER • OPEN ACCESS",
    "Consecutive level spacings in the chiral Gaussian",
    "unitary ensemble: from the hard and soft edge to",
    "the bulk",
@@ -28,17 +28,17 @@
   ],
   "abstract": null,
   "docinfo": {
-   "Producer": "Acrobat Distiller 10.0.0 (Windows); modified using iText\u00ae 5.5.13.5 \u00a92000-2026 iText Group NV (IOP Publishing Ltd; licensed version)",
+   "Producer": "Acrobat Distiller 10.0.0 (Windows); modified using iText® 5.5.13.5 ©2000-2026 iText Group NV (IOP Publishing Ltd; licensed version)",
    "Creator": "LaTeX with hyperref package + hypdvips",
    "CreationDate": "D:20220409194511+05'30'"
   },
-  "title_raw": "Mathematical and Theoretical PAPER \u2022 OPEN ACCESS Consecutive level spacings in the chiral Gaussian unitary ensemble: from the hard and soft edge to the bulk To cite this article: G Akemann et al 2022 J. Phys. A: Math. Theor. 55 194002",
+  "title_raw": "Mathematical and Theoretical PAPER • OPEN ACCESS Consecutive level spacings in the chiral Gaussian unitary ensemble: from the hard and soft edge to the bulk To cite this article: G Akemann et al 2022 J. Phys. A: Math. Theor. 55 194002",
   "title_source": "heading",
   "title_verified": true,
   "title_evidence": {
    "heading": "Consecutive level spacings in the chiral Gaussian unitary ensemble: from the hard and soft edge to the bulk",
    "outline": "Consecutive level spacings in the chiral Gaussian unitary ensemble: from the hard and soft edge to the bulk",
-   "text": "Mathematical and Theoretical PAPER \u2022 OPEN ACCESS Consecutive level spacings in the chiral Gaussian unitary ensemble: from the hard and soft edge to the bulk To cite this article: G Akemann et al 2022 J. Phys. A: Math. Theor. 55 194002",
+   "text": "Mathematical and Theoretical PAPER • OPEN ACCESS Consecutive level spacings in the chiral Gaussian unitary ensemble: from the hard and soft edge to the bulk To cite this article: G Akemann et al 2022 J. Phys. A: Math. Theor. 55 194002",
    "corroborated_by": [
     "outline"
    ],
@@ -243,7 +243,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "The properly unfolded microscopic level densities of the Bessel-kernel result (32) for \u03bd = 0 (blue solid curve), \u03bd = 1 (red finely dashed curve), \u03bd = 20 (green coarsely dashed curve), and \u03bd = \u221e(black solid curve). The latter agrees with the unfolded Airy-kernel result (25) reflected at the origin. A",
+   "title": "The properly unfolded microscopic level densities of the Bessel-kernel result (32) for ν = 0 (blue solid curve), ν = 1 (red finely dashed curve), ν = 20 (green coarsely dashed curve), and ν = ∞(black solid curve). The latter agrees with the unfolded Airy-kernel result (25) reflected at the origin. A",
    "page": 10,
    "confidence": 0.9,
    "evidence": [
@@ -256,7 +256,7 @@
   {
    "kind": "figure",
    "number": "2",
-   "title": "Top left: the spacing distribution \u00afp(0,0)",
+   "title": "Top left: the spacing distribution ¯p(0,0)",
    "page": 21,
    "confidence": 0.9,
    "evidence": [
@@ -294,7 +294,7 @@
   {
    "kind": "figure",
    "number": "6",
-   "title": "Top: level spacing distribution (86) (left plot) and its difference to the bulk spacing distribution (A.1) (right plot) for Nf = 0, k = 1 and \u03bd = 0 (green solid curves),",
+   "title": "Top: level spacing distribution (86) (left plot) and its difference to the bulk spacing distribution (A.1) (right plot) for Nf = 0, k = 1 and ν = 0 (green solid curves),",
    "page": 29,
    "confidence": 0.8,
    "evidence": [
@@ -306,7 +306,7 @@
   {
    "kind": "figure",
    "number": "7",
-   "title": "The level spacing distributions (left column) and cumulative densities (right column) of the smallest two eigenvalues (k = 1) generated via Monte Carlo simulations for N = 200, \u03bd = 4 (top), N = 600, \u03bd = 12 (middle) and N = 1000, \u03bd = 20 (bottom)",
+   "title": "The level spacing distributions (left column) and cumulative densities (right column) of the smallest two eigenvalues (k = 1) generated via Monte Carlo simulations for N = 200, ν = 4 (top), N = 600, ν = 12 (middle) and N = 1000, ν = 20 (bottom)",
    "page": 30,
    "confidence": 0.8,
    "evidence": [
@@ -318,7 +318,7 @@
   {
    "kind": "table",
    "number": "2",
-   "title": "The \u03c72-test for the level spacing of the smallest two eigenvalues for a few decreasing values of q = n/(n + \u03bd) and increasing matrix dimension. The number of",
+   "title": "The χ2-test for the level spacing of the smallest two eigenvalues for a few decreasing values of q = n/(n + ν) and increasing matrix dimension. The number of",
    "page": 31,
    "confidence": 0.7,
    "evidence": [
@@ -329,7 +329,7 @@
   {
    "kind": "figure",
    "number": "8",
-   "title": "Left: the level spacing distribution of the smallest two eigenvalues of the overlap Dirac operator k = 1 (blue histogram) with Nf = 2 and \u03bd = 0 averaged over",
+   "title": "Left: the level spacing distribution of the smallest two eigenvalues of the overlap Dirac operator k = 1 (blue histogram) with Nf = 2 and ν = 0 averaged over",
    "page": 32,
    "confidence": 0.8,
    "evidence": [
@@ -663,22 +663,22 @@
    "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 1,
-   "n_chars": 76,
-   "n_words": 11,
+   "page_end": 2,
+   "n_chars": 911,
+   "n_words": 140,
    "label_start": "1",
-   "label_end": "1"
+   "label_end": "2"
   },
   {
    "id": "sec-000-consecutive-level-spacings-in-the-chiral-gaussia",
    "number": null,
    "title": "Consecutive level spacings in the chiral Gaussian unitary ensemble: from the hard and soft edge to the bulk",
    "level": 1,
-   "page_start": 1,
+   "page_start": 2,
    "page_end": 3,
-   "n_chars": 3224,
-   "n_words": 508,
-   "label_start": "1",
+   "n_chars": 2398,
+   "n_words": 380,
+   "label_start": "2",
    "label_end": "3"
   },
   {
@@ -771,26 +771,38 @@
    "title": "Asymptotic analysis at the hard edge",
    "level": 2,
    "page_start": 21,
+   "page_end": 21,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "21",
+   "label_end": "21"
+  },
+  {
+   "id": "sec-009-51-the-large--limit-at-fixed-and",
+   "number": "5.1",
+   "title": "The large- limit at fixed and",
+   "level": 3,
+   "page_start": 21,
    "page_end": 24,
-   "n_chars": 5406,
-   "n_words": 1118,
+   "n_chars": 5362,
+   "n_words": 1108,
    "label_start": "21",
    "label_end": "24"
   },
   {
-   "id": "sec-009-52-comparison-to-the-bulk-spacing-distribution",
+   "id": "sec-010-52-comparison-to-the-bulk-spacing-distribution",
    "number": "5.2",
    "title": "Comparison to the bulk spacing distribution",
    "level": 3,
    "page_start": 24,
    "page_end": 27,
-   "n_chars": 6160,
-   "n_words": 1109,
+   "n_chars": 6157,
+   "n_words": 1108,
    "label_start": "24",
    "label_end": "27"
   },
   {
-   "id": "sec-010-53-asymptotics-to-the-airy-statistics",
+   "id": "sec-011-53-asymptotics-to-the-airy-statistics",
    "number": "5.3",
    "title": "Asymptotics to the Airy statistics",
    "level": 3,
@@ -802,7 +814,7 @@
    "label_end": "30"
   },
   {
-   "id": "sec-011-6-comparison-to-data-from-lattice-qcd",
+   "id": "sec-012-6-comparison-to-data-from-lattice-qcd",
    "number": "6",
    "title": "Comparison to data from lattice QCD",
    "level": 2,
@@ -814,7 +826,7 @@
    "label_end": "32"
   },
   {
-   "id": "sec-012-7-conclusion",
+   "id": "sec-013-7-conclusion",
    "number": "7",
    "title": "Conclusion",
    "level": 2,
@@ -826,7 +838,7 @@
    "label_end": "33"
   },
   {
-   "id": "sec-013-acknowledgments",
+   "id": "sec-014-acknowledgments",
    "number": null,
    "title": "Acknowledgments",
    "level": 2,
@@ -838,7 +850,7 @@
    "label_end": "33"
   },
   {
-   "id": "sec-014-data-availability-statement",
+   "id": "sec-015-data-availability-statement",
    "number": null,
    "title": "Data availability statement",
    "level": 2,
@@ -850,7 +862,7 @@
    "label_end": "33"
   },
   {
-   "id": "sec-015-appendix-a-the-spacing-distribution-in-the-bulk",
+   "id": "sec-016-appendix-a-the-spacing-distribution-in-the-bulk",
    "number": null,
    "title": "Appendix A. The spacing distribution in the bulk",
    "level": 2,
@@ -862,7 +874,7 @@
    "label_end": "34"
   },
   {
-   "id": "sec-016-orcid-ids",
+   "id": "sec-017-orcid-ids",
    "number": null,
    "title": "ORCID iDs",
    "level": 2,
@@ -874,7 +886,7 @@
    "label_end": "34"
   },
   {
-   "id": "sec-017-references",
+   "id": "sec-018-references",
    "number": null,
    "title": "References",
    "level": 2,
@@ -900,7 +912,8 @@
    "count": 0,
    "items": []
   },
-  "sections": 19,
-  "chars_total": 82933
+  "sections": 20,
+  "chars_total": 82895,
+  "furniture_lines_stripped": 1
  }
 }

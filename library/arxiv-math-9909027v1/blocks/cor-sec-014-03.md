@@ -1,0 +1,1 @@
+Suppose the principal graph of the subfactor N ⊂M, [M : N] > 4, has an initial segment equal to the Coxeter-Dynkin diagram Dn+2 with ∗as shown: n · · · ∗ Then there are at least two edges of the principal graph connecting the two points at distance n + 1 from ∗to points of distance n + 2.

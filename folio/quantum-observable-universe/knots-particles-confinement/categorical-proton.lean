@@ -5,13 +5,15 @@ import Mathlib.Tactic.NormNum
 /-!
 # QOU.Torsion.CategoricalProton — Proton as color-linked quark triple
 
-The categorical proton is 𝔭 = [u, u, d]_c ⋈ L_H where u = T_{2,3}
-(trefoil) and d = σ(T_{2,3}) (three-twist, Skein descendant).
+The categorical proton is 𝔭 = [u, u, d]_c ⋈ L_H where u and d are unknot
+strands of the Borromean braid B₃ with positive and negative crossing
+orientation (`def:up-quark`); their lepton partners are T_{2,3} and its
+mirror σ(T_{2,3}).
 
 LaTeX label: `def:categorical-proton`
 
 ## References
-- [manuscript] §3/categorical-proton
+- [leitner2026] §3/categorical-proton
 
 **Ground ring**: `ℝ` (archimedean realisation).
 Evaluates formal results at q₀ ≈ 1.1098 for comparison with
@@ -23,7 +25,7 @@ namespace QOU.Torsion
 
 /-- The categorical proton: color-linked triple [u, u, d]_c ⋈ L_H.
     Mass = S_uu + 2·S_ud ≈ 938.272 MeV. -/
--- Ref: [manuscript] §3/categorical-proton
+-- Ref: [leitner2026] §3/categorical-proton
 structure CategoricalProton where
   /-- Pair Skein mass S_uu. -/
   skein_uu : ℝ
@@ -58,7 +60,7 @@ noncomputable def proton_mass (q : ℝ) : ℝ :=
 /- The proton mass derived from the substrate parameter q₀.
     At the CODATA value q₀, the Borromean volume formula yields
     m_𝔭(q₀) ≈ 938.272 MeV.
-    Ref: [manuscript] Ch. 5, §Categorical proton -/
+    Ref: [leitner2026] Ch. 5, §Categorical proton -/
 /-- **External axiom (§3b-cond pattern): proton_mass_from_substrate.**
 
     Auto-extracted from the single-sorry theorem body in this file.

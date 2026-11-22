@@ -1,13 +1,14 @@
 ---
 doc_id: arxiv-1610.02592v3
-doc_title: "An Introduction to Geometric Topology Bruno Martelli"
+doc_title: "An Introduction to Geometric Topology"
 section_id: sec-000-introduction
 section_title: "Introduction"
 section_number: null
-pages: 9-15
+pages: 9-13
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
 toc_source: outline
+doc_brief: "An Introduction to Geometric Topology — 86 sections: Front matter; Introduction; Part 1. Hyperbolic geometry"
 ---
 The aim of this book is to introduce the reader to an area of mathematics
 called geometric topology. The text should be suitable to a master or PhD
@@ -151,11 +152,3 @@ plane) created by Claudio Rocchini,
 The painting in the front page is a courtesy of Mariette Michelle Egreteau.
 The Figures 5.1, 5.2, 5.3 and 5.4 were made by Jacopo Guoyi Chen.
 Part 1
-Hyperbolic geometry
-CHAPTER 1
-Preliminaries
-We expect the reader to be familiar with the mathematics usually taught
-to undergraduates, like multivariable diﬀerential calculus, group theory, topo-
-logical spaces, and fundamental groups.
-Some knowledge on diﬀerentiable and Riemannian manifolds would also
-help, at least on an intuitive way: in any case, this chapter introduces from

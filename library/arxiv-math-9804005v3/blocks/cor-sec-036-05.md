@@ -1,1 +1,1 @@
-Let R be a balanced dualizing complex over A. Then there is a
+Suppose A is graded Auslander. Then Cdim is symmetric on graded modules. That is to say, if M is a graded A-bimodule, ﬁnitely generated on both sides, then CdimAM = CdimA◦M. RINGS WITH AUSLANDER DUALIZING COMPLEXES 23 IfA is graded Auslander we have a bound on Krull dimension of graded mod ules:

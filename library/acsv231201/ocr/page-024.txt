@@ -1,0 +1,53 @@
+6 Introduction
+
+for a function f in terms of an asymptotic scale {g; : j € N} and constants
+cj € Cis said to hold if
+
+M-1
+f- Deg; = Olen) (1.2)
+j=0
+
+for every M > 1.
+
+Remark. It is possible that c; = 0 for all j. For example, this will happen if
+gj(n) = n“/ and f is exponentially decaying. In this case there is no leading
+term in the expansion. Otherwise, the leading term of an asymptotic expan-
+sion is the first non-zero term c;g, in the expansion.
+
+Example 1.4. Stirling’s famous approximation to the factorial can be refined
+to give an asymptotic series
+
+nix (") Vann >" con!
+e
+
+é20
+
+with coefficient sequence {cr} beginning 1, 1/12, 1/288, -139/51840,....  <
+
+Example 1.5. Let f ¢ C°(R) be a smooth real function defined on a neighbor-
+hood of zero, so that c, = f(0)/n! is the n term in its Taylor expansion. If f
+is not analytic then this expansion may not converge to f, and may even diverge
+for all non-zero x, but Taylor’s Theorem with remainder always implies
+
+M-1
+
+f(x) = Yi) cnx" + ome
+
+n=0
+for some & > 0 bounded close to the origin. This proves that
+fe yrenx"
+n>0
+
+is always an asymptotic expansion for f near zero. 4
+
+Remark. Following Poincaré, many authors use the symbol ~ to denote both
+asymptotic equivalence of functions and asymptotic series expansions. How-
+ever, this overloading of notation can lead to inconsistencies. We thus follow
+texts such as [dBru81] in using ~ for asymptotic expansions.
+
+Exercise 1.1. Let f(x) = e*. Prove that f(x) ~ 1 as x > 0 but f(x) # 1 as an
+asymptotic expansion in powers of x at x = 0.
+
+All these notations hold in the multivariate case as well, except that if the
+limit value zo is infinity then a statement such as f(z) = O(g(z)) must also
+specify how z approaches the limit. A direction is a ray in R@ defined by all

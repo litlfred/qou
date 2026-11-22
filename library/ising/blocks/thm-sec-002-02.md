@@ -1,0 +1,1 @@
+Consider the Ising model on Zd, with inverse temperature β and magnetic ﬁeld h, such that (β, h) ∈R(β1, β2, h1). Then there exists v = v(β, h, d) such that Sn −E(Sn) p |Λn| d −−−−→ n→∞N(0, v2). Moreover v2 > 0 so the Gaussian law is non-degenerate. We start by a lemma of [8] on the asymptotics of the variance of Sn. JEHANNE DOUSSE AND VALENTIN F´ERAY

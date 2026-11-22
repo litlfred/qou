@@ -1,0 +1,67 @@
+S. Blanes et al. / Physics Reports 470 (2009) 151-238 153
+
+7.8. Geometric control of mechanical systems
+8. Conclusions...
+Acknowledgments
+References
+
+1. Introduction
+1.1. Motivation, overview and history
+
+The outstanding mathematician Wilhelm Magnus (1907-1990) made important contributions to a wide variety of fields
+in mathematics and mathematical physics [1]. Among them, one can mention combinatorial group theory [2] and his
+collaboration in the Bateman project on higher transcendental functions and integral transforms [3]. In this report we review
+another of his long-lasting constructions: the so-called Magnus expansion (hereafter referred to as ME). ME was introduced
+as a tool to solve non-autonomous linear differential equations for linear operators. It is interesting to observe that, in his
+seminal paper of 1954, [4], although it is essentially mathematical in nature, Magnus recognizes that his work was stimulated
+by results of K.O. Friedrichs on the theory of linear operators in Quantum Mechanics [5]. Furthermore, as the first antecedent
+of his proposal, he quotes a paper by R.P. Feynman in the Physical Review [6]. We stress these facts to show that already, at
+its very beginning, ME was strongly related to Physics, and has been ever since, and there is no reason to doubt that it will
+continue to be. This is the first motivation to offer here a review as the present one.
+
+Magnus’ proposal has the very attractive property of leading to approximate solutions which exhibit, at any order of
+approximation, some qualitative or physical characteristics, which the first principles guarantee for the exact (but unknown)
+solution of the problem. Important physical examples are the symplectic or unitary character of the evolution operator when
+dealing with classical or quantum mechanical problems, respectively. This is at variance with most standard perturbation
+theories, and is apparent when formulated in a correct algebraic setting: Lie algebras and Lie groups. But this great advantage
+has sometimes been tainted in the past, by the difficulties both in constructing explicitly higher order terms, and in assuring
+existence and convergence of the expansion.
+
+In our opinion, recent years have witnessed great improvement in this situation. Concerning general questions of
+existence and convergence, new results have appeared. From the point of view of applications, some new approaches in
+old fields have been published, while completely new and promising avenues have been opened by the use of the Magnus
+expansion in Numerical Analysis. It seems reasonable to expect fruitful cross fertilization between these new developments
+and the most conventional perturbative approach to ME and, from it, further applications and new calculations.
+
+This new scenario makes it desirable for the Physics community in different areas (and scientists and engineers in general)
+to have access, in as unified a way as possible, to all the information concerning ME which, so far, has been treated in very
+different settings, and has appeared scattered through very different bibliographic sources.
+
+As implied by the preceding paragraphs, this report is mainly addressed to a Physics audience, or close neighbors, and
+consequently we shall keep the treatment of its mathematical aspects within reasonable limits and refer the reader to more
+detailed literature where necessary. By the same token, the applications presented will be limited to examples from Physics,
+or from the closely related field of Physical Chemistry. We shall also emphasize its instrumental character for numerically
+solving physical problems.
+
+In the present section, as an introduction, we present a brief overview and sketch a history of more than 50 years of ME.
+To start with, let us consider the initial value problem associated with the linear ordinary differential equation
+
+Y(t) =AMY(O), — Y(to) = Yo, (1)
+
+where, as usual, the prime denotes the derivative with respect to the real independent variable which we take as time t,
+although much of what will be said also applies to a complex independent variable. In order of increasing complexity, we
+may consider the equation above in different contexts:
+
+(a) Y : R—> C,A: R —> C. This means that the unknown Y and the given A are complex scalar valued functions of one
+real variable. In this case, there is no problem at all: the solution reduces to a quadrature and an ordinary exponential
+evaluation:
+
+Y(t) = exp (/ or) Yo. (2)
+to
+
+(b) Y: R—> C",A: R—> M,C), where M,,(C) is the set of n x n complex matrices. Now Y is a complex vector valued
+function, and A a complex n x n matrix valued function. At variance with the previous case, only in very special cases is
+the solution easy to state: when for any pair of values of t, t; and t2, one has A(t; )A(t2) = A(t2)A(t1), which is certainly
+the case if A is constant. Then the solution reduces to a quadrature (trivial or not) and a matrix exponential. With the
+obvious changes in the meaning of the symbols, Eq. (2) still applies. In the general case, however, there is no compact
+expression for the solution and (2) is no longer the solution.

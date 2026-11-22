@@ -1,0 +1,53 @@
+Nonvanishing of hyperelliptic zeta functions over finite fields 1897
+
+Corollary 1.6. Let x be a quadratic character over F q(x) with conductor f € Fg[x]. If f is irreducible
+and 4} deg f, then L(5, x) #0.
+
+In particular, the number of quadratic characters with irreducible conductor of size at most X whose
+L-function does not vanish at s = 3 is > X/log X as X — oo. This result improves on the work
+of Andrade and Keating [2013, Corollary 2.6] and of Andrade, Bae, and Jung [Andrade et al. 2016,
+Corollary 2.8], which give a proportion on order (log X)~, and goes beyond the methods of Andrade
+and Baluyot [2020]. For the analogous problem over Z, we refer to the recent work of Baluyot and Pratt
+[2018].
+
+In fact, there is nothing special about hyperelliptic curves in Theorem 1.5. A similar “genus-theory”
+argument allows us to handle the case of cyclic -covers of P! for an odd prime @.
+
+Theorem 1.7. Let € be an odd prime and let C be a (Z/£Z)-cover of P'/Fy branched at a set Sc P! (F,).
+Let 1 be the permutation induced by Frobenius on S, and suppose that 1 is the composition of disjoint
+
+cycles of orders k,, kx, ...,k;, all prime to €.
+(1) Suppose the k; are mutually coprime, and either r = 2 or q is not congruent to 1 modulo €. Then
+every zero of Zc is simple.
+(2) Define x; to be k; if k; is odd and k; /2 if k; is even. Suppose that either
+
+¢ q is congruent to 1 modulo € and r = 2; or
+
+¢ There is no i such that q“ is congruent to 1 modulo €.
+Then the point s = 5 is not a zero of Zc.
+
+We remark that this theorem, like Theorem 1.5 above, provides a set of size on order X/log(X)* of
+
+order-€ Dirichlet characters of conductor at most X whose zeta functions are nonvanishing at s = 5, for
+
+1
+
+Ok.
+some power a € (0, 1]. See Corollary 1.8 for example. This lower bound improves, for € = 3, upon
+Corollary 1.3 of recent work by David, Florea and Lalin [2019] which gives a lower bound of the form
+
+X!~€ (for any € > 0).
+Corollary 1.8. Let ¢ be an odd prime different from the characteristic of a fixed finite field Fy. The number
+
+of €-cyclic Dirichlet characters over Fg(x) with conductor at most X and whose L-function does not
+vanish at s = 3 is > X/(log X)!/2 as X > oo.
+
+The main idea that connects all the theorems in this paper is the study of L-functions modulo ¢. The
+value of an L-function over F,(x) at a complex number s can be expressed as a polynomial P(T) € Z[T]
+evaluated at T = q~*. So if we want to prove that P(T) is nonvanishing, it suffices to prove that P(T) is
+nonvanishing modulo £ for some prime £. For Theorem 1.2, we will show that, for suitably chosen @, the
+vanishing mod ¢ of the L-function is related to the dimension of a certain Frobenius eigenspace in the
+£-torsion of a hyperelliptic Jacobian over F,; the average size of this eigenspace can then be controlled by
+a point count on a moduli space over a finite field, which is a modest generalization and explication of the
+arguments in [Ellenberg et al. 2016] and [Lipnowski and Tsimerman 2019] respectively. For Theorem 1.5,
+on the other hand, we argue that under the given condition on Weierstrass points the L-function of xr

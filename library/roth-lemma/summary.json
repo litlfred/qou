@@ -2,39 +2,28 @@
  "_schema": "library-summary/v1",
  "doc_id": "roth-lemma",
  "source_sha256": "c2f2b49f25f35919",
- "brief": "Chapter 5 ROTH'S LEMMA 1. Introduction Roth bases the proof of his theorem on a general property of polynomials which is to be proved in this chapter. This property is roughly as follows — 4 sections",
- "extended": "**Chapter 5 ROTH'S LEMMA 1. Introduction Roth bases the proof of his theorem on a general property of polynomials which is to be proved in this chapter. This property is roughly as follows**\n\n21 pp, 4 sections.\n\n**Outline.** 1 Introduction; 1 For a detailed study of the generalised Wron; 2 Put w(A) a e\"J<A) if A ^0, andW(O) = 0. The ; 9 The upper bound a m(a; Hi,..., Hm; riM.., rm\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: Let 0<t^l. Let a^l be a real number, and let ri,...,rm,\n- Definition: Let a^l, and let ri,...,rm, Hi,...,Hm be 2m positive integers.\n- Lemma 1: Let fi,..., fn be n polynomials in m variables that have real\n- Lemma 3: Let A, U, V, W, and n be as in Lemma 2, and let",
+ "brief": "ROTH'S LEMMA — 2 sections: Front matter; JL^..+JaL",
+ "extended": "**ROTH'S LEMMA**\n\n21 pp, 2 sections.\n\n**Outline.** Front matter; JL^..+JaL",
  "tokens": {
-  "brief": 49,
-  "extended": 177
+  "brief": 12,
+  "extended": 18
  },
  "sections": [
   {
-   "id": "sec-000-1-introduction",
-   "title": "Introduction",
-   "pages": "1-5"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-11"
   },
   {
-   "id": "sec-001-1-for-a-detailed-study-of-the-generalised-wronsk",
-   "title": "For a detailed study of the generalised Wronskian see, in particular, A. Ostrow-",
-   "pages": "5-12"
-  },
-  {
-   "id": "sec-002-2-put-wa-a-eja-if-a-0-andwo-0-the-properties-of",
-   "title": "Put w(A) a e\"J<A) if A ^0, andW(O) = 0. The properties of J(A) just stated show",
-   "pages": "12-13"
-  },
-  {
-   "id": "sec-003-9-the-upper-bound-a-ma-hi-hm-rim-rm",
-   "title": "The upper bound a m(a; Hi,..., Hm; riM.., rm)",
-   "pages": "13-21"
+   "id": "sec-000-jljal",
+   "title": "JL^..+JaL",
+   "pages": "11-21"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

@@ -7,10 +7,25 @@
   "bytes": 487308,
   "pages": 26,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 8,
+    "reason": "13 of 632 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 10,
+    "reason": "21 of 519 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 24,
+    "reason": "23 of 790 words are a stray single letter: the text layer splits words"
+   }
+  ],
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,18 +35,33 @@
    "stamp_date": "11 Jan 2026"
   },
   "doi": null,
-  "title": "A TANNAKIAN DESCRIPTION OF THE LOCAL KALETHA GERBE",
+  "title": "A Tannakian description of the local Kaletha gerbe",
   "authors_raw": "ALEXANDER BERTOLONI MELI AND PETER DILLERY",
   "title_lines": [
    "A TANNAKIAN DESCRIPTION OF THE LOCAL KALETHA GERBE"
   ],
-  "abstract": "We construct, for ap-adic fieldF, an explicit semisimple Tannakian categoryRigIsoc F whose category of fiber functors recovers Kaletha\u2019s Galois gerbeE Kal. We then classify and write down the simple objects inRigIsoc F , all of which come from elliptic twisted Levi subgroups ofGLn.",
+  "abstract": "We construct, for a p-adic field F, an explicit semisimple Tannakian category RigIsocF whose category of fiber functors recovers Kaletha’s Galois gerbe EKal. We then classify and write down the simple objects in RigIsocF , all of which come from elliptic twisted Levi subgroups of GLn.",
   "docinfo": {
+   "Title": "A Tannakian description of the local Kaletha gerbe",
    "Author": "Alexander Bertoloni Meli; Peter Dillery",
-   "Creator": "arXiv GenPDF (tex2pdf:57610bf)",
    "Producer": "pikepdf 8.15.1",
-   "Title": "A Tannakian description of the local Kaletha gerbe"
-  }
+   "Creator": "arXiv GenPDF (tex2pdf:57610bf)"
+  },
+  "title_raw": "A TANNAKIAN DESCRIPTION OF THE LOCAL KALETHA GERBE",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "A Tannakian description of the local Kaletha gerbe",
+   "heading": "A TANNAKIAN DESCRIPTION OF THE LOCAL KALETHA GERBE 1. I NTRODUCTION 1.1. Motivation and overview. The refined local Langlands correspondence for a p -adic field F posits an injection from irreducible smooth representations of G p F q , for G reductive and quasi-split, to enhanced L -parameters p ϕ",
+   "outline": "1. Introduction",
+   "text": "A TANNAKIAN DESCRIPTION OF THE LOCAL KALETHA GERBE",
+   "corroborated_by": [
+    "text",
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "A TANNAKIAN DESCRIPTION OF THE LOCAL KALETHA GERBE"
  },
  "toc": [
   {
@@ -39,137 +69,455 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Motivation and overview",
    "page": 1,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Preliminary notation",
    "page": 3,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Acknowledgments",
    "page": 3,
    "source": "outline",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "Construction of Tannakian Categories",
    "page": 4,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Products of gerbes",
    "page": 4,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Limits of gerbes",
    "page": 6,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Modules",
    "page": 7,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Descent",
    "page": 9,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Concrete Tannakian categories",
    "page": 12,
    "source": "outline",
-   "number": "2.5"
+   "number": "2.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Transition maps",
    "page": 14,
    "source": "outline",
-   "number": "2.6"
+   "number": "2.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 2,
    "title": "The category RigIsocF",
    "page": 16,
    "source": "outline",
-   "number": "2.7"
+   "number": "2.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 1,
    "title": "The structure of RigIsocF",
    "page": 17,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "The Newton map",
    "page": 17,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 2,
    "title": "Comparison with isocrystals",
    "page": 18,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 2,
    "title": "Comparison with Fargues' extended isocrystals",
    "page": 18,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 2,
    "title": "Reduction to Newton centralizers",
    "page": 20,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 2,
    "title": "Classification of simple objects",
    "page": 22,
    "source": "outline",
-   "number": "3.5"
+   "number": "3.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 1,
    "title": "References",
    "page": 25,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 389,
+   "n_words": 61,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -178,7 +526,9 @@
    "page_start": 1,
    "page_end": 1,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "1",
+   "label_end": "1"
   },
   {
    "id": "sec-001-11-motivation-and-overview",
@@ -187,8 +537,10 @@
    "level": 2,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 8142,
-   "n_words": 1291
+   "n_chars": 8293,
+   "n_words": 1442,
+   "label_start": "1",
+   "label_end": "3"
   },
   {
    "id": "sec-002-12-preliminary-notation",
@@ -197,8 +549,10 @@
    "level": 2,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 639,
-   "n_words": 97
+   "n_chars": 676,
+   "n_words": 134,
+   "label_start": "3",
+   "label_end": "3"
   },
   {
    "id": "sec-003-13-acknowledgments",
@@ -206,29 +560,35 @@
    "title": "Acknowledgments",
    "level": 2,
    "page_start": 3,
-   "page_end": 3,
-   "n_chars": 301,
-   "n_words": 46
+   "page_end": 4,
+   "n_chars": 758,
+   "n_words": 120,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
    "id": "sec-004-2-construction-of-tannakian-categories",
    "number": "2",
    "title": "Construction of Tannakian Categories",
    "level": 1,
-   "page_start": 3,
-   "page_end": 3,
-   "n_chars": 0,
-   "n_words": 0
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 443,
+   "n_words": 80,
+   "label_start": "4",
+   "label_end": "4"
   },
   {
    "id": "sec-005-21-products-of-gerbes",
    "number": "2.1",
    "title": "Products of gerbes",
    "level": 2,
-   "page_start": 3,
+   "page_start": 4,
    "page_end": 6,
-   "n_chars": 6455,
-   "n_words": 999
+   "n_chars": 5827,
+   "n_words": 1117,
+   "label_start": "4",
+   "label_end": "6"
   },
   {
    "id": "sec-006-22-limits-of-gerbes",
@@ -237,8 +597,10 @@
    "level": 2,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 3636,
-   "n_words": 580
+   "n_chars": 3730,
+   "n_words": 674,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
    "id": "sec-007-23-modules",
@@ -247,8 +609,10 @@
    "level": 2,
    "page_start": 7,
    "page_end": 9,
-   "n_chars": 6381,
-   "n_words": 994
+   "n_chars": 6559,
+   "n_words": 1204,
+   "label_start": "7",
+   "label_end": "9"
   },
   {
    "id": "sec-008-24-descent",
@@ -257,8 +621,10 @@
    "level": 2,
    "page_start": 9,
    "page_end": 12,
-   "n_chars": 8358,
-   "n_words": 1370
+   "n_chars": 8526,
+   "n_words": 1669,
+   "label_start": "9",
+   "label_end": "12"
   },
   {
    "id": "sec-009-25-concrete-tannakian-categories",
@@ -267,8 +633,10 @@
    "level": 2,
    "page_start": 12,
    "page_end": 14,
-   "n_chars": 5139,
-   "n_words": 814
+   "n_chars": 5364,
+   "n_words": 1039,
+   "label_start": "12",
+   "label_end": "14"
   },
   {
    "id": "sec-010-26-transition-maps",
@@ -276,67 +644,131 @@
    "title": "Transition maps",
    "level": 2,
    "page_start": 14,
-   "page_end": 17,
-   "n_chars": 10824,
-   "n_words": 1679
+   "page_end": 16,
+   "n_chars": 6483,
+   "n_words": 1190,
+   "label_start": "14",
+   "label_end": "16"
   },
   {
-   "id": "sec-011-31-the-newton-map",
+   "id": "sec-011-27-the-category-rigisocf",
+   "number": "2.7",
+   "title": "The category RigIsocF",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 4447,
+   "n_words": 807,
+   "label_start": "16",
+   "label_end": "17"
+  },
+  {
+   "id": "sec-012-3-the-structure-of-rigisocf",
+   "number": "3",
+   "title": "The structure of RigIsocF",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 119,
+   "n_words": 20,
+   "label_start": "17",
+   "label_end": "17"
+  },
+  {
+   "id": "sec-013-31-the-newton-map",
    "number": "3.1",
    "title": "The Newton map",
    "level": 2,
    "page_start": 17,
    "page_end": 18,
-   "n_chars": 2935,
-   "n_words": 442
+   "n_chars": 3025,
+   "n_words": 532,
+   "label_start": "17",
+   "label_end": "18"
   },
   {
-   "id": "sec-012-32-comparison-with-isocrystals",
+   "id": "sec-014-32-comparison-with-isocrystals",
    "number": "3.2",
    "title": "Comparison with isocrystals",
    "level": 2,
    "page_start": 18,
    "page_end": 20,
-   "n_chars": 6296,
-   "n_words": 1015
+   "n_chars": 6508,
+   "n_words": 1227,
+   "label_start": "18",
+   "label_end": "20"
   },
   {
-   "id": "sec-013-34-reduction-to-newton-centralizers",
+   "id": "sec-015-34-reduction-to-newton-centralizers",
    "number": "3.4",
    "title": "Reduction to Newton centralizers",
    "level": 2,
    "page_start": 20,
    "page_end": 22,
-   "n_chars": 5386,
-   "n_words": 858
+   "n_chars": 5590,
+   "n_words": 1062,
+   "label_start": "20",
+   "label_end": "22"
   },
   {
-   "id": "sec-014-35-classification-of-simple-objects",
+   "id": "sec-016-35-classification-of-simple-objects",
    "number": "3.5",
    "title": "Classification of simple objects",
    "level": 2,
    "page_start": 22,
    "page_end": 25,
-   "n_chars": 10552,
-   "n_words": 1598
+   "n_chars": 11114,
+   "n_words": 2152,
+   "label_start": "22",
+   "label_end": "25"
   },
   {
-   "id": "sec-015-references",
+   "id": "sec-017-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 25,
    "page_end": 26,
-   "n_chars": 2920,
-   "n_words": 305
+   "n_chars": 2968,
+   "n_words": 353,
+   "label_start": "25",
+   "label_end": "26"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 19,
-  "sections": 16,
-  "chars_total": 77964,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 3,
+    "items": [
+     "Preliminary notation",
+     "Acknowledgments",
+     "Descent"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 1,
+    "items": [
+     "Modules: listed p7, found p2"
+    ]
+   }
+  },
+  "sections": 19,
+  "chars_total": 80819,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "localKal-7.tex",
@@ -349,16 +781,21 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-001-11-motivation-and-overview",
      "title": "Motivation and overview",
      "prose_ratio": 0.979,
-     "coverage_ratio": 0.741,
+     "coverage_ratio": 0.928,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -366,7 +803,7 @@
      "id": "sec-002-12-preliminary-notation",
      "title": "Preliminary notation",
      "prose_ratio": 0.897,
-     "coverage_ratio": 0.694,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -374,21 +811,22 @@
      "id": "sec-003-13-acknowledgments",
      "title": "Acknowledgments",
      "prose_ratio": 0.652,
-     "coverage_ratio": 0.739,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "coverage_ratio": 0.347,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
      "id": "sec-004-2-construction-of-tannakian-categories",
      "title": "Construction of Tannakian Categories",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-005-21-products-of-gerbes",
      "title": "Products of gerbes",
      "prose_ratio": 0.984,
-     "coverage_ratio": 0.568,
+     "coverage_ratio": 0.906,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -396,7 +834,7 @@
      "id": "sec-006-22-limits-of-gerbes",
      "title": "Limits of gerbes",
      "prose_ratio": 0.973,
-     "coverage_ratio": 0.764,
+     "coverage_ratio": 0.96,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -404,7 +842,7 @@
      "id": "sec-007-23-modules",
      "title": "Modules",
      "prose_ratio": 0.981,
-     "coverage_ratio": 0.689,
+     "coverage_ratio": 0.898,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -412,7 +850,7 @@
      "id": "sec-008-24-descent",
      "title": "Descent",
      "prose_ratio": 0.987,
-     "coverage_ratio": 0.659,
+     "coverage_ratio": 0.91,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -420,52 +858,62 @@
      "id": "sec-009-25-concrete-tannakian-categories",
      "title": "Concrete Tannakian categories",
      "prose_ratio": 0.895,
-     "coverage_ratio": 0.64,
+     "coverage_ratio": 0.891,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-010-26-transition-maps",
      "title": "Transition maps",
-     "prose_ratio": 0.986,
-     "coverage_ratio": 0.626,
+     "prose_ratio": 0.703,
+     "coverage_ratio": 0.893,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-31-the-newton-map",
+     "id": "sec-011-27-the-category-rigisocf",
+     "title": "The category RigIsocF",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-3-the-structure-of-rigisocf",
+     "title": "The structure of RigIsocF",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-31-the-newton-map",
      "title": "The Newton map",
      "prose_ratio": 0.962,
-     "coverage_ratio": 0.663,
+     "coverage_ratio": 0.834,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-012-32-comparison-with-isocrystals",
+     "id": "sec-014-32-comparison-with-isocrystals",
      "title": "Comparison with isocrystals",
      "prose_ratio": 0.974,
-     "coverage_ratio": 0.685,
+     "coverage_ratio": 0.918,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-013-34-reduction-to-newton-centralizers",
+     "id": "sec-015-34-reduction-to-newton-centralizers",
      "title": "Reduction to Newton centralizers",
      "prose_ratio": 0.965,
-     "coverage_ratio": 0.656,
+     "coverage_ratio": 0.871,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-014-35-classification-of-simple-objects",
+     "id": "sec-016-35-classification-of-simple-objects",
      "title": "Classification of simple objects",
      "prose_ratio": 0.968,
-     "coverage_ratio": 0.566,
+     "coverage_ratio": 0.832,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-015-references",
+     "id": "sec-017-references",
      "title": "References",
      "result": "no matching \\section"
     }

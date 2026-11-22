@@ -1,0 +1,77 @@
+Ideal points of each h-line constructed from two points in the disc are different than those two points
+
+lemma ideal-points-different:
+assumes u € unit-disc v € unit-disc u # v
+assumes ideal-points (poincare-line uv) = {i1, i2}
+shows il A i2ufilufi2vF ilvFZ i2
+proof—
+have il € ocircline-set ounit-circle i2 € ocircline-set ounit-circle
+using assms(3) assms(4) ideal-points-on-unit-circle is-poincare-line-poincare-line
+by fastforce+
+thus u 4 ilu 4 i2vF¢ il vF i2
+using assms(1—2)
+using disc-inter-ocircline-set{of ownit-circle]
+unfolding unit-disc-def
+by auto
+show il # i2
+using assms
+by (metis doubleton-eq-iff is-poincare-line-poincare-line obtain-ideal-points)
+qed
+
+H-line is uniquely determined by its ideal points
+
+lemma ideal-points-line-unique:
+
+assumes is-poincare-line H ideal-points H = {i1, i2}
+
+shows H = poincare-line il i2
+
+by (smt assms(1) assms(2) calc-ideal-points-on-unit-circle circline-set-def ex-poincare-line-points ideal-points-different(1)
+ideal-points-on-circline ideal-points-unique insertI1 insert-commute inversion-unit-circle mem-Collect-eq unique-poincare-line-general)
+
+Ideal points of some special h-lines
+
+Ideal points of x-axis
+
+lemma ideal-points-x-axis
+[simp]: ideal-points x-axis = {of-complex (—1), of-complex 1}
+proof (subst ideal-points-unique, simp)
+have calc-ideal-points-clmat-hcoords z-axis-clmat = {of-complex-hcoords (— 1), of-complex-hcoords 1}
+by transfer auto
+thus calc-ideal-points z-axis = {of-complex (— 1), of-complex 1}
+by (simp add: calc-ideal-points.abs-eq of-complex.abs-eq x-axis-def )
+qed
+
+Ideal points are proportional vectors only if h-line is a line segment p
+
+sing trough zero
+
+lemma ideal-points-proportional:
+assumes is-poincare-line H ideal-points H = {i1, i2} to-complex i1 = cor k * to-complex i2
+shows 0), € circline-set H
+proof—
+have il # i2
+using <ideal-points H = {i1, i2}>
+using <is-poincare-line H) ex-poincare-line-points ideal-points-different(1) by blast
+
+have i1 € circline-set unit-circle i2 € circline-set unit-circle
+using assms calc-ideal-points-on-unit-circle ideal-points-unique
+by blast+
+
+hence cmod (cor k) = 1
+using <to-complex il = cor k * to-complex i2)
+by (metis (mono-tags, lifting) circline-set-unit-circle imageE mem-Collect-eq mult.right-neutral norm-mult to-complex-of-complex
+unit-circle-set-def )
+hence k = —1
+using <to-complex i1 = cor k « to-complex i2> «il # i2>
+
+using <i1 € circline-set unit-circle (i2 € circline-set unit-circley
+by (smt (verit, best) mult-cancel-right1 norm-of-real not-inf-on-unit-circle’’ of-complex-to-complex of-real-1)
+
+have V il € calc-ideal-points H. V i2 € calc-ideal-points H. is-poincare-line H \ il # i2 A to-compler i1 = —
+to-complex i2 —+>
+On € circline-set H
+unfolding circline-set-def
+proof (simp, transfer, transfer, safe)
+
+41

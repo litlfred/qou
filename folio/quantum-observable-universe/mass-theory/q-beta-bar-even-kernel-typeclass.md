@@ -1,3 +1,0 @@
-*The `BarEvenKernel` Lean typeclass bundles all four formalize-first invariants for $F(q)$ into a single parametric type. Instantiating `BarEvenKernel` is equivalent to clearing all four gates simultaneously.*
-
-This bundles the anchor-stable, bar-even, $q=1$ shadow, and direction-sanity checks into a single step for Lean. It operationalises the pre-flight checklist. The bar-even invariant is a structural identity in `CommRing R`. The composition theorem lifts the bundle into the individual gate classes.

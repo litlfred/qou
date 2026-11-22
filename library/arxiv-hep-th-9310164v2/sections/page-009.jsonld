@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-hep-th-9310164v2/sections/page-009",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Page 9",
+  "pageStart": 9,
+  "pageEnd": 9,
+  "contains": [
+    "library/arxiv-hep-th-9310164v2/blocks/prose-page-009",
+    "library/arxiv-hep-th-9310164v2/blocks/lem-page-009-01",
+    "library/arxiv-hep-th-9310164v2/blocks/rem-page-009-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9310164v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9310164v2/manifest.jsonld",
+  "provenance": "ingested"
+}

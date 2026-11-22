@@ -24,8 +24,8 @@ This file establishes the unconditional algebraic skeleton:
   `BringHyperbolicDecomposition` — sorry-free at the Lean level,
   with the open content concentrated in the class instance.
 
--- Ref: [manuscript] conj:bring-hyperbolic-knot-bloch-decomposition
--- Ref: [manuscript] prop:em-coupling-bring-zero-mode
+-- Ref: [leitner2026] conj:bring-hyperbolic-knot-bloch-decomposition
+-- Ref: [leitner2026] prop:em-coupling-bring-zero-mode
 -- Ref: [borel1974] Borel, "Stable real cohomology of arithmetic groups," Ann. Sci. ENS 7 (1974)
 -- Ref: [suslin1991] Trudy Mat. Inst. Steklova 183 (1991) 217-239.
 -- Ref: [bloch2000]  AMS CRM Monograph 11 (2000).
@@ -116,35 +116,38 @@ theorem compositum_rank_decomposition_full :
     `Σ n_i · D[Z_{K_i}] = 2/(3π)` in the compositum
     `Q(ζ_15)`-Bloch group.
 
-    The class field is stated as the existence of a unit-circle
-    angle witness `θ` with `BlochWigner_unit_circle θ =
-    bringZeroModeValue = 2/(3π)` (the strengthened shape required by
-    the downstream `BringZeroModeBlochClass`); a concrete instance
-    must produce both the knot multi-set (witnessing where the sum
-    comes from) and the equality. The abstract field formulation
+    The class field is the algebraic Bloch–Wigner combination
+    `Σ nᵢ · D(zᵢ) = 2/(3π)` required by the downstream
+    `BringZeroModeBlochClass` (restated 2026-11-15, issue #7942; the
+    earlier unit-circle-angle field was true by the intermediate value
+    theorem and so carried no content).  A concrete instance must also
+    exhibit the knots the shapes `zᵢ` come from.  The field is expected
+    to be false; see `BringZeroModeBlochClass`. The abstract field formulation
     insulates this file from the Mathlib-pending Bloch group
     infrastructure. -/
--- Ref: [manuscript] conj:bring-hyperbolic-knot-bloch-decomposition
+-- Ref: [leitner2026] conj:bring-hyperbolic-knot-bloch-decomposition
 class BringHyperbolicDecomposition : Prop where
-  /-- The finite-multi-set Bloch-Wigner sum realises `2/(3π)` via a
-      concrete unit-circle angle witness `θ`, in the strengthened
-      form required by the downstream `BringZeroModeBlochClass`
-      (the trivial `∃ z, z = bringZeroModeValue` loophole is closed). -/
+  /-- The finite-multi-set Bloch–Wigner sum over algebraic shapes in the
+      upper half plane realises `2/(3π)`, in the form required by the
+      downstream `BringZeroModeBlochClass`. -/
   -- Ref: [borel1974], [thurston1978], [suslin1991]
-  bw_sum_realised : ∃ θ : ℝ, BlochWigner_unit_circle θ = bringZeroModeValue
+  bw_sum_realised :
+    ∃ (s : Finset ℂ) (n : ℂ → ℤ),
+      (∀ z ∈ s, IsAlgebraic ℚ z ∧ 0 < z.im) ∧
+      ∑ z ∈ s, (n z : ℝ) * BlochWigner_lob z = bringZeroModeValue
 
 /-- **Conditional theorem.** If a `BringHyperbolicDecomposition` is
     given, then the `BringZeroModeBlochClass` hypothesis required
     by `prop:em-coupling-bring-zero-mode` is inhabited.
 
-    Proof: both classes assert the same existential statement
-    `∃ z, z = 2/(3π)`; the implication is a direct unpacking. The
+    Proof: both classes assert the same algebraic Bloch–Wigner sum;
+    the implication is a direct unpacking. The
     content of the conditional is purely logical bridging — the
     structural mathematics lives entirely inside the
     `BringHyperbolicDecomposition` class instance, which is the
     open K-theoretic identification. -/
--- Ref: [manuscript] conj:bring-hyperbolic-knot-bloch-decomposition
--- Ref: [manuscript] prop:em-coupling-bring-zero-mode
+-- Ref: [leitner2026] conj:bring-hyperbolic-knot-bloch-decomposition
+-- Ref: [leitner2026] prop:em-coupling-bring-zero-mode
 theorem bring_hyperbolic_decomposition
     [hD : BringHyperbolicDecomposition] :
     BringZeroModeBlochClass where
@@ -162,7 +165,7 @@ theorem bring_hyperbolic_decomposition
     the numerical observation that `2/(3π) ≠ 0` and `2/(3π) > 0`,
     which are unconditional and rule out the trivial multi-set
     `{}`. A full irrationality proof is out of scope. -/
--- Ref: [manuscript] rem:figure-8-archimedean-illustration
+-- Ref: [leitner2026] rem:figure-8-archimedean-illustration
 theorem bring_zero_mode_value_positive : bringZeroModeValue > 0 := by
   unfold bringZeroModeValue
   have hπ : Real.pi > 0 := Real.pi_pos
@@ -210,9 +213,9 @@ class BWQIndependence
     one hyperbolic knot beyond `{4_1, B_3}` from the QOU spectrum.
 
     The proof is direct unpacking of the class hypothesis. No `sorry`. -/
--- Ref: [manuscript] conj:bring-hyperbolic-knot-bloch-decomposition
--- Ref: [manuscript] rem:figure-8-archimedean-illustration
--- Ref: [manuscript] binding-scale-catalan
+-- Ref: [leitner2026] conj:bring-hyperbolic-knot-bloch-decomposition
+-- Ref: [leitner2026] rem:figure-8-archimedean-illustration
+-- Ref: [leitner2026] binding-scale-catalan
 theorem two_knot_decomposition_insufficient
     (cl2_pi_3 cl2_pi_4 : ℝ)
     [hQ : BWQIndependence cl2_pi_3 cl2_pi_4]
@@ -232,9 +235,9 @@ theorem two_knot_decomposition_insufficient
     the knot-operator-table witness), so the BW-reachable
     sub-space can in principle reach the full rank-8 image
     through products in higher H_n(q). -/
--- Ref: [manuscript] recursive-atom-knot-atlas
--- Ref: [manuscript] knot-operator-lp-selection
--- Ref: [manuscript] binding-scale-catalan
+-- Ref: [leitner2026] recursive-atom-knot-atlas
+-- Ref: [leitner2026] knot-operator-lp-selection
+-- Ref: [leitner2026] binding-scale-catalan
 def atlasHyperbolicCount : ℕ := 5
 
 theorem atlas_count_lt_zeta60_rank :
@@ -291,8 +294,8 @@ class BlochWignerInjective (D : ℝ → ℝ) : Prop where
 /-- Field equivalence of substrate and geometry routes (sorry-free):
     if both yield BW image `2/(3π)`, they identify the same
     `B(Q(ζ_60))⊗Q` class up to the BW-injectivity hypothesis. -/
--- Ref: [manuscript] prop:archimedean-functor-uniqueness
--- Ref: [manuscript] conj:em-coupling-bring-zero-mode
+-- Ref: [leitner2026] prop:archimedean-functor-uniqueness
+-- Ref: [leitner2026] conj:em-coupling-bring-zero-mode
 theorem field_equivalence_via_uniqueness
     (D : ℝ → ℝ)
     [BlochWignerInjective D]
@@ -306,7 +309,7 @@ theorem field_equivalence_via_uniqueness
     target value `r`, they are equal. This abstracts
     `field_equivalence_via_uniqueness` to any real `r`, suitable
     for the `B_3 ~ L_6a4` and similar atlas-knot identifications. -/
--- Ref: [manuscript] conj:bring-hyperbolic-knot-bloch-decomposition
+-- Ref: [leitner2026] conj:bring-hyperbolic-knot-bloch-decomposition
 theorem class_equality_from_value_equality
     (D : ℝ → ℝ)
     [BlochWignerInjective D]
@@ -318,7 +321,7 @@ theorem class_equality_from_value_equality
 
 /-- Carrier for the shared atlas value `8G = 8·Cl_2(π/2)`, the
     common BW image of the Borromean rings `B_3` and `L_6a4`. -/
--- Ref: [manuscript] binding-scale-catalan
+-- Ref: [leitner2026] binding-scale-catalan
 def borromeanValue (cl2_pi_4 : ℝ) : ℝ := 8 * cl2_pi_4
 
 /-- **Atlas class identification: Borromean = L_6a4 in `B(Q(i))⊗Q`
@@ -337,8 +340,8 @@ def borromeanValue (cl2_pi_4 : ℝ) : ℝ := 8 * cl2_pi_4
     has the `8G` direction occupied by *both* `B_3` and `L_6a4`;
     no additional dimension is gained by including `L_6a4`
     separately. -/
--- Ref: [manuscript] binding-scale-catalan
--- Ref: [manuscript] conj:bring-hyperbolic-knot-bloch-decomposition
+-- Ref: [leitner2026] binding-scale-catalan
+-- Ref: [leitner2026] conj:bring-hyperbolic-knot-bloch-decomposition
 theorem borromean_eq_L6a4_class
     (D : ℝ → ℝ)
     [BlochWignerInjective D]

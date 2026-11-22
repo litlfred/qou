@@ -37,11 +37,11 @@
   em-coupling-chern-simons.lean); the additive-then-fixed-point route is
   independent.
 
-  -- Ref: [manuscript] prop:em-coupling-fixed-point
-  -- Ref: [manuscript] prop:em-coupling-projection (tree q[9]_q[10]_q)
-  -- Ref: [manuscript] prop:em-coupling-bring-zero-mode (2/(3π))
-  -- Ref: [manuscript] prop:photon-ir-zero-mode-bring (8π = π·b₁)
-  -- Ref: [manuscript] PR #1511 (Habiro deformation (1 − h²α))
+  -- Ref: [leitner2026] prop:em-coupling-fixed-point
+  -- Ref: [leitner2026] prop:em-coupling-projection (tree q[9]_q[10]_q)
+  -- Ref: [leitner2026] prop:em-coupling-bring-zero-mode (2/(3π))
+  -- Ref: [leitner2026] prop:photon-ir-zero-mode-bring (8π = π·b₁)
+  -- Ref: [leitner2026] PR #1511 (Habiro deformation (1 − h²α))
 -/
 
 import QOU.Archimedean.EmCouplingBringZeroMode
@@ -145,7 +145,7 @@ def codataInvAlpha : ℝ := 137.035999177
     algebraic equivalence with the proved upstream pieces. There is no
     `alphaCubic_zero` field to project (non-degenerate per §3b-cond
     item 5). -/
--- Ref: [manuscript] prop:em-coupling-fixed-point — the B₃(ℂ) O(α²)
+-- Ref: [leitner2026] prop:em-coupling-fixed-point — the B₃(ℂ) O(α²)
 --      normalization is the single open conjectural input.
 -- Ref: [suslin1991], [bloch2000] — Bloch-group framework for the class.
 class AlphaEmFixedPointNormalization (q α : ℝ) : Prop where
@@ -170,7 +170,7 @@ class AlphaEmFixedPointNormalization (q α : ℝ) : Prop where
     equivalence `fixedPoint_iff_cubic` — it is not read off a stored
     conclusion field. The CODATA bound is the carried empirical
     hypothesis. -/
--- Ref: [manuscript] prop:em-coupling-fixed-point
+-- Ref: [leitner2026] prop:em-coupling-fixed-point
 theorem alpha_em_is_fixed_point_root (q α : ℝ)
     [inst : AlphaEmFixedPointNormalization q α] :
     alphaCubic q α = 0 ∧ |1 / α - codataInvAlpha| < 1e-3 := by

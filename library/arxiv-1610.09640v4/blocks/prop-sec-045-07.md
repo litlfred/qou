@@ -1,1 +1,1 @@
-A right Ore localization(AS, Q) is a localization in the sense
+Suppose K ⊆K(A, M) is a full triangulated subcategory. Let C ⊆C(A, M) be the full subcategory on the set of objects Ob(K). Then the DG category C satisﬁes conditions (a)-(c) of Corollary 5.4.14, and K = Ho(C). Exercise 5.4.16. Prove Proposition 5.4.15. Here are two remarks about other sorts of triangulated categories.

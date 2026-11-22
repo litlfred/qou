@@ -1,0 +1,47 @@
+APPENDIX B
+
+Irreducible subgroups with bounded determinant
+
+In this appendix we discuss the facts from representation theory that
+have been used to obtain the finiteness result in lemma 3.19. The basis for
+this is the following extended version of the fundamental result of [109],
+where by P(X) = Perv(X,C) we denote as before the category of perverse
+sheaves on a complex abelian variety X.
+
+LEMMA B.1. Let P € P(X) be a semisimple perverse sheaf, G = G(P)
+the associated Tannaka group and H = G° its connected component. Then
+the group ™ = G/H of connected components is a finite abelian group
+whose conjugation action is trivial on the torus H® = H/[H,H].
+
+Proof. By loc. cit. the group x = G/H of connected components is a
+finite abelian group, and its characters correspond to skyscraper sheaves 6,
+supported on torsion points x € X. Thus the group Hom(z, C*) of characters
+can be identified in a natural way with a finite subgroup K C X of torsion
+points. Consider then the étale isogeny
+
+fi: X SY=X/K.
+Since |K| = [G: H], lemma 1 in loc. cit. shows that the component H = G°
+
+coincides with the Tannaka group H = G(f,(P)) of the direct image and
+that the adjoint functors
+
+fe Res
+as
+P(X) P(Y) correspondto Repc(G) Repc(H).
+we <—
+r indg
+
+Now put m = |K]. For any closed point y € Y the pull-back f*(6,) is a direct
+sum of rank one skyscraper sheaves supported on the m distinct point of the
+
+fibre f~'(y), hence f.(f*(8,)) = (6,)®” is an isotypic multiple of 5. In
+other words
+
+Res@(IndG(y)) is isotypic for all xy € Hom(H,C*).
+
+Going back to the construction of induced representations, it follows that
+every character 7 : H —> C* is invariant under conjugation by G. Via the
+equivalence between connected tori and their character groups this implies
+that G/H acts trivially on the torus H@ = H/[H,H]. Oo
+
+157

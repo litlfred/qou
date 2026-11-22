@@ -7,10 +7,11 @@ section_number: 3.5
 pages: 13-15
 source_pdf: 2108.03616v2.pdf
 source_sha256: 63696ad045602440
-doc_brief: "Circuit imbalance measures and linear programming ∗ — We study properties and applications of various circuit imbalance mea sures associated with linear spaces."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.93
-latex_coverage_ratio: 0.944
+latex_coverage_ratio: 0.967
+doc_brief: "Circuit imbalance measures and linear programming ∗ — We study properties and applications of various circuit imbalance measures associated with linear spaces."
 ---
 \label{sec:triangle}
 An interesting additional fact about circuit imbalances is that the logarithm of the weights satisfy the triangle inequality; this was shown in \cite{DHNV20}. Here, we formulate a stronger version and give a simpler proof. Throughout, we assume that ${\cal M}(W)$ is non-separable. Thus, according to Proposition~\ref{prop:conn}, for any $i,j\in [n]$ there is a circuit $C\in \circuits_W$ with $i,j\in C$.

@@ -1,0 +1,54 @@
+A.4 Complex manifolds and differential forms in C" 459
+
+but is the highest dimensional holomorphic form in R”. This leads to the fol-
+lowing useful result.
+
+Theorem A.27. [fC is any (n + 1)-chain on a domain U C C" and w is any
+holomorphic n-form on U then
+f w=0.
+ac
+
+Proof The d operator preserves holomorphicity, so dw is holomorphic. There
+are no holomorphic forms above rank n and dw is a (n+ 1)-form, hence dw = 0.
+Stokes’s Theorem then gives
+
+[o= [ao=o.
+aC Cc
+
+Exercise A.15. Let C be an n-chain supported on a complex submanifold M of
+C", where the dimension of M is strictly less than n. Show that he vanishes
+for any holomorphic n-chain w.
+
+ao
+
+The polydisk with center w € C4 and radius r € R4, is the set {z €
+C4: |zj -wjl < r; for 1 < j < d}, while the torus with center w and radius r is
+the set {z € C4: |z;-w,| =r; for 1 < j < d}. Our asymptotic arguments always
+begin by representing the power series coefficients of an analytic function by
+a complex integral over a polytorus, after which we apply the integration tech-
+niques discussed in these appendices. We thus conclude this first appendix by
+stating and proving the multivariate Cauchy Integral Formula, which is used to
+derive such representations.
+
+Proposition A.28 (multivariate Cauchy Integral Formula). Let U c C4 be an
+open set and D,T c C4 be a polydisk and torus with radii r € Ry
+around the same point. If Dc U and f is an analytic function on U then, for
+
+all w € D,
+1 d
+fw) = (+) (“a f@) dz (A4.1)
+
+2ni —wyi)+++(a-Wa)  *
+
+centered
+
+ao
+
+Proof Without loss of generality, we may assume that D and T are cen-
+tered at the origin. When d = | this is the usual (univariate) Cauchy Integral
+Formula. The general case follows by induction. In particular, for any fixed
+
+(ay, ...,@g_1) € C*! with each |a;| < rj we know from the univariate case that
+1 F(d1,.. +, da-1, Wa)
+f(Qi, «++, da-1, Wa) = => deg. (A.4.2)
+2mi Stcaiere = 2a Wa

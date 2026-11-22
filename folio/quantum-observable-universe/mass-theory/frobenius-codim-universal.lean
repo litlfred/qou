@@ -25,7 +25,7 @@ Specialisations:
   - n = 3: tr_M(C_dim_q) = 2 + 1/[2]_q.
   - Physical application: proton tower residual formula.
 
-Ref: [manuscript] Chapter 6, §Nuclear Binding and Beta Stability
+Ref: [leitner2026] Chapter 6, §Nuclear Binding and Beta Stability
 LaTeX label: `thm:frobenius-codim-universal`
 -/
 
@@ -80,7 +80,7 @@ theorem codim_block_contribution {Λ : Type*} [SemisimpleFrobeniusAlgebra Λ]
     Proof: linearity of τ over the central-idempotent basis, using
     the per-block contribution lemma `codim_block_contribution`.
 
-    Ref: [manuscript] `thm:frobenius-codim-universal`. -/
+    Ref: [leitner2026] `thm:frobenius-codim-universal`. -/
 theorem frobenius_codim_universal {Λ : Type*} [Fintype Λ]
     [SemisimpleFrobeniusAlgebra Λ] :
     ∑ μ : Λ, (1 / (frobDimQ μ * frobTauIdem μ)) * frobTauIdem μ
@@ -106,7 +106,10 @@ private lemma one_div_mul_eq_div_of_ne {a b : ℝ} (ha : a ≠ 0) (hb : b ≠ 0)
     NOT depend on the specific Frobenius pairing τ used to construct
     `C_{dim_q}`.  In particular, on `H_n(q)` the two natural choices
 
-      - **Plancherel-A**:  `τ_P(p_λ) = dim_q(λ)·d_λ / [n]_q!`
+      - **unweighted Plancherel functional**:  `τ_P(p_λ) = dim_q(λ)·d_λ / [n]_q!`
+        (no `q^{-κ_λ}` factor, so it is NOT the canonical trace
+        `τ(σ_w) = δ_{w,1}`, which carries that factor — see
+        `QOU.MathlibExt.MolienFakeDegree`)
       - **Wenzl-Schur**:   `τ_W(p_λ) = y_λ`
 
     give different `C_{dim_q}` elements but the **same** trace value
@@ -117,11 +120,11 @@ private lemma one_div_mul_eq_div_of_ne {a b : ℝ} (ha : a ≠ 0) (hb : b ≠ 0)
     Computational verification:
     `computations/probe_term4_conventions.py`.
 
-    Consequence: the Plancherel-vs-Wenzl-Schur convention disagreement
+    Consequence: the unweighted-Plancherel-vs-Wenzl-Schur convention disagreement
     affecting `tr_M(T_w)` (Term 1 of the unified mass formula) does
     NOT propagate into Term 4.  Term 4 is convention-rigid.
 
-    Ref: [manuscript] `thm:frobenius-codim-universal`,
+    Ref: [leitner2026] `thm:frobenius-codim-universal`,
     `audit:plancherel-vs-wenzl-schur-markov-trace`. -/
 theorem frobenius_codim_tau_invariant {Λ : Type*} [Fintype Λ]
     (dim_q : Λ → ℝ) (h_dim : ∀ μ, dim_q μ ≠ 0)
@@ -147,7 +150,7 @@ theorem frobenius_codim_tau_invariant {Λ : Type*} [Fintype Λ]
     For `n = 3` this equals `2 + 1/[2]_q`, matching the observed
     proton tower residual to 0.14% at `q_0 ≈ 1.11`.
 
-    Ref: [manuscript] `prop:partition-sum-proton-residual`. -/
+    Ref: [leitner2026] `conj:partition-sum-proton-residual`. -/
 
 /-- The q-hook-length dimensions of the three partitions of n=3.
     Indexed by `Fin 3`:
@@ -189,7 +192,7 @@ noncomputable def heckeH3DimQ (q : ℝ) (i : Fin 3) : ℝ :=
     here we actually evaluate the partition sum at the three `Fin 3`
     indices and conclude.
 
-    Ref: [manuscript] `prop:partition-sum-proton-residual`,
+    Ref: [leitner2026] `conj:partition-sum-proton-residual`,
     `computations/frobenius_partition_sum.py`. -/
 theorem hecke_n3_frobenius_codim (q : ℝ) :
     ∑ i : Fin 3, 1 / heckeH3DimQ q i = 2 + 1 / (q + q⁻¹) := by
@@ -225,7 +228,7 @@ noncomputable def heckeH2DimQ (_q : ℝ) (_i : Fin 2) : ℝ := 1
     `rfl` theorem).  This explicit theorem cross-validates that
     chosen def value via Fin-enumeration of the two partitions of 2.
 
-    Ref: [manuscript] `prop:partition-sum-proton-residual` (n=2 base). -/
+    Ref: [leitner2026] `conj:partition-sum-proton-residual` (n=2 base). -/
 theorem hecke_n2_frobenius_codim (q : ℝ) :
     ∑ i : Fin 2, 1 / heckeH2DimQ q i = 2 := by
   rw [Fin.sum_univ_two]
@@ -280,7 +283,7 @@ noncomputable def heckeH4DimQ (q : ℝ) (i : Fin 5) : ℝ :=
     (both `1/[3]_q`), and the self-conjugate `(2,2)` contributes the
     odd `1/(q²+q⁻²)` term.
 
-    Ref: [manuscript] `prop:partition-sum-proton-residual` (n=4 base). -/
+    Ref: [leitner2026] `conj:partition-sum-proton-residual` (n=4 base). -/
 theorem hecke_n4_frobenius_codim (q : ℝ) :
     ∑ i : Fin 5, 1 / heckeH4DimQ q i
       = 2 + 2 / (q ^ 2 + 1 + (q ^ 2)⁻¹) + 1 / (q ^ 2 + (q ^ 2)⁻¹) := by
@@ -346,7 +349,7 @@ noncomputable def heckeH5DimQ (q : ℝ) (i : Fin 7) : ℝ :=
     This **closes the n = 5 case of S3** (combined with the partial
     `def` of `frobeniusCoCasimirTrace` in `knot-mass-formula-unified`).
 
-    Ref: [manuscript] `prop:partition-sum-proton-residual` (n=5 base). -/
+    Ref: [leitner2026] `conj:partition-sum-proton-residual` (n=5 base). -/
 theorem hecke_n5_frobenius_codim (q : ℝ) :
     ∑ i : Fin 7, 1 / heckeH5DimQ q i
       = 2 + 2 / (q ^ 3 + q + q⁻¹ + (q ^ 3)⁻¹)
@@ -464,7 +467,7 @@ private lemma Fin_sum_univ_eleven {M : Type*} [AddCommMonoid M]
     Numeric check: 2 + 0.4 + 0.222 + 0.2 + 0.4 + 0.0625 = 3.285,
     matching `Σ 1/dim((6 partitions))` for S_6.
 
-    Ref: [manuscript] `prop:partition-sum-proton-residual` (n=6 base);
+    Ref: [leitner2026] `conj:partition-sum-proton-residual` (n=6 base);
     1ppb plan T1, `docs/audits/2026-05-09-mass-table-1ppb-audit.md`. -/
 theorem hecke_n6_frobenius_codim (q : ℝ) :
     ∑ i : Fin 11, 1 / heckeH6DimQ q i
@@ -591,7 +594,7 @@ private lemma Fin_sum_univ_fifteen {M : Type*} [AddCommMonoid M]
           + 1/([5]_q·(q³+q⁻³)·(q²+q⁻²))                    -- (4,1,1,1) self-conj.
           + 2/([7]_q·(q⁴+1+q⁻⁴))                          -- (3,3,1) and (3,2,2)
 
-    Ref: [manuscript] `prop:partition-sum-proton-residual` (n=7 base);
+    Ref: [leitner2026] `conj:partition-sum-proton-residual` (n=7 base);
     1ppb plan T1. -/
 theorem hecke_n7_frobenius_codim (q : ℝ) :
     ∑ i : Fin 15, 1 / heckeH7DimQ q i
@@ -858,7 +861,7 @@ theorem gb_filtration_self_dual_bound
     sum over `(univ.erase s).erase a` is shown to be **strictly
     positive** because `t` is in that set and `1/frobDimQ t > 0`.
 
-    Ref: [manuscript] `prop:partition-sum-proton-residual` (general
+    Ref: [leitner2026] `conj:partition-sum-proton-residual` (general
     n ≥ 3 strict bound). -/
 theorem gb_filtration_strict_self_dual_bound
     {Λ : Type*} [Fintype Λ] [DecidableEq Λ] [SemisimpleFrobeniusAlgebra Λ]
@@ -914,7 +917,7 @@ section GenericBase
 variable {R : Type*} [CommRing R]
 
 /-- Inverses are unique, so the two ways of naming `d`'s inverse agree. -/
--- Ref: [manuscript] `thm:frobenius-codim-universal`
+-- Ref: [leitner2026] `thm:frobenius-codim-universal`
 theorem codim_inv_unique {d x y : R} (hx : d * x = 1) (hy : d * y = 1) :
     x = y := by
   calc x = x * (d * y) := by rw [hy, mul_one]
@@ -926,7 +929,7 @@ theorem codim_inv_unique {d x y : R} (hx : d * x = 1) (hy : d * y = 1) :
     If `c` is inverse to `d * t`, then `c * t` is inverse to `d`.  This is the
     whole content of `codim_block_contribution`, with no division and over an
     arbitrary commutative ring. -/
--- Ref: [manuscript] `thm:frobenius-codim-universal`
+-- Ref: [leitner2026] `thm:frobenius-codim-universal`
 theorem codim_block_contribution_ring (d t c : R) (h : c * (d * t) = 1) :
     d * (c * t) = 1 := by
   calc d * (c * t) = c * (d * t) := by ring
@@ -940,7 +943,7 @@ theorem codim_block_contribution_ring (d t c : R) (h : c * (d * t) = 1) :
     `τ(C_dim_q) = Σ_λ 1/dim_q(λ)`.
 
     The invertibility is a hypothesis on the blocks, not a constraint on `R`. -/
--- Ref: [manuscript] `thm:frobenius-codim-universal`
+-- Ref: [leitner2026] `thm:frobenius-codim-universal`
 theorem frobenius_codim_universal_ring {Λ : Type*} [Fintype Λ]
     (d t c u : Λ → R)
     (hc : ∀ lam, c lam * (d lam * t lam) = 1)

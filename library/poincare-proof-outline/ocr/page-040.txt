@@ -1,0 +1,71 @@
+Ideal points are on the unit circle and on the h-line
+
+lemma ideal-points-on-unit-circle:
+shows V z € ideal-points H. z € circline-set unit-circle
+unfolding ideal-points-def circline-intersection-def circline-set-def
+by simp
+
+lemma ideal-points-on-circline:
+shows V z € ideal-points H. z € circline-set H
+unfolding ideal-points-def circline-intersection-def circline-set-def
+by simp
+
+For each h-line there are exactly two ideal points
+
+lemma two-ideal-points:
+assumes is-poincare-line H
+shows card (ideal-points H) = 2
+proof—
+have H ¥ unit-circle
+using assms not-is-poincare-line-unit-circle
+by auto
+let ?int = circline-intersection H unit-circle
+obtain i1 i2 where i1 € ?int i2 € ?int il A i2
+using calc-ideal-points-on-circline[OF assms]
+using calc-ideal-points-on-unit-circle|of H|
+using calc-ideal-points-different|OF assms|
+unfolding circline-intersection-def circline-set-def
+by auto
+thus ?thesis
+unfolding ideal-points-def
+using circline-intersection-at-most-2-points|OF «H # unit-circle>]
+using card-geq-2-iff-contains-2-elems|of ?int]
+by auto
+qed
+
+They are exactly the two points that our calculation finds
+
+lemma ideal-points-unique:
+assumes is-poincare-line H
+shows ideal-points H = calc-ideal-points H
+proof—
+have calc-ideal-points H C ideal-points H
+using calc-ideal-points-on-circline[OF assms]
+using calc-ideal-points-on-unit-circle|of H|
+unfolding ideal-points-def circline-intersection-def circline-set-def
+by auto
+moreover
+have H ¥ unit-circle
+using not-is-poincare-line-unit-circle assms
+by auto
+hence finite (ideal-points H)
+using circline-intersection-at-most-2-points|of H unit-circle]
+unfolding ideal-points-def
+by auto
+ultimately
+show ?thesis
+using card-subset-eq|of ideal-points H calc-ideal-points H|
+using two-calc-ideal-points|OF assms]
+using two-ideal-points|OF assms]
+by auto
+qed
+
+For each h-line we can obtain two different ideal points
+
+lemma obtain-ideal-points:
+assumes is-poincare-line H
+obtains i1 i2 where il # i2 ideal-points H = {i1, i2}
+using two-ideal-points|OF assms] card-eq-2-iff-doubleton|of ideal-points H]
+by blast
+
+40

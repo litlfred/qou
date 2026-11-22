@@ -1,0 +1,50 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/9305356/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Introduction to Left-Right Symmetric Models",
+  "contains": [
+    "library/9305356/sections/sec-front-matter",
+    "library/9305356/sections/sec-000",
+    "library/9305356/sections/sec-001",
+    "library/9305356/sections/sec-002",
+    "library/9305356/sections/sec-003",
+    "library/9305356/sections/sec-004",
+    "library/9305356/sections/sec-005",
+    "library/9305356/sections/sec-006",
+    "library/9305356/sections/sec-007",
+    "library/9305356/sections/sec-008",
+    "library/9305356/sections/sec-009",
+    "library/9305356/sections/sec-010"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "9305356",
+    "title_source": "editorial",
+    "title_from": "structure.json metadata.title_correction.title",
+    "title_verified": true,
+    "title_correction": {
+      "title": "Introduction to Left-Right Symmetric Models",
+      "basis": "Printed title on page 1 (W. Grimus, UWThPh-1993-10); the extracted title was the preprint date",
+      "extracted_title": "March 31, 1993",
+      "corrected_on": "2026-11-15",
+      "extracted": "Introduction to Left-Right Symmetric Models"
+    },
+    "source_file": "9305356.pdf",
+    "source_sha256": "8359a99cb477be2bb35f525e2bf0b095e74e0c6034e92ef9ffe243be91efad6e",
+    "pages": 13,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

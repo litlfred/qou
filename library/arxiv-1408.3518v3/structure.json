@@ -7,11 +7,17 @@
   "bytes": 240949,
   "pages": 15,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 8,
+    "reason": "18 of 629 words are a stray single letter: the text layer splits words"
+   }
+  ],
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,7 +27,7 @@
    "stamp_date": "15 Jan 2015"
   },
   "doi": null,
-  "title": "On Augmentation Algorithms for Linear and Integer-Linear Programming:",
+  "title": "On Augmentation Algorithms for Linear and Integer-Linear Programming: From Edmonds-Karp to Bland and Beyond",
   "authors_raw": "From Edmonds-Karp to Bland and Beyond",
   "title_lines": [
    "On Augmentation Algorithms for Linear",
@@ -30,11 +36,22 @@
   "abstract": null,
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.08",
-   "CreationDate": "D:20150116075707-05'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  }
+   "CreationDate": "D:20150116075707-05'00'"
+  },
+  "title_raw": "On Augmentation Algorithms for Linear and Integer-Linear Programming:",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "On Augmentation Algorithms for Linear and Integer-Linear Programming: From Edmonds-Karp to Bland and Beyond",
+   "outline": "1 Introduction",
+   "text": "On Augmentation Algorithms for Linear and Integer-Linear Programming",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "On Augmentation Algorithms for Linear and Integer-Linear Programming:"
  },
  "toc": [
   {
@@ -42,95 +59,285 @@
    "title": "Introduction.",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Our Contributions",
    "page": 4,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "Proofs",
    "page": 8,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Proof of Lemma ?? and Theorem ??",
    "page": 8,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 3,
    "title": "Proof of Lemma ??: Discrete deepest descent.",
    "page": 9,
    "source": "outline",
-   "number": "2.1.1"
+   "number": "2.1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 3,
    "title": "Proof of part (a) of Theorem ??: Discrete Dantzig descent.",
    "page": 9,
    "source": "outline",
-   "number": "2.1.2"
+   "number": "2.1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 3,
    "title": "Proof of part (b) of of Theorem ??: Discrete steepest descent.",
    "page": 9,
    "source": "outline",
-   "number": "2.1.3"
+   "number": "2.1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Proof of Lemma ?? and Theorem ??",
    "page": 11,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 3,
    "title": "Proof of Lemma ?? for Discrete deepest descent.",
    "page": 11,
    "source": "outline",
-   "number": "2.2.1"
+   "number": "2.2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 3,
    "title": "Proof of part (a) of Theorem ??: Discrete Dantzig descent.",
    "page": 12,
    "source": "outline",
-   "number": "2.2.2"
+   "number": "2.2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 3,
    "title": "Proof of part (b) of Theorem ??: Discrete steepest descent.",
    "page": 12,
    "source": "outline",
-   "number": "2.2.3"
+   "number": "2.2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Proof of Theorem ??.",
    "page": 13,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 1,
    "title": "Concluding remarks",
    "page": 13,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1991,
+   "n_words": 257,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -138,8 +345,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 4,
-   "n_chars": 9868,
-   "n_words": 1757
+   "n_chars": 9812,
+   "n_words": 1642,
+   "label_start": "1",
+   "label_end": "4"
   },
   {
    "id": "sec-001-11-our-contributions",
@@ -148,8 +357,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 8,
-   "n_chars": 14407,
-   "n_words": 2678
+   "n_chars": 14297,
+   "n_words": 2509,
+   "label_start": "4",
+   "label_end": "8"
   },
   {
    "id": "sec-002-2-proofs",
@@ -157,27 +368,135 @@
    "title": "Proofs",
    "level": 1,
    "page_start": 8,
-   "page_end": 13,
-   "n_chars": 15615,
-   "n_words": 3105
+   "page_end": 9,
+   "n_chars": 3501,
+   "n_words": 623,
+   "label_start": "8",
+   "label_end": "9"
   },
   {
-   "id": "sec-003-3-concluding-remarks",
+   "id": "sec-003-211-proof-of-lemma-discrete-deepest-descent",
+   "number": "2.1.1",
+   "title": "Proof of Lemma ??: Discrete deepest descent.",
+   "level": 3,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 652,
+   "n_words": 128,
+   "label_start": "9",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-004-212-proof-of-part-a-of-theorem-discrete-dantzig",
+   "number": "2.1.2",
+   "title": "Proof of part (a) of Theorem ??: Discrete Dantzig descent.",
+   "level": 3,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 832,
+   "n_words": 157,
+   "label_start": "9",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-005-213-proof-of-part-b-of-of-theorem-discrete-steep",
+   "number": "2.1.3",
+   "title": "Proof of part (b) of of Theorem ??: Discrete steepest descent.",
+   "level": 3,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 4096,
+   "n_words": 721,
+   "label_start": "9",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-006-22-proof-of-lemma-and-theorem",
+   "number": "2.2",
+   "title": "Proof of Lemma ?? and Theorem ??",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 535,
+   "n_words": 95,
+   "label_start": "11",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-007-221-proof-of-lemma-for-discrete-deepest-descent",
+   "number": "2.2.1",
+   "title": "Proof of Lemma ?? for Discrete deepest descent.",
+   "level": 3,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 1282,
+   "n_words": 237,
+   "label_start": "11",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-008-222-proof-of-part-a-of-theorem-discrete-dantzig",
+   "number": "2.2.2",
+   "title": "Proof of part (a) of Theorem ??: Discrete Dantzig descent.",
+   "level": 3,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 1424,
+   "n_words": 272,
+   "label_start": "12",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-009-223-proof-of-part-b-of-theorem-discrete-steepest",
+   "number": "2.2.3",
+   "title": "Proof of part (b) of Theorem ??: Discrete steepest descent.",
+   "level": 3,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 167,
+   "n_words": 29,
+   "label_start": "12",
+   "label_end": "13"
+  },
+  {
+   "id": "sec-010-23-proof-of-theorem",
+   "number": "2.3",
+   "title": "Proof of Theorem ??.",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 2355,
+   "n_words": 444,
+   "label_start": "13",
+   "label_end": "13"
+  },
+  {
+   "id": "sec-011-3-concluding-remarks",
    "number": "3",
    "title": "Concluding remarks",
    "level": 1,
    "page_start": 13,
    "page_end": 15,
-   "n_chars": 8083,
-   "n_words": 1274
+   "n_chars": 8074,
+   "n_words": 1209,
+   "label_start": "13",
+   "label_end": "15"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 13,
-  "sections": 4,
-  "chars_total": 47973,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 13,
+  "chars_total": 49018,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "SIAMOPT.tex",
@@ -190,35 +509,82 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction.",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.67,
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.998,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-11-our-contributions",
      "title": "Our Contributions",
-     "prose_ratio": 0.959,
-     "coverage_ratio": 0.996,
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.991,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-002-2-proofs",
      "title": "Proofs",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.92,
+     "coverage_ratio": 0.959,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-003-3-concluding-remarks",
+     "id": "sec-003-211-proof-of-lemma-discrete-deepest-descent",
+     "title": "Proof of Lemma ??: Discrete deepest descent.",
+     "prose_ratio": 0.219,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-004-212-proof-of-part-a-of-theorem-discrete-dantzig",
+     "title": "Proof of part (a) of Theorem ??: Discrete Dantzig descent.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-213-proof-of-part-b-of-of-theorem-discrete-steep",
+     "title": "Proof of part (b) of of Theorem ??: Discrete steepest descent.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-22-proof-of-lemma-and-theorem",
+     "title": "Proof of Lemma ?? and Theorem ??",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-221-proof-of-lemma-for-discrete-deepest-descent",
+     "title": "Proof of Lemma ?? for Discrete deepest descent.",
+     "prose_ratio": 0.359,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-222-proof-of-part-a-of-theorem-discrete-dantzig",
+     "title": "Proof of part (a) of Theorem ??: Discrete Dantzig descent.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-223-proof-of-part-b-of-theorem-discrete-steepest",
+     "title": "Proof of part (b) of Theorem ??: Discrete steepest descent.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-23-proof-of-theorem",
+     "title": "Proof of Theorem ??.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-3-concluding-remarks",
      "title": "Concluding remarks",
-     "prose_ratio": 0.934,
-     "coverage_ratio": 0.427,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.432,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

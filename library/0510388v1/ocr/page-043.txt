@@ -1,0 +1,34 @@
+18. Curls and divergences.
+
+If x isa fixed point on S’ and V isa tangent vector to S* at x, then the parallel
+transport P,,V of V tothe point y is defined for all y #—x, and may be
+viewed as a vector field on S* — {—x}, as illustrated in section 13.
+
+We need to know the curl and divergence of this vector field.
+
+PROPOSITION 18.1.
+
+__ly.x,V]
+Vy X PyxV = T+<x.y>
+PROPOSITION 18.2.
+os 2<y,V>
+Vy e PyxV = T+<xy> .
+
+To take curls and divergences of vector fields on an oriented Riemannian 3-manifold,
+we make use of the duality between vector fields and forms as follows.
+
+If U isa vector field, we can convert it to the dual 1-form !U which is defined by
+({U)(W) = <U,W> for all vector fields W. If u isa 1-form, we can convert it
+to the dual vector field tu which is defined by < tu, W> = u(W) for all vector
+fields W. The down and up arrows remind us of lowering and raising indices in
+tensorial notation.
+
+If U isa vector field, we can convert it to the dual 2-form U which is defined by
+(VU)(Y, Z) = vol(U, Y, Z) for all vector fields Y and Z. If u is. a2-form, we can
+convert it to the dual vector field ft which is defined by vol (fu, Y, Z) = u(Y, Z)
+for all vector fields Y and Z.
+
+For example, !E; = 0; and 10; = E; for i = 1,2,3. Likewise VE, = 0, A 03,
+UE, = 0; A 0, and YE; = 0; A 02, and ft is simply the inverse of this.
+
+43

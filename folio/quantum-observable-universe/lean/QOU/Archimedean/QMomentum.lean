@@ -60,7 +60,7 @@ noncomputable def QMomentum.p_q (M : QMomentum) : ℝ :=
 /-- The classical writhe `w(β) = Σ_j ε_j`. -/
 def QMomentum.writhe (M : QMomentum) : ℤ := M.crossings.sum
 
--- Ref: [manuscript] quantum-observable-universe/climax-volume-mass/q-momentum.ts
+-- Ref: [leitner2026] quantum-observable-universe/climax-volume-mass/q-momentum.ts
 
 /-- Auxiliary: over a `±1` word, the `q`-bracket sum collapses to the integer
     sum, because `[±1]_q = ±1`. -/

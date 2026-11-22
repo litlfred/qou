@@ -29,7 +29,7 @@ LaTeX label: `conj:shell-transition-knot`
 
 ## References
 
-- [manuscript] §"Shell-transition knot"
+- [leitner2026] §"Shell-transition knot"
 -/
 
 namespace QOU.Conjectures

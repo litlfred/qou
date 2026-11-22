@@ -7,10 +7,17 @@
   "bytes": 217671,
   "pages": 11,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 10,
+    "reason": "17 of 381 words are a stray single letter: the text layer splits words"
+   }
+  ],
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,21 +27,29 @@
    "stamp_date": "12 Jan 2006"
   },
   "doi": null,
-  "title": "AN AVERAGING PROCESS FOR UNIPOTENT GROUP ACTIONS AMNON YEKUTIELI",
-  "authors_raw": null,
+  "title": "AN AVERAGING PROCESS FOR UNIPOTENT GROUP ACTIONS",
+  "authors_raw": "AMNON YEKUTIELI",
   "title_lines": [
    "AN AVERAGING PROCESS FOR UNIPOTENT GROUP",
-   "ACTIONS",
-   "AMNON YEKUTIELI"
+   "ACTIONS"
   ],
-  "abstract": "W e present an averaging process for sections of a torsor unde r a unipotent group. This process allows one to integrate local sections of such a torsor into a global simplicial section. The results of this paper have applica- tions to deformation quantization of algebraic varieties. 0. Introduction Let K be a \ufb01eld of characteristic 0. For any natural number q let K[t0, . . . , t q] be the polynomial algebra, and let \u2206 q K be the geometric q-dimensional simplex \u2206 q K := Spec K[t0, . . . , t q]/ (t0 + \u00b7 \u00b7 \u00b7+ tq \u2212 1). Our main result is the following theorem. Theorem 0.1. Let G be a unipotent algebraic group over K, let X be a K-scheme, let Z be a G-torsor over X, and let Y be any X-scheme. Suppose f = (f0, . . . , f q) is a sequence of X-morphisms fi : Y \u2192 Z. Then there is an X-morphism wavG(f ) : \u2206 q K \u00d7 Y \u2192 Z called the weighted average, such that the operation wavG is symmetric, simplicial, functorial in the data (G, X, Y, Z ), and is the identity for q = 0. \u201cSymmetric\u201d means that wav G is equivariant for the action of the permutation group of {0, . . . , q } on the sequence f and the scheme \u2206 q K. \u201cSimplicial\u201d says that as q varies wavG : Hom X (Y, Z )q+1 \u2192 HomX (\u2206 q K \u00d7 Y, Z ) is a map of simplicial sets. \u201cFunctorial in the data ( G, X, Y, Z )\u201d means that e.g. given a morphism h : Z \u2192 Z\u2032 of G-torsors over X, one has h \u25e6 wavG(f ) = wav G(h \u25e6 f ), where h \u25e6 f is the sequence ( h \u25e6 f0, . . . , h \u25e6 fq). Theorem 0.1 is repeated, in full detail, as Theorem 1.11. Observe that when we restrict the morphism wav G(f ) to each of the vertices of \u2206 q K we recover the original morphisms f0, . . . , f q. This is due to the simplicial property of wavG. Thus wav G(f ) interpolates between f0, . . . , f q. This is illustrated in Figure 1. Date: 12 January 2006.",
+  "abstract": "We present an averaging process for sections of a torsor under a unipotent group. This process allows one to integrate local sections of such a torsor into a global simplicial section. The results of this paper have applica- tions to deformation quantization of algebraic varieties. 0. Introduction Let K be a ﬁeld of characteristic 0. For any natural number q let K[t0, . . . , tq] be the polynomial algebra, and let ∆q K be the geometric q-dimensional simplex ∆q K := Spec K[t0, . . . , tq]/(t0 + · · · + tq −1). Our main result is the following theorem. Theorem 0.1. Let G be a unipotent algebraic group over K, let X be a K-scheme, let Z be a G-torsor over X, and let Y be any X-scheme. Suppose f = (f0, . . . , fq) is a sequence of X-morphisms fi : Y →Z. Then there is an X-morphism wavG(f) : ∆q K × Y →Z called the weighted average, such that the operation wavG is symmetric, simplicial, functorial in the data (G, X, Y, Z), and is the identity for q = 0. “Symmetric” means that wavG is equivariant for the action of the permutation group of {0, . . ., q} on the sequence f and the scheme ∆q K. “Simplicial” says that as q varies wavG : HomX(Y, Z)q+1 →HomX(∆q K × Y, Z) is a map of simplicial sets. “Functorial in the data (G, X, Y, Z)” means that e.g. given a morphism h : Z →Z′ of G-torsors over X, one has h ◦wavG(f) = wavG(h ◦f), where h ◦f is the sequence (h ◦f0, . . . , h ◦fq). Theorem 0.1 is repeated, in full detail, as Theorem 1.11. Observe that when we restrict the morphism wavG(f) to each of the vertices of ∆q K we recover the original morphisms f0, . . . , fq. This is due to the simplicial property of wavG. Thus wavG(f) interpolates between f0, . . . , fq. This is illustrated in Figure 1. Date: 12 January 2006.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript SVN PRE-RELEASE 8.62",
-   "CreationDate": "D:20080201180159-05'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  }
+   "CreationDate": "D:20080201180159-05'00'"
+  },
+  "title_raw": "AN AVERAGING PROCESS FOR UNIPOTENT GROUP ACTIONS",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "AN AVERAGING PROCESS FOR UNIPOTENT GROUP ACTIONS 0. Introduction Let K be a ﬁeld of characteristic 0. For any natural number q let K [ t 0 , . . . , t q ] be the polynomial algebra, and let ∆ q K be the geometric q -dimensional simplex K := Spec K [ t 0 , . . . , t q ] / ( t 0 + · · · + t q − 1) . O",
+   "outline": "0. Introduction",
+   "text": "AN AVERAGING PROCESS FOR UNIPOTENT GROUP ACTIONS",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "AN AVERAGING PROCESS FOR UNIPOTENT GROUP ACTIONS AMNON YEKUTIELI"
  },
  "toc": [
   {
@@ -42,69 +57,217 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "0"
+   "number": "0",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The Averaging Process",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Simplicial Sections",
    "page": 8,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 10,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Simplicial sections, q = 1. We start with sections over two open sets U(0) and U(1) in the left diagram; and we pass to a simplicial section σ(0,1) on the right. As can be seen, σ(0,1) interpolates between σ(0) and σ(1)",
+   "page": 11,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 402,
+   "n_words": 60,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-0-introduction",
    "number": "0",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 8,
-   "n_chars": 17914,
-   "n_words": 4302
+   "page_end": 2,
+   "n_chars": 1685,
+   "n_words": 337,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-2-simplicial-sections",
+   "id": "sec-001-1-the-averaging-process",
+   "number": "1",
+   "title": "The Averaging Process",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 8,
+   "n_chars": 15634,
+   "n_words": 3390,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-2-simplicial-sections",
    "number": "2",
    "title": "Simplicial Sections",
    "level": 1,
    "page_start": 8,
    "page_end": 10,
-   "n_chars": 6505,
-   "n_words": 1556
+   "n_chars": 5761,
+   "n_words": 1300,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-002-references",
+   "id": "sec-003-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 10,
    "page_end": 11,
-   "n_chars": 1262,
-   "n_words": 213
+   "n_chars": 1164,
+   "n_words": 191,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 4,
-  "sections": 3,
-  "chars_total": 25681,
+  "toc_inferred_entries": 0,
+  "figure_entries": 1,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 5,
+  "chars_total": 24646,
+  "furniture_lines_stripped": 0,
+  "pages_read_in_print_order": [
+   2
+  ],
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "paper.tex",
@@ -117,23 +280,34 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-0-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.997,
-     "coverage_ratio": 0.935,
+     "prose_ratio": 0.43,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-1-the-averaging-process",
+     "title": "The Averaging Process",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.785,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-001-2-simplicial-sections",
+     "id": "sec-002-2-simplicial-sections",
      "title": "Simplicial Sections",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.926,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-002-references",
+     "id": "sec-003-references",
      "title": "References",
      "result": "no matching \\section"
     }

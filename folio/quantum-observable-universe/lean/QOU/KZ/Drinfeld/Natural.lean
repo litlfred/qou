@@ -15,14 +15,14 @@ intertwined by tensor products of equivariant maps. They differ from the `𝔤�
 
 Sorry-free.
 
--- Ref: [manuscript] beans/defs/qou-zoyv (stage S2)
+-- Ref: [leitner2026] beans/defs/qou-zoyv (stage S2)
 -/
 
 noncomputable section
 
 namespace QOU.KZ.Drinfeld
 
-open CategoryTheory Finset QOU.KZ.FuchsianFormal QOU.KZ.BlockResidues QOU.KZ.KZPentagon Obj
+open CategoryTheory Finset QOU.KZ.FuchsianFormal QOU.KZ.BlockResidues QOU.KZ.DrinfeldAssociator Obj
 
 variable {L : Type*} [Fintype L] [DecidableEq L]
 
@@ -120,18 +120,19 @@ section Shift
 
 attribute [local instance] Matrix.linftyOpNormedRing Matrix.linftyOpNormedAlgebra
 
-variable {c : ℂ} (hc : Transcendental ℚ c)
-include hc
+variable (Ψ : Associator.{0}) {c : ℂ} (hc : Transcendental ℚ c)
+include Ψ hc
 
+omit Ψ in
 theorem transcendental_half : Transcendental ℚ (c / 2) := by
   intro h
   apply hc
   have := h.mul (isAlgebraic_algebraMap (R := ℚ) (A := ℂ) (2 : ℚ))
   rwa [show c / 2 * algebraMap ℚ ℂ 2 = c by simp] at this
 
-variable {L L' : Type*} [Fintype L] [DecidableEq L] [Fintype L'] [DecidableEq L']
+variable {L L' : Type} [Fintype L] [DecidableEq L] [Fintype L'] [DecidableEq L']
 
-omit hc in
+omit Ψ hc in
 theorem smul_tsl_eq {S T : Finset L} (h : Disjoint S T) :
     c • tsl S T = (c / 2) • (Int.castRingHom ℂ).mapMatrix
       ((2 : ℤ) • tBZ 2 S T - ((S.card * T.card : ℕ) : ℤ) • 1) := by
@@ -161,26 +162,26 @@ theorem nonResonant_fromBlocks_tsl {S T : Finset L} {S' T' : Finset L'} (h : Dis
   rw [e]
   exact NonResonantInt.nonResonant_smul_intMatrix _ _ (transcendental_half hc)
 
-omit hc in
+omit Ψ hc in
 theorem commute_scalar (r : ℂ) (X : EndL L) : Commute (r • (1 : EndL L)) X :=
   (Commute.one_left X).smul_left r
 
 /-- `ΦB` computed with the `sl₂` residues. -/
 theorem ΦB_eq_sl {S T U : Finset L} (hST : Disjoint S T) (hTU : Disjoint T U) :
-    ΦB hc S T U = Φ (c • tsl S T) (c • tsl T U) (nonResonant_tsl hc hST)
-      (nonResonant_tsl hc hTU) := by
+    ΦB Ψ hc S T U = Ψ.ΦN (c • tsl S T) (c • tsl T U) (nonResonant_tsl Ψ hc hST)
+      (nonResonant_tsl Ψ hc hTU) := by
   set z₁ : EndL L := (c * ((1 / 2 : ℂ) * (S.card * T.card : ℕ))) • 1
   set z₂ : EndL L := (c * ((1 / 2 : ℂ) * (T.card * U.card : ℕ))) • 1
   have e₁ : c • tB ℂ 2 S T = c • tsl S T + z₁ := by
     rw [tB_eq_tsl hST, smul_add, smul_smul]
   have e₂ : c • tB ℂ 2 T U = c • tsl T U + z₂ := by
     rw [tB_eq_tsl hTU, smul_add, smul_smul]
-  have hB' : NonResonant (c • tsl T U + z₂) := e₂ ▸ nonResonant_tB hc T U
-  have hA' : NonResonant (c • tsl S T + z₁) := e₁ ▸ nonResonant_tB hc S T
-  rw [ΦB, KZShiftPhi.Φ_congr e₁ e₂ _ _ hA' hB',
-    KZShiftPhi.Φ_shift_left _ _ z₁ (nonResonant_tsl hc hST) hB' hA' (commute_scalar _ _)
+  have hB' : NonResonant (c • tsl T U + z₂) := e₂ ▸ nonResonant_tB Ψ hc T U
+  have hA' : NonResonant (c • tsl S T + z₁) := e₁ ▸ nonResonant_tB Ψ hc S T
+  rw [ΦB, Ψ.ΦN_congr e₁ e₂ _ _ hA' hB',
+    Ψ.ΦN_shift_left _ _ z₁ (nonResonant_tsl Ψ hc hST) hB' hA' (commute_scalar _ _)
       (commute_scalar _ _),
-    KZShiftPhi.Φ_shift_right _ _ z₂ (nonResonant_tsl hc hST) (nonResonant_tsl hc hTU) hB'
+    Ψ.ΦN_shift_right _ _ z₂ (nonResonant_tsl Ψ hc hST) (nonResonant_tsl Ψ hc hTU) hB'
       (commute_scalar _ _) (commute_scalar _ _)]
 
 end Shift
@@ -203,12 +204,12 @@ section Nat
 
 attribute [local instance] Matrix.linftyOpNormedRing Matrix.linftyOpNormedAlgebra
 
-variable {c : ℂ} (hc : Transcendental ℚ c)
-include hc
+variable (Ψ : Associator.{0}) {c : ℂ} (hc : Transcendental ℚ c)
+include Ψ hc
 
 /-- **Naturality of the associator** (matrix form). -/
 theorem natural_mat {X₁ X₂ X₃ Y₁ Y₂ Y₃ : Obj} (f₁ : X₁ ⟶ Y₁) (f₂ : X₂ ⟶ Y₂) (f₃ : X₃ ⟶ Y₃) :
-    αmat hc Y₁ Y₂ Y₃ * T3 f₁ f₂ f₃ = kron f₁.1 (kron f₂.1 f₃.1) * αmat hc X₁ X₂ X₃ := by
+    αmat Ψ hc Y₁ Y₂ Y₃ * T3 f₁ f₂ f₃ = kron f₁.1 (kron f₂.1 f₃.1) * αmat Ψ hc X₁ X₂ X₃ := by
   have hA : T3 f₁ f₂ f₃ * (c • tsl (blkX X₁ X₂ X₃) (blkY X₁ X₂ X₃)) =
       (c • tsl (blkX Y₁ Y₂ Y₃) (blkY Y₁ Y₂ Y₃)) * T3 f₁ f₂ f₃ := by
     rw [Matrix.mul_smul, Matrix.smul_mul,
@@ -217,13 +218,13 @@ theorem natural_mat {X₁ X₂ X₃ Y₁ Y₂ Y₃ : Obj} (f₁ : X₁ ⟶ Y₁)
       (c • tsl (blkY Y₁ Y₂ Y₃) (blkZ Y₁ Y₂ Y₃)) * T3 f₁ f₂ f₃ := by
     rw [Matrix.mul_smul, Matrix.smul_mul,
       intertwine_tsl _ (T3_blkY f₁ f₂ f₃) (T3_blkZ f₁ f₂ f₃)]
-  have hΦ := KZIntertwine.Φ_intertwine _ _ _ _ (T3 f₁ f₂ f₃) hA hB
-    (nonResonant_tsl hc (disj_blkXY X₁ X₂ X₃)) (nonResonant_tsl hc (disj_blkYZ X₁ X₂ X₃))
-    (nonResonant_tsl hc (disj_blkXY Y₁ Y₂ Y₃)) (nonResonant_tsl hc (disj_blkYZ Y₁ Y₂ Y₃))
-    (nonResonant_fromBlocks_tsl hc (disj_blkXY _ _ _) (disj_blkXY _ _ _))
-    (nonResonant_fromBlocks_tsl hc (disj_blkYZ _ _ _) (disj_blkYZ _ _ _))
-  rw [αmat, αmat, ΦB_eq_sl hc (disj_blkXY _ _ _) (disj_blkYZ _ _ _),
-    ΦB_eq_sl hc (disj_blkXY _ _ _) (disj_blkYZ _ _ _), Matrix.mul_assoc, ← hΦ,
+  have hΦ := Ψ.ΦN_intertwine _ _ _ _ (T3 f₁ f₂ f₃) hA hB
+    (nonResonant_tsl Ψ hc (disj_blkXY X₁ X₂ X₃)) (nonResonant_tsl Ψ hc (disj_blkYZ X₁ X₂ X₃))
+    (nonResonant_tsl Ψ hc (disj_blkXY Y₁ Y₂ Y₃)) (nonResonant_tsl Ψ hc (disj_blkYZ Y₁ Y₂ Y₃))
+    (nonResonant_fromBlocks_tsl Ψ hc (disj_blkXY _ _ _) (disj_blkXY _ _ _))
+    (nonResonant_fromBlocks_tsl Ψ hc (disj_blkYZ _ _ _) (disj_blkYZ _ _ _))
+  rw [αmat, αmat, ΦB_eq_sl Ψ hc (disj_blkXY _ _ _) (disj_blkYZ _ _ _),
+    ΦB_eq_sl Ψ hc (disj_blkXY _ _ _) (disj_blkYZ _ _ _), Matrix.mul_assoc, ← hΦ,
     ← Matrix.mul_assoc, reidx_T3, Matrix.mul_assoc]
 
 end Nat

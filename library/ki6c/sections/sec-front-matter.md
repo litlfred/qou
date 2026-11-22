@@ -1,6 +1,6 @@
 ---
 doc_id: ki6c
-doc_title: "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings Tomotada Ohtsuki and Yoshiyuki Yokota Introduction"
+doc_title: "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings"
 section_id: sec-front-matter
 section_title: "Front matter"
 section_number: null
@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: ki6c.pdf
 source_sha256: b13a73517b349654
 toc_source: inferred
+doc_brief: "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings — We give presentations of the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings."
 ---
 On the asymptotic expansions of
 the Kashaev invariant of the knots with 6 crossings
@@ -27,4 +28,3 @@ concrete homotopy of the (real 3-dimensional) domain of the integral in C3 in su
 boundary of the domain always stays in a certain domain in C3 given by the potential function of
 the hyperbolic structure.
 Mathematics Subject Classiﬁcation (2010). Primary: 57M27. Secondary: 57M25, 57M50.
-1

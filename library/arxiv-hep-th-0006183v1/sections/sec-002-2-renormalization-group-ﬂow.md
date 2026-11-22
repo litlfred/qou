@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-0006183v1
-doc_title: "arXiv:hep-th/0006183v1 23 Jun 2000"
+doc_title: "Fine-tuning and the Wilson renormalization group"
 section_id: sec-002-2-renormalization-group-ﬂow
 section_title: "Renormalization group ﬂow"
 section_number: 2
@@ -8,6 +8,7 @@ pages: 3-4
 source_pdf: 0006183v1.pdf
 source_sha256: 2c9c4d97ce4f71a3
 toc_source: inferred
+doc_brief: "Fine-tuning and the Wilson renormalization group — We use the Wilson renormalization group (RG) formulation to solve the ﬁne-tuning proce- dure needed in renormalization schemes breaking the gauge"
 ---
 Consider the SU(2) gauge theory described by the classical Lagrangian (in the Feynman
 gauge)
@@ -164,4 +165,3 @@ the Λ0 →∞limit of Γ[Φ, γ; Λ, Λ0] is ﬁnite for all values of Λ 1. In
 will be taken and Γ[Φ, γ; Λ, ∞] will be denoted by Γ[Φ, γ; Λ]. Notice that, once this limit
 has been performed, the irrelevant vertices of Γ[Φ, γ; Λ] do not vanish at Λ = Λ0 but are
 only suppressed by inverse powers of Λ0.
-3

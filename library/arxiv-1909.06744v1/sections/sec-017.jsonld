@@ -9,13 +9,15 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "§17. Exotic symmetric spaces of higher level, the case H = SpN",
-  "pageStart": 20,
-  "pageEnd": 23,
+  "title": "§19. Symmetric spaces in characteristic 2",
+  "pageStart": 23,
+  "pageEnd": 25,
   "contains": [
-    "library/arxiv-1909.06744v1/blocks/prose-sec-017"
+    "library/arxiv-1909.06744v1/blocks/prose-sec-017",
+    "library/arxiv-1909.06744v1/blocks/prop-sec-017-01",
+    "library/arxiv-1909.06744v1/blocks/prop-sec-017-02"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1909.06744v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1909.06744v1",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1909.06744v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1909.06744v1/manifest.jsonld",
   "provenance": "ingested"
 }

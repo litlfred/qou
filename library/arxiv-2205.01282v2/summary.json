@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2205.01282v2",
  "source_sha256": "00f656afa60db838",
- "brief": "Witten-Reshetikhin-Turaev invariants and homological blocks for plumbed homology spheres — In this paper, we prove a conjecture by Gukov–Pei–Putrov–Vafa for a wide class of plumbed 3-manifolds.",
- "extended": "**Witten-Reshetikhin-Turaev invariants and homological blocks for plumbed homology spheres**\n\n18 pp, 16 sections.\n\n**Abstract.** In this paper, we prove a conjecture by Gukov–Pei–Putrov–Vafa for a wide class of plumbed 3-manifolds. Their conjecture states that Witten–Reshetikhin–Turaev (WRT) invariants are radial limits of homological blocks, which are q-series introduced by them for plumbed 3-manifolds with negative definite linking matrices. The most difficult point in our proof is to prove the vanishing of weighted Gauss sums that appear in coefficients of negative degree in asymptotic expansions of homological blocks. To deal with it, we develop a new technique for asymptotic expansions, which enables us to compare asymptotic expansions of rational functions and false theta functions related to WRT invariants and homological blocks, respectively. In our technique, our vanishing results follow from holomorphy of such rational functions.\n\n**Outline.** 1 Introduction; Acknowledgement; 2 Basic notations for plumbing graphs; 2.1 Notations for graphs; 2.2 The inverse matrix of the linking matrix; 2.3 Periodic maps determined by the linking ma; 2.4 Rational functions determined by the linki; 3 Calculations of WRT invariants; 4 Expressions of homological blocks as false t; 5 An asymtotic formula; 5.1 Asymtotic formulas obtained from Euler–Mac; 5.2 Asymtotic expansion of infinite series wit; 6 A proof of the main theorem; 6.1 The main result; 6.2 A proof of the main result; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.2: Conjecture 1.1 is true for plumbing graphs depicted in Figure 1.\n- Proposition 3.2: WRTk(M(Γ)) = (−1)|V1|e(|V≥2|/8)ζ\n- Proposition 3.3: Let L be a lattice of finite rank n equipped with a non-\n- Proposition 5.4: LetN and N′ be non-negative integers, f : RN+N′\n- Proposition 5.4: In the following statement, we use notations ε,S,Q and so on, which we prepared in\n- Proposition 6.1: (i) For each vertex v∈V≥3, the order of F (t) at tv = 0 satisfies",
+ "brief": "WITTEN–RESHETIKHIN–TURAEV INVARIANTS AND HOMOLOGICAL BLOCKS FOR PLUMBED HOMOLOGY SPHERES — In this paper, we prove a conjecture by Gukov–Pei–Putrov–Vafa for a wide class of plumbed 3-manifolds.",
+ "extended": "**WITTEN–RESHETIKHIN–TURAEV INVARIANTS AND HOMOLOGICAL BLOCKS FOR PLUMBED HOMOLOGY SPHERES**\n\n*YUYA MURAKAMI*\n\n18 pp, 17 sections.\n\n**Abstract.** In this paper, we prove a conjecture by Gukov–Pei–Putrov–Vafa for a wide class of plumbed 3-manifolds. Their conjecture states that Witten–Reshetikhin–Turaev (WRT) invariants are radial limits of homological blocks, which are q-series introduced by them for plumbed 3-manifolds with negative definite linking matrices. The most difficult point in our proof is to prove the vanishing of weighted Gauss sums that appear in coefficients of negative degree in asymptotic expansions of homological blocks. To deal with it, we develop a new technique for asymptotic expansions, which enables us to compare asymptotic expansions of rational functions and false theta functions related to WRT invariants and homological blocks, respectively. In our technique, our vanishing results follow from holomorphy of such rational functions.\n\n**Outline.** Front matter; 1 Introduction; Acknowledgement; 2 Basic notations for plumbing graphs; 2.1 Notations for graphs; 2.2 The inverse matrix of the linking matrix; 2.3 Periodic maps determined by the linking ma; 2.4 Rational functions determined by the linki; 3 Calculations of WRT invariants; 4 Expressions of homological blocks as false t; 5 An asymtotic formula; 5.1 Asymtotic formulas obtained from Euler–Mac; 5.2 Asymtotic expansion of infinite series wit; 6 A proof of the main theorem; 6.1 The main result; 6.2 A proof of the main result; References",
  "tokens": {
   "brief": 48,
-  "extended": 503
+  "extended": 383
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -94,8 +99,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

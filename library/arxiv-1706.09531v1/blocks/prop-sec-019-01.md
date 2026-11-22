@@ -1,0 +1,1 @@
+Speciﬁcally, one would expect: [Γ(p →µ+K◦)/Γ(p →νK+)]new d=5 ≈(5 −50)% (31) This is to be compared with an expected branching ratio of about (5–10)% for the case of standard d = 5 operators for SUSY SO(10), and about 10−3 for SUSY SU(5) (see Eq.

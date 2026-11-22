@@ -11,7 +11,7 @@ upgraded from `True` placeholders to actual mathematical claims.
 
 ## What this module provides
 
-- `RealStrongDualityPair` — extends `StrongDualityPair sdp` (for
+- `RealStrongDualityPair` — the `StrongDualityPair sdp` fields at ℝ (for
   `sdp : SDPPrimal n ℝ ι`) with concrete:
     - `dualSlack_psd : (sdp.dualSlack ystar).PosSemidef`
     - `obj_eq_dualObj : sdp.objAt Φstar = sdp.dualObjAt ystar`
@@ -72,6 +72,17 @@ structure RealStrongDualityPair (sdp : SDPPrimal n ℝ ι) where
   /-- **Strong-duality identity**: primal and dual objectives
       coincide at the optimum. -/
   obj_eq_dualObj : sdp.objAt Φstar = sdp.dualObjAt ystar
+
+/-- At `R := ℝ` the generic `StrongDualityPair` carries exactly the
+    `RealStrongDualityPair` fields (they agreed field-for-field once the
+    generic `dual_feas` / `obj_eq` stopped being `True`, 2026-11-15). -/
+def _root_.QOU.MathlibExt.SDP.StrongDualityPair.toReal {sdp : SDPPrimal n ℝ ι}
+    (p : StrongDualityPair sdp) : RealStrongDualityPair sdp where
+  Φstar := p.Φstar
+  ystar := p.ystar
+  primal_feas := p.primal_feas
+  dualSlack_psd := p.dual_feas
+  obj_eq_dualObj := p.obj_eq
 
 /-- **Real strict-complementarity pair** — extends
     `RealStrongDualityPair` with the active/inactive partition. -/
@@ -462,8 +473,8 @@ zero-cost counterexample the identity is positive-definite with nothing to
 violate, so `IsStrictlyFeasible` holds, and the complementarity-difference
 hypotheses are vacuous because the dual slack is the zero matrix.
 
-Use `SDPSlaterUniqueness.ofDualSlackPosDef` or
-`SDPSlaterUniqueness.ofActiveEmptyAndCostPosDef` — both proven, both axiom-free.
+Use `QOU.MathlibExt.SDPRealUniqueness.ofDualSlackPosDef` or
+`QOU.MathlibExt.SDPRealUniqueness.ofActiveEmptyAndCostPosDef` — both proven, both axiom-free.
 
 Tracked in bean `qou-i6u4`.
 -/

@@ -11,7 +11,7 @@ LaTeX: `\label{prop:mass-identity-unique}`
 
 ## References
 
-- [manuscript] §5-lifting-and-descent/mass-identity-unique
+- [leitner2026] §5-lifting-and-descent/mass-identity-unique
 - [kock2004] Frobenius Algebras and 2D TQFT, Ch 2
 -/
 

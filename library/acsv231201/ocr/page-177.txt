@@ -1,0 +1,54 @@
+6.4 Singularities, amoeba boundaries, and minimal points 159
+be any point with the same coordinate-wise modulus. Then
+lg(tlesl. teal) = lg(tw)| = D7 ant ew” < aye”
+rend rend
+
+= q(w)
+
+=1
+for t € (0, 1), so w is minimal by Corollary 6.39. Furthermore, if ¢ is aperiodic
+and z has the same coordinate-wise modulus as a minimal point w but does
+
+not have positive coordinates then the arguments of monomials z” appearing
+in q(Z) are not all equal, and the triangle inequality implies
+
+Daz”
+
+ren
+
+< » qrw” = qw)=1,
+
+rend
+
+Iq@)l =
+
+so z is not minimal. ia)
+
+Remark 6.42. When f is a ratio of coprime analytic functions P and Q on
+D, where Q(z) = 1 - q(z) for a combinatorial power series g, then the results
+of Lemma 6.41 still hold. Without aperiodicity, w may not even be finitely
+minimal, as the periodic example g(x, y) = 1 — xy illustrates.
+
+Lemma 6.43 (Grace-Walsh-Szegé theorem). Let Q(z) be a polynomial in
+C[z] such that Q is invariant under permuting its variables and is linear in
+each variable. If Q(w) = 0 for some w € C4 with |wi|,...,|wal < R then
+Q(x, x,...,x) = 0 for some |x| < R.
+
+Proof This classical lemma is proved, among other places, in [BB09, The-
+orem 1.1]. It also follows from the Borcea—Brindén symmetrization lemma,
+which we return to in Theorem 13.8 of Chapter 13. ia)
+
+Exercise 6.11. Let Q(z, Z2, 23, 24) = 3-21-22 — 23 — 24 +: 21222324. Determine
+whether (1, 1, 1, 1) is a minimal point
+
+for Q by using the Grace-Walsh-Szegé theorem. As a challenge you can also
+try to prove minimality from first principles, but this is quite tricky.
+
+Returning to our original motivation, we care about minimal points because
+they provide the best upper bound in the exponential growth bound (6.6). A
+supporting hyperplane to a convex set C at y € C is a hyperplane through y
+such that all elements of C lie on one side of the hyperplane; a normal v to
+such a supporting hyperplane is an inward-facing normal if (a — y)-v > 0 for
+all a € C and an outward-facing normal if (x — y)- v < 0 for all x € C (one
+of these conditions must be true). The logarithmic gradient of a differentiable
+function Q at w € C4 is the vector (Viog Q)(w) = (Wi Q-,(w), ..., WaQz,(W)).

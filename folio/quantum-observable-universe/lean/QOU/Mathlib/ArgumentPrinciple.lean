@@ -20,8 +20,9 @@ $$\frac{1}{2\pi i}\oint_{|z-c|=R} \frac{f'(z)}{f(z)}\,dz
 This is the **argument principle**. It is the least-Analysis-blocked of the three
 `PentagonRigidity` infra walls (PI-1 Hadamard factorization, PI-2 elliptic
 divisor-degree, PI-3 here): PI-2's degree-zero theorem and PI-1's canonical-product
-zero-counting BOTH reduce to it (`elliptic_divisor_degree_zero` names the argument
-principle as its explicit open core; a canonical product's zero count is this
+zero-counting BOTH reduce to it (`elliptic_divisor_degree_zero` is now proved in
+`QOU.Mathlib.LiouvilleThird` via the annulus version of this theorem,
+`QOU.Mathlib.ArgumentPrincipleAnnulus`; a canonical product's zero count is this
 integral applied to an entire `f`). The `f'/f`-integrand carries the *analytic*
 content; the RHS is the purely-combinatorial divisor sum.
 
@@ -132,7 +133,7 @@ single on-disc Cauchy integral formula, and the rectangle vanishing are present)
 The earlier design routed the argument principle through this missing engine; the
 factorization route removes that dependence entirely.
 
--- Ref: [manuscript] Argument principle / residue of the logarithmic derivative;
+-- Ref: [leitner2026] Argument principle / residue of the logarithmic derivative;
 --   standard complex analysis (Ahlfors, *Complex Analysis*, Ch. 5 §2; Conway
 --   VI.1). Proved here via the Weierstrass zero/pole factorization route. See
 --   docs/audits/2026-07-20-argument-principle-scaffold.md.

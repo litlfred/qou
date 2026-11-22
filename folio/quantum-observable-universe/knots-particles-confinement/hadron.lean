@@ -12,7 +12,7 @@ constituent knots; mesons have two (knot–antiknot pair).
 
 ## References
 
-- [manuscript] §3 Lifting of Quantum Torsion
+- [leitner2026] §3 Lifting of Quantum Torsion
 - [kock2004] https://doi.org/10.1017/CBO9780511615443
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
@@ -41,7 +41,7 @@ structure Hadron where
   /-- The constituent knot types (valence quarks in the knot picture). -/
   constituents : List KnotTheory.BraidWord
   /-- A hadron must have at least 2 constituents. -/
-  -- Ref: [manuscript] §3, Definition: Hadron
+  -- Ref: [leitner2026] §3, Definition: Hadron
   constituents_nonempty : constituents.length ≥ 2
 
 /-! ## Classification -/
@@ -53,7 +53,7 @@ def Hadron.isBaryon (h : Hadron) : Prop := h.constituents.length = 3
 def Hadron.isMeson (h : Hadron) : Prop := h.constituents.length = 2
 
 /-- Every hadron is either a meson, a baryon, or exotic (≥ 4 constituents). -/
--- Ref: [manuscript] §3, Remark: Hadron classification
+-- Ref: [leitner2026] §3, Remark: Hadron classification
 theorem Hadron.meson_or_baryon_or_exotic (h : Hadron) :
     h.isMeson ∨ h.isBaryon ∨ h.constituents.length ≥ 4 := by
   unfold isMeson isBaryon
@@ -80,7 +80,7 @@ The hadronic mass formula: m_H = Q(q) · M(L_Hopf) + Σᵢ M(Kᵢ)
 where Q(q) encodes the q-deformed Skein polynomial of the binding link. -/
 
 /-- Binding structure: the Hopf link and its Skein polynomial contribution. -/
--- Ref: [manuscript] §3, Definition: Hadron mass
+-- Ref: [leitner2026] §3, Definition: Hadron mass
 structure HadronBinding where
   /-- The q-deformation parameter (formal indeterminate of `R_q`). -/
   q : R_q
@@ -92,7 +92,7 @@ structure HadronBinding where
   -- Binding mass is non-negative (archimedean):
   --   bindingMass_nonneg : 0 ≤ bindingMass
   -- omitted here; the ordering lives in the archimedean evaluation layer.
-  -- Ref: [manuscript] §3
+  -- Ref: [leitner2026] §3
 
 /-- Mass of a single constituent knot, given by its hyperbolic volume
     in the QOU framework.  Returns the volume value. -/
@@ -102,7 +102,7 @@ noncomputable def constituentMass (k : KnotTheory.BraidWord)
 
 /-- The total mass of a hadron given a binding structure and constituent volumes.
     m_H = bindingMass + Σᵢ vol(Kᵢ) -/
--- Ref: [manuscript] §3, Proposition: Terminal resolution
+-- Ref: [leitner2026] §3, Proposition: Terminal resolution
 noncomputable def Hadron.mass (h : Hadron) (binding : HadronBinding)
     (volumes : List KnotTheory.HyperbolicVolume) : ℝ :=
   binding.bindingMass + volumes.foldl (fun acc v => acc + v.value) 0
@@ -114,7 +114,7 @@ noncomputable def Hadron.mass (h : Hadron) (binding : HadronBinding)
     `lifting-and-descent/localized-knot.lean`); it is restated locally
     because this standalone content sibling imports only `QOU.KnotTheory`
     and the `localized-knot` sibling is not part of that import closure. -/
--- Ref: [manuscript] §3, Definition: Localized knot
+-- Ref: [leitner2026] §3, Definition: Localized knot
 structure LocalizedKnot where
   /-- Spherical coordinate θ ∈ [0, π] on CP¹ ≅ S². -/
   theta : R_q

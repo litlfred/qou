@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1904.13129v1/blocks/prose-sec-005",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "The form of the lower order remainder terms R1 and R2",
-  "pageStart": 14,
-  "pageEnd": 23,
-  "text": "../sections/sec-005-6-the-form-of-the-lower-order-remainder-terms-r1.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1904.13129v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1904.13129v1",
+  "title": "An estimate for the Q term",
+  "pageStart": 7,
+  "pageEnd": 9,
+  "text": "../sections/sec-005-4-an-estimate-for-the-q-term.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1904.13129v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1904.13129v1/manifest.jsonld",
   "provenance": "ingested"
 }

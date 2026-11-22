@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
 latex_coverage_ratio: 1.0
+doc_brief: "On Two-Dimensional Holonomy — We deﬁne the thin fundamental categorical group P2(M, ∗) of a based smooth manifold (M, ∗) as the categorical group whose objects are rank-1 homotopy classes of based"
 ---
 Fix a Lie crossed module ${\Gc= ( \d\colon E \to  G,\tr)}$. Let $P$ be a smooth principal $G$-bundle over $M$ with a connection $\w$. Choose a $\Gc$-categorical connection $(\w,m)$ on $P$.
 

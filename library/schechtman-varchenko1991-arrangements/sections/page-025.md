@@ -1,0 +1,65 @@
+---
+doc_id: schechtman-varchenko1991-arrangements
+doc_title: "Arrangements of hyperplanes and Lie algebra homology"
+section_id: page-025
+section_title: "Page 25"
+pages: 25-25
+pdf_page: 25
+source_pdf: schechtman-varchenko1991-arrangements.pdf
+source_sha256: 0100fd32438740f0
+text_source: ocr
+granularity: page
+doc_brief: "Arrangements of hyperplanes and Lie algebra homology — 56 sections: Page 1; Page 2; Page 3"
+---
+Arrangements of hyperplanes and Lie algebra homology 163
+4.7.3 Lemma. Suppose that a(F)+0 (ef. (3.4.1). For any H,, ..., H,e@
+
+fH, Hy) = 2400-71) (40)
+
+A(F)
+where
+om
+~ a(F)
+if F=F(Hgq), ---, Ho) for some c€X,, and A=0 otherwise (cf. 3.4.2).
+
+Proof. The case p=1 is elementary. The general case is reduced to the p-th
+power of this one, using the monoidal transformation associated with F.
+
+Suppose that @ has a vertex, dim V =N. Consider the canonical map
+Sa): HY, j, Sh.) > HV, j, S (Aa).
+
+Suppose that (4.7.2) is a quasiisomorphism, and a(L)+0 for every edge L
+of @.
+
+If we identify H™(V, j,S(Aa)) with HN(F°(@)) and H(V, j, f(Aa)) with
+H™ (<f'(@), d(Aa)) for small 2 by 4.6, then from 4.7.3 and 3.4.4 follows that
+
+(4.7.4) S(Aa)=A" S\(a)+O(A%-!)  (A0)
+
+(Note that S¥(Aa)=1" S%(a).)
+Presumably, the same holds without the assumption that a(L)+0 for
+all L.
+
+4.8 Remarks on Jantzen filtration. Using the form S(a), one can define the Jant-
+zen filtration on groups ~(%), cf. [J]. For arrangements studied in Part II
+it gives in particular the usual Jantzen filtration on Verma modules. Consider
+an arrangement @ defined after (1.4.2). Put a(H,,.)= — >. a(H). We have A (O)=
+He
+
+A (€)® AS (€) [1]. Suppose that conditions of 4.6 fulfilled, so that we can iden-
+tify H"(./' (@), d(a)) with H’(U(@), ¥ (a). It seems then plausible that the filtration
+on H’(.f"(@) [1]) induced by the Jantzen filtration on H'(</"(@)) coincides with
+the weight filtration on H'(U(@); /(a)) when the last one is defined. cf. [BB,
+§ 5].
+
+In particular, it would be very interesting to compare H'(¥(@)) (cf. 3.5)
+with the Goresky-MacPherson cohomology H’(U(®); jiy S (a).
+
+Part II. Discriminantal arrangements and Lie algebra homology
+5 Free Lie algebras
+
+5.1 Discriminantal arrangements. Let C% be an affine complex space with coordi-
+
+nates t,, ..., ty. We'll denote by @y the arrangement in €” consisting of hyper-
+planes
+(5.1.1) Hy: t-t;=0;  1Si<jSN.

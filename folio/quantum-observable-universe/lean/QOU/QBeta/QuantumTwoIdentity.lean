@@ -27,7 +27,7 @@ correction resolves; the claim is withdrawn rather than replaced.
 
 Sorry-free. The identity is pure algebra (field_simp; ring).
 
--- Ref: [manuscript] docs/coordination/ck-dk-canonical-registry.md §3 (c₃ row)
+-- Ref: [leitner2026] docs/coordination/ck-dk-canonical-registry.md §3 (c₃ row)
 -- Ref: QOU.QBeta.CuspWindingLattice (G(0,1) = -2 = classical limit of -[2]_q)
 -/
 

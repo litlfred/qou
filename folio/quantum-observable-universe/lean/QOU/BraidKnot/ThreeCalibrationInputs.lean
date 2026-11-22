@@ -1,69 +1,78 @@
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Polynomial.Eval.Defs
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
 /-!
-# Three Calibration Inputs
+# Three calibration inputs (conjecture carrier)
 
-Pins the QOU framework to exactly three external numerical inputs:
+`conj:three-calibration-inputs`: every canonical observable `O` of the
+framework factors as
 
-- `m_e` (electron mass, leptonic scale)
-- `m_μ / m_e` (substrate parameter via `Vol(4_1) / ℏ_q²`)
-- `Q_β(n)` (free-neutron β-decay Q-value, hadronic scale)
+  `O = Ô(q₀) · m_e^a · m_π^b`,  `Ô ∈ ℤ[q₀^{±1/2}]`,  `a, b ∈ ℤ`,  `a + b ∈ {0, 1}`,
 
-Beyond these three, no further empirical input is admissible.
-This file provides the placeholder declarations referenced by
-`prop:three-calibration-inputs`; the calibration constants
-themselves are CODATA values (axioms), not derived.
+where `m_e`, `m_π` and `q₀` are the three calibration inputs of
+`def:three-calibration-discipline` (`QOU.Observations.CalibrationTriple`).
+
+The class `ThreeCalibrationFactorisation` carries this as its one open field.
+No instance exists. The field is content-bearing: for fixed `m_e`, `m_π`,
+`q₀` the admissible values form a countable set, so a generic real number is
+excluded.
+
+`dimensionless_scale_invariant` is derived, not assumed: an observable with
+`a + b = 0` does not change when both mass scales are rescaled by the same
+factor.
+
+Until 2026-11-20 this file stated the claim as
+`∃ f : ℝ → ℝ → ℝ → ℝ, obs = f q₀ m_e Q_β`, which every `obs` satisfies
+(take `f` constant), and it listed `Q_β` rather than `m_π` as the third input
+(bean qou-tm3c).
+
+**Ground ring**: `ℝ` (square root of `q₀`, ordering; AGENTS.md §7c).
 
 ## References
 
-- [prop:three-calibration-inputs]
-- [prop:three-parameters-wedderburn]
-- [rem:calibration-inputs]
+- [leitner2026] mass-theory/three-calibration-inputs
 -/
 
 namespace QOU.BraidKnot
 
-/--
-The three calibration inputs as opaque real-valued constants. Each
-is a CODATA measurement; the framework axiomatises their existence
-and relation to the categorical action.
+/-- The realised value at `q₀` of a Laurent polynomial in `q^{1/2}` with
+    integer coefficients, written as `s^{-k} · P(s)` with `s = √q₀`. -/
+noncomputable def halfLaurentEval (q0 : ℝ) (k : ℕ) (P : Polynomial ℤ) : ℝ :=
+  (Real.sqrt q0)⁻¹ ^ k * P.eval₂ (Int.castRingHom ℝ) (Real.sqrt q0)
 
-The "axiom" here is that exactly three real-valued external inputs
-are admissible. Any predicate / observable in the framework must
-factor through these three plus `q₀`.
--/
-structure ThreeCalibrationInputs where
+/-- The factorisation formula `Ô(q₀) · m_e^a · m_π^b`. -/
+noncomputable def factorValue (q0 m_e m_pi : ℝ) (k : ℕ) (P : Polynomial ℤ)
+    (a b : ℤ) : ℝ :=
+  halfLaurentEval q0 k P * m_e ^ a * m_pi ^ b
+
+/-- **Conjecture carrier** for `conj:three-calibration-inputs`.
+    `Obs` indexes the canonical observables and `value` gives their values. -/
+class ThreeCalibrationFactorisation (Obs : Type*) where
   m_e : ℝ
-  m_mu_over_m_e : ℝ
-  Q_beta_n : ℝ
-  /-- All three calibrations are positive. -/
+  m_pi : ℝ
+  q0 : ℝ
   m_e_pos : 0 < m_e
-  m_mu_ratio_pos : 0 < m_mu_over_m_e
-  Q_beta_n_pos : 0 < Q_beta_n
-  /-- The substrate parameter is determined by the dimensionless ratio. -/
-  q_zero : ℝ
-  q_zero_from_ratio : ∃ vol4_1 : ℝ, ∃ hbar_q : ℝ,
-    m_mu_over_m_e = vol4_1 / (hbar_q ^ 2) ∧ hbar_q = 1 - q_zero⁻¹
+  m_pi_pos : 0 < m_pi
+  one_lt_q0 : 1 < q0
+  value : Obs → ℝ
+  /-- The conjecture: each observable has the factorised form, with
+      dimension `a + b ∈ {0, 1}`. -/
+  factorises : ∀ O : Obs, ∃ (k : ℕ) (P : Polynomial ℤ) (a b : ℤ),
+    (a + b = 0 ∨ a + b = 1) ∧ value O = factorValue q0 m_e m_pi k P a b
 
-/--
-**Three-calibration-inputs proposition** (pattern C — named, not
-asserted).
-
-Every numerical observable of the framework factors through the
-three calibration inputs `(q₀, m_e, Q_β(n))`: there is a function
-`f : ℝ → ℝ → ℝ → ℝ` of the three calibrations reproducing the
-observable's value `obs`.  We *name* this factorization claim as a
-`Prop` over an abstract observable `obs : ℝ` — honestly stating the
-conditional conjecture rather than discharging it with a vacuous
-`: True := trivial`.  The framework realises it case-by-case (every
-numerical comparison cites the calibration block); an inhabitant of
-this `Prop` for a given `obs` is the per-observable factorization
-witness.
-
-Ref: [manuscript] `prop:three-calibration-inputs`
--/
-def three_calibration_inputs
-    (cal : ThreeCalibrationInputs) (obs : ℝ) : Prop :=
-  ∃ f : ℝ → ℝ → ℝ → ℝ, obs = f cal.q_zero cal.m_e cal.Q_beta_n
+/-- A dimensionless factorised value (`a + b = 0`) is unchanged when both
+    mass scales are rescaled by the same non-zero factor. -/
+theorem dimensionless_scale_invariant (q0 m_e m_pi lam : ℝ) (k : ℕ)
+    (P : Polynomial ℤ) (a b : ℤ) (hlam : lam ≠ 0) (hab : a + b = 0) :
+    factorValue q0 (lam * m_e) (lam * m_pi) k P a b
+      = factorValue q0 m_e m_pi k P a b := by
+  unfold factorValue
+  rw [mul_zpow, mul_zpow]
+  have hb : b = -a := by omega
+  have : lam ^ a * lam ^ b = 1 := by
+    rw [hb, zpow_neg, mul_inv_cancel₀ (zpow_ne_zero a hlam)]
+  calc halfLaurentEval q0 k P * (lam ^ a * m_e ^ a) * (lam ^ b * m_pi ^ b)
+      = halfLaurentEval q0 k P * m_e ^ a * m_pi ^ b * (lam ^ a * lam ^ b) := by ring
+    _ = halfLaurentEval q0 k P * m_e ^ a * m_pi ^ b := by rw [this, mul_one]
 
 end QOU.BraidKnot

@@ -7,10 +7,11 @@
   "bytes": 605425,
   "pages": 29,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,20 +21,29 @@
    "stamp_date": "15 Dec 2014"
   },
   "doi": null,
-  "title": "CHARACTER VARIETIES FOR SL (3, C): THE FIGURE EIGHT KNOT",
+  "title": "CHARACTER VARIETIES FOR SL(3, C): THE FIGURE EIGHT KNOT",
   "authors_raw": "E. FALBEL, A. GUILLOUX, P.-V. KOSELEFF",
   "title_lines": [
-   "CHARACTER VARIETIES FOR SL (3, C): THE FIGURE",
+   "CHARACTER VARIETIES FOR SL(3, C): THE FIGURE",
    "EIGHT KNOT"
   ],
-  "abstract": "We give a description of several representation varieties of the fundamental group of the complement of the \ufb01gure eight knot in PGL(3, C) or PSL(3 , C). We obtain a description of the projection of the representation variety into the character variety of the boundary torus into SL(3, C).",
+  "abstract": "We give a description of several representation varieties of the fundamental group of the complement of the ﬁgure eight knot in PGL(3, C) or PSL(3, C). We obtain a description of the projection of the representation variety into the character variety of the boundary torus into SL(3, C).",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20141216013232Z",
-   "Creator": "LaTeX with hyperref package",
    "Producer": "pdfTeX-1.40.12",
-   "Title": ""
-  }
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20141216013232Z"
+  },
+  "title_raw": "CHARACTER VARIETIES FOR SL(3, C): THE FIGURE EIGHT KNOT",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "CHARACTER VARIETIES FOR SL (3 , C ) : THE FIGURE EIGHT KNOT. Introduction Representation varieties of ﬁnitely presented groups into Lie groups has been studied since a long time. A recent by Sikora paper with many references is [21]. In this paper we concentrate on the representations of 3-manifold",
+   "outline": "Introduction",
+   "text": "CHARACTER VARIETIES FOR SL(3, C): THE FIGURE EIGHT KNOT",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "CHARACTER VARIETIES FOR SL (3, C): THE FIGURE EIGHT KNOT"
  },
  "toc": [
   {
@@ -41,179 +51,525 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Representation spaces",
    "page": 3,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Representation variety and character variety",
    "page": 3,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Decorated versions",
    "page": 4,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Peripheral representations: choosing a meridian and a longitude",
    "page": 5,
    "source": "outline",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Deformation variety",
    "page": 6,
    "source": "outline",
-   "number": "1.4"
+   "number": "1.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "A diagram",
    "page": 8,
    "source": "outline",
-   "number": "1.5"
+   "number": "1.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The A-variety",
    "page": 8,
    "source": "outline",
-   "number": "1.6"
+   "number": "1.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The figure eight knot complement",
    "page": 9,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Triangulation",
    "page": 9,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Presentations",
    "page": 10,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The deformation variety for the figure eight knot complement",
    "page": 10,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Computational tools",
    "page": 11,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "An algebraic representation of Defor ( M, T )",
    "page": 12,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Overview of the computations.",
    "page": 13,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Explicit computations for the Figure Eight Knot complement.",
    "page": 16,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Details on algorithm []",
    "page": 19,
    "source": "outline",
-   "number": "3.5"
+   "number": "3.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Eigenvalues of peripheral representations",
    "page": 19,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "A-variety",
    "page": 20,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Where are some already known representations ?",
    "page": 20,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Deforming representations: another way to parametrize the components",
    "page": 22,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The first component, R1",
    "page": 24,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "The other two components, R2 and R3",
    "page": 25,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "A focus on the PU(2,1) case",
    "page": 26,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 28,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Coordinates for a tetrahedron of ﬂags Given M and a triangulation T with n tetrahedra, we consider the space of solutions of these equations and denote it by Defor(M, T ) ⊂C16n",
+   "page": 7,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "The diﬀerent representation varieties",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The ﬁgure eight knot represented by two tetrahedra",
+   "page": 10,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "SU(3) and SU(2, 1) representations in R2",
+   "page": 28,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 429,
+   "n_words": 69,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
@@ -221,8 +577,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 5096,
-   "n_words": 839
+   "n_chars": 5077,
+   "n_words": 821,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-1-representation-spaces",
@@ -231,8 +589,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 484,
-   "n_words": 92
+   "n_chars": 507,
+   "n_words": 93,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-11-representation-variety-and-character-variety",
@@ -241,8 +601,10 @@
    "level": 2,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 2384,
-   "n_words": 438
+   "n_chars": 2381,
+   "n_words": 435,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-12-decorated-versions",
@@ -251,8 +613,10 @@
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 2257,
-   "n_words": 418
+   "n_chars": 2270,
+   "n_words": 431,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-004-13-peripheral-representations-choosing-a-meridia",
@@ -261,8 +625,10 @@
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 2436,
-   "n_words": 443
+   "n_chars": 2463,
+   "n_words": 445,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-005-14-deformation-variety",
@@ -271,58 +637,70 @@
    "level": 2,
    "page_start": 6,
    "page_end": 8,
-   "n_chars": 3272,
-   "n_words": 569
+   "n_chars": 5077,
+   "n_words": 886,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-006-21-triangulation",
-   "number": "2.1",
-   "title": "Triangulation",
-   "level": 2,
-   "page_start": 8,
-   "page_end": 8,
-   "n_chars": 1719,
-   "n_words": 292
-  },
-  {
-   "id": "sec-007-15-a-diagram",
+   "id": "sec-006-15-a-diagram",
    "number": "1.5",
    "title": "A diagram",
    "level": 2,
    "page_start": 8,
    "page_end": 8,
-   "n_chars": 480,
-   "n_words": 88
+   "n_chars": 478,
+   "n_words": 86,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-008-16-the-a-variety",
+   "id": "sec-007-16-the-a-variety",
    "number": "1.6",
    "title": "The A-variety",
    "level": 2,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 341,
-   "n_words": 70
+   "n_chars": 1142,
+   "n_words": 226,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-009-22-presentations",
-   "number": "2.2",
-   "title": "Presentations",
-   "level": 2,
-   "page_start": 9,
-   "page_end": 9,
-   "n_chars": 735,
-   "n_words": 138
-  },
-  {
-   "id": "sec-010-2-the-figure-eight-knot-complement",
+   "id": "sec-008-2-the-figure-eight-knot-complement",
    "number": "2",
    "title": "The figure eight knot complement",
    "level": 1,
    "page_start": 9,
+   "page_end": 9,
+   "n_chars": 72,
+   "n_words": 12,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-009-21-triangulation",
+   "number": "2.1",
+   "title": "Triangulation",
+   "level": 2,
+   "page_start": 9,
    "page_end": 10,
-   "n_chars": 1812,
-   "n_words": 323
+   "n_chars": 866,
+   "n_words": 155,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-010-22-presentations",
+   "number": "2.2",
+   "title": "Presentations",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 746,
+   "n_words": 150,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-011-3-the-deformation-variety-for-the-figure-eight-k",
@@ -331,8 +709,10 @@
    "level": 1,
    "page_start": 10,
    "page_end": 11,
-   "n_chars": 1513,
-   "n_words": 263
+   "n_chars": 1542,
+   "n_words": 292,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-012-31-computational-tools",
@@ -340,92 +720,164 @@
    "title": "Computational tools",
    "level": 2,
    "page_start": 11,
-   "page_end": 13,
-   "n_chars": 5699,
-   "n_words": 1002
+   "page_end": 12,
+   "n_chars": 3640,
+   "n_words": 697,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-013-33-overview-of-the-computations",
+   "id": "sec-013-32-an-algebraic-representation-of-defor-m-t",
+   "number": "3.2",
+   "title": "An algebraic representation of Defor ( M, T )",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 2125,
+   "n_words": 425,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-014-33-overview-of-the-computations",
    "number": "3.3",
    "title": "Overview of the computations.",
    "level": 2,
    "page_start": 13,
    "page_end": 16,
-   "n_chars": 8017,
-   "n_words": 1429
+   "n_chars": 8094,
+   "n_words": 1506,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-014-34-explicit-computations-for-the-figure-eight-kn",
+   "id": "sec-015-34-explicit-computations-for-the-figure-eight-kn",
    "number": "3.4",
    "title": "Explicit computations for the Figure Eight Knot complement.",
    "level": 2,
    "page_start": 16,
    "page_end": 19,
-   "n_chars": 8184,
-   "n_words": 1401
+   "n_chars": 8411,
+   "n_words": 1628,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-015-4-eigenvalues-of-peripheral-representations",
+   "id": "sec-016-4-eigenvalues-of-peripheral-representations",
    "number": "4",
    "title": "Eigenvalues of peripheral representations",
    "level": 1,
    "page_start": 19,
    "page_end": 20,
-   "n_chars": 615,
-   "n_words": 108
+   "n_chars": 616,
+   "n_words": 109,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-016-41-a-variety",
+   "id": "sec-017-41-a-variety",
    "number": "4.1",
    "title": "A-variety",
    "level": 2,
    "page_start": 20,
    "page_end": 20,
-   "n_chars": 1334,
-   "n_words": 223
+   "n_chars": 1346,
+   "n_words": 235,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-017-42-where-are-some-already-known-representations",
+   "id": "sec-018-42-where-are-some-already-known-representations",
    "number": "4.2",
    "title": "Where are some already known representations ?",
    "level": 2,
    "page_start": 20,
    "page_end": 22,
-   "n_chars": 4058,
-   "n_words": 767
+   "n_chars": 4116,
+   "n_words": 825,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-018-5-deforming-representations-another-way-to-param",
+   "id": "sec-019-5-deforming-representations-another-way-to-param",
    "number": "5",
    "title": "Deforming representations: another way to parametrize the components",
    "level": 1,
    "page_start": 22,
-   "page_end": 28,
-   "n_chars": 12131,
-   "n_words": 2267
+   "page_end": 24,
+   "n_chars": 4660,
+   "n_words": 797,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-019-references",
+   "id": "sec-020-51-the-first-component-r1",
+   "number": "5.1",
+   "title": "The first component, R1",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 1538,
+   "n_words": 331,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-021-52-the-other-two-components-r2-and-r3",
+   "number": "5.2",
+   "title": "The other two components, R2 and R3",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 2144,
+   "n_words": 486,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-022-53-a-focus-on-the-pu21-case",
+   "number": "5.3",
+   "title": "A focus on the PU(2,1) case",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 28,
+   "n_chars": 3653,
+   "n_words": 702,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-023-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 28,
    "page_end": 29,
-   "n_chars": 3415,
-   "n_words": 484
+   "n_chars": 3400,
+   "n_words": 469,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 25,
-  "sections": 20,
-  "chars_total": 65982,
+  "toc_inferred_entries": 0,
+  "figure_entries": 4,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 25,
+  "chars_total": 66793,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "character-final.tex",
    "tex_sections": 35,
-   "overlaid": 15,
+   "overlaid": 19,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -433,10 +885,15 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.915,
+     "coverage_ratio": 0.973,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -460,7 +917,7 @@
      "id": "sec-003-12-decorated-versions",
      "title": "Decorated versions",
      "prose_ratio": 0.98,
-     "coverage_ratio": 0.952,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -468,26 +925,20 @@
      "id": "sec-004-13-peripheral-representations-choosing-a-meridia",
      "title": "Peripheral representations: choosing a meridian and a longitude",
      "prose_ratio": 0.924,
-     "coverage_ratio": 0.943,
+     "coverage_ratio": 0.934,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-005-14-deformation-variety",
      "title": "Deformation variety",
-     "prose_ratio": 0.754,
-     "coverage_ratio": 0.897,
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.946,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-006-21-triangulation",
-     "title": "Triangulation",
-     "prose_ratio": 0.222,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-007-15-a-diagram",
+     "id": "sec-006-15-a-diagram",
      "title": "A diagram",
      "prose_ratio": 0.738,
      "coverage_ratio": 0.969,
@@ -495,58 +946,75 @@
      "converter": "latex"
     },
     {
-     "id": "sec-008-16-the-a-variety",
+     "id": "sec-007-16-the-a-variety",
      "title": "The A-variety",
-     "prose_ratio": 0.06,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.163,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-009-22-presentations",
-     "title": "Presentations",
-     "prose_ratio": 0.125,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-010-2-the-figure-eight-knot-complement",
+     "id": "sec-008-2-the-figure-eight-knot-complement",
      "title": "The figure eight knot complement",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.286,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 0.28,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-009-21-triangulation",
+     "title": "Triangulation",
+     "prose_ratio": 0.741,
+     "coverage_ratio": 0.776,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-22-presentations",
+     "title": "Presentations",
+     "prose_ratio": 0.875,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
     },
     {
      "id": "sec-011-3-the-deformation-variety-for-the-figure-eight-k",
      "title": "The deformation variety for the figure eight knot complement",
      "prose_ratio": 0.947,
-     "coverage_ratio": 0.987,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-012-31-computational-tools",
      "title": "Computational tools",
-     "prose_ratio": 0.973,
-     "coverage_ratio": 0.953,
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.972,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-013-33-overview-of-the-computations",
+     "id": "sec-013-32-an-algebraic-representation-of-defor-m-t",
+     "title": "An algebraic representation of Defor ( M, T )",
+     "prose_ratio": 0.955,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-014-33-overview-of-the-computations",
      "title": "Overview of the computations.",
      "prose_ratio": 0.986,
-     "coverage_ratio": 0.951,
+     "coverage_ratio": 0.98,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-014-34-explicit-computations-for-the-figure-eight-kn",
+     "id": "sec-015-34-explicit-computations-for-the-figure-eight-kn",
      "title": "Explicit computations for the Figure Eight Knot complement.",
      "prose_ratio": 0.961,
-     "coverage_ratio": 0.949,
+     "coverage_ratio": 0.978,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-015-4-eigenvalues-of-peripheral-representations",
+     "id": "sec-016-4-eigenvalues-of-peripheral-representations",
      "title": "Eigenvalues of peripheral representations",
      "prose_ratio": 0.96,
      "coverage_ratio": 0.828,
@@ -554,7 +1022,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-016-41-a-variety",
+     "id": "sec-017-41-a-variety",
      "title": "A-variety",
      "prose_ratio": 0.943,
      "coverage_ratio": 0.986,
@@ -562,7 +1030,7 @@
      "converter": "latex"
     },
     {
-     "id": "sec-017-42-where-are-some-already-known-representations",
+     "id": "sec-018-42-where-are-some-already-known-representations",
      "title": "Where are some already known representations ?",
      "prose_ratio": 0.961,
      "coverage_ratio": 0.976,
@@ -570,15 +1038,34 @@
      "converter": "latex"
     },
     {
-     "id": "sec-018-5-deforming-representations-another-way-to-param",
+     "id": "sec-019-5-deforming-representations-another-way-to-param",
      "title": "Deforming representations: another way to parametrize the components",
-     "prose_ratio": 1.0,
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-020-51-the-first-component-r1",
+     "title": "The first component, R1",
+     "prose_ratio": 0.987,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-019-references",
+     "id": "sec-021-52-the-other-two-components-r2-and-r3",
+     "title": "The other two components, R2 and R3",
+     "prose_ratio": 0.389,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-022-53-a-focus-on-the-pu21-case",
+     "title": "A focus on the PU(2,1) case",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-023-references",
      "title": "References",
      "result": "no matching \\section"
     }

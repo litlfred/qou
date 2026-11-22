@@ -1,0 +1,1 @@
+For Neumann boundary problems, the number of nodal domains of the eigenfunction corresponding to the ﬁrst positive eigenvalue is 2. For Dirichlet boundary problem problems, the number of nodal domains of the eigenfunction corresponding to the second positive eigenvalue is 2.

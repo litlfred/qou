@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/0803219/sections/sec-004",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Volume and the Chern–Simons invariant of a representation – general",
+  "pageStart": 32,
+  "pageEnd": 35,
+  "contains": [
+    "library/0803219/blocks/prose-sec-004"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0803219/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0803219/manifest.jsonld",
+  "provenance": "ingested"
+}

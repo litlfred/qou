@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "ant-v14-n7-s-p04",
  "source_sha256": "6abd838a4c933311",
- "brief": "Elliptic curves over totally real cubic fields are modular — 10 sections: Introduction; Images mod 3, 5, 7 and modularity; Modular curves",
- "extended": "**Elliptic curves over totally real cubic fields are modular**\n\n*Maarten Derickx , Filip Najman and Samir Siksek*\n\n10 pp, 10 sections.\n\n**Outline.** 1 Introduction; 2 Images mod 3, 5, 7 and modularity; 3 Modular curves; 4 Modularity of elliptic curves over Q(ζ7)+; 5 Proof of Theorem 6; 6 The modular curve X(b5, ns7); 4 Namely, one given by the pencil of quadrics ; 4 This means that there is only one Q-rational; 7 Proof of Theorem 7; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: Elliptic curves over real quadratic ﬁelds are modular.\n- Theorem 2: Let K be a totally real cubic number ﬁeld. Let E be an elliptic curve over K . Then E is\n- Theorem 3: Let K be a totally real ﬁeld and E an elliptic curve over K . Suppose thatρ E,3(G K) is not\n- Theorem 4: Let K be a totally real ﬁeld and E an elliptic curve over K . Suppose 5 is not a\n- Theorem 5: Let K be a totally real ﬁeld and E an elliptic curve over K . Suppose :\n- Theorem 6: Let K be a totally real cubic ﬁeld. Then X (b5, b7)(K) consists only of cusps.",
+ "brief": "Elliptic curves over totally real cubic fields are modular — 7 sections: Front matter; Introduction; Images mod 3, 5, 7 and modularity",
+ "extended": "**Elliptic curves over totally real cubic fields are modular**\n\n*Maarten Derickx, Filip Najman and Samir Siksek*\n\n10 pp, 7 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 Images mod 3, 5, 7 and modularity; 3 Modular curves; 5 Proof of Theorem 6; 7 Proof of Theorem 7; References",
  "tokens": {
-  "brief": 34,
-  "extended": 260
+  "brief": 33,
+  "extended": 71
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -25,37 +30,17 @@
    "pages": "3-4"
   },
   {
-   "id": "sec-003-4-modularity-of-elliptic-curves-over-qζ7",
-   "title": "Modularity of elliptic curves over Q(ζ7)+",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-004-5-proof-of-theorem-6",
+   "id": "sec-003-5-proof-of-theorem-6",
    "title": "Proof of Theorem 6",
-   "pages": "4-5"
+   "pages": "4-8"
   },
   {
-   "id": "sec-005-6-the-modular-curve-xb5-ns7",
-   "title": "The modular curve X(b5, ns7)",
-   "pages": "5-7"
-  },
-  {
-   "id": "sec-006-4-namely-one-given-by-the-pencil-of-quadrics-goi",
-   "title": "Namely, one given by the pencil of quadrics going",
-   "pages": "7-7"
-  },
-  {
-   "id": "sec-007-4-this-means-that-there-is-only-one-q-rational-g",
-   "title": "This means that there is only one Q-rational g2",
-   "pages": "7-8"
-  },
-  {
-   "id": "sec-008-7-proof-of-theorem-7",
+   "id": "sec-004-7-proof-of-theorem-7",
    "title": "Proof of Theorem 7",
    "pages": "8-9"
   },
   {
-   "id": "sec-009-references",
+   "id": "sec-005-references",
    "title": "References",
    "pages": "9-10"
   }
@@ -63,8 +48,7 @@
  "provenance": {
   "kind": "extractive",
   "from": [
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

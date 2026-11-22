@@ -1,4 +1,4 @@
--- Ref: [manuscript] Ch. 4
+-- Ref: [leitner2026] Ch. 4
 -- The topological mass formula is a knot invariant (R-I, R-II, R-III).
 -- The binding energy is an embedding invariant (R-II, R-III but not R-I).
 -- Shell transitions are R-I moves on the embedding.
@@ -80,12 +80,6 @@ theorem writhe_R1_changes (K : KnotDiagram) (sign : Int) (h : sign = 1 ∨ sign 
 -- §3. Mass and binding energy invariance
 -- ═══════════════════════════════════════════════════════════════════
 
-/-- Bare mass depends only on the knot type (hyperbolic volume).
-    Since knot type is invariant under R-I, R-II, R-III,
-    bare mass is a knot invariant. -/
--- Ref: [manuscript] Ch. 4, prop:reidemeister-mass-invariance (bare mass = knot invariant via hyperbolic volume); cf. [jones1987] knot-invariance of the Markov trace
-axiom bareMass : KnotDiagram → R_q
-
 /-- **R-III invariance is not a conjecture — it holds for every function.**
     `applyR3 K := K`, so `f (applyR3 K) = f K` is `rfl` whatever `f` is.  This
     was two separate axioms (`bareMass_R3_invariant`, `bindingEnergy_R3_invariant`);
@@ -94,36 +88,142 @@ axiom bareMass : KnotDiagram → R_q
 theorem invariant_under_R3 {γ : Type*} (f : KnotDiagram → γ) (K : KnotDiagram) :
     f (applyR3 K) = f K := rfl
 
-/-- Bare mass is a knot invariant. -/
--- Ref: [manuscript] Ch. 4 (bare mass invariant under R-I)
-axiom bareMass_R1_invariant : ∀ K sign h, bareMass (applyR1 K sign h) = bareMass K
--- Ref: [manuscript] Ch. 4 (bare mass invariant under R-II)
-axiom bareMass_R2_invariant : ∀ K, bareMass (applyR2 K) = bareMass K
+/-- **The conjecture `conj:reidemeister-mass-invariance`, as a hypothesis on two
+    caller-supplied functionals** (AGENTS.md §3b-cond; bean `qou-5o9n`).
 
-/-- Bare mass is invariant under R-III — a corollary of `invariant_under_R3`,
-    formerly `axiom bareMass_R3_invariant`. -/
-theorem bareMass_R3_invariant : ∀ K, bareMass (applyR3 K) = bareMass K :=
+    Until 2026-11-22 this file declared six axioms: `bareMass`,
+    `bindingEnergy` (two opaque constants) and four invariance statements about
+    them.  Every theorem below them was then unconditional.  The functionals are
+    now parameters and the four statements are fields, so a consumer has to
+    supply a pair `(bareMass, bindingEnergy)` and carry the hypothesis in its
+    type.
+
+    The class is **consistent** (`reidemeisterMassInvariance_writhe`: bare mass
+    `0`, binding energy the writhe) and **refutable**
+    (`not_reidemeisterMassInvariance_const`: a constant binding energy fails
+    `bindingEnergy_R1_changes`), so it is neither vacuous nor contradictory.
+
+    **What it forces on this carrier** (`bareMass_eq_of_parity`): a
+    `KnotDiagram` here records only `(writhe, crossingNumber)`, and any function
+    invariant under `applyR1` and `applyR2` depends on nothing but the parity of
+    `writhe + crossingNumber`.  So on this carrier "bare mass is a knot
+    invariant" means "bare mass takes at most two values".  A hyperbolic volume
+    cannot be carried by it; that needs a real diagram type, such as the
+    Reidemeister codes of `QOU.MathlibExt.PL.Diagram` (PR #8962).
+
+    **Not encoded:** the block's dependency on `conj:borromean-quark`.  The
+    `BorromeanQuark` class below constrains a functional `ℝ → ℝ` of `q`; the
+    functionals here are `KnotDiagram → R_q`, and nothing in the corpus relates
+    the two, so no field links them. -/
+-- Ref: [leitner2026] Ch. 4, conj:reidemeister-mass-invariance; cf. [jones1987] knot-invariance of the Markov trace
+class ReidemeisterMassInvariance (bareMass bindingEnergy : KnotDiagram → R_q) : Prop where
+  /-- Bare mass is unchanged by R-I. -/
+  bareMass_R1_invariant : ∀ K sign h, bareMass (applyR1 K sign h) = bareMass K
+  /-- Bare mass is unchanged by R-II. -/
+  bareMass_R2_invariant : ∀ K, bareMass (applyR2 K) = bareMass K
+  /-- Binding energy is unchanged by R-II. -/
+  bindingEnergy_R2_invariant : ∀ K, bindingEnergy (applyR2 K) = bindingEnergy K
+  /-- Binding energy changes under every R-I move (shell transition). -/
+  bindingEnergy_R1_changes : ∀ K sign h, bindingEnergy (applyR1 K sign h) ≠ bindingEnergy K
+
+/-- **The class is consistent**: bare mass `0`, binding energy the writhe. -/
+theorem reidemeisterMassInvariance_writhe :
+    ReidemeisterMassInvariance (fun _ => 0) (fun K => K.writhe) where
+  bareMass_R1_invariant _ _ _ := rfl
+  bareMass_R2_invariant _ := rfl
+  bindingEnergy_R2_invariant _ := rfl
+  bindingEnergy_R1_changes K sign h := by
+    show K.writhe + sign ≠ K.writhe
+    rcases h with rfl | rfl <;> omega
+
+/-- **The class is refutable**: a constant binding energy cannot change under R-I. -/
+theorem not_reidemeisterMassInvariance_const (m : KnotDiagram → R_q) (c : R_q) :
+    ¬ ReidemeisterMassInvariance m (fun _ => c) := fun h =>
+  h.bindingEnergy_R1_changes ⟨0, 0⟩ 1 (Or.inl rfl) rfl
+
+/-- Bare mass is invariant under R-III, for any functional (`invariant_under_R3`). -/
+theorem bareMass_R3_invariant (bareMass : KnotDiagram → R_q) :
+    ∀ K, bareMass (applyR3 K) = bareMass K :=
   invariant_under_R3 bareMass
 
-/-- Binding energy depends on the embedding (writhe-sensitive).
-    It is a regular isotopy invariant but not a knot invariant. -/
--- Ref: [manuscript] Ch. 4, prop:reidemeister-mass-invariance (binding energy = embedding/writhe invariant)
-axiom bindingEnergy : KnotDiagram → R_q
-
-/-- Binding energy is invariant under R-II and R-III. -/
--- Ref: [manuscript] Ch. 4 (binding energy invariant under R-II)
-axiom bindingEnergy_R2_invariant : ∀ K, bindingEnergy (applyR2 K) = bindingEnergy K
-
-/-- Binding energy is invariant under R-III — a corollary of
-    `invariant_under_R3`, formerly `axiom bindingEnergy_R3_invariant`. -/
-theorem bindingEnergy_R3_invariant :
+/-- Binding energy is invariant under R-III, for any functional (`invariant_under_R3`). -/
+theorem bindingEnergy_R3_invariant (bindingEnergy : KnotDiagram → R_q) :
     ∀ K, bindingEnergy (applyR3 K) = bindingEnergy K :=
   invariant_under_R3 bindingEnergy
 
-/-- Binding energy changes under R-I (shell transition). -/
--- Ref: [manuscript] Ch. 4 (binding energy changes under R-I / shell transition)
-axiom bindingEnergy_R1_changes : ∀ K sign h,
-    bindingEnergy (applyR1 K sign h) ≠ bindingEnergy K
+/-- Any R-I/R-II invariant function equals its value at writhe `0`, crossing
+    number `c + |w|`.  (R-I with the sign opposite to the writhe, `|w|` times.) -/
+private theorem eq_at_zero_writhe {γ : Type*} (f : KnotDiagram → γ)
+    (h1 : ∀ K sign h, f (applyR1 K sign h) = f K) :
+    ∀ (n : ℕ) (K : KnotDiagram), K.writhe.natAbs = n →
+      f K = f ⟨0, K.crossingNumber + n⟩ := by
+  intro n
+  induction n with
+  | zero =>
+    intro K hK
+    have : K.writhe = 0 := Int.natAbs_eq_zero.mp hK
+    cases K; simp_all
+  | succ n ih =>
+    intro K hK
+    by_cases hw : 0 < K.writhe
+    · have hs : (-1 : Int) = 1 ∨ (-1 : Int) = -1 := Or.inr rfl
+      have := ih (applyR1 K (-1) hs) (by
+        show (K.writhe + -1).natAbs = n
+        rcases Int.natAbs_eq K.writhe with e | e <;> omega)
+      rw [h1] at this
+      rw [this]
+      show f ⟨0, K.crossingNumber + 1 + n⟩ = _
+      congr 2; omega
+    · have hs : (1 : Int) = 1 ∨ (1 : Int) = -1 := Or.inl rfl
+      have := ih (applyR1 K 1 hs) (by
+        show (K.writhe + 1).natAbs = n
+        rcases Int.natAbs_eq K.writhe with e | e <;> omega)
+      rw [h1] at this
+      rw [this]
+      show f ⟨0, K.crossingNumber + 1 + n⟩ = _
+      congr 2; omega
+
+/-- R-II, applied `k` times, preserves an R-II invariant function. -/
+private theorem eq_add_two_mul {γ : Type*} (f : KnotDiagram → γ)
+    (h2 : ∀ K, f (applyR2 K) = f K) (w : Int) (c : ℕ) :
+    ∀ k : ℕ, f ⟨w, c + 2 * k⟩ = f ⟨w, c⟩ := by
+  intro k
+  induction k with
+  | zero => rfl
+  | succ k ih =>
+    have := h2 ⟨w, c + 2 * k⟩
+    simp only [applyR2] at this
+    rw [show c + 2 * (k + 1) = c + 2 * k + 2 by ring, this, ih]
+
+/-- **What R-I/R-II invariance means on this carrier.**  A function on
+    `KnotDiagram` invariant under `applyR1` and `applyR2` takes the same value on
+    any two diagrams with `writhe + crossingNumber` of the same parity.  So the
+    `bareMass` of any `ReidemeisterMassInvariance` instance takes at most two
+    values. -/
+theorem bareMass_eq_of_parity {γ : Type*} (f : KnotDiagram → γ)
+    (h1 : ∀ K sign h, f (applyR1 K sign h) = f K) (h2 : ∀ K, f (applyR2 K) = f K)
+    (K K' : KnotDiagram)
+    (hp : (K.writhe + K.crossingNumber) % 2 = (K'.writhe + K'.crossingNumber) % 2) :
+    f K = f K' := by
+  rw [eq_at_zero_writhe f h1 _ K rfl, eq_at_zero_writhe f h1 _ K' rfl]
+  set m := K.crossingNumber + K.writhe.natAbs
+  set m' := K'.crossingNumber + K'.writhe.natAbs
+  have hpar : m % 2 = m' % 2 := by
+    simp only [m, m']; omega
+  rcases le_total m m' with hle | hle
+  · obtain ⟨k, hk⟩ : ∃ k, m' = m + 2 * k := ⟨(m' - m) / 2, by omega⟩
+    rw [hk, eq_add_two_mul f h2]
+  · obtain ⟨k, hk⟩ : ∃ k, m = m' + 2 * k := ⟨(m - m') / 2, by omega⟩
+    rw [hk, eq_add_two_mul f h2]
+
+/-- Under the conjecture, bare mass takes one value on each parity class of
+    `writhe + crossingNumber`. -/
+theorem bareMass_eq_of_parity_of_reidemeisterMassInvariance
+    {bareMass bindingEnergy : KnotDiagram → R_q}
+    [h : ReidemeisterMassInvariance bareMass bindingEnergy] (K K' : KnotDiagram)
+    (hp : (K.writhe + K.crossingNumber) % 2 = (K'.writhe + K'.crossingNumber) % 2) :
+    bareMass K = bareMass K' :=
+  bareMass_eq_of_parity bareMass h.bareMass_R1_invariant h.bareMass_R2_invariant K K' hp
 
 -- ═══════════════════════════════════════════════════════════════════
 -- §4. Shell transitions
@@ -147,10 +247,14 @@ theorem shell_advance (w : Int) (hw : w ≥ 3) (hw_odd : w % 2 = 1) :
   simp only [shellNumber]
   omega
 
-/-- The particle identity is unchanged by shell transitions. -/
-theorem identity_preserved_by_shell_transition (K : KnotDiagram) (sign h) :
-    bareMass (applyR1 K sign h) = bareMass K :=
-  bareMass_R1_invariant K sign h
+/-- The particle identity is unchanged by shell transitions — **conditional on
+    `ReidemeisterMassInvariance`**, which is now an instance argument rather
+    than an axiom (bean `qou-5o9n`). -/
+theorem identity_preserved_by_shell_transition
+    {bareMass bindingEnergy : KnotDiagram → R_q}
+    [h : ReidemeisterMassInvariance bareMass bindingEnergy] (K : KnotDiagram) (sign hs) :
+    bareMass (applyR1 K sign hs) = bareMass K :=
+  h.bareMass_R1_invariant K sign hs
 
 end
 

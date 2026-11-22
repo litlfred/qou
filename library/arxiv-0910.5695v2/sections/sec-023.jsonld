@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0910.5695v2/sections/sec-023",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Description of blocks via Martin",
+  "pageStart": 40,
+  "pageEnd": 41,
+  "contains": [
+    "library/arxiv-0910.5695v2/blocks/prose-sec-023"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0910.5695v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0910.5695v2/manifest.jsonld",
+  "provenance": "ingested"
+}

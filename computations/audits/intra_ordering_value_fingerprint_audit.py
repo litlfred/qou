@@ -84,8 +84,10 @@ ATOMS = {"proton": (1, 0), "neutron": (0, 1), "deuteron": (1, 1),
 
 PINS = {
     "proton": str(_c.Q_50_DIGIT_STR),
-    "muon-live": ("1.109978595642739046681795129380001752700065561029011"
-                  "556974045769999095"),
+    # the live CODATA-2022 muon pin, derived rather than typed (the literal
+    # this replaced matched it to all 70 digits; reference-literal ratchet).
+    # str(): the Rust engine takes q as a decimal string, not an mpf.
+    "muon-live": mp.nstr(_c.q_muon_at(70), 70, strip_zeros=False),
 }
 
 #: Sites that pass `intra_order="grouped"` deliberately, with the reason. A hit
@@ -646,7 +648,11 @@ def main() -> int:
         "them rather than silently invalidating the scan. Only the five atoms "
         "at A <= 3 and the two documented pins are covered."
     )
-    print(f"\nWitness: {wb.save()}")
+    # The fingerprints are computed at BOTH documented pins on purpose (a
+    # grouped-era value is recognised wherever it was written, at either pin),
+    # so this is a q0 comparison, not a single-pin result.
+    from qou_substrate.witness import q0_comparison  # noqa: E402
+    print(f"\nWitness: {wb.save(q0_comparison(muon=PINS['muon-live'], proton=str(PINS['proton']), reason='fingerprints grouped-era |tr_M| at BOTH documented pins (proton Q_50_DIGIT_STR and the live CODATA-2022 muon pin q_muon_at(70)) so a grouped value is matched whichever pin produced it; both pins are read on purpose'))}")
     return 0
 
 

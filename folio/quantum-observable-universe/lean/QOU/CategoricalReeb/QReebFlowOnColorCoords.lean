@@ -85,7 +85,7 @@ theorem flow_active_neg (t ψ : ℝ) :
 
 end QReebFlowOnColorCoords
 
--- Ref: [manuscript] folio/quantum-observable-universe/braids-and-knots/q-reeb-flow-on-color-coords.md
+-- Ref: [leitner2026] folio/quantum-observable-universe/braids-and-knots/q-reeb-flow-on-color-coords.md
 
 /-- The color-twist accumulated by a $k = +1$ sector over the full
     divisor traversal of latitude length `T`.  At `T = π` this is

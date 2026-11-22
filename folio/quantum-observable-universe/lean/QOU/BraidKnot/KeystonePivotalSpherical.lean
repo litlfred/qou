@@ -88,7 +88,7 @@ is balanced, that covers the symmetric case this file cares about. What remains 
 identity itself, which is about the traces rather than about the double dual. This file does **not** close
 `bwse`, and adds no physics. No fit; nothing wired; L2 unchanged.
 
--- Ref: [manuscript] docs/coordination/s5-so3-keystone.md
+-- Ref: [leitner2026] docs/coordination/s5-so3-keystone.md
 -/
 import QOU.BraidKnot.KeystoneRibbonMTCInput
 import QOU.MathlibExt.PivotalCategory

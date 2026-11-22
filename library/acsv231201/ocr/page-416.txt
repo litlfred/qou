@@ -1,0 +1,25 @@
+398 Combinatorial applications
+
+p = 1/2, and back substitution of this value implies that —z+ 2° = 3+2y-z=
+-z— 23 + 2x = 0. The first of these polynomials vanishes on the unit circle
+when z € {+1, +i}, however when z = +1 the second polynomial only vanishes
+when y = 0, and when z = +i the third polynomial only vanishes when x = 0,
+so Q and its partial derivatives do not simultaneously vanish on T(1).
+
+Thus, if Q. vanishes at some point (a,b,c) of V; = VM T(1) then (a, b,c)
+contributes to nonvanishing asymptotics in a direction (7, s, 0) for some (7, s) #
+(0, 0). This is ruled out from our knowledge of the generating function, because
+the velocity of QRW is at most the longest step, so Q. does not vanish on
+YV, and the projection (x,y,z) — (x,y) is a smooth four-fold cover of the
+unit torus in C?. There are many four-fold covers of the 2-torus, but in this
+case some trigonometry [Bar+10, Proposition 4.6] shows that V; is in fact
+the union of four 2-tori, each mapping diffeomorphically to the 2-torus under
+the logarithmic Gauss map. Figure 12.13 shows the four components for the
+parameter value p = 1/2 by graphing z as a function of x and y with the torus
+depicted as the unit cube with wraparound boundary conditions.
+
+Figure 12.3 The four tori comprising V, for S (1/2).
+
+Asymptotic behavior follows from Corollary 9.46 in Chapter 9.
+
+Theorem 12.14. For each # in the image of the logarithmic Gauss map on V,

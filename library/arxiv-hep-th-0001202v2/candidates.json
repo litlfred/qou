@@ -3,13 +3,14 @@
  "doc_id": "arxiv-hep-th-0001202v2",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "b2e3e22ea3d51c0b10a6678d71c5d5b265646c5c8902b7d24b35a3162f709214",
   "file": "0001202v2.pdf"
  },
  "provenance": {
   "title": "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees",
-  "authors": "D. J. Broadhurst 1) and D. Kreimer 2)",
+  "authors": "D. J. Broadhurst1) and D. Kreimer2)",
   "arxiv": {
    "id": "hep-th/0001202",
    "version": "2",
@@ -22,23 +23,41 @@
  "summary": {
   "candidates": 1,
   "by_kind": {
-   "theorem": 1
+   "proposition": 1
   },
-  "formalization_candidates": 1
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 1
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  }
  },
  "candidates": [
   {
-   "kind": "theorem",
-   "source_kind": "theorem",
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
    "number": null,
    "name": null,
-   "statement": "The dimensions Hn,k of the bigrading of the Hopf algebra of undecorated",
-   "section_file": "sections/sec-012-54-natural-growth-by-appending-sums-of-forests.md",
-   "section_title": "Natural growth by appending sums of forests",
-   "pages": "14-15",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "statement": "[^1]: Our extension of natural growth allows a suitable extension of the Lie algebra dual to ${\\cal H}_R$, as was observed by Alain Connes.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-007-53-natural-growth-by-a-single-node.md (p. 13-14)",
+   "external_refs": [],
+   "quantitative_values": [],
+   "section_file": "sections/sec-007-53-natural-growth-by-a-single-node.md",
+   "section_title": "Natural growth by a single node",
+   "pages": "13-14",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-007-53-natural-growth-by-a-single-node.md (p. 13-14)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-007-01",
+   "block_iri": "library/arxiv-hep-th-0001202v2/blocks/prop-sec-007-01",
+   "claim_id": "arxiv-hep-th-0001202v2#prop-sec-007-01"
   }
  ]
 }

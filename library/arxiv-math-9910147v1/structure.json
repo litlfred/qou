@@ -8,7 +8,7 @@
   "pages": 34,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:24Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -22,26 +22,26 @@
   },
   "doi": null,
   "title": "arXiv:math/9910147v1 [math.QA] 27 Oct 1999",
-  "authors_raw": "Laboratoire de Physique Math\u00e9matique et Th\u00e9orique\u2020",
+  "authors_raw": "Laboratoire de Physique Mathématique et Théorique†",
   "title_lines": [
    "Tensor Products of Principal Unitary Representations of",
    "Quantum Lorentz Group and Askey-Wilson Polynomials",
-   "E. Buffenoir\u2217"
+   "E. Buffenoir∗"
   ],
-  "abstract": "We study the tensor product of principal unitary representations of the quantum Lorentz Group, prove a decomposition theorem and compute the associated intertwiners. We show that these intertwiners can be expressed in terms of complex continuations of 6j symbols of Uq(su(2)). These intertwiners are expressed in terms of q-Racah polynomials and Askey- Wilson polynomials. The orthogonality of these intertwiners imply some relation mixing these two families of polynomials. The simplest of these relations is the orthogonality of Askey-Wilson Polynomials. Work supported by CNRS. \u2217e-mail:bu\ufb00enoi@lpm.univ-montp2.fr \u2020Laboratoire du CNRS UMR 5825 \u2021e-mail:roche@math.mit.edu \u00a7Laboratoire Propre du CNRS UPR 14 1",
+  "abstract": "We study the tensor product of principal unitary representations of the quantum Lorentz Group, prove a decomposition theorem and compute the associated intertwiners. We show that these intertwiners can be expressed in terms of complex continuations of 6j symbols of Uq(su(2)). These intertwiners are expressed in terms of q-Racah polynomials and Askey- Wilson polynomials. The orthogonality of these intertwiners imply some relation mixing these two families of polynomials. The simplest of these relations is the orthogonality of Askey-Wilson Polynomials. Work supported by CNRS. ∗e-mail:buﬀenoi@lpm.univ-montp2.fr †Laboratoire du CNRS UMR 5825 ‡e-mail:roche@math.mit.edu §Laboratoire Propre du CNRS UPR 14",
   "docinfo": {
    "Title": "arXiv:math/9910147v1  [math.QA]  27 Oct 1999",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
    "CreationDate": "D:20180919091742-04'00'"
   },
-  "title_raw": "Tensor Products of Principal Unitary Representations of Quantum Lorentz Group and Askey-Wilson Polynomials E. Buffenoir\u2217",
+  "title_raw": "Tensor Products of Principal Unitary Representations of Quantum Lorentz Group and Askey-Wilson Polynomials E. Buffenoir∗",
   "title_source": "metadata",
   "title_verified": true,
   "title_evidence": {
    "metadata": "arXiv:math/9910147v1 [math.QA] 27 Oct 1999",
    "heading": "Tensor Products of Principal Unitary Representations of Quantum Lorentz Group and Askey-Wilson Polynomials",
-   "text": "Tensor Products of Principal Unitary Representations of Quantum Lorentz Group and Askey-Wilson Polynomials E. Buffenoir\u2217",
+   "text": "Tensor Products of Principal Unitary Representations of Quantum Lorentz Group and Askey-Wilson Polynomials E. Buffenoir∗",
    "corroborated_by": [
     "page"
    ],
@@ -577,8 +577,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 1162,
-   "n_words": 157,
+   "n_chars": 1158,
+   "n_words": 155,
    "label_start": "1",
    "label_end": "2"
   },
@@ -588,118 +588,178 @@
    "title": "Introduction",
    "level": 1,
    "page_start": 2,
-   "page_end": 10,
-   "n_chars": 20158,
-   "n_words": 4415,
+   "page_end": 3,
+   "n_chars": 4249,
+   "n_words": 754,
    "label_start": "2",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-001-2-definition-and-properties-of-various-continuat",
+   "number": "2",
+   "title": "Definition and properties of various continuations of 6j symbols of ${\\mathfrak U}_q(su(2))$",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 318,
+   "n_words": 52,
+   "label_start": "3",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-002-21-intertwiners-and-6j0-of-mathfrak-u-qsu2",
+   "number": "2.1",
+   "title": "Intertwiners and 6j(0) of ${\\mathfrak U}_q(su(2))$",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 4228,
+   "n_words": 1011,
+   "label_start": "3",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-003-22-definitions-and-properties-of-continuation-of",
+   "number": "2.2",
+   "title": "Definitions and properties of continuation of quantum $6j$ symbols",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 10,
+   "n_chars": 11311,
+   "n_words": 2583,
+   "label_start": "5",
    "label_end": "10"
   },
   {
-   "id": "sec-001-23-quantum-lorentz-group-principal-unitary-repre",
+   "id": "sec-004-23-quantum-lorentz-group-principal-unitary-repre",
    "number": "2.3",
    "title": "Quantum Lorentz group, Principal Unitary Representations and Harmonic Analysis",
    "level": 2,
    "page_start": 10,
    "page_end": 13,
-   "n_chars": 7318,
-   "n_words": 1576,
+   "n_chars": 7368,
+   "n_words": 1579,
    "label_start": "10",
    "label_end": "13"
   },
   {
-   "id": "sec-002-3-intertwiners-associated-to-unitary-representat",
+   "id": "sec-005-3-intertwiners-associated-to-unitary-representat",
    "number": "3",
    "title": "Intertwiners associated to unitary representations of the quantum Lorentz group",
    "level": 1,
    "page_start": 13,
    "page_end": 17,
-   "n_chars": 10177,
-   "n_words": 2382,
+   "n_chars": 10221,
+   "n_words": 2384,
    "label_start": "13",
    "label_end": "17"
   },
   {
-   "id": "sec-003-4-alternative-construction-of-intertwiners-in-te",
+   "id": "sec-006-4-alternative-construction-of-intertwiners-in-te",
    "number": "4",
    "title": "Alternative Construction of Intertwiners in terms of the Quantum Haar Measure",
    "level": 1,
    "page_start": 17,
    "page_end": 22,
-   "n_chars": 11900,
-   "n_words": 2489,
+   "n_chars": 11940,
+   "n_words": 2491,
    "label_start": "17",
    "label_end": "22"
   },
   {
-   "id": "sec-004-5-decomposition-theorem-of-the-tensor-product-of",
+   "id": "sec-007-5-decomposition-theorem-of-the-tensor-product-of",
    "number": "5",
    "title": "Decomposition Theorem of the Tensor Product of Principal Representations and Askey-Wilson Polynomials",
    "level": 1,
    "page_start": 22,
-   "page_end": 25,
-   "n_chars": 5482,
-   "n_words": 1082,
+   "page_end": 24,
+   "n_chars": 3375,
+   "n_words": 665,
    "label_start": "22",
+   "label_end": "24"
+  },
+  {
+   "id": "sec-008-52-r-matrix-in-the-tensor-product-of-infinite-di",
+   "number": "5.2",
+   "title": "R-matrix in the Tensor Product of Infinite dimensional Representations",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 2142,
+   "n_words": 420,
+   "label_start": "24",
    "label_end": "25"
   },
   {
-   "id": "sec-005-53-connection-with-askey-wilson-polynomials",
+   "id": "sec-009-53-connection-with-askey-wilson-polynomials",
    "number": "5.3",
    "title": "Connection with Askey-Wilson Polynomials.",
    "level": 2,
    "page_start": 25,
    "page_end": 26,
-   "n_chars": 2636,
-   "n_words": 529,
+   "n_chars": 2673,
+   "n_words": 531,
    "label_start": "25",
    "label_end": "26"
   },
   {
-   "id": "sec-006-6-conclusion",
+   "id": "sec-010-6-conclusion",
    "number": "6",
    "title": "Conclusion",
    "level": 1,
    "page_start": 26,
    "page_end": 26,
-   "n_chars": 1411,
+   "n_chars": 1420,
    "n_words": 211,
    "label_start": "26",
    "label_end": "26"
   },
   {
-   "id": "sec-007-7-appendix",
+   "id": "sec-011-7-appendix",
    "number": "7",
    "title": "Appendix",
    "level": 1,
    "page_start": 26,
    "page_end": 26,
-   "n_chars": 3,
+   "n_chars": 8,
    "n_words": 1,
    "label_start": "26",
    "label_end": "26"
   },
   {
-   "id": "sec-008-71-formulae-on-basic-hypergeometric-functions",
+   "id": "sec-012-71-formulae-on-basic-hypergeometric-functions",
    "number": "7.1",
    "title": "Formulae on Basic Hypergeometric Functions.",
    "level": 2,
    "page_start": 26,
    "page_end": 28,
-   "n_chars": 3653,
-   "n_words": 744,
+   "n_chars": 3687,
+   "n_words": 746,
    "label_start": "26",
    "label_end": "28"
   },
   {
-   "id": "sec-009-72-asymptotics-of-intertwiners",
+   "id": "sec-013-72-asymptotics-of-intertwiners",
    "number": "7.2",
    "title": "Asymptotics of Intertwiners",
    "level": 2,
    "page_start": 28,
-   "page_end": 34,
-   "n_chars": 14089,
-   "n_words": 2616,
+   "page_end": 29,
+   "n_chars": 2515,
+   "n_words": 443,
    "label_start": "28",
+   "label_end": "29"
+  },
+  {
+   "id": "sec-014-73-formulae-on-coefficients-lambdabc-adx-0x-1",
+   "number": "7.3",
+   "title": "Formulae on coefficients $\\Lambda^{BC}_{AD}(X_0X_1)$",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 34,
+   "n_chars": 11553,
+   "n_words": 2165,
+   "label_start": "29",
    "label_end": "34"
   }
  ],
@@ -709,7 +769,7 @@
   "toc_entries": 16,
   "toc_inferred_entries": 16,
   "toc_inferred_mean_confidence": 1.0,
-  "toc_inferred_empty_share": 0.1,
+  "toc_inferred_empty_share": 0.067,
   "toc_inferred_method": "latex",
   "figure_entries": 0,
   "figure_sequence_gaps": [],
@@ -717,13 +777,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 11,
-  "chars_total": 77989,
+  "sections": 16,
+  "chars_total": 78166,
+  "furniture_lines_stripped": 34,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 16,
-   "overlaid": 9,
+   "overlaid": 14,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -738,13 +799,37 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.987,
-     "coverage_ratio": 0.985,
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-001-23-quantum-lorentz-group-principal-unitary-repre",
+     "id": "sec-001-2-definition-and-properties-of-various-continuat",
+     "title": "Definition and properties of various continuations of 6j symbols of ${\\mathfrak U}_q(su(2))$",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.857,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-21-intertwiners-and-6j0-of-mathfrak-u-qsu2",
+     "title": "Intertwiners and 6j(0) of ${\\mathfrak U}_q(su(2))$",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.954,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-22-definitions-and-properties-of-continuation-of",
+     "title": "Definitions and properties of continuation of quantum $6j$ symbols",
+     "prose_ratio": 0.988,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-23-quantum-lorentz-group-principal-unitary-repre",
      "title": "Quantum Lorentz group, Principal Unitary Representations and Harmonic Analysis",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.995,
@@ -752,64 +837,80 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-3-intertwiners-associated-to-unitary-representat",
+     "id": "sec-005-3-intertwiners-associated-to-unitary-representat",
      "title": "Intertwiners associated to unitary representations of the quantum Lorentz group",
      "prose_ratio": 0.964,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-4-alternative-construction-of-intertwiners-in-te",
+     "title": "Alternative Construction of Intertwiners in terms of the Quantum Haar Measure",
+     "prose_ratio": 0.959,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-5-decomposition-theorem-of-the-tensor-product-of",
+     "title": "Decomposition Theorem of the Tensor Product of Principal Representations and Askey-Wilson Polynomials",
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-52-r-matrix-in-the-tensor-product-of-infinite-di",
+     "title": "R-matrix in the Tensor Product of Infinite dimensional Representations",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-53-connection-with-askey-wilson-polynomials",
+     "title": "Connection with Askey-Wilson Polynomials.",
+     "prose_ratio": 0.929,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-6-conclusion",
+     "title": "Conclusion",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-7-appendix",
+     "title": "Appendix",
+     "prose_ratio": null,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-012-71-formulae-on-basic-hypergeometric-functions",
+     "title": "Formulae on Basic Hypergeometric Functions.",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-72-asymptotics-of-intertwiners",
+     "title": "Asymptotics of Intertwiners",
+     "prose_ratio": 0.971,
      "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-4-alternative-construction-of-intertwiners-in-te",
-     "title": "Alternative Construction of Intertwiners in terms of the Quantum Haar Measure",
-     "prose_ratio": 0.959,
-     "coverage_ratio": 0.988,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-004-5-decomposition-theorem-of-the-tensor-product-of",
-     "title": "Decomposition Theorem of the Tensor Product of Principal Representations and Askey-Wilson Polynomials",
-     "prose_ratio": 0.975,
-     "coverage_ratio": 0.982,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-005-53-connection-with-askey-wilson-polynomials",
-     "title": "Connection with Askey-Wilson Polynomials.",
-     "prose_ratio": 0.929,
-     "coverage_ratio": 1.0,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-006-6-conclusion",
-     "title": "Conclusion",
-     "prose_ratio": 0.989,
-     "coverage_ratio": 1.0,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-007-7-appendix",
-     "title": "Appendix",
-     "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-008-71-formulae-on-basic-hypergeometric-functions",
-     "title": "Formulae on Basic Hypergeometric Functions.",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.988,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-009-72-asymptotics-of-intertwiners",
-     "title": "Asymptotics of Intertwiners",
-     "prose_ratio": 0.95,
-     "coverage_ratio": 0.628,
+     "id": "sec-014-73-formulae-on-coefficients-lambdabc-adx-0x-1",
+     "title": "Formulae on coefficients $\\Lambda^{BC}_{AD}(X_0X_1)$",
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.586,
      "result": "overlaid",
      "converter": "pandoc"
     }

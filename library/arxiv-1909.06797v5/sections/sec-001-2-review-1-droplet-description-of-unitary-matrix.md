@@ -7,10 +7,11 @@ section_number: 2
 pages: 5-7
 source_pdf: 1909.06797v5.pdf
 source_sha256: 87095d7e46ebe286
-doc_brief: "Quantum Mechanics of Plancherel Growth — Growth of Young diagrams, equipped with Plancherel measure, follows the automodel equation of Kerov."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.905
 latex_coverage_ratio: 0.986
+doc_brief: "Quantum Mechanics of Plancherel Growth — Growth of Young diagrams, equipped with Plancherel measure, follows the automodel equation of Kerov."
 ---
 \label{sec:umm}
 

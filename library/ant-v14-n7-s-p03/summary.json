@@ -3,54 +3,53 @@
  "doc_id": "ant-v14-n7-s-p03",
  "source_sha256": "e32fde16c3ce0940",
  "brief": "Nouvelles cohomologies de Weil en caractéristique positive — periods” admitting an explicit description by generators and relations.",
- "extended": "**Nouvelles cohomologies de Weil en caractéristique positive**\n\n*Soit K un corps valué de hauteur 1 et d’inégales caractéristiques(0, p), et soit k son corps résiduel*\n\n44 pp, 7 sections.\n\n**Abstract.** periods” admitting an explicit description by generators and relations. We establish comparison theorems relating this new Weil cohomology to the classical ones: Berthelot’s rigid cohomology and the𝓁-adic cohomologies, for𝓁⁄= p. We also state some conjectures on the ring AK . One of these conjectures implies the independence of𝓁 in cohomology.\n\n**Outline.** 1 Introduction 1747; 2 Motifs algébriques et motifs rigides 1754; 3 Calcul du complexe des périodes abstraites A; 4 Action du groupe de Galois motivique 1784; 2 Motifs algébriques et motifs rigides; 3 Calcul du complexe des périodes abstraites A; 4 Action du groupe de Galois motivique\n\n**Extracted claims (proposals, not verified).**\n- Theorem 4.24: ] qui peut être omise en première lecture.\n- Proposition 2.8: Soit R un objet deDA´et(k;3) muni d’une structure de0W -module. Alors, la composition\n- Proposition 2.20: Soit R un objet de RigDA´et(k;3) muni d’une structure de 0W -module. Alors, la\n- Proposition 2.26: L’adjonction(2-36) est une équivalence de Quillen. En particulier, le foncteur\n- Proposition 2.30: Le foncteur~Rig∗ dans (2-32) est pleinement ﬁdèle.\n- Proposition 2.31: La catégorie triangulée avec sommes inﬁnies RigDA´et(ˆK;3) est engendrée par",
+ "extended": "**Nouvelles cohomologies de Weil en caractéristique positive**\n\n*Joseph Ayoub*\n\n44 pp, 7 sections.\n\n**Abstract.** periods” admitting an explicit description by generators and relations. We establish comparison theorems relating this new Weil cohomology to the classical ones: Berthelot’s rigid cohomology and the ℓ-adic cohomologies, for ℓ̸ = p. We also state some conjectures on the ring AK. One of these conjectures implies the independence of ℓin cohomology.\n\n**Outline.** Front matter; 1 Introduction; 2 Motifs algébriques et motifs rigides; 3 Calcul du complexe des périodes abstraites A; 4 Action du groupe de Galois motivique; →HocoMod; Bibliographie",
  "tokens": {
   "brief": 33,
-  "extended": 356
+  "extended": 164
  },
  "sections": [
   {
-   "id": "sec-000-1-introduction-1747",
-   "title": "Introduction 1747",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-1"
   },
   {
-   "id": "sec-001-2-motifs-algébriques-et-motifs-rigides-1754",
-   "title": "Motifs algébriques et motifs rigides 1754",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-002-3-calcul-du-complexe-des-périodes-abstraites-ak",
-   "title": "Calcul du complexe des périodes abstraites AK et applications 1775",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-003-4-action-du-groupe-de-galois-motivique-1784",
-   "title": "Action du groupe de Galois motivique 1784",
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
    "pages": "1-8"
   },
   {
-   "id": "sec-004-2-motifs-algébriques-et-motifs-rigides",
+   "id": "sec-001-2-motifs-algébriques-et-motifs-rigides",
    "title": "Motifs algébriques et motifs rigides",
    "pages": "8-29"
   },
   {
-   "id": "sec-005-3-calcul-du-complexe-des-périodes-abstraites-ak",
+   "id": "sec-002-3-calcul-du-complexe-des-périodes-abstraites-ak",
    "title": "Calcul du complexe des périodes abstraites AK et applications",
    "pages": "29-38"
   },
   {
-   "id": "sec-006-4-action-du-groupe-de-galois-motivique",
+   "id": "sec-003-4-action-du-groupe-de-galois-motivique",
    "title": "Action du groupe de Galois motivique",
-   "pages": "38-44"
+   "pages": "38-40"
+  },
+  {
+   "id": "sec-004-hocomod",
+   "title": "→HocoMod",
+   "pages": "40-43"
+  },
+  {
+   "id": "sec-005-bibliographie",
+   "title": "Bibliographie",
+   "pages": "43-44"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

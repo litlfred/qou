@@ -1,0 +1,1 @@
+Let λ/µ be a skew-partition of r. If 1 ≤c < r then ResSc×Sr−c χλ/µ = X τ χτ/µ × χλ/τ where the sum is over all partitions τ such that µ ⊆τ ⊆λ and |τ/µ| = c. For later use we state and prove the following proposition for a general deﬂation map.

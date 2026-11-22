@@ -14,7 +14,7 @@ LaTeX label: `prop:mass-tower-coefficient-stratification`
 
 ## References
 
-- [manuscript] Ch. Braids and Knots, §Mass tower coefficients
+- [leitner2026] Ch. Braids and Knots, §Mass tower coefficients
 -/
 
 namespace QOU.BraidKnot
@@ -57,7 +57,7 @@ def stratumDepth : MassTowerTerm → ℕ
     Note the depth map is deliberately **not** injective: `.pair` and
     `.knotFactor` both sit at depth 2, and `.volume` and `.pauli` both
     at depth 0, so no uniqueness claim is available or intended. -/
--- Ref: [manuscript] Ch. Braids and Knots, §Mass tower coefficients
+-- Ref: [leitner2026] Ch. Braids and Knots, §Mass tower coefficients
 theorem mass_tower_coefficient_stratification
     (term : MassTowerTerm) :
     stratumDepth term ≤ 4 := by

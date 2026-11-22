@@ -112,7 +112,7 @@ factorisation `tr(atom)/tr(free) = ∏ (z + dᵢ)` is measured (`qou-qqm4`, orde
 free-word half unconditionally. Nothing here computes a binding coefficient.
 
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
--- Ref: [manuscript] bean qou-gr3t; bean qou-301d.
+-- Ref: [leitner2026] bean qou-gr3t; bean qou-301d.
 -/
 
 namespace QOU.MathlibExt.InteriorMarkovFromBraid

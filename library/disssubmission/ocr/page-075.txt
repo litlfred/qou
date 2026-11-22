@@ -1,0 +1,39 @@
+3.7. Variation of Tannaka groups in families 67
+
+Proof. Take a geometric generic point 7] of S. The set of all torsion
+characters Yq : 71 (X_,0) —> A* is dense in the character torus II(X7), so
+by the generic vanishing theorem from chapter | we can find a character 7
+of some finite order N € N with the property that H!(Xq,Pq @a Ly,) = 0 for
+all i # 0. If we could extend this character to a global character ¥ € II(X),
+then the above vanishing property would mean that for the direct image
+under p : X — S the generic stalk cohomology satisfies
+
+KH (Rp. (P@aLyz))q = 0 forall i40.
+
+Since the cohomology sheaves are constructible, the vanishing of their stalks
+at the geometric generic point 7) would imply their vanishing over some
+open dense subset U C S, and we would be done even without the need to
+pass to a finite étale cover of the base variety S and without using that 77 is
+a torsion character of order NV.
+
+However, in general it may be impossible to find 7% € II(X,) with the
+required property which lifts to some x € II(X) (for example, think of the
+universal abelian scheme X over a finite level cover S of the moduli space of
+principally polarized abelian varieties — here the abelianized fundamental
+group 72?(X) and hence also the group II(X) is finite). To get around this
+problem we perform a base change under a finite étale cover depending on
+the chosen torsion character 77. Consider the split exact fibration sequence
+
+4
+
+Qo —~ ™ (Xq,0) —> 7 (X,0) —> ™(S,7) — > 0
+
+from [51, exp. XIII, prop. 4.3 and ex. 4.4], where the splitting comes from
+the zero section of our abelian scheme. Via the splitting, the group 7) (S,7))
+acts by conjugation on 7; (Xj ,0) and hence on the corresponding character
+torus II(Xq). Since the group of torsion points of order N in this torus
+is finite, we can find a normal subgroup of finite index in 7) (S,7)) which
+fixes every such torsion point. This normal subgroup defines a finite étale
+cover S’ —+ S for which the character ¥j € TI(Xq) can be extended to a
+character x € II(X’). After a base change by this finite étale cover we can
+then proceed as in the first part of the proof. Oo

@@ -8,6 +8,7 @@ pages: 39-40
 source_pdf: ant-v14-n7-s-p06.pdf
 source_sha256: 4881141ef679dd5a
 toc_source: inferred
+doc_brief: "Moments of quadratic twists of elliptic curve L-functions over function fields — 15 sections: Front matter; Introduction and statement of resu; Some useful lemmas"
 ---
 A. Florea gratefully acknowledges the support of an NSF Postdoctoral Fellowship during part of the
 research which led to this paper. J.P. Keating is supported by a Royal Society Wolfson Research Merit

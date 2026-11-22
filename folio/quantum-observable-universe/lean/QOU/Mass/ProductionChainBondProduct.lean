@@ -77,7 +77,7 @@ a theorem rather than a measurement — and leaves the *identification* of the
 letters where it was.
 
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
--- Ref: [manuscript] beans qou-qqm4 / qou-gr3t / qou-brng.
+-- Ref: [leitner2026] beans qou-qqm4 / qou-gr3t / qou-brng.
 -/
 
 namespace QOU.Mass.ProductionChainBondProduct

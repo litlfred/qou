@@ -67,7 +67,7 @@ q-integer is instantiated.
 
 ## References
 
-- [manuscript] docs/audits/2026-07-20-zgeometric-prolongation-symbol-scoping.md
+- [leitner2026] docs/audits/2026-07-20-zgeometric-prolongation-symbol-scoping.md
 - [ramis-sauloy-zhang2013] q-difference formal classification / Stokes
 
 LaTeX label: (library module — no content block)

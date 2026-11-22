@@ -1,0 +1,57 @@
+27 with respect to the core geodesic a, so will satisfy a Dirichlet boundary condition on a,
+as well as its other boundary geodesic, that is, it satisfies Dirichlet boundary conditions
+on a symmetric half-cylinder rea 7.
+
+To get a lower bound on X, we analyze the differential equation, loosely following the
+
+method of Appendix A in [77]. As a function of p, we know that
+
+¢(p) = sinh(p) 2Fi (: = 5 2 z 5. S - snh?(p))
+
+1 d d
+caiman Map }eg?
+
+with initial condition ¢(0) = 0 and $(0) = 1, where \ = s(1— s) (recall our definition
+of the Laplacian on a hyperbolic cylinder in Section 2.3.2). We substitute
+
+y = 2arctan (tanh (5))
+
+( e aay) We) =o. (G1)
+
+satisfies
+
+to get
+
+dg? cos?)
+where U(y) = 4(p(y)) satisfies ¥(0) = 0 and Zv(0) = 1. We prove the following
+
+Theorem G.3 Suppose we have g € C7[0, x0] such that g > 0 on (0, xo], g > 0 on
+
+(0, 2), and
+_ g(a) 7 \
+(2-2) s—
+
+on (0, xo]. Then f € C?[0, xo] that is a solution to Equation (G.1), that is, f solves
+
+-H(0)~ Saal) = 0 HO) =0. £0) =1.
+
+has no zero in (0, xo).
+
+Proof: The proof is done by contradiction. Let rg € (0, xo) be the first positive zero of
+f. Then, on [0, 79) we have f > 0, g > 0, and on (0, ro), g > 0. We also have f > 0 on
+(0, 79). This is because f’(0) = 1. The definition of the derivative implies that f must
+
+be positive for some value close to zero, in particular
+
+1 = f(0) = tim LO+”)
+
+h-0 h ;
+
+so f will be positive until it is zero again at ro. Consider the Wronskian
+
+F(a) = f'(x)g(x) — g(x) f(a),
+
+noting that F'(0) = 0, and its derivative
+F(a) = f"(a)g() ~ 9" (2) f(@)
+
+144

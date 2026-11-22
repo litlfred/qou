@@ -1,0 +1,39 @@
+41
+
+CHAPTER. V
+
+COMBINATORIAL PROOF
+
+In this chapter we prove Theorem IV.2.2 directly from formulas (IV.10) and (IV.11). Since
+the function A is defined on the set of words in the braid generators, we must show that A is well-
+
+defined on the braid group.
+
+V.1. Braid Group Invariance
+
+For a permutation diagram x, let m(x) € Sy denote the underlying permutation. Let
+P,x(@) = {x permutation diagram satisfying (P1) | 7(x) = 7}. Notice that Pi(a) = P(a), the
+
+admissible diagrams. We have immediately:
+
+P(aZ) = I {xy |x € Px (a) and y € P,-1(8)}
+nESa
+2 [[ Prla) x Pe+(8) (V.1)
+neSa
+
+With signs attached to the strands in the diagrams, we have the analogous definition of S,(a@) and
+the decomposition:
+
+S(a8) = [J Sr(@) x S,1(8). (V.2)
+
+meS¢
+We prove a Lemma now that shows that the function A is invariant under concatenation
+
+for certain pairs of braid words. For m € Sy, define
+
+A,(a@)= > (e)M(a,x,) (V.3)
+
+(x,€)€Sx (a)
+
+Lemma V.1.1. Suppose that 6,8’ € U4 satisfy A,(8) = Ax(B') for all m € Sg. Then, A(aB) =
+A(a’) and A(Ba) = A(S'a) for any a € X§.

@@ -3,13 +3,14 @@
  "doc_id": "arxiv-hep-ph-9612303v1",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "5311d7faf2b3e0050d507e2ad6db2c66d116588c675275ea679a4f56134444cc",
   "file": "9612303v1.pdf"
  },
  "provenance": {
   "title": "The q-deformed quark model : quantum isospin and q-hadrons",
-  "authors": "M. Klein-Kreisler and M. Ruiz-Altaba \u2020",
+  "authors": "M. Klein-Kreisler and M. Ruiz-Altaba\u2020",
   "arxiv": {
    "id": "hep-ph/9612303",
    "version": "1",
@@ -20,9 +21,45 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 0,
-  "by_kind": {},
-  "formalization_candidates": 0
+  "candidates": 1,
+  "by_kind": {
+   "proposition": 1
+  },
+  "formalization_candidates": 0,
+  "by_domain": {
+   "science": 1
+  },
+  "by_evidence_kind": {
+   "empirical-measurement": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  }
  },
- "candidates": []
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "empirical-claim",
+   "number": null,
+   "name": null,
+   "statement": "Taking the experimental value of \u2206m\u03c0 = m\u00b1 \u03c0 \u2212m0 \u03c0 = 4.59 MeV, takes us then to the real value q = 0.324.",
+   "claim_domain": "science",
+   "evidence_kind": "empirical-measurement",
+   "evidence_location": "in-paper",
+   "evidence_locator": "In-paper empirical measurement in sections/sec-001-2-the-quantum-isospin-group-and-its-possible-rel.md (p. 2-8)",
+   "external_refs": [],
+   "quantitative_values": [
+    "4.59 MeV"
+   ],
+   "section_file": "sections/sec-001-2-the-quantum-isospin-group-and-its-possible-rel.md",
+   "section_title": "The quantum isospin group and its possible relevance to physics",
+   "pages": "2-8",
+   "formalization_candidate": false,
+   "formalization_note": "Science claim (empirical-measurement, evidence: in-paper \u2014 In-paper empirical measurement in sections/sec-001-2-the-quantum-isospin-group-and-its-possible-rel.md (p. 2-8)). Empirical/numerical values are routed to compute-check for witness comparison, never wired as formal axioms.",
+   "route_to": "compute-check",
+   "block_id": "prop-sec-001-01",
+   "block_iri": "library/arxiv-hep-ph-9612303v1/blocks/prop-sec-001-01",
+   "claim_id": "arxiv-hep-ph-9612303v1#prop-sec-001-01"
+  }
+ ]
 }

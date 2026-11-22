@@ -1,37 +1,60 @@
 162 V.V. Schechtman and A.N. Varchenko
+
 We have by induction
-ki
-do X=- d; xk-i=-  did, yk-i-p
-i1 i=1 p=0
-k-1
-Z dn- dp) yk-n=  do d yk-n.
-n= 1 n= 1
+
+k
+dy X= — Y d; X,-;= —
+i=1
+
+ime
+
+xa dy Ve-i-p
+
+ko pk-1
+=~ x (x ees xy do dn Ye-ns
+
+n=1 \p=0 n=1
+
 and we are done.
-Step II. We can choose a solution y(2) to (4.6.5.3) convergent in a neighbourhood
+
+Step IJ. We can choose a solution y(A) to (4.6.5.3) convergent in a neighbourhood
 of zero.
-A, M>1 such that Ixil, Id;l<AMi for all i. On every step of solving (4.6.5.4)
-we solve an equation of the form x=do y. We may suppose that, given x such
-that do x =O, we choose y such that lyl≤Mlxl. Then one shows by induction
-that lyil< A 2i M2i+1. The Lemma is proved.
-4.6.6 Corollary. Let f(a): (A', d(2) -→(A', d'(2) be a map of complexes of finite
-dimensional complex vector spaces with f (2), d(2), d'(2) depending holomorphically
-on a for small 2. Suppose that f (O) is a quasiisomorphism.
-Then f (a) is a quasisomorphism for small a.
-Proof. Apply 4.6.5 to the cone of f (a).
-Now, applying the above corollary to I(2) (4.6.2) we get the assertion of
-Theorem 4.6.
+
+Indeed, since x(A), d(A) are convergent for small A, there exist constants
+A, M>1 such that |x;|, |d;|< AM! for all i. On every step of solving (4.6.5.4)
+we solve an equation of the form x=dy y. We may suppose that, given x such
+that dy x=0, we choose y such that |y| SM |x|. Then one shows by induction
+that |y;|< A 2'M?!*!, The Lemma is proved. 1
+
+4.6.6 Corollary. Let f(A): (A’, d(2)) > (A", d’(A)) be a map of complexes of finite
+dimensional complex vector spaces with f (A), d(A), d'(A) depending holomorphically
+on A for small 2. Suppose that f (0) is a quasiisomorphism.
+
+Then f (A) is a quasiisomorphism for small 4.
+
+Proof. Apply 4.6.5 to the cone of f(4). 0
+
+Now, applying the above corollary to I(A) (4.6.2) we get the assertion of
+Theorem 4.6. (J
+
 4.6.7 Remark. The idea of the above proof arose from the discussion with Misha
-Kapranov who explained to us the work [NJ. We are very gratefull to him.
+Kapranov who explained to us the work [N]. We are very gratefull to him.
+
 4.6.8 Remark. Theorem 4.6 proves a weak form of a conjecture made by Aomoto
+
 [A].
-4.7 Remarks on relative cohomology. Let us denote by C.t y(U(6); (a) the
+
+4.7 Remarks on relative cohomology. Let us denote by C,,,(U(@); S(a)) the
 complex of complex singular chains whose symplices may have a boundary
-on Y(). Let C: f be the corresponding cochain complex. By definition
-(4.7.1) H(Cr(U(); (a) = H(V, j: (a)
-where j: U()  V.
-Fix a marking x of  as in 4.2, and branches of log tu, he in a neighbour-
+on Y(@). Let C;, be the corresponding cochain complex. By definition
+
+(4.7.1) H(C,,(U(); S (=H, j, F(a)
+where j: U(@)OV.
+Fix a marking x of @ as in 4.2, and branches of log 4,, he@ in a neighbour-
 hood of x(V). Then the rule (4.2.4) defines the map of complexes
-(4.7.2) u(a): Cis(U(6); (a) →(g(C), d),
-It seems very probable that it is always a quasiisomorphism (cf. 4.3)
-Consider a symplex △(F) for some FeF[p(). Put as usually taa--
-II exp(aa(H) log th)
+(4.7.2) u'(a): C,,(U(@); f(a) > (F (©), d).
+It seems very probable that it is always a quasiisomorphism (cf. 4.3).
+
+Consider a symplex A(F) for some FeFl?(@). Put as usually ¢77=
+T] exp(2a(A) log 4).
+H

@@ -10,7 +10,8 @@ source_sha256: b35dfd9ab88b71d8
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.988
-latex_coverage_ratio: 0.685
+latex_coverage_ratio: 0.682
+doc_brief: "arXiv:hep-lat/0003021v3 19 May 2000 — We compute the low-lying spectrum of the staggered Dirac operator above and below the ﬁnite temperature phase transition in both quenched QCD and in dynamical"
 ---
 The purpose of this study has been to find the extent to which Random
 Matrix Theory may be able to describe low-lying eigenvalue distributions and

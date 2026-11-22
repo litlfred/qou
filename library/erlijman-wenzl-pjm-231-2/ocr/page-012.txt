@@ -1,0 +1,50 @@
+370 JULIANA ERLIJMAN AND HANS WENZL
+
+where Tr(f;) is the usual trace of a matrix. This shows that we obtain a well-
+defined trace for End(Z) for any object Z, and that Trz(fg) = Trz(gf) for any
+Ff, g € End(Z). Moreover, using this formula, one shows as well that we can define
+the trace also by
+
+Trx(f) =i} o (yz @f) ofy € End(f).
+This shows that «*-categories satisfy the axioms of a spherical category (see [Barrett
+and Westbury 1999]).
+
+The normalized trace try on End(X) is defined by try(f) = Trx(f)/(dim X).
+In the following we will often just write Tr, tr for the trace or normalized trace
+when it is clear for which object it is defined.
+
+Conditional expectations can also be very naturally defined using our categorical
+definitions. Let X be an object. Let A = End(X) = A@ ly C B=End(X @V).
+We define the map E,4 from B onto A by
+
+1 . .
+E,(b) = amv x @iy)(b@ 1y)Ux Biv);
+in the tangle picture, E.4(b) is obtained from b by closing up the tangle with color
+V and renormalizing by 1/dimV.
+
+xX Vv
+
+a
+
+1
+Ext) = Gav
+
+Figure 2. Conditional expectation.
+
+It is known and easy to check that this definition of conditional expectation coin-
+cides with the usual definition of conditional expectation in operator algebras (see
+[Orellana and Wenz 2002, Proposition 1.4], for instance). Actually, one can show
+more: Let X;, Xz, X3 be objects in our * tensor category 6. Define the algebras
+A=End(X2), B =End(X;@X2), C =End(X2@X3) and D=End(X|@ X2@ X3).
+We can consider all these algebras as subalgebras of D, say by identifying A with
+ly, ® End(X2) ® 1x,. The next proposition now follows immediately from the
+graphical description of the conditional expectations.
+
+Proposition 2.1. The algebras A, B, C, D form a commuting square; that is,
+EpEc = Ea=EcEz.
+
+2D. Braided tensor categories. A strict monoidal category € is called braided if,
+for any objects X, Y in €, there exists a natural isomorphism cy,y : X@Y > Y@X
+called the braiding such that:
+
+cx,vez = (ly @cx,z)(cx,y ® lz)

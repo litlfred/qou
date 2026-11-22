@@ -1,0 +1,58 @@
+2. THE IWAHORI-HECKE ALGEBRA 5
+
+tensor product of the Corollary we consider R as an R-module with # € R acting
+on Ras ¢(?).)
+
+1.12 Corollary Suppose that ¢g: RGR is a ring homomorphism with (q) = 4q
+for some gE R. Then ARq(Gn) and Hp g(Gn) @p R are canonically isomorphic
+algebras.
+
+In the situation of Corollary 1.12, we say that .%p4(G,) is a specialization of
+Hp (Gn): the tensor product map Hy 4(Gn) — Hy j(Gn) is called a specializa-
+tion homomorphism.
+
+Let Z = Z[q.q7'], where q is an indeterminate over Z. Then #p,4(G,) is a
+specialization of #2 = Hz 4(Gn) whenever q is a non-zero element of R. As we
+are most interested in the case where q # 0, we call .#% the generic Iwahori-Hecke
+algebra of Gy.
+
+1.13 Corollary The Iwahori-Hecke algebra has two one dimensional representa-
+tions lw and é3 which are the R-linear maps determined by
+
+Le(Tw) = and éy¢(Tw) = (-1)
+for all w € Gy.
+
+Proof. It is sufficient to check that these maps preserve the relations in # and
+this is clear. Oo
+
+The representation |j¢ is the Iwahori—Hecke algebras analogue of the trivial
+representation of G, and that é is its analogue of the sign representation.
+Define an R-bilinear map (., ): 4 x 4 —> R by setting (hi, he) equal to the
+coefficient of 1 in hyho for all hy, ho € #. In particular, this form is associative;
+that is, (hy hy, hg) = (hy, hghs) for all hy, ho, hg € %.
+1.14 Proposition Suppose that « and y are elements of G,. Then
+
+(Te. T,) = { fea,
+
+0, otherwise.
+
+In particular, if q is invertible then ( , ) is a non-degenerate associative symmetric
+bilinear form.
+
+Proof. Let z,y € G,. The Proposition will follow if we show that there exists an
+integer m and a, € R, for z € Gy, such that a, = 0 unless f(z) > (zy) and
+
+ToTy =4"Try + SY) ae Ts.
+
+2€Gy
+
+To prove this we argue by induction on the length of z. When é(x) = 0 then
+«x = 1 and there is nothing to prove. If &(2) > 0 then there exists s € S such that
+&(as) < &(x). Then T,Ty = Trs(TsTy) and the claim follows easily by induction
+using Theorem 1.11. Oo
+
+Given any representation of .#, its character is defined in the usual way by
+taking traces. By Theorem 1.11 the characters of # are R-linear maps which are
+determined by their values on the basis elements 7,,, for w € G,. Unlike in the
+case of finite groups, if y is a character and x and y are conjugate elements of
+Gn it is not necessarily true that y(T,) = (Ty); for example, consider the trivial

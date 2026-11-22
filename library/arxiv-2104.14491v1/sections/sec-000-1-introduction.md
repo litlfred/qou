@@ -1,49 +1,19 @@
 ---
 doc_id: arxiv-2104.14491v1
-doc_title: "Khovanov polynomials for satellites and asymptotic adjoint polynomials A. Anokhinaa,∗ A. Morozova,b,c,† A. Popolitova,b,c,‡ a Institute for Theoretical and Experimental Physics, Mo"
+doc_title: "Khovanov polynomials for satellites and asymptotic adjoint polynomials A. Anokhinaa,∗A. Morozova,b,c,† A. Popolitova,b,c,‡ a Institute for Theoretical and Experimental Physics, Mos"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
-pages: 1-3
+pages: 2-3
 source_pdf: 2104.14491v1.pdf
 source_sha256: 1aea658f17283df1
-doc_brief: "Khovanov polynomials for satellites and asymptotic adjoint polynomials A. Anokhinaa,∗ A. Morozova,b,c,† A. Popolitova,b,c,‡ a Institute for Theoretical and Experimental Physics, Moscow 117218, Russia"
+toc_source: outline
+doc_brief: "Khovanov polynomials for satellites and asymptotic adjoint polynomials A. Anokhinaa,∗A. Morozova,b,c,† A. Popolitova,b,c,‡ a Institute for Theoretical and Experimental Physics, Moscow 117218, Russia"
 ---
-2 The knots we study and the questions we ask 3
-2.1 Coloured decompositions for the simplest satellites . . . . . . . . . . . . . . . . . . . . . . . . 4
-2.2 The pattern decomposition . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
-2.3 How to get the satellite class from a knot diagram . . . . . . . . . . . . . . . . . . . . . . . . 5
-2.4 Summary of Jones formulae . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
-3 Khovanov-evolution formulae for satellite families 6
-3.1 Preliminaries . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
-3.2 Positive pattern-companion decompositions . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
-3.3 False adjoint Khovanov polynomials . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
-4 Explicit form of the pattern and companion invariants 8
-4.1 The pattern-deﬁning polynomial . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
-4.2 AAK for the simplest prime knots . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
-4.3 AAK for the two-strand torus knots . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
-4.3.1 General formulae . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
-4.3.2 Reduced vs unreduced polynomials . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
-4.3.3 Mirror symmetry . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
-4.4 AAK for the twist knots . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
-4.4.1 General formulae . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
-4.4.2 Why there is no mirror symmetry? . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
-4.5 Double-evolution phase diagrams . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
-5 Eigenvalue expressions, polynomiality and positivity 11
-1
-arXiv:2104.14491v1  [hep-th]  29 Apr 2021
-6 Possible applications and further development 12
-A Cabling and an invariant deﬁnition of the m-strand satellite 16
-B First symmetric polynomials for the simplest knot families 17
-B.1 Two-strand torus knots . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18
-B.2 Twist knots . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18
-C Technical guidance to the experimental data 19
-C.1 Simplest knots . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
-C.2 Simplest knot families . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
-C.3 Precaution . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 20
-1 Introduction
-Why satellites? One can image a satellite knot as a knot inside (i.e., non-tivially embedded into) a solid
-torus tied in the form of another ( companion) knot [1]. In this paper, we study the Khovanov polynomials
+Introduction
+Why satellites?
+One can image a satellite knot as a knot inside (i.e., non-tivially embedded into) a solid
+torus tied in the form of another (companion) knot [1]. In this paper, we study the Khovanov polynomials
 of the satellite knots. We see at least two reasons to do this.
 First, the satellite knots are interesting in themselves. Being rare among relatively simple prime knots,
 the satellite knots can actually predominate in the entire knot space [2, 3]. This is already a reason to
@@ -64,7 +34,8 @@ Another part of the story is the knot Floer homology, which is believed to be an
 Khovanov) “reduction” of the superpolynomial [18, 19]. The Floer homologies were studied both for the
 Whitehead doubles [20] and cables [21, 22]. Hence the next step is to “embed” the Floer and Khovanov
 results into a new knowledge about the knot superpolynomials.
-Particular problem we study. In [23], a simple procedure was suggested to build the double-graded
+Particular problem we study.
+In [23], a simple procedure was suggested to build the double-graded
 HOMFLY-PT polynomials [24, 25, 26, 5] for satellite knots, especially for the Whitehead doubles (ﬁg.1, on
 the right). It is based on the R-matrix formalism for HOMFLY polynomials [27, 28, 5, 29] and reduces to
 calculating a peculiar “lock” block and the uniform adjoint polynomials [30]. This is a powerful approach,
@@ -73,36 +44,44 @@ to the triply graded superpolynomials [31, 32], or to quadruply graded hyperpoly
 big puzzle. An attempt to ﬁnd one was already made in [23], but at that time there was no practical way
 to check and improve the suggested answers. Now we can do this, at least partly, by comparing conjectures
 with the explicitly calculated Khovanov polynomials. This is the goal of the present study.
-Summary of results. Below we summarize our main observations and conclusions of the explicitly com-
+Summary of results.
+Below we summarize our main observations and conclusions of the explicitly com-
 puted Khovanov polynomials of the simplest satellite knots and knot families by means of the (slightly
 improved) program from [35].
-2
-I.S Tw−2
-Tor3 II.S Tw−2
+I. STw−2
+Tor3
+II. STw−2
 Tw−2
 Figure 1: Torus and twist satellites of the ﬁgure-eight knot
-I. Tor3 II. Tw−2
+I. Tor3
+II. Tw−2
 Figure 2: Two-stand torus and twist knots
-♦ Positive pattern-companion decomposition (PPCD). Our main conjecture is an extension of
-the pattern-companion decomposition from [23] to the Khovanov polynomials. Namely, the Khovanov
+♦Positive pattern-companion decomposition (PPCD).
+Our main conjecture is an extension of
+the pattern-companion decomposition from [23] to the Khovanov polynomials.
+Namely, the Khovanov
 polynomial of a twisted Whitehead double or two-strand cable (the two simplest satellite families) can be
 presented as a naively deformed linear combination of the positive polynomial invariants of the pattern and
 companion,
 HSK
-~K (A,q ) =f(A,q )H ~K(A,q ) +g(A,q )HK(A,q ) −→ KhSK
-~K (q,t ) =F (q,t )Kh ~K(q,t ) +G(q,t )KK(q,t ). (1)
+e
+K(A, q) = f(A, q)H eK(A, q) + g(A, q)HK(A, q) −→KhSK
+e
+K(q, t) = F(q, t)Kh eK(q, t) + G(q, t)KK(q, t).
+(1)
 In sec.3.2 we give explicit formulas (16) and (15) for the torus and twist cases.
-⋄ The pattern invariant in Kh ~K(q,t ) is the Khovanov polynomial of the pattern-deﬁning twisted or
+⋄The pattern invariant in Kh eK(q, t) is the Khovanov polynomial of the pattern-deﬁning twisted or
 torus knot, respectively.
-⋄ The companion invariant in KK(q,t ) is a positive polynomial, which is likely to be a “tail” of the
+⋄The companion invariant in KK(q, t) is a positive polynomial, which is likely to be a “tail” of the
 adjoint Khovanov that survives in the satellite polynomial (unlike the true adjoint Khovanov itself).
 We determine both these quantities explicitly for the simplest companion knots and knot families by
 writing and solving the diﬀerence “evolution” equations for the computed satellite knot polynomials, treating
 the half-twist number in the pattern as a variable.
-♦ Critical point of evolution ﬂow and the s-invariant. For a given companion, the satellite poly-
-nomial “smoothly” depends on the pattern but for a single “Θ-jump” in Kh ~K(q,t ) (see sec.4.1). This jump
+♦Critical point of evolution ﬂow and the s-invariant.
+For a given companion, the satellite poly-
+nomial “smoothly” depends on the pattern but for a single “Θ-jump” in Kh eK(q, t) (see sec.4.1). This jump
 happens when an invariant combination of the pattern’s hail-twist number and the companion’s writhe
 equals three times Rasmussen s-invariant, which coincides with the knot signature for all considered knots
 (see sec.2.3).
-A similar phenomenon is known for the knot Floer homology and Ozsv´ ath-Szab´ oτ-invariant1 for the
+A similar phenomenon is known for the knot Floer homology and Ozsv´ath-Szab´o τ-invariant1 for the
 same kind of satellites [20, 21, 22].

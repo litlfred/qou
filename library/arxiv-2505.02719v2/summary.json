@@ -2,11 +2,11 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2505.02719v2",
  "source_sha256": "1803d10aa55c18cf",
- "brief": "On the Palais–Smale condition in geometric knot theory — We prove that various families of energies relevant in geometric knot theory satisfy",
- "extended": "**On the Palais–Smale condition in geometric knot theory**\n\n*Nicolas Freches, Henrik Schumacher, Daniel Steenebrügge, and Heiko von der Mosel*\n\n52 pp, 20 sections.\n\n**Abstract.** We prove that various families of energies relevant in geometric knot theory satisfy thePalais–Smalecondition(PS)onsubmanifoldsofarclengthparametrizedknots. These energies include linear combinations of the Euler-Bernoulli bending energy with a wide variety of non-local knot energies, such as O’Hara’s self-repulsive potentials𝐸𝛼,𝑝, gen- eralized tangent-point energiesTP(𝑝,𝑞) , and generalized integral Menger curvature func- tionalsintM(𝑝,𝑞) . Even the tangent-point energiesTP(𝑝,2) for𝑝∈(4,5)alone are shown to fulfill the (PS)-condition. For all energies mentioned we can therefore prove existence of minimizing knots in any prescribed ambient isotopy class, and we provide long-time existence of their Hilbert-gradient flows, and subconvergence to critical knots as time goestoinfinity.\n\n**Outline.** The Palais–Smale condition; Introduction; Three families of knot energies on curves; Main results; Outline of the paper; The Palais–Smale condition in an abstract sett; Energies on submanifolds of Hilbert spaces; Gradient flows on Riemannian manifolds; The submanifolds of arclength parametrized cur; The topology of arclength manifolds; Critical knots in arclength submanifolds; The Palais–Smale condition for bending energy ; Bending energy with self-avoidance term; Tangent-point energy; Regularity of critical points; Bending energy; Bending energy with tangent-point energy; Reparametrization to arclength",
+ "brief": "On the Palais-Smale condition in geometric knot theory — We prove that various families of energies relevant in geometric knot theory satisfy the Palais–Smale condition (PS) on submanifolds of",
+ "extended": "**On the Palais-Smale condition in geometric knot theory**\n\n*Nicolas Freches, Henrik Schumacher, Daniel Steenebrügge, and Heiko von der Mosel*\n\n52 pp, 22 sections.\n\n**Abstract.** We prove that various families of energies relevant in geometric knot theory satisfy the Palais–Smale condition (PS) on submanifolds of arclength parametrized knots. These energies include linear combinations of the Euler-Bernoulli bending energy with a wide variety of non-local knot energies, such as O’Hara’s self-repulsive potentials 𝐸𝛼,𝑝, gen- eralized tangent-point energies TP( 𝑝,𝑞), and generalized integral Menger curvature func- tionals intM( 𝑝,𝑞). Even the tangent-point energies TP( 𝑝,2) for 𝑝∈(4, 5) alone are shown to fulfill the (PS)-condition. For all energies mentioned we can therefore prove existence of minimizing knots in any prescribed ambient isotopy class, and we provide long-time existence of their Hilbert-gradient flows, and subconvergence to critical knots as time goes to infinity.\n\n**Outline.** The Palais–Smale condition; Introduction; Three families of knot energies on curves; Main results; Outline of the paper; The Palais–Smale condition in an abstract sett; Energies on submanifolds of Hilbert spaces; Gradient flows on Riemannian manifolds; The submanifolds of arclength parametrized cur; The arclength manifolds N1+s and A1+s; The topology of arclength manifolds; Critical knots in arclength submanifolds; The Palais–Smale condition for bending energy ; Bending energy with self-avoidance term; Tangent-point energy; Regularity of critical points; Bending energy; Bending energy with tangent-point energy",
  "tokens": {
-  "brief": 35,
-  "extended": 399
+  "brief": 48,
+  "extended": 405
  },
  "sections": [
   {
@@ -52,60 +52,70 @@
   {
    "id": "sec-008-the-submanifolds-of-arclength-parametrized-curve",
    "title": "The submanifolds of arclength parametrized curves and knots",
-   "pages": "16-20"
+   "pages": "16-17"
   },
   {
-   "id": "sec-009-the-topology-of-arclength-manifolds",
+   "id": "sec-009-the-arclength-manifolds-n1s-and-a1s",
+   "title": "The arclength manifolds N1+s and A1+s",
+   "pages": "17-20"
+  },
+  {
+   "id": "sec-010-the-topology-of-arclength-manifolds",
    "title": "The topology of arclength manifolds",
    "pages": "20-23"
   },
   {
-   "id": "sec-010-critical-knots-in-arclength-submanifolds",
+   "id": "sec-011-critical-knots-in-arclength-submanifolds",
    "title": "Critical knots in arclength submanifolds",
    "pages": "23-26"
   },
   {
-   "id": "sec-011-the-palaissmale-condition-for-bending-energy-and",
+   "id": "sec-012-the-palaissmale-condition-for-bending-energy-and",
    "title": "The Palais–Smale condition for bending energy and knot energies",
    "pages": "26-29"
   },
   {
-   "id": "sec-012-bending-energy-with-self-avoidance-term",
+   "id": "sec-013-bending-energy-with-self-avoidance-term",
    "title": "Bending energy with self-avoidance term",
    "pages": "29-31"
   },
   {
-   "id": "sec-013-tangent-point-energy",
+   "id": "sec-014-tangent-point-energy",
    "title": "Tangent-point energy",
    "pages": "31-37"
   },
   {
-   "id": "sec-014-regularity-of-critical-points",
+   "id": "sec-015-regularity-of-critical-points",
    "title": "Regularity of critical points",
    "pages": "37-38"
   },
   {
-   "id": "sec-015-bending-energy",
+   "id": "sec-016-bending-energy",
    "title": "Bending energy",
    "pages": "38-39"
   },
   {
-   "id": "sec-016-bending-energy-with-tangent-point-energy",
+   "id": "sec-017-bending-energy-with-tangent-point-energy",
    "title": "Bending energy with tangent-point energy",
-   "pages": "39-41"
+   "pages": "39-40"
   },
   {
-   "id": "sec-017-reparametrization-to-arclength",
+   "id": "sec-018-tangent-point-energy",
+   "title": "Tangent-point energy",
+   "pages": "40-41"
+  },
+  {
+   "id": "sec-019-reparametrization-to-arclength",
    "title": "Reparametrization to arclength",
    "pages": "41-45"
   },
   {
-   "id": "sec-018-product-rules",
+   "id": "sec-020-product-rules",
    "title": "Product rules",
    "pages": "45-48"
   },
   {
-   "id": "sec-019-references",
+   "id": "sec-021-references",
    "title": "References",
    "pages": "48-52"
   }

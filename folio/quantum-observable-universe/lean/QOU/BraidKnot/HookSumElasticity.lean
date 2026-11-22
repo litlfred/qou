@@ -63,7 +63,7 @@ that frame costs nothing.
 `ℤ` throughout, and only because hook sums are doubled to avoid halving; no archimedean
 construct, nothing past the substrate wall.
 
--- Ref: [manuscript] computations/deltalambda/rev_exact_maximiser_small_n_probe.py
+-- Ref: [leitner2026] computations/deltalambda/rev_exact_maximiser_small_n_probe.py
 -/
 
 namespace QOU.BraidKnot.HookSum

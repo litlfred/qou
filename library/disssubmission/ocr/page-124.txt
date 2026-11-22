@@ -1,0 +1,53 @@
+116 Chapter 5 — A family of surfaces
+
+group Aut(E¢) of the E¢-lattice. Recall from [22, p. 126] that we have a
+product decomposition
+
+Aut(Es) = W(Es) x {£1}
+
+where {+1} acts via multiplication by +1 on the E¢-lattice. It turns out that
+the monodromy group G is already contained in the Wey] group itself.
+
+PROPOSITION 5.18. With notations as above, the monodromy group G
+is contained in the subgroup
+
+W(Eo) < Aut(E¢).
+
+Proof. Let K and L be as in proposition 5.12, and for some x € U(C)
+consider the monodromy operation of the group 7 (U,x) on the o-invariant
+lattice H?(Y,Z)* & L(2). Notice that on the sublattice H?(X,Z) = K(2)
+this monodromy operation is trivial. Dividing the bilinear forms by two, we
+obtain from proposition 5.12 an embedding
+
+M = K@E(-1) G L = UP SEs(-1)
+
+with an action of the fundamental group 7 (U,x) on L which is trivial on
+the sublattice K and which preserves the orthocomplement Es(—1) = K+
+on which it defines the quotient morphism
+
+m™(U,x) » G — Aut(E¢)
+
+we are interested in. We must show that the image G is already contained
+in the subgroup W(E¢) < Aut(Eg). To this end we will consider the induced
+action of G on the discriminant group of the E6-lattice.
+
+Since the lattices L and M have the same rank, L is obtained from M by
+adjoining certain glue vectors, by which we mean as in [22] vectors from
+the dual lattice
+
+M* = {mEM®@zQ|b(m,n) €Z VneM} = K*SE(-1)*
+
+where b denotes the bilinear form of the lattice M, extended to M @zQ.
+Now the lattice Es(—1) has discriminant 3 whereas L is unimodular, so
+there exists in the sublattice L C M* = K* 6 E¢(—1)* at least one glue vector
+of the form
+
+A=k+e with ke K*,ecE(-1)* but e ¢ (1).
+
+Fixing k as above, consider the set S = {f € Eo(—1)* |k+f € L}. This
+set is stable under the monodromy operation, indeed this operation fixes k
+because H?(X,Z) © K(2) is contained in the monodromy invariant part of
+the cohomology. By construction S contains the coset e + E¢(—1). On the
+other hand, for any f € S we have
+
+foe = (k+f)—(k+e) © Eo(-1)*NL = E6(-1)

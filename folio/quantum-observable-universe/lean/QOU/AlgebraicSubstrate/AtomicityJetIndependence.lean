@@ -95,7 +95,7 @@ not exclude that a FUTURE, stronger formalization of the jet tower
 (one carrying the `generates` clause itself) implies atomicity — but
 any such formalization would be assuming the conclusion.
 
--- Ref: [manuscript] lifting-and-descent, prop:ordering-jet-compatibility;
+-- Ref: [leitner2026] lifting-and-descent, prop:ordering-jet-compatibility;
 --      information-theory, rem:discrete-planck-step;
 --      docs/audits/2026-07-25-planck-step-atomicity-formalization.md §3/§6;
 --      docs/audits/2026-07-25-atomicity-upgrade-route.md

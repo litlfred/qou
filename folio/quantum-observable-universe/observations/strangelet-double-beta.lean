@@ -13,7 +13,7 @@ numerically the EM/strong ratio.
 LaTeX label: `prop:strangelet-double-beta`
 
 ## References
-- [manuscript] Ch. 7, §strangelet-double-beta
+- [leitner2026] Ch. 7, §strangelet-double-beta
 
 **Ground ring**: `ℝ` (archimedean realisation).
 Evaluates formal results at q₀ ≈ 1.1098 for comparison with
@@ -25,32 +25,32 @@ namespace QOU.Archimedean
 
 /-- The Skein amplitude for a single crossing change:
     s(q) = q^{1/2} − q^{−1/2}. -/
--- Ref: [manuscript] Ch. 7, §strangelet-double-beta
+-- Ref: [leitner2026] Ch. 7, §strangelet-double-beta
 noncomputable def skein_amplitude (q : ℝ) : ℝ :=
   q ^ (1/2 : ℝ) - q ^ (-(1/2 : ℝ))
 
 /-- The double beta decay rate is proportional to s⁴. -/
--- Ref: [manuscript] Ch. 7, §strangelet-double-beta
+-- Ref: [leitner2026] Ch. 7, §strangelet-double-beta
 noncomputable def double_beta_rate (q : ℝ) : ℝ :=
   (skein_amplitude q) ^ 4
 
 /-- The Skein descent: the minimal path from the degree-2 fiber
     (cinquefoil, 5 crossings) to the degree-1 fiber (trefoil,
     3 crossings) requires exactly 2 crossing changes. -/
--- Ref: [manuscript] Ch. 7, §strangelet-double-beta
+-- Ref: [leitner2026] Ch. 7, §strangelet-double-beta
 theorem crossing_descent_count :
     (5 : ℕ) - 3 = 2 := by norm_num
 
 /-- The cinquefoil has 5 crossings (genus 2). -/
--- Ref: [manuscript] Ch. 7, §strangelet-double-beta
+-- Ref: [leitner2026] Ch. 7, §strangelet-double-beta
 def cinquefoil_crossings : ℕ := 5
 
 /-- The trefoil has 3 crossings (genus 1). -/
--- Ref: [manuscript] Ch. 7, §strangelet-double-beta
+-- Ref: [leitner2026] Ch. 7, §strangelet-double-beta
 def trefoil_crossings : ℕ := 3
 
 /-- The intermediate knot (figure-eight, 4₁) has 4 crossings. -/
--- Ref: [manuscript] Ch. 7, §strangelet-double-beta
+-- Ref: [leitner2026] Ch. 7, §strangelet-double-beta
 def figure_eight_crossings : ℕ := 4
 
 /-- **Definitional unfolding** of the strangelet double-beta rate. The physical model — the
@@ -60,13 +60,13 @@ def figure_eight_crossings : ℕ := 4
     only exposes that definition (the earlier `1 < q` hypothesis was unused and is dropped).
     The descent derivation and the parameter-free `s⁴ ≈ 10⁻⁴` reading are narrative
     (`.md` / Ch. 7), NOT a Lean consequence of this equation. -/
--- Ref: [manuscript] Ch. 7, §strangelet-double-beta
+-- Ref: [leitner2026] Ch. 7, §strangelet-double-beta
 theorem strangelet_double_beta (q : ℝ) :
     double_beta_rate q = (skein_amplitude q) ^ 4 := rfl
 
 /-- The descent path goes cinquefoil → figure-eight → trefoil:
     5 → 4 → 3 crossings. -/
--- Ref: [manuscript] Ch. 7, §strangelet-double-beta
+-- Ref: [leitner2026] Ch. 7, §strangelet-double-beta
 theorem descent_path :
     cinquefoil_crossings - 1 = figure_eight_crossings ∧
     figure_eight_crossings - 1 = trefoil_crossings := by

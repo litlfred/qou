@@ -1,1 +1,1 @@
-Let Φ : G→H be a weak equivalence between cosim-
+Let Φ : G →H be a weak equivalence between cosim- plicial crossed groupoids. Then the function Desc(Φ) : Desc(G) →Desc(H) is bijective. The various notions involved are recalled or deﬁned in Section 1. The theorem is repeated as Theorem 2.4 in Section 2, and proved there. Connections with other papers, and several remarks, are in Section 3.

@@ -5,22 +5,25 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2402.01890v4",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2402.01890v4/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-2402.01890v4",
+  "title": "On the spherical partition algebra",
   "contains": [
+    "library/arxiv-2402.01890v4/sections/sec-front-matter",
     "library/arxiv-2402.01890v4/sections/sec-000",
     "library/arxiv-2402.01890v4/sections/sec-001",
     "library/arxiv-2402.01890v4/sections/sec-002",
     "library/arxiv-2402.01890v4/sections/sec-003",
     "library/arxiv-2402.01890v4/sections/sec-004",
     "library/arxiv-2402.01890v4/sections/sec-005",
-    "library/arxiv-2402.01890v4/sections/sec-006"
+    "library/arxiv-2402.01890v4/sections/sec-006",
+    "library/arxiv-2402.01890v4/sections/sec-007",
+    "library/arxiv-2402.01890v4/sections/sec-008"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -30,7 +33,9 @@
   },
   "meta": {
     "doc_id": "arxiv-2402.01890v4",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "2402.01890v4.pdf",
     "source_sha256": "e1eeb2865f0b53e1d85365990676623a1dbae001dd82c43a796613f573754841",
     "pages": 27,

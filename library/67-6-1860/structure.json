@@ -1,166 +1,36 @@
 {
- "_schema": "pdf-structure/v1",
- "doc_id": "67-6-1860",
  "source": {
   "file": "67-6-1860.pdf",
   "sha256": "e2e5d45edd36976203b7d43853ad9729af749b786e958283fa76fb51ff18e068",
   "bytes": 723730,
+  "mtime": "2026-11-15T11:07:50Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
   "pages": 17,
   "text_source": "ocr",
-  "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:17Z",
-  "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "runContext": {
+   "sha256": "f6347033f16465b56a2b3f9b59654f2ab9d1d64d3e77bd9b03afed8307a8d607"
+  }
  },
  "metadata": {
-  "arxiv": null,
-  "doi": null,
-  "title": "Progress of Theoretical Physics, Vol. 67, No. 6, June 1982",
-  "authors_raw": "Quaternionic Weinberg-Salam Theory",
-  "title_lines": [
-   "Progress of Theoretical Physics, Vol. 67, No. 6, June 1982"
-  ],
-  "abstract": null,
+  "title": "Quaternionic Weinberg-Salam Theory",
   "docinfo": {
    "Producer": "Acrobat Distiller 5.0.5 (Windows); modified using iTextSharp.LGPLv2.Core 3.7.4.0",
    "CreationDate": "D:20030804171304+09'00'"
   },
-  "title_raw": "Progress of Theoretical Physics, Vol. 67, No. 6, June 1982",
-  "title_source": "text",
+  "title_raw": null,
+  "title_source": "filename",
   "title_verified": false,
   "title_evidence": {
-   "text": "Progress of Theoretical Physics, Vol. 67, No. 6, June 1982",
    "corroborated_by": [],
    "browser_print": false
-  }
+  },
+  "title_prev": "Progress of Theoretical Physics, Vol. 67, No. 6, June 1982"
  },
- "toc": [],
- "toc_source": "undetermined",
- "toc_undetermined_reason": "3 inferred entries with mean confidence 0.00, below the 0.6 floor \u2014 too little evidence agreed",
+ "_schema": "pdf-structure/v1",
+ "doc_id": "67-6-1860",
+ "toc_source": "none",
  "granularity": "page",
- "structure_note": "No outline, and no inferred contents could be trusted (3 inferred entries with mean confidence 0.00, below the 0.6 floor \u2014 too little evidence agreed): one section per page.",
- "figures": [],
- "pages": [
-  {
-   "physical": 1,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 2,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 3,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 4,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 5,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 6,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 7,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 8,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 9,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 10,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 11,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 12,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 13,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 14,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 15,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 16,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 17,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  }
- ],
  "sections": [
   {
    "id": "page-001",
@@ -170,9 +40,7 @@
    "page_start": 1,
    "page_end": 1,
    "n_chars": 2834,
-   "n_words": 420,
-   "label_start": null,
-   "label_end": null
+   "n_words": 420
   },
   {
    "id": "page-002",
@@ -182,9 +50,7 @@
    "page_start": 2,
    "page_end": 2,
    "n_chars": 3247,
-   "n_words": 501,
-   "label_start": null,
-   "label_end": null
+   "n_words": 501
   },
   {
    "id": "page-003",
@@ -194,9 +60,7 @@
    "page_start": 3,
    "page_end": 3,
    "n_chars": 1825,
-   "n_words": 312,
-   "label_start": null,
-   "label_end": null
+   "n_words": 312
   },
   {
    "id": "page-004",
@@ -206,9 +70,7 @@
    "page_start": 4,
    "page_end": 4,
    "n_chars": 1888,
-   "n_words": 330,
-   "label_start": null,
-   "label_end": null
+   "n_words": 330
   },
   {
    "id": "page-005",
@@ -218,9 +80,7 @@
    "page_start": 5,
    "page_end": 5,
    "n_chars": 1211,
-   "n_words": 217,
-   "label_start": null,
-   "label_end": null
+   "n_words": 217
   },
   {
    "id": "page-006",
@@ -230,9 +90,7 @@
    "page_start": 6,
    "page_end": 6,
    "n_chars": 1020,
-   "n_words": 214,
-   "label_start": null,
-   "label_end": null
+   "n_words": 214
   },
   {
    "id": "page-007",
@@ -242,9 +100,7 @@
    "page_start": 7,
    "page_end": 7,
    "n_chars": 1621,
-   "n_words": 278,
-   "label_start": null,
-   "label_end": null
+   "n_words": 278
   },
   {
    "id": "page-008",
@@ -254,9 +110,7 @@
    "page_start": 8,
    "page_end": 8,
    "n_chars": 2338,
-   "n_words": 379,
-   "label_start": null,
-   "label_end": null
+   "n_words": 379
   },
   {
    "id": "page-009",
@@ -266,9 +120,7 @@
    "page_start": 9,
    "page_end": 9,
    "n_chars": 2104,
-   "n_words": 337,
-   "label_start": null,
-   "label_end": null
+   "n_words": 337
   },
   {
    "id": "page-010",
@@ -278,9 +130,7 @@
    "page_start": 10,
    "page_end": 10,
    "n_chars": 1811,
-   "n_words": 311,
-   "label_start": null,
-   "label_end": null
+   "n_words": 311
   },
   {
    "id": "page-011",
@@ -290,9 +140,7 @@
    "page_start": 11,
    "page_end": 11,
    "n_chars": 2336,
-   "n_words": 368,
-   "label_start": null,
-   "label_end": null
+   "n_words": 368
   },
   {
    "id": "page-012",
@@ -302,9 +150,7 @@
    "page_start": 12,
    "page_end": 12,
    "n_chars": 1262,
-   "n_words": 213,
-   "label_start": null,
-   "label_end": null
+   "n_words": 213
   },
   {
    "id": "page-013",
@@ -314,9 +160,7 @@
    "page_start": 13,
    "page_end": 13,
    "n_chars": 2018,
-   "n_words": 347,
-   "label_start": null,
-   "label_end": null
+   "n_words": 347
   },
   {
    "id": "page-014",
@@ -326,9 +170,7 @@
    "page_start": 14,
    "page_end": 14,
    "n_chars": 2524,
-   "n_words": 387,
-   "label_start": null,
-   "label_end": null
+   "n_words": 387
   },
   {
    "id": "page-015",
@@ -338,9 +180,7 @@
    "page_start": 15,
    "page_end": 15,
    "n_chars": 1325,
-   "n_words": 215,
-   "label_start": null,
-   "label_end": null
+   "n_words": 215
   },
   {
    "id": "page-016",
@@ -350,9 +190,7 @@
    "page_start": 16,
    "page_end": 16,
    "n_chars": 2901,
-   "n_words": 498,
-   "label_start": null,
-   "label_end": null
+   "n_words": 498
   },
   {
    "id": "page-017",
@@ -362,26 +200,8 @@
    "page_start": 17,
    "page_end": 17,
    "n_chars": 1472,
-   "n_words": 253,
-   "label_start": null,
-   "label_end": null
+   "n_words": 253
   }
  ],
- "diagnostics": {
-  "pages_without_text": 0,
-  "likely_scanned": false,
-  "toc_entries": 0,
-  "toc_inferred_entries": 3,
-  "toc_inferred_mean_confidence": 0.0,
-  "toc_inferred_empty_share": 0.0,
-  "toc_inferred_method": "regex",
-  "figure_entries": 0,
-  "figure_sequence_gaps": [],
-  "page_label_conflicts": {
-   "count": 0,
-   "items": []
-  },
-  "sections": 17,
-  "chars_total": 33737
- }
+ "structure_note": "Ingested at PAGE granularity by scripts/pdf-pages.py. This PDF carries no embedded outline and its inferred chapter structure was measurably wrong (bean 6xaz), so no chapter tree is claimed. A page is a determined division; an inferred chapter was not."
 }

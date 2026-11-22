@@ -1,0 +1,317 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-q-alg-9504020v1",
+ "status": "determined",
+ "body_size": 10.9,
+ "footnotes": [
+  {
+   "id": "fn-p001-1",
+   "page": 1,
+   "mark": "†",
+   "text": "URA14-36duCNRS,associ´ee`al’E.N.S.deLyon,et`al’Universit`edeSavoie",
+   "marks": [
+    {
+     "page": 1,
+     "context": "LaboratoiredePhysiqueTh´eoriqueenslapp"
+    }
+   ],
+   "block": "library/arxiv-q-alg-9504020v1/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p006-1",
+   "page": 6,
+   "mark": "1",
+   "text": "theterm“topological”heremeansthatedgesandfacesofthe tetrahedroncanbecurved",
+   "marks": [
+    {
+     "page": 5,
+     "context": "ω"
+    },
+    {
+     "page": 6,
+     "context": "xij= (zi −zj)"
+    },
+    {
+     "page": 6,
+     "context": "ofsimplicesofcorrespondingdimension.Consideratopological"
+    }
+   ],
+   "block": "library/arxiv-q-alg-9504020v1/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p009-1",
+   "page": 9,
+   "mark": "2",
+   "text": "inthiscasethequantumdilogarithmispreciselythecanonicalelementinHeisenberg double of BUq(sl(2)), the Borel sub-algebra of Uq(sl(2)) [14]",
+   "marks": [
+    {
+     "page": 8,
+     "context": "function(4.19)multipliedbyN"
+    },
+    {
+     "page": 9,
+     "context": "quantum dilogarithm with q non-root of unity"
+    }
+   ],
+   "block": "library/arxiv-q-alg-9504020v1/blocks/prose-sec-003"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p008-1",
+   "page": 8,
+   "mark": "m",
+   "text": "−α+",
+   "block": "library/arxiv-q-alg-9504020v1/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p008-2",
+   "page": 8,
+   "mark": "m",
+   "text": "+cm",
+   "block": "library/arxiv-q-alg-9504020v1/blocks/prose-sec-003"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "oftriangulated linksinS"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "Q"
+  },
+  {
+   "page": 2,
+   "mark": "j",
+   "context": "j=1(1 −ω"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "n= (ω∗)"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "R(i, j, k, l|a, b, c, d)= ω"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "givenbyaprojectionoftwonon-coplanarsegmentsinR"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "N"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "N2-by-N"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "⟨i, j|R|k, l⟩= R(i, j, k, l|1, 0, 0, 0)ω"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "R|k, j⟩= R(i, j, k, l|, 0, 0, 0, 1)ω"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "ω"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "Let link L in S"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "ω"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "⟨L⟩N= Q(S"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "w(x, y, z|m, n)= w(x, y, z|m −n)ω"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "w(x, y, z|m, n)= w(x, y, z|m −n)ωn"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "z −xω"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "α,β= ρ0123ω"
+  },
+  {
+   "page": 6,
+   "mark": "w",
+   "context": "α,β= ρ0123ωc(γ−α)+αδ+ac/2"
+  },
+  {
+   "page": 6,
+   "mark": "03",
+   "context": "α,β= ρ0123ωc(γ−α)+αδ+ac/2w(x"
+  },
+  {
+   "page": 6,
+   "mark": "x",
+   "context": "α,β= ρ0123ωc(γ−α)+αδ+ac/2w(x03"
+  },
+  {
+   "page": 6,
+   "mark": "12",
+   "context": "α,β= ρ0123ωc(γ−α)+αδ+ac/2w(x03x"
+  },
+  {
+   "page": 6,
+   "mark": "01",
+   "context": "α,β= ρ0123ωc(γ−α)+αδ+ac/2w(x03x12, x"
+  },
+  {
+   "page": 6,
+   "mark": "x",
+   "context": "α,β= ρ0123ωc(γ−α)+αδ+ac/2w(x03x12, x01"
+  },
+  {
+   "page": 6,
+   "mark": "23",
+   "context": "α,β= ρ0123ωc(γ−α)+αδ+ac/2w(x03x12, x01x"
+  },
+  {
+   "page": 6,
+   "mark": "02",
+   "context": "α,β= ρ0123ωc(γ−α)+αδ+ac/2w(x03x12, x01x23, x"
+  },
+  {
+   "page": 6,
+   "mark": "x",
+   "context": "α,β= ρ0123ωc(γ−α)+αδ+ac/2w(x03x12, x01x23, x02"
+  },
+  {
+   "page": 6,
+   "mark": "13",
+   "context": "α,β= ρ0123ωc(γ−α)+αδ+ac/2w(x03x12, x01x23, x02x"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "ρ0123ω"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "These symbols can be associatedwith tetrahedrons in R"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "tinR"
+  },
+  {
+   "page": 7,
+   "mark": "01",
+   "context": "( T 0123(c"
+  },
+  {
+   "page": 7,
+   "mark": "12",
+   "context": "( T 0123(c01, c"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "( T 0123(c01, c12)α"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "( T 0123(c01, c12)α2,α"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "T0123(c01, c12)α"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "T0123(c01, c12)α3,α"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "M∂u(T, ∂s, ∂ctot, ∂α) = N−K"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "Letu1, u2, u3, u4be fourpointsinR"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "m= α([u"
+  },
+  {
+   "page": 9,
+   "mark": "u",
+   "context": "m= α([u0"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "m= α([u0u"
+  },
+  {
+   "page": 9,
+   "mark": "u",
+   "context": "m= α([u0um"
+  },
+  {
+   "page": 9,
+   "mark": "5",
+   "context": "m= α([u0umu"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "sij= (s(ui) −s(uj))"
+  },
+  {
+   "page": 9,
+   "mark": "s",
+   "context": "m,j= ωjk"
+  },
+  {
+   "page": 9,
+   "mark": "k",
+   "context": "ψ"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "beingattachedtotwoofthem.TogettheinvariantinS"
+  }
+ ]
+}

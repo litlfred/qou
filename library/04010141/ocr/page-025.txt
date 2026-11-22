@@ -1,0 +1,46 @@
+Cellular algebras and diagram algebras 165
+
+Specifically, we show how (6.9)(i) is equivalent to the rational smooth-
+ness of certain varieties which we define below. This interpretation of
+decomposition numbers in terms of intersection cohomology is due to
+Chriss-Ginzburg [5], Kazhdan-Lusztig [24] and Lusztig [33, 34, 35], (see
+also [11]) and the exposition here owes much to A. Henderson, who
+has given an alternative direct geometric proof of our (6.9)(i) starting
+from the geometric point of view (see [19]). Write G = GL,(C) and
+6 = Lie(G). The multiplicities of the irreducible H2(q)-modules in the
+standard modules M;,n are given in terms of the intersection cohomol-
+ogy of certain complexes on the closures of the orbits of the group Z¢(s)
+acting on the variety
+
+(7.1) Nog ={N € Gy | s-N = q?N}.
+
+Specifically, for N € Ngq, let On be its orbit under Z¢(s). Let < be
+the partial order on the (finite) set of orbits of Zg(s) on Ng.q which is
+
+defined by orbit closure. Let #*(IC(On)) denote the k** cohomology
+sheaf of the perverse extension of the constant sheaf on Oy to the closure
+On. It is known (see below) that #*(IC(Ow)) = 0 if k is odd. For
+N’ EN,q such that Oy: < On, write #%,(IC(On)) = 0 for the stalk
+at any point of Oy: of this sheaf, and define
+
+(7.2) Ky,ni(t) = > dim 2@h(IC(On))t*
+
+j20
+Now the modules M,,n generally have a top quotient L, jy, which is
+irreducible or zero, and the non-zero modules among the L,,n form a
+complete set of irreducible H@(q)-modules (see [5, Chapter 8] or [43]).
+
+Theorem 7.3 (Ginzburg [5], 8.6.23) (see also [1] and [11)). We
+have the following multiplicity formula for the standard modules M,N.
+Assume Lsy #0. Then
+
+0 unless s' ~g s
+(7.4) [Msynwr:Ls,w]= 4 Kw,ni(1) ifs = 8’ and On < On
+0 ifs=s' andOn £ On
+
+Here ~g denotes conjugacy in G = GL,(C).
+
+Let V = C”, on which both G = GL, (C) and © act via matrix
+multiplication. For any linear transformation A of V and element € € C,
+write V(A,€) for the €-eigenspace of A in V. For any pair (s,N) as
+above, write V = Vi @V, ®--- @ V;, for the s-eigenspace decomposition

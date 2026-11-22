@@ -1,0 +1,72 @@
+496 Residue forms and classical Morse theory
+
+Proof We show by induction that
+
+n
+(=) Su) fi(uy” +++ faluy = fu) fi(uy" + falwy [K(r, uy” + O(r, w)]
+
+(C.2.11)
+for all n, where Q is a polynomial in r of degree less than |n|. When n = 0
+this holds with Q = 0. Assuming this holds for n, taking the logarithm and
+differentiating with respect to u; gives, after some algebraic simplification, that
+
+( o yr S(u)fi(u)" +++ fa(w) equals the right-hand side of (C.2.11) when
+
+ou
+K(r,u)” + O(r,u) is replaced by
+dlog f
+
+Ouj
+
++ Kj (K+ Q)+ 2 K+).
+Ouj
+
+The terms in this expression other than K;-K” = K”*°i are polynomials in r
+of degree at most |n|, completing the induction. ia)
+
+We now specialize to our context.
+
+Corollary C.23. Let '¥ be the parametrization defined in (C.2.6) with Jacobian
+matrix Jy(z). If we parametrize z = z(u) for variables u € Ck and m is a
+vector of positive integers then
+
+a " | 2(u)-"P(¥(u)) |- z(uy"P(¥'(u)) P(r, w)
+7 =
+
+du J zi(u) det Jy (Y"(u))) TTF, zw) det dy (Pau)
+(C.2.12)
+
+where
+
+P(r,u) =
+
+k (a mj-1
+mp 7 tegshe) + ne (C.2.13)
+Ouj
+
+j=l i=l
+
+for some polynomial R in r of degree less than |m| — k.
+
+Theorem C.24. Under our running assumptions, the iterated residue has a
+computable expression
+
+P(z) _p PUY, Z)
+————dz; Sy = gre
+Ther Q(z” o| Tien 2/
+
+dzp ,
+
+ci=Ci(Zae) + eT
+
+(C.2.14)
+where P(r, z) is a polynomial in r of degree |\m| — k. The leading term of
+Pir, z) is
+
+Res [e"
+
+(im PP) “Aym-t
+P(r, z) ~ oD! atv Ty : (C.2.15)
+Hymnd
+
+where Ty is the matrix from Definition C.16, the notation (rT y stands

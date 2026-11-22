@@ -52,7 +52,7 @@ counterexample is over `ℚ`.
 ## References
 
 - [lickorish1997] W. B. R. Lickorish, *An Introduction to Knot Theory*, ch. 15. https://doi.org/10.1007/978-1-4612-0691-0
-- [manuscript] `computations/homflypt_reference_qa.py` (`_torus_homfly`), `computations/homflypt_engine.py` (`homflypt_2strand`).
+- [leitner2026] `computations/homflypt_reference_qa.py` (`_torus_homfly`), `computations/homflypt_engine.py` (`homflypt_2strand`).
 -/
 
 namespace QOU.Knot.HomflySkeinReference

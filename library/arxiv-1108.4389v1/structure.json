@@ -8,9 +8,15 @@
   "pages": 58,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:19Z",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 40,
+    "reason": "19 of 381 words are a stray single letter: the text layer splits words"
+   }
+  ],
   "math_source": "latex"
  },
  "metadata": {
@@ -26,7 +32,7 @@
   "title_lines": [
    "Gauge Theories Labelled by Three-Manifolds"
   ],
-  "abstract": "We propose a dictionary between geometry of triangulated 3-manifolds and physics of three-dimensional N = 2 gauge theories. Under this duality, standard operations on triangulated 3-manifolds and various invariants thereof (classical as well as quantum) \ufb01nd a natural interpretation in \ufb01eld theory. For example, independence of the SL(2) Chern-Simons partition function on the choice of triangulation translates to a statement that S3 b partition functions of two mirror 3d N = 2 gauge theories are equal. Three-dimensional N = 2 \ufb01eld theories associated to 3-manifolds can be thought of as theories that describe boundary conditions and duality walls in four-dimensional N = 2 SCFTs, thus making the whole construction functorial with respect to cobordisms and gluing. CALT-68-2847 arXiv:1108.4389v1 [hep-th] 22 Aug 2011",
+  "abstract": "We propose a dictionary between geometry of triangulated 3-manifolds and physics of three-dimensional N = 2 gauge theories. Under this duality, standard operations on triangulated 3-manifolds and various invariants thereof (classical as well as quantum) ﬁnd a natural interpretation in ﬁeld theory. For example, independence of the SL(2) Chern-Simons partition function on the choice of triangulation translates to a statement that S3 b partition functions of two mirror 3d N = 2 gauge theories are equal. Three-dimensional N = 2 ﬁeld theories associated to 3-manifolds can be thought of as theories that describe boundary conditions and duality walls in four-dimensional N = 2 SCFTs, thus making the whole construction functorial with respect to cobordisms and gluing. CALT-68-2847 arXiv:1108.4389v1 [hep-th] 22 Aug 2011",
   "docinfo": {
    "Producer": "pdfTeX-1.40.10",
    "Creator": "TeX",
@@ -429,7 +435,7 @@
   {
    "kind": "figure",
    "number": "1",
-   "title": "(a) A cobordism M between C and C\u2032 gives rise to a domain wall (b) between 4d N = 2",
+   "title": "(a) A cobordism M between C and C′ gives rise to a domain wall (b) between 4d N = 2",
    "page": 4,
    "confidence": 0.9,
    "evidence": [
@@ -442,7 +448,7 @@
   {
    "kind": "figure",
    "number": "2",
-   "title": "(a) A 3-manifold M stretched along a \u2018neck\u2019 R \u00d7 C becomes a 4d N = 2 superconformal",
+   "title": "(a) A 3-manifold M stretched along a ‘neck’ R × C becomes a 4d N = 2 superconformal",
    "page": 5,
    "confidence": 0.9,
    "evidence": [
@@ -506,7 +512,7 @@
   {
    "kind": "figure",
    "number": "6",
-   "title": "Natural polarizations for a tetrahedron, with the thickened pairs of opposite edges corresponding to the \u201cposition\u201d coordinate",
+   "title": "Natural polarizations for a tetrahedron, with the thickened pairs of opposite edges corresponding to the “position” coordinate",
    "page": 11,
    "confidence": 0.9,
    "evidence": [
@@ -532,7 +538,7 @@
   {
    "kind": "figure",
    "number": "8",
-   "title": "Illustration of gluing at an internal edge, with CI = Z1 + Z\u2032",
+   "title": "Illustration of gluing at an internal edge, with CI = Z1 + Z′",
    "page": 12,
    "confidence": 0.7,
    "evidence": [
@@ -544,7 +550,7 @@
   {
    "kind": "figure",
    "number": "9",
-   "title": "Poisson bracket for external edges. Here {XE, XE\u2032}",
+   "title": "Poisson bracket for external edges. Here {XE, XE′}",
    "page": 14,
    "confidence": 0.7,
    "evidence": [
@@ -556,7 +562,7 @@
   {
    "kind": "figure",
    "number": "10",
-   "title": "\u2202\u2206as a fourpunctured sphere",
+   "title": "∂∆as a fourpunctured sphere",
    "page": 14,
    "confidence": 0.7,
    "evidence": [
@@ -605,7 +611,7 @@
   {
    "kind": "figure",
    "number": "14",
-   "title": "Gluing two tetrahedra, as indicated by calligraphic letters on the faces, to form the \ufb01gureeight knot complement. On the right is a map of the resulting torus cusp boundary, triangulated by Euclidean vertex triangles",
+   "title": "Gluing two tetrahedra, as indicated by calligraphic letters on the faces, to form the ﬁgureeight knot complement. On the right is a map of the resulting torus cusp boundary, triangulated by Euclidean vertex triangles",
    "page": 18,
    "confidence": 0.9,
    "evidence": [
@@ -618,7 +624,7 @@
   {
    "kind": "figure",
    "number": "15",
-   "title": "The 2\u20133 Pachner move",
+   "title": "The 2–3 Pachner move",
    "page": 19,
    "confidence": 0.9,
    "evidence": [
@@ -644,7 +650,7 @@
   {
    "kind": "figure",
    "number": "17",
-   "title": "The action of duality domain walls on boundary conditions. A duality transformation g \u2208Sp(2N, Z) maps a generalized Neumann boundary condition de\ufb01ned by coupling to a 3d theory",
+   "title": "The action of duality domain walls on boundary conditions. A duality transformation g ∈Sp(2N, Z) maps a generalized Neumann boundary condition deﬁned by coupling to a 3d theory",
    "page": 22,
    "confidence": 0.9,
    "evidence": [
@@ -657,7 +663,7 @@
   {
    "kind": "table",
    "number": "2",
-   "title": "Correspondence of symmetries in Nf = 1 SQED and the XYZ model. The designations \u201caxial\u201d and \u201ctopological\u201d in the XYZ model are only introduced for comparison to SQED",
+   "title": "Correspondence of symmetries in Nf = 1 SQED and the XYZ model. The designations “axial” and “topological” in the XYZ model are only introduced for comparison to SQED",
    "page": 26,
    "confidence": 0.8,
    "evidence": [
@@ -707,7 +713,7 @@
   {
    "kind": "figure",
    "number": "21",
-   "title": "The octahedron from \ufb01ve tetrahedra, two ways. Positions of the polarization \u03a0\u00d7 are",
+   "title": "The octahedron from ﬁve tetrahedra, two ways. Positions of the polarization Π× are",
    "page": 39,
    "confidence": 0.9,
    "evidence": [
@@ -720,7 +726,7 @@
   {
    "kind": "figure",
    "number": "22",
-   "title": "The torus cusp for the \ufb01gure-eight knot complement, triangulated into six tetrahedra. The cyclic order of edge parameters (z, z\u2032, z\u2032\u2032), etc., is always the same, so we only indicate one parameter per vertex triangle",
+   "title": "The torus cusp for the ﬁgure-eight knot complement, triangulated into six tetrahedra. The cyclic order of edge parameters (z, z′, z′′), etc., is always the same, so we only indicate one parameter per vertex triangle",
    "page": 40,
    "confidence": 0.9,
    "evidence": [
@@ -733,7 +739,7 @@
   {
    "kind": "figure",
    "number": "23",
-   "title": "Line operators in 4d becoming identi\ufb01ed in the boundary theory TM",
+   "title": "Line operators in 4d becoming identiﬁed in the boundary theory TM",
    "page": 53,
    "confidence": 0.9,
    "evidence": [
@@ -1173,9 +1179,10 @@
    "physical": 45,
    "label": "44",
    "source": "printed",
-   "confidence": 0.7,
+   "confidence": 0.85,
    "evidence": [
-    "printed"
+    "printed",
+    "contents"
    ]
   },
   {
@@ -1307,22 +1314,22 @@
    "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 2,
-   "n_chars": 1199,
-   "n_words": 175,
+   "page_end": 3,
+   "n_chars": 2078,
+   "n_words": 343,
    "label_start": null,
-   "label_end": "1"
+   "label_end": "2"
   },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
-   "page_start": 2,
+   "page_start": 3,
    "page_end": 8,
-   "n_chars": 14334,
-   "n_words": 2495,
-   "label_start": "1",
+   "n_chars": 13452,
+   "n_words": 2326,
+   "label_start": "2",
    "label_end": "7"
   },
   {
@@ -1331,22 +1338,22 @@
    "title": "Geometry of 3-manifolds",
    "level": 1,
    "page_start": 8,
-   "page_end": 8,
-   "n_chars": 91,
-   "n_words": 14,
+   "page_end": 9,
+   "n_chars": 3547,
+   "n_words": 592,
    "label_start": "7",
-   "label_end": "7"
+   "label_end": "8"
   },
   {
    "id": "sec-002-21-building-blocks",
    "number": "2.1",
    "title": "Building blocks",
    "level": 2,
-   "page_start": 8,
+   "page_start": 9,
    "page_end": 11,
-   "n_chars": 8702,
-   "n_words": 1530,
-   "label_start": "7",
+   "n_chars": 5321,
+   "n_words": 961,
+   "label_start": "8",
    "label_end": "10"
   },
   {
@@ -1404,13 +1411,25 @@
    "level": 1,
    "page_start": 20,
    "page_end": 21,
-   "n_chars": 443,
-   "n_words": 80,
+   "n_chars": 382,
+   "n_words": 68,
    "label_start": "19",
    "label_end": "20"
   },
   {
-   "id": "sec-008-311-generalities",
+   "id": "sec-008-31-an-sp2nmathbb-z-action-on-3d-cfts-with-u1n-fl",
+   "number": "3.1",
+   "title": "An $Sp(2N,{\\mathbb Z})$ action on 3d CFTs with $U(1)^N$ flavor symmetry",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "20",
+   "label_end": "20"
+  },
+  {
+   "id": "sec-009-311-generalities",
    "number": "3.1.1",
    "title": "Generalities",
    "level": 3,
@@ -1422,19 +1441,103 @@
    "label_end": "22"
   },
   {
-   "id": "sec-009-312-adding-supersymmetry",
+   "id": "sec-010-312-adding-supersymmetry",
    "number": "3.1.2",
    "title": "Adding supersymmetry",
    "level": 3,
    "page_start": 23,
-   "page_end": 37,
-   "n_chars": 37026,
-   "n_words": 7024,
+   "page_end": 24,
+   "n_chars": 2896,
+   "n_words": 535,
    "label_start": "22",
+   "label_end": "23"
+  },
+  {
+   "id": "sec-011-32-a-mathbb-z-2-action-on-3d-mathcaln2-theories",
+   "number": "3.2",
+   "title": "A ${\\mathbb Z}_2$ action on 3d $\\mathcal{N}=2$ theories with a chiral operator",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 3183,
+   "n_words": 596,
+   "label_start": "23",
+   "label_end": "24"
+  },
+  {
+   "id": "sec-012-33-useful-mathcaln2-mirror-symmetries",
+   "number": "3.3",
+   "title": "Useful $\\mathcal{N}=2$ mirror symmetries",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 30,
+   "n_chars": 11432,
+   "n_words": 2198,
+   "label_start": "24",
+   "label_end": "29"
+  },
+  {
+   "id": "sec-013-4-construction-of-t-m",
+   "number": "4",
+   "title": "Construction of $T_M$",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 30,
+   "n_chars": 508,
+   "n_words": 93,
+   "label_start": "29",
+   "label_end": "29"
+  },
+  {
+   "id": "sec-014-41-definition",
+   "number": "4.1",
+   "title": "Definition",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 33,
+   "n_chars": 7968,
+   "n_words": 1457,
+   "label_start": "29",
+   "label_end": "32"
+  },
+  {
+   "id": "sec-015-42-the-bipyramid-and-the-2--3-move",
+   "number": "4.2",
+   "title": "The bipyramid and the 2--3 move",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 36,
+   "n_chars": 6879,
+   "n_words": 1438,
+   "label_start": "32",
+   "label_end": "35"
+  },
+  {
+   "id": "sec-016-43-the-flip",
+   "number": "4.3",
+   "title": "The flip",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 37,
+   "n_chars": 1229,
+   "n_words": 214,
+   "label_start": "35",
    "label_end": "36"
   },
   {
-   "id": "sec-010-45-the-octahedron",
+   "id": "sec-017-44-t-m-as-a-boundary-condition",
+   "number": "4.4",
+   "title": "$T_M$ as a boundary condition",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 37,
+   "n_chars": 2715,
+   "n_words": 450,
+   "label_start": "36",
+   "label_end": "36"
+  },
+  {
+   "id": "sec-018-45-the-octahedron",
    "number": "4.5",
    "title": "The octahedron",
    "level": 2,
@@ -1446,19 +1549,19 @@
    "label_end": "38"
   },
   {
-   "id": "sec-011-46-figure-eight-knot",
+   "id": "sec-019-46-figure-eight-knot",
    "number": "4.6",
    "title": "Figure-eight knot",
    "level": 2,
    "page_start": 39,
    "page_end": 42,
-   "n_chars": 7773,
-   "n_words": 1437,
+   "n_chars": 7632,
+   "n_words": 1333,
    "label_start": "38",
    "label_end": "41"
   },
   {
-   "id": "sec-012-51-the-tetrahedron",
+   "id": "sec-020-51-the-tetrahedron",
    "number": "5.1",
    "title": "The tetrahedron",
    "level": 2,
@@ -1470,19 +1573,31 @@
    "label_end": "43"
   },
   {
-   "id": "sec-013-52-the-bipyramid",
+   "id": "sec-021-52-the-bipyramid",
    "number": "5.2",
    "title": "The bipyramid",
    "level": 2,
    "page_start": 44,
-   "page_end": 47,
-   "n_chars": 6141,
-   "n_words": 1128,
+   "page_end": 45,
+   "n_chars": 2326,
+   "n_words": 468,
    "label_start": "43",
+   "label_end": "44"
+  },
+  {
+   "id": "sec-022-6-s3-b-partition-functions",
+   "number": "6",
+   "title": "$S^3_b$ partition functions",
+   "level": 1,
+   "page_start": 45,
+   "page_end": 47,
+   "n_chars": 3792,
+   "n_words": 657,
+   "label_start": "44",
    "label_end": "46"
   },
   {
-   "id": "sec-014-61-chirals-and-tetrahedra",
+   "id": "sec-023-61-chirals-and-tetrahedra",
    "number": "6.1",
    "title": "Chirals and tetrahedra",
    "level": 2,
@@ -1494,7 +1609,7 @@
    "label_end": "47"
   },
   {
-   "id": "sec-015-62-gluing-and-bipyramids",
+   "id": "sec-024-62-gluing-and-bipyramids",
    "number": "6.2",
    "title": "Gluing and bipyramids",
    "level": 2,
@@ -1506,15 +1621,27 @@
    "label_end": "49"
   },
   {
-   "id": "sec-016-63-figure-eight-knot",
+   "id": "sec-025-63-figure-eight-knot",
    "number": "6.3",
    "title": "Figure-eight knot",
    "level": 2,
    "page_start": 50,
-   "page_end": 58,
-   "n_chars": 19677,
-   "n_words": 3248,
+   "page_end": 52,
+   "n_chars": 2555,
+   "n_words": 463,
    "label_start": "49",
+   "label_end": "51"
+  },
+  {
+   "id": "sec-026-7-line-operators-and-q--difference-equations",
+   "number": "7",
+   "title": "Line operators and $q$--difference equations",
+   "level": 1,
+   "page_start": 52,
+   "page_end": 58,
+   "n_chars": 17077,
+   "n_words": 2779,
+   "label_start": "51",
    "label_end": "57"
   }
  ],
@@ -1524,7 +1651,7 @@
   "toc_entries": 29,
   "toc_inferred_entries": 29,
   "toc_inferred_mean_confidence": 1.0,
-  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_empty_share": 0.037,
   "toc_inferred_method": "latex",
   "figure_entries": 26,
   "figure_sequence_gaps": [],
@@ -1534,10 +1661,8 @@
   },
   "toc_alignment": {
    "listed_not_found": {
-    "count": 1,
-    "items": [
-     "S3 b partition functions"
-    ]
+    "count": 0,
+    "items": []
    },
    "found_not_listed": {
     "count": 2,
@@ -1551,13 +1676,14 @@
     "items": []
    }
   },
-  "sections": 18,
-  "chars_total": 139024,
+  "sections": 28,
+  "chars_total": 138610,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "toolbox.tex",
    "tex_sections": 29,
-   "overlaid": 14,
+   "overlaid": 25,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1573,21 +1699,23 @@
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": 0.99,
-     "coverage_ratio": 0.969,
+     "coverage_ratio": 0.998,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-geometry-of-3-manifolds",
      "title": "Geometry of 3-manifolds",
-     "prose_ratio": 0.06,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.83,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
      "id": "sec-002-21-building-blocks",
      "title": "Building blocks",
-     "prose_ratio": 0.946,
-     "coverage_ratio": 0.641,
+     "prose_ratio": 0.941,
+     "coverage_ratio": 0.89,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -1626,13 +1754,19 @@
     {
      "id": "sec-007-3-operations-on-3d-abelian-theories",
      "title": "Operations on 3d abelian theories",
-     "prose_ratio": 0.9,
-     "coverage_ratio": 0.818,
+     "prose_ratio": 0.92,
+     "coverage_ratio": 0.793,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-008-311-generalities",
+     "id": "sec-008-31-an-sp2nmathbb-z-action-on-3d-cfts-with-u1n-fl",
+     "title": "An $Sp(2N,{\\mathbb Z})$ action on 3d CFTs with $U(1)^N$ flavor symmetry",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-009-311-generalities",
      "title": "Generalities",
      "prose_ratio": 0.964,
      "coverage_ratio": 1.0,
@@ -1640,15 +1774,71 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-312-adding-supersymmetry",
+     "id": "sec-010-312-adding-supersymmetry",
      "title": "Adding supersymmetry",
-     "prose_ratio": 0.956,
+     "prose_ratio": 0.959,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-32-a-mathbb-z-2-action-on-3d-mathcaln2-theories",
+     "title": "A ${\\mathbb Z}_2$ action on 3d $\\mathcal{N}=2$ theories with a chiral operator",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-33-useful-mathcaln2-mirror-symmetries",
+     "title": "Useful $\\mathcal{N}=2$ mirror symmetries",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-4-construction-of-t-m",
+     "title": "Construction of $T_M$",
+     "prose_ratio": 0.951,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-41-definition",
+     "title": "Definition",
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-42-the-bipyramid-and-the-2--3-move",
+     "title": "The bipyramid and the 2--3 move",
+     "prose_ratio": 0.884,
      "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-010-45-the-octahedron",
+     "id": "sec-016-43-the-flip",
+     "title": "The flip",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.727,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-017-44-t-m-as-a-boundary-condition",
+     "title": "$T_M$ as a boundary condition",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-018-45-the-octahedron",
      "title": "The octahedron",
      "prose_ratio": 0.979,
      "coverage_ratio": 0.995,
@@ -1656,15 +1846,15 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-46-figure-eight-knot",
+     "id": "sec-019-46-figure-eight-knot",
      "title": "Figure-eight knot",
      "prose_ratio": 0.948,
-     "coverage_ratio": 0.991,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-012-51-the-tetrahedron",
+     "id": "sec-020-51-the-tetrahedron",
      "title": "The tetrahedron",
      "prose_ratio": 0.957,
      "coverage_ratio": 0.942,
@@ -1672,15 +1862,23 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-013-52-the-bipyramid",
+     "id": "sec-021-52-the-bipyramid",
      "title": "The bipyramid",
-     "prose_ratio": 0.925,
-     "coverage_ratio": 0.996,
+     "prose_ratio": 0.909,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-014-61-chirals-and-tetrahedra",
+     "id": "sec-022-6-s3-b-partition-functions",
+     "title": "$S^3_b$ partition functions",
+     "prose_ratio": 0.934,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-023-61-chirals-and-tetrahedra",
      "title": "Chirals and tetrahedra",
      "prose_ratio": 0.941,
      "coverage_ratio": 1.0,
@@ -1688,16 +1886,26 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-015-62-gluing-and-bipyramids",
+     "id": "sec-024-62-gluing-and-bipyramids",
      "title": "Gluing and bipyramids",
-     "prose_ratio": 0.394,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.687,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-016-63-figure-eight-knot",
+     "id": "sec-025-63-figure-eight-knot",
      "title": "Figure-eight knot",
-     "prose_ratio": 0.545,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "prose_ratio": 0.227,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-026-7-line-operators-and-q--difference-equations",
+     "title": "Line operators and $q$--difference equations",
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.609,
+     "result": "overlaid",
+     "converter": "pandoc"
     }
    ]
   }

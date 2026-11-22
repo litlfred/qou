@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2501.00914v2",
  "source_sha256": "d94bd6edf8544d4a",
- "brief": "L-SPACES AND KNOT TRACES — There has been a great deal of interest in understanding which knots are characterized by which of their Dehn surgeries.",
- "extended": "**L-SPACES AND KNOT TRACES**\n\n*JOHN A. BALDWIN AND STEVEN SIVEK*\n\n37 pp, 21 sections.\n\n**Abstract.** There has been a great deal of interest in understanding which knots are characterized by which of their Dehn surgeries. We study a 4-dimensional version of this question: which knots are determined by which of their traces? We prove several results that are in stark contrast with what is known about characterizing surgeries, most notably that the 0-trace detects every L-space knot. Our proof combines tools in Heegaard Floer homology with results about surface homeomorphisms and their dynamics. We also consider nonzero traces, proving for instance that each positive torus knot is determined by itsn-trace for anyn≤0, whereas no non-positive integer is known to be a characterizing slope for any positive torus knot besides the right-handed trefoil.\n\n**Outline.** 1 Introduction; 1.1 Nonzero traces; 1.2 Questions; 1.3 Conventions; 1.4 Organization; 1.5 Acknowledgements; 2 Zero-surgeries on ffpf knots; 2.1 Surface homeomorphisms and fibered knots; 2.2 Fixed points and ffpf knots; 2.3 Zero-surgeries on ffpf knots; 3 Traces and large surgeries; 3.1 Topological preliminaries; 3.3 The mod 2 grading; 3.4 Zero-traces of L-space knots; 4 Traces and rational surgeries; 5 Negative traces and positive torus knots; 5.2 Satellite knots; 5.3 Hyperbolic knots\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.2: IfKis an L-space knot thenX 0(K)detectsK.\n- Theorem 1.2: follows from a combination of two results which may each be of independent interest.\n- Theorem 1.3: IfKis an L-space knot andX n(J)∼=Xn(K), thenJis also an L-space knot and\n- Theorem 1.4: IfJandKare L-space knots such thatS 3\n- Theorem 1.4: relies on a deep relationship between the symplectic Floer homology of a surface dif-\n- Theorem 1.5: IfKis a positive torus knot andn≤0, thenX n(K)detectsK.",
+ "brief": "L-spaces and knot traces — There has been a great deal of interest in understanding which knots are characterized by which of their Dehn surgeries.",
+ "extended": "**L-spaces and knot traces**\n\n*JOHN A. BALDWIN AND STEVEN SIVEK*\n\n37 pp, 26 sections.\n\n**Abstract.** There has been a great deal of interest in understanding which knots are characterized by which of their Dehn surgeries. We study a 4-dimensional version of this question: which knots are determined by which of their traces? We prove several results that are in stark contrast with what is known about characterizing surgeries, most notably that the 0-trace detects every L-space knot. Our proof combines tools in Heegaard Floer homology with results about surface homeomorphisms and their dynamics. We also consider nonzero traces, proving for instance that each positive torus knot is determined by its n-trace for any n ≤0, whereas no non-positive integer is known to be a characterizing slope for any positive torus knot besides the right-handed trefoil.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Nonzero traces; 1.2 Questions; 1.3 Conventions; 1.4 Organization; 1.5 Acknowledgements; 2 Zero-surgeries on ffpf knots; 2.1 Surface homeomorphisms and fibered knots; 2.2 Fixed points and ffpf knots; 2.3 Zero-surgeries on ffpf knots; 3 Traces and large surgeries; 3.1 Topological preliminaries; 3.2 The span of the relative invariants of the; 3.3 The mod 2 grading; 3.4 Zero-traces of L-space knots; 4 Traces and rational surgeries; 5 Negative traces and positive torus knots",
  "tokens": {
   "brief": 36,
-  "extended": 469
+  "extended": 345
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -67,50 +72,70 @@
   {
    "id": "sec-011-31-topological-preliminaries",
    "title": "Topological preliminaries",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-012-32-the-span-of-the-relative-invariants-of-the-n",
+   "title": "The span of the relative invariants of the n-trace",
    "pages": "14-17"
   },
   {
-   "id": "sec-012-33-the-mod-2-grading",
+   "id": "sec-013-33-the-mod-2-grading",
    "title": "The mod 2 grading",
    "pages": "17-19"
   },
   {
-   "id": "sec-013-34-zero-traces-of-l-space-knots",
+   "id": "sec-014-34-zero-traces-of-l-space-knots",
    "title": "Zero-traces of L-space knots",
    "pages": "19-19"
   },
   {
-   "id": "sec-014-4-traces-and-rational-surgeries",
+   "id": "sec-015-4-traces-and-rational-surgeries",
    "title": "Traces and rational surgeries",
    "pages": "19-23"
   },
   {
-   "id": "sec-015-5-negative-traces-and-positive-torus-knots",
+   "id": "sec-016-5-negative-traces-and-positive-torus-knots",
    "title": "Negative traces and positive torus knots",
    "pages": "23-24"
   },
   {
-   "id": "sec-016-52-satellite-knots",
+   "id": "sec-017-52-satellite-knots",
    "title": "Satellite knots",
    "pages": "24-27"
   },
   {
-   "id": "sec-017-53-hyperbolic-knots",
+   "id": "sec-018-53-hyperbolic-knots",
    "title": "Hyperbolic knots",
    "pages": "27-28"
   },
   {
-   "id": "sec-018-61-alexander-polynomials-of-l-space-knots",
+   "id": "sec-019-6-positive-traces-and-t22g1-torus-knots",
+   "title": "Positive traces and T2,2g+1 torus knots",
+   "pages": "28-28"
+  },
+  {
+   "id": "sec-020-61-alexander-polynomials-of-l-space-knots",
    "title": "Alexander polynomials of L-space knots",
-   "pages": "28-31"
+   "pages": "28-30"
   },
   {
-   "id": "sec-019-63-traces-that-detect-knot-floer-homology",
+   "id": "sec-021-62-knots-with-the-same-knot-floer-homology-as-t2",
+   "title": "Knots with the same knot Floer homology as T2,2g+1",
+   "pages": "30-31"
+  },
+  {
+   "id": "sec-022-63-traces-that-detect-knot-floer-homology",
    "title": "Traces that detect knot Floer homology",
-   "pages": "31-34"
+   "pages": "31-32"
   },
   {
-   "id": "sec-020-references",
+   "id": "sec-023-appendix-a-non-characterizing-slopes-for-torus-k",
+   "title": "Appendix A. Non-characterizing slopes for torus knots",
+   "pages": "32-34"
+  },
+  {
+   "id": "sec-024-references",
    "title": "References",
    "pages": "34-37"
   }
@@ -119,8 +144,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

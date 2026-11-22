@@ -1,0 +1,54 @@
+1734 David Jarossay
+
+Lemma 3A.3. Letd, M €N*; let Ay, ..., Ag € R[T] be polynomials, with R C Q, and T,, ..., Tg formal
+variables. There exist coefficients C3, _.5,(M) € R[T] such that we have
+dq d yi
+[1a 4iG= » C18) || ear
+O<i) <--<dy<M-1i=1 Vili +o; <deg(A1)+---+deg A; i=l >!
+(Ui, ...Ua)€Q(T1,...,Ta)4 such that
+Uj=7,
+wie{l,....d-1},Ui41 {Ui Ti+1.-Ti+1}
+81,---5a20
+
+Proof. (a) For any n € N*, m EN, we have
+
+a [T™ T™ a
+T— =m —n .
+aT ) (T—1)" (T-)* (T—-p
+
+Thus, by induction on a, for all a e N*,
+
+a a T™ Tmt
+(=) =D mon Vo (n= 14+ Da
+
+Moreover we have
+
+0<i<W-1 0< -1
+Whence
+a T! M
+via __ 1
+yo Tv =O Gr (7 — 1).
+0<i<M-1 1=0
+
+This gives the result for d = | by linearity with respect to Ay.
+
+(b) Let us prove the result by induction on d. Assume that A; = ay Ug, UV! with Ug, € Q. We have,
+for all a; € {0,..., deg Aj},
+
+> Tae [I Aj (0i)
+0<0) <--<tg<M-1
+~ 4 ~ d ~
+=D VI Nap on > (cir [0 4) -[] 1 an),
+i=3 i=2
+
+0<i2 <---<iy<M—l
+Whence the result by induction and by linearity. oO
+
+Combining Lemmas 3A.1, 3A.2 and 3A.3 we can now sum over all the u;, r; and v; and write an
+expression of hare ((n;)a3 (&:)a4+1) as a function of @ as we wanted.
+
+Proposition 3A.4. Let a harmonic word w = ((nj)a; (&)a41). Let us fix (li)a € NGA
+Let R be the ring of Lemma 3A.2. For every word w' over eguyy, there exists a polynomial Py wy (1;)q €
+
+~ . d 7 .
+RLQ, A, (Bre )i<ish+--+letd, 1<m<i+1, &euy(K)] with degree at most )~;_, 1; +d in Q, and with total

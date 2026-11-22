@@ -1,0 +1,60 @@
+Chapter 4 Regularization Methods for Nuclear Lattice Effective Field Theory
+
+and the respective pion propagator reads
+
+3 -1
+> 2
+D,. (B) = ! + 2 >) cote tn . (4.10)
+In 4 “T
+Furthermore, we introduce a Gaussian smearing
+
+“3 1 v(p
+1(P)= Lew|-6 2 (4.11)
+
+to 2
+
+with a stretched O(a’) improved discretization
+
+3 3
+¥(p) = 2) Ved ey cos(kp)) = B°[1+0(p')] . (4.12)
+
+k=0 [=1
+
+where the error estimation is valid for N = 0 and the coefficients given in Tab. 4.1. fo is necessary
+for normalization reasons and is given by fo = (1/ LD) x B exp[—bv(p )/2]. This smearing modifies the
+contact interaction in momentum space according to
+
++
+
+1 j + +
+Hoon = 5 Lf) Cp" (B)p* “(B) + Ci Dei “BYP; (P| - (4.13)
+
+Such a smearing was introduced in Ref. [32] to reduce the effect of high momentum contributions and
+remove the clustering instability of the contact interaction. As the leading order (LO) contribution is
+iterated to all orders, such a smearing sums up some of the higher order corrections. All other higher
+order corrections are then treated in perturbation theory (as long as the lattice spacing is sufficiently
+large). Here, we concentrate on the lowest order and leave the discussion of the treatment of the higher
+order effects to Chap. 5. In any case, the smearing of the LO contact terms is a useful tool to improve the
+description of the S-waves in a very efficient way without including all higher-order terms in a chiral
+counting scheme. In general, it is not necessary that the smeared contact interactions for the 's o- and
+35 ,-channel have the same smearing function, f(f). However, this is important for auxiliary-field Monte
+Carlo lattice simulations. Without the same smearing function for the two channels, the Monte Carlo
+simulation would have a far bigger problem with sign oscillations. For this reason we consider only one
+smearing function for both channels. The fact that we can approximately describe the effective ranges for
+both channels using only one smearing function can be viewed as a feature of the approximate SU(4)
+Wigner symmetry of the two-nucleon interaction.
+
+In continuum chiral EFT it is necessary to regularize the one-pion-exchange potential due to its
+singularity at very small distances. We will show that such a singularity also appears for small lattice
+spacings and we will regularize it in position space as suggested in Ref. [22]
+
+92\7
+f=|1-e(-5) , (4.14)
+
+where the denominator is motivated by F,{exp[-7 /(2b)]} exp(—bq” /2). Here, b is a fitting parameter
+while n is a free parameter.
+
+In the following we study the two-nucleon system for different lattice spacings. Therefore we use the
+finite-volume formulas for the binding energy and the effective range expansion given by Liischer [84,
+
+42

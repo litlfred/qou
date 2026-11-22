@@ -2,35 +2,29 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/thm-topological-mass",
+  "@id": "papers/quantum-observable-universe/blocks/conj-topological-mass",
   "@type": [
-    "folio-assistant-core:Theorem",
+    "folio-assistant-sci:Conjecture",
     "doco:Section"
   ],
-  "label": "thm:topological-mass",
-  "kind": "theorem",
+  "label": "conj:topological-mass",
+  "kind": "conjecture",
   "title": "Topological Decomposition of Mass",
   "uses": [
     "papers/quantum-observable-universe/blocks/def-mass-identity",
     "papers/quantum-observable-universe/blocks/def-brane-boundary",
-    "papers/quantum-observable-universe/blocks/prop-descent-eigenspaces"
-  ],
-  "proofs": [
-    "papers/quantum-observable-universe/blocks/prf-topological-mass-categorical",
-    "papers/quantum-observable-universe/blocks/prf-topological-mass"
-  ],
-  "examples": [
-    "papers/quantum-observable-universe/blocks/ex-topological-mass-su2"
+    "papers/quantum-observable-universe/blocks/prop-descent-eigenspaces",
+    "papers/quantum-observable-universe/blocks/prop-topological-mass-upper-bound"
   ],
   "tags": [
     "mass",
     "topological-decomposition",
     "descent-involution"
   ],
-  "leanRef": "qou:QOU.Torsion.mass_decomposition_categorical",
   "text": "topological-mass.md",
   "leanSource": "topological-mass.lean",
   "provenance": "authored"

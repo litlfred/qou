@@ -9,13 +9,18 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Acknowledgments",
-  "pageStart": 22,
-  "pageEnd": 22,
+  "title": "Linking of Foliations and Brownian Motion",
+  "pageStart": 15,
+  "pageEnd": 18,
   "contains": [
-    "library/helicity03mmj/blocks/prose-sec-011"
+    "library/helicity03mmj/blocks/prose-sec-011",
+    "library/helicity03mmj/blocks/rem-sec-011-01",
+    "library/helicity03mmj/blocks/rem-sec-011-02",
+    "library/helicity03mmj/blocks/thm-sec-011-03",
+    "library/helicity03mmj/blocks/thm-sec-011-04",
+    "library/helicity03mmj/blocks/rem-sec-011-05"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/helicity03mmj",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/helicity03mmj",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/helicity03mmj/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/helicity03mmj/manifest.jsonld",
   "provenance": "ingested"
 }

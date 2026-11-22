@@ -1,4 +1,5 @@
 import Mathlib.NumberTheory.DirichletCharacter.Basic
+import Mathlib.NumberTheory.ZetaValues
 import QOU.Infra.Polylogarithm
 
 /-!
@@ -49,16 +50,49 @@ class DirichletLClass (K : ℕ) (chi : ℕ → ℝ) where
 noncomputable def chi4 : ℕ → ℝ := fun n =>
   if n % 4 = 1 then 1 else if n % 4 = 3 then -1 else 0
 
-/-- **Placeholder, not the identity.** Intended: the classical
-    `β(3) = L(χ_4, 3)`, whose proof from Theorem A (via `Im Li_3(i) = β(3)`)
-    is in `prop:cyclotomic-l-value-decomposition`.
+/-- **`β(3) = π³/32`**, stated as the convergent Dirichlet series
+    `Σ_{n ≥ 1} χ₄(n) / n³ = π³ / 32`, i.e. `L(χ₄, 3) = π³/32` (Euler).
 
-    Actually `True`, so it is inhabited by `trivial` and asserts nothing —
-    the identity is *named* here, not stated. Nothing in the corpus references
-    this declaration, so it is inert rather than harmful, but do not read a use
-    of it as a use of the identity. Stating it properly needs `β` and `L(χ, s)`
-    as Mathlib objects; neither is in scope in this file, which is why the
-    placeholder exists. Tracked as `qou-35zi`. -/
-def beta3IsLChi4_3 : Prop := True   -- placeholder for axiomatic class
+    Until 2026-11-15 this was `def beta3IsLChi4_3 : Prop := True`, on the
+    stated ground that `β` and `L(χ, s)` are not Mathlib objects here.  The
+    series needs neither: it is a `HasSum` over `ℕ`, and the `n = 0` term is
+    `χ₄(0)/0³ = 0/0 = 0` in Lean's division, so it contributes nothing.
+    Bean `qou-35zi`. -/
+def beta3IsLChi4_3 : Prop :=
+  HasSum (fun n : ℕ => chi4 n / (n : ℝ) ^ 3) (Real.pi ^ 3 / 32)
+
+/-- `χ₄` read off the sine: `sin(2πn/4) = χ₄(n)`. -/
+theorem sin_quarter_eq_chi4 (n : ℕ) :
+    Real.sin (2 * Real.pi * n * (1/4 : ℝ)) = chi4 n := by
+  have key : (2 * Real.pi * n * (1/4 : ℝ)) =
+      ((n % 4 : ℕ) : ℝ) * (Real.pi / 2) + (((n / 4 : ℕ) : ℤ) : ℝ) * (2 * Real.pi) := by
+    have h := Nat.mod_add_div n 4
+    have : (n : ℝ) = ((n % 4 : ℕ) : ℝ) + 4 * ((n / 4 : ℕ) : ℝ) := by exact_mod_cast h.symm
+    rw [Int.cast_natCast, this]; ring
+  rw [key, Real.sin_add_int_mul_two_pi]
+  have hlt : n % 4 < 4 := Nat.mod_lt _ (by norm_num)
+  unfold chi4
+  interval_cases h : n % 4 <;> simp
+  · -- 2 · (π/2) = π
+    rw [show (2:ℝ) * (Real.pi / 2) = Real.pi by ring]; simp
+  · rw [show (3:ℝ) * (Real.pi / 2) = Real.pi + Real.pi / 2 by ring, Real.sin_add]; simp
+
+/-- **`β(3) = π³/32`, proved.**  From Mathlib's Fourier series of the
+    Bernoulli polynomial `B₃` (`hasSum_one_div_nat_pow_mul_sin`, `k = 1`) at
+    `x = 1/4`: `B₃(1/4) = 3/64`, and `sin(2πn/4) = χ₄(n)`. -/
+theorem beta3IsLChi4_3_holds : beta3IsLChi4_3 := by
+  unfold beta3IsLChi4_3
+  have h := hasSum_one_div_nat_pow_mul_sin (k := 1) one_ne_zero
+    (x := (1/4 : ℝ)) ⟨by norm_num, by norm_num⟩
+  have hb : Polynomial.eval (1/4 : ℝ)
+      (Polynomial.map (algebraMap ℚ ℝ) (Polynomial.bernoulli 3)) = 3/64 := by
+    simp [Polynomial.bernoulli, Finset.sum_range_succ, bernoulli, bernoulli'_three, bernoulli'_two,
+      bernoulli'_one, bernoulli'_zero]
+    norm_num
+  norm_num [hb] at h
+  convert h using 1
+  · funext n
+    rw [← sin_quarter_eq_chi4 n]; ring_nf
+  · simp [Nat.factorial]; ring
 
 end QOU.Infra.DirichletL

@@ -3,16 +3,21 @@
  "doc_id": "arxiv-2008.09788v2",
  "source_sha256": "460f4f5432cb1f0c",
  "brief": "NONSTANDARD ANALYSIS, DEFORMATION QUANTIZATION AND SOME LOGICAL ASPECTS OF (NON)COMMUTATIVE ALGEBRAIC GEOMETRY — This paper surveys results related to well-known works of B. Plotkin and V.",
- "extended": "**NONSTANDARD ANALYSIS, DEFORMATION QUANTIZATION AND SOME LOGICAL ASPECTS OF (NON)COMMUTATIVE ALGEBRAIC GEOMETRY**\n\n*ALEXEI KANEL-BELOV, ALEXEI CHILIKOV, ILYA IVANOV-POGODAEV, SERGEY MALEV*\n\n31 pp, 7 sections.\n\n**Abstract.** This paper surveys results related to well-known works of B. Plotkin and V. Remeslennikov on the edge of algebra, logic and geomet ry. We start from a brief review of the paper and motivations. The ﬁrst section s deal with model theory. In Section 2.1 we describe the geometric equivalenc e, the elementary equiv- alence, and the isotypicity of algebras. We look at these not ions from the positions of universal algebraic geometry and make emphasis on the cas es of the ﬁrst order rigidity. In this setting Plotkin’s problem on the structur e of automorphisms of (auto)endomorphisms of free objects, and auto-equivalenc e of categories is pretty natural and important. Section 2.2 is dedicated to particul ar cases of Plotkin’s problem. Section 2.3 is devoted to Plotkin’s problem for aut omorphisms of the group of polynomial symplectomorphisms.\n\n**Outline.** 1 Introduction; 2 Model-theoretical aspects; 2.1 Algebraic geometry over algebraic systems; 2.3 On the independence of the B-KK isomorphis; 3 Algorithmic aspects of algebraic geometry; 3.2 On the algorithmic undecidability of the e; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.9: Let V ar(H1) = V ar(H2) = Θ . Let Θ be one of the following varieties\n- Theorem 2.15: We will consider the following cases\n- Theorem 2.16: We will consider the following cases.\n- Theorem 2.21: Algebras H1 and H2 are LG-equivalent if and only if they are LG-\n- Theorem 2.24: We will consider the following cases of rigidity:\n- Theorem: was explained just afte r this proposition. Reduction",
+ "extended": "**NONSTANDARD ANALYSIS, DEFORMATION QUANTIZATION AND SOME LOGICAL ASPECTS OF (NON)COMMUTATIVE ALGEBRAIC GEOMETRY**\n\n*ALEXEI KANEL-BELOV, ALEXEI CHILIKOV, ILYA IVANOV-POGODAEV, SERGEY MALEV*\n\n31 pp, 10 sections.\n\n**Abstract.** This paper surveys results related to well-known works of B. Plotkin and V. Remeslennikov on the edge of algebra, logic and geometry. We start from a brief review of the paper and motivations. The ﬁrst sections deal with model theory. In Section 2.1 we describe the geometric equivalence, the elementary equiv- alence, and the isotypicity of algebras. We look at these notions from the positions of universal algebraic geometry and make emphasis on the cases of the ﬁrst order rigidity. In this setting Plotkin’s problem on the structure of automorphisms of (auto)endomorphisms of free objects, and auto-equivalence of categories is pretty natural and important. Section 2.2 is dedicated to particular cases of Plotkin’s problem. Section 2.3 is devoted to Plotkin’s problem for automorphisms of the group of polynomial symplectomorphisms.\n\n**Outline.** Front matter; 1 Introduction; 2 Model-theoretical aspects; 2.1 Algebraic geometry over algebraic systems; 2.2 Plotkin's problem: automorphisms of endomo; 2.3 On the independence of the B-KK isomorphis; 3 Algorithmic aspects of algebraic geometry; 3.1 Finite Gröbner basis algebras with unsolva; 3.2 On the algorithmic undecidability of the e; References",
  "tokens": {
   "brief": 47,
-  "extended": 445
+  "extended": 358
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-5"
+   "pages": "2-5"
   },
   {
    "id": "sec-001-2-model-theoretical-aspects",
@@ -25,22 +30,32 @@
    "pages": "5-13"
   },
   {
-   "id": "sec-003-23-on-the-independence-of-the-b-kk-isomorphism-o",
+   "id": "sec-003-22-plotkins-problem-automorphisms-of-endomorphis",
+   "title": "Plotkin's problem: automorphisms of endomorphism semigroups and groups of polynomial automorphisms",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-004-23-on-the-independence-of-the-b-kk-isomorphism-o",
    "title": "On the independence of the B-KK isomorphism of infinite prime and Plotkin conjecture for symplectomorphisms",
    "pages": "13-23"
   },
   {
-   "id": "sec-004-3-algorithmic-aspects-of-algebraic-geometry",
+   "id": "sec-005-3-algorithmic-aspects-of-algebraic-geometry",
    "title": "Algorithmic aspects of algebraic geometry",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-006-31-finite-gröbner-basis-algebras-with-unsolvable",
+   "title": "Finite Gröbner basis algebras with unsolvable nilpotency problem and zero divisors problem",
    "pages": "23-25"
   },
   {
-   "id": "sec-005-32-on-the-algorithmic-undecidability-of-the-embe",
+   "id": "sec-007-32-on-the-algorithmic-undecidability-of-the-embe",
    "title": "On the algorithmic undecidability of the embeddability problem for algebraic varieties over a field of characteristic zero",
    "pages": "25-28"
   },
   {
-   "id": "sec-006-references",
+   "id": "sec-008-references",
    "title": "References",
    "pages": "28-31"
   }
@@ -49,8 +64,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

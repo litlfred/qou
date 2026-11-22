@@ -1,0 +1,47 @@
+162 J.J. Graham and G.I. Lehrer
+
+to the pair (s,N) € P where N = Nx is the nilpotent Jordan matriz
+corresponding to the 2-step partition (n — k,k) and s is the diagonal
+matriz diag(a,aq~?,...,aq~("+*-?), b, bq7?,... ,bg~("-*-?)), where the
+parameters a,b and k are given by
+n—t
+k=——
+2
+
+(5.10) a =(-1)"*azq2 *+t-2)
+
+b =(-1)"taz71q3(™-t-2)
+
+Some remarks concerning the proof. We begin by noting (see [1,
+Theorem 3.2, p.798]) that M,,n is equivalent in T'(H4(q)) to an induced
+module, which has an easy characterisation [18, (9.3)] in terms of a gen-
+erating vector. One then shows that when the pair (q, z) is generic (see
+[18, (8.1)] for a definition; it suffices that there be no non-trivial polyno-
+mial F such that F(q,z) = 0) then 02W;,,(n) is actually isomorphic to
+the induced module. Finally a number-theoretic specialisation argument
+is used to prove the result in general.
+
+The key to the proof is the treatment of the generic case. The
+heart of the proof in this case is the determination of the characters
+of the algebra U(n), i.e. the simultaneous eigenvalues of the elements
+X;, on 6%,W,,,(n), or equivalently, on ~W;,,(n). For this, we use the
+identification ¥34W,,2(n) = £5 ,,W2(n) as in (5.5), where the parameters
+are as stated there. Now to analyse the action of the X; on £,,Wi(n),
+
+we start by observing that X,X2...X, = V” is in the centre of H(q)
+(4.2(v)), and acts on pW,,,(n) as a scalar (since 7,7 acts on W,,z(n) as
+a scalar), which may be easily computed. We now use the filtration 2.12
+of W;(n) to obtain one for ~3W;,.(n) = €3,,W2(n), noting that by the
+above argument, X,X2...X; acts via a (known) scalar on the i** term of
+the filtration. By this means one finds a simultaneous eigenvector for the
+X;, and using the fact that X; = (X1X_...X;i)(X1X2...Xi_1)7! one
+knows the corresponding character of U(n). Proceeding by induction,
+one obtains a filtration of ~2W;,,(n) like that described in 5.6.
+Assuming genericity, the characters of U(n) arising in this filtration
+are all distinct, so that ~%Wz;,.(n) is semisimple as U(n)-module. This
+permits the determination of the action of the T; on a certain summand,
+completing the proof for the generic case. The passage from the generic
+case to the general case involves a number-theoretic argument (cf. [3]).
+We refer the reader to [18, §§6,7,8 and 9] for all details. oO
+
+We denote the pair s, N in the statement 5.8 above by s(a,b), Nx.

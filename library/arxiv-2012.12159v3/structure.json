@@ -7,11 +7,11 @@
   "bytes": 841765,
   "pages": 42,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -27,13 +27,21 @@
    "A FUNK PERSPECTIVE ON BILLIARDS, PROJECTIVE",
    "GEOMETRY AND MAHLER VOLUME"
   ],
-  "abstract": "We explore connections furnished by the Funk metric, a relative of the Hilbert metric, between projective geometry, billiards, convex geome- try and a\ufb03ne inequalities. We \ufb01rst show that many metric invariants of the Funk metric are invariant under projective maps, as well as under projective duality. These include the Holmes-Thompson volume and surface area of con- vex subsets, and the length spectrum of their boundary, extending results of Holmes-Thompson and \u00b4Alvarez Paiva on Sch\u00a8 a\ufb00er\u2019s dual girth conjecture. We explore in particular Funk billiards, which generalize hyperbolic billiards in the same way that Minkowski billiards generalize Euclidean ones, and extend a result of Gutkin-Tabachnikov on the duality of Minkowski billiards. We next consider the volume of outward balls in Funk geometry. We con- jecture a general a\ufb03ne inequality corresponding to the volume maximizers, which includes the Blaschke-Santal\u00b4 o and centro-a\ufb03ne isoperimetric inequali- ties as limit cases, and prove it for unconditional bodies, yielding a new proof of the volume entropy conjecture for the Hilbert metric for unconditional bodies. As a by-product, we obtain generalizations to higher moments of inequalities of Ball and Huang-Li, which in turn strengthen the Blaschke-Santal\u00b4 o inequal- ity for unconditional bodies. Lastly, we introduce a regularization of the total volume of a smooth strictly convex 2-dimensional set equipped with the Funk metric, resembling the O\u2019Hara M\u00a8 obius energy of a knot, and show that it is a projective invariant of the convex body.",
+  "abstract": "We explore connections furnished by the Funk metric, a relative of the Hilbert metric, between projective geometry, billiards, convex geome- try and aﬃne inequalities. We ﬁrst show that many metric invariants of the Funk metric are invariant under projective maps, as well as under projective duality. These include the Holmes-Thompson volume and surface area of con- vex subsets, and the length spectrum of their boundary, extending results of Holmes-Thompson and ´Alvarez Paiva on Sch¨aﬀer’s dual girth conjecture. We explore in particular Funk billiards, which generalize hyperbolic billiards in the same way that Minkowski billiards generalize Euclidean ones, and extend a result of Gutkin-Tabachnikov on the duality of Minkowski billiards. We next consider the volume of outward balls in Funk geometry. We con- jecture a general aﬃne inequality corresponding to the volume maximizers, which includes the Blaschke-Santal´o and centro-aﬃne isoperimetric inequali- ties as limit cases, and prove it for unconditional bodies, yielding a new proof of the volume entropy conjecture for the Hilbert metric for unconditional bodies. As a by-product, we obtain generalizations to higher moments of inequalities of Ball and Huang-Li, which in turn strengthen the Blaschke-Santal´o inequal- ity for unconditional bodies. Lastly, we introduce a regularization of the total volume of a smooth strictly convex 2-dimensional set equipped with the Funk metric, resembling the O’Hara M¨obius energy of a knot, and show that it is a projective invariant of the convex body.",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20210423005518Z",
-   "Creator": "LaTeX with hyperref",
    "Producer": "pdfTeX-1.40.21",
-   "Title": ""
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20210423005518Z"
+  },
+  "title_raw": "A FUNK PERSPECTIVE ON BILLIARDS, PROJECTIVE GEOMETRY AND MAHLER VOLUME",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "A FUNK PERSPECTIVE ON BILLIARDS, PROJECTIVE GEOMETRY AND MAHLER VOLUME Contents Introduction Funk and Hilbert metrics Summary of results Plan of the paper Acknowledgements Preliminaries Convexity Projective geometry Finsler geometry A projective outlook on the Funk metric The projective co-nomadic F",
+   "outline": "1. Introduction",
+   "text": "A FUNK PERSPECTIVE ON BILLIARDS, PROJECTIVE GEOMETRY AND MAHLER VOLUME",
+   "corroborated_by": [],
+   "browser_print": false
   }
  },
  "toc": [
@@ -42,136 +50,626 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Funk and Hilbert metrics",
    "page": 2,
    "source": "outline",
-   "number": "1.1"
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Summary of results",
    "page": 2,
    "source": "outline",
-   "number": "1.2"
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Plan of the paper",
    "page": 6,
    "source": "outline",
-   "number": "1.3"
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Acknowledgements",
    "page": 6,
    "source": "outline",
-   "number": "1.4"
+   "number": "1.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 1,
    "title": "Preliminaries",
    "page": 7,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Convexity",
    "page": 7,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Projective geometry",
    "page": 7,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Finsler geometry",
    "page": 8,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 1,
    "title": "A projective outlook on the Funk metric",
    "page": 8,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "The projective co-nomadic Finsler structure",
    "page": 8,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "The volume in Funk geometry",
    "page": 11,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 1,
    "title": "Funk billiards and duality",
    "page": 13,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 1,
    "title": "Integrability of Funk billiard in conics",
    "page": 18,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 1,
-   "title": "Sch\u00e4ffer's dual girth conjecture",
+   "title": "Schäffer's dual girth conjecture",
    "page": 21,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Mahler volumes of every Funk scale",
    "page": 22,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Maximizing the Funk-Mahler volume",
    "page": 26,
    "source": "outline",
-   "number": "8"
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Regularizing the total Funk volume",
    "page": 34,
    "source": "outline",
-   "number": "9"
+   "number": "9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 41,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Funk billiard reﬂection law Remark 4.1. It is clear from this description that a proper Funk billiard trajectory when K, L are smooth and strictly convex, will extend indeﬁnitely, in terms of bounces, as a proper billiard trajectory",
+   "page": 13,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "13"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Funk outer billiard reﬂection law",
+   "page": 14,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Funk billiard in concentric discs",
+   "page": 14,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Dual Funk - reverse Funk billiard dynamics We thus established the following",
+   "page": 15,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "2-periodic orbits in a pair of discs",
+   "page": 16,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "2-periodic orbit Since, dH",
+   "page": 16,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Outer caustic",
+   "page": 19,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Relating the inner and outer caustics Deﬁne the conic Q by Q−1 := (Q−1",
+   "page": 20,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "",
+   "page": 25,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "",
+   "page": 25,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 39,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 40,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 41,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 42,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
    "id": "sec-front-matter",
@@ -179,69 +677,83 @@
    "title": "Front matter",
    "level": 1,
    "page_start": 1,
-   "page_end": 1,
-   "n_chars": 1669,
-   "n_words": 251
+   "page_end": 2,
+   "n_chars": 2535,
+   "n_words": 389,
+   "label_start": null,
+   "label_end": "2"
   },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 15,
+   "n_words": 2,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
    "id": "sec-001-11-funk-and-hilbert-metrics",
    "number": "1.1",
    "title": "Funk and Hilbert metrics",
    "level": 2,
-   "page_start": 1,
-   "page_end": 1,
-   "n_chars": 0,
-   "n_words": 0
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 1770,
+   "n_words": 316,
+   "label_start": "2",
+   "label_end": "2"
   },
   {
    "id": "sec-002-12-summary-of-results",
    "number": "1.2",
    "title": "Summary of results",
    "level": 2,
-   "page_start": 1,
+   "page_start": 2,
    "page_end": 6,
-   "n_chars": 11689,
-   "n_words": 2030
+   "n_chars": 10417,
+   "n_words": 1859,
+   "label_start": "2",
+   "label_end": "6"
   },
   {
-   "id": "sec-003-22-projective-geometry",
-   "number": "2.2",
-   "title": "Projective geometry",
-   "level": 2,
-   "page_start": 6,
-   "page_end": 6,
-   "n_chars": 1342,
-   "n_words": 244
-  },
-  {
-   "id": "sec-004-13-plan-of-the-paper",
+   "id": "sec-003-13-plan-of-the-paper",
    "number": "1.3",
    "title": "Plan of the paper",
    "level": 2,
    "page_start": 6,
    "page_end": 6,
-   "n_chars": 1067,
-   "n_words": 190
+   "n_chars": 1066,
+   "n_words": 189,
+   "label_start": "6",
+   "label_end": "6"
   },
   {
-   "id": "sec-005-14-acknowledgements",
+   "id": "sec-004-14-acknowledgements",
    "number": "1.4",
    "title": "Acknowledgements",
    "level": 2,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 697,
-   "n_words": 105
+   "n_chars": 624,
+   "n_words": 94,
+   "label_start": "6",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-005-22-projective-geometry",
+   "number": "2.2",
+   "title": "Projective geometry",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 70,
+   "n_words": 10,
+   "label_start": "7",
+   "label_end": "7"
   },
   {
    "id": "sec-006-2-preliminaries",
@@ -251,7 +763,9 @@
    "page_start": 7,
    "page_end": 7,
    "n_chars": 0,
-   "n_words": 0
+   "n_words": 0,
+   "label_start": "7",
+   "label_end": "7"
   },
   {
    "id": "sec-007-21-convexity",
@@ -260,38 +774,46 @@
    "level": 2,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 3981,
-   "n_words": 775
+   "n_chars": 2939,
+   "n_words": 607,
+   "label_start": "7",
+   "label_end": "8"
   },
   {
-   "id": "sec-008-23-finsler-geometry",
+   "id": "sec-008-31-the-projective-co-nomadic-finsler-structure",
+   "number": "3.1",
+   "title": "The projective co-nomadic Finsler structure",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 1086,
+   "n_words": 214,
+   "label_start": "8",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-009-23-finsler-geometry",
    "number": "2.3",
    "title": "Finsler geometry",
    "level": 2,
    "page_start": 8,
    "page_end": 8,
-   "n_chars": 1483,
-   "n_words": 273
+   "n_chars": 1508,
+   "n_words": 298,
+   "label_start": "8",
+   "label_end": "8"
   },
   {
-   "id": "sec-009-3-a-projective-outlook-on-the-funk-metric",
+   "id": "sec-010-3-a-projective-outlook-on-the-funk-metric",
    "number": "3",
    "title": "A projective outlook on the Funk metric",
    "level": 1,
    "page_start": 8,
-   "page_end": 8,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-010-31-the-projective-co-nomadic-finsler-structure",
-   "number": "3.1",
-   "title": "The projective co-nomadic Finsler structure",
-   "level": 2,
-   "page_start": 8,
    "page_end": 11,
-   "n_chars": 6524,
-   "n_words": 1174
+   "n_chars": 6636,
+   "n_words": 1223,
+   "label_start": "8",
+   "label_end": "11"
   },
   {
    "id": "sec-011-32-the-volume-in-funk-geometry",
@@ -300,8 +822,10 @@
    "level": 2,
    "page_start": 11,
    "page_end": 13,
-   "n_chars": 3868,
-   "n_words": 686
+   "n_chars": 3911,
+   "n_words": 729,
+   "label_start": "11",
+   "label_end": "13"
   },
   {
    "id": "sec-012-4-funk-billiards-and-duality",
@@ -310,8 +834,10 @@
    "level": 1,
    "page_start": 13,
    "page_end": 18,
-   "n_chars": 12581,
-   "n_words": 2260
+   "n_chars": 12743,
+   "n_words": 2422,
+   "label_start": "13",
+   "label_end": "18"
   },
   {
    "id": "sec-013-5-integrability-of-funk-billiard-in-conics",
@@ -319,62 +845,108 @@
    "title": "Integrability of Funk billiard in conics",
    "level": 1,
    "page_start": 18,
-   "page_end": 22,
-   "n_chars": 7045,
-   "n_words": 1242
+   "page_end": 21,
+   "n_chars": 4126,
+   "n_words": 834,
+   "label_start": "18",
+   "label_end": null
   },
   {
-   "id": "sec-014-7-mahler-volumes-of-every-funk-scale",
+   "id": "sec-014-6-schäffers-dual-girth-conjecture",
+   "number": "6",
+   "title": "Schäffer's dual girth conjecture",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 3017,
+   "n_words": 539,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-015-7-mahler-volumes-of-every-funk-scale",
    "number": "7",
    "title": "Mahler volumes of every Funk scale",
    "level": 1,
    "page_start": 22,
    "page_end": 26,
-   "n_chars": 7170,
-   "n_words": 1335
+   "n_chars": 7420,
+   "n_words": 1583,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-015-8-maximizing-the-funk-mahler-volume",
+   "id": "sec-016-8-maximizing-the-funk-mahler-volume",
    "number": "8",
    "title": "Maximizing the Funk-Mahler volume",
    "level": 1,
    "page_start": 26,
    "page_end": 34,
-   "n_chars": 13311,
-   "n_words": 2446
+   "n_chars": 13569,
+   "n_words": 2703,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-016-9-regularizing-the-total-funk-volume",
+   "id": "sec-017-9-regularizing-the-total-funk-volume",
    "number": "9",
    "title": "Regularizing the total Funk volume",
    "level": 1,
    "page_start": 34,
    "page_end": 41,
-   "n_chars": 12951,
-   "n_words": 2464
+   "n_chars": 13279,
+   "n_words": 2813,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-017-references",
+   "id": "sec-018-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 41,
    "page_end": 42,
-   "n_chars": 4888,
-   "n_words": 743
+   "n_chars": 4853,
+   "n_words": 708,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 19,
-  "sections": 19,
-  "chars_total": 90266,
+  "toc_inferred_entries": 0,
+  "figure_entries": 10,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 1,
+    "items": [
+     "Convexity"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 20,
+  "chars_total": 91584,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "Funk_submission.tex",
    "tex_sections": 18,
-   "overlaid": 11,
+   "overlaid": 13,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -390,30 +962,26 @@
      "id": "sec-000-1-introduction",
      "title": "Introduction",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-001-11-funk-and-hilbert-metrics",
      "title": "Funk and Hilbert metrics",
-     "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-002-12-summary-of-results",
-     "title": "Summary of results",
-     "prose_ratio": 0.843,
-     "coverage_ratio": 0.788,
+     "prose_ratio": 0.933,
+     "coverage_ratio": 0.991,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-22-projective-geometry",
-     "title": "Projective geometry",
-     "prose_ratio": 0.154,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-002-12-summary-of-results",
+     "title": "Summary of results",
+     "prose_ratio": 0.954,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-004-13-plan-of-the-paper",
+     "id": "sec-003-13-plan-of-the-paper",
      "title": "Plan of the paper",
      "prose_ratio": 0.782,
      "coverage_ratio": 1.0,
@@ -421,98 +989,111 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-005-14-acknowledgements",
+     "id": "sec-004-14-acknowledgements",
      "title": "Acknowledgements",
      "prose_ratio": 0.952,
-     "coverage_ratio": 0.896,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-22-projective-geometry",
+     "title": "Projective geometry",
+     "prose_ratio": 0.017,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-006-2-preliminaries",
      "title": "Preliminaries",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-007-21-convexity",
      "title": "Convexity",
      "prose_ratio": 0.955,
-     "coverage_ratio": 0.396,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.516,
+     "result": "overlaid",
+     "converter": "pandoc"
     },
     {
-     "id": "sec-008-23-finsler-geometry",
+     "id": "sec-008-31-the-projective-co-nomadic-finsler-structure",
+     "title": "The projective co-nomadic Finsler structure",
+     "prose_ratio": 0.118,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-009-23-finsler-geometry",
      "title": "Finsler geometry",
      "prose_ratio": 0.929,
-     "coverage_ratio": 0.988,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-009-3-a-projective-outlook-on-the-funk-metric",
+     "id": "sec-010-3-a-projective-outlook-on-the-funk-metric",
      "title": "A projective outlook on the Funk metric",
      "prose_ratio": 0.0,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-010-31-the-projective-co-nomadic-finsler-structure",
-     "title": "The projective co-nomadic Finsler structure",
-     "prose_ratio": 0.957,
-     "coverage_ratio": 0.968,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
      "id": "sec-011-32-the-volume-in-funk-geometry",
      "title": "The volume in Funk geometry",
      "prose_ratio": 0.98,
-     "coverage_ratio": 0.942,
+     "coverage_ratio": 0.961,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-012-4-funk-billiards-and-duality",
      "title": "Funk billiards and duality",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.975,
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.981,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-013-5-integrability-of-funk-billiard-in-conics",
      "title": "Integrability of Funk billiard in conics",
-     "prose_ratio": 0.603,
-     "coverage_ratio": 0.947,
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.973,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-014-7-mahler-volumes-of-every-funk-scale",
+     "id": "sec-014-6-schäffers-dual-girth-conjecture",
+     "title": "Schäffer's dual girth conjecture",
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-7-mahler-volumes-of-every-funk-scale",
      "title": "Mahler volumes of every Funk scale",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.955,
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.961,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-015-8-maximizing-the-funk-mahler-volume",
+     "id": "sec-016-8-maximizing-the-funk-mahler-volume",
      "title": "Maximizing the Funk-Mahler volume",
-     "prose_ratio": 0.993,
-     "coverage_ratio": 0.987,
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.964,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-016-9-regularizing-the-total-funk-volume",
+     "id": "sec-017-9-regularizing-the-total-funk-volume",
      "title": "Regularizing the total Funk volume",
-     "prose_ratio": 0.997,
-     "coverage_ratio": 0.991,
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.974,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-017-references",
+     "id": "sec-018-references",
      "title": "References",
      "result": "no matching \\section"
     }

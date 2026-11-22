@@ -48,7 +48,7 @@ needs semisimplicity. At a root of unity `H_n(q)` is not semisimple and the
 partitions stop indexing the irreducibles, so the statement would need a
 different proof, not merely weaker hypotheses.
 
--- Ref: [manuscript] bean qou-ejde; Geck-Pfeiffer, *Characters of Finite Coxeter
+-- Ref: [leitner2026] bean qou-ejde; Geck-Pfeiffer, *Characters of Finite Coxeter
 --      Groups and Iwahori-Hecke Algebras*, §8.1 (generic semisimplicity and the
 --      seminormal form).
 -/

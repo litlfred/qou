@@ -1,0 +1,63 @@
+64 5. THE JANTZEN-SCHAPER THEOREM
+
+for some N € N. Suppose that d > n. Then A € At(d,n) and the .%p,4(d,n)-
+module W} is irreducible if and only if its Gram matrix G is non-zero. By
+Theorem 5.27 again,
+
+@- Tome TT (
+
+dy (Bay Bothy. Bo—hdy Bn)
+rt)
+
+HEA(d.n) HEA(dn) ( eet
+(a.cjela]
+b<e
+for some M €N. Moreover, d,(ay,... , Q@,) is non-zero only if d,(a1,...,n) F
+
+0 for any partition yz. Therefore, if S$? = D2? then W is irreducible; whence,
+Yp(Thav]g) = Vp([haclq) for all nodes (a,b) and (a, c) in [A] by Theorem 5. 39,
+
+The converse is much easier because S* + Da + rad SA and Da F 0 since
+2 is e-restricted. Therefore, SA = De if vpllhasle ) = vp ([Raclg , for all nodes (a,b)
+and (a,c) in [A] by Corollary 5.32. ia)
+
+The last two results depended upon the choice of R, ¢ and p, and not directly
+upon F and q; our final Theorem removes this restriction.
+
+Fix a field F and a non-zero element g in F. Let q be an determinant over F
+and let R = F[q] and p = g¢ —q. Then R is a principal ideal domain, p is a prime
+and In]; # 0. Furthermore, F = R/pR and .Yp.q(d,n) = -Yp4(d,n) Op F so we are
+in a situation where all of the results of this section apply.
+
+Recall that ¢ is the smallest positive integer such that [e]y = 0. Notice that
+[k]q = 0 if and only if [k]g € pR. If F is a field of characteristic 0 set p = 00;
+otherwise, let p be the characteristic of F. Define vp to be the usual p-adic valuation
+on N. (If p = oo then, by convention, v,(k) = 0 for all k EN.)
+
+5.41 Lemma Let a and b be integers with 1 < a<nand1<b<n. Then
+vp ([a]q) = vp([b]g) tf and only tf either
+
+(i) ef a and eb; or,
+
+(ii) € | a and e |b and vp(a) = v,(b).
+Proof. We have already observed that € is the smallest positive integer such that
+p divides [e]g. Therefore, if k € N then p divides [k]g if and only if e divides k. It
+follows that v,([a]g) = vp([b]g) only if either (i) e {a and ¢ { 8, or (ii) e | a and e | b.
+
+Ife { a and e { b then 1([a]g) = vp([b]g) = 0 and there is nothing to prove.
+Hence we may assume that e | a and ¢ | b.
+
+First consider the case where p = oo. If k € N then [hke]g = [elg[k]ge and
+[k]g@e = klk mod p since p divides g° — 1. Therefore, vp([ke]g) = vp([e]g) since
+ptklr. Hence, vp([a]g) = vp([b]g) = vp([e]g) and the Lemma holds in this case.
+
+Now consider the case where F is a field of positive characteristic. Write a =
+eup” and b = evp” where p does not divide u or v. Then
+
+vp([ala) = ve([blg) > vp" — 1x) = vp(G" — 1)
+=> vp ((GP" — In) [lger) = vp ((G°" — 1) [lar )
+<=> (GP — 1p) = 9G?" — IR),
+the last line following because [u]ge2" = ulm mod p, since p divides g° — 1p, and
+
+ulp % 0 mod p (and similarly for [v]genv). Now, if y > a then gq?’ —Ip =
+(G> — 1p) [p¥—"]gene. However, [p¥—"]geoe = p!-"1p = 0 mod 9, so this forces

@@ -1,1 +1,0 @@
-Supposethat ?≠@. ThenthefollowingrelationholdsforHodge

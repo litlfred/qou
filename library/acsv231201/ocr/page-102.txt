@@ -1,0 +1,45 @@
+84 Univariate asymptotics
+
+and I’’(z) = 2 + o(1). Thus,
+
+1
+a, ~ n! exp((Zo)) a
+
+1 1 1 1
+=n! exp(—Jnlogn + sn+ni?— 7 logan Z + o(n'?)} 2-12
+
+2
+n/2,,Va-n/2__!
+~ ne —,
+2 ve
+where the final line follows from Stirling’s approximation for n!. 4
+
+Notes
+
+One of the earliest and most well-known uses of a modern generating func-
+tion analysis to obtain asymptotics was Hardy and Ramanujan’s derivation of
+asymptotics for the number of partitions of an integer [HROOa]. Their original
+argument used a Tauberian theorem and the behavior of the generating func-
+tion f(s) as s T 1 through real values, though later work such as [HROOb] used
+a circle method obtained by integrating over a circle near the boundary of the
+domain of convergence. Saddle point methods are even more classical, dating
+back centuries. As mentioned in the chapter, [Hay56] was an influential work
+in developing the modern general theory.
+
+The exposition in this chapter does not follow any one source, though it
+owes a debt to Chapter 11 of [Hen91] and to the beautiful paper [FO90]. A
+nice reference book for univariate asymptotics is the exemplary text [FS09].
+
+Additional exercises
+
+Exercise 3.6. The explicit leading term formulae in Lemmas 3.6 and Propo-
+sition 3.7 are only useful when the numerator of the meromorphic generating
+function is non-zero at the pole in question. Extend these two results to cap-
+ture vanishing numerators and find the leading asymptotic term for the series
+coefficients of f(z) = (1 — z)/(2-z-e!*) asn > &.
+
+Exercise 3.7. (set partition asymptotics) Use the exponential generating func-
+tion f(z) = exp(e* — 1) for the number a, of set partitions of [n] from Exam-
+ple 2.51 to derive the estimate
+
+Qn = (logn+ O(1))".

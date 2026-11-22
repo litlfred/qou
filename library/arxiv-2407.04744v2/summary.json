@@ -2,21 +2,16 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2407.04744v2",
  "source_sha256": "fc6fda3138296fb1",
- "brief": "Magnetic structure of A≤ 10 nuclei using the Norfolk nuclear models with quantum Monte Carlo methods G. Chambers-Wall 1,∗ A. Gnech 2,3,† G. B. King 1,‡ S — 21 sections: Front matter; Theory; Introduct",
- "extended": "**Magnetic structure of A≤ 10 nuclei using the Norfolk nuclear models with quantum Monte Carlo methods G. Chambers-Wall 1,∗ A. Gnech 2,3,† G. B. King 1,‡ S**\n\n*Pastore1,4,§ M. Piarulli 1,4,¶ R. Schiavilla 2,3,∗∗ and R. B. Wiringa 5††*\n\n29 pp, 21 sections.\n\n**Outline.** Front matter; Theory; Introduction; Quantum Monte Carlo methods; The Norfolk interaction model; The electromagnetic current operator; Magnetic form factors and moments; Results and Discussion; Magnetic moments; Scaled two-body magnetic densities; Model dependencies in two-body magnetic densit; Tritium and Helium-3; Lithium-6; Lithium-7 and Beryllium-7; Lithium-8 and Boron-8; Boron-10; Conclusions; Acknowledgments",
+ "brief": "Magnetic structure of A ≤ 10 nuclei using the Norfolk nuclear models with quantum Monte Carlo methods — 26 sections: Magnetic structure of A 10 nuclei ; Introduction; Theory",
+ "extended": "**Magnetic structure of A ≤ 10 nuclei using the Norfolk nuclear models with quantum Monte Carlo methods**\n\n*Pastore1,4,§ M. Piarulli1,4,¶ R. Schiavilla2,3,∗∗and R. B. Wiringa5††*\n\n29 pp, 26 sections.\n\n**Outline.** Magnetic structure of A 10 nuclei using the No; Introduction; Theory; Quantum Monte Carlo methods; The Norfolk interaction model; The electromagnetic current operator; Magnetic form factors and moments; Results and Discussion; Magnetic moments; VMC magnetic moments of A=3-7 nuclei; VMC magnetic moments of A=8-10 nuclei; GFMC magnetic moments of A=3-9 nuclei; Scaled two-body magnetic densities; Model dependencies in two-body magnetic densit; Magnetic form factors and high-momentum struct; Tritium and Helium-3; Lithium-6; Lithium-7 and Beryllium-7",
  "tokens": {
-  "brief": 50,
-  "extended": 171
+  "brief": 43,
+  "extended": 191
  },
  "sections": [
   {
-   "id": "sec-front-matter",
-   "title": "Front matter",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-000-theory",
-   "title": "Theory",
+   "id": "sec-000-magnetic-structure-of-a-10-nuclei-using-the-norf",
+   "title": "Magnetic structure of A 10 nuclei using the Norfolk nuclear models with quantum Monte Carlo methods",
    "pages": "1-1"
   },
   {
@@ -25,92 +20,122 @@
    "pages": "1-2"
   },
   {
-   "id": "sec-002-quantum-monte-carlo-methods",
+   "id": "sec-002-theory",
+   "title": "Theory",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-003-quantum-monte-carlo-methods",
    "title": "Quantum Monte Carlo methods",
    "pages": "2-3"
   },
   {
-   "id": "sec-003-the-norfolk-interaction-model",
+   "id": "sec-004-the-norfolk-interaction-model",
    "title": "The Norfolk interaction model",
    "pages": "3-4"
   },
   {
-   "id": "sec-004-the-electromagnetic-current-operator",
+   "id": "sec-005-the-electromagnetic-current-operator",
    "title": "The electromagnetic current operator",
    "pages": "4-5"
   },
   {
-   "id": "sec-005-magnetic-form-factors-and-moments",
+   "id": "sec-006-magnetic-form-factors-and-moments",
    "title": "Magnetic form factors and moments",
    "pages": "5-5"
   },
   {
-   "id": "sec-006-results-and-discussion",
+   "id": "sec-007-results-and-discussion",
    "title": "Results and Discussion",
-   "pages": "5-5"
+   "pages": "5-6"
   },
   {
-   "id": "sec-007-magnetic-moments",
+   "id": "sec-008-magnetic-moments",
    "title": "Magnetic moments",
-   "pages": "5-11"
+   "pages": "6-6"
   },
   {
-   "id": "sec-008-scaled-two-body-magnetic-densities",
+   "id": "sec-009-vmc-magnetic-moments-of-a3-7-nuclei",
+   "title": "VMC magnetic moments of A=3-7 nuclei",
+   "pages": "6-9"
+  },
+  {
+   "id": "sec-010-vmc-magnetic-moments-of-a8-10-nuclei",
+   "title": "VMC magnetic moments of A=8-10 nuclei",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-011-gfmc-magnetic-moments-of-a3-9-nuclei",
+   "title": "GFMC magnetic moments of A=3-9 nuclei",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-012-scaled-two-body-magnetic-densities",
    "title": "Scaled two-body magnetic densities",
    "pages": "11-12"
   },
   {
-   "id": "sec-009-model-dependencies-in-two-body-magnetic-densitie",
+   "id": "sec-013-model-dependencies-in-two-body-magnetic-densitie",
    "title": "Model dependencies in two-body magnetic densities",
    "pages": "12-16"
   },
   {
-   "id": "sec-010-tritium-and-helium-3",
+   "id": "sec-014-magnetic-form-factors-and-high-momentum-structur",
+   "title": "Magnetic form factors and high-momentum structure",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-015-tritium-and-helium-3",
    "title": "Tritium and Helium-3",
    "pages": "16-16"
   },
   {
-   "id": "sec-011-lithium-6",
+   "id": "sec-016-lithium-6",
    "title": "Lithium-6",
    "pages": "16-16"
   },
   {
-   "id": "sec-012-lithium-7-and-beryllium-7",
+   "id": "sec-017-lithium-7-and-beryllium-7",
    "title": "Lithium-7 and Beryllium-7",
    "pages": "16-17"
   },
   {
-   "id": "sec-013-lithium-8-and-boron-8",
+   "id": "sec-018-lithium-8-and-boron-8",
    "title": "Lithium-8 and Boron-8",
    "pages": "17-17"
   },
   {
-   "id": "sec-014-boron-10",
+   "id": "sec-019-boron-10",
    "title": "Boron-10",
    "pages": "17-19"
   },
   {
-   "id": "sec-015-conclusions",
+   "id": "sec-020-conclusions",
    "title": "Conclusions",
    "pages": "19-20"
   },
   {
-   "id": "sec-016-acknowledgments",
+   "id": "sec-021-acknowledgments",
    "title": "Acknowledgments",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-022-electromagnetic-currents-in-configuration-space",
+   "title": "Electromagnetic currents in configuration space",
    "pages": "20-24"
   },
   {
-   "id": "sec-017-evaluation-of-the-magnetic-multipoles",
+   "id": "sec-023-evaluation-of-the-magnetic-multipoles",
    "title": "Evaluation of the magnetic multipoles",
    "pages": "24-25"
   },
   {
-   "id": "sec-018-note-on-the-magnetic-form-factors-data",
+   "id": "sec-024-note-on-the-magnetic-form-factors-data",
    "title": "Note on the magnetic form factors data",
    "pages": "25-25"
   },
   {
-   "id": "sec-019-references",
+   "id": "sec-025-references",
    "title": "References",
    "pages": "25-29"
   }

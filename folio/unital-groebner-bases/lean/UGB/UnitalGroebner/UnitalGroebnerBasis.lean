@@ -4,7 +4,7 @@
 Placeholder canonical for content block at
 [`unital-groebner-bases/unital-groebner-bases-chapter/unital-groebner-basis.ts`](unital-groebner-bases/unital-groebner-bases-chapter/unital-groebner-basis.ts).
 
--- Ref: [manuscript] unital-groebner-bases/unital-groebner-bases-chapter/unital-groebner-basis.ts
+-- Ref: [leitner2026] unital-groebner-bases/unital-groebner-bases-chapter/unital-groebner-basis.ts
 -/
 
 namespace UGB.UnitalGroebner

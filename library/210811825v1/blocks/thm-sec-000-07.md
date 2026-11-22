@@ -1,1 +1,1 @@
-LetS be a closed and connected Riemann sur-
+Let M be as above. For the Neumann eigenvalue problem on M, or closed eigenvalue problem where ∂M = ∅, we have λk = inf Vk sup{R(f) | f̸ = 0, f ∈Vk}, where Vk runs through the (k + 1)-dimensional subspaces of W 1, 2(M). We consider the k-dimensional subspaces of W 1, 2 (M) for the Dirichlet eigenvalue problem on M.

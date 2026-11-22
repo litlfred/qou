@@ -1,0 +1,44 @@
+2.3 Algebraic generating functions 33
+
+which is valid for all (7, s) with nonnegative coordinates except for (0,0). Be-
+cause shifting indices corresponds to multiplication of the generating func-
+tion by monomials, this recurrence suggests that we multiply the generating
+function F(x, y) = >) a,sx’y* for {a,.} by 1 — (1/2)y — (1/2)(x/y). Clearing de-
+nominators, we let Q(x, y) = 2y — y? — x and note from the recurrence that
+all coefficients of Q(x, y)F(x,y) vanish with two exceptions: the coefficient
+[x°y]O(x, y)F(x, y) = 2a00 — do,-1 — 2-11 = 2, because the recursion does not
+hold at (0,0), and the coefficients [x/y°]O(x, y)F(x, y) = 2aj-1 — aj-2 — aj-10
+with j > 1 do not vanish because only the third term is non-zero. In other
+words,
+
+Q(x, y)F(x, y) = 2y — h(x), (2.5)
+
+where h(x) = Dyet aj-10x! = xF(x, 0) will not be known until we solve for F.
+
+This generating function is in fact a simpler variant of the one derived in
+[LL99] for the waiting time until the two players collide, which is needed in the
+analysis of a sorting algorithm. Their solution is to observe that there is an ana-
+lytic curve in a neighborhood of the origin on which Q vanishes. Solving Q = 0
+for y yields two solutions, with the solution y = &(x) = 1 — V1 —- x vanishing
+at the origin. Since &(x) is analytic at the origin we also have Q(x, &(x)) = 0 at
+the level of formal power series, and substituting y = &(x) in (2.5) gives
+
+0 = Ox, &(a)) F(x, (a) = 26(x) — AC).
+Thus, h(x) = 2&(x) and
+
+y~ EQ) _ 2
+
+F(x,y) = 2 = —_—__.
+Oy) Oy) 14 Vi=x-y
+
+An explanation of the kernel method
+
+Let p be the valley of E, defined as the coordinatewise minimum of the points
+in E U {0} and define
+
+Q(z) = =I - » ca ;
+scE
+where the normalization by z~? guarantees that Q is a polynomial but not
+divisible by any z;. We assume p # 0, since we already understand how when
+p = 0 the recursion leads to a rational generating function. A set of boundary
+locations is any set B C N“ closed under the coordinatewise partial-order <,

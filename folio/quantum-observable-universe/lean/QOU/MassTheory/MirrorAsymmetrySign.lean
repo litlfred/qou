@@ -49,7 +49,7 @@ observed gap — i.e. the Coulomb term that `CoulombFromCrossingCounts` records 
 Nothing about `c₂` or higher is claimed: those have exact values for six words
 only and no closed form in `(Z,N)`.
 
--- Ref: [manuscript] bean qou-z4ba; computations/probes/c1_mirror_asymmetry_sign_probe.py
+-- Ref: [leitner2026] bean qou-z4ba; computations/probes/c1_mirror_asymmetry_sign_probe.py
 -/
 
 namespace QOU.MassTheory

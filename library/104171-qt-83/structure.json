@@ -6,7 +6,9 @@
   "sha256": "d95b9363de2766d21f1e6a4e059d54e9bed0d31d7ebf061bc237e991e71e5378",
   "bytes": 717027,
   "pages": 67,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -14,24 +16,30 @@
   "arxiv": null,
   "doi": "10.4171/QT/83",
   "title": "On the asymptotic expansion of the Kashaev invariant of the 5_2 knot",
-  "authors_raw": null,
-  "abstract": "We give a presentation of the asymptotic expansion of the Kas haev invariant of the52 knot. As the volume conjecture states, the leading term of th e expansion presents the hyperbolic volume and the Chern–Simons invariant of the complement of the 52 knot. Further, we obtain a method to compute the full Poincare asym ptotics to all orders of the Kashaev invariant of the 52 knot. Mathematics Subject Classi/f_ication (/two.prop/zero.prop/one.prop/zero.prop)./five.prop/seven.propM/two.prop/seven.prop; /five.prop/seven.propM/two.prop/five.prop, /five.prop/seven.propM/five.prop/zero.prop.",
-  "docinfo": {
-   "Producer": "dvips + GPL Ghostscript 9.19",
-   "CreationDate": "D:20161223045519+01'00'",
-   "Creator": "LaTeX with hyperref package",
-   "Title": "On the asymptotic expansion of the Kashaev invariant of the 5_2 knot",
-   "Author": "T.Ohtsuki"
-  },
-  "title_prev": "DOI 10.4171/QT/83 Quantum Topology © European Mathematical Society On the asymptotic expansion of the Kashaev invariant of the 52 knot Tomotada Ohtsuki1",
+  "authors_raw": "Quantum Topology",
   "title_lines": [
-   "DOI 10.4171/QT/83",
-   "Quantum Topology",
-   "© European Mathematical Society",
-   "On the asymptotic expansion",
-   "of the Kashaev invariant of the 52 knot",
-   "Tomotada Ohtsuki1"
-  ]
+   "DOI 10.4171/QT/83"
+  ],
+  "abstract": "We give a presentation of the asymptotic expansion of the Kashaev invariant of the 52 knot. As the volume conjecture states, the leading term of the expansion presents the hyperbolic volume and the Chern–Simons invariant of the complement of the 52 knot. Further, we obtain a method to compute the full Poincare asymptotics to all orders of the Kashaev invariant of the 52 knot. Mathematics Subject Classiﬁcation (2010). 57M27; 57M25, 57M50.",
+  "docinfo": {
+   "Title": "On the asymptotic expansion of the Kashaev invariant of the 5_2 knot",
+   "Author": "T.Ohtsuki",
+   "Producer": "dvips + GPL Ghostscript 9.19",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20161223045519+01'00'"
+  },
+  "title_raw": "DOI 10.4171/QT/83",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "metadata": "On the asymptotic expansion of the Kashaev invariant of the 5_2 knot",
+   "heading": "On the asymptotic expansion of the Kashaev invariant of the 5 2 knot",
+   "outline": "Introduction",
+   "text": "DOI 10.4171/QT/83",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "DOI 10.4171/QT/83"
  },
  "toc": [
   {
@@ -39,121 +47,1027 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "670"
   },
   {
    "level": 1,
    "title": "Calculation of the Kashaev invariant of the 5_2 knot",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "675"
   },
   {
    "level": 1,
    "title": "Calculation by the saddle point method",
    "page": 14,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "682"
   },
   {
    "level": 1,
    "title": "Calculation by the Poisson summation formula",
    "page": 25,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "693"
   },
   {
    "level": 1,
    "title": "Proof of Theorem 1.1",
    "page": 36,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "704"
   },
   {
    "level": 1,
    "title": "Properties of phi (t)",
    "page": 55,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "723"
   },
   {
    "level": 1,
    "title": "Convergence of V(t,s) to hat V(t,s)",
    "page": 58,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "726"
   },
   {
    "level": 1,
    "title": "Critical points of V(t,s) and hat V(t,s)",
    "page": 60,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "728"
   },
   {
    "level": 1,
    "title": "Proof of Lemma 2.1",
    "page": 62,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "730"
   },
   {
    "level": 1,
    "title": "References",
    "page": 63,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "731"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The domain ¹.t; s/ j Re yV .t;s/ \u0015 &Rº",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "680"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "The domain ¹z 2 C j Re az2 < 0º is shaded",
+   "page": 15,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "683"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The domain ¹z 2 C j Re .z/ < 0º is shaded",
+   "page": 17,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "685"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "The domain ¹z 2 C j Re az2 < 0º is shaded",
+   "page": 26,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "694"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "The domain ¹z 2 C j Re .z/ < 0º is shaded",
+   "page": 29,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "697"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "The graph of ƒ.t/ for 0 \u0014 t \u0014 1",
+   "page": 62,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "730"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "669",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "670",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "671",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "672",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "673",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "674",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "675",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "676",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "677",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "678",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "679",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "680",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "681",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "682",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "683",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "684",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "685",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "686",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "687",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "688",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "689",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "690",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "691",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "692",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "693",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "694",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "695",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "696",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "697",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "698",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "699",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "700",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "701",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "702",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "703",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "704",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "705",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "706",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "707",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "708",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "709",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "710",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "711",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "712",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "713",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "714",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "715",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "716",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "717",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "718",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "719",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "720",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "721",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "722",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "723",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "724",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "725",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "726",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "727",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "728",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "729",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "730",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": "731",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 64,
+   "label": "732",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 65,
+   "label": "733",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 66,
+   "label": "734",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 67,
+   "label": "735",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1632,
+   "n_words": 433,
+   "label_start": "669",
+   "label_end": "670"
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
    "title": "Introduction",
    "level": 1,
-   "page_start": 1,
-   "page_end": 14,
-   "n_chars": 22240,
-   "n_words": 4072
+   "page_start": 2,
+   "page_end": 7,
+   "n_chars": 9763,
+   "n_words": 1877,
+   "label_start": "670",
+   "label_end": "675"
   },
   {
-   "id": "sec-001-calculation-by-the-saddle-point-method",
+   "id": "sec-001-calculation-of-the-kashaev-invariant-of-the-5-2",
+   "number": null,
+   "title": "Calculation of the Kashaev invariant of the 5_2 knot",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 14,
+   "n_chars": 9035,
+   "n_words": 2013,
+   "label_start": "675",
+   "label_end": "682"
+  },
+  {
+   "id": "sec-002-calculation-by-the-saddle-point-method",
    "number": null,
    "title": "Calculation by the saddle point method",
    "level": 1,
    "page_start": 14,
    "page_end": 25,
-   "n_chars": 16132,
-   "n_words": 3179
+   "n_chars": 14555,
+   "n_words": 3224,
+   "label_start": "682",
+   "label_end": "693"
   },
   {
-   "id": "sec-002-calculation-by-the-poisson-summation-formula",
+   "id": "sec-003-calculation-by-the-poisson-summation-formula",
    "number": null,
    "title": "Calculation by the Poisson summation formula",
    "level": 1,
    "page_start": 25,
-   "page_end": 63,
-   "n_chars": 54383,
-   "n_words": 10167
+   "page_end": 36,
+   "n_chars": 12373,
+   "n_words": 2829,
+   "label_start": "693",
+   "label_end": "704"
   },
   {
-   "id": "sec-003-references",
+   "id": "sec-004-proof-of-theorem-11",
+   "number": null,
+   "title": "Proof of Theorem 1.1",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 55,
+   "n_chars": 24475,
+   "n_words": 6123,
+   "label_start": "704",
+   "label_end": "723"
+  },
+  {
+   "id": "sec-005-properties-of-phi-t",
+   "number": null,
+   "title": "Properties of phi (t)",
+   "level": 1,
+   "page_start": 55,
+   "page_end": 58,
+   "n_chars": 4156,
+   "n_words": 1046,
+   "label_start": "723",
+   "label_end": "726"
+  },
+  {
+   "id": "sec-006-convergence-of-vts-to-hat-vts",
+   "number": null,
+   "title": "Convergence of V(t,s) to hat V(t,s)",
+   "level": 1,
+   "page_start": 58,
+   "page_end": 60,
+   "n_chars": 2266,
+   "n_words": 498,
+   "label_start": "726",
+   "label_end": "728"
+  },
+  {
+   "id": "sec-007-critical-points-of-vts-and-hat-vts",
+   "number": null,
+   "title": "Critical points of V(t,s) and hat V(t,s)",
+   "level": 1,
+   "page_start": 60,
+   "page_end": 62,
+   "n_chars": 2009,
+   "n_words": 504,
+   "label_start": "728",
+   "label_end": "730"
+  },
+  {
+   "id": "sec-008-proof-of-lemma-21",
+   "number": null,
+   "title": "Proof of Lemma 2.1",
+   "level": 1,
+   "page_start": 62,
+   "page_end": 63,
+   "n_chars": 1949,
+   "n_words": 488,
+   "label_start": "730",
+   "label_end": "731"
+  },
+  {
+   "id": "sec-009-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 63,
    "page_end": 67,
-   "n_chars": 21748,
-   "n_words": 1515
+   "n_chars": 9975,
+   "n_words": 1540,
+   "label_start": "731",
+   "label_end": "735"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 10,
-  "sections": 4,
-  "chars_total": 114503
+  "toc_inferred_entries": 0,
+  "figure_entries": 6,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 0,
+    "items": []
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 11,
+  "chars_total": 92188,
+  "furniture_lines_stripped": 0
  },
  "duplicate_copies": [
   "ki52"

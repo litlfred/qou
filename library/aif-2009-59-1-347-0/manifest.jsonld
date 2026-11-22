@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/aif-2009-59-1-347-0",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/aif-2009-59-1-347-0/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "On q-summation and confluence",
   "contains": [
+    "library/aif-2009-59-1-347-0/sections/sec-front-matter",
     "library/aif-2009-59-1-347-0/sections/sec-000",
     "library/aif-2009-59-1-347-0/sections/sec-001",
     "library/aif-2009-59-1-347-0/sections/sec-002",
@@ -28,10 +29,19 @@
     "library/aif-2009-59-1-347-0/sections/sec-014",
     "library/aif-2009-59-1-347-0/sections/sec-015",
     "library/aif-2009-59-1-347-0/sections/sec-016",
-    "library/aif-2009-59-1-347-0/sections/sec-017"
+    "library/aif-2009-59-1-347-0/sections/sec-017",
+    "library/aif-2009-59-1-347-0/sections/sec-018",
+    "library/aif-2009-59-1-347-0/sections/sec-019",
+    "library/aif-2009-59-1-347-0/sections/sec-020",
+    "library/aif-2009-59-1-347-0/sections/sec-021",
+    "library/aif-2009-59-1-347-0/sections/sec-022",
+    "library/aif-2009-59-1-347-0/sections/sec-023",
+    "library/aif-2009-59-1-347-0/sections/sec-024",
+    "library/aif-2009-59-1-347-0/sections/sec-025",
+    "library/aif-2009-59-1-347-0/sections/sec-026"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "aif-2009-59-1-347-0",
     "title_source": "pdf-info",

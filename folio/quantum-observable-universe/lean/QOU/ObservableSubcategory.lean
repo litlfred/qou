@@ -31,7 +31,7 @@ structure ObservableSubcategory where
   /-- Defining identity: `𝒮 ∈ Bun°` iff its degree-0 section is non-zero. -/
   observable_iff : ∀ S, isObservable S ↔ A0section S ≠ 0
 
--- Ref: [manuscript] quantum-observable-universe/information-theory/observable-subcategory.ts
+-- Ref: [leitner2026] quantum-observable-universe/information-theory/observable-subcategory.ts
 
 /-- The complement `Bun ∖ Bun°` is exactly the `A₀ = 0` locus (jet horizons
     and big-bang states) — manuscript "Complement". -/

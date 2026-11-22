@@ -79,8 +79,8 @@ noncomputable def c6_V111 : ℝ := 955 / 2
 noncomputable def S_w0 (c3 c21 c111 : ℝ) : ℝ :=
   chi_V3_at_w0 * c3 + chi_V21_at_w0 * c21 + chi_V111_at_w0 * c111
 
--- Ref: [manuscript] prop:chi-lambda-w0-sign-weighting
--- Ref: [manuscript] rem:chi-per-irrep-cyclotomic-closed-forms
+-- Ref: [leitner2026] prop:chi-lambda-w0-sign-weighting
+-- Ref: [leitner2026] rem:chi-per-irrep-cyclotomic-closed-forms
 -- Ref: [wenzl1988] Wenzl, "Hecke algebras of type A_n and subfactors," Invent. Math. 92 (1988). Verified-clean — see folio/bib-qa-verifications.json
 /-- The $S_3$ long-element character-weighted sum equals
     $c_k^{(3)} - c_k^{(1,1,1)}$ (since $\chi_{(2,1)}(w_0) = 0$). -/
@@ -138,7 +138,7 @@ the next refinement step, recorded under
 `conj:alpha-k-categorical-closure` (PR #675).
 -/
 
--- Ref: [manuscript] prop:chi-lambda-w0-sign-weighting
+-- Ref: [leitner2026] prop:chi-lambda-w0-sign-weighting
 /-- **Long-element sign-weighting, verified at `k ∈ {5, 6}`.** At each
     witnessed level the `S_3` character-weighted sum at `w₀` collapses to
     `c_k^{(3)} − c_k^{(1,1,1)}` — the standard `(2,1)` block drops out because

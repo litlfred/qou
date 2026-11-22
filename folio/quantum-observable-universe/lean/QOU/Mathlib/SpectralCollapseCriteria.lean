@@ -59,7 +59,7 @@ into "exhibit an anticommuting involution", which is a smaller and *checkable*
 obligation — not a discharged one. Saying otherwise would repeat the defect
 this file exists downstream of.
 
--- Ref: [manuscript] quantum-observable-universe/eightfold-way
+-- Ref: [leitner2026] quantum-observable-universe/eightfold-way
 -/
 
 namespace QOU.Mathlib.SpectralCollapseCriteria
@@ -154,7 +154,7 @@ theorem page_stabilises_of_anticommuting_involution
     Either way the map is zero.
 
     **This is the theorem the corpus's mass formula actually needs.**
-    `prop:phi-q-categorical-truncation` states that the brane-tower sum
+    `conj:phi-q-categorical-truncation` states that the brane-tower sum
     truncates at `k⋆`, the maximum GB-depth among the support partitions, and
     that "truncation at any deeper level yields the identical categorical
     value" — a boundedness claim. Boundedness is weaker than

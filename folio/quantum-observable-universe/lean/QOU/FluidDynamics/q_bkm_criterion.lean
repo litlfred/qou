@@ -24,7 +24,7 @@ if the solution loses regularity at `T*`, the integral diverges.*
   *derived* from them (`Iff.intro`).  The theorem proves the iff rather
   than assuming it — it is not a restatement of its own conclusion.
 
--- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/q-bkm-criterion.md
+-- Ref: [leitner2026] quantum-observable-universe/fluid-dynamics/q-bkm-criterion.md
 -/
 
 namespace QOU.FluidDynamics
@@ -65,7 +65,7 @@ class QBKMContext (R : Type*) [CommRing R] where
     time-integrated `L^∞` norm of the `q`-vorticity is finite.  *Derived*
     by composing the two directional hypotheses of `QBKMContext` — the
     theorem proves the iff (`Iff.intro`), it does not assume it. -/
--- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/q-bkm-criterion.md
+-- Ref: [leitner2026] quantum-observable-universe/fluid-dynamics/q-bkm-criterion.md
 theorem q_bkm_criterion {R : Type*} [CommRing R] [ctx : QBKMContext R] :
     ctx.extendsSmoothly ↔ ctx.vorticityIntegralFinite :=
   ⟨ctx.bkm_necessity, ctx.bkm_continuation⟩

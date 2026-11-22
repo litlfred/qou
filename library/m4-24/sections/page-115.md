@@ -1,0 +1,56 @@
+---
+doc_id: m4-24
+doc_title: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface"
+section_id: page-115
+section_title: "Page 115"
+section_number: null
+pages: 115-115
+source_pdf: m4-24.pdf
+source_sha256: cf7c5e29b818e647
+toc_source: undetermined
+doc_brief: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3"
+---
+Problems on invariants of knots and 3-manifolds 487
+
+Problem 7.22 (S. Baseilhac, R. Benedetti) Determine a suitable (2 + 1)
+‘decorated’ cobordism theory supporting a (non purely topological) QFT con-
+taining the already defined QHI. Study in particular the behaviour of the QHI
+with respect to connected sums.
+
+Problem 7.23 (S. Baseilhac, R. Benedetti) Develop a 4-dimensional theory
+of QHI based on Turaev’s shadow theory.
+
+Remark A first step should be to determine the right notion of D-shadow
+together with a geometric interpretation. In this direction, F. Costantino is
+completing his PhD thesis at Pisa, where he shows in particular that ‘branched
+shadows’ do encode Spin® structures.
+
+Problem 7.24 (5S. Baseilhac, R. Benedetti) Determine the actual relation-
+ship between K y(S®,-) and the coloured Jones polynomial Jy(-) (evaluated at
+w = exp(2ir/N) and normalized by Jy (unknot) = 1), as functions of links.
+
+Remark (1) In [296] it is shown that Jj) may be defined by means of usual
+(1, 1)-tangle presentations (as for the Alexander polynomial), using an enhanced
+‘Yang-Baxter operator whose R-matrix is derived from the quantum-dilogarithm
+6j-symbols. This suggests that there could be a relationship between Ky(S3,-)
+(necessarily associated to the trivial flat B-bundle on $3) and Jy(.)“. The
+most immediate guess would be that Ky(S?,L) = Jn(L)% for each L. In
+fact, one can give an R-matrix formulation of Ky(S°,-) involving R-matrices
+depending on parameters. These parameters are specified in terms of the dec-
+orations of special D-triangulations adapted to planar link diagrams [45]. So
+Ky(S°,-) can be computed by using suitably decorated link diagrams, and the
+decoration must satisfy non trivial global constraints. In this setup, (1,1)-
+tangle presentations do not play any role. On another side, the constant R-
+matrix used for Jy corresponds to one fixed particular choice in the parameters.
+This is not enough to confirm the above guess.
+
+(2) A motivation of Problem 7.24 is also to make working for Jy a theory of
+scissors congruence classes, as described below for the QHI.
+
+The so-called Volume Conjectures concern the asymptotic behaviour of the
+invariants constructed on the base of the quantum dilogarithm 6j-symbols,
+that is of Ky(W,L,p) or Jn(L) (for L Cc $°), when N — oo. They are
+originally motivated by the asymptotic behaviour of the quantum dilogarithm
+6j-symbols, whose dominant term involves dilogarithm functions that may be
+
+Geometry & Topology Monographs, Volume 4 (2002)

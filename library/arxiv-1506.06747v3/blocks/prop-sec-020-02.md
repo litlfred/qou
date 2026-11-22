@@ -1,0 +1,1 @@
+(51) Finally, combining the current experimental result for the electric and magnetic polarizabilities of the proton, αp E = 10.65(50) and βp M = 3.15(50), with the numbers for αp−n E and (αE+βM)p−n, we arrive at a prediction for the electric and magnetic polarizabilities of the neutron: αn E = 12.3(7) , βn M = 2.9(0.9) .

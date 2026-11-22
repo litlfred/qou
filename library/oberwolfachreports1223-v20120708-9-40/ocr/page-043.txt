@@ -1,0 +1,46 @@
+Invariants in Low-Dimensional Topology and Knot Theory 43
+
+On a cohomology theory for colored tangles
+CARMEN CAPRAU
+
+1. INTRODUCTION
+
+In [6] Khovanov constructed a cochain complex associated to an oriented framed
+link whose components are labelled by irreducible representations of U,(sl(2)).
+The graded Euler characteristic of the homology of this complex is the colored
+Jones polynomial. Specifically, [6] provides a categorification of the colored Jones
+polynomial by interpreting the defining formula for the polynomial
+
+mi) = Soy (";*) sa,
+
+where K/ is the j-parallel cable of the knot K, as the Euler characteristic of a
+complex whose objects require the original Khovanov homology [5] of the cablings
+K"-, for i = This construction works over Zz, due to the sign
+ambiguity in the functoriality property of the original Khovanov homology.
+
+A similar approach to constructing homology theories for colored links was pro-
+posed by Mackaay and Turner [7], and independently by Beliakova and Wehrli [2],
+by exploring ideas of Bar-Natan [1]. In both constructions one needs to juggle with
+the sign ambiguity in the functoriality property of the employed Khovanoy-type
+homology theories.
+
+The goal of this talk is two-folded. First we improve the existing categorifica-
+tions of the colored Jones polynomial by giving a clean definition of the colored
+invariant of a knot. For that, we employ the universal sl(2) foam cohomology
+theory using foams (seamed 2-cobordisms) constructed by the author in [4] (see
+also [3]). Moreover, we construct a local colored cohomology theory, in that. it
+is built with colored tangles in mind, and which “composes” well under tangle
+composition, leading to efficient computations of the colored invariants of a knot.
+
+The construction in [4] is defined over the ring R = Z[i,a,h], and it involves
+webs and dotted foams modulo local relations. The resulting Khovanov-type coho-
+mology theory is properly functorial with respect to tangle or link cobordisms with
+no sign indeterminacy. Denote by Kof yh the homotopy category of complexes over
+dotted foams modulo certain local relations. Given a diagram D of an oriented
+tangle T, the author constructed a formal complex [D] whose isomorphism class
+in Kof ;, is an invariant of T. If CC R® x [0,1] is a tangle cobordism between
+tangles T; and T2, then there is an induced map [T;] — [2], well-defined under
+ambient isotopy of C (rel. boundary). The category Kof yh has a natural struc-
+ture of an oriented planar algebra, and [-] is a planar algebra morphism from the
+planar algebra of oriented tangles modulo the three Reidemeister moves to Kof jp.
+

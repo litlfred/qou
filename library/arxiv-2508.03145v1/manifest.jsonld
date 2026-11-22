@@ -5,22 +5,24 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2508.03145v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2508.03145v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "Theta-Categories and Tannakian duality",
   "contains": [
+    "library/arxiv-2508.03145v1/sections/sec-front-matter",
     "library/arxiv-2508.03145v1/sections/sec-000",
     "library/arxiv-2508.03145v1/sections/sec-001",
     "library/arxiv-2508.03145v1/sections/sec-002",
     "library/arxiv-2508.03145v1/sections/sec-003",
     "library/arxiv-2508.03145v1/sections/sec-004",
     "library/arxiv-2508.03145v1/sections/sec-005",
-    "library/arxiv-2508.03145v1/sections/sec-006"
+    "library/arxiv-2508.03145v1/sections/sec-006",
+    "library/arxiv-2508.03145v1/sections/sec-007"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://creativecommons.org/licenses/by/4.0/",
   "licenceRecord": {
     "status": "stated",

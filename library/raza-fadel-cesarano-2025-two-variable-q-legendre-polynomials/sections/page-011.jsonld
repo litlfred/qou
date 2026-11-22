@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/sections/page-011",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Page 11",
+  "pageStart": 11,
+  "pageEnd": 11,
+  "contains": [
+    "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/blocks/prose-page-011",
+    "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/blocks/thm-page-011-01",
+    "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/blocks/thm-page-011-02",
+    "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/blocks/rem-page-011-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/manifest.jsonld",
+  "provenance": "ingested"
+}

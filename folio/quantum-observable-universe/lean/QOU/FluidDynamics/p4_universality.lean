@@ -24,7 +24,7 @@ characteristic `χ(A)`, the spatial dimension `d = 3`, and the gauge rank —
   hypothesis `alpha_factors_through_invariants`. `p4_universality` *derives*
   initial-data independence from it — it does not assert the conclusion.
 
--- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/p4-universality.ts
+-- Ref: [leitner2026] quantum-observable-universe/fluid-dynamics/p4-universality.ts
 -/
 
 namespace QOU.FluidDynamics
@@ -62,7 +62,7 @@ class P4UniversalityContext where
     `alpha_factors_through_invariants` (the exponent factors through the
     categorical invariants), so the theorem proves universality rather than
     asserting it. -/
--- Ref: [manuscript] quantum-observable-universe/fluid-dynamics/p4-universality.ts
+-- Ref: [leitner2026] quantum-observable-universe/fluid-dynamics/p4-universality.ts
 theorem p4_universality [ctx : P4UniversalityContext]
     (v₀ v₀' : ctx.InitialData) : ctx.α v₀ = ctx.α v₀' :=
   let ⟨_f, hf⟩ := ctx.alpha_factors_through_invariants

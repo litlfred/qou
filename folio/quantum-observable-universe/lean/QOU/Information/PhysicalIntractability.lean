@@ -164,18 +164,22 @@ theorem steps_superPoly_of_info (B : ℕ) (hB : 0 < B) (info steps : ℕ → ℕ
     calc c * n ^ k * B = c * B * n ^ k := by ring
       _ < info n := hn
       _ ≤ steps n * B := correct n
-  exact lt_of_mul_lt_mul_right h1 (Nat.zero_le B)
+  exact lt_of_mul_lt_mul_right h1 (Nat.le_of_lt hB)
 
 /-! ## The QOU resolution-tree information requirement
 
 The corpus derives the physical input `info(n)` — the information the degree-0
 answer requires — from the **skein resolution tree**.  A `c`-crossing link has a
 `3^c`-leaf resolution tree (three skein channels per crossing).  At a
-**non-torsion** substrate `q₀` the Hecke algebra is semisimple, so **no paths
-cancel**: the full `3^c` tree survives (corpus `nontorsion_full_tree`).  The
-`NP`-complete boundary family uses `c_N = 3N` crossings
-(`prop:p-vs-np-boundary`), so extracting the degree-0 answer for instance
-size `n` requires the whole surviving tree, `info(n) = 3^{3n}`.
+**non-torsion** substrate `q₀` (`qt.q ^ c ≠ 1`), `nontorsion_full_tree` proves
+both the non-torsion certificate `qt.q ^ c ≠ 1` and the exact branch-space
+cardinality `Fintype.card (ResolutionTreeBranch c) = 3^c ≥ 3`; the physical
+non-cancellation hypothesis (that no resolution paths cancel in the degree-0
+evaluation, so extracting the degree-0 answer for the `c_N = 3N` boundary
+family (`conj:p-vs-np-boundary`) requires reading all `info(n) = 3^{3n}` leaves)
+enters below as the explicit hypothesis `correct` of `qou_physical_intractability`
+(and is derived in the query model in `QOU.Information.SkeinHorizonLowerBound`
+and `QOU.Information.SkeinInfoLowerBound`).
 -/
 
 /-- The skein **resolution-tree size** of a `c`-crossing link: `3^c` leaves

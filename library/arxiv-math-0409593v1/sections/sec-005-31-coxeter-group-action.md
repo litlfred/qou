@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-math-0409593v1
-doc_title: "CATEGORIFICATION OF THE BRAID GROUPS RAPHAËL ROUQUIER 1. Introduction Actions of braid groups on triangulated categories are quite widesp read. They arise for instance in represent"
+doc_title: "Categorification of sl_2 and braid groups"
 section_id: sec-005-31-coxeter-group-action
 section_title: "Coxeter group action"
 section_number: 3.1
 pages: 6-6
 source_pdf: 0409593v1.pdf
 source_sha256: ad965f5c80838824
-doc_brief: "CATEGORIFICATION OF THE BRAID GROUPS RAPHAËL ROUQUIER 1. Introduction Actions of braid groups on triangulated categories are quite widesp read. They arise for instance in representation theory, for co"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.947
+latex_coverage_ratio: 1.0
+doc_brief: "Categorification of sl_2 and braid groups — 20 sections: Front matter; Introduction; Self-equivalences"
 ---
 ### 
 

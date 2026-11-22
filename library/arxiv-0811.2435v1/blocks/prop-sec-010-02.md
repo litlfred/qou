@@ -1,1 +1,0 @@
-This topology is Hausdorﬀ.

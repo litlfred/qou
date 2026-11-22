@@ -1,0 +1,45 @@
+3.4 Scattering on the lattice
+
+Figure 3.2: Schematic sketch of the radial wall and spherical projection method. Left figure: The spherical wall
+is introduced at IRwl. In the case of radial projection, the wave function is measured at all lattice points 7 with
+IR <|Fl< Rol. Right figure: All lattice nodes and operators with the same radius are merged with respect to their
+partial wave spherical harmonic [83].
+
+R R R
+
+Dp ey
+
+E I Ir Wm j
+
+OF 1
+34
+= 2 j
+cE
+= 3E effective potentalfor 4
+E uncoup ed channe’s q
+4E, arte ee ee ni i:
+
+0 5 10 15 20 25 30
+
+r(in )
+
+Figure 3.3: Sketch of an example potential in spherical projection [83].
+
+function in region II, which is bordered by R; and Rp. Though this approach is straightforward for
+uncoupled channels, it does not work in the coupled-channel system, which relates partial waves with
+j = 1+ 1. This means that the coefficients of Eqs. (3.33) and (3.34) are vector like, A = (Aj-1, Aji) and
+B = (B;_;,Bj,;). Correspondingly, one needs two independent solutions (‘¥ ;_,, ‘V ;,1) to determine phase
+shifts and mixing angles. In the previous case this was achieved by using different solutions which have
+approximately the same energy and neglect this difference. But this method is not applicable, because
+the solutions of Eq. (2.31) have exactly the same energy and they are dependent on each other. By
+introducing the Hermitian but time-reversal symmetry breaking auxiliary potential,
+
+0 Vaux
+vo vip Q ). (3.35)
+
+in region III of Fig. 3.2, the solutions decouple to y and y* with the same energy and the conjugate
+equation for the S-matrix determination reads
+
+A* = SB". (3.36)
+
+29

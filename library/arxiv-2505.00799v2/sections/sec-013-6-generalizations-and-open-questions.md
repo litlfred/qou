@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2505.00799v2
-doc_title: "QUANTUM MODULAR FORMS AND RESURGENCE"
+doc_title: "Quantum Modular Forms and Resurgence"
 section_id: sec-013-6-generalizations-and-open-questions
 section_title: "Generalizations and Open Questions"
 section_number: 6
 pages: 30-31
 source_pdf: 2505.00799v2.pdf
 source_sha256: cc9d2ab4c6c79b50
-doc_brief: "QUANTUM MODULAR FORMS AND RESURGENCE — In 2010, Zagier described a new phenomenon which he called quantum mod- ularity."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.992
-latex_coverage_ratio: 0.992
+latex_prose_ratio: 0.966
+latex_coverage_ratio: 1.0
+doc_brief: "Quantum Modular Forms and Resurgence — In 2010, Zagier described a new phenomenon which he called quantum mod- ularity."
 ---
 []{#sec: questions label="sec: questions"} We conclude with a selection of follow-up questions of interest to the authors.
 

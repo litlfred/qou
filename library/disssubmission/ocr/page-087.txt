@@ -1,0 +1,45 @@
+4.4. Degenerations of abelian varieties 79
+
+where Y, and Y, denote the generic resp. special fibres of f. Note that Y,
+can be naturally identified with the fibre f—'(s) C Y. In the case of the
+perverse intersection cohomology sheaf the passage between the global and
+the local picture is provided by the following observation, where we now
+denote by i: Y¥, = f—!(s) @ Y the global embedding.
+
+COROLLARY 4.10. In the above situation,
+sp(6y, ) = i*(dy[-1)).
+
+Proof. Our smoothness assumption on f implies that the generic fibre Y,
+is smooth so that the perverse intersection cohomology sheaf 6 = dy, is
+the constant sheaf up to a degree shift. From this one easily deduces that
+the intermediate extension j\,.(5[1]) which occurs in lemma 4.9 arises from
+the perverse intersection cohomology sheaf dy on the total space Y via the
+Henselization morphism Y —> Y. Oo
+
+4.4. Degenerations of abelian varieties
+
+To find sufficiently large lower bounds on the general Tannaka group
+in theorem 4.2 we consider certain families of ppav’s whose theta divisor
+degenerates. To construct these we fix an integer n > 3 and work over the
+moduli space .%,, of ppav’s of dimension g with level n structure. It has
+been shown in chapter 7.3 of [80] that this moduli space is representable by
+a smooth quasi-projective variety over Q. Analytically it can be written as
+the quotient
+
+Aen(C) = He/Te(n)
+
+of the Siegel upper half space by the action of the principal congruence
+subgroup I',(7) = ker(Spo9(Z) —+ Spo9(Z/nZ)). Recall that for n > 3 this
+action is free, which again explains why in this case the moduli space is
+smooth. We denote by
+
+Pp: B= H_xC8/T(n)xK 28 —= Ln
+
+the universal abelian scheme and by © C 2% the divisor which is defined
+on the universal covering #%% x C% by the zero locus of the Riemann theta
+function 0(t,z). Thus for each point t € .%,,(C) the fibre X; = p~!(t)
+is a complex ppav with ©; = © X; as a symmetric theta divisor. More
+generally, for any complex algebraic variety S with a morphism S — % »
+we denote by
+
+Xs = Ke X hy S and Os = Oxm,S

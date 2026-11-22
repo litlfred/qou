@@ -1,0 +1,1 @@
+([30]) If the conjecture in [17, 5.27(c)] is true then all the linear relations among MPVs of level four and weight three (resp. weight four) are the consequences of the standard relations and the octahedral relation (53) (resp. the ﬁve octahedral relations (54)-(58)).

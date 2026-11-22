@@ -35,7 +35,7 @@ LaTeX context: `docs/scope/2026-08-01` scope doc (this branch).
 
 ## References
 
-- [manuscript] Q_β c₃ bar-odd chain, `docs/audits/2026-07-11-qbeta-c3-barodd-nz-deformation-gap.md`.
+- [leitner2026] Q_β c₃ bar-odd chain, `docs/audits/2026-07-11-qbeta-c3-barodd-nz-deformation-gap.md`.
 -/
 
 namespace QOU.AlgebraicSubstrate

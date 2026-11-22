@@ -1,0 +1,2482 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-theory/knot-operator-lp-selection",
+    "path": "folio/quantum-observable-universe/mass-theory/knot-operator-lp-selection"
+  },
+  "criteria": {
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Lean file checked on branch. No 'proof-no-trivial-true' issue detected. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:39:08.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:43.004Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Conclusion is a substantive existential."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:20.771Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Conclusions are substantive inequalities and products equal to zero."
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "04bb82ed1f52",
+          "lean": "f1c5d1904903"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "04bb82ed1f52",
+          "lean": "f1c5d1904903"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "reviewed_at": "2026-07-08T00:54:12.000Z",
+        "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "04bb82ed1f52",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:27.254Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "S↔L: (1) direction: md:4-5 is a *min* of Σ t·x, but Lean `Optimal` is \"objective-maximal\" (lean:75-78). (2) The conclusion composes two class fields (l.115-123). `strongDuality` asserts that *every* n_T has an optimum, which contradicts md:10 (\"feasible iff the demand lies in the positive cone\"): an infeasible n_T has no optimum, so the class is uninhabitable unless every demand is feasible. `complementarySlackness`, which says every optimum is supported on one operator, is not what complementary slackness says. (3) The G⁻¹S constraint is replaced by a diagonal read `supply o i i i` (l.62-65), and the dual variables (y₀*, y*) never appear. (4) `frob_nondegenerate` (l.110), and the md's G⁻¹ itself, contradict prop:frobenius-gram-matrix, where det G = 0 identically under convention D, so G⁻¹ does not exist for H₃.",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean"
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:42.832Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "severity": "major",
+        "evidence": "The .md poses a MINIMISATION (:4 'min Σ t x') with constraint G^{-1}Sx ≥ n_T and concludes that dual variables give shadow prices and an active set. folio/quantum-observable-universe/mass-theory/knot-operator-lp-selection.lean defines Optimal as objective-MAXIMAL (`objective x' ≤ objective x`), uses the diagonal supply S(o,i,i,i) with no G^{-1}, and concludes a singleton-support optimum. Also the .md is unconditional while the Lean is conditional on KnotOperatorLPSelection."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:20.567Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "major",
+        "evidence": "The .md (:1-8) asserts 'By strong duality and complementary slackness' that the dual variables supply shadow prices and the active set, unconditionally; the Lean knot_operator_lp_selection takes the equal-objective certificate heq as a hypothesis and proves strong duality nowhere. Minimisation, G⁺S constraint, x ≥ 0 and the dual now match. The .md should name the certificate hypothesis (or cite strong duality for LPs over ordered fields as an external theorem)."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Kept all formulas. Removed overly defensive framing.",
+        "reviewed_at": "2026-07-07T14:26:56.744765Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.744765Z"
+        },
+        "field_hash": {
+          "md": "4679967eaf97",
+          "ts": "04bb82ed1f52",
+          "lean": "f1c5d1904903"
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:42.945Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Lean unchanged in #8609/#8620 (only uses[] in .ts edited); lean-direct exit 0; #print axioms knot_operator_lp_selection = [propext, Quot.sound]."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:20.700Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Lean statement matches its own docstring and the .md LP (min, G⁺S x ≥ n_T, dual max with (G⁺S)ᵀy ≤ t); the conditional status is stated in the docstring. See proof-narrative-lean-equiv for the .md side."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:42.975Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "severity": "major",
+        "evidence": "folio/quantum-observable-universe/mass-theory/knot-operator-lp-selection.lean: the conclusion ∃oStar ∃x, Optimal x n_T ∧ support = {oStar} is exactly strongDuality composed with complementarySlackness (obtain/obtain/exact); composition, not a single-field projection, but nothing is derived beyond the two assumed fields."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:20.742Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "No class field carries the conclusion; the old KnotOperatorLPSelection class is retired and proved empty (KnotOperatorLPSelectionLegacy.isEmpty)."
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:43.034Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "severity": "critical",
+        "evidence": "KnotOperatorLPSelection appears uninhabitable over any nontrivial ordered ring: take n_T = 0; x = 0 is feasible, and any feasible x with objective > 0 is beaten by 2x (still feasible), so the optimum value is 0 and x = 0 is Optimal; complementarySlackness then demands ∃oStar with x oStar ≠ 0, false for x = 0. The theorem is then vacuously true."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:20.796Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Hypotheses (Feasible, DualFeasible, equal objectives) are jointly satisfiable, e.g. n_T = 0, x = 0, y = 0 with t ≥ 0."
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:43.097Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "No decide/trivial."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:20.851Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "No decide/native_decide in the proofs."
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:43.068Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "severity": "major",
+        "evidence": "Class fields frob and frob_nondegenerate (folio/quantum-observable-universe/mass-theory/knot-operator-lp-selection.lean) are never used in knot_operator_lp_selection; the 'Gram-inverse' content of the title does not enter the proof."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:20.824Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/mass-theory/knot-operator-lp-selection.lean: KnotOperatorLP carries toH (the Hecke element of each operator) and gram/gramPinv_spec, none used by knot_operator_lp_selection beyond M = gramPinv*supply; toH is never used, so the link between operators and H_n(q) is decorative. gramPinv_spec is used only by gramPinv_eq_inv_of_isUnit_det."
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:42.860Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "severity": "minor",
+        "evidence": "score=0.4: no narrative proof; Lean is two obtains and an exact."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:20.593Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "score=0.7: gap_eq identity + nonnegativity of the two slack sums gives weak duality, certificate optimality and complementary slackness; clean and docstring-mapped."
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:42.889Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "score=1.0 as sorry-free (axioms propext, Quot.sound); but see proof-no-false-premise — the premise class appears uninhabitable."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:20.624Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "score=1.0: lean-content-sweep.sh 2026-11-21 exit 0, 0 errors, no sorry."
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:42.918Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "severity": "minor",
+        "evidence": "score=0.3: restates LP strong duality + complementary slackness as hypotheses and repackages them."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:20.662Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "minor",
+        "evidence": "score=0.3: weak duality and complementary slackness are textbook LP facts (Schrijver §7); the only problem-specific content is M = G⁺S and the Penrose spec."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:51:22.000Z",
+        "reviewed_sha": "695f2e9737e0f618696cabdee90d9b1164c5a156",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:42.747Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Operator selection by LP/SDP duals for confinement targets sits with the mass-theory LP/SDP blocks; no sibling restates it."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:20.484Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Operator-selection LP for confinement targets, in mass-theory beside rem:gram-matrix-spectral-connection."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:51:22.000Z",
+        "reviewed_sha": "695f2e9737e0f618696cabdee90d9b1164c5a156",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:43.153Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "severity": "major",
+        "evidence": "folio/quantum-observable-universe/mass-theory/knot-operator-lp-selection.md:10 'The LP is feasible if and only if the demand profile lies in the positive cone spanned by the supply profiles': with constraint G^{-1}Sx ≥ n_T feasibility is n_T ≤ (some cone element), not membership in the cone."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:20.904Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/mass-theory/knot-operator-lp-selection.md:10 'The LP is feasible if and only if the demand profile lies in the positive cone spanned by the supply profiles': the constraint is G⁺Sx ≥ n_T (inequality, after G⁺), so feasibility means n_T ≤ some point of the cone of the columns of G⁺S, not membership in the cone of the supply profiles S."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:51:22.000Z",
+        "reviewed_sha": "695f2e9737e0f618696cabdee90d9b1164c5a156",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:43.181Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "severity": "major",
+        "evidence": "See proof-no-false-premise: the premise class is uninhabitable at n_T = 0, so the Lean theorem has no instance to apply to."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:20.932Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Lean conclusions have content; the vacuous legacy class is retired and its emptiness proved."
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:51:22.000Z",
+        "reviewed_sha": "695f2e9737e0f618696cabdee90d9b1164c5a156",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:43.208Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "severity": "critical",
+        "evidence": "The selection conclusion is supplied by the two class fields (strong duality, singleton-support complementary slackness); the theorem assumes what it states."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:20.964Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "The certificate hypothesis is explicit; the theorem proves what it implies, not that it exists."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:51:22.000Z",
+        "reviewed_sha": "695f2e9737e0f618696cabdee90d9b1164c5a156",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:43.236Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "severity": "major",
+        "evidence": "Kind proposition with an unconditional statement ('is determined by', :1), but the Lean is conditional on assumed LP facts and the .ts status note says 'Open as a fully-formalized proposition'; no §3b-cond conditional banner in the .md."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:20.994Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "major",
+        "evidence": "folio/quantum-observable-universe/mass-theory/knot-operator-lp-selection.md:1 'the selection of a knot operator ... is determined by the LP/SDP dual basis' and :8 'By strong duality ... supply ... the active set identifying which knot operators contribute to the bound state': the identification of the LP active set with the operators of a bound state is a modelling claim with no proof, and strong duality is used without being proved or cited."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:51:22.000Z",
+        "reviewed_sha": "695f2e9737e0f618696cabdee90d9b1164c5a156",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:43.264Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "severity": "major",
+        "evidence": "Objective weights t_{(m,m')} and the supply matrix S are not defined or derived in the block."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:21.028Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "minor",
+        "evidence": "Objective weights t_(m,m'), the supply matrix S and the demand n_T are not defined in the block; the witness uses t_i = tr_M(b_i) and a scalar net target, choices not stated here."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:51:22.000Z",
+        "reviewed_sha": "695f2e9737e0f618696cabdee90d9b1164c5a156",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:43.291Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "severity": "major",
+        "evidence": "folio/quantum-observable-universe/mass-theory/knot-operator-lp-selection.md:1 'the selection ... is determined by the Frobenius-Gram-inverse LP/SDP dual basis' is asserted without argument; strong duality gives dual prices, not a determination of the operator."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:21.057Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "minor",
+        "evidence": "From optimality conditions it does not follow that the active set identifies the knot operators of a bound state (:8); that step is asserted."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:51:22.000Z",
+        "reviewed_sha": "695f2e9737e0f618696cabdee90d9b1164c5a156",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:43.346Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "severity": "major",
+        "evidence": "min in .md vs max (Optimal) in Lean; Gram inverse absent from Lean constraint; different conclusion (see proof-narrative-lean-equiv)."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:21.121Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "major",
+        "evidence": "See proof-narrative-lean-equiv: .md unconditional ('By strong duality'), Lean conditional on heq. Otherwise aligned."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:51:22.000Z",
+        "reviewed_sha": "695f2e9737e0f618696cabdee90d9b1164c5a156",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:43.382Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/mass-theory/knot-operator-lp-selection.lean cites [schrijver1986theory] §7.2/§7.4 for 'every n_T admits an optimum' and 'every optimum has singleton support'; strong duality needs feasibility and boundedness, and complementary slackness does not imply singleton support."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:21.150Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Lean cites [schrijver1986theory] §7.2 for strong duality (correctly as NOT proved here) and §7.4 for complementary slackness."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:51:22.000Z",
+        "reviewed_sha": "695f2e9737e0f618696cabdee90d9b1164c5a156",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:43.410Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/mass-theory/knot-operator-lp-selection.md:1-5 t_{(m,m')}, S, n_T, T_{m,m'}, β(·) and the 'Frobenius-non-degenerate basis' indexing are used undefined."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:21.183Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/mass-theory/knot-operator-lp-selection.md:1-5 β(T_{m,m'}), t_(m,m'), S, n_T, m, m' and 'LP/SDP dual basis' are used without definition."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:51:22.000Z",
+        "reviewed_sha": "695f2e9737e0f618696cabdee90d9b1164c5a156",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:43.438Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "No comparison with measurement."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:21.212Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "No comparison with measurement."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:51:22.000Z",
+        "reviewed_sha": "695f2e9737e0f618696cabdee90d9b1164c5a156",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:43.466Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "No physical claim beyond the optimisation framing."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:21.240Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "No physical value asserted."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:51:22.000Z",
+        "reviewed_sha": "695f2e9737e0f618696cabdee90d9b1164c5a156",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:43.492Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "severity": "major",
+        "evidence": "computations/wedderburn-pair-volumes.witness.json scriptHash c3e6dd6595b5 ≠ sha256(computations/wedderburn_pair_volumes.py)[:12] = 8844d9bec18f (stale); its payload is deuteron pair volumes plus one H_3 LP record, which illustrates but does not verify the general proposition despite computation.status 'verified'."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:21.269Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "major",
+        "evidence": "computation points at computations/wedderburn_pair_volumes.py with status verified, but its LP is solve_operator_selection_lp(t, G, n_target) with the Gram matrix G itself and a scalar net target (:362-375), not the G⁺S x ≥ n_T program of the statement; and computations/wedderburn-pair-volumes.witness.json scriptHash 25431e10193a ≠ sha256(computations/wedderburn_pair_volumes.py)[:12] = b093882f8ec9."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:51:22.000Z",
+        "reviewed_sha": "695f2e9737e0f618696cabdee90d9b1164c5a156",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:43.532Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "severity": "major",
+        "evidence": "Strongest objection: the Lean assumes the conclusion as two LP 'facts', the assumed class appears uninhabitable (n_T = 0), and it optimises in the opposite direction from the .md."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:21.298Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "major",
+        "evidence": "Strongest objection: the statement asserts an unconditional selection principle while the formal content is textbook weak duality + complementary slackness conditional on a certificate, and the cited computation solves a different LP. Minor revision: state the certificate/strong-duality hypothesis, define t, S, n_T, and align the producer."
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:43.570Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "severity": "major",
+        "evidence": "folio/quantum-observable-universe/mass-theory/knot-operator-lp-selection.md: symbols t, S, n_T, β(T_{m,m'}), m, m' are undefined; the reader gets no why-before-what. Below 16/16."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:21.329Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "major",
+        "evidence": "folio/quantum-observable-universe/mass-theory/knot-operator-lp-selection.md: symbols t, S, n_T, β(T_{m,m'}), m, m' undefined; 'LP/SDP dual basis' is not a standard object; the final two sentences (:10) are loosely phrased ('minimum-action generators')."
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:51:22.000Z",
+        "reviewed_sha": "695f2e9737e0f618696cabdee90d9b1164c5a156",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:43.607Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "No repeated content."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:21.355Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "No repeated content."
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "04bb82ed1f52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:54.426Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition statement (one LP display + duality sentence) plus two prose lines; all ten categories clean. The three-item dual list (shadow price of the net-multiplicity constraint / Frobenius positivity shadow prices / active set) is the canonical LP-dual field triple required by AGENTS.md §LP-SDP duals, i.e. a substantive enumeration, not a reflex triple; I confirmed the wired witness computations/wedderburn-pair-volumes.witness.json carries y0_star, y_star, active_set, primal_obj, dual_obj and duality_gap. Separately flagged: uses[] names conj:weak-spectral-completeness directly with no conditional banner (§3b)."
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:43.641Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Read folio/quantum-observable-universe/mass-theory/knot-operator-lp-selection.md in full; no instance of this pattern (the three dual outputs are a substantive enumeration at :8)."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:21.382Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "None found."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "04bb82ed1f52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:54.539Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition statement (one LP display + duality sentence) plus two prose lines; all ten categories clean. The three-item dual list (shadow price of the net-multiplicity constraint / Frobenius positivity shadow prices / active set) is the canonical LP-dual field triple required by AGENTS.md §LP-SDP duals, i.e. a substantive enumeration, not a reflex triple; I confirmed the wired witness computations/wedderburn-pair-volumes.witness.json carries y0_star, y_star, active_set, primal_obj, dual_obj and duality_gap. Separately flagged: uses[] names conj:weak-spectral-completeness directly with no conditional banner (§3b)."
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:43.671Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Read folio/quantum-observable-universe/mass-theory/knot-operator-lp-selection.md in full; no instance of this pattern (the three dual outputs are a substantive enumeration at :8)."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:21.408Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "None found."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "04bb82ed1f52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:54.585Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition statement (one LP display + duality sentence) plus two prose lines; all ten categories clean. The three-item dual list (shadow price of the net-multiplicity constraint / Frobenius positivity shadow prices / active set) is the canonical LP-dual field triple required by AGENTS.md §LP-SDP duals, i.e. a substantive enumeration, not a reflex triple; I confirmed the wired witness computations/wedderburn-pair-volumes.witness.json carries y0_star, y_star, active_set, primal_obj, dual_obj and duality_gap. Separately flagged: uses[] names conj:weak-spectral-completeness directly with no conditional banner (§3b)."
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:43.700Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Read folio/quantum-observable-universe/mass-theory/knot-operator-lp-selection.md in full; no instance of this pattern (the three dual outputs are a substantive enumeration at :8)."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:21.435Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "No em-dash in the body."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "04bb82ed1f52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:54.627Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition statement (one LP display + duality sentence) plus two prose lines; all ten categories clean. The three-item dual list (shadow price of the net-multiplicity constraint / Frobenius positivity shadow prices / active set) is the canonical LP-dual field triple required by AGENTS.md §LP-SDP duals, i.e. a substantive enumeration, not a reflex triple; I confirmed the wired witness computations/wedderburn-pair-volumes.witness.json carries y0_star, y_star, active_set, primal_obj, dual_obj and duality_gap. Separately flagged: uses[] names conj:weak-spectral-completeness directly with no conditional banner (§3b)."
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:43.733Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Read folio/quantum-observable-universe/mass-theory/knot-operator-lp-selection.md in full; no instance of this pattern (the three dual outputs are a substantive enumeration at :8)."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:21.462Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "The three dual roles (shadow price, positivity prices, active set) are content."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "04bb82ed1f52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:54.671Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition statement (one LP display + duality sentence) plus two prose lines; all ten categories clean. The three-item dual list (shadow price of the net-multiplicity constraint / Frobenius positivity shadow prices / active set) is the canonical LP-dual field triple required by AGENTS.md §LP-SDP duals, i.e. a substantive enumeration, not a reflex triple; I confirmed the wired witness computations/wedderburn-pair-volumes.witness.json carries y0_star, y_star, active_set, primal_obj, dual_obj and duality_gap. Separately flagged: uses[] names conj:weak-spectral-completeness directly with no conditional banner (§3b)."
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:43.762Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Read folio/quantum-observable-universe/mass-theory/knot-operator-lp-selection.md in full; no instance of this pattern (the three dual outputs are a substantive enumeration at :8)."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:21.493Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/mass-theory/knot-operator-lp-selection.md:10 'The dual solution isolates the minimum-action generators.' closes on a slogan without content."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "04bb82ed1f52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:54.714Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition statement (one LP display + duality sentence) plus two prose lines; all ten categories clean. The three-item dual list (shadow price of the net-multiplicity constraint / Frobenius positivity shadow prices / active set) is the canonical LP-dual field triple required by AGENTS.md §LP-SDP duals, i.e. a substantive enumeration, not a reflex triple; I confirmed the wired witness computations/wedderburn-pair-volumes.witness.json carries y0_star, y_star, active_set, primal_obj, dual_obj and duality_gap. Separately flagged: uses[] names conj:weak-spectral-completeness directly with no conditional banner (§3b)."
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:43.790Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Read folio/quantum-observable-universe/mass-theory/knot-operator-lp-selection.md in full; no instance of this pattern (the three dual outputs are a substantive enumeration at :8)."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:21.521Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "None found."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "04bb82ed1f52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:54.846Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition statement (one LP display + duality sentence) plus two prose lines; all ten categories clean. The three-item dual list (shadow price of the net-multiplicity constraint / Frobenius positivity shadow prices / active set) is the canonical LP-dual field triple required by AGENTS.md §LP-SDP duals, i.e. a substantive enumeration, not a reflex triple; I confirmed the wired witness computations/wedderburn-pair-volumes.witness.json carries y0_star, y_star, active_set, primal_obj, dual_obj and duality_gap. Separately flagged: uses[] names conj:weak-spectral-completeness directly with no conditional banner (§3b)."
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:43.817Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Read folio/quantum-observable-universe/mass-theory/knot-operator-lp-selection.md in full; no instance of this pattern (the three dual outputs are a substantive enumeration at :8)."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:21.549Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "None found."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "04bb82ed1f52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:54.957Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition statement (one LP display + duality sentence) plus two prose lines; all ten categories clean. The three-item dual list (shadow price of the net-multiplicity constraint / Frobenius positivity shadow prices / active set) is the canonical LP-dual field triple required by AGENTS.md §LP-SDP duals, i.e. a substantive enumeration, not a reflex triple; I confirmed the wired witness computations/wedderburn-pair-volumes.witness.json carries y0_star, y_star, active_set, primal_obj, dual_obj and duality_gap. Separately flagged: uses[] names conj:weak-spectral-completeness directly with no conditional banner (§3b)."
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:43.846Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Read folio/quantum-observable-universe/mass-theory/knot-operator-lp-selection.md in full; no instance of this pattern (the three dual outputs are a substantive enumeration at :8)."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:21.588Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "None found."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "04bb82ed1f52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:55.068Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition statement (one LP display + duality sentence) plus two prose lines; all ten categories clean. The three-item dual list (shadow price of the net-multiplicity constraint / Frobenius positivity shadow prices / active set) is the canonical LP-dual field triple required by AGENTS.md §LP-SDP duals, i.e. a substantive enumeration, not a reflex triple; I confirmed the wired witness computations/wedderburn-pair-volumes.witness.json carries y0_star, y_star, active_set, primal_obj, dual_obj and duality_gap. Separately flagged: uses[] names conj:weak-spectral-completeness directly with no conditional banner (§3b)."
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:43.873Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Read folio/quantum-observable-universe/mass-theory/knot-operator-lp-selection.md in full; no instance of this pattern (the three dual outputs are a substantive enumeration at :8)."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:21.617Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "None found."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "04bb82ed1f52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:55.184Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition statement (one LP display + duality sentence) plus two prose lines; all ten categories clean. The three-item dual list (shadow price of the net-multiplicity constraint / Frobenius positivity shadow prices / active set) is the canonical LP-dual field triple required by AGENTS.md §LP-SDP duals, i.e. a substantive enumeration, not a reflex triple; I confirmed the wired witness computations/wedderburn-pair-volumes.witness.json carries y0_star, y_star, active_set, primal_obj, dual_obj and duality_gap. Separately flagged: uses[] names conj:weak-spectral-completeness directly with no conditional banner (§3b)."
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:43.903Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Read folio/quantum-observable-universe/mass-theory/knot-operator-lp-selection.md in full; no instance of this pattern (the three dual outputs are a substantive enumeration at :8)."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:21.647Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Symbols speakable."
+      }
+    ],
+    "does_not_default_to_float": [
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:31.907Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "severity": "major",
+        "evidence": "computations/wedderburn_pair_volumes.py:98-103 initialises the transfer-matrix arrays with bare float literals ([1.0]*n, [0.0]*n); :263-266 casts pair volumes with float(p['sym']) etc. for the witness; :310 np.asarray(_TR_M, dtype=float); :313 _n_target = float(_nf_net(...))."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:20.118Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "computations/wedderburn_pair_volumes.py: no float()/float literal on a non-comment line (grep 2026-11-21); LP inputs are mpmath decimal strings (gram_matrix_mp_strings, tr_m_mp_strings), accumulators mpf at COMPUTE_DPS 70."
+      }
+    ],
+    "compute_no_mpf_to_float_cast": [
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:31.934Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "severity": "critical",
+        "evidence": "computations/wedderburn_pair_volumes.py:263-266 float(p['sym'/'std'/'alt'/'full']) where p[...] are mpmath.mpf (the script's own comment at :233 says so): mpf values are written to the witness at float64 precision; :310 casts TR_M to a float64 numpy array before the LP solve."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:20.147Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "computations/wedderburn_pair_volumes.py: witness values serialised through _precision.fmt (:311 'no float()'); the earlier float(p['sym'...]) casts are gone."
+      }
+    ],
+    "respects_archimedean_wall": [
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:31.960Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "severity": "major",
+        "evidence": "computations/wedderburn_pair_volumes.py: no math.* calls, but :310 np.asarray(_TR_M, dtype=float) builds a numpy float64 array of substrate-precision traces that feeds solve_operator_selection_lp."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:20.188Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "computations/wedderburn_pair_volumes.py: numerical evaluation at the proton q0 via mpmath, which is the archimedean side where an LP over an ordered field belongs; no math.* calls."
+      }
+    ],
+    "code_is_commented": [
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:31.990Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Module docstring at computations/wedderburn_pair_volumes.py:2-30 plus inline comments."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:20.218Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "computations/wedderburn_pair_volumes.py:2-41 module docstring including the precision history; inline comments on the LP-dual record (:348-360)."
+      }
+    ],
+    "variables_typed": [
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:32.021Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "computations/wedderburn_pair_volumes.py:61,105,159 — all def parameters annotated (m_pp: int = None etc.; Optional not spelled but typed)."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:20.259Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "computations/wedderburn_pair_volumes.py:79,96,141,195,219 def signatures annotated."
+      }
+    ],
+    "has_references_to_paper": [
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:32.049Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "severity": "minor",
+        "evidence": "computations/wedderburn_pair_volumes.py: no '# Ref: [key]' comment; the docstring 'Refs:' list (:27-30) names corpus labels without a bibliography key."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:20.288Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "computations/wedderburn_pair_volumes.py:41 '# Ref: [leitner2026] folio/quantum-observable-universe/mass-theory/knot-operator-lp-selection.md'."
+      }
+    ],
+    "connected_to_ci_pipeline": [
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:32.078Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "Not in .github/workflows, but imported by sibling scripts computations/wedderburn_lp_ew_wiring.py and computations/v_hat_to_delta_lambda_bridge.py."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:20.323Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "Not in .github/workflows (dispatch-only repo-wide), but imported by computations/wedderburn_lp_ew_wiring.py and computations/v_hat_to_delta_lambda_bridge.py."
+      }
+    ],
+    "deprecated": [
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:32.108Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "No /_deprecated/ path, no '# DEPRECATED' line, no DEPRECATED in docstring."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:20.356Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "No _deprecated path or DEPRECATED marker."
+      }
+    ],
+    "uses_library_framework_appropriately": [
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:32.142Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "computations/wedderburn_pair_volumes.py:242-244 writes the witness through WitnessBuilder; no hardcoded pi/e."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:20.392Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "minor",
+        "evidence": "computations/wedderburn_pair_volumes.py:44 'import _path_bridge' precedes the sys.path.insert at :47 (the bootstrap-order defect class of computations/audits/path_bridge_bootstrap_audit.py); it resolves only because the script lives in computations/ itself, so sys.path[0] already holds the bridge. Witness via WitnessBuilder; LP via the mandated lp_dual_solver entry point."
+      }
+    ],
+    "assertions_are_falsifiable": [
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:32.170Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "computations/wedderburn_pair_volumes.py:274-292,336-346 — computed (n, finiteness flag, duality-gap flag) is a different expression from expected; each can fail."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:20.423Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "computations/wedderburn_pair_volumes.py:329-332,340-343,397-400: computed (pair count, finiteness flag, duality-gap < 1e-6 flag) are separately computed from expected and can fail."
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:42.716Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "folio/quantum-observable-universe/mass-theory/knot-operator-lp-selection.md:10 the closing feasibility/dual sentences are mathematical clarifications, not interpretation."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:20.457Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/mass-theory/knot-operator-lp-selection.md:10 'The dual solution isolates the minimum-action generators' is interpretation appended to the statement ('minimum-action' is not defined); the feasibility sentence before it is a claim and belongs in the statement or a remark."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:42.776Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/mass-theory/knot-operator-lp-selection.md:1-5 sets R as 'the categorical coefficient ring with q generic' but the LP uses x ≥ 0 and G^{-1}Sx ≥ n_T, which need an ordered ring; the Lean carries [PartialOrder R] [IsOrderedRing R], the .md does not say so."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:20.511Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "major",
+        "evidence": "folio/quantum-observable-universe/mass-theory/knot-operator-lp-selection.md:1 sets R as 'the categorical coefficient ring with q generic', but the LP uses ≥ and min, which need an ordered ring; the Lean correctly takes [PartialOrder R] [IsOrderedRing R]. The statement should say ordered (archimedean specialisation) or state the generic part separately."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:42.804Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "No narrative proof; the Lean argument is order-theoretic over an ordered ring, matching the LP setting."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:20.538Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "No narrative proof; Lean argument is order-theoretic over an ordered commutative ring, matching an LP."
+      }
+    ],
+    "uses-editorial-completeness": [
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:43.125Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "severity": "major",
+        "evidence": "uses[] lists prop:weak-spectral-completeness, which folio/quantum-observable-universe/mass-theory/knot-operator-lp-selection.md never mentions, and omits the LP dual program block (prop:operator-selection-lp) and the confinement/knot-operator β(T_{m,m'}) definitions the statement relies on."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:20.879Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/mass-theory/knot-operator-lp-selection.md:7 relies on the Moore–Penrose pseudo-inverse and the radical of the trace form under convention D; the block that establishes the radical (prop:knot-operator-selection, cited in the Lean comment) is not in uses[]."
+      }
+    ],
+    "da-arity-conflation": [
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "7981ac8fea2d",
+          "lean": "9bd261c4d6b1",
+          "lean_statement": "e81a208c572f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-20",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-20T17:43:43.317Z",
+        "reviewed_sha": "08a520eec3ff0f69f02772f35d377a90cf9e65b3",
+        "evidence": "No family/instance conflation."
+      },
+      {
+        "field_hash": {
+          "md": "4f29173248d9",
+          "ts": "99b2d9ec63a3",
+          "lean": "7a72cc4f48c0",
+          "lean_statement": "d84acd51847b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:readjudicate-2026-11-21",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-21T02:47:21.091Z",
+        "reviewed_sha": "3e1f7a5efbebdb61116ff7d6893e8feba6184b47",
+        "severity": "No family/instance conflation."
+      }
+    ]
+  }
+}

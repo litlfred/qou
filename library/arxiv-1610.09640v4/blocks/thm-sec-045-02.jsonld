@@ -3,7 +3,7 @@
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
       "@base": "https://litlfred.github.io/folio/",
-      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant/folio-assistant-sci/ns#"
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1610.09640v4/blocks/thm-sec-045-02",
@@ -12,10 +12,20 @@
     "doco:Section"
   ],
   "kind": "theorem",
-  "pageStart": 113,
-  "pageEnd": 123,
+  "pageStart": 102,
+  "pageEnd": 109,
   "text": "thm-sec-045-02.md",
   "derivedFrom": "library/arxiv-1610.09640v4/sections/sec-045",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1610.09640v4",
-  "provenance": "ingested"
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "5.4.3",
+    "source_kind": "theorem",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-045-54-the-homotopy-category-is-triangulated.md (p. 102-109)",
+    "claim_id": "arxiv-1610.09640v4#theorem:5.4.3",
+    "lean_status": "unformalized"
+  }
 }

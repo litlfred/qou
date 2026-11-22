@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-0810.1697v1
-doc_title: "ON THE CABLE EXPANSION FORMULA QIHOU LIU"
+doc_title: "ON THE CABLE EXPANSION FORMULA"
 section_id: sec-002-21-examples
 section_title: "Examples"
 section_number: 2.1
 pages: 2-3
 source_pdf: 0810.1697v1.pdf
 source_sha256: 1aef66179da3c154
-doc_brief: "ON THE CABLE EXPANSION FORMULA QIHOU LIU — In this paper, a generalized version of Morton’s formula [8] is proved."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.977
 latex_coverage_ratio: 0.985
+doc_brief: "ON THE CABLE EXPANSION FORMULA — In this paper, a generalized version of Morton’s formula [8] is proved."
 ---
 []{#examples label="examples"}
 

@@ -1,6 +1,6 @@
 ---
 doc_id: disssubmission
-doc_title: "I NAUGURAL -D ISSERTATION T ANNAKIAN C ATEGORIES OF P ERVERSE S HEAVES ON A BELIAN V ARIETIES"
+doc_title: "Tannakian categories of perverse sheaves on abelian varieties"
 section_id: sec-021-35-nearby-cycles
 section_title: "Nearby cycles"
 section_number: 3.5
@@ -8,6 +8,7 @@ pages: 62-66
 source_pdf: DissSubmission.pdf
 source_sha256: 207fd5e3dc0d278d
 toc_source: inferred
+doc_brief: "Tannakian categories of perverse sheaves on abelian varieties — 52 sections: Front matter; Introduction; Some commonly used notations"
 ---
 To describe the behaviour of the above Tannaka groups with respect to
 degenerations, we work over the spectrum S of a strictly Henselian discrete
@@ -126,96 +127,55 @@ Rf!(i∗(K))
 i∗(Rf∗(K))
 bc∗
 / R f∗(i∗(K))
-56
-Chapter 3 – Perverse sheaves on semiabelian varieties
-where α and β denote the forget support morphisms and where bc! and bc∗
-are the base change morphisms. Let us brieﬂy recall how these latter two
-are deﬁned — the direct image of the adjunction morphism K −→i∗(i∗(K))
+56 Chapter 3 — Perverse sheaves on semiabelian varieties
+
+where a@ and B denote the forget support morphisms and where bc; and bc,.
+are the base change morphisms. Let us briefly recall how these latter two
+are defined — the direct image of the adjunction morphism K —> i, (i*(K))
 yields two morphisms
-Rf!(K) −→R f!(i∗(i∗(K))) = i∗(Rf!(i∗(K))),
-Rf∗(K) −→R f∗(i∗(i∗(K))) = i∗(Rf∗(i∗(K))),
-and again by adjunction these give rise to the base change morphisms bc!
-and bc∗from above. We also remark [7, exp. XVII, th. 5.2.6] that as a
-result of the proper base change theorem, the base change morphism bc! is
-always an isomorphism. Putting K = R j∗(L) with L ∈D(Yη), we obtain a
+
+Rfi(K) — Rfilis@(K))) = i(RAGT(K))),
+
+Rf(K) —> Rfs(ie@(K))) = ie(Rfe(F(K))),
+and again by adjunction these give rise to the base change morphisms bc,
+and bc, from above. We also remark [7, exp. XVII, th. 5.2.6] that as a
+result of the proper base change theorem, the base change morphism bc, is
+
+always an isomorphism. Putting K = Rj,(L) with L € D(¥q), we obtain a
 factorization
-Rf!(ΨY(L))
-β
-/
-α◦(bc!)−1
-'P
-P
-P
-P
-P
-P
-P
-P
-P
-P
-P
-Rf∗(ΨY(L))
-ΨZ(Rf∗(L))
-bc∗
-7n
-n
-n
-n
-n
-n
-n
-n
-n
-n
-n
-n
-where ΨY and ΨZ denote the nearby cycles for Y →S resp. Z →S. We will
+
+Rfi(Py(L)) p Rf.(Yy(L))
+obo a
+Wz(Rf(L))
+
+where Py and ‘Pz denote the nearby cycles for Y + S resp. Z + S. We will
 apply this in the following two situations.
-First we take f : X →S to be the structure morphism with Y = X, Z = S
+
+First we take f : X — S to be the structure morphism with Y= X,Z=S
 and L = P. In this case the above diagram more explicitly says that the
-forget support morphism β for the cohomology of the nearby cycles Ψ(P)
+forget support morphism f for the cohomology of the nearby cycles Y(P)
 admits the following factorization.
-H•
-c (Xs,Ψ(P))
-β
-/
-'O
-O
-O
-O
-O
-O
-O
-O
-O
-O
-O
-H•(Xs,Ψ(P))
-H•(Xη,P)
-7o
-o
-o
-o
-o
-o
-o
-o
-o
-o
-o
-Now consider a character χ of the tame fundamental group of X, and denote
-by χt ∈Π(Xt) its pull-back to the ﬁbre Xt over the special point t = s or over
-the geometric generic point t = η. The projection formula (see section 3.6)
+
+H2(X,,¥(P)) H*(Xs,'P(P))
+
+Ne
+
+H*(Xq,P)
+
+Now consider a character y of the tame fundamental group of X, and denote
+by % € II(X;) its pull-back to the fibre X, over the special point t = s or over
+the geometric generic point t = 7). The projection formula (see section 3.6)
 implies that we have
-Ψ(Pχη) = (Ψ(P))χs
-for any such character. In lemma 3.16 we will see that χ can be chosen in
-such a way that the characters χs and χη are both generic. By the generic
-vanishing axiom GV(Xs) we can therefore assume that the forget support
-morphism β is an isomorphism, in which case the above factorization shows
-that H•(Xs,Ψ(P)) is a direct summand of H•(Xη,P). Furthermore, by the
-generic vanishing axiom GV(Xη) we can also assume that all the occuring
+WP (Py) = (L(P))x
+
+for any such character. In lemma 3.16 we will see that 7 can be chosen in
+such a way that the characters 7; and 7 are both generic. By the generic
+vanishing axiom GV(X;) we can therefore assume that the forget support
+morphism f is an isomorphism, in which case the above factorization shows
+that H*(X,,P(P)) is a direct summand of H*(X,,P). Furthermore, by the
+generic vanishing axiom GV (X;) we can also assume that all the occuring
 hypercohomology groups are concentrated in cohomology degree zero, in
-which case it follows that 0 ≤χ(Ψ(P)) ≤χ(P). In particular, the nearby
+which case it follows that 0 < 7(‘¥(P)) < x(P). In particular, the nearby
 3.5. Nearby cycles
 57
 cycles functor Ψ then sends the Serre subcategory S(Xη) ⊂P(Xη) into the

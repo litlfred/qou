@@ -1,0 +1,41 @@
+10 Oberwolfach Report 28/2012
+
+c= b+1 d=a-1 b a
+
+= No change at a
+W- =b-d virtual crossing.
+
+sgn(A) = sgn(B) = +1
+
+Al -2 42 sgn(C) =-1
+B)+2 -2 wr(K) = 1
+clo o
+
+2 2
+Py()=t +t -2
+FicurE 1. Labeled Flat Crossing and Example 1
+
+2. THE POLYNOMIAL INVARIANT
+
+We define a polynomial invariant of of virtual knots by first describing how to
+calculate the polynomial. We then justify that this definition is invariant under
+virtual isotopy. Calculation begins with a flat oriented virtual knot diagram (the
+classical crossings in a flat diagram do not have choices made for over or under).
+An arc of a flat diagram is an edge of the 4-regualar graph that it represents. That
+is, an edge extends from one classical node to the next in orientation order. An
+arc may have many virtual crossings, but it begins at a classical node and ends at
+another cle al node. We label each arc c in the diagram with an integer \(c) so
+that an arc that meets a classical node and crosses to the left increases the label
+by one, while an arc that meets a classical node and crosses to the right decreases
+the label by one. See Figure 1 for an illustration of this rule. We prove that such
+integer labelling can always be done for any virtual or classical link diagram. In
+a virtual diagram the labeling is unchanged at a virtual crossing, as indicated in
+Figure 1. One can start by choosing some arc to have an arbitrary integer label,
+and then proceed along the diagram labelling all the arcs via this crossing rule.
+We call such an integer labelling of a diagram a Cheng coloring of the diagram.
+The invariant described herein is a generalization the the invariant described by
+Cheng in [1].
+
+Given a labeled flat diagram we define two numbers at each classical node c:
+W_(c) and W,(c) as shown in Figure 1. If we have a labeled classical node with
+left incoming arc a and right incoming arc b then the right outgoing arc is labeled

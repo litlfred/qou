@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/kondev-2021-chinese-phys-c-45-030001/sections/sec-025",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "MMC12 J (page 48)",
+  "pageStart": 48,
+  "pageEnd": 48,
+  "contains": [
+    "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-025"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kondev-2021-chinese-phys-c-45-030001/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kondev-2021-chinese-phys-c-45-030001/manifest.jsonld",
+  "provenance": "ingested"
+}

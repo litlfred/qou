@@ -98,6 +98,12 @@ if [ -d beans/defs ]; then
     echo "_Agent work-plans are **bean-based** (anti-stall, cross-session). Identify/claim the bean your PR works and narrate open/close. CLI: \`bash scripts/install-beans.sh\` then \`beans list\`; or read \`beans/defs/\` directly. See \`.claude/skills/local/bean-coordination.md\`._"
     echo
   fi
+else
+  # Since the beans cutover (issue #7642) beans/ is a branch mount made by
+  # scripts/mount-fsh-guts.sh, whose own output goes to a log file. Say it here,
+  # where the session sees it: a missing mount is NOT an empty work-plan.
+  echo "**⚠ Bean work-plan UNAVAILABLE: \`beans/defs/\` is not mounted.** An empty \`beans list\` must not be read as \"no work\". Fix: \`./scripts/mount-platform-lite.sh && bun folio-assistant/cat-harness-tools/scripts/state-mount.ts\` (log: \`\${TMPDIR:-/tmp}/qou-mount-fsh-guts.log\`)."
+  echo
 fi
 
 # 4b. Lean artifact freshness — a stale olean silently inverts `#print axioms`

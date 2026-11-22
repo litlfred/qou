@@ -12,6 +12,7 @@ export default proposition({
   ],
   examples: ["rem:two-vortex-scattering-channels"],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): *Lean sibling: generic commutative ring, no archimedean input; library module `QOU.FluidDynamics.TwoVortexChannelAlgebra`.* The theorem `channel_algebra` unites these derivations. The parallel identity $(-q^{-1})/q = -(q^2)^{-1}$ — defining the per-crossing eigenvalue ratio over any field without channel data — resides in the standalone lemma `eigenvalue_ratio`." },
     {
       kind: "note",
       date: "2026-07-05",
@@ -31,5 +32,6 @@ export default proposition({
         "home chapter (subject-matched), and the true logical flow runs the other " +
         "way: that definition consumes this channel algebra, not vice versa.",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): $e_\\pm$ represents the Wedderburn pair of the [Hopf channel](#def:van-der-waals-hopf-channel) and" },
   ],
 });

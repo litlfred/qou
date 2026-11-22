@@ -43,8 +43,8 @@ $c_5 = -b^2 - 1/2$) is a separate claim, handled by
 This file discharges only the **selection rule** layer.
 
 Refs:
-- [manuscript] mass-theory/pn-averaging-uniqueness.md
-- [manuscript] stochastic-mechanics/c5-involution-leibniz-decomposition.md
+- [leitner2026] mass-theory/pn-averaging-uniqueness.md
+- [leitner2026] stochastic-mechanics/c5-involution-leibniz-decomposition.md
 - [wenzl1988] DOI 10.1007/BF01404457
 - [jones1987] DOI 10.2307/2691504
 -/

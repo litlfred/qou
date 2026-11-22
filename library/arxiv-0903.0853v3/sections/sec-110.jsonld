@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0903.0853v3/sections/sec-110",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The cohomological equation",
+  "pageStart": 163,
+  "pageEnd": 163,
+  "contains": [
+    "library/arxiv-0903.0853v3/blocks/prose-sec-110",
+    "library/arxiv-0903.0853v3/blocks/ex-sec-110-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0903.0853v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0903.0853v3/manifest.jsonld",
+  "provenance": "ingested"
+}

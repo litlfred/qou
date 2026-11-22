@@ -1,0 +1,6387 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-2601.07042v1",
+ "status": "determined",
+ "pages_unread": [
+  8,
+  10,
+  24
+ ],
+ "body_size": 10.9,
+ "footnotes": [
+  {
+   "id": "fn-p002-1",
+   "page": 2,
+   "mark": "1",
+   "text": "Of course, one can always take the Tannakian category ReppEKalq and recover EKalas the associated gerbe, but the point of this result is to give a more explicit Tannakian category.",
+   "marks": [
+    {
+     "page": 1,
+     "context": "context is a subtle one because the cohomology group H"
+    },
+    {
+     "page": 1,
+     "context": "entlyrigidcohomologysetsincludingthe‘pureinnerforms’givenbyH"
+    },
+    {
+     "page": 1,
+     "context": " by Kaletha in [Kal16a] and corresponding to basic classes H"
+    },
+    {
+     "page": 1,
+     "context": "Kalinthispaper.ThislastsethastheadvantagethatitsurjectsontoH"
+    },
+    {
+     "page": 1,
+     "context": "nH"
+    },
+    {
+     "page": 1,
+     "context": "ertthereaderthatthisgroupwasoriginallydefinedin[Kal16a]withu"
+    },
+    {
+     "page": 1,
+     "context": "u"
+    },
+    {
+     "page": 2,
+     "context": "but one can use u as well because the natural map uÑu"
+    },
+    {
+     "page": 2,
+     "context": "workswiththeu"
+    },
+    {
+     "page": 2,
+     "context": "rEKals"
+    },
+    {
+     "page": 2,
+     "context": "classes of H"
+    }
+   ],
+   "block": "library/arxiv-2601.07042v1/blocks/prose-sec-001"
+  },
+  {
+   "id": "fn-p020-1",
+   "page": 20,
+   "mark": "2",
+   "text": "We warn the reader that the first functor is not a tensor functor, but when composed with the second functor it is.",
+   "marks": [
+    {
+     "page": 20,
+     "context": "n, at a fixed finite K{F-level, by the following composition"
+    }
+   ],
+   "block": "library/arxiv-2601.07042v1/blocks/prose-sec-014"
+  }
+ ],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "all of which come from elliptic twisted Levi subgroups of GL"
+  },
+  {
+   "page": 1,
+   "mark": "p",
+   "context": "ρ P Irrpπ0pSϕ{Zp"
+  },
+  {
+   "page": 1,
+   "mark": "p",
+   "context": "bas"
+  },
+  {
+   "page": 1,
+   "mark": "q",
+   "context": "baspEKal, G"
+  },
+  {
+   "page": 1,
+   "mark": "p",
+   "context": "nB"
+  },
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "nBpGL"
+  },
+  {
+   "page": 1,
+   "mark": "q",
+   "context": "nBpGLn"
+  },
+  {
+   "page": 1,
+   "mark": "p",
+   "context": "nH1"
+  },
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "nH1pEKal, GL"
+  },
+  {
+   "page": 1,
+   "mark": "q",
+   "context": "nH1pEKal, GLn"
+  },
+  {
+   "page": 1,
+   "mark": "p",
+   "context": "ÐÝE{F,nResE{F"
+  },
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "ÐÝE{F,nResE{F pµ"
+  },
+  {
+   "page": 1,
+   "mark": "q",
+   "context": "ÐÝE{F,nResE{F pµn"
+  },
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "ResE{F pµ"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "d then descend this gerbe to produce one with band ResE{F pµ"
+  },
+  {
+   "page": 2,
+   "mark": "r",
+   "context": "nZ-grading D and an action of the ring RE{F:“ LE"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "basis of the paσqσ-graded piece of Vsuch that an nth power f"
+  },
+  {
+   "page": 2,
+   "mark": "f",
+   "context": "Eof a choice"
+  },
+  {
+   "page": 2,
+   "mark": "a",
+   "context": "σpϖEq"
+  },
+  {
+   "page": 2,
+   "mark": "p",
+   "context": "ssesofsuchatwistedLeviareinbijectionwithtuplespaiqPpQ{ZqHomF"
+  },
+  {
+   "page": 2,
+   "mark": "q",
+   "context": "fsuchatwistedLeviareinbijectionwithtuplespaiqPpQ{ZqHomF pE,F"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "imple objects in RigIsocFmay be represented by a pair pE, pa"
+  },
+  {
+   "page": 2,
+   "mark": "p",
+   "context": "ield extension and the tuple paiq is an element of pQ{ZqHomF"
+  },
+  {
+   "page": 2,
+   "mark": "q",
+   "context": "extension and the tuple paiq is an element of pQ{ZqHomF pE,F"
+  },
+  {
+   "page": 2,
+   "mark": "p",
+   "context": "not inflated from a tuple in pQ{ZqHomF"
+  },
+  {
+   "page": 2,
+   "mark": "q",
+   "context": "not inflated from a tuple in pQ{ZqHomF pK,F"
+  },
+  {
+   "page": 3,
+   "mark": "r",
+   "context": "finite extensions tEu which have the same Galois closure"
+  },
+  {
+   "page": 3,
+   "mark": "r",
+   "context": "which have the same Galois closurerEand are an orbit under Γ"
+  },
+  {
+   "page": 3,
+   "mark": "r",
+   "context": " Galois closurerEand are an orbit under Γ rE{F , the group Γ"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "acts on all such pairs involving E"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "only if the extensions E"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "only if the extensions E1, E"
+  },
+  {
+   "page": 3,
+   "mark": "r",
+   "context": "2 are related in this manner and the pairs lie in the same Γ"
+  },
+  {
+   "page": 3,
+   "mark": "e",
+   "context": "ons here, but we do relate RigIsocFto Fargues’ category Isoc"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "ch E, fix ϖEan anti-uniformizer of E such that if K{E{Fand K"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "ified subextension, we have NK{K"
+  },
+  {
+   "page": 4,
+   "mark": "s",
+   "context": "subcategory of all pV, Φq which have a basis on which f"
+  },
+  {
+   "page": 4,
+   "mark": "p",
+   "context": "sZ-grading on Vsuch that the subspace V"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "sZ-grading on Vsuch that the subspace Vp"
+  },
+  {
+   "page": 4,
+   "mark": "q",
+   "context": "sZ-grading on Vsuch that the subspace Vpbσ{s"
+  },
+  {
+   "page": 4,
+   "mark": "s",
+   "context": "an LE-basis on which Φ"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "γpϖEq"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "al functor b:PE{F,s ˆPE{F,sÑ PE{F,s which sends pV, Φ, DqˆpV"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "unctor b:PE{F,s ˆPE{F,sÑ PE{F,s which sends pV, Φ, DqˆpV1, Φ"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "or b:PE{F,s ˆPE{F,sÑ PE{F,s which sends pV, Φ, DqˆpV1, Φ1, D"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "triple pVbLEV"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "triple pVbLEV1, Φ b Φ"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "triple pVbLEV1, Φ b Φ1, D b D"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "q, where the first two terms are clear and the grading D b D"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "pVb V"
+  },
+  {
+   "page": 4,
+   "mark": "p",
+   "context": "pVb V1q"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "pVb V1qp"
+  },
+  {
+   "page": 4,
+   "mark": "q",
+   "context": "pVb V1qpbσ{s"
+  },
+  {
+   "page": 4,
+   "mark": "p",
+   "context": "V"
+  },
+  {
+   "page": 4,
+   "mark": "c",
+   "context": "Vp"
+  },
+  {
+   "page": 4,
+   "mark": "q",
+   "context": "Vpcσ{s"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "Vpcσ{sqσbLEV"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "oup acting continuously on an abelian group A and we fix cPZ"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "a cocycle of ΓEs{Erepresenting the anti-canonical class in H"
+  },
+  {
+   "page": 4,
+   "mark": "q",
+   "context": "s"
+  },
+  {
+   "page": 4,
+   "mark": "f",
+   "context": "E,"
+  },
+  {
+   "page": 4,
+   "mark": "j",
+   "context": "E, f"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "cσpf"
+  },
+  {
+   "page": 4,
+   "mark": "i",
+   "context": "Eq “ 1 if"
+  },
+  {
+   "page": 4,
+   "mark": "s",
+   "context": "Eq “ 1 if i ` jă"
+  },
+  {
+   "page": 4,
+   "mark": "p",
+   "context": "Eq “ 1 if i ` jă s, and σ"
+  },
+  {
+   "page": 4,
+   "mark": "q",
+   "context": "Eq “ 1 if i ` jă s, and σpϖE"
+  },
+  {
+   "page": 4,
+   "mark": "m",
+   "context": "ΓE{FG"
+  },
+  {
+   "page": 4,
+   "mark": "p",
+   "context": "ΓE{FGm"
+  },
+  {
+   "page": 4,
+   "mark": "s",
+   "context": "ΓE{FGmpE"
+  },
+  {
+   "page": 4,
+   "mark": "q",
+   "context": "ΓE{FGmpEs"
+  },
+  {
+   "page": 4,
+   "mark": "c",
+   "context": "ΓE{FE"
+  },
+  {
+   "page": 4,
+   "mark": "s",
+   "context": "ΓE{FEcσÑ ΓE"
+  },
+  {
+   "page": 4,
+   "mark": "1",
+   "context": "ΓE{FEcσÑ ΓEs{EÑ"
+  },
+  {
+   "page": 4,
+   "mark": "c",
+   "context": "meanthattheproductisfiberedwithrespecttotheprojectionofeachE"
+  },
+  {
+   "page": 4,
+   "mark": "p",
+   "context": ", we first investigate the latter Tannakian category.Let ρ:E"
+  },
+  {
+   "page": 4,
+   "mark": "c",
+   "context": " we first investigate the latter Tannakian category.Let ρ:Ep"
+  },
+  {
+   "page": 4,
+   "mark": "q",
+   "context": "e first investigate the latter Tannakian category.Let ρ:Epcσ"
+  },
+  {
+   "page": 4,
+   "mark": "c",
+   "context": "a representation of Ep"
+  },
+  {
+   "page": 4,
+   "mark": "s",
+   "context": "a representation of Epcσqσ, for a finite-dimensional E"
+  },
+  {
+   "page": 4,
+   "mark": "c",
+   "context": "r a finite-dimensional Es-vector space V.The Galois gerbe Ep"
+  },
+  {
+   "page": 5,
+   "mark": "x",
+   "context": "sfor each σP ΓE{Fand"
+  },
+  {
+   "page": 5,
+   "mark": "s",
+   "context": "that Φ"
+  },
+  {
+   "page": 5,
+   "mark": "m",
+   "context": "ΓE{FG"
+  },
+  {
+   "page": 5,
+   "mark": "p",
+   "context": "ΓE{FGm"
+  },
+  {
+   "page": 5,
+   "mark": "s",
+   "context": "ΓE{FGmpE"
+  },
+  {
+   "page": 5,
+   "mark": "q",
+   "context": "ΓE{FGmpEs"
+  },
+  {
+   "page": 5,
+   "mark": "m",
+   "context": "wherepG"
+  },
+  {
+   "page": 5,
+   "mark": "h",
+   "context": "wherepGmqτactsonVp"
+  },
+  {
+   "page": 5,
+   "mark": "h",
+   "context": "wherepGmqτactsonVphσqσviax ¨ v“x"
+  },
+  {
+   "page": 5,
+   "mark": "m",
+   "context": "wherepGmqτactsonVphσqσviax ¨ v“xhτvforeachxPpG"
+  },
+  {
+   "page": 5,
+   "mark": "s",
+   "context": "wherepGmqτactsonVphσqσviax ¨ v“xhτvforeachxPpGmqτpE"
+  },
+  {
+   "page": 5,
+   "mark": "h",
+   "context": "Vphσqσviax ¨ v“xhτvforeachxPpGmqτpEsq.NotethateachsubspaceVp"
+  },
+  {
+   "page": 5,
+   "mark": "s",
+   "context": "isΦ-stable,andalsothatΦ"
+  },
+  {
+   "page": 5,
+   "mark": "p",
+   "context": "ΓE{Fσ"
+  },
+  {
+   "page": 5,
+   "mark": "q",
+   "context": "ΓE{FσpϖE"
+  },
+  {
+   "page": 5,
+   "mark": "h",
+   "context": "ΓE{FσpϖEq"
+  },
+  {
+   "page": 5,
+   "mark": "p",
+   "context": "ΓE{FσpϖEqhσ.AmorphismofE"
+  },
+  {
+   "page": 5,
+   "mark": "c",
+   "context": "ΓE{FσpϖEqhσ.AmorphismofEp"
+  },
+  {
+   "page": 5,
+   "mark": "q",
+   "context": "ΓE{FσpϖEqhσ.AmorphismofEpcσ"
+  },
+  {
+   "page": 5,
+   "mark": "p",
+   "context": "sZ-grading V"
+  },
+  {
+   "page": 5,
+   "mark": "h",
+   "context": "sZ-grading Vp"
+  },
+  {
+   "page": 5,
+   "mark": "q",
+   "context": "sZ-grading Vphσ{s"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "Vphσqwith LEover Es.A morphism from pV, ρq to pW, ρ"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "le pV, Φ, Dq to the representation given as a vector space V"
+  },
+  {
+   "page": 5,
+   "mark": "s",
+   "context": "ny choice of LE-bases of Vphσ{sq(for all tuples) such that Φ"
+  },
+  {
+   "page": 5,
+   "mark": "p",
+   "context": "ΓE{Fσ"
+  },
+  {
+   "page": 5,
+   "mark": "q",
+   "context": "ΓE{FσpϖE"
+  },
+  {
+   "page": 5,
+   "mark": "h",
+   "context": "ΓE{FσpϖEq"
+  },
+  {
+   "page": 5,
+   "mark": "s",
+   "context": "pacedoesnotdependonthechoiceofbasis:Indeed,givenanyvonwhichΦ"
+  },
+  {
+   "page": 5,
+   "mark": "h",
+   "context": "by λ:“śσpϖEq"
+  },
+  {
+   "page": 5,
+   "mark": "s",
+   "context": "pf"
+  },
+  {
+   "page": 5,
+   "mark": "p",
+   "context": "E"
+  },
+  {
+   "page": 5,
+   "mark": "a",
+   "context": "Ep"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "Epa"
+  },
+  {
+   "page": 5,
+   "mark": "q",
+   "context": "Epai"
+  },
+  {
+   "page": 5,
+   "mark": "q",
+   "context": "Epaiqλ"
+  },
+  {
+   "page": 5,
+   "mark": "e",
+   "context": "Epaiqλq"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "Epaiqλqe"
+  },
+  {
+   "page": 5,
+   "mark": "s",
+   "context": "which means that f"
+  },
+  {
+   "page": 5,
+   "mark": "p",
+   "context": "E"
+  },
+  {
+   "page": 5,
+   "mark": "a",
+   "context": "Ep"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "Epa"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "Epaiq “ a"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "Epaiq “ ai for all"
+  },
+  {
+   "page": 5,
+   "mark": "a",
+   "context": "Epaiq “ ai for all i, so that"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "Epaiq “ ai for all i, so that a"
+  },
+  {
+   "page": 5,
+   "mark": "s",
+   "context": "Epaiq “ ai for all i, so that aiP E"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "isdefinedbysendingpp1σq, ρqtoΦandpGmqτtothelinearoperatoronV"
+  },
+  {
+   "page": 5,
+   "mark": "h",
+   "context": "x ¨ v“x"
+  },
+  {
+   "page": 5,
+   "mark": "m",
+   "context": "ΓE{FG"
+  },
+  {
+   "page": 5,
+   "mark": "p",
+   "context": "ΓE{FGm"
+  },
+  {
+   "page": 5,
+   "mark": "s",
+   "context": "ΓE{FGmpE"
+  },
+  {
+   "page": 5,
+   "mark": "q",
+   "context": "ΓE{FGmpEs"
+  },
+  {
+   "page": 5,
+   "mark": "a",
+   "context": "ΓE{FGmpEsq, we have that the maps Φ ˝ p"
+  },
+  {
+   "page": 5,
+   "mark": "f",
+   "context": "ΓE{FGmpEsq, we have that the maps Φ ˝ paσq ˝ Φ´1 and"
+  },
+  {
+   "page": 5,
+   "mark": "p",
+   "context": "ΓE{FGmpEsq, we have that the maps Φ ˝ paσq ˝ Φ´1 and fE"
+  },
+  {
+   "page": 5,
+   "mark": "a",
+   "context": "ΓE{FGmpEsq, we have that the maps Φ ˝ paσq ˝ Φ´1 and fEp"
+  },
+  {
+   "page": 5,
+   "mark": "q",
+   "context": "ΓE{FGmpEsq, we have that the maps Φ ˝ paσq ˝ Φ´1 and fEpaσ"
+  },
+  {
+   "page": 5,
+   "mark": "f",
+   "context": "ΓE{FGmpEsq, we have that the maps Φ ˝ paσq ˝ Φ´1 and fEpaσq"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "are LE-linear and act on a vector element v in V"
+  },
+  {
+   "page": 5,
+   "mark": "h",
+   "context": "fEpaσq"
+  },
+  {
+   "page": 5,
+   "mark": "v",
+   "context": "E"
+  },
+  {
+   "page": 5,
+   "mark": "f",
+   "context": "Ev“ pp"
+  },
+  {
+   "page": 5,
+   "mark": "p",
+   "context": "Ev“ ppfE"
+  },
+  {
+   "page": 5,
+   "mark": "a",
+   "context": "Ev“ ppfEp"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "Ev“ ppfEpaσqq,"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "and we also have (using the Φ-stability of V"
+  },
+  {
+   "page": 5,
+   "mark": "h",
+   "context": "a"
+  },
+  {
+   "page": 5,
+   "mark": "p",
+   "context": "σΦ´1"
+  },
+  {
+   "page": 5,
+   "mark": "v",
+   "context": "σΦ´1p"
+  },
+  {
+   "page": 5,
+   "mark": "h",
+   "context": "fEpaσq"
+  },
+  {
+   "page": 5,
+   "mark": "c",
+   "context": "σPΓE{FE"
+  },
+  {
+   "page": 5,
+   "mark": "m",
+   "context": "ΓE{FG"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "ΓE{FGmand corresponds to the anti-canonical class in H"
+  },
+  {
+   "page": 5,
+   "mark": "p",
+   "context": "ΓE{FGmand corresponds to the anti-canonical class in H2"
+  },
+  {
+   "page": 5,
+   "mark": "q",
+   "context": "E"
+  },
+  {
+   "page": 5,
+   "mark": "m",
+   "context": "ΓE{FG"
+  },
+  {
+   "page": 5,
+   "mark": "p",
+   "context": "ΓE{FGm-gerbes from EPE{F,sto E"
+  },
+  {
+   "page": 5,
+   "mark": "c",
+   "context": "ΓE{FGm-gerbes from EPE{F,sto Ep"
+  },
+  {
+   "page": 5,
+   "mark": "q",
+   "context": "ΓE{FGm-gerbes from EPE{F,sto Epcσ"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "notethatsinceH"
+  },
+  {
+   "page": 5,
+   "mark": "q",
+   "context": "E"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "2.2.Limitsofgerbes.Fors|s"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "es.Fors|s1,wehaveafullyfaithfulembeddingofcategoriesfromιs,s"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "PE{F,s"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": ",s1,which sends the triple pV, Φ, Dq to the triple pV, Φ, Ds"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "ds the triple pV, Φ, Dq to the triple pV, Φ, Ds1{sq,where Ds"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "s"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "of Vgiven by Vpbσ{s"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "of Vgiven by Vpbσ{s1q“ Vprbσ{ps"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "of Vgiven by Vpbσ{s1q“ Vprbσ{ps1{sqs{sq if s"
+  },
+  {
+   "page": 6,
+   "mark": "s",
+   "context": "ÝÑ"
+  },
+  {
+   "page": 6,
+   "mark": "s",
+   "context": "ÝÑsPE{F,sover all positive integers"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "plicitly, a morphism between the objects pV, Φ, D, sq and pV"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "itly, a morphism between the objects pV, Φ, D, sq and pV1, Φ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": ", a morphism between the objects pV, Φ, D, sq and pV1, Φ1, D"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "morphism between the objects pV, Φ, D, sq and pV1, Φ1, D1, s"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "can be identified with a morphism between ιs,ss"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "identified with a morphism between ιs,ss1pV, Φ, D, sq and ιs"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "tified with a morphism between ιs,ss1pV, Φ, D, sq and ιs1,ss"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "ied with a morphism between ιs,ss1pV, Φ, D, sq and ιs1,ss1pV"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "with a morphism between ιs,ss1pV, Φ, D, sq and ιs1,ss1pV1, Φ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": " a morphism between ιs,ss1pV, Φ, D, sq and ιs1,ss1pV1, Φ1, D"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "orphism between ιs,ss1pV, Φ, D, sq and ιs1,ss1pV1, Φ1, D1, s"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "Φ, D, sq and ιs1,ss1pV1, Φ1, D1, s1q in the category PE{F,ss"
+  },
+  {
+   "page": 6,
+   "mark": "p",
+   "context": "σPΓE{Fσ"
+  },
+  {
+   "page": 6,
+   "mark": "q",
+   "context": "σPΓE{FσpϖE"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "σPΓE{FσpϖEq"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "σPΓE{FσpϖEqbσ"
+  },
+  {
+   "page": 6,
+   "mark": "s",
+   "context": "onwhichf"
+  },
+  {
+   "page": 6,
+   "mark": "p",
+   "context": "σPΓE{Fσ"
+  },
+  {
+   "page": 6,
+   "mark": "q",
+   "context": "σPΓE{FσpϖE"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "σPΓE{FσpϖEq"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "p.11]).Thisshowsthattheembeddingιs,s"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "gradedcomponentshaveindiceswhichmaybewrittenasp"
+  },
+  {
+   "page": 6,
+   "mark": "p",
+   "context": "gradedcomponentshaveindiceswhichmaybewrittenaspbσ"
+  },
+  {
+   "page": 6,
+   "mark": "s",
+   "context": "gradedcomponentshaveindiceswhichmaybewrittenaspbσp"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "gradedcomponentshaveindiceswhichmaybewrittenaspbσps"
+  },
+  {
+   "page": 6,
+   "mark": "q",
+   "context": "gradedcomponentshaveindiceswhichmaybewrittenaspbσps1{s"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "sps"
+  },
+  {
+   "page": 6,
+   "mark": "q",
+   "context": "sps1{sq"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "respondingtoPE{F,swithEp"
+  },
+  {
+   "page": 6,
+   "mark": "p",
+   "context": "ΓE{FD"
+  },
+  {
+   "page": 6,
+   "mark": "q",
+   "context": "ΓE{FDpLE"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "classinH"
+  },
+  {
+   "page": 6,
+   "mark": "p",
+   "context": "ΓE{FD"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "transition maps are given for s | s"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "ansition maps are given for s | s1by the multiplication-by-s"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "n maps are given for s | s1by the multiplication-by-s1{s map"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "s"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "s1 Z{Z Ñ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "For s|s"
+  },
+  {
+   "page": 6,
+   "mark": "s",
+   "context": "p"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "ps"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "ps1,s :EPE{F,s"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "to the gerbe Ep"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "G"
+  },
+  {
+   "page": 6,
+   "mark": "p",
+   "context": "GmpFq Ñ E"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "GmpFq Ñ Ep"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "GmpFq Ñ Epc"
+  },
+  {
+   "page": 6,
+   "mark": "q",
+   "context": "GmpFq Ñ Epc1σ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "whereeachc"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "σdenotestheinflatedanti-canonicalclassΓ"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "F{EÑΓ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "identical thing for s"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "ΓE{FG"
+  },
+  {
+   "page": 6,
+   "mark": "p",
+   "context": "ΓE{FGm"
+  },
+  {
+   "page": 6,
+   "mark": "q",
+   "context": "ΓE{FGmpF"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "Epc"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "σ,s"
+  },
+  {
+   "page": 6,
+   "mark": "q",
+   "context": "σ,s1"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "s"
+  },
+  {
+   "page": 6,
+   "mark": "m",
+   "context": "ΓE{FG"
+  },
+  {
+   "page": 6,
+   "mark": "p",
+   "context": "ΓE{FGm"
+  },
+  {
+   "page": 6,
+   "mark": "q",
+   "context": "ΓE{FGmpF"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "Epc"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "PE{F,s"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "RepLpEpc"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "σ,s"
+  },
+  {
+   "page": 6,
+   "mark": "q",
+   "context": "σ,s1"
+  },
+  {
+   "page": 6,
+   "mark": "q",
+   "context": "σ,s1qσ"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "RepLpEpc"
+  },
+  {
+   "page": 6,
+   "mark": "s",
+   "context": "thatitisanL-basisofVpaσ{sq)onwhichf"
+  },
+  {
+   "page": 6,
+   "mark": "p",
+   "context": "ΓE{Fσ"
+  },
+  {
+   "page": 6,
+   "mark": "q",
+   "context": "ΓE{FσpϖE"
+  },
+  {
+   "page": 6,
+   "mark": "a",
+   "context": "ΓE{FσpϖEq"
+  },
+  {
+   "page": 6,
+   "mark": "p",
+   "context": "ΓE{FσpϖEqaσ.ByRepL"
+  },
+  {
+   "page": 6,
+   "mark": "p",
+   "context": "ΓE{FσpϖEqaσ.ByRepLpE"
+  },
+  {
+   "page": 6,
+   "mark": "c",
+   "context": "ΓE{FσpϖEqaσ.ByRepLpEp"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "ΓE{FσpϖEqaσ.ByRepLpEpc"
+  },
+  {
+   "page": 6,
+   "mark": "q",
+   "context": "ΓE{FσpϖEqaσ.ByRepLpEpc1σ,s"
+  },
+  {
+   "page": 6,
+   "mark": "q",
+   "context": "ΓE{FσpϖEqaσ.ByRepLpEpc1σ,sq"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "Tannakian category of representations pV, ρq (over L) of Epc"
+  },
+  {
+   "page": 7,
+   "mark": "h",
+   "context": "a"
+  },
+  {
+   "page": 7,
+   "mark": "p",
+   "context": "ahσ"
+  },
+  {
+   "page": 7,
+   "mark": "s",
+   "context": "ahσp"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "ahσps"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "ahσps1{s"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "hand, going up and then right gives the representation pV, ρ"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": " up and then right gives the representation pV, ρ1q, where ρ"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "E-morphism determined by acting on Vph"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "E-morphism determined by acting on Vph1σ{s"
+  },
+  {
+   "page": 7,
+   "mark": "h",
+   "context": "a"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "ah"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "Now the result follows from the fact that h"
+  },
+  {
+   "page": 7,
+   "mark": "p",
+   "context": "σ“ hσ"
+  },
+  {
+   "page": 7,
+   "mark": "s",
+   "context": "σ“ hσp"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "σ“ hσps"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "σ“ hσps1{s"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "y2.5.ThetransitionmorphismofTannakiancategoriesPE{F,sÑPE{F,s"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "ansitionmorphismofTannakiancategoriesPE{F,sÑPE{F,s1givesthes"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "pLEqp"
+  },
+  {
+   "page": 7,
+   "mark": "p",
+   "context": "on defined component-wise and multiplication determined by ℓ"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "n defined component-wise and multiplication determined by ℓp"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "defined component-wise and multiplication determined by ℓpbτ"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "ed component-wise and multiplication determined by ℓpbτqτ¨ ℓ"
+  },
+  {
+   "page": 7,
+   "mark": "c",
+   "context": "p"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "pcτ"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "pcτqτ“ pℓ¨ ℓ"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "pcτqτ“ pℓ¨ ℓ1"
+  },
+  {
+   "page": 7,
+   "mark": "p",
+   "context": "pcτqτ“ pℓ¨ ℓ1q"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "pcτqτ“ pℓ¨ ℓ1qp"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "pcτqτ“ pℓ¨ ℓ1qpbτ`cτ"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "all ℓ, ℓ"
+  },
+  {
+   "page": 7,
+   "mark": "p",
+   "context": "by the semilinearity condition and the identity ΦRE{F p1"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "by the semilinearity condition and the identity ΦRE{F p1p"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "by the semilinearity condition and the identity ΦRE{F p1pbσ"
+  },
+  {
+   "page": 7,
+   "mark": "p",
+   "context": "γPΓE{Fγ"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "γPΓE{FγpϖE"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "γPΓE{FγpϖEq"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "γPΓE{FγpϖEqbγ"
+  },
+  {
+   "page": 7,
+   "mark": "p",
+   "context": "γPΓE{FγpϖEqbγ1"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "γPΓE{FγpϖEqbγ1p"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "γPΓE{FγpϖEqbγ1pbσ"
+  },
+  {
+   "page": 7,
+   "mark": "p",
+   "context": "sZ-gradingDsuchthatV"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "sZ-gradingDsuchthatVp"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "sZ-gradingDsuchthatVpaσ{s"
+  },
+  {
+   "page": 7,
+   "mark": "s",
+   "context": "sZ-gradingDsuchthatVpaσ{sqhasanLE-basisonwhichΦ"
+  },
+  {
+   "page": 7,
+   "mark": "p",
+   "context": "σPΓE{Fσ"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "σPΓE{FσpϖE"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "σPΓE{FσpϖEq"
+  },
+  {
+   "page": 7,
+   "mark": "p",
+   "context": "1"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "1p"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "1pbσ"
+  },
+  {
+   "page": 7,
+   "mark": "p",
+   "context": "1pbσq ¨ V"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "1pbσq ¨ Vp"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "1pbσq ¨ Vpaσ{s"
+  },
+  {
+   "page": 7,
+   "mark": "p",
+   "context": "p0qďpaσ{sqăp1qV"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "p0qďpaσ{sqăp1qVp"
+  },
+  {
+   "page": 7,
+   "mark": "q",
+   "context": "p0qďpaσ{sqăp1qVpaσ{s"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "whichrestricttriviallytoP"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "ΓE{FG"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "ΓE{FGm"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "ΓE{FGmpF"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "{FGmpFq, which acts on the canonical F-fiber functor of RepF"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": " which acts on the canonical F-fiber functor of RepFpEpcσq,F"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "ΓE{FZ-graded piece V"
+  },
+  {
+   "page": 9,
+   "mark": "h",
+   "context": "ΓE{FZ-graded piece Vp"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "ΓE{FZ-graded piece Vphσ"
+  },
+  {
+   "page": 9,
+   "mark": "v",
+   "context": "ΓE{FZ-graded piece Vphσqto itself via sending"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "ΓE{FZ-graded piece Vphσqto itself via sending v to"
+  },
+  {
+   "page": 9,
+   "mark": "x",
+   "context": "ΓE{FZ-graded piece Vphσqto itself via sending v to pś"
+  },
+  {
+   "page": 9,
+   "mark": "h",
+   "context": "ΓE{FZ-graded piece Vphσqto itself via sending v to pś x"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "σ"
+  },
+  {
+   "page": 9,
+   "mark": "v",
+   "context": "σq"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "of the subcategory P"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "ΓE{FG"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "ΓE{FGm"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "ΓE{FGmpF"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "fixingtheimageofP"
+  },
+  {
+   "page": 9,
+   "mark": "s",
+   "context": "ΓE{Fµ"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "ΓE{Fµs"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "ΓE{FµspF"
+  },
+  {
+   "page": 9,
+   "mark": "m",
+   "context": "ΓE{FG"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "ΓE{FGm"
+  },
+  {
+   "page": 9,
+   "mark": "s",
+   "context": "ΓE{Fµ"
+  },
+  {
+   "page": 9,
+   "mark": "r",
+   "context": "ne a ΓLE{F -semilinear action of WLE{Fon RE{Fwhich we denote"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "action of ΓLE{Lsuch that γpℓ"
+  },
+  {
+   "page": 9,
+   "mark": "b",
+   "context": "action of ΓLE{Lsuch that γpℓp"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "action of ΓLE{Lsuch that γpℓpbσ"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "action of ΓLE{Lsuch that γpℓpbσqσq“γpℓq"
+  },
+  {
+   "page": 9,
+   "mark": "b",
+   "context": "action of ΓLE{Lsuch that γpℓpbσqσq“γpℓqp"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "action of ΓLE{Lsuch that γpℓpbσqσq“γpℓqpbγ´1σ"
+  },
+  {
+   "page": 9,
+   "mark": "f",
+   "context": "b"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "´1σ"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "´1σ1q"
+  },
+  {
+   "page": 9,
+   "mark": "b",
+   "context": "´1σ1qp"
+  },
+  {
+   "page": 9,
+   "mark": "f",
+   "context": "´1σ1qpb"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "σ"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "´1σ"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "σ"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "F"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "Fpℓ"
+  },
+  {
+   "page": 9,
+   "mark": "b",
+   "context": "Fpℓp"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "Fpℓpbσ"
+  },
+  {
+   "page": 9,
+   "mark": "f",
+   "context": "Fpℓpbσqσq “ p"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Fσ"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "Fσ1"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "Fσ1pϖE"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Fσ1pϖEq´bσ"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "Fσ1pϖEq´bσ1"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "Fσ1pϖEq´bσ1q"
+  },
+  {
+   "page": 9,
+   "mark": "b",
+   "context": "Fσ1pϖEq´bσ1qp"
+  },
+  {
+   "page": 9,
+   "mark": "f",
+   "context": "Fσ1pϖEq´bσ1qpb"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "Fσ1pϖEq´bσ1qpbfF σ"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "F"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "Fpℓ"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "σ"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Fσ"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "Fσ1"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "Fσ1pϖE"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Fσ1pϖEq´bσ"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "Fσ1pϖEq´bσ1"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "Fσ1pϖEq´bσ1q"
+  },
+  {
+   "page": 9,
+   "mark": "b",
+   "context": "Fσ1pϖEq´bσ1qp"
+  },
+  {
+   "page": 9,
+   "mark": "f",
+   "context": "Fσ1pϖEq´bσ1qpb"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "Fσ1pϖEq´bσ1qpbfF σ"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "Fσ1pϖEq´bσ1qpbfF σqσ"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Fqp"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "Fqp1"
+  },
+  {
+   "page": 9,
+   "mark": "b",
+   "context": "Fqp1p"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "Fqp1pbσ"
+  },
+  {
+   "page": 9,
+   "mark": "f",
+   "context": "Fqp1pbσqσq “ p"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "σ"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Fσ"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "Fσ1"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "Fσ1pϖE"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Fσ1pϖEq´bσ"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "Fσ1pϖEq´bσ1"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "Fσ1pϖEq´bσ1q"
+  },
+  {
+   "page": 9,
+   "mark": "b",
+   "context": "Fσ1pϖEq´bσ1qp"
+  },
+  {
+   "page": 9,
+   "mark": "f",
+   "context": "Fσ1pϖEq´bσ1qpb"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "Fσ1pϖEq´bσ1qpbfF γ´1σ"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "Fσ1pϖEq´bσ1qpbfF γ´1σqσ"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "σ"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Fσ"
+  },
+  {
+   "page": 9,
+   "mark": "p",
+   "context": "Fσ1"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "Fσ1pϖE"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Fσ1pϖEq´bσ"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "σ"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "σ"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "σ"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "σ"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "σ"
+  },
+  {
+   "page": 9,
+   "mark": "q",
+   "context": "σ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "We claim that the family of isomorphisms of functors µγ"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "for γ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "for γ2, γ"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "pµγ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "pµγ2,γ"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "βγ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "βγ2γ"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "βγ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "βγ2pβγ"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "pµγ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "pµγ2γ"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "βγ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "βγ2ppµγ"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "pµγ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "pµγ2,γ"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "βγ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "βγ2γ"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "βγ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "βγ2pβγ"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "form, the top arrow is given by Φ´cE"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "form, the top arrow is given by Φ´cEpγ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "form, the top arrow is given by Φ´cEpγ2,γ"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "form, the top arrow is given by Φ´cEpγ2,γ1γ"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": " top arrow is given by Φ´cEpγ2,γ1γq, the right arrow by Φ´cE"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "op arrow is given by Φ´cEpγ2,γ1γq, the right arrow by Φ´cEpγ"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "arrow is given by Φ´cEpγ2,γ1γq, the right arrow by Φ´cEpγ1,γ"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "´cEpγ2,γ1γq, the right arrow by Φ´cEpγ1,γq, the left by Φ´cE"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "Epγ2,γ1γq, the right arrow by Φ´cEpγ1,γq, the left by Φ´cEpγ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "γ2,γ1γq, the right arrow by Φ´cEpγ1,γq, the left by Φ´cEpγ2γ"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "γ1γq, the right arrow by Φ´cEpγ1,γq, the left by Φ´cEpγ2γ1,γ"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "bottom by Φ´cE"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "bottom by Φ´cEpγ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "bottom by Φ´cEpγ2,γ"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "bottom by Φ´cEpγ2,γ1"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "µγ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "µγ1,γpXq ˝ fγ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "µγ1,γpXq ˝ fγ1γ“ βγ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "µγ1,γpXq ˝ fγ1γ“ βγ1pfγq ˝ fγ"
+  },
+  {
+   "page": 11,
+   "mark": "s",
+   "context": "ΓE{Fµ"
+  },
+  {
+   "page": 11,
+   "mark": "s",
+   "context": "2.9.The band of the gerbe associated to RWE{F,s is ResE{F pµ"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "to show that the latter band is the F-group scheme ResE{F pG"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "ΓE{FG"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "by taking the representation pV, ρq to the representation pV"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "aking the representation pV, ρq to the representation pV1, ρ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "whereV"
+  },
+  {
+   "page": 11,
+   "mark": "s",
+   "context": "whereV1“VbEsE"
+  },
+  {
+   "page": 11,
+   "mark": "s",
+   "context": "whereV1“VbEsEssuchthatthemapE"
+  },
+  {
+   "page": 11,
+   "mark": "s",
+   "context": "whereV1“VbEsEssuchthatthemapEsÑE"
+  },
+  {
+   "page": 11,
+   "mark": "s",
+   "context": "sEssuchthatthemapEsÑEsisgivenbytheactionofsEpγqrestrictedtoE"
+  },
+  {
+   "page": 11,
+   "mark": "h",
+   "context": "p"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "phσ"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "phσqσ“ V"
+  },
+  {
+   "page": 11,
+   "mark": "h",
+   "context": "phσqσ“ Vp"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "phσqσ“ Vphγσ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "phσqσ“ Vphγσqσ.We define ρ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "phσqσ“ Vphγσqσ.We define ρ1 such that the element pp"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "phσqσ“ Vphγσqσ.We define ρ1 such that the element pp1"
+  },
+  {
+   "page": 11,
+   "mark": "f",
+   "context": "phσqσ“ Vphγσqσ.We define ρ1 such that the element pp1q,"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "phσqσ“ Vphγσqσ.We define ρ1 such that the element pp1q, fE"
+  },
+  {
+   "page": 11,
+   "mark": "b",
+   "context": "hγσqσ.We define ρ1 such that the element pp1q, fEq acts by Φ"
+  },
+  {
+   "page": 11,
+   "mark": "f",
+   "context": "σqσ.We define ρ1 such that the element pp1q, fEq acts by Φ b"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "V"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "σPΓE{F"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "the descent functors β"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "γon RepEs"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "γon RepEspEpcσqσ"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "ΓE{FG"
+  },
+  {
+   "page": 11,
+   "mark": "p",
+   "context": "ΓE{FGm"
+  },
+  {
+   "page": 11,
+   "mark": "s",
+   "context": "ΓE{FGmpE"
+  },
+  {
+   "page": 11,
+   "mark": "q",
+   "context": "ΓE{FGmpEs"
+  },
+  {
+   "page": 11,
+   "mark": "h",
+   "context": "c"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "φandobjectpV, ρq,wefirstapplyβγ´1,obtainingpV"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "φandobjectpV, ρq,wefirstapplyβγ´1,obtainingpV1, ρ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "efirstapplyβγ´1,obtainingpV1, ρ1q,andobtainanautomorphismofV"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "φpβγ´1pV"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "φpβγ´1pV1, ρ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "-action by spγq´1, obtaining an automorphism spγq´1rφpβγ´1pV"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "ion by spγq´1, obtaining an automorphism spγq´1rφpβγ´1pV1, ρ"
+  },
+  {
+   "page": 12,
+   "mark": "s",
+   "context": "of the vector space pV"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "of the vector space pVs"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "of the vector space pVspγ´1"
+  },
+  {
+   "page": 12,
+   "mark": "s",
+   "context": "of the vector space pVspγ´1q´1q"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "of the vector space pVspγ´1q´1qs"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "of the vector space pVspγ´1q´1qspγ"
+  },
+  {
+   "page": 12,
+   "mark": "c",
+   "context": "τ"
+  },
+  {
+   "page": 12,
+   "mark": "h",
+   "context": "τc"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "ch we want to explicitly describe. The automorphism φpβγ´1pV"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "e want to explicitly describe. The automorphism φpβγ´1pV1, ρ"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "y describe. The automorphism φpβγ´1pV1, ρ1qq scales Vphσq“ V"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "ing the twisted LE-action), which means that spγq´1pφpβγ´1pV"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "the twisted LE-action), which means that spγq´1pφpβγ´1pV1, ρ"
+  },
+  {
+   "page": 12,
+   "mark": "c",
+   "context": "τ"
+  },
+  {
+   "page": 12,
+   "mark": "h",
+   "context": "τc"
+  },
+  {
+   "page": 12,
+   "mark": "c",
+   "context": "pspγqΦ"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "pspγqΦcE"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "pspγqΦcEpγ,γ´1"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "ΓE{FG"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "ΓE{FGm"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "ΓE{FGmpE"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "ΓE{F -action on ResE{F pG"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "ResE{F pG"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": ", in the sense that, at the level of bands, the functor ιs,s"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": " that, at the level of bands, the functor ιs,s1induces the s"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "powermapfromResE{F pG"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "powermapfromResE{F pGmqtoitself(andthus,thes"
+  },
+  {
+   "page": 12,
+   "mark": "s",
+   "context": "romResE{F pGmqtoitself(andthus,thes1{s-powermapfromResE{F pµ"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "omResE{F pGmqtoitself(andthus,thes1{s-powermapfromResE{F pµs"
+  },
+  {
+   "page": 12,
+   "mark": "s",
+   "context": "toitself(andthus,thes1{s-powermapfromResE{F pµs1qtoResE{F pµ"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "object of WE{F,s"
+  },
+  {
+   "page": 12,
+   "mark": "s",
+   "context": "grading of V , such that Vpaσ{sqσhas an LE-basis on which f"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "σpϖEq"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "for x P ΓLE{Flifting¯x P ΓE{F , we have that˜ΦpxqpV"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "for x P ΓLE{Flifting¯x P ΓE{F , we have that˜ΦpxqpVp"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "for x P ΓLE{Flifting¯x P ΓE{F , we have that˜ΦpxqpVpaσ"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "or x P ΓLE{Flifting¯x P ΓE{F , we have that˜ΦpxqpVpaσqσq “ V"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "r x P ΓLE{Flifting¯x P ΓE{F , we have that˜ΦpxqpVpaσqσq “ Vp"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "ΓLE{Flifting¯x P ΓE{F , we have that˜ΦpxqpVpaσqσq “ Vpa¯x´1σ"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "tensor structure defined such that pV,˜Φq b pV"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "tensor structure defined such that pV,˜Φq b pV1,˜Φ"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "tensor structure defined such that pV,˜Φq b pV1,˜Φ1q “ pVb V"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "tructure defined such that pV,˜Φq b pV1,˜Φ1q “ pVb V1,˜Φ b˜Φ"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "ed such that pV,˜Φq b pV1,˜Φ1q “ pVb V1,˜Φ b˜Φ1q where˜Φ ˆ˜Φ"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "p˜Φ b˜Φ"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "p˜Φ b˜Φ1qpσqpv b v"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "p˜Φ b˜Φ1qpσqpv b v1q “˜Φpσqpvq b˜Φ"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "p˜Φ b˜Φ1qpσqpv b v1q “˜Φpσqpvq b˜Φ1pσqpv"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "σ“ f"
+  },
+  {
+   "page": 12,
+   "mark": "s",
+   "context": "E"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "EsE"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "EsEpγ"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "˜Φpσqpvq “ Φ"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "γ"
+  },
+  {
+   "page": 12,
+   "mark": "v",
+   "context": "γp"
+  },
+  {
+   "page": 12,
+   "mark": "b",
+   "context": "γpv"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "γpv b"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "˜Φpσ1σ2q.Explicitly, if σi“ f"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "˜Φpσ1σ2q.Explicitly, if σi“ fn"
+  },
+  {
+   "page": 12,
+   "mark": "s",
+   "context": "E"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "EsE"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "EsEpγ"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "EsEpγi"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "pΦ"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "pΦn"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "γ"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "γ1q ˝ pΦ"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "γ1q ˝ pΦn"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "γ"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "γ2q “ Φ"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "γ2q “ Φn"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "γ2q “ Φn1`n"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "γ2q “ Φn1`n2`cE"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "γ2q “ Φn1`n2`cEpγ"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "γ2q “ Φn1`n2`cEpγ1,γ"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "γ2q “ Φn1`n2`cEpγ1,γ2"
+  },
+  {
+   "page": 12,
+   "mark": "f",
+   "context": "γ2q “ Φn1`n2`cEpγ1,γ2q"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "γ"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "γ1γ"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "γ"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "γ"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "γ2˝ Φ´cE"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "γ2˝ Φ´cEpγ"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "γ2˝ Φ´cEpγ1,γ"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "γ2˝ Φ´cEpγ1,γ2"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "γ"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "γpV"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "γpVp"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "γpVpaσ{s"
+  },
+  {
+   "page": 12,
+   "mark": "b",
+   "context": "γpVpaσ{sqσ"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "γpVpaσ{sqσb"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "γ"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "γpβγ"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "γpβγpV"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "γpβγpV q"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "γpβγpV qp"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "γpβγpV qpaγ´1σ{s"
+  },
+  {
+   "page": 12,
+   "mark": "p",
+   "context": "γpβγpV qpaγ´1σ{sqσq “ V"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "γpβγpV qpaγ´1σ{sqσq “ Vp"
+  },
+  {
+   "page": 12,
+   "mark": "q",
+   "context": "γpβγpV qpaγ´1σ{sqσq “ Vpaγ´1σ{s"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "kthatthemapsfγsatisfythecocycleconditionwithrespecttoβγandµγ"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "pµγ"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "pµγ1,γqpXq ˝ fγ"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "pµγ1,γqpXq ˝ fγ1γ“ βγ"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "pµγ1,γqpXq ˝ fγ1γ“ βγ1pfγq ˝ fγ"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "˜ΦpcEpγ"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "˜ΦpcEpγ1, γq´1q ˝˜ΦpsEpγ"
+  },
+  {
+   "page": 13,
+   "mark": "1",
+   "context": "˜ΦpcEpγ1, γq´1q ˝˜ΦpsEpγ1γqq´1“˜ΦpsEpγqq´1˝˜ΦpsEpγ"
+  },
+  {
+   "page": 13,
+   "mark": "m",
+   "context": "band which is isomorphic as an F-group scheme to ResE{F pG"
+  },
+  {
+   "page": 13,
+   "mark": "p",
+   "context": "˜Φpγqprvq“˜ΦRE{F pγqprq˜Φpγqpvq for rPRE{F , and such that V"
+  },
+  {
+   "page": 13,
+   "mark": "b",
+   "context": "Φpγqprvq“˜ΦRE{F pγqprq˜Φpγqpvq for rPRE{F , and such that Vp"
+  },
+  {
+   "page": 13,
+   "mark": "q",
+   "context": "prvq“˜ΦRE{F pγqprq˜Φpγqpvq for rPRE{F , and such that Vpbσ{s"
+  },
+  {
+   "page": 13,
+   "mark": "s",
+   "context": "which˜Φpf"
+  },
+  {
+   "page": 13,
+   "mark": "b",
+   "context": "σpϖEq"
+  },
+  {
+   "page": 13,
+   "mark": "q",
+   "context": "E"
+  },
+  {
+   "page": 13,
+   "mark": "s",
+   "context": "ng that the former is banded by the F-group scheme ResE{F pµ"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "which sends the object pV, D,˜Φq to the object pVbLERE{F , D"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "D"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "nduced by tensoring the grading of Vwith that of RE{F .For s"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "sitionfunctorfromIE{F,stoIE{F,s"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "ofE.LetK"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "ofE.LetK1ĂKbethemaximalunramifiedextensionofE.ThenK{K"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "haveourfixedanti-uniformizerϖKsuchthatNK{K"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "Z-gradedringR"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "pieceofRE{Fotherwise.WethendefineRE{F,K:“R"
+  },
+  {
+   "page": 14,
+   "mark": "b",
+   "context": "E{F,K"
+  },
+  {
+   "page": 14,
+   "mark": "c",
+   "context": "(our chosen lift of Frobenius) agree on 1p"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "F,K τ"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "K,F τ"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "τ"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "σ"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "σ1τ"
+  },
+  {
+   "page": 14,
+   "mark": "p",
+   "context": "fF,Kp1"
+  },
+  {
+   "page": 14,
+   "mark": "c",
+   "context": "fF,Kp1p"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "fF,Kp1pcτ"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "F,K τ"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "K,F τ"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "τ"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "σ"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "τ"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "τ2PΓK{K"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "F,Eσ"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "F,Eσ"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "σ"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "σ"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "F,Eσ"
+  },
+  {
+   "page": 14,
+   "mark": "f",
+   "context": "F,Eσqσ“ r"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "F,Eσqσ“ rfF,E"
+  },
+  {
+   "page": 14,
+   "mark": "p",
+   "context": "F,Eσqσ“ rfF,E1"
+  },
+  {
+   "page": 14,
+   "mark": "c",
+   "context": "F,Eσqσ“ rfF,E1p"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "F,Eσqσ“ rfF,E1pcσ"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "F,Eσqσ“ rfF,E1pcσqσs b"
+  },
+  {
+   "page": 14,
+   "mark": "p",
+   "context": "F,Eσqσ“ rfF,E1pcσqσs b 1 “ fF,K"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "F,Eσqσ“ rfF,E1pcσqσs b 1 “ fF,Kp"
+  },
+  {
+   "page": 14,
+   "mark": "p",
+   "context": "F,Eσqσ“ rfF,E1pcσqσs b 1 “ fF,Kp1"
+  },
+  {
+   "page": 14,
+   "mark": "c",
+   "context": "F,Eσqσ“ rfF,E1pcσqσs b 1 “ fF,Kp1p"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "F,Eσqσ“ rfF,E1pcσqσs b 1 “ fF,Kp1pcσ"
+  },
+  {
+   "page": 14,
+   "mark": "b",
+   "context": "F,Eσqσ“ rfF,E1pcσqσs b 1 “ fF,Kp1pcσqσ"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "F,Eσqσ“ rfF,E1pcσqσs b 1 “ fF,Kp1pcσqσb"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "F,Eσqσ“ rfF,E1pcσqσs b 1 “ fF,Kp1pcσqσb 1"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "F,Eσ"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "σ"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "σ"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "ΓK"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "ΓK1{pKXLq↠ΓE{pEXLq, with kernel equal to ΓK"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": " with kernel equal to ΓK1{rE¨pKXLqs, where now E ¨pK XLq “ K"
+  },
+  {
+   "page": 14,
+   "mark": "p",
+   "context": "sZ-graded RE{F,K-module whose"
+  },
+  {
+   "page": 14,
+   "mark": "c",
+   "context": "sZ-graded RE{F,K-module whose p"
+  },
+  {
+   "page": 14,
+   "mark": "q",
+   "context": "sZ-graded RE{F,K-module whose pcτ"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "sZ-graded RE{F,K-module whose pcτqτ-graded piece is"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "Notealsothatthereisasimilartransitionfunctorp"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "trivially,thetransitionfunctorsp"
+  },
+  {
+   "page": 14,
+   "mark": "p",
+   "context": "K{Eand"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "where ? “ E or K.By abuse of notation, we will also use p"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "given in the same way as p"
+  },
+  {
+   "page": 14,
+   "mark": "b",
+   "context": "K{E, except now with diagonal ΓLK{K-action on M"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "scribe what pK{Edoes on bands, we will first describe what p"
+  },
+  {
+   "page": 15,
+   "mark": "c",
+   "context": " identifications of PE{F,s and PK{F,s with the categories Ep"
+  },
+  {
+   "page": 15,
+   "mark": "d",
+   "context": "ations of PE{F,s and PK{F,s with the categories Epcσqσand Ep"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "dσqσare the representatives of the anti-canonical class in H"
+  },
+  {
+   "page": 15,
+   "mark": "q",
+   "context": "s"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "and H"
+  },
+  {
+   "page": 15,
+   "mark": "q",
+   "context": "s"
+  },
+  {
+   "page": 15,
+   "mark": "p",
+   "context": "sq, respectively corresponding to ϖEand ϖK.Conjugating"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "sq, respectively corresponding to ϖEand ϖK.Conjugating p"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "ΓE{FG"
+  },
+  {
+   "page": 15,
+   "mark": "p",
+   "context": "ΓE{FGm"
+  },
+  {
+   "page": 15,
+   "mark": "q",
+   "context": "ΓE{FGmpLE"
+  },
+  {
+   "page": 15,
+   "mark": "p",
+   "context": "ΓE{FGmpLEqÑGL"
+  },
+  {
+   "page": 15,
+   "mark": "q",
+   "context": "ΓE{FGmpLEqÑGLpV"
+  },
+  {
+   "page": 15,
+   "mark": "f",
+   "context": "ΓE{FGmpLEqÑGLpV qandthe"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "ΓE{FGmpLEqÑGLpV qandthefE-semilinearautomorphisminducedbypp"
+  },
+  {
+   "page": 15,
+   "mark": "q",
+   "context": "ΓE{FGmpLEqÑGLpV qandthefE-semilinearautomorphisminducedbypp1"
+  },
+  {
+   "page": 15,
+   "mark": "f",
+   "context": "{FGmpLEqÑGLpV qandthefE-semilinearautomorphisminducedbypp1q,"
+  },
+  {
+   "page": 15,
+   "mark": "q",
+   "context": "mpLEqÑGLpV qandthefE-semilinearautomorphisminducedbypp1q, fE"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "object pV"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "object pV1, Φ, Dq of PE{F,s as in §2.1, with V"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": ".1, with V1“ VbEs LE, Φ given by the action pp1q, fEq, and V"
+  },
+  {
+   "page": 15,
+   "mark": "p",
+   "context": "K{Esendsthistotheobject"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "K{EsendsthistotheobjectpV"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "K{EsendsthistotheobjectpV1"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "K{EsendsthistotheobjectpV1bLELK, Φ"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "K{EsendsthistotheobjectpV1bLELK, Φ1, D"
+  },
+  {
+   "page": 15,
+   "mark": "q",
+   "context": "K{EsendsthistotheobjectpV1bLELK, Φ1, D1"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "K{EsendsthistotheobjectpV1bLELK, Φ1, D1q,whereΦ"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "VphσqbEsLE.Then,bydefinition,p"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "diagonallyonV"
+  },
+  {
+   "page": 15,
+   "mark": "f",
+   "context": "diagonallyonV1bLELKbyΦ"
+  },
+  {
+   "page": 15,
+   "mark": "p",
+   "context": "diagonallyonV1bLELKbyΦf"
+  },
+  {
+   "page": 15,
+   "mark": "q",
+   "context": "diagonallyonV1bLELKbyΦfpK{E"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "diagonallyonV1bLELKbyΦfpK{EqbfKandV"
+  },
+  {
+   "page": 15,
+   "mark": "p",
+   "context": "phτ{sq“0if"
+  },
+  {
+   "page": 15,
+   "mark": "h",
+   "context": "phτ{sq“0ifp"
+  },
+  {
+   "page": 15,
+   "mark": "q",
+   "context": "phτ{sq“0ifphτ{s"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "V"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "ph¯τ{sq"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "V"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "phτ{sq“ V"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "ph¯τ{sq"
+  },
+  {
+   "page": 15,
+   "mark": "p",
+   "context": "ph¯τ{sqbLELK“ V"
+  },
+  {
+   "page": 15,
+   "mark": "h",
+   "context": "ph¯τ{sqbLELK“ Vp"
+  },
+  {
+   "page": 15,
+   "mark": "q",
+   "context": "ph¯τ{sqbLELK“ Vph¯τ"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "ph¯τ{sqbLELK“ Vph¯τq"
+  },
+  {
+   "page": 15,
+   "mark": "s",
+   "context": "ph¯τ{sqbLELK“ Vph¯τqbE"
+  },
+  {
+   "page": 15,
+   "mark": "p",
+   "context": "ph¯τ{sqbLELK“ Vph¯τqbEsLK“ pV"
+  },
+  {
+   "page": 15,
+   "mark": "h",
+   "context": "ph¯τ{sqbLELK“ Vph¯τqbEsLK“ pVp"
+  },
+  {
+   "page": 15,
+   "mark": "q",
+   "context": "ph¯τ{sqbLELK“ Vph¯τqbEsLK“ pVph¯τ"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "ph¯τ{sqbLELK“ Vph¯τqbEsLK“ pVph¯τq"
+  },
+  {
+   "page": 15,
+   "mark": "s",
+   "context": "ph¯τ{sqbLELK“ Vph¯τqbEsLK“ pVph¯τqbE"
+  },
+  {
+   "page": 15,
+   "mark": "s",
+   "context": "ph¯τ{sqbLELK“ Vph¯τqbEsLK“ pVph¯τqbEsK"
+  },
+  {
+   "page": 15,
+   "mark": "s",
+   "context": "ph¯τ{sqbLELK“ Vph¯τqbEsLK“ pVph¯τqbEsKsq bK"
+  },
+  {
+   "page": 15,
+   "mark": "s",
+   "context": "en by teib1b1u, where ei is an Es-basis of Vph¯τq on which Φ"
+  },
+  {
+   "page": 15,
+   "mark": "p",
+   "context": "σPΓE{Fσ"
+  },
+  {
+   "page": 15,
+   "mark": "q",
+   "context": "σPΓE{FσpϖE"
+  },
+  {
+   "page": 15,
+   "mark": "h",
+   "context": "σPΓE{FσpϖEq"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "pΦ"
+  },
+  {
+   "page": 15,
+   "mark": "s",
+   "context": "pΦ1q"
+  },
+  {
+   "page": 15,
+   "mark": "f",
+   "context": "σpϖEq"
+  },
+  {
+   "page": 15,
+   "mark": "p",
+   "context": "σpϖEqf"
+  },
+  {
+   "page": 15,
+   "mark": "q",
+   "context": "σpϖEqfpK{E"
+  },
+  {
+   "page": 15,
+   "mark": "h",
+   "context": "σpϖEqfpK{Eq"
+  },
+  {
+   "page": 15,
+   "mark": "f",
+   "context": "γpϖKqq"
+  },
+  {
+   "page": 15,
+   "mark": "p",
+   "context": "γpϖKqqf"
+  },
+  {
+   "page": 15,
+   "mark": "q",
+   "context": "γpϖKqqfpK{E"
+  },
+  {
+   "page": 15,
+   "mark": "h",
+   "context": "γpϖKqqfpK{Eq"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "γPΓK{K"
+  },
+  {
+   "page": 15,
+   "mark": "h",
+   "context": "τpϖKq"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "wingthatthecorrespondingrepresentationofEpdσq,denotedbypW, ρ"
+  },
+  {
+   "page": 15,
+   "mark": "s",
+   "context": "ΓK{E-stable, and is Vph¯τqbEsK"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "hus, if the automorphism of the fiber functor ωK acts on Wph"
+  },
+  {
+   "page": 15,
+   "mark": "p",
+   "context": "τ, (where"
+  },
+  {
+   "page": 15,
+   "mark": "a",
+   "context": "τ, (where p"
+  },
+  {
+   "page": 15,
+   "mark": "a",
+   "context": "τPΓK{F"
+  },
+  {
+   "page": 15,
+   "mark": "h",
+   "context": "τPΓK{Fa"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "τPΓK{Fah"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "ΓK{FG"
+  },
+  {
+   "page": 15,
+   "mark": "p",
+   "context": "ΓK{FGm"
+  },
+  {
+   "page": 15,
+   "mark": "s",
+   "context": "ΓK{FGmpK"
+  },
+  {
+   "page": 15,
+   "mark": "q",
+   "context": "ΓK{FGmpKs"
+  },
+  {
+   "page": 15,
+   "mark": "s",
+   "context": "an induced automorphism of pωEqK, which acts on Vphσq bEs K"
+  },
+  {
+   "page": 15,
+   "mark": "p",
+   "context": "σPΓE{F"
+  },
+  {
+   "page": 15,
+   "mark": "a",
+   "context": "τPΓK{F ,τÞÑσ"
+  },
+  {
+   "page": 15,
+   "mark": "q",
+   "context": "τPΓK{F ,τÞÑσaτ"
+  },
+  {
+   "page": 15,
+   "mark": "h",
+   "context": "τPΓK{F ,τÞÑσaτq"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "ΓK{FG"
+  },
+  {
+   "page": 15,
+   "mark": "p",
+   "context": "ΓK{FGm"
+  },
+  {
+   "page": 15,
+   "mark": "s",
+   "context": "ΓK{FGmpK"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "ΓE{FG"
+  },
+  {
+   "page": 15,
+   "mark": "p",
+   "context": "ΓE{FGm"
+  },
+  {
+   "page": 15,
+   "mark": "s",
+   "context": "ΓE{FGmpK"
+  },
+  {
+   "page": 15,
+   "mark": "q",
+   "context": "ΓE{FGmpKs"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "y construction, the F-group morphism on bands from ResK{F pG"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": " the F-group morphism on bands from ResK{F pGmq to ResE{F pG"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "rphism on bands from ResK{F pGmq to ResE{F pGmq induced by p"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "trueofthecanonical“normmap\"ResK{F pG"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "trueofthecanonical“normmap\"ResK{F pGmqÑResE{F pG"
+  },
+  {
+   "page": 15,
+   "mark": "s",
+   "context": "“normmap\"ResK{F pGmqÑResE{F pGmq.SincebothschemesaretoriandK"
+  },
+  {
+   "page": 15,
+   "mark": "s",
+   "context": "group schemes ResK{F pµ"
+  },
+  {
+   "page": 15,
+   "mark": "s",
+   "context": "group schemes ResK{F pµsq Ñ ResE{F pµ"
+  },
+  {
+   "page": 15,
+   "mark": "s",
+   "context": "pµsq associated to pK{Eis induced by the inclusion ResK{F pµ"
+  },
+  {
+   "page": 15,
+   "mark": "m",
+   "context": "ResK{F pG"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "ResK{F pGmq followed by the map induced by p"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "Finally, for s | s"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "Finally, for s | s1, we define the transition map pK{E,s"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "| s1, we define the transition map pK{E,s1,s :IE{F,sÑ IK{F,s"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "ιs,s"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "ÝÝÑ IK{F,s"
+  },
+  {
+   "page": 16,
+   "mark": "s",
+   "context": "which on bands gives the map ResK{F pµ"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "which on bands gives the map ResK{F pµs"
+  },
+  {
+   "page": 16,
+   "mark": "s",
+   "context": "which on bands gives the map ResK{F pµs1q Ñ ResE{F pµ"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "with the s"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "therelationthatpK, s"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "therelationthatpK, s1qąpE, sqifandonlyifKcontainsEands|s"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "mapspK{E,s,s"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "ÝÑ"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "ÝÑkRI"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "ÐÝ"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "ÐÝkResE"
+  },
+  {
+   "page": 16,
+   "mark": "p",
+   "context": "ÐÝkResEk{F"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "ÐÝkResEk{F pµ"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "ÐÝkResEk{F pµn"
+  },
+  {
+   "page": 16,
+   "mark": "q",
+   "context": "ÐÝkResEk{F pµnk"
+  },
+  {
+   "page": 16,
+   "mark": "p",
+   "context": "E¨pś σ"
+  },
+  {
+   "page": 16,
+   "mark": "q",
+   "context": "E¨pś σpϖE"
+  },
+  {
+   "page": 16,
+   "mark": "s",
+   "context": "E¨pś σpϖEq´raσ`sbσ"
+  },
+  {
+   "page": 16,
+   "mark": "q",
+   "context": "E¨pś σpϖEq´raσ`sbσs"
+  },
+  {
+   "page": 16,
+   "mark": "f",
+   "context": "V"
+  },
+  {
+   "page": 16,
+   "mark": "s",
+   "context": "Vf"
+  },
+  {
+   "page": 16,
+   "mark": "p",
+   "context": "E¨pś σ"
+  },
+  {
+   "page": 16,
+   "mark": "q",
+   "context": "E¨pś σpϖE"
+  },
+  {
+   "page": 16,
+   "mark": "s",
+   "context": "E¨pś σpϖEq´raσ`sbσ"
+  },
+  {
+   "page": 16,
+   "mark": "q",
+   "context": "E¨pś σpϖEq´raσ`sbσs"
+  },
+  {
+   "page": 16,
+   "mark": "s",
+   "context": "pś σpϖEq´raσ`sbσsqdenotesthesubgroupofVofallelementsonwhichf"
+  },
+  {
+   "page": 16,
+   "mark": "f",
+   "context": "whereV"
+  },
+  {
+   "page": 16,
+   "mark": "s",
+   "context": "whereVf"
+  },
+  {
+   "page": 16,
+   "mark": "p",
+   "context": "σPΓE{Fσ"
+  },
+  {
+   "page": 16,
+   "mark": "q",
+   "context": "σPΓE{FσpϖE"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "σPΓE{FσpϖEq´r"
+  },
+  {
+   "page": 16,
+   "mark": "s",
+   "context": "σPΓE{FσpϖEq´raσ`sbσ"
+  },
+  {
+   "page": 16,
+   "mark": "s",
+   "context": "functoroverE"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "acanonicalcohomologyclassinthegroupH"
+  },
+  {
+   "page": 16,
+   "mark": "s",
+   "context": "acanonicalcohomologyclassinthegroupH2pΓF{F , ResE{F pµ"
+  },
+  {
+   "page": 16,
+   "mark": "s",
+   "context": "ber functor IE{F,sÑ VectFgiven explicitly by tensoring the E"
+  },
+  {
+   "page": 16,
+   "mark": "p",
+   "context": "E¨pś σ"
+  },
+  {
+   "page": 16,
+   "mark": "q",
+   "context": "E¨pś σpϖE"
+  },
+  {
+   "page": 16,
+   "mark": "q",
+   "context": "E¨pś σpϖEq´aσ"
+  },
+  {
+   "page": 16,
+   "mark": "f",
+   "context": "V"
+  },
+  {
+   "page": 16,
+   "mark": "s",
+   "context": "Vf"
+  },
+  {
+   "page": 16,
+   "mark": "s",
+   "context": "withFoverE"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "withFoverEs,underthecanonicalmapH"
+  },
+  {
+   "page": 16,
+   "mark": "s",
+   "context": "withFoverEs,underthecanonicalmapH2pΓF{F , ResE{F pµ"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "withFoverEs,underthecanonicalmapH2pΓF{F , ResE{F pµsqpFqqÑH"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "thecanonicalmapH2pΓF{F , ResE{F pµsqpFqqÑH2pΓF{F , ResE{F pG"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "inH"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "inH2pΓF{F , ResE{F pG"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "imageofthisclassinH"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "imageofthisclassinH2pE, ResE{F pG"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "ΓE{FH"
+  },
+  {
+   "page": 16,
+   "mark": "p",
+   "context": "ΓE{FH2"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "ΓE{FH2pE, G"
+  },
+  {
+   "page": 16,
+   "mark": "p",
+   "context": "ΓE{FH2pE, Gm"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "H"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "H2pΓF{F , ResE{F pG"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "ÝÑ H"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "ÝÑ H2pΓF{E, G"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "Recall that H"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "ÐÝ"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "ÐÝkH"
+  },
+  {
+   "page": 16,
+   "mark": "p",
+   "context": "ÐÝkH2"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "ÐÝkH2pΓF{F , u"
+  },
+  {
+   "page": 16,
+   "mark": "p",
+   "context": "ÐÝkH2pΓF{F , uk"
+  },
+  {
+   "page": 16,
+   "mark": "u",
+   "context": "ÐÝkH2pΓF{F , ukpFqq,where"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "ÐÝkH2pΓF{F , ukpFqq,where u"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "ÐÝkH2pΓF{F , ukpFqq,where uk:“ResE"
+  },
+  {
+   "page": 16,
+   "mark": "p",
+   "context": "ÐÝkH2pΓF{F , ukpFqq,where uk:“ResEk{F"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "ÐÝkH2pΓF{F , ukpFqq,where uk:“ResEk{F pµ"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "ÐÝkH2pΓF{F , ukpFqq,where uk:“ResEk{F pµn"
+  },
+  {
+   "page": 16,
+   "mark": "q",
+   "context": "ÐÝkH2pΓF{F , ukpFqq,where uk:“ResEk{F pµnk"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "0 Ñ H"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "0 Ñ H2pΓF{F , u"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "0 Ñ H2pΓF{F , ukpFqq Ñ H"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "0 Ñ H2pΓF{F , ukpFqq Ñ H2pΓF{F , ResEk{F pG"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "ÝÝÝÝÑ H"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "ÝÝÝÝÑ H2pΓF{F , ResEk{F pG"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "ogy group H"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "ogy group H2pΓF{F , u"
+  },
+  {
+   "page": 16,
+   "mark": "l",
+   "context": "nk.For"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "nk.For lą"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "theprojectionmapH"
+  },
+  {
+   "page": 16,
+   "mark": "l",
+   "context": "theprojectionmapH2pΓF{F , u"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "theprojectionmapH2pΓF{F , ulpFqqÑH"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "theprojectionmapH2pΓF{F , ulpFqqÑH2pΓF{F , u"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "nl{nkmap from"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "´1 P"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "nkZ{Z “ H"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "nkZ{Z “ H2"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "nkZ{Z “ H2pΓF{F, u"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "ÐÝ"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "class ´1 P"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "class ´1 PpZ – H"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "thepresentationu"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "aprioriadifferentgroup)usedin[Kal16a].Nevertheless,themapuÑu"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "pQ{ZqrΓE{F s"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "in Q{ZrΓK{F s lies in Q{ZrΓK{F s"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "HomF puF , GLpω"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "HomF puF , GLpωkpXqq as follows: The group ResE"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "HomF puF , GLpωkpXqq as follows: The group ResEk{F pµ"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "HomF puF , GLpωkpXqq as follows: The group ResEk{F pµn"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "then fXis defined by sending x P ResEk{F pµ"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": " sending x P ResEk{F pµnkq to the F-linear automorphism of ω"
+  },
+  {
+   "page": 17,
+   "mark": "r",
+   "context": "ΓEk{F"
+  },
+  {
+   "page": 17,
+   "mark": "0",
+   "context": "ΓEk{Fr"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "ΓEk{Fr0,"
+  },
+  {
+   "page": 17,
+   "mark": "q",
+   "context": "ΓEk{Fr0,1"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "ΓEk{Fr0,1q dimLE"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "ΓEk{Fr0,1q dimLEk"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "ΓEk{Fr0,1q dimLEkpV"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "ΓEk{Fr0,1q dimLEkpVp"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "ΓEk{Fr0,1q dimLEkpVpaσ{n"
+  },
+  {
+   "page": 17,
+   "mark": "q",
+   "context": "ΓEk{Fr0,1q dimLEkpVpaσ{nk"
+  },
+  {
+   "page": 17,
+   "mark": "q",
+   "context": "ΓEk{Fr0,1q dimLEkpVpaσ{nkq"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "RI"
+  },
+  {
+   "page": 17,
+   "mark": "l",
+   "context": "RIkÑRI"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "RIl,andwethuscanassociatetoanobjectXinRigIsocFintheimageofRI"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "fXP HomF puF , GLpω"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "nobjectXofRigIsocFisbasicifthehomomorphismfXisvaluedinZpGLpω"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "ΓEk{Fµ"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "ΓEk{Fµn"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "ΓEk{Fµnk"
+  },
+  {
+   "page": 17,
+   "mark": "q",
+   "context": "ΓEk{FµnkpF"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "ΓEk{FµnkpFq“ResE"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "ΓEk{FµnkpFq“ResEk{F"
+  },
+  {
+   "page": 17,
+   "mark": "n",
+   "context": "ΓEk{FµnkpFq“ResEk{Fpµ"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "ΓEk{FµnkpFq“ResEk{Fpµn"
+  },
+  {
+   "page": 17,
+   "mark": "q",
+   "context": "ΓEk{FµnkpFq“ResEk{FpµnkqpF"
+  },
+  {
+   "page": 17,
+   "mark": "x",
+   "context": "σ"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "σx"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "uFto ZpGLV"
+  },
+  {
+   "page": 17,
+   "mark": "q",
+   "context": "uFto ZpGLVpaσ{nk"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "forallpaσ{n"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "llpaσ{nkqσ.Thislastconditionholdspreciselywhenalltuplespaσ{n"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "ÝÑ Z"
+  },
+  {
+   "page": 18,
+   "mark": "p",
+   "context": "alg"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "algpEKal, GL"
+  },
+  {
+   "page": 18,
+   "mark": "q",
+   "context": "algpEKal, GLn"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "pairs pR, tq, where R:EKalÑ BGL"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "Rpωq, to the category Z"
+  },
+  {
+   "page": 18,
+   "mark": "p",
+   "context": "alg"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "algpEKal, GL"
+  },
+  {
+   "page": 18,
+   "mark": "q",
+   "context": "algpEKal, GLn"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "ÝÑ Z"
+  },
+  {
+   "page": 18,
+   "mark": "p",
+   "context": "bas"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "baspEKal, GL"
+  },
+  {
+   "page": 18,
+   "mark": "q",
+   "context": "baspEKal, GLn"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "n XPobjpRigIsocF q is basic, the morphism fXPHomF puF , GLpω"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "cF .ThecategoryIsocF,sofisocrystalswhoseslopesareamultipleof"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "RIF{F,n"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "RIF{F,nkand finally the transition map RIF{F,n"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "RIF{F,nkand finally the transition map RIF{F,nkÑ RIE"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "RIF{F,nkand finally the transition map RIF{F,nkÑ RIEk{F,n"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "ÝÝÝÝÝÑ µ"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "ÝÝÝÝÝÑ µn"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "ÝÝÝÝÝÑ µnkãÑ G"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "ResEk{F pµ"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "Recallthat[Kal18,§3.3]constructsahomomorphismE"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "KalÑEisoforanychoiceofgerbeE"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "sentingthecanonicalclass´1PH"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "with the map (3) on bands.Since the choice of E"
+  },
+  {
+   "page": 18,
+   "mark": "u",
+   "context": "Kalis only canonical up to conjugation by"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "allmapssatisfyingthesetwopropertiesdifferinthismanner,sinceH"
+  },
+  {
+   "page": 18,
+   "mark": "e",
+   "context": "crystals.We first briefly recall the Tannakian category Isoc"
+  },
+  {
+   "page": 18,
+   "mark": "t",
+   "context": "ΓK{F"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "ΓK{Ft"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "ΓK{Ft0,"
+  },
+  {
+   "page": 18,
+   "mark": "u",
+   "context": "ΓK{Ft0, 1"
+  },
+  {
+   "page": 19,
+   "mark": "e",
+   "context": "curve)—the only property needed for the construction of Isoc"
+  },
+  {
+   "page": 19,
+   "mark": "b",
+   "context": "τPΓK{ELK"
+  },
+  {
+   "page": 19,
+   "mark": "b",
+   "context": "L"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "Lbα"
+  },
+  {
+   "page": 19,
+   "mark": "q",
+   "context": "Lbαpτ"
+  },
+  {
+   "page": 19,
+   "mark": "e",
+   "context": "The Tannakian category Isoc"
+  },
+  {
+   "page": 19,
+   "mark": "b",
+   "context": "γ"
+  },
+  {
+   "page": 19,
+   "mark": "c",
+   "context": "γbLL"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "γbLLc"
+  },
+  {
+   "page": 19,
+   "mark": "q",
+   "context": "γbLLcpβ,γ"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "pD b D"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "DβbFD"
+  },
+  {
+   "page": 19,
+   "mark": "c",
+   "context": "where WFacts on L"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "where WFacts on Lc"
+  },
+  {
+   "page": 19,
+   "mark": "q",
+   "context": "where WFacts on Lcpβ,γ"
+  },
+  {
+   "page": 19,
+   "mark": "c",
+   "context": "by mapping it to pL"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "by mapping it to pLc"
+  },
+  {
+   "page": 19,
+   "mark": "q",
+   "context": "by mapping it to pLcpβ,γ"
+  },
+  {
+   "page": 19,
+   "mark": "b",
+   "context": "8"
+  },
+  {
+   "page": 19,
+   "mark": "x",
+   "context": "8bLE,σL,"
+  },
+  {
+   "page": 19,
+   "mark": "x",
+   "context": "8bLE,σL, x ÞÑ"
+  },
+  {
+   "page": 19,
+   "mark": "b",
+   "context": "8bLE,σL, x ÞÑ x"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "8bLE,σL, x ÞÑ xb"
+  },
+  {
+   "page": 19,
+   "mark": "e",
+   "context": "and the grading, respectively).The morphisms in Isoc"
+  },
+  {
+   "page": 19,
+   "mark": "e",
+   "context": "RigIsocFÑ Isoc"
+  },
+  {
+   "page": 19,
+   "mark": "r",
+   "context": "ΓK{F"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "ΓK{Fr"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "ΓK{Fr0,"
+  },
+  {
+   "page": 19,
+   "mark": "q",
+   "context": "ΓK{Fr0, 1"
+  },
+  {
+   "page": 19,
+   "mark": "r",
+   "context": "ΓE{F"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "ΓE{Fr"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "ΓE{Fr0,"
+  },
+  {
+   "page": 19,
+   "mark": "q",
+   "context": "ΓE{Fr0, 1"
+  },
+  {
+   "page": 19,
+   "mark": "e",
+   "context": "product in Isoc"
+  },
+  {
+   "page": 19,
+   "mark": "c",
+   "context": "Vpaσq˜bWpbσq“ pVpaσq b Wpbσqq b L"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "Vpaσq˜bWpbσq“ pVpaσq b Wpbσqq b Lcpp"
+  },
+  {
+   "page": 19,
+   "mark": "q",
+   "context": "Vpaσq˜bWpbσq“ pVpaσq b Wpbσqq b Lcppaσ"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "Vpaσq˜bWpbσq“ pVpaσq b Wpbσqq b Lcppaσq,"
+  },
+  {
+   "page": 19,
+   "mark": "b",
+   "context": "Vpaσq˜bWpbσq“ pVpaσq b Wpbσqq b Lcppaσq,p"
+  },
+  {
+   "page": 19,
+   "mark": "c",
+   "context": "where L"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "where Lcpp"
+  },
+  {
+   "page": 19,
+   "mark": "q",
+   "context": "where Lcppaσ"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "where Lcppaσq,"
+  },
+  {
+   "page": 19,
+   "mark": "b",
+   "context": "where Lcppaσq,p"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "pr1p´cpp"
+  },
+  {
+   "page": 19,
+   "mark": "q",
+   "context": "pr1p´cppaσ"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "pr1p´cppaσq,"
+  },
+  {
+   "page": 19,
+   "mark": "b",
+   "context": "pr1p´cppaσq,p"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "pr1p´cppaσq,pbσqqqσ¨ V"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "pr1p´cppaσq,pbσqqqσ¨ Vp"
+  },
+  {
+   "page": 19,
+   "mark": "q",
+   "context": "pr1p´cppaσq,pbσqqqσ¨ Vpaσ"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "pr1p´cppaσq,pbσqqqσ¨ Vpaσqs b W"
+  },
+  {
+   "page": 19,
+   "mark": "b",
+   "context": "pr1p´cppaσq,pbσqqqσ¨ Vpaσqs b Wp"
+  },
+  {
+   "page": 19,
+   "mark": "q",
+   "context": "pr1p´cppaσq,pbσqqqσ¨ Vpaσqs b Wpbσ"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "pr1p´cppaσq,pbσqqqσ¨ Vpaσqs b Wpbσqq “ pV"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "pr1p´cppaσq,pbσqqqσ¨ Vpaσqs b Wpbσqq “ pVp"
+  },
+  {
+   "page": 19,
+   "mark": "q",
+   "context": "pr1p´cppaσq,pbσqqqσ¨ Vpaσqs b Wpbσqq “ pVpaσ"
+  },
+  {
+   "page": 19,
+   "mark": "a",
+   "context": "pr1p´cppaσq,pbσqqqσ¨ Vpaσqs b Wpbσqq “ pVpaσq b r1p´cpp"
+  },
+  {
+   "page": 19,
+   "mark": "q",
+   "context": "pr1p´cppaσq,pbσqqqσ¨ Vpaσqs b Wpbσqq “ pVpaσq b r1p´cppaσ"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "pr1p´cppaσq,pbσqqqσ¨ Vpaσqs b Wpbσqq “ pVpaσq b r1p´cppaσq,"
+  },
+  {
+   "page": 19,
+   "mark": "b",
+   "context": "pr1p´cppaσq,pbσqqqσ¨ Vpaσqs b Wpbσqq “ pVpaσq b r1p´cppaσq,p"
+  },
+  {
+   "page": 19,
+   "mark": "p",
+   "context": "σq,pbσqqqσ¨ Vpaσqs b Wpbσqq “ pVpaσq b r1p´cppaσq,pbσqqqσ¨ W"
+  },
+  {
+   "page": 19,
+   "mark": "b",
+   "context": "q,pbσqqqσ¨ Vpaσqs b Wpbσqq “ pVpaσq b r1p´cppaσq,pbσqqqσ¨ Wp"
+  },
+  {
+   "page": 19,
+   "mark": "q",
+   "context": "pbσqqqσ¨ Vpaσqs b Wpbσqq “ pVpaσq b r1p´cppaσq,pbσqqqσ¨ Wpbσ"
+  },
+  {
+   "page": 19,
+   "mark": "r",
+   "context": "σqs b Wpbσqq “ pVpaσq b r1p´cppaσq,pbσqqqσ¨ Wpbσqsq Ď pVb Wq"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "qs b Wpbσqq “ pVpaσq b r1p´cppaσq,pbσqqqσ¨ Wpbσqsq Ď pVb Wqr"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": " b Wpbσqq “ pVpaσq b r1p´cppaσq,pbσqqqσ¨ Wpbσqsq Ď pVb Wqr0,"
+  },
+  {
+   "page": 19,
+   "mark": "q",
+   "context": "b Wpbσqq “ pVpaσq b r1p´cppaσq,pbσqqqσ¨ Wpbσqsq Ď pVb Wqr0,1"
+  },
+  {
+   "page": 20,
+   "mark": "e",
+   "context": "morphism of Tannakian categories RigIsocFÑ Isoc"
+  },
+  {
+   "page": 20,
+   "mark": "e",
+   "context": "A fiber functor of Isoc"
+  },
+  {
+   "page": 20,
+   "mark": "e",
+   "context": "Isoc"
+  },
+  {
+   "page": 20,
+   "mark": "e",
+   "context": "where Isoc"
+  },
+  {
+   "page": 20,
+   "mark": "e",
+   "context": "F,Kdenotes the full subcategory of Isoc"
+  },
+  {
+   "page": 20,
+   "mark": "b",
+   "context": "{FQ{Z-grading and WF -action, the second functor sends Yto Y"
+  },
+  {
+   "page": 20,
+   "mark": "u",
+   "context": "ΓK{FQ{Z-gradingviathe"
+  },
+  {
+   "page": 20,
+   "mark": "c",
+   "context": "gradedpieceVp"
+  },
+  {
+   "page": 20,
+   "mark": "e",
+   "context": "gradedpieceVpcσ{sqσofanobjectXofIsoc"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "H"
+  },
+  {
+   "page": 20,
+   "mark": "p",
+   "context": "ét"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "étpEKal, Gq Ñ H"
+  },
+  {
+   "page": 20,
+   "mark": "p",
+   "context": "ét"
+  },
+  {
+   "page": 20,
+   "mark": "q",
+   "context": "étpEKal ˆ Eiso, G"
+  },
+  {
+   "page": 20,
+   "mark": "p",
+   "context": "1 Ñ rResE{F"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "1 Ñ rResE{F pµ"
+  },
+  {
+   "page": 20,
+   "mark": "q",
+   "context": "1 Ñ rResE{F pµn"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "F q, which maps via (2) to an algebraic 1-cocycle zX:EKalÑGL"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "H"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "H1pF, NGpMqq Ñ H"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": " M.The group Mmight not be ΓF{F -invariant, but since G “ GL"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "well assume M“ LFis ΓF{F -stable.Now, zXgives a cocycle in Z"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "y such that this cocycle comes via projection from some zP Z"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "came from a class in H"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "came from a class in H1pF, NGpLqq that is trivial in H"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "Remark 3.7.The cohomology set H"
+  },
+  {
+   "page": 21,
+   "mark": "p",
+   "context": "alg"
+  },
+  {
+   "page": 21,
+   "mark": "q",
+   "context": "algpEKal, G"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "H"
+  },
+  {
+   "page": 21,
+   "mark": "p",
+   "context": "alg"
+  },
+  {
+   "page": 21,
+   "mark": "q",
+   "context": "algpEKal, T"
+  },
+  {
+   "page": 21,
+   "mark": "r",
+   "context": " a maximal torus Tof G.Lemma 3.6 implies that every class in"
+  },
+  {
+   "page": 21,
+   "mark": "z",
+   "context": " maximal torus Tof G.Lemma 3.6 implies that every class in r"
+  },
+  {
+   "page": 21,
+   "mark": "s",
+   "context": "maximal torus Tof G.Lemma 3.6 implies that every class in rz"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "imal torus Tof G.Lemma 3.6 implies that every class in rzsPH"
+  },
+  {
+   "page": 21,
+   "mark": "p",
+   "context": "alg"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "algpEKal, GL"
+  },
+  {
+   "page": 21,
+   "mark": "q",
+   "context": "algpEKal, GLn"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "that zPZ"
+  },
+  {
+   "page": 21,
+   "mark": "p",
+   "context": "bas"
+  },
+  {
+   "page": 21,
+   "mark": "p",
+   "context": "baspEKal, ZG"
+  },
+  {
+   "page": 21,
+   "mark": "z",
+   "context": "baspEKal, ZGp"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "Kal, ZGpz|uqq with the fact ([Kal16a, Corollary 3.7]) that H"
+  },
+  {
+   "page": 21,
+   "mark": "p",
+   "context": "alg"
+  },
+  {
+   "page": 21,
+   "mark": "q",
+   "context": "algpEKal, T"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "algpEKal, TqÑH"
+  },
+  {
+   "page": 21,
+   "mark": "p",
+   "context": "bas"
+  },
+  {
+   "page": 21,
+   "mark": "q",
+   "context": "baspEKal, M"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "Proof.Suppose zXis not basic in M. Then let M"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "claim that M"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": " that M1is a twisted Levi subgroup of Mand hence G.Indeed, M"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "of GLn, each of which is a twisted Levi subgroup.Moreover, M"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": " proper since νXis not basic.The cocycle zXfactors through M"
+  },
+  {
+   "page": 22,
+   "mark": "s",
+   "context": "ÝÑResE{F pGL"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "ÝÑResE{F pGLsqofGL"
+  },
+  {
+   "page": 22,
+   "mark": "s",
+   "context": "nobjectoftheformY‘cforabasicobjectYcorrespondingtoResE{F pGL"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "objectoftheformY‘cforabasicobjectYcorrespondingtoResE{F pGLs"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "cs"
+  },
+  {
+   "page": 22,
+   "mark": "s",
+   "context": "ResE{F pGL"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "ResE{F pGLs"
+  },
+  {
+   "page": 22,
+   "mark": "c",
+   "context": "ResE{F pGLs1q"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "bas"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "baspEKal, Mq – X˚pπ"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "baspEKal, Mq – X˚pπ0"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "baspEKal, Mq – X˚pπ0pZ"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "baspEKal, Mq – X˚pπ0pZp"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "Mq`qq “ X˚pZp"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "H"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "where Zp"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "MqΓF {Fin"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "Mq`is the pre-image of Zp"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "zÞÑz"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "zÞÑzn Z"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "zÞÑzn Zp"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "MqΓF {F– Cˆand Zp"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "for some extension E{Fof degree m such that n “ ms.Then Zp"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "zÞÑz"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "zÞÑzn Cˆ"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "zÞÑzn Cˆq"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "zÞÑzn Cˆqm given by pp"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "zÞÑzn Cˆqm given by ppa"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "zÞÑzn Cˆqm given by ppa1, . . . , a"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "zÞÑzn Cˆqm given by ppa1, . . . , am"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "zÞÑzn Cˆqm given by ppa1, . . . , amq,"
+  },
+  {
+   "page": 22,
+   "mark": "b",
+   "context": "zÞÑzn Cˆqm given by ppa1, . . . , amq, p"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "zÞÑzn Cˆqm given by ppa1, . . . , amq, pb"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "zÞÑzn Cˆqm given by ppa1, . . . , amq, pb1, . . . , b"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "Cˆqm given by ppa1, . . . , amq, pb1, . . . , bmqq such that"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "qm given by ppa1, . . . , amq, pb1, . . . , bmqq such that a"
+  },
+  {
+   "page": 22,
+   "mark": "b",
+   "context": "m given by ppa1, . . . , amq, pb1, . . . , bmqq such that a1"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": " given by ppa1, . . . , amq, pb1, . . . , bmqq such that a1b"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "a1, . . . , amq, pb1, . . . , bmqq such that a1b1“ ¨ ¨ ¨ “ a"
+  },
+  {
+   "page": 22,
+   "mark": "b",
+   "context": "1, . . . , amq, pb1, . . . , bmqq such that a1b1“ ¨ ¨ ¨ “ am"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": ", . . . , amq, pb1, . . . , bmqq such that a1b1“ ¨ ¨ ¨ “ amb"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "to the subgroup of pµsq"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "Zp"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "zÞÑz"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "zÞÑzn Z"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "zÞÑzn Zp"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "pµsq"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "Zp"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "Zp"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "X˚pZp"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "MqΓF {Fq “ X˚pZp"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "MqqΓF {F“ X˚pZp"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "Mqq{X˚pZp"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "whereX˚pZp"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "Mqq"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "Mqq0isgeneratedbyγpxq´xforγPΓF{FandxPX˚pZp"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "augmentation ideal under identification of X˚pZp"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "zÞÑz"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "zÞÑzn Z"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "zÞÑzn Zp"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "Mqq “ X˚pZp"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "X˚pZp"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "Mq`q – rpZ{sZq"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "Mq`q – rpZ{sZqmˆ X˚pZp"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "MqqQs{X˚pZp"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "X˚pZp"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "Mq`qtor– rpZ{sZq"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "Mq`qtor– rpZ{sZqmˆ X˚pZp"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "MqqQ,0s{X˚pZp"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "bas"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "baspEKal, Mq Ñ Hom"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "baspEKal, Mq Ñ Hompu, Z"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "1 Ñ H"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "1 Ñ H1pF, Mq Ñ H"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "bas"
+  },
+  {
+   "page": 22,
+   "mark": "p",
+   "context": "baspEKal, Mq – X˚pZ"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "baspEKal, Mq – X˚pZp"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "and vanishing of the first term implies that H"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "– HompX˚pZpMqq, X˚puqqΓF {F“ HompX˚pZpMqq, Q{Zq – X˚pZp"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "MqqQ{X˚pZp"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "Mqq – pQ{Zq"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "rpZ{sZq"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "rpZ{sZqmˆ X˚pZp"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "MqqQ,0s{X˚pZp"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "Mqq0Ñ X˚pZp"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "MqqQ{X˚pZp"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "s—it is easy to check the image is rpQ"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "s—it is easy to check the image is rpQm"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "s—it is easy to check the image is rpQmq"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "s—it is easy to check the image is rpQmq0 ` pZ{sZ"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "s—it is easy to check the image is rpQmq0 ` pZ{sZq"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "s—it is easy to check the image is rpQmq0 ` pZ{sZqms{Z"
+  },
+  {
+   "page": 22,
+   "mark": "q",
+   "context": "—it is easy to check the image is rpQmq0 ` pZ{sZqms{ZmĂ pQ{Z"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "it is easy to check the image is rpQmq0 ` pZ{sZqms{ZmĂ pQ{Zq"
+  },
+  {
+   "page": 22,
+   "mark": "b",
+   "context": "is given by pai, biq ÞÑ"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "is given by pai, biq ÞÑb"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "s´a"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "H"
+  },
+  {
+   "page": 23,
+   "mark": "x",
+   "context": "M{ZM,kÑ"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "pZ{sZq"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "pZ{sZqmˆ Z"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "kZ"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "where the embedding of kZ"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "pZ{sZq"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "pZ{sZqmˆ pZ"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "pZ{sZqmˆ pZmq0ãÑ pZ{sZq"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "pZ{sZqmˆ pZmq0ãÑ pZ{sZqmˆ Z"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "T{ZM,k– Tad ˆ ZpM"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "T{ZM,k– Tad ˆ ZpM1q{ZpM"
+  },
+  {
+   "page": 23,
+   "mark": "p",
+   "context": "0 Ñ X˚pTadq ‘ X˚pZ"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "0 Ñ X˚pTadq ‘ X˚pZpM"
+  },
+  {
+   "page": 23,
+   "mark": "q",
+   "context": "0 Ñ X˚pTadq ‘ X˚pZpM1"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "ZpM1qrksq Ñ X˚pTq Ñ X˚pZM,kq Ñ"
+  },
+  {
+   "page": 23,
+   "mark": "p",
+   "context": "Nowpickanembedding"
+  },
+  {
+   "page": 23,
+   "mark": "x",
+   "context": "NowpickanembeddingpTãÑ"
+  },
+  {
+   "page": 23,
+   "mark": "p",
+   "context": "Mandwedenotetheimagealsoby"
+  },
+  {
+   "page": 23,
+   "mark": "p",
+   "context": "Z"
+  },
+  {
+   "page": 23,
+   "mark": "q",
+   "context": "ZpX˚pZM,k"
+  },
+  {
+   "page": 23,
+   "mark": "q",
+   "context": "ZpX˚pZM,kq, Z"
+  },
+  {
+   "page": 23,
+   "mark": "p",
+   "context": "ZpX˚pZM,kq, Zq with Hom"
+  },
+  {
+   "page": 23,
+   "mark": "q",
+   "context": "ZpX˚pZM,kq, Zq with HompX˚pZM,k"
+  },
+  {
+   "page": 23,
+   "mark": "q",
+   "context": "ZpX˚pZM,kq, Zq with HompX˚pZM,kq, Q{Z"
+  },
+  {
+   "page": 23,
+   "mark": "1",
+   "context": "Ext"
+  },
+  {
+   "page": 23,
+   "mark": "p",
+   "context": "X˚p"
+  },
+  {
+   "page": 23,
+   "mark": "p",
+   "context": "X˚ppTq Ñ X˚p"
+  },
+  {
+   "page": 23,
+   "mark": "x",
+   "context": "X˚ppTq Ñ X˚ppTderq ‘ X˚pZp"
+  },
+  {
+   "page": 23,
+   "mark": "p",
+   "context": "wherethefirstmapisrestrictionto"
+  },
+  {
+   "page": 23,
+   "mark": "x",
+   "context": "herethefirstmapisrestrictiontopTderplustherestrictionalongZp"
+  },
+  {
+   "page": 23,
+   "mark": "x",
+   "context": "ÝÝÑZp"
+  },
+  {
+   "page": 23,
+   "mark": "p",
+   "context": "MqÑ"
+  },
+  {
+   "page": 23,
+   "mark": "x",
+   "context": "ZpM1q “ Zp"
+  },
+  {
+   "page": 23,
+   "mark": "x",
+   "context": "Mq˝“ Zp"
+  },
+  {
+   "page": 23,
+   "mark": "p",
+   "context": "WechoosethestandardidentificationofX˚p"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "WechoosethestandardidentificationofX˚ppTq“X˚ppCˆ,sq"
+  },
+  {
+   "page": 23,
+   "mark": "s",
+   "context": "WechoosethestandardidentificationofX˚ppTq“X˚ppCˆ,sqmqwithpZ"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "echoosethestandardidentificationofX˚ppTq“X˚ppCˆ,sqmqwithpZsq"
+  },
+  {
+   "page": 23,
+   "mark": "p",
+   "context": "tandardidentificationofX˚ppTq“X˚ppCˆ,sqmqwithpZsqm,sothatX˚p"
+  },
+  {
+   "page": 23,
+   "mark": "s",
+   "context": "pZ"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "pZs{∆pZqq"
+  },
+  {
+   "page": 23,
+   "mark": "x",
+   "context": "pZs{∆pZqqmandX˚pZp"
+  },
+  {
+   "page": 23,
+   "mark": "s",
+   "context": "Mqq“pZ"
+  },
+  {
+   "page": 23,
+   "mark": "s",
+   "context": "Mqq“pZs{pZ"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "Mqq“pZs{pZsq0q"
+  },
+  {
+   "page": 23,
+   "mark": "s",
+   "context": "Mqq“pZs{pZsq0qm.WeidentifytheformerwithpZ"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "Mqq“pZs{pZsq0qm.WeidentifytheformerwithpZs´1q"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "Z"
+  },
+  {
+   "page": 23,
+   "mark": "p",
+   "context": "px1,j, . . . xs´1,j, yjqjPX˚p"
+  },
+  {
+   "page": 23,
+   "mark": "x",
+   "context": "px1,j, . . . xs´1,j, yjqjPX˚ppTderq ‘ X˚pZp"
+  },
+  {
+   "page": 23,
+   "mark": "p",
+   "context": "Mqq,weliftittoX˚p"
+  },
+  {
+   "page": 23,
+   "mark": "p",
+   "context": "1,j` . . . xs´1,jq{sq1ďiďs´1qjand then take its image in X˚p"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "pyj{ks ´ px1,j` . . . xs´1,jq{sqjP pZ{ksZq"
+  },
+  {
+   "page": 23,
+   "mark": "m",
+   "context": "pyj{ks ´ px1,j` . . . xs´1,jq{sqjP pZ{ksZqm“ HomppZ{ksZq"
+  },
+  {
+   "page": 23,
+   "mark": "x",
+   "context": "second map of (7) through restriction to X˚pZp"
+  },
+  {
+   "page": 23,
+   "mark": "x",
+   "context": "Mderqq ‘ X˚pZp"
+  },
+  {
+   "page": 23,
+   "mark": "x",
+   "context": "px1,j` ¨ ¨ ¨ ` xs´1,j, yjqjP X˚pZp"
+  },
+  {
+   "page": 23,
+   "mark": "x",
+   "context": "Mderqq ‘ X˚pZp"
+  },
+  {
+   "page": 25,
+   "mark": "s",
+   "context": "ÝÑResE{F pGL"
+  },
+  {
+   "page": 25,
+   "mark": "r",
+   "context": "ÝÑResE{F pGLsq,thecocyclezMisthehomomorphismΓF{FÑS"
+  },
+  {
+   "page": 25,
+   "mark": "s",
+   "context": "ÝÑResE{F pGLsq,thecocyclezMisthehomomorphismΓF{FÑSrE :F"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "pE, Fq—in particular, it has kernel ΓF{ rE, similarly for zM"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "zM"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "are conjugate, meaning that the ΓF -sets HompE, Fq and HompE"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "hic.It follows from Grothendieck’s Galois theory that Eand E"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "pQ{ZqΓE{FwithřaiP"
+  },
+  {
+   "page": 25,
+   "mark": "p",
+   "context": "sZ{ZcorrespondingtoX,weobtainanisomorphicobjectif"
+  },
+  {
+   "page": 25,
+   "mark": "a",
+   "context": "sZ{ZcorrespondingtoX,weobtainanisomorphicobjectifp"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "sZ{ZcorrespondingtoX,weobtainanisomorphicobjectifpa"
+  },
+  {
+   "page": 25,
+   "mark": "q",
+   "context": "sZ{ZcorrespondingtoX,weobtainanisomorphicobjectifpai"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "any of its ΓE{F -translates.In fact, another such tuple pb"
+  },
+  {
+   "page": 25,
+   "mark": "s",
+   "context": "ÝÑResE{F pGL"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "ÝÑResE{F pGLsqareinbijectionwithΓE{F -orbitsoftuplespa"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "ř aiP"
+  },
+  {
+   "page": 25,
+   "mark": "p",
+   "context": "sZ{Z,"
+  },
+  {
+   "page": 25,
+   "mark": "a",
+   "context": "sZ{Z, př"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "sZ{Z, př a"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": " sq “ 1 which are not fixed by any subgroup HĎ ΓE{Fwith H‰ t"
+  },
+  {
+   "page": 25,
+   "mark": "u",
+   "context": "sq “ 1 which are not fixed by any subgroup HĎ ΓE{Fwith H‰ t1"
+  },
+  {
+   "page": 25,
+   "mark": "r",
+   "context": "(2)More generally, for E{Fseparable with Galois closure"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "ÝÑResE"
+  },
+  {
+   "page": 25,
+   "mark": "s",
+   "context": "ÝÑResE1{F pGL"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "ÝÑResE1{F pGLsq for E"
+  },
+  {
+   "page": 25,
+   "mark": "r",
+   "context": "in Fare in bijection with Γ"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "in Fare in bijection with Γ rE{F -orbits of pairs pE"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "in Fare in bijection with Γ rE{F -orbits of pairs pE1, pa"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "E{F -orbits of pairs pE1, paiqq consisting of such a field E"
+  },
+  {
+   "page": 25,
+   "mark": "p",
+   "context": "paiqPpQ{ZqHomF"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "paiqPpQ{ZqHomF pE"
+  },
+  {
+   "page": 25,
+   "mark": "r",
+   "context": "paiqPpQ{ZqHomF pE1,"
+  },
+  {
+   "page": 25,
+   "mark": "q",
+   "context": "paiqPpQ{ZqHomF pE1, rE"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "paiqPpQ{ZqHomF pE1, rEqwithřaiP"
+  },
+  {
+   "page": 25,
+   "mark": "p",
+   "context": "sZ{Z,"
+  },
+  {
+   "page": 25,
+   "mark": "a",
+   "context": "sZ{Z, př"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "sZ{Z, př a"
+  },
+  {
+   "page": 25,
+   "mark": "q",
+   "context": "sZ{Z, př ai, s"
+  },
+  {
+   "page": 25,
+   "mark": "p",
+   "context": "pQ{ZqHomF"
+  },
+  {
+   "page": 25,
+   "mark": "r",
+   "context": "pQ{ZqHomF pK,"
+  },
+  {
+   "page": 25,
+   "mark": "q",
+   "context": "pQ{ZqHomF pK, rE"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "pQ{ZqHomF pK, rEqfor F{K{E"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "ionofallsimpleobjectswhoseisomorphismclassesareintheimageofH"
+  },
+  {
+   "page": 25,
+   "mark": "s",
+   "context": "thecorrespondingsimpleobjectXhasResEH{F pGL"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "have the same image in H"
+  }
+ ]
+}

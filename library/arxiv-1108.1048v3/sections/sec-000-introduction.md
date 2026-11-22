@@ -7,10 +7,11 @@ section_number: null
 pages: 1-4
 source_pdf: 1108.1048v3.pdf
 source_sha256: 6f2b83450ba923d0
-doc_brief: "CONSTRUCTION OF IRREDUCIBLE REPRESENTATIONS OVER KHOVANOV-LAUDA-ROUQUIER ALGEBRAS — We give an explicit construction of irreducible modules ove r Khovanov-Lauda- Rouquier algebras R and their"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.996
-latex_coverage_ratio: 0.989
+latex_prose_ratio: 0.886
+latex_coverage_ratio: 0.939
+doc_brief: "CONSTRUCTION OF IRREDUCIBLE REPRESENTATIONS OVER KHOVANOV-LAUDA-ROUQUIER ALGEBRAS — We give an explicit construction of irreducible modules over Khovanov-Lauda- Rouquier algebras R and their"
 ---
 The *Khovanov-Lauda-Rouquier algebras* (*KLR algebras*) were introduced independently by Khovanov-Lauda [@KL09; @KL11] and Rouquier [@R08] to give a categorification of quantum groups. Let $U_q(\mathfrak{g})$ be the quantum group associated with a symmetrizable Cartan datum, and let $R$ be the corresponding KLR algebra. For a dominant integral weight $\lambda$ of $U_q(\mathfrak{g})$, the algebra $R$ has a special quotient $R^{\lambda}$ corresponding to $\lambda$, which is called the *cyclotomic Khovanov-Lauda-Rouquier algebra* ( *cyclotomic KLR algebra*) of weight $\lambda$. It was conjectured that the cyclotomic quotient $R^{\lambda}$ gives a categorification of the irreducible highest weight $U_q(\mathfrak{g})$-module $V(\lambda)$. This was shown for type $\mathsf{A}$ in [@BK08; @BK09; @BS08]. In [@KK11], Kang and Kashiwara proved this conjecture for all symmetrizable Cartan data. Webster [@Webster10] has announced a categorification of tensor products of highest weight modules. In a recent paper, Kang, Oh and Park [@KOP11a] extended the study of KLR algebras to provide a categorification of quantum generalized Kac-Moody algebras and their crystals. Moreover, Kang, Kashiwara and Oh [@KKO11] proved the cyclotomic categorification conjecture for irreducible highest weight modules over quantum generalized Kac-Moody algebras.
 

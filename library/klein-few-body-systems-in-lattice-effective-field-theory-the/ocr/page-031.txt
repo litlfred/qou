@@ -1,0 +1,47 @@
+3.3 Bound states on the lattice
+
+Initial point is the infinite volume solution for a local and finite-range potential,
+V(F) =0 VlF[>R, (3.8)
+
+with R being the range of the potential. Then the Schrodinger equation with bound state solution Ez > 0
+is
+1
+Rave] W3 (7) = -Epg¥, (7), (3.9)
+where Pz is the infinite-volume bound state solution for S wave scattering. In the asymptotic region with
+vanishing potential, the solution is given by Eq. (2.36) for / = 0 but with imaginary momentum leading
+to the solution,
+
+W,(?) = a ce (3.10)
+
+with r = |7|. The respective binding momentum is k = 2uE, and A, is the normalization constant. In
+the finite volume the situation is different as it is generally only defined in a box of size L x L x L with
+periodic boundary conditions. This condition is used to extend the box to the whole space,
+
+V.(?) =) V(F +i). (3.11)
+it
+
+Correspondingly, the finite volume is periodically extended to the infinite volume and the new Schrédinger
+equation reads
+HY = (Agin + Vz) &. (3.12)
+
+We can define a periodic wave function using the infinte volume solution Y,,
+YZ) =) Wa (P+ A),  2=¥- 9 (3.13)
+fieZ
+Now the new wave function almost fulfills the respective Schrédinger equation up to a correction term,
+HV = -Ep¥o + >) V (2+ AL) ¥y (2+ A'L)). (3.14)
+aeit’
+Requiring that the box is large enough such that the asymptotic wave function is applicable at the edge
+of the finite box, the correction term is suppressed by O[exp(—«L)] due to Eq. (3.10). Hence, we can
+assume that ‘¥ ~ Yo as corrections are negligible once the volume is chosen large enough. Finally, the
+binding energy correction can be calculated by
+AE, = Eg ~ Ey =~ ((¥5| H|¥p) — (PIAL IY)
+= Eg- (¥o| H|%o)
+-> f d2Y, (|2-+ ALI) V (2+ HL) Vy (2+ 0°LI)
+aieit’
+
+= -24n|P 2PM) + O|exp(- V2«z)]. (3.15)
+
+Clearly, mostly S wave bound states emerge in nuclear physics, but P wave bound states can be created
+in atomic physics as well. Hence, a generalization of the bound state energy shift formula may be useful
+
+25

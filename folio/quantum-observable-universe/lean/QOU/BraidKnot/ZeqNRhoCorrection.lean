@@ -30,7 +30,7 @@ LaTeX label: `conj:z-eq-n-rho-correction`
 
 ## References
 
-- [manuscript] docs/audits/2026-05-03-z-eq-n-rho-correction-finding.md
+- [leitner2026] docs/audits/2026-05-03-z-eq-n-rho-correction-finding.md
 - L-1 (`[A]_q` as Markov-trace evaluation) — write-up open.
 - L-2 (selective q-deformation; ρ_struct q-independent on generic locus) — proof sketch open.
 -/
@@ -94,7 +94,7 @@ class ZeqNRhoCorrection (A : ℕ) (K : KnotAssignment A) where
 
 /-- The conjectural binding energy for a Z=N atom at the substrate
     parameter `q`, lifted from the typeclass. -/
--- Ref: [manuscript] docs/audits/2026-05-03-z-eq-n-rho-correction-finding.md
+-- Ref: [leitner2026] docs/audits/2026-05-03-z-eq-n-rho-correction-finding.md
 noncomputable def zeqNBindingEnergy (A : ℕ) (K : KnotAssignment A)
     [inst : ZeqNRhoCorrection A K] (q : ℝ) : ℝ :=
   inst.bindingEnergy q

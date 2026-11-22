@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-math-ph-0012035v3
-doc_title: "arXiv:math-ph/0012035v3 16 Jan 2002"
+doc_title: "Non-Abelian Stokes theorem in action"
 section_id: sec-010-221-coherent-state-approach
 section_title: "Coherent-state approach"
 section_number: 2.2.1
-pages: 16-21
+pages: 17-21
 source_pdf: 0012035v3.pdf
 source_sha256: 06a4c8096c8ebb10
 toc_source: inferred
 text_source: latex
-latex_prose_ratio: 0.993
-latex_coverage_ratio: 0.65
+latex_prose_ratio: 0.985
+latex_coverage_ratio: 0.971
+doc_brief: "Non-Abelian Stokes theorem in action — In this short review main issues related to the non-Abelian Stokes theorem have been addressed."
 ---
 #### Group-theoretic coherent states
 

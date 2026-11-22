@@ -1,0 +1,44 @@
+1282 Francois Guéritaud and David Futer
+
+B.3 Hyperbolic geodesics seen in the projection plane
+
+For any link diagram D, a crossing arc is a segment perpendicular to the projection plane
+that connects the upper strand of a crossing to the lower strand of the same crossing.
+Morwen Thistlethwaite has conjectured that in any reduced alternating diagram of
+a hyperbolic link K, every crossing arc is isotopic to a hyperbolic geodesic. As a
+consequence of Theorem A.1, we can prove this in the case of two-bridge links.
+
+Theorem B.4 Let D be a reduced alternating diagram of a hyperbolic two-bridge
+link K. Then every crossing arc of D is isotopic to an edge in the Sakuma—Weeks
+triangulation of S*\K, and thus to a geodesic.
+
+In fact, still more is true: each edge of the triangulation is dual to a face of the
+Ford—Voronoi domain of S?\K [5].
+
+Proof We begin by observing that the statement is true for a diagram Do as in
+Figure 13, constructed from an alternating braid with one free strand. Every crossing of
+Do corresponds to a 4—punctured sphere pleated along edges of our triangulation. As
+Figure 15 illustrates, the crossing arc of any crossing is isotopic to one of the edges.
+
+As it turns out, the diagram Dp is not overly special. Thistlethwaite has proved that
+every reduced alternating diagram D of a two-bridge link is standard: that is, D can
+also be constructed from an alternating 4—string braid, although not necessarily with a
+free strand [24, Theorem 4.1]. Furthermore, by the Menasco-Thistlethwaite flyping
+theorem [16], we can get from Do to D by performing a sequence of flypes along
+the pillowcases of the braid. (See Figure 21.) During each flype, the diagram loses
+a crossing whose crossing arc is isotopic to an edge e of the triangulation, and gains
+another crossing, whose arc is isotopic to an edge e’ of the same slope as e. Thus the
+crossing arcs of every diagram are isotopic to geodesics. oO
+
+References
+
+[1] CC Adams, Thrice-punctured spheres in hyperbolic 3—manifolds, Trans. Amer. Math.
+Soc. 287 (1985) 645-656 MR768730
+
+[2] I Agol, Small 3-manifolds of large genus, Geom. Dedicata 102 (2003) 53-64
+MR2026837
+
+[3] I Agol, P Storm, W Thurston, Lower bounds on volumes of hyperbolic Haken
+3-manifolds arXiv:math.DG/0506338
+
+Geometry & Topology 10 (2006)

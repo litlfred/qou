@@ -1,0 +1,64 @@
+NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS 539
+
+where the sum is over all rooted spanning forests F' in G, roots(F’) C V is the set
+of roots of F and edges(f) C E is the set of edges used in F’. Alternatively, we
+
+may write fg as
+(z,w) =h w Il oO 2)
+CEC(F) jEC
+
+where C(F) is the partition of V whose parts are the vertices in the maximal trees
+in F and the sum is over all forests in G. Since the class of stable polynomials is
+closed under differentiation and specialization of variables at real values (see, e.g.,
+(9]) we have that the spanning tree polynomial Tg(w) = > w7, where the sum is
+over all spanning trees, is real stable (which is widely known). The corresponding
+probability measure is usually called the uniform random spanning tree measure
+and is consequently strongly Rayleigh. Now if 1 denotes the vector of all ones as
+
+in then
+,w) => wa(F)w",
+
+where the sum is over all spanning forests (independent sets) in G and we(F) is
+the product of the sizes of the connected components of F’. In [72] Conjecture 5.10]
+Wagner conjectured that fg(1,w) is a Rayleigh polynomial. By the above discus-
+sion we have shown that more is actually true, namely:
+
+Theorem 3.6. For any graph G the polynomial fq(1,w) is real stable.
+
+Let G = (V,£) be a graph and let g > 0 and 0 < p < 1 be parameters. The
+random cluster (RC) model (see [33]) is the measure jz on 2” defined by
+
+1 ,
+MP) =z, PCE,
+RC
+
+where k(£’) is the number of connected components in the graph (V, F) and Zpc
+is the appropriate normalizing factor. The uniform spanning tree measure can be
+obtained from this model by letting p — 0 and q/p — 0; see [33] Section 1.5]. If
+q > 1, the RC model satisfies PLC and is therefore positively associated. If g < 1,
+NLC is satisfied, but other negative correlation properties are largely a matter
+of conjecture. We are interested in properties closed under external fields, so we
+assume that p = 1/2. The generating polynomial of jz is then a constant multiple
+of the multivariate Tutte polynomial (see [70]):
+
+(2a) = OMe", z= (zelece.
+
+PCE
+If G=C,,n > 3, is a cycle and E = [n], then
+
+a) =[[@+2)+@-Da- em
+jel
+
+and
+n
+
+OZq OZ¢ Za a)
+Da Oa Oadn ~ -9 TT
+
+J (q + 23);
+j=3
+so in this case the RC measure is Rayleigh, but not strongly Rayleigh.
+If G is a tree, then
+Za(z,q) =a [] (+2),
+
+ecE

@@ -155,7 +155,7 @@ def main() -> int:
 
     # --- witness ---
     w = (WitnessBuilder("qbeta-two-pole-ladder-decomposition", engine="mpmath")
-         .set_content_block("prop:q-beta-radius-of-convergence-gate")
+         .set_content_block("conj:q-beta-radius-of-convergence-gate")
          .set_description(
              "Structural diagnostic (no fit/wiring): where the dominant "
              "(root 117.41, PR #1727) and subdominant silver (root 3.1154, "

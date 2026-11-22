@@ -3,46 +3,46 @@
  "doc_id": "arxiv-2012.12159v3",
  "source_sha256": "473ec6959e82cd98",
  "brief": "A FUNK PERSPECTIVE ON BILLIARDS, PROJECTIVE GEOMETRY AND MAHLER VOLUME — We explore connections furnished by the Funk metric, a relative of the Hilbert metric, between projective geometry, billiards",
- "extended": "**A FUNK PERSPECTIVE ON BILLIARDS, PROJECTIVE GEOMETRY AND MAHLER VOLUME**\n\n*DMITRY FAIFMAN*\n\n42 pp, 19 sections.\n\n**Abstract.** We explore connections furnished by the Funk metric, a relative of the Hilbert metric, between projective geometry, billiards, convex geome- try and aﬃne inequalities. We ﬁrst show that many metric invariants of the Funk metric are invariant under projective maps, as well as under projective duality. These include the Holmes-Thompson volume and surface area of con- vex subsets, and the length spectrum of their boundary, extending results of Holmes-Thompson and ´Alvarez Paiva on Sch¨ aﬀer’s dual girth conjecture. We explore in particular Funk billiards, which generalize hyperbolic billiards in the same way that Minkowski billiards generalize Euclidean ones, and extend a result of Gutkin-Tabachnikov on the duality of Minkowski billiards. We next consider the volume of outward balls in Funk geometry.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Funk and Hilbert metrics; 1.2 Summary of results; 2.2 Projective geometry; 1.3 Plan of the paper; 1.4 Acknowledgements; 2 Preliminaries; 2.1 Convexity; 2.3 Finsler geometry; 3 A projective outlook on the Funk metric; 3.1 The projective co-nomadic Finsler structur; 3.2 The volume in Funk geometry; 4 Funk billiards and duality; 5 Integrability of Funk billiard in conics; 7 Mahler volumes of every Funk scale; 8 Maximizing the Funk-Mahler volume; 9 Regularizing the total Funk volume",
+ "extended": "**A FUNK PERSPECTIVE ON BILLIARDS, PROJECTIVE GEOMETRY AND MAHLER VOLUME**\n\n*DMITRY FAIFMAN*\n\n42 pp, 20 sections.\n\n**Abstract.** We explore connections furnished by the Funk metric, a relative of the Hilbert metric, between projective geometry, billiards, convex geome- try and aﬃne inequalities. We ﬁrst show that many metric invariants of the Funk metric are invariant under projective maps, as well as under projective duality. These include the Holmes-Thompson volume and surface area of con- vex subsets, and the length spectrum of their boundary, extending results of Holmes-Thompson and ´Alvarez Paiva on Sch¨aﬀer’s dual girth conjecture. We explore in particular Funk billiards, which generalize hyperbolic billiards in the same way that Minkowski billiards generalize Euclidean ones, and extend a result of Gutkin-Tabachnikov on the duality of Minkowski billiards. We next consider the volume of outward balls in Funk geometry.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Funk and Hilbert metrics; 1.2 Summary of results; 1.3 Plan of the paper; 1.4 Acknowledgements; 2.2 Projective geometry; 2 Preliminaries; 2.1 Convexity; 3.1 The projective co-nomadic Finsler structur; 2.3 Finsler geometry; 3 A projective outlook on the Funk metric; 3.2 The volume in Funk geometry; 4 Funk billiards and duality; 5 Integrability of Funk billiard in conics; 6 Schäffer's dual girth conjecture; 7 Mahler volumes of every Funk scale; 8 Maximizing the Funk-Mahler volume",
  "tokens": {
   "brief": 49,
-  "extended": 367
+  "extended": 366
  },
  "sections": [
   {
    "id": "sec-front-matter",
    "title": "Front matter",
-   "pages": "1-1"
+   "pages": "1-2"
   },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-1"
+   "pages": "2-2"
   },
   {
    "id": "sec-001-11-funk-and-hilbert-metrics",
    "title": "Funk and Hilbert metrics",
-   "pages": "1-1"
+   "pages": "2-2"
   },
   {
    "id": "sec-002-12-summary-of-results",
    "title": "Summary of results",
-   "pages": "1-6"
+   "pages": "2-6"
   },
   {
-   "id": "sec-003-22-projective-geometry",
-   "title": "Projective geometry",
-   "pages": "6-6"
-  },
-  {
-   "id": "sec-004-13-plan-of-the-paper",
+   "id": "sec-003-13-plan-of-the-paper",
    "title": "Plan of the paper",
    "pages": "6-6"
   },
   {
-   "id": "sec-005-14-acknowledgements",
+   "id": "sec-004-14-acknowledgements",
    "title": "Acknowledgements",
    "pages": "6-7"
+  },
+  {
+   "id": "sec-005-22-projective-geometry",
+   "title": "Projective geometry",
+   "pages": "7-7"
   },
   {
    "id": "sec-006-2-preliminaries",
@@ -55,18 +55,18 @@
    "pages": "7-8"
   },
   {
-   "id": "sec-008-23-finsler-geometry",
+   "id": "sec-008-31-the-projective-co-nomadic-finsler-structure",
+   "title": "The projective co-nomadic Finsler structure",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-009-23-finsler-geometry",
    "title": "Finsler geometry",
    "pages": "8-8"
   },
   {
-   "id": "sec-009-3-a-projective-outlook-on-the-funk-metric",
+   "id": "sec-010-3-a-projective-outlook-on-the-funk-metric",
    "title": "A projective outlook on the Funk metric",
-   "pages": "8-8"
-  },
-  {
-   "id": "sec-010-31-the-projective-co-nomadic-finsler-structure",
-   "title": "The projective co-nomadic Finsler structure",
    "pages": "8-11"
   },
   {
@@ -82,25 +82,30 @@
   {
    "id": "sec-013-5-integrability-of-funk-billiard-in-conics",
    "title": "Integrability of Funk billiard in conics",
-   "pages": "18-22"
+   "pages": "18-21"
   },
   {
-   "id": "sec-014-7-mahler-volumes-of-every-funk-scale",
+   "id": "sec-014-6-schäffers-dual-girth-conjecture",
+   "title": "Schäffer's dual girth conjecture",
+   "pages": "21-22"
+  },
+  {
+   "id": "sec-015-7-mahler-volumes-of-every-funk-scale",
    "title": "Mahler volumes of every Funk scale",
    "pages": "22-26"
   },
   {
-   "id": "sec-015-8-maximizing-the-funk-mahler-volume",
+   "id": "sec-016-8-maximizing-the-funk-mahler-volume",
    "title": "Maximizing the Funk-Mahler volume",
    "pages": "26-34"
   },
   {
-   "id": "sec-016-9-regularizing-the-total-funk-volume",
+   "id": "sec-017-9-regularizing-the-total-funk-volume",
    "title": "Regularizing the total Funk volume",
    "pages": "34-41"
   },
   {
-   "id": "sec-017-references",
+   "id": "sec-018-references",
    "title": "References",
    "pages": "41-42"
   }

@@ -1,0 +1,1 @@
+Let M 3 be a non-singular hyperbolic 3- manifold, possibly with boundary dM 2, obtained by gluing together the faces of polyhedra in H 3 with some vertices at infinity. Then M 3 is complete if and only if the similarity structure on each link of an ideal vertex is actually a Euclidean structure.

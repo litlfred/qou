@@ -1,0 +1,52 @@
+The descendant colored Jones polynomials 2319
+
+We should remark that for all values of the colors, this R-matrix of [Kas96]
+is over the same vector space C% and appears nontrivial even when the color
+is trivial. This is in contrast to the standard (quantum group) definition of
+the colored Jones polynomials, where the size of the R-matrix depends on the
+color and is trivial for the trivial color.
+
+3.1. R-matrices with a spectral parameter
+We begin our discussion of R-matrices by introducing some useful notation.
+
+For a positive integer n € Zso, we define
+
+n
+
+(18) (@)n:=[[G-2"), (2), = ———
+
+k=1
+
+with the convention (2)9 := 1.
+For a fixed root of unity ¢ of order N = ord(¢) € Zso, we define rational
+functions w(x|n) € C(x) for all integers n € Z by the recurrence relation
+
+(19) w(a|n)(1— 26") = w(aln— 1), w(x|0) = 1.
+One has the addition property
+(20) w(alm +n) = w(alm)w(x¢™|n) (m,n € Z)
+
+which, by taking into account the equality w(x|N) = 1/(1 — a), gives the
+quasi-periodicity property
+
+(21) (1—2%)w(a|ln + N) = w(2|n) (n € Z).
+Notice the relation to the g-Pochhammer symbols with qg = ¢
+
+1
+(22) w(2|n) GGO. (n € Zs).
+
+It follows that w(a|n) is a rational function of x with coefficients in the
+cyclotomic field Fy := Q(¢) whose poles and zeros (if any) are integer powers
+of ¢. We will call such rational functions, and more generally matrices of such
+rational functions, N-cyclotomic.
+
+In [Kas96], the second author considered the N-cyclotomic matrix
+r(x;m,n) € Maty2(C(x)) defined by the formula
+
+(23)
+) w(x/ Cj — i — m)w(a|l — k +n)
+w(a/elj —k +n—m)w(a/¢|l — i)
+
+k,l) = (a) noo
+
+(i, j|r(a;m, n)
+

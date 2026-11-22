@@ -1,1 +1,0 @@
-This is a continuation of Example 18.5.10:K has characteristic

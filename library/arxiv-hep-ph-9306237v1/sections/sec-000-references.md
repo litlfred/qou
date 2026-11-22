@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-ph-9306237v1
-doc_title: "arXiv:hep-ph/9306237v1 7 Jun 1993"
+doc_title: "Chiral Perturbation to One Loop Including the rho Meson"
 section_id: sec-000-references
 section_title: "References"
 section_number: null
@@ -8,6 +8,7 @@ pages: 11-14
 source_pdf: 9306237v1.pdf
 source_sha256: 6fea847208a60505
 toc_source: inferred
+doc_brief: "Chiral Perturbation to One Loop Including the rho Meson — We formulate the chiral perturbation theory at the one loop level in the ef- fective lagrangian including the ρ meson as a dynamical gauge"
 ---
 [1] S. Weinberg, Physica 96A (1979) 327.
 [2] J. Gasser and H. Leutwyler, Ann. Phys. (N.Y.) 158 (1984) 142; Nucl. Phys. B250
@@ -39,10 +40,8 @@ Phys. 73 (1985) 1541.
 [16] M. Harada, T. Kugo and K. Yamawaki, Nagoya preprint DPNU-93-01; Kyoto
 preprint KUNS-1179 HE(TH) 93/02.
 [17] For a review, see L.F. Abbott, Acta. Phys. Pol. B13 (1982) 33.
-11
 [18] Yu.N. Kaﬁev, Nucl. Phys. B201 (1982) 341.
 [19] D.C. Kennedy and B.W. Lynn, Nucl. Phys. B322 (1989) 1.
-12
 Γwi
 a = 1
 a = 2
@@ -168,7 +167,6 @@ N
 N
 3
 N
-13
 Γyi
 a = 1
 a = 2
@@ -293,4 +291,3 @@ y18
 2
 3
 Table 1: Coeﬃcients of counter terms
-14

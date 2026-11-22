@@ -1,7 +1,7 @@
 In any sufficiently small neighbourhood $U \subset M$ of the observable universe, the substrate parameter $q$ ([substrate parameter](#def:substrate-parameter)) satisfies
 
 $$
-  q\big|_U =  1.1097 \pm 0.001.
+  q\big|_U \approx {{ qou.computations.q-pinning-50-digit.derived_50_digit.q | precision: 6 }}.
 $$
 
 Specifically, $q|_U$ is the unique real root $q > 1$ of the equation:

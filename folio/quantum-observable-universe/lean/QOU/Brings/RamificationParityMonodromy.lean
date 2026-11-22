@@ -77,7 +77,7 @@
   (an algebraic domain hypothesis, not an archimedean one — `ℝ` is a valid but not
   a required instance).
 
-  -- Ref: [manuscript] docs/audits/2026-07-20-zgeometric-prolongation-symbol-scoping.md
+  -- Ref: [leitner2026] docs/audits/2026-07-20-zgeometric-prolongation-symbol-scoping.md
   -- Ref: [ramis-sauloy-zhang2013] q-difference formal classification / Stokes
 -/
 

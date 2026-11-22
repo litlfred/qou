@@ -1,0 +1,44 @@
+Theorem (Theorem [3.0.2] the non-split case). Let x € X be an ideal point in the
+smooth projective model of a component X of the character variety, that produces
+an incompressible surface S in M which is a union of parallel copies S;U...US), of
+a Seifert surface. Then the torsion function tor(M, p) has a pole at x, in particular
+
+it is non-constant.
+
+In this section we assume that the incompressible surface associated to x is a union
+of parallel Seifert surfaces. Recall from Section that we fix a base-point p €
+Si, and that we identify (S$) with 7(S,). We have the following splitting M =
+HUs,us, V(S), where V(S) is a neighborhood of S homeomorphic to Sj x (0, 1] with
+OV(S) = S,US,. We identify as well m(V(S)) with m(S). Given a : ™(S;) >
+™(S,), one can write the fundamental group of M as an HNN extension 7(M) =
+(mi(H),v | yon! = a(n), ¥y € m(5)).
+
+We denote by pi : ™(S) + SL2(O,) the restriction of p to 7™(S), and by pn :
+71(Sn) + SLo(k(X)) its restriction to ™(S,) = vm (S)v7!, hence we define p,(7y) =
+Vi pi(y)V,, 1 for y € ™(S). The splitting above induces the following exact sequence
+
+of twisted complexes :
+0 C"(M, p) > C*(H, pu) ® C*(S, p1) 4 C'(S, p1) B C'(S, pn) 4 0
+
+The following proposition recaps the series of lemmas in Section we refer to
+the corresponding lemmas for proofs, that translate in exactly the same way here.
+We use the isomorphism H1(S, p,) + H'(S, pi), Z Un (4 4) Z.
+
+Proposition 3.3.9. The vanishing order of the torsion at the ideal point x € X is
+
+given by computing —v(det 6), where the isomorphism 0 is given by
+
+@: H(H, pu) @ H*(S, pi) > H*(S, pi) @ H*(S, pi)
+(Z,, Zz) + ((Z1 — Z2)|5,Un (0101) (ZA — Z2)\5)
+
+Since we want to show that u(det 0) > 0, we focus on the residual map; it is of the
+
+form
+
+6: H'(H, pu) ® H"(S, ps) + H'(S, ps) © H'(S, ps)
+
+0
+(12, 22) + (ails — Zals, — )
+r|s — Xs
+
+96

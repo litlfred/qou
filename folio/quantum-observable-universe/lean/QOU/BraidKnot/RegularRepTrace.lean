@@ -42,9 +42,9 @@ basis-of-`single`s matrix of `LinearMap.mulLeft`: the `(i,j)` entry is `z(i·j�
 diagonal is the constant `z(1)`, and the trace is `|G|·z(1)`.
 
 ## References
-- [manuscript] docs/audits/2026-06-23-keystone-identity-I-content-decomposition.md §"Proof of (B)"
-- [manuscript] content/.../BraidKnot/IdentityIContentDecomposition.lean (the `n ≤ 12` block-side check)
-- [manuscript] content/.../BraidKnot/JucysMurphyCoeff.lean (`centralC2_coeff_one`, the ℂ-free coefficient)
+- [leitner2026] docs/audits/2026-06-23-keystone-identity-I-content-decomposition.md §"Proof of (B)"
+- [leitner2026] content/.../BraidKnot/IdentityIContentDecomposition.lean (the `n ≤ 12` block-side check)
+- [leitner2026] content/.../BraidKnot/JucysMurphyCoeff.lean (`centralC2_coeff_one`, the ℂ-free coefficient)
 -/
 
 open MonoidAlgebra Finset

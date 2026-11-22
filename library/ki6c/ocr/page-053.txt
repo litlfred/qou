@@ -1,0 +1,44 @@
+where y = e2"V—(s+8v-))_ Since 0.54 < s < 0.7,
+1
+0 < Arg(l—y) < 2n(s— 5)
+Further, since 0.3 < s —t < 0.47,
+x 1
+0< Arg (1 — ) < an(5—s+t).
+
+Furthermore, since 0.3 < s — u < 0.47,
+1
+—2n(5 —s+ u) < Arg (1 - =) < 0.
+
+Therefore,
+Oo
+—2n-u < Re (51 s+6v-1, w)) < Qn-t.
+
+Since u < 0.3 and t < 0.3,
+
+27-03 < Re ( V(t, s+dV=T, u)) < 2n- 0.3,
+
+Sle
+
+and hence, (90) is satisfied.
+As for (19) and (20), similarly as above, it is sufficient to show that
+
+—(27 —«') < Re (20 s, u+5v=1)) < 2n-e
+
+for some e’ > 0. We obtain this formula from (89) by the symmetry (87). O
+
+5.5 Verifying the assumption of the saddle point method
+
+In this section, we verify the assumption of the saddle point method in Lemma 5.5. In
+order to show this lemma, we show Lemmas 5.3 and 5.4 in advance. As we mentioned in
+Remark 2.7, we verify the assumption for V(t,s,u) instead of V(t,s,u), since V(t, 5, u)
+converges uniformly to V(t, s,u) on A’ in the form mentioned in Remark 2.7.
+
+In the proof of Lemma 5.5, as mentioned at the beginning of Section 5.4, it is sufficient
+to decrease Re V(t, s, uv) by 0.02, by pushing t, s, u into the imaginary directions. In order
+to calculate this concretely, putting
+
+f(X,Y,Z) =ReV(t+ XV—L, s+ YV—I1, ut ZVI) —<,
+as in Section 3.5, we consider the behavior of f at each fiber of the projection C? > R°.
+
+Lemma 5.3. For each (t,s,u) € A’, f has a unique minimal point and no other critical
+points.

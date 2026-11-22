@@ -1,0 +1,1 @@
+For any algebra .A; / in Rep C3, there is a natural homomorphism Der.A; /ss ! Der.Ass; ss/ from the semisimplification of the Lie algebra of deriva- tions of .A; / into the Lie superalgebra of derivations of the superalgebra .Ass; ss/.

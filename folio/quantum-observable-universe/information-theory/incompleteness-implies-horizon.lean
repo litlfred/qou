@@ -22,7 +22,7 @@ LaTeX label: `prop:incompleteness-implies-horizon`
 
 - [goedel1931] https://doi.org/10.1007/BF01700692
 - [turing1936] https://doi.org/10.1112/plms/s2-42.1.230
-- [manuscript] §9/incompleteness-horizon
+- [leitner2026] §9/incompleteness-horizon
 -/
 
 namespace QOU.IncompletenessHorizon

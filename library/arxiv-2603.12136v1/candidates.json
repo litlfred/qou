@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2603.12136v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "e9c50616344b24e0605976affa8f5d4bb6b9baad038df3216f4ef412ae4f8884",
+  "file": "2603.12136v1.pdf"
+ },
+ "provenance": {
+  "title": "Folding Mixed-Integer Linear Programs and Reflection Symmetries",
+  "authors": "Rolf van der Hulst",
+  "arxiv": {
+   "id": "2603.12136",
+   "version": "1",
+   "primary_class": "math.OC",
+   "stamp_date": "12 Mar 2026"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

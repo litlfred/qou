@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/sections/sec-122",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Filtered Rings and Existence of Rigid NC DC",
+  "pageStart": 435,
+  "pageEnd": 440,
+  "contains": [
+    "library/arxiv-1610.09640v4/blocks/prose-sec-122",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-122-01",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-122-02",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-122-03",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-122-04",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-122-05",
+    "library/arxiv-1610.09640v4/blocks/cor-sec-122-06",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-122-07",
+    "library/arxiv-1610.09640v4/blocks/rem-sec-122-08",
+    "library/arxiv-1610.09640v4/blocks/rem-sec-122-09",
+    "library/arxiv-1610.09640v4/blocks/rem-sec-122-10"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested"
+}

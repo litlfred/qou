@@ -1,0 +1,66 @@
+26 Oberwolfach Report 28/2012
+
+K. Murasugi [11] proved the lower bound for the unknotting number of knots,
+u(K) > lel Using this criterion, for many (sub) families of knots we can confirm
+that their BJ-unknotting numbers, i.e., unknotting numbers computed according
+to Bernhard-Jablan Conjecture, represent the actual unknotting numbers of these
+families.
+
+Let be given the Conway symbol of a knot family F' with parameters p,, po, ...,
+Pn denoting twists (pj > 1,i = 1,...,n). The polynomial with variables pj, po, ...,
+Pn and integer coefficients, obtained as the evaluation of the Conway polynomial
+of the family F' for x = 27, where 7 is the imaginary unit, will be called the critical
+polynomial.
+
+Conjecture 4. For every knot or link, the maximal degree of every variable in its
+critical polynomial is 1.
+
+If Conjecture 4 is true, following the changes of the sign of critical polynomial,
+we will be able to obtain general formulae for the signature of particular subfamilies
+of nonalternating knots and links and confirm their unknotting numbers estimated
+according to BJ-conjecture.
+
+Except the above mentioned problems, we will consider a few other topics re-
+lated to unknotting: ascending numbers [12, 7], knot distances [4], smoothing
+numbers (band unknotting numbers) [1], pseudodiagrams and their trivializing
+and knotting numbers [5, 6], as well as unknotting numbers related to virtual
+knots and links [10, 6].
+
+REFERENCES
+
+(1) T. Abe and T. Kanenobu, Unoriented Band Surgery on Knots and Links, arXiv:1112.2449.
+
+(2) J. A. Bernhard, Unknotting numbers and their minimal knot diagrams, J. Knot Theory
+Ramifications, 3, no. 1 (1994) 1-5.
+
+[3] J. Conway, An enumeration of knots and links and some of their related properties, in Com-
+putational Problems in Abstract Algebra, Proc. Conf. Oxford 1967 (Ed. J. Leech), 329-358,
+Pergamon Press, New York (1970).
+
+(4] I. K. Darcy, D. W. Sumners, Rational Tangle Distances on Knots and Links, Mathematical
+Proceedings of the Cambridge Philosophical Society, 128 (2000), no. 3, 497-510.
+
+(5] R. Hanaki, Pseudodiagrams of knots, links and spatial graphs, Osaka J. of Mathematics, 47
+(2010), 863-883.
+
+(6] A. Henrich, N. Macnaughton, S$. Narayan, O. Pechenik, J. Townsend, Classical and
+Virtual Pseudodiagram Theory and New Bounds on Unknotting Numbers and Genus,
+arXiv:0908.1981.
+
+(7] S.V. Jablan, Unknotting and Ascending Numbers of Knots and their Families, arXiv:
+1107.2110.
+
+(8] S.V. Jablan, R. Sazdanovié, LinKnot — Knot Theory by Computer, World Scientific, New
+Jersey, London, Singapore (2007), (http://math.ict.edu.rs/).
+
+(9] S.V. Jablan, R. Sazdanovié, Unlinking number and unlinking gap, J. Knot Theory Ramifi-
+cations, 16, 10 (2007) 1331-1355.
+
+(10] L.H. Kauffman, Virtual Knot Theory, Europ. J. Combinatorics, 20 (1999) 663-691.
+
+(11] K. Murasugi, On a certain numerical invariant of link types, Trans. Amer. Math. Soc., 117
+(1965) 387-422.
+
+{12] M. Ozawa, Ascending number of knots and links, J. Knot Theory Ramifications, 9, no. 1
+(2010) 15-25.
+

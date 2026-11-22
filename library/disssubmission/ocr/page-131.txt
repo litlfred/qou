@@ -1,0 +1,50 @@
+5.7. Jacobian varieties 123
+
+Proof. For a general ppav we know from theorem 4.2 that the Tannaka
+group G(dq) is either a symplectic or a special orthogonal group and that
+the perverse intersection cohomology sheaf dg corresponds to the standard
+representation of this group. Now the symmetric and alternating square of
+the standard representation are irreducible up to a trivial one-dimensional
+representation, and this trivial representation corresponds to the skyscraper
+sheaf dp of rank one supported in the origin. Furthermore, by corollary 2.9
+each representation of the Tannaka group corresponds to a unique clean
+perverse sheaf. Hence from lemma 5.22 we obtain that there exist clean
+and simple perverse sheaves y, € Perv(X,C) such that
+
+% © 0 Y pos odd,
+ob. = d 6 = fg
+4. {" an Peas if gis {oe
+
+and by lemma 5.21 the simplicity of y+ in particular implies that the local
+systems V+ are irreducible. Oo
+
+5.7. Jacobian varieties
+
+Let us now see what happens if X = JC is the Jacobian variety of a
+smooth complex projective curve C of genus g > 2. To formulate our results
+in this case we first need to introduce some more notations. For n € N we
+will denote by
+
+Qa = (Cx — x C)/Gn
+the n-fold symmetric product of the curve and by W, C X the image of C,
+under a suitable translate of the Abel-Jacobi map, normalized such that the
+theta divisor © = W,_; becomes symmetric. We write f, : C, —> W, for
+the Abel-Jacobi map and g, : W, x W, —> X for the difference morphism
+with g(x,y) =y—.x. Then the composite morphism
+
+(sho) ’
+Cn Cn Wn x Wn —“"—> x & Pic(C)
+
+ON ee
+
+n
+
+does not depend on the chosen normalization of the Abel-Jacobi map, and it
+sends a pair (D,E) € Cy x C;, of effective divisors of degree n on the curve
+to the isomorphism class of the line bundle @¢(D— E).
+
+In what follows we will be especially interested in non-hyperelliptic
+curves of genus g = 4. For these we know from lemma 4.5 that the theta
+divisor has only isolated singularities, so we can consider the variations of
+Hodge structures V+ from lemma 5.10 and the perverse sheaves 6 from
+lemma 5.21. Here we have the following situation.

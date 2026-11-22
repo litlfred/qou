@@ -9,8 +9,9 @@ source_pdf: 0812.2426v1.pdf
 source_sha256: df1eb953bc2c6c63
 toc_source: inferred
 text_source: latex
-latex_prose_ratio: 0.915
-latex_coverage_ratio: 0.86
+latex_prose_ratio: 0.854
+latex_coverage_ratio: 0.917
+doc_brief: "CATEGORICAL CENTERS AND RESHETIKHIN-TURAEV INVARIANTS — A theorem of M¨uger asserts that the center Z(C) of a spherical k-linear category C is a modular category if k is an algebraically closed ﬁeld"
 ---
 []{#sect-centerfusion label="sect-centerfusion"} Fix a commutative ring $\Bbbk$. Let $\mathcal{C}$ be a fusion category over $\Bbbk$ (see Section [\[sect-fusion\]](#sect-fusion){reference-type="ref" reference="sect-fusion"}). Then the trivial Hopf monad $1_\mathcal{C}$ is centralizable. Its centralizer $Z=Z_{1_\mathcal{C}}$ is: $$Z(X)=\bigoplus_{i \in I} \leftidx{^\vee}{\!V}{}_i \otimes X \otimes V_i,$$ with associated dinatural transformation $i_{X,Y} \colon\leftidx{^\vee}{\!Y}{} \otimes X \otimes Y \to Z(X)$ given by: $$i_{X,Y}=\sum_{\substack{i\in I \\ 1 \leq \alpha \leq N_Y^i}} \leftidx{^\vee}{\!q}{}_Y^{i,\alpha}\otimes \mathrm{id}_X \otimes p_Y^{i,\alpha}.$$
 

@@ -1,0 +1,50 @@
+3.4 Verifying the assumption of the Poisson summation formula
+
+In this section, we verify the assumption of the Poisson summation formula in Lemma 3.4,
+which is used in the proof of Theorem 1.1 for the 6, knot in Section 3.1. As we mentioned
+in Remark 2.5, we verify the assumption for V(t, s, u) instead of V(t, s, u), since V(t, 5, u)
+converges uniformly to V(t, s,u) on A’ in the form mentioned in Remark 2.5.
+
+Re V(t, s,u) has a unique maximal point in A’ at
+
+Lo = Yo = yo = e738, to = 89 = Uo = 6’
+and its maximal value is 0.646131.... Hence,
+ReV(t,s,u) —s, < 0.142571... (43)
+
+for any (t,s,u) € A’. Therefore, in the proof of Lemma 3.4, it is sufficient to decrease,
+say, Re V(t, s, u+6V—1) — 276 by this value, by moving 6 (though we do not use this
+value in the proof of the lemma).
+
+Lemma 3.4. V(t, s,u) —<
+
+R
+Proof. We show that 0A’ is null-homotopic in each of (17)—(20), (24) and (25).
+
+As for (19), we show that we can move A’ into the following domain,
+
+satisfies the assumption of Proposition 2.8.
+
+{(t, s, u+ 6V—1) € C8 | (t,s,u) € A’, 6>0, ReV(t, s, u+dV—1) —<, — 275 < o}.
+Hence, putting . __
+F(6) = ReV(t, s, u+ 6V—1) — ¢, — 276,
+it is sufficient to show that there exists d9 > 0 such that
+F(do) < 0 for any (t,s,u) € A’, and (44)
+F(6) < 0 for any (t,s,u) € OA’ and 6 € (0, do].
+Therefore, it is sufficient to show that
+a F(6) = oO ReV(t, s, u+dV—1) —s, —20 < —e,
+dé 06
+
+for some e’ > 0 (because, if the above formula holds, then (44) holds for a sufficiently
+large 69). Hence, it is sufficient to show that
+
+0» !
+Re (5, V(t 5, u+dy-1)) < n-eé.
+
+Further, as for (20), similarly as above, it is sufficient to show that
+
+0 ~ '
+Re (53 5, u—dv=1)) < In-e
+
+for some e’ > 0.
+
+20

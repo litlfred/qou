@@ -1,0 +1,1405 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1706.09531v1",
+ "source": {
+  "file": "1706.09531v1.pdf",
+  "sha256": "63e34483b4c3fc3672456d444302299baf166792c359af5f9a3c27674fd2a692",
+  "bytes": 920876,
+  "pages": 73,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T10:30:43Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1706.09531",
+   "version": "1",
+   "primary_class": "hep-ph",
+   "stamp_date": "29 Jun 2017"
+  },
+  "doi": null,
+  "title": "Advantages of Unity With SU(4)-Color",
+  "authors_raw": "Baryogenesis and Proton Decay1",
+  "title_lines": [
+   "June 30, 2017",
+   "Advantages of Unity With SU(4)-Color:",
+   "Reflections Through Neutrino Oscillations"
+  ],
+  "abstract": "As a tribute to Abdus Salam, I recall the initiation in 1972-73 of the idea of grand uni\ufb01cation based on the view that lepton number is the fourth color. Motivated by aesthetic demands, these attempts led to the suggestion that the existing SU(2)\u00d7U(1) symmetry be extended minimally to the quark-lepton and left-right symmetric non- Abelian gauge structure G(2, 2, 4) = SU(2)L \u00d7 SU(2)R \u00d7 SU(4)-color. This served to unify members of a family within a single L-R self-conjugate multiplet. It also ex- plained: the quantization of electric charge, the co-existence of quarks and leptons, and that of their three basic forces \u2013 weak, electromagnetic, and strong \u2013 while providing the appealing possibility that nature is fundamentally left-right symmetric (parity- conserving).The minimal extension of the symmetry G(2, 2, 4) to a simple group is given by the attractive symmetry SO(10) that came a year later. The advantages of the core symmetry G(2, 2, 4), including those listed above (which are of course retained by SO(10) as well), are noted. These include the introductions of: (i) the right-handed neutrino as a compelling member of each family, (ii) (B-L) as a local symmetry, and (iii) the mass relation m(\u03bd\u03c4)Dirac = mtop(MGUT ). These three features, all arising due to SU(4)-color, as well as the gauge coupling uni\ufb01cation scale (identi\ufb01ed with the (B-L)- breaking scale), are crucially needed to understand the tiny mass-scales of the neutrino oscillations within the seesaw mechanism, and to implement successfully the mechanism of baryogenesis via leptogenesis. Implications of a well-motivated class of models based on supersymmetric SO(10) or a string-uni\ufb01ed G(2, 2, 4) symmetry in 4D for (a) gauge coupling uni\ufb01cation, (b) fermion masses and mixings, (c) neutrino osil- lations, (d) baryogenesis via leptogenesis, and last but not least (e) proton decay are presented. Recent works on the latter providing upper limits on proton lifetimes sug- gest that the potential for discovery of ",
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.17",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20170630002021Z"
+  },
+  "title_raw": "June 30, 2017 Advantages of Unity With SU(4)-Color: Reflections Through Neutrino Oscillations",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Advantages of Unity With SU(4)-Color",
+   "outline": "1 Introduction",
+   "text": "June 30, 2017 Advantages of Unity With SU(4)-Color: Reflections Through Neutrino Oscillations",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 4,
+   "source": "outline",
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
+  },
+  {
+   "level": 2,
+   "title": "Salam in Perspective",
+   "page": 4,
+   "source": "outline",
+   "number": "1.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
+  },
+  {
+   "level": 2,
+   "title": "Aspects of My Collaboration with Salam",
+   "page": 5,
+   "source": "outline",
+   "number": "1.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
+  },
+  {
+   "level": 2,
+   "title": "A Preview",
+   "page": 5,
+   "source": "outline",
+   "number": "1.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
+  },
+  {
+   "level": 1,
+   "title": "Status of Particle Physics in 1972: The Growth of New Ideas",
+   "page": 6,
+   "source": "outline",
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
+  },
+  {
+   "level": 2,
+   "title": "From SU(2) U(1) to G(2,2,4) and Beyond",
+   "page": 6,
+   "source": "outline",
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
+  },
+  {
+   "level": 2,
+   "title": "Advantages of the Standard Model",
+   "page": 9,
+   "source": "outline",
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
+  },
+  {
+   "level": 2,
+   "title": "Why Choose The Symmetry G(2,2,4)?",
+   "page": 10,
+   "source": "outline",
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
+  },
+  {
+   "level": 2,
+   "title": "The Unwanted Right-Handed Neutrino",
+   "page": 12,
+   "source": "outline",
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
+  },
+  {
+   "level": 2,
+   "title": "Left-Right Symmetry in the Fundamental Laws:",
+   "page": 13,
+   "source": "outline",
+   "number": "2.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
+  },
+  {
+   "level": 2,
+   "title": "Non-Conservations of B and L: Proton Decay as a Generic Feature",
+   "page": 18,
+   "source": "outline",
+   "number": "2.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
+  },
+  {
+   "level": 2,
+   "title": "Going Beyond G(2,2,4): SO(10) and SU(5)",
+   "page": 19,
+   "source": "outline",
+   "number": "2.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
+  },
+  {
+   "level": 1,
+   "title": "Gauge Coupling Unification",
+   "page": 20,
+   "source": "outline",
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
+  },
+  {
+   "level": 2,
+   "title": "SUSY SO(10) Versus a String-Unified G(2,2,4) Symmetry in 4D",
+   "page": 22,
+   "source": "outline",
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
+  },
+  {
+   "level": 1,
+   "title": "Breaking SO(10) or G(2,2,4) to the SM",
+   "page": 30,
+   "source": "outline",
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "28"
+  },
+  {
+   "level": 1,
+   "title": "Masses and Mixings of Fermions in SO(10) or G(2,2,4)",
+   "page": 32,
+   "source": "outline",
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "30"
+  },
+  {
+   "level": 1,
+   "title": "Neutrino Masses Shedding Light on Unification and Our Origin",
+   "page": 37,
+   "source": "outline",
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "35"
+  },
+  {
+   "level": 2,
+   "title": "Neutrinos at the root of our Origin?",
+   "page": 41,
+   "source": "outline",
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "39"
+  },
+  {
+   "level": 1,
+   "title": "Proton Decay: The Hallmark of Grand Unification",
+   "page": 43,
+   "source": "outline",
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "41"
+  },
+  {
+   "level": 2,
+   "title": "Preliminaries",
+   "page": 43,
+   "source": "outline",
+   "number": "7.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "41"
+  },
+  {
+   "level": 2,
+   "title": "Constraining Proton Lifetime in SUSY SO(10) with Stabilized Doublet-Triplet Splitting",
+   "page": 50,
+   "source": "outline",
+   "number": "7.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "48"
+  },
+  {
+   "level": 2,
+   "title": "Proton Decay as a Unique Probe to Physics at Ultrashort Distances",
+   "page": 53,
+   "source": "outline",
+   "number": "7.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "51"
+  },
+  {
+   "level": 1,
+   "title": "Concluding Remarks",
+   "page": 55,
+   "source": "outline",
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "53"
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Evolution of the three gauge couplings \u03b1i with momentum Q: Standard Model (left panel) and Minimal Supersymmetric Standard Model (right panel)",
+   "page": 21,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "19"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "d = 6 proton decay operator",
+   "page": 44,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "42"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "The standard d = 5 proton decay operator. The eHc ( eH\u2032",
+   "page": 44,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "42"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "The \u201cnew\u201d d = 5 operators related to the Majorana masses of the RH neutrinos. Note that the vertex at the upper right utilizes the coupling in Eq. (9) which assigns Majorana masses to \u03bdR\u2019s, while the lower right vertex utilizes the gij couplings in Eq. (7) which are needed to generate CKM mixings",
+   "page": 44,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "42"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "2",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "3",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "4",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "7",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "8",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "10",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "11",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "16",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "17",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "18",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "20",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "28",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "30",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "35",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "39",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "41",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "48",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "51",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "52",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "53",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "54",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "55",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "56",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "57",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "58",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "59",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "60",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": "61",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 64,
+   "label": "62",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 65,
+   "label": "63",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 66,
+   "label": "64",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 67,
+   "label": "65",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 68,
+   "label": "66",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 69,
+   "label": "67",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 70,
+   "label": "68",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 71,
+   "label": "69",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 72,
+   "label": "70",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 73,
+   "label": "71",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 9571,
+   "n_words": 1751,
+   "label_start": "1",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 12,
+   "n_words": 1,
+   "label_start": "2",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-001-11-salam-in-perspective",
+   "number": "1.1",
+   "title": "Salam in Perspective",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 1943,
+   "n_words": 307,
+   "label_start": "2",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-002-12-aspects-of-my-collaboration-with-salam",
+   "number": "1.2",
+   "title": "Aspects of My Collaboration with Salam",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 1424,
+   "n_words": 248,
+   "label_start": "3",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-003-13-a-preview",
+   "number": "1.3",
+   "title": "A Preview",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 3595,
+   "n_words": 574,
+   "label_start": "3",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-004-2-status-of-particle-physics-in-1972-the-growth",
+   "number": "2",
+   "title": "Status of Particle Physics in 1972: The Growth of New Ideas",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 63,
+   "n_words": 12,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-005-21-from-su2-u1-to-g224-and-beyond",
+   "number": "2.1",
+   "title": "From SU(2) U(1) to G(2,2,4) and Beyond",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 9,
+   "n_chars": 10825,
+   "n_words": 1778,
+   "label_start": "4",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-006-22-advantages-of-the-standard-model",
+   "number": "2.2",
+   "title": "Advantages of the Standard Model",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 4188,
+   "n_words": 642,
+   "label_start": "7",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-007-23-why-choose-the-symmetry-g224",
+   "number": "2.3",
+   "title": "Why Choose The Symmetry G(2,2,4)?",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 3699,
+   "n_words": 586,
+   "label_start": "8",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-008-24-the-unwanted-right-handed-neutrino",
+   "number": "2.4",
+   "title": "The Unwanted Right-Handed Neutrino",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 4332,
+   "n_words": 731,
+   "label_start": "10",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-009-25-left-right-symmetry-in-the-fundamental-laws",
+   "number": "2.5",
+   "title": "Left-Right Symmetry in the Fundamental Laws:",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 18,
+   "n_chars": 15369,
+   "n_words": 2491,
+   "label_start": "11",
+   "label_end": "16"
+  },
+  {
+   "id": "sec-010-26-non-conservations-of-b-and-l-proton-decay-as",
+   "number": "2.6",
+   "title": "Non-Conservations of B and L: Proton Decay as a Generic Feature",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 4190,
+   "n_words": 693,
+   "label_start": "16",
+   "label_end": "17"
+  },
+  {
+   "id": "sec-011-27-going-beyond-g224-so10-and-su5",
+   "number": "2.7",
+   "title": "Going Beyond G(2,2,4): SO(10) and SU(5)",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 4340,
+   "n_words": 706,
+   "label_start": "17",
+   "label_end": "18"
+  },
+  {
+   "id": "sec-012-3-gauge-coupling-unification",
+   "number": "3",
+   "title": "Gauge Coupling Unification",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 22,
+   "n_chars": 5517,
+   "n_words": 878,
+   "label_start": "18",
+   "label_end": "20"
+  },
+  {
+   "id": "sec-013-31-susy-so10-versus-a-string-unified-g224-symmet",
+   "number": "3.1",
+   "title": "SUSY SO(10) Versus a String-Unified G(2,2,4) Symmetry in 4D",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 30,
+   "n_chars": 27858,
+   "n_words": 4708,
+   "label_start": "20",
+   "label_end": "28"
+  },
+  {
+   "id": "sec-014-4-breaking-so10-or-g224-to-the-sm",
+   "number": "4",
+   "title": "Breaking SO(10) or G(2,2,4) to the SM",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 32,
+   "n_chars": 5743,
+   "n_words": 973,
+   "label_start": "28",
+   "label_end": "30"
+  },
+  {
+   "id": "sec-015-5-masses-and-mixings-of-fermions-in-so10-or-g224",
+   "number": "5",
+   "title": "Masses and Mixings of Fermions in SO(10) or G(2,2,4)",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 37,
+   "n_chars": 17197,
+   "n_words": 2952,
+   "label_start": "30",
+   "label_end": "35"
+  },
+  {
+   "id": "sec-016-6-neutrino-masses-shedding-light-on-unification",
+   "number": "6",
+   "title": "Neutrino Masses Shedding Light on Unification and Our Origin",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 41,
+   "n_chars": 11249,
+   "n_words": 1909,
+   "label_start": "35",
+   "label_end": "39"
+  },
+  {
+   "id": "sec-017-61-neutrinos-at-the-root-of-our-origin",
+   "number": "6.1",
+   "title": "Neutrinos at the root of our Origin?",
+   "level": 2,
+   "page_start": 41,
+   "page_end": 43,
+   "n_chars": 8937,
+   "n_words": 1527,
+   "label_start": "39",
+   "label_end": "41"
+  },
+  {
+   "id": "sec-018-7-proton-decay-the-hallmark-of-grand-unification",
+   "number": "7",
+   "title": "Proton Decay: The Hallmark of Grand Unification",
+   "level": 1,
+   "page_start": 43,
+   "page_end": 43,
+   "n_chars": 46,
+   "n_words": 7,
+   "label_start": "41",
+   "label_end": "41"
+  },
+  {
+   "id": "sec-019-71-preliminaries",
+   "number": "7.1",
+   "title": "Preliminaries",
+   "level": 2,
+   "page_start": 43,
+   "page_end": 50,
+   "n_chars": 17384,
+   "n_words": 3037,
+   "label_start": "41",
+   "label_end": "48"
+  },
+  {
+   "id": "sec-020-72-constraining-proton-lifetime-in-susy-so10-wit",
+   "number": "7.2",
+   "title": "Constraining Proton Lifetime in SUSY SO(10) with Stabilized Doublet-Triplet Splitting",
+   "level": 2,
+   "page_start": 50,
+   "page_end": 53,
+   "n_chars": 10993,
+   "n_words": 1808,
+   "label_start": "48",
+   "label_end": "51"
+  },
+  {
+   "id": "sec-021-73-proton-decay-as-a-unique-probe-to-physics-at",
+   "number": "7.3",
+   "title": "Proton Decay as a Unique Probe to Physics at Ultrashort Distances",
+   "level": 2,
+   "page_start": 53,
+   "page_end": 55,
+   "n_chars": 5782,
+   "n_words": 992,
+   "label_start": "51",
+   "label_end": "53"
+  },
+  {
+   "id": "sec-022-8-concluding-remarks",
+   "number": "8",
+   "title": "Concluding Remarks",
+   "level": 1,
+   "page_start": 55,
+   "page_end": 73,
+   "n_chars": 52168,
+   "n_words": 8872,
+   "label_start": "53",
+   "label_end": "71"
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 23,
+  "toc_inferred_entries": 0,
+  "figure_entries": 4,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 0,
+    "items": []
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 24,
+  "chars_total": 226425,
+  "furniture_lines_stripped": 72
+ }
+}

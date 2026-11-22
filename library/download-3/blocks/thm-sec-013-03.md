@@ -1,0 +1,1 @@
+Let a be a periodic cyclic cycle of Ag'(M). Then i) {/^(Ω), #} Aίxs no singularity at h = 0, ii) Tr(α e~°^ ) has no singularity at fι = 0, lim Tr(α £?-" /Λ) = fε(μ(a)) fc/ ? ε/// A(M ) = (-!)*. iii) Lei ύf / β a rκ/e o/CCΓ ϊ(Γ(A Λ(M)) (c/ Remark 3.1.3). Then = Tr [ a en and thus Λ oh

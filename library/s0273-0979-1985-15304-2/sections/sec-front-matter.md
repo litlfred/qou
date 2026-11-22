@@ -1,6 +1,6 @@
 ---
 doc_id: s0273-0979-1985-15304-2
-doc_title: "BULLETIN (New Series) OF THE"
+doc_title: "A polynomial invariant for knots via von Neumann algebras"
 section_id: sec-front-matter
 section_title: "Front matter"
 section_number: null
@@ -8,6 +8,7 @@ pages: 1-7
 source_pdf: S0273-0979-1985-15304-2.pdf
 source_sha256: bcae6367fee9babd
 toc_source: inferred
+doc_brief: "Jones, A polynomial invariant for knots via von Neumann algebras (Bull. AMS 12:1, 1985) — the original Jones polynomial paper, via the trace on a type II_1 factor and the braid group."
 ---
 BULLETIN (New Series) OF THE 
 AMERICAN MATHEMATICAL SOCIETY 
@@ -466,5 +467,4 @@ ifâT
 1 
 - 1 
 -1 
-1 
-- 1
+1

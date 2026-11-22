@@ -18,11 +18,10 @@ which experiment satisfies to $-0.064$ MeV against splittings of $1.3$ to $8.1$
 MeV --- about $0.8\%$ of the largest.
 
 **The relation carries no information about the breaking mechanism.**  This is
-a theorem, machine-checked sorry-free in
-`QOU/Eightfold/ColemanGlashowIdentity.lean`: the combination vanishes for
+a theorem: the combination vanishes for
 *every* choice of the six first-order parameters, over any commutative ring
-(`coleman_glashow_identity`), so two arbitrarily different breaking patterns
-give the same answer (`cg_cannot_discriminate`).
+, so two arbitrarily different breaking patterns
+give the same answer.
 
 ## Why it vanishes
 
@@ -45,7 +44,7 @@ Six parameters --- three strong, three electromagnetic --- and the alternating
 combination cancels every one: $a$ appears in $\mathfrak{p}$ and $\Sigma^+$
 with opposite sign, $b$ in $\mathfrak{n}$ and $\Xi^0$, $c$ in $\Sigma^-$ and
 $\Xi^-$.  Switching the electromagnetic shifts off makes each splitting vanish
-separately (`strong_only_all_splittings_vanish`), so the relation is empty
+separately, so the relation is empty
 without electromagnetism rather than being a statement about the strong sector.
 
 ## One difference from the other two null results
@@ -56,7 +55,7 @@ Coleman--Glashow rests on a **conjunction**.
 Dropping the U-spin premise --- letting the electromagnetic shift differ
 between the two members of a multiplet --- makes the combination equal the
 difference of those two shifts rather than zero
-(`cg_needs_both_premises`), which is detectable.
+, which is detectable.
 
 The relation therefore does test that the electromagnetic self-energy is U-spin
 invariant and that isospin is exact in the strong sector.  What it cannot do is

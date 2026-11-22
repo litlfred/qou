@@ -34,7 +34,7 @@ Pure combinatorics; nothing archimedean (§7c); no fit.
 ## References
 
 - [stanley1999ec2] Enumerative Combinatorics I, §7.10 (skew tableaux)
-- [manuscript] bean `qou-b21r`
+- [leitner2026] bean `qou-b21r`
 -/
 
 namespace QOU.BraidKnot.YoungTableauStandard

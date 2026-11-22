@@ -1,40 +1,60 @@
 182 V.V. Schechtman and A.N. Varchenko
-Consider the space M* as in 6.16 and define the action of bb* on it.
-Namely, for beb, teM*, put bt(x)=t(-bx); the action of b* is defined as in
+
+Consider the space M* as in 6.16 and define the action of b@®b* on it.
+Namely, for beb, teM*, put bt(x)=t(—bx); the action of b* is defined as in
 6.16.
-6.17.1 Proposition. The above rule defines on M* the structure of a D(b)-module
-Proof. We have to verify that [t, b] t=tbt-btt for all teb*, beb, teM*
-As in 6.16 we have to prove this for general B, Ai. Suppose that t(.)= S(:
-c), ceb, t()=S(·, n), neM. Then [t, b]=7+b where b=[tc, b] if [tc, b]eb
-and O otherwise, t()=S(·, [c, tb]) if [c, tb]eb and O otherwise. Hence, [b,
-tJ t()= S(, [tb, c n). On the other hand, (bt - t b) t()= S(, (tbc - ctb) n)= S(.
-,[tb, c] n).
+
+6.17.1 Proposition. The above rule defines on M* the structure of a D(b)-module.
+
+Proof. We have to verify that [/, b] t=¢bt—bft for all feb*, beb, teM*.
+As in 6.16 we have to prove this for general B, A;. Suppose that 7(-)=S(-,
+c), ceb, t(-)=S(-, n), neM. Then [¢, b]=7+6 where b=[rc, b] if Etc, b]eb
+and 0 otherwise, 7(-)=S(-, [c, tb]) if [c, tb]eb and 0 otherwise. Hence, [b,
+¢)t(-)=S(-, [cb, c] n). On the other hand, (bf —7b) t(-)=S(-,(tbc—ctb) n)=S(-
+»Ctb,c]n. O
+
 7 Knizhnik-Zamolodchikov equations
+
 In this section we calculate the Gauss-Manin connection in the top cohomology
 of complexes studied in the previous section.
-7.1 Let us save the assumptions and notations from 6.1. Fix A =(k1, ..., kr)eINr;
-put N=la|= Z k; fix n weights A41, .., Aneh*, n≥2. Fix an epimorphism
+
+7.1 Let us save the assumptions and notations from 6.1. Fix A=(k,,..., k,)eIN’;
+
+put N=|j|= > &k,; fix n weights A,,...,4,¢6*, n=2. Fix an epimorphism
 i=1
-Bn+N in Cn+N with coordinates (z1, ..., Zn; ti, ..., tn). Define the collection of
+
+n:(N]> [r] with # 2~'(i)=k; for alli. Put a(j)=«,,). Consider the arrangement
+
+@,4~ in C"*% with coordinates (z,,..., 2,3 t1,-.., ty). Define the collection of
+
 exponents
-a=a(A41, .., An; K): Bn+N-→C
-where keC, k + O is a complex parameter, by the rule
-(7.1.1) a(zi- zj=0)=(4i, 4j)/k;
-a(t; -zj=O)= -(α(i), A)/k;
-a(t;  t;= O) =(α(i), α(i)/k
-(cf. (6.5.1).
-Denote by ,=- La(Ai, ..., An; k) the corresponding line bundle with an
-integrable connection over U(%n+n), cf. (4.5), and J, the local system of its
+
+a=a(Ay,..., Aik)! $nan 7
+where xe, x +0 is a complex parameter, by the rule
+
+(7.1.1) a(z;—z;=0)=(A;, 4))/K;
+a(t;—zj;=0)= —(a(i), A)/K;
+
+a(t;—t;=0)=(a(0), «()/«
+(cf. (6.5.1)).
+
+Denote by 4=Z(A,,...,4,3 k) the corresponding line bundle with an
+integrable connection over U(@,,4)), cf. (4.5), and % the local system of its
 horizontal sections.
-Let p: U(n+ N) -→ U(n) be the projection on the first n coordinates. Abusing
-the language, we'll denote by z=(zi, ..., zn) a generic point of U(n). Thus,
-P(e) = U(Bn: N(z) (cf. 5.1), We put L(2)= Lulp-1(2):
-Denote by 2() the direct image P* of the relative de Rham complex
-of La. It is a complex of vector bundles over U(n), whose fiber at z is 2'(a)z
- 2' (,(z) (cf. 4.5). Cohomology bundles
-i(2(L)= Ri p()
-are supplied with the Gauss-Manin integrable connection Vm.
-Denote by 2os(a(z) (the complex of Orlik-Solomon forms) the image of
-(4.5.4); put Hos((z) = Im(H(2os(,(z) -→ H(2'(,(z). This defines a sub-
-complex of bundles2os()→2(). Put Ros P()= Im(H(2os()
-→H(2(L)
+
+Let p: U(@,,4) > U(@,) be the projection on the first n coordinates. Abusing
+the language, we'll denote by z=(z,,...,Z,) a generic point of U(@,). Thus,
+Pig =U (Gy, w(2)) (cf. 5.1). We put A(2)=Ylp- 10.
+
+Denote by Q°(Y) the direct image p, of the relative de Rham complex
+of Y,. It is a complex of vector bundles over U(@,), whose fiber at z is Q'(Y),
+=02'(G,(z)) (cf. 4.5). Cohomology bundles
+
+H'(Q(L,)) =R'p, (LZ)
+
+are supplied with the Gauss-Manin integrable connection Vey.
+
+Denote by Q2o5(G(z)) (the complex of Orlik-Solomon forms) the image of
+(4.5.4); put Hos(G(z)) = Im(H’ (Qo5(G (2) > H(Q'(G,(z)))). This defines a sub-
+complex of bundles 09(4A)cQ(GZ). Put Ros p,y(G)=Im(A(Qs(H))
+> (QL).

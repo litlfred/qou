@@ -1,0 +1,1 @@
+Let fXng1 n¼1 be a sequence of mm-spaces. Then, the following (1.1) and (1.2) are equivalent to each other. ObsDiamRðXn; Þ ! 0 as n ! 1 for any  > 0: ð1:1Þ supfObsDiamTðXn; Þ j T is an R-treeg ! 0 as n ! 1 for any  > 0:ð1:2Þ K. FUNANO

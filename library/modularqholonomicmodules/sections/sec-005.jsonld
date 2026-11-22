@@ -9,13 +9,21 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "A review of linear q-difference equations",
-  "pageStart": 12,
+  "title": "Modular q-holonomic modules in Chern–Simons theory",
+  "pageStart": 7,
   "pageEnd": 12,
   "contains": [
-    "library/modularqholonomicmodules/blocks/prose-sec-005"
+    "library/modularqholonomicmodules/blocks/prose-sec-005",
+    "library/modularqholonomicmodules/blocks/thm-sec-005-01",
+    "library/modularqholonomicmodules/blocks/thm-sec-005-02",
+    "library/modularqholonomicmodules/blocks/thm-sec-005-03",
+    "library/modularqholonomicmodules/blocks/thm-sec-005-04",
+    "library/modularqholonomicmodules/blocks/thm-sec-005-05",
+    "library/modularqholonomicmodules/blocks/thm-sec-005-06",
+    "library/modularqholonomicmodules/blocks/thm-sec-005-07",
+    "library/modularqholonomicmodules/blocks/conj-sec-005-08"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/modularqholonomicmodules",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/modularqholonomicmodules",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/modularqholonomicmodules/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/modularqholonomicmodules/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,0 +1,29 @@
+172 Overview of analytic methods for multivariate GFs
+
+4
+
+Figure 7.1 Amoeba of the function | — x — y.
+
+this series expansion has domain of convergence D = {(x,y) € C? : |x] +|y| <
+1}. For any a,b € (0,1) with a + b < 1 we can write
+
+( + ‘ oil 1 dxdy
+i (2ni)? Stan) 1- x —y xitlyi*l 4)
+_ 1 1 ee) dxdy ;
+(22)? Sry) 1-x-y xy
+
+where 4(x, y) = ilog x + j log y. We aim to use residue computations to reduce
+the two-dimensional integral (7.4) to a one-dimensional integral over some
+path in the singular set V = {(x,y) € C? : x+y = 1}, and then compute a
+saddle point integral. Thus, we set y = | — x in ¢(x,y) and solve for a saddle
+point, where the first derivative of the function vanishes. The equation
+
+j
+l-x
+
+d i
+0= Fol - Os
+
+implies x = i/(i + j). Hence, we aim to determine asymptotic behavior by
+studying the Cauchy integral near (x,,y.) = (i/(@i+ j),j/@+ j)) € V. For
+this discussion we fix positive integers r,s > 0 and derive asymptotics of the

@@ -1,5 +1,23 @@
-*Within a QOU $(\mathbf{C}, A, \tau)$.* The profile below is the QOU's internal $q = 1$ blow-up profile; identifying it with a classical $\mathbb{R}^3$ solution is the separate open bridge.
+*Within a QOU $(\mathbf{C}, A, \tau)$.* This block defines a class of classical velocity fields on $\mathbb{R}^3$. It asserts nothing about their existence.
 
-Near the blowup time $T^*$, the singular NS solution approaches a **discretely self-similar** profile. In Leray's similarity variables $y = (x - x_0)/\sqrt{T^* - t}$, $s = -\log(T^* - t)$, a *continuous* self-similar blowup would require an $s$-independent (steady) profile $(V, P)$ with $V \in L^2(\mathbb{R}^3)$ solving the time-independent Leray equations. Such a profile is **excluded**: every nontrivial finite-energy steady Leray profile is trivial \cite{necas-ruzicka-sverak1996}, a conclusion extended to solutions satisfying only local-energy estimates \cite{tsai1998}.
+**Definition (discretely self-similar Leray profile).** Fix a point $x_0 \in \mathbb{R}^3$ and a time $T^*$. Leray's similarity variables are
+$$
+y = \frac{x - x_0}{\sqrt{T^* - t}}, \qquad s = -\log(T^* - t), \qquad t < T^* .
+$$
+A **Leray profile** is a vector field $V(y, s)$ on $\mathbb{R}^3 \times \mathbb{R}$, and the velocity field it defines is
+$$
+v(x, t) = (T^* - t)^{-1/2}\, V\bigl(y, s\bigr).
+$$
+The profile is **:defterm[discretely self-similar]{#discretely-self-similar}** with period $P > 0$ if $V(y, s + P) = V(y, s)$ for all $y$ and $s$. It is **steady** if $V$ does not depend on $s$.
 
-The QOU degeneration supplies the discrete symmetry that survives this no-go. The root-of-unity ladder $q_\kappa = e^{i\pi/\kappa}$ and the discrete vortex spectrum single out one discrete scaling factor $\lambda_\kappa > 1$ under which the solution is invariant, $v(x, t) = \lambda_\kappa\, v(\lambda_\kappa x, \lambda_\kappa^2 t)$; equivalently the similarity profile is *periodic* in $s$ with period $2\log\lambda_\kappa$ rather than steady. Decomposed by the Peter--Weyl theorem for $\mathrm{SU}_q(2)$ and truncated at the discrete vortex spectrum ($k_{\max} \approx 4$ active modes at $q \approx 1.110$), the periodic profile reduces to a finite system of ODEs.
+Writing $\lambda = e^{P/2} > 1$, periodicity in $s$ implies the discrete scaling invariance
+$$
+v(x, t) = \lambda\, v\bigl(x_0 + \lambda (x - x_0),\; T^* - \lambda^2 (T^* - t)\bigr),
+$$
+which for $x_0 = 0$, $T^* = 0$ is $v(x, t) = \lambda\, v(\lambda x, \lambda^2 t)$ (Lean `lerayField_discrete_scaling`). Conversely, the invariance for all $x$ and all $t < T^*$ gives back periodicity by the same change of variables; only the forward direction is formalised. A steady profile is discretely self-similar for every period.
+
+The field $v$ solves the Navier--Stokes equation with viscosity $\nu$ if and only if $V$ solves the Leray system
+$$
+\partial_s V - \nu \Delta_y V + \tfrac{1}{2} V + \tfrac{1}{2} (y \cdot \nabla_y) V + (V \cdot \nabla_y) V + \nabla_y \Pi = 0, \qquad \nabla_y \cdot V = 0 ,
+$$
+with pressure profile $\Pi(y, s)$. The known constraints on nonzero solutions are collected in [Exclusions for discretely self-similar profiles](#rem:leray-profile-exclusions); finite truncations are discussed in [Truncations of the Leray system](#rem:leray-profile-construction).

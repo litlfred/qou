@@ -1,0 +1,49 @@
+18 Don Zagier
+
+This equation together with the fact that ¢7(2) = 1.89484144897--. 4 0
+implies that the element (13) has infinite order in Be.
+
+In [8], it was pointed out that the same kind of argument works for all
+number fields, not just imaginary quadratic ones. If rg = 1 but N > 2 then
+one can again associate to F (in many different ways) a discrete subgroup I’ C
+SL9(C) such that Vol($3/D’) is a rational multiple of |d|!/?¢r(2)/7?%-?. This
+manifold §3/I is now compact, so the decomposition into ideal tetrahedra
+is a little less obvious than in the case of imaginary quadratic F, but by
+decomposing into non-ideal tetrahedra (tetrahedra with vertices in the interior
+of 93) and writing these as differences of ideal ones, it was shown that the
+volume is an integral linear combination of values of D(z) with z of degree at
+most 4 over F’. For F completely arbitrary there is still a similar statement,
+except that now one gets discrete groups I’ acting on §3?; the final result ((8},
+Theorem 1) is that |d|!/? x Cp(2)/72("'+"2) is a rational linear combination
+of ry-fold products D(z“) --- D(z\")) with each z of degree < 4 over F
+(more precisely, over the i” complex embedding F™ of F, i.e. over the subfield
+Q(a™) of C, where a“ is one of the two roots of the i“ quadratic factor of
+f(x) over R).
+
+But in fact much more is true: the 2 can be chosen in F( itself (rather
+than of degree 4 over this field), and the phrase “rational linear combination
+of r2-fold products” can be replaced by “rational multiple of an rz x rz de-
+terminant.” We will not attempt to give more than a very sketchy account
+of why this is true, lumping together work of Wigner, Bloch, Dupont, Sah,
+Levine, Merkuriev, Suslin, ... for the purpose (references are [1], [3], and the
+survey paper [7]). This work connects the Bloch group defined in the last
+section with the algebraic K-theory of the underlying field; specifically, the
+group” Bp is equal, at least after tensoring it with Q, to a certain quotient
+K}¢(F) of K3(F). The exact definition of K}4(F) is not relevant here. What
+is relevant is that this group has been studied by Borel [2], who showed that
+it is isomorphic (modulo torsion) to Z"™ and that there is a canonical homo-
+morphism, the “regulator mapping,” from it into R’ such that the co-volume
+of the image is a non-zero rational multiple of |d|!/2¢p(2)/?"!+?"2; moreover,
+it is known that under the identification of Ki"4(F) with By this mapping
+corresponds to the composition Br — (Bc)"? Z R"”, where the first arrow
+comes from using the rz embeddings F Cc C (a + a). Putting all this
+together gives the following beautiful picture. The group B-/{torsion} is iso-
+morphic to Z". Let &,...,&+, be any r2 linearly independent elements of it,
+and form the matrix with entries D(é\?), (i,j = 1,...,r2). Then the deter-
+minant of this matrix is a non-zero rational multiple of {d|!/2¢p(2)/12"+?"2.
+If instead of taking any r2 linearly independent elements we choose the €; to
+
+? It should be mentioned that the definition of By which we gave for F = C or
+Q@ must be modified slightly when F is a number field because F™ is no longer
+divisible; however, this is a minor point, affecting only the torsion in the Bloch
+group, and will be ignored here.

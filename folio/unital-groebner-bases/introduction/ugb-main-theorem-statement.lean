@@ -9,5 +9,5 @@ The (placeholder) canonical lives at
 The Lean statement is currently a `sorry` placeholder; full
 formalisation pending.
 
--- Ref: [manuscript] unital-groebner-bases/introduction/ugb-main-theorem-statement.ts
+-- Ref: [leitner2026] unital-groebner-bases/introduction/ugb-main-theorem-statement.ts
 -/

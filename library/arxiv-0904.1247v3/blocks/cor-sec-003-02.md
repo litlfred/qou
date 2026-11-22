@@ -1,0 +1,1 @@
+A Calabi-Yau (respectively, pivotal) structure on a semi-rigid category A ∈Alg(1)(StC) deﬁnes an oriented (respectively, a weakly oriented) 2-dimensional TFT so that ZA(S1) is identiﬁed with both the monoidal center and trace of A.

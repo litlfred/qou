@@ -13,7 +13,7 @@ Decomposition: Λ²V_nat ≅ V_(9,1) ⊕ V_(8,1,1) (dim 9 + 36 = 45).
 This is the categorical structural origin of the integer "45" in
 the α_EM formula 1/α_EM = 45·[3]_q·(...).
 
--- Ref: [manuscript] prop:exterior-square-borromean
+-- Ref: [leitner2026] prop:exterior-square-borromean
 -/
 
 namespace QOU.WedderburnMass

@@ -1226,6 +1226,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "8eb4346f13f8",
+          "ts": "f86e62f7c14c",
+          "lean": "ff41781e34d7",
+          "lean_statement": "28283b009545"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:27.878Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "S↔L: the ref names a declaration that exists nowhere. The library file is \"intentionally empty\" (lean/QOU/BraidKnot/schur_weyl_mass_decomposition.lean:4), and the sibling has no `schur_weyl_mass_decomposition`, only the class `SchurWeylMassDecomposition` (lean:63). That class is self-assuming: `decomposition : markovTrace = Σ …` (lean:73-76), with `markovTrace` a free field. The constituents are stubs with wrong values: `qHookProduct … := (n.factorial : ℝ)` (lean:35-36), `schurAtQ … := (n : ℝ)` (lean:39), `spechtCharacter … := 0` (lean:43-44). So every weighted sum is 0, and the partition list is free data that can be empty (lean:109-116, admitted in ts:36-49). Nothing states the md identity (md:3-12). The file is ℝ with an opaque `atomicBraid : Unit`. The md also carries an empirical claim: \"causing the observed 5%–20% binding-energy drift in the approximation\" (md:18), plus \"For light atoms, the discarded weights remain negligible\" (md:18). No proof block.",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2506,6 +2524,6 @@
       }
     ]
   },
-  "updated_at": "2026-09-06T13:44:05.057Z",
+  "updated_at": "2026-11-15T21:57:27.878Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

@@ -75,7 +75,7 @@ $$
     \times F_{\mathrm{Pauli}}^{[N \in \mathrm{magic}]},
 $$
 
-where $[\cdot]$ is the Iverson bracket. Until 2026-10-10 this paragraph quoted the combined proportion $F_{\mathrm{deg2}} \times F_{\mathrm{Pauli}} = 0.5904 \times 0.6382 \approx 0.377$, a convention-C figure. Under convention D no combined proportion is available: $F_{\mathrm{deg2}} \approx 3.6844$ and the Markov-trace Pauli factor is $0$. The formula was intended for magic-number nuclei in heavy shells (e.g. ${}^{137}\mathrm{Cs}$ with $N = 82$).
+where $[\cdot]$ is the Iverson bracket. Whereas the Convention-C trace gave a non-zero combined product $F_{\mathrm{deg2}} \times F_{\mathrm{Pauli}} = 0.5904 \times 0.6382 \approx 0.377$, under Convention D $F_{\mathrm{deg2}} \approx 3.6844$ and the Markov-trace Pauli factor is $0$. The formula was intended for magic-number nuclei in heavy shells (e.g. ${}^{137}\mathrm{Cs}$ with $N = 82$).
 
 ### Convention-D $Q$-values
 
@@ -90,7 +90,7 @@ The bare term and the combined formula, evaluated at the proton pin $q_0$ with $
 | ${}^{137}\mathrm{Cs}$ | $82$ | $6$ | $\approx 0.15314$ | $-70.2\%$ | $0$ | $-100\%$ | $0.51400$ |
 | ${}^{210}\mathrm{Bi}$ | $127$ | $8$ | $\approx 0.52314$ | $-55.0\%$ | $\approx 1.92747$ | $+65.8\%$ | $1.16270$ |
 
-The bare term misses by $8$–$98\%$ and the combined formula by $1$–$100\%$. The single close entry (${}^{60}\mathrm{Co}$) sits among misses of tens of percent on both sides and is not evidence for the formula. Values are from the producer `computations/spectral_decomposition_qvalue_d.py` and its witness `spectral-decomposition-qvalue-d.witness.json`, which also reproduce Table 1 and the values of $J$ and $F_{\mathrm{deg2}}$ above.
+The bare term misses by $8$–$98\%$ and the combined formula by $1$–$100\%$. The single close entry (${}^{60}\mathrm{Co}$) sits among misses of tens of percent on both sides and is not evidence for the formula. The same computation reproduces Table 1 and the values of $J$ and $F_{\mathrm{deg2}}$ above.
 
 ### Error structure
 

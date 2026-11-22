@@ -1,0 +1,49 @@
+1.4 From nucleons to nuclei
+
+for the regularization of nucleon-nucleon potentials. As the cutoff should reflect the validity range of
+the theory, one should use a more conservative approach and the breakdown scale is mainly chosen as
+A ~ 500 MeV [21, 22].
+
+While the upper scale is set by A ~ 500 MeV we could also look at the opposite limit. In the former
+picture of meson-mediated interaction the nucleon-nucleon interaction is mediated by pion exchange
+similar to the already mentioned Fermi’s beta decay with the W boson as exchange particle. If we
+remain below the pion scale of M, ~ 140 MeV in momentum or do only consider objects larger than
+1/M, ~ 1.5 fm, the effective theory can be reduced to the pionless theory simplifying the problem
+dramatically. Within such an approach it is possible to calculate very-low energy observables like the
+deuteron binding energy of -2.224 MeV or the 's 0 scattering length of the nucleon-nucleon scattering,
+-23.8 fm. A review on pionless EFT can be found in [23]. It has been used to calculate bound states,
+scattering properties, etc. in the two-body sector using the well-known T-matrix formalism or Faddeev-
+Yakubovsky and Skorniakov Ter-Martirosian equations in the three- and four-body systems. It is also
+possible to confirm the Tjon line [24], which is a predicted correlation between 3H and “He.
+
+1.4 From nucleons to nuclei
+
+Due to the rise of computational power and the development of efficient algorithms, we are now able to
+perform ab initio calculations not only for two- or three-body systems in nuclear physics, but also for
+many-body systems like medium-mass nuclei. Alpha-conjugate nuclei are of particular interest. They are
+formed of alpha-particles, which consist of two neutrons and two protons. Due to the Pauli principle
+alpha particles form a very compact object, a cluster, and alpha-like nuclei like 4He, 8Be, en 160, Ne,
+etc. are a very good starting point for many-body calculations. We can even make a link to nuclear
+astrophysics, where one wants to understand the reactions in stars. For example, alpha-alpha scattering
+plays an important role in nucleosynthesis or in supernovae. Other examples are the Hoyle state or the
+production of oxygen via a carbon-helium reaction. Then the Hoyle state [25, 26] is an excited state of
+°C, which must have a very precise energy gap to the ground state, such that the triple alpha process
+really creates enough carbon. The excited carbon state 2C* is created bya 8Be and “He reaction, whereas
+the Be itself is a product of alpha-alpha scattering. The Hoyle state partially decays electromagnetically
+into its ground state,
+
+Ror Pory, (1.7)
+
+The corresponding electromagnetic decay rate is very sensitive to the excited energy gap and it was Hoyle
+who predicted it to be around 7.65 MeV. In Ref. [27] the Hoyle state was detected at 7.653 + 0.008 MeV.
+This anthrophic constraint makes this state an ideal candidate for testing nuclear theory and even the fine
+tuning of physical constants like the quark masses. Any ab initio many-body method should reproduce
+such fundamental processes. An overview on clustering effects in nuclei is given by [28].
+
+1.5 Quantum Monte Carlo methods - status and open challenges
+
+Generally, there are two approaches in Quantum Monte Carlo calculations, a continuum and a lattice
+approach, which are used for the estimation of physical properties of nuclei.
+
+In continuum Monte Carlo theory, the first approach is a variational method called variational Monte
+Carlo (VMC) for the calculation of ground states, Eg. The basic idea is to minimize the energy Ey of the

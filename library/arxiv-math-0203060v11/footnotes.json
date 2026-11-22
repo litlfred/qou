@@ -1,0 +1,5458 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-math-0203060v11",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [],
+ "uncalled_notes": [
+  {
+   "id": "fn-p049-1",
+   "page": 49,
+   "mark": "8",
+   "text": "(2003), 177-206. [O1] V. Ostrik, Module categories over the Drinfeld double of a ﬁnite group, Int. Math. Res. Not. (2003), 1507-1520. [O2] V. Ostrik, Fusion categories of rank 2, Math. Res. Lett. 10 (2003), 177-183. [R1] D. Radford, The order of the antipode of a ﬁnite dimensional Hopf algebra is ﬁnite, Amer. J. Math. 98 (1976), 333-355. [R2] D. Radford, On the antipode of a quasitriangular Hopf algebra, J. Algebra 151 (1992), 1–11.",
+   "block": "library/arxiv-math-0203060v11/blocks/prose-sec-056"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "3-cocycle.Wealsoclassifyfusioncategoriesofdimensionp"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "easytoseethatwehave1=⊕i∈J1"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "easytoseethatwehave1=⊕i∈J1i,where1"
+  },
+  {
+   "page": 3,
+   "mark": "g",
+   "context": "SimpleobjectsinthiscategoryareevaluationmodulesV"
+  },
+  {
+   "page": 3,
+   "mark": "g",
+   "context": "productisgivenbyV"
+  },
+  {
+   "page": 3,
+   "mark": "h",
+   "context": "productisgivenbyVg⊗V"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "Moregenerally,picka3-cocycleω∈Z"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "bsl"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "V"
+  },
+  {
+   "page": 3,
+   "mark": "j",
+   "context": "Vi ⊗V"
+  },
+  {
+   "page": 5,
+   "mark": "4",
+   "context": "Radford’sformulaforS"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "Corollary2.10.Inasphericalcategory,|V |2= dim(V )"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "mension of V , and denoted d"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "dim(V∗)̸=dim(V ),and|V |2̸=dim(V )"
+  },
+  {
+   "page": 6,
+   "mark": "a",
+   "context": "M= FunC(M, M)[O].Thisis"
+  },
+  {
+   "page": 6,
+   "mark": "a",
+   "context": "Missemisimple(soitis"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "categoryofglobaldimensiondim(C)"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "Theorem2.16.ForanymodulecategoriesM"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "Theorem2.16.ForanymodulecategoriesM1, M"
+  },
+  {
+   "page": 6,
+   "mark": "1",
+   "context": "categoryofmodulefunctorsFunC(M"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "categoryofmodulefunctorsFunC(M1, M"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "existuniquei, j∈Jsuchthat1"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "existuniquei, j∈Jsuchthat1i⊗X̸=0andX⊗1"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "1"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "1i⊗X=X⊗1"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "V∈Cij,andanymorphismg:V→V∗∗onecandeﬁneTrV (g)∈End(1"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "Theorem 2.18.If Cisa multi-fusion category,and M"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "Theorem 2.18.If Cisa multi-fusion category,and M1, M"
+  },
+  {
+   "page": 7,
+   "mark": "1",
+   "context": "overC,thenthecategoryFunC(M"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "overC,thenthecategoryFunC(M1, M"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Theorem2.24.OnehasTr(S"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "Theorem2.24.OnehasTr(S2|q"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "Theorem2.24.OnehasTr(S2|qjAS(q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Theorem2.24.OnehasTr(S2|qjAS(qi)) = dim(C)n"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "i"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "in"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "alwayshasTr(S"
+  },
+  {
+   "page": 8,
+   "mark": "j",
+   "context": "alwayshasTr(S2|q"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "alwayshasTr(S2|qjAS(q"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Remark2.25.Theorem2.24impliesthatTr(S"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "emark2.25.Theorem2.24impliesthatTr(S2|A) = dim(Rep(A)) dim(A"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "ark2.25.Theorem2.24impliesthatTr(S2|A) = dim(Rep(A)) dim(At)"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "anothertensorcategoryC′,asequenceofcohomologyspacesH"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": ").IfFistheidentityfunctor,thenthesegroupsaresimplydenotedbyH"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "Namely, ﬁrst order deformations of Care elements of H"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "C, C′areelementsofH"
+  },
+  {
+   "page": 9,
+   "mark": "4",
+   "context": "H"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "H4(C)andH"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "tensorfunctorfromCtoC′.ThenH"
+  },
+  {
+   "page": 10,
+   "mark": "i",
+   "context": "morphismclassesofsimpleobjectsofCbyX"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "V)∗.For all simple V , let us ﬁx an isomorphism"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "r all simple V , let us ﬁx an isomorphism aV: V→V∗∗such that"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "all simple V , let us ﬁx an isomorphism aV: V→V∗∗such that a"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(a"
+  },
+  {
+   "page": 10,
+   "mark": "d",
+   "context": "V)∗,whereǫV=±1,andǫV ǫV∗=1.Deﬁne"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "Also,sincea"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": ")"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "j)"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": ":=bX"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": ":=bXiX"
+  },
+  {
+   "page": 11,
+   "mark": "d",
+   "context": "j"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "jd"
+  },
+  {
+   "page": 11,
+   "mark": "d",
+   "context": "j,andlet"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "nentsd"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "nentsdi.Thisvectorisclearlynonzero(e.g.,d"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "eigenvalue|X"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "WeclaimthatTi∗=ǫiT"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "i.Thisimpliesthetheorem,asinthiscaseA"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "i.Thisimpliesthetheorem,asinthiscaseAi=T"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "i.Thisimpliesthetheorem,asinthiscaseAi=TiT"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "eigenvalues,including|X"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "i,weneedtoshowthatT"
+  },
+  {
+   "page": 11,
+   "mark": "t",
+   "context": "ToprovethatTi∗= ǫiT"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "follows from the equality b"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "Itremainstoprove thelastequality.Letf: X"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "Itremainstoprove thelastequality.Letf: Xj→X"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "Itremainstoprove thelastequality.Letf: Xj→Xi ⊗X"
+  },
+  {
+   "page": 11,
+   "mark": "f",
+   "context": "j"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "jf= (a"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "jf= (ai ⊗a"
+  },
+  {
+   "page": 11,
+   "mark": "f",
+   "context": "j.Ontheotherhand,"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "f′: X"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "f′: Xi∗⊗X"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "f′: Xi∗⊗Xj→X"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "f′: Xi∗⊗Xj→Xk,givenbyf′= (ev"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "onHom(X"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "onHom(Xk, X"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "onHom(Xk, Xi∗⊗X"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "onHom(Xk, Xi∗⊗Xj)givenbyf′′(h)=(ev"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "onHom(Xk, Xi∗⊗Xj)givenbyf′′(h)=(evi ⊗1)(1"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "onHom(Xk, Xi∗⊗Xj)givenbyf′′(h)=(evi ⊗1)(1i∗⊗f)h∈End(X"
+  },
+  {
+   "page": 11,
+   "mark": "f",
+   "context": "j"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "(ev"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "(evi ⊗1)(1"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "(evi ⊗1)(1i∗⊗(a"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "(evi ⊗1)(1i∗⊗(ai ⊗a"
+  },
+  {
+   "page": 11,
+   "mark": "h",
+   "context": "j)"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "ǫ"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "ǫia"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "ǫiak(ev"
+  },
+  {
+   "page": 11,
+   "mark": "h",
+   "context": "j)"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "ǫ"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "ǫi(ev"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "j)ha"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "ǫ"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "ǫi(ev"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "ǫi(evi ⊗1)(1 ⊗f)(a"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "ǫi(evi ⊗1)(1 ⊗f)(ai∗⊗a"
+  },
+  {
+   "page": 11,
+   "mark": "f",
+   "context": "j"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "jf)′′(h) = f ′′(b"
+  },
+  {
+   "page": 11,
+   "mark": "h",
+   "context": "k"
+  },
+  {
+   "page": 11,
+   "mark": "j",
+   "context": "j,themultiplicityofX"
+  },
+  {
+   "page": 11,
+   "mark": "i",
+   "context": "j,themultiplicityofXjinX"
+  },
+  {
+   "page": 11,
+   "mark": "k",
+   "context": "j,themultiplicityofXjinXi ⊗X"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "dimHom(X"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "dimHom(Xj, X"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "dimHom(Xj, Xi⊗X"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "dimHom(Xj, Xi⊗Xk).Then,likeintheproofofTheorem2.3,N"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "dimHom(Xj, Xi⊗Xk).Then,likeintheproofofTheorem2.3,Nid=d"
+  },
+  {
+   "page": 12,
+   "mark": "t",
+   "context": "d∗Ni= (N"
+  },
+  {
+   "page": 12,
+   "mark": "d",
+   "context": "i"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "id)∗= (N"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "d"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "di∗|d|2= d"
+  },
+  {
+   "page": 12,
+   "mark": "s",
+   "context": "j"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "js"
+  },
+  {
+   "page": 12,
+   "mark": "s",
+   "context": "jsi∗j"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "Recallthats"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "Recallthatsj"
+  },
+  {
+   "page": 12,
+   "mark": "j",
+   "context": "Recallthatsj0=± dim(V"
+  },
+  {
+   "page": 12,
+   "mark": "v",
+   "context": "mdenotetherowvector,Hermitianadjointto"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "mdenotetherowvector,Hermitianadjointtov"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "mN"
+  },
+  {
+   "page": 12,
+   "mark": "v",
+   "context": "mNi"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "mNiv"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "|v"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "i= N"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "i= Ni∗,andN"
+  },
+  {
+   "page": 12,
+   "mark": "v",
+   "context": "i"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "iv"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "ivm)∗v"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "ivm)∗vm= (N"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "ivm)∗vm= (Ni∗v"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "ivm)∗vm= (Ni∗vm)∗v"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "ivm)∗vm= (Ni∗vm)∗vm= (s"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "mN"
+  },
+  {
+   "page": 12,
+   "mark": "v",
+   "context": "mNi"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "mNiv"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "|v"
+  },
+  {
+   "page": 12,
+   "mark": "m",
+   "context": "Since|v"
+  },
+  {
+   "page": 12,
+   "mark": "3",
+   "context": "bytherelation(ST )"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "bytherelation(ST )3=e"
+  },
+  {
+   "page": 12,
+   "mark": "2",
+   "context": "bytherelation(ST )3=e2πic/8S"
+  },
+  {
+   "page": 13,
+   "mark": "00",
+   "context": "D≥f(sign(s"
+  },
+  {
+   "page": 13,
+   "mark": "00",
+   "context": "Remark3.5.Thenumbers"
+  },
+  {
+   "page": 13,
+   "mark": "00",
+   "context": "sign(s"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "|X"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "|Xi|2θ"
+  },
+  {
+   "page": 13,
+   "mark": "00",
+   "context": "sign(s"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "|X"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "|Xi|2θ"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "ing squared absolute values of both sides, and using that |θ"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "solute values of both sides, and using that |θi| = 1, and |X"
+  },
+  {
+   "page": 13,
+   "mark": "i",
+   "context": "|X"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "|Xi|2)"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "|Xi|2)2/D =(D −1)"
+  },
+  {
+   "page": 13,
+   "mark": "00",
+   "context": "|sign(s"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "AmorphismbetweenweakHopfalgebrasA"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "AmorphismbetweenweakHopfalgebrasA1andA"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "AmorphismbetweenweakHopfalgebrasA1andA2isamapφ:A"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "AmorphismbetweenweakHopfalgebrasA1andA2isamapφ:A1→A"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "intertwinestheantipodesofA"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "intertwinestheantipodesofA1andA"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "intertwinestheantipodesofA1andA2,i.e.,φ◦S"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "intertwinestheantipodesofA1andA2,i.e.,φ◦S1=S"
+  },
+  {
+   "page": 14,
+   "mark": "k",
+   "context": "Whendim"
+  },
+  {
+   "page": 14,
+   "mark": "t",
+   "context": "tensor product of two A-modules Vand Wis V ⊗A"
+  },
+  {
+   "page": 15,
+   "mark": "t",
+   "context": "theactionh · z= ε"
+  },
+  {
+   "page": 15,
+   "mark": "t",
+   "context": "theactionh · z= εt(hz)forallh ∈A,z∈A"
+  },
+  {
+   "page": 15,
+   "mark": "t",
+   "context": "Rep(A)isirreducibleifandonlyifZ(A) ∩A"
+  },
+  {
+   "page": 15,
+   "mark": "t",
+   "context": "Ifp̸=0isanidempotentinA"
+  },
+  {
+   "page": 15,
+   "mark": "s",
+   "context": "Ifp̸=0isanidempotentinAt ∩A"
+  },
+  {
+   "page": 15,
+   "mark": "t",
+   "context": "A"
+  },
+  {
+   "page": 15,
+   "mark": "s",
+   "context": "At ∩A"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "Therestriction ofS"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "S"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "elements.IfAisﬁnitedimensional,thequotientgroup"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "elements.IfAisﬁnitedimensional,thequotientgroupeG(A)=G(A)/G"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "a∈G(A),calleddistinguishedgroup-likeelements,whoseclassesin"
+  },
+  {
+   "page": 16,
+   "mark": "4",
+   "context": "S"
+  },
+  {
+   "page": 16,
+   "mark": "4",
+   "context": "S"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "oposition4.9.LetAbeaﬁnite-dimensionalweakHopfalgebraandlet{q"
+  },
+  {
+   "page": 16,
+   "mark": "t",
+   "context": "beprimitivecentralidempotentsinA"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "beprimitivecentralidempotentsinAt.Thenχ"
+  },
+  {
+   "page": 16,
+   "mark": "h",
+   "context": "beprimitivecentralidempotentsinAt.Thenχi(h):=Tr(L"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "beprimitivecentralidempotentsinAt.Thenχi(h):=Tr(Lh◦S"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "beprimitivecentralidempotentsinAt.Thenχi(h):=Tr(Lh◦S2|AS(q"
+  },
+  {
+   "page": 17,
+   "mark": "h",
+   "context": "L"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "Lh∈End"
+  },
+  {
+   "page": 17,
+   "mark": "h",
+   "context": "Lh∈Endk(A)isgivenbyL"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "Tr(S"
+  },
+  {
+   "page": 17,
+   "mark": "j",
+   "context": "Tr(S2|q"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "Tr(S2|qjAS(q"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "χ(hS"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "sinceAisregularandS"
+  },
+  {
+   "page": 17,
+   "mark": "g",
+   "context": "sinceAisregularandS2◦L"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "sinceAisregularandS2◦Lg= LS"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "sinceAisregularandS2◦Lg= LS2(g) ◦S"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "Next,forallφ ∈A∗wedeﬁneRφ∈End"
+  },
+  {
+   "page": 17,
+   "mark": "h",
+   "context": "showsthatL(h↼φ)= Rφ(1)◦L"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "Tr(L(h↼φ) ◦S"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "Tr(L(h↼φ) ◦S2|AS(q"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "(φ ⊗χ"
+  },
+  {
+   "page": 17,
+   "mark": "h",
+   "context": "Tr(Rφ(1)◦L"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "Tr(Rφ(1)◦Lh ◦RS−1(φ(2)) ◦S"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "Tr(Rφ(1)◦Lh ◦RS−1(φ(2)) ◦S2|AS(q"
+  },
+  {
+   "page": 17,
+   "mark": "t",
+   "context": "Tr(Rε"
+  },
+  {
+   "page": 17,
+   "mark": "h",
+   "context": "Tr(Rεt(φ) ◦L"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "Tr(Rεt(φ) ◦Lh ◦S"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "Tr(Rεt(φ) ◦Lh ◦S2|AS(q"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "therefore,(id ⊗χ"
+  },
+  {
+   "page": 17,
+   "mark": "t",
+   "context": "therefore,(id ⊗χi)∆(h)=(ε"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "therefore,(id ⊗χi)∆(h)=(εt⊗χ)∆(h)forallh∈A,i.e.,χ"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "withTr(S"
+  },
+  {
+   "page": 17,
+   "mark": "t",
+   "context": "primitiveidempotentpinA"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "primitiveidempotentpinAt ∩Z(A)thereexistidempotentsq"
+  },
+  {
+   "page": 17,
+   "mark": "t",
+   "context": "pinpA"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "Tr(S"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "Tr(S2|q"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "spectively.Then (ℓ(2)⇀λ)⊗q"
+  },
+  {
+   "page": 17,
+   "mark": "q",
+   "context": "p) is the dual bases tensor for"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "p) is the dual bases tensor for q"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "Tr(S"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "Tr(S2|q"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "⟨ℓ(2)⇀λ,q"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "⟨λ,q"
+  },
+  {
+   "page": 17,
+   "mark": "s",
+   "context": "⟨λ,qpε"
+  },
+  {
+   "page": 17,
+   "mark": "t",
+   "context": "p)ε"
+  },
+  {
+   "page": 17,
+   "mark": "y",
+   "context": "p)ℓ= S(ℓ)"
+  },
+  {
+   "page": 17,
+   "mark": "p",
+   "context": "p)ℓ= S(ℓ)y"
+  },
+  {
+   "page": 17,
+   "mark": "t",
+   "context": "t:=(A∗)"
+  },
+  {
+   "page": 17,
+   "mark": "s",
+   "context": "s:=(A∗)"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "min.Thismeansthatonecanchooseℓinsuch"
+  },
+  {
+   "page": 18,
+   "mark": "p",
+   "context": "waythatα=ǫ,i.e.,ℓ=S(ℓ).Hence,y"
+  },
+  {
+   "page": 18,
+   "mark": "s",
+   "context": "waythatα=ǫ,i.e.,ℓ=S(ℓ).Hence,yp∈A"
+  },
+  {
+   "page": 18,
+   "mark": "s",
+   "context": "p.Weconcludethaty:=ε"
+  },
+  {
+   "page": 18,
+   "mark": "y",
+   "context": "p"
+  },
+  {
+   "page": 18,
+   "mark": "p",
+   "context": "py"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "Lemma4.11.ThespaceρA∗S(ρ′)maybeidentiﬁed,inanS"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "Tr(S"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "latterimpliesTr(S"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "latterimpliesTr(S2|ρπA∗S(ρ′π)) = Tr(S"
+  },
+  {
+   "page": 18,
+   "mark": "p",
+   "context": "latterimpliesTr(S2|ρπA∗S(ρ′π)) = Tr(S2|q"
+  },
+  {
+   "page": 18,
+   "mark": "t",
+   "context": "thereexistidempotentsq,q′inA"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "thereexistidempotentsq,q′inAtsuchthatTr(S"
+  },
+  {
+   "page": 18,
+   "mark": "t",
+   "context": "thereexistidempotentsq,q′inA"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "thereexistidempotentsq,q′inAtsuchthatTr(S"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "5.Tr(S"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "foranysimpleobject V ,whichmeansthatS"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "isalsoprovedin[BNSz,3.22]).Soletg∈AbesuchthatS"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "Let{q"
+  },
+  {
+   "page": 18,
+   "mark": "t",
+   "context": "Let{qi}beprimitiveidempotentsinZ(A"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "Let{qi}beprimitiveidempotentsinZ(At)andforeveryiletn"
+  },
+  {
+   "page": 18,
+   "mark": "k",
+   "context": "i= dim"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "i= dimk(q"
+  },
+  {
+   "page": 18,
+   "mark": "t",
+   "context": "i= dimk(qiA"
+  },
+  {
+   "page": 19,
+   "mark": "t",
+   "context": "applyingTr|A"
+  },
+  {
+   "page": 19,
+   "mark": "t",
+   "context": "applyingTr|At,andusingthatforaregularweakHopfalgebraTr(z|A"
+  },
+  {
+   "page": 19,
+   "mark": "t",
+   "context": "allz∈A"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "TrV (g)n"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "TrV∗((g−1)∗)n"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "i= Tr(g−1|S(q"
+  },
+  {
+   "page": 19,
+   "mark": "j",
+   "context": "j= Tr(g|q"
+  },
+  {
+   "page": 19,
+   "mark": "j",
+   "context": "Tr(g|q"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "Tr(g|qjV )Tr(g−1|S(q"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "Tr(g|qjV )Tr(g−1|S(qi)V ) = |V |2n"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "i"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "in"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "Tr(S"
+  },
+  {
+   "page": 19,
+   "mark": "j",
+   "context": "Tr(S2|q"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "Tr(S2|qjAS(q"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "Tr(S2|qjAS(qi)) = dim(Rep(A))n"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "i"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "in"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "Theorem2.24,wehaveTr(S"
+  },
+  {
+   "page": 19,
+   "mark": "j",
+   "context": "Theorem2.24,wehaveTr(S2|q"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "Theorem2.24,wehaveTr(S2|qjAS(q"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "Theorem2.24,wehaveTr(S2|qjAS(qi))=dim(C)n"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "i"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "in"
+  },
+  {
+   "page": 19,
+   "mark": "j",
+   "context": "goryoverC.SoM = ⊕M"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "M"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "Mi,andletR=⊕R"
+  },
+  {
+   "page": 19,
+   "mark": "k",
+   "context": "to(M, R),andletB=End"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "2.16,sincethecategoryFunC(M"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "2.16,sincethecategoryFunC(M1, M"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "ij=π"
+  },
+  {
+   "page": 19,
+   "mark": "j",
+   "context": "ij=πiA∗S(π"
+  },
+  {
+   "page": 19,
+   "mark": "j",
+   "context": "that Aij= p"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "that Aij= pjAp"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "that Aij= pjApi,where p"
+  },
+  {
+   "page": 19,
+   "mark": "s",
+   "context": "that Aij= pjApi,where piare theprimitive idempotentsof A"
+  },
+  {
+   "page": 19,
+   "mark": "t",
+   "context": "that Aij= pjApi,where piare theprimitive idempotentsof As ∩A"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "theusualMoritaequivalenceV→p"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "functor since∆(p"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "functor since∆(pi) = (p"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "functor since∆(pi) = (pi ⊗p"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "we have ∆(ˆp"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "we have ∆(ˆpiA) ⊂ˆp"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "we have ∆(ˆpiA) ⊂ˆpiA⊗ˆp"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "we have ∆(ˆpiA) ⊂ˆpiA⊗ˆpiA.Butˆp"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": " have ∆(ˆpiA) ⊂ˆpiA⊗ˆpiA.ButˆpiA contains the matrix block q"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "∆(q"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "∆(q0A) ⊂ˆp"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "∆(q0A) ⊂ˆpiA ⊗ˆp"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "∆(q0A) ⊂ˆpiA ⊗ˆpiAandsoˆp"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "LetqirbetheprimitiveidempotentsofZ(Arr).Letn"
+  },
+  {
+   "page": 19,
+   "mark": "t",
+   "context": "ir=dim(qir(Arr)"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "Theorem5.2.OnehasTr(S"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "Theorem5.2.OnehasTr(S2|qjrArsS(qis)) = dim(Rep(A))n"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "jr"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "jrn"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "letgbeanelementofAsuchthatgxg−1= S"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "letgbeanelementofAsuchthatgxg−1= S2(x).ThenprgprrealizesS"
+  },
+  {
+   "page": 20,
+   "mark": "r",
+   "context": "Tr(p"
+  },
+  {
+   "page": 20,
+   "mark": "r",
+   "context": "Tr(prgp"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "Tr(prgpr|qirV ) = TrV (g)n"
+  },
+  {
+   "page": 20,
+   "mark": "r",
+   "context": "Tr(p"
+  },
+  {
+   "page": 20,
+   "mark": "r",
+   "context": "Tr(prg−1p"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "Tr(prg−1pr|S(qir)V ) = TrV ((g−1)∗)n"
+  },
+  {
+   "page": 20,
+   "mark": "s",
+   "context": "Now,Ars= ⊕V p"
+  },
+  {
+   "page": 20,
+   "mark": "r",
+   "context": "Now,Ars= ⊕V psV⊗(p"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "Now,Ars= ⊕V psV⊗(prV )∗,andS"
+  },
+  {
+   "page": 20,
+   "mark": "s",
+   "context": "Now,Ars= ⊕V psV⊗(prV )∗,andS2|Ars= p"
+  },
+  {
+   "page": 20,
+   "mark": "s",
+   "context": "Now,Ars= ⊕V psV⊗(prV )∗,andS2|Ars= psgp"
+  },
+  {
+   "page": 20,
+   "mark": "r",
+   "context": "Now,Ars= ⊕V psV⊗(prV )∗,andS2|Ars= psgps ⊗(p"
+  },
+  {
+   "page": 20,
+   "mark": "r",
+   "context": "Now,Ars= ⊕V psV⊗(prV )∗,andS2|Ars= psgps ⊗(prg−1p"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "R"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "M.Let n"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "j= dim(R"
+  },
+  {
+   "page": 20,
+   "mark": "k",
+   "context": "= dim(Rj).Let Fbe the corresponding ﬁber functor, and B= End"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "semisimple.Therefore,byTheorem5.2,Tr(S"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "mple.Therefore,byTheorem5.2,Tr(S2|qjrArsS(qis))=dim(Rep(A))n"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "is"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "isn"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "dim(Crs)n"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "is"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "isn"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "Tr(S"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "Tr(S"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "dim(Rep(A))n"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "is"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "isn"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "themulti-fusioncategoryCisindecomposable.LetM"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "themulti-fusioncategoryCisindecomposable.LetM1,M"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "overC.Let1"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "inthestandardwaythatforeachi,therestrictionfunctorFunC(M"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "inthestandardwaythatforeachi,therestrictionfunctorFunC(M1, M"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "FunC"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "FunCi(1"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "FunCi(1iM"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "FunCi(1iM1, 1"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "FunCi(1iM1, 1iM"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "inversefunctorbyextendingafunctorfrom1"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "inversefunctorbyextendingafunctorfrom1iM"
+  },
+  {
+   "page": 20,
+   "mark": "j",
+   "context": "inversefunctorbyextendingafunctorfrom1iM1to1"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "inversefunctorbyextendingafunctorfrom1iM1to1jM"
+  },
+  {
+   "page": 20,
+   "mark": "k",
+   "context": "A=End"
+  },
+  {
+   "page": 20,
+   "mark": "k",
+   "context": "A=Endk(G),B=End"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "X∈Irr(Z(C))[X|C:"
+  },
+  {
+   "page": 22,
+   "mark": "g",
+   "context": "⊕g∈GC"
+  },
+  {
+   "page": 22,
+   "mark": "g",
+   "context": "⊕g∈GCg,suchthat⊗:C"
+  },
+  {
+   "page": 22,
+   "mark": "h",
+   "context": "⊕g∈GCg,suchthat⊗:Cg×C"
+  },
+  {
+   "page": 22,
+   "mark": "e",
+   "context": "⊕g∈GCg,suchthat⊗:Cg×Ch→Cgh,1∈C"
+  },
+  {
+   "page": 22,
+   "mark": "g",
+   "context": "⊕g∈GCg,suchthat⊗:Cg×Ch→Cgh,1∈Ce,and∗:C"
+  },
+  {
+   "page": 22,
+   "mark": "g",
+   "context": "⊕g∈GCg,suchthat⊗:Cg×Ch→Cgh,1∈Ce,and∗:Cg→C"
+  },
+  {
+   "page": 22,
+   "mark": "g",
+   "context": "saythatthegradingisfaithfulifC"
+  },
+  {
+   "page": 22,
+   "mark": "e",
+   "context": "ItisclearthatifCisaG-gradedcategory,thenC"
+  },
+  {
+   "page": 22,
+   "mark": "g",
+   "context": "clearthatifCisaG-gradedcategory,thenCeisatensorcategory,andC"
+  },
+  {
+   "page": 22,
+   "mark": "e",
+   "context": "areleftandrightmodulecategoriesoverC"
+  },
+  {
+   "page": 22,
+   "mark": "t",
+   "context": "Proof.ThesetU⊂(a, b)whereH"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "isnonempty.Thefunctionf(t)=Tr(S"
+  },
+  {
+   "page": 22,
+   "mark": "t",
+   "context": "isnonempty.Thefunctionf(t)=Tr(S2|H"
+  },
+  {
+   "page": 22,
+   "mark": "c",
+   "context": "Corollary4.13,fiszeroonthecomplementU"
+  },
+  {
+   "page": 22,
+   "mark": "c",
+   "context": "Thus,U"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "TV]thattheDrinfeldelementu=S(R(2))R(1)isinvertible,satisﬁesS"
+  },
+  {
+   "page": 23,
+   "mark": "21",
+   "context": "∆(u−1) = R"
+  },
+  {
+   "page": 23,
+   "mark": "4",
+   "context": "Furthermore, theelementuS(u)−1isgroup-like andimplementsS"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "ℓ(1) ⊗S"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "R(1)S(R(2))S"
+  },
+  {
+   "page": 23,
+   "mark": "21",
+   "context": "∆(ν) = R"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "andthatαisgaugedtobeǫ.Ifg∈Aisagroup-likeelementsuchthatg"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "andS"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "Proof.Inthiscasewehavegα= 1.SincebothuandgimplementS"
+  },
+  {
+   "page": 23,
+   "mark": "21",
+   "context": "νiscentral.ItfollowsfromEquation(28)that∆(ν)=R"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "suchthatg"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "gisagrouplikeelementsuchthatgxg−1=S"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "gisagrouplikeelementsuchthatgxg−1=S2(x)forx∈D(A),andg"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "Proof.Considerthecategory˜C.Ithastwopivotalstructuresb"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "Proof.Considerthecategory˜C.Ithastwopivotalstructuresb1, b"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "Namely,b"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "Namely,b1comesfrom Candb"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "◦b"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "WesetC"
+  },
+  {
+   "page": 24,
+   "mark": "t",
+   "context": "WesetC0(A, B)=A"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "C"
+  },
+  {
+   "page": 24,
+   "mark": "t",
+   "context": "Cn(A, B) := {f∈A⊗n| f= Ad(1)fandAd(h)f= Ad(ε"
+  },
+  {
+   "page": 24,
+   "mark": "t",
+   "context": "toAd.Theconditionsof(29)meanthatAliesinA ⊗A"
+  },
+  {
+   "page": 24,
+   "mark": "t",
+   "context": "toAd.Theconditionsof(29)meanthatAliesinA ⊗At· · · ⊗A"
+  },
+  {
+   "page": 24,
+   "mark": "t",
+   "context": "A"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "At-bimoduleviaz"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "At-bimoduleviaz1 · h · z"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "At-bimoduleviaz1 · h · z2= z"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "At-bimoduleviaz1 · h · z2= z1S(z"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "At-bimoduleviaz1 · h · z2= z1S(z2)hforh ∈A,z"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "At-bimoduleviaz1 · h · z2= z1S(z2)hforh ∈A,z1, z"
+  },
+  {
+   "page": 24,
+   "mark": "t",
+   "context": "At-bimoduleviaz1 · h · z2= z1S(z2)hforh ∈A,z1, z2, ∈A"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "Letusdeﬁnealinearmapδ"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "Letusdeﬁnealinearmapδn: C"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "Letusdeﬁnealinearmapδn: Cn(A, B) →A⊗(n+1)byδ"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "δ"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "(−1)"
+  },
+  {
+   "page": 24,
+   "mark": "i",
+   "context": "(−1)i(id"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "(−1)i(idi−1 ⊗∆⊗id"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "(−1)i(idi−1 ⊗∆⊗idn−i)(f) + (−1)"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "Lemma6.1.Foralln ≥0wehaveIm(δ"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "Lemma6.1.Foralln ≥0wehaveIm(δn) ⊂C"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "Lemma6.1.Foralln ≥0wehaveIm(δn) ⊂Cn+1(A, B)andδ"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "Lemma6.1.Foralln ≥0wehaveIm(δn) ⊂Cn+1(A, B)andδn+1◦δ"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "thecollection{C"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "thecollection{Cn(A, B),δ"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "Proof.Thatδ"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "Proof.Thatδn(f),f∈C"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "Ad(h)δ"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "Ad(h)(1 ⊗f) −Ad(h)(∆⊗id"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "· · · + (−1)"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "· · · + (−1)nAd(h)(id"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "· · · + (−1)nAd(h)(idn−1 ⊗∆)f+ (−1)"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "h(1)S(h(3)) ⊗Ad(h(2))f−(∆⊗id"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "· · · + (−1)"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "· · · + (−1)n(id"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "· · · + (−1)n(idn−1 ⊗∆)Ad(h)f+ (−1)"
+  },
+  {
+   "page": 25,
+   "mark": "t",
+   "context": " · · + (−1)n(idn−1 ⊗∆)Ad(h)f+ (−1)n+1∆n(h(1))f∆n(S(h(3))) ⊗ε"
+  },
+  {
+   "page": 25,
+   "mark": "t",
+   "context": "1(1)ε"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "1(1)εt(h) ⊗Ad(1(2))f−(∆⊗id"
+  },
+  {
+   "page": 25,
+   "mark": "t",
+   "context": "1(1)εt(h) ⊗Ad(1(2))f−(∆⊗idn−1)(Ad(ε"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "· · · + (−1)"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "· · · + (−1)n(id"
+  },
+  {
+   "page": 25,
+   "mark": "t",
+   "context": "· · · + (−1)n(idn−1 ⊗∆)Ad(ε"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "· · · + (−1)n(idn−1 ⊗∆)Ad(εt(h))f+ (−1)"
+  },
+  {
+   "page": 25,
+   "mark": "t",
+   "context": "· · · + (−1)n(idn−1 ⊗∆)Ad(εt(h))f+ (−1)n+1∆n(1(1))Ad(ε"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "Ad(εt(h))δ"
+  },
+  {
+   "page": 25,
+   "mark": "t",
+   "context": "whereweusedtheidentity(id ⊗ε"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "δ"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "δn(f) ∈C"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "δn(f) ∈Cn+1(A, B).Thus,δ"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "δn(f) ∈Cn+1(A, B).Thus,δn(C"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "δn(f) ∈Cn+1(A, B).Thus,δn(Cn(A, B)) ⊂C"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "Thatδ"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "Thatδn+1◦δ"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "imilar termswithoppositesignsamong (n + 3)(n + 2) tensorsinδ"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "r termswithoppositesignsamong (n + 3)(n + 2) tensorsinδn+1◦δ"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "H"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "Hn(A,B) := H"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "Hn(A,B) := Hn(C•(A, B)) = Ker(δ"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "Hn(A,B) := Hn(C•(A, B)) = Ker(δn)/Im(δ"
+  },
+  {
+   "page": 25,
+   "mark": "s",
+   "context": "u = 1(1)χ(1(2)) = S(1(1))χ(1(2)) = S(u) ∈A"
+  },
+  {
+   "page": 25,
+   "mark": "t",
+   "context": "u = 1(1)χ(1(2)) = S(1(1))χ(1(2)) = S(u) ∈As ∩A"
+  },
+  {
+   "page": 25,
+   "mark": "t",
+   "context": "∆(1)(h ⊗1) = (id ⊗ε"
+  },
+  {
+   "page": 25,
+   "mark": "s",
+   "context": "hence,u ∈A"
+  },
+  {
+   "page": 25,
+   "mark": "t",
+   "context": "hence,u ∈As ∩A"
+  },
+  {
+   "page": 25,
+   "mark": "j",
+   "context": "χ(q"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "χ(qj) = Tr(S"
+  },
+  {
+   "page": 25,
+   "mark": "j",
+   "context": "χ(qj) = Tr(S2|q"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "χ(qj) = Tr(S2|qjAS(q"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "χ(qj) = Tr(S2|qjAS(qi)) = dim(Rep(A))n"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "i"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "in"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "wheren"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "i= dim"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "i= dimk(q"
+  },
+  {
+   "page": 25,
+   "mark": "t",
+   "context": "i= dimk(qiA"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "i= dimk(qiAt)and"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "i= dimk(qiAt)andn"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "j= dim"
+  },
+  {
+   "page": 25,
+   "mark": "j",
+   "context": "j= dimk(q"
+  },
+  {
+   "page": 25,
+   "mark": "t",
+   "context": "j= dimk(qjA"
+  },
+  {
+   "page": 25,
+   "mark": "t",
+   "context": "j= dimk(qjAt).Therefore,χ|A"
+  },
+  {
+   "page": 25,
+   "mark": "u",
+   "context": "j= dimk(qjAt).Therefore,χ|At̸= 0and"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "rem 6.3.Let Cbe the complex associated to A,Bas above.Then H"
+  },
+  {
+   "page": 25,
+   "mark": "t",
+   "context": "A"
+  },
+  {
+   "page": 25,
+   "mark": "s",
+   "context": "At ∩A"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "At ∩As ∩Z(A)andH"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "this case we have H"
+  },
+  {
+   "page": 26,
+   "mark": "0",
+   "context": "this case we have H0(A, B) = Ker(δ"
+  },
+  {
+   "page": 26,
+   "mark": "t",
+   "context": "this case we have H0(A, B) = Ker(δ0) = A"
+  },
+  {
+   "page": 26,
+   "mark": "s",
+   "context": "this case we have H0(A, B) = Ker(δ0) = At∩A"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "his case we have H0(A, B) = Ker(δ0) = At∩As∩Z(A) = k.Let f∈C"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "1beacycle,i.e.,δ"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "˜f= (id"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "belongstoC"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "elongstoCn−1(A, B)andthatfisascalarmultipleofthediﬀerentialδ"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "1(1)f(1)S(1(2"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "(1))(f (1) ⊗· · · ⊗f (n−1))∆n−1(S(1(2)"
+  },
+  {
+   "page": 26,
+   "mark": "f",
+   "context": "(2)"
+  },
+  {
+   "page": 26,
+   "mark": "f",
+   "context": "(2)"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "h(1)f(1)S(h(2"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "h(1)f(1)S(h(2"
+  },
+  {
+   "page": 26,
+   "mark": "s",
+   "context": "h(1)f(1)S(h(2n−1)) ⊗· · · ⊗h(n−1))f(n−1)ε"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "h(1)f(1)S(h(2"
+  },
+  {
+   "page": 26,
+   "mark": "s",
+   "context": "h(1)f(1)S(h(2n−1)) ⊗· · · ⊗h(n−1)f(n−1)S(h(n+1))χ(f(n)S(ε"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "h(1)f(1)S(h(2"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "(id"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "(idn−1 ⊗χ)(Ad(h)f) = (id"
+  },
+  {
+   "page": 26,
+   "mark": "t",
+   "context": "(idn−1 ⊗χ)(Ad(h)f) = (idn−1 ⊗χ)(Ad(ε"
+  },
+  {
+   "page": 26,
+   "mark": "t",
+   "context": "(idn−1 ⊗χ)(Ad(h)f) = (idn−1 ⊗χ)(Ad(εt(h))f) = Ad(ε"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "forallf∈C"
+  },
+  {
+   "page": 26,
+   "mark": "s",
+   "context": "forallx ∈Aandy∈A"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "Hence,˜f∈C"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "Hence,˜f∈Cn−1(A, B).Next,since(id"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "Hence,˜f∈Cn−1(A, B).Next,since(idn ⊗χ)(δ"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "(id"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "· · · + (−1)"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "· · · + (−1)nf(1)⊗· · · ⊗∆(f(n)) + (−1)"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "· · · + (−1)"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "· · · + (−1)nf(1)⊗· · · ⊗(id ⊗χ)∆(f(n))} + (−1)"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "(−1)nδ"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "Ad(1){(id"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "Ad(1){(idn−1 ⊗χ)(f) ⊗1 −(id"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "Ad(1){(idn−1 ⊗χ)(f) ⊗1 −(idn ⊗χ)(id"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "forallf∈C"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "forallf∈Cn(A, B).Observethatbothsidesof(35)belongtoC"
+  },
+  {
+   "page": 27,
+   "mark": "f",
+   "context": "(1)"
+  },
+  {
+   "page": 27,
+   "mark": "f",
+   "context": "(2)S(1(1))χ(1(2)"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "(1)"
+  },
+  {
+   "page": 27,
+   "mark": "f",
+   "context": "(1)1(1)"
+  },
+  {
+   "page": 27,
+   "mark": "f",
+   "context": "(2)χ(1(2)"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "Therefore,f∆n(u) = (−1)"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "Therefore,f∆n(u) = (−1)nδ"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "hencef=δ"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "hencef=δn−1((−1)"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "hencef=δn−1((−1)nu−1 ˜f),i.e.,Ker δ"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "hencef=δn−1((−1)nu−1 ˜f),i.e.,Ker δn⊂Im δ"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "hencef=δn−1((−1)nu−1 ˜f),i.e.,Ker δn⊂Im δn−1andH"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "Foranonnegativeintegern,letC"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "particular,C"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "thefunctorT"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "thefunctorTn:C"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "thefunctorTn:Cn→CbyT"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "thefunctorTn:Cn→CbyTn(X"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "thefunctorTn:Cn→CbyTn(X1, ..., X"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "thefunctorTn:Cn→CbyTn(X1, ..., Xn):=X"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "thefunctorTn:Cn→CbyTn(X1, ..., Xn):=X1⊗... ⊗X"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "hefunctorTn:Cn→CbyTn(X1, ..., Xn):=X1⊗... ⊗Xn.Inparticular,T"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "C"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "C0→CisdeﬁnedbyT"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "C0→CisdeﬁnedbyT0(∅) = 1,andT"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "C0→CisdeﬁnedbyT0(∅) = 1,andT1= Id.LetC"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "F(C) = End(T"
+  },
+  {
+   "page": 27,
+   "mark": "0",
+   "context": "C"
+  },
+  {
+   "page": 27,
+   "mark": "a",
+   "context": "F(C) = End(1C′)).Wedeﬁne"
+  },
+  {
+   "page": 27,
+   "mark": "d",
+   "context": "F(C) = End(1C′)).Wedeﬁneadiﬀerential"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "F(C) = End(1C′)).Wedeﬁneadiﬀerentiald : C"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "F(C) = End(1C′)).Wedeﬁneadiﬀerentiald : Cn(C) →C"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "df= Id⊗f"
+  },
+  {
+   "page": 27,
+   "mark": "12",
+   "context": "df= Id⊗f2,...,n+1−f"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "df= Id⊗f2,...,n+1−f12,...,n+1+f"
+  },
+  {
+   "page": 27,
+   "mark": "23",
+   "context": "df= Id⊗f2,...,n+1−f12,...,n+1+f1,"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "df= Id⊗f2,...,n+1−f12,...,n+1+f1,23,...,n+1−...+(−1)"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "df= Id⊗f2,...,n+1−f12,...,n+1+f1,23,...,n+1−...+(−1)nf"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": ",...,n+1−f12,...,n+1+f1,23,...,n+1−...+(−1)nf1,...,nn+1+(−1)"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": ",n+1−f12,...,n+1+f1,23,...,n+1−...+(−1)nf1,...,nn+1+(−1)n+1f"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "F(X"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "F(X1)⊗F(X"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "F(X1)⊗F(X2), F(X"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "F(X1)⊗F(X2), F(X3), ..., F(X"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "F(X2), F(X3), ..., F(Xn+1), and we use the identiﬁcation F(X"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": " F(X3), ..., F(Xn+1), and we use the identiﬁcation F(X1)⊗F(X"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "F(X"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "F(X1 ⊗X"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "Itiseasytoshowthatd"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "cohomology groupsH"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "thiscohomologysimplybyH"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "ing[Y1,Y2,Da].ThegroupH"
+  },
+  {
+   "page": 27,
+   "mark": "a",
+   "context": "F(C)classiﬁesderivationsofFas"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "ThegroupH"
+  },
+  {
+   "page": 27,
+   "mark": "3",
+   "context": "functorF.ThegroupH"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "thenH"
+  },
+  {
+   "page": 27,
+   "mark": "a",
+   "context": "F(C)istheusualHochschildcohomologyofHas"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "H"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "Hi(C) = H"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "istheHopfalgebraofk-valuedfunctionsonG.Inotherwords,H"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "stheHopfalgebraofk-valuedfunctionsonG.Inotherwords,Hi(C) = H"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "H"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "Hi(Rep(G))=(Λ"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "C"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "Cn(Rep(G))=(O(G"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "abasiselementin(Λ"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "Proof.LetusshowthatEnd(T"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "Proof.LetusshowthatEnd(Tn◦F⊗n)=C"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "C"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "Cn(A, B)→End(T"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "representationX"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "representationX1 ⊗C... ⊗CX"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "actingonX"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "actingonX1⊗... ⊗X"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "actingonX1⊗... ⊗Xn[NTV].Therefore,anyelementa∈C"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "operatorontheusualtensorproductX"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "operatorontheusualtensorproductX1 ⊗... ⊗X"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "X"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "X1⊗C... ⊗CX"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "constructtheinversemap.Takef∈End(T"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "space Ker∆n(1) inX"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "space Ker∆n(1) inX1 ⊗...⊗X"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "ce Ker∆n(1) inX1 ⊗...⊗Xn.Then we get a linear operator˜fon X"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "(1) inX1 ⊗...⊗Xn.Then we get a linear operator˜fon X1 ⊗...⊗X"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "X"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "X1⊗... ⊗X"
+  },
+  {
+   "page": 28,
+   "mark": "d",
+   "context": "morphisminthecategory.Finally,itisclearthatξ( ˆf) = f,and"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "2.27,wehaveH"
+  },
+  {
+   "page": 29,
+   "mark": "3",
+   "context": "2.27,wehaveHi(C) = 0,i > 0,inparticularH"
+  },
+  {
+   "page": 29,
+   "mark": "3",
+   "context": "spacetotheorbitofCisequaltoH"
+  },
+  {
+   "page": 29,
+   "mark": "3",
+   "context": "spacetotheorbitofCisequaltoH3(C).SinceH"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "multiplicationbyb"
+  },
+  {
+   "page": 30,
+   "mark": "j",
+   "context": "multiplicationbybi∈Ainthebasisb"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "Theorem8.2.Theassignmentb"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "Theorem8.2.Theassignmentbi→λ"
+  },
+  {
+   "page": 30,
+   "mark": "j",
+   "context": "Proof.Foranyjdeﬁnez"
+  },
+  {
+   "page": 30,
+   "mark": "b",
+   "context": "i"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "ib"
+  },
+  {
+   "page": 30,
+   "mark": "b",
+   "context": "ibi"
+  },
+  {
+   "page": 30,
+   "mark": "j",
+   "context": "ibib"
+  },
+  {
+   "page": 30,
+   "mark": "b",
+   "context": "ibibj"
+  },
+  {
+   "page": 30,
+   "mark": "z",
+   "context": "i.Weclaimthat"
+  },
+  {
+   "page": 30,
+   "mark": "j",
+   "context": "i.Weclaimthatz"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "b"
+  },
+  {
+   "page": 30,
+   "mark": "j",
+   "context": "bib"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "ri= N"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "kN"
+  },
+  {
+   "page": 30,
+   "mark": "b",
+   "context": "ij"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "ijb"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "ijbk.ThenN"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "N"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "N"
+  },
+  {
+   "page": 30,
+   "mark": "b",
+   "context": "ri"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "rib"
+  },
+  {
+   "page": 30,
+   "mark": "b",
+   "context": "ribk"
+  },
+  {
+   "page": 30,
+   "mark": "j",
+   "context": "ribkb"
+  },
+  {
+   "page": 30,
+   "mark": "b",
+   "context": "ribkbj"
+  },
+  {
+   "page": 30,
+   "mark": "b",
+   "context": "k∗r"
+  },
+  {
+   "page": 30,
+   "mark": "k",
+   "context": "k∗rb"
+  },
+  {
+   "page": 30,
+   "mark": "b",
+   "context": "k∗rbk"
+  },
+  {
+   "page": 30,
+   "mark": "j",
+   "context": "k∗rbkb"
+  },
+  {
+   "page": 30,
+   "mark": "b",
+   "context": "k∗rbkbj"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "k∗rbkbjb"
+  },
+  {
+   "page": 30,
+   "mark": "z",
+   "context": "j"
+  },
+  {
+   "page": 30,
+   "mark": "j",
+   "context": "jz"
+  },
+  {
+   "page": 30,
+   "mark": "z",
+   "context": "jzj.Since"
+  },
+  {
+   "page": 30,
+   "mark": "j",
+   "context": "jzj.Sincez"
+  },
+  {
+   "page": 30,
+   "mark": "b",
+   "context": "jzj.Sincezjcontain"
+  },
+  {
+   "page": 30,
+   "mark": "j",
+   "context": "jzj.Sincezjcontainb"
+  },
+  {
+   "page": 30,
+   "mark": "a",
+   "context": "jzj.Sincezjcontainbjas"
+  },
+  {
+   "page": 30,
+   "mark": "z",
+   "context": "j"
+  },
+  {
+   "page": 30,
+   "mark": "j",
+   "context": "jz"
+  },
+  {
+   "page": 30,
+   "mark": "f",
+   "context": "jzjhasstrictlypositiveentries.Let"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "Wenotethatb"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "Wenotethatbi→λ"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "Lemma8.3.Ifthereexistsahomomorphismφ:A→Rsuchthatφ(b"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "Remark8.4.M.M¨uger pointedout tousthatfor anyione hasλ"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "ifλ"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "ifλi<2thenλ"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "the matrices[b"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "the matrices[bi]|Mofthe operatorsb"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "Hence,itisaneigenvectorof[b"
+  },
+  {
+   "page": 30,
+   "mark": "i",
+   "context": "Hence,itisaneigenvectorof[bi]|M,andtheeigenvaluesareλ"
+  },
+  {
+   "page": 31,
+   "mark": "i",
+   "context": "M"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "X∈Irr(C)FPdim(X)[F(X) :"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "12.For any fusion category C, one has FPdim(Z(C)) = FPdim(C)"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "saying that the Frobenius-Perron dimension of Z(C) is dim(A)"
+  },
+  {
+   "page": 32,
+   "mark": "r",
+   "context": "i=1M"
+  },
+  {
+   "page": 32,
+   "mark": "j",
+   "context": "ij:=Fun(M"
+  },
+  {
+   "page": 32,
+   "mark": "i",
+   "context": "ij:=Fun(Mj, M"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "normalizeE"
+  },
+  {
+   "page": 32,
+   "mark": "j",
+   "context": "normalizeE1"
+  },
+  {
+   "page": 32,
+   "mark": "j",
+   "context": "normalizeE1jarbitrarily,thennormalizeE"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "normalizeE1jarbitrarily,thennormalizeEj"
+  },
+  {
+   "page": 32,
+   "mark": "j",
+   "context": "normalizeE1jarbitrarily,thennormalizeEj1bytheconditionE"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "normalizeE1jarbitrarily,thennormalizeEj1bytheconditionEj"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "normalizeE1jarbitrarily,thennormalizeEj1bytheconditionEj1⊗E"
+  },
+  {
+   "page": 32,
+   "mark": "j",
+   "context": "normalizeE1jarbitrarily,thennormalizeEj1bytheconditionEj1⊗E1"
+  },
+  {
+   "page": 32,
+   "mark": "j",
+   "context": "andﬁnallydeﬁneEjkasE"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "andﬁnallydeﬁneEjkasEj"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "andﬁnallydeﬁneEjkasEj1⊗E"
+  },
+  {
+   "page": 32,
+   "mark": "k",
+   "context": "andﬁnallydeﬁneEjkasEj1⊗E1"
+  },
+  {
+   "page": 32,
+   "mark": "i",
+   "context": "deed, F(R)⊗2= FPdim(D)F(R),so for any i the virtual object L"
+  },
+  {
+   "page": 33,
+   "mark": "i",
+   "context": "ii, X⊗L"
+  },
+  {
+   "page": 33,
+   "mark": "i",
+   "context": "ii, X⊗Li= c(X)L"
+  },
+  {
+   "page": 33,
+   "mark": "c",
+   "context": "ii, X⊗Li= c(X)Li, where"
+  },
+  {
+   "page": 33,
+   "mark": "j",
+   "context": "c(X)=FPdim(X).Similarly,P"
+  },
+  {
+   "page": 33,
+   "mark": "j",
+   "context": "c(X)=FPdim(X).Similarly,Pj:=⊕ibijEijsatisﬁesP"
+  },
+  {
+   "page": 33,
+   "mark": "j",
+   "context": "c(X)=FPdim(X).Similarly,Pj:=⊕ibijEijsatisﬁesPj⊗X=FPdim(X)P"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "like matrix units,we have B"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "Remark8.17.LetM"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "i"
+  },
+  {
+   "page": 33,
+   "mark": "i",
+   "context": "i1=M"
+  },
+  {
+   "page": 33,
+   "mark": "i",
+   "context": "i1=Mi.ItiseasytoseethatF(R)"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "i1=Mi.ItiseasytoseethatF(R)i"
+  },
+  {
+   "page": 33,
+   "mark": "i",
+   "context": "X∈Irr(M"
+  },
+  {
+   "page": 33,
+   "mark": "i",
+   "context": "F(R)"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "F(R)i"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "F(R)i1 ⊗F(R)"
+  },
+  {
+   "page": 33,
+   "mark": "i",
+   "context": "F(R)i1 ⊗F(R)1"
+  },
+  {
+   "page": 33,
+   "mark": "i",
+   "context": "[F(R)ii: 1ii] = dim End(F(R)"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "[F(R)ii: 1ii] = dim End(F(R)i"
+  },
+  {
+   "page": 33,
+   "mark": "i",
+   "context": "[F(R)ii: 1ii] = dim End(F(R)i1, F(R)"
+  },
+  {
+   "page": 33,
+   "mark": "1",
+   "context": "[F(R)ii: 1ii] = dim End(F(R)i1, F(R)i"
+  },
+  {
+   "page": 33,
+   "mark": "i",
+   "context": "[F(R)ii: 1ii] = dim End(F(R)i1, F(R)i1)/FPdim(C) = FPdim(M"
+  },
+  {
+   "page": 33,
+   "mark": "i",
+   "context": "ThisimpliesthereﬁnementofTheorem8.15statingthatFPdim(M"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "A"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "inGandtherelationsgX= Xg= X, g∈G,andX"
+  },
+  {
+   "page": 33,
+   "mark": "g",
+   "context": "g∈G"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "n"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "n2+ 4|G|)"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "analgebraicinteger.Inparticular,forn̸=0onehas|G|≤2n"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "s-Perron dimension of Xis the largest root of the equation x"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "n"
+  },
+  {
+   "page": 33,
+   "mark": "2",
+   "context": "n2+ 4m).ByProposition 8.15,x"
+  },
+  {
+   "page": 33,
+   "mark": "g",
+   "context": "thentheFrobenius-PerrondimensionsofC"
+  },
+  {
+   "page": 34,
+   "mark": "g",
+   "context": "Proof.LetRbetheregularobjectofC.ThenR=⊕R"
+  },
+  {
+   "page": 34,
+   "mark": "g",
+   "context": "Proof.LetRbetheregularobjectofC.ThenR=⊕Rg,whereR"
+  },
+  {
+   "page": 34,
+   "mark": "g",
+   "context": "object of C"
+  },
+  {
+   "page": 34,
+   "mark": "h",
+   "context": "object of Cg.We have R⊗R"
+  },
+  {
+   "page": 34,
+   "mark": "h",
+   "context": "object of Cg.We have R⊗Rh= FPdim(R"
+  },
+  {
+   "page": 34,
+   "mark": "g",
+   "context": "equation,weﬁndR"
+  },
+  {
+   "page": 34,
+   "mark": "h",
+   "context": "equation,weﬁndRg⊗R"
+  },
+  {
+   "page": 34,
+   "mark": "h",
+   "context": "equation,weﬁndRg⊗Rh=FPdim(R"
+  },
+  {
+   "page": 34,
+   "mark": "g",
+   "context": "equation,weﬁndRg⊗Rh=FPdim(Rh)Rgh.Similarly,R"
+  },
+  {
+   "page": 34,
+   "mark": "g",
+   "context": "equation,weﬁndRg⊗Rh=FPdim(Rh)Rgh.Similarly,Rg⊗R=FPdim(R"
+  },
+  {
+   "page": 34,
+   "mark": "g",
+   "context": "whichyieldsR"
+  },
+  {
+   "page": 34,
+   "mark": "h",
+   "context": "whichyieldsRg⊗R"
+  },
+  {
+   "page": 34,
+   "mark": "g",
+   "context": "whichyieldsRg⊗Rh=FPdim(R"
+  },
+  {
+   "page": 34,
+   "mark": "g",
+   "context": "whichyieldsRg⊗Rh=FPdim(Rg)Rgh.SinceRgh̸=0,wegetFPdim(R"
+  },
+  {
+   "page": 34,
+   "mark": "h",
+   "context": "FPdim(R"
+  },
+  {
+   "page": 34,
+   "mark": "g",
+   "context": "FPdim(Rh),i.e.FPdim(R"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "onehas|V |2≤FPdim(V )"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "FPdim(C)then|V |2= FPdim(V )"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "Proof.LetX"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "Proof.LetXibethei-thsimpleobjectofC,andd"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "Proof.LetXibethei-thsimpleobjectofC,anddi=d(X"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "introducedintheproofofTheorem2.3.Then|d"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "introducedintheproofofTheorem2.3.Then|di|2= |V |2,andd"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "theGrothendieckgroupGrC(C)givenby||Pa"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "theGrothendieckgroupGrC(C)givenby||PaiX"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "theGrothendieckgroupGrC(C)givenby||PaiXi||=Pf"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "theGrothendieckgroupGrC(C)givenby||PaiXi||=Pfi|a"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "||T"
+  },
+  {
+   "page": 34,
+   "mark": "j",
+   "context": "f"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "(T"
+  },
+  {
+   "page": 34,
+   "mark": "k",
+   "context": "(Ti)jka"
+  },
+  {
+   "page": 34,
+   "mark": "j",
+   "context": "f"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "fj(N"
+  },
+  {
+   "page": 34,
+   "mark": "k",
+   "context": "fj(Ni)jk|a"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "fj(Ni)jk|ak| = f"
+  },
+  {
+   "page": 34,
+   "mark": "k",
+   "context": "f"
+  },
+  {
+   "page": 34,
+   "mark": "k",
+   "context": "fk|a"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "fk|ak| = f"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "Thus,||T"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "Thus,||Ti|| ≤f"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "Thus,||Ti|| ≤fi.Thisimpliesthat|V |2≤f"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "modularcategoryofglobaldimensionD"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "objectsX"
+  },
+  {
+   "page": 34,
+   "mark": "j",
+   "context": "objectsXiofZ(C)havecommoneigenvectorsv"
+  },
+  {
+   "page": 34,
+   "mark": "0",
+   "context": "objectsXiofZ(C)havecommoneigenvectorsvjwitheigenvaluessij/s"
+  },
+  {
+   "page": 34,
+   "mark": "j",
+   "context": "objectsXiofZ(C)havecommoneigenvectorsvjwitheigenvaluessij/s0"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "andS"
+  },
+  {
+   "page": 34,
+   "mark": "f",
+   "context": "i"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "if"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "i=δrr∗/s"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "r= r∗and∆2= 1/s"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "0r= D"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "0r= D2/d"
+  },
+  {
+   "page": 34,
+   "mark": "d",
+   "context": "r,where"
+  },
+  {
+   "page": 34,
+   "mark": "r",
+   "context": "r,whered"
+  },
+  {
+   "page": 34,
+   "mark": "r",
+   "context": "r,wheredristhecategoricaldimensionofthe"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "simpleobject.SoD"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "simpleobject.SoD2/∆2= d"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "isomorphism ofadditivefunctors,suchthata"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "d"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "di.ThenT"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "di.ThenTid=d"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "di.ThenTid=did,and|d"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "di.ThenTid=did,and|di|=f"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "di.ThenTid=did,and|di|=fiistheFrobenius-PerrondimensionofX"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "|(T"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "|(Ti)jk| ≤(N"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "f"
+  },
+  {
+   "page": 35,
+   "mark": "j",
+   "context": "fif"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "fifj= |d"
+  },
+  {
+   "page": 35,
+   "mark": "j",
+   "context": "fifj= |did"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "(T"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "(Ti)jkd"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "±(N"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "±(Ni)jk,andtheargumentofd"
+  },
+  {
+   "page": 35,
+   "mark": "j",
+   "context": "±(Ni)jk,andtheargumentofdid"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "±(Ni)jk,andtheargumentofdidjequalstheargumentof(T"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "±(Ni)jk,andtheargumentofdidjequalstheargumentof(Ti)jkd"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "(N"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "(Ni)jk> 0.ThisimpliesthatwheneverX"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "(Ni)jk> 0.ThisimpliesthatwheneverXkoccursinthetensorproductX"
+  },
+  {
+   "page": 35,
+   "mark": "j",
+   "context": "jk> 0.ThisimpliesthatwheneverXkoccursinthetensorproductXi ⊗X"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "theratiod"
+  },
+  {
+   "page": 35,
+   "mark": "d",
+   "context": "i"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "id"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "j/d"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "i/|d"
+  },
+  {
+   "page": 35,
+   "mark": "a",
+   "context": "i/|di|2is"
+  },
+  {
+   "page": 35,
+   "mark": "g",
+   "context": "i/|di|2isatensorautomorphism.Letustwist"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "deﬁnedbyσ|X"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "deﬁnedbyσ|Xi=d"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "functorτgivenbyτ|X"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "functorτgivenbyτ|Xi=d"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "functorτgivenbyτ|Xi=di/|d"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "functorτgivenbyτ|Xi=di/|di|.Afterthistwisting,newT"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "functorτgivenbyτ|Xi=di/|di|.Afterthistwisting,newTiisN"
+  },
+  {
+   "page": 35,
+   "mark": "k",
+   "context": "nctorτgivenbyτ|Xi=di/|di|.Afterthistwisting,newTiisNiandnewd"
+  },
+  {
+   "page": 35,
+   "mark": "1",
+   "context": "Proof.LetDbetheglobaldimensionofC.LetD"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "Proof.LetDbetheglobaldimensionofC.LetD1=D, D"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "g"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "gi(D).ApplyingPropostion8.22tothecategoryg"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "gi(D).ApplyingPropostion8.22tothecategorygi(C),weﬁndthatD"
+  },
+  {
+   "page": 35,
+   "mark": "i",
+   "context": "i(D"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "simpleHopfalgebrawithantipodeS.SinceShasﬁniteorder,S"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "anditseigenvaluesarerootsof1.Now,foreverysimpleA-moduleV ,S"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "servesEnd(V )⊂A(asV∗∗isisomorphictoV ),and|V |2=Tr(S"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "FPdim(V )"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "FPdim(V )2= dim(V )"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "(V )2= dim(V )2= dim End(V ).Thus, by Proposition 8.24, Tr(S"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "dim End(V ).SinceS"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "S"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "numbersFPdim(V )"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "objectVwith|V |2= 1butFPdim(V )"
+  },
+  {
+   "page": 36,
+   "mark": "i",
+   "context": "theobjectB=⊕iX"
+  },
+  {
+   "page": 36,
+   "mark": "i",
+   "context": "i∈Cad,whereX"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "ofthismatrixwithintegereigenvalueFPdim(C)"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "8.6.FusioncategoriesofFrobenius-Perrondimensionp"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "heorem8.28.LetCbeafusioncategoryofFrobenius-Perrondimensionp"
+  },
+  {
+   "page": 36,
+   "mark": "j",
+   "context": "j=0C"
+  },
+  {
+   "page": 36,
+   "mark": "j",
+   "context": "j=0Cj,whereC"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "thatg|X= e"
+  },
+  {
+   "page": 36,
+   "mark": "0",
+   "context": "|X= e2πij/p.TheFrobenius-PerrondimensionofthefusioncategoryC"
+  },
+  {
+   "page": 36,
+   "mark": "j",
+   "context": "modulecategoriesC"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "modulecategoriesCjoveritareequaltop"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "wheredim C(i)= p"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "theoremsaysthatasemisimpleHopfalgebraoforderp"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "dimensionp"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "occurinI(1),aredivisorsofp"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "dividep"
+  },
+  {
+   "page": 36,
+   "mark": "n",
+   "context": "dividep2"
+  },
+  {
+   "page": 37,
+   "mark": "3",
+   "context": "inwhichassociativityisdeﬁnedbyacohomologyclassinH"
+  },
+  {
+   "page": 37,
+   "mark": "g",
+   "context": "Cis faithfully graded by Z/pZ, so by Proposition 8.20, all C"
+  },
+  {
+   "page": 37,
+   "mark": "g",
+   "context": "i.e.C"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "Thefollowingpropositionclassiﬁesfusioncategoriesofdimensionp"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "sition8.32.LetCbeafusioncategoryofFrobenius-Perrondimensionp"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "Cisthecategoryofrepresentationsofagroupoforderp"
+  },
+  {
+   "page": 37,
+   "mark": "j",
+   "context": "forallj∈Z/pZthedimensionofC"
+  },
+  {
+   "page": 37,
+   "mark": "0",
+   "context": "forallj∈Z/pZthedimensionofCjispbyProposition8.20.Clearly,C"
+  },
+  {
+   "page": 37,
+   "mark": "0",
+   "context": "invertibleobjectsofCarecontainedinC"
+  },
+  {
+   "page": 37,
+   "mark": "2",
+   "context": "thegroupofinvertiblesisadivisorofp"
+  },
+  {
+   "page": 37,
+   "mark": "j",
+   "context": "thegroupofinvertiblesisadivisorofp2).Further,anyobjectXinC"
+  },
+  {
+   "page": 37,
+   "mark": "0",
+   "context": "tbeinvariantundertensoring(oneitherside)withinvertiblesfromC"
+  },
+  {
+   "page": 37,
+   "mark": "j",
+   "context": "otherwisethedimensionofC"
+  },
+  {
+   "page": 37,
+   "mark": "0",
+   "context": "eaterthan1).ThismeansthatX ⊗X∗containsalltheinvertiblesfromC"
+  },
+  {
+   "page": 37,
+   "mark": "j",
+   "context": "p.SincethedimensionofC"
+  },
+  {
+   "page": 37,
+   "mark": "j",
+   "context": "p,andXistheonlysimpleobjectofC"
+  },
+  {
+   "page": 37,
+   "mark": "j",
+   "context": "j, k∈Z/pZbenonzeroanddistinct(theyexistsincep>2).LetX"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "j, k∈Z/pZbenonzeroanddistinct(theyexistsincep>2).LetXj, X"
+  },
+  {
+   "page": 37,
+   "mark": "j",
+   "context": "onlysimpleobjectsofC"
+  },
+  {
+   "page": 37,
+   "mark": "k",
+   "context": "onlysimpleobjectsofCj, C"
+  },
+  {
+   "page": 37,
+   "mark": "j",
+   "context": "onlysimpleobjectsofCj, Ck.ThenX"
+  },
+  {
+   "page": 37,
+   "mark": "a",
+   "context": "kis"
+  },
+  {
+   "page": 37,
+   "mark": "p",
+   "context": "kisa"
+  },
+  {
+   "page": 37,
+   "mark": "j",
+   "context": "p-dimensionalobject,whichspansC"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "X"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "XiofCtovectorspacesF(X"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "XiofCtovectorspacesF(Xi)ofdimensionFPdim(X"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "isomorphism Jij: F(X"
+  },
+  {
+   "page": 38,
+   "mark": "j",
+   "context": "isomorphism Jij: F(Xi) ⊗F(X"
+  },
+  {
+   "page": 38,
+   "mark": "i",
+   "context": "isomorphism Jij: F(Xi) ⊗F(Xj) →F(X"
+  },
+  {
+   "page": 38,
+   "mark": "j",
+   "context": "isomorphism Jij: F(Xi) ⊗F(Xj) →F(Xi ⊗X"
+  },
+  {
+   "page": 39,
+   "mark": "i",
+   "context": "X"
+  },
+  {
+   "page": 39,
+   "mark": "i",
+   "context": "i[X"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "mi=1.Thenumberofsummands"
+  },
+  {
+   "page": 39,
+   "mark": "i",
+   "context": "mi=1.Thenumberofsummands1/m"
+  },
+  {
+   "page": 39,
+   "mark": "i",
+   "context": "P[X"
+  },
+  {
+   "page": 39,
+   "mark": "3",
+   "context": "Z"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "Z3(G, C∗)isa3-cocycle,ψ∈C"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "ψ+η|H+dχ,η∈C"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "ψ+η|H+dχ,η∈C2(G, C∗),χ∈C"
+  },
+  {
+   "page": 39,
+   "mark": "3",
+   "context": "isaﬁbrationoverKer(H"
+  },
+  {
+   "page": 39,
+   "mark": "3",
+   "context": "isaﬁbrationoverKer(H3(G, C∗)→H"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "Coker(H"
+  },
+  {
+   "page": 39,
+   "mark": "2",
+   "context": "Coker(H2(G, C∗) →H"
+  },
+  {
+   "page": 40,
+   "mark": "g",
+   "context": "auniqueg(i)∈Isuchthatthefunctorg⊗isanequivalenceCir→C"
+  },
+  {
+   "page": 40,
+   "mark": "r",
+   "context": "auniqueg(i)∈Isuchthatthefunctorg⊗isanequivalenceCir→Cg(i)"
+  },
+  {
+   "page": 40,
+   "mark": "a",
+   "context": "jjwithrespectto"
+  },
+  {
+   "page": 41,
+   "mark": "g",
+   "context": "g∈G"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "benius-Perron dimensions)iﬀ|G|isasquare.SoletustakeG = (Z/p)"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "p > 2isaprime,andletqbegivenbyq((x, y), (x, y)) = ax"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "p > 2isaprime,andletqbegivenbyq((x, y), (x, y)) = ax2−by"
+  },
+  {
+   "page": 41,
+   "mark": "p",
+   "context": "ime,andletqbegivenbyq((x, y), (x, y)) = ax2−by2,wherea, b ∈F"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "anda/bisaquadraticnon-residue(i.e.thequadraticformax"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "anda/bisaquadraticnon-residue(i.e.thequadraticformax2−by"
+  },
+  {
+   "page": 41,
+   "mark": "i",
+   "context": "K(Z(C))bythesameletter.Letb"
+  },
+  {
+   "page": 41,
+   "mark": "b",
+   "context": "i"
+  },
+  {
+   "page": 41,
+   "mark": "i",
+   "context": "ib"
+  },
+  {
+   "page": 41,
+   "mark": "x",
+   "context": "iforany"
+  },
+  {
+   "page": 41,
+   "mark": "x",
+   "context": "iforanyx∈K(C).Inparticularfor"
+  },
+  {
+   "page": 41,
+   "mark": "b",
+   "context": "i"
+  },
+  {
+   "page": 41,
+   "mark": "i",
+   "context": "ib"
+  },
+  {
+   "page": 41,
+   "mark": "b",
+   "context": "ibi"
+  },
+  {
+   "page": 41,
+   "mark": "b",
+   "context": "i"
+  },
+  {
+   "page": 41,
+   "mark": "i",
+   "context": "ib"
+  },
+  {
+   "page": 41,
+   "mark": "b",
+   "context": "ibi"
+  },
+  {
+   "page": 41,
+   "mark": "a",
+   "context": "i∈Z(K(C))is"
+  },
+  {
+   "page": 42,
+   "mark": "i",
+   "context": "NowletCbesphericalandletb"
+  },
+  {
+   "page": 42,
+   "mark": "i",
+   "context": "iTr(b"
+  },
+  {
+   "page": 42,
+   "mark": "b",
+   "context": "iTr(bi, L)"
+  },
+  {
+   "page": 42,
+   "mark": "a",
+   "context": "iisproportionalto"
+  },
+  {
+   "page": 42,
+   "mark": "0",
+   "context": "Now thecoeﬃcient of b"
+  },
+  {
+   "page": 42,
+   "mark": "i",
+   "context": "HenceeL∈K(C) ⊗Q(ξ)andTr(b"
+  },
+  {
+   "page": 42,
+   "mark": "i",
+   "context": "HenceeL∈K(C) ⊗Q(ξ)andTr(bi, L)∈Q(ξ).ObviouslythenumberTr(b"
+  },
+  {
+   "page": 42,
+   "mark": "i",
+   "context": "φ(b"
+  },
+  {
+   "page": 42,
+   "mark": "i",
+   "context": "to C.We get B|C= ⊕iM"
+  },
+  {
+   "page": 42,
+   "mark": "i",
+   "context": "to C.We get B|C= ⊕iMi,where M"
+  },
+  {
+   "page": 42,
+   "mark": "i",
+   "context": "BcanberegardedasatensorfunctorF: D→⊕i,jFunC(M"
+  },
+  {
+   "page": 42,
+   "mark": "j",
+   "context": "BcanberegardedasatensorfunctorF: D→⊕i,jFunC(Mi, M"
+  },
+  {
+   "page": 42,
+   "mark": "i",
+   "context": "componentcategoryofD′isatensorsubcategoryinFunC(M"
+  },
+  {
+   "page": 42,
+   "mark": "i",
+   "context": "componentcategoryofD′isatensorsubcategoryinFunC(Mi, M"
+  },
+  {
+   "page": 42,
+   "mark": "i",
+   "context": "eD′= A −bimod,whereAisasemisimplealgebra,andfurthermore,allM"
+  },
+  {
+   "page": 42,
+   "mark": "h",
+   "context": "LetC"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "4 sin"
+  },
+  {
+   "page": 43,
+   "mark": "h",
+   "context": "anyindecomposablemodulecategoryover⊗iC"
+  },
+  {
+   "page": 43,
+   "mark": "i",
+   "context": "anyindecomposablemodulecategoryover⊗iCh"
+  },
+  {
+   "page": 43,
+   "mark": "h",
+   "context": "ndecomposablemodulecategoryover⊗iChiistheproductofthoseoverC"
+  },
+  {
+   "page": 43,
+   "mark": "i",
+   "context": "decomposablemodulecategoryover⊗iChiistheproductofthoseoverCh"
+  },
+  {
+   "page": 43,
+   "mark": "i",
+   "context": "ogy isH"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "iscosemisimple,thenTr(S"
+  },
+  {
+   "page": 44,
+   "mark": "k",
+   "context": "ofﬁnitedimensionalvectorspacesH"
+  },
+  {
+   "page": 44,
+   "mark": "i",
+   "context": "ij=Hom(X"
+  },
+  {
+   "page": 44,
+   "mark": "j",
+   "context": "ij=Hom(Xi ⊗X"
+  },
+  {
+   "page": 44,
+   "mark": "k",
+   "context": "ij=Hom(Xi ⊗Xj, X"
+  },
+  {
+   "page": 44,
+   "mark": "k",
+   "context": "modulesH"
+  },
+  {
+   "page": 44,
+   "mark": "a",
+   "context": "ijtogetherwith"
+  },
+  {
+   "page": 44,
+   "mark": "3",
+   "context": "Proof.ThetheoremfollowsfromthefactsthatH"
+  },
+  {
+   "page": 44,
+   "mark": "4",
+   "context": "Proof.ThetheoremfollowsfromthefactsthatH3(C) = 0, H"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "roof.ThetheoremfollowsfromthefactsthatH3(C) = 0, H4(C) = 0,H"
+  },
+  {
+   "page": 44,
+   "mark": "3",
+   "context": "H"
+  },
+  {
+   "page": 45,
+   "mark": "21",
+   "context": "oftwocategoricalequivalencesBandB"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "Theorem9.6.(i)LetC"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "Theorem9.6.(i)LetC1, C"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "fusioncategoriesC"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "fusioncategoriesC1/I,C"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "fusioncategoriesC1/I,C2/Iarenondegenerate,andthecategoriesC"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "tegoriesC1/I,C2/Iarenondegenerate,andthecategoriesC1 ⊗R F, C"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "aretensorequivalent.ThenC"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "aretensorequivalent.ThenC1, C"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "aretensorequivalent.ThenC1, C2(andhenceC"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "aretensorequivalent.ThenC1, C2(andhenceC1/I, C"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "Proof.(i) Pick a tensor equivalence E: C"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "Proof.(i) Pick a tensor equivalence E: C1⊗RF →C"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "ofC"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "ofC1,C"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "C"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "C1andC"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "WeknowthatthereexistsaninvertibleelementJofC"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "thatsuchJcanbefoundinC"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "C"
+  },
+  {
+   "page": 45,
+   "mark": "0",
+   "context": "C2(C).Let T"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "form ∆(x)(x−1⊗x−1),wherexisaninvertibleelement of C"
+  },
+  {
+   "page": 45,
+   "mark": "0",
+   "context": "C).ItisclearthatT"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "Remark.Sincethealgebra C"
+  },
+  {
+   "page": 45,
+   "mark": "0",
+   "context": "theregularmappingφ : T/T"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "theregularmappingφ : T/T0→Z,givenbyJ→(Φ"
+  },
+  {
+   "page": 45,
+   "mark": "1",
+   "context": "theregularmappingφ : T/T0→Z,givenbyJ→(Φ1, ev"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "Firstofall,wehaveH"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "Firstofall,wehaveH2(C"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "stofall,wehaveH2(C1/I) = 0,whichimpliesthatthestabilizerof(Φ"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "ll,wehaveH2(C1/I) = 0,whichimpliesthatthestabilizerof(Φ1, ev"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "in T/T"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "in T/T0is a ﬁnite group.Thus the map φ|k: T/T"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "in T/T0is a ﬁnite group.Thus the map φ|k: T/T0→φ|k(T/T"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "It remains to show that φ|k(T/T"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "anditisnonzeroonC"
+  },
+  {
+   "page": 46,
+   "mark": "3",
+   "context": "nondegeneratefusioncategoryDoverkwehaveH"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "orbitofT/T"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "orbitofT/T0,i.e.φ|k(T/T"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "Thus we have a homomorphism φ∗: R[Z] →R[T/T"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": " we have a homomorphism φ∗: R[Z] →R[T/T0], which makes R[T/T"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "NowletJ∈(T/T"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "NowletJ∈(T/T0)(F)besuchthat(Φ"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "NowletJ∈(T/T0)(F)besuchthat(Φ1, ev"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "NowletJ∈(T/T0)(F)besuchthat(Φ1, ev1)J=(Φ"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "NowletJ∈(T/T0)(F)besuchthat(Φ1, ev1)J=(Φ2, ev"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "regardedasahomomorphismJ:R[T/T"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "theconditionJ(af)=γ(a)J(f),f∈R[T/T"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "corresponds tothepoint (Φ"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "corresponds tothepoint (Φ2, ev"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "responds tothepoint (Φ2, ev2).Now,byLemma 9.7,forany f∈R[T/T"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "existb"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "existb1, ..., b"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "existb1, ..., bn∈R[Z]suchthatf"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "existb1, ..., bn∈R[Z]suchthatfn+ b"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "existb1, ..., bn∈R[Z]suchthatfn+ b1f"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "existb1, ..., bn∈R[Z]suchthatfn+ b1fn−1+ ... + b"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "stb1, ..., bn∈R[Z]suchthatfn+ b1fn−1+ ... + bn=0.ButthenJ(f)"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "γ(b1)J(f)"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "mapT (R)→(T/T"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "(ii)Theproofisthesame,since,asweshowed,theintegralityofJ∈T/T"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "category C/Iis nondegenerate.Let F"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "category C/Iis nondegenerate.Let F1, F"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "structuresJ1, J2.LetGbethegroupschemeofinvertibleelementsofC"
+  },
+  {
+   "page": 46,
+   "mark": "g",
+   "context": "Sby“gaugetransformations”,J→J"
+  },
+  {
+   "page": 46,
+   "mark": "g",
+   "context": "J"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "1= J"
+  },
+  {
+   "page": 46,
+   "mark": "g",
+   "context": "1= J2,andneedtoshowthatthis"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "Using the fact that H"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "F(C) = H"
+  },
+  {
+   "page": 46,
+   "mark": "g",
+   "context": "givenbyg→J"
+  },
+  {
+   "page": 46,
+   "mark": "g",
+   "context": "1isﬁnite.Nowtheproofthat"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "proofthatJ∈(T/T"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "Proof.We can regard these two Hopf algebras as pairs (C"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "Proof.We can regard these two Hopf algebras as pairs (C1, F"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": " can regard these two Hopf algebras as pairs (C1, F1) and (C"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": " regard these two Hopf algebras as pairs (C1, F1) and (C2, F"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "orem 9.9(i),wecanassumethatC"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "orem 9.9(i),wecanassumethatC1= C"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "orem 9.9(i),wecanassumethatC1= C2;thenbytheorem 9.9(ii),F"
+  },
+  {
+   "page": 48,
+   "mark": "i",
+   "context": "Proof.Let{X"
+  },
+  {
+   "page": 48,
+   "mark": "0",
+   "context": "ofC;let0 ∈IbesuchthatX"
+  },
+  {
+   "page": 48,
+   "mark": "i",
+   "context": "i∼= X"
+  },
+  {
+   "page": 48,
+   "mark": "i",
+   "context": "f([X"
+  },
+  {
+   "page": 48,
+   "mark": "0",
+   "context": "f([Xi]) = sij/s"
+  },
+  {
+   "page": 48,
+   "mark": "j",
+   "context": "f([Xi]) = sij/s0"
+  },
+  {
+   "page": 48,
+   "mark": "s",
+   "context": "j"
+  },
+  {
+   "page": 48,
+   "mark": "s",
+   "context": "jsij"
+  },
+  {
+   "page": 48,
+   "mark": "0",
+   "context": "(iii)s"
+  },
+  {
+   "page": 48,
+   "mark": "i",
+   "context": "(iii)s0"
+  },
+  {
+   "page": 48,
+   "mark": "0",
+   "context": "(iii)s0i∗= s"
+  },
+  {
+   "page": 48,
+   "mark": "i",
+   "context": "(iii)s0i∗= s0"
+  },
+  {
+   "page": 48,
+   "mark": "s",
+   "context": "j"
+  },
+  {
+   "page": 48,
+   "mark": "s",
+   "context": "jsij"
+  },
+  {
+   "page": 48,
+   "mark": "0",
+   "context": "jsijsji∗= 1andhence(1/s"
+  },
+  {
+   "page": 48,
+   "mark": "i",
+   "context": "jsijsji∗= 1andhence(1/s0"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "jsijsji∗= 1andhence(1/s0i)"
+  },
+  {
+   "page": 48,
+   "mark": "0",
+   "context": "j(sji/s"
+  },
+  {
+   "page": 48,
+   "mark": "i",
+   "context": "j(sji/s0"
+  },
+  {
+   "page": 48,
+   "mark": "0",
+   "context": "j(sji/s0i)(sji∗/s"
+  },
+  {
+   "page": 48,
+   "mark": "i",
+   "context": "j(sji/s0i)(sji∗/s0"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "s"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "Itfollowsthatg(i∗) = g(i)∗andg((s0i)"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "Itfollowsthatg(i∗) = g(i)∗andg((s0i)2) = (s0g(i))"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "g((sij)"
+  },
+  {
+   "page": 48,
+   "mark": "0",
+   "context": "g((sij)2) = g((sij/s"
+  },
+  {
+   "page": 48,
+   "mark": "j",
+   "context": "g((sij)2) = g((sij/s0"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "g((sij)2) = g((sij/s0j)"
+  },
+  {
+   "page": 48,
+   "mark": "0",
+   "context": "g((sij)2) = g((sij/s0j)2· (s"
+  },
+  {
+   "page": 48,
+   "mark": "j",
+   "context": "g((sij)2) = g((sij/s0j)2· (s0"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "g((sij)2) = g((sij/s0j)2· (s0j)"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "g((sij)2) = g((sij/s0j)2· (s0j)2) = (sig(j))"
+  },
+  {
+   "page": 48,
+   "mark": "g",
+   "context": "Thusg(sij)=±sig(j).Moreoverthesignǫ"
+  },
+  {
+   "page": 48,
+   "mark": "0",
+   "context": "Thusg(sij)=±sig(j).Moreoverthesignǫg(i)=±1suchthatg(s"
+  },
+  {
+   "page": 48,
+   "mark": "i",
+   "context": "Thusg(sij)=±sig(j).Moreoverthesignǫg(i)=±1suchthatg(s0"
+  },
+  {
+   "page": 48,
+   "mark": "g",
+   "context": "Thusg(sij)=±sig(j).Moreoverthesignǫg(i)=±1suchthatg(s0i)=ǫ"
+  },
+  {
+   "page": 48,
+   "mark": "0",
+   "context": "sg(sij)=±sig(j).Moreoverthesignǫg(i)=±1suchthatg(s0i)=ǫg(i)s"
+  },
+  {
+   "page": 48,
+   "mark": "g",
+   "context": "g(sij)=±sig(j).Moreoverthesignǫg(i)=±1suchthatg(s0i)=ǫg(i)s0"
+  },
+  {
+   "page": 48,
+   "mark": "0",
+   "context": "iswelldeﬁnedsinces"
+  },
+  {
+   "page": 48,
+   "mark": "i",
+   "context": "iswelldeﬁnedsinces0"
+  },
+  {
+   "page": 48,
+   "mark": "0",
+   "context": "iswelldeﬁnedsinces0i̸= 0,andg(sij) = g((sij/s"
+  },
+  {
+   "page": 48,
+   "mark": "j",
+   "context": "iswelldeﬁnedsinces0i̸= 0,andg(sij) = g((sij/s0"
+  },
+  {
+   "page": 48,
+   "mark": "0",
+   "context": "iswelldeﬁnedsinces0i̸= 0,andg(sij) = g((sij/s0j)s"
+  },
+  {
+   "page": 48,
+   "mark": "j",
+   "context": "iswelldeﬁnedsinces0i̸= 0,andg(sij) = g((sij/s0j)s0"
+  },
+  {
+   "page": 48,
+   "mark": "g",
+   "context": "iswelldeﬁnedsinces0i̸= 0,andg(sij) = g((sij/s0j)s0j) = ǫ"
+  },
+  {
+   "page": 48,
+   "mark": "g",
+   "context": "nedsinces0i̸= 0,andg(sij) = g((sij/s0j)s0j) = ǫg(j)sig(j)= ǫ"
+  },
+  {
+   "page": 48,
+   "mark": "g",
+   "context": "nces0i̸= 0,andg(sij) = g((sij/s0j)s0j) = ǫg(j)sig(j)= ǫg(i)s"
+  },
+  {
+   "page": 48,
+   "mark": "j",
+   "context": "0i̸= 0,andg(sij) = g((sij/s0j)s0j) = ǫg(j)sig(j)= ǫg(i)sg(i)"
+  },
+  {
+   "page": 49,
+   "mark": "1",
+   "context": "[dBG]J.deBoere,J.Goeree,MarkovtracesandII"
+  },
+  {
+   "page": 49,
+   "mark": "n",
+   "context": "[Ma]A.MasuokaThep"
+  }
+ ]
+}

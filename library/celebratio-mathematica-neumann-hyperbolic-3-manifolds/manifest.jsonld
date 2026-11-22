@@ -5,7 +5,7 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/celebratio-mathematica-neumann-hyperbolic-3-manifolds",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/celebratio-mathematica-neumann-hyperbolic-3-manifolds/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
@@ -21,7 +21,7 @@
     "library/celebratio-mathematica-neumann-hyperbolic-3-manifolds/sections/sec-006"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "celebratio-mathematica-neumann-hyperbolic-3-manifolds",
     "title_source": "slug",

@@ -9,13 +9,14 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Functional equations",
-  "pageStart": 6,
-  "pageEnd": 11,
+  "title": "Special values",
+  "pageStart": 4,
+  "pageEnd": 6,
   "contains": [
-    "library/fulltext/blocks/prose-sec-001"
+    "library/fulltext/blocks/prose-sec-001",
+    "library/fulltext/blocks/figure-img-p005-1"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/fulltext",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/fulltext",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/fulltext/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/fulltext/manifest.jsonld",
   "provenance": "ingested"
 }

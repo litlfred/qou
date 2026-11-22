@@ -2,11 +2,11 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-0707.2052v1",
  "source_sha256": "0a1d1cca848706be",
- "brief": "The Mukai pairing, I: a categorical approach — We study the Hochschild homology of smooth spaces, emphasiz ing the importance of a pairing which generalizes Mukai’s pairi ng on the cohomology of K3",
- "extended": "**The Mukai pairing, I: a categorical approach**\n\n*Andrei C˘ ald˘ araru∗ and Simon Willerton †*\n\n39 pp, 28 sections.\n\n**Abstract.** We study the Hochschild homology of smooth spaces, emphasiz ing the importance of a pairing which generalizes Mukai’s pairi ng on the cohomology of K3 surfaces. We show that integral transforms between derived categories of spaces induce, functorially, linear maps on homol- ogy. Adjoint functors induce adjoint linear maps with respe ct to the Mukai pairing. We deﬁne a Chern character with values in Hoch schild homology, and we discuss analogues of the Hirzebruch-Riema nn-Roch theorem and the Cardy Condition from physics. This is done in the context of a 2-category which has spaces as its objects and in tegral kernels as its 1-morphisms.\n\n**Outline.** Front matter; Introduction; The 2-category of kernels; A reminder on 2-categories.; Serre functors; The Serre functor on D(X).; Adjoint kernels; Adjunctions in 2-categories.; Left and right adjoints of kernels.; Partial traces.; Adjunction as a 2-functor.; Induced maps on homology; Hochschild cohomology.; Hochschild homology.; Push-forward and pull-back.; The Mukai pairing and adjoint kernels; The Chern character; The Chern character as a map on K-theory.",
+ "brief": "The Mukai pairing, I: a categorical approach — We study the Hochschild homology of smooth spaces, emphasizing the importance of a pairing which generalizes Mukai’s pairing on the cohomology of K3",
+ "extended": "**The Mukai pairing, I: a categorical approach**\n\n*Andrei C˘ald˘araru∗and Simon Willerton†*\n\n39 pp, 32 sections.\n\n**Abstract.** We study the Hochschild homology of smooth spaces, emphasizing the importance of a pairing which generalizes Mukai’s pairing on the cohomology of K3 surfaces. We show that integral transforms between derived categories of spaces induce, functorially, linear maps on homol- ogy. Adjoint functors induce adjoint linear maps with respect to the Mukai pairing. We deﬁne a Chern character with values in Hochschild homology, and we discuss analogues of the Hirzebruch-Riemann-Roch theorem and the Cardy Condition from physics. This is done in the context of a 2-category which has spaces as its objects and integral kernels as its 1-morphisms.\n\n**Outline.** Front matter; Introduction; The 2-category of kernels; A reminder on 2-categories.; The 2-category Var.; Serre functors; The Serre functor on D(X).; Serre kernels and the Serre functor for D(XY).; Adjoint kernels; Adjunctions in 2-categories.; Left and right adjoints of kernels.; Partial traces.; Adjunction as a 2-functor.; Induced maps on homology; Hochschild cohomology.; Hochschild homology.; Push-forward and pull-back.; The Mukai pairing and adjoint kernels",
  "tokens": {
-  "brief": 49,
-  "extended": 312
+  "brief": 48,
+  "extended": 311
  },
  "sections": [
   {
@@ -27,125 +27,145 @@
   {
    "id": "sec-002-a-reminder-on-2-categories",
    "title": "A reminder on 2-categories.",
-   "pages": "7-10"
+   "pages": "7-9"
   },
   {
-   "id": "sec-003-serre-functors",
+   "id": "sec-003-the-2-category-var",
+   "title": "The 2-category Var.",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-004-serre-functors",
    "title": "Serre functors",
    "pages": "10-10"
   },
   {
-   "id": "sec-004-the-serre-functor-on-dx",
+   "id": "sec-005-the-serre-functor-on-dx",
    "title": "The Serre functor on D(X).",
-   "pages": "10-12"
+   "pages": "10-11"
   },
   {
-   "id": "sec-005-adjoint-kernels",
+   "id": "sec-006-serre-kernels-and-the-serre-functor-for-dxy",
+   "title": "Serre kernels and the Serre functor for D(XY).",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-007-adjoint-kernels",
    "title": "Adjoint kernels",
    "pages": "12-12"
   },
   {
-   "id": "sec-006-adjunctions-in-2-categories",
+   "id": "sec-008-adjunctions-in-2-categories",
    "title": "Adjunctions in 2-categories.",
    "pages": "12-14"
   },
   {
-   "id": "sec-007-left-and-right-adjoints-of-kernels",
+   "id": "sec-009-left-and-right-adjoints-of-kernels",
    "title": "Left and right adjoints of kernels.",
    "pages": "14-16"
   },
   {
-   "id": "sec-008-partial-traces",
+   "id": "sec-010-partial-traces",
    "title": "Partial traces.",
    "pages": "16-17"
   },
   {
-   "id": "sec-009-adjunction-as-a-2-functor",
+   "id": "sec-011-adjunction-as-a-2-functor",
    "title": "Adjunction as a 2-functor.",
    "pages": "17-17"
   },
   {
-   "id": "sec-010-induced-maps-on-homology",
+   "id": "sec-012-induced-maps-on-homology",
    "title": "Induced maps on homology",
    "pages": "17-17"
   },
   {
-   "id": "sec-011-hochschild-cohomology",
+   "id": "sec-013-hochschild-cohomology",
    "title": "Hochschild cohomology.",
    "pages": "17-18"
   },
   {
-   "id": "sec-012-hochschild-homology",
+   "id": "sec-014-hochschild-homology",
    "title": "Hochschild homology.",
    "pages": "18-18"
   },
   {
-   "id": "sec-013-push-forward-and-pull-back",
+   "id": "sec-015-push-forward-and-pull-back",
    "title": "Push-forward and pull-back.",
    "pages": "18-20"
   },
   {
-   "id": "sec-014-the-mukai-pairing-and-adjoint-kernels",
+   "id": "sec-016-the-mukai-pairing-and-adjoint-kernels",
    "title": "The Mukai pairing and adjoint kernels",
    "pages": "20-21"
   },
   {
-   "id": "sec-015-the-chern-character",
+   "id": "sec-017-the-chern-character",
    "title": "The Chern character",
    "pages": "21-22"
   },
   {
-   "id": "sec-016-the-chern-character-as-a-map-on-k-theory",
+   "id": "sec-018-definition-of-the-chern-character",
+   "title": "Definition of the Chern character.",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-019-the-chern-character-as-a-map-on-k-theory",
    "title": "The Chern character as a map on K-theory.",
    "pages": "22-24"
   },
   {
-   "id": "sec-017-the-chern-character-and-inner-products",
+   "id": "sec-020-the-chern-character-and-inner-products",
    "title": "The Chern character and inner products.",
    "pages": "24-25"
   },
   {
-   "id": "sec-018-example",
+   "id": "sec-021-example",
    "title": "Example.",
    "pages": "25-25"
   },
   {
-   "id": "sec-019-open-closed-tqfts-and-the-cardy-condition",
+   "id": "sec-022-open-closed-tqfts-and-the-cardy-condition",
    "title": "Open-closed TQFTs and the Cardy Condition",
    "pages": "25-26"
   },
   {
-   "id": "sec-020-open-closed-2d-tqfts",
+   "id": "sec-023-open-closed-2d-tqfts",
    "title": "Open-closed 2d TQFTs.",
    "pages": "26-27"
   },
   {
-   "id": "sec-021-open-closed-2d-tqfts-with-d-branes",
+   "id": "sec-024-open-closed-2d-tqfts-with-d-branes",
    "title": "Open-closed 2d TQFTs with D-branes.",
    "pages": "27-28"
   },
   {
-   "id": "sec-022-the-open-closed-2d-tqft-from-a-calabi-yau-manifo",
+   "id": "sec-025-the-open-closed-2d-tqft-from-a-calabi-yau-manifo",
    "title": "The open-closed 2d TQFT from a Calabi-Yau manifold.",
    "pages": "28-29"
   },
   {
-   "id": "sec-023-the-baggy-cardy-condition",
+   "id": "sec-026-the-baggy-cardy-condition",
    "title": "The Baggy Cardy Condition.",
    "pages": "29-31"
   },
   {
-   "id": "sec-024-duality-and-partial-trace",
+   "id": "sec-027-duality-and-partial-trace",
    "title": "Duality and partial trace",
    "pages": "31-31"
   },
   {
-   "id": "sec-025-polite-duality",
+   "id": "sec-028-polite-duality",
    "title": "Polite duality.",
-   "pages": "31-38"
+   "pages": "31-35"
   },
   {
-   "id": "sec-026-references",
+   "id": "sec-029-reflexively-polite-kernels",
+   "title": "Reflexively polite kernels.",
+   "pages": "35-38"
+  },
+  {
+   "id": "sec-030-references",
    "title": "References",
    "pages": "38-39"
   }

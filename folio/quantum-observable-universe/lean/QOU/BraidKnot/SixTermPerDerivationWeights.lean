@@ -3,7 +3,7 @@ import Mathlib.Tactic
 /-
 Per-term weight assembly for the six-term mass formula.
 
-Stub formalisation of `prop:six-term-per-derivation-weights`.
+Stub formalisation of `conj:six-term-per-derivation-weights`.
 The full proof requires several upstream pieces that are
 currently in flight:
   - The descended Markov trace evaluation (T₁) at the
@@ -29,7 +29,7 @@ Empirical witness (Python, sub-percent on A ≤ 9):
 namespace QOU.BraidKnot.SixTermPerDerivationWeights
 
 /-- **The six-term binding-energy assembly**
-([`prop:six-term-per-derivation-weights`](../../../mass-theory/six-term-per-derivation-weights.md)),
+([`conj:six-term-per-derivation-weights`](../../../mass-theory/six-term-per-derivation-weights.md)),
 as a proposition over caller-supplied data:
 
       B = E_0_β · (T1_free − T1_atom)
@@ -46,7 +46,7 @@ terms `T2`/`T3`, `τ(C_dim_q)` (`T4`), the cyclotomic residue sum `T6`, the
 chirality coefficient `a_K`, or the Borromean–Catalan scale `α = m_e·8G`;
 they are reals the caller supplies.  So this states which quantities are
 combined and how, not why they are the ones that appear. -/
--- Ref: [manuscript] quantum-observable-universe/mass-theory/six-term-per-derivation-weights.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/six-term-per-derivation-weights.md
 def binding_assembly (B E_0_β α m_e a_K T1_free T1_atom
     T23_free T23_atom T4_free T4_atom T6_free T6_atom : ℝ) : Prop :=
   B = E_0_β * (T1_free - T1_atom)
@@ -65,7 +65,7 @@ fourth through its `(a_K − 1)` factor.
 The sanity check the assembly must pass to be a *binding* energy at all, and
 the reason the shape is worth naming: it is a hypothesis something is proved
 from. -/
--- Ref: [manuscript] quantum-observable-universe/mass-theory/six-term-per-derivation-weights.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/six-term-per-derivation-weights.md
 theorem binding_assembly_eq_zero_of_no_separation
     {B E_0_β α m_e T1 T23 T4 T6 : ℝ}
     (h : binding_assembly B E_0_β α m_e 1 T1 T1 T23 T23 T4 T4 T6 T6) :
@@ -126,9 +126,14 @@ vacuous `: True := trivial`: the mass data live on
 `[SixTermAssemblyData]`, and an instance discharging the bound is
 the open empirical claim (none = honest open state).
 
+This `Prop` is the comparison boundary of
+`conj:six-term-per-derivation-weights`: `measured_mass` is AME data and
+`0.0053` is a measured error, so nothing here is a formal consequence of the
+assembly `binding_assembly`, which takes every energy scale as a parameter.
+
 Ref: paper_six_term_isotope_sweep.py (assemble_per_derivation_weights)
 Ref: docs/audits/2026-05-04-per-derivation-weights-result.md -/
--- Ref: [manuscript] prop:six-term-per-derivation-weights
+-- Ref: [leitner2026] conj:six-term-per-derivation-weights
 def binding_assembly_subpercent [data : SixTermAssemblyData]
     (Z N : Nat) (_hA : Z + N ≤ 9) : Prop :=
     |data.assembled_mass Z N - data.measured_mass Z N| / data.measured_mass Z N ≤ 0.0053

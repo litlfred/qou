@@ -1,1 +1,1 @@
-For a = (a1,...,a n), b = (b1,...,b n−2) satisfying (13), we have
+For a = (a1, ..., an), b = (b1, ..., bn−2) satisfying (13), we have L[λ;q] q;1 ◦ˆBq;1nϕn−2 Ä a; b; q, z−1ä = nfn−2 Ä a; b; λ; q, z−1ä , (15) L[λ;q] q;1 ◦ˆBq;1nϕn−2 Ä a; b; q, cz−1ä = nfn−2 Ä a; b; cλ; q, cz−1ä . (16) Here in (15) we require λ ∈C∗\ [−1; q], and in (16) we require c ∈C∗, λ ∈C∗\ [−1/c; q].

@@ -1,0 +1,43 @@
+424 T. Ohtsuki (Editor)
+3 The Kontsevich invariant
+
+The framed Kontsevich invariant Z(L) € A(U!S';Q) of an oriented framed
+link LZ with | components is defined by using monodromy along solutions of
+the formal version of the KZ equation. Forgetting its framing, the Kontsevich
+invariant Z(L) of an oriented link L is defined in A(L'S';Q)/FI. The Kont-
+sevich invariant is universal among quantum invariants in the sense that the
+quantum (g,) invariant recovers from the Kontsevich invariant through the
+weight system substituting a Lie algebra g and its representation R into Ja-
+cobi diagrams. Moreover, the Kontsevich invariant is universal among Vassiliev
+invariants in the sense that each coefficient of the Kontsevich invariant is a
+Vassiliev invariant and any Vassiliev invariant can be presented by a linear sum
+of coefficients of the Kontsevich invariant.
+
+3.1 Calculation of the Kontsevich invariant
+
+Problem 3.1 For each oriented knot K, calculate the Kontsevich invariant
+Z(K) for all degrees.
+
+Remark For each d the degree d part of Z(/¢) is a Vassiliev invariant. Hence,
+it is algorithmically possible to calculate it in a finite procedure. It is a problem
+to calculate Z(K) for all degrees.
+
+Remark D. Bar-Natan, T. Le, and D. Thurston [38] gave the following pre-
+sentation of the Kontsevich invariant of the trivial knot O,
+1,__ sinh(2/2)
+
+log,, Z(O) = = log
+
+p08 6)
+
+where x is an element in B (see (22)), and B is aspace isomorphic to A(S") (see
+(21)). The Kontsevich invariant of a cable knot of a knot K can be calculated
+by applying a cabling formula [38] to the Kontsevich invariant of kK’. The Kont-
+sevich invariant of the connected sum of knots is given by the connected sum of
+the Kontsevich invariant of the knots. Hence, we can calculate the Kontsevich
+invariant of knots obtained from the trivial knot by finite sequences of cabling
+and connected sum. To calculate the Kontsevich invariant of other knots in a
+combinatorial way, we probably need an associator, whose combinatorial direct
+presentation for all degrees is not known yet (see Problem 3.13).
+
+Geometry & Topology Monographs, Volume 4 (2002)

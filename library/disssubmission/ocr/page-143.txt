@@ -1,0 +1,36 @@
+CHAPTER 6
+
+The generic rank of Brill-Noether sheaves
+
+As the example in the previous chapter illustrates, one can consider the
+Tannakian formalism as a device to construct interesting perverse sheaves
+on abelian varieties. However, so far the connection between the Tannaka
+group and the geometric properties of the arising perverse sheaves remains
+rather mysterious even for Brill-Noether sheaves on Jacobian varieties. As
+a first step towards a better understanding of this connection, we provide
+in this chapter a recursion formula for the generic rank of Brill-Noether
+sheaves — hoping for a future combinatorial interpretation of this formula
+in terms of representation theory.
+
+6.1. Brill-Noether sheaves
+
+To set the scenery for what follows, let us briefly recall the construction
+of Brill-Noether sheaves from [106]. Let C be a smooth complex projective
+curve of genus g > 2 with Jacobian variety X = JC, and let f: C+ X be
+a translate of the Abel-Jacobi map by some point in X(C). Via addition we
+then obtain a morphism
+
+fa: Cl +X, (p1,.--,pa) > f (pi) +++ f (pa)
+
+for each d € N. The symmetric group Gq acts on C? = C x --- x C by
+permutation of the factors, and the morphism fy factors over the smooth
+quotient variety Cy = C4/Gy so that we get a commutative diagram
+
+where gq denotes the quotient morphism. By the Riemann-Roch theorem
+we can choose the translate f of the Abel-Jacobi morphism in such a way
+that the Brill-Noether subvarieties W7 = {x € X(C) | dim( fy! (x)) >r} have
+the symmetry property
+
+W; = —-W; for d+e=2g-2 and r—s=d+l-g.
+
+135

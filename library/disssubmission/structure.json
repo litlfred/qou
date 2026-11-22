@@ -8,15 +8,33 @@
   "pages": 181,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:25Z",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 64,
+    "reason": "11 of 398 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 74,
+    "reason": "12 of 350 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 126,
+    "reason": "10 of 333 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 150,
+    "reason": "10 of 317 words are a stray single letter: the text layer splits words"
+   }
+  ]
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "I NAUGURAL -D ISSERTATION T ANNAKIAN C ATEGORIES OF P ERVERSE S HEAVES ON A BELIAN V ARIETIES",
-  "authors_raw": "Erlangung der Doktorw\u00fcrde",
+  "title": "Tannakian categories of perverse sheaves on abelian varieties",
+  "authors_raw": "Erlangung der Doktorwürde",
   "title_lines": [
    "INAUGURAL-DISSERTATION"
   ],
@@ -36,7 +54,8 @@
     "text"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "I NAUGURAL -D ISSERTATION T ANNAKIAN C ATEGORIES OF P ERVERSE S HEAVES ON A BELIAN V ARIETIES"
  },
  "toc": [
   {
@@ -103,9 +122,10 @@
    "page": 19,
    "source": "inferred",
    "number": "1.2",
-   "confidence": 0.7,
+   "confidence": 0.95,
    "evidence": [
     "contents",
+    "body",
     "style",
     "number"
    ],
@@ -218,7 +238,7 @@
   },
   {
    "level": 2,
-   "title": "The Andr\u00b4e-Kahn quotient",
+   "title": "The Andr´e-Kahn quotient",
    "page": 40,
    "source": "inferred",
    "number": "2.4",
@@ -548,13 +568,14 @@
   },
   {
    "level": 2,
-   "title": "N\u00b4eron-Severi lattices",
+   "title": "N´eron-Severi lattices",
    "page": 117,
    "source": "inferred",
    "number": "5.4",
-   "confidence": 0.7,
+   "confidence": 0.95,
    "evidence": [
     "contents",
+    "body",
     "style",
     "number"
    ],
@@ -625,9 +646,10 @@
    "page": 139,
    "source": "inferred",
    "number": "5.9",
-   "confidence": 0.7,
+   "confidence": 0.95,
    "evidence": [
     "contents",
+    "body",
     "style",
     "number"
    ],
@@ -669,9 +691,10 @@
    "page": 145,
    "source": "inferred",
    "number": "6.2",
-   "confidence": 0.7,
+   "confidence": 0.95,
    "evidence": [
     "contents",
+    "body",
     "style",
     "number"
    ],
@@ -694,7 +717,7 @@
   },
   {
    "level": 2,
-   "title": "The \ufb01bres of multiple Abel-Jacobi maps",
+   "title": "The ﬁbres of multiple Abel-Jacobi maps",
    "page": 150,
    "source": "inferred",
    "number": "6.4",
@@ -742,7 +765,7 @@
    "title": "Reductive super groups",
    "page": 159,
    "source": "inferred",
-   "number": "A",
+   "number": "Appendix A",
    "confidence": 0.95,
    "evidence": [
     "contents",
@@ -757,7 +780,7 @@
    "title": "Irreducible subgroups with bounded determinant",
    "page": 165,
    "source": "inferred",
-   "number": "B",
+   "number": "Appendix B",
    "confidence": 0.95,
    "evidence": [
     "contents",
@@ -772,7 +795,7 @@
    "title": "An irreducible subgroup of W(E6)",
    "page": 171,
    "source": "inferred",
-   "number": "C",
+   "number": "Appendix C",
    "confidence": 0.8,
    "evidence": [
     "contents",
@@ -786,7 +809,7 @@
    "title": "Doubly transitive permutation groups",
    "page": 173,
    "source": "inferred",
-   "number": "D",
+   "number": "Appendix D",
    "confidence": 0.95,
    "evidence": [
     "contents",
@@ -968,9 +991,10 @@
    "physical": 19,
    "label": "11",
    "source": "printed",
-   "confidence": 0.7,
+   "confidence": 0.85,
    "evidence": [
-    "printed"
+    "printed",
+    "contents"
    ]
   },
   {
@@ -1878,9 +1902,10 @@
    "physical": 117,
    "label": "109",
    "source": "printed",
-   "confidence": 0.7,
+   "confidence": 0.85,
    "evidence": [
-    "printed"
+    "printed",
+    "contents"
    ]
   },
   {
@@ -2080,9 +2105,10 @@
    "physical": 139,
    "label": "131",
    "source": "printed",
-   "confidence": 0.7,
+   "confidence": 0.85,
    "evidence": [
-    "printed"
+    "printed",
+    "contents"
    ]
   },
   {
@@ -2135,9 +2161,10 @@
    "physical": 145,
    "label": "137",
    "source": "printed",
-   "confidence": 0.7,
+   "confidence": 0.85,
    "evidence": [
-    "printed"
+    "printed",
+    "contents"
    ]
   },
   {
@@ -2634,7 +2661,7 @@
   {
    "id": "sec-012-24-the-andre-kahn-quotient",
    "number": "2.4",
-   "title": "The Andr\u00b4e-Kahn quotient",
+   "title": "The Andr´e-Kahn quotient",
    "level": 2,
    "page_start": 40,
    "page_end": 43,
@@ -2746,8 +2773,8 @@
    "level": 2,
    "page_start": 62,
    "page_end": 66,
-   "n_chars": 7902,
-   "n_words": 1477,
+   "n_chars": 7809,
+   "n_words": 1435,
    "label_start": "54",
    "label_end": "58"
   },
@@ -2770,8 +2797,8 @@
    "level": 2,
    "page_start": 69,
    "page_end": 77,
-   "n_chars": 13864,
-   "n_words": 2568,
+   "n_chars": 13808,
+   "n_words": 2526,
    "label_start": "61",
    "label_end": "69"
   },
@@ -2898,7 +2925,7 @@
   {
    "id": "sec-034-54-neron-severi-lattices",
    "number": "5.4",
-   "title": "N\u00b4eron-Severi lattices",
+   "title": "N´eron-Severi lattices",
    "level": 2,
    "page_start": 117,
    "page_end": 123,
@@ -2914,8 +2941,8 @@
    "level": 2,
    "page_start": 123,
    "page_end": 127,
-   "n_chars": 7959,
-   "n_words": 1513,
+   "n_chars": 7881,
+   "n_words": 1479,
    "label_start": "115",
    "label_end": "119"
   },
@@ -3004,14 +3031,14 @@
    "label_end": "142"
   },
   {
-   "id": "sec-043-64-the-\ufb01bres-of-multiple-abel-jacobi-maps",
+   "id": "sec-043-64-the-ﬁbres-of-multiple-abel-jacobi-maps",
    "number": "6.4",
-   "title": "The \ufb01bres of multiple Abel-Jacobi maps",
+   "title": "The ﬁbres of multiple Abel-Jacobi maps",
    "level": 2,
    "page_start": 150,
    "page_end": 152,
-   "n_chars": 3554,
-   "n_words": 703,
+   "n_chars": 3418,
+   "n_words": 635,
    "label_start": "142",
    "label_end": "144"
   },
@@ -3040,8 +3067,8 @@
    "label_end": "151"
   },
   {
-   "id": "sec-046-a-reductive-super-groups",
-   "number": "A",
+   "id": "sec-046-appendix-a-reductive-super-groups",
+   "number": "Appendix A",
    "title": "Reductive super groups",
    "level": 1,
    "page_start": 159,
@@ -3052,8 +3079,8 @@
    "label_end": "157"
   },
   {
-   "id": "sec-047-b-irreducible-subgroups-with-bounded-determinant",
-   "number": "B",
+   "id": "sec-047-appendix-b-irreducible-subgroups-with-bounded-de",
+   "number": "Appendix B",
    "title": "Irreducible subgroups with bounded determinant",
    "level": 1,
    "page_start": 165,
@@ -3064,8 +3091,8 @@
    "label_end": "163"
   },
   {
-   "id": "sec-048-c-an-irreducible-subgroup-of-we6",
-   "number": "C",
+   "id": "sec-048-appendix-c-an-irreducible-subgroup-of-we6",
+   "number": "Appendix C",
    "title": "An irreducible subgroup of W(E6)",
    "level": 1,
    "page_start": 171,
@@ -3076,8 +3103,8 @@
    "label_end": "165"
   },
   {
-   "id": "sec-049-d-doubly-transitive-permutation-groups",
-   "number": "D",
+   "id": "sec-049-appendix-d-doubly-transitive-permutation-groups",
+   "number": "Appendix D",
    "title": "Doubly transitive permutation groups",
    "level": 1,
    "page_start": 173,
@@ -3105,7 +3132,7 @@
   "likely_scanned": false,
   "toc_entries": 52,
   "toc_inferred_entries": 52,
-  "toc_inferred_mean_confidence": 0.922,
+  "toc_inferred_mean_confidence": 0.941,
   "toc_inferred_empty_share": 0.0,
   "toc_inferred_method": "contents",
   "figure_entries": 0,
@@ -3116,13 +3143,8 @@
   },
   "toc_alignment": {
    "listed_not_found": {
-    "count": 4,
-    "items": [
-     "A relative generic vanishing theorem",
-     "N\u00b4eron-Severi lattices",
-     "A smooth global family",
-     "A formula for the generic rank"
-    ]
+    "count": 0,
+    "items": []
    },
    "found_not_listed": {
     "count": 1,
@@ -3136,6 +3158,7 @@
    }
   },
   "sections": 52,
-  "chars_total": 337660
+  "chars_total": 337297,
+  "furniture_lines_stripped": 0
  }
 }

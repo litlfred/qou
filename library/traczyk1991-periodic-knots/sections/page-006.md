@@ -1,0 +1,66 @@
+---
+doc_id: traczyk1991-periodic-knots
+doc_title: "Periodic knots and the skein polynomial"
+section_id: page-006
+section_title: "Page 6"
+pages: 6-6
+pdf_page: 6
+source_pdf: traczyk1991-periodic-knots.pdf
+source_sha256: 2e9236877cec4604
+text_source: ocr
+granularity: page
+doc_brief: "Periodic knots and the skein polynomial — 12 sections: Page 1; Page 2; Page 3"
+---
+78 P. Traczyk
+
+or after substituting the computed values
+
+— [48 4 [50 J52_ 954 4.956
+[48 — 50 4 [52 4 p54 56 — 49/48 2/80 4 9/52
+—2154421°
+
+which of course is easily verified to be true.
+Example 3.8 p=7, k=5, s=1. A direct computation shows that Ty =3/?+
+— 317% 43/78 —3 9943192, T, = 196 — 168 4 79 — 172 4 174 4. 3176 3178, and there-
+fore Ly=317 32-3] 3°43)1- 78 —3]- 76 4.31-74, A, = —317 78 431-7°. The con-
+sidered equality takes the form
+
+T, = —I*? To— 198 Lo — 154 A,
+
+or after substituting the computed values
+
+— 3196 4 3198 — 3179 4. 3]72 — 374
+186 _ ]68 4 J70__ ]72 4 J74 4.3176 _ 3,78 — — 3166 4 3/68 _ 379 4 372 _ 374
++317 —3)78
+
+which is also obviously true.
+
+Proof of the lemma. We use the formula for T, derived in Sect. 2.
+
+(2.7) T=(— Pret T 4 (1 4 PP) (— ype 10+ pote 19/2
+“F (= pynetn T+ +/??) 3 (—Pypdet 2,72 (Pap
+i=1
+
+i=0
+
+The general idea of the proof may be described as follows. The formula we
+want to prove expresses T, as a linear combination of T,,, H, and Lo. If
+in formula (2.7) each term of the form T; or T; is written as H;+L; or H;+L;,
+then it may be seen that the 3 terms we need on the right-hand side do appear,
+as well as many terms which we do not need. Our problem is therefore to
+show that all the other terms are eventually canceled. This is in fact easier
+that might be expected: it turns out all the unwanted terms live outside the
+area in which T, lives, while the three terms we need live inside this area. This
+implies that the unwanted terms must cancel. In the following calculations we
+will denote the frequently appearing product p(p— 1)/2 with r.
+
+Let us first consider s=1 as a special case. In this case the right-hand side
+of (2.7) reduces to
+
+(—PyOY T+ (14 PP) (— PPO Ty (1 +P?) (—PY To,
+and the right-hand side of (3.6) reduces to
+(= PY To+(— PPP Ly 4(— PO Hy.
+We can rewrite the right-hand side of (2.7) as
+
+1(—Py Ty +(—D2)Pp@- Dr To) +(— 1? )pr tk T,
++ 2?((—PYF Ty +(— 2)? 9 *” To),

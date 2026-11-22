@@ -18,7 +18,7 @@ SW period `a_D^{(n)}` into an algebraic residue sum.
 
 ## References
 
-- [manuscript] §5-brings-surface/sw-period-residue-sum
+- [leitner2026] §5-brings-surface/sw-period-residue-sum
 - [seiberg1994] https://doi.org/10.1016/0550-3213(94)90124-4
 
 **Ground ring**: `ℂ` (archimedean realisation; residues and periods are
@@ -81,7 +81,7 @@ structure SWPeriodResidue (k : ℕ) where
     2026-08-07. The content of this file is now
     `period_eq_zero_of_total_residue_vanishes` and its contrapositive below,
     which *derive* a consequence rather than restating an assumption. -/
--- Ref: [manuscript] §5-brings-surface
+-- Ref: [leitner2026] §5-brings-surface
 theorem sw_period_eq_residue_sum {k : ℕ} (S : SWPeriodResidue k) :
     S.period = S.twoPiI * ∑ p, S.residues p :=
   S.period_eq

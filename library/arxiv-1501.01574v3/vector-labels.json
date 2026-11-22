@@ -1,0 +1,549 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-1501.01574v3",
+  "pages": [
+    {
+      "page": 14,
+      "rotation": 0,
+      "drawings": 62,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1. From left to right: A crossing, the A-resolution and the the B-resolution.",
+        "Figure 2. From left to right: An example link diagram, the graph Gσ corresponding to state surface Sσ. Figure borrowed from [7]."
+      ],
+      "labels": [
+        {
+          "text": "14",
+          "bbox": [
+            84.96,
+            96.14,
+            93.39,
+            104.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Figure 1. From left to right: A crossing, the A-resolution and the the B-resolution.",
+          "bbox": [
+            94.8,
+            182.33,
+            501.26,
+            193.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Figure 2. From left to right: An example link diagram, the graph Gσ",
+          "bbox": [
+            120.84,
+            319.01,
+            474.64,
+            331.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10",
+            "CMMI8",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "corresponding to state surface Sσ. Figure borrowed from [7].",
+          "bbox": [
+            120.84,
+            332.38,
+            410.3,
+            344.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "3.3. Strong Slope Conjecture for iterated cables of adequate knots. Let D be a",
+          "bbox": [
+            84.96,
+            360.09,
+            511.26,
+            371.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "link diagram, and x a crossing of D. Associated to D and x are two link diagrams, each",
+          "bbox": [
+            84.96,
+            373.06,
+            511.02,
+            383.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "with one fewer crossing than D, called the A–resolution and B–resolution of the crossing.",
+          "bbox": [
+            84.96,
+            385.9,
+            511.1,
+            396.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "See Figure 1.",
+          "bbox": [
+            84.96,
+            398.86,
+            147.26,
+            409.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "A Kauﬀman state σ is a choice of A–resolution or B–resolution at each crossing of D.",
+          "bbox": [
+            96.96,
+            411.82,
+            511.22,
+            422.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Corresponding to every state σ is a crossing–free diagram sσ: this is a collection of circles",
+          "bbox": [
+            84.96,
+            424.78,
+            511.06,
+            436.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "in the projection plane. We can encode the choices that lead to the state σ in a graph",
+          "bbox": [
+            84.96,
+            437.74,
+            511.13,
+            448.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Gσ, as follows. The vertices of Gσ are in 1 −1 correspondence with the state circles of",
+          "bbox": [
+            84.96,
+            450.46,
+            511.17,
+            463.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "sσ. Every crossing x of D corresponds to a pair of arcs that belong to circles of sσ; this",
+          "bbox": [
+            84.96,
+            463.66,
+            511.18,
+            475.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "crossing gives rise to an edge in Gσ whose endpoints are the state circles containing those",
+          "bbox": [
+            84.96,
+            476.62,
+            511.12,
+            489.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "arcs.",
+          "bbox": [
+            84.96,
+            489.58,
+            106.82,
+            500.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Every Kauﬀman state σ also gives rise to a surface Sσ, as follows. Each state circle of σ",
+          "bbox": [
+            96.96,
+            502.54,
+            510.83,
+            514.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "bounds a disk in S3. This collection of disks can be disjointly embedded in the ball below",
+          "bbox": [
+            84.96,
+            513.74,
+            511.16,
+            526.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "the projection plane. At each crossing of D, we connect the pair of neighboring disks by a",
+          "bbox": [
+            84.96,
+            528.46,
+            511.26,
+            539.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "half-twisted band to construct a surface Sσ ⊂S3 whose boundary is K. See Figure 2 for",
+          "bbox": [
+            84.96,
+            537.46,
+            511.15,
+            554.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "an example where σ is the all–B state.",
+          "bbox": [
+            84.96,
+            554.38,
+            269.78,
+            565.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Deﬁnition 3.5. A link diagram D is called A–adequate if the state graph GA correspond-",
+          "bbox": [
+            84.96,
+            573.81,
+            510.77,
+            586.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMTI10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "ing to the all–A state contains no 1–edge loops. Similarly, D is called B–adequate if the",
+          "bbox": [
+            84.96,
+            586.66,
+            511.18,
+            597.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "all–B graph GB contains no 1–edge loops. A link diagram is adequate if it is both A– and",
+          "bbox": [
+            84.96,
+            599.62,
+            511.13,
+            612.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMTI10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "B–adequate. A link that admits an adequate diagram is also called adequate.",
+          "bbox": [
+            84.96,
+            612.58,
+            452.74,
+            623.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The number of negative crossings c−of an A–adequate knot diagram is a knot invariant.",
+          "bbox": [
+            96.96,
+            632.02,
+            510.98,
+            643.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Similarly, the number of positive crossings c+ of a B-adequate knot diagram is a knot",
+          "bbox": [
+            84.96,
+            644.98,
+            511.23,
+            657.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "invariant. Let vA (resp. vB) be the number of state circles in the all–A (resp. all–B) state",
+          "bbox": [
+            84.96,
+            657.94,
+            511.12,
+            670.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "of the knot diagram D.",
+          "bbox": [
+            84.96,
+            670.9,
+            196.1,
+            681.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The following summarizes [24, Lemma 5.4], [22, Proposition 2.1] and [19, Theorem 3.1].",
+          "bbox": [
+            96.96,
+            683.86,
+            510.98,
+            694.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        }
+      ]
+    }
+  ]
+}

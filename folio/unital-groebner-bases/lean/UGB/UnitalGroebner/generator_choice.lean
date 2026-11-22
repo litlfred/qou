@@ -59,7 +59,7 @@ variable {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     `ReductionRule`/`Monomial` (membership in `sys.rules`, an `isInfix`
     occurrence), not a bare `Prop`. Proved directly from the reduction
     witness. -/
--- Ref: [manuscript] unital-groebner-bases/unital-groebner-bases-chapter/generator-choice-lemma.ts
+-- Ref: [leitner2026] unital-groebner-bases/unital-groebner-bases-chapter/generator-choice-lemma.ts
 theorem generator_choice
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)

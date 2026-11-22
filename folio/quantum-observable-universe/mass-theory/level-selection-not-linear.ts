@@ -20,6 +20,11 @@ export default proposition({
   uses: ["prop:tower-geometric-lower-bound"],
   tags: ["binding", "level-selection", "logarithmic", "gap-a-3", "brane-tower"],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): ## Lean structure\n\n[`QOU.Mass.LevelSelection.no_linear_selection`](../lean/QOU/Mass/LevelSelectionLogarithmic.lean) proves the contradiction outright, taking the tower bound as the class hypothesis `[TowerGeometricLowerBound w r c k₀]`. The exponential-beats-linear step is Mathlib's `isLittleO_coe_const_pow_of_one_lt` ($(A:\\mathbb{R}) = o[\\mathrm{atTop}]\\, r^{A}$); `#print axioms` reports only `propext / Classical.choice / Quot.sound`. The companion inequality `linear_selection_bound` ($c\\,r^{A} \\leq M\\cdot A$) is the un-contradicted form; this proposition is the exclusion it entails.\n\n**The hypothesis is discharged, so the exclusion is not conditional.** `QOU.Mass.WStd.towerGeometricLowerBound_wStd` inhabits the class at $k_{0} = 3$, and [`QOU.Mass.WStd.no_linear_selection_wStd`](../lean/QOU/Mass/WStdSuperExponential.lean) is this theorem at the actual $w_{\\mathrm{std}}$ with no class argument to supply; `no_superlinear_selection_wStd` is its bond-count companion. Until that instance existed the class had none, so neither exclusion could be applied to any concrete weight. The threshold costs the argument nothing, because both proofs already select their $A$ from an `atTop` filter." },
+    {
+      kind: "refined-framing",
+      body: "This paragraph previously justified the A ≥ 1 restriction by saying the tower bound forces w(0) ≥ c > 0 while M·0 = 0. That reading was backwards: w_std(0) = 0, and the A = 0 case exhibited a false antecedent.",
+    },
     {
       kind: "note",
       date: "2026-08-09",

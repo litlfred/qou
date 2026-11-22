@@ -1,0 +1,760 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1011.0679v2",
+ "status": "determined",
+ "body_size": 10.9,
+ "footnotes": [],
+ "uncalled_notes": [
+  {
+   "id": "fn-p021-1",
+   "page": 21,
+   "mark": "60",
+   "text": "1 (1980), 9–84 [Lus1] G. Lusztig, “Aﬃne Hecke algebras and their graded version”, J. Amer. Math. Soc 2.3 (1989), 599–635 [Lus2] G. Lusztig, “Classiﬁcation of unipotent representations of simple p-adic groups”, Internat. Math. Res. Notices 11 (1995), 517–589. [Mey] R. Meyer, “Homological algebra for Schwartz algebras of reductive p-adic groups”, pp. 263–",
+   "block": "library/arxiv-1011.0679v2/blocks/prose-sec-009"
+  },
+  {
+   "id": "fn-p021-2",
+   "page": 21,
+   "mark": "300",
+   "text": "in: Noncommutative geometry and number theory, Aspects of Mathematics E37, Vieweg Verlag, 2006 [Mor] L. Morris, “Level zero G-types”, Compositio Math. 118 (1999), 135–157. [Opd1] E.M. Opdam, “On the spectral decomposition of aﬃne Hecke algebras”, J. Inst. Math. Jussieu 3.4 (2004), 531–648 [Opd2] E.M. Opdam, “Hecke algebras and harmonic analysis”, pp. 1227–1259 in: Proceedings ICM Madrid 2006 Vol. II, European Mathematical Society Publishing House, 2006 [OpSo1] E.M. Opdam, M. Solleveld, “Homological algebra for aﬃne Hecke algebras”, Advances in Mathematics 220 (2009), 1549–1601 [OpSo2] E.M. Opdam, M. Solleveld, “Discrete series characters for aﬃne Hecke algebras and their formal dimensions”, Acta Mathematica 105 (2010), 105–187",
+   "block": "library/arxiv-1011.0679v2/blocks/prose-sec-009"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "(−1)"
+  },
+  {
+   "page": 2,
+   "mark": "i",
+   "context": "(−1)idimExt"
+  },
+  {
+   "page": 4,
+   "mark": "e",
+   "context": "WeylgroupW"
+  },
+  {
+   "page": 4,
+   "mark": "e",
+   "context": "EPHandEPW"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "0, F"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "α: Y→Y )stabilizeR"
+  },
+  {
+   "page": 4,
+   "mark": "0",
+   "context": "0).WedonotassumethatR"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "0).WedonotassumethatR0spans"
+  },
+  {
+   "page": 4,
+   "mark": "e",
+   "context": "Waﬀ=ZR0 ⋊W0andtheextended(aﬃne)WeylgroupW"
+  },
+  {
+   "page": 5,
+   "mark": "e",
+   "context": "(Waﬀ, Saﬀ)extendsnaturallytoW"
+  },
+  {
+   "page": 5,
+   "mark": "e",
+   "context": "ItiseasilyseenthatthecenterofW"
+  },
+  {
+   "page": 5,
+   "mark": "e",
+   "context": "Z(W"
+  },
+  {
+   "page": 5,
+   "mark": "e",
+   "context": "WesaythatRissemisimpleifZ(W"
+  },
+  {
+   "page": 5,
+   "mark": "e",
+   "context": " positive parameter function for R, that is, a function q: W"
+  },
+  {
+   "page": 5,
+   "mark": "e",
+   "context": "ifw, v∈W"
+  },
+  {
+   "page": 5,
+   "mark": "e",
+   "context": "withbasis{Nw: w∈W"
+  },
+  {
+   "page": 5,
+   "mark": "s",
+   "context": "N"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "Ns −q(s)"
+  },
+  {
+   "page": 5,
+   "mark": "s",
+   "context": "N"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": " also ﬁnds this algebra deﬁned in terms of the elements q(s)"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "toC[X]W"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "soA ∼= O(T)andZ(H) = AW"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "T= Trs × Tun= HomZ(X, R>0) × HomZ(X, S"
+  },
+  {
+   "page": 6,
+   "mark": "e",
+   "context": "nrand use (6) to extend it to W"
+  },
+  {
+   "page": 6,
+   "mark": "e",
+   "context": "nrand use (6) to extend it to W e(RP) and W"
+  },
+  {
+   "page": 6,
+   "mark": "x",
+   "context": "bethecommutativesubalgebraspannedby{θ"
+  },
+  {
+   "page": 6,
+   "mark": "x",
+   "context": "HP→HP: θ"
+  },
+  {
+   "page": 6,
+   "mark": "w",
+   "context": "HP→HP: θxN"
+  },
+  {
+   "page": 6,
+   "mark": "x",
+   "context": "HP→HP: θxNw7→θ"
+  },
+  {
+   "page": 6,
+   "mark": "w",
+   "context": "HP→HP: θxNw7→θxP N"
+  },
+  {
+   "page": 6,
+   "mark": "x",
+   "context": "θ"
+  },
+  {
+   "page": 6,
+   "mark": "w",
+   "context": "θxP N"
+  },
+  {
+   "page": 6,
+   "mark": "x",
+   "context": "θxP Nw7→t(xP )θ"
+  },
+  {
+   "page": 6,
+   "mark": "w",
+   "context": "θxP Nw7→t(xP )θxP N"
+  },
+  {
+   "page": 6,
+   "mark": "x",
+   "context": "θ"
+  },
+  {
+   "page": 6,
+   "mark": "w",
+   "context": "θxP N"
+  },
+  {
+   "page": 6,
+   "mark": "t",
+   "context": "H(RP,qP)(σ ◦φ"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "α∈F"
+  },
+  {
+   "page": 7,
+   "mark": "t",
+   "context": "HP (δ ◦φ"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "onTF"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "2(k"
+  },
+  {
+   "page": 8,
+   "mark": "k",
+   "context": "2(k1)"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "2(k1)k"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "un,andareconstantonT F"
+  },
+  {
+   "page": 9,
+   "mark": "e",
+   "context": "ofrapidlydecreasingfunctionsonW"
+  },
+  {
+   "page": 9,
+   "mark": "e",
+   "context": "thispurposeitisunsatisfactorythatℓis0onthesubgroupZ(W"
+  },
+  {
+   "page": 9,
+   "mark": "e",
+   "context": "w∈W"
+  },
+  {
+   "page": 9,
+   "mark": "e",
+   "context": "SinceZ(W"
+  },
+  {
+   "page": 9,
+   "mark": "e",
+   "context": "SinceZ(We) ⊕ZR0isofﬁniteindexinX,theset{w∈W"
+  },
+  {
+   "page": 9,
+   "mark": "e",
+   "context": "Moreover,becauseW"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "|hw|(N(w) + 1)"
+  },
+  {
+   "page": 9,
+   "mark": "h",
+   "context": "w∈W"
+  },
+  {
+   "page": 9,
+   "mark": "w",
+   "context": "w∈Wh"
+  },
+  {
+   "page": 9,
+   "mark": "w",
+   "context": "w∈WhwN"
+  },
+  {
+   "page": 9,
+   "mark": "h",
+   "context": "w∈W"
+  },
+  {
+   "page": 9,
+   "mark": "w",
+   "context": "w∈Wh"
+  },
+  {
+   "page": 9,
+   "mark": "w",
+   "context": "w∈WhwN"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "thatH(R, q"
+  },
+  {
+   "page": 10,
+   "mark": "e",
+   "context": "thatH(R, q0)=C[W"
+  },
+  {
+   "page": 10,
+   "mark": "e",
+   "context": "thatH(R, q0)=C[We]isthegroupalgebraofW"
+  },
+  {
+   "page": 10,
+   "mark": "0",
+   "context": "thatH(R, q0)=C[We]isthegroupalgebraofWeandthatS(R, q"
+  },
+  {
+   "page": 10,
+   "mark": "e",
+   "context": "thatH(R, q0)=C[We]isthegroupalgebraofWeandthatS(R, q0)=S(W"
+  },
+  {
+   "page": 10,
+   "mark": "e",
+   "context": "theSchwartzalgebraofrapidlydecreasingfunctionsonW"
+  },
+  {
+   "page": 10,
+   "mark": "e",
+   "context": "isanalyticforanyw∈W"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "minwedeﬁne"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "Qisregularon"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "QisregularonanonemptyZariski-opensubsetofsuch"
+  },
+  {
+   "page": 11,
+   "mark": "a",
+   "context": "QM=constant.Observethatfor"
+  },
+  {
+   "page": 12,
+   "mark": "a",
+   "context": "ξ⊂Rξis"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "(−1)ndimC Ext"
+  },
+  {
+   "page": 13,
+   "mark": "e",
+   "context": "studyofEPW"
+  },
+  {
+   "page": 13,
+   "mark": "0",
+   "context": "studyofEPWe= EPH(R,q"
+  },
+  {
+   "page": 13,
+   "mark": "e",
+   "context": "From[Sol3, Lemma 4.2.3.a]we know that˜σ0: Modf(H) →Modf(W"
+  },
+  {
+   "page": 13,
+   "mark": "e",
+   "context": "σEll: Ell(H) →Ell(W"
+  },
+  {
+   "page": 13,
+   "mark": "0",
+   "context": "H(R, q"
+  },
+  {
+   "page": 13,
+   "mark": "e",
+   "context": "Theorem2.3.ThepairingsEPHandEPW"
+  },
+  {
+   "page": 13,
+   "mark": "e",
+   "context": "respectivelyEll(H)andEll(W"
+  },
+  {
+   "page": 13,
+   "mark": "e",
+   "context": "[OpSo1,Theorem3.2.b]EPW"
+  },
+  {
+   "page": 13,
+   "mark": "e",
+   "context": "[OpSo1,Theorem3.2.b]EPWeinducesaHermitianinnerproductonEll(W"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "S(π, π′) ∼= Ext"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "Ext"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "(−1)ndimC Ext"
+  },
+  {
+   "page": 14,
+   "mark": "a",
+   "context": "un) ∼= i"
+  },
+  {
+   "page": 14,
+   "mark": "a",
+   "context": "Theexpressiondet(1 −w)Tξ(Ξun)= det(1 −w)"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "ξ(π)(w"
+  },
+  {
+   "page": 14,
+   "mark": "w",
+   "context": "ξ(π)(w1"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "ξ(π)(w1w"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "ξ(π)(w1w2)−1= κξ(w"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "ξ(π)(w1w2)−1= κξ(w1, w"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "ξ(π)(w"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "ξ(π)(w"
+  },
+  {
+   "page": 14,
+   "mark": "a",
+   "context": "ξ(π′)is"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "thattheextensiongroupsExt"
+  },
+  {
+   "page": 15,
+   "mark": "a",
+   "context": "unbe"
+  },
+  {
+   "page": 15,
+   "mark": "t",
+   "context": "unbeanonemptyopenballaround"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "ξbe"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "ξ(π"
+  },
+  {
+   "page": 16,
+   "mark": "p",
+   "context": "ξ-representations.Since"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "H(π, π′) ∼= Ext"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "Ext"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "ξ(π"
+  },
+  {
+   "page": 16,
+   "mark": "t",
+   "context": "ξ"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "ξtandπ"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "ξ(π"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "ξ(π"
+  },
+  {
+   "page": 16,
+   "mark": "t",
+   "context": "ξonthetangentspaceT"
+  },
+  {
+   "page": 16,
+   "mark": "t",
+   "context": "ξonthetangentspaceTt(Uξ/W(Rξ))ofUξ/W(Rξ)at"
+  },
+  {
+   "page": 17,
+   "mark": "t",
+   "context": "ξon T"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "ξﬁxes"
+  },
+  {
+   "page": 17,
+   "mark": "a",
+   "context": "ξcanbeidentiﬁedwith"
+  },
+  {
+   "page": 17,
+   "mark": "t",
+   "context": "ξcanbeidentiﬁedwithasubspaceofT"
+  },
+  {
+   "page": 17,
+   "mark": "r",
+   "context": "ξcanbeidentiﬁedwithasubspaceofTt(Uξ).Every"
+  },
+  {
+   "page": 17,
+   "mark": "r",
+   "context": "ξα∨∈aP\\ {0},so"
+  },
+  {
+   "page": 17,
+   "mark": "t",
+   "context": "ξα∨∈aP\\ {0},sorﬁxesnonzerovectorsofT"
+  },
+  {
+   "page": 17,
+   "mark": "t",
+   "context": "ξα∨∈aP\\ {0},sorﬁxesnonzerovectorsofTt(Uξ)andT"
+  },
+  {
+   "page": 18,
+   "mark": "u",
+   "context": "C∞(U)⋊Gu(C"
+  },
+  {
+   "page": 18,
+   "mark": "u",
+   "context": "\u0001G(π(u, σ), C"
+  },
+  {
+   "page": 18,
+   "mark": "a",
+   "context": "ntthedesiredMorita-equivalence.Noticethemultiplicationyields"
+  },
+  {
+   "page": 18,
+   "mark": "u",
+   "context": "HomG"
+  },
+  {
+   "page": 18,
+   "mark": "u",
+   "context": "HomGu(V, V′) ⊗EndGu(V′) HomG"
+  },
+  {
+   "page": 18,
+   "mark": "u",
+   "context": "HomGu(V, V′) ⊗EndGu(V′) HomGu(V′, V ) →EndG"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "ρ ⊗C"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "ρ ⊗C"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "EndGu(ρ) ⊗EndC(C"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "EndGu(ρ)⊗HomC(C"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "EndGu(ρ)⊗HomC(Cmρ, C"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "EndGu(ρ)⊗HomC(C"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "ρ, C"
+  },
+  {
+   "page": 18,
+   "mark": "m",
+   "context": "EndGu(ρ) ⊗EndC(C"
+  },
+  {
+   "page": 19,
+   "mark": "u",
+   "context": "\u0001G∼= EndG"
+  },
+  {
+   "page": 19,
+   "mark": "u",
+   "context": "AsaGu-representationV= C[G]∼= C[Gu] ⊗C[G:G"
+  },
+  {
+   "page": 19,
+   "mark": "u",
+   "context": "EndGu(C[G])∼= EndGu(C[Gu]) ⊗EndC(C[G:G"
+  },
+  {
+   "page": 19,
+   "mark": "u",
+   "context": "seidentiﬁcationsπ(u, σ)correspondstotherepresentationσ⊗C[G:G"
+  },
+  {
+   "page": 19,
+   "mark": "u",
+   "context": "\u0001G(π(u, σ), C"
+  },
+  {
+   "page": 19,
+   "mark": "u",
+   "context": "\u0001G(π(u, σ), Cu ⊗V )∼= HomG"
+  },
+  {
+   "page": 19,
+   "mark": "u",
+   "context": "\u0001G(π(u, σ), Cu ⊗V )∼= HomGu(σ, C[G"
+  },
+  {
+   "page": 19,
+   "mark": "u",
+   "context": "AsaG"
+  },
+  {
+   "page": 19,
+   "mark": "u",
+   "context": "AsaGu × G"
+  },
+  {
+   "page": 19,
+   "mark": "u",
+   "context": "AsaGu × Gu-representationC[G"
+  },
+  {
+   "page": 19,
+   "mark": "u",
+   "context": "ρ∈Irr(Gu)ρ ⊗ρ∗,soHomG"
+  },
+  {
+   "page": 19,
+   "mark": "u",
+   "context": "ρ∈Irr(Gu)ρ ⊗ρ∗,soHomGu(σ, C[G"
+  },
+  {
+   "page": 20,
+   "mark": "f",
+   "context": "ρ"
+  },
+  {
+   "page": 20,
+   "mark": "t",
+   "context": "un)Wξ.Henceπ(v, P, δ, t′)isscalarforall"
+  },
+  {
+   "page": 20,
+   "mark": "t",
+   "context": "un)Wξ,soitisinfactlinearlyindependentforall"
+  },
+  {
+   "page": 21,
+   "mark": "f",
+   "context": "ρ"
+  }
+ ]
+}

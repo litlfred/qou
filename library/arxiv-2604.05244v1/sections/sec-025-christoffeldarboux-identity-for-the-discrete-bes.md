@@ -8,7 +8,9 @@ pages: 27-27
 source_pdf: 2604.05244v1.pdf
 source_sha256: a5097e763dd89d06
 toc_source: outline
+doc_brief: "Edge universality in Floquet sideband spectra — We show that, for non-interacting fermions under a monochromatic phase drive (Tien– Gordon regime), the outgoing sideband occupations at a sharp Fermi"
 ---
+Christoffel–Darboux identity for the discrete Bessel kernel
 We prove the identity (5.8). Start from the three-term recurrence for Bessel functions [20],
 2(ν + r)
 A
@@ -29,4 +31,3 @@ A
 Jν−1(A)Jλ(A) −Jν(A)Jλ−1(A)
 ν −λ
 .
-A.2

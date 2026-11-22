@@ -126,9 +126,9 @@ Derivation and the six cross-checks (including that this file's own
   `computations/gram-h3-det-factorization.witness.json`
   (emits the explicit 6-factor product).
 
-Ref: [manuscript] def:universal-ilp-algorithm
-Ref: [manuscript] prop:frobenius-gram-matrix
-Ref: [manuscript] docs/audits/2026-05-25-option-e-crystal-weight-delta-lambda.md
+Ref: [leitner2026] def:universal-ilp-algorithm
+Ref: [leitner2026] prop:frobenius-gram-matrix
+Ref: [leitner2026] docs/audits/2026-05-25-option-e-crystal-weight-delta-lambda.md
 Ref: [halverson_ram_1998] Hoefsmit seminormal Gram on H_3(q)
 Ref: sympy regression guard `computations/gram_h3_symbolic_regression.py`
      (transcribes the same closed-form entries; emits witness asserting
@@ -244,7 +244,7 @@ theorem gramMatrix_top_left (u : ℝ) : gramMatrix u 0 0 = 1 := by
     - `det(gramMatrix u_0) ≈ −0.189` at `u_0 ≈ 1.054`
     - `rank(gramMatrix u_0) = 6`                 (full rank at substrate)
 
-    -- Ref: [manuscript]
+    -- Ref: [leitner2026]
     The `sorry` is conjectural-conditional per AGENTS.md §3b-cond;
     discharging it requires lifting the symbolic factorisation into
     Lean. Witness sidecar:
@@ -569,7 +569,7 @@ three rational `q`, and the same one the `qou-u2jg` keystone names from the
 trace side. Here it arrives from the determinant, as an identity in `q`.
 
 Ref: [halverson_ram_1998] Hoefsmit seminormal Gram on H_3(q)
-Ref: [manuscript] docs/coordination/trace-convention-registry.md
+Ref: [leitner2026] docs/coordination/trace-convention-registry.md
 Ref: derivation + six cross-checks
      `computations/probes/gram_h3_convention_frame_probe.py`
 -/

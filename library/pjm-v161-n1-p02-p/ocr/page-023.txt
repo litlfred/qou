@@ -1,0 +1,40 @@
+46 JOAN S. BIRMAN AND WILLIAM W. MENASCO
+
+Aj(k+1)
+
+viewed on oT viewed on oB,
+viewer inside T viewer inside B
+
+Region abutting on two digons, viewed on dT _and 3B,
+
+FIGURE 3.9
+
+(b) If a component meets L, it is in subset #1. Also:
+If it meets the undercrossing arcs, it is in subset 1”
+If not it is in subset 1’
+(c) If a component has empty intersection with A and L, it is in
+subset #2.
+Figure 3.3 illustrates the subdivision of F into subsets 1’, 1”, 2 and
+3. Using it, we are almost ready to define our complexity function.
+Notice that we have already standardized the geometry in the following
+ways:
+1. F is a Bennequin surface with respect to H and H’.
+2. W and W’ are admissible words.
+3. A is disjoint from the digons, by construction.
+4. The standard foliation of the interior of Q is singularity-free.
+We now need to standardize the intersections of fibers of H’ with the
+digons:
+
+Lemma 3.3. Let Q be the union of all the digons. We may assume
+
+that
+(i) The intersections of A’ with F UQ are finite in number and
+
+transverse.
+
+(ii) The non-standard foliation of F UQ. is radial near each pierce
+point.
+
+(iii) All but finitely many fibers H, of H’ meet FUQ transversally.
+Those which do not (the Q-singular fibers) are each tangent to FUQ
+at exactly one point in the interior of Q.

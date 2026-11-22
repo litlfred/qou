@@ -1,0 +1,65 @@
+have 4 b € unit-disc. V x € unit-disc. V y € unit-disc.
+is-real (to-complex b) A
+(p «Aw y — (Re (to-complex xr) < Re (to-complex b) \ Re (to-complex b) < Re (to-complex y)))
+proof—
+let ?Phi = {x. (of-complex (cor x)) € unit-disc \ yp (of-complex (cor x))}
+
+have V z € unit-disc. p s —+ Re (to-compler x) < Sup ?Phi
+proof (safe)
+fix «
+let ?z = to-complex x
+assume z € unit-disc yp x
+hence is-real ?z Re ?z > 0
+using ynoneg
+by auto
+hence cor (Re ?x) = ?x
+using complex-of-real-Re by blast
+hence of-complex (cor (Re ?x)) € unit-disc
+using <x € unit-disc)
+by (metis inf-notin-unit-disc of-complex-to-complex)
+moreover
+have ¢ (of-complex (cor (Re ?x)))
+using ‘cor (Re ’r) = ?x) «py ©) (ax € unit-disc»
+by (metis inf-notin-unit-disc of-complex-to-complex)
+ultimately
+have Re ?x € ?Phi
+by auto
+
+have 3M.Vz € ?Phi. 4 < M
+using ylessw
+using <4 y € unit-disc. w y>
+by (metis (mono-tags, lifting) Re-complez-of-real le-less mem-Collect-eq to-complez-of-complez)
+
+thus Re ?x < Sup ?Phi
+using cSup-upper|of Re ?x ?Phi|
+unfolding bdd-above-def
+using ‘Re ?x € ?Phi>
+by auto
+qed
+
+have V y € unit-disc. y) y —> Sup ?Phi < Re (to-complex y)
+proof (safe)
+fix y
+let ?y = to-complex y
+assume w y y € unit-disc
+show Sup ?Phi < Re ?y
+proof (rule ccontr)
+assume — ?thesis
+hence Re ?y < Sup ?Phi
+by auto
+
+have J «. ¢ (of-complex (cor x)) A (of-complex (cor x)) € unit-disc
+proof —
+obtain x’ where x’ € unit-disc yp x’
+using (5 x € unit-disc. yp x» by blast
+let ?x’ = to-complex x’
+have is-real ?x’
+using (z’ € unit-discr «yp x’
+using ynoneg
+by auto
+hence cor (Re ?2") = ?x'
+using complex-of-real-Re by blast
+hence x’ = of-complex (cor (Re ?x’))
+using <x’ € unit-disc»
+by (metis inf-notin-unit-disc of-complex-to-complez)
+show ?thesis

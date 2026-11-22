@@ -1,0 +1,69 @@
+hence poincare-collinear {On, y, z}
+unfolding poincare-collinear-def
+by force
+thus False
+using (- poincare-collinear {On, y, z}>
+by simp
+qed
+
+moreover
+
+have z ¢ circline-set z-axis
+proof (rule ccontr)
+assume 7— ?thesis
+moreover
+hence poincare-line z (of-complex v) = z-axis
+using distinct <of-complex v € circline-set x-axis)
+using in-disc <of-complex v € unit-disc»
+using wnique-poincare-line|of z of-complex v x-axis]
+by simp
+moreover
+have y € circline-set (poincare-line z (of-complex v))
+using <of-complex v € circline-set ?yz)
+using wnique-poincare-line[of z of-complex v poincare-line y 2]
+using in-disc <of-complex v € unit-disc) distinct
+using poincare-line[of y z]
+unfolding circline-set-def
+by (metis distinct-length-2-or-more is-poincare-line-poincare-line mem-Collect-eq)
+ultimately
+have y € circline-set z-axis z € circline-set x-axis
+by auto
+hence poincare-collinear {On, y, z}
+unfolding poincare-collinear-def
+by force
+thus False
+using (- poincare-collinear {On, y, z}>
+by simp
+qed
+
+ultimately
+
+have yp «0 < 0
+using <poincare-between y (of-complex v) z>
+using poincare-between-z-axis-intersection|of y z of-complex v]
+using in-disc <of-complex v € unit-disc) distinct
+using <of-complex v € circline-set ?yz» <of-complex v € circline-set x-axis)
+using «yg = Arg 2’) «) = Arg y’> *
+by (simp add: field-simps)
+
+have » 4 piy #0
+using (z ¢ circline-set z-axis) « polar cis-pi
+unfolding circline-set-x-azxis
+by auto
+
+have 0 4 pil #0
+using <y ¢ circline-set x-axis) * polar cis-pi
+unfolding circline-set-x-azxis
+by auto
+
+have phi-sin: p > 0 +> sing >09<0+¢— sing <0
+using «yp = Arg z) «(p 4 0 «yp F pi»
+using Arg-bounded|of z'|
+by (smt sin-gt-zero sin-le-zero sin-pi-minus sin-0-iff-canon sin-ge-zero)+
+
+have theta-sin: 0 > 0 <> sind>O00 <0 + + sind < 0
+
+using «0 = Arg y’) «0 4 0) «OF pir
+using Arg-bounded|of y’]
+
+130

@@ -6,10 +6,12 @@
   "sha256": "955e3eda48672e2869a025a83565121851b8ccef1494aeaddac7b4231526460e",
   "bytes": 3132867,
   "pages": 76,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -19,26 +21,31 @@
    "stamp_date": "6 Apr 2020"
   },
   "doi": null,
-  "title": "Nuclear effective field theory: status and perspectives",
-  "authors_raw": null,
+  "title": "Nuclear eﬀective ﬁeld theory: status and perspectives",
+  "authors_raw": "H.-W. Hammer∗",
+  "title_lines": [
+   "Nuclear effective field theory: status and perspectives"
+  ],
   "abstract": null,
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20200408003310Z",
-   "Creator": "LaTeX with hyperref package",
    "Producer": "pdfTeX-1.40.17",
-   "Title": ""
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20200408003310Z"
   },
-  "title_prev": "Nuclear effective field theory: status and perspectives H.-W. Hammer\u2217 Institut f\u00fcr Kernphysik, Technische Universit\u00e4t Darmstadt, 64289 Darmstadt, Germany ExtreMe Matter Institute EMMI",
-  "title_lines": [
-   "Nuclear effective field theory: status and perspectives",
-   "H.-W. Hammer\u2217",
-   "Institut f\u00fcr Kernphysik",
-   "Technische Universit\u00e4t Darmstadt",
-   "64289 Darmstadt",
-   "Germany",
-   "ExtreMe Matter Institute EMMI"
-  ]
+  "title_raw": "Nuclear effective field theory: status and perspectives",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Nuclear eﬀective ﬁeld theory: status and perspectives",
+   "outline": "Nuclear effective field theory: status and perspectives",
+   "text": "Nuclear effective field theory: status and perspectives",
+   "corroborated_by": [
+    "outline",
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Nuclear effective field theory: status and perspectives"
  },
  "toc": [
   {
@@ -46,1014 +53,2800 @@
    "title": "Nuclear effective field theory: status and perspectives",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Abstract",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "Contents",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 2,
    "title": "I Introduction",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 3,
    "title": "A Nuclei from the perspective of QCD",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 3,
    "title": "B The way of EFT",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 3,
    "title": "C Nuclear EFTs",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "II Pionless EFT",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 3,
    "title": "A Motivation",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 3,
    "title": "B Weakly bound S-wave systems",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 4,
    "title": "Two-body scattering amplitude",
    "page": 9,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 4,
    "title": "Power counting",
    "page": 9,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 4,
    "title": "Regularization and renormalization",
    "page": 11,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 5,
    "title": "a Schemes and power counting",
    "page": 11,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 5,
    "title": "b Subleading resummation",
    "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 4,
    "title": "Renormalization group",
    "page": 12,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 5,
    "title": "a Running coupling",
    "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 5,
    "title": "b Wilsonian renormalization group",
    "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 4,
    "title": "Dibaryon fields",
    "page": 13,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 4,
    "title": "Spin-isospin projection and parametrizations",
    "page": 13,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 4,
    "title": "Coulomb effects and other isospin breaking",
    "page": 14,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "14"
   },
   {
    "level": 4,
    "title": "External currents",
    "page": 15,
    "source": "outline",
-   "number": "8"
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 3,
    "title": "C Light nuclei: bound and scattered",
    "page": 17,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 4,
    "title": "Extension to three particles",
    "page": 17,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 4,
    "title": "The triton as a near-Efimov state",
    "page": 17,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "17"
   },
   {
    "level": 5,
    "title": "a The three-body force",
    "page": 18,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 5,
    "title": "b The Phillips line",
    "page": 19,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 4,
    "title": "More neutron-deuteron scattering",
    "page": 19,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 5,
    "title": "a Range corrections, partial resummation, and two-body parametrizations",
    "page": 19,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 5,
    "title": "b Higher partial waves",
    "page": 20,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 5,
    "title": "c Ordering of three-body forces",
    "page": 20,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 4,
    "title": "Proton-deuteron scattering and helion",
    "page": 21,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 5,
    "title": "a Nonperturbative Coulomb effects",
    "page": 21,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 5,
    "title": "b Perturbative Coulomb effects",
    "page": 21,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 5,
    "title": "c Dineutron constraints",
    "page": 22,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 4,
    "title": "Infrared regulators",
    "page": 22,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 4,
    "title": "Four nucleons",
    "page": 22,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "22"
   },
   {
    "level": 4,
    "title": "Beyond four nucleons",
    "page": 23,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 4,
    "title": "External currents and reactions",
    "page": 24,
    "source": "outline",
-   "number": "8"
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
   },
   {
    "level": 3,
    "title": "D Outstanding issues and current trends",
    "page": 24,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
   },
   {
    "level": 2,
    "title": "III Halo/Cluster EFT",
    "page": 25,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
   },
   {
    "level": 3,
    "title": "A Motivation",
    "page": 25,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
   },
   {
    "level": 3,
    "title": "B S-wave neutron halos",
    "page": 26,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "26"
   },
   {
    "level": 3,
    "title": "C Excited Efimov states in halo nuclei",
    "page": 27,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
   },
   {
    "level": 3,
    "title": "D Ab initio methods and Efimov states in heavier nuclei",
    "page": 29,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "29"
   },
   {
    "level": 3,
    "title": "E Higher partial waves and resonances",
    "page": 30,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "30"
   },
   {
    "level": 3,
    "title": "F Electromagnetic properties and reactions",
    "page": 31,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "31"
   },
   {
    "level": 4,
    "title": "Form Factors",
    "page": 32,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "32"
   },
   {
    "level": 4,
    "title": "E1 transition and photodisintegration",
    "page": 33,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
   },
   {
    "level": 4,
    "title": "Correlations",
    "page": 35,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "35"
   },
   {
    "level": 4,
    "title": "Neutron capture",
    "page": 36,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "36"
   },
   {
    "level": 3,
    "title": "G Proton halos",
    "page": 36,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "36"
   },
   {
    "level": 3,
    "title": "H Cluster systems",
    "page": 37,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "37"
   },
   {
    "level": 3,
    "title": "I Outlook",
    "page": 38,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "38"
   },
   {
    "level": 2,
    "title": "IV Chiral EFT",
    "page": 38,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "38"
   },
   {
    "level": 3,
    "title": "A Motivation",
    "page": 38,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "38"
   },
   {
    "level": 3,
    "title": "B Basic elements",
    "page": 39,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "39"
   },
   {
    "level": 4,
    "title": "Degrees of freedom and symmetries",
    "page": 39,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "39"
   },
   {
    "level": 4,
    "title": "Chiral Lagrangian",
    "page": 40,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "40"
   },
   {
    "level": 3,
    "title": "C Chiral Perturbation Theory and the nuclear potential",
    "page": 41,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "41"
   },
   {
    "level": 4,
    "title": "Power counting",
    "page": 41,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "41"
   },
   {
    "level": 4,
    "title": "Nuclear potential",
    "page": 43,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "43"
   },
   {
    "level": 5,
    "title": "a Leading order",
    "page": 43,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "43"
   },
   {
    "level": 5,
    "title": "b Subleading orders",
    "page": 43,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "43"
   },
   {
    "level": 5,
    "title": "c 2N potential",
    "page": 44,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "44"
   },
   {
    "level": 5,
    "title": "d 3N potential",
    "page": 45,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "45"
   },
   {
    "level": 5,
    "title": "e 4N potential",
    "page": 45,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "45"
   },
   {
    "level": 5,
    "title": "f Isospin violation",
    "page": 45,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "45"
   },
   {
    "level": 5,
    "title": "g Summary",
    "page": 46,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "46"
   },
   {
    "level": 3,
    "title": "D Nuclear amplitudes and observables",
    "page": 46,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "46"
   },
   {
    "level": 4,
    "title": "Weinberg's prescription",
    "page": 46,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "46"
   },
   {
    "level": 4,
    "title": "Renormalization of singular potentials",
    "page": 48,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "48"
   },
   {
    "level": 4,
    "title": "Connection with Pionless EFT",
    "page": 49,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "49"
   },
   {
    "level": 4,
    "title": "Perturbative pions",
    "page": 50,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "50"
   },
   {
    "level": 4,
    "title": "Partly perturbative pions",
    "page": 50,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "50"
   },
   {
    "level": 4,
    "title": "Other approaches",
    "page": 52,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "52"
   },
   {
    "level": 3,
    "title": "E Pion and electroweak reactions",
    "page": 53,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "53"
   },
   {
    "level": 3,
    "title": "F Outstanding issues and current trends",
    "page": 54,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "54"
   },
   {
    "level": 2,
    "title": "V Broader applications",
    "page": 56,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "56"
   },
   {
    "level": 3,
    "title": "A Connection with QCD",
    "page": 56,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "56"
   },
   {
    "level": 4,
    "title": "Nuclear physics at large quark masses",
    "page": 56,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "56"
   },
   {
    "level": 4,
    "title": "Fine-tuning in Chiral EFT and infrared limit cycle",
    "page": 57,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "57"
   },
   {
    "level": 3,
    "title": "B Antinucleon systems",
    "page": 57,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "57"
   },
   {
    "level": 3,
    "title": "C Hypernuclei",
    "page": 58,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "58"
   },
   {
    "level": 3,
    "title": "D Hadronic molecules",
    "page": 58,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "58"
   },
   {
    "level": 3,
    "title": "E Fundamental symmetries",
    "page": 59,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "59"
   },
   {
    "level": 4,
    "title": "Parity violation",
    "page": 59,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "59"
   },
   {
    "level": 4,
    "title": "Time-reversal violation",
    "page": 60,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "60"
   },
   {
    "level": 4,
    "title": "Other symmetries",
    "page": 60,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "60"
   },
   {
    "level": 3,
    "title": "F Dark-matter detection",
    "page": 61,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "61"
   },
   {
    "level": 3,
    "title": "G Bosons with large scattering length",
    "page": 61,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "61"
   },
   {
    "level": 2,
    "title": "VI Conclusion",
    "page": 61,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "61"
   },
   {
    "level": 2,
    "title": "Acknowledgments",
    "page": 62,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "62"
   },
   {
    "level": 2,
    "title": "References",
    "page": 62,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "62"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Summarizing, the 2N potential (16) is a particularly simple form of Eq. (7) where there are no non-analytic functions and µ = d/2 (s2 = 2) , µ = d + 1 −s2 (s2 = 0, 1) ,",
+   "page": 10,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "10"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "The initial and ﬁnal-state Coulomb interactions are accounted for by the construction in Eq. (37). “Dressing” here refers to resumming the Coulomb interaction to all orders between each pair of C0 vertices, which Kong and Ravndal (1999b, 2000) were able to do using a known analytic expression for th",
+   "page": 15,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "15"
+  },
+  {
+   "kind": "figure",
+   "number": "13",
+   "title": "Since h(1)",
+   "page": 20,
+   "confidence": 0.7,
+   "evidence": [
+    "referenced"
+   ],
+   "page_label": "20"
+  },
+  {
+   "kind": "figure",
+   "number": "15",
+   "title": "The renormalizability and good description of the alpha-particle binding at LO found by Platter et al",
+   "page": 23,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "23"
+  },
+  {
+   "kind": "figure",
+   "number": "17",
+   "title": "The results of Hagen et al. (2013a) imply that 62Ca is possibly the largest and heaviest halo nucleus in the chart of nuclei and demonstrated that a large number of observables would display characteristic features of Eﬁmov physics. Measurement of these observables clearly poses a signiﬁcant challen",
+   "page": 30,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "30"
+  },
+  {
+   "kind": "figure",
+   "number": "19",
+   "title": "",
+   "page": 34,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "34"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "52",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "53",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "54",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "55",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "56",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "57",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "58",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "59",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "60",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "61",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "62",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": "63",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 64,
+   "label": "64",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 65,
+   "label": "65",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 66,
+   "label": "66",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 67,
+   "label": "67",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 68,
+   "label": "68",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 69,
+   "label": "69",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 70,
+   "label": "70",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 71,
+   "label": "71",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 72,
+   "label": "72",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 73,
+   "label": "73",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 74,
+   "label": "74",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 75,
+   "label": "75",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 76,
+   "label": "76",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-contents",
+   "id": "sec-000-nuclear-effective-field-theory-status-and-perspe",
+   "number": null,
+   "title": "Nuclear effective field theory: status and perspectives",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1465,
+   "n_words": 197,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "sec-001-contents",
    "number": null,
    "title": "Contents",
    "level": 2,
    "page_start": 1,
-   "page_end": 9,
-   "n_chars": 37937,
-   "n_words": 6303
+   "page_end": 2,
+   "n_chars": 2342,
+   "n_words": 373,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
-   "id": "sec-001-1-two-body-scattering-amplitude",
+   "id": "sec-002-i-introduction",
+   "number": null,
+   "title": "I Introduction",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 7560,
+   "n_words": 1199,
+   "label_start": "2",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-003-a-nuclei-from-the-perspective-of-qcd",
+   "number": null,
+   "title": "A Nuclei from the perspective of QCD",
+   "level": 3,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 5366,
+   "n_words": 966,
+   "label_start": "3",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-004-b-the-way-of-eft",
+   "number": null,
+   "title": "B The way of EFT",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 7298,
+   "n_words": 1226,
+   "label_start": "4",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-005-c-nuclear-efts",
+   "number": null,
+   "title": "C Nuclear EFTs",
+   "level": 3,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 10314,
+   "n_words": 1732,
+   "label_start": "6",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-006-ii-pionless-eft",
+   "number": null,
+   "title": "II Pionless EFT",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 3919,
+   "n_words": 639,
+   "label_start": "8",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-007-b-weakly-bound-s-wave-systems",
+   "number": null,
+   "title": "B Weakly bound S-wave systems",
+   "level": 3,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 1032,
+   "n_words": 185,
+   "label_start": "9",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-008-1-two-body-scattering-amplitude",
    "number": "1",
    "title": "Two-body scattering amplitude",
    "level": 4,
    "page_start": 9,
    "page_end": 9,
    "n_chars": 101,
-   "n_words": 18
+   "n_words": 18,
+   "label_start": "9",
+   "label_end": "9"
   },
   {
-   "id": "sec-002-2-power-counting",
+   "id": "sec-009-2-power-counting",
    "number": "2",
    "title": "Power counting",
    "level": 4,
    "page_start": 9,
    "page_end": 11,
-   "n_chars": 8546,
-   "n_words": 1541
+   "n_chars": 8616,
+   "n_words": 1615,
+   "label_start": "9",
+   "label_end": "11"
   },
   {
-   "id": "sec-003-3-regularization-and-renormalization",
+   "id": "sec-010-3-regularization-and-renormalization",
    "number": "3",
    "title": "Regularization and renormalization",
    "level": 4,
    "page_start": 11,
-   "page_end": 12,
-   "n_chars": 5318,
-   "n_words": 887
+   "page_end": 11,
+   "n_chars": 939,
+   "n_words": 171,
+   "label_start": "11",
+   "label_end": "11"
   },
   {
-   "id": "sec-004-4-renormalization-group",
+   "id": "sec-011-a-schemes-and-power-counting",
+   "number": null,
+   "title": "a Schemes and power counting",
+   "level": 5,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 3136,
+   "n_words": 518,
+   "label_start": "11",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-012-b-subleading-resummation",
+   "number": null,
+   "title": "b Subleading resummation",
+   "level": 5,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 1190,
+   "n_words": 197,
+   "label_start": "12",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-013-4-renormalization-group",
    "number": "4",
    "title": "Renormalization group",
    "level": 4,
    "page_start": 12,
-   "page_end": 13,
-   "n_chars": 7084,
-   "n_words": 1233
+   "page_end": 12,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "12",
+   "label_end": "12"
   },
   {
-   "id": "sec-005-6-spin-isospin-projection-and-parametrizations",
+   "id": "sec-014-a-running-coupling",
+   "number": null,
+   "title": "a Running coupling",
+   "level": 5,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 1397,
+   "n_words": 250,
+   "label_start": "12",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-015-b-wilsonian-renormalization-group",
+   "number": null,
+   "title": "b Wilsonian renormalization group",
+   "level": 5,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 2085,
+   "n_words": 364,
+   "label_start": "12",
+   "label_end": "13"
+  },
+  {
+   "id": "sec-016-5-dibaryon-fields",
+   "number": "5",
+   "title": "Dibaryon fields",
+   "level": 4,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 3560,
+   "n_words": 644,
+   "label_start": "13",
+   "label_end": "13"
+  },
+  {
+   "id": "sec-017-6-spin-isospin-projection-and-parametrizations",
    "number": "6",
    "title": "Spin-isospin projection and parametrizations",
    "level": 4,
    "page_start": 13,
-   "page_end": 15,
-   "n_chars": 9914,
-   "n_words": 1732
+   "page_end": 14,
+   "n_chars": 3805,
+   "n_words": 705,
+   "label_start": "13",
+   "label_end": "14"
   },
   {
-   "id": "sec-006-8-external-currents",
+   "id": "sec-018-7-coulomb-effects-and-other-isospin-breaking",
+   "number": "7",
+   "title": "Coulomb effects and other isospin breaking",
+   "level": 4,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 6106,
+   "n_words": 1069,
+   "label_start": "14",
+   "label_end": "15"
+  },
+  {
+   "id": "sec-019-8-external-currents",
    "number": "8",
    "title": "External currents",
    "level": 4,
    "page_start": 15,
    "page_end": 17,
-   "n_chars": 8627,
-   "n_words": 1354
+   "n_chars": 6071,
+   "n_words": 984,
+   "label_start": "15",
+   "label_end": "17"
   },
   {
-   "id": "sec-007-1-extension-to-three-particles",
+   "id": "sec-020-c-light-nuclei-bound-and-scattered",
+   "number": null,
+   "title": "C Light nuclei: bound and scattered",
+   "level": 3,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 2537,
+   "n_words": 387,
+   "label_start": "17",
+   "label_end": "17"
+  },
+  {
+   "id": "sec-021-1-extension-to-three-particles",
    "number": "1",
    "title": "Extension to three particles",
    "level": 4,
    "page_start": 17,
-   "page_end": 19,
-   "n_chars": 8889,
-   "n_words": 1522
+   "page_end": 17,
+   "n_chars": 1611,
+   "n_words": 261,
+   "label_start": "17",
+   "label_end": "17"
   },
   {
-   "id": "sec-008-3-more-neutron-deuteron-scattering",
+   "id": "sec-022-2-the-triton-as-a-near-efimov-state",
+   "number": "2",
+   "title": "The triton as a near-Efimov state",
+   "level": 4,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 1710,
+   "n_words": 291,
+   "label_start": "17",
+   "label_end": "18"
+  },
+  {
+   "id": "sec-023-a-the-three-body-force",
+   "number": null,
+   "title": "a The three-body force",
+   "level": 5,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 4549,
+   "n_words": 784,
+   "label_start": "18",
+   "label_end": "19"
+  },
+  {
+   "id": "sec-024-b-the-phillips-line",
+   "number": null,
+   "title": "b The Phillips line",
+   "level": 5,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 904,
+   "n_words": 150,
+   "label_start": "19",
+   "label_end": "19"
+  },
+  {
+   "id": "sec-025-3-more-neutron-deuteron-scattering",
    "number": "3",
    "title": "More neutron-deuteron scattering",
    "level": 4,
    "page_start": 19,
-   "page_end": 21,
-   "n_chars": 8214,
-   "n_words": 1354
+   "page_end": 19,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "19",
+   "label_end": "19"
   },
   {
-   "id": "sec-009-4-proton-deuteron-scattering-and-helion",
+   "id": "sec-026-a-range-corrections-partial-resummation-and-two",
+   "number": null,
+   "title": "a Range corrections, partial resummation, and two-body parametrizations",
+   "level": 5,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 3410,
+   "n_words": 548,
+   "label_start": "19",
+   "label_end": "20"
+  },
+  {
+   "id": "sec-027-b-higher-partial-waves",
+   "number": null,
+   "title": "b Higher partial waves",
+   "level": 5,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 1307,
+   "n_words": 206,
+   "label_start": "20",
+   "label_end": "20"
+  },
+  {
+   "id": "sec-028-c-ordering-of-three-body-forces",
+   "number": null,
+   "title": "c Ordering of three-body forces",
+   "level": 5,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 3362,
+   "n_words": 568,
+   "label_start": "20",
+   "label_end": "21"
+  },
+  {
+   "id": "sec-029-4-proton-deuteron-scattering-and-helion",
    "number": "4",
    "title": "Proton-deuteron scattering and helion",
    "level": 4,
    "page_start": 21,
-   "page_end": 22,
-   "n_chars": 6831,
-   "n_words": 1075
+   "page_end": 21,
+   "n_chars": 3648,
+   "n_words": 573,
+   "label_start": "21",
+   "label_end": "21"
   },
   {
-   "id": "sec-010-5-infrared-regulators",
+   "id": "sec-030-a-nonperturbative-coulomb-effects",
+   "number": null,
+   "title": "a Nonperturbative Coulomb effects",
+   "level": 5,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 1722,
+   "n_words": 273,
+   "label_start": "21",
+   "label_end": "22"
+  },
+  {
+   "id": "sec-031-c-dineutron-constraints",
+   "number": null,
+   "title": "c Dineutron constraints",
+   "level": 5,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 1398,
+   "n_words": 219,
+   "label_start": "22",
+   "label_end": "22"
+  },
+  {
+   "id": "sec-032-5-infrared-regulators",
    "number": "5",
    "title": "Infrared regulators",
    "level": 4,
    "page_start": 22,
    "page_end": 22,
-   "n_chars": 3254,
-   "n_words": 535
+   "n_chars": 3249,
+   "n_words": 530,
+   "label_start": "22",
+   "label_end": "22"
   },
   {
-   "id": "sec-011-6-four-nucleons",
+   "id": "sec-033-6-four-nucleons",
    "number": "6",
    "title": "Four nucleons",
    "level": 4,
    "page_start": 22,
    "page_end": 23,
-   "n_chars": 4829,
-   "n_words": 792
+   "n_chars": 4808,
+   "n_words": 773,
+   "label_start": "22",
+   "label_end": "23"
   },
   {
-   "id": "sec-012-7-beyond-four-nucleons",
+   "id": "sec-034-7-beyond-four-nucleons",
    "number": "7",
    "title": "Beyond four nucleons",
    "level": 4,
    "page_start": 23,
    "page_end": 24,
-   "n_chars": 3357,
-   "n_words": 548
+   "n_chars": 3349,
+   "n_words": 542,
+   "label_start": "23",
+   "label_end": "24"
   },
   {
-   "id": "sec-013-8-external-currents-and-reactions",
+   "id": "sec-035-8-external-currents-and-reactions",
    "number": "8",
    "title": "External currents and reactions",
    "level": 4,
    "page_start": 24,
-   "page_end": 32,
-   "n_chars": 41568,
-   "n_words": 7063
+   "page_end": 24,
+   "n_chars": 3441,
+   "n_words": 536,
+   "label_start": "24",
+   "label_end": "24"
   },
   {
-   "id": "sec-014-1-form-factors",
+   "id": "sec-036-d-outstanding-issues-and-current-trends",
+   "number": null,
+   "title": "D Outstanding issues and current trends",
+   "level": 3,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 3920,
+   "n_words": 645,
+   "label_start": "24",
+   "label_end": "25"
+  },
+  {
+   "id": "sec-037-iii-halocluster-eft",
+   "number": null,
+   "title": "III Halo/Cluster EFT",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 4315,
+   "n_words": 710,
+   "label_start": "25",
+   "label_end": "26"
+  },
+  {
+   "id": "sec-038-b-s-wave-neutron-halos",
+   "number": null,
+   "title": "B S-wave neutron halos",
+   "level": 3,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 6890,
+   "n_words": 1259,
+   "label_start": "26",
+   "label_end": "27"
+  },
+  {
+   "id": "sec-039-c-excited-efimov-states-in-halo-nuclei",
+   "number": null,
+   "title": "C Excited Efimov states in halo nuclei",
+   "level": 3,
+   "page_start": 27,
+   "page_end": 29,
+   "n_chars": 6750,
+   "n_words": 1149,
+   "label_start": "27",
+   "label_end": "29"
+  },
+  {
+   "id": "sec-040-d-ab-initio-methods-and-efimov-states-in-heavier",
+   "number": null,
+   "title": "D Ab initio methods and Efimov states in heavier nuclei",
+   "level": 3,
+   "page_start": 29,
+   "page_end": 30,
+   "n_chars": 3758,
+   "n_words": 617,
+   "label_start": "29",
+   "label_end": "30"
+  },
+  {
+   "id": "sec-041-e-higher-partial-waves-and-resonances",
+   "number": null,
+   "title": "E Higher partial waves and resonances",
+   "level": 3,
+   "page_start": 30,
+   "page_end": 31,
+   "n_chars": 8909,
+   "n_words": 1605,
+   "label_start": "30",
+   "label_end": "31"
+  },
+  {
+   "id": "sec-042-f-electromagnetic-properties-and-reactions",
+   "number": null,
+   "title": "F Electromagnetic properties and reactions",
+   "level": 3,
+   "page_start": 31,
+   "page_end": 32,
+   "n_chars": 3374,
+   "n_words": 578,
+   "label_start": "31",
+   "label_end": "32"
+  },
+  {
+   "id": "sec-043-1-form-factors",
    "number": "1",
    "title": "Form Factors",
    "level": 4,
    "page_start": 32,
    "page_end": 33,
-   "n_chars": 6332,
-   "n_words": 1121
+   "n_chars": 6325,
+   "n_words": 1118,
+   "label_start": "32",
+   "label_end": "33"
   },
   {
-   "id": "sec-015-2-e1-transition-and-photodisintegration",
+   "id": "sec-044-2-e1-transition-and-photodisintegration",
    "number": "2",
    "title": "E1 transition and photodisintegration",
    "level": 4,
    "page_start": 33,
    "page_end": 35,
-   "n_chars": 8737,
-   "n_words": 1521
+   "n_chars": 8727,
+   "n_words": 1525,
+   "label_start": "33",
+   "label_end": "35"
   },
   {
-   "id": "sec-016-3-correlations",
+   "id": "sec-045-3-correlations",
    "number": "3",
    "title": "Correlations",
    "level": 4,
    "page_start": 35,
    "page_end": 36,
-   "n_chars": 2433,
-   "n_words": 406
+   "n_chars": 2431,
+   "n_words": 406,
+   "label_start": "35",
+   "label_end": "36"
   },
   {
-   "id": "sec-017-4-neutron-capture",
+   "id": "sec-046-4-neutron-capture",
    "number": "4",
    "title": "Neutron capture",
    "level": 4,
    "page_start": 36,
-   "page_end": 39,
-   "n_chars": 17145,
-   "n_words": 2833
+   "page_end": 36,
+   "n_chars": 2167,
+   "n_words": 342,
+   "label_start": "36",
+   "label_end": "36"
   },
   {
-   "id": "sec-018-1-degrees-of-freedom-and-symmetries",
+   "id": "sec-047-g-proton-halos",
+   "number": null,
+   "title": "G Proton halos",
+   "level": 3,
+   "page_start": 36,
+   "page_end": 37,
+   "n_chars": 4552,
+   "n_words": 762,
+   "label_start": "36",
+   "label_end": "37"
+  },
+  {
+   "id": "sec-048-h-cluster-systems",
+   "number": null,
+   "title": "H Cluster systems",
+   "level": 3,
+   "page_start": 37,
+   "page_end": 39,
+   "n_chars": 10362,
+   "n_words": 1718,
+   "label_start": "37",
+   "label_end": "39"
+  },
+  {
+   "id": "sec-049-b-basic-elements",
+   "number": null,
+   "title": "B Basic elements",
+   "level": 3,
+   "page_start": 39,
+   "page_end": 39,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "39",
+   "label_end": "39"
+  },
+  {
+   "id": "sec-050-1-degrees-of-freedom-and-symmetries",
    "number": "1",
    "title": "Degrees of freedom and symmetries",
    "level": 4,
    "page_start": 39,
    "page_end": 40,
-   "n_chars": 4001,
-   "n_words": 690
+   "n_chars": 5447,
+   "n_words": 936,
+   "label_start": "39",
+   "label_end": "40"
   },
   {
-   "id": "sec-019-1-power-counting",
-   "number": "1",
-   "title": "Power counting",
-   "level": 4,
-   "page_start": 40,
-   "page_end": 40,
-   "n_chars": 1378,
-   "n_words": 226
-  },
-  {
-   "id": "sec-020-2-chiral-lagrangian",
+   "id": "sec-051-2-chiral-lagrangian",
    "number": "2",
    "title": "Chiral Lagrangian",
    "level": 4,
    "page_start": 40,
-   "page_end": 42,
-   "n_chars": 12981,
-   "n_words": 2230
+   "page_end": 41,
+   "n_chars": 6681,
+   "n_words": 1172,
+   "label_start": "40",
+   "label_end": "41"
   },
   {
-   "id": "sec-021-2-nuclear-potential",
+   "id": "sec-052-c-chiral-perturbation-theory-and-the-nuclear-pot",
+   "number": null,
+   "title": "C Chiral Perturbation Theory and the nuclear potential",
+   "level": 3,
+   "page_start": 41,
+   "page_end": 41,
+   "n_chars": 325,
+   "n_words": 59,
+   "label_start": "41",
+   "label_end": "41"
+  },
+  {
+   "id": "sec-053-1-power-counting",
+   "number": "1",
+   "title": "Power counting",
+   "level": 4,
+   "page_start": 41,
+   "page_end": 43,
+   "n_chars": 7488,
+   "n_words": 1330,
+   "label_start": "41",
+   "label_end": "43"
+  },
+  {
+   "id": "sec-054-2-nuclear-potential",
    "number": "2",
    "title": "Nuclear potential",
    "level": 4,
-   "page_start": 42,
-   "page_end": 48,
-   "n_chars": 27678,
-   "n_words": 4654
+   "page_start": 43,
+   "page_end": 43,
+   "n_chars": 1158,
+   "n_words": 179,
+   "label_start": "43",
+   "label_end": "43"
   },
   {
-   "id": "sec-022-2-renormalization-of-singular-potentials",
+   "id": "sec-055-a-leading-order",
+   "number": null,
+   "title": "a Leading order",
+   "level": 5,
+   "page_start": 43,
+   "page_end": 44,
+   "n_chars": 6358,
+   "n_words": 1128,
+   "label_start": "43",
+   "label_end": "44"
+  },
+  {
+   "id": "sec-056-c-2n-potential",
+   "number": null,
+   "title": "c 2N potential",
+   "level": 5,
+   "page_start": 44,
+   "page_end": 45,
+   "n_chars": 1806,
+   "n_words": 286,
+   "label_start": "44",
+   "label_end": "45"
+  },
+  {
+   "id": "sec-057-d-3n-potential",
+   "number": null,
+   "title": "d 3N potential",
+   "level": 5,
+   "page_start": 45,
+   "page_end": 45,
+   "n_chars": 2420,
+   "n_words": 404,
+   "label_start": "45",
+   "label_end": "45"
+  },
+  {
+   "id": "sec-058-f-isospin-violation",
+   "number": null,
+   "title": "f Isospin violation",
+   "level": 5,
+   "page_start": 45,
+   "page_end": 46,
+   "n_chars": 3263,
+   "n_words": 527,
+   "label_start": "45",
+   "label_end": "46"
+  },
+  {
+   "id": "sec-059-d-nuclear-amplitudes-and-observables",
+   "number": null,
+   "title": "D Nuclear amplitudes and observables",
+   "level": 3,
+   "page_start": 46,
+   "page_end": 46,
+   "n_chars": 1205,
+   "n_words": 183,
+   "label_start": "46",
+   "label_end": "46"
+  },
+  {
+   "id": "sec-060-1-weinbergs-prescription",
+   "number": "1",
+   "title": "Weinberg's prescription",
+   "level": 4,
+   "page_start": 46,
+   "page_end": 48,
+   "n_chars": 9792,
+   "n_words": 1628,
+   "label_start": "46",
+   "label_end": "48"
+  },
+  {
+   "id": "sec-061-2-renormalization-of-singular-potentials",
    "number": "2",
    "title": "Renormalization of singular potentials",
    "level": 4,
    "page_start": 48,
    "page_end": 49,
-   "n_chars": 7049,
-   "n_words": 1171
+   "n_chars": 7064,
+   "n_words": 1188,
+   "label_start": "48",
+   "label_end": "49"
   },
   {
-   "id": "sec-023-3-connection-with-pionless-eft",
+   "id": "sec-062-3-connection-with-pionless-eft",
    "number": "3",
    "title": "Connection with Pionless EFT",
    "level": 4,
    "page_start": 49,
    "page_end": 50,
-   "n_chars": 2248,
-   "n_words": 396
+   "n_chars": 2247,
+   "n_words": 397,
+   "label_start": "49",
+   "label_end": "50"
   },
   {
-   "id": "sec-024-4-perturbative-pions",
+   "id": "sec-063-4-perturbative-pions",
    "number": "4",
    "title": "Perturbative pions",
    "level": 4,
    "page_start": 50,
    "page_end": 50,
-   "n_chars": 5251,
-   "n_words": 856
+   "n_chars": 5248,
+   "n_words": 853,
+   "label_start": "50",
+   "label_end": "50"
   },
   {
-   "id": "sec-025-5-partly-perturbative-pions",
+   "id": "sec-064-5-partly-perturbative-pions",
    "number": "5",
    "title": "Partly perturbative pions",
    "level": 4,
    "page_start": 50,
    "page_end": 52,
-   "n_chars": 8044,
-   "n_words": 1335
+   "n_chars": 8041,
+   "n_words": 1336,
+   "label_start": "50",
+   "label_end": "52"
   },
   {
-   "id": "sec-026-6-other-approaches",
+   "id": "sec-065-6-other-approaches",
    "number": "6",
    "title": "Other approaches",
    "level": 4,
    "page_start": 52,
-   "page_end": 56,
-   "n_chars": 21671,
-   "n_words": 3461
+   "page_end": 53,
+   "n_chars": 5248,
+   "n_words": 828,
+   "label_start": "52",
+   "label_end": "53"
   },
   {
-   "id": "sec-027-1-nuclear-physics-at-large-quark-masses",
+   "id": "sec-066-e-pion-and-electroweak-reactions",
+   "number": null,
+   "title": "E Pion and electroweak reactions",
+   "level": 3,
+   "page_start": 53,
+   "page_end": 54,
+   "n_chars": 7253,
+   "n_words": 1154,
+   "label_start": "53",
+   "label_end": "54"
+  },
+  {
+   "id": "sec-067-f-outstanding-issues-and-current-trends",
+   "number": null,
+   "title": "F Outstanding issues and current trends",
+   "level": 3,
+   "page_start": 54,
+   "page_end": 56,
+   "n_chars": 6395,
+   "n_words": 1017,
+   "label_start": "54",
+   "label_end": "56"
+  },
+  {
+   "id": "sec-068-v-broader-applications",
+   "number": null,
+   "title": "V Broader applications",
+   "level": 2,
+   "page_start": 56,
+   "page_end": 56,
+   "n_chars": 1212,
+   "n_words": 197,
+   "label_start": "56",
+   "label_end": "56"
+  },
+  {
+   "id": "sec-069-a-connection-with-qcd",
+   "number": null,
+   "title": "A Connection with QCD",
+   "level": 3,
+   "page_start": 56,
+   "page_end": 56,
+   "n_chars": 1402,
+   "n_words": 220,
+   "label_start": "56",
+   "label_end": "56"
+  },
+  {
+   "id": "sec-070-1-nuclear-physics-at-large-quark-masses",
    "number": "1",
    "title": "Nuclear physics at large quark masses",
    "level": 4,
    "page_start": 56,
    "page_end": 57,
-   "n_chars": 2865,
-   "n_words": 482
+   "n_chars": 2863,
+   "n_words": 482,
+   "label_start": "56",
+   "label_end": "57"
   },
   {
-   "id": "sec-028-2-fine-tuning-in-chiral-eft-and-infrared-limit-c",
+   "id": "sec-071-2-fine-tuning-in-chiral-eft-and-infrared-limit-c",
    "number": "2",
    "title": "Fine-tuning in Chiral EFT and infrared limit cycle",
    "level": 4,
    "page_start": 57,
-   "page_end": 59,
-   "n_chars": 14601,
-   "n_words": 2428
+   "page_end": 57,
+   "n_chars": 3925,
+   "n_words": 665,
+   "label_start": "57",
+   "label_end": "57"
   },
   {
-   "id": "sec-029-1-parity-violation",
+   "id": "sec-072-b-antinucleon-systems",
+   "number": null,
+   "title": "B Antinucleon systems",
+   "level": 3,
+   "page_start": 57,
+   "page_end": 58,
+   "n_chars": 5889,
+   "n_words": 961,
+   "label_start": "57",
+   "label_end": "58"
+  },
+  {
+   "id": "sec-073-d-hadronic-molecules",
+   "number": null,
+   "title": "D Hadronic molecules",
+   "level": 3,
+   "page_start": 58,
+   "page_end": 59,
+   "n_chars": 3946,
+   "n_words": 667,
+   "label_start": "58",
+   "label_end": "59"
+  },
+  {
+   "id": "sec-074-e-fundamental-symmetries",
+   "number": null,
+   "title": "E Fundamental symmetries",
+   "level": 3,
+   "page_start": 59,
+   "page_end": 59,
+   "n_chars": 752,
+   "n_words": 116,
+   "label_start": "59",
+   "label_end": "59"
+  },
+  {
+   "id": "sec-075-1-parity-violation",
    "number": "1",
    "title": "Parity violation",
    "level": 4,
    "page_start": 59,
    "page_end": 60,
-   "n_chars": 3200,
-   "n_words": 518
+   "n_chars": 3183,
+   "n_words": 503,
+   "label_start": "59",
+   "label_end": "60"
   },
   {
-   "id": "sec-030-2-time-reversal-violation",
+   "id": "sec-076-2-time-reversal-violation",
    "number": "2",
    "title": "Time-reversal violation",
    "level": 4,
    "page_start": 60,
    "page_end": 60,
-   "n_chars": 2068,
-   "n_words": 333
+   "n_chars": 2064,
+   "n_words": 329,
+   "label_start": "60",
+   "label_end": "60"
   },
   {
-   "id": "sec-031-3-other-symmetries",
+   "id": "sec-077-3-other-symmetries",
    "number": "3",
    "title": "Other symmetries",
    "level": 4,
    "page_start": 60,
-   "page_end": 62,
-   "n_chars": 9145,
-   "n_words": 1427
+   "page_end": 61,
+   "n_chars": 2597,
+   "n_words": 391,
+   "label_start": "60",
+   "label_end": "61"
   },
   {
-   "id": "sec-032-acknowledgments",
+   "id": "sec-078-f-dark-matter-detection",
+   "number": null,
+   "title": "F Dark-matter detection",
+   "level": 3,
+   "page_start": 61,
+   "page_end": 61,
+   "n_chars": 1964,
+   "n_words": 302,
+   "label_start": "61",
+   "label_end": "61"
+  },
+  {
+   "id": "sec-079-g-bosons-with-large-scattering-length",
+   "number": null,
+   "title": "G Bosons with large scattering length",
+   "level": 3,
+   "page_start": 61,
+   "page_end": 62,
+   "n_chars": 4494,
+   "n_words": 705,
+   "label_start": "61",
+   "label_end": "62"
+  },
+  {
+   "id": "sec-080-acknowledgments",
    "number": null,
    "title": "Acknowledgments",
    "level": 2,
    "page_start": 62,
    "page_end": 62,
    "n_chars": 824,
-   "n_words": 127
+   "n_words": 127,
+   "label_start": "62",
+   "label_end": "62"
   },
   {
-   "id": "sec-033-references",
+   "id": "sec-081-references",
    "number": null,
    "title": "References",
    "level": 2,
    "page_start": 62,
    "page_end": 76,
-   "n_chars": 81261,
-   "n_words": 12848
+   "n_chars": 81115,
+   "n_words": 12730,
+   "label_start": "62",
+   "label_end": "76"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 94,
-  "sections": 34,
-  "chars_total": 393381,
+  "toc_inferred_entries": 0,
+  "figure_entries": 6,
+  "figure_sequence_gaps": [
+   "figure 1",
+   "figure 2",
+   "figure 3",
+   "figure 4",
+   "figure 6",
+   "figure 7",
+   "figure 9",
+   "figure 10",
+   "figure 11",
+   "figure 12",
+   "figure 14",
+   "figure 16",
+   "figure 18"
+  ],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 82,
+  "chars_total": 393456,
+  "furniture_lines_stripped": 75,
+  "pages_read_in_print_order": [
+   17
+  ],
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "NFreview.tex",
    "tex_sections": 70,
-   "overlaid": 29,
+   "overlaid": 51,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -1061,90 +2854,221 @@
    },
    "sections": [
     {
-     "id": "sec-000-contents",
+     "id": "sec-000-nuclear-effective-field-theory-status-and-perspe",
+     "title": "Nuclear effective field theory: status and perspectives",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-contents",
      "title": "Contents",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-001-1-two-body-scattering-amplitude",
-     "title": "Two-body scattering amplitude",
-     "prose_ratio": 0.051,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-002-2-power-counting",
-     "title": "Power counting",
-     "prose_ratio": 0.956,
-     "coverage_ratio": 0.72,
+     "id": "sec-002-i-introduction",
+     "title": "I Introduction",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-003-3-regularization-and-renormalization",
-     "title": "Regularization and renormalization",
-     "prose_ratio": 0.973,
-     "coverage_ratio": 0.994,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-004-4-renormalization-group",
-     "title": "Renormalization group",
-     "prose_ratio": 0.982,
-     "coverage_ratio": 0.975,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-005-6-spin-isospin-projection-and-parametrizations",
-     "title": "Spin-isospin projection and parametrizations",
-     "prose_ratio": 0.968,
-     "coverage_ratio": 0.959,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-006-8-external-currents",
-     "title": "External currents",
-     "prose_ratio": 0.976,
-     "coverage_ratio": 0.956,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-007-1-extension-to-three-particles",
-     "title": "Extension to three particles",
+     "id": "sec-003-a-nuclei-from-the-perspective-of-qcd",
+     "title": "A Nuclei from the perspective of QCD",
      "prose_ratio": 0.974,
-     "coverage_ratio": 0.973,
+     "coverage_ratio": 0.993,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-008-3-more-neutron-deuteron-scattering",
-     "title": "More neutron-deuteron scattering",
+     "id": "sec-004-b-the-way-of-eft",
+     "title": "B The way of EFT",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.998,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-c-nuclear-efts",
+     "title": "C Nuclear EFTs",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-ii-pionless-eft",
+     "title": "II Pionless EFT",
      "prose_ratio": 0.966,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-b-weakly-bound-s-wave-systems",
+     "title": "B Weakly bound S-wave systems",
+     "prose_ratio": 0.972,
      "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-009-4-proton-deuteron-scattering-and-helion",
-     "title": "Proton-deuteron scattering and helion",
-     "prose_ratio": 0.99,
-     "coverage_ratio": 0.965,
+     "id": "sec-008-1-two-body-scattering-amplitude",
+     "title": "Two-body scattering amplitude",
+     "prose_ratio": 0.051,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-009-2-power-counting",
+     "title": "Power counting",
+     "prose_ratio": 0.956,
+     "coverage_ratio": 0.74,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-010-5-infrared-regulators",
+     "id": "sec-010-3-regularization-and-renormalization",
+     "title": "Regularization and renormalization",
+     "prose_ratio": 0.205,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-011-a-schemes-and-power-counting",
+     "title": "a Schemes and power counting",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-b-subleading-resummation",
+     "title": "b Subleading resummation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-4-renormalization-group",
+     "title": "Renormalization group",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-014-a-running-coupling",
+     "title": "a Running coupling",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-b-wilsonian-renormalization-group",
+     "title": "b Wilsonian renormalization group",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-5-dibaryon-fields",
+     "title": "Dibaryon fields",
+     "prose_ratio": 0.941,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-017-6-spin-isospin-projection-and-parametrizations",
+     "title": "Spin-isospin projection and parametrizations",
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-018-7-coulomb-effects-and-other-isospin-breaking",
+     "title": "Coulomb effects and other isospin breaking",
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-019-8-external-currents",
+     "title": "External currents",
+     "prose_ratio": 0.784,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-020-c-light-nuclei-bound-and-scattered",
+     "title": "C Light nuclei: bound and scattered",
+     "prose_ratio": 0.92,
+     "coverage_ratio": 0.142,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-021-1-extension-to-three-particles",
+     "title": "Extension to three particles",
+     "prose_ratio": 0.903,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-022-2-the-triton-as-a-near-efimov-state",
+     "title": "The triton as a near-Efimov state",
+     "prose_ratio": 0.36,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-023-a-the-three-body-force",
+     "title": "a The three-body force",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-b-the-phillips-line",
+     "title": "b The Phillips line",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-3-more-neutron-deuteron-scattering",
+     "title": "More neutron-deuteron scattering",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-026-a-range-corrections-partial-resummation-and-two",
+     "title": "a Range corrections, partial resummation, and two-body parametrizations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-027-b-higher-partial-waves",
+     "title": "b Higher partial waves",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-028-c-ordering-of-three-body-forces",
+     "title": "c Ordering of three-body forces",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-029-4-proton-deuteron-scattering-and-helion",
+     "title": "Proton-deuteron scattering and helion",
+     "prose_ratio": 0.667,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-030-a-nonperturbative-coulomb-effects",
+     "title": "a Nonperturbative Coulomb effects",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-031-c-dineutron-constraints",
+     "title": "c Dineutron constraints",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-032-5-infrared-regulators",
      "title": "Infrared regulators",
      "prose_ratio": 0.978,
-     "coverage_ratio": 0.97,
+     "coverage_ratio": 0.975,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-011-6-four-nucleons",
+     "id": "sec-033-6-four-nucleons",
      "title": "Four nucleons",
      "prose_ratio": 0.984,
      "coverage_ratio": 0.996,
@@ -1152,141 +3076,311 @@
      "converter": "latex"
     },
     {
-     "id": "sec-012-7-beyond-four-nucleons",
+     "id": "sec-034-7-beyond-four-nucleons",
      "title": "Beyond four nucleons",
      "prose_ratio": 0.995,
-     "coverage_ratio": 0.982,
+     "coverage_ratio": 0.991,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-013-8-external-currents-and-reactions",
+     "id": "sec-035-8-external-currents-and-reactions",
      "title": "External currents and reactions",
-     "prose_ratio": 0.975,
-     "coverage_ratio": 0.969,
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-014-1-form-factors",
-     "title": "Form Factors",
-     "prose_ratio": 0.984,
-     "coverage_ratio": 0.97,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-015-2-e1-transition-and-photodisintegration",
-     "title": "E1 transition and photodisintegration",
-     "prose_ratio": 0.968,
-     "coverage_ratio": 0.978,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-016-3-correlations",
-     "title": "Correlations",
-     "prose_ratio": 0.975,
-     "coverage_ratio": 0.962,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-017-4-neutron-capture",
-     "title": "Neutron capture",
-     "prose_ratio": 0.968,
-     "coverage_ratio": 0.983,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-018-1-degrees-of-freedom-and-symmetries",
-     "title": "Degrees of freedom and symmetries",
-     "prose_ratio": 0.82,
-     "coverage_ratio": 0.979,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-019-1-power-counting",
-     "title": "Power counting",
-     "prose_ratio": 0.114,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-020-2-chiral-lagrangian",
-     "title": "Chiral Lagrangian",
-     "prose_ratio": 0.886,
-     "coverage_ratio": 0.961,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-021-2-nuclear-potential",
-     "title": "Nuclear potential",
-     "prose_ratio": 0.972,
-     "coverage_ratio": 0.96,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-022-2-renormalization-of-singular-potentials",
-     "title": "Renormalization of singular potentials",
-     "prose_ratio": 0.981,
-     "coverage_ratio": 0.946,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-023-3-connection-with-pionless-eft",
-     "title": "Connection with Pionless EFT",
-     "prose_ratio": 0.918,
+     "id": "sec-036-d-outstanding-issues-and-current-trends",
+     "title": "D Outstanding issues and current trends",
+     "prose_ratio": 0.983,
      "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-024-4-perturbative-pions",
-     "title": "Perturbative pions",
-     "prose_ratio": 0.973,
-     "coverage_ratio": 0.957,
+     "id": "sec-037-iii-halocluster-eft",
+     "title": "III Halo/Cluster EFT",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-025-5-partly-perturbative-pions",
-     "title": "Partly perturbative pions",
-     "prose_ratio": 0.957,
+     "id": "sec-038-b-s-wave-neutron-halos",
+     "title": "B S-wave neutron halos",
+     "prose_ratio": 0.979,
      "coverage_ratio": 0.98,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-026-6-other-approaches",
-     "title": "Other approaches",
+     "id": "sec-039-c-excited-efimov-states-in-halo-nuclei",
+     "title": "C Excited Efimov states in halo nuclei",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-040-d-ab-initio-methods-and-efimov-states-in-heavier",
+     "title": "D Ab initio methods and Efimov states in heavier nuclei",
      "prose_ratio": 0.969,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-041-e-higher-partial-waves-and-resonances",
+     "title": "E Higher partial waves and resonances",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-042-f-electromagnetic-properties-and-reactions",
+     "title": "F Electromagnetic properties and reactions",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-043-1-form-factors",
+     "title": "Form Factors",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-044-2-e1-transition-and-photodisintegration",
+     "title": "E1 transition and photodisintegration",
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-045-3-correlations",
+     "title": "Correlations",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-046-4-neutron-capture",
+     "title": "Neutron capture",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-047-g-proton-halos",
+     "title": "G Proton halos",
+     "prose_ratio": 0.973,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-048-h-cluster-systems",
+     "title": "H Cluster systems",
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-049-b-basic-elements",
+     "title": "B Basic elements",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-050-1-degrees-of-freedom-and-symmetries",
+     "title": "Degrees of freedom and symmetries",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-051-2-chiral-lagrangian",
+     "title": "Chiral Lagrangian",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-052-c-chiral-perturbation-theory-and-the-nuclear-pot",
+     "title": "C Chiral Perturbation Theory and the nuclear potential",
+     "prose_ratio": 0.086,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-053-1-power-counting",
+     "title": "Power counting",
+     "prose_ratio": 0.467,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-054-2-nuclear-potential",
+     "title": "Nuclear potential",
+     "prose_ratio": 0.183,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-055-a-leading-order",
+     "title": "a Leading order",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-056-c-2n-potential",
+     "title": "c 2N potential",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-057-d-3n-potential",
+     "title": "d 3N potential",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-058-f-isospin-violation",
+     "title": "f Isospin violation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-059-d-nuclear-amplitudes-and-observables",
+     "title": "D Nuclear amplitudes and observables",
+     "prose_ratio": 0.967,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-060-1-weinbergs-prescription",
+     "title": "Weinberg's prescription",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-061-2-renormalization-of-singular-potentials",
+     "title": "Renormalization of singular potentials",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.961,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-062-3-connection-with-pionless-eft",
+     "title": "Connection with Pionless EFT",
+     "prose_ratio": 0.918,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-063-4-perturbative-pions",
+     "title": "Perturbative pions",
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-064-5-partly-perturbative-pions",
+     "title": "Partly perturbative pions",
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-065-6-other-approaches",
+     "title": "Other approaches",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-066-e-pion-and-electroweak-reactions",
+     "title": "E Pion and electroweak reactions",
+     "prose_ratio": 0.599,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-067-f-outstanding-issues-and-current-trends",
+     "title": "F Outstanding issues and current trends",
+     "prose_ratio": 0.411,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-068-v-broader-applications",
+     "title": "V Broader applications",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-069-a-connection-with-qcd",
+     "title": "A Connection with QCD",
+     "prose_ratio": 0.971,
      "coverage_ratio": 0.981,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-027-1-nuclear-physics-at-large-quark-masses",
+     "id": "sec-070-1-nuclear-physics-at-large-quark-masses",
      "title": "Nuclear physics at large quark masses",
      "prose_ratio": 0.994,
-     "coverage_ratio": 0.994,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-028-2-fine-tuning-in-chiral-eft-and-infrared-limit-c",
+     "id": "sec-071-2-fine-tuning-in-chiral-eft-and-infrared-limit-c",
      "title": "Fine-tuning in Chiral EFT and infrared limit cycle",
-     "prose_ratio": 0.973,
-     "coverage_ratio": 0.978,
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.988,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-029-1-parity-violation",
+     "id": "sec-072-b-antinucleon-systems",
+     "title": "B Antinucleon systems",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.997,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-073-d-hadronic-molecules",
+     "title": "D Hadronic molecules",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.97,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-074-e-fundamental-symmetries",
+     "title": "E Fundamental symmetries",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-075-1-parity-violation",
      "title": "Parity violation",
      "prose_ratio": 0.989,
      "coverage_ratio": 0.984,
@@ -1294,28 +3388,44 @@
      "converter": "latex"
     },
     {
-     "id": "sec-030-2-time-reversal-violation",
+     "id": "sec-076-2-time-reversal-violation",
      "title": "Time-reversal violation",
      "prose_ratio": 0.991,
-     "coverage_ratio": 0.968,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-031-3-other-symmetries",
+     "id": "sec-077-3-other-symmetries",
      "title": "Other symmetries",
-     "prose_ratio": 0.922,
-     "coverage_ratio": 0.996,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-032-acknowledgments",
+     "id": "sec-078-f-dark-matter-detection",
+     "title": "F Dark-matter detection",
+     "prose_ratio": 0.983,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-079-g-bosons-with-large-scattering-length",
+     "title": "G Bosons with large scattering length",
+     "prose_ratio": 0.884,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-080-acknowledgments",
      "title": "Acknowledgments",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-033-references",
+     "id": "sec-081-references",
      "title": "References",
      "result": "no matching \\section"
     }

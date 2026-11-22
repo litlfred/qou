@@ -16,7 +16,7 @@ LaTeX label: `def:contact-affine-chart`
 
 ## References
 
-- [manuscript] Chapter 1
+- [leitner2026] Chapter 1
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ) names the
 canonical indeterminate `q`. The affine coordinate `Z = α_H / ι_ξ α` is a
@@ -44,7 +44,7 @@ noncomputable def q_inv_param : R_q := LaurentPolynomial.T (-1)
     stereographic projection for the projective line fibres. The
     coordinate components take values in a field `R` (the archimedean
     image of `R_q` under the fibre functor), so the quotient is defined. -/
--- Ref: [manuscript] Chapter 1
+-- Ref: [leitner2026] Chapter 1
 structure ContactAffineChart (M : Type*) (R : Type*) [Field R] where
   /-- The base manifold point. -/
   point : M
@@ -56,22 +56,26 @@ structure ContactAffineChart (M : Type*) (R : Type*) [Field R] where
   reeb_nonzero : reeb_contraction ≠ 0
 
 /-- The affine coordinate Z = α_H / ι_ξ α on the contact chart. -/
--- Ref: [manuscript] Chapter 1
+-- Ref: [leitner2026] Chapter 1
 noncomputable def ContactAffineChart.affineCoord {M : Type*} {R : Type*} [Field R]
     (chart : ContactAffineChart M R) : R :=
   chart.horizontal / chart.reeb_contraction
 
-/-- The affine coordinate is well-defined (denominator nonzero). -/
--- Ref: [manuscript] Chapter 1
+/-- The affine coordinate is well-defined: it is the unique `Z` with
+`Z · ι_ξ α = α_H`. Uses `reeb_nonzero`; without it the quotient `α_H / 0 = 0`
+would not satisfy the equation when `α_H ≠ 0`. (Until 2026-11-21 this theorem
+returned `reeb_nonzero` itself, a field projection flagged by
+`scripts/lean-self-assuming-audit.py`.) -/
 theorem ContactAffineChart.affineCoord_welldefined {M : Type*} {R : Type*} [Field R]
-    (chart : ContactAffineChart M R) :
-    chart.reeb_contraction ≠ 0 :=
-  chart.reeb_nonzero
+    (chart : ContactAffineChart M R) (Z : R) :
+    Z * chart.reeb_contraction = chart.horizontal ↔ Z = chart.affineCoord := by
+  unfold ContactAffineChart.affineCoord
+  rw [eq_div_iff chart.reeb_nonzero]
 
 /-- The deep-quantum limit: `|Z|` is small when the Reeb contraction is
     large relative to the horizontal component (the archimedean image
     `R = ℝ` of the substrate, after the fibre functor). -/
--- Ref: [manuscript] Chapter 1
+-- Ref: [leitner2026] Chapter 1
 theorem deep_quantum_limit {M : Type*} {R : Type*}
     [Field R] [LinearOrder R] [IsStrictOrderedRing R]
     (chart : ContactAffineChart M R)

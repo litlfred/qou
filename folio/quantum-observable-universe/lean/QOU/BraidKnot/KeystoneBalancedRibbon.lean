@@ -20,7 +20,7 @@ twist Xᘁ` against `twist Xᘁ = (twist X)ᘁ`.  Those are the same equation, s
 same object under two names, each with its own `ofSymmetric` instance at priority 100.  Neither had
 a single consumer, so consolidating cost nothing.
 
--- Ref: [manuscript] docs/coordination/s5-so3-keystone.md
+-- Ref: [leitner2026] docs/coordination/s5-so3-keystone.md
 -/
 import QOU.MathlibExt.Ribbon
 

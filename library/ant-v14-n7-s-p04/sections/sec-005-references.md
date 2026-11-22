@@ -8,6 +8,7 @@ pages: 9-10
 source_pdf: ant-v14-n7-s-p04.pdf
 source_sha256: 6abd838a4c933311
 toc_source: inferred
+doc_brief: "Elliptic curves over totally real cubic fields are modular — 7 sections: Front matter; Introduction; Images mod 3, 5, 7 and modularity"
 ---
 [Arbarello et al. 1985] E. Arbarello, M. Cornalba, P. A. Grifﬁths, and J. Harris, Geometry of algebraic curves, I, Grundlehren
 der Math. Wissenschaften 267, Springer, 1985. MR Zbl

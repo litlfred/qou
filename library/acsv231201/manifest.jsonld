@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/acsv231201",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/acsv231201/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "acsv231201",
+  "title": "Analytic Combinatorics in Several Variables Expanded Second Edition",
   "contains": [
+    "library/acsv231201/sections/sec-front-matter",
     "library/acsv231201/sections/sec-000",
     "library/acsv231201/sections/sec-001",
     "library/acsv231201/sections/sec-002",
@@ -95,20 +96,36 @@
     "library/acsv231201/sections/sec-081",
     "library/acsv231201/sections/sec-082",
     "library/acsv231201/sections/sec-083",
-    "library/acsv231201/sections/sec-084"
+    "library/acsv231201/sections/sec-084",
+    "library/acsv231201/sections/sec-085",
+    "library/acsv231201/sections/sec-086",
+    "library/acsv231201/sections/sec-087",
+    "library/acsv231201/sections/sec-088",
+    "library/acsv231201/sections/sec-089",
+    "library/acsv231201/sections/sec-090",
+    "library/acsv231201/sections/sec-091",
+    "library/acsv231201/sections/sec-092",
+    "library/acsv231201/sections/sec-093",
+    "library/acsv231201/sections/sec-094",
+    "library/acsv231201/sections/sec-095",
+    "library/acsv231201/sections/sec-096",
+    "library/acsv231201/sections/sec-097",
+    "library/acsv231201/sections/sec-098"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "acsv231201",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "ACSV231201.pdf",
     "source_sha256": "1a664d0bf666041e9a4c25622a585a2f83e96edd7051993fbb021ed223de1837",
     "pages": 589,
     "arxiv": null,
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

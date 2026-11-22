@@ -1,0 +1,92 @@
+let ?x = calc-2-axis-intersection-cvec A B
+let ?nom = fst ?z and ?den = snd ?x
+have x: ?z = (?nom, ?den)
+
+by simp
+
+hence on-circline-cmat-cvec H (calc-x-axis-intersection-cvec A B)
+proof (subst *, subst x, subst on-circline-cmat-cvec-circline-equation)
+have (sgn(Re B))? = 1
+using (Re B # 0) sgn-pos zero-less-power2 by fastforce
+have (sgrt((Re B)? — (Re A)”))? = (Re B)? — (Re A)?
+using «(Re B)? > (Re A)?»
+by simp
+
+have (—(Re B) + sgn(Re B)xsqrt((Re B)? — (Re A)*)
+(—(Re B))? + (sgn(Re B)*sqrt((Re B)? — (Re A)
+by (simp add: power2-diff)
+( By have ... = (Re B)*(Re B) + (sgn(Re B)«sqrt((Re B)? — (Re A)?))? — 2«(Re B)*sgn(Re B)xsqrt((Re B)?
+— (Re A)?
+by (simp add: power2-eq-square)
+also have ... = (Re B)*(Re B) + (sgn(Re B))?*(sqrt((Re B)? — (Re A)?))? — 2(Re B)xsgn(Re B)xsqrt((Re
+B)? — (Re A)?)
+by (simp add: power-mult-distrib)
+also have ... = (Re B)*(Re B) + (Re B)? — (Re A)? — 2x(Re B)xsgn(Re B)xsqrt((Re B)? — (Re A)?)
+using <(sgrt((Re B)? — (Re A)?))? = (Re B)? — (Re A)» «(sgn(Re B))? = 1»
+by simp
+finally have (—(Re B) + sgn(Re B)«sqrt((Re B)? — (Re A)?))? =
+(Re B)*(Re B) + (Re B)? — (Re A)? — 2x(Re B)xsgn(Re B)*sqrt((Re B)? — (Re A)?)
+by simp
+
+P=
+?))? — 2x(Re B)*sgn(Re B)*sqrt((Re B)? — (Re A)*)
+
+have is-real ?nom is-real ?den
+using <is-real A»
+by simp+
+hence cnj (?nom) = ?nom cnj (?den) = ?den
+by (simp add: eq-cnj-iff-real) +
+hence Ax ?nomx(cnj (2nom)) + Bx ?denx(enj (?nom)) + (cnj B)*(enj (?den))* ?nom + Ax?denx(cnj (?den))
+= Ax?nomx ?nom + Bx ?denx?nom + (cnj B)* ?denx?nom + Ax ?denx ?den
+
+by auto
+
+also have ... = A*?nom*?nom + (B + (enj B))*?denx ?nom + Ax ?denx ?den
+by (simp add:field-simps)
+
+also have ... = Ax?nom*?nom + 2*(Re B)*?den*?nom + Ax ?denx ?den
+by (simp add:complez-add-cnj)
+
+also have ... = Ax?nom? + 2«(Re B)*?den*?nom + Ax?denx?den
+
+by (simp add:power2-eq-square)
+
+also have ... = Ax(—(Re B) + sgn(Re B)xsqrt((Re B)? — (Re A)?))?
+
++ 2x(Re B)xAx(—(Re B) + sgn(Re B)*sqrt((Re B)? — (Re A)*)) + AxAxA
+
+unfolding calc-x-azxis-intersection-cvec-def
+by auto
+
+also have ... = Ax((Re B)*(Re B) + (Re B)? — (Re A)? — 2x(Re B)xsgn(Re B)xsqrt((Re B)? — (Re A)?))
+
++ 2x(Re B)xAx(—(Re B) + sgn(Re B)xsqrt((Re B)? — (Re A)?)) + AxAxA
+using «(—(Re B) + sgn(Re B)*sqrt((Re B)? — (Re A)*))? =
+(Re B)*(Re B) + (Re B)? — (Re A)? — 2«(Re B)*sgn(Re B)*sqrt((Re B)? — (Re A)?)>
+
+by simp
+
+also have ... = Ax((Re B)*(Re B) + (Re B)? — A? — 2x(Re B)xsgn(Re B)xsgrt((Re B)? — (Re A)?))
+
++ 2x(Re B)xAx(—(Re B) + sgn(Re B)xsqrt((Re B)? — (Re A)?)) + AxAxA
+
+using <is-real A»
+by simp
+
+also have ... = 0
+apply (simp add:field-simps)
+by (simp add: power2-eq-square)
+
+finally have Ax?nomx(cnj (?nom)) + Bx ?denx(cnj (?nom)) + (enj B)*(enj (?den))*?nom + Ax?denx(cnj
+
+(?den)) = 0
+
+by simp
+
+thus circline-equation A B (cnj B) A ?nom ?den
+by simp
+
+qed
+thus ?thesis
+
+104

@@ -7,10 +7,11 @@
   "bytes": 418767,
   "pages": 28,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,19 +21,33 @@
    "stamp_date": "19 Feb 2019"
   },
   "doi": null,
-  "title": "DECOMPOSITIONS OF DERIVED CATEGORIES OF GERBES",
-  "authors_raw": "AND OF F AMILIES OF BRAUER\u2013SEVERI VARIETIES",
+  "title": "Decompositions of derived categories of gerbes and families of Brauer–Severi varieties",
+  "authors_raw": "AND OF FAMILIES OF BRAUER–SEVERI VARIETIES",
   "title_lines": [
    "DECOMPOSITIONS OF DERIVED CATEGORIES OF GERBES"
   ],
-  "abstract": "It is well known that the category of quasi-coherent sheaves on a gerbe banded by a diagonalizable group decomposes accordi ng to the char- acters of the group. W e establish the corresponding decompo sition of the unbounded derived category of complexes of sheaves with qua si-coherent co- homology. This generalizes earlier work by Lieblich for ger bes over schemes whereas our gerbes may live over arbitrary algebraic stacks . By combining this decomposition with the semi-orthogonal d ecomposition for a projectivized vector bundle, we deduce a semi-orthogo nal decomposition of the derived category of a family of Brauer\u2013Severi varieti es whose components can be described in terms of twisted sheaves on the base. This reproves and generalizes a result of Bernardara.",
+  "abstract": "It is well known that the category of quasi-coherent sheaves on a gerbe banded by a diagonalizable group decomposes according to the char- acters of the group. We establish the corresponding decomposition of the unbounded derived category of complexes of sheaves with quasi-coherent co- homology. This generalizes earlier work by Lieblich for gerbes over schemes whereas our gerbes may live over arbitrary algebraic stacks. By combining this decomposition with the semi-orthogonal decomposition for a projectivized vector bundle, we deduce a semi-orthogonal decomposition of the derived category of a family of Brauer–Severi varieties whose components can be described in terms of twisted sheaves on the base. This reproves and generalizes a result of Bernardara.",
   "docinfo": {
+   "Title": "Decompositions of derived categories of gerbes and families of Brauer–Severi varieties",
+   "Author": "Daniel Bergh, Olaf M. Schnürer",
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20190219204436-05'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "Decompositions of derived categories of gerbes and families of Brauer\u2013Severi varieties",
-   "Author": "Daniel Bergh, Olaf M. Schn\u00fcrer"
-  }
+   "CreationDate": "D:20190219204436-05'00'"
+  },
+  "title_raw": "DECOMPOSITIONS OF DERIVED CATEGORIES OF GERBES",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Decompositions of derived categories of gerbes and families of Brauer–Severi varieties",
+   "heading": "DECOMPOSITIONS OF DERIVED CATEGORIES OF GERBES AND OF FAMILIES OF BRAUER–SEVERI VARIETIES Contents Introduction Torsion pairs and decompositions of derived categories Gerbes Twisted sheaves The derived category of a gerbe Semi-orthogonal decompositions for Brauer–Severi schemes References 1. Introdu",
+   "outline": "1. Introduction",
+   "text": "DECOMPOSITIONS OF DERIVED CATEGORIES OF GERBES",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "DECOMPOSITIONS OF DERIVED CATEGORIES OF GERBES"
  },
  "toc": [
   {
@@ -40,53 +55,286 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Torsion pairs and decompositions of derived categories",
    "page": 5,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Gerbes",
    "page": 13,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Twisted sheaves",
    "page": 16,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The derived category of a gerbe",
    "page": 20,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "Semi-orthogonal decompositions for Brauer\u2013Severi schemes",
+   "title": "Semi-orthogonal decompositions for Brauer–Severi schemes",
    "page": 24,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "References",
    "page": 27,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 950,
+   "n_words": 138,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -94,8 +342,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 5,
-   "n_chars": 14146,
-   "n_words": 2474
+   "n_chars": 13970,
+   "n_words": 2285,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-2-torsion-pairs-and-decompositions-of-derived-ca",
@@ -104,8 +354,10 @@
    "level": 1,
    "page_start": 5,
    "page_end": 13,
-   "n_chars": 22322,
-   "n_words": 4311
+   "n_chars": 21604,
+   "n_words": 4027,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-3-gerbes",
@@ -114,8 +366,10 @@
    "level": 1,
    "page_start": 13,
    "page_end": 16,
-   "n_chars": 9108,
-   "n_words": 1777
+   "n_chars": 8893,
+   "n_words": 1650,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-4-twisted-sheaves",
@@ -124,8 +378,10 @@
    "level": 1,
    "page_start": 16,
    "page_end": 20,
-   "n_chars": 11090,
-   "n_words": 2168
+   "n_chars": 10854,
+   "n_words": 1932,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-004-5-the-derived-category-of-a-gerbe",
@@ -134,18 +390,22 @@
    "level": 1,
    "page_start": 20,
    "page_end": 24,
-   "n_chars": 14433,
-   "n_words": 2755
+   "n_chars": 14090,
+   "n_words": 2468,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-005-6-semi-orthogonal-decompositions-for-brauersever",
    "number": "6",
-   "title": "Semi-orthogonal decompositions for Brauer\u2013Severi schemes",
+   "title": "Semi-orthogonal decompositions for Brauer–Severi schemes",
    "level": 1,
    "page_start": 24,
    "page_end": 27,
-   "n_chars": 7173,
-   "n_words": 1312
+   "n_chars": 7029,
+   "n_words": 1196,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-006-references",
@@ -154,16 +414,26 @@
    "level": 1,
    "page_start": 27,
    "page_end": 28,
-   "n_chars": 4811,
-   "n_words": 694
+   "n_chars": 4749,
+   "n_words": 632,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 7,
-  "sections": 7,
-  "chars_total": 83083,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 8,
+  "chars_total": 82139,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "main.tex",
@@ -176,50 +446,55 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.996,
-     "coverage_ratio": 0.977,
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.958,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-torsion-pairs-and-decompositions-of-derived-ca",
      "title": "Torsion pairs and decompositions of derived categories",
-     "prose_ratio": 0.995,
-     "coverage_ratio": 0.98,
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.974,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-3-gerbes",
      "title": "Gerbes",
-     "prose_ratio": 0.996,
-     "coverage_ratio": 0.972,
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.951,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-4-twisted-sheaves",
      "title": "Twisted sheaves",
-     "prose_ratio": 0.993,
-     "coverage_ratio": 0.967,
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.959,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-5-the-derived-category-of-a-gerbe",
      "title": "The derived category of a gerbe",
-     "prose_ratio": 0.997,
-     "coverage_ratio": 0.978,
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.963,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-005-6-semi-orthogonal-decompositions-for-brauersever",
-     "title": "Semi-orthogonal decompositions for Brauer\u2013Severi schemes",
-     "prose_ratio": 0.996,
-     "coverage_ratio": 0.977,
+     "title": "Semi-orthogonal decompositions for Brauer–Severi schemes",
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.969,
      "result": "overlaid",
      "converter": "pandoc"
     },

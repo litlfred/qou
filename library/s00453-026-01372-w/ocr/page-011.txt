@@ -1,0 +1,48 @@
+Algorithmica (2026) 88:21 Page11of19 21
+
+binary, as we do in our approach, their model requires Y;,..., Y, to be binary. We
+will show that Inequality 4 on the upper tail still holds for supermodular functions
+fi,---, fn- Similarily, Inequality 5, which addresses the lower tail bound, continues
+to apply to submodular functions f,..., fn-
+
+Theorem 3.4 Let X,..., Xm be 1-negatively associated random variables and let
+X{,..., Xj, be independent random variables with the same respective marginal
+distributions as X,..., Xm. Suppose that fj (XP;) for j € [n] are a read-k fam-
+ily, where fj : {0, 1}? — [0,1] are supermodular functions. If we let po =
+(1/n) Viet EL fj (X},)] denote the averaged expectation when the underlying ran-
+dom variables are independent, we have
+
+Prey ins £)(XP,) = (Po + ©)n] < exp(—D(po + €ll po) -n/k).
+Proof Let f(X1,...,Xm) = vel fj(XP;) be the quantity of interest, and note that
+f is the sum of supermodular functions so it is supermodular as well.
+
+We will follow the standard proof via exponential moments. Let 2 > 0; we have
+
+Pri f(X1,.--, Xm) = (po + €)n] = Prlexp(a: f(X1,..-, Xm)) = exp(a- (po + €)n)] (6)
+< Efexp(Qa: f(X1,..., Xm))]/ exp(a (po +€)n), (7)
+
+where the inequality follows by Markov’s. Since f is supermodular, we have by
+Corollary 3.2 that
+
+Elexp(a- f(X1,..-, Xm))] S$ ElexpQ- f(X},-.-, Xmn))] = ElexpQ - 21 Sj (Xp))]-
+(8)
+
+In the new proof of concentration of read-k families, given in the Appendix, we show
+that
+
+I/k
+Blexp@ + Dh FX},))1 S (Tar Blexp@- Xp).
+Combining equations 6-9, we have
+hn I/k
+PrLf(X1, ++ Xm) = (poten) < (Tai Blexptka + f,(Xp,))/expe(po + nl).
+
+Let A’ = kA; since A > 0 is a parameter we set, we can view 4’ > 0 as a parameter as
+well. We will abuse notation and replace 2’ with A, so we have
+
+1/k
+PrLf(X1s-+++ Xm) = (pote) < ([Thas Elexp@ + f(X},))/expA(po + ©)n])
+
+for any A > 0. Now, observe that the right hand side of the inequality is the exact same
+as in the proof of the standard Chernoff bound under independence, except with an
+
+cay Springer

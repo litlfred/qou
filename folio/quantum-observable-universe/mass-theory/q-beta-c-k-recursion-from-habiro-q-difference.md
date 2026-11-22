@@ -1,4 +1,4 @@
-*Let $F(q) \in \mathbb{Z}[q, q^{-1}]^\wedge$ be a fibre-level Habiro element associated to the operator-valued $T_\beta$ selection ([`prop:t-beta-markov-frobenius-collapse`](t-beta-markov-frobenius-collapse.md)). Let $F(q)$ satisfy a $q$-difference equation of depth $d$:*
+*Let $F(q) \in \mathbb{Z}[q, q^{-1}]^\wedge$ be a fibre-level Habiro element associated to the operator-valued $T_\beta$ selection ([Min-Frobenius-norm collapse: T_β = S · 1 under the canonical Markov-trace inner product on H_n(R, q)](t-beta-markov-frobenius-collapse.md)). Let $F(q)$ satisfy a $q$-difference equation of depth $d$:*
 
 $$
 F(q\xi) \;=\; R(q,\xi)\cdot F(\xi), \qquad R(q,\xi) \in \mathbb{Q}(q)[\xi, \xi^{-1}] \text{ of degree} \le d.
@@ -12,11 +12,13 @@ $$
 
 *with kernel coefficients $\{a_j\}$ extracted from $R(q_0, \xi)$ via the $(u;u)_m \to u^k$ Habiro change-of-basis.*
 
+The existence of such a recursion is a hypothesis on $F$. For the colored Jones function of a knot, a nonzero linear $q$-difference recursion, with coefficients polynomial in $q^{\pm 1}$ and $q^n$, always exists (it is $q$-holonomic, \cite[Thm.~1]{garoufalidis-le-2005}); that $F$ is of this kind is not established here, and that theorem gives no bound on the depth $d$.
+
 The operator content is $T_\beta = S \cdot \mathbf{1}$, with $S$ pinned by the SDP constraint. The selector direction is $S$-independent and $q$-rational. The scalar $S = \mathfrak{Q}_\beta/E_0$ is not the ladder normalization. Together, these define $F(q) = \mathfrak{Q}_\beta(q)/[Q_A(q) \cdot \cos(\alpha_{\mathrm{eff}}(q))]$ as a single fibre-level Habiro object. Its $q$-difference structure generates the $c_k$.
 
-The sequence $c_2, \ldots, c_8$ collapses to the proved seed $c_2 = -1$ and a kernel $R(q_0, \xi)$ of bounded degree $d$. The recursion generates $c_3, \ldots, c_8$ automatically.
+The sequence $c_2, \ldots, c_8$ collapses to the structural seed $c_2 = -1$ and a kernel $R(q_0, \xi)$ of bounded degree $d$. The recursion generates $c_3, \ldots, c_8$ automatically.
 
-We write the recursion coefficients as elementary symmetric polynomials $a_j = e_j(\{r_\lambda\})$ of the per-mode rates $r_\lambda = (q-1)\mu_\lambda$. Under the bar involution $q \mapsto q^{-1}$, the rates are bar-odd. We formally prove that $a_j$ alternates bar-parity. The recursion step and the parity-alternation theorem form the structural law behind the ladder's parity bookkeeping.
+Write the recursion coefficients as elementary symmetric polynomials $a_j = e_j(\{r_\lambda\})$ of the per-mode rates $r_\lambda = (q-1)\mu_\lambda$. Under the bar involution $q \mapsto q^{-1}$ the prefactor is not bar-odd: $q-1 \mapsto q^{-1}-1 = -(q-1)/q$. It is bar-odd only up to the monomial twist $q$, $(q^{-1}-1)\,q = -(q-1)$ (the $j=1$ case of the Habiro-basis twist, `QOU.QBeta.pochFactor_bar_twist`). If every $\mu_\lambda$ is bar-even, a product of $j$ rates therefore picks up the sign $(-1)^j$ and the twist $q^j$. Then $a_j$ is bar-even for even $j$ and bar-odd for odd $j$, up to $q^j$. Both qualifications are part of the claim. The twist is not optional, and bar-evenness of the $\mu_\lambda$ is a hypothesis that is not established here. Under them, the alternation is the structural law behind the ladder's parity bookkeeping.
 
 The cyclotomic factors $\Phi_d$ for $d \in \{2,3,6\}$ and for all primes $p$ are self-reciprocal. Divisibility by $\Phi_n$ is invariant under the bar involution for every $n > 1$. The identity $\Phi_n(1/q)\,q^{\varphi(n)} = \Phi_n(q)$ guarantees period-3 closure.
 

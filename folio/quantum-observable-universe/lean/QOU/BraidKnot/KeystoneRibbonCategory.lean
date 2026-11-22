@@ -57,7 +57,7 @@ separate condition and is untouched.
 No fit; nothing wired; L2 unchanged.  Base ring (§7c): everything is stated over a generic Mathlib
 braided right-rigid category `C`; no `ℝ`.
 
--- Ref: [manuscript] docs/coordination/s5-so3-keystone.md
+-- Ref: [leitner2026] docs/coordination/s5-so3-keystone.md
 -/
 import QOU.BraidKnot.KeystoneRibbonMTCInput
 import QOU.MathlibExt.BraidedQuantumDimension

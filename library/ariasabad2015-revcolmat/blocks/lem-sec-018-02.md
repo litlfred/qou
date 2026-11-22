@@ -1,0 +1,1 @@
+Let g be a ﬁnite dimensional complex semisimple Lie algebra and h ⊂g a Cartan subalgebra. For any α ∈h∗set gα := {x ∈g : [h, x] = α(h)x, for all h ∈h}. Then [gα, gβ] ⊂gα+β. If x ∈gα for α̸ = 0, ad(x) is nilpotent. If α + β̸ = 0 then gα is orthogonal to gβ with respect to the Killing form. In particular, the restriction of κ to h = g0 is nondegenerate.

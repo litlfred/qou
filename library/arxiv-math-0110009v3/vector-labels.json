@@ -1,0 +1,692 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-math-0110009v3",
+  "pages": [
+    {
+      "page": 4,
+      "rotation": 0,
+      "drawings": 77,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1. Plot of log2 δ + n(24 −n)/96 vs. dimension n.",
+        "Figure 1 compares our results with the best packings known as of Decem- ber, 2002 (see Tables I.1(a) and I.1(b) of [CS, pp. xix, xx]), and the best upper bounds previously known in these dimensions (due to Rogers [Ro]). The graph was normalized for comparison with Figure 15 from [CS, p. 14]."
+      ],
+      "labels": [
+        {
+          "text": "692",
+          "bbox": [
+            119.88,
+            89.86,
+            136.13,
+            100.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "HENRY COHN AND NOAM ELKIES",
+          "bbox": [
+            231.12,
+            91.76,
+            379.04,
+            99.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMCSC10"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            164.04,
+            135.34,
+            169.49,
+            146.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "upper curve: Rogers’ upper bound",
+          "bbox": [
+            205.92,
+            146.02,
+            368.51,
+            156.93
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "lower curve: New upper bound",
+          "bbox": [
+            205.92,
+            160.18,
+            353.97,
+            171.09
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            164.04,
+            163.78,
+            169.49,
+            174.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "bottom line: Best packing known",
+          "bbox": [
+            205.92,
+            174.46,
+            363.68,
+            185.37
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            164.04,
+            192.1,
+            169.49,
+            203.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            164.04,
+            220.42,
+            169.49,
+            231.33
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            164.04,
+            248.74,
+            169.49,
+            259.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            203.16,
+            260.38,
+            208.61,
+            271.29
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "8",
+          "bbox": [
+            231.48,
+            260.38,
+            236.93,
+            271.29
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "12",
+          "bbox": [
+            257.16,
+            260.38,
+            268.01,
+            271.29
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "16",
+          "bbox": [
+            285.48,
+            260.38,
+            296.33,
+            271.29
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "20",
+          "bbox": [
+            313.8,
+            260.38,
+            324.65,
+            271.29
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "24",
+          "bbox": [
+            342.24,
+            260.38,
+            353.09,
+            271.29
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "28",
+          "bbox": [
+            370.56,
+            260.38,
+            381.41,
+            271.29
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "32",
+          "bbox": [
+            398.88,
+            260.38,
+            409.73,
+            271.29
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            155.52,
+            276.7,
+            169.49,
+            295.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "−2",
+          "bbox": [
+            155.52,
+            305.02,
+            169.49,
+            323.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "−3",
+          "bbox": [
+            155.52,
+            333.34,
+            169.49,
+            351.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Figure 1. Plot of log2 δ + n(24 −n)/96 vs. dimension n.",
+          "bbox": [
+            171.72,
+            370.3,
+            438.63,
+            388.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "8 and 24 dimensions. (The solutions in dimensions 8 and 24 are obtained from",
+          "bbox": [
+            119.88,
+            403.06,
+            490.43,
+            413.97
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the minimal nonzero vectors in the E8 and Leech lattices.) Because we know",
+          "bbox": [
+            119.88,
+            416.86,
+            490.38,
+            429.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "a priori that the answer must be an integer, any upper bound within less than 1",
+          "bbox": [
+            119.88,
+            430.48,
+            490.38,
+            441.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "of the truth would suﬃce. Remarkably, the linear programming bound gives",
+          "bbox": [
+            119.88,
+            444.7,
+            490.2,
+            455.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the exact answer, with no need to take into account its integrality. By contrast,",
+          "bbox": [
+            119.88,
+            458.62,
+            490.24,
+            469.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "in most dimensions it gives a noninteger. The remarkable exactness seems to",
+          "bbox": [
+            119.88,
+            472.54,
+            490.34,
+            483.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "occur only in dimensions 1, 2, 8, and 24. We observe the same numerically in",
+          "bbox": [
+            119.88,
+            486.34,
+            490.39,
+            497.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "our case, but can prove it only for dimension 1.",
+          "bbox": [
+            119.88,
+            500.26,
+            346.39,
+            511.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Figure 1 compares our results with the best packings known as of Decem-",
+          "bbox": [
+            141.72,
+            514.18,
+            490.22,
+            525.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "ber, 2002 (see Tables I.1(a) and I.1(b) of [CS, pp. xix, xx]), and the best upper",
+          "bbox": [
+            119.88,
+            528.1,
+            490.65,
+            539.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "bounds previously known in these dimensions (due to Rogers [Ro]). The graph",
+          "bbox": [
+            119.88,
+            542.02,
+            490.4,
+            552.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "was normalized for comparison with Figure 15 from [CS, p. 14].",
+          "bbox": [
+            119.88,
+            555.82,
+            423.75,
+            566.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "2. Lattices, Fourier transforms, and Poisson summation",
+          "bbox": [
+            151.68,
+            587.92,
+            458.53,
+            598.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Given a lattice Λ ⊂Rn, the dual lattice Λ∗is deﬁned by",
+          "bbox": [
+            141.72,
+            613.16,
+            409.45,
+            634.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR10",
+            "CMSY10",
+            "CMSY8",
+            "CMTI10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            10.96
+          ]
+        },
+        {
+          "text": "Λ∗= {y | ⟨x, y⟩∈Z for all x ∈Λ};",
+          "bbox": [
+            222.36,
+            634.04,
+            387.75,
+            655.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            10.96
+          ]
+        },
+        {
+          "text": "it is easily seen to be the lattice with basis given by the dual basis to any",
+          "bbox": [
+            119.88,
+            657.82,
+            490.44,
+            668.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "basis of Λ. The covolume |Λ| = vol(Rn/Λ) of a lattice Λ is the volume of any",
+          "bbox": [
+            119.88,
+            668.96,
+            490.44,
+            690.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10",
+            "CMTI10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91,
+            10.96
+          ]
+        },
+        {
+          "text": "fundamental parallelotope. It satisﬁes |Λ||Λ∗| = 1. Given any lattice Λ with",
+          "bbox": [
+            119.88,
+            683.78,
+            490.4,
+            704.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        }
+      ]
+    }
+  ]
+}

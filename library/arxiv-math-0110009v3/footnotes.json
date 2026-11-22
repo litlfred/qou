@@ -1,0 +1,1058 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-math-0110009v3",
+ "status": "determined",
+ "pages_unread": [
+  11,
+  12
+ ],
+ "body_size": 10.9,
+ "footnotes": [
+  {
+   "id": "fn-p002-1",
+   "page": 2,
+   "mark": "1",
+   "text": "W.-Y.Hsianghasrecentlyannouncedasolutionofthe8-dimensionalspherepackingproblem [Hs], but the details are not yet public. His methods are apparently quite diﬀerent from ours.",
+   "marks": [
+    {
+     "page": 2,
+     "context": "known"
+    }
+   ],
+   "block": "library/arxiv-math-0110009v3/blocks/prose-sec-002"
+  }
+ ],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "n",
+   "context": "Euclidean space.More precisely, what fraction of R"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "The sphere packing problem in R"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "formation,see[CS].RecallthatalatticeinR"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "integerlinearcombinationsofabasisofR"
+  },
+  {
+   "page": 2,
+   "mark": "n",
+   "context": "spherepackingistostartwithalatticeΛ⊂R"
+  },
+  {
+   "page": 3,
+   "mark": "8",
+   "context": "pectively.TheE8latticeiseasytodeﬁne.ItconsistsofallpointsofR"
+  },
+  {
+   "page": 3,
+   "mark": "8",
+   "context": "E8istheuniquelatticeinR"
+  },
+  {
+   "page": 3,
+   "mark": "8",
+   "context": "of8,andinR"
+  },
+  {
+   "page": 3,
+   "mark": "8",
+   "context": "of8,andinR8thereisonlyone,uptoisometriesofR"
+  },
+  {
+   "page": 3,
+   "mark": "24",
+   "context": "unique even unimodular lattice in R"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "Figure1.Plotoflog"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "GivenalatticeΛ ⊂R"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "basisofΛ.Thecovolume|Λ| =vol(R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "andthecenterdensityistherefore(r/2)"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "TheFouriertransformofanL"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "TheFouriertransformofanL1functionf: R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 5,
+   "mark": "f",
+   "context": "Rn"
+  },
+  {
+   "page": 5,
+   "mark": "e",
+   "context": "Rn f(x)"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "Rn f(x)e"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Letα =n/2 −1.Iff: R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Wewilldealwithfunctionsf: R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "formulaapplies;i.e.,foreverylatticeΛ ⊂R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "formulaapplies;i.e.,foreverylatticeΛ ⊂Rnandeveryvectorv∈R"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "A function f: R"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "Admissibilityimpliesthatfand"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Z"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "forwhich"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "Supposef:R"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "(2)"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "2n"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "Noticethatbecause"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "f(0)>0.If"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "forallv∈R"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "f(x + v"
+  },
+  {
+   "page": 6,
+   "mark": "k",
+   "context": "f(x + vj−v"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "e"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "e2πi⟨v"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "thesummandwitht=0,whichequalsN"
+  },
+  {
+   "page": 6,
+   "mark": "b",
+   "context": "thesummandwitht=0,whichequalsN2"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "x+v"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "x+vj−v"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "is the diﬀerence between two centers in the packing, so |x+v"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "the diﬀerence between two centers in the packing, so |x+vj−v"
+  },
+  {
+   "page": 7,
+   "mark": "j",
+   "context": "ifandonlyifx = 0andj= k.Whenever|x + v"
+  },
+  {
+   "page": 7,
+   "mark": "k",
+   "context": "ifandonlyifx = 0andj= k.Whenever|x + vj−v"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "Nf(0) ≥N"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "Nf(0) ≥N 2"
+  },
+  {
+   "page": 7,
+   "mark": "f",
+   "context": "Nf(0) ≥N 2 b"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 7,
+   "mark": "b",
+   "context": "2n"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "Supposef: R"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "ThenthecenterdensityofspherepackingsinR"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "henthecenterdensityofspherepackingsinRnisboundedaboveby(r/2)"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "The space R"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "(G, H)isaGelfandpairofLiegroups.ThenL"
+  },
+  {
+   "page": 9,
+   "mark": "c",
+   "context": "sumofdistinctirreduciblerepresentationsofG,say"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "j=0V"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "evaluationgivesamapf"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "j,becauseV"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "K"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "Kj(x, y) = ⟨f"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "Kj(x, y) = ⟨fj(x), f"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "isapolynomialP"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "theunitsphereinR"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "tsphereinRn,wetaket(x, y) = (1 + ⟨x, y⟩)/2,andthepolynomialP"
+  },
+  {
+   "page": 9,
+   "mark": "f",
+   "context": "x∈C"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "x∈Cf"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "witha"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "|C| ≤f(1)/a"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "isboundedbelowby|C|2a"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "isboundedbelowby|C|2a0sincef−a"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "|C| ≤f(1)/a"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "spaces.Toseetheanalogyclearly,weneedtostudyR"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "WecanwriteR"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "WecanwriteRnasG/H,whereGisthegroupofisometriesofR"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "H= O(n).ThenweneedtodecomposeL"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "H= O(n).ThenweneedtodecomposeL2(R"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "integral;speciﬁcally,L"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "integral;speciﬁcally,L2(R"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "0π"
+  },
+  {
+   "page": 10,
+   "mark": "r",
+   "context": "0πr dr,whereπ"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "isgeneratedbythefunctionsx7→e"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "functionsonthesphereofradiusr.TheevaluationmapfromR"
+  },
+  {
+   "page": 10,
+   "mark": "n",
+   "context": "apointx∈R"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "apointx∈Rntothefunctiony7→e"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "e"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "e2πi⟨y,x"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "e2πi⟨y,x1−x"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "(Thisofcoursedependsonlyon|x"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(Thisofcoursedependsonlyon|x1 −x"
+  },
+  {
+   "page": 13,
+   "mark": "b",
+   "context": "Wehave"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "∂t"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "4π"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 13,
+   "mark": "g",
+   "context": "Rn"
+  },
+  {
+   "page": 13,
+   "mark": "b",
+   "context": "Rn g=1.Wewanttomaximize"
+  },
+  {
+   "page": 13,
+   "mark": "f",
+   "context": "Rn g=1.Wewanttomaximizeb"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 13,
+   "mark": "g",
+   "context": "Rn"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 13,
+   "mark": "g",
+   "context": "Rn"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 13,
+   "mark": "g",
+   "context": "Rn"
+  },
+  {
+   "page": 13,
+   "mark": "b",
+   "context": "andhassupport intheballofradius R.Thentheﬁrstorderchangein"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 13,
+   "mark": "h",
+   "context": "Rn"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 13,
+   "mark": "h",
+   "context": "Rn"
+  },
+  {
+   "page": 13,
+   "mark": "g",
+   "context": "Rn h = 0,the function"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "Rn cχR= cR"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 13,
+   "mark": "g",
+   "context": "Rn"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 13,
+   "mark": "g",
+   "context": "Rn"
+  },
+  {
+   "page": 13,
+   "mark": "b",
+   "context": "tomake"
+  },
+  {
+   "page": 13,
+   "mark": "b",
+   "context": "If g is nonnegative everywhere, then so is"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "4π"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "4π"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 14,
+   "mark": "g",
+   "context": "Rn"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "R"
+  },
+  {
+   "page": 14,
+   "mark": "g",
+   "context": "Rn"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "πn/2R"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "f(x) =Jn/2(jn/2|x|)"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "j"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "(n/2)!24"
+  },
+  {
+   "page": 14,
+   "mark": "z",
+   "context": "cos"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "such that"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "implicitlyconsideredonlyfunctionssuchthat"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "Theproblemisthatif"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "bechosensoasnottopush"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "thereforecouldnotﬁndanystationarypointsforwhich"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "todealwiththesediﬃculties.Oneapproachistoassumethat"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "do not push"
+  },
+  {
+   "page": 15,
+   "mark": "b",
+   "context": "OdlyzkoandSloanein[OS].Theideaistoﬁxoneoff(0)and"
+  },
+  {
+   "page": 15,
+   "mark": "n",
+   "context": "Supposeg:R"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "k(2π|x|2)"
+  },
+  {
+   "page": 16,
+   "mark": "k",
+   "context": "eigenvalues(−1)"
+  },
+  {
+   "page": 17,
+   "mark": "b",
+   "context": "whoseFouriertransform"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "Moreprecisely,wetakethequantities2πz"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "haveadoublerootatr,and2πr"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "thiscomputationusingﬂoatingpointarithmetic,wereplace2πr"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "2πr"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "2πr"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "2πz"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "2πz"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "2πz"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "2πz"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "ItisnaturaltoaskwhetherthedensestspherepackinginR"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "h latticeare unique among periodic packings.By contrast,in R"
+  },
+  {
+   "page": 18,
+   "mark": "n",
+   "context": "thehypothesesofTheorem3.2toprovethatΛnisthedensestpackinginR"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "Withoutlossofgenerality,wecanassume that|Λ| = Nandv"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "| = NimpliesthatthepackingusesballsofthesameradiusasthoseinΛ"
+  },
+  {
+   "page": 19,
+   "mark": "j",
+   "context": "f(x + v"
+  },
+  {
+   "page": 19,
+   "mark": "k",
+   "context": "f(x + vj−v"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "e"
+  },
+  {
+   "page": 19,
+   "mark": "j",
+   "context": "e2πi⟨v"
+  },
+  {
+   "page": 19,
+   "mark": "b",
+   "context": "and the f(0) terms cancelthe"
+  },
+  {
+   "page": 19,
+   "mark": "j",
+   "context": "fromtheinequalitiesoneachside.Inparticular,eachvectorx + v"
+  },
+  {
+   "page": 19,
+   "mark": "k",
+   "context": "omtheinequalitiesoneachside.Inparticular,eachvectorx + vj −v"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "SupposeSisasubsetofR"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "thesquarerootofaneveninteger.ThenthesubgroupofR"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "restrictiononnormsimpliesthatSgeneratesadiscretesubgroupofR"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "hence a lattice (because Sspans R"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "LetLbethesubgroupofR"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "perunitvolumeinR"
+  },
+  {
+   "page": 19,
+   "mark": "n",
+   "context": "theperiodicpackinghasonesphereperunitvolumeinR"
+  },
+  {
+   "page": 19,
+   "mark": "8",
+   "context": "andthatlatticemusthaveminimalnorm2inR"
+  },
+  {
+   "page": 19,
+   "mark": "24",
+   "context": "andthatlatticemusthaveminimalnorm2inR8and4inR"
+  },
+  {
+   "page": 19,
+   "mark": "8",
+   "context": "theonlyperiodicpackingsofmaximaldensityinR"
+  },
+  {
+   "page": 19,
+   "mark": "24",
+   "context": "theonlyperiodicpackingsofmaximaldensityinR8andR"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "ForR"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "A"
+  },
+  {
+   "page": 20,
+   "mark": "0",
+   "context": "A2= {(x"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "A2= {(x0, x"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "A2= {(x0, x1, x"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "A2= {(x0, x1, x2) ∈Z"
+  },
+  {
+   "page": 20,
+   "mark": "0",
+   "context": "A2= {(x0, x1, x2) ∈Z3: x"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "A2= {(x0, x1, x2) ∈Z3: x0 + x"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "A2= {(x0, x1, x2) ∈Z3: x0 + x1 + x"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "LetPbeanyspherepackinginR"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "allp ∈R"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "p∈R"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "sity,as follows.Suppose ∆is the maximum packing density in R"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "parallelotopeofanylatticeΛ ⊂R"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "LetCbeaconvexbodyinR"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "theorigin.Supposef:R"
+  },
+  {
+   "page": 21,
+   "mark": "b",
+   "context": "(2)"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 21,
+   "mark": "b",
+   "context": "2n"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "2πr"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "2πz"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "2πz"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "2πz"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "2πz"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "2πz"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "2πz"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "Table4.Valuesof2πr"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "Table4.Valuesof2πr2and2πz"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "ifor"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "R"
+  }
+ ]
+}

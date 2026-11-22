@@ -1,0 +1,40 @@
+Canonical triangulations 1243
+3 The canonical triangulation
+
+3.1 Diagonal exchanges
+
+There is another well-known interpretation of the Farey tessellation F of the hyperbolic
+plane H?. Under the canonical identification H,(T, Z) ~ Z?, where T is the punctured
+torus defined in the Introduction, each rational number in the boundary R=Ru {co}
+of H? can be seen as a slope, ie a proper isotopy class of properly embedded lines
+in T, going from the puncture to itself. The action of SL2(Z) on @) coincides with
+the action of the mapping class group G of T on rational slopes. The edges of the
+Farey tessellation F connect exactly the pairs of rational numbers whose corresponding
+slopes, or curves in T, can be homotoped off each other (away from the puncture).
+The faces of F, having three edges, correspond exactly to the isotopy classes of ideal
+triangulations of T: any such triangulation has one vertex (the puncture), three edges,
+and two triangles (which meet along each edge). As one crosses from a face of F
+to one of its neighbors, exactly one vertex gets replaced, which in the corresponding
+triangulations of T means that exactly one edge is changed. Inspection shows that the
+triangulation must be undergoing a diagonal exchange: erase one edge e, thus liberating
+a quadrilateral space Q of which e was a diagonal, then insert back the other diagonal.
+
+3.2 Tetrahedra
+
+As before, let (p be an element of SL2(Z) with two distinct eigenvalues in R4. In the
+proof of Proposition 2.1, we introduced the triangles fo, t1,... crossed by the axis D
+of y. In view of the above, this yields a nonbacktracking path of diagonal exchanges
+between some triangulation (associated to fo) and its pushforward by y (associated to
+tn).
+
+More precisely, when the oriented line D crosses an edge e of the Farey tessellation,
+e comes with a transverse orientation. So we can define the top (resp. bottom)
+triangulation 7,(e) (resp. T_(e)) of the punctured torus T as being the one associated
+with the Farey triangle crossed just after (resp. before) the edge e. A diagonal exchange
+separates the triangulations 7_(e) and 7,(e). An ideal tetrahedron is by definition a
+space diffeomorphic to an ideal hyperbolic tetrahedron (topologically it is a compact
+tetrahedron with its vertices removed). We can immerse such an ideal tetrahedron A(e)
+in T x R: the boundary of the immersed A(e) is made up of two pleated surfaces (top
+and bottom) homotopic to T and triangulated according to 7+(e) and 7_(e) respectively
+
+Geometry & Topology 10 (2006)

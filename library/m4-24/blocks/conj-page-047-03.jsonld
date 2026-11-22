@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/m4-24/blocks/conj-page-047-03",
+  "@type": [
+    "folio-assistant-sci:Conjecture",
+    "doco:Section"
+  ],
+  "kind": "conjecture",
+  "title": "K. Habiro [165], see also [153, “Theorem 5”]",
+  "pageStart": 47,
+  "pageEnd": 47,
+  "text": "conj-page-047-03.md",
+  "derivedFrom": "library/m4-24/sections/page-047",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/m4-24/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "2.24",
+    "source_kind": "conjecture",
+    "claim_domain": "math",
+    "evidence_kind": "conjectural",
+    "evidence_location": "elsewhere",
+    "evidence_locator": "External attribution (K. Habiro [165], see also [153, “Theorem 5”]) [[16]",
+    "claim_id": "m4-24#conjecture:2.24"
+  }
+}

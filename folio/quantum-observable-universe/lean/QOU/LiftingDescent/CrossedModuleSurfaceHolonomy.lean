@@ -36,7 +36,7 @@ Base ring §7c: none — pure group theory over arbitrary `Group G`, `Group H`.
 
 -- Ref: [yekutieli2015] https://arxiv.org/abs/1007.1250 — Thm 0.4.2 (2-dim Stokes), Thm 0.9.1
 --      (fundamental relation `Ψ(g) = Ad_H(h)`), §0.5 (inertia subgroup `H₀ = ker Φ`, central).
--- Ref: [manuscript] docs/audits/2026-09-05-binding-gap-groupoids-derived-categories-full-tower.md §7e
+-- Ref: [leitner2026] docs/audits/2026-09-05-binding-gap-groupoids-derived-categories-full-tower.md §7e
 -/
 
 namespace QOU.LiftingDescent.CrossedModuleSurfaceHolonomy

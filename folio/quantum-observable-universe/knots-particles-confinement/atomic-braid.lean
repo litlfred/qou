@@ -1,4 +1,4 @@
--- Ref: [manuscript] Ch. 6, §atomic-braid
+-- Ref: [leitner2026] Ch. 6, §atomic-braid
 -- Atomic braid in H_{A+Z}(q)
 
 /-- Particle pair type for crossing coefficients. -/

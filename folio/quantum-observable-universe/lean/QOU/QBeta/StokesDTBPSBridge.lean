@@ -53,7 +53,7 @@ occurs at `4₁`, so a signed ring is correct). No archimedean construct
 
 -- Ref: [garoufalidis-gu-marino2023peacock] GGM 2012.00062 (Conjecture 3(d): Stokes constants = DT invariants = BPS degeneracies)
 -- Ref: [gukov-pei-putrov-vafa2017] GPPV 1701.06567 (BPS Hilbert space of T[M₃] categorifying the index)
--- Ref: [manuscript] quantum-observable-universe/mass-theory/stokes-dt-bps-bridge.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/stokes-dt-bps-bridge.md
 -/
 
 namespace QOU.QBeta

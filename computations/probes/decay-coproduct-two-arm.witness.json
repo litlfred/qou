@@ -1,0 +1,218 @@
+{
+ "producer": "computations/probes/decay_coproduct_two_arm_probe.py",
+ "bean": "qou-g0jn",
+ "arithmetic": "exact (sympy over Q(q)); no floats",
+ "q0_anchor": "none (symbolic in q)",
+ "q0Anchor": "independent",
+ "q0AnchorReason": "exact sympy arithmetic over Q(q) with q a free symbol; no substrate q0 is read or substituted",
+ "arm_A_strand_coev": [
+  {
+   "h_slot": "std",
+   "coev": "plain",
+   "sign": "+",
+   "components": [
+    {
+     "out_quark": "u",
+     "pair": "dubar",
+     "pair_T3": "-1",
+     "coeff": "1"
+    },
+    {
+     "out_quark": "d",
+     "pair": "uubar",
+     "pair_T3": "0",
+     "coeff": "q - 1/q"
+    },
+    {
+     "out_quark": "d",
+     "pair": "ddbar",
+     "pair_T3": "0",
+     "coeff": "q"
+    }
+   ],
+   "W_minus_coeff": "1"
+  },
+  {
+   "h_slot": "std",
+   "coev": "plain",
+   "sign": "-",
+   "components": [
+    {
+     "out_quark": "u",
+     "pair": "dubar",
+     "pair_T3": "-1",
+     "coeff": "1"
+    },
+    {
+     "out_quark": "d",
+     "pair": "ddbar",
+     "pair_T3": "0",
+     "coeff": "1/q"
+    }
+   ],
+   "W_minus_coeff": "1"
+  },
+  {
+   "h_slot": "std",
+   "coev": "pivotal",
+   "sign": "+",
+   "components": [
+    {
+     "out_quark": "u",
+     "pair": "dubar",
+     "pair_T3": "-1",
+     "coeff": "q"
+    },
+    {
+     "out_quark": "d",
+     "pair": "uubar",
+     "pair_T3": "0",
+     "coeff": "q**2 - 1"
+    },
+    {
+     "out_quark": "d",
+     "pair": "ddbar",
+     "pair_T3": "0",
+     "coeff": "1"
+    }
+   ],
+   "W_minus_coeff": "q"
+  },
+  {
+   "h_slot": "std",
+   "coev": "pivotal",
+   "sign": "-",
+   "components": [
+    {
+     "out_quark": "u",
+     "pair": "dubar",
+     "pair_T3": "-1",
+     "coeff": "q"
+    },
+    {
+     "out_quark": "d",
+     "pair": "ddbar",
+     "pair_T3": "0",
+     "coeff": "q**(-2)"
+    }
+   ],
+   "W_minus_coeff": "q"
+  },
+  {
+   "h_slot": "swp",
+   "coev": "plain",
+   "sign": "+",
+   "components": [
+    {
+     "out_quark": "d",
+     "pair": "ddbar",
+     "pair_T3": "0",
+     "coeff": "q"
+    },
+    {
+     "out_quark": "d",
+     "pair": "uubar",
+     "pair_T3": "0",
+     "coeff": "q - 1/q"
+    },
+    {
+     "out_quark": "u",
+     "pair": "dubar",
+     "pair_T3": "-1",
+     "coeff": "1"
+    }
+   ],
+   "W_minus_coeff": "1"
+  },
+  {
+   "h_slot": "swp",
+   "coev": "plain",
+   "sign": "-",
+   "components": [
+    {
+     "out_quark": "d",
+     "pair": "ddbar",
+     "pair_T3": "0",
+     "coeff": "1/q"
+    },
+    {
+     "out_quark": "u",
+     "pair": "dubar",
+     "pair_T3": "-1",
+     "coeff": "1"
+    }
+   ],
+   "W_minus_coeff": "1"
+  },
+  {
+   "h_slot": "swp",
+   "coev": "pivotal",
+   "sign": "+",
+   "components": [
+    {
+     "out_quark": "d",
+     "pair": "ddbar",
+     "pair_T3": "0",
+     "coeff": "1"
+    },
+    {
+     "out_quark": "d",
+     "pair": "uubar",
+     "pair_T3": "0",
+     "coeff": "q**2 - 1"
+    },
+    {
+     "out_quark": "u",
+     "pair": "dubar",
+     "pair_T3": "-1",
+     "coeff": "q"
+    }
+   ],
+   "W_minus_coeff": "q"
+  },
+  {
+   "h_slot": "swp",
+   "coev": "pivotal",
+   "sign": "-",
+   "components": [
+    {
+     "out_quark": "d",
+     "pair": "ddbar",
+     "pair_T3": "0",
+     "coeff": "q**(-2)"
+    },
+    {
+     "out_quark": "u",
+     "pair": "dubar",
+     "pair_T3": "-1",
+     "coeff": "q"
+    }
+   ],
+   "W_minus_coeff": "q"
+  }
+ ],
+ "arm_B_Hq_deconcatenation": [
+  {
+   "word": "s1^4",
+   "n_terms": 5,
+   "any_factor_reaches_proton_weight": false,
+   "W_minus_coeff": "0"
+  },
+  {
+   "word": "(s1 s2)^5",
+   "n_terms": 11,
+   "any_factor_reaches_proton_weight": false,
+   "W_minus_coeff": "0"
+  },
+  {
+   "word": "s1 s2 s1",
+   "n_terms": 4,
+   "any_factor_reaches_proton_weight": false,
+   "W_minus_coeff": "0"
+  }
+ ],
+ "checks": {
+  "B_prediction_zero": true,
+  "A_has_W_minus_component": true
+ }
+}

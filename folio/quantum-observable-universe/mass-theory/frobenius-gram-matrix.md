@@ -33,8 +33,7 @@ $$
 Markov trace). It is **degenerate**: under the production convention D the
 $(1^3)$ Wedderburn block carries $y_{(1^3)} = 0$ symbolically, so that block
 lies in the radical of the form and $\det G = 0$ identically — measured
-$2.89\times10^{-51}$ at 50 dps
-([`GramSignature.lean`](../lean/QOU/QBeta/GramSignature.lean)), against
+$2.89\times10^{-51}$ at 50 dps, against
 $\det G = -0.18920521914403668$ under the excised convention C. $G^{-1}$ does
 not exist. Any statement about the **signature** must name its pairing. On the
 bilinear pairing $\mathrm{tr}_M(b_i b_j)$ that this table builds, the spectrum
@@ -43,29 +42,9 @@ and $(-0.85506726,\ +0.10179667,\ +0.85506726^{\times 3},\ +3.47694980)$ under
 C. On the **star** pairing $\mathrm{tr}_M(b_i b_j^*)$ — the correct one, since
 the Hecke star is $T_w^* = T_{w^{-1}}$, which swaps $L_+ \leftrightarrow L_-$
 on this basis — the form is positive: $(6,0,0)$ under C, $(5,0,1)$ under D.
-The earlier reading of this block as **indefinite** or **Lorentzian** is
-**withdrawn** (commit `748ba9b1`); it was an artefact of quoting the bilinear
-pairing without saying so. What survives both pairings is the single null
+So the form is not indefinite or Lorentzian; an indefinite signature appears
+only on the bilinear pairing. What survives both pairings is the single null
 direction under D.*
-
-> **Digit corrected 2026-09-05** (`qou-i229`, probe
-> `the_gram_block_publishes_a_D_eigenvalue_no_pin_produces_probe.py`, 6/6). The
-> largest **D** eigenvalue read $+4.23033920$. This block's own declared witness
-> computes $4.230339225030225$ at the proton pin — which rounds to
-> $4.2303392\mathbf{3}$, five half-ulps away at the published precision. It is a
-> transcription error rather than a pin difference: recomputing the whole $6
-> \times 6$ from this block's symbolic entries gives $4.2303392\mathbf{3}$ at the
-> proton pin and $4.2303394\mathbf{0}$ at the muon and retired pins, and
-> **no registered $q_0$ produces $4.23033920$.** The other five D entries are
-> correct at the proton pin and unchanged.
->
-> The **C** column is untouched and remains unverified against an independent
-> computation — convention C is excised, so none exists. It does pass the one
-> check its own numbers permit: the six published C eigenvalues multiply to
-> $-0.18920521\underline{5}$ against the published $\det G =
-> -0.18920521\underline{9}144$, a $2.0 \times 10^{-8}$ agreement, which is what
-> six figures rounded to 8 decimals should give. That is internal consistency,
-> not verification.
 
 The Markov-trace computation of the NF basis elements, the
 operator-identification via the Frobenius dual, and the annihilation

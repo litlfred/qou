@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/generalised-markov-traces-and-jucys-murphy-element/blocks/prose-sec-003",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Some central elements in the classical Iwahori-Hecke algebras",
-  "pageStart": 4,
-  "pageEnd": 5,
-  "text": "../sections/sec-003-some-central-elements-in-the-classical-iwahori-h.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/generalised-markov-traces-and-jucys-murphy-element",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/generalised-markov-traces-and-jucys-murphy-element",
+  "title": "Iwahori-Hecke algebras and multiplicative Jucys-Murphy elements",
+  "pageStart": 2,
+  "pageEnd": 3,
+  "text": "../sections/sec-003-iwahori-hecke-algebras-and-multiplicative-jucys.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/generalised-markov-traces-and-jucys-murphy-element/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/generalised-markov-traces-and-jucys-murphy-element/manifest.jsonld",
   "provenance": "ingested"
 }

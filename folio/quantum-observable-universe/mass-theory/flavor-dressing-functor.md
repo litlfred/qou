@@ -11,7 +11,7 @@ $$
 
 *The discrete category $\mathbf{Flavor}$ contains the six quark flavors and identity morphisms. The target $\mathbb{R}_{>0}$ is the positive real line with canonical commutative-monoid structure under multiplication.*
 
-We restrict our focus to the doublet $\{\mathfrak{u}, \mathfrak{d}\}$. We include heavy flavors for forward compatibility, but leave their individual $\mu_q$ values open.
+The focus is the doublet $\{\mathfrak{u}, \mathfrak{d}\}$. Heavy flavors are included for forward compatibility, with their individual $\mu_q$ values open.
 
 The functor bridges two categorical layers:
 

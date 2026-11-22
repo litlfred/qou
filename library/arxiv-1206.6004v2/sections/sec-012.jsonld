@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1206.6004v2/sections/sec-012",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Riera and Rodríguez basis algebraically",
+  "pageStart": 12,
+  "pageEnd": 15,
+  "contains": [
+    "library/arxiv-1206.6004v2/blocks/prose-sec-012"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1206.6004v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1206.6004v2/manifest.jsonld",
+  "provenance": "ingested"
+}

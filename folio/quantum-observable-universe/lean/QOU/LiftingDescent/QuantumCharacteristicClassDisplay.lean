@@ -15,14 +15,14 @@ statement.
 ## References
 
 - [yekutieli2010] Central Extensions of Gerbes
-- [manuscript] §3 Lifting and Descent
+- [leitner2026] §3 Lifting and Descent
 -/
 
 namespace QOU
 
 /-- A quantum characteristic class at level `n`: the obstruction to
     extending the gerbe from level `n` to level `n+1`. -/
--- Ref: [yekutieli2010] §4, [manuscript] §3
+-- Ref: [yekutieli2010] §4, [leitner2026] §3
 structure QuantumCharacteristicClass where
   /-- Level in the brane tower. -/
   level : ℕ

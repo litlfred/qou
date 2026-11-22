@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1312.6411v4
-doc_title: "DUALITY AND TILTING FOR COMMUTATIVE DG RINGS AMNON YEKUTIELI"
+doc_title: "DUALITY AND TILTING FOR COMMUTATIVE DG RINGS"
 section_id: sec-008-8-cohen-macaulay-dg-modules
 section_title: "Cohen-Macaulay DG Modules"
 section_number: 8
 pages: 43-47
 source_pdf: 1312.6411v4.pdf
 source_sha256: ceac22eb8ffe87e6
-doc_brief: "DUALITY AND TILTING FOR COMMUTATIVE DG RINGS AMNON YEKUTIELI — We consider commutative DG rings (better known as nonpositive stronglycommutativeassociativeunitalDGalgebras)."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 1.0
+latex_prose_ratio: 0.995
+latex_coverage_ratio: 0.958
+doc_brief: "DUALITY AND TILTING FOR COMMUTATIVE DG RINGS — We consider commutative DG rings (better known as nonpositive strongly commutative associative unital DG algebras)."
 ---
 \label{sec:cm}
 

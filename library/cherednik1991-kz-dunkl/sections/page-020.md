@@ -1,0 +1,85 @@
+---
+doc_id: cherednik1991-kz-dunkl
+doc_title: "A unification of Knizhnik-Zamolodchikov and Dunkl operators via affine Hecke algebras"
+section_id: page-020
+section_title: "Page 20"
+pages: 20-20
+pdf_page: 20
+source_pdf: cherednik1991-kz-dunkl.pdf
+source_sha256: cae9cf747bb98a46
+text_source: ocr
+granularity: page
+doc_brief: "A unification of Knizhnik-Zamolodchikov and Dunkl operators via affine Hecke algebras — 21 sections: Page 1; Page 2; Page 3"
+---
+430 I. Cherednik
+
+For Heckman’s one (which is self adjoint-see [He1]) the corresponding formula is
+with (Y, 1+ 1)(Y,1— 1)7! instead of (Y;! — 1)~1. Hence,
+
+1
+
+Vi -Vt= 34° Y K.(u, @)(S_—- 1)4
+a>O
+= D «,(y, a) (s,- 1) =V.— Vi,
+and a>O
+Vi =V,
+One has
+
+=P 4,,6,-2 ¥ wl¥,— 170, + 2¢ Y xO, + ¢?
+i=1
+
+a>O a>O
+
+because r{ — c acts trivially on CL Y]” and
+
+n
+
+(u, 4)0; = YI (u, af) 8, = On
+
+1 i=1
+
+Ms
+
+i
+
+(see [Hel, Ex. 3.9]). O
+
+Acknowledgements. This paper was written during my stay at RIMS (Kyoto University) and is
+partially based on my lectures at RIMS on Hecke algebras. I am grateful for the kind invitation
+and for hospitality. I should like to acknowledge my special indebtednes to T. Miwa. I thank S.
+Kato for a useful discussion on his and Lusztig’s works, G. Heckman for the explanation of the
+main points of his last papers, V. Jones, who helped me understand the Lascoux-Schiitzenberger
+results and supplied me with his new notes, and A. Matsuo for many interesting talks about the
+Heckman, Opdam works and his own results. I express also appreciation to E. Date, Y. Ihara, M.
+Jimbo, M. Kashiwara, M. Sato, D. Zagier for their kind interest in my work, to the participants of
+my talks for encouragement, to my other colleagues at RIMS for many useful discussions and to
+S. Miwa for her assistance in preparing the manuscript for publication.
+
+References
+
+[BGG] Bernstein, ILN., Gelfand, I.M., Gelfand, S.1.: Schubret cells and the cohomology of
+G/P. Russ. Math. Surv. 28, 1-26 (1973)
+
+[Bo] Bourbaki, N.: Groupes et algébres de Lie, Chapter 6. Paris: Hermann 1969
+
+[Ch1] Cherednik, I.V.: Generalized braid groups and local r-matrix systems. Dokl. Akad.
+Nauk SSSR, 307:1, 27-34 (1989)
+
+[Ch2] Cherednik, I.V.: Monodromy representations for generalized Knizhnik-Zamolod-
+chikov equations and Hecke algebras. ITP-89-74E, Kiev. (Preprint 1989); Publ. Res.
+Inst. Math. Sci. (to appear)
+
+[(Ch3] Cherednik, I.V.: A new interpretation of Gelfand-Tzetlin bases. Duke Math. J. 54:2,
+563-577 (1987)
+
+[Ch4] Cherednik, I.V.: On special bases of irreducible representations of the degenerate
+affine Hecke algebra. Funct. Anal. Appl. 20:1, 87-89 (1986)
+
+[Ch5] Cherednik, I.V.: Factorized particles on the half-line and root systems. Theor. Math.
+Phys. 61:1, 35-43 (1984)
+
+[De] Demazure, M.: Désingularisation des variétés de Schubert généralisés. Ann. Ec.
+Norm. Supér. 7, 53-88 (1974)
+[Dr] Drinfeld, V.G.: Degenerate affine Hecke algebras and Yangians. Funct. Anal. Appl.
+
+20:1, 69-70 (1986)

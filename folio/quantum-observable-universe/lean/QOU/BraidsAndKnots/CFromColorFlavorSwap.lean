@@ -37,7 +37,7 @@ exist yet; it is deliberately omitted rather than encoded as a bare `Prop`.
 
 Numeric cross-check at q₀: `computations/verify_c_color_swap.py`.
 
--- Ref: [manuscript] conj:c-from-color-flavor-swap
+-- Ref: [leitner2026] conj:c-from-color-flavor-swap
 -/
 
 namespace QOU.BraidsAndKnots
@@ -104,7 +104,7 @@ theorem chiralitySign_conj_invariant (c₁ c₂ : ColorSheet)
     only claim that cannot be derived today, because the closed form of `W`
     is itself open.  Conditional on the upstream channel-assignment class;
     no global instance is provided. -/
--- Ref: [manuscript] conj:c-from-color-flavor-swap
+-- Ref: [leitner2026] conj:c-from-color-flavor-swap
 class CFromColorFlavorSwap [BringFiberAction] [InterNucleonChannelColorTube] where
   /-- The weight tensor is flavor-conjugation invariant. -/
   weight_conj_invariant : ∀ (c₁ c₂ : ColorSheet) (F₁ F₂ : NucleonColorContent),

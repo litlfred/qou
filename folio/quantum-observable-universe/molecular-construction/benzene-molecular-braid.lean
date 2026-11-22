@@ -1,4 +1,4 @@
--- Ref: [manuscript] Ch. 10, §benzene-molecular-braid
+-- Ref: [leitner2026] Ch. 10, §benzene-molecular-braid
 -- Benzene C₆H₆ as a molecular braid
 
 namespace QOU.Molecular

@@ -32,20 +32,21 @@ AGENTS.md §3b-cond item 5.  Restructured per §1a honest dispositions:
   now **derived sorry-free** conditional on that regularity: the class
   carries it as the `C^{1,1}` fields (`S_hasDeriv`, `S'_lipschitz`, `L`),
   and the `O(δq²)` bound then follows via the mean-value inequality.
-- **Claim (iii), derived by ∃-packaging** (`observation_energy_classical_sign`):
-  the class carries *witness data* `q_inc`, `q_dec` where the classical
-  energy respectively increases / decreases (the MassGap-style
-  ∃-repackaging of AGENTS.md §7d U4); the theorem derives the `.md`
-  claim — the classical energy is unconstrained in sign — as the
-  existential over those witnesses.
+- **Claim (iii)** (`observation_energy_classical_sign`): until 2026-11-20
+  the class carried sign-witness points `q_inc`, `q_dec` and the theorem
+  projected them (bean `qou-dx7g`).  It now states that the quantum data
+  (`q`, `δq`, `ℏ`, `S`) leave the classical sign undetermined: contexts with
+  the same quantum data and rising, resp. falling, classical energy exist.
 -/
 
 namespace QOU.QuantumObservableUniverse
 
 /-- Model data for [`prop:observation-energy`].  All fields are *inputs*
-    (defining equations, positivity hypotheses, opaque model data,
-    sign-witness points); none carries a conclusion of the
-    proposition. -/
+    (defining equations, positivity hypotheses, opaque model data, and the
+    `C^{1,1}` regularity of `S`); none carries a conclusion of the
+    proposition.  `S` and `E_classical` remain opaque model data: the corpus's
+    `def:categorical-action` is a categorical morphism, not a real function of
+    `q`, so neither is tied to a definition. -/
 class ObservationEnergyContext where
   /-- Substrate parameter `q : ℝ`. -/
   q : ℝ
@@ -71,18 +72,15 @@ class ObservationEnergyContext where
       of the action at `q` (definitional input, not a conclusion). -/
   R_2_def : ∀ δ : ℝ, R_2 δ = S (q + δ) - S q - δ * dS_dq
   /-- Classical energy `q ↦ E_classical(q)` (the `q → 1` shadow of the
-      action), opaque model data. -/
+      action), opaque model data.  **No sign witnesses are carried** (bean
+      `qou-dx7g`): until 2026-11-20 the class also held points `q_inc`, `q_dec`
+      with fields asserting the energy rises at one and falls at the other, and
+      claim (iii) projected them back out — the self-assuming shape.  Claim (iii)
+      is now `observation_energy_classical_sign`, a statement that the quantum
+      data leave the sign undetermined.  Residual: `E_classical` is not tied to
+      `S` (the `q → 1` shadow of the categorical action is not defined in the
+      corpus). -/
   E_classical : ℝ → ℝ
-  /-- Witness point where the classical energy increases under the
-      perturbation (sign-witness data for claim (iii)). -/
-  q_inc : ℝ
-  /-- Witness point where the classical energy decreases under the
-      perturbation (sign-witness data for claim (iii)). -/
-  q_dec : ℝ
-  /-- The classical energy increases at `q_inc`. -/
-  E_inc : E_classical (q_inc + δq) > E_classical q_inc
-  /-- The classical energy decreases at `q_dec`. -/
-  E_dec : E_classical (q_dec + δq) < E_classical q_dec
   /-- Derivative function `S' = ∂𝔖/∂q` of the categorical action. -/
   S' : ℝ → ℝ
   /-- The action `S` is differentiable everywhere with derivative `S'`. -/
@@ -180,15 +178,29 @@ theorem observation_energy_remainder_quadratic
       ≤ ctx.L * |δ| * |δ| := key
     _ = ctx.L * δ ^ 2 := by rw [mul_assoc, abs_mul_abs_self]; ring
 
-/-- **Claim (iii) — derived from the sign witnesses.**  The classical
-    energy is unconstrained in sign under observation: there exist
-    substrate points where it strictly increases and where it strictly
-    decreases (∃-packaging of the witness fields `q_inc` / `q_dec`). -/
+/-- **Claim (iii) — the quantum data do not fix the classical sign.**
+    "The classical energy can increase or decrease under observation; only the
+    quantum energy monotonically increases."  Stated as: keeping every quantum
+    datum of `ctx` (`q`, `δq`, `ℏ`, the action `S`), there is a context whose
+    classical energy strictly increases across the observation `q ↦ q + δq`
+    and one whose classical energy strictly decreases.  Contrast claim (i),
+    where the same data force `ℏ` to increase.  Derived (bean `qou-dx7g`);
+    the previous form read the conclusion off two witness fields. -/
 theorem observation_energy_classical_sign
     [ctx : ObservationEnergyContext] :
-    (∃ q₁ : ℝ, ctx.E_classical (q₁ + ctx.δq) > ctx.E_classical q₁) ∧
-    (∃ q₂ : ℝ, ctx.E_classical (q₂ + ctx.δq) < ctx.E_classical q₂) :=
-  ⟨⟨ctx.q_inc, ctx.E_inc⟩, ⟨ctx.q_dec, ctx.E_dec⟩⟩
+    (∃ c : ObservationEnergyContext, c.q = ctx.q ∧ c.δq = ctx.δq ∧
+        c.hbar = ctx.hbar ∧ c.S = ctx.S ∧
+        c.E_classical (c.q + c.δq) > c.E_classical c.q) ∧
+    (∃ c : ObservationEnergyContext, c.q = ctx.q ∧ c.δq = ctx.δq ∧
+        c.hbar = ctx.hbar ∧ c.S = ctx.S ∧
+        c.E_classical (c.q + c.δq) < c.E_classical c.q) := by
+  have hδ := ctx.δq_pos
+  refine ⟨⟨{ ctx with E_classical := fun x => x }, rfl, rfl, rfl, rfl, ?_⟩,
+          ⟨{ ctx with E_classical := fun x => -x }, rfl, rfl, rfl, rfl, ?_⟩⟩
+  · show ctx.q + ctx.δq > ctx.q
+    linarith
+  · show -(ctx.q + ctx.δq) < -ctx.q
+    linarith
 
 /-- **Proposition** ([`prop:observation-energy`]) — resolving
     declaration for the `lean.ref` URI
@@ -200,8 +212,8 @@ theorem observation_energy_classical_sign
     with `R₂ = O(δq²)` (equation derived; the quadratic bound carries
     the one honest `sorry`, see
     `observation_energy_remainder_quadratic`); (iii) the classical
-    energy is unconstrained in sign (derived from the witnesses). -/
--- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/observation-energy.md
+    energy's sign is not fixed by the quantum data (derived). -/
+-- Ref: [leitner2026] quantum-observable-universe/quantum-observable-universes/observation-energy.md
 theorem observation_energy [ctx : ObservationEnergyContext] :
     (ctx.hbar (ctx.q + ctx.δq) - ctx.hbar ctx.q =
        ctx.δq / (ctx.q * (ctx.q + ctx.δq)) ∧
@@ -209,8 +221,12 @@ theorem observation_energy [ctx : ObservationEnergyContext] :
     (ctx.S (ctx.q + ctx.δq) =
        ctx.S ctx.q + ctx.δq * ctx.dS_dq + ctx.R_2 ctx.δq ∧
      ∃ C : ℝ, ∀ δ : ℝ, |δ| ≤ ctx.δq → |ctx.R_2 δ| ≤ C * δ ^ 2) ∧
-    ((∃ q₁ : ℝ, ctx.E_classical (q₁ + ctx.δq) > ctx.E_classical q₁) ∧
-     (∃ q₂ : ℝ, ctx.E_classical (q₂ + ctx.δq) < ctx.E_classical q₂)) :=
+    ((∃ c : ObservationEnergyContext, c.q = ctx.q ∧ c.δq = ctx.δq ∧
+        c.hbar = ctx.hbar ∧ c.S = ctx.S ∧
+        c.E_classical (c.q + c.δq) > c.E_classical c.q) ∧
+     (∃ c : ObservationEnergyContext, c.q = ctx.q ∧ c.δq = ctx.δq ∧
+        c.hbar = ctx.hbar ∧ c.S = ctx.S ∧
+        c.E_classical (c.q + c.δq) < c.E_classical c.q)) :=
   ⟨⟨observation_energy_hbar_diff, observation_energy_hbar_diff_pos⟩,
    ⟨observation_energy_action_deformation,
     observation_energy_remainder_quadratic⟩,

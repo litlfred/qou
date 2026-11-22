@@ -122,8 +122,8 @@ theorem f_strict_mono {a b : ℝ} (ha : 0 ≤ a) (hab : a < b) :
     of the q-Toffoli, and must not be cited for it — see the file
     header.  The proof below is unchanged and remains correct.
     Label: prop:toffoli-lp-stability
-    Ref: [manuscript] Chapter 8, prop:toffoli-transfer-matrix
-    Ref: [manuscript] Chapter 4, prop:lp-dual-stability -/
+    Ref: [leitner2026] Chapter 8, prop:toffoli-transfer-matrix
+    Ref: [leitner2026] Chapter 4, prop:lp-dual-stability -/
 theorem toffoli_lp_stable (q : ℝ) :
     q_star_threshold < q ↔ 0 < q + Real.sqrt q - 1 := by
   constructor

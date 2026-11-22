@@ -1,255 +1,837 @@
 {
- "_schema": "pdf-structure/v1",
- "doc_id": "lect-mathematical-ideas-notions-qft-2002",
  "source": {
   "file": "lect-mathematical-ideas-notions-qft-2002.pdf",
   "sha256": "95cac1ccd6c80226180da445d111d22f976f8a9ee3b4325ceccef58abc0c9ba4",
   "bytes": 678429,
-  "pages": 78,
-  "text_source": "embedded",
-  "extractor": "pymupdf",
-  "mtime": "2026-10-10T19:04:50Z",
+  "mtime": "2026-11-15T11:07:55Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "pages": 78,
+  "text_source": "ocr",
+  "runContext": {
+   "sha256": "4bff34d38748f0b3be1534658489f1d1684e4ca9baa74cca962e331824c9e1db"
+  }
  },
  "metadata": {
-  "arxiv": null,
-  "doi": null,
   "title": "Mathematical ideas and notions of quantum field theory",
-  "authors_raw": null,
-  "title_lines": [
-   "MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD",
-   "THEORY"
-  ],
-  "abstract": "1. Generalities on quantum field theory 1.1. Classical mechanics. In classical mechanics, we study the motion of a par- ticle. This motion is described by a (vector) function of one variable, q = q(t), representing the position of the particle as a function of time. This function must satisfy the Newton equation of motion, 0 q¨ = −U (q); where U the potential energy, and the mass of the particle is 1. Another way to express this law of motion is to say that q(t) must be a solution of a certain variational problem. Namely, one introduces the Lagrangian 2 q_ L(q) = − U(q) 2 (the difference of ki",
   "docinfo": {
    "Title": "lect.dvi",
    "Producer": "GPL Ghostscript 10.02.1",
    "Creator": "dvips(k) 5.86d Copyright 1999 Radical Eye Software",
    "CreationDate": "D:20261010190134Z00'00'"
   },
-  "title_raw": "THEMA TICAL IDEAS NOTIONS QUANTUM FIELD THEOR Generalities quantum field theor Classi al",
-  "title_source": "text",
+  "title_raw": null,
+  "title_source": "filename",
   "title_verified": false,
   "title_evidence": {
    "metadata": "lect.dvi",
    "heading": "MA THEMA TICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEOR Generalities on quantum field theor Classi al me hani s. In lassi al me hani s, study the motion of parti le. This motion is des rib ed e tor) fun tion of one ariable, represen ting the osition of the parti le as fun tion of time. This fun tion",
-   "text": "THEMA TICAL IDEAS NOTIONS QUANTUM FIELD THEOR Generalities quantum field theor Classi al",
    "corroborated_by": [],
    "browser_print": false
   },
   "title_note": "Title read from page 1 and the running heads. NO AUTHOR, institution or date appears anywhere in the 78 pages; the upload is 'lect.ps', a dvips 5.86d PostScript of 'lect.dvi' whose DVI comment reads 'TeX output 2002.12.09:2039'. The title matches P. Etingof's MIT lecture notes of that name (2002) - that attribution is the ingesting agent's recognition and is NOT stated in the file. The PDF here was made from lect.ps with Ghostscript ps2pdf; lect.ps is kept beside it as the original.",
-  "source_note": "Converted: lect.ps (dvips) -> PDF with ps2pdf (Ghostscript 10). The PDF's text layer is unreliable (letter c lost, ligatures as control codes); sections/ carry the rebuilt text."
+  "source_note": "Converted: lect.ps (dvips) -> PDF with ps2pdf (Ghostscript 10). The PDF's text layer is unreliable (letter c lost, ligatures as control codes); sections/ carry the rebuilt text.",
+  "title_prev": "Mathematical ideas and notions of quantum field theory",
+  "title_lines": [
+   "THEMA",
+   "TICAL",
+   "IDEAS",
+   "NOTIONS",
+   "QUANTUM",
+   "FIELD",
+   "THEOR",
+   "Generalities",
+   "quantum",
+   "field",
+   "theor",
+   "Classi al"
+  ]
  },
- "toc": [
-  {
-   "level": 1,
-   "title": "Generalities on quantum field theory",
-   "page": 1,
-   "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "The steepest descent and stationary phase formulas",
-   "page": 4,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Feynman calculus",
-   "page": 7,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "Matrix integrals",
-   "page": 21,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "The Euler characteristic of the moduli space of curves",
-   "page": 30,
-   "source": "inferred",
-   "number": "5"
-  },
-  {
-   "level": 1,
-   "title": "Matrix integrals and counting planar diagrams",
-   "page": 38,
-   "source": "inferred",
-   "number": "6"
-  },
-  {
-   "level": 1,
-   "title": "Quantum mechanics",
-   "page": 41,
-   "source": "inferred",
-   "number": "7"
-  },
-  {
-   "level": 1,
-   "title": "Operator approach to quantum mechanics",
-   "page": 54,
-   "source": "inferred",
-   "number": "8"
-  },
-  {
-   "level": 1,
-   "title": "Fermionic integrals",
-   "page": 61,
-   "source": "inferred",
-   "number": "9"
-  },
-  {
-   "level": 1,
-   "title": "Quantum mechanics for fermions",
-   "page": 67,
-   "source": "inferred",
-   "number": "10"
-  },
-  {
-   "level": 1,
-   "title": "Free field theories in higher dimensions",
-   "page": 73,
-   "source": "inferred",
-   "number": "11"
-  }
- ],
- "toc_source": "inferred",
+ "_schema": "pdf-structure/v1",
+ "doc_id": "lect-mathematical-ideas-notions-qft-2002",
+ "toc_source": "none",
+ "granularity": "page",
  "sections": [
   {
-   "id": "sec-front-matter",
+   "id": "page-001",
    "number": null,
-   "title": "Front matter",
+   "title": "Page 1",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 55,
-   "n_words": 8
+   "n_chars": 2095,
+   "n_words": 369
   },
   {
-   "id": "sec-000-1-generalities-on-quantum-field-theory",
-   "number": "1",
-   "title": "Generalities on quantum field theory",
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
    "level": 1,
-   "page_start": 1,
-   "page_end": 4,
-   "n_chars": 8732,
-   "n_words": 1589
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 3242,
+   "n_words": 569
   },
   {
-   "id": "sec-001-2-the-steepest-descent-and-stationary-phase",
-   "number": "2",
-   "title": "The steepest descent and stationary phase formulas",
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 2986,
+   "n_words": 502
+  },
+  {
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
    "level": 1,
    "page_start": 4,
-   "page_end": 7,
-   "n_chars": 8654,
-   "n_words": 1734
+   "page_end": 4,
+   "n_chars": 2748,
+   "n_words": 506
   },
   {
-   "id": "sec-002-3-feynman-calculus",
-   "number": "3",
-   "title": "Feynman calculus",
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 2063,
+   "n_words": 373
+  },
+  {
+   "id": "page-006",
+   "number": null,
+   "title": "Page 6",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 2358,
+   "n_words": 431
+  },
+  {
+   "id": "page-007",
+   "number": null,
+   "title": "Page 7",
    "level": 1,
    "page_start": 7,
-   "page_end": 21,
-   "n_chars": 28094,
-   "n_words": 5609
+   "page_end": 7,
+   "n_chars": 2233,
+   "n_words": 401
   },
   {
-   "id": "sec-003-4-matrix-integrals",
-   "number": "4",
-   "title": "Matrix integrals",
+   "id": "page-008",
+   "number": null,
+   "title": "Page 8",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 1788,
+   "n_words": 341
+  },
+  {
+   "id": "page-009",
+   "number": null,
+   "title": "Page 9",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 2573,
+   "n_words": 480
+  },
+  {
+   "id": "page-010",
+   "number": null,
+   "title": "Page 10",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 1150,
+   "n_words": 207
+  },
+  {
+   "id": "page-011",
+   "number": null,
+   "title": "Page 11",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 2860,
+   "n_words": 499
+  },
+  {
+   "id": "page-012",
+   "number": null,
+   "title": "Page 12",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 1404,
+   "n_words": 265
+  },
+  {
+   "id": "page-013",
+   "number": null,
+   "title": "Page 13",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 618,
+   "n_words": 123
+  },
+  {
+   "id": "page-014",
+   "number": null,
+   "title": "Page 14",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 2087,
+   "n_words": 389
+  },
+  {
+   "id": "page-015",
+   "number": null,
+   "title": "Page 15",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 2423,
+   "n_words": 439
+  },
+  {
+   "id": "page-016",
+   "number": null,
+   "title": "Page 16",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 3020,
+   "n_words": 521
+  },
+  {
+   "id": "page-017",
+   "number": null,
+   "title": "Page 17",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 1480,
+   "n_words": 290
+  },
+  {
+   "id": "page-018",
+   "number": null,
+   "title": "Page 18",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 1752,
+   "n_words": 328
+  },
+  {
+   "id": "page-019",
+   "number": null,
+   "title": "Page 19",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 1644,
+   "n_words": 273
+  },
+  {
+   "id": "page-020",
+   "number": null,
+   "title": "Page 20",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 1752,
+   "n_words": 308
+  },
+  {
+   "id": "page-021",
+   "number": null,
+   "title": "Page 21",
    "level": 1,
    "page_start": 21,
-   "page_end": 30,
-   "n_chars": 17472,
-   "n_words": 3640
+   "page_end": 21,
+   "n_chars": 2566,
+   "n_words": 472
   },
   {
-   "id": "sec-004-5-the-euler-characteristic-of-the-moduli-spa",
-   "number": "5",
-   "title": "The Euler characteristic of the moduli space of curves",
+   "id": "page-022",
+   "number": null,
+   "title": "Page 22",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 2171,
+   "n_words": 396
+  },
+  {
+   "id": "page-023",
+   "number": null,
+   "title": "Page 23",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 1032,
+   "n_words": 194
+  },
+  {
+   "id": "page-024",
+   "number": null,
+   "title": "Page 24",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 2468,
+   "n_words": 446
+  },
+  {
+   "id": "page-025",
+   "number": null,
+   "title": "Page 25",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 25,
+   "n_chars": 1955,
+   "n_words": 361
+  },
+  {
+   "id": "page-026",
+   "number": null,
+   "title": "Page 26",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 2910,
+   "n_words": 541
+  },
+  {
+   "id": "page-027",
+   "number": null,
+   "title": "Page 27",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 1164,
+   "n_words": 199
+  },
+  {
+   "id": "page-028",
+   "number": null,
+   "title": "Page 28",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 28,
+   "n_chars": 1828,
+   "n_words": 353
+  },
+  {
+   "id": "page-029",
+   "number": null,
+   "title": "Page 29",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 29,
+   "n_chars": 1690,
+   "n_words": 327
+  },
+  {
+   "id": "page-030",
+   "number": null,
+   "title": "Page 30",
    "level": 1,
    "page_start": 30,
-   "page_end": 38,
-   "n_chars": 20142,
-   "n_words": 4074
+   "page_end": 30,
+   "n_chars": 2099,
+   "n_words": 398
   },
   {
-   "id": "sec-005-6-matrix-integrals-and-counting-planar-diagr",
-   "number": "6",
-   "title": "Matrix integrals and counting planar diagrams",
+   "id": "page-031",
+   "number": null,
+   "title": "Page 31",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 31,
+   "n_chars": 3270,
+   "n_words": 586
+  },
+  {
+   "id": "page-032",
+   "number": null,
+   "title": "Page 32",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 32,
+   "n_chars": 3415,
+   "n_words": 630
+  },
+  {
+   "id": "page-033",
+   "number": null,
+   "title": "Page 33",
+   "level": 1,
+   "page_start": 33,
+   "page_end": 33,
+   "n_chars": 867,
+   "n_words": 167
+  },
+  {
+   "id": "page-034",
+   "number": null,
+   "title": "Page 34",
+   "level": 1,
+   "page_start": 34,
+   "page_end": 34,
+   "n_chars": 2521,
+   "n_words": 463
+  },
+  {
+   "id": "page-035",
+   "number": null,
+   "title": "Page 35",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 35,
+   "n_chars": 1823,
+   "n_words": 304
+  },
+  {
+   "id": "page-036",
+   "number": null,
+   "title": "Page 36",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 36,
+   "n_chars": 2711,
+   "n_words": 532
+  },
+  {
+   "id": "page-037",
+   "number": null,
+   "title": "Page 37",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 37,
+   "n_chars": 1475,
+   "n_words": 291
+  },
+  {
+   "id": "page-038",
+   "number": null,
+   "title": "Page 38",
    "level": 1,
    "page_start": 38,
-   "page_end": 41,
-   "n_chars": 6580,
-   "n_words": 1397
+   "page_end": 38,
+   "n_chars": 2380,
+   "n_words": 452
   },
   {
-   "id": "sec-006-7-quantum-mechanics",
-   "number": "7",
-   "title": "Quantum mechanics",
+   "id": "page-039",
+   "number": null,
+   "title": "Page 39",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 39,
+   "n_chars": 2176,
+   "n_words": 400
+  },
+  {
+   "id": "page-040",
+   "number": null,
+   "title": "Page 40",
+   "level": 1,
+   "page_start": 40,
+   "page_end": 40,
+   "n_chars": 2795,
+   "n_words": 525
+  },
+  {
+   "id": "page-041",
+   "number": null,
+   "title": "Page 41",
    "level": 1,
    "page_start": 41,
-   "page_end": 54,
-   "n_chars": 32912,
-   "n_words": 6235
+   "page_end": 41,
+   "n_chars": 1671,
+   "n_words": 324
   },
   {
-   "id": "sec-007-8-operator-approach-to-quantum-mechanics",
-   "number": "8",
-   "title": "Operator approach to quantum mechanics",
+   "id": "page-042",
+   "number": null,
+   "title": "Page 42",
+   "level": 1,
+   "page_start": 42,
+   "page_end": 42,
+   "n_chars": 2824,
+   "n_words": 481
+  },
+  {
+   "id": "page-043",
+   "number": null,
+   "title": "Page 43",
+   "level": 1,
+   "page_start": 43,
+   "page_end": 43,
+   "n_chars": 3104,
+   "n_words": 528
+  },
+  {
+   "id": "page-044",
+   "number": null,
+   "title": "Page 44",
+   "level": 1,
+   "page_start": 44,
+   "page_end": 44,
+   "n_chars": 2624,
+   "n_words": 454
+  },
+  {
+   "id": "page-045",
+   "number": null,
+   "title": "Page 45",
+   "level": 1,
+   "page_start": 45,
+   "page_end": 45,
+   "n_chars": 2230,
+   "n_words": 382
+  },
+  {
+   "id": "page-046",
+   "number": null,
+   "title": "Page 46",
+   "level": 1,
+   "page_start": 46,
+   "page_end": 46,
+   "n_chars": 2084,
+   "n_words": 349
+  },
+  {
+   "id": "page-047",
+   "number": null,
+   "title": "Page 47",
+   "level": 1,
+   "page_start": 47,
+   "page_end": 47,
+   "n_chars": 2354,
+   "n_words": 414
+  },
+  {
+   "id": "page-048",
+   "number": null,
+   "title": "Page 48",
+   "level": 1,
+   "page_start": 48,
+   "page_end": 48,
+   "n_chars": 2364,
+   "n_words": 406
+  },
+  {
+   "id": "page-049",
+   "number": null,
+   "title": "Page 49",
+   "level": 1,
+   "page_start": 49,
+   "page_end": 49,
+   "n_chars": 3052,
+   "n_words": 545
+  },
+  {
+   "id": "page-050",
+   "number": null,
+   "title": "Page 50",
+   "level": 1,
+   "page_start": 50,
+   "page_end": 50,
+   "n_chars": 1855,
+   "n_words": 338
+  },
+  {
+   "id": "page-051",
+   "number": null,
+   "title": "Page 51",
+   "level": 1,
+   "page_start": 51,
+   "page_end": 51,
+   "n_chars": 2389,
+   "n_words": 447
+  },
+  {
+   "id": "page-052",
+   "number": null,
+   "title": "Page 52",
+   "level": 1,
+   "page_start": 52,
+   "page_end": 52,
+   "n_chars": 2812,
+   "n_words": 482
+  },
+  {
+   "id": "page-053",
+   "number": null,
+   "title": "Page 53",
+   "level": 1,
+   "page_start": 53,
+   "page_end": 53,
+   "n_chars": 3066,
+   "n_words": 552
+  },
+  {
+   "id": "page-054",
+   "number": null,
+   "title": "Page 54",
    "level": 1,
    "page_start": 54,
-   "page_end": 61,
-   "n_chars": 17982,
-   "n_words": 3426
+   "page_end": 54,
+   "n_chars": 2553,
+   "n_words": 427
   },
   {
-   "id": "sec-008-9-fermionic-integrals",
-   "number": "9",
-   "title": "Fermionic integrals",
+   "id": "page-055",
+   "number": null,
+   "title": "Page 55",
+   "level": 1,
+   "page_start": 55,
+   "page_end": 55,
+   "n_chars": 2808,
+   "n_words": 505
+  },
+  {
+   "id": "page-056",
+   "number": null,
+   "title": "Page 56",
+   "level": 1,
+   "page_start": 56,
+   "page_end": 56,
+   "n_chars": 2734,
+   "n_words": 466
+  },
+  {
+   "id": "page-057",
+   "number": null,
+   "title": "Page 57",
+   "level": 1,
+   "page_start": 57,
+   "page_end": 57,
+   "n_chars": 2787,
+   "n_words": 483
+  },
+  {
+   "id": "page-058",
+   "number": null,
+   "title": "Page 58",
+   "level": 1,
+   "page_start": 58,
+   "page_end": 58,
+   "n_chars": 1896,
+   "n_words": 375
+  },
+  {
+   "id": "page-059",
+   "number": null,
+   "title": "Page 59",
+   "level": 1,
+   "page_start": 59,
+   "page_end": 59,
+   "n_chars": 2543,
+   "n_words": 451
+  },
+  {
+   "id": "page-060",
+   "number": null,
+   "title": "Page 60",
+   "level": 1,
+   "page_start": 60,
+   "page_end": 60,
+   "n_chars": 2562,
+   "n_words": 422
+  },
+  {
+   "id": "page-061",
+   "number": null,
+   "title": "Page 61",
    "level": 1,
    "page_start": 61,
-   "page_end": 67,
-   "n_chars": 20048,
-   "n_words": 3966
+   "page_end": 61,
+   "n_chars": 3582,
+   "n_words": 657
   },
   {
-   "id": "sec-009-10-quantum-mechanics-for-fermions",
-   "number": "10",
-   "title": "Quantum mechanics for fermions",
+   "id": "page-062",
+   "number": null,
+   "title": "Page 62",
+   "level": 1,
+   "page_start": 62,
+   "page_end": 62,
+   "n_chars": 2754,
+   "n_words": 520
+  },
+  {
+   "id": "page-063",
+   "number": null,
+   "title": "Page 63",
+   "level": 1,
+   "page_start": 63,
+   "page_end": 63,
+   "n_chars": 3231,
+   "n_words": 558
+  },
+  {
+   "id": "page-064",
+   "number": null,
+   "title": "Page 64",
+   "level": 1,
+   "page_start": 64,
+   "page_end": 64,
+   "n_chars": 2461,
+   "n_words": 448
+  },
+  {
+   "id": "page-065",
+   "number": null,
+   "title": "Page 65",
+   "level": 1,
+   "page_start": 65,
+   "page_end": 65,
+   "n_chars": 2670,
+   "n_words": 512
+  },
+  {
+   "id": "page-066",
+   "number": null,
+   "title": "Page 66",
+   "level": 1,
+   "page_start": 66,
+   "page_end": 66,
+   "n_chars": 2854,
+   "n_words": 534
+  },
+  {
+   "id": "page-067",
+   "number": null,
+   "title": "Page 67",
    "level": 1,
    "page_start": 67,
-   "page_end": 73,
-   "n_chars": 18869,
-   "n_words": 3586
+   "page_end": 67,
+   "n_chars": 2508,
+   "n_words": 485
   },
   {
-   "id": "sec-010-11-free-field-theories-in-higher-dimensions",
-   "number": "11",
-   "title": "Free field theories in higher dimensions",
+   "id": "page-068",
+   "number": null,
+   "title": "Page 68",
+   "level": 1,
+   "page_start": 68,
+   "page_end": 68,
+   "n_chars": 3102,
+   "n_words": 563
+  },
+  {
+   "id": "page-069",
+   "number": null,
+   "title": "Page 69",
+   "level": 1,
+   "page_start": 69,
+   "page_end": 69,
+   "n_chars": 3607,
+   "n_words": 618
+  },
+  {
+   "id": "page-070",
+   "number": null,
+   "title": "Page 70",
+   "level": 1,
+   "page_start": 70,
+   "page_end": 70,
+   "n_chars": 2996,
+   "n_words": 535
+  },
+  {
+   "id": "page-071",
+   "number": null,
+   "title": "Page 71",
+   "level": 1,
+   "page_start": 71,
+   "page_end": 71,
+   "n_chars": 3443,
+   "n_words": 640
+  },
+  {
+   "id": "page-072",
+   "number": null,
+   "title": "Page 72",
+   "level": 1,
+   "page_start": 72,
+   "page_end": 72,
+   "n_chars": 3537,
+   "n_words": 634
+  },
+  {
+   "id": "page-073",
+   "number": null,
+   "title": "Page 73",
    "level": 1,
    "page_start": 73,
+   "page_end": 73,
+   "n_chars": 2664,
+   "n_words": 482
+  },
+  {
+   "id": "page-074",
+   "number": null,
+   "title": "Page 74",
+   "level": 1,
+   "page_start": 74,
+   "page_end": 74,
+   "n_chars": 3076,
+   "n_words": 542
+  },
+  {
+   "id": "page-075",
+   "number": null,
+   "title": "Page 75",
+   "level": 1,
+   "page_start": 75,
+   "page_end": 75,
+   "n_chars": 2838,
+   "n_words": 529
+  },
+  {
+   "id": "page-076",
+   "number": null,
+   "title": "Page 76",
+   "level": 1,
+   "page_start": 76,
+   "page_end": 76,
+   "n_chars": 3378,
+   "n_words": 623
+  },
+  {
+   "id": "page-077",
+   "number": null,
+   "title": "Page 77",
+   "level": 1,
+   "page_start": 77,
+   "page_end": 77,
+   "n_chars": 2542,
+   "n_words": 478
+  },
+  {
+   "id": "page-078",
+   "number": null,
+   "title": "Page 78",
+   "level": 1,
+   "page_start": 78,
    "page_end": 78,
-   "n_chars": 14515,
-   "n_words": 2869
+   "n_chars": 1209,
+   "n_words": 216
   }
  ],
- "diagnostics": {
-  "pages_without_text": 0,
-  "likely_scanned": false,
-  "toc_entries": 11,
-  "toc_inferred_entries": 11,
-  "sections": 12,
-  "chars_total": 194055
- },
- "structure_note": "Sectioning: split by hand at the 11 numbered chapter headings (no PDF outline; heading inference found none)."
+ "structure_note": "Ingested at PAGE granularity by scripts/pdf-pages.py. This PDF carries no embedded outline and its inferred chapter structure was measurably wrong (bean 6xaz), so no chapter tree is claimed. A page is a determined division; an inferred chapter was not."
 }

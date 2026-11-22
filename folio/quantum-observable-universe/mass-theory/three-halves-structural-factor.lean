@@ -59,11 +59,11 @@ one-line consequences of the generic cross-multiplied identities via
 the `Kˣ` hypothesis is exactly the earlier `(q : K) (hq : q ≠ 0)` one;
 `heckeH_mk0` records the bridge explicitly.
 
-Ref: [manuscript] docs/audits/2026-05-25-lepton-bring-surface-h3-3channel-convention.md
-Ref: [manuscript] computations/t6_three_halves_factor_probes.py
-Ref: [manuscript] computations/probes/tau_amphichiral_sdp_probe.py
-Ref: [manuscript] prop:lepton-bring-surface-h3-3channel
-Ref: [manuscript] conj:lepton-tower-h-n-plus-1-branching
+Ref: [leitner2026] docs/audits/2026-05-25-lepton-bring-surface-h3-3channel-convention.md
+Ref: [leitner2026] computations/t6_three_halves_factor_probes.py
+Ref: [leitner2026] computations/probes/tau_amphichiral_sdp_probe.py
+Ref: [leitner2026] prop:lepton-bring-surface-h3-3channel
+Ref: [leitner2026] conj:lepton-tower-h-n-plus-1-branching
 -/
 
 namespace QOU.BraidKnot.ThreeHalvesStructuralFactor

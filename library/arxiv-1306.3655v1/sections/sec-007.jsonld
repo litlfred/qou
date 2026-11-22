@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1306.3655v1/sections/sec-007",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The polynomials p,n(t)",
+  "pageStart": 10,
+  "pageEnd": 11,
+  "contains": [
+    "library/arxiv-1306.3655v1/blocks/prose-sec-007",
+    "library/arxiv-1306.3655v1/blocks/conj-sec-007-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1306.3655v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1306.3655v1/manifest.jsonld",
+  "provenance": "ingested"
+}

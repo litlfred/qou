@@ -6,26 +6,44 @@
   "sha256": "ca65879d80b1e1c3f89fa6f19c62cc925fce5c8d24692c7e311726c817617977",
   "bytes": 1844849,
   "pages": 29,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 26,
+    "reason": "20 of 426 words are a stray single letter: the text layer splits words"
+   }
+  ]
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
   "title": "Observables in Loop Quantum Gravity with a cosmological constant",
-  "authors_raw": "Ma¨ ıté Dupuis1,∗ and Florian Girelli 2, 1,†",
-  "abstract": null,
-  "docinfo": {
-   "Author": "",
-   "Title": "",
-   "Creator": "LaTeX with hyperref package",
-   "Producer": "pdfTeX-1.40.12",
-   "CreationDate": "D:20180305111506Z"
-  },
+  "authors_raw": "Ma¨ıté Dupuis1, ∗and Florian Girelli2, 1, †",
   "title_lines": [
    "Observables in Loop Quantum Gravity with a cosmological constant"
-  ]
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.12",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20180305111506Z"
+  },
+  "title_raw": "Observables in Loop Quantum Gravity with a cosmological constant",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Observables in Loop Quantum Gravity with a cosmological constant",
+   "outline": "Contents",
+   "text": "Observables in Loop Quantum Gravity with a cosmological constant",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -33,214 +51,807 @@
    "title": "Contents",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
-   "title": "I  Uq(su(2)) in a nutshell",
+   "title": "I Uq(su(2)) in a nutshell",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "A Definition of Uq(su(2))",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "B q-harmonic oscillators and the Schwinger-Jordan trick",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "II Tensor operators for Uq(su(2))",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "A Definition and Wigner-Eckart theorem",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "B Product of tensor operators: scalar product, vector product and triple product",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 3,
    "title": "Scalar product",
    "page": 9,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 3,
    "title": "Vector product",
    "page": 10,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "C Tensor products of tensor operators",
    "page": 10,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 1,
    "title": "III Realization of tensor operators of rank 1/2 and 1 for Uq(su(2))",
    "page": 11,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "A Rank 1/2 tensor operators",
    "page": 11,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 2,
    "title": "B Rank 1 tensor operators",
    "page": 13,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 1,
    "title": "IV Observables for the intertwiner space",
    "page": 16,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "A General construction and properties of intertwiner observables",
    "page": 16,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 2,
    "title": "B Uq(u(n)) formalism for LQG defined over Uq(su(2))",
    "page": 18,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "18"
   },
   {
    "level": 1,
    "title": "V Geometric interpretation of some observables in the LQG context",
    "page": 20,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 1,
    "title": "Outlook",
    "page": 24,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "24"
   },
   {
    "level": 1,
    "title": "A Hyperbolic cosine law",
    "page": 25,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
   },
   {
    "level": 1,
    "title": "B Useful formulae",
    "page": 25,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
   },
   {
    "level": 1,
    "title": "References",
    "page": 27,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The hyperbolic triangle is represented in the Poincar´e disc. The (outgoing) normals ˆni are deﬁned in the tangent plane at the vertex of the triangle, as the orthogonal vectors to the tangent vectors ˆui",
+   "page": 21,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "21"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "contents"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-introduction",
+   "id": "sec-front-matter",
    "number": null,
-   "title": "Introduction",
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 1179,
-   "n_words": 198
+   "n_chars": 1559,
+   "n_words": 247,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-contents",
+   "id": "sec-000-contents",
    "number": null,
    "title": "Contents",
    "level": 1,
    "page_start": 1,
-   "page_end": 8,
-   "n_chars": 25180,
-   "n_words": 4333
+   "page_end": 2,
+   "n_chars": 915,
+   "n_words": 141,
+   "label_start": null,
+   "label_end": "2"
   },
   {
-   "id": "sec-002-1-scalar-product",
+   "id": "sec-001-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 13811,
+   "n_words": 2311,
+   "label_start": "2",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-002-i-uqsu2-in-a-nutshell",
+   "number": null,
+   "title": "I Uq(su(2)) in a nutshell",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 2,
+   "n_words": 1,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-003-a-definition-of-uqsu2",
+   "number": null,
+   "title": "A Definition of Uq(su(2))",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 7,
+   "n_chars": 5991,
+   "n_words": 1123,
+   "label_start": "4",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-004-b-q-harmonic-oscillators-and-the-schwinger-jorda",
+   "number": null,
+   "title": "B q-harmonic oscillators and the Schwinger-Jordan trick",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1473,
+   "n_words": 291,
+   "label_start": "7",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-005-ii-tensor-operators-for-uqsu2",
+   "number": null,
+   "title": "II Tensor operators for Uq(su(2))",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 523,
+   "n_words": 88,
+   "label_start": "7",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-006-a-definition-and-wigner-eckart-theorem",
+   "number": null,
+   "title": "A Definition and Wigner-Eckart theorem",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 2416,
+   "n_words": 499,
+   "label_start": "7",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-007-b-product-of-tensor-operators-scalar-product-vec",
+   "number": null,
+   "title": "B Product of tensor operators: scalar product, vector product and triple product",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 740,
+   "n_words": 157,
+   "label_start": "8",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-008-1-scalar-product",
    "number": "1",
    "title": "Scalar product",
    "level": 3,
-   "page_start": 8,
-   "page_end": 9,
-   "n_chars": 734,
-   "n_words": 150
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 2523,
+   "n_words": 458,
+   "label_start": "9",
+   "label_end": "10"
   },
   {
-   "id": "sec-003-2-vector-product",
+   "id": "sec-009-2-vector-product",
    "number": "2",
    "title": "Vector product",
    "level": 3,
-   "page_start": 9,
-   "page_end": 24,
-   "n_chars": 42323,
-   "n_words": 8142
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 1331,
+   "n_words": 269,
+   "label_start": "10",
+   "label_end": "10"
   },
   {
-   "id": "sec-004-outlook",
+   "id": "sec-010-c-tensor-products-of-tensor-operators",
+   "number": null,
+   "title": "C Tensor products of tensor operators",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 2552,
+   "n_words": 520,
+   "label_start": "10",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-011-iii-realization-of-tensor-operators-of-rank-12-a",
+   "number": null,
+   "title": "III Realization of tensor operators of rank 1/2 and 1 for Uq(su(2))",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 692,
+   "n_words": 110,
+   "label_start": "11",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-012-a-rank-12-tensor-operators",
+   "number": null,
+   "title": "A Rank 1/2 tensor operators",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 4863,
+   "n_words": 1085,
+   "label_start": "11",
+   "label_end": "13"
+  },
+  {
+   "id": "sec-013-b-rank-1-tensor-operators",
+   "number": null,
+   "title": "B Rank 1 tensor operators",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 16,
+   "n_chars": 7267,
+   "n_words": 1671,
+   "label_start": "13",
+   "label_end": "16"
+  },
+  {
+   "id": "sec-014-iv-observables-for-the-intertwiner-space",
+   "number": null,
+   "title": "IV Observables for the intertwiner space",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 206,
+   "n_words": 39,
+   "label_start": "16",
+   "label_end": "16"
+  },
+  {
+   "id": "sec-015-a-general-construction-and-properties-of-intertw",
+   "number": null,
+   "title": "A General construction and properties of intertwiner observables",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 5709,
+   "n_words": 1121,
+   "label_start": "16",
+   "label_end": "18"
+  },
+  {
+   "id": "sec-016-b-uqun-formalism-for-lqg-defined-over-uqsu2",
+   "number": null,
+   "title": "B Uq(u(n)) formalism for LQG defined over Uq(su(2))",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 7282,
+   "n_words": 1374,
+   "label_start": "18",
+   "label_end": "20"
+  },
+  {
+   "id": "sec-017-v-geometric-interpretation-of-some-observables-i",
+   "number": null,
+   "title": "V Geometric interpretation of some observables in the LQG context",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 24,
+   "n_chars": 9975,
+   "n_words": 1912,
+   "label_start": "20",
+   "label_end": "24"
+  },
+  {
+   "id": "sec-018-outlook",
    "number": null,
    "title": "Outlook",
    "level": 1,
    "page_start": 24,
+   "page_end": 25,
+   "n_chars": 6481,
+   "n_words": 1074,
+   "label_start": "24",
+   "label_end": "25"
+  },
+  {
+   "id": "sec-019-a-hyperbolic-cosine-law",
+   "number": null,
+   "title": "A Hyperbolic cosine law",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 25,
+   "n_chars": 1691,
+   "n_words": 351,
+   "label_start": "25",
+   "label_end": "25"
+  },
+  {
+   "id": "sec-020-b-useful-formulae",
+   "number": null,
+   "title": "B Useful formulae",
+   "level": 1,
+   "page_start": 25,
    "page_end": 29,
-   "n_chars": 19283,
-   "n_words": 3331
+   "n_chars": 10922,
+   "n_words": 1871,
+   "label_start": "25",
+   "label_end": "29"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 22,
-  "sections": 5,
-  "chars_total": 88699
+  "toc_inferred_entries": 0,
+  "figure_entries": 1,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 1,
+    "items": [
+     "References"
+    ]
+   },
+   "found_not_listed": {
+    "count": 0,
+    "items": []
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 22,
+  "chars_total": 88924,
+  "furniture_lines_stripped": 28
  }
 }

@@ -22,7 +22,7 @@ LaTeX label: `ex:rigid-monoidal-vect`
 ## References
 
 - [kock2004] https://doi.org/10.1017/CBO9780511615443
-- [manuscript] §1 Example: ℂ[z] and O(SU(2))
+- [leitner2026] §1 Example: ℂ[z] and O(SU(2))
 -/
 
 open CategoryTheory MonoidalCategory
@@ -74,7 +74,7 @@ structure CoordinateRingData where
   det_relation : numRelations ≥ 1
 
 /-- O(SU(2)) has 4 generators {α, β, ᾱ, β̄} and ≥ 1 relation. -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 def su2CoordinateRing : CoordinateRingData where
   numGenerators := 4
   numRelations := 1

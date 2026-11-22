@@ -1,0 +1,427 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-2603.25236v1",
+ "status": "determined",
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p006-1",
+   "page": 6,
+   "mark": "1",
+   "text": "Itisnothardtoseefrom(1)thatthemaximumvalueoft,attainedwhene.g.alltheU’s \u0000D are equal to identity, is \u0001 .",
+   "marks": [
+    {
+     "page": 6,
+     "context": "."
+    }
+   ],
+   "block": "library/arxiv-2603.25236v1/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p007-1",
+   "page": 7,
+   "mark": "2",
+   "text": "N2Kt λ + (D−1)",
+   "marks": [
+    {
+     "page": 6,
+     "context": "2KN"
+    },
+    {
+     "page": 6,
+     "context": "2KN"
+    },
+    {
+     "page": 6,
+     "context": "D(D−1)t"
+    },
+    {
+     "page": 6,
+     "context": "2KN"
+    },
+    {
+     "page": 6,
+     "context": "2KN"
+    },
+    {
+     "page": 6,
+     "context": "KN"
+    },
+    {
+     "page": 6,
+     "context": "2N"
+    },
+    {
+     "page": 6,
+     "context": "D(D−1)t"
+    },
+    {
+     "page": 6,
+     "context": "2λ"
+    },
+    {
+     "page": 7,
+     "context": "−N"
+    },
+    {
+     "page": 7,
+     "context": "c2(N)t"
+    },
+    {
+     "page": 7,
+     "context": "keepsthetermsuptothequadraticorder."
+    },
+    {
+     "page": 7,
+     "context": "(D−1)(N"
+    },
+    {
+     "page": 7,
+     "context": "(D−1)(N"
+    }
+   ],
+   "block": "library/arxiv-2603.25236v1/blocks/prose-sec-front-matter"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p007-2",
+   "page": 7,
+   "mark": "2",
+   "text": "Strictlyspeaking,inoursetting,thelowestnonvanishingorderaftertheconstanttermis not the quadratic but the linear one. However, the linear contribution does not scale with N while the quadratic one does, and thus, is the dominant one. Alternatively, one can recall the standard fact that the large N limits of U(N) and SU(N) theories coincide and revert to the SU(N) case if desired.",
+   "block": "library/arxiv-2603.25236v1/blocks/prose-sec-front-matter"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "2N"
+  },
+  {
+   "page": 1,
+   "mark": "†",
+   "context": "x,νU"
+  },
+  {
+   "page": 1,
+   "mark": "†",
+   "context": "U"
+  },
+  {
+   "page": 1,
+   "mark": "x",
+   "context": "x+ν,µU"
+  },
+  {
+   "page": 2,
+   "mark": "†",
+   "context": "x,νU"
+  },
+  {
+   "page": 2,
+   "mark": "†",
+   "context": "U"
+  },
+  {
+   "page": 2,
+   "mark": "x",
+   "context": "x+ν,µU"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "2N"
+  },
+  {
+   "page": 2,
+   "mark": "t",
+   "context": "D(D−1)"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "D(D−1)t"
+  },
+  {
+   "page": 2,
+   "mark": "e",
+   "context": "πD(D−1)"
+  },
+  {
+   "page": 2,
+   "mark": "m",
+   "context": "Itwillbeshownbelowthatthel-thmomentofρN(t)isequalto"
+  },
+  {
+   "page": 2,
+   "mark": "l",
+   "context": "Itwillbeshownbelowthatthel-thmomentofρN(t)isequaltom"
+  },
+  {
+   "page": 2,
+   "mark": "l",
+   "context": "N"
+  },
+  {
+   "page": 2,
+   "mark": "l",
+   "context": "N"
+  },
+  {
+   "page": 2,
+   "mark": "l",
+   "context": "N)→m"
+  },
+  {
+   "page": 2,
+   "mark": "†",
+   "context": "inesegmentwiththearrowpointingintheotherdirectionwilldenoteU"
+  },
+  {
+   "page": 2,
+   "mark": "†",
+   "context": "SincealltheexpressionsbelowwillbesymmetricbetweenUandU"
+  },
+  {
+   "page": 2,
+   "mark": "†",
+   "context": "UijorU"
+  },
+  {
+   "page": 2,
+   "mark": "†",
+   "context": "UijU"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "dUU"
+  },
+  {
+   "page": 3,
+   "mark": "j",
+   "context": "dUUi1"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "dUUi1j1 . . . U"
+  },
+  {
+   "page": 3,
+   "mark": "j",
+   "context": "dUUi1j1 . . . Uin"
+  },
+  {
+   "page": 3,
+   "mark": "j",
+   "context": "σ(1)δ"
+  },
+  {
+   "page": 3,
+   "mark": "1",
+   "context": "σ(1)δj"
+  },
+  {
+   "page": 3,
+   "mark": "j",
+   "context": "σ(1)δj1"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "σ(1). . . δ"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "σ(1). . . δi"
+  },
+  {
+   "page": 3,
+   "mark": "i",
+   "context": "σ(1). . . δin"
+  },
+  {
+   "page": 3,
+   "mark": "j",
+   "context": "σ(n)δ"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "σ(n)δj"
+  },
+  {
+   "page": 3,
+   "mark": "j",
+   "context": "σ(n)δjn"
+  },
+  {
+   "page": 3,
+   "mark": "j",
+   "context": "1"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "N"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "N"
+  },
+  {
+   "page": 3,
+   "mark": "3",
+   "context": "N"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "N"
+  },
+  {
+   "page": 3,
+   "mark": "l",
+   "context": "t"
+  },
+  {
+   "page": 3,
+   "mark": "l",
+   "context": "t"
+  },
+  {
+   "page": 3,
+   "mark": "†",
+   "context": "vennumberoftimes,halfofthemcarryingUandtheotherhalfcarryingU"
+  },
+  {
+   "page": 3,
+   "mark": "l",
+   "context": "N"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "N"
+  },
+  {
+   "page": 3,
+   "mark": "l",
+   "context": "N2"
+  },
+  {
+   "page": 4,
+   "mark": "†",
+   "context": "edottedlinesstandfortheothercopiesofthesameedgecarryingUandU"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "thattheycontributeisnomorethanN"
+  },
+  {
+   "page": 4,
+   "mark": "l",
+   "context": "thattheycontributeisnomorethanN2"
+  },
+  {
+   "page": 5,
+   "mark": "l",
+   "context": "N"
+  },
+  {
+   "page": 5,
+   "mark": "l",
+   "context": "N"
+  },
+  {
+   "page": 5,
+   "mark": "l",
+   "context": "N"
+  },
+  {
+   "page": 5,
+   "mark": "l",
+   "context": "Nl+1 ) =m"
+  },
+  {
+   "page": 5,
+   "mark": "l",
+   "context": "N"
+  },
+  {
+   "page": 5,
+   "mark": "l",
+   "context": "2(comingfromtherealpart),wegetthatforeven"
+  },
+  {
+   "page": 6,
+   "mark": "l",
+   "context": "N"
+  },
+  {
+   "page": 6,
+   "mark": "l",
+   "context": "(2K)"
+  },
+  {
+   "page": 6,
+   "mark": "l",
+   "context": "N"
+  },
+  {
+   "page": 6,
+   "mark": "l",
+   "context": "N"
+  },
+  {
+   "page": 6,
+   "mark": "l",
+   "context": "N"
+  },
+  {
+   "page": 6,
+   "mark": "t",
+   "context": "D(D−1)"
+  },
+  {
+   "page": 6,
+   "mark": "e",
+   "context": "πD(D −1)"
+  },
+  {
+   "page": 6,
+   "mark": "t",
+   "context": "D(D−1)"
+  },
+  {
+   "page": 7,
+   "mark": "3",
+   "context": "c2(N)t2+ c3(N)t"
+  },
+  {
+   "page": 7,
+   "mark": "4",
+   "context": "c2(N)t2+ c3(N)t3+ c4(N)t"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "Therefore,theasymptoticfreeenergyisgivenbyN"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": " lowest order contribution to the expression there (which is"
+  },
+  {
+   "page": 8,
+   "mark": "2",
+   "context": "owest order contribution to the expression there (which is2N"
+  }
+ ]
+}

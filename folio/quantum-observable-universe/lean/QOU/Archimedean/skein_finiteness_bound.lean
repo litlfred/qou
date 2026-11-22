@@ -87,7 +87,7 @@ All three sub-claims are *derived*:
 * (ii) `(∀ i, 0 < V̂ᵢ) → 0 < P`   (per-generator positivity ⇒ `P > 0`);
 * (iii) the configurations with mass number `≤ Amax` form a **finite**
   set (finiteness of the stability window). -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/skein-finiteness-bound.ts
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/skein-finiteness-bound.ts
 theorem skein_finiteness_bound {A : ℕ} (V : Fin (A - 1) → ℝ) (Amax : ℕ) :
     skeinPoly V = Finset.univ.prod V ∧
     ((∀ i, 0 < V i) → 0 < skeinPoly V) ∧

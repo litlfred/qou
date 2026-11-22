@@ -1,0 +1,171 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "furey-2018-epjc-78-375",
+ "source_sha256": "4258820f00014b03",
+ "brief": "SU(3)_C x SU(2)_L x U(1)_Y (x U(1)_X) as a symmetry of division algebraic ladder operators — We demonstrate a model which captures certain attractive features of SU(5) theory, while providing a pos- sible escape from proton decay.",
+ "extended": "**SU(3)_C x SU(2)_L x U(1)_Y (x U(1)_X) as a symmetry of division algebraic ladder operators**\n\n12 pp, 30 sections.\n\n**Abstract.** We demonstrate a model which captures certain attractive features of SU(5) theory, while providing a pos- sible escape from proton decay. In this paper we show how ladder operators arise from the division algebras R, C, H, and O. From the SU(n) symmetry of these ladder operators, we then demonstrate a model which has much structural sim- ilarity to Georgi and Glashow’s SU(5) grand uniﬁed theory. However, in this case, the transitions leading to proton decay are expected to be blocked, given that they coincide with presumably forbidden transformations which would incor- rectly mix distinct algebraic actions. As a result, we ﬁnd that we are left with Gsm = SU(3)C × SU(2)L × U(1)Y /Z6.\n\n**Outline.** Front matter; SU(3)CtimesSU(2)LtimesU(1)Y( timesU(1)X ) as a; Abstract; 1 Introduction; 2 The Georgi–Glashow model; 2.1 SU(5) acting on ΛmathbbC5; 2.2 Breaking SU(5); 2.3 SU(5) summary; 3.2 Clifford algebraic structure; 3.3 Right-handed Weyl spinors as minimal left ; 3.4 Left-handed Weyl spinors as minimal left i; 3.5 Complex conjugation and charge conjugation; 3.6 Dirac algebra; 4.2 Clifford algebraic structure; 4.3 Quarks and leptons as minimal left ideals; 4.4 SU(3) ladder symmetry; 4.5 Minimal left ideals in the matrix formalis; 4.6 Towards weak isospin",
+ "tokens": {
+  "brief": 48,
+  "extended": 340
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-su3ctimessu2ltimesu1y-timesu1x-as-a-symmetry-of",
+   "title": "SU(3)CtimesSU(2)LtimesU(1)Y( timesU(1)X ) as a symmetry of division algebraic ladder operators",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-abstract",
+   "title": "Abstract",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-002-1-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-003-2-the-georgiglashow-model",
+   "title": "The Georgi–Glashow model",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-004-21-su5-acting-on-λmathbbc5",
+   "title": "SU(5) acting on ΛmathbbC5",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-005-22-breaking-su5",
+   "title": "Breaking SU(5)",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-006-23-su5-summary",
+   "title": "SU(5) summary",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-007-32-clifford-algebraic-structure",
+   "title": "Clifford algebraic structure",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-008-33-right-handed-weyl-spinors-as-minimal-left-ide",
+   "title": "Right-handed Weyl spinors as minimal left ideals",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-009-34-left-handed-weyl-spinors-as-minimal-left-idea",
+   "title": "Left-handed Weyl spinors as minimal left ideals",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-010-35-complex-conjugation-and-charge-conjugation",
+   "title": "Complex conjugation and charge conjugation",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-011-36-dirac-algebra",
+   "title": "Dirac algebra",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-012-42-clifford-algebraic-structure",
+   "title": "Clifford algebraic structure",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-013-43-quarks-and-leptons-as-minimal-left-ideals",
+   "title": "Quarks and leptons as minimal left ideals",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-014-44-su3-ladder-symmetry",
+   "title": "SU(3) ladder symmetry",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-015-45-minimal-left-ideals-in-the-matrix-formalism",
+   "title": "Minimal left ideals in the matrix formalism",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-016-46-towards-weak-isospin",
+   "title": "Towards weak isospin",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-017-5-mathbbcl4-weak-isospin",
+   "title": "mathbbCl(4): weak isospin",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-018-51-clifford-algebraic-structure",
+   "title": "Clifford algebraic structure",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-019-52-leptons-as-minimal-right-ideals",
+   "title": "Leptons as minimal right ideals",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-020-53-su2-ladder-symmetry",
+   "title": "SU(2) ladder symmetry",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-021-6-all-together-ladder-symmetries-to-su3ctimessu2",
+   "title": "All together: ladder symmetries to SU(3)CtimesSU(2)LtimesU(1)Y / mathbbZ6",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-022-61-clifford-algebraic-structure",
+   "title": "Clifford algebraic structure",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-023-62-one-generation-as-minimal-ideals",
+   "title": "One generation as minimal ideals",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-024-63-from-su5-ladder-symmetry-to-su3ctimessu2ltime",
+   "title": "From SU(5) ladder symmetry to SU(3)CtimesSU(2)LtimesU(1)Y / mathbbZ6",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-025-64-summary",
+   "title": "Summary",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-026-7-outlook",
+   "title": "Outlook",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-027-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-028-references",
+   "title": "References",
+   "pages": "11-12"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

@@ -1,0 +1,1 @@
+In lattice QCD simulations with staggered fermions for $N_c = 2$ [@baillie], a depletion of eigenvalues along the imaginary axis was observed, whereas for $N_c=3$ the eigenvalue distribution did not show any pronounced features [@everybody].

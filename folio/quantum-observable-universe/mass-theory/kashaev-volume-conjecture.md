@@ -2,7 +2,7 @@
 > below is the structurally-wrong leading-order ansatz; the operator-valued
 > form supersedes it ([`mass-endomorphism-tower`](mass-endomorphism-tower.md));
 > the canonical replacement is the operator-valued $A^\lambda_{\mu, \nu}(I)$
-> graded expansion [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md).
+> graded expansion [graded expansion of $\rho_K$](rho-k-graded-expansion.md).
 
 The **Kashaev volume conjecture (KVC)** asserts that, for every
 hyperbolic knot $K \subseteq S^3$, the Kashaev limit of the colored
@@ -33,52 +33,17 @@ recovers the hyperbolic volume; this is the content of the per-block
 [Kashaev as archimedean realization](#rem:kashaev-as-archimedean-realization)
 remark.
 
-### Lean axiomatisation
+### KVC as an explicit hypothesis
 
-KVC is
-encoded in Lean as a **typeclass**
-
-```
-class VolumeConjecture (q : ℝ) where
-  hypVolume       : Braid → ℝ
-  kashaevLimit    : Braid → ℝ
-  kvc_holds       : ∀ β, hypVolume β = kashaevLimit β
-  hypVolume_nonneg : ∀ β, 0 ≤ hypVolume β
-```
-
-The class fields encode the conjectural identification of hyperbolic
-volume with the Kashaev limit. Any instance of `VolumeConjecture` is
-**conjecture-bearing**: the `kvc_holds` field plays the role of
-`sorry`, but as an axiomatised class field rather than a tactic
-failure. Downstream results that depend on KVC take it as an
-`[VolumeConjecture q]` typeclass argument and are then **fully
-verified** by Lean — the only unproved input is the class instance.
-
-This is the same pattern used for `MassEvaluation` in
-[mass endomorphism tower](#prop:mass-endomorphism-tower): the
-canonical computation is axiomatised so that the algebraic tower
-identities are machine-checked.
-
-### Rationale for a class rather than an axiom
-
-Three reasons:
-
-1. **Locality.** A typeclass instance can be supplied per knot family
-   (figure-eight, torus, etc.) where KVC is actually proved; downstream
-   theorems then specialise to verified ground.
-
-2. **Compositionality.** A bridge theorem of the form
-   $\Phi_q(V_S) = \rho_q \cdot \mathrm{Vol}(K_S)$ depends only on KVC
-   restricted to $K_S$; the typeclass scope makes that dependency
-   visible in the type signature.
-
-3. **No global axiom pollution.** Mathlib's axiom audit
-   (`#print axioms`) records typeclass dependencies but does not flag
-   them as global axioms; the conditional nature of every downstream
-   result is preserved.
+KVC is used throughout as an explicit hypothesis. Every downstream
+result that depends on it is conditional on KVC — and only on KVC
+restricted to the knots involved: a bridge statement of the form
+$\Phi_q(V_S) = \rho_q \cdot \mathrm{Vol}(K_S)$ depends only on KVC
+for $K_S$. Such a result becomes unconditional for a knot family
+(figure-eight, torus, etc.) exactly where KVC is actually proved.
 
 The conjecture itself remains open at the level of $\pi_0$ —
-no claim of proof is made by introducing the class.
+no claim of proof is made by stating it as a hypothesis.
 
 ### Motivic perspective
 
@@ -96,3 +61,9 @@ $\mathbb{R}$ as the hyperbolic volume of the corresponding
 Φ$_q$-piece. KVC, in this presentation, is the assertion that the
 $q$-deformed regulator agrees with the classical one in the Kashaev
 limit.
+
+### Two published neighbours of the statement
+
+Gukov's generalised volume conjecture is a one-parameter family that contains this statement. It predicts the limit of $\log J_N(K, e^{2\pi i/k})/k$ as $N, k \to \infty$ with $N/k$ fixed, as $\tfrac{1}{2\pi}\big(\mathrm{Vol}(l,m) + i\,2\pi^2\,\mathrm{CS}(l,m)\big)$ evaluated on the zero locus of the A-polynomial, and it reduces to the volume conjecture at $m = 1$ \cite[\S5.2, eqs.~(5.12)--(5.13)]{arxiv-hep-th-0306165v1}. For $4_1$ the source checks the real part of the family \cite[\S5.3]{arxiv-hep-th-0306165v1}. The figure-eight case of the conjecture above is therefore the $m = 1$ member of that family.
+
+Baseilhac and Ben Aribi prove a volume-conjecture statement for the quantum hyperbolic invariants $H_N(M,\rho,h_\rho,k_c)$ of the figure-eight complement $M$, for odd $N \ge 3$. For every character $\rho$ on the geometric component and every charge weight, $\lim_{N\to\infty} \tfrac{2\pi}{N}\,\mathrm{Log}\,\lvert H_N\rvert$ equals $\mathrm{Vol}(M)$ when $h_\rho(\lambda_K) \in 2\pi i(2\mathbb{Z}+1)$ and equals $0$ when $h_\rho(\lambda_K) \in 4\pi i\,\mathbb{Z}$, where $\lambda_K$ is the canonical longitude \cite[\S1.1, Thm.~1.1]{baseilhac2026}. The limit does not depend on $\rho$. These invariants of the cusped manifold are not the Kashaev invariant of the conjecture: the Kashaev invariant $\langle L\rangle_N$ coincides with the quantum hyperbolic invariant of the pair $(S^3, L)$, and the source relates the invariant of $S^3 \setminus 4_1$ to $\langle 4_1\rangle_N$ only through a discrete Laplace-transform type formula \cite[\S1.1 and App.~A]{baseilhac2026}. The theorem is therefore a statement about a neighbouring sequence, and it does not supply an instance of the conjecture as stated; whether the parity case (a) holds at a given choice of longitude logarithm is a separate check.

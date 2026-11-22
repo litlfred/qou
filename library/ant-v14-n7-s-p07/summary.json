@@ -2,54 +2,98 @@
  "_schema": "library-summary/v1",
  "doc_id": "ant-v14-n7-s-p07",
  "source_sha256": "c5a749ef6be194fd",
- "brief": "Nonvanishing of hyperelliptic zeta functions over finite fields — 7 sections: Introduction; For the similar Theorem 1.7, the 𝓁; Main theorem and proof",
- "extended": "**Nonvanishing of hyperelliptic zeta functions over finite fields**\n\n*Jordan S. Ellenberg , Wanlin Li and Mark Shusterman*\n\n16 pp, 7 sections.\n\n**Outline.** 1 Introduction; 2 For the similar Theorem 1.7, the 𝓁 is again ; 2 Main theorem and proof; 3 Application to nonvanishing of L-functions; 2 By the; Acknowledgments; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.2: Fix a prime p, a real number t, and set s= 1\n- Theorem 1.5: Let C be a hyperelliptic curve of genus at least 2 over Fq and S be the set of Weierstrass\n- Theorem 1.7: Let𝓁 be an odd prime and let C be a(Z/𝓁Z)-cover of P1/Fq branched at a set S⊂ P1(Fq).\n- Theorem 1.1: of [Lipnowski and Tsimerman 2019], which is in fact more general, and the arguments used\n- Theorem 8.8: ] computes arbitrary moments of the Cohen–Lenstra distribution, whereas we are only\n- Theorem 8.8: ], we are only considering the case A= Z/𝓁Z. The difference is as follows. In the proof, we",
+ "brief": "Nonvanishing of hyperelliptic zeta functions over finite fields — 16 sections: Page 1; Page 2; Page 3",
+ "extended": "**Nonvanishing of hyperelliptic zeta functions over finite fields**\n\n*Jordan S. Ellenberg, Wanlin Li and Mark Shusterman*\n\n16 pp, 16 sections.\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5; Page 6; Page 7; Page 8; Page 9; Page 10; Page 11; Page 12; Page 13; Page 14; Page 15; Page 16",
  "tokens": {
-  "brief": 37,
-  "extended": 239
+  "brief": 25,
+  "extended": 72
  },
  "sections": [
   {
-   "id": "sec-000-1-introduction",
-   "title": "Introduction",
-   "pages": "1-4"
+   "id": "page-001",
+   "title": "Page 1",
+   "pages": "1-1"
   },
   {
-   "id": "sec-001-2-for-the-similar-theorem-17-the-𝓁-is-again-the",
-   "title": "For the similar Theorem 1.7, the 𝓁 is again the order of the Dirichlet",
+   "id": "page-002",
+   "title": "Page 2",
+   "pages": "2-2"
+  },
+  {
+   "id": "page-003",
+   "title": "Page 3",
+   "pages": "3-3"
+  },
+  {
+   "id": "page-004",
+   "title": "Page 4",
    "pages": "4-4"
   },
   {
-   "id": "sec-002-2-main-theorem-and-proof",
-   "title": "Main theorem and proof",
-   "pages": "4-10"
+   "id": "page-005",
+   "title": "Page 5",
+   "pages": "5-5"
   },
   {
-   "id": "sec-003-3-application-to-nonvanishing-of-l-functions",
-   "title": "Application to nonvanishing of L-functions",
-   "pages": "10-12"
+   "id": "page-006",
+   "title": "Page 6",
+   "pages": "6-6"
   },
   {
-   "id": "sec-004-2-by-the",
-   "title": "By the",
-   "pages": "12-14"
+   "id": "page-007",
+   "title": "Page 7",
+   "pages": "7-7"
   },
   {
-   "id": "sec-005-acknowledgments",
-   "title": "Acknowledgments",
+   "id": "page-008",
+   "title": "Page 8",
+   "pages": "8-8"
+  },
+  {
+   "id": "page-009",
+   "title": "Page 9",
+   "pages": "9-9"
+  },
+  {
+   "id": "page-010",
+   "title": "Page 10",
+   "pages": "10-10"
+  },
+  {
+   "id": "page-011",
+   "title": "Page 11",
+   "pages": "11-11"
+  },
+  {
+   "id": "page-012",
+   "title": "Page 12",
+   "pages": "12-12"
+  },
+  {
+   "id": "page-013",
+   "title": "Page 13",
+   "pages": "13-13"
+  },
+  {
+   "id": "page-014",
+   "title": "Page 14",
    "pages": "14-14"
   },
   {
-   "id": "sec-006-references",
-   "title": "References",
-   "pages": "14-16"
+   "id": "page-015",
+   "title": "Page 15",
+   "pages": "15-15"
+  },
+  {
+   "id": "page-016",
+   "title": "Page 16",
+   "pages": "16-16"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

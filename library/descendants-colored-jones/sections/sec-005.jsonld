@@ -9,13 +9,14 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "The colored Jones polynomials at roots of unity",
-  "pageStart": 12,
-  "pageEnd": 13,
+  "title": "A conjecture",
+  "pageStart": 8,
+  "pageEnd": 8,
   "contains": [
-    "library/descendants-colored-jones/blocks/prose-sec-005"
+    "library/descendants-colored-jones/blocks/prose-sec-005",
+    "library/descendants-colored-jones/blocks/conj-sec-005-01"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/descendants-colored-jones",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/descendants-colored-jones",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/descendants-colored-jones/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/descendants-colored-jones/manifest.jsonld",
   "provenance": "ingested"
 }

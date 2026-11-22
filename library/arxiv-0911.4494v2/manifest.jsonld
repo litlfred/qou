@@ -5,22 +5,24 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0911.4494v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0911.4494v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-0911.4494v2",
+  "title": "The geometry of Markov traces",
   "contains": [
+    "library/arxiv-0911.4494v2/sections/sec-front-matter",
     "library/arxiv-0911.4494v2/sections/sec-000",
     "library/arxiv-0911.4494v2/sections/sec-001",
     "library/arxiv-0911.4494v2/sections/sec-002",
     "library/arxiv-0911.4494v2/sections/sec-003",
     "library/arxiv-0911.4494v2/sections/sec-004",
     "library/arxiv-0911.4494v2/sections/sec-005",
-    "library/arxiv-0911.4494v2/sections/sec-006"
+    "library/arxiv-0911.4494v2/sections/sec-006",
+    "library/arxiv-0911.4494v2/sections/sec-007"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -30,7 +32,9 @@
   },
   "meta": {
     "doc_id": "arxiv-0911.4494v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0911.4494v2.pdf",
     "source_sha256": "1ba1c79686b12d984c69492e90a923ed7ca108d283c813d9b5d1a78791349226",
     "pages": 14,

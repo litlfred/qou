@@ -2,55 +2,39 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-0405126v1",
  "source_sha256": "713498dbe80f7319",
- "brief": "ASYMPTOTIC BEHAVIORS OF THE COLORED JONES POLYNOMIALS OF A TORUS KNOT — W e study the asymptotic behaviors of the colored Jones polyn o- mials of torus knots. Contrary to the works by R. Kashaev, O.",
- "extended": "**ASYMPTOTIC BEHAVIORS OF THE COLORED JONES POLYNOMIALS OF A TORUS KNOT**\n\n7 pp, 7 sections.\n\n**Abstract.** W e study the asymptotic behaviors of the colored Jones polyn o- mials of torus knots. Contrary to the works by R. Kashaev, O. T irkkonen, Y. Yokota, and the author, they do not seem to give the volumes or the Chern–Simons invariants of the three-manifolds obtained b y Dehn surgeries. On the other hand it is proved that in some cases the limits giv e the inverse of the Alexander polynomial. Let K be a knot in the three-sphere and JN (K; t) the colored Jones polynomial corresponding to the N -dimensional representation of sl2(C) normalized so that JN (unknot; t) = 1 [8, 12]. R. Kashaev found a series of link invariants parameterize d by positive integers [9] and proposed a conjecture that the asymp totic behavior of his invariants would determine the hyperbolic volume of the knot comp lement for any hyperbolic knot [10].\n\n**Outline.** 2 HITOSHI MURAKAMI; 1 Statement of the result; 2 Proof; 4 HITOSHI MURAKAMI; 3 Comments; 6 HITOSHI MURAKAMI; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: There exists a neighborhood U of 1 ∈ C such that if r ∈ U and\n- Theorem 1.1: would say that if Im r < 0 and K is a torus knot, then the right",
+ "brief": "ASYMPTOTIC BEHAVIORS OF THE COLORED JONES POLYNOMIALS OF A TORUS KNOT — We study the asymptotic behaviors of the colored Jones polyno- mials of torus knots. Contrary to the works by R. Kashaev, O.",
+ "extended": "**ASYMPTOTIC BEHAVIORS OF THE COLORED JONES POLYNOMIALS OF A TORUS KNOT**\n\n*HITOSHI MURAKAMI*\n\n7 pp, 4 sections.\n\n**Abstract.** We study the asymptotic behaviors of the colored Jones polyno- mials of torus knots. Contrary to the works by R. Kashaev, O. Tirkkonen, Y. Yokota, and the author, they do not seem to give the volumes or the Chern–Simons invariants of the three-manifolds obtained by Dehn surgeries. On the other hand it is proved that in some cases the limits give the inverse of the Alexander polynomial. Let K be a knot in the three-sphere and JN(K; t) the colored Jones polynomial corresponding to the N-dimensional representation of sl2(C) normalized so that JN(unknot; t) = 1 [8, 12]. R. Kashaev found a series of link invariants parameterized by positive integers [9] and proposed a conjecture that the asymptotic behavior of his invariants would determine the hyperbolic volume of the knot complement for any hyperbolic knot [10].\n\n**Outline.** Front matter; 1 Statement of the result; 2 Proof; 3 Comments",
  "tokens": {
   "brief": 49,
-  "extended": 319
+  "extended": 255
  },
  "sections": [
   {
-   "id": "sec-000-2-hitoshi-murakami",
-   "title": "HITOSHI MURAKAMI",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-2"
   },
   {
-   "id": "sec-001-1-statement-of-the-result",
+   "id": "sec-000-1-statement-of-the-result",
    "title": "Statement of the result",
    "pages": "2-2"
   },
   {
-   "id": "sec-002-2-proof",
+   "id": "sec-001-2-proof",
    "title": "Proof",
-   "pages": "2-4"
+   "pages": "2-5"
   },
   {
-   "id": "sec-003-4-hitoshi-murakami",
-   "title": "HITOSHI MURAKAMI",
-   "pages": "4-5"
-  },
-  {
-   "id": "sec-004-3-comments",
+   "id": "sec-002-3-comments",
    "title": "Comments",
-   "pages": "5-6"
-  },
-  {
-   "id": "sec-005-6-hitoshi-murakami",
-   "title": "HITOSHI MURAKAMI",
-   "pages": "6-6"
-  },
-  {
-   "id": "sec-006-references",
-   "title": "References",
-   "pages": "6-7"
+   "pages": "5-7"
   }
  ],
  "provenance": {
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

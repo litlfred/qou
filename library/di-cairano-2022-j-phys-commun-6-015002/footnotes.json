@@ -1,0 +1,121 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "di-cairano-2022-j-phys-commun-6-015002",
+ "status": "determined",
+ "pages_unread": [
+  5,
+  9,
+  10,
+  11
+ ],
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p004-1",
+   "page": 4,
+   "mark": "1",
+   "text": "We can convince about it just observing the Hamiltonian Hb(X, Y) in equation (3). By switching the heat bath-heavy particles interactions off means that a(X) = 0 for any X ≠0 and this leads to Hb(X, Y) = Hs(X) + Y TKY/2. This is the Hamiltonian of two non-interacting subsystems where the latter is nothing but a set of (non-interacting) harmonic oscillators.",
+   "marks": [
+    {
+     "page": 4,
+     "context": "interact with the heavy one"
+    }
+   ],
+   "block": "library/di-cairano-2022-j-phys-commun-6-015002/blocks/prose-sec-002"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p007-1",
+   "page": 7,
+   "mark": "1",
+   "text": "3",
+   "block": "library/di-cairano-2022-j-phys-commun-6-015002/blocks/prose-sec-006"
+  },
+  {
+   "id": "fn-p007-2",
+   "page": 7,
+   "mark": "1",
+   "text": "6",
+   "block": "library/di-cairano-2022-j-phys-commun-6-015002/blocks/prose-sec-006"
+  },
+  {
+   "id": "fn-p007-3",
+   "page": 7,
+   "mark": "1",
+   "text": "6",
+   "block": "library/di-cairano-2022-j-phys-commun-6-015002/blocks/prose-sec-006"
+  },
+  {
+   "id": "fn-p007-4",
+   "page": 7,
+   "mark": "2",
+   "text": "3",
+   "block": "library/di-cairano-2022-j-phys-commun-6-015002/blocks/prose-sec-006"
+  },
+  {
+   "id": "fn-p008-1",
+   "page": 8,
+   "mark": "1",
+   "text": ", i j",
+   "block": "library/di-cairano-2022-j-phys-commun-6-015002/blocks/prose-sec-007"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 2,
+   "mark": "t",
+   "context": "dt"
+  },
+  {
+   "page": 3,
+   "mark": "t",
+   "context": "dt"
+  },
+  {
+   "page": 3,
+   "mark": "t",
+   "context": "dt"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "d"
+  },
+  {
+   "page": 3,
+   "mark": "t",
+   "context": "daX"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "d"
+  },
+  {
+   "page": 4,
+   "mark": "t",
+   "context": "daX"
+  },
+  {
+   "page": 4,
+   "mark": "t",
+   "context": "dt"
+  },
+  {
+   "page": 6,
+   "mark": "*",
+   "context": "equilibrium positions Q"
+  },
+  {
+   "page": 7,
+   "mark": "h",
+   "context": "å"
+  },
+  {
+   "page": 8,
+   "mark": "h",
+   "context": "å"
+  }
+ ]
+}

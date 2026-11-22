@@ -1,0 +1,28 @@
+The curl and divergence of the vector fields A(V, @) and B(V, ) are given by
+Proof. The proofs are exercises in differentiating under the integral sign and then
+using the various Leibniz rules from vector calculus. We will show the brief
+arguments for the first and last of the four formulas above, since these two will
+change when we move to the 3-sphere. The other two formulas, whose proofs we
+leave to the reader, are the same in R* and S°.
+To begin with the first formula,
+Vy XA(V, )(y) = Sas Vy X{V00) O(%, I} dx
+
+= Jr (Vy XV(x)) O%, y) — VX) XVy Ox y) dx
+
+= — Jr V(x) XVyO(% y) dx
+
+= —BV, o)(y),
+
+as claimed, since Vy XV(x) = 0. When we move to S*, the corresponding term
+will not be zero.
+
+As for the last formula,
+
+Vy © BOV, o)(y) = Jes Vy @ {V(x) XVyo(x, y)} dx
+= Jas (Vy XV(x)) ¢ Vy o(x y) — VOX) e (Vy X Vy (x, y)) dx
+=0,
+
+as claimed, because V, XV(x) = 0 and V, XV,o(x, y) = 0. Again, when
+we move to S’, the expression corresponding to Vy XV(x) will not be zero.
+
+25

@@ -1,11 +1,12 @@
 *Proof.*
-Whitehead's lemma for semisimple algebras over a field of
-characteristic zero: every Hochschild cocycle in degree $k \geq 1$ is
-a coboundary, so $\mathrm{HH}^k = 0$.  Over a commutative ring $R$ the
-same conclusion holds whenever $A$ is separable / semisimple.  The
+A separable algebra has $\mathrm{HH}^k(A, M) = 0$ for $k \geq 1$ and
+every bimodule $M$ (Hochschild 1945; this is the associative analogue
+of Whitehead's lemma, not Whitehead's lemma itself).  A semisimple
+algebra over a field of characteristic zero is separable.  The
 spectral sequence $E_r^{p, q} \Rightarrow \mathrm{HH}^{p+q}$ then has
-only $E_\infty^{p, 0}$ surviving with $p + 0 = 0$, giving
-$E_\infty^{0, 0} = \mathrm{HH}^0 = Z(A)$. $\square$
+$E_\infty^{p,q} = 0$ for $p + q \geq 1$, and $E_\infty^{0, 0} =
+\mathrm{HH}^0 = Z(A)$. Nothing here forces the differentials $d_r$ to
+vanish. $\square$
 
 **Corollary (mass functional is a q-deformed Wedderburn-weighted centre projection).**
 *The categorical mass functional pairs the Frobenius integral
@@ -20,10 +21,10 @@ $$
 
 *The $q$-deformed Wedderburn weights $w_\lambda(q)$ are bounded, but
 $\sum w_\lambda(q) \neq 1$ at $q \neq 1$ in general (cf.
-[`prop:plancherel-weight-boundedness`](#prop:plancherel-weight-boundedness)
+[Plancherel weights define a probability distribution: $\sum_\lambda w_\lambda = 1$, $0 \leq w_\lambda \leq 1$](#prop:plancherel-weight-boundedness)
 for the classical Plancherel measure $w_\lambda(1) = (\dim V_\lambda)^2/n!$
 that does sum to $1$).  Binning by GB-depth
-([curvature-rank stratification](#prop:curvature-rank-gb-stratification))
+([curvature-rank stratification](#conj:curvature-rank-gb-stratification))
 gives the curvature-rank decomposition
 $\mathfrak{m}_{q,\mathcal{K}} = \sum_k \alpha_k \cdot
 \mathfrak{m}^{(k)}_{q,\mathcal{K}}(1)$
@@ -56,8 +57,7 @@ $\geq 2$) is self-dual under combined S-reversal and rank inversion.*
 > Measured exactly in $\mathbb{Q}(q)$ at $n = 3$ on the corpus's own
 > idempotents — all six off-diagonal entries identically $0$, diagonal
 > $\mathrm{diag}(\tau(e_\lambda))$ nonzero, completeness self-test
-> $\sum_\lambda \tau(e_\lambda) = 1$
-> ([`centre_frobenius_pairing_is_diagonal_probe.py`](../../../computations/probes/centre_frobenius_pairing_is_diagonal_probe.py)).
+> $\sum_\lambda \tau(e_\lambda) = 1$.
 > So each stratum is **self**-dual and the annihilator of a stratum
 > within $Z$ is the span of the *complementary* idempotents — a set
 > complement, not a rank-reindexed stratum. The asserted pairing is
@@ -75,28 +75,28 @@ $\geq 2$) is self-dual under combined S-reversal and rank inversion.*
 > the filtration of $A$ itself, which is a different claim and is
 > untouched here; and the *Practical consequence* below, which uses the
 > Wedderburn sum and not this duality. Same defect as
-> [`prf:quantum-dilogarithm-stratified`](#prf:quantum-dilogarithm-stratified)
-> Step 1 (bean `qou-xsv8`); analysis in
-> [`docs/audits/2026-08-26-frobenius-duality-of-strata-is-diagonal.md`](../../../docs/audits/2026-08-26-frobenius-duality-of-strata-is-diagonal.md).
+> [Partial argument for the stratified quantum dilogarithm](#rem:quantum-dilogarithm-stratified-partial-argument)
+> Step 1.
 
 **Practical consequence.**
 *categorical derivation steps need only enumerate central idempotents $e_\lambda$,
 compute their GB-depth, evaluate $\chi_\lambda$ via Hoefsmit seminormal
 form ([Hoefsmit pipeline](#conj:hoefsmit-scattering-pipeline)), and
 sum $\sum_\lambda w_\lambda \cdot \chi_\lambda(\beta) / \dim_q V_\lambda$
-binning by $\mathrm{depth}(\lambda)$.  No higher-page differentials
-$d_r$ ($r \geq 1$) need ever be computed — they all vanish.*
+binning by $\mathrm{depth}(\lambda)$.  This uses only the centre
+$Z(A) = E_\infty^{0,0}$, so no page of the spectral sequence is
+needed. That is not because the differentials $d_r$ vanish, which
+is not shown.*
 
 > **Gap.** The step above reads a grading of the **centre** by
 > *partition* depth off a proposition that stratifies $H_n(R,q)$ by the
 > curvature rank of **words**. That identification is not stated in the cited
 > proposition, and the three readings of $J^\bullet$ present in the corpus are
 > each excluded: the ideal-power reading is provably $\bot$ above degree $0$
-> (`QOU.BraidKnot.WordFiltration.map_pow_eq_bot`); the Coxeter-length reading
+>; the Coxeter-length reading
 > fails a dimension count at $n \leq 3$; and the rewrite-depth reading is
-> identically zero once `def:hecke-normal-form` fixes $T_w$ as the unique
-> normal-form basis indexed by $S_n$. Analysis:
-> [`docs/audits/2026-08-16-three-gb-filtrations-one-name.md`](../../../docs/audits/2026-08-16-three-gb-filtrations-one-name.md).
+> identically zero once the [Hecke normal form](#def:hecke-normal-form) fixes $T_w$ as the unique
+> normal-form basis indexed by $S_n$.
 > **Not claimed:** that this block's conclusion is false — only that the step
 > it rests on is unestablished, and that the obvious ways to establish it do
 > not work.

@@ -11,7 +11,7 @@ by the q-deformed Reeb derivation ξ_q, where
 
 ## References
 
-- [manuscript] §1 Quantum Observable Universe
+- [leitner2026] §1 Quantum Observable Universe
 -/
 
 namespace QOU
@@ -21,7 +21,7 @@ variable {R : Type*} [CommRing R]
 /-- The q-deformed Reeb flow on a Frobenius–Hopf object.
 
     LaTeX: `\label{def:categorical-q-reeb-flow}` -/
--- Ref: [manuscript] §1, Definition: Categorical q-Reeb flow
+-- Ref: [leitner2026] §1, Definition: Categorical q-Reeb flow
 structure CategoricalQReebFlow (M : Type*) [AddCommGroup M] [Module R M] where
   /-- The classical Reeb derivation ξ. -/
   reeb : M →ₗ[R] M

@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-hep-th-0205308v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0205308v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-hep-th-0205308v2",
+  "title": "WDVV Equations as Functional Relations",
   "contains": [
+    "library/arxiv-hep-th-0205308v2/sections/sec-front-matter",
     "library/arxiv-hep-th-0205308v2/sections/sec-000",
     "library/arxiv-hep-th-0205308v2/sections/sec-001",
     "library/arxiv-hep-th-0205308v2/sections/sec-002",
@@ -18,7 +19,7 @@
     "library/arxiv-hep-th-0205308v2/sections/sec-004"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",
     "searched": [
@@ -33,7 +34,9 @@
   },
   "meta": {
     "doc_id": "arxiv-hep-th-0205308v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0205308v2.pdf",
     "source_sha256": "2de5a4f40d80174c10370befaf89d78ebc5290a1773452e01173a674d2cf7572",
     "pages": 9,

@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/zagier-the-dilogarithm-function-copy-b/sections/sec-012",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "References",
+  "pageStart": 61,
+  "pageEnd": 63,
+  "contains": [
+    "library/zagier-the-dilogarithm-function-copy-b/blocks/prose-sec-012"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/zagier-the-dilogarithm-function-copy-b/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/zagier-the-dilogarithm-function-copy-b/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,0 +1,35 @@
+Chapter 4
+
+The Klein Quartic
+
+4.1 Systole of the Klein quartic LJ
+
+The systole of the Klein quartic is described in Klein’s oxi oper [48] on the prop-
+erties of the quartic curve, and is ee lee [44,80]. We will use K to denote
+the surface. Consider a tessellation of K by heptagons (these can be barycentrically sub-
+
+divided into 14 (2, 3, 7) triangles, see Figure 4.2). Starting with the central heptagon,
+
+join the midpoints of two adjoining edges with a geodesic. Extend this geodesic in both
+directions until it meets the boundary of the fundamental 14-gon. On its way, it passes
+through the midpoints of a further 3 and a half heptagon midpoints in either direction; a
+total of 8 midpoints. For this reason, Karcher and Weber coin it an “eight step geodesic”.
+Note that the two boundary edges that it meets are actually the same edge once the side
+associations are made; that is, we have a simple closed lzebdesic. In fact, the length of
+this curve turns out to be the systole of the surface [44]. An order 7 rotation around the
+centre of the 14-gon maps this geodesic onto six other copies.
+
+We obtain two more geodesics of length equal to the systole by creating curves that
+pass through adjoining edges of heptagons at varying distances from the centre; these
+are shown in Figure 4.2. There are 7 heptagons surrounding the central heptagon. The
+magenta curve passes through two edges of one of these. This time, when it reaches the
+boundary, it does not form a closed curve since the two sides are not associated with
+one another. We make the relevant side association and continue the geodesic from here,
+following the pattern of passing through midpoints of heptagon edges, until the geodesic
+is closed. Since we could have chosen any of the 7 heptagons, we get a further 7 closed
+geodesics. The orange (and green) curves pass through two adjoining edges of a heptagon
+in the second closest group from the centre. Again, there will be 7 of these. They follow
+the same pattern through 8 heptagon edge midpoints, thus having the same length. The
+multiplicity of the systole is 21.
+
+88

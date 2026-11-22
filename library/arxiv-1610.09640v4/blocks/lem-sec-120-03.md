@@ -1,0 +1,1 @@
+Assume ˜B is a graded ring of Laurent type, with B := ˜B0. (1) For every boundedness condition ⋆, the functor Deg0 : D⋆( ˜B, gr) →D⋆(B) is an equivalence of triangulated categories. (2) If the graded ring ˜B is left noetherian, then Deg0 : D⋆ f ( ˜B, gr) →D⋆ f (B) is an equivalence. Exercise 18.3.6. Prove Lemmas 18.3.4 and 18.3.5.

@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "quaternioms",
  "source_sha256": "becedcbc858611dd",
- "brief": "Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations — 40 sections: Introduction; Extended Related Work; Introduction: Bridging",
- "extended": "**Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations**\n\n*Quaternionic and Octonionic*\n\n41 pp, 40 sections.\n\n**Outline.** Introduction; Extended Related Work; Introduction: Bridging Theory and Experiment—A; Materials and Methods; Standard Quantum Computation over C; Normed Division Algebras; Quaternionic and Octonionic Preliminaries; Structure of Octonions and the Fano Plane; Geometric and Group-Theoretic Side Notes; Quaternionic Formalism; Octonionic Formalism; Hybrid Architectures and Embeddings—Additional; The Quaternionic-to-Complex Embedding Protocol; Simulating Octonionic Dynamics via Associative; Cayley–Dickson Product; Results; Quaternionic Model: Structural, Universality, ; Octonionic Model: Formal Obstructions and Limi\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: Let (Hi, ⟨·, ·⟩i), i = 1, 2, 3, be right H-Hilbert\n- Theorem 2: Any n-quaternionic qubit circuit of\n- Theorem 3: For right O-modules HA, HB, HC,\n- Theorem 4: Within a ﬁxed associative sector\n- Proposition 1: + entangler). Let G1 be any dense family\n- Proposition 4: Fix an embedded copy H ⊂ O (e.g., an oriented",
+ "brief": "Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations — 45 sections: Front matter; Introduction; Extended Related Work",
+ "extended": "**Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations**\n\n*Computation: Mathematical*\n\n41 pp, 45 sections.\n\n**Outline.** Front matter; Introduction; Extended Related Work; Introduction: Bridging Theory and Experiment—A; Materials and Methods; Standard Quantum Computation over C; Normed Division Algebras; Quaternionic and Octonionic Preliminaries; Structure of Octonions and the Fano Plane; Geometric and Group-Theoretic Side Notes; Quaternionic Formalism; Octonionic Formalism; Hybrid Architectures and Embeddings—Additional; The Quaternionic-to-Complex Embedding Protocol; Simulating Octonionic Dynamics via Associative; Mitigation Palette: Constructions and Workflow; Cayley–Dickson Product; Associative Subalgebras and Confinement",
  "tokens": {
-  "brief": 49,
-  "extended": 296
+  "brief": 47,
+  "extended": 201
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
   {
    "id": "sec-000-introduction",
    "title": "Introduction",
@@ -80,132 +85,152 @@
    "pages": "14-14"
   },
   {
-   "id": "sec-014-cayleydickson-product",
+   "id": "sec-014-mitigation-palette-constructions-and-workflows",
+   "title": "Mitigation Palette: Constructions and Workflows",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-015-cayleydickson-product",
    "title": "Cayley–Dickson Product",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-016-associative-subalgebras-and-confinement",
+   "title": "Associative Subalgebras and Confinement",
    "pages": "14-16"
   },
   {
-   "id": "sec-015-results",
+   "id": "sec-017-results",
    "title": "Results",
    "pages": "16-16"
   },
   {
-   "id": "sec-016-quaternionic-model-structural-universality-and-s",
+   "id": "sec-018-quaternionic-model-structural-universality-and-s",
    "title": "Quaternionic Model: Structural, Universality, and Simulation Results",
    "pages": "16-17"
   },
   {
-   "id": "sec-017-octonionic-model-formal-obstructions-and-limits",
+   "id": "sec-019-octonionic-model-formal-obstructions-and-limits",
    "title": "Octonionic Model: Formal Obstructions and Limits",
    "pages": "17-18"
   },
   {
-   "id": "sec-018-mitigation-strategies-correctness-guarantees-and",
+   "id": "sec-020-mitigation-strategies-correctness-guarantees-and",
    "title": "Mitigation Strategies: Correctness Guarantees and Quantitative Effects",
    "pages": "18-19"
   },
   {
-   "id": "sec-019-complexity-landscape-and-feasibility",
+   "id": "sec-021-complexity-landscape-and-feasibility",
    "title": "Complexity Landscape and Feasibility",
    "pages": "19-20"
   },
   {
-   "id": "sec-020-computational-equivalence-and-circuit-simplifica",
+   "id": "sec-022-computational-equivalence-and-circuit-simplifica",
    "title": "Computational Equivalence and Circuit Simplification—Elaboration",
    "pages": "20-20"
   },
   {
-   "id": "sec-021-theoretical-equivalence-to-complex-quantum-circu",
+   "id": "sec-023-theoretical-equivalence-to-complex-quantum-circu",
    "title": "Theoretical Equivalence to Complex Quantum Circuits",
    "pages": "20-21"
   },
   {
-   "id": "sec-022-resource-analysis-and-the-potential-for-circuit",
+   "id": "sec-024-resource-analysis-and-the-potential-for-circuit",
    "title": "Resource Analysis and the Potential for Circuit Simplification",
    "pages": "21-22"
   },
   {
-   "id": "sec-023-emerging-applications-and-future-directionselabo",
+   "id": "sec-025-emerging-applications-and-future-directionselabo",
    "title": "Emerging Applications and Future Directions—Elaboration",
    "pages": "22-22"
   },
   {
-   "id": "sec-024-quantum-simulation-with-algebraic-symmetries-su2",
+   "id": "sec-026-quantum-simulation-with-algebraic-symmetries-su2",
    "title": "Quantum Simulation with Algebraic Symmetries (SU(2) and G2)",
    "pages": "22-25"
   },
   {
-   "id": "sec-025-hypercomplex-quantum-machine-learning",
+   "id": "sec-027-hypercomplex-quantum-machine-learning",
    "title": "Hypercomplex Quantum Machine Learning",
    "pages": "25-25"
   },
   {
-   "id": "sec-026-discussion",
+   "id": "sec-028-discussion",
    "title": "Discussion",
    "pages": "25-26"
   },
   {
-   "id": "sec-027-conclusions",
+   "id": "sec-029-conclusions",
    "title": "Conclusions",
    "pages": "26-26"
   },
   {
-   "id": "sec-028-quaternion-to-complex-embedding-and-proof-detail",
+   "id": "sec-030-quaternion-to-complex-embedding-and-proof-detail",
    "title": "Quaternion-to-Complex Embedding and Proof Details",
+   "pages": "26-26"
+  },
+  {
+   "id": "sec-031-explicit-embedding-h-345mum2c",
+   "title": "Explicit Embedding H-3.45muM2(C)",
    "pages": "26-27"
   },
   {
-   "id": "sec-029-complexity-overheadproof-level-details",
+   "id": "sec-032-complexity-overheadproof-level-details",
    "title": "Complexity Overhead—Proof-LEVEL Details",
    "pages": "27-27"
   },
   {
-   "id": "sec-030-synthesis-of-contributions-and-answers-to-resear",
+   "id": "sec-033-synthesis-of-contributions-and-answers-to-resear",
    "title": "Synthesis of Contributions and Answers to Research Questions—Additional Details",
    "pages": "27-30"
   },
   {
-   "id": "sec-031-gate-overhead-from-associativity-management",
+   "id": "sec-034-gate-overhead-from-associativity-management",
    "title": "Gate Overhead from Associativity Management",
    "pages": "30-31"
   },
   {
-   "id": "sec-032-state-space-overhead-the-cost-of-complex-embeddi",
+   "id": "sec-035-state-space-overhead-the-cost-of-complex-embeddi",
    "title": "State-Space Overhead: The Cost of Complex Embedding",
    "pages": "31-32"
   },
   {
-   "id": "sec-033-path-ordered-propagators-and-magnus-expansion-wi",
+   "id": "sec-036-path-ordered-propagators-and-magnus-expansion-wi",
    "title": "Path-Ordered Propagators and Magnus Expansion with Associators",
    "pages": "32-33"
   },
   {
-   "id": "sec-034-the-non-associative-hamiltonian-and-its-conseque",
+   "id": "sec-037-the-non-associative-hamiltonian-and-its-conseque",
    "title": "The Non-Associative Hamiltonian and Its Consequences—Additional Details",
    "pages": "33-33"
   },
   {
-   "id": "sec-035-operator-ordering-and-emergent-non-local-effects",
+   "id": "sec-038-operator-ordering-and-emergent-non-local-effects",
    "title": "Operator Ordering and Emergent Non-Local Effects",
    "pages": "33-35"
   },
   {
-   "id": "sec-036-the-breakdown-of-energy-conservation-a-formal-de",
+   "id": "sec-039-the-breakdown-of-energy-conservation-a-formal-de",
    "title": "The Breakdown of Energy Conservation: A Formal Derivation",
-   "pages": "35-37"
+   "pages": "35-36"
   },
   {
-   "id": "sec-037-implementing-gates-in-an-associative-subspace",
+   "id": "sec-040-the-principle-of-associative-confinement",
+   "title": "The Principle of Associative Confinement",
+   "pages": "36-37"
+  },
+  {
+   "id": "sec-041-implementing-gates-in-an-associative-subspace",
    "title": "Implementing Gates in an Associative Subspace",
    "pages": "37-38"
   },
   {
-   "id": "sec-038-seven-factor-decomposition-and-decoupling-sequen",
+   "id": "sec-042-seven-factor-decomposition-and-decoupling-sequen",
    "title": "Seven-Factor Decomposition and Decoupling Sequences",
    "pages": "38-38"
   },
   {
-   "id": "sec-039-references",
+   "id": "sec-043-references",
    "title": "References",
    "pages": "38-41"
   }
@@ -213,8 +238,7 @@
  "provenance": {
   "kind": "extractive",
   "from": [
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

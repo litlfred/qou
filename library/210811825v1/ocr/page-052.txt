@@ -1,0 +1,50 @@
+2.4 Representation theory
+
+Definition 2.36 (Representation) Let V be an n-dimensional vector space over C.
+Then GL(V) denotes the the group of isomorphisms V > V. If V has a finite basis of
+
+vectors {€1,..., €n}, then each linear map a: V — V is defined by ann x n matrix (aij)
+
+such that a
+a(e;) = » Aize;j-
+
+A representation of a finite group G is a group homomorphism
+p:G—GL(V).
+
+For each g,h € G, we have a map p(g): V + V such that
+
+(i) p(gh) = p(g)elh),
+(i) pA) = 1,
+(iti) p(g7) = p(g)t.
+Denote by dim(V) the dimension of the representation. A sub-representation of p is
+
+a sub-vector space W C V such that p(g)w € W for allw e W andg€G. A subspace
+
+with this property is called G-invariant (or just invariant).
+
+Definition 2.37 (Irreducible representation) Let p: G — GL(V) be a representa-
+tion. We say that p is irreducible if V £0 and if no subspace of V is G-invariant, except
+
+{0} and V, that is, only “trivial” subspaces are G-invariant.
+
+Definition 2.38 (Unitary representation) Where V is a complex Hilbert space, a
+representation p of G is unitary if p(g) = U, is a unitary operator for every g € G,
+
+that is, U, is surjective and preserves the inner product on V. We have
+UjU, = UU; =I,
+that is, U, is the inverse of its adjoint.
+
+Definition 2.39 (Character) The character of a representation p of a group G, as
+above, is a function x, : G — F, where F is the field over which the vector space V is
+
+defined. For g € G, it is given by
+
+xo(g) = Tr(p(g))-
+
+Remark 2.40 We will not always include a subscript when talking about characters; it
+will depend on the context. Characters take a constant value on each conjugacy class.
+They will be used in the next section, where we introduce a general version of Selberg’s
+
+trace formula that uses a character to restrict to a particular irreducible representation.
+
+42

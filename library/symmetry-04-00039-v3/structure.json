@@ -8,9 +8,47 @@
   "pages": 77,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:26Z",
+  "mtime": "2026-11-15T11:07:55Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 21,
+    "reason": "16 of 475 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 50,
+    "reason": "21 of 445 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 58,
+    "reason": "13 of 510 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 65,
+    "reason": "23 of 508 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 66,
+    "reason": "13 of 416 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 69,
+    "reason": "65 of 471 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 71,
+    "reason": "24 of 432 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 75,
+    "reason": "54 of 474 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 76,
+    "reason": "13 of 514 words are a stray single letter: the text layer splits words"
+   }
+  ]
  },
  "metadata": {
   "arxiv": null,
@@ -24,7 +62,7 @@
    "Article",
    "Knots on a Torus: A Model of the Elementary Particles"
   ],
-  "abstract": "Two knots; just two rudimentary knots, the unknot and the trefoil. That\u2019s all we need to build a model of the elementary particles of physics, one with fermions and bosons, hadrons and leptons, interactions weak and strong and the attributes of spin, isospin, mass, charge, CPT invariance and more. There are no quarks to provide fractional charge, no gluons to sequester them within nucleons and no \u201ccolors\u201d to avoid violating Pauli\u2019s principle. Nor do we require the importation of an enigmatic Higgs boson to confer mass upon the particles of our world. All the requisite attributes emerge simply (and relativistically invariant) as a result of particle conformation and occupation in and of spacetime itself, a spacetime endowed with the imprimature of general relativity. Also emerging are some novel tools for systemizing the particle taxonomy as governed by the gauge group SU(2) and the details of particle degeneracy as well as connections to Hopf algebra, Dirac theory, string theory, topological quantum field theory and dark matter. One exception: it is found necessary to invoke the munificent geometry of the icosahedron in order to provide, as per the group \u201cflavor\u201d SU(3), a scaffold upon which to organize the well-known three generations\u2014no more, no less\u2014of the particle family tree.",
+  "abstract": "Two knots; just two rudimentary knots, the unknot and the trefoil. That’s all we need to build a model of the elementary particles of physics, one with fermions and bosons, hadrons and leptons, interactions weak and strong and the attributes of spin, isospin, mass, charge, CPT invariance and more. There are no quarks to provide fractional charge, no gluons to sequester them within nucleons and no “colors” to avoid violating Pauli’s principle. Nor do we require the importation of an enigmatic Higgs boson to confer mass upon the particles of our world. All the requisite attributes emerge simply (and relativistically invariant) as a result of particle conformation and occupation in and of spacetime itself, a spacetime endowed with the imprimature of general relativity. Also emerging are some novel tools for systemizing the particle taxonomy as governed by the gauge group SU(2) and the details of particle degeneracy as well as connections to Hopf algebra, Dirac theory, string theory, topological quantum field theory and dark matter. One exception: it is found necessary to invoke the munificent geometry of the icosahedron in order to provide, as per the group “flavor” SU(3), a scaffold upon which to organize the well-known three generations—no more, no less—of the particle family tree.",
   "docinfo": {
    "Title": "Knots on a Torus: A Model of the Elementary Particles",
    "Author": "Jack S. Avrin",
@@ -489,7 +527,7 @@
    "title": "Solitonic Behavior",
    "page": 58,
    "source": "inferred",
-   "number": "A",
+   "number": "Appendix A",
    "confidence": 0.75,
    "evidence": [
     "style",
@@ -503,7 +541,7 @@
    "title": "Contingency in Second Order Fusion",
    "page": 61,
    "source": "inferred",
-   "number": "B",
+   "number": "Appendix B",
    "confidence": 0.75,
    "evidence": [
     "style",
@@ -543,7 +581,7 @@
    "title": "Hopf Algebra",
    "page": 64,
    "source": "inferred",
-   "number": "C",
+   "number": "Appendix C",
    "confidence": 0.75,
    "evidence": [
     "style",
@@ -557,7 +595,7 @@
    "title": "The Beta Switch",
    "page": 67,
    "source": "inferred",
-   "number": "D",
+   "number": "Appendix D",
    "confidence": 0.75,
    "evidence": [
     "style",
@@ -571,7 +609,7 @@
    "title": "Quaternions",
    "page": 68,
    "source": "inferred",
-   "number": "E",
+   "number": "Appendix E",
    "confidence": 0.75,
    "evidence": [
     "style",
@@ -641,7 +679,7 @@
    "title": "On the Kauffman Bracket Polynomial of (2, n) Torus Knots",
    "page": 74,
    "source": "inferred",
-   "number": "F",
+   "number": "Appendix F",
    "confidence": 0.75,
    "evidence": [
     "style",
@@ -801,7 +839,7 @@
   {
    "kind": "figure",
    "number": "11",
-   "title": "Reference \u201cd\u201d quirk",
+   "title": "Reference “d” quirk",
    "page": 13,
    "confidence": 0.9,
    "evidence": [
@@ -814,7 +852,7 @@
   {
    "kind": "figure",
    "number": "12",
-   "title": "Rotated around \u201cy\u201d axis",
+   "title": "Rotated around “y” axis",
    "page": 13,
    "confidence": 0.9,
    "evidence": [
@@ -827,7 +865,7 @@
   {
    "kind": "figure",
    "number": "13",
-   "title": "Rotation around \u2018z\u201d axis",
+   "title": "Rotation around ‘z” axis",
    "page": 14,
    "confidence": 0.9,
    "evidence": [
@@ -1266,7 +1304,7 @@
   {
    "kind": "figure",
    "number": "45",
-   "title": "Basic fermions in \u201clabel space\u201d",
+   "title": "Basic fermions in “label space”",
    "page": 42,
    "confidence": 0.9,
    "evidence": [
@@ -1305,7 +1343,7 @@
   {
    "kind": "figure",
    "number": "48",
-   "title": "Six-label scaffold; that\u2019s all!",
+   "title": "Six-label scaffold; that’s all!",
    "page": 44,
    "confidence": 0.9,
    "evidence": [
@@ -1318,7 +1356,7 @@
   {
    "kind": "figure",
    "number": "49",
-   "title": "Sample \u201cduad\u201d",
+   "title": "Sample “duad”",
    "page": 44,
    "confidence": 0.9,
    "evidence": [
@@ -1357,7 +1395,7 @@
   {
    "kind": "figure",
    "number": "52",
-   "title": "The Spin \u00bd Baryon Octet",
+   "title": "The Spin ½ Baryon Octet",
    "page": 47,
    "confidence": 0.9,
    "evidence": [
@@ -1433,7 +1471,7 @@
   {
    "kind": "figure",
    "number": "B1",
-   "title": "Second-order Convolution for n = \u22125",
+   "title": "Second-order Convolution for n = −5",
    "page": 63,
    "confidence": 0.8,
    "evidence": [
@@ -1563,7 +1601,7 @@
   {
    "kind": "figure",
    "number": "E3",
-   "title": "\u201cPure\u201d quaternionic matrix for the reduced basic fermion vector. AA* AB* AC* BA* BB* BC* CA* CB* CC*",
+   "title": "“Pure” quaternionic matrix for the reduced basic fermion vector. AA* AB* AC* BA* BB* BC* CA* CB* CC*",
    "page": 72,
    "confidence": 0.8,
    "evidence": [
@@ -2407,8 +2445,8 @@
    "level": 2,
    "page_start": 20,
    "page_end": 22,
-   "n_chars": 4219,
-   "n_words": 838,
+   "n_chars": 3988,
+   "n_words": 726,
    "label_start": "58",
    "label_end": "60"
   },
@@ -2431,8 +2469,8 @@
    "level": 1,
    "page_start": 25,
    "page_end": 25,
-   "n_chars": 509,
-   "n_words": 117,
+   "n_chars": 507,
+   "n_words": 116,
    "label_start": "63",
    "label_end": "63"
   },
@@ -2443,8 +2481,8 @@
    "level": 2,
    "page_start": 25,
    "page_end": 29,
-   "n_chars": 4086,
-   "n_words": 766,
+   "n_chars": 4089,
+   "n_words": 767,
    "label_start": "63",
    "label_end": "67"
   },
@@ -2503,8 +2541,8 @@
    "level": 2,
    "page_start": 35,
    "page_end": 37,
-   "n_chars": 2178,
-   "n_words": 412,
+   "n_chars": 2176,
+   "n_words": 411,
    "label_start": "73",
    "label_end": "75"
   },
@@ -2515,8 +2553,8 @@
    "level": 1,
    "page_start": 37,
    "page_end": 37,
-   "n_chars": 521,
-   "n_words": 101,
+   "n_chars": 538,
+   "n_words": 103,
    "label_start": "75",
    "label_end": "75"
   },
@@ -2599,8 +2637,8 @@
    "level": 1,
    "page_start": 49,
    "page_end": 52,
-   "n_chars": 6937,
-   "n_words": 1363,
+   "n_chars": 6795,
+   "n_words": 1290,
    "label_start": "87",
    "label_end": "90"
   },
@@ -2671,45 +2709,45 @@
    "level": 2,
    "page_start": 57,
    "page_end": 58,
-   "n_chars": 2144,
+   "n_chars": 2138,
    "n_words": 356,
    "label_start": "95",
    "label_end": "96"
   },
   {
-   "id": "sec-031-a-solitonic-behavior",
-   "number": "A",
+   "id": "sec-031-appendix-a-solitonic-behavior",
+   "number": "Appendix A",
    "title": "Solitonic Behavior",
    "level": 1,
    "page_start": 58,
    "page_end": 61,
-   "n_chars": 9079,
-   "n_words": 1809,
+   "n_chars": 8846,
+   "n_words": 1691,
    "label_start": "96",
    "label_end": "99"
   },
   {
-   "id": "sec-032-b-contingency-in-second-order-fusion",
-   "number": "B",
+   "id": "sec-032-appendix-b-contingency-in-second-order-fusion",
+   "number": "Appendix B",
    "title": "Contingency in Second Order Fusion",
    "level": 1,
    "page_start": 61,
-   "page_end": 62,
-   "n_chars": 1177,
-   "n_words": 175,
+   "page_end": 63,
+   "n_chars": 2016,
+   "n_words": 332,
    "label_start": "99",
-   "label_end": "100"
+   "label_end": "101"
   },
   {
    "id": "sec-033-available-antiquirks",
    "number": null,
    "title": "Available Antiquirks",
    "level": 1,
-   "page_start": 62,
+   "page_start": 63,
    "page_end": 63,
-   "n_chars": 798,
-   "n_words": 149,
-   "label_start": "100",
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "101",
    "label_end": "101"
   },
   {
@@ -2725,20 +2763,20 @@
    "label_end": "102"
   },
   {
-   "id": "sec-035-c-hopf-algebra",
-   "number": "C",
+   "id": "sec-035-appendix-c-hopf-algebra",
+   "number": "Appendix C",
    "title": "Hopf Algebra",
    "level": 1,
    "page_start": 64,
    "page_end": 67,
-   "n_chars": 7251,
-   "n_words": 1402,
+   "n_chars": 6784,
+   "n_words": 1207,
    "label_start": "102",
    "label_end": "105"
   },
   {
-   "id": "sec-036-d-the-beta-switch",
-   "number": "D",
+   "id": "sec-036-appendix-d-the-beta-switch",
+   "number": "Appendix D",
    "title": "The Beta Switch",
    "level": 1,
    "page_start": 67,
@@ -2749,8 +2787,8 @@
    "label_end": "106"
   },
   {
-   "id": "sec-037-e-quaternions",
-   "number": "E",
+   "id": "sec-037-appendix-e-quaternions",
+   "number": "Appendix E",
    "title": "Quaternions",
    "level": 1,
    "page_start": 68,
@@ -2767,8 +2805,8 @@
    "level": 2,
    "page_start": 68,
    "page_end": 70,
-   "n_chars": 2867,
-   "n_words": 643,
+   "n_chars": 2386,
+   "n_words": 443,
    "label_start": "106",
    "label_end": "108"
   },
@@ -2779,8 +2817,8 @@
    "level": 2,
    "page_start": 70,
    "page_end": 71,
-   "n_chars": 2275,
-   "n_words": 472,
+   "n_chars": 1990,
+   "n_words": 381,
    "label_start": "108",
    "label_end": "109"
   },
@@ -2790,33 +2828,33 @@
    "title": "Taxonomical Implications",
    "level": 2,
    "page_start": 71,
-   "page_end": 72,
-   "n_chars": 1987,
-   "n_words": 382,
+   "page_end": 73,
+   "n_chars": 3157,
+   "n_words": 647,
    "label_start": "109",
-   "label_end": "110"
+   "label_end": "111"
   },
   {
    "id": "sec-041-0-ab-ac",
    "number": "0",
    "title": "AB* AC*",
    "level": 1,
-   "page_start": 72,
+   "page_start": 73,
    "page_end": 74,
-   "n_chars": 2286,
-   "n_words": 467,
-   "label_start": "110",
+   "n_chars": 1106,
+   "n_words": 202,
+   "label_start": "111",
    "label_end": "112"
   },
   {
-   "id": "sec-042-f-on-the-kauffman-bracket-polynomial-of-2-n-toru",
-   "number": "F",
+   "id": "sec-042-appendix-f-on-the-kauffman-bracket-polynomial-of",
+   "number": "Appendix F",
    "title": "On the Kauffman Bracket Polynomial of (2, n) Torus Knots",
    "level": 1,
    "page_start": 74,
    "page_end": 76,
-   "n_chars": 4335,
-   "n_words": 1087,
+   "n_chars": 3867,
+   "n_words": 755,
    "label_start": "112",
    "label_end": "114"
   },
@@ -2827,8 +2865,8 @@
    "level": 1,
    "page_start": 76,
    "page_end": 77,
-   "n_chars": 3407,
-   "n_words": 493,
+   "n_chars": 3385,
+   "n_words": 492,
    "label_start": "114",
    "label_end": "115"
   }
@@ -2839,7 +2877,7 @@
   "toc_entries": 44,
   "toc_inferred_entries": 44,
   "toc_inferred_mean_confidence": 0.745,
-  "toc_inferred_empty_share": 0.114,
+  "toc_inferred_empty_share": 0.136,
   "toc_inferred_method": "font",
   "figure_entries": 73,
   "figure_sequence_gaps": [
@@ -2901,6 +2939,7 @@
    ]
   },
   "sections": 45,
-  "chars_total": 166676
+  "chars_total": 164388,
+  "furniture_lines_stripped": 0
  }
 }

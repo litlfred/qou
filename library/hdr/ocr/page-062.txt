@@ -1,0 +1,58 @@
+defined inductively on Yan(q)), for all n > 0, by the following rules:
+
+(i) tra, an = tram(ba) a,b € Yan(q))
+
+(ii) tram) = 1 1€ Yan (ge)
+
+(iii) tram(@gn) = 2 tTam(a) a € Yan(q)"") (Markov property)
+(iv) tram(aen) = Em tram(a) a € Yan(q
+
+(v) tram (aengn) zt¥aym(a) a € Yan(q).
+
+For alla € Unso Yan(Q, we have trgm(a) = trap(a) where D is any subset of Z/dZ such that
+|D| =m. Note that, in this case, Em = Ep.
+
+For a € Bn, we set tram(a) := tram(d(a)). Theorem [6.30] implies that the specialised trace trg,p on
+classical knots and links depends only on |D| and not on the solution Xp of the E-system. It does not
+even depend on d, since we have the following Corollary 4.4]:
+
+Corollary 6.31 Let d,d' be positive integers with d < d'. For alla € Bn, we have
+
+tra a(@) = traa(@) = tra,z/az(a).
+Remark 6.32 Recall that Z/dZ parametrises the trivial solution of the E-system, that is, the one given
+by x1 =X =-++=xy-1=0.
+
+The above way of calculating the trace trg,p allows us to prove new results for the invariants Og p
+of classical knots and links and to compare them with the Homflypt polynomial. Here is the first
+observation. The construction of the invariants @4,p yielded seemingly 2¢—1 invariants for every choice
+of d. However, an immediate consequence of Theorem and Corollary [6-31] is the following
+Proposition 4.6]:
+
+Proposition 6.33 The values of the isotopy invariants Og,p for classical links depend only on the
+cardinality |D| of D. Hence, for a fixed d, we only obtain d invariants. Further, for d,d' positive
+integers with d < d', we have Oa,p = Oa,p’ as long as |D| = |D’|. We deduce that, if |D'| = d, then
+Ow,p' = Oa,z/az- Therefore, the invariants Oa,p can be parametrised by the positive natural numbers,
+setting Oa := Ou, z/az for alld € N*.
+
+Theorem also enabled the development of a program for computing the invariants Og with
+much lower computational complexity than the one used for the computation of the invariants [yp (see
+(ChmJKT]). Such a program has been developed by Karvounis and it is available on |La-web|.
+
+Now, the main result of this section concerns the comparison of the invariants Og with the Homflypt
+polynomial. In we have obtained the following remarkable result:
+
+Theorem 6.34 Let d € N, d > 1. The invariants Oq are topologically equivalent to the Homflypt
+polynomial on knots, and more generally on links that are obtained as disjoint unions of knots. However,
+the invariants Og are NOT topologically equivalent to the Homflypt polynomial on links.
+
+For the first part, using the properties of the specialised trace, we have proved that, for all a € B,,
+such that @ is a knot, we have [CJKT} Theorem 5.8]:
+
+Oa(q, z)(@) = O1(9, dz)(@) = P(g, dz)(@).
+More generally, for all a € B,, such that @ is a disjoint union of k knots, we have Theorem 6.2]:
+Gala, 2)(@) = a! (g, dz)(@) = dP, dz)(@).
+Note that, following Remark [6.25] the above equality can be rewritten as
+@a(4, Av)(@) = Ep *O1(g, Av)(@) = EG *P(q, Ad) (@),
+where D = Z/dZ. We will simply write
+
+04(@) = ES *P(@). (6.29)

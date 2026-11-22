@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1411.6062v2
-doc_title: "EV ALUATION OF STATE INTEGRALS AT RATIONAL POINTS"
+doc_title: "EVALUATION OF STATE INTEGRALS AT RATIONAL POINTS"
 section_id: sec-003-13-evaluation-of-state-integrals
 section_title: "Evaluation of state-integrals"
 section_number: 1.3
 pages: 4-6
 source_pdf: 1411.6062v2.pdf
 source_sha256: 5abd328d027de43c
-doc_brief: "EVALUATION OF STATE INTEGRALS AT RATIONAL POINTS — Multi-dimensional state-integrals of products of Faddeev’s quant um diloga- rithms arise frequently in Quantum Topology, quantum Teichm¨ uller t"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.975
-latex_coverage_ratio: 0.964
+latex_coverage_ratio: 0.975
+doc_brief: "EVALUATION OF STATE INTEGRALS AT RATIONAL POINTS — Multi-dimensional state-integrals of products of Faddeev’s quantum diloga- rithms arise frequently in Quantum Topology, quantum Teichm¨uller theory"
 ---
 []{#sub.evaluation label="sub.evaluation"}
 

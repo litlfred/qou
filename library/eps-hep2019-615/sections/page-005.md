@@ -8,6 +8,7 @@ pages: 5-5
 source_pdf: EPS-HEP2019_615.pdf
 source_sha256: b5fb4982d65e9fcd
 toc_source: undetermined
+doc_brief: "PoS(EPS-HEP2019)615 — 6 sections: Page 1; Page 2; Page 3"
 ---
 PoS(EPS-HEP2019)615
 Sedenions, Cℓ(8), and three generations of fermions

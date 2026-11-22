@@ -1,13 +1,14 @@
 ---
 doc_id: arxiv-math-9805116v3
-doc_title: "arXiv:math/9805116v3 [math.QA] 8 Jun 1999"
+doc_title: "Weak Hopf Algebras I: Integral Theory and C*-structure"
 section_id: sec-front-matter
 section_title: "Front matter"
 section_number: null
-pages: 1-3
+pages: 1-4
 source_pdf: 9805116v3.pdf
 source_sha256: 65ce47d232d61de4
 toc_source: inferred
+doc_brief: "Weak Hopf Algebras I: Integral Theory and C*-structure — We give an introduction to the theory of weak Hopf algebras proposed recently as a coassociative alternative of weak quasi-Hopf algebras."
 ---
 arXiv:math/9805116v3  [math.QA]  8 Jun 1999
 Weak Hopf Algebras
@@ -37,11 +38,9 @@ Supported by the DFG, SFB 288 ”Diﬀerentialgeometrie und Quantenphysik”
 3 Research Institute for Particle and Nuclear Physics, Budapest, H-1525 Budapest 114, P.O.B. 49, Hungary
 E-mail: SZLACH@rmki.kfki.hu
 Supported by the Hungarian Scientiﬁc Research Fund, OTKA – T 020 285.
-1
 Contents
 1
 Introduction
-2
 2
 The Weak Hopf Calculus
 4
@@ -147,3 +146,34 @@ we will show that if we allow the inclusion to be reducible and N and M to have 
 ﬁnite dimensional centers then the appropriate ”quantum group” is a C∗-weak Hopf algebra.
 Even in case of inclusions of certain associative (non-∗) algebras the notion of a WHA over an
 arbitrary ﬁeld K, introduced in this paper, may provide a useful invariant.
+In Section 2 we introduce the axioms of weak bialgebras and weak Hopf algebras over
+a ﬁeld K and discuss their consequences. If K =
+|C, the complex ﬁeld, then these axioms
+are equivalent to those of [20]. The present axioms have the advantage of being manifestly
+selfdual and almost each of them having an ancestor among the Hopf algebra axioms which
+it generalizes.
+In discussing the consequences particular attention is paid to the canonical
+subalgebras AL and AR present in any WHA both of which reducing to the scalars K1 if A
+is a Hopf algebra. From many point of views these subalgebras behave like non-commutative
+generalizations of numbers. Just to mention some: 1. AL and AR are separable K-algebras. 2.
+The trivial left A-module is a representation on the K-space AL (or on AR). 3. The dual weak
+Hopf algebra ˆA have left and right subalgebras ˆAL and ˆAR that are isomorphic to AR and AL,
+respectively. Of course, in order to realize the idea of AL and AR being ”non-commutative
+numbers” one should completely get rid of the ﬁeld K from the outset. As yet we have no
+concrete proposal for this scenario.
+Section 3 is devoted to the study of integrals in weak Hopf algebras. Using the notion of
+weak Hopf modules which is a generalization of the Hopf modules [1, 19] we show that non-zero
+integrals exist. A weak Hopf version of Maschke’s Theorem characterizes semisimple WHAs
+as those possessing normalized integrals. An other important class of WHAs are those which
+are Frobenius algebras. They are characterized by possessing non-degenerate left integrals.
+This class is a selfdual class by the Duality Theorem of non-degenerate integrals. We conclude
+with giving necessary and suﬃcient criteria for the existence of Haar integrals, i.e. normalized
+non-degenerate 2-sided integrals in a WHA.
+Section 5 contains the basic properties of weak C∗-Hopf algebras such as the existence of
+a Haar integral h and a canonical grouplike element g ≥0 implementing S2 and the modular
+automorphism of the Haar measure. As a consequence of the existence of Haar measures the
+dual of a C∗-weak Hopf algebra is a C∗-weak Hopf algebra again. Further analysis of C∗-WHAs
+will be given in Part II where we discuss the representation category and a notion of dimension
+which turns out to be non-commutative in case of solitonic representations [3] .
+2
+The Weak Hopf Calculus

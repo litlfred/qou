@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-ph-9502366v1
-doc_title: "arXiv:hep-ph/9502366v1 22 Feb 1995"
+doc_title: "Chiral Perturbation Theory"
 section_id: sec-012-83-the-chiral-anomaly-in-non-leptonic-k-decays
 section_title: "The chiral anomaly in non-leptonic K decays"
 section_number: 8.3
@@ -8,6 +8,7 @@ pages: 36-36
 source_pdf: 9502366v1.pdf
 source_sha256: 56df064956ca03f8
 toc_source: inferred
+doc_brief: "Chiral Perturbation Theory — An introduction to the basic ideas and methods of Chiral Perturbation Theory is presented."
 ---
 The chiral anomaly also appears in the non-leptonic weak interactions.
 A

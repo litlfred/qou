@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1409.2799v2",
  "source_sha256": "2f2067b7b583e731",
- "brief": "DIAGRAM CATEGORIES FOR Uq-TILTING MODULES AT ROOTS OF UNITY — We give a diagrammatic presentation of the category of Uq(sl2)-tilting modules T for q being a root of unity and introduce a grading on",
- "extended": "**DIAGRAM CATEGORIES FOR Uq-TILTING MODULES AT ROOTS OF UNITY**\n\n*HENNING HAAHR ANDERSEN AND DANIEL TUBBENHAUER*\n\n50 pp, 11 sections.\n\n**Abstract.** We give a diagrammatic presentation of the category of Uq(sl2)-tilting modules T for q being a root of unity and introduce a grading on T. This grading is a “root of unity phenomenon” and might lead to new insights about link and3-manifold invariants deduced fromT. We also give a diagrammatic category for the (graded) projective endofunctors on T, indicate how our results could generalize and collect some “well-known” facts to give a reasonably self-contained exposition.\n\n**Outline.** 1 Introduction; 1.1 The framework; 1.2 An outline of the paper; 2.1 Quantum groups at roots of unity; 2.2 Weyl modules, dual Weyl modules and simple; 2.3 Tilting modules and the tilting category T; 2.4 The linkage principle and blocks; 2.5 Translation functors; 3.5 The tilting category T and its graded coun; 4.1 The basics: diagrammatic categories, addit; References",
+ "brief": "DIAGRAM CATEGORIES FOR Uq-TILTING MODULES — We give a diagrammatic presentation of the category of Uq(sl2)-tilting modules T for q being a root of unity and introduce a grading on T.",
+ "extended": "**DIAGRAM CATEGORIES FOR Uq-TILTING MODULES**\n\n*HENNING HAAHR ANDERSEN AND DANIEL TUBBENHAUER*\n\n50 pp, 18 sections.\n\n**Abstract.** We give a diagrammatic presentation of the category of Uq(sl2)-tilting modules T for q being a root of unity and introduce a grading on T. This grading is a “root of unity phenomenon” and might lead to new insights about link and 3-manifold invariants deduced from T. We also give a diagrammatic category for the (graded) projective endofunctors on T, indicate how our results could generalize and collect some “well-known” facts to give a reasonably self-contained exposition.\n\n**Outline.** Front matter; 1 Introduction; 1.1 The framework; 1.2 An outline of the paper; 2 The tilting category T; 2.1 Quantum groups at roots of unity; 2.2 Weyl modules, dual Weyl modules and simple; 2.3 Tilting modules and the tilting category T; 2.4 The linkage principle and blocks; 2.5 Translation functors; 3 The Khovanov-Seidel quiver algebra and gradi; 3.2 Combinatorics of the graded, right Qm- and; 3.3 Endofunctors on pMod-Qm and pMod-Qin; 3.5 The tilting category T and its graded coun; 4 Diagrams for the graded tilting category Tgr; 4.1 The basics: diagrammatic categories, addit; 4.5 Diagram categories for Endo(Tgrl); References",
  "tokens": {
-  "brief": 49,
-  "extended": 251
+  "brief": 45,
+  "extended": 314
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -25,42 +30,72 @@
    "pages": "5-5"
   },
   {
-   "id": "sec-003-21-quantum-groups-at-roots-of-unity",
+   "id": "sec-003-2-the-tilting-category-t",
+   "title": "The tilting category T",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-004-21-quantum-groups-at-roots-of-unity",
    "title": "Quantum groups at roots of unity",
    "pages": "5-6"
   },
   {
-   "id": "sec-004-22-weyl-modules-dual-weyl-modules-and-simple-mod",
+   "id": "sec-005-22-weyl-modules-dual-weyl-modules-and-simple-mod",
    "title": "Weyl modules, dual Weyl modules and simple modules",
    "pages": "6-8"
   },
   {
-   "id": "sec-005-23-tilting-modules-and-the-tilting-category-t",
+   "id": "sec-006-23-tilting-modules-and-the-tilting-category-t",
    "title": "Tilting modules and the tilting category T",
    "pages": "8-10"
   },
   {
-   "id": "sec-006-24-the-linkage-principle-and-blocks",
+   "id": "sec-007-24-the-linkage-principle-and-blocks",
    "title": "The linkage principle and blocks",
    "pages": "10-14"
   },
   {
-   "id": "sec-007-25-translation-functors",
+   "id": "sec-008-25-translation-functors",
    "title": "Translation functors",
-   "pages": "14-27"
+   "pages": "14-17"
   },
   {
-   "id": "sec-008-35-the-tilting-category-t-and-its-graded-counter",
+   "id": "sec-009-3-the-khovanov-seidel-quiver-algebra-and-grading",
+   "title": "The Khovanov-Seidel quiver algebra and gradings",
+   "pages": "17-19"
+  },
+  {
+   "id": "sec-010-32-combinatorics-of-the-graded-right-qm--and-ain",
+   "title": "Combinatorics of the graded, right Qm- and Ain-modules",
+   "pages": "19-20"
+  },
+  {
+   "id": "sec-011-33-endofunctors-on-pmod-qm-and-pmod-qin",
+   "title": "Endofunctors on pMod-Qm and pMod-Qin",
+   "pages": "20-27"
+  },
+  {
+   "id": "sec-012-35-the-tilting-category-t-and-its-graded-counter",
    "title": "The tilting category T and its graded counterpart Tgr",
    "pages": "27-31"
   },
   {
-   "id": "sec-009-41-the-basics-diagrammatic-categories-additive-c",
-   "title": "The basics: diagrammatic categories, additive closures and Karoubi envelopes",
-   "pages": "31-48"
+   "id": "sec-013-4-diagrams-for-the-graded-tilting-category-tgr",
+   "title": "Diagrams for the graded tilting category Tgr",
+   "pages": "31-31"
   },
   {
-   "id": "sec-010-references",
+   "id": "sec-014-41-the-basics-diagrammatic-categories-additive-c",
+   "title": "The basics: diagrammatic categories, additive closures and Karoubi envelopes",
+   "pages": "31-46"
+  },
+  {
+   "id": "sec-015-45-diagram-categories-for-endotgrl",
+   "title": "Diagram categories for Endo(Tgrl)",
+   "pages": "46-48"
+  },
+  {
+   "id": "sec-016-references",
    "title": "References",
    "pages": "48-50"
   }

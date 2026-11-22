@@ -3,24 +3,37 @@
  "doc_id": "physrevd108106023",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "50c7980e88cd21a07f420b53a6dc0d9397e6334cad2c6c39eb27b5745817e209",
   "file": "PhysRevD.108.106023.pdf"
  },
  "provenance": {
-  "title": "I. INTRODUCTION Knot-quiver correspondence (KQC) conjectured by Kucharski-Reineke-Stosic-Sulkowski [1] provides a new encoding of HOMFL Y -PT invariants of knots in terms of the representation theory of quivers. Such a correspondence",
-  "authors": null,
+  "title": "Knot-quiver correspondence for double twist knots",
+  "authors": "Vivek Kumar Singh",
   "arxiv": null,
   "doi": "10.1103/PhysRevD.108.106023"
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 2,
+  "candidates": 1,
   "by_kind": {
-   "proposition": 1,
-   "conjecture": 1
+   "proposition": 1
   },
-  "formalization_candidates": 1
+  "formalization_candidates": 1,
+  "by_domain": {
+   "math": 1
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 1
+  },
+  "by_lean_status": {
+   "unformalized": 1
+  },
+  "needs_lean_proof": 1
  },
  "candidates": [
   {
@@ -28,26 +41,25 @@
    "source_kind": "proposition",
    "number": null,
    "name": null,
-   "statement": "The r-colored Jones polynomial for double",
-   "section_file": "sections/sec-001-ii-double-twist-knots.md",
-   "section_title": "DOUBLE TWIST KNOTS",
-   "pages": "2-5",
+   "statement": "The r-colored Jones polynomial for double twist knots K\u00f0p; \u2212m\u00de, with p \u2265m, can be expressed in the quiver representation, Jr\u00f0K\u00f0p; \u2212m\u00de; q\u00de \u00bc X d1\u00fed2\u00fe\u0002\u0002\u0002\u00fed4pm\u00fe1\u00bcr \u00f0\u22121\u00de\u039b\u00f0p;\u2212m\u00deq\u039e\u00f0p;\u2212m\u00de \u00d7 \u00f0q2; q2\u00der Q4pm\u00fe1 i\u00bc1 \u00f0q2; q2\u00dedi q P i;j CK\u00f0p;\u2212m\u00dedidj; \u00f08\u00de where the linear term \u039e\u00f0p;\u2212m\u00de \u2261P i \u03beidi, phase factor \u039b\u00f0p;\u2212m\u00de \u2261P i \u03b3idi. The block structure of the matrix CK\u00f0p;\u2212m\u00de for some examples lead to the following conjecture:",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-004-iii-knot-quiver-correspondence.md (p. 4-7)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-004-iii-knot-quiver-correspondence.md",
+   "section_title": "KNOT-QUIVER CORRESPONDENCE",
+   "pages": "4-7",
    "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "conjecture",
-   "source_kind": "conjecture",
-   "number": null,
-   "name": null,
-   "statement": "The generic structure of the quiver matrix",
-   "section_file": "sections/sec-001-ii-double-twist-knots.md",
-   "section_title": "DOUBLE TWIST KNOTS",
-   "pages": "2-5",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
+   "formalization_note": "Deductive math claim (evidence: in-paper, Stated in sections/sec-004-iii-knot-quiver-correspondence.md (p. 4-7)). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "prop-sec-004-01",
+   "block_iri": "library/physrevd108106023/blocks/prop-sec-004-01",
+   "claim_id": "physrevd108106023#prop-sec-004-01",
+   "lean_status": "unformalized",
+   "lean_decls": [],
+   "needs_lean_proof": true
   }
  ]
 }

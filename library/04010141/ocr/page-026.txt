@@ -1,0 +1,47 @@
+166 J.J. Graham and G.I. Lehrer
+
+of V, where V; = V(s,&;) and the &; are distinct. The relation (7.1)
+shows that
+
+(7.5) N-V(s,&) C V(s,q°&).
+
+Multiplication by q? partitions C* into orbits which are infinite if q? is
+not a root of unity and have cardinality e if g? has finite multiplicative
+order e (say). These orbits are linearly (resp. cyclically) ordered if the
+order of q” is infinite (resp. finite). We may assume that the €; are
+ordered so that each orbit occurs as a sequence of successive elements
+in (€1,--- ,€) in the specified linear or cyclic order, and that the €; in
+a given orbit occur as a “block”, which we denote by s; (i = 1,--- ,r),
+in the matrix s. Let k,,---,k, be the sizes of these blocks, so that
+ky +---+k, =n. The nilpotent element N correspondingly decomposes
+into blocks: N = N, @---@WN,, where N; is of size k; and s;-N,; = q?N;
+for i=1,--- ,r. The following facts may be found in [4, 41, 1].
+
+Proposition 7.6. (i) The standard module M,,n is Grothendieck
+equivalent to the induced module
+
+(7.7) Inde ot Mav,
+
+where ere Ms, ,N, 18 the standard module of F(a), d = (k1,+++ kr) and
+
+M,., N, 1s the lift from Oe (q) to Ae (a) of @F Moun:
+a) If p; is a composition factor of Mh, i = 1,---,r), then
+
+In FS 1p: is irreducible.
+(tii) The standard module Ms,n is multiplicity free if and only if
+
+each component M,g,\n, is multiplicity free.
+
+Thus the decomposition of M,,y may be discussed in terms of that of
+the M,,,n,; in this way one reduces to the case where all the eigenvalues
+€; of s are in the same q?-orbit in C. This may also be seen from the
+geometric description of the decomposition numbers given above (see
+(7.3)) as follows.
+
+The centraliser Z¢(s) © [];_; GLn,(C), where n; is the size of the
+block s; (or Nj). It is clear that the orbit Ow C Ng,q is isomorphic to
+the product J]j_, On,, where On, := Zein, (C)(8i) * Ni. It follows from
+the Kunneth theorem for intersection cohomology, that in the above
+notation,
+
+(7.8) Ky.ni(t) = II Ky,,.ni(t);

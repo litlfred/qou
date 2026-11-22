@@ -1,0 +1,52 @@
+434 Challenges and extensions
+
+A symmetric function Q always has critical points in the main diagonal
+direction, since Viog Q(z) || 1 whenever z = (w,...,w) and w is a root of
+the univariate polynomial Q(z, ...,z). When Q is symmetric and multi-affine,
+meaning @ has degree 1 in each variable, then there must be a minimal critical
+point.
+
+Theorem 13.8 ({Bar+18, Lemma 15]). Let Q be a multi-affine elementary
+symmetric function and let 6° denote the univariate diagonalization 52(z) :=
+O(z,...,z). [fw is a root of 52 of minimal modulus then (w, ...,w) is a minimal
+point for Q in the main diagonal direction.
+
+Proof Denote the roots of 62 by aj,...,@%, where |a| is a root of least mod-
+ulus, and let
+
+k
+M@) =| [@-e).
+j=1
+
+J
+
+For any ¢ > 0, the polynomial M has no zeros in the polydisk D centered at
+the origin whose radii are all |a;| — €. For any d-variable polynomial P, denote
+its symmetrization by
+
+1
+P,(Z) := 7 > P (Za(t)s+++5 Zn) +
+meSq
+
+Then M, = Q and the Borcea—Brindén symmetrization lemma [BB09, The-
+orem 2.1] implies that Q has no zeros in the polydisk D. Because e > 0 was
+arbitrary, we conclude that (a1,...,a@ ) is a minimal point of Q. oO
+
+Exercise 13.3. In d variables, the jth elementary symmetric function is the
+
+polynomial
+e(Z) = » I] Lis
+SEE; iS
+where & consists of all subsets of {1,...,d} with j elements. Use Theorem 13.8
+
+to find minimal points for the following denominators without resorting to ge-
+ometric arguments.
+
+(a) In 2 variables, Q(x, y) = 1 - e1 (x,y) — e2(x, y) (the Delannoy generating
+function).
+
+(b) In 3 variables, Q(x, y,z) = 3 — e1(x, y, z) — e2(x, y, Z) + 3e3(x, y, Z) (the cube
+grove generating function).
+
+(c) In 4 variables, Q(z) = 1 - e\(z) + 27e4(z) (the GRZ generating function
+with critical parameter).

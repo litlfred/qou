@@ -2,30 +2,20 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-0510265v3",
  "source_sha256": "548a0eece08bd967",
- "brief": "Triply-graded link homology and Hochschild homology of Soergel bimodules Mikhail Khovanov — We trade matrix factorizations and Koszul complexes for Hochschild homology of Soergel bimodules to modify",
- "extended": "**Triply-graded link homology and Hochschild homology of Soergel bimodules Mikhail Khovanov**\n\n*October 14, 2005*\n\n19 pp, 4 sections.\n\n**Abstract.** We trade matrix factorizations and Koszul complexes for Hochschild homology of Soergel bimodules to modify the construction of triply- graded link homology and relate it to Kazhdan-Lusztig theor y. Hochschild homology. Let R be a k-algebra, where k is a ﬁeld, Re = R ⊗k Rop be the enveloping algebra of R, and M be an R-bimodule (equivalently, a left Re-module). The functor of R-coinvariants associates to M the factorspace MR = M/[R, M], where [R, M] is the subspace of M spanned by vectors of the form rm − mr. We have MR = R ⊗Re M. The R-coinvariants functor is right exact and its i-th derived functor takes M to TorRe i (R, M). The latter space is also denoted HHi(R, M) and called the i-th Hochschild homology of M. The Hochschild homology of M is the direct sum HH(R, M) def = ⊕ i≥0 HHi(R, M).\n\n**Outline.** Abstract; 2 Z-; 1 R′ over the subalgebra R′; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: Up to an overall shift in the grading, HHH(σ) is an invariant\n- Proposition 1: If braid words σ and ~σ represent the same element of the\n- Proposition 2: The Hecke algebra has a basis {C ′\n- Proposition 3: Coeﬃcients of polynomials Py,w are nonnegative integers.\n- Proposition 4: There are isomorphisms of graded R-bimodules\n- Lemma 1: The ﬁrst rm elements on the above list constitute a regular se-",
+ "brief": "Triply-graded link homology and Hochschild homology of Soergel bimodules — We trade matrix factorizations and Koszul complexes for Hochschild homology of Soergel bimodules to modify the construction",
+ "extended": "**Triply-graded link homology and Hochschild homology of Soergel bimodules**\n\n*Mikhail Khovanov*\n\n19 pp, 2 sections.\n\n**Abstract.** We trade matrix factorizations and Koszul complexes for Hochschild homology of Soergel bimodules to modify the construction of triply- graded link homology and relate it to Kazhdan-Lusztig theory. Hochschild homology. Let R be a k-algebra, where k is a ﬁeld, Re = R ⊗k Rop be the enveloping algebra of R, and M be an R-bimodule (equivalently, a left Re-module). The functor of R-coinvariants associates to M the factorspace MR = M/[R, M], where [R, M] is the subspace of M spanned by vectors of the form rm −mr. We have MR = R ⊗Re M. The R-coinvariants functor is right exact and its i-th derived functor takes M to TorRe i (R, M). The latter space is also denoted HHi(R, M) and called the i-th Hochschild homology of M. The Hochschild homology of M is the direct sum HH(R, M) def = ⊕ i≥0HHi(R, M).\n\n**Outline.** Front matter; References",
  "tokens": {
   "brief": 49,
-  "extended": 370
+  "extended": 242
  },
  "sections": [
   {
-   "id": "sec-000-abstract",
-   "title": "Abstract",
-   "pages": "1-7"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-17"
   },
   {
-   "id": "sec-001-2-z",
-   "title": "Z-",
-   "pages": "7-8"
-  },
-  {
-   "id": "sec-002-1-r-over-the-subalgebra-r",
-   "title": "R′ over the subalgebra R′",
-   "pages": "8-17"
-  },
-  {
-   "id": "sec-003-references",
+   "id": "sec-000-references",
    "title": "References",
    "pages": "17-19"
   }
@@ -34,8 +24,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

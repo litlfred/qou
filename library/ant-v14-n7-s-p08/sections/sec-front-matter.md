@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: ant-v14-n7-s-p08.pdf
 source_sha256: 81b8f00fe5fbd0f6
 toc_source: inferred
+doc_brief: "Burgess bounds for short character sums evaluated at forms — 11 sections: Front matter; Introduction; Method of proof: an overview"
 ---
 msp
 ALGEBRA AND NUMBER THEORY 14:7 (2020)

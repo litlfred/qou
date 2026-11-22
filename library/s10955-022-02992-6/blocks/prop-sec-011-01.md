@@ -1,0 +1,1 @@
+We have ˜T  ·; z  = e(·) + ˜κs z ˜T (·; z). Moreover ˜T1(·; z) = e(·) and for N ≥1 ˜TN+1  ·; z  = e(·) + (˜κs z ˜TN)  ·; z  . The proposition follows from Lemma 3.9 by arguments similar to the proof of Proposition 3.6, therefore the proof is omitted.

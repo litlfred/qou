@@ -6,38 +6,42 @@
   "sha256": "8ac25ddb38d360b4f314e6b1496f58b46e26f5a0bc13f3a00a90bb13f1e9df4f",
   "bytes": 1038855,
   "pages": 175,
-  "text_source": "embedded",
+  "text_source": "ocr",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:26Z",
+  "mtime": "2026-11-15T11:07:55Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "runContext": {
+   "sha256": "d0dd733164fd58a9f7d2246e38699fb4458caf7000aabd5b3eeb923b032d8fa4"
+  }
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "Poincar\u00e9 Disc Model",
-  "authors_raw": "Danijela Simi\u0107",
+  "title": "Formalization of the Poincare disc model of hyperbolic geometry",
+  "authors_raw": "Danijela Simić",
   "title_lines": [
-   "Poincar\u00e9 Disc Model"
+   "Poincaré Disc Model"
   ],
-  "abstract": "We describe formalization of the Poincar\u00e9 disc model of hyperbolic geometry within the Isabelle/HOL proof assistant. The model is de\ufb01ned within the extended complex plane (one dimensional complex projective space CP 1), formalized in the AFP entry \u201cComplex Geometry\u201d [6]. Points, lines, congruence of pairs of points, betweenness of triples of points, circles, and isometries are de\ufb01ned within the model. It is shown that the model satis\ufb01es all Tarski\u2019s axioms except the Euclid\u2019s axiom. It is shown that it satis\ufb01es its negation and the limiting parallels axiom (which proves it to be a model of hyperbolic geometry).",
+  "abstract": "We describe formalization of the Poincaré disc model of hyperbolic geometry within the Isabelle/HOL proof assistant. The model is deﬁned within the extended complex plane (one dimensional complex projective space CP 1), formalized in the AFP entry “Complex Geometry” [6]. Points, lines, congruence of pairs of points, betweenness of triples of points, circles, and isometries are deﬁned within the model. It is shown that the model satisﬁes all Tarski’s axioms except the Euclid’s axiom. It is shown that it satisﬁes its negation and the limiting parallels axiom (which proves it to be a model of hyperbolic geometry).",
   "docinfo": {
    "Producer": "LuaTeX-1.14.0",
    "Creator": "LaTeX with hyperref",
    "CreationDate": "D:20260206214343+11'00'"
   },
-  "title_raw": "Poincar\u00e9 Disc Model",
+  "title_raw": "Poincaré Disc Model",
   "title_source": "heading",
   "title_verified": true,
   "title_evidence": {
-   "heading": "Poincar\u00e9 Disc Model",
+   "heading": "Poincaré Disc Model",
    "outline": "Introduction",
-   "text": "Poincar\u00e9 Disc Model",
+   "text": "Poincaré Disc Model",
    "corroborated_by": [
     "text"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "Poincaré Disc Model"
  },
  "toc": [
   {
@@ -48,7 +52,7 @@
    "number": null,
    "confidence": null,
    "evidence": null,
-   "page_label": "3"
+   "page_label": null
   },
   {
    "level": 1,
@@ -58,7 +62,7 @@
    "number": null,
    "confidence": null,
    "evidence": null,
-   "page_label": "3"
+   "page_label": null
   },
   {
    "level": 2,
@@ -68,7 +72,7 @@
    "number": null,
    "confidence": null,
    "evidence": null,
-   "page_label": "3"
+   "page_label": null
   },
   {
    "level": 1,
@@ -78,17 +82,17 @@
    "number": null,
    "confidence": null,
    "evidence": null,
-   "page_label": "4"
+   "page_label": null
   },
   {
    "level": 1,
-   "title": "H-lines in the Poincar\u00e9 model",
+   "title": "H-lines in the Poincaré model",
    "page": 5,
    "source": "outline",
    "number": null,
    "confidence": null,
    "evidence": null,
-   "page_label": "5"
+   "page_label": null
   },
   {
    "level": 2,
@@ -98,7 +102,7 @@
    "number": null,
    "confidence": null,
    "evidence": null,
-   "page_label": "5"
+   "page_label": null
   },
   {
    "level": 3,
@@ -108,7 +112,7 @@
    "number": null,
    "confidence": null,
    "evidence": null,
-   "page_label": "7"
+   "page_label": null
   },
   {
    "level": 3,
@@ -118,7 +122,7 @@
    "number": null,
    "confidence": null,
    "evidence": null,
-   "page_label": "7"
+   "page_label": null
   },
   {
    "level": 3,
@@ -128,7 +132,7 @@
    "number": null,
    "confidence": null,
    "evidence": null,
-   "page_label": "7"
+   "page_label": null
   },
   {
    "level": 3,
@@ -138,7 +142,7 @@
    "number": null,
    "confidence": null,
    "evidence": null,
-   "page_label": "8"
+   "page_label": null
   },
   {
    "level": 3,
@@ -282,7 +286,7 @@
   },
   {
    "level": 1,
-   "title": "H-distance in the Poincar\u00e9 model",
+   "title": "H-distance in the Poincaré model",
    "page": 44,
    "source": "outline",
    "number": null,
@@ -322,7 +326,7 @@
   },
   {
    "level": 1,
-   "title": "H-circles in the Poincar\u00e9 model",
+   "title": "H-circles in the Poincaré model",
    "page": 67,
    "source": "outline",
    "number": null,
@@ -352,7 +356,7 @@
   },
   {
    "level": 1,
-   "title": "H-betweenness in the Poincar\u00e9 model",
+   "title": "H-betweenness in the Poincaré model",
    "page": 77,
    "source": "outline",
    "number": null,
@@ -452,7 +456,7 @@
   },
   {
    "level": 1,
-   "title": "Intersection of h-lines with the x-axis in the Poincar\u00e9 model",
+   "title": "Intersection of h-lines with the x-axis in the Poincaré model",
    "page": 96,
    "source": "outline",
    "number": null,
@@ -482,7 +486,7 @@
   },
   {
    "level": 2,
-   "title": "Check if a Poincar\u00e9 line intersects the y-axis",
+   "title": "Check if a Poincaré line intersects the y-axis",
    "page": 100,
    "source": "outline",
    "number": null,
@@ -492,7 +496,7 @@
   },
   {
    "level": 2,
-   "title": "Intersection point of a Poincar\u00e9 line with the x-axis in the unit disc",
+   "title": "Intersection point of a Poincaré line with the x-axis in the unit disc",
    "page": 101,
    "source": "outline",
    "number": null,
@@ -542,7 +546,7 @@
   },
   {
    "level": 1,
-   "title": "H-perpendicular h-lines in the Poincar\u00e9 model",
+   "title": "H-perpendicular h-lines in the Poincaré model",
    "page": 114,
    "source": "outline",
    "number": null,
@@ -552,7 +556,7 @@
   },
   {
    "level": 1,
-   "title": "Poincar\u00e9 disc model types",
+   "title": "Poincaré disc model types",
    "page": 124,
    "source": "outline",
    "number": null,
@@ -622,7 +626,7 @@
   },
   {
    "level": 1,
-   "title": "Poincar\u00e9 model satisfies Tarski axioms",
+   "title": "Poincaré model satisfies Tarski axioms",
    "page": 127,
    "source": "outline",
    "number": null,
@@ -727,89 +731,66 @@
  "pages": [
   {
    "physical": 1,
-   "label": "1",
-   "source": "printed",
-   "confidence": 0.7,
-   "evidence": [
-    "printed"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 2,
-   "label": "2",
-   "source": "printed",
-   "confidence": 0.7,
-   "evidence": [
-    "printed"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 3,
-   "label": "3",
-   "source": "printed",
-   "confidence": 0.85,
-   "evidence": [
-    "printed",
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 4,
-   "label": "4",
-   "source": "printed",
-   "confidence": 0.85,
-   "evidence": [
-    "printed",
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 5,
-   "label": "5",
-   "source": "printed",
-   "confidence": 0.85,
-   "evidence": [
-    "printed",
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 6,
-   "label": "6",
-   "source": "printed",
-   "confidence": 0.7,
-   "evidence": [
-    "printed"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 7,
-   "label": "7",
-   "source": "printed",
-   "confidence": 0.85,
-   "evidence": [
-    "printed",
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 8,
-   "label": "8",
-   "source": "printed",
-   "confidence": 0.85,
-   "evidence": [
-    "printed",
-    "contents"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 9,
-   "label": "9",
-   "source": "printed",
-   "confidence": 0.7,
-   "evidence": [
-    "printed"
-   ]
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
   },
   {
    "physical": 10,
@@ -824,10 +805,9 @@
    "physical": 11,
    "label": "11",
    "source": "printed",
-   "confidence": 0.85,
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "contents"
+    "printed"
    ]
   },
   {
@@ -852,15 +832,23 @@
    "physical": 14,
    "label": "14",
    "source": "printed",
-   "confidence": 0.85,
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "contents"
+    "printed"
    ]
   },
   {
    "physical": 15,
    "label": "15",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
    "source": "printed",
    "confidence": 0.7,
    "evidence": [
@@ -868,23 +856,12 @@
    ]
   },
   {
-   "physical": 16,
-   "label": "16",
-   "source": "printed",
-   "confidence": 0.85,
-   "evidence": [
-    "printed",
-    "contents"
-   ]
-  },
-  {
    "physical": 17,
    "label": "17",
    "source": "printed",
-   "confidence": 0.85,
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "contents"
+    "printed"
    ]
   },
   {
@@ -909,10 +886,9 @@
    "physical": 20,
    "label": "20",
    "source": "printed",
-   "confidence": 0.85,
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "contents"
+    "printed"
    ]
   },
   {
@@ -936,10 +912,10 @@
   {
    "physical": 23,
    "label": "23",
-   "source": "printed",
-   "confidence": 0.7,
+   "source": "interpolated",
+   "confidence": 0.5,
    "evidence": [
-    "printed"
+    "interpolated"
    ]
   },
   {
@@ -954,10 +930,10 @@
   {
    "physical": 25,
    "label": "25",
-   "source": "printed",
-   "confidence": 0.7,
+   "source": "interpolated",
+   "confidence": 0.5,
    "evidence": [
-    "printed"
+    "interpolated"
    ]
   },
   {
@@ -982,115 +958,108 @@
    "physical": 28,
    "label": "28",
    "source": "printed",
-   "confidence": 0.85,
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "contents"
+    "printed"
    ]
   },
   {
    "physical": 29,
    "label": "29",
    "source": "printed",
-   "confidence": 0.85,
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "contents"
+    "printed"
    ]
   },
   {
    "physical": 30,
    "label": "30",
    "source": "printed",
-   "confidence": 0.85,
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "contents"
+    "printed"
    ]
   },
   {
    "physical": 31,
    "label": "31",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "interpolated",
+   "confidence": 0.5,
    "evidence": [
-    "printed",
-    "contents"
+    "interpolated"
    ]
   },
   {
    "physical": 32,
    "label": "32",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "interpolated",
+   "confidence": 0.5,
    "evidence": [
-    "printed",
-    "contents"
+    "interpolated"
    ]
   },
   {
    "physical": 33,
    "label": "33",
-   "source": "printed",
-   "confidence": 0.7,
+   "source": "interpolated",
+   "confidence": 0.5,
    "evidence": [
-    "printed"
+    "interpolated"
    ]
   },
   {
    "physical": 34,
    "label": "34",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "interpolated",
+   "confidence": 0.5,
    "evidence": [
-    "printed",
-    "contents"
+    "interpolated"
    ]
   },
   {
    "physical": 35,
    "label": "35",
-   "source": "printed",
-   "confidence": 0.7,
+   "source": "interpolated",
+   "confidence": 0.5,
    "evidence": [
-    "printed"
+    "interpolated"
    ]
   },
   {
    "physical": 36,
    "label": "36",
-   "source": "printed",
-   "confidence": 0.7,
+   "source": "interpolated",
+   "confidence": 0.5,
    "evidence": [
-    "printed"
+    "interpolated"
    ]
   },
   {
    "physical": 37,
    "label": "37",
-   "source": "printed",
-   "confidence": 0.7,
+   "source": "interpolated",
+   "confidence": 0.5,
    "evidence": [
-    "printed"
+    "interpolated"
    ]
   },
   {
    "physical": 38,
    "label": "38",
-   "source": "printed",
-   "confidence": 0.7,
+   "source": "interpolated",
+   "confidence": 0.5,
    "evidence": [
-    "printed"
+    "interpolated"
    ]
   },
   {
    "physical": 39,
    "label": "39",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "interpolated",
+   "confidence": 0.5,
    "evidence": [
-    "printed",
-    "contents"
+    "interpolated"
    ]
   },
   {
@@ -1123,29 +1092,28 @@
   {
    "physical": 43,
    "label": "43",
-   "source": "printed",
-   "confidence": 0.7,
+   "source": "interpolated",
+   "confidence": 0.5,
    "evidence": [
-    "printed"
+    "interpolated"
    ]
   },
   {
    "physical": 44,
    "label": "44",
    "source": "printed",
-   "confidence": 0.85,
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "contents"
+    "printed"
    ]
   },
   {
    "physical": 45,
    "label": "45",
-   "source": "printed",
-   "confidence": 0.7,
+   "source": "interpolated",
+   "confidence": 0.5,
    "evidence": [
-    "printed"
+    "interpolated"
    ]
   },
   {
@@ -1170,10 +1138,9 @@
    "physical": 48,
    "label": "48",
    "source": "printed",
-   "confidence": 0.85,
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "contents"
+    "printed"
    ]
   },
   {
@@ -1188,92 +1155,91 @@
   {
    "physical": 50,
    "label": "50",
-   "source": "printed",
-   "confidence": 0.7,
+   "source": "interpolated",
+   "confidence": 0.5,
    "evidence": [
-    "printed"
+    "interpolated"
    ]
   },
   {
    "physical": 51,
    "label": "51",
-   "source": "printed",
-   "confidence": 0.7,
+   "source": "interpolated",
+   "confidence": 0.5,
    "evidence": [
-    "printed"
+    "interpolated"
    ]
   },
   {
    "physical": 52,
    "label": "52",
-   "source": "printed",
-   "confidence": 0.7,
+   "source": "interpolated",
+   "confidence": 0.5,
    "evidence": [
-    "printed"
+    "interpolated"
    ]
   },
   {
    "physical": 53,
    "label": "53",
-   "source": "printed",
-   "confidence": 0.7,
+   "source": "interpolated",
+   "confidence": 0.5,
    "evidence": [
-    "printed"
+    "interpolated"
    ]
   },
   {
    "physical": 54,
    "label": "54",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "interpolated",
+   "confidence": 0.5,
    "evidence": [
-    "printed",
-    "contents"
+    "interpolated"
    ]
   },
   {
    "physical": 55,
    "label": "55",
-   "source": "printed",
-   "confidence": 0.7,
+   "source": "interpolated",
+   "confidence": 0.5,
    "evidence": [
-    "printed"
+    "interpolated"
    ]
   },
   {
    "physical": 56,
    "label": "56",
-   "source": "printed",
-   "confidence": 0.7,
+   "source": "interpolated",
+   "confidence": 0.5,
    "evidence": [
-    "printed"
+    "interpolated"
    ]
   },
   {
    "physical": 57,
    "label": "57",
-   "source": "printed",
-   "confidence": 0.7,
+   "source": "interpolated",
+   "confidence": 0.5,
    "evidence": [
-    "printed"
+    "interpolated"
    ]
   },
   {
    "physical": 58,
    "label": "58",
-   "source": "printed",
-   "confidence": 0.7,
+   "source": "interpolated",
+   "confidence": 0.5,
    "evidence": [
-    "printed"
+    "interpolated"
    ]
   },
   {
    "physical": 59,
    "label": "59",
-   "source": "printed",
-   "confidence": 0.7,
+   "source": "interpolated",
+   "confidence": 0.5,
    "evidence": [
-    "printed"
+    "interpolated"
    ]
   },
   {
@@ -1306,10 +1272,10 @@
   {
    "physical": 63,
    "label": "63",
-   "source": "printed",
-   "confidence": 0.7,
+   "source": "interpolated",
+   "confidence": 0.5,
    "evidence": [
-    "printed"
+    "interpolated"
    ]
   },
   {
@@ -1324,11 +1290,10 @@
   {
    "physical": 65,
    "label": "65",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "interpolated",
+   "confidence": 0.5,
    "evidence": [
-    "printed",
-    "contents"
+    "interpolated"
    ]
   },
   {
@@ -1344,10 +1309,9 @@
    "physical": 67,
    "label": "67",
    "source": "printed",
-   "confidence": 0.85,
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "contents"
+    "printed"
    ]
   },
   {
@@ -1381,10 +1345,9 @@
    "physical": 71,
    "label": "71",
    "source": "printed",
-   "confidence": 0.85,
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "contents"
+    "printed"
    ]
   },
   {
@@ -1399,29 +1362,28 @@
   {
    "physical": 73,
    "label": "73",
-   "source": "printed",
-   "confidence": 0.7,
+   "source": "interpolated",
+   "confidence": 0.5,
    "evidence": [
-    "printed"
+    "interpolated"
    ]
   },
   {
    "physical": 74,
    "label": "74",
    "source": "printed",
-   "confidence": 0.85,
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "contents"
+    "printed"
    ]
   },
   {
    "physical": 75,
    "label": "75",
-   "source": "printed",
-   "confidence": 0.7,
+   "source": "interpolated",
+   "confidence": 0.5,
    "evidence": [
-    "printed"
+    "interpolated"
    ]
   },
   {
@@ -1437,30 +1399,27 @@
    "physical": 77,
    "label": "77",
    "source": "printed",
-   "confidence": 0.85,
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "contents"
+    "printed"
    ]
   },
   {
    "physical": 78,
    "label": "78",
    "source": "printed",
-   "confidence": 0.85,
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "contents"
+    "printed"
    ]
   },
   {
    "physical": 79,
    "label": "79",
    "source": "printed",
-   "confidence": 0.85,
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "contents"
+    "printed"
    ]
   },
   {
@@ -1493,10 +1452,10 @@
   {
    "physical": 83,
    "label": "83",
-   "source": "printed",
-   "confidence": 0.7,
+   "source": "interpolated",
+   "confidence": 0.5,
    "evidence": [
-    "printed"
+    "interpolated"
    ]
   },
   {
@@ -1511,6 +1470,15 @@
   {
    "physical": 85,
    "label": "85",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 86,
+   "label": "86",
    "source": "printed",
    "confidence": 0.7,
    "evidence": [
@@ -1518,23 +1486,12 @@
    ]
   },
   {
-   "physical": 86,
-   "label": "86",
-   "source": "printed",
-   "confidence": 0.85,
-   "evidence": [
-    "printed",
-    "contents"
-   ]
-  },
-  {
    "physical": 87,
    "label": "87",
    "source": "printed",
-   "confidence": 0.85,
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "contents"
+    "printed"
    ]
   },
   {
@@ -1550,10 +1507,9 @@
    "physical": 89,
    "label": "89",
    "source": "printed",
-   "confidence": 0.85,
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "contents"
+    "printed"
    ]
   },
   {
@@ -1586,25 +1542,33 @@
   {
    "physical": 93,
    "label": "93",
-   "source": "printed",
-   "confidence": 0.7,
+   "source": "interpolated",
+   "confidence": 0.5,
    "evidence": [
-    "printed"
+    "interpolated"
    ]
   },
   {
    "physical": 94,
    "label": "94",
    "source": "printed",
-   "confidence": 0.85,
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "contents"
+    "printed"
    ]
   },
   {
    "physical": 95,
    "label": "95",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 96,
+   "label": "96",
    "source": "printed",
    "confidence": 0.7,
    "evidence": [
@@ -1612,23 +1576,12 @@
    ]
   },
   {
-   "physical": 96,
-   "label": "96",
-   "source": "printed",
-   "confidence": 0.85,
-   "evidence": [
-    "printed",
-    "contents"
-   ]
-  },
-  {
    "physical": 97,
    "label": "97",
    "source": "printed",
-   "confidence": 0.85,
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "contents"
+    "printed"
    ]
   },
   {
@@ -1653,20 +1606,18 @@
    "physical": 100,
    "label": "100",
    "source": "printed",
-   "confidence": 0.85,
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "contents"
+    "printed"
    ]
   },
   {
    "physical": 101,
    "label": "101",
    "source": "printed",
-   "confidence": 0.85,
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "contents"
+    "printed"
    ]
   },
   {
@@ -1700,10 +1651,9 @@
    "physical": 105,
    "label": "105",
    "source": "printed",
-   "confidence": 0.85,
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "contents"
+    "printed"
    ]
   },
   {
@@ -1728,10 +1678,9 @@
    "physical": 108,
    "label": "108",
    "source": "printed",
-   "confidence": 0.85,
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "contents"
+    "printed"
    ]
   },
   {
@@ -1747,10 +1696,9 @@
    "physical": 110,
    "label": "110",
    "source": "printed",
-   "confidence": 0.85,
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "contents"
+    "printed"
    ]
   },
   {
@@ -1766,10 +1714,9 @@
    "physical": 112,
    "label": "112",
    "source": "printed",
-   "confidence": 0.85,
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "contents"
+    "printed"
    ]
   },
   {
@@ -1785,10 +1732,9 @@
    "physical": 114,
    "label": "114",
    "source": "printed",
-   "confidence": 0.85,
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "contents"
+    "printed"
    ]
   },
   {
@@ -1876,40 +1822,36 @@
    "physical": 124,
    "label": "124",
    "source": "printed",
-   "confidence": 0.85,
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "contents"
+    "printed"
    ]
   },
   {
    "physical": 125,
    "label": "125",
    "source": "printed",
-   "confidence": 0.85,
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "contents"
+    "printed"
    ]
   },
   {
    "physical": 126,
    "label": "126",
    "source": "printed",
-   "confidence": 0.85,
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "contents"
+    "printed"
    ]
   },
   {
    "physical": 127,
    "label": "127",
    "source": "printed",
-   "confidence": 0.85,
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "contents"
+    "printed"
    ]
   },
   {
@@ -2006,10 +1948,9 @@
    "physical": 138,
    "label": "138",
    "source": "printed",
-   "confidence": 0.85,
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "contents"
+    "printed"
    ]
   },
   {
@@ -2025,20 +1966,18 @@
    "physical": 140,
    "label": "140",
    "source": "printed",
-   "confidence": 0.85,
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "contents"
+    "printed"
    ]
   },
   {
    "physical": 141,
    "label": "141",
    "source": "printed",
-   "confidence": 0.85,
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "contents"
+    "printed"
    ]
   },
   {
@@ -2054,10 +1993,9 @@
    "physical": 143,
    "label": "143",
    "source": "printed",
-   "confidence": 0.85,
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "contents"
+    "printed"
    ]
   },
   {
@@ -2117,93 +2055,91 @@
   {
    "physical": 150,
    "label": "150",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "interpolated",
+   "confidence": 0.5,
    "evidence": [
-    "printed",
-    "contents"
+    "interpolated"
    ]
   },
   {
    "physical": 151,
    "label": "151",
-   "source": "printed",
-   "confidence": 0.7,
+   "source": "interpolated",
+   "confidence": 0.5,
    "evidence": [
-    "printed"
+    "interpolated"
    ]
   },
   {
    "physical": 152,
    "label": "152",
-   "source": "printed",
-   "confidence": 0.7,
+   "source": "interpolated",
+   "confidence": 0.5,
    "evidence": [
-    "printed"
+    "interpolated"
    ]
   },
   {
    "physical": 153,
    "label": "153",
-   "source": "printed",
-   "confidence": 0.7,
+   "source": "interpolated",
+   "confidence": 0.5,
    "evidence": [
-    "printed"
+    "interpolated"
    ]
   },
   {
    "physical": 154,
    "label": "154",
-   "source": "printed",
-   "confidence": 0.7,
+   "source": "interpolated",
+   "confidence": 0.5,
    "evidence": [
-    "printed"
+    "interpolated"
    ]
   },
   {
    "physical": 155,
    "label": "155",
-   "source": "printed",
-   "confidence": 0.7,
+   "source": "interpolated",
+   "confidence": 0.5,
    "evidence": [
-    "printed"
+    "interpolated"
    ]
   },
   {
    "physical": 156,
    "label": "156",
-   "source": "printed",
-   "confidence": 0.7,
+   "source": "interpolated",
+   "confidence": 0.5,
    "evidence": [
-    "printed"
+    "interpolated"
    ]
   },
   {
    "physical": 157,
    "label": "157",
-   "source": "printed",
-   "confidence": 0.85,
+   "source": "interpolated",
+   "confidence": 0.5,
    "evidence": [
-    "printed",
-    "contents"
+    "interpolated"
    ]
   },
   {
    "physical": 158,
    "label": "158",
-   "source": "printed",
-   "confidence": 0.7,
+   "source": "interpolated",
+   "confidence": 0.5,
    "evidence": [
-    "printed"
+    "interpolated"
    ]
   },
   {
    "physical": 159,
    "label": "159",
-   "source": "printed",
-   "confidence": 0.7,
+   "source": "interpolated",
+   "confidence": 0.5,
    "evidence": [
-    "printed"
+    "interpolated"
    ]
   },
   {
@@ -2300,10 +2236,9 @@
    "physical": 170,
    "label": "170",
    "source": "printed",
-   "confidence": 0.85,
+   "confidence": 0.7,
    "evidence": [
-    "printed",
-    "contents"
+    "printed"
    ]
   },
   {
@@ -2360,10 +2295,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 7486,
-   "n_words": 2606,
-   "label_start": "1",
-   "label_end": "3"
+   "n_chars": 3884,
+   "n_words": 640,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-000-introduction",
@@ -2372,10 +2307,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 1485,
-   "n_words": 227,
-   "label_start": "3",
-   "label_end": "3"
+   "n_chars": 1488,
+   "n_words": 226,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-background-theories",
@@ -2384,10 +2319,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 3,
-   "n_words": 1,
-   "label_start": "3",
-   "label_end": "3"
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-hyperbolic-functions",
@@ -2396,10 +2331,10 @@
    "level": 2,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 2321,
-   "n_words": 387,
-   "label_start": "3",
-   "label_end": "4"
+   "n_chars": 2408,
+   "n_words": 447,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-tarski-axioms",
@@ -2408,22 +2343,22 @@
    "level": 1,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 2253,
-   "n_words": 500,
-   "label_start": "4",
-   "label_end": "5"
+   "n_chars": 2152,
+   "n_words": 360,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-004-h-lines-in-the-poincar\u00e9-model",
+   "id": "sec-004-h-lines-in-the-poincaré-model",
    "number": null,
-   "title": "H-lines in the Poincar\u00e9 model",
+   "title": "H-lines in the Poincaré model",
    "level": 1,
    "page_start": 5,
    "page_end": 5,
-   "n_chars": 120,
-   "n_words": 7,
-   "label_start": "5",
-   "label_end": "5"
+   "n_chars": 118,
+   "n_words": 8,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-005-definition-and-basic-properties-of-h-lines",
@@ -2432,10 +2367,10 @@
    "level": 2,
    "page_start": 5,
    "page_end": 7,
-   "n_chars": 2813,
-   "n_words": 452,
-   "label_start": "5",
-   "label_end": "7"
+   "n_chars": 2833,
+   "n_words": 458,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-006-collinear-points",
@@ -2444,10 +2379,10 @@
    "level": 3,
    "page_start": 7,
    "page_end": 7,
-   "n_chars": 187,
-   "n_words": 26,
-   "label_start": "7",
-   "label_end": "7"
+   "n_chars": 189,
+   "n_words": 30,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-007-h-lines-and-inversion",
@@ -2456,10 +2391,10 @@
    "level": 3,
    "page_start": 7,
    "page_end": 7,
-   "n_chars": 1673,
-   "n_words": 249,
-   "label_start": "7",
-   "label_end": "7"
+   "n_chars": 1674,
+   "n_words": 250,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-008-classification-of-h-lines-into-euclidean-segment",
@@ -2468,10 +2403,10 @@
    "level": 3,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 1097,
+   "n_chars": 1107,
    "n_words": 133,
-   "label_start": "7",
-   "label_end": "8"
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-009-points-on-h-line",
@@ -2480,9 +2415,9 @@
    "level": 3,
    "page_start": 8,
    "page_end": 11,
-   "n_chars": 6188,
-   "n_words": 1076,
-   "label_start": "8",
+   "n_chars": 6150,
+   "n_words": 1101,
+   "label_start": null,
    "label_end": "11"
   },
   {
@@ -2492,8 +2427,8 @@
    "level": 3,
    "page_start": 11,
    "page_end": 14,
-   "n_chars": 6806,
-   "n_words": 1185,
+   "n_chars": 6862,
+   "n_words": 1222,
    "label_start": "11",
    "label_end": "14"
   },
@@ -2504,7 +2439,7 @@
    "level": 3,
    "page_start": 14,
    "page_end": 16,
-   "n_chars": 4630,
+   "n_chars": 4676,
    "n_words": 527,
    "label_start": "14",
    "label_end": "16"
@@ -2516,8 +2451,8 @@
    "level": 3,
    "page_start": 16,
    "page_end": 17,
-   "n_chars": 1489,
-   "n_words": 218,
+   "n_chars": 1507,
+   "n_words": 222,
    "label_start": "16",
    "label_end": "17"
   },
@@ -2528,8 +2463,8 @@
    "level": 2,
    "page_start": 17,
    "page_end": 20,
-   "n_chars": 6769,
-   "n_words": 1190,
+   "n_chars": 6840,
+   "n_words": 1229,
    "label_start": "17",
    "label_end": "20"
   },
@@ -2540,8 +2475,8 @@
    "level": 3,
    "page_start": 20,
    "page_end": 28,
-   "n_chars": 12628,
-   "n_words": 2167,
+   "n_chars": 12779,
+   "n_words": 2258,
    "label_start": "20",
    "label_end": "28"
   },
@@ -2552,8 +2487,8 @@
    "level": 3,
    "page_start": 28,
    "page_end": 29,
-   "n_chars": 999,
-   "n_words": 141,
+   "n_chars": 1007,
+   "n_words": 148,
    "label_start": "28",
    "label_end": "29"
   },
@@ -2564,8 +2499,8 @@
    "level": 3,
    "page_start": 29,
    "page_end": 30,
-   "n_chars": 1960,
-   "n_words": 308,
+   "n_chars": 1992,
+   "n_words": 332,
    "label_start": "29",
    "label_end": "30"
   },
@@ -2576,8 +2511,8 @@
    "level": 3,
    "page_start": 30,
    "page_end": 31,
-   "n_chars": 2164,
-   "n_words": 283,
+   "n_chars": 2170,
+   "n_words": 286,
    "label_start": "30",
    "label_end": "31"
   },
@@ -2588,8 +2523,8 @@
    "level": 3,
    "page_start": 31,
    "page_end": 32,
-   "n_chars": 1749,
-   "n_words": 232,
+   "n_chars": 1751,
+   "n_words": 240,
    "label_start": "31",
    "label_end": "32"
   },
@@ -2600,8 +2535,8 @@
    "level": 3,
    "page_start": 32,
    "page_end": 34,
-   "n_chars": 4031,
-   "n_words": 681,
+   "n_chars": 3971,
+   "n_words": 638,
    "label_start": "32",
    "label_end": "34"
   },
@@ -2612,8 +2547,8 @@
    "level": 2,
    "page_start": 34,
    "page_end": 34,
-   "n_chars": 85,
-   "n_words": 15,
+   "n_chars": 79,
+   "n_words": 14,
    "label_start": "34",
    "label_end": "34"
   },
@@ -2624,8 +2559,8 @@
    "level": 3,
    "page_start": 34,
    "page_end": 39,
-   "n_chars": 10967,
-   "n_words": 1740,
+   "n_chars": 11167,
+   "n_words": 1865,
    "label_start": "34",
    "label_end": "39"
   },
@@ -2636,20 +2571,20 @@
    "level": 3,
    "page_start": 39,
    "page_end": 44,
-   "n_chars": 10402,
-   "n_words": 1428,
+   "n_chars": 10491,
+   "n_words": 1456,
    "label_start": "39",
    "label_end": "44"
   },
   {
-   "id": "sec-023-h-distance-in-the-poincar\u00e9-model",
+   "id": "sec-023-h-distance-in-the-poincaré-model",
    "number": null,
-   "title": "H-distance in the Poincar\u00e9 model",
+   "title": "H-distance in the Poincaré model",
    "level": 1,
    "page_start": 44,
    "page_end": 48,
-   "n_chars": 9596,
-   "n_words": 1580,
+   "n_chars": 9566,
+   "n_words": 1512,
    "label_start": "44",
    "label_end": "48"
   },
@@ -2660,8 +2595,8 @@
    "level": 2,
    "page_start": 48,
    "page_end": 54,
-   "n_chars": 13341,
-   "n_words": 2248,
+   "n_chars": 13487,
+   "n_words": 2292,
    "label_start": "48",
    "label_end": "54"
   },
@@ -2672,8 +2607,8 @@
    "level": 2,
    "page_start": 54,
    "page_end": 65,
-   "n_chars": 18949,
-   "n_words": 3615,
+   "n_chars": 19043,
+   "n_words": 3568,
    "label_start": "54",
    "label_end": "65"
   },
@@ -2684,20 +2619,20 @@
    "level": 2,
    "page_start": 65,
    "page_end": 67,
-   "n_chars": 4319,
-   "n_words": 814,
+   "n_chars": 4328,
+   "n_words": 828,
    "label_start": "65",
    "label_end": "67"
   },
   {
-   "id": "sec-027-h-circles-in-the-poincar\u00e9-model",
+   "id": "sec-027-h-circles-in-the-poincaré-model",
    "number": null,
-   "title": "H-circles in the Poincar\u00e9 model",
+   "title": "H-circles in the Poincaré model",
    "level": 1,
    "page_start": 67,
    "page_end": 71,
-   "n_chars": 8319,
-   "n_words": 1680,
+   "n_chars": 8383,
+   "n_words": 1655,
    "label_start": "67",
    "label_end": "71"
   },
@@ -2708,8 +2643,8 @@
    "level": 2,
    "page_start": 71,
    "page_end": 74,
-   "n_chars": 6390,
-   "n_words": 1120,
+   "n_chars": 6445,
+   "n_words": 1148,
    "label_start": "71",
    "label_end": "74"
   },
@@ -2720,20 +2655,20 @@
    "level": 2,
    "page_start": 74,
    "page_end": 77,
-   "n_chars": 5447,
-   "n_words": 1018,
+   "n_chars": 5294,
+   "n_words": 814,
    "label_start": "74",
    "label_end": "77"
   },
   {
-   "id": "sec-030-h-betweenness-in-the-poincar\u00e9-model",
+   "id": "sec-030-h-betweenness-in-the-poincaré-model",
    "number": null,
-   "title": "H-betweenness in the Poincar\u00e9 model",
+   "title": "H-betweenness in the Poincaré model",
    "level": 1,
    "page_start": 77,
    "page_end": 77,
-   "n_chars": 3,
-   "n_words": 1,
+   "n_chars": 0,
+   "n_words": 0,
    "label_start": "77",
    "label_end": "77"
   },
@@ -2744,8 +2679,8 @@
    "level": 2,
    "page_start": 77,
    "page_end": 77,
-   "n_chars": 346,
-   "n_words": 66,
+   "n_chars": 340,
+   "n_words": 61,
    "label_start": "77",
    "label_end": "77"
   },
@@ -2756,8 +2691,8 @@
    "level": 3,
    "page_start": 77,
    "page_end": 78,
-   "n_chars": 1738,
-   "n_words": 238,
+   "n_chars": 1741,
+   "n_words": 245,
    "label_start": "77",
    "label_end": "78"
   },
@@ -2780,8 +2715,8 @@
    "level": 3,
    "page_start": 78,
    "page_end": 79,
-   "n_chars": 1742,
-   "n_words": 233,
+   "n_chars": 1759,
+   "n_words": 241,
    "label_start": "78",
    "label_end": "79"
   },
@@ -2792,8 +2727,8 @@
    "level": 3,
    "page_start": 79,
    "page_end": 86,
-   "n_chars": 13558,
-   "n_words": 2467,
+   "n_chars": 13420,
+   "n_words": 2284,
    "label_start": "79",
    "label_end": "86"
   },
@@ -2804,8 +2739,8 @@
    "level": 3,
    "page_start": 86,
    "page_end": 87,
-   "n_chars": 2823,
-   "n_words": 518,
+   "n_chars": 2796,
+   "n_words": 482,
    "label_start": "86",
    "label_end": "87"
   },
@@ -2816,8 +2751,8 @@
    "level": 2,
    "page_start": 87,
    "page_end": 89,
-   "n_chars": 4322,
-   "n_words": 698,
+   "n_chars": 4360,
+   "n_words": 724,
    "label_start": "87",
    "label_end": "89"
   },
@@ -2828,8 +2763,8 @@
    "level": 2,
    "page_start": 89,
    "page_end": 94,
-   "n_chars": 8054,
-   "n_words": 1667,
+   "n_chars": 7919,
+   "n_words": 1500,
    "label_start": "89",
    "label_end": "94"
   },
@@ -2840,20 +2775,20 @@
    "level": 2,
    "page_start": 94,
    "page_end": 96,
-   "n_chars": 3582,
-   "n_words": 616,
+   "n_chars": 3590,
+   "n_words": 614,
    "label_start": "94",
    "label_end": "96"
   },
   {
    "id": "sec-040-intersection-of-h-lines-with-the-x-axis-in-the-p",
    "number": null,
-   "title": "Intersection of h-lines with the x-axis in the Poincar\u00e9 model",
+   "title": "Intersection of h-lines with the x-axis in the Poincaré model",
    "level": 1,
    "page_start": 96,
    "page_end": 96,
-   "n_chars": 3,
-   "n_words": 1,
+   "n_chars": 0,
+   "n_words": 0,
    "label_start": "96",
    "label_end": "96"
   },
@@ -2864,8 +2799,8 @@
    "level": 2,
    "page_start": 96,
    "page_end": 97,
-   "n_chars": 3693,
-   "n_words": 683,
+   "n_chars": 3679,
+   "n_words": 677,
    "label_start": "96",
    "label_end": "97"
   },
@@ -2876,32 +2811,32 @@
    "level": 2,
    "page_start": 97,
    "page_end": 100,
-   "n_chars": 5063,
-   "n_words": 925,
+   "n_chars": 5065,
+   "n_words": 898,
    "label_start": "97",
    "label_end": "100"
   },
   {
-   "id": "sec-043-check-if-a-poincar\u00e9-line-intersects-the-y-axis",
+   "id": "sec-043-check-if-a-poincaré-line-intersects-the-y-axis",
    "number": null,
-   "title": "Check if a Poincar\u00e9 line intersects the y-axis",
+   "title": "Check if a Poincaré line intersects the y-axis",
    "level": 2,
    "page_start": 100,
    "page_end": 101,
-   "n_chars": 2521,
-   "n_words": 330,
+   "n_chars": 2564,
+   "n_words": 358,
    "label_start": "100",
    "label_end": "101"
   },
   {
-   "id": "sec-044-intersection-point-of-a-poincar\u00e9-line-with-the-x",
+   "id": "sec-044-intersection-point-of-a-poincaré-line-with-the-x",
    "number": null,
-   "title": "Intersection point of a Poincar\u00e9 line with the x-axis in the unit disc",
+   "title": "Intersection point of a Poincaré line with the x-axis in the unit disc",
    "level": 2,
    "page_start": 101,
    "page_end": 105,
-   "n_chars": 8087,
-   "n_words": 1246,
+   "n_chars": 8226,
+   "n_words": 1330,
    "label_start": "101",
    "label_end": "105"
   },
@@ -2912,8 +2847,8 @@
    "level": 2,
    "page_start": 105,
    "page_end": 108,
-   "n_chars": 6295,
-   "n_words": 1029,
+   "n_chars": 6325,
+   "n_words": 1036,
    "label_start": "105",
    "label_end": "108"
   },
@@ -2924,8 +2859,8 @@
    "level": 2,
    "page_start": 108,
    "page_end": 110,
-   "n_chars": 2702,
-   "n_words": 340,
+   "n_chars": 2728,
+   "n_words": 357,
    "label_start": "108",
    "label_end": "110"
   },
@@ -2936,8 +2871,8 @@
    "level": 2,
    "page_start": 110,
    "page_end": 112,
-   "n_chars": 5388,
-   "n_words": 945,
+   "n_chars": 5444,
+   "n_words": 985,
    "label_start": "110",
    "label_end": "112"
   },
@@ -2948,31 +2883,31 @@
    "level": 2,
    "page_start": 112,
    "page_end": 114,
-   "n_chars": 3651,
-   "n_words": 668,
+   "n_chars": 3715,
+   "n_words": 705,
    "label_start": "112",
    "label_end": "114"
   },
   {
-   "id": "sec-049-h-perpendicular-h-lines-in-the-poincar\u00e9-model",
+   "id": "sec-049-h-perpendicular-h-lines-in-the-poincaré-model",
    "number": null,
-   "title": "H-perpendicular h-lines in the Poincar\u00e9 model",
+   "title": "H-perpendicular h-lines in the Poincaré model",
    "level": 1,
    "page_start": 114,
    "page_end": 124,
-   "n_chars": 18094,
-   "n_words": 3136,
+   "n_chars": 18185,
+   "n_words": 3119,
    "label_start": "114",
    "label_end": "124"
   },
   {
-   "id": "sec-050-poincar\u00e9-disc-model-types",
+   "id": "sec-050-poincaré-disc-model-types",
    "number": null,
-   "title": "Poincar\u00e9 disc model types",
+   "title": "Poincaré disc model types",
    "level": 1,
    "page_start": 124,
    "page_end": 124,
-   "n_chars": 110,
+   "n_chars": 111,
    "n_words": 18,
    "label_start": "124",
    "label_end": "124"
@@ -2984,8 +2919,8 @@
    "level": 2,
    "page_start": 124,
    "page_end": 124,
-   "n_chars": 638,
-   "n_words": 94,
+   "n_chars": 641,
+   "n_words": 91,
    "label_start": "124",
    "label_end": "124"
   },
@@ -2996,8 +2931,8 @@
    "level": 2,
    "page_start": 124,
    "page_end": 125,
-   "n_chars": 1727,
-   "n_words": 274,
+   "n_chars": 1749,
+   "n_words": 279,
    "label_start": "124",
    "label_end": "125"
   },
@@ -3008,7 +2943,7 @@
    "level": 2,
    "page_start": 125,
    "page_end": 125,
-   "n_chars": 79,
+   "n_chars": 76,
    "n_words": 10,
    "label_start": "125",
    "label_end": "125"
@@ -3020,8 +2955,8 @@
    "level": 2,
    "page_start": 125,
    "page_end": 126,
-   "n_chars": 1420,
-   "n_words": 209,
+   "n_chars": 1444,
+   "n_words": 214,
    "label_start": "125",
    "label_end": "126"
   },
@@ -3032,8 +2967,8 @@
    "level": 2,
    "page_start": 126,
    "page_end": 127,
-   "n_chars": 1340,
-   "n_words": 221,
+   "n_chars": 1343,
+   "n_words": 210,
    "label_start": "126",
    "label_end": "127"
   },
@@ -3044,20 +2979,20 @@
    "level": 2,
    "page_start": 127,
    "page_end": 127,
-   "n_chars": 91,
-   "n_words": 12,
+   "n_chars": 96,
+   "n_words": 14,
    "label_start": "127",
    "label_end": "127"
   },
   {
-   "id": "sec-057-poincar\u00e9-model-satisfies-tarski-axioms",
+   "id": "sec-057-poincaré-model-satisfies-tarski-axioms",
    "number": null,
-   "title": "Poincar\u00e9 model satisfies Tarski axioms",
+   "title": "Poincaré model satisfies Tarski axioms",
    "level": 1,
    "page_start": 127,
    "page_end": 127,
-   "n_chars": 91,
-   "n_words": 8,
+   "n_chars": 87,
+   "n_words": 7,
    "label_start": "127",
    "label_end": "127"
   },
@@ -3068,8 +3003,8 @@
    "level": 2,
    "page_start": 127,
    "page_end": 138,
-   "n_chars": 20989,
-   "n_words": 3846,
+   "n_chars": 21147,
+   "n_words": 3935,
    "label_start": "127",
    "label_end": "138"
   },
@@ -3080,8 +3015,8 @@
    "level": 2,
    "page_start": 138,
    "page_end": 140,
-   "n_chars": 2714,
-   "n_words": 484,
+   "n_chars": 2753,
+   "n_words": 507,
    "label_start": "138",
    "label_end": "140"
   },
@@ -3092,8 +3027,8 @@
    "level": 2,
    "page_start": 140,
    "page_end": 141,
-   "n_chars": 1616,
-   "n_words": 287,
+   "n_chars": 1571,
+   "n_words": 238,
    "label_start": "140",
    "label_end": "141"
   },
@@ -3104,8 +3039,8 @@
    "level": 2,
    "page_start": 141,
    "page_end": 143,
-   "n_chars": 3588,
-   "n_words": 625,
+   "n_chars": 3563,
+   "n_words": 576,
    "label_start": "141",
    "label_end": "143"
   },
@@ -3116,8 +3051,8 @@
    "level": 2,
    "page_start": 143,
    "page_end": 143,
-   "n_chars": 1085,
-   "n_words": 165,
+   "n_chars": 1088,
+   "n_words": 172,
    "label_start": "143",
    "label_end": "143"
   },
@@ -3128,8 +3063,8 @@
    "level": 2,
    "page_start": 143,
    "page_end": 150,
-   "n_chars": 13441,
-   "n_words": 2152,
+   "n_chars": 13690,
+   "n_words": 2304,
    "label_start": "143",
    "label_end": "150"
   },
@@ -3140,8 +3075,8 @@
    "level": 2,
    "page_start": 150,
    "page_end": 157,
-   "n_chars": 11551,
-   "n_words": 2045,
+   "n_chars": 11830,
+   "n_words": 2217,
    "label_start": "150",
    "label_end": "157"
   },
@@ -3152,8 +3087,8 @@
    "level": 2,
    "page_start": 157,
    "page_end": 170,
-   "n_chars": 27537,
-   "n_words": 4248,
+   "n_chars": 27665,
+   "n_words": 4281,
    "label_start": "157",
    "label_end": "170"
   },
@@ -3164,8 +3099,8 @@
    "level": 2,
    "page_start": 170,
    "page_end": 175,
-   "n_chars": 7809,
-   "n_words": 1198,
+   "n_chars": 7800,
+   "n_words": 1137,
    "label_start": "170",
    "label_end": "175"
   }
@@ -3181,31 +3116,8 @@
    "count": 0,
    "items": []
   },
-  "toc_alignment": {
-   "listed_not_found": {
-    "count": 1,
-    "items": [
-     "February 6,"
-    ]
-   },
-   "found_not_listed": {
-    "count": 7,
-    "items": [
-     "1 Re\ufb02exivity of congruence",
-     "2 Transitivity of congruence",
-     "3 Identity of congruence",
-     "6 Identity of betweeness",
-     "7 Pasch",
-     "10 Euclid negation",
-     "12 Continuity"
-    ]
-   },
-   "page_mismatch": {
-    "count": 0,
-    "items": []
-   }
-  },
   "sections": 68,
-  "chars_total": 345149
+  "chars_total": 343343,
+  "furniture_lines_stripped": 0
  }
 }

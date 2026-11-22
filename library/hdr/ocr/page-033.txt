@@ -1,0 +1,61 @@
+ifn = ||. We denote by P(n) the set of partitions of n. To each partition \ we associate its 3-number,
+
+By = (81, B2,..-, Bp), defined by
+By = h+Aq—1, 6. := ht r2— 2,...,8n = h+An—h=An.
+
+Note that 8; > Bg >--+> 6B, 21.
+We define the set of nodes [A] of A to be the set
+
+(A) := {Gi 3) | 1 <i<h, 1<j <A}.
+
+We identify partitions with their Young diagrams: the Young diagram of 4 is a left-justified array of h
+rows such that the i-th row contains A; boxes (nodes) for all i=1,...,h.
+
+The conjugate partition N’ = (Aj,..., Apr) of A is defined by Nj := #{i] 1 <i <h such that A; > J}.
+We have h’ = \;. The Young diagram of »’ is the transpose of the Young diagram of A. A node (i, 7) € [A]
+if and only if (j,i) € [N’].
+
+If x = (i,j) € [A] and yp is another partition, we define the generalised hook length of x with respect
+to (A, 4) to be the integer:
+
+AY r= di itp — J+.
+For ps = A, the above formula becomes the classical hook length formula (giving the length of the hook
+of \ that x belongs to). Moreover, we define the content of x to be the difference j — i.
+Finally, we set
+h 1 h! h! VU
+N(A):= x -)\i= 3M = y ( x )
+
+4.1.2  Multipartitions
+
+An I-partition (or multipartition) of n is an ordered I-tuple A = (A, AM, ..., ACY) of partitions such
+that |A| := yh |A®| =n. We denote by P(I,n) the set of I-partitions of n. The empty multipartition,
+denoted by 9, is an /-tuple of empty partitions. If A= (A, AM,..., A“) € Pll, n), we denote by A’
+the I-partition (AO, AO Lee MED’), For i=0,1,...,1—1, we denote by h® and 6 the height and
+B-number of A respectively. Finally, we denote by A the simple partition of n obtained by writing in
+decreasing order all the entries of (that is, all the elements of the multiset \°) UAY U... UAE).
+
+Example 4.1 Let us take 1 = 2, n = 6 and A = ((2,1),(3)). We have A’ = ((2,1),(1,1,1)) and
+d = (3,2, 1).
+positive rational number, then the m-shifted of 6 is the sequence of numbers defined by
+
+B[m] = (61 + m, Bo +m,..., Bn +m,m—1,m—2,...,m—[m] +1,m— [m]),
+
+where [m] denotes the integer part of m.
+From now on, we suppose that we have a given weight system m := (mo,mj,...,™mi-1) € Q’. We
+define the (/,m)-charged height of X to be the family (he, he, ..., he’), where
+
+hc := AO — mo, he := AY = my,..., hc) := AY = m4,
+and the m-charged height of X to be the integer
+
+hey := max he,
+
+<i<i-1
+
+For i= 0,1,...,1 —1 , we set ;
+BS? = BO [hey — he].
+
+We then have
+
+BO = (be\)1ej<hea lms] where bel) = Bo + hex — he = yw —jthe +m,
+
+30

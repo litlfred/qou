@@ -1,0 +1,55 @@
+regularity theorem, a strong solution also. f = g on an open set, so f = g on S, and
+f=-—forg. For a Neumann boundary condition, differentiating an even function gives
+an odd function and the hence the gradient of v will vanish on this part of OQ, and we
+
+follow a similar argument.
+
+In this proof, we will systematically produce lower bounds on the first eigenspace
+in which the representation can appear. We will show that only yg can appear in the
+first eigenspace of B. We will start with the 1 dimensional irreducible representations,
+Xi,--+;Xa- Since x; gives Neumann conditions on all three sides of a (2, 3, 8) triangle,
+it will eqrrespond to the first Neumann eigenspace, that is, the trivial eigenspace Ey. We
+also have to show that it does not appear again in €,, but we will defer the proof of
+
+this to Lemma 3.15. In the following, we will denote by v, the first zero of the Legendre
+
+P_, (cost (2 arcsinh ( in )) =P, (1 + =) ,
+
+where wx is fixed jae consider P_, as a function of t with s = 5 + it. Then v, is the
+0
+
+e hyperbolic disk of area x with Dirichlet boundary condition (see
+
+function
+
+first eigenvalue
+
+the analysis in [38, Chapter 1]).
+By the Faber-Krahn inequality, we can use v, as a lower bound for Dirichlet boundary —!
+
+problems on domains on area x that satisfy the isoperimetric inequality (Definition 1.13).
+In turn, we need a lower bound on v, for each x. The largest domain whose first eigenvalue
+we bound using the Faber-Krahn inoqualits: has and a. By the property of domain
+monotonicity for Dirichlet eigenvalues (Remark 1.7), a disk with area 7 will have a lower
+
+first Dirichlet eigenvalue than any disk with smaller area, that is,
+Ua < Vz Va<t.
+
+Therefore, we just need to bound vy, from below in order to get a lower bound on every
+other v, that we consider. Note that this bound will be far from optimal as x decreases,
+
+but it suffices for it to be larger than our upper bound on the first eigenvalue of the whole
+
+116469
+> 28089 *
+
+For x = 7, we consider the first zero of the function P_, (3), where s = 5 —it. Asa
+
+surface, that is
+
+hypergeometric function, this is
+
+rs 1
+f(t) =2F1 (5 — tt, 3 + it; 1; -7) .
+[ee suprosne f(t) using its power series; recall the general definition from Sec-
+tion 2.3.

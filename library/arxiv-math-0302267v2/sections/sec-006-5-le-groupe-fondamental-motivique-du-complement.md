@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0302267v2
-doc_title: "arXiv:math/0302267v2 [math.NT] 27 Feb 2003"
+doc_title: "Groupes fondamentaux motiviques de Tate mixte"
 section_id: sec-006-5-le-groupe-fondamental-motivique-du-complement
 section_title: "Le groupe fondamental motivique du compl´ement, dans P1, de 0, ∞et µN"
 section_number: 5
@@ -8,36 +8,43 @@ pages: 53-70
 source_pdf: 0302267v2.pdf
 source_sha256: c09c8cabd5f9d8e6
 toc_source: inferred
+doc_brief: "Groupes fondamentaux motiviques de Tate mixte — We deﬁne the category of mixed Tate motives over the ring of S-integers of a number ﬁeld."
 ---
-5.1. Soient N un entier ≥1, k engendr´e sur Q par une racine primitive N i`eme de l’unit´e
-et O l’anneau de ses entiers. Il est commode de ne pas supposer que k soit le sous-corps
-Q(exp(2πi/N)) de C. Notons Ak, ou simplement A la droite aﬃne type sur k et posons
-A∗= A −{0} = Spec k[u, u−1]. Soit X le compl´ement dans A∗de l’ensemble µN := µN(k)
-des racines N i`emes de l’unit´e. S’il y a ambigu¨ıt´e sur N, on ´ecrira plutˆot kN, ON et XN.
-Le groupe dih´edral Z/2⋉µN agit sur X ⊂P1
-k: le g´en´erateur de Z/2 agit par u 7→u−1,
-et ξ ∈µN agit par u 7→ξu. Pour N = 1, 2 ou 4, le groupe des projectivit´es transformant
-X en lui-mˆeme est plus grand. Pour N = 1, il s’identiﬁe au groupe des permutations de
-{0, 1, ∞}. Pour N = 2, (0, ∞, 1, −1) est un quaterne harmonique, et on obtient le groupe
-des automorphismes d’un carr´e de sommets cons´ecutifs 0, 1, ∞, −1. Pour N = 4, les
-points 0, 1, i, −1, −i, ∞forment sur la sph`ere de Riemann les sommets d’un octa`edre, et
-on obtient le groupe des d´eplacements de cet octa`edre.
-5.2. Si x et y sont deux points-base (4.3) de X, l’espace de chemins motivique Py,x est
-un MT(k)-sch´ema aﬃne (4.4). La r´ealisation ω de Py,x est ind´ependante de x et y. C’est
-un Q-sch´ema en groupe pro-unipotent, et la composition des chemins est la loi de groupe.
-Autre fa¸con de dire: en r´ealisation ω, il y a un chemin canonique de x `a y, et le compos´e
-des chemins canoniques de x `a y et de y `a z est le chemin canonique de x `a z. Bien sˆur,
-cette trivialisation du ω(π1(X, x))-torseur ω(Py,x) n’est en g´en´eral pas motivique, i.e. ne
-provient pas d’une trivialisation du π1(X, x)-torseur Py,x. L’action sur ω(Py,x) du groupe
-des automorphismes du foncteur ﬁbre ω d´epend de x et y.
-5.3. Pour z dans P1
-k −{∞} et λ dans k nous noterons λz le vecteur tangent en z
-de coordonn´ee du(λz) = λ. Nous noterons λ∞le vecteur tangent en ∞de coordonn´ee
-du−1(λ∞) = λ.
-Nous prendrons comme points-base les λz pour z = 0, ∞ou dans µN et λ une racine
-de l’unit´e dans k. Ce syst`eme de points-base est stable sous l’action du groupe dih´edral
-Z/2 ⋉µN. Une application de 1.7 montre comme en 4.17, 4.18 que les Py,x correspondants
-sont non ramiﬁ´es en dehors de l’ensemble des places de k au-dessus d’un nombre premier
+5.1. Soient N un entier >1, k engendré sur Q par une racine primitive N**™° de lunité
+et O l’anneau de ses entiers. I] est commode de ne pas supposer que k soit le sous-corps
+Q(exp(27i/N)) de C. Notons Ax, ou simplement A la droite affine type sur k et posons
+A* = A—{0} = Speck[u, u~+]. Soit X le complément dans A* de l’ensemble pay := pun (k)
+des racines Ni*™es de lunité. S’il y a ambiguité sur N, on écrira plutot ky, On et Xv.
+Le groupe dihédral Z/2 « jun agit sur X C P}: le générateur de Z/2 agit par uw ut,
+et € € un agit par ur Eu. Pour N = 1,2 ou 4, le groupe des projectivités transformant
+X en lui-méme est plus grand. Pour N = 1, il s’identifie au groupe des permutations de
+{0, 1,00}. Pour N = 2, (0,00, 1,—1) est un quaterne harmonique, et on obtient le groupe
+des automorphismes d’un carré de sommets consécutifs 0, 1, 00, —1. Pour N = 4, les
+
+points 0, 1, 7, —1, —7, co forment sur la sphére de Riemann les sommets d’un octaedre, et
+
+on obtient le groupe des déplacements de cet octaedre.
+
+5.2. Si x et y sont deux points-base (4.3) de X, l’espace de chemins motivique Py, est
+un MT(k)-schéma affine (4.4). La réalisation w de Py, est indépendante de x et y. C’est
+un Q-schéma en groupe pro-unipotent, et la composition des chemins est la loi de groupe.
+Autre fagon de dire: en réalisation w, il y a un chemin canonique de «x a y, et le composé
+des chemins canoniques de x a y et de y a z est le chemin canonique de x a z. Bien stir,
+cette trivialisation du w(m(X,x))-torseur w(Py,.) n’est en général pas motivique, i.e. ne
+provient pas d’une trivialisation du 7(X, x)-torseur Py... L’action sur w(Py,.) du groupe
+
+des automorphismes du foncteur fibre w dépend de z et y.
+
+5.3. Pour z dans Pj — {oo} et A dans k nous noterons A, le vecteur tangent en z
+de coordonnée du(Az) = A. Nous noterons A. le vecteur tangent en oo de coordonnée
+du-!(Aco) = ».
+
+Nous prendrons comme points-base les A, pour z = 0, co ou dans poy et A une racine
+de l’unité dans k. Ce systéme de points-base est stable sous l’action du groupe dihédral
+Z/2« jun. Une application de 1.7 montre comme en 4.17, 4.18 que les Py,, correspondants
+
+sont non ramifiés en dehors de l’ensemble des places de k au-dessus d’un nombre premier
+
 51
 divisant N: ce sont des MT(O[1/N])-sch´emas. Nous d´ecrivons en 5.4 et 5.5 des structures
 sur le syst`eme des Py,x. Pour toutes ces structures, il suﬃt pour les construire de les

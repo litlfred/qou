@@ -1,0 +1,52 @@
+7.1 Some illustrative examples 171
+
+Notational conventions
+
+For the rest of this book we use the following notational conventions. Bold
+quantities are reserved for vectors, such as z = (z,...,Za), and we define z° :=
+(Z1,.--,Z¢-1)- The d-variate function F(z) is a quotient of coprime polynomials
+P(z)/Q(z), with the denominator Q vanishing on the singular variety V =
+Vo ={z€ C4 : Q(z) = 0}. We fix a component B of the complement of
+amoeba(Q) and consider the Laurent series expansion F(Z) = Yipeqa dp2"
+that converges on D = Relog™!(B). As in previous chapters, for w € C4 we
+use the notation T(w) for the torus T(w) = {z € C¢: Izjl = |w,| for all j}.
+The simplest and most common case, of a convergent power series expansion,
+occurs when B is the component containing points of the form (—N,...,—N)
+for N sufficiently large, so that D is a neighborhood of the origin.
+
+Remark 7.1. Although we mainly study rational generating functions, most
+of our results also hold for meromorphic functions. We point out as we go
+which major results still hold for meromorphic functions, and the small ways
+in which they differ from the rational case.
+
+Given r € Z¢ the d-form w = z~"-!F(z)dz is the integrand of the Cauchy
+integral (7.1), with domain of analyticity M = C4\V. Unless otherwise stated,
+we write |r| for the €!-norm |r| = Die |r;| and as above define the normalized
+vector f = r/|r|. We seek to compute asymptotics for the series coefficients
+a, as r — oo with # varying over a compact set, typically around some fixed
+direction.
+
+7.1 Some illustrative examples
+
+Example 7.2 (Binomial Coefficients). We start with perhaps the simplest non-
+trivial bivariate rational function for our purposes: F(x,y) = 1/Q(x,y) with
+Q(x,y) = 1-x-y. The amoeba of Q is pictured in Figure 7.1 (see Chapter 8
+for methods to compute amoebas). Because there are three components in the
+amoeba complement, there are three convergent Laurent series expansions of
+F(x, y). Consider the power series expansion F(x,y) = Yi jso (xt, corre-
+
+sponding to the component of the amoeba complement that lies in the third
+quadrant. Since
+i+j\. |
+( . ‘Ve
+U
+
+»
+
+i,j20
+
+it+j\ i; 1
+= >| Ns =, (73)
+i 1-|a-bI
+
+i,j20

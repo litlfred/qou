@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1810.11563v1/sections/sec-044",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The Protocol",
+  "pageStart": 73,
+  "pageEnd": 75,
+  "contains": [
+    "library/arxiv-1810.11563v1/blocks/prose-sec-044",
+    "library/arxiv-1810.11563v1/blocks/figure-img-p074-1",
+    "library/arxiv-1810.11563v1/blocks/figure-img-p075-1"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1810.11563v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1810.11563v1/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,0 +1,1 @@
+Let g = 1, ie. © = $' x S'. Then) = SL.2(Z). Up to its action, there are only three arc systems (Fig. 17). Namely, viewing S! as the unit circle in the complex plane, and representing arcs parametrically, we may write these three systems as follows:

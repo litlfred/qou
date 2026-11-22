@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-0705.2975v1
-doc_title: "On the Definitions of Difference Galois Groups"
+doc_title: "On the Deﬁnitions of Diﬀerence Galois Groups"
 section_id: sec-000-introduction
 section_title: "Introduction"
 section_number: null
 pages: 1-4
 source_pdf: 0705.2975v1.pdf
 source_sha256: 683d6bd44cea6704
-doc_brief: "On the Definitions of Difference Galois Groups — We compare several deﬁnitions of the Galois group of a linear diﬀerence equation that have arisen in algebra, analysis and model theory and sh ow"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.994
+latex_prose_ratio: 0.963
+latex_coverage_ratio: 0.955
+doc_brief: "On the Deﬁnitions of Diﬀerence Galois Groups — We compare several deﬁnitions of the Galois group of a linear diﬀerence equation that have arisen in algebra, analysis and model theory and show, that"
 ---
 []{#intro label="intro"} In the modern Galois theory of polynomials of degree $n$ with coefficients in a field $k\footnote{All fields in this paper are
   assumed to be of characteristic zero}$, one associates to a polynomial $p(x)$ a splitting field $K$, that is a field $K$ that is generated over $k$ by the roots of $p(x)$. All such fields are $k$-isomorphic and this allows one to define the Galois group of $p(x)$ to be the group of $k$-automorphisms of such a $K$. If $k$ is a differential field and $Y' = AY, A$ an $n\times n$ matrix with entries in $k$, one may be tempted to naively define a "splitting field" for this equation to be a differential field $K$ containing $k$ and generated (as a differential field) by the entries of a fundamental solution matrix $Z$ of the differential equation[^1]. Regrettably, such a field is not unique in general. For example, for the equation $y' = \frac{1}{2x}y$ over $k = \CX(x), x' = 1$, the fields $k(x^{1/2})$ and $k(z), z$ transcendental over $k$ and $z' = \frac{1}{2x}z$ are not $k$-isomorphic. If one insists that the constants $C_k = \{c \in k \ | \ c'=0\}$ are algebraically closed and that $K$ has no new constants, then Kolchin [@kolchin_exist] showed that such a $K$ exists (and is called the *Picard-Vessiot* associated with the equation) and is unique up to $k$-differential isomorphism. Kolchin [@kolchin48] defined the Galois group of such a field to be the group of $k$-differential automorphisms of $K$ and developed an appropriate Galois theory[^2].\

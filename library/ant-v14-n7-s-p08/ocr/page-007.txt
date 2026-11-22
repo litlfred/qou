@@ -1,0 +1,42 @@
+Burgess bounds for short character sums evaluated at forms 1917
+
+n = 2 this provides a corresponding upper bound for S(F; N, H) in the case that F is an irreducible
+binary quadratic form x? + ax,x. + bx} over Fy, in which case x (F(x, x2)) is a character (mod q)
+of x} +@x2 € Q(w), where w = 5a + 3Va? — 4b. In the n-dimensional setting, if one assumes that
+@1,...,@n iS a certain special type of basis (such as a power basis), stronger results have also been
+obtained; Burgess [1967a] and Karatsuba [1970] proved nontrivial upper bounds in the stronger range
+H; > q'/4+*, Without such special assumptions, Chang [2008] improved on Davenport and Lewis (for
+n > 5) by proving a nontrivial bound as soon as ||H|| > q2"/°+* for some « > 0, and furthermore in
+dimension n = 2 Chang [2009, Theorem 5] proved that H; > q'/4** suffices for any « > 0. See also
+[Chang 2008] for certain results of Burgess-type for multiplicative character sums over sumsets.
+
+Finally, we mention work on mixed character sums in multivariate settings, of the form
+
+S(F, g; N, H)= > e(g(x))x(FO)),
+xe(N,N+H]
+with a polynomial g € R[x), ...,x,]. In [Pierce 2016] the first author proved nontrivial upper bounds
+for such multivariate sums in the regime H; > qi/+*, in the special case F(x) = x1 -+- x, (generalizing
+[Heath-Brown and Pierce 2015] in dimension n = 1). This was later generalized by Kerr [2014] to
+the case of F(x) multilinear as in (1-10). A second paper in this series will prove Burgess bounds for
+S(F, g; N, H) for any form F whose reduction modulo g is (A, q)-admissible.
+
+1D. Outline of the paper. We present in Section 2 a heuristic overview of the proof of Theorem 1.1,
+which illustrates how the stratification result of the second author [Xu 2018] plays a key role. In Section 3
+we gather together the lemmas we need to motivate and utilize the condition of (A, g)-admissibility. In
+Section 4 we give a convenient restatement and strengthening of the stratification results of [Xu 2018];
+we expect this version will be of independent interest in other applications. In Section 5 we begin the
+n-dimensional Burgess argument, reaching the key new novel steps in Section 6, which carries out the
+stratification and a Menshov-Rademacher argument involving permuting variables. In Section 7 we
+complete the Burgess argument and choose parameters optimally; subsequently we verify the corollaries.
+In the Appendix we provide a comparison illustrating the utility of the stratification, and a conditional
+argument that assumes a stronger stratification result, which shows that the threshold £, is stable under
+such an improvement.
+
+1E. Notation. We will use the notation x € (N, N + H] to denote the range of a sum over a box
+(N,N +H) =]],;(N;, Ni + Aj], and will let || || =[]; 4; for any tuple H. We will write ag to mean
+(a1q,.--+,4nq) and a/q to mean (a;/q,...,d,/q). We will also use notations such as x < a to denote
+x; <a; fori =1,...,n and a (mod p) to mean we regard each a; (mod p). We define Hmax := max; H;
+and Hin := min; H;. We will use the Vinogradov notation A < B to denote that there exists a constant C
+such that |A| < CB, and A <, B to denote that C may depend on the parameter «. In the following
+work, all implied constants may depend on n, r, D, A := ord x and possibly an arbitrarily small ¢ > 0
+without further specification, but will never depend on N, H, q.

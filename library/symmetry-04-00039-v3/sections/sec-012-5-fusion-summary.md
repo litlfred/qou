@@ -8,6 +8,7 @@ pages: 29-30
 source_pdf: symmetry-04-00039-v3.pdf
 source_sha256: 1aa8a81916887f8e
 toc_source: inferred
+doc_brief: "Knots on a Torus: A Model of the Elementary Particles — Two knots; just two rudimentary knots, the unknot and the trefoil."
 ---
 The results summarized in Figure 24 for first order and Figures 28 and 29 for second order fusion 
 are readily predictable on a combinatorial basis and we finish this section with a short discussion to 

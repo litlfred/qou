@@ -1,0 +1,50 @@
+3
+
+In the context of perverse sheaves, our above vanishing theorem can be
+reformulated as the statement that for any perverse sheaf P € Perv(X,C)
+and a general character x : 1;(X,0) —> C* the hypercohomology groups
+satisfy the property
+
+H'(X,P@cLy) = 0 forall i0,
+
+as we will explain in more detail in chapter 1. Our methods also allow
+to determine the precise locus .7(P) of characters x for which the above
+vanishing property fails. In section 1.5 we will see that this locus is a finite
+union of translates of algebraic subtori of the character torus
+
+Il(X) = Hom(m(X,0),C*),
+
+and that for perverse sheaves P € Perv(X,C) of geometric origin in the
+sense of [10, sect. 6.2.4] the occuring translations can be taken to be torsion
+points. Again this has been shown independently by C. Schnell in [94] with
+a different argument. The two approaches seem to be complementary in
+some sense — for example, whereas in the framework of loc. cit. the proof
+of the statement about torsion points requires a deep result of C. Simpson,
+the methods to be explained below allow to reduce it to a statement over a
+finite field which can be checked directly by looking at the eigenvalues of
+the Frobenius operator, see lemma 1.11.
+
+We now come back to the Albanese morphism jf, : Y” —> X = Alb(Y)
+of a smooth complex projective variety Y of arbitrary dimension. The group
+law a: X x X —> X of the Albanese variety defines a convolution product
+on the bounded derived category D}(X,C) by the formula
+
+KxM = Ra,(KMM) for K,M © DP(x,C),
+
+and in these terms the direct image of the constant sheaf can be written (up
+to a degree shift) as the n-fold convolution
+
+R fnx(Oyn) = Rfix(Oy) *--- *Rfix(Sy)-
+eS
+n times
+Our goal is to interpret this convolution as a tensor product in the category
+of representations of some reductive algebraic group. To motivate this, let
+us take a look at the case where Y = C is a curve. Then f; :C — X is the
+Abel-Jacobi embedding, and we are interested in the convolution powers of
+the perverse sheaf dc € Perv(X,C). Although in general these convolution
+powers are not perverse, it turns out that the failure of perversity only comes
+from locally constant sheaves: In view of Gabber’s decomposition theorem
+we can write
+(dc)*" = On D Tr
+where T, denotes the maximal direct summand all of whose cohomology
+sheaves are locally constant on X, and then by [106, th. 7] the remaining

@@ -1,0 +1,1 @@
+Because the precision of the experimental result for the nucleon is far greater than ours, we additionally give the QED and QCD separation obtained using the experimental value of Mn −Mp: (Mn −Mp)QCD/(Mn −Mp)QED = −2.49(23)(29).

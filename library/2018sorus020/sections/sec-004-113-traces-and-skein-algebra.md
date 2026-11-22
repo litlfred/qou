@@ -8,7 +8,9 @@ pages: 19-21
 source_pdf: 2018SORUS020.pdf
 source_sha256: c3f929e5195983ce
 toc_source: inferred
+doc_brief: "Reidemeister torsion on character varieties — 52 sections: Front matter; Introduction; Character varieties and Reidemeist"
 ---
+Traces and skein algebra
 Deﬁnition 1.1.6. For any γ ∈Γ, we deﬁne the trace function tγ : R(Γ) →k by
 tγ(ρ) = Tr(ρ(γ)). Those functions are invariant under the action of SL2, thus they
 deﬁne functions on the quotient X(Γ), that we still denote by tγ.
@@ -80,4 +82,3 @@ A
 Figure 1.1 – Kauﬀman skein relations. The indicated moves are performed locally,
 the rest of the link remains unchanged. The strands are supposed to depict bands
 of the framed links.
-1.1.4

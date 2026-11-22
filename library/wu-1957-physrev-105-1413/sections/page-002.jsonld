@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/wu-1957-physrev-105-1413/sections/page-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Page 2",
+  "pageStart": 2,
+  "pageEnd": 2,
+  "contains": [
+    "library/wu-1957-physrev-105-1413/blocks/prose-page-002",
+    "library/wu-1957-physrev-105-1413/blocks/prop-page-002-01",
+    "library/wu-1957-physrev-105-1413/blocks/prop-page-002-02",
+    "library/wu-1957-physrev-105-1413/blocks/prop-page-002-03",
+    "library/wu-1957-physrev-105-1413/blocks/prop-page-002-04",
+    "library/wu-1957-physrev-105-1413/blocks/prop-page-002-05",
+    "library/wu-1957-physrev-105-1413/blocks/prop-page-002-06"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/wu-1957-physrev-105-1413/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/wu-1957-physrev-105-1413/manifest.jsonld",
+  "provenance": "ingested"
+}

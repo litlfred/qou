@@ -1,34 +1,14 @@
 *Proof.*
-The [NS obstruction](#def:ns-obstruction) is
-$\mathrm{NS}(A) = \kappa_0|_\Sigma$ where
-$\mathrm{tr}(\kappa_0) = \chi(A) = -6$.
+Item 1: by [QU-to-QOU](#thm:qu-to-qou), item 2, $e(\xi) = c_1(\xi) = \chi(\mathcal{S}) = -6$ for the unit tangent bundle. A nowhere-vanishing section would trivialise $\xi$ and force $e(\xi) = 0$.
 
-**Step 1** (arithmetic).
-For $\kappa \geq 4$, $2\kappa \geq 8 > 6 = |\chi(A)|$, so
-$2\kappa \nmid -6$.  By the
-[Kummer specialisation](#prop:ns-kummer-specialisation),
-$\kappa_0 \bmod 2\kappa \neq 0$ for all $\kappa \geq 4$.  The
-obstruction survives through infinitely many levels of the
-Kummer tower.
+Item 2: by [QU-to-QOU](#thm:qu-to-qou), item 3, $\xi$ has an $n$-th root if and only if $n \mid \chi(\mathcal{S}) = -6$, with obstruction $-6 \bmod n$; see also the [Kummer specialisation](#prop:ns-kummer-specialisation). The positive divisors of $6$ are $1, 2, 3, 6$.
 
-**Step 2** (algebra).
-The [perpetual obstruction](#thm:qu-to-qou) (item 3) says
-$\kappa_0$ and the jet corrections $\delta_n$ live in
-complementary subgroups of $H^2(\mathcal{S}, \mathcal{B})$.
-The total obstruction $\kappa_n|_\Sigma = \kappa_0|_\Sigma +
-\delta_n|_\Sigma$ is nonzero because the topological term
-$\kappa_0|_\Sigma \neq 0$ cannot be cancelled by the analytic
-term $\delta_n|_\Sigma$.
+Item 3: $\Sigma$ has dimension $1$, so $H^2(\Sigma, M) = 0$ for every coefficient group $M$ (Godement II.5.12).
 
-**Step 3** (geometry).
-$\mathrm{NS}(A) \neq 0$ implies, via the
-[core-Levi equivalence](#prop:core-levi-form), that the
-Levi form stays non-degenerate at the collision locus: the
-contact structure does not degenerate.
+*Retracted argument.* Earlier versions of this theorem asserted that the Descartes universe is NS-singular, $\mathrm{NS}(A) = e(\xi)|_\Sigma \neq 0$. They argued in four steps:
+1. Kummer survival of $\kappa_0 \bmod 2\kappa$ for $\kappa \geq 4$;
+2. a complementary-subgroup non-cancellation between $\kappa_0|_\Sigma$ and the jet corrections $\delta_n|_\Sigma$ (item 3 of QU-to-QOU in its jet-tower form);
+3. non-degeneracy of the Levi form via the [core-Levi equivalence](#prop:core-levi-form) (withdrawn, see below);
+4. the [vorticity lower bound](#conj:vorticity-lower-bound) and [BKM divergence](#thm:q-bkm).
 
-**Step 4** (dynamics).
-Non-degenerate Levi form implies bounded core aspect ratio,
-which gives the [vorticity lower
-bound](#prop:vorticity-lower-bound)
-$\|\omega\|_\infty \geq c/(T^*-t)$, which gives
-[BKM divergence](#thm:q-bkm) $\int \|\omega\|_\infty \, dt = \infty$.
+Step 1 survives as item 2 above, but it is a statement about the global class on $\mathcal{S}$. Step 2 fails: the jet-tower form of item 3 is retracted, the corrections $\delta_n$ lie in the image of $H^2(\mathcal{S}, \mathcal{O}_{\mathcal{S}}) = 0$, and $e(\xi)|_\Sigma = 0$ by item 3 above. Step 3 is withdrawn: the [core-Levi form](#prop:core-levi-form) now gives a single Levi scalar $\xi\cdot\mathrm{curl}\,\xi$, and the implication "non-degenerate Levi data, hence blow-up" (branch (A) of the [Levi degeneracy conjecture](#conj:levi-degeneracy)) is refuted by an explicit Beltrami solution. Step 4 remains valid as a conditional implication from a non-vanishing obstruction on $\Sigma$, but no such class exists on a one-dimensional $\Sigma$. Whether the model's actual Reeb field vanishes on $\Sigma$ is a dynamical question, which this theorem does not address.

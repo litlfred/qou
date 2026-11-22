@@ -1,42 +1,44 @@
 /-
-  # Canonical p-n interface averaging uniqueness
+  # p-n interface averaging: which bar-invariant forms exist
 
   The QOU mass identity at $A \geq 2$ contracts a per-interface
-  averaging functional σ_{pn} across the p-n boundary slice in
-  H_{3A}(R, q).  This file formalises the uniqueness of σ_{pn}
-  under three structural hypotheses (bar-invariance, color-flavor
-  compatibility via the Bring color-tube quark decomposition,
-  standard normalisation) and supplies the Lean scaffold that
-  closes the cheat-sheet "open audit finding" entry (Phase 5q,
-  line 128 of `docs/canonical-derivation-cheat-sheet.md`).
+  averaging functional σ_{pn} across the p-n boundary slice.  Two
+  candidate forms are on record:
+    (i)  the uniform form `σ_avg = z − h/2 = (z + z̄)/2`, the
+         bar-symmetriser of the p-p factor under convention D;
+    (ii) the Bring colour-tube weighted form `z − h·(1/2 − δ/4)`,
+         where the flavour split δ is bar-mixed (δ̄ = −q²δ).
 
-  Two candidate canonical forms:
-    (i)  uniform bar-invariant `σ_avg = (σ + σ⁻¹)/2 = σ − h/2`
-         (current production default, `prop:averaging-resonance-rule`
-         — bare-backtick: planned, not yet derived);
-    (ii) **Bring color-tube weighted form**, per-quark composition
-         (open math: `probe_pn_flavor_asymmetry.py` /
-          `probe_per_sheet_flavor_nonin.py`; empirical Scheme 4
-          per-sheet PL integration on Bring's surface reproduces
-          Δm_{n−p} to ≈ 0.14 % of CODATA; substrate evaluation
-          `1 / (1 − h_q · q_0^{10})` per
-          `lambda_scale_refinement_h4_correction_bring.py`).
+  Only (i) is bar-invariant; (ii) is not
+  (`computations/probes/pn_interface_bar_structure_probe.py`).
 
-  Both candidates satisfy bar-invariance + standard normalisation;
-  they disagree on the per-sheet color weighting.  The uniqueness
-  theorem here refines the `ColorFlavorCompatible` class to carry
-  the explicit **9-pair quark decomposition** (proton uud × neutron
-  udd ⇒ 2·(u,u) + 4·(u,d) + 1·(d,u) + 2·(d,d) pairs) so that
-  uniqueness can be established from the color-pair weights alone,
-  without invoking standard normalisation.  Pinning the canonical
-  Bring color-tube weight function is the remaining open math.
+  This file proves two things.
+  * `pn_averaging_bar_iff`: within the family σ_c = z − c·h with
+    `z = q³/(q²+1)` (convention D), σ_c is bar-invariant at `q` iff
+    `(c(q) + c(q⁻¹) − 1)·h = 0`.
+  * `pn_averaging_unique`: for a constant `c`, bar-invariance at any
+    `q` with `h(q) ≠ 0` forces `2c = 1`, so the uniform form is the
+    unique bar-invariant member with constant `c`.  For a
+    `q`-dependent `c` there is no uniqueness: every `c` with
+    `c + c̄ = 1` qualifies.
 
-  Ref: [manuscript] prop:pn-averaging-uniqueness
-       [audit] docs/canonical-derivation-cheat-sheet.md Phase 5q
+  An earlier version proved "uniqueness" from a class field pinning
+  σ_{pn} pointwise to `z`.  That was a tautology, and under convention
+  D it was vacuous, since `z` itself is not bar-invariant
+  (`z̄ = z − h`).  It is replaced by the statements above.
+
+  The 9-pair colour decomposition below is kept: it shows that two
+  averagings with the same colour-pair weight agree.  Choosing that
+  weight is open.
+
+  Ref: [leitner2026] prop:pn-averaging-uniqueness
 -/
 import Mathlib.Algebra.Ring.Basic
 import Mathlib.Algebra.Group.Units.Defs
 import Mathlib.Tactic.Ring
+import Mathlib.Tactic.LinearCombination
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Algebra.Field.Basic
 
 namespace QOU.BraidKnot
 
@@ -69,15 +71,6 @@ def PnAveragingForm (R : Type u) [CommRing R] : Type u := R → R
     a field is exactly the old `q ≠ 0` side condition. -/
 class BarInvariant (R : Type u) [CommRing R] (σ_pn : PnAveragingForm R) where
   bar : ∀ q : Rˣ, σ_pn (q : R) = σ_pn (↑q⁻¹ : R)
-
-/-- **Standard normalisation.**  At the Hecke generator level
-    σ_{pn} matches the Markov closure z = 1/(q^{1/2} + q^{-1/2}).
-    The class is parametrised by the normalisation function `z` to
-    keep the substrate model abstract — see
-    `q_pinning_50_digit.Z_MARKOV` for the canonical `z`. -/
-class StandardNorm (R : Type u) [CommRing R] (σ_pn : PnAveragingForm R)
-    (z : R → R) where
-  norm : ∀ q : R, σ_pn q = z q
 
 /-! ### Bring color-tube quark composition
 
@@ -195,36 +188,72 @@ theorem pn_averaging_unique_via_weight
   funext q
   rw [hcf.factors q, hcf'.factors q, hw, ninth_eq_ninth hcf hcf']
 
-/-- **Uniqueness theorem (via standard normalisation, original).**
-    Two p-n averagings sharing a common standard normalisation `z`
-    are equal — the seed-uniqueness leg that gates the canonical
-    Bring color-tube weighted form on the open `ColorFlavorCompatible`
-    instance. -/
-theorem pn_averaging_unique
-    {R : Type u} [CommRing R]
-    (σ_pn σ_pn' : PnAveragingForm R) (z : R → R)
-    [BarInvariant R σ_pn] [ColorFlavorCompatible R σ_pn]
-    [hN : StandardNorm R σ_pn z]
-    [BarInvariant R σ_pn'] [ColorFlavorCompatible R σ_pn']
-    [hN' : StandardNorm R σ_pn' z] :
-    σ_pn = σ_pn' := by
-  funext q
-  rw [hN.norm q, hN'.norm q]
+/-! ### Bar-invariant averagings under convention D
 
-/-- **Witness theorem.**  The space of p-n averaging forms admitting
-    `BarInvariant` + `ColorFlavorCompatible` + `StandardNorm` with a
-    common `z` is a subsingleton. -/
-theorem pn_averaging_subsingleton
-    {R : Type u} [CommRing R] (z : R → R) :
-    Subsingleton {σ_pn : PnAveragingForm R //
-      ∃ (_bar : BarInvariant R σ_pn) (_cf : ColorFlavorCompatible R σ_pn),
-        ∀ q, σ_pn q = z q} := by
-  refine ⟨fun ⟨σ, h⟩ ⟨σ', h'⟩ => ?_⟩
-  obtain ⟨_, _, hN⟩ := h
-  obtain ⟨_, _, hN'⟩ := h'
-  apply Subtype.ext
-  funext q
-  show σ q = σ' q
-  rw [hN q, hN' q]
+Over a field, with `z = q³/(q²+1)` and `h = q − q⁻¹`, the bar involution
+`q ↦ q⁻¹` sends `z` to `z − h` and `h` to `−h`.  So the averaging
+`z − c·h` is bar-invariant exactly when `c + c̄ = 1`. -/
+
+section ConventionD
+
+variable {R : Type u} [Field R]
+
+/-- The convention-D Markov parameter `z = q³/(q²+1)`. -/
+def pnZD (q : R) : R := q ^ 3 / (q ^ 2 + 1)
+
+/-- The Hecke parameter `h = q − q⁻¹`. -/
+def pnH (q : R) : R := q - q⁻¹
+
+theorem pnH_inv (q : R) : pnH q⁻¹ = - pnH q := by
+  unfold pnH; rw [inv_inv]; ring
+
+/-- `z̄ = z − h` under convention D. -/
+theorem pnZD_inv (q : R) (hq0 : q ≠ 0) (hq2 : q ^ 2 + 1 ≠ 0) :
+    pnZD q⁻¹ = pnZD q - pnH q := by
+  unfold pnZD pnH
+  have h' : (q⁻¹) ^ 2 + 1 ≠ 0 := by
+    rw [inv_pow]
+    intro h
+    apply hq2
+    have hq2' : q ^ 2 ≠ 0 := pow_ne_zero 2 hq0
+    have := congrArg (· * q ^ 2) h
+    simp only [add_mul, inv_mul_cancel₀ hq2', zero_mul, one_mul] at this
+    linear_combination this
+  field_simp
+  rw [add_comm 1 (q ^ 2), div_self hq2]
+  ring
+
+/-- **Bar-invariance criterion.**  The averaging `z − c·h` takes the same
+    value at `q` and `q⁻¹` iff `(c(q) + c(q⁻¹) − 1)·h(q) = 0`. -/
+theorem pn_averaging_bar_iff (c : R → R) (q : R) (hq0 : q ≠ 0)
+    (hq2 : q ^ 2 + 1 ≠ 0) :
+    pnZD q - c q * pnH q = pnZD q⁻¹ - c q⁻¹ * pnH q⁻¹ ↔
+      (c q + c q⁻¹ - 1) * pnH q = 0 := by
+  rw [pnZD_inv q hq0 hq2, pnH_inv]
+  constructor
+  · intro h; linear_combination -h
+  · intro h; linear_combination -h
+
+/-- **Uniqueness among constant coefficients.**  If `z − c·h` with a
+    constant `c` is bar-invariant at some `q` with `h(q) ≠ 0`, then
+    `2c = 1`: the uniform form `z − h/2` is the only one.  This says
+    nothing about a `q`-dependent `c`, such as the colour-weighted form. -/
+theorem pn_averaging_unique (c q : R) (hq0 : q ≠ 0) (hq2 : q ^ 2 + 1 ≠ 0)
+    (hh : pnH q ≠ 0)
+    (hbar : pnZD q - c * pnH q = pnZD q⁻¹ - c * pnH q⁻¹) :
+    2 * c = 1 := by
+  have := (pn_averaging_bar_iff (fun _ => c) q hq0 hq2).1 hbar
+  have h2 : c + c - 1 = 0 := (mul_eq_zero.1 this).resolve_right hh
+  linear_combination h2
+
+/-- The uniform form is bar-invariant (existence half). -/
+theorem pn_averaging_uniform_bar (q : R) (hq0 : q ≠ 0) (hq2 : q ^ 2 + 1 ≠ 0)
+    (two : (2 : R) ≠ 0) :
+    pnZD q - 2⁻¹ * pnH q = pnZD q⁻¹ - 2⁻¹ * pnH q⁻¹ := by
+  refine (pn_averaging_bar_iff (fun _ => (2 : R)⁻¹) q hq0 hq2).2 ?_
+  have : (2 : R)⁻¹ + 2⁻¹ - 1 = 0 := by field_simp; ring
+  simp [this]
+
+end ConventionD
 
 end QOU.BraidKnot

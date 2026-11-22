@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-10-13T17:36:59.970462+00:00",
-  "commitSha": "b5f5f6bd8f92f88c6532d78513db772b50af553c",
+  "computedAt": "2026-11-15T12:08:54.781617+00:00",
+  "commitSha": "0274df3369f46e131ad3beb57f37377b0f6c82f0",
   "assertions": [
     {
       "name": "all_atoms_satisfy_exterior_algebra_bound",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 331147,
+  "durationMs": 70010,
   "computation": "atom-braid-active-partitions",
   "scriptFile": "atom_braid_active_partitions.py",
-  "scriptHash": "a84a82f637aa",
-  "scriptCommitSha": "b3df58a89710ba759a8056cc8bff958c2bb84110",
+  "scriptHash": "67fe40c8d343",
+  "scriptCommitSha": "08e67044d8bdd3d58ac36e560500cc1aad762c3f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,14 +26,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.16",
+    "python": "3.13.18",
     "numpy": "2.5.3",
     "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "f78d45e8bc0b9ef6"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "4bf9db2f1906759b"
   },
   "invocation": {
     "argv": [
@@ -64,7 +65,7 @@
         "n_chi_errors": 0,
         "chi_errors_head": [],
         "n_branches": 16,
-        "elapsed_seconds": "0.117",
+        "elapsed_seconds": "0.084",
         "top_active_partitions": [
           {
             "lambda": [
@@ -171,7 +172,7 @@
         "n_chi_errors": 0,
         "chi_errors_head": [],
         "n_branches": 64,
-        "elapsed_seconds": "169.894",
+        "elapsed_seconds": "35.673",
         "top_active_partitions": [
           {
             "lambda": [
@@ -322,7 +323,7 @@
         "n_chi_errors": 0,
         "chi_errors_head": [],
         "n_branches": 64,
-        "elapsed_seconds": "161.128",
+        "elapsed_seconds": "34.245",
         "top_active_partitions": [
           {
             "lambda": [
@@ -450,7 +451,7 @@
               2,
               1
             ],
-            "chi": "-0.765785510614054318129565980918333872890265354874745842529456"
+            "chi": "-0.765785510614054318129565980918333872890265354874745842529457"
           }
         ]
       }

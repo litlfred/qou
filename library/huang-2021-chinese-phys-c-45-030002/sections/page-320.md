@@ -1,0 +1,419 @@
+---
+doc_id: huang-2021-chinese-phys-c-45-030002
+doc_title: "The AME 2020 atomic mass evaluation (I). Evaluation of input data, and adjustment procedures"
+section_id: page-320
+section_title: "Page 320"
+section_number: null
+pages: 320-320
+source_pdf: Huang_2021_Chinese_Phys._C_45_030002.pdf
+source_sha256: 1dd3329ed87476c8
+toc_source: undetermined
+doc_brief: "The AME 2020 atomic mass evaluation (I). Evaluation of input data, and adjustment procedures — 343 sections: Page 1; Page 2; Page 3"
+---
+Chinese Physics C Vol. 45, No. 3 (2021) 030002
+Table I. Comparison of input data and adjusted values (continued, Explanation of Table on page 030002-30)
+Item
+Input value
+Adjusted value
+vi
+Dg
+Signf.
+Main inﬂ.
+Lab
+F
+Reference
+238Pu(α)234U
+5593.20
+0.2
+5593.27
+0.19
+0.4
+1
+90
+69 238Pu
+71Gr17
+Z
+238Am(α)234Np
+6041.7
+30.
+3
+72Ah04
+238Cm(α)234Pu
+6611.5
+50.
+6670
+10
+1.2
+U
+48St.A
+∗
+6632.0
+50.
+0.8
+U
+52Hi.A
+6672.3
+10.
+−0.2
+o
+JAa
+02As08
+6670.3
+10.
+4
+JAa
+06As03
+238U(n,α)235Th
+8700
+50
+8936
+13
+4.7
+B
+81Wa11
+236U(t,p)238U
+2900
+20
+2797.7
+1.2
+−5.1
+F
+Ald
+64Mi.A
+∗
+2782
+10
+1.6
+U
+ANL
+67Er02
+2780
+20
+0.9
+U
+LAl
+69Br11
+238U(p,t)236U
+−2765
+15
+−2797.7
+1.2
+−2.2
+U
+ANL
+74Fr01
+238U(p,d)237U
+−3951
+20
+−3929.2
+1.3
+1.1
+U
+Ald
+64Mi.A
+238U(d,t)237U
+116
+6
+103.5
+1.3
+−2.1
+U
+ANL
+67Er02
+237Np(n,γ)238Np
+5488.32
+0.20
+2
+BNn
+79Io01
+Z
+238Pu(d,t)237Pu
+−746
+10
+−742.6
+1.3
+0.3
+U
+Kop
+73Gr26
+238Pa(β −)238U
+3600
+300
+3586
+16
+−0.0
+U
+68Tr07
+∗
+3460
+60
+2.1
+U
+85Ba57
+∗
+238Np(β −)238Pu
+1295
+10
+1291.4
+0.5
+−0.4
+U
+55Ra27
+∗
+1300
+15
+−0.6
+U
+56Ba95
+∗
+∗238Cm(α)234Pu
+PrvCom to reference
+58St50
+∗∗
+∗236U(t,p)238U
+F : authors not satisﬁed with target material
+AHW
+∗∗
+∗238Pa(β −)238U
+Eβ−=1700(300) to (3−) level at 1992.2 keV, and other Eβ−, reinterpreted
+Ens157
+∗∗
+∗238Pa(β −)238U
+Reports result from thesis
+82Gi.A
+∗∗
+∗238Np(β −)238Pu
+Eβ−=270(10) 280(10) respectively, to 2+ level at 1028.537 keV, and other Eβ−
+Ens157
+∗∗
+239Pu(α)235U
+5244.60
+0.25
+5244.52
+0.21
+−0.3
+1
+68
+41 235U
+79Ry.A
+∗
+239Am(α)235Np
+5924.6
+2.0
+5922.4
+1.4
+−1.1
+2
+Bka
+71Go01
+∗
+5920.2
+2.0
+1.1
+2
+75Ah05
+∗
+239Cm(α)235Pu
+6539.7
+140.
+4
+JAa
+02Sh.C
+∗
+239Cf(α)235Cm
+7760.1
+25.
+7760
+60
+0.1
+9
+GSa
+81Mu12
+7766.2
+8.
+−0.1
+9
+GSa
+20Kh10
+238U(n,γ)239U
+4806.55
+0.30
+4806.38
+0.17
+−0.6
+2
+ANL
+72Bo46
+Z
+4806.30
+0.21
+0.4
+2
+ILn
+79Br25
+Z
+238U(d,p)239U
+2588
+20
+2581.82
+0.17
+−0.3
+U
+Ald
+64Mi.A
+2579
+7
+0.4
+U
+Tal
+66Sh16
+2585
+6
+−0.5
+U
+ANL
+67Er02
+238Pu(n,γ)239Pu
+5646.7
+0.5
+5646.2
+0.3
+−0.9
+1
+38
+31 238Pu
+75Ma.A
+Z
+238Pu(d,p)239Pu
+3432
+10
+3421.7
+0.3
+−1.0
+U
+Kop
+73Gr26
+239Pu(d,t)238Pu
+604
+10
+611.0
+0.3
+0.7
+U
+ANL
+73Fr01
+239U(β −)239Np
+1290
+20
+1261.7
+1.5
+−1.4
+U
+64Bl11
+∗
+239Np(β −)239Pu
+722.5
+1.0
+722.8
+0.9
+0.3
+1
+87
+67 239Np
+59Co63
+∗
+∗239Pu(α)235U
+Eα=5156.59(0.25,Z) to 1/2+ level at 0.0760 keV
+Ens14b
+∗∗
+∗239Am(α)235Np
+Eα=5824.6(4,Z) 5775.6(2,Z) 5733.6(2,Z); ground state, (5/2)−49.10, (7/2)−91.6
+Ens14b
+∗∗
+∗239Am(α)235Np
+Eα=5772.7(2,Z) to (5/2)−level at 49.10 keV
+Ens14b
+∗∗
+∗239Cm(α)235Pu
+Private communication to reference
+08Qi03
+∗∗
+∗239U(β −)239Np
+Eβ−=1211(20) to 5/2−level at 74.6640 keV, and other Eβ−
+Ens14b
+∗∗
+∗239Np(β −)239Pu
+Eβ−=437(1) to 5/2+ level at 285.460 keV, and other Eβ−
+Ens14b
+∗∗
+240Pu(α)236U
+5255.88
+0.15
+5255.82
+0.14
+−0.4
+1
+90
+77 236U
+72Go33
+Z
+240Am(α)236Npp
+5468.9
+1.0
+3
+70Go42
+Z
+240Cm(α)236Pu
+6397.8
+0.6
+6397.8
+0.6
+−0.0
+1
+100
+99 240Cm
+Kum
+71Bb10
+∗
+240Cf(α)236Cm
+7718.9
+10.
+7711
+4
+−0.8
+8
+70Si19
+7713.8
+20.
+−0.1
+U
+GSa
+10Kh06
+7709.7
+4.1
+0.3
+8
+JAa
+10As.A
+240Es(α)236Bk
+8330
+30
+8260
+60
+−1.2
+4
+17Ko02
+∗
+8258
+77
+0.0
+4
+Bka
+20Po07
+8186.6
+31.0
+1.2
+4
+GSt
+20Kh10
+030002-319

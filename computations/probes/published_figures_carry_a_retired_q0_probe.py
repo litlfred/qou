@@ -286,7 +286,7 @@ def main() -> int:
             "derived-provenance test should be run on them and has not been.")
         wb.add_caveat(
             "No claim that the retired q0 was wrong when these tables were written.")
-        print(f"\nWitness: {wb.save()}")
+        print(f"\nWitness: {wb.save(extra={"q0Anchor": "ambiguous", "q0AnchorReason": 'compares three pins on purpose: the live proton pin, the live muon pin, and the retired CODATA-2018 muon pin 1.10997859555418...; the published figures are recomputed at each to attribute them, so no single pin applies'})}")
     except Exception as e:  # pragma: no cover
         print(f"\n(witness emit skipped: {e})")
 

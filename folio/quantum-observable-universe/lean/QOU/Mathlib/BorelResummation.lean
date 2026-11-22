@@ -44,7 +44,7 @@
   Pure-ℝ analysis where the integral appears; the coefficient algebra is
   generic. § the hard theorems are explicitly conditional, never `sorry`-faked.
 
-  -- Ref: [manuscript] bean el8w — Borel resummation Mathlib-gap
+  -- Ref: [leitner2026] bean el8w — Borel resummation Mathlib-gap
 -/
 
 import Mathlib.Analysis.SpecialFunctions.Log.Basic

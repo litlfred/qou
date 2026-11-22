@@ -1,0 +1,65 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hecidem/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Idempotents of Hecke algebras of type A",
+  "contains": [
+    "library/hecidem/sections/page-001",
+    "library/hecidem/sections/page-002",
+    "library/hecidem/sections/page-003",
+    "library/hecidem/sections/page-004",
+    "library/hecidem/sections/page-005",
+    "library/hecidem/sections/page-006",
+    "library/hecidem/sections/page-007",
+    "library/hecidem/sections/page-008",
+    "library/hecidem/sections/page-009",
+    "library/hecidem/sections/page-010",
+    "library/hecidem/sections/page-011",
+    "library/hecidem/sections/page-012",
+    "library/hecidem/sections/page-013",
+    "library/hecidem/sections/page-014",
+    "library/hecidem/sections/page-015",
+    "library/hecidem/sections/page-016",
+    "library/hecidem/sections/page-017",
+    "library/hecidem/sections/page-018",
+    "library/hecidem/sections/page-019",
+    "library/hecidem/sections/page-020",
+    "library/hecidem/sections/page-021",
+    "library/hecidem/sections/page-022",
+    "library/hecidem/sections/page-023",
+    "library/hecidem/sections/page-024",
+    "library/hecidem/sections/page-025",
+    "library/hecidem/sections/page-026",
+    "library/hecidem/sections/page-027"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "hecidem",
+    "title_source": "editorial",
+    "title_from": "structure.json metadata.title_correction.title",
+    "title_verified": true,
+    "title_correction": {
+      "title": "Idempotents of Hecke algebras of type A",
+      "basis": "Printed title on page 1 (A. K. Aiston and H. R. Morton, Version 1.5, January 10, 1997); the extracted title had font encoding artifacts and NUL bytes",
+      "extracted_title": "Idemp algebras A\u0000A\u0000K\u0000Aiston H\u0000R\u0000Morton \u0000Departmen Mathematical Sciences\u0001",
+      "corrected_on": "2026-11-18",
+      "extracted": "Idempotents of Hecke algebras of type A"
+    },
+    "source_file": "hecidem.pdf",
+    "source_sha256": "60476fdc66d9e2a76a29783d1afb9745dce04b2a02d5b636b16f75f470e6dc9f",
+    "pages": 27,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -30,8 +30,11 @@ This file provides:
 * `Cl_2 : ℝ → ℝ` as the explicit `tsum` definition — no longer
   opaque, no longer requiring `Complex.dilog`.
 * Unconditional boundary lemmas (`Cl_2_zero`, `Cl_2_two_pi`).
-* Periodicity / antisymmetry lemmas (sketch — full proofs awaiting
-  Fourier-series infrastructure in Mathlib).
+* Periodicity / antisymmetry: proved termwise, with no Fourier theory,
+  as `Cl_2_add_two_pi` and `Cl_2_neg` in
+  `QOU.Archimedean.BlochWignerLobachevsky` (each term inherits `2π`-periodicity
+  and oddness from `Real.sin`). Mathlib's Fourier-series API
+  (`Mathlib.Analysis.Fourier.AddCircle`) exists but is not needed for them.
 * The carrier `Catalan_constant := Cl_2 (π/2)` recording the
   Catalan constant identity G = Cl_2(π/2).
 
@@ -57,9 +60,9 @@ sorry-free in `QOU/Knot/Clausen.lean` (`hasDerivAt_cl_2`,
 `Cl_2` continuity (`continuous_Cl_2`) and the boundary lemmas
 `Cl_2_pi` / `Cl_2_two_pi` below.
 
--- Ref: [manuscript] rem:figure-8-archimedean-illustration
--- Ref: [manuscript] prop:em-coupling-bring-zero-mode
--- Ref: [manuscript] binding-scale-catalan
+-- Ref: [leitner2026] rem:figure-8-archimedean-illustration
+-- Ref: [leitner2026] prop:em-coupling-bring-zero-mode
+-- Ref: [leitner2026] binding-scale-catalan
 -- Ref: [thurston1978] The geometry and topology of three-manifolds
 -- Ref: [zagier1986] DOI 10.1007/BFb0084581
 -/
@@ -117,7 +120,7 @@ noncomputable def Cl_2 (θ : ℝ) : ℝ :=
     contribution to the Borromean rings hyperbolic volume
     `Vol(B_3) = 8G`
     ([`binding-scale-catalan`](../braids-and-knots/binding-scale-catalan.md)). -/
--- Ref: [manuscript] binding-scale-catalan
+-- Ref: [leitner2026] binding-scale-catalan
 noncomputable def Catalan_constant : ℝ := Cl_2 (Real.pi / 2)
 
 /-- **Figure-8 hyperbolic volume carrier.** By the Thurston
@@ -126,7 +129,7 @@ noncomputable def Catalan_constant : ℝ := Cl_2 (Real.pi / 2)
     parameter `e^{iπ/3}`, each contributing `Cl_2(π/3)`.
     Therefore `Vol(4_1) = 2 · Cl_2(π/3)`. -/
 -- Ref: [thurston1978]
--- Ref: [manuscript] rem:figure-8-archimedean-illustration
+-- Ref: [leitner2026] rem:figure-8-archimedean-illustration
 noncomputable def Vol_figure_8 : ℝ := 2 * Cl_2 (Real.pi / 3)
 
 /-- **Borromean rings hyperbolic volume carrier.** By the
@@ -135,7 +138,7 @@ noncomputable def Vol_figure_8 : ℝ := 2 * Cl_2 (Real.pi / 3)
     `i = e^{iπ/2}`, each contributing `Cl_2(π/2) = G` (Catalan).
     Per octahedron = `4G = 4·Cl_2(π/2)`; total Borromean
     volume = `8G = 8·Cl_2(π/2)`. -/
--- Ref: [manuscript] binding-scale-catalan
+-- Ref: [leitner2026] binding-scale-catalan
 noncomputable def Vol_Borromean : ℝ :=
   8 * Cl_2 (Real.pi / 2)
 
@@ -146,7 +149,7 @@ noncomputable def Vol_Borromean : ℝ :=
     2 ideal regular octahedra, each of which is 4 ideal tetrahedra
     of shape parameter `i = e^{iπ/2}` contributing
     `Cl_2(π/2) = G` per tetrahedron. -/
--- Ref: [manuscript] binding-scale-catalan §"Catalan constant"
+-- Ref: [leitner2026] binding-scale-catalan §"Catalan constant"
 theorem catalan_constant_eq_cl_2_pi_over_2 :
     Catalan_constant = Cl_2 (Real.pi / 2) := rfl
 

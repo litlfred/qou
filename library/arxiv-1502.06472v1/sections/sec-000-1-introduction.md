@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-1502.06472v1
-doc_title: "Gröbner-Shirshov bases and PBW theorems∗ L. A. Bokut†"
+doc_title: "Gröbner-Shirshov bases and PBW theorems"
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
@@ -9,8 +9,9 @@ source_pdf: 1502.06472v1.pdf
 source_sha256: 381cd869fcc06f08
 toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.847
-latex_coverage_ratio: 0.864
+latex_prose_ratio: 0.868
+latex_coverage_ratio: 0.862
+doc_brief: "Gröbner-Shirshov bases and PBW theorems — We review some applications of Gr¨obner-Shirshov bases, including PBW the- orems, linear bases of free universal algebras, normal forms for groups and"
 ---
 Combinatorial algebra seminar at South China Normal University was organized by the authors in March 2006. Since then, there were some 30 Master Theses and 4 PhD Theses, about 40 published papers in JA, IJAC, PAMS, JPAA, Comm. Algebra, Algebra Coll., Siberian Math. J., Science in China and other Journals and Proceedings. There were organized 2 International Conferences (2007, 2009) with E. Zelmanov as Chairman of the Program Committee and several Workshops. We are going to review some of the papers.
 

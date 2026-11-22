@@ -18,4 +18,4 @@
 4. *Assemble $H_3$: embed in $H_{24}(q)$, reduce to NF.*
 5. *Assemble $H_4$: embed in $H_{26}(q)$, reduce to NF.*
 
-*The construction order ($H_1$ first, then $H_2$, etc.) does not affect the final NF (confluence). It affects intermediate complexity. The LP dual optimises the assembly ordering to minimise intermediate word count.*
+*The construction order ($H_1$ first, then $H_2$, etc.) does not affect the final NF (confluence). It affects intermediate complexity. The LP dual optimises the assembly ordering to minimise intermediate word count. Confluence concerns one fixed assembly word. If each bond word is re-selected as the bonds form, the selected word, and with it the final normal form, can depend on the order.*

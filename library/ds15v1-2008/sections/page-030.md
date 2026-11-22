@@ -1,0 +1,66 @@
+---
+doc_id: ds15v1-2008
+doc_title: "Rogers-Ramanujan-Slater Type Identities"
+section_id: page-030
+section_title: "Page 30"
+pages: 30-30
+pdf_page: 30
+source_pdf: ds15v1-2008.pdf
+source_sha256: aef155a324c6fdf4
+text_source: ocr
+granularity: page
+doc_brief: "Rogers-Ramanujan-Slater Type Identities — In this survey article, we present an expanded version of Lucy Slater’s famous list of identities of the Rogers-Ramanujan type, including identities of"
+---
+n(n+1)/2
+
+(= @)n(—Qn+i(l — g"*)
+
+(q)ant2
+
+£@°,.P)- PGE?) Sa
+y(—9) >
+
+f(a a8) -PFC.0) 6 Ger vy? (4G @)\n(—G)n
+(4) 7 > (Q)ont1
+f(q'8,a'®) — af (a4 ght D2 (5 gn a(—n
+yiy
+y(—-4) > (q)2n
+
+(3.32.3)
+
+(S. 105) (3.32.4)
+
+(S. 104) (3.32.5)
+
+faa") + f(a?) = FPP) - PLE) =24y0 Qe (0s Pn—a(=D)n
+y(-4) — (G)on
+(S. 101c) (3.32.6)
+f(¢?,@°) +af(¢,@") _ a f(g, ¢3) _ af (i,q?) _ oo gD? (—@?: g?)n(—G)n41
+~(—4) n=0 (Q)an+2
+(S. 102) (3.32.7)
+3.36 Mod 36 Identities
+c 15 21 3 _ 33 oo n(n+1) ( 2. 72
+flea? -@) + PF, = Puy Se a (s. 107)
+e(-@ ) n=0 @ Joni (4; qd Nn
+(3.36.1)
+f-8,-?) + & f(-a Sg 33: n(=0 Pn
+= 33, Eq. (1.30
+y(—4?) J-y P;P)ani(G Pn ({33, Eq. (1.50)))
+(3.36.2)
+; 9 27 3¢(_ 33 Onl (n+2)/ a)
+f=? -P) +P F(-7,- Daye se Pn(— G5 nt (8. 112)
+w(—q) n= 5 Jon+2(@?s q )n
+(3.36.3)
+(12d 4¢(_] ¢*®) oo n(n+2) ( a)
+f(-a", =4 J+ ai f(-1, Loy (97: 9 )n(= Hg ns (8. 110)
+v(-4) (PP) antlG Pn
+(3.36.4)
+P/F IB 1) er CO n(n+2) (6. 6 ae 72
+f(-a",-4 af(=,-9") 1. yr Pi nal GL )n (s. 111)
+w(-4) (PP) onl P5 P)n-1
+(3.36.5)
+p(_ 15 21) Be 3 83 On? (6. 6 7
+f(-a?, =a") THO") 1454 CPE (s. 113)
+v(-4) SS (PP )onlPs P)n—
+(3.36.6)
+THE ELECTRONIC JOURNAL OF COMBINATORICS 15 (2008), #DS15 30

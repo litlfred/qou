@@ -3,12 +3,17 @@
  "doc_id": "arxiv-2302.08363v2",
  "source_sha256": "c2244e03b17048fb",
  "brief": "On the structure of trans-series in quantum field theory — Many observables in quantum field theory can be expressed in terms of trans-series, in which one adds to the perturbative series a typically",
- "extended": "**On the structure of trans-series in quantum field theory**\n\n*Marcos Mariñoa, Ramon Miravitllasa and Tomás Reisb*\n\n35 pp, 13 sections.\n\n**Abstract.** Many observables in quantum field theory can be expressed in terms of trans-series, in which one adds to the perturbative series a typically infinite sum of exponentially small corrections, due to instantons or to renormalons. Even after Borel resummation of the series in the coupling constant, one has to sum this infinite series of small exponential corrections. It has been argued that this leads to a new divergence, which is sometimes called the divergence of the OPE. We show that, in some interesting examples in quantum field theory, the series of small exponential corrections is convergent, order by order in the coupling constant. In particular, we give numerical evidence for this convergence property in the case of the free energy of integrable asymptotically free theories, which has been intensively studied recently in the framework of resurgence.\n\n**Outline.** Introduction; Trans-series and their structure; The large N sigma model, revisited; Complex Chern–Simons theory; Integrable models; The free energy of integrable models; Bosonic models; Numerical analysis; The Gross–Neveu model; Summary of the recursive problem; Numerical analysis; Large N solution; Conclusions and open problems",
+ "extended": "**On the structure of trans-series in quantum field theory**\n\n*Marcos Mariñoa, Ramon Miravitllasa and Tomás Reisb*\n\n35 pp, 16 sections.\n\n**Abstract.** Many observables in quantum field theory can be expressed in terms of trans-series, in which one adds to the perturbative series a typically infinite sum of exponentially small corrections, due to instantons or to renormalons. Even after Borel resummation of the series in the coupling constant, one has to sum this infinite series of small exponential corrections. It has been argued that this leads to a new divergence, which is sometimes called the divergence of the OPE. We show that, in some interesting examples in quantum field theory, the series of small exponential corrections is convergent, order by order in the coupling constant. In particular, we give numerical evidence for this convergence property in the case of the free energy of integrable asymptotically free theories, which has been intensively studied recently in the framework of resurgence.\n\n**Outline.** Front matter; Introduction; Trans-series and their structure; The large N sigma model, revisited; Complex Chern–Simons theory; Integrable models; The free energy of integrable models; Bosonic models; Trans-series computation; Numerical analysis; The Gross–Neveu model; Summary of the recursive problem; Leading orders in alpha; Numerical analysis; Large N solution; Conclusions and open problems",
  "tokens": {
   "brief": 49,
-  "extended": 340
+  "extended": 356
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
   {
    "id": "sec-000-introduction",
    "title": "Introduction",
@@ -42,35 +47,45 @@
   {
    "id": "sec-006-bosonic-models",
    "title": "Bosonic models",
-   "pages": "14-20"
+   "pages": "14-15"
   },
   {
-   "id": "sec-007-numerical-analysis",
+   "id": "sec-007-trans-series-computation",
+   "title": "Trans-series computation",
+   "pages": "15-20"
+  },
+  {
+   "id": "sec-008-numerical-analysis",
    "title": "Numerical analysis",
-   "pages": "20-23"
+   "pages": "20-24"
   },
   {
-   "id": "sec-008-the-grossneveu-model",
+   "id": "sec-009-the-grossneveu-model",
    "title": "The Gross–Neveu model",
-   "pages": "23-25"
+   "pages": "24-25"
   },
   {
-   "id": "sec-009-summary-of-the-recursive-problem",
+   "id": "sec-010-summary-of-the-recursive-problem",
    "title": "Summary of the recursive problem",
-   "pages": "25-29"
+   "pages": "25-28"
   },
   {
-   "id": "sec-010-numerical-analysis",
+   "id": "sec-011-leading-orders-in-alpha",
+   "title": "Leading orders in alpha",
+   "pages": "28-29"
+  },
+  {
+   "id": "sec-012-numerical-analysis",
    "title": "Numerical analysis",
    "pages": "29-31"
   },
   {
-   "id": "sec-011-large-n-solution",
+   "id": "sec-013-large-n-solution",
    "title": "Large N solution",
    "pages": "31-31"
   },
   {
-   "id": "sec-012-conclusions-and-open-problems",
+   "id": "sec-014-conclusions-and-open-problems",
    "title": "Conclusions and open problems",
    "pages": "31-35"
   }

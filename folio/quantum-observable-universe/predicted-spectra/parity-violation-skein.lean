@@ -17,7 +17,7 @@ interaction violates parity.
 LaTeX label: `prop:parity-violation-skein`
 
 ## References
-- [manuscript] §6/parity-violation-skein
+- [leitner2026] §6/parity-violation-skein
 - Lee, Yang (1956): Question of parity conservation in weak interactions
 - Wu et al. (1957): Experimental test of parity conservation in beta decay
 
@@ -41,7 +41,7 @@ namespace QOU.Archimedean
 /-- The Skein relation coefficients for L₊ and L₋.
     Parity exchanges these: (q, q⁻¹) ↔ (q⁻¹, q).
     The relation is parity-invariant iff q = q⁻¹, i.e., q = 1. -/
--- Ref: [manuscript] §6/parity-violation-skein
+-- Ref: [leitner2026] §6/parity-violation-skein
 structure SkeinCoefficients where
   /-- The deformation parameter (archimedean evaluation `q₀ ∈ ℝ`). -/
   q : ℝ
@@ -53,12 +53,12 @@ structure SkeinCoefficients where
   coeff_minus : ℝ := 1 / q
 
 /-- Parity invariance means the coefficients are equal. -/
--- Ref: [manuscript] §6/parity-violation-skein
+-- Ref: [leitner2026] §6/parity-violation-skein
 def SkeinCoefficients.parityInvariant (s : SkeinCoefficients) : Prop :=
   s.coeff_plus = s.coeff_minus
 
 /-- The Skein relation is parity-invariant if and only if q = 1. -/
--- Ref: [manuscript] §6/parity-violation-skein
+-- Ref: [leitner2026] §6/parity-violation-skein
 theorem parity_violation_skein (q : ℝ) (hq : 0 < q) :
     ({ q := q, q_pos := hq } : SkeinCoefficients).parityInvariant ↔ q = 1 := by
   unfold SkeinCoefficients.parityInvariant SkeinCoefficients.coeff_plus SkeinCoefficients.coeff_minus
@@ -74,11 +74,11 @@ theorem parity_violation_skein (q : ℝ) (hq : 0 < q) :
     norm_num
 
 /-- At q = 1.1097, the parity violation parameter q - q⁻¹ ≈ 0.209. -/
--- Ref: [manuscript] §6/parity-violation-skein
+-- Ref: [leitner2026] §6/parity-violation-skein
 noncomputable def parityViolationStrength (q : ℝ) : ℝ := q - 1 / q
 
 /-- The parity violation strength is positive for q > 1. -/
--- Ref: [manuscript] §6/parity-violation-skein
+-- Ref: [leitner2026] §6/parity-violation-skein
 theorem parityViolationStrength_pos {q : ℝ} (hq : 1 < q) :
     0 < parityViolationStrength q := by
   unfold parityViolationStrength
@@ -86,7 +86,7 @@ theorem parityViolationStrength_pos {q : ℝ} (hq : 1 < q) :
   nlinarith
 
 /-- The parity violation strength vanishes at q = 1. -/
--- Ref: [manuscript] §6/parity-violation-skein
+-- Ref: [leitner2026] §6/parity-violation-skein
 theorem parityViolationStrength_classical :
     parityViolationStrength 1 = 0 := by
   unfold parityViolationStrength
@@ -95,7 +95,7 @@ theorem parityViolationStrength_classical :
 /-- CP is conserved: the q ↔ q⁻¹ involution IS a symmetry.
     Under CP: coeff_plus ↔ coeff_minus AND L₊ ↔ L₋,
     The Skein relation maps to itself. -/
--- Ref: [manuscript] §6/parity-violation-skein
+-- Ref: [leitner2026] §6/parity-violation-skein
 theorem cp_conservation (q : ℝ) (hq : 0 < q) :
     let s : SkeinCoefficients := { q := q, q_pos := hq }
     let s_cp : SkeinCoefficients := { q := 1/q, q_pos := by positivity }

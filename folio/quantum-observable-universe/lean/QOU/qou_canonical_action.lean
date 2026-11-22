@@ -105,7 +105,7 @@ determined up to unique isomorphism by
     conditional conjecture is honest per §3b; an instance discharging
     it (none here) would be the conjecture, the open state being the
     absence of one. -/
--- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/qou-canonical-action.ts
+-- Ref: [leitner2026] quantum-observable-universe/quantum-observable-universes/qou-canonical-action.ts
 def qou_canonical_action (ctx : QouCanonicalActionContext) : Prop :=
     ctx.S_q = ctx.S_grav + ctx.S_gauge + ctx.S_matter
 

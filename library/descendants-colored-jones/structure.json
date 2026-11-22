@@ -6,28 +6,53 @@
   "sha256": "f00693a5926c074ffad7e37e63032d6f2a20c55598d1b37497760948cb6992fc",
   "bytes": 295439,
   "pages": 28,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 20,
+    "reason": "17 of 280 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 21,
+    "reason": "45 of 197 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 22,
+    "reason": "18 of 217 words are a stray single letter: the text layer splits words"
+   }
+  ]
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
   "title": "The descendant colored Jones polynomials",
   "authors_raw": "Stavros Garoufalidis and Rinat Kashaev",
-  "abstract": "We discuss two realizations of the colored Jones polyno- mials of a knot, one appearing in an unnoticed work of the second author in 1994 on quantum R-matrices at roots of unity obtained from solutions of the pentagon identity, and another formulated in terms of a sequence of elements of the Habiro ring appearing in recent work of D. Zagier and the ﬁrst author on the Reﬁned Quantum Modularity Conjecture.",
-  "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20240129143409+02'00'",
-   "Creator": "LaTeX with hyperref",
-   "Producer": "Acrobat Distiller 23.0 (Windows)",
-   "Title": ""
-  },
   "title_lines": [
    "Pure and Applied Mathematics Quarterly",
    "The descendant colored Jones polynomials"
   ],
-  "title_prev": "Pure and Applied Mathematics Quarterly The descendant colored Jones polynomials"
+  "abstract": "We discuss two realizations of the colored Jones polyno- mials of a knot, one appearing in an unnoticed work of the second author in 1994 on quantum R-matrices at roots of unity obtained from solutions of the pentagon identity, and another formulated in terms of a sequence of elements of the Habiro ring appearing in recent work of D. Zagier and the ﬁrst author on the Reﬁned Quantum Modularity Conjecture.",
+  "docinfo": {
+   "Producer": "Acrobat Distiller 23.0 (Windows)",
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20240129143409+02'00'"
+  },
+  "title_raw": "Pure and Applied Mathematics Quarterly The descendant colored Jones polynomials",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "The descendant colored Jones polynomials",
+   "outline": "Introduction",
+   "text": "Pure and Applied Mathematics Quarterly The descendant colored Jones polynomials",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -35,118 +60,461 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2308"
   },
   {
    "level": 1,
    "title": "The descendant colored Jones polynomials of a knot",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2309"
   },
   {
    "level": 2,
    "title": "A conjectured matrix-valued invariant from GZ:kashaev,GZ:qseries",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2309"
   },
   {
    "level": 2,
    "title": "Definition of the descendants",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2310"
   },
   {
    "level": 2,
    "title": "Properties of the descendants",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2311"
   },
   {
    "level": 2,
    "title": "A conjecture",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2314"
   },
   {
    "level": 2,
    "title": "Examples",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2314"
   },
   {
    "level": 1,
    "title": "The colored Jones polynomials at roots of unity",
    "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2318"
   },
   {
    "level": 2,
    "title": "R-matrices with a spectral parameter",
    "page": 13,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2319"
   },
   {
    "level": 2,
    "title": "Proof of the gauge symmetry equations",
    "page": 15,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2321"
   },
   {
    "level": 2,
    "title": "Knot invariants",
    "page": 19,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2325"
   },
   {
    "level": 2,
    "title": "An example",
    "page": 23,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2329"
   },
   {
    "level": 2,
    "title": "A conjecture",
    "page": 24,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2330"
   },
   {
    "level": 1,
    "title": "Acknowledgements",
    "page": 24,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2330"
   },
   {
    "level": 1,
    "title": "References",
    "page": 24,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2330"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "2307",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2308",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "2309",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "2310",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "2311",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "2312",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "2313",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "2314",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "2315",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "2316",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "2317",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "2318",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "2319",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "2320",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "2321",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "2322",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "2323",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "2324",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "2325",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "2326",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "2327",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "2328",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "2329",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "2330",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "2331",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "2332",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "2333",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "2334",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1501,
+   "n_words": 224,
+   "label_start": "2307",
+   "label_end": "2308"
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
    "title": "Introduction",
    "level": 1,
-   "page_start": 1,
+   "page_start": 2,
    "page_end": 3,
-   "n_chars": 3665,
-   "n_words": 602
+   "n_chars": 3052,
+   "n_words": 479,
+   "label_start": "2308",
+   "label_end": "2309"
   },
   {
    "id": "sec-001-the-descendant-colored-jones-polynomials-of-a-kn",
@@ -154,126 +522,182 @@
    "title": "The descendant colored Jones polynomials of a knot",
    "level": 1,
    "page_start": 3,
-   "page_end": 5,
-   "n_chars": 4892,
-   "n_words": 876
+   "page_end": 3,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "2309",
+   "label_end": "2309"
   },
   {
-   "id": "sec-002-properties-of-the-descendants",
+   "id": "sec-002-a-conjectured-matrix-valued-invariant-from-gzkas",
+   "number": null,
+   "title": "A conjectured matrix-valued invariant from GZ:kashaev,GZ:qseries",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2407,
+   "n_words": 396,
+   "label_start": "2309",
+   "label_end": "2310"
+  },
+  {
+   "id": "sec-003-definition-of-the-descendants",
+   "number": null,
+   "title": "Definition of the descendants",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 2371,
+   "n_words": 447,
+   "label_start": "2310",
+   "label_end": "2311"
+  },
+  {
+   "id": "sec-004-properties-of-the-descendants",
    "number": null,
    "title": "Properties of the descendants",
    "level": 2,
    "page_start": 5,
    "page_end": 8,
-   "n_chars": 5937,
-   "n_words": 1055
+   "n_chars": 5863,
+   "n_words": 981,
+   "label_start": "2311",
+   "label_end": "2314"
   },
   {
-   "id": "sec-003-a-conjecture",
+   "id": "sec-005-a-conjecture",
    "number": null,
    "title": "A conjecture",
    "level": 2,
    "page_start": 8,
    "page_end": 8,
-   "n_chars": 274,
-   "n_words": 55
+   "n_chars": 271,
+   "n_words": 52,
+   "label_start": "2314",
+   "label_end": "2314"
   },
   {
-   "id": "sec-004-examples",
+   "id": "sec-006-examples",
    "number": null,
    "title": "Examples",
    "level": 2,
    "page_start": 8,
    "page_end": 12,
-   "n_chars": 8034,
-   "n_words": 1524
+   "n_chars": 7996,
+   "n_words": 1486,
+   "label_start": "2314",
+   "label_end": "2318"
   },
   {
-   "id": "sec-005-the-colored-jones-polynomials-at-roots-of-unity",
+   "id": "sec-007-the-colored-jones-polynomials-at-roots-of-unity",
    "number": null,
    "title": "The colored Jones polynomials at roots of unity",
    "level": 1,
    "page_start": 12,
    "page_end": 13,
-   "n_chars": 2298,
-   "n_words": 399
+   "n_chars": 2288,
+   "n_words": 389,
+   "label_start": "2318",
+   "label_end": "2319"
   },
   {
-   "id": "sec-006-r-matrices-with-a-spectral-parameter",
+   "id": "sec-008-r-matrices-with-a-spectral-parameter",
    "number": null,
    "title": "R-matrices with a spectral parameter",
    "level": 2,
    "page_start": 13,
    "page_end": 15,
-   "n_chars": 3887,
-   "n_words": 736
+   "n_chars": 3825,
+   "n_words": 673,
+   "label_start": "2319",
+   "label_end": "2321"
   },
   {
-   "id": "sec-007-proof-of-the-gauge-symmetry-equations",
+   "id": "sec-009-proof-of-the-gauge-symmetry-equations",
    "number": null,
    "title": "Proof of the gauge symmetry equations",
    "level": 2,
    "page_start": 15,
    "page_end": 19,
-   "n_chars": 4862,
-   "n_words": 821
+   "n_chars": 4786,
+   "n_words": 745,
+   "label_start": "2321",
+   "label_end": "2325"
   },
   {
-   "id": "sec-008-knot-invariants",
+   "id": "sec-010-knot-invariants",
    "number": null,
    "title": "Knot invariants",
    "level": 2,
    "page_start": 19,
    "page_end": 23,
-   "n_chars": 4585,
-   "n_words": 877
+   "n_chars": 4471,
+   "n_words": 846,
+   "label_start": "2325",
+   "label_end": "2329"
   },
   {
-   "id": "sec-009-an-example",
+   "id": "sec-011-an-example",
    "number": null,
    "title": "An example",
    "level": 2,
    "page_start": 23,
    "page_end": 24,
-   "n_chars": 1241,
-   "n_words": 154
+   "n_chars": 1220,
+   "n_words": 133,
+   "label_start": "2329",
+   "label_end": "2330"
   },
   {
-   "id": "sec-010-a-conjecture",
+   "id": "sec-012-a-conjecture",
    "number": null,
    "title": "A conjecture",
    "level": 2,
    "page_start": 24,
    "page_end": 24,
-   "n_chars": 601,
-   "n_words": 110
+   "n_chars": 598,
+   "n_words": 107,
+   "label_start": "2330",
+   "label_end": "2330"
   },
   {
-   "id": "sec-011-acknowledgements",
+   "id": "sec-013-acknowledgements",
    "number": null,
    "title": "Acknowledgements",
    "level": 1,
    "page_start": 24,
    "page_end": 24,
    "n_chars": 744,
-   "n_words": 111
+   "n_words": 111,
+   "label_start": "2330",
+   "label_end": "2330"
   },
   {
-   "id": "sec-012-references",
+   "id": "sec-014-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 24,
    "page_end": 28,
-   "n_chars": 7329,
-   "n_words": 1170
+   "n_chars": 7187,
+   "n_words": 1028,
+   "label_start": "2330",
+   "label_end": "2334"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 15,
-  "sections": 13,
-  "chars_total": 48349
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 16,
+  "chars_total": 48580,
+  "furniture_lines_stripped": 0
  }
 }

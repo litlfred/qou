@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-ph-9502366v1
-doc_title: "arXiv:hep-ph/9502366v1 22 Feb 1995"
+doc_title: "Chiral Perturbation Theory"
 section_id: sec-006-52-electromagnetic-form-factors
 section_title: "Electromagnetic form factors"
 section_number: 5.2
@@ -8,6 +8,7 @@ pages: 16-18
 source_pdf: 9502366v1.pdf
 source_sha256: 56df064956ca03f8
 toc_source: inferred
+doc_brief: "Chiral Perturbation Theory — An introduction to the basic ideas and methods of Chiral Perturbation Theory is presented."
 ---
 At O(p2) the electromagnetic coupling of the Goldstone bosons is just the minimal
 one, obtained through the covariant derivative. The next-order corrections generate
@@ -22,8 +23,6 @@ V (q2) = 1
 6 ⟨r2⟩φ0
 V q2 + . . .
 (5.7)
-Chiral Perturbation Theory
-17
 The meson electromagnetic radius ⟨r2⟩φ
 V gets local contributions from the L9 term,
 plus logarithmic loop corrections (Gasser and Leutwyler 1985):
@@ -131,8 +130,6 @@ f K0π−
 The O(p4) corrections to f Kπ
 + (0) can be expressed in a parameter-free manner in
 terms of the physical meson masses (Gasser and Leutwyler 1985). Including those
-18
-A Pich
 contributions, one gets the more precise values
 f K0π−
 +

@@ -3,13 +3,14 @@
  "doc_id": "arxiv-1803.04009v2",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "8b34299b739cd2b0c5b91d5d0a684865020c3a5936671ef4ed089611a39645d0",
   "file": "1803.04009v2.pdf"
  },
  "provenance": {
-  "title": "Prepared for submission to JHEP IPMU-18-0045",
-  "authors": "Symmetry enhancement and closing of knots in",
+  "title": "Symmetry enhancement and closing of knots in 3d/3d correspondence",
+  "authors": "Dongmin Ganga and Kazuya Yonekurab",
   "arxiv": {
    "id": "1803.04009",
    "version": "2",
@@ -20,12 +21,23 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 6,
+  "candidates": 4,
   "by_kind": {
-   "example": 5,
+   "example": 3,
    "conjecture": 1
   },
-  "formalization_candidates": 0
+  "formalization_candidates": 0,
+  "by_domain": {
+   "math": 4
+  },
+  "by_evidence_kind": {
+   "explanatory": 3,
+   "conjectural": 1
+  },
+  "by_evidence_location": {
+   "in-paper": 3,
+   "none": 1
+  }
  },
  "candidates": [
   {
@@ -33,78 +45,88 @@
    "source_kind": "example",
    "number": null,
    "name": null,
-   "statement": "N =S3\\41 =m004 with an ideal triangulation with 2 tetrahedraHere",
-   "section_file": "sections/sec-000-1-introduction-and-summary.md",
-   "section_title": "Introduction and Summary",
-   "pages": "2-21",
+   "statement": "N = S3\\41 = m004 and A = \u00b5 In the case, the merdian cycle \u00b5 is non- closable and of SO(3)-type and we expect SO(3) symmetry enhancement of u(1)X\u00b5 in T DGG[m004, X\u00b5] whose Lagrangian is give in eq. (2.69). In the next section, we argue that u(1)X\u00b5 is actually enhanced to SU(3) which contain the SO(3) as a subgroup.",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-006-31-so3su2-enhancement.md (p. 27-33)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-006-31-so3su2-enhancement.md",
+   "section_title": "SO(3)/SU(2) enhancement",
+   "pages": "27-33",
    "formalization_candidate": false,
    "formalization_note": null,
-   "route_to": null
+   "route_to": null,
+   "block_id": "ex-sec-006-01",
+   "block_iri": "library/arxiv-1803.04009v2/blocks/ex-sec-006-01",
+   "claim_id": "arxiv-1803.04009v2#ex-sec-006-01"
   },
   {
    "kind": "example",
    "source_kind": "example",
    "number": null,
    "name": null,
-   "statement": "N =S3\\41 =m004 with an ideal triangulation with 6 tetrahedraThe",
-   "section_file": "sections/sec-000-1-introduction-and-summary.md",
-   "section_title": "Introduction and Summary",
-   "pages": "2-21",
+   "statement": "N = (S3\\52 1)3\u00b51\u22122\u03bb1 = m007 and A = \u00b52 As another example, we consider a knot complement called m007 in SnapPy\u2019s census. The knot complement can be obtained by performing Dehn \ufb01lling on one component of Whitehead link complement. Whitehead link is denoted by 52 1, the 1st link with 2 components and 5 crossings, as shown in Fig. 4. The orientation of the link complement (S3\\52 1) is chosen as the one induced from an ideal \u2013 29 \u2013 \u00b51 \u03bb1 \u03bb2 \u00b52 Figure 4. Whitehead link (52 1). It is one of the simplest (having smallest volume \u22433.664) two-component hyperbolic link. triangulation in (A.25). We always choose a particular orientation of each ideal tet",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-006-31-so3su2-enhancement.md (p. 27-33)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-006-31-so3su2-enhancement.md",
+   "section_title": "SO(3)/SU(2) enhancement",
+   "pages": "27-33",
    "formalization_candidate": false,
    "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "example",
-   "source_kind": "example",
-   "number": null,
-   "name": null,
-   "statement": "N = S3\\41 = m004 and A = \u00b5 In the case, the merdian cycle\u00b5 is non-",
-   "section_file": "sections/sec-002-3-symmetry-enhancement.md",
-   "section_title": "Symmetry enhancement",
-   "pages": "27-41",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "example",
-   "source_kind": "example",
-   "number": null,
-   "name": null,
-   "statement": "As depicted in \ufb01gure 6, topologically(S3\\41)\u22125\u00b5+\u03bb = (S3\\52)5\u00b5+\u03bb. Combin-",
-   "section_file": "sections/sec-003-42-small-hyperbolic-manifolds.md",
-   "section_title": "Small hyperbolic manifolds",
-   "pages": "41-51",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
+   "route_to": null,
+   "block_id": "ex-sec-006-02",
+   "block_iri": "library/arxiv-1803.04009v2/blocks/ex-sec-006-02",
+   "claim_id": "arxiv-1803.04009v2#ex-sec-006-02"
   },
   {
    "kind": "conjecture",
    "source_kind": "conjecture",
    "number": null,
    "name": null,
-   "statement": "the 3d index is topological invariant (A.22)",
-   "section_file": "sections/sec-003-42-small-hyperbolic-manifolds.md",
-   "section_title": "Small hyperbolic manifolds",
-   "pages": "41-51",
+   "statement": "the 3d index is topological invariant (A.22) Di\ufb00erent Dehn surgery representation of a 3-manifold gives di\ufb00erent expressions for the 3d index and the conjecture says that they are all equivalent. Let us give some non-trivial evidence for the conjecture",
+   "claim_domain": "math",
+   "evidence_kind": "conjectural",
+   "evidence_location": "none",
+   "evidence_locator": "Open conjecture stated in sections/sec-012-a-3d-index-inabmex-and-inpaq-b-x.md",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-012-a-3d-index-inabmex-and-inpaq-b-x.md",
+   "section_title": "A 3d index IN(A,B)(m,e;x) and INpA+q B (x)",
+   "pages": "44-49",
    "formalization_candidate": false,
    "formalization_note": null,
-   "route_to": null
+   "route_to": null,
+   "block_id": "conj-sec-012-01",
+   "block_iri": "library/arxiv-1803.04009v2/blocks/conj-sec-012-01",
+   "claim_id": "arxiv-1803.04009v2#conj-sec-012-01"
   },
   {
    "kind": "example",
    "source_kind": "example",
    "number": null,
    "name": null,
-   "statement": "(S3\\41)\u22125\u00b5+\u03bb = (S3\\52)5\u00b5+\u03bb The indices for two knot complements are",
-   "section_file": "sections/sec-003-42-small-hyperbolic-manifolds.md",
-   "section_title": "Small hyperbolic manifolds",
-   "pages": "41-51",
+   "statement": "(S3\\52 1)\u00b51+k\u03bb1 = (S3\\Kk) 1 denotes Whitehead link depicted in Figure 4. The corresponding link complement can be triangulation can be 4 tetrahedra. The gluing datum are (from SnapPy) C1 = Z1 + Z2 + Z3 + Z4 , C2 = 2Z\u2032 1 + Z\u2032\u2032 1 + 2Z\u2032 2 + Z\u2032\u2032 2 + Z\u2032\u2032 3 + Z\u2032\u2032 4 , C3 = Z\u2032\u2032 1 + Z\u2032\u2032 2 + 2Z\u2032 3 + Z\u2032\u2032 3 + 2Z\u2032 4 + Z\u2032\u2032 4 , C4 = C1 , a\u00b51 = Z\u2032\u2032 3 + Z\u2032 1 \u2212Z2 , b\u03bb1 = 2(Z\u2032 2 + Z\u2032\u2032 2 \u2212Z3) , a\u00b52 = Z1 \u2212Z\u2032 2 \u2212Z\u2032\u2032 3 , b\u03bb2 = 2(Z1 \u2212Z\u2032 3 \u2212Z\u2032\u2032 3 ) . (A.25) Note that only two internal edges are linearly independent and both of (a\u00b51, b\u03bb1) and (a\u00b52, b\u03bb2) are SO(3) type basis. Corresponding index is I(\u00b51,\u00b52;\u03bb1,\u03bb2) S3\\52 (m1, m2, e1, e2; x) = I52 1(m1, m2, e1, e2; x) := ",
+   "claim_domain": "math",
+   "evidence_kind": "explanatory",
+   "evidence_location": "in-paper",
+   "evidence_locator": "Stated in sections/sec-012-a-3d-index-inabmex-and-inpaq-b-x.md (p. 44-49)",
+   "external_refs": [],
+   "proof_excerpt": null,
+   "section_file": "sections/sec-012-a-3d-index-inabmex-and-inpaq-b-x.md",
+   "section_title": "A 3d index IN(A,B)(m,e;x) and INpA+q B (x)",
+   "pages": "44-49",
    "formalization_candidate": false,
    "formalization_note": null,
-   "route_to": null
+   "route_to": null,
+   "block_id": "ex-sec-012-02",
+   "block_iri": "library/arxiv-1803.04009v2/blocks/ex-sec-012-02",
+   "claim_id": "arxiv-1803.04009v2#ex-sec-012-02"
   }
  ]
 }

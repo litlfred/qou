@@ -1224,6 +1224,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "88b6b0dfc47c",
+          "ts": "c9c4ec59f6d3",
+          "lean": "c2f4ac4d0faa",
+          "lean_statement": "31b86f380aef"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:27:33.505Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "r-matrix-braiding-structure.lean:91 r_matrix_braiding_structure is a def ... : Prop over an arbitrary system; its own docstring says \"Stated here as a named proposition over an arbitrary system, not asserted.\" The md asserts that the universal R-matrix satisfies YBE and that R-check furnishes a braid-group representation."
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2460,6 +2478,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-31T11:13:51.726Z",
+  "updated_at": "2026-11-15T21:27:33.505Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

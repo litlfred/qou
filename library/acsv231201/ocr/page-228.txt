@@ -1,0 +1,34 @@
+210 Overview of analytic methods for multivariate GFs
+
+Multiple and arrangement points
+When varieties intersect tangentially instead of transversely, the resulting in-
+tegrals are more challenging to asymptotically approximate. However, if the
+intersection lattice for smooth sheets of the variety coincides with the intersec-
+tion lattice for the tangent planes of these sheets then non-transversality can
+be handled combinatorially. Such a point is called an arrangement point, after
+hyperplane arrangements such as the one in Figure 7.23.
+
+Figure 7.23 When VV is a hyperplane arrangement, all points are arrangement
+points.
+
+Exercise 7.12. For which of the polynomials Q)(x, y, z) = 2x—-y)(x-y+z—27)
+and Q)(x, y, z) = z(x — y)(x — y + Z— xyz) is the origin an arrangement point?
+
+The generators 8»; for the normal link of an arrangement point are the same
+as for a transverse multiple point, only there are more of them.
+
+Example 7.40. Figure 7.24 shows a case where d = 2 and k = 3. Here three
+one-dimensional sheets intersect pairwise transversely in a point p. Instead of
+one two-torus 8, there are two tori Bp; and Bp3, where Bp, is the product of
+circles about p in V2 and V3, and Bp,3 is the product of circles about p in V;
+and ‘V2. One might have expected a third torus 6,2, a product of circles about
+p in V, and V3, and indeed there is such a torus, however this final torus is
+not linearly independent of the first two because Bp — Bp2 + Bp3 = 0 in the
+relevant homology class. 4
+
+A similar multivariate residue computation as in (7.20) leads to a formula of
+the form
+0, (r) = w" - |r 2. (Pr(w) + O(n), (7.21)
+
+where P,.(w) is a polynomial of degree at most m — k with m the number
+of sheets intersecting at w and k the codimension of the stratum containing

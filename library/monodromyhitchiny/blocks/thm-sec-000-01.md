@@ -1,0 +1,1 @@
+Assume that the level l̸ = 1, 2, 4, 8 and that the genus g ≥3. Then there exists a family π : C →B of smooth connected projective curves of genus g such that the monodromy representation of the Hitchin connection ρl : π1(B, b) −→PGL(Zl,b) has an element of inﬁnite order in its image.

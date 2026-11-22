@@ -1,0 +1,34 @@
+454 Integration on manifolds
+
+Figure A.2 A 2-simplex and its boundary.
+
+where dV is Lebesgue measure in R”.
+
+Remark A.22. In order for this definition of integration to be consistent, we
+must write the wedge product in increasing order. For instance, in two dimen-
+sions dy A dx = —dx A dy, so
+
+[ fowndynar=- f fosydrndy=~ f fonyaxay
+even though
+[, fosndxay =f fosyyayar
+as Riemann integrals (since f is smooth).
+
+If M is an oriented manifold then for any p-simplex a : A? — M, integra-
+tion of a p-form w over o is defined by
+
+{ wis f. ow.
+
+where o™ is the pullback of w by o from a form on M to a form on A’ c R’. It
+is important to note that we have defined integration not over a set (the range
+of o) but over a parametrization (c itself). Integration over a chain is defined
+
+by linearity,
+r
+wWi= a WwW.
+
+Example A.23. If M = R¢ then we can write any d-simplex 0 = (a},...,04),
+where each 7; is a smooth map from A“ to R. Example A.19 implies that for
+any d-form w = a(x)dx,; A--- A dxa,
+
+fo=f ows f a(o(x))(det J)dx, ---dxg,
+o Ap AP

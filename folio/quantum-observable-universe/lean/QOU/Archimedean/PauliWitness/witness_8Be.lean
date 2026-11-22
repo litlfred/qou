@@ -29,7 +29,7 @@ The Gröbner normal form in $H_8(q)$ gives $F_{\mathrm{Pauli}}^{(8)}
 collapsing to $8$ terms after the quotient ideals.  Structural counts
 are discharged by computation; the empirical Pauli factor is the single
 conjectural input carried by `[Witness8BePauli]`. -/
--- Ref: [manuscript] quantum-observable-universe/appendix-nf-witnesses/witness-8be.ts
+-- Ref: [leitner2026] quantum-observable-universe/appendix-nf-witnesses/witness-8be.ts
 theorem witness_8Be [pauli : Witness8BePauli] :
     (4 : ℕ) = 4 ∧ (4 : ℕ) = 4 ∧ Nat.factorial 7 = 5040 ∧
     (8 : ℕ) = 8 ∧ |pauli.F_Pauli - 0.368| < 0.005 :=

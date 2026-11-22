@@ -2,11 +2,7 @@
 
 **What is established:**
 
-- The named function `delta_tau_M_surrogate_taylor_witness : ℕ → ℚ`
-  in Lean, which catalogues the coefficients $c_0, \dots, c_7$ in the
-  canonical (borromean) frame, matching the witness. Its theorems are
-  reflexivity on the table and prove nothing about the surrogate itself.
-- Sorry-free theorems about `delta_tau_M_surrogate` itself at every order
+- The Taylor coefficients of the surrogate itself at every order
   $0$ to $7$: vanishing at $q = 1$, the first derivative $-5/6$, orders
   $2$ and $3$ by explicit quotient-rule derivative towers, and orders $4$
   to $7$ by an iterated-Leibniz recurrence on the polynomial identity

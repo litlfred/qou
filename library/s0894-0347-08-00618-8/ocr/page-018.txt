@@ -1,0 +1,55 @@
+538 J. BORCEA, P. BRANDEN, AND T. M. LIGGETT
+
+Recall that a square matrix A is said to be a contraction if ||A|| < 1, where || - ||
+denotes the supremum (operator) norm. Clearly, a positive semi-definite matrix is
+a contraction if and only if all its eigenvalues are in the interval (0, 1]. Such matrices
+were called positive contractions in .
+
+Theorem 3.4. Suppose that y is a determinantal measure on 2I"] whose corre-
+sponding matriz is a positive contraction. Then ys is CNA+.
+
+This is one of the main results of (cf. Theorem 8.1]), where exterior
+(Grassmann) algebra methods were used to investigate determinantal probability
+measures and, in particular, to prove the above theorem. As noted in loc. cit., The-
+orem [3.4] provides a powerful tool for studying determinantal probability measures,
+comparable to the FKG theorem in the theory of positive association, and is crucial
+to most of the results in e.g.
+
+Let us show that Theorem actually follows from Theorem of and
+the fact that determinantal measures induced by positive contractions are strongly
+Rayleigh:
+
+Proposition 3.5. Suppose that u is a determinantal measure on 2I"] whose corre-
+sponding matrix is a positive contraction. Then pis strongly Rayleigh.
+
+Proof. Since positive definite matrices are dense in the set of all positive semi-
+definite matrices, by Proposition (3) it is enough to prove the statement for
+invertible positive contractions. Elementary computations show that
+
+Ou(21,-++;2n) = det(I — A+ AZ) = det(A) - det(A7! -I+Z),
+
+where Z = diag(z1,..., 2n). Since A is an invertible positive contraction, A~!—T is
+positive semi-definite and det(A) > 0, so by (6) the polynomial g,, is real stable. O
+
+Another main result of [57] is that if A and B are commuting positive contrac-
+tions and A < B, then the measure corresponding to B stochastically dominates
+the one corresponding to A (Definition2.14). In {4.3]we extend this result using the
+theory of stability and strongly Rayleigh measures and we prove that the condition
+[A, B] = 0 (where [-, -] denotes the Lie bracket) can be dropped from the hypothesis.
+
+3.4. Graphs, Laplacians, spanning trees and the random cluster model.
+Let G = (V, E) be a graph with vertex set V = [n] and edge set E. Associate to
+each edge e € E a variable we. If e connects i and j let Ae be the n x n positive
+semi-definite matrix with the ii-entry and the jj-entry equal to 1, the 7j-entry and
+ji-entry equal to —1, and all other entries equal to 0. The Laplacian, L(G), of G is
+defined by
+LG) = Yo we Ae.
+ecE
+Let
+fa(z,w) = det(L(G) + Z).
+
+Thus, by (6), fc is a multi-affine real stable polynomial with non-negative coeffi-
+cients. The Principal Minors Matrix-Tree Theorem (see, e.g., [18]) says that
+
+falz, w) _ > zroots(F) ,yedges(F)
+F

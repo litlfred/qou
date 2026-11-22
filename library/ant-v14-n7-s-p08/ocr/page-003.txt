@@ -1,0 +1,52 @@
+Burgess bounds for short character sums evaluated at forms 1913
+
+If one carries through our method of proof in the case n = 1, we may define © = ©,,, = r for all
+r > 1 and recover the Burgess bound (1-1) (up to the power of the logarithm). This result may also be
+extended to apply to a rational function F = f)/f2 if it is appropriately regarded as f; fe. Analogous
+to the proof of the Pélya—Vinogradov inequality, Fourier-based methods can prove a nontrivial bound for
+S(F; N, H) for suitable forms F when H; > q 1/2+€ (see Section A.3); thus the upper bound restriction
+on H; in the hypothesis of the theorem is compatible with our interest in the range H; « q!/?*°,
+For purposes of comparison, we state a direct corollary of Theorem 1.1 in the case that all coordinates
+
+of H are of equal size.
+
+Corollary 1.2. Assume the hypotheses of Theorem 1.1. Suppose H =(H, H,..., H) with H <q!2+/@®),
+
+For every degree D form F € Z[x,, ..., Xn] such that its reduction modulo q is (A, q)-admissible, then
+uniformly in N = (N,,..., Nn), for every integer r > 1,
+[S(F;N, H)| < HOPG MOFV/N8 og gy! (1-5)
+
+in which the implied constant depends only on D, A, n,r and is otherwise independent of F.
+
+Remark. The upper bound in Burgess’s original work is independent of the order of the character. In
+our results, there is a possible dependence on the order A. In our approach, this possible dependence
+on A appears in the constant C” provided by Theorem 4.4, which we apply to count the number of tuples
+(x)... 2") that could result in “large” complete character sum values. In turn, the constant C”
+provided by Theorem 4.4 can depend on A because it encodes the sum of the degrees of the irreducible
+components of certain subschemes, that are determined by n, r, D and A. See Section 4 and [Xu 2018,
+Section 2.1] for details.
+
+1B. The strength of Theorem 1.1: quantifications. In general, for a Burgess-style result such as (1-1),
+which holds for a range of integers r, to assess its strength for H near the lower-bound threshold that
+yields a nontrivial bound for |S(N, H)|, we must compute which value of r produces maximum savings.
+For example, in Burgess’s original result, if H = q!/4+* the bound (1-1) with parameter value r yields the
+upper bound |S(N, H)|« Hq~ where 5 = (4«r — 1)/(4r?). Computing the maximum of 6 with respect
+to r, we see that by choosing r to be the nearest integer to 1/(2) we may obtain the best value 6 © x2.
+
+We perform an analogous optimization of our result, summarized in two corollaries.
+
+Corollary 1.3. For each n > 2 andr > 1, Theorem 1.1 with the parameters n,r provides a nontrivial
+upper bound |S(F; N, H)| = 0n,7,a,p(\|H ||) for all H = (A,..., H) with H = q? with B in the range
+
+1 e-1
+
+11
+2 emt ~' 22476" (1-6)
+
+in which © = ©, = Lr — 1)/(n — 1). This range includes a nonempty interval of B < 5 as soon as
+r >2n—1,so that © = ©,,, > 1. In particular, this range always requires B > By, with
+1 1
+
+n= 9 aby’
+
+(1-7)

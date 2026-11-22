@@ -1,0 +1,1 @@
+Suppose a #-module J to contain an eigenvector u, of CLY] (or CLy] for #') with a v,-special character y. If y = w(y) is v,-special for some we W, then there exists an eigenvector u, € J for generating the same #-submodule of J as Uy.

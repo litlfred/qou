@@ -4,30 +4,23 @@ doc_title: "On the geometry of two state models for the colored Jones polynomial
 section_id: sec-000-1-introduction
 section_title: "Introduction"
 section_number: 1
-pages: 1-2
+pages: 1-3
 source_pdf: 2209.06973v1.pdf
 source_sha256: cc3393a17c48b9df
+toc_source: outline
+text_source: latex
+latex_prose_ratio: 0.796
+latex_coverage_ratio: 0.988
 doc_brief: "On the geometry of two state models for the colored Jones polynomial — Using the ﬂow property of the R-matrix deﬁning the colored Jones polynomial, we establish a natural bijection between the set of"
 ---
-This article is the result of a long-going eﬀort to understand a state-sum
-formula of Garoufalidis and Loebl for the colored Jones polynomial of a
-knot. This formula was proven in [7] from the state-sum formula for the
-classical Jones polynomial and a cabling formula, which had been observed
-in [18]. From the proof given in [7] it is not obvious to us that the result-
-ing state model is the same as the one deﬁned directly from the R-matrix
-1
-arXiv:2209.06973v1  [math.GT]  14 Sep 2022
-of Uq(sl(2, C))-representations, i. e. from the corresponding ribbon functor
-[22],[14], [4] (Deﬁnition 2.2 will explain what is meant by same here).
-Let K be a framed oriented link in R3 with projection K (blackboard
-framing). Let PK denote the corresponding part arc-graph. This is a 4-
-valent planar digraph with vertices labeled by the crossing signs of the link
-projection.
-Quantum link invariants, deﬁned for a quantum group of a simple Lie-
-algebra and a ﬁnite dimensional representation, can be calculated as state-
-sums over PK, [12], [22] and [16]. In the case of the quantum group corre-
-sponding to sl(2, C) and the irreducible (n + 1)-dimensional representation,
-n≥ 1, Garoufalidis and Loebl [7] deﬁne a bichromatic digraph GK and
-calculate a state-sum for the colored Jones polynomial as a state-sum on
-this graph. In [7] the state-sum formula is derived from the formula for
-the classical Jones-polynomial ( n = 1) and cabling. This is based on the
+This article is the result of a long-going effort to understand a state-sum formula of Garoufalidis and Loebl for the colored Jones polynomial of a knot. This formula was proven in [@GL] from the state-sum formula for the classical Jones polynomial and a cabling formula, which had been observed in [@Li]. From the proof given in [@GL] it is not obvious to us that the resulting state model is the *same* as the one defined directly from the $R$-matrix of $U_q(\textrm{sl}(2,\mathbb{C}))$-representations, i. e. from the corresponding ribbon functor [@RT],[@KM], [@G] (Definition 2.2 will explain what is meant by *same* here).
+
+Let $K$ be a framed oriented link in $\mathbb{R}^3$ with projection $\mathcal{K}$ (blackboard framing). Let $P\mathcal{K}$ denote the corresponding *part arc-graph*. This is a $4$-valent planar digraph with vertices labeled by the crossing signs of the link projection.
+
+Quantum link invariants, defined for a quantum group of a simple Lie-algebra and a finite dimensional representation, can be calculated as state-sums over $P\mathcal{K}$, [@J], [@RT] and [@KiM]. In the case of the quantum group corresponding to $\textrm{sl}(2,\mathbb{C})$ and the irreducible $(n+1)$-dimensional representation, $n\geq 1$, Garoufalidis and Loebl [@GL] define a bichromatic digraph $G\mathcal{K}$ and calculate a state-sum for the colored Jones polynomial as a state-sum on this graph. In [@GL] the state-sum formula is derived from the formula for the classical Jones-polynomial ($n=1$) and cabling. This is based on the representation theoretic properties. We will show that the two state models are isomorphic to each other in a well-defined sense, even though the state models are defined on different graphs.
+
+Garoufalidis and Loebl also use their formula to define a non-commutative (this means that the sum is calculated using non-commutative algebra, not that the actual sum is non-commutative in some way) state-sum for the colored Jones polynomial [@GL]. Independently Huynh and Le [@HL], see also [@A], defined a non-commutative formula directly from the $R$-matrix defined by Rozansky [@R]. There is recent work on the noncommutative approach, see [@B] and [@H]. The relation between those two formulas is briefly mentioned in [@HL], Remark 0.1, but a detailed discussion of the relation of this is still missing in the literature. The results of our article indicate that the two noncommutative state models are also equivalent if there is a natural state-sum defined for the noncommutative formula of [@GL]. The states of [@HL] are described in [@A] in terms of walks on braids, with state-sum contributions defined by the actions of sequences of operators on a certain ring of polynomials defined from the walks. Algebraically the walks result from computing the expansion of a quantum determinant of a matrix over a ring of operators defined through an analogy to the Burau representation, see [@A] for more details. Here walks are defined by sequences of overcrossings, undercrossings and jump-down transitions.
+
+In the literature there are often restrictions of formulas for the colored Jones polynomial to the case of *knots*. This often seems in order to avoid a discussion of which states are *contributing* (see Definition 2.1). We think that this is in fact an interesting question, in particular when it comes to a discussion of computational complexity. We will show that the formula [@GL] based on the arc graph of knots extends to links.
+
+In sections 2 and 3 we define state models and how to compare them. We define the sets of decorated graphs we will be using. In section 4 we define the bijections of states, which is used in the following sections to show that the usual state model defined from the ribbon functor ($R$-matrix) is equivalent to the state model in [@GL]. In section 5 we review the ribbon function definition, and in section 6 we give a direct proof of the state-sum formula [@GL], which also shows the equivalence of the models and extends the formula to link projections. In section 7 we show how the states in both cases are determined by potentials, a notion introduced in section 4, and we show the contributing states are parametrized. Our approach shows that the state-sums are determined without using any order of the vertex set of the part arc-graph or arc-graph. In section 8 we we discuss the computation when we choose the cyclic order of vertices, defined by running along components from chosen base points. In section 9 we explicitly give the evaluation of the colored Jones polynomial for all weaving links on three strings from the [@GL]. In section 10 we show how the state-sum of is computed algorithmically from the braid word for all $-$-strand braid closures. We give explicit examples of state-sum computations throughout the article.

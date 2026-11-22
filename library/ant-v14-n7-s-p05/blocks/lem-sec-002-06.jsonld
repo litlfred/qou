@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/ant-v14-n7-s-p05/blocks/lem-sec-002-06",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "pageStart": 4,
+  "pageEnd": 13,
+  "text": "lem-sec-002-06.md",
+  "derivedFrom": "library/ant-v14-n7-s-p05/sections/sec-002",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p05/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "2.11",
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-002-2-duality-and-euler-characteristics.md (p. 4-13)",
+    "claim_id": "ant-v14-n7-s-p05#lemma:2.11",
+    "lean_status": "unformalized"
+  }
+}

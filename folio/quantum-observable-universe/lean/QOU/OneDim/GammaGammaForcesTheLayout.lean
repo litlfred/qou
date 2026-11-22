@@ -15,6 +15,11 @@ cited theorem with its hypothesis supplied.  Building the bridge — a lemma
 producing `LinearLayout G` for the contiguous block graph — is the work that
 would make the stronger sentence true, and it has not been done.
 
+**Update 2026-11-15:** the bridge now exists, in
+`QOU/OneDim/GammaGammaLinearLayout.lean` (`gammaGammaGraph_linearLayout`,
+`mixedGraph_linearLayout`): on the contiguous layout the coordination graph of
+any word built from γγ vertices and single crossings is a `LinearLayout`.
+
 ## The one input
 
 `QOU/Mass/GammaGammaWordSelection.lean` defines the pair-production vertex as

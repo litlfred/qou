@@ -1,0 +1,46 @@
+STUDYING LINKS VIA CLOSED BRAIDS III 99
+
+the initial forward sequence we know there is a subword (a,)?(az)?
+of W with p #0, g40,1.
+
+We now study the possibilities for the initial backward sequence
+(IBS), using this initial forward sequence (IFS). The IBS begins with
+the same initial fiber, with the pierce-points arranged as in the left
+picture in Figure 6.14. What can the first backward event be? The
+first thing to notice is that there are leaves 42, M34 and ps6 in the
+foliation which join the point pairs 1-2, 3-4 and 5-6. Since we know
+that after the IFS there will be leaves in the foliation which join 2 to
+3, 1 to 6 and 4 to 5, it follows that the IBS contains singularities
+which change the connectivities of the leaves, before the two sequences
+overlap.
+
+Suppose that the IBS begins with an Q-singularity. If it is type
+(2 —3)~, then it would necessarily be followed in the backward direc-
+tion by a non-empty block P’. However, in that case the two blocks
+P and P’ could be amalgamated, reducing the complexity, so that
+can’t happen. If it begins with (4—5)~ then the 5 side of the arc
+se and the 4 side of the arc 434 must be on opposite sides of the
+same digon. The only way this can occur is if qg = 1, as indicated
+in the right picture in Figure 6.14. However, as observed earlier, that
+is impossible. Similarly, if the IBS begins with (1 — 6)~ the 6 side
+of 56 and the 1 side of 42 must be on opposite sides of the same
+digon, and again this means g = 1. So, the IBS cannot begin with an
+Q-singularity.
+
+Now suppose that the IBS begins with an NSF-singularity. There
+are six types to consider (types bf, i= 1,2,3 and e = +1). If it
+is type by! then, referring to Figure 6.6(c) we know that we need to
+have a joining arc in the backward direction, in F* , between the 2
+side of 4432 and the 4 side of 34. Call that a “joining arc of type
+24”. However, from the partial projection of Figure 6.14 that is clearly
+impossible. Since joining arcs of type 24, 46 and 61 in F* and 13,
+35, and 51 in F~ are all impossible in the situation of Figure 6.14,
+we conclude that the IBS can’t begin with an NSF-singularity either.
+
+Thus, the only possibility is that the first event in the IBS is a type
+(1 — 2)> singularity, which implies that W now has the subword
+(a3)~!(ay)?(a2)? of W with p £0, gq # 0, as in Figure 6.15 (next
+page). This results in the foliation of the entire 3-ball B;. After the
+(1 — 2)~ singularity it becomes possible to do a (1 — 6)~ singularity
+and so to sweep out block P. But then, we will have foliated all of
+B, and well as B;. So there can only be one more event, namely a

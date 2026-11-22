@@ -19,7 +19,7 @@ Triangle: `Φ(0, 0) = 1`.
 
 Sorry-free.
 
--- Ref: [manuscript] beans/defs/qou-zoyv (stage S2)
+-- Ref: [leitner2026] beans/defs/qou-zoyv (stage S2)
 -/
 
 noncomputable section
@@ -27,7 +27,7 @@ noncomputable section
 namespace QOU.KZ.Drinfeld
 
 open CategoryTheory MonoidalCategory Finset QOU.KZ.FuchsianFormal QOU.KZ.BlockResidues
-  QOU.KZ.KZPentagon Obj
+  QOU.KZ.DrinfeldAssociator Obj
 
 /-! ### Unitors -/
 
@@ -77,22 +77,22 @@ theorem rightUnitor_natural {X Y : Obj} (f : X ⟶ Y) :
 
 attribute [local instance] Matrix.linftyOpNormedRing Matrix.linftyOpNormedAlgebra
 
-variable {c : ℂ} (hc : Transcendental ℚ c)
-include hc
+variable (Ψ : Associator.{0}) {c : ℂ} (hc : Transcendental ℚ c)
+include Ψ hc
 
-theorem ΦB_unit (X Y : Obj) : ΦB hc (blkX X unit Y) (blkY X unit Y) (blkZ X unit Y) = 1 := by
+theorem ΦB_unit (X Y : Obj) : ΦB Ψ hc (blkX X unit Y) (blkY X unit Y) (blkZ X unit Y) = 1 := by
   have h0 : blkY X unit Y = ∅ := by
     rw [blkY, Finset.univ_eq_empty, Finset.map_empty]
   have e₁ : c • tB ℂ 2 (blkX X unit Y) (blkY X unit Y) = 0 := by
     rw [h0, tB]; simp
   have e₂ : c • tB ℂ 2 (blkY X unit Y) (blkZ X unit Y) = 0 := by
     rw [h0, tB]; simp
-  rw [ΦB, KZShiftPhi.Φ_congr e₁ e₂ _ _ KZShiftPhi.nonResonant_zero KZShiftPhi.nonResonant_zero,
-    KZShiftPhi.Φ_zero_left]
+  rw [ΦB, Ψ.ΦN_congr e₁ e₂ _ _ KZShiftPhi.nonResonant_zero KZShiftPhi.nonResonant_zero,
+    Ψ.ΦN_zero_left]
 
 /-- **The triangle** (matrix form). -/
 theorem triangle_mat (X Y : Obj) :
-    kron (1 : EndL (Leaves X)) (reidx (leftLegs Y)) * αmat hc X unit Y =
+    kron (1 : EndL (Leaves X)) (reidx (leftLegs Y)) * αmat Ψ hc X unit Y =
       kron (reidx (rightLegs X)) (1 : EndL (Leaves Y)) := by
   rw [αmat, ΦB_unit, Matrix.mul_one, one_kron_reidx, kron_reidx_one, reidx_mul]
   congr 1
@@ -101,48 +101,49 @@ theorem triangle_mat (X Y : Obj) :
   · exact k.elim
   · rfl
 
-omit hc
+omit Ψ hc
 
 /-! ### The monoidal category -/
 
-/-- The Drinfeld category `D_ℏ` (on tensor words in `V = ℂ²`). -/
-def DH (c : ℂ) : Type := Obj
+/-- The Drinfeld category `D_ℏ` built from the associator `Ψ` (on tensor words in `V = ℂ²`).
+With `Ψ = kz` this is the category built from `Φ_KZ`. -/
+def DH (Ψ : Associator.{0}) (c : ℂ) : Type := Obj
 
-instance (c : ℂ) : Category (DH c) := inferInstanceAs (Category Obj)
+instance (Ψ : Associator.{0}) (c : ℂ) : Category (DH Ψ c) := inferInstanceAs (Category Obj)
 
-variable (c : ℂ) [hc : Fact (Transcendental ℚ c)]
+variable (Ψ : Associator.{0}) (c : ℂ) [hc : Fact (Transcendental ℚ c)]
 
-instance : MonoidalCategoryStruct (DH c) where
+instance : MonoidalCategoryStruct (DH Ψ c) where
   tensorObj X Y := Obj.tensor X Y
   whiskerLeft X _ _ f := tensHom (𝟙 (X : Obj)) f
   whiskerRight f Y := tensHom f (𝟙 (Y : Obj))
   tensorHom f g := tensHom f g
   tensorUnit := Obj.unit
   associator X Y Z :=
-    { hom := ⟨αmat hc.out X Y Z, equivariant_αmat hc.out X Y Z⟩
-      inv := ⟨αinv hc.out X Y Z, equivariant_αinv hc.out X Y Z⟩
-      hom_inv_id := hom_ext (αinv_mul_αmat hc.out X Y Z)
-      inv_hom_id := hom_ext (αmat_mul_αinv hc.out X Y Z) }
+    { hom := ⟨αmat Ψ hc.out X Y Z, equivariant_αmat Ψ hc.out X Y Z⟩
+      inv := ⟨αinv Ψ hc.out X Y Z, equivariant_αinv Ψ hc.out X Y Z⟩
+      hom_inv_id := hom_ext (αinv_mul_αmat Ψ hc.out X Y Z)
+      inv_hom_id := hom_ext (αmat_mul_αinv Ψ hc.out X Y Z) }
   leftUnitor X := reidxIso (leftLegs X)
   rightUnitor X := reidxIso (rightLegs X)
 
 /-- **`D_ℏ` is a monoidal category** (`ℏ` transcendental). -/
-instance : MonoidalCategory (DH c) :=
+instance : MonoidalCategory (DH Ψ c) :=
   MonoidalCategory.ofTensorHom
     (id_tensorHom_id := fun X Y => hom_ext (kron_one (α := Leaves X) (α' := Leaves Y)))
     (id_tensorHom := fun _ _ _ _ => rfl)
     (tensorHom_id := fun _ _ => rfl)
     (tensorHom_comp_tensorHom := fun f₁ f₂ g₁ g₂ => hom_ext (kron_mul g₁.1 g₂.1 f₁.1 f₂.1))
-    (associator_naturality := fun f₁ f₂ f₃ => hom_ext (natural_mat hc.out f₁ f₂ f₃))
+    (associator_naturality := fun f₁ f₂ f₃ => hom_ext (natural_mat Ψ hc.out f₁ f₂ f₃))
     (leftUnitor_naturality := fun f => hom_ext (leftUnitor_natural f))
     (rightUnitor_naturality := fun f => hom_ext (rightUnitor_natural f))
     (pentagon := fun W X Y Z => hom_ext (by
-      show kron (1 : EndL (Leaves W)) (αmat hc.out X Y Z) * αmat hc.out W (tensor X Y) Z *
-        kron (αmat hc.out W X Y) (1 : EndL (Leaves Z)) = _
+      show kron (1 : EndL (Leaves W)) (αmat Ψ hc.out X Y Z) * αmat Ψ hc.out W (tensor X Y) Z *
+        kron (αmat Ψ hc.out W X Y) (1 : EndL (Leaves Z)) = _
       rw [Matrix.mul_assoc]
-      exact pentagon_mat hc.out W X Y Z))
+      exact pentagon_mat Ψ hc.out W X Y Z))
     (triangle := fun X Y => hom_ext (by
-      show kron (1 : EndL (Leaves X)) (reidx (leftLegs Y)) * αmat hc.out X unit Y = _
-      exact triangle_mat hc.out X Y))
+      show kron (1 : EndL (Leaves X)) (reidx (leftLegs Y)) * αmat Ψ hc.out X unit Y = _
+      exact triangle_mat Ψ hc.out X Y))
 
 end QOU.KZ.Drinfeld

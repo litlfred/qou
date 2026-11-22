@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-math-0403224v1/blocks/prop-page-003-03",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "title": "see e.g. Ref. 9",
+  "pageStart": 3,
+  "pageEnd": 3,
+  "text": "prop-page-003-03.md",
+  "derivedFrom": "library/arxiv-math-0403224v1/sections/page-003",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0403224v1/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "5",
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "both",
+    "evidence_locator": "In-paper proof in sections/page-003.md (p. 3-3) citing see e.g. Ref. 9",
+    "claim_id": "arxiv-math-0403224v1#proposition:5",
+    "lean_status": "unformalized"
+  }
+}

@@ -1,0 +1,38 @@
+11.1 Results on cones and deformations 345
+
+Lemma 11.8 implies that g(t) has modulus bounded away from zero over 0 <
+t < 1 for fixed a and choice of Vy), because both Vy) and x — @, are in the
+interior of the negative halfspace for A.
+
+We have now shown that 6 can be chosen so that (11.5) holds with y in place
+of y’. Choosing N’ small enough completes the claim for the actual (11.5).
+This implies that the homotopy defined by (11.3) remains in M, completing
+the proof of Theorem 11.9. ia)
+
+The same argument gives the following version of Theorem 11.5 for smooth
+points.
+
+Corollary 11.10. Assume the hypotheses of Theorem 11.5 as well as the smooth
+point assumption (*). Then for x € B and any 6 > 0 the torus T(a) is homo-
+topic in M to a cycle C, with maximum height less than h, = —?, - &, except
+in a 6-neighborhood of W. ia)
+
+Exercise 11.3. Let Q(x, y) = 5—x-—.x7!—y—y7!, whose amoeba is displayed
+below with the boundary points p = (—log2,—log2) and q = (log 2, log 2)
+specified. For x = p and x = q find T(x)N Vg, find Z(y) for each x + ty with
+exp(x + iy) € V, and determine whether or not local(?) is empty.
+
+Example 11.11. Consider the bivariate rational function
+
+1
+(1+2x)(1-x-y)
+in the main diagonal direction * = (1/2, 1/2). The singular variety of F has
+one non-smooth point (x,y) = (—1/2,3/2), which is not minimal as it has
+strictly greater coordinate-wise modulus than the minimal critical point 0 =
+(1/2, 1/2). The point o is not finitely minimal because
+
+F(x,y) =
+
+VO T(o) = {(1/2,1/2)} U {(-1/2, e! /2) : 2 € (2, m)},
+
+but it does satisfy finite criticality. Let us construct the homotopy ®,(y) for

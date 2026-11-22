@@ -27,7 +27,7 @@ archimedean face required by §7c (Hermitian pairing ⇒ `ℂ`).  The
 pointwise statement is the full mathematical content — the "lift to the
 whole group" is the universal statement over all `g ∈ G` below.
 
--- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/su2-emergence-dagger-unitarity.md
+-- Ref: [leitner2026] quantum-observable-universe/quantum-observable-universes/su2-emergence-dagger-unitarity.md
 -/
 
 open Matrix
@@ -45,7 +45,7 @@ namespace QOU
     Genuine derivation: the hypothesis `g * star g = 1` is the full
     content of `Matrix.mem_unitaryGroup_iff`, and the conclusion is
     membership in `Matrix.unitaryGroup (Fin 2) ℂ`. -/
--- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/su2-emergence-dagger-unitarity.md
+-- Ref: [leitner2026] quantum-observable-universe/quantum-observable-universes/su2-emergence-dagger-unitarity.md
 theorem su2_emergence_dagger_unitarity
     (g : Matrix (Fin 2) (Fin 2) ℂ)
     (h_preserves_inner : ∀ x y : Fin 2 → ℂ, dotProduct (star (g *ᵥ x)) (g *ᵥ y) = dotProduct (star x) y) :
@@ -65,7 +65,7 @@ theorem su2_emergence_dagger_unitarity
     `2×2` complex matrices on the fibre `τ(V)`) preserves the Frobenius
     dagger, then `G ⊆ U(2)`.  Derived pointwise from
     `su2_emergence_dagger_unitarity`. -/
--- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/su2-emergence-dagger-unitarity.md
+-- Ref: [leitner2026] quantum-observable-universe/quantum-observable-universes/su2-emergence-dagger-unitarity.md
 theorem su2_emergence_gauge_group_unitary
     (G : Set (Matrix (Fin 2) (Fin 2) ℂ))
     (h_all_preserve : ∀ g ∈ G, ∀ x y : Fin 2 → ℂ, dotProduct (star (g *ᵥ x)) (g *ᵥ y) = dotProduct (star x) y) :

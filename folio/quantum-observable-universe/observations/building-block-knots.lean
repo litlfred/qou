@@ -229,7 +229,7 @@ noncomputable def muon_electron_ratio (q : ℝ) : ℝ :=
 
     What this theorem honestly states is therefore an *arithmetic* fact about the
     literals in this file, and nothing more. -/
--- Ref: [jones1987] (Jones 1987, Hecke algebra representations of braid groups); CODATA recommended values, 2018 release; [manuscript] Ch. 7
+-- Ref: [jones1987] (Jones 1987, Hecke algebra representations of braid groups); CODATA recommended values, 2018 release; [leitner2026] Ch. 7
 theorem muon_electron_ratio_from_substrate :
     |muon_electron_ratio q₀ - 206.768| < 0.00448 := by
   -- muon_electron_ratio q₀ = vol_figure_eight / (hbarQ q₀)²
@@ -252,7 +252,7 @@ theorem muon_electron_ratio_not_within_thousandth :
   norm_num
 
 /-- The crossing energy at q₀: E_×(q₀) ≈ 0.1045. -/
--- Ref: [manuscript] Ch. 7, §Building block knots
+-- Ref: [leitner2026] Ch. 7, §Building block knots
 theorem crossing_energy_at_substrate :
     |crossing_energy q₀ - 0.1045| < 0.001 := by
   -- crossing_energy q₀ = (1/2) * (1.10998 - 1.10998⁻¹)

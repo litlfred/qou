@@ -54,7 +54,7 @@
 
   Archimedean (R): ordering and division over R (§7c).
 
-  -- Ref: [manuscript] computations/probes/qbeta_krvm_ga_symmetry_fixed_locus_probe.py
+  -- Ref: [leitner2026] computations/probes/qbeta_krvm_ga_symmetry_fixed_locus_probe.py
   -- Ref: [garoufalidis2012] arXiv:1208.1663 §2.2-2.3 (generalised angle structures)
 -/
 

@@ -1,5 +1,7 @@
 # The partition function behind the corpus $b_3$ — and its sign is Mayer's
 
+> **2026-11-15 scoping note.** The magnitudes below are computed on the single-crossing interface letters of `atom_braid_word_3A`, which the γγ rule (owner, 2026-11-15) no longer treats as canonical. They stay as a record. The Lean theorems take generic bond weights and still stand. See [`2026-11-15-gg-rule-rescopes-old-letter-binding.md`](2026-11-15-gg-rule-rescopes-old-letter-binding.md).
+
 **Date.** 2026-09-12
 **Bean.** `qou-rwhv` (the one undone step of the 2026-08-30 arc); parent `qou-brng`.
 **Scope.** **(a)** for the identification and the letter measurement; **(b)** for the

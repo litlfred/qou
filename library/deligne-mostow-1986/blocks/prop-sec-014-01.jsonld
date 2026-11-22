@@ -3,7 +3,7 @@
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
       "@base": "https://litlfred.github.io/folio/",
-      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant/folio-assistant-sci/ns#"
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "library/deligne-mostow-1986/blocks/prop-sec-014-01",
@@ -12,11 +12,20 @@
     "doco:Section"
   ],
   "kind": "proposition",
-  "title": "5.5",
-  "pageStart": 31,
-  "pageEnd": 33,
+  "title": "12.5.5",
+  "pageStart": 70,
+  "pageEnd": 72,
   "text": "prop-sec-014-01.md",
   "derivedFrom": "library/deligne-mostow-1986/sections/sec-014",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/deligne-mostow-1986",
-  "provenance": "ingested"
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/deligne-mostow-1986/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper proof in sections/sec-014-trrf.md (p. 70-72)",
+    "claim_id": "deligne-mostow-1986#prop-sec-014-01",
+    "lean_status": "unformalized"
+  }
 }

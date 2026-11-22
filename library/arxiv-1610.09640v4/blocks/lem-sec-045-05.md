@@ -1,0 +1,1 @@
+Consider a standard triangle L α−→M β−→N γ−→T(L) in Cstr(A, M). For every integer k, the triangle Tk(L) Tk(α) −−−−→Tk(M) Tk(β) −−−−→Tk(N) (−1)k · Tk(γ) −−−−−−−−−→Tk+1(L) is isomorphic, in Cstr(A, M), to a standard triangle. Derived Categories | Amnon Yekutieli |

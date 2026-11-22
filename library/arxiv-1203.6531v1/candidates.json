@@ -3,13 +3,14 @@
  "doc_id": "arxiv-1203.6531v1",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "29541f28c1c62d8f5172503dcc5ff03c3483fc67fb685c174d51074d3daf66d0",
   "file": "1203.6531v1.pdf"
  },
  "provenance": {
-  "title": "TRANSACTIONS OF THE AMERICAN MA THEMA TICAL SOCIETY",
-  "authors": "V olume 00, Number 0, Pages 000\u2013000",
+  "title": "Groebner-Shirshov basis and reduced words for affine Weyl group A_n",
+  "authors": "GR\u00d6BNER-SHIRSHOV BASIS AND REDUCED WORDS FOR",
   "arxiv": {
    "id": "1203.6531",
    "version": "1",
@@ -20,209 +21,9 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 15,
-  "by_kind": {
-   "lemma": 9,
-   "proposition": 1,
-   "theorem": 5
-  },
-  "formalization_candidates": 15
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": null,
-   "name": null,
-   "statement": ", q-binomials, Basic Partitions.",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-7",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "2",
-   "name": null,
-   "statement": "(Composition-Diamond Lemma for associative algebras)",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-7",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "4",
-   "name": null,
-   "statement": "LetR ={f1,f 2,f 3,f 4}. A Grobner-Shirshov Basis of ~An with respect",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-7",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "5",
-   "name": null,
-   "statement": "Any reduced word not containing r0 is in the form",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-7",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "6",
-   "name": null,
-   "statement": "The following words are reduced.",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-7",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "7",
-   "name": null,
-   "statement": "Letw be a reduced word starting with ri for i = 1,...,n and let t be a",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-7",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "8",
-   "name": null,
-   "statement": "Letw1,w 2,...w k,wk+1 be reduced words in the one of the forms given",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-7",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "7",
-   "name": null,
-   "statement": ", rw2w3...w ks is also reduced. Hence w1w2...w k+1 must be a reduced",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-7",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "proposition",
-   "source_kind": "proposition",
-   "number": "11",
-   "name": null,
-   "statement": "Letu and v(bt) be words de\ufb01ned above where a1 =r0rnkr1l and",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-7",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "13",
-   "name": null,
-   "statement": "If all reduced words w =uv(bt) are arranged, then each subword is",
-   "section_file": "sections/sec-000-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "1-7",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "14",
-   "name": null,
-   "statement": "Let \u02c6w = aisais\u22121...a i1v(bt) where aij = r0rnkjrnlj .Then aij \u2019s are",
-   "section_file": "sections/sec-001-3-counting-reduced-words.md",
-   "section_title": "Counting Reduced Words",
-   "pages": "7-10",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "16",
-   "name": null,
-   "statement": "There is one to one correspondence between words \u02c6w and the par-",
-   "section_file": "sections/sec-001-3-counting-reduced-words.md",
-   "section_title": "Counting Reduced Words",
-   "pages": "7-10",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "18",
-   "name": null,
-   "statement": "Then the reduced Gr\u00a8 obner-Shirshov basis of the a\ufb03ne Weyl group",
-   "section_file": "sections/sec-001-3-counting-reduced-words.md",
-   "section_title": "Counting Reduced Words",
-   "pages": "7-10",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "14",
-   "name": null,
-   "statement": "and Theorem 16 imply that the number of arranged words given by",
-   "section_file": "sections/sec-001-3-counting-reduced-words.md",
-   "section_title": "Counting Reduced Words",
-   "pages": "7-10",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": null,
-   "name": null,
-   "statement": ", G\u2032 is a Gr\u00a8 obner-Shirshov basis of~An. In fact, G\u2032 is a reduced Gr\u00a8 obner-",
-   "section_file": "sections/sec-001-3-counting-reduced-words.md",
-   "section_title": "Counting Reduced Words",
-   "pages": "7-10",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  }
- ]
+ "candidates": []
 }

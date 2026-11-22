@@ -15,7 +15,7 @@ Source declaration: `QOU.Aeon` in jet-horizon.lean
 
 ## References
 - [penrose2010] R. Penrose, "Cycles of Time", Bodley Head 2010.
-- [manuscript] §9/aeon
+- [leitner2026] §9/aeon
 -/
 
 namespace QOU
@@ -26,7 +26,7 @@ namespace QOU
     opaque carrier so this co-located content-block sibling is
     independently checkable by `lean`-direct without importing the
     full `qou` library cone. -/
--- Ref: [manuscript] def:jet-horizon
+-- Ref: [leitner2026] def:jet-horizon
 structure JetHorizon where
   /-- Opaque carrier of the jet-horizon datum. -/
   carrier : Type*
@@ -35,7 +35,7 @@ structure JetHorizon where
     `QOU.ObservableConfig` in `QOU/JetHorizon.lean`.  Re-declared
     here as an opaque carrier for the same co-location reason as
     `JetHorizon` above. -/
--- Ref: [manuscript] def:observable-subcategory
+-- Ref: [leitner2026] def:observable-subcategory
 structure ObservableConfig where
   /-- Opaque carrier of the observable configuration. -/
   carrier : Type*
@@ -44,7 +44,7 @@ structure ObservableConfig where
     Bun°(P(V)).  Maximal collection of observable configurations
     connected by flow maps without crossing a jet horizon. -/
 -- Ref: [penrose2010] R. Penrose, "Cycles of Time", Bodley Head 2010.
--- Ref: [manuscript] §9/aeon
+-- Ref: [leitner2026] §9/aeon
 structure Aeon where
   /-- The observable configurations in this aeon. -/
   configs : Type*

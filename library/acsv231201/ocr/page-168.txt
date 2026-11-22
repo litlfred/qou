@@ -1,0 +1,31 @@
+150 Laurent series, amoebas, and convex geometry
+
+Figure 6.4 A convex set (light gray) with three selected boundary points. Parts
+of the corresponding tangent cones (facing into the set) and normal cones (facing
+away from the set) are displayed. Note that the rightmost normal cone is a one-
+dimensional line. The recession cone of this set is {0} since the set is bounded.
+
+of Q and the components of amoeba(Q)° described in Theorem 6.18 above
+can be strengthened to help provide such information. In order to state this
+relationship we need some additional terminology.
+
+Definition 6.26. Let B be a convex set. A convex cone is a subset of R¢ that is
+closed under addition and closed under multiplication by positive scalars. The
+recession cone of B is the set of vectors {v € R4: a+ v € B for all a € B} and
+the (open) tangent cone to B at x € Bis
+
+tan,(B) = {s € R’: 2 + es € B for all sufficiently small ¢ > 0}.
+
+The tangent cone is a generalization of the tangent space of a manifold to
+spaces with singularities. The (closed) normal cone to B at x € Bis
+
+normal,(B) = {s ¢R¢: s-x2>s-b forall be B}.
+See Figure 6.4 for an illustration of these concepts.
+Exercise 6.8. If K is an open convex cone in R¢ then its dual cone K* c R¢
+
+is the set of vectors {s € R’ : s- a > 0 forall x € K}. Prove the following
+statements.
+
+a) The recession cone, tangent cone, and normal cone are convex cones.
+b) Let K and L be open convex cones. Then (K N L)* = hul1(K* U L*) and if
+K c Lthen K* 5 L*.

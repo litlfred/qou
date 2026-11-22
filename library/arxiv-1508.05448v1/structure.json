@@ -7,10 +7,29 @@
   "bytes": 839569,
   "pages": 134,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 123,
+    "reason": "14 of 109 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 124,
+    "reason": "71 of 296 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 125,
+    "reason": "51 of 219 words are a stray single letter: the text layer splits words"
+   },
+   {
+    "page": 126,
+    "reason": "59 of 270 words are a stray single letter: the text layer splits words"
+   }
+  ],
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -28,11 +47,21 @@
   ],
   "abstract": null,
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20150825002720Z",
-   "Creator": "LaTeX with hyperref package",
    "Producer": "pdfTeX-1.40.12",
-   "Title": ""
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20150825002720Z"
+  },
+  "title_raw": "Concentration of Measure Techniques and Applications",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Concentration of Measure Techniques and Applications",
+   "outline": "Biographical Sketch",
+   "text": "Concentration of Measure Techniques and Applications",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -41,256 +70,1822 @@
    "title": "Biographical Sketch",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "ii"
   },
   {
    "level": 1,
    "title": "Acknowledgments",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "iii"
   },
   {
    "level": 1,
    "title": "Abstract",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "iv"
   },
   {
    "level": 1,
    "title": "Contributors and Funding Sources",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "v"
   },
   {
    "level": 1,
    "title": "List of Figures",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "ix"
   },
   {
    "level": 1,
    "title": "Introduction",
    "page": 10,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Concentration of Measure Results and other Necessary Background",
    "page": 14,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Talagrand's Gaussian Concentration of Measure Inequality",
    "page": 14,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Talagrand's Isoperimetric Inequality",
    "page": 19,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 2,
    "title": "Ledoux's Concentration of Measure on Reversible Markov Chains",
    "page": 28,
    "source": "outline",
-   "number": "2.3"
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 2,
    "title": "The Euler-Maclaurin Formula",
    "page": 34,
    "source": "outline",
-   "number": "2.4"
+   "number": "2.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
   },
   {
    "level": 1,
    "title": "Random Operator Compressions",
    "page": 36,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
   },
   {
    "level": 2,
    "title": "Background for First Result",
    "page": 36,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "27"
   },
   {
    "level": 2,
    "title": "Kac's Walk on SO(n)",
    "page": 37,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "28"
   },
   {
    "level": 2,
    "title": "Main Result",
    "page": 41,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "32"
   },
   {
    "level": 2,
    "title": "Kac's Model Coupled to a Thermostat",
    "page": 44,
    "source": "outline",
-   "number": "3.4"
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "35"
   },
   {
    "level": 2,
    "title": "An Additional Application: The Length of the Longest Increasing Subsequence of a Random Walk Evolving under the Asymmetric Exclusion Process",
    "page": 47,
    "source": "outline",
-   "number": "3.5"
+   "number": "3.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "38"
   },
   {
    "level": 2,
    "title": "Remarks",
    "page": 55,
    "source": "outline",
-   "number": "3.6"
+   "number": "3.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "46"
   },
   {
    "level": 1,
    "title": "Mixed Matrix Moments and Eigenvector Overlap Functions of the Ginibre Ensemble",
    "page": 57,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "48"
   },
   {
    "level": 2,
    "title": "Mixed Matrix Moments",
    "page": 60,
    "source": "outline",
-   "number": "4.1"
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "51"
   },
   {
    "level": 2,
    "title": "The Expected Overlap Functions",
    "page": 65,
    "source": "outline",
-   "number": "4.2"
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "56"
   },
   {
    "level": 2,
    "title": "Formulas for the Overlap Functions",
    "page": 67,
    "source": "outline",
-   "number": "4.3"
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "58"
   },
   {
    "level": 2,
    "title": "Moments and Constraints on the Overlap Functions",
    "page": 74,
    "source": "outline",
-   "number": "4.4"
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "65"
   },
   {
    "level": 2,
    "title": "Proposal to Rigorously Approach Chalker and Mehlig's Result",
    "page": 83,
    "source": "outline",
-   "number": "4.5"
+   "number": "4.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "74"
   },
   {
    "level": 2,
    "title": "Invariance of the Perturbation Series PN(r)",
    "page": 89,
    "source": "outline",
-   "number": "4.6"
+   "number": "4.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "80"
   },
   {
    "level": 2,
    "title": "Summary and Outlook",
    "page": 93,
    "source": "outline",
-   "number": "4.7"
+   "number": "4.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "84"
   },
   {
    "level": 1,
    "title": "Mallows Random Permutations",
    "page": 96,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "87"
   },
   {
    "level": 2,
    "title": "A q-Stirling's Formula",
    "page": 96,
    "source": "outline",
-   "number": "5.1"
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "87"
   },
   {
    "level": 2,
    "title": "The Mallows Measure",
    "page": 104,
    "source": "outline",
-   "number": "5.2"
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "95"
   },
   {
    "level": 2,
    "title": "Fisher-Yates Algorithm",
    "page": 105,
    "source": "outline",
-   "number": "5.3"
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "96"
   },
   {
    "level": 2,
    "title": "Length of the Longest Increasing Subsequence",
    "page": 110,
    "source": "outline",
-   "number": "5.4"
+   "number": "5.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "101"
   },
   {
    "level": 2,
    "title": "Patience Sorting",
    "page": 112,
    "source": "outline",
-   "number": "5.5"
+   "number": "5.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "103"
   },
   {
    "level": 2,
    "title": "Four Square Problem",
    "page": 115,
    "source": "outline",
-   "number": "5.6"
+   "number": "5.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "106"
   },
   {
    "level": 2,
    "title": "Conclusion and Outlook",
    "page": 122,
    "source": "outline",
-   "number": "5.7"
+   "number": "5.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "113"
   },
   {
    "level": 1,
    "title": "A Python code: Simulating a Mallows Random Permutation",
    "page": 123,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "114"
   },
   {
    "level": 1,
    "title": "Bibliography",
    "page": 127,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "118"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "3.1",
+   "title": "A longest increasing subsequence of a random walk",
+   "page": 49,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "40"
+  },
+  {
+   "kind": "figure",
+   "number": "4.1",
+   "title": "Some analogous elements in random matrix and spin glass theory. (Proofs may diﬀer considerably.)",
+   "page": 58,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "49"
+  },
+  {
+   "kind": "figure",
+   "number": "5.1",
+   "title": "Length of the longest increasing subsequence of a uniform permutation of length 10, 000",
+   "page": 115,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "106"
+  },
+  {
+   "kind": "figure",
+   "number": "5.2",
+   "title": "Length of the longest increasing subsequence of a Mallows permutation of length 10, 000 with q = 0.99",
+   "page": 116,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "107"
+  },
+  {
+   "kind": "figure",
+   "number": "5.3",
+   "title": "Length of the longest increasing subsequence of a Mallows permutation of length 10, 000 with q = 0.88",
+   "page": 116,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "107"
+  },
+  {
+   "kind": "figure",
+   "number": "5.4",
+   "title": "An example of a decomposition of [0, 1]2 into four rectangles R11, R12, R21, R22",
+   "page": 117,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "108"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "i",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "ii",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "iii",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "iv",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "v",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "vi",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "vii",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "viii",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "ix",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "1",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "5",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "10",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "25",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "27",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "28",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "32",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "35",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "46",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "51",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "52",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "53",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": "54",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 64,
+   "label": "55",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 65,
+   "label": "56",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 66,
+   "label": "57",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 67,
+   "label": "58",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 68,
+   "label": "59",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 69,
+   "label": "60",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 70,
+   "label": "61",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 71,
+   "label": "62",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 72,
+   "label": "63",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 73,
+   "label": "64",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 74,
+   "label": "65",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 75,
+   "label": "66",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 76,
+   "label": "67",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 77,
+   "label": "68",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 78,
+   "label": "69",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 79,
+   "label": "70",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 80,
+   "label": "71",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 81,
+   "label": "72",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 82,
+   "label": "73",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 83,
+   "label": "74",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 84,
+   "label": "75",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 85,
+   "label": "76",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 86,
+   "label": "77",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 87,
+   "label": "78",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 88,
+   "label": "79",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 89,
+   "label": "80",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 90,
+   "label": "81",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 91,
+   "label": "82",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 92,
+   "label": "83",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 93,
+   "label": "84",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 94,
+   "label": "85",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 95,
+   "label": "86",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 96,
+   "label": "87",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 97,
+   "label": "88",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 98,
+   "label": "89",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 99,
+   "label": "90",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 100,
+   "label": "91",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 101,
+   "label": "92",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 102,
+   "label": "93",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 103,
+   "label": "94",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 104,
+   "label": "95",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 105,
+   "label": "96",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 106,
+   "label": "97",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 107,
+   "label": "98",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 108,
+   "label": "99",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 109,
+   "label": "100",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 110,
+   "label": "101",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 111,
+   "label": "102",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 112,
+   "label": "103",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 113,
+   "label": "104",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 114,
+   "label": "105",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 115,
+   "label": "106",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 116,
+   "label": "107",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 117,
+   "label": "108",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 118,
+   "label": "109",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 119,
+   "label": "110",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 120,
+   "label": "111",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 121,
+   "label": "112",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 122,
+   "label": "113",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 123,
+   "label": "114",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 124,
+   "label": "115",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 125,
+   "label": "116",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 126,
+   "label": "117",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 127,
+   "label": "118",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 128,
+   "label": "119",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 129,
+   "label": "120",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 130,
+   "label": "121",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 131,
+   "label": "122",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 132,
+   "label": "123",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 133,
+   "label": "124",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 134,
+   "label": "125",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 393,
+   "n_words": 54,
+   "label_start": "i",
+   "label_end": "ii"
+  },
   {
    "id": "sec-000-biographical-sketch",
    "number": null,
@@ -298,8 +1893,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 1013,
-   "n_words": 163
+   "n_chars": 1007,
+   "n_words": 160,
+   "label_start": "ii",
+   "label_end": "iii"
   },
   {
    "id": "sec-001-acknowledgments",
@@ -308,8 +1905,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 590,
-   "n_words": 100
+   "n_chars": 587,
+   "n_words": 99,
+   "label_start": "iii",
+   "label_end": "iv"
   },
   {
    "id": "sec-002-abstract",
@@ -318,8 +1917,10 @@
    "level": 1,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 1348,
-   "n_words": 211
+   "n_chars": 1347,
+   "n_words": 211,
+   "label_start": "iv",
+   "label_end": "v"
   },
   {
    "id": "sec-003-contributors-and-funding-sources",
@@ -328,8 +1929,10 @@
    "level": 1,
    "page_start": 5,
    "page_end": 9,
-   "n_chars": 3387,
-   "n_words": 879
+   "n_chars": 3371,
+   "n_words": 874,
+   "label_start": "v",
+   "label_end": "ix"
   },
   {
    "id": "sec-004-list-of-figures",
@@ -338,8 +1941,10 @@
    "level": 1,
    "page_start": 9,
    "page_end": 10,
-   "n_chars": 775,
-   "n_words": 203
+   "n_chars": 773,
+   "n_words": 202,
+   "label_start": "ix",
+   "label_end": "1"
   },
   {
    "id": "sec-005-1-introduction",
@@ -347,198 +1952,414 @@
    "title": "Introduction",
    "level": 1,
    "page_start": 10,
-   "page_end": 34,
-   "n_chars": 27626,
-   "n_words": 5260
+   "page_end": 14,
+   "n_chars": 5467,
+   "n_words": 939,
+   "label_start": "1",
+   "label_end": "5"
   },
   {
-   "id": "sec-006-24-the-euler-maclaurin-formula",
+   "id": "sec-006-2-concentration-of-measure-results-and-other-nec",
+   "number": "2",
+   "title": "Concentration of Measure Results and other Necessary Background",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 42,
+   "n_words": 6,
+   "label_start": "5",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-007-21-talagrands-gaussian-concentration-of-measure",
+   "number": "2.1",
+   "title": "Talagrand's Gaussian Concentration of Measure Inequality",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 19,
+   "n_chars": 4676,
+   "n_words": 954,
+   "label_start": "5",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-008-22-talagrands-isoperimetric-inequality",
+   "number": "2.2",
+   "title": "Talagrand's Isoperimetric Inequality",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 28,
+   "n_chars": 10816,
+   "n_words": 2214,
+   "label_start": "10",
+   "label_end": "19"
+  },
+  {
+   "id": "sec-009-23-ledouxs-concentration-of-measure-on-reversibl",
+   "number": "2.3",
+   "title": "Ledoux's Concentration of Measure on Reversible Markov Chains",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 34,
+   "n_chars": 6632,
+   "n_words": 1320,
+   "label_start": "19",
+   "label_end": "25"
+  },
+  {
+   "id": "sec-010-24-the-euler-maclaurin-formula",
    "number": "2.4",
    "title": "The Euler-Maclaurin Formula",
    "level": 2,
    "page_start": 34,
    "page_end": 36,
-   "n_chars": 1657,
-   "n_words": 293
+   "n_chars": 1662,
+   "n_words": 303,
+   "label_start": "25",
+   "label_end": "27"
   },
   {
-   "id": "sec-007-31-background-for-first-result",
+   "id": "sec-011-3-random-operator-compressions",
+   "number": "3",
+   "title": "Random Operator Compressions",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 36,
+   "n_chars": 12,
+   "n_words": 1,
+   "label_start": "27",
+   "label_end": "27"
+  },
+  {
+   "id": "sec-012-31-background-for-first-result",
    "number": "3.1",
    "title": "Background for First Result",
    "level": 2,
    "page_start": 36,
-   "page_end": 41,
-   "n_chars": 7156,
-   "n_words": 1298
+   "page_end": 37,
+   "n_chars": 2345,
+   "n_words": 401,
+   "label_start": "27",
+   "label_end": "28"
   },
   {
-   "id": "sec-008-33-main-result",
+   "id": "sec-013-32-kacs-walk-on-son",
+   "number": "3.2",
+   "title": "Kac's Walk on SO(n)",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 41,
+   "n_chars": 4864,
+   "n_words": 951,
+   "label_start": "28",
+   "label_end": "32"
+  },
+  {
+   "id": "sec-014-33-main-result",
    "number": "3.3",
    "title": "Main Result",
    "level": 2,
    "page_start": 41,
-   "page_end": 47,
-   "n_chars": 6221,
-   "n_words": 1249
+   "page_end": 44,
+   "n_chars": 2570,
+   "n_words": 550,
+   "label_start": "32",
+   "label_end": "35"
   },
   {
-   "id": "sec-009-35-an-additional-application-the-length-of-the-l",
+   "id": "sec-015-34-kacs-model-coupled-to-a-thermostat",
+   "number": "3.4",
+   "title": "Kac's Model Coupled to a Thermostat",
+   "level": 2,
+   "page_start": 44,
+   "page_end": 47,
+   "n_chars": 3665,
+   "n_words": 736,
+   "label_start": "35",
+   "label_end": "38"
+  },
+  {
+   "id": "sec-016-35-an-additional-application-the-length-of-the-l",
    "number": "3.5",
    "title": "An Additional Application: The Length of the Longest Increasing Subsequence of a Random Walk Evolving under the Asymmetric Exclusion Process",
    "level": 2,
    "page_start": 47,
    "page_end": 55,
-   "n_chars": 10171,
-   "n_words": 2061
+   "n_chars": 10250,
+   "n_words": 2120,
+   "label_start": "38",
+   "label_end": "46"
   },
   {
-   "id": "sec-010-36-remarks",
+   "id": "sec-017-36-remarks",
    "number": "3.6",
    "title": "Remarks",
    "level": 2,
    "page_start": 55,
-   "page_end": 59,
-   "n_chars": 5752,
-   "n_words": 948
+   "page_end": 57,
+   "n_chars": 1145,
+   "n_words": 186,
+   "label_start": "46",
+   "label_end": "48"
   },
   {
-   "id": "sec-011-41-mixed-matrix-moments",
+   "id": "sec-018-4-mixed-matrix-moments-and-eigenvector-overlap-f",
+   "number": "4",
+   "title": "Mixed Matrix Moments and Eigenvector Overlap Functions of the Ginibre Ensemble",
+   "level": 1,
+   "page_start": 57,
+   "page_end": 60,
+   "n_chars": 4992,
+   "n_words": 830,
+   "label_start": "48",
+   "label_end": "51"
+  },
+  {
+   "id": "sec-019-41-mixed-matrix-moments",
    "number": "4.1",
    "title": "Mixed Matrix Moments",
    "level": 2,
-   "page_start": 59,
+   "page_start": 60,
    "page_end": 65,
-   "n_chars": 8374,
-   "n_words": 1433
+   "n_chars": 8123,
+   "n_words": 1470,
+   "label_start": "51",
+   "label_end": "56"
   },
   {
-   "id": "sec-012-42-the-expected-overlap-functions",
+   "id": "sec-020-42-the-expected-overlap-functions",
    "number": "4.2",
    "title": "The Expected Overlap Functions",
    "level": 2,
    "page_start": 65,
    "page_end": 67,
-   "n_chars": 2488,
-   "n_words": 494
+   "n_chars": 2545,
+   "n_words": 528,
+   "label_start": "56",
+   "label_end": "58"
   },
   {
-   "id": "sec-013-43-formulas-for-the-overlap-functions",
+   "id": "sec-021-43-formulas-for-the-overlap-functions",
    "number": "4.3",
    "title": "Formulas for the Overlap Functions",
    "level": 2,
    "page_start": 67,
-   "page_end": 93,
-   "n_chars": 33727,
-   "n_words": 6472
+   "page_end": 74,
+   "n_chars": 9966,
+   "n_words": 1852,
+   "label_start": "58",
+   "label_end": "65"
   },
   {
-   "id": "sec-014-47-summary-and-outlook",
+   "id": "sec-022-44-moments-and-constraints-on-the-overlap-functi",
+   "number": "4.4",
+   "title": "Moments and Constraints on the Overlap Functions",
+   "level": 2,
+   "page_start": 74,
+   "page_end": 83,
+   "n_chars": 11713,
+   "n_words": 2379,
+   "label_start": "65",
+   "label_end": "74"
+  },
+  {
+   "id": "sec-023-45-proposal-to-rigorously-approach-chalker-and-m",
+   "number": "4.5",
+   "title": "Proposal to Rigorously Approach Chalker and Mehlig's Result",
+   "level": 2,
+   "page_start": 83,
+   "page_end": 89,
+   "n_chars": 8042,
+   "n_words": 1721,
+   "label_start": "74",
+   "label_end": "80"
+  },
+  {
+   "id": "sec-024-46-invariance-of-the-perturbation-series-pnr",
+   "number": "4.6",
+   "title": "Invariance of the Perturbation Series PN(r)",
+   "level": 2,
+   "page_start": 89,
+   "page_end": 93,
+   "n_chars": 4309,
+   "n_words": 962,
+   "label_start": "80",
+   "label_end": "84"
+  },
+  {
+   "id": "sec-025-47-summary-and-outlook",
    "number": "4.7",
    "title": "Summary and Outlook",
    "level": 2,
    "page_start": 93,
    "page_end": 96,
-   "n_chars": 4265,
-   "n_words": 676
+   "n_chars": 4276,
+   "n_words": 676,
+   "label_start": "84",
+   "label_end": "87"
   },
   {
-   "id": "sec-015-5-mallows-random-permutations",
+   "id": "sec-026-5-mallows-random-permutations",
    "number": "5",
    "title": "Mallows Random Permutations",
    "level": 1,
    "page_start": 96,
-   "page_end": 104,
-   "n_chars": 6785,
-   "n_words": 1509
+   "page_end": 96,
+   "n_chars": 31,
+   "n_words": 4,
+   "label_start": "87",
+   "label_end": "87"
   },
   {
-   "id": "sec-016-52-the-mallows-measure",
+   "id": "sec-027-51-a-q-stirlings-formula",
+   "number": "5.1",
+   "title": "A q-Stirling's Formula",
+   "level": 2,
+   "page_start": 96,
+   "page_end": 104,
+   "n_chars": 6905,
+   "n_words": 1670,
+   "label_start": "87",
+   "label_end": "95"
+  },
+  {
+   "id": "sec-028-52-the-mallows-measure",
    "number": "5.2",
    "title": "The Mallows Measure",
    "level": 2,
    "page_start": 104,
    "page_end": 105,
-   "n_chars": 584,
-   "n_words": 110
+   "n_chars": 610,
+   "n_words": 121,
+   "label_start": "95",
+   "label_end": "96"
   },
   {
-   "id": "sec-017-53-fisher-yates-algorithm",
+   "id": "sec-029-53-fisher-yates-algorithm",
    "number": "5.3",
    "title": "Fisher-Yates Algorithm",
    "level": 2,
    "page_start": 105,
    "page_end": 110,
-   "n_chars": 6176,
-   "n_words": 1259
+   "n_chars": 6228,
+   "n_words": 1302,
+   "label_start": "96",
+   "label_end": "101"
   },
   {
-   "id": "sec-018-54-length-of-the-longest-increasing-subsequence",
+   "id": "sec-030-54-length-of-the-longest-increasing-subsequence",
    "number": "5.4",
    "title": "Length of the Longest Increasing Subsequence",
    "level": 2,
    "page_start": 110,
    "page_end": 112,
-   "n_chars": 2838,
-   "n_words": 490
+   "n_chars": 2891,
+   "n_words": 510,
+   "label_start": "101",
+   "label_end": "103"
   },
   {
-   "id": "sec-019-55-patience-sorting",
+   "id": "sec-031-55-patience-sorting",
    "number": "5.5",
    "title": "Patience Sorting",
    "level": 2,
    "page_start": 112,
    "page_end": 115,
    "n_chars": 4025,
-   "n_words": 785
+   "n_words": 794,
+   "label_start": "103",
+   "label_end": "106"
   },
   {
-   "id": "sec-020-56-four-square-problem",
+   "id": "sec-032-56-four-square-problem",
    "number": "5.6",
    "title": "Four Square Problem",
    "level": 2,
    "page_start": 115,
    "page_end": 122,
-   "n_chars": 6129,
-   "n_words": 1039
+   "n_chars": 6258,
+   "n_words": 1170,
+   "label_start": "106",
+   "label_end": "113"
   },
   {
-   "id": "sec-021-57-conclusion-and-outlook",
+   "id": "sec-033-57-conclusion-and-outlook",
    "number": "5.7",
    "title": "Conclusion and Outlook",
    "level": 2,
    "page_start": 122,
    "page_end": 127,
-   "n_chars": 4437,
-   "n_words": 1498
+   "n_chars": 3550,
+   "n_words": 545,
+   "label_start": "113",
+   "label_end": "118"
   },
   {
-   "id": "sec-022-bibliography",
+   "id": "sec-034-bibliography",
    "number": null,
    "title": "Bibliography",
    "level": 1,
    "page_start": 127,
    "page_end": 134,
-   "n_chars": 10986,
-   "n_words": 1520
+   "n_chars": 10916,
+   "n_words": 1471,
+   "label_start": "118",
+   "label_end": "125"
   }
  ],
  "diagnostics": {
-  "pages_without_text": 0,
+  "pages_without_text": 1,
   "likely_scanned": false,
   "toc_entries": 36,
-  "sections": 23,
-  "chars_total": 156510,
+  "toc_inferred_entries": 0,
+  "figure_entries": 6,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 2,
+    "items": [
+     "Process",
+     "Ginibre Ensemble"
+    ]
+   },
+   "found_not_listed": {
+    "count": 5,
+    "items": [
+     "2.3 Ledoux’s Concentration of Measure on Reversible",
+     "3.5 An Additional Application: The Length of the",
+     "1 Set a counting variable j to be equal to 1. Let n denote the length of the desired",
+     "3 If k = m, then append k to the end of the list L. Otherwise, insert m into L at",
+     "5 Increment i by 1. If i < n, go back to step 2. Otherwise, the algorithm terminates."
+    ]
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 36,
+  "chars_total": 157004,
+  "furniture_lines_stripped": 133,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "thesis_final_revised.tex",
    "tex_sections": 32,
-   "overlaid": 12,
+   "overlaid": 20,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
     "coverage": 0.5
    },
    "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
     {
      "id": "sec-000-biographical-sketch",
      "title": "Biographical Sketch",
@@ -570,126 +2391,211 @@
      "result": "no matching \\section"
     },
     {
-     "id": "sec-006-24-the-euler-maclaurin-formula",
-     "title": "The Euler-Maclaurin Formula",
+     "id": "sec-006-2-concentration-of-measure-results-and-other-nec",
+     "title": "Concentration of Measure Results and other Necessary Background",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-21-talagrands-gaussian-concentration-of-measure",
+     "title": "Talagrand's Gaussian Concentration of Measure Inequality",
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-22-talagrands-isoperimetric-inequality",
+     "title": "Talagrand's Isoperimetric Inequality",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-007-31-background-for-first-result",
-     "title": "Background for First Result",
-     "prose_ratio": 0.538,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-008-33-main-result",
-     "title": "Main Result",
-     "prose_ratio": 0.585,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-009-35-an-additional-application-the-length-of-the-l",
-     "title": "An Additional Application: The Length of the Longest Increasing Subsequence of a Random Walk Evolving under the Asymmetric Exclusion Process",
-     "prose_ratio": 0.984,
-     "coverage_ratio": 0.992,
+     "id": "sec-009-23-ledouxs-concentration-of-measure-on-reversibl",
+     "title": "Ledoux's Concentration of Measure on Reversible Markov Chains",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-010-36-remarks",
+     "id": "sec-010-24-the-euler-maclaurin-formula",
+     "title": "The Euler-Maclaurin Formula",
+     "prose_ratio": 0.954,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-3-random-operator-compressions",
+     "title": "Random Operator Compressions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-31-background-for-first-result",
+     "title": "Background for First Result",
+     "prose_ratio": 0.519,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-013-32-kacs-walk-on-son",
+     "title": "Kac's Walk on SO(n)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-33-main-result",
+     "title": "Main Result",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-34-kacs-model-coupled-to-a-thermostat",
+     "title": "Kac's Model Coupled to a Thermostat",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-35-an-additional-application-the-length-of-the-l",
+     "title": "An Additional Application: The Length of the Longest Increasing Subsequence of a Random Walk Evolving under the Asymmetric Exclusion Process",
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-017-36-remarks",
      "title": "Remarks",
-     "prose_ratio": 0.941,
+     "prose_ratio": 0.26,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-018-4-mixed-matrix-moments-and-eigenvector-overlap-f",
+     "title": "Mixed Matrix Moments and Eigenvector Overlap Functions of the Ginibre Ensemble",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-41-mixed-matrix-moments",
+     "title": "Mixed Matrix Moments",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-020-42-the-expected-overlap-functions",
+     "title": "The Expected Overlap Functions",
+     "prose_ratio": 0.99,
      "coverage_ratio": 0.972,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-011-41-mixed-matrix-moments",
-     "title": "Mixed Matrix Moments",
-     "prose_ratio": 1.0,
+     "id": "sec-021-43-formulas-for-the-overlap-functions",
+     "title": "Formulas for the Overlap Functions",
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-022-44-moments-and-constraints-on-the-overlap-functi",
+     "title": "Moments and Constraints on the Overlap Functions",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-023-45-proposal-to-rigorously-approach-chalker-and-m",
+     "title": "Proposal to Rigorously Approach Chalker and Mehlig's Result",
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-024-46-invariance-of-the-perturbation-series-pnr",
+     "title": "Invariance of the Perturbation Series PN(r)",
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-025-47-summary-and-outlook",
+     "title": "Summary and Outlook",
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-026-5-mallows-random-permutations",
+     "title": "Mallows Random Permutations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-027-51-a-q-stirlings-formula",
+     "title": "A q-Stirling's Formula",
+     "prose_ratio": 0.995,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-012-42-the-expected-overlap-functions",
-     "title": "The Expected Overlap Functions",
-     "prose_ratio": 1.0,
+     "id": "sec-028-52-the-mallows-measure",
+     "title": "The Mallows Measure",
+     "prose_ratio": 0.968,
      "coverage_ratio": 0.968,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-013-43-formulas-for-the-overlap-functions",
-     "title": "Formulas for the Overlap Functions",
-     "prose_ratio": 0.534,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-014-47-summary-and-outlook",
-     "title": "Summary and Outlook",
-     "prose_ratio": 0.612,
-     "coverage_ratio": 1.0,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-015-5-mallows-random-permutations",
-     "title": "Mallows Random Permutations",
-     "result": "no matching \\section"
-    },
-    {
-     "id": "sec-016-52-the-mallows-measure",
-     "title": "The Mallows Measure",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-017-53-fisher-yates-algorithm",
+     "id": "sec-029-53-fisher-yates-algorithm",
      "title": "Fisher-Yates Algorithm",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-018-54-length-of-the-longest-increasing-subsequence",
+     "id": "sec-030-54-length-of-the-longest-increasing-subsequence",
      "title": "Length of the Longest Increasing Subsequence",
-     "prose_ratio": 1.0,
+     "prose_ratio": 0.938,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-019-55-patience-sorting",
+     "id": "sec-031-55-patience-sorting",
      "title": "Patience Sorting",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-020-56-four-square-problem",
+     "id": "sec-032-56-four-square-problem",
      "title": "Four Square Problem",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.966,
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-021-57-conclusion-and-outlook",
+     "id": "sec-033-57-conclusion-and-outlook",
      "title": "Conclusion and Outlook",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
-     "result": "overlaid",
-     "converter": "pandoc"
+     "coverage_ratio": 0.357,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
-     "id": "sec-022-bibliography",
+     "id": "sec-034-bibliography",
      "title": "Bibliography",
      "result": "no matching \\section"
     }

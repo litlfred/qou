@@ -32,7 +32,7 @@ LaTeX label: `conj:categorical-neutrality-saturated-shells`
 
 ## References
 
-- [manuscript] braids-and-knots / categorical-neutrality-saturated-shells
+- [leitner2026] braids-and-knots / categorical-neutrality-saturated-shells
 - [mathas1999] https://doi.org/10.1090/ulect/015
 -/
 
@@ -45,7 +45,7 @@ open QOU.BraidKnot.ShellNeutrality
 /-- Build the abstract `QOU.YoungDiagram` from a Mathlib `YoungDiagram`
     by extracting the multiset of contents `c.2 - c.1`. The data field
     `n` is the cardinality of the Mathlib cell set. -/
--- Ref: [manuscript] conj:categorical-neutrality-saturated-shells
+-- Ref: [leitner2026] conj:categorical-neutrality-saturated-shells
 def fromMathlib (Y : _root_.YoungDiagram) :
     QOU.BraidKnot.ShellNeutrality.YoungDiagram where
   n := Y.cells.card
@@ -86,7 +86,7 @@ class TransposeBridge where
     If `Y.transpose = Y`, then the bridged diagram has zero charge.
     Combines the bridge axiom with the abstract proved theorem
     `kappa_zero_of_self_conjugate`. -/
--- Ref: [manuscript] conj:categorical-neutrality-saturated-shells
+-- Ref: [leitner2026] conj:categorical-neutrality-saturated-shells
 theorem fromMathlib_kappa_zero_of_transpose_eq
     [B : TransposeBridge]
     (Y : _root_.YoungDiagram) (h : Y.transpose = Y) :
@@ -119,7 +119,7 @@ class ReverseBridge where
       kappa (fromMathlib Y) = 0 → Y.transpose = Y
 
 /-- **Full iff via the bridge axioms.** -/
--- Ref: [manuscript] conj:categorical-neutrality-saturated-shells
+-- Ref: [leitner2026] conj:categorical-neutrality-saturated-shells
 theorem fromMathlib_kappa_zero_iff_transpose_eq
     [TransposeBridge] [ReverseBridge]
     (Y : _root_.YoungDiagram) :

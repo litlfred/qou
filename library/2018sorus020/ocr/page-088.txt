@@ -1,0 +1,41 @@
+that the complex C*(M, p) is acyclic. Then tor(M, p) is a regular function on X.
+Moreover its vanishing order at a point x € X is given by the length of the torsion
+module H?(M,p),, where v is the valuation associated to x on the function field
+k(X). In particular it vanishes if and only if H'(M, p) is non trivial, where p is the
+residual representation p : ™(M) £s SLo(O,) 24 SLo(k).
+
+The main tool of the proof is the following theorem already used in Section
+Recall that a complex of O,-modules C* such that C* @ k(X) is an exact complex is
+
+said rationally exact, and that the length of a torsion O,-module ©,0,/(t") equals
+
+So ng.
+
+Theorem 3.2.1. Theorem 30] Let x € X a character, and v a valuation
+on k(X) associated to y. If C* is a rationally exact based complex of O,-modules
+with basis {c'}, then
+
+v(tor(C* @ k(X), {e"})) = S>(-1)f length(H#*(C"))
+k
+Proof of Theorem|[3.0. 1} Since the complex C*(M, p) is acyclic, the theorem above
+applies. Now notice that the H*(M, p), are torsion modules. As a submodule of a free
+module, H°(M, p), is trivial. Then Proposition|1.4.2jimplies that no character y € X
+is central, in particular H°(M, f) is trivial. But the Universal Coefficients Theorem
+provide the isomorphisms H°(M,p) ~ Ho(M,p)*, and Ho(M,p) ~ Ho(M,p), ®
+k, thus we have proved that Ho(M,p), is trivial. Again by the U.C. Theorem we
+have Ext(H!(M, p).,Ov) ~ Ho(M,p)» = {0}, and we conclude that H1(M,p), ~
+Ext(H1!(M, p),,Ov) = {0} because its a torsion module. In conclusion we have
+
+proved the first part of the theorem
+v(tor(M, p)) = length(H?(M, p),)
+
+Now H?(M,p), being trivial is equivalent to H?(M,/) being trivial which is the
+same that H!(M, /) being trivial, and the theorem is proved. oO
+
+3.2.2 Some computations and examples
+
+We compute the torsion function on a series of examples of twist knots, and deter-
+
+mine its zeros on the character variety. A presentation of the fundamental group of
+
+87

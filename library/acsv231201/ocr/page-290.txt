@@ -1,0 +1,47 @@
+272 Smooth point asymptotics
+
+Definition 9.33. Let X be a smooth, oriented real 2k-manifold, and let y, and
+Y2 be two smooth, oriented k-cycles on X, intersecting transversely at finitely
+many points %;,...,Z,,. The signed intersection number of y, and y2 is the
+integer
+
+m
+
+#1, 2) = » sgn(axj),
+
+jl
+where sgn(aj) = 1 if the oriented bases B; and B» for the tangent spaces T,(y;)
+and T,,(y2) form (in this order) a positively oriented basis for the tangent space
+T,(X), and sgn(a;) = —1 otherwise.
+
+The following construction can be found in [GP74] or [BJ82, pages 151-
+152].
+
+Proposition 9.34. Let X be an oriented real manifold of dimension 2k and let a
+and B be smooth oriented compact cycles of dimension k. Then generic pertur-
+bations of a and f will intersect transversely in a finite number of points [GP74,
+Section 2.3], and the resulting signed intersection number does not depend on
+the generic perturbation. In fact, the signed intersection number is an invari-
+ant [GP74, Section 3.3] of the homology classes [a] and [B] in H;(X). oO
+
+Let h be a (not necessarily proper) smooth Morse function on a complex
+k-manifold X with finitely many critical points #1,..., 2, listed in order of
+decreasing height h(a) > --- > h(a»), such that all critical points have middle
+index k. For each j < m, let y; be a smooth cycle agreeing with the stable
+manifold of the (upward) gradient flow of h in a neighborhood of a; having
+x; as its highest point. Similarly, let y/ be a smooth cycle agreeing with the
+unstable manifold of the gradient flow of / in a neighborhood of x; with x;
+as its lowest point. The y; are absolute cycles representing attachments in the
+Morse filtration at « ; (described in Appendix C). Similarly, the y/ are absolute
+cycles representing attachments in the reverse Morse filtration at #;, obtained
+by replacing h by —/h.
+
+Proposition 9.35. Let L be the subspace of H,(X) generated over the complex
+numbers by {{yj] : j < m} and let L* denote the dual space to L. Then {ly] :
+J < mj is a basis for L* and the signed intersection number #(y;,y!) is a
+nonsingular pairing whose representing matrix M is upper triangular.
+
+Proof When i = j the cycles y; and y/ represent the stable and unstable
+manifolds of the gradient flow for a Morse function at the critical point aj.
+Morse functions are quadratically nondegenerate, therefore locally these inter-
+sect transversely at a single point, and they cannot intersect anywhere else due

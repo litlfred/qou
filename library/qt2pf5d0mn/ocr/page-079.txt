@@ -1,0 +1,43 @@
+Section 4.2 Invariance under change of ordering
+
+any 2-simpler a € T*, ®(dr) = ber, and that the following diagram commutes.
+
+Vie(T) 2+ Ver(T’)
+
+Q Z(e) (4.22)
+Q Z(c) oe(T’)4
+
+oeT4 Cc
+In particular, this implies that Zp(M;T) = Zp(M;T').
+
+Proof: Fix a coloring F' = (g, f) on T. For each simplex o € T, denote by o’ the
+
+corresponding simplex o, in T’.
+
+For each colored 1-simplex a, identify a’ with s,(a). That is, color a’ with sa(ga).
+
+For each colored 2-simplex 8 = (([0], 8[1], 6[2];C(G)), arbitrarily choose a represen-
+tative §3 for sg, and identify 8’ with 5,(8), namely, transport the colors on §(8) to
+according to their relative ordering. Lemma guarantees the coloring on common
+edges of different 2-simplices are consistent, which is equal to the coloring already given
+above. Denote the resulting coloring on T’ by F’ = (g’, f’). The map F' +> F” gives a
+one-to-one correspondence between the set of colorings on TJ and the set of colorings on
+T’.
+
+Since the dual functor and the G-action preserve the quantum dimension of objects,
+it is clear from the definition of the F,—action on S? that dja) = Apr(a')-
+
+For each colored 4-simplex o, arbitrarily choose a representative §, for s,, and let
+
+5.(0) =G. By Lemma [f.2.8] the following diagram commutes:
+
+(a0) *, ve (a6)
+|e o) (4.23)
+Z()(c)
+Cc
+
+Note that here we cannot identify ¢ with o’ directly since the color on a sub 2-simplex
+
+of ¢ may not be the same as that on the corresponding sub 2-simplex of o’. However, it is
+
+70

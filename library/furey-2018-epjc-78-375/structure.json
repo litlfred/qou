@@ -1,0 +1,919 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "furey-2018-epjc-78-375",
+ "source": {
+  "file": "furey-2018-epjc-78-375.pdf",
+  "sha256": "4258820f00014b03fad4359342cb826dec3729f95fcbd4265461c8fb092cf248",
+  "bytes": 568260,
+  "pages": 12,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T10:15:56Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": "10.1140/epjc/s10052-018-5844-7",
+  "title": "as a symmetry of division algebraic ladder operators",
+  "authors_raw": null,
+  "title_lines": [
+   "Regular Article - Theoretical Physics",
+   "SU(3)C × SU(2)L × U(1)Y (×U(1)X) as a symmetry of division",
+   "algebraic ladder operators",
+   "C. Furey1,2,a"
+  ],
+  "abstract": "We demonstrate a model which captures certain attractive features of SU(5) theory, while providing a pos- sible escape from proton decay. In this paper we show how ladder operators arise from the division algebras R, C, H, and O. From the SU(n) symmetry of these ladder operators, we then demonstrate a model which has much structural sim- ilarity to Georgi and Glashow’s SU(5) grand uniﬁed theory. However, in this case, the transitions leading to proton decay are expected to be blocked, given that they coincide with presumably forbidden transformations which would incor- rectly mix distinct algebraic actions. As a result, we ﬁnd that we are left with Gsm = SU(3)C × SU(2)L × U(1)Y /Z6. Finally, we point out that if U(n) ladder symmetries are used in place of SU(n), it may then be possible to ﬁnd this same Gsm = SU(3)C × SU(2)L × U(1)Y /Z6, together with an extra U(1)X symmetry, related to B−L.",
+  "docinfo": {
+   "Title": "as a symmetry of division algebraic ladder operators",
+   "Author": "C. Furey ",
+   "Producer": "iText® 5.3.5 ©2000-2012 1T3XT BVBA (AGPL-version)",
+   "Creator": "Springer",
+   "CreationDate": "D:20180511180624+05'30'"
+  },
+  "title_raw": "Regular Article - Theoretical Physics SU(3)C × SU(2)L × U(1)Y (×U(1)X) as a symmetry of division algebraic ladder operators C. Furey1,2,a",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "as a symmetry of division algebraic ladder operators",
+   "heading": "SU ( 3 ) C × SU ( 2 ) L × U ( 1 ) Y ( × U ( 1 ) X ) as a symmetry of division algebraic ladder operators",
+   "outline": "SU(3)CtimesSU(2)LtimesU(1)Y( timesU(1)X ) as a symmetry of division algebraic ladder operators",
+   "text": "Regular Article - Theoretical Physics SU(3)C × SU(2)L × U(1)Y (×U(1)X) as a symmetry of division algebraic ladder operators C. Furey1,2,a",
+   "corroborated_by": [
+    "heading",
+    "outline",
+    "text",
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_correction": {
+   "title": "SU(3)_C x SU(2)_L x U(1)_Y (x U(1)_X) as a symmetry of division algebraic ladder operators",
+   "basis": "arXiv API record 1806.00612v1 (C. Furey; Eur. Phys. J. C 78:375, 2018); the extracted title dropped its leading math",
+   "corrected_on": "2026-11-15"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "SU(3)CtimesSU(2)LtimesU(1)Y( timesU(1)X ) as a symmetry of division algebraic ladder operators",
+   "page": 1,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
+  },
+  {
+   "level": 2,
+   "title": "Abstract",
+   "page": 1,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
+  },
+  {
+   "level": 2,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
+  },
+  {
+   "level": 2,
+   "title": "The Georgi–Glashow model",
+   "page": 2,
+   "source": "outline",
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
+  },
+  {
+   "level": 3,
+   "title": "SU(5) acting on ΛmathbbC5",
+   "page": 2,
+   "source": "outline",
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
+  },
+  {
+   "level": 3,
+   "title": "Breaking SU(5)",
+   "page": 3,
+   "source": "outline",
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
+  },
+  {
+   "level": 3,
+   "title": "SU(5) summary",
+   "page": 3,
+   "source": "outline",
+   "number": "2.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
+  },
+  {
+   "level": 2,
+   "title": "mathbbCotimesmathbbH: spin and chirality",
+   "page": 3,
+   "source": "outline",
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
+  },
+  {
+   "level": 3,
+   "title": "Introduction to mathbbCotimesmathbbH",
+   "page": 3,
+   "source": "outline",
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
+  },
+  {
+   "level": 3,
+   "title": "Clifford algebraic structure",
+   "page": 4,
+   "source": "outline",
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
+  },
+  {
+   "level": 3,
+   "title": "Right-handed Weyl spinors as minimal left ideals",
+   "page": 4,
+   "source": "outline",
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
+  },
+  {
+   "level": 3,
+   "title": "Left-handed Weyl spinors as minimal left ideals",
+   "page": 4,
+   "source": "outline",
+   "number": "3.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
+  },
+  {
+   "level": 3,
+   "title": "Complex conjugation and charge conjugation",
+   "page": 5,
+   "source": "outline",
+   "number": "3.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
+  },
+  {
+   "level": 3,
+   "title": "Dirac algebra",
+   "page": 5,
+   "source": "outline",
+   "number": "3.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
+  },
+  {
+   "level": 3,
+   "title": "mathbbCotimesmathbbH summary",
+   "page": 5,
+   "source": "outline",
+   "number": "3.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
+  },
+  {
+   "level": 2,
+   "title": "mathbbCotimesmathbbO: colour",
+   "page": 5,
+   "source": "outline",
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
+  },
+  {
+   "level": 3,
+   "title": "Introduction to mathbbCotimesmathbbO",
+   "page": 5,
+   "source": "outline",
+   "number": "4.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
+  },
+  {
+   "level": 3,
+   "title": "Clifford algebraic structure",
+   "page": 6,
+   "source": "outline",
+   "number": "4.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
+  },
+  {
+   "level": 3,
+   "title": "Quarks and leptons as minimal left ideals",
+   "page": 7,
+   "source": "outline",
+   "number": "4.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
+  },
+  {
+   "level": 3,
+   "title": "SU(3) ladder symmetry",
+   "page": 7,
+   "source": "outline",
+   "number": "4.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
+  },
+  {
+   "level": 3,
+   "title": "Minimal left ideals in the matrix formalism",
+   "page": 7,
+   "source": "outline",
+   "number": "4.5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
+  },
+  {
+   "level": 3,
+   "title": "Towards weak isospin",
+   "page": 7,
+   "source": "outline",
+   "number": "4.6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
+  },
+  {
+   "level": 3,
+   "title": "mathbbCotimesmathbbO summary",
+   "page": 8,
+   "source": "outline",
+   "number": "4.7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
+  },
+  {
+   "level": 2,
+   "title": "mathbbCl(4): weak isospin",
+   "page": 8,
+   "source": "outline",
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
+  },
+  {
+   "level": 3,
+   "title": "Clifford algebraic structure",
+   "page": 8,
+   "source": "outline",
+   "number": "5.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
+  },
+  {
+   "level": 3,
+   "title": "Leptons as minimal right ideals",
+   "page": 8,
+   "source": "outline",
+   "number": "5.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
+  },
+  {
+   "level": 3,
+   "title": "SU(2) ladder symmetry",
+   "page": 9,
+   "source": "outline",
+   "number": "5.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
+  },
+  {
+   "level": 3,
+   "title": "mathbbCl(4) summary",
+   "page": 9,
+   "source": "outline",
+   "number": "5.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
+  },
+  {
+   "level": 2,
+   "title": "All together: ladder symmetries to SU(3)CtimesSU(2)LtimesU(1)Y / mathbbZ6",
+   "page": 9,
+   "source": "outline",
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
+  },
+  {
+   "level": 3,
+   "title": "Clifford algebraic structure",
+   "page": 9,
+   "source": "outline",
+   "number": "6.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
+  },
+  {
+   "level": 3,
+   "title": "One generation as minimal ideals",
+   "page": 10,
+   "source": "outline",
+   "number": "6.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
+  },
+  {
+   "level": 3,
+   "title": "From SU(5) ladder symmetry to SU(3)CtimesSU(2)LtimesU(1)Y / mathbbZ6",
+   "page": 10,
+   "source": "outline",
+   "number": "6.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
+  },
+  {
+   "level": 3,
+   "title": "Summary",
+   "page": 11,
+   "source": "outline",
+   "number": "6.4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
+  },
+  {
+   "level": 2,
+   "title": "Outlook",
+   "page": 11,
+   "source": "outline",
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgements",
+   "page": 11,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
+  },
+  {
+   "level": 2,
+   "title": "References",
+   "page": 11,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 84,
+   "n_words": 6,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "sec-000-su3ctimessu2ltimesu1y-timesu1x-as-a-symmetry-of",
+   "number": null,
+   "title": "SU(3)CtimesSU(2)LtimesU(1)Y( timesU(1)X ) as a symmetry of division algebraic ladder operators",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 329,
+   "n_words": 48,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "sec-001-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 903,
+   "n_words": 156,
+   "label_start": "1",
+   "label_end": "1"
+  },
+  {
+   "id": "sec-002-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 6662,
+   "n_words": 1049,
+   "label_start": "1",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-003-2-the-georgiglashow-model",
+   "number": "2",
+   "title": "The Georgi–Glashow model",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 0,
+   "n_words": 0,
+   "label_start": "2",
+   "label_end": "2"
+  },
+  {
+   "id": "sec-004-21-su5-acting-on-λmathbbc5",
+   "number": "2.1",
+   "title": "SU(5) acting on ΛmathbbC5",
+   "level": 3,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 2088,
+   "n_words": 326,
+   "label_start": "2",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-005-22-breaking-su5",
+   "number": "2.2",
+   "title": "Breaking SU(5)",
+   "level": 3,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 1254,
+   "n_words": 286,
+   "label_start": "3",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-006-23-su5-summary",
+   "number": "2.3",
+   "title": "SU(5) summary",
+   "level": 3,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2421,
+   "n_words": 422,
+   "label_start": "3",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-007-32-clifford-algebraic-structure",
+   "number": "3.2",
+   "title": "Clifford algebraic structure",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 632,
+   "n_words": 129,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-008-33-right-handed-weyl-spinors-as-minimal-left-ide",
+   "number": "3.3",
+   "title": "Right-handed Weyl spinors as minimal left ideals",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1936,
+   "n_words": 367,
+   "label_start": "4",
+   "label_end": "4"
+  },
+  {
+   "id": "sec-009-34-left-handed-weyl-spinors-as-minimal-left-idea",
+   "number": "3.4",
+   "title": "Left-handed Weyl spinors as minimal left ideals",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 1760,
+   "n_words": 336,
+   "label_start": "4",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-010-35-complex-conjugation-and-charge-conjugation",
+   "number": "3.5",
+   "title": "Complex conjugation and charge conjugation",
+   "level": 3,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 994,
+   "n_words": 206,
+   "label_start": "5",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-011-36-dirac-algebra",
+   "number": "3.6",
+   "title": "Dirac algebra",
+   "level": 3,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 2980,
+   "n_words": 549,
+   "label_start": "5",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-012-42-clifford-algebraic-structure",
+   "number": "4.2",
+   "title": "Clifford algebraic structure",
+   "level": 3,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 3336,
+   "n_words": 748,
+   "label_start": "6",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-013-43-quarks-and-leptons-as-minimal-left-ideals",
+   "number": "4.3",
+   "title": "Quarks and leptons as minimal left ideals",
+   "level": 3,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 875,
+   "n_words": 177,
+   "label_start": "7",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-014-44-su3-ladder-symmetry",
+   "number": "4.4",
+   "title": "SU(3) ladder symmetry",
+   "level": 3,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1329,
+   "n_words": 250,
+   "label_start": "7",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-015-45-minimal-left-ideals-in-the-matrix-formalism",
+   "number": "4.5",
+   "title": "Minimal left ideals in the matrix formalism",
+   "level": 3,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 672,
+   "n_words": 154,
+   "label_start": "7",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-016-46-towards-weak-isospin",
+   "number": "4.6",
+   "title": "Towards weak isospin",
+   "level": 3,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 2766,
+   "n_words": 477,
+   "label_start": "7",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-017-5-mathbbcl4-weak-isospin",
+   "number": "5",
+   "title": "mathbbCl(4): weak isospin",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 224,
+   "n_words": 36,
+   "label_start": "8",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-018-51-clifford-algebraic-structure",
+   "number": "5.1",
+   "title": "Clifford algebraic structure",
+   "level": 3,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 1307,
+   "n_words": 263,
+   "label_start": "8",
+   "label_end": "8"
+  },
+  {
+   "id": "sec-019-52-leptons-as-minimal-right-ideals",
+   "number": "5.2",
+   "title": "Leptons as minimal right ideals",
+   "level": 3,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 882,
+   "n_words": 173,
+   "label_start": "8",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-020-53-su2-ladder-symmetry",
+   "number": "5.3",
+   "title": "SU(2) ladder symmetry",
+   "level": 3,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 2557,
+   "n_words": 450,
+   "label_start": "9",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-021-6-all-together-ladder-symmetries-to-su3ctimessu2",
+   "number": "6",
+   "title": "All together: ladder symmetries to SU(3)CtimesSU(2)LtimesU(1)Y / mathbbZ6",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 380,
+   "n_words": 61,
+   "label_start": "9",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-022-61-clifford-algebraic-structure",
+   "number": "6.1",
+   "title": "Clifford algebraic structure",
+   "level": 3,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 1189,
+   "n_words": 222,
+   "label_start": "9",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-023-62-one-generation-as-minimal-ideals",
+   "number": "6.2",
+   "title": "One generation as minimal ideals",
+   "level": 3,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 1037,
+   "n_words": 257,
+   "label_start": "10",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-024-63-from-su5-ladder-symmetry-to-su3ctimessu2ltime",
+   "number": "6.3",
+   "title": "From SU(5) ladder symmetry to SU(3)CtimesSU(2)LtimesU(1)Y / mathbbZ6",
+   "level": 3,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 2771,
+   "n_words": 538,
+   "label_start": "10",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-025-64-summary",
+   "number": "6.4",
+   "title": "Summary",
+   "level": 3,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 722,
+   "n_words": 114,
+   "label_start": "11",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-026-7-outlook",
+   "number": "7",
+   "title": "Outlook",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 1415,
+   "n_words": 221,
+   "label_start": "11",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-027-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 926,
+   "n_words": 134,
+   "label_start": "11",
+   "label_end": "11"
+  },
+  {
+   "id": "sec-028-references",
+   "number": null,
+   "title": "References",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 7612,
+   "n_words": 1085,
+   "label_start": "11",
+   "label_end": "12"
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 36,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 30,
+  "chars_total": 52043,
+  "furniture_lines_stripped": 34
+ }
+}

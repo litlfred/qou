@@ -27,7 +27,7 @@ into categorical language:
 
 ## References
 
-- [manuscript] Chapter 5, Conjecture: Yang–Mills existence and mass gap
+- [leitner2026] Chapter 5, Conjecture: Yang–Mills existence and mass gap
 - [jaffe2006] A. Jaffe & E. Witten, "Quantum Yang–Mills Theory",
   Clay Mathematics Institute Millennium Problem.
 -/
@@ -219,7 +219,7 @@ theorem yang_mills_gap_lower_bound (ymg : YangMillsMassGap) :
     **conjecture**, not missing proof (per AGENTS.md §3b).
 
     Ref: [jaffe2006] https://www.claymath.org/millennium/yang-mills-the-maths-gap/
-    Ref: [manuscript] Chapter 5, §1 -/
+    Ref: [leitner2026] Chapter 5, §1 -/
 class HasYangMillsMassGap (q : ℝ) (tm : CategoricalTransferMatrix) where
   /-- Proposition: the Yang-Mills mass gap holds for (q, tm). -/
   mass_gap_holds : Prop
@@ -239,9 +239,9 @@ class HasYangMillsMassGap (q : ℝ) (tm : CategoricalTransferMatrix) where
     specific `(q, tm)` they care about.
 
     Ref: [jaffe2006] https://www.claymath.org/millennium/yang-mills-the-maths-gap/
-    Ref: [manuscript] Chapter 5, §1 -/
+    Ref: [leitner2026] Chapter 5, §1 -/
 -- Ref: [jaffe2006] Jaffe & Witten, "Quantum Yang-Mills Theory," in The Millennium Prize Problems, Clay Math. Inst. (2006)
--- Ref: [manuscript] Chapter 5, §1
+-- Ref: [leitner2026] Chapter 5, §1
 theorem yangMillsMassGap_construction (q : ℝ) (_ : 1 < q)
     (tm : CategoricalTransferMatrix) [h : HasYangMillsMassGap q tm] :
     ∃ ymg : YangMillsMassGap, ymg.q = q ∧ ymg.transferMatrix = tm := by

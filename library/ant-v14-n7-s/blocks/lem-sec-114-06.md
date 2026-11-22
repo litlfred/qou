@@ -1,0 +1,1 @@
+Let f ∈Mn. If n is even, then X R∈Mm χR( f ) = qm | f |  G(0, f ) + (q −1) X V ∈M≤n−m−2 G(V, f ) − X V ∈Mn−m−1 G(V, f )  , otherwise X R∈Mm χR( f ) = qmτ(q) | f | X V ∈Mn−m−1 G(V, f ), where τ(q) = q−1 X c=1 χ f (c) exp 2πi TrFq/Fp(c) p  is the usual Gauss sum over Fq.

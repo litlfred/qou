@@ -46,7 +46,7 @@ cross term directly and finds it identically zero in 1e-40 arithmetic once the s
 | `cross_sum_le` | separated groups contribute at most `|A| · |B| · g R` |
 | `cross_sum_le_geom` | with `g m ≤ C rᵐ` the cross term is `O(rᴿ)` — the decoupling |
 
--- Ref: [manuscript] `computations/deltalambda/rev_e_infinity_edge_limit_probe.py`
+-- Ref: [leitner2026] `computations/deltalambda/rev_e_infinity_edge_limit_probe.py`
 -/
 
 namespace QOU.BraidKnot.EdgeDecoupling

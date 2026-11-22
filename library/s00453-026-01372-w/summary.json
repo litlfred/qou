@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "s00453-026-01372-w",
  "source_sha256": "98b569eff84fb489",
- "brief": "Algorithmica (2026) 88:21 Concentration of Submodular Functions and Read-k Families Under Negative Dependence Sharmila Duppala 1 · George Z. Li 2 · Juan Luque 1 · Aravind Srinivasan 1 · — We study",
- "extended": "**Algorithmica (2026) 88:21 Concentration of Submodular Functions and Read-k Families Under Negative Dependence Sharmila Duppala 1 · George Z. Li 2 · Juan Luque 1 · Aravind Srinivasan 1 ·**\n\n19 pp, 11 sections.\n\n**Abstract.** We study the question of whether submodular functions of random variables satisfying various notions of negative dependence satisfy Chernoff-like concentration inequal- ities. We prove such a concentration inequality for the lower tail when the random variables satisfy negative association or negative regression, partially resolving an open problem raised in ([ 1]). Previous work showed such concentration results for random variables that come from speciﬁc dependent-rounding algorithms ([ 2, 3]). We discuss some applications of our results to combinatorial optimization and beyond. We also show applications to the concentration of read- k families [4] under certain forms of negative dependence; we further show a simpliﬁed proof of the entropy-method approach of [4].\n\n**Outline.** Concentration of Submodular Functions and Read; Abstract; 1 Introduction; 2 Preliminaries; 2.1 Notions of Negative Dependence; 2.2 Submodular Functions; 3.1 1-Negative Association and Weak Negative R; 3.2 Proof of Submodular Concentration; 3.3 Concentration of read-k families; Acknowledgements; References",
+ "brief": "Concentration of Submodular Functions and Read-k Families Under Negative Dependence — We study the question of whether submodular functions of random variables satisfying various notions of negative",
+ "extended": "**Concentration of Submodular Functions and Read-k Families Under Negative Dependence**\n\n19 pp, 13 sections.\n\n**Abstract.** We study the question of whether submodular functions of random variables satisfying various notions of negative dependence satisfy Chernoff-like concentration inequal- ities. We prove such a concentration inequality for the lower tail when the random variables satisfy negative association or negative regression, partially resolving an open problem raised in ([1]). Previous work showed such concentration results for random variables that come from speciﬁc dependent-rounding algorithms ([2, 3]). We discuss some applications of our results to combinatorial optimization and beyond. We also show applications to the concentration of read-k families [4] under certain forms of negative dependence; we further show a simpliﬁed proof of the entropy-method approach of [4].\n\n**Outline.** Front matter; Concentration of Submodular Functions and Read; Abstract; 1 Introduction; 2 Preliminaries; 2.1 Notions of Negative Dependence; 2.2 Submodular Functions; 3 Submodular Chernoff Bounds; 3.1 1-Negative Association and Weak Negative R; 3.2 Proof of Submodular Concentration; 3.3 Concentration of read-k families; Acknowledgements; References",
  "tokens": {
   "brief": 49,
-  "extended": 330
+  "extended": 315
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-concentration-of-submodular-functions-and-read-k",
    "title": "Concentration of Submodular Functions and Read-k Families Under Negative Dependence",
@@ -40,27 +45,32 @@
    "pages": "6-7"
   },
   {
-   "id": "sec-006-31-1-negative-association-and-weak-negative-regr",
+   "id": "sec-006-3-submodular-chernoff-bounds",
+   "title": "Submodular Chernoff Bounds",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-007-31-1-negative-association-and-weak-negative-regr",
    "title": "1-Negative Association and Weak Negative Regression",
    "pages": "7-7"
   },
   {
-   "id": "sec-007-32-proof-of-submodular-concentration",
+   "id": "sec-008-32-proof-of-submodular-concentration",
    "title": "Proof of Submodular Concentration",
    "pages": "7-10"
   },
   {
-   "id": "sec-008-33-concentration-of-read-k-families",
+   "id": "sec-009-33-concentration-of-read-k-families",
    "title": "Concentration of read-k families",
    "pages": "10-12"
   },
   {
-   "id": "sec-009-acknowledgements",
+   "id": "sec-010-acknowledgements",
    "title": "Acknowledgements",
    "pages": "12-17"
   },
   {
-   "id": "sec-010-references",
+   "id": "sec-011-references",
    "title": "References",
    "pages": "17-19"
   }

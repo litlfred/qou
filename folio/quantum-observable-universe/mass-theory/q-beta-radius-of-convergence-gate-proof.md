@@ -1,8 +1,9 @@
-## Proof
+## Evidence
+
+Steps 1 and 2 are proved statements about generating functions. Steps 3 and 4 explain what the finite window of coefficients does and does not show.
 
 Write $c_k$ for the pinned ladder coefficients at the substrate
-anchor (canonical SDP extraction,
-`qbeta-decay-sdp-extended-ck.witness.json`),
+anchor (canonical SDP extraction),
 $g(u) := \sum_{k \ge 2} c_k u^k$ for the log-correction generating
 function, and $u_0 := u_{\text{substrate}} \approx 0.00852$.
 
@@ -39,51 +40,51 @@ constant $C \ne 0$. Two consequences:
    dominant complex-conjugate pair would instead make $c_k \rho^k$
    oscillate with the argument of $r_{\max}$.
 
-Within the rational class forced by Step 1, these finite-order
-signatures are therefore *decisive*: flatness of $c_k \rho^k$
-together with convergence of the ratio identifies a unique simple
-dominant pole at $u = \rho$.
+Both consequences are statements about the limit $k \to \infty$.
+They identify a unique simple dominant pole at $u = \rho$ only when
+the whole sequence is known.
 
-**Step 3 — locating the canonical pole.** The pinned
-$c_2, \ldots, c_{10}$ exhibit exactly the simple-pole signature at
-$\rho = u_0$ (table below): the ratio $c_{k+1}/c_k$ converges to
-$1/u_0 \approx 117.4$ by $k = 10$; the normalized magnitudes
+**Step 3 — what the window shows.** The pinned convention-C
+coefficients $c_2, \ldots, c_{10}$ show the simple-pole signature at
+$\rho = u_0$ (table below). The ratio $c_{k+1}/c_k$ approaches
+$1/u_0 \approx 117.4$ by $k = 10$. The normalised magnitudes
 $c_k\,u_0^k$ for $k \in \{8, 9, 10\}$ agree at
-$\approx 2.118 \times 10^{-13}$ with $0.02\,\%$ spread — flat to
-$2 \times 10^{-4}$ per step, excluding $\mu \ge 2$ (which forces
-$\ge 12\,\%$ growth) and a dominant complex pair (which forces
-oscillation); and the log-slope fit of $\ln(c_k u_0^k)$ against
-$\ln k$ gives exponent $\beta \approx 0.999$ against the calibration
-$c_k \rho^k \sim k^{\beta-1}$, forcing the integer $\mu = \beta = 1$.
-Hence the canonical generating function has a unique dominant simple
-pole at $u = u_0$, within the resolution of the $k \le 10$ window.
-The location is anchor-stable: re-pinning from the proton to the muon
-anchor shifts $u_0$ by only $2.10 \times 10^{-7}$ relative (210 ppb,
-table below).
+$\approx 2.118 \times 10^{-13}$ with $0.02\,\%$ spread. A log-slope fit
+of $\ln(c_k u_0^k)$ against $\ln k$ gives $\beta \approx 0.999$, close
+to the simple-pole value $\beta = 1$.
 
-**Step 4 — gate direction and tolerance.** Let $F$ be a candidate
+These are finite-window measurements, and they do not determine the
+pole. For any rational $h$, the series $g(u) + u^{11} h(u)$ has the
+same coefficients $c_2, \ldots, c_{10}$ and its poles include those of
+$h$, which can be placed anywhere. So the window is consistent with a
+unique simple dominant pole at $u_0$, and it is equally consistent
+with other pole locations and orders. That is why the statement is a
+conjecture. The window's signature is also anchor-stable: re-pinning
+from the proton to the muon anchor moves $u_0$ by
+$2.10 \times 10^{-7}$ relative (210 ppb).
+
+**Step 4 — the test, assuming the conjecture.** Let $F$ be a candidate
 generating coefficients $\tilde c_k$ by the same recursion mechanism,
-with rational $\tilde g(u) = \sum_k \tilde c_k u^k$ (Step 1 applies
-verbatim) and nearest pole $\tilde u_0$. Suppose
-$|\tilde u_0 - u_0|/u_0 > 10^{-6}$. If $\tilde c_k = c_k$ for all
-sufficiently large $k$, then $\tilde g - g$ would be a polynomial, so
-$\tilde g$ and $g$ would have identical poles — contradicting
-$\tilde u_0 \ne u_0$. Hence $\tilde c_k \ne c_k$ for arbitrarily
-large $k$: the candidate does not generate the canonical ladder, and
-is refuted at the fibre level, before any canonical-anchor sweep at
-$q_0$. The $10^{-6}$ tolerance is calibrated from below by the
-cross-anchor swing: the true kernel's pole location moves by only
-$2.10 \times 10^{-7}$ under the proton–muon re-pin, so the true
-kernel always passes (no false refutation), while the tolerance
-remains nearly $5\times$ above that swing so that anchor choice can
-never trip the gate. From above, it is far sharper than the
-few-percent near-match band delegated to the $\S 4(d)$
-direction-sanity gate — the two gates are complementary by
-construction. $\blacksquare$
+with rational $\tilde g(u) = \sum_k \tilde c_k u^k$ (Step 1 applies)
+and nearest pole $\tilde u_0 \ne u_0$. If $\tilde c_k = c_k$ for all
+sufficiently large $k$, then $\tilde g - g$ is a polynomial, so
+$\tilde g$ and $g$ have the same poles. Hence, if $g$ has its dominant
+pole at $u_0$ as conjectured, the candidate does not reproduce the
+ladder for all large $k$. This implication is proved; its premise is
+the conjecture.
 
-## canonical anchor (verified)
+The operational threshold
+$|\tilde u_0 - u_0|/u_0 > 10^{-6}$ is a chosen value. It sits about
+$5\times$ above the measured proton–muon shift of $u_0$, so anchor
+choice alone does not trip the test, and it is much sharper than the
+one-decade window used by the $\S 4(d)$
+[direction-sanity gate](q-beta-direction-sanity-gate.md). A candidate
+that fails it is inconsistent with this conjecture, which is a
+scope-limited negative, not a structural refutation.
 
-From the canonical SDP extraction at $q_0 = 1.10997858\ldots$:
+## Measured window (convention-C frame)
+
+From the SDP extraction (convention C) at $q_0 = 1.10997858\ldots$:
 
 | quantity | value |
 |---|---|

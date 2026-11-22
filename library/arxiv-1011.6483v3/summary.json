@@ -2,70 +2,110 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1011.6483v3",
  "source_sha256": "7a425e51860c37a4",
- "brief": "DERIVED HIGHER HOCHSCHILD HOMOLOGY — W e study the higher Hochschild chain functor, factorizatio n alge- bras and their relationship with topological chiral homolo gy.",
- "extended": "**DERIVED HIGHER HOCHSCHILD HOMOLOGY**\n\n*TOPOLOGICAL CHIRAL HOMOLOGY ANDF ACTORIZATION*\n\n60 pp, 12 sections.\n\n**Abstract.** W e study the higher Hochschild chain functor, factorizatio n alge- bras and their relationship with topological chiral homolo gy. To this end, we emphasize that the higher Hochschild complex is a ( ∞ ,1)-functor sSet∞ × CDGA ∞ where sSet∞ and CDGA ∞ are the ( ∞ ,1)-categories of simplicial sets and commutative diﬀerential graded algebras, and give an axiomatic char- acterization of this functor. From the axioms, we deduce sev eral properties and computational tools for this functor. W e study the relation ship between the higher Hochschild functor and factorization algebras by sh owing that, in good cases, the Hochschild functor determines a constant commut ative factoriza- tion algebra. Conversely, every constant commutative fact orization algebra is naturally equivalent to a Hochschild chain factorization a lgebra.\n\n**Outline.** 1 Introduction; 2 Preliminary definitions and notation; 2.1 Simplicial sets; 3 Derived higher Hochschild functor; 3.1 Naive axiomatic approach to higher Hochsch; 3.3 Pointed simplicial sets and modules; 4.3 Locally constant factorization algebras an; 5 Relationship with topological chiral homolog; 5.2 Locality axiom and the equivalence of topo; 5.3 Relation with the Blob complex; 5.5 Some applications; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: The Hochschild chains lift as a functor of (∞, 1)-categories CH :\n- Theorem 2: The Hochschild chains is the unique bifunctor sSet∞×CDGA ∞→\n- Theorem 4: Let X be a topological space with a factorizing good cover and A be\n- Theorem 5: LetM be a manifold endowed with a framing of M×Dk and A be a\n- Theorem 6: LetM be a manifold of dimension n.\n- Theorem 4.1.1: ]) of algebras over the usual operad of singular chains on the lit-",
+ "brief": "DERIVED HIGHER HOCHSCHILD HOMOLOGY, TOPOLOGICAL CHIRAL HOMOLOGY AND FACTORIZATION ALGEBRAS — We study the higher Hochschild chain functor, factorization alge- bras and their relationship with",
+ "extended": "**DERIVED HIGHER HOCHSCHILD HOMOLOGY, TOPOLOGICAL CHIRAL HOMOLOGY AND FACTORIZATION ALGEBRAS**\n\n*GRÉGORY GINOT, THOMAS TRADLER, AND MAHMOUD ZEINALIAN*\n\n60 pp, 20 sections.\n\n**Abstract.** We study the higher Hochschild chain functor, factorization alge- bras and their relationship with topological chiral homology. To this end, we emphasize that the higher Hochschild complex is a (∞, 1)-functor sSet∞× CDGA∞where sSet∞and CDGA∞are the (∞, 1)-categories of simplicial sets and commutative diﬀerential graded algebras, and give an axiomatic char- acterization of this functor. From the axioms, we deduce several properties and computational tools for this functor. We study the relationship between the higher Hochschild functor and factorization algebras by showing that, in good cases, the Hochschild functor determines a constant commutative factoriza- tion algebra. Conversely, every constant commutative factorization algebra is naturally equivalent to a Hochschild chain factorization algebra.\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminary definitions and notation; 2.1 Simplicial sets; 2.2 Commutative Differential Graded Algebras; 2.3 Dwyer-Kan localization and (,1)-categories; 3 Derived higher Hochschild functor; 3.1 Naive axiomatic approach to higher Hochsch; 3.2 Higher Hochschild as an (, 1)-functor; 3.3 Pointed simplicial sets and modules; 4 Factorization algebras and derived Hochschil; 4.2 (Pre)Factorization algebras; 4.3 Locally constant factorization algebras an; 5 Relationship with topological chiral homolog; 5.1 Review of topological chiral homology à la; 5.2 Locality axiom and the equivalence of topo; 5.3 Relation with the Blob complex; 5.4 Topological chiral homology as a factoriza",
  "tokens": {
-  "brief": 41,
-  "extended": 468
+  "brief": 47,
+  "extended": 430
  },
  "sections": [
   {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
+  {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-6"
+   "pages": "2-6"
   },
   {
    "id": "sec-001-2-preliminary-definitions-and-notation",
    "title": "Preliminary definitions and notation",
-   "pages": "6-6"
+   "pages": "6-7"
   },
   {
    "id": "sec-002-21-simplicial-sets",
    "title": "Simplicial sets",
-   "pages": "6-10"
+   "pages": "7-8"
   },
   {
-   "id": "sec-003-3-derived-higher-hochschild-functor",
+   "id": "sec-003-22-commutative-differential-graded-algebras",
+   "title": "Commutative Differential Graded Algebras",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-004-23-dwyer-kan-localization-and-1-categories",
+   "title": "Dwyer-Kan localization and (,1)-categories",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-005-3-derived-higher-hochschild-functor",
    "title": "Derived higher Hochschild functor",
    "pages": "10-10"
   },
   {
-   "id": "sec-004-31-naive-axiomatic-approach-to-higher-hochschild",
+   "id": "sec-006-31-naive-axiomatic-approach-to-higher-hochschild",
    "title": "Naive axiomatic approach to higher Hochschild homology",
-   "pages": "10-22"
+   "pages": "10-15"
   },
   {
-   "id": "sec-005-33-pointed-simplicial-sets-and-modules",
+   "id": "sec-007-32-higher-hochschild-as-an-1-functor",
+   "title": "Higher Hochschild as an (, 1)-functor",
+   "pages": "15-22"
+  },
+  {
+   "id": "sec-008-33-pointed-simplicial-sets-and-modules",
    "title": "Pointed simplicial sets and modules",
-   "pages": "22-37"
+   "pages": "22-25"
   },
   {
-   "id": "sec-006-43-locally-constant-factorization-algebras-and-e",
+   "id": "sec-009-4-factorization-algebras-and-derived-hochschild",
+   "title": "Factorization algebras and derived Hochschild functor over spaces",
+   "pages": "25-28"
+  },
+  {
+   "id": "sec-010-42-prefactorization-algebras",
+   "title": "(Pre)Factorization algebras",
+   "pages": "28-37"
+  },
+  {
+   "id": "sec-011-43-locally-constant-factorization-algebras-and-e",
    "title": "Locally constant factorization algebras and En-algebras",
    "pages": "37-40"
   },
   {
-   "id": "sec-007-5-relationship-with-topological-chiral-homology",
+   "id": "sec-012-5-relationship-with-topological-chiral-homology",
    "title": "Relationship with topological chiral homology",
+   "pages": "40-40"
+  },
+  {
+   "id": "sec-013-51-review-of-topological-chiral-homology-à-la-lu",
+   "title": "Review of topological chiral homology à la Lurie",
    "pages": "40-43"
   },
   {
-   "id": "sec-008-52-locality-axiom-and-the-equivalence-of-topolog",
+   "id": "sec-014-52-locality-axiom-and-the-equivalence-of-topolog",
    "title": "Locality axiom and the equivalence of topological chiral homology with higher Hochschild functor for CDGAs",
    "pages": "43-47"
   },
   {
-   "id": "sec-009-53-relation-with-the-blob-complex",
+   "id": "sec-015-53-relation-with-the-blob-complex",
    "title": "Relation with the Blob complex",
-   "pages": "47-55"
+   "pages": "47-49"
   },
   {
-   "id": "sec-010-55-some-applications",
+   "id": "sec-016-54-topological-chiral-homology-as-a-factorizatio",
+   "title": "Topological chiral homology as a factorization algebra",
+   "pages": "49-55"
+  },
+  {
+   "id": "sec-017-55-some-applications",
    "title": "Some applications",
    "pages": "55-59"
   },
   {
-   "id": "sec-011-references",
+   "id": "sec-018-references",
    "title": "References",
    "pages": "59-60"
   }
@@ -74,8 +114,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

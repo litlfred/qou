@@ -1,0 +1,43 @@
+464 T. Ohtsuki (Editor)
+
+X if there is a map p: X — Aut(A) satisfying that p(x « y) = p(y)~!p(x)p(y)
+for any 2,y € X. For simplicity, we often write p(x)*!a as xt!a omitting p.
+
+Let Ch (X; A) be as before. We give the coboundary operators by
+a f(x,y) =u" (F(@) + af (y) — f(y) - Fe*y),
+dog(x,y,z) = (y* 2) ‘g(a, 2) — 2-"g(a,y) + (y* 2) *((e* 2) — 1) g(y, 2)
+— g(a *y,z) + g(a * z,y * 2),
+for f € C(x ;A) and g€ C3(X ; A). We define the second quandle cohomol-
+ogy group by A(X; A) = (kernel d2)/(image d1).
+
+Problem 5.8 Compute H3(X; A) for each X-module A.
+
+Remark This cohomology group might be isomorphic to the cohomology
+group of a quandle space of X (see a remark on Problem 5.4) with coefficients
+in the local system corresponding to the X-module A.
+
+For an X-module A, each a € HZ (X; A) gives an extension A — Y > X,
+where Y = A x X, which forms a quandle with the binary operation given by
+(a1, 21) * (a2, 22) = (ay "(a1 + x1a2 — a2) + O(a, 22), 01 * 2) using a 2-cocycle
+@ representing a.
+
+Problem 5.9 Let the notation be as above. Then, extending the definition of
+the quandle cocycle invariant, define a knot invariant associated with a, which
+is, roughly speaking, an invariant obtained by counting representations of a
+knot quandle Q(K) to X with information whether each representation can
+lift to a representation Q(K) + Y.
+
+5.5 Quantum quandles
+Problem 5.10 (M. Polyak) Define a quantum quandle.
+
+Remark A quantum group is a quantization of a group, in the sense that
+it can be regarded as a non-commutative perturbation of a (certain) function
+algebra on a group. It is a problem to formulate an appropriate quantization
+of a quandle.
+
+5.6 Rack (co)homology
+
+(C. Rourke, B. Sanderson) A rack has the same definition as a quandle, except
+that axiom (1) is omitted. Quandles are thus a special class of racks. There is
+
+Geometry & Topology Monographs, Volume 4 (2002)

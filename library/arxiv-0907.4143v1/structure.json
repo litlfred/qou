@@ -8,10 +8,10 @@
   "pages": 14,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "math_source": "latex",
-  "mtime": null,
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,18 +21,31 @@
    "stamp_date": "23 Jul 2009"
   },
   "doi": null,
-  "title": "Soft and Supersoft X-ray Sources in Symbiotic Stars1",
-  "authors_raw": "Chunhua Zhua,b, Guoliang L\u00fcb, Zhaojun Wanga,b and",
+  "title": "Soft and Supersoft X-ray Sources in Symbiotic Stars 1",
+  "authors_raw": "Chunhua Zhua,b, Guoliang Lüb, Zhaojun Wanga,b and",
   "title_lines": [
    "Soft and Supersoft X-ray Sources in Symbiotic",
    "Stars1"
   ],
-  "abstract": "Assuming that soft X-ray sources in symbiotic stars result from strong thermonu- clear runaways, and supersoft X-ray sources from weak thermonuclear runaways or steady hydrogen burning symbiotic stars, we investigate the Galactic soft and supersoft X-ray sources in symbiotic stars by means of population synthesis. The Galactic occurrence rates of soft X-ray sources and supersoft X-ray sources are from \u223c2 to 20 yr\u22121, and \u223c2 to 17 yr\u22121, respectively. The numbers of X-ray sources in symbiotic stars range from 2390 to 6120. We simulate the distribution of X-ray sources over orbital periods, masses and mass-accretion rates of white dwarfs. The agreement with observations is reasonable.",
+  "abstract": "Assuming that soft X-ray sources in symbiotic stars result from strong thermonu- clear runaways, and supersoft X-ray sources from weak thermonuclear runaways or steady hydrogen burning symbiotic stars, we investigate the Galactic soft and supersoft X-ray sources in symbiotic stars by means of population synthesis. The Galactic occurrence rates of soft X-ray sources and supersoft X-ray sources are from ∼2 to 20 yr−1, and ∼2 to 17 yr−1, respectively. The numbers of X-ray sources in symbiotic stars range from 2390 to 6120. We simulate the distribution of X-ray sources over orbital periods, masses and mass-accretion rates of white dwarfs. The agreement with observations is reasonable.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "LaTeX with hyperref package",
    "CreationDate": "D:20210906105223-04'00'"
-  }
+  },
+  "title_raw": "Soft and Supersoft X-ray Sources in Symbiotic Stars1",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Soft and Supersoft X-ray Sources in Symbiotic Stars 1",
+   "outline": "Introduction",
+   "text": "Soft and Supersoft X-ray Sources in Symbiotic Stars1",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Soft and Supersoft X-ray Sources in Symbiotic Stars1"
  },
  "toc": [
   {
@@ -40,67 +53,302 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "The model",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 2,
    "title": "Symbiotic stars",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "X-ray sources",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Basic parameters of the Monte Carlo simulation",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 1,
    "title": "Results",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Population of X-ray sources",
    "page": 6,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Properties of X-ray sources",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 1,
    "title": "Conclusions",
    "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Number distributions of X-ray sources in the Galactic SySs as a function of orbital periods (all numbers are normalized to 1). The solid, dashed and dotted lines represent SSs, SSSs from weak symbiotic novae and from steady hydrogen burning ‘ordinary’ SySs, respectively",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "9"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Number distributions of X-ray sources in the Galactic SySs as a function of WD mass (all numbers are normalized to 1). The solid, dashed and dotted lines represent SSs, SSSs from weak symbiotic novae and steady hydrogen burning ‘ordinary’ SySs, respectively",
+   "page": 10,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "10"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Gray-scale maps of WD’s mass vs. orbital period distributions for SSs and SSSs in SySs for case 1. The gradations of gray-scale correspond to the regions where the number density of systems is, respectively, within 1 – 1/2, 1/2 – 1/4, 1/4 – 1/8, 1/8 – 0 of the maximum of",
+   "page": 11,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Number distributions of X-ray sources in the Galactic SySs as a function of the mass accretion rate of WD (all numbers are normalized to 1). The solid, dashed and dotted lines represent SSs, SSSs from weak symbiotic novae and from steady hydrogen burning ‘ordinary’ SySs, respectively",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "12"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1128,
+   "n_words": 161,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
@@ -108,8 +356,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 2835,
-   "n_words": 464
+   "n_chars": 2846,
+   "n_words": 464,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
    "id": "sec-001-the-model",
@@ -118,8 +368,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 154,
-   "n_words": 27
+   "n_chars": 150,
+   "n_words": 26,
+   "label_start": "2",
+   "label_end": "3"
   },
   {
    "id": "sec-002-symbiotic-stars",
@@ -128,8 +380,10 @@
    "level": 2,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 3097,
-   "n_words": 538
+   "n_chars": 3107,
+   "n_words": 538,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
    "id": "sec-003-x-ray-sources",
@@ -138,28 +392,34 @@
    "level": 2,
    "page_start": 4,
    "page_end": 5,
-   "n_chars": 2177,
-   "n_words": 363
+   "n_chars": 3202,
+   "n_words": 550,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
-   "id": "sec-004-results",
-   "number": null,
-   "title": "Results",
-   "level": 1,
-   "page_start": 5,
-   "page_end": 5,
-   "n_chars": 937,
-   "n_words": 171
-  },
-  {
-   "id": "sec-005-basic-parameters-of-the-monte-carlo-simulation",
+   "id": "sec-004-basic-parameters-of-the-monte-carlo-simulation",
    "number": null,
    "title": "Basic parameters of the Monte Carlo simulation",
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 2182,
-   "n_words": 379
+   "n_chars": 1421,
+   "n_words": 239,
+   "label_start": "5",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-005-results",
+   "number": null,
+   "title": "Results",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 799,
+   "n_words": 144,
+   "label_start": "6",
+   "label_end": "6"
   },
   {
    "id": "sec-006-population-of-x-ray-sources",
@@ -168,8 +428,10 @@
    "level": 2,
    "page_start": 6,
    "page_end": 9,
-   "n_chars": 5664,
-   "n_words": 1015
+   "n_chars": 5682,
+   "n_words": 1015,
+   "label_start": "6",
+   "label_end": "9"
   },
   {
    "id": "sec-007-properties-of-x-ray-sources",
@@ -178,8 +440,10 @@
    "level": 2,
    "page_start": 9,
    "page_end": 12,
-   "n_chars": 4138,
-   "n_words": 724
+   "n_chars": 4156,
+   "n_words": 724,
+   "label_start": "9",
+   "label_end": "12"
   },
   {
    "id": "sec-008-conclusions",
@@ -188,21 +452,31 @@
    "level": 1,
    "page_start": 12,
    "page_end": 14,
-   "n_chars": 3875,
-   "n_words": 658
+   "n_chars": 3878,
+   "n_words": 656,
+   "label_start": "12",
+   "label_end": "14"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 9,
-  "sections": 9,
-  "chars_total": 25059,
+  "toc_inferred_entries": 0,
+  "figure_entries": 4,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 10,
+  "chars_total": 26369,
+  "furniture_lines_stripped": 13,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "ms.tex",
    "tex_sections": 9,
-   "overlaid": 7,
+   "overlaid": 8,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -210,10 +484,15 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-introduction",
      "title": "Introduction",
      "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "coverage_ratio": 0.781,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -229,29 +508,31 @@
      "id": "sec-002-symbiotic-stars",
      "title": "Symbiotic stars",
      "prose_ratio": 0.978,
-     "coverage_ratio": 0.944,
+     "coverage_ratio": 0.937,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-003-x-ray-sources",
      "title": "X-ray sources",
-     "prose_ratio": 0.775,
-     "coverage_ratio": 0.935,
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.937,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-004-results",
-     "title": "Results",
-     "prose_ratio": 0.164,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-005-basic-parameters-of-the-monte-carlo-simulation",
+     "id": "sec-004-basic-parameters-of-the-monte-carlo-simulation",
      "title": "Basic parameters of the Monte Carlo simulation",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.598,
+     "coverage_ratio": 0.911,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-results",
+     "title": "Results",
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.952,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -267,16 +548,16 @@
      "id": "sec-007-properties-of-x-ray-sources",
      "title": "Properties of X-ray sources",
      "prose_ratio": 0.955,
-     "coverage_ratio": 0.968,
+     "coverage_ratio": 0.962,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-008-conclusions",
      "title": "Conclusions",
-     "prose_ratio": 0.982,
-     "coverage_ratio": 0.31,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.309,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

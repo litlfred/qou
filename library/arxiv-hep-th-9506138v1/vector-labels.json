@@ -1,0 +1,2080 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-hep-th-9506138v1",
+  "pages": [
+    {
+      "page": 5,
+      "rotation": 0,
+      "drawings": 13,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Fig. 1: Kruskal diagram of static black hole solution."
+      ],
+      "labels": [
+        {
+          "text": "singularity",
+          "bbox": [
+            288.57,
+            92.77,
+            319.86,
+            103.54
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.68
+          ]
+        },
+        {
+          "text": "event horizon",
+          "bbox": [
+            304.15,
+            119.54,
+            339.34,
+            158.4
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            7.68
+          ]
+        },
+        {
+          "text": "Fig. 1: Kruskal diagram of static black hole solution.",
+          "bbox": [
+            108.0,
+            272.47,
+            389.88,
+            284.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2. The Nice-Slice Argument",
+          "bbox": [
+            72.0,
+            318.07,
+            241.71,
+            330.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Consider the process by which a collection of particles of total mass M gravitation-",
+          "bbox": [
+            95.88,
+            347.91,
+            540.28,
+            359.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "ally collapses to form a black hole. In the absence of any net angular momentum, the",
+          "bbox": [
+            72.0,
+            368.31,
+            540.05,
+            380.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "black hole becomes approximately spherically symmetric in a short time after the collapse",
+          "bbox": [
+            72.0,
+            388.71,
+            540.04,
+            400.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "process. As long as we are only considering processes with lifetimes short compared to",
+          "bbox": [
+            72.0,
+            409.11,
+            539.97,
+            421.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "G2M 3, we can approximate the geometry of the system by the Schwarzschild solution.",
+          "bbox": [
+            72.0,
+            427.88,
+            540.1,
+            441.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "The nice-slice argument begins by introducing a family of Cauchy surfaces which foliate",
+          "bbox": [
+            72.0,
+            449.91,
+            540.17,
+            461.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "the geometry. The surfaces should avoid regions of strong spacetime curvature and yet",
+          "bbox": [
+            72.0,
+            470.31,
+            539.98,
+            482.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "cut through the infalling matter and the outgoing Hawking radiation so that both sets of",
+          "bbox": [
+            72.0,
+            490.71,
+            540.07,
+            502.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "particles have low energy in the local frame of the slice. Also, in order to ensure that short",
+          "bbox": [
+            72.0,
+            511.11,
+            540.0,
+            523.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "distance physics does not creep in to the description through the choice of coordinates, we",
+          "bbox": [
+            72.0,
+            531.51,
+            540.04,
+            543.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "require that the slices be everywhere smooth, with small extrinsic curvature compared to",
+          "bbox": [
+            72.0,
+            551.91,
+            539.99,
+            563.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "any microscopic scale. For convenience, we will choose surfaces that agree with surfaces",
+          "bbox": [
+            72.0,
+            572.31,
+            539.78,
+            584.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "of constant Schwarzschild time far from the black hole. Such a family of surfaces will",
+          "bbox": [
+            72.0,
+            592.71,
+            540.1,
+            604.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "henceforth be designated “nice slices”. While it is seldom spelled out, the existence of",
+          "bbox": [
+            72.0,
+            613.11,
+            540.06,
+            625.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "such a set of surfaces is implicitly assumed in much of the existing literature on black hole",
+          "bbox": [
+            72.0,
+            633.51,
+            540.06,
+            645.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "evaporation. The ﬁrst explicit construction of nice slices that we are aware of was carried",
+          "bbox": [
+            72.0,
+            653.91,
+            540.04,
+            665.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "out by Wald [13].",
+          "bbox": [
+            72.0,
+            674.31,
+            163.19,
+            686.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "To construct an example of a family of nice slices, we begin with the Schwarzschild",
+          "bbox": [
+            95.88,
+            695.43,
+            539.7,
+            707.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "black hole in Kruskal-Szekeres coordinates, as shown in ﬁg. 1. These coordinates are related",
+          "bbox": [
+            72.0,
+            715.83,
+            540.03,
+            727.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            303.0,
+            744.51,
+            308.98,
+            756.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 6,
+      "rotation": 0,
+      "drawings": 22,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Fig. 2: A family of nice slices."
+      ],
+      "labels": [
+        {
+          "text": "Fig. 2: A family of nice slices.",
+          "bbox": [
+            108.0,
+            272.47,
+            269.36,
+            284.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "to the usual Schwarzschild coordinates r and t by the transformation",
+          "bbox": [
+            72.0,
+            315.03,
+            433.87,
+            326.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "r",
+          "bbox": [
+            317.88,
+            336.75,
+            323.27,
+            348.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "er/2GM ,",
+          "bbox": [
+            366.0,
+            339.87,
+            410.0,
+            356.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "−UV = 16G2M 2 \u0010",
+          "bbox": [
+            206.64,
+            339.96,
+            305.1,
+            384.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "\u0011",
+          "bbox": [
+            356.88,
+            339.96,
+            364.02,
+            375.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2GM −1",
+          "bbox": [
+            306.6,
+            344.91,
+            356.86,
+            373.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "(2.1)",
+          "bbox": [
+            515.4,
+            355.83,
+            539.97,
+            367.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "−V/U = et/2GM .",
+          "bbox": [
+            202.08,
+            364.23,
+            293.84,
+            389.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "The singularity is at UV = 16G2M 2, and the event horizon is the surface U = 0.",
+          "bbox": [
+            72.0,
+            396.44,
+            495.33,
+            410.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "We ﬁrst construct a spacelike surface composed of two pieces joined smoothly at the",
+          "bbox": [
+            95.88,
+            417.03,
+            540.05,
+            428.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "surface U = V . The ﬁrst piece is the hyperbola which satisﬁes the condition UV = R2 for",
+          "bbox": [
+            72.0,
+            431.55,
+            540.01,
+            447.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "V < U. The constant R is assumed to be large by comparison with any microscopic scale,",
+          "bbox": [
+            72.0,
+            454.83,
+            539.96,
+            466.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "but should not be so large that the surface is anywhere near the singularity. Later, we",
+          "bbox": [
+            72.0,
+            473.79,
+            540.05,
+            485.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "will choose R to be ﬁxed and send M →∞. The second piece of the nice slice is deﬁned",
+          "bbox": [
+            72.0,
+            492.75,
+            539.79,
+            513.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "by the line satisfying U + V = 2R for V > U. The resulting surface is asymptotic to the",
+          "bbox": [
+            72.0,
+            511.71,
+            540.04,
+            523.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "surface deﬁned by t = 0.",
+          "bbox": [
+            72.0,
+            530.55,
+            199.64,
+            542.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "The nice slice we have constructed can be pushed forward and backward in time by",
+          "bbox": [
+            95.88,
+            549.51,
+            539.96,
+            561.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "using the symmetry under the boost-like operations",
+          "bbox": [
+            72.0,
+            568.47,
+            343.14,
+            580.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "U →U ′ = Ue−t/4GM ,",
+          "bbox": [
+            247.8,
+            591.03,
+            364.4,
+            616.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "(2.2)",
+          "bbox": [
+            515.4,
+            607.23,
+            539.97,
+            619.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "V →V ′ = V et/4GM .",
+          "bbox": [
+            247.56,
+            613.71,
+            357.2,
+            639.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "Since the nice slices are asymptotic to surfaces of constant Schwarzschild time, they can",
+          "bbox": [
+            72.0,
+            646.11,
+            540.05,
+            658.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "be parametrized by t. The full set of nice slices can then be written",
+          "bbox": [
+            72.0,
+            665.07,
+            426.77,
+            677.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "UV = R2 ,",
+          "bbox": [
+            273.96,
+            687.51,
+            329.48,
+            704.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "V < et/2GMU ,",
+          "bbox": [
+            355.44,
+            690.2,
+            433.28,
+            704.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "(2.3)",
+          "bbox": [
+            515.4,
+            703.83,
+            539.97,
+            715.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "et/4GMU + e−t/4GMV = 2R ,",
+          "bbox": [
+            178.08,
+            713.0,
+            330.08,
+            727.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "V > et/2GMU ,",
+          "bbox": [
+            356.04,
+            713.0,
+            433.88,
+            727.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            303.0,
+            744.51,
+            308.98,
+            756.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 23,
+      "rotation": 0,
+      "drawings": 5,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Fig. 3: String diagram for four-point amplitude."
+      ],
+      "labels": [
+        {
+          "text": "1",
+          "bbox": [
+            238.31,
+            78.75,
+            242.35,
+            87.82
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Italic"
+          ],
+          "sizes": [
+            9.08
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            387.03,
+            83.0,
+            391.07,
+            92.07
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Italic"
+          ],
+          "sizes": [
+            9.08
+          ]
+        },
+        {
+          "text": ">",
+          "bbox": [
+            218.38,
+            85.8,
+            227.46,
+            91.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            9.08
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            239.65,
+            130.19,
+            243.69,
+            139.27
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Italic"
+          ],
+          "sizes": [
+            9.08
+          ]
+        },
+        {
+          "text": "σ",
+          "bbox": [
+            221.48,
+            131.84,
+            226.35,
+            145.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            9.08
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            227.21,
+            132.86,
+            230.23,
+            139.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic"
+          ],
+          "sizes": [
+            6.81
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            386.69,
+            133.16,
+            390.73,
+            142.24
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "Times-Italic"
+          ],
+          "sizes": [
+            9.08
+          ]
+        },
+        {
+          "text": "σ",
+          "bbox": [
+            301.99,
+            177.8,
+            306.86,
+            191.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Symbol"
+          ],
+          "sizes": [
+            9.08
+          ]
+        },
+        {
+          "text": "0",
+          "bbox": [
+            307.96,
+            178.35,
+            310.99,
+            185.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic"
+          ],
+          "sizes": [
+            6.81
+          ]
+        },
+        {
+          "text": ">",
+          "bbox": [
+            340.09,
+            178.73,
+            344.81,
+            187.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Helvetica"
+          ],
+          "sizes": [
+            9.08
+          ]
+        },
+        {
+          "text": "Fig. 3: String diagram for four-point amplitude.",
+          "bbox": [
+            108.0,
+            204.43,
+            364.48,
+            216.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "It was stated in Appendix A that M (1)(1, 2; γ) vanishes unless |γ⟩is a single string state.",
+          "bbox": [
+            72.0,
+            244.76,
+            539.96,
+            266.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "Thus we can perform the sum, using the earlier results (A.9) and (A.11). This leads to a",
+          "bbox": [
+            72.0,
+            265.23,
+            540.0,
+            277.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "sum of nine terms. Any one of these terms can be isolated by integrating the expression",
+          "bbox": [
+            72.0,
+            283.95,
+            539.93,
+            295.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "against appropriate functions of the longitudinal momenta, so they cannot cancel one",
+          "bbox": [
+            72.0,
+            302.79,
+            540.03,
+            314.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "another. We shall present the calculation for only one of those terms, the term in which",
+          "bbox": [
+            72.0,
+            321.51,
+            539.91,
+            333.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "αr > 0 for all r:",
+          "bbox": [
+            72.0,
+            340.35,
+            154.88,
+            354.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "C(2)(4; 3; 2; 1) =",
+          "bbox": [
+            92.76,
+            363.68,
+            176.71,
+            377.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "Z x+",
+          "bbox": [
+            128.52,
+            383.72,
+            151.95,
+            425.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI7",
+            "CMR5"
+          ],
+          "sizes": [
+            5.98,
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "Z x+",
+          "bbox": [
+            180.96,
+            383.72,
+            204.38,
+            425.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI7",
+            "CMR5"
+          ],
+          "sizes": [
+            5.98,
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "(B.4)",
+          "bbox": [
+            512.88,
+            385.83,
+            539.97,
+            397.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            145.8,
+            391.09,
+            149.87,
+            397.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR5"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            198.24,
+            391.09,
+            202.31,
+            397.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR5"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "dx′′+ ⟨0|Φa(4)Φa(3)V1acc(x′+)V1aac(x′′+)Φc(1)Φc(2)|0⟩.",
+          "bbox": [
+            207.6,
+            392.43,
+            492.32,
+            417.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "g2",
+          "bbox": [
+            114.96,
+            395.12,
+            125.96,
+            409.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "dx′+",
+          "bbox": [
+            155.16,
+            395.12,
+            178.34,
+            409.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "x+",
+          "bbox": [
+            135.12,
+            408.49,
+            146.66,
+            419.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR5"
+          ],
+          "sizes": [
+            5.98,
+            8.37
+          ]
+        },
+        {
+          "text": "x+",
+          "bbox": [
+            187.56,
+            408.49,
+            199.11,
+            419.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR5"
+          ],
+          "sizes": [
+            5.98,
+            8.37
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            192.96,
+            415.2,
+            197.03,
+            421.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR5"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            140.52,
+            415.21,
+            144.59,
+            421.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR5"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "Transforming to a momentum and occupation number representation (the measure being",
+          "bbox": [
+            72.0,
+            432.51,
+            539.99,
+            444.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "as in the ﬁrst line of (A.12)), the matrix element is is",
+          "bbox": [
+            72.0,
+            451.35,
+            351.3,
+            463.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "˜C(2)(4; 3; 2; 1)",
+          "bbox": [
+            89.28,
+            475.11,
+            161.14,
+            490.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "Z x+",
+          "bbox": [
+            141.0,
+            495.92,
+            164.55,
+            537.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI7",
+            "CMR5"
+          ],
+          "sizes": [
+            5.98,
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "Z x+",
+          "bbox": [
+            193.44,
+            495.92,
+            216.99,
+            537.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI7",
+            "CMR5"
+          ],
+          "sizes": [
+            5.98,
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "(B.5)",
+          "bbox": [
+            512.88,
+            498.03,
+            539.97,
+            509.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            158.4,
+            503.16,
+            162.47,
+            509.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR5"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            210.84,
+            503.16,
+            214.91,
+            509.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR5"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "dx′′+ ⟨0|A(4)A(3)V1acc(x′+)V1aac(x′′+)A†(1)A†(2)|0⟩.",
+          "bbox": [
+            220.2,
+            504.51,
+            495.8,
+            529.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "= g2",
+          "bbox": [
+            114.84,
+            507.2,
+            138.56,
+            521.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "dx′+",
+          "bbox": [
+            167.76,
+            507.2,
+            190.94,
+            521.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "x+",
+          "bbox": [
+            147.6,
+            520.68,
+            159.15,
+            531.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR5"
+          ],
+          "sizes": [
+            5.98,
+            8.37
+          ]
+        },
+        {
+          "text": "x+",
+          "bbox": [
+            200.04,
+            520.68,
+            211.59,
+            531.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR5"
+          ],
+          "sizes": [
+            5.98,
+            8.37
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            153.0,
+            527.4,
+            157.07,
+            533.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR5"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            205.44,
+            527.4,
+            209.51,
+            533.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR5"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "The time and operator orderings in the matrix element (B.5) diﬀer, but we may cal-",
+          "bbox": [
+            95.88,
+            544.71,
+            540.02,
+            556.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "culate ﬁrst the Euclidean time ordered matrix element and obtain the needed Minkowski",
+          "bbox": [
+            72.0,
+            563.43,
+            539.98,
+            575.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "result by analytic continuation. The ﬁelds will be at Euclidean times σ0",
+          "bbox": [
+            72.0,
+            580.64,
+            451.52,
+            594.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "r and the interac-",
+          "bbox": [
+            446.28,
+            582.27,
+            539.92,
+            597.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "3,4 > σ′0 > σ′′0 > σ0",
+          "bbox": [
+            200.28,
+            596.67,
+            310.64,
+            615.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "tions at σ′0, σ′′0, with σ0",
+          "bbox": [
+            72.0,
+            599.36,
+            205.52,
+            613.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY7"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "1,2. The matrix element in equation (B.5) is",
+          "bbox": [
+            305.4,
+            601.11,
+            540.05,
+            615.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "then given by",
+          "bbox": [
+            72.0,
+            619.83,
+            143.01,
+            631.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "!1/2",
+          "bbox": [
+            202.56,
+            648.8,
+            226.52,
+            688.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            152.88,
+            652.4,
+            173.0,
+            688.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMR7"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "Y",
+          "bbox": [
+            162.96,
+            661.68,
+            178.24,
+            697.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "2α+",
+          "bbox": [
+            180.96,
+            662.48,
+            201.98,
+            676.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "2πδ(α1 + α2 −α3 −α4)P(1, 2, 3, 4; σ′0, σ′′0),",
+          "bbox": [
+            229.08,
+            662.48,
+            459.2,
+            686.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            8.37,
+            11.96
+          ]
+        },
+        {
+          "text": "(B.6)",
+          "bbox": [
+            512.88,
+            664.71,
+            539.97,
+            676.67
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "s",
+          "bbox": [
+            194.64,
+            670.28,
+            199.15,
+            678.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            8.37
+          ]
+        },
+        {
+          "text": "s=1",
+          "bbox": [
+            162.36,
+            681.32,
+            179.0,
+            689.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR7"
+          ],
+          "sizes": [
+            8.37
+          ]
+        },
+        {
+          "text": "where P is the functional integral on the string world sheet shown in ﬁg. 3, (the other",
+          "bbox": [
+            72.0,
+            696.99,
+            540.02,
+            717.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "cyclic ordering, 1243, does not contribute to the Regge behavior of interest).",
+          "bbox": [
+            72.0,
+            715.83,
+            472.3,
+            727.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "22",
+          "bbox": [
+            300.0,
+            744.51,
+            311.98,
+            756.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            11.96
+          ]
+        }
+      ]
+    }
+  ]
+}

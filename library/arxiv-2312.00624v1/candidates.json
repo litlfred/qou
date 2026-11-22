@@ -3,13 +3,14 @@
  "doc_id": "arxiv-2312.00624v1",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "bda867f7b84f69c35e3171477939743ca4a9b1a8426106b168e40cbc91dc9767",
   "file": "2312.00624v1.pdf"
  },
  "provenance": {
   "title": "On the structure of wave functions in complex Chern\u2013Simons theory",
-  "authors": "Marcos Mari\u02dc no and Claudia Rella",
+  "authors": "Marcos Mari\u00f1o and Claudia Rella",
   "arxiv": {
    "id": "2312.00624",
    "version": "1",
@@ -20,52 +21,9 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 3,
-  "by_kind": {
-   "remark": 1,
-   "example": 2
-  },
+  "candidates": 0,
+  "by_kind": {},
   "formalization_candidates": 0
  },
- "candidates": [
-  {
-   "kind": "remark",
-   "source_kind": "remark",
-   "number": null,
-   "name": null,
-   "statement": "ably, the wave function\u03c7K(u; \u210f) is also invariant under this transformation, that is,",
-   "section_file": "sections/sec-002-classical-and-quantum-a-polynomials.md",
-   "section_title": "Classical and quantum A-polynomials",
-   "pages": "4-9",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "example",
-   "source_kind": "example",
-   "number": "2.1",
-   "name": null,
-   "statement": "The figure-eight knot, also denoted by 41, is shown on the left side of Fig. 1. Its",
-   "section_file": "sections/sec-002-classical-and-quantum-a-polynomials.md",
-   "section_title": "Classical and quantum A-polynomials",
-   "pages": "4-9",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  },
-  {
-   "kind": "example",
-   "source_kind": "example",
-   "number": "2.2",
-   "name": null,
-   "statement": "The three-twist knot, also denoted by 52, is shown on the right side of Fig. 1. Its",
-   "section_file": "sections/sec-002-classical-and-quantum-a-polynomials.md",
-   "section_title": "Classical and quantum A-polynomials",
-   "pages": "4-9",
-   "formalization_candidate": false,
-   "formalization_note": null,
-   "route_to": null
-  }
- ]
+ "candidates": []
 }

@@ -1,0 +1,50 @@
+286 Walter D. Neumann and Alan W. Reid
+
+Proof of Lemma 4.10. As in the proof of Lemma 4.9 we deal with the Kleinian group
+case; the Fuchsian case is analogous. Thus assume that u is not real and has exactly
+four conjugates off the unit circle. Since u~! is assumed to be a conjugate of u, the
+conjugates of u which are not on the unit circle are exactly u, u~! and their complex
+conjugates. Hence the only non-real conjugates of 9 = u+u~! are itself and 7+ 7-1.
+In particular the field 19 = Q(@) has exactly one complex place whilst the field 1 = Q(u)
+is totally imaginary as u has no real conjugates. Also note that | has degree 2 over lo.
+We now construct a quaternion algebra over [9 in which | embeds.
+
+Let S' be the set of real places of Jo and v a finite place of Jo which is inert in J.
+Now define the set S, to be S when |S| is even and SU {v} otherwise. Since |S}|
+is even, the classification theorem for quaternion algebras over number fields (see for
+example [Vig, Chapter 3]) guarantees the existence of a quaternion algebra A over lo
+with S; as ramification set. Moreover, by construction, |! embeds in A—since the real
+places of Jo are ramified in / and v is inert in J (see [Vig, Theorems 1.2.8 and 3.3.8]).
+
+Thinking of | as a subfield of A, wu is an algebraic integer in 1. Thus, to complete
+the proof we need to find an order of A containing u. By assumption u~! is the
+distinct conjugate of u over Jo. Hence u has ///o-norm 1. Now A is a 2-dimensional
+l-vector space, so let 71,72 be a basis. Then A = Ri7 @ Rit2 is an ideal of A (see
+[Vig, Chap. 1]), where R; is the ring of integers of 1, so O, = {1 € A: aA Cc A}
+(the left order of A in the terminology of [Vig, Chap. 1]) is an order of A which clearly
+contains R; and hence u. The final sentence of Lemma 4.10 follows from [MR] or
+[R1]. o
+
+Proof of Theorem 4.11 (Chinburg). We may assume I = Pp(*), where © is an order
+in the quaternion algebra A = A(I) (cf. Sects. 4.1 and 3.1). Let ~ = Po(u) for some
+u € O!. Since y is loxodromic or hyperbolic, try = u+u!, and we can assume
+|u| > 1. As in the proof of Lemma 4.9, u has degree 2 over the center k of A. Since
+u€ O!, the k(u)/k-norm of wu is 1. By Hilbert’s Theorem 90, there isa wo € k(u) with
+uo/o(uo) =u, where o is the non-trivial element of Gal(k(u)/k). By multiplying uo
+by a suitable element of R;, (the ring of integers of k ), wemay assume uo € Ry (1). Now
+o(ud/u) = (o(uo))?/a(u) = (uo /u)?/u7t = ue/u, so uz/u € k*. It will now suffice
+to find an arithmetic group [9 commensurable with I and containing yo = Pp(uo),
+since yj = y in A*/k*.
+
+As in the proof of Lemma 4.10, we can find a maximal order © in A containing uo.
+Let Ry be the (finite) set of finite places of k over which A ramifies. Let S' be a finite
+set of places of & such that uo is an S-unit. For v ¢ Ry US and v finite, uo is in
+the unit group of 0, = O ®p, R,, where R,, is the ring of integers of the completion
+k,. Hence uo fixes the vertex P, of the Bruhat-Tits building at 1 which is fixed by
+O*. Suppose now that v € S — Ry. Because u has reduced norm 1, wu fixes the vertex
+P, in the building at v which is fixed by 0%, though wo need not fix P,. However,
+since u2 = u in A*/k*, the action of uo on the building at v exchanges the vertices P,
+and uoP,. Since the building is a tree, uo fixes the mid-point 7, of the shortest path
+between these vertices. (Note that 7, is either a vertex or a midpoint of an edge.) From
+Borel’s description ([Bo, Prop. 4.4]) of the maximal elements in the commensurability
+class of I’, there is a group Io in this commensurability class consisting of precisely

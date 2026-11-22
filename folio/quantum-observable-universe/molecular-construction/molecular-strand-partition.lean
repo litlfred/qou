@@ -11,14 +11,14 @@ indexes the parabolic Young subgroup $S_\lambda \subset S_N$ and its
 Hecke subalgebra $H_\lambda(q) \hookrightarrow H_N(q)$.
 
 ## References
-- [manuscript] Ch. 12, Definition: Molecular strand-partition
+- [leitner2026] Ch. 12, Definition: Molecular strand-partition
 - [kassel1995] Kassel, "Quantum Groups," GTM 155
 -/
 
 namespace QOU.Molecular
 
 /-- A molecular strand-partition: the strand count of each sub-unit. -/
--- Ref: [manuscript] Ch. 12, Definition: Molecular strand-partition
+-- Ref: [leitner2026] Ch. 12, Definition: Molecular strand-partition
 structure StrandPartition where
   /-- Strand count of each sub-unit. -/
   parts : List ℕ

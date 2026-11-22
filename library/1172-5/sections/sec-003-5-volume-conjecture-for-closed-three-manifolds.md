@@ -1,6 +1,6 @@
 ---
 doc_id: 1172-5
-doc_title: "OPTIMISTIC CALCULATIONS ABOUT $\mathrm{W}\mathrm{I}\mathrm{T}\mathrm{T}\mathrm{E}\mathrm{N}-\mathrm{R}\mathrm{E}\mathrm{s}\mathrm{H}\mathrm{E}\mathrm{T}\mathrm{I}\mathrm{K}\mathrm{"
+doc_title: "Optimistic calculations about the Witten-Reshetikhin-Turaev invariants of closed three-manifolds obtained from the figure-eight knot by integral Dehn surgeries"
 section_id: sec-003-5-volume-conjecture-for-closed-three-manifolds
 section_title: "VOLUME CONJECTURE FOR CLOSED THREE-MANIFOLDS"
 section_number: 5
@@ -8,6 +8,7 @@ pages: 8-10
 source_pdf: 1172-5.pdf
 source_sha256: 21b7a0e13bd208fc
 toc_source: inferred
+doc_brief: "Optimistic calculations about the Witten-Reshetikhin-Turaev invariants of closed three-manifolds obtained from the figure-eight knot by integral Dehn surgeries — I calculate optimistically asymptotic"
 ---
 Now I propose a very ambiguous conjecture.
 Conjecture 5.1 (Volume conjecture for closed three-manifolds). For any closed
@@ -17,7 +18,6 @@ where
 $\mathrm{V}\mathrm{o}\mathrm{l}(M):=v_{3}||M||$ with
 $||M||$ the simplicial volume of $M$ .
 A weaker but more precise conjecture is
-77
 Conjecture 5.2. For an integer
 $p$ put
 $V_{p}(_{Z,w}).--- \mathrm{L}\mathrm{i}_{2}(Zw)+\mathrm{L}\mathrm{i}_{2}(\frac{z}{w})+\frac{p}{4}(\log z)2-\log_{Z}\log w$ .
@@ -95,7 +95,6 @@ $//\mathrm{w}\mathrm{w}\mathrm{w}.\mathrm{n}\mathrm{o}\mathrm{r}\mathrm{t}\mathr
 [13] Y. Yokota, On the volume conjecture for hyperbolic knots, in preparation.
 [14] –, On the volume conjecture of hyperbolic knots, Knot Theory –dedicated to Professor
 Kunio Murasugi for his 70th birthday (M. Sakuma, ed.), March 2000, pp. 362-367.
-78
 [15] T. Yoshida, The
 $\eta$ -invariant of hyperbolic 3-manifolds, Invent. Math. 81 (1985), no. 3, 473-
 514.
@@ -103,4 +102,3 @@ DEPARTMENT OF MATHEMATICS, TOKYO INSTITUTE OF TECHNOLOGY,
 OH-OKAYAMA, ME-
 GURO, TOKYO 152-8551, JAPAN
 $E$-mail address: starshea@tky3.3web. ne. jp
-79

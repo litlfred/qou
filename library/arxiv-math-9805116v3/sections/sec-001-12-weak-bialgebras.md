@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-9805116v3
-doc_title: "arXiv:math/9805116v3 [math.QA] 8 Jun 1999"
+doc_title: "Weak Hopf Algebras I: Integral Theory and C*-structure"
 section_id: sec-001-12-weak-bialgebras
 section_title: "Weak bialgebras"
 section_number: 1.2
@@ -10,7 +10,8 @@ source_sha256: 65ce47d232d61de4
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.976
-latex_coverage_ratio: 0.964
+latex_coverage_ratio: 0.952
+doc_brief: "Weak Hopf Algebras I: Integral Theory and C*-structure — We give an introduction to the theory of weak Hopf algebras proposed recently as a coassociative alternative of weak quasi-Hopf algebras."
 ---
 In a WBA define the maps $\PL,\PR\colon A\to A$ by the formulae
 \beq                              \label{Pi}

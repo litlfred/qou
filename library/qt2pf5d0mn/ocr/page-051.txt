@@ -1,0 +1,41 @@
+Section 3.2 A Formula for the Partition Function
+
+Sa Ib
+
+g/a b
+YY _ usted
+
+Figure 3.4: Definition of U-symbol
+
+3.2 A Formula for the Partition Function
+
+Here we give an explicit formula for the 25j-symbol ZO (0) in Figure}3.3]in terms of
+
+the data of a G-BSFC D =C& such as the F-symbol, R-symbol, etc. This formula will
+be convenient for computer calculations. For simplicity, we assume D is multiplicity free.
+The formula for the general case can be obtained in a similar way. Let us first define the
+relevant data in D.
+
+Let L(D) be a complete set of representatives of simple objects. Recall that given
+a,b,c € L(D) such that (a,b,c) is admissible, namely, N%, = 1, the morphism spaces
+Hom(c,a ® b) and Hom(a ® b,c) are both one-dimensional, and we have chosen a basis
+element B% in Hom(c,a@ b) and BS, in Hom(a® b,c). See Figure [3.2] for their pictorial
+
+representations and related identities. For the rest of the section, all the summation
+
+variables will run through L(D) unless otherwise noted.
+
+e U-symbol: for any g € G,a,b,c € L(()D) such that (a,b,c) is admissible, g(B?")
+
+is a scalar multiple of Br. Denote this scalar by U,(a,b;c). See Figure |3.4| for
+
+the pictorial definition.
+
+e 7-symbol: for g,h € G,a € L(D), na(g,h) is defined to be the isomorphism from
+a to *(ha).
+
+e F-symbol: for any a,b,c,d € L(D) such that Hom(d, a @® b ®c) # 0, there are two
+
+Mn Section [2.2| Na(g, h) is denoted by y,n:a-
+
+42

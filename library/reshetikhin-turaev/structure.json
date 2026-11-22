@@ -6,7 +6,9 @@
   "sha256": "7ead97555a25d357e952ba0ede5147f9e1a252e5fbcaa2e4de31d2b91edc0171",
   "bytes": 1346693,
   "pages": 26,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:55Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -15,20 +17,30 @@
   "doi": null,
   "title": "Ribbon graphs and their invariants derived from quantum groups",
   "authors_raw": "Ribbon Graphs and Their Invariants Derived",
-  "abstract": "The generalization of Jones polynomial of links to the case of graphs in R 3 is presented. It is constructed as the functor from the category of graphs to the category of representations of the quantum group.",
-  "docinfo": {
-   "Creator": "103004001.TIF",
-   "CreationDate": "Sat Jul 02 09:48:23 2005",
-   "Title": "Ribbon graphs and their invaraints derived from quantum groups",
-   "Author": "",
-   "Producer": "PageGenie PDFGenerator"
-  },
-  "title_prev": "Commun. Math. Phys. 127, 1-26 (1990) Mathematical Physics \u000e9 Springer-Verlag 1990",
   "title_lines": [
    "Commun. Math. Phys. 127, 1-26 (1990)",
    "Mathematical",
-   "Physics \u000e9 Springer-Verlag 1990"
-  ]
+   "Physics",
+   "\u000e9 Springer-Verlag 1990"
+  ],
+  "abstract": "The generalization of Jones polynomial of links to the case of graphs in R 3 is presented. It is constructed as the functor from the category of graphs to the category of representations of the quantum group.",
+  "docinfo": {
+   "Title": "Ribbon graphs and their invaraints derived from quantum groups",
+   "Producer": "PageGenie PDFGenerator",
+   "Creator": "103004001.TIF",
+   "CreationDate": "Sat Jul 02 09:48:23 2005"
+  },
+  "title_raw": "Commun. Math. Phys. 127, 1-26 (1990) Mathematical Physics \u000e9 Springer-Verlag 1990",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "metadata": "Ribbon graphs and their invaraints derived from quantum groups",
+   "heading": "Mathematical Physics Ribbon Graphs and Their Invariants Derived from Quantum Groups",
+   "text": "Commun. Math. Phys. 127, 1-26 (1990) Mathematical Physics \u000e9 Springer-Verlag 1990",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "Commun. Math. Phys. 127, 1-26 (1990) Mathematical Physics \u000e9 Springer-Verlag 1990"
  },
  "toc": [
   {
@@ -36,826 +48,770 @@
    "title": "Introduction",
    "page": 1,
    "source": "inferred",
-   "number": "1"
-  },
-  {
-   "level": 1,
-   "title": "N. Yu. Reshetikhin and V. G. Turaev",
-   "page": 2,
-   "source": "inferred",
-   "number": "2"
+   "number": "1",
+   "confidence": 1.0,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Compact Braided Categories",
    "page": 2,
    "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 2,
-   "title": "Monoidal Categories (see [Ma, JS]). A monoidal category C = (C o, | I, a, r, )",
-   "page": 2,
-   "source": "inferred",
-   "number": "2.1"
-  },
-  {
-   "level": 1,
-   "title": "N. Yu. Reshetikhin and V. G. Turaev",
-   "page": 4,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 2,
-   "title": "Functors of Monoidal Categories. Let C, C' be two compact braided strict",
-   "page": 4,
-   "source": "inferred",
-   "number": "2.2"
-  },
-  {
-   "level": 2,
-   "title": "Strict Extension of Monoidal Categories. Each monoidal category C is",
-   "page": 4,
-   "source": "inferred",
-   "number": "2.3"
+   "number": "2",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Quasitriangular and Ribbon Hopf Algebras",
    "page": 4,
    "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 2,
-   "title": "Quasitriangular HopfAlgebras (see [Dr]). Let A be a Hopf algebra with the",
-   "page": 4,
-   "source": "inferred",
-   "number": "3.1"
-  },
-  {
-   "level": 1,
-   "title": "N. Yu. Reshetikhin and V. G. Turaev",
-   "page": 6,
-   "source": "inferred",
-   "number": "6"
-  },
-  {
-   "level": 2,
-   "title": "Category RepA. With each algebra A one associates the category RepA of its",
-   "page": 6,
-   "source": "inferred",
-   "number": "3.2"
-  },
-  {
-   "level": 2,
-   "title": "Ribbon Hopf Algebras. Let (A, R) be a quasitriangular Hopf algebra with the",
-   "page": 7,
-   "source": "inferred",
-   "number": "3.3"
-  },
-  {
-   "level": 1,
-   "title": "N. Yu. Reshetikhin and V. G. Turaev",
-   "page": 8,
-   "source": "inferred",
-   "number": "8"
-  },
-  {
-   "level": 2,
-   "title": "Remark. If(A, R, w) is a ribbon Hopf algebra then w e A C A, so that v = Ew for",
-   "page": 8,
-   "source": "inferred",
-   "number": "3.5"
+   "number": "3",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "Coloured Ribbon Graphs",
    "page": 8,
    "source": "inferred",
-   "number": "4"
+   "number": "4",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "8"
   },
   {
    "level": 2,
-   "title": "Bands and Annuli. A band is the image of the square [0, 1] x [0, 1] under its",
-   "page": 8,
+   "title": "I vl vl vl",
+   "page": 9,
    "source": "inferred",
-   "number": "4.1"
-  },
-  {
-   "level": 2,
-   "title": "Ribbon Graphs. Let k, ~ be non-negative integers. A ribbon (k, ~)-graph is an",
-   "page": 8,
-   "source": "inferred",
-   "number": "4.2"
-  },
-  {
-   "level": 1,
-   "title": "N. Yu. Reshetikhin and V. G. Turaev",
-   "page": 10,
-   "source": "inferred",
-   "number": "10"
-  },
-  {
-   "level": 2,
-   "title": "Directed Graphs. A ribbon graph is called directed if the cores of its bands and",
-   "page": 10,
-   "source": "inferred",
-   "number": "4.3"
-  },
-  {
-   "level": 2,
-   "title": "Colourings of Ribbon Graphs. Fix a Hopf algebra A. Denote by A = A(A) the",
-   "page": 10,
-   "source": "inferred",
-   "number": "4.4"
-  },
-  {
-   "level": 2,
-   "title": "Category HCDR(A). Let A be a Hopf algebra. We define the category of",
-   "page": 11,
-   "source": "inferred",
-   "number": "4.5"
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "9"
   },
   {
    "level": 1,
    "title": "The Main Theorem",
    "page": 12,
    "source": "inferred",
-   "number": "5"
-  },
-  {
-   "level": 2,
-   "title": "Theorem. Let (A, R, v) be a ribbon Hopf algebra over the field I. There exists a",
-   "page": 12,
-   "source": "inferred",
-   "number": "5.1"
-  },
-  {
-   "level": 2,
-   "title": "Lemma. The graphs {r-~v, ~-~v, r '~v, Xv, w, Xv.wIV, W~A(A)} and",
-   "page": 13,
-   "source": "inferred",
-   "number": "5.2"
+   "number": "5",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "12"
   },
   {
    "level": 2,
    "title": "Lemma. Figure 8 presents a generating set of relations for the generators of",
    "page": 13,
    "source": "inferred",
-   "number": "5.3"
-  },
-  {
-   "level": 2,
-   "title": "Proof of Theorem 5.1. Uniqueness ofF follows from Lemma 5.2. Indeed, the",
-   "page": 15,
-   "source": "inferred",
-   "number": "5.4"
-  },
-  {
-   "level": 1,
-   "title": "N. Yu. Reshetikhin and V. G. Turaev",
-   "page": 16,
-   "source": "inferred",
-   "number": "16"
+   "number": "5.3",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "13"
   },
   {
    "level": 1,
    "title": "Applications and Generalizations of Theorem 5.1",
    "page": 17,
    "source": "inferred",
-   "number": "6"
-  },
-  {
-   "level": 2,
-   "title": "Isotopy lnvariants of Coloured Links. A link in R 3 is a finite set of disjoint",
-   "page": 17,
-   "source": "inferred",
-   "number": "6.1"
-  },
-  {
-   "level": 1,
-   "title": "N. Yu. Reshetikhin and V. G. Turaev",
-   "page": 18,
-   "source": "inferred",
-   "number": "18"
-  },
-  {
-   "level": 2,
-   "title": "Theorem. (An extension of Theorem 5.1). Let (A,R,v) be a ribbon I-Iopf",
-   "page": 18,
-   "source": "inferred",
-   "number": "6.3"
-  },
-  {
-   "level": 2,
-   "title": "Remarks. 1. It is obvious that the operator invariant F(F, 2) of a directed",
-   "page": 18,
-   "source": "inferred",
-   "number": "6.4"
-  },
-  {
-   "level": 1,
-   "title": "Let F be a HCDR-graph and let the colour of a ribbon B of F is the tensor",
-   "page": 19,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "The functor F:HCDR(A)~Repc~A is surjective since each morphism",
-   "page": 19,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "N. Yu. Reshetikhin and V. G. Turaev",
-   "page": 20,
-   "source": "inferred",
-   "number": "20"
-  },
-  {
-   "level": 1,
-   "title": "To colour a directed ribbon graph is a problem in itself. It is natural to",
-   "page": 20,
-   "source": "inferred",
-   "number": "4"
+   "number": "6",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "17"
   },
   {
    "level": 1,
    "title": "Examples",
    "page": 20,
    "source": "inferred",
-   "number": "7"
+   "number": "7",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "20"
   },
   {
    "level": 2,
-   "title": "Algebra Uh15. The theory of quantum groups developed in [Dr1, J] gives",
-   "page": 20,
-   "source": "inferred",
-   "number": "7.1"
-  },
-  {
-   "level": 2,
-   "title": "Representations of U and U-Colourings of Graphs. There exists an isomor,",
-   "page": 21,
-   "source": "inferred",
-   "number": "7.2"
-  },
-  {
-   "level": 1,
-   "title": "N. Yu. Reshetikhin and V. G. Turaev",
+   "title": "V~ ~Va|",
    "page": 22,
    "source": "inferred",
-   "number": "22"
+   "number": "f",
+   "confidence": 0.9,
+   "evidence": [
+    "style",
+    "number",
+    "numbered-style"
+   ],
+   "page_label": "22"
   },
   {
    "level": 2,
-   "title": "Homomorphism w a. Let V a be the finite dimensional i.h.w, representation of",
-   "page": 22,
-   "source": "inferred",
-   "number": "7.3"
-  },
-  {
-   "level": 2,
-   "title": "The Case {5 ~-sl 2. The Hopf algebra U= UhSl 2 is the simplest among the",
+   "title": "R=exp(~H|",
    "page": 23,
    "source": "inferred",
-   "number": "7.4"
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "23"
   },
   {
-   "level": 1,
-   "title": "N. Yu. Reshetikhin and V. G. Turaev",
-   "page": 24,
+   "level": 2,
+   "title": "Jm~,,~",
+   "page": 23,
    "source": "inferred",
-   "number": "24"
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "23"
   },
   {
-   "level": 1,
-   "title": "V JlJ2J ] j~ J2",
+   "level": 2,
+   "title": "In]q!",
+   "page": 23,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "23"
+  },
+  {
+   "level": 3,
+   "title": "N. Yu. Reshetikhin and V. G. Turaev sional for [Jl-Jfl <-_J<Ja +J2 and are equal to zero for other j. In other words vJ~@vJ2=",
    "page": 24,
    "source": "inferred",
-   "number": "9"
+   "number": "24",
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "24"
+  },
+  {
+   "level": 3,
+   "title": "[j+m]![j_m]l[jl_ml]l[jz_m2]lUl +j2_j]![2j+ l ] ~1/2",
+   "page": 24,
+   "source": "inferred",
+   "number": "2",
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "24"
+  },
+  {
+   "level": 3,
+   "title": "[j+m]![j_m]l[jl_ml]l[jz_m2]lUl +j2_j]![2j+ l ] ~1/2 X [[Jl -~- ml]! [J2 + m2]! [Jl --J2 +J]! [J2--Jl +J] ! [J2 +J2 +J + 1]!3 • 2 (1-)rq \u000189",
+   "page": 24,
+   "source": "inferred",
+   "number": "2",
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "24"
+  },
+  {
+   "level": 3,
+   "title": "[j+m]![j_m]l[jl_ml]l[jz_m2]lUl +j2_j]![2j+ l ] ~1/2 X [[Jl -~- ml]! [J2 + m2]! [Jl --J2 +J]! [J2--Jl +J] ! [J2 +J2 +J + 1]!3 • 2 (1-)rq \u000189 [jl +mt +r]l [j2 +j-ml-r]!",
+   "page": 24,
+   "source": "inferred",
+   "number": "2",
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "24"
+  },
+  {
+   "level": 3,
+   "title": "V JlJ2J ] j~ F. [m~m2mJe,,,~e,,~ 9",
+   "page": 24,
+   "source": "inferred",
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "24"
   },
   {
    "level": 1,
    "title": "References",
    "page": 25,
    "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "FD] Deling, P., Milne, J.S.: Tannakian Categories in Hodge cicles, motives and simura",
-   "page": 25,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "IRe1] Reshetikhin, N.Yu.: Quantized universal enveloping algebras, the Yang-Baxter",
-   "page": 25,
-   "source": "inferred",
-   "number": "16"
-  },
-  {
-   "level": 1,
-   "title": "N. Yu. Reshetikhin and V. G. Turaev",
-   "page": 26,
-   "source": "inferred",
-   "number": "26"
+   "number": null,
+   "confidence": 0.8,
+   "evidence": [
+    "style",
+    "numbered-style",
+    "stock-name"
+   ],
+   "page_label": "25"
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "interpolated",
+   "confidence": 0.5,
+   "evidence": [
+    "interpolated"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "16",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "20",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-2-n-yu-reshetikhin-and-v-g-turaev",
-   "number": "2",
-   "title": "N. Yu. Reshetikhin and V. G. Turaev",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
    "page_end": 1,
-   "n_chars": 270,
-   "n_words": 44
+   "n_chars": 477,
+   "n_words": 73,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-001-1-introduction",
+   "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 4543,
-   "n_words": 745
+   "n_chars": 4546,
+   "n_words": 745,
+   "label_start": null,
+   "label_end": "2"
   },
   {
-   "id": "sec-002-2-compact-braided-categories",
+   "id": "sec-001-2-compact-braided-categories",
    "number": "2",
    "title": "Compact Braided Categories",
    "level": 1,
    "page_start": 2,
-   "page_end": 2,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-003-21-monoidal-categories-see-ma-js-a-monoidal-cate",
-   "number": "2.1",
-   "title": "Monoidal Categories (see [Ma, JS]). A monoidal category C = (C o, | I, a, r, )",
-   "level": 2,
-   "page_start": 2,
    "page_end": 4,
-   "n_chars": 1525,
-   "n_words": 285
+   "n_chars": 4279,
+   "n_words": 809,
+   "label_start": "2",
+   "label_end": "4"
   },
   {
-   "id": "sec-004-4-n-yu-reshetikhin-and-v-g-turaev",
-   "number": "4",
-   "title": "N. Yu. Reshetikhin and V. G. Turaev",
-   "level": 1,
-   "page_start": 4,
-   "page_end": 4,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-005-22-functors-of-monoidal-categories-let-c-c-be-tw",
-   "number": "2.2",
-   "title": "Functors of Monoidal Categories. Let C, C' be two compact braided strict",
-   "level": 2,
-   "page_start": 4,
-   "page_end": 4,
-   "n_chars": 696,
-   "n_words": 132
-  },
-  {
-   "id": "sec-006-23-strict-extension-of-monoidal-categories-each",
-   "number": "2.3",
-   "title": "Strict Extension of Monoidal Categories. Each monoidal category C is",
-   "level": 2,
-   "page_start": 4,
-   "page_end": 4,
-   "n_chars": 1735,
-   "n_words": 342
-  },
-  {
-   "id": "sec-007-3-quasitriangular-and-ribbon-hopf-algebras",
+   "id": "sec-002-3-quasitriangular-and-ribbon-hopf-algebras",
    "number": "3",
    "title": "Quasitriangular and Ribbon Hopf Algebras",
    "level": 1,
    "page_start": 4,
-   "page_end": 4,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-008-31-quasitriangular-hopfalgebras-see-dr-let-a-be",
-   "number": "3.1",
-   "title": "Quasitriangular HopfAlgebras (see [Dr]). Let A be a Hopf algebra with the",
-   "level": 2,
-   "page_start": 4,
-   "page_end": 6,
-   "n_chars": 1889,
-   "n_words": 376
-  },
-  {
-   "id": "sec-009-6-n-yu-reshetikhin-and-v-g-turaev",
-   "number": "6",
-   "title": "N. Yu. Reshetikhin and V. G. Turaev",
-   "level": 1,
-   "page_start": 6,
-   "page_end": 6,
-   "n_chars": 511,
-   "n_words": 86
-  },
-  {
-   "id": "sec-010-32-category-repa-with-each-algebra-a-one-associa",
-   "number": "3.2",
-   "title": "Category RepA. With each algebra A one associates the category RepA of its",
-   "level": 2,
-   "page_start": 6,
-   "page_end": 7,
-   "n_chars": 2187,
-   "n_words": 387
-  },
-  {
-   "id": "sec-011-33-ribbon-hopf-algebras-let-a-r-be-a-quasitriang",
-   "number": "3.3",
-   "title": "Ribbon Hopf Algebras. Let (A, R) be a quasitriangular Hopf algebra with the",
-   "level": 2,
-   "page_start": 7,
    "page_end": 8,
-   "n_chars": 2020,
-   "n_words": 420
+   "n_chars": 8391,
+   "n_words": 1604,
+   "label_start": "4",
+   "label_end": "8"
   },
   {
-   "id": "sec-012-8-n-yu-reshetikhin-and-v-g-turaev",
-   "number": "8",
-   "title": "N. Yu. Reshetikhin and V. G. Turaev",
-   "level": 1,
-   "page_start": 8,
-   "page_end": 8,
-   "n_chars": 1096,
-   "n_words": 222
-  },
-  {
-   "id": "sec-013-35-remark-ifa-r-w-is-a-ribbon-hopf-algebra-then",
-   "number": "3.5",
-   "title": "Remark. If(A, R, w) is a ribbon Hopf algebra then w e A C A, so that v = Ew for",
-   "level": 2,
-   "page_start": 8,
-   "page_end": 8,
-   "n_chars": 169,
-   "n_words": 34
-  },
-  {
-   "id": "sec-014-4-coloured-ribbon-graphs",
+   "id": "sec-003-4-coloured-ribbon-graphs",
    "number": "4",
    "title": "Coloured Ribbon Graphs",
    "level": 1,
    "page_start": 8,
-   "page_end": 8,
-   "n_chars": 0,
-   "n_words": 0
+   "page_end": 9,
+   "n_chars": 930,
+   "n_words": 187,
+   "label_start": "8",
+   "label_end": "9"
   },
   {
-   "id": "sec-015-41-bands-and-annuli-a-band-is-the-image-of-the-s",
-   "number": "4.1",
-   "title": "Bands and Annuli. A band is the image of the square [0, 1] x [0, 1] under its",
+   "id": "sec-004-i-vl-vl-vl",
+   "number": null,
+   "title": "I vl vl vl",
    "level": 2,
-   "page_start": 8,
-   "page_end": 8,
-   "n_chars": 377,
-   "n_words": 80
-  },
-  {
-   "id": "sec-016-42-ribbon-graphs-let-k-be-non-negative-integers",
-   "number": "4.2",
-   "title": "Ribbon Graphs. Let k, ~ be non-negative integers. A ribbon (k, ~)-graph is an",
-   "level": 2,
-   "page_start": 8,
-   "page_end": 10,
-   "n_chars": 1514,
-   "n_words": 288
-  },
-  {
-   "id": "sec-017-10-n-yu-reshetikhin-and-v-g-turaev",
-   "number": "10",
-   "title": "N. Yu. Reshetikhin and V. G. Turaev",
-   "level": 1,
-   "page_start": 10,
-   "page_end": 10,
-   "n_chars": 261,
-   "n_words": 48
-  },
-  {
-   "id": "sec-018-43-directed-graphs-a-ribbon-graph-is-called-dire",
-   "number": "4.3",
-   "title": "Directed Graphs. A ribbon graph is called directed if the cores of its bands and",
-   "level": 2,
-   "page_start": 10,
-   "page_end": 10,
-   "n_chars": 1754,
-   "n_words": 340
-  },
-  {
-   "id": "sec-019-44-colourings-of-ribbon-graphs-fix-a-hopf-algebr",
-   "number": "4.4",
-   "title": "Colourings of Ribbon Graphs. Fix a Hopf algebra A. Denote by A = A(A) the",
-   "level": 2,
-   "page_start": 10,
-   "page_end": 11,
-   "n_chars": 1561,
-   "n_words": 289
-  },
-  {
-   "id": "sec-020-45-category-hcdra-let-a-be-a-hopf-algebra-we-def",
-   "number": "4.5",
-   "title": "Category HCDR(A). Let A be a Hopf algebra. We define the category of",
-   "level": 2,
-   "page_start": 11,
+   "page_start": 9,
    "page_end": 12,
-   "n_chars": 2446,
-   "n_words": 454
+   "n_chars": 7421,
+   "n_words": 1393,
+   "label_start": "9",
+   "label_end": "12"
   },
   {
-   "id": "sec-021-5-the-main-theorem",
+   "id": "sec-005-5-the-main-theorem",
    "number": "5",
    "title": "The Main Theorem",
    "level": 1,
    "page_start": 12,
-   "page_end": 12,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-022-51-theorem-let-a-r-v-be-a-ribbon-hopf-algebra-ov",
-   "number": "5.1",
-   "title": "Theorem. Let (A, R, v) be a ribbon Hopf algebra over the field I. There exists a",
-   "level": 2,
-   "page_start": 12,
    "page_end": 13,
-   "n_chars": 2636,
-   "n_words": 473
+   "n_chars": 3480,
+   "n_words": 619,
+   "label_start": "12",
+   "label_end": "13"
   },
   {
-   "id": "sec-023-52-lemma-the-graphs-r-v--v-r-v-xv-w-xvwiv-waa-an",
-   "number": "5.2",
-   "title": "Lemma. The graphs {r-~v, ~-~v, r '~v, Xv, w, Xv.wIV, W~A(A)} and",
-   "level": 2,
-   "page_start": 13,
-   "page_end": 13,
-   "n_chars": 677,
-   "n_words": 115
-  },
-  {
-   "id": "sec-024-53-lemma-figure-8-presents-a-generating-set-of-r",
+   "id": "sec-006-53-lemma-figure-8-presents-a-generating-set-of-r",
    "number": "5.3",
    "title": "Lemma. Figure 8 presents a generating set of relations for the generators of",
    "level": 2,
    "page_start": 13,
-   "page_end": 15,
-   "n_chars": 1380,
-   "n_words": 264
-  },
-  {
-   "id": "sec-025-54-proof-of-theorem-51-uniqueness-off-follows-fr",
-   "number": "5.4",
-   "title": "Proof of Theorem 5.1. Uniqueness ofF follows from Lemma 5.2. Indeed, the",
-   "level": 2,
-   "page_start": 15,
-   "page_end": 16,
-   "n_chars": 585,
-   "n_words": 118
-  },
-  {
-   "id": "sec-026-16-n-yu-reshetikhin-and-v-g-turaev",
-   "number": "16",
-   "title": "N. Yu. Reshetikhin and V. G. Turaev",
-   "level": 1,
-   "page_start": 16,
    "page_end": 17,
-   "n_chars": 1686,
-   "n_words": 317
+   "n_chars": 3805,
+   "n_words": 719,
+   "label_start": "13",
+   "label_end": "17"
   },
   {
-   "id": "sec-027-6-applications-and-generalizations-of-theorem-51",
+   "id": "sec-007-6-applications-and-generalizations-of-theorem-51",
    "number": "6",
    "title": "Applications and Generalizations of Theorem 5.1",
    "level": 1,
    "page_start": 17,
-   "page_end": 17,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-028-61-isotopy-lnvariants-of-coloured-links-a-link-i",
-   "number": "6.1",
-   "title": "Isotopy lnvariants of Coloured Links. A link in R 3 is a finite set of disjoint",
-   "level": 2,
-   "page_start": 17,
-   "page_end": 18,
-   "n_chars": 3123,
-   "n_words": 564
-  },
-  {
-   "id": "sec-029-18-n-yu-reshetikhin-and-v-g-turaev",
-   "number": "18",
-   "title": "N. Yu. Reshetikhin and V. G. Turaev",
-   "level": 1,
-   "page_start": 18,
-   "page_end": 18,
-   "n_chars": 1766,
-   "n_words": 317
-  },
-  {
-   "id": "sec-030-63-theorem-an-extension-of-theorem-51-let-arv-be",
-   "number": "6.3",
-   "title": "Theorem. (An extension of Theorem 5.1). Let (A,R,v) be a ribbon I-Iopf",
-   "level": 2,
-   "page_start": 18,
-   "page_end": 18,
-   "n_chars": 850,
-   "n_words": 174
-  },
-  {
-   "id": "sec-031-64-remarks-1-it-is-obvious-that-the-operator-inv",
-   "number": "6.4",
-   "title": "Remarks. 1. It is obvious that the operator invariant F(F, 2) of a directed",
-   "level": 2,
-   "page_start": 18,
-   "page_end": 19,
-   "n_chars": 1006,
-   "n_words": 180
-  },
-  {
-   "id": "sec-032-2-let-f-be-a-hcdr-graph-and-let-the-colour-of-a",
-   "number": "2",
-   "title": "Let F be a HCDR-graph and let the colour of a ribbon B of F is the tensor",
-   "level": 1,
-   "page_start": 19,
-   "page_end": 19,
-   "n_chars": 748,
-   "n_words": 135
-  },
-  {
-   "id": "sec-033-3-the-functor-fhcdrarepca-is-surjective-since-ea",
-   "number": "3",
-   "title": "The functor F:HCDR(A)~Repc~A is surjective since each morphism",
-   "level": 1,
-   "page_start": 19,
    "page_end": 20,
-   "n_chars": 601,
-   "n_words": 122
+   "n_chars": 9765,
+   "n_words": 1780,
+   "label_start": "17",
+   "label_end": "20"
   },
   {
-   "id": "sec-034-20-n-yu-reshetikhin-and-v-g-turaev",
-   "number": "20",
-   "title": "N. Yu. Reshetikhin and V. G. Turaev",
-   "level": 1,
-   "page_start": 20,
-   "page_end": 20,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-035-4-to-colour-a-directed-ribbon-graph-is-a-problem",
-   "number": "4",
-   "title": "To colour a directed ribbon graph is a problem in itself. It is natural to",
-   "level": 1,
-   "page_start": 20,
-   "page_end": 20,
-   "n_chars": 1024,
-   "n_words": 176
-  },
-  {
-   "id": "sec-036-7-examples",
+   "id": "sec-008-7-examples",
    "number": "7",
    "title": "Examples",
    "level": 1,
    "page_start": 20,
-   "page_end": 20,
-   "n_chars": 0,
-   "n_words": 0
-  },
-  {
-   "id": "sec-037-71-algebra-uh15-the-theory-of-quantum-groups-dev",
-   "number": "7.1",
-   "title": "Algebra Uh15. The theory of quantum groups developed in [Dr1, J] gives",
-   "level": 2,
-   "page_start": 20,
-   "page_end": 21,
-   "n_chars": 1721,
-   "n_words": 328
-  },
-  {
-   "id": "sec-038-72-representations-of-u-and-u-colourings-of-grap",
-   "number": "7.2",
-   "title": "Representations of U and U-Colourings of Graphs. There exists an isomor,",
-   "level": 2,
-   "page_start": 21,
    "page_end": 22,
-   "n_chars": 1079,
-   "n_words": 189
+   "n_chars": 3144,
+   "n_words": 568,
+   "label_start": "20",
+   "label_end": "22"
   },
   {
-   "id": "sec-039-22-n-yu-reshetikhin-and-v-g-turaev",
-   "number": "22",
-   "title": "N. Yu. Reshetikhin and V. G. Turaev",
-   "level": 1,
-   "page_start": 22,
-   "page_end": 22,
-   "n_chars": 386,
-   "n_words": 61
-  },
-  {
-   "id": "sec-040-73-homomorphism-w-a-let-v-a-be-the-finite-dimens",
-   "number": "7.3",
-   "title": "Homomorphism w a. Let V a be the finite dimensional i.h.w, representation of",
+   "id": "sec-009-f-v-va",
+   "number": "f",
+   "title": "V~ ~Va|",
    "level": 2,
    "page_start": 22,
    "page_end": 23,
-   "n_chars": 2054,
-   "n_words": 403
+   "n_chars": 2977,
+   "n_words": 570,
+   "label_start": "22",
+   "label_end": "23"
   },
   {
-   "id": "sec-041-74-the-case-5--sl-2-the-hopf-algebra-u-uhsl-2-is",
-   "number": "7.4",
-   "title": "The Case {5 ~-sl 2. The Hopf algebra U= UhSl 2 is the simplest among the",
+   "id": "sec-010-rexph",
+   "number": null,
+   "title": "R=exp(~H|",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 197,
+   "n_words": 39,
+   "label_start": "23",
+   "label_end": "23"
+  },
+  {
+   "id": "sec-011-jm",
+   "number": null,
+   "title": "Jm~,,~",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 175,
+   "n_words": 30,
+   "label_start": "23",
+   "label_end": "23"
+  },
+  {
+   "id": "sec-012-inq",
+   "number": null,
+   "title": "In]q!",
    "level": 2,
    "page_start": 23,
    "page_end": 24,
-   "n_chars": 1110,
-   "n_words": 211
+   "n_chars": 237,
+   "n_words": 44,
+   "label_start": "23",
+   "label_end": "24"
   },
   {
-   "id": "sec-042-24-n-yu-reshetikhin-and-v-g-turaev",
+   "id": "sec-013-24-n-yu-reshetikhin-and-v-g-turaev-sional-for-jl",
    "number": "24",
-   "title": "N. Yu. Reshetikhin and V. G. Turaev",
-   "level": 1,
+   "title": "N. Yu. Reshetikhin and V. G. Turaev sional for [Jl-Jfl <-_J<Ja +J2 and are equal to zero for other j. In other words vJ~@vJ2=",
+   "level": 3,
    "page_start": 24,
    "page_end": 24,
-   "n_chars": 1722,
-   "n_words": 328
+   "n_chars": 1342,
+   "n_words": 254,
+   "label_start": "24",
+   "label_end": "24"
   },
   {
-   "id": "sec-043-9-v-jlj2j-j-j2",
-   "number": "9",
-   "title": "V JlJ2J ] j~ J2",
-   "level": 1,
+   "id": "sec-014-2-jmj-mljl-mlljz-m2lul-j2-j2j-l-12",
+   "number": "2",
+   "title": "[j+m]![j_m]l[jl_ml]l[jz_m2]lUl +j2_j]![2j+ l ] ~1/2",
+   "level": 3,
    "page_start": 24,
    "page_end": 25,
-   "n_chars": 1332,
-   "n_words": 218
+   "n_chars": 1756,
+   "n_words": 297,
+   "label_start": "24",
+   "label_end": "25"
   },
   {
-   "id": "sec-044-references",
+   "id": "sec-015-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 25,
-   "page_end": 25,
-   "n_chars": 156,
-   "n_words": 23
-  },
-  {
-   "id": "sec-045-2-fd-deling-p-milne-js-tannakian-categories-in-h",
-   "number": "2",
-   "title": "FD] Deling, P., Milne, J.S.: Tannakian Categories in Hodge cicles, motives and simura",
-   "level": 1,
-   "page_start": 25,
-   "page_end": 25,
-   "n_chars": 1804,
-   "n_words": 257
-  },
-  {
-   "id": "sec-046-16-ire1-reshetikhin-nyu-quantized-universal-enve",
-   "number": "16",
-   "title": "IRe1] Reshetikhin, N.Yu.: Quantized universal enveloping algebras, the Yang-Baxter",
-   "level": 1,
-   "page_start": 25,
    "page_end": 26,
-   "n_chars": 380,
-   "n_words": 51
-  },
-  {
-   "id": "sec-047-26-n-yu-reshetikhin-and-v-g-turaev",
-   "number": "26",
-   "title": "N. Yu. Reshetikhin and V. G. Turaev",
-   "level": 1,
-   "page_start": 26,
-   "page_end": 26,
-   "n_chars": 808,
-   "n_words": 124
+   "n_chars": 3373,
+   "n_words": 487,
+   "label_start": "25",
+   "label_end": "26"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 48,
-  "sections": 48,
-  "chars_total": 53188
+  "toc_entries": 19,
+  "toc_inferred_entries": 24,
+  "toc_inferred_mean_confidence": 0.733,
+  "toc_inferred_empty_share": 0.087,
+  "toc_inferred_method": "font",
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 17,
+  "chars_total": 56295,
+  "furniture_lines_stripped": 1,
+  "headings_tidied": [
+   {
+    "title": "(...(vl | v~.)|",
+    "page": 4,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "| v~_ j)| v~-,.(...(wl | w2)|",
+    "page": 4,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "ft",
+    "page": 9,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "y~ fk(s(O~q)f~)\" fJ(s2(o~v)fk)(fiqflp)(ei)| f e",
+    "page": 16,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "v vf",
+    "page": 21,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "vJ~@vJ2=",
+    "page": 24,
+    "action": "rejoined",
+    "as": "N. Yu. Reshetikhin and V. G. Turaev sional for [Jl-Jfl <-_J<Ja +J2 and are equal to zero for other j. In other words vJ~@vJ2=",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "[j+m]![j_m]l[jl_ml]l[jz_m2]lUl +j2_j]![2j+ l ] ~1/2",
+    "page": 24,
+    "action": "rejoined",
+    "as": "[j+m]![j_m]l[jl_ml]l[jz_m2]lUl +j2_j]![2j+ l ] ~1/2",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "• 2 (1-)rq \u000189",
+    "page": 24,
+    "action": "rejoined",
+    "as": "[j+m]![j_m]l[jl_ml]l[jz_m2]lUl +j2_j]![2j+ l ] ~1/2 X [[Jl -~- ml]! [J2 + m2]! [Jl --J2 +J]! [J2--Jl +J] ! [J2 +J2 +J + 1]!3 • 2 (1-)rq \u000189",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "[jl +mt +r]l [j2 +j-ml-r]!",
+    "page": 24,
+    "action": "rejoined",
+    "as": "[j+m]![j_m]l[jl_ml]l[jz_m2]lUl +j2_j]![2j+ l ] ~1/2 X [[Jl -~- ml]! [J2 + m2]! [Jl --J2 +J]! [J2--Jl +J] ! [J2 +J2 +J + 1]!3 • 2 (1-)rq \u000189 [jl +mt +r]l [j2 +j-ml-r]!",
+    "why": "opens in lower case"
+   }
+  ]
  }
 }

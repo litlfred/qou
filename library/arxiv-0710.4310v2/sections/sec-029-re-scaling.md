@@ -11,6 +11,7 @@ toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.946
 latex_coverage_ratio: 1.0
+doc_brief: "On Two-Dimensional Holonomy — We deﬁne the thin fundamental categorical group P2(M, ∗) of a based smooth manifold (M, ∗) as the categorical group whose objects are rank-1 homotopy classes of based"
 ---
 Let $\G$ be a 2-path in $M$ such that $\d_l(\G)=\d_r(\G)=*$. As usual put $\G(t,s)=\g_s(t); s,t \in [0,1]$. Consider a smooth map $f \colon [a,b] \to [0,1]$, where $-\infty < a <b <+\infty$. We suppose that $f(a)=0$ and $f(b)=1$. Let $\G'(s,t)=\g'_s(t)$ be such that $\g'_s(t)=\g_{f(s)}(t)$, where $s \in [a,b]$ and $t \in [0,1]$. Even though $\G'$ is not a 2-path, for its domain is $[0,1]\times [a,b]$, the elements $g_{\g'_s}\in E$ and $e_{\G'}(s)\in E$, where $s \in [a,b]$, defined in [\[dchcc\]](#dchcc){reference-type="ref" reference="dchcc"}, still make sense.
 

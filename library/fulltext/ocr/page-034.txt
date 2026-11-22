@@ -1,0 +1,52 @@
+36 Don Zagier
+
+B(t) are polynomials of degree < n, not both constant. Since we are working
+modulo the five-term relation, we can replace f by 1/f or 1/(1—f) if necessary
+to ensure that both A(t) and C(t) := B(t) — A(t) are non-constant. Choose
+
+a root a of A(t) and a root c of C(t) and set g(t) = — A*(t) = g(t) A(t)
+-a
+
+and D(t) = B(t)— A*(t), so that deg(A*) < n—1, deg(D) <n, and D(c) = 0.
+Then modulo the five-term relation, we have
+
+~tol + al = PAT + 4
+fe-a] , [AW] FOW/E-9] , [le-@CW/t-9)
+a] * a arena] * enone
+
+Here each rational function appearing on the right has a numerator of degree
+<n-—1 and a denominator of degree < n. Moreover, if B has degree < n—1,
+then all terms on the right have both numerator and denominator of degree
+<n-—1. Therefore we have reduced any rational function with numerator and
+denominator of degrees < (n,n) to a combination of rational functions with
+numerator and denominator of degrees < (n—1,7), and any rational function
+with numerator and denominator of degrees < (n — 1,n) to a combination of
+rational functions with numerator and denominator of degrees < (n—1,n—1).
+Iterating this procedure, we can keep reducing the degrees until we get to (0,1),
+ie. (after inversion), until only linear functions appear. (Note that the number
+of applications of the five-term relation needed to reduce a rational function
+to a linear combination of linear ones grows exponentially with the degree n;
+more precisely, it is at most (1 + /2)?”/4.)
+
+(ii) By what we have just proved, any element € = €(t) € Z[C(t)] can be
+written modulo the 5-term relation as ) +)> n;{¢;(t)], where €) € Z[C], ni € Z
+and the ¢; are non-constant linear functions of t. We can write each ¢;(t) as
+(t — ce) /(c, — &) with cj, c, € C distinct and (since we may replace [¢;(¢)] by
+—[1—£;(t)] modulo the five-term relation) 0 < arg(c;—c;) < 7. The derivative
+of D(é;(t)) is proportional to (¢ — ¢;)~! log |t — ¢,| — (t— ¢) “log |t — ¢;|, and
+since these functions are linearly dependent for different i (as one sees by
+looking at their singularities), we deduce that D(€(t)) is constant if and only
+if n; = 0 for all 4, i-e., if €(t) = €) modulo the five-term relation, as claimed.
+This proof also shows that every element of Z[C(t)]/(5-term relation) has a
+unique representative of the form + }\n,[a;t + b;] with 0 < arg(a;) < 7.
+
+[f]
+
+B. Relations among special values of the dilogarithm. Relations among
+values of D(a), or among values of L(a) modulo 7”, correspond to torsion in
+the Bloch group. (More precisely, an element of B[Q] is torsion if and only if
+its Bloch-Wigner dilogarithm in all complex embeddings vanishes, in which
+case its Rogers dilogarithm in all real embeddings is a rational multiple of 1.)
+Such relations are of interest in various contexts in combinatorics (asymptotics
+of certain g-hypergeometric series, like mock theta functions at roots of unity)
+[24], [49] and mathematical physics (models in rational conformal field theory,

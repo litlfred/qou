@@ -16,7 +16,7 @@ LaTeX label: `ex:su2-emergence`
 ## References
 
 - [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
-- [manuscript] §1 Example: Emergence of SU(2)
+- [leitner2026] §1 Example: Emergence of SU(2)
 -/
 
 namespace QOU.Examples
@@ -47,13 +47,13 @@ structure SU2EmergenceChain where
   gauge_group_is_su2 : groupDim = compactFormDim
 
 /-- The SU(2) emergence chain is valid. -/
--- Ref: [manuscript] §1
+-- Ref: [leitner2026] §1
 def su2Emergence : SU2EmergenceChain where
   exteriorPowerDim := 1
   -- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9
   volume_forces_det_one := rfl
   compactFormDim := 3
-  -- Ref: [manuscript] Ch. 2
+  -- Ref: [leitner2026] Ch. 2
   dagger_forces_unitary := rfl
   groupDim := 3
   -- Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9

@@ -9,13 +9,14 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Case 1: RR|LR",
-  "pageStart": 23,
-  "pageEnd": 24,
+  "title": "A geometrical lemma",
+  "pageStart": 20,
+  "pageEnd": 23,
   "contains": [
-    "library/0406242v4/blocks/prose-sec-012"
+    "library/0406242v4/blocks/prose-sec-012",
+    "library/0406242v4/blocks/lem-sec-012-01"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/0406242v4",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/0406242v4",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0406242v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0406242v4/manifest.jsonld",
   "provenance": "ingested"
 }

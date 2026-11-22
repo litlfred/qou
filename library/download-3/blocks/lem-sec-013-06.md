@@ -1,0 +1,1 @@
+The principal bundle M -^ M/Sp(2n) is homotopically equivalent to the principal bundle J^(M) —? M, where jF(M) is the space of symplectic frames on M. 5.2. Lie Algebra Cohomology, Cohomology of M/Sp(2n) and Characteristic Classes. Let g = {φ G A^(lR 2' 7)o/(C[[ft]] l\φo real} with the bracket [φ,ψ] = j^(φ * ψ — ψ * φ). Clearly, go is the subalgebra of g.

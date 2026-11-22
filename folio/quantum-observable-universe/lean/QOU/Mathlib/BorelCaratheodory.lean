@@ -44,7 +44,7 @@
   `Re f`), and the ball hypothesis is what the Hadamard application supplies
   anyway. Stated honestly rather than assumed away.
 
-  -- Ref: [manuscript] Borel-Carathéodory; Titchmarsh, *The Theory of Functions*,
+  -- Ref: [leitner2026] Borel-Carathéodory; Titchmarsh, *The Theory of Functions*,
      2nd ed., §5.5; Conway, *Functions of One Complex Variable I*, XI.§1.
 -/
 import Mathlib.Analysis.Complex.Schwarz

@@ -1,0 +1,1 @@
+The invariant JK′ of long knots is sometime more convenient. For example, JK(λ) might contain fractional power of q, but (if K′ has framing 0,) JK′(λ) is always in Z[q±1], see [20]. Also the function JK′ can be extended to the whole weight lattice. Geometry & Topology, Volume 9 (2005) The colored Jones function is q–holonomic 7.4

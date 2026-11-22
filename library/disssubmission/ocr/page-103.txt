@@ -1,0 +1,48 @@
+5.1. Intersections of theta divisors 95
+
+THEOREM 5.2. If C is a general curve of genus g = 2n, then G(dy) is
+either the alternating group Ay or the full symmetric group Gy.
+
+The proof of this in section 5.8 again uses a degeneration, this time
+from a general curve into a hyperelliptic one. We also remark that if the
+Galois group G(d,) in the above theorem is the full symmetric group Gy,
+then also the monodromy group G in the previous theorem has to be the
+full Weyl group W(£) because it then contains a reflection. However, at
+present we do not know how to decide whether this is indeed the case.
+
+5.1. Intersections of theta divisors
+
+Consider a complex ppav X of dimension g > 2 with a symmetric theta
+divisor © C X as above. In this section we will always assume that © is
+smooth or has at most isolated singularities, a situation in which we have
+the following Bertini-type result.
+
+LEMMA 5.3. Jf the theta divisor © is smooth or has at most isolated
+singularities, then over some Zariski-open dense subset U C X there exists
+a smooth proper family
+
+tu : Yu — U
+whose fibre over any point x € U(C) is isomorphic to Y, = ON ©,.
+
+Proof. Recall the general fact [55, cor. III.10.7] that if f: V —> W isa
+morphism of complex algebraic varieties and if V is smooth, then over some
+Zariski-open dense U C W the restriction fy = f| p-1(yy : f 1(U) — Uis
+a smooth morphism. Since we can replace W by any Zariski-open dense
+subset, this remains true if the smoothness assumption on V is replaced
+by the weaker assumption that the singular locus Sing(V) is mapped via f
+into a proper closed subset of W. In the case at hand, we apply this to the
+composite morphism
+
+f: V=@0x@— + Xxx + x=Ww
+
+where a: X x X —> X denotes the group law. If the theta divisor has at
+most isolated singularities, then Sing(V) = (Sing(®) x ©) U(@ x Sing(®))
+has dimension g — | or is empty. In both cases the general fact from above
+shows that over some Zariski-open dense subset U C X the restriction fy
+is smooth of relative dimension g— 2. This being said, our claim follows
+from the observation that the projection onto the first factor © x © —> ©
+induces an isomorphism f~! (x) ~ ON @, for x € X(C). Oo
+
+We want to study the fibres Y, of the above family. In this context an
+important role is played by the involution 0, : X¥ —> X,y+» x—y. Notice
+that the intersection Y, = © ©, is mapped onto itself by this involution

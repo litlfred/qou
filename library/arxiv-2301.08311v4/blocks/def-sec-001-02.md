@@ -1,1 +1,1 @@
-Let γ : [0, 1]→ C∗ be a path that does not intersect itself. Assume γ(0)̸=γ(1).
+We call a Lagrangian L ,→(M, ω) locally mutable if the following hold: (1) There is an open set B in M that is symplectomorphic via ϕ to an open ball B(0) around 0 ∈Cn such that ϕ(B ∩L) = Tγ for some admissible path γ in C. (2) i∗: H1(B ∩L) ,→H1(L) is a split injection, i.e., 0 →H1(Tγ) →H1(L) extends to split short exact sequence. Here i∗is induced from i : ϕ−1(Tγ) →L. (3) L \ B is connected.

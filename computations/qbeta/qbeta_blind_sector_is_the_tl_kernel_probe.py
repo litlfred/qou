@@ -317,7 +317,7 @@ def main() -> int:
             "is NOT A HECKE-TRACE OBJECT AT ALL. Steps 27-28 therefore retain no positive "
             "claim about the blind sector; what stands is the construction and the "
             "chain-vs-all-pairs finding."),
-        "contentBlock": "prop:three-calibration-inputs",
+        "contentBlock": "def:three-calibration-discipline",
         "assertions": a,
         "allPassed": ok,
         "parameters": {"pin": "experimental (proton)", "dps": 30,

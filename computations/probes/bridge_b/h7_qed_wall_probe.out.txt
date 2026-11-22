@@ -1,0 +1,14 @@
+wall at slot 0: depends on p (=xy)? False; on s? False
+wall at slot 1: depends on p (=xy)? False; on s? False
+wall at slot 2: depends on p (=xy)? False; on s? False
+wall at slot 3: depends on p (=xy)? False; on s? False
+wall at slot 4: depends on p (=xy)? False; on s? False
+wall at slot 5: depends on p (=xy)? False; on s? False
+wall at slot 6: depends on p (=xy)? False; on s? False
+same for all 7 wall slots: True
+E_wall(p) = (21*Y**2*q**6 - 63*Y**2*q**4 + 63*Y**2*q**2 - 63*Y**2 + 14*Y*q**6 - 42*Y*q**4 + 42*Y*q**2 - 42*Y + q**6 - 3*q**4 + 3*q**2 + 13)/(14*(q**6 - 3*q**4 + 3*q**2 - 3))
+E_wall(n) = (21*Y**2*q**6 - 42*Y**2*q**4 + 63*Y**2*q**2 - 21*Y**2 - 14*Y*q**6 + 28*Y*q**4 - 42*Y*q**2 + 14*Y - q**6 - 4*q**4 - 3*q**2 + 1)/(14*(q**6 - 2*q**4 + 3*q**2 - 1))
+E_wall(n)-E_wall(p) = -(14*Y*q**12 - 70*Y*q**10 + 168*Y*q**8 - 266*Y*q**6 + 252*Y*q**4 - 168*Y*q**2 + 42*Y + q**12 - 2*q**10 + 3*q**8 - 2*q**6 - 7*q**4 + 12*q**2 - 5)/(7*(q**6 - 3*q**4 + 3*q**2 - 3)*(q**6 - 2*q**4 + 3*q**2 - 1))
+q=1: E(p) = (Y + 1)*(3*Y - 1)/2  E(n) = (Y - 1)*(3*Y + 1)/2  diff = -2*Y
+[conditional on Y=1/3] at q0: E(p)=-0.00359262889669309, E(n)=-0.663167514075600, diff=-0.659574885178907
+[conditional on Y=-1/3] at q0: E(p)=-0.670259295563360, E(n)=0.00349915259106687, diff=0.673758448154427

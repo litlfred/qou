@@ -9,13 +9,18 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Critical points and the fundamental lemma",
-  "pageStart": 536,
-  "pageEnd": 541,
+  "title": "Manifolds",
+  "pageStart": 456,
+  "pageEnd": 461,
   "contains": [
-    "library/acsv231201/blocks/prose-sec-080"
+    "library/acsv231201/blocks/prose-sec-080",
+    "library/acsv231201/blocks/thm-sec-080-01",
+    "library/acsv231201/blocks/prop-sec-080-02",
+    "library/acsv231201/blocks/ex-sec-080-03",
+    "library/acsv231201/blocks/ex-sec-080-04",
+    "library/acsv231201/blocks/prop-sec-080-05"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/acsv231201",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/acsv231201",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/acsv231201/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/acsv231201/manifest.jsonld",
   "provenance": "ingested"
 }

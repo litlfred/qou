@@ -1,0 +1,55 @@
+Pro-unipotent harmonic actions and dynamical properties of p-adic cyclotomic multiple zeta values 1743
+
+5B. Iteration equation. We now write an equation for the iteration of the Frobenius on the subspace
+Pe" Occuycxy BE, D. We restrict the statement to positive numbers of iterations for simplicity, but
+a similar result holds for negative numbers of iterations. If f(z) = )°---9 mz” is a power series with
+coefficients in K, let f?")(z) = 9 % (Cm)z™” where o is the Frobenius automorphism of K.
+
+Proposition 5B.1. For any, ao, a € N* with ao dividing a, we have
+
+(p%/%0
+
+(p%) @q-!)
+eo, (Adge, (eee) Lip ay (€0, (Ad gy (€e)6))-
+
+Lif, (eo, (eee) = Lit, 4, (€o, (eee Lif, 4,
+Proof. The crystalline Frobenius of z7}" "(P! \ {0, ty, Co}), restricted to the rigid analytic sections on
+plan \ Usepy x) Béé, 1), is given, with the conventions of [Jarossay 2019], by the formula
+
+T(p*)6" + feo, (eee (<)> Lit, (eo, (eee) x FP” leo, Ady (€e)e)- 6-5)
+
+This implies the result. oO
+
+5C. Another iteration equation via regularized iterated integrals. The computation of overconvergent
+p-adic multiple polylogarithms in [Jarossay 2019], which was centered around a notion of regularization
+of iterated integrals, gives us another point of view on how they depend on a. Below, for a power series
+S € K[[z]], we denote by S[z’] the coefficient of z’” in S for all m € N. Again we restrict the statement
+to positive numbers of iteration of the Frobenius for simplicity, but a similar statement holds for negative
+number of iterations.
+
+Proposition 5C.1. For any word w on eouyy and any mo € N, there exists a sequence
+
+(cC&%&™[w](mo))_ ten
+Eeun(K)
+neN
+
+of elements of K such that, for any & € N such that g% > mo and m € N* satisfying |m — Mo|p <q *, we
+have
+foe)
+Li} ,[wlle"1 = 0%)" (X= Yo OF [wh gE" a — mo)').
+n=0 IeN €
+Proof. In [Jarossay 2019, Section 3], we have defined a notion of regularized, iterated integrals attached
+ade P we, a Sam & € un (K). We have
+
+computed these regularized iterated integrals by induction on the depth, and this gives us information
+
+to any sequence of differential forms among p
+
+on how they depend on w. Namely, each regularized iterated integral is a rigid analytic function on
+Pr \ Oe cuy(k) B(&, 1) which has a power series expansion )+?-_9 Cmz” satisfying the following property:
+for any mg € {0,..., p* — 1}, there exists a sequence (c“§)(mg)) je of elements of K such that, for
+all m € N with |m —mol|p < p~®, we have Cm = D729 Dre oll) (mien (m—mo)'.
+
+In [Jarossay 2019, Appendix B], we have showed that the numbers c®)(mg) have an expression
+as certain sums of series involving multiple harmonic sums, and particularly prime weighted multiple
+harmonic sums.

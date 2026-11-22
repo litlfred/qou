@@ -1,0 +1,48 @@
+3.7. Variation of Tannaka groups in families 65
+
+is a constructible sheaf on S which is concentrated in degree zero
+and has geometric stalks
+
+Ws = H(Xs,0s) = 0(Ps@ PY),
+
+(c) for each r < ro aconstructible subsheaf of W®" whose stalks at any
+geometric point 5 coincide under the above identification with the
+cohomology of the direct sum of all skyscraper summands 1 = dp
+in the convolution Q?" = Q5* --- * Q3.
+
+In general this is too much to expect. However, since the groups G; = G(P;)
+only depend on the geometric fibres of our abelian scheme and since for
+the proof of constructibility we can argue by Noetherian induction on the
+dimension dim(S), it will do no harm if we replace our original abelian
+scheme by the base change
+
+XxX’ =Xx;sS'’ > S'
+
+under a quasi-finite étale morphism S’ —+ S and also replace P € D(X)
+by its pull-back P’ € D(X’). In particular, for the proof of the proposition
+we are free to replace our base scheme S by arbitrary Zariski-open dense
+subsets of S and also by finite étale covers of such subsets.
+
+With this extra freedom, property (a) can be obtained from the general
+fact [64, prop. 1.1.7] that for any morphism p : X — S of varieties with
+smooth target variety S and any P € D(X), there is a Zariski-open dense
+subset S’ + S such that the formation of the relative dual
+
+Dyjs(P) = R#om(P, p'As)
+
+commutes with every base change that factors over S’ > S. Property (b) will
+be obtained in lemma 3.21 after a base change to a finite étale cover of some
+Zariski-open dense subset of S, which is needed to make sure that there are
+sufficiently many characters available. For part (c) consider the relative
+convolution power Q*" = Ra,(QRs:-- ls Q) where a: X xs:--xXsX —>X
+is the group law. We have a relative Kiinneth isomorphism
+
+Rp.(Q*") —+ (Rp.(Q))®" = we"
+
+as in the absolute case. Let ZC X be the zero section of our abelian scheme,
+and consider the morphism
+
+Q: Rp.(RHom(Az,Q*")) — R#om(As, W°") = W"
+
+which corresponds by adjunction to the composite morphism y given by
+the following diagram (where the diagonal arrow on the left comes from

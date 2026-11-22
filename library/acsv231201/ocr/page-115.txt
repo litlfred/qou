@@ -1,0 +1,55 @@
+4.2 Complex phase 97
+
+where b; is a polynomial in by, ...,bj,¢; | Chalseees Ch jt
+
+The existence of the expansion (4.6), with a; = 5, for all j, now follows
+from the monomial exponent case in Lemma 4.4, and we compute the leading
+terms (4.7) by finding b; and b,,,. Inverting the expression
+
+I/k
+1/k Ck+1 2
+= 1+— O
+y CE +( ch x (x )
+
+= aito(1 + wy + (x) (4.10)
+
+Ck
+
+to expand x as a series in y is a matter of plugging x = oilty + ay + O(y)
+into (4.10), setting the result equal to x, and solving for a to obtain
+
+2
+y lee { y 3
+= 2 - 1) 2 | 4.06%)
+ak ke [=]
+, 2 Ck 2
+x(~y)=—-s +O"). (4.11)
+’ cl" clk kek y
+
+Composing A with x(y) gives
+
+1 e —Ck+1 1 41 042
+A(x(y)) = bey! +| be + bes -|y! + 00),
+ck fk key 7k + fbik
+
+and multiplying this expansion by the expression for x’(y) in (4.11) shows that
+the leading series coefficients of A(y) = A(x(y))x’(y) are
+by = br
+€4+2 cert
+ko
+
+giving (4.7). ia)
+
+Beat = bes — be
+
+Exercise 4.6. Give an example to show that the hypotheses do not imply that
+6 is C™*!-smooth.
+
+4.2 Complex phase
+
+Extending the results of the previous section to complex amplitudes is trivial:
+by linearity of the integral, the result holds separately for Im{A} and Re{A}, and
+these may be recombined to give the result for complex A. When it comes to
+complex phases, we are faced with a choice. If we assume A and ¢ are analytic
+in a neighborhood of zero then we are entitled to move the contour, which is the
+quickest justification for extending the conclusion to complex phases and is the

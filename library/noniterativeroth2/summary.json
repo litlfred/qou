@@ -2,46 +2,36 @@
  "_schema": "library-summary/v1",
  "doc_id": "noniterativeroth2",
  "source_sha256": "83bbcdf45da069e5",
- "brief": "A PROOF OF ROTH’S THEOREM ON ARITHMETIC PROGRESSIONS — We present a proof of Roth’s theorem that follows a slightly di erent structure to the usual proofs, in that there is not much iteration.",
- "extended": "**A PROOF OF ROTH’S THEOREM ON ARITHMETIC PROGRESSIONS**\n\n*ERNIE CROOT AND OLOF SISASK*\n\n5 pp, 7 sections.\n\n**Abstract.** We present a proof of Roth’s theorem that follows a slightly di erent structure to the usual proofs, in that there is not much iteration. Although our proof works using a type of density increment argument (which is typical of most proofs of Roth’s theorem), we do not pass to a progression related to the large Fourier coe\u000ecients of our set (as most other proofs of Roth do). Furthermore, in our proof, the density increment is achieved through an application of a quantitative version of Varnavides’s theorem, which is perhaps unexpected.\n\n**Outline.** 2 ERNIE CROOT AND OLOF SISASK; 1 Introduction; 2 Notation; 3 Proof of Theorem 1.1; 4 ERNIE CROOT AND OLOF SISASK; 4 Acknowledgements; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: We have that r3(N) = o(N).\n- Lemma 3.1: [2] For any 1 6 M 6 N , and for any set T 0 \u0012 [N], we have",
+ "brief": "A PROOF OF ROTH’S THEOREM ON ARITHMETIC PROGRESSIONS — We present a proof of Roth’s theorem that follows a slightly diﬀerent structure to the usual proofs, in that there is not much iteration.",
+ "extended": "**A PROOF OF ROTH’S THEOREM ON ARITHMETIC PROGRESSIONS**\n\n*ERNIE CROOT AND OLOF SISASK*\n\n5 pp, 5 sections.\n\n**Abstract.** We present a proof of Roth’s theorem that follows a slightly diﬀerent structure to the usual proofs, in that there is not much iteration. Although our proof works using a type of density increment argument (which is typical of most proofs of Roth’s theorem), we do not pass to a progression related to the large Fourier coeﬃcients of our set (as most other proofs of Roth do). Furthermore, in our proof, the density increment is achieved through an application of a quantitative version of Varnavides’s theorem, which is perhaps unexpected.\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5",
  "tokens": {
   "brief": 48,
-  "extended": 246
+  "extended": 178
  },
  "sections": [
   {
-   "id": "sec-000-2-ernie-croot-and-olof-sisask",
-   "title": "ERNIE CROOT AND OLOF SISASK",
+   "id": "page-001",
+   "title": "Page 1",
    "pages": "1-1"
   },
   {
-   "id": "sec-001-1-introduction",
-   "title": "Introduction",
-   "pages": "1-2"
-  },
-  {
-   "id": "sec-002-2-notation",
-   "title": "Notation",
+   "id": "page-002",
+   "title": "Page 2",
    "pages": "2-2"
   },
   {
-   "id": "sec-003-3-proof-of-theorem-11",
-   "title": "Proof of Theorem 1.1",
-   "pages": "2-4"
+   "id": "page-003",
+   "title": "Page 3",
+   "pages": "3-3"
   },
   {
-   "id": "sec-004-4-ernie-croot-and-olof-sisask",
-   "title": "ERNIE CROOT AND OLOF SISASK",
+   "id": "page-004",
+   "title": "Page 4",
    "pages": "4-4"
   },
   {
-   "id": "sec-005-4-acknowledgements",
-   "title": "Acknowledgements",
-   "pages": "4-5"
-  },
-  {
-   "id": "sec-006-references",
-   "title": "References",
+   "id": "page-005",
+   "title": "Page 5",
    "pages": "5-5"
   }
  ],
@@ -49,8 +39,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

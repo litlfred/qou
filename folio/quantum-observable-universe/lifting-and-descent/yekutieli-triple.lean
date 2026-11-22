@@ -16,7 +16,7 @@ version used in the definition block.
 ## References
 
 - [yekutieli2010] Central Extensions of Gerbes, §3
-- [manuscript] §3
+- [leitner2026] §3
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
 Part of the formal proof chain. The parameter `q` is the canonical
@@ -38,7 +38,7 @@ def q_inv_param : R_q := LaurentPolynomial.T (-1)
     level n and intersection Uᵢ ∩ Uⱼ of the brane tower.
 
     LaTeX: `\label{def:yekutieli-triple}` -/
--- Ref: [yekutieli2010] §3, [manuscript] §3
+-- Ref: [yekutieli2010] §3, [leitner2026] §3
 structure YekutieliTripleMapping (M : Type*) where
   /-- Level in the brane tower. -/
   level : ℕ

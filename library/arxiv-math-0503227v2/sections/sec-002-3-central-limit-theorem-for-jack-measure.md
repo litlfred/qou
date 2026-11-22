@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-math-0503227v2
-doc_title: "An Inductive Proof of the Berry-Esseen Theorem for Character Ratios Running head: Berry-Esseen Theorem for Character Ratios By Jason Fulman"
+doc_title: "An Inductive Proof of the Berry-Esseen Theorem for Character Ratios Running head: Berry-Esseen Theorem for Character Ratios"
 section_id: sec-002-3-central-limit-theorem-for-jack-measure
 section_title: "Central limit theorem for Jack measure"
 section_number: 3
 pages: 9-13
 source_pdf: 0503227v2.pdf
 source_sha256: 4e83adfdef827103
-doc_brief: "An Inductive Proof of the Berry-Esseen Theorem for Character Ratios Running head: Berry-Esseen Theorem for Character Ratios By Jason Fulman — Bolthausen used a variation of Stein’s method to give an"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.996
-latex_coverage_ratio: 0.992
+latex_prose_ratio: 0.982
+latex_coverage_ratio: 1.0
+doc_brief: "An Inductive Proof of the Berry-Esseen Theorem for Character Ratios Running head: Berry-Esseen Theorem for Character Ratios — Bolthausen used a variation of Stein’s method to give an inductive proof"
 ---
 []{#jack label="jack"}
 

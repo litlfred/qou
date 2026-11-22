@@ -1,0 +1,51 @@
+1954 Noelia Rizo, A. A. Schaeffer Fry and Carolina Vallejo
+
+Theorem A. Let G be a finite group of order divisible by p, where p € {2, 3}. Let P € Syl, (G) and let
+Bo be the principal p-block of G. Then
+
+[rrp (Bo)"'|= p_ if, and only if, P is cyclic,
+
+where Irr (Bo)! is the set of irreducible characters in Bo with degree relatively prime to p that are fixed
+
+under the action of 0}.
+
+With the definition above, o is an element of the subgroup H < G consisting of all o € G for which
+there exists some integer f such that o (€) = ep! whenever & is a root of unity of order not divisible by p.
+Navarro predicted [2004, Conjecture A] the existence of bijections for the McKay conjecture commuting
+with the action of H on characters. This is the celebrated McKay-—Navarro conjecture (sometimes also
+referred to as the Galois-McKay conjecture), which has been recently reduced to a question on finite
+simple groups in [Navarro et al. 2019]. The McKay—Navarro conjecture admits a blockwise version
+[Navarro 2004, Conjecture B], which remains unreduced at the present moment and which we will refer
+to as the Alperin-McKay-—Navarro conjecture, as it can also be seen as a refined version of the celebrated
+Alperin—McKay conjecture. In this context, it is natural to wonder the extent to which Theorem A holds
+for arbitrary blocks. We propose the following.
+
+Conjecture B. Let p € {2, 3}. Let G be a finite group and let B be a p-block of G with nontrivial defect
+
+group D. Then
+|Irro(B)"'|= p_ if, andonly if, D is cyclic,
+
+where Irro(B)*! is the set of height zero irreducible characters in the block B that are fixed under the
+
+action of 04.
+
+We prove that Conjecture B follows from the Alperin-McKay-—Navarro conjecture. In this sense,
+Theorem A provides more evidence of the elusive Alperin-McKay-—Navarro conjecture. Since the latter
+holds whenever D is cyclic, by work of Navarro [2004], it follows that the “if” direction of Conjecture B
+(and of Theorem A) holds. For many consequences of the (Alperin—)McKay—Navarro conjecture, the state-
+ments take different forms depending on the prime (see, for instance, [Navarro et al. 2007; Schaeffer Fry
+2019]). This might well be the case here, however, we are not yet aware of such a statement for p > 3.
+
+To prove Theorem A, we use the classification of finite simple groups. In particular, we contribute to
+the problem of understanding Galois action on the characters in blocks of nonabelian simple groups in
+the following way.
+
+Theorem C. Let S be a nonabelian simple group of order divisible by p < 3, P € Syl, (S) and X €
+Syl, (Aut(S)). Let Bo be the principal p-block of S.
+
+(a) If P is cyclic, then p = 3 and Irry(Bo)"! = {1s, 61, $2}, where the ¢; are nontrivial and not
+Aut(S)-conjugate, and some 9; is X-invariant.
+
+(b) If P is not cyclic, then Irry(Bo)"! 2D {1s, G1, ---, Pp}, where the nontrivial $; are pairwise not
+
+Aut(S)-conjugate, and some 9; is X-invariant.

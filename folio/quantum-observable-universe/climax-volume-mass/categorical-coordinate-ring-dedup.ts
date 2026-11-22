@@ -24,4 +24,7 @@ export default remark({
     "prop:descartes-elliptic-curve",
     "rem:u1-phase-tube",
   ],
+  authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): This recovers the branch-phase localisation of [rem:u1-phase-tube](#rem:u1-phase-tube)." },
+  ],
 });

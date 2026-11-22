@@ -6,8 +6,8 @@ published headline's SIGN.
 Bean `qou-54g5`, blockers (A) sign convention and (B) no producer reaches N=5.
 
 # Ref: folio/quantum-observable-universe/mass-theory/q-beta-categorical-precision-ladder.md
-# Ref: folio/quantum-observable-universe/stochastic-mechanics/q-beta-categorical-precision-ladder-table2-data.md
-# Ref: folio/quantum-observable-universe/stochastic-mechanics/q-beta-categorical-precision-ladder-table3-data.md
+# Ref: folio/quantum-observable-universe/mass-theory/q-beta-categorical-precision-ladder-table2-data.md
+# Ref: folio/quantum-observable-universe/mass-theory/q-beta-categorical-precision-ladder-table3-data.md
 
 EVERYTHING HERE IS CONVENTION C (z = sqrt(q)/(q+1)), the frame the block was
 written in.  The D-frame ladder does not exist (bean `qou-cds1`); nothing here
@@ -119,6 +119,7 @@ mpmath end to end; no float64; no mpf(str(<float64>)).
 """
 from __future__ import annotations
 
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590) order-zero E_0 routed + labelled, owner ruling 2026-11-20
 import sys as _sys
 import pathlib as _pl
 
@@ -177,7 +178,7 @@ def q_a(q):
     and `qbeta_ladder_convention_fee_probe` are the same function."""
     h = q - 1 / q
     eps = w_blind(q) * h - h
-    return abs(eps * ME / (q * (q - 1)))
+    return abs(_qbeta_e0.order_zero_scaled(eps * ME, q))
 
 
 def coefficients(q, c4="live", c5="live"):

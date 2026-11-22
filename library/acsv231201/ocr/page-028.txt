@@ -1,0 +1,44 @@
+10 Introduction
+
+tion 23] on generating functions and combinatorial sums. Further progress in
+using multivariate residues to evaluate coefficients of generating functions was
+made by Bertozzi and McKenna [BM93], though at the time of Odlyzko’s sur-
+vey none of the papers based on multivariate residues such as [Lic91; BM93]
+had resulted in any kind of systematic application of these methods to enumer-
+ation. It is interesting to note that several of these early works, such as [BM93;
+KY96], are centered on queueing theory applications.
+
+The focus of this book is a more recent vein of research, begun in [PW02],
+continued in its infancy in [PW04; Lla03; Wil05; Lla06; RW08; RW11; PW08;
+DeV10; PW10], and now comprising a stable and ever-growing component
+of enumerative combinatorics. This research extends ideas that are present to
+some degree in [Lic91; BM93; KY96], using complex methods that are gen-
+uinely multivariate to evaluate coefficients via the multivariate Cauchy formula
+
+d
+«=(21) [ertreae, (1.5)
+2ni} Jr
+
+where T is a suitable product of circles in each variable. We hope that by
+avoiding the symmetry-breaking decompositions of the GF-sequence method
+we will obtain methods that are more universally applicable. In particular,
+much of this past work can be viewed as instances of a more general result
+estimating the Cauchy integral via topological reductions of the cycle T of
+integration. These topological reductions, while not fully automatic, are algo-
+rithmically decidable in many cases. The ultimate goal, now well on its way
+to fruition [Mel21, Chapter 7], is to develop software to automate all of the
+computation.
+
+We can by no means say that the majority of multivariate generating func-
+tions fall prey to these new techniques. Nevertheless, as illustrated in this
+text and a steadily increasing number of papers, we can treat a large num-
+ber of combinatorially interesting examples. The class of functions to which
+the methods described in this book may be applied is larger than the class of
+rational functions, but similar in spirit: the function must have singularities,
+and the singularities dictating asymptotics must be poles. This translates to the
+requirement that the function be meromorphic in a neighborhood of a certain
+polydisk, which means that it has a representation, at least locally, as a quotient
+of analytic functions.
+
+Throughout this book, we reserve the symbols F, P, and Q for a meromor-
+phic function F expressed as the quotient P/Q of analytic functions with a

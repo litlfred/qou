@@ -2,167 +2,607 @@
  "_schema": "library-summary/v1",
  "doc_id": "kondev-2021-chinese-phys-c-45-030001",
  "source_sha256": "29b14ce8a7c0ecac",
- "brief": "The NUBASE2020 evaluation of nuclear physics properties — 31 sections: Physics Division, Argonne National; Institute of Modern Physics, Chine; Advanced Energy Science and Techno",
- "extended": "**The NUBASE2020 evaluation of nuclear physics properties**\n\n*View the article online for updates and enhancements*\n\n181 pp, 31 sections.\n\n**Outline.** 1 Physics Division, Argonne National Laborator; 2 Institute of Modern Physics, Chinese Academy; 4 Advanced Energy Science and Technology Guang; 5 Max-Planck-Institut f¨ur Kernphysik, Saupfer; 6 Universit´e Paris-Saclay, CNRS/IN2P3, IJCLab; 7 RIKEN Nishina Center, Wako, Saitama 351-0198; 1 Introduction; 2.2 Isomers; 2.1 Mass excess; 2.3 Half-life; 2.2.1 Isobaric analog states; 2.4 Spin and parity; 2.5 Decay modes and their intensities; 2.6 Isotopic abundances; 2.7 Y ear of discovery; 2.8 References and Dissemination; 3.1 Trends in neighboring nuclei (TNN); 3.2 A veraging procedure and uncertainties",
+ "brief": "The NUBASE2020 evaluation of nuclear physics properties — 119 sections: Front matter; Introduction; Isomers",
+ "extended": "**The NUBASE2020 evaluation of nuclear physics properties**\n\n*View the article online for updates and enhancements*\n\n181 pp, 119 sections.\n\n**Outline.** Front matter; 1 Introduction; 2.2 Isomers; 2.1 Mass excess; 2.3 Half-life; 2.4 Spin and parity; 2.5 Decay modes and their intensities; 2.6 Isotopic abundances; 2.7 Year of discovery; 2.8 References and Dissemination; 3.1 Trends in neighboring nuclei (TNN); 3.2 Averaging procedure and uncertainties; 3.3 Symmetrization of asymmetric uncertainties; 3.4 Rounding policy; 4 Conclusions and outlook; References; 5 Acknowledgments; 15 MMC12 J",
  "tokens": {
-  "brief": 44,
-  "extended": 189
+  "brief": 26,
+  "extended": 147
  },
  "sections": [
   {
-   "id": "sec-000-1-physics-division-argonne-national-laboratory-l",
-   "title": "Physics Division, Argonne National Laboratory, Lemont, IL 60439, USA",
-   "pages": "2-2"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
   },
   {
-   "id": "sec-001-2-institute-of-modern-physics-chinese-academy-of",
-   "title": "Institute of Modern Physics, Chinese Academy of Sciences, Lanzhou 730000, China",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-002-4-advanced-energy-science-and-technology-guangdo",
-   "title": "Advanced Energy Science and Technology Guangdong Laboratory, Huizhou 516003, China",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-003-5-max-planck-institut-fur-kernphysik-saupferchec",
-   "title": "Max-Planck-Institut f¨ur Kernphysik, Saupfercheckweg 1, 69117 Heidelberg, Germany",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-004-6-universite-paris-saclay-cnrsin2p3-ijclab-91405",
-   "title": "Universit´e Paris-Saclay, CNRS/IN2P3, IJCLab, 91405 Orsay, France",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-005-7-riken-nishina-center-wako-saitama-351-0198-jap",
-   "title": "RIKEN Nishina Center, Wako, Saitama 351-0198, Japan",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-006-1-introduction",
+   "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-007-22-isomers",
-   "title": "Isomers",
    "pages": "2-3"
   },
   {
-   "id": "sec-008-21-mass-excess",
+   "id": "sec-001-22-isomers",
+   "title": "Isomers",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-002-21-mass-excess",
    "title": "Mass excess",
-   "pages": "3-5"
+   "pages": "3-6"
   },
   {
-   "id": "sec-009-23-half-life",
+   "id": "sec-003-23-half-life",
    "title": "Half-life",
-   "pages": "5-6"
-  },
-  {
-   "id": "sec-010-221-isobaric-analog-states",
-   "title": "Isobaric analog states",
    "pages": "6-8"
   },
   {
-   "id": "sec-011-24-spin-and-parity",
+   "id": "sec-004-24-spin-and-parity",
    "title": "Spin and parity",
    "pages": "8-11"
   },
   {
-   "id": "sec-012-25-decay-modes-and-their-intensities",
+   "id": "sec-005-25-decay-modes-and-their-intensities",
    "title": "Decay modes and their intensities",
    "pages": "11-13"
   },
   {
-   "id": "sec-013-26-isotopic-abundances",
+   "id": "sec-006-26-isotopic-abundances",
    "title": "Isotopic abundances",
    "pages": "13-13"
   },
   {
-   "id": "sec-014-27-y-ear-of-discovery",
-   "title": "Y ear of discovery",
+   "id": "sec-007-27-year-of-discovery",
+   "title": "Year of discovery",
    "pages": "13-13"
   },
   {
-   "id": "sec-015-28-references-and-dissemination",
+   "id": "sec-008-28-references-and-dissemination",
    "title": "References and Dissemination",
    "pages": "13-13"
   },
   {
-   "id": "sec-016-31-trends-in-neighboring-nuclei-tnn",
+   "id": "sec-009-31-trends-in-neighboring-nuclei-tnn",
    "title": "Trends in neighboring nuclei (TNN)",
    "pages": "13-13"
   },
   {
-   "id": "sec-017-32-a-veraging-procedure-and-uncertainties",
-   "title": "A veraging procedure and uncertainties",
+   "id": "sec-010-32-averaging-procedure-and-uncertainties",
+   "title": "Averaging procedure and uncertainties",
    "pages": "13-14"
   },
   {
-   "id": "sec-018-33-symmetrization-of-asymmetric-uncertainties",
+   "id": "sec-011-33-symmetrization-of-asymmetric-uncertainties",
    "title": "Symmetrization of asymmetric uncertainties",
    "pages": "14-14"
   },
   {
-   "id": "sec-019-34-rounding-policy",
+   "id": "sec-012-34-rounding-policy",
    "title": "Rounding policy",
    "pages": "14-14"
   },
   {
-   "id": "sec-020-4-conclusions-and-outlook",
+   "id": "sec-013-4-conclusions-and-outlook",
    "title": "Conclusions and outlook",
    "pages": "14-15"
   },
   {
-   "id": "sec-021-references",
+   "id": "sec-014-references",
    "title": "References",
    "pages": "15-15"
   },
   {
-   "id": "sec-022-5-acknowledgments",
+   "id": "sec-015-5-acknowledgments",
    "title": "Acknowledgments",
-   "pages": "15-15"
+   "pages": "15-26"
   },
   {
-   "id": "sec-023-3-g-audi-fg-kondev-m-wang-b-pfeiffer-x-sun",
-   "title": "G. Audi, F.G. Kondev, M. Wang, B. Pfeiffer, X. Sun,",
-   "pages": "15-15"
+   "id": "sec-016-15-mmc12-j",
+   "title": "MMC12 J",
+   "pages": "26-34"
   },
   {
-   "id": "sec-024-4-g-audi-fg-kondev-m-wang-wj-huang-s-naimi",
-   "title": "G. Audi, F.G. Kondev, M. Wang, W.J. Huang, S. Naimi,",
-   "pages": "15-16"
+   "id": "sec-017-17-ahw",
+   "title": "AHW",
+   "pages": "34-37"
   },
   {
-   "id": "sec-025-11-mp-unterweger-and-r-fitzgerald-appl-radiat-is",
-   "title": "M.P. Unterweger and R. Fitzgerald, Appl. Radiat. Isot. 87",
-   "pages": "16-16"
+   "id": "sec-018-06-mmc12-j",
+   "title": "MMC12 J",
+   "pages": "37-42"
   },
   {
-   "id": "sec-026-14-a-macdonald-b-karamy-k-setoodehnia-bsingh",
-   "title": "A. MacDonald, B. Karamy, K. Setoodehnia, B.Singh,",
-   "pages": "16-16"
+   "id": "sec-019-mmc12-j-page-42",
+   "title": "MMC12 J (page 42)",
+   "pages": "42-42"
   },
   {
-   "id": "sec-027-19-iaea-coordinated-research-project-on-a-refere",
-   "title": "IAEA Coordinated Research Project on a reference",
-   "pages": "16-16"
+   "id": "sec-020-mmc12-j-page-43",
+   "title": "MMC12 J (page 43)",
+   "pages": "43-43"
   },
   {
-   "id": "sec-028-20-j-meija-tb-coplen-m-berglund-wa-brand-p-de",
-   "title": "J. Meija, T.B. Coplen, M. Berglund, W.A. Brand, P. De",
-   "pages": "16-16"
+   "id": "sec-021-mmc12-j-page-44",
+   "title": "MMC12 J (page 44)",
+   "pages": "44-44"
   },
   {
-   "id": "sec-029-21-m-thoennessen-the-discovery-of-isotopes-a-com",
-   "title": "M. Thoennessen, “The Discovery of Isotopes: A Com-",
-   "pages": "16-16"
+   "id": "sec-022-mmc12-j-page-45",
+   "title": "MMC12 J (page 45)",
+   "pages": "45-45"
   },
   {
-   "id": "sec-030-22-b-pritychenko-e-b-ˇetak-ma-kellett-b-singh-an",
-   "title": "B. Pritychenko, E. B ˇet´ak, M.A. Kellett, B. Singh and",
-   "pages": "16-181"
+   "id": "sec-023-mmc12-j-page-46",
+   "title": "MMC12 J (page 46)",
+   "pages": "46-46"
+  },
+  {
+   "id": "sec-024-mmc12-j-page-47",
+   "title": "MMC12 J (page 47)",
+   "pages": "47-47"
+  },
+  {
+   "id": "sec-025-mmc12-j-page-48",
+   "title": "MMC12 J (page 48)",
+   "pages": "48-48"
+  },
+  {
+   "id": "sec-026-mmc12-j-page-49",
+   "title": "MMC12 J (page 49)",
+   "pages": "49-49"
+  },
+  {
+   "id": "sec-027-mmc12-j-page-50",
+   "title": "MMC12 J (page 50)",
+   "pages": "50-50"
+  },
+  {
+   "id": "sec-028-mmc12-j-page-51",
+   "title": "MMC12 J (page 51)",
+   "pages": "51-51"
+  },
+  {
+   "id": "sec-029-mmc12-j-page-52",
+   "title": "MMC12 J (page 52)",
+   "pages": "52-52"
+  },
+  {
+   "id": "sec-030-mmc12-j-page-53",
+   "title": "MMC12 J (page 53)",
+   "pages": "53-53"
+  },
+  {
+   "id": "sec-031-mmc12-j-page-54",
+   "title": "MMC12 J (page 54)",
+   "pages": "54-54"
+  },
+  {
+   "id": "sec-032-mmc12-j-page-55",
+   "title": "MMC12 J (page 55)",
+   "pages": "55-55"
+  },
+  {
+   "id": "sec-033-mmc12-j-page-56",
+   "title": "MMC12 J (page 56)",
+   "pages": "56-56"
+  },
+  {
+   "id": "sec-034-mmc12-j-page-57",
+   "title": "MMC12 J (page 57)",
+   "pages": "57-57"
+  },
+  {
+   "id": "sec-035-mmc12-j-page-58",
+   "title": "MMC12 J (page 58)",
+   "pages": "58-58"
+  },
+  {
+   "id": "sec-036-mmc12-j-page-59",
+   "title": "MMC12 J (page 59)",
+   "pages": "59-59"
+  },
+  {
+   "id": "sec-037-mmc12-j-page-60",
+   "title": "MMC12 J (page 60)",
+   "pages": "60-60"
+  },
+  {
+   "id": "sec-038-mmc12-j-page-61",
+   "title": "MMC12 J (page 61)",
+   "pages": "61-61"
+  },
+  {
+   "id": "sec-039-mmc12-j-page-62",
+   "title": "MMC12 J (page 62)",
+   "pages": "62-62"
+  },
+  {
+   "id": "sec-040-mmc12-j-page-63",
+   "title": "MMC12 J (page 63)",
+   "pages": "63-63"
+  },
+  {
+   "id": "sec-041-mmc12-j-page-64",
+   "title": "MMC12 J (page 64)",
+   "pages": "64-64"
+  },
+  {
+   "id": "sec-042-mmc12-j-page-65",
+   "title": "MMC12 J (page 65)",
+   "pages": "65-65"
+  },
+  {
+   "id": "sec-043-mmc12-j-page-66",
+   "title": "MMC12 J (page 66)",
+   "pages": "66-66"
+  },
+  {
+   "id": "sec-044-mmc12-j-page-67",
+   "title": "MMC12 J (page 67)",
+   "pages": "67-67"
+  },
+  {
+   "id": "sec-045-mmc12-j-page-68",
+   "title": "MMC12 J (page 68)",
+   "pages": "68-68"
+  },
+  {
+   "id": "sec-046-mmc12-j-page-69",
+   "title": "MMC12 J (page 69)",
+   "pages": "69-69"
+  },
+  {
+   "id": "sec-047-mmc12-j-page-70",
+   "title": "MMC12 J (page 70)",
+   "pages": "70-70"
+  },
+  {
+   "id": "sec-048-mmc12-j-page-71",
+   "title": "MMC12 J (page 71)",
+   "pages": "71-71"
+  },
+  {
+   "id": "sec-049-mmc12-j-page-72",
+   "title": "MMC12 J (page 72)",
+   "pages": "72-72"
+  },
+  {
+   "id": "sec-050-mmc12-j-page-73",
+   "title": "MMC12 J (page 73)",
+   "pages": "73-73"
+  },
+  {
+   "id": "sec-051-mmc12-j-page-74",
+   "title": "MMC12 J (page 74)",
+   "pages": "74-74"
+  },
+  {
+   "id": "sec-052-mmc12-j-page-75",
+   "title": "MMC12 J (page 75)",
+   "pages": "75-75"
+  },
+  {
+   "id": "sec-053-mmc12-j-page-76",
+   "title": "MMC12 J (page 76)",
+   "pages": "76-76"
+  },
+  {
+   "id": "sec-054-mmc12-j-page-77",
+   "title": "MMC12 J (page 77)",
+   "pages": "77-77"
+  },
+  {
+   "id": "sec-055-mmc12-j-page-78",
+   "title": "MMC12 J (page 78)",
+   "pages": "78-78"
+  },
+  {
+   "id": "sec-056-mmc12-j-page-79",
+   "title": "MMC12 J (page 79)",
+   "pages": "79-79"
+  },
+  {
+   "id": "sec-057-95-fgk208-jd",
+   "title": "FGK208 JD",
+   "pages": "79-97"
+  },
+  {
+   "id": "sec-058-17-fgk205-ej",
+   "title": "FGK205 EJ",
+   "pages": "97-123"
+  },
+  {
+   "id": "sec-059-fgk208-ij-page-123",
+   "title": "FGK208 IJ (page 123)",
+   "pages": "123-123"
+  },
+  {
+   "id": "sec-060-fgk208-ij-page-124",
+   "title": "FGK208 IJ (page 124)",
+   "pages": "124-124"
+  },
+  {
+   "id": "sec-061-fgk208-ij-page-125",
+   "title": "FGK208 IJ (page 125)",
+   "pages": "125-125"
+  },
+  {
+   "id": "sec-062-fgk208-ij-page-126",
+   "title": "FGK208 IJ (page 126)",
+   "pages": "126-126"
+  },
+  {
+   "id": "sec-063-fgk208-ij-page-127",
+   "title": "FGK208 IJ (page 127)",
+   "pages": "127-127"
+  },
+  {
+   "id": "sec-064-fgk208-ij-page-128",
+   "title": "FGK208 IJ (page 128)",
+   "pages": "128-128"
+  },
+  {
+   "id": "sec-065-fgk208-ij-page-129",
+   "title": "FGK208 IJ (page 129)",
+   "pages": "129-129"
+  },
+  {
+   "id": "sec-066-fgk208-ij-page-130",
+   "title": "FGK208 IJ (page 130)",
+   "pages": "130-130"
+  },
+  {
+   "id": "sec-067-fgk208-ij-page-131",
+   "title": "FGK208 IJ (page 131)",
+   "pages": "131-131"
+  },
+  {
+   "id": "sec-068-fgk208-ij-page-132",
+   "title": "FGK208 IJ (page 132)",
+   "pages": "132-132"
+  },
+  {
+   "id": "sec-069-fgk208-ij-page-133",
+   "title": "FGK208 IJ (page 133)",
+   "pages": "133-133"
+  },
+  {
+   "id": "sec-070-fgk208-ij-page-134",
+   "title": "FGK208 IJ (page 134)",
+   "pages": "134-134"
+  },
+  {
+   "id": "sec-071-fgk208-ij-page-135",
+   "title": "FGK208 IJ (page 135)",
+   "pages": "135-135"
+  },
+  {
+   "id": "sec-072-fgk208-ij-page-136",
+   "title": "FGK208 IJ (page 136)",
+   "pages": "136-136"
+  },
+  {
+   "id": "sec-073-fgk208-ij-page-137",
+   "title": "FGK208 IJ (page 137)",
+   "pages": "137-137"
+  },
+  {
+   "id": "sec-074-fgk208-ij-page-138",
+   "title": "FGK208 IJ (page 138)",
+   "pages": "138-138"
+  },
+  {
+   "id": "sec-075-fgk208-ij-page-139",
+   "title": "FGK208 IJ (page 139)",
+   "pages": "139-139"
+  },
+  {
+   "id": "sec-076-fgk208-ij-page-140",
+   "title": "FGK208 IJ (page 140)",
+   "pages": "140-140"
+  },
+  {
+   "id": "sec-077-fgk208-ij-page-141",
+   "title": "FGK208 IJ (page 141)",
+   "pages": "141-141"
+  },
+  {
+   "id": "sec-078-fgk208-ij-page-142",
+   "title": "FGK208 IJ (page 142)",
+   "pages": "142-142"
+  },
+  {
+   "id": "sec-079-fgk208-ij-page-143",
+   "title": "FGK208 IJ (page 143)",
+   "pages": "143-143"
+  },
+  {
+   "id": "sec-080-fgk208-ij-page-144",
+   "title": "FGK208 IJ (page 144)",
+   "pages": "144-144"
+  },
+  {
+   "id": "sec-081-fgk208-ij-page-145",
+   "title": "FGK208 IJ (page 145)",
+   "pages": "145-145"
+  },
+  {
+   "id": "sec-082-fgk208-ij-page-146",
+   "title": "FGK208 IJ (page 146)",
+   "pages": "146-146"
+  },
+  {
+   "id": "sec-083-fgk208-ij-page-147",
+   "title": "FGK208 IJ (page 147)",
+   "pages": "147-147"
+  },
+  {
+   "id": "sec-084-fgk208-ij-page-148",
+   "title": "FGK208 IJ (page 148)",
+   "pages": "148-148"
+  },
+  {
+   "id": "sec-085-fgk208-ij-page-149",
+   "title": "FGK208 IJ (page 149)",
+   "pages": "149-149"
+  },
+  {
+   "id": "sec-086-fgk208-ij-page-150",
+   "title": "FGK208 IJ (page 150)",
+   "pages": "150-150"
+  },
+  {
+   "id": "sec-087-fgk208-ij-page-151",
+   "title": "FGK208 IJ (page 151)",
+   "pages": "151-151"
+  },
+  {
+   "id": "sec-088-fgk208-ij-page-152",
+   "title": "FGK208 IJ (page 152)",
+   "pages": "152-152"
+  },
+  {
+   "id": "sec-089-fgk208-ij-page-153",
+   "title": "FGK208 IJ (page 153)",
+   "pages": "153-153"
+  },
+  {
+   "id": "sec-090-fgk208-ij-page-154",
+   "title": "FGK208 IJ (page 154)",
+   "pages": "154-154"
+  },
+  {
+   "id": "sec-091-fgk208-ij-page-155",
+   "title": "FGK208 IJ (page 155)",
+   "pages": "155-155"
+  },
+  {
+   "id": "sec-092-fgk208-ij-page-156",
+   "title": "FGK208 IJ (page 156)",
+   "pages": "156-156"
+  },
+  {
+   "id": "sec-093-fgk208-ij-page-157",
+   "title": "FGK208 IJ (page 157)",
+   "pages": "157-157"
+  },
+  {
+   "id": "sec-094-fgk208-ij-page-158",
+   "title": "FGK208 IJ (page 158)",
+   "pages": "158-158"
+  },
+  {
+   "id": "sec-095-fgk208-ij-page-159",
+   "title": "FGK208 IJ (page 159)",
+   "pages": "159-159"
+  },
+  {
+   "id": "sec-096-fgk208-ij-page-160",
+   "title": "FGK208 IJ (page 160)",
+   "pages": "160-160"
+  },
+  {
+   "id": "sec-097-fgk208-ij-page-161",
+   "title": "FGK208 IJ (page 161)",
+   "pages": "161-161"
+  },
+  {
+   "id": "sec-098-fgk208-ij-page-162",
+   "title": "FGK208 IJ (page 162)",
+   "pages": "162-162"
+  },
+  {
+   "id": "sec-099-fgk208-ij-page-163",
+   "title": "FGK208 IJ (page 163)",
+   "pages": "163-163"
+  },
+  {
+   "id": "sec-100-fgk208-ij-page-164",
+   "title": "FGK208 IJ (page 164)",
+   "pages": "164-164"
+  },
+  {
+   "id": "sec-101-fgk208-ij-page-165",
+   "title": "FGK208 IJ (page 165)",
+   "pages": "165-165"
+  },
+  {
+   "id": "sec-102-fgk208-ij-page-166",
+   "title": "FGK208 IJ (page 166)",
+   "pages": "166-166"
+  },
+  {
+   "id": "sec-103-fgk208-ij-page-167",
+   "title": "FGK208 IJ (page 167)",
+   "pages": "167-167"
+  },
+  {
+   "id": "sec-104-fgk208-ij-page-168",
+   "title": "FGK208 IJ (page 168)",
+   "pages": "168-168"
+  },
+  {
+   "id": "sec-105-fgk208-ij-page-169",
+   "title": "FGK208 IJ (page 169)",
+   "pages": "169-169"
+  },
+  {
+   "id": "sec-106-fgk208-ij-page-170",
+   "title": "FGK208 IJ (page 170)",
+   "pages": "170-170"
+  },
+  {
+   "id": "sec-107-fgk208-ij-page-171",
+   "title": "FGK208 IJ (page 171)",
+   "pages": "171-171"
+  },
+  {
+   "id": "sec-108-fgk208-ij-page-172",
+   "title": "FGK208 IJ (page 172)",
+   "pages": "172-172"
+  },
+  {
+   "id": "sec-109-fgk208-ij-page-173",
+   "title": "FGK208 IJ (page 173)",
+   "pages": "173-173"
+  },
+  {
+   "id": "sec-110-fgk208-ij-page-174",
+   "title": "FGK208 IJ (page 174)",
+   "pages": "174-174"
+  },
+  {
+   "id": "sec-111-fgk208-ij-page-175",
+   "title": "FGK208 IJ (page 175)",
+   "pages": "175-175"
+  },
+  {
+   "id": "sec-112-fgk208-ij-page-176",
+   "title": "FGK208 IJ (page 176)",
+   "pages": "176-176"
+  },
+  {
+   "id": "sec-113-fgk208-ij-page-177",
+   "title": "FGK208 IJ (page 177)",
+   "pages": "177-177"
+  },
+  {
+   "id": "sec-114-fgk208-ij-page-178",
+   "title": "FGK208 IJ (page 178)",
+   "pages": "178-178"
+  },
+  {
+   "id": "sec-115-fgk208-ij-page-179",
+   "title": "FGK208 IJ (page 179)",
+   "pages": "179-179"
+  },
+  {
+   "id": "sec-116-fgk208-ij-page-180",
+   "title": "FGK208 IJ (page 180)",
+   "pages": "180-180"
+  },
+  {
+   "id": "sec-117-fgk208-ij-page-181",
+   "title": "FGK208 IJ (page 181)",
+   "pages": "181-181"
   }
  ],
  "provenance": {

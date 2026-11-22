@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/du-1995-algebra-colloq-2-363/sections/page-008",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Page 8",
+  "pageStart": 8,
+  "pageEnd": 8,
+  "contains": [
+    "library/du-1995-algebra-colloq-2-363/blocks/prose-page-008",
+    "library/du-1995-algebra-colloq-2-363/blocks/cor-page-008-01",
+    "library/du-1995-algebra-colloq-2-363/blocks/cor-page-008-02",
+    "library/du-1995-algebra-colloq-2-363/blocks/lem-page-008-03",
+    "library/du-1995-algebra-colloq-2-363/blocks/prop-page-008-04"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/du-1995-algebra-colloq-2-363/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/du-1995-algebra-colloq-2-363/manifest.jsonld",
+  "provenance": "ingested"
+}

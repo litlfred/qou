@@ -1,0 +1,1 @@
+Let α = (02)(34)σ, β = (01234). Then β acts freely on Y and α has 4 ﬁxed points. The resolution of the nodes of Y/D10, where D10 = ⟨α, β⟩, gives a minimal surface B of general type with π1 = 0, q = pg = 0 and K2 = 1. By [28], B is homeomorphic but not diﬀeomorphic to CP2#8CP

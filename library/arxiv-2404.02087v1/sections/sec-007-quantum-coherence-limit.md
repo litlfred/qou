@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2404.02087v1
-doc_title: "Extreme plasmons Aakash A. Sahai 1 1Department of Electrical Engineering, University of Colorado Denver, Denver, CO 80204 ∗ Nanosciences largely rely on plasmons which are quasipar"
+doc_title: "Extreme plasmons"
 section_id: sec-007-quantum-coherence-limit
 section_title: "Quantum coherence limit"
 section_number: null
 pages: 5-5
 source_pdf: 2404.02087v1.pdf
 source_sha256: ac92bd0dff8ad907
-doc_brief: "Extreme plasmons Aakash A. Sahai 1 1Department of Electrical Engineering, University of Colorado Denver, Denver, CO 80204 ∗ Nanosciences largely rely on plasmons which are quasiparticles constituted b"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.959
-latex_coverage_ratio: 0.996
+latex_coverage_ratio: 1.0
+doc_brief: "Extreme plasmons — 15 sections: Extreme plasmons; Introduction; Quantum framework"
 ---
 \label{subsec:quantum-coherence-limit}
 Extreme plasmons \cite{plasmonics-ieee-2021,plasmonics-ieee-2022} for the first time access the coherence limit of  oscillations of the quantum electron gas that is inherent in conductive media. 

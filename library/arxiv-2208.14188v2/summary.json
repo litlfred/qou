@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2208.14188v2",
  "source_sha256": "92a7651c81b799b3",
- "brief": "Resurgence in complex Chern-Simons theory at generic levels — In this note we study the resurgent structure of sl(2, C) Chern-Simons state integral model on knot complements S3\\41,S 3\\52 with generic",
- "extended": "**Resurgence in complex Chern-Simons theory at generic levels**\n\n46 pp, 19 sections.\n\n**Abstract.** In this note we study the resurgent structure of sl(2, C) Chern-Simons state integral model on knot complements S3\\41,S 3\\52 with generic discrete level k≥ 1 and with small boundary holonomy deformation. The coeﬃcients of the saddle point expansions are in the trace ﬁeld of the knot extended by the holonomy parameter. Despite increasing complication of the asymptotic series as the level k increases, the resurgent structure of the asymptotic series is universal: both the distribution of Borel plane singularities and the associated Stokes constants are independent of the level k.\n\n**Outline.** 1 Introduction; 2 Resurgent structure of complex Chern-Simons ; 2.1 Perturbative complex Chern-Simons theory a; 2.2 Resurgent structure of complex Chern-Simon; 2.3 Stokes constants and BPS invariants; 3 Figure eight; 3.1 Asymptotic series; 3.2 Holomorphic blocks; 3.3 Resurgent structure; 4 Three twists; 4.1 Asymptotic series; 4.2 Holomorphic blocks; 4.3 Resurgent structure; 5 Conclusion and discussion; A Tetrahedron partition function at level k; A.1 Fundamental properties; A.2 Zeros and poles; A.3 Integral identities",
+ "brief": "Resurgence in complex Chern-Simons theory at generic levels — In this note we study the resurgent structure of sl(2, C) Chern-Simons state integral model on knot complements S3\\41, S3\\52 with generic",
+ "extended": "**Resurgence in complex Chern-Simons theory at generic levels**\n\n*Zhihao Duana Jie Gub*\n\n46 pp, 23 sections.\n\n**Abstract.** In this note we study the resurgent structure of sl(2, C) Chern-Simons state integral model on knot complements S3\\41, S3\\52 with generic discrete level k ≥1 and with small boundary holonomy deformation. The coeﬃcients of the saddle point expansions are in the trace ﬁeld of the knot extended by the holonomy parameter. Despite increasing complication of the asymptotic series as the level k increases, the resurgent structure of the asymptotic series is universal: both the distribution of Borel plane singularities and the associated Stokes constants are independent of the level k.\n\n**Outline.** Front matter; 1 Introduction; 2 Resurgent structure of complex Chern-Simons ; 2.1 Perturbative complex Chern-Simons theory a; 2.2 Resurgent structure of complex Chern-Simon; 2.3 Stokes constants and BPS invariants; 3 Figure eight; 3.1 Asymptotic series; 3.2 Holomorphic blocks; 3.3 Resurgent structure; 4 Three twists; 4.1 Asymptotic series; 4.2 Holomorphic blocks; 4.3 Resurgent structure; 5 Conclusion and discussion; A Tetrahedron partition function at level k; A.1 Fundamental properties; A.2 Zeros and poles",
  "tokens": {
   "brief": 49,
-  "extended": 305
+  "extended": 308
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-2"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -102,7 +107,22 @@
   {
    "id": "sec-018-a4-semi-classical-limit",
    "title": "A.4 Semi-classical limit",
-   "pages": "40-46"
+   "pages": "40-40"
+  },
+  {
+   "id": "sec-019-b-power-series-of-state-integrals-at-different-l",
+   "title": "B Power series of state integrals at different levels",
+   "pages": "40-40"
+  },
+  {
+   "id": "sec-020-b1-knot-41",
+   "title": "B.1 Knot 41",
+   "pages": "40-42"
+  },
+  {
+   "id": "sec-021-b2-knot-52",
+   "title": "B.2 Knot 52",
+   "pages": "42-46"
   }
  ],
  "provenance": {

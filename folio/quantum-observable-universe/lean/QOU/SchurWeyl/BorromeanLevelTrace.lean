@@ -32,7 +32,7 @@ than evaluated in sympy.  It says nothing about the order in `h = q − q⁻¹` 
 block is present at order zero; it is the *Borromean* trace difference that starts at `(q−1)⁴`.
 
 -- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457
--- Ref: [manuscript] docs/audits/2026-10-10-level3-su3-channel-test.md §5.2; bean qou-qs4c
+-- Ref: [leitner2026] docs/audits/2026-10-10-level3-su3-channel-test.md §5.2; bean qou-qs4c
 -/
 
 namespace QOU.SchurWeyl.BorromeanLevelTrace

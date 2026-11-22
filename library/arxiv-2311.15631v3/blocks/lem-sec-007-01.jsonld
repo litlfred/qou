@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-2311.15631v3/blocks/lem-sec-007-01",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "kind": "lemma",
+  "pageStart": 26,
+  "pageEnd": 30,
+  "text": "lem-sec-007-01.md",
+  "derivedFrom": "library/arxiv-2311.15631v3/sections/sec-007",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2311.15631v3/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_kind": "lemma",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "both",
+    "evidence_locator": "In-paper proof in sections/sec-007-conformal-dimensions-of-bpsu25.md (p. 26-30) citing [30], [34]",
+    "claim_id": "arxiv-2311.15631v3#lem-sec-007-01",
+    "lean_status": "unformalized"
+  }
+}

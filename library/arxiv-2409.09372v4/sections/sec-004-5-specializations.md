@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2409.09372v4
-doc_title: "MARKOV TRACES ON DEGENERATE CYCLOTOMIC HECKE ALGEBRAS DEKE ZHAO Dedicated to Professor Yingbo Zhang on the occasion of her 80th birthday"
+doc_title: "Markov traces on degenerate cyclotomic Hecke algebras"
 section_id: sec-004-5-specializations
 section_title: "Specializations"
 section_number: 5
 pages: 13-16
 source_pdf: 2409.09372v4.pdf
 source_sha256: b7eed67ec102ab3d
-doc_brief: "MARKOV TRACES ON DEGENERATE CYCLOTOMIC HECKE ALGEBRAS DEKE ZHAO Dedicated to Professor Yingbo Zhang on the occasion of her 80th birthday — LetH n(u) be the degenerate cyclotomic Hecke algebra with"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 1.0
-latex_coverage_ratio: 0.896
+latex_coverage_ratio: 0.95
+doc_brief: "Markov traces on degenerate cyclotomic Hecke algebras — Let Hn(u) be the degenerate cyclotomic Hecke algebra with parameter u = {u1, . . . , um}."
 ---
 This section is devoted to investigating the specializations of (non-)normalized Markov traces. In particular, we obtain the Broué--Malle--Michel symmetrizing trace on $H_n(\boldsymbol{u})$ and show that the Brundan--Kleshchev trace on $H_n(\boldsymbol{u})$ is a specialization of the non-normalized Markov trace.
 

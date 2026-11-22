@@ -1,0 +1,37 @@
+Appendix C
+
+Residue forms and classical Morse theory
+
+In our first two appendices, we developed the mathematics needed to prove
+that the Cauchy integral representation
+
+1\
+w=(s) [r@ertae
+2ni} Je
+Pe)
+
+for the coefficients of a convergent Laurent series F(z) = O@ = Dr rz”
+depends only on the singular homology class of the chain C and the de Rham
+cohomology class of the form F(z) z~"~1dz in the domain of holomorphicity
+
+d
+w={rect-0[]s eq
+
+jel
+
+of the integrand.
+
+In this appendix, we begin to discuss how such a representation allows us
+to manipulate Cauchy integrals into a form where we can derive asymptotic
+information. First, we discuss intersection classes and residue forms, which
+illustrate how to convert the Cauchy integral into an integral lying “on” the
+singular set V c C4 of F. After introducing these concepts, we discuss how
+to use Morse theory to manipulate integrals over chains in V into representa-
+tions that will ultimately allow us to use saddle point approximations. Morse
+theory is a large subject, and our treatment is restricted to the core topics we
+need: height functions, attachments, homology groups, and homotopy type. In
+this appendix we focus on the case where V. := V1 C4 is a complex mani-
+fold. Appendix D, our final appendix, describes extensions of this material to
+general algebraic sets (and their complements) using stratified Morse theory.
+
+480

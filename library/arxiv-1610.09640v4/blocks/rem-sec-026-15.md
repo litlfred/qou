@@ -1,0 +1,1 @@
+The reader may have noticed that we can talk about the graded category G(M) for every linear category M, regardless if it is abelian or not. We chose to restrict attention to the abelian case for a pedagogical reason: this will hopefully reduce confusion between the many sorts of graded (and later DG) cate- gories that occur in our discussion.

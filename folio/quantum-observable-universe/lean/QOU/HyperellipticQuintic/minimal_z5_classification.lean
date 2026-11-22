@@ -48,7 +48,7 @@ Given `g = 2`, the branch-divisor cardinality is **derived**:
 `|Branch(π)| = 2g + 2 = 6`.  (The full classification — `X ≅ 𝒳₅ :
 y² = x⁵ − 1` — concerns the curve isomorphism and is tracked
 separately.) -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/hyperelliptic-z5-classification.ts
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/hyperelliptic-z5-classification.ts
 theorem minimal_z5_classification {g branch_count : ℕ}
     (hg : g = 2) (hbranch : branch_count = branchCount g) :
     g = 2 ∧ branch_count = 2 * g + 2 ∧ branch_count = 6 := by

@@ -8,7 +8,7 @@
   "pages": 14,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -20,12 +20,12 @@
    "stamp_date": "7 Jun 1993"
   },
   "doi": null,
-  "title": "arXiv:hep-ph/9306237v1 7 Jun 1993",
+  "title": "Chiral Perturbation to One Loop Including the rho Meson",
   "authors_raw": "April, 1993",
   "title_lines": [
    "KEK preprint 92-169"
   ],
-  "abstract": "We formulate the chiral perturbation theory at the one loop level in the ef- fective lagrangian including the \u03c1 meson as a dynamical gauge boson of a hidden local symmetry(HLS). The size of radiative correction to the phenomenological parameter a of HLS is estimated to be about 10%. The complete list of O(E4) terms is given and the one loop counter terms are determined explicitly in the N \ufb02avor model. We also obtain matching conditions to the conventional chiral per- turbation of Gasser and Leutwyler in the chiral limit in a renormalization scale independent manner. We \ufb01nd that Gasser\u2013Leutwyler\u2019s estimates for L9,10 are saturated by \u03c1 and its one loop contributions without introducing non-minimal couplings of \u03c0-\u03c1 system, suggesting the absence of the tree level a1 meson con- tributions. Chiral perturbation theory (ChPT)[1, 2] is a framework to describe low energy na- ture of the spontaneous chiral symmetry breaking in QCD. It gives a systematic low energy expansion of QCD amplitudes in terms of the number of derivatives appearing in the e\ufb00ective lagrangian. Based on the well-known isomorphism between the elec- troweak symmetry breaking and the spontaneous chiral symmetry breaking in QCD, ChPT becomes very popular also in the physics of the Higgs sector. Actually, the method of chiral lagrangian o\ufb00ers a perspective view in the analysis of precision tests of the Higgs sector[3]. The e\ufb00ective lagrangian (chiral lagrangian) written in terms of the Nambu-Goldstone (NG) boson \ufb01eld with the lowest order of derivatives is O(E2) (\u2261O(\u22022)), which repro- duces results of the low energy theorems. Taking account of the O(E4) terms and the \u2217E-mail address: tanabash@theory.kek.jp 1",
+  "abstract": "We formulate the chiral perturbation theory at the one loop level in the ef- fective lagrangian including the ρ meson as a dynamical gauge boson of a hidden local symmetry(HLS). The size of radiative correction to the phenomenological parameter a of HLS is estimated to be about 10%. The complete list of O(E4) terms is given and the one loop counter terms are determined explicitly in the N ﬂavor model. We also obtain matching conditions to the conventional chiral per- turbation of Gasser and Leutwyler in the chiral limit in a renormalization scale independent manner. We ﬁnd that Gasser–Leutwyler’s estimates for L9,10 are saturated by ρ and its one loop contributions without introducing non-minimal couplings of π-ρ system, suggesting the absence of the tree level a1 meson con- tributions. Chiral perturbation theory (ChPT)[1, 2] is a framework to describe low energy na- ture of the spontaneous chiral symmetry breaking in QCD. It gives a systematic low energy expansion of QCD amplitudes in terms of the number of derivatives appearing in the eﬀective lagrangian. Based on the well-known isomorphism between the elec- troweak symmetry breaking and the spontaneous chiral symmetry breaking in QCD, ChPT becomes very popular also in the physics of the Higgs sector. Actually, the method of chiral lagrangian oﬀers a perspective view in the analysis of precision tests of the Higgs sector[3]. The eﬀective lagrangian (chiral lagrangian) written in terms of the Nambu-Goldstone (NG) boson ﬁeld with the lowest order of derivatives is O(E2) (≡O(∂2)), which repro- duces results of the low energy theorems. Taking account of the O(E4) terms and the ∗E-mail address: tanabash@theory.kek.jp",
   "docinfo": {
    "Title": "arXiv:hep-ph/9306237v1  7 Jun 1993",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
@@ -37,13 +37,14 @@
   "title_verified": true,
   "title_evidence": {
    "metadata": "arXiv:hep-ph/9306237v1 7 Jun 1993",
-   "heading": "Chiral Perturbation to One Loop Including the \u03c1 Meson",
+   "heading": "Chiral Perturbation to One Loop Including the ρ Meson",
    "text": "KEK preprint 92-169",
    "corroborated_by": [
     "page"
    ],
    "browser_print": false
-  }
+  },
+  "title_prev": "arXiv:hep-ph/9306237v1 7 Jun 1993"
  },
  "toc": [
   {
@@ -66,7 +67,7 @@
   {
    "kind": "table",
    "number": "1",
-   "title": "Coe\ufb03cients of counter terms",
+   "title": "Coeﬃcients of counter terms",
    "page": 14,
    "confidence": 0.8,
    "evidence": [
@@ -212,8 +213,8 @@
    "level": 1,
    "page_start": 1,
    "page_end": 11,
-   "n_chars": 20154,
-   "n_words": 3700,
+   "n_chars": 20133,
+   "n_words": 3690,
    "label_start": "1",
    "label_end": "11"
   },
@@ -224,8 +225,8 @@
    "level": 1,
    "page_start": 11,
    "page_end": 14,
-   "n_chars": 3044,
-   "n_words": 717,
+   "n_chars": 3032,
+   "n_words": 713,
    "label_start": "11",
    "label_end": "14"
   }
@@ -245,6 +246,7 @@
    "items": []
   },
   "sections": 2,
-  "chars_total": 23198
+  "chars_total": 23165,
+  "furniture_lines_stripped": 14
  }
 }

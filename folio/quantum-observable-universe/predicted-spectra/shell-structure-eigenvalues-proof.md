@@ -1,5 +1,5 @@
 *Proof.*
-The matrix identity $T^{n+1} = T \cdot T^n$ directly yields $(T^{n+1})_{21} = (T)_{11} (T^n)_{21} + (T)_{12} (T^n)_{22}$. We substitute $(T)_{11} = q - q^{-1}$ and $(T)_{12} = 1$. Using $\det T = -1$, we identify $(T^n)_{22} = (T^{n-1})_{21}$. This produces the Chebyshev recurrence. $\square$
+The matrix identity $T^{n+1} = T \cdot T^n$ directly yields $(T^{n+1})_{21} = (T)_{11} (T^n)_{21} + (T)_{12} (T^n)_{22}$. Substitute $(T)_{11} = q - q^{-1}$ and $(T)_{12} = 1$. Using $\det T = -1$, identify $(T^n)_{22} = (T^{n-1})_{21}$. This produces the Chebyshev recurrence. $\square$
 
 The coefficient $q - q^{-1}$ in the recurrence defines the **Hecke deformation**. This is the identical parameter controlling parity violation ([Lee--Yang--Wu](#prop:parity-violation-skein)). At $q = 1$, the recurrence degenerates to $\hat{V}(n+1) = \hat{V}(n-1)$ (period 2, erasing shell structure).
 

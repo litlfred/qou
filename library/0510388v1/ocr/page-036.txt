@@ -1,0 +1,26 @@
+14. Geodesics in S°.
+
+If x,y € R*, we will write <x, y > for the standard Euclidean inner product
+
+<X,Y> = XoYo + Xr yi + X22 + X3 y3
+in R*. Then
+S = {xeR*: <x,x>=]}.
+
+We will freely identify points in R* with the vectors at the origin that point to
+them, and we will also identify the tangent spaces at various points in R* in the
+usual way, so that we can say v € T,S° if and only if <x,v> = 0. Wewill
+always write <v,w-> for the inner product of vectors when we're thinking of
+them as belonging to R*, and reserve the notation v ¢ w for the induced inner
+product on T, $’.
+
+Suppose x € S* so that <x,x> = 1, and suppose v is a unit vector tangent
+to S’ at x, sothat <x,v>=0 and <v,v>=1. Then the great circle
+
+G(t) = cost x + sint v
+is a geodesic in S* parametrized by arc length.
+
+Since <x, G(t)> = cost, we have that for any pair of points x,y € S*,
+their inner product <x , y > is equal to the cosine of the distance (along S°)
+from x to y.
+
+36

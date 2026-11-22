@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-0203003v2",
  "source_sha256": "7579ae76959396b8",
- "brief": "On the quantum Kazhdan-Lusztig functor Pavel I. Etingof Adriano A. Moura etingof@math.mit.edu adrianoam@ime.unicamp.br Introduction One of the most exciting developments in representation the ory in t",
- "extended": "**On the quantum Kazhdan-Lusztig functor Pavel I. Etingof Adriano A. Moura etingof@math.mit.edu adrianoam@ime.unicamp.br Introduction One of the most exciting developments in representation the ory in the recent years was the discovery**\n\n13 pp, 7 sections.\n\n**Outline.** Introduction; 1 Representations of Quantum Dynamical R-Matri; 2 Exchange Representations; 3 Gauge Transformations; 4 Evaluation Representations; 5 Comparison of F with the classical Kazhdan-L; References",
+ "brief": "arXiv:math/0203003v2 [math.QA] 24 Apr 2002 — 8 sections: Front matter; Introduction; Representations of Quantum Dynamic",
+ "extended": "**arXiv:math/0203003v2 [math.QA] 24 Apr 2002**\n\n*Pavel I. Etingof*\n\n13 pp, 8 sections.\n\n**Outline.** Front matter; Introduction; 1 Representations of Quantum Dynamical R-Matri; 2 Exchange Representations; 3 Gauge Transformations; 4 Evaluation Representations; 5 Comparison of $\\mathcal F$ with the classica; A Appendix : Meromorphicity of the R-matrix",
  "tokens": {
-  "brief": 50,
-  "extended": 118
+  "brief": 29,
+  "extended": 87
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-introduction",
    "title": "Introduction",
@@ -16,7 +21,7 @@
   },
   {
    "id": "sec-001-1-representations-of-quantum-dynamical-r-matrice",
-   "title": "Representations of Quantum Dynamical R-Matrices with Spe c-",
+   "title": "Representations of Quantum Dynamical R-Matrices with Spectral Parameters",
    "pages": "2-4"
   },
   {
@@ -35,14 +40,14 @@
    "pages": "10-10"
   },
   {
-   "id": "sec-005-5-comparison-of-f-with-the-classical-kazhdan-lus",
-   "title": "Comparison of F with the classical Kazhdan-Lusztig functor",
-   "pages": "10-12"
+   "id": "sec-005-5-comparison-of-mathcal-f-with-the-classical-kaz",
+   "title": "Comparison of $\\mathcal F$ with the classical Kazhdan-Lusztig functor",
+   "pages": "10-11"
   },
   {
-   "id": "sec-006-references",
-   "title": "References",
-   "pages": "12-13"
+   "id": "sec-006-a-appendix-meromorphicity-of-the-r-matrix",
+   "title": "Appendix : Meromorphicity of the R-matrix",
+   "pages": "11-13"
   }
  ],
  "provenance": {

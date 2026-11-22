@@ -30,6 +30,6 @@ At the critical temperature $T_q^{(c)}$, the dominant Hecke representation abrup
 The three macroscopic phases (gas, liquid, solid) correspond to three connected components of the polynomial observable subcategory in configuration space. These are distinct aeons of the partition function, separated by rigid phase boundaries where the dominant degree-$0$ algebra predictability vanishes and replaces itself.
 
 **Statistical mechanics evaluates the polynomial observable subcategory.**
-The apparatus of statistical mechanics functions purely as technology for extracting degree-$0$ and low-degree sections from exponentially large configuration spaces. It exists strictly because we are polynomial-time observers probing an exponentially complex microstate.
+The apparatus of statistical mechanics functions purely as technology for extracting degree-$0$ and low-degree sections from exponentially large configuration spaces. It exists strictly because observers are polynomial-time, probing an exponentially complex microstate.
 
 Any Turing-complete system with an $\mathbb{N}$-embedding inevitably generates non-computable sections. Statistical mechanics describes computation from the polynomial side of that boundary. It is an unavoidable approximation, enforced by the computational horizon, designed to extract the accessible degree-$0$ truth while discarding the uncomputable exponential remainder.

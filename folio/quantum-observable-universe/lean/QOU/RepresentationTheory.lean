@@ -26,7 +26,7 @@ the QOU framework:
 
 - [leitnerpawloski2004] arXiv:math/0409565 — "Unital Gröbner Bases over Arbitrary Commutative Ground Rings" (Leitner & Pawloski); the single Pawloski–Leitner paper
 - [kock2004] https://doi.org/10.1017/CBO9780511615443
-- [manuscript] §1, Vectors, hadrons, and the Pawlowski–Leitner basis
+- [leitner2026] §1, Vectors, hadrons, and the Pawlowski–Leitner basis
 -/
 
 open scoped CategoryTheory CategoryTheory.MonoidalCategory
@@ -166,7 +166,7 @@ structure AdjointTrace (C : Type u) [CategoryTheory.Category.{v} C]
   fundamentalObj : C
 
 /-- The Killing form ratio: in SU(2), `tr_Ad = -2 · tr_{ℂ²}`. -/
--- Ref: [manuscript] §1, Remark: Adjoint trace
+-- Ref: [leitner2026] §1, Remark: Adjoint trace
 def killingFormRatio : ℤ := -2
 
 /-! ## §4  Pawlowski–Leitner Basis -/
@@ -294,7 +294,7 @@ theorem hadron_tensor_factorization
 /-- The Clebsch–Gordan decomposition: `V_{1/2} ⊗ V_{1/2} ≅ V_0 ⊕ V_1`.
     In terms of categorical dimensions: `dim(V_{1/2})² = dim(V_0) + dim(V_1)`,
     i.e. `2 · 2 = 1 + 3`.  Generic over any monoidal category `C`. -/
--- Ref: [manuscript] §1, Remark: Spin-half representation
+-- Ref: [leitner2026] §1, Remark: Spin-half representation
 theorem clebsch_gordan_fundamental
     {C : Type u} [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] :

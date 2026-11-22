@@ -8,6 +8,7 @@ pages: 3-4
 source_pdf: ant-v14-n7-s-p04.pdf
 source_sha256: 6abd838a4c933311
 toc_source: inferred
+doc_brief: "Elliptic curves over totally real cubic fields are modular — 7 sections: Front matter; Introduction; Images mod 3, 5, 7 and modularity"
 ---
 We quickly sketch some background on modular curves; for fuller details the reader may want to
 consult [Deligne and Rapoport 1973; Freitas et al. 2015, Section 2.2.2; Rohrlich 1997]. Let H∗=

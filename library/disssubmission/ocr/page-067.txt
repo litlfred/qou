@@ -1,0 +1,44 @@
+3.6. Specialization of characters 59
+
+point x in X. The passage to a different choice of x corresponds to an inner
+automorphism of the fundamental group, which is not seen on the level of
+characters. So we have well-defined restriction homomorphisms
+i: T(x); _ TI(X;)/, Xx Xs;
+
+jo: TUX) > W(%q), XH xq.
+Any character ¥ € TI(X), defines a local system Ly on X, and for K € D(X)
+the projection formula shows that
+
+Y(Ky,) = 7 (Ri(K@a7 (Ly))) = 7 (Ri(K)@aLy) = ¥(K)y,-
+
+To apply this formula in relation with the vanishing axiom from section 3.1,
+one can use the following well-known result.
+
+LEMMA 3.16. The pull-back homomorphisms i and 7 on characters
+are an epimorphism resp. an isomorphism
+
+T1(X;)) <— T(X); —> H(Xq)i-
+In particular, for all open dense subsets Us C 11(Xs); and Un C H(Xq)1 one
+can find x € T1(X), such that
+Xs © Us and Mae Uj.
+
+Proof. Choose any path from the point 0 in X, to the point x in X¥. We
+first claim that the corresponding homomorphism
+iy: ™(Xs,0)1 —> ™% (X,x)1
+is injective. To check this, we must by the criterion in [51, exp. V, cor. 6.8]
+show that every finite étale cover
+f: Y— x;
+of I-primary degree is dominated by a connected component Z? C Z, of the
+
+special fibre Z, of some finite étale cover h : Z —> X of I-primary degree as
+indicated in the following diagram.
+
+Z9¢ > Zs 6 >Z
+
+| :
+
+X; ———___> X
+
+We can assume that Y is connected and that f is a Galois cover. Since
+the prime / is invertible on S, it then follows that Y can be made into a
+semiabelian variety such that f is an isogeny [17]. So by [15, th. 7.3.5]

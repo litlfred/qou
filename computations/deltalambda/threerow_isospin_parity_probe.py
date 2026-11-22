@@ -271,9 +271,9 @@ def main() -> int:
     print("─" * 92)
     n12_sec = mp.mpf(str(SEC_PER_POINT_N12_MEASURED)) * 26 * len(CASES_N12)
     print(f"   measured {SEC_PER_POINT_N12_MEASURED} s for ONE grid point (4He at q0);")
-    print(f"   the old 26-point x {len(CASES_N12)}-case sweep is ~{n12_sec/60:.0f} min.")
-    print("   That is why this probe never reached its own w.save(), and why no witness of")
-    print("   it has ever existed on disk. But its answer is already known: the vanishing")
+    print(f"   the old 26-point x {len(CASES_N12)}-case sweep is ~{mp.nstr(n12_sec/60, 3)} min.")
+    print("   That is why the pre-2026-08-25 version never reached its own w.save(). Its")
+    print("   answer is already known without that leg: the vanishing")
     print("   is proved for ALL n, so no amount of compute returns anything but zero.")
     for n in (6, 12):
         parts = partitions_of(n)

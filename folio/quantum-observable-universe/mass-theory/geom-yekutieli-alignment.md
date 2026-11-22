@@ -1,15 +1,13 @@
 **Proposition (conditional on
-[`conj:hyperbolic-volume-transcendence`](#conj:hyperbolic-volume-transcendence)
+[Algebraic independence of QOU hyperbolic volumes](#conj:hyperbolic-volume-transcendence)
 and
-`rem:baryon-period-ratio`).**
+the baryon period-ratio remark).**
 *The piecewise geometric invariant
 $\mathrm{Geom}(K)$
-([topological mass formula](#prop:topological-mass-formula))
+([topological mass formula](#conj:topological-mass-formula))
 is the evaluation of the Yekutieli rigid dualizing complex
 $\omega_A^\bullet$ on the algebraic stratification of the braid
-$\beta$ with closure $K = \widehat\beta$ (per
-[algebraic stratification](#prop:phi-q-tower-algebraic-stratification);
-the τ-image of this evaluation is the geometric reading on
+$\beta$ with closure $K = \widehat\beta$ (the τ-image of this evaluation is the geometric reading on
 $S^3 \setminus K$, classified by Thurston's geometrization at the
 τ-side):*
 
@@ -131,7 +129,6 @@ braid representation).
 For **amphicheiral** knots ($K = K^*$, e.g.\ the figure-eight
 $4_1$), the self-pairing is manifestly real.  This explains why
 the figure-eight BW modification factors
-([figure-eight BW coefficients](#thm:six-term-mass-formula-complete))
 are both real algebraic expressions in $q$:
 $1 - h^2 = 4 - [3]_q$ and $h[2]_q = q^2 - q^{-2}$.
 

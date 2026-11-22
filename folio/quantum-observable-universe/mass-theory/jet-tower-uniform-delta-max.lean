@@ -19,8 +19,8 @@ This file axiomatizes the hypothesis as a class per AGENTS.md §3b.
 The conditional geometric-tail bound is then provable from the
 class instance plus standard real analysis.
 
--- Ref: [manuscript] conj:jet-tower-uniform-delta-max
--- Ref: [manuscript] prop:jet-tower-convergence
+-- Ref: [leitner2026] conj:jet-tower-uniform-delta-max
+-- Ref: [leitner2026] prop:jet-tower-convergence
 -- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
 -/
 
@@ -34,7 +34,7 @@ namespace QOU.BraidKnot
     is the existence of the instance; downstream conditional
     theorems (geometric-tail truncation bounds) are then fully
     verified parametrically. -/
--- Ref: [manuscript] conj:jet-tower-uniform-delta-max
+-- Ref: [leitner2026] conj:jet-tower-uniform-delta-max
 class JetTowerUniformDeltaMax (ρ : Type*) where
   /-- The per-level binding contribution at level `n`. -/
   delta : ℕ → ℝ
@@ -59,8 +59,8 @@ noncomputable def hbarQSq (q : ℝ) : ℝ := (1 - q⁻¹) ^ 2
     style geometric-comparison lemma; we state the abstract
     inequality as the `class` axiom and let downstream callers
     instantiate it on concrete vortices. -/
--- Ref: [manuscript] conj:jet-tower-uniform-delta-max §"What the conjecture commits to"
--- Ref: [manuscript] prop:jet-tower-convergence
+-- Ref: [leitner2026] conj:jet-tower-uniform-delta-max §"What the conjecture commits to"
+-- Ref: [leitner2026] prop:jet-tower-convergence
 theorem geometric_tail_bound_abstract
     {ρ : Type*} [c : JetTowerUniformDeltaMax ρ]
     (hbarQSq_val : ℝ) (hbarQSq_pos : 0 < hbarQSq_val)
@@ -78,7 +78,7 @@ theorem geometric_tail_bound_abstract
     `delta_max = 0`; the uniform bound `|0| ≤ 0` reduces to `0 ≤ 0`.
     Encodes none of the actual jet-tower binding content but
     discharges the §3b-cond hypothesis. -/
--- Ref: [manuscript] conj:jet-tower-uniform-delta-max §"Skeleton"
+-- Ref: [leitner2026] conj:jet-tower-uniform-delta-max §"Skeleton"
 instance canonical (ρ : Type*) : JetTowerUniformDeltaMax ρ where
   delta := fun _ => 0
   delta_max := 0

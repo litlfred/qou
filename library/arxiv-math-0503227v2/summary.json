@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-0503227v2",
  "source_sha256": "4e83adfdef827103",
- "brief": "An Inductive Proof of the Berry-Esseen Theorem for Character Ratios Running head: Berry-Esseen Theorem for Character Ratios By Jason Fulman — Bolthausen used a variation of Stein’s method to give an",
- "extended": "**An Inductive Proof of the Berry-Esseen Theorem for Character Ratios Running head: Berry-Esseen Theorem for Character Ratios By Jason Fulman**\n\n*Department of Mathematics, University of Southern Califor nia*\n\n14 pp, 5 sections.\n\n**Abstract.** Bolthausen used a variation of Stein’s method to give an inductive proof of the Berry-Esseen theorem for sums of inde pendent, iden- tically distributed random variables. We modify this techn ique to prove a Berry-Esseen theorem for character ratios of a random repre sentation of the symmetric group on transpositions. An analogous result is p roved for Jack measure on partitions.\n\n**Outline.** 1 Introduction; 2 Central limit theorem for Plancherel measure; 3 Central limit theorem for Jack measure; 4 Acknowledgements; References",
+ "brief": "An Inductive Proof of the Berry-Esseen Theorem for Character Ratios Running head: Berry-Esseen Theorem for Character Ratios — Bolthausen used a variation of Stein’s method to give an inductive proof",
+ "extended": "**An Inductive Proof of the Berry-Esseen Theorem for Character Ratios Running head: Berry-Esseen Theorem for Character Ratios**\n\n*By Jason Fulman*\n\n14 pp, 6 sections.\n\n**Abstract.** Bolthausen used a variation of Stein’s method to give an inductive proof of the Berry-Esseen theorem for sums of independent, iden- tically distributed random variables. We modify this technique to prove a Berry-Esseen theorem for character ratios of a random representation of the symmetric group on transpositions. An analogous result is proved for Jack measure on partitions.\n\n**Outline.** Front matter; 1 Introduction; 2 Central limit theorem for Plancherel measure; 3 Central limit theorem for Jack measure; 4 Acknowledgements; References",
  "tokens": {
   "brief": 49,
-  "extended": 194
+  "extended": 181
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",

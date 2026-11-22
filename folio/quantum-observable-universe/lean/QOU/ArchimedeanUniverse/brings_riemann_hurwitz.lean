@@ -26,7 +26,7 @@ is negative.)
 
 ## References
 
-- [manuscript] brings-surface/brings-riemann-hurwitz.md.
+- [leitner2026] brings-surface/brings-riemann-hurwitz.md.
 -/
 
 namespace QOU.ArchimedeanUniverse
@@ -73,7 +73,7 @@ end BringsRiemannHurwitzContext
 
     The degree and branch-point count are geometric inputs; the
     ramification `14` is **derived** by `norm_num`. -/
--- Ref: [manuscript] brings-surface/brings-riemann-hurwitz.md
+-- Ref: [leitner2026] brings-surface/brings-riemann-hurwitz.md
 theorem brings_riemann_hurwitz [ctx : BringsRiemannHurwitzContext] :
     ctx.deg = 4 ∧ BringsRiemannHurwitzContext.R_tot = 14 ∧ ctx.n_branch = 6 := by
   refine ⟨ctx.deg_is_four, ?_, ctx.branch_is_six⟩

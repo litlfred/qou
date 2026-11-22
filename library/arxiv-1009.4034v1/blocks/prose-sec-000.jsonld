@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-1009.4034v1/blocks/prose-sec-000",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Observables of diagrams",
-  "pageStart": 6,
-  "pageEnd": 12,
-  "text": "../sections/sec-000-2-observables-of-diagrams.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1009.4034v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1009.4034v1",
+  "title": "Schur-Weyl measures of parameter =1/2",
+  "pageStart": 2,
+  "pageEnd": 5,
+  "text": "../sections/sec-000-1-schur-weyl-measures-of-parameter-12.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1009.4034v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1009.4034v1/manifest.jsonld",
   "provenance": "ingested"
 }

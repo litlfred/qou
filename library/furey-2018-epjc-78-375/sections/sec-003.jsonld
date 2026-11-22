@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/furey-2018-epjc-78-375/sections/sec-003",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The Georgi–Glashow model",
+  "pageStart": 2,
+  "pageEnd": 2,
+  "contains": [
+    "library/furey-2018-epjc-78-375/blocks/prose-sec-003"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/furey-2018-epjc-78-375/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/furey-2018-epjc-78-375/manifest.jsonld",
+  "provenance": "ingested"
+}

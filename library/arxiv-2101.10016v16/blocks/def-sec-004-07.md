@@ -1,1 +1,1 @@
-A ribbon fusion category is called modular if the matrix S = (Sρi,ρj) is
+A ribbon fusion category is called modular if the matrix S = (Sρi,ρj) is invertible. Let T = (Tρi,ρj) be the diagonal matrix defined by Tρi,ρj = δi,jv −1 ρi . If C is modular then S → s =  0 1 −1 0  T → t =  1 1 0 1  (5.10)

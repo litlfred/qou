@@ -8,6 +8,7 @@ pages: 8-12
 source_pdf: candetgl.pdf
 source_sha256: d788af715428b8b2
 toc_source: inferred
+doc_brief: "The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics — 27 sections: Front matter; INTRODUCTION; PRELIMINARIES"
 ---
 Given a smooth vector ﬁeld V on V, the vector potential A(V) for BS(V) is deﬁned by the
 formula,
@@ -45,8 +46,6 @@ To prove ~7!, we assume that V is a ﬂuid knot, and must show that
 882
 J. Math. Phys., Vol. 42, No. 2, February 2001
 Cantarella, DeTurck, and Gluck
- This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to  IP:
-129.215.149.98 On: Sat, 10 May 2014 06:24:42
 ¹y3BS~V!~y!5V~y!, when yeV,
 50,
 when yeV8.
@@ -96,8 +95,6 @@ E~y,t!5Er~y,t!1Es~y,t!
 883
 J. Math. Phys., Vol. 42, No. 2, February 2001
 The Biot–Savart operator
- This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to  IP:
-129.215.149.98 On: Sat, 10 May 2014 06:24:42
 has a time rate of change
 ]E/]t5]Er /]t1]Es /]t5Er81Es8 .
 ~3.9!
@@ -144,8 +141,6 @@ where d3(r) is the three-dimensional delta function; equivalently,
 884
 J. Math. Phys., Vol. 42, No. 2, February 2001
 Cantarella, DeTurck, and Gluck
- This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to  IP:
-129.215.149.98 On: Sat, 10 May 2014 06:24:42
 ¹y"~~y2x!/uy2xu3!54pd3~y2x!.
 ~3.19!
 Hence,
@@ -195,8 +190,6 @@ This is an immediate consequence of the formula
 885
 J. Math. Phys., Vol. 42, No. 2, February 2001
 The Biot–Savart operator
- This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to  IP:
-129.215.149.98 On: Sat, 10 May 2014 06:24:42
 ¹"~ fA!5~¹f !"A1f~¹"A!,
 ~3.28!
 and the proof of Proposition 1 is complete.

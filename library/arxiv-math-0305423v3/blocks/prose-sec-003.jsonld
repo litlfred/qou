@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-math-0305423v3/blocks/prose-sec-003",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Asymptotic multiplicities in tensor products of representations",
-  "pageStart": 14,
-  "pageEnd": 18,
-  "text": "../sections/sec-003-5-asymptotic-multiplicities-in-tensor-products-o.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0305423v3",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0305423v3",
+  "title": "Stein's method and Kerov's central limit theorem",
+  "pageStart": 10,
+  "pageEnd": 14,
+  "text": "../sections/sec-003-4-steins-method-and-kerovs-central-limit-theorem.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0305423v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0305423v3/manifest.jsonld",
   "provenance": "ingested"
 }

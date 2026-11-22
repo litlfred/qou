@@ -13,9 +13,12 @@
   "pageStart": 13,
   "pageEnd": 15,
   "contains": [
-    "library/candetgl/blocks/prose-sec-013"
+    "library/candetgl/blocks/prose-sec-013",
+    "library/candetgl/blocks/thm-sec-013-01",
+    "library/candetgl/blocks/figure-img-p015-1",
+    "library/candetgl/blocks/figure-img-p015-2"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/candetgl",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/candetgl",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/candetgl/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/candetgl/manifest.jsonld",
   "provenance": "ingested"
 }

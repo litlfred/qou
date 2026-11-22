@@ -1,0 +1,46 @@
+436 Challenges and extensions
+
+by casual users seeking to solve a specific problem. However, substantial topo-
+logical difficulties can arise when dealing with contributing points that are not
+necessarily minimal. We believe that to make further progress in this area, sub-
+stantial work in the Morse-theoretic framework will be required.
+
+This book is certainly not the last word on the subject, but rather an invita-
+tion to the reader to join in further development of this research area, which
+combines beauty, utility, and tractability, and which has given the current au-
+thors considerable challenge and enjoyment over many years.
+
+Notes
+
+ACSV was the subject of an AMS-sponsored Mathematical Research Commu-
+nity in 2020-2022, and a 2022 workshop at the American Institute of Math-
+ematics. Among the topics discussed at these events, which still have active
+research collaborations, are characterizations of CPAI [Gil22], software for
+ACSV [LMS22], rational embeddings of algebraic functions [Gre+22], and
+work in progress by Drmota and Pak on multivariate characterizations of so-
+called N-algebraic functions. The methodology for algebraic functions given
+at the end of Section 13.5 is contemporaneous to this edition and appears in
+the preprint [BJP23], along with a new formula for coefficient asymptotics in
+terms of the defining algebraic function.
+
+Proving minimality by conventional means in Exercise 13.3 (c) above is
+quite challenging; it is the basis of Problem B5 on the 2020 Putnam examina-
+tion. The approach of Exercise 13.4 was suggested by Brendan Rhoades, and
+Example 13.2 is adapted from [Sta99, Section 6.3].
+
+Additional exercises
+
+Exercise 13.5. (binomial transition) Consider the binomial coefficient gener-
+ating function (1 — x — y)~!, and compute first-order asymptotics for the coef-
+ficient a,;, where s/r > 0 as r,s — co. How many different cases are there in
+the analysis?
+
+Exercise 13.6. Let P(x, y) = (1 — x)y” — x? as in Example 13.6.
+
+(a) Show that for sufficiently small ¢ > 0 there are two liftings by 27! of the
+centered circle of radius ¢ in C, to a contour in V, and that one of them
+describes the positive square root y = x/ V1 —- x.
+
+(b) Find all affine critical points of V. in direction (1, 0).
+
+(c) Find all critical points at infinity of V.. in direction (1,0).

@@ -29,7 +29,7 @@ shape), not an opaque field, and `symbolic_character_table` is proved outright �
 `sorry`, no class conclusion field. The manuscript's `[3,1,1]` pair/triple
 character polynomials are retained as sorry-free algebraic identities.
 
--- Ref: [manuscript] quantum-observable-universe/mass-theory/symbolic-character-table.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/symbolic-character-table.md
 -- Ref: [sagan2001] The Symmetric Group, §3.3 (Young's seminormal form)
 -/
 
@@ -91,7 +91,7 @@ theorem card_rowClass_shapeOf (lam : SelfConjugatePartition) :
     seminormal character `sigmaOneCharacter`; the factorisation follows from
     `|R_row| = |R_col|` (`sigmaOneCharacter_eq_card_mul`) and the per-shape counts
     `|R_row| = c_λ`. -/
--- Ref: [manuscript] quantum-observable-universe/mass-theory/symbolic-character-table.md
+-- Ref: [leitner2026] quantum-observable-universe/mass-theory/symbolic-character-table.md
 theorem symbolic_character_table (q h : R) (hq : q ≠ 0) (lam : SelfConjugatePartition) :
     chiSigma q h lam = (cCoefficient lam : R) * h := by
   have hsc : (shapeOf lam).transpose = shapeOf lam := by

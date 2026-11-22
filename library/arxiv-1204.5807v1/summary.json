@@ -2,267 +2,117 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1204.5807v1",
  "source_sha256": "4bf4f73b0c152b19",
- "brief": "FROM HOPF ALGEBRAS TO TENSOR CATEGORIES — This is a survey on spherical Hopf algebras. We give criteria to decide when a Hopf algebra is spherical and collect exampl es.",
- "extended": "**FROM HOPF ALGEBRAS TO TENSOR CATEGORIES**\n\n*N. ANDRUSKIEWITSCH, I. ANGIONO, A. GARCÍA IGLESIAS*\n\n27 pp, 51 sections.\n\n**Abstract.** This is a survey on spherical Hopf algebras. We give criteria to decide when a Hopf algebra is spherical and collect exampl es. We discuss tilting modules as a mean to obtain a fusion subcateg ory of the non-degenerate quotient of the category of representation s of a suitable Hopf algebra.\n\n**Outline.** Introduction; 2 ANDRUSKIEWITSCH, ANGIONO, GARCÍA IGLESIAS, T; 2.6 On the other hand, any quasitriangular Hop; 1 Preliminaries; 1.1 Notations. Let k be an algebraically close; 1.2 T ensor categories. We refer to [BaK, McL,; 1.3 Hopf algebras. We use standard notation fo; 4 ANDRUSKIEWITSCH, ANGIONO, GARCÍA IGLESIAS, T; 1.4 Nichols algebras. Let H be a Hopf algebra.; 2 Spherical Hopf algebras; 2.1 Spherical Hopf algebras. The notion of sph; 6 ANDRUSKIEWITSCH, ANGIONO, GARCÍA IGLESIAS, T; 2.2 Spherical Categories. A monoidal rigid cat; 2.3 Quantum dimensions. The quantum dimension ; 2.3.1 If C is a spherical tensor category, the; 2.3.2 Let H be a Hopf algebra. Given L ∈ IrrH,; 8 ANDRUSKIEWITSCH, ANGIONO, GARCÍA IGLESIAS, T; 2.3.3 If H is a non-semisimple spherical Hopf ",
+ "brief": "FROM HOPF ALGEBRAS TO TENSOR CATEGORIES — This is a survey on spherical Hopf algebras. We give criteria to decide when a Hopf algebra is spherical and collect examples.",
+ "extended": "**FROM HOPF ALGEBRAS TO TENSOR CATEGORIES**\n\n*N. ANDRUSKIEWITSCH, I. ANGIONO, A. GARCÍA IGLESIAS*\n\n27 pp, 21 sections.\n\n**Abstract.** This is a survey on spherical Hopf algebras. We give criteria to decide when a Hopf algebra is spherical and collect examples. We discuss tilting modules as a mean to obtain a fusion subcategory of the non-degenerate quotient of the category of representations of a suitable Hopf algebra.\n\n**Outline.** Front matter; Introduction; 1 Preliminaries; 1.1 Notations; 1.2 Tensor categories; 1.4 Nichols algebras; 2 Spherical Hopf algebras; 2.2 Spherical Categories; 2.3 Quantum dimensions; 2.4 The non-degenerate quotient; 2.5 Pointed or copointed pivotal Hopf algebras; 2.6 Spherical Hopf algebras with involutory pi; 2.7 Ribbon Hopf algebras; 2.8 Cospherical Hopf algebras; 3 Tilting modules; 3.1 Quasi-hereditary algebras and tilting modu; 3.2 Induced and produced; 3.3 Finite-dimensional Nichols algebras of dia",
  "tokens": {
   "brief": 42,
-  "extended": 304
+  "extended": 236
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-introduction",
    "title": "Introduction",
    "pages": "1-2"
   },
   {
-   "id": "sec-001-2-andruskiewitsch-angiono-garcía-iglesias-torrec",
-   "title": "ANDRUSKIEWITSCH, ANGIONO, GARCÍA IGLESIAS, TORRECILLAS , V AY",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-002-26-on-the-other-hand-any-quasitriangular-hopf-al",
-   "title": "On the other hand, any quasitriangular Hopf algebra is e mbedded in",
-   "pages": "2-2"
-  },
-  {
-   "id": "sec-003-1-preliminaries",
+   "id": "sec-001-1-preliminaries",
    "title": "Preliminaries",
    "pages": "2-2"
   },
   {
-   "id": "sec-004-11-notations-let-k-be-an-algebraically-closed-ﬁe",
-   "title": "Notations. Let k be an algebraically closed ﬁeld of characteristic 0 and",
+   "id": "sec-002-11-notations",
+   "title": "Notations",
    "pages": "2-3"
   },
   {
-   "id": "sec-005-12-t-ensor-categories-we-refer-to-bak-mcl-egno-e",
-   "title": "T ensor categories. We refer to [BaK, McL, EGNO, ENO, EO] for",
-   "pages": "3-3"
-  },
-  {
-   "id": "sec-006-13-hopf-algebras-we-use-standard-notation-for-ho",
-   "title": "Hopf algebras. We use standard notation for Hopf algebras (always",
+   "id": "sec-003-12-tensor-categories",
+   "title": "Tensor categories",
    "pages": "3-4"
   },
   {
-   "id": "sec-007-4-andruskiewitsch-angiono-garcía-iglesias-torrec",
-   "title": "ANDRUSKIEWITSCH, ANGIONO, GARCÍA IGLESIAS, TORRECILLAS , V AY",
-   "pages": "4-4"
-  },
-  {
-   "id": "sec-008-14-nichols-algebras-let-h-be-a-hopf-algebra-we-s",
-   "title": "Nichols algebras. Let H be a Hopf algebra. We shall say braided",
+   "id": "sec-004-14-nichols-algebras",
+   "title": "Nichols algebras",
    "pages": "4-5"
   },
   {
-   "id": "sec-009-2-spherical-hopf-algebras",
+   "id": "sec-005-2-spherical-hopf-algebras",
    "title": "Spherical Hopf algebras",
-   "pages": "5-5"
+   "pages": "5-7"
   },
   {
-   "id": "sec-010-21-spherical-hopf-algebras-the-notion-of-spheric",
-   "title": "Spherical Hopf algebras. The notion of spherical Hopf algebra was",
-   "pages": "5-6"
-  },
-  {
-   "id": "sec-011-6-andruskiewitsch-angiono-garcía-iglesias-torrec",
-   "title": "ANDRUSKIEWITSCH, ANGIONO, GARCÍA IGLESIAS, TORRECILLAS , V AY",
-   "pages": "6-7"
-  },
-  {
-   "id": "sec-012-22-spherical-categories-a-monoidal-rigid-categor",
-   "title": "Spherical Categories. A monoidal rigid category C is pivotal when",
+   "id": "sec-006-22-spherical-categories",
+   "title": "Spherical Categories",
    "pages": "7-7"
   },
   {
-   "id": "sec-013-23-quantum-dimensions-the-quantum-dimension-of-a",
-   "title": "Quantum dimensions. The quantum dimension of an object X in a",
-   "pages": "7-7"
-  },
-  {
-   "id": "sec-014-231-if-c-is-a-spherical-tensor-category-then-end",
-   "title": "If C is a spherical tensor category, then End(1) = k, and the function",
-   "pages": "7-7"
-  },
-  {
-   "id": "sec-015-232-let-h-be-a-hopf-algebra-given-l-irrh-m-reph",
-   "title": "Let H be a Hopf algebra. Given L ∈ IrrH, M ∈ RepH, we set",
+   "id": "sec-007-23-quantum-dimensions",
+   "title": "Quantum dimensions",
    "pages": "7-8"
   },
   {
-   "id": "sec-016-8-andruskiewitsch-angiono-garcía-iglesias-torrec",
-   "title": "ANDRUSKIEWITSCH, ANGIONO, GARCÍA IGLESIAS, TORRECILLAS , V AY",
-   "pages": "8-8"
+   "id": "sec-008-24-the-non-degenerate-quotient",
+   "title": "The non-degenerate quotient",
+   "pages": "8-11"
   },
   {
-   "id": "sec-017-233-if-h-is-a-non-semisimple-spherical-hopf-alge",
-   "title": "If H is a non-semisimple spherical Hopf algebra, then qdimM = 0 for",
-   "pages": "8-8"
-  },
-  {
-   "id": "sec-018-24-the-non-degenerate-quotient-let-c-be-an-addit",
-   "title": "The non-degenerate quotient. Let C be an additive k-linear spher-",
-   "pages": "8-10"
-  },
-  {
-   "id": "sec-019-10-andruskiewitsch-angiono-garcía-iglesias-torre",
-   "title": "ANDRUSKIEWITSCH, ANGIONO, GARCÍA IGLESIAS, TORRECILLA S, V AY",
-   "pages": "10-11"
-  },
-  {
-   "id": "sec-020-251-let-h-be-a-pointed-hopf-algebra-and-set-g-gh",
-   "title": "Let H be a pointed Hopf algebra and set G = G(H). We assume",
+   "id": "sec-009-25-pointed-or-copointed-pivotal-hopf-algebras",
+   "title": "Pointed or copointed pivotal Hopf algebras",
    "pages": "11-11"
   },
   {
-   "id": "sec-021-252-let-g-be-a-ﬁnite-group-and-δg-be-the-charact",
-   "title": "Let G be a ﬁnite group and δg be the characteristic function of the",
-   "pages": "11-11"
+   "id": "sec-010-26-spherical-hopf-algebras-with-involutory-pivot",
+   "title": "Spherical Hopf algebras with involutory pivot",
+   "pages": "11-13"
   },
   {
-   "id": "sec-022-26-spherical-hopf-algebras-with-involutory-pivot",
-   "title": "Spherical Hopf algebras with involutory pivot. There are many",
-   "pages": "11-11"
-  },
-  {
-   "id": "sec-023-262-let-h-be-a-ﬁnite-dimensional-pointed-hopf-al",
-   "title": "Let H be a ﬁnite-dimensional pointed Hopf algebra with G(H) not",
-   "pages": "11-12"
-  },
-  {
-   "id": "sec-024-12-andruskiewitsch-angiono-garcía-iglesias-torre",
-   "title": "ANDRUSKIEWITSCH, ANGIONO, GARCÍA IGLESIAS, TORRECILLA S, V AY",
-   "pages": "12-12"
-  },
-  {
-   "id": "sec-025-263-let-h-be-a-ﬁnite-dimensional-copointed-hopf",
-   "title": "Let H be a ﬁnite-dimensional copointed Hopf algebra over kG, with G",
-   "pages": "12-12"
-  },
-  {
-   "id": "sec-026-264-let-h-be-a-spherical-hopf-algebra-with-invol",
-   "title": "Let H be a spherical Hopf algebra with involutory pivot ω. Then",
-   "pages": "12-13"
-  },
-  {
-   "id": "sec-027-27-ribbon-hopf-algebras-this-is-a-distinguished",
-   "title": "Ribbon Hopf algebras. This is a distinguished class of spherical Hopf",
+   "id": "sec-011-27-ribbon-hopf-algebras",
+   "title": "Ribbon Hopf algebras",
    "pages": "13-14"
   },
   {
-   "id": "sec-028-14-andruskiewitsch-angiono-garcía-iglesias-torre",
-   "title": "ANDRUSKIEWITSCH, ANGIONO, GARCÍA IGLESIAS, TORRECILLA S, V AY",
-   "pages": "14-14"
-  },
-  {
-   "id": "sec-029-28-cospherical-hopf-algebras-it-is-natural-to-lo",
-   "title": "Cospherical Hopf algebras. It is natural to look at the notions that",
+   "id": "sec-012-28-cospherical-hopf-algebras",
+   "title": "Cospherical Hopf algebras",
    "pages": "14-16"
   },
   {
-   "id": "sec-030-16-andruskiewitsch-angiono-garcía-iglesias-torre",
-   "title": "ANDRUSKIEWITSCH, ANGIONO, GARCÍA IGLESIAS, TORRECILLA S, V AY",
-   "pages": "16-16"
-  },
-  {
-   "id": "sec-031-3-tilting-modules",
+   "id": "sec-013-3-tilting-modules",
    "title": "Tilting modules",
    "pages": "16-17"
   },
   {
-   "id": "sec-032-31-quasi-hereditary-algebras-and-tilting-modules",
-   "title": "Quasi-hereditary algebras and tilting modules. Tilting modules",
-   "pages": "17-18"
+   "id": "sec-014-31-quasi-hereditary-algebras-and-tilting-modules",
+   "title": "Quasi-hereditary algebras and tilting modules",
+   "pages": "17-19"
   },
   {
-   "id": "sec-033-18-andruskiewitsch-angiono-garcía-iglesias-torre",
-   "title": "ANDRUSKIEWITSCH, ANGIONO, GARCÍA IGLESIAS, TORRECILLA S, V AY",
-   "pages": "18-19"
-  },
-  {
-   "id": "sec-034-32-induced-and-produced-leta-be-an-inclusion-of",
-   "title": "Induced and produced. Let֒→A be an inclusion of algebras. We",
-   "pages": "19-19"
-  },
-  {
-   "id": "sec-035-321-the-induced-and-produced-modules-of-t-b--mod",
-   "title": "The induced and produced modules of T ∈B- Mod are",
-   "pages": "19-19"
-  },
-  {
-   "id": "sec-036-322-assume-that-a-is-a-ﬁnite-b-module-then-resa",
-   "title": "Assume that A is a ﬁnite B-module. Then ResA",
+   "id": "sec-015-32-induced-and-produced",
+   "title": "Induced and produced",
    "pages": "19-20"
   },
   {
-   "id": "sec-037-20-andruskiewitsch-angiono-garcía-iglesias-torre",
-   "title": "ANDRUSKIEWITSCH, ANGIONO, GARCÍA IGLESIAS, TORRECILLA S, V AY",
-   "pages": "20-20"
+   "id": "sec-016-33-finite-dimensional-nichols-algebras-of-diagon",
+   "title": "Finite-dimensional Nichols algebras of diagonal type",
+   "pages": "20-22"
   },
   {
-   "id": "sec-038-323-let-k-be-a-hopf-subalgebra-of-a-hopf-algebra",
-   "title": "Let K be a Hopf subalgebra of a Hopf algebra H, with H ﬁnite over",
-   "pages": "20-20"
-  },
-  {
-   "id": "sec-039-324-let-g-be-a-simple-lie-algebra-b-a-borel-suba",
-   "title": "Let g be a simple Lie algebra, b a Borel subalgebra andq a root of unity",
-   "pages": "20-20"
-  },
-  {
-   "id": "sec-040-33-finite-dimensional-nichols-algebras-of-diagon",
-   "title": "Finite-dimensional Nichols algebras of diagonal type. We con-",
-   "pages": "20-20"
-  },
-  {
-   "id": "sec-041-331-let-θ-n-and-i-1θ-let-λ-be-a-free-abelian-gro",
-   "title": "Let θ ∈ N and I = {1,...,θ }. Let Λ be a free abelian group with basis",
-   "pages": "20-20"
-  },
-  {
-   "id": "sec-042-332-let-qijiji-be-a-symmetric-matrix-with-entrie",
-   "title": "Let (qij)i,j∈I be a symmetric matrix with entries in k×. Let (V,c ) be",
-   "pages": "20-21"
-  },
-  {
-   "id": "sec-043-333-a-pre-nichols-algebra-ofv-is-any-graded-brai",
-   "title": "A pre-Nichols algebra ofV is any graded braided Hopf algebra T inter-",
-   "pages": "21-22"
-  },
-  {
-   "id": "sec-044-22-andruskiewitsch-angiono-garcía-iglesias-torre",
-   "title": "ANDRUSKIEWITSCH, ANGIONO, GARCÍA IGLESIAS, TORRECILLA S, V AY",
-   "pages": "22-22"
-  },
-  {
-   "id": "sec-045-334-the-lusztig-algebra-lv-of-v-is-the-graded-du",
-   "title": "The Lusztig algebra L(V ) of V is the graded dual of ˆB(V ), that is",
-   "pages": "22-22"
-  },
-  {
-   "id": "sec-046-34-the-small-quantum-groups-we-consider-ﬁnite-di",
-   "title": "The small quantum groups. We consider ﬁnite-dimensional pointed",
+   "id": "sec-017-34-the-small-quantum-groups",
+   "title": "The small quantum groups",
    "pages": "22-24"
   },
   {
-   "id": "sec-047-24-andruskiewitsch-angiono-garcía-iglesias-torre",
-   "title": "ANDRUSKIEWITSCH, ANGIONO, GARCÍA IGLESIAS, TORRECILLA S, V AY",
-   "pages": "24-24"
-  },
-  {
-   "id": "sec-048-35-generalized-quantum-groups-the-next-idea-is-t",
-   "title": "Generalized quantum groups. The next idea is to replace Γ by an",
+   "id": "sec-018-35-generalized-quantum-groups",
+   "title": "Generalized quantum groups",
    "pages": "24-25"
   },
   {
-   "id": "sec-049-references",
-   "title": "References",
-   "pages": "25-26"
-  },
-  {
-   "id": "sec-050-26-andruskiewitsch-angiono-garcía-iglesias-torre",
-   "title": "ANDRUSKIEWITSCH, ANGIONO, GARCÍA IGLESIAS, TORRECILLA S, V AY",
-   "pages": "26-27"
+   "id": "sec-019-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "25-27"
   }
  ],
  "provenance": {

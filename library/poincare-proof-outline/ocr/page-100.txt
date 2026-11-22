@@ -1,0 +1,74 @@
+using discrim-def[of A 2 « Re B A]
+by auto
+
+hence z1 * 72 = 1
+using viette2(OF «A # 0), of 2 * Re BA x1 x2] discr ‘A # 0>
+by auto
+
+have abs 11 # 1 abs x2 # 1
+using eqs discr (x1 * 2 = 1)
+by (auto simp add: abs-if power2-eq-square)
+
+hence abs t1 < 1 V abs 72 < 1
+using (z/ * 22 = 1)
+by (smt mult-le-cancel-left1 mult-minus-right)
+
+thus dz € unit-disc. x € circline-set H 1 circline-set x-axis
+using 2-azis-intersection-equation[OF *(1—2), of x1]
+using 2-azis-intersection-equation[OF *(1—2), of x2]
+using eqs
+by auto
+
+qed
+qed
+qed
+
+8.3 Check if a Poincaré line intersects the y-axis
+
+definition intersects-y-axis-cmat :: compler-mat = bool where
+[simp]: intersects-y-azis-cmat H = (let (A, B, C, D) = H in A= 0 V (Im B)? > (Re A)?)
+
+lift-definition intersects-y-azis-clmat :: circline-mat = bool is intersects-y-axis-cmat
+done
+
+lift-definition intersects-y-azis :: circline = bool is intersects-y-axis-clmat
+proof (transfer)
+fix H1 H2
+assume hh: hermitean H1 A H1 4 mat-zero and hermitean H2 \ H2 4 mat-zero
+obtain Ai B1 C1 D1 A2 B2 C2 D2 where *: H1 = (A1, B1, C1, D1) H2 = (A2, B2, C2, D2)
+by (cases H1, cases H2, auto)
+assume circline-eq-cmat H1 H2
+then obtain k where k: k 4 0 \ H2 = cork *sm H1
+by auto
+show intersects-y-axis-cmat H1 = intersects-y-axis-cmat H2
+proof —
+have k # 0 => (Re A1)? < (Im B1)? <> (k * Re Al)? < (k * Im B1)?
+by (smt mult-strict-left-mono power2-eq-square semiring-normalization-rules(13) zero-less-power2)
+thus ?thesis
+using * k
+by auto
+qed
+qed
+
+lemma intersects-x-axis-intersects-y-azis [simp]:
+shows intersects-z-axis (moebius-circline (moebius-rotation (pi/2)) H) <—> intersects-y-axis H
+unfolding moebius-rotation-def moebius-similarity-def
+by simp (transfer, transfer, auto simp add: mat-adj-def mat-cnj-def)
+
+lemma intersects-y-azis-iff:
+assumes is-poincare-line H
+shows (3 y € unit-disc. y € circline-set H  circline-set y-axis) + intersects-y-avis H (is ?lhs <> ?rhs)
+proof—
+let ?R = moebius-rotation (pi / 2)
+let ?H’ = moebius-circline ?R H
+have 1: is-poincare-line ?H’
+using assms
+using unit-circle-fiz-preserve-is-poincare-line|OF - assms, of ?R]
+by simp
+
+show ?thesis
+
+proof
+assume ?/hs
+
+100

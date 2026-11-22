@@ -7,10 +7,11 @@ section_number: 4.1.1
 pages: 27-31
 source_pdf: 1811.05376v4.pdf
 source_sha256: a486709d0a78d19c
-doc_brief: "Resurgence Analysis of Quantum Invariants of Seifert Fibered Homology Spheres — For a Seifert ﬁbered homology sphereX we show that the q-series invariant ˆZ0(X;q) introduced by Gukov-Pei-Putrov-Vafa"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.914
-latex_coverage_ratio: 0.809
+latex_coverage_ratio: 0.988
+doc_brief: "Resurgence Analysis of Quantum Invariants of Seifert Fibered Homology Spheres — For a Seifert ﬁbered homology sphere X we show that the q-series invariant ˆZ0(X; q) introduced by"
 ---
 Recall that $q=\exp(2 \pi i \tau)$ with $\tau \in \mathfrak{h}$ where $\mathfrak{h}$ denotes the upper half plane, and recall the definitions of $F \in \mathcal{M}(\mathbb{C})$ and $g \in \mathbb{C}[x]$ given in [\[def:F\]](#def:F){reference-type="eqref" reference="def:F"}. Let $\tilde\Gamma_+ = e^{\frac{\pi i}{4}}$.
 

@@ -42,7 +42,7 @@ $$
 [quantum observable universe](#def:quantum-observable-universe).
 
     The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
--- Ref: [manuscript] quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.ts
+-- Ref: [leitner2026] quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-4.ts
 theorem exists_axiom_4_volume [ctx : ExistsAxiom4VolumeContext] :
     ∀ g h : ctx.G, ctx.ε g = ctx.ε h := by
   intro g h

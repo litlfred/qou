@@ -1,0 +1,50 @@
+10.3 Main results on coefficient asymptotics 311
+
+for which
+b(a-c) s d(a-c)
+
+ad—b) ~ + ~ c(d—b)
+
+In particular,
+Dz! exp (S50)
+Ginn ~ (a—cy*"(d = by*! .
+
+4
+
+Example 10.29. Consider again the rational function 1/(Q;Q2) from Exam-
+ple 10.3. The intersection of the zero sets of Q; and Q> contains the single
+critical point
+
+A(r +s) A(r +s) At
+3(7r+s+f) 30rt+s4+f’ r+stt
+
+(Xo; Yo. Z0) =
+
+in the direction (r, s,t). The lognormal cone at this point is two-dimensional,
+so the same point will be critical for many directions: for instance, the point
+(xo, Yo, Zo) = (1, 1, 1) is critical in directions where r + s = 3t. When (7, s,t)
+lies in the lognormal cone at (xo, yo, zo) then this point determines dominant
+asymptotics, and we recover expansions such as a3,3,2, ~ (48at)"'/? as t >
+
+co, 4
+
+Exercise 10.8. Let Q = (3—x-2y)(3—2x—y)(5—3x—3y). Sketch the real part of
+‘V, show the positions of all the critical points in the main diagonal direction,
+state which one(s) contribute to the leading term of a,,,, and determine whether
+the leading term is computed by Theorem 10.12 or by Theorem 10.15.
+
+Exercise 10.9. Theorem 10.15 handles smooth point asymptotics in the special
+case where k = 1. Reconcile the formulae given here with the different-looking
+formulae from Chapter 9. Start with a concrete example such as Delannoy
+numbers F(x, y) =(1-x-y- xy].
+
+10.3.2 Linear divisors: non-transverse arrangements
+
+A rational function whose singular variety forms a non-transverse hyperplane
+arrangement can be analyzed using a form of partial fraction decomposition.
+For a hyperplane arrangement A defined by real linear functions ¢),..., n,
+the matroid they define is the set of all subsets T C [n] of indices correspond-
+ing to linearly independent collections {¢; : j € T}. Subsets of [7] not in the ma-
+troid are dependent sets, and minimal dependent sets are called circuits. Cir-
+cuits need not all have the same cardinality. Following Brylawski [Bry77], we
+define a broken circuit to be a circuit with its greatest element deleted, and call

@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0612592v1/sections/sec-003",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Moduli spaces for difference modules",
+  "pageStart": 9,
+  "pageEnd": 10,
+  "contains": [
+    "library/arxiv-math-0612592v1/blocks/prose-sec-003"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0612592v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0612592v1/manifest.jsonld",
+  "provenance": "ingested"
+}

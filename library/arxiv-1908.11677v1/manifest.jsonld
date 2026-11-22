@@ -5,20 +5,22 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1908.11677v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1908.11677v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1908.11677v1",
+  "title": "Variational formulae and estimates of O’Hara’s knot energies",
   "contains": [
     "library/arxiv-1908.11677v1/sections/sec-front-matter",
     "library/arxiv-1908.11677v1/sections/sec-000",
     "library/arxiv-1908.11677v1/sections/sec-001",
     "library/arxiv-1908.11677v1/sections/sec-002",
-    "library/arxiv-1908.11677v1/sections/sec-003"
+    "library/arxiv-1908.11677v1/sections/sec-003",
+    "library/arxiv-1908.11677v1/sections/sec-004",
+    "library/arxiv-1908.11677v1/sections/sec-005"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -28,7 +30,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1908.11677v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1908.11677v1.pdf",
     "source_sha256": "c53663eeb457daf97d31447655b450d448abc48ffba9bf432bee5e8cabc4f0f7",
     "pages": 19,
@@ -39,8 +43,8 @@
       "stamp_date": "30 Aug 2019"
     },
     "doi": null,
-    "document_class": null,
-    "extractor_validated": null,
-    "disposition": "ingested source material — attributed to its document, not folio content"
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
   }
 }

@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/topologicalinvariance3dindex/sections/sec-023",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "How to compute the coefficients of a q-series",
+  "pageStart": 43,
+  "pageEnd": 44,
+  "contains": [
+    "library/topologicalinvariance3dindex/blocks/prose-sec-023",
+    "library/topologicalinvariance3dindex/blocks/rem-sec-023-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/topologicalinvariance3dindex/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/topologicalinvariance3dindex/manifest.jsonld",
+  "provenance": "ingested"
+}

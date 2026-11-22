@@ -1,0 +1,1 @@
+We put q = exp( 2iπ l+2). There exists a basis B of the vector space V† l,⃗14(F) p3 = V† l,⃗14(F)p3 such that MatB(eρl(g1)) = q−3  q −1  , MatB(eρl(g2)) = q−3 q + 1  −1 t t q2  , with t = p q(1 + q + q2). Note that both matrices have eigenvalues q 4 and −q−3 4.

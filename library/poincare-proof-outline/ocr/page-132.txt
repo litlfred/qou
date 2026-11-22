@@ -1,0 +1,67 @@
+by auto
+qed
+
+let ?yu = poincare-line y wu
+
+have nondeg-yu: y’ * cnj u' # cnj u' *« u!
+using nondeg-yz polar «ru > 0» «rz > 0» distinct
+by auto
+
+fix r:: real
+assume r > 0
+
+have den: cor ry *« cis 0 * cnj 1 * cnj (corr * cis y) * 1 — corr * cis p * cnj 1 * cnj (cor ry * cis 0) * 140
+using (0 < Tr) <0 < ry» nondeg
+by auto
+
+let 7A = 2% r * ry * sin(y — V)
+let 7B =i (r* cis yp * (1 + ry?) — ry * cis 0 * (1 + 1°))
+let ?ReB = ry * (1 +r?) * sin ¥ — r* (1 + ry?) * sing
+
+have Re (i * (r * cis (—y) * ry * cis (V) — ry * cis (—V) * r * cis (y))) = ?A
+by (simp add: sin-diff field-simps)
+moreover
+have cor ry * cis (— 9) * (cor ry * cis 0) = ry? corr * cis (— vy) * (corr * cis y) = 1?
+by (metis cis-inverse cis-neq-zero divide-complex-def cor-squared nonzero-mult-div-cancel-right power2-eq-square
+semiring-normalization-rules(15))+
+ultimately
+have 1: poincare-line-cvec-cmat (of-complex-cvec (cor ry * cis 0)) (of-complex-cvec (cor r * cis y)) = (?A, ?B,
+cnj ?B, 2A)
+using den
+unfolding poincare-line-cvec-cmat-def of-complex-cvec-def Let-def prod.case
+by (simp add: field-simps)
+
+have 2: is-real ?A
+by simp
+let ?mix = cis 0 * cis (— y) — cis (— ¥) * cis yp
+have is-imag ?mix
+using eq-minus-cnj-iff-imag|of ?miz]
+by simp
+hence Im ?mix # 0
+using nondeg
+using complez.expand|of ?mix 0]
+by auto
+hence 3: Re 7A 4 0
+using <r > 0) «ry > 0»
+by (simp add: sin-diff field-simps)
+
+have ?A 4 0
+using 2 3
+by auto
+hence 4: cor ?A # 0
+using 2 3
+by (metis zero-complex.simps(1))
+
+have 5: ?ReB / ?A = (sin J) / (2 * sin(y — ¥)) * (1/r + r) — (sin y) / (2 * sin (py — B)) * (1/ry + ry)
+using (ry > 0) (r > 0»
+apply (subst diff-divide-distrib)
+apply (subst add-frac-num, simp)
+apply (subst add-frac-num, simp)
+apply (simp add: power2-eq-square mult.commute)
+apply (simp add: field-simps)
+done
+
+have poincare-line-cvec-cmat (of-complex-cvec (cor ry * cis 0)) (of-complex-cvec (cor r * cis p)) = (?A, ?B, enj
+?B, 2A) A
+
+132

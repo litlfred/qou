@@ -2,17 +2,18 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
-  "@id": "papers/quantum-observable-universe/blocks/prop-qbeta-c-k-closed-forms",
+  "@id": "papers/quantum-observable-universe/blocks/conj-qbeta-c-k-closed-forms",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Conjecture",
     "doco:Section"
   ],
-  "label": "prop:qbeta-c-k-closed-forms",
-  "kind": "proposition",
-  "title": "Closed-form conjectures for $c_4, c_5, c_6, c_7$ in the $\\mathfrak{Q}_\\beta$ precision ladder: empirical pattern-matches to sub-percent residual; first-principles derivation open (Khovanov-Rozansky at finite $q$ or KLR canonical-basis trace)",
+  "label": "conj:qbeta-c-k-closed-forms",
+  "kind": "conjecture",
+  "title": "Closed-form conjectures for $c_4, c_5, c_6, c_7$ in the $\\mathfrak{Q}_\\beta$ precision ladder (convention-C frame)",
   "uses": [
     "papers/quantum-observable-universe/blocks/rem-per-block-hopf-jones-absorption-pattern"
   ],

@@ -1,0 +1,62 @@
+28 Don Zagier
+
+The derivative with respect to x of the right-hand side of (4) (or of (2)) has
+the same value and both sides of (4) (or of (2)) vanish at « = 0.
+(iii) Write the right-hand side of (4) as
+
+am yr oo x7 \* 4 (- yt
+ann (5) Ee
+m,n>1 k=1
+1 (-1)*-! (m—-1)\ (k
+_ mn {lo
+~ > wy Ee » k? k-1/)\n
+
+m,n>1 n<k<m
+
+and then verify as an elementary combinatorial exercise that the expression
+
+. . 1. . .
+
+in square brackets, which clearly equals —— if m < n, vanishes if m > n.
+mn
+
+It seems very surprising that the beautiful identities (2) and (4) are not
+better known.
+
+D. The quantum dilogarithm The “quantum dilogarithm,” studied by
+
+Faddeev-Kashaev [15], Kirillov [22] and other authors, is the function of two
+variables defined by the series
+
+Lip (x; q) -
+
+It is a q-deformation of the ordinary dilogarithm in the sense that
+
+gn
+
+Wao) (5)
+
+lim (e Lig(#;e~*)) = Lig(«) (\a| <1); (6)
+20
+indeed, using the expansion wot = + + 5 + é - 4 +--+ we obtain a
+
+complete asymptotic expansion
+
+1 1 a € atar 3
+Lig(a;e*) = Lig(x)e~ + = log = —
+ig(a;e*) g(a) € +5 ox( ) +i (1-2)? 720
+
+as © > 0 with « fixed, |x| < 1.
+
+The function (5) belongs to the world of “g-series.” These series, about
+which there is a very extensive literature—with the letter “gq” having been
+the traditional choice long before it was realized that there was any connec-
+tion with the “q” of “quantum”—are functions of a formal (or small complex)
+variable q which are given by convergent infinite series whose terms are ratio-
+nal functions of q with rational coefficients. For instance, the q-hypergeometric
+functions, a very important subclass which includes some classical modular
+forms and related functions like Ramanujan’s “mock theta functions” (which
+have occurred in connection with quantum invariants of 3-manifolds [24]) are
+given by series whose nth term has the form []/_, R(q,q') for some rational
+function R(x,y) of two variables. The classical aspects of g-series are those
+having to do with the behavior as q tends to 0 and typically are concerned

@@ -17,7 +17,7 @@ Ground ring `R_q = ℤ[q, q⁻¹]` is taken from `QOU.Archimedean.GroundRing`.
 
 ## References
 
-- [manuscript] §2-quantum-observable-universes
+- [leitner2026] §2-quantum-observable-universes
 - [kassel1995] Quantum Groups (Springer GTM 155), §IV.4
 -/
 
@@ -41,7 +41,7 @@ structure QResolvent (H : Type*) where
 
 /-- **q-Heat equation data**: a one-parameter family with q-Laplacian,
     satisfying `∂ₜ u = -Δ_q u` pointwise (algebraic shadow of the PDE). -/
--- Ref: [manuscript] §2
+-- Ref: [leitner2026] §2
 structure QHeatEquation (S : Type*) where
   /-- Time-dependent section `u : ℝ → S → Archimedean.R_q`. -/
   u : ℝ → S → Archimedean.R_q
@@ -55,7 +55,7 @@ structure QHeatEquation (S : Type*) where
 /-- **q-Dilogarithm data**: a level-2 iterated primitive of `H_q`
     characterised by the pentagon identity.  The pentagon relation is
     additive, so the carrier `H` is required to support `+`. -/
--- Ref: [manuscript] §2
+-- Ref: [leitner2026] §2
 structure QDilogarithm (H : Type*) [Add H] where
   /-- The level-2 primitive `Li₂_q ∈ H × H`. -/
   Li2 : H × H

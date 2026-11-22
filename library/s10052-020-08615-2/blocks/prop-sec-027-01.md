@@ -1,0 +1,1 @@
+Cottingham formula We are aware of four recent estimates for the proton–neutron mass difference based on evaluations of the Cottingham for- mula:Walker-Loud,CarlsonandMiller(WCM)[6,9],Erben, Shanahan, Thomas and Young (ESTY) [7], Thomas, Wang and Young (TWY) [8] and Tomalak [10].

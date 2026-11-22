@@ -21,6 +21,8 @@ sys.path.insert(0, os.path.join(HERE, ".."))
 sys.path.insert(0, os.path.join(HERE, "..", "substrate"))
 
 import mpmath as mp  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()  # raise dps BEFORE Q0 and the constants below are built
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 from wedderburn_jones_markov import global_wedderburn_sum_q_hecke_seminormal  # noqa: E402

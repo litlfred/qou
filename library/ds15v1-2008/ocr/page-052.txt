@@ -1,0 +1,58 @@
+117 | S56 S69 $37. | (5.4.3)
+118 | $50 S68 $35 | (5.4.4)
+wt | S93 S14 S73
+
+J2 | sss | S108, $113 S74
+
+J3 | S89 S111 S75 | (5.9.4)
+J4 | $124 $109 S107 | (5.18.5)
+J5 | S125 $110
+
+Je | $90 S112 S76 | (5.9.3)
+Ki | S121 $126 S101
+
+K2 | $120 $127 S104
+
+K3 | S51 S130 S105
+
+K4 $70 S106 | (5.16.2)
+K5 | $123 $128 $102
+
+K6 | $122 $129 $103 | (5.16.1)
+L2 | $53 (2.8.12)
+
+M2 | S57
+
+M3 | S55
+
+Table 5: Slater’s Bailey pairs and associated identities
+
+7.2 Duality of Bailey pairs
+
+We recall that Andrews showed in [5] that if (a,(a,¢), Gn(a,q)) is a Bailey pair relative
+to a, then (a*(a,q), G*(a, q)) is also a Bailey pair relative to a, where
+
+ax*(a,q) = a"g” an(1/a, 1/9),
+" —n ,—n?—n
+B(a,qg)=a"q Bn(1/a,1/q).
+
+The pair (a* (a, q), 0*(a, q)) is called the dual of (an(a,q), Gn(a, q)). Note that the dual
+of (ax (a, q), B%(a, q)) is (An(a, q), Bn(a,q)). Identities that arise from Bailey pairs that are
+duals of each other may be regarded in some sense as being related, so for completeness
+sake we give a table that matches Bailey pairs with their duals.
+
+Before giving this table, we make some comments. Firstly, Slater’s list of Bailey pairs
+contains several pairs whose duals are not listed, so we list the new Bailey pairs that are
+dual to these. Secondly, some pairs, such as H7 and E2 are in fact the same pair, and
+we indicate the occurrence of such identical pairs. Thirdly, Slater’s list of Bailey pairs
+contains a good many typographic errors. Sometimes retracing Slater’s steps (making the
+same choices that she did for the parameters in the identities she used to derive the Bailey
+pairs) will recover the correct Bailey pair, but this does not always work as in several cases
+Slater employs an additional unstated manipulation to derive the Bailey pair(for example,
+the same choice of parameters give rise to pairs B1 and B2, but only B1 follows directly
+from substituting these values into Equation (4.1) of [40]).
+
+In this latter case we can insert the stated sequence a,,(a,q) (under the assumption
+that the stated value for a,(a,q) is correct, and that the error is in the stated value for
+
+THE ELECTRONIC JOURNAL OF COMBINATORICS 15 (2008), #DS15 52

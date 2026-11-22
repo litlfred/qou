@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-q-alg-9709040v1
-doc_title: "arXiv:q-alg/9709040v1 29 Sep 1997"
+doc_title: "Deformation quantization of Poisson manifolds"
 section_id: sec-063-821-pictures-for-the-cup-product-in-polyvector-ﬁ
 section_title: "Pictures for the cup-product in polyvector ﬁelds"
 section_number: 8.2.1
@@ -8,6 +8,7 @@ pages: 37-38
 source_pdf: 9709040v1.pdf
 source_sha256: 8baf650d86c5b8ab
 toc_source: inferred
+doc_brief: "Deformation quantization of Poisson manifolds — 75 sections: Front matter; Plans; Star-products"
 ---
 We claim that the cup-product for the case Tpoly(X) corresponds to pictures where two points (say,
 p1, p2) where we put representatives of elements of Hγ which we want to multiply, are inﬁnitely close points

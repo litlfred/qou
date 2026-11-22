@@ -8,7 +8,7 @@
   "pages": 11,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": null,
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes",
   "math_source": "latex"
@@ -229,26 +229,50 @@
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
-   "page_end": 2,
-   "n_chars": 2714,
-   "n_words": 530,
+   "page_end": 1,
+   "n_chars": 938,
+   "n_words": 158,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-001-21-the-general-construction",
+   "id": "sec-001-2-the-virtual-sn-characters-n",
+   "number": "2",
+   "title": "The virtual Sn-characters ,n",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1744,
+   "n_words": 368,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-002-21-the-general-construction",
    "number": "2.1",
    "title": "The general construction",
    "level": 2,
    "page_start": 2,
-   "page_end": 7,
-   "n_chars": 7012,
-   "n_words": 1570,
+   "page_end": 5,
+   "n_chars": 4203,
+   "n_words": 921,
    "label_start": null,
    "label_end": null
   },
   {
-   "id": "sec-002-31-the-proof-of-theorem-31",
+   "id": "sec-003-3-a-formula-for-n",
+   "number": "3",
+   "title": "A formula for ,n()",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 2786,
+   "n_words": 645,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-31-the-proof-of-theorem-31",
    "number": "3.1",
    "title": "The proof of Theorem 3.1",
    "level": 2,
@@ -260,7 +284,7 @@
    "label_end": null
   },
   {
-   "id": "sec-003-32-applications",
+   "id": "sec-005-32-applications",
    "number": "3.2",
    "title": "Applications",
    "level": 2,
@@ -272,14 +296,26 @@
    "label_end": null
   },
   {
-   "id": "sec-004-4-final-remarks",
+   "id": "sec-006-4-final-remarks",
    "number": "4",
    "title": "Final remarks",
    "level": 1,
    "page_start": 9,
+   "page_end": 10,
+   "n_chars": 1746,
+   "n_words": 407,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-007-41-the-polynomials-pnt",
+   "number": "4.1",
+   "title": "The polynomials p,n(t)",
+   "level": 2,
+   "page_start": 10,
    "page_end": 11,
-   "n_chars": 3251,
-   "n_words": 701,
+   "n_chars": 1480,
+   "n_words": 291,
    "label_start": null,
    "label_end": null
   }
@@ -295,13 +331,14 @@
    "count": 0,
    "items": []
   },
-  "sections": 6,
-  "chars_total": 16110,
+  "sections": 9,
+  "chars_total": 16030,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 8,
-   "overlaid": 5,
+   "overlaid": 7,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -316,21 +353,37 @@
     {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.959,
-     "coverage_ratio": 0.979,
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.981,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-001-21-the-general-construction",
+     "id": "sec-001-2-the-virtual-sn-characters-n",
+     "title": "The virtual Sn-characters ,n",
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-21-the-general-construction",
      "title": "The general construction",
-     "prose_ratio": 0.96,
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-3-a-formula-for-n",
+     "title": "A formula for ,n()",
+     "prose_ratio": 0.951,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-31-the-proof-of-theorem-31",
+     "id": "sec-004-31-the-proof-of-theorem-31",
      "title": "The proof of Theorem 3.1",
      "prose_ratio": 0.952,
      "coverage_ratio": 1.0,
@@ -338,7 +391,7 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-32-applications",
+     "id": "sec-005-32-applications",
      "title": "Applications",
      "prose_ratio": 0.963,
      "coverage_ratio": 0.981,
@@ -346,12 +399,17 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-4-final-remarks",
+     "id": "sec-006-4-final-remarks",
      "title": "Final remarks",
-     "prose_ratio": 0.988,
-     "coverage_ratio": 0.73,
+     "prose_ratio": 0.711,
+     "coverage_ratio": 0.967,
      "result": "overlaid",
      "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-41-the-polynomials-pnt",
+     "title": "The polynomials p,n(t)",
+     "result": "no matching \\section"
     }
    ]
   }

@@ -70,6 +70,7 @@ from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools" / "qou-substrate" / "python"))
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
 from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_LI6_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
+from codata_constants import AME_B_LI7_MEV_VALIDATION  # noqa: E402  (AME registry)
 
 set_compute_dps()  # ensure mp.mp.dps = COMPUTE_DPS (consistent with infra)
 
@@ -108,7 +109,7 @@ B_AME_MEV: dict[tuple[int, int], mp.mpf] = {
     (2, 2): AME_B_HE4_MEV_VALIDATION,    # ⁴He
     (3, 2): mp.mpf("26.328"),      # ⁵Li (unstable, half-life ~10⁻²² s)
     (3, 3): AME_B_LI6_MEV_VALIDATION,     # ⁶Li
-    (3, 4): mp.mpf("39.24522"),    # ⁷Li
+    (3, 4): AME_B_LI7_MEV_VALIDATION,    # ⁷Li
     (4, 3): mp.mpf("37.6"),        # ⁷Be
     (4, 4): mp.mpf("56.49951"),    # ⁸Be
 }
@@ -246,7 +247,10 @@ def compute_tr_m_canonical(
 
     if method == "laurent_q_rust":
         try:
-            from markov_peel_rust_bridge import tr_M_atomic_rust_full
+            from markov_peel_rust_bridge import (
+                tr_M_atomic_rust_full,
+                tr_M_atomic_rust_recursive,
+            )
             # Honor caller-provided dps when it exceeds the 50-dps
             # production floor; never go below 50 (AGENTS.md §L1
             # mandates ≥ 50 dps for the production trace).  The
@@ -256,6 +260,17 @@ def compute_tr_m_canonical(
             effective_dps = max(int(dps), 50)
             t0 = time.time()
             tr_mp = tr_M_atomic_rust_full(Z, N, dps=effective_dps)
+            if (Z + N) == 1:
+                # Guard against a pre-qou-m7py pyhecke_native wheel whose
+                # tr_m_atomic_mpfr_cached still substitutes Convention C
+                # instead of Convention D (z_D = q^3/(q^2+1)); in that case
+                # use tr_M_atomic_rust_recursive (Rust tr_m_word_lq +
+                # Convention-D evaluation at the same MPFR precision).
+                tr_rec = tr_M_atomic_rust_recursive(Z, N, dps=effective_dps + 10)
+                if abs(abs(tr_mp) - abs(tr_rec)) > mp.mpf("1e-6"):
+                    s_rec = mp.nstr(tr_rec, effective_dps + 5)
+                    with mp.workdps(effective_dps):
+                        tr_mp = mp.mpf(s_rec)
             wall = time.time() - t0
             return abs(tr_mp), wall, None, "laurent_q_rust"
         except NotImplementedError as e:
@@ -322,43 +337,20 @@ def compute_tr_m_canonical(
 
     if method == "branching":
         try:
+            # Bean qou-4tui (owner ruling Q-AVTQ-1 = 1): route the D (A = 2)
+            # row through the 50-dps transfer-matrix path `tr_m_atom_zn`
+            # (matching A >= 3 inside `compute_tr_m_via_branching`), so
+            # `tr_M_q0_canonical_50dps` on the D row is genuinely ~50 dps
+            # instead of the 16-digit NumPy complex128 floor of the A-operator
+            # combiner.
+            if (Z + N) == 2:
+                from tr_m_atom_via_transfer import tr_m_atom_zn
+                t0 = time.time()
+                tr_atom_mp, _tr_free, _chi, _wall = tr_m_atom_zn(
+                    Z, N, dps=mp.mp.dps, q=None,
+                )
+                return abs(tr_atom_mp), time.time() - t0, None, "branching"
             from canonical_tr_m_via_branching import compute_tr_m_via_branching
-            # `Q_MP` (the 50-digit mpf), NOT `float(Q_FLOAT)`.
-            #
-            # WHAT THE OLD CALL ACTUALLY WAS. `q_parameter.Q` is already
-            # binary64 by construction (`Q = float(_d["q"])`), so `float(...)`
-            # around it was a no-op cast, not a downcast — the downcast had
-            # already happened at import. The value handed to the combiner sat
-            # 2.72e-17 relative from the canonical `Q_50_DIGIT_STR`.
-            #
-            # A >= 3 IS UNAFFECTED, MEASURED NOT ASSUMED. `compute_tr_m_via_
-            # branching` tests `abs(float(q_val) - float(Q_FLOAT)) < 1e-30` and
-            # on a hit passes `q=None` to `tr_m_atom_via_transfer.tr_m_atom_zn`,
-            # which uses the full 50-digit q. `float(Q_MP) == Q_FLOAT` is bit-
-            # exact (difference 0.0), so that branch still fires and T, 3He,
-            # 4He, 5Li, 6Li and 7Li come back BIT-IDENTICAL either way. The
-            # float64 twin was inert there; the guard was doing the work.
-            #
-            # A = 2 (the deuteron) IS the case this fixes, and only partly. That
-            # row goes through the operator-valued branching combiner, whose
-            # rho/A-matrix arithmetic is NumPy complex128 (`_compiled_sigmas(
-            # shape, "double")`, `np.kron`, `np.trace`), so it cannot be lifted
-            # by threading q — that is an algorithm property, not a q property.
-            # Against the fine-Bratteli transfer (the corpus's own arbiter for
-            # this convention, itself stable to ~48 digits):
-            #
-            #     q_val = float(Q_FLOAT)  ->  3.79e-15  (14 correct digits)
-            #     q_val = Q_MP            ->  8.69e-17  (16 correct digits)
-            #
-            # Two digits recovered, because `build_A_extract_at_q` now builds
-            # A^lambda at the true 50-digit q instead of a 17-digit float repr
-            # and `y_lambda_at` / `per_nucleon_intra_word` receive the exact q.
-            # The residual 8.69e-17 is the complex128 floor and stays.
-            #
-            # SO: `tr_M_q0_canonical_50dps` is NOT 50 dps on the D row under
-            # either spelling — it is ~16. The witness emits 60 digits for it.
-            # Fixing that overstatement is a witness/schema change, not this
-            # one; it is reported, not done here.
             tr_mp, wall, err = compute_tr_m_via_branching(Z, N, q_val=Q_MP)
             if err:
                 return None, wall, err, "branching"
@@ -489,7 +481,7 @@ def lookup_nucleon_mass_canonical(
     try:
         from canonical_mass import nucleon_mass_mev  # noqa: E402 — facade
         return (
-            float(nucleon_mass_mev(species)),
+            nucleon_mass_mev(species),
             "canonical_mass facade (muon-anchored Hecke energy)",
         )
     except (ImportError, ValueError, TypeError):
@@ -725,7 +717,8 @@ def main() -> int:
             calibration_source=CalibrationSource.CAL_1,
             prediction_type=prediction_type,
             prediction_MeV_50dps=(
-                str(pred) if pred is not None else None
+                fmt(pred, dps=50) if is_nucleon and pred is not None
+                else (str(pred) if pred is not None else None)
             ),
             # `fmt` (not `str(float(...))`) — bean qou-3wqg. These are mpf now:
             # `ref` comes from the un-`float()`-ed AME constants above and

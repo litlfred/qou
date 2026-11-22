@@ -1,0 +1,18 @@
+---
+doc_id: arxiv-2510.21576v1
+doc_title: "Relativistic corrections for lepton-nucleus scattering in the short-time approximation"
+section_id: sec-010-high-q-expansion-scheme-and-relativistic-final-s
+section_title: "High-q expansion scheme and relativistic final-state kinematics"
+section_number: null
+pages: 10-10
+source_pdf: 2510.21576v1.pdf
+source_sha256: 17a79b59d590c8da
+toc_source: outline
+text_source: latex
+latex_prose_ratio: 0.971
+latex_coverage_ratio: 1.0
+doc_brief: "Relativistic corrections for lepton-nucleus scattering in the short-time approximation — 16 sections: Relativistic corrections for lepto; Introduction; Electron-nucleus scattering cross"
+---
+In order to analyze the combined impact of the high-$q$ expansion scheme and the relativistic final-state kinematics, we examine the $^3$He response functions at $q=700$ MeV/$c$, where the conventional STA failed to explain the data [@Andreoli:2021cxo]. We begin with the longitudinal response function shown in the left panel of Fig. [\[fig:responses_delta\]](#fig:responses_delta){reference-type="ref" reference="fig:responses_delta"} along with the experimental data. The conventional STA calculation is displayed by the solid blue line. To isolate the effect of the high-$q$ expansion scheme for the single-nucleon current operator, we can compare this with the STA(0)NR$\delta$ calculation (green dashed line), which utilizes the same nonrelativistic final state kinematics as the original STA. Thus, the only difference lies in the implementation of the one-body charge operator. The STA uses the low-$q$ expansion scheme at LO plus the Darwin-Foldy and spin-orbit terms, whereas the STA(0)NR$\delta$ retains $(p/m)^0$ term in the high-$q$ expansion scheme. As discussed in Sec. [\[sec:comparing\]](#sec:comparing){reference-type="ref" reference="sec:comparing"} and illustrated in Fig. [\[fig:R_L_factors\]](#fig:R_L_factors){reference-type="ref" reference="fig:R_L_factors"}, the difference between the two formulations is negligible at $q=700$ MeV/$c$, as in this region the Darwin-Foldy term and the leading $(p/m)^0$ charge operator yield the same behavior. Substantial differences are expected at higher values of momentum transfer. To highlight the role of the relativistic final-state kinematics, we next compare the STA(0)NR$\delta$ calculation with the STA(0) result (red dashed line), which incorporates relativistic kinematics in the energy-conserving delta function. This leads to a shift of the strength to lower values of $\omega$, along with a narrowing of the width and an enhancement of the peak's height, resulting in an improved description of the position of the peak.
+
+The transverse response function is shown in the right panel of Fig. [\[fig:responses_delta\]](#fig:responses_delta){reference-type="ref" reference="fig:responses_delta"}, with the same notation as in the left panel. In this case, the suppression of the STA(0)NR$\delta$ calculation with respect to the original STA result is more pronounced. As shown in Fig. [\[fig:R_T_factors\]](#fig:R_T_factors){reference-type="ref" reference="fig:R_T_factors"}, at $q=700$ MeV/$c$, the STA(0)NR$\delta$ is suppressed by a factor $\sim 0.7$ with respect to the original STA. Also in this case, inclusion of relativistic final-state kinematics leads to a very nice agreement with the experimental data, a feature not displayed by the original STA calculation. The latter is limited by the assumption that $q \ll m$, and we have verified that the inclusion of the sub-leading $(q/m)^2$ terms cannot overcome this intrinsic limitation. This case highlights the need for both the high-$q$ expansion scheme and the relativistic treatment of final-state kinematics.

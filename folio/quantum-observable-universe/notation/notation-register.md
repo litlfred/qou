@@ -1,4 +1,4 @@
-Every mathematical symbol used in this paper belongs to exactly one register. The tables below group symbols by the chapter where we first introduce each. Within a chapter, we sort entries alphabetically by concept name.
+Every mathematical symbol used in this paper belongs to exactly one register. The tables below group symbols by the chapter where one first introduces each. Within a chapter, one sorts entries alphabetically by concept name.
 
 ### Quantum universes (Chapter 1)
 
@@ -36,8 +36,8 @@ See [Table 8](#tbl:notation-register-table8-data).
 
 See [Table 10](#tbl:notation-register-table10-data).
 
-### Lean source convention (cross-chapter)
+### Base-ring convention (cross-chapter)
 
-This convention applies to every `.lean` file in the paper.
+This convention fixes the ground ring of every statement in the paper.
 
 See [Table 9](#tbl:notation-register-table9-data).

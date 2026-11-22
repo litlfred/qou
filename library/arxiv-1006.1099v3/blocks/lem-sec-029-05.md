@@ -1,0 +1,1 @@
+The relation between algebraic and geometric twists, Proposition 3.6 and more speciﬁcally Equation 3.6, implies TΦ+(Vγ) ◦Φ+ = Φ+ ◦TVγ. Using Lemma 4.44 to identify Φ+(Vγ) ≃ˆVγ, we see Φ+ entwines the action of a Dehn twist. This implies the Lemma (note we do not claim any compatibility between the quasi-isomorphisms for diﬀerent mapping classes). □

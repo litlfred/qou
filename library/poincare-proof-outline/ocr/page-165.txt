@@ -1,0 +1,67 @@
+proof —
+have Arg (to-complex ?a1) * Arg (to-complez ?a2) < 0
+using <poincare-between ?a1 ?a ?a2> (?al € unit-disc) (?a2 € unit-disc»
+using poincare-between-z-axis-intersection|of ?a1 ?a2 of-complex xa]
+using <?al # ?a2) <?a © unit-disc (?a1 ¢ circline-set z-axis \ ?a2 ¢ circline-set x-axis) (?a €
+positive-x-axis)
+using <?a € circline-set ?la)
+unfolding positive-x-azis-def
+by simp
+
+moreover
+
+have A zyx’ y's: real. [sgn x' = sgn x; sgn y’ = sgn yl] => rey < 0+ 2'xy’ <0
+by (metis sgn-less sgn-mult)
+
+ultimately
+
+have Im (to-complex ?a1) * Im (to-complex ?a2) < 0
+using arg-Im-sgn{of to-complex ?a1] arg-Im-sgn|of to-complex ?a2]
+using (?a1 € unit-disc» «?a2 € unit-discy «?al ¢ circline-set x-axis \ ?a2 ¢ circline-set x-axis»
+using inf-or-of-complez|of ?a1] inf-or-of-complez|of ?a2] circline-set-x-axis
+by (metis circline-set-x-axis-I to-complex-of-complez)
+
+thus ?thesis
+using ideal-points-intersects-x-axis|of ?lx i1 i2]
+using <ideal-points ?lx = {i1, i2}> lx «?lx # x-axis)
+by simp
+qed
+
+have intersects-z-azis-positive ?lx
+proof —
+have cmod ?i1 = 1 cmod ?7i2 = 1
+using <i1 € unit-circle-set» (i2 € unit-circle-set»
+unfolding unit-circle-set-def
+by auto
+
+let ?a1'= ?i1 / 2 and ?a2'= 72 / 2
+let ?Aal =i « (?al' * cnj a2’ — 2a’ * cnj 2a1') and
+?Bal =i * (?a2' * cor ((emod ?al')? + 1) — ?al' * cor ((emod ?a2')? + 1))
+
+have ?Aal #4 0 V ?Bal # 0
+using <cmod (to-complex i1) = 1» <‘cmod (to-complex i2) = 1» «?a1l # ?a2>
+by (auto simp add: power-divide complex-mult-cnj-cmod)
+
+have is-real ?Aal
+by simp
+
+have ?al # inversion ?a2
+using <?al € unit-disc» «?a2 € unit-disc> inversion-noteg-unit-disc by fastforce
+
+hence Re ?Bal / Re ?Aal < —1
+using <intersects-x-axis-positive ?lay «fal # ?a2>
+using intersects-x-azis-positive-mk-circline[of ?Aal ?Ba1| «?Aal # 0 V ?Bal # 0» ‘is-real ?Aal>
+using poincare-line-non-homogenous|of ?a1 ?a2]
+by (simp add: Let-def)
+
+moreover
+let ?i1' = to-complez il and ?i2’ = to-complex i2
+let ?Ail = i * (?i1' « cnj ?12' — 212’ * cnj i1') and
+
+?Bil = i * (?i2' * cor ((emod ?i1’)? + 1) — 2i1' * cor ((emod ?i2')? + 1))
+have ?Ail # 0 V ?Bil 40
+
+using <cmod (to-complex i1) = 1» <‘cmod (to-complex i2) = 1» «?a1l # ?a2>
+by (auto simp add: power-divide complex-mult-cnj-cmod)
+
+165

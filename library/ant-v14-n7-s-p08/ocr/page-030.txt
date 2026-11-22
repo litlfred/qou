@@ -1,0 +1,50 @@
+1940 Lillian B. Pierce and Junyan Xu
+
+Lemma 6.4 (rearrangement inequality). Lett; < t) <--- <t, be a fixed nondecreasing sequence of real
+numbers and a, > +++ > dy, a fixed nonincreasing sequence of real numbers. Then for any permutation o
+on {1,...,n}, and for any 1< M <n,
+
+M M
+> ait; < > Ajtai). (6-8)
+i=l i=l
+
+This is a variant of a standard rearrangement inequality; for completeness we give a brief proof in
+Section 7B. Applying this observation in (6-7) with M = n/2, we have shown that
+
+n/2
+log, (221°? By is 2°) = @r-—D Yo 4,
+i=l
+
+so that in the case of j =n even,
+2° OP By Gs Prt <M 2) = (Ky Ky OY.
+
+The argument is similar for j = with n odd, and we only specify the necessary changes, starting with
+
+(n—1)/2
+
+log, (22°? Ba rs 26-8) = 2p —1) S2 bya) 42r > (te (i) — 8a (i) +P (to (n-41)/2) — So (n $1)/2))-
+i=l i=l
+
+It is convenient to set temporarily for each i = 1, ...,n the parameter ©,,; = 2r if 1 <i < (n— 1)/2,
+On ~th/2=r and O,,; =0 if (n+1)/2 <i <n. With this notation, the argument then proceeds as before,
+until we reach the statement of (6-7), which now holds with this new definition of ©,,;. Now the first sum
+on the right-hand side of (6-7) is over 1 <i < (n— 1)/2, while the second sum on the right-hand side is
+over i > (n+ 1)/2, and has its only nonzero contribution coming from i = (n+ 1)/2. We may conclude that
+
+(n—1)/2
+
+logy (27 ]°? Bn is 2°) = V2 Ar = Dtow + rot 2)-
+i=1
+
+We now apply (6-8) from Lemma 6.4 to conclude that
+
+(n—1)/2
+
+logs (IO? Bn Gs 2°) = YS Or = Dt trtasyp,
+i=l
+
+or equivalently,
+
+2H OP By (Gs BPE (2B Blo OPD Qt) = (Kyo Kenya) Rayo
+
+This completes the proof of Lemma 6.3.

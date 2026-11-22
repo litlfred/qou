@@ -1,0 +1,43 @@
+12.4 Transfer matrices 393
+
+Q = {0, 1, 2}, giving v(z) = 1+z+ 2 and
+
+222
+MODS Ty aT
+(v2) = 2(2 +424 1)
+; (2+z4+1)? °
+
+When k/n = 1/4, so that the average tree size in a forest is 4, Proposition 12.8
+implies that the number [z”]f(z)* of forests of unary-binary trees with n nodes
+and k trees is asymptotically given by Ca"n!/? where C ~ 0.12666642608296
+and a = 2.8610046903287. 4
+
+12.4 Transfer matrices
+
+The univariate transfer matrix method, discussed in Chapter 2, is easily ex-
+tended to multivariate generating functions that enumerate multiplicatively
+weighted paths. If M is a matrix indexed by a finite set S, the weight w(x)
+of the path a = (xo,...,%,) € S” under M is []?_, M,,_, x,- The sum of weights
+of all paths of length n from i to j under M is given by (M"); ;, yielding the
+generating function Fj;(z) = Ui - zM);} enumerating weighted walks from
+i to j by length. Similarly, the multivariate generating function enumerating
+weighted walks by length while also tracking d additive integer valued func-
+tions v),..., vy defined by their values v(i, j) on single steps (i, j) is
+
+Fy, dij = UE - My)j;,
+where M, is the matrix whose (i, j)-coefficient is M;;y”. We consider two
+applications of this observation, message passing and quantum random walks.
+
+Example 12.10 (Message passing). Let G be the graph on K + L + 2 vertices
+which is the union of two complete graphs of sizes K + 1 and L+ 1, with a loop
+at every vertex and one edge between them. Paths on this graph correspond to
+a message or task being passed around two workgroups, with communication
+between the workgroups not allowed except between the bosses. If we sample
+uniformly among paths of length n, how much time does the message spend
+among the common (non-boss) members?
+
+To analyze this problem we build a new graph, with vertices {v1, v2, v3, va}
+where v; represents the common Group | members, v2 represents the Group
+1 boss, v3 represents the Group 2 boss, and v4 represents the common Group
+2 members. Every time the message moves to v; it can do so in K ways, and
+every move to v4 can be done in L ways. The generating function counting

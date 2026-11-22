@@ -2,16 +2,21 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
     }
   ],
   "@id": "library/arxiv-0908.3425v1/blocks/prose-sec-027",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
   "kind": "prose",
-  "title": "Baryonic chiral perturbation theory",
-  "pageStart": 49,
-  "pageEnd": 52,
-  "text": "../sections/sec-027-baryonic-chiral-perturbation-theory.md",
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0908.3425v1",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-0908.3425v1",
+  "title": "The effective Wess-Zumino-Witten action",
+  "pageStart": 39,
+  "pageEnd": 42,
+  "text": "../sections/sec-027-the-effective-wess-zumino-witten-action.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0908.3425v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0908.3425v1/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,0 +1,1 @@
+The scheme D(K) is aﬃne if and only if K is ﬁnite. If K∗: I →P(N) is a collection such that all the Ki are ﬁnite, then D(K∗) →Spec R is also aﬃne and faithfully ﬂat. This is the case, for instance, if X is quasi-compact and K∗= ranks(E∗). Otherwise D(K∗) is just thought of as a sheaf over R.

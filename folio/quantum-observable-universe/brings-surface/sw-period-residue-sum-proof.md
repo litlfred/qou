@@ -17,29 +17,18 @@ $$
 
 the right-hand side being a finite sum of local residues. Identifying the
 left-hand side with the prolonged period $a_D^{(n)}$ of
-[`prop:mi-sw-abelianisation`](#prop:mi-sw-abelianisation) gives the residue-sum
+[Abelianisation of the MI integral on exceptional divisors](#prop:mi-sw-abelianisation) gives the residue-sum
 shape: the period is computed by collecting residues, with no contour
 integration — *once $E$ is known*.
 
-**Scope (corrected 2026-08-29, bean `qou-6v5l`).** This argument previously ran
-over all $k$ poles and appealed to "the period over the generating cycle of
-$\mathcal{S}_c$". Neither step is available. $\mathbb{P}^1(\mathbb{C})$ has
+**Scope.** The argument cannot run over all $k$ poles, nor appeal to a period
+over a generating cycle of $\mathcal{S}_c$. $\mathbb{P}^1(\mathbb{C})$ has
 $H_1 = 0$, so there is no generating cycle; and the residue theorem on a compact
 Riemann surface states that the residues over *all* poles **sum to zero**, which
 would give $a_D^{(n)} = 0$ at every level rather than the positive binding period
-the keystone requires. The Lean records this as a derived consequence rather than
-a claim:
-[`QOU.Brings.period_eq_zero_of_total_residue_vanishes`](#prop:sw-period-residue-sum)
-and its contrapositive
-`total_residue_ne_zero_of_period_ne_zero`, which is what forces $E$ to be a
-*proper* subset. The companion witness
-[`QOU.Brings.sw_period_eq_residue_sum`](#prop:sw-period-residue-sum) carries the
+the keystone requires. This vanishing is a derived consequence rather than a
+claim, and its contrapositive — a nonzero period forces a nonzero total
+residue — is what forces $E$ to be a *proper* subset. The companion statement
+[The Seiberg–Witten period is an algebraic residue sum](#prop:sw-period-residue-sum) carries the
 residue-sum shape as an explicit hypothesis; it does not derive it.
-
-A second, independent route reaches the same vanishing under the classical-jet
-rule: [`prop:sw-classical-jet-exactness`](#prop:sw-classical-jet-exactness) shows
-$\lambda_{\mathrm{SW}}^{(n)} = d\bigl(X^{(n-1)}\bigr)$ is exact, so each residue
-vanishes on its own. That argument is stronger where it applies and is scoped to
-the classical-jet reading; the one here assumes only that the *total* vanishes,
-and is a property of the ambient surface rather than of the jet rule.
 $\qquad\blacksquare$

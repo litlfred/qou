@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-math-0410233v4",
  "source_sha256": "1f7215c9f21aa2b7",
- "brief": "Cusp shapes under cone deformation — A horospherical torus about a cusp of a hyperbolic manifold inherits a Euclidean similarity structure, called a cusp sh ape.",
- "extended": "**Cusp shapes under cone deformation**\n\n46 pp, 22 sections.\n\n**Abstract.** A horospherical torus about a cusp of a hyperbolic manifold inherits a Euclidean similarity structure, called a cusp sh ape. We bound the change in cusp shape when the hyperbolic structure of the manifold is deformed via cone deformation preserving the cusp. The bo unds are in terms of the change in structure in a neighborhood of the si ngular locus alone. We then apply this result to provide information on the cusp s hape of many hyperbolic knots, given only a diagram of the knot. Spec iﬁcally, we show there is a universal constant C such that if a knot admits a prime, twist reduced diagram with at least C crossings per twist reg ion, then the length of the second shortest curve on the cusp torus is bo unded. The bound is linear in the number of twist regions of the diagr am.\n\n**Outline.** 1 Introduction; 1.1 Motivation; 1.3 Cusp shapes; 1.2 Cone deformations; 1.4 Applications to knot theory; 1.5 Organization of this paper; 1.6 Acknowledgments; 2 Background on Cone Deformation; 2.2 Boundary terms; 3 Change in Cusp Shape; 3.1 Boundary relations; 3.3 Normalized lengths on the torus; 4 Bounding the boundary terms; 4.1 Convex combinations of deformations; 4.2 Selecting local deformations; 4.3 Boundary bound; 5 Bounding the meridian; 6 Cusp shapes of hyperbolic knots\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.2: Suppose we have the following:\n- Theorem 1.3: Let the set up be as in Theorem 1.2 above. Let Lt be the\n- Theorem 1.4: Let the notation be as in Theorem 1.2 above. Denote by\n- Theorem 1.8: Let K be a knot in S3 which admits a prime, twist reduced\n- Theorem 3.3: Let Xt be a hyperbolic cone deformation with a cusp. That\n- Theorem 3.6: Let Lt be the normalized length of a slope on a cusp torus",
+ "brief": "CUSP SHAPES UNDER CONE DEFORMATION — A horospherical torus about a cusp of a hyperbolic manifold inherits a Euclidean similarity structure, called a cusp shape.",
+ "extended": "**CUSP SHAPES UNDER CONE DEFORMATION**\n\n*JESSICA S. PURCELL*\n\n46 pp, 26 sections.\n\n**Abstract.** A horospherical torus about a cusp of a hyperbolic manifold inherits a Euclidean similarity structure, called a cusp shape. We bound the change in cusp shape when the hyperbolic structure of the manifold is deformed via cone deformation preserving the cusp. The bounds are in terms of the change in structure in a neighborhood of the singular locus alone. We then apply this result to provide information on the cusp shape of many hyperbolic knots, given only a diagram of the knot. Speciﬁcally, we show there is a universal constant C such that if a knot admits a prime, twist reduced diagram with at least C crossings per twist region, then the length of the second shortest curve on the cusp torus is bounded. The bound is linear in the number of twist regions of the diagram.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Motivation; 1.3 Cusp shapes; 1.2 Cone deformations; 1.4 Applications to knot theory; 1.5 Organization of this paper; 1.6 Acknowledgments; 2 Background on Cone Deformation; 2.1 Infinitesimal deformations; 2.2 Boundary terms; 3 Change in Cusp Shape; 3.1 Boundary relations; 3.2 Teichmüller Space; 3.3 Normalized lengths on the torus; 4 Bounding the boundary terms; 4.1 Convex combinations of deformations; 4.2 Selecting local deformations",
  "tokens": {
   "brief": 40,
-  "extended": 453
+  "extended": 340
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction",
@@ -17,17 +22,17 @@
   {
    "id": "sec-001-11-motivation",
    "title": "Motivation",
-   "pages": "1-2"
+   "pages": "1-3"
   },
   {
    "id": "sec-002-13-cusp-shapes",
    "title": "Cusp shapes",
-   "pages": "2-2"
+   "pages": "3-3"
   },
   {
    "id": "sec-003-12-cone-deformations",
    "title": "Cone deformations",
-   "pages": "2-5"
+   "pages": "3-5"
   },
   {
    "id": "sec-004-14-applications-to-knot-theory",
@@ -47,75 +52,90 @@
   {
    "id": "sec-007-2-background-on-cone-deformation",
    "title": "Background on Cone Deformation",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-008-21-infinitesimal-deformations",
+   "title": "Infinitesimal deformations",
    "pages": "7-9"
   },
   {
-   "id": "sec-008-22-boundary-terms",
+   "id": "sec-009-22-boundary-terms",
    "title": "Boundary terms",
    "pages": "9-10"
   },
   {
-   "id": "sec-009-3-change-in-cusp-shape",
+   "id": "sec-010-3-change-in-cusp-shape",
    "title": "Change in Cusp Shape",
    "pages": "10-11"
   },
   {
-   "id": "sec-010-31-boundary-relations",
+   "id": "sec-011-31-boundary-relations",
    "title": "Boundary relations",
-   "pages": "11-15"
+   "pages": "11-12"
   },
   {
-   "id": "sec-011-33-normalized-lengths-on-the-torus",
+   "id": "sec-012-32-teichmüller-space",
+   "title": "Teichmüller Space",
+   "pages": "12-15"
+  },
+  {
+   "id": "sec-013-33-normalized-lengths-on-the-torus",
    "title": "Normalized lengths on the torus",
    "pages": "15-17"
   },
   {
-   "id": "sec-012-4-bounding-the-boundary-terms",
+   "id": "sec-014-4-bounding-the-boundary-terms",
    "title": "Bounding the boundary terms",
    "pages": "17-18"
   },
   {
-   "id": "sec-013-41-convex-combinations-of-deformations",
+   "id": "sec-015-41-convex-combinations-of-deformations",
    "title": "Convex combinations of deformations",
    "pages": "18-19"
   },
   {
-   "id": "sec-014-42-selecting-local-deformations",
+   "id": "sec-016-42-selecting-local-deformations",
    "title": "Selecting local deformations",
    "pages": "19-21"
   },
   {
-   "id": "sec-015-43-boundary-bound",
+   "id": "sec-017-43-boundary-bound",
    "title": "Boundary bound",
    "pages": "21-28"
   },
   {
-   "id": "sec-016-5-bounding-the-meridian",
+   "id": "sec-018-5-bounding-the-meridian",
    "title": "Bounding the meridian",
    "pages": "28-31"
   },
   {
-   "id": "sec-017-6-cusp-shapes-of-hyperbolic-knots",
+   "id": "sec-019-6-cusp-shapes-of-hyperbolic-knots",
    "title": "Cusp shapes of hyperbolic knots",
    "pages": "31-31"
   },
   {
-   "id": "sec-018-61-an-initial-manifold",
+   "id": "sec-020-61-an-initial-manifold",
    "title": "An initial manifold",
    "pages": "31-39"
   },
   {
-   "id": "sec-019-62-finding-values-for-tube-radius",
+   "id": "sec-021-62-finding-values-for-tube-radius",
    "title": "Finding values for tube radius",
+   "pages": "39-39"
+  },
+  {
+   "id": "sec-022-63-proof-of-theorem",
+   "title": "Proof of Theorem ??",
    "pages": "39-41"
   },
   {
-   "id": "sec-020-64-example-2bridge-knots",
+   "id": "sec-023-64-example-2bridge-knots",
    "title": "Example: 2–bridge knots",
    "pages": "41-44"
   },
   {
-   "id": "sec-021-references",
+   "id": "sec-024-references",
    "title": "References",
    "pages": "44-46"
   }
@@ -124,8 +144,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

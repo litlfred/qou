@@ -1,0 +1,67 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/furey-2018-epjc-78-375/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "SU(3)_C x SU(2)_L x U(1)_Y (x U(1)_X) as a symmetry of division algebraic ladder operators",
+  "contains": [
+    "library/furey-2018-epjc-78-375/sections/sec-front-matter",
+    "library/furey-2018-epjc-78-375/sections/sec-000",
+    "library/furey-2018-epjc-78-375/sections/sec-001",
+    "library/furey-2018-epjc-78-375/sections/sec-002",
+    "library/furey-2018-epjc-78-375/sections/sec-003",
+    "library/furey-2018-epjc-78-375/sections/sec-004",
+    "library/furey-2018-epjc-78-375/sections/sec-005",
+    "library/furey-2018-epjc-78-375/sections/sec-006",
+    "library/furey-2018-epjc-78-375/sections/sec-007",
+    "library/furey-2018-epjc-78-375/sections/sec-008",
+    "library/furey-2018-epjc-78-375/sections/sec-009",
+    "library/furey-2018-epjc-78-375/sections/sec-010",
+    "library/furey-2018-epjc-78-375/sections/sec-011",
+    "library/furey-2018-epjc-78-375/sections/sec-012",
+    "library/furey-2018-epjc-78-375/sections/sec-013",
+    "library/furey-2018-epjc-78-375/sections/sec-014",
+    "library/furey-2018-epjc-78-375/sections/sec-015",
+    "library/furey-2018-epjc-78-375/sections/sec-016",
+    "library/furey-2018-epjc-78-375/sections/sec-017",
+    "library/furey-2018-epjc-78-375/sections/sec-018",
+    "library/furey-2018-epjc-78-375/sections/sec-019",
+    "library/furey-2018-epjc-78-375/sections/sec-020",
+    "library/furey-2018-epjc-78-375/sections/sec-021",
+    "library/furey-2018-epjc-78-375/sections/sec-022",
+    "library/furey-2018-epjc-78-375/sections/sec-023",
+    "library/furey-2018-epjc-78-375/sections/sec-024",
+    "library/furey-2018-epjc-78-375/sections/sec-025",
+    "library/furey-2018-epjc-78-375/sections/sec-026",
+    "library/furey-2018-epjc-78-375/sections/sec-027",
+    "library/furey-2018-epjc-78-375/sections/sec-028"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "furey-2018-epjc-78-375",
+    "title_source": "editorial",
+    "title_from": "structure.json metadata.title_correction.title",
+    "title_verified": true,
+    "title_correction": {
+      "title": "SU(3)_C x SU(2)_L x U(1)_Y (x U(1)_X) as a symmetry of division algebraic ladder operators",
+      "basis": "arXiv API record 1806.00612v1 (C. Furey; Eur. Phys. J. C 78:375, 2018); the extracted title dropped its leading math",
+      "corrected_on": "2026-11-15",
+      "extracted": "as a symmetry of division algebraic ladder operators"
+    },
+    "source_file": "furey-2018-epjc-78-375.pdf",
+    "source_sha256": "4258820f00014b03fad4359342cb826dec3729f95fcbd4265461c8fb092cf248",
+    "pages": 12,
+    "arxiv": null,
+    "doi": "10.1140/epjc/s10052-018-5844-7",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

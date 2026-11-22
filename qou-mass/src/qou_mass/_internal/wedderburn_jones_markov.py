@@ -248,27 +248,17 @@ def _y_lambda_at_convention_C_HISTORICAL(
     rapidly.  Set to `os.cpu_count()` (or a smaller value to leave
     cores free) for maximum throughput on the numerical-q path.
 
-    SIDE EFFECT — the FIRST call raises global `mp.dps` to 50
-    ---------------------------------------------------------
-    Measured: a caller holding `mp.dps = 40` gets 50 back after its first
-    `y_lambda_at(...)`.  Subsequent calls leave it alone, so this is a
-    once-per-process effect, not a per-call one.
-
-    The cause is a LAZY IMPORT, not this function's arithmetic: the first
-    call pulls `y_lambda_su_n`, whose module scope runs `set_compute_dps(50)`
-    (`y_lambda_su_n.py:269`).  That call is DELIBERATE AND CORRECT — it must
-    precede the `mpf()` registry literals below it or `REG_ZC` / `REG_ZD` are
-    parsed at mpmath's default 15 dps, rounded to 53 bits, and are already
-    wrong when built; `module_const_precision_audit --strict` flags exactly
-    those two.  Do not "fix" it by removing it.
-
-    It is documented here because the consequence is invisible at the call
-    site: a producer that sets `mp.dps = 40`, calls this, and then records
-    `"compute_dps": mp.dps` writes a witness saying 50 while the file says 40.
-    The values are not wrong — the later arithmetic really does run at 50 —
-    but the declared precision is not the computed precision.  If you need a
-    guaranteed working precision, set it AFTER your first call, or wrap the
-    region in `mp.workdps(...)`.
+    NO SIDE EFFECT on global `mp.dps` (since 2026-10-13)
+    ---------------------------------------------------
+    Until 2026-10-13 the FIRST call ASSIGNED global `mp.dps = 50`, through
+    the lazy import of `y_lambda_su_n`, whose module scope ran
+    `set_compute_dps(50)` so its registry `mpf()` literals were not parsed at
+    15 dps.  That silently LOWERED every caller running at 60/70 (measured:
+    importing this module leaves 70; the first call left 50 for the rest of
+    the process) and raised one running at 40.  `y_lambda_su_n` now builds
+    those literals inside a local `mp.workdps(COMPUTE_DPS)`, so calling this
+    leaves the caller's precision exactly as it was.  The returned weights
+    are computed at the caller's ambient `mp.dps`.
     """
     shapes = [tuple(s) for s in m.partitions_of(n)]
     if q_val is None:
@@ -354,10 +344,31 @@ def global_wedderburn_sum_jones_markov(
     Drop-in replacement for
     `schur_weyl_symbolic.global_wedderburn_sum_symbolic` that uses the
     correct Wenzl/Jones-Markov weight y_λ rather than the 2-variable
-    Schur s_λ(q, q⁻¹) / H_q(λ).  The 2-variable form vanishes for
-    partitions with > 2 rows, dropping the `(1^p)` sign-rep
-    contribution that `prop:alpha-shift-torus-knot` identifies as the
-    pole-order maximizer.
+    Schur s_λ(q, q⁻¹) / H_q(λ).
+
+    🛑 CONVENTION-C DOCSTRING CORRECTED 2026-09-05 (bean `qou-voa6`).
+    This paragraph used to continue: "The 2-variable form vanishes for
+    partitions with > 2 rows, dropping the `(1^p)` sign-rep contribution
+    that `prop:alpha-shift-torus-knot` identifies as the pole-order
+    maximizer" — i.e. it gave the > 2-row vanishing as the REASON to
+    prefer y_λ, which only makes sense if y_λ does not vanish there.
+    Under convention C it did not. Under convention D, canonical since
+    the owner ruling of 2026-08-15, **y_λ vanishes on exactly the same
+    set** — see the comment in the loop body below, which states it and
+    cites the sorry-free
+    `QOU.QBeta.WenzlWeight.conventionD_weight_eq_zero_iff`. So the
+    docstring and the body of this one function asserted opposite things
+    about y_λ, the docstring being convention-C-era.
+
+    What is still true, and is the live reason to prefer y_λ: it is the
+    Ocneanu/Jones-Markov weight, normalised `Σ y_λ f^λ = 1`, whereas the
+    2-variable Schur form is not a Markov trace weight at all. The
+    `(1^p)` sign-rep contribution is NOT recovered by either — it lies in
+    `ker(H_n ↠ TL_n)` and is zero on the N = 2 physical space by the row
+    cap (`qou-fvzm`), so `prop:alpha-shift-torus-knot`'s pole-order
+    maximizer is not reachable through this sum under D. That is a real
+    open question about that proposition, not a defect in this function;
+    it is recorded in `qou-voa6` rather than fixed here.
 
     Parameters mirror the legacy function; the only addition is
     `q_val` — pass q_0 to enable numerical-q-from-start (recommended

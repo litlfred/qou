@@ -1,0 +1,33 @@
+Appendix D
+
+Stratification and stratified Morse theory
+
+In this final appendix we extend the Morse-theoretic decompositions of Ap-
+pendix C to handle general algebraic varieties and their complements. More
+specifically, we cover results from stratified Morse theory [GM88] that char-
+acterize the topology of a stratified space X through changes in topology in
+the sublevel sets X<, as c passes through critical values (in a stratified sense)
+of a height function. We develop from scratch the notion of a Whitney strat-
+ified space, Morse functions, and stratified critical points. We discuss non-
+proper extensions of this material and then summarize a number of basic re-
+sults of [GM88], including specific properties enjoyed by complex algebraic
+varieties.
+
+D.1 Whitney stratified spaces
+
+Ideally one would use the apparatus of manifolds, developed in the previous
+appendices, to do calculus on complex algebraic varieties, however many vari-
+eties that appear in interesting combinatorial problems are not manifolds. The
+right generalization for our purposes is the notion of a stratified space, which
+can contain non-manifold points whose neighborhoods in the variety are not
+diffeomorphic to any Euclidean space R¢. One well-known example of such
+spaces are manifolds with boundary, and we begin with a recap of these ob-
+jects. The following material on manifolds with boundary can be skipped if
+desired, as it is subsumed by our discussion of stratified spaces, however we
+include it because it is likely familiar to many readers.
+
+A d-manifold with boundary is a subset M C R" such that every point
+a € M has a neighborhood in R” whose intersection N with M is either
+diffeomorphic to R¢ or diffeomorphic to the closed halfspace R¢“! x [0, co). In
+
+513

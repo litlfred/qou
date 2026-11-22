@@ -1,0 +1,56 @@
+Proposition 3.1. For a non-zero a € C, the domain {z € C | Reaz? < 0} has two
+connected components. We choose 2,2 from the two components respectively. Let C’ be
+a path from z to z in C. (See Figure 2.) Then, there exists ¢ > 0 such that
+
+oN-az? 9 = Va _ +0 p—EN ,
+[« Zz Waa (e**)
+
+where we choose the sign of /—a such that Rez/—a > 0.
+
+We note that ¢ depends on 20, 2; and a.
+
+’
+. /
+/
+~ ’
+
+m oo v-a
+
+1
+=a
+/
+Ja Ve Al
+; s
+—H
+C
+
+Figure 2: The domain {z € C | Reaz? < 0} is shaded.
+
+Proof. By replacing z with z/,/—a, we can reduce the proof to the case where a = —1.
+Putting a = —1, we show that
+
+[ eX dy = +O(e 8%).
+
+Since [% edz = Vr/VN, it is sufficient to show that
+
+/ eN*dz= O(e*%), / eN dz = O(e%).
+
+We show the latter formula. (The former formula can be shown similarly.) The latter
+formula is calculated,
+
+co > Rez 9 love) 2
+/ edz = / edz +/ edz,
+Zz 2 Rez
+
+and the two terms of the right-hand side are estimated,
+
+Re z1 > Re 21 > Re z1 , 9
+| e N? d2| < / e Nt | . |dz| < / e NRez \dz|
+Za ZL 21
+
+Rez > ; >
+< / e NReai | dz] _ [Im ~| » e NRe zz _ O(e*%),
+
+21
+
+11

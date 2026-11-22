@@ -1,0 +1,1 @@
+The set of semi-simple walks Sβ is invariant under cyclic permutation of the braid word. The theorem is a direct consequence of the next two lemmas. The first lemma implies that cyclic permutation of β does not alter the set of simple walks unless β starts with σ1 or σ´1 1 .

@@ -6,6 +6,7 @@ import QOU.BraidKnot.KeystoneBalancedRibbon
 import Mathlib.CategoryTheory.Monoidal.Rigid.Basic
 import Mathlib.CategoryTheory.Functor.Basic
 import Mathlib.CategoryTheory.Limits.Shapes.ZeroMorphisms
+import Mathlib.CategoryTheory.Limits.Shapes.Kernels
 import Mathlib.CategoryTheory.Preadditive.Basic
 import Mathlib.CategoryTheory.Linear.Basic
 import Mathlib.Algebra.BigOperators.Fin
@@ -263,9 +264,19 @@ structure QuantumUniverse (R : Type*) [CommRing R] where
   /-- Every block's quantum dimension is a **unit**: each can be normalised
       against.  `IsUnit` for the same reason as `frobWeight_isUnit`. -/
   dimQ_isUnit : ∀ b, IsUnit (dimQ b)
-  /-- `A` admits a differential calculus: the module of Kähler
-      differentials `Ω¹(A)` exists in `C`. -/
-  differentialForms : Type*
+  /-- **`A` admits a universal first-order calculus.**  `Ω¹(A)` is a
+      kernel of the multiplication `μ : A ⊗ A ⟶ A` in `C`: an object with a
+      morphism `ι : Ω¹(A) ⟶ A ⊗ A` such that `ι ≫ μ = 0`, universal among
+      such.  This is the noncommutative universal calculus, not Mathlib's
+      `KaehlerDifferential` (commutative only, and the quotient `I/I²` of
+      this kernel).  In `ModuleCat R` it is realised by
+      `QOU.MathlibExt.UniversalDifferentials.Ω1`.  Carried as a fork plus
+      its universal property rather than a `HasKernels C` instance: the
+      paper needs this one kernel, not every kernel in `C`. -/
+  differentialForms : CategoryTheory.Limits.KernelFork frobHopf.mul
+  /-- The fork `differentialForms` is a limit: `Ω¹(A)` *is* the kernel of
+      `μ`. -/
+  differentialForms_isLimit : CategoryTheory.Limits.IsLimit differentialForms
 
 /-- **Quantum Observable Universe** over a commutative ring `R`.
 
@@ -317,8 +328,12 @@ structure QuantumObservableUniverse (R : Type*) [CommRing R]
       is explicit that the trivial part is excluded: `Ad(A)` decomposes "with
       no spin-0 summand" (`brings-qou-axiom-map.md`) and is `≅ V₂`, the
       3-dimensional traceless part, for `SU_q(2)` (`brings-is-qou.lean`).
-      That reduced adjoint is the augmentation ideal `ker ε`, which the
-      adjoint action preserves because `ε` is an algebra map. -/
+      That reduced adjoint is taken to land in `ker ε`; this field is part of
+      the data and is not derived from a property of `ε`.  (An earlier
+      justification read "the adjoint action preserves `ker ε` because `ε` is
+      an algebra map".  A multiplicative counit is not available: it forces
+      `x = ε(x) • 1` for every `x`, see
+      `MultiplicativeCounitCollapse.eq_counit_smul_one`, bean `qou-aj49`.) -/
   adjoint_augmented : adjointIncl ≫ frobHopf.counit = 0
   /-- `Ad(A)` is not the zero object.  Together with the two fields above this
       is what `adjointObj := 0` fails: the only morphism out of the zero

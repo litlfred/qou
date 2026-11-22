@@ -1,6 +1,6 @@
 ---
 doc_id: 0510388v1
-doc_title: "ELECTRODYNAMICS and the GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE Dennis DeTurck and Herman Gluck"
+doc_title: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space"
 section_id: sec-048-44-maxwells-equation-in-h3
 section_title: "Maxwell's equation in H3 ."
 section_number: 44
@@ -8,6 +8,7 @@ pages: 87-88
 source_pdf: 0510388v1.pdf
 source_sha256: c83c0f6a2eaa74f3
 toc_source: inferred
+doc_brief: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space — 64 sections: Front matter; ORGANIZATION; STATEMENTS OF RESULTS"
 ---
 We now apply the Key Lemma to the proof of Maxwell's equation 
  
@@ -46,7 +47,6 @@ BS(V)(y)  =  ∫H3  PyxV(x) × ∇y ϕ(x, y) dx ,
 for smooth, compactly supported vector fields  V . 
  
  
-88 
  
  
  

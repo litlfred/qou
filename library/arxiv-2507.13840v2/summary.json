@@ -2,85 +2,195 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2507.13840v2",
  "source_sha256": "34ad8ede52fbf42e",
- "brief": "Quantifying mixed-state entanglement via partial transpose and realignment moments — 15 sections: Front matter; Efficient algorithm to measure PT ; Efficient algorithm to measure CCN",
- "extended": "**Quantifying mixed-state entanglement via partial transpose and realignment moments**\n\n*Poetri Sonya Tarabunga1,2 and Tobias Haug3*\n\n43 pp, 15 sections.\n\n**Outline.** Front matter; Efficient algorithm to measure PT negativity m; Efficient algorithm to measure CCNR negativity; Upper bounds for the PT negativity and the CCN; Upper bound on DF; Relationship between PT negativity, CCNR negat; Depth-dependent bound on the PT negativity and; Certification of circuit depth; Entanglement of pseudorandom density matrices ; Schmidt rank testing; Operator Schmidt rank testing; PT and realignment moments in translation-inva; Matrix product states algorithm for the PT neg; Effects of depolarizing noise on entanglement; Witnessing entanglement in Werner States\n\n**Extracted claims (proposals, not verified).**\n- Theorem: J.1 (Efficient testing of Schmidt rank). Let |ψ⟩be an n-qubit state where it is promised\n- Theorem: K.1 (Efficient testing of operator Schmidt rank). Let ρ be an n-qubit state where it is\n- Theorem 1: Let ρ be an n-qubit state with S2(ρ) = O(log n)\n- Theorem 2: Let |ψ⟩be an n-qubit state where it is promised\n- Theorem 3: Let ρ be an n-qubit state where it\n- Proposition 3: For a given (mixed) n-qubit state ρ, there",
+ "brief": "Quantifying mixed-state entanglement via partial transpose and realignment moments — 37 sections: Front matter; Preliminaries; Quantitative",
+ "extended": "**Quantifying mixed-state entanglement via partial transpose and realignment moments**\n\n*Poetri Sonya Tarabunga1,2 and Tobias Haug3*\n\n43 pp, 37 sections.\n\n**Outline.** Front matter; 2 Preliminaries; 3 Quantitative; 3.1 From the PT moments; 3.2 From the realignment moments; 3.3 Symmetry-resolved; 4 Quantifying; 5 Relation to operator space entanglement entr; 6 Entanglement testing; 7 Circuit depth certification; 8 Pseudorandom density matrices and pseudoenta; 9 Entanglement phase diagram; 9.1 Haar random states; 9.2 Stabilizer states; 10 Entanglement and noise; 11 Matrix product states and matrix product op; 11.1 Partial transpose moments; 11.2 Realignment moments",
  "tokens": {
-  "brief": 45,
-  "extended": 308
+  "brief": 34,
+  "extended": 167
  },
  "sections": [
   {
-   "id": "sec-front-matter",
+   "id": "sec-000-front-matter",
    "title": "Front matter",
-   "pages": "1-30"
+   "pages": "1-4"
   },
   {
-   "id": "sec-000-efficient-algorithm-to-measure-pt-negativity-mom",
+   "id": "sec-001-2-preliminaries",
+   "title": "Preliminaries",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-002-3-quantitative",
+   "title": "Quantitative",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-003-31-from-the-pt-moments",
+   "title": "From the PT moments",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-004-32-from-the-realignment-moments",
+   "title": "From the realignment moments",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-005-33-symmetry-resolved",
+   "title": "Symmetry-resolved",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-006-4-quantifying",
+   "title": "Quantifying",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-007-5-relation-to-operator-space-entanglement-entrop",
+   "title": "Relation to operator space entanglement entropy",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-008-6-entanglement-testing",
+   "title": "Entanglement testing",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-009-7-circuit-depth-certification",
+   "title": "Circuit depth certification",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-010-8-pseudorandom-density-matrices-and-pseudoentang",
+   "title": "Pseudorandom density matrices and pseudoentanglement",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-011-9-entanglement-phase-diagram",
+   "title": "Entanglement phase diagram",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-012-91-haar-random-states",
+   "title": "Haar random states",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-013-92-stabilizer-states",
+   "title": "Stabilizer states",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-014-10-entanglement-and-noise",
+   "title": "Entanglement and noise",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-015-11-matrix-product-states-and-matrix-product-oper",
+   "title": "Matrix product states and matrix product operators algorithms",
+   "pages": "15-15"
+  },
+  {
+   "id": "sec-016-111-partial-transpose-moments",
+   "title": "Partial transpose moments",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-017-112-realignment-moments",
+   "title": "Realignment moments",
+   "pages": "16-18"
+  },
+  {
+   "id": "sec-018-13-discussion",
+   "title": "Discussion",
+   "pages": "18-20"
+  },
+  {
+   "id": "sec-019-acknowledgments",
+   "title": "Acknowledgments",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-020-references",
+   "title": "References",
+   "pages": "20-28"
+  },
+  {
+   "id": "sec-021-8-url",
+   "title": "URL",
+   "pages": "28-30"
+  },
+  {
+   "id": "sec-022-efficient-algorithm-to-measure-pt-negativity-mom",
    "title": "Efficient algorithm to measure PT negativity moment",
-   "pages": "30-30"
+   "pages": "30-31"
   },
   {
-   "id": "sec-001-efficient-algorithm-to-measure-ccnr-negativity-m",
+   "id": "sec-023-efficient-algorithm-to-measure-ccnr-negativity-m",
    "title": "Efficient algorithm to measure CCNR negativity moment",
-   "pages": "30-32"
+   "pages": "31-32"
   },
   {
-   "id": "sec-002-upper-bounds-for-the-pt-negativity-and-the-ccnr",
+   "id": "sec-024-upper-bounds-for-the-pt-negativity-and-the-ccnr",
    "title": "Upper bounds for the PT negativity and the CCNR negativity",
    "pages": "32-33"
   },
   {
-   "id": "sec-003-upper-bound-on-df",
+   "id": "sec-025-upper-bound-on-df",
    "title": "Upper bound on DF",
    "pages": "33-34"
   },
   {
-   "id": "sec-004-relationship-between-pt-negativity-ccnr-negativi",
+   "id": "sec-026-relationship-between-pt-negativity-ccnr-negativi",
    "title": "Relationship between PT negativity, CCNR negativity, and robustness of entanglement",
    "pages": "34-35"
   },
   {
-   "id": "sec-005-depth-dependent-bound-on-the-pt-negativity-and-t",
+   "id": "sec-027-depth-dependent-bound-on-the-pt-negativity-and-t",
    "title": "Depth-dependent bound on the PT negativity and the CCNR negativity",
    "pages": "35-35"
   },
   {
-   "id": "sec-006-certification-of-circuit-depth",
+   "id": "sec-028-certification-of-circuit-depth",
    "title": "Certification of circuit depth",
    "pages": "35-36"
   },
   {
-   "id": "sec-007-entanglement-of-pseudorandom-density-matrices-an",
+   "id": "sec-029-entanglement-of-pseudorandom-density-matrices-an",
    "title": "Entanglement of pseudorandom density matrices and pseudoentanglement",
    "pages": "36-37"
   },
   {
-   "id": "sec-008-schmidt-rank-testing",
+   "id": "sec-030-schmidt-rank-testing",
    "title": "Schmidt rank testing",
    "pages": "37-38"
   },
   {
-   "id": "sec-009-operator-schmidt-rank-testing",
+   "id": "sec-031-operator-schmidt-rank-testing",
    "title": "Operator Schmidt rank testing",
-   "pages": "38-40"
+   "pages": "38-39"
   },
   {
-   "id": "sec-010-pt-and-realignment-moments-in-translation-invari",
+   "id": "sec-032-p-negativity-in-haar-random-states",
+   "title": "p-negativity in Haar random states",
+   "pages": "39-40"
+  },
+  {
+   "id": "sec-033-pt-and-realignment-moments-in-translation-invari",
    "title": "PT and realignment moments in translation-invariant MPS",
    "pages": "40-41"
   },
   {
-   "id": "sec-011-matrix-product-states-algorithm-for-the-pt-negat",
+   "id": "sec-034-matrix-product-states-algorithm-for-the-pt-negat",
    "title": "Matrix product states algorithm for the PT negativity and the CCNR negativity",
    "pages": "41-42"
   },
   {
-   "id": "sec-012-effects-of-depolarizing-noise-on-entanglement",
+   "id": "sec-035-effects-of-depolarizing-noise-on-entanglement",
    "title": "Effects of depolarizing noise on entanglement",
    "pages": "42-43"
   },
   {
-   "id": "sec-013-witnessing-entanglement-in-werner-states",
+   "id": "sec-036-witnessing-entanglement-in-werner-states",
    "title": "Witnessing entanglement in Werner States",
    "pages": "43-43"
   }
@@ -88,8 +198,7 @@
  "provenance": {
   "kind": "extractive",
   "from": [
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

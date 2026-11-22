@@ -9,6 +9,6 @@ The canonical declarations live in the Lake-package module
 content-pipeline validator (which requires a sibling `.lean` next to
 the `.ts`/`.md`) is satisfied.
 
--- Ref: [manuscript] §Two-row Wedderburn stratum — content block
+-- Ref: [leitner2026] §Two-row Wedderburn stratum — content block
 -/
 

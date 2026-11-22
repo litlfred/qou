@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/maximal-hoermander-q-var-revised-v03/sections/sec-010",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Acknowledgments",
+  "pageStart": 36,
+  "pageEnd": 43,
+  "contains": [
+    "library/maximal-hoermander-q-var-revised-v03/blocks/prose-sec-010"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/maximal-hoermander-q-var-revised-v03/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/maximal-hoermander-q-var-revised-v03/manifest.jsonld",
+  "provenance": "ingested"
+}

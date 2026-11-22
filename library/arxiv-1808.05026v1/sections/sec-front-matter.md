@@ -8,6 +8,8 @@ pages: 1-1
 source_pdf: 1808.05026v1.pdf
 source_sha256: 2781e0b34e7889d6
 toc_source: outline
+doc_brief: "GRÖBNER-SHIRSHOV BASES FOR TEMPERLEY-LIEB ALGEBRAS — For Temperley-Lieb algebras of type B, we construct their Gröbner-Shirshov bases and the corresponding standard monomials, which give another"
+duplicate_of: "fd58d8e182edda805fed0946606c5ab82f81"
 ---
 arXiv:1808.05026v1  [math.RA]  15 Aug 2018
 GR¨OBNER-SHIRSHOV BASES FOR TEMPERLEY-LIEB ALGEBRAS OF

@@ -7,11 +7,11 @@
   "bytes": 209057,
   "pages": 11,
   "text_source": "embedded",
-  "extractor": "pypdf",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:50Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -22,18 +22,28 @@
   },
   "doi": null,
   "title": "Linear programming bounds for unitary space time codes",
-  "authors_raw": "Jean Creignou Herv\u00e9 Diet",
+  "authors_raw": "Jean Creignou",
   "title_lines": [
    "Linear programming bounds for unitary space",
    "time codes"
   ],
-  "abstract": "The linear programming method is applied to the space Un(C) of uni- tary matrices in order to obtain bounds for codes relative to the diversity sum and the diversity product. Theoretical and numerical re sults improv- ing previously known bounds are derived.",
+  "abstract": "The linear programming method is applied to the space Un(C) of uni- tary matrices in order to obtain bounds for codes relative to the diversity sum and the diversity product. Theoretical and numerical results improv- ing previously known bounds are derived.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181031230130-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
+   "CreationDate": "D:20181031230130-04'00'"
+  },
+  "title_raw": "Linear programming bounds for unitary space time codes",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Linear programming bounds for unitary space time codes",
+   "outline": "Introduction",
+   "text": "Linear programming bounds for unitary space time codes",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
   }
  },
  "toc": [
@@ -42,46 +52,157 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The linear programming method on homogeneous spaces",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "The case of unitary codes",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Analytic bounds of low degree",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Numerical bounds",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Conclusions",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 403,
+   "n_words": 62,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
@@ -89,8 +210,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 2,
-   "n_chars": 2490,
-   "n_words": 443
+   "n_chars": 2474,
+   "n_words": 415,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-the-linear-programming-method-on-homogeneous-spa",
@@ -99,8 +222,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 2854,
-   "n_words": 603
+   "n_chars": 2787,
+   "n_words": 535,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-the-case-of-unitary-codes",
@@ -109,8 +234,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 5,
-   "n_chars": 3391,
-   "n_words": 719
+   "n_chars": 3307,
+   "n_words": 614,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-003-analytic-bounds-of-low-degree",
@@ -119,8 +246,10 @@
    "level": 1,
    "page_start": 5,
    "page_end": 7,
-   "n_chars": 1849,
-   "n_words": 440
+   "n_chars": 1798,
+   "n_words": 364,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-004-numerical-bounds",
@@ -129,8 +258,10 @@
    "level": 1,
    "page_start": 7,
    "page_end": 9,
-   "n_chars": 2795,
-   "n_words": 508
+   "n_chars": 2796,
+   "n_words": 494,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-005-conclusions",
@@ -139,16 +270,26 @@
    "level": 1,
    "page_start": 9,
    "page_end": 11,
-   "n_chars": 2795,
-   "n_words": 450
+   "n_chars": 2791,
+   "n_words": 435,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 6,
-  "sections": 6,
-  "chars_total": 16174,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 7,
+  "chars_total": 16356,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "JeanS.tex",
@@ -161,42 +302,47 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-the-linear-programming-method-on-homogeneous-spa",
      "title": "The linear programming method on homogeneous spaces",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.987,
+     "prose_ratio": 0.941,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-002-the-case-of-unitary-codes",
      "title": "The case of unitary codes",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.98,
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-003-analytic-bounds-of-low-degree",
      "title": "Analytic bounds of low degree",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.968,
+     "prose_ratio": 0.959,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-004-numerical-bounds",
      "title": "Numerical bounds",
-     "prose_ratio": 0.98,
-     "coverage_ratio": 0.971,
+     "prose_ratio": 0.949,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
@@ -204,8 +350,8 @@
      "id": "sec-005-conclusions",
      "title": "Conclusions",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.312,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.306,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

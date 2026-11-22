@@ -1,0 +1,77 @@
+---
+doc_id: traczyk1991-periodic-knots
+doc_title: "Periodic knots and the skein polynomial"
+section_id: page-009
+section_title: "Page 9"
+pages: 9-9
+pdf_page: 9
+source_pdf: traczyk1991-periodic-knots.pdf
+source_sha256: 2e9236877cec4604
+text_source: ocr
+granularity: page
+doc_brief: "Periodic knots and the skein polynomial — 12 sections: Page 1; Page 2; Page 3"
+---
+Periodic knots and the skein polynomial 81
+
+is that there is a difference in the notation used for braids between [J] and
+the earlier cited paper [F-W] which results in that the formula given in [J]
+describes the polynomial for the mirror image of the torus knot we consider).
+
+Lemma 3.10’ In the polynomial X,(1, 2)— A?’ ?? X,_ (1, A) all non-zero terms
+have equal coefficients.
+
+Proof. We use the formula for the X polynomial of Ti»,,) given in [J, Theo-
+rem 9.7].
+
+1—q\ Ae Verve typ #1)/2
+A (a
+
+ytBti=n
+y,B20
+B :
+TI @-49)
+ery
+[ry] CB]! ’
+
+where [t]! means (1 —q)(1—q’)...(1—q’). _
+
+Let us consider the difference X,(q, 2)—A?°~)/? X,_,(q, 4). The involved
+polynomials are these associated with T(,p +4, p) and Tys—1)p+k, p)» SO in both cases
+—4
+
+n=p and we have identical terms T9
+
+in both polynomials. In the formula
+
+Jie- Wisp tk~ 1/2
+1—Aq
+
+Jip Iis— pk 1/2
+
+is Wag the exponent of / is smaller by p(p—1)/2. However, we
+
+consider the difference X,(q, 2)—A?”~/? X,_,(q, 4), and when X,,_ 1) is multip-
+lied by 1?”~1? the exponents become equal. This enables us to rewrite the
+considered difference as
+
+for X, the fraction appears while the analogous term in X,_;
+
+("7° y (= 1h gh t+ 970+ D2 (q _ g~ AP)
+
+1—q? 1-1q
+
+ytpt+il=p
+7, B20
+B .
+qT (q'—Aq)
+DTTBT
+
+The term (1—q~*?) is divisible by (1—q’) so the last formula may be rewritten
+as
+
+B
+A TI] @-24)
+ODT ag pO OITA”
+
+ytpti=p
+¥, B20

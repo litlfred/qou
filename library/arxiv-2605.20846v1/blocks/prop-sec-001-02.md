@@ -1,1 +1,1 @@
-LetX,Ybe diffeomorphic objects ofCob(n)andf:X→Ya
+Let X, Y be diffeomorphic objects of Cob(n) and f : X →Y a diffeomorphism. Then Z(X) ∼= Z(Y ).

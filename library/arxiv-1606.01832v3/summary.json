@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1606.01832v3",
  "source_sha256": "da982c95b9674382",
- "brief": "FLATNESS AND COMPLETION REVISITED AMNON YEKUTIELI — We continue investigating the interaction between ﬂatness and a- adic completion for inﬁnitely generated A-modules.",
- "extended": "**FLATNESS AND COMPLETION REVISITED AMNON YEKUTIELI**\n\n21 pp, 8 sections.\n\n**Abstract.** We continue investigating the interaction between ﬂatness and a- adic completion for inﬁnitely generated A-modules. Here A is a commutative ring and a is a ﬁnitely generated ideal in it. We introduce the concept of a-adic ﬂatness , which is weaker than ﬂatness. We prove that a-adic ﬂatness is preserved under completion when the ideal a is weakly proregular. We also prove that when A is noetherian, a-adic ﬂatness coincides with ﬂatness (for complete modules). An example is worked out of a non-noetherian ring A, with a weakly proregular ideal a, for which the completion ˆA is not ﬂat. We also study a-adic systems , and prove that if the ideal a is ﬁnitely generated, then the limit of every a-adic system is a complete module.\n\n**Outline.** 0 Introduction; 1 a-Adic Systems; 2 Free Resolutions of a-Adic Systems; 3 a-Adic Flatness; 4 Weakly Proregular Ideals; 5 Modules of Decaying Functions; 6 The Non-Noetherian Example; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 0.1: If A is a noetherian commutative ring, a is an ideal in A, and M\n- Theorem 0.2: Let A be a commutative ring, let a be a ﬁnitely generated ideal in\n- Theorem 0.3: LetA be a commutative ring, let a be an ideal in A, and let M be\n- Theorem 0.4: LetA be a commutative ring, let a be a weakly proregular ideal in\n- Theorem 0.5: Let A be a noetherian commutative ring, let a be an ideal in A,\n- Theorem 0.4: is repeated as Theorem 4.3 in the body of the paper. The proof",
+ "brief": "FLATNESS AND COMPLETION REVISITED — We continue investigating the interaction between ﬂatness and a- adic completion for inﬁnitely generated A-modules.",
+ "extended": "**FLATNESS AND COMPLETION REVISITED**\n\n*AMNON YEKUTIELI*\n\n21 pp, 9 sections.\n\n**Abstract.** We continue investigating the interaction between ﬂatness and a- adic completion for inﬁnitely generated A-modules. Here A is a commutative ring and a is a ﬁnitely generated ideal in it. We introduce the concept of a-adic ﬂatness, which is weaker than ﬂatness. We prove that a-adic ﬂatness is preserved under completion when the ideal a is weakly proregular. We also prove that when A is noetherian, a-adic ﬂatness coincides with ﬂatness (for complete modules). An example is worked out of a non-noetherian ring A, with a weakly proregular ideal a, for which the completion b A is not ﬂat. We also study a-adic systems, and prove that if the ideal a is ﬁnitely generated, then the limit of every a-adic system is a complete module.\n\n**Outline.** Front matter; 0 Introduction; 1 a-Adic Systems; 2 Free Resolutions of a-Adic Systems; 3 a-Adic Flatness; 4 Weakly Proregular Ideals; 5 Modules of Decaying Functions; 6 The Non-Noetherian Example; References",
  "tokens": {
-  "brief": 41,
-  "extended": 389
+  "brief": 37,
+  "extended": 261
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-0-introduction",
    "title": "Introduction",
@@ -54,8 +59,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

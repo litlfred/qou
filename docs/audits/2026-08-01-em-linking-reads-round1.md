@@ -175,7 +175,7 @@ derived** — but the correct kernel for it is exactly the scalar
 Green's function `φ₀ = −coth(α)/4π`, which is what the geometry-first
 probe uses.
 
-### What Komendarczyk settles (arXiv:0808.1533, read in full)
+### What Komendarczyk settles (arXiv:0808.1533, `[komendarczyk2008]`, read in full)
 
 - **An energy bound does exist** — Theorem 6.1: `|H₁₂₃(X;𝒯)| ≤ C_𝒯 ·
   E₂(X)^{3/2}`, i.e. `E₂ ≥ (|H₁₂₃|/C_𝒯)^{2/3}`, for volume-preserving
@@ -246,7 +246,8 @@ product of the codimensions**. In 3D the potentials are **1-forms**, so
 `α₁∧α₂∧α₃` anticommutes and the triple invariant is forced
 antisymmetric; the analogous invariant built from **2-forms** on
 `M^{2k−1}` *is* symmetric (p. 1003). So O1 is a form-degree-parity
-fact, not an accident of one construction — and Hornig–Mayer confirm it
+fact, not an accident of one construction — and Hornig–Mayer
+(`[hornig-mayer2002]`) confirm it
 independently from the physics side, naming it outright (p. 11):
 *"the antisymmetry of `H⁽³⁾` seems to be one of the key problems."*
 

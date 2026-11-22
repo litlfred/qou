@@ -1,0 +1,68 @@
+show z € unit-disc u € unit-disc
+by fact+
+next
+fix Muv
+assume *: unit-disc-fir M u € unit-disc v € unit-disc
+assume *: ?P (moebius-pt M u) (moebius-pt M v)
+show ?P uv
+proof safe
+fix w H1 H2
+assume **«: is-poincare-line H1 is-poincare-line H2 perpendicular H1 H2
+u € circline-set H1 u € circline-set H2
+v € circline-set H1 w € circline-set H2 w € unit-disc
+thus Puvw
+using mocebius[of M uv wv *
+using **[rule-format, of moebius-circline M H1 mocbius-circline M H2 mocbius-pt M w]|
+by simp
+qed
+qed
+thus ?thesis
+using assms
+by blast
+qed
+
+lemma wlog-perpendicular-foot:
+assumes in-disc: u € unit-disc v € unit-disc w € unit-disc z € unit-disc
+assumes perpendicular: u # v is-poincare-line H perpendicular (poincare-line uv) H
+assumes 2z € circline-set (poincare-line u v)  circline-set H w € circline-set H
+assumes azes: /\ u v w. [is-real u; 0 < Re u; Re u < 1; is-real v; —1 < Rev; Rev < 1; ReuF Re v; is-imag w; 0
+< Im w; Im w < 1] => P On (of-complex u) (of-complex v) (of-complez w)
+assumes moebius: (| M zu v w. [unit-disc-fiz M; u € unit-disc; v € unit-disc; w € unit-disc; z € unit-disc; P
+(moebius-pt M z) (moebius-pt M u) (moebius-pt M v) (moebius-pt Mw) ] => Pzuvw
+assumes conjugate: \\ z uv w. [u € unit-disc; v € unit-disc; w € unit-disc; P (conjugate z) (conjugate u) (conjugate
+v) (conjugate w) |] => Pzuvw
+assumes perm: Pzvuw=> Pzuvw
+shows Pzuvw
+proof—
+obtain mn where mn: m=uVm=vn=uVn=vmMAnMFzZ
+using <u 4 v)
+by auto
+
+have n € circline-set (poincare-line z m)
+using <z € circline-set (poincare-line u v) M circline-set H»
+using mn
+using unique-poincare-line[of z m poincare-line u v, symmetric] in-disc
+by auto
+
+have V n. n € unit-disc Am # nA n € circline-set (poincare-line zm) \ m £4 z —>+ Pzmnvw (is ?Qzmvw)
+proof (rule wlog-perpendicular-axes[where P=?Q])
+show is-poincare-line (poincare-line u v)
+using <u 4 v)
+by auto
+next
+show is-poincare-line H
+by fact
+next
+show m € unit-disc m € circline-set (poincare-line u v)
+using mn in-disc
+by auto
+next
+show w € unit-disc z € unit-disc
+by fact+
+next
+show z € circline-set (poincare-line u v) M circline-set H
+by fact
+next
+show perpendicular (poincare-line uv) H
+
+117

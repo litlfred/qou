@@ -1,0 +1,1 @@
+By Theorem 3.9.16 we have a canonical isomorphism of cate- gories C+ str(N) ≃ −→C− str(M)op that respects the cohomology functor. Thus a quasi- isomorphism N →J in C+ str(N) gives rise to a quasi-isomorphism P →M in C− str(M). □

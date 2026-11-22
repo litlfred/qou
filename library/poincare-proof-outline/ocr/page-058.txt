@@ -1,0 +1,71 @@
+by auto
+
+hence *«: of-complex z € unit-disc of-complez z € circline-set x-axis
+by (auto simp add: cmod-eq-Re)
+
+have is-real (—z) \ Re (—z) > 0 A Re (—z) < 1 A ?P (-2)
+using * **
+by (simp add: circline-set-x-axis)
+
+thus ?thesis
+by blast
+
+qed
+
+lemma unique-z-avis-poincare-distance-positive:
+assumes d > 0
+shows 3! z. is-realz \ Rez > 0A Rez< 1A
+poincare-distance Op (of-complex z) = d (is J! z. is-real z \ Rez > 0 \ Rez <1 A ?P 2)
+proof—
+obtain z where *: is-real z Re z < 0 Rez > —1 ?Pz
+using unique-x-axis-poincare-distance-negative|OF assms]
+by auto
+hence *«: of-complex z € unit-disc of-complez z € circline-set x-axis
+by (auto simp add: cmod-eq-Re circline-set-x-azis)
+show ?thesis
+proof
+show is-real (—z) \ Re (—z) > 0 A Re (—z) < 1 A ?P (-z)
+using * **
+by simp
+next
+fix z’
+assume is-real z' \ Re z'> 0 \ Rez'< 1A ?P 2’
+hence is-real (—z’) A Re (—z') < 0 A Re (—2') > -1 A ?P (-2’')
+by (auto simp add: circline-set-x-axis cmod-eq-Re)
+hence —z’ = z
+using unique-x-axis-poincare-distance-negative|OF assms] *
+by blast
+thus 2' = —z
+by auto
+qed
+qed
+
+Equal distance implies that segments are isometric - this means that congruence could be defined either by two
+segments having the same distance or by requiring existence of an isometry that maps one segment to the other.
+
+lemma poincare-distance-eq-ex-moebius:
+assumes in-disc: u € unit-disc and v € unit-disc and u’ € unit-disc and v' € unit-disc
+assumes poincare-distance u v = poincare-distance u’ v'
+shows 3 M. unit-disc-fiz M A moebius-pt Mu = u' A moebius-pt Mv = v' (is ?P' uv u' v’)
+proof (cases u = v)
+case True
+thus ?thesis
+using assms poincare-distance-eq-0-iff [of u' v'|
+by (simp add: unit-disc-fix-transitive)
+next
+case False
+have V u’v’..uZ#vuA uw’ € unit-disc A v' € unit-disc A poincare-distance u v = poincare-distance u' v'’ —>
+2P' ul v' wv (is PP uv)
+proof (rule wlog-positive-x-azis[;where P=?P])
+fix x
+assume is-real x 0 < Rex Rex < 1
+hence of-complex « € unit-disc of-complez x € circline-set x-axis
+unfolding circline-set-x-axis
+by (auto simp add: cmod-eq-Re)
+
+show ?P 0), (of-complex x)
+proof safe
+fix u/ v’
+assume 0), 4 of-complez x and in-disc: u’ € unit-disc v’ € unit-disc and
+poincare-distance 0, (of-complex x) = poincare-distance u' v’
+hence u’ 4 v’ poincare-distance u' v' > 0

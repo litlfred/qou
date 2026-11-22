@@ -1,0 +1,63 @@
+AQ 4, THE q-SCHUR ALGEBRA
+
+Let A € At+(d,n) be a partition and recall that T = d(t*) is the unique
+semistandard A-tableau of type A. From the definitions one sees that (gyaqa restricts
+to the identity map on M>.
+
+The Weyl module is the right S(d,n)-module (A> (d,n) + yqaqa)-F(d, n).
+Thus, W? is a submodule of .(d,n)/.¥*(d,n) and which, as an R-module, is free
+with basis {.*(d,n) + yz | T € To) }-
+
+There is another description of W> which is more convenient. for our purposes.
+Given a semistandard \-tableau T of type pe let my = D3, m, where the sum
+is over those standard tableau t such that p(t) = T. Then m € S*. Define
+¢r to be homomorphism in Homy(M#,S*) given by ¢r(m,) = mr. Note that
+Homy(M#, 5) becomes a right .¥(d,n)-module under composition of maps.
+
+4.15 Proposition Let \ € At+(d,n) be a partition of n. Then there is a canonical
+isomorphism of .(d,n)—modules
+
+We Ba Home (M", S*) given by Sd, n) + prt ¢r,
+HEA(dn)
+
+for all T € To(A).
+
+Proof. Let M = Qyeayan) M” and M* = Brea any O M#. Each homo-
+morphism y in .¥>(d,n) maps M into >; so we may regard .W(d,n)/.¥*(d,n) as
+a set of maps from M into M/M>. In this way, if T is a semistandard \-tableau
+
+then the homomorphism S*(d, n) + Ypr7 can be regarded as the map from M¥#
+into M/M°* which sends my, to M#" + maz. By the third isomorphism theorem,
+
+(MO + MD) / MO © MY /(MP 0.9) = M*/ (90 0 M?) = (GO 4M) / 5?”
+
+However, (#* + M*)/.# = S* so this shows that ¥*(d,n) + ypaq can be iden-
+tified with the homomorphism ¢7 as claimed. Consequently, the map given in the
+statement of the Proposition is an (d,n)-module isomorphism from W into the
+R-module spanned by { gr | T € 7o(A) }. Conversely, given y € Homy(M", S%),
+the above identifications show that we can define an element ¢ of W> by requiring
+that ¢(m,h) = y(m,)h for all h € #. Hence, {yr | T € Jo(A) } must span the
+SF (d,n)-module @,, Homy (M", 54). The Proposition follows. Oo
+
+Hereafter, we identify W> and @, Homy(M#,S*). In particular, we will call
+{ yr | T € Jo(A) } the semistandard basis of W?.
+
+As in Chapter 2, the Weyl module W possesses an associative symmetric
+bilinear form which is completely determined by the equation
+
+(gs. ¢r)ern = Prser mod .¥*(d,n)
+
+for all $,T € Jo(A). In particular, (gs, 7) = 0 unless $ and T are semistandard
+
+tableaux of the same type.
+Let L* = W>/rad W> where, once again, rad W? is the set of elements x € W*
+
+such that (#, y} = 0 for ally € Ww.
+
+4.16 Theorem (Dipper—James) Suppose that R is a field.
+
+(i) Let X be a partition in At+(d,n). Then L> is an absolutely irreducible ¥ (d,n)-
+module.
+
+(ii) {12 | \ € At(d,n)} is a complete set of non-isomorphic irreducible SY (d,n)-
+modules,

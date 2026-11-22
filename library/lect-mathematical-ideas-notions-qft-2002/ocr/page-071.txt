@@ -1,0 +1,57 @@
+MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 71
+
+Now suppose H = Ho © H, is a Z/2-graded complex vector space.
+
+Definition 10.1. (i) A Hermitian form on H is an even sesquilinear form (,), such
+that (x,y) = (y,x) for even x,y, and (2,y) = —(y, 2) for odd a, y.
+
+(ii) A Hermitian form is positive definite if (,2) > 0 for even « # 0, and
+—i(x,2) > 0 for odd x 4 0. A super Hilbert space is a superspace with a positive
+definite Hermitian form (,), which is complete in the corresponding norm.
+
+(iii) Let H be a super Hilbert space, and T : Ho @ TH; > Ho @ IIH; be a
+linear operator between the underlying purely even spaces. The Hermitian adjoint
+operator T* is defined by the equation (a,Ty) = (—1)?(" (T*a,y), where p
+denotes the parity.
+
+10.4. The Hamiltonian setting for fermionic quantum mechanics. Let us
+now discuss what should be the Hamiltonian picture for the theory of a free fermion.
+More precisely, let V be a positive definite finite dimensional real inner product
+space, and consider the Lagrangian £ = 4((2,) — (b, Mb), where  : R > IIV,
+and M:V — V is a skew-symmetric operator.
+
+To understand what the Hamiltonian picture should be, let us compare with
+the bosonic case. Namely, consider the Lagrangian £L, = $(q — m?q?), where
+q:R—- V. In this case, the classical space of states is Y := T*V = V @V*.
+The equations of motion are Newton’s equations @ = —m?q, which can be reduced
+to Hamilton’s equations ¢ = p, p = —m?q. The algebra of classical observables is
+C@™(Y), with Poisson bracket defined by {a,b} = (a,b), a,b € Y*, where (,) is the
+form on Y* inverse to the natural symplectic form on Y. The hamiltonian H is
+determined (up to adding a constant) by the condition that the equations of motion
+are f = {f, H}; in this case it is H = (p? + m2q?)/2.
+
+The situation in the fermionic case is analogous, with some important differences
+which we will explain below. Namely, it is easy to compute that the equation of
+motion (i.e. the Euler-Lagrange equation) is i = Mw. The main difference with
+the bosonic case is that this equation is of first and not of second order, so the space
+of classical states is just IV (no momentum or velocity variables are introduced).
+Hence the algebra of classical observables is C° (IIV) = AV*. To define a Poisson
+bracket on this algebra, recall that IV has a natural “symplectic structure” , defined
+by the symmetric form (,) on V. Thus we can define a Poisson bracket on AV* by
+the same formula as above: {a,b} = (a,b). More precisely, {,} is a unique skew
+symmetric (in the supersense) bilinear operation on AV* which restricts to (a, b)
+for a,b € V*, and is a derivation with respect to each variable:
+
+{a, be} = {a, b}o + (—1))?) fa, c},
+
+where p(a) denotes the parity of a.
+
+Now it is easy to see what should play the role of the Hamiltonian. More pre-
+cisely, the definition with Legendre transform is not valid in our situation, since the
+Legendre transform was done with respect to the velocity variables, which we don’t
+have in the fermionic case. On the other hand, as we discussed in §8, in the bosonic
+case the equation of motion f = {f,H} determines H uniquely, up to a constant.
+The situation is the same in the fermionic case. Namely, by looking at the equation
+of motion a = My, it is easy to see that the Hamiltonian equals H = 3, Mw).
+In particular, if MZ = 0 (massless case), the Hamiltonian is zero (a characteristic
+property of topological field theories).

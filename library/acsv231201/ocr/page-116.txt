@@ -1,0 +1,32 @@
+98 Fourier—Laplace integrals in one variable
+
+approach taken in this section. Later, in Section 4.3, we discuss an alternative
+using only smoothness instead of analyticity.
+
+We now prove Theorem 4.1, starting with the one-sided integral J, before
+addressing the double-sided integral I.
+
+Step 1: evaluation of the one-sided integral J,
+Let ys : [0,¢] — C denote the restriction of y to [0, ¢] so that
+
+r= f A(z) exp(—ag(e)) dz.
+
+Yt
+
+VE as in the
+
+To evaluate [, we employ the same change of variables y = 9(z)
+proof of Theorem 4.6, only we need to be careful in choosing a branch of the
+kth root. Formula (4.8) defines k different functions, one for each choice of
+kth root for el. It follows from Lemma 4.5 that each of these k functions
+and their inverses are analytic in a neighborhood of the origin. To discuss the
+principal kth root — the analytic function from the slit plane C\ R< to the cone
+K ={z: -m/k < arg(z) < 2/k} — we write p(u'/*) = z for the unique z € K such
+that z* = u, and let v = y’(0). Near the origin ¢(z) ~ cxz*, so the requirement
+that Re{¢(y(t))} = 0 forces the quantity v to be in the windmill-shaped set of
+preimages of the right half-plane under c,z*, shown in Figure 4.1.
+
+Figure 4.1 Arrows represent v and (d/dt)|i-0f(y* (0).
+
+Define f(x) = p(¢(x)'/). Since the path ¢(y,(t)) remains in the positive real
+half-plane for 0 < t < ¢, it also remains in the slit plane, and hence maps the

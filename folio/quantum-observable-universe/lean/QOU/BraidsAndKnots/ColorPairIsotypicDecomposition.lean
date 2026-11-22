@@ -42,7 +42,7 @@ dependence `(F₁, F₂)` is not supplied by the color-side decomposition. No
 instance of `InterNucleonChannelColorTube` is provided here, and nothing is
 wired.
 
--- Ref: [manuscript] folio/quantum-observable-universe/brings-surface/inter-nucleon-channel-color-tube.md
+-- Ref: [leitner2026] folio/quantum-observable-universe/brings-surface/inter-nucleon-channel-color-tube.md
 -/
 
 namespace QOU.BraidsAndKnots.ColorPairIsotypicDecomposition

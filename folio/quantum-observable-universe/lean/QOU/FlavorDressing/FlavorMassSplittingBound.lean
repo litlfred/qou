@@ -42,7 +42,7 @@ open Flavor
     The hypothesis `(3 : R) ≠ 0` rules out characteristic 3, where
     `1/3` itself is undefined; in `ℝ`, `ℚ`, or any char-0 field this
     is automatic. -/
--- Ref: [manuscript] braids-and-knots/flavor-mass-splitting-bound
+-- Ref: [leitner2026] braids-and-knots/flavor-mass-splitting-bound
 theorem substrate_to_bound_ratio {R : Type*} [Field R]
     (q : R) (hq : q ≠ 0) (hq4 : q^4 ≠ 1) (h3 : (3 : R) ≠ 0) :
     ((q - 1)^2 * (1 - q^(-4 : ℤ)) / 3)
@@ -84,7 +84,7 @@ theorem substrate_to_bound_ratio {R : Type*} [Field R]
 /-! ### Positivity and inequality helpers (at `q > 1`) -/
 
 /-- At `q > 1`, the substrate split factor is strictly positive. -/
--- Ref: [manuscript] braids-and-knots/flavor-mass-splitting-bound
+-- Ref: [leitner2026] braids-and-knots/flavor-mass-splitting-bound
 private lemma substrate_split_factor_pos {q : ℝ} (hq : 1 < q) :
     0 < substrate_split_factor q := by
   have hq0 : 0 < q := by linarith
@@ -165,9 +165,13 @@ private lemma sqrt_sum_lt_three_mul_qq_inv {q : ℝ} (hq : 1 < q) :
     sits at about 1/3 of the upper bound at q = q₀; the theorem
     does NOT claim tightness.  Tightness would require a finer
     substrate factor incorporating the Skein adjustment
-    explicitly. -/
--- Ref: [manuscript] braids-and-knots/flavor-mass-splitting-bound
-theorem flavor_mass_splitting_bound
+    explicitly.
+
+    This form takes the splitting identity as a plain hypothesis
+    `h_derive`; `flavor_mass_splitting_bound` below is the form
+    conditional on `conj:flavor-split-substrate-mass`. -/
+-- Ref: [leitner2026] braids-and-knots/flavor-mass-splitting-bound
+theorem flavor_mass_splitting_bound_of_split
     (F : FlavorDressingFunctor) (M_N q : ℝ)
     (hM : 0 < M_N) (hq : 1 < q)
     (h_derive :
@@ -243,5 +247,25 @@ theorem flavor_mass_splitting_bound
     exact mul_pos hM (substrate_split_factor_pos hq)
   · rw [h_derive]
     exact mul_lt_mul_of_pos_left h_factor_lt hM
+
+/-- **Substrate bound on the dressed-quark splitting, conditional on
+    `conj:flavor-split-substrate-mass`** (§3b-cond). With
+    `M_N = (m_p + m_n)/2`, the conjecture `[FlavorSplitSubstrateMass m_p m_n q]`
+    and the nucleon form of the pair Skein mass formula give
+
+      0 < μ_d − μ_u < M_N · ℏ_q² · h_q · [2]_q.
+
+    The splitting identity is derived by `dressed_mass_from_substrate_split`
+    and then bounded by `flavor_mass_splitting_bound_of_split`. -/
+-- Ref: [leitner2026] braids-and-knots/flavor-mass-splitting-bound
+theorem flavor_mass_splitting_bound
+    (F : FlavorDressingFunctor) (m_p m_n q : ℝ)
+    [h : FlavorSplitSubstrateMass m_p m_n q]
+    (h_skein : PairSkeinNucleonSplit F m_p m_n q) :
+    0 < F.μ Flavor.down - F.μ Flavor.up ∧
+    F.μ Flavor.down - F.μ Flavor.up
+      < (m_p + m_n) / 2 * (((q - 1)/q)^2 * (q - q⁻¹) * (q + q⁻¹)) :=
+  flavor_mass_splitting_bound_of_split F ((m_p + m_n) / 2) q h.M_N_pos h.q_gt_one
+    (dressed_mass_from_substrate_split F m_p m_n q h_skein).1
 
 end QOU.FlavorDressing

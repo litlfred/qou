@@ -1,97 +1,86 @@
 {
- "_schema": "pdf-structure/v1",
- "doc_id": "behavior-of-current-divergences-undersu3su3",
  "source": {
   "file": "Behavior_of_Current_Divergences_underSU3SU3.pdf",
   "sha256": "c199da203bf156ecefefa9bfe9753bf395d1cbc24a01b77d3f65cc374ff4fab5",
   "bytes": 1387432,
-  "pages": 5,
-  "mtime": null,
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "pages": 5,
+  "text_source": "ocr",
+  "runContext": {
+   "sha256": "ecd44c404eb7d81f2ea6b2cb2c589aa5d95afec4c950a6277eb65f35b985fac3"
+  }
  },
  "metadata": {
-  "arxiv": null,
-  "doi": null,
-  "title": "R. J. OaKeEs",
-  "authors_raw": "Northwestern University, Evanston, Illinois 60201",
-  "abstract": null,
+  "title": null,
   "docinfo": {
    "Producer": "g42pdf.pl 1.0"
-  }
+  },
+  "title_raw": null,
+  "title_source": "filename",
+  "title_verified": false,
+  "title_evidence": {
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "R. J. OaKeEs"
  },
- "toc": [
-  {
-   "level": 1,
-   "title": "INTRODUCTION We do not consider here the equal-time commutators",
-   "page": 1,
-   "source": "inferred",
-   "number": "I"
-  },
-  {
-   "level": 1,
-   "title": "TRANSFORMATION PROPERTIES OF We then obtain the formula",
-   "page": 2,
-   "source": "inferred",
-   "number": "II"
-  },
-  {
-   "level": 1,
-   "title": "APPLICATIONS (my— my) fr",
-   "page": 3,
-   "source": "inferred",
-   "number": "II"
-  }
- ],
- "toc_source": "inferred",
+ "_schema": "pdf-structure/v1",
+ "doc_id": "behavior-of-current-divergences-undersu3su3",
+ "toc_source": "none",
+ "granularity": "page",
  "sections": [
   {
-   "id": "sec-000-i-introduction-we-do-not-consider-here-the-equal",
-   "number": "I",
-   "title": "INTRODUCTION We do not consider here the equal-time commutators",
+   "id": "page-001",
+   "number": null,
+   "title": "Page 1",
    "level": 1,
    "page_start": 1,
-   "page_end": 2,
-   "n_chars": 6254,
-   "n_words": 1008
+   "page_end": 1,
+   "n_chars": 5174,
+   "n_words": 807
   },
   {
-   "id": "sec-001-ii-transformation-properties-of-we-then-obtain-t",
-   "number": "II",
-   "title": "TRANSFORMATION PROPERTIES OF We then obtain the formula",
+   "id": "page-002",
+   "number": null,
+   "title": "Page 2",
    "level": 1,
    "page_start": 2,
-   "page_end": 3,
-   "n_chars": 6043,
-   "n_words": 1025
+   "page_end": 2,
+   "n_chars": 4650,
+   "n_words": 764
   },
   {
-   "id": "sec-002-ii-applications-my-my-fr",
-   "number": "II",
-   "title": "APPLICATIONS (my— my) fr",
+   "id": "page-003",
+   "number": null,
+   "title": "Page 3",
    "level": 1,
    "page_start": 3,
+   "page_end": 3,
+   "n_chars": 5149,
+   "n_words": 848
+  },
+  {
+   "id": "page-004",
+   "number": null,
+   "title": "Page 4",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 4264,
+   "n_words": 698
+  },
+  {
+   "id": "page-005",
+   "number": null,
+   "title": "Page 5",
+   "level": 1,
+   "page_start": 5,
    "page_end": 5,
-   "n_chars": 10312,
-   "n_words": 1732
+   "n_chars": 4611,
+   "n_words": 749
   }
  ],
- "diagnostics": {
-  "pages_without_text": 5,
-  "likely_scanned": true,
-  "toc_entries": 3,
-  "sections": 3,
-  "chars_total": 22609
- },
- "text_extraction": {
-  "route": "ocr",
-  "reason": "the uploaded PDF is a 1968 page scan with no text layer: pypdf extracts 0 characters from all 5 pages",
-  "engine": "tesseract 5.3.4",
-  "render": "pdftoppm -r 400 -png",
-  "psm": 4,
-  "lang": "eng",
-  "intermediate_pdf_sha256": "8504bfd60348b8c3bf2b23b8127644da57e4313bc860125b59830fb0a01ff5cc",
-  "quality": "usable for prose; MATH IS UNRELIABLE. Subscripts are routinely lost or mangled (SU_3 -> 'SU;'), radicals render as 'V2' for sqrt(2), and script/fraktur symbols are approximated. Displayed equations in sections/*.md must be checked against the page image before being quoted.",
-  "metadata_note": "metadata.title / metadata.authors_raw are the producer's parse of the OCR text and are WRONG: page-1 running heads mis-parsed to 'R. J. OaKeEs'. The correct identity is in summary.json, which carries provenance.kind='agent'. Left as the producer emitted it — structure.json is regenerable."
- }
+ "structure_note": "Ingested at PAGE granularity by scripts/pdf-pages.py. This PDF carries no embedded outline and its inferred chapter structure was measurably wrong (bean 6xaz), so no chapter tree is claimed. A page is a determined division; an inferred chapter was not."
 }

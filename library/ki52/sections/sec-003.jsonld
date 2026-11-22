@@ -9,13 +9,14 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Calculation by the saddle point method",
-  "pageStart": 10,
-  "pageEnd": 19,
+  "title": "Calculation of ⟨52 ⟩N toward its asymptotic expansion",
+  "pageStart": 7,
+  "pageEnd": 10,
   "contains": [
-    "library/ki52/blocks/prose-sec-003"
+    "library/ki52/blocks/prose-sec-003",
+    "library/ki52/blocks/lem-sec-003-01"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ki52",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/ki52",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ki52/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ki52/manifest.jsonld",
   "provenance": "ingested"
 }

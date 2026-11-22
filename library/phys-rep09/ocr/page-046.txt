@@ -1,0 +1,55 @@
+196 S. Blanes et al. / Physics Reports 470 (2009) 151-238
+
+Exact
+
+— — — Fer/Wilcox-1
+
+Transition Probability (y=1.5)
+
+10 15
+
+Fig. 9. Rectangular step: Transition probability as a function of , with y = 1.5. The solid line corresponds to the exact result (1962). Broken lines stand for
+Fer and Wilcox approximations up to third order. Computations up to third order, in the Interaction Picture.
+
+1.0
+
+Exact
+0.8 — — — FerWilcox-1
+
+a
+n
+=
+
+0.6 4
+
+0.4 4
+
+Transition Probabili
+
+0.2 4
+
+0.0
+
+Fig. 10. Rectangular step: Transition probability as a function of §, with y = 2. Lines are coded as in Fig. 9. Computations up to third order, in the Interaction
+Picture.
+
+4.4. Voslamber iterative method
+
+Just to keep the same structure as in preceding subsections, we mention that the Voslamber iterative method of
+Section 3.1 also yields the exact solution for the linearly driven harmonic oscillator after computing the second iteration.
+
+Next, for the two-level system with a rectangular step, described by the Hamiltonian (194), we compute the second iterate
+2 and compare with second order ME approximation for U;. As a test, we shall again obtain the transition probability P(t)
+given by (196). The expression (193) will be calculated here, assuming: U; ~ exp 2‘ = exp 2;, U; © exp(Qy + 22) and
+U, ~ exp 2”.
+
+The second order Magnus approximation to the transition probability is given by (201), whereas the second iterate is
+obtained from (124),
+
+2%) =-i% ie {[sin?(A) + cos?(A) cos €] 0; + cos?(A) sin € og — sin(2A) sin(€/2) o3}dé, (217)
+@ Jo
+
+where A = ral sin(&/2)|, y = Vot/h, € = at. Since it does not seem possible to derive an analytical expression for 2,
+
+the corresponding matrix elements have been computed by approximating the integral in (217) with a sufficiently accurate
+quadrature.

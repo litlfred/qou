@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1208.1663v2
-doc_title: "The 3D index of an ideal triangulation and angle structures"
+doc_title: "THE 3D INDEX OF AN IDEAL TRIANGULATION AND ANGLE STRUCTURES"
 section_id: sec-003-23-the-neumann-zagier-matrices
 section_title: "The Neumann-Zagier matrices"
 section_number: 2.3
 pages: 5-7
 source_pdf: 1208.1663v2.pdf
 source_sha256: 87e94e429d58386c
-doc_brief: "The 3D index of an ideal triangulation and angle structures — The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of ideal triangulations of 3-manifolds with r torii boundary"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.941
-latex_coverage_ratio: 0.914
+latex_coverage_ratio: 0.959
+doc_brief: "THE 3D INDEX OF AN IDEAL TRIANGULATION AND ANGLE STRUCTURES — The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of ideal triangulations of 3-manifolds with r torii boundary"
 ---
 []{#sub.NZ label="sub.NZ"}
 

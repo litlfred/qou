@@ -1,0 +1,1 @@
+If γ is topologically tame, let c([γ]) denote the (topological) crossing number of the knot type. We have 2πc([γ]) + 4 ≤E(γ). (It was proved in [FH] that ﬁnite energy implies tame.) Since an essential knot must have three or more crossings, we obtain the following

@@ -44,7 +44,7 @@ this braiding, and the limit is checked here rather than assumed.
   proper — is not proved and does not follow from anything here.
 
 -- Ref: [jimbo1986] Jimbo, "A q-difference analogue of U(g) and the Yang-Baxter equation"
--- Ref: [manuscript] AGENTS.md §7a; bean qou-k4oq
+-- Ref: [leitner2026] AGENTS.md §7a; bean qou-k4oq
 -/
 
 namespace QOU.IwahoriHecke.RMatrix

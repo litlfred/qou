@@ -1,1 +1,1 @@
-A twist T of a weak quasi bialgebra A gives rise to another weak quasibialgebra, denoted AT , with the same algebra structure and counit as A but coproduct and
+A twist T of a weak quasi bialgebra A gives rise to another weak quasibialgebra, denoted AT , with the same algebra structure and counit as A but coproduct and associator given by ∆T (a) = T ∆(a)T −1 ΦT = I ⊗ T1 ⊗ ∆(T)Φ∆ ⊗ 1(T −1 )T −1 ⊗ I. (6.10) If A has antipode (S, α, β), then AT has antipode (S, αT , βT ) where αT = S(f ′ )αg′, βT = fβS(g), (6.11) and T = f ⊗ g, T −1 = f′ ⊗ g′ .

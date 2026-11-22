@@ -1,0 +1,56 @@
+A representation theoretic explanation... 1373
+
+Proof Follows from the fact that taking derivatives in some variables commutes with eval-
+uation in the others. Specifically, p € V(A) is (Cy x --: x Cy)-stable iff p # 0 for all
+evaluations in Cy x --- X Cy. So, evaluating p in all variables in that product of sets except
+(Xkos Yko) gives us a Cx,-stable polynomial in V(Ax,). Applying the previous proposition
+then gives the result. Oo
+
+4.3 Real stable polynomials
+
+We now give a number of classical real stability results, along with a few results from [1]
+and [2]. Additionally, we state these results for homogeneous polynomials in Vg(A), taking
+roots at infinity into account. The results of this section will come in to play mainly in Sect. 7,
+where we discuss real linear operators and operators preserving interval- and ray-rootedness.
+
+The first result we will need for our considerations of Vg(A) is a version of the Hermite—
+Biehler theorem, often called the Hermite-Kakeya—Obreschkoff theorem. We state here
+without proof the multivariate version essentially used in Theorem 1.9 of [1] (see also §2.4
+of [16]). First we need a definition.
+
+Definition 4.8 We say that p,q € V(A) are in proper position, denoted p « q, if q + ip is
+weakly 71"!-stable (equivalently, if p + ig is weakly #""-stable).
+
+Proposition 4.9 (Multivariate Hermite—Biehler) For p,q € Vir(A), ap + bq is weakly real
+stable for all a, b € Rif and only if either p < q org & p.
+
+This result will be crucial to our consideration of real polynomials and real stability (as it
+was in [1]). Its main use for us in this direction is made explicit in the following.
+
+Lemma 4.10 Fixd € Nij,a € Ni, anda linear operator T : V(4) — V(a) which restricts to
+areal linear operator from Viz(A) to Vig (a). If T preserves weak real stability and p € V(A)
+is stable, then T (p) is either H!, -stable, H_-stable, or identically zero.
+
+Proof By the Hermite—Biehler theorem, there exist g,r € Vg(A) such that p = g + ir and
+aq + br is real stable or zero for all a, b € R. So, aT (¢) + bT (r) is real stable or zero for all
+a, b € R. By Hermite-Biehler again, T(p) = T(q) + iT (r) is either Ht, -stable, Hl! -stable,
+or identically zero. Oo
+
+The next two results are from [1], the first of which gives an equivalent characterization for
+a polynomial to be a scalar multiple of a real stable polynomial. This result will be specifically
+used in Sect. 7 to generalize complex operator theoretic stability results to the real stability
+case.
+
+Lemma 4.11 [1, Proposition 4.1] Let p € Vc(A) be both H'}-stable and H™ -stable. Then, p is
+a(complex) scalar multiple of a real stable polynomial. In particular, ifnonzero q,r € Vig(A)
+are such that q <r andr < q, then r is a (real) scalar multiple of q.
+
+The next result provides the degeneracy cases in the Borcea—Brandén characterizations
+(recall the dimension restrictions of Theorems 1.1 and 1.2). We will use this result to explicate
+the link between our operator characterization and the Borcea—Brandén characterization (see
+Lemmas 6.11 and 7.3).
+
+Lemma 4.12 [1, Lemma 3.2] Let W C Vx(A) be a K-vector subspace (for K = C or K = R)
+consisting only of weakly stable (resp. weakly real stable) polynomials. We have:
+
+D Springer

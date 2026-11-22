@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T19:17:01.709798+00:00",
-  "commitSha": "2178ec5463fa6d5705b0c6c5767619994e5b8ccf",
+  "engineVersion": "python 3.13.18",
+  "computedAt": "2026-11-15T20:21:08.094177+00:00",
+  "commitSha": "f1be230920b1bdc1f6a9070fd8fc7d187c5c2345",
   "assertions": [
     {
       "name": "all three published figures are the correct roundings of the Apollonius closed forms — centre 1/(1-k^2), radius k/(1-k^2), leftmost 1/(1+k)",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "the_apollonius_circle_from_cal2_reproduces_exactly_probe",
   "scriptFile": "the_apollonius_circle_from_cal2_reproduces_exactly_probe.py",
-  "scriptHash": "cf5964008ce9",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "112da1e410db",
+  "scriptCommitSha": "660d4c3c55f096e925c57ca18d1fd68545d820d5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,14 +42,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e87a23f8d6fd6732"
+    "cvxpy": "absent",
+    "pyhecke_native_build": "24ca776b0ad05497"
   },
   "invocation": {
     "argv": [
@@ -81,5 +82,7 @@
     "These values are COMPUTED from Vol(4_1) = 2 Cl_2(pi/3) and the mass ratio, not transcribed from the block. The distinction matters: witness-block-agreement cannot tell a computed figure from a copied one, so a witness closing a row must be able to say where its numbers came from. Here it is mpmath's clsin and CAL-2.",
     "Says nothing about whether candidate (ii) is right or whether Im(q) has a physical role; the block states its own closure condition and this probe does not evaluate it.",
     "Says nothing about the reality argument that empties the branches -- that is what the block's 68 declaring witnesses do, and it is untouched."
-  ]
+  ],
+  "q0Anchor": "ambiguous",
+  "q0AnchorReason": "compares two vintages of the CAL-2 muon calibration on purpose: k^2 = Vol(4_1)/(m_mu/m_e) at CODATA 2018 (206.7682830) and CODATA 2022 (206.7682827); no q0 pin is read directly, and the result is the vintage comparison"
 }

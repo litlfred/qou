@@ -1,0 +1,3882 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-2503.08846v1",
+  "pages": [
+    {
+      "page": 10,
+      "rotation": 0,
+      "drawings": 14,
+      "rasterImagesOnPage": 1,
+      "captionCandidates": [
+        "Figure 1: Calculation of the bracket polynomial of the trefoil knot 31 using skein relations (25)."
+      ],
+      "labels": [
+        {
+          "text": "A-1",
+          "bbox": [
+            315.34,
+            134.04,
+            331.36,
+            148.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "DejaVuSans-Oblique"
+          ],
+          "sizes": [
+            7.82,
+            12.03
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            235.95,
+            134.94,
+            246.02,
+            148.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "DejaVuSans"
+          ],
+          "sizes": [
+            12.03
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            249.18,
+            134.94,
+            257.41,
+            148.93
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "DejaVuSans-Oblique"
+          ],
+          "sizes": [
+            12.03
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            302.71,
+            134.94,
+            312.78,
+            148.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "DejaVuSans"
+          ],
+          "sizes": [
+            12.03
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            377.89,
+            134.94,
+            387.96,
+            148.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "DejaVuSans"
+          ],
+          "sizes": [
+            12.03
+          ]
+        },
+        {
+          "text": "A2",
+          "bbox": [
+            186.03,
+            172.53,
+            199.23,
+            187.42
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "DejaVuSans-Oblique"
+          ],
+          "sizes": [
+            7.82,
+            12.03
+          ]
+        },
+        {
+          "text": "+A-2",
+          "bbox": [
+            345.22,
+            172.53,
+            372.25,
+            187.42
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "DejaVuSans",
+            "DejaVuSans-Oblique"
+          ],
+          "sizes": [
+            7.82,
+            12.03
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            293.09,
+            173.43,
+            303.15,
+            187.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "DejaVuSans"
+          ],
+          "sizes": [
+            12.03
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            238.37,
+            174.03,
+            248.44,
+            188.02
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "DejaVuSans"
+          ],
+          "sizes": [
+            12.03
+          ]
+        },
+        {
+          "text": "A3",
+          "bbox": [
+            207.08,
+            213.43,
+            220.28,
+            228.32
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "DejaVuSans-Oblique"
+          ],
+          "sizes": [
+            7.82,
+            12.03
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            270.83,
+            214.33,
+            279.06,
+            228.32
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "DejaVuSans-Oblique"
+          ],
+          "sizes": [
+            12.03
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            197.47,
+            214.93,
+            207.54,
+            228.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "DejaVuSans"
+          ],
+          "sizes": [
+            12.03
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            259.42,
+            214.93,
+            269.49,
+            228.92
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "DejaVuSans"
+          ],
+          "sizes": [
+            12.03
+          ]
+        },
+        {
+          "text": "(",
+          "bbox": [
+            288.12,
+            245.33,
+            295.62,
+            267.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "DejaVuSans"
+          ],
+          "sizes": [
+            19.25
+          ]
+        },
+        {
+          "text": ")",
+          "bbox": [
+            403.6,
+            245.33,
+            411.1,
+            267.71
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "DejaVuSans"
+          ],
+          "sizes": [
+            19.25
+          ]
+        },
+        {
+          "text": "(2-A-2(A2+A-2))",
+          "bbox": [
+            204.07,
+            247.71,
+            290.16,
+            262.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "DejaVuSans-Oblique"
+          ],
+          "sizes": [
+            7.82,
+            12.03
+          ]
+        },
+        {
+          "text": "A-1",
+          "bbox": [
+            350.82,
+            247.71,
+            366.84,
+            262.6
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "DejaVuSans-Oblique"
+          ],
+          "sizes": [
+            7.82,
+            12.03
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            194.45,
+            248.61,
+            204.51,
+            262.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "DejaVuSans"
+          ],
+          "sizes": [
+            12.03
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            294.29,
+            248.61,
+            302.52,
+            262.6
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "DejaVuSans-Oblique"
+          ],
+          "sizes": [
+            12.03
+          ]
+        },
+        {
+          "text": "+",
+          "bbox": [
+            340.6,
+            248.61,
+            350.67,
+            262.6
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "DejaVuSans"
+          ],
+          "sizes": [
+            12.03
+          ]
+        },
+        {
+          "text": "Figure 1: Calculation of the bracket polynomial of the trefoil knot 31 using skein relations (25).",
+          "bbox": [
+            90.16,
+            289.01,
+            507.4,
+            300.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "One can see in this example the appearance of three units of the writhe factor and another overall factor",
+          "bbox": [
+            72.0,
+            320.2,
+            525.6,
+            330.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of d. This is the general structure obtained by applying the skein relations. To get the original definition",
+          "bbox": [
+            72.0,
+            332.16,
+            525.62,
+            342.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of Kauffman one divides the result by d. In such a normalization the invariant of the unknot is unity up",
+          "bbox": [
+            72.0,
+            344.12,
+            525.61,
+            354.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "to the writhe. The remaining term has a simple relation to the polynomial obtained originally by Jones:",
+          "bbox": [
+            72.0,
+            356.07,
+            525.61,
+            366.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "• Remove the writhe and the d factors",
+          "bbox": [
+            86.94,
+            374.62,
+            256.76,
+            384.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "• Substitute A4 →q−1",
+          "bbox": [
+            86.94,
+            390.39,
+            187.56,
+            404.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "One then gets the following Jones polynomial of the trefoil knot:",
+          "bbox": [
+            72.0,
+            412.88,
+            354.32,
+            422.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            236.85,
+            431.85,
+            245.57,
+            441.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            289.6,
+            431.85,
+            298.32,
+            441.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "= q + q3 −q4 .",
+          "bbox": [
+            289.6,
+            443.46,
+            370.38,
+            465.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "V",
+          "bbox": [
+            227.17,
+            447.7,
+            232.98,
+            457.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(31)",
+          "bbox": [
+            507.83,
+            447.7,
+            525.55,
+            457.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            236.85,
+            449.38,
+            245.57,
+            459.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            289.6,
+            449.38,
+            298.32,
+            459.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            236.85,
+            455.76,
+            245.57,
+            465.72
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Note that there are two trefoil knots differing by mirror reflection. If one applies the skein procedure",
+          "bbox": [
+            86.94,
+            482.52,
+            525.6,
+            492.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "to the mirror-reflected knot one will get",
+          "bbox": [
+            72.0,
+            494.48,
+            245.64,
+            504.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            225.28,
+            513.45,
+            234.0,
+            523.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            278.02,
+            513.45,
+            286.74,
+            523.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "= q−1 + q−3 −q−4 .",
+          "bbox": [
+            278.02,
+            525.06,
+            381.95,
+            547.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "V",
+          "bbox": [
+            215.59,
+            529.3,
+            221.4,
+            539.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(32)",
+          "bbox": [
+            507.83,
+            529.3,
+            525.55,
+            539.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            225.28,
+            530.99,
+            234.0,
+            540.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            278.02,
+            530.99,
+            286.74,
+            540.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            225.28,
+            537.36,
+            234.0,
+            547.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In other words, mirror reflection acts as q →q−1 (A →A−1) on Jones (bracket) polynomials.",
+          "bbox": [
+            72.0,
+            561.7,
+            479.16,
+            575.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "In the rest of this review we will work with the Kauffman bracket version of the Jones polynomial. The",
+          "bbox": [
+            86.94,
+            577.27,
+            525.58,
+            587.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "whole purpose of section 2 is to explain what knot is and how the bracket polynomial can be computed,",
+          "bbox": [
+            72.0,
+            589.23,
+            525.6,
+            599.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "for example, using the skein relation. We will need this calculus for quantum mechanical applications.",
+          "bbox": [
+            72.0,
+            601.18,
+            525.6,
+            611.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Let us summarize the main steps:",
+          "bbox": [
+            72.0,
+            613.14,
+            219.05,
+            623.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "• Draw the knot (link) diagram;",
+          "bbox": [
+            86.95,
+            631.69,
+            229.41,
+            641.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "• Choose a crossing, apply the skein relation by replacing the diagram by a pair of new diagrams",
+          "bbox": [
+            86.95,
+            651.02,
+            525.6,
+            661.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "with the crossing modified according to skein relation (25);",
+          "bbox": [
+            96.91,
+            663.16,
+            354.27,
+            673.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "• Repeat the procedure for the next crossing for each of the generated diagrams until the diagrams",
+          "bbox": [
+            86.95,
+            682.31,
+            525.58,
+            692.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "SFRM1000"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "are nothing but a collection of nested nonintersecting circles;",
+          "bbox": [
+            96.91,
+            694.45,
+            362.3,
+            704.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "• replace each circle by factor d = −A2 −A−2.",
+          "bbox": [
+            86.95,
+            710.03,
+            292.8,
+            723.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10",
+            "CMSY7",
+            "SFRM1000"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "10",
+          "bbox": [
+            293.79,
+            743.67,
+            303.75,
+            753.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 37,
+      "rotation": 0,
+      "drawings": 23,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 3: Topological presentation of correlations can be used to illustrate subadditivity (left) and strong subadditivity (right)."
+      ],
+      "labels": [
+        {
+          "text": "NA",
+          "bbox": [
+            126.36,
+            130.05,
+            142.14,
+            140.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI5"
+          ],
+          "sizes": [
+            7.47
+          ]
+        },
+        {
+          "text": "NB",
+          "bbox": [
+            204.85,
+            130.05,
+            220.63,
+            140.05
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI5"
+          ],
+          "sizes": [
+            7.47
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            381.01,
+            140.64,
+            388.48,
+            150.61
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "C",
+          "bbox": [
+            451.69,
+            140.64,
+            458.82,
+            150.61
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            135.4,
+            147.16,
+            146.61,
+            162.1
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            14.94
+          ]
+        },
+        {
+          "text": "B",
+          "bbox": [
+            198.74,
+            147.16,
+            210.08,
+            162.1
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            14.94
+          ]
+        },
+        {
+          "text": "ℓAB",
+          "bbox": [
+            162.37,
+            149.22,
+            182.32,
+            159.22
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI5"
+          ],
+          "sizes": [
+            7.47
+          ]
+        },
+        {
+          "text": "D",
+          "bbox": [
+            415.91,
+            157.65,
+            424.16,
+            167.61
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "NC",
+          "bbox": [
+            164.53,
+            167.04,
+            180.01,
+            177.04
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI5"
+          ],
+          "sizes": [
+            7.47
+          ]
+        },
+        {
+          "text": "B",
+          "bbox": [
+            416.15,
+            186.0,
+            423.71,
+            195.96
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "C",
+          "bbox": [
+            167.02,
+            189.68,
+            177.71,
+            204.62
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            14.94
+          ]
+        },
+        {
+          "text": "Figure 3: Topological presentation of correlations can be used to illustrate subadditivity (left) and strong",
+          "bbox": [
+            72.0,
+            220.25,
+            525.62,
+            230.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "subadditivity (right).",
+          "bbox": [
+            72.0,
+            232.21,
+            163.99,
+            242.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "First, let us discuss the property of entanglement entropy called subadditivity. Let us assume that in a",
+          "bbox": [
+            86.94,
+            264.58,
+            525.54,
+            274.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "given quantum system one can separate a subsystem A and another subsystem B. Then the subadditivity",
+          "bbox": [
+            72.0,
+            276.54,
+            525.57,
+            286.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of the entropy is the statement that the entropy of the union of A and B is not greater than the sum of",
+          "bbox": [
+            72.0,
+            288.49,
+            525.55,
+            298.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "entropies of A and B:",
+          "bbox": [
+            72.0,
+            300.45,
+            166.76,
+            310.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "SvN(A + B) ≤SvN(A) + SvN(B) .",
+          "bbox": [
+            225.58,
+            312.18,
+            371.97,
+            323.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(157)",
+          "bbox": [
+            502.85,
+            312.4,
+            525.54,
+            322.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Instead of trying to interpret this inequality right away, let us first produce its topological analog.",
+          "bbox": [
+            72.0,
+            330.34,
+            499.53,
+            340.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Consider a generic state in the connectome limit. Note that the union A + B does not necessarily",
+          "bbox": [
+            86.94,
+            342.29,
+            525.54,
+            352.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "represent the whole system, so there is also a complement A + B = C. Thus, a generic state will have the",
+          "bbox": [
+            72.0,
+            354.25,
+            525.55,
+            364.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "form shown in figure 3 (left), where lines between subsystems A, B and C illustrate generic correlations",
+          "bbox": [
+            72.0,
+            366.2,
+            525.55,
+            376.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "between them.",
+          "bbox": [
+            72.0,
+            378.16,
+            136.83,
+            388.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In the limit that we are applying, the correlations are quantified by the number of",
+          "bbox": [
+            145.63,
+            378.16,
+            525.61,
+            388.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "connections. Let NA, NB and NC be the numbers of connections of the respective subsystems to the",
+          "bbox": [
+            72.0,
+            390.11,
+            525.54,
+            401.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "remaining parts. Let ℓAB be the number of connections exclusively between A and B. Then a simple",
+          "bbox": [
+            72.0,
+            402.07,
+            525.54,
+            413.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "relation holds:",
+          "bbox": [
+            72.0,
+            414.02,
+            134.09,
+            423.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "NA + NB = NC + 2ℓAB ≥NC .",
+          "bbox": [
+            227.4,
+            425.75,
+            370.14,
+            437.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(158)",
+          "bbox": [
+            502.85,
+            425.98,
+            525.55,
+            435.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Since the entanglement entropy is proportional to the number of connections, with log 2 coefficient, the",
+          "bbox": [
+            72.0,
+            443.91,
+            525.59,
+            453.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "subadditivity property (157) follows.",
+          "bbox": [
+            72.0,
+            455.87,
+            231.61,
+            465.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "With the connectivity quantification of entanglement it is not hard to give an interpretation to the",
+          "bbox": [
+            86.94,
+            467.82,
+            525.63,
+            477.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "subadditivity. The correlation of A and B with the rest of the system cannot exceed the the amount of",
+          "bbox": [
+            72.0,
+            479.78,
+            525.55,
+            489.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "correlations in A and B taken together, simply because there might exist correlations between A and B.",
+          "bbox": [
+            72.0,
+            491.73,
+            525.55,
+            501.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The amount of correlation between A and B, in this case, is",
+          "bbox": [
+            72.0,
+            503.69,
+            334.32,
+            513.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ℓAB = (NA + NB −NC)/2 .",
+          "bbox": [
+            235.03,
+            525.38,
+            362.51,
+            536.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(159)",
+          "bbox": [
+            502.85,
+            525.6,
+            525.55,
+            535.57
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "This is the topological version of what is known in Information Theory as mutual information I(A, B),",
+          "bbox": [
+            72.0,
+            547.52,
+            521.91,
+            557.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "I(A, B) := SvN(A) + SvN(B) −SvN(A + B) .",
+          "bbox": [
+            198.35,
+            569.21,
+            399.19,
+            580.15
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(160)",
+          "bbox": [
+            502.85,
+            569.44,
+            525.55,
+            579.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "If the system A + B does not have a complement (isolated) then SvN(A + B) = 0, SvN(A) = SvN(B) and",
+          "bbox": [
+            72.0,
+            591.36,
+            525.55,
+            602.16
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "mutual information is essentially the same as the entanglement entropy.",
+          "bbox": [
+            72.0,
+            603.31,
+            385.62,
+            613.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Another very-well known inequality is strong subadditivity. It is formulated for three subsystems A,",
+          "bbox": [
+            86.94,
+            615.27,
+            525.55,
+            625.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMTI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "B and C. The inequality states",
+          "bbox": [
+            72.0,
+            627.22,
+            209.49,
+            637.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "SvN(A + B + C) + SvN(B) ≤SvN(A + B) + SvN(B + C) .",
+          "bbox": [
+            169.8,
+            648.91,
+            427.74,
+            659.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(161)",
+          "bbox": [
+            502.85,
+            649.14,
+            525.55,
+            659.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In terms of connectivity this inequality can be proven using the diagram shown in figure 3 (right), where",
+          "bbox": [
+            72.0,
+            671.06,
+            525.62,
+            681.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "D = A + B + C. Denoting the number of connections as in the previous case one finds that",
+          "bbox": [
+            72.0,
+            683.01,
+            472.45,
+            692.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ND = NA+B + NB+C −2ℓAC −NB ≤NA+B + NB+C −NB ,",
+          "bbox": [
+            161.97,
+            704.57,
+            435.57,
+            717.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(162)",
+          "bbox": [
+            502.85,
+            704.93,
+            525.55,
+            714.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "37",
+          "bbox": [
+            293.79,
+            743.67,
+            303.75,
+            753.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 38,
+      "rotation": 0,
+      "drawings": 52,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 4: The quantum circuit diagrams of quantum teleportation protocol (left) and dense coding (right) algorithms."
+      ],
+      "labels": [
+        {
+          "text": "a",
+          "bbox": [
+            394.22,
+            127.42,
+            399.49,
+            137.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "a",
+          "bbox": [
+            223.89,
+            127.91,
+            229.16,
+            137.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ψ",
+          "bbox": [
+            96.42,
+            128.25,
+            102.9,
+            138.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "b",
+          "bbox": [
+            366.87,
+            128.74,
+            371.14,
+            138.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "H",
+          "bbox": [
+            158.93,
+            129.16,
+            167.21,
+            139.13
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Φ+",
+          "bbox": [
+            336.03,
+            147.44,
+            349.34,
+            159.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Φ+",
+          "bbox": [
+            89.45,
+            147.92,
+            102.77,
+            159.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Za",
+          "bbox": [
+            397.04,
+            148.66,
+            408.88,
+            159.9
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "a",
+          "bbox": [
+            499.05,
+            148.68,
+            504.32,
+            158.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Xb",
+          "bbox": [
+            368.34,
+            149.49,
+            380.88,
+            160.73
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "H",
+          "bbox": [
+            441.18,
+            149.94,
+            449.46,
+            159.9
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "b",
+          "bbox": [
+            195.54,
+            150.48,
+            199.81,
+            160.44
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "B",
+          "bbox": [
+            343.23,
+            154.63,
+            349.24,
+            161.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            96.65,
+            155.11,
+            102.64,
+            162.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Φ+",
+          "bbox": [
+            336.27,
+            168.7,
+            349.59,
+            180.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Φ+",
+          "bbox": [
+            89.21,
+            169.18,
+            102.52,
+            181.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Za",
+          "bbox": [
+            214.0,
+            170.4,
+            225.84,
+            181.65
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "ψ",
+          "bbox": [
+            252.04,
+            170.77,
+            258.52,
+            180.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Xb",
+          "bbox": [
+            185.3,
+            171.23,
+            197.84,
+            182.47
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "b",
+          "bbox": [
+            499.05,
+            171.25,
+            503.33,
+            181.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "A",
+          "bbox": [
+            343.47,
+            175.89,
+            349.46,
+            182.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "B",
+          "bbox": [
+            96.41,
+            176.37,
+            102.42,
+            183.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "Figure 4: The quantum circuit diagrams of quantum teleportation protocol (left) and dense coding (right)",
+          "bbox": [
+            72.0,
+            195.78,
+            525.63,
+            205.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "algorithms.",
+          "bbox": [
+            72.0,
+            207.74,
+            120.8,
+            217.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "where A + B and B + C denote the complements of A + B and B + C respectively.",
+          "bbox": [
+            72.0,
+            238.58,
+            456.52,
+            248.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Again, in the",
+          "bbox": [
+            465.12,
+            238.58,
+            525.56,
+            248.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "connectome limit, this directly converts into the strong subadditivity (161). We see that in this case the",
+          "bbox": [
+            72.0,
+            250.54,
+            525.58,
+            260.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "“obstacle” is the existence of correlations between A and C.",
+          "bbox": [
+            72.0,
+            262.49,
+            334.16,
+            272.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Strong subadditivity is notoriously difficult to prove in general [104], but for the special class of states",
+          "bbox": [
+            86.94,
+            274.45,
+            525.62,
+            284.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "that we consider here it comes almost for free. Many more known inequalities can be tested in this way",
+          "bbox": [
+            72.0,
+            286.4,
+            525.56,
+            296.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "and some new ones can be designed [86,102]. It is important to keep in mind that in generic quantum",
+          "bbox": [
+            72.0,
+            298.36,
+            525.59,
+            308.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "states the relations derived in the connectome limit might not hold. Since it is an open question whether",
+          "bbox": [
+            72.0,
+            310.31,
+            525.59,
+            320.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "and how much the connectome relations may be violated, we will discuss some possibilities in section 6.",
+          "bbox": [
+            72.0,
+            322.27,
+            524.44,
+            332.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "5",
+          "bbox": [
+            72.0,
+            351.58,
+            80.08,
+            365.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "Quantum Algorithms",
+          "bbox": [
+            96.22,
+            351.58,
+            246.77,
+            365.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "As another set of applications of the topological visualization of quantum mechanics let us consider",
+          "bbox": [
+            72.0,
+            376.82,
+            525.59,
+            386.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "a pair of basic quantum algorithms. Quantum algorithms exploiting quantum correlations should be",
+          "bbox": [
+            72.0,
+            388.78,
+            525.63,
+            398.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the most natural target for such a study. The example of the EPR pair puzzles us with the apparent",
+          "bbox": [
+            72.0,
+            400.73,
+            525.6,
+            410.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "instantaneity of interactions between causally separated particles.",
+          "bbox": [
+            72.0,
+            412.69,
+            366.95,
+            422.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Quantum teleportation is a basic",
+          "bbox": [
+            375.72,
+            412.69,
+            525.58,
+            422.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "algorithm that capitalizes on this effect making an arbitrary state “instantaneously” available in a distant",
+          "bbox": [
+            72.0,
+            424.64,
+            525.6,
+            434.6
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "lab. Superdense coding is another example. We will discuss topological realization of both algorithms",
+          "bbox": [
+            72.0,
+            436.6,
+            525.6,
+            446.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "elucidating their inherent similarity.",
+          "bbox": [
+            72.0,
+            448.55,
+            228.81,
+            458.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "5.1",
+          "bbox": [
+            72.0,
+            474.67,
+            89.2,
+            486.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Quantum Teleportation",
+          "bbox": [
+            102.65,
+            474.67,
+            241.54,
+            486.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "A textbook example of quantum teleportation, initially proposed by Charles Bennett, Gilles Brassard,",
+          "bbox": [
+            72.0,
+            494.62,
+            525.61,
+            504.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Claude Cr´epeau, Richard Jozsa, Asher Peres, and William Wootters in [105], consists of the following.",
+          "bbox": [
+            72.0,
+            506.57,
+            525.59,
+            516.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Alice possesses an unspecified qubit state |ψ⟩that she wants to pass to Bob. Alice and Bob share a pair",
+          "bbox": [
+            72.0,
+            518.4,
+            525.56,
+            528.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "of entangled qubits – the Bell state |Φ+⟩(102). Alice can implement the protocol shown in figure 4 (left)",
+          "bbox": [
+            72.0,
+            529.2,
+            525.56,
+            540.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "where the tree horizontal lines are evolution lines of three qubits: ψ, Alice’s part of the entangled pair",
+          "bbox": [
+            72.0,
+            542.44,
+            525.56,
+            552.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Φ+",
+          "bbox": [
+            72.0,
+            552.47,
+            85.31,
+            564.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "A and the Bob’s part Φ+",
+          "bbox": [
+            79.19,
+            552.47,
+            188.74,
+            567.28
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10",
+            "CMR7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "B. Consequently, Alice applies an entangling CNOT gate on the two qubits in",
+          "bbox": [
+            182.62,
+            554.39,
+            525.59,
+            566.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "her possession and an Hadarmard gate on the first qubit. After that she measures both qubits in the",
+          "bbox": [
+            72.0,
+            566.35,
+            525.6,
+            576.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "computational basis and obtains a = 0 or a = 1 for the first qubit and b = 0 or b = 1 for the second.",
+          "bbox": [
+            72.0,
+            578.3,
+            525.55,
+            588.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Next, Alice uses a classical communication channel to report the results of the measurements to Bob. In",
+          "bbox": [
+            72.0,
+            590.26,
+            525.54,
+            600.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "order to convert Bob’s qubit to |ψ⟩all is needed is to apply a sequence of X and Z gates, specifically",
+          "bbox": [
+            72.0,
+            602.09,
+            525.54,
+            612.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ZaXb on the qubit.",
+          "bbox": [
+            72.0,
+            610.55,
+            157.45,
+            624.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "For our discussion we will use an even shorter version of the teleportation protocol. In this version",
+          "bbox": [
+            86.94,
+            626.12,
+            525.59,
+            636.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Alice won’t need to apply any gates one the qubits, but instead make the measurements in a different",
+          "bbox": [
+            72.0,
+            638.08,
+            525.57,
+            648.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "orthogonal basis: the Bell basis. The Bell basis consists of states",
+          "bbox": [
+            72.0,
+            650.04,
+            354.35,
+            660.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "|Φ±⟩= |00⟩± |11⟩",
+          "bbox": [
+            195.01,
+            669.04,
+            282.08,
+            685.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "|Ψ±⟩= |01⟩± |10⟩",
+          "bbox": [
+            309.29,
+            669.04,
+            396.91,
+            685.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10",
+            "CMSY7"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            252.74,
+            675.48,
+            261.04,
+            685.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            367.58,
+            675.48,
+            375.87,
+            685.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            284.93,
+            675.91,
+            287.7,
+            685.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            399.77,
+            675.91,
+            402.53,
+            685.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(163)",
+          "bbox": [
+            502.85,
+            675.93,
+            525.54,
+            685.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            261.05,
+            683.85,
+            266.03,
+            693.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            375.88,
+            683.85,
+            380.86,
+            693.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Again, Alice has to communicate the results of the measurement to Bob. To reconstruct precisely state",
+          "bbox": [
+            72.0,
+            701.82,
+            525.53,
+            711.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "|ψ⟩Bob needs to apply the sequence ZaXb according to the table:",
+          "bbox": [
+            72.0,
+            710.16,
+            362.15,
+            723.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI7",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "38",
+          "bbox": [
+            293.79,
+            743.67,
+            303.75,
+            753.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    },
+    {
+      "page": 42,
+      "rotation": 0,
+      "drawings": 207,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 5: Topological operators acting on tensor products of two Hilbert spaces are in general nonunitary. Contracting an operator with its unitary conjugate creates a topological defect, preventing the result to be an identity matrix."
+      ],
+      "labels": [
+        {
+          "text": "=⇏",
+          "bbox": [
+            191.78,
+            180.87,
+            207.83,
+            190.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            407.25,
+            181.0,
+            415.0,
+            190.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 5: Topological operators acting on tensor products of two Hilbert spaces are in general nonunitary.",
+          "bbox": [
+            72.0,
+            255.89,
+            525.61,
+            265.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Contracting an operator with its unitary conjugate creates a topological defect, preventing the result to",
+          "bbox": [
+            72.0,
+            267.84,
+            525.6,
+            277.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "be an identity matrix.",
+          "bbox": [
+            72.0,
+            279.8,
+            168.08,
+            289.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "example,",
+          "bbox": [
+            72.0,
+            311.62,
+            110.47,
+            321.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            282.02,
+            322.12,
+            290.74,
+            332.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            423.72,
+            322.12,
+            432.44,
+            332.08
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            256.52,
+            328.24,
+            261.5,
+            338.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            350.02,
+            328.24,
+            366.26,
+            344.81
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "B[1,0]",
+          "bbox": [
+            184.89,
+            328.32,
+            194.71,
+            348.14
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI6",
+            "CMR6",
+            "CMSY9"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "√",
+          "bbox": [
+            244.05,
+            334.55,
+            252.35,
+            344.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "=",
+          "bbox": [
+            223.83,
+            334.98,
+            231.58,
+            344.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            423.72,
+            334.98,
+            436.87,
+            350.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(171)",
+          "bbox": [
+            502.85,
+            334.98,
+            525.55,
+            344.94
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "d2 −1",
+          "bbox": [
+            252.35,
+            339.98,
+            279.16,
+            352.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR7",
+            "CMSY10"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "",
+          "bbox": [
+            282.02,
+            340.05,
+            290.74,
+            350.01
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "d",
+          "bbox": [
+            361.17,
+            341.81,
+            366.36,
+            351.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "d",
+          "bbox": [
+            238.86,
+            342.98,
+            244.05,
+            352.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Note also that the protocol has some cosmetic differences with the protocol in figure 4 (right).",
+          "bbox": [
+            72.0,
+            364.87,
+            507.23,
+            374.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "In",
+          "bbox": [
+            516.42,
+            364.87,
+            525.56,
+            374.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "particular, in (170), the analog of H is applied before the analog of CNOT. Also the assignments of a/b",
+          "bbox": [
+            72.0,
+            376.82,
+            525.55,
+            386.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "to Alice’s/Bob’s qubits are swapped. The reader is invited to redesign the protocol to better match the",
+          "bbox": [
+            72.0,
+            388.78,
+            525.57,
+            398.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "one in figure 4.",
+          "bbox": [
+            72.0,
+            400.73,
+            137.35,
+            410.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Let us also mention another subtlety highlighted by protocol (170). Note that sections of the diagram",
+          "bbox": [
+            86.94,
+            412.69,
+            525.6,
+            422.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(vertical gray lines) involve a Hilbert space of eight points, rather than a tensor product of two four-point",
+          "bbox": [
+            72.0,
+            424.64,
+            525.63,
+            434.61
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Hilbert spaces. This means that the initial two-qubit state is embedded into a large Hilbert space (in",
+          "bbox": [
+            72.0,
+            436.6,
+            525.57,
+            446.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "general, of dimension 14). This is not a problem as long as the result of the protocol is restricted to",
+          "bbox": [
+            72.0,
+            448.55,
+            525.58,
+            458.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "belong to the four-dimensional two-qubit subspace. It is instructive to check what would happen if a",
+          "bbox": [
+            72.0,
+            460.51,
+            525.6,
+            470.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "tensor product of two four-point spaces were used.",
+          "bbox": [
+            72.0,
+            472.46,
+            292.08,
+            482.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "First, application of a nonlocal, two-qubit, operation would result in a topological defect – a hole in",
+          "bbox": [
+            86.94,
+            484.42,
+            525.63,
+            494.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the middle:",
+          "bbox": [
+            72.0,
+            496.37,
+            121.27,
+            506.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "−→",
+          "bbox": [
+            315.76,
+            526.41,
+            331.81,
+            536.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMSY10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            406.21,
+            526.54,
+            408.98,
+            536.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(172)",
+          "bbox": [
+            502.85,
+            526.54,
+            525.55,
+            536.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Such a whole would obstruct realization of the necessary final states: One would not be able to freely move",
+          "bbox": [
+            72.0,
+            564.62,
+            525.58,
+            574.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the lines around. Second, the operator, of the type appearing in (172) would not in general be unitary,",
+          "bbox": [
+            72.0,
+            576.58,
+            525.65,
+            586.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "for a similar reason. Figure 5 illustrates the fact that concatenating the operator and its Hermitian",
+          "bbox": [
+            72.0,
+            588.54,
+            525.6,
+            598.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "conjugate will not in general produce the identity due to a topological defect.",
+          "bbox": [
+            72.0,
+            600.49,
+            410.01,
+            610.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "These comments complement a more naive version of this topological protocol considered in [102].",
+          "bbox": [
+            86.94,
+            612.45,
+            515.46,
+            622.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "6",
+          "bbox": [
+            72.0,
+            641.97,
+            80.08,
+            656.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "Outlook",
+          "bbox": [
+            96.22,
+            641.97,
+            153.2,
+            656.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            14.35
+          ]
+        },
+        {
+          "text": "Hopefully the present notes convincingly demonstrate the potential and functionality of topology and, in",
+          "bbox": [
+            72.0,
+            667.21,
+            525.64,
+            677.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "particular, knot theory in the discussion of quantum mechanics. We have shown that states and operators",
+          "bbox": [
+            72.0,
+            679.17,
+            525.6,
+            689.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "can be thought as of topological spaces, equipped with a set of basic operations, such as braiding. The",
+          "bbox": [
+            72.0,
+            691.12,
+            525.59,
+            701.09
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "formalism of topological quantum field theories, or path integral formalism, gave precise mathematical",
+          "bbox": [
+            72.0,
+            703.08,
+            525.59,
+            713.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "42",
+          "bbox": [
+            293.79,
+            743.67,
+            303.75,
+            753.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        }
+      ]
+    }
+  ]
+}

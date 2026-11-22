@@ -5,21 +5,27 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/traczyk1991-periodic-knots",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/traczyk1991-periodic-knots/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
   "title": "traczyk1991-periodic-knots",
   "contains": [
-    "library/traczyk1991-periodic-knots/sections/sec-front-matter",
-    "library/traczyk1991-periodic-knots/sections/sec-000",
-    "library/traczyk1991-periodic-knots/sections/sec-001",
-    "library/traczyk1991-periodic-knots/sections/sec-002",
-    "library/traczyk1991-periodic-knots/sections/sec-003",
-    "library/traczyk1991-periodic-knots/sections/sec-004"
+    "library/traczyk1991-periodic-knots/sections/page-001",
+    "library/traczyk1991-periodic-knots/sections/page-002",
+    "library/traczyk1991-periodic-knots/sections/page-003",
+    "library/traczyk1991-periodic-knots/sections/page-004",
+    "library/traczyk1991-periodic-knots/sections/page-005",
+    "library/traczyk1991-periodic-knots/sections/page-006",
+    "library/traczyk1991-periodic-knots/sections/page-007",
+    "library/traczyk1991-periodic-knots/sections/page-008",
+    "library/traczyk1991-periodic-knots/sections/page-009",
+    "library/traczyk1991-periodic-knots/sections/page-010",
+    "library/traczyk1991-periodic-knots/sections/page-011",
+    "library/traczyk1991-periodic-knots/sections/page-012"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "meta": {
     "doc_id": "traczyk1991-periodic-knots",
     "title_source": "slug",

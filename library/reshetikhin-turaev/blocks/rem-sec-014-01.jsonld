@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/reshetikhin-turaev/blocks/rem-sec-014-01",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "kind": "remark",
+  "pageStart": 24,
+  "pageEnd": 25,
+  "text": "rem-sec-014-01.md",
+  "derivedFrom": "library/reshetikhin-turaev/sections/sec-014",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/reshetikhin-turaev/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "7.5",
+    "source_kind": "remark",
+    "claim_domain": "math",
+    "evidence_kind": "explanatory",
+    "evidence_location": "in-paper",
+    "evidence_locator": "Stated in sections/sec-014-2-jmj-mljl-mlljz-m2lul-j2-j2j-l-12.md (p. 24-25)",
+    "claim_id": "reshetikhin-turaev#remark:7.5"
+  }
+}

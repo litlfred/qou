@@ -9,13 +9,18 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Complement and Reverse",
-  "pageStart": 15,
-  "pageEnd": 16,
+  "title": "Cross Product",
+  "pageStart": 12,
+  "pageEnd": 14,
   "contains": [
-    "library/arxiv-1603.06017v2/blocks/prose-sec-017"
+    "library/arxiv-1603.06017v2/blocks/prose-sec-017",
+    "library/arxiv-1603.06017v2/blocks/figure-img-p013-1",
+    "library/arxiv-1603.06017v2/blocks/figure-img-p013-2",
+    "library/arxiv-1603.06017v2/blocks/figure-img-p013-3",
+    "library/arxiv-1603.06017v2/blocks/figure-img-p013-4",
+    "library/arxiv-1603.06017v2/blocks/figure-img-p014-1"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1603.06017v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1603.06017v2",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1603.06017v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1603.06017v2/manifest.jsonld",
   "provenance": "ingested"
 }

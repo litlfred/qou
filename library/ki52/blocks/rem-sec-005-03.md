@@ -1,0 +1,1 @@
+The assumptions (33) and (34) of Proposition 4.2 can be replaced with the condition that there exist positive integers m0, m1 and positive real numbers δ0, δ1 such that for any integer m satisfying that −m0 < m < 0 or 0 < m < m1, ∫ C eN ( ψ(w)−2π√−1 m(w−c) ) dw = O(e−Nε) for some ε > 0, and b0 + c and b1 + c are in the same connected component of { w + δ√−1 ∈C

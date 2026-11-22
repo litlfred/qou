@@ -1,0 +1,72 @@
+96
+
+gap> ConjugacyClasses(g);
+
+[ <identity ...>°G, r 72 t “G, s *G, uG, r “3% s * t “G, r 7~4°G,
+r*2e s * + “G, r72* t au°G, rs °G, r*5e t “G, r*s * t «u°G,
+r73°G, or 77* t *ux r 7G J
+
+gap> RequirePackage("repsn");
+
+Repsn for Constructing Representations of Finite Groups
+Version 3.0.2
+
+Written by
+Vahid Dabbaghian
+
+true
+
+gap> StructureDescription(g);
+"GL(2,3):C2"
+
+gap> Display (CharacterTable(g));
+CT1
+
+la 4a 2a 3a 4b 2b 2c 12a 2d 8a 6a 8b 12b
+2P la 2b la 3a 2b la la 6a la 4b 3a 4b 6a
+3P la 4a 2a la 4b 2b 2c 4a 2d 8a 2b 8b 4a
+5P la 4a 2a 3a 4b 2b 2c 12b 2d 8a 6a 8b 12a
+7P la 4a 2a 3a 4b 2b 2c 12b 2d 8a 6a 8b 12a
+11P la 4a 2a 3a 4b 2b 2c 12a 2d 8a 6a 8b 12b
+
+X.1 ldiii2i1i21i21 222212 «21
+
+X.2 1-1-1 1 1 2 21 -1-1-1 1 1 «=-1
+
+X.3 2-1 1 2 1 2-1 -1-1 1 1-1 -1
+
+X.4 11-1 21 1 2-1 #2 1-1 1-1 «#21
+
+X.5 2-2 -1 2 2 1-2 -1 1
+
+X.6 22 .-1 2 2 -1 2 .-1 -1
+
+X.7 3-3 -1 -1 3 1.21 .-1
+
+X.8 3-3 1 .-1 3-1 . 1-1. 1
+
+X.9 393-1 .-1 3-1 .-1 1. 1
+
+X.10 3°93 1 .-1 3 1 -1-1 -1
+
+X.11 4 2 —4 . 2
+
+X.12 4 1 .-4 . A. . Al —A
+
+X.13 4 1 .-4 . -A . .-1 . A
+
+A = -E(12)*7+E(12)*11
+= Sqrt(3) = r3
+
+gap> IrreducibleRepresentations(g);
+
+Ll teu} >fEttill, fF 1), brid, t bid dd,
+if >ftttild, fb -1)), £711, bt) 1d,
+if >ftftaAll,tttld. (£4711, ttt),
+if >All tfald,tbttldi. (bili),
+if >to], 1,0} ], . £0 -1], .-1 0] J,
+
+[0,-1] ], [£0 -1], [1,-1] J 1,
+if >fft,0], f-h 1) 1), €'1,0), | -1,-4] 4,
+0,1) ), Ef -1,-1], 1,0] 1 1,
+

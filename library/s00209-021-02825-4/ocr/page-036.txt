@@ -1,0 +1,56 @@
+1394 J. Leake
+
+surjective. This in turn implies V(n) ® V(m) = V(n + m — 2r) + W, (as a representation)
+for some subspace W,.. Since this holds for all r < m, we actually have
+
+V(n) @ Vim) = W+ PD V(n +m — 2r)
+
+r<m
+
+for some subspace W. The sum of irreducible components here is direct, as any two distinct
+irreducible components must intersect trivially. To show that we can set W = 0, we use the
+following dimension argument:
+
+Yo dim(V (n + m —2r)= atm —2r4+1)= (n+ 1)(m + 1) = dim(V(n) ® V(m))
+r=0 r=0
+
+This completes the proof. Oo
+
+Along with the stated decomposition, we also obtain something else: the rth transvectant
+is a projection from V(n) ® V(m) onto the irreducible component V(n + m — 2r). Schur’s
+lemma and the tensor product decomposition then imply this projection is actually unique
+up to scalar. In a similar way, Schur’s lemma also implies D and U must restrict to either a
+unique isomorphism or the zero map on each irreducible component of V(n) @ V (m). In the
+following, we determine exactly what happens on each component.
+
+Theorem A.8 Consider the decomposition V(n) @ V(m) = Vin+m)®V(nt+m—2)8
+--+@®V(n—m+ 2) ® Vin — m). The maps
+
+U:V(n) @ Vim) > Vin+ 1) 8 Vim + 1)
+D:V(n+ 1) @V(m +1) > V(n) @ Vim)
+
+restrict to SLo(C)-invariant isomorphisms from V(n + m — 2r) to V(n +m — 2r) for all
+0 <r-<m <n. Additionally, D restricts to the zero map on V(n +m + 2).
+
+Proof By Schur’s lemma, the claim immediately follows if U is injective and D is surjective.
+That D is surjective follows from the fact that the transvectant maps x o D! are projections
+onto each of the irreducible components of V(n)@V (m) for 1 < r < m+1. That U is injective
+follows from the fact that U(v) = 0 implies v = 0. One can see this by lexicographically
+ordering the basis {x/ y"~/ @ xkym—k 0 <j <n,0<k <m}and considering the highest
+component of a given v € V(n) ®@ V(m). oO
+
+Our main application of this theory is given as follows. Consider the nth transvectant map
+xo D" : V(n) ® V(n) > V(O) = C, which is nonzero by the previous theorem. This
+map can be interpreted as an SL2(C)-invariant bilinear form on V(n). It turns out that the
+apolarity bilinear form used in Grace’s theorem also has this property, and this justifies the
+following definition.
+
+Definition 3.3 We call the nth transvectant
+
+Vn) @ Vin) 2> V0) @V(0) S& VO) ZC
+the apolarity form of V(n).
+
+Corollary A.9 The apolarity form is the unique (up to scalar) nondegenerate SL2(C)-invariant
+bilinear form on V(n).
+
+D Springer

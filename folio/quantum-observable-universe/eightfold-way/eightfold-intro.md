@@ -23,7 +23,7 @@ Schur--Weyl duality \cite{jimbo1986}
 the partner acting
 on the *fibre* $V$, and which appears only when $\dim V = N = 3$.  The two
 $A_2$s coincide in name --- and in this chapter's diagrams --- solely
-because we have set $n = 3$ and would like $N = 3$.  Setting $n = 3$ does
+because $n = 3$ has been set and $N = 3$ is wanted.  Setting $n = 3$ does
 not make $N = 3$.
 
 This distinction is the chapter's central honesty constraint, and the
@@ -70,7 +70,7 @@ problems.
 Each statement below is marked with one of four tiers, used in the same
 sense as in the
 [Standard-Model appendix](#app:standard-model):
-*proved* (machine-checked Lean, sorry-free);
+*proved* (with a complete proof);
 *derived* (obtained from framework structure without fitted parameters);
 *standard* (a theorem of the ambient mathematics --- Coxeter theory,
 Schur--Weyl duality, $\mathrm{SU}(3)$ representation theory --- cited,

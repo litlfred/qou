@@ -2,11 +2,11 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-2208.12678v4",
  "source_sha256": "406d36ff4968091d",
- "brief": "STATIONARY CURVES UNDER THEM ÖBIUS-PLATEAU ENERGY — Plateau problems with elastic boundary energies have been of recent theoretical and applied interest.",
- "extended": "**STATIONARY CURVES UNDER THEM ÖBIUS-PLATEAU ENERGY**\n\n*MAX LIPTON AND GOKUL G. NAIR*\n\n14 pp, 9 sections.\n\n**Abstract.** Plateau problems with elastic boundary energies have been of recent theoretical and applied interest. However, strong assumptions have to be made to avoid self-intersections of the boundary curve during energy minimization. We introduce a class of Plateau problems for boundaries with self-repulsive energies that obviates self-contact in energy minimization problems. For the self-repulsive energy, we choose the M¨ obius Energy introduced by O’Hara due to its myriad regularity properties shown by Freedman et al. We first prove an existence theorem for this M¨ obius-Plateauproblem in the class of closed Lipschitz curves of a given irreducible knot-type spanned by immersed discs. We then turn our attention to M¨ obius-Plateau variations of helicoidal strips, which are classified as “screw-like” or “ribbon-like” based on the signs of the radii of the boundary helices.\n\n**Outline.** Front matter; 3 Energy Minimization; 1 Introduction; 2 Problem Formulation; 3.2 Equicontinuity at the Boundary; 3.3 Convergence in the Interior; 5 Acknowledgements; Appendix A. Estimating the negative contributi; References",
+ "brief": "STATIONARY CURVES UNDER THE MÖBIUS-PLATEAU ENERGY — Plateau problems with elastic boundary energies have been of recent theoretical and applied interest.",
+ "extended": "**STATIONARY CURVES UNDER THE MÖBIUS-PLATEAU ENERGY**\n\n*MAX LIPTON AND GOKUL G. NAIR*\n\n14 pp, 10 sections.\n\n**Abstract.** Plateau problems with elastic boundary energies have been of recent theoretical and applied interest. However, strong assumptions have to be made to avoid self-intersections of the boundary curve during energy minimization. We introduce a class of Plateau problems for boundaries with self-repulsive energies that obviates self-contact in energy minimization problems. For the self-repulsive energy, we choose the M¨obius Energy introduced by O’Hara due to its myriad regularity properties shown by Freedman et al. We first prove an existence theorem for this M¨obius-Plateau problem in the class of closed Lipschitz curves of a given irreducible knot-type spanned by immersed discs. We then turn our attention to M¨obius-Plateau variations of helicoidal strips, which are classified as “screw-like” or “ribbon-like” based on the signs of the radii of the boundary helices.\n\n**Outline.** Front matter; 1 Introduction; 3 Energy Minimization; 2 Problem Formulation; 3.2 Equicontinuity at the Boundary; 3.3 Convergence in the Interior; 4 Necessary Conditions of Möbius-Plateau Criti; 5 Acknowledgements; Appendix A. Estimating the negative contributi; References",
  "tokens": {
   "brief": 38,
-  "extended": 308
+  "extended": 320
  },
  "sections": [
   {
@@ -15,14 +15,14 @@
    "pages": "1-1"
   },
   {
-   "id": "sec-000-3-energy-minimization",
-   "title": "Energy Minimization",
-   "pages": "1-1"
-  },
-  {
-   "id": "sec-001-1-introduction",
+   "id": "sec-000-1-introduction",
    "title": "Introduction",
    "pages": "1-2"
+  },
+  {
+   "id": "sec-001-3-energy-minimization",
+   "title": "Energy Minimization",
+   "pages": "2-2"
   },
   {
    "id": "sec-002-2-problem-formulation",
@@ -37,20 +37,25 @@
   {
    "id": "sec-004-33-convergence-in-the-interior",
    "title": "Convergence in the Interior",
-   "pages": "5-11"
+   "pages": "5-6"
   },
   {
-   "id": "sec-005-5-acknowledgements",
+   "id": "sec-005-4-necessary-conditions-of-möbius-plateau-critica",
+   "title": "Necessary Conditions of Möbius-Plateau Critical Helix Pairs",
+   "pages": "6-11"
+  },
+  {
+   "id": "sec-006-5-acknowledgements",
    "title": "Acknowledgements",
    "pages": "11-12"
   },
   {
-   "id": "sec-006-appendix-a-estimating-the-negative-contribution",
+   "id": "sec-007-appendix-a-estimating-the-negative-contribution",
    "title": "Appendix A. Estimating the negative contribution",
    "pages": "12-14"
   },
   {
-   "id": "sec-007-references",
+   "id": "sec-008-references",
    "title": "References",
    "pages": "14-14"
   }

@@ -913,6 +913,22 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "dc9d60eb16f8",
+          "ts": "4b18035dd083"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T22:00:13.262Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "[sidecar review 2026-11-15, issue #8030] library ref `global_gluing` is an `instance` returning the `instGlobalRing` field: it says only that a supplied ring is a ring. \"Uniqueness\" is encoded as `numPatches > 0`; the gluing condition is \"each local-to-global map is injective\" (overlaps never appear); the vacuum's existence is a `Nonempty` field. S↔P: \\cite{yekutieli2008, yekutieli2015} construct *twisted* deformation quantizations of Poisson structures on algebraic varieties, whose global object is in general a stack/gerbe of algebroids, not a sheaf of algebras; the proof's conclusion \"patch together into a global sheaf of algebras\" is exactly what \"twisted\" says can fail, and \"Hom(𝟏,Ad A)=0 ⇒ the band is trivial\" is a non-sequitur (the band of a gerbe is a sheaf of groups, not a Hom-space). 𝒪_q(SU(2)) as a \"pronilpotent deformation in ħ_q = 1−q⁻¹\" needs a formal parameter; q(p) is a point value"
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1564,6 +1580,6 @@
       }
     ]
   },
-  "updated_at": "2026-09-06T03:51:36.174Z",
+  "updated_at": "2026-11-15T22:00:13.262Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

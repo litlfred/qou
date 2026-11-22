@@ -1,0 +1,48 @@
+Spiders for Rank 2 Lie Algebras 135
+6. Equinumeration
+6.1. The Az case
+
+Theorem 6.1. Let C be an A> clasp sequence and let wt C be the corresponding
+sequence of weights. Then the vector spaces W(C) and Inv(V(wt C)) have the
+same dimension.
+
+One of the main steps of the proof of Theorem 6.1 is the same as that of the
+proof of Theorem 2.3: Given two clasp sequences C and D, there is a decomposition
+of vector spaces
+
+Inv(V (wt C) ® V(wtD)) & @ Inv(V(wt S) ® V(n)) @ Inv(V(u)* ® V(wtD)).
+H
+
+We wish to prove the corresponding decomposition of sets of basis webs:
+
+Theorem 6.2. Given two clasp sequences C and D,
+
+B(CD) © U(B(Cea) x B(eSD)) ,
+
+where for each weight A, c, is some clasp with weight 2.
+
+Theorem 6.2 is more complicated than its analogue for the A; spider, because
+there is no longer always a unique minimal cut path separating the clasp sequences
+C and D:
+
+A
+cay pie
+
+v
+
+Although the two cut paths in this example have the same weight, they have different
+transverse strand types and they yield webs in different clasped web spaces. Yet not
+every ordering of the strands is always possible. Nevertheless, there is a way to
+reconcile these different decompositions and ameliorate the ordering problem.
+
+Indeed, order independence is a large part of the combinatorial content of
+Theorem 6.1. For example, it implies the following result, which has an independent
+proof that is another warm-up to the proof of Theorem 6.1.
+
+Theorem 6.3. If two sign strings s; and s of the unclasped A> spider differ only
+in order, then B(s,) and B(s2) are equinumerous.
+
+Proof. The web
+
+is the H-web. It suffices to consider the case in which s; and s are the same except
+for one pair of transposed signs at adjacent positions p and q. Then there is a

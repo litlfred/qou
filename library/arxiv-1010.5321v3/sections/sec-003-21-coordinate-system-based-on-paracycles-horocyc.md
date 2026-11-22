@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1010.5321v3
-doc_title: "Formulas on hyperbolic volume"
+doc_title: "Formulas on hyperbolic volume ∗"
 section_id: sec-003-21-coordinate-system-based-on-paracycles-horocyc
 section_title: "Coordinate system based on paracycles (horocycles)"
 section_number: 2.1
 pages: 2-3
 source_pdf: 1010.5321v3.pdf
 source_sha256: c6bb20926b1f291f
-doc_brief: "Formulas on hyperbolic volume — This paper collects some important formulas on hyperbolic volume."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.982
-latex_coverage_ratio: 0.973
+latex_coverage_ratio: 0.982
+doc_brief: "Formulas on hyperbolic volume ∗ — This paper collects some important formulas on hyperbolic volume."
 ---
 ![coordinate system based on paracycles.](vol1.eps)
 

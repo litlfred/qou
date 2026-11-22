@@ -24,7 +24,7 @@ ring `R` for the element `s = σ₀` (§7c: no `ℝ`; holds over any `R`).
 The normal form is **derived** by induction from the Hecke relation —
 not assumed.
 
--- Ref: [manuscript] prop:lepton-continuant-recurrence
+-- Ref: [leitner2026] prop:lepton-continuant-recurrence
 -/
 
 namespace QOU.Archimedean
@@ -60,7 +60,7 @@ theorem mvB_succ (h : R) (n : ℕ) :
     induction on `n` from the relation (so `a_{n+1} = b_n` and
     `b_{n+1} = h·b_n + b_{n-1}`).  The proof reads off the normal form;
     it does not assume it. -/
--- Ref: [manuscript] prop:lepton-continuant-recurrence
+-- Ref: [leitner2026] prop:lepton-continuant-recurrence
 theorem lepton_continuant_recurrence (h s : R) (hs : s ^ 2 = h * s + 1)
     (n : ℕ) : s ^ n = mvA h n + mvB h n * s := by
   induction n with

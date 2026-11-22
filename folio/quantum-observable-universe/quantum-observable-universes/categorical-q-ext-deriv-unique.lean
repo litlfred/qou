@@ -29,7 +29,7 @@ object equality.  `CategoricalQExtDeriv` is imported here from the
 
 ## References
 
-- [manuscript] §2-quantum-observable-universes/categorical-q-ext-deriv-unique
+- [leitner2026] §2-quantum-observable-universes/categorical-q-ext-deriv-unique
 - [majid2002] A Quantum Groups Primer (Cambridge UP), §5
 -/
 

@@ -47,7 +47,4 @@ $y$, and to $0.000071511999729$ under $\tilde w$ — a factor of $7107$, because
 $\tilde w$ weights the two blocks equally and $d_{pn}$ is their midpoint up to
 $\delta$, making $pn$ its near-null vector.
 
-Together with the $A \ge 3$ ill-posedness of the jet word
-([measured](#conj:jet-filtered-knot-factor)), the three-level product is not
-evaluable as written. Either obstruction alone suffices.
-`the_nuclear_jet_level_is_the_retired_all_pairs_object_probe.py`.
+The three-level product is therefore not evaluable as written.

@@ -1,0 +1,1 @@
+For the bracket evaluation at the root of unity A = eiπ/2r the factor f(a, b, c) = q√∆a∆b∆c q Θ(a, b, c) is real, and can be taken to be a positive real number for (a, b, c) admissible (i.e. a + b + c ≤2r −4).

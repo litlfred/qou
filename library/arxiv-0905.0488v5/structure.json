@@ -7,10 +7,11 @@
   "bytes": 1085919,
   "pages": 50,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,21 +21,29 @@
    "stamp_date": "5 Sep 2014"
   },
   "doi": null,
-  "title": "TWISTED DEFORMATION QUANTIZATION OF ALGEBRAIC VARIETIES AMNON YEKUTIELI",
-  "authors_raw": "Dedicated to Rina Yekutieli, my Mother, on her 80th Birthday",
+  "title": "TWISTED DEFORMATION QUANTIZATION OF ALGEBRAIC VARIETIES",
+  "authors_raw": "AMNON YEKUTIELI",
   "title_lines": [
    "TWISTED DEFORMATION QUANTIZATION OF ALGEBRAIC",
-   "VARIETIES",
-   "AMNON YEKUTIELI"
+   "VARIETIES"
   ],
-  "abstract": "Let X be a smooth algebraic variety over a \ufb01eldK containing the real numbers. We introduce the notion of twisted associative (resp. Pois- son) deformation of the structure sheafOX. These are stack-like versions of usual deformations. We prove that there is atwisted quantizationoperation from twisted Poisson deformations to twisted associative deformations, which is canonical and bijective on gauge equivalence classes. This result extends work of Kontsevich, and our own earlier work, on deformation quantization of algebraic varieties.",
+  "abstract": "Let X be a smooth algebraic variety over a ﬁeld K containing the real numbers. We introduce the notion of twisted associative (resp. Pois- son) deformation of the structure sheaf OX. These are stack-like versions of usual deformations. We prove that there is a twisted quantization operation from twisted Poisson deformations to twisted associative deformations, which is canonical and bijective on gauge equivalence classes. This result extends work of Kontsevich, and our own earlier work, on deformation quantization of algebraic varieties.",
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20181107143734Z",
-   "Creator": "LaTeX with hyperref package",
    "Producer": "pdfTeX-1.40.12",
-   "Title": ""
-  }
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20181107143734Z"
+  },
+  "title_raw": "TWISTED DEFORMATION QUANTIZATION OF ALGEBRAIC VARIETIES",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "TWISTED DEFORMATION QUANTIZATION OF ALGEBRAIC VARIETIES Contents Introduction Background on Crossed Groupoids and Stacks Deformations of Sheaves of Rings DG Lie Algebras and Deformations of Aﬃne Varieties Twisted Objects in a Stack of Crossed Groupoids Combinatorial Descent Data Geometric Descent Da",
+   "outline": "0. Introduction",
+   "text": "TWISTED DEFORMATION QUANTIZATION OF ALGEBRAIC VARIETIES",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "TWISTED DEFORMATION QUANTIZATION OF ALGEBRAIC VARIETIES AMNON YEKUTIELI"
  },
  "toc": [
   {
@@ -42,95 +51,551 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "0"
+   "number": "0",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "Background on Crossed Groupoids and Stacks",
    "page": 11,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 1,
    "title": "Deformations of Sheaves of Rings",
    "page": 15,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 1,
    "title": "DG Lie Algebras and Deformations of Affine Varieties",
    "page": 19,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "19"
   },
   {
    "level": 1,
    "title": "Twisted Objects in a Stack of Crossed Groupoids",
    "page": 21,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "21"
   },
   {
    "level": 1,
    "title": "Combinatorial Descent Data",
    "page": 25,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
   },
   {
    "level": 1,
    "title": "Geometric Descent Data and Decomposition",
    "page": 28,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "28"
   },
   {
    "level": 1,
    "title": "Total Trivialization of Twisted Deformations",
    "page": 33,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
   },
   {
    "level": 1,
    "title": "Lie Descent Data",
    "page": 36,
    "source": "outline",
-   "number": "8"
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "36"
   },
   {
    "level": 1,
    "title": "From Lie Descent to Geometric Descent",
    "page": 39,
    "source": "outline",
-   "number": "9"
+   "number": "9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "39"
   },
   {
    "level": 1,
    "title": "Cosimplicial Formality",
    "page": 42,
    "source": "outline",
-   "number": "10"
+   "number": "10",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "42"
   },
   {
    "level": 1,
    "title": "Twisted Quantization",
    "page": 45,
    "source": "outline",
-   "number": "11"
+   "number": "11",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "45"
   },
   {
    "level": 1,
    "title": "References",
    "page": 48,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "48"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Diagram of bijections in the proof of Theorem 0.10.1",
+   "page": 9,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Illustration of a combinatorial descent datum (ω, g, a) in the cosimplicial crossed groupoid G = {Gp}p∈N",
+   "page": 26,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": "19",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": "21",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": "25",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": "28",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": "33",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": "36",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 39,
+   "label": "39",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 41,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 42,
+   "label": "42",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 44,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 45,
+   "label": "45",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 47,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 48,
+   "label": "48",
+   "source": "contents",
+   "confidence": 0.6,
+   "evidence": [
+    "contents"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 50,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 695,
+   "n_words": 101,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-0-introduction",
    "number": "0",
@@ -138,8 +603,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 11,
-   "n_chars": 33597,
-   "n_words": 5258
+   "n_chars": 34144,
+   "n_words": 5802,
+   "label_start": null,
+   "label_end": "11"
   },
   {
    "id": "sec-001-1-background-on-crossed-groupoids-and-stacks",
@@ -148,8 +615,10 @@
    "level": 1,
    "page_start": 11,
    "page_end": 15,
-   "n_chars": 11129,
-   "n_words": 1816
+   "n_chars": 11453,
+   "n_words": 2140,
+   "label_start": "11",
+   "label_end": "15"
   },
   {
    "id": "sec-002-2-deformations-of-sheaves-of-rings",
@@ -158,8 +627,10 @@
    "level": 1,
    "page_start": 15,
    "page_end": 19,
-   "n_chars": 10817,
-   "n_words": 1629
+   "n_chars": 11252,
+   "n_words": 2064,
+   "label_start": "15",
+   "label_end": "19"
   },
   {
    "id": "sec-003-3-dg-lie-algebras-and-deformations-of-affine-var",
@@ -168,8 +639,10 @@
    "level": 1,
    "page_start": 19,
    "page_end": 21,
-   "n_chars": 5922,
-   "n_words": 929
+   "n_chars": 6096,
+   "n_words": 1107,
+   "label_start": "19",
+   "label_end": "21"
   },
   {
    "id": "sec-004-4-twisted-objects-in-a-stack-of-crossed-groupoid",
@@ -178,8 +651,10 @@
    "level": 1,
    "page_start": 21,
    "page_end": 25,
-   "n_chars": 10496,
-   "n_words": 1721
+   "n_chars": 10743,
+   "n_words": 1972,
+   "label_start": "21",
+   "label_end": "25"
   },
   {
    "id": "sec-005-5-combinatorial-descent-data",
@@ -188,8 +663,10 @@
    "level": 1,
    "page_start": 25,
    "page_end": 28,
-   "n_chars": 5362,
-   "n_words": 857
+   "n_chars": 5516,
+   "n_words": 1011,
+   "label_start": "25",
+   "label_end": "28"
   },
   {
    "id": "sec-006-6-geometric-descent-data-and-decomposition",
@@ -198,8 +675,10 @@
    "level": 1,
    "page_start": 28,
    "page_end": 33,
-   "n_chars": 14760,
-   "n_words": 2426
+   "n_chars": 15167,
+   "n_words": 2836,
+   "label_start": "28",
+   "label_end": "33"
   },
   {
    "id": "sec-007-7-total-trivialization-of-twisted-deformations",
@@ -208,8 +687,10 @@
    "level": 1,
    "page_start": 33,
    "page_end": 36,
-   "n_chars": 7210,
-   "n_words": 1197
+   "n_chars": 7439,
+   "n_words": 1426,
+   "label_start": "33",
+   "label_end": "36"
   },
   {
    "id": "sec-008-8-lie-descent-data",
@@ -218,8 +699,10 @@
    "level": 1,
    "page_start": 36,
    "page_end": 39,
-   "n_chars": 9948,
-   "n_words": 1614
+   "n_chars": 10117,
+   "n_words": 1796,
+   "label_start": "36",
+   "label_end": "39"
   },
   {
    "id": "sec-009-9-from-lie-descent-to-geometric-descent",
@@ -228,8 +711,10 @@
    "level": 1,
    "page_start": 39,
    "page_end": 42,
-   "n_chars": 6890,
-   "n_words": 1152
+   "n_chars": 7142,
+   "n_words": 1417,
+   "label_start": "39",
+   "label_end": "42"
   },
   {
    "id": "sec-010-10-cosimplicial-formality",
@@ -238,8 +723,10 @@
    "level": 1,
    "page_start": 42,
    "page_end": 45,
-   "n_chars": 8314,
-   "n_words": 1294
+   "n_chars": 8534,
+   "n_words": 1536,
+   "label_start": "42",
+   "label_end": "45"
   },
   {
    "id": "sec-011-11-twisted-quantization",
@@ -248,8 +735,10 @@
    "level": 1,
    "page_start": 45,
    "page_end": 48,
-   "n_chars": 9936,
-   "n_words": 1523
+   "n_chars": 10196,
+   "n_words": 1787,
+   "label_start": "45",
+   "label_end": "48"
   },
   {
    "id": "sec-012-references",
@@ -258,16 +747,45 @@
    "level": 1,
    "page_start": 48,
    "page_end": 50,
-   "n_chars": 6307,
-   "n_words": 862
+   "n_chars": 6350,
+   "n_words": 905,
+   "label_start": "48",
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 13,
-  "sections": 13,
-  "chars_total": 140688,
+  "toc_inferred_entries": 0,
+  "figure_entries": 2,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 0,
+    "items": []
+   },
+   "found_not_listed": {
+    "count": 2,
+    "items": [
+     "0 Then there is a function",
+     "9 3, and let U be a ﬁnite aﬃne open covering of X. We consider two cases:"
+    ]
+   },
+   "page_mismatch": {
+    "count": 1,
+    "items": [
+     "Introduction: listed p1, found p45"
+    ]
+   }
+  },
+  "sections": 14,
+  "chars_total": 144844,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "paper_rina.tex",
@@ -280,98 +798,103 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-0-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.972,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-1-background-on-crossed-groupoids-and-stacks",
      "title": "Background on Crossed Groupoids and Stacks",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.954,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-002-2-deformations-of-sheaves-of-rings",
      "title": "Deformations of Sheaves of Rings",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.979,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-003-3-dg-lie-algebras-and-deformations-of-affine-var",
      "title": "DG Lie Algebras and Deformations of Affine Varieties",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.972,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-004-4-twisted-objects-in-a-stack-of-crossed-groupoid",
      "title": "Twisted Objects in a Stack of Crossed Groupoids",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.974,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-005-5-combinatorial-descent-data",
      "title": "Combinatorial Descent Data",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.969,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-006-6-geometric-descent-data-and-decomposition",
      "title": "Geometric Descent Data and Decomposition",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.979,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-007-7-total-trivialization-of-twisted-deformations",
      "title": "Total Trivialization of Twisted Deformations",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.974,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-008-8-lie-descent-data",
      "title": "Lie Descent Data",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.982,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-009-9-from-lie-descent-to-geometric-descent",
      "title": "From Lie Descent to Geometric Descent",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.957,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-010-10-cosimplicial-formality",
      "title": "Cosimplicial Formality",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.946,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-011-11-twisted-quantization",
      "title": "Twisted Quantization",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.978,
      "result": "overlaid",
      "converter": "latex"
     },

@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1204.4824v2
-doc_title: "Prepared for submission to JHEP Spectral networks"
+doc_title: "Spectral networks"
 section_id: sec-009-41-generating-functions-of-framed-2d-4d-indices
 section_title: "Generating functions of framed 2d-4d indices"
 section_number: 4.1
 pages: 19-20
 source_pdf: 1204.4824v2.pdf
 source_sha256: bf01cbaa5a8712c8
-doc_brief: "Spectral networks — We introduce new geometric objects called spectral networks. Spectral net- works are networks of trajectories on Riemann surfaces obeying certain local rules."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.936
-latex_coverage_ratio: 0.977
+latex_coverage_ratio: 0.935
+doc_brief: "Spectral networks — We introduce new geometric objects called spectral networks. Spectral net- works are networks of trajectories on Riemann surfaces obeying certain local rules."
 ---
 \label{sec:gen-func}
 

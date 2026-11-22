@@ -20,7 +20,7 @@ LaTeX label: `prop:descartes-elliptic-curve`
 
 ## References
 
-- [manuscript] §5/descartes-elliptic-curve
+- [leitner2026] §5/descartes-elliptic-curve
 
 **Ground ring**: `ℝ` (geometric/analytic realisation).
 Uses ℝ-specific analysis (trig, norms, real powers).
@@ -33,14 +33,14 @@ namespace QOU.Archimedean
 /-- The first Weierstrass coefficient p(q) of the Descartes elliptic curve.
 
     p(q) = 2(q² - q + 1)/(3q) + (q - 1)/(3√q) -/
--- Ref: [manuscript] §5/descartes-elliptic-curve
+-- Ref: [leitner2026] §5/descartes-elliptic-curve
 noncomputable def weierstrass_p (q : ℝ) : ℝ :=
   2 * (q ^ 2 - q + 1) / (3 * q) + (q - 1) / (3 * q ^ (1/2 : ℝ))
 
 /-- The second Weierstrass coefficient r(q) of the Descartes elliptic curve.
 
     r(q) = 20(q-1)³/(27q^{3/2}) + 5(q-1)²/(9q) + 5(√q - 1/√q)/9 + 20/27 -/
--- Ref: [manuscript] §5/descartes-elliptic-curve
+-- Ref: [leitner2026] §5/descartes-elliptic-curve
 noncomputable def weierstrass_r (q : ℝ) : ℝ :=
   20 * (q - 1) ^ 3 / (27 * q ^ (3/2 : ℝ))
   + 5 * (q - 1) ^ 2 / (9 * q)
@@ -66,39 +66,55 @@ noncomputable def j_invariant (p r : ℝ) : ℝ :=
     The proof proceeds by substituting z = s - s⁻¹ into the color
     cubic X³ + (z+1)X² + (z²+z+1)X + (z³+z²+z+1) = 0, applying the
     standard Weierstrass shift X = x - (z+1)/3, and simplifying. -/
--- Ref: [manuscript] §5/descartes-elliptic-curve
-/-- **External axiom (manuscript §5): color-cubic ↦ Weierstrass
-    substitution.**  Verified symbolically via sympy; full Lean
-    proof needs Mathlib's `Real.rpow` arithmetic. -/
--- Ref: [manuscript] §5/descartes-elliptic-curve
-axiom descartes_elliptic_curve_axiom :
-    ∀ (q : ℝ), 0 < q →
-      let s := q ^ (1/2 : ℝ)
-      let z := s - s⁻¹
-      let p_z := 2/3 * z ^ 2 + 1/3 * z + 2/3
-      let r_z := 20/27 * z ^ 3 + 5/9 * z ^ 2 + 5/9 * z + 20/27
-      p_z = weierstrass_p q ∧ r_z = weierstrass_r q
+-- Ref: [leitner2026] §5/descartes-elliptic-curve
+/-- **Color-cubic ↦ Weierstrass substitution.**
 
+    **Was an axiom; proved 2026-11-15.** With `s = q^{1/2} > 0` we have
+    `s² = q`, `q^{3/2} = q·s` and `q^{-1/2} = s⁻¹`; after that the two
+    identities are rational-function identities in `s`, closed by
+    `field_simp; ring`. -/
+-- Ref: [leitner2026] §5/descartes-elliptic-curve
 theorem descartes_elliptic_curve (q : ℝ) (hq : 0 < q) :
     let s := q ^ (1/2 : ℝ)
     let z := s - s⁻¹
     let p_z := 2/3 * z ^ 2 + 1/3 * z + 2/3
     let r_z := 20/27 * z ^ 3 + 5/9 * z ^ 2 + 5/9 * z + 20/27
-    p_z = weierstrass_p q ∧ r_z = weierstrass_r q :=
-  descartes_elliptic_curve_axiom q hq
+    p_z = weierstrass_p q ∧ r_z = weierstrass_r q := by
+  intro s z p_z r_z
+  have hspos : 0 < s := Real.rpow_pos_of_pos hq _
+  have hsne : s ≠ 0 := ne_of_gt hspos
+  have hs2 : s ^ 2 = q := by
+    show (q ^ (1/2 : ℝ)) ^ 2 = q
+    rw [← Real.sqrt_eq_rpow]; exact Real.sq_sqrt hq.le
+  have h12 : q ^ (1/2 : ℝ) = s := rfl
+  have h32 : q ^ (3/2 : ℝ) = q * s := by
+    rw [show (3/2:ℝ) = 1 + 1/2 by norm_num, Real.rpow_add hq, Real.rpow_one]
+  have hneg : q ^ (-(1/2 : ℝ)) = s⁻¹ := Real.rpow_neg hq.le _
+  refine ⟨?_, ?_⟩
+  · simp only [p_z, z, weierstrass_p]
+    rw [h12]
+    clear_value s
+    subst hs2
+    field_simp
+    ring
+  · simp only [r_z, z, weierstrass_r]
+    rw [h32, hneg, h12]
+    clear_value s
+    subst hs2
+    field_simp
 
 /-- At the classical limit q = 1, the curve degenerates to
     y² = x³ + (2/3)x + 20/27. -/
--- Ref: [manuscript] §5/descartes-elliptic-curve
+-- Ref: [leitner2026] §5/descartes-elliptic-curve
 theorem classical_limit_p : weierstrass_p 1 = 2/3 := by
   unfold weierstrass_p
-  -- Ref: [manuscript] §5/descartes-elliptic-curve
+  -- Ref: [leitner2026] §5/descartes-elliptic-curve
   -- At q = 1: first term = 2·(1-1+1)/(3·1) = 2/3, second term = 0/(3·1) = 0.
   simp [Real.one_rpow]
 
 /- The golden ratio degeneration: r(q) has factor (s² + s - 1)
     which vanishes at s = 1/φ, i.e. q = 1/φ² = (3 - √5)/2. -/
--- Ref: [manuscript] §5/descartes-elliptic-curve
+-- Ref: [leitner2026] §5/descartes-elliptic-curve
 /-- **Golden-ratio degeneration of `r(q)`.**  At `q = 1/φ²` the factor
     `(s² + s − 1)` vanishes, so `r(q) = 0` (cusp).
 
@@ -110,7 +126,7 @@ theorem classical_limit_p : weierstrass_p 1 = 2/3 := by
     *exactly* zero once `√5 ^ n` is reduced for `n = 2 … 6` — both the rational
     part and the `√5` part cancel, which is the algebraic content of `s − s⁻¹
     = −1` at the golden section. -/
--- Ref: [manuscript] §5/descartes-elliptic-curve
+-- Ref: [leitner2026] §5/descartes-elliptic-curve
 theorem golden_ratio_degeneration :
     weierstrass_r (1 / ((1 + Real.sqrt 5) / 2) ^ 2) = 0 := by
   have h5 : (0:ℝ) ≤ 5 := by norm_num

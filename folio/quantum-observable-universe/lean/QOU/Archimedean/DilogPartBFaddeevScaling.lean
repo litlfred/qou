@@ -45,7 +45,7 @@ gives the Part-B total `→ Li₂(x) − π²/3` unconditionally along the Fadde
 Archimedean throughout (`ℝ`): `LiTwo`, `Real.log`, and the one-sided filters live past the
 substrate→archimedean wall.
 
--- Ref: [manuscript] conj:dilogarithm-archimedean-limit; docs/coordination/dilog-part-b-cusp-attack.md; bean qou-jplv
+-- Ref: [leitner2026] conj:dilogarithm-archimedean-limit; docs/coordination/dilog-part-b-cusp-attack.md; bean qou-jplv
 -- Ref: [faddeev1994] https://doi.org/10.1142/S0217732394002793
 -/
 

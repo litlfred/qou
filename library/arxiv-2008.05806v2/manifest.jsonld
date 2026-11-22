@@ -1,0 +1,77 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2008.05806v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Sum rule for the Compton amplitude and implications for the proton-neutron mass difference",
+  "contains": [
+    "library/arxiv-2008.05806v2/sections/sec-front-matter",
+    "library/arxiv-2008.05806v2/sections/sec-000",
+    "library/arxiv-2008.05806v2/sections/sec-001",
+    "library/arxiv-2008.05806v2/sections/sec-002",
+    "library/arxiv-2008.05806v2/sections/sec-003",
+    "library/arxiv-2008.05806v2/sections/sec-004",
+    "library/arxiv-2008.05806v2/sections/sec-005",
+    "library/arxiv-2008.05806v2/sections/sec-006",
+    "library/arxiv-2008.05806v2/sections/sec-007",
+    "library/arxiv-2008.05806v2/sections/sec-008",
+    "library/arxiv-2008.05806v2/sections/sec-009",
+    "library/arxiv-2008.05806v2/sections/sec-010",
+    "library/arxiv-2008.05806v2/sections/sec-011",
+    "library/arxiv-2008.05806v2/sections/sec-012",
+    "library/arxiv-2008.05806v2/sections/sec-013",
+    "library/arxiv-2008.05806v2/sections/sec-014",
+    "library/arxiv-2008.05806v2/sections/sec-015",
+    "library/arxiv-2008.05806v2/sections/sec-016",
+    "library/arxiv-2008.05806v2/sections/sec-017",
+    "library/arxiv-2008.05806v2/sections/sec-018",
+    "library/arxiv-2008.05806v2/sections/sec-019",
+    "library/arxiv-2008.05806v2/sections/sec-020",
+    "library/arxiv-2008.05806v2/sections/sec-021",
+    "library/arxiv-2008.05806v2/sections/sec-022",
+    "library/arxiv-2008.05806v2/sections/sec-023",
+    "library/arxiv-2008.05806v2/sections/sec-024",
+    "library/arxiv-2008.05806v2/sections/sec-025",
+    "library/arxiv-2008.05806v2/sections/sec-026",
+    "library/arxiv-2008.05806v2/sections/sec-027",
+    "library/arxiv-2008.05806v2/sections/sec-028",
+    "library/arxiv-2008.05806v2/sections/sec-029",
+    "library/arxiv-2008.05806v2/sections/sec-030",
+    "library/arxiv-2008.05806v2/sections/sec-031",
+    "library/arxiv-2008.05806v2/sections/sec-032"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "arxiv-2008.05806v2",
+    "title_source": "editorial",
+    "title_from": "structure.json metadata.title_correction.title",
+    "title_verified": true,
+    "title_correction": {
+      "title": "Sum rule for the Compton amplitude and implications for the proton-neutron mass difference",
+      "basis": "Printed title on page 1 (J. Gasser, H. Leutwyler, A. Rusetsky); the extracted title used the ff ligature",
+      "extracted_title": "Sum rule for the Compton amplitude and implications for the proton-neutron mass diﬀerence",
+      "corrected_on": "2026-11-18",
+      "extracted": "Sum rule for the Compton amplitude and implications for the proton-neutron mass difference"
+    },
+    "source_file": "2008.05806v2.pdf",
+    "source_sha256": "4e1f9af118ba81b1700f474223c52a27cfb78ee2f1b542398e6d1f683e451617",
+    "pages": 26,
+    "arxiv": {
+      "id": "2008.05806",
+      "version": "2",
+      "primary_class": "hep-ph",
+      "stamp_date": "9 Dec 2020"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

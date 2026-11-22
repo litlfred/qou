@@ -13,9 +13,13 @@
   "pageStart": 10,
   "pageEnd": 16,
   "contains": [
-    "library/angled-survey/blocks/prose-sec-003"
+    "library/angled-survey/blocks/prose-sec-003",
+    "library/angled-survey/blocks/ex-sec-003-01",
+    "library/angled-survey/blocks/def-sec-003-02",
+    "library/angled-survey/blocks/lem-sec-003-03",
+    "library/angled-survey/blocks/lem-sec-003-04"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/angled-survey",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/angled-survey",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/angled-survey/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/angled-survey/manifest.jsonld",
   "provenance": "ingested"
 }

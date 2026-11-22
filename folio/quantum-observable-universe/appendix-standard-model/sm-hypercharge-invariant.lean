@@ -26,7 +26,7 @@ binds no other conjecture class.
 
 ## References
 
-- [manuscript] Appendix: Toward the Standard Model
+- [leitner2026] Appendix: Toward the Standard Model
 - [bilson-thompson2005] helon model — charge from ribbon twist
 -/
 

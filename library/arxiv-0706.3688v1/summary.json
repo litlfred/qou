@@ -1,0 +1,66 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-0706.3688v1",
+ "source_sha256": "f2a18b0defebff66",
+ "brief": "WHY THE STANDARD MODEL — The Standard Model is based on the gauge invariance principle with gauge group U(1) × SU(2) × SU(3) and suitable representations for fermions and bosons, which are begging",
+ "extended": "**WHY THE STANDARD MODEL**\n\n*ALI H. CHAMSEDDINE AND ALAIN CONNES*\n\n13 pp, 9 sections.\n\n**Abstract.** The Standard Model is based on the gauge invariance principle with gauge group U(1) × SU(2) × SU(3) and suitable representations for fermions and bosons, which are begging for a conceptual understanding. We propose a purely gravitational explanation: space-time has a ﬁne structure given as a product of a four dimensional continuum by a ﬁnite noncommutative geometry F. The raison d’ˆetre for F is to correct the K-theoretic dimension from four to ten (modulo eight). We classify the irreducible ﬁnite noncommutative geometries of K-theoretic dimension six and show that the dimension (per generation) is a square of an integer k. Under an additional hypothesis of quaternion linearity, the geometry which reproduces the Standard Model is singled out (and one gets k = 4) with the correct quantum numbers for all ﬁelds.\n\n**Outline.** Front matter; 1 Introduction; 2 The order zero condition and irreducible pai; 2.1 The case Z(AC)=C; 2.2 The case Z(AC)=CC; 3 Z/2-grading; 4 The subalgebra and the order one condition; 5 Conclusion; References",
+ "tokens": {
+  "brief": 49,
+  "extended": 286
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-2-the-order-zero-condition-and-irreducible-pairs",
+   "title": "The order zero condition and irreducible pairs (A,J)",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-002-21-the-case-zacc",
+   "title": "The case Z(AC)=C",
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-003-22-the-case-zaccc",
+   "title": "The case Z(AC)=CC",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-004-3-z2-grading",
+   "title": "Z/2-grading",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-005-4-the-subalgebra-and-the-order-one-condition",
+   "title": "The subalgebra and the order one condition",
+   "pages": "8-11"
+  },
+  {
+   "id": "sec-006-5-conclusion",
+   "title": "Conclusion",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-007-references",
+   "title": "References",
+   "pages": "12-13"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

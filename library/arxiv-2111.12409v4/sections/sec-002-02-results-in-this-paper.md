@@ -1,123 +1,67 @@
 ---
 doc_id: arxiv-2111.12409v4
-doc_title: "On the generalisation of Roth’s theorem Paolo Dolce Francesco Zucconi 0 Introduction 1 0.1 History . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ."
+doc_title: "On the generalisation of Roth’s theorem"
 section_id: sec-002-02-results-in-this-paper
 section_title: "Results in this paper"
 section_number: 0.2
-pages: 1-3
+pages: 2-4
 source_pdf: 2111.12409v4.pdf
 source_sha256: 3f0b94ee06fe79bf
-doc_brief: "On the generalisation of Roth’s theorem Paolo Dolce Francesco Zucconi 0 Introduction 1 0.1 History . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1 — We"
+toc_source: outline
+text_source: latex
+latex_prose_ratio: 0.98
+latex_coverage_ratio: 1.0
+doc_brief: "On the generalisation of Roth’s theorem — We present two generalisations of Roth’s approximation theorem on proper adelic curves, assuming some technical conditions on the behavior of the logarithmic"
 ---
-1 Adelic curves 4
-2 The interpolating polynomial 7
-3 Integral estimates 8
-4 Roth’s theorem for adelic curves (A) 13
-5 Roth’s theorem for adelic curves (B) 17
-Appendices 19
-A Construction of the interpolating polynomial 19
-References 20
-Abstract
-We present two generalisations of Roth’s approximation theorem on proper adelic curves, assuming
-some technical conditions on the behavior of the logarithmi c absolute values. We illustrate how
-tightening such assumptions makes our inequalities strong er. As special cases we recover Corvaja’s
-results [Cor97] for ﬁelds admitting a product formula, and Vojta’s ones [ Voj21] for arithmetic function
-ﬁelds.
-0 Introduction
-0.1 History
-The celebrated Roth’s theorem proved in [ Rot55] asserts that the irrationality measure of a real
-algebraic number is 2. An equivalent, but more detailed stat ement is the following:
-Theorem 0.1 (Roth). Let α be a real algebraic number and let ε > 0 be a real number. Then there
-exists a real constant C(α, ε) > 0 such that for every pair of coprime integers (p, q) with q > C (α, ε),
-it holds that: ⏐⏐⏐⏐α − p
-q
-⏐⏐⏐⏐ > q −2−ε
-The above statement can be naturally generalised in diﬀeren t directions by considering a number
-ﬁeld K instead of Q and the simultaneous approximation of the elements α1, . . . , αn algebraic over
-K by an element of K with respect to diﬀerent valuations (see [ Lan83, Chapter 7]). Actually, the
-statement proved in [ Lan83, Chapter 7] holds for ﬁelds that are more general than number ﬁelds.
-At the moment we don’t have an eﬀective version of Roth’s theorem (i.e. a bound for the constant
-C(α, ε), see [ Cor95]), but we have a quantitative version (i.e. bounds, in terms of α and ε, on the
-number of good approximants see [ BvdP88], [ BvdP90], [ Eve97]).
-Let k be a ﬁeld of characteristic 0 and let Vk be a set in bijection with a family of absolute values
-of k. The bijection is denoted by v ↦→ | · |v, for any v ∈ V k and we don’t put any restriction on
-the cardinality of Vk, therefore we recall that a sum over an uncountable set is deﬁ ned to be the
-supremum of the sums over all ﬁnite subsets. The couple ( k, Vk) satisﬁes the product formula if for
-any element a ∈ k× the series ∑
-v∈Vk
-log |a|v converges absolutely and moreover ∑
-v∈Vk
-log |a|v = 0.
-In this setting one also has a natural notion of logarithmic height for a ∈ k×:
-h(a) :=
-∑
-v∈VK
-log+ |a|v ,
-1
-and we set H(a) := eh(a). Roth’s theorem was generalised by Corvaja in [ Cor97] for any couple
-(k, Vk) satisfying the product formula:
-Theorem 0.2. [Cor97, Corollaire 1]. Assume that (k, Vk) satisﬁes the product formula. Let α1, . . . , αn
-be distinct elements algebraic on k, and let | · | v1 , . . . ,| · | vn be distinct absolute values of k, with
-v1, . . . , vn ∈ V k. For any i = 1, . . . , n let’s ﬁx an appropriately normalised extension of | · |vi to k(αi)
-(and by abuse of notation denote it with the same symbol | · | vi ). Then for any ε > 0 there exists a
-constant C = C(Vk, α1, . . . , αn, v1, . . . , vn, ε) > 0 such that for all β ∈ k with H(β) > C it holds that:
-n∑
-i=1
-log |αi − β|vi > −(2 + ε)h(β) .
-Notice that there are no further assumptions on the ﬁeld k, which might be for instance a function
-ﬁeld; therefore, theorem 0.2 is a unifying result, as well as a generalisation of the class ical Roth’s
-theorem. Moreover, in the same paper Corvaja obtained also a quantitative version of Theorem 0.2
-(see [ Cor97, Corollaire 3.7]).
-An arithmetic function ﬁeld , is a ﬁnitely generated ﬁeld over Q. The “geometrisation” of these
-ﬁelds in terms of Arakelov geometry is wonderfully explaine d in [ Mor00]. Recently, Vojta in [ Voj21]
-proved a version of Roth’s theorem for arithmetic function ﬁ elds with a big polarisation. For obvious
-reasons this can be considered as a “higher dimensional” gen eralisation of Roth’s theorem. We
-conclude this short historic overview by explaining the sta tement of Vojta’s result. A big polarisation
-of an arithmetic function ﬁeld K consists of a couple ( X, L) where:
-(i) X → Spec Z is a normal arithmetic variety whose function ﬁeld is isomor phic to K.
-(ii) Denote with d the relative dimension of X over Spec Z; then L = {L 1, . . .L d} is a collection
-of hermitian, arithmetically nef and big line bundles.
-Now ﬁx an arithmetic function ﬁeld K with a big polarisation; then we can deﬁne a geometric height
-function hL for a prime divisor Y as the Arakelov intersection number of the hermitian line bu ndles
-L 1, . . . ,L d restricted to Y . We can now deﬁne a non-archimedean absolute value on K, associated
-to Y :
-|a|Y := e−hL(Y )ord Y (a) ∀a ∈ K .
-Moreover, for any closed point p ∈ XC = X ×Spec Z Spec C that doesn’t come from the base change of
-a divisor on X we have the following archimedean absolute value:
-|a|p :=
-√
-a(p)a(p) ∀a ∈ K .
-By putting all together, we get a set of absolute values MK which turns out to be a measure space
-with a measure that we denote with µ. The notion of product formula holds true for the couple
-(K, MK ) in the following form:
-∫
-MK
-log |a|ν dµ(ν) = 0 , ∀a ∈ K ×
-Moreover there is a notion of height for any element of a ∈ K ×:
-hK (a) :=
-∫
-MK
-log+ |a|v dµ(v) .
-We set HK (a) := ehK (a). One of the 4 equivalent versions of Vojta’s generalisation of Roth’s theorem
-is given below.
-Theorem 0.3. [Voj21, Theorem 4.5] Consider a couple (K, MK ) where K is an arithmetic function
-ﬁeld with a big polarisation such that L 1 = . . . = L d, and MK is a set of absolute values as explained
-before. Let S be a subset of MK of ﬁnite measure and ﬁx some distinct elements α1, . . . , αn ∈ K.
-Then for any ε > 0 and any c ∈ R there exists a real constant C > 0 (depending on the ﬁxed data)
-such that for any β ∈ K with hK (β) > C it holds that:
-∫
-S
-min
-1≤i≤n
-(
-log− |β − αi|ω
-)
-dµ(ω) > −(2 + ε)hK(β) + c (1)
-0.2 Results in this paper
-The goal of this paper is to generalise Roth’s theorem in a wid er framework which includes Corvaja’s
-and Vojta’s settings.
-The theory of adelic curves introduced by Chen and Moriwaki i n [ CM20] provides such natural
-framework: an adelic curve X consists of a ﬁeld K of characteristic 0 and a measure space (Ω , A, µ)
-endowed with a function φ : ω ↦→ | · | ω that maps Ω into the set of places of K and such that
-2
-ω ↦→log |a|ω is in L1(Ω , µ) for any a ∈ K×. On X we have a well deﬁned notion of height hX, and
+The goal of this paper is to generalise Roth's theorem  in a wider framework which includes Corvaja's and Vojta's settings.
+
+The theory of  adelic curves introduced by Chen and Moriwaki in \cite{Ch-Mo} provides such natural framework:  an adelic curve $\mathbb X$ consists of a field $\mathbb K$ of characteristic $0$ and a measure space $(\Omega,\mathcal A, \mu)$ endowed with a function  $\phi:\omega\mapsto \vert\cdot \vert_{\omega}$ that maps $\Omega$ into the set of places of $\mathbb K$ and such that $\omega\mapsto\log|a|_\omega$ is  in $L^1(\Omega,\mu)$ for any $a\in\mathbb K^\times$. On $\mathbb X$ we have a well defined notion of height $h_{\mathbb X}$, and moreover a ``product formula'' which is expressed as an integral over $\Omega$. The adelic curves satisfying this product formula are called \emph{proper}. The fields with a product formula of $\cite{C}$ are trivially proper adelic curves when the set of places is endowed with the counting measure. Moreover in \cite[Section 3]{vo} it is shown that arithmetic function fields can be endowed with  a structure of proper adelic curve.
+
+In this paper we prove two generalisations of Roth's theorem for proper adelic curves. The main results will be stated in terms of some inequalities involving the integral of the measurable functions $\omega\mapsto \log^-|\beta-\alpha_i|_\omega$  where $\alpha_1,\ldots, \alpha_n\in\mathbb K$ are the elements we want to approximate by an approximant $\beta\in\mathbb K$. Unfortunately, the bare definition of proper adelic curves is too general to give any meaningful result in the direction of Roth's approximation theorem, since  the functions $\log^-|\beta-\alpha_i|$ can be in principle very ``wild''. Therefore, we have to impose some analytic conditions on such functions in order to get the desired Roth's theorems. We will see that these assumptions are not too artificial, in fact we recover Theorems \ref{CorCorv} and \ref{vojta} as special cases. 
+
+
+
+The first condition we impose  on our adelic curves is the \emph{strong $\mu$-equicontinuity} (see definition \ref{st_muequi}): roughly speaking it  means that for any set of finite measure $S\subset\Omega$ one requires for the functions $\omega\mapsto \log|\beta|_{\omega}$, to be ``equicontinuous'' almost everywhere  on $S$. Under such hypothesis we prove the following theorem:
+
+\begin{namedtheorem}[\hypertarget{thm:(A)}{Theorem (A)}]
+Let $\mathbb X=(\mathbb K,\Omega, \phi)$ be a proper adelic curve satisfying the strong $\mu$-equicontinuity condition. Let $S=S_1\sqcup S_2\sqcup\ldots\sqcup S_n\subseteq\Omega $ be the disjoint union of subsets of finite measure. Fix some distinct elements $\alpha_1,\dots ,\alpha_n\in\mathbb K$, then for any $\varepsilon>0$ there exists a real constant $C>0$ (depending on the fixed data) such that for any $\beta\in \mathbb K$ with $h_{\mathbb X}(\beta)>C$ 
+it holds that:
+\begin{equation}\label{our_roth}
+\sum^n_{i=1}\int_{S_i}\log^-\vert \beta-\alpha_i\vert_\omega d\mu(\omega)>-(2+\varepsilon)h_\mathbb X(\beta)\,.
+\end{equation}
+\end{namedtheorem}
+We will show that Theorem \ref{CorCorv} is a consequence of Theorem \bref{thm:main}{(A)}, but on the other hand Vojta's inequality is stronger and moreover it doesn't depend on the fixed partition of $S$. Nevertheless, we get a generalisation of Theorem \ref{vojta}  under the following hypotheses:
+\begin{itemize}
+\item We slightly relax the  strong $\mu$-equicontinuity condition and we allow the existence of arbitrary small sets where the equicontinuity fails (see Definition \ref{muequi}).
+\item   We assume that  the functions $\omega\to \log^-|\beta|_\omega$ are \emph{uniformly integrable} while $\beta$ varies (see definition \ref{un_int})
+\end{itemize}
+
+Our second main theorem is then the following:
+
+\begin{namedtheorem}[\hypertarget{thm:(B)}{Theorem (B)}]
+Let $\mathbb X=(\mathbb K,\Omega, \phi)$ be a proper adelic curve satisfying the $\mu$-equicontinuity condition and the uniform integrability condition. Fix some distinct elements $\alpha_1,\dots ,\alpha_n\in\mathbb K$. Let $S$ be a measurable  subset of $\Omega$ of finite measure. Then for any $\varepsilon>0$ and any $c\in\mathbb R$ there exists a real constant $C>0$ (depending on the fixed data) such that for any $\beta\in \mathbb K$  with  $h_{\mathbb X}(\beta)>C$   
+it holds that:
+\begin{equation}\label{our_roth_encore}
+\int_{S}\,\min_{1\le i\le n}\left(\log^-\vert \beta-\alpha_i\vert_\omega\right) d\mu(\omega)>-(2+\varepsilon)h_\mathbb X(\beta)+c
+\end{equation}
+\end{namedtheorem}
+Finally, in  Example \ref{Qbar} we show that  the $\mu$-equicontinuity condition doesn't hold for all proper adelic curves; in our example we consider $\overline{\mathbb Q}$ endowed with a natural structure of adelic curve naturally inherited from $\mathbb Q$.
+
+
+Our strategy consists  in weaving together the ideas of Corvaja and Vojta to get  rather elementary proofs which are independent from Arakelov geometry. On the other hand we don't have, at the moment, any examples of interesting proper adelic curve different from the ones already known. It is a much harder problem to find new concrete cases in which Roth's theorem holds. After all, a highly nontrivial  achievement of Vojta's work consists in showing that the $\mu$-equicontinuity   and the uniform integrability hold  for arithmetic function fields. He does this by using the geometry  of complex fibres at infinity  appearing in Arakelov geometry.
+
+
+ The very coarse overview of the proofs is the following: Roth's theorem is about the simultaneous approximation of some distinct elements $\alpha_1,\ldots, \alpha_n$ that by simplicity (in fact it will be enough to consider this case) can be fixed in $\mathbb K$, with an element $\beta\in\mathbb K$. The existence of a very special ``interpolating polynomial'' $\delta$ for such elements (section \ref{aux}) allows us to write some  integral estimates  for  measurable functions  on $\Omega$  satisfying some technical properties related to the heights of the $\alpha_i$'s and $\beta$ (section \ref{estimates}). Then, assuming  that Roth's theorem is false  leads to the construction  of a measurable function $\theta:S\to\mathbb R_{\ge 0}$ that gives the desired contradiction on the integral estimates previously found. The crucial point of the proof consists in the construction of $\theta$, and this is exactly where we need the additional technical conditions on the adelic curve. 
+
+
+We finally mention that section \ref{introad} is a brief review of the theory of adelic curves introduced  in \cite{Ch-Mo}, and moreover that Appendix \ref{ap} sketches the construction of the interpolating polynomial employed in \cite{C}.
+
+
+
+\paragraph{Acknowledgements.} Both the authors want to express their gratitude to \emph{Pietro Corvaja} for introducing them to the subject and for his enlightening explanations. They also want to thank \emph{Lorenzo Freddi} and \emph{Huyai Chen} for replying to several questions.
+
+A special mention goes to the anonymous referee for their incredible peer-reviewing work with this article. Their deep understanding of the topic and their compelling comments  were extremely useful to fix some mistakes.
+
+The first author was partially supported by the EPSRC grant EP/M024830/1 ``Symmetries and correspondences: intra-disciplinary developments and applications'', partially by the research grant ``Higher Arakelov geometry, Cryptography and Isogenies of Elliptic Curves'' conferred by the University of Udine, and partially by the Ben-Gurion university of the Negev.
+
+The second author wants to thank his wife \emph{Elena}.

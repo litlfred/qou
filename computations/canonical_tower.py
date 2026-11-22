@@ -166,6 +166,13 @@ from codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION
 
 # ── Jucys–Murphy eigenvalue averages ─────────────────────────
 
+
+VHAT_WEIGHTS_LABEL = (
+    "pre-convention-D JM-weighted sym/alt blend (not z*a+b), kept by owner "
+    "ruling 2026-11-20 until the Phi_q pole (qou-2tuv) is resolved; "
+    "convention-D z*a+b gives m_p/m_e = inf (PR #8590)"
+)
+
 def _syt_content(shape: tuple[int, ...], syt: dict[int, int],
                    cells: list[tuple[int, int]], entry: int) -> int:
     """Content c(cell of `entry` in SYT) = col − row."""
@@ -446,6 +453,12 @@ def per_gen_V_hat_canonical(Z: int, N: int, *,
         for (c, d) in factors:
             prod_sym *= c * Q0 + d
             prod_alt *= -c * QI + d
+        # OWNER RULING 2026-11-20 (PR #8590): this V-hat is NOT the convention-D Markov
+        # trace either: it is a JM-weighted sym/alt blend (not the W_sym/W_std/W_alt
+        # mixture its module docstring names). The 11-18 ruling
+        # moved pyhecke.atom to the convention-D Markov trace z*a+b, but here that puts
+        # the proton V-hat (1.2824) past the Phi_q pole at q0 and m_p/m_e = inf
+        # (qou-2tuv). Kept, labelled, until the pole is resolved. No number moves.
         # Canonical V̂_i: Plancherel-weighted average of per-rep product.
         # Weights: w_sym = 1/[n]_q (from q-hook formula at λ = (n)),
         # w_alt  = 1/[n]_q (same at λ = (1^n)).
@@ -755,6 +768,7 @@ if __name__ == "__main__":
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "parameters": {
             "q0": Q0,
+            "vhat_weights": VHAT_WEIGHTS_LABEL,
             "E_0_calibration": "proton-tower (m_p_CODATA / m_proton_tower)",
             "note": (
                 "per-result E_0_MeV_per_cat values are in `results[]`; "

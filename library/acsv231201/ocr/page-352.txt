@@ -1,0 +1,47 @@
+334 Multiple point asymptotics
+
+Remark 10.63. The last column of Hf in (10.33), corresponding to the dth
+coordinate, is stripped off because this is a function of the others in the 0
+parametrization; the last row is stripped off because we parametrize the simplex
+by its first n — 1 coordinates.
+
+Proof Let v denote the vector function (v;,...,v,). Constancy of ¢ in the t-
+directions at @ = 0 shows that the second partial derivatives in those directions
+vanish, giving the block of zeros. Computing (0/06;)¢ gives, up to a constant,
+i ta]
+
+-———__ i(t)zj — (2°
+
+ut)u(z°) © 1 Az; (2) zp
+
+Because i(t)v(9, t) is constant in t when @ = 0, differentiating in the t direc-
+tions recovers the blocks —iC' and —i(C)". The second partial derivatives in
+the @ directions are unchanged. ia)
+
+Specializing further yields a proof of Theorem 10.38 via surgery.
+
+Surgery proof of Theorem 10.38 Under our assumptions S is a singleton, so
+we may apply Theorem 5.3 to the integral over & in each summand of (10.32)
+giving an asymptotic series in decreasing powers of rg. The polynomials 6;
+decrease in degree from n — | to zero and integration may be carried out term
+by term because the remainders are uniformly one power of rg lower as long
+as f is restricted to a compact subset of N(p). The leading term comes from a
+careful examination of the terms appearing in the saddle point integral. oO
+
+Remark 10.64. Theorem 5.3 allows us to localize as long as we don’t put a
+boundary somewhere that the height is maximized while simultaneously cre-
+ating a critical point somewhere in a stratum of this boundary. This allows us
+to go beyond the standing hypothesis of strict minimality in Theorem 10.59
+and Lemma 10.60, however the analysis of maximal height critical points in
+Proposition 10.61 is more complicated.
+
+The surgery method handles complicated geometries of the stationary set
+better, in principle, than the method of iterated residues. One example of this
+advantage appears when 7 is on a facet of N(p) (a face of the cone whose
+dimension is one less than the dimension of the whole cone).
+
+Theorem 10.65. Fix a direction f = f, and assume that the hypotheses of
+Theorem 10.38 hold with m = 1, except that f, lies on a facet of N(p) instead of
+being in the interior. If r — oo such that r —|r|f,. stays bounded, an asymptotic
+expansion of the form (10.17) still holds. The leading term in this expansion is
+half the value Theorem 10.38 would predict if ?.. were in the interior of N(p).

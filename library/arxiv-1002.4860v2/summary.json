@@ -3,30 +3,35 @@
  "doc_id": "arxiv-1002.4860v2",
  "source_sha256": "a2cfe924f7a9f5a0",
  "brief": "A STATE-SUM FORMULA FOR THE ALEXANDER POLYNOMIAL — We develop a diagrammatic formalism for calculating the Alexander polynomial of the closure of a braid as a state-sum.",
- "extended": "**A STATE-SUM FORMULA FOR THE ALEXANDER POLYNOMIAL**\n\n*SAMSON BLACK*\n\n8 pp, 9 sections.\n\n**Abstract.** We develop a diagrammatic formalism for calculating the Alexander polynomial of the closure of a braid as a state-sum. Our main tools ar e the Markov trace formulas for the HOMFLY-PT polynomial and Young’s semi-nor mal repre- sentations of the Iwahori-Hecke algebras of type A.\n\n**Outline.** 2.2 Iwahori-Hecke algebra; 1 Introduction; 2.1 Braid group; 2 Semi-normal representations of Hecke algebra; 2.3 Seminormal representations; 2.5 Sign sequences and hook partitions; 3 Construction; 4 Example; References",
+ "extended": "**A STATE-SUM FORMULA FOR THE ALEXANDER POLYNOMIAL**\n\n*SAMSON BLACK*\n\n8 pp, 10 sections.\n\n**Abstract.** We develop a diagrammatic formalism for calculating the Alexander polynomial of the closure of a braid as a state-sum. Our main tools are the Markov trace formulas for the HOMFLY-PT polynomial and Young’s semi-normal repre- sentations of the Iwahori-Hecke algebras of type A.\n\n**Outline.** Front matter; 1 Introduction; 2 Semi-normal representations of Hecke algebra; 2.1 Braid group; 2.2 Iwahori-Hecke algebra; 2.3 Seminormal representations; 2.5 Sign sequences and hook partitions; 3 Construction; 4 Example; References",
  "tokens": {
   "brief": 42,
-  "extended": 153
+  "extended": 156
  },
  "sections": [
   {
-   "id": "sec-000-22-iwahori-hecke-algebra",
-   "title": "Iwahori-Hecke algebra",
+   "id": "sec-front-matter",
+   "title": "Front matter",
    "pages": "1-1"
   },
   {
-   "id": "sec-001-1-introduction",
+   "id": "sec-000-1-introduction",
    "title": "Introduction",
-   "pages": "1-1"
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-2-semi-normal-representations-of-hecke-algebras",
+   "title": "Semi-normal representations of Hecke algebras",
+   "pages": "2-2"
   },
   {
    "id": "sec-002-21-braid-group",
    "title": "Braid group",
-   "pages": "1-2"
+   "pages": "2-2"
   },
   {
-   "id": "sec-003-2-semi-normal-representations-of-hecke-algebras",
-   "title": "Semi-normal representations of Hecke algebras",
+   "id": "sec-003-22-iwahori-hecke-algebra",
+   "title": "Iwahori-Hecke algebra",
    "pages": "2-3"
   },
   {

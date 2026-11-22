@@ -1,0 +1,47 @@
+2.5 Labeled classes 55
+
+Example 2.48 (permutations by number of cycles). Continuing Example 2.47,
+the semi-exponential generating function for permutations enumerated by size
+and number of cycles is
+
+1
+f@y) = exp( log ) :
+
+The entries of the bivariate sequence counting permutations of size n with k
+cycles are called the Stirling numbers of the second kind. 4
+
+Example 2.49 (involutions). An involution is a permutation whose square is
+the identity. Equivalently, an involution is a permutation with cycles of length
+one or two. The exponential generating function for the class of cycles of
+length one or two is z + z’/2, so the exponential generating function for the
+class of involutions is exp(z + 7/2). 4
+
+Example 2.50 (set partitions). Let 8 = SEQ.o(Z) be the labeled class with a
+single object of all sizes n > 1 and no object of size zero, with exponential gen-
+erating function g(z) = exp(z) — 1. The labeled class exp(8), with exponential
+generating function exp(e* — 1), can be interpreted as the partitions of [7] into
+nonempty sets. Tracking both the size and number of sets in these set partitions
+gives the semi-exponential generating function exp(yg(z)) = exp(y(e*— 1)). The
+entries of the bivariate sequence counting partitions of [1] into k nonempty sets
+are called the Stirling numbers of the first kind. 4
+
+Example 2.51 (set partitions into tuples). If Pyo is the labeled class of nonempty
+permutations, then SET(Po) is the class of set partitions into tuples, contain-
+ing sets {(X11,---,X1n,),--+5(Xe15-++sXkn,)}, Where each element of [7] appears
+exactly once. The semi-exponential generating function F(y,z) for partitions
+into tuples by size and number of sets is thus
+
+F0.2) = exp(y >=) : (2.12)
+
+4
+
+Example 2.52 (2-regular graphs). A 2-regular graph is a simple graph (with
+no loops or multiple edges) in which every vertex has degree 2. A labeled
+2-regular graph is the union of labeled undirected cycles and, because we con-
+sider simple graphs, every cycle has length at least three. The exponential gen-
+erating function for undirected cycles of length at least three is
+
+1 1 2
+Wa = 5 (lee t= 2-5 >
+
+derived by taking the expression for all cycles and removing the terms for

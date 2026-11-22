@@ -1,0 +1,1 @@
+11. Let M 3 be a hyperbolic manifold with one cusp and let k1 ≠k2 ∈ N be such that k1 and k2 are even. (a) The set of characters Zk1,k2 = {χρ ∈X0(M 3) ∣dim H0(T 2;ρk1,k2) = 1} is a non-empty Zariski open subset of the curve X0(M 3). (b) For any [γ] ∈H1(T 2;Z), [γ] ≠0, the set Zk1,k2 γ = {χρ ∈Zk1,k2 ∣i∗(a ∩[γ]) is a basis for H1(M 3;ρk1,k2)} is non-empty and Zariski open.

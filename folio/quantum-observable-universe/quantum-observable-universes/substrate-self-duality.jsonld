@@ -2,12 +2,13 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/thm-substrate-self-duality",
   "@type": [
-    "folio-assistant-core:Theorem",
+    "folio-assistant-sci:Theorem",
     "doco:Section"
   ],
   "label": "thm:substrate-self-duality",
@@ -26,7 +27,7 @@
     "frobenius",
     "dualizing-complex"
   ],
-  "leanRef": "qou:QOU.AlgebraicSubstrate.substrate_self_duality",
+  "leanRef": "qou:QOU.AlgebraicSubstrate.SelfDualPairingData",
   "text": "substrate-self-duality.md",
   "leanSource": "substrate-self-duality.lean",
   "provenance": "authored"

@@ -1,0 +1,49 @@
+1.1 Generating functions and asymptotics 5
+
+The algebraic form of a generating function is intimately related to recur-
+sions — and exact formulae — for its coefficient sequence a,., as well as combi-
+natorial decompositions for the objects enumerated by a,.. In a complementary
+manner, the analytic properties of a generating function correspond to esti-
+mates of a,.
+
+1.1 Generating functions and asymptotics
+
+In this text we are chiefly concerned with the asymptotic behavior of a, as
+r — oo in certain directions. To discuss the behavior of sequences as their
+indices go off to infinity, we introduce some standard asymptotic notation.
+
+Definition 1.2 (asymptotic notation). If f and g are real-valued functions then
+we write
+
+e f = O(g) if and only if lim sup|f(x)/g(x)| < 0,
+
+e f =0(g) if and only if lim f(2)/g0%) =0,
+
+e f ~ gif and only if lim FO)/9(x) =1,
+
+© f = Q(g) when g = O(f), and
+
+e f = @O(g) when both f = O(g) and g = O(f),
+
+for some value xo understood in context, typically 0 or +00.
+
+As n — oo the function f(n) is said to be rapidly decreasing if f(n) =
+O(n-* ) for every K > 0, exponentially decaying if f(n) = O(e~) for some
+c > 0, and super-exponentially decaying if f(n) = O(e~“") for every c > 0.
+
+Remark. An alternative definition is that f = O(g) when there exists C > 0
+and an open neighborhood N of x such that f(x) < Cg(x) for all x € N. In this
+case C is called an implied constant. One may increase C and decrease N and
+still maintain the inequality, so implied constants are not unique, even if they
+are chosen to give a tight inequality.
+
+Example 1.3. Asn — oo the function f(n) = 1/n! decays super-exponentially,
+while 2~" decays exponentially and e~ V" approaches zero but does not decay
+exponentially. 4
+
+An asymptotic scale is a sequence {g; : j € N} of functions satisfying gj.1 =
+o(g;) for all j = 0. An asymptotic expansion (also called asymptotic series or
+
+asymptotic development)
+ye
+j=0

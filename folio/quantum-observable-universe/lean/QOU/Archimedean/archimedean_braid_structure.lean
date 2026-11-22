@@ -45,7 +45,7 @@ categorical fact.  Both numerical claims are then *derived*: the order is
 (`order ≥ 12`) follows.  (Claims (iii) three `S₃` colour-sectors and
 (iv) `p`-adic universality concern the ambient `S₅` and base ring and are
 tracked separately.) -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/descartes-braid-structure.ts
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/descartes-braid-structure.ts
 theorem descartes_braid_structure
     {G : Type} [Group G] [Fintype G] (himg : G ≃* Dic3) :
     12 ≤ Fintype.card G ∧ Fintype.card G = 12 := by

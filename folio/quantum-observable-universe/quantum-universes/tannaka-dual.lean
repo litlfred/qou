@@ -15,7 +15,7 @@ affine group scheme and `𝐂 ≃ Rep(G)`.
 
 ## References
 - [deligne1990] Deligne, "Catégories tannakiennes"
-- [manuscript] §"The fundamental object and the emergent gauge group"
+- [leitner2026] §"The fundamental object and the emergent gauge group"
 -/
 
 namespace QOU

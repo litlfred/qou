@@ -15,7 +15,7 @@ algorithm and the abelianisation of the genus-1 surface relator. It does
 [`sigma1cubed_seifert_surface_term_probe.py`](../../../../../computations/deltalambda/sigma1cubed_seifert_surface_term_probe.py)
 + its witness, never a Lean proof.
 
-Ref: [manuscript] docs/audits/2026-08-02-sigma1cubed-seifert-surface-term-trace-cyclicity-prune.md;
+Ref: [leitner2026] docs/audits/2026-08-02-sigma1cubed-seifert-surface-term-trace-cyclicity-prune.md;
 Seifert's algorithm (standard). The observable-sector vanishing of the
 surface-ordering defect is the corpus-proved `holonomy_perm`
 (QOU.MathlibExt.YekutieliIntegration, CommMonoid permutation-invariance);

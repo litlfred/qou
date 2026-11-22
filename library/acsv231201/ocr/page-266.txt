@@ -1,0 +1,47 @@
+248 Smooth point asymptotics
+
+constants C, are explicitly computable in terms of the derivatives of P(z) and
+Q(z) evaluated at z = w(f). In particular,
+Pw)
+Co = ——.—.. (9.3)
+© = waQa(w)
+
+ao
+
+Theorem 9.4 is a special case of the following, which holds for poles of
+general order.
+
+Theorem 9.5 (Main Theorem of Smooth ACSV (Local Version)). Let F(z) =
+P(z)/Q(z) be the ratio of coprime polynomials with convergent Laurent ex-
+pansion F(Z) = Yipezé pz". Suppose there exists a compact set R Cc R4 of
+non-zero directions such that if ? lies in R then F has a smooth strictly mini-
+mal nondegenerate contributing point w = w(?) € C4, and let H = H(P) be
+the Hessian matrix defined by (8.7) and (8.8) when H = OQ. If (4 Q)(w) #0
+and (.Q)(w) = 0 for all 0 < q < p then
+
+ap ~ Dy (Tr)
+
+uniformly as rT > 00 with F € R, where Dy(r) is an asymptotic series
+
+Oy(r) = we rg? OO? nO" sentra? CoP! (9.4)
+ydet(sgn(ra)H) 7
+The square-root of the matrix determinant is the product of the principal branch
+square-roots of its eigenvalues (which will have nonnegative real parts). The
+constants C¢ are explicitly computable in terms of the derivatives of P(z) and
+Q(z) evaluated at z = w(f). In particular,
+
+= CDEPCO)
+WG (F,QN(w)
+
+If w is a finitely minimal point (instead of being strictly minimal) such that
+all points in the set W(?) = T(w) MV vary smoothly with * in R and are
+contributing points satisfying the conditions above then
+
+a,x )* @y(r),
+
+yew?)
+
+where each Dy is given by (9.4).
+
+Exercise 9.2. What, in general, can go wrong pulling a factor of sgn(ry)“!
+out of the square-root in the denominator of (9.4)?

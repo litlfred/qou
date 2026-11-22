@@ -42,9 +42,9 @@ algebraic structure (corollary).
 
 -- Ref: [woronowicz1989] Differential calculus on compact matrix pseudogroups (quantum groups) — see folio/schema/references.ts
 -- Ref: [faddeev_kashaev1994] Quantum dilogarithm — see folio/schema/references.ts
--- Ref: [manuscript] conj:pentagon-uv-commutation
--- Ref: [manuscript] def:recursive-brane-tower
--- Ref: [manuscript] prop:jet-prolongation
+-- Ref: [leitner2026] conj:pentagon-uv-commutation
+-- Ref: [leitner2026] def:recursive-brane-tower
+-- Ref: [leitner2026] prop:jet-prolongation
 -- Ref: [kassel1995] Ch. VIII (Quantum SL(2)) + Ch. XIII (Braided categories)
 --      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
 --      DOI: 10.1007/978-1-4612-0783-2
@@ -295,7 +295,7 @@ class StandardHeckeWoronowicz
     theorem in Lean, all deferred.
 
     -- Ref: [faddeev_kashaev1994] Quantum dilogarithm
-    -- Ref: [manuscript] conj:pentagon-uv-commutation -/
+    -- Ref: [leitner2026] conj:pentagon-uv-commutation -/
 theorem pentagon_ascension_under_woronowicz
     {R : Type*} [CommRing R] (q : R)
     {A : Type*} [Ring A] [Algebra R A]

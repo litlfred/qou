@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-0306165v1
-doc_title: "arXiv:hep-th/0306165v1 17 Jun 2003"
+doc_title: "Three-Dimensional Quantum Gravity, Chern-Simons Theory, and the A-Polynomial"
 section_id: sec-022-61-a-brief-review-of-the-melvin-morton-rozansky
 section_title: "A Brief Review of the Melvin-Morton-Rozansky Conjecture"
 section_number: 6.1
@@ -8,6 +8,7 @@ pages: 45-47
 source_pdf: 0306165v1.pdf
 source_sha256: 4f187debec912a24
 toc_source: inferred
+doc_brief: "Three-Dimensional Quantum Gravity, Chern-Simons Theory, and the A-Polynomial — We study three-dimensional Chern-Simons theory with complex gauge group SL(2,C), which has many interesting connections"
 ---
 Let JN(K, q) be the N-colored Jones polynomial of a knot K. We deﬁne a reduced
 Jones polynomial as

@@ -1,0 +1,64 @@
+---
+doc_id: ram1991-frobenius-formula
+doc_title: "A Frobenius formula for the characters of the Hecke algebras"
+section_id: page-005
+section_title: "Page 5"
+pages: 5-5
+pdf_page: 5
+source_pdf: ram1991-frobenius-formula.pdf
+source_sha256: 26b2fc85338d9150
+text_source: ocr
+granularity: page
+doc_brief: "A Frobenius formula for the characters of the Hecke algebras — 28 sections: Page 1; Page 2; Page 3"
+---
+A Frobenius formula for the characters of the Hecke algebras 465
+Define « = U,(sI(n)) to be the associative algebra over C(q) defined by gener-
+ators k;, k>!, X*, X7, 1 <i<n, and the relations:
+kikp i =kptk;=1,
+kik; = kjk; ,
+kX} kph = qt? x},
+
+k? — kp? eb)
+[x*, X7] =6,-—+, ,
+j J q—q 1
+X#X#=x}xX#, |i-jl22,
+
+(XP XF —Q tq yXEXFXE + XP(XFP=0, fait,
+
+where a; = 2, aj; = — 1ifj =i+1, and a, =0 if |i—j| = 2.
+sf becomes a Hopf algebra with coproduct 4:70 > WV @ x, antipode
+S: J > & and counit ¢: ~ > C(q) given by
+
+Aki) =k @k, A(X#)=k@X*i + XP @k?,
+Siki)=krot, — S(X#) = — q?X#, (2.2)
+e(k;) = 1, e(X#)=0.
+
+For any invertible element Zev @x# given by R=).a,@b; define
+R12, B13, B23€ A ®? to be the elements
+
+By. =) 4,@b,@1, By =) 4@1@b;, Br =Y1@4,@b; >
+& satisfies the quantum Yang-Baxter equation (QYBE) if
+
+Ry. R 13223 = R232 3B 12 . (2.3)
+Let 7:0 @ S > A @ A be given by
+T(a®b)=b@a, forallabexwv. (2.4)
+
+& is a universal R-matrix if # satisfies the relations,
+TA(a) = RAZ, forallaew,
+(4 @ id)(Z) = B13B23 , (2.5)
+(id @ A)(Z) = Bry3 B12 -
+
+If @ is a universal R-matrix then @ satisfies the QYBE.
+
+Let V = C(q)" and let E;; denote the n x n matrix that is 1 in the ith row and jth
+column and 0 everywhere else. The fundamental representation (p, V),
+p: J + Endgig(V), of U,(sl(n)) is given by setting
+
+p(X?) = Ej,i+1 >
+P(X; ) = Eisti> (2.6)
+
+pki) =qExtqQ°'Eisiisit YD Ey.
+1<jsn
+
+s
+J#RI+1

@@ -3,13 +3,14 @@
  "doc_id": "arxiv-2607.29018v1",
  "document_class": "math",
  "validated": true,
+ "aspects": [],
  "source": {
   "structure_sha256": "789faa122dd322901b603935e0158e20c01b4f975eea8cf4923174f013385947",
   "file": "2607.29018v1.pdf"
  },
  "provenance": {
   "title": "The Aldous property for normal Cayley graphs on symmetric groups",
-  "authors": "Chenhui Lv\u22171 and Sanming Zhou 2",
+  "authors": "Chenhui Lv\u22171 and Sanming Zhou2",
   "arxiv": {
    "id": "2607.29018",
    "version": "1",
@@ -20,236 +21,55 @@
  },
  "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
  "summary": {
-  "candidates": 17,
+  "candidates": 1,
   "by_kind": {
-   "definition": 1,
-   "theorem": 10,
-   "corollary": 3,
-   "lemma": 3
+   "lemma": 1
   },
-  "formalization_candidates": 17
+  "formalization_candidates": 1,
+  "by_domain": {
+   "math": 1
+  },
+  "by_evidence_kind": {
+   "deductive-proof": 1
+  },
+  "by_evidence_location": {
+   "both": 1
+  },
+  "by_lean_status": {
+   "doc-cited-in-lean-unlinked-claim": 1
+  },
+  "needs_lean_proof": 1
  },
  "candidates": [
-  {
-   "kind": "definition",
-   "source_kind": "definition",
-   "number": "1.1",
-   "name": "[22, Definition 1.1]",
-   "statement": "A Cayley graph Cay(S n,S) onS n is said to have the",
-   "section_file": "sections/sec-002-1-introduction.md",
-   "section_title": "Introduction",
-   "pages": "2-4",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "1.2",
-   "name": null,
-   "statement": "Letn\u22655, and letSbe a nonempty normal set inS n withS\u0338=S n\\{e}.",
-   "section_file": "sections/sec-003-12-main-results.md",
-   "section_title": "Main results",
-   "pages": "4-7",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "1.2",
-   "name": null,
-   "statement": "implies that at most half of all normal Cayley graphs onSn exhibit the Aldous",
-   "section_file": "sections/sec-003-12-main-results.md",
-   "section_title": "Main results",
-   "pages": "4-7",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "1.3",
-   "name": null,
-   "statement": "There exists a positive integerN\u22655such that, for everyn\u2265Nand every",
-   "section_file": "sections/sec-003-12-main-results.md",
-   "section_title": "Main results",
-   "pages": "4-7",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "corollary",
-   "source_kind": "corollary",
-   "number": "1.4",
-   "name": null,
-   "statement": "There exists a positive integerN\u22655such that, for everyn\u2265Nand",
-   "section_file": "sections/sec-003-12-main-results.md",
-   "section_title": "Main results",
-   "pages": "4-7",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "corollary",
-   "source_kind": "corollary",
-   "number": "1.5",
-   "name": null,
-   "statement": "There exists a positive integerN\u22655such that, for everyn\u2265Nand every",
-   "section_file": "sections/sec-003-12-main-results.md",
-   "section_title": "Main results",
-   "pages": "4-7",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "1.6",
-   "name": null,
-   "statement": "Letn\u22655, and letSbe a nonempty normal set inS n. If",
-   "section_file": "sections/sec-003-12-main-results.md",
-   "section_title": "Main results",
-   "pages": "4-7",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "corollary",
-   "source_kind": "corollary",
-   "number": "1.7",
-   "name": null,
-   "statement": "Letn\u22655, and letSbe a nonempty normal set inS n. ThenCay(S n,S)does",
-   "section_file": "sections/sec-003-12-main-results.md",
-   "section_title": "Main results",
-   "pages": "4-7",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "1.3",
-   "name": null,
-   "statement": "and Corollary 1.7 together resolve Problem 1.1 for all normal Cayley graphs",
-   "section_file": "sections/sec-003-12-main-results.md",
-   "section_title": "Main results",
-   "pages": "4-7",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
   {
    "kind": "lemma",
    "source_kind": "lemma",
    "number": "2.1",
    "name": "cf. [27, Proposition 2.3]",
-   "statement": "There exists a positive integerN 0 such that for every",
-   "section_file": "sections/sec-004-2-preliminaries.md",
-   "section_title": "Preliminaries",
-   "pages": "7-8",
+   "statement": "There exists a positive integer N0 such that for every n \u2265N0 and any \u03b3 \u22a2n with |fix(\u03b3)| \u22652, we have max \u03b6\u22a2n \u03b6 /\u2208{(n),(1n)} \u02dc\u03c7\u03b6(\u03b3) = \u02dc\u03c7(n\u22121,1)(\u03b3).",
+   "claim_domain": "math",
+   "evidence_kind": "deductive-proof",
+   "evidence_location": "both",
+   "evidence_locator": "In-paper proof in sections/sec-004-3-proof-of-theorem.md (p. 8-11) citing cf. [27, Proposition 2.3], [27, Proposition 2.3]",
+   "external_refs": [
+    "cf. [27, Proposition 2.3]",
+    "[27, Proposition 2.3]"
+   ],
+   "proof_excerpt": "2 Proof of Theorem 1.2. Let n \u22655, and let S be a nonempty normal set in Sn with S\u0338 = Sn\\{e}. Assume first that either S or Sc is equal to An \\ {e}. Without loss of generality, we may assume that S = An \\ {e}. Then Cay(Sn, S) \u223c= 2Kn!/2 has spectrum \u001a\u0010 n! 2 \u22121 \u00112 , (\u22121)n!\u22122 \u001b . The",
+   "section_file": "sections/sec-004-3-proof-of-theorem.md",
+   "section_title": "Proof of Theorem",
+   "pages": "8-11",
    "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "5.1",
-   "name": null,
-   "statement": "Letn\u22652, and letSbe a nonempty normal set inS n. ThenCay(S n,S)is a",
-   "section_file": "sections/sec-008-51-normal-cayley-graphs-ons-n-that-are-line-grap.md",
-   "section_title": "Normal Cayley graphs onS n that are line graphs",
-   "pages": "12-17",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "5.2",
-   "name": null,
-   "statement": "Letn\u22652, and letSbe a nonempty normal set inS n which contains the",
-   "section_file": "sections/sec-008-51-normal-cayley-graphs-ons-n-that-are-line-grap.md",
-   "section_title": "Normal Cayley graphs onS n that are line graphs",
-   "pages": "12-17",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "lemma",
-   "source_kind": "lemma",
-   "number": "5.3",
-   "name": null,
-   "statement": "Letn\u22653, and letSbe a nonempty normal set inS n which contains the",
-   "section_file": "sections/sec-008-51-normal-cayley-graphs-ons-n-that-are-line-grap.md",
-   "section_title": "Normal Cayley graphs onS n that are line graphs",
-   "pages": "12-17",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "5.4",
-   "name": "cf. [31, Theorem 3.1]",
-   "statement": "Every connected regular graph with the second largest",
-   "section_file": "sections/sec-009-52-normal-cayley-graphs-ons-n-with-strictly-seco.md",
-   "section_title": "Normal Cayley graphs onS n with strictly second largest eigen-",
-   "pages": "17-19",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "5.5",
-   "name": null,
-   "statement": "Letn\u22655, and letSbe a nonempty normal set inS n. Then the strictly",
-   "section_file": "sections/sec-009-52-normal-cayley-graphs-ons-n-with-strictly-seco.md",
-   "section_title": "Normal Cayley graphs onS n with strictly second largest eigen-",
-   "pages": "17-19",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "5.1",
-   "name": null,
-   "statement": "that eitherS c =S n\\{e}orS c =A n\\{e}. The former is impossible since it",
-   "section_file": "sections/sec-009-52-normal-cayley-graphs-ons-n-with-strictly-seco.md",
-   "section_title": "Normal Cayley graphs onS n with strictly second largest eigen-",
-   "pages": "17-19",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
-  },
-  {
-   "kind": "theorem",
-   "source_kind": "theorem",
-   "number": "1.6",
-   "name": null,
-   "statement": "applies to Cay(Sn,S). Sincen\u22655, each ofS n\\{e},Sn\\An andA n\\{e}contains",
-   "section_file": "sections/sec-010-6-proofs-of-theorem-16-and-corollary-17.md",
-   "section_title": "Proofs of Theorem 1.6 and Corollary 1.7",
-   "pages": "19-21",
-   "formalization_candidate": true,
-   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
-   "route_to": "formalizer"
+   "formalization_note": "Deductive math claim (evidence: both, In-paper proof in sections/sec-004-3-proof-of-theorem.md (p. 8-11) citing cf. [27, Proposition 2.3], [27, Proposition 2.3]). Attribute to the source. If the folio uses it, state it in Lean with `-- Ref:` to this document or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer",
+   "block_id": "lem-sec-004-01",
+   "block_iri": "library/arxiv-2607.29018v1/blocks/lem-sec-004-01",
+   "claim_id": "arxiv-2607.29018v1#lemma:2.1",
+   "lean_status": "doc-cited-in-lean-unlinked-claim",
+   "lean_decls": [
+    "folio/quantum-observable-universe/lean/QOU/Mass/CubeMomentLowerBound.lean:sum_sq_pow_three_le"
+   ],
+   "needs_lean_proof": true
   }
  ]
 }

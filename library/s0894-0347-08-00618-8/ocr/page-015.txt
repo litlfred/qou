@@ -1,0 +1,60 @@
+NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS 535,
+
+© f(z, . ++, 2-158, 241, +++s2n) € Hn—1(R) U {0} for j € [n], BE R;
+oft. 2dn FO z7t,... Anza!) © Hn(R) f£O1,---,An) € RY;
+© f (21,0555 Zia 1s 2p, Zs +++, 2n) © Hn—1(R) fori F j € [n].
+
+(3) If (f)3921 C Hn(R) and f € Riz1,..-,2n] \ {0} ts the limit, uniformly on
+
+compact subsets of C", of the sequence {fj}32,, then f © Hn(R).
+
+Important examples of real stable polynomials are given by the following con-
+struction (see, e.g., [8] [9]).
+
+Proposition 3.2. Let Aj,...,Am be (complex) positive semi-definite matrices and
+let B be a (complex) Hermitian matrix, all matrices being of the same size.
+
+(1) The polynomial
+(6) 2 = (Z1,-+-52n) > f(z) = det(z1Ai +--+ + ZmAm + B)
+
+is either identically zero or real stable.
+(2) If B is also positive semi-definite, then f has all non-negative coefficients.
+In particular, if Z = diag(z,...,%m) and A is a positive semi-definite m x m
+matrix, then det(A+Z) is a multi-affine real stable polynomial with all non-negative
+coefficients, hence a (positive) constant multiple of a strongly Rayleigh polynomial
+
+(cf. Definition :
+
+Proof. By the second part of Proposition B.Jand a density argument, it suffices to
+prove (1) in the case when all matrices Aj, 1 < j < m, are positive definite. Set
+2(t) = At+ wp with A= (Ay,..-,An) © RY, w= (44, Hn) € R", and t € C. Note
+that P := wea A; Aj is positive definite and thus it is invertible and has a square
+root Q (recall that Ry = (0,00)). Then
+
+f(z(£)) = det(P) det(tl + QHQ"),
+
+where H := B+ a pj A; is a Hermitian matrix. Therefore, f(z(t)) is a polyno-
+mial in ¢ that is a constant multiple of the characteristic polynomial of a Hermitian
+matrix, and so it must have all real zeros. By the first part of Proposition B.1) this
+proves (1), and then (2) follows by noticing that the coefficients of the polynomial in
+are products of non-negative numbers, namely principal minors of the positive
+semi-definite matrices A,,...,Am,B. oO
+
+Further properties of (not necessarily multi-affine) real stable polynomials, their
+linear preservers and applications to entire function theory in one or several vari-
+ables, matrix theory, combinatorics, convex optimization and statistical mechanics
+
+may be found in [7 [8} [9} (15) [19] [36] [51].
+
+3.2. Hadamard-Fischer inequalities and GKK-matrices. Given an n x n
+matrix A over C and S' C [n], denote by A[S] the principal submatrix of A with rows
+and columns indexed by S and let A(S') = det(A[$’]) be the principal minor of A
+with rows and columns indexed by S’ = [n]\$, where A([n]) = det(A[Q]) := 1. The
+matrix A is called a P-matriz if all its principal minors are positive. A much studied
+class of P-matrices that unifies several important types of matrices is the class of
+GKk-matrices; see and the references therein. A P-matrix A is a GKK-
+matrix (after Gantmacher-Krein and Kotelyansky) if it satisfies the Hadamard-
+Fischer-Kotelyansky inequalities, that is,
+
+(7) A(S)A(T) > A(SUT)A(SAT), 8,T°C [n.
+

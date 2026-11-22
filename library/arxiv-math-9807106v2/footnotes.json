@@ -1,0 +1,3472 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-math-9807106v2",
+ "status": "determined",
+ "pages_unread": [
+  37,
+  38,
+  39,
+  40
+ ],
+ "body_size": 12.0,
+ "footnotes": [
+  {
+   "id": "fn-p020-1",
+   "page": 20,
+   "mark": "2",
+   "text": "Strictly speaking the summation over W in the ﬁrst line of (4.7), which is rather a summation over orbits, should contain an additional factor for weights µ with nontrivial stationary subgroup of W; the same remark applies to the summation in the last line before (4.5).",
+   "marks": [
+    {
+     "page": 19,
+     "context": "ingularvectorsofweightwf(αi) · Λ ,i = 1, 2(i.e.,wδ+α1· Λ ,wα"
+    },
+    {
+     "page": 19,
+     "context": "espondingtosingularvectorsofweightwγ(αi) · Λ ,i.e.,w0 · Λ ,w"
+    },
+    {
+     "page": 20,
+     "context": "(3.27)torecover(4.4)."
+    }
+   ],
+   "block": "library/arxiv-math-9807106v2/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p025-1",
+   "page": 25,
+   "mark": "4",
+   "text": "Alternativelythe‘q’-charactersareobtainedrestrictingthestandardgroupcharactersto −2πi ρ⟩, i = 1, 2, . . . , n) , µ ∈P h−n ⟨ei ,µ+ the discrete subset of elements {diag(e } in the Cartan h +",
+   "marks": [
+    {
+     "page": 25,
+     "context": "+itself."
+    }
+   ],
+   "block": "library/arxiv-math-9807106v2/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p027-1",
+   "page": 27,
+   "mark": "2",
+   "text": "π i",
+   "marks": [
+    {
+     "page": 26,
+     "context": "∩P"
+    },
+    {
+     "page": 26,
+     "context": "++)+p θ} ,containsp"
+    },
+    {
+     "page": 27,
+     "context": "w0t−σ"
+    },
+    {
+     "page": 27,
+     "context": "w0t−σ"
+    }
+   ],
+   "block": "library/arxiv-math-9807106v2/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p027-2",
+   "page": 27,
+   "mark": "3",
+   "text": "τ(µ)",
+   "marks": [
+    {
+     "page": 26,
+     "context": "⊂P"
+    },
+    {
+     "page": 26,
+     "context": "+andtheweight(p −1, p −1)=(1, 1)andthusrepresentstheZ"
+    },
+    {
+     "page": 26,
+     "context": "integrablealcoveatlevel3p −3,P"
+    },
+    {
+     "page": 26,
+     "context": "alongan orbitofthe σautomorphismofP"
+    },
+    {
+     "page": 26,
+     "context": "Forp>2thisfactorisationleadstoasubsetofthealcoveP"
+    },
+    {
+     "page": 27,
+     "context": "ε"
+    }
+   ],
+   "block": "library/arxiv-math-9807106v2/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p028-1",
+   "page": 28,
+   "mark": "0",
+   "text": "µ",
+   "marks": [
+    {
+     "page": 27,
+     "context": "w"
+    },
+    {
+     "page": 27,
+     "context": "w"
+    }
+   ],
+   "block": "library/arxiv-math-9807106v2/blocks/prose-sec-005"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p019-1",
+   "page": 19,
+   "mark": "a",
+   "text": ")",
+   "block": "library/arxiv-math-9807106v2/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p019-2",
+   "page": 19,
+   "mark": "a",
+   "text": ")",
+   "block": "library/arxiv-math-9807106v2/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p019-3",
+   "page": 19,
+   "mark": "a",
+   "text": ")",
+   "block": "library/arxiv-math-9807106v2/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p019-4",
+   "page": 19,
+   "mark": "b",
+   "text": ")",
+   "block": "library/arxiv-math-9807106v2/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p025-2",
+   "page": 25,
+   "mark": "i",
+   "text": "=1ei= 0 , ei=¯Λi −¯Λi−1 ,¯Λ0= 0 =¯Λn .",
+   "block": "library/arxiv-math-9807106v2/blocks/prose-sec-004"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "†",
+   "context": "P.Furlan∗,"
+  },
+  {
+   "page": 1,
+   "mark": "†",
+   "context": "V.B.Petkova∗∗,"
+  },
+  {
+   "page": 1,
+   "mark": "b",
+   "context": "the group ringZ[ ˜W] of the extended aﬃne Weyl group of"
+  },
+  {
+   "page": 1,
+   "mark": "k",
+   "context": "he group ringZ[ ˜W] of the extended aﬃne Weyl group ofbsl(3)"
+  },
+  {
+   "page": 1,
+   "mark": "b",
+   "context": "theorybasedonadmissiblerepresentationsof"
+  },
+  {
+   "page": 1,
+   "mark": "k",
+   "context": "theorybasedonadmissiblerepresentationsofbsl(3)"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "ofthefusionalgebraofg=bsl(n)"
+  },
+  {
+   "page": 2,
+   "mark": "p",
+   "context": "In[9]wehaverealisedthisfusionalgebraasamatrixalgebraF⊂Mat"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "In[9]wehaverealisedthisfusionalgebraasamatrixalgebraF⊂Matp"
+  },
+  {
+   "page": 2,
+   "mark": "z",
+   "context": "integer nonnegative structure constants(p)N"
+  },
+  {
+   "page": 2,
+   "mark": "y",
+   "context": "y,xand a basis {N"
+  },
+  {
+   "page": 2,
+   "mark": "y",
+   "context": "y,xand a basis {Ny ,(N"
+  },
+  {
+   "page": 2,
+   "mark": "z",
+   "context": "y,xand a basis {Ny ,(Ny)"
+  },
+  {
+   "page": 2,
+   "mark": "z",
+   "context": "x=(p)N"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "y,x,N"
+  },
+  {
+   "page": 2,
+   "mark": "p",
+   "context": "1"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "1p"
+  },
+  {
+   "page": 2,
+   "mark": "p",
+   "context": "labelledbysomesetE"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "labelledbysomesetEp= {µ}ofp"
+  },
+  {
+   "page": 2,
+   "mark": "x",
+   "context": "of N"
+  },
+  {
+   "page": 2,
+   "mark": "2",
+   "context": "of Nx provide p"
+  },
+  {
+   "page": 2,
+   "mark": "y",
+   "context": "of Nx provide p2linear representations N"
+  },
+  {
+   "page": 2,
+   "mark": "p",
+   "context": "i.e.,charactersofF,labelledbythesetE"
+  },
+  {
+   "page": 2,
+   "mark": "b",
+   "context": "RCFT.InparticularforWZWmodelsbasedonthe"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "RCFT.InparticularforWZWmodelsbasedonthebsl(n)"
+  },
+  {
+   "page": 2,
+   "mark": "k",
+   "context": "belongtothealcoveP"
+  },
+  {
+   "page": 2,
+   "mark": "z",
+   "context": "eachappearingwithmultiplicityone.Thenumbers(p)N"
+  },
+  {
+   "page": 2,
+   "mark": "1",
+   "context": "f,y=0,"
+  },
+  {
+   "page": 3,
+   "mark": "k",
+   "context": "cequationscomingfromthedecouplingofsingularvectorsing=bsl(3)"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "Diagonalisingap"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "Diagonalisingap2× p"
+  },
+  {
+   "page": 3,
+   "mark": "x",
+   "context": "w′)m"
+  },
+  {
+   "page": 3,
+   "mark": "x",
+   "context": "ofm"
+  },
+  {
+   "page": 3,
+   "mark": "m",
+   "context": "visthemultiplicity"
+  },
+  {
+   "page": 3,
+   "mark": "x",
+   "context": "weightλ.Heretheintegersm"
+  },
+  {
+   "page": 3,
+   "mark": "a",
+   "context": "v, x, v ∈Wdescribe"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "iclevelandthecorrespondingirreduciblequotients.Inthesimplest"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "landthecorrespondingirreduciblequotients.Inthesimplestbsl(2)"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "casesolvedin[1],[6]thisintrinsicalgebraistheZ"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "W≃Z"
+  },
+  {
+   "page": 4,
+   "mark": "b",
+   "context": "aﬃneWeylgroupof"
+  },
+  {
+   "page": 4,
+   "mark": "k",
+   "context": "aﬃneWeylgroupofbsl(3)"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "orarestraightforwardlygeneralisable,forg=bsl(n)"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "iongeneralalthoughwepresentthedetailsfullyforthecaseg=bsl(3)"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "husagenericsubseriesoftheadmissiblerepresentationsofg=bsl(3)"
+  },
+  {
+   "page": 5,
+   "mark": "p",
+   "context": "x,y=(3"
+  },
+  {
+   "page": 5,
+   "mark": "p",
+   "context": "where(3"
+  },
+  {
+   "page": 5,
+   "mark": "p",
+   "context": "tructure constants of the integrable fusion algebra at κ = 3"
+  },
+  {
+   "page": 5,
+   "mark": "b",
+   "context": "rulesof"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "Π = {α"
+  },
+  {
+   "page": 5,
+   "mark": "n",
+   "context": "Π = {α1, . . . , α"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "∆+ Z>0δ) ,Π = {α"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "iα"
+  },
+  {
+   "page": 5,
+   "mark": "k",
+   "context": "andthesimplerootsoftheaﬃnealgebrag=bsl(n)"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "Λ"
+  },
+  {
+   "page": 5,
+   "mark": "j",
+   "context": "Λi , α"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "¯h∗oftheCartanalgebra.WithQ=⊕iZα"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "g.TheirpositiveconesareQ+= ⊕iZ≥0α"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "g.The form ⟨· , ·⟩extends to ˜h∗= ¯h∗⊕CΛ"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "g.The form ⟨· , ·⟩extends to ˜h∗= ¯h∗⊕CΛ0⊕Cδ with ⟨¯h∗, CΛ"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "⟨Λ"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "⟨Λ0 , Λ"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "⟨Λ0 , Λ0⟩=0=⟨δ , δ⟩,⟨δ , Λ"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "⟨Λ0 , Λ0⟩=0=⟨δ , δ⟩,⟨δ , Λ0⟩=1.Thefundamentalweightsofgare{Λ"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": " , Λ0⟩=0=⟨δ , δ⟩,⟨δ , Λ0⟩=1.Thefundamentalweightsofgare{Λi=Λ"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "Λ"
+  },
+  {
+   "page": 5,
+   "mark": "0",
+   "context": "(·) : ˜h∗→¯h∗is deﬁnedas having the kernelCδ ⊕CΛ"
+  },
+  {
+   "page": 5,
+   "mark": "j",
+   "context": "jΛ"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "bythesimplereﬂectionsw"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "bythesimplereﬂectionswi=wαiwithrelations(w"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "bythesimplereﬂectionswi=wαiwithrelations(wi)"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "bythesimplereﬂectionswi=wαiwithrelations(wi)2=1=(w"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "bythesimplereﬂectionswi=wαiwithrelations(wi)2=1=(wiw"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "bythesimplereﬂectionswi=wαiwithrelations(wi)2=1=(wiwi+1)"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "bythesimplereﬂectionswi=wαiwithrelations(wi)2=1=(wiwi+1)3,w"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "ythesimplereﬂectionswi=wαiwithrelations(wi)2=1=(wiwi+1)3,wiw"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "esimplereﬂectionswi=wαiwithrelations(wi)2=1=(wiwi+1)3,wiwj=w"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "implereﬂectionswi=wαiwithrelations(wi)2=1=(wiwi+1)3,wiwj=wjw"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "reﬂectionsw"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "groupWofg=bsl(3),presentedas{w"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "groupWofg=bsl(3),presentedas{wi:(w"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "groupWofg=bsl(3),presentedas{wi:(wi)"
+  },
+  {
+   "page": 6,
+   "mark": "i",
+   "context": "groupWofg=bsl(3),presentedas{wi:(wi)2=1=(w"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "groupWofg=bsl(3),presentedas{wi:(wi)2=1=(wiw"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "groupWofg=bsl(3),presentedas{wi:(wi)2=1=(wiwj)"
+  },
+  {
+   "page": 6,
+   "mark": "y",
+   "context": "+,"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "One has γ(α"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "One has γ(αj) = α"
+  },
+  {
+   "page": 6,
+   "mark": "j",
+   "context": "One has γ(αj) = αj+1= γ"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "One has γ(αj) = αj+1= γj+1(α"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "j) = αj+1= γj+1(α0) for j= 0, 1, 2, · · ·, n−1 identifying α"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "= αj+1= γj+1(α0) for j= 0, 1, 2, · · ·, n−1 identifying αn≡α"
+  },
+  {
+   "page": 6,
+   "mark": "0",
+   "context": "thesetU= {A, A w"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "IntroducethesetP={Λ=y · kΛ"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "thelevelkisgeneric,k̸∈Q,whichinparticularensuresthatify · kΛ"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "evelkisgeneric,k̸∈Q,whichinparticularensuresthatify · kΛ0=kΛ"
+  },
+  {
+   "page": 7,
+   "mark": "g",
+   "context": "+theVermamoduleMΛ,Λ∈P,of"
+  },
+  {
+   "page": 7,
+   "mark": "a",
+   "context": "+theVermamoduleMΛ,Λ∈P,ofgisreducible,containing"
+  },
+  {
+   "page": 7,
+   "mark": "w",
+   "context": "submoduleM"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "thentheKKconditionisfulﬁlledforΛ=y· kΛ"
+  },
+  {
+   "page": 7,
+   "mark": "y",
+   "context": "w"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "wy(α) · Λ = y wα y−1· Λ = y wα · kΛ"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "α(λ) · kΛ"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "+,∀α"
+  },
+  {
+   "page": 7,
+   "mark": "w",
+   "context": "+,∀αi∈¯Π ,thereﬂections"
+  },
+  {
+   "page": 7,
+   "mark": "y",
+   "context": "+,∀αi∈¯Π ,thereﬂectionsw"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "+,∀αi∈¯Π ,thereﬂectionswy(α"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "Ify(α"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "W(+)· kΛ"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "W(+)= {y∈˜W| y(α"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "+for∀α"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "[Λ] · kΛ"
+  },
+  {
+   "page": 7,
+   "mark": "0",
+   "context": "[Λ] · kΛ"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "WletI(w) = {i | w(α"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "WletI(w) = {i | w(αi) < 0 ,α"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": ":= {λ ∈P+| ⟨λ, α"
+  },
+  {
+   "page": 7,
+   "mark": "i",
+   "context": "∪i∈I(w)Hα"
+  },
+  {
+   "page": 8,
+   "mark": "w",
+   "context": ")"
+  },
+  {
+   "page": 8,
+   "mark": "t",
+   "context": "W"
+  },
+  {
+   "page": 8,
+   "mark": "w",
+   "context": "Wt−P"
+  },
+  {
+   "page": 8,
+   "mark": "w",
+   "context": "W"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "X=Xλ={i | ⟨λ , α"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "by the simple reﬂections labelled by the subset X), and u(α"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "W(+).SimilarlyP+isZ/nZgradedbythen-alityτ(Λ=¯yt−λ· kΛ"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "i"
+  },
+  {
+   "page": 8,
+   "mark": "i",
+   "context": "ii⟨λ, α"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "ii⟨λ, αi⟩= n ⟨λ, ¯Λ"
+  },
+  {
+   "page": 8,
+   "mark": "n",
+   "context": "ii⟨λ, αi⟩= n ⟨λ, ¯Λn−1⟩mod"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "ofthesubsetU= {A, A w"
+  },
+  {
+   "page": 8,
+   "mark": "0",
+   "context": "y · kΛ"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "iﬀthecorrespondingg VermamodulesofhighestweightΛ = y · kΛ"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "Onﬁg.3wehaveillustratedthemap"
+  },
+  {
+   "page": 9,
+   "mark": "g",
+   "context": "3ιforthecase"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "Λ"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "Λ"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "Λ"
+  },
+  {
+   "page": 9,
+   "mark": "3",
+   "context": "i"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "i3"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "i3n"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "i(3"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "i(3n"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "Λ"
+  },
+  {
+   "page": 9,
+   "mark": "n",
+   "context": "i(3"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "i(3n"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "Λ"
+  },
+  {
+   "page": 9,
+   "mark": "0",
+   "context": "{Λ = y · (λ′+ kΛ"
+  },
+  {
+   "page": 10,
+   "mark": "e",
+   "context": "µ"
+  },
+  {
+   "page": 10,
+   "mark": "d",
+   "context": "µ:= Kλ−µ∈Z≥0,while"
+  },
+  {
+   "page": 10,
+   "mark": "a",
+   "context": "µ:= Kλ−µ∈Z≥0,whiledκis"
+  },
+  {
+   "page": 10,
+   "mark": "e",
+   "context": "µ"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "χ"
+  },
+  {
+   "page": 10,
+   "mark": "e",
+   "context": "Wdet(w)"
+  },
+  {
+   "page": 11,
+   "mark": "y",
+   "context": "tystructure.Nowweshallintroduceanotherclassof‘Vermamodules’V"
+  },
+  {
+   "page": 11,
+   "mark": "0",
+   "context": "highest weights Λ = y·kΛ"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "translationsbyformalexponentials.)"
+  },
+  {
+   "page": 12,
+   "mark": "u",
+   "context": "Nowweintroducethesupports,V"
+  },
+  {
+   "page": 12,
+   "mark": "u",
+   "context": "Nowweintroducethesupports,VuandG"
+  },
+  {
+   "page": 12,
+   "mark": "u",
+   "context": "Nowweintroducethesupports,VuandGu,andcharacters,ch(V"
+  },
+  {
+   "page": 12,
+   "mark": "u",
+   "context": "Nowweintroducethesupports,VuandGu,andcharacters,ch(Vu)andχ"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "LetΛ = y · kΛ"
+  },
+  {
+   "page": 12,
+   "mark": "y",
+   "context": "V"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "someβ∈Q+andλ ∈Q+/nQ+= {P"
+  },
+  {
+   "page": 12,
+   "mark": "k",
+   "context": "i=1"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "i=1k"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "i=1kiα"
+  },
+  {
+   "page": 12,
+   "mark": "i",
+   "context": "i=1kiαi | 0 ≤k"
+  },
+  {
+   "page": 12,
+   "mark": "y",
+   "context": "i=1kiαi | 0 ≤ki≤n −1},wecanbringV"
+  },
+  {
+   "page": 12,
+   "mark": "y",
+   "context": "V"
+  },
+  {
+   "page": 12,
+   "mark": "y",
+   "context": "ThusthesupportV"
+  },
+  {
+   "page": 12,
+   "mark": "y",
+   "context": "y y .ThetwodescriptionsofV"
+  },
+  {
+   "page": 12,
+   "mark": "0",
+   "context": "uy · kΛ"
+  },
+  {
+   "page": 12,
+   "mark": "y",
+   "context": "K"
+  },
+  {
+   "page": 12,
+   "mark": "y",
+   "context": "orK"
+  },
+  {
+   "page": 13,
+   "mark": "y",
+   "context": "z K"
+  },
+  {
+   "page": 13,
+   "mark": "y",
+   "context": "ch(V"
+  },
+  {
+   "page": 13,
+   "mark": "y",
+   "context": "ch(V"
+  },
+  {
+   "page": 13,
+   "mark": "r",
+   "context": "n"
+  },
+  {
+   "page": 13,
+   "mark": "r",
+   "context": "n"
+  },
+  {
+   "page": 13,
+   "mark": "k",
+   "context": "n"
+  },
+  {
+   "page": 13,
+   "mark": "y",
+   "context": "ch(Va y) = a ch(V"
+  },
+  {
+   "page": 13,
+   "mark": "0",
+   "context": "NowconsiderΛ=y· kΛ"
+  },
+  {
+   "page": 13,
+   "mark": "y",
+   "context": "deﬁnitionV"
+  },
+  {
+   "page": 13,
+   "mark": "y",
+   "context": "deﬁnitionVyisreduciblewithsubmodulesV"
+  },
+  {
+   "page": 14,
+   "mark": "w",
+   "context": "det( ¯w′)ch(V"
+  },
+  {
+   "page": 14,
+   "mark": "y",
+   "context": "m"
+  },
+  {
+   "page": 14,
+   "mark": "y",
+   "context": "w)ch(V"
+  },
+  {
+   "page": 14,
+   "mark": "y",
+   "context": "plicitiesm"
+  },
+  {
+   "page": 14,
+   "mark": "y",
+   "context": "m"
+  },
+  {
+   "page": 14,
+   "mark": "y",
+   "context": "w)K"
+  },
+  {
+   "page": 14,
+   "mark": "y",
+   "context": "G"
+  },
+  {
+   "page": 14,
+   "mark": "y",
+   "context": "Gyof‘ﬁnitedimensionalmodules’asG"
+  },
+  {
+   "page": 14,
+   "mark": "y",
+   "context": "Gyof‘ﬁnitedimensionalmodules’asGy={z∈˜W| m"
+  },
+  {
+   "page": 14,
+   "mark": "y",
+   "context": "az=m"
+  },
+  {
+   "page": 14,
+   "mark": "y",
+   "context": "m"
+  },
+  {
+   "page": 14,
+   "mark": "y",
+   "context": "a−1z a= m"
+  },
+  {
+   "page": 14,
+   "mark": "y",
+   "context": "andhencea χ"
+  },
+  {
+   "page": 14,
+   "mark": "y",
+   "context": "andhencea χy a−1= χ"
+  },
+  {
+   "page": 14,
+   "mark": "y",
+   "context": "m"
+  },
+  {
+   "page": 14,
+   "mark": "y",
+   "context": "w(µ)= m"
+  },
+  {
+   "page": 14,
+   "mark": "w",
+   "context": "Wa−1, while T¯awθ= a T"
+  },
+  {
+   "page": 14,
+   "mark": "w",
+   "context": "Wa−1, while T¯awθ= a Twθa−1, and T"
+  },
+  {
+   "page": 14,
+   "mark": "010",
+   "context": "Wa−1, while T¯awθ= a Twθa−1, and Twθ= {1 , w"
+  },
+  {
+   "page": 14,
+   "mark": "020",
+   "context": "Wa−1, while T¯awθ= a Twθa−1, and Twθ= {1 , w010 , w"
+  },
+  {
+   "page": 14,
+   "mark": "10",
+   "context": "Wa−1, while T¯awθ= a Twθa−1, and Twθ= {1 , w010 , w020 , w"
+  },
+  {
+   "page": 14,
+   "mark": "20",
+   "context": ", while T¯awθ= a Twθa−1, and Twθ= {1 , w010 , w020 , w10 , w"
+  },
+  {
+   "page": 14,
+   "mark": "0",
+   "context": "e T¯awθ= a Twθa−1, and Twθ= {1 , w010 , w020 , w10 , w20 , w"
+  },
+  {
+   "page": 15,
+   "mark": "e",
+   "context": "w)"
+  },
+  {
+   "page": 15,
+   "mark": "t",
+   "context": "ch(V"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "(1 + 2eκθ) + w12(2 + eκα"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "(1 + 2eκθ) + w12(2 + eκα1) + w21(2 + eκα"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "+ w1(1 + eκθ+ eκα"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "+ w1(1 + eκθ+ eκα2) + w2(1 + eκθ+ eκα"
+  },
+  {
+   "page": 15,
+   "mark": "t",
+   "context": "ch(Vwθ"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "w0 wθ (2 + eκθ) + w010 wθ (1 + 2eκα"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "w0 wθ (2 + eκθ) + w010 wθ (1 + 2eκα2) + w020 wθ (1 + 2eκα"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "+ w20 wθ (2 + eκα"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "+ w20 wθ (2 + eκα1) + w10 wθ (2 + eκα"
+  },
+  {
+   "page": 15,
+   "mark": "12",
+   "context": "x t−µ∈˜Was(recallthatγ= w"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "Λ"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "Λ"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "Λ"
+  },
+  {
+   "page": 15,
+   "mark": "x",
+   "context": "ch(V"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "Λ"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "Λ"
+  },
+  {
+   "page": 15,
+   "mark": "w",
+   "context": "det( ¯w′) ch(V"
+  },
+  {
+   "page": 16,
+   "mark": "y",
+   "context": "χ"
+  },
+  {
+   "page": 16,
+   "mark": "u",
+   "context": "u∈U"
+  },
+  {
+   "page": 16,
+   "mark": "y",
+   "context": "multiplicitym"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "zin(3.18)canberewrittenas"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "µ"
+  },
+  {
+   "page": 16,
+   "mark": "a",
+   "context": "z"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "za"
+  },
+  {
+   "page": 16,
+   "mark": "x",
+   "context": "m"
+  },
+  {
+   "page": 16,
+   "mark": "x",
+   "context": "m"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "za w"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "za w0"
+  },
+  {
+   "page": 16,
+   "mark": "j",
+   "context": "resummation of the ‘odd’ term in (3.25), setting w"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "resummation of the ‘odd’ term in (3.25), setting wj a = bw"
+  },
+  {
+   "page": 16,
+   "mark": "x",
+   "context": "themultiplicitiesm"
+  },
+  {
+   "page": 16,
+   "mark": "w",
+   "context": "χ"
+  },
+  {
+   "page": 16,
+   "mark": "0",
+   "context": "χw0= 2 + w"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "χw0= 2 + w0 + w"
+  },
+  {
+   "page": 16,
+   "mark": "2",
+   "context": "χw0= 2 + w0 + w1 + w"
+  },
+  {
+   "page": 16,
+   "mark": "w",
+   "context": "Λ1+ (1 + F) γ−1= χγ−1χ"
+  },
+  {
+   "page": 16,
+   "mark": "20",
+   "context": "Λ1+ (1 + F) γ−1= χγ−1χw"
+  },
+  {
+   "page": 16,
+   "mark": "f",
+   "context": "χ"
+  },
+  {
+   "page": 16,
+   "mark": "t",
+   "context": "χf≡χ"
+  },
+  {
+   "page": 16,
+   "mark": "f",
+   "context": "χ"
+  },
+  {
+   "page": 16,
+   "mark": "t",
+   "context": "χf∗≡χ"
+  },
+  {
+   "page": 16,
+   "mark": "w",
+   "context": "Λ2+ (1 + F) γ= χγχ"
+  },
+  {
+   "page": 16,
+   "mark": "10",
+   "context": "Λ2+ (1 + F) γ= χγχw"
+  },
+  {
+   "page": 17,
+   "mark": "y",
+   "context": "m"
+  },
+  {
+   "page": 17,
+   "mark": "y",
+   "context": "a ∈A we have D"
+  },
+  {
+   "page": 17,
+   "mark": "y",
+   "context": "supports of the ‘Verma modules’ and the weight diagrams G"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "themap"
+  },
+  {
+   "page": 17,
+   "mark": "1",
+   "context": "2ιrecoversthesupportsofmodulesofhighestweight"
+  },
+  {
+   "page": 17,
+   "mark": "y",
+   "context": "formula(3.30)isreplacedbyD"
+  },
+  {
+   "page": 17,
+   "mark": "y",
+   "context": "2,α⟩,"
+  },
+  {
+   "page": 17,
+   "mark": "y",
+   "context": "generatedbythesetofcharacters{χ"
+  },
+  {
+   "page": 17,
+   "mark": "y",
+   "context": "W(+)}withχ"
+  },
+  {
+   "page": 18,
+   "mark": "y",
+   "context": "Λ1χ"
+  },
+  {
+   "page": 18,
+   "mark": "t",
+   "context": "χ"
+  },
+  {
+   "page": 18,
+   "mark": "y",
+   "context": "χt−ei"
+  },
+  {
+   "page": 18,
+   "mark": "y",
+   "context": "Λ2χ"
+  },
+  {
+   "page": 18,
+   "mark": "y",
+   "context": "χtei"
+  },
+  {
+   "page": 18,
+   "mark": "y",
+   "context": "χwj"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "Λ"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "Λ1 , e"
+  },
+  {
+   "page": 18,
+   "mark": "e",
+   "context": "i"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "ie"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "iei= 0 , e"
+  },
+  {
+   "page": 18,
+   "mark": "e",
+   "context": "i"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "ie−κ e"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "F"
+  },
+  {
+   "page": 18,
+   "mark": "w",
+   "context": "m"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "mw"
+  },
+  {
+   "page": 18,
+   "mark": "w",
+   "context": "m"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "mw"
+  },
+  {
+   "page": 18,
+   "mark": "w",
+   "context": "χ"
+  },
+  {
+   "page": 18,
+   "mark": "y",
+   "context": "χw0χ"
+  },
+  {
+   "page": 18,
+   "mark": "y",
+   "context": "χw0χy= 2χ"
+  },
+  {
+   "page": 18,
+   "mark": "w",
+   "context": "χw0χy= 2χy+ χ"
+  },
+  {
+   "page": 18,
+   "mark": "w",
+   "context": "χw0χy= 2χy+ χw0 y + χ"
+  },
+  {
+   "page": 18,
+   "mark": "w",
+   "context": "χw0χy= 2χy+ χw0 y + χw1 y + χ"
+  },
+  {
+   "page": 18,
+   "mark": "z",
+   "context": "z y−1 χ"
+  },
+  {
+   "page": 18,
+   "mark": "w",
+   "context": "x∈G"
+  },
+  {
+   "page": 18,
+   "mark": "w",
+   "context": "z∈G"
+  },
+  {
+   "page": 18,
+   "mark": "f",
+   "context": "In(4.3)theshiftedweightdiagramG"
+  },
+  {
+   "page": 19,
+   "mark": "f",
+   "context": "ofsingularvectorsofweightw"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "ofsingularvectorsofweightwf(α"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "ofsingularvectorsofweightwf(αi) · Λ ,i = 1, 2(i.e.,wδ+α"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "Λ"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "Λ1·kΛ"
+  },
+  {
+   "page": 19,
+   "mark": "i",
+   "context": "correspondingtosingularvectorsofweightwγ(α"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "correspondingtosingularvectorsofweightwγ(αi) · Λ ,i.e.,w"
+  },
+  {
+   "page": 19,
+   "mark": "0",
+   "context": "moduleofh.w.Λ = γ · kΛ"
+  },
+  {
+   "page": 19,
+   "mark": "x",
+   "context": "m"
+  },
+  {
+   "page": 19,
+   "mark": "x",
+   "context": "m"
+  },
+  {
+   "page": 19,
+   "mark": "z",
+   "context": "zy−1χ"
+  },
+  {
+   "page": 19,
+   "mark": "x",
+   "context": "n oftheproduct,namelyonetakes thegeneralized‘weightdiagram’G"
+  },
+  {
+   "page": 19,
+   "mark": "e",
+   "context": "W"
+  },
+  {
+   "page": 19,
+   "mark": "e",
+   "context": "W"
+  },
+  {
+   "page": 19,
+   "mark": "t",
+   "context": "χ"
+  },
+  {
+   "page": 19,
+   "mark": "y",
+   "context": "w(µ)"
+  },
+  {
+   "page": 19,
+   "mark": "e",
+   "context": "µ"
+  },
+  {
+   "page": 19,
+   "mark": "y",
+   "context": "µe−κµχ"
+  },
+  {
+   "page": 19,
+   "mark": "t",
+   "context": "χ"
+  },
+  {
+   "page": 19,
+   "mark": "y",
+   "context": "w(µ)"
+  },
+  {
+   "page": 19,
+   "mark": "t",
+   "context": "µχ"
+  },
+  {
+   "page": 19,
+   "mark": "y",
+   "context": "µχt−µ"
+  },
+  {
+   "page": 20,
+   "mark": "z",
+   "context": "N"
+  },
+  {
+   "page": 20,
+   "mark": "z",
+   "context": "x,yχ"
+  },
+  {
+   "page": 20,
+   "mark": "z",
+   "context": "N"
+  },
+  {
+   "page": 20,
+   "mark": "x",
+   "context": "w′)m"
+  },
+  {
+   "page": 20,
+   "mark": "x",
+   "context": "w)m"
+  },
+  {
+   "page": 20,
+   "mark": "x",
+   "context": "G"
+  },
+  {
+   "page": 20,
+   "mark": "z",
+   "context": "N"
+  },
+  {
+   "page": 20,
+   "mark": "z",
+   "context": "x,yitfollowsthat"
+  },
+  {
+   "page": 20,
+   "mark": "x",
+   "context": "w∈G"
+  },
+  {
+   "page": 20,
+   "mark": "y",
+   "context": "wherewehaveusedthehorizontalprojectionsoftheweightsΛ"
+  },
+  {
+   "page": 20,
+   "mark": "0",
+   "context": "wherewehaveusedthehorizontalprojectionsoftheweightsΛy=y · kΛ"
+  },
+  {
+   "page": 20,
+   "mark": "x",
+   "context": "Λ"
+  },
+  {
+   "page": 20,
+   "mark": "y",
+   "context": "Λ"
+  },
+  {
+   "page": 20,
+   "mark": "z",
+   "context": "yweproveanotherpropertyannouncedin[9].ThestructureconstantsN"
+  },
+  {
+   "page": 20,
+   "mark": "z",
+   "context": "N"
+  },
+  {
+   "page": 20,
+   "mark": "x",
+   "context": "m"
+  },
+  {
+   "page": 20,
+   "mark": "z",
+   "context": "Corollary4.7ThestructureconstantsN"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "Dynkindiagramα"
+  },
+  {
+   "page": 21,
+   "mark": "n",
+   "context": ":=α"
+  },
+  {
+   "page": 21,
+   "mark": "i",
+   "context": "λ=tλ∗,⟨λ∗, α"
+  },
+  {
+   "page": 21,
+   "mark": "y",
+   "context": "y= χ"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "N"
+  },
+  {
+   "page": 21,
+   "mark": "y",
+   "context": "x,y= N"
+  },
+  {
+   "page": 21,
+   "mark": "z",
+   "context": "x,z∗= N"
+  },
+  {
+   "page": 21,
+   "mark": "z",
+   "context": "N"
+  },
+  {
+   "page": 21,
+   "mark": "z",
+   "context": "N"
+  },
+  {
+   "page": 21,
+   "mark": "z",
+   "context": "N"
+  },
+  {
+   "page": 21,
+   "mark": "z",
+   "context": "x,yD"
+  },
+  {
+   "page": 21,
+   "mark": "z",
+   "context": "ι(x) ι(y)D"
+  },
+  {
+   "page": 21,
+   "mark": "w",
+   "context": "ring.Onepossibilityforthisfundamentalsetis{χ"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "ring.Onepossibilityforthisfundamentalsetis{χw"
+  },
+  {
+   "page": 21,
+   "mark": "f",
+   "context": "ring.Onepossibilityforthisfundamentalsetis{χw0, χ"
+  },
+  {
+   "page": 21,
+   "mark": "f",
+   "context": "ring.Onepossibilityforthisfundamentalsetis{χw0, χf, χ"
+  },
+  {
+   "page": 21,
+   "mark": "w",
+   "context": "set{χ"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "set{χw"
+  },
+  {
+   "page": 21,
+   "mark": "w",
+   "context": "set{χw0 ,χ"
+  },
+  {
+   "page": 21,
+   "mark": "20",
+   "context": "set{χw0 ,χw"
+  },
+  {
+   "page": 21,
+   "mark": "w",
+   "context": "set{χw0 ,χw20 ,χ"
+  },
+  {
+   "page": 21,
+   "mark": "10",
+   "context": "set{χw0 ,χw20 ,χw"
+  },
+  {
+   "page": 21,
+   "mark": "w",
+   "context": "set{χw0 ,χw20 ,χw10} = {χ"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "set{χw0 ,χw20 ,χw10} = {χw"
+  },
+  {
+   "page": 21,
+   "mark": "f",
+   "context": "set{χw0 ,χw20 ,χw10} = {χw0 ,γ χ"
+  },
+  {
+   "page": 21,
+   "mark": "f",
+   "context": "set{χw0 ,χw20 ,χw10} = {χw0 ,γ χf ,γ−1χ"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "f"
+  },
+  {
+   "page": 21,
+   "mark": "w",
+   "context": "f0= χ"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "f0= χw"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "f0= χw0,f"
+  },
+  {
+   "page": 21,
+   "mark": "w",
+   "context": "f0= χw0,f1= χ"
+  },
+  {
+   "page": 21,
+   "mark": "20",
+   "context": "f0= χw0,f1= χw"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "f0= χw0,f1= χw20,f"
+  },
+  {
+   "page": 21,
+   "mark": "w",
+   "context": "f0= χw0,f1= χw20,f2= χ"
+  },
+  {
+   "page": 21,
+   "mark": "10",
+   "context": "f0= χw0,f1= χw20,f2= χw"
+  },
+  {
+   "page": 21,
+   "mark": "f",
+   "context": "f0= χw0,f1= χw20,f2= χw10.TheweightdiagramsG"
+  },
+  {
+   "page": 21,
+   "mark": "j",
+   "context": "f0= χw0,f1= χw20,f2= χw10.TheweightdiagramsGf"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "χ¯Λ"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "χ¯Λ"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "a∈A"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "a∈A"
+  },
+  {
+   "page": 21,
+   "mark": "a",
+   "context": "a∈Aa ¯γ−1"
+  },
+  {
+   "page": 21,
+   "mark": "j",
+   "context": "rewrittenforthetrialityzerocounterparts{f"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "M"
+  },
+  {
+   "page": 21,
+   "mark": "w",
+   "context": "u= m"
+  },
+  {
+   "page": 21,
+   "mark": "0",
+   "context": "u= mw"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "u,M"
+  },
+  {
+   "page": 21,
+   "mark": "w",
+   "context": "u= m"
+  },
+  {
+   "page": 21,
+   "mark": "20",
+   "context": "u= mw"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": ",M"
+  },
+  {
+   "page": 21,
+   "mark": "w",
+   "context": "u= m"
+  },
+  {
+   "page": 21,
+   "mark": "10",
+   "context": "u= mw"
+  },
+  {
+   "page": 21,
+   "mark": "j",
+   "context": "M"
+  },
+  {
+   "page": 21,
+   "mark": "j",
+   "context": "M"
+  },
+  {
+   "page": 21,
+   "mark": "z",
+   "context": "zy−1 χ"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "=kthenthesetsG"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "=kthenthesetsGf"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "=kthenthesetsGfi"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "=kthenthesetsGfix,for"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "=kthenthesetsGfix,fori=1,"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "=kthenthesetsGfix,fori=1, 2,have"
+  },
+  {
+   "page": 22,
+   "mark": "w",
+   "context": "4.9TheringWisgeneratedasapolynomialringbyχ"
+  },
+  {
+   "page": 22,
+   "mark": "w",
+   "context": "4.9TheringWisgeneratedasapolynomialringbyχw0,χ"
+  },
+  {
+   "page": 22,
+   "mark": "w",
+   "context": "4.9TheringWisgeneratedasapolynomialringbyχw0,χw10,χ"
+  },
+  {
+   "page": 22,
+   "mark": "w",
+   "context": "χ"
+  },
+  {
+   "page": 22,
+   "mark": "w",
+   "context": "χw0χ"
+  },
+  {
+   "page": 22,
+   "mark": "w",
+   "context": "χw0χw0= 2 χ"
+  },
+  {
+   "page": 22,
+   "mark": "w",
+   "context": "χw0χw0= 2 χw0+ 1 + χ"
+  },
+  {
+   "page": 22,
+   "mark": "w",
+   "context": "χw0χw0= 2 χw0+ 1 + χw10+ χ"
+  },
+  {
+   "page": 22,
+   "mark": "y",
+   "context": "Wewanttoshowthatanyχ"
+  },
+  {
+   "page": 22,
+   "mark": "y",
+   "context": "c"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "ε,n1,n2"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "0"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "0f"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "0f n"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "1"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "1f"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "1f n"
+  },
+  {
+   "page": 22,
+   "mark": "y",
+   "context": "c"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "ε,n"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "ε,n1,n"
+  },
+  {
+   "page": 22,
+   "mark": "w",
+   "context": "≤1= {1 ,"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "≤1= {1 ,w"
+  },
+  {
+   "page": 22,
+   "mark": "10",
+   "context": "=2= {w"
+  },
+  {
+   "page": 22,
+   "mark": "w",
+   "context": "=2= {w10 ,"
+  },
+  {
+   "page": 22,
+   "mark": "20",
+   "context": "=2= {w10 ,w"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "c"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "ε,n1,n2"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "0"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "0f"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "0f n"
+  },
+  {
+   "page": 22,
+   "mark": "f",
+   "context": "1"
+  },
+  {
+   "page": 22,
+   "mark": "n",
+   "context": "1f"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "1f n"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "c"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "(M"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "M"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "uεu"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "uεu1,"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "uεu1,1 . . . u"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "uεu1,1 . . . u1,n1u"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "uεu1,1 . . . u1,n1u2,"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "uεu1,1 . . . u1,n1u2,1 . . . u"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "oftheabovesumsareactuallyﬁnitesums.Writingχ"
+  },
+  {
+   "page": 22,
+   "mark": "m",
+   "context": "z"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "zm"
+  },
+  {
+   "page": 22,
+   "mark": "z",
+   "context": "z"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "m"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "c"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "M"
+  },
+  {
+   "page": 22,
+   "mark": "x",
+   "context": "ui,j+ c"
+  },
+  {
+   "page": 22,
+   "mark": "0",
+   "context": "M"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "M"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "u"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "u1,"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "u1,1 . . . u"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "u1,1 . . . u1,n1u"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "u1,1 . . . u1,n1u2,"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "u1,1 . . . u1,n1u2,1 . . . u"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "u1,1 . . . u1,n1u2,1 . . . u2,n2=zanduu"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "u1,1 . . . u1,n1u2,1 . . . u2,n2=zanduu1,"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "u1,1 . . . u1,n1u2,1 . . . u2,n2=zanduu1,1 . . . u"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "u1,1 . . . u1,n1u2,1 . . . u2,n2=zanduu1,1 . . . u1,n1u"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "u1,1 . . . u1,n1u2,1 . . . u2,n2=zanduu1,1 . . . u1,n1u2,"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": " . . u1,n1u2,1 . . . u2,n2=zanduu1,1 . . . u1,n1u2,1 . . . u"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "M"
+  },
+  {
+   "page": 22,
+   "mark": "i",
+   "context": "M"
+  },
+  {
+   "page": 22,
+   "mark": "u",
+   "context": "ui,j"
+  },
+  {
+   "page": 22,
+   "mark": "u",
+   "context": "ui,jui,j)χ"
+  },
+  {
+   "page": 22,
+   "mark": "u",
+   "context": "ui,jχ"
+  },
+  {
+   "page": 22,
+   "mark": "u",
+   "context": "ui,jχui,j"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "W[A]moduloaquadraticrelation,˜W=˜V[F]/{F"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "W = V[F]/{F"
+  },
+  {
+   "page": 23,
+   "mark": "k",
+   "context": "Beginningwiththissectionwewillanalysethecaseofg=bsl(3)"
+  },
+  {
+   "page": 23,
+   "mark": "3",
+   "context": "admissibleweightsof[12]whichwewilldescribeinmoredetail."
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "Therationalityofκhastwoconsequences–fory∈˜Wthemapy7→y· kΛ"
+  },
+  {
+   "page": 23,
+   "mark": "p",
+   "context": "Wgeneratedbyγ[p]:=t"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "A[p]· kΛ"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "A[p]· kΛ0= kΛ"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "Lety∈˜WandP={Λ=y·kΛ"
+  },
+  {
+   "page": 23,
+   "mark": "y",
+   "context": "reﬂections{w"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "· kΛ"
+  },
+  {
+   "page": 23,
+   "mark": "0",
+   "context": "· kΛ"
+  },
+  {
+   "page": 24,
+   "mark": "k",
+   "context": "+,pcoincideswiththeintegrablealcoveP"
+  },
+  {
+   "page": 24,
+   "mark": "k",
+   "context": "+atlevel"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "A[p]∪w"
+  },
+  {
+   "page": 24,
+   "mark": "p",
+   "context": "A[p]∪w0t−P"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "∪A w"
+  },
+  {
+   "page": 24,
+   "mark": "p",
+   "context": "∪A w0t−P"
+  },
+  {
+   "page": 24,
+   "mark": "p",
+   "context": "parametrisedbythetwoalcovesP"
+  },
+  {
+   "page": 24,
+   "mark": "p",
+   "context": "andP"
+  },
+  {
+   "page": 24,
+   "mark": "l",
+   "context": "[p]= γ"
+  },
+  {
+   "page": 24,
+   "mark": "t",
+   "context": "[p]= γl"
+  },
+  {
+   "page": 24,
+   "mark": "p",
+   "context": "λ ∈P"
+  },
+  {
+   "page": 24,
+   "mark": "l",
+   "context": "t−λ γ"
+  },
+  {
+   "page": 24,
+   "mark": "w",
+   "context": "[p]= γ−l"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "[p]= γ−l w"
+  },
+  {
+   "page": 24,
+   "mark": "t",
+   "context": "[p]= γ−l w0"
+  },
+  {
+   "page": 24,
+   "mark": "l",
+   "context": "w0 t−λ γ"
+  },
+  {
+   "page": 24,
+   "mark": "p",
+   "context": "λ ∈P"
+  },
+  {
+   "page": 24,
+   "mark": "k",
+   "context": "γ(λ + kΛ0)=w12(λ) + k¯Λ1denotestheautomorphismofthealcoveP"
+  },
+  {
+   "page": 24,
+   "mark": "w",
+   "context": "W"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "w"
+  },
+  {
+   "page": 24,
+   "mark": "0",
+   "context": "w0 · (ι(y) + (3p −3)Λ"
+  },
+  {
+   "page": 24,
+   "mark": "3",
+   "context": "P"
+  },
+  {
+   "page": 24,
+   "mark": "p",
+   "context": "P3"
+  },
+  {
+   "page": 25,
+   "mark": "p",
+   "context": "ι(σp(x)) = σ"
+  },
+  {
+   "page": 25,
+   "mark": "p",
+   "context": "Geometricallyσ"
+  },
+  {
+   "page": 25,
+   "mark": "w",
+   "context": "ρ,or"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "ρ,orw"
+  },
+  {
+   "page": 25,
+   "mark": "t",
+   "context": "ρ,orw0"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "convertedintoC-valued‘q’-characters,labelledbytheset{λ∈P"
+  },
+  {
+   "page": 25,
+   "mark": "0",
+   "context": "w · (µ + kΛ"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "wecanrestrictthe‘dual’set(thesetofµ’s)totheintegrablealcoveP"
+  },
+  {
+   "page": 25,
+   "mark": "a",
+   "context": "λ µ,"
+  },
+  {
+   "page": 25,
+   "mark": "h",
+   "context": "λ(µ) ,µ∈P"
+  },
+  {
+   "page": 26,
+   "mark": "k",
+   "context": "discreteset{µ ∈P"
+  },
+  {
+   "page": 26,
+   "mark": "p",
+   "context": "E"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "Ep= {µ ∈P+ |0 ≤⟨µ, α"
+  },
+  {
+   "page": 26,
+   "mark": "p",
+   "context": "= P"
+  },
+  {
+   "page": 26,
+   "mark": "p",
+   "context": "wθ(P"
+  },
+  {
+   "page": 26,
+   "mark": "p",
+   "context": "∩P2"
+  },
+  {
+   "page": 26,
+   "mark": "p",
+   "context": "⊂P3"
+  },
+  {
+   "page": 26,
+   "mark": "p",
+   "context": "++)+p θ} ,contains"
+  },
+  {
+   "page": 26,
+   "mark": "p",
+   "context": "Thisset,whichcanbealsolookedasP"
+  },
+  {
+   "page": 26,
+   "mark": "p",
+   "context": "∪{wθ(P"
+  },
+  {
+   "page": 26,
+   "mark": "p",
+   "context": "|E"
+  },
+  {
+   "page": 26,
+   "mark": "h",
+   "context": "integrable ‘dual’ set {µ ∈P"
+  },
+  {
+   "page": 26,
+   "mark": "p",
+   "context": "},see ﬁgs.9a, 9b,where E"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "P"
+  },
+  {
+   "page": 26,
+   "mark": "p",
+   "context": "integrablealcoveatlevel3p −3,P3"
+  },
+  {
+   "page": 26,
+   "mark": "l",
+   "context": ",obtainedafteridentifyingthepointsσ"
+  },
+  {
+   "page": 26,
+   "mark": "p",
+   "context": "alongan orbitofthe σautomorphismofP3"
+  },
+  {
+   "page": 26,
+   "mark": "p",
+   "context": "Forp>2thisfactorisationleadstoasubsetofthealcoveP3"
+  },
+  {
+   "page": 26,
+   "mark": "p",
+   "context": "|E"
+  },
+  {
+   "page": 26,
+   "mark": "p",
+   "context": "|Ep| + |P"
+  },
+  {
+   "page": 26,
+   "mark": "p",
+   "context": "| > |E"
+  },
+  {
+   "page": 26,
+   "mark": "y",
+   "context": "w) χ"
+  },
+  {
+   "page": 26,
+   "mark": "y",
+   "context": "χy a(·) = χ"
+  },
+  {
+   "page": 27,
+   "mark": "y",
+   "context": "χy tp ν(·) = χ"
+  },
+  {
+   "page": 27,
+   "mark": "y",
+   "context": "Theformula(3.25)forthecharactersχ"
+  },
+  {
+   "page": 27,
+   "mark": "p",
+   "context": "λ(µ)at(shifted)level"
+  },
+  {
+   "page": 27,
+   "mark": "p",
+   "context": "µ ∈P"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "ﬁxtheintegerltol=pmod3(usingthatp"
+  },
+  {
+   "page": 28,
+   "mark": "m",
+   "context": "thus changing the value of µ to µ′= σ"
+  },
+  {
+   "page": 28,
+   "mark": "p",
+   "context": "[p−3](µ) ∈P"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "F"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "F2→F"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "F"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "F"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "3p⟨α"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "3p⟨α"
+  },
+  {
+   "page": 28,
+   "mark": "p",
+   "context": "3 S(3"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "e¯a(θ)κ(µ) = (R(µ))"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "e¯a(θ)κ(µ) = (R(µ))3−( ¯R(µ))"
+  },
+  {
+   "page": 28,
+   "mark": "p",
+   "context": "3S(3"
+  },
+  {
+   "page": 29,
+   "mark": "p",
+   "context": ":= P"
+  },
+  {
+   "page": 29,
+   "mark": "y",
+   "context": "y(µ) ,"
+  },
+  {
+   "page": 29,
+   "mark": "p",
+   "context": "y(0)expressedbythe‘q’-dimensionsoftheintegrablelevel"
+  },
+  {
+   "page": 29,
+   "mark": "p",
+   "context": ",µ ∈E"
+  },
+  {
+   "page": 29,
+   "mark": "x",
+   "context": "w′)m"
+  },
+  {
+   "page": 29,
+   "mark": "x",
+   "context": "w)m"
+  },
+  {
+   "page": 29,
+   "mark": "y",
+   "context": "Sincethebasicrelations(4.1),(4.2)areconservedthemapχ"
+  },
+  {
+   "page": 29,
+   "mark": "a",
+   "context": "y(µ)is"
+  },
+  {
+   "page": 29,
+   "mark": "m",
+   "context": "takeγ"
+  },
+  {
+   "page": 29,
+   "mark": "y",
+   "context": "y(µ) ,"
+  },
+  {
+   "page": 29,
+   "mark": "m",
+   "context": "γ"
+  },
+  {
+   "page": 29,
+   "mark": "p",
+   "context": "reducesto(6.20),(6.21)duetothesymmetry(3"
+  },
+  {
+   "page": 29,
+   "mark": "y",
+   "context": "y(µ) ,"
+  },
+  {
+   "page": 29,
+   "mark": "p",
+   "context": "(3"
+  },
+  {
+   "page": 29,
+   "mark": "a",
+   "context": "ι(x) ι(y),"
+  },
+  {
+   "page": 29,
+   "mark": "z",
+   "context": "ι(x) ι(y),a ∈A,i.e.,thesymmetries(4.11),(4.12)extendto(p)N"
+  },
+  {
+   "page": 29,
+   "mark": "y",
+   "context": "x,ay=(p)N"
+  },
+  {
+   "page": 29,
+   "mark": "z",
+   "context": "x,z∗=(p)N"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": ",(p)N"
+  },
+  {
+   "page": 30,
+   "mark": "p",
+   "context": "σp(y)(σ"
+  },
+  {
+   "page": 30,
+   "mark": "y",
+   "context": "σp(y)(σp(y) ,"
+  },
+  {
+   "page": 30,
+   "mark": "p",
+   "context": "(p)Nσ"
+  },
+  {
+   "page": 30,
+   "mark": "z",
+   "context": "x,σp(y)=(p)N"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "γ"
+  },
+  {
+   "page": 30,
+   "mark": "2",
+   "context": "γ2t−σ"
+  },
+  {
+   "page": 30,
+   "mark": "p",
+   "context": "χ(3"
+  },
+  {
+   "page": 30,
+   "mark": "p",
+   "context": "χ(3"
+  },
+  {
+   "page": 30,
+   "mark": "3",
+   "context": "ι(y)(µ)at(shifted)level"
+  },
+  {
+   "page": 30,
+   "mark": "p",
+   "context": "ι(y)(µ)at(shifted)level3"
+  },
+  {
+   "page": 30,
+   "mark": "p",
+   "context": "ι(y)(µ)at(shifted)level3p.SinceE"
+  },
+  {
+   "page": 30,
+   "mark": "3",
+   "context": "ι(y)(µ)at(shifted)level3p.SinceEp⊂P"
+  },
+  {
+   "page": 30,
+   "mark": "p",
+   "context": "ι(y)(µ)at(shifted)level3p.SinceEp⊂P 3"
+  },
+  {
+   "page": 30,
+   "mark": "p",
+   "context": "χ(3"
+  },
+  {
+   "page": 30,
+   "mark": "p",
+   "context": ",takingµ∈E"
+  },
+  {
+   "page": 30,
+   "mark": "p",
+   "context": "∩E"
+  },
+  {
+   "page": 30,
+   "mark": "p",
+   "context": "χ(3"
+  },
+  {
+   "page": 30,
+   "mark": "3",
+   "context": "ι(y)(µ)at(shifted)level"
+  },
+  {
+   "page": 30,
+   "mark": "p",
+   "context": "ι(y)(µ)at(shifted)level3"
+  },
+  {
+   "page": 30,
+   "mark": "p",
+   "context": "Lemma6.2Letµ ∈E"
+  },
+  {
+   "page": 30,
+   "mark": "p",
+   "context": "Oneeasilychecksthatforµ ∈E"
+  },
+  {
+   "page": 30,
+   "mark": "p",
+   "context": ",µ ∈E"
+  },
+  {
+   "page": 30,
+   "mark": "y",
+   "context": "in(6.19)byε"
+  },
+  {
+   "page": 30,
+   "mark": "p",
+   "context": "χ(3"
+  },
+  {
+   "page": 31,
+   "mark": "p",
+   "context": "χ(3"
+  },
+  {
+   "page": 31,
+   "mark": "p",
+   "context": "χ(3"
+  },
+  {
+   "page": 31,
+   "mark": "r",
+   "context": "ρ= rε"
+  },
+  {
+   "page": 31,
+   "mark": "p",
+   "context": "ions (6.16), (6.17) it follows that r−ε(µ)̸ = 0 for any µ ∈E"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "R"
+  },
+  {
+   "page": 31,
+   "mark": "y",
+   "context": "y(µ) = ε"
+  },
+  {
+   "page": 31,
+   "mark": "d",
+   "context": "y(µ) = εy(µ)"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "\u0000 ¯R"
+  },
+  {
+   "page": 31,
+   "mark": "p",
+   "context": "andµ ∈E"
+  },
+  {
+   "page": 31,
+   "mark": "p",
+   "context": "χ(3"
+  },
+  {
+   "page": 31,
+   "mark": "p",
+   "context": "χ(3"
+  },
+  {
+   "page": 31,
+   "mark": "p",
+   "context": "ι(y)(µ) at level 3"
+  },
+  {
+   "page": 31,
+   "mark": "p",
+   "context": "χ(3"
+  },
+  {
+   "page": 31,
+   "mark": "3",
+   "context": "Lemma6.4Forµ ∈P"
+  },
+  {
+   "page": 31,
+   "mark": "p",
+   "context": "Lemma6.4Forµ ∈P3"
+  },
+  {
+   "page": 31,
+   "mark": "p",
+   "context": "χ(3"
+  },
+  {
+   "page": 31,
+   "mark": "p",
+   "context": "χ(3"
+  },
+  {
+   "page": 31,
+   "mark": "p",
+   "context": "χ(3"
+  },
+  {
+   "page": 31,
+   "mark": "p",
+   "context": "(3"
+  },
+  {
+   "page": 31,
+   "mark": "3",
+   "context": "Forµ ∈P"
+  },
+  {
+   "page": 31,
+   "mark": "p",
+   "context": "Forµ ∈P3"
+  },
+  {
+   "page": 31,
+   "mark": "3",
+   "context": "∆+ ,l∈Z ,andλ ∈P"
+  },
+  {
+   "page": 31,
+   "mark": "p",
+   "context": "∆+ ,l∈Z ,andλ ∈P3"
+  },
+  {
+   "page": 31,
+   "mark": "p",
+   "context": "χ(3"
+  },
+  {
+   "page": 32,
+   "mark": "p",
+   "context": "ρ=3 λ′,forsomeλ′∈P"
+  },
+  {
+   "page": 32,
+   "mark": "p",
+   "context": "χ(3"
+  },
+  {
+   "page": 32,
+   "mark": "3",
+   "context": "∩P"
+  },
+  {
+   "page": 32,
+   "mark": "p",
+   "context": "∩P3"
+  },
+  {
+   "page": 32,
+   "mark": "p",
+   "context": "3 S(3"
+  },
+  {
+   "page": 32,
+   "mark": "3",
+   "context": "the whole Epand accordingly the triality zero points in P"
+  },
+  {
+   "page": 32,
+   "mark": "p",
+   "context": "the whole Epand accordingly the triality zero points in P3"
+  },
+  {
+   "page": 32,
+   "mark": "3",
+   "context": "≡P"
+  },
+  {
+   "page": 32,
+   "mark": "b",
+   "context": "labelledby{λ=(0, 0) ,(3, 0) ,(0, 3) ,(1, 1)} .Thusthe"
+  },
+  {
+   "page": 32,
+   "mark": "k",
+   "context": "labelledby{λ=(0, 0) ,(3, 0) ,(0, 3) ,(1, 1)} .Thusthebsl(3)"
+  },
+  {
+   "page": 32,
+   "mark": "b",
+   "context": "analogoustothe"
+  },
+  {
+   "page": 32,
+   "mark": "k",
+   "context": "analogoustothebsl(2)"
+  },
+  {
+   "page": 32,
+   "mark": "p",
+   "context": "χ(2"
+  },
+  {
+   "page": 32,
+   "mark": "y",
+   "context": "ι(y)(µ) ,"
+  },
+  {
+   "page": 32,
+   "mark": "b",
+   "context": "subalgebraofthe"
+  },
+  {
+   "page": 32,
+   "mark": "b",
+   "context": "any"
+  },
+  {
+   "page": 32,
+   "mark": "k",
+   "context": "anybsl(n)"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "Wehavefoundp"
+  },
+  {
+   "page": 32,
+   "mark": "y",
+   "context": "y(µ) ,"
+  },
+  {
+   "page": 32,
+   "mark": "p",
+   "context": "}withµ ∈E"
+  },
+  {
+   "page": 32,
+   "mark": "y",
+   "context": "to(6.20)provideeigenvectorscommontoallfusionmatricesN"
+  },
+  {
+   "page": 32,
+   "mark": "z",
+   "context": ",(Ny)"
+  },
+  {
+   "page": 32,
+   "mark": "y",
+   "context": "y,x,andforany"
+  },
+  {
+   "page": 32,
+   "mark": "p",
+   "context": "Lemma7.1Letµ , µ′∈E"
+  },
+  {
+   "page": 32,
+   "mark": "j",
+   "context": "fj(µ′) ,"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "fj(µ′) ,j= 0,"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "fj(µ′) ,j= 0, 1,"
+  },
+  {
+   "page": 32,
+   "mark": "0",
+   "context": "w · (µ + (p −3)Λ"
+  },
+  {
+   "page": 32,
+   "mark": "z",
+   "context": "structureconstants(p)N"
+  },
+  {
+   "page": 32,
+   "mark": "p",
+   "context": "∀µ ,µ′∈E"
+  },
+  {
+   "page": 33,
+   "mark": "p",
+   "context": "andhence{χ(µ) ,µ ∈E"
+  },
+  {
+   "page": 33,
+   "mark": "p",
+   "context": "leastforµ∈E"
+  },
+  {
+   "page": 33,
+   "mark": "p",
+   "context": "andµ ∈E"
+  },
+  {
+   "page": 33,
+   "mark": "p",
+   "context": "3 S(3"
+  },
+  {
+   "page": 33,
+   "mark": "p",
+   "context": "=S(3"
+  },
+  {
+   "page": 33,
+   "mark": "p",
+   "context": "From(6.29),(6.31),itfollowsthatforµ ∈E"
+  },
+  {
+   "page": 33,
+   "mark": "p",
+   "context": "χ(3"
+  },
+  {
+   "page": 33,
+   "mark": "l",
+   "context": "δµ,σ"
+  },
+  {
+   "page": 33,
+   "mark": "p",
+   "context": "3S(3"
+  },
+  {
+   "page": 33,
+   "mark": "3",
+   "context": "λ∈P"
+  },
+  {
+   "page": 33,
+   "mark": "p",
+   "context": "λ∈P3"
+  },
+  {
+   "page": 33,
+   "mark": "3",
+   "context": "Thelastequalityholdsforanyµ∈P"
+  },
+  {
+   "page": 33,
+   "mark": "p",
+   "context": "Thelastequalityholdsforanyµ∈P3"
+  },
+  {
+   "page": 33,
+   "mark": "p",
+   "context": "matricesS(3"
+  },
+  {
+   "page": 34,
+   "mark": "3",
+   "context": "ofthecyclotomicextensionQ[ω]oftherationalnumbersforω"
+  },
+  {
+   "page": 34,
+   "mark": "p",
+   "context": "ofthecyclotomicextensionQ[ω]oftherationalnumbersforω3"
+  },
+  {
+   "page": 34,
+   "mark": "w",
+   "context": "Themultiplication ruleencodedinthe productofthe characterχ"
+  },
+  {
+   "page": 34,
+   "mark": "y",
+   "context": "plication ruleencodedinthe productofthe characterχw0withanyχ"
+  },
+  {
+   "page": 35,
+   "mark": "b",
+   "context": "Awata,H.,andYamada,Y.:Fusionrulesforthefractionallevel"
+  },
+  {
+   "page": 35,
+   "mark": "b",
+   "context": "nilpotentsubalgebrasof"
+  },
+  {
+   "page": 35,
+   "mark": "b",
+   "context": "B.L.,andMalikov,F.G.:Modularfunctorandrepresentationtheoryof"
+  },
+  {
+   "page": 35,
+   "mark": "645",
+   "context": "2.Nucl.Phys.B518[PM],"
+  }
+ ]
+}

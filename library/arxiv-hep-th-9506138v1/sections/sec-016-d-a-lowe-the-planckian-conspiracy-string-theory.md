@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-hep-th-9506138v1
-doc_title: "arXiv:hep-th/9506138v1 21 Jun 1995"
+doc_title: "Black Hole Complementarity vs. Locality"
 section_id: sec-016-d-a-lowe-the-planckian-conspiracy-string-theory
 section_title: "A. Lowe, The Planckian Conspiracy: String Theory and the Black Hole Information"
 section_number: D
@@ -8,6 +8,7 @@ pages: 28-28
 source_pdf: 9506138v1.pdf
 source_sha256: bb85afba0530402c
 toc_source: inferred
+doc_brief: "Black Hole Complementarity vs. Locality — 18 sections: Front matter; Introduction; The Nice-Slice Argument"
 ---
 Paradox, preprint UCSBTH-95-11, hep-th/9505074.
 [15]
@@ -36,4 +37,3 @@ D. A. Lowe, Phys. Lett. B326 (1994) 223.
 D. A. Lowe, L. Susskind, and J. Uglum, Phys. Lett. B327 (1994) 226.
 [26]
 J. D. Bjorken and S. D. Drell, Relativistic Quantum Fields, McGraw Hill, 1965.
-27

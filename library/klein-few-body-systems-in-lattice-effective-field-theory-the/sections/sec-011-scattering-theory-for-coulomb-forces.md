@@ -8,6 +8,7 @@ pages: 24-25
 source_pdf: klein-few-body-systems-in-lattice-effective-field-theory-thesis.pdf
 source_sha256: 7ecafdd08255d5c6
 toc_source: outline
+doc_brief: "Few-Body Systems in Lattice Effective Field Theory — 62 sections: Front matter; Introduction and Motivation; The standard model of particle phy"
 ---
 Beside the strong interaction between particles, we also have the electromagnetic interaction, which must
 be treated separately. The beforementioned considerations concerning the solution of the free system

@@ -1,0 +1,76 @@
+---
+doc_id: m4-24
+doc_title: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface"
+section_id: page-023
+section_title: "Page 23"
+section_number: null
+pages: 23-23
+source_pdf: m4-24.pdf
+source_sha256: cf7c5e29b818e647
+toc_source: undetermined
+doc_brief: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3"
+---
+Problems on invariants of knots and 3-manifolds 395
+
+Noting that each summand of (3) is real-valued, we have that
+
+In (K4,) = > exp (Sim(tis(e2) —Lig(e2™"v-/")) + O(log N)).
+O0<n<N
+
+The asymptotic behaviour of this sum can be described by the maximal point
+
+zo of Im(Lig(1/z) — Lig(z)) on the unit circle {z € C | |z| = 1}. Im fact this z
+
+is a critical point of Lig(1/z) — Lig(z) in C, and hence Im(Lig(1/z0) — Lia(zo))
+
+gives the hyperbolic volume of S$? — k4,. Therefore, the conjecture holds in
+
+this case.
+
+Next, we sketch a formal argument toward Conjecture 1.19 for the knot Ks,.
+Following [198], we have that
+
+(Di —m(n+1)
+In (Kos) = > @:,! )
+0<m<n<N Dm
+where the asterisk implies the complex conjugate. By applying the formal
+
+approximation®
+
+(q)n y exp (Saw) - Lie), (4)
+
+(a) = ep (Sa (Line?) — Lin(t))),
+
+we have that
+
+N mr . 2anV/—-1/l
+JIn(K5,) y > exp (—= — — Qhiy(e?” vAT/N)
+
+© 0<m<n<N
+
+: F 27n 2am
+Li —2rm/—1/N
+infer ’ ) N N )):
+
+Further, by formally replacing’ the sum with an integral putting t = n/N and
+s=m/N, we have that
+
+N We
+Jn (Ks maa (opin (e27V—t
+in ( oe) 2? oeectcl > on = 5 ig(e )
+— Lig(e2"Y-5) + ant. 2s) dsdt (5)
+
+N? We dw dz
+
+= [ox mat — 2hig(z) — Lis(=) — log zlog w) ——,
+
+An? wz
+
+It might be difficult to justify this approximation in a usual sense, since the argument of
+(qn; given by (q)n = |(Qn|- qo ""t?/?(—/—1)", changes discretely and quickly near the
+limit.
+
+“It might be seriously difficult to justify this replacement, since there is a large parameter
+N in the power of the summand, which exponentially contributes the summand.
+
+Geometry & Topology Monographs, Volume 4 (2002)

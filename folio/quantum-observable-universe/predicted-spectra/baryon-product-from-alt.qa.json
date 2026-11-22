@@ -1,6 +1,6 @@
 {
   "$schema": "block-qa/v1",
-  "label": "prop:baryon-product-from-alt",
+  "label": "conj:baryon-product-from-alt",
   "kind": "proposition",
   "paths": {
     "ts": "folio/quantum-observable-universe/predicted-spectra/baryon-product-from-alt.ts",
@@ -60,6 +60,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "7b5d93987574",
+          "ts": "073caa9b5ef7",
+          "lean": "7476f1b7ab99",
+          "lean_statement": "c5dfa133dda4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:55:59.920Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "Sibling `.lean:79` (ref resolves only there) proves the 3×3 Vandermonde factorisation (b c²−c b²) − a(c²−b²) + a²(c−b) = (b−a)(c−a)(c−b) over ℝ by `ring`; no colour-tube cubic, no derivatives, no S₃ projection (and ℝ although the block says \"purely algebraic over R\"). Proof: the final identity (∏ dc_k/dz)² = 1/Δ(z) (prf:85-92) is false for the block's own cubic F = c³+(4z+1)c²+(6z²+3z+1)c+(4z³+3z²+2z+1): exactly (sympy resultants), (∏dc_k/dz)² = (∏F_z(c_k)/∏F_c(c_k))² = (64z⁶+96z⁵+120z⁴+160z³+105z²+66z+39)²/(16z⁶+…+16)², while 1/Δ = −1/(16z⁶+24z⁵+35z⁴+50z³+35z²+24z+16); at z=1: 169/16 vs −1/200. The broken step is \"∏ dc_k/dz = (−1)³ V₃/J(z)\" (prf:75-80): implicit differentiation puts ∏ ∂F/∂z(c_k), not the Vandermonde V₃, in the numerator. Earlier steps are also inconsistent: V is first decomposed as Sym³⊕Alt³⊕Std^{⊕2} \"summing to 4\" then said to be the rank-3 permutation module (prf:12-16); dc_k/dz is used both as a basis vector of V and as a scalar (prf:41-57). The product ∏ dc_k/dz is a symmetric function of the sheets, so calling it the sign-isotype projection needs the frame identification, which is a choice, not a projection"
       }
     ],
     "milnor-amalgamated-flow": [
@@ -2299,6 +2317,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-30T12:04:34.756Z",
+  "updated_at": "2026-11-15T21:55:59.920Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

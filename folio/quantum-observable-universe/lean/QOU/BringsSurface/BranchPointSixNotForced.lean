@@ -34,7 +34,7 @@ that has only a partial olean tree.
 
 * **60 Weierstrass points, `Aut(B) = S₅` transitive, `60 = 6 × 10`** — Braden &
   Disney-Hogg, *Bring's curve: old and new*, Prop. 3.3 and the paragraph after
-  it (`library/s40879-023-00706-0/sections/sec-006-31-weierstrass-points.md`),
+  it (`library/s40879-023-00706-0/sections/sec-008-31-weierstrass-points.md`),
   registered `[braden-disney-hogg-2022]`.
 * **The `(2,4,5)` triangle group, `[Γ* : Γ] = |S₅| = 120`, `B = Δ/Γ` of genus 4**
   — Riera & Rodríguez, *The period matrix of Bring's curve*, §2

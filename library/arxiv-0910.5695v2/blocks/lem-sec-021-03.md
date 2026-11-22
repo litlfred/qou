@@ -1,0 +1,1 @@
+The following equations hold in Rep(S0; F): (1) αn̸ = 0 for n ≥0. (2) βn̸ = 0 for n ≥0. (3) γn̸ = 0 for n > 0. (4) γ2 n = 0 for n > 0, hence γn is not a scalar multiple of sn. (5) β0α0 = 0. (6) βnαn = γn for n > 0. (7) αn−1βn−1 = γn for n > 0. (8) αnαn−1 = 0 for n > 0. (9) βn−1βn = 0 for n > 0.

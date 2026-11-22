@@ -8,7 +8,7 @@ blocks) gives, for any α ∈ H_{n-1}(q) below the boundary,
 
     τ_M(α · σ) = z · τ_M(α)        (positive interface)
 
-with z = 1/(q^{1/2} + q^{-1/2}) the Markov parameter. For a
+with z = q³/(q² + 1) the Markov parameter (convention D). For a
 negative interface generator σ⁻¹ (corresponding to an n-n boundary
 in the canonical atomic braid), the Hecke skein relation
 σ⁻¹ = σ - h·1 with h = q - q⁻¹, combined with linearity of τ_M,
@@ -114,10 +114,9 @@ class MarkovTraceAlgebra (R : Type*) [CommRing R] where
     This is just the Markov axiom for the canonical Markov trace
     applied at the interface generator.
 
-    **Empirical verification.**  At q_0 ≈ 1.110 (substrate
-    parameter), this ratio is exactly z(q_0) = 0.499320334... per
-    `delta_lambda_fr_identity_phase5c.py`, measured to 0.0001 %
-    accuracy across the (D → ³He) and (T → ⁴He) per-Z transitions.
+    **Value.**  Under convention D, z(q) = q³/(q² + 1), so
+    z(q₀) ≈ 0.6127 at the proton pin.  (An earlier version quoted
+    0.49932, the excised convention-C value 1/(q^{1/2} + q^{-1/2}).)
 
     **Structural reading.**  The interface knot Δ_I^K of PR #801 is
     *categorically the Markov-axiom boundary contribution* to the
@@ -150,7 +149,7 @@ def interfaceTrace {R : Type*} [CommRing R] (z h tvac : R) : List Bool → R
   | [] => tvac
   | s :: rest => (if s then z else z - h) * interfaceTrace z h tvac rest
 
--- Ref: [manuscript] prop:interface-knot-markov-z §"Consequences" (1)
+-- Ref: [leitner2026] prop:interface-knot-markov-z §"Consequences" (1)
 /-- **Iterated interface-knot factorisation.**  Folding the per-interface
     factors over the constituent vacuum yields the closed product
 
@@ -205,7 +204,7 @@ class MarkovHeckeSkeinAlgebra (R : Type*) [CommRing R]
                     = z · τ_M(α) - h · τ_M(α)
                     = (z - h) · τ_M(α). -/
 -- Ref: [jones1987] Hecke algebra representations of braid groups
--- Ref: [manuscript] prop:interface-knot-markov-z §"Negative interface variant"
+-- Ref: [leitner2026] prop:interface-knot-markov-z §"Negative interface variant"
 theorem interface_knot_markov_z_negative
     {R : Type*} [CommRing R] [inst : MarkovHeckeSkeinAlgebra R]
     (alpha sigma : R)
@@ -242,7 +241,7 @@ theorem interface_knot_markov_z_negative
     Stated division-free over a generic `CommRing R` (the 1/2 is deferred to
     the archimedean step, per AGENTS.md §7c base-ring convention). -/
 -- Ref: [jones1987] Hecke algebra representations of braid groups
--- Ref: [manuscript] prop:interface-knot-markov-z §"Averaged (bar-invariant) interface"
+-- Ref: [leitner2026] prop:interface-knot-markov-z §"Averaged (bar-invariant) interface"
 -- Ref: prop:averaging-resonance-rule.md
 theorem interface_knot_markov_z_bar_symmetric
     {R : Type*} [CommRing R] [inst : MarkovHeckeSkeinAlgebra R]
@@ -264,7 +263,7 @@ theorem interface_knot_markov_z_bar_symmetric
 /-- **Per-Z step factorisation**: for the per-Z-step transition
     (Z, N) → (Z+1, N), the new interface is a *positive* generator
     (p-p or p-n boundary), contributing a factor of `z`. -/
--- Ref: [manuscript] prop:interface-knot-markov-z §"Per-Z step"
+-- Ref: [leitner2026] prop:interface-knot-markov-z §"Per-Z step"
 theorem interface_knot_markov_z_per_Z_step
     {R : Type*} [CommRing R] [inst : MarkovTraceAlgebra R]
     (beta_prev sigma_interface : R)
@@ -484,14 +483,20 @@ theorem productModel_3body_nonpos {c f_a f_b f_c : ℝ}
                mul_nonneg (sub_nonneg.2 hcc1) (add_nonneg _ha0 _hb0)]
   nlinarith [mul_nonneg hc key]
 
-/-! ### The enhancing escape is foreclosed (no pairwise factor reaches 1)
+/-! ### When no pairwise factor reaches 1
 
 `productModel_3body_nonpos` requires `fᵢ ∈ [0,1]`.  The only way to escape it with a
-*pairwise* interface is an enhancing factor `fᵢ > 1`.  The positive (Markov) factor is
-`z = 1/(t + t⁻¹)` with `t = √q`, and `z ≤ 1/2 < 1` for **all** `q > 0` (AM-GM), so no
-pairwise interface can enhance the trace.  An attractive 3-body force therefore cannot
-come from any pairwise interface factor at all — it needs a genuine non-product
-operator. -/
+*pairwise* interface is an enhancing factor `fᵢ > 1`.  Under convention D the positive
+(Markov) factor is `z = q³/(q² + 1)`, and `z < 1` holds exactly when `q³ < q² + 1`,
+i.e. for `1 < q` below the real root `≈ 1.4656` of `q³ = q² + 1`
+(`markovZD_lt_one_iff`).  The substrate value `q₀ ≈ 1.110` lies in this range, where
+`z ≈ 0.6127`; the other factors `z − h` and `z − h/2` are smaller still for `q > 1`.
+So at `q₀` no pairwise interface enhances the trace, but this is a statement about
+the range of `q`, not about every `q > 0`.
+
+`markovParam_le_half` below is the AM-GM bound `1/(t + t⁻¹) ≤ 1/2`.  With `t = √q`
+the left side is the excised convention-C parameter, so the lemma no longer bounds
+the canonical `z`; it is kept as a true lemma about that expression. -/
 
 /-- For `t > 0`, `t + t⁻¹ ≥ 2` (AM-GM, from `(t-1)² ≥ 0`). -/
 theorem two_le_add_inv {t : ℝ} (ht : 0 < t) : 2 ≤ t + t⁻¹ := by
@@ -499,11 +504,15 @@ theorem two_le_add_inv {t : ℝ} (ht : 0 < t) : 2 ≤ t + t⁻¹ := by
   have : 0 ≤ (t - 1) ^ 2 / t := by positivity
   linarith [h ▸ this]
 
-/-- **No enhancing pairwise interface.** The positive interface factor
-    `z = 1/(t + t⁻¹) ≤ 1/2` for all `t = √q > 0`; in particular `z < 1`, so a pairwise
-    interface always *suppresses* (never enhances) the Markov trace.  Hence the
-    `productModel_3body_nonpos` obstruction has no pairwise-factor escape. -/
+/-- AM-GM: `1/(t + t⁻¹) ≤ 1/2` for `t > 0`.  This bounds the convention-C expression
+    `1/(q^{1/2} + q^{-1/2})`, not the canonical convention-D parameter. -/
 theorem markovParam_le_half {t : ℝ} (ht : 0 < t) : 1 / (t + t⁻¹) ≤ 1 / 2 :=
   one_div_le_one_div_of_le (by norm_num) (two_le_add_inv ht)
+
+/-- **Convention-D Markov parameter below 1.**  For `q > 0`,
+    `q³/(q² + 1) < 1 ↔ q³ < q² + 1`. -/
+theorem markovZD_lt_one_iff {q : ℝ} (hq : 0 < q) :
+    q ^ 3 / (q ^ 2 + 1) < 1 ↔ q ^ 3 < q ^ 2 + 1 :=
+  div_lt_one (by positivity)
 
 end QOU.BraidKnot.Cluster

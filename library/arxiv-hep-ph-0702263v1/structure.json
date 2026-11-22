@@ -6,10 +6,12 @@
   "sha256": "8ae381b4eba60286de841a313e8653030f43c6f6a0c157fcc8043b46b41eb644",
   "bytes": 126602,
   "pages": 12,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -19,16 +21,30 @@
    "stamp_date": "26 Feb 2007"
   },
   "doi": null,
-  "title": "Chiral Low-Energy Constants \u2217 Gerhard Ecker Faculty of Physics, Univ. of Vienna",
-  "authors_raw": "Boltzmanngasse 5, A-1090 Vienna, Austria",
-  "abstract": "The progress in determining the coupling constants of meson ic chi- ral Lagrangians is reviewed, with emphasis on the work perfo rmed in three successive European Networks (Eurodaphne I and II, Eu ridice). Reliable estimates of those constants are essential for mak ing full use of next-to-next-to-leading-order calculations in chiral pe rturbation the- ory. The precision in the values of the strong coupling const ants of O(p4) has been increasing steadily over the years. The situation is less satisfactory in the nonleptonic weak sector where furt her phe- nomenological input and more theoretical work are needed. A lot of progress has recently been achieved for electromagnetic co upling con- stants occurring in radiative corrections for mesonic proc esses at low energies. \u2217Presented at The Final Euridice Meeting, Kazimierz, Poland, Aug. 20 06 Supported in part by EU contract No. MRTN-CT-2006-035482 (FL A VIAnet)",
+  "title": "Chiral Low-Energy Constants ∗",
+  "authors_raw": "Gerhard Ecker",
+  "title_lines": [
+   "Chiral Low-Energy Constants∗"
+  ],
+  "abstract": "The progress in determining the coupling constants of mesonic chi- ral Lagrangians is reviewed, with emphasis on the work performed in three successive European Networks (Eurodaphne I and II, Euridice). Reliable estimates of those constants are essential for making full use of next-to-next-to-leading-order calculations in chiral perturbation the- ory. The precision in the values of the strong coupling constants of O(p4) has been increasing steadily over the years. The situation is less satisfactory in the nonleptonic weak sector where further phe- nomenological input and more theoretical work are needed. A lot of progress has recently been achieved for electromagnetic coupling con- stants occurring in radiative corrections for mesonic processes at low energies. ∗Presented at The Final Euridice Meeting, Kazimierz, Poland, Aug. 2006 Supported in part by EU contract No. MRTN-CT-2006-035482 (FLAVIAnet)",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20211106185051-04'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  }
+   "CreationDate": "D:20211106185051-04'00'"
+  },
+  "title_raw": "Chiral Low-Energy Constants∗",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Chiral Low-Energy Constants ∗",
+   "outline": "Introduction",
+   "text": "Chiral Low-Energy Constants∗",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Chiral Low-Energy Constants ∗ Gerhard Ecker Faculty of Physics, Univ. of Vienna"
  },
  "toc": [
   {
@@ -36,46 +52,212 @@
    "title": "Introduction",
    "page": 2,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Strong interactions",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "2"
   },
   {
    "level": 1,
    "title": "Nonleptonic weak interactions",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 1,
    "title": "Dynamical photons",
    "page": 8,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "Dynamical photons and leptons",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 1,
    "title": "Outlook",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "table",
+   "number": "1",
+   "title": "Eﬀective chiral Lagrangian in the meson sector. The numbers in brackets refer to the number of LECs for chiral SU(3)",
+   "page": 2,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": "1"
+  },
+  {
+   "kind": "table",
+   "number": "3",
+   "title": "Octet and 27-plet couplings g8, g27 at O(GFp2) and at next-to-",
+   "page": 8,
+   "confidence": 0.7,
+   "evidence": [
+    "referenced"
+   ],
+   "page_label": "7"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "1",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "2",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "3",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "4",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "5",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "6",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "7",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "8",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "9",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "10",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "11",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1090,
+   "n_words": 153,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-introduction",
    "number": null,
@@ -83,8 +265,10 @@
    "level": 1,
    "page_start": 2,
    "page_end": 3,
-   "n_chars": 2262,
-   "n_words": 401
+   "n_chars": 2247,
+   "n_words": 374,
+   "label_start": "1",
+   "label_end": "2"
   },
   {
    "id": "sec-001-strong-interactions",
@@ -93,8 +277,10 @@
    "level": 1,
    "page_start": 3,
    "page_end": 7,
-   "n_chars": 7941,
-   "n_words": 1504
+   "n_chars": 7840,
+   "n_words": 1386,
+   "label_start": "2",
+   "label_end": "6"
   },
   {
    "id": "sec-002-nonleptonic-weak-interactions",
@@ -103,8 +289,10 @@
    "level": 1,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 1761,
-   "n_words": 324
+   "n_chars": 1748,
+   "n_words": 284,
+   "label_start": "6",
+   "label_end": "7"
   },
   {
    "id": "sec-003-dynamical-photons",
@@ -113,8 +301,10 @@
    "level": 1,
    "page_start": 8,
    "page_end": 9,
-   "n_chars": 1467,
-   "n_words": 237
+   "n_chars": 1471,
+   "n_words": 225,
+   "label_start": "7",
+   "label_end": "8"
   },
   {
    "id": "sec-004-dynamical-photons-and-leptons",
@@ -123,8 +313,10 @@
    "level": 1,
    "page_start": 9,
    "page_end": 9,
-   "n_chars": 1051,
-   "n_words": 198
+   "n_chars": 1053,
+   "n_words": 174,
+   "label_start": "8",
+   "label_end": "8"
   },
   {
    "id": "sec-005-outlook",
@@ -133,16 +325,28 @@
    "level": 1,
    "page_start": 9,
    "page_end": 12,
-   "n_chars": 4830,
-   "n_words": 773
+   "n_chars": 4818,
+   "n_words": 754,
+   "label_start": "8",
+   "label_end": "11"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 6,
-  "sections": 6,
-  "chars_total": 19312,
+  "toc_inferred_entries": 0,
+  "figure_entries": 2,
+  "figure_sequence_gaps": [
+   "table 2"
+  ],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 7,
+  "chars_total": 20267,
+  "furniture_lines_stripped": 1,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
@@ -155,33 +359,38 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-introduction",
      "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.954,
+     "coverage_ratio": 0.963,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-001-strong-interactions",
      "title": "Strong interactions",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.938,
+     "coverage_ratio": 0.994,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-002-nonleptonic-weak-interactions",
      "title": "Nonleptonic weak interactions",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.916,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "latex"
     },
     {
      "id": "sec-003-dynamical-photons",
      "title": "Dynamical photons",
-     "prose_ratio": 1.0,
+     "prose_ratio": 0.935,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
@@ -189,8 +398,8 @@
     {
      "id": "sec-004-dynamical-photons-and-leptons",
      "title": "Dynamical photons and leptons",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.959,
+     "coverage_ratio": 0.973,
      "result": "overlaid",
      "converter": "latex"
     },
@@ -198,7 +407,7 @@
      "id": "sec-005-outlook",
      "title": "Outlook",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.552,
+     "coverage_ratio": 0.541,
      "result": "overlaid",
      "converter": "latex"
     }

@@ -1,0 +1,38 @@
+4. Left-invariant vector fields on S°.
+
+Left-invariant vector fields on S° play an important role in understanding formula (1)
+for the Biot-Savart operator. A vector field V on S? is said to be left-invariant if
+
+Ly V(x) = V(y) for all x,y €S°.
+For example, using multiplication of unit quaternions, the vector fields
+Vix) = xi, V(x) = xj, V3(x) = xk
+
+form a pointwise orthonormal basis for the 3-dimensional subspace of left-invariant
+vector fields on S°.
+
+Left-invariant and right-invariant vector fields on S° are tangent to the orbits of
+Hopf fibrations of S’ by parallel great circles. Since a steady flow along these
+parallel great circles is distance-preserving, the left- and right-invariant vector
+fields are certainly divergence-free.
+
+PROPOSITION 1. Left- and right-invariant vector fields on S* are curl eigenfields
+with eigenvalues —2 and +2, respectively.
+
+Proof. We will show that V XV = —2 V for left-invariant fields V .
+
+Recall the primitive meaning of "curl". To find the component of V XV at the
+point x ina given direction on an oriented Riemannian 3-manifold, you pick a
+small disk orthogonal at x to that direction, compute the circulation of V around
+the boundary of this disk, divide by the area of the disk, and then take the limit as
+the disk shrinks to the point x. To keep signs straight, the orientation of the disk,
+combined with the orientation of the normal direction, should give the chosen
+orientation on the ambient space. In this view, the primitive meaning of "curl"
+
+is given by the "curl theorem", i.e., Stokes' theorem.
+
+To apply this to left-invariant vector fields on S*, first note that any two of these
+
+are equivalent to one another by an orientation-preserving rigid motion of S*, so it
+is enough to prove the result for one such field.
+
+12

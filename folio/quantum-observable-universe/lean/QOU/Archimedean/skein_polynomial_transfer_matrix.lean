@@ -109,7 +109,7 @@ $q, -q^{-1}$ with p
     The Lean encoding below splits the manuscript claim into named
     sub-claim fields; concretisation requires per-block manuscript
     translation. -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/skein-polynomial-transfer-matrix.ts
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/skein-polynomial-transfer-matrix.ts
 theorem skein_polynomial_transfer_matrix [ctx : SkeinPolynomialTransferMatrixContext] :
     ctx.P
       = (Finset.univ.prod (fun i : Fin (ctx.Z + ctx.N - 1) => ctx.V i)) ∧

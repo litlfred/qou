@@ -26,7 +26,7 @@ form `Q = m_e · 3(q²−1)³(q²+1)²(3q⁴+4q²+3) / (32q⁷)` is **derived** 
 `a·b·(a − b)` by field algebra (verified against the manuscript expression
 in `computations/`), not projected from a stored field.
 
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/tritium-qvalue-symbolic.md
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/tritium-qvalue-symbolic.md
 -/
 
 namespace QOU.ParticleInteractions
@@ -65,7 +65,7 @@ class TritiumQvalueContext where
     The proof substitutes the channel-sum inputs `a, b` into the branching
     ansatz `Q = a·b·(a − b)·m_e` and clears denominators — a genuine
     rational-function derivation, NOT a read-back of a stored conclusion. -/
--- Ref: [manuscript] quantum-observable-universe/particle-interactions/tritium-qvalue-symbolic.md
+-- Ref: [leitner2026] quantum-observable-universe/particle-interactions/tritium-qvalue-symbolic.md
 theorem tritium_qvalue_symbolic [ctx : TritiumQvalueContext] :
     ctx.Q
       = ctx.m_e * 3 * (ctx.q ^ 2 - 1) ^ 3 * (ctx.q ^ 2 + 1) ^ 2

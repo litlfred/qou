@@ -1,0 +1,46 @@
+138 G Kuperberg
+
+be a segment +» of either « or with positive curvature. There are three possibilities
+for the edges of w that bound a face together with y:
+
+if) - i -
+
+1 3
+
+1. A “U.” In this case, w is either disconnected or a single strand.
+
+2. A “Y.” If y lies on a, then « is not minimal. If y lies on £, then an isotopy
+of B across the “Y” produces a smaller counterexample.
+
+3. An “H.” In this case, an isotopy of either « or B produces a smaller coun-
+terexample by an H-move.
+
+This eliminates all possibilities for the least counterexample. O
+
+Lemma 6.6. Let C be a sequence of clasps, let c be an arbitrary clasp, and let
+w € B(Cc) be a basis web. There is a cut path y that separates c such that any
+other such cut path lies between y and c.
+
+Proof. If « and $ are two transverse, minimal cut paths that separate c and p
+and g are two consecutive transverse intersection points along either path, then the
+weight of the arc of « from p to q must equal the weight of the arc of 6 from p
+to q, for otherwise one path would provide a short-cut for the other and either « or
+B would not be minimal. Thus the path y that follows the perimeter of «U 6 must
+also be minimal:
+
+If we partially order cut paths by their distance from c, there is a unique maximal
+element. DO
+
+Given w as in Lemma 6.6, define the core of w relative to c to be the web
+w’ € B(Cc’) obtained by cutting away c along the cut path y guaranteed by the
+lemma. Here c’ is another clasp with the same weight as c. Let B(C; A) be the set
+of all cores of webs w € B(Cc) for all clasps c of weight A. Note that, since c is
+non-convex in w, one of the minimal cut paths that separates c is parallel to c.
+Therefore, by Lemma 6.5, w differs from its core by H-moves. Note also that the
+core w’ has the property that no H-webs are attached at c’, and that any web with
+this property is its own core.
+
+We describe how an arbitrary basis web extends from one of its cores. Consider
+the following stair-step construction of a basis web from a core. Suppose that
+w € B(C[s]) is a core relative to a clasp [s] of weight A = ad, + bd2, and suppose
+that [s’] is an arbitrary clasp of the same weight. Then the strings s and s’ each

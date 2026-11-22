@@ -16,7 +16,7 @@ The Lean encoding records the universal-property statement: for
 every object `X` in `𝐂_{−6}`, the hom-set `Hom(X, Bring's-QOU)` is
 a singleton.
 
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/descartes.md
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/descartes.md
 -/
 
 namespace QOU.Archimedean
@@ -38,7 +38,7 @@ class DescartesTerminalContext where
 
     For every Descartes universe `X`, the hom-set `Mor X BringQOU` is
     a singleton (`Unique`). -/
--- Ref: [manuscript] quantum-observable-universe/archimedean-universe/descartes.md
+-- Ref: [leitner2026] quantum-observable-universe/archimedean-universe/descartes.md
 theorem descartes
     [ctx : DescartesTerminalContext] (X : ctx.DescUniverse) :
     Nonempty (Unique (ctx.Mor X ctx.BringQOU)) :=

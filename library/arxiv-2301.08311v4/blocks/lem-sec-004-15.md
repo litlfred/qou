@@ -1,0 +1,1 @@
+There is a coherent perturbation datum P such that every l−broken strip (u, D) ∈ MBr(Γ, M[l], L[l], K) or broken disc (u, D) ∈Mvc Br(Γ, M[l], L[l], p) where there are no multiply covered pieces and the only nodes are puncture nodes that map asymptotically to Reeb orbit or chord is regular where the standard complex structure of Cn is chosen in the neck pieces and inner pieces.

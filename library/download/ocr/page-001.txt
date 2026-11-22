@@ -1,0 +1,53 @@
+Bernoulli 16(4), 2010, 1385-1414
+DOI: 10.3150/10-BEJ254
+
+Concentration of empirical distribution
+functions with applications
+to non-i.i.d. models
+
+S.G. BOBKOV'! and F. GOTZE?
+
+l school of Mathematics, University of Minnesota, 127 Vincent Hall, 206 Church St. S.E., Minneapolis,
+MN 55455, USA. E-mail: bobkov@math.umn.edu
+
+2 Fakultit fiir Mathematik, Universitat Bielefeld, Postfach 100131, 33501 Bielefeld, Germany.
+
+E-mail: goetze @ mathematik.uni-bielefeld.de
+
+The concentration of empirical measures is studied for dependent data, whose joint distribution satisfies
+Poincaré-type or logarithmic Sobolev inequalities. The general concentration results are then applied to
+spectral empirical distribution functions associated with high-dimensional random matrices.
+
+Keywords: empirical measures; logarithmic Sobolev inequalities; Poincaré-type inequalities; random
+matrices; spectral distributions
+
+1. Introduction
+
+Let (X1,..., Xn) be arandom vector in R” with distribution j1. We study rates of approximation
+of the average marginal distribution function
+
+F(x) = EF, (x) = Pix <x}
+
+i=1
+
+by the empirical distribution function
+1
+
+F,(x) = —card{i <n: Xj; <x}, xeR.
+n
+
+We shall measure the distance between F and F,, by means of the (uniform) Kolmogorov metric
+||Fn — F || = sup, | Fn(x) — F(x)|, as well as by means of the L!-metric
+
++00
+WCF. P)= | |Fn(x) — F(x)| dx.
+—oo
+
+The latter, also called the Kantorovich—Rubinstein distance, may be interpreted as the minimal
+cost needed to transport the empirical measure F,, to F with cost function d(x, y) = |x — y| (the
+
+price paid to transport the point x to the point y).
+The classical example is the case where all X;’s are independent and identically distributed
+(i.i.d.), that is, when jx represents a product measure on R” with equal marginals, say, F. If it has
+
+1350-7265 © 2010 ISI/BS

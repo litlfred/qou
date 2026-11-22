@@ -29,7 +29,7 @@ unit circle against any point is `2 sin ψ · (cos ψ − w·nθ)` — the exact
 Archimedean (ℝ): `sin`, `cos`, `Real.sqrt`, ordering — §7c.
 
   -- Ref: [milnor1982] Appendix ; [thurston1978] Ch. 7 ; [ratcliffe] §4.6–4.7
-  -- Ref: [manuscript] beans qou-idvt (T2), qou-473l (T2 vertex-independence)
+  -- Ref: [leitner2026] beans qou-idvt (T2), qou-473l (T2 vertex-independence)
 -/
 
 import QOU.Archimedean.IdealBoundaryGeodesicPlane

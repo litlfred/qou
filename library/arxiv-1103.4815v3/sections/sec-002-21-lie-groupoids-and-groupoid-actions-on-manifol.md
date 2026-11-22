@@ -7,10 +7,11 @@ section_number: 2.1
 pages: 5-6
 source_pdf: 1103.4815v3.pdf
 source_sha256: 28647b02ea1441e3
-doc_brief: "Four Equivalent Versions of Non-Abelian Gerbes — We recall and partially improve four versions of smooth, non -abelian gerbes: ˇCech cocycles, classifying maps, bundle gerbes, and principal"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.775
-latex_coverage_ratio: 0.957
+latex_prose_ratio: 0.787
+latex_coverage_ratio: 0.971
+doc_brief: "Four Equivalent Versions of Non-Abelian Gerbes — We recall and partially improve four versions of smooth, non-abelian gerbes: ˇCech cocycles, classifying maps, bundle gerbes, and principal 2-bundles."
 ---
 We assume that the reader is familiar with the notions of Lie groupoids, smooth functors and smooth natural transformations. 
 \begin{comment}

@@ -1,132 +1,37 @@
 {
- "_schema": "pdf-structure/v1",
- "doc_id": "1992evansberger",
  "source": {
   "file": "1992EvansBerger.pdf",
   "sha256": "6f100e931a1e5f2241cb428f007fe82abbe99f2f30047cc0d769ef0d6ad1389e",
   "bytes": 311868,
+  "mtime": "2026-11-15T11:07:50Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes",
   "pages": 12,
   "text_source": "ocr",
-  "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:17Z",
-  "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "runContext": {
+   "sha256": "c2c9252b491ad47ee189cfaa9372004491db38fb6931ecf6a71edb0a5b2699d9"
+  }
  },
  "metadata": {
-  "arxiv": null,
-  "doi": null,
-  "title": "A HIERARCHY OF LINKING INTEGRALS",
-  "authors_raw": "N.W. EVANS",
-  "title_lines": [
-   "A HIERARCHY OF LINKING INTEGRALS"
-  ],
-  "abstract": "Since the days of Maxwell and Tait, it has been known that the Gauss linking integral fails to detect entanglements with equal numbers of oppositely signed crossings, such as the Borromean rings. As the helicity or Gauss integral is quadratic in the fluxes or vortex strengths, it measures second order linking. It is the lowest member of a hierarchy of linking integrals. A third order linking integral (based on the Massey product) describes the subtle interlocking of the Borromean rings. An entanglement of four rings - any pair or triple of which is unlinked \u2014 is presented, together with a fourth order linking integral which distinguishes the delicate tangling from four unlinked rings. Links are close relatives of braids and the hierarchy of linking integrals now becomes a hierarchy of winding numbers. Detailed examples are given for n = 3 and 4 and the extension to n orders is sketched in the conclusions.",
+  "title": "A Hierarchy of Linking Integrals",
   "docinfo": {
    "Producer": "Xerox ColorQube 9301",
    "Creator": "Xerox ColorQube 9301",
    "CreationDate": "D:20160204121333Z00'00'"
   },
-  "title_raw": "A HIERARCHY OF LINKING INTEGRALS",
-  "title_source": "text",
+  "title_raw": null,
+  "title_source": "filename",
   "title_verified": false,
   "title_evidence": {
-   "text": "A HIERARCHY OF LINKING INTEGRALS",
    "corroborated_by": [],
    "browser_print": false
-  }
+  },
+  "title_prev": "A HIERARCHY OF LINKING INTEGRALS"
  },
- "toc": [],
- "toc_source": "undetermined",
- "toc_undetermined_reason": "6 inferred entries with mean confidence 0.00, below the 0.6 floor \u2014 too little evidence agreed",
+ "_schema": "pdf-structure/v1",
+ "doc_id": "1992evansberger",
+ "toc_source": "none",
  "granularity": "page",
- "structure_note": "No outline, and no inferred contents could be trusted (6 inferred entries with mean confidence 0.00, below the 0.6 floor \u2014 too little evidence agreed): one section per page.",
- "figures": [],
- "pages": [
-  {
-   "physical": 1,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 2,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 3,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 4,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 5,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 6,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 7,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 8,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 9,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 10,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 11,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  },
-  {
-   "physical": 12,
-   "label": null,
-   "source": null,
-   "confidence": 0.0,
-   "evidence": []
-  }
- ],
  "sections": [
   {
    "id": "page-001",
@@ -136,9 +41,7 @@
    "page_start": 1,
    "page_end": 1,
    "n_chars": 1710,
-   "n_words": 286,
-   "label_start": null,
-   "label_end": null
+   "n_words": 286
   },
   {
    "id": "page-002",
@@ -148,9 +51,7 @@
    "page_start": 2,
    "page_end": 2,
    "n_chars": 2147,
-   "n_words": 382,
-   "label_start": null,
-   "label_end": null
+   "n_words": 382
   },
   {
    "id": "page-003",
@@ -160,9 +61,7 @@
    "page_start": 3,
    "page_end": 3,
    "n_chars": 2238,
-   "n_words": 387,
-   "label_start": null,
-   "label_end": null
+   "n_words": 387
   },
   {
    "id": "page-004",
@@ -172,9 +71,7 @@
    "page_start": 4,
    "page_end": 4,
    "n_chars": 91,
-   "n_words": 16,
-   "label_start": null,
-   "label_end": null
+   "n_words": 16
   },
   {
    "id": "page-005",
@@ -184,9 +81,7 @@
    "page_start": 5,
    "page_end": 5,
    "n_chars": 1528,
-   "n_words": 304,
-   "label_start": null,
-   "label_end": null
+   "n_words": 304
   },
   {
    "id": "page-006",
@@ -196,9 +91,7 @@
    "page_start": 6,
    "page_end": 6,
    "n_chars": 1839,
-   "n_words": 362,
-   "label_start": null,
-   "label_end": null
+   "n_words": 362
   },
   {
    "id": "page-007",
@@ -208,9 +101,7 @@
    "page_start": 7,
    "page_end": 7,
    "n_chars": 1733,
-   "n_words": 347,
-   "label_start": null,
-   "label_end": null
+   "n_words": 347
   },
   {
    "id": "page-008",
@@ -220,9 +111,7 @@
    "page_start": 8,
    "page_end": 8,
    "n_chars": 103,
-   "n_words": 24,
-   "label_start": null,
-   "label_end": null
+   "n_words": 24
   },
   {
    "id": "page-009",
@@ -232,9 +121,7 @@
    "page_start": 9,
    "page_end": 9,
    "n_chars": 1537,
-   "n_words": 313,
-   "label_start": null,
-   "label_end": null
+   "n_words": 313
   },
   {
    "id": "page-010",
@@ -244,9 +131,7 @@
    "page_start": 10,
    "page_end": 10,
    "n_chars": 2028,
-   "n_words": 403,
-   "label_start": null,
-   "label_end": null
+   "n_words": 403
   },
   {
    "id": "page-011",
@@ -256,9 +141,7 @@
    "page_start": 11,
    "page_end": 11,
    "n_chars": 2466,
-   "n_words": 434,
-   "label_start": null,
-   "label_end": null
+   "n_words": 434
   },
   {
    "id": "page-012",
@@ -268,26 +151,8 @@
    "page_start": 12,
    "page_end": 12,
    "n_chars": 2717,
-   "n_words": 417,
-   "label_start": null,
-   "label_end": null
+   "n_words": 417
   }
  ],
- "diagnostics": {
-  "pages_without_text": 0,
-  "likely_scanned": false,
-  "toc_entries": 0,
-  "toc_inferred_entries": 6,
-  "toc_inferred_mean_confidence": 0.0,
-  "toc_inferred_empty_share": 0.0,
-  "toc_inferred_method": "regex",
-  "figure_entries": 0,
-  "figure_sequence_gaps": [],
-  "page_label_conflicts": {
-   "count": 0,
-   "items": []
-  },
-  "sections": 12,
-  "chars_total": 20137
- }
+ "structure_note": "Ingested at PAGE granularity by scripts/pdf-pages.py. This PDF carries no embedded outline and its inferred chapter structure was measurably wrong (bean 6xaz), so no chapter tree is claimed. A page is a determined division; an inferred chapter was not."
 }

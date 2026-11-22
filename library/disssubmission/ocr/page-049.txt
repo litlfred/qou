@@ -1,0 +1,44 @@
+CHAPTER 3
+
+Perverse sheaves on semiabelian varieties
+
+The Tannaka groups in corollary 2.14 provide a new tool for the study
+of smooth projective varieties with non-trivial Albanese morphism. Their
+representation theory can be considered as a substitute for Brill-Noether
+theory in higher dimensions, and they are also closely related to the moduli
+of abelian varieties as we will discuss in chapter 4. However, in general
+these Tannaka groups are hard to compute. At present the most effective
+tool to determine them is to study degenerations of the underlying abelian
+variety; even if one is only interested in semisimple perverse sheaves on
+abelian varieties, this naturally leads to non-semisimple perverse sheaves
+on semiabelian varieties. In this chapter we extend our previous Tannakian
+constructions to this more general case, combining arguments of Gabber
+and Loeser for tori [41] with the generic vanishing theorem 1.1 for abelian
+varieties. For degenerations of abelian varieties into semiabelian varieties
+we then show that the nearby cycles functor induces an embedding of the
+degenerate Tannaka group into the generic one whenever one can possibly
+expect this (see theorem 3.15). Finally, we also discuss how the obtained
+Tannaka groups vary in families on abelian schemes.
+
+Before we come to the details, let us begin with a brief overview over
+the constructions that follow. Throughout we work over an algebraically
+closed field k of any characteristic p > 0. Let X be a semiabelian variety, a
+commutative group variety which is an extension
+
+1—T—-x—-A— 1
+
+of an abelian variety A by an algebraic torus T over k. Fixing a prime / 4 p,
+we put A = Q, and denote by
+D = D(X) = D?(X,A) and P = P(X) = Perv(X,A)
+
+the triangulated category of bounded constructible A-sheaf complexes resp.
+its full abelian subcategory of perverse sheaves. Let m: X x,;X —> X be
+the group law. In the non-proper case we have two different notions of
+convolution which are given by
+
+Kx,L = Rm(KBL) and Kx,L = Rm,(KRL)
+
+for K,L € D. In general the abelian subcategory P C D will of course not
+be stable under these two convolution products. Motivated by the results of
+
+41

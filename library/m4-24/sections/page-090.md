@@ -1,0 +1,55 @@
+---
+doc_id: m4-24
+doc_title: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface"
+section_id: page-090
+section_title: "Page 90"
+section_number: null
+pages: 90-90
+source_pdf: m4-24.pdf
+source_sha256: cf7c5e29b818e647
+toc_source: undetermined
+doc_brief: "Problems on invariants of knots and 3-manifolds Edited by T. Ohtsuki Preface — 200 sections: Page 1; Page 2; Page 3"
+---
+462 T. Ohtsuki (Editor)
+
+In general, let X,, X2,--- be the orbits of X. These form subquandles of X.
+We denote by i, : X, — X the inclusions. Then, it follows from a similar
+argument as above that ®,(K) = )°;, ®ixa(K). Repeating this procedure, the
+computations of ®,(K) of a knot K can be reduced to those for connected
+quandles.??
+
+Remark The cohomology group A(X; A) of the dual quandle X of a quan-
+dle X is isomorphic to HZ (X ; A) by an isomorphism taking a 2-cocycle ¢ to
+¢@ where @(a,y) = O(a * y,y). It follows that Og(K) = ®,(K), where K de-
+notes the mirror image of kK. Therefore, the computations of quandle cocycle
+invariants for X can be reduced to those for X.
+
+Remark When a = 0, by definition ®,(K) is equal to the number of rep-
+resentations Q(K) — X. In particular, when X is an Alexander quandle, it
+can be presented by using the ith Alexander polynomials, as mentioned in a
+remark of Problem 5.2.
+
+Remark [81] When X = Z[t*!]/(2,t?+¢+1), HA(X;Z/2Z) = Z/2Z. For
+its non-trivial cohomology class a,
+A(1 + 3u) for K = 31,41, 72, 73, 818, 84, 811, 813, and
+9 certain knots with 9 crossings,
+16(1+3u) for K = 81, 940,
+®,(K) = ,
+16 for K = 85,810,815, 819-821, and
+16 certain knots with 9 crossings,
+4 for the other knots A with at most 9 crossings,
+where u denotes the generator of Z/2Z. See [81] for details.
+When X = Z{t*!]/(3,t? +1), HQ(X;Z/3Z) = Z/3Z. For a non-trivial coho-
+mology class a of it,
+9(1 + 4u + 4u?) if K = 41, 52,83, 817, 818, 821, and
+9 certain knots with 9 crossings,
+®a(K) = ¢ 27(11 4+ 8ut8u?) if K = 940,
+81 if K = 63, 82, 819, 824, 912, 913, 946,
+
+9 for the other knots A with at most 9 crossings,
+
+where u denotes a generator of Z/3Z. See [81] for details.
+
+“This argument is not available for the link case, since a link quandle is not connected.
+
+Geometry & Topology Monographs, Volume 4 (2002)

@@ -10,6 +10,7 @@ source_sha256: 18321b615ffc968b
 toc_source: outline
 doc_brief: "A Tutorial on Knots and Quantum Mechanics — These notes review a description of quantum mechanics in terms of the topology of spaces, basing on the axioms of Topological Quantum Field Theory and path"
 ---
+Basics of knot theory
 In this section we give a minimal introduction to knots and their topological invariants, necessary to
 make quantum mechanical computations. Introductory material into knot theory can be found in these
 books [18,42,43].
@@ -115,4 +116,3 @@ let, Peter Freyd, William Lickorish, David Yetter as well as after Jozef Przytyc
 believed to be powerful enough to distinguish any pair of knots or links [46,47].
 In the remaining part of this section we will introduce the Jones polynomial and review several
 methods of computing it.
-2.1

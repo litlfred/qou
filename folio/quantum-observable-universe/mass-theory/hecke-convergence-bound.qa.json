@@ -1235,6 +1235,24 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "6944755710d5",
+          "ts": "b99f9b631515",
+          "lean": "83e0402cc744",
+          "lean_statement": "4ae39ae97855"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:57:29.323Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "evidence": "hecke-convergence-bound.lean:16-19 fitted `convergenceRate : ℝ := 4.0`, `baseError : ℝ := 0.001`; :29-30 `theorem hecke_convergence_bound : predictedMAE 11 < 2e-8` — single numeric instance of a fitted model; the truncation bound |tr_M(W) − Σ_𝒜 …| ≤ C q^{−Δ} (.md:3-7) is unencoded; .ts:8 title states a different (MAE) claim",
+        "notes": "Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean"
       }
     ],
     "proof-rater-strategy-clarity": [
@@ -2466,6 +2484,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-21T16:10:41.454Z",
+  "updated_at": "2026-11-15T21:57:29.323Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

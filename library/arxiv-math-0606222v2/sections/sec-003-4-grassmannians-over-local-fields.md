@@ -4,39 +4,15 @@ doc_title: "QUANTUM DIMENSIONS AND THEIR NON-ARCHIMEDEAN DEGENERATIONS"
 section_id: sec-003-4-grassmannians-over-local-fields
 section_title: "Grassmannians over local fields"
 section_number: 4
-pages: 10-11
+pages: 10-10
 source_pdf: 0606222v2.pdf
 source_sha256: 5c2a45596d04dd07
-doc_brief: "QUANTUM DIMENSIONS AND THEIR NON-ARCHIMEDEAN DEGENERATIONS — We derive explicit dimension formulas for irreducible MF-spherical KF-re- presentations where KF is the maximal compact subgroup of the"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.993
-latex_coverage_ratio: 0.98
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
+doc_brief: "QUANTUM DIMENSIONS AND THEIR NON-ARCHIMEDEAN DEGENERATIONS — We derive explicit dimension formulas for irreducible MF-spherical KF-re- presentations where KF is the maximal compact subgroup of the"
 ---
 []{#local label="local"}
 
 In this section we specialize the general theory of the previous section to the classical examples arising from Grassmannians over local fields.
-
-## The Grassmann representation over local fields {#Gr}
-
-Consider the commutative [CQG ]{.sans-serif}algebra $A=\mathbb{C}(\mathcal{K})$ of representative functions on a compact topological group $\mathcal{K}$. The Hopf $*$-algebra structures are given by $$\Delta(f)(g,g^\prime)=f(gg^\prime), \quad \epsilon(f)=f(e),
-\quad S(f)(g)=f(g^{-1}), \quad f^*(g)=\overline{f(g)},$$ where $g,g^\prime\in \mathcal{K}$, $f\in \mathbb{C}(\mathcal{K})$, $e\in \mathcal{K}$ is the unit element of $\mathcal{K}$, and where we have used the natural identification $\mathbb{C}(\mathcal{K})\otimes \mathbb{C}(\mathcal{K})\simeq \mathbb{C}(\mathcal{K}\times \mathcal{K})$ by the multiplication map. The positive definite normalized Haar functional $h$ is $$h(f)=\int_{\mathcal{K}} f(g)dg,\qquad f\in \mathbb{C}(\mathcal{K}),$$ where $dg$ is the normalized Haar measure on $\mathcal{K}$. Observe that $\mathbb{C}(\mathcal{K})_h=L^2(\mathcal{K},dg)$ and $\Sigma\simeq \widehat{\mathcal{K}}$, the unitary dual of the compact group $\mathcal{K}$, since there is a natural one-to-one correspondence between finite-dimensional right $\mathbb{C}(\mathcal{K})$-comodules and finite dimensional $\mathcal{K}$-representations preserving notions as irreducibility, equivalence and unitarity. Concretely, for a given right $\mathbb{C}(\mathcal{K})$-comodule $\pi: V\rightarrow
-V\otimes \mathbb{C}(\mathcal{K})$ we define a left $\mathcal{K}$-action on $V$ by $$gv=\bigl(\hbox{Id}_V\otimes \hbox{ev}_g\bigr)\pi(v),\qquad g\in \mathcal{K},\,\, v\in V,$$ where $\hbox{ev}_g: \mathbb{C}(\mathcal{K})\rightarrow \mathbb{C}$ is the evaluation map $\hbox{ev}_g(f)=f(g)$. Under this correspondence, the dual representation of a finite dimensional $\mathcal{K}$-representation $(\pi, V)$ becomes $$(\pi^*(g)f)(v)=f(\pi(g^{-1})v)\qquad  (f\in V^*, v\in V, g\in \mathcal{K}).$$ Clearly the isomorphism $\pi^{**}\simeq \pi$ for a finite dimensional $\mathcal{K}$-representation $(\pi, V)$ is realized by $F=\hbox{Id}$, hence the quantum dimension $\hbox{Dim}_{\mathbb{C}(\mathcal{K})}(V)$ is the complex dimension $\hbox{Dim}_{\mathbb{C}}(V)$ of the representation space $V$. We now define one of our main object of study.
-
-::: defi
-Let $n,d\in\mathbb{N}$ with $n\leq d/2$. The Grassmannian $\mathcal{G}(n,d;\mathbb{F})$ over the local field $\mathbb{F}$ is the set of $n$-dimensional $\mathbb{F}$-subspaces in $\mathbb{F}^d$.
-:::
-
-Consider the maximal compact subgroup $\mathcal{K}_{\mathbb{F}}$ of $\hbox{GL}_d(\mathbb{F})$, see [\[KF\]](#KF){reference-type="eqref" reference="KF"}. Note that $\mathcal{K}_{\mathbb{F}}$ acts transitively on $\mathcal{G}(n,d;\mathbb{F})$, e.g. by the Iwasawa decomposition in $\hbox{GL}_d(\mathbb{F})$. The subgroup of $\mathcal{K}_{\mathbb{F}}$ stabilizing $\{0\}^{d-n}\times \mathbb{F}^n \in
-\mathcal{G}(n,d;\mathbb{F})$ is denoted by $\mathcal{M}_{\mathbb{F}}$, so that $$\mathcal{G}(n,d;\mathbb{F}) \simeq \mathcal{K}_{\mathbb{F}}/ \mathcal{M}_{\mathbb{F}}$$ as transitive $\mathcal{K}_{\mathbb{F}}$-space. The pair $(\mathcal{K}_{\mathbb{F}},\mathcal{M}_{\mathbb{F}})$ is a Gelfand pair in the usual sense of topological groups. This is well known for the Archimedean fields $\mathbb{R}$ and $\mathbb{C}$, see [@JC] and [@DS] and the references therein. For non-Archimedean fields we refer to [@BO2]. Consequently, $(A,B)=\bigl(\mathbb{C}(\mathcal{K}_{\mathbb{F}}), \mathbb{C}(\mathcal{M}_{\mathbb{F}})\bigr)$ is a quantum Gelfand pair in the sense of [CQG ]{.sans-serif}algebras, where the surjective Hopf $*$-homomorphism $p: \mathbb{C}(\mathcal{K}_{\mathbb{F}})\rightarrow \mathbb{C}(\mathcal{M}_{\mathbb{F}})$ is the canonical restriction map $p(f)=f|_{\mathcal{M}_{\mathbb{F}}}$. The parametrizing set $\Sigma_{\mathbb{C}(\mathcal{M}_{\mathbb{F}})}$ of the finite dimensional, irreducible $\mathbb{C}(\mathcal{M}_{\mathbb{F}})$-spherical right $\mathbb{C}(\mathcal{K}_{\mathbb{F}})$-comodules is in bijection with $(\mathcal{K}_{\mathbb{F}}/\mathcal{M}_{\mathbb{F}})\hat{~}$, the unitary spherical dual of $\mathcal{K}_{\mathbb{F}}$ with respect to the subgroup $\mathcal{M}_{\mathbb{F}}$. The corresponding right $\mathbb{C}(\mathcal{K}_{\mathbb{F}})$-comodule $\mathbb{C}(\mathcal{K}_{\mathbb{F}})_{\mathbb{C}(\mathcal{M}_{\mathbb{F}})}$, viewed as $\mathcal{K}_{\mathbb{F}}$-representation, now identifies with the *Grassmann representation* $$\mathbb{C}\bigl(\mathcal{G}(n,d;\mathbb{F})\bigr):=\{f\in \mathbb{C}(\mathcal{K}_{\mathbb{F}}) \,\,\, | \,\,\, f(gh)=f(g),\,\,\,
-\forall\,g\in \mathcal{K}_{\mathbb{F}},\,\forall\, h\in \mathcal{M}_{\mathbb{F}}\},$$ considered as left $\mathcal{K}_{\mathbb{F}}$-module by the regular action $$\bigl(gf\bigr)(g^\prime)=f(g^{-1}g^\prime),\qquad f\in \mathbb{C}\bigl(\mathcal{G}(n,d;\mathbb{F})\bigr),\,\, g, g^\prime
-\in \mathcal{K}_{\mathbb{F}}.$$
-
-In this setting we take $(\pi_\alpha^{\mathbb{F}}, V_\alpha^{\mathbb{F}})$ ($\alpha\in(\mathcal{K}_{\mathbb{F}}/\mathcal{M}_{\mathbb{F}})\hat{~}$) to be a complete set of representatives of the irreducible $\mathcal{M}_{\mathbb{F}}$-spherical $\mathcal{K}_{\mathbb{F}}$-representations. Then $$\label{abstractdecomposition}
-\mathbb{C}\bigl(\mathcal{G}(n,d;\mathbb{F})\bigr)\simeq \bigoplus_{\alpha\in
-(\mathcal{K}_{\mathbb{F}}/\mathcal{M}_{\mathbb{F}})\hat{~}}V_\alpha^{\mathbb{F}}$$ is the multiplicity-free decomposition of $\mathbb{C}\bigl(\mathcal{G}(n,d;\mathbb{F})\bigr)$ in irreducible $\mathcal{K}_{\mathbb{F}}$-representations, cf. [\[AB\]](#AB){reference-type="eqref" reference="AB"}. For $\alpha\in(\mathcal{K}_{\mathbb{F}}/\mathcal{M}_{\mathbb{F}})\hat{~}$ we choose a scalar product $\langle \cdot,\cdot\rangle_\alpha$ on $V_\alpha^{\mathbb{F}}$ turning $\pi_\alpha^{\mathbb{F}}$ into a unitary $\mathcal{K}_{\mathbb{F}}$-representation, and we choose a nonzero $\mathcal{M}_{\mathbb{F}}$-fixed vector $v_\alpha^{\mathbb{F}}\in V_\alpha^{\mathbb{F}}$. Using again the identification of finite dimensional right $\mathbb{C}(\mathcal{K}_{\mathbb{F}})$-comodules with finite dimensional $\mathcal{K}_{\mathbb{F}}$-representations, the quantum zonal spherical functions associated to the quantum Gelfand pair $(\mathbb{C}(\mathcal{K}_{\mathbb{F}}),
-\mathbb{C}(\mathcal{M}_{\mathbb{F}}))$ are the usual zonal spherical functions $$\varphi_\alpha^{\mathbb{F}}(g)=\langle \pi_\alpha^{\mathbb{F}}(g)v_\alpha^{\mathbb{F}},
-v_\alpha^{\mathbb{F}}\rangle_\alpha,\qquad g\in \mathcal{K}_{\mathbb{F}},\,\,\alpha\in
-(\mathcal{K}_{\mathbb{F}}/\mathcal{M}_{\mathbb{F}})\hat{~}$$ associated to the Gelfand pair $(\mathcal{K}_{\mathbb{F}}, \mathcal{M}_{\mathbb{F}})$. The dimension formula (see Proposition [\[propqdim\]](#propqdim){reference-type="ref" reference="propqdim"}) now becomes $$\label{dimforclassical}
-\hbox{Dim}_{\mathbb{C}}\bigl(V_\alpha^{\mathbb{F}}\bigr)=
-\frac{\bigl(\varphi_\alpha^{\mathbb{F}}(e)\bigr)^2}{\int_{\mathcal{K}_{\mathbb{F}}}|\varphi_\alpha^{\mathbb{F}}(g)|^2dg},
-\qquad \alpha\in (\mathcal{K}_{\mathbb{F}}/\mathcal{M}_{\mathbb{F}})\hat{~},$$ where $e$ is the unit element of $\mathcal{K}_{\mathbb{F}}$.

@@ -34,7 +34,7 @@ weight is a real symmetric bilinear form's Gram, the lift follows — with the
 symmetry supplied by the merged `bilinM_isSymm`, not fabricated. `1/(8π)` stays a
 phase-4 identification; nothing is wired.
 
--- Ref: [manuscript] prop:em-coupling-bring-zero-mode
+-- Ref: [leitner2026] prop:em-coupling-bring-zero-mode
 -- Ref: [orellana1998] https://doi.org/10.1006/jabr.1998.7437
 -/
 import QOU.Archimedean.LoopWeightRealSymmReduction

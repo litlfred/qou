@@ -1,0 +1,117 @@
+{
+  "$schema": "folio-vector-figures/v1",
+  "doc_id": "arxiv-2308.16266v1",
+  "figures": [
+    {
+      "id": "vfig-p004",
+      "file": "figures/vfig-p004.png",
+      "role": "undetermined",
+      "basis": {
+        "method": "assembly",
+        "by": {
+          "kind": "script",
+          "id": "cat-harness/scripts/pdf-vector-figures.py"
+        },
+        "page": 4
+      },
+      "page": 4,
+      "rotation": 0,
+      "captionLabels": [
+        "2"
+      ],
+      "region": [
+        54.0,
+        370.17,
+        299.08,
+        521.92
+      ],
+      "assembly": {
+        "drawings": 71,
+        "background": 0,
+        "groups": [
+          {
+            "bbox": [
+              54.0,
+              370.17,
+              299.08,
+              521.92
+            ],
+            "drawings": 71,
+            "pageEdge": false,
+            "rendered": true,
+            "labels": [
+              "2H",
+              "3H",
+              "3He",
+              "6Li",
+              "7Li",
+              "7Be",
+              "15N",
+              "15O",
+              "17O",
+              "2",
+              "1",
+              "0",
+              "1",
+              "2",
+              "3",
+              "(",
+              "N)",
+              "Exp",
+              "VMC-NQS"
+            ]
+          }
+        ],
+        "boxes": [
+          {
+            "id": "b0",
+            "bbox": [
+              54.0,
+              370.17,
+              299.08,
+              521.92
+            ],
+            "parent": null,
+            "labels": [
+              "2H",
+              "3H",
+              "3He",
+              "6Li",
+              "7Li",
+              "7Be",
+              "15N",
+              "15O",
+              "17O",
+              "2",
+              "1",
+              "0",
+              "1",
+              "2",
+              "3",
+              "(",
+              "N)"
+            ]
+          },
+          {
+            "id": "b1",
+            "bbox": [
+              234.28,
+              373.82,
+              295.43,
+              397.44
+            ],
+            "parent": "b0",
+            "labels": [
+              "Exp",
+              "VMC-NQS"
+            ]
+          }
+        ],
+        "unlabelledClosedShapes": 40,
+        "connectors": [],
+        "between": [],
+        "outside": 103
+      }
+    }
+  ]
+}

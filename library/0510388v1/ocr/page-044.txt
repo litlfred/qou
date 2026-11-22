@@ -1,0 +1,36 @@
+With these notations set, the curl of a vector field W is defined, as usual, by
+Vxw=td!lw,
+
+that is, we convert W to the 1-form !W, take its exterior derivative to get the
+2-form d!W, and then convert this to the vector field td! W.
+
+For example, suppose W is the vector field E; = P,,X;. Then
+Vy XEi = td! E, = td0,
+
+= ft (y2/(1 + yo) 81 A 82 — y3/(1 + yo) 83 A 84)
+
+y2/(1 + yo) Es — y3(1 + yo) Eo.
+And likewise
+
+Vy XEx = y3/(1 + yo) Er — yi/(1 + yo) Es
+
+Vy XE; = yi/(l + yo) E, _ y2/(1 + yo) E).
+These formulas can be viewed as special instances of the formula given above in
+Proposition 18.1. For example, if y = (Yo, ¥1,¥2,¥3), X = (1,0, 0,0) and
+V = X,, then one easily calculates that
+
+ly,x,V] = yo Es — y3 Ep.
+
+Dividing through by 1 + <x,y> = 1 + yo gives the formula for Vy XE,
+appearing above, and so verifies Proposition 18.1 in this instance.
+
+Both sides of the formula in Proposition 18.1 are linear in V, so we can certainly
+rescale V to be a unit vector. Also, both sides of this formula are invariant under
+an orientation preserving isometry of S*, so we can move x to the point
+
+(1, 0, 0,0) and V to the tangent vector E, .
+
+Thus the above verification of Proposition 18.1 in this single instance also serves
+as its proof.
+
+44

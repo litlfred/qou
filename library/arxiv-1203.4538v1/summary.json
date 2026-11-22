@@ -2,13 +2,18 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1203.4538v1",
  "source_sha256": "5e44909e355c78d6",
- "brief": "The exponential-logarithmic equivalence classes of surreal numbers — 7 sections: Introduction.; Preliminaries on surreal numbers.; Sign sequences.",
- "extended": "**The exponential-logarithmic equivalence classes of surreal numbers**\n\n*Salma Kuhlmann and Mickaël Matusinski*\n\n15 pp, 7 sections.\n\n**Outline.** 1 Introduction.; 2 Preliminaries on surreal numbers.; 2.2 Sign sequences.; 2.3 Generalized epsilon numbers; 3 The kappa map.; 4 Sign sequences formulae for the kappa map.; 5 Transseries and exp-log series.\n\n**Extracted claims (proposals, not verified).**\n- Theorem 4.3: ). Then, in Section 5, we introduce the notion of Transserial-Exp-Log\n- Theorem 2.1: 1. [ Gon86, Theorem 2.1] For any pair\n- Theorem 2.3: 1. [ Gon86, Theorems 3.3, 3.6, 3.7 and Ch. 5, Sect. D] The proper\n- Theorem 2.4: 1. [ Gon86, Theorems 5.1 to 5.4] The re-\n- Theorem 2.7: The exponential map exp : No → No>0 and its inverse log : No>0 →\n- Theorem 2.9: •Given a surreal number a = α0 ⊕ /binampersandβ0 ⊖ /binampersandα1 ⊕ /binampersandβ1 ⊖ /binampersand· · ·, for",
+ "brief": "The exponential-logarithmic equivalence classes of surreal numbers — 9 sections: Front matter; Introduction.; Preliminaries on surreal numbers.",
+ "extended": "**The exponential-logarithmic equivalence classes of surreal numbers**\n\n*Salma Kuhlmann and Mickaël Matusinski*\n\n15 pp, 9 sections.\n\n**Outline.** Front matter; 1 Introduction.; 2 Preliminaries on surreal numbers.; 2.1 Inductive definitions.; 2.2 Sign sequences.; 2.3 Generalized epsilon numbers; 3 The kappa map.; 4 Sign sequences formulae for the kappa map.; 5 Transseries and exp-log series.",
  "tokens": {
-  "brief": 36,
-  "extended": 220
+  "brief": 35,
+  "extended": 98
  },
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
   {
    "id": "sec-000-1-introduction",
    "title": "Introduction.",
@@ -17,30 +22,35 @@
   {
    "id": "sec-001-2-preliminaries-on-surreal-numbers",
    "title": "Preliminaries on surreal numbers.",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-002-21-inductive-definitions",
+   "title": "Inductive definitions.",
    "pages": "2-6"
   },
   {
-   "id": "sec-002-22-sign-sequences",
+   "id": "sec-003-22-sign-sequences",
    "title": "Sign sequences.",
    "pages": "6-7"
   },
   {
-   "id": "sec-003-23-generalized-epsilon-numbers",
+   "id": "sec-004-23-generalized-epsilon-numbers",
    "title": "Generalized epsilon numbers",
    "pages": "7-7"
   },
   {
-   "id": "sec-004-3-the-kappa-map",
+   "id": "sec-005-3-the-kappa-map",
    "title": "The kappa map.",
    "pages": "7-9"
   },
   {
-   "id": "sec-005-4-sign-sequences-formulae-for-the-kappa-map",
+   "id": "sec-006-4-sign-sequences-formulae-for-the-kappa-map",
    "title": "Sign sequences formulae for the kappa map.",
    "pages": "9-13"
   },
   {
-   "id": "sec-006-5-transseries-and-exp-log-series",
+   "id": "sec-007-5-transseries-and-exp-log-series",
    "title": "Transseries and exp-log series.",
    "pages": "13-15"
   }
@@ -48,8 +58,7 @@
  "provenance": {
   "kind": "extractive",
   "from": [
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

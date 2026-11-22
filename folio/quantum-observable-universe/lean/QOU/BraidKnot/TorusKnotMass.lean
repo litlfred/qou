@@ -120,7 +120,7 @@ end TorusKnotMass
 -- gauge_mass_factor ≈ 143, scalar_mass_factor ≈ 171 + their derivation from the
 -- gauge-coupling chain (g, g', λ) — the research-grade open work, never a
 -- trivial witness.
--- Ref: [manuscript] docs/audits/2026-05-24-pr1122-retraction-and-existing-canonical-adaptation.md §3.B
+-- Ref: [leitner2026] docs/audits/2026-05-24-pr1122-retraction-and-existing-canonical-adaptation.md §3.B
 --
 -- History (two separate fabricated-instance removals, both now recorded here):
 --   (1) axiom torusKnotMass_conjecture : TorusKnotMass

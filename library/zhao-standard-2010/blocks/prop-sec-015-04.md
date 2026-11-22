@@ -1,0 +1,1 @@
+Let h = (p −3)/2. Then one has h X k=0 h X l=k p−2 X j=2 {gk,1, gl,j} + h+1 X k=0 h+1 X j=2 {gk,1, gh+1,j} + h X k=0 h X l=k+1 p−2 X j=2 {gk,p−1, gl,j} + h X k=0 h+1 X j=2 {gk,p−1, gh+1,j} − h X k=0 h X l=k p−2 X j=2 {gk,j, gl,p−1} − h X k=0 h X l=k p−2 X j=2 {gk,j, gl+1,1} = 0. There are h(2h + 3)2 = hp2 distinct terms on the left, each with coeﬃcient ±1.

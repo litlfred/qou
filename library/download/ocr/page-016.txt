@@ -1,0 +1,52 @@
+1400 S.G. Bobkov and F. Gétze
+
+Alternatively, for further applications to empirical measures, one could start from the infimum-
+convolution inequalities (5.3) and (5.4), taking them as the main hypothesis on the measure pj.
+They take an intermediate position between Poincaré and logarithmic Sobolev inequalities. How-
+ever, logarithmic Sobolev inequalities have been much better studied, with a variety of sufficient
+conditions having been derived.
+
+Now, as in Section 2, we apply the relations (5.3) and (5.4) to functions g(x1,...,%n) =
+{f4aF., where F,, is the empirical measure defined for ‘observations’ x;,...,%n,. By the very
+definition, for any t > 0,
+
+Le
+Pig(X1.....%n) = sup [ron 2 3h nF
+iz
+
+n
+
+1 1
+=— sup D[ fo swe] =f infer.
+
+Vi yee, yn€R i=l
+
+=
+
+Similarly, Q;g = f Q1/n f dFn. Therefore, after integration with respect to jz and using the iden-
+tity Pa (tf) = t Pra f, we arrive at corresponding empirical supremum- and infimum-convolution
+inequalities, as follows.
+
+Proposition 5.4. Under LSI(o7), for any F-integrable Borel-measurable function f on R and
+for any t > 0,
+
+log Ee’ fdF,—f f dF) < 1 [Poel — fldF, (5.5)
+logEe!/ fdF—f fdFn) < fur _ Qio2/n f OF. (5.6)
+
+Note that the second inequality may be derived from the first by changing f to —/f.
+
+6. Local behavior of empirical distributions
+
+In this section, we develop a few direct applications of Proposition 5.4 to the behavior of em-
+pirical distribution functions F,,(x) at a fixed point. Such functionals are linear, that is, of the
+form f f dF, corresponding to the indicator function of the half-axis f = (—0o, x]. When f
+is smooth, Proposition 5.2 tells us that the deviations of L, f = f f dF, — f f dF are of order
+o/./n. In the general non-smooth case, the infimum- and supremum-convolution operators P, f
+and Q, f behave differently for small values of ¢ and this results in a different rate of fluctuation
+for Lif.
+
+To see this, let f = (—oo, x]. In this case, the functions P; f and Q; f may easily be computed
+explicitly, but we do not lose much by using the obvious bounds
+
+Loox -vue © Of SP f Sloe vm
+Therefore, (5.5) and (5.6) yield the following proposition.

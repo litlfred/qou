@@ -1,0 +1,63 @@
+3.3 Families of characters and Rouquier families
+
+Let Ym : Uc,j + q'"©4 be a cyclotomic specialisation and let Hy,,(W) be the corresponding cyclotomic
+Hecke algebra associated with W. How can we define families of characters for Hy,,(W)? We cannot
+apply Lusztig’s original definition, because parabolic subgroups of complex reflection groupd|do not have
+a nice presentation as in the real case, and certainly not a “corresponding” parabolic Hecke algebra. On
+the other hand, we do not have a Kazhdan—Lusztig basis for Hy, (W), so we cannot construct Kazhdan—
+Lusztig cells and use them to define families of characters for complex reflection groups in the usual way.
+However, we can define the families of characters to be the Rouquier families of Hy,,(W), that is, the
+blocks of Hy,,(W) over the Rouquier ring Rx(q), where
+
+Req) =Zxla.d*.(" — Yasil-
+
+By Proposition [1.4] the Rouquier families are the non-empty subsets B of Irr(W) that are minimal with
+respect to the property:
+
+> peli ERK(q) VhREH(W),
+E¢€B m\
+
+where yg and sz are respectively the character and the Schur element of K(v)H(W) corresponding to
+Eetr(w).
+
+Broué and Kim determined the Rouquier families for the complex reflection groups of type
+G(l,1,n), but their results are only true when / is a power of a prime number or Ym is a “good”
+cyclotomic specialisation (for example, we have shown that their results hold when Ym is the spetsial
+cyclotomic specialisation [Ch3] Proposition 3.20]). The same problem persists, and some new appear,
+in the determination of the Rouquier families for G(I,p,n) by Kim [Kim]. Malle and Rouquier
+calculated the Rouquier families for some exceptional complex reflection groups and the dihedral groups,
+for the spetsial cyclotomic specialisation. More recently, we managed to determine the Rouquier families
+for all cyclotomic Hecke algebras of all complex reflection groups (Ch5), thanks to their
+property of “semicontinuity”. In order to explain this property, we will need some definitions.
+
+Let M = Tle; ves be a potentially essential monomial for W. We say that the family of inte-
+gers m = (mMe¢.j)(ceA/W)(0<j<ec—1) belongs to the potentially essential hyperplane Hu (of R&c ec) if
+Ney Mejac,j = 0.
+
+Suppose that m belongs to no potentially essential hyperplane. Then the Rouquier families of
+Hy,,.(W) are called Rouquier families associated with no essential hyperplane. Now suppose that m
+belongs to a unique potentially essential hyperplane H. Then the Rouquier families of Hy,,(W) are
+unions of the Rouquier families associated with no essential hyperplane and they are called Rouquier
+families associated with H. If they do not coincide with the Rouquier families associated with no essen-
+tial hyperplane, then H is called an essential hyperplane for W. All these notions are well-defined and
+they do not depend on the choice of m because of the following theorem §4.4]:
+
+Theorem 3.10 (Semicontinuity property of Rouquier families) Letm = (me,j)(cea/w)(0<j<ec-1)
+be a family of integers and let ~m : Uc + gq’) be the corresponding cyclotomic specialisation. The
+Rouquier families of Hy,,(W) are unions of the Rouquier families associated with the essential hyper-
+planes that m belongs to and they are minimal with respect to this property.
+
+Thanks to the above result, it is enough to do calculations in a finite number of cases in order to
+obtain the families of characters for all cyclotomic Hecke algebras, whose number is infinite.
+
+Example 3.11 For W = Gs, the Rouquier families associated with no essential hyperplane are trivial
+(that is, every block is a singleton). The hyperplane Hj, corresponding to the monomial M = UoYEL is
+essential, and it is the unique essential hyperplane for G3. Let ym : vt,j + q'™, j = 0,1, be a cyclotomic
+specialisation. We have that m = (mo,mj) belongs to Hy, if and only if mp = m,. There is a single
+Rouquier family associated with Hy,, which contains all irreducible representations of G3.
+
+1The parabolic subgroups of a complex reflection group W C GL(b) are the pointwise stabilisers of the subsets of §. It
+is a remarkable theorem by Steinberg Theorem 1.5] that all parabolic subgroups of W are again complex reflection
+groups.
+
+26

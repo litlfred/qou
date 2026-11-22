@@ -1,0 +1,78 @@
+by auto
+
+moreover
+
+have unit-circle-fix M
+using assms
+by simp
+
+hence ++: ideal-points (poincare-line ?7Mu ?Mv) = {?Mil, ?Mi2}
+using <u # v) assms *
+by simp
+
+have poincare-distance ?Mu ?Mv = calc-poincare-distance ?Mu ?Mil ?Mv ?Mi2
+by (rule poincare-distance-I[OF ** *** ++])
+
+moreover
+
+have calc-poincare-distance ?Mu ?Mil ?Mv ?Mi2 = calc-poincare-distance u il v i2
+using ideal-points-different|OF assms(2—3) <u # v» *]
+unfolding calc-poincare-distance-def
+by (subst moebius-preserve-cross-ratio|symmetric], simp-all)
+
+ultimately
+
+show ?thesis
+by simp
+
+qed
+
+Knowing ideal points for x-axis, we can easily explicitly calculate distances.
+
+lemma poincare-distance-x-axis-x-axis:
+assumes «x € unit-disc and y € unit-disc and « € circline-set x-axis and y € circline-set x-axis
+shows poincare-distance x y =
+(let x’ = to-complex x; y’ = to-complex y
+in abs (In (Re (((1 +2’) * (1 — y’)) / (1-2) * (1 + y9)))))
+proof—
+obtain x’ y’ where *: x = of-complex x' y = of-complex y'
+using inf-or-of-complez|of x] inf-or-of-complex|of y] «x € unit-discy <y € unit-disc»
+by auto
+
+have cmod x’ < 1 cmod y' < 1
+using (x € unit-disc) <y € unit-discy *
+by (metis unit-disc-iff-cmod-It-1)+
+hence ««: 2’ A 1a’ A1y'A-1y'Al
+by auto
+
+have 1 + y'#0
+using **
+by (metis add.left-cancel add-neg-numeral-special(7))
+
+show ?thesis
+proof (cases t = y)
+case True
+thus ?thesis
+using assms(1—2)
+using wunit-disc-iff-cmod-lt-1|of to-complex x] * ** (1 + y’ # 0»
+by auto
+
+next
+case False
+hence poincare-line x y = z-axis
+using poincare-line-x-axis| OF assms]
+by simp
+hence ideal-points (poincare-line x y) = {of-complex (—1), of-complex 1}
+by simp
+hence poincare-distance x y = calc-poincare-distance x (of-complex (—1)) y (of-complex 1)
+using poincare-distance-I assms (x # y>
+by auto
+also have ... = abs (In (Re (((2’ + 1) * (y’— 1)) / ((x’ — 1) * (y’+ 1)))))
+using * <cmod x’ < 1» «cmod y' < 1>
+by (simp, transfer, transfer, auto)
+finally
+show ?thesis
+using *
+by (metis (no-types, lifting) add.commute minus-diff-eq minus-divide-divide mult-minus-left mult-minus-right
+
+47

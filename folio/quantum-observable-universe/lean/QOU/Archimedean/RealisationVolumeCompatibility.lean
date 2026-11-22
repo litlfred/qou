@@ -29,7 +29,7 @@ rigidity (see `QOU.BraidKnot.Keystone.HabiroRigidity`) but not closed.
 
 Sorry-free.
 
--- Ref: [manuscript] docs/audits/2026-07-12-fibre-observable-categorical-not-analytic.md
+-- Ref: [leitner2026] docs/audits/2026-07-12-fibre-observable-categorical-not-analytic.md
 -- Ref: [kashaev1997] https://doi.org/10.1023/A:1007364912784
 -/
 import Mathlib.Data.Real.Basic

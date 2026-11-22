@@ -31,11 +31,11 @@
   binding is set by the universal Borromean residue 8G scaled by
   nucleon count.
 
-  Ref: [manuscript] prop:magic-A-binding-formula
-       [manuscript] prop:binding-alpha-shift-extension
-       [manuscript] conj:diagrammatic-double-magic-lr-fusion
-       [manuscript] prop:gravity-spectral-prefactor
-       [manuscript] rem:strutinsky-from-graded-trace
+  Ref: [leitner2026] prop:magic-A-binding-formula
+       [leitner2026] prop:binding-alpha-shift-extension
+       [leitner2026] conj:diagrammatic-double-magic-lr-fusion
+       [leitner2026] prop:gravity-spectral-prefactor
+       [leitner2026] rem:strutinsky-from-graded-trace
        [audit] docs/audits/2026-05-31-binding-magic-A-wireup.md
        [compute] computations/magic_A_formula.py
        [compute] computations/binding_alpha_shift_witness.py

@@ -1,1 +1,1 @@
-[1]. The helicity H(ξ) is preserved under the action on ξ of a volume-
+The helicity H(ξ) is preserved under the action on ξ of a volume- preserving diﬀeomorphism of M. Indeed, the helicity H(ξ) was deﬁned without coordinates or metric. Hence, H(ξ) is the same for all ﬁelds that diﬀer only by a volume-preserving change of coordinates. In this sense, helicity is a topological invariant. The word “helicity” was coined by K. Moﬀatt in [19] and it reveals the topological meaning of this characteristic of a vector ﬁeld (see also [20] for a historical survey).

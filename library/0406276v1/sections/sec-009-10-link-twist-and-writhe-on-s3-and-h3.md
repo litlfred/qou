@@ -8,6 +8,7 @@ pages: 24-28
 source_pdf: 0406276v1.pdf
 source_sha256: 8fdf4b5950e8b5f5
 toc_source: inferred
+doc_brief: "The GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE — 16 sections: Front matter; Linking integrals in S3 and H3 .; Historical background."
 ---
 We follow Calugareanu's lead and replace the two closed curves  K1  and  K2  in our 
 linking integrals by a single closed curve  K ,  which we must assume to be simple.   
@@ -51,7 +52,6 @@ where  L  is the length of the closed curve  K .  The parallel transport version
 writhe is the more intuitively satisfying, since in this version the writhing number 
 of a great circle is zero. 
  
-25
  
  
 We turn next to the definition of "twist". 
@@ -81,7 +81,6 @@ resulting limit is the left-invariant derivative  V'L(s) .  If we use parallel t
 move  V(s + h)  back, then the resulting limit is the covariant derivative V'P(s) . 
  
  
-26
  
  
 The two flavors of twist on  S3  are then given by 
@@ -112,7 +111,6 @@ In hyperbolic 3-space  H3 ,  we have only the parallel transport version of twis
  
  
  
-27
  
 Now consider in  S3  or  H3  a narrow ribbon of width  ε  obtained by starting with 
 a simple closed curve  K  =  {x(s)}  and then exponentiating a unit normal vector 
@@ -148,7 +146,4 @@ THEOREM 5.  LINK  =  TWIST  +  WRITHE  in  S3  and  H3 .
  
 (3)  On  H3  in parallel transport format:   
  
-                                   Lk(K, Kε)  =  TwP(V)  +  WrP(K) . 
- 
- 
-28
+                                   Lk(K, Kε)  =  TwP(V)  +  WrP(K) .

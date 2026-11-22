@@ -1,0 +1,53 @@
+122 Chapter 5 — A family of surfaces
+
+where V = V, 6 V_ denotes the local system underlying the variations of
+Hodge structures in lemma 5.10. Via Gabber’s decomposition theorem one
+then deduces that
+
+59*59 = L,@L_@6 forsome 6 €DP?(X,C).
+
+But we know from theorem 2.13 that for all n 4 0 the perverse cohomology
+sheaves ?H" (Sg * dg) are negligible and are hence by lemma 5.20 multiples
+of the constant perverse sheaf dy. Since over the open dense subset U C X
+we have 6|y = V{g], it then follows that 6 is a perverse sheaf.
+
+Now consider the direct sum decomposition 6 = 6, © 6_ where 6, C 6
+are defined as the maximal perverse subsheaves on which the commutativity
+constraint S : dg * dg —> dg * dg acts by +1. Going back to the definitions,
+one checks that this commutativity constraint S induces on the stalks the
+involution €- of : H"(Y;,Q) —> H"(Y,Q) where oy : ¥; —> Y; denotes the
+involution that we defined in section 5.2 and where the twist by the extra
+sign € = (—1)8~! comes from the degree shift in dg = ICe[g — 1] because
+of the Koszul rule for the tensor product of complexes. Oo
+
+Recall that a perverse sheaf is said to be clean if it does not admit any
+
+perverse subquotients which are negligible. For a smooth theta divisor we
+claim that L.. are the only negligible constituents in dg * dg.
+
+LEMMA 5.22. If the theta divisor © C X is smooth, then 5s. are clean.
+
+Proof. If this were not true, then by lemma 5.20 the semisimple perverse
+sheaf 6, © 6_ would contain dy as a summand. Then H~8(X,6, 66_) 40
+and hence the inclusion
+
+H-8(X,L,@L_) G H78(X, 69 * 59)
+
+would be strict. However, the Kiinneth formula in lemma 3.4 and the weak
+Lefschetz theorem for the smooth ample divisor © C X show that
+
+gol
+H ¥(X,69%*59) = @ A(X, 69) ®H" §(X, dg)
+n=1
+gol
+= @ as! "(X,C) @H"!(X,C)
+n=1
+
+which by direct inspection is equal to H~8(X,L+@L_). Oo
+
+Note that for a general complex ppav of dimension g the theta divisor
+is smooth by the work of Andreotti and Mayer [4], so the above lemma
+together with theorem 4.2 leads to the final result of this section.
+
+PROPOSITION 5.23. If X is a general complex ppav of dimension g,
+then the local systems underlying V+. are irreducible.

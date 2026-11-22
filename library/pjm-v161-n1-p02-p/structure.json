@@ -6,442 +6,1872 @@
   "sha256": "a93e922eab1ee67c4e275d97302f3523f4d5c6567797f2963b10cf08f9fa814c",
   "bytes": 8458219,
   "pages": 93,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:55Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "ocr_pages": [
+   {
+    "page": 52,
+    "reason": "15 of 525 words are a stray single letter: the text layer splits words"
+   }
+  ]
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "Paci\ufb01c Journal of Mathematics STUDYING LINKS VIA CLOSED BRAIDS. III. CLASSIFYING LINKS WHICH ARE CLOSED 3-BRAIDS",
-  "authors_raw": "JOAN BIRMAN AND WILLIAM W. M ENASCO",
+  "title": "Studying links via closed braids. III. Classifying links which are closed 3-braids",
+  "authors_raw": "JOAN BIRMAN AND WILLIAM W. MENASCO",
+  "title_lines": [
+   "Pacific",
+   "Mathematics",
+   "STUDYING LINKS VIA CLOSED BRAIDS. III. CLASSIFYING",
+   "LINKS WHICH ARE CLOSED 3-BRAIDS"
+  ],
   "abstract": null,
   "docinfo": {
-   "CreationDate": "D:20120720092336-07'00'",
-   "Producer": "EditFlow, from Mathematical Sciences Publishers",
    "Title": "Studying links via closed braids. III. Classifying links which are closed 3-braids",
+   "Author": "Joan Birman and William W. Menasco",
+   "Producer": "EditFlow, from Mathematical Sciences Publishers",
    "Creator": "Pacific Journal of Mathematics vol. 161 (1993), no. 1 ",
-   "Author": "Joan Birman and William W. Menasco"
-  }
+   "CreationDate": "D:20120720092336-07'00'"
+  },
+  "title_raw": "Pacific Mathematics STUDYING LINKS VIA CLOSED BRAIDS. III. CLASSIFYING LINKS WHICH ARE CLOSED 3-BRAIDS",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Studying links via closed braids. III. Classifying links which are closed 3-braids",
+   "heading": "Paciﬁc Journal of Mathematics",
+   "text": "Pacific Mathematics STUDYING LINKS VIA CLOSED BRAIDS. III. CLASSIFYING LINKS WHICH ARE CLOSED 3-BRAIDS",
+   "corroborated_by": [
+    "text",
+    "page"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Paciﬁc Journal of Mathematics STUDYING LINKS VIA CLOSED BRAIDS. III. CLASSIFYING LINKS WHICH ARE CLOSED 3-BRAIDS"
  },
  "toc": [
   {
    "level": 1,
-   "title": "Introduction. This manuscript is the third in a series of six papers",
+   "title": "STUDYING LINKS VIA CLOSED BRAIDS III: CLASSIFYING LINKS WHICH ARE CLOSED 3-BRAIDS",
    "page": 2,
    "source": "inferred",
-   "number": "1"
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "25"
   },
   {
-   "level": 1,
-   "title": "JOAN S. BIRMAN AND WILLIAM W. MENASCO",
-   "page": 3,
+   "level": 3,
+   "title": "i f p > 4 , (σισ2)",
+   "page": 82,
    "source": "inferred",
-   "number": "26"
-  },
-  {
-   "level": 1,
-   "title": "JOAN S. BIRMAN AND WILLIAM W. MENASCO",
-   "page": 5,
-   "source": "inferred",
-   "number": "28"
-  },
-  {
-   "level": 1,
-   "title": "It will also be convenient to make the assumption that 3? is prime",
-   "page": 6,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "JOAN S. BIRMAN AND WILLIAM W. MENASCO",
-   "page": 7,
-   "source": "inferred",
-   "number": "30"
-  },
-  {
-   "level": 1,
-   "title": "Admissible words. In this section we begin the new work needed",
-   "page": 12,
-   "source": "inferred",
-   "number": "2"
-  },
-  {
-   "level": 1,
-   "title": "Digons. In this section we will introduce additional structure",
-   "page": 15,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "The non-standard foliation of the digons. We have shown that A'",
-   "page": 28,
-   "source": "inferred",
-   "number": "4"
-  },
-  {
-   "level": 1,
-   "title": "Moving Af into T. We have dealt with the minimization of",
-   "page": 40,
-   "source": "inferred",
-   "number": "5"
-  },
-  {
-   "level": 1,
-   "title": "The fact that \u03bc2$(\u03a6o) is in <9B/ shows that if it crosses L it",
-   "page": 45,
-   "source": "inferred",
-   "number": "L"
-  },
-  {
-   "level": 1,
-   "title": "Thus, going to Figure 5.4(c) we conclude that the only possibility",
-   "page": 46,
-   "source": "inferred",
-   "number": "L"
-  },
-  {
-   "level": 1,
-   "title": "The Classification Theorem. All of the pieces are in place, and",
-   "page": 53,
-   "source": "inferred",
-   "number": "6"
+   "number": "2",
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": "105"
   },
   {
    "level": 2,
-   "title": "To see this, the first thing to notice is that since the singularity is",
-   "page": 58,
-   "source": "inferred",
-   "number": "6.2"
-  },
-  {
-   "level": 2,
-   "title": "In Figure 6.11 we have illustrated the same situation, but omit-",
-   "page": 73,
-   "source": "inferred",
-   "number": "6.4"
-  },
-  {
-   "level": 1,
-   "title": "Thus H\u03c6 \u03a0 F u \u03a9 includes bridges of name 24 and 23. There is",
-   "page": 79,
-   "source": "inferred",
-   "number": "23"
-  },
-  {
-   "level": 2,
-   "title": "It is not difficult to see that region which is foliated by the pair",
-   "page": 79,
-   "source": "inferred",
-   "number": "6.4"
-  },
-  {
-   "level": 1,
-   "title": "The algorithm and applications. Our task in this section is to",
-   "page": 80,
-   "source": "inferred",
-   "number": "7"
-  },
-  {
-   "level": 2,
-   "title": "Applications, In what follows S* denotes a link of braid index",
-   "page": 84,
-   "source": "inferred",
-   "number": "7.3"
-  },
-  {
-   "level": 1,
-   "title": "Seifert circles. Then 3 = 3' only if the algebraic crossing numbers",
-   "page": 85,
-   "source": "inferred",
-   "number": "3"
-  },
-  {
-   "level": 1,
-   "title": "Hints of additional pathology. It was shown in the introduction",
-   "page": 87,
-   "source": "inferred",
-   "number": "8"
-  },
-  {
-   "level": 1,
-   "title": "References",
-   "page": 89,
-   "source": "inferred",
-   "number": null
-  },
-  {
-   "level": 1,
-   "title": "S. VARADARAJAN",
+   "title": "PACIFIC JOURNAL OF MATHEMATICS",
    "page": 92,
    "source": "inferred",
-   "number": "V"
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": null
   },
   {
-   "level": 1,
-   "title": "Tangential and normal Euler numbers, complex points, and",
-   "page": 93,
+   "level": 3,
+   "title": "EDITORS",
+   "page": 92,
    "source": "inferred",
-   "number": "1"
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": null
   },
   {
-   "level": 1,
-   "title": "Studying links via closed braids. III. Classifying links which are",
-   "page": 93,
+   "level": 3,
+   "title": "SUPPORTING INSTITUTIONS",
+   "page": 92,
    "source": "inferred",
-   "number": "25"
+   "number": null,
+   "confidence": 0.6,
+   "evidence": [
+    "style"
+   ],
+   "page_label": null
   }
  ],
  "toc_source": "inferred",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1.1",
+   "title": "A flype",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "28"
+  },
+  {
+   "kind": "figure",
+   "number": "1.2",
+   "title": "A braid-preserving flype an infinite family of counterexamples to the long-standing conjecture that the map from conjugacy classes in 2?3 to oriented link types was injective on links of braid index 3. The examples in (iii) are especially important because they generalize to related examples for eve",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "28"
+  },
+  {
+   "kind": "figure",
+   "number": "1.5",
+   "title": "The axes A and A' are oriented by the right hand rule, relative to the given orientation on L. The outward-drawn normal to F is also determined by the right hand rule relative to the given orientation on L. Notice that with this convention the axes A and A' pass from F~ to F",
+   "page": 14,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "37"
+  },
+  {
+   "kind": "figure",
+   "number": "3.10",
+   "title": "Assume this to be the case. Then, since β is an arc with its endpoints on F",
+   "page": 27,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "50"
+  },
+  {
+   "kind": "figure",
+   "number": "4.1c",
+   "title": "We examine a split-open fiber of H' just before, during and after the singularity at φ = φ0",
+   "page": 39,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "62"
+  },
+  {
+   "kind": "figure",
+   "number": "3.3",
+   "title": "There are three components of set #3, one in each disc. The manner in which set #2 meets a band can be seen from Figure 3.1(b). There are two components, one of which connects to D; and the other to D/+i. Recall that the digons which join the discs Di and D, +i (respectively D, _i) are attached to D",
+   "page": 41,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "64"
+  },
+  {
+   "kind": "figure",
+   "number": "5.2",
+   "title": "Note that we have fixed notation, so that (for example) in case (ii) the pierce-points p[ and p",
+   "page": 43,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "66"
+  },
+  {
+   "kind": "figure",
+   "number": "5.5",
+   "title": "Therefore we may modify the fibration by pushing FT, forward in the fibration in a neighborhood of Γ (Λ ) to remove the intersection",
+   "page": 45,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "68"
+  },
+  {
+   "kind": "figure",
+   "number": "6.8",
+   "title": "It is essentially identical to Figure 6.5 and is ruled out for the same reasons as were used to rule out the sequence (1 — 4)~*, (1 — 4)\"~* in the proof of Lemma 6.1",
+   "page": 67,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "90"
+  },
+  {
+   "kind": "figure",
+   "number": "6.2",
+   "title": "We leave it to the reader to extend it to the full picture, using the following considerations: In order for the (2-3)\"\" event to be possible, the \"2\" side and the \"3\" side of the arc which joins 2 to 3 in Figure 6.4 must be on opposite sides of the same digon. The only way this can happen is if the",
+   "page": 69,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "graphic"
+   ],
+   "page_label": "92"
+  },
+  {
+   "kind": "figure",
+   "number": "6.16",
+   "title": "Since there was only one way to complete the sequence (2-3)~*, b2 to a cycle, the two cases must be identical. This completes the proof of Lemma 6.4",
+   "page": 77,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": "100"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "25",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "29",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "31",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "32",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "33",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "34",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "39",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "40",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "42",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "44",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "48",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "50",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "52",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "53",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "54",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "55",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "56",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "57",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "58",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "59",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "60",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "61",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "62",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "63",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "64",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "65",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "66",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "67",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "68",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "69",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "70",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "71",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "72",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "73",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "74",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "75",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "76",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "77",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "78",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "79",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "80",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "81",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "82",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "83",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "84",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "85",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": "86",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 64,
+   "label": "87",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 65,
+   "label": "88",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 66,
+   "label": "89",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 67,
+   "label": "90",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 68,
+   "label": "91",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 69,
+   "label": "92",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 70,
+   "label": "93",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 71,
+   "label": "94",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 72,
+   "label": "95",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 73,
+   "label": "96",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 74,
+   "label": "97",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 75,
+   "label": "98",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 76,
+   "label": "99",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 77,
+   "label": "100",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 78,
+   "label": "101",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 79,
+   "label": "102",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 80,
+   "label": "103",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 81,
+   "label": "104",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 82,
+   "label": "105",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 83,
+   "label": "106",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 84,
+   "label": "107",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 85,
+   "label": "108",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 86,
+   "label": "109",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 87,
+   "label": "110",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 88,
+   "label": "111",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 89,
+   "label": "112",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 90,
+   "label": "113",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 91,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 92,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 93,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-26-joan-s-birman-and-william-w-menasco",
-   "number": "26",
-   "title": "JOAN S. BIRMAN AND WILLIAM W. MENASCO",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
    "level": 1,
-   "page_start": 2,
+   "page_start": 1,
    "page_end": 2,
-   "n_chars": 1342,
-   "n_words": 227
+   "n_chars": 231,
+   "n_words": 37,
+   "label_start": null,
+   "label_end": "25"
   },
   {
-   "id": "sec-001-1-introduction-this-manuscript-is-the-third-in-a",
-   "number": "1",
-   "title": "Introduction. This manuscript is the third in a series of six papers",
+   "id": "sec-000-studying-links-via-closed-braids-iii-classifying",
+   "number": null,
+   "title": "STUDYING LINKS VIA CLOSED BRAIDS III: CLASSIFYING LINKS WHICH ARE CLOSED 3-BRAIDS",
    "level": 1,
    "page_start": 2,
-   "page_end": 5,
-   "n_chars": 6061,
-   "n_words": 1059
+   "page_end": 22,
+   "n_chars": 37554,
+   "n_words": 7105,
+   "label_start": "25",
+   "label_end": "45"
   },
   {
-   "id": "sec-002-28-joan-s-birman-and-william-w-menasco",
-   "number": "28",
-   "title": "JOAN S. BIRMAN AND WILLIAM W. MENASCO",
+   "id": "sec-001-it",
+   "number": null,
+   "title": "it",
    "level": 1,
-   "page_start": 5,
-   "page_end": 6,
-   "n_chars": 2490,
-   "n_words": 467
+   "page_start": 22,
+   "page_end": 32,
+   "n_chars": 16756,
+   "n_words": 3343,
+   "label_start": "45",
+   "label_end": "55"
   },
   {
-   "id": "sec-003-3-it-will-also-be-convenient-to-make-the-assumpt",
-   "number": "3",
-   "title": "It will also be convenient to make the assumption that 3? is prime",
-   "level": 1,
-   "page_start": 6,
-   "page_end": 7,
-   "n_chars": 494,
-   "n_words": 88
+   "id": "sec-002-resp-b-page-32",
+   "number": null,
+   "title": "(resp. b^ (page 32)",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 32,
+   "n_chars": 2435,
+   "n_words": 483,
+   "label_start": "55",
+   "label_end": "55"
   },
   {
-   "id": "sec-004-30-joan-s-birman-and-william-w-menasco",
-   "number": "30",
-   "title": "JOAN S. BIRMAN AND WILLIAM W. MENASCO",
-   "level": 1,
-   "page_start": 7,
-   "page_end": 12,
-   "n_chars": 10054,
-   "n_words": 1823
+   "id": "sec-003-resp-b-page-33",
+   "number": null,
+   "title": "(resp. b^ (page 33)",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 33,
+   "n_chars": 1489,
+   "n_words": 297,
+   "label_start": "56",
+   "label_end": "56"
   },
   {
-   "id": "sec-005-2-admissible-words-in-this-section-we-begin-the",
-   "number": "2",
-   "title": "Admissible words. In this section we begin the new work needed",
-   "level": 1,
-   "page_start": 12,
-   "page_end": 15,
-   "n_chars": 6254,
-   "n_words": 1184
+   "id": "sec-004-resp-b-page-34",
+   "number": null,
+   "title": "(resp. b^ (page 34)",
+   "level": 2,
+   "page_start": 34,
+   "page_end": 34,
+   "n_chars": 1832,
+   "n_words": 393,
+   "label_start": "57",
+   "label_end": "57"
   },
   {
-   "id": "sec-006-3-digons-in-this-section-we-will-introduce-addit",
-   "number": "3",
-   "title": "Digons. In this section we will introduce additional structure",
-   "level": 1,
-   "page_start": 15,
-   "page_end": 28,
-   "n_chars": 21121,
-   "n_words": 4173
+   "id": "sec-005-resp-b-page-35",
+   "number": null,
+   "title": "(resp. b^ (page 35)",
+   "level": 2,
+   "page_start": 35,
+   "page_end": 35,
+   "n_chars": 2449,
+   "n_words": 516,
+   "label_start": "58",
+   "label_end": "58"
   },
   {
-   "id": "sec-007-4-the-non-standard-foliation-of-the-digons-we-ha",
-   "number": "4",
-   "title": "The non-standard foliation of the digons. We have shown that A'",
-   "level": 1,
-   "page_start": 28,
-   "page_end": 40,
-   "n_chars": 21048,
-   "n_words": 4232
+   "id": "sec-006-resp-b-page-36",
+   "number": null,
+   "title": "(resp. b^ (page 36)",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 36,
+   "n_chars": 957,
+   "n_words": 216,
+   "label_start": "59",
+   "label_end": "59"
   },
   {
-   "id": "sec-008-5-moving-af-into-t-we-have-dealt-with-the-minimi",
-   "number": "5",
-   "title": "Moving Af into T. We have dealt with the minimization of",
-   "level": 1,
+   "id": "sec-007-resp-b-page-37",
+   "number": null,
+   "title": "(resp. b^ (page 37)",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 37,
+   "n_chars": 2354,
+   "n_words": 484,
+   "label_start": "60",
+   "label_end": "60"
+  },
+  {
+   "id": "sec-008-resp-b-page-38",
+   "number": null,
+   "title": "(resp. b^ (page 38)",
+   "level": 2,
+   "page_start": 38,
+   "page_end": 38,
+   "n_chars": 2404,
+   "n_words": 497,
+   "label_start": "61",
+   "label_end": "61"
+  },
+  {
+   "id": "sec-009-resp-b-page-39",
+   "number": null,
+   "title": "(resp. b^ (page 39)",
+   "level": 2,
+   "page_start": 39,
+   "page_end": 39,
+   "n_chars": 2470,
+   "n_words": 470,
+   "label_start": "62",
+   "label_end": "62"
+  },
+  {
+   "id": "sec-010-resp-b-page-40",
+   "number": null,
+   "title": "(resp. b^ (page 40)",
+   "level": 2,
    "page_start": 40,
-   "page_end": 45,
-   "n_chars": 8669,
-   "n_words": 1726
+   "page_end": 40,
+   "n_chars": 691,
+   "n_words": 136,
+   "label_start": "63",
+   "label_end": "63"
   },
   {
-   "id": "sec-009-l-the-fact-that-\u03bc2\u03c6o-is-in-9b-shows-that-if-it-c",
-   "number": "L",
-   "title": "The fact that \u03bc2$(\u03a6o) is in <9B/ shows that if it crosses L it",
-   "level": 1,
+   "id": "sec-011-resp-b-page-41",
+   "number": null,
+   "title": "(resp. b^ (page 41)",
+   "level": 2,
+   "page_start": 41,
+   "page_end": 41,
+   "n_chars": 2553,
+   "n_words": 514,
+   "label_start": "64",
+   "label_end": "64"
+  },
+  {
+   "id": "sec-012-resp-b-page-42",
+   "number": null,
+   "title": "(resp. b^ (page 42)",
+   "level": 2,
+   "page_start": 42,
+   "page_end": 42,
+   "n_chars": 2479,
+   "n_words": 496,
+   "label_start": "65",
+   "label_end": "65"
+  },
+  {
+   "id": "sec-013-resp-b-page-43",
+   "number": null,
+   "title": "(resp. b^ (page 43)",
+   "level": 2,
+   "page_start": 43,
+   "page_end": 43,
+   "n_chars": 1254,
+   "n_words": 253,
+   "label_start": "66",
+   "label_end": "66"
+  },
+  {
+   "id": "sec-014-resp-b-page-44",
+   "number": null,
+   "title": "(resp. b^ (page 44)",
+   "level": 2,
+   "page_start": 44,
+   "page_end": 44,
+   "n_chars": 1702,
+   "n_words": 357,
+   "label_start": "67",
+   "label_end": "67"
+  },
+  {
+   "id": "sec-015-resp-b-page-45",
+   "number": null,
+   "title": "(resp. b^ (page 45)",
+   "level": 2,
    "page_start": 45,
-   "page_end": 46,
-   "n_chars": 1259,
-   "n_words": 234
+   "page_end": 45,
+   "n_chars": 1825,
+   "n_words": 364,
+   "label_start": "68",
+   "label_end": "68"
   },
   {
-   "id": "sec-010-l-thus-going-to-figure-54c-we-conclude-that-the",
-   "number": "L",
-   "title": "Thus, going to Figure 5.4(c) we conclude that the only possibility",
-   "level": 1,
+   "id": "sec-016-resp-b-page-46",
+   "number": null,
+   "title": "(resp. b^ (page 46)",
+   "level": 2,
    "page_start": 46,
-   "page_end": 53,
-   "n_chars": 11604,
-   "n_words": 2311
+   "page_end": 46,
+   "n_chars": 1189,
+   "n_words": 236,
+   "label_start": "69",
+   "label_end": "69"
   },
   {
-   "id": "sec-011-6-the-classification-theorem-all-of-the-pieces-a",
-   "number": "6",
-   "title": "The Classification Theorem. All of the pieces are in place, and",
-   "level": 1,
+   "id": "sec-017-resp-b-page-47",
+   "number": null,
+   "title": "(resp. b^ (page 47)",
+   "level": 2,
+   "page_start": 47,
+   "page_end": 47,
+   "n_chars": 1647,
+   "n_words": 331,
+   "label_start": "70",
+   "label_end": "70"
+  },
+  {
+   "id": "sec-018-resp-b-page-48",
+   "number": null,
+   "title": "(resp. b^ (page 48)",
+   "level": 2,
+   "page_start": 48,
+   "page_end": 48,
+   "n_chars": 1492,
+   "n_words": 294,
+   "label_start": "71",
+   "label_end": "71"
+  },
+  {
+   "id": "sec-019-resp-b-page-49",
+   "number": null,
+   "title": "(resp. b^ (page 49)",
+   "level": 2,
+   "page_start": 49,
+   "page_end": 49,
+   "n_chars": 1515,
+   "n_words": 302,
+   "label_start": "72",
+   "label_end": "72"
+  },
+  {
+   "id": "sec-020-resp-b-page-50",
+   "number": null,
+   "title": "(resp. b^ (page 50)",
+   "level": 2,
+   "page_start": 50,
+   "page_end": 50,
+   "n_chars": 1939,
+   "n_words": 398,
+   "label_start": "73",
+   "label_end": "73"
+  },
+  {
+   "id": "sec-021-resp-b-page-51",
+   "number": null,
+   "title": "(resp. b^ (page 51)",
+   "level": 2,
+   "page_start": 51,
+   "page_end": 51,
+   "n_chars": 643,
+   "n_words": 130,
+   "label_start": "74",
+   "label_end": "74"
+  },
+  {
+   "id": "sec-022-resp-b-page-52",
+   "number": null,
+   "title": "(resp. b^ (page 52)",
+   "level": 2,
+   "page_start": 52,
+   "page_end": 52,
+   "n_chars": 2521,
+   "n_words": 508,
+   "label_start": "75",
+   "label_end": "75"
+  },
+  {
+   "id": "sec-023-resp-b-page-53",
+   "number": null,
+   "title": "(resp. b^ (page 53)",
+   "level": 2,
    "page_start": 53,
-   "page_end": 58,
-   "n_chars": 11762,
-   "n_words": 2242
+   "page_end": 53,
+   "n_chars": 1456,
+   "n_words": 286,
+   "label_start": "76",
+   "label_end": "76"
   },
   {
-   "id": "sec-012-62-to-see-this-the-first-thing-to-notice-is-that",
-   "number": "6.2",
-   "title": "To see this, the first thing to notice is that since the singularity is",
+   "id": "sec-024-resp-b-page-54",
+   "number": null,
+   "title": "(resp. b^ (page 54)",
+   "level": 2,
+   "page_start": 54,
+   "page_end": 54,
+   "n_chars": 2532,
+   "n_words": 484,
+   "label_start": "77",
+   "label_end": "77"
+  },
+  {
+   "id": "sec-025-resp-b-page-55",
+   "number": null,
+   "title": "(resp. b^ (page 55)",
+   "level": 2,
+   "page_start": 55,
+   "page_end": 55,
+   "n_chars": 2661,
+   "n_words": 533,
+   "label_start": "78",
+   "label_end": "78"
+  },
+  {
+   "id": "sec-026-resp-b-page-56",
+   "number": null,
+   "title": "(resp. b^ (page 56)",
+   "level": 2,
+   "page_start": 56,
+   "page_end": 56,
+   "n_chars": 1905,
+   "n_words": 403,
+   "label_start": "79",
+   "label_end": "79"
+  },
+  {
+   "id": "sec-027-resp-b-page-57",
+   "number": null,
+   "title": "(resp. b^ (page 57)",
+   "level": 2,
+   "page_start": 57,
+   "page_end": 57,
+   "n_chars": 2589,
+   "n_words": 476,
+   "label_start": "80",
+   "label_end": "80"
+  },
+  {
+   "id": "sec-028-resp-b-page-58",
+   "number": null,
+   "title": "(resp. b^ (page 58)",
    "level": 2,
    "page_start": 58,
-   "page_end": 73,
-   "n_chars": 25390,
-   "n_words": 4902
+   "page_end": 58,
+   "n_chars": 2483,
+   "n_words": 492,
+   "label_start": "81",
+   "label_end": "81"
   },
   {
-   "id": "sec-013-64-in-figure-611-we-have-illustrated-the-same-si",
-   "number": "6.4",
-   "title": "In Figure 6.11 we have illustrated the same situation, but omit-",
+   "id": "sec-029-resp-b-page-59",
+   "number": null,
+   "title": "(resp. b^ (page 59)",
+   "level": 2,
+   "page_start": 59,
+   "page_end": 59,
+   "n_chars": 1017,
+   "n_words": 203,
+   "label_start": "82",
+   "label_end": "82"
+  },
+  {
+   "id": "sec-030-resp-b-page-60",
+   "number": null,
+   "title": "(resp. b^ (page 60)",
+   "level": 2,
+   "page_start": 60,
+   "page_end": 60,
+   "n_chars": 1858,
+   "n_words": 360,
+   "label_start": "83",
+   "label_end": "83"
+  },
+  {
+   "id": "sec-031-resp-b-page-61",
+   "number": null,
+   "title": "(resp. b^ (page 61)",
+   "level": 2,
+   "page_start": 61,
+   "page_end": 61,
+   "n_chars": 1763,
+   "n_words": 348,
+   "label_start": "84",
+   "label_end": "84"
+  },
+  {
+   "id": "sec-032-resp-b-page-62",
+   "number": null,
+   "title": "(resp. b^ (page 62)",
+   "level": 2,
+   "page_start": 62,
+   "page_end": 62,
+   "n_chars": 1654,
+   "n_words": 327,
+   "label_start": "85",
+   "label_end": "85"
+  },
+  {
+   "id": "sec-033-resp-b-page-63",
+   "number": null,
+   "title": "(resp. b^ (page 63)",
+   "level": 2,
+   "page_start": 63,
+   "page_end": 63,
+   "n_chars": 2345,
+   "n_words": 444,
+   "label_start": "86",
+   "label_end": "86"
+  },
+  {
+   "id": "sec-034-resp-b-page-64",
+   "number": null,
+   "title": "(resp. b^ (page 64)",
+   "level": 2,
+   "page_start": 64,
+   "page_end": 64,
+   "n_chars": 912,
+   "n_words": 174,
+   "label_start": "87",
+   "label_end": "87"
+  },
+  {
+   "id": "sec-035-resp-b-page-65",
+   "number": null,
+   "title": "(resp. b^ (page 65)",
+   "level": 2,
+   "page_start": 65,
+   "page_end": 65,
+   "n_chars": 1954,
+   "n_words": 434,
+   "label_start": "88",
+   "label_end": "88"
+  },
+  {
+   "id": "sec-036-resp-b-page-66",
+   "number": null,
+   "title": "(resp. b^ (page 66)",
+   "level": 2,
+   "page_start": 66,
+   "page_end": 66,
+   "n_chars": 1588,
+   "n_words": 323,
+   "label_start": "89",
+   "label_end": "89"
+  },
+  {
+   "id": "sec-037-resp-b-page-67",
+   "number": null,
+   "title": "(resp. b^ (page 67)",
+   "level": 2,
+   "page_start": 67,
+   "page_end": 67,
+   "n_chars": 1599,
+   "n_words": 341,
+   "label_start": "90",
+   "label_end": "90"
+  },
+  {
+   "id": "sec-038-resp-b-page-68",
+   "number": null,
+   "title": "(resp. b^ (page 68)",
+   "level": 2,
+   "page_start": 68,
+   "page_end": 68,
+   "n_chars": 988,
+   "n_words": 203,
+   "label_start": "91",
+   "label_end": "91"
+  },
+  {
+   "id": "sec-039-resp-b-page-69",
+   "number": null,
+   "title": "(resp. b^ (page 69)",
+   "level": 2,
+   "page_start": 69,
+   "page_end": 69,
+   "n_chars": 1519,
+   "n_words": 296,
+   "label_start": "92",
+   "label_end": "92"
+  },
+  {
+   "id": "sec-040-resp-b-page-70",
+   "number": null,
+   "title": "(resp. b^ (page 70)",
+   "level": 2,
+   "page_start": 70,
+   "page_end": 70,
+   "n_chars": 2666,
+   "n_words": 521,
+   "label_start": "93",
+   "label_end": "93"
+  },
+  {
+   "id": "sec-041-resp-b-page-71",
+   "number": null,
+   "title": "(resp. b^ (page 71)",
+   "level": 2,
+   "page_start": 71,
+   "page_end": 71,
+   "n_chars": 2451,
+   "n_words": 471,
+   "label_start": "94",
+   "label_end": "94"
+  },
+  {
+   "id": "sec-042-resp-b-page-72",
+   "number": null,
+   "title": "(resp. b^ (page 72)",
+   "level": 2,
+   "page_start": 72,
+   "page_end": 72,
+   "n_chars": 2338,
+   "n_words": 485,
+   "label_start": "95",
+   "label_end": "95"
+  },
+  {
+   "id": "sec-043-resp-b-page-73",
+   "number": null,
+   "title": "(resp. b^ (page 73)",
    "level": 2,
    "page_start": 73,
-   "page_end": 79,
-   "n_chars": 9626,
-   "n_words": 1851
+   "page_end": 73,
+   "n_chars": 1855,
+   "n_words": 365,
+   "label_start": "96",
+   "label_end": "96"
   },
   {
-   "id": "sec-014-23-thus-h\u03c6-\u03c0-f-u-\u03c9-includes-bridges-of-name-24-a",
-   "number": "23",
-   "title": "Thus H\u03c6 \u03a0 F u \u03a9 includes bridges of name 24 and 23. There is",
-   "level": 1,
-   "page_start": 79,
-   "page_end": 79,
-   "n_chars": 140,
-   "n_words": 25
-  },
-  {
-   "id": "sec-015-64-it-is-not-difficult-to-see-that-region-which",
-   "number": "6.4",
-   "title": "It is not difficult to see that region which is foliated by the pair",
-   "level": 2,
-   "page_start": 79,
-   "page_end": 80,
-   "n_chars": 1559,
-   "n_words": 285
-  },
-  {
-   "id": "sec-016-7-the-algorithm-and-applications-our-task-in-thi",
-   "number": "7",
-   "title": "The algorithm and applications. Our task in this section is to",
-   "level": 1,
-   "page_start": 80,
-   "page_end": 84,
-   "n_chars": 6181,
-   "n_words": 1144
-  },
-  {
-   "id": "sec-017-73-applications-in-what-follows-s-denotes-a-link",
-   "number": "7.3",
-   "title": "Applications, In what follows S* denotes a link of braid index",
-   "level": 2,
-   "page_start": 84,
-   "page_end": 85,
-   "n_chars": 2836,
-   "n_words": 546
-  },
-  {
-   "id": "sec-018-3-seifert-circles-then-3-3-only-if-the-algebraic",
-   "number": "3",
-   "title": "Seifert circles. Then 3 = 3' only if the algebraic crossing numbers",
-   "level": 1,
-   "page_start": 85,
-   "page_end": 87,
-   "n_chars": 4646,
-   "n_words": 862
-  },
-  {
-   "id": "sec-019-8-hints-of-additional-pathology-it-was-shown-in",
-   "number": "8",
-   "title": "Hints of additional pathology. It was shown in the introduction",
-   "level": 1,
-   "page_start": 87,
-   "page_end": 89,
-   "n_chars": 2737,
-   "n_words": 521
-  },
-  {
-   "id": "sec-020-references",
+   "id": "sec-044-resp-b-page-74",
    "number": null,
-   "title": "References",
-   "level": 1,
-   "page_start": 89,
-   "page_end": 92,
-   "n_chars": 4239,
-   "n_words": 637
+   "title": "(resp. b^ (page 74)",
+   "level": 2,
+   "page_start": 74,
+   "page_end": 74,
+   "n_chars": 1275,
+   "n_words": 242,
+   "label_start": "97",
+   "label_end": "97"
   },
   {
-   "id": "sec-021-v-s-varadarajan",
-   "number": "V",
-   "title": "S. VARADARAJAN",
-   "level": 1,
+   "id": "sec-045-resp-b-page-75",
+   "number": null,
+   "title": "(resp. b^ (page 75)",
+   "level": 2,
+   "page_start": 75,
+   "page_end": 75,
+   "n_chars": 891,
+   "n_words": 183,
+   "label_start": "98",
+   "label_end": "98"
+  },
+  {
+   "id": "sec-046-resp-b-page-76",
+   "number": null,
+   "title": "(resp. b^ (page 76)",
+   "level": 2,
+   "page_start": 76,
+   "page_end": 76,
+   "n_chars": 2626,
+   "n_words": 532,
+   "label_start": "99",
+   "label_end": "99"
+  },
+  {
+   "id": "sec-047-resp-b-page-77",
+   "number": null,
+   "title": "(resp. b^ (page 77)",
+   "level": 2,
+   "page_start": 77,
+   "page_end": 77,
+   "n_chars": 1607,
+   "n_words": 306,
+   "label_start": "100",
+   "label_end": "100"
+  },
+  {
+   "id": "sec-048-resp-b-page-78",
+   "number": null,
+   "title": "(resp. b^ (page 78)",
+   "level": 2,
+   "page_start": 78,
+   "page_end": 78,
+   "n_chars": 1661,
+   "n_words": 353,
+   "label_start": "101",
+   "label_end": "101"
+  },
+  {
+   "id": "sec-049-resp-b-page-79",
+   "number": null,
+   "title": "(resp. b^ (page 79)",
+   "level": 2,
+   "page_start": 79,
+   "page_end": 79,
+   "n_chars": 1530,
+   "n_words": 295,
+   "label_start": "102",
+   "label_end": "102"
+  },
+  {
+   "id": "sec-050-resp-b-page-80",
+   "number": null,
+   "title": "(resp. b^ (page 80)",
+   "level": 2,
+   "page_start": 80,
+   "page_end": 80,
+   "n_chars": 2373,
+   "n_words": 419,
+   "label_start": "103",
+   "label_end": "103"
+  },
+  {
+   "id": "sec-051-resp-b-page-81",
+   "number": null,
+   "title": "(resp. b^ (page 81)",
+   "level": 2,
+   "page_start": 81,
+   "page_end": 81,
+   "n_chars": 1049,
+   "n_words": 232,
+   "label_start": "104",
+   "label_end": "104"
+  },
+  {
+   "id": "sec-052-resp-b-page-82",
+   "number": null,
+   "title": "(resp. b^ (page 82)",
+   "level": 2,
+   "page_start": 82,
+   "page_end": 82,
+   "n_chars": 1230,
+   "n_words": 252,
+   "label_start": "105",
+   "label_end": "105"
+  },
+  {
+   "id": "sec-053-σΐ",
+   "number": null,
+   "title": "σΐ",
+   "level": 3,
+   "page_start": 82,
+   "page_end": 82,
+   "n_chars": 1103,
+   "n_words": 225,
+   "label_start": "105",
+   "label_end": "105"
+  },
+  {
+   "id": "sec-054-2-i-f-p-4-σισ2",
+   "number": "2",
+   "title": "i f p > 4 , (σισ2)",
+   "level": 3,
+   "page_start": 82,
+   "page_end": 92,
+   "n_chars": 16377,
+   "n_words": 3080,
+   "label_start": "105",
+   "label_end": null
+  },
+  {
+   "id": "sec-055-pacific-journal-of-mathematics",
+   "number": null,
+   "title": "PACIFIC JOURNAL OF MATHEMATICS",
+   "level": 2,
+   "page_start": 92,
+   "page_end": 92,
+   "n_chars": 341,
+   "n_words": 44,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-056-editors",
+   "number": null,
+   "title": "EDITORS",
+   "level": 3,
+   "page_start": 92,
+   "page_end": 92,
+   "n_chars": 654,
+   "n_words": 80,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-057-supporting-institutions",
+   "number": null,
+   "title": "SUPPORTING INSTITUTIONS",
+   "level": 3,
    "page_start": 92,
    "page_end": 93,
-   "n_chars": 538,
-   "n_words": 70
-  },
-  {
-   "id": "sec-022-1-tangential-and-normal-euler-numbers-complex-po",
-   "number": "1",
-   "title": "Tangential and normal Euler numbers, complex points, and",
-   "level": 1,
-   "page_start": 93,
-   "page_end": 93,
-   "n_chars": 113,
-   "n_words": 16
-  },
-  {
-   "id": "sec-023-25-studying-links-via-closed-braids-iii-classify",
-   "number": "25",
-   "title": "Studying links via closed braids. III. Classifying links which are",
-   "level": 1,
-   "page_start": 93,
-   "page_end": 93,
-   "n_chars": 624,
-   "n_words": 94
+   "n_chars": 1259,
+   "n_words": 179,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 1,
   "likely_scanned": false,
-  "toc_entries": 24,
-  "sections": 24,
-  "chars_total": 160787
+  "toc_entries": 5,
+  "toc_inferred_entries": 8,
+  "toc_inferred_mean_confidence": 0.637,
+  "toc_inferred_empty_share": 0.0,
+  "toc_inferred_method": "font",
+  "figure_entries": 11,
+  "figure_sequence_gaps": [
+   "figure 1.3",
+   "figure 1.4",
+   "figure 3.1",
+   "figure 3.2",
+   "figure 3.4",
+   "figure 3.5",
+   "figure 3.6",
+   "figure 3.7",
+   "figure 3.8",
+   "figure 3.9",
+   "figure 5.1",
+   "figure 5.3",
+   "figure 5.4",
+   "figure 6.1",
+   "figure 6.3",
+   "figure 6.4",
+   "figure 6.5",
+   "figure 6.6",
+   "figure 6.7",
+   "figure 6.9",
+   "figure 6.10",
+   "figure 6.11",
+   "figure 6.12",
+   "figure 6.13",
+   "figure 6.14",
+   "figure 6.15"
+  ],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 59,
+  "chars_total": 166490,
+  "furniture_lines_stripped": 0,
+  "oversized_split": [
+   {
+    "title": "STUDYING LINKS VIA CLOSED BRAIDS III: CLASSIFYING LINKS WHICH ARE CLOSED 3-BRAIDS",
+    "page_start": 2,
+    "page_end": 82,
+    "words": 28561,
+    "by": "headings",
+    "into": 54
+   }
+  ],
+  "headings_tidied": [
+   {
+    "title": "it",
+    "page": 22,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "(resp. b^",
+    "page": 32,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "or or or",
+    "page": 81,
+    "action": "dropped",
+    "why": "opens in lower case"
+   },
+   {
+    "title": "σΐ",
+    "page": 82,
+    "action": "rejoined",
+    "as": "i f p > 4 , (σισ2)",
+    "why": "opens in lower case"
+   }
+  ]
  }
 }

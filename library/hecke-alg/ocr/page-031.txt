@@ -1,0 +1,60 @@
+26 3. THE MODULAR REPRESENTATION THEORY OF #
+
+We call the basis of Proposition 3.20 the Murphy basis of S*. Translating the
+notation from (2.6), the bilinear form ( , ) on S$ is the unique R-bilinear map
+from S* x $® into R such that
+
+(ms,m)m, = Mea,mya mod H*.
+
+for all standard \-tableaux s and t. By Proposition 2.7, this form is associative and
+symmetric so rad S*? = {2 €S* | (x,y) =0 for ally € S$} is an #-submodule
+of S’. As in (2.8), for each partition \ of n we define D* to be the right #-
+module S*/rad S*. Thus by Theorem 2.13 we have the following result.
+
+3.21 Theorem (Dipper—James) Suppose that R is a field. Then
+{ D* |X a partition of n such that DX #0}
+
+is a complete set of non-isomorphic irreducible 7 —modules.
+
+We will classify the partitions \ such that D® 4 0 in Section 4. For now we
+note that by Corollary 2.18 and Corollary 1.15 we have the following.
+
+Recall that % = Heyg),4(Gn)-
+3.22 Corollary (Hoefsmit) The Iwahori-Hecke algebra A is a split semisim-
+ple algebra and { S* | X a partition of n} is a complete set of non-isomorphic irre-
+ducible Ax—modules.
+
+In particular, this shows that #% and KG, are isomorphic as A—algebras.
+
+3. Specht modules and Jucys—Murphy elements
+
+In this section we study the action of the following operators upon the Specht
+modules and use them to construct an orthogonal basis for S*. For k = 1,2,....7
+let
+
+Le =Q Tiny t+ Lena) to $9! Ta):
+The elements £),...,£, are the Jucys-Murphy elements of #7.
+
+3.23 Example If n = 4 then the four Jucys-Murphy elements are £; = 0, Lo =
+g7'T.2); Ls = 7 'T)a,3) + PT 1,3), and La = q7!T%s,4) + 7° 9,4) + FT 4)-
+
+3.24 Proposition Let i and k be integers with 1<i<nand1<k<n.
+
+(i) T; and Ly commute ifi#k— 1k.
+
+(ii) T)Lign = (q¢— 1) Liga HI 4 iT; and TL, = Ti Lig, —1- (q - 1) Ligs-
+(iii) T; commutes with Ly Li41 and Ly + Liat.
+(iv) L; and Ly commute.
+Proof. The proofs of all of these statements follow easily using the relations in
+I, so we prove only (i). Because £, = 0 there is nothing to prove when k = 1, so
+assume that k > 1. Then, by definition, Ly = g7'(T + Tk Lx—1T), so if |i-—k] > 1
+then T;Ly = 7 (GT + TT Dei Tk) = (TT; + Te Ti E17); 80 Ti Ly = D4;
+by induction. Finally, it remains to consider the case when 7 = k + 1; however, this
+is easy because 7.41 commutes with T(;,,) for j = 1,...,h. oO
+
+3.25 Corollary Any symmetric polynomial in L1,...,L, belongs to the centre
+of #.
+
+The Corollary indicates why the Jueys-Murphy elements are so useful. The idea
+is that 21,..., Dn generate a large abelian subalgebra of # — which is known to
+be maximal when # is semisimple — and consequently these elements can be used

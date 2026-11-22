@@ -8,6 +8,8 @@ pages: 4-9
 source_pdf: Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds.pdf
 source_sha256: 9e541693c60cbd3f
 toc_source: inferred
+doc_brief: "Garoufalidis & Zagier, Hyperbolic 3-manifolds, the Bloch group, and the work of Walter Neumann — survey of gluing equations, volumes, the extended Bloch group, symplectic properties and quantization."
+duplicate_of: "arxiv-2304.12545v1"
 ---
 As already stated, the original main purpose of [1] was to study the arithmetic of
 the set of volumes of all hyperbolic 3-manifolds. It had been observed by Thur‐
@@ -29,10 +31,6 @@ tetrahedra of any ideal triangulation, so the first step is to understand these.
 (oriented and nondegenerate) ideal tetrahedron can be parametrized either by a
 shape parameter  in the complex upper half-plane, as explained in the preceding
 ⇧
-8/8/26, 4:27 AM
-Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds
-https://celebratio.org/Neumann_WD/article/1106/
-4/27
 section, or, in case  is in the upper half-plane, by the three angles , ,  (positive
 and with 
 ) of the Euclidean triangle that one “sees” by looking at
@@ -96,10 +94,6 @@ are indexed by
 Л
 Л
 Л
-8/8/26, 4:27 AM
-Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds
-https://celebratio.org/Neumann_WD/article/1106/
-5/27
 jugation we can place  at 
 , in which case 
  has the form
@@ -156,10 +150,6 @@ power of the first expression by the -th power of the second one in (2), and th
  replaced by 
 .
 ⇧
-8/8/26, 4:27 AM
-Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds
-https://celebratio.org/Neumann_WD/article/1106/
-6/27
 We now get two real numbers at each cusp: the value 
  of the quadratic
 form corresponding to that cusp at the pair 
@@ -204,10 +194,6 @@ changing the hyperbolic structure on the original open topological manifold 
 ,
 with the new hyperbolic structures in general being incomplete. If we now define
 ⇧
-8/8/26, 4:27 AM
-Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds
-https://celebratio.org/Neumann_WD/article/1106/
-7/27
  complex numbers 
  and 
  by
@@ -259,10 +245,6 @@ in (4).
 There is one more important point about volumes. Another insight by Thurston
 was that the volume of a hyperbolic 3-manifold, which is a positive real number, is
 ⇧
-8/8/26, 4:27 AM
-Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds
-https://celebratio.org/Neumann_WD/article/1106/
-8/27
 actually in a natural way the imaginary part of a complexified volume whose real
 part is the Chern–Simons invariant, an important topological invariant taking val‐
 ues in 

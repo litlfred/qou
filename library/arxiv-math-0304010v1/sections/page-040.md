@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0304010v1
-doc_title: "arXiv:math/0304010v1 [math.CO] 1 Apr 2003"
+doc_title: "Kerov's central limit theorem for the Plancherel measure on Young diagrams"
 section_id: page-040
 section_title: "Page 40"
 section_number: null
@@ -8,12 +8,10 @@ pages: 40-40
 source_pdf: 0304010v1.pdf
 source_sha256: fc2296c027b3feb0
 toc_source: undetermined
+doc_brief: "Kerov's central limit theorem for the Plancherel measure on Young diagrams — Consider random Young diagrams with ﬁxed number n of boxes, dis- tributed according to the Plancherel measure Mn."
 ---
 Proposition 8.7. We have t(n)
-1
 = t(n)
-2
-≡0.
 Proof. Recall that for any measure from M0, the ﬁrst moment equals zero. In
 particular, this holds for bλ and µs-c, which implies t(n)
 1

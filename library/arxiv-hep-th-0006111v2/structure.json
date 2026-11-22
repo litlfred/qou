@@ -8,7 +8,7 @@
   "pages": 6,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:23Z",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -47,14 +47,14 @@
  },
  "toc": [],
  "toc_source": "undetermined",
- "toc_undetermined_reason": "5 inferred entries, 100% of them starting on page(s) 3, 5 of 6 \u2014 a list found ON a page, not the document's structure",
+ "toc_undetermined_reason": "5 inferred entries, 100% of them starting on page(s) 3, 5 of 6 — a list found ON a page, not the document's structure",
  "granularity": "page",
- "structure_note": "No outline, and no inferred contents could be trusted (5 inferred entries, 100% of them starting on page(s) 3, 5 of 6 \u2014 a list found ON a page, not the document's structure): one section per page.",
+ "structure_note": "No outline, and no inferred contents could be trusted (5 inferred entries, 100% of them starting on page(s) 3, 5 of 6 — a list found ON a page, not the document's structure): one section per page.",
  "figures": [
   {
    "kind": "figure",
    "number": "1",
-   "title": "Microscopic spectral density \u03c1S(\u03b6) (thin line), k-th smallest eigenvalue distribution pk(\u03b6), k = 1, 2, 3, 4 (solid lines),",
+   "title": "Microscopic spectral density ρS(ζ) (thin line), k-th smallest eigenvalue distribution pk(ζ), k = 1, 2, 3, 4 (solid lines),",
    "page": 6,
    "confidence": 0.9,
    "evidence": [
@@ -210,6 +210,7 @@
    "items": []
   },
   "sections": 6,
-  "chars_total": 21600
+  "chars_total": 21600,
+  "furniture_lines_stripped": 0
  }
 }

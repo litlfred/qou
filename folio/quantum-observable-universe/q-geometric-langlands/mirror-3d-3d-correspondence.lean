@@ -102,7 +102,7 @@ not appear when this carrier was merged; it appeared when the sidecar was refres
 earlier `wall-side-correct` verdict was a `pass` recorded against a *previous version of
 this file*, and a stale sidecar is indistinguishable from a clean one.
 
--- Ref: [manuscript] quantum-observable-universe/q-geometric-langlands/mirror-3d-3d-correspondence.ts
+-- Ref: [leitner2026] quantum-observable-universe/q-geometric-langlands/mirror-3d-3d-correspondence.ts
 -/
 
 namespace QOU.BraidsAndKnots
@@ -118,7 +118,7 @@ families that do not agree at the stated place and value.
 **No instance is provided.** Downstream results consume this as
 `[Mirror3d3dCorrespondence pertCoeff markovCoeff]` and are genuinely conditional on it.
 
--- Ref: [manuscript] conj:mirror-3d-3d-correspondence -/
+-- Ref: [leitner2026] conj:mirror-3d-3d-correspondence -/
 class Mirror3d3dCorrespondence {R : Type*} [DivisionRing R] (pertCoeff markovCoeff : ℕ → R) :
     Prop where
   /-- The gauge-theory four-loop contribution equals the framework's `h⁴` coefficient.

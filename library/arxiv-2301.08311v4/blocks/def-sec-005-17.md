@@ -1,0 +1,1 @@
+Let (u, D) be a 2-level broken disc (or a broken strip) with boundary on L (and on K). The Maslov index µ(u) is defined to be the Maslov index of a T-gluing uT . Since the homotopy type of the glued map does not depend on the gluing parameter T, the Maslov index for 2-level broken maps is well-defined. FLOER COHOMOLOGY AND HIGHER MUTATIONS

@@ -7,10 +7,11 @@ section_number: 3.1
 pages: 7-9
 source_pdf: 2108.03616v2.pdf
 source_sha256: 63696ad045602440
-doc_brief: "Circuit imbalance measures and linear programming ∗ — We study properties and applications of various circuit imbalance mea sures associated with linear spaces."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.97
-latex_coverage_ratio: 0.982
+latex_coverage_ratio: 0.994
+doc_brief: "Circuit imbalance measures and linear programming ∗ — We study properties and applications of various circuit imbalance measures associated with linear spaces."
 ---
 \label{sec:subdet}
 For an integer matrix $A\in \Z^{m\times n}$, we define 

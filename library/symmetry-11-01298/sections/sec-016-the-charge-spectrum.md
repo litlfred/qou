@@ -7,6 +7,7 @@ section_number: null
 pages: 19-20
 source_pdf: symmetry-11-01298.pdf
 source_sha256: 595648c84501e8a6
+toc_source: outline
 doc_brief: "Braids, 3-manifolds, elementary particles: number theory and symmetry in particle physics — In this paper, we will describe a topological model for elementary par- ticles based on 3-manifolds."
 duplicate_of: "arxiv-1910.09966v1"
 ---
@@ -15,20 +16,21 @@ relative Pontrjagin class gives an integer expressing the framing of the knot co
 time. The appearance of the signature σ(M) added a 4-dimensional element which describes more
 complex cases with many components. In [65], this case was also considered with a similar result: this
 formula is valid for links where σ(M) is now the signature of the linking matrix and p1 is the sum of
-framings for each component. The signature can be minimally changed by±1 leading to a change of
-the charge by±3. Therefore, the minimal change for one component can be
-Qe mod 3Z ={0,±1,±2,±3} ,
-Symmetry 2019, 11, 1298 20 of 26
+framings for each component. The signature can be minimally changed by ±1 leading to a change of
+the charge by ±3. Therefore, the minimal change for one component can be
+Qe mod 3Z = {0, ±1, ±2, ±3} ,
+Symmetry 2019, 11, 1298
+20 of 26
 i.e., we obtain a spectrum containing four possible values. If we normalize the charge to be a multiple
 of e/3, then we have the charge spectrum
 Qe =
-{
-0,± 1
-3 e,± 2
-3 e,±e
-}
+
+0, ±1
+3e, ±2
+3e, ±e
+
 in agreement with the experiment. Then, we have the description of one particle generation: two
-leptons (neutrino of charge 0 and lepton of charge−1) and two quarks (quark of charge− 1
+leptons (neutrino of charge 0 and lepton of charge −1) and two quarks (quark of charge −1
 3 and quark
 of charge + 2
 3).

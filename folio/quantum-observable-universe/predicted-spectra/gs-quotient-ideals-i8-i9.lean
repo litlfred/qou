@@ -19,7 +19,7 @@ selecting the absorbed monomials, together with the structural coefficient.
 LaTeX label: `def:gs-quotient-ideals-I8-I9`
 
 ## References
-- [manuscript] §13/gs-quotient-ideals-I8-I9
+- [leitner2026] §13/gs-quotient-ideals-I8-I9
 -/
 
 namespace QOU.OptimalNF

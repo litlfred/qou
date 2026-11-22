@@ -1,0 +1,78 @@
+S. Blanes et al. / Physics Reports 470 (2009) 151-238 223
+
+is the probability of finding the system in the eigenstate g,, so that }°, |cn/? = 1. The energy is given by
+
+6 = (iin) = f wat We de= YY Gent (316)
+
+n=1m=1
+
+where
+An.m = (m|H|n) = (@m|H|¢n)-
+
+In general, the coefficients c, decrease very fast with n and, in some cases, the system allows only a finite number of states.
+In that situation, one may consider the Schrédinger equation as a finite dimensional linear system where the Hamiltonian
+is a matrix with elements Hy, m. This is precisely the case for the examples examined in Section 4.
+
+When the Hamiltonian is explicitly time-dependent, this procedure is no longer valid. Instead, one may use some
+alternative techniques which we now briefly review.
+
+(i) Spectral decomposition. Let us assume that the system is perturbed with a time-dependent potential, i.e., Eq. (311)
+takes the form
+
+a ~ nn
+pV) = HOWE %) = (T+ V(t)) w(t, x), (317)
+
+where
+
+n 12° » ~
+Tw =-S7y, VW = (VQ) + VUE, x))Y.
+2 dx’
+In this case, we cannot use separation of variables. However, since {g,} is a complete basis we can still write the solution as
+
+d—1
+
+VEN ~ Do calthe™ gn), (318)
+
+n=0
+
+0, and the complex coefficients c, give the
+
+where E, and g, are the exact eigenvalues and eigenfunctions when V=
+= 1 for all t). Then, substituting (318) into (317)
+
+probability amplitude to find the system in the state gp (}°,, |Cn (t)|?
+we obtain the matrix equation
+
+Set) =H(t)e(t), c(0) = eo, (319)
+
+where ¢ = (Co,...,Ca_1)' € C4 and H € C*™? is a Hermitian matrix associated to the Hamiltonian
+HO) = (GIAO — Hola) MO", j= 1,...d
+
+and Ao = Att = 0). Given the initial wave function y (0, x), the components of ¢p are determined by co,; = (g;| (0, x)).
+
+Obviously, any complete basis can be used in this case, although the norm of the matrix H(t) may depend on the choice.
+In addition, the number of basis elements (i.e. the minimum dimension d necessary to obtain a sufficiently accurate result)
+also depends on the chosen basis.
+
+(ii) Space discretization. This procedure intends to take advantage of the structure of the Hamiltonian Ain (317): V is
+diagonal in the coordinate space and T is diagonal in the momentum space. Let us assume that the system is defined in the
+interval x € [Xo, xp] with periodic boundary conditions. We can then split this interval in d parts of length Ax = (xs — Xo) /d
+and consider c, = w(t, Xn) where x, = Xp + nAx,n = 0,1,...,d — 1. Then a finite dimensional linear equation similar
+(but with a different coefficient matrix H) to Eq. (319) results. Since Vis diagonal in the coordinate space and T is diagonal
+in momentum space, it is possible to use complex Fast Fourier Transforms (FFTs) for evaluating the products Hc, where
+Twit, Xn) = F~'DrF W(t, Xn), and Dr is a diagonal operator.
+
+We thus see that whatever the procedure used (spectral decomposition or space discretization), one ends up with a linear
+equation of the form
+
+d
+iM =HOVO, wO)=vYo (320)
+
+where w(t) now represents a complex vector with d components which approximates the (continuous) wave function.
+The computational Hamiltonian H(t) appearing in (320) is thus a space discretization (or other finite-dimensional model)
+of A(t) =T + V(t). Numerical difficulties come mainly from the unbounded nature of the Hamiltonian and the highly
+oscillatory behavior of the wave function.
+
+It is at this point when numerical algorithms based on the Magnus expansion, such as they have been formulated in
+previous sections, come into play for integrating in time the linear system (320). To put them in perspective, let us first
+introduce some other numerical methods also used in this context. Our exposition is largely based on the reference [182].

@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0408210v3
-doc_title: "arXiv:math/0408210v3 [math.QA] 7 May 2005"
+doc_title: "A simple algebraic proof of the algebraic index theorem"
 section_id: sec-006-3-the-local-version-of-the-algebraic-index-theor
 section_title: "The local version of the algebraic index theorem"
 section_number: 3
@@ -10,7 +10,8 @@ source_sha256: 16d5ccb83a86954f
 toc_source: inferred
 text_source: latex
 latex_prose_ratio: 0.962
-latex_coverage_ratio: 0.977
+latex_coverage_ratio: 0.972
+doc_brief: "A simple algebraic proof of the algebraic index theorem — In math.QA/0311303 B. Feigin, G. Felder, and B."
 ---
 Let ${\cal M}$ be either a smooth real symplectic manifold of dimension $2n$ or a smooth affine algebraic variety (over ${\Bbb C}$) of the complex dimension $2n$ endowed with an algebraic symplectic form. Let $*$ be a star-product in the vector space $C({\cal M})(({\hbar}))$ of smooth (resp. regular) functions on ${\cal M}$. Throughout this section we denote the algebra $(C({\cal M})(({\hbar})),*)$ by ${\Bbb A}$ and the subalgebra $(C({\cal M})[[{\hbar}]],*)$ of ${\Bbb A}$ by ${\Bbb A}^+$
 

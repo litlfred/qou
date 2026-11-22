@@ -1,0 +1,51 @@
+10.5 Surgery, non-generic directions, and non-arrangement points 333
+
+Proposition 10.61. Fix a vector r € N(p). The set G’ of critical points of $ in
+the direction f on & is the set of points (0, t) with t € S(r), where
+
+Str) = {' € Ay | t)C(p) = =} ;
+
+Proof Since Re ¢(@) > 0 when @ ¥ OQ, all critical points in G’ are of the
+form (0,t) for t € A,-1. In fact, ¢ is somewhat degenerate: 4(0,t) = 0 for
+all t € A,_-1, so not only does the real part of ¢ vanish when 6 = 0, but also
+the t-gradient of @ vanishes there. This is something of a blessing: checking
+for non-zero derivatives in directions for which the point (0, t) is interior to &
+reduces to checking whether or not the 9-gradient vanishes at (0, t). For j # d,
+
+an == (x)=)
+— aj/2 Uz
+00; ra ut): v(p?) SD) O- Zj @°) ep
+and the result follows because v;(p°) = 1/pgq for all j. Oo
+
+Specialization to known cases
+Proposition 10.61 may look ugly, but it simplifies in several situations. For
+instance, if p is a transverse multiple point then the rows of C are linearly
+independent and there is at most one point in S. The normal cone N(p) is the
+set of convex combinations of the lognormal vectors, so there is at least one
+point in S and S is a singleton {t}. If r is interior to N(p) then t is in the interior
+of A.
+
+Conversely, if two sheets of singularities V; = V(Q)) and V2 = V(Qz>) are
+tangent then the first two rows of C are equal, so any solution t leads to a line
+of solutions (t; — s, f2 + 5,t3,...,t,). For example, if d = n = 2, then N(p) is a
+singleton and S is the whole unit interval.
+
+Proposition 10.62 (Hessian of ¢ in the singleton case). Suppose that S con-
+sists of the single point (0,t.). Then the Hessian matrix of ra¢(@, t) at (0, t.)
+has the block form
+
+(10.33)
+
+=r
+Ho)=[ MO) -iC }
+
+-iC 0
+where
+
+e the (d- 1) x (d-1) block H(0,t.) is the Hessian of the restriction of rad to
+the 0-variables,
+
+e the zero block has dimensions (n — 1) x (n— 1), and
+
+© the (n— 1) x (d— 1) matrix C is formed by subtracting the last row of C
+from each other column, and stripping the last row and column.

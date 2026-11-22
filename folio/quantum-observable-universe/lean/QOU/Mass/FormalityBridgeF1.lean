@@ -113,4 +113,16 @@ theorem f_interleaved_ne_f_sequential {f : R → S} (hinj : Function.Injective f
       ≠ f (T.tr (T.g 0 * T.g 0 * (T.g 1 * T.g 1) * T.g 2)) :=
   fun heq => interleaved_ne_sequential T h hq hbraid hz (hinj heq)
 
+
+/-- **Powers and 3-factor products under a multiplicative-to-additive map (`qou-2akx`).**
+For any `hf : IsAdditiveOnProducts f`, `f (x ^ n) = n • f x`, and on a 3-factor product
+`f (x * y * z) = f x + f y + f z`. -/
+theorem additive_map_pow_and_mul_three {f : R → S} (hf : IsAdditiveOnProducts f)
+    (x y z : R) (n : ℕ) :
+    f (x ^ n) = n • f x ∧ f (x * y * z) = f x + f y + f z := by
+  refine ⟨?_, by rw [hf (x * y) z, hf x y]⟩
+  induction n with
+  | zero => simp [additive_map_one hf]
+  | succ k ih => rw [pow_succ, hf, ih, succ_nsmul]
+
 end QOU.Mass.FormalityBridgeF1

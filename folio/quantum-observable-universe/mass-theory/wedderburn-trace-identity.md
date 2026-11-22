@@ -1,6 +1,9 @@
 **Proposition (Markov-trace normalization).**
-*For the Hecke algebra $H_n(R, q)$ over a field $R$ with parameter
-$q \neq 0$, the Markov-trace weights $y_\lambda(q)$ and the ordinary
+*Let $R$ be a field of characteristic $0$ and $q \in R^\times$ with
+$[k]_q \neq 0$ for $2 \le k \le n$, so that $H_n(R, q)$ is semisimple
+and the convention-D Markov parameter $z = q^3/(q^2+1)$ is defined
+($[2]_q \neq 0$ is $q^2 \neq -1$). For the Hecke algebra $H_n(R, q)$,
+the Markov-trace weights $y_\lambda(q)$ and the ordinary
 block dimensions $d_\lambda = f^\lambda$ (the number of standard Young
 tableaux of shape $\lambda$) satisfy*
 

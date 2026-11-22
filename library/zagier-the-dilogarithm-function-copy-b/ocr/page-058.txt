@@ -1,0 +1,50 @@
+60 Don Zagier
+
+Lin(x), x € F. Moreover, the covolume of the lattice Im(£,) is supposed to
+be a simple multiple of ¢(m), so that one also obtains (conjectural) formulas
+for the values of the Dedekind zeta functions of arbitrary number fields at
+s =m in terms of the mth polylogarithm function with algebraic arguments.
+
+Furthermore, the whole picture is supposed to correspond to the higher
+K-groups of F’, as already mentioned at the end of Chapter I. For each i > 0
+one has K-groups K;(F) and K;(Or) which for i > 2 become isomorphic
+after tensoring with Q. The group K;(0-) is finitely generated and its rank
+was determined by Borel [5]: it is 0 for i even and is rg or ry + r2 (depending
+as before whether m is even or odd) if 1 = 2m — 1, m > 2. Moreover, Borel
+showed that there is a natural “regulator” map Rye: Kom—1(F) > Ri+)r2
+which gives an isomorphism of K2,—1(F)/(torsion) onto a sublattice whose
+covolume is a simple multiple of ¢(m). The motivation for the polylogarithm
+conjectures as stated above is that we expect there to be an isomorphism
+(at least after tensoring with Q) between K2m_1(F) and B,,(F) such that
+the Borel regulator map R,,,7 and the polylogarithm map £,,,7 correspond.
+This is not known at all in general, but de Jeu [12] and Beilinson—Deligne [2]
+defined a map compatible with R,,,7 and £,,,- from (a version of) B,,(F') to
+Kom_—1(F), and for m = 3 Goncharov [20] proved the surjectivity of this map,
+establishing in this special case my conjecture that ¢-(3) for any number field
+F can be expressed in terms of polylogarithms.
+
+In the rest of this subsection, we describe the inductive definition of the
+groups B,,(F’) in a way which is algorithmically workable, though theoretically
+unfounded.
+
+The first case is m = 3. A first candidate for A3(F) is Ker(03), where
+03 : Z[F] > F* @ A?F* is the map sending [2] to (x) ® ((x) A (1 — 2)) if
+x #0, 1 (and to 0 if x = 0 or 1). If this definition and the above hypothetical
+statements are correct, we deduce—even without knowing the definitions of
+C3(F) and B3(F)—that any r; + r2 + 1 values £3(0(x)), where o : F + C
+is a fixed embedding and x ranges over values in F’, should be Q-linearly
+dependent. Numerical evidence supported this for totally real fields. For in-
+stance, if F = Q(/5) then the three one-term elements [1], [(1 + V5)/2] and
+[((1 — V5)/2] belong to Ker(@3) and we find (numerically, but here provably)
+that £3 (1435) +£3(45%) = + £3(1). For re > 0, however, the correct A3(F)
+turns out to be a subgroup of Ker(03), as we now explain.
+
+Let ¢ be any homomorphism from F™ to Z. If € = > n,[z;] belongs to
+Ker(03), then the element 44(€) = S> ni¢(2i) [xi] of Z[F] belongs to Ker(d),
+as is easily checked, so 1g(€) € Az(F). The additional requirement for € to
+belong to A3(F) is then that 14(€), for every ¢, should belong to the subgroup
+C2(F) = C(F) of A2(F) = A(F). Since we know that elements of the quotient
+Bo(F) = Ao(F)/C2(F) are detected (up to torsion) by the values of D on the
+various conjugates, we can check this condition numerically by calculating
+D(o(vg(€))) for all embeddings o : F — C. This gives at least an algorithmic
+way to get A3(F).

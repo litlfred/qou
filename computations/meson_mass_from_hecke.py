@@ -152,7 +152,8 @@ NET_NEUTRON = mpf("0.81083")
 DELTA_NET_PN = NET_NEUTRON - NET_PROTON  # ≈ -0.18830
 
 # ── Energy scale ─────────────────────────────────────────────────
-E_0 = m_e / (q0 * (q0 - 1))  # single-tick ≈ 4.186 MeV
+import sys as _s0, pathlib as _p0; _s0.path.insert(0, str(next(p for p in _p0.Path(__file__).resolve().parents if p.name == "computations") / "qbeta")); import qbeta_e0 as _qbeta_e0  # noqa: E401,E402,E702 (#8590)
+E_0 = _qbeta_e0.canonical(q=q0, m_e=m_e)  # tower-summed E_0, canonical (owner ruling 2026-11-20, #8590); was order-zero m_e/(q(q-1))
 
 # ══════════════════════════════════════════════════════════════════
 #  INSTANCE 1 CHECK: m_μ/m_e = Vol(4_1) / ℏ_q²

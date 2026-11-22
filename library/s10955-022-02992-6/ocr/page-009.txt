@@ -1,0 +1,58 @@
+Cluster Expansions: Necessary... Page9o0f47 33
+
+Proposition 2.4 Let z be a non-negative activity function and assume that there exists ju :
+X — [0, 00) such that for all x € X
+
+a(x) a> 2, jETnoo TT | see J] . Qa
+
+wel(Y) wel(x)
+where the inner sum on the left-hand side runs over compatible subsets Y = {y,, ..., yk} C
+T(x). Then the activity expansions py(Xx1, ..., Xn Z) converge absolutely and the bounds
+n
+Pri aesOS TL Unf [eed TT ev”
+l<i<j<n i=l wel ((X1,-..%n})
+
+hold for alln € N and all (x1,..., Xn) € X".
+The proof of the proposition essentially exploits the following auxiliary result:
+
+Lemma 2.5 Let  : X — [0, 00). Then the following holds for every x; € X,n € N and
+
+= {x2, ..., Xn} C X such that x, ~ x; for alli € {2,..., n}:
+wan) TT et
+wel (x1)
+k
+1+ YS [eon TT ev
+yi ’ } i wel(Y)
+Il elt(w)
+
+wel (x1) (X)E
+
+< i , (2.12)
++Y 0 YY TTveod OTe
+k>1 Y={y1,...,ye} i=1 wel (Y)NP(X)e
+Yi~X1, yi
+yi~X
+where '(W) is given by U!_,T'(w;) foranyn € Nand W = {w), ..., Wn} C X. The inner sum
+in the denominator on the left-hand side runs over compatible subsets Y = {y\,..., YE} CS
+
+T'(x1); the inner sum in the denominator on the right-hand side runs over all such subsets Y
+which additionally satisfy the constraint Y V(X) = @, i.e. yj ~ X foralli € {1,...,k}.
+
+The lemma is of rather technical nature; for the interested reader, the proof is to be found in
+Appendix A.
+
+Remark 2.5 The general idea behind the proof of Proposition 2.4 is to argue as in the proofs
+of the classical conditions presented in the previous section (Corollaries 2.2 and 2.3)—but
+to choose a sequence of ansatz functions € which, heuristically speaking, encode more of
+the structure of the exact solution to the Kirkwood-Salsburg equations (i.e., of the activity
+expansions p) than the ansatz functions chosen in the proof of those corollaries. The intuition
+thereby is that “less multiplicative” ansatz functions & provide better convergence criteria.
+
+Proof of Proposition 2.4 Assume that (2.11) holds and define € = (€))nen, &) : X" >
+[0, co), by setting
+
+Ei kn = TL lary [ [eed [J] (2.13)
+
+I<i<j<n i=l wel ({X1,-..%n})
+
+D Springer

@@ -1,0 +1,141 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1203.6041v2",
+ "source_sha256": "1113e87534ffd6e0",
+ "brief": "S and D-wave phase shifts in isospin-2 ππ scattering from lattice QCD — 24 sections: Front matter; S and D-wave phase shifts in isosp; I Introduction",
+ "extended": "**S and D-wave phase shifts in isospin-2 ππ scattering from lattice QCD**\n\n*S and D-wave phase shifts in isospin-2 ππ scattering from lattice QCD*\n\n33 pp, 24 sections.\n\n**Outline.** Front matter; S and D-wave phase shifts in isospin-2 scatter; I Introduction; II Operator construction; A Single-hadron operators; B Multi-hadron operators; III Distillation and correlator construction; IV Optimised pion operators; V Pion mass and dispersion relation; VI Effects of finite temporal extent; A Finite-T effects for correlators at rest; B Finite-T effects for correlators in-flight; VII Finite-volume spectrum; A Example of =[0,0,1], = A1; B Volume dependence of spectra; VIII Phase-shifts from finite-volume spectra; A A toy model of scattering; B Lattice QCD data\n\n**Extracted claims (proposals, not verified).**\n- Proposition: Direct access to the matrix elements related to decays is missing in the Euclidean formulations of lattice QCD.\n- Proposition: The price to be paid is that the relevant symmetry group in the lattice calculation is signiﬁcantly reduced.\n- Proposition: Other studies of ππ I = 2 scattering in lattice QCD ([23–25]) have largely limited themselves to the threshold behavior of the scat- tering amplitude in S-wave, as expressed by\n- Proposition: In order to demonstrate the formalism, we will brieﬂy break away from analysis of lattice QCD obtained ﬁnite- volume spectra to consider a simple toy-model of ππ scat- tering in\n- Proposition: The problem to be solved in lattice QCD is actually the inverse of that just described - we start with the ﬁnite-volume spectrum determined through analysis of correlation\n- Proposition: We do not present this trivial result here, but we will return to this “global ﬁtting” method in the next section when we consider the ﬁnite-volume spectrum obtained from lattice",
+ "tokens": {
+  "brief": 37,
+  "extended": 456
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-s-and-d-wave-phase-shifts-in-isospin-2-scatterin",
+   "title": "S and D-wave phase shifts in isospin-2 scattering from lattice QCD",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-i-introduction",
+   "title": "I Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-002-ii-operator-construction",
+   "title": "II Operator construction",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-003-a-single-hadron-operators",
+   "title": "A Single-hadron operators",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-004-b-multi-hadron-operators",
+   "title": "B Multi-hadron operators",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-005-iii-distillation-and-correlator-construction",
+   "title": "III Distillation and correlator construction",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-006-iv-optimised-pion-operators",
+   "title": "IV Optimised pion operators",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-007-v-pion-mass-and-dispersion-relation",
+   "title": "V Pion mass and dispersion relation",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-008-vi-effects-of-finite-temporal-extent",
+   "title": "VI Effects of finite temporal extent",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-009-a-finite-t-effects-for-correlators-at-rest",
+   "title": "A Finite-T effects for correlators at rest",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-010-b-finite-t-effects-for-correlators-in-flight",
+   "title": "B Finite-T effects for correlators in-flight",
+   "pages": "10-12"
+  },
+  {
+   "id": "sec-011-vii-finite-volume-spectrum",
+   "title": "VII Finite-volume spectrum",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-012-a-example-of-001-a1",
+   "title": "A Example of =[0,0,1], = A1",
+   "pages": "12-15"
+  },
+  {
+   "id": "sec-013-b-volume-dependence-of-spectra",
+   "title": "B Volume dependence of spectra",
+   "pages": "15-18"
+  },
+  {
+   "id": "sec-014-viii-phase-shifts-from-finite-volume-spectra",
+   "title": "VIII Phase-shifts from finite-volume spectra",
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-015-a-a-toy-model-of-scattering",
+   "title": "A A toy model of scattering",
+   "pages": "19-22"
+  },
+  {
+   "id": "sec-016-b-lattice-qcd-data",
+   "title": "B Lattice QCD data",
+   "pages": "22-27"
+  },
+  {
+   "id": "sec-017-acknowledgments",
+   "title": "Acknowledgments",
+   "pages": "27-29"
+  },
+  {
+   "id": "sec-018-a-multi-particle-operators",
+   "title": "A Multi-particle operators",
+   "pages": "29-29"
+  },
+  {
+   "id": "sec-019-1-operator-construction",
+   "title": "Operator construction",
+   "pages": "29-30"
+  },
+  {
+   "id": "sec-020-2-induced-representation-method-for-calculating",
+   "title": "Induced representation method for calculating Clebsch-Gordan coefficients",
+   "pages": "30-31"
+  },
+  {
+   "id": "sec-021-3-lattice-and-little-group-conventions-and-rotat",
+   "title": "Lattice and little group conventions and rotations",
+   "pages": "31-31"
+  },
+  {
+   "id": "sec-022-4-clebsch-gordan-coefficients",
+   "title": "Clebsch-Gordan coefficients",
+   "pages": "31-33"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

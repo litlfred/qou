@@ -2,12 +2,13 @@
   "@context": [
     "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
     {
-      "@base": "https://litlfred.github.io/folio/"
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
     }
   ],
   "@id": "papers/quantum-observable-universe/blocks/prop-q-beta-q-eq-one-shadow-gate",
   "@type": [
-    "folio-assistant-core:Proposition",
+    "folio-assistant-sci:Proposition",
     "doco:Section"
   ],
   "label": "prop:q-beta-q-eq-one-shadow-gate",
@@ -15,7 +16,6 @@
   "title": "$\\mathfrak{Q}_\\beta$ precision-ladder $\\S 4(c)$ formalize-first gate — any candidate Habiro element $F(q)$ must reproduce the canonical integer shadows at $q = 1$: $c_2 \\to -1$ (the structural N=2 anchor) and $c_3 \\to J_{\\text{Hopf}}(1) = -2$ (registry anchor); a candidate failing either is structurally REFUTED",
   "uses": [
     "papers/quantum-observable-universe/blocks/prop-q-beta-bar-even-kernel-invariant",
-    "papers/quantum-observable-universe/blocks/prop-q-beta-radius-of-convergence-gate",
     "papers/quantum-observable-universe/blocks/prop-q-beta-c-2-eq-neg-one-structural",
     "papers/quantum-observable-universe/blocks/prop-q-beta-c-k-recursion-from-habiro-q-difference"
   ],

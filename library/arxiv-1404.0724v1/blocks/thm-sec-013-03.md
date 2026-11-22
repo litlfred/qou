@@ -1,0 +1,1 @@
+There exists an open dense subset U ⊂C2, such that for (τ, λ) ∈U the representation µn,2,λ,τ : Bn →Aut(N[nλ −4]) is equvalent to the representation obtained from the Lawrence-Krammer-Bigelow representation Bn →AutR(H) ∼= Aut(R n(n−1) ), by setting: q = exp−2πi λ τ , t = exp 2πi τ . Here, as before, R is the ring R = Z[q, q−1, t, t−1].

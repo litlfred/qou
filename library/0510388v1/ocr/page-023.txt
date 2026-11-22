@@ -1,0 +1,28 @@
+We will develop a "calculus of vector convolutions", in which we compute formulas
+for curls, divergences and Laplacians of convolutions, first in R° to serve as a model,
+and then on S° in left-translation format, and in particular obtain
+
+PROPOSITION 2. On S°, the vector Laplacian has the following effect on
+convolutions of types A, B and G:
+
+AA(V, >) = A(V, Ap) — 4A(V,9) — 2 BV, 9)
+AB(V, >) = B(V, Ag) = + 2 A(V, Ag) — 2 G(V, 6)
+
+AG(V, >) = G(V, Ad).
+
+The large spaces after the first terms on the right hand sides of the A and B lines
+serve as a reminder that in Euclidean space R°, only those first terms appear.
+
+In particular, in R’ we have AA(V, >) = A(V, Ag) . So naturally, when we
+choose = ¢o to be a fundamental solution of the scalar Laplacian in R°,
+
+we get AA(V, oo) = ACV, Ado) = ACV, 5) = V, which tells us that
+
+A(V, 60) = Gr(V) there.
+
+Once we have Proposition 2 in hand, we will then get formula (1) of Theorem 3
+
+for the Green's operator on S° by adding one copy of line A to two copies of line B
+and four copies of line G, each with a different choice of kernel function © .
+
+23

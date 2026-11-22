@@ -6,10 +6,12 @@
   "sha256": "11614aa35b1ffa50445679d8ac8beb3fce19d3b6e25ffdecac7393b04ec1f0b8",
   "bytes": 1299728,
   "pages": 9,
-  "math_source": "text-layer",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -19,16 +21,29 @@
    "stamp_date": "12 Sep 2013"
   },
   "doi": null,
-  "title": "Hadron Structure in Chiral Perturbation Theory A. Aleksejevs\u2217",
+  "title": "Hadron Structure in Chiral Perturbation Theory",
   "authors_raw": "Grenfell campus of Memorial University, Newfoundland, Canada",
+  "title_lines": [
+   "Hadron Structure in Chiral Perturbation Theory",
+   "A. Aleksejevs∗"
+  ],
   "abstract": null,
   "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20210617053311Z",
-   "Creator": "LaTeX with hyperref package",
    "Producer": "pdfTeX-1.40.12",
-   "Title": ""
-  }
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20210617053311Z"
+  },
+  "title_raw": "Hadron Structure in Chiral Perturbation Theory A. Aleksejevs∗",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "Hadron Structure in Chiral Perturbation Theory A. Aleksejevs ∗ S. Barkanova † the dynamical polarizabilities of the mesons and baryons, respectively. Section 5 brieﬂy summarizes our conclusions. The Chiral Perturbation Theory (CHPT) has been tremendously successful in describing low-energy hadronic",
+   "outline": "I Introduction",
+   "text": "Hadron Structure in Chiral Perturbation Theory A. Aleksejevs∗",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "Hadron Structure in Chiral Perturbation Theory A. Aleksejevs∗"
  },
  "toc": [
   {
@@ -36,75 +51,328 @@
    "title": "I Introduction",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "II Pion Form Factor",
    "page": 1,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 1,
    "title": "III Dynamical Polarizabilities of Mesons",
    "page": 3,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 1,
    "title": "IV Dynamical Polarizabilities of Baryons",
    "page": 5,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 1,
    "title": "V Conclusions",
    "page": 7,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 1,
    "title": "VI Acknowledgements",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 1,
    "title": "References",
    "page": 9,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "On-shell and oﬀ-shell pion form factors. The red line shows the monopole ﬁt of the on-shell formfactor to CHPT results. Experimental data are taken from [12–15]. The oﬀshell form factor is shown for both low (t = −0.005 GeV2, blue line) and high (t = −0.212 GeV2, green line) hadronic momentum transf",
+   "page": 2,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "2"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "Two-photon box radiative correction for the exclusive pion electroproduction for Q2 = 6.0 GeV2 (left plot) and",
+   "page": 3,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Left graph: energy dependence of the pion electric polarizabilty. Right graph: γγ →ππ cross section, where red line corresponds to the Born cross section, blue line is the cross section related to the static CHPT value of polarizability and green line shows the cross section with dynamical polarizab",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "5"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Charged kaon dynamical polarizability and prediction for the γγ →K+K−cross section. On the left plot, red line is the Born cross section, blue line corresponds to the static polarizability and green line to the dynamical polarizability cross section",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "6"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "Dependencies of the proton electric and magnetic polarizabilities (in 10−4 (fm3)) on photon energy, ω (GeV), in the center-of-mass reference frame. Green-dashed curves correspond to the meson-nucleon loops contribution only; solid-red curves include the ∆-resonance pole contribution",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Electric and magnetic dynamical polarizabilities of hyperons in units of 10−4 (fm3) as a function of the photon energy, ω (GeV). Here, the solid-red line represents the electric polarizability, and the dashed-green line is the magnetic polarizability",
+   "page": 8,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "8"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-document",
+   "id": "sec-front-matter",
    "number": null,
-   "title": "Document",
+   "title": "Front matter",
    "level": 1,
    "page_start": 1,
+   "page_end": 1,
+   "n_chars": 691,
+   "n_words": 92,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-i-introduction",
+   "number": null,
+   "title": "I Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1557,
+   "n_words": 227,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-001-ii-pion-form-factor",
+   "number": null,
+   "title": "II Pion Form Factor",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 5900,
+   "n_words": 1077,
+   "label_start": null,
+   "label_end": "3"
+  },
+  {
+   "id": "sec-002-iii-dynamical-polarizabilities-of-mesons",
+   "number": null,
+   "title": "III Dynamical Polarizabilities of Mesons",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 5080,
+   "n_words": 960,
+   "label_start": "3",
+   "label_end": "5"
+  },
+  {
+   "id": "sec-003-iv-dynamical-polarizabilities-of-baryons",
+   "number": null,
+   "title": "IV Dynamical Polarizabilities of Baryons",
+   "level": 1,
+   "page_start": 5,
    "page_end": 9,
-   "n_chars": 25238,
-   "n_words": 4334
+   "n_chars": 8979,
+   "n_words": 1437,
+   "label_start": "5",
+   "label_end": "9"
+  },
+  {
+   "id": "sec-004-vi-acknowledgements",
+   "number": null,
+   "title": "VI Acknowledgements",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 2873,
+   "n_words": 506,
+   "label_start": "9",
+   "label_end": "9"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 7,
-  "sections": 1,
-  "chars_total": 25238,
+  "toc_inferred_entries": 0,
+  "figure_entries": 6,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 6,
+  "chars_total": 25080,
+  "furniture_lines_stripped": 8,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "HS13-Aleksejevs-Barkanova.tex",
    "tex_sections": 6,
-   "overlaid": 0,
+   "overlaid": 4,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -112,9 +380,48 @@
    },
    "sections": [
     {
-     "id": "sec-000-document",
-     "title": "Document",
+     "id": "sec-front-matter",
+     "title": "Front matter",
      "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-i-introduction",
+     "title": "I Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.931,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-ii-pion-form-factor",
+     "title": "II Pion Form Factor",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-iii-dynamical-polarizabilities-of-mesons",
+     "title": "III Dynamical Polarizabilities of Mesons",
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-iv-dynamical-polarizabilities-of-baryons",
+     "title": "IV Dynamical Polarizabilities of Baryons",
+     "prose_ratio": 0.953,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-vi-acknowledgements",
+     "title": "VI Acknowledgements",
+     "prose_ratio": 0.917,
+     "coverage_ratio": 0.135,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     }
    ]
   }

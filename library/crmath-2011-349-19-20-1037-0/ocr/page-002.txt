@@ -1,0 +1,73 @@
+1038 V. Bugeaud / C. R. Acad. Sci. Paris, Ser. I 349 (2011) 1037-1039
+
+(qui n’admet pas de sous-modules aux q-différences autre que {0} et lui-méme) de pente d/r, pgcd(d,r) =1, est de la
+forme
+
+01
+E(r,d,b)=(K",®) ov B=[o ~, 1) et c=q°? bz, bect.
+c 0 +: 0
+
+Un module indécomposable (qui ne peut étre somme directe non triviale de deux sous-modules aux q-différences) pur iso-
+cline de pente d/r, pgcd(d,r) = 1, est de la forme E(r,d,b) ® Um ott Um est le module aux q-différences unipotent associé
+4 la matrice de Jordan unipotente de taille m. Ainsi, un module pur isocline de pente non entiére est somme directe de
+modules indécomposables. Ces résultats sont notre point de départ pour étendre une partie des résultats de Ramis, Sauloy
+et Zhang [4], concernant les modules aux q-différences 4 pentes entiéres aux pentes non entiéres, en ayant le souci de
+donner des descriptions matricielles explicites.
+
+Cette Note est construite en trois temps. Nous commencerons par étudier la classification analytique isoformelle 4 deux
+pentes non entiéres en cherchant une forme normale de Birkhoff-Guenther. Dans une deuxiéme partie, nous calculerons les
+opérateurs de Stokes associés 4 un module irréductible. Dans la troisiéme partie, nous donnerons une description matricielle
+explicite du groupe de Galois formel (déja décrit par van der Put et Reversat). Ces résultats ouvrent la voie 4 une description
+compléte explicite du groupe de Galois des équations aux q-différences.
+
+2. Classification analytique isoformelle 4 deux pentes
+
+Dans [4], les auteurs étudient l'ensemble des classes analytiques isoformelles et les décrivent dans le cas oii les pentes
+sont entiéres. L’une de leurs approches, que l'on reprend dans cette partie, est de donner la forme normale de Birkhoff-
+Guenther pour les matrices représentant une classe analytique isoformelle. Ici, on traite le cas 4 deux pentes, l'une non
+entiére et l'autre entiére puis les deux non entiéres. L’ensemble des classes isoformelles analytiques 4 deux pentes est noté
+F(P1, Pz) ot sont fixés les modules P; = (K"i, g;) pour i= 1,2 de pentes j11 < j22. D'aprés [5], toute classe de F(P}, P2)
+
+peut étre représentée par un module aux q-différences My =(K", ®a,) ot! AU = (3 bs le bloc U est dans M,y,,r,(K).
+
+Dans le cas des pentes entiéres, grace 4 la transformée de q-Borel, (voir [4]), une classe admet un unique représentant
+dont les coefficients du bloc U sont polynomiaux, c’est la forme normale de Birkhoff-Guenther. Notons E = E(r, —d,b) un
+module aux q-différences irréductible de pente js = —d/r < 0, de rang r et 1 = (K, 0). Ici aussi, on utilise la transformée de
+q-Borel pour avoir des représentants 4 coefficients polynomiaux, mais ce n’est pas suffisant pour obtenir une forme normale.
+Le théoréme suivant traite F(E,1) et s’étend facilement au cas de F(M,1) ot M est arbitraire de pente non entiére (que
+l'on n’énoncera pas pour éviter d’introduire des notations trop lourdes).
+
+Théoréme 2.1. Soit k ¢ Z et Vea le C-espace vectoriel oe Cz')" de dimension rd alors Vapplication g de Ve, dans
+
+vee! Cz! Se par p((u4,..., ur)) = yao J(uj) induit un isomorphisme de C-espaces vectoriels : F(E,1) = res =
+Img = rhc 1
+L’étude du cas 4 deux pentes non entiéres, F(E1, £2), ot. Ey = E(r,d1,b,) et Ey = E(r2,dz,b2) avec th < @ se ra.
+
+ist m2’
+méne au théoréme précédent par l'isomorphisme entre F(E1, £2) et F(Ei @ E¥,1), qui est dii au fait que la catégorie est
+tannakienne (cf. [5] et [4]).
+
+On peut de nouveau avoir des représentants des classes analytiques isoformelles 4 coefficients polynomiaux, décrits
+selon leur position sur la diagonale de U. Un nouvel isomorphisme ¢ apparait, g : F(E1, E2) > ene wat Cz!)P ott
+P= pgcd(ri,r2), 1 = pur et r2 = pur.
+
+Dans la seconde partie, dans I’esprit de [4] (et [6]), on adopte un point de vue plus géométrique pour décrire F(E, 1),
+en calculant les opérateurs de Stokes.
+
+3. Opérateurs de Stokes
+
+A un module aux q-différences M = (K",@,) ou, sans perte de généralité, la matrice A est peut-étre prise dans
+GLy(C[z,z~1}), on associe un fibré vectoriel holomorphe Fy sur la courbe elliptique Ey = C*/q2, défini par Fy =
+
+Cech
+
+wexraA@N (cf. [8]). Dans [6] ou [8], si M est pur isocline de pente entiére négative, on a un isomorphisme du type
+F(M, 1) =H! (Eq, Fm), obtenu grace a la construction de «cocycles privilégiés ».
+
+Dans cette partie, la méme démarche est adoptée pour le cas ott M = E = E(r, —d,b) est un module aux q-différences
+irréductible de pente non entiére négative. Le théoréme suivant est analogue au théoréme 3.1 de [8]. Nous noterons ¢ la
+
+classe de c € C* dans E, et ¢ sa classe dans Eq.
+
+Théoréme 3.1. Pour tout U € (C[z]a_1)', pour tout ¢ € Eq \ Zz, il existe un unique vecteur de fonctions méromorphes F, sur C*, Fo =
+'(f,,.... f,), dont les fj ont pour péles la q’ -spirale [—cq~'*" , q™] = —cq~'*'q", de multiplicité < d et tel que 0 (F,) — BF, =U.

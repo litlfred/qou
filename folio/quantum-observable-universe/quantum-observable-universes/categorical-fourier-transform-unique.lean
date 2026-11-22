@@ -31,7 +31,7 @@ with no axiom:
 
 ## References
 
-- [manuscript] §2-quantum-observable-universes/categorical-fourier-transform-unique
+- [leitner2026] §2-quantum-observable-universes/categorical-fourier-transform-unique
 - [kassel1995] Quantum Groups, §IV
 -/
 

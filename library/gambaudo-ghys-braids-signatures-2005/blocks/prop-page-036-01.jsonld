@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/gambaudo-ghys-braids-signatures-2005/blocks/prop-page-036-01",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 36,
+  "pageEnd": 36,
+  "text": "prop-page-036-01.md",
+  "derivedFrom": "library/gambaudo-ghys-braids-signatures-2005/sections/page-036",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/gambaudo-ghys-braids-signatures-2005/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_number": "5.3",
+    "source_kind": "proposition",
+    "claim_domain": "math",
+    "evidence_kind": "deductive-proof",
+    "evidence_location": "both",
+    "evidence_locator": "In-paper proof in sections/page-036.md (p. 36-36) citing [12]",
+    "claim_id": "gambaudo-ghys-braids-signatures-2005#proposition:5.3",
+    "lean_status": "unformalized"
+  }
+}

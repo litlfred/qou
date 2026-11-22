@@ -4,7 +4,7 @@ export default conjecture({
   label: "conj:sm-colour-stabilizer-action",
   title: "Colour stabilizer action on the state space",
   lean: {
-    ref: "qou:QOU.StandardModel.ColourStabilizerAction",
+    ref: "qou:QOU.StandardModel.ColourBridge",
     validation: "not_checked",
   },
   uses: ["def:gauge-action-groupoid", "conj:sm-gauge-truncation"],
@@ -34,6 +34,42 @@ export default conjecture({
         "instance in QOU.MathlibExt.OctonionColourActionBaseModule. Open " +
         "content sharpened: the action on the framework's own three-strand " +
         "Hecke state space, compatible with its braid structure.",
+    },
+    {
+      kind: "status",
+      date: "2026-11-15",
+      body:
+        "**Calibration: the class as written is a dimension count (bean " +
+        "qou-cb3r).** `ColourStabilizerAction g V` asks only for an " +
+        "injective linear map g -> End V. The corpus proves that this needs " +
+        "finrank g <= (finrank V)^2 (`not_colourStabilizerAction_of_dim_sq_lt`), " +
+        "and `ColourBridgeObstructions.colourStabilizerAction_of_finrank_le` " +
+        "proves the converse. So the class is equivalent to that inequality, " +
+        "and an instance on the tower triplet Q^3 exists for any 8-dimensional " +
+        "colour algebra with no octonion or Hecke input. No instance of this " +
+        "class is evidence for the bridge. The bridge question needs a " +
+        "Lie-hom, complex-structure and crossing-compatible strengthening; " +
+        "by the audit (docs/audits/2026-11-15-colour-stabilizer-bridge.md, " +
+        "sections 0, 8 and 8.1) that strengthening is satisfiable only after " +
+        "complexification, with one 3 vs 3bar bit, and only at q = 1. " +
+        "No q-deformed G2 braiding restricts to the tower crossing on the " +
+        "colour triplet at generic q.",
+    },
+    {
+      kind: "status",
+      date: "2026-11-15",
+      body:
+        "**Restated (option A, owner-approved; bean qou-cb3r).** The Lean " +
+        "reference is now the strengthened class `ColourBridge K g q` " +
+        "(`QOU/StandardModel/ColourBridge.lean`): an injective Lie hom " +
+        "g -> gl3(K), K-linear (K intended Q(i), carrying +L_e or -L_e; the " +
+        "sign is the 3 vs 3bar bit, left unfixed), whose primitive coproducts " +
+        "commute with Jimbo's crossing R(q, 1/q) on K^3 (x) K^3. Intended " +
+        "instance: g = su3 e (x) Q(i), at q = 1; not provided. Proved " +
+        "sorry-free: `ColourBridge.q_eq_one_of_e01_mem` (E01 in the image " +
+        "forces q = 1) and `colourBridge_gl3_one` (the class is satisfiable " +
+        "at q = 1, by gl3 itself). The old class `ColourStabilizerAction` " +
+        "stays in the library as the dimension-count calibration above.",
     },
   ],
 });

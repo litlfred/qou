@@ -125,7 +125,7 @@ class BenzeneThreadingSelection (ctx : BenzeneThreadingEmergenceContext R) : Pro
     is `1`; at `q = 0` the inverse vanishes by convention and the value
     is `1`).  Genuine derivation from the definitional input, not a
     projected field. -/
--- Ref: [manuscript] quantum-observable-universe/molecular-construction/benzene-threading-emergence.md
+-- Ref: [leitner2026] quantum-observable-universe/molecular-construction/benzene-threading-emergence.md
 theorem benzene_alexander_weight_pos [ctx : BenzeneThreadingEmergenceContext R] :
     0 < ctx.alexander_weight := by
   rw [ctx.alexander_weight_def]
@@ -139,7 +139,7 @@ theorem benzene_alexander_weight_pos [ctx : BenzeneThreadingEmergenceContext R] 
     Derived (not projected): instantiate the ground-state-selection
     *hypothesis* at the Kekulé configuration and rearrange. -/
 -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP duality, shadow price)
--- Ref: [manuscript] quantum-observable-universe/molecular-construction/benzene-threading-emergence.md
+-- Ref: [leitner2026] quantum-observable-universe/molecular-construction/benzene-threading-emergence.md
 theorem benzene_resonance_nonneg (ctx : BenzeneThreadingEmergenceContext R)
     [hc : BenzeneThreadingSelection ctx] :
     0 ≤ ctx.Phi1_config BenzeneConfig.kekule -
@@ -165,7 +165,7 @@ theorem benzene_resonance_nonneg (ctx : BenzeneThreadingEmergenceContext R)
     Every conjunct is derived; the conjectural LP-dual selection enters
     only as the quantified `threading_minimises` hypothesis. -/
 -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP duality, optimal configuration)
--- Ref: [manuscript] quantum-observable-universe/molecular-construction/benzene-threading-emergence.md
+-- Ref: [leitner2026] quantum-observable-universe/molecular-construction/benzene-threading-emergence.md
 theorem benzene_threading_emergence (ctx : BenzeneThreadingEmergenceContext R)
     [hc : BenzeneThreadingSelection ctx] :
     ctx.n_shared_localised < ctx.n_shared_threading ∧

@@ -8,6 +8,7 @@ pages: 12-12
 source_pdf: 0203206v1.pdf
 source_sha256: 371611f719e6f53c
 toc_source: inferred
+doc_brief: "arXiv:math/0203206v1 [math.QA] 20 Mar 2002 — We give a pedagogical survey of those aspects of the abstract representation theory of quantum groups which are related to the Tannaka-Krein"
 ---
 we mention that the commutative-compact case can be described in terms of the algebra of regular functions
 on a compact group, and we make here an analytic statement concerning both cases.
@@ -24,4 +25,3 @@ explicitly in the next section, the representation theory of a discrete cocommut
 G. We shall also give a simple algebraic description of the associated aqg in this case.
 3
 Representation Theory
-3.1

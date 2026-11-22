@@ -7,10 +7,11 @@ section_number: null
 pages: 5-9
 source_pdf: 0811.2435v1.pdf
 source_sha256: 615b04eca83bcade
-doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 43 sections: Introduction; Counting problems for 3-dimensiona; Non-commutative varieties with pol"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.988
-latex_coverage_ratio: 0.958
+latex_coverage_ratio: 0.982
+doc_brief: "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations — 51 sections: Front matter; Introduction; Counting problems for 3-dimensiona"
 ---
 All $\A$-categories in this paper will be ind-constructible. This roughly means that their spaces of objects are countable inductive limits of constructible sets (for more details see Section 3). We define a *non-commutative proper algebraic variety over a base field $\k$* as an $Ext$-finite ind-constructible $\k$-linear triangulated $\A$-category $\CC$. For two objects $E$ and $F$ we denote by $\op{Hom}^{\bullet}(E,F)$ the complex of morphisms and by $\op{Ext}^{\bullet}(E,F)$ its cohomology.
 

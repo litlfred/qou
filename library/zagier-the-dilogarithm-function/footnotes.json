@@ -1,0 +1,4014 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "zagier-the-dilogarithm-function",
+ "status": "determined",
+ "pages_unread": [
+  47
+ ],
+ "body_size": 10.0,
+ "footnotes": [
+  {
+   "id": "fn-p003-1",
+   "page": 3,
+   "mark": "1",
+   "text": "ThispaperisarevisedversionofalecturewhichwasgiveninBonnonthe occasion of F. Hirzebruch’s 60th birthday (October 1987) and has also appeared under the title “The remarkable dilogarithm” in the Journal of Mathematical and Physical Sciences, 22 (1988).",
+   "marks": [
+    {
+     "page": 3,
+     "context": "ingeometryandnumbertheory"
+    }
+   ],
+   "block": "library/zagier-the-dilogarithm-function/blocks/prose-sec-front-matter"
+  },
+  {
+   "id": "fn-p016-1",
+   "page": 16,
+   "mark": "2",
+   "text": "ItshouldbementionedthatthedeﬁnitionofBFwhichwegaveforF=Cor Q must be modiﬁed slightly when F is a number ﬁeld because F × is no longer divisible; however, this is a minor point, aﬀecting only the torsion in the Bloch group, and will be ignored here.",
+   "marks": [
+    {
+     "page": 15,
+     "context": "(x"
+    },
+    {
+     "page": 15,
+     "context": "(x2+ xy + 2y"
+    },
+    {
+     "page": 15,
+     "context": "byusingtherepresentationζF (s)=ζ(s)L(s)andtheformulaζ(2)=π"
+    },
+    {
+     "page": 15,
+     "context": "e"
+    },
+    {
+     "page": 15,
+     "context": "π"
+    },
+    {
+     "page": 15,
+     "context": "D(e"
+    },
+    {
+     "page": 15,
+     "context": "e"
+    },
+    {
+     "page": 15,
+     "context": "ζQ(√−7)(2) =π"
+    },
+    {
+     "page": 15,
+     "context": "volumeofthequotientspaceH3/Γas|d|3/2ζF (2)/4π"
+    },
+    {
+     "page": 15,
+     "context": "π"
+    },
+    {
+     "page": 15,
+     "context": "in Z and zνin Fitselfrather than in the much larger ﬁeld Q(e"
+    },
+    {
+     "page": 15,
+     "context": "4π"
+    },
+    {
+     "page": 16,
+     "context": "such that Vol(H3/Γ) is a rational multiple of |d|1/2ζF (2)/π"
+    },
+    {
+     "page": 16,
+     "context": "except that now one gets discrete groups Γacting on Hr"
+    },
+    {
+     "page": 16,
+     "context": "Theorem1)isthat|d|1/2× ζF (2)/π2(r1+r"
+    },
+    {
+     "page": 16,
+     "context": "ofr2-foldproductsD(z(1)) · · · D(z(r"
+    },
+    {
+     "page": 16,
+     "context": "group"
+    },
+    {
+     "page": 16,
+     "context": "itisisomorphic(modulotorsion)toZr"
+    },
+    {
+     "page": 16,
+     "context": "morphism, the “regulator mapping,” from it into Rr"
+    },
+    {
+     "page": 16,
+     "context": " the image is a non-zero rational multiple of |d|1/2ζF (2)/π"
+    },
+    {
+     "page": 16,
+     "context": "mage is a non-zero rational multiple of |d|1/2ζF (2)/π2r1+2r"
+    },
+    {
+     "page": 16,
+     "context": "correspondstothecompositionBF→(BC)r"
+    },
+    {
+     "page": 16,
+     "context": "→Rr"
+    },
+    {
+     "page": 16,
+     "context": "morphictoZr"
+    },
+    {
+     "page": 16,
+     "context": "morphictoZr2.Letξ1, . . . , ξr2beanyr"
+    },
+    {
+     "page": 16,
+     "context": "j),(i, j=1, . . . , r"
+    },
+    {
+     "page": 16,
+     "context": "inantofthismatrixisanon-zerorationalmultipleof|d|1/2ζF (2)/π"
+    },
+    {
+     "page": 16,
+     "context": "fthismatrixisanon-zerorationalmultipleof|d|1/2ζF (2)/π2r1+2r"
+    }
+   ],
+   "block": "library/zagier-the-dilogarithm-function/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p040-1",
+   "page": 40,
+   "mark": "2",
+   "text": "ntAn+Btn+C",
+   "marks": [
+    {
+     "page": 39,
+     "context": "lly, specializing a fourth time to t = 0 and using L(+∞) = π"
+    },
+    {
+     "page": 39,
+     "context": "\u0005sin"
+    },
+    {
+     "page": 39,
+     "context": "sin"
+    },
+    {
+     "page": 39,
+     "context": "qn"
+    },
+    {
+     "page": 39,
+     "context": "qn"
+    },
+    {
+     "page": 39,
+     "context": "where (q)nas in §1 denotes the product (1−q)(1−q"
+    },
+    {
+     "page": 39,
+     "context": "(−1)nq(5n"
+    },
+    {
+     "page": 39,
+     "context": "(−1)nq(5n"
+    },
+    {
+     "page": 39,
+     "context": "q11/60H(q)=θ5,"
+    },
+    {
+     "page": 40,
+     "context": "whereq= e"
+    },
+    {
+     "page": 40,
+     "context": "(−1)[n/10]qn"
+    },
+    {
+     "page": 40,
+     "context": "z∈H,qα:= e"
+    },
+    {
+     "page": 40,
+     "context": "\u0005sin"
+    },
+    {
+     "page": 40,
+     "context": "5−sin"
+    },
+    {
+     "page": 40,
+     "context": "(withζN:=e"
+    },
+    {
+     "page": 40,
+     "context": "andR(x, y)=x−1y"
+    },
+    {
+     "page": 40,
+     "context": "andR(x, y)=x−1y2/(1 −y)ory"
+    }
+   ],
+   "block": "library/zagier-the-dilogarithm-function/blocks/prose-sec-010"
+  },
+  {
+   "id": "fn-p044-1",
+   "page": 44,
+   "mark": "2",
+   "text": "ν2 −1 α 1−α ,",
+   "marks": [
+    {
+     "page": 43,
+     "context": "the conjecture, then there should be pairs (B, C) ∈Q"
+    },
+    {
+     "page": 43,
+     "context": "(z) =θ5,"
+    },
+    {
+     "page": 43,
+     "context": "rational multiple of π"
+    },
+    {
+     "page": 43,
+     "context": "gh precision by an iterative procedure and then test L(ξA)/π"
+    },
+    {
+     "page": 43,
+     "context": "2haveanotherGaloisorbitoffoursolutionswhere(Q1, Q"
+    },
+    {
+     "page": 44,
+     "context": "qαn"
+    }
+   ],
+   "block": "library/zagier-the-dilogarithm-function/blocks/prose-sec-010"
+  },
+  {
+   "id": "fn-p048-1",
+   "page": 48,
+   "mark": "2",
+   "text": "An2+Bn+C",
+   "marks": [
+    {
+     "page": 48,
+     "context": "qα(r+hl−ν)"
+    },
+    {
+     "page": 48,
+     "context": "qA1l"
+    },
+    {
+     "page": 48,
+     "context": "qn"
+    },
+    {
+     "page": 48,
+     "context": ", ν"
+    }
+   ],
+   "block": "library/zagier-the-dilogarithm-function/blocks/prose-sec-010"
+  },
+  {
+   "id": "fn-p051-1",
+   "page": 51,
+   "mark": "2",
+   "text": "An2+Bn+C",
+   "marks": [
+    {
+     "page": 50,
+     "context": "2An"
+    },
+    {
+     "page": 50,
+     "context": "A,B(q)=qB"
+    },
+    {
+     "page": 50,
+     "context": "riesHA,B(ε)satisﬁesasecondfunctionalequationH1/A,B/A(−ε)=eεB"
+    },
+    {
+     "page": 50,
+     "context": "QAand does not change B"
+    },
+    {
+     "page": 50,
+     "context": "B"
+    },
+    {
+     "page": 50,
+     "context": "24,γ"
+    },
+    {
+     "page": 50,
+     "context": "−π"
+    },
+    {
+     "page": 51,
+     "context": "\u0010π"
+    },
+    {
+     "page": 51,
+     "context": "6−Li"
+    },
+    {
+     "page": 51,
+     "context": "ν"
+    },
+    {
+     "page": 51,
+     "context": "=π"
+    },
+    {
+     "page": 51,
+     "context": "2An"
+    },
+    {
+     "page": 51,
+     "context": "−Aν"
+    }
+   ],
+   "block": "library/zagier-the-dilogarithm-function/blocks/prose-sec-010"
+  }
+ ],
+ "uncalled_notes": [],
+ "unlinked_marks": [
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "z"
+  },
+  {
+   "page": 3,
+   "mark": "2",
+   "context": "n"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "z"
+  },
+  {
+   "page": 3,
+   "mark": "n",
+   "context": "z"
+  },
+  {
+   "page": 3,
+   "mark": "m",
+   "context": "n"
+  },
+  {
+   "page": 3,
+   "mark": "m",
+   "context": "dzLi"
+  },
+  {
+   "page": 3,
+   "mark": "m",
+   "context": "zLi"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "=(2"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "4"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "ζ(2)=π"
+  },
+  {
+   "page": 4,
+   "mark": "4",
+   "context": "ζ(4) =π"
+  },
+  {
+   "page": 4,
+   "mark": "6",
+   "context": "ζ(6) =π"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "Li2(1)=π"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "Li2(−1)= −π"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "=π"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "2 log"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "=π"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "15−log"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "=π"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "10−log"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "= −π"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "2 log"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "= −π"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "2 log"
+  },
+  {
+   "page": 5,
+   "mark": "4",
+   "context": "q"
+  },
+  {
+   "page": 5,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 5,
+   "mark": "8",
+   "context": "q"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "q"
+  },
+  {
+   "page": 5,
+   "mark": "12",
+   "context": "q"
+  },
+  {
+   "page": 5,
+   "mark": "4",
+   "context": "q"
+  },
+  {
+   "page": 5,
+   "mark": "5",
+   "context": "q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "\u0003 π"
+  },
+  {
+   "page": 6,
+   "mark": "r",
+   "context": "(−1)"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "5r"
+  },
+  {
+   "page": 6,
+   "mark": "n",
+   "context": "1 −q"
+  },
+  {
+   "page": 6,
+   "mark": "r",
+   "context": "(−1)"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "5r"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "q"
+  },
+  {
+   "page": 6,
+   "mark": "3",
+   "context": "q"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "\u0003 π"
+  },
+  {
+   "page": 6,
+   "mark": "x",
+   "context": "xarg sinh"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "1 + x"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "1 + x"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "1 + x2/4 + x/2) dx = c(0) −c(1) =π"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "4−π"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "5=π"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "1 + x"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "1 + x"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "2 Li"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "2log"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "1 + x"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "1 + x"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "+ log"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "1 + x"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "2 Li"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "=π"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "12−π"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "30=π"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "=−Li2(z)−π"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "2 log"
+  },
+  {
+   "page": 6,
+   "mark": "2",
+   "context": "Li2(1 −z)=−Li2(z)+π"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "Li2(z"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "z"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "=π"
+  },
+  {
+   "page": 7,
+   "mark": "2",
+   "context": "tion,whileforfofdegreenitinvolvesn"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "n"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "n"
+  },
+  {
+   "page": 9,
+   "mark": "2",
+   "context": "π"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "(−1)"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "(z0, . . . , z4∈P"
+  },
+  {
+   "page": 9,
+   "mark": "1",
+   "context": "(z0, a1, a2, a3∈P"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "wheref:P"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "wheref:P1(C)→P"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "Finally,wementionthatareal-analyticfunctiononP"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "(−log |z|)"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "Lik(z) −(−log |z|)"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "i"
+  },
+  {
+   "page": 10,
+   "mark": "1",
+   "context": "(soD1(z) = log |z"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "=(−1)"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "(−i log |z|)"
+  },
+  {
+   "page": 10,
+   "mark": "m",
+   "context": "∂z D"
+  },
+  {
+   "page": 10,
+   "mark": "3",
+   "context": "n=1(cos nθ)/n"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "x"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "(1 −x)"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "\u0005x(1 −y)"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "y(1 −x)"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "x(1 −y)"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "y(1 −x)"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "satisfying∆z1Gn= ∆z2Gn= n(n −1)Gn,where∆z= y"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "satisfying∆z1Gn= ∆z2Gn= n(n −1)Gn,where∆z= y2(∂2/∂x"
+  },
+  {
+   "page": 10,
+   "mark": "2",
+   "context": "satisfying∆z1Gn= ∆z2Gn= n(n −1)Gn,where∆z= y2(∂2/∂x2+ ∂2/∂y"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "n(z"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "n(z1, γz"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "n(n = 2,"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "1 +|z"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "1 +|z1 −z"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "log|z"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "log|z1 −z"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "2(z"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "2(z1, z"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "n(z"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "n(z1, z"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "D3(e"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "D3(e2πi(z"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "D3(e2πi(z1−z"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "D3(e2πi(z1−z2)) + D3(e"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "D3(e2πi(z1−z2)) + D3(e2πi(z"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "D3(e2πi(z1−z2)) + D3(e2πi(z1−¯z"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "4π"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "+y"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "1+ y"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "D1(e"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "D1(e2πi(z"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "D1(e2πi(z1−z"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "D1(e2πi(z1−z2)) + D1(e"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "D1(e2πi(z1−z2)) + D1(e2πi(z"
+  },
+  {
+   "page": 11,
+   "mark": "2",
+   "context": "D1(e2πi(z1−z2)) + D1(e2πi(z1−¯z"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "∂H3= C ∪{∞} = P"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "element of SL2(C) on P"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "timeofz0, . . . , z4∈P"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "toS"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "toS1× S"
+  },
+  {
+   "page": 13,
+   "mark": "2",
+   "context": "wherethesumistakenintheabeliangroupΛ"
+  },
+  {
+   "page": 13,
+   "mark": "n",
+   "context": "aboutVolbecausethesetofnumbers"
+  },
+  {
+   "page": 13,
+   "mark": "z",
+   "context": "ν=1D(zν)with"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "\u0003α"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "= β"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "= β2∧α −β ∧α"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "rom algebraic numbers: the key relations 1+β= α and 1−β−1= α"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "d is given by c−2dffor some natural number c with c"
+  },
+  {
+   "page": 14,
+   "mark": "p",
+   "context": "pZ"
+  },
+  {
+   "page": 14,
+   "mark": "p",
+   "context": "pZp(p−s)−1whereZ"
+  },
+  {
+   "page": 14,
+   "mark": "r",
+   "context": "p ∤dfisthemonicpolynomial(1 −t)"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "p ∤dfisthemonicpolynomial(1 −t)r"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "p ∤dfisthemonicpolynomial(1 −t)r1,p(1 −t"
+  },
+  {
+   "page": 14,
+   "mark": "r",
+   "context": "p ∤dfisthemonicpolynomial(1 −t)r1,p(1 −t2)"
+  },
+  {
+   "page": 14,
+   "mark": "2",
+   "context": "p ∤dfisthemonicpolynomial(1 −t)r1,p(1 −t2)r"
+  },
+  {
+   "page": 14,
+   "mark": "r",
+   "context": "n≥1"
+  },
+  {
+   "page": 14,
+   "mark": "n",
+   "context": "n≥1r(n)"
+  },
+  {
+   "page": 14,
+   "mark": "r",
+   "context": "n≥1r(n)n−swhere"
+  },
+  {
+   "page": 15,
+   "mark": "s",
+   "context": "(x2+ xy + 2y2)"
+  },
+  {
+   "page": 15,
+   "mark": "6",
+   "context": "e"
+  },
+  {
+   "page": 15,
+   "mark": "4",
+   "context": "e"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "gulatedintoidealtetrahedrawithverticesbelongingtoP"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "gulatedintoidealtetrahedrawithverticesbelongingtoP1(F)⊂P"
+  },
+  {
+   "page": 16,
+   "mark": "r",
+   "context": "except that now one gets discrete groups Γacting on H"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "Theorem1)isthat|d|1/2× ζF (2)/π2(r"
+  },
+  {
+   "page": 16,
+   "mark": "r",
+   "context": "itisisomorphic(modulotorsion)toZ"
+  },
+  {
+   "page": 16,
+   "mark": "r",
+   "context": "morphism, the “regulator mapping,” from it into R"
+  },
+  {
+   "page": 16,
+   "mark": "r",
+   "context": "the image is a non-zero rational multiple of |d|1/2ζF (2)/π2"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "he image is a non-zero rational multiple of |d|1/2ζF (2)/π2r"
+  },
+  {
+   "page": 16,
+   "mark": "r",
+   "context": "image is a non-zero rational multiple of |d|1/2ζF (2)/π2r1+2"
+  },
+  {
+   "page": 16,
+   "mark": "r",
+   "context": "correspondstothecompositionBF→(BC)"
+  },
+  {
+   "page": 16,
+   "mark": "r",
+   "context": "→R"
+  },
+  {
+   "page": 16,
+   "mark": "r",
+   "context": "morphictoZ"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "morphictoZr2.Letξ"
+  },
+  {
+   "page": 16,
+   "mark": "r",
+   "context": "morphictoZr2.Letξ1, . . . , ξ"
+  },
+  {
+   "page": 16,
+   "mark": "r",
+   "context": "nantofthismatrixisanon-zerorationalmultipleof|d|1/2ζF (2)/π2"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "antofthismatrixisanon-zerorationalmultipleof|d|1/2ζF (2)/π2r"
+  },
+  {
+   "page": 16,
+   "mark": "r",
+   "context": "ofthismatrixisanon-zerorationalmultipleof|d|1/2ζF (2)/π2r1+2"
+  },
+  {
+   "page": 17,
+   "mark": "k",
+   "context": "(afterﬁndingkelementsatrandom,wehaveonlyaboutonechancein2"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "lattice is generated by a number of the form κ|d|3/2ζF (2)/π"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "2m−1(F)andζF(m)foranyinteger"
+  },
+  {
+   "page": 17,
+   "mark": "5",
+   "context": "ofperiodd)isequaltod"
+  },
+  {
+   "page": 18,
+   "mark": "5",
+   "context": "2−55"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "5)(3)/ζ(3)=D"
+  },
+  {
+   "page": 19,
+   "mark": "c",
+   "context": "j=1"
+  },
+  {
+   "page": 19,
+   "mark": "j",
+   "context": "j=1c"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "j=1cjLi"
+  },
+  {
+   "page": 19,
+   "mark": "j",
+   "context": "j=1cjLi2(φ"
+  },
+  {
+   "page": 19,
+   "mark": "c",
+   "context": "j=1cjLi2(φj(z)) = Cwith constants"
+  },
+  {
+   "page": 19,
+   "mark": "1",
+   "context": "j=1cjLi2(φj(z)) = Cwith constants c"
+  },
+  {
+   "page": 20,
+   "mark": "z",
+   "context": "n=1"
+  },
+  {
+   "page": 20,
+   "mark": "n",
+   "context": "n=1z"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "n=1zn/n"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "deﬁnition 0 < |z| < 1 to a continuous function D:P"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "analytic on P"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "deﬁnedonP"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "takesvaluesinC/π"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "andthenextendedtotherestofRbysettingL(0) = 0,L(1) = π"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "x →+∞L(x)=2L(1)=π"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "x →−∞L(x)=−L(1)=−π"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "but it is continuous if we consider it modulo π"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "L(x):=L(x)(modπ"
+  },
+  {
+   "page": 21,
+   "mark": "1",
+   "context": "L(x):=L(x)(modπ2/2)fromP"
+  },
+  {
+   "page": 21,
+   "mark": "2",
+   "context": "L(x):=L(x)(modπ2/2)fromP1(R)toR/π"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "hassimplyL(1/2)=π"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "5)/2)=π"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "expressionsinvolvinglog"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "expressionsinvolvinglog2(2)andlog"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "lyticpropertiesbetter)andhencevanishesonP"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "makeitsanalyticpropertiesbetter)toP"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "urallyinthecirclegroupR/(π"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "isthenafunction\u0013D(z)withvaluesinC/(π"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "isthenafunction\u0013D(z)withvaluesinC/(π2/2)ZoratleastC/π"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "imaginarypartisD(z)andwhoserestrictiontoP"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "n does not exist if we demand that the argument belongs to P"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": " exist if we either pass to a suitable inﬁnite covering of P"
+  },
+  {
+   "page": 22,
+   "mark": "1",
+   "context": "space.LetX=P"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "farifweonlywantthevaluesofLi2(z)moduloπ"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "(u, v) ∈C"
+  },
+  {
+   "page": 22,
+   "mark": "u",
+   "context": "(u, v) ∈C2| e"
+  },
+  {
+   "page": 22,
+   "mark": "v",
+   "context": "(u, v) ∈C2| eu+ e"
+  },
+  {
+   "page": 22,
+   "mark": "u",
+   "context": "X→Xgivenby(u, v)\u000e→z=e"
+  },
+  {
+   "page": 22,
+   "mark": "v",
+   "context": "X→Xgivenby(u, v)\u000e→z=eu=1 −e"
+  },
+  {
+   "page": 22,
+   "mark": "2",
+   "context": "Actually,togetaC/4π"
+  },
+  {
+   "page": 23,
+   "mark": "v",
+   "context": "X′→Xgivenbyv\u000e→1 −e"
+  },
+  {
+   "page": 23,
+   "mark": "v",
+   "context": "F(v) = Li2(1 −e"
+  },
+  {
+   "page": 23,
+   "mark": "a",
+   "context": "1 −e−v ,whichis"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "C/(2πi)"
+  },
+  {
+   "page": 23,
+   "mark": "v",
+   "context": "2πi)2Z.ThisfunctionsatisﬁesF(v + 2πis) = F(v) −2πis log(1 −e"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "XtoC/(2πi)"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "\u0013D((u + 2πir,v + 2πis))=\u0013D((u, v))+πi(rv −su)+2π"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "inΛ"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "inΛ"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "inΛ2(C∗)saysthatthesumnj (uj) ∧(vj)∈Λ"
+  },
+  {
+   "page": 23,
+   "mark": "u",
+   "context": "j)with"
+  },
+  {
+   "page": 23,
+   "mark": "j",
+   "context": "j=u"
+  },
+  {
+   "page": 23,
+   "mark": "j",
+   "context": "j=uj+ 2πir"
+  },
+  {
+   "page": 23,
+   "mark": "v",
+   "context": "j=uj+ 2πirj,"
+  },
+  {
+   "page": 23,
+   "mark": "j",
+   "context": "j=v"
+  },
+  {
+   "page": 23,
+   "mark": "j",
+   "context": "j=vj+ 2πis"
+  },
+  {
+   "page": 23,
+   "mark": "r",
+   "context": "j=vj+ 2πisjwith"
+  },
+  {
+   "page": 23,
+   "mark": "j",
+   "context": "j=vj+ 2πisjwithr"
+  },
+  {
+   "page": 23,
+   "mark": "s",
+   "context": "j=vj+ 2πisjwithrjand"
+  },
+  {
+   "page": 23,
+   "mark": "j",
+   "context": "j=vj+ 2πisjwithrjands"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "nj\u0013D(ˆzj)−πiA∈C/π"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "π"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "π2Q,andnotingeneralmodulo2π"
+  },
+  {
+   "page": 23,
+   "mark": "2",
+   "context": "mapfromtheBlochgroupBCtoC/π"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "Denhmakessensemodulo2π"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "zj)=0impliesthatℑ(¯ujvj)belongstoπ"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "e corresponding interpretationofthe real part ℜDenh(ξM) ∈R/π"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "Levin[25]tobeoftheformπ"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "K,A(2)∈C/π"
+  },
+  {
+   "page": 24,
+   "mark": "d",
+   "context": "K,A(2)∈C/π2"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "K,A(2)∈C/π2d"
+  },
+  {
+   "page": 24,
+   "mark": "2",
+   "context": "K,A(2) = π"
+  },
+  {
+   "page": 24,
+   "mark": "d",
+   "context": "K,A(2) = π2"
+  },
+  {
+   "page": 24,
+   "mark": "k",
+   "context": "n"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "nk"
+  },
+  {
+   "page": 24,
+   "mark": "k",
+   "context": "· · ·n"
+  },
+  {
+   "page": 24,
+   "mark": "m",
+   "context": "· · ·nk"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "x"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "xn"
+  },
+  {
+   "page": 24,
+   "mark": "n",
+   "context": "· · ·x"
+  },
+  {
+   "page": 24,
+   "mark": "m",
+   "context": "· · ·xn"
+  },
+  {
+   "page": 24,
+   "mark": "k",
+   "context": "n"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "nk"
+  },
+  {
+   "page": 24,
+   "mark": "k",
+   "context": "· · ·n"
+  },
+  {
+   "page": 24,
+   "mark": "m",
+   "context": "· · ·nk"
+  },
+  {
+   "page": 25,
+   "mark": "m",
+   "context": "x"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "xmy"
+  },
+  {
+   "page": 25,
+   "mark": "m",
+   "context": "x"
+  },
+  {
+   "page": 25,
+   "mark": "m",
+   "context": "x"
+  },
+  {
+   "page": 25,
+   "mark": "m",
+   "context": "y"
+  },
+  {
+   "page": 25,
+   "mark": "y",
+   "context": "m"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "my"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "∂yLi"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "∂yLi1,"
+  },
+  {
+   "page": 25,
+   "mark": "m",
+   "context": "x"
+  },
+  {
+   "page": 25,
+   "mark": "y",
+   "context": "xm−1"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "xm−1y"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "1 −x"
+  },
+  {
+   "page": 25,
+   "mark": "n",
+   "context": "y"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "∂xLi"
+  },
+  {
+   "page": 25,
+   "mark": "1",
+   "context": "∂xLi1,"
+  },
+  {
+   "page": 26,
+   "mark": "k",
+   "context": "\u0006k1 −(1 −y)"
+  },
+  {
+   "page": 26,
+   "mark": "m",
+   "context": "x"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "y"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "k"
+  },
+  {
+   "page": 26,
+   "mark": "k",
+   "context": "(−1)"
+  },
+  {
+   "page": 26,
+   "mark": "m",
+   "context": "x"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "xmy"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "k"
+  },
+  {
+   "page": 26,
+   "mark": "m",
+   "context": "mnifm < n,vanishesif"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "x"
+  },
+  {
+   "page": 26,
+   "mark": "n",
+   "context": "n (1 −q"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "t"
+  },
+  {
+   "page": 26,
+   "mark": "a",
+   "context": "720+ · · ·weobtain"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "x + x"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "ε"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "(1 −x)"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "i=1R(q, q"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "guments(suchasinterpretingthecoeﬃcientsofq"
+  },
+  {
+   "page": 27,
+   "mark": "m",
+   "context": "(1 −q"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "(1 −q"
+  },
+  {
+   "page": 27,
+   "mark": "i",
+   "context": "(1−q"
+  },
+  {
+   "page": 27,
+   "mark": "m",
+   "context": "(1−q"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "factorq"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "actorq1/24themodularformη(τ)(Dedekindeta-function),whereq= e"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "onesby(q)n= (q)∞/(q"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "onesby(q)n= (q)∞/(qn+1; q)∞and(x; q)n= (x; q)∞/(q"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "means (1−q)(1−q"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": " (1−q)(1−q2) but (x)2means (1−x)(1−qx) rather than (1−x)(1−x"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "x"
+  },
+  {
+   "page": 27,
+   "mark": "n",
+   "context": "x"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "an x"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "bn x"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "cn x"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "andcomparingthecoeﬃcientsofx"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "(1 −q"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "(1 −q"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "(1 −qn) an= −q"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "(1 −q"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "an=(−1)"
+  },
+  {
+   "page": 28,
+   "mark": "q",
+   "context": "an=(−1)n"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "1 −q"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "x"
+  },
+  {
+   "page": 28,
+   "mark": "q",
+   "context": "n"
+  },
+  {
+   "page": 28,
+   "mark": "x",
+   "context": "n qin"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "n qin x"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "−log(1 −q"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "n (1 −q"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "i=0Li"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "i=0Li1(q"
+  },
+  {
+   "page": 28,
+   "mark": "x",
+   "context": "i=0Li1(qi"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "v"
+  },
+  {
+   "page": 28,
+   "mark": "m",
+   "context": "vnu"
+  },
+  {
+   "page": 28,
+   "mark": "m",
+   "context": "vnum=q−mnu"
+  },
+  {
+   "page": 28,
+   "mark": "n",
+   "context": "vnum=q−mnumv"
+  },
+  {
+   "page": 28,
+   "mark": "s",
+   "context": "vnum=q−mnumvnand(vu)"
+  },
+  {
+   "page": 28,
+   "mark": "s",
+   "context": "2)u"
+  },
+  {
+   "page": 28,
+   "mark": "s",
+   "context": "2)usv"
+  },
+  {
+   "page": 29,
+   "mark": "m",
+   "context": "q−mnam an u"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "q−mnam an umv"
+  },
+  {
+   "page": 29,
+   "mark": "s",
+   "context": "(−1)"
+  },
+  {
+   "page": 29,
+   "mark": "r",
+   "context": "2)ar as at u"
+  },
+  {
+   "page": 29,
+   "mark": "s",
+   "context": "2)ar as at ur+sv"
+  },
+  {
+   "page": 29,
+   "mark": "m",
+   "context": "neratingfunctions(nowcommutative!)bymultiplyingbothsidesby x"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "ratingfunctions(nowcommutative!)bymultiplyingbothsidesby xmy"
+  },
+  {
+   "page": 29,
+   "mark": "x",
+   "context": "(q)r"
+  },
+  {
+   "page": 29,
+   "mark": "r",
+   "context": "(q)rx"
+  },
+  {
+   "page": 29,
+   "mark": "s",
+   "context": "=q"
+  },
+  {
+   "page": 29,
+   "mark": "m",
+   "context": "=qs"
+  },
+  {
+   "page": 29,
+   "mark": "m",
+   "context": "(q)n−ssatisfyC"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "(q)n−ssatisfyCm+1,n= q"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "(q)n−ssatisfyCm+1,n= qnCm,n + (1 −q"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "x"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "n"
+  },
+  {
+   "page": 29,
+   "mark": "p",
+   "context": "This function can be written as Li2(x)−p−2Li2(x"
+  },
+  {
+   "page": 29,
+   "mark": "p",
+   "context": "2(x), and the corresponding higher"
+  },
+  {
+   "page": 29,
+   "mark": "n",
+   "context": "x"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "n"
+  },
+  {
+   "page": 30,
+   "mark": "x",
+   "context": "n=1"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "n=1x"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "n=1xn/nofthe1-logarithmwasﬁrstproposed(underthename“The"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "n=1xn/nofthe1-logarithmwasﬁrstproposed(underthename“The1"
+  },
+  {
+   "page": 30,
+   "mark": "x",
+   "context": "n=1"
+  },
+  {
+   "page": 30,
+   "mark": "n",
+   "context": "n=1x"
+  },
+  {
+   "page": 30,
+   "mark": "m",
+   "context": "n=1xn/n"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "examples of identities of the formD(αi) = 0 orL(αi) ∈Q π"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "x,y,"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "1 −xy ,"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "1 −xy ,1 −xy,"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "numbers, or of the Rogers dilogarithm L(modπ"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "tions) of P"
+  },
+  {
+   "page": 32,
+   "mark": "2",
+   "context": "itymeasuresforπ"
+  },
+  {
+   "page": 32,
+   "mark": "i",
+   "context": "i(mod5)[x"
+  },
+  {
+   "page": 32,
+   "mark": "1",
+   "context": "i(mod5)[xi]with"
+  },
+  {
+   "page": 32,
+   "mark": "i",
+   "context": "i(mod5)[xi]with1 −x"
+  },
+  {
+   "page": 32,
+   "mark": "i",
+   "context": "i(mod5)[xi]with1 −xi= x"
+  },
+  {
+   "page": 32,
+   "mark": "x",
+   "context": "i(mod5)[xi]with1 −xi= xi−1"
+  },
+  {
+   "page": 32,
+   "mark": "i",
+   "context": "i(mod5)[xi]with1 −xi= xi−1x"
+  },
+  {
+   "page": 33,
+   "mark": "i",
+   "context": "i(t −x"
+  },
+  {
+   "page": 33,
+   "mark": "j",
+   "context": "j(t −a"
+  },
+  {
+   "page": 33,
+   "mark": "t",
+   "context": "j(t −aj)=f(t) −1,whereC̸=0isthecoeﬃcientof"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "j(t −aj)=f(t) −1,whereC̸=0isthecoeﬃcientoft"
+  },
+  {
+   "page": 33,
+   "mark": "f",
+   "context": "j(t −aj)=f(t) −1,whereC̸=0isthecoeﬃcientoftnin"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "\u0005(−1)"
+  },
+  {
+   "page": 33,
+   "mark": "n",
+   "context": "\u0005(−1)"
+  },
+  {
+   "page": 33,
+   "mark": "i",
+   "context": "iD(x"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "2)"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "2)2"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "i−c"
+  },
+  {
+   "page": 34,
+   "mark": "c",
+   "context": "i−ci)with"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "i−ci)withc"
+  },
+  {
+   "page": 34,
+   "mark": "c",
+   "context": "i−ci)withci,"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "i∈Cdistinctand(sincewemayreplace[ℓ"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "i−c"
+  },
+  {
+   "page": 34,
+   "mark": "i",
+   "context": "i)−1 log |t −c"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "valuesofD(α),oramongvaluesofL(α)moduloπ"
+  },
+  {
+   "page": 34,
+   "mark": "2",
+   "context": "logarithm in all real embeddings is a rational multiple of π"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "wherethevalueoftheRogersdilogarithmdividedbyπ"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "equation1 −α=α"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "5)/2)=±π"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "havethedenominator5whendividedbyπ"
+  },
+  {
+   "page": 35,
+   "mark": "4",
+   "context": "1 −Q1=Q"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "1Q"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "1 −ε"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "1 −ε"
+  },
+  {
+   "page": 35,
+   "mark": "2",
+   "context": "π"
+  },
+  {
+   "page": 36,
+   "mark": "p",
+   "context": "x ∧(1 −x)=0uptotorsion,i.e.x=αt"
+  },
+  {
+   "page": 36,
+   "mark": "q",
+   "context": "x ∧(1 −x)=0uptotorsion,i.e.x=αtp,1 −x=βt"
+  },
+  {
+   "page": 36,
+   "mark": "q",
+   "context": "n §3 of Chapter I), so we must in fact have x = ±t, 1−x = ±t"
+  },
+  {
+   "page": 36,
+   "mark": "p",
+   "context": "thatx = t"
+  },
+  {
+   "page": 36,
+   "mark": "q",
+   "context": "thatx = tp,1 −x = t"
+  },
+  {
+   "page": 36,
+   "mark": "p",
+   "context": "thattheonlyequationsoftheformt"
+  },
+  {
+   "page": 36,
+   "mark": "q",
+   "context": "thattheonlyequationsoftheformtp+ t"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "onlyrealrootsaret + t=1andt + t"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "[x"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "V (−ζ,1+ζ) = [−ζ] + [1+ζ] + [−ζ"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "V (−ζ,1+ζ) = [−ζ] + [1+ζ] + [−ζ2] + [−ζ"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "V (−ζ,1+ζ) = [−ζ] + [1+ζ] + [−ζ2] + [−ζ2/(−ζ"
+  },
+  {
+   "page": 36,
+   "mark": "3",
+   "context": "V (−ζ,1+ζ) = [−ζ] + [1+ζ] + [−ζ2] + [−ζ2/(−ζ2−1)] + [ζ"
+  },
+  {
+   "page": 36,
+   "mark": "2",
+   "context": "V (−ζ,1+ζ) = [−ζ] + [1+ζ] + [−ζ2] + [−ζ2/(−ζ2−1)] + [ζ3+ζ"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "oriented3-simplices.Byanorientedn-simplexinP"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "tupleofpointsinP"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "moreprecisely,suchasimplexhastheform[x0, . . . , xn]withxj∈P"
+  },
+  {
+   "page": 37,
+   "mark": "i",
+   "context": "i=0(−1)"
+  },
+  {
+   "page": 37,
+   "mark": "0",
+   "context": "i=0(−1)i[x"
+  },
+  {
+   "page": 37,
+   "mark": "i",
+   "context": "i=0(−1)i[x0, . . . ,\u0013x"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "i=0(−1)i[x0, . . . ,\u0013xi, . . . , x"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "associatestoa3-simplexinP"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "(here“∞”couldbereplacedbyanyotherﬁxedbase-pointx0∈P"
+  },
+  {
+   "page": 37,
+   "mark": "1",
+   "context": "together with a map φ from the vertices of Mto P"
+  },
+  {
+   "page": 38,
+   "mark": "1",
+   "context": "mapφfromits0-skeletontoP"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "imagesoftheverticesofσunderφwillbeanintegralmultipleofπ"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "validforanycomplexnumbersxj,yk.Specializingtoxj= e"
+  },
+  {
+   "page": 38,
+   "mark": "j",
+   "context": "validforanycomplexnumbersxj,yk.Specializingtoxj= e2iX"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "validforanycomplexnumbersxj,yk.Specializingtoxj= e2iXj,yk= e"
+  },
+  {
+   "page": 38,
+   "mark": "k",
+   "context": "idforanycomplexnumbersxj,yk.Specializingtoxj= e2iXj,yk= e2iY"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "π"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "π"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "sin"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "sin"
+  },
+  {
+   "page": 38,
+   "mark": "2",
+   "context": "π"
+  },
+  {
+   "page": 39,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 39,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 39,
+   "mark": "n",
+   "context": "here (q)nas in §1 denotes the product (1−q)(1−q2) · · · (1−q"
+  },
+  {
+   "page": 39,
+   "mark": "n",
+   "context": "1−q"
+  },
+  {
+   "page": 39,
+   "mark": "n",
+   "context": "1−q"
+  },
+  {
+   "page": 39,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 39,
+   "mark": "n",
+   "context": "(−1)nq(5"
+  },
+  {
+   "page": 39,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 39,
+   "mark": "n",
+   "context": "(−1)nq(5"
+  },
+  {
+   "page": 39,
+   "mark": "n",
+   "context": "(−1)nq(5n2+3"
+  },
+  {
+   "page": 39,
+   "mark": "5",
+   "context": "q−1/60G(q)=θ"
+  },
+  {
+   "page": 39,
+   "mark": "1",
+   "context": "q−1/60G(q)=θ5,"
+  },
+  {
+   "page": 39,
+   "mark": "11",
+   "context": "q"
+  },
+  {
+   "page": 39,
+   "mark": "5",
+   "context": "q11/60H(q)=θ"
+  },
+  {
+   "page": 40,
+   "mark": "n",
+   "context": "(−1)[n/10]q"
+  },
+  {
+   "page": 40,
+   "mark": "1",
+   "context": "η(z) = q"
+  },
+  {
+   "page": 40,
+   "mark": "n",
+   "context": "(1 −q"
+  },
+  {
+   "page": 40,
+   "mark": "11",
+   "context": "q"
+  },
+  {
+   "page": 40,
+   "mark": "11",
+   "context": "ζ"
+  },
+  {
+   "page": 40,
+   "mark": "n",
+   "context": "n=0A"
+  },
+  {
+   "page": 40,
+   "mark": "0",
+   "context": "n=0An(q)whereA"
+  },
+  {
+   "page": 40,
+   "mark": "a",
+   "context": "n=0An(q)whereA0(q)is"
+  },
+  {
+   "page": 40,
+   "mark": "n",
+   "context": "rational function and An(q) = R(q, q"
+  },
+  {
+   "page": 40,
+   "mark": "0",
+   "context": "y→0R(x, y)=0.(ForGandHonehasA"
+  },
+  {
+   "page": 40,
+   "mark": "r",
+   "context": "(deﬁnedasabovebutwithnrunningover(Z≥0)"
+  },
+  {
+   "page": 41,
+   "mark": "a",
+   "context": "Q"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "whereFisthenumberﬁeldQ(Q1, . . . , Qr).TheninΛ"
+  },
+  {
+   "page": 41,
+   "mark": "a",
+   "context": "Q"
+  },
+  {
+   "page": 41,
+   "mark": "a",
+   "context": "Q"
+  },
+  {
+   "page": 41,
+   "mark": "u",
+   "context": "in(25).Werequirethemtobeconsistent,i.e.,wemusthaveQi=e"
+  },
+  {
+   "page": 41,
+   "mark": "i",
+   "context": "in(25).Werequirethemtobeconsistent,i.e.,wemusthaveQi=eu"
+  },
+  {
+   "page": 41,
+   "mark": "v",
+   "context": "1 −Qi=e"
+  },
+  {
+   "page": 41,
+   "mark": "i",
+   "context": "1 −Qi=ev"
+  },
+  {
+   "page": 41,
+   "mark": "r",
+   "context": "1 −Qi=eviforsomevectorsu,v∈C"
+  },
+  {
+   "page": 41,
+   "mark": "3",
+   "context": ",weset(Q1, Q2)=(α, αβ"
+  },
+  {
+   "page": 41,
+   "mark": "3",
+   "context": "the system 1−α = α"
+  },
+  {
+   "page": 41,
+   "mark": "3",
+   "context": "the system 1−α = α3β, 1−αβ"
+  },
+  {
+   "page": 41,
+   "mark": "2",
+   "context": "the system 1−α = α3β, 1−αβ3= αβ"
+  },
+  {
+   "page": 41,
+   "mark": "3",
+   "context": "stem 1−α = α3β, 1−αβ3= αβ2; then F= Q(α, β), and ξQ= [α]+[αβ"
+  },
+  {
+   "page": 41,
+   "mark": "r",
+   "context": "(ii)ThereexistB ∈Q"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "η(z)"
+  },
+  {
+   "page": 42,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "qn"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "sevencasesisaunarythetaseries(i.e.,afunctionε(n)qλn"
+  },
+  {
+   "page": 42,
+   "mark": "2",
+   "context": "section B that these are the only triples (A, B, C) ∈Q+×Q"
+  },
+  {
+   "page": 42,
+   "mark": "§",
+   "context": "1,sobythediscussioninexample(c)of"
+  },
+  {
+   "page": 43,
+   "mark": "5",
+   "context": "(z) =θ"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "(z) =θ5,"
+  },
+  {
+   "page": 43,
+   "mark": "z",
+   "context": "(z) =θ5,1(2"
+  },
+  {
+   "page": 43,
+   "mark": "5",
+   "context": "(z) =θ"
+  },
+  {
+   "page": 43,
+   "mark": "z",
+   "context": "(z) =θ5,2(2"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "f( 4"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "f( 4"
+  },
+  {
+   "page": 43,
+   "mark": "49",
+   "context": "1/2 ),"
+  },
+  {
+   "page": 43,
+   "mark": "a",
+   "context": "jQ"
+  },
+  {
+   "page": 43,
+   "mark": "r",
+   "context": "hasauniquesolutionin(0, 1)"
+  },
+  {
+   "page": 43,
+   "mark": "0",
+   "context": "thissolutionbyQ"
+  },
+  {
+   "page": 43,
+   "mark": "0",
+   "context": "thissolutionbyQ0=(Q"
+  },
+  {
+   "page": 43,
+   "mark": "0",
+   "context": "1, . . . , Q"
+  },
+  {
+   "page": 43,
+   "mark": "0",
+   "context": "Q"
+  },
+  {
+   "page": 43,
+   "mark": "0",
+   "context": "andweobtainaspeciﬁcelementξA=ξQ"
+  },
+  {
+   "page": 43,
+   "mark": "0",
+   "context": "thecorrespondingRogersdilogarithmvalueL(ξA)=L(Q"
+  },
+  {
+   "page": 43,
+   "mark": "a",
+   "context": "i)mustbe"
+  },
+  {
+   "page": 43,
+   "mark": "0",
+   "context": "of π2. This criterion is numerically eﬀective (one can ﬁnd Q"
+  },
+  {
+   "page": 43,
+   "mark": "0",
+   "context": "4).HereQ"
+  },
+  {
+   "page": 43,
+   "mark": "4",
+   "context": "φ−1ψ,φ"
+  },
+  {
+   "page": 43,
+   "mark": "3",
+   "context": "φ−1ψ,φ4−φ"
+  },
+  {
+   "page": 43,
+   "mark": "0",
+   "context": "5L(1)forbothξQ"
+  },
+  {
+   "page": 43,
+   "mark": "0",
+   "context": "itsrealconjugateandD(ξ)=0forbothnon-realconjugatesofξQ"
+  },
+  {
+   "page": 43,
+   "mark": "8",
+   "context": "fy algebraically as in section 2B. But the equations 1−Q1= Q"
+  },
+  {
+   "page": 43,
+   "mark": "5",
+   "context": "1Q"
+  },
+  {
+   "page": 43,
+   "mark": "5",
+   "context": "1 −Q2=Q"
+  },
+  {
+   "page": 43,
+   "mark": "4",
+   "context": "1Q"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "2haveanotherGaloisorbitoffoursolutionswhere(Q"
+  },
+  {
+   "page": 44,
+   "mark": "3",
+   "context": ","
+  },
+  {
+   "page": 45,
+   "mark": "k",
+   "context": "5 sin(πk/5)andγ"
+  },
+  {
+   "page": 45,
+   "mark": "k",
+   "context": "Table2.Rank2examplesforNahm’sconjecture.Hereα"
+  },
+  {
+   "page": 45,
+   "mark": "k",
+   "context": "Table2.Rank2examplesforNahm’sconjecture.Hereαk= sin(πk/8),β"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "1 −L(Q"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "(Q"
+  },
+  {
+   "page": 46,
+   "mark": "b",
+   "context": "i)"
+  },
+  {
+   "page": 46,
+   "mark": "i",
+   "context": "i)b"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "1 −Q"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "whereQ"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "whereQ0= (Q"
+  },
+  {
+   "page": 46,
+   "mark": "r",
+   "context": "r) ∈(0, 1)"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "r) ∈(0, 1)rasabove,B= (b"
+  },
+  {
+   "page": 46,
+   "mark": "r",
+   "context": "r) ∈(0, 1)rasabove,B= (b1, . . . , b"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "1, . . . , Q"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "Q"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "Q"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "1 −Q"
+  },
+  {
+   "page": 46,
+   "mark": "0",
+   "context": "1 −Q"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "h"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "2,"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "2, 1,"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "C=αν"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "24+C"
+  },
+  {
+   "page": 46,
+   "mark": "h",
+   "context": "1R"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "1Rh, 1−Q"
+  },
+  {
+   "page": 46,
+   "mark": "3",
+   "context": "1Rh, 1−Q2= Q"
+  },
+  {
+   "page": 46,
+   "mark": "3",
+   "context": "1Rh, 1−Q2= Q3R, 1−Q"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "1Rh, 1−Q2= Q3R, 1−Q3= Q"
+  },
+  {
+   "page": 46,
+   "mark": "h",
+   "context": "1Rh, 1−Q2= Q3R, 1−Q3= Q2R−1 with R = (Q"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "form 1−Q1= QA"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "1Q"
+  },
+  {
+   "page": 46,
+   "mark": "3",
+   "context": "1Q2/Q"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "R = 1 and hence (since h is integral!) that 1−Q1= QA"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "hl + m −n −ν)"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "hl + m −n −ν)2+mn+A"
+  },
+  {
+   "page": 46,
+   "mark": "l",
+   "context": "2"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "2l"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "2l2+B"
+  },
+  {
+   "page": 46,
+   "mark": "l",
+   "context": "2l2+B1"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "2l2+B1l + C"
+  },
+  {
+   "page": 48,
+   "mark": "1",
+   "context": "qA"
+  },
+  {
+   "page": 48,
+   "mark": "l",
+   "context": "qA1"
+  },
+  {
+   "page": 48,
+   "mark": "1",
+   "context": "qA1l2/2+B"
+  },
+  {
+   "page": 48,
+   "mark": "l",
+   "context": "qA1l2/2+B1"
+  },
+  {
+   "page": 48,
+   "mark": "1",
+   "context": "qA1l2/2+B1l+C"
+  },
+  {
+   "page": 48,
+   "mark": "n",
+   "context": "q"
+  },
+  {
+   "page": 48,
+   "mark": "1",
+   "context": "A−1,A−1B,"
+  },
+  {
+   "page": 48,
+   "mark": "t",
+   "context": "2B"
+  },
+  {
+   "page": 48,
+   "mark": "r",
+   "context": "24−C,"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "B"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "−(1 −Q)((1 −Q"
+  },
+  {
+   "page": 49,
+   "mark": "3",
+   "context": "−(1 −Q)((1 −Q2)A"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "−(1 −Q)((1 −Q2)A3 −3QA"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "−(1 −Q)((1 −Q2)A3 −3QA2 + 3Q(1 + Q)A −2Q"
+  },
+  {
+   "page": 49,
+   "mark": "j",
+   "context": "ﬁcientscj.Thepolynomialcj=cj(A, B)belongsto∆−3"
+  },
+  {
+   "page": 49,
+   "mark": "j",
+   "context": "leadingtermisαjB"
+  },
+  {
+   "page": 49,
+   "mark": "j",
+   "context": "leadingtermisαjBj+1/(j+1)whereαjx"
+  },
+  {
+   "page": 49,
+   "mark": "3",
+   "context": "B"
+  },
+  {
+   "page": 49,
+   "mark": "4",
+   "context": "B"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "−4A(A + 1)(A −1)"
+  },
+  {
+   "page": 49,
+   "mark": "3",
+   "context": "−4A(A + 1)(A −1)2Q"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "+ 3A(A −1)(A −2)(2A + 1)Q"
+  },
+  {
+   "page": 49,
+   "mark": "2",
+   "context": "+ 3A(A −1)(A −2)(2A + 1)Q2+2A"
+  },
+  {
+   "page": 49,
+   "mark": "3",
+   "context": "+ 3A(A −1)(A −2)(2A + 1)Q2+2A2(5A −4)Q −A"
+  },
+  {
+   "page": 50,
+   "mark": "n",
+   "context": "hn(A, B) ε"
+  },
+  {
+   "page": 50,
+   "mark": "n",
+   "context": "hn(A, B) ε"
+  },
+  {
+   "page": 50,
+   "mark": "s",
+   "context": "(A/2 −B)"
+  },
+  {
+   "page": 50,
+   "mark": "m",
+   "context": "andthisequationgivesthecoeﬃcienthn,mofB"
+  },
+  {
+   "page": 50,
+   "mark": "1",
+   "context": "A,B(q)=qB2/2AF"
+  },
+  {
+   "page": 50,
+   "mark": "j",
+   "context": "cj(A, B)−(−1)"
+  },
+  {
+   "page": 50,
+   "mark": "3",
+   "context": "24,γ2=γ"
+  },
+  {
+   "page": 50,
+   "mark": "4",
+   "context": "24,γ2=γ3=γ"
+  },
+  {
+   "page": 50,
+   "mark": "j",
+   "context": "24,γ2=γ3=γ4=0.Thissuggeststheconjecturethatγ"
+  },
+  {
+   "page": 50,
+   "mark": "n",
+   "context": "un/un−1= qAn+B−A/2/(1−q"
+  },
+  {
+   "page": 50,
+   "mark": "n",
+   "context": "andbecomesequalto1whenq"
+  },
+  {
+   "page": 51,
+   "mark": "n",
+   "context": "formq"
+  },
+  {
+   "page": 51,
+   "mark": "n",
+   "context": "ﬁrsthavetoknowthebehaviorof(q)nasq→1andn →∞withq"
+  },
+  {
+   "page": 51,
+   "mark": "n",
+   "context": "Lemma.ForﬁxedQ ∈(0, 1)andq= e−ε→1withq"
+  },
+  {
+   "page": 51,
+   "mark": "r",
+   "context": "Br(ν) Li2−r(Q)ε"
+  },
+  {
+   "page": 51,
+   "mark": "d",
+   "context": "Q"
+  },
+  {
+   "page": 51,
+   "mark": "j",
+   "context": "m"
+  },
+  {
+   "page": 51,
+   "mark": "m",
+   "context": "mjQ"
+  },
+  {
+   "page": 51,
+   "mark": "n",
+   "context": "1 −q"
+  },
+  {
+   "page": 51,
+   "mark": "s",
+   "context": "1 −Qq"
+  },
+  {
+   "page": 51,
+   "mark": "k",
+   "context": "Q"
+  },
+  {
+   "page": 51,
+   "mark": "k",
+   "context": "Q"
+  },
+  {
+   "page": 51,
+   "mark": "q",
+   "context": "k"
+  },
+  {
+   "page": 51,
+   "mark": "k",
+   "context": "kq"
+  },
+  {
+   "page": 51,
+   "mark": "k",
+   "context": "Q"
+  },
+  {
+   "page": 51,
+   "mark": "r",
+   "context": "(kε)"
+  },
+  {
+   "page": 51,
+   "mark": "r",
+   "context": "Li2−r(Q) ε"
+  },
+  {
+   "page": 51,
+   "mark": "n",
+   "context": "Withthesameconventions(q= e−ε,q"
+  },
+  {
+   "page": 52,
+   "mark": "e",
+   "context": "r∈Z\u0012ϕ(r)"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "r∈Z\u0012ϕ(r)e"
+  },
+  {
+   "page": 52,
+   "mark": "0",
+   "context": "r∈Z\u0012ϕ(r)e2πirν"
+  },
+  {
+   "page": 52,
+   "mark": "r",
+   "context": "Br(u) Li2−r(Q)ε"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "e−u"
+  },
+  {
+   "page": 52,
+   "mark": "t",
+   "context": "e−u2/2"
+  },
+  {
+   "page": 52,
+   "mark": "n",
+   "context": "(2n −1)!! c2n t"
+  },
+  {
+   "page": 52,
+   "mark": "n",
+   "context": "cn u"
+  },
+  {
+   "page": 52,
+   "mark": "n",
+   "context": "where (2n−1)!! = (2n)!/2"
+  },
+  {
+   "page": 52,
+   "mark": "n",
+   "context": "coeﬃcient of u"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "coeﬃcient of unisO(ε"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "(λ"
+  },
+  {
+   "page": 52,
+   "mark": "c",
+   "context": "indeedinvolveonlypositivepowersofε.(Chooseλ = ε"
+  },
+  {
+   "page": 52,
+   "mark": "1",
+   "context": "indeedinvolveonlypositivepowersofε.(Chooseλ = εcwith"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "2An"
+  },
+  {
+   "page": 52,
+   "mark": "n",
+   "context": "x"
+  },
+  {
+   "page": 52,
+   "mark": "0",
+   "context": "FA,B(q)=Cx"
+  },
+  {
+   "page": 52,
+   "mark": "0",
+   "context": "where Cx"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "−(u −Bz + n)"
+  },
+  {
+   "page": 52,
+   "mark": "2",
+   "context": "2An"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "whereq= e(z) := e"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "−(u −Bz)"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "−t"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "2Aε+Li"
+  },
+  {
+   "page": 53,
+   "mark": "e",
+   "context": "2Aε+Li2(qB"
+  },
+  {
+   "page": 53,
+   "mark": "q",
+   "context": "2Aε+Li2(qBeit;"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "n"
+  },
+  {
+   "page": 53,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 53,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 53,
+   "mark": "n",
+   "context": "2)"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "n"
+  },
+  {
+   "page": 53,
+   "mark": "n",
+   "context": "x"
+  },
+  {
+   "page": 53,
+   "mark": "0",
+   "context": "FA,B(q) = Cx"
+  },
+  {
+   "page": 53,
+   "mark": "z",
+   "context": "2)"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "2)"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "t"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "2(A −1)ε−Li"
+  },
+  {
+   "page": 53,
+   "mark": "r",
+   "context": "In particular, the modularity of fA,B,C(z) for any B∈Q"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "thatL(ξA)bearationalmultipleofπ"
+  },
+  {
+   "page": 54,
+   "mark": "u",
+   "context": "2"
+  },
+  {
+   "page": 54,
+   "mark": "t",
+   "context": "2u \u0012Au"
+  },
+  {
+   "page": 54,
+   "mark": "r",
+   "context": "R"
+  },
+  {
+   "page": 54,
+   "mark": "t",
+   "context": "quadraticformu\u0012Au"
+  },
+  {
+   "page": 54,
+   "mark": "n",
+   "context": "expansion as z→0 of the form a0q"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "expansion as z→0 of the form a0qn"
+  },
+  {
+   "page": 54,
+   "mark": "n",
+   "context": "expansion as z→0 of the form a0qn0+a1q"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "expansion as z→0 of the form a0qn0+a1qn"
+  },
+  {
+   "page": 54,
+   "mark": "2",
+   "context": "ε−ke−4π"
+  },
+  {
+   "page": 54,
+   "mark": "n",
+   "context": "ε−ke−4π2"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "ε−ke−4π2n"
+  },
+  {
+   "page": 54,
+   "mark": "k",
+   "context": "=f(iε/2π)=(2πi/ε)"
+  },
+  {
+   "page": 54,
+   "mark": "2",
+   "context": "=f(iε/2π)=(2πi/ε)ka0 e−4π"
+  },
+  {
+   "page": 54,
+   "mark": "n",
+   "context": "=f(iε/2π)=(2πi/ε)ka0 e−4π2"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "=f(iε/2π)=(2πi/ε)ka0 e−4π2n"
+  },
+  {
+   "page": 54,
+   "mark": "2",
+   "context": "=−4π"
+  },
+  {
+   "page": 54,
+   "mark": "k",
+   "context": "tendsto0,wherec=log((2πi)"
+  },
+  {
+   "page": 54,
+   "mark": "2",
+   "context": "(ii)thenumberc−1(A, B)mustbeπ"
+  },
+  {
+   "page": 54,
+   "mark": "6",
+   "context": "We have c2(A, 0) = P(A, Q)/(A+Q−AQ)"
+  },
+  {
+   "page": 54,
+   "mark": "a",
+   "context": "log Q),Q)ontheinterval(0,1),weﬁndnumericallythatithas"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "5 −1)/2,andnootherzeros.SinceP(Q1,"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "2)=P(Q"
+  },
+  {
+   "page": 55,
+   "mark": "3",
+   "context": "2)=P(Q2, 1)=P(Q"
+  },
+  {
+   "page": 55,
+   "mark": "39",
+   "context": "d c3we ﬁnd that this resultant has the form R(A, Q)/(A+Q−AQ)"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "c−1(A0, B0)/π"
+  },
+  {
+   "page": 56,
+   "mark": "j",
+   "context": "cj,ζ(A, B) ε"
+  },
+  {
+   "page": 56,
+   "mark": "j",
+   "context": "ofε"
+  },
+  {
+   "page": 56,
+   "mark": "2",
+   "context": "e can look instead at three sucessive values of nφ(α/n)−c−1n"
+  },
+  {
+   "page": 56,
+   "mark": "r",
+   "context": "cansearchthroughalargecollectionofcandidatevectorsB∈Q"
+  },
+  {
+   "page": 57,
+   "mark": "k",
+   "context": "(log |z|2)"
+  },
+  {
+   "page": 57,
+   "mark": "2",
+   "context": "6log"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "LikeDm,Lmisasingle-valuedreal-analyticfunctiononP"
+  },
+  {
+   "page": 57,
+   "mark": "r",
+   "context": "the group B(F) has rank r2and the map LF: B(F)/(torsion) →R"
+  },
+  {
+   "page": 57,
+   "mark": "2",
+   "context": "the group B(F) has rank r2and the map LF: B(F)/(torsion) →Rr"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "Lm,F:Bm(F)/(torsion)→R(r"
+  },
+  {
+   "page": 57,
+   "mark": "r",
+   "context": "Lm,F:Bm(F)/(torsion)→R(r1+)"
+  },
+  {
+   "page": 57,
+   "mark": "2",
+   "context": "Lm,F:Bm(F)/(torsion)→R(r1+)r"
+  },
+  {
+   "page": 57,
+   "mark": "m",
+   "context": "volume.(NotethatLm(¯x) = (−1)"
+  },
+  {
+   "page": 58,
+   "mark": "1",
+   "context": "d that there is a natural “regulator” map Rm,F:K2m−1(F) →R(r"
+  },
+  {
+   "page": 58,
+   "mark": "r",
+   "context": "hat there is a natural “regulator” map Rm,F:K2m−1(F) →R(r1+)"
+  },
+  {
+   "page": 58,
+   "mark": "2",
+   "context": "at there is a natural “regulator” map Rm,F:K2m−1(F) →R(r1+)r"
+  },
+  {
+   "page": 58,
+   "mark": "2",
+   "context": "∂3:Z[F]→F×⊗Λ"
+  },
+  {
+   "page": 58,
+   "mark": "3",
+   "context": "5L"
+  },
+  {
+   "page": 58,
+   "mark": "r",
+   "context": "5L3(1). For"
+  },
+  {
+   "page": 58,
+   "mark": "2",
+   "context": "5L3(1). For r"
+  },
+  {
+   "page": 58,
+   "mark": "3",
+   "context": "5L3(1). For r2> 0, however, the correct A"
+  },
+  {
+   "page": 59,
+   "mark": "r",
+   "context": "L3,F: A3(F) →R"
+  },
+  {
+   "page": 59,
+   "mark": "1",
+   "context": "L3,F: A3(F) →Rr"
+  },
+  {
+   "page": 59,
+   "mark": "2",
+   "context": "L3,F: A3(F) →Rr1+r"
+  },
+  {
+   "page": 59,
+   "mark": "r",
+   "context": "acertainlattice(offullrank)L3⊂R"
+  },
+  {
+   "page": 59,
+   "mark": "1",
+   "context": "acertainlattice(offullrank)L3⊂Rr"
+  },
+  {
+   "page": 59,
+   "mark": "2",
+   "context": "acertainlattice(offullrank)L3⊂Rr1+r"
+  },
+  {
+   "page": 59,
+   "mark": "r",
+   "context": "veriﬁednumericallybecauseL3⊂R"
+  },
+  {
+   "page": 59,
+   "mark": "1",
+   "context": "veriﬁednumericallybecauseL3⊂Rr"
+  },
+  {
+   "page": 59,
+   "mark": "2",
+   "context": "veriﬁednumericallybecauseL3⊂Rr1+r"
+  },
+  {
+   "page": 59,
+   "mark": "m",
+   "context": "subgroup ofKer(∂m), where ∂m: Z[F] →Sym"
+  },
+  {
+   "page": 59,
+   "mark": "2",
+   "context": "subgroup ofKer(∂m), where ∂m: Z[F] →Symm−2(F×)⊗Λ"
+  },
+  {
+   "page": 59,
+   "mark": "m",
+   "context": "(x)"
+  },
+  {
+   "page": 59,
+   "mark": "1",
+   "context": "bythexi.)WethendeﬁneLm,F: Am(F) →R(r"
+  },
+  {
+   "page": 59,
+   "mark": "r",
+   "context": "bythexi.)WethendeﬁneLm,F: Am(F) →R(r1+)"
+  },
+  {
+   "page": 59,
+   "mark": "2",
+   "context": "bythexi.)WethendeﬁneLm,F: Am(F) →R(r1+)r"
+  },
+  {
+   "page": 59,
+   "mark": "1",
+   "context": "imagevectorsdonotlieinsomelatticeLm⊂R(r"
+  },
+  {
+   "page": 59,
+   "mark": "r",
+   "context": "imagevectorsdonotlieinsomelatticeLm⊂R(r1+)"
+  },
+  {
+   "page": 59,
+   "mark": "2",
+   "context": "imagevectorsdonotlieinsomelatticeLm⊂R(r1+)r"
+  },
+  {
+   "page": 59,
+   "mark": "1",
+   "context": "ofthemapLm,FfromAm(F)tothediscretegroupLm≈Z(r"
+  },
+  {
+   "page": 59,
+   "mark": "r",
+   "context": "ofthemapLm,FfromAm(F)tothediscretegroupLm≈Z(r1+)"
+  },
+  {
+   "page": 59,
+   "mark": "2",
+   "context": "ofthemapLm,FfromAm(F)tothediscretegroupLm≈Z(r1+)r"
+  },
+  {
+   "page": 59,
+   "mark": "3",
+   "context": "real. Let θ be the real root of θ"
+  },
+  {
+   "page": 59,
+   "mark": "3",
+   "context": "The six numbers x0= 1, x1= θ, x2= −θ, x3= θ"
+  },
+  {
+   "page": 59,
+   "mark": "4",
+   "context": "The six numbers x0= 1, x1= θ, x2= −θ, x3= θ3, x4= −θ"
+  },
+  {
+   "page": 59,
+   "mark": "5",
+   "context": "e six numbers x0= 1, x1= θ, x2= −θ, x3= θ3, x4= −θ4and x5= θ"
+  },
+  {
+   "page": 59,
+   "mark": "2",
+   "context": "does θ"
+  },
+  {
+   "page": 59,
+   "mark": "2",
+   "context": "i)) ∈R"
+  },
+  {
+   "page": 60,
+   "mark": "i",
+   "context": "i)=ℓ"
+  },
+  {
+   "page": 60,
+   "mark": "0",
+   "context": "i)=ℓiD(θ′)with(ℓ"
+  },
+  {
+   "page": 60,
+   "mark": "5",
+   "context": "i)=ℓiD(θ′)with(ℓ0, . . . , ℓ"
+  },
+  {
+   "page": 60,
+   "mark": "1",
+   "context": "i)=ℓiD(θ′)with(ℓ0, . . . , ℓ5)=(0,"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "i)=ℓiD(θ′)with(ℓ0, . . . , ℓ5)=(0, 1, −1,"
+  },
+  {
+   "page": 60,
+   "mark": "1",
+   "context": "i)=ℓiD(θ′)with(ℓ0, . . . , ℓ5)=(0, 1, −1, 2,"
+  },
+  {
+   "page": 60,
+   "mark": "i",
+   "context": "iℓ"
+  },
+  {
+   "page": 60,
+   "mark": "m",
+   "context": "iℓi"
+  },
+  {
+   "page": 60,
+   "mark": "i",
+   "context": "iℓim"
+  },
+  {
+   "page": 60,
+   "mark": "n",
+   "context": "iℓimi"
+  },
+  {
+   "page": 60,
+   "mark": "i",
+   "context": "iℓimin"
+  },
+  {
+   "page": 60,
+   "mark": "5",
+   "context": "iℓimini=0.Theseelementsformanabeliangroupofrank"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "imageinR"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "mapL5,F:[x]\u000e→(L5(x), L5(x′))fromZ[F]toR"
+  },
+  {
+   "page": 60,
+   "mark": "9",
+   "context": "precision)2−7π−523"
+  },
+  {
+   "page": 60,
+   "mark": "2",
+   "context": "Q×⊗Λ"
+  },
+  {
+   "page": 60,
+   "mark": "n",
+   "context": "easmanymultiplicativerelationsaspossibleamongthenumbers1 ± α"
+  },
+  {
+   "page": 60,
+   "mark": "10",
+   "context": "equation α"
+  },
+  {
+   "page": 60,
+   "mark": "9",
+   "context": "equation α10+α"
+  },
+  {
+   "page": 60,
+   "mark": "7",
+   "context": "equation α10+α9−α"
+  },
+  {
+   "page": 60,
+   "mark": "6",
+   "context": "equation α10+α9−α7−α"
+  },
+  {
+   "page": 60,
+   "mark": "5",
+   "context": "equation α10+α9−α7−α6−α"
+  },
+  {
+   "page": 60,
+   "mark": "4",
+   "context": "equation α10+α9−α7−α6−α5−α"
+  },
+  {
+   "page": 60,
+   "mark": "3",
+   "context": "equation α10+α9−α7−α6−α5−α4−α"
+  },
+  {
+   "page": 61,
+   "mark": "n",
+   "context": "found among the numbers α and 1−α"
+  },
+  {
+   "page": 62,
+   "mark": "1",
+   "context": "[23]Kontsevich,M.:The1"
+  },
+  {
+   "page": 62,
+   "mark": "130",
+   "context": "2-logarithm.CompositioMath."
+  }
+ ]
+}

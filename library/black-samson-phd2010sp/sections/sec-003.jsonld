@@ -9,13 +9,18 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "COMBINATORIAL PROOF",
-  "pageStart": 49,
-  "pageEnd": 58,
+  "title": "3. The Temperley-Lieb Algebra",
+  "pageStart": 22,
+  "pageEnd": 24,
   "contains": [
-    "library/black-samson-phd2010sp/blocks/prose-sec-003"
+    "library/black-samson-phd2010sp/blocks/prose-sec-003",
+    "library/black-samson-phd2010sp/blocks/def-sec-003-01",
+    "library/black-samson-phd2010sp/blocks/lem-sec-003-02",
+    "library/black-samson-phd2010sp/blocks/thm-sec-003-03",
+    "library/black-samson-phd2010sp/blocks/thm-sec-003-04",
+    "library/black-samson-phd2010sp/blocks/figure-img-p024-1"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/black-samson-phd2010sp",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/black-samson-phd2010sp",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/black-samson-phd2010sp/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/black-samson-phd2010sp/manifest.jsonld",
   "provenance": "ingested"
 }

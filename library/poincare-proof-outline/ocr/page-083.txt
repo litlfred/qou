@@ -1,0 +1,79 @@
+by auto
+
+obtain v’ where v = of-complex v'
+using <u € unit-discy
+using inf-or-of-complez{of v|
+by auto
+
+hence *: v = of-compler v' —1 < Rev’ Re v' < 1 Re v' # 0 is-real v'
+using (uv € unit-disc) «v # Oy» <v € circline-set z-axis» of-complez-inj[of v'|
+unfolding circline-set-x-azxis
+by (auto simp add: cmod-eq-Re real-imag-0)
+
+show let u’ = to-complex (of-complex x); v' = to-complex v in Arg u' = Arg v' \ emod u! < cmod v’
+using poincare-between-z-axis-Ouvlof Re x Re v'| * **
+using <poincare-between 0; (of-complex x) v>
+using arg-complez-of-real-positive[of Re x] arg-complex-of-real-negative[of Re x]
+using arg-complexz-of-real-positive|of Re v'| arg-complex-of-real-negative|of Re v']
+by (auto simp add: cmod-eq-Re)
+
+next
+
+fix v
+
+assume v € unit-disc v # On v & of-complex &
+
+then obtain v’ where **: v = of-compler v' v' 4 0v' Aa
+using inf-or-of-complez{of v|
+by auto blast
+
+assume let u’ = to-complex (of-complex x); v' = to-complez v in Arg u' = Arg v' \ cmod u' < emod v'
+
+hence ***: Rex <0 A Rev'’< 0A Rev'< RextV0< RexA0 < Rev'A Rez < Rev’ is-real v'
+using arg-pi-iff {of x] arg-pi-ifflof v’]
+using arg-0-iff[of x] arg-0-iff lof v']
+using * **
+by (smt cmod-Re-le-iff to-complex-of-complex)+
+
+have —1 < Rev’ Rev’ < 1 Re v' 4 0 is-real v’
+using <v € unit-disc) ** <is-real v'>
+by (auto simp add: cmod-eq-Re complex-eq-if-Re-eq)
+
+thus poincare-between 0), (of-complex x) v
+using poincare-between-z-axis-Ouvlof Re x Re v'] * %* xx
+by simp
+
+qed
+next
+
+fix yu
+assume u € unit-disc u # On
+let ?M = moebius-rotation p
+assume *: ?P’ (mocbius-pt ?M u)
+show ?P’u
+proof (rule alll, rule impI, (erule conjE)+)
+fix v
+assume v € unit-discu 4 On v#U
+have moebius-pt ?M v # moebius-pt ?M u
+using <v # wu)
+by auto
+obtain u’ v’ where v = of-complez v' u = of-complez u' v' # 0.u' £0
+using inf-or-of-complez|of u] inf-or-of-complez|of v]
+using (vu € unit-discy <u € unit-disc) (v # On» (u # On?
+by auto
+thus ?P uv
+using *{rule-format, of moebius-pt ?M v]
+using <moebius-pt ?M v 4 moebius-pt ?M uy
+using unit-disc-fiz-moebius-preserve-poincare-between|of ?M On u v|
+using (vu € unit-discy <u € unit-disc) (v # On» (u # On?
+using arg-mult-eq[of cis p u’ v']
+by simp (auto simp add: arg-mult norm-mult)
+qed
+qed
+thus ?thesis
+using assms False
+by auto
+qed
+
+lemma poincare-between-y-azis-Ouv:
+fixes xy :: real

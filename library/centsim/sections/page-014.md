@@ -3,11 +3,13 @@ doc_id: centsim
 doc_title: "Centers and Simple Modules for Iwahori-Hecke Algebras"
 section_id: page-014
 section_title: "Page 14"
-section_number: null
 pages: 14-14
+pdf_page: 14
 source_pdf: centsim.pdf
 source_sha256: 41eaa1d757e69197
-toc_source: undetermined
+text_source: ocr
+granularity: page
+doc_brief: "Centers and Simple Modules for Iwahori-Hecke Algebras — 22 sections: Page 1; Page 2; Page 3"
 ---
 264 M. Geck and R. Rouquier
 

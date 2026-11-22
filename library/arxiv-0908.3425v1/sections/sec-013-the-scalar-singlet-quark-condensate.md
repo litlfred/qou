@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-0908.3425v1
-doc_title: "Chiral Perturbation Theory: Introduction and Recent Resul ts in the One-Nucleon Sector S. Scherer"
+doc_title: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector"
 section_id: sec-013-the-scalar-singlet-quark-condensate
 section_title: "The scalar singlet quark condensate"
 section_number: null
 pages: 19-21
 source_pdf: 0908.3425v1.pdf
 source_sha256: 5e88d45bbc1c1b9b
-doc_brief: "Chiral Perturbation Theory: Introduction and Recent Resul ts in the One-Nucleon Sector S. Scherer — We provide an introduction to the basic concepts of chiral pe rturbation theory and discuss some"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.949
-latex_coverage_ratio: 0.966
+latex_coverage_ratio: 0.963
+doc_brief: "Chiral Perturbation Theory: Introduction and Recent Results in the One-Nucleon Sector — We provide an introduction to the basic concepts of chiral perturbation theory and discuss some recent"
 ---
 []{#subsec_sqc label="subsec_sqc"} In the following, we will show that a non-vanishing scalar singlet quark condensate in the chiral limit is a sufficient (but not a necessary) condition for a spontaneous symmetry breaking in QCD. In this section all physical quantities such as the ground state, the quark operators etc. are considered in the chiral limit.
 

@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2103.00651v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "c5505d3e4891168ebe4b1af35e678043473268ac95640eb4df131a6c2f13b40d",
+  "file": "2103.00651v1.pdf"
+ },
+ "provenance": {
+  "title": "On Concentration Inequalities for Vector-Valued Lipschitz Functions",
+  "authors": "Dimitrios Katselis",
+  "arxiv": {
+   "id": "2103.00651",
+   "version": "1",
+   "primary_class": "math.PR",
+   "stamp_date": "28 Feb 2021"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

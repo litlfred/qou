@@ -1,0 +1,1 @@
+Let K be a C2 smooth curve in R3 whose curvature everywhere is ⩽some number k. Let C be a circle of curvature k, i.e., of radius r = 1 k . Let x,y ∈K and s,t ∈C be any points such that arc(x,y) = arc(s,t) ⩽πr. Then the chord distances satisfy |x −y| ⩾|s −t|.

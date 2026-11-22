@@ -9,13 +9,14 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Introduction",
-  "pageStart": 1,
-  "pageEnd": 9,
+  "title": "Topological preliminaries",
+  "pageStart": 9,
+  "pageEnd": 14,
   "contains": [
-    "library/bn/blocks/prose-sec-001"
+    "library/bn/blocks/prose-sec-001",
+    "library/bn/blocks/rem-sec-001-01"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/bn",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/bn",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/bn/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/bn/manifest.jsonld",
   "provenance": "ingested"
 }

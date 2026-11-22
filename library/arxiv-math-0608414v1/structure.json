@@ -6,7 +6,9 @@
   "sha256": "bd9a8d48a6d66945700c364ea8464629111206967f5779711b5ba055d4b62692",
   "bytes": 457142,
   "pages": 47,
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:54Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -20,21 +22,31 @@
   "doi": null,
   "title": "Exponential Asymptotics, Transseries, and Generalized Borel Summation for Analytic, Nonlinear, Rank-One Systems of Ordinary Differential Equations",
   "authors_raw": null,
-  "abstract": "For analytic nonlinear systems of ordinary diﬀerential equa tions, under some non-degeneracy and integrability conditions we prove that the formal exponential series solutions (trans-series) at an irregular singularity of rank one are Borel summable (in a sense simila r to that of Ecalle). The functions obtained by re-summation of the tr ans-series are precisely the solutions of the diﬀerential equation that decay in a speciﬁed sector in the complex plane. We ﬁnd the dependence of the correspondence between the solu - tions of the diﬀerential equation and trans-series as the ray in the complex plane changes (local Stokes phenomenon). We study, in addition, the general solution in L1 loc of the convo- lution equations corresponding, by inverse Laplace transf orm, to the given system of ODE’s, and its analytic properties. Simple analytic identities lead to “resurgence” relations and to an averaging formula having, in addition to the properties of t he medi- anization of Ecalle, the property of preserving exponentia l growth at inﬁnity.",
-  "docinfo": {
-   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20210609003333-04'00'",
-   "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  },
   "title_lines": [
    "Exponential asymptotics, trans-series and",
    "generalized Borel summation for analytic",
    "nonlinear rank one systems of ODE’s",
    "Ovidiu Costin ∗"
   ],
-  "title_prev": "Exponential asymptotics, trans-series and generalized Borel summation for analytic nonlinear rank one systems of ODE’s Ovidiu Costin ∗"
+  "abstract": "For analytic nonlinear systems of ordinary diﬀerential equations, under some non-degeneracy and integrability conditions we prove that the formal exponential series solutions (trans-series) at an irregular singularity of rank one are Borel summable (in a sense similar to that of Ecalle). The functions obtained by re-summation of the trans-series are precisely the solutions of the diﬀerential equation that decay in a speciﬁed sector in the complex plane. We ﬁnd the dependence of the correspondence between the solu- tions of the diﬀerential equation and trans-series as the ray in the complex plane changes (local Stokes phenomenon). We study, in addition, the general solution in L1 loc of the convo- lution equations corresponding, by inverse Laplace transform, to the given system of ODE’s, and its analytic properties. Simple analytic identities lead to “resurgence” relations and to an averaging formula having, in addition to the properties of the medi- anization of Ecalle, the property of preserving exponential growth at inﬁnity.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20210609003333-04'00'"
+  },
+  "title_raw": "Exponential asymptotics, trans-series and generalized Borel summation for analytic nonlinear rank one systems of ODE’s Ovidiu Costin ∗",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Exponential asymptotics, trans-series and generalized Borel summation for analytic nonlinear rank one systems of ODE’s",
+   "outline": "Introduction and main results",
+   "text": "Exponential asymptotics, trans-series and generalized Borel summation for analytic nonlinear rank one systems of ODE’s Ovidiu Costin ∗",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Exponential asymptotics, trans-series and generalized Borel summation for analytic nonlinear rank one systems of ODE’s"
  },
  "toc": [
   {
@@ -42,102 +54,502 @@
    "title": "Introduction and main results",
    "page": 44,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Proofs and further results",
    "page": 11,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "Outline of the proofs of the main results",
    "page": 11,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "The convolution equation away from Stokes rays",
    "page": 12,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "Behavior of Y0(p) near p=1.",
    "page": 18,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "The solutions of (1.25) on [0,1+]",
    "page": 23,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "The solutions of (1.25) on [0,)",
    "page": 28,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "Correspondence with formal solutions",
    "page": 30,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "Analytic structure and averaging",
    "page": 38,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Acknowledgments",
    "page": 44,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 2,
    "title": "Appendix",
    "page": 44,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "Example of non-typical behavior",
    "page": 44,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "AC(f*g) versus AC(f)*AC(g)",
    "page": 45,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   },
   {
    "level": 3,
    "title": "Useful formulas",
    "page": 46,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "The region W1. The dotted line is one of the paths that generate R1. Using notations similar to those of Ecalle, we symbolize the paths in R1 by",
+   "page": 6,
+   "confidence": 0.8,
+   "evidence": [
+    "referenced",
+    "in-sequence"
+   ],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 25,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 26,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 27,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 28,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 29,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 30,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 31,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 32,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 33,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 34,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 35,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 36,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 37,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 38,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 39,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 40,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 41,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 42,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 43,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 44,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 45,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 46,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 47,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 11,
+   "n_chars": 17256,
+   "n_words": 3275,
+   "label_start": null,
+   "label_end": null
+  },
   {
    "id": "sec-000-proofs-and-further-results",
    "number": null,
@@ -145,8 +557,10 @@
    "level": 2,
    "page_start": 11,
    "page_end": 11,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 26,
+   "n_words": 4,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-001-outline-of-the-proofs-of-the-main-results",
@@ -155,8 +569,10 @@
    "level": 3,
    "page_start": 11,
    "page_end": 12,
-   "n_chars": 1816,
-   "n_words": 315
+   "n_chars": 1850,
+   "n_words": 315,
+   "label_start": null,
+   "label_end": null
   },
   {
    "id": "sec-002-the-convolution-equation-away-from-stokes-rays",
@@ -164,76 +580,146 @@
    "title": "The convolution equation away from Stokes rays",
    "level": 3,
    "page_start": 12,
-   "page_end": 30,
-   "n_chars": 22864,
-   "n_words": 4882
+   "page_end": 18,
+   "n_chars": 7955,
+   "n_words": 1603,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-003-correspondence-with-formal-solutions",
+   "id": "sec-003-behavior-of-y0p-near-p1",
+   "number": null,
+   "title": "Behavior of Y0(p) near p=1.",
+   "level": 3,
+   "page_start": 18,
+   "page_end": 23,
+   "n_chars": 6228,
+   "n_words": 1314,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-the-solutions-of-125-on-01",
+   "number": null,
+   "title": "The solutions of (1.25) on [0,1+]",
+   "level": 3,
+   "page_start": 23,
+   "page_end": 28,
+   "n_chars": 4644,
+   "n_words": 1012,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-005-the-solutions-of-125-on-0",
+   "number": null,
+   "title": "The solutions of (1.25) on [0,)",
+   "level": 3,
+   "page_start": 28,
+   "page_end": 30,
+   "n_chars": 3800,
+   "n_words": 794,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-006-correspondence-with-formal-solutions",
    "number": null,
    "title": "Correspondence with formal solutions",
    "level": 3,
    "page_start": 30,
    "page_end": 38,
-   "n_chars": 11625,
-   "n_words": 2396
+   "n_chars": 11603,
+   "n_words": 2346,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-004-analytic-structure-and-averaging",
+   "id": "sec-007-analytic-structure-and-averaging",
    "number": null,
    "title": "Analytic structure and averaging",
    "level": 3,
    "page_start": 38,
    "page_end": 44,
-   "n_chars": 7316,
-   "n_words": 1523
+   "n_chars": 7349,
+   "n_words": 1524,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-005-acknowledgments",
+   "id": "sec-008-acknowledgments",
    "number": null,
    "title": "Acknowledgments",
    "level": 2,
    "page_start": 44,
    "page_end": 44,
-   "n_chars": 311,
-   "n_words": 49
+   "n_chars": 324,
+   "n_words": 47,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-006-appendix",
+   "id": "sec-009-appendix",
    "number": null,
    "title": "Appendix",
    "level": 2,
    "page_start": 44,
    "page_end": 44,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 8,
+   "n_words": 1,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-007-example-of-non-typical-behavior",
+   "id": "sec-010-example-of-non-typical-behavior",
    "number": null,
    "title": "Example of non-typical behavior",
    "level": 3,
    "page_start": 44,
-   "page_end": 46,
-   "n_chars": 2206,
-   "n_words": 461
+   "page_end": 45,
+   "n_chars": 842,
+   "n_words": 192,
+   "label_start": null,
+   "label_end": null
   },
   {
-   "id": "sec-008-useful-formulas",
+   "id": "sec-011-acfg-versus-acfacg",
+   "number": null,
+   "title": "AC(f*g) versus AC(f)*AC(g)",
+   "level": 3,
+   "page_start": 45,
+   "page_end": 46,
+   "n_chars": 1371,
+   "n_words": 273,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-012-useful-formulas",
    "number": null,
    "title": "Useful formulas",
    "level": 3,
    "page_start": 46,
    "page_end": 47,
-   "n_chars": 1703,
-   "n_words": 303
+   "n_chars": 1707,
+   "n_words": 293,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 14,
-  "sections": 9,
-  "chars_total": 47841
+  "toc_inferred_entries": 0,
+  "figure_entries": 1,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 14,
+  "chars_total": 64963,
+  "furniture_lines_stripped": 0
  }
 }

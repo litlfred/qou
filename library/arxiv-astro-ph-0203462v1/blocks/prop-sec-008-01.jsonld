@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-astro-ph-0203462v1/blocks/prop-sec-008-01",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "kind": "proposition",
+  "pageStart": 8,
+  "pageEnd": 10,
+  "text": "prop-sec-008-01.md",
+  "derivedFrom": "library/arxiv-astro-ph-0203462v1/sections/sec-008",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-astro-ph-0203462v1/manifest.jsonld",
+  "provenance": "ingested",
+  "meta": {
+    "source_kind": "empirical-claim",
+    "claim_domain": "science",
+    "evidence_kind": "empirical-measurement",
+    "evidence_location": "in-paper",
+    "evidence_locator": "In-paper empirical measurement in sections/sec-008-43-the-lighter-elements-38leqzleq48.md (p. 8-10)",
+    "claim_id": "arxiv-astro-ph-0203462v1#prop-sec-008-01"
+  }
+}

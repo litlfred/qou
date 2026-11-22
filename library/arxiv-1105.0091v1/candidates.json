@@ -1,0 +1,29 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1105.0091v1",
+ "document_class": "math",
+ "validated": true,
+ "aspects": [],
+ "source": {
+  "structure_sha256": "7d6f72e016b250274d5fc2d4a1fcddc44d9e8bfd481054d627434794adf25803",
+  "file": "1105.0091v1.pdf"
+ },
+ "provenance": {
+  "title": "A central limit theorem for the characters of the infinite symmetric group and of the infinite Hecke algebra",
+  "authors": null,
+  "arxiv": {
+   "id": "1105.0091",
+   "version": "1",
+   "primary_class": "math.RT",
+   "stamp_date": "30 Apr 2011"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

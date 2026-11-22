@@ -1,0 +1,1 @@
+We have that αˆHL is an associativity morphism of Rep(A(Vgk )) corresponding to a V-pre-associator of CFT-type for the triple (Z, F0, G0). It follows from Theorem 8.21 that the proof of the two steps described in Sect. 36 is complete, and with them the proof of part c) of Theorem 2.8 and 2.11.

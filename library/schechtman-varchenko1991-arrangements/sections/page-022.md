@@ -1,0 +1,61 @@
+---
+doc_id: schechtman-varchenko1991-arrangements
+doc_title: "Arrangements of hyperplanes and Lie algebra homology"
+section_id: page-022
+section_title: "Page 22"
+pages: 22-22
+pdf_page: 22
+source_pdf: schechtman-varchenko1991-arrangements.pdf
+source_sha256: 0100fd32438740f0
+text_source: ocr
+granularity: page
+doc_brief: "Arrangements of hyperplanes and Lie algebra homology — 56 sections: Page 1; Page 2; Page 3"
+---
+160 V.V. Schechtman and A.N. Varchenko
+
+complex of ¥(a). Thus, 2°(£ (a))=Q'(U(@)) as a graded vector space, with the
+differential d(a),
+
+(4.5.2) d(a)(x)=dx+1(@) ax.
+
+We'll denote by Y(a) the sheaf (over U(@)) of horizontal sections of Y(a).
+Thus, we have the de Rham isomorphism
+
+(4.5.3) H(Q(L(a))=H(U(@); Z(a)).
+The inclusion (4.1.3) induces the map of complexes
+(4.5.4) 1(a): (f"(@), d(a)) > Q(L (a).
+
+When a=0, we return to the situation of n° 4.1. Simple examples for dim V
+= 1 show that (4.5.4) is not always a quasiisomorphism.
+
+Let us consider the family 1(Aa) depending on AeC (by definition,
+(Aa)(H)=/a(H)). Here is the main result of this section.
+
+4.6 Theorem. There exists an open set W<C containing 0, which is a complement
+of the set of zeroes of some holomorphic function and such that 1(Aa) is a quasiiso-
+morphism for all 46 W.
+
+Proof. Let us choose a finite subcomplex X cU(@) such that this inclusion
+is a homotopy equivalence. Let us consider the cochain complex of X with
+coefficients in (Aa): C=C(X; S(Aa)|x). Let us choose over each cell of X
+branches of log¢, for all He@. This gives branches of ¢**
+
+:=[] exp(Aa(H) log 4,), hence a base in each finite dimensional space C’, enu-
+He€
+
+merated by p-cells of X. Differentials d(A): C? + C’*! are matrices with entries
+of the form +exp(Ab), beC.
+By the de Rham theorem, the integration map
+(4.6.1) J: M(LUAQIC
+is a quasiisomorphism. Denote by
+(4.6.2) 1(A): (£°(@), Ad(a)) + (C, d(A))
+the composition of 1(A.a) and (4.6.1).
+
+I(A) is a map of complexes of finite dimensional vector spaces. [(A) may
+be represented as a convergent in some neighbourhood of 0 power series
+
+(4.6.3) 1A)= > TA.
+i=0
+The same is true for d(A):
+
+(4.6.4) d(d)= 7 d,- Ai.

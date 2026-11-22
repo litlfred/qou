@@ -1,0 +1,3703 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-1908.07065v3",
+  "pages": [
+    {
+      "page": 8,
+      "rotation": 0,
+      "drawings": 506,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1: Poles of the Borel–Pad´e transforms, which would accumulate to branch cuts for the Borel transform of the quantum periods ΠA(E, ℏ) (a) and ΠB(E, ℏ) (b) at u = 0 and Λ = 1. The red points are the central charges of the BPS states which contribute to the branch points, and their electromagnetic charges are labelled nearby. See discussion in section 3.2.",
+        "Figure 2: Poles of the Borel–Pad´e transforms, which would accumulate to branch cuts for the Borel transforms of the quantum periods ΠA(u, ℏ) (a) and ΠB(u, ℏ) (b) at u = 4 and Λ = 1. The red points are the central charges of the BPS states which contribute to the branch points, and their electromagnetic charges are labelled nearby. See discussion in section 3.2."
+      ],
+      "labels": [
+        {
+          "text": "20",
+          "bbox": [
+            188.44,
+            94.13,
+            194.08,
+            99.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            5.08
+          ]
+        },
+        {
+          "text": "20",
+          "bbox": [
+            393.64,
+            94.13,
+            399.28,
+            99.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            5.08
+          ]
+        },
+        {
+          "text": "10",
+          "bbox": [
+            188.44,
+            137.92,
+            194.08,
+            143.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            5.08
+          ]
+        },
+        {
+          "text": "10",
+          "bbox": [
+            393.64,
+            137.92,
+            399.28,
+            143.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            5.08
+          ]
+        },
+        {
+          "text": "(0, -1)",
+          "bbox": [
+            199.05,
+            148.64,
+            210.55,
+            153.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            4.06
+          ]
+        },
+        {
+          "text": "(-1, -1)",
+          "bbox": [
+            170.13,
+            178.32,
+            184.16,
+            182.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            4.06
+          ]
+        },
+        {
+          "text": "(1, 1)",
+          "bbox": [
+            227.96,
+            178.32,
+            236.93,
+            182.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            4.06
+          ]
+        },
+        {
+          "text": "(-1, -1)",
+          "bbox": [
+            375.33,
+            178.32,
+            389.36,
+            182.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            4.06
+          ]
+        },
+        {
+          "text": "(1, 1)",
+          "bbox": [
+            433.16,
+            178.32,
+            442.13,
+            182.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            4.06
+          ]
+        },
+        {
+          "text": "-20",
+          "bbox": [
+            103.65,
+            186.53,
+            112.34,
+            192.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            5.08
+          ]
+        },
+        {
+          "text": "-10",
+          "bbox": [
+            147.44,
+            186.53,
+            156.13,
+            192.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            5.08
+          ]
+        },
+        {
+          "text": "10",
+          "bbox": [
+            236.54,
+            186.53,
+            242.19,
+            192.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            5.08
+          ]
+        },
+        {
+          "text": "20",
+          "bbox": [
+            280.33,
+            186.53,
+            285.98,
+            192.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            5.08
+          ]
+        },
+        {
+          "text": "-20",
+          "bbox": [
+            308.85,
+            186.53,
+            317.54,
+            192.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            5.08
+          ]
+        },
+        {
+          "text": "-10",
+          "bbox": [
+            352.64,
+            186.53,
+            361.33,
+            192.27
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            5.08
+          ]
+        },
+        {
+          "text": "10",
+          "bbox": [
+            441.74,
+            186.53,
+            447.39,
+            192.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            5.08
+          ]
+        },
+        {
+          "text": "20",
+          "bbox": [
+            485.53,
+            186.53,
+            491.18,
+            192.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            5.08
+          ]
+        },
+        {
+          "text": "(0, 1)",
+          "bbox": [
+            198.29,
+            207.99,
+            207.25,
+            212.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            4.06
+          ]
+        },
+        {
+          "text": "-10",
+          "bbox": [
+            185.39,
+            225.5,
+            194.08,
+            231.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            5.08
+          ]
+        },
+        {
+          "text": "-10",
+          "bbox": [
+            390.59,
+            225.5,
+            399.28,
+            231.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            5.08
+          ]
+        },
+        {
+          "text": "-20",
+          "bbox": [
+            185.39,
+            269.29,
+            194.08,
+            275.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            5.08
+          ]
+        },
+        {
+          "text": "-20",
+          "bbox": [
+            390.59,
+            269.29,
+            399.28,
+            275.03
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            5.08
+          ]
+        },
+        {
+          "text": "(a) ΠA",
+          "bbox": [
+            181.15,
+            281.07,
+            208.43,
+            290.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMR9"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "(b) ΠB",
+          "bbox": [
+            385.94,
+            281.07,
+            413.75,
+            290.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMR9"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "Figure 1: Poles of the Borel–Pad´e transforms, which would accumulate to branch cuts for the",
+          "bbox": [
+            69.17,
+            302.29,
+            526.15,
+            313.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Borel transform of the quantum periods ΠA(E, ℏ) (a) and ΠB(E, ℏ) (b) at u = 0 and Λ = 1. The",
+          "bbox": [
+            69.17,
+            313.45,
+            526.12,
+            327.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "red points are the central charges of the BPS states which contribute to the branch points, and",
+          "bbox": [
+            69.17,
+            329.39,
+            526.17,
+            340.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "their electromagnetic charges are labelled nearby. See discussion in section 3.2.",
+          "bbox": [
+            69.17,
+            342.94,
+            446.29,
+            353.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "40",
+          "bbox": [
+            187.67,
+            396.33,
+            193.32,
+            402.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            5.08
+          ]
+        },
+        {
+          "text": "40",
+          "bbox": [
+            392.87,
+            396.33,
+            398.52,
+            402.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            5.08
+          ]
+        },
+        {
+          "text": "20",
+          "bbox": [
+            187.67,
+            432.68,
+            193.32,
+            438.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            5.08
+          ]
+        },
+        {
+          "text": "20",
+          "bbox": [
+            392.87,
+            432.68,
+            398.52,
+            438.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            5.08
+          ]
+        },
+        {
+          "text": "(-1, 1)",
+          "bbox": [
+            339.14,
+            435.7,
+            350.64,
+            440.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            4.06
+          ]
+        },
+        {
+          "text": "(1, 1)",
+          "bbox": [
+            452.45,
+            435.7,
+            461.41,
+            440.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            4.06
+          ]
+        },
+        {
+          "text": "(-1, 1)",
+          "bbox": [
+            133.94,
+            443.82,
+            145.44,
+            448.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            4.06
+          ]
+        },
+        {
+          "text": "(0, 1)",
+          "bbox": [
+            197.52,
+            443.82,
+            206.49,
+            448.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            4.06
+          ]
+        },
+        {
+          "text": "(1, 1)",
+          "bbox": [
+            261.87,
+            443.82,
+            270.83,
+            448.41
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            4.06
+          ]
+        },
+        {
+          "text": "(-1, 0)",
+          "bbox": [
+            339.14,
+            465.64,
+            350.64,
+            470.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            4.06
+          ]
+        },
+        {
+          "text": "(1, 0)",
+          "bbox": [
+            452.45,
+            465.64,
+            461.41,
+            470.23
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            4.06
+          ]
+        },
+        {
+          "text": "-40",
+          "bbox": [
+            117.76,
+            473.86,
+            126.45,
+            479.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            5.08
+          ]
+        },
+        {
+          "text": "-20",
+          "bbox": [
+            154.12,
+            473.86,
+            162.8,
+            479.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            5.08
+          ]
+        },
+        {
+          "text": "20",
+          "bbox": [
+            228.34,
+            473.86,
+            233.99,
+            479.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            5.08
+          ]
+        },
+        {
+          "text": "40",
+          "bbox": [
+            264.69,
+            473.86,
+            270.34,
+            479.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            5.08
+          ]
+        },
+        {
+          "text": "-40",
+          "bbox": [
+            322.96,
+            473.86,
+            331.65,
+            479.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            5.08
+          ]
+        },
+        {
+          "text": "-20",
+          "bbox": [
+            359.32,
+            473.86,
+            368.0,
+            479.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            5.08
+          ]
+        },
+        {
+          "text": "20",
+          "bbox": [
+            433.54,
+            473.86,
+            439.19,
+            479.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            5.08
+          ]
+        },
+        {
+          "text": "40",
+          "bbox": [
+            469.89,
+            473.86,
+            475.54,
+            479.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            5.08
+          ]
+        },
+        {
+          "text": "(-1, -1)",
+          "bbox": [
+            134.7,
+            495.58,
+            148.73,
+            500.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            4.06
+          ]
+        },
+        {
+          "text": "(0, -1)",
+          "bbox": [
+            198.29,
+            495.58,
+            209.78,
+            500.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            4.06
+          ]
+        },
+        {
+          "text": "(1, -1)",
+          "bbox": [
+            262.63,
+            495.58,
+            274.13,
+            500.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            4.06
+          ]
+        },
+        {
+          "text": "(-1, -1)",
+          "bbox": [
+            339.9,
+            495.58,
+            353.93,
+            500.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            4.06
+          ]
+        },
+        {
+          "text": "(1, -1)",
+          "bbox": [
+            449.15,
+            495.58,
+            460.65,
+            500.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            4.06
+          ]
+        },
+        {
+          "text": "-20",
+          "bbox": [
+            184.63,
+            505.39,
+            193.31,
+            511.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            5.08
+          ]
+        },
+        {
+          "text": "-20",
+          "bbox": [
+            389.83,
+            505.39,
+            398.51,
+            511.12
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            5.08
+          ]
+        },
+        {
+          "text": "-40",
+          "bbox": [
+            184.63,
+            541.74,
+            193.31,
+            547.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            5.08
+          ]
+        },
+        {
+          "text": "-40",
+          "bbox": [
+            389.83,
+            541.74,
+            398.51,
+            547.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            5.08
+          ]
+        },
+        {
+          "text": "(a) ΠA",
+          "bbox": [
+            181.15,
+            568.65,
+            208.43,
+            577.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMR9"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "(b) ΠB",
+          "bbox": [
+            385.94,
+            568.65,
+            413.75,
+            577.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMR9"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "Figure 2: Poles of the Borel–Pad´e transforms, which would accumulate to branch cuts for the",
+          "bbox": [
+            69.17,
+            589.87,
+            526.15,
+            600.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Borel transforms of the quantum periods ΠA(u, ℏ) (a) and ΠB(u, ℏ) (b) at u = 4 and Λ = 1. The",
+          "bbox": [
+            69.17,
+            601.03,
+            526.12,
+            615.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "red points are the central charges of the BPS states which contribute to the branch points, and",
+          "bbox": [
+            69.17,
+            616.96,
+            526.17,
+            627.87
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "their electromagnetic charges are labelled nearby. See discussion in section 3.2.",
+          "bbox": [
+            69.17,
+            630.51,
+            446.29,
+            641.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "3",
+          "bbox": [
+            69.17,
+            668.43,
+            75.9,
+            680.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "Quantum periods from TBA equations",
+          "bbox": [
+            89.35,
+            668.43,
+            317.88,
+            680.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX12"
+          ],
+          "sizes": [
+            11.96
+          ]
+        },
+        {
+          "text": "In this section we study the TBA equations which control the analytic properties of the quantum",
+          "bbox": [
+            69.17,
+            699.05,
+            526.16,
+            709.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "periods of the modiﬁed Mathieu equation. We set Λ = 1 throughout the section.",
+          "bbox": [
+            69.17,
+            712.6,
+            454.01,
+            723.51
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "– 7 –",
+          "bbox": [
+            285.82,
+            771.54,
+            309.46,
+            782.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        }
+      ]
+    },
+    {
+      "page": 18,
+      "rotation": 0,
+      "drawings": 269,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 3: Poles of the Borel–Pad´e transforms, which would accumulate to branch cuts for the Borel transform of the quantum periods ΠA(E, ℏ) (a) and ΠB(E, ℏ) (b) at u = 1 + 4i and Λ = 1. The red points are the central charges of the BPS states which contribute to the branch points, and their electromagnetic charges are labelled nearby."
+      ],
+      "labels": [
+        {
+          "text": "50",
+          "bbox": [
+            187.67,
+            125.17,
+            193.32,
+            130.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            5.08
+          ]
+        },
+        {
+          "text": "50",
+          "bbox": [
+            392.87,
+            125.17,
+            398.52,
+            130.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            5.08
+          ]
+        },
+        {
+          "text": "(1, 1)",
+          "bbox": [
+            204.11,
+            156.6,
+            213.08,
+            161.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            4.06
+          ]
+        },
+        {
+          "text": "(1, 1)",
+          "bbox": [
+            409.31,
+            156.6,
+            418.28,
+            161.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            4.06
+          ]
+        },
+        {
+          "text": "(1, 0)",
+          "bbox": [
+            435.1,
+            161.33,
+            444.06,
+            165.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            4.06
+          ]
+        },
+        {
+          "text": "(1, -1)",
+          "bbox": [
+            461.64,
+            166.06,
+            473.14,
+            170.65
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            4.06
+          ]
+        },
+        {
+          "text": "(0, 1)",
+          "bbox": [
+            171.74,
+            181.96,
+            180.7,
+            186.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            4.06
+          ]
+        },
+        {
+          "text": "(0, -1)",
+          "bbox": [
+            224.07,
+            183.3,
+            235.57,
+            187.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            4.06
+          ]
+        },
+        {
+          "text": "-50",
+          "bbox": [
+            133.67,
+            186.79,
+            142.35,
+            192.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            5.08
+          ]
+        },
+        {
+          "text": "50",
+          "bbox": [
+            248.79,
+            186.79,
+            254.43,
+            192.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            5.08
+          ]
+        },
+        {
+          "text": "-50",
+          "bbox": [
+            338.87,
+            186.79,
+            347.55,
+            192.53
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            5.08
+          ]
+        },
+        {
+          "text": "50",
+          "bbox": [
+            453.99,
+            186.79,
+            459.63,
+            192.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            5.08
+          ]
+        },
+        {
+          "text": "(-1, 1)",
+          "bbox": [
+            345.33,
+            199.2,
+            356.83,
+            203.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            4.06
+          ]
+        },
+        {
+          "text": "(-1, 0)",
+          "bbox": [
+            371.11,
+            203.93,
+            382.61,
+            208.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            4.06
+          ]
+        },
+        {
+          "text": "(-1, -1)",
+          "bbox": [
+            192.46,
+            208.66,
+            206.49,
+            213.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            4.06
+          ]
+        },
+        {
+          "text": "(-1, -1)",
+          "bbox": [
+            397.66,
+            208.66,
+            411.69,
+            213.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            4.06
+          ]
+        },
+        {
+          "text": "-50",
+          "bbox": [
+            184.63,
+            238.76,
+            193.31,
+            244.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            5.08
+          ]
+        },
+        {
+          "text": "-50",
+          "bbox": [
+            389.83,
+            238.76,
+            398.51,
+            244.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            5.08
+          ]
+        },
+        {
+          "text": "(a) ΠA",
+          "bbox": [
+            181.15,
+            281.58,
+            208.43,
+            290.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMR9"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "(b) ΠB",
+          "bbox": [
+            385.94,
+            281.58,
+            413.75,
+            290.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMR9"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "Figure 3: Poles of the Borel–Pad´e transforms, which would accumulate to branch cuts for the",
+          "bbox": [
+            69.17,
+            302.8,
+            526.15,
+            313.71
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Borel transform of the quantum periods ΠA(E, ℏ) (a) and ΠB(E, ℏ) (b) at u = 1 + 4i and Λ = 1.",
+          "bbox": [
+            69.17,
+            313.96,
+            526.13,
+            328.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "The red points are the central charges of the BPS states which contribute to the branch points,",
+          "bbox": [
+            69.17,
+            329.89,
+            526.16,
+            340.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "and their electromagnetic charges are labelled nearby.",
+          "bbox": [
+            69.17,
+            343.44,
+            326.06,
+            354.35
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "BPS state",
+          "bbox": [
+            101.4,
+            373.12,
+            145.11,
+            383.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.95
+          ]
+        },
+        {
+          "text": "(1, 1)",
+          "bbox": [
+            179.49,
+            373.12,
+            201.6,
+            383.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.95
+          ]
+        },
+        {
+          "text": "(1, 0)",
+          "bbox": [
+            367.96,
+            373.12,
+            390.07,
+            383.07
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.95
+          ]
+        },
+        {
+          "text": "5.37838 × 10−13 + i3.166367 × 10−12",
+          "bbox": [
+            179.49,
+            386.86,
+            336.71,
+            400.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.27,
+            9.95
+          ]
+        },
+        {
+          "text": "5.979 × 10−16 + i4.701 × 10−16",
+          "bbox": [
+            367.96,
+            386.86,
+            500.31,
+            400.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.27,
+            9.95
+          ]
+        },
+        {
+          "text": "lateral Borel sum",
+          "bbox": [
+            85.7,
+            390.47,
+            160.83,
+            400.42
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.95
+          ]
+        },
+        {
+          "text": "5.3783841 × 10−13 + i3.16636788 × 10−12",
+          "bbox": [
+            179.51,
+            404.21,
+            356.6,
+            417.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.27,
+            9.95
+          ]
+        },
+        {
+          "text": "5.97982 × 10−16 + i4.70119 × 10−16",
+          "bbox": [
+            367.96,
+            404.21,
+            520.21,
+            417.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.27,
+            9.95
+          ]
+        },
+        {
+          "text": "r.h.s. of (3.67),(3.68)",
+          "bbox": [
+            77.93,
+            407.82,
+            168.61,
+            417.77
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            9.95
+          ]
+        },
+        {
+          "text": "Table 4: Discontinuity of ΠB(u = 1 + 4i, ℏ= 1) across the rays associated to BPS states",
+          "bbox": [
+            69.17,
+            430.35,
+            526.09,
+            444.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "γ = (1, 1), (1, 0), computed by lateral Borel resummation and by using (3.67),(3.68) with up to",
+          "bbox": [
+            69.17,
+            446.28,
+            526.17,
+            457.19
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "193 terms in the asymptotic series. Only stabilised digits are listed.",
+          "bbox": [
+            69.17,
+            459.83,
+            392.17,
+            470.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "3.3",
+          "bbox": [
+            69.17,
+            495.45,
+            85.19,
+            506.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Solving the TBA equations in the strong coupling region",
+          "bbox": [
+            97.74,
+            495.45,
+            410.46,
+            506.36
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "As we have argued, Borel sums of quantum periods are solutions to the TBA equations (3.30),(3.55).",
+          "bbox": [
+            69.17,
+            515.46,
+            534.54,
+            526.37
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "In principle the resummed quantum periods can be computed from these TBA equations by using",
+          "bbox": [
+            69.17,
+            529.01,
+            526.15,
+            539.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "the dictionaries (3.39) and (3.63). In practice, however, these equations are diﬃcult to use. First",
+          "bbox": [
+            69.17,
+            542.56,
+            526.15,
+            553.47
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "of all, one needs information on the boundary conditions at strong coupling in order to solve the",
+          "bbox": [
+            69.17,
+            556.11,
+            526.2,
+            567.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "equations. In addition, the standard tools to solve these equations numerically converge very",
+          "bbox": [
+            69.17,
+            569.66,
+            526.16,
+            580.56
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "slowly.",
+          "bbox": [
+            69.17,
+            583.2,
+            100.44,
+            594.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "Let us ﬁrst consider the simplest example at u = 0, where the TBA system collapses to a",
+          "bbox": [
+            89.49,
+            597.09,
+            526.09,
+            608.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "single equation (3.38), which we reproduce here (we have absorbed the factor ξ in (3.38) in the",
+          "bbox": [
+            69.17,
+            610.64,
+            526.13,
+            621.55
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "angle θ)",
+          "bbox": [
+            69.17,
+            624.19,
+            107.32,
+            635.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "log(1 + e−ϵ(θ′))",
+          "bbox": [
+            291.23,
+            636.03,
+            361.41,
+            649.93
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY6",
+            "CMSY8"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Z",
+          "bbox": [
+            275.9,
+            639.4,
+            281.97,
+            650.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "ϵ(θ) = πeθ −",
+          "bbox": [
+            213.54,
+            641.76,
+            273.48,
+            657.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "π cosh(θ −θ′) dθ′ .",
+          "bbox": [
+            294.04,
+            641.9,
+            381.73,
+            664.8
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(3.69)",
+          "bbox": [
+            498.23,
+            646.4,
+            526.12,
+            657.31
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "R",
+          "bbox": [
+            281.96,
+            656.85,
+            287.72,
+            664.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "The solution can be identiﬁed with the quantum dyon period through the dictionary",
+          "bbox": [
+            69.17,
+            672.85,
+            473.96,
+            683.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "D π−1e−θ = 16√π",
+          "bbox": [
+            322.15,
+            688.67,
+            411.17,
+            718.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "ϵ(θ) = 1",
+          "bbox": [
+            158.04,
+            696.67,
+            197.79,
+            714.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "\u00012 e−θ .",
+          "bbox": [
+            403.52,
+            699.55,
+            437.24,
+            724.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "ℏ= Π(0)",
+          "bbox": [
+            293.53,
+            700.6,
+            332.97,
+            714.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "ℏs(ΠD)(u = 0, ℏ) ,",
+          "bbox": [
+            192.12,
+            701.67,
+            280.81,
+            720.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "(3.70)",
+          "bbox": [
+            498.23,
+            704.05,
+            526.12,
+            714.96
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "\u0000 1",
+          "bbox": [
+            391.9,
+            707.73,
+            402.33,
+            724.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Γ",
+          "bbox": [
+            383.26,
+            714.27,
+            390.08,
+            725.17
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            398.09,
+            720.32,
+            402.33,
+            728.29
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "– 17 –",
+          "bbox": [
+            283.09,
+            771.54,
+            312.19,
+            782.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        }
+      ]
+    },
+    {
+      "page": 27,
+      "rotation": 0,
+      "drawings": 127,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 4: Poles of the Borel–Pad´e transform of the “reduced” series Πred"
+      ],
+      "labels": [
+        {
+          "text": "50",
+          "bbox": [
+            289.36,
+            121.46,
+            295.71,
+            127.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            5.71
+          ]
+        },
+        {
+          "text": "-50",
+          "bbox": [
+            230.98,
+            188.41,
+            240.75,
+            194.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            5.71
+          ]
+        },
+        {
+          "text": "50",
+          "bbox": [
+            355.73,
+            188.41,
+            362.08,
+            194.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT"
+          ],
+          "sizes": [
+            5.71
+          ]
+        },
+        {
+          "text": "-50",
+          "bbox": [
+            285.93,
+            244.5,
+            295.7,
+            250.95
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "ArialMT",
+            "MathematicaSans"
+          ],
+          "sizes": [
+            5.71
+          ]
+        },
+        {
+          "text": "Figure 4: Poles of the Borel–Pad´e transform of the “reduced” series Πred",
+          "bbox": [
+            97.54,
+            299.09,
+            450.99,
+            311.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMBX10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "at u = 4.",
+          "bbox": [
+            455.13,
+            300.75,
+            497.75,
+            311.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "B",
+          "bbox": [
+            439.23,
+            306.28,
+            445.61,
+            314.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "This suggests that the “reduced” formal power series",
+          "bbox": [
+            69.17,
+            333.31,
+            322.38,
+            344.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "\u00132n",
+          "bbox": [
+            440.24,
+            351.24,
+            457.64,
+            364.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI8",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "ℏ",
+          "bbox": [
+            411.9,
+            351.84,
+            417.79,
+            362.75
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(−1)nB2n",
+          "bbox": [
+            329.67,
+            352.57,
+            375.38,
+            366.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "CMSY10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "\u0012",
+          "bbox": [
+            381.43,
+            354.07,
+            389.46,
+            364.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "X",
+          "bbox": [
+            308.26,
+            359.09,
+            324.02,
+            370.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "B (E, ℏ) := ΠB(E, ℏ) −4iΠA(E, ℏ)",
+          "bbox": [
+            140.47,
+            359.22,
+            306.35,
+            375.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMSY10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Πred",
+          "bbox": [
+            132.29,
+            359.4,
+            152.24,
+            372.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": ",",
+          "bbox": [
+            459.95,
+            361.61,
+            462.99,
+            372.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(4.48)",
+          "bbox": [
+            498.23,
+            361.61,
+            526.12,
+            372.52
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "2ΠA(E, ℏ)",
+          "bbox": [
+            390.65,
+            366.71,
+            439.04,
+            381.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2n(2n −1)",
+          "bbox": [
+            327.14,
+            368.95,
+            378.41,
+            380.0
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "n≥1",
+          "bbox": [
+            308.16,
+            376.95,
+            324.12,
+            385.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8",
+            "CMR8",
+            "CMSY8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "where we subtract the non-Borel summable series in the function γ(a, ℏ), is actually Borel",
+          "bbox": [
+            69.17,
+            391.36,
+            526.12,
+            404.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "summable along the positive real axis.",
+          "bbox": [
+            69.17,
+            407.3,
+            260.24,
+            418.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "We veriﬁed numerically that this indeed is true, as",
+          "bbox": [
+            270.13,
+            407.3,
+            526.15,
+            418.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "can be seen from the Borel plane plot at u = 4 given in Figure 4. In fact the Borel sum of",
+          "bbox": [
+            69.17,
+            420.85,
+            526.14,
+            431.76
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "B (E, ℏ) agrees with the gauge theory calculation in which the contribution of γ(a, ℏ) has been",
+          "bbox": [
+            77.35,
+            432.01,
+            526.11,
+            448.54
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Πred",
+          "bbox": [
+            69.16,
+            432.73,
+            89.11,
+            445.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "removed; in other words,",
+          "bbox": [
+            69.17,
+            447.94,
+            187.52,
+            458.85
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "\u0010 a",
+          "bbox": [
+            327.37,
+            463.12,
+            341.75,
+            481.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10",
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "NS (a, ℏ)",
+          "bbox": [
+            412.09,
+            465.36,
+            452.79,
+            481.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "+ 2i∂F inst",
+          "bbox": [
+            378.09,
+            466.08,
+            427.29,
+            486.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "\u0010",
+          "bbox": [
+            141.56,
+            470.97,
+            148.07,
+            481.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "\u0011",
+          "bbox": [
+            168.52,
+            470.97,
+            175.03,
+            481.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "\u0010",
+          "bbox": [
+            304.94,
+            470.97,
+            311.45,
+            481.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "\u0011",
+          "bbox": [
+            343.85,
+            470.97,
+            350.36,
+            481.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "\u0011",
+          "bbox": [
+            369.15,
+            470.97,
+            375.66,
+            481.88
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMEX10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(E, ℏ) = 2iared",
+          "bbox": [
+            176.85,
+            472.85,
+            245.32,
+            486.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "D (u, ℏ) := 4ia",
+          "bbox": [
+            233.56,
+            472.85,
+            303.13,
+            488.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "Πred",
+          "bbox": [
+            148.07,
+            473.03,
+            168.02,
+            486.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "−1",
+          "bbox": [
+            352.79,
+            475.09,
+            369.15,
+            486.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMSY10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "s",
+          "bbox": [
+            134.62,
+            475.23,
+            139.74,
+            486.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "log",
+          "bbox": [
+            311.46,
+            475.23,
+            325.4,
+            486.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": ".",
+          "bbox": [
+            457.62,
+            475.23,
+            460.65,
+            486.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "(4.49)",
+          "bbox": [
+            498.23,
+            475.23,
+            526.12,
+            486.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "B",
+          "bbox": [
+            156.25,
+            480.23,
+            162.64,
+            488.2
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "Λ",
+          "bbox": [
+            335.08,
+            482.72,
+            342.65,
+            493.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "∂a",
+          "bbox": [
+            419.65,
+            482.72,
+            431.83,
+            493.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "B (E, ℏ) and 2iared",
+          "bbox": [
+            346.37,
+            498.2,
+            435.27,
+            514.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "D (u, ℏ) are evaluated",
+          "bbox": [
+            423.51,
+            498.2,
+            526.12,
+            514.73
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "We illustrate this in Table 9, where both the Borel sum of Πred",
+          "bbox": [
+            69.17,
+            498.92,
+            358.13,
+            511.49
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "at u = 4 and ℏ= 1. We ﬁnd that all stabilised digits are in agreement (26 of them)5.",
+          "bbox": [
+            69.17,
+            511.75,
+            475.37,
+            525.04
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10",
+            "CMR8",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "We can now see a clear diﬀerence between the TBA equations of [1] and the TBA equations",
+          "bbox": [
+            89.49,
+            527.68,
+            526.1,
+            538.59
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "of [5].",
+          "bbox": [
+            69.16,
+            541.23,
+            97.49,
+            552.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "The TBA equations of [1] compute the Borel-summable part of the B period, where",
+          "bbox": [
+            106.33,
+            541.23,
+            526.12,
+            552.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "we have removed the perturbative contribution due to the γ function, i.e. they compute (4.49),",
+          "bbox": [
+            69.16,
+            554.78,
+            526.14,
+            565.69
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "which is the Borel resummation of Πred",
+          "bbox": [
+            69.16,
+            566.67,
+            260.51,
+            579.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "in (4.48). On the contrary, the conformal limit of the",
+          "bbox": [
+            265.23,
+            568.33,
+            526.16,
+            579.24
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "B",
+          "bbox": [
+            248.75,
+            573.86,
+            255.13,
+            581.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI8"
+          ],
+          "sizes": [
+            7.97
+          ]
+        },
+        {
+          "text": "GMN TBA equations computes the Borel resummation of the full quantum B period ΠB(E, ℏ),",
+          "bbox": [
+            69.16,
+            579.5,
+            526.11,
+            593.84
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "CMTI10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "including the perturbative γ function. Since the latter is not Borel summable, the corresponding",
+          "bbox": [
+            69.17,
+            595.43,
+            526.15,
+            606.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "TBA has discontinuities, as discussed in section 3.2.",
+          "bbox": [
+            69.17,
+            608.98,
+            317.69,
+            619.89
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "In the strong coupling region we have the following relation between the “exact” quantum",
+          "bbox": [
+            89.49,
+            622.53,
+            526.16,
+            633.44
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "A period and lateral Borel resummations of quantum periods [15]",
+          "bbox": [
+            69.17,
+            636.08,
+            382.73,
+            646.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "2ℏs+(ΠA) + e",
+          "bbox": [
+            244.87,
+            654.29,
+            301.13,
+            669.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMR10",
+            "CMR6",
+            "CMR8",
+            "MSBM7"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2ℏs+(ΠA+2ΠB) + e−1",
+          "bbox": [
+            302.33,
+            654.29,
+            395.41,
+            669.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMR10",
+            "CMR6",
+            "CMR8",
+            "CMSY8",
+            "MSBM7"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            246.76,
+            654.89,
+            250.41,
+            660.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            304.22,
+            654.89,
+            307.88,
+            660.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "A /(2ℏ)) = e",
+          "bbox": [
+            186.02,
+            656.41,
+            243.67,
+            672.4
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI8",
+            "CMR10",
+            "MSBM10"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2 cosh(Πex",
+          "bbox": [
+            145.65,
+            656.59,
+            194.25,
+            669.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10",
+            "CMR8"
+          ],
+          "sizes": [
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2ℏs+(ΠA+2ΠB)",
+          "bbox": [
+            389.87,
+            656.59,
+            450.94,
+            667.25
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMR6",
+            "CMR8",
+            "MSBM7"
+          ],
+          "sizes": [
+            5.98,
+            7.97
+          ]
+        },
+        {
+          "text": "(4.50)",
+          "bbox": [
+            498.23,
+            668.92,
+            526.12,
+            679.83
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "2ℏs−(ΠA) + e−1",
+          "bbox": [
+            244.87,
+            676.64,
+            314.63,
+            692.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMR10",
+            "CMR6",
+            "CMR8",
+            "CMSY6",
+            "CMSY8",
+            "MSBM7"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2ℏs−(ΠA) + e",
+          "bbox": [
+            309.08,
+            676.64,
+            365.51,
+            692.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI8",
+            "CMR10",
+            "CMR6",
+            "CMR8",
+            "CMSY6",
+            "MSBM7"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "2ℏs−(ΠA+2ΠB) .",
+          "bbox": [
+            366.71,
+            676.64,
+            435.12,
+            692.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI10",
+            "CMMI6",
+            "CMMI8",
+            "CMR6",
+            "CMR8",
+            "CMSY6",
+            "MSBM7"
+          ],
+          "sizes": [
+            5.98,
+            7.97,
+            10.91
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            246.76,
+            677.23,
+            250.41,
+            683.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            368.61,
+            677.23,
+            372.26,
+            683.21
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR6"
+          ],
+          "sizes": [
+            5.98
+          ]
+        },
+        {
+          "text": "= e",
+          "bbox": [
+            227.31,
+            681.14,
+            243.67,
+            692.05
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        },
+        {
+          "text": "B (E, ℏ) with E > 2 agrees with the average of lateral Borel resum-",
+          "bbox": [
+            254.17,
+            701.2,
+            526.13,
+            713.92
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI9",
+            "CMR9",
+            "MSBM10"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "5We also notice that the exact B period Πex",
+          "bbox": [
+            81.6,
+            701.69,
+            261.28,
+            712.13
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI9",
+            "CMR6",
+            "CMR9"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "mations of the quantum B period ΠB(E, ℏ).",
+          "bbox": [
+            69.17,
+            712.16,
+            247.69,
+            723.43
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMMI6",
+            "CMMI9",
+            "CMR9",
+            "MSBM10"
+          ],
+          "sizes": [
+            5.98,
+            8.97
+          ]
+        },
+        {
+          "text": "– 26 –",
+          "bbox": [
+            283.09,
+            771.54,
+            312.19,
+            782.45
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "CMR10"
+          ],
+          "sizes": [
+            10.91
+          ]
+        }
+      ]
+    }
+  ]
+}

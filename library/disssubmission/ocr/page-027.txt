@@ -1,0 +1,50 @@
+1.5. The spectrum of a perverse sheaf 19
+
+In what follows, let E(X) be the class of all semisimple perverse sheaves
+on X with Euler characteristic zero. We say that a perverse sheaf is clean
+if it does not contain constituents from E(X). For x € X(C) we denote
+by t. :X — X the translation morphism y+> x+y, and for K € D?(X,C) we
+consider the stabilizer
+
+Stab(K) = {x€X(C) | t8(K) = K}.
+
+By constructibility of K this is an algebraic subset of X, and its connected
+component Stab(K)° C Stab(K) is an abelian subvariety of X. We can now
+formulate the main result of the present section.
+
+LEMMA 1.11. (a) Let P€ E(X) be a semisimple perverse sheaf of Euler
+characteristic zero. Then a character x lies in .S (P) iff H*(X,Py) #0. In
+particular, if P is simple, there exists a character @ such that
+
+S(P) = @'-K(A) for A=Stab(P)
+where K(A) C II(X) is the algebraic subtorus from remark 1.10(b).
+
+(b) For any semisimple perverse sheaf P on X there are non-zero abelian
+subvarieties Aj,...,An CX and 1,...,Xn © T1(X) such that
+
+S(P) = LU u-K(Ai).
+i=l
+
+(c) If in part (b) the semisimple perverse sheaf P is of geometric origin in
+the sense of (10, 6.2.4], then the x; can be chosen to be torsion characters.
+
+Proof. (a) The first statement is obvious from proposition 1.6(a), and
+the second one follows easily from the proof of corollary 1.7.
+
+(b) The proof of this part is most conveniently formulated in terms of the
+convolution product « to be defined in section 2.1 below. For the time being
+it suffices to know that the convolution of semisimple sheaf complexes is
+again a semisimple sheaf complex by Gabber’s decomposition theorem, that
+for K,M € Db(X,C) we have the Kiinneth formula
+
+H*(X,K*M) = H*(X,K)@cH*(X,M)
+
+and that convolution is compatible with character twists in the sense that for
+all x € II(X) we have (K*M)y = Ky * My, see proposition 2.1. Hence for
+the g-fold convolution power of a semisimple perverse sheaf P € Perv(X,C)
+it follows from theorem 1.1 that P*® = O@ ®yeczNy|v] where Q is a clean
+semisimple perverse sheaf and the Ny are semisimple perverse sheaves
+in E(X). So for any x € I(X) we obtain
+
+(x) H°(X, Py)°8 = H*(X,Qy) ® Ba H*(X, (Ny) z)[V]-
+veZ

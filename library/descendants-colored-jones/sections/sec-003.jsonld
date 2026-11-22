@@ -9,14 +9,13 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "A conjecture",
-  "pageStart": 8,
-  "pageEnd": 8,
+  "title": "Definition of the descendants",
+  "pageStart": 4,
+  "pageEnd": 5,
   "contains": [
-    "library/descendants-colored-jones/blocks/prose-sec-003",
-    "library/descendants-colored-jones/blocks/conj-sec-003-01"
+    "library/descendants-colored-jones/blocks/prose-sec-003"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/descendants-colored-jones",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/descendants-colored-jones",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/descendants-colored-jones/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/descendants-colored-jones/manifest.jsonld",
   "provenance": "ingested"
 }

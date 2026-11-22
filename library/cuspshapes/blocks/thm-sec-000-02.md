@@ -1,1 +1,1 @@
-For any ϵ> 0, any point [T ] in the Teichm¨ uller space of the torus,
+For any ϵ > 0, any point [T] in the Teichm¨uller space of the torus, and any integer n ≥1, there exists a complete, ﬁnite volume hyperbolic manifold M that admits a tunnel system of n tunnels and has a single cusp, with cusp shape ϵ-close to [T]. Further, assuming recent work of Maher and Schleimer [26], we can ensure M is tunnel number n.

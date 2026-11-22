@@ -23,7 +23,7 @@ combinatorial content of the closed form and its consequences:
 Base ring (§7c): the chain algebra needs only `[CommMonoid M]` — products, no
 subtraction, no order. Only the final log corollary lives over `ℝ`.
 
--- Ref: [manuscript] docs/audits/2026-06-16-b-sym-linear-chain-closed-form.md
+-- Ref: [leitner2026] docs/audits/2026-06-16-b-sym-linear-chain-closed-form.md
 -/
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Analysis.SpecialFunctions.Log.Basic

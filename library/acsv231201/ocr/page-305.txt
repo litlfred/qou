@@ -1,0 +1,37 @@
+9.4. Additional formulae for asymptotics 287
+
+long time decays slower than exponentially). Then R C ©, where = is the ry = 1
+slice of normal (B) and is computed as an algebraic dual (see Example 6.50).
+
+k
+
+B
+
+Figure 9.8 The component B and its dual cone K at the origin.
+
+Smooth boundary points correspond to directions 7 ¢ K satisfying |r;| +
++++ +(|rgl < |rgii|. For each such # there is one or more minimal smooth critical
+points of V. To compute R, we start by computing Vp = VM T(0). For many
+QRW’s one finds this to be a smooth manifold diffeomorphic to one or more
+d-tori. At any smooth point z € Vo, the space L(z) is the line in the direction
+of Viog Q(z). Thus, r € R if and only if r is in the closure of the image when
+the logarithmic Gauss map Vjog is applied to Vo, so that
+
+R = VooglVo] -
+
+This allows us to plot the feasible region by parametrizing Vo by an embedded
+grid and applying Viog to each point of the embedded grid, an example of which
+is shown on the left of Figure 9.9.
+
+The right of Figure 9.9 shows an intensity plot of the magnitude of the prob-
+ability amplitude for the particle at time 200 for a QRW known as S (1/8). The
+agreement of the shape of the empirically plotted feasible region (right) with
+the theoretical prediction based on the Gauss map (left) is apparent. What is
+also apparent is that not only do the regions agree but their fine structure of
+darker bands and light areas agree as well.
+
+In particular, the image of Vo under Vjog will be more intense in places
+where the Jacobian determinant of Vjog is small because the density of the
+image of an embedded grid is proportional to the inverse of the Jacobian de-
+terminant. The Jacobian determinant of the logarithmic Gauss map is pre-
+cisely the curvature, as discussed following (9.21). In Theorem 9.45, while

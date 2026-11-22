@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-09-07T08:45:01.363206+00:00",
-  "commitSha": "5e6cfaabf5730039d9fca1f29aabd06e9d303a93",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-11-15T19:58:54.987883+00:00",
+  "commitSha": "6109ea1793d3bd7dfe1aef4e1c2365f29a6074f2",
   "assertions": [
     {
       "name": "quotient_correction_is_not_negligible",
@@ -42,11 +42,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 3,
   "computation": "em-linking-quotient-kernel-correction",
   "scriptFile": "em_linking_quotient_kernel_correction_probe.py",
-  "scriptHash": "46982603bfb1",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "0a35c5f83153",
+  "scriptCommitSha": "547b78208f6bb667ec8b3580f16390a74dbb9ce4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -54,12 +54,15 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
+    "python": "3.13.18",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "clarabel": "0.11.1",
+    "cvxpy": "absent",
+    "pyhecke_native_build": "24ca776b0ad05497"
   },
   "invocation": {
     "argv": [
@@ -162,5 +165,7 @@
         "computedAt": "2026-08-29T11:04:54.258451+00:00"
       }
     ]
-  }
+  },
+  "q0Anchor": "ambiguous",
+  "q0AnchorReason": "q0 enters only through upstream data: kappa(A) is read from em-linking-mirror-series.witness.json, whose producer divides by a TYPED per-pair Coulomb unit tanh(ln q0)*B_pp = 0.2376702253 with no recorded pin (the proton-pinned mirror-pair-coulomb-sign-correction witness it cites now carries 0.2212723003), and that upstream witness is itself unstamped; the pin of the series this probe fits is therefore undetermined"
 }

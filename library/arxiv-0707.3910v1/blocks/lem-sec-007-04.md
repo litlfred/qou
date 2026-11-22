@@ -1,0 +1,1 @@
+4. Let p ∈N, d1, d2, · · · , dp be parameters, and deﬁne dp+1 := 1. Then p X k=0 dp+1−kz2k p−k X j=0 2p −2k 2j  (1 + z2)p−k−j = (A.3)   p+1 X j=1 dj  z2p + p X i=1 22i−1z2(p−i)   p+1−i X j=1 j + i −1 i j + 2i −2 j −1  dj+i  . LANDEN TRANSFORMATIONS AND THE INTEGRATION OF RATIONAL FUNCTIONS 19

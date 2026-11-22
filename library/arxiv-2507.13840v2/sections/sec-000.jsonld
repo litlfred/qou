@@ -9,13 +9,16 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Efficient algorithm to measure PT negativity moment",
-  "pageStart": 30,
-  "pageEnd": 30,
+  "title": "Front matter",
+  "pageStart": 1,
+  "pageEnd": 4,
   "contains": [
-    "library/arxiv-2507.13840v2/blocks/prose-sec-000"
+    "library/arxiv-2507.13840v2/blocks/prose-sec-000",
+    "library/arxiv-2507.13840v2/blocks/figure-img-p003-1",
+    "library/arxiv-2507.13840v2/blocks/figure-img-p003-2",
+    "library/arxiv-2507.13840v2/blocks/figure-img-p003-3"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2507.13840v2",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-2507.13840v2",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2507.13840v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2507.13840v2/manifest.jsonld",
   "provenance": "ingested"
 }

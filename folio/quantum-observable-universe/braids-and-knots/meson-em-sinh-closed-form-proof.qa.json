@@ -249,6 +249,53 @@
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-08"
         }
+      },
+      {
+        "field_hash": {
+          "md": "8c28d020aa9f",
+          "ts": "d2fe2145da9b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T21:27:35.035Z",
+        "reviewed_sha": "b2b349f3607b14633db66340b2e643563a868ddf",
+        "severity": "major",
+        "evidence": "The proof establishes only the rational identity. The statement block also carries the m_K^2/m_pi^2 formula, ppb comparisons with measured values, \"The stopping order was chosen against the data\", and \"The pair (3,4) ... was found by scanning products of q-integers\": empirical and selected content inside a proposition that no proof covers."
+      },
+      {
+        "field_hash": {
+          "md": "8c28d020aa9f",
+          "ts": "d2fe2145da9b"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T22:57:14.177Z",
+        "reviewed_sha": "f84776ece33e7b2ccfa5cfa386fc4c0238ec4a2d",
+        "severity": "minor",
+        "evidence": "Re-review after 93cc4bbea. The empirical and fitted content has moved to rem:meson-em-sinh-ratio-reading, so the earlier fail is resolved. The expansion 1+ħ−ħ²/2 = (3−q⁻²)/2 checks by hand. Remaining: the proof says 'over any field with q≠0', which is false in characteristic 2 (needs 2 invertible)."
+      },
+      {
+        "field_hash": {
+          "md": "8954487a01b2",
+          "ts": "d2fe2145da9b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:sidecar-review-2026-11-15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-11-15T23:30:07.081Z",
+        "reviewed_sha": "c87aa9c757e841db81341bde59da76b34fd2ece6",
+        "evidence": "Re-review after #8075. Proof now works over a commutative ring with q and 2 invertible; the expansion 1+ħ−ħ²/2 = (3−q⁻²)/2 = (3q²−1)/(2q²) checks by hand."
       }
     ],
     "da-lean-narrative-divergence": [
@@ -1152,7 +1199,7 @@
           "in_degree": 0,
           "cone_size": 1,
           "depth": 1,
-          "pagerank": 7.4e-05,
+          "pagerank": 0.000074,
           "edge_span_max": 0,
           "edge_span_mean": 0,
           "worst_target": ""
@@ -1696,6 +1743,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-11-15T23:30:07.081Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }

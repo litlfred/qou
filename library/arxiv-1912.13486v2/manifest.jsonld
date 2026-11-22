@@ -5,17 +5,23 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1912.13486v2",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1912.13486v2/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-1912.13486v2",
+  "title": "Index for a Model of 3d-3d Correspondence for Plumbed 3-Manifolds",
   "contains": [
+    "library/arxiv-1912.13486v2/sections/sec-front-matter",
     "library/arxiv-1912.13486v2/sections/sec-000",
-    "library/arxiv-1912.13486v2/sections/sec-001"
+    "library/arxiv-1912.13486v2/sections/sec-001",
+    "library/arxiv-1912.13486v2/sections/sec-002",
+    "library/arxiv-1912.13486v2/sections/sec-003",
+    "library/arxiv-1912.13486v2/sections/sec-004",
+    "library/arxiv-1912.13486v2/sections/sec-005",
+    "library/arxiv-1912.13486v2/sections/sec-006"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
   "licenceRecord": {
     "status": "stated",
@@ -25,7 +31,9 @@
   },
   "meta": {
     "doc_id": "arxiv-1912.13486v2",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "1912.13486v2.pdf",
     "source_sha256": "9a8dbc1a143f7448e02fc7a60e40955738c1a63fc2badf03771a875897d0701b",
     "pages": 21,

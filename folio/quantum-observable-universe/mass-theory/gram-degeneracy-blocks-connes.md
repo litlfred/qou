@@ -35,10 +35,7 @@ the row cap --- and a kernel of the form is a kernel of the seminorm. Any state 
 separating that direction supplies the $k$ above.
 
 The obstruction is a fact about the *method*, and it names its own repair: quotient by
-the radical, or choose a different seminorm. The consequence is packaged as
-[finite distance forces a trivial kernel](#cor:finite-connes-forces-trivial-kernel),
-and the quotient is shown to cost nothing by
-[the branching identity](#prop:branching-identity-isospin-weights).
+the radical, or choose a different seminorm.
 
 Under convention C the question does not arise. Every Wedderburn weight is strictly
 positive there, the star form is definite, and no kernel element exists to exploit.

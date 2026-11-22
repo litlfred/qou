@@ -7,10 +7,11 @@ section_number: 1
 pages: 2-3
 source_pdf: 1210.6243v1.pdf
 source_sha256: 3ff2f5358b25586e
-doc_brief: "Controlled double-slit electron diffraction — Double-slit diﬀraction is a corner stone of quantum mechanics."
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 1.0
+latex_prose_ratio: 0.981
 latex_coverage_ratio: 0.988
+doc_brief: "Controlled double-slit electron diﬀraction — Double-slit diﬀraction is a corner stone of quantum mechanics."
 ---
 Richard Feynman described electron diffraction as a phenomenon "which has in it the heart of quantum mechanics. In reality, it contains the *only* mystery"[@Feynman65]. He went on to describe a thought experiment for which he stated "that you should not try to set up" because "the apparatus would have to be made on an impossibly small scale to show the effects we are interested in." He used these effects to help illustrate the phenomena of wave-particle duality, which is a postulate that all particles exhibit both wave and particle properties. The effects he described were: the relations between electron probability distributions from single- and double-slits, and observation of single particle diffraction. In this paper we report both control over the individual slits to observe probability distributions from both single- and double-slits, and the build-up of a diffraction pattern at single electron detection rates to achieve the full realization of Feynman's thought experiment.
 

@@ -1,0 +1,47 @@
+with 96 triangles having angles (5, $, $); the 14-gon of the Klein quartic contains 336
+
+triangles with angles ($, 3, 7); and the surface M3 [72] has 96 (5, 3, 12) triangles.
+
+Definition 2.29 (Triangle group) A triangle group is a subgroup TC PSL2(R) gen-
+erated by reflections in the sides of an (l,m, n) triangle (a triangle with angles 5, = and
+
+=, where + + i + + <1 andl,m,né€N). For an (l,m, n) triangle with side reflections
+
+given by x, y, z, the corresponding triangle group T(l, m, n) has the presentation
+
+T(l, m,n) = (x, y, 2|22 = y? = 2? = (ay)! = (yz) = (22)" =e).
+
+Figure 2.2: Generators of an (1, m, n) triangle group
+
+The area of a right angled hyperbolic triangle is
+
+57a 8,
+
+where a and £ are the sizes of the other two angles. This formula is known as the
+Gauss defect, and comes from the more general Gauss-Bonnet theorem. Hence a (2, 3, 7)
+triangle has area %, a (2, 3, 8) triangle has afeal 3y and a (2, 3, 12) triangle has area 7.
+We can use the following formulae from [13] to calculate the hyperbolic lengths of the
+
+sides, based on the fact that we know all the angles.
+
+Theorem 2.30 For any right angled hyperbolic triangle, the following hold:
+cosh(c) = cot(a) cot(Z),
+cos(a) = cosh(a) sin({),
+
+where c is the hypotenuse, a is the side with opposite angle a, and b is the side with
+
+opposite angle 3.
+
+The hyperbolic side lengths for the (2, 3, 7) triangle are:
+
+~ 0.545,
+
+b n (228) ) ~ 0.083
+= arccos. —— Uv. 5
+a ;
+
+ese (3)
+
+a = arccosh (
+
+36

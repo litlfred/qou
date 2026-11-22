@@ -1,0 +1,1 @@
+B.2, this implies that |8|q = P w word on e0∪µN sup˜α∈Z∪{±∞}\{0}|8q,˜α[w]|pw is a well-deﬁned element of K⟨⟨e0∪µN ⟩⟩o(1). We have a similar bound for the coefﬁcients of the expansion of each harq,˜α[w] obtained in Section 3C. Thus we can apply Proposition 4A.1 to the power series expansion of each harq,˜α[w] in (0-3), (0-4), (0-5) to deduce that they are the same.

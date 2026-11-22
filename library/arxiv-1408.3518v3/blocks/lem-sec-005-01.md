@@ -1,0 +1,1 @@
+Let xk be a feasible solution, and let z be an associated steepest descent direction. Then there is some augmentation direction g ∈G(A) from xk, with −c⊺g/∥g∥1 ≥−c⊺z/∥z∥1. De Loera, Hemmecke and Lee: Augmentation in Linear and Integer Linear Programming

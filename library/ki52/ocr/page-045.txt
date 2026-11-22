@@ -1,0 +1,48 @@
+For 2 > 1, the integrand of (73) is bounded by M,e~**a4 for some M, > 0. For « < —1,
+the integrand of (73) is bounded by Me”°"x?4 for some Mz > 0. For |z| = 1, the integrand
+of (73) is bounded by a constant. Hence, the values of the integrals of (73) is bounded by
+a constant. Therefore, |R,| is bounded by C/N?4*+1 for some C' > 0, which is independent
+of t. Hence, we obtain (70).
+
+We obtain (71) by similar arguments for y(t). Oo
+Lemma A.2. For anyt € C withO0 < Ret <1,
+N 1 1
+th+y(1-t) = Iw/-1( - —(P -t+-=)+——).
+elt) +1) = 2ev=1(- F(P-t+ 5) +241)
+
+Proof. By definition,
+
+e(2t-la 4 e(l-2t)a
+el) + e(L—1) = / 4x sinh x sinh(a«/N) de.
+Since this integrand is an odd function, if the contour was R, the integral would vanish.
+In this case, since the contour y avoids the pole at x = 0, the contribution from the
+residue at this pole survives. By expanding the numerator and the denominator of the
+integrand as power series of x concretely, we can calculate this residue, and obtain the
+required formula. oO
+
+Lemma A.3 (Kashaev).
+
+2 _ /—
+v(<-) = N mle loa t
+2N 2nV/-1 6 2 4 12N
+1 N mJ-1 aV-1
+—~—)j)a “log N _
+PO oN) = ont 6 7 BN ow
+Proof. It is sufficient to show that
+1 1 N 1 1
+(gy) +0 gy) = 28V-1(— 12 +9 py) (74)
+1 1
+y(—) —¢(1- =) = log N.
+(sy) P(E ay) = 108 (75)
+We obtain (74) from Lemma A.2 by putting t = 1/2N.
+We show (75), as follows. By (3) and (8),
+1 1
+exp (o(gy) - el gy) = (76)
+Further, from the definition of y(t),
+1 1 e(l-1/N)z _ eA/N-la
+—)—y(1—-—~) = dix.
+(sy) °( aN) / 4x sinh x sinh(«/N) *
+
+By a similar argument as in the proof of Lemma A.2, we can see that the residue of this
+integrand at 0 vanishes. Hence, the value of this integral is real, and we obtain (75) from
+(76). O

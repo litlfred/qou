@@ -8,7 +8,7 @@
   "pages": 4,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:19Z",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -26,7 +26,7 @@
    "Markov property and Khovanov-Rozansky homology: Coxeter",
    "Case"
   ],
-  "abstract": "In [2] Khovanov gave a construction of Khovanov-Rozansky homology, new triple-graded link invariant, taking the Hochschild homology of the terms in Rouquier complexes. Its bigraded Euler characteristic provides the Markov trace of type An, which, in its turn, induces the well-known HOMFLY polynomial. Gomi [1, (3.3)] has extended the de\ufb01nition of Markov trace on a Hecke algebra to all Coxeter groups. One can see that Khovanov\u2019s and Rouquier\u2019s constructions can be directly extended to these groups. We give a detailed proof that the corresponding Euler characteristic provides a Markov trace in the sense of Gomi for any Coxeter group. Let (W, S) be a Coxeter system with |S| = n < \u221e. Let V be the C-vector space with the basis {es}s\u2208S carrying the geometric representation of W. Then we have a natural action of W on the symmetric algebra R = S(V \u2217), which will be regarded as the graded polynomial ring C[{xs}s\u2208S] with deg xs = 1. Now we brie\ufb02y recall the notions of Rouquier complexes needed to give Khovanov\u2019s construction of Khovanov-Rozansky homology. Let BW = \u27e8\u03c3s\u27e9s\u2208S be the corresponding to W braid group. For s \u2208S de\ufb01ne the graded R-bimodule Bs = R \u2297Rs R, where Rs is the ring of polynomials invariant under s. Graduation on Bs is induced by the graduation on R. To the braid generator \u03c3s (resp. \u03c3\u22121 s ) Rouquier associates cochain complexes of graded R-bimodules: F(\u03c3s) : 0 \u2192Bs m \u2192R \u21920 resp. F(\u03c3\u22121 s ) : 0 \u2192R \u03b7\u2192Bs(1) \u21920 where Bs(1) means the shift in the graduation by 1, m(a\u2297b) = ab and \u03b7(a) = a\u2297xs+axs \u22971. Bimodules Bs and Bs(1) are placed in cohomological degree 0. Rouquier [4, 9.] proves the following Theorem 1 (Rouquier) Map \u03c3\u00b11 s \u2192F(\u03c3\u00b11 s )\u2297R \u2212induces a well-de\ufb01ned action of the braid group BW on the category of cochain complexes of graded R-bimodules up to homotopy. The above theorem allows to de\ufb01ne the Rouquier complex F(\u03c3) of \u03c3 \u2208BW as the image of the complex 0 \u2192R \u21920 by the action of \u03c3. Recall that the Hochschild homology HH(R, M) of an R-bimodule M is de\ufb01ned as the dir",
+  "abstract": "In [2] Khovanov gave a construction of Khovanov-Rozansky homology, new triple-graded link invariant, taking the Hochschild homology of the terms in Rouquier complexes. Its bigraded Euler characteristic provides the Markov trace of type An, which, in its turn, induces the well-known HOMFLY polynomial. Gomi [1, (3.3)] has extended the deﬁnition of Markov trace on a Hecke algebra to all Coxeter groups. One can see that Khovanov’s and Rouquier’s constructions can be directly extended to these groups. We give a detailed proof that the corresponding Euler characteristic provides a Markov trace in the sense of Gomi for any Coxeter group. Let (W, S) be a Coxeter system with |S| = n < ∞. Let V be the C-vector space with the basis {es}s∈S carrying the geometric representation of W. Then we have a natural action of W on the symmetric algebra R = S(V ∗), which will be regarded as the graded polynomial ring C[{xs}s∈S] with deg xs = 1. Now we brieﬂy recall the notions of Rouquier complexes needed to give Khovanov’s construction of Khovanov-Rozansky homology. Let BW = ⟨σs⟩s∈S be the corresponding to W braid group. For s ∈S deﬁne the graded R-bimodule Bs = R ⊗Rs R, where Rs is the ring of polynomials invariant under s. Graduation on Bs is induced by the graduation on R. To the braid generator σs (resp. σ−1 s ) Rouquier associates cochain complexes of graded R-bimodules: F(σs) : 0 →Bs m →R →0 resp. F(σ−1 s ) : 0 →R η→Bs(1) →0 where Bs(1) means the shift in the graduation by 1, m(a⊗b) = ab and η(a) = a⊗xs+axs ⊗1. Bimodules Bs and Bs(1) are placed in cohomological degree 0. Rouquier [4, 9.] proves the following Theorem 1 (Rouquier) Map σ±1 s →F(σ±1 s )⊗R −induces a well-deﬁned action of the braid group BW on the category of cochain complexes of graded R-bimodules up to homotopy. The above theorem allows to deﬁne the Rouquier complex F(σ) of σ ∈BW as the image of the complex 0 →R →0 by the action of σ. Recall that the Hochschild homology HH(R, M) of an R-bimodule M is deﬁned as the dir",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "Creator": "LaTeX with hyperref package",
@@ -141,6 +141,7 @@
    "items": []
   },
   "sections": 2,
-  "chars_total": 10235
+  "chars_total": 10235,
+  "furniture_lines_stripped": 0
  }
 }

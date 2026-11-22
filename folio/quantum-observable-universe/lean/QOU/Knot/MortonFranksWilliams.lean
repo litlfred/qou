@@ -61,7 +61,7 @@ it is proved here rather than asserted.
 
 - [morton1988] H. R. Morton, *Seifert circles and knot polynomials*. https://doi.org/10.1017/S0305004100064057
 - [franks-williams1987] J. Franks, R. F. Williams, *Braids and the Jones polynomial*. https://doi.org/10.1090/S0002-9947-1987-0896009-2
-- [manuscript] `QOU/KnotTheory/JonesPolynomial.lean` (the Markov-trace idiom this follows).
+- [leitner2026] `QOU/KnotTheory/JonesPolynomial.lean` (the Markov-trace idiom this follows).
 -/
 
 namespace QOU.Knot.MortonFranksWilliams

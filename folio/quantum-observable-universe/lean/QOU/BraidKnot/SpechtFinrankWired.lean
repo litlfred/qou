@@ -107,4 +107,10 @@ theorem specht_finrank_eq_numSYT_wired (μ : YoungDiagram) :
   rw [Module.finrank_eq_nat_card_basis (standardBasis_wired (k := k) (μ := μ))]
   rfl
 
+/-- Zero-subtracted difference between the wired Specht submodule finrank and `numSYT μ` vanishes. -/
+theorem specht_finrank_sub_numSYT_wired_eq_zero (μ : YoungDiagram) :
+    Module.finrank k (Specht.SpechtSubmodule (k := k) μ) - QOU.BraidKnot.numSYT μ = 0 := by
+  rw [specht_finrank_eq_numSYT_wired (k := k) μ]
+  exact Nat.sub_self (QOU.BraidKnot.numSYT μ)
+
 end QOU.BraidKnot.SpechtFinrankWired

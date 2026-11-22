@@ -11,7 +11,7 @@ relation) in any commutative ring, the inverse coincides with the element
 and the unaveraged channel sum is `2s`.  No inverse of `2`, no field:
 this is the multiplicative-relation ("R[h]") form of `(s + s⁻¹)/2 = s`
 per §7c. -/
--- Ref: [manuscript] models-of-qous/symmetric-point-channel-collapse.md
+-- Ref: [leitner2026] models-of-qous/symmetric-point-channel-collapse.md
 theorem symmetric_point_channel_sum {R : Type*} [CommRing R] (s : Rˣ)
     (hs : (s : R) ^ 2 = 1) :
     ((s⁻¹ : Rˣ) : R) = (s : R) ∧
@@ -37,7 +37,7 @@ in place of the former `[Field R]` with `s ≠ 0` implicit and `(2 : R) ≠ 0`
 — an element with `s² = 1` *is* a unit, and the only division used is by
 `2`.  A field of characteristic `≠ 2` is the special case
 (`invertibleOfNonzero`); `ℤ[1/2][q^{±1}]` is another. -/
--- Ref: [manuscript] models-of-qous/symmetric-point-channel-collapse.md
+-- Ref: [leitner2026] models-of-qous/symmetric-point-channel-collapse.md
 theorem symmetric_point_channel_collapse {R : Type*} [CommRing R]
     [Invertible (2 : R)] (s : Rˣ) (hs : (s : R) ^ 2 = 1) :
     ((s⁻¹ : Rˣ) : R) = (s : R) ∧

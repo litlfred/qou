@@ -14,7 +14,7 @@ import Mathlib.Tactic.Ring
   vertex volumes in each channel, and Φ_q is the quantum
   dilogarithm (analytically continued past |V̂| = q).
 
-  Ref: [manuscript] Ch 11 §8 / tower-binding-energy
+  Ref: [leitner2026] Ch 11 §8 / tower-binding-energy
 -/
 
 namespace QOU.ParticleInteractions
@@ -50,7 +50,7 @@ noncomputable def quantumDilog (q x : ℝ) : ℝ :=
 
 /-- The binding energy coefficient is w_λ × m_e for each channel.
     No fitted parameters: w_λ from Wedderburn, m_e from CODATA. -/
--- Ref: [manuscript] Ch 11 §8 / tower-binding-energy
+-- Ref: [leitner2026] Ch 11 §8 / tower-binding-energy
 noncomputable def bindingCoeff (q m_e : ℝ) (hq : q > 1) (channel : Fin 3) : ℝ :=
   match channel with
   | 0 => wedderburnSym q hq * m_e   -- symmetric
@@ -60,7 +60,7 @@ noncomputable def bindingCoeff (q m_e : ℝ) (hq : q > 1) (channel : Fin 3) : �
 /-- The binding energy from the 3-channel tower.
     B = Σ_λ w_λ m_e Σ_i ln|Φ_q(V̂_i^λ)|
     where the sum over i runs over generators and λ over channels. -/
--- Ref: [manuscript] Ch 11 §8 / tower-binding-energy
+-- Ref: [leitner2026] Ch 11 §8 / tower-binding-energy
 noncomputable def towerBinding (q m_e : ℝ) (hq : q > 1)
     (n_gen : ℕ) (V : Fin 3 → Fin n_gen → ℝ) : ℝ :=
   ∑ lam : Fin 3, bindingCoeff q m_e hq lam *

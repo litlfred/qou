@@ -2,50 +2,60 @@
  "_schema": "library-summary/v1",
  "doc_id": "arxiv-1412.4229v4",
  "source_sha256": "248d6a1e28a76a94",
- "brief": "THE SQUARING OPERATION FOR COMMUTATIVE DG RINGS AMNON YEKUTIELI — Let A → B be a homomorphism of commutative rings.",
- "extended": "**THE SQUARING OPERATION FOR COMMUTATIVE DG RINGS AMNON YEKUTIELI**\n\n44 pp, 8 sections.\n\n**Abstract.** Let A → B be a homomorphism of commutative rings. Thesquar- ing operationis a functorSqB/Afrom the derived categoryD(B) of complexes of B-modules into itself. This operation is needed for the deﬁnition ofrigid complexes(inthesenseofVandenBergh), thatinturnleadstoanewapproach to Grothendieck duality for rings, schemes and even DM stacks. In our paper with J.J. Zhang from 2008 we introduced the squaring oper- ation, and explored some of its properties. Unfortunately some of the proofs in that paper had severe gaps in them. In the present paper we reproduce the construction of the squaring opera- tion. This is done in a more general context than in the ﬁrst paper: here we consider a homomorphism A → B of commutative DG rings. Our ﬁrst main result is thatthe square SqB/A(M ) of a DG B-module M is independent of the resolutions used to present it.\n\n**Outline.** 0 Introduction; 2 Resolutions of DG Modules; 3 Central Pairs of DG Rings and their Resoluti; 4 DG Ring Homotopies; 5 Pairs of DG Modules, Compound Resolutions, a; 6 The Rectangle Operation; 7 The Squaring Operation; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 0.3.3: Letw/v :B′/A′→B/A be a morphism\n- Theorem 0.3.4: LetA→B be a homomorphism of commu-\n- Theorem 3.2: ] establishes the rectangle operation in the case whenA→B is a\n- Theorem 0.3.3: We do not know whether the methods of [AILN] can be adapted\n- Theorem 3.22: , we can ﬁnd a homomorphism˜w : ˜B′→˜B that respects all other\n- Theorem 4.3: LetA be a commutative DG ring, and letu :A→B be a central ho-",
+ "brief": "THE SQUARING OPERATION FOR COMMUTATIVE DG RINGS — Let A →B be a homomorphism of commutative rings.",
+ "extended": "**THE SQUARING OPERATION FOR COMMUTATIVE DG RINGS**\n\n*AMNON YEKUTIELI*\n\n44 pp, 10 sections.\n\n**Abstract.** Let A →B be a homomorphism of commutative rings. The squar- ing operation is a functor SqB/A from the derived category D(B) of complexes of B-modules into itself. This operation is needed for the deﬁnition of rigid complexes (in the sense of Van den Bergh), that in turn leads to a new approach to Grothendieck duality for rings, schemes and even DM stacks. In our paper with J.J. Zhang from 2008 we introduced the squaring oper- ation, and explored some of its properties. Unfortunately some of the proofs in that paper had severe gaps in them. In the present paper we reproduce the construction of the squaring opera- tion. This is done in a more general context than in the ﬁrst paper: here we consider a homomorphism A →B of commutative DG rings. Our ﬁrst main result is that the square SqB/A(M) of a DG B-module M is independent of the resolutions used to present it.\n\n**Outline.** Front matter; 0 Introduction; 1 Some Facts on DG Rings and Modules; 2 Resolutions of DG Modules; 3 Central Pairs of DG Rings and their Resoluti; 4 DG Ring Homotopies; 5 Pairs of DG Modules, Compound Resolutions, a; 6 The Rectangle Operation; 7 The Squaring Operation; References",
  "tokens": {
-  "brief": 28,
-  "extended": 414
+  "brief": 24,
+  "extended": 318
  },
  "sections": [
   {
-   "id": "sec-000-0-introduction",
-   "title": "Introduction",
-   "pages": "1-12"
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
   },
   {
-   "id": "sec-001-2-resolutions-of-dg-modules",
+   "id": "sec-000-0-introduction",
+   "title": "Introduction",
+   "pages": "1-7"
+  },
+  {
+   "id": "sec-001-1-some-facts-on-dg-rings-and-modules",
+   "title": "Some Facts on DG Rings and Modules",
+   "pages": "7-12"
+  },
+  {
+   "id": "sec-002-2-resolutions-of-dg-modules",
    "title": "Resolutions of DG Modules",
    "pages": "12-16"
   },
   {
-   "id": "sec-002-3-central-pairs-of-dg-rings-and-their-resolution",
+   "id": "sec-003-3-central-pairs-of-dg-rings-and-their-resolution",
    "title": "Central Pairs of DG Rings and their Resolutions",
    "pages": "16-23"
   },
   {
-   "id": "sec-003-4-dg-ring-homotopies",
+   "id": "sec-004-4-dg-ring-homotopies",
    "title": "DG Ring Homotopies",
    "pages": "23-26"
   },
   {
-   "id": "sec-004-5-pairs-of-dg-modules-compound-resolutions-and-r",
+   "id": "sec-005-5-pairs-of-dg-modules-compound-resolutions-and-r",
    "title": "Pairs of DG Modules, Compound Resolutions, and Rectangles",
    "pages": "26-32"
   },
   {
-   "id": "sec-005-6-the-rectangle-operation",
+   "id": "sec-006-6-the-rectangle-operation",
    "title": "The Rectangle Operation",
-   "pages": "32-37"
+   "pages": "32-38"
   },
   {
-   "id": "sec-006-7-the-squaring-operation",
+   "id": "sec-007-7-the-squaring-operation",
    "title": "The Squaring Operation",
-   "pages": "37-43"
+   "pages": "38-43"
   },
   {
-   "id": "sec-007-references",
+   "id": "sec-008-references",
    "title": "References",
    "pages": "43-44"
   }
@@ -54,8 +64,7 @@
   "kind": "extractive",
   "from": [
    "abstract",
-   "section-titles",
-   "candidates"
+   "section-titles"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }

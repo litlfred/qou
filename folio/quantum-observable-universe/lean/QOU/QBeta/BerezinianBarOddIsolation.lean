@@ -20,7 +20,7 @@ diagonal mass drops out of the bar-odd (decay) face exactly.
 (`q_cubic = C1` stays the anti-fit-gated open wall, PR #4140). §7c: generic `CommRing`,
 abstract `σ : R →+* R`, no `ℝ`. Sorry-free. No fit; nothing wired.
 
--- Ref: [manuscript] docs/audits/2026-07-31-berezinian-selfadjoint-crossterm-bar-even.md
+-- Ref: [leitner2026] docs/audits/2026-07-31-berezinian-selfadjoint-crossterm-bar-even.md
 -/
 import Mathlib.Algebra.Ring.Hom.Defs
 import Mathlib.Tactic.Ring

@@ -9,13 +9,18 @@
   "@type": [
     "doco:Section"
   ],
-  "title": "Arithmetic groups",
-  "pageStart": 32,
-  "pageEnd": 36,
+  "title": "Factors of the Jacobian",
+  "pageStart": 36,
+  "pageEnd": 40,
   "contains": [
-    "library/bn/blocks/prose-sec-007"
+    "library/bn/blocks/prose-sec-007",
+    "library/bn/blocks/thm-sec-007-01",
+    "library/bn/blocks/cor-sec-007-02",
+    "library/bn/blocks/thm-sec-007-03",
+    "library/bn/blocks/rem-sec-007-04",
+    "library/bn/blocks/rem-sec-007-05"
   ],
-  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/bn",
-  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/bn",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/bn/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/bn/manifest.jsonld",
   "provenance": "ingested"
 }

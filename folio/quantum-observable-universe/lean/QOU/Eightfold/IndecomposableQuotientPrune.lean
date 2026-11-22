@@ -54,8 +54,8 @@ It says nothing about the **coproduct** route (A, `qou-jopk`): `Δ_q`'s `2 = 2+0
 split is not a product of two degree-1 elements, so this theorem does not touch
 it.
 
--- Ref: [manuscript] bean `qou-ox7v`, epic `qou-2q85`
--- Ref: [manuscript] `appendix-surreals/k-theory-period-rosetta.md` (the `ind` gloss)
+-- Ref: [leitner2026] bean `qou-ox7v`, epic `qou-2q85`
+-- Ref: [leitner2026] `appendix-surreals/k-theory-period-rosetta.md` (the `ind` gloss)
 -/
 
 namespace QOU.Eightfold.IndecomposableQuotient

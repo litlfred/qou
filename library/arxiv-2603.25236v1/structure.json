@@ -8,7 +8,7 @@
   "pages": 8,
   "text_source": "embedded",
   "extractor": "pymupdf",
-  "mtime": "2026-10-10T13:07:22Z",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
   "mimetype_source": "magic-bytes"
  },
@@ -25,7 +25,7 @@
   "title_lines": [
    "A Concentration of Measure Phenomenon in"
   ],
-  "abstract": "We demonstrate that the pushforward of the product of Haar measures by the lattice Yang-Mills action concentrates as a Gaussian. It is also sketched how using this fact, one can recover the strong-coupling expan- sion. The aim of this note is to explore the concentration of measure phenomenon [1] in the context of lattice Yang-Mills theory. We shall see below that while this phenomenon does indeed manifest in this setting, it does not allow us to go beyond what is already known by using other methods. This is due to the fact that, in a certain sense which will become clear below, measure concentration and action minimization work against each other. Nevertheless, the theorem demonstrated below, even though it does not lead to new results in the current setting, is sufficiently interesting and instructive to be presented as the same methods can be (and in fact are) more successful in other situations. Let us begin by describing our setup. We shall deal with the Euclidean, lattice Yang-Mills theory in D dimensions with periodic boundary conditions. For concreteness, we work with the U(N) group, but essentially everything below can be trivially adapted to the other groups of physical interest. The lattice sites are labelled by x. The positive edge directions are labelled by greek letters. The notation x+ \u00b5 stands for the lattice site which is displaced from x one step in the direction defined by \u00b5. The number of lattice sites is denoted by K. We attach to every edge at each site an element Ux,\u00b5 \u2208U(N), and are interested in performing the following integral Z = \u02c6 dUe\u2212\u03b2S(U) = \u02c6 Y x,\u00b5 dUx,\u00b5 exp \" 2N 2 \u03bb X {\u00b5,\u03bd} 1 N \u211c \u0010 Tr \u0000U \u2020 x,\u03bdU \u2020 x+\u03bd,\u00b5Ux+\u00b5,\u03bdUx,\u00b5 \u0001\u0011# , where the sum goes over all (unordered) pairs of \u00b5 and \u03bd such that \u00b5\u0338 = \u03bd, or equivalently, over all plaquettes of the lattice. The dU\u2019s stand for the Haar measures and \u03bb is the \u2019t Hooft coupling. We want to find the asymptotic of the expression above in the limit N \u2192\u221e while holding \u03bb fixed. We shall do so by pushing for",
+  "abstract": "We demonstrate that the pushforward of the product of Haar measures by the lattice Yang-Mills action concentrates as a Gaussian. It is also sketched how using this fact, one can recover the strong-coupling expan- sion. The aim of this note is to explore the concentration of measure phenomenon [1] in the context of lattice Yang-Mills theory. We shall see below that while this phenomenon does indeed manifest in this setting, it does not allow us to go beyond what is already known by using other methods. This is due to the fact that, in a certain sense which will become clear below, measure concentration and action minimization work against each other. Nevertheless, the theorem demonstrated below, even though it does not lead to new results in the current setting, is sufficiently interesting and instructive to be presented as the same methods can be (and in fact are) more successful in other situations. Let us begin by describing our setup. We shall deal with the Euclidean, lattice Yang-Mills theory in D dimensions with periodic boundary conditions. For concreteness, we work with the U(N) group, but essentially everything below can be trivially adapted to the other groups of physical interest. The lattice sites are labelled by x. The positive edge directions are labelled by greek letters. The notation x+ µ stands for the lattice site which is displaced from x one step in the direction defined by µ. The number of lattice sites is denoted by K. We attach to every edge at each site an element Ux,µ ∈U(N), and are interested in performing the following integral Z = ˆ dUe−βS(U) = ˆ Y x,µ dUx,µ exp \" 2N 2 λ X {µ,ν} 1 N ℜ \u0010 Tr \u0000U † x,νU † x+ν,µUx+µ,νUx,µ \u0001\u0011# , where the sum goes over all (unordered) pairs of µ and ν such that µ̸ = ν, or equivalently, over all plaquettes of the lattice. The dU’s stand for the Haar measures and λ is the ’t Hooft coupling. We want to find the asymptotic of the expression above in the limit N →∞ while holding λ fixed. We shall do so by pushing for",
   "docinfo": {
    "Title": "A Concentration of Measure Phenomenon in Lattice Yang-Mills",
    "Author": "Tamer Tlas",
@@ -217,6 +217,7 @@
    "items": []
   },
   "sections": 2,
-  "chars_total": 19069
+  "chars_total": 19069,
+  "furniture_lines_stripped": 0
  }
 }

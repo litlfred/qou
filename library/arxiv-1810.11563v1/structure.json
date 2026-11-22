@@ -6,10 +6,12 @@
   "sha256": "8e17ac8b91bc3cc9fc90ff43301f70369036431cfa8679a27b7a408f4bcd9d93",
   "bytes": 4141039,
   "pages": 84,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:52Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,20 +22,28 @@
   },
   "doi": null,
   "title": "Three Lectures on Complexity and Black Holes",
-  "authors_raw": "Stanford Institute for Theoretical Physics and Department of Physics",
-  "abstract": "This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled \u201dFrom Qubits to Spacetime.\u201d The \ufb01rst lecture describes the meaning of quantum complexity, the analogy between entropy and complexity, and the second law of complexity. Lecture two reviews the connection between the second law of complexity and the interior of black holes. I discuss how \ufb01rewalls are related to periods of non-increasing complexity which typically only occur after an exponentially long time. The \ufb01nal lecture is about the thermodynamics of complexity, and \u201cuncomplexity\u201d as a resource for doing computational work. I explain the remarkable power of \u201cone clean qubit,\u201d in both computational terms and in space-time terms. The lectures can also be found online at https://static.ias.edu/pitp/2018/ node/1796.html . arXiv:1810.11563v1 [hep-th] 27 Oct 2018",
-  "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20181030003647Z",
-   "Creator": "LaTeX with hyperref package",
-   "Producer": "pdfTeX-1.40.17",
-   "Title": ""
-  },
+  "authors_raw": "Leonard Susskind",
   "title_lines": [
-   "Three Lectures on Complexity and Black Holes",
-   "Leonard Susskind"
+   "Three Lectures on Complexity and Black Holes"
   ],
-  "title_prev": "Three Lectures on Complexity and Black Holes Leonard Susskind"
+  "abstract": "This is the written version of three lectures on complexity and black holes given at PiTP 2018 summer program entitled ”From Qubits to Spacetime.” The ﬁrst lecture describes the meaning of quantum complexity, the analogy between entropy and complexity, and the second law of complexity. Lecture two reviews the connection between the second law of complexity and the interior of black holes. I discuss how ﬁrewalls are related to periods of non-increasing complexity which typically only occur after an exponentially long time. The ﬁnal lecture is about the thermodynamics of complexity, and “uncomplexity” as a resource for doing computational work. I explain the remarkable power of “one clean qubit,” in both computational terms and in space-time terms. The lectures can also be found online at https://static.ias.edu/pitp/2018/ node/1796.html . arXiv:1810.11563v1 [hep-th] 27 Oct 2018",
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.17",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20181030003647Z"
+  },
+  "title_raw": "Three Lectures on Complexity and Black Holes",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Three Lectures on Complexity and Black Holes",
+   "outline": "I Lecture I: Hilbert Space is Huge",
+   "text": "Three Lectures on Complexity and Black Holes",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  }
  },
  "toc": [
   {
@@ -41,806 +51,2364 @@
    "title": "I Lecture I: Hilbert Space is Huge",
    "page": 4,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Preface",
    "page": 4,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "How Huge?",
    "page": 5,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 2,
    "title": "Volume of CP(N)",
    "page": 6,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "5"
   },
   {
    "level": 2,
    "title": "Relative Complexity",
    "page": 7,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "Dual Role of Unitaries",
    "page": 9,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Volume of SU(2K)",
    "page": 10,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "9"
   },
   {
    "level": 2,
    "title": "Exploring SU(2K)",
    "page": 11,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "10"
   },
   {
    "level": 3,
    "title": "Relative Complexity of Unitaries",
    "page": 14,
    "source": "outline",
-   "number": "7.1"
+   "number": "7.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   },
   {
    "level": 3,
    "title": "Complexity is Discontinuous",
    "page": 16,
    "source": "outline",
-   "number": "7.2"
+   "number": "7.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "15"
   },
   {
    "level": 2,
    "title": "Graph Theory Perspective",
    "page": 17,
    "source": "outline",
-   "number": "8"
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "16"
   },
   {
    "level": 3,
    "title": "Collisions and Loops",
    "page": 21,
    "source": "outline",
-   "number": "8.1"
+   "number": "8.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "20"
   },
   {
    "level": 2,
    "title": "The Second Law of Quantum Complexity",
    "page": 26,
    "source": "outline",
-   "number": "9"
+   "number": "9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "25"
   },
   {
    "level": 3,
    "title": "Hamiltonian Evolution",
    "page": 30,
    "source": "outline",
-   "number": "9.1"
+   "number": "9.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "29"
   },
   {
    "level": 1,
    "title": "II Lecture II: Black Holes and the Second Law of Complexity",
    "page": 32,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "31"
   },
   {
    "level": 2,
    "title": "Preface",
    "page": 32,
    "source": "outline",
-   "number": "10"
+   "number": "10",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "31"
   },
   {
    "level": 2,
    "title": "The Black Hole-Quantum Circuit Correspondence",
    "page": 33,
    "source": "outline",
-   "number": "11"
+   "number": "11",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "32"
   },
   {
    "level": 3,
    "title": "Two Problems",
    "page": 33,
    "source": "outline",
-   "number": "11.1"
+   "number": "11.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "32"
   },
   {
    "level": 3,
    "title": "Circuits and Black Holes",
    "page": 34,
    "source": "outline",
-   "number": "11.2"
+   "number": "11.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
   },
   {
    "level": 2,
    "title": "The Growth of Wormholes",
    "page": 35,
    "source": "outline",
-   "number": "12"
+   "number": "12",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "34"
   },
   {
    "level": 3,
    "title": "Properties of Growth",
    "page": 40,
    "source": "outline",
-   "number": "12.1"
+   "number": "12.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "39"
   },
   {
    "level": 3,
    "title": "Rindler Time and CV",
    "page": 41,
    "source": "outline",
-   "number": "12.2"
+   "number": "12.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "40"
   },
   {
    "level": 2,
    "title": "Exponential Time Breakdown of GR",
    "page": 43,
    "source": "outline",
-   "number": "13"
+   "number": "13",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "42"
   },
   {
    "level": 3,
    "title": "C=V",
    "page": 44,
    "source": "outline",
-   "number": "13.1"
+   "number": "13.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "43"
   },
   {
    "level": 2,
    "title": "Precursors",
    "page": 45,
    "source": "outline",
-   "number": "14"
+   "number": "14",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "44"
   },
   {
    "level": 3,
    "title": "The Epidemic Model",
    "page": 45,
    "source": "outline",
-   "number": "14.1"
+   "number": "14.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "44"
   },
   {
    "level": 3,
    "title": "Lyapunov and Rindler",
    "page": 49,
    "source": "outline",
-   "number": "14.2"
+   "number": "14.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "48"
   },
   {
    "level": 2,
    "title": "Precursors and Black Holes",
    "page": 51,
    "source": "outline",
-   "number": "15"
+   "number": "15",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "50"
   },
   {
    "level": 3,
    "title": "Instability of White Holes",
    "page": 54,
    "source": "outline",
-   "number": "15.1"
+   "number": "15.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "53"
   },
   {
    "level": 2,
    "title": "Complexity and Firewalls",
    "page": 55,
    "source": "outline",
-   "number": "16"
+   "number": "16",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "54"
   },
   {
    "level": 3,
    "title": "Firewalls are Fragile",
    "page": 59,
    "source": "outline",
-   "number": "16.1"
+   "number": "16.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "58"
   },
   {
    "level": 3,
    "title": "What Happens After Exponential Time?",
    "page": 60,
    "source": "outline",
-   "number": "16.2"
+   "number": "16.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "59"
   },
   {
    "level": 3,
    "title": "The Fragility of Complexity Equilibrium",
    "page": 63,
    "source": "outline",
-   "number": "16.3"
+   "number": "16.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "62"
   },
   {
    "level": 2,
    "title": "Do Typical States have Firewalls?",
    "page": 64,
    "source": "outline",
-   "number": "17"
+   "number": "17",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "63"
   },
   {
    "level": 3,
    "title": "AdS Black Holes",
    "page": 64,
    "source": "outline",
-   "number": "17.1"
+   "number": "17.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "63"
   },
   {
    "level": 3,
    "title": "Evaporating Black Holes",
    "page": 65,
    "source": "outline",
-   "number": "17.2"
+   "number": "17.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "64"
   },
   {
    "level": 1,
    "title": "III Lecture III: The Thermodynamics of Complexity",
    "page": 66,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "65"
   },
   {
    "level": 2,
    "title": "Preface",
    "page": 67,
    "source": "outline",
-   "number": "18"
+   "number": "18",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "66"
   },
   {
    "level": 2,
    "title": "Negentropy",
    "page": 68,
    "source": "outline",
-   "number": "19"
+   "number": "19",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "67"
   },
   {
    "level": 2,
    "title": "Uncomplexity",
    "page": 69,
    "source": "outline",
-   "number": "20"
+   "number": "20",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "68"
   },
   {
    "level": 3,
    "title": "The Auxiliary System",
    "page": 69,
    "source": "outline",
-   "number": "20.1"
+   "number": "20.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "68"
   },
   {
    "level": 3,
    "title": "Combining Auxiliary Systems",
    "page": 70,
    "source": "outline",
-   "number": "20.2"
+   "number": "20.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "69"
   },
   {
    "level": 2,
    "title": "Uncomplexity as a Resource",
    "page": 72,
    "source": "outline",
-   "number": "21"
+   "number": "21",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "71"
   },
   {
    "level": 2,
    "title": "The Power of One Clean Qubit",
    "page": 73,
    "source": "outline",
-   "number": "22"
+   "number": "22",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "72"
   },
   {
    "level": 3,
    "title": "The Protocol",
    "page": 73,
    "source": "outline",
-   "number": "22.1"
+   "number": "22.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "72"
   },
   {
    "level": 3,
    "title": "Expending Uncomplexity and Negentropy",
    "page": 75,
    "source": "outline",
-   "number": "22.2"
+   "number": "22.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "74"
   },
   {
    "level": 2,
    "title": "Spacetime and Uncomplexity",
    "page": 76,
    "source": "outline",
-   "number": "23"
+   "number": "23",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "75"
   },
   {
    "level": 3,
    "title": "CA",
    "page": 76,
    "source": "outline",
-   "number": "23.1"
+   "number": "23.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "75"
   },
   {
    "level": 3,
    "title": "Geometric Interpretation of Uncomplexity",
    "page": 77,
    "source": "outline",
-   "number": "23.2"
+   "number": "23.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "76"
   },
   {
    "level": 1,
    "title": "IV Conclusion",
    "page": 80,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "79"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "Time ﬂows from left to right. A gate acts on an incoming state of two-qubits to give an outgoing state",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "k-local all-to-all circuit",
+   "page": 12,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "Spatially local circuit",
+   "page": 12,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "Standard circuit architecture. Note that in each step the gates all commute because they act on non-overlapping qubits",
+   "page": 13,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "12"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "The auxiliary system: The evolution of the unitary operator U(t) can be thought of as the motion of a classical particle moving through the group space SU(2K)",
+   "page": 14,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "13"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "Relative-C",
+   "page": 15,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "14"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "Vertex with d = 8",
+   "page": 18,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "17"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "Regular tree with degree 8, depth 2",
+   "page": 19,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "18"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "Two views of the circuit tree. On the left is an abstract decision tree. The complexity of the unitary leaf grows linearly with the number of steps from the identity at the center. Relative complexity is proportional to the number of steps between leaves",
+   "page": 21,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "20"
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "Two paths collide on the same epsilon-ball",
+   "page": 22,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "21"
+  },
+  {
+   "kind": "figure",
+   "number": "11",
+   "title": "Regular tree with degree 3",
+   "page": 23,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "22"
+  },
+  {
+   "kind": "figure",
+   "number": "12",
+   "title": "Graph ceases being a tree and doubles back. Since a group-space is homogeneous the structure must look the same from every vertex. The shortest loops (girth of graph) is of order 4K. Thus the red loop is too short. The loops must look more like the blue loop",
+   "page": 24,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "23"
+  },
+  {
+   "kind": "figure",
+   "number": "13",
+   "title": "50-vertex, (almost) regular d = 4 expander. Generated by some AI optimization protocol",
+   "page": 25,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "24"
+  },
+  {
+   "kind": "figure",
+   "number": "14",
+   "title": "120 vertex, regular d = 4 Ramanujan-expander. Quoting Donetti, et al.: “Some remarks on its topological properties are in order. The average distance 3.714 is relatively small (i.e. one reaches any of the 120 nodes starting from any arbitrary origin in less than four steps, on average.” Note: log 12",
+   "page": 26,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "25"
+  },
+  {
+   "kind": "figure",
+   "number": "15",
+   "title": "Evolution of complexity with time. The ragged red curve is the evolution for a speciﬁc instance of an ensemble. The smooth curve is the ensemble average",
+   "page": 29,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "28"
+  },
+  {
+   "kind": "figure",
+   "number": "16",
+   "title": "The left panel shows a (red) trajectory beginning at the identity and proceeding outward along toward greater complexity",
+   "page": 29,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "28"
+  },
+  {
+   "kind": "figure",
+   "number": "17",
+   "title": "Penrose diagram for an AdS eternal black hole. The diagram is foliated by maximal slices. The darker blue portions of the slices represent the wormhole behind the horizons. The volume of the slices “bounces,” decreasing in the lower part of the diagram, and increasing in the upper part",
+   "page": 36,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "35"
+  },
+  {
+   "kind": "figure",
+   "number": "18",
+   "title": "One sided AdS black hole formed by collapse",
+   "page": 38,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "37"
+  },
+  {
+   "kind": "figure",
+   "number": "19",
+   "title": "One sided AdS black hole foliated by maximal slices. The dark portions of the slices represents the region behind the horizon, i.e., the bridge to nowhere",
+   "page": 39,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "38"
+  },
+  {
+   "kind": "figure",
+   "number": "20",
+   "title": "The grey areas are not covered by the maximal-slice foliation",
+   "page": 40,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "39"
+  },
+  {
+   "kind": "figure",
+   "number": "22",
+   "title": "Circuit for a precursor",
+   "page": 46,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": "45"
+  },
+  {
+   "kind": "figure",
+   "number": "23",
+   "title": "Each infected (blue) qubit infects each each qubit that it interacts with. The epidemic grows until all qubits are infected",
+   "page": 47,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": "46"
+  },
+  {
+   "kind": "figure",
+   "number": "24",
+   "title": "Uninfected gates cancel with their mirror images",
+   "page": 47,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": "46"
+  },
+  {
+   "kind": "figure",
+   "number": "25",
+   "title": "size as a function of time",
+   "page": 50,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": "49"
+  },
+  {
+   "kind": "figure",
+   "number": "26",
+   "title": "as a function of time",
+   "page": 50,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": "49"
+  },
+  {
+   "kind": "figure",
+   "number": "31",
+   "title": "An initially super-Planckian shockwave will eventually separate from the Planckian region and fall into the singularity. This occurs just at the Eddington-Finkelstein time when the complexity stops decreasing",
+   "page": 58,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": "57"
+  },
+  {
+   "kind": "figure",
+   "number": "32",
+   "title": "An intially super-Planckian shockwave will be “kicked” into the singularity by a single thermal quantum. The green region is the Plankian region",
+   "page": 59,
+   "confidence": 0.6,
+   "evidence": [
+    "graphic"
+   ],
+   "page_label": "58"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "3",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "4",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "5",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "6",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "8",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "9",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "10",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "13",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "15",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "16",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "17",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "18",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "19",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "20",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "21",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "22",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "23",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "24",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "25",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "26",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "27",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "28",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "29",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "30",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "31",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "32",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "33",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "34",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "35",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "36",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "37",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "38",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "39",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "40",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "41",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "42",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "43",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "44",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "45",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "46",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "47",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "48",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "49",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "50",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "51",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "52",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "53",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "54",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "55",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "56",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "57",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "58",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "59",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "60",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "61",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": "62",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 64,
+   "label": "63",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 65,
+   "label": "64",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 66,
+   "label": "65",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 67,
+   "label": "66",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 68,
+   "label": "67",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 69,
+   "label": "68",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 70,
+   "label": "69",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 71,
+   "label": "70",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 72,
+   "label": "71",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 73,
+   "label": "72",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 74,
+   "label": "73",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 75,
+   "label": "74",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 76,
+   "label": "75",
+   "source": "printed",
+   "confidence": 1.0,
+   "evidence": [
+    "printed",
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 77,
+   "label": "76",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 78,
+   "label": "77",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 79,
+   "label": "78",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 80,
+   "label": "79",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 81,
+   "label": "80",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 82,
+   "label": "81",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 83,
+   "label": "82",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 84,
+   "label": "83",
+   "source": "printed",
+   "confidence": 0.85,
+   "evidence": [
+    "printed",
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
   {
-   "id": "sec-000-1-preface",
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 3892,
+   "n_words": 1072,
+   "label_start": "1",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-000-i-lecture-i-hilbert-space-is-huge",
+   "number": null,
+   "title": "I Lecture I: Hilbert Space is Huge",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 32,
+   "n_words": 6,
+   "label_start": "3",
+   "label_end": "3"
+  },
+  {
+   "id": "sec-001-1-preface",
    "number": "1",
    "title": "Preface",
    "level": 2,
-   "page_start": 3,
+   "page_start": 4,
    "page_end": 5,
-   "n_chars": 4251,
-   "n_words": 821
+   "n_chars": 3538,
+   "n_words": 594,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
-   "id": "sec-001-2-how-huge",
+   "id": "sec-002-2-how-huge",
    "number": "2",
    "title": "How Huge?",
    "level": 2,
    "page_start": 5,
    "page_end": 6,
-   "n_chars": 1041,
-   "n_words": 200
+   "n_chars": 1054,
+   "n_words": 205,
+   "label_start": "4",
+   "label_end": "5"
   },
   {
-   "id": "sec-002-3-volume-of-cpn",
+   "id": "sec-003-3-volume-of-cpn",
    "number": "3",
    "title": "Volume of CP(N)",
    "level": 2,
    "page_start": 6,
    "page_end": 7,
-   "n_chars": 1606,
-   "n_words": 313
+   "n_chars": 1617,
+   "n_words": 311,
+   "label_start": "5",
+   "label_end": "6"
   },
   {
-   "id": "sec-003-4-relative-complexity",
+   "id": "sec-004-4-relative-complexity",
    "number": "4",
    "title": "Relative Complexity",
    "level": 2,
    "page_start": 7,
    "page_end": 9,
-   "n_chars": 4253,
-   "n_words": 739
+   "n_chars": 4265,
+   "n_words": 733,
+   "label_start": "6",
+   "label_end": "8"
   },
   {
-   "id": "sec-004-5-dual-role-of-unitaries",
+   "id": "sec-005-5-dual-role-of-unitaries",
    "number": "5",
    "title": "Dual Role of Unitaries",
    "level": 2,
    "page_start": 9,
-   "page_end": 14,
-   "n_chars": 5632,
-   "n_words": 1018
+   "page_end": 10,
+   "n_chars": 1260,
+   "n_words": 225,
+   "label_start": "8",
+   "label_end": "9"
   },
   {
-   "id": "sec-005-71-relative-complexity-of-unitaries",
+   "id": "sec-006-6-volume-of-su2k",
+   "number": "6",
+   "title": "Volume of SU(2K)",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 1133,
+   "n_words": 203,
+   "label_start": "9",
+   "label_end": "10"
+  },
+  {
+   "id": "sec-007-7-exploring-su2k",
+   "number": "7",
+   "title": "Exploring SU(2K)",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 14,
+   "n_chars": 3239,
+   "n_words": 575,
+   "label_start": "10",
+   "label_end": "13"
+  },
+  {
+   "id": "sec-008-71-relative-complexity-of-unitaries",
    "number": "7.1",
    "title": "Relative Complexity of Unitaries",
    "level": 3,
    "page_start": 14,
    "page_end": 16,
-   "n_chars": 2308,
-   "n_words": 411
+   "n_chars": 2363,
+   "n_words": 437,
+   "label_start": "13",
+   "label_end": "15"
   },
   {
-   "id": "sec-006-72-complexity-is-discontinuous",
+   "id": "sec-009-72-complexity-is-discontinuous",
    "number": "7.2",
    "title": "Complexity is Discontinuous",
    "level": 3,
    "page_start": 16,
    "page_end": 17,
-   "n_chars": 1488,
-   "n_words": 235
+   "n_chars": 1516,
+   "n_words": 238,
+   "label_start": "15",
+   "label_end": "16"
   },
   {
-   "id": "sec-007-8-graph-theory-perspective",
+   "id": "sec-010-8-graph-theory-perspective",
    "number": "8",
    "title": "Graph Theory Perspective",
    "level": 2,
    "page_start": 17,
    "page_end": 21,
-   "n_chars": 4982,
-   "n_words": 874
+   "n_chars": 5006,
+   "n_words": 876,
+   "label_start": "16",
+   "label_end": "20"
   },
   {
-   "id": "sec-008-81-collisions-and-loops",
+   "id": "sec-011-81-collisions-and-loops",
    "number": "8.1",
    "title": "Collisions and Loops",
    "level": 3,
    "page_start": 21,
    "page_end": 26,
-   "n_chars": 5301,
-   "n_words": 935
+   "n_chars": 5315,
+   "n_words": 931,
+   "label_start": "20",
+   "label_end": "25"
   },
   {
-   "id": "sec-009-9-the-second-law-of-quantum-complexity",
+   "id": "sec-012-9-the-second-law-of-quantum-complexity",
    "number": "9",
    "title": "The Second Law of Quantum Complexity",
    "level": 2,
    "page_start": 26,
    "page_end": 30,
-   "n_chars": 7550,
-   "n_words": 1262
+   "n_chars": 7595,
+   "n_words": 1276,
+   "label_start": "25",
+   "label_end": "29"
   },
   {
-   "id": "sec-010-91-hamiltonian-evolution",
+   "id": "sec-013-91-hamiltonian-evolution",
    "number": "9.1",
    "title": "Hamiltonian Evolution",
    "level": 3,
    "page_start": 30,
    "page_end": 32,
-   "n_chars": 2350,
-   "n_words": 423
+   "n_chars": 2307,
+   "n_words": 413,
+   "label_start": "29",
+   "label_end": "31"
   },
   {
-   "id": "sec-011-10-preface",
+   "id": "sec-014-ii-lecture-ii-black-holes-and-the-second-law-of",
+   "number": null,
+   "title": "II Lecture II: Black Holes and the Second Law of Complexity",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 32,
+   "n_chars": 56,
+   "n_words": 10,
+   "label_start": "31",
+   "label_end": "31"
+  },
+  {
+   "id": "sec-015-10-preface",
    "number": "10",
    "title": "Preface",
    "level": 2,
    "page_start": 32,
    "page_end": 33,
-   "n_chars": 1300,
-   "n_words": 219
+   "n_chars": 1308,
+   "n_words": 220,
+   "label_start": "31",
+   "label_end": "32"
   },
   {
-   "id": "sec-012-11-the-black-hole-quantum-circuit-correspondence",
+   "id": "sec-016-11-the-black-hole-quantum-circuit-correspondence",
    "number": "11",
    "title": "The Black Hole-Quantum Circuit Correspondence",
    "level": 2,
    "page_start": 33,
    "page_end": 33,
-   "n_chars": 1349,
-   "n_words": 238
+   "n_chars": 1397,
+   "n_words": 245,
+   "label_start": "32",
+   "label_end": "32"
   },
   {
-   "id": "sec-013-111-two-problems",
+   "id": "sec-017-111-two-problems",
    "number": "11.1",
    "title": "Two Problems",
    "level": 3,
    "page_start": 33,
    "page_end": 34,
-   "n_chars": 2091,
-   "n_words": 374
+   "n_chars": 2104,
+   "n_words": 376,
+   "label_start": "32",
+   "label_end": "33"
   },
   {
-   "id": "sec-014-112-circuits-and-black-holes",
+   "id": "sec-018-112-circuits-and-black-holes",
    "number": "11.2",
    "title": "Circuits and Black Holes",
    "level": 3,
    "page_start": 34,
    "page_end": 35,
-   "n_chars": 1530,
-   "n_words": 266
+   "n_chars": 1556,
+   "n_words": 271,
+   "label_start": "33",
+   "label_end": "34"
   },
   {
-   "id": "sec-015-12-the-growth-of-wormholes",
+   "id": "sec-019-12-the-growth-of-wormholes",
    "number": "12",
    "title": "The Growth of Wormholes",
    "level": 2,
    "page_start": 35,
    "page_end": 40,
-   "n_chars": 6587,
-   "n_words": 1132
+   "n_chars": 6612,
+   "n_words": 1137,
+   "label_start": "34",
+   "label_end": "39"
   },
   {
-   "id": "sec-016-121-properties-of-growth",
+   "id": "sec-020-121-properties-of-growth",
    "number": "12.1",
    "title": "Properties of Growth",
    "level": 3,
    "page_start": 40,
    "page_end": 41,
-   "n_chars": 968,
-   "n_words": 175
+   "n_chars": 994,
+   "n_words": 183,
+   "label_start": "39",
+   "label_end": "40"
   },
   {
-   "id": "sec-017-122-rindler-time-and-cv",
+   "id": "sec-021-122-rindler-time-and-cv",
    "number": "12.2",
    "title": "Rindler Time and CV",
    "level": 3,
    "page_start": 41,
    "page_end": 43,
-   "n_chars": 2986,
-   "n_words": 507
+   "n_chars": 3014,
+   "n_words": 519,
+   "label_start": "40",
+   "label_end": "42"
   },
   {
-   "id": "sec-018-13-exponential-time-breakdown-of-gr",
+   "id": "sec-022-13-exponential-time-breakdown-of-gr",
    "number": "13",
    "title": "Exponential Time Breakdown of GR",
    "level": 2,
    "page_start": 43,
    "page_end": 44,
-   "n_chars": 2841,
-   "n_words": 462
+   "n_chars": 2873,
+   "n_words": 466,
+   "label_start": "42",
+   "label_end": "43"
   },
   {
-   "id": "sec-019-131-cv",
+   "id": "sec-023-131-cv",
    "number": "13.1",
    "title": "C=V",
    "level": 3,
    "page_start": 44,
    "page_end": 45,
-   "n_chars": 999,
-   "n_words": 171
+   "n_chars": 1003,
+   "n_words": 172,
+   "label_start": "43",
+   "label_end": "44"
   },
   {
-   "id": "sec-020-14-precursors",
+   "id": "sec-024-14-precursors",
    "number": "14",
    "title": "Precursors",
    "level": 2,
    "page_start": 45,
    "page_end": 45,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 10,
+   "n_words": 1,
+   "label_start": "44",
+   "label_end": "44"
   },
   {
-   "id": "sec-021-141-the-epidemic-model",
+   "id": "sec-025-141-the-epidemic-model",
    "number": "14.1",
    "title": "The Epidemic Model",
    "level": 3,
    "page_start": 45,
    "page_end": 49,
-   "n_chars": 4198,
-   "n_words": 758
+   "n_chars": 4225,
+   "n_words": 769,
+   "label_start": "44",
+   "label_end": "48"
   },
   {
-   "id": "sec-022-142-lyapunov-and-rindler",
+   "id": "sec-026-142-lyapunov-and-rindler",
    "number": "14.2",
    "title": "Lyapunov and Rindler",
    "level": 3,
    "page_start": 49,
    "page_end": 51,
-   "n_chars": 2031,
-   "n_words": 358
+   "n_chars": 2058,
+   "n_words": 367,
+   "label_start": "48",
+   "label_end": "50"
   },
   {
-   "id": "sec-023-15-precursors-and-black-holes",
+   "id": "sec-027-15-precursors-and-black-holes",
    "number": "15",
    "title": "Precursors and Black Holes",
    "level": 2,
    "page_start": 51,
    "page_end": 54,
-   "n_chars": 3478,
-   "n_words": 619
+   "n_chars": 3521,
+   "n_words": 639,
+   "label_start": "50",
+   "label_end": "53"
   },
   {
-   "id": "sec-024-151-instability-of-white-holes",
+   "id": "sec-028-151-instability-of-white-holes",
    "number": "15.1",
    "title": "Instability of White Holes",
    "level": 3,
    "page_start": 54,
    "page_end": 55,
-   "n_chars": 2347,
-   "n_words": 409
+   "n_chars": 2379,
+   "n_words": 418,
+   "label_start": "53",
+   "label_end": "54"
   },
   {
-   "id": "sec-025-16-complexity-and-firewalls",
+   "id": "sec-029-16-complexity-and-firewalls",
    "number": "16",
    "title": "Complexity and Firewalls",
    "level": 2,
    "page_start": 55,
    "page_end": 59,
-   "n_chars": 6901,
-   "n_words": 1188
+   "n_chars": 6934,
+   "n_words": 1199,
+   "label_start": "54",
+   "label_end": "58"
   },
   {
-   "id": "sec-026-161-firewalls-are-fragile",
+   "id": "sec-030-161-firewalls-are-fragile",
    "number": "16.1",
    "title": "Firewalls are Fragile",
    "level": 3,
    "page_start": 59,
    "page_end": 60,
-   "n_chars": 1968,
-   "n_words": 352
+   "n_chars": 1989,
+   "n_words": 354,
+   "label_start": "58",
+   "label_end": "59"
   },
   {
-   "id": "sec-027-162-what-happens-after-exponential-time",
+   "id": "sec-031-162-what-happens-after-exponential-time",
    "number": "16.2",
    "title": "What Happens After Exponential Time?",
    "level": 3,
    "page_start": 60,
    "page_end": 63,
-   "n_chars": 4092,
-   "n_words": 708
+   "n_chars": 4137,
+   "n_words": 721,
+   "label_start": "59",
+   "label_end": "62"
   },
   {
-   "id": "sec-028-163-the-fragility-of-complexity-equilibrium",
+   "id": "sec-032-163-the-fragility-of-complexity-equilibrium",
    "number": "16.3",
    "title": "The Fragility of Complexity Equilibrium",
    "level": 3,
    "page_start": 63,
    "page_end": 64,
-   "n_chars": 2110,
-   "n_words": 367
+   "n_chars": 2152,
+   "n_words": 374,
+   "label_start": "62",
+   "label_end": "63"
   },
   {
-   "id": "sec-029-17-do-typical-states-have-firewalls",
+   "id": "sec-033-17-do-typical-states-have-firewalls",
    "number": "17",
    "title": "Do Typical States have Firewalls?",
    "level": 2,
    "page_start": 64,
    "page_end": 64,
-   "n_chars": 194,
-   "n_words": 34
+   "n_chars": 229,
+   "n_words": 40,
+   "label_start": "63",
+   "label_end": "63"
   },
   {
-   "id": "sec-030-171-ads-black-holes",
+   "id": "sec-034-171-ads-black-holes",
    "number": "17.1",
    "title": "AdS Black Holes",
    "level": 3,
    "page_start": 64,
    "page_end": 65,
-   "n_chars": 2294,
-   "n_words": 369
+   "n_chars": 2311,
+   "n_words": 373,
+   "label_start": "63",
+   "label_end": "64"
   },
   {
-   "id": "sec-031-172-evaporating-black-holes",
+   "id": "sec-035-172-evaporating-black-holes",
    "number": "17.2",
    "title": "Evaporating Black Holes",
    "level": 3,
    "page_start": 65,
    "page_end": 67,
-   "n_chars": 2510,
-   "n_words": 429
+   "n_chars": 2487,
+   "n_words": 432,
+   "label_start": "64",
+   "label_end": "66"
   },
   {
-   "id": "sec-032-18-preface",
+   "id": "sec-036-iii-lecture-iii-the-thermodynamics-of-complexity",
+   "number": null,
+   "title": "III Lecture III: The Thermodynamics of Complexity",
+   "level": 1,
+   "page_start": 67,
+   "page_end": 67,
+   "n_chars": 45,
+   "n_words": 6,
+   "label_start": "66",
+   "label_end": "66"
+  },
+  {
+   "id": "sec-037-18-preface",
    "number": "18",
    "title": "Preface",
    "level": 2,
    "page_start": 67,
-   "page_end": 67,
-   "n_chars": 933,
-   "n_words": 157
+   "page_end": 68,
+   "n_chars": 2061,
+   "n_words": 357,
+   "label_start": "66",
+   "label_end": "67"
   },
   {
-   "id": "sec-033-19-negentropy",
+   "id": "sec-038-19-negentropy",
    "number": "19",
    "title": "Negentropy",
    "level": 2,
-   "page_start": 67,
+   "page_start": 68,
    "page_end": 69,
-   "n_chars": 2710,
-   "n_words": 472
+   "n_chars": 1580,
+   "n_words": 270,
+   "label_start": "67",
+   "label_end": "68"
   },
   {
-   "id": "sec-034-20-uncomplexity",
+   "id": "sec-039-20-uncomplexity",
    "number": "20",
    "title": "Uncomplexity",
    "level": 2,
    "page_start": 69,
    "page_end": 69,
-   "n_chars": 0,
-   "n_words": 0
+   "n_chars": 12,
+   "n_words": 1,
+   "label_start": "68",
+   "label_end": "68"
   },
   {
-   "id": "sec-035-201-the-auxiliary-system",
+   "id": "sec-040-201-the-auxiliary-system",
    "number": "20.1",
    "title": "The Auxiliary System",
    "level": 3,
    "page_start": 69,
    "page_end": 70,
-   "n_chars": 3030,
-   "n_words": 504
+   "n_chars": 3046,
+   "n_words": 502,
+   "label_start": "68",
+   "label_end": "69"
   },
   {
-   "id": "sec-036-202-combining-auxiliary-systems",
+   "id": "sec-041-202-combining-auxiliary-systems",
    "number": "20.2",
    "title": "Combining Auxiliary Systems",
    "level": 3,
    "page_start": 70,
    "page_end": 72,
-   "n_chars": 2910,
-   "n_words": 516
+   "n_chars": 2933,
+   "n_words": 514,
+   "label_start": "69",
+   "label_end": "71"
   },
   {
-   "id": "sec-037-21-uncomplexity-as-a-resource",
+   "id": "sec-042-21-uncomplexity-as-a-resource",
    "number": "21",
    "title": "Uncomplexity as a Resource",
    "level": 2,
    "page_start": 72,
    "page_end": 73,
-   "n_chars": 1849,
-   "n_words": 304
+   "n_chars": 1874,
+   "n_words": 306,
+   "label_start": "71",
+   "label_end": "72"
   },
   {
-   "id": "sec-038-22-the-power-of-one-clean-qubit",
+   "id": "sec-043-22-the-power-of-one-clean-qubit",
    "number": "22",
    "title": "The Power of One Clean Qubit",
    "level": 2,
    "page_start": 73,
    "page_end": 73,
-   "n_chars": 1973,
-   "n_words": 349
+   "n_chars": 2002,
+   "n_words": 355,
+   "label_start": "72",
+   "label_end": "72"
   },
   {
-   "id": "sec-039-221-the-protocol",
+   "id": "sec-044-221-the-protocol",
    "number": "22.1",
    "title": "The Protocol",
    "level": 3,
    "page_start": 73,
    "page_end": 75,
-   "n_chars": 1611,
-   "n_words": 320
+   "n_chars": 2112,
+   "n_words": 411,
+   "label_start": "72",
+   "label_end": "74"
   },
   {
-   "id": "sec-040-231-ca",
-   "number": "23.1",
-   "title": "CA",
-   "level": 3,
-   "page_start": 75,
-   "page_end": 75,
-   "n_chars": 416,
-   "n_words": 85
-  },
-  {
-   "id": "sec-041-222-expending-uncomplexity-and-negentropy",
+   "id": "sec-045-222-expending-uncomplexity-and-negentropy",
    "number": "22.2",
    "title": "Expending Uncomplexity and Negentropy",
    "level": 3,
    "page_start": 75,
    "page_end": 76,
-   "n_chars": 1272,
-   "n_words": 234
+   "n_chars": 397,
+   "n_words": 67,
+   "label_start": "74",
+   "label_end": "75"
   },
   {
-   "id": "sec-042-23-spacetime-and-uncomplexity",
+   "id": "sec-046-231-ca",
+   "number": "23.1",
+   "title": "CA",
+   "level": 3,
+   "page_start": 76,
+   "page_end": 76,
+   "n_chars": 821,
+   "n_words": 156,
+   "label_start": "75",
+   "label_end": "75"
+  },
+  {
+   "id": "sec-047-23-spacetime-and-uncomplexity",
    "number": "23",
    "title": "Spacetime and Uncomplexity",
    "level": 2,
    "page_start": 76,
    "page_end": 77,
-   "n_chars": 1587,
-   "n_words": 261
+   "n_chars": 1614,
+   "n_words": 264,
+   "label_start": "75",
+   "label_end": "76"
   },
   {
-   "id": "sec-043-232-geometric-interpretation-of-uncomplexity",
+   "id": "sec-048-232-geometric-interpretation-of-uncomplexity",
    "number": "23.2",
    "title": "Geometric Interpretation of Uncomplexity",
    "level": 3,
    "page_start": 77,
+   "page_end": 80,
+   "n_chars": 2284,
+   "n_words": 397,
+   "label_start": "76",
+   "label_end": "79"
+  },
+  {
+   "id": "sec-049-iv-conclusion",
+   "number": null,
+   "title": "IV Conclusion",
+   "level": 1,
+   "page_start": 80,
    "page_end": 84,
-   "n_chars": 9657,
-   "n_words": 1587
+   "n_chars": 7409,
+   "n_words": 1196,
+   "label_start": "79",
+   "label_end": "83"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 50,
-  "sections": 44,
-  "chars_total": 121484,
+  "toc_inferred_entries": 0,
+  "figure_entries": 27,
+  "figure_sequence_gaps": [
+   "figure 21",
+   "figure 27",
+   "figure 28",
+   "figure 29",
+   "figure 30"
+  ],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 0,
+    "items": []
+   },
+   "found_not_listed": {
+    "count": 1,
+    "items": [
+     "23.2 Geometric Interpretation of Uncomplexity"
+    ]
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 51,
+  "chars_total": 125671,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "All.tex",
    "tex_sections": 48,
-   "overlaid": 37,
+   "overlaid": 34,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -848,55 +2416,73 @@
    },
    "sections": [
     {
-     "id": "sec-000-1-preface",
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-i-lecture-i-hilbert-space-is-huge",
+     "title": "I Lecture I: Hilbert Space is Huge",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-1-preface",
      "title": "Preface",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.949,
+     "coverage_ratio": 0.995,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-001-2-how-huge",
+     "id": "sec-002-2-how-huge",
      "title": "How Huge?",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.984,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-002-3-volume-of-cpn",
+     "id": "sec-003-3-volume-of-cpn",
      "title": "Volume of CP(N)",
-     "prose_ratio": 1.0,
+     "prose_ratio": 0.988,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-003-4-relative-complexity",
+     "id": "sec-004-4-relative-complexity",
      "title": "Relative Complexity",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.995,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-004-5-dual-role-of-unitaries",
+     "id": "sec-005-5-dual-role-of-unitaries",
      "title": "Dual Role of Unitaries",
-     "prose_ratio": 0.992,
-     "coverage_ratio": 0.955,
-     "result": "overlaid",
-     "converter": "latex"
+     "prose_ratio": 0.311,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-005-71-relative-complexity-of-unitaries",
+     "id": "sec-006-6-volume-of-su2k",
+     "title": "Volume of SU(2K)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-7-exploring-su2k",
+     "title": "Exploring SU(2K)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-71-relative-complexity-of-unitaries",
      "title": "Relative Complexity of Unitaries",
      "prose_ratio": 0.903,
-     "coverage_ratio": 0.971,
+     "coverage_ratio": 0.962,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-006-72-complexity-is-discontinuous",
+     "id": "sec-009-72-complexity-is-discontinuous",
      "title": "Complexity is Discontinuous",
      "prose_ratio": 0.978,
      "coverage_ratio": 0.89,
@@ -904,53 +2490,58 @@
      "converter": "latex"
     },
     {
-     "id": "sec-007-8-graph-theory-perspective",
+     "id": "sec-010-8-graph-theory-perspective",
      "title": "Graph Theory Perspective",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.622,
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-008-81-collisions-and-loops",
+     "id": "sec-011-81-collisions-and-loops",
      "title": "Collisions and Loops",
      "prose_ratio": 0.982,
-     "coverage_ratio": 0.989,
+     "coverage_ratio": 0.996,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-009-9-the-second-law-of-quantum-complexity",
+     "id": "sec-012-9-the-second-law-of-quantum-complexity",
      "title": "The Second Law of Quantum Complexity",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.823,
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.997,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-010-91-hamiltonian-evolution",
+     "id": "sec-013-91-hamiltonian-evolution",
      "title": "Hamiltonian Evolution",
      "prose_ratio": 0.647,
-     "coverage_ratio": 0.938,
+     "coverage_ratio": 0.96,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-011-10-preface",
+     "id": "sec-014-ii-lecture-ii-black-holes-and-the-second-law-of",
+     "title": "II Lecture II: Black Holes and the Second Law of Complexity",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-10-preface",
      "title": "Preface",
      "prose_ratio": 0.187,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-012-11-the-black-hole-quantum-circuit-correspondence",
+     "id": "sec-016-11-the-black-hole-quantum-circuit-correspondence",
      "title": "The Black Hole-Quantum Circuit Correspondence",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.989,
+     "coverage_ratio": 0.99,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-013-111-two-problems",
+     "id": "sec-017-111-two-problems",
      "title": "Two Problems",
      "prose_ratio": 0.963,
      "coverage_ratio": 1.0,
@@ -958,31 +2549,31 @@
      "converter": "latex"
     },
     {
-     "id": "sec-014-112-circuits-and-black-holes",
+     "id": "sec-018-112-circuits-and-black-holes",
      "title": "Circuits and Black Holes",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.962,
+     "coverage_ratio": 0.953,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-015-12-the-growth-of-wormholes",
+     "id": "sec-019-12-the-growth-of-wormholes",
      "title": "The Growth of Wormholes",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.713,
+     "prose_ratio": 0.997,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-016-121-properties-of-growth",
+     "id": "sec-020-121-properties-of-growth",
      "title": "Properties of Growth",
      "prose_ratio": 0.985,
-     "coverage_ratio": 0.924,
+     "coverage_ratio": 0.94,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-017-122-rindler-time-and-cv",
+     "id": "sec-021-122-rindler-time-and-cv",
      "title": "Rindler Time and CV",
      "prose_ratio": 0.957,
      "coverage_ratio": 0.994,
@@ -990,15 +2581,15 @@
      "converter": "latex"
     },
     {
-     "id": "sec-018-13-exponential-time-breakdown-of-gr",
+     "id": "sec-022-13-exponential-time-breakdown-of-gr",
      "title": "Exponential Time Breakdown of GR",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.813,
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-019-131-cv",
+     "id": "sec-023-131-cv",
      "title": "C=V",
      "prose_ratio": 0.983,
      "coverage_ratio": 0.855,
@@ -1006,21 +2597,21 @@
      "converter": "latex"
     },
     {
-     "id": "sec-020-14-precursors",
+     "id": "sec-024-14-precursors",
      "title": "Precursors",
      "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-021-141-the-epidemic-model",
+     "id": "sec-025-141-the-epidemic-model",
      "title": "The Epidemic Model",
      "prose_ratio": 0.975,
-     "coverage_ratio": 0.97,
+     "coverage_ratio": 0.98,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-022-142-lyapunov-and-rindler",
+     "id": "sec-026-142-lyapunov-and-rindler",
      "title": "Lyapunov and Rindler",
      "prose_ratio": 0.962,
      "coverage_ratio": 0.992,
@@ -1028,31 +2619,31 @@
      "converter": "latex"
     },
     {
-     "id": "sec-023-15-precursors-and-black-holes",
+     "id": "sec-027-15-precursors-and-black-holes",
      "title": "Precursors and Black Holes",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.678,
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.985,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-024-151-instability-of-white-holes",
+     "id": "sec-028-151-instability-of-white-holes",
      "title": "Instability of White Holes",
      "prose_ratio": 0.993,
-     "coverage_ratio": 0.993,
+     "coverage_ratio": 0.987,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-025-16-complexity-and-firewalls",
+     "id": "sec-029-16-complexity-and-firewalls",
      "title": "Complexity and Firewalls",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.637,
+     "prose_ratio": 0.988,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-026-161-firewalls-are-fragile",
+     "id": "sec-030-161-firewalls-are-fragile",
      "title": "Firewalls are Fragile",
      "prose_ratio": 0.933,
      "coverage_ratio": 1.0,
@@ -1060,65 +2651,70 @@
      "converter": "latex"
     },
     {
-     "id": "sec-027-162-what-happens-after-exponential-time",
+     "id": "sec-031-162-what-happens-after-exponential-time",
      "title": "What Happens After Exponential Time?",
      "prose_ratio": 0.985,
-     "coverage_ratio": 0.955,
+     "coverage_ratio": 0.96,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-028-163-the-fragility-of-complexity-equilibrium",
+     "id": "sec-032-163-the-fragility-of-complexity-equilibrium",
      "title": "The Fragility of Complexity Equilibrium",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.991,
+     "coverage_ratio": 0.982,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-029-17-do-typical-states-have-firewalls",
+     "id": "sec-033-17-do-typical-states-have-firewalls",
      "title": "Do Typical States have Firewalls?",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.95,
+     "coverage_ratio": 0.913,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-030-171-ads-black-holes",
+     "id": "sec-034-171-ads-black-holes",
      "title": "AdS Black Holes",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.992,
-     "result": "overlaid",
-     "converter": "latex"
-    },
-    {
-     "id": "sec-031-172-evaporating-black-holes",
-     "title": "Evaporating Black Holes",
-     "prose_ratio": 0.591,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-032-18-preface",
-     "title": "Preface",
-     "prose_ratio": 0.143,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-033-19-negentropy",
-     "title": "Negentropy",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-034-20-uncomplexity",
-     "title": "Uncomplexity",
-     "prose_ratio": null,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
+     "id": "sec-035-172-evaporating-black-holes",
+     "title": "Evaporating Black Holes",
+     "prose_ratio": 0.586,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-035-201-the-auxiliary-system",
+     "id": "sec-036-iii-lecture-iii-the-thermodynamics-of-complexity",
+     "title": "III Lecture III: The Thermodynamics of Complexity",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-037-18-preface",
+     "title": "Preface",
+     "prose_ratio": 0.256,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-038-19-negentropy",
+     "title": "Negentropy",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-039-20-uncomplexity",
+     "title": "Uncomplexity",
+     "prose_ratio": null,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-040-201-the-auxiliary-system",
      "title": "The Auxiliary System",
      "prose_ratio": 1.0,
      "coverage_ratio": 0.993,
@@ -1126,15 +2722,15 @@
      "converter": "latex"
     },
     {
-     "id": "sec-036-202-combining-auxiliary-systems",
+     "id": "sec-041-202-combining-auxiliary-systems",
      "title": "Combining Auxiliary Systems",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.985,
+     "coverage_ratio": 0.992,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-037-21-uncomplexity-as-a-resource",
+     "id": "sec-042-21-uncomplexity-as-a-resource",
      "title": "Uncomplexity as a Resource",
      "prose_ratio": 1.0,
      "coverage_ratio": 1.0,
@@ -1142,49 +2738,50 @@
      "converter": "latex"
     },
     {
-     "id": "sec-038-22-the-power-of-one-clean-qubit",
+     "id": "sec-043-22-the-power-of-one-clean-qubit",
      "title": "The Power of One Clean Qubit",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.993,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-039-221-the-protocol",
+     "id": "sec-044-221-the-protocol",
      "title": "The Protocol",
-     "prose_ratio": 0.759,
-     "coverage_ratio": 0.988,
+     "prose_ratio": 0.982,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-040-231-ca",
-     "title": "CA",
-     "prose_ratio": 0.043,
-     "result": "prose gate failed \u2014 titles agree, contents do not"
-    },
-    {
-     "id": "sec-041-222-expending-uncomplexity-and-negentropy",
+     "id": "sec-045-222-expending-uncomplexity-and-negentropy",
      "title": "Expending Uncomplexity and Negentropy",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.987,
-     "result": "overlaid",
-     "converter": "latex"
+     "prose_ratio": 0.377,
+     "result": "prose gate failed — titles agree, contents do not"
     },
     {
-     "id": "sec-042-23-spacetime-and-uncomplexity",
+     "id": "sec-046-231-ca",
+     "title": "CA",
+     "prose_ratio": 0.075,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-047-23-spacetime-and-uncomplexity",
      "title": "Spacetime and Uncomplexity",
      "prose_ratio": 1.0,
-     "coverage_ratio": 0.082,
-     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+     "coverage_ratio": 0.081,
+     "result": "coverage gate failed — the LaTeX section holds only part of the PDF section"
     },
     {
-     "id": "sec-043-232-geometric-interpretation-of-uncomplexity",
+     "id": "sec-048-232-geometric-interpretation-of-uncomplexity",
      "title": "Geometric Interpretation of Uncomplexity",
-     "prose_ratio": 0.996,
-     "coverage_ratio": 0.998,
-     "result": "overlaid",
-     "converter": "latex"
+     "prose_ratio": 0.289,
+     "result": "prose gate failed — titles agree, contents do not"
+    },
+    {
+     "id": "sec-049-iv-conclusion",
+     "title": "IV Conclusion",
+     "result": "no matching \\section"
     }
    ]
   }

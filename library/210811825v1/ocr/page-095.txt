@@ -1,0 +1,54 @@
+that the first Dirichlet eigenvalue of Q is greater than the -” Dirichlet eigenvalue of the
+symmetric half cylinder with a as its core geodesic, such t. it sequal to that of Q.
+
+Proving this condition seems to be less attainable than the more direct approach described
+
+above, however, we include the alternative method in Appendix G.
+
+3.5 Second eigenspace of Bolza surface
+
+Having calculated lower bounds for the eigenvalues of each irreducible representation, we
+have done the bulk of the work to make a statement about the second eigenspace, &.
+
+We begin with the following
+
+Lemma 3.21 The dimension of E is a malltiple of 4. |
+
+Proof: Recall ips in Section 3.3. The only irreducible representations
+that can appear in this eigens — the four dimensional ones. To rule out yg,
+we will return to Proposition 3.[4. The eigenfunction corresponding to the second positive
+
+eigenvalue of the domain in Figure 3.13 has 2 nodal domains. So we have two Dirichlet
+
+boundary problems each with the same eigenvalue. The entire region has area 27, so
+unless the nodal line splits it equally, one of the nodal domains will have area less than
+am. Therefore, we can take 7 as an upper bound on the area of at least one of the nodal
+domains, and use the Faber-Krahn inequality so conclude that the eigenvalue of the nodal
+domain, and therefore the whole region, is greater than v, and therefore greater than 6.
+This means that only the four dimensional irreducible representations can appear in &.
+
+Oo
+
+Theorem 3.22 The dimension of E2(B) is 4.
+
+CL)
+
+Proof: By Lemma 3.21, we already know that the multiplicity of Ag is a multiple of 4.
+To prove that it is exactly four, we will prove that the multiplicity is less than 8. We will
+use Selberg’s trace formula in the same way as for the multiplicity bound above, using
+
+our upper bounds on the first and second positive eigenvalues. Again, we use the test
+
+h(t) = emey.
+
+so that the Fourier transform of h(t) is supported on [—4L,4L]. We choose 4L to be less
+
+function
+
+than the length of the shortest closed geodesic of the Bolza surface to avoid contribution
+
+from the length spectrum. Recall that the shortest closed geodesic has length
+
+2 arecosh (1 + v3) ~ 3.057141839.
+
+85

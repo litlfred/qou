@@ -1,0 +1,61 @@
+33 Page 12 of 47 S. Jansen, L. Kolesnikov
+
+monomers in the discrete setup of subset polymers). That is, choose a positive number ¢ > 0
+and assume that there is a designated collection E, of bounded Borel sets in R?, each of
+which is contained in some open ball of radius ¢, and a chopping map
+
+C:X—> P(E,), Xr C(X)
+
+such that for every X € X,C(X) = {Ej,..., Em} withm € Nand E),..., E, aset partition
+of X. We additionally want to assume that the topological boundary of every snippet is a
+A-null set, i.e., ACE\E°) = 0 for all E € E, (where E denotes the topological closure and
+E?® the interior of E).
+
+Let D, be the set of bounded domains D C R¢ that can be written as the union of finitely
+many disjoint snippets. The empty set D = @ is an element of D,. For two disjoint subsets
+Do, Di Cc R¢ with Do # @ and for finitely many objects Y;,..., Y; € X,k € N, set
+
+k
+(Do; Dis N,---, Vy) = (1 Wporw-40, Dinvi=21)( Il Iyry,=21): (2.16)
+
+i=l l<i<j<k
+
+Theorem 2.6 Let z(-) be a non-negative activity function. The following two conditions are
+equivalent:
+
+(i) There exists a non-negative map a : De — Rx such that for all D € Deg, the map
+HK! > F + a(DUF) is measurable and the following system of inequalities is satisfied:
+
+For all non-empty D € De with C(D) = {E\,..., Em} C Es for some m € N, there
+existsans €{1,..., m} such that—setting D' := D\ E;—we have
+a
+Y al (Eg; DY Ypjet(D'UNIUL¥) “aD 9 kgyy < eMEsUD)—a(D) _
+Bee si DS Yi,..., Z < :
+k=1
+
+(ii) T(D; z) is absolutely convergent for all D € De.
+
+Moreover, if one of the equivalent conditions (hence, both) holds true, then, for all D € Dg,
+we have
+
+ak(d¥) <a(D). (2.17)
+
+2.4 Subset Polymers
+
+Let X consist of the finite non-empty subsets of Z4 (or any other countable set), and let
+&X = P(X) be the o-algebra containing all subsets of X. The reference measure A is simply
+the counting measure. The interaction is a pure hard-core interaction as in Sect. 2.3. Notice
+that this setup is a special case of the abstract polymer setup introduced in Sect. 2.2. For a
+finite set D C Z4, define T(D; z) as in (2.14). In statistical physics T(D; z) corresponds
+to the probability that no polymer intersects D. If D is a polymer or a union of disjoint
+polymers, it corresponds to a reduced correlation function in the sense of [12].
+
+Notice how in the case of subset polymers every polymer always can be “chopped” in a
+canonical way—into a disjoint collection of monomers. Those play the role of snippets from
+the previous section—that simplifies the formulation of a criterion for absolute convergence
+of the activity expansions p (compare next result with Theorem 2.6).
+
+Theorem 2.7 Let (z(X))xex be a non-negative activity. The following two conditions are
+equivalent:
+
+D Springer

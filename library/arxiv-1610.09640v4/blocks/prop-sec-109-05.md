@@ -1,0 +1,1 @@
+Under Setup 16.3.1, let M ∈M(A, gr), and let W := Soc(M). The three conditions below are equivalent. (i) M is an m-torsion graded A-module. (ii) W is a graded-essential A-submodule of M. (iii) There is a graded-essential monomorphism ϵ : M ↣A∗⊗W in M(A, gr), that restricts to the identity on W.

@@ -1,0 +1,1809 @@
+{
+  "$schema": "folio-vector-labels/v1",
+  "doc_id": "arxiv-0706.2213v3",
+  "pages": [
+    {
+      "page": 2,
+      "rotation": 0,
+      "drawings": 20,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 1. The diagrams of J(2, n) and J(−2, n), n > 0."
+      ],
+      "labels": [
+        {
+          "text": "In the present paper we give an explicit formula of the non–abelian Reidemeister torsion",
+          "bbox": [
+            130.32,
+            116.69,
+            477.06,
+            129.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "for all twist knots. Since twist knots are particular two–bridge knots, this paper is a ﬁrst",
+          "bbox": [
+            118.32,
+            128.57,
+            477.01,
+            141.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "step in the understanding of the non–abelian Reidemeister torsion for two–bridge knots.",
+          "bbox": [
+            118.32,
+            140.57,
+            468.69,
+            153.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Organization",
+          "bbox": [
+            270.6,
+            165.53,
+            324.71,
+            178.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman",
+            "rtxsc"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The outline of the paper is as follows. We recall some properties of twist knots in Sec-",
+          "bbox": [
+            130.32,
+            183.53,
+            476.96,
+            196.82
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "tion 2. In Section 3, we give a review of the character variety of twist knots including",
+          "bbox": [
+            118.32,
+            195.41,
+            477.18,
+            208.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "remarks on parabolic representations and Riley’s method for describing the non–abelian",
+          "bbox": [
+            118.32,
+            207.41,
+            477.3,
+            220.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "part of the character variety. Next we give an explicit formula for the cusp shape of hyper-",
+          "bbox": [
+            118.32,
+            219.41,
+            477.2,
+            232.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "bolic twist knots. In Section 4, we recall the deﬁnition of the non–abelian Reidemeister",
+          "bbox": [
+            118.32,
+            231.29,
+            477.08,
+            244.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "torsion for a knot and an algebraic description of this invariant. We give formulas for the",
+          "bbox": [
+            118.32,
+            243.29,
+            476.98,
+            256.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "non–abelian Reidemeister torsion for twist knots in Section 5. In particular, we show in",
+          "bbox": [
+            118.32,
+            255.29,
+            476.94,
+            268.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Subsection 5.3 that the non–abelian Reidemeister torsion for a hyperbolic twist knot at its",
+          "bbox": [
+            118.32,
+            267.17,
+            476.92,
+            280.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "holonomy representation is expressed by using the cusp shape of the hyperbolic structure of",
+          "bbox": [
+            118.32,
+            279.17,
+            477.08,
+            292.46
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "the knot complement. The last part of the paper (Subsection 5.4) deals with some remarks",
+          "bbox": [
+            118.32,
+            291.05,
+            477.16,
+            304.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "on the behavior of the sequence of non–abelian Reidemeister torsions for twist knots at the",
+          "bbox": [
+            118.32,
+            303.05,
+            476.98,
+            316.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "holonomy indexed by the number of crossings. The appendix contains concrete examples",
+          "bbox": [
+            118.32,
+            315.05,
+            477.16,
+            328.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "and tables of the values of the non–abelian torsion for some explicit twist knots.",
+          "bbox": [
+            118.32,
+            326.93,
+            436.77,
+            340.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2. Twist knots",
+          "bbox": [
+            266.64,
+            352.01,
+            328.72,
+            365.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman",
+            "rtxsc"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Notation. According to the notation of [HS04], the twist knots are written J(±2, n), where",
+          "bbox": [
+            118.32,
+            369.89,
+            477.1,
+            389.79
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Bold",
+            "Times-Italic",
+            "Times-Roman",
+            "rtxmi",
+            "txsy"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "n is an integer. The n crossings are right–handed when n > 0 and left–handed when n < 0.",
+          "bbox": [
+            118.32,
+            381.89,
+            476.97,
+            395.18
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman",
+            "rtxmi"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "n-crossings",
+          "bbox": [
+            218.06,
+            487.82,
+            266.02,
+            499.89
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "n-crossings",
+          "bbox": [
+            326.06,
+            487.82,
+            374.02,
+            499.89
+          ],
+          "intersectsDrawing": true,
+          "fonts": [
+            "CMMI10",
+            "CMR10"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 1. The diagrams of J(2, n) and J(−2, n), n > 0.",
+          "bbox": [
+            189.12,
+            516.17,
+            406.17,
+            536.06
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman",
+            "rtxmi",
+            "rtxsc",
+            "txsy"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Here are some important facts about twist knots.",
+          "bbox": [
+            130.32,
+            551.57,
+            323.49,
+            564.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(1) By deﬁnition, if n ∈{0, 1} then J(2, n) and J(−2, −n) are the unknot. Also observe",
+          "bbox": [
+            135.24,
+            566.45,
+            477.22,
+            586.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman",
+            "rtxmi",
+            "txsy"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "that J(2, −1) and J(−2, 1) are isotopic to J(−2, −2) and J(2, 2) respectively (for",
+          "bbox": [
+            151.8,
+            578.33,
+            477.08,
+            598.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman",
+            "rtxmi",
+            "txsy"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "general cases, see below). For this reason, in all this paper, we focus on the knots",
+          "bbox": [
+            151.8,
+            590.33,
+            477.16,
+            603.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "J(±2, n) with |n| ⩾2.",
+          "bbox": [
+            152.28,
+            602.21,
+            235.41,
+            622.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman",
+            "rtxmi",
+            "txsy",
+            "txsya"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(2) If we rotate the diagram of J(2, n) by a 90 degrees angle clockwise then we get",
+          "bbox": [
+            135.24,
+            614.21,
+            477.01,
+            627.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman",
+            "rtxmi"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "a diagram of a rational knot in the sense of Conway. In rational knot notation",
+          "bbox": [
+            151.8,
+            626.21,
+            477.18,
+            639.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "1",
+          "bbox": [
+            428.88,
+            637.4,
+            432.37,
+            646.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "J(2, n), n > 0, is represented by the continued fraction [n, −2] =",
+          "bbox": [
+            152.28,
+            638.09,
+            414.34,
+            657.99
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman",
+            "rtxmi",
+            "rtxr",
+            "txsy"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "−n",
+          "bbox": [
+            461.88,
+            638.11,
+            469.81,
+            651.32
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "txsy"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "−2+1/n =",
+          "bbox": [
+            419.52,
+            640.52,
+            453.34,
+            658.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman",
+            "rtxmi",
+            "rtxr",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "2n−1.",
+          "bbox": [
+            458.4,
+            640.75,
+            476.97,
+            658.64
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman",
+            "rtxmi",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "Therefore in two–bridge knot notation, for n > 0 we have J(2, n) = b(2n−1, −n) =",
+          "bbox": [
+            151.8,
+            650.45,
+            476.98,
+            670.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman",
+            "rtxmi",
+            "rtxr",
+            "txsy"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "b(2n −1, n −1).",
+          "bbox": [
+            151.8,
+            662.45,
+            216.69,
+            682.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman",
+            "rtxmi",
+            "txsy"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Similarly, the knot J(2, −n), n > 0, is represented by the continued fraction",
+          "bbox": [
+            163.8,
+            674.45,
+            477.18,
+            694.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman",
+            "rtxmi",
+            "txsy"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "[−n, −2], therefore J(2, −n) = b(2n+1, n+1).On the other hand, the knot J(−2, n),",
+          "bbox": [
+            151.8,
+            686.33,
+            477.21,
+            706.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman",
+            "rtxmi",
+            "rtxr",
+            "txsy"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "n > 0, is b(2n + 1, n) and J(−2, −n), n > 0, is b(2n −1, n).",
+          "bbox": [
+            151.8,
+            698.33,
+            382.53,
+            718.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman",
+            "rtxmi",
+            "rtxr",
+            "txsy"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(3) Two other important observations are the following:",
+          "bbox": [
+            135.24,
+            710.21,
+            359.41,
+            723.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "• the twist knot J(2, n) is isotopic to J(−2, n −1) (see [HS04]),",
+          "bbox": [
+            161.28,
+            722.21,
+            414.45,
+            742.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman",
+            "rtxmi",
+            "txsy"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "• and J(−2, −n) is the mirror image of J(2, n).",
+          "bbox": [
+            161.28,
+            734.21,
+            347.61,
+            754.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman",
+            "rtxmi",
+            "txsy"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "2",
+          "bbox": [
+            295.92,
+            751.4,
+            299.41,
+            760.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            6.97
+          ]
+        }
+      ]
+    },
+    {
+      "page": 4,
+      "rotation": 0,
+      "drawings": 16,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 2. The Whitehead link."
+      ],
+      "labels": [
+        {
+          "text": "Remark 2.",
+          "bbox": [
+            118.32,
+            116.69,
+            159.45,
+            129.98
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(1) The knot groups Π(J(2, 2m + 1)) and Π(J(2, −2m)) are isomorphic by",
+          "bbox": [
+            181.32,
+            116.69,
+            477.06,
+            136.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman",
+            "rtxmi",
+            "rtxr",
+            "txsy"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "interchanging x and y. Algebraically, it is thus enough to consider the case of even",
+          "bbox": [
+            151.8,
+            128.57,
+            477.06,
+            141.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "twist knots (see in particular Remark 13).",
+          "bbox": [
+            151.8,
+            140.57,
+            317.13,
+            153.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(2) The genus of a twist knot is 1 ([Ada94, p. 99]). Thus, the only torus knot which is",
+          "bbox": [
+            135.24,
+            152.57,
+            476.92,
+            165.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "a twist knot is the trefoil knot 31.",
+          "bbox": [
+            151.8,
+            164.45,
+            283.17,
+            178.34
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(3) Twist knots are hyperbolic knots except the trefoil knot (see for example [Men84]).",
+          "bbox": [
+            135.24,
+            176.45,
+            477.09,
+            189.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(4) It is well known (see for example [Rol90]) that the Alexander polynomial of the",
+          "bbox": [
+            135.24,
+            188.33,
+            476.98,
+            201.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "twist knot J(2, 2m) is given by ∆J(2,2m)(t) = mt2 + (1 −2m)t + m. Moreover, using",
+          "bbox": [
+            151.8,
+            199.16,
+            477.06,
+            220.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman",
+            "rtxmi",
+            "rtxr",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the mirror image invariance of the Alexander polynomial, one has ∆J(2,2m+1)(t) =",
+          "bbox": [
+            151.8,
+            212.33,
+            476.98,
+            226.22
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman",
+            "rtxmi",
+            "rtxr"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "∆J(2,−2m)(t). Thus the Alexander polynomial becomes monic if and only if m is ±1.",
+          "bbox": [
+            151.8,
+            224.21,
+            477.09,
+            244.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman",
+            "rtxmi",
+            "rtxr",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "As a consequence, the knot J(2, 2m) is not ﬁbered (since its Alexander polynomial",
+          "bbox": [
+            151.8,
+            236.21,
+            477.25,
+            249.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman",
+            "rtxmi"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "is not monic) except for m = ±1, that is to say except for the trefoil knot and the",
+          "bbox": [
+            151.8,
+            248.21,
+            476.99,
+            268.1
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman",
+            "rtxr",
+            "txsy"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ﬁgure eight knot, which are known to be ﬁbered knots.",
+          "bbox": [
+            151.8,
+            260.09,
+            370.05,
+            273.38
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 2. The Whitehead link.",
+          "bbox": [
+            235.8,
+            386.33,
+            359.49,
+            399.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman",
+            "rtxsc"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(5) Twist knot exteriors can be obtained by surgery on the trivial component of the",
+          "bbox": [
+            135.24,
+            412.73,
+            476.98,
+            426.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Whitehead link W (see Fig. 2). More precisely, EJ(2,−2m) = W(1/m) is obtained",
+          "bbox": [
+            151.8,
+            424.73,
+            477.18,
+            444.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman",
+            "rtxmi",
+            "rtxr",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "by a surgery of slope 1/m on the trivial component of the Whitehead link W,",
+          "bbox": [
+            151.8,
+            436.61,
+            476.97,
+            456.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman",
+            "rtxmi",
+            "txsy"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "see [Rol90, p. 263] for a proof. As a consequence, twist knots are all virtually",
+          "bbox": [
+            151.8,
+            448.61,
+            476.98,
+            461.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "ﬁbered (a manifold M is said to be virtually ﬁbered if there is a ﬁnite cover of M",
+          "bbox": [
+            151.8,
+            460.61,
+            476.54,
+            473.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "that is ﬁbered), see [Lei02].",
+          "bbox": [
+            151.8,
+            472.49,
+            262.05,
+            485.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "3. On the SL2(C)-character variety and non–abelian representations",
+          "bbox": [
+            155.64,
+            497.69,
+            439.6,
+            511.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman",
+            "rtxsc",
+            "txsyb"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "3.1. Review on the SL2(C)-character variety of knot groups. Given a ﬁnitely generated",
+          "bbox": [
+            118.32,
+            515.69,
+            477.18,
+            529.58
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Bold",
+            "Times-Roman",
+            "txsyb"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "group π, we let",
+          "bbox": [
+            118.32,
+            527.57,
+            178.33,
+            540.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman",
+            "rtxmi"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "R(π; SL2(C)) = Hom(π; SL2(C))",
+          "bbox": [
+            233.52,
+            541.25,
+            361.76,
+            555.14
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman",
+            "rtxmi",
+            "rtxr",
+            "txsyb"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "denote the space of SL2(C)-representations of π. As usual, this space is endowed with",
+          "bbox": [
+            118.32,
+            556.97,
+            476.94,
+            570.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman",
+            "rtxmi",
+            "txsyb"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "the compact–open topology. Here π is assumed to have the discrete topology and the Lie",
+          "bbox": [
+            118.32,
+            568.97,
+            476.98,
+            582.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman",
+            "rtxmi"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "group SL2(C) is endowed with the usual one.",
+          "bbox": [
+            118.32,
+            580.97,
+            298.17,
+            594.86
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman",
+            "txsyb"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "A representation ρ: π →SL2(C) is called abelian if ρ(π) is an abelian subgroup of",
+          "bbox": [
+            130.32,
+            592.85,
+            477.08,
+            612.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman",
+            "rtxmi",
+            "txsy",
+            "txsyb"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "SL2(C). A representation ρ is called reducible if there exists a proper subspace U ⊂C2",
+          "bbox": [
+            118.32,
+            604.4,
+            476.41,
+            624.74
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman",
+            "rtxmi",
+            "txsy",
+            "txsyb"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "such that ρ(g)(U) ⊂U, for all g ∈π. Of course, any abelian representation is reducible",
+          "bbox": [
+            118.32,
+            616.73,
+            477.22,
+            636.62
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman",
+            "rtxmi",
+            "txsy"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(while the converse is false in general). A representation is called irreducible if it is not",
+          "bbox": [
+            118.32,
+            628.73,
+            477.13,
+            642.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "reducible.",
+          "bbox": [
+            118.32,
+            640.73,
+            158.13,
+            654.02
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "The group SL2(C) acts on the representation space R(π; SL2(C)) by conjugation, but the",
+          "bbox": [
+            130.32,
+            652.61,
+            476.99,
+            666.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman",
+            "rtxmi",
+            "txsyb"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "naive quotient R(π; SL2(C))/SL2(C) is not Hausdorﬀin general. Following [CS83], we",
+          "bbox": [
+            118.32,
+            664.61,
+            476.99,
+            678.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman",
+            "rtxmi",
+            "rtxr",
+            "txsyb"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "will focus on the character variety X(π) = X(π; SL2(C)) which is the set of characters of",
+          "bbox": [
+            118.32,
+            676.61,
+            477.08,
+            690.5
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman",
+            "rtxmi",
+            "rtxr",
+            "txsyb"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "π. Associated to the representation ρ ∈R(π; SL2(C)), its character χρ : π →C is deﬁned",
+          "bbox": [
+            118.32,
+            688.49,
+            477.06,
+            708.39
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman",
+            "rtxmi",
+            "txsy",
+            "txsyb"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "by χρ(g) = tr(ρ(g)), where tr denotes the trace of matrices. In some sense X(π) is the",
+          "bbox": [
+            118.32,
+            700.49,
+            476.99,
+            713.91
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman",
+            "rtxmi",
+            "rtxr"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "“algebraic quotient” of R(π; SL2(C)) by the action by conjugation of PSL2(C). It is well",
+          "bbox": [
+            118.32,
+            712.37,
+            477.01,
+            726.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman",
+            "rtxmi",
+            "txsyb"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "known that R(π, SL2(C)) and X(π) have the structure of complex algebraic aﬃne varieties",
+          "bbox": [
+            118.32,
+            724.37,
+            477.16,
+            738.26
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman",
+            "rtxmi",
+            "rtxr",
+            "txsyb"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(see [CS83]).",
+          "bbox": [
+            118.32,
+            736.37,
+            171.58,
+            749.66
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "4",
+          "bbox": [
+            295.92,
+            751.4,
+            299.41,
+            760.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            6.97
+          ]
+        }
+      ]
+    },
+    {
+      "page": 29,
+      "rotation": 0,
+      "drawings": 248,
+      "rasterImagesOnPage": 0,
+      "captionCandidates": [
+        "Figure 3. Graph of the cusp shape of J(2, −2m) (from Snappea [Wee99]).",
+        "Figure 4. Graph of |TJ(2,−2m)"
+      ],
+      "labels": [
+        {
+          "text": "Figure 3. Graph of the cusp shape of J(2, −2m) (from Snappea [Wee99]).",
+          "bbox": [
+            150.12,
+            372.41,
+            445.17,
+            392.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman",
+            "rtxmi",
+            "rtxsc",
+            "txsy"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "Figure 4. Graph of |TJ(2,−2m)",
+          "bbox": [
+            173.88,
+            659.24,
+            288.88,
+            680.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman",
+            "rtxmi",
+            "rtxsc",
+            "txsy",
+            "txsyb"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(ρ0)| and f(m) = C(♯J(2, −2m))3.",
+          "bbox": [
+            289.2,
+            660.32,
+            421.41,
+            680.78
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman",
+            "rtxmi",
+            "rtxr",
+            "txsy"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "λ",
+          "bbox": [
+            262.2,
+            669.14,
+            265.9,
+            676.11
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "rtxmi"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "the glued solid torus and γ its core. Using [Por97, Theorem 4.1 (iii) and Proposition 2.25]",
+          "bbox": [
+            118.32,
+            700.61,
+            477.2,
+            713.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman",
+            "rtxmi"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "we have, up to sign:",
+          "bbox": [
+            118.32,
+            712.61,
+            198.01,
+            725.9
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "TJ(2,−2m)",
+          "bbox": [
+            199.08,
+            733.76,
+            231.88,
+            747.68
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman",
+            "rtxmi",
+            "txsy",
+            "txsyb"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(55)",
+          "bbox": [
+            118.32,
+            735.41,
+            135.08,
+            748.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            9.96
+          ]
+        },
+        {
+          "text": "(ρ0) = TW",
+          "bbox": [
+            232.2,
+            735.41,
+            274.3,
+            749.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman",
+            "rtxmi",
+            "rtxr",
+            "txsy",
+            "txsyb"
+          ],
+          "sizes": [
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "(λ,µ′λ′−m)(ρ0) · TOR(V; sl2(C)ρ0, γ)",
+          "bbox": [
+            265.92,
+            735.41,
+            396.2,
+            755.3
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Italic",
+            "Times-Roman",
+            "rtxmi",
+            "txmia",
+            "txsy",
+            "txsyb"
+          ],
+          "sizes": [
+            4.98,
+            6.97,
+            9.96
+          ]
+        },
+        {
+          "text": "λ",
+          "bbox": [
+            205.2,
+            743.66,
+            208.9,
+            750.63
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "rtxmi"
+          ],
+          "sizes": [
+            6.97
+          ]
+        },
+        {
+          "text": "29",
+          "bbox": [
+            294.12,
+            751.4,
+            301.09,
+            760.7
+          ],
+          "intersectsDrawing": false,
+          "fonts": [
+            "Times-Roman"
+          ],
+          "sizes": [
+            6.97
+          ]
+        }
+      ]
+    }
+  ]
+}

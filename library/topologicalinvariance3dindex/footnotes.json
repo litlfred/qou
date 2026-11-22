@@ -1,0 +1,3179 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "topologicalinvariance3dindex",
+ "status": "determined",
+ "body_size": 12.0,
+ "footnotes": [
+  {
+   "id": "fn-p003-1",
+   "page": 3,
+   "mark": "1",
+   "text": "Here and below we will use the notation Mfor both a cusped hyperbolic 3-manifold and the corresponding compact manifold with boundary ∂M consisting of a disjoint union of tori; the intended meaning should be clear from the context.",
+   "marks": [
+    {
+     "page": 2,
+     "context": "iangulation T(a remarkable collection of Laurent series in q"
+    },
+    {
+     "page": 3,
+     "context": "I: {idealtriangulations} −→Z((q"
+    },
+    {
+     "page": 3,
+     "context": "I: {idealtriangulations} −→Z((q1/2))H"
+    },
+    {
+     "page": 3,
+     "context": "T7→IT([ϖ]) ∈Z((q"
+    },
+    {
+     "page": 3,
+     "context": "for[ϖ]∈H1(∂M; Z)."
+    }
+   ],
+   "block": "library/topologicalinvariance3dindex/blocks/prose-sec-001"
+  },
+  {
+   "id": "fn-p006-1",
+   "page": 6,
+   "mark": "2",
+   "text": "Unlikeforthe2\u00153move,itispossibletomakesenseofthe0\u00152movewhenthetwotrianglesarenot distinct. However, we will not make use of this variant in this paper.",
+   "marks": [
+    {
+     "page": 6,
+     "context": "ofdistincttriangularfacesofTthatshareanedgee"
+    }
+   ],
+   "block": "library/topologicalinvariance3dindex/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p010-1",
+   "page": 10,
+   "mark": "3",
+   "text": "Aclosedproperlyembeddedsurfaceisalmostnormalifitisaunionofnormaldiscstogetherwith precisely one exceptional piece (lying inside one tetrahedron), which is an octagon or an annulus consisting of two disjoint normal discs joined by a tube.",
+   "marks": [
+    {
+     "page": 10,
+     "context": "[Rub97],[Sto00]),thereisanalmostnormal"
+    }
+   ],
+   "block": "library/topologicalinvariance3dindex/blocks/prose-sec-006"
+  },
+  {
+   "id": "fn-p031-1",
+   "page": 31,
+   "mark": "i",
+   "text": "=1ki",
+   "marks": [
+    {
+     "page": 31,
+     "context": "i=1k"
+    }
+   ],
+   "block": "library/topologicalinvariance3dindex/blocks/prose-sec-016"
+  },
+  {
+   "id": "fn-p036-1",
+   "page": 36,
+   "mark": "4",
+   "text": "Notethatthisde\u001cnitionhasnorelationtothede\u001cnitionofaregularidealhyperbolictetrahedron,in the sense of a tetrahedron with all dihedral angles being π/3.",
+   "marks": [
+    {
+     "page": 36,
+     "context": "regular."
+    }
+   ],
+   "block": "library/topologicalinvariance3dindex/blocks/prose-sec-019"
+  },
+  {
+   "id": "fn-p049-1",
+   "page": 49,
+   "mark": "2",
+   "text": "I∆(0, 0)I∆(0, 1)I∆(1, 0)I∆(1, 1) + qI∆(−2, 0)I∆(0, 2)2I∆(2, −2) + I∆(−2, 0)I∆(0, 0)I∆(1, −1)I∆(1, 1) −q −q−1",
+   "marks": [
+    {
+     "page": 48,
+     "context": "(−1)k"
+    },
+    {
+     "page": 48,
+     "context": "2(k1−2k"
+    },
+    {
+     "page": 48,
+     "context": "(k1,k2)∈Z"
+    },
+    {
+     "page": 48,
+     "context": "I∆(−k1, k1 −k2)"
+    },
+    {
+     "page": 48,
+     "context": "(k1,k2)∈Z"
+    },
+    {
+     "page": 48,
+     "context": "2(k1−2k"
+    },
+    {
+     "page": 48,
+     "context": "(−1)k"
+    },
+    {
+     "page": 48,
+     "context": "(k1,k2)∈Z"
+    },
+    {
+     "page": 49,
+     "context": "contributetoI61(0) + O(q)4= 1 −4q + q"
+    },
+    {
+     "page": 49,
+     "context": "I∆(−2, 0)"
+    },
+    {
+     "page": 49,
+     "context": "2 I∆(−1, −1)I∆(−1, 0)I∆(0, −1)I∆(0, 0) + I∆(−1, 0)"
+    },
+    {
+     "page": 49,
+     "context": "+ I∆(−2, 0)I∆(0, −1)"
+    },
+    {
+     "page": 49,
+     "context": "2 I∆(−1, 0)I∆(0, 1)"
+    },
+    {
+     "page": 49,
+     "context": "2 I∆(−1, 1)I∆(0, −1)"
+    },
+    {
+     "page": 49,
+     "context": "∆(−2, 1)I∆(0, 1)I∆(1, −1)I∆(1, 0) + I∆(0, 0)I∆(0, 1)I∆(1, 0)"
+    }
+   ],
+   "block": "library/topologicalinvariance3dindex/blocks/prose-sec-028"
+  },
+  {
+   "id": "fn-p049-6",
+   "page": 49,
+   "mark": "1",
+   "text": "−4q + q2 + 18q3 + 22q4 + q5 −78q6 −178q7 −254q8 −188q9 + 167q10 + 855q11 + 1864q12 + 2892q13 + 3426q14 + 2583q15 −",
+   "marks": [
+    {
+     "page": 48,
+     "context": "2(k"
+    },
+    {
+     "page": 48,
+     "context": "2(k"
+    },
+    {
+     "page": 49,
+     "context": "2(−k"
+    }
+   ],
+   "block": "library/topologicalinvariance3dindex/blocks/prose-sec-028"
+  },
+  {
+   "id": "fn-p050-1",
+   "page": 50,
+   "mark": "1",
+   "text": "−4q + q2 + 16q3 + 20q4 + q5 −72q6 −156q7 −206q8 −98q9 + 275q10 + 924q11 + 1740q12 + 2370q13 + 2227q14 + 495q15 − 3485q16 −10168q17 −19045q18 −28467q19 −34899q20 −33157q21 −16460q22 + 22305q23 + 89035q24 + 185478q25 + 306146q26 + 434575q27+539981q28+575717q29+479148q30+176483q31−408854q32−1340316q33−2648389q34−4301970q35−6179555q36− 8036073q37 −9477453q38 −9942897q39 −8710346q40 −4925980q41 + 2323715q42 + 13897628q43 + 30430263q44 + 52111135q45 + 78414600q46 + 107796294q47 + 137380650q48 + 162674912q49 + 177363801q50",
+   "marks": [
+    {
+     "page": 50,
+     "context": "(−1)k"
+    },
+    {
+     "page": 50,
+     "context": "2(k"
+    }
+   ],
+   "block": "library/topologicalinvariance3dindex/blocks/prose-sec-029"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p049-2",
+   "page": 49,
+   "mark": "2",
+   "text": "I∆(−2, 0)I∆(−1, −1)I∆(−1, 0)I∆(2, −1) −q−1",
+   "block": "library/topologicalinvariance3dindex/blocks/prose-sec-028"
+  },
+  {
+   "id": "fn-p049-3",
+   "page": 49,
+   "mark": "2",
+   "text": "I∆(−1, 0)I∆(−1, 1)I∆(0, −1)I∆(2, −1) −q−1",
+   "block": "library/topologicalinvariance3dindex/blocks/prose-sec-028"
+  },
+  {
+   "id": "fn-p049-4",
+   "page": 49,
+   "mark": "2",
+   "text": "I∆(−3, 0)I∆(0, 3)2I∆(3, −3)",
+   "block": "library/topologicalinvariance3dindex/blocks/prose-sec-028"
+  },
+  {
+   "id": "fn-p049-5",
+   "page": 49,
+   "mark": "2",
+   "text": "I∆(−1, 2)I∆(0, 0)I∆(1, −1)I∆(2, −1)) −q",
+   "block": "library/topologicalinvariance3dindex/blocks/prose-sec-028"
+  },
+  {
+   "id": "fn-p049-7",
+   "page": 49,
+   "mark": "488",
+   "text": "q16 −6698q17 −16273q18 −28550q19 −41189q20 −49943q21 −48554q22 −28899q23 + 17621q24 + 98726q25 + 217819q26 + 371551q27 + 544496q28 + 707360q29 + 811832q30 + 792301q31 + 565550q32 + 40436q33 −872995q34 −2241496q35 −4087180q36 − 6354321q37 −8877834q38 −11348143q39 −13283739q40 −14014789q41 −12685231q42 −8288627q43 +266720q44 +14032731q45 + 33862808q46 + 60173861q47 + 92687285q48 + 130092845q49 + 169735693q50",
+   "block": "library/topologicalinvariance3dindex/blocks/prose-sec-028"
+  },
+  {
+   "id": "fn-p058-1",
+   "page": 58,
+   "mark": "10",
+   "text": "1112/jtopol/jts022. Vaughan F. R. Jones, Hecke algebra representations of braid groups and link polynomials, Ann. [Jon87] of Math. (2) 126 (1987), no. 2, 335\u0015388. William Jaco and J. Hyam Rubinstein, 0-e\u001ecient triangulations of 3-manifolds, J. Di\u001berential [JR03] Geom. 65 (2003), no. 1, 61\u0015168. [Kas97] R. M. Kashaev, The hyperbolic volume of knots from the quantum dilogarithm, Lett. Math. Phys.",
+   "block": "library/topologicalinvariance3dindex/blocks/prose-sec-032"
+  },
+  {
+   "id": "fn-p058-2",
+   "page": 58,
+   "mark": "39",
+   "text": "(1997), no. 3, 269\u0015275. [KLV12] Rinat M. Kashaev, Feng Luo, and Grigory Vartanov, A TQFT of Turaev-Viro type on shaped triangulations, 2012, arXiv:1210.8393, Preprint. [KR04] Ensil Kang and J. Hyam Rubinstein, Ideal triangulations of 3-manifolds. I. Spun normal surface theory, Proceedings of the Casson Fest, Geom. Topol. Monogr., vol. 7, Geom. Topol. Publ., Coventry, 2004, pp. 235\u0015265.",
+   "block": "library/topologicalinvariance3dindex/blocks/prose-sec-032"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "the cells are convex ideal polyhedra in H"
+  },
+  {
+   "page": 4,
+   "mark": "n",
+   "context": "anov-ZelevinskythatanytworegulartriangulationsofapolytopeinR"
+  },
+  {
+   "page": 4,
+   "mark": "3",
+   "context": "quenceofgeometricbistellar\u001dips;[GKZ94].UsingtheKleinmodelofH"
+  },
+  {
+   "page": 4,
+   "mark": "a",
+   "context": "Mofidealtriangulationsof"
+  },
+  {
+   "page": 5,
+   "mark": "a",
+   "context": "M,thereexists"
+  },
+  {
+   "page": 5,
+   "mark": "1",
+   "context": "•extendthedomainofthe3DindexIT([ϖ])to[ϖ]∈H1(∂M;"
+  },
+  {
+   "page": 5,
+   "mark": "3",
+   "context": "WhenM=S"
+  },
+  {
+   "page": 6,
+   "mark": "e",
+   "context": "pairwisedisjointunionofstandardEuclidean3\u0015simplices"
+  },
+  {
+   "page": 6,
+   "mark": "e",
+   "context": "k=1"
+  },
+  {
+   "page": 6,
+   "mark": "e",
+   "context": "k=1e∆kwithvertexset"
+  },
+  {
+   "page": 6,
+   "mark": "e",
+   "context": "withacollectionΦofEuclideanisometriesbetweenthe2\u0015simplicesin"
+  },
+  {
+   "page": 7,
+   "mark": "7",
+   "context": "solutionspaceC(M; T)isavectorsubspaceofR"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "solutionspaceC(M; T)isavectorsubspaceofR7"
+  },
+  {
+   "page": 7,
+   "mark": "7",
+   "context": "Thecoordinatesofx∈R"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "Thecoordinatesofx∈R7"
+  },
+  {
+   "page": 7,
+   "mark": "7",
+   "context": "AvectorinR"
+  },
+  {
+   "page": 7,
+   "mark": "n",
+   "context": "AvectorinR7"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": "(1)Ifσ"
+  },
+  {
+   "page": 8,
+   "mark": "3",
+   "context": " structures is denoted by GA(T) and is an a\u001ene subspace of R"
+  },
+  {
+   "page": 9,
+   "mark": "j",
+   "context": "jarethequadtypesinthe"
+  },
+  {
+   "page": 9,
+   "mark": "i",
+   "context": "jinthe"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "ontheliftedtriangulation"
+  },
+  {
+   "page": 11,
+   "mark": "f",
+   "context": "ontheliftedtriangulationeT,foranycoveringspace"
+  },
+  {
+   "page": 11,
+   "mark": "f",
+   "context": "orus Tin Mwhich is not a covering of the peripheral torus.If"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "liftstoanormaltorus"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "liftstoanormaltoruseTsothattheinclusionmapinducesanontomapπ"
+  },
+  {
+   "page": 11,
+   "mark": "1",
+   "context": "anormaltoruseTsothattheinclusionmapinducesanontomapπ1(eT) →π"
+  },
+  {
+   "page": 11,
+   "mark": "e",
+   "context": "We can now use"
+  },
+  {
+   "page": 11,
+   "mark": "f",
+   "context": "space"
+  },
+  {
+   "page": 12,
+   "mark": "7",
+   "context": "R"
+  },
+  {
+   "page": 12,
+   "mark": "n",
+   "context": "R7"
+  },
+  {
+   "page": 13,
+   "mark": "f",
+   "context": "an-annular)thenforany\u001cnitesheetedcoveringspace"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "the3"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "I∆(m, e)(q) ∈Z[[q"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "2"
+  },
+  {
+   "page": 16,
+   "mark": "m",
+   "context": "2e)"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 16,
+   "mark": "q",
+   "context": "(−1)n"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "and(q)"
+  },
+  {
+   "page": 16,
+   "mark": "n",
+   "context": "and(q)n=Q"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "i=1(1 −q"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "I∆(m, e + 1) + (q"
+  },
+  {
+   "page": 17,
+   "mark": "m",
+   "context": "2)"
+  },
+  {
+   "page": 17,
+   "mark": "e",
+   "context": "q"
+  },
+  {
+   "page": 17,
+   "mark": "3",
+   "context": "qe"
+  },
+  {
+   "page": 17,
+   "mark": "e",
+   "context": "I∆(m, e)I∆(m, e + c)q"
+  },
+  {
+   "page": 17,
+   "mark": "2",
+   "context": "Theregionsofpolynomialityofδ(m, e)giveafaninR"
+  },
+  {
+   "page": 17,
+   "mark": "i",
+   "context": "i),asZ"
+  },
+  {
+   "page": 18,
+   "mark": "i",
+   "context": "iat each tetrahedron using the relationZ"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "denotethevectorinZ"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "¯a"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "¯a"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "¯b"
+  },
+  {
+   "page": 18,
+   "mark": "0",
+   "context": "¯c"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "¯c"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "¯b"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "¯b"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "¯c"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "¯c"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "¯b"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "¯a"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "¯a"
+  },
+  {
+   "page": 18,
+   "mark": "l",
+   "context": "The term ¯a"
+  },
+  {
+   "page": 18,
+   "mark": "3",
+   "context": "thistetrahedron.TheentryinthevectoraϖforthistetrahedronisP"
+  },
+  {
+   "page": 18,
+   "mark": "l",
+   "context": "l=0¯a"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "j= π,thenweobtainthevectorinZ"
+  },
+  {
+   "page": 19,
+   "mark": "j",
+   "context": "jusingZ"
+  },
+  {
+   "page": 19,
+   "mark": "3",
+   "context": "Similarly,wecande\u001cne\u0010turningnumber\u0011vectors(aϖ|bϖ|cϖ) ∈Z"
+  },
+  {
+   "page": 19,
+   "mark": "2",
+   "context": "wecande\u001cne\u0010turningnumber\u0011vectors(aϖ|bϖ|cϖ) ∈Z3Nand(aϖ|bϖ) ∈Z"
+  },
+  {
+   "page": 19,
+   "mark": "k",
+   "context": "2)"
+  },
+  {
+   "page": 20,
+   "mark": "1",
+   "context": "IT: H1(∂M; Z) −→Z((q"
+  },
+  {
+   "page": 20,
+   "mark": "3",
+   "context": "knotinS"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "entriesis2ineachcolumnofC.LetE(ei)=Ei⊂Z"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "⊂Z"
+  },
+  {
+   "page": 20,
+   "mark": "2",
+   "context": "coe\u001ecientsEi∈Z"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "J∆(a, b, c)J∆(a + x, b, c) q"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "(−q"
+  },
+  {
+   "page": 24,
+   "mark": "1",
+   "context": "(−q1/2)−bI∆(b −c, a −b) (−q"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "(−q1/2)−bI∆(b −c, a −b) (−q1/2)−bI∆(b −c, a −b + x) q"
+  },
+  {
+   "page": 24,
+   "mark": "e",
+   "context": "I∆(m, e)I∆(m, e + x) q"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "2)"
+  },
+  {
+   "page": 25,
+   "mark": "j",
+   "context": "2)−¯b"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "i"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "ik"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "i"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "ik"
+  },
+  {
+   "page": 25,
+   "mark": "2",
+   "context": "ofintegerbasisfortheintegerrowspaceΛ ⊂R"
+  },
+  {
+   "page": 25,
+   "mark": "k",
+   "context": "i"
+  },
+  {
+   "page": 25,
+   "mark": "i",
+   "context": "ik"
+  },
+  {
+   "page": 26,
+   "mark": "2",
+   "context": "Toseethis,considerthelinearmapψ:RN→R"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "Toseethis,considerthelinearmapψ:RN→R2Nde\u001cnedbyψ(k"
+  },
+  {
+   "page": 26,
+   "mark": "k",
+   "context": "i"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "ik"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "ikiE"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "iE"
+  },
+  {
+   "page": 26,
+   "mark": "k",
+   "context": "iEiwhere"
+  },
+  {
+   "page": 26,
+   "mark": "k",
+   "context": "N) ∈RNthen"
+  },
+  {
+   "page": 26,
+   "mark": "c",
+   "context": "N) ∈RNthen k′= k+c where"
+  },
+  {
+   "page": 26,
+   "mark": "k",
+   "context": "i"
+  },
+  {
+   "page": 26,
+   "mark": "k",
+   "context": "i"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "ik"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "ikiE"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "i= k"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "i= ki+ schifor"
+  },
+  {
+   "page": 26,
+   "mark": "s",
+   "context": "i= ki+ schifor i = 1, . . . , Nand"
+  },
+  {
+   "page": 26,
+   "mark": "q",
+   "context": "i= ki+ schifor i = 1, . . . , Nand s ∈R.Then the term"
+  },
+  {
+   "page": 26,
+   "mark": "k",
+   "context": "i"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "ik"
+  },
+  {
+   "page": 26,
+   "mark": "h",
+   "context": "ismultipliedbyqsn"
+  },
+  {
+   "page": 26,
+   "mark": "j",
+   "context": "jJ∆(¯a"
+  },
+  {
+   "page": 26,
+   "mark": "j",
+   "context": "jJ∆(¯aj(k, ϖ),¯b"
+  },
+  {
+   "page": 26,
+   "mark": "j",
+   "context": "jJ∆(¯aj(k, ϖ),¯bj(k, ϖ), ¯c"
+  },
+  {
+   "page": 26,
+   "mark": "a",
+   "context": "jJ∆(¯aj(k, ϖ),¯bj(k, ϖ), ¯cj(k, ϖ))by"
+  },
+  {
+   "page": 26,
+   "mark": "1",
+   "context": "jJ∆(¯aj(k, ϖ),¯bj(k, ϖ), ¯cj(k, ϖ))byafactor(−q"
+  },
+  {
+   "page": 26,
+   "mark": "h",
+   "context": "jJ∆(¯aj(k, ϖ),¯bj(k, ϖ), ¯cj(k, ϖ))byafactor(−q1/2)−2sn"
+  },
+  {
+   "page": 26,
+   "mark": "k",
+   "context": "i"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "ik"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "thevector(¯aϖ|¯bϖ|¯cϖ).Thesebacktracksonlyalterthepowerof(−q"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "eithermultiplyingtheexpressionby(−q"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "orby(−q"
+  },
+  {
+   "page": 27,
+   "mark": "1",
+   "context": "looparoundavertexofthetriangulationproducesapowerof(−q"
+  },
+  {
+   "page": 27,
+   "mark": "2",
+   "context": "looparoundavertexofthetriangulationproducesapowerof(−q1/2)"
+  },
+  {
+   "page": 28,
+   "mark": "k",
+   "context": "i"
+  },
+  {
+   "page": 28,
+   "mark": "i",
+   "context": "ik"
+  },
+  {
+   "page": 29,
+   "mark": "e",
+   "context": "LetMbeacusped3-manifoldandconsiderthe0\u00152moveonapairTand"
+  },
+  {
+   "page": 29,
+   "mark": "e",
+   "context": "Theorem5.1.Suppose thatTand"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "admitanindexstructure.Then,forany[ϖ] ∈H"
+  },
+  {
+   "page": 29,
+   "mark": "e",
+   "context": "Weusethelabellingofthetwobigonsandtriangleson"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "elabellingofthetwobigonsandtrianglesoneTshowninFigure14.LetT"
+  },
+  {
+   "page": 29,
+   "mark": "e",
+   "context": "in"
+  },
+  {
+   "page": 29,
+   "mark": "e",
+   "context": "ineT.NotethattheedgeeinTsplitsintotwoedgese′, e′′in"
+  },
+  {
+   "page": 29,
+   "mark": "e",
+   "context": "edgee in"
+  },
+  {
+   "page": 29,
+   "mark": "e",
+   "context": "edgesinTand"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "edgesinTandeT.Wedenotethesease"
+  },
+  {
+   "page": 29,
+   "mark": "e",
+   "context": "Let"
+  },
+  {
+   "page": 29,
+   "mark": "e",
+   "context": "Letek ∈ZN+2be a weight function on the edges of"
+  },
+  {
+   "page": 29,
+   "mark": "e",
+   "context": "Letek ∈ZN+2be a weight function on the edges ofeTand write"
+  },
+  {
+   "page": 29,
+   "mark": "e",
+   "context": "e a weight function on the edges ofeTand writeek = (k′, k′′,"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "eight function on the edges ofeTand writeek = (k′, k′′,ek, k"
+  },
+  {
+   "page": 29,
+   "mark": "e",
+   "context": "wherek′, k′′,"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "wherek′, k′′,ek, k"
+  },
+  {
+   "page": 29,
+   "mark": "e",
+   "context": "wherek′, k′′,ek, kiarethevaluesof"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "wherek′, k′′,ek, kiarethevaluesofekone′, e′′, eande"
+  },
+  {
+   "page": 30,
+   "mark": "j",
+   "context": "edgee ontetrahedronT"
+  },
+  {
+   "page": 30,
+   "mark": "j",
+   "context": "edgee ontetrahedronTjforj= 1, 2;thenthelocationoflabels¯b"
+  },
+  {
+   "page": 30,
+   "mark": "j",
+   "context": "gee ontetrahedronTjforj= 1, 2;thenthelocationoflabels¯bj, ¯c"
+  },
+  {
+   "page": 30,
+   "mark": "e",
+   "context": "spectto"
+  },
+  {
+   "page": 30,
+   "mark": "1",
+   "context": "specttoeT∂andrepresentsthesamehomologyclass[ϖ]∈H"
+  },
+  {
+   "page": 30,
+   "mark": "j",
+   "context": "cttoeT∂andrepresentsthesamehomologyclass[ϖ]∈H1(∂M; Z).LetJ(T"
+  },
+  {
+   "page": 30,
+   "mark": "j",
+   "context": "letJ(T"
+  },
+  {
+   "page": 30,
+   "mark": "e",
+   "context": "letJ(Tj,"
+  },
+  {
+   "page": 30,
+   "mark": "e",
+   "context": "letJ(Tj,ek,eϖ)becontributionwithweightfunction"
+  },
+  {
+   "page": 30,
+   "mark": "e",
+   "context": "wecancomputeI"
+  },
+  {
+   "page": 30,
+   "mark": "e",
+   "context": "wecancomputeIeTbyomittingthesameedgeset"
+  },
+  {
+   "page": 30,
+   "mark": "e",
+   "context": "computeI"
+  },
+  {
+   "page": 30,
+   "mark": "e",
+   "context": "computeIeTbyomittingtheedgeset"
+  },
+  {
+   "page": 31,
+   "mark": "k",
+   "context": "q"
+  },
+  {
+   "page": 31,
+   "mark": "k",
+   "context": "qk′+k′′+e"
+  },
+  {
+   "page": 31,
+   "mark": "k",
+   "context": "i=1"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "i=1kiJ(T"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "i=1kiJ(T1, ek,eϖ)J(T"
+  },
+  {
+   "page": 31,
+   "mark": "e",
+   "context": "I"
+  },
+  {
+   "page": 31,
+   "mark": "j",
+   "context": "J(T"
+  },
+  {
+   "page": 31,
+   "mark": "e",
+   "context": "J(Tj,"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "ek = (k′, k′′, ek, k"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "ek = (k′, k′′, ek, k"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "NowwelookatthecontributiontoIeTcomingfromthetetrahedraT"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "NowwelookatthecontributiontoIeTcomingfromthetetrahedraT1, T"
+  },
+  {
+   "page": 31,
+   "mark": "e",
+   "context": "overtheweight"
+  },
+  {
+   "page": 31,
+   "mark": "k",
+   "context": "e"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "ekJ(T"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "ekJ(T1; ek,eϖ)J(T"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "J(T"
+  },
+  {
+   "page": 31,
+   "mark": "e",
+   "context": "J(T1;"
+  },
+  {
+   "page": 31,
+   "mark": "e",
+   "context": "J(T1;ek,eϖ) = J∆(k′+ek + ¯a"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "J(T1;ek,eϖ) = J∆(k′+ek + ¯a eϖ,"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "J(T1;ek,eϖ) = J∆(k′+ek + ¯a eϖ,1, k"
+  },
+  {
+   "page": 31,
+   "mark": "3",
+   "context": "J(T1;ek,eϖ) = J∆(k′+ek + ¯a eϖ,1, k2 + k"
+  },
+  {
+   "page": 31,
+   "mark": "e",
+   "context": "J(T1;ek,eϖ) = J∆(k′+ek + ¯a eϖ,1, k2 + k3 + ¯b"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "J(T1;ek,eϖ) = J∆(k′+ek + ¯a eϖ,1, k2 + k3 + ¯b eϖ,"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "J(T1;ek,eϖ) = J∆(k′+ek + ¯a eϖ,1, k2 + k3 + ¯b eϖ,1, k"
+  },
+  {
+   "page": 31,
+   "mark": "4",
+   "context": "J(T1;ek,eϖ) = J∆(k′+ek + ¯a eϖ,1, k2 + k3 + ¯b eϖ,1, k1 + k"
+  },
+  {
+   "page": 31,
+   "mark": "e",
+   "context": "ek,eϖ) = J∆(k′+ek + ¯a eϖ,1, k2 + k3 + ¯b eϖ,1, k1 + k4 + ¯c"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "ϖ) = J∆(k′+ek + ¯a eϖ,1, k2 + k3 + ¯b eϖ,1, k1 + k4 + ¯c eϖ,"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "J(T"
+  },
+  {
+   "page": 31,
+   "mark": "e",
+   "context": "J(T2;"
+  },
+  {
+   "page": 31,
+   "mark": "e",
+   "context": "J(T2;ek,eϖ) = J∆(k′′+ek + ¯a"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "J(T2;ek,eϖ) = J∆(k′′+ek + ¯a eϖ,"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "J(T2;ek,eϖ) = J∆(k′′+ek + ¯a eϖ,2, k"
+  },
+  {
+   "page": 31,
+   "mark": "4",
+   "context": "J(T2;ek,eϖ) = J∆(k′′+ek + ¯a eϖ,2, k1 + k"
+  },
+  {
+   "page": 31,
+   "mark": "e",
+   "context": "J(T2;ek,eϖ) = J∆(k′′+ek + ¯a eϖ,2, k1 + k4 + ¯b"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "J(T2;ek,eϖ) = J∆(k′′+ek + ¯a eϖ,2, k1 + k4 + ¯b eϖ,"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "J(T2;ek,eϖ) = J∆(k′′+ek + ¯a eϖ,2, k1 + k4 + ¯b eϖ,2, k"
+  },
+  {
+   "page": 31,
+   "mark": "3",
+   "context": "J(T2;ek,eϖ) = J∆(k′′+ek + ¯a eϖ,2, k1 + k4 + ¯b eϖ,2, k2 + k"
+  },
+  {
+   "page": 31,
+   "mark": "e",
+   "context": "k,eϖ) = J∆(k′′+ek + ¯a eϖ,2, k1 + k4 + ¯b eϖ,2, k2 + k3 + ¯c"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": ") = J∆(k′′+ek + ¯a eϖ,2, k1 + k4 + ¯b eϖ,2, k2 + k3 + ¯c eϖ,"
+  },
+  {
+   "page": 31,
+   "mark": "e",
+   "context": "curve, we can calculate I"
+  },
+  {
+   "page": 31,
+   "mark": "e",
+   "context": "withrespectto"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "¯b eϖ,"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "¯b eϖ,1= ¯c eϖ,"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "¯b eϖ,"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "¯b eϖ,2= ¯c eϖ,"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "¯a eϖ,"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "¯a eϖ,1= ¯a eϖ,"
+  },
+  {
+   "page": 31,
+   "mark": "k",
+   "context": "e"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "ekJ∆(k′ + ek, k"
+  },
+  {
+   "page": 31,
+   "mark": "3",
+   "context": "ekJ∆(k′ + ek, k2 + k"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "ekJ∆(k′ + ek, k2 + k3 + x, k"
+  },
+  {
+   "page": 31,
+   "mark": "4",
+   "context": "ekJ∆(k′ + ek, k2 + k3 + x, k1 + k"
+  },
+  {
+   "page": 31,
+   "mark": "1",
+   "context": "ekJ∆(k′ + ek, k2 + k3 + x, k1 + k4 + y)J∆(k′′ + ek, k"
+  },
+  {
+   "page": 31,
+   "mark": "4",
+   "context": "ekJ∆(k′ + ek, k2 + k3 + x, k1 + k4 + y)J∆(k′′ + ek, k1 + k"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "′ + ek, k2 + k3 + x, k1 + k4 + y)J∆(k′′ + ek, k1 + k4 + y, k"
+  },
+  {
+   "page": 31,
+   "mark": "3",
+   "context": "k, k2 + k3 + x, k1 + k4 + y)J∆(k′′ + ek, k1 + k4 + y, k2 + k"
+  },
+  {
+   "page": 31,
+   "mark": "k",
+   "context": " k1 + k4 + y)J∆(k′′ + ek, k1 + k4 + y, k2 + k3 + x) = q−k′ δ"
+  },
+  {
+   "page": 31,
+   "mark": "e",
+   "context": " means that in the sum (30) we can remove the summation over"
+  },
+  {
+   "page": 31,
+   "mark": "j",
+   "context": "HenceJ(T"
+  },
+  {
+   "page": 31,
+   "mark": "e",
+   "context": "HenceJ(Tj,"
+  },
+  {
+   "page": 31,
+   "mark": "j",
+   "context": "HenceJ(Tj,ek,eϖ) = J(T"
+  },
+  {
+   "page": 31,
+   "mark": "k",
+   "context": "q"
+  },
+  {
+   "page": 32,
+   "mark": "e",
+   "context": "Figure15.ChangesinperipheralcurvefromϖinT∂toeϖin"
+  },
+  {
+   "page": 33,
+   "mark": "3",
+   "context": "convexidealpolyhedroninhyperbolic3-spaceH"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "oftriangulationsofconvexpolytopesinR"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "connecting them.Rather, the vertices are concrete points inR"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "linesegmentsinR"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "lation of a polytope in R"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "inR"
+  },
+  {
+   "page": 34,
+   "mark": "j",
+   "context": "De\u001cnition6.7.Ana\u001enecombinationofasetofpoints(p"
+  },
+  {
+   "page": 34,
+   "mark": "j",
+   "context": "De\u001cnition6.7.Ana\u001enecombinationofasetofpoints(pj)"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "De\u001cnition6.7.Ana\u001enecombinationofasetofpoints(pj)j∈CinR"
+  },
+  {
+   "page": 34,
+   "mark": "j",
+   "context": "j∈Cλ"
+  },
+  {
+   "page": 34,
+   "mark": "p",
+   "context": "j∈Cλj"
+  },
+  {
+   "page": 34,
+   "mark": "j",
+   "context": "j∈Cλjp"
+  },
+  {
+   "page": 34,
+   "mark": "j",
+   "context": "j∈Cλ"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "8.A point con\u001cgurationis a \u001cnite set of labelled points in R"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "ofthea\u001enespanofC.TheconvexhullofCinAistheconvexhullinR"
+  },
+  {
+   "page": 34,
+   "mark": "n",
+   "context": "De\u001cnition6.9.Withtheabovenotation,ifψ∈(R"
+  },
+  {
+   "page": 34,
+   "mark": "b",
+   "context": "b∈C(ψ(p"
+  },
+  {
+   "page": 35,
+   "mark": "n",
+   "context": "ω:A →Risanymap.Theliftedpointcon\u001cgurationinR"
+  },
+  {
+   "page": 35,
+   "mark": "j",
+   "context": "j)"
+  },
+  {
+   "page": 35,
+   "mark": "j",
+   "context": "j)j∈J:= (p"
+  },
+  {
+   "page": 35,
+   "mark": "j",
+   "context": "j)j∈J:= (pj, ω(p"
+  },
+  {
+   "page": 35,
+   "mark": "j",
+   "context": "j)j∈J:= (pj, ω(pj))"
+  },
+  {
+   "page": 35,
+   "mark": "3",
+   "context": "situationcanbemadeviatheKleinmodelofH"
+  },
+  {
+   "page": 35,
+   "mark": "3",
+   "context": "as straight lines in Euclidean space,E"
+  },
+  {
+   "page": 36,
+   "mark": "a",
+   "context": "Mhas"
+  },
+  {
+   "page": 37,
+   "mark": "3",
+   "context": "InR"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "Mandanorientedmulti-curveϖon∂M.TheindexIT(ϖ)(q)∈Z((q"
+  },
+  {
+   "page": 43,
+   "mark": "n",
+   "context": "s(onepertetrahedronofT)oflinearformsink=(k1, . . . , kn−1)∈Z"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "mumdegreewithrespecttoq)isapiecewisequadraticfunctiononR"
+  },
+  {
+   "page": 43,
+   "mark": "m",
+   "context": "apiecewisequadraticfunctiononR"
+  },
+  {
+   "page": 43,
+   "mark": "m",
+   "context": "isequadraticfunctiononRm,wemeanthatthereexistsapartitionFofR"
+  },
+  {
+   "page": 43,
+   "mark": "n",
+   "context": "de\u001cnedonapartitionFTofR"
+  },
+  {
+   "page": 43,
+   "mark": "n",
+   "context": "FTdirectly fromT.A priori,FTneed not be a fan inR"
+  },
+  {
+   "page": 43,
+   "mark": "n",
+   "context": "words, the degree of the summand is a proper function onZ"
+  },
+  {
+   "page": 44,
+   "mark": "n",
+   "context": "half-integerN,theset{k∈Z"
+  },
+  {
+   "page": 44,
+   "mark": "2",
+   "context": "I∆(k, k)(q)"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "δ(k) = 2δ(k, k) = 2k"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "I∆(k, k)(q)"
+  },
+  {
+   "page": 45,
+   "mark": "n",
+   "context": "2"
+  },
+  {
+   "page": 45,
+   "mark": "k",
+   "context": "2"
+  },
+  {
+   "page": 45,
+   "mark": "k",
+   "context": "2k)"
+  },
+  {
+   "page": 45,
+   "mark": "n",
+   "context": "(−1)"
+  },
+  {
+   "page": 45,
+   "mark": "q",
+   "context": "(−1)n"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "1−4k+8k"
+  },
+  {
+   "page": 45,
+   "mark": "2",
+   "context": "1−2q−3q"
+  },
+  {
+   "page": 45,
+   "mark": "3",
+   "context": "1−2q−3q2+2q"
+  },
+  {
+   "page": 45,
+   "mark": "4",
+   "context": "1−2q−3q2+2q3+8q"
+  },
+  {
+   "page": 45,
+   "mark": "5",
+   "context": "1−2q−3q2+2q3+8q4+18q"
+  },
+  {
+   "page": 45,
+   "mark": "6",
+   "context": "1−2q−3q2+2q3+8q4+18q5+18q"
+  },
+  {
+   "page": 45,
+   "mark": "7",
+   "context": "1−2q−3q2+2q3+8q4+18q5+18q6+14q"
+  },
+  {
+   "page": 45,
+   "mark": "8",
+   "context": "1−2q−3q2+2q3+8q4+18q5+18q6+14q7−12q"
+  },
+  {
+   "page": 45,
+   "mark": "9",
+   "context": "1−2q−3q2+2q3+8q4+18q5+18q6+14q7−12q8−52q"
+  },
+  {
+   "page": 45,
+   "mark": "10",
+   "context": "1−2q−3q2+2q3+8q4+18q5+18q6+14q7−12q8−52q9−106q"
+  },
+  {
+   "page": 45,
+   "mark": "11",
+   "context": "1−2q−3q2+2q3+8q4+18q5+18q6+14q7−12q8−52q9−106q10−164q"
+  },
+  {
+   "page": 45,
+   "mark": "12",
+   "context": "1−2q−3q2+2q3+8q4+18q5+18q6+14q7−12q8−52q9−106q10−164q11−209q"
+  },
+  {
+   "page": 45,
+   "mark": "13",
+   "context": "2+2q3+8q4+18q5+18q6+14q7−12q8−52q9−106q10−164q11−209q12−212q"
+  },
+  {
+   "page": 45,
+   "mark": "14",
+   "context": "q4+18q5+18q6+14q7−12q8−52q9−106q10−164q11−209q12−212q13−141q"
+  },
+  {
+   "page": 45,
+   "mark": "15",
+   "context": "+18q6+14q7−12q8−52q9−106q10−164q11−209q12−212q13−141q14+ 14q"
+  },
+  {
+   "page": 45,
+   "mark": "16",
+   "context": "309q"
+  },
+  {
+   "page": 45,
+   "mark": "17",
+   "context": "309q16+714q"
+  },
+  {
+   "page": 45,
+   "mark": "18",
+   "context": "309q16+714q17+1249q"
+  },
+  {
+   "page": 45,
+   "mark": "19",
+   "context": "309q16+714q17+1249q18+1824q"
+  },
+  {
+   "page": 45,
+   "mark": "20",
+   "context": "309q16+714q17+1249q18+1824q19+2401q"
+  },
+  {
+   "page": 45,
+   "mark": "21",
+   "context": "309q16+714q17+1249q18+1824q19+2401q20+2794q"
+  },
+  {
+   "page": 45,
+   "mark": "22",
+   "context": "309q16+714q17+1249q18+1824q19+2401q20+2794q21+2898q"
+  },
+  {
+   "page": 45,
+   "mark": "23",
+   "context": "309q16+714q17+1249q18+1824q19+2401q20+2794q21+2898q22+2434q"
+  },
+  {
+   "page": 45,
+   "mark": "24",
+   "context": "714q17+1249q18+1824q19+2401q20+2794q21+2898q22+2434q23+1256q"
+  },
+  {
+   "page": 45,
+   "mark": "25",
+   "context": "1249q18+1824q19+2401q20+2794q21+2898q22+2434q23+1256q24−918q"
+  },
+  {
+   "page": 45,
+   "mark": "26",
+   "context": "1824q19+2401q20+2794q21+2898q22+2434q23+1256q24−918q25−4186q"
+  },
+  {
+   "page": 45,
+   "mark": "27",
+   "context": "2401q20+2794q21+2898q22+2434q23+1256q24−918q25−4186q26−8712q"
+  },
+  {
+   "page": 45,
+   "mark": "28",
+   "context": "14394q"
+  },
+  {
+   "page": 45,
+   "mark": "29",
+   "context": "14394q28−21046q"
+  },
+  {
+   "page": 45,
+   "mark": "30",
+   "context": "14394q28−21046q29−28184q"
+  },
+  {
+   "page": 45,
+   "mark": "31",
+   "context": "14394q28−21046q29−28184q30−35094q"
+  },
+  {
+   "page": 45,
+   "mark": "32",
+   "context": "14394q28−21046q29−28184q30−35094q31−40740q"
+  },
+  {
+   "page": 45,
+   "mark": "33",
+   "context": "14394q28−21046q29−28184q30−35094q31−40740q32−43732q"
+  },
+  {
+   "page": 45,
+   "mark": "34",
+   "context": "14394q28−21046q29−28184q30−35094q31−40740q32−43732q33−42508q"
+  },
+  {
+   "page": 45,
+   "mark": "35",
+   "context": "21046q29−28184q30−35094q31−40740q32−43732q33−42508q34−35068q"
+  },
+  {
+   "page": 45,
+   "mark": "36",
+   "context": "28184q30−35094q31−40740q32−43732q33−42508q34−35068q35−19524q"
+  },
+  {
+   "page": 45,
+   "mark": "37",
+   "context": "35094q31−40740q32−43732q33−42508q34−35068q35−19524q36+ 6288q"
+  },
+  {
+   "page": 45,
+   "mark": "38",
+   "context": "0740q32−43732q33−42508q34−35068q35−19524q36+ 6288q37+ 43942q"
+  },
+  {
+   "page": 45,
+   "mark": "39",
+   "context": "95026q"
+  },
+  {
+   "page": 45,
+   "mark": "40",
+   "context": "95026q39+ 159698q"
+  },
+  {
+   "page": 45,
+   "mark": "41",
+   "context": "95026q39+ 159698q40+ 237774q"
+  },
+  {
+   "page": 45,
+   "mark": "42",
+   "context": "95026q39+ 159698q40+ 237774q41+ 326680q"
+  },
+  {
+   "page": 45,
+   "mark": "43",
+   "context": "95026q39+ 159698q40+ 237774q41+ 326680q42+ 422880q"
+  },
+  {
+   "page": 45,
+   "mark": "44",
+   "context": "5026q39+ 159698q40+ 237774q41+ 326680q42+ 422880q43+ 519595q"
+  },
+  {
+   "page": 45,
+   "mark": "45",
+   "context": "9698q40+ 237774q41+ 326680q42+ 422880q43+ 519595q44+ 608636q"
+  },
+  {
+   "page": 45,
+   "mark": "46",
+   "context": "7774q41+ 326680q42+ 422880q43+ 519595q44+ 608636q45+ 677761q"
+  },
+  {
+   "page": 45,
+   "mark": "47",
+   "context": "6680q42+ 422880q43+ 519595q44+ 608636q45+ 677761q46+ 713352q"
+  },
+  {
+   "page": 45,
+   "mark": "48",
+   "context": "2880q43+ 519595q44+ 608636q45+ 677761q46+ 713352q47+ 697625q"
+  },
+  {
+   "page": 45,
+   "mark": "49",
+   "context": "611956q"
+  },
+  {
+   "page": 45,
+   "mark": "50",
+   "context": "611956q49+434572q"
+  },
+  {
+   "page": 45,
+   "mark": "51",
+   "context": "611956q49+434572q50+144616q"
+  },
+  {
+   "page": 45,
+   "mark": "52",
+   "context": "611956q49+434572q50+144616q51−279773q"
+  },
+  {
+   "page": 45,
+   "mark": "53",
+   "context": "611956q49+434572q50+144616q51−279773q52−856288q"
+  },
+  {
+   "page": 45,
+   "mark": "54",
+   "context": "611956q49+434572q50+144616q51−279773q52−856288q53−1599627q"
+  },
+  {
+   "page": 45,
+   "mark": "55",
+   "context": "+434572q50+144616q51−279773q52−856288q53−1599627q54−2515906q"
+  },
+  {
+   "page": 45,
+   "mark": "56",
+   "context": "144616q51−279773q52−856288q53−1599627q54−2515906q55−3602521q"
+  },
+  {
+   "page": 45,
+   "mark": "57",
+   "context": "79773q52−856288q53−1599627q54−2515906q55−3602521q56−4842516q"
+  },
+  {
+   "page": 45,
+   "mark": "58",
+   "context": "6288q53−1599627q54−2515906q55−3602521q56−4842516q57−6203552q"
+  },
+  {
+   "page": 45,
+   "mark": "59",
+   "context": "7632646q"
+  },
+  {
+   "page": 45,
+   "mark": "60",
+   "context": "7632646q59−9054429q"
+  },
+  {
+   "page": 45,
+   "mark": "61",
+   "context": "7632646q59−9054429q60−10367858q"
+  },
+  {
+   "page": 45,
+   "mark": "62",
+   "context": "7632646q59−9054429q60−10367858q61−11443874q"
+  },
+  {
+   "page": 45,
+   "mark": "63",
+   "context": "7632646q59−9054429q60−10367858q61−11443874q62−12125534q"
+  },
+  {
+   "page": 45,
+   "mark": "64",
+   "context": "q59−9054429q60−10367858q61−11443874q62−12125534q63−12226286q"
+  },
+  {
+   "page": 45,
+   "mark": "65",
+   "context": "60−10367858q61−11443874q62−12125534q63−12226286q64−11535062q"
+  },
+  {
+   "page": 45,
+   "mark": "66",
+   "context": "q61−11443874q62−12125534q63−12226286q64−11535062q65−9815935q"
+  },
+  {
+   "page": 45,
+   "mark": "67",
+   "context": "4q62−12125534q63−12226286q64−11535062q65−9815935q66−6820480q"
+  },
+  {
+   "page": 45,
+   "mark": "68",
+   "context": "2289703q"
+  },
+  {
+   "page": 45,
+   "mark": "69",
+   "context": "2289703q68+4024698q"
+  },
+  {
+   "page": 45,
+   "mark": "70",
+   "context": "2289703q68+4024698q69+12355340q"
+  },
+  {
+   "page": 45,
+   "mark": "71",
+   "context": "2289703q68+4024698q69+12355340q70+22887604q"
+  },
+  {
+   "page": 45,
+   "mark": "72",
+   "context": "2289703q68+4024698q69+12355340q70+22887604q71+35751602q"
+  },
+  {
+   "page": 45,
+   "mark": "73",
+   "context": "q68+4024698q69+12355340q70+22887604q71+35751602q72+50979996q"
+  },
+  {
+   "page": 45,
+   "mark": "74",
+   "context": "69+12355340q70+22887604q71+35751602q72+50979996q73+68497913q"
+  },
+  {
+   "page": 45,
+   "mark": "75",
+   "context": "70+22887604q71+35751602q72+50979996q73+68497913q74+88071340q"
+  },
+  {
+   "page": 45,
+   "mark": "76",
+   "context": "1+35751602q72+50979996q73+68497913q74+88071340q75+109297633q"
+  },
+  {
+   "page": 45,
+   "mark": "77",
+   "context": "131547294q"
+  },
+  {
+   "page": 45,
+   "mark": "78",
+   "context": "131547294q77+153959928q"
+  },
+  {
+   "page": 45,
+   "mark": "79",
+   "context": "131547294q77+153959928q78+175385202q"
+  },
+  {
+   "page": 45,
+   "mark": "80",
+   "context": "131547294q77+153959928q78+175385202q79+194390216q"
+  },
+  {
+   "page": 45,
+   "mark": "81",
+   "context": "1547294q77+153959928q78+175385202q79+194390216q80+209208210q"
+  },
+  {
+   "page": 45,
+   "mark": "82",
+   "context": "3959928q78+175385202q79+194390216q80+209208210q81+217767013q"
+  },
+  {
+   "page": 45,
+   "mark": "83",
+   "context": "5385202q79+194390216q80+209208210q81+217767013q82+217655122q"
+  },
+  {
+   "page": 45,
+   "mark": "84",
+   "context": "4390216q80+209208210q81+217767013q82+217655122q83+206182023q"
+  },
+  {
+   "page": 45,
+   "mark": "85",
+   "context": "180375446q"
+  },
+  {
+   "page": 45,
+   "mark": "86",
+   "context": "180375446q85+ 137083864q"
+  },
+  {
+   "page": 45,
+   "mark": "87",
+   "context": "180375446q85+ 137083864q86+ 73018494q"
+  },
+  {
+   "page": 45,
+   "mark": "88",
+   "context": "180375446q85+ 137083864q86+ 73018494q87−15089960q"
+  },
+  {
+   "page": 45,
+   "mark": "89",
+   "context": "0375446q85+ 137083864q86+ 73018494q87−15089960q88−130393760q"
+  },
+  {
+   "page": 45,
+   "mark": "90",
+   "context": "37083864q86+ 73018494q87−15089960q88−130393760q89−275708923q"
+  },
+  {
+   "page": 45,
+   "mark": "91",
+   "context": "73018494q87−15089960q88−130393760q89−275708923q90−453351590q"
+  },
+  {
+   "page": 45,
+   "mark": "92",
+   "context": "5089960q88−130393760q89−275708923q90−453351590q91−664856517q"
+  },
+  {
+   "page": 45,
+   "mark": "93",
+   "context": "910744842q"
+  },
+  {
+   "page": 45,
+   "mark": "94",
+   "context": "910744842q93−1190185170q"
+  },
+  {
+   "page": 45,
+   "mark": "95",
+   "context": "910744842q93−1190185170q94−1500703210q"
+  },
+  {
+   "page": 45,
+   "mark": "96",
+   "context": "910744842q93−1190185170q94−1500703210q95−1837805659q"
+  },
+  {
+   "page": 45,
+   "mark": "97",
+   "context": "842q93−1190185170q94−1500703210q95−1837805659q96−2194650672q"
+  },
+  {
+   "page": 45,
+   "mark": "98",
+   "context": "170q94−1500703210q95−1837805659q96−2194650672q97−2561673782q"
+  },
+  {
+   "page": 45,
+   "mark": "99",
+   "context": "210q95−1837805659q96−2194650672q97−2561673782q98−2926258326q"
+  },
+  {
+   "page": 45,
+   "mark": "100",
+   "context": "659q96−2194650672q97−2561673782q98−2926258326q99−3272416148q"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "I∆(−k1, k1 −k2)"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "(k1,k2)∈Z"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "2+k"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "2−k"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "−k"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "2+ k"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "2+ k2 + k"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "−k1 + k"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "1+ k"
+  },
+  {
+   "page": 46,
+   "mark": "k",
+   "context": "1+ k2−2"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "1+ k2−2k"
+  },
+  {
+   "page": 46,
+   "mark": "k",
+   "context": "1+ k2−2k1"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "1+ k2−2k1k"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "1+ k2−2k1k2+ k"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "−k1 + k"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "k"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "1−k"
+  },
+  {
+   "page": 46,
+   "mark": "k",
+   "context": "1−k2−2"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "1−k2−2k"
+  },
+  {
+   "page": 46,
+   "mark": "k",
+   "context": "1−k2−2k1"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "1−k2−2k1k"
+  },
+  {
+   "page": 46,
+   "mark": "k",
+   "context": "1−k2−2k1k2+ 2"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "1−k2−2k1k2+ 2k"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "k1 + 2k"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "1−k"
+  },
+  {
+   "page": 46,
+   "mark": "k",
+   "context": "1−k2−4"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "1−k2−4k"
+  },
+  {
+   "page": 46,
+   "mark": "k",
+   "context": "1−k2−4k1"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "1−k2−4k1k"
+  },
+  {
+   "page": 46,
+   "mark": "k",
+   "context": "1−k2−4k1k2+ 2"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "1−k2−4k1k2+ 2k"
+  },
+  {
+   "page": 46,
+   "mark": "k",
+   "context": "2"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "2k"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "2k1(1 + k"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "1−4q−q"
+  },
+  {
+   "page": 47,
+   "mark": "3",
+   "context": "1−4q−q2+16q"
+  },
+  {
+   "page": 47,
+   "mark": "4",
+   "context": "1−4q−q2+16q3+26q"
+  },
+  {
+   "page": 47,
+   "mark": "5",
+   "context": "1−4q−q2+16q3+26q4+23q"
+  },
+  {
+   "page": 47,
+   "mark": "6",
+   "context": "1−4q−q2+16q3+26q4+23q5−34q"
+  },
+  {
+   "page": 47,
+   "mark": "7",
+   "context": "1−4q−q2+16q3+26q4+23q5−34q6−122q"
+  },
+  {
+   "page": 47,
+   "mark": "8",
+   "context": "1−4q−q2+16q3+26q4+23q5−34q6−122q7−239q"
+  },
+  {
+   "page": 47,
+   "mark": "9",
+   "context": "1−4q−q2+16q3+26q4+23q5−34q6−122q7−239q8−312q"
+  },
+  {
+   "page": 47,
+   "mark": "10",
+   "context": "1−4q−q2+16q3+26q4+23q5−34q6−122q7−239q8−312q9−221q"
+  },
+  {
+   "page": 47,
+   "mark": "11",
+   "context": "1−4q−q2+16q3+26q4+23q5−34q6−122q7−239q8−312q9−221q10+102q"
+  },
+  {
+   "page": 47,
+   "mark": "12",
+   "context": "−q2+16q3+26q4+23q5−34q6−122q7−239q8−312q9−221q10+102q11+778q"
+  },
+  {
+   "page": 47,
+   "mark": "13",
+   "context": "+26q4+23q5−34q6−122q7−239q8−312q9−221q10+102q11+778q12+1757q"
+  },
+  {
+   "page": 47,
+   "mark": "14",
+   "context": "q5−34q6−122q7−239q8−312q9−221q10+102q11+778q12+1757q13+2930q"
+  },
+  {
+   "page": 47,
+   "mark": "15",
+   "context": "3825q"
+  },
+  {
+   "page": 47,
+   "mark": "16",
+   "context": "3825q15+4003q"
+  },
+  {
+   "page": 47,
+   "mark": "17",
+   "context": "3825q15+4003q16+2560q"
+  },
+  {
+   "page": 47,
+   "mark": "18",
+   "context": "3825q15+4003q16+2560q17−1183q"
+  },
+  {
+   "page": 47,
+   "mark": "19",
+   "context": "3825q15+4003q16+2560q17−1183q18−8033q"
+  },
+  {
+   "page": 47,
+   "mark": "20",
+   "context": "3825q15+4003q16+2560q17−1183q18−8033q19−18087q"
+  },
+  {
+   "page": 47,
+   "mark": "21",
+   "context": "3825q15+4003q16+2560q17−1183q18−8033q19−18087q20−30864q"
+  },
+  {
+   "page": 47,
+   "mark": "22",
+   "context": "q15+4003q16+2560q17−1183q18−8033q19−18087q20−30864q21−44625q"
+  },
+  {
+   "page": 47,
+   "mark": "23",
+   "context": "16+2560q17−1183q18−8033q19−18087q20−30864q21−44625q22−56225q"
+  },
+  {
+   "page": 47,
+   "mark": "24",
+   "context": "7−1183q18−8033q19−18087q20−30864q21−44625q22−56225q23−60913q"
+  },
+  {
+   "page": 47,
+   "mark": "25",
+   "context": "−8033q19−18087q20−30864q21−44625q22−56225q23−60913q24−52342q"
+  },
+  {
+   "page": 47,
+   "mark": "26",
+   "context": "23373q"
+  },
+  {
+   "page": 47,
+   "mark": "27",
+   "context": "23373q26+ 33675q"
+  },
+  {
+   "page": 47,
+   "mark": "28",
+   "context": "23373q26+ 33675q27+ 124356q"
+  },
+  {
+   "page": 47,
+   "mark": "29",
+   "context": "23373q26+ 33675q27+ 124356q28+ 251997q"
+  },
+  {
+   "page": 47,
+   "mark": "30",
+   "context": "23373q26+ 33675q27+ 124356q28+ 251997q29+ 412837q"
+  },
+  {
+   "page": 47,
+   "mark": "31",
+   "context": "23373q26+ 33675q27+ 124356q28+ 251997q29+ 412837q30+ 596153q"
+  },
+  {
+   "page": 47,
+   "mark": "32",
+   "context": "3675q27+ 124356q28+ 251997q29+ 412837q30+ 596153q31+ 778487q"
+  },
+  {
+   "page": 47,
+   "mark": "33",
+   "context": "4356q28+ 251997q29+ 412837q30+ 596153q31+ 778487q32+ 925195q"
+  },
+  {
+   "page": 47,
+   "mark": "34",
+   "context": "1997q29+ 412837q30+ 596153q31+ 778487q32+ 925195q33+ 984860q"
+  },
+  {
+   "page": 47,
+   "mark": "35",
+   "context": "2837q30+ 596153q31+ 778487q32+ 925195q33+ 984860q34+ 895092q"
+  },
+  {
+   "page": 47,
+   "mark": "36",
+   "context": "579789q"
+  },
+  {
+   "page": 47,
+   "mark": "37",
+   "context": "579789q36−39418q"
+  },
+  {
+   "page": 47,
+   "mark": "38",
+   "context": "579789q36−39418q37−1039055q"
+  },
+  {
+   "page": 47,
+   "mark": "39",
+   "context": "579789q36−39418q37−1039055q38−2474979q"
+  },
+  {
+   "page": 47,
+   "mark": "40",
+   "context": "579789q36−39418q37−1039055q38−2474979q39−4370844q"
+  },
+  {
+   "page": 47,
+   "mark": "41",
+   "context": "579789q36−39418q37−1039055q38−2474979q39−4370844q40−6691737q"
+  },
+  {
+   "page": 47,
+   "mark": "42",
+   "context": "9418q37−1039055q38−2474979q39−4370844q40−6691737q41−9326308q"
+  },
+  {
+   "page": 47,
+   "mark": "43",
+   "context": "055q38−2474979q39−4370844q40−6691737q41−9326308q42−12059462q"
+  },
+  {
+   "page": 47,
+   "mark": "44",
+   "context": "79q39−4370844q40−6691737q41−9326308q42−12059462q43−14553043q"
+  },
+  {
+   "page": 47,
+   "mark": "45",
+   "context": "16329323q"
+  },
+  {
+   "page": 47,
+   "mark": "46",
+   "context": "16329323q45−16762776q"
+  },
+  {
+   "page": 47,
+   "mark": "47",
+   "context": "16329323q45−16762776q46−15091256q"
+  },
+  {
+   "page": 47,
+   "mark": "48",
+   "context": "16329323q45−16762776q46−15091256q47−10436174q"
+  },
+  {
+   "page": 47,
+   "mark": "49",
+   "context": "16329323q45−16762776q46−15091256q47−10436174q48−1863234q"
+  },
+  {
+   "page": 47,
+   "mark": "50",
+   "context": "q45−16762776q46−15091256q47−10436174q48−1863234q49+11551967q"
+  },
+  {
+   "page": 47,
+   "mark": "51",
+   "context": "q46−15091256q47−10436174q48−1863234q49+11551967q50+30594044q"
+  },
+  {
+   "page": 47,
+   "mark": "52",
+   "context": "q47−10436174q48−1863234q49+11551967q50+30594044q51+55785006q"
+  },
+  {
+   "page": 47,
+   "mark": "53",
+   "context": "q48−1863234q49+11551967q50+30594044q51+55785006q52+87178516q"
+  },
+  {
+   "page": 47,
+   "mark": "54",
+   "context": "124185931q"
+  },
+  {
+   "page": 47,
+   "mark": "55",
+   "context": "124185931q54+165312079q"
+  },
+  {
+   "page": 47,
+   "mark": "56",
+   "context": "124185931q54+165312079q55+207965719q"
+  },
+  {
+   "page": 47,
+   "mark": "57",
+   "context": "124185931q54+165312079q55+207965719q56+248191454q"
+  },
+  {
+   "page": 47,
+   "mark": "58",
+   "context": "4185931q54+165312079q55+207965719q56+248191454q57+280543349q"
+  },
+  {
+   "page": 47,
+   "mark": "59",
+   "context": "5312079q55+207965719q56+248191454q57+280543349q58+297911617q"
+  },
+  {
+   "page": 47,
+   "mark": "60",
+   "context": "7965719q56+248191454q57+280543349q58+297911617q59+291580973q"
+  },
+  {
+   "page": 47,
+   "mark": "61",
+   "context": "8191454q57+280543349q58+297911617q59+291580973q60+251299184q"
+  },
+  {
+   "page": 47,
+   "mark": "62",
+   "context": "165675668q"
+  },
+  {
+   "page": 47,
+   "mark": "63",
+   "context": "165675668q62+22662435q"
+  },
+  {
+   "page": 47,
+   "mark": "64",
+   "context": "165675668q62+22662435q63−189540512q"
+  },
+  {
+   "page": 47,
+   "mark": "65",
+   "context": "165675668q62+22662435q63−189540512q64−481437576q"
+  },
+  {
+   "page": 47,
+   "mark": "66",
+   "context": "65675668q62+22662435q63−189540512q64−481437576q65−860708203q"
+  },
+  {
+   "page": 47,
+   "mark": "67",
+   "context": "662435q63−189540512q64−481437576q65−860708203q66−1330509280q"
+  },
+  {
+   "page": 47,
+   "mark": "68",
+   "context": "40512q64−481437576q65−860708203q66−1330509280q67−1887333621q"
+  },
+  {
+   "page": 47,
+   "mark": "69",
+   "context": "7576q65−860708203q66−1330509280q67−1887333621q68−2518748267q"
+  },
+  {
+   "page": 47,
+   "mark": "70",
+   "context": "3200856694q"
+  },
+  {
+   "page": 47,
+   "mark": "71",
+   "context": "3200856694q70−3895826567q"
+  },
+  {
+   "page": 47,
+   "mark": "72",
+   "context": "3200856694q70−3895826567q71−4549488766q"
+  },
+  {
+   "page": 47,
+   "mark": "73",
+   "context": "3200856694q70−3895826567q71−4549488766q72−5089337005q"
+  },
+  {
+   "page": 47,
+   "mark": "74",
+   "context": "694q70−3895826567q71−4549488766q72−5089337005q73−5423179738q"
+  },
+  {
+   "page": 47,
+   "mark": "75",
+   "context": "567q71−4549488766q72−5089337005q73−5423179738q74−5438686309q"
+  },
+  {
+   "page": 47,
+   "mark": "76",
+   "context": "766q72−5089337005q73−5423179738q74−5438686309q75−5004368747q"
+  },
+  {
+   "page": 47,
+   "mark": "77",
+   "context": "005q73−5423179738q74−5438686309q75−5004368747q76−3972096155q"
+  },
+  {
+   "page": 47,
+   "mark": "78",
+   "context": "2181963773q"
+  },
+  {
+   "page": 47,
+   "mark": "79",
+   "context": "2181963773q78+530655834q"
+  },
+  {
+   "page": 47,
+   "mark": "80",
+   "context": "2181963773q78+530655834q79+4324768774q"
+  },
+  {
+   "page": 47,
+   "mark": "81",
+   "context": "2181963773q78+530655834q79+4324768774q80+9340768927q"
+  },
+  {
+   "page": 47,
+   "mark": "82",
+   "context": "773q78+530655834q79+4324768774q80+9340768927q81+15683465230q"
+  },
+  {
+   "page": 47,
+   "mark": "83",
+   "context": "4q79+4324768774q80+9340768927q81+15683465230q82+23402429365q"
+  },
+  {
+   "page": 47,
+   "mark": "84",
+   "context": "q80+9340768927q81+15683465230q82+23402429365q83+32468254286q"
+  },
+  {
+   "page": 47,
+   "mark": "85",
+   "context": "42746925974q"
+  },
+  {
+   "page": 47,
+   "mark": "86",
+   "context": "42746925974q85+53970937518q"
+  },
+  {
+   "page": 47,
+   "mark": "87",
+   "context": "42746925974q85+53970937518q86+65710530396q"
+  },
+  {
+   "page": 47,
+   "mark": "88",
+   "context": "42746925974q85+53970937518q86+65710530396q87+77343886238q"
+  },
+  {
+   "page": 47,
+   "mark": "89",
+   "context": "85+53970937518q86+65710530396q87+77343886238q88+88031000047q"
+  },
+  {
+   "page": 47,
+   "mark": "90",
+   "context": "86+65710530396q87+77343886238q88+88031000047q89+96690414035q"
+  },
+  {
+   "page": 47,
+   "mark": "91",
+   "context": "7+77343886238q88+88031000047q89+96690414035q90+101984965333q"
+  },
+  {
+   "page": 47,
+   "mark": "92",
+   "context": "102316085357q"
+  },
+  {
+   "page": 47,
+   "mark": "93",
+   "context": "102316085357q92+95834146866q"
+  },
+  {
+   "page": 47,
+   "mark": "94",
+   "context": "102316085357q92+95834146866q93+80464612248q"
+  },
+  {
+   "page": 47,
+   "mark": "95",
+   "context": "102316085357q92+95834146866q93+80464612248q94+53958404128q"
+  },
+  {
+   "page": 47,
+   "mark": "96",
+   "context": "92+95834146866q93+80464612248q94+53958404128q95+13966121550q"
+  },
+  {
+   "page": 47,
+   "mark": "97",
+   "context": "93+80464612248q94+53958404128q95+13966121550q96−41855327561q"
+  },
+  {
+   "page": 47,
+   "mark": "98",
+   "context": "4+53958404128q95+13966121550q96−41855327561q97−115704867879q"
+  },
+  {
+   "page": 47,
+   "mark": "99",
+   "context": "209460627592q"
+  },
+  {
+   "page": 47,
+   "mark": "100",
+   "context": "209460627592q99−324467541887q"
+  },
+  {
+   "page": 48,
+   "mark": "k",
+   "context": "(−1)"
+  },
+  {
+   "page": 48,
+   "mark": "k",
+   "context": "2(k1−2"
+  },
+  {
+   "page": 48,
+   "mark": "k",
+   "context": "2(k1−2"
+  },
+  {
+   "page": 48,
+   "mark": "k",
+   "context": "(−1)"
+  },
+  {
+   "page": 49,
+   "mark": "3",
+   "context": "2(−k1+k"
+  },
+  {
+   "page": 49,
+   "mark": "3",
+   "context": "(k1,k2,k3)∈Z"
+  },
+  {
+   "page": 49,
+   "mark": "3",
+   "context": "FTinR"
+  },
+  {
+   "page": 49,
+   "mark": "4",
+   "context": "contributetoI61(0) + O(q)"
+  },
+  {
+   "page": 49,
+   "mark": "3",
+   "context": "contributetoI61(0) + O(q)4= 1 −4q + q2+ 18q"
+  },
+  {
+   "page": 49,
+   "mark": "4",
+   "context": "contributetoI61(0) + O(q)4= 1 −4q + q2+ 18q3+ O(q)"
+  },
+  {
+   "page": 49,
+   "mark": "4",
+   "context": "0)I∆(0, −1)I∆(0, 0) + I∆(−1, 0)2I∆(0, −1)I∆(0, 0) + I∆(0, 0)"
+  },
+  {
+   "page": 50,
+   "mark": "k",
+   "context": "(−1)"
+  },
+  {
+   "page": 50,
+   "mark": "2",
+   "context": "(−1)k1+k"
+  },
+  {
+   "page": 50,
+   "mark": "3",
+   "context": "(−1)k1+k2−k"
+  },
+  {
+   "page": 50,
+   "mark": "2",
+   "context": "2(k1+k"
+  },
+  {
+   "page": 50,
+   "mark": "3",
+   "context": "2(k1+k2−k"
+  },
+  {
+   "page": 50,
+   "mark": "3",
+   "context": "(k1,k2,k3)∈Z"
+  },
+  {
+   "page": 50,
+   "mark": "3",
+   "context": "FTinR"
+  },
+  {
+   "page": 51,
+   "mark": "e",
+   "context": "anorientedmulti-curveon∂M.ConsidertwoidealtriangulationsTand"
+  },
+  {
+   "page": 51,
+   "mark": "e",
+   "context": "TheoremA.1.SupposethatTand"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "bothadmitanindexstructure.Then,forany[ϖ] ∈H"
+  },
+  {
+   "page": 51,
+   "mark": "k",
+   "context": "i"
+  },
+  {
+   "page": 51,
+   "mark": "i",
+   "context": "ik"
+  },
+  {
+   "page": 52,
+   "mark": "e",
+   "context": "ThetriangulationsTand"
+  },
+  {
+   "page": 52,
+   "mark": "1",
+   "context": "Letk=(k"
+  },
+  {
+   "page": 52,
+   "mark": "e",
+   "context": "Letk=(k1, . . . , kN)beaweightfunctionontheedgesofT,andlet"
+  },
+  {
+   "page": 52,
+   "mark": "0",
+   "context": "k=(k1, . . . , kN)beaweightfunctionontheedgesofT,andletek=(k"
+  },
+  {
+   "page": 52,
+   "mark": "e",
+   "context": "extensionofktoaweightfunctionontheedgesof"
+  },
+  {
+   "page": 52,
+   "mark": "0",
+   "context": "extensionofktoaweightfunctionontheedgesofeTwherek"
+  },
+  {
+   "page": 52,
+   "mark": "k",
+   "context": "q"
+  },
+  {
+   "page": 52,
+   "mark": "0",
+   "context": "qk"
+  },
+  {
+   "page": 52,
+   "mark": "k",
+   "context": "givenk,weconsiderϖ"
+  },
+  {
+   "page": 52,
+   "mark": "e",
+   "context": "givenk,weconsiderϖk,andtheϖ"
+  },
+  {
+   "page": 52,
+   "mark": "k",
+   "context": "givenk,weconsiderϖk,andtheϖe"
+  },
+  {
+   "page": 52,
+   "mark": "e",
+   "context": "givenk,weconsiderϖk,andtheϖekwhere"
+  },
+  {
+   "page": 52,
+   "mark": "0",
+   "context": "givenk,weconsiderϖk,andtheϖekwhereek=(k"
+  },
+  {
+   "page": 52,
+   "mark": "0",
+   "context": "givenk,weconsiderϖk,andtheϖekwhereek=(k0, k)andk"
+  },
+  {
+   "page": 52,
+   "mark": "k",
+   "context": "handsideof(36)usingtheϖe"
+  },
+  {
+   "page": 52,
+   "mark": "e",
+   "context": "Theinducedtriangulationsof∂M,T∂and"
+  },
+  {
+   "page": 52,
+   "mark": "e",
+   "context": "determinedbyTand"
+  },
+  {
+   "page": 54,
+   "mark": "k",
+   "context": "Nowϖe"
+  },
+  {
+   "page": 54,
+   "mark": "k",
+   "context": "eT∂,andsimilarlyϖ"
+  },
+  {
+   "page": 54,
+   "mark": "e",
+   "context": "turningnumbersofϖrelativeto"
+  },
+  {
+   "page": 54,
+   "mark": "k",
+   "context": "ϖ"
+  },
+  {
+   "page": 54,
+   "mark": "k",
+   "context": "ϖkrelativetoT,weobtaintheturningnumbersofϖ(0,"
+  },
+  {
+   "page": 54,
+   "mark": "e",
+   "context": "ϖkrelativetoT,weobtaintheturningnumbersofϖ(0,k)relativeto"
+  },
+  {
+   "page": 54,
+   "mark": "j",
+   "context": "hedronjlabelled¯a"
+  },
+  {
+   "page": 54,
+   "mark": "j",
+   "context": "hedronjlabelled¯aj,andsimilarlyfor¯b"
+  },
+  {
+   "page": 54,
+   "mark": "j",
+   "context": "hedronjlabelled¯aj,andsimilarlyfor¯bj(k, ϖ),¯c"
+  },
+  {
+   "page": 54,
+   "mark": "e",
+   "context": "lled¯aj,andsimilarlyfor¯bj(k, ϖ),¯cj(k, ϖ).Thus,replacingkby"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "aj,andsimilarlyfor¯bj(k, ϖ),¯cj(k, ϖ).Thus,replacingkbyek=(k"
+  },
+  {
+   "page": 54,
+   "mark": "j",
+   "context": "doesnotchange¯a"
+  },
+  {
+   "page": 54,
+   "mark": "j",
+   "context": "doesnotchange¯aj(k, ϖ)or¯c"
+  },
+  {
+   "page": 54,
+   "mark": "j",
+   "context": "doesnotchange¯aj(k, ϖ)or¯cj(k, ϖ)butwehave¯b"
+  },
+  {
+   "page": 54,
+   "mark": "j",
+   "context": "doesnotchange¯aj(k, ϖ)or¯cj(k, ϖ)butwehave¯bj(ek, ϖ) = ¯b"
+  },
+  {
+   "page": 54,
+   "mark": "0",
+   "context": "esnotchange¯aj(k, ϖ)or¯cj(k, ϖ)butwehave¯bj(ek, ϖ) = ¯bj + k"
+  },
+  {
+   "page": 55,
+   "mark": "i",
+   "context": "i¯B"
+  },
+  {
+   "page": 55,
+   "mark": "3",
+   "context": "P"
+  },
+  {
+   "page": 55,
+   "mark": "i",
+   "context": "i=1¯a"
+  },
+  {
+   "page": 55,
+   "mark": "3",
+   "context": "i=1¯ai −P"
+  },
+  {
+   "page": 55,
+   "mark": "i",
+   "context": "i=1¯c"
+  },
+  {
+   "page": 55,
+   "mark": "24",
+   "context": "i=1¯ciiszerofromFigure"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "i=1¯ciiszerofromFigure24,whileattheequatorialvertices"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "i=1¯ciiszerofromFigure24,whileattheequatorialvertices1,"
+  },
+  {
+   "page": 55,
+   "mark": "3",
+   "context": "i=1¯ciiszerofromFigure24,whileattheequatorialvertices1, 2,"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "2)−¯c"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "2)−¯c"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "2)−¯c"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "2)−¯c"
+  },
+  {
+   "page": 55,
+   "mark": "3",
+   "context": "2)−¯a"
+  },
+  {
+   "page": 55,
+   "mark": "3",
+   "context": "2)−¯a"
+  },
+  {
+   "page": 55,
+   "mark": "3",
+   "context": "2)−¯a"
+  },
+  {
+   "page": 55,
+   "mark": "3",
+   "context": "2)−¯a"
+  },
+  {
+   "page": 55,
+   "mark": "e",
+   "context": "q"
+  },
+  {
+   "page": 55,
+   "mark": "0",
+   "context": "qe"
+  },
+  {
+   "page": 55,
+   "mark": "3",
+   "context": "= q−x"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "2)−¯c"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "2)−¯c1−¯c"
+  },
+  {
+   "page": 55,
+   "mark": "3",
+   "context": "2)−¯c1−¯c2−¯a"
+  },
+  {
+   "page": 55,
+   "mark": "3",
+   "context": "2)−¯c1−¯c2−¯a3q−x"
+  },
+  {
+   "page": 55,
+   "mark": "0",
+   "context": "2)−¯b"
+  },
+  {
+   "page": 55,
+   "mark": "4",
+   "context": "2)−¯b0−¯c"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "2)−¯c"
+  },
+  {
+   "page": 55,
+   "mark": "2",
+   "context": "2)−¯c1−¯c"
+  },
+  {
+   "page": 55,
+   "mark": "3",
+   "context": "2)−¯c1−¯c2−¯a"
+  },
+  {
+   "page": 55,
+   "mark": "0",
+   "context": "2)−¯b"
+  },
+  {
+   "page": 55,
+   "mark": "4",
+   "context": "2)−¯c"
+  },
+  {
+   "page": 55,
+   "mark": "k",
+   "context": "q"
+  },
+  {
+   "page": 55,
+   "mark": "0",
+   "context": "qk"
+  }
+ ]
+}

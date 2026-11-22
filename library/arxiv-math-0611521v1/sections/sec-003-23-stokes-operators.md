@@ -1,6 +1,6 @@
 ---
 doc_id: arxiv-math-0611521v1
-doc_title: "arXiv:math/0611521v1 [math.QA] 17 Nov 2006"
+doc_title: "The q-analogue of the wild fundamental group"
 section_id: sec-003-23-stokes-operators
 section_title: "Stokes operators"
 section_number: 2.3
@@ -9,8 +9,9 @@ source_pdf: 0611521v1.pdf
 source_sha256: 65fcd77b7b0a208e
 toc_source: inferred
 text_source: latex
-latex_prose_ratio: 0.952
+latex_prose_ratio: 0.959
 latex_coverage_ratio: 0.946
+doc_brief: "The q-analogue of the wild fundamental group — We describe an explicit construction of galoisian Stokes operators for irregular linear q-difference equations."
 ---
 []{#subsection:Stokesoperators label="subsection:Stokesoperators"}
 

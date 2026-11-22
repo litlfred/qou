@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1203.3404v1/sections/sec-009",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Connection formula of the divergent series 20(0,0;-;q,)",
+  "pageStart": 13,
+  "pageEnd": 13,
+  "contains": [
+    "library/arxiv-1203.3404v1/blocks/prose-sec-009"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1203.3404v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1203.3404v1/manifest.jsonld",
+  "provenance": "ingested"
+}

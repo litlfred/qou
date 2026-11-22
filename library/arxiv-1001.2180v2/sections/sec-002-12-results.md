@@ -4,13 +4,14 @@ doc_title: "ASYMPTOTICS OF q-PLANCHEREL MEASURES"
 section_id: sec-002-12-results
 section_title: "Results"
 section_number: 1.2
-pages: 1-4
+pages: 2-4
 source_pdf: 1001.2180v2.pdf
 source_sha256: f4225d7b024940aa
-doc_brief: "ASYMPTOTICS OF q-PLANCHEREL MEASURES — In this paper, we are interested in the asymptotic size of the rows and columns of a random Young diagram under a natural deformation of the Plancherel measure"
+toc_source: outline
 text_source: latex
-latex_prose_ratio: 0.941
-latex_coverage_ratio: 0.707
+latex_prose_ratio: 0.936
+latex_coverage_ratio: 0.895
+doc_brief: "ASYMPTOTICS OF q-PLANCHEREL MEASURES — In this paper, we are interested in the asymptotic size of the rows and columns of a random Young diagram under a natural deformation of the Plancherel measure"
 ---
 ### First rows of a random Young diagram under the $q$-Plancherel measure
 

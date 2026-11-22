@@ -1,0 +1,1 @@
+Although here we have chosen to work over the field C(q) of rational functions everything goes through in exactly the same fashion if we work over a field k of characteristic 0 and let gek such that 1 + q+q?+...+q" + Oforany r=1,2,...,f, see [Bou].

@@ -1,4 +1,4 @@
-**Proof of [$\Phi_q$ categorical truncation depth](#prop:phi-q-categorical-truncation).**
+**Argument for [$\Phi_q$ categorical truncation depth](#conj:phi-q-categorical-truncation).**
 
 *Step 1 (spectral-sequence reduction).* By
 [GB spectral sequence collapse](#prop:spectral-sequence-collapse), for
@@ -31,11 +31,10 @@ This sum is intrinsically finite (over partitions $\lambda \vdash n$)
 and supported on $\mathrm{supp}(T_w) = \{\lambda : \chi_\lambda(\rho(\beta)) \neq 0\}$.
 
 *Step 3 (curvature-rank stratification).*
-[Curvature-rank stratification](#prop:curvature-rank-gb-stratification)
+[Curvature-rank stratification](#conj:curvature-rank-gb-stratification)
 supplies the filtration of $H_n(R, q)$ by the curvature rank $r(T_w)$ of
 **words**. The grading of the centre by *partition* depth used below is a
-further step, not stated there and assumed here; see
-`docs/audits/2026-08-16-word-depth-vs-partition-depth-bridge-is-unstated.md`.
+further step, not stated there and assumed here.
 Granting it, the centre $Z(A)$ admits a GB-depth filtration
 
 $$
@@ -64,7 +63,7 @@ the transient trace contribution at $p_i$ evaluates to $\Phi_q(z_i)$.
 That identity is **unstratified** — it equates the whole transient
 trace with the whole dilogarithm and says nothing about levels. The
 level-by-level refinement this step needs is
-[partition-depth stratification of $\Phi_q$](#prop:quantum-dilogarithm-stratified),
+[partition-depth stratification of $\Phi_q$](#conj:quantum-dilogarithm-stratified),
 and with it the analytic representation of the curvature-rank-$k$
 stratum on the $i$-th exceptional divisor is
 
@@ -109,7 +108,7 @@ contribution. $\square$
 **Proof gap closure (partial).**
 The structural bridge for Step 4 — identifying the level-$k$ factor of
 $\Phi_q$ with the depth-$k$ centre stratum — is now provided by
-[partition-depth stratification of $\Phi_q$](#prop:quantum-dilogarithm-stratified).
+[partition-depth stratification of $\Phi_q$](#conj:quantum-dilogarithm-stratified).
 That proposition gives the depth-$k$ Frobenius-dual coefficients
 $\phi_q^{(k)}(z_i) \in Z^{(k)}(A)$ such that the partial product
 $\Phi_q^{[\leq k]}(z_i) = \sum_{j \leq k} \phi_q^{(j)}(z_i)$ on the
@@ -145,16 +144,22 @@ $k_\star(T_w)$ structurally determined by NF support, and the analytic
 $\Phi_q$ infinite product is a faithful Frobenius-pairing
 representation up to the depth-$k_\star$ truncation — is closed
 modulo the depth-stratified version of $\Phi_q$
-([prop:quantum-dilogarithm-stratified](#prop:quantum-dilogarithm-stratified)).
+([conj:quantum-dilogarithm-stratified](#conj:quantum-dilogarithm-stratified)).
 The remaining gap is between the categorical equality and its
 real-valued canonical evaluation at $|\hat{V}|\approx 1$.
 
-The empirical $k=2$ subtractive sweet spot
+*Comparison, not part of the proof.* The empirical $k=2$ subtractive cut-off
 ([brane-tower in $z$-Habiro §"Empirical observation"](#conj:brane-tower-z-habiro))
-is consistent with $k_\star(T_w) \leq 2$ for D, T, ${}^3\mathrm{He}$
-under this proposition, supporting the structural picture; the
-${}^3\mathrm{He}$ residual overshoot is then attributable to multiplicity
-in $\mathrm{supp}(T_w)$ rather than to a missing brane-tower
-correction. The witness's anomalous $k_{\max} = 9$ for tritium remains
-the most concrete falsifier — if it reflects a genuine $k_\star(T) = 9$
-rather than a strand-padding artifact, the proposition fails.
+for D, T, ${}^3\mathrm{He}$ is not supported by this argument: with GB-depth
+fixed as the $a$-function, $k_\star(T_w)=\binom n2$, and under the max-hook depth
+$k_\star(T_w)=n$; neither is $\le 2$ at the relevant $n$. The witness value
+$k_{\max}=9$ for tritium is a Coxeter-length quantity and is not compared with
+$k_\star$ here.
+
+*Scope of Steps 4–5.* Steps 4–5 together assert that the level-$K$ partial
+sum equals $\sum_i\Phi_q^{[\le K]}(z_i)$ for every $K$ and is constant for
+$K\ge k_\star$. These cannot both hold, since
+$\Phi_q^{[\le K+1]}(z)\ne\Phi_q^{[\le K]}(z)$ for $z\ne0$
+([Cell-depth truncation of a trace](#prop:cell-depth-truncation), item 5). The
+correct centre-projection statement, with its proof, is items 1–3 of that
+proposition; Step 1's spectral-sequence reduction is not needed for it.

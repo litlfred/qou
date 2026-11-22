@@ -107,7 +107,7 @@ algebra. No `ℝ`, no `Real.*`, no ordering on `R`: the construction is algebrai
   modules; rationality / absolute irreducibility over ℚ).
 - [sagan2001] Sagan, *The Symmetric Group*, §2.4 (the Specht modules are a complete set of simple
   `k[S_n]`-modules in char 0; the partition labelling; `dim S^λ = #SYT(λ)`).
-- [manuscript] content/.../BraidKnot/OVTopAssembly.lean (`snBlocks`, the gap this file fills).
+- [leitner2026] content/.../BraidKnot/OVTopAssembly.lean (`snBlocks`, the gap this file fills).
 -/
 
 open scoped BigOperators

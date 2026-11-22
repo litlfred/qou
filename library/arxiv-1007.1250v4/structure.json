@@ -6,10 +6,12 @@
   "sha256": "541ba4fb3068de8b464453d4bca4b572f5b0004c4ff948bf487c38f9b96e8a87",
   "bytes": 2493937,
   "pages": 139,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -19,21 +21,28 @@
    "stamp_date": "6 Mar 2015"
   },
   "doi": null,
-  "title": "Nonabelian Multiplicative Integration on Surfaces",
-  "authors_raw": null,
-  "abstract": "We construct a 2 -dimensional twisted nonabelian multiplicative integral . This is done in the context of a Lie crossed module (an object composed of two Lie groups interacting), and a pointed manifold. The integrand is a connection-curvature pair, that consists of a Lie algebra valued 1-form and a Lie algebra valued 2-form, satisfying a certain differential equation. The geometric cycle of the integration is a kite in the pointed manifold. A kite is made up of a 2-dimensional simplex in the manifold, together with a path connecting this simplex to the base point of the manifold. The multiplicative integral is an element of the second Lie group in the crossed module. We prove several properties of the multiplicative integral. Among them is the 2-dimensional nonabelian Stokes Theorem, which is a generalization of Schlesinger\u2019s Theorem. Our main result is the 3 -dimensional nonabelian Stokes Theorem. This is a totally new result. The methods we use are: the CBH Theorem for the nonabelian exponential map; piecewise smooth geometry of polyhedra; and some basic algebraic topol- ogy. The motivation for this work comes from twisted deformation quantization and descent for nonabelian gerbes. Similar questions arise in nonabelian gauge theory.",
-  "docinfo": {
-   "Author": "",
-   "CreationDate": "D:20181026195549Z",
-   "Creator": "LaTeX with hyperref package",
-   "Producer": "pdfTeX-1.40.12",
-   "Title": ""
-  },
+  "title": "NONABELIAN MULTIPLICATIVE INTEGRATION ON SURFACES",
+  "authors_raw": "AMNON YEKUTIELI",
   "title_lines": [
-   "NONABELIAN MULTIPLICATIVE INTEGRATION ON SURFACES",
-   "AMNON YEKUTIELI"
+   "NONABELIAN MULTIPLICATIVE INTEGRATION ON SURFACES"
   ],
-  "title_prev": "NONABELIAN MULTIPLICATIVE INTEGRATION ON SURFACES AMNON YEKUTIELI"
+  "abstract": "We construct a 2-dimensional twisted nonabelian multiplicative integral. This is done in the context of a Lie crossed module (an object composed of two Lie groups interacting), and a pointed manifold. The integrand is a connection-curvature pair, that consists of a Lie algebra valued 1-form and a Lie algebra valued 2-form, satisfying a certain differential equation. The geometric cycle of the integration is a kite in the pointed manifold. A kite is made up of a 2-dimensional simplex in the manifold, together with a path connecting this simplex to the base point of the manifold. The multiplicative integral is an element of the second Lie group in the crossed module. We prove several properties of the multiplicative integral. Among them is the 2-dimensional nonabelian Stokes Theorem, which is a generalization of Schlesinger’s Theorem. Our main result is the 3-dimensional nonabelian Stokes Theorem. This is a totally new result. The methods we use are: the CBH Theorem for the nonabelian exponential map; piecewise smooth geometry of polyhedra; and some basic algebraic topol- ogy. The motivation for this work comes from twisted deformation quantization and descent for nonabelian gerbes. Similar questions arise in nonabelian gauge theory.",
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.12",
+   "Creator": "LaTeX with hyperref package",
+   "CreationDate": "D:20181026195549Z"
+  },
+  "title_raw": "NONABELIAN MULTIPLICATIVE INTEGRATION ON SURFACES",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "NONABELIAN MULTIPLICATIVE INTEGRATION ON SURFACES C ontents Introduction Polyhedra and Piecewise Smooth Geometry Estimates for the Nonabelian Exponential Map Multiplicative Integration in Dimension One Multiplicative Integration in Dimension Two Quasi Crossed Modules and Additive Feedback Stokes The",
+   "outline": "0. Introduction",
+   "text": "NONABELIAN MULTIPLICATIVE INTEGRATION ON SURFACES",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "Nonabelian Multiplicative Integration on Surfaces"
  },
  "toc": [
   {
@@ -41,113 +50,2050 @@
    "title": "Introduction",
    "page": 3,
    "source": "outline",
-   "number": "0"
+   "number": "0",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Polyhedra and Piecewise Smooth Geometry",
    "page": 13,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 1,
    "title": "Estimates for the Nonabelian Exponential Map",
    "page": 25,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "23"
   },
   {
    "level": 1,
    "title": "Multiplicative Integration in Dimension One",
    "page": 35,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "33"
   },
   {
    "level": 1,
    "title": "Multiplicative Integration in Dimension Two",
    "page": 51,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "49"
   },
   {
    "level": 1,
    "title": "Quasi Crossed Modules and Additive Feedback",
    "page": 71,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "69"
   },
   {
    "level": 1,
    "title": "Stokes Theorem in Dimension Two",
    "page": 83,
    "source": "outline",
-   "number": "6"
+   "number": "6",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "81"
   },
   {
    "level": 1,
    "title": "Square Puzzles",
    "page": 91,
    "source": "outline",
-   "number": "7"
+   "number": "7",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "89"
   },
   {
    "level": 1,
    "title": "Stokes Theorem in Dimension Three",
    "page": 105,
    "source": "outline",
-   "number": "8"
+   "number": "8",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "103"
   },
   {
    "level": 1,
    "title": "Multiplicative Integration on Triangular Kites",
    "page": 125,
    "source": "outline",
-   "number": "9"
+   "number": "9",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "123"
   },
   {
    "level": 1,
    "title": "References",
    "page": 137,
    "source": "outline",
-   "number": null
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": "135"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "figure",
+   "number": "1",
+   "title": "A smooth triangular kite (σ, τ) in the pointed manifold (X, x0)",
+   "page": 4,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "2"
+  },
+  {
+   "kind": "figure",
+   "number": "2",
+   "title": "The boundary ∂(σ, τ) of the kite (σ, τ) from Figure 1",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "3",
+   "title": "A smooth triangular balloon (σ, τ) in the pointed manifold (X, x0)",
+   "page": 5,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "3"
+  },
+  {
+   "kind": "figure",
+   "number": "4",
+   "title": "The four triangular kites that make up the sequence ∂(σ, τ). Here (σ, τ) is the triangular balloon from Figure 3",
+   "page": 6,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "4"
+  },
+  {
+   "kind": "figure",
+   "number": "5",
+   "title": "The polyhedra ∆1 ∼= I1, ∆2 and I2, with their vertices and orientations",
+   "page": 13,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "11"
+  },
+  {
+   "kind": "figure",
+   "number": "6",
+   "title": "The 2-nd binary tessellation of I1",
+   "page": 36,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "34"
+  },
+  {
+   "kind": "figure",
+   "number": "7",
+   "title": "The strings σ = (σ1, σ2, σ3), τ = (τ1, τ2) and σ ∗τ in the polyhedron X",
+   "page": 45,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "43"
+  },
+  {
+   "kind": "figure",
+   "number": "8",
+   "title": "A linear quadrangular kite (σ, τ) in the pointed poly-",
+   "page": 52,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "50"
+  },
+  {
+   "kind": "figure",
+   "number": "9",
+   "title": "Continued from Figure 8: the linear quadrangular kite",
+   "page": 52,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "50"
+  },
+  {
+   "kind": "figure",
+   "number": "10",
+   "title": "The boundary ∂(σ, τ) = σ ∗∂τ ∗σ−1 of the kite (σ, τ) from Figure 8",
+   "page": 52,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "50"
+  },
+  {
+   "kind": "figure",
+   "number": "11",
+   "title": "The map f |Y∪Z : Y ∪Z →X, where Z = Z1 ∪Z2 ∪Z3. Here is a useful fact about the geometry of kites",
+   "page": 53,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "51"
+  },
+  {
+   "kind": "figure",
+   "number": "12",
+   "title": "A piecewise linear retraction g : I2 →Y ∪Z",
+   "page": 54,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "52"
+  },
+  {
+   "kind": "figure",
+   "number": "13",
+   "title": "The piecewise linear map f := f |Y∪Z ◦g, and the kite",
+   "page": 54,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "52"
+  },
+  {
+   "kind": "figure",
+   "number": "14",
+   "title": "The 1-st binary subdivision sd1 I2 of I2. Here w := ( 1",
+   "page": 54,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "52"
+  },
+  {
+   "kind": "figure",
+   "number": "15",
+   "title": "The probe σpr in I2. Here w := ( 1",
+   "page": 55,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "53"
+  },
+  {
+   "kind": "figure",
+   "number": "16",
+   "title": "The 1-st binary tessellation tes1 I2. The arrowheads indicate the orientation of the linear maps",
+   "page": 56,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "54"
+  },
+  {
+   "kind": "figure",
+   "number": "17",
+   "title": "The kite (σ2",
+   "page": 56,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "54"
+  },
+  {
+   "kind": "figure",
+   "number": "18",
+   "title": "Calculating RP0(α, β | σ, τ) in the smooth case. Here",
+   "page": 58,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "56"
+  },
+  {
+   "kind": "figure",
+   "number": "19",
+   "title": "The kite (σ, τ) in (X, x0) and the points z1, . . . , z4k in",
+   "page": 60,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "58"
+  },
+  {
+   "kind": "figure",
+   "number": "20",
+   "title": "The kite (σ2, τ2) in (X, x0). Proof. Let w := ( 1",
+   "page": 60,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "58"
+  },
+  {
+   "kind": "figure",
+   "number": "21",
+   "title": "A string π in Z = τ(I2), with initial point z0 and terminal point z",
+   "page": 62,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "60"
+  },
+  {
+   "kind": "figure",
+   "number": "22",
+   "title": "The strings π1 and π3 in Z. Here k = 1",
+   "page": 63,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "61"
+  },
+  {
+   "kind": "figure",
+   "number": "23",
+   "title": "The string ρ from x0 to x1, the group element g :=",
+   "page": 76,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "74"
+  },
+  {
+   "kind": "figure",
+   "number": "24",
+   "title": "The string ρ from x0 to x1, and the kite (σ, τ) in (X, x1). g · g′ = MI(α | ρ ∗σ), we have a commutative diagram h",
+   "page": 78,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "76"
+  },
+  {
+   "kind": "figure",
+   "number": "25",
+   "title": "Computing RP0(α | ∂τ) for a tiny square kite (σ, τ) in (I2, v0)",
+   "page": 84,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "82"
+  },
+  {
+   "kind": "figure",
+   "number": "26",
+   "title": "Illustration for Corollary 6.3.2",
+   "page": 89,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "87"
+  },
+  {
+   "kind": "figure",
+   "number": "27",
+   "title": "A kite (σ, τ) patterned on sd1 I2 and aligned with",
+   "page": 95,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "93"
+  },
+  {
+   "kind": "figure",
+   "number": "28",
+   "title": "A kite (σ, τ) in (I2, v0), and the kite ﬂip(σ, τ)",
+   "page": 96,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "94"
+  },
+  {
+   "kind": "figure",
+   "number": "29",
+   "title": "A kite (σ, τ) in (I2, v0), and the kite turn(σ, τ). in π1(sk1 sdk I2)",
+   "page": 100,
+   "confidence": 0.7,
+   "evidence": [
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "98"
+  },
+  {
+   "kind": "figure",
+   "number": "30",
+   "title": "A cubical balloon (σ, τ) in the pointed polyhedron (I3, v0)",
+   "page": 105,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "103"
+  },
+  {
+   "kind": "figure",
+   "number": "31",
+   "title": "The kites (σ♭",
+   "page": 107,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "105"
+  },
+  {
+   "kind": "figure",
+   "number": "32",
+   "title": "Illustration for Subsection 8.5",
+   "page": 116,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "114"
+  },
+  {
+   "kind": "figure",
+   "number": "33",
+   "title": "The boundary of ∆3",
+   "page": 126,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "124"
+  },
+  {
+   "kind": "figure",
+   "number": "34",
+   "title": "The piecewise linear retraction h : I2 →∆2",
+   "page": 128,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "126"
+  },
+  {
+   "kind": "figure",
+   "number": "35",
+   "title": "The piecewise linear retraction g : I2 →Y ∪Z. Here w := ( 1",
+   "page": 129,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "127"
+  },
+  {
+   "kind": "figure",
+   "number": "36",
+   "title": "The piecewise smooth map f : I2 →X such that",
+   "page": 129,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "127"
+  },
+  {
+   "kind": "figure",
+   "number": "37",
+   "title": "The triangular linear balloon (σ′, τ′) and the quad-",
+   "page": 132,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "130"
+  },
+  {
+   "kind": "figure",
+   "number": "38",
+   "title": "The piecewise linear map h1 retracts the cube I3 to a prism. The piecewise linear map h2 retracts the prism to the",
+   "page": 132,
+   "confidence": 0.9,
+   "evidence": [
+    "referenced",
+    "in-sequence",
+    "graphic"
+   ],
+   "page_label": "130"
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "1",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "2",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "3",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "4",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "5",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "6",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "7",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "8",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "9",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "10",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "11",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "12",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "13",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 16,
+   "label": "14",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 17,
+   "label": "15",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 18,
+   "label": "16",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 19,
+   "label": "17",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 20,
+   "label": "18",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 21,
+   "label": "19",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 22,
+   "label": "20",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 23,
+   "label": "21",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 24,
+   "label": "22",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 25,
+   "label": "23",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 26,
+   "label": "24",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 27,
+   "label": "25",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 28,
+   "label": "26",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 29,
+   "label": "27",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 30,
+   "label": "28",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 31,
+   "label": "29",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 32,
+   "label": "30",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 33,
+   "label": "31",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 34,
+   "label": "32",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 35,
+   "label": "33",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 36,
+   "label": "34",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 37,
+   "label": "35",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 38,
+   "label": "36",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 39,
+   "label": "37",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 40,
+   "label": "38",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 41,
+   "label": "39",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 42,
+   "label": "40",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 43,
+   "label": "41",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 44,
+   "label": "42",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 45,
+   "label": "43",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 46,
+   "label": "44",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 47,
+   "label": "45",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 48,
+   "label": "46",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 49,
+   "label": "47",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 50,
+   "label": "48",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 51,
+   "label": "49",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 52,
+   "label": "50",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 53,
+   "label": "51",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 54,
+   "label": "52",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 55,
+   "label": "53",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 56,
+   "label": "54",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 57,
+   "label": "55",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 58,
+   "label": "56",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 59,
+   "label": "57",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 60,
+   "label": "58",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 61,
+   "label": "59",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 62,
+   "label": "60",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 63,
+   "label": "61",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 64,
+   "label": "62",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 65,
+   "label": "63",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 66,
+   "label": "64",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 67,
+   "label": "65",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 68,
+   "label": "66",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 69,
+   "label": "67",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 70,
+   "label": "68",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 71,
+   "label": "69",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 72,
+   "label": "70",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 73,
+   "label": "71",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 74,
+   "label": "72",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 75,
+   "label": "73",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 76,
+   "label": "74",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 77,
+   "label": "75",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 78,
+   "label": "76",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 79,
+   "label": "77",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 80,
+   "label": "78",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 81,
+   "label": "79",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 82,
+   "label": "80",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 83,
+   "label": "81",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 84,
+   "label": "82",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 85,
+   "label": "83",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 86,
+   "label": "84",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 87,
+   "label": "85",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 88,
+   "label": "86",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 89,
+   "label": "87",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 90,
+   "label": "88",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 91,
+   "label": "89",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 92,
+   "label": "90",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 93,
+   "label": "91",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 94,
+   "label": "92",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 95,
+   "label": "93",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 96,
+   "label": "94",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 97,
+   "label": "95",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 98,
+   "label": "96",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 99,
+   "label": "97",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 100,
+   "label": "98",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 101,
+   "label": "99",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 102,
+   "label": "100",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 103,
+   "label": "101",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 104,
+   "label": "102",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 105,
+   "label": "103",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 106,
+   "label": "104",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 107,
+   "label": "105",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 108,
+   "label": "106",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 109,
+   "label": "107",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 110,
+   "label": "108",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 111,
+   "label": "109",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 112,
+   "label": "110",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 113,
+   "label": "111",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 114,
+   "label": "112",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 115,
+   "label": "113",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 116,
+   "label": "114",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 117,
+   "label": "115",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 118,
+   "label": "116",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 119,
+   "label": "117",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 120,
+   "label": "118",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 121,
+   "label": "119",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 122,
+   "label": "120",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 123,
+   "label": "121",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 124,
+   "label": "122",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 125,
+   "label": "123",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 126,
+   "label": "124",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 127,
+   "label": "125",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 128,
+   "label": "126",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 129,
+   "label": "127",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 130,
+   "label": "128",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 131,
+   "label": "129",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 132,
+   "label": "130",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 133,
+   "label": "131",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 134,
+   "label": "132",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 135,
+   "label": "133",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 136,
+   "label": "134",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 137,
+   "label": "135",
+   "source": "pdf-labels",
+   "confidence": 0.85,
+   "evidence": [
+    "pdf-labels",
+    "contents"
+   ]
+  },
+  {
+   "physical": 138,
+   "label": "136",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  },
+  {
+   "physical": 139,
+   "label": "137",
+   "source": "pdf-labels",
+   "confidence": 0.7,
+   "evidence": [
+    "pdf-labels"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 2231,
+   "n_words": 330,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-0-introduction",
    "number": "0",
    "title": "Introduction",
    "level": 1,
    "page_start": 3,
-   "page_end": 137,
-   "n_chars": 238409,
-   "n_words": 49702
+   "page_end": 13,
+   "n_chars": 20345,
+   "n_words": 3697,
+   "label_start": "1",
+   "label_end": "11"
   },
   {
-   "id": "sec-001-references",
+   "id": "sec-001-1-polyhedra-and-piecewise-smooth-geometry",
+   "number": "1",
+   "title": "Polyhedra and Piecewise Smooth Geometry",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 25,
+   "n_chars": 28898,
+   "n_words": 5664,
+   "label_start": "11",
+   "label_end": "23"
+  },
+  {
+   "id": "sec-002-2-estimates-for-the-nonabelian-exponential-map",
+   "number": "2",
+   "title": "Estimates for the Nonabelian Exponential Map",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 35,
+   "n_chars": 14745,
+   "n_words": 3189,
+   "label_start": "23",
+   "label_end": "33"
+  },
+  {
+   "id": "sec-003-3-multiplicative-integration-in-dimension-one",
+   "number": "3",
+   "title": "Multiplicative Integration in Dimension One",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 51,
+   "n_chars": 27075,
+   "n_words": 5866,
+   "label_start": "33",
+   "label_end": "49"
+  },
+  {
+   "id": "sec-004-4-multiplicative-integration-in-dimension-two",
+   "number": "4",
+   "title": "Multiplicative Integration in Dimension Two",
+   "level": 1,
+   "page_start": 51,
+   "page_end": 71,
+   "n_chars": 32900,
+   "n_words": 7099,
+   "label_start": "49",
+   "label_end": "69"
+  },
+  {
+   "id": "sec-005-5-quasi-crossed-modules-and-additive-feedback",
+   "number": "5",
+   "title": "Quasi Crossed Modules and Additive Feedback",
+   "level": 1,
+   "page_start": 71,
+   "page_end": 83,
+   "n_chars": 22636,
+   "n_words": 4545,
+   "label_start": "69",
+   "label_end": "81"
+  },
+  {
+   "id": "sec-006-6-stokes-theorem-in-dimension-two",
+   "number": "6",
+   "title": "Stokes Theorem in Dimension Two",
+   "level": 1,
+   "page_start": 83,
+   "page_end": 91,
+   "n_chars": 11679,
+   "n_words": 2459,
+   "label_start": "81",
+   "label_end": "89"
+  },
+  {
+   "id": "sec-007-7-square-puzzles",
+   "number": "7",
+   "title": "Square Puzzles",
+   "level": 1,
+   "page_start": 91,
+   "page_end": 105,
+   "n_chars": 23559,
+   "n_words": 5345,
+   "label_start": "89",
+   "label_end": "103"
+  },
+  {
+   "id": "sec-008-8-stokes-theorem-in-dimension-three",
+   "number": "8",
+   "title": "Stokes Theorem in Dimension Three",
+   "level": 1,
+   "page_start": 105,
+   "page_end": 125,
+   "n_chars": 34857,
+   "n_words": 7481,
+   "label_start": "103",
+   "label_end": "123"
+  },
+  {
+   "id": "sec-009-9-multiplicative-integration-on-triangular-kites",
+   "number": "9",
+   "title": "Multiplicative Integration on Triangular Kites",
+   "level": 1,
+   "page_start": 125,
+   "page_end": 137,
+   "n_chars": 22758,
+   "n_words": 4553,
+   "label_start": "123",
+   "label_end": "135"
+  },
+  {
+   "id": "sec-010-references",
    "number": null,
    "title": "References",
    "level": 1,
    "page_start": 137,
    "page_end": 139,
-   "n_chars": 2897,
-   "n_words": 399
+   "n_chars": 2906,
+   "n_words": 398,
+   "label_start": "135",
+   "label_end": "137"
   }
  ],
  "diagnostics": {
   "pages_without_text": 8,
   "likely_scanned": false,
   "toc_entries": 11,
-  "sections": 2,
-  "chars_total": 241306,
+  "toc_inferred_entries": 0,
+  "figure_entries": 38,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "toc_alignment": {
+   "listed_not_found": {
+    "count": 0,
+    "items": []
+   },
+   "found_not_listed": {
+    "count": 1,
+    "items": [
+     "0 →(X, x0) be a piecewise linear map of pointed polyhedra, and let (σ′, τ′) be a kite in (X′, x′"
+    ]
+   },
+   "page_mismatch": {
+    "count": 0,
+    "items": []
+   }
+  },
+  "sections": 12,
+  "chars_total": 244589,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "paper_arxiv.tex",
    "tex_sections": 74,
-   "overlaid": 1,
+   "overlaid": 10,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -155,15 +2101,92 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-0-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.987,
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-1-polyhedra-and-piecewise-smooth-geometry",
+     "title": "Polyhedra and Piecewise Smooth Geometry",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-2-estimates-for-the-nonabelian-exponential-map",
+     "title": "Estimates for the Nonabelian Exponential Map",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-3-multiplicative-integration-in-dimension-one",
+     "title": "Multiplicative Integration in Dimension One",
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-4-multiplicative-integration-in-dimension-two",
+     "title": "Multiplicative Integration in Dimension Two",
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-5-quasi-crossed-modules-and-additive-feedback",
+     "title": "Quasi Crossed Modules and Additive Feedback",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-6-stokes-theorem-in-dimension-two",
+     "title": "Stokes Theorem in Dimension Two",
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-7-square-puzzles",
+     "title": "Square Puzzles",
+     "prose_ratio": 0.989,
      "coverage_ratio": 0.971,
      "result": "overlaid",
      "converter": "latex"
     },
     {
-     "id": "sec-001-references",
+     "id": "sec-008-8-stokes-theorem-in-dimension-three",
+     "title": "Stokes Theorem in Dimension Three",
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-9-multiplicative-integration-on-triangular-kites",
+     "title": "Multiplicative Integration on Triangular Kites",
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-references",
      "title": "References",
      "result": "no matching \\section"
     }

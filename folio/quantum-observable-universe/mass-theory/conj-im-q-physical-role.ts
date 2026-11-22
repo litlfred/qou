@@ -10,6 +10,14 @@ export default conjecture({
     "Physical role of $\\mathrm{Im}(q)$: a substrate moduli parameter not constrained by current QOU observables, with three candidate roles (chirality / phase coordinate / non-Hermitian deformation).",
   uses: ["rem:im-q-vs-p-skew"],
   authorNotes: [
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): to the precision documented in `per-observable-100x-status.witness.json`." },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): - [`prop:rho-k-pair-gen-canonical-form`](../mass-endomorphism/conj-rho-k-pair-gen-canonical-form.md) —" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): reproduced by\n[`the_apollonius_circle_from_cal2_reproduces_exactly_probe.py`](../../../computations/probes/the_apollonius_circle_from_cal2_reproduces_exactly_probe.py)\n(4/4), which also records that **no $q_0$ enters**:" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): the Lean carrier\n`all_six_agree` says so in its own docstring, and\n[the Fermi-relation block]" },
+    {
+      kind: "note",
+      body: "An earlier version of this section stated that the coupling and phase-space integral were not supplied anywhere in the corpus; they are, in the hadron half-life rate formula.",
+    },
     {
       kind: "status",
       date: "2026-05-25",

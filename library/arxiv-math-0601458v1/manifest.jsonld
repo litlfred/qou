@@ -5,12 +5,13 @@
       "@base": "https://litlfred.github.io/folio/"
     }
   ],
-  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0601458v1",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0601458v1/manifest.jsonld",
   "@type": [
     "cat-harness:SourceDocument"
   ],
-  "title": "arxiv-math-0601458v1",
+  "title": "CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS",
   "contains": [
+    "library/arxiv-math-0601458v1/sections/sec-front-matter",
     "library/arxiv-math-0601458v1/sections/sec-000",
     "library/arxiv-math-0601458v1/sections/sec-001",
     "library/arxiv-math-0601458v1/sections/sec-002",
@@ -26,10 +27,22 @@
     "library/arxiv-math-0601458v1/sections/sec-012",
     "library/arxiv-math-0601458v1/sections/sec-013",
     "library/arxiv-math-0601458v1/sections/sec-014",
-    "library/arxiv-math-0601458v1/sections/sec-015"
+    "library/arxiv-math-0601458v1/sections/sec-015",
+    "library/arxiv-math-0601458v1/sections/sec-016",
+    "library/arxiv-math-0601458v1/sections/sec-017",
+    "library/arxiv-math-0601458v1/sections/sec-018",
+    "library/arxiv-math-0601458v1/sections/sec-019",
+    "library/arxiv-math-0601458v1/sections/sec-020",
+    "library/arxiv-math-0601458v1/sections/sec-021",
+    "library/arxiv-math-0601458v1/sections/sec-022",
+    "library/arxiv-math-0601458v1/sections/sec-023",
+    "library/arxiv-math-0601458v1/sections/sec-024",
+    "library/arxiv-math-0601458v1/sections/sec-025",
+    "library/arxiv-math-0601458v1/sections/sec-026",
+    "library/arxiv-math-0601458v1/sections/sec-027"
   ],
   "provenance": "ingested",
-  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
   "licenceRecord": {
     "status": "unknown",
     "searched": [
@@ -44,7 +57,9 @@
   },
   "meta": {
     "doc_id": "arxiv-math-0601458v1",
-    "title_source": "slug",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
     "source_file": "0601458v1.pdf",
     "source_sha256": "ef34611620cfd0bd4f2242e448ce23f82032c6a92447d5bbfcec63e3ce6eb3d4",
     "pages": 68,

@@ -48,8 +48,8 @@
   `ℕ`-cast of the pole order).  The previous `[Field R]` was gratuitous, as
   was the `Mathlib.Data.Real.Basic` import.
 
-  Ref: [manuscript] prop:binding-alpha-shift-extension
-       [manuscript] prop:alpha-shift-torus-knot
+  Ref: [leitner2026] prop:binding-alpha-shift-extension
+       [leitner2026] prop:alpha-shift-torus-knot
        [audit] docs/audits/2026-05-28-binding-endomorphism-analogy.md
        [audit] docs/audits/2026-05-30-alpha-shift-universal-derivation-chain.md
        [probe] computations/binding_rotation_phase_lead.py

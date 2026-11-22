@@ -8,6 +8,7 @@ pages: 8-8
 source_pdf: candetgl.pdf
 source_sha256: d788af715428b8b2
 toc_source: inferred
+doc_brief: "The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics — 27 sections: Front matter; INTRODUCTION; PRELIMINARIES"
 ---
 Let V be a round ball of radius 1, centered at the origin. Consider the function given by
 r2215x21y21z221, and the vector ﬁeld

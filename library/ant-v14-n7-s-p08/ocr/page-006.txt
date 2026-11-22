@@ -1,0 +1,48 @@
+1916 Lillian B. Pierce and Junyan Xu
+
+bound (1-1) proves n(p) pivey ite for any ¢ > 0, which held the record from [Burgess 1957] until
+the quantification in [Banks and Guo 2017]. In this vein, there are continued efforts toward the goal
+of improving the inequality (1-1) directly, such as reducing the power of the logarithm (see [Iwaniec
+and Kowalski 2004, Equation (12.58) and Remark p. 329; Kerr et al. 2019]), deducing improvements in
+certain special cases from conjectural improvements on the Pélya—Vinogradov inequality [Fromm and
+Goldmakher 2019], and making connections to the Elliott-Halberstam conjecture and “Type II sums” in
+sieve methods [Tao 2015, Conjecture 1.5, Theorem 1.6, Remark 1.7].
+
+1C2. Previous literature on special cases of S(F; N, H). In the n-dimensional setting of the sums
+S(F; N, H), previous literature mainly focused on two special cases. Burgess [1967b; 1968] considered
+the case in which
+
+n
+F(x) =] [ Li) (1-10)
+
+i=l
+is a product of n linear forms L; € Z[x1,..., Xn] that are linearly independent over Fz, for q prime. In
+this multilinear setting, he proved a nontrivial bound |S(F; N, H)| = O(||H||\q~>) for H = (H,..., H)
+and a certain 6 = 6(k) > 0 as long as H = q«+* for some k > 0, with 6, as defined in (1-7). Bourgain
+and Chang [2010] incorporated ideas from additive combinatorics to improve this significantly, proving a
+nontrivial bound |S(F; N, H)| = O(||H||q~°) for H = (H,..., H) and a certain 5 = 5(«) > O as long
+
+as H =ql/4+«
+
+for some « > 0, thus obtaining an n-dimensional result as strong as the original Burgess
+threshold in each dimension.
+
+The second case in which significant results are known is in dimension n = 2 when F is a binary
+quadratic form. In this special case, the work of Burgess above, for bilinear sums in n = 2, combined with
+results of Davenport and Lewis [1963] on analogues of the Burgess bound over F,2, initially provided
+a nontrivial upper bound for S(F, N, H) for q prime and H; > q'/3+* (that is H; > q®2+* with Bo as
+in (1-7)), where F is any binary quadratic form that is not a perfect square over F,; that is for any
+F(x1, x2) = x? + ax,x2+ bx} with a? 4 4b (mod q). Chang [2009, Theorem 11] introduced ideas of
+additive combinatorics to this setting, and improved this to a nontrivial upper bound for S(F, N, H) for
+Ay, Hy > qi! 4+« i e., a 2-dimensional result as strong as the original Burgess threshold in each dimension.
+Most recently, Heath-Brown [2016, Theorem 3] proved that this latter result continues to hold for any
+odd square-free modulus qg such that (q, det(F)) = 1.
+
+Remark. It remains an interesting open question to bound S(F; N, H), with all H; as short as qiit«
+for « > 0, in the general case of an arbitrary form F whose reduction modulo q is (A, q)-admissible.
+
+1C3. Further related literature. We briefly mention certain other results that are related to multivariate
+sums similar to S(F; N, H), although not of exactly the type we consider in this paper. Davenport and
+Lewis [1963] considered the case of x a nonprincipal character of F7, for q prime, and a linear form
+F(X1,---,Xn) = @1X1 +++ + @nXp for @1,..., On a fixed basis of Fyn. They proved that S(F, N, H) =
+O(||H||q~°) for some 6 = 5(k) where H; > q®»** for some x > 0. As remarked in [Burgess 1968], for

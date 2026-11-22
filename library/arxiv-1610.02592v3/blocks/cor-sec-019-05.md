@@ -1,1 +1,0 @@
-Thefundamentalgroup π1(M)ofaclosedhyperbolicman-

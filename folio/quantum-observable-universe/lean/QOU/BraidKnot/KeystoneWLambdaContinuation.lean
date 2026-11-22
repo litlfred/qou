@@ -36,7 +36,7 @@ instance, not part of the structural statement).  **Honest scope:** this certifi
 that the *value-map* continuation is polynomial evaluation; it does **not** derive
 `loc_matches` (the gauge = categorical identification) and wires nothing.
 
--- Ref: [manuscript] docs/coordination/s5-so3-keystone.md
+-- Ref: [leitner2026] docs/coordination/s5-so3-keystone.md
 -/
 import QOU.BraidKnot.KeystoneLRModulusFold
 

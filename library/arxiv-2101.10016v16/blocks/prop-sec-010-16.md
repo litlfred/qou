@@ -1,1 +1,1 @@
-Let (S, α, β) be an antipode of an Ω-involutive weak quasi-Hopf algebra. There is an invertible ω ∈ A such that
+Let (S, α, β) be an antipode of an Ω-involutive weak quasi-Hopf algebra. There is an invertible ω ∈ A such that S(a) = ωS−1(a ∗ ) ∗ω−1 , a ∈ A, (11.7) S −1 (β) ∗ = ω−1αΩ, S−1 (α) ∗ = βΩω (11.8) uniquely determined by (11.7) and one of (11.8). In particular when S is a strong antipode then ω = m(S ⊗ 1(Ω−1)), ω−1 = m(1 ⊗ S(Ω)). (11.9)

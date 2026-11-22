@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2506.10206v2/sections/sec-022",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "A modified Watson $\\frac{\\pi}{7}$-dilogarithm identity",
+  "pageStart": 33,
+  "pageEnd": 33,
+  "contains": [
+    "library/arxiv-2506.10206v2/blocks/prose-sec-022"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2506.10206v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2506.10206v2/manifest.jsonld",
+  "provenance": "ingested"
+}

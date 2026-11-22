@@ -1,0 +1,1 @@
+The maps (Ta)∗and (Ua)∗are perhaps more familiar, as their action on automorphic forms is given by simple formulae in terms of Fourier expansions, as we shall recall below. The lower-star versions (Ta)∗and (Ua)∗are the transpose of the upper-star versions with respect to Poincaré duality; this duality explains the key role played by (Up)∗in our norm relation computations.

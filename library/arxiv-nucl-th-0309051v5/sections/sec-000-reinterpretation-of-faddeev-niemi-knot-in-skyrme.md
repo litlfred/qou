@@ -8,6 +8,7 @@ pages: 1-4
 source_pdf: 0309051v5.pdf
 source_sha256: f7ede32125662908
 toc_source: inferred
+doc_brief: "Reinterpretation of Faddeev-Niemi Knot in Skyrme Theory — 3 sections: Front matter; Reinterpretation of Faddeev-Niemi ; ACKNOWLEDGEMENT"
 ---
 Y. M. Cho∗
 School of Physics, College of Natural Sciences,
@@ -101,7 +102,6 @@ L = µ2
 32tr ([Lµ, Lν])2 ,
 (2)
 where µ and α are the coupling constants. Notice that
-2
 the Lagrangian has a local U(1) symmetry as well as
 a global SU(2) symmetry.
 A remarkable point of the
@@ -239,7 +239,6 @@ f(∞) = 0,
 we obtain the non-Abelian vortex solutions shown in
 Fig.1. There are three points that have to be empha-
 sized here. First, when m = 0, the solution describes
-3
 20
 40
 60
@@ -367,7 +366,6 @@ the collapse of the knot. This is how the knot acquires
 the dynamical stability. It is this remarkable interplay
 between topology and dynamics which assures the exis-
 tence of the stable knot in Skyrme theory. The nontrivial
-4
 topology of the magnetic ﬂux rings which provides the
 topological stability now expresses itself in the form of
 the supercurrent and angular momentum which provides

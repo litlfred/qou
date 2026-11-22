@@ -1,0 +1,41 @@
+Canonical triangulations 1257
+
+We call this situation double degeneracy because the limiting triangle has two vanishing
+angles (its vertices are distinct, but collinear). At a double degeneracy, the volume has
+directional derivatives, but no well-defined differential. Oo
+
+7 Ruling out some degeneracies
+
+From now on, we fix (w;) in the compact polyhedron P at a point which maximizes the
+total hyperbolic volume of all tetrahedra. To prove that (w;) is critical for the volume
+V, we only need to make sure that (w;) lies in the interior P of P, ie that all x;,y;, z; lie
+in (0,7).
+
+Proposition 7.1 If for some index i, one of the numbers x;, y;,z; is 0, then two of
+them are O and the third is 7. In other words, there are no simple degeneracies, only
+double degeneracies.
+
+Proof If not, consider an affine segment from (w;) to some interior point of P. By
+Proposition 6.7, the partial derivative of V at (w;) along that segment is not bounded
+above, so V was not maximal at (w;). im]
+
+Tetrahedra A; such that (x;, y;, z;) has one, and therefore two vanishing terms are called
+flat, and are characterized by the property that w; is either 0 or 5.
+
+Proposition 7.2 (Domino effect) If two consecutive tetrahedra A;_,, A; are flat, then
+Aj+1 is flat, too.
+
+Proof We use only Figure 5 and the deductions recorded in (3). There are three cases:
+(1) If i is not a hinge index, flatness of A; implies wi) + wi41 € {0,7}. By the
+range condition 0 < w < §, this implies w;,; € {0, F},so Ajs1 is flat.
+
+(2) If i is ahinge index and w; = 5, we must have |wj_1 — wi+1| = 5, so by the
+range condition, w;,, is 0 or 5, and Aj, is flat.
+
+(3) If i is a hinge index and w; = 0, we have |wi41 — wi-1| < 0 so wi41 = Wi-1-
+But Aj_ is assumed flat, and therefore so is A;,. Note that flatness of A;_;
+was needed only in this case. im
+
+Proposition 7.3 If A; is flat, then i is a hinge index and w; = 0.
+
+Geometry & Topology 10 (2006)

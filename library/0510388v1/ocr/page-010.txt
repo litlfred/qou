@@ -1,0 +1,45 @@
+Comments.
+
+e To see that equation (2) above is Maxwell's equation, we integrated by parts,
+in spite of the fact that the kernel function o(a) has a singularity at a=0.
+
+We leave it to the reader to check that the validity of this depends on the fact that
+the singularity is of order 1/a. We will use this throughout the paper, without
+further mention.
+
+e Recall Ampere's Law: Given a divergence-free current flow, the circulation of
+the resulting magnetic field around a loop is equal to the flux of the current through
+any surface bounded by that loop. This is an immediate consequence of Maxwell's
+Equation (2) above, since if the current flow V is divergence-free, this equation
+says that V XBS(V) = V. Then Ampere's Law is just the curl theorem of vector
+calculus.
+
+In particular, if the current flows along a wire loop, the circulation of the resulting
+magnetic field around a second loop disjoint from it is equal to the flux of the
+current through a cross-section of the wire loop, multiplied by the linking number
+of the two loops. Thus linking numbers are built in to Ampere's Law, and once we
+have an explicit integral formula for the magnetic field due to a given current flow,
+we easily get an explicit integral formula for the linking number.
+
+e In R’, conditions (1), (2) and (3) are easily seen to characterize the Biot-Savart
+operator, as follows. Since conditions (1) and (2) specify the divergence and the
+curl of BS(V), the difference BS,(V) — BS.(V) between two candidates for the
+Biot-Savart operator would be divergence-free and curl-free. Since R* is simply
+connected, this difference would be the gradient of a harmonic function. Hence the
+components of this gradient must also be harmonic functions. Since they go to zero
+at infinity, they have to be identically zero. Thus BS,(V) = BS,(V).
+
+¢ In R’, the statement that BS(V)(y) > 0 as y > oo canbe improved:
+BS(V)(y) > 0 atinfinity like 1/ly/ in general, and if V is divergence-free, then
+it goes to zero at infinity like 1/|y|’. See our paper (2001) on the Biot-Savart operator.
+
+¢ In S*, conditions (1) and (2) alone suffice to characterize the Biot-Savart
+operator, since there are no nonzero vector fields on S* which are simultaneously
+divergence-free and curl-free.
+
+e In H’, itis not yet clear to us how to characterize the Biot-Savart operator.
+Even strengthening (3) to require that BS(V)(y) goes to zero exponentially fast
+at infinity is not quite enough. And in H’, unlike R’, the field BS(V) is not
+in general of class L” .
+
+10

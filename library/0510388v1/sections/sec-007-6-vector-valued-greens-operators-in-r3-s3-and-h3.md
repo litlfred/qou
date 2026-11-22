@@ -1,6 +1,6 @@
 ---
 doc_id: 0510388v1
-doc_title: "ELECTRODYNAMICS and the GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE Dennis DeTurck and Herman Gluck"
+doc_title: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space"
 section_id: sec-007-6-vector-valued-greens-operators-in-r3-s3-and-h3
 section_title: "Vector-valued Green's operators in R3 , S3 and H3 ."
 section_number: 6
@@ -8,6 +8,7 @@ pages: 17-21
 source_pdf: 0510388v1.pdf
 source_sha256: c83c0f6a2eaa74f3
 toc_source: inferred
+doc_brief: "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space — 64 sections: Front matter; ORGANIZATION; STATEMENTS OF RESULTS"
 ---
 The vector Laplacian in  R3 ,  S3  and  H3 , 
  
@@ -42,7 +43,6 @@ will be referred to as a vector-valued Green's operator.
  
  
  
-18 
  
  
  
@@ -87,7 +87,6 @@ in  S3  and  H3 ,  and provides explicit integral formulas.
  
  
  
-19 
  
  
  
@@ -149,7 +148,6 @@ and these three kernel functions are related by
  
  
  
-20 
  
 (2)  On  S3  in parallel transport format: 
  
@@ -199,8 +197,4 @@ polylog(s, x)  =  Lis(x)  =  ∑n≥1  xn / ns .
  
 In formula (3), the second term in the expression for the kernel function  ϕ3(α)  is 
 left as a definite integral because it is a non-elementary function involving 
-dilogarithms, that is, polylogarithms of index 2. 
- 
- 
- 
-21
+dilogarithms, that is, polylogarithms of index 2.

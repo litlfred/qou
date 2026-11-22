@@ -15,6 +15,9 @@ export default remark({
     "convergence-mechanism",
   ],
   authorNotes: [
+    { kind: "note", date: "2026-11-21", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: break each loop): So the loop value is a **consequence** of the fibre being two-dimensional, not a stipulation." },
+    { kind: "note", date: "2026-11-21", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: break each loop): The selection is forced by the dimension of the mass fibre:  - The [eigenbasis decomposition for the Feynman amplitude](#lem:feynman-eigenbasis-decomposition) already writes the row cap   $\\ell(\\lambda) \\leq 2$ into the mass channel's own decomposition — $V$ is the   fundamental of $\\mathrm{SU}_q(2)$, and the summand count $\\lfloor n/2 \\rfloor + 1$   is the two-row count and no other. So $y_{(1^3)} = 0$ is a restatement of the   decomposition the mass chapter uses, not an extra assumption. -" },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the voice-leak drain (qou-d4kh, option 3): - `lem:feynman-eigenbasis-decomposition` already writes the row cap\n\n- Given $y_{(1^3)} = 0$, `markovWeights_eq_jones_of_threeRow_eq_zero`\n  ([`MarkovTraceTLUniqueness.lean`](../lean/QOU/BraidsAndKnots/MarkovTraceTLUniqueness.lean))\n  shows the faithful" },
     {
       kind: "refined-framing",
       date: "2026-08-09",
@@ -34,7 +37,8 @@ export default remark({
     { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
     {
       kind: "status",
-      body: "The Lean stub [`markov-axioms-primitive.lean`](markov-axioms-primitive.lean):\n\n- Defines `class MarkovTraceAxioms` with fields for M1 and M3 (the two\n  needed for the factorisation; M2 is implicit in the cyclic-trace\n  construction; M4 follows from M3 via the Hecke quadratic).\n- Proves `markov_iterated_stab`: k applications of M3 give $\\tau \\cdot z^k$.\n- Proves `disjoint_product_factorisation`: from M3 alone, the disjoint\n  factorisation holds.\n- Discharges `MarkovDisjointStabilisation` from `MarkovTraceAxioms`.\n\nStatus: **closed**, no `sorry`s. The two class fields (`tau_one`,\n`tau_stab`) carry the unavoidable axiomatic content (M1 and M3 are\nJones-1985 axioms, not derivable from more primitive Lean content\nin this scope).",
+      body: "**Superseded 2026-11-20 (bean `qou-ltwg`, owner options 2 + 3).** The library file `QOU/BraidKnot/MarkovAxiomsPrimitive.lean` used to define `class MarkovTraceAxioms` with two scalar fields pinned to `1` and `markovZax u`, plus theorems of the form `∃ τ', τ' = τ·z^k := ⟨_, rfl⟩`. The class mentioned no trace and could be inhabited in one line. The theorems were tautologies, so the claimed discharge of `MarkovDisjointStabilisation` was empty.\n\nThe class and the tautologies are removed. M1–M4 are now the fields of the genuine `QOU.MathlibExt.OcneanuTrace.MarkovTrace` (a trace on a tower of algebras). Iterated stabilisation is `tr_mul_genWord`, disjoint-block multiplicativity on a braided tower is `BraidedBlockShiftTrace.tr_blockProd`, and ascending-word chain factorisation is `tr_chainWord`. All three are proved for every genuine trace. A genuine instance of that structure at `q ≠ 1` on the full Hecke tower is still missing (epic `qou-dxbw` M4).",
     },
+    { kind: "note", date: "2026-11-20", body: "Relocated from the block prose by the reading-order drain (qou-d4kh, owner ruling: every chapter strict): ([Jones–Markov trace](#thm:jones-markov-trace))" },
   ],
 });

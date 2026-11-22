@@ -1,0 +1,1 @@
+The pairing between any monomials is given by ⟨KlEmF n, zL 11zm′ 21 zn′ 12N L′⟩= cm2−n2ql(m−n−L)/2+mL+(n−m)L′−2nm[n]q![m]q!δnn′δmm′, (8.2) or ⟨KlEmF n, ALBm′ ˆBn′ ˆAL′⟩= cm2−n2ql(m+L′−L)/2+mL+nL′−nm[n]q![m]q!δnn′δmm′. (8.3)

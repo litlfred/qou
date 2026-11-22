@@ -1,0 +1,1983 @@
+{
+ "$schema": "folio-document-footnotes/v1",
+ "entry": "arxiv-1204.4824v2",
+ "status": "determined",
+ "pages_unread": [
+  33
+ ],
+ "body_size": 10.9,
+ "footnotes": [
+  {
+   "id": "fn-p006-1",
+   "page": 6,
+   "mark": "1",
+   "text": "Weareoversimplifyingslightlyhere:theprecisestory,laidoutinthemaintext,involvesaslight twisting of the notion of ﬂat connection. This twisting does not modify the basic picture and can safely be ignored at ﬁrst.",
+   "marks": [
+    {
+     "page": 6,
+     "context": "Moduliofﬂatconnections.SupposewecompactifyonS"
+    },
+    {
+     "page": 6,
+     "context": "andthesurfacedefectsSz.ThegroundstatesofSzonS"
+    },
+    {
+     "page": 6,
+     "context": "wrappedonS"
+    },
+    {
+     "page": 6,
+     "context": "quippedwithanaturalconnection[4],whichmoreoverisactuallyﬂat."
+    },
+    {
+     "page": 6,
+     "context": " each vacuum of the compactiﬁcation of the d = 4 theory on S"
+    }
+   ],
+   "block": "library/arxiv-1204.4824v2/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p006-2",
+   "page": 6,
+   "mark": "2",
+   "text": "Thisfactimpliese.g.thatthesespacesadmitanaturalquantization[12,14].",
+   "marks": [
+    {
+     "page": 6,
+     "context": "Mweconsideradmitanatlasofclustercoordinatesystems."
+    }
+   ],
+   "block": "library/arxiv-1204.4824v2/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p007-1",
+   "page": 7,
+   "mark": "3",
+   "text": "Again,here we are glossing over some slight diﬀerences between our setup and that of Fock-Goncharov, and ignoring some extra discrete “ﬂag data” attached to the connections.",
+   "marks": [
+    {
+     "page": 7,
+     "context": "ourΨWarecoordinatesystemsintheclusteratlas."
+    }
+   ],
+   "block": "library/arxiv-1204.4824v2/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p008-1",
+   "page": 8,
+   "mark": "4",
+   "text": "InthecaseK= 2thishasbeenworkedoutbyPietroLonghi.",
+   "marks": [
+    {
+     "page": 8,
+     "context": "generatortoincludethe2dspectrum."
+    }
+   ],
+   "block": "library/arxiv-1204.4824v2/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p009-1",
+   "page": 9,
+   "mark": "5",
+   "text": "One way of thinking about this is that the K-fold covering Σ could arise as a non-reduced degeneration of an NK-fold covering, where the sheets coalesce in groups of N. Readers who prefer to think in terms of M-theory ﬁvebranes might say that we consider the theory of NK ﬁvebranes wrapped on C ⊂T ∗C, and then move to a point of the Coulomb branch represented by N ﬁvebranes wrapped on Σ ⊂T ∗C.",
+   "marks": [
+    {
+     "page": 9,
+     "context": "ﬂatGL(N)connectionsonΣandmoduliofﬂatGL(NK)connectionsonC."
+    }
+   ],
+   "block": "library/arxiv-1204.4824v2/blocks/prose-sec-000"
+  },
+  {
+   "id": "fn-p012-1",
+   "page": 12,
+   "mark": "6",
+   "text": "We use the notation (ij) for the branch points but ijfor the trajectories; the (ij) is meant to denote the transposition associated to the branch point, which exchanges sheet i and sheet j of the covering Σ →C. In particular (ij) = (ji).",
+   "marks": [
+    {
+     "page": 12,
+     "context": "whereλ(i)−λ(j)= 0."
+    }
+   ],
+   "block": "library/arxiv-1204.4824v2/blocks/prose-sec-001"
+  },
+  {
+   "id": "fn-p013-1",
+   "page": 13,
+   "mark": "7",
+   "text": "TheprecisechargelatticeofthetheoryS[g, C, D]isactuallyasubquotientofH1(Σ; Z),asexplained in [3]. Nevertheless, in this paper, we consider Γ = H1(Σ; Z) for simplicity.",
+   "marks": [
+    {
+     "page": 13,
+     "context": "oftheBPSstate."
+    }
+   ],
+   "block": "library/arxiv-1204.4824v2/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p013-2",
+   "page": 13,
+   "mark": "8",
+   "text": "In [3] we used wall-crossing to determine Ω(γ) in the case K= 2, reproducing earlier results of [6].That case is particularly simple since there are only two possible topologies for ﬁnite webs: one can either have a single string connecting two branch points or a single closed loop. These topologies contribute Ω(γ) = +1 and Ω(γ) = −2 respectively. We will reproduce this result yet again in §5.7 below.",
+   "marks": [
+    {
+     "page": 13,
+     "context": "hereeither."
+    }
+   ],
+   "block": "library/arxiv-1204.4824v2/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p014-1",
+   "page": 14,
+   "mark": "9",
+   "text": "In[5]wedenotedelementsofΓij(z, z)byγij,butwearenowdeprecatingthatnotationinfavorof¯a. See Appendix C for a summary of conventions.",
+   "marks": [
+    {
+     "page": 14,
+     "context": "¯a ∈Γ(z, z)wehave"
+    }
+   ],
+   "block": "library/arxiv-1204.4824v2/blocks/prose-sec-003"
+  },
+  {
+   "id": "fn-p015-1",
+   "page": 15,
+   "mark": "10",
+   "text": "Theparameterwhichwascalledζin[5]isheregivenbyζ= eiϑ.",
+   "marks": [
+    {
+     "page": 15,
+     "context": "sarepreservedisdeterminedbytheparametereiϑ,asexplainedin[5]."
+    }
+   ],
+   "block": "library/arxiv-1204.4824v2/blocks/prose-sec-004"
+  },
+  {
+   "id": "fn-p016-1",
+   "page": 16,
+   "mark": "11",
+   "text": "In[5]wedenotedelementsofΓ(z1, z2)byγij′,butwearenowdeprecatingthatnotationinfavorof¯a. See Appendix C for a summary of conventions.",
+   "marks": [
+    {
+     "page": 16,
+     "context": "Γ(z1, z2) = ∪i,jΓij(z1, z2)."
+    }
+   ],
+   "block": "library/arxiv-1204.4824v2/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p016-2",
+   "page": 16,
+   "mark": "12",
+   "text": "As in [5], Fdenotes a generator of u(1)Vof the 2d (2, 2) supersymmetry algebra preserved by L℘,ϑ, and J = 2J12 + 2I12 is a linear combination of rotation and su(2)R generators of the 4d N = 2 supersymmetry. There is a subtlety here which we address in §3.5: to deﬁne F properly we will need to keep track of slightly more information about the 2d-4d framed BPS states, by extending the charge ¯a to a new “charge” denoted a. It will turn out that Ωreally depends on a, not ¯a.",
+   "marks": [
+    {
+     "page": 16,
+     "context": "charge¯a ∈Γij(z1, z2).Itwasdeﬁnedin§4.4of[5]:"
+    }
+   ],
+   "block": "library/arxiv-1204.4824v2/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p016-3",
+   "page": 16,
+   "mark": "13",
+   "text": "InthecaseK=2(i.e.g=A1)wedidexplaintherelevantobjectsin[21],wherewecalledthem “millipedes.”",
+   "marks": [
+    {
+     "page": 16,
+     "context": "forunframed2d-4dBPSstates.Wewillnotdescribeitexplicitlyhere."
+    }
+   ],
+   "block": "library/arxiv-1204.4824v2/blocks/prose-sec-005"
+  },
+  {
+   "id": "fn-p017-1",
+   "page": 17,
+   "mark": "14",
+   "text": "See[21,40–42]foradescriptionofthehaloapproachtowall-crossing.",
+   "marks": [
+    {
+     "page": 17,
+     "context": "states”(analoguesoftheonesstudiedbyFrederikDenef"
+    }
+   ],
+   "block": "library/arxiv-1204.4824v2/blocks/prose-sec-006"
+  },
+  {
+   "id": "fn-p021-1",
+   "page": 21,
+   "mark": "15",
+   "text": "Toreducepotentialconfusionweemphasizethatthewallsofmarginalstabilityarenotthesamething as the S-walls.",
+   "marks": [
+    {
+     "page": 21,
+     "context": "solongasz∈Cdoesnotlieonawallofmarginalstability."
+    }
+   ],
+   "block": "library/arxiv-1204.4824v2/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p022-1",
+   "page": 22,
+   "mark": "16",
+   "text": "Thefactorµ(a)Xaappearingin(4.7)is independentofthe choiceof lift aof¯a,because of(3.11),(4.1).",
+   "marks": [
+    {
+     "page": 22,
+     "context": "asshowninFigure8.Thenwehave"
+    }
+   ],
+   "block": "library/arxiv-1204.4824v2/blocks/prose-sec-011"
+  },
+  {
+   "id": "fn-p024-1",
+   "page": 24,
+   "mark": "17",
+   "text": "Onemightthinkthatthereisasecond,inequivalentpossibility:onecouldhaveexchangedtheijand jk labels in Figure 10. This gives a new picture, which is not related to Figure 10 by a rotation, but is related to Figure 10 by an orientation-reversing map. Fortunately, our rules for computing F(℘, ϑ) do not use the orientation of C. So our analysis is fully general.",
+   "marks": [
+    {
+     "page": 24,
+     "context": "asshowninFigure10."
+    }
+   ],
+   "block": "library/arxiv-1204.4824v2/blocks/prose-sec-014"
+  },
+  {
+   "id": "fn-p026-1",
+   "page": 26,
+   "mark": "18",
+   "text": "Inasenseitwouldbebettertorefertotheselightstatessimplyas“2d”solitonsratherthan“2d-4d,” since their existence does not depend much on the coupling to the 4d theory. Indeed, the existence of these light states can be deduced from a universal computation involving the simplest nontrivial Landau-Ginzburg model. See Section 8.1 of [5] for further discussion.",
+   "marks": [
+    {
+     "page": 26,
+     "context": "onthesurfacedefectSz,withcentralchargeinR−eiϑ."
+    }
+   ],
+   "block": "library/arxiv-1204.4824v2/blocks/prose-sec-015"
+  },
+  {
+   "id": "fn-p027-1",
+   "page": 27,
+   "mark": "19",
+   "text": "NotethatiftwoS-wallscarryingcharges¯a∈Γij,¯b∈Γjkmeetatajointz∈C,thejointisvisible in Wϑ[Λ] beginning at Λ = Max(|Z¯a(z)|, |Z¯b(z)|), but the S-wall born from the joint does not appear until Λ = |Z¯a(z)| + |Z¯b(z)|.",
+   "marks": [
+    {
+     "page": 27,
+     "context": "lisdeterminedbythesolitondegeneraciesonitsparents,asin(5.9)."
+    }
+   ],
+   "block": "library/arxiv-1204.4824v2/blocks/prose-sec-015"
+  },
+  {
+   "id": "fn-p034-1",
+   "page": 34,
+   "mark": "20",
+   "text": "Themeaningofthelimit(6.1)iseasytounderstandiftherearenootherspecialvaluesϑ′",
+   "marks": [
+    {
+     "page": 34,
+     "context": "Atthespecialvalues,wedeﬁneforconvenience"
+    }
+   ],
+   "block": "library/arxiv-1204.4824v2/blocks/prose-sec-019"
+  },
+  {
+   "id": "fn-p034-2",
+   "page": 34,
+   "mark": "c",
+   "text": "insome neighborhood of ϑc. However, it does sometimes happen that the special values accumulate. In that case we have to explain what kind of limit we mean in (6.1). One possibility would be to ﬁx some R > 0 and work with a “Z-adic” norm where ∥P caXa∥= P|ca|e−R|Z¯a|. We expect that in this norm the limit (6.1) indeed exists. At any rate, in what follows we work formally, assuming that the limits make sense.",
+   "marks": [
+    {
+     "page": 34,
+     "context": "casrepresentingϑ"
+    },
+    {
+     "page": 34,
+     "context": "withe−iϑ"
+    }
+   ],
+   "block": "library/arxiv-1204.4824v2/blocks/prose-sec-019"
+  },
+  {
+   "id": "fn-p035-1",
+   "page": 35,
+   "mark": "21",
+   "text": "Wenowhavetwometaphorsforthesegmentsinaspectralnetwork.Theyarewallsbecausetheyare the loci where framed 2d-4d BPS degeneracies jump. On the other hand we will ﬁnd that the metaphor of streets is also very useful when tracking the solitons. Rather than insisting on one term, we will use them as synonyms. We feel no inclination to go to wall-street.",
+   "marks": [
+    {
+     "page": 35,
+     "context": "eorientedinthesamedirection;inthiscasewecallpatwo-waystreet."
+    }
+   ],
+   "block": "library/arxiv-1204.4824v2/blocks/prose-sec-022"
+  },
+  {
+   "id": "fn-p036-1",
+   "page": 36,
+   "mark": "22",
+   "text": "IngeneralthepicturemightbeabitmorecomplicatedthanFigure25,becausetheremightbeseveral walls of type ij and/or of type ji which all coalesce at ϑ = ϑc. An example appears in Figure 27 below.",
+   "marks": [
+    {
+     "page": 36,
+     "context": "pictureofthesituationwhenϑisnearϑcisindicatedinFigure25."
+    }
+   ],
+   "block": "library/arxiv-1204.4824v2/blocks/prose-sec-022"
+  },
+  {
+   "id": "fn-p037-1",
+   "page": 37,
+   "mark": "23",
+   "text": "In the ﬁrst preprint versionof this paper we proposed a diﬀerent lifting rule based on the principle that the product (6.11) should be ﬁnite. More recently, in studying more complicated examples, it has turned out that sometimes this ﬁniteness is violated [46]. For completeness we have back-ported the corrected rule from [46] to here.",
+   "marks": [
+    {
+     "page": 37,
+     "context": "ch γ∈Γ we can deﬁne a preferred lift˜γby the following rule:"
+    }
+   ],
+   "block": "library/arxiv-1204.4824v2/blocks/prose-sec-023"
+  },
+  {
+   "id": "fn-p038-1",
+   "page": 38,
+   "mark": "24",
+   "text": "Diﬀerentrepresentativesoftheclass¯cdiﬀerbyadditionof1-boundaries,andthe1-cycleL(γ)haszero intersection with any 1-boundary; this would not have worked if L(γ) were merely a 1-chain.",
+   "marks": [
+    {
+     "page": 38,
+     "context": "This allows us to deﬁne"
+    }
+   ],
+   "block": "library/arxiv-1204.4824v2/blocks/prose-sec-023"
+  },
+  {
+   "id": "fn-p038-2",
+   "page": 38,
+   "mark": "25",
+   "text": "Thisispossiblebecausethejumpoccurswhenframed2d-4dBPSboundstatesform/decaybybind- ing/releasing 4d BPS particles.",
+   "marks": [
+    {
+     "page": 38,
+     "context": "the degeneracies of 4d BPS particles."
+    }
+   ],
+   "block": "library/arxiv-1204.4824v2/blocks/prose-sec-023"
+  },
+  {
+   "id": "fn-p038-3",
+   "page": 38,
+   "mark": "26",
+   "text": "Moreprecisely,(6.13)shouldbecomparedwith(2.30)of[5],exceptforthedetailthatinthispaperwe are working with framed protected spin characters at y = 1 rather than y = −1. The needed modiﬁcation for y = 1 has not quite appeared anywhere before, although in (3.26) of [21] we did give the jump of the framed degeneracies (without surface defects) at y = 1. We also noted there (in §6.4) that under the assumption that there are no “exotic BPS states,” the jump becomes somewhat simpler (because then all of the factors (−1)m appearing in (3.26) are the same). Strictly speaking then, (6.13) should be compared with the most obvious combination of (2.30) of [5] and (3.26) of [21], taking into account this simpliﬁcation. A ﬁnal detail: in (2.30) of [5] there appeared an undetermined ±1-valued cocycle σ; in (6.13) this sign is encoded in the choice of lift ˜γ of γ.",
+   "marks": [
+    {
+     "page": 38,
+     "context": "givenby"
+    }
+   ],
+   "block": "library/arxiv-1204.4824v2/blocks/prose-sec-023"
+  },
+  {
+   "id": "fn-p039-1",
+   "page": 39,
+   "mark": "27",
+   "text": "UpuntilnowwehaveusuallyrepresentedthesegeneratingfunctionsasF(℘, ϑ),holdinguﬁxedand implicit; but to recover the usual statement of the wall-crossing formula we have to let u vary.",
+   "marks": [
+    {
+     "page": 39,
+     "context": "erthecorrespondinggeneratingfunctionsF(℘(z(t)), ϑ(t), u(t)),"
+    }
+   ],
+   "block": "library/arxiv-1204.4824v2/blocks/prose-sec-025"
+  },
+  {
+   "id": "fn-p040-1",
+   "page": 40,
+   "mark": "c",
+   "text": ".",
+   "marks": [
+    {
+     "page": 39,
+     "context": "tcJ(t"
+    }
+   ],
+   "block": "library/arxiv-1204.4824v2/blocks/prose-sec-025"
+  },
+  {
+   "id": "fn-p042-1",
+   "page": 42,
+   "mark": "28",
+   "text": "Incidentally,theyalsoimplythatF(℘)jj=Q(p);thisandthefactF(℘) =F(℘, ϑ+",
+   "marks": [
+    {
+     "page": 42,
+     "context": "thedesiredP5."
+    }
+   ],
+   "block": "library/arxiv-1204.4824v2/blocks/prose-sec-026"
+  },
+  {
+   "id": "fn-p062-1",
+   "page": 62,
+   "mark": "29",
+   "text": "Toobtainthisisomorphismweusethefactthataspinstructureisthesamethingasaﬁberwise double covering of ˜S; then given a twisted ﬂat connection, pulling back to this double cover gives a new ﬂat connection with holonomy +1 around the ﬁbers, which then descends to a ﬂat connection over S.",
+   "marks": [
+    {
+     "page": 62,
+     "context": "connections."
+    }
+   ],
+   "block": "library/arxiv-1204.4824v2/blocks/prose-sec-041"
+  },
+  {
+   "id": "fn-p065-1",
+   "page": 65,
+   "mark": "30",
+   "text": "Ourdiscussioncanbegeneralizedtoincludemarkedpointsonboundaries;inthatcasetherelevant moduli spaces are spaces of connections with irregular singularities, on the surface obtained by shrinking each boundary component of C to a point. In the special case K = 2 this was discussed in [3]. Examples with irregular singularities and K > 2 are discussed in [32].",
+   "marks": [
+    {
+     "page": 65,
+     "context": "forwhicheacho(sn)isatotalorderingofthesetofallsheets."
+    }
+   ],
+   "block": "library/arxiv-1204.4824v2/blocks/prose-sec-043"
+  },
+  {
+   "id": "fn-p067-1",
+   "page": 67,
+   "mark": "31",
+   "text": "Hereandbelow,weusethefreedomtoﬁxagaugesothatweconsideronlyvariationsδαwhichvanish near the punctures. This makes the integral (10.18) convergent, despite the fact that the connections we consider are singular.",
+   "marks": [
+    {
+     "page": 67,
+     "context": "whereαdenotestheabelianconnection1-form."
+    }
+   ],
+   "block": "library/arxiv-1204.4824v2/blocks/prose-sec-045"
+  },
+  {
+   "id": "fn-p068-1",
+   "page": 68,
+   "mark": "32",
+   "text": "ActuallythisuniversalbundledoesnotquiteexistowingtosubtletiesinvolvingthecenterofGL(K); but its bundle of endomorphisms does exist, which is all we will use below.",
+   "marks": [
+    {
+     "page": 68,
+     "context": "universalbundleˆE˜zoverC."
+    }
+   ],
+   "block": "library/arxiv-1204.4824v2/blocks/prose-sec-046"
+  },
+  {
+   "id": "fn-p071-1",
+   "page": 71,
+   "mark": "33",
+   "text": "ThisisthemomentwhereitisimportantthatweusethemodulispaceMF (C, GL(K); m)withﬂag data rather than just M(C, GL(K); m). If we used M(C, GL(K); m), then ΨW would be only ﬁnite-to-one.",
+   "marks": [
+    {
+     "page": 71,
+     "context": "s whole image UW.We conjecture that this is indeed the case."
+    }
+   ],
+   "block": "library/arxiv-1204.4824v2/blocks/prose-sec-048"
+  },
+  {
+   "id": "fn-p071-2",
+   "page": 71,
+   "mark": "34",
+   "text": "Itwasnotedin[9,21]thattheK-transformationswhichappearedtherecouldbeviewedascluster transformations in an appropriate sense; see also [10, 38, 48, 53, 54] for further discussion of the relation of cluster varieties to four-dimensional N = 2 theory.",
+   "marks": [
+    {
+     "page": 71,
+     "context": "coordinates."
+    }
+   ],
+   "block": "library/arxiv-1204.4824v2/blocks/prose-sec-048"
+  },
+  {
+   "id": "fn-p072-1",
+   "page": 72,
+   "mark": "35",
+   "text": "Thepassagefrom(V,¯∂, ϕ)toLisoftencalledabelianizationandhasbeenexploitedheavilyinthe study of “nonabelian theta functions”; see e.g. [55] where it was introduced, and [50] for a very precise description of the abelianization map in the more general setting of an arbitrary Lie group G. Abelianization for Higgs bundles is simpler than for ﬂat connections in one important respect: for Higgs bundles the monodromy around branch points causes no problem and no spectral network is needed. There is thus only one abelianization map for Higgs bundles, in contrast to the various ΨW we found in this paper for ﬂat connections.",
+   "marks": [
+    {
+     "page": 72,
+     "context": "andtheHiggsbundle(V,¯∂, ϕ)isthepushforwardof(L, λ)."
+    }
+   ],
+   "block": "library/arxiv-1204.4824v2/blocks/prose-sec-049"
+  }
+ ],
+ "uncalled_notes": [
+  {
+   "id": "fn-p042-2",
+   "page": 42,
+   "mark": "c",
+   "text": ")(whichwearein the process of showing) together prove our remark under (6.9).",
+   "block": "library/arxiv-1204.4824v2/blocks/prose-sec-026"
+  }
+ ],
+ "unlinked_marks": [
+  {
+   "page": 1,
+   "mark": "1",
+   "context": "DavideGaiotto,"
+  },
+  {
+   "page": 1,
+   "mark": "2",
+   "context": "DavideGaiotto,1GregoryW.Moore"
+  },
+  {
+   "page": 1,
+   "mark": "3",
+   "context": "DavideGaiotto,1GregoryW.Moore2andAndrewNeitzke"
+  },
+  {
+   "page": 4,
+   "mark": "2",
+   "context": "ure1.Aspectralnetwork,drawnonthestereographicprojectionofC=S"
+  },
+  {
+   "page": 5,
+   "mark": "i",
+   "context": "alignedwith−e"
+  },
+  {
+   "page": 6,
+   "mark": "z",
+   "context": "wrappedonS1isanisomorphismfromE"
+  },
+  {
+   "page": 6,
+   "mark": "z",
+   "context": "wrappedonS1isanisomorphismfromEz1toE"
+  },
+  {
+   "page": 8,
+   "mark": "1",
+   "context": "ofH"
+  },
+  {
+   "page": 11,
+   "mark": "m",
+   "context": "i=1"
+  },
+  {
+   "page": 11,
+   "mark": "3",
+   "context": "n[2,"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "1-form"
+  },
+  {
+   "page": 12,
+   "mark": "1",
+   "context": "therealdensity"
+  },
+  {
+   "page": 14,
+   "mark": "i",
+   "context": "Fe"
+  },
+  {
+   "page": 14,
+   "mark": "1",
+   "context": "µ(¯a) = TrH"
+  },
+  {
+   "page": 15,
+   "mark": "z",
+   "context": "parameterϑ ∈R.ThesedatadetermineapairofsurfacedefectsS"
+  },
+  {
+   "page": 15,
+   "mark": "z",
+   "context": "parameterϑ ∈R.ThesedatadetermineapairofsurfacedefectsSz1andS"
+  },
+  {
+   "page": 15,
+   "mark": "i",
+   "context": "superchargesarepreservedisdeterminedbytheparametere"
+  },
+  {
+   "page": 15,
+   "mark": "z",
+   "context": "Nowwestudythe4dtheoryS[g, C, D]withthedefectsS"
+  },
+  {
+   "page": 15,
+   "mark": "z",
+   "context": "Nowwestudythe4dtheoryS[g, C, D]withthedefectsSz1andS"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "half-lines{x"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "half-lines{x1=0, x"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "half-lines{x1=0, x2=0, x"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "half-lines{x1=0, x2=0, x3>0}and{x"
+  },
+  {
+   "page": 15,
+   "mark": "2",
+   "context": "half-lines{x1=0, x2=0, x3>0}and{x1=0, x"
+  },
+  {
+   "page": 15,
+   "mark": "3",
+   "context": "half-lines{x1=0, x2=0, x3>0}and{x1=0, x2=0, x"
+  },
+  {
+   "page": 15,
+   "mark": "1",
+   "context": "the 1-particle Hilbert space H"
+  },
+  {
+   "page": 16,
+   "mark": "e",
+   "context": "L℘,ϑ,¯a"
+  },
+  {
+   "page": 16,
+   "mark": "i",
+   "context": "L℘,ϑ,¯a e"
+  },
+  {
+   "page": 16,
+   "mark": "1",
+   "context": "Ω(L℘,ϑ, ¯a; y) = TrH"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "pathsonΣ,whichthushasacanonicallifttoapathN˜Σon˜Σ.Let˜z"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "athsonΣ,whichthushasacanonicallifttoapathN˜Σon˜Σ.Let˜z1and˜z"
+  },
+  {
+   "page": 18,
+   "mark": "1",
+   "context": "givenbyaddingH.Therelativehomologyclass[N˜Σ]∈˜Γ(˜z"
+  },
+  {
+   "page": 18,
+   "mark": "2",
+   "context": "givenbyaddingH.Therelativehomologyclass[N˜Σ]∈˜Γ(˜z1, ˜z"
+  },
+  {
+   "page": 18,
+   "mark": "w",
+   "context": "µ(a)/µ(a′) = (−1)"
+  },
+  {
+   "page": 19,
+   "mark": "w",
+   "context": "′(L℘,ϑ, a′) = (−1)"
+  },
+  {
+   "page": 19,
+   "mark": "w",
+   "context": "′(L℘′,ϑ, a) = (−1)"
+  },
+  {
+   "page": 19,
+   "mark": "w",
+   "context": "Xa/Xa′= (−1)"
+  },
+  {
+   "page": 20,
+   "mark": "i",
+   "context": "oint z∈Csupportsthose charges ¯a ∈Γ(z, z) for which Z¯a(z)/e"
+  },
+  {
+   "page": 22,
+   "mark": "a",
+   "context": "+)(µ(a)X"
+  },
+  {
+   "page": 23,
+   "mark": "p",
+   "context": "π(λ(j) −λ(i)), this means that"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "whileb˜zrunsfrom˜z(k)to˜z(l)),sowehaveX"
+  },
+  {
+   "page": 24,
+   "mark": "b",
+   "context": "whileb˜zrunsfrom˜z(k)to˜z(l)),sowehaveXa˜zX"
+  },
+  {
+   "page": 24,
+   "mark": "b",
+   "context": "whileb˜zrunsfrom˜z(k)to˜z(l)),sowehaveXa˜zXb˜z= X"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "whileb˜zrunsfrom˜z(k)to˜z(l)),sowehaveXa˜zXb˜z= Xb˜zX"
+  },
+  {
+   "page": 24,
+   "mark": "a",
+   "context": "linearinX"
+  },
+  {
+   "page": 24,
+   "mark": "b",
+   "context": "linearinXa˜zandX"
+  },
+  {
+   "page": 25,
+   "mark": "a",
+   "context": "UsingX"
+  },
+  {
+   "page": 25,
+   "mark": "b",
+   "context": "UsingXa˜zX"
+  },
+  {
+   "page": 25,
+   "mark": "w",
+   "context": "UsingXa˜zXb˜z= (−1)"
+  },
+  {
+   "page": 25,
+   "mark": "c",
+   "context": "UsingXa˜zXb˜z= (−1)w(a˜z+b˜z,c˜z)X"
+  },
+  {
+   "page": 25,
+   "mark": "b",
+   "context": "UsingXa˜zXb˜z= (−1)w(a˜z+b˜z,c˜z)Xc˜zandX"
+  },
+  {
+   "page": 25,
+   "mark": "a",
+   "context": "UsingXa˜zXb˜z= (−1)w(a˜z+b˜z,c˜z)Xc˜zandXb˜zX"
+  },
+  {
+   "page": 25,
+   "mark": "w",
+   "context": "µ(c, q′) = µ(c, q) + (−1)"
+  },
+  {
+   "page": 25,
+   "mark": "w",
+   "context": "and(5.9)reducestoµ(c, q′) = (−1)"
+  },
+  {
+   "page": 25,
+   "mark": "w",
+   "context": "Thereversesituationisalsoallowed:ifµ(c, q)=−(−1)"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "ightcharges.Lettingzbealocalcoordinatewithz=0atb,wehaveZ¯a∼z"
+  },
+  {
+   "page": 26,
+   "mark": "3",
+   "context": "andZ−¯a∼−z"
+  },
+  {
+   "page": 26,
+   "mark": "i",
+   "context": "onthesurfacedefectSz,withcentralchargeinR−e"
+  },
+  {
+   "page": 28,
+   "mark": "1",
+   "context": "SampleWϑ[Λ]inthetheoryS[A2, CP"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "z"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "z2 ,φ"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "z2 ,φ3=1−3(z−1)+6(z−1)"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "(z−1)"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "(z+1)"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "(z−1)"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "1+3(z+1)+6(z+1)"
+  },
+  {
+   "page": 28,
+   "mark": "z",
+   "context": "−2+12"
+  },
+  {
+   "page": 28,
+   "mark": "2",
+   "context": "−2+12z"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "(z+1)"
+  },
+  {
+   "page": 28,
+   "mark": "3",
+   "context": "z"
+  },
+  {
+   "page": 29,
+   "mark": "1",
+   "context": "S[A3, C=CP"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "S[A3, C=CP1, D]withφ2=−10z dz"
+  },
+  {
+   "page": 29,
+   "mark": "3",
+   "context": "S[A3, C=CP1, D]withφ2=−10z dz2,φ3=4 dz"
+  },
+  {
+   "page": 29,
+   "mark": "2",
+   "context": "S[A3, C=CP1, D]withφ2=−10z dz2,φ3=4 dz3,φ4=9z"
+  },
+  {
+   "page": 29,
+   "mark": "4",
+   "context": "S[A3, C=CP1, D]withφ2=−10z dz2,φ3=4 dz3,φ4=9z2dz"
+  },
+  {
+   "page": 29,
+   "mark": "d",
+   "context": "λ(i)= m(i)"
+  },
+  {
+   "page": 29,
+   "mark": "z",
+   "context": "λ(i)= m(i) d"
+  },
+  {
+   "page": 29,
+   "mark": "i",
+   "context": "e"
+  },
+  {
+   "page": 31,
+   "mark": "a",
+   "context": "+)(1 + µ(a)X"
+  },
+  {
+   "page": 31,
+   "mark": "a",
+   "context": "0)(1 + µ(a)X"
+  },
+  {
+   "page": 31,
+   "mark": "a",
+   "context": "X"
+  },
+  {
+   "page": 31,
+   "mark": "a",
+   "context": "0)X"
+  },
+  {
+   "page": 31,
+   "mark": "2",
+   "context": "+ µ(a)"
+  },
+  {
+   "page": 31,
+   "mark": "a",
+   "context": "+)X"
+  },
+  {
+   "page": 31,
+   "mark": "a",
+   "context": "0)X"
+  },
+  {
+   "page": 31,
+   "mark": "a",
+   "context": "Thetwosolitonpathsa˜z+anda˜z−arebothoftypeij,soX"
+  },
+  {
+   "page": 31,
+   "mark": "a",
+   "context": "0)X"
+  },
+  {
+   "page": 34,
+   "mark": "a",
+   "context": "c) = (1 + µ(a)X"
+  },
+  {
+   "page": 34,
+   "mark": "a",
+   "context": "c)(1 + µ(a)X"
+  },
+  {
+   "page": 36,
+   "mark": "s",
+   "context": "¯a∈Γ"
+  },
+  {
+   "page": 36,
+   "mark": "s",
+   "context": "¯b∈Γ"
+  },
+  {
+   "page": 36,
+   "mark": "s",
+   "context": "¯a∈Γ"
+  },
+  {
+   "page": 36,
+   "mark": "s",
+   "context": "¯b∈Γ"
+  },
+  {
+   "page": 36,
+   "mark": "s",
+   "context": "HereΓ"
+  },
+  {
+   "page": 36,
+   "mark": "a",
+   "context": "Notethattheorderintheseproductsreallymatters,sinceX"
+  },
+  {
+   "page": 36,
+   "mark": "b",
+   "context": "Notethattheorderintheseproductsreallymatters,sinceXa˜zandX"
+  },
+  {
+   "page": 37,
+   "mark": "s",
+   "context": "ij,¯b∈Γ"
+  },
+  {
+   "page": 37,
+   "mark": "s",
+   "context": "¯a∈Γ"
+  },
+  {
+   "page": 37,
+   "mark": "c",
+   "context": "thatoccursisasum¯a + ¯bofchargessupportedatz,andhencehase−iϑ"
+  },
+  {
+   "page": 37,
+   "mark": "c",
+   "context": "e−iϑ"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "eachXcl(a+b)= ±X"
+  },
+  {
+   "page": 37,
+   "mark": "m",
+   "context": "m≤nδmn + #(c"
+  },
+  {
+   "page": 37,
+   "mark": "n",
+   "context": "m≤nδmn + #(cm ∩c"
+  },
+  {
+   "page": 38,
+   "mark": "c",
+   "context": "e−iϑ"
+  },
+  {
+   "page": 38,
+   "mark": "e",
+   "context": "pΣλ ∈R−, so"
+  },
+  {
+   "page": 38,
+   "mark": "c",
+   "context": "pΣλ ∈R−, so e−iϑ"
+  },
+  {
+   "page": 39,
+   "mark": "a",
+   "context": "X"
+  },
+  {
+   "page": 41,
+   "mark": "s",
+   "context": "¯a∈Γ"
+  },
+  {
+   "page": 41,
+   "mark": "s",
+   "context": "¯a∈Γ"
+  },
+  {
+   "page": 41,
+   "mark": "s",
+   "context": "¯b∈Γ"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "bothtwo-waystreets—callthemp"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "bothtwo-waystreets—callthemp1andp"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "L(γ) = −p"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "Σ−p"
+  },
+  {
+   "page": 43,
+   "mark": "1",
+   "context": "Bothp"
+  },
+  {
+   "page": 43,
+   "mark": "p",
+   "context": "Σand"
+  },
+  {
+   "page": 43,
+   "mark": "2",
+   "context": "Σandp"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "weﬁndαγ(p)=1.Thesameresultholdsfortheothertwotwo-waystreetsp"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "L(γ) = p"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "Σ+ p"
+  },
+  {
+   "page": 46,
+   "mark": "3",
+   "context": "Σ+ p"
+  },
+  {
+   "page": 46,
+   "mark": "n",
+   "context": "rds,lettingNdenotetheﬁnitewebmadeupofthethreetwo-waystreetsp"
+  },
+  {
+   "page": 46,
+   "mark": "1",
+   "context": "Labelthethreetwo-waystreetsinthisﬁgureasp"
+  },
+  {
+   "page": 46,
+   "mark": "2",
+   "context": "Labelthethreetwo-waystreetsinthisﬁgureasp1,p"
+  },
+  {
+   "page": 46,
+   "mark": "3",
+   "context": "Labelthethreetwo-waystreetsinthisﬁgureasp1,p2,p"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "streetsintheﬁgure.Thenonzerodegeneraciesonp"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "streetsintheﬁgure.Thenonzerodegeneraciesonp1,p"
+  },
+  {
+   "page": 47,
+   "mark": "3",
+   "context": "streetsintheﬁgure.Thenonzerodegeneraciesonp1,p2,p"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "µ(b, p"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "µ(c + a + n(b + c + a), p"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "µ(c, p"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "µ(a + b, p"
+  },
+  {
+   "page": 47,
+   "mark": "3",
+   "context": "µ(a + n(b + c + a), p"
+  },
+  {
+   "page": 47,
+   "mark": "3",
+   "context": "µ(b + c, p"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "Q(p"
+  },
+  {
+   "page": 47,
+   "mark": "3",
+   "context": "Q(p1) = Q(p"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "Q(p"
+  },
+  {
+   "page": 47,
+   "mark": "1",
+   "context": "L(γ) = −p"
+  },
+  {
+   "page": 47,
+   "mark": "3",
+   "context": "Σ−p"
+  },
+  {
+   "page": 47,
+   "mark": "2",
+   "context": "Σ+ p"
+  },
+  {
+   "page": 48,
+   "mark": "1",
+   "context": "new example we consider is obtained by taking K= 3 and C= CP"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "φ2= 3Λ"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "φ2= 3Λ2dz"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "φ3= (z"
+  },
+  {
+   "page": 48,
+   "mark": "3",
+   "context": "φ3= (z2+ u) dz"
+  },
+  {
+   "page": 48,
+   "mark": "3",
+   "context": "Σ = {λ"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "Σ = {λ3+ (3Λ"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "Σ = {λ3+ (3Λ2dz"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "Σ = {λ3+ (3Λ2dz2)λ + (z"
+  },
+  {
+   "page": 48,
+   "mark": "3",
+   "context": "Σ = {λ3+ (3Λ2dz2)λ + (z2+ u) dz"
+  },
+  {
+   "page": 48,
+   "mark": "3",
+   "context": "Σ = {x"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "Σ = {x3+ 3Λ"
+  },
+  {
+   "page": 48,
+   "mark": "2",
+   "context": "Σ = {x3+ 3Λ2x + z"
+  },
+  {
+   "page": 51,
+   "mark": "3",
+   "context": "inSection9.4.4of[3].TherewetookK=2andφ2=z"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "inSection9.4.4of[3].TherewetookK=2andφ2=z3−3Λ"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "Σ = {λ"
+  },
+  {
+   "page": 51,
+   "mark": "3",
+   "context": "Σ = {λ2+ (z"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "Σ = {λ2+ (z3−3Λ"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "Σ = {λ2+ (z3−3Λ2z + u)dz"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "Σ = {x"
+  },
+  {
+   "page": 51,
+   "mark": "3",
+   "context": "Σ = {x2+ z"
+  },
+  {
+   "page": 51,
+   "mark": "2",
+   "context": "Σ = {x2+ z3−3Λ"
+  },
+  {
+   "page": 51,
+   "mark": "1",
+   "context": "ForournextexamplewetakeagainK= 3andC= CP"
+  },
+  {
+   "page": 51,
+   "mark": "3",
+   "context": "z+ u"
+  },
+  {
+   "page": 51,
+   "mark": "z",
+   "context": "z+ u3 + Λ"
+  },
+  {
+   "page": 52,
+   "mark": "37",
+   "context": "3.WeshowthisvariationinFigure"
+  },
+  {
+   "page": 52,
+   "mark": "c",
+   "context": "3.WeshowthisvariationinFigure37.Weﬁndtwocriticalphasesϑ"
+  },
+  {
+   "page": 52,
+   "mark": "1",
+   "context": "NextletusconsiderK=3andC=CP"
+  },
+  {
+   "page": 53,
+   "mark": "u",
+   "context": "30, at"
+  },
+  {
+   "page": 53,
+   "mark": "3",
+   "context": "30, at u"
+  },
+  {
+   "page": 53,
+   "mark": "u",
+   "context": "30, at u3= 0 and very small"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "30, at u3= 0 and very small u"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "∆= 27φ"
+  },
+  {
+   "page": 53,
+   "mark": "3",
+   "context": "3−4φ"
+  },
+  {
+   "page": 53,
+   "mark": "a",
+   "context": "2has"
+  },
+  {
+   "page": 53,
+   "mark": "m",
+   "context": "φ3=2"
+  },
+  {
+   "page": 53,
+   "mark": "3",
+   "context": "φ3=2m"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "φ3=2m3 −amz −cz"
+  },
+  {
+   "page": 53,
+   "mark": "3",
+   "context": "φ3=2m3 −amz −cz2 + dz"
+  },
+  {
+   "page": 53,
+   "mark": "m",
+   "context": "φ2=−3"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "φ2=−3m"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "φ2=−3m2 + az + bz"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "z"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "z2(z + 1)"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "z2(z + 1)2(z −1)"
+  },
+  {
+   "page": 53,
+   "mark": "d",
+   "context": "z2(z + 1)2(z −1)2"
+  },
+  {
+   "page": 53,
+   "mark": "z",
+   "context": "z2(z + 1)2(z −1)2 d"
+  },
+  {
+   "page": 53,
+   "mark": "2",
+   "context": "z2(z + 1)2(z −1)2 dz"
+  },
+  {
+   "page": 53,
+   "mark": "3",
+   "context": "dz"
+  },
+  {
+   "page": 53,
+   "mark": "3",
+   "context": "z"
+  },
+  {
+   "page": 53,
+   "mark": "3",
+   "context": "z3(z + 1)"
+  },
+  {
+   "page": 53,
+   "mark": "3",
+   "context": "z3(z + 1)3(z −1)"
+  },
+  {
+   "page": 53,
+   "mark": "r",
+   "context": "1,"
+  },
+  {
+   "page": 54,
+   "mark": "i",
+   "context": "Figure38.ThecutoﬀspectralnetworksWϑ[Λ]whereΛe"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "e38.ThecutoﬀspectralnetworksWϑ[Λ]whereΛeiϑrunsoverthe9values"
+  },
+  {
+   "page": 54,
+   "mark": "a",
+   "context": "±1|.Ineachnetworkwesee"
+  },
+  {
+   "page": 54,
+   "mark": "1",
+   "context": "articlecarryingﬂavorchargealsoarosethere,inthecontextoftheCP"
+  },
+  {
+   "page": 55,
+   "mark": "1",
+   "context": "componentoftheboundaryisacopyofS"
+  },
+  {
+   "page": 56,
+   "mark": "o",
+   "context": "andeachpointz∈pc,apairofsetsofsolitonsS"
+  },
+  {
+   "page": 56,
+   "mark": "o",
+   "context": "S"
+  },
+  {
+   "page": 56,
+   "mark": "o",
+   "context": "c(z)arecompatiblewith"
+  },
+  {
+   "page": 57,
+   "mark": "1",
+   "context": "3∪{s"
+  },
+  {
+   "page": 57,
+   "mark": "2",
+   "context": "1∪{s"
+  },
+  {
+   "page": 57,
+   "mark": "3",
+   "context": "2∪{s"
+  },
+  {
+   "page": 59,
+   "mark": "o",
+   "context": "siderthetwosolitonsetsS"
+  },
+  {
+   "page": 59,
+   "mark": "c",
+   "context": "countsofthesolitonswithappropriatesigns:µ(p"
+  },
+  {
+   "page": 59,
+   "mark": "a",
+   "context": "countsofthesolitonswithappropriatesigns:µ(pc, a)X"
+  },
+  {
+   "page": 60,
+   "mark": "w",
+   "context": "Xa/Xa′= (−1)"
+  },
+  {
+   "page": 60,
+   "mark": "a",
+   "context": "Xa/Xa′= (−1)w(a,"
+  },
+  {
+   "page": 60,
+   "mark": "w",
+   "context": "F( ˜℘, W) = (−1)"
+  },
+  {
+   "page": 61,
+   "mark": "a",
+   "context": "−.Thepath"
+  },
+  {
+   "page": 61,
+   "mark": "o",
+   "context": "+to"
+  },
+  {
+   "page": 61,
+   "mark": "2",
+   "context": "ThespaceM(Σ, GL(1); m)isatorsorfor(C×)"
+  },
+  {
+   "page": 61,
+   "mark": "g",
+   "context": "ThespaceM(Σ, GL(1); m)isatorsorfor(C×)2"
+  },
+  {
+   "page": 62,
+   "mark": "1",
+   "context": "compactiﬁedfromfourtothreedimensionsonS"
+  },
+  {
+   "page": 63,
+   "mark": "2",
+   "context": "Wto˜z"
+  },
+  {
+   "page": 63,
+   "mark": "a",
+   "context": "Wwehavebuilt"
+  },
+  {
+   "page": 63,
+   "mark": "a",
+   "context": "X"
+  },
+  {
+   "page": 63,
+   "mark": "0",
+   "context": "ifUiscontractible,thenanychosenψ(˜z"
+  },
+  {
+   "page": 64,
+   "mark": "s",
+   "context": "⊕ˆE"
+  },
+  {
+   "page": 64,
+   "mark": "n",
+   "context": "⊕ˆEs"
+  },
+  {
+   "page": 64,
+   "mark": "s",
+   "context": "whereeachL(i)is∇-invariant,andˆE"
+  },
+  {
+   "page": 64,
+   "mark": "n",
+   "context": "whereeachL(i)is∇-invariant,andˆEsnhasrank|o(s"
+  },
+  {
+   "page": 65,
+   "mark": "s",
+   "context": "n, preimages of the"
+  },
+  {
+   "page": 65,
+   "mark": "m",
+   "context": "n∈R/Z, with"
+  },
+  {
+   "page": 65,
+   "mark": "1",
+   "context": "M(Σ, GL(1); m)isatorsorforH"
+  },
+  {
+   "page": 65,
+   "mark": "2",
+   "context": "M(Σ, GL(1); m)isatorsorforH1(¯Σ, C×) ≃(C×)"
+  },
+  {
+   "page": 65,
+   "mark": "g",
+   "context": "M(Σ, GL(1); m)isatorsorforH1(¯Σ, C×) ≃(C×)2"
+  },
+  {
+   "page": 65,
+   "mark": "m",
+   "context": "n].So,letM(C, GL(K);"
+  },
+  {
+   "page": 66,
+   "mark": "i",
+   "context": "n], . . . , exp[2π"
+  },
+  {
+   "page": 66,
+   "mark": "m",
+   "context": "n], . . . , exp[2πi"
+  },
+  {
+   "page": 66,
+   "mark": "1",
+   "context": "compactiﬁedonS"
+  },
+  {
+   "page": 67,
+   "mark": "2",
+   "context": "eliminatesKsdegreesoffreedom.Theequation(10.21)imposesonlyK"
+  },
+  {
+   "page": 67,
+   "mark": "n",
+   "context": "ndet C"
+  },
+  {
+   "page": 67,
+   "mark": "n",
+   "context": "ndet C"
+  },
+  {
+   "page": 67,
+   "mark": "2",
+   "context": "trivially,sothequotientbythegaugegroupreducesthedimensionbyK"
+  },
+  {
+   "page": 67,
+   "mark": "2",
+   "context": "dimC M(C, GL(K); m) = (2gC+ s)K"
+  },
+  {
+   "page": 67,
+   "mark": "2",
+   "context": "dimC M(C, GL(K); m) = (2gC+ s)K2−Ks −2(K"
+  },
+  {
+   "page": 68,
+   "mark": "2",
+   "context": "dimC M(C, GL(K); m) −dimC M(Σ, GL(1); m) = (K"
+  },
+  {
+   "page": 68,
+   "mark": "2",
+   "context": "B≤(K"
+  },
+  {
+   "page": 69,
+   "mark": "a",
+   "context": "ν∈Sc(t)X"
+  },
+  {
+   "page": 69,
+   "mark": "t",
+   "context": "ν∈Sc(t)Xa(ν))foreach"
+  },
+  {
+   "page": 69,
+   "mark": "t",
+   "context": "ν∈Sc(t)Xa(ν))foreachtwith"
+  },
+  {
+   "page": 69,
+   "mark": "1",
+   "context": "ν∈Sc(t)Xa(ν))foreachtwitht"
+  },
+  {
+   "page": 69,
+   "mark": "2",
+   "context": "ν∈Sc(t)Xa(ν))foreachtwitht1≤t≤t"
+  },
+  {
+   "page": 71,
+   "mark": "n",
+   "context": "atthereisanalgorithmwhichdeterminesfromaWaﬁnitesetofchargesγ"
+  },
+  {
+   "page": 71,
+   "mark": "n",
+   "context": "γ"
+  },
+  {
+   "page": 71,
+   "mark": "n",
+   "context": "pairings:ϵnm= ⟨γ"
+  },
+  {
+   "page": 71,
+   "mark": "m",
+   "context": "pairings:ϵnm= ⟨γn, γ"
+  },
+  {
+   "page": 71,
+   "mark": "n",
+   "context": "pairings:ϵnm= ⟨γn, γm⟩.Informally speaking, the γ"
+  },
+  {
+   "page": 71,
+   "mark": "n",
+   "context": "whichcanappearinsideofWwhenWdegenerates;saidotherwise,theγ"
+  },
+  {
+   "page": 72,
+   "mark": "n",
+   "context": "it,orevenhowtoreadoﬀtheγ"
+  },
+  {
+   "page": 73,
+   "mark": "d",
+   "context": "ζ"
+  },
+  {
+   "page": 73,
+   "mark": "n",
+   "context": "nζ"
+  },
+  {
+   "page": 73,
+   "mark": "n",
+   "context": "nζ"
+  },
+  {
+   "page": 74,
+   "mark": "e",
+   "context": "Wϑ,andbasisvectors"
+  },
+  {
+   "page": 74,
+   "mark": "1",
+   "context": "Wϑfrom˜z"
+  },
+  {
+   "page": 74,
+   "mark": "a",
+   "context": "Wϑ,wehave"
+  },
+  {
+   "page": 76,
+   "mark": "n",
+   "context": "τ"
+  },
+  {
+   "page": 76,
+   "mark": "a",
+   "context": "τn= X"
+  },
+  {
+   "page": 76,
+   "mark": "n",
+   "context": "τn= Xan+ ν"
+  },
+  {
+   "page": 76,
+   "mark": "c",
+   "context": "ing these two gives a closed cycle, cl(¯a+¯a′) ∈Γ, with e−iϑ"
+  },
+  {
+   "page": 76,
+   "mark": "c",
+   "context": "uationisgenericenough,thesemilatticeofγ∈Γwiththepropertye−iϑ"
+  },
+  {
+   "page": 78,
+   "mark": "f",
+   "context": "ℓ"
+  },
+  {
+   "page": 78,
+   "mark": "f",
+   "context": "ℓf1· ℓ"
+  },
+  {
+   "page": 78,
+   "mark": "f",
+   "context": "ℓ"
+  },
+  {
+   "page": 78,
+   "mark": "f",
+   "context": "ℓf1· ℓ"
+  },
+  {
+   "page": 79,
+   "mark": "1",
+   "context": "π1(S"
+  },
+  {
+   "page": 79,
+   "mark": "1",
+   "context": "→π1(X) →π0(S"
+  },
+  {
+   "page": 79,
+   "mark": "1",
+   "context": "Choosing the standard generator L of π1(S"
+  },
+  {
+   "page": 79,
+   "mark": "w",
+   "context": "nding idealI⊂R(π≤1( ˜X)) be the ideal generated by [℘1]−(−1)"
+  },
+  {
+   "page": 81,
+   "mark": "a",
+   "context": "≤1(C) →P( ˜C),hence"
+  },
+  {
+   "page": 81,
+   "mark": "a",
+   "context": "≤1(C)arepointsof˜C.Thus,"
+  },
+  {
+   "page": 81,
+   "mark": "z",
+   "context": "≤1(C)arepointsof˜C.Thus,apoint"
+  },
+  {
+   "page": 81,
+   "mark": "a",
+   "context": "≤1(C)).Wecouldattempttoﬁndsuch"
+  },
+  {
+   "page": 81,
+   "mark": "w",
+   "context": "σ([℘1], [℘2]) = (−1)"
+  },
+  {
+   "page": 81,
+   "mark": "1",
+   "context": "σ([℘1], [℘2]) = (−1)w[ι"
+  },
+  {
+   "page": 81,
+   "mark": "2",
+   "context": "σ([℘1], [℘2]) = (−1)w[ι1◦ι"
+  },
+  {
+   "page": 82,
+   "mark": "z",
+   "context": "1and"
+  },
+  {
+   "page": 82,
+   "mark": "z",
+   "context": "2,respectively,and"
+  },
+  {
+   "page": 82,
+   "mark": "2",
+   "context": "2,respectively,andz"
+  },
+  {
+   "page": 82,
+   "mark": "a",
+   "context": "γλisthecentralchargeof"
+  },
+  {
+   "page": 82,
+   "mark": "a",
+   "context": "¯aλisthecentralchargeof"
+  },
+  {
+   "page": 82,
+   "mark": "d",
+   "context": "2.Inthiscase"
+  },
+  {
+   "page": 82,
+   "mark": "z",
+   "context": "that this implies that the integral e−iϑ R"
+  },
+  {
+   "page": 82,
+   "mark": "z",
+   "context": "γijλ increasesas"
+  },
+  {
+   "page": 83,
+   "mark": "i",
+   "context": "andexpandedinYγij′∈Hom(L"
+  },
+  {
+   "page": 83,
+   "mark": "j",
+   "context": "andexpandedinYγij′∈Hom(Li, L"
+  },
+  {
+   "page": 83,
+   "mark": "z",
+   "context": "Z"
+  },
+  {
+   "page": 83,
+   "mark": "2",
+   "context": "Zz"
+  },
+  {
+   "page": 83,
+   "mark": "z",
+   "context": "∂zYγij′−A"
+  },
+  {
+   "page": 83,
+   "mark": "z",
+   "context": "∂z′Yγij′+ Yγij′A"
+  }
+ ]
+}

@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-1411.6062v2
-doc_title: "EV ALUATION OF STATE INTEGRALS AT RATIONAL POINTS"
+doc_title: "EVALUATION OF STATE INTEGRALS AT RATIONAL POINTS"
 section_id: sec-004-14-the-quantum-dilogarithm-at-roots-of-unity
 section_title: "The quantum dilogarithm at roots of unity"
 section_number: 1.4
 pages: 6-7
 source_pdf: 1411.6062v2.pdf
 source_sha256: 5abd328d027de43c
-doc_brief: "EVALUATION OF STATE INTEGRALS AT RATIONAL POINTS — Multi-dimensional state-integrals of products of Faddeev’s quant um diloga- rithms arise frequently in Quantum Topology, quantum Teichm¨ uller t"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.93
 latex_coverage_ratio: 0.898
+doc_brief: "EVALUATION OF STATE INTEGRALS AT RATIONAL POINTS — Multi-dimensional state-integrals of products of Faddeev’s quantum diloga- rithms arise frequently in Quantum Topology, quantum Teichm¨uller theory"
 ---
 []{#sub.evalphi label="sub.evalphi"}
 

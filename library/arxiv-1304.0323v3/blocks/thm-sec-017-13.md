@@ -1,0 +1,1 @@
+(i) The object ~Kℓ(a) is a right dual to Lℓ(a) in the category T′ J and (εℓ,ηℓ) is a quasi-adjunction (see § A.2). (ii) The categoryT′ J andTJ are rigid tensor categories; i.e., every object has a right dual object and a left dual object. SYMMETRIC QUIVER HECKE ALGEBRAS AND R-MATRICES 57

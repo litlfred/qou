@@ -15,7 +15,7 @@ to establish that Li₂^q is the unique antiderivative of -ln_q(1-z)/z
 with Li₂^q(0) = 0.
 
 Ref: [kirillov1995] Kirillov, "Dilogarithm identities"
-Ref: [manuscript] prop:mass-endomorphism-tower — Li₂^q subproof
+Ref: [leitner2026] prop:mass-endomorphism-tower — Li₂^q subproof
 -/
 
 namespace QOU.BraidKnot
@@ -28,7 +28,9 @@ noncomputable def symQInt (q : ℝ) (n : ℕ) : ℝ :=
 
 /-- The symmetric q-dilogarithm truncated at order N:
     Li₂^q_N(z) = Σ_{n=1}^{N} z^n / (n · [n]_q).
-    -- Ref: [kirillov1995] §2.1 -/
+    -- Ref: [kirillov1995] §2.5, Def. 9, eq. (2.52): Li₂(x;q) = Σ xⁿ/(n(1−qⁿ)).
+    --   That is the non-symmetric normalisation; the symmetric [n]_q used here
+    --   is a variant of it, not the source's definition. (§2.1 is partitions.) -/
 noncomputable def li2qTrunc (q : ℝ) (z : ℝ) (N : ℕ) : ℝ :=
   Finset.sum (Finset.range N) fun n =>
     if n = 0 then 0
@@ -48,7 +50,7 @@ theorem li2q_deriv_term (q : ℝ) (z : ℝ) (n : ℕ) (hn : n ≥ 1)
     = z ^ (n - 1) / symQInt q n := by
   field_simp
 
--- Ref: [manuscript] prop:mass-endomorphism-tower lines 306-316
+-- Ref: [leitner2026] prop:mass-endomorphism-tower lines 306-316
 /-- **The Briggs–Klein integral identity** (named conditional conjecture).
     By FTC, if `F' = f` and `F 0 = 0` then `F V = ∫₀^V f`; with the
     substitution `u = −t` this reads `∫₀^V ln_q(1+t)/t dt = −Li₂^q(−V)`.
@@ -59,13 +61,13 @@ theorem li2q_deriv_term (q : ℝ) (z : ℝ) (n : ℕ) (hn : n ≥ 1)
     proposition names the FTC integral equation honestly as a `Prop`
     (its formalisation needs the q-log change-of-variables, the open part
     per `prop:mass-endomorphism-tower`), rather than asserting `True`. -/
--- Ref: [kirillov1995] Proposition 2.1
+-- Ref: [kirillov1995] §1.1.1 eq. (1.1) (classical Li₂(x) = Σ xⁿ/n² = −∫₀ˣ log(1−t)/t dt only;
+--   the source has no 'Proposition 2.1' and no q-log integral identity)
 def briggs_klein_is_neg_li2q
     (bkIntegrand li2qAntideriv : ℝ → ℝ) (V : ℝ) : Prop :=
   ∫ t in (0:ℝ)..V, bkIntegrand t = -li2qAntideriv (-V)
 
--- Ref: [kirillov1995] Proposition 2.3
--- Ref: [manuscript] docs/audits/2026-05-27-mass-formula-uniqueness-argument.md §Step 3
+-- Ref: [leitner2026] docs/audits/2026-05-27-mass-formula-uniqueness-argument.md §Step 3
 /-- **THEOREM (antiderivative uniqueness from FTC — derived).**
     Two continuous functions `F, G` on `[0, V]` that are both right-derivatives
     of the *same* `f` on `[0, V)` and agree at the left endpoint `0` agree at

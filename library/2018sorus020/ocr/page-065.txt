@@ -1,0 +1,50 @@
+Then the same kind of computation as in the proof of Lemmas and
+gives the result. We sketch the proof : given z € H1(M,?), first lift it as Z(t) €
+C1(M, k[t*1],). Denote by D : C'(M, k[t*"],,) > C?(M, k[t*"],) the boundary map ;
+then send 2 on 2@ € 0?(M, k{t*!],), and then take the evaluation at t = \”. The
+
+2
+result is precisely 4] _,,D2(t) = \-*yuz € H?(M, d’) Oo
+
+lev
+Lemma 2.3.23. Jf dim(H!(M,)) =r, then the map @ is an isomorphism.
+
+Proof. Consider the endomorphism A of H,(M,k[¢*1],) induced by the multipli-
+
+cation by (t — \”). Its kernel (and cokernel) is exactly ® Ae because teh di-
+i=1
+
+mension of the vector space (H+(M, A)) is equal to r, hence @ is an isomorphism
+ker A — coker A. Oo
+
+Proof of Proposition The map @ is an isomorphism, in particular 6(u) 4 0,
+hence 6(y) 4 0 and 6 is injective. Oo
+
+2.4 The torsion at an ideal point
+
+In this section we consider v € Y an ideal point. We denote by ¢t an uniforming
+parameter of the valuation ring O,.
+
+We mentioned in Section[L.3]the construction of Marc Culler and Peter Shalen : such
+an ideal point induces an action of 7(M) on a simplicial tree T,,. In [Sha02], Shalen
+explains how one can produce a so-called dual surface © to the action of 7,(M) on
+T,. Moreover, this surface can be chosen to be incompressible in the manifold M,
+
+that is such that the inclusion map 7(%) — 7(M) is injective.
+
+Definition 2.4.1. We say that © C M is free is its complement M \ » has a free
+
+fundamental group.
+This section is devoted to the proof of the following theorem :
+
+Theorem (Theorem [2.0.2). Let M be a 3-manifold with boundary a torus and ra-
+tional homology of a circle; and let v € Y an ideal point in the smooth projective
+model of a one dimensional component of irreducible type of the augmented charac-
+ter variety. Assume that an incompressible surface % associated to v is connected or
+is the union of n parallel homeomorphic copies, is free, is not the Seifert surface,
+and assume that the restricted tautological representation py : ™(X) —* SLo(O,) ts
+
+not abelian. Then the following inequality holds :
+u(tor(M, Adop)) < —nx(X) —m
+
+64

@@ -1,0 +1,1 @@
+Let A be a 0-sectorial operator having a Hα 2 calculus. Let m ∈W α 2 (R) with compact support in R+. Then for any x belonging to the calculus core DA, we have m(A)x = 1 2π Z R ˆm(s) exp(isA)xds, where the integral is a Bochner integral in X.

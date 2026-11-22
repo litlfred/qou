@@ -1,16 +1,17 @@
 ---
 doc_id: arxiv-2205.06874v2
-doc_title: "State sum models with defectsbased on spherical fusion categories Catherine Meusburger Department Mathematik Friedrich-Alexander-Universität Erlangen-Nürnberg"
+doc_title: "State sum models with defects based on spherical fusion categories"
 section_id: sec-030-ribbon-invariants-from-line-defects
 section_title: "Ribbon invariants from line defects"
 section_number: null
 pages: 59-68
 source_pdf: 2205.06874v2.pdf
 source_sha256: 9b41365160c17ab4
-doc_brief: "State sum models with defectsbased on spherical fusion categories Catherine Meusburger Department Mathematik Friedrich-Alexander-Universität Erlangen-Nürnberg — We define a"
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.942
-latex_coverage_ratio: 0.698
+latex_coverage_ratio: 0.756
+doc_brief: "State sum models with defects based on spherical fusion categories — We define a Turaev-Viro-Barrett-Westbury state sum model of triangulated 3-manifolds with surface, line and point defects."
 ---
 In this section we show how defect lines on trivial defect surfaces give rise to ribbon invariants.  These surfaces are labeled by a spherical fusion category $\mac$ as a $(\mac,\mac)$-bimodule category.   As $\mac$ is a spherical fusion category, its center $\mathcal Z(\mac)$ is a  ribbon category, see for instance \cite[Lemma 10.1]{TVr}. By Example \ref{ex:modulefuncs}, the monoidal category $\End_\mac(\mac)$  is  monoidally equivalent to $\mathcal Z(\mac)$. 
 Under this monoidal equivalence, an object $(a, \sigma_{-,a})$ of $\mathcal Z(\mac)$  corresponds to the $(\mac,\mac)$-bimodule functor $F=a\oo -:\mac\to\mac$ with coherence data

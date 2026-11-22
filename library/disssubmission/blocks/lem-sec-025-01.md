@@ -1,0 +1,1 @@
+If the theta divisor Θ ⊂X is smooth, then there exists an embedding G(δΘ) ,→G(g) = ( Spg!(C) for even g SOg!(C) for odd g such that ω(δΘ) is the restriction of the standard representation of G(g). Chapter 4 – The Tannaka group of the theta divisor

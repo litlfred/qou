@@ -10,7 +10,8 @@ source_sha256: 9a7757f998b7f680
 toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.989
-latex_coverage_ratio: 1.0
+latex_coverage_ratio: 0.99
+doc_brief: "On Two-Dimensional Holonomy — We deﬁne the thin fundamental categorical group P2(M, ∗) of a based smooth manifold (M, ∗) as the categorical group whose objects are rank-1 homotopy classes of based"
 ---
 []{#2es label="2es"} This subsection is not necessary to understand the rest of the article.
 

@@ -1,0 +1,53 @@
+Invariants in Low-Dimensional Topology and Knot Theory 27
+
+[13] J. Przytycki, From Goeritz matrices to quasi-alternating links, arXiv: 0909.1118.
+(14] P. Traczyk, A combinatorial formula for the signature of alternating diagrams, Fundamenta
+Mathematicae 184 (2004), 311-316 (a new version of the unpublished manuscript, 1987).
+
+Detecting tightness through open book decompositions
+ANDY WAND
+
+Let M be a closed, oriented 3-manifold. An open book decomposition of M
+is a fibration of the complement of an embedded link B (the binding) in M over
+S$, such that each fibre (the page) is the interior of a Seifert surface for B. Open
+book decompositions of 3-manifolds provide a very useful topological framework
+for studying properties of contact structures. In particular, work of Giroux ({1])
+has shown a 1-1 correspondence between isotopy classes of contact structures on
+and stabilization-equivalence classes of open book decompositions. The starting
+point of this talk is the problem of determining how various properties of a contact
+structure are reflected in arbitrary corresponding open book decompositions.
+
+The structure of the talk is as follows: we begin by describing how, given the
+data of an open book decomposition along with a collection of disjoint, properly
+embedded arcs in a page, to define a necessary condition for tightness of the sup-
+ported contact structure, in some sense a generalization of the “right-veering”
+condition of Honda, Kazez, and Matié ({2]). We further show that, in contrast
+to right-veering, our condition is invariant under stabilization and destabilization,
+and composition of the monodromy of the open book with arbitrary positive Dehn
+twists. It follows then that the condition is indeed a sufficient condition for tight-
+ness, thus providing the first known algorithm for determining tightness from an
+arbitrary open book decomposition.
+
+A particular application is that tightness of a closed contact 3-manifold is pre-
+served under Legendrian surgeries on that manifold. This provides a much sought-
+after link between intrinsically 3-dimensional contact phenomena and those which
+are induced as the boundaries of 4-dimensional manifolds with particular geometric
+(e.g. Stein or symplectic) structures.
+
+We also indicate an interpretation of the property as the vanishing of a certain
+homology. Conjecturally, this should be isomorphic to the 0-level filtration of the
+embedded contact homology of Hutchings (see the appendix of [3]), and should give
+some indication of how the grading on the embedded contact homology differential
+carries over to the various homology theories (Heegaard Floer and Monopole Floer
+in particular) to which it is isomorphic.
+
+REFERENCES
+
+[1] E. Giroux, Géometrie de contact: de la dimension trois vers les dimensions supérieures,
+Proceedings of the International Congress of Mathematicians 2 (Beijing 2002), 405-414.
+
+[2] K. Honda, W. Kazez and G. Matié, Right-veering diffeomorphisms of compact surfaces with
+boundary I, Invent. Math. 169 (2007), no. 2, 427-449.
+
+[3] Latschev, Janko and Wendl, Chris, Algebraic torsion in contact manifolds, With an appen-
+dix by Michael Hutchings, Geom. Funct. Anal. 21 (2011), 1144-1195.

@@ -13,6 +13,7 @@ export default conjecture({
     "dimofte-gaiotto-gukov2014",
     "terashima-yamazaki2011",
     "neumann-zagier1985",
+    "arxiv-1803.04009v2",
   ],
   tags: [
     "tier:S",
@@ -25,5 +26,11 @@ export default conjecture({
     "long-horizon",
     "axiom-class",
     "open-problem",
+  ],
+  authorNotes: [
+    {
+      kind: "note",
+      body: "The middle row of the dictionary previously read $m_p \\leftrightarrow Z_{T[\\mathcal{B}_3]}(q_0)$; it was retired under the absolute-mass excision ruling of 2026-08-11.",
+    },
   ],
 });

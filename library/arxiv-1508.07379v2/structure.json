@@ -7,10 +7,11 @@
   "bytes": 214166,
   "pages": 15,
   "text_source": "embedded",
-  "math_source": "latex",
-  "mtime": null,
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:51Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -20,20 +21,31 @@
    "stamp_date": "9 Dec 2016"
   },
   "doi": null,
-  "title": "Convergence of Mayer and Virial expansions and the Penrose t ree-graph identity",
-  "authors_raw": "Aldo Procacci \u2217, Sergio A. Yuhjtman \u2020",
+  "title": "Convergence of Mayer and Virial expansions and the Penrose tree-graph identity",
+  "authors_raw": "Aldo Procacci∗, Sergio A. Yuhjtman†",
   "title_lines": [
-   "Convergence of Mayer and Virial expansions and the Penrose t ree-graph",
+   "Convergence of Mayer and Virial expansions and the Penrose tree-graph",
    "identity"
   ],
-  "abstract": "We establish new lower bounds for the convergence radius of the Ma yer series and the Virial series of a continuous particle system interacting via a stable a nd tempered pair potential. Our bounds considerably improve those given by Penrose and Ruelle in 1963 for the Mayer series and by Lebowitz and Penrose in 1964 for the Virial s eries. To get our results we exploit the tree-graph identity given by Penrose in 1967 using a ne w partition scheme based on minimum spanning trees.",
+  "abstract": "We establish new lower bounds for the convergence radius of the Mayer series and the Virial series of a continuous particle system interacting via a stable and tempered pair potential. Our bounds considerably improve those given by Penrose and Ruelle in 1963 for the Mayer series and by Lebowitz and Penrose in 1964 for the Virial series. To get our results we exploit the tree-graph identity given by Penrose in 1967 using a new partition scheme based on minimum spanning trees.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
-   "CreationDate": "D:20181118004512-05'00'",
    "Creator": "LaTeX with hyperref package",
-   "Title": "",
-   "Author": ""
-  }
+   "CreationDate": "D:20181118004512-05'00'"
+  },
+  "title_raw": "Convergence of Mayer and Virial expansions and the Penrose tree-graph identity",
+  "title_source": "heading",
+  "title_verified": true,
+  "title_evidence": {
+   "heading": "Convergence of Mayer and Virial expansions and the Penrose tree-graph identity Introduction",
+   "outline": "1 Introduction",
+   "text": "Convergence of Mayer and Virial expansions and the Penrose tree-graph identity",
+   "corroborated_by": [
+    "text"
+   ],
+   "browser_print": false
+  },
+  "title_prev": "Convergence of Mayer and Virial expansions and the Penrose tree-graph identity Introduction"
  },
  "toc": [
   {
@@ -41,74 +53,255 @@
    "title": "Introduction",
    "page": 1,
    "source": "outline",
-   "number": "1"
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "1"
   },
   {
    "level": 1,
    "title": "Model and Results",
    "page": 3,
    "source": "outline",
-   "number": "2"
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Model",
    "page": 3,
    "source": "outline",
-   "number": "2.1"
+   "number": "2.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "3"
   },
   {
    "level": 2,
    "title": "Results",
    "page": 4,
    "source": "outline",
-   "number": "2.2"
+   "number": "2.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "4"
   },
   {
    "level": 1,
    "title": "Proof of Proposition ??",
    "page": 6,
    "source": "outline",
-   "number": "3"
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "6"
   },
   {
    "level": 2,
    "title": "General Penrose identity",
    "page": 7,
    "source": "outline",
-   "number": "3.1"
+   "number": "3.1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "7"
   },
   {
    "level": 2,
    "title": "Partition scheme via minimum spanning tree",
    "page": 8,
    "source": "outline",
-   "number": "3.2"
+   "number": "3.2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "8"
   },
   {
    "level": 2,
    "title": "Conclusion of the proof of Proposition ??",
    "page": 11,
    "source": "outline",
-   "number": "3.3"
+   "number": "3.3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "11"
   },
   {
    "level": 1,
    "title": "Proof of Theorem ??",
    "page": 12,
    "source": "outline",
-   "number": "4"
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "12"
   },
   {
    "level": 1,
    "title": "Comparison with recent results and concluding remarks",
    "page": 13,
    "source": "outline",
-   "number": "5"
+   "number": "5",
+   "confidence": null,
+   "evidence": null,
+   "page_label": "13"
   }
  ],
  "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [],
+ "pages": [
+  {
+   "physical": 1,
+   "label": "1",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 2,
+   "label": "2",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 3,
+   "label": "3",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 4,
+   "label": "4",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 5,
+   "label": "5",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 6,
+   "label": "6",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 7,
+   "label": "7",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 8,
+   "label": "8",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 9,
+   "label": "9",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 10,
+   "label": "10",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 11,
+   "label": "11",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 12,
+   "label": "12",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 13,
+   "label": "13",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 14,
+   "label": "14",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  },
+  {
+   "physical": 15,
+   "label": "15",
+   "source": "printed",
+   "confidence": 0.7,
+   "evidence": [
+    "printed"
+   ]
+  }
+ ],
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 769,
+   "n_words": 119,
+   "label_start": "1",
+   "label_end": "1"
+  },
   {
    "id": "sec-000-1-introduction",
    "number": "1",
@@ -116,8 +309,10 @@
    "level": 1,
    "page_start": 1,
    "page_end": 3,
-   "n_chars": 6224,
-   "n_words": 1079
+   "n_chars": 6187,
+   "n_words": 1030,
+   "label_start": "1",
+   "label_end": "3"
   },
   {
    "id": "sec-001-2-model-and-results",
@@ -125,52 +320,116 @@
    "title": "Model and Results",
    "level": 1,
    "page_start": 3,
-   "page_end": 7,
-   "n_chars": 9346,
-   "n_words": 1896
+   "page_end": 4,
+   "n_chars": 3510,
+   "n_words": 665,
+   "label_start": "3",
+   "label_end": "4"
   },
   {
-   "id": "sec-002-31-general-penrose-identity",
+   "id": "sec-002-22-results",
+   "number": "2.2",
+   "title": "Results",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 4953,
+   "n_words": 869,
+   "label_start": "4",
+   "label_end": "6"
+  },
+  {
+   "id": "sec-003-3-proof-of-proposition",
+   "number": "3",
+   "title": "Proof of Proposition ??",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 659,
+   "n_words": 147,
+   "label_start": "6",
+   "label_end": "7"
+  },
+  {
+   "id": "sec-004-31-general-penrose-identity",
    "number": "3.1",
    "title": "General Penrose identity",
    "level": 2,
    "page_start": 7,
    "page_end": 8,
-   "n_chars": 2552,
-   "n_words": 659
+   "n_chars": 2419,
+   "n_words": 527,
+   "label_start": "7",
+   "label_end": "8"
   },
   {
-   "id": "sec-003-32-partition-scheme-via-minimum-spanning-tree",
+   "id": "sec-005-32-partition-scheme-via-minimum-spanning-tree",
    "number": "3.2",
    "title": "Partition scheme via minimum spanning tree",
    "level": 2,
    "page_start": 8,
-   "page_end": 13,
-   "n_chars": 10786,
-   "n_words": 2505
+   "page_end": 11,
+   "n_chars": 8233,
+   "n_words": 1710,
+   "label_start": "8",
+   "label_end": "11"
   },
   {
-   "id": "sec-004-5-comparison-with-recent-results-and-concluding",
+   "id": "sec-006-33-conclusion-of-the-proof-of-proposition",
+   "number": "3.3",
+   "title": "Conclusion of the proof of Proposition ??",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 496,
+   "n_words": 101,
+   "label_start": "11",
+   "label_end": "12"
+  },
+  {
+   "id": "sec-007-4-proof-of-theorem",
+   "number": "4",
+   "title": "Proof of Theorem ??",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 1625,
+   "n_words": 387,
+   "label_start": "12",
+   "label_end": "13"
+  },
+  {
+   "id": "sec-008-5-comparison-with-recent-results-and-concluding",
    "number": "5",
    "title": "Comparison with recent results and concluding remarks",
    "level": 1,
    "page_start": 13,
    "page_end": 15,
-   "n_chars": 5584,
-   "n_words": 949
+   "n_chars": 5586,
+   "n_words": 904,
+   "label_start": "13",
+   "label_end": "15"
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 10,
-  "sections": 5,
-  "chars_total": 34492,
+  "toc_inferred_entries": 0,
+  "figure_entries": 0,
+  "figure_sequence_gaps": [],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 10,
+  "chars_total": 34437,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
    "tex_sections": 11,
-   "overlaid": 5,
+   "overlaid": 9,
    "thresholds": {
     "title": 0.85,
     "prose": 0.6,
@@ -178,23 +437,44 @@
    },
    "sections": [
     {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
      "id": "sec-000-1-introduction",
      "title": "Introduction",
-     "prose_ratio": 0.986,
-     "coverage_ratio": 1.0,
+     "prose_ratio": 0.997,
+     "coverage_ratio": 0.939,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
      "id": "sec-001-2-model-and-results",
      "title": "Model and Results",
-     "prose_ratio": 0.983,
-     "coverage_ratio": 0.993,
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.979,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-002-31-general-penrose-identity",
+     "id": "sec-002-22-results",
+     "title": "Results",
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-3-proof-of-proposition",
+     "title": "Proof of Proposition ??",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-31-general-penrose-identity",
      "title": "General Penrose identity",
      "prose_ratio": 0.922,
      "coverage_ratio": 0.983,
@@ -202,18 +482,34 @@
      "converter": "pandoc"
     },
     {
-     "id": "sec-003-32-partition-scheme-via-minimum-spanning-tree",
+     "id": "sec-005-32-partition-scheme-via-minimum-spanning-tree",
      "title": "Partition scheme via minimum spanning tree",
-     "prose_ratio": 0.975,
-     "coverage_ratio": 0.986,
+     "prose_ratio": 0.972,
+     "coverage_ratio": 1.0,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-5-comparison-with-recent-results-and-concluding",
+     "id": "sec-006-33-conclusion-of-the-proof-of-proposition",
+     "title": "Conclusion of the proof of Proposition ??",
+     "prose_ratio": 0.913,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-4-proof-of-theorem",
+     "title": "Proof of Theorem ??",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-5-comparison-with-recent-results-and-concluding",
      "title": "Comparison with recent results and concluding remarks",
      "prose_ratio": 0.993,
-     "coverage_ratio": 0.597,
+     "coverage_ratio": 0.579,
      "result": "overlaid",
      "converter": "pandoc"
     }

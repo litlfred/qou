@@ -1,0 +1,48 @@
+COMBINATORIAL SCALAR CURVATURE 57
+
+of radius r4 is large enough to be tangent to the other three spheres, yet
+small enough that its center v4 lies in the plane defined by v1, v2, and v3.
+This condition is defined by Soddy’s theorem — below we state a version
+for arbitrary dimension, recently obtained! by M. Kovalev [3].
+
+Theorem 4.3. Let S;,i=1,...,n+2, ben+2 pairwise tangent distinct
+spheres in the n-dimensional Euclidean space E”, such that S; has radius
+R;. Then
+
+n+2 n+2 2
+(4.1) ny) K} = (S x) ,
+i=l i=l
+
+where K; = 1/Ri, if S; does not contain the other spheres, otherwise K; =
+
+-1/Rj.
+
+While the above theorem is generally quite useful, it is not necessary to
+obtain the following observation:
+
+Theorem 4.4. The space Cr C R* is not conver.
+
+Proof. Consider the section Cyt of Cr defined by ry = ro = 1. We can
+think of Cr as a subset of a plane. As described above, one component
+0; of the boundary of Cyt is defined by the condition that there are four
+mutually-tangent circles in the plane, of radii 1,1,7r3,r4 — Crt itself lies
+above 0;. Notice that as r4 approaches infinity, r3 also grows, but to a
+finite limit, and so 0, is not convex. O
+
+Note. Using Theorem 4.3, it can actually be shown that 0,, as defined in
+the proof above is strictly concave.
+
+5. Conformal deformation space of singular Euclidean metrics
+
+Consider a closed three-dimensional manifold M?, together with a topo-
+logical triangulation T. If we equip all of the simplices of T with metrics,
+so that they are isometric to geodesic simplices in E*, and, furthermore,
+these metrics are compatible (which is to say that all of the gluing maps
+are Euclidean isometries), M* acquires a metric, which is flat on the com-
+plement of the 1-skeleton of T. We define the solid angle S, of (M?,T) at
+a vertex v to be the sum of the solid angles of the simplices of T incident
+to v at the vertex identified to v. The quantity 4 — S, is a combinatorial
+analogue of scalar curvature, in that it measures the difference in, on the
+
+1 According to the translator’s note in the English translation of Kovalev’s paper,
+Theorem 4.3 was already known to Coxeter in the thirties.

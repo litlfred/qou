@@ -68,7 +68,7 @@ $$
     from the context class fields (the genuine operator identities:
     pentagon master, Hecke braid relation, descent involution,
     scalar-descended commutation, transient quantum-torus relation). -/
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/pentagon-uv-commutation.ts
+-- Ref: [leitner2026] quantum-observable-universe/braids-and-knots/pentagon-uv-commutation.ts
 theorem pentagon_uv_commutation [ctx : PentagonUvCommutationContext] :
     (haveI := ctx.ringR;
       ctx.Phi_q ctx.v * ctx.Phi_q ctx.u =

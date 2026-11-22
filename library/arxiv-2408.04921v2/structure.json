@@ -6,10 +6,12 @@
   "sha256": "dcfe112640a8adda54dcd50a68fd16956766b45749fb254c2c8a157fe05b7ae4",
   "bytes": 275899,
   "pages": 24,
-  "math_source": "latex",
-  "mtime": null,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-11-15T11:07:53Z",
   "mimetype_sniffed": "application/pdf",
-  "mimetype_source": "magic-bytes"
+  "mimetype_source": "magic-bytes",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -19,69 +21,401 @@
    "stamp_date": "25 Sep 2024"
   },
   "doi": null,
-  "title": "IRREDUCIBLE CHARACTERS OF THE GENERALIZED SYMMETRIC GROUP HUIMIN GAO AND NAIHUAN JING",
-  "authors_raw": "HUIMIN GAO AND NAIHUAN JING"
+  "title": "IRREDUCIBLE CHARACTERS OF THE GENERALIZED SYMMETRIC GROUP",
+  "authors_raw": "HUIMIN GAO AND NAIHUAN JING",
+  "title_lines": [
+   "IRREDUCIBLE CHARACTERS OF THE GENERALIZED",
+   "SYMMETRIC GROUP"
+  ],
+  "abstract": "The paper studies how to compute irreducible characters of the generalized symmetric group Ck ≀Sn by iterative algorithms. Af- ter reproving the Ariki-Koike version of the Murnaghan-Nakayama rule by vertex algebraic methods, we formulate a new iterative formula for characters of the generalized symmetric group. As applications, we ﬁnd a numerical relation between the character values of Ck≀Sn and modular characters of Skn.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript 10.01.2",
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20240925203740-04'00'"
+  },
+  "title_raw": "IRREDUCIBLE CHARACTERS OF THE GENERALIZED SYMMETRIC GROUP",
+  "title_source": "text",
+  "title_verified": false,
+  "title_evidence": {
+   "heading": "IRREDUCIBLE CHARACTERS OF THE GENERALIZED SYMMETRIC GROUP 1. Introduction The character theory of the symmetric group S n plays an important role in representation theory [ 8 ]. It is well known that the irreducible characters χ λ of S n are indexed by partitions λ of n , and explicit character valu",
+   "outline": "1. Introduction",
+   "text": "IRREDUCIBLE CHARACTERS OF THE GENERALIZED SYMMETRIC GROUP",
+   "corroborated_by": [],
+   "browser_print": false
+  },
+  "title_prev": "IRREDUCIBLE CHARACTERS OF THE GENERALIZED SYMMETRIC GROUP HUIMIN GAO AND NAIHUAN JING"
  },
- "toc": [],
- "toc_source": "headings",
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Irreducible characters of CkSn",
+   "page": 4,
+   "source": "outline",
+   "number": "2",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Two Iterative Formulas",
+   "page": 7,
+   "source": "outline",
+   "number": "3",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Further examples",
+   "page": 13,
+   "source": "outline",
+   "number": "4",
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 20,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix A. The source code for Theorem 3.5",
+   "page": 22,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix B. Theorem 3.9",
+   "page": 22,
+   "source": "outline",
+   "number": null,
+   "confidence": null,
+   "evidence": null,
+   "page_label": null
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "figures": [
+  {
+   "kind": "table",
+   "number": "4",
+   "title": "S9 mod 3 λ\\c",
+   "page": 20,
+   "confidence": 0.5,
+   "evidence": [],
+   "page_label": null
+  }
+ ],
+ "pages": [
+  {
+   "physical": 1,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 2,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 3,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 4,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 5,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 6,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 7,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 8,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 9,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 10,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 11,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 12,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 13,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 14,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 15,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 16,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 17,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 18,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 19,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 20,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 21,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 22,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 23,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  },
+  {
+   "physical": 24,
+   "label": null,
+   "source": null,
+   "confidence": 0.0,
+   "evidence": []
+  }
+ ],
  "sections": [
   {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 565,
+   "n_words": 81,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-000-1-introduction",
    "number": "1",
    "title": "Introduction",
    "level": 1,
    "page_start": 1,
    "page_end": 4,
-   "id": "sec-000-introduction",
-   "n_chars": 8060,
-   "n_words": 1372
+   "n_chars": 7985,
+   "n_words": 1327,
+   "label_start": null,
+   "label_end": null
   },
   {
+   "id": "sec-001-2-irreducible-characters-of-cksn",
    "number": "2",
-   "title": "Irreducible characters of Ck \u2240 Sn",
+   "title": "Irreducible characters of CkSn",
    "level": 1,
    "page_start": 4,
-   "page_end": 6,
-   "id": "sec-001-irreducible-characters-of-ck-sn",
-   "n_chars": 4540,
-   "n_words": 1002
-  },
-  {
-   "number": "1",
-   "title": "X ij",
-   "level": 1,
-   "page_start": 6,
    "page_end": 7,
-   "id": "sec-002-x-ij",
-   "n_chars": 1416,
-   "n_words": 340
+   "n_chars": 5645,
+   "n_words": 1130,
+   "label_start": null,
+   "label_end": null
   },
   {
+   "id": "sec-002-3-two-iterative-formulas",
    "number": "3",
    "title": "Two Iterative Formulas",
    "level": 1,
    "page_start": 7,
    "page_end": 13,
-   "id": "sec-003-two-iterative-formulas",
-   "n_chars": 13578,
-   "n_words": 2946
+   "n_chars": 13047,
+   "n_words": 2550,
+   "label_start": null,
+   "label_end": null
   },
   {
+   "id": "sec-003-4-further-examples",
    "number": "4",
    "title": "Further examples",
    "level": 1,
    "page_start": 13,
+   "page_end": 20,
+   "n_chars": 11769,
+   "n_words": 2875,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-004-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 22,
+   "n_chars": 3236,
+   "n_words": 498,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-005-appendix-a-the-source-code-for-theorem-35",
+   "number": null,
+   "title": "Appendix A. The source code for Theorem 3.5",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 564,
+   "n_words": 49,
+   "label_start": null,
+   "label_end": null
+  },
+  {
+   "id": "sec-006-appendix-b-theorem-39",
+   "number": null,
+   "title": "Appendix B. Theorem 3.9",
+   "level": 1,
+   "page_start": 22,
    "page_end": 24,
-   "id": "sec-004-further-examples",
-   "n_chars": 19271,
-   "n_words": 4033
+   "n_chars": 2602,
+   "n_words": 267,
+   "label_start": null,
+   "label_end": null
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 0,
-  "sections": 5,
-  "chars_total": 47527,
+  "toc_entries": 7,
+  "toc_inferred_entries": 0,
+  "figure_entries": 1,
+  "figure_sequence_gaps": [
+   "table 1",
+   "table 2",
+   "table 3"
+  ],
+  "page_label_conflicts": {
+   "count": 0,
+   "items": []
+  },
+  "sections": 8,
+  "chars_total": 45413,
+  "furniture_lines_stripped": 0,
   "latex_overlay": {
    "_schema": "latex-math-overlay/v1",
    "main": "e-print",
@@ -94,41 +428,56 @@
    },
    "sections": [
     {
-     "id": "sec-000-introduction",
-     "title": "Introduction",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.997,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-001-irreducible-characters-of-ck-sn",
-     "title": "Irreducible characters of Ck \u2240 Sn",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 1.0,
-     "result": "overlaid",
-     "converter": "pandoc"
-    },
-    {
-     "id": "sec-002-x-ij",
-     "title": "X ij",
+     "id": "sec-front-matter",
+     "title": "Front matter",
      "result": "no matching \\section"
     },
     {
-     "id": "sec-003-two-iterative-formulas",
-     "title": "Two Iterative Formulas",
-     "prose_ratio": 1.0,
-     "coverage_ratio": 0.993,
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.986,
      "result": "overlaid",
      "converter": "pandoc"
     },
     {
-     "id": "sec-004-further-examples",
-     "title": "Further examples",
-     "prose_ratio": 0.995,
-     "coverage_ratio": 0.992,
+     "id": "sec-001-2-irreducible-characters-of-cksn",
+     "title": "Irreducible characters of CkSn",
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.925,
      "result": "overlaid",
      "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-3-two-iterative-formulas",
+     "title": "Two Iterative Formulas",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.954,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-4-further-examples",
+     "title": "Further examples",
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.965,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-references",
+     "title": "References",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-appendix-a-the-source-code-for-theorem-35",
+     "title": "Appendix A. The source code for Theorem 3.5",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-appendix-b-theorem-39",
+     "title": "Appendix B. Theorem 3.9",
+     "result": "no matching \\section"
     }
    ]
   }

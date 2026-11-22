@@ -1,0 +1,69 @@
+using assms
+by auto
+qed
+
+lemma intersects-z-axis-positive-iff ':
+assumes is-poincare-line H
+shows intersects-z-axis-positive H —
+calc-x-axis-intersection H € unit-disc \ calc-a-axis-intersection H € circline-set H M positive-x-axis (is ?lhs ~—>
+rhs)
+proof
+let ?x = calc-z-axis-intersection H
+assume ?/hs
+hence ?x € circline-set x-axis ?x € circline-set H ?x € unit-disc
+using calc-x-axis-intersection-in-unit-disc|OF assms] calc-x-axis-intersection|OF assms]
+by auto
+moreover
+have Re (to-complex ?x) > 0
+using <?lhs> assms
+proof (transfer, transfer)
+fix H
+assume hh: hermitean H \ H # mat-zero
+obtain A B C D where *: H = (A, B, C, D)
+by (cases H, auto)
+assume intersects-z-axis-positive-cmat H
+hence **: Re B/ Re A<—1Re AAO
+using *
+by auto
+have (Re B)? > (Re A)?
+using **
+by (smt divide-less-eq-1-neg divide-minus-left less-divide-eq-1-pos real-sqrt-abs real-sqrt-less-iff right-inverse-eq)
+have is-real A A # 0
+using hh hermitean-elems * «Re A # 0» complex.expand|of A 0|
+by auto
+have (cmod B)? > (cmod A)?
+using «(Re B)? > (Re A)?» ¢is-real A»
+by (smt cmod-power2 power2-less-0 zero-power2)
+have *««: 0 < (— Re B + sgn (Re B) * sqrt ((Re B)? — (Re A)?)) / Re A
+using calc-intersect-x-axis-positive-lemma|of Re A Re B] ** «(Re B)? > (Re A)?»
+by auto
+
+assume is-poincare-line-cmat H
+
+hence A = D
+using * hh
+by simp
+
+have Re ((cor (sgn (Re B)) * cor (sqrt ((Re B)? — (Re A)?)) — cor (Re B)) / A) = (sgn (Re B) * sqrt ((Re B)?
+— (Re A)?) — Re B) / Re D
+using <is-real A) «A = Dy
+by (metis (no-types, lifting) Re-complez-of-real complex-of-real-Re of-real-diff of-real-divide of-real-mult)
+thus 0 < Re (to-complex-cvec (calc-a-axis-intersection-cmat-cvec H))
+using * hh «x *&* «(cmod B)? > (cmod A)?» «(Re B)? > (Re A)?» (A # 0) (A = Dy
+by simp
+qed
+ultimately
+show ?rhs
+unfolding positive-x-azis-def
+by auto
+next
+let ?x = calc-z-axis-intersection H
+assume ?rhs
+hence Re (to-compler ?x) > 0 ?x # wp ?x € circline-set x-axis ?x € unit-disc ?x € circline-set H
+unfolding positive-x-azis-def
+by auto
+hence intersects-x-aris H
+using intersects-x-avis-iff|OF assms|
+by auto
+
+107

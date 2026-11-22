@@ -1,0 +1,61 @@
+4, THE IRREDUCIBLE #-MODULES 33
+
+so v & Shape(t | (n — 1)) since (7, j) is the lowest node with e-residue [res (n)]q
+which may be added to [v] to give the diagram of a partition. By induction on n
+the tableau [¥ is e-restricted, so this forces t | (n — 1) = &. However, if t(k,l) =n
+then k > i because 1 & pt. Therefore, (k,1) = (i,j), t= R and = p; hence, 2 is
+e-testricted as required. Oo
+
+Combining the last two results we see that if \ is e-restricted then D* is non—
+zero. To prove the converse we need some more notation.
+
+If \ = (Ai,...,Ax) is a partition and i an integer with 1 <i < k let ' =
+(Ai, Attias ss Ap) and A= (Ay — A2, A2 — As,-..). Let gi be the greatest common
+divisor of il; where ¥ runs over all partitions of \; such that 7 > X.. Finally, we
+define 9, = g1g2-.-9n-
+
+3.38 Lemma Suppose that X = (Ay,..., Ax) is a partition of n and let 5 and t be
+standard \-tableaur. Then gy is a factor of (ms,m).
+
+Proof. By definition, (ms,m)m, = mpsymy mod #*; however, by Corol-
+lary 3.4, Mayme is a linear combination of terms m,Tyip)mM Where v is a row
+standard A-tableau. So, changing notation, it is sufficient to show that if ¢ is a row
+standard A-tableau then m) Tam) = rgxm) for some r € R.
+
+Define p= (f1...- Lx) to be the composition of \; such that jz; is equal to the
+number of entries in row 7 of t which are less than or equal to Ay. Abusing notation,
+write m, = m),...mM), where G, = Gy, x --- x Gy, and m, = Direc, T, for
+L<i<k. ,
+
+We first consider mp ym),. Let u be the row standard \-tableau which agrees
+with ¢ on all entries greater than Ay and where 1, 2,..., Ay are inserted in increasing
+order from left to right and then top to bottom into the remaining positions. Then
+t = uw for some w € Gy, such that ¢(d(t)) = €(d(u)) + (w); so May = My Tw.
+Therefore, by Lemma 3.2 and Corollary 3.4,
+
+e(
+
+_ — fiw) — fw) pa
+MM, = MauTwm, =“ moeyma, = a! Yalyme uh
+
+for some h € .# (G6 ),.Consequently, mpym), is an clement of #m, where v is the
+composition (Ay, A1— fa... Ak — fe).
+
+Suppose that 4% v. Then A ¥ V where 7 is the partition obtained from v by
+reordering its parts; therefore, mp yn, € H* Nm, CH by Corollary 2.3 (iii).
+Thus, mMpa~m,, = 0 mod J and, in particular, our claim is correct in this case.
+
+On the other hand, if AB vy then (Ay, A2,... Ax) & Ar, Ar pa... At be)
+equivalently, po > y= (Ar — A2,-.. Agi — An). Now, gi is a factor of 14: so by
+Theorem 3.18 there exist ry € R such that
+
+Mea~MA, = [imp yh Egy ryMp, mod H.
+veSstd(a)
+
+Moreover, by the right handed version of Proposition 3.16, r, 4 0 only if the
+integers 1,2,...,A, all appear in the first row of b; that is to say that ry # 0
+only if » and have the same first row. Repeating this argument we find that for
+7=1,2...,k there exist r, € Rsuch that
+
+MM, MA, = M10 Yi > ryMy
+neStd(a)

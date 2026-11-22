@@ -24,7 +24,7 @@ namespace QOU
     proposition; neither was read or constructed anywhere. `Commutative` is
     statable once the group operation is a field; `preserves_contact` needs the
     contact form.** -/
--- Ref: [manuscript] Ch. 8 Glossary
+-- Ref: [leitner2026] Ch. 8 Glossary
 structure ReebGaugeGroup where
   /-- The R-group scheme carrier. -/
   carrier : Type*

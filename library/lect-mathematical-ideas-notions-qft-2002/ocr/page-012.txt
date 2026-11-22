@@ -1,0 +1,46 @@
+12 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY
+
+g = —ht, By = £, Bo = 0, By = 0. Thus, Theorem 3.3 implies Theorem 3.2 (note
+that the factor N! in the denominator is accounted for by the fact that in Theorem
+3.3 we consider unlabeled, rather than labeled, 1-valent vertices — convince yourself
+of this!).
+
+3.4. Proof of Feynman’s theorem. Now we will prove Theorem 3.3. Let us
+make a change of variable y = x/ Vh. Expanding the exponential in a Taylor series,
+
+we obtain
+2=\ 02m,
+n
+
+where
+— f Baw i/2-1p. 7
+2n =| m ayn ag ml Bilysy.--¥))"dy
+
+Writing B; as a sum of products of linear functions, and using Wick’s theorem, we
+find that the value of the integral for each n can be expressed combinatorially as
+follows.
+
+1. Attach to each factor —B; a “flower” — a vertex with i outgoing edges (see
+Fig. 4).
+° 0-valent flower
+——_ 1-valent flower
+
+3-valent flower
+
+FIGURE 4
+
+2. Consider the set T of ends of these outgoing edges (see Fig. 5), and for any
+pairing o of this set, consider the corresponding contraction of tensors —B; using
+the form B-!. This will produce a number F(a).
+
+3. The integral Zp is given by
+
+(27) d/2
+
+pri(a-
+(9) Zn - alla Nm” Lie
+
+Now, recall that pairings on a set can be visualized by drawing its elements as
+points and connecting them with edges. If we do this with the set 7’, all ends of
+outgoing edges will become connected with each other in some way, i.e. we will
+

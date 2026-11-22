@@ -1,0 +1,62 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "104171-rmi-1356",
+ "source_sha256": "148119374f06be9f",
+ "brief": "Handlebody diagram algebras — In this paper, we study handlebody versions of some classical diagram algebras, most prominently, handlebody versions of Temperley–Lieb, blob, Brauer, BMW, Hecke and",
+ "extended": "**Handlebody diagram algebras**\n\n*Published by EMS Press and licensed under a CC BY 4.0 license*\n\n52 pp, 8 sections.\n\n**Abstract.** In this paper, we study handlebody versions of some classical diagram algebras, most prominently, handlebody versions of Temperley–Lieb, blob, Brauer, BMW, Hecke and Ariki–Koike algebras. Moreover, motivated by Green–Kazhdan– Lusztig’s theory of cells, we reformulate the notion of (sandwich, inflated or affine) cellular algebras. We explain this reformulation and how all of the above algebras are part of this theory.\n\n**Outline.** Front matter; 1 Introduction; 2 A generalization of cellularity; 3 Handlebody braid and Coxeter groups; 4 Handlebody Temperley–Lieb and blob algebras; 5 Handlebody Brauer and BMW algebras; 6 Handlebody Hecke and Ariki–Koike algebras; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.16: Let K be a field. (a) A \u0015 2 ƒ is an apex if and only if the form \u0015 is not constant zero if and only if the form \u0015 K is not constant zero for any simple S\u0015-module K.\n- Theorem 2.21: Let K be a field. (a) If c ¤ 0, or c D 0 and \u0015 ¤ 0 is odd, then all \u0015 2 ƒ are apexes.\n- Theorem 3.16: The action of Wg;n in Definition 3.8 is faithful.\n- Theorem 4.11: Let K be a field. (1) If c ¤ 0, or c D 0 and \u0015 ¤ 0 is odd, then all \u0015 2 ƒ are apexes.\n- Theorem 4.25: Let K be a field. (1) If c ¤ 0, or c D 0 and \u0015 ¤ 0 is odd, then all \u0015 2 ƒ are apexes.\n- Theorem 5.12: Let K be a field, and choose admissible parameters. (1) If c ¤ 0, or c D 0 and \u0015 ¤ 0 is odd, then all \u0015 2 ƒ are apexes.",
+ "tokens": {
+  "brief": 48,
+  "extended": 387
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-5"
+  },
+  {
+   "id": "sec-001-2-a-generalization-of-cellularity",
+   "title": "A generalization of cellularity",
+   "pages": "5-14"
+  },
+  {
+   "id": "sec-002-3-handlebody-braid-and-coxeter-groups",
+   "title": "Handlebody braid and Coxeter groups",
+   "pages": "14-20"
+  },
+  {
+   "id": "sec-003-4-handlebody-temperleylieb-and-blob-algebras",
+   "title": "Handlebody Temperley–Lieb and blob algebras",
+   "pages": "20-34"
+  },
+  {
+   "id": "sec-004-5-handlebody-brauer-and-bmw-algebras",
+   "title": "Handlebody Brauer and BMW algebras",
+   "pages": "34-43"
+  },
+  {
+   "id": "sec-005-6-handlebody-hecke-and-arikikoike-algebras",
+   "title": "Handlebody Hecke and Ariki–Koike algebras",
+   "pages": "43-49"
+  },
+  {
+   "id": "sec-006-references",
+   "title": "References",
+   "pages": "49-52"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

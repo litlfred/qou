@@ -16,7 +16,7 @@ off-diagonal `T` commutes with both residues, hence with `Φ(A ⊕ A', B ⊕ B')
 embedding and the two projections of the product algebra shows that this associator is
 `Φ(A, B) ⊕ Φ(A', B')`. Sorry-free.
 
--- Ref: [manuscript] beans/defs/qou-zoyv (stage S2)
+-- Ref: [leitner2026] beans/defs/qou-zoyv (stage S2)
 -/
 
 noncomputable section

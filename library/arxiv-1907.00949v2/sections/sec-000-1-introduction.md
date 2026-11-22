@@ -7,10 +7,11 @@ section_number: 1
 pages: 1-2
 source_pdf: 1907.00949v2.pdf
 source_sha256: 865defaa34bf42be
-doc_brief: "OPTIMIZATION ON FLAG MANIFOLDS — A ﬂag is a sequence of nested subspaces."
+toc_source: outline
 text_source: latex
 latex_prose_ratio: 0.971
 latex_coverage_ratio: 0.933
+doc_brief: "OPTIMIZATION ON FLAG MANIFOLDS — A ﬂag is a sequence of nested subspaces."
 ---
 Launched around 20 years ago in a classic article of Edelman, Arias, and Smith [@EAS], Riemannian *manifold optimization* is now entrenched as a mainstay of optimization theory [@ABG2007; @AMS2009; @CDH2011; @WY2013]. While studies of optimization algorithms on Riemannian manifolds predate [@EAS], the distinguishing feature of Edelman et al.'s approach is that their algorithms are built entirely and directly from standard algorithms in numerical linear algebra; in particular, they do not require numerical solutions of differential equations. For instance, the parallel transport of a vector in [@EAS] is not merely discussed in the abstract but may be explicitly computed in efficient and numerically stable ways via closed-form analytic expressions involving QR and singular value decompositions of various matrices.
 
